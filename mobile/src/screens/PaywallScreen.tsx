@@ -12,7 +12,7 @@ import { XIcon, CheckIcon, CrownIcon, ShareIcon } from "../ui/icons";
 import { SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { track } from "../lib/track";
 import { haptic } from "../lib/haptics";
-import { billingAvailable, getPackages, offerCodesAvailable, presentOfferCodeRedemption, purchase, restore } from "../lib/billing";
+import { awaitProcessedPurchase, billingAvailable, getPackages, offerCodesAvailable, presentOfferCodeRedemption, purchase, purchaseGroupTrial, restore, type PurchaseOutcome } from "../lib/billing";
 import { usePremiumStatus, refreshPremium } from "../lib/premium";
 import { inviteLink, shareInvite } from "../lib/share";
 import { api } from "../api/client";
@@ -48,6 +48,18 @@ function planLabel(pkg: PurchasesPackage): string {
  * teklif kodları (`presentOfferCodeRedemption`). Android ve web'de kutu kalıyor.
  */
 const OWN_PROMO_CODES = Platform.OS !== "ios";
+
+/**
+ * GRUP KODU ("2 ay ücretsiz" mağaza denemesi) — YALNIZ ANDROID.
+ *
+ * Aynı 3.1.1 gerekçesi, daha da kesin: grup kodu bir aboneliğin teklifini
+ * AÇIYOR, yani tam olarak "kendi kodunla kilit açma". iOS'ta ne kutu ne metin
+ * ne de webdeki `/g/` sayfasına bağlantı var (yönlendirme de 3.1.1 ve
+ * 3.1.3 kapsamında): iPhone kullanıcısı gruptaki bağlantıyı Safari'de açıyor
+ * ve oradan Apple'ın KENDİ teklif kodu sayfasına gidiyor. iOS'ta uygulamada
+ * kalan tek kod yolu Apple'ın bozdurma sayfası (`presentOfferCodeRedemption`).
+ */
+const GROUP_CODES = Platform.OS === "android";
 
 /**
  * Mağazanın bildirdiği ücretsiz deneme (giriş fiyatı 0) — yoksa deneme vaadi yok.
@@ -147,7 +159,7 @@ export function PaywallScreen() {
     başarısızlık ona aynı görünürdü. Web `/premium?ref=…` ile aynı durumlar ve
     aynı cümleler.
   */
-  const routeParams = useRoute<{ key: string; name: string; params?: { ref?: string; from?: "web" } }>().params;
+  const routeParams = useRoute<{ key: string; name: string; params?: { ref?: string; from?: "web"; group?: string } }>().params;
   const refResult = routeParams?.ref ?? "";
   const fromWeb = routeParams?.from === "web";
   /*
@@ -201,6 +213,9 @@ export function PaywallScreen() {
   const [selected, setSelected] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  /* Hata DEĞİL bilgi: "satın alma alındı, açılıyor" / "onay bekliyor". Kırmızı
+     hata satırıyla aynı yerde ama nötr renkte (IAP-7). */
+  const [notice, setNotice] = useState<string | null>(null);
 
   useEffect(() => {
     /* Webden yönlendirilen görüntüleme ayrı etiketle: web → uygulama hunisi
@@ -234,15 +249,45 @@ export function PaywallScreen() {
     await presentOfferCodeRedemption();
   }
 
+  /**
+   * Satın almanın sonucu — normal satın alma ve grup denemesi ORTAK (IAP-7).
+   *
+   * İptal SESSİZ. `processing`: mağaza aldı, sunucu henüz görmedi — kullanıcıya
+   * "alındı, açılıyor" deniyor ve beklemeye arka planda devam ediliyor; yetki
+   * gelince ekran kendiliğinden kapanıyor. `pending`: ödeme onay bekliyor
+   * (Aile Paylaşımı, bankanın ek doğrulaması); hata değil.
+   */
+  function settle(outcome: PurchaseOutcome, kind: string): void {
+    if (outcome === "done") {
+      haptic("correct");
+      track("purchase_done", 0, kind);
+      nav.goBack();
+      return;
+    }
+    if (outcome === "cancelled") return;
+    if (outcome === "pending") { setNotice(t("paywall.pending")); return; }
+    if (outcome === "processing") {
+      setNotice(t("paywall.processing"));
+      void awaitProcessedPurchase().then((ok) => {
+        if (!ok) return;
+        haptic("correct");
+        track("purchase_done", 0, kind);
+        nav.goBack();
+      });
+      return;
+    }
+    setError(t("paywall.purchase_wasn_t_completed"));
+  }
+
   async function start() {
     if (!pkg || busy) return;
     track("purchase_start", 0, pkg.packageType);
     setBusy(true);
     setError(null);
-    const ok = await purchase(pkg);
+    setNotice(null);
+    const outcome = await purchase(pkg);
     setBusy(false);
-    if (ok) { haptic("correct"); track("purchase_done", 0, pkg.packageType); nav.goBack(); }
-    else setError(t("paywall.purchase_wasn_t_completed"));
+    settle(outcome, pkg.packageType);
   }
 
   async function doRestore() {
@@ -416,6 +461,22 @@ export function PaywallScreen() {
           </View>
         )}
 
+        {/* Grup kodu planların HEMEN ALTINDA: seçili planı kullanıyor ve şart
+            satırı o planın fiyatını söylüyor; araya kapsam listesi girerse
+            hangi fiyatın geçerli olduğu kopuyor. Yalnız Android (GROUP_CODES). */}
+        {GROUP_CODES && storeOpen && pkgs && pkgs.length > 0 ? (
+          <GroupCodeBox
+            colors={colors}
+            pkg={pkg}
+            initialCode={routeParams?.group ?? ""}
+            guest={guest}
+            onAuth={() => nav.navigate("Auth")}
+            onOutcome={(o) => settle(o, `group:${pkg?.packageType ?? ""}`)}
+            busy={busy}
+            setBusy={setBusy}
+          />
+        ) : null}
+
         {/* KAPSAM SUNUCUDAN. Eskiden burada elle yazılmış bir karşılaştırma
             tablosu vardı ve gerçeği anlatmıyordu: tek satırı "Schreiben
             alıştırmaları" idi ve o ekran aylar önce kaldırılmıştı, yani paywall
@@ -515,6 +576,7 @@ export function PaywallScreen() {
             taşıyor; sessiz kalırsa kullanıcı düğmeye basıp hiçbir şey olmadığını
             sanıyor. */}
         {error ? <Text accessibilityLiveRegion="assertive" variant="caption" color={colors.dangerText} style={{ textAlign: "center", marginBottom: spacing.sm }}>{error}</Text> : null}
+        {notice ? <Text accessibilityLiveRegion="polite" variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginBottom: spacing.sm }}>{notice}</Text> : null}
         <PressableScale onPress={start} disabled={busy || !pkg} accessibilityRole="button" accessibilityLabel={trial ? t("paywall.start_free_trial") : t("paywall.subscribe")} style={[{ borderRadius: radii.lg, backgroundColor: pkg ? colors.primary : colors.surface2, paddingVertical: spacing.lg, alignItems: "center" }, pkg ? softShadow(colors.primary, 12) : {}]}>
           {busy ? <ActivityIndicator color={colors.onPrimary} /> : <Text variant="h3" color={pkg ? colors.onPrimary : colors.textFaint}>{trial ? t("paywall.start_free_trial") : t("paywall.subscribe")}</Text>}
         </PressableScale>
@@ -650,8 +712,12 @@ function PromoBox({ colors, onRedeemed }: { colors: Palette; onRedeemed: () => v
         setMsg({ ok: false, text: t(promoErrorKey(r.error)) });
       }
     } catch (e) {
-      // `api` HTTP hatasında fırlatıyor; sebep gövdede olabilir.
-      const reason = (e as { body?: { error?: string } })?.body?.error;
+      /* `api` HTTP hatasında `ApiError` fırlatıyor ve sunucunun sebebini
+         (`error`) MESAJ olarak taşıyor (api/client). Burada `.body.error`
+         okunuyordu, öyle bir alan yok: her sebep "Kod uygulanamadı"ya
+         düşüyordu — "bulunamadı", "tükendi" ve grup kodunun "yanlış kutu"
+         cümlesi hiç görünmüyordu. */
+      const reason = (e as { message?: string } | null)?.message;
       setMsg({ ok: false, text: t(promoErrorKey(reason)) });
     } finally {
       setBusy(false);
@@ -698,9 +764,146 @@ function PromoBox({ colors, onRedeemed }: { colors: Palette; onRedeemed: () => v
  * hiçbir zaman işe yaramayacak. Sunucu bu sebebi `attachReferral` üzerinden
  * gönderiyor (`AttachResult`); iki istemci de tanımıyordu.
  */
-const PROMO_ERRORS = ["not_found", "already", "used_up", "expired", "disabled", "rate_limited", "self"];
+const PROMO_ERRORS = ["not_found", "already", "used_up", "expired", "disabled", "rate_limited", "self", "store_trial"];
 function promoErrorKey(reason: string | undefined): string {
   return PROMO_ERRORS.includes(reason ?? "") ? `promo.${reason}` : "promo.failed";
+}
+
+/**
+ * Grup kodu sebebi → sözlük anahtarı. Promo kutusunun cümleleri ortak olanlarda
+ * (bulunamadı, tükendi, süresi doldu) aynen kullanılıyor: iki kutu aynı durumu
+ * iki ayrı cümleyle anlatmasın. Tanınmayan sebep genel mesaja düşer.
+ */
+const GROUP_ERRORS: Record<string, string> = {
+  not_found: "promo.not_found",
+  disabled: "promo.disabled",
+  expired: "promo.expired",
+  used_up: "promo.used_up",
+  already: "promo.already",
+  rate_limited: "promo.rate_limited",
+  trial_used: "grupkod.trial_used",
+  wrong_kind: "grupkod.wrong_kind",
+  already_subscribed: "grupkod.already_subscribed",
+  account_required: "grupkod.guest",
+};
+const groupErrorKey = (reason: string | undefined): string => GROUP_ERRORS[reason ?? ""] ?? "promo.failed";
+
+/**
+ * Grup kodu — "2 ay ücretsiz, sonra ücretli" (YALNIZ ANDROID, bkz. GROUP_CODES).
+ *
+ * AKIŞ: kod sunucuda talep ediliyor (`/api/premium/trial-code`, hak sayacı ve
+ * hesap başına tek deneme orada), sunucu Play teklifinin ETİKETİNİ veriyor ve
+ * uygulama seçili planın o etiketli seçeneğini satın alıyor. Yetki her zamanki
+ * yoldan, webhook'la geliyor; sonuç normal satın almayla aynı sözlükte.
+ *
+ * ŞART SATIRI DÜĞMENİN YANINDA: "2 ay ücretsiz, sonra yılda X", ödeme yöntemi,
+ * 24 saat kuralı ve iptal yolu. Play abonelik beyanı denemenin bitince ne
+ * olacağının satın almadan ÖNCE okunmasını istiyor.
+ *
+ * Bağlantıyla gelindiyse (`/g/<KOD>`) kod dolu geliyor ve bir kez doğrulanıyor
+ * (hiçbir şey harcamadan): grup adı görünüyor, geçersiz kod baştan söyleniyor.
+ */
+function GroupCodeBox({
+  colors,
+  pkg,
+  initialCode,
+  guest,
+  onAuth,
+  onOutcome,
+  busy,
+  setBusy,
+}: {
+  colors: Palette;
+  pkg: PurchasesPackage | undefined;
+  initialCode: string;
+  guest: boolean;
+  onAuth: () => void;
+  onOutcome: (o: PurchaseOutcome) => void;
+  busy: boolean;
+  setBusy: (b: boolean) => void;
+}) {
+  const [code, setCode] = useState(initialCode.toUpperCase());
+  const [group, setGroup] = useState<string | null>(null);
+  const [msg, setMsg] = useState<{ ok: boolean; text: string } | null>(null);
+  const plan = pkg?.packageType === "ANNUAL" ? "yearly" : pkg?.packageType === "MONTHLY" ? "monthly" : null;
+
+  useEffect(() => {
+    if (!initialCode) return;
+    let alive = true;
+    void api<{ status?: string; group?: string | null }>(`/api/premium/trial-code?code=${encodeURIComponent(initialCode)}`)
+      .then((r) => {
+        if (!alive) return;
+        if (r.status === "valid") setGroup(r.group ?? null);
+        else setMsg({ ok: false, text: t(groupErrorKey(r.status)) });
+      })
+      .catch(() => { /* ön bakış yalnız bilgi; başarısızsa kutu yine çalışır */ });
+    return () => { alive = false; };
+  }, [initialCode]);
+
+  async function begin() {
+    if (!code.trim() || busy) return;
+    if (!pkg || !plan) { setMsg({ ok: false, text: t("grupkod.pick_plan") }); return; }
+    track("purchase_start", 0, `group:${pkg.packageType}`);
+    setBusy(true);
+    setMsg(null);
+    try {
+      const r = await api<{ ok?: boolean; offerTag?: string; error?: string }>("/api/premium/trial-code", {
+        method: "POST",
+        body: JSON.stringify({ code, platform: "android", plan }),
+      });
+      if (!r.ok || !r.offerTag) { setMsg({ ok: false, text: t(groupErrorKey(r.error)) }); return; }
+      const outcome = await purchaseGroupTrial(pkg, r.offerTag);
+      if (outcome === "no_offer") { setMsg({ ok: false, text: t("grupkod.no_offer") }); return; }
+      onOutcome(outcome);
+    } catch (e) {
+      // Sunucunun sebebi `ApiError.message`ta (bkz. PromoBox).
+      const reason = (e as { message?: string } | null)?.message;
+      setMsg({ ok: false, text: t(groupErrorKey(reason)) });
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  if (guest) {
+    return (
+      <Section title={t("grupkod.title")} colors={colors}>
+        <Text variant="caption" color={colors.textMuted}>{t("grupkod.guest")}</Text>
+        <PressableScale onPress={onAuth} accessibilityRole="button" accessibilityLabel={t("guest.create_account")} style={{ marginTop: spacing.sm, alignSelf: "flex-start", borderRadius: radii.md, backgroundColor: colors.primary, paddingHorizontal: spacing.lg, paddingVertical: 11 }}>
+          <Text variant="bodyStrong" color={colors.onPrimary}>{t("guest.create_account")}</Text>
+        </PressableScale>
+      </Section>
+    );
+  }
+
+  const ready = Boolean(code.trim()) && !busy;
+  return (
+    <View style={{ marginTop: spacing.lg }}>
+      <Section title={t("grupkod.title")} colors={colors}>
+        {group ? <Text variant="caption" color={colors.successText} style={{ marginBottom: spacing.xs }}>{t("grupkod.group", { group })}</Text> : null}
+        <TextInput
+          value={code}
+          onChangeText={(v) => setCode(v.toUpperCase())}
+          placeholder={t("grupkod.placeholder")}
+          accessibilityLabel={t("grupkod.placeholder")}
+          placeholderTextColor={colors.textFaint}
+          autoCapitalize="characters"
+          autoCorrect={false}
+          returnKeyType="done"
+          onSubmitEditing={() => { if (ready) void begin(); }}
+          style={{ backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, letterSpacing: 2 }}
+        />
+        {pkg ? (
+          <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.sm }}>
+            {priceLine(pkg, t("paywall.trial_months", { n: 2 }))} · {t("grupkod.terms")}
+          </Text>
+        ) : null}
+        <PressableScale onPress={begin} disabled={!ready} accessibilityRole="button" accessibilityLabel={t("grupkod.start")} style={{ marginTop: spacing.sm, borderRadius: radii.md, backgroundColor: ready ? colors.primary : colors.surface2, paddingVertical: 11, alignItems: "center" }}>
+          {busy ? <ActivityIndicator color={colors.onPrimary} /> : <Text variant="bodyStrong" color={ready ? colors.onPrimary : colors.textFaint}>{t("grupkod.start")}</Text>}
+        </PressableScale>
+        {msg ? <Text accessibilityLiveRegion={msg.ok ? "polite" : "assertive"} variant="caption" color={msg.ok ? colors.successText : colors.dangerText} style={{ marginTop: spacing.sm }}>{msg.text}</Text> : null}
+      </Section>
+    </View>
+  );
 }
 
 /**

@@ -95,6 +95,31 @@ const STATE_BY_TYPE: Record<string, StoreState> = {
   REFUND: "refunded",
 };
 
+/**
+ * Bizim yetkimizin RevenueCat'teki kimliği — mobil `billingConfig`
+ * `REVENUECAT.entitlementId` ile BİREBİR aynı olmalı.
+ *
+ * Olay başka bir yetkiye aitse (ileride eklenecek tek seferlik bir ürün, ayrı
+ * bir uygulama, RevenueCat panelinde elle açılmış deneme yetkisi) premium
+ * penceresine YAZILMAZ (denetim IAP-13). Önceden her olay bizim sayılıyordu:
+ * yetkiyle ilgisiz bir ürünün yenilemesi Premium'u uzatırdı.
+ */
+export const RC_ENTITLEMENT_ID = "lernomi_premium";
+
+/**
+ * Sandbox olayları yetki yazsın mı.
+ *
+ * VARSAYILAN EVET (denetim IAP-1): TestFlight ve Play iç test satın almaları
+ * sandbox'tır ve eskiden yok sayılıyordu; test eden kişi ödediği (sahte)
+ * aboneliğin premium açtığını hiç göremiyor, akışı uçtan uca doğrulayamıyordu.
+ * Satır işaretleniyor (`sandbox`), gelir sayımları onu dışarıda bırakıyor.
+ * `REVENUECAT_ALLOW_SANDBOX=0` eski davranışa döner (sandbox yok sayılır) —
+ * ör. herkese açık bir TestFlight grubu premium'u bedava dağıtmaya başlarsa.
+ */
+export function sandboxAllowed(): boolean {
+  return process.env.REVENUECAT_ALLOW_SANDBOX !== "0";
+}
+
 /** Yetkiye hiç dokunmayan olaylar — sessizce kabul edilir. */
 const IGNORED = new Set(["TEST", "SUBSCRIBER_ALIAS", "INVOICE_ISSUANCE", "TEMPORARY_ENTITLEMENT_GRANT"]);
 
@@ -148,14 +173,23 @@ export const revenuecat: StoreAdapter = {
     const userId = ev?.app_user_id;
     if (!ev || !type) return { ok: false, status: 400, reason: "bad_event" };
 
-    // SANDBOX olayları üretim yetkisi ÜRETMEZ. RevenueCat test satın almalarını
-    // aynı webhook'a yolluyor; ayrılmazsa geliştirici cihazındaki bir deneme
-    // gerçek bir aboneliğe dönüşür. Bilerek açmak için ortam değişkeni var.
-    if (ev.environment === "SANDBOX" && process.env.REVENUECAT_ALLOW_SANDBOX !== "1") {
+    // SANDBOX olayları İŞARETLİ kabul ediliyor (bkz. `sandboxAllowed`): yetki
+    // yazılıyor ama `sandbox: true` taşıyor ve gelirden düşülüyor. Kapatmak
+    // için REVENUECAT_ALLOW_SANDBOX=0.
+    const sandbox = ev.environment === "SANDBOX";
+    if (sandbox && !sandboxAllowed()) {
       return { ok: false, status: 400, reason: "sandbox_ignored" };
     }
 
     if (IGNORED.has(type)) return { ok: false, status: 400, reason: "ignored_type" };
+
+    /* BAŞKA BİR YETKİNİN OLAYI (IAP-13). Dizi YOKSA eleme yapılmıyor: TRANSFER
+       ve bazı eski olay biçimleri alanı hiç taşımıyor, onları düşürmek gerçek
+       abonelikleri kaybettirirdi. Dizi VAR ve bizimkini içermiyorsa olay başka
+       bir ürüne ait. */
+    if (Array.isArray(ev.entitlement_ids) && !ev.entitlement_ids.includes(RC_ENTITLEMENT_ID)) {
+      return { ok: false, status: 400, reason: "other_entitlement" };
+    }
 
     /*
       TRANSFER YETKİYİ TAŞIR. Önceden yok sayılıyordu: başka bir uygulama
@@ -188,18 +222,27 @@ export const revenuecat: StoreAdapter = {
 
     const expires = ev.grace_period_expiration_at_ms ?? ev.expiration_at_ms;
 
+    /* DENEME AYRI DURUM (IAP-10). Deneme başlangıcı ve deneme içindeki
+       yenileme/ürün değişikliği `active` yazılıyordu; panelin "denemede" sayısı
+       (lib/premium/revenue `active_trials`) hep sıfırdı ve paywall "deneme şu
+       tarihte bitiyor" diyemiyordu. Yalnız YETKİ VEREN `active` durum
+       denemeye çevriliyor: denemede iptal `canceled` kalıyor (yenileme kapandı
+       bilgisi daha önemli), süre dolması `expired`. */
+    const trialState: StoreState = state === "active" && ev.period_type === "TRIAL" ? "trial" : state;
+
     const out: StoreEvent = {
       provider: "revenuecat",
       // Olay kimliği yoksa işlem kimliğine düşülüyor: tekrar teslimat elemesi
       // bir anahtar olmadan çalışmaz ve o eleme referans ödülünün de koruması.
       eventId: ev.id ?? ev.transaction_id ?? `${type}:${userId}:${expires ?? 0}`,
       userId,
-      state: refunded ? "refunded" : state,
+      state: refunded ? "refunded" : trialState,
       expiresAt: expires ? new Date(expires) : null,
       platform: platformOf(ev.store),
       productId: ev.product_id ?? null,
       ref: ev.original_transaction_id ?? null,
       paid: !refunded && paidPeriod && state === "active",
+      sandbox,
       ledger: ledgerOf(ev, type),
     };
     return { ok: true, event: out };

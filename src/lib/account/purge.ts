@@ -1,5 +1,5 @@
 import "server-only";
-import { and, eq, like, ne, or } from "drizzle-orm";
+import { and, eq, like, ne, or, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import {
   accountSuspensions,
@@ -41,6 +41,7 @@ import {
   usageCounters,
   userClients,
   storeEvents,
+  storeTrialClaims,
   weeklyQuizAttempts,
   userConsents,
 } from "@/lib/db/schema";
@@ -139,6 +140,14 @@ export async function purgeUserData(userId: string): Promise<void> {
     await tx.update(premiumGrants).set({ userId: "" }).where(eq(premiumGrants.userId, userId));
     // Mağaza olay defteri de mali kayıt: satır kalır, kişi gider.
     await tx.update(storeEvents).set({ userId: null }).where(eq(storeEvents.userId, userId));
+    /* Grup kodu hunisi: satır kalır (grubun sayıları geçmişe dönük değişmesin),
+       kişi gider. Boş dizge değil `deleted:<satır>`: (kod, kullanıcı) benzersiz
+       ve aynı kodu kullanmış iki silinmiş hesap boş dizgede çakışırdı. Satır
+       kimliği kimseye işaret etmiyor. */
+    await tx
+      .update(storeTrialClaims)
+      .set({ userId: sql`'deleted:' || ${storeTrialClaims.id}::text` })
+      .where(eq(storeTrialClaims.userId, userId));
     // Davet zinciri: bu kullanıcının tarafı boşalır, karşı tarafın kaydı durur.
     await tx.update(referrals).set({ inviterUserId: "" }).where(eq(referrals.inviterUserId, userId));
     await tx.update(referrals).set({ inviteeUserId: "" }).where(eq(referrals.inviteeUserId, userId));

@@ -69,6 +69,15 @@ export type StoreEvent = {
    */
   paid: boolean;
   /**
+   * Olay mağazanın TEST ortamından mı geldi (TestFlight, Play iç test, lisans testçisi).
+   *
+   * Sandbox yetki YAZIYOR — yazmasaydı test eden kişi satın alma akışını hiç
+   * uçtan uca göremezdi (denetim IAP-1). Ama işaretli yazıyor:
+   * `entitlements.store_environment` ve `store_events.environment` bu bayraktan
+   * doluyor, gelir ve abone sayıları sandbox'ı dışarıda bırakıyor.
+   */
+  sandbox?: boolean;
+  /**
    * Gelir defteri için olayın mali ayrıntısı (`store_events`, lib/premium/ledger).
    * Sağlayıcıdan bağımsız sözlükle: adaptör kendi olay adlarını buraya çevirir.
    * Yetkiyi ETKİLEMEZ; yoksa defter o olayı yazmaz.

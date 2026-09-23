@@ -4,8 +4,9 @@ import { adminGate } from "@/lib/admin";
 import { AdminDenied } from "../_ui/ui";
 import { findPremiumAccount, premiumConfig } from "@/lib/premium";
 import { listCodes } from "@/lib/premium/promo";
+import { listStoreTrialCodes } from "@/lib/premium/store-trial";
 import { topReferrers } from "@/lib/premium/referral";
-import { PremiumAdmin } from "./premium-admin";
+import { PremiumAdmin, type TrialCodeRow } from "./premium-admin";
 
 export const metadata: Metadata = { title: "Premium yönetimi" };
 export const dynamic = "force-dynamic";
@@ -33,10 +34,11 @@ export default async function AdminPremiumPage({ searchParams }: { searchParams:
     redirect(acc ? `/admin/users/${encodeURIComponent(acc.userId)}` : `/admin/users?q=${encodeURIComponent(q)}`);
   }
 
-  const [config, codes, referrers] = await Promise.all([
+  const [config, codes, referrers, trialCodes] = await Promise.all([
     premiumConfig(),
     listCodes().catch(() => []),
     topReferrers().catch(() => []),
+    listStoreTrialCodes().catch(() => []),
   ]);
 
   return (
@@ -49,6 +51,18 @@ export default async function AdminPremiumPage({ searchParams }: { searchParams:
         createdAt: c.createdAt.toISOString(),
       }))}
       referrers={referrers}
+      trialCodes={trialCodes.map(serializeTrialCode)}
+      iosReady={{ monthly: Boolean(process.env.IOS_PROMO2M_CODE_MONTHLY?.trim()), yearly: Boolean(process.env.IOS_PROMO2M_CODE_YEARLY?.trim()) }}
     />
   );
+}
+
+/** Tarihler istemci bileşenine dizge olarak geçiyor (sunucu → istemci sınırı). */
+function serializeTrialCode(c: Awaited<ReturnType<typeof listStoreTrialCodes>>[number]): TrialCodeRow {
+  return {
+    ...c,
+    expiresAt: c.expiresAt ? c.expiresAt.toISOString() : null,
+    disabledAt: c.disabledAt ? c.disabledAt.toISOString() : null,
+    createdAt: c.createdAt.toISOString(),
+  };
 }

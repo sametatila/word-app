@@ -368,7 +368,9 @@ function PromoBox({ prefill }: { prefill: string }) {
         // Sunucunun sebebi doğrudan anahtar adı; bilinmeyen sebep genel mesaja düşer.
         // `self` = kendi davet kodu; sunucu bunu `attachReferral`dan gönderiyor
         // ve iki istemci de tanımıyordu, yani "daha sonra tekrar dene" diyordu.
-        const known = ["not_found", "already", "used_up", "expired", "disabled", "rate_limited", "self"];
+        // `store_trial` = grup kodu (2 ay mağaza denemesi): burada bozdurulmaz,
+        // cümle kullanıcıya kodun nereye girileceğini söylüyor (lib/premium/promo).
+        const known = ["not_found", "already", "used_up", "expired", "disabled", "rate_limited", "self", "store_trial"];
         const key = known.includes(data.error ?? "") ? `promo.${data.error}` : "promo.failed";
         setMsg({ ok: false, text: t(key) });
       }

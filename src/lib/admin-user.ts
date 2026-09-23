@@ -71,7 +71,7 @@ export async function getAdminUser(userId: string): Promise<AdminUser> {
       from profiles where user_id = ${id}`),
     rows(sql`select to_char(store_until, 'YYYY-MM-DD HH24:MI') store_until, coalesce(store_provider, '') store_provider,
       coalesce(store_platform, '') store_platform, coalesce(store_product, '') store_product, coalesce(store_state, '') store_state,
-      bonus_minutes, to_char(bonus_until, 'YYYY-MM-DD HH24:MI') bonus_until, to_char(updated_at, 'YYYY-MM-DD HH24:MI') updated_at
+      coalesce(store_environment, '') store_environment, bonus_minutes, to_char(bonus_until, 'YYYY-MM-DD HH24:MI') bonus_until, to_char(updated_at, 'YYYY-MM-DD HH24:MI') updated_at
       from entitlements where user_id = ${id}`),
     rows(sql`select to_char(created_at, 'YYYY-MM-DD HH24:MI') at, source, round(minutes / 1440.0, 1)::text days,
       coalesce(actor, '') actor, coalesce(note, '') note from premium_grants where user_id = ${id} order by created_at desc limit 20`),

@@ -161,6 +161,18 @@ function Nav() {
         return;
       }
 
+      /* GRUP KODU (`/g/<KOD>`, yalnız Android — `parseDeepLink` iOS'ta null
+         döndürüyor). Hiçbir şey talep edilmiyor: paywall açılıyor ve kod
+         alanı dolu geliyor, planı kullanıcı seçiyor. Misafir ve girişsiz
+         kullanıcıya hesap çağrısını paywall'ın kendisi gösteriyor. */
+      if (action.kind === "group") {
+        if (!navigationRef.isReady()) { pending.current = action; return; }
+        try {
+          (navigationRef.navigate as (n: string, p?: object) => void)("Paywall", { group: action.code });
+        } catch { /* yut */ }
+        return;
+      }
+
       /*
         DAVET BAĞLANTISI — bağ KODA DEĞİL DOKUNUŞA bağlı.
 
@@ -363,6 +375,11 @@ function Nav() {
         if (p?.kind === "paywall") {
           try {
             (navigationRef.navigate as (n: string, o?: object) => void)("Paywall", { from: "web" });
+          } catch { /* yut */ }
+        }
+        if (p?.kind === "group") {
+          try {
+            (navigationRef.navigate as (n: string, o?: object) => void)("Paywall", { group: p.code });
           } catch { /* yut */ }
         }
         if (p?.kind === "referral" && refResult.current) {

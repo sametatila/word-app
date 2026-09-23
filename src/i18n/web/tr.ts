@@ -25,6 +25,41 @@ export const trWeb: Record<string, string> = {
   "invitew.bad_title": "Bu davet bağlantısı çalışmıyor",
   "invitew.bad_lead": "Bağlantı eksik ya da artık geçerli değil. Seni davet eden kişiden yenisini isteyebilirsin.",
   "invitew.pitch": "Günde birkaç dakika: kelime turları, dersler, konuşma alıştırmaları ve deneme sınavları. Ücretsiz başlıyor.",
+  /*
+   * GRUP KODU KARŞILAMASI — `app/g/[code]`, "2 ay ücretsiz" kampanyası.
+   *
+   * WEBE ÖZEL: iPhone'da grup kodu uygulamada girilmiyor (App Store 3.1.1),
+   * iPhone ziyaretçisi bu sayfadan Apple'ın teklif kodu sayfasına gidiyor.
+   * Şart cümleleri (ödeme yöntemi, yenileme, 24 saat, iptal yolu) teklifin
+   * YANINDA duruyor; kısaltmak mağaza beyan kurallarını çiğnemek olur.
+   */
+  "groupw.title": "2 ay ücretsiz Lernomi Premium",
+  "groupw.lead": "Grubuna özel teklif: Premium'u 2 ay ücretsiz dene.",
+  "groupw.lead_group": "{group} grubuna özel teklif: Premium'u 2 ay ücretsiz dene.",
+  "groupw.terms_title": "Bilmen gerekenler",
+  "groupw.term_free": "İlk 2 ay ücretsiz. Deneme mağaza üzerinden başlar ve mağaza bir ödeme yöntemi ister.",
+  "groupw.term_renew": "İptal etmezsen 2 ayın sonunda seçtiğin planın (aylık ya da yıllık) fiyatıyla otomatik yenilenir. Fiyat, onaylamadan önce mağazada gösterilir.",
+  "groupw.term_cancel_ios": "Ücret alınmasın istiyorsan deneme bitmeden en az 24 saat önce iptal et: Ayarlar › Apple Hesabı › Abonelikler.",
+  "groupw.term_cancel_android": "Ücret alınmasın istiyorsan deneme bitmeden en az 24 saat önce iptal et: Google Play › Ödemeler ve abonelikler › Abonelikler.",
+  "groupw.account": "Premium, Lernomi hesabına bağlanır. Uygulamada aynı hesapla giriş yap; misafir olarak kullanıyorsan önce hesap oluştur.",
+  "groupw.android_title": "Android",
+  "groupw.android_how": "Uygulamada Premium ekranındaki “Grup kodu” alanına bu kodu gir, planını seç ve denemeyi başlat. Uygulama kuruluysa aşağıdaki düğme kodu kendisi doldurur.",
+  "groupw.android_open": "Uygulamada aç",
+  "groupw.android_play": "Google Play'den indir",
+  "groupw.android_play_soon": "Uygulama Google Play'de yakında.",
+  "groupw.code_label": "Grup kodun",
+  "groupw.copy": "Kopyala",
+  "groupw.copied": "Kopyalandı",
+  "groupw.ios_title": "iPhone",
+  "groupw.ios_monthly": "Aylık planla başla",
+  "groupw.ios_yearly": "Yıllık planla başla",
+  "groupw.ios_note": "App Store'un teklif kodu sayfası açılır ve denemeyi orada onaylarsın. Sonra Lernomi uygulamasında aynı hesapla giriş yap; Premium görünmezse Premium ekranında “Satın almayı geri yükle”ye dokun.",
+  "groupw.ios_soon": "iPhone için yakında.",
+  "groupw.bad_title": "Bu grup kodu çalışmıyor",
+  "groupw.unknown_code": "Kod bulunamadı. Bağlantıyı paylaşan kişiden yenisini isteyebilirsin.",
+  "groupw.expired": "Bu kodun süresi dolmuş.",
+  "groupw.used_up": "Bu kodun kullanım hakkı dolmuş.",
+  "groupw.disabled": "Bu kod artık geçerli değil.",
   /* Rozet kutlamasi: mobilde "dokun", webde fare ve klavye de var. */
   "achuw.click_to_continue": "Devam etmek için tıkla",
   /*

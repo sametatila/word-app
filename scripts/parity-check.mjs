@@ -16412,8 +16412,30 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     /* Karsilanan yollar: `parseDeepLink` icindeki yol karsilastirmalari. */
     const karsilanan = [...derin.matchAll(/(?:pathname === |startsWith\()"([^"]+)"/g)].map((m) => m[1]).sort();
 
-    sameList("derin baglanti yollari (iOS beyani / Android manifestosu)", beyan, iddia, "iOS", "Android");
-    sameList("derin baglanti yollari (beyan / karsilanan)", beyan, karsilanan, "beyan", "parseDeepLink");
+    /*
+     * YALNIZ ANDROID'DE IDDIA EDILEN YOL: `/g/` (grup kodu, "2 ay ucretsiz").
+     * iOS uygulamasi kendi koduyla icerik acamaz (App Store Guideline 3.1.1):
+     * iPhone'da baglanti Safari'de web sayfasinda kaliyor ve Apple'in KENDI
+     * teklif kodu sayfasina gidiliyor. Bu yuzden AASA'da OLMAMALI, manifestoda
+     * ve `parseDeepLink`te (yalniz Android dalinda) OLMALI. Liste ayri tutuluyor
+     * ki "iki beyan esit" kurali bu tek bilincli farki yutup baska bir kaymayi
+     * gizlemesin; asagidaki olcu farkin YONUNU da denetliyor.
+     */
+    const YALNIZ_ANDROID = ["/g/"];
+    const androidBeyan = [...beyan, ...YALNIZ_ANDROID].sort();
+
+    sameList("derin baglanti yollari (iOS beyani + yalniz Android / Android manifestosu)", androidBeyan, iddia, "iOS+Android", "Android");
+    sameList("derin baglanti yollari (beyan / karsilanan)", androidBeyan, karsilanan, "beyan", "parseDeepLink");
+    sameList(
+      "grup kodu iOS'ta yok (3.1.1)",
+      [
+        "AASA=" + (beyan.includes("/g/") ? "IDDIA EDIYOR" : "yok"),
+        "parseDeepLink yalniz Android=" + (/startsWith\("\/g\/"\)\) \{\s*if \(Platform\.OS !== "android"\) return null;/.test(derin) ? "evet" : "HAYIR"),
+      ],
+      ["AASA=yok", "parseDeepLink yalniz Android=evet"],
+      "bulunan",
+      "beklenen",
+    );
   }
 
   /* ── 204. DURUM SATIRI duyuruluyor mu (yuzey taramasi) ───────────────

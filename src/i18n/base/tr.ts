@@ -1826,6 +1826,25 @@ export const trBase: Record<string, string> = {
   "paywall.store_not_open_sub": "Premium'a bugün promo koduyla geçebilirsin — kutu aşağıda. Satışa çıktığında planlar ve fiyatlar burada görünecek.",
   "paywall.store_not_open_sub_ios": "Premium henüz App Store'da satışta değil. Satışa çıktığında planlar ve fiyatlar burada görünecek.",
   "paywall.redeem_offer_code": "Teklif kodunu kullan",
+  /* GRUP KODU ("2 ay ücretsiz" mağaza denemesi) — YALNIZ ANDROID'DE çiziliyor.
+     iOS'ta uygulama kendi koduyla içerik açamaz (App Store 3.1.1); iPhone
+     kullanıcısı webden Apple'ın teklif kodu sayfasına gidiyor. Şart cümlesi
+     (ödeme yöntemi, 24 saat, yenileme, iptal yolu) düğmenin yanında durmak
+     ZORUNDA: Play abonelik beyanı denemenin sonunu satın almadan önce istiyor. */
+  "paywall.processing": "Satın alma alındı, birkaç saniye içinde açılacak.",
+  "paywall.pending": "Ödeme onay bekliyor. Onaylanınca Premium kendiliğinden açılır.",
+  "promo.store_trial": "Bu bir grup kodu (2 ay ücretsiz deneme), bu alanda kullanılmaz. Android uygulamasında Premium ekranındaki “Grup kodu” alanına gir.",
+  "grupkod.title": "Grup kodun var mı? 2 ay ücretsiz",
+  "grupkod.placeholder": "Grup kodu",
+  "grupkod.group": "Grup: {group}",
+  "grupkod.terms": "Ödeme yöntemi Google Play'de istenir. Deneme bitmeden en az 24 saat önce iptal etmezsen seçtiğin planla otomatik yenilenir; Google Play'den istediğin zaman iptal.",
+  "grupkod.start": "2 ay ücretsiz başla",
+  "grupkod.pick_plan": "Önce yukarıdan bir plan seç.",
+  "grupkod.guest": "Grup kodu Premium'u hesabına bağlar; kullanmak için önce hesap oluştur.",
+  "grupkod.trial_used": "Bu hesapta grup denemesi zaten kullanıldı.",
+  "grupkod.wrong_kind": "Bu bir hediye kodu; aşağıdaki “Kodun var mı?” alanına gir.",
+  "grupkod.already_subscribed": "Zaten süren bir aboneliğin var.",
+  "grupkod.no_offer": "Bu teklif şu an Google Play'de görünmüyor. Biraz sonra tekrar dene.",
   "assess.fail_offline": "Değerlendirme servisi şu an kapalı; bu puan kelime sayısından çıkarılmış geçici bir tahmin, gerçek değerlendirme değil.",
   "assess.fail_unscored": "Değerlendirme servisi şu an kapalı; metnin puanlanamadı.",
   /* Değerlendirme neden alınamadı - SEBEBİNE göre. Mobil hepsini tek

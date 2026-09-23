@@ -1,3 +1,4 @@
+import { Platform } from "react-native";
 import { API_BASE } from "../api/client";
 
 /**
@@ -9,6 +10,7 @@ import { API_BASE } from "../api/client";
  *   - `/auth/app?ott=…`             → tarayıcıda açılan girişi devral
  *   - `/u/<kullanıcıadı>`           → paylaşılan profil (davet bağlantısı)
  *   - `/r/<KOD>`                    → davet bağını kur (kod yazmadan)
+ *   - `/g/<KOD>`                    → grup kodu, paywall'da dolu gelir (YALNIZ ANDROID)
  *
  * NEDEN SADECE BUNLAR: iddia edilen her yolu uygulamanın KARŞILAMASI gerekiyor.
  * Karşılanmayan bir yol, bağlantının tarayıcıda açılmasından kötü — uygulama
@@ -72,6 +74,18 @@ export type DeepLinkAction =
    * (`src/app/get/[target]`). Satın alma hesaba yazıldığı için web de açılıyor.
    */
   | { kind: "paywall" }
+  /**
+   * GRUP KODU (`/g/<KOD>`) — "2 ay ücretsiz" kampanyası. Paywall açılıyor ve
+   * "Grup kodu" alanı dolu geliyor; kullanıcı planını seçip Play denemesini
+   * başlatıyor (lib/billing `purchaseGroupTrial`).
+   *
+   * YALNIZ ANDROID. iOS'ta uygulama kendi koduyla içerik açamaz (App Store
+   * Guideline 3.1.1): iOS beyanı (AASA) `/g/`yi iddia etmiyor ve iPhone'da
+   * bağlantı Safari'de açılıp Apple'ın teklif kodu sayfasına gidiyor. Bir
+   * yolla iOS uygulamasına yine de ulaşırsa (başka bir uygulamanın açtığı
+   * adres) tanınmıyor.
+   */
+  | { kind: "group"; code: string }
   | null;
 
 /** Eski APK'ler exfe.me'ye bakıyor; ikisi de bizim (bkz. trustedOrigins). */
@@ -144,6 +158,21 @@ export function parseDeepLink(raw: string | null | undefined): DeepLinkAction {
     }
     const code = ham.toUpperCase().replace(/[^A-Z0-9]/g, "");
     return code ? { kind: "referral", code } : null;
+  }
+
+  if (url.pathname.startsWith("/g/")) {
+    if (Platform.OS !== "android") return null;
+    /* Sadeleştirme sunucudakiyle aynı (`lib/premium/promo` `normalizeCode`):
+       büyük harf, harf/rakam dışı atılır. Bozuk yüzde dizisi fırlatmasın
+       (bkz. `/r/` dalı). */
+    let ham = url.pathname.slice(3);
+    try {
+      ham = decodeURIComponent(ham);
+    } catch {
+      /* ham hâliyle devam */
+    }
+    const code = ham.toUpperCase().replace(/[^A-Z0-9]/g, "");
+    return code ? { kind: "group", code } : null;
   }
 
   if (url.pathname === "/get/premium") return { kind: "paywall" };

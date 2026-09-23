@@ -226,6 +226,13 @@ export const EVENT_NAMES = [
   "purchase_start", // satın alma başladı (kind = plan)
   "purchase_done", // satın alma tamamlandı (kind = plan, value = aylık kuruş)
   /*
+    Grup kodu (2 ay ücretsiz mağaza denemesi) talep edildi — YALNIZ SUNUCU
+    yazıyor (`api/premium/trial-code`), kind = "android:monthly|yearly".
+    Denemenin başlayıp başlamadığı burada değil `store_trial_claims`te
+    (webhook doldurur); bu olay huninin ilk halkası.
+  */
+  "trial_code_claim",
+  /*
     Sosyal katman (docs/plan/social.md). Huni: arkadaş isteği → kabul →
     tepki/dürtme/görev. "Arkadaşı olan kullanıcı daha çok kalıyor mu" sorusu
     ancak bu olaylar `session_done` ile yan yana konunca cevaplanır.

@@ -102,12 +102,16 @@ export async function revenueMetrics(days = 30): Promise<Revenue> {
               where s.user_id = e.user_id and s.type in ${PAID_TYPES} and s.price_usd > 0
               order by coalesce(s.event_at, s.created_at) desc limit 1)
           end), 0)::float mrr
-      from entitlements e`),
+      from entitlements e
+      -- Sandbox satırları yetki alıyor (IAP-1) ama abone değil: TestFlight ve
+      -- Play iç test aboneliği sayılsaydı "aktif ücretli" ve MRR şişerdi.
+      where coalesce(e.store_environment, 'production') = 'production'`),
     rows(sql`
       select coalesce(s.platform, '?') platform,
         coalesce(sum(s.price_usd) filter (where s.type in ${PAID_TYPES} and coalesce(s.period_type, '') <> 'trial' and coalesce(s.event_at, s.created_at) >= ${since}), 0)::float gross,
         count(*) filter (where s.type in ${PAID_TYPES} and coalesce(s.period_type, '') <> 'trial' and coalesce(s.event_at, s.created_at) >= ${since})::int payments,
-        (select count(*) from entitlements e where e.store_platform = s.platform and e.store_until > now() and e.store_state in ('active', 'canceled', 'grace'))::int active
+        (select count(*) from entitlements e where e.store_platform = s.platform and e.store_until > now() and e.store_state in ('active', 'canceled', 'grace')
+          and coalesce(e.store_environment, 'production') = 'production')::int active
       from store_events s where coalesce(s.environment, 'production') = 'production'
       group by s.platform order by 2 desc`),
     rows(sql`

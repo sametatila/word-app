@@ -358,9 +358,13 @@ abonelik beyanı kurallarına aykırı.
      (`openssl rand -hex 32`) ve **aynı değeri** üç env dosyasına da yaz:
      `.env.example` (boş bırak), yerel `.env`, sunucu `/opt/lernomi/.env` —
      anahtar adı `REVENUECAT_WEBHOOK_AUTH`.
-   - **Environment filter**: **Production**. (Sunucu sandbox olaylarını zaten
-     reddediyor; iki katman birlikte duruyor. Test için
-     `REVENUECAT_ALLOW_SANDBOX=1` gerekiyor ve bu **üretimde asla** açılmaz.)
+   - **Environment filter**: **Production ve Sandbox (ikisi)**. 2026-09-23'ten
+     beri sunucu sandbox olaylarını (TestFlight, Play iç test, lisans testçisi)
+     KABUL ediyor: yetki yazılıyor ama `entitlements.store_environment` ve
+     `store_events.environment` "sandbox" işaretleniyor, gelir ve abone
+     sayıları onu dışarıda bırakıyor (denetim IAP-1: sandbox reddedilince test
+     eden kişi satın almanın premium açtığını hiç göremiyordu). Kapatmak için
+     sunucuda `REVENUECAT_ALLOW_SANDBOX=0`.
    - **App scope**: tüm uygulamalar — tek uç iki platformu da karşılıyor.
    - **Event type filters**: boş bırak. Adaptör tanımadığı olayı zaten sessizce
      geçiyor ve filtre koymak, ileride eklenecek bir olay türünü sessizce
@@ -382,7 +386,7 @@ abonelik beyanı kurallarına aykırı.
 ```bash
 # üç env dosyasında da aynı anahtar kümesi olmalı (AGENTS.md senkron kuralı)
 REVENUECAT_WEBHOOK_AUTH="…"      # §3.3-6'daki sır
-REVENUECAT_ALLOW_SANDBOX=""      # üretimde BOŞ kalır
+REVENUECAT_ALLOW_SANDBOX=""      # boş = sandbox işaretli kabul; "0" = yok say
 ```
 
 Sonra migration:

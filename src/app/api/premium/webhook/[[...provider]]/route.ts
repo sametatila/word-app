@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { applyStoreEvent, applyStoreTransfer } from "@/lib/premium";
 import { recordStoreLedger } from "@/lib/premium/ledger";
+import { recordStoreTrialEvent } from "@/lib/premium/store-trial";
 import { adapterFor, DEFAULT_ADAPTER } from "@/lib/premium/providers";
 
 export const dynamic = "force-dynamic";
@@ -60,6 +61,10 @@ export async function POST(req: Request, ctx: { params: Promise<{ provider?: str
     // olay kimliği tekrarı tek satır kalıyor (lib/premium/ledger).
     await recordStoreLedger(parsed.event);
     const { applied } = await applyStoreEvent(parsed.event);
+    /* Grup kodu hunisi (deneme başladı / ücretliye döndü / iptal / bitti).
+       Yetkiden SONRA ve yetkiyi etkilemeden: kendi hatasını yutuyor, damgaları
+       `coalesce` ile bir kez yazıyor — tekrar teslimat zararsız. */
+    await recordStoreTrialEvent(parsed.event);
     return NextResponse.json({ ok: true, applied });
   } catch (err) {
     console.error("[premium/webhook]", err);

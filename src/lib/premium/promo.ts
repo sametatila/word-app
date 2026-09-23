@@ -24,7 +24,7 @@ export function normalizeCode(input: string): string {
   return input.toUpperCase().replace(/[^A-Z0-9]/g, "");
 }
 
-function randomCode(length = 8): string {
+export function randomCode(length = 8): string {
   let out = "";
   for (let i = 0; i < length; i++) out += ALPHABET[randomInt(ALPHABET.length)];
   return out;
@@ -83,7 +83,7 @@ export async function createCodes(opts: NewCodeOptions): Promise<string[]> {
 
 export type RedeemResult =
   | { ok: true; days: number; code: string }
-  | { ok: false; reason: "not_found" | "disabled" | "expired" | "used_up" | "already" };
+  | { ok: false; reason: "not_found" | "disabled" | "expired" | "used_up" | "already" | "store_trial" };
 
 /**
  * Kodu kullanıcıya uygular.
@@ -102,6 +102,15 @@ export async function redeemCode(userId: string, input: string): Promise<RedeemR
 
   const [row] = await db.select().from(promoCodes).where(eq(promoCodes.code, code)).limit(1);
   if (!row) return { ok: false, reason: "not_found" };
+  /*
+    GRUP KODU BURADA BOZDURULMAZ. `store_trial` kodu gün vermiyor, mağazanın
+    deneme teklifine kapı açıyor (lib/premium/store-trial). Buradan geçseydi
+    ya hiçbir şey olmadan "kullanıldı" sayılır ya da bedava gün yazardı; ikisi
+    de yanlış. Ayrı sebep, çünkü kullanıcının yapacağı şey belli: kodu
+    Premium ekranındaki "Grup kodu" alanına girmek. Durumdan önce bakılıyor:
+    kapalı bir grup kodu da "yanlış kutu" cevabını hak ediyor, "geçersiz" değil.
+  */
+  if (row.kind === "store_trial") return { ok: false, reason: "store_trial" };
   if (row.disabledAt) return { ok: false, reason: "disabled" };
   if (row.expiresAt && row.expiresAt.getTime() <= Date.now()) return { ok: false, reason: "expired" };
 
@@ -145,8 +154,31 @@ export type CodeRow = {
   createdAt: Date;
 };
 
+/**
+ * Bonus kodları — panelin "Promo kodları" listesi.
+ *
+ * YALNIZ `bonus`: grup kodları (store_trial) kendi bölümünde, huni
+ * sayılarıyla listeleniyor (lib/premium/store-trial `listStoreTrialCodes`).
+ * Burada da görünselerdi "gün" sütunu 60 der ve kod gün veriyormuş gibi okunurdu.
+ */
 export async function listCodes(limit = 200): Promise<CodeRow[]> {
-  return db.select().from(promoCodes).orderBy(desc(promoCodes.createdAt)).limit(limit);
+  return db
+    .select({
+      id: promoCodes.id,
+      code: promoCodes.code,
+      days: promoCodes.days,
+      maxUses: promoCodes.maxUses,
+      uses: promoCodes.uses,
+      campaign: promoCodes.campaign,
+      note: promoCodes.note,
+      expiresAt: promoCodes.expiresAt,
+      disabledAt: promoCodes.disabledAt,
+      createdAt: promoCodes.createdAt,
+    })
+    .from(promoCodes)
+    .where(eq(promoCodes.kind, "bonus"))
+    .orderBy(desc(promoCodes.createdAt))
+    .limit(limit);
 }
 
 /** Kod SİLİNMEZ, kapatılır: kullananların geçmişi ve muhasebesi ayakta kalsın. */
@@ -161,6 +193,7 @@ export async function activeCodeCount(): Promise<number> {
     .from(promoCodes)
     .where(
       and(
+        eq(promoCodes.kind, "bonus"),
         isNull(promoCodes.disabledAt),
         sql`${promoCodes.uses} < ${promoCodes.maxUses}`,
         or(isNull(promoCodes.expiresAt), gt(promoCodes.expiresAt, new Date())),

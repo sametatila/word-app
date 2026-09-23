@@ -178,6 +178,7 @@ const MOBIL_ONLY = {
   "/api/premium/status": "premium durumu; web sunucu tarafinda `lib/premium/access` ile okuyor",
   "/api/push/device": "FCM cihaz jetonu; tarayicida karsiligi /api/push/subscribe",
   "/api/turnstile": "site anahtari; web onu sunucuda cizilen sayfaya gomuyor",
+  "/api/premium/trial-code": "grup kodu (2 ay magaza denemesi) YALNIZ Android uygulamasinda uygulaniyor; web karsilama sayfasi (`app/g/[code]`) `peekStoreTrialCode`u sunucuda cagiriyor, iOS yonlendirmesi `app/g/[code]/ios`ta (App Store 3.1.1)",
   /* Önceden `/api/words/...` alt uçlarının web çağrıları bu ucu da "webde
      çağrılıyor" gösteriyordu (alt dizi eşleşmesi); tam yol aranınca göründü. */
   "/api/words": "kelime listesi; web sayfayi sunucuda ciziyor",
@@ -198,6 +199,8 @@ const MOBIL_ONLY_METHOD = {
   "GET /api/me": "web `lib/session`i sunucuda cagiriyor",
   "GET /api/skills/access": "web `lib/premium/skill-access`i sunucuda cagiriyor",
   "GET /api/premium/status": "web `lib/premium/access`i sunucuda cagiriyor",
+  "GET /api/premium/trial-code": "grup kodu on bakisi; web `/g/[code]` sayfasi `peekStoreTrialCode`u sunucuda cagiriyor",
+  "POST /api/premium/trial-code": "grup kodu talebi yalniz Android uygulamasinda (Play teklifi); web satmiyor, iOS 3.1.1 geregi web yonlendirmesinden gidiyor",
   "POST /api/premium/referral": "davet bagi; web `/r/[code]` rotasinda `attachReferral`i SUNUCUDA cagiriyor (sayfa zaten sunucuda, istemciye gidip gelmesi gereksiz). Mobilde sunucu yok, uc cagriliyor.",
   "POST /api/push/device": "FCM cihaz jetonu",
   "DELETE /api/push/device": "FCM cihaz jetonu",

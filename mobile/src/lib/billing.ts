@@ -1,5 +1,5 @@
 import { Platform } from "react-native";
-import Purchases, { type PurchasesPackage } from "react-native-purchases";
+import Purchases, { type CustomerInfo, type PurchasesPackage, type SubscriptionOption } from "react-native-purchases";
 import { REVENUECAT, billingConfigured } from "./billingConfig";
 import { awaitPremiumAfterPurchase, refreshPremium } from "./premium";
 
@@ -73,19 +73,113 @@ export async function getPackages(): Promise<PurchasesPackage[]> {
 }
 
 /**
- * Satın alma. Dönen değer YETKİNİN sunucuda göründüğü anlamına gelir.
+ * Satın almanın SONUCU — ekran her birinde başka bir şey söylüyor (denetim IAP-7).
  *
- * Kullanıcı iptal ederse sessizce false — iptal bir hata değil.
+ *   done        yetki sunucuda görünüyor; paywall kapanır
+ *   processing  mağaza parayı/denemeyi ALDI (SDK yetkiyi aktif görüyor) ama
+ *               webhook henüz sunucuya düşmedi. "Satın alma alındı, birkaç
+ *               saniye içinde açılacak" + arka planda beklemeye devam. Eskiden
+ *               bu durum "Satın alma tamamlanmadı" hatası basıyordu: parası
+ *               çekilmiş kullanıcıya en kötü cümle, ikinci kez satın almaya
+ *               iten cümle.
+ *   pending     ödeme onay bekliyor (Aile Paylaşımı onayı, nakit/kurye ödeme,
+ *               bankanın ek doğrulaması). Hata değil; onaylanınca webhook gelir.
+ *   cancelled   kullanıcı mağaza sayfasını kapattı — SESSİZ, iptal bir hata değil.
+ *   failed      gerçek hata (mağaza reddetti, teklif yok, ağ).
  */
-export async function purchase(pkg: PurchasesPackage): Promise<boolean> {
-  if (!configured) return false;
+export type PurchaseOutcome = "done" | "processing" | "pending" | "cancelled" | "failed";
+
+/**
+ * Mağaza hatasını sonuca çevirir. Kodlar RevenueCat'in `PURCHASES_ERROR_CODE`
+ * sözlüğünden (`PURCHASE_CANCELLED_ERROR` = "1", `PAYMENT_PENDING_ERROR` =
+ * "20"); sabit dizge olarak yazılı çünkü enum SDK'nın yerel modülünden geliyor
+ * ve testte (jest mock'unda) yok — karşılaştırma orada `undefined`a düşerdi.
+ */
+export function purchaseOutcomeOf(err: unknown): PurchaseOutcome {
+  const e = err as { code?: string | number; userCancelled?: boolean | null } | null;
+  const code = e?.code == null ? "" : String(e.code);
+  if (e?.userCancelled || code === "1") return "cancelled";
+  if (code === "20") return "pending";
+  return "failed";
+}
+
+/** SDK'nın müşteri bilgisi yetkiyi aktif gösteriyor mu (sunucu henüz görmese de). */
+function entitlementActive(info: CustomerInfo | null | undefined): boolean {
+  return Boolean(info?.entitlements?.active?.[REVENUECAT.entitlementId]);
+}
+
+/**
+ * Mağaza "tamam" dedikten sonrası — normal satın alma ve grup denemesi ORTAK.
+ *
+ * Yetki sunucuya webhook'la geliyor; önce kısa bir bekleme (`awaitPremiumAfterPurchase`).
+ * Gelmediyse SDK'nın kendi müşteri bilgisine bakılıyor: aktifse satın alma
+ * ALINMIŞ, yalnız teslimat gecikiyor → `processing`. Yetkiyi yine SDK'dan
+ * AÇMIYORUZ (tek kaynak sunucu, dosya başı); yalnız doğru cümleyi seçiyoruz.
+ */
+async function afterStore(info: CustomerInfo | null | undefined): Promise<PurchaseOutcome> {
+  if (await awaitPremiumAfterPurchase()) return "done";
+  return entitlementActive(info) ? "processing" : "failed";
+}
+
+/**
+ * Satın alma. `done` YETKİNİN sunucuda göründüğü anlamına gelir; öteki
+ * sonuçlar `PurchaseOutcome`da.
+ */
+export async function purchase(pkg: PurchasesPackage): Promise<PurchaseOutcome> {
+  if (!configured) return "failed";
+  let info: CustomerInfo | null = null;
   try {
-    await Purchases.purchasePackage(pkg);
-  } catch {
-    return false; // iptal ya da mağaza hatası
+    info = (await Purchases.purchasePackage(pkg)).customerInfo;
+  } catch (e) {
+    return purchaseOutcomeOf(e);
   }
-  // Mağaza tamam dedi; yetkinin webhook'la gelmesini bekliyoruz.
-  return awaitPremiumAfterPurchase();
+  return afterStore(info);
+}
+
+/**
+ * Play'deki grup teklifi (`promo-2m`, etiket sunucudan: `offerTag`).
+ *
+ * Teklif "geliştiricinin belirlediği uygunluk" ile açık: Play onu herkese
+ * göstermiyor, paket listesinde varsayılan seçenek değil. Etiketi taşıyan
+ * seçenek paketin `subscriptionOptions` listesinden bulunuyor. Yoksa null:
+ * ürün bu cihazda teklifi taşımıyor (Play henüz yaymadı, yanlış paket) —
+ * çağıran "teklif şu an görünmüyor" diyor, normal fiyattan satın almaya
+ * SESSİZCE düşmüyor.
+ */
+export function groupTrialOption(pkg: PurchasesPackage, tag: string): SubscriptionOption | null {
+  return pkg.product.subscriptionOptions?.find((o) => o.tags?.includes(tag)) ?? null;
+}
+
+/**
+ * Grup kodu denemesini başlatır (YALNIZ ANDROID — iOS'ta grup kodu uygulamada
+ * yok, App Store Guideline 3.1.1). Sunucu kodu talep edip etiketi verdikten
+ * SONRA çağrılır; sonuç `purchase` ile aynı sözlükte.
+ */
+export async function purchaseGroupTrial(pkg: PurchasesPackage, tag: string): Promise<PurchaseOutcome | "no_offer"> {
+  if (!configured || platform() !== "android") return "failed";
+  const option = groupTrialOption(pkg, tag);
+  if (!option) return "no_offer";
+  let info: CustomerInfo | null = null;
+  try {
+    info = (await Purchases.purchaseSubscriptionOption(option)).customerInfo;
+  } catch (e) {
+    return purchaseOutcomeOf(e);
+  }
+  return afterStore(info);
+}
+
+/**
+ * `processing` sonrası arka plan beklemesi: webhook birkaç saniye, kimi zaman
+ * bir dakika gecikiyor. Ekran açık kaldıkça daha seyrek soruluyor; yetki gelince
+ * true. Satın alma kaybolmuyor — gelmezse bir sonraki açılışta görünür.
+ */
+export async function awaitProcessedPurchase(): Promise<boolean> {
+  for (let i = 0; i < 12; i++) {
+    const s = await refreshPremium();
+    if (s?.premium) return true;
+    await new Promise((r) => setTimeout(r, 3000 + i * 1000));
+  }
+  return false;
 }
 
 /**

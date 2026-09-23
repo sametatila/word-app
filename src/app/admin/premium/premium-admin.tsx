@@ -4,7 +4,7 @@ import { useState, useSyncExternalStore } from "react";
 import { apiFetch } from "@/lib/api-fetch";
 import type { PremiumConfig } from "@/lib/premium/gates";
 import { adminErrorText } from "@/lib/admin-errors";
-import { AdminPage, Linkify, BTN, DANGER, DataTable, Field, FIELD, FIELD_STYLE, PageHeader, Panel, TONE } from "../_ui/ui";
+import { AdminPage, Linkify, BTN, DANGER, DataTable, Field, FIELD, FIELD_AREA, FIELD_STYLE, PageHeader, Panel, TONE } from "../_ui/ui";
 import { TwoStep } from "../_ui/two-step";
 
 type CodeRow = {
@@ -20,6 +20,26 @@ type CodeRow = {
   createdAt: string;
 };
 type Referrer = { userId: string; invited: number };
+/** Grup kodu (mağaza denemesi) satırı — `lib/premium/store-trial` `listStoreTrialCodes`. */
+export type TrialCodeRow = {
+  id: number;
+  code: string;
+  campaign: string | null;
+  group: string | null;
+  maxUses: number;
+  uses: number;
+  expiresAt: string | null;
+  disabledAt: string | null;
+  createdAt: string;
+  claims: number;
+  started: number;
+  converted: number;
+  cancelled: number;
+  expired: number;
+  sandbox: number;
+  iosMonthly: number;
+  iosYearly: number;
+};
 /**
  * Sunucu hata kodları → okunur cümle.
  *
@@ -51,10 +71,14 @@ export function PremiumAdmin({
   config,
   codes,
   referrers,
+  trialCodes,
+  iosReady,
 }: {
   config: PremiumConfig;
   codes: CodeRow[];
   referrers: Referrer[];
+  trialCodes: TrialCodeRow[];
+  iosReady: { monthly: boolean; yearly: boolean };
 }) {
   const [cfg, setCfg] = useState<PremiumConfig>(config);
   const [busy, setBusy] = useState(false);
@@ -196,6 +220,8 @@ export function PremiumAdmin({
           {msg ? <span className="text-strong" role="status" style={{ color: bad ? TONE.bad : TONE.ok }}><Linkify text={msg} /></span> : null}
         </div>
       </div>
+
+      <TrialCodesSection codes={trialCodes} iosReady={iosReady} post={post} busy={busy} />
 
       <CodesSection codes={codes} post={post} busy={busy} />
 
@@ -342,6 +368,170 @@ function CodesSection({
             ) : "",
           ])}
         />
+      </div>
+    </Panel>
+  );
+}
+
+/**
+ * Karşılama adresi SABİT ALAN ADIYLA: Android App Link doğrulaması yalnız
+ * `www.lernomi.app`te (manifest `android:host`). Panel başka bir kökten
+ * açılsa bile gruplara giden bağlantı uygulamayı açabilen adres olmalı.
+ */
+const GROUP_LINK_BASE = "https://www.lernomi.app/g/";
+
+/**
+ * GRUP KODLARI — "2 ay ücretsiz, sonra ücretli" kampanyası (lib/premium/store-trial).
+ *
+ * Kampanya bir kez adlandırılıyor, her satır bir grup ve her gruba bir kod
+ * düşüyor. Kod gün VERMİYOR: kullanıcıyı mağazanın 2 aylık deneme teklifine
+ * götürüyor. Huni iki platformda farklı ve tablo bunu saklamıyor: Android'de
+ * talepten dönüşüme kadar her halka sayılıyor; iOS'ta kod uygulamada girilmiyor
+ * (Guideline 3.1.1), yalnız webden App Store'a yönlendirme sayılabiliyor.
+ */
+function TrialCodesSection({
+  codes,
+  iosReady,
+  post,
+  busy,
+}: {
+  codes: TrialCodeRow[];
+  iosReady: { monthly: boolean; yearly: boolean };
+  post: (b: Record<string, unknown>) => Promise<Record<string, unknown> | null>;
+  busy: boolean;
+}) {
+  const [campaign, setCampaign] = useState("");
+  const [groups, setGroups] = useState("");
+  const [prefix, setPrefix] = useState("");
+  const [maxUses, setMaxUses] = useState(500);
+  const [expires, setExpires] = useState("");
+  const [rows, setRows] = useState(codes);
+  const [copied, setCopied] = useState<string | null>(null);
+
+  async function copy(text: string) {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(text);
+      setTimeout(() => setCopied((c) => (c === text ? null : c)), 1500);
+    } catch {
+      /* pano izni yoksa kullanıcı bağlantıyı elle seçebilir */
+    }
+  }
+
+  const iosLine = iosReady.monthly && iosReady.yearly
+    ? "iPhone yolu açık (App Store teklif kodları env'de tanımlı)."
+    : "iPhone yolu KAPALI: IOS_PROMO2M_CODE_MONTHLY / _YEARLY boş, karşılama sayfası iPhone'da “yakında” diyor.";
+
+  return (
+    <Panel
+      title="Grup kodları — 2 ay ücretsiz (mağaza denemesi)"
+      hint={<>Her gruba ayrı kod. Kod gün vermez: Android’de uygulama Play’in <code>promo-2m</code> teklifini açar; iPhone’da webdeki sayfa Apple’ın teklif kodu sayfasına yönlendirir. Mağaza ödeme yöntemi ister, iptal edilmezse seçilen planla yenilenir. <b>Kampanya ve grup adı karşılama sayfasında herkese görünür.</b> {iosLine}</>}
+    >
+      <Grid>
+        <Txt label="Kampanya adı" v={campaign} on={setCampaign} />
+        <Txt label="Kod öneki (isteğe bağlı, ör. WA)" v={prefix} on={setPrefix} />
+        <Num label="Kod başına kullanım" v={maxUses} on={setMaxUses} />
+        <Field label="Son kullanma (isteğe bağlı)">
+          <input aria-label="Son kullanma" type="date" value={expires} onChange={(e) => setExpires(e.target.value)} className={FIELD} style={FIELD_STYLE} />
+        </Field>
+      </Grid>
+      <Field label="Gruplar — her satıra bir grup" className="mt-3">
+        <textarea
+          aria-label="Gruplar"
+          rows={4}
+          value={groups}
+          onChange={(e) => setGroups(e.target.value)}
+          placeholder={"WA Almanca A1\nTelegram İstanbul"}
+          className={FIELD_AREA}
+          style={FIELD_STYLE}
+        />
+      </Field>
+      <button
+        type="button"
+        disabled={busy || !campaign.trim() || !groups.trim()}
+        onClick={async () => {
+          const r = await post({
+            action: "create_trial_codes",
+            campaign,
+            groups: groups.split("\n"),
+            prefix,
+            maxUses,
+            // Günün SONU: "30 Eylül'e kadar" diyen yönetici 30 Eylül'ü de kastediyor.
+            expiresAt: expires ? new Date(`${expires}T23:59:59`).toISOString() : null,
+          });
+          if (r?.list) {
+            setRows(r.list as TrialCodeRow[]);
+            setGroups("");
+          }
+        }}
+        className={`${BTN.primary} mt-3`}
+      >
+        Grup kodlarını üret
+      </button>
+
+      <div className="mt-4">
+        <DataTable
+          empty="Henüz grup kodu yok."
+          head={[
+            "Grup",
+            "Kod · bağlantı",
+            { label: "Kullanım", align: "right" },
+            { label: "Talep", align: "right" },
+            { label: "Deneme", align: "right" },
+            { label: "Ücretli", align: "right" },
+            { label: "İptal", align: "right" },
+            { label: "iOS aylık/yıllık", align: "right" },
+            "Durum",
+            "",
+          ]}
+          rows={rows.map((c) => {
+            const link = GROUP_LINK_BASE + c.code;
+            return [
+              <span key="g">
+                {c.group ?? "—"}
+                <span className="muted block text-caption">{c.campaign ?? ""}</span>
+              </span>,
+              <span key="c" className="flex flex-col gap-1">
+                <span className="font-mono">{c.code}</span>
+                <button type="button" onClick={() => void copy(link)} className={`${BTN.small} self-start`}>
+                  {copied === link ? "Kopyalandı" : "Bağlantıyı kopyala"}
+                </button>
+              </span>,
+              `${c.uses}/${c.maxUses}`,
+              c.claims,
+              <span key="s">
+                {c.started}
+                {c.sandbox > 0 ? <span className="muted block text-caption">test: {c.sandbox}</span> : null}
+              </span>,
+              c.converted,
+              c.cancelled,
+              `${c.iosMonthly}/${c.iosYearly}`,
+              c.disabledAt ? <span key="d" style={{ color: TONE.bad }}>kapalı</span> : <span key="d" style={{ color: TONE.ok }}>açık</span>,
+              <button
+                key="b"
+                type="button"
+                disabled={busy}
+                onClick={async () => {
+                  const next = !c.disabledAt;
+                  const r = await post({ action: "toggle_code", id: c.id, disabled: next });
+                  if (r?.ok) {
+                    setRows((prev) => prev.map((x) => (x.id === c.id ? { ...x, disabledAt: next ? new Date().toISOString() : null } : x)));
+                  }
+                }}
+                className={BTN.small}
+                style={c.disabledAt ? undefined : DANGER}
+              >
+                {c.disabledAt ? "Aç" : "Kapat"}
+              </button>,
+            ];
+          })}
+        />
+        <p className="muted mt-2 text-caption">
+          Talep → Deneme → Ücretli → İptal <b>yalnız Android</b> (uygulama içi kod). iOS sütunu
+          webden App Store’a yönlendirme tıklaması: Apple webhook’ta yalnız teklifin adını
+          bildirdiği için iPhone’daki deneme ve dönüşüm gruba yazılamıyor; toplamı
+          /admin/revenue’da. “test” = TestFlight / Play iç test (sandbox), üst sayılara girmiyor.
+        </p>
       </div>
     </Panel>
   );

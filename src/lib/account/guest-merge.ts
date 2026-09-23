@@ -313,6 +313,16 @@ function mergeSteps(G: string, T: string): { table: string; statements: SQL[] }[
         sql`update promo_redemptions set user_id = ${T} where user_id = ${G}`,
       ],
     },
+    /* Grup kodu talebi: misafir talep EDEMİYOR (uç ve `claimStoreTrial` hesap
+       istiyor), yani bugün satır olmaz. Kural yine de promo kullanımıyla aynı:
+       hesapta aynı kodun talebi varsa misafirinki düşer, yoksa taşınır. */
+    {
+      table: "store_trial_claims",
+      statements: [
+        sql`delete from store_trial_claims g using store_trial_claims t where g.user_id = ${G} and t.user_id = ${T} and t.code_id = g.code_id`,
+        sql`update store_trial_claims set user_id = ${T} where user_id = ${G}`,
+      ],
+    },
     { table: "premium_grants", statements: [sql`update premium_grants set user_id = ${T} where user_id = ${G}`] },
     /* Mağaza olay defteri: misafir satın alamıyor ama RevenueCat misafir kimliğiyle
        olay yollayabilir; olay hesaba taşınıyor. */

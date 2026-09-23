@@ -1469,6 +1469,15 @@ export const entitlements = pgTable("entitlements", {
    * ödemeye döndü" sorusunun tek cevabı bu sütun.
    */
   storePaidAt: timestamp("store_paid_at", { withTimezone: true }),
+  /**
+   * production | sandbox — son mağaza olayının ortamı. null = eski satır (üretim).
+   *
+   * SANDBOX ARTIK YETKİ YAZIYOR (denetim IAP-1): TestFlight ve Play iç test
+   * satın almaları premium açmazsa test eden kişi ödeme akışını hiç
+   * doğrulayamıyor. Karşılığında satır işaretleniyor ve gelir/abone sayıları
+   * (lib/premium/revenue) bu sütunla sandbox'ı dışarıda bırakıyor.
+   */
+  storeEnvironment: text("store_environment"),
   /** Harcanmamış bonus bakiyesi (dakika). Promo kodu + elle verilen hediye. */
   bonusMinutes: integer("bonus_minutes").notNull().default(0),
   /** Şu an çalışan bonus penceresinin bitişi. null/geçmiş = bonus çalışmıyor. */
@@ -1539,6 +1548,27 @@ export const promoCodes = pgTable(
     /** Toplu üretimde grup adı — "instagram-eylul" gibi; raporlama buradan. */
     campaign: text("campaign"),
     note: text("note"),
+    /**
+     * bonus | store_trial.
+     *
+     * `bonus` bizim verdiğimiz süre (bakiyeye gün yazar, `redeemCode`).
+     * `store_trial` MAĞAZANIN deneme teklifine kapı açar: gün vermez, kullanıcı
+     * mağazada ödeme yöntemi ekleyip 2 aylık denemeyi başlatır ve iptal etmezse
+     * abonelik ücretliye döner (lib/premium/store-trial). İki tür aynı tabloda
+     * çünkü kod alanı, sayaç yarışı, kapatma ve benzersizlik birebir aynı;
+     * ayrı tablo aynı kodun iki türde birden var olmasına izin verirdi.
+     * `days` store_trial'da yalnız bilgi (60).
+     */
+    kind: text("kind").notNull().default("bonus"),
+    /**
+     * store_trial kodunun DAĞITILDIĞI GRUP ("WA Almanca A1", "Telegram İstanbul").
+     *
+     * `note` yerine ayrı sütun: not yöneticinin serbest iç notu ve hiçbir yerde
+     * kullanıcıya gösterilmiyor; grup etiketi ise karşılama sayfasında
+     * (`/g/<KOD>`) görünüyor. İkisi aynı alanda dursaydı bir iç not bir gün
+     * herkese açık sayfaya sızardı. Kampanya adı `campaign`da kalıyor.
+     */
+    groupLabel: text("group_label"),
     createdBy: text("created_by"),
     /** Doldurulmuşsa kod kapalı; silmek yerine kapatılıyor ki geçmiş okunabilsin. */
     disabledAt: timestamp("disabled_at", { withTimezone: true }),
@@ -1567,6 +1597,73 @@ export const promoRedemptions = pgTable(
     uniqueIndex("promo_redemptions_once_idx").on(t.codeId, t.userId),
     index("promo_redemptions_user_idx").on(t.userId),
   ],
+);
+
+/**
+ * Mağaza denemesi kodu talepleri — grup kodunun hunisi.
+ *
+ * Bir satır = bir kullanıcının bir `store_trial` kodunu talep etmesi. Kod
+ * yetki VERMİYOR; yetki mağazadan webhook'la geliyor. Bu tablo yalnız "hangi
+ * grup kaç deneme başlattı, kaçı ücretliye döndü" sorusunu cevaplıyor, o
+ * yüzden damgalar webhook'tan doluyor (lib/premium/store-trial
+ * `recordStoreTrialEvent`):
+ *
+ *   claimed_at   kullanıcı kodu girdi ve mağazaya yollandı
+ *   started_at   mağaza deneme satın almasını bildirdi (INITIAL_PURCHASE, TRIAL)
+ *   converted_at deneme ücretliye döndü (ilk ücretli yenileme)
+ *   cancelled_at otomatik yenileme kapatıldı (geri alınırsa boşalır)
+ *   expired_at   abonelik bitti
+ *
+ * (kod, kullanıcı) benzersiz: aynı kişi aynı kodu iki kez saydıramaz.
+ * `store_ref` mağazadaki abonelik kimliği; sonraki olaylar denemeyi başlatan
+ * aboneliğe bununla eşleniyor, kullanıcının başka bir aboneliğine değil.
+ */
+export const storeTrialClaims = pgTable(
+  "store_trial_claims",
+  {
+    id: serial("id").primaryKey(),
+    codeId: integer("code_id").notNull(),
+    userId: text("user_id").notNull(),
+    /** ios | android */
+    platform: text("platform").notNull(),
+    /** monthly | yearly */
+    plan: text("plan").notNull(),
+    claimedAt: timestamp("claimed_at", { withTimezone: true }).notNull().defaultNow(),
+    startedAt: timestamp("started_at", { withTimezone: true }),
+    convertedAt: timestamp("converted_at", { withTimezone: true }),
+    cancelledAt: timestamp("cancelled_at", { withTimezone: true }),
+    expiredAt: timestamp("expired_at", { withTimezone: true }),
+    storeRef: text("store_ref"),
+    /** production | sandbox — denemeyi başlatan olayın ortamı; sayımlar sandbox'ı ayırıyor. */
+    environment: text("environment"),
+  },
+  (t) => [
+    uniqueIndex("store_trial_claims_once_idx").on(t.codeId, t.userId),
+    index("store_trial_claims_user_idx").on(t.userId),
+  ],
+);
+
+/**
+ * iOS grup kodu yönlendirmeleri — ANONİM tıklama sayımı.
+ *
+ * iOS'ta grup kodu uygulamada girilmiyor (App Store Guideline 3.1.1): iPhone
+ * ziyaretçisi webdeki `/g/<KOD>` sayfasından Apple'ın teklif kodu sayfasına
+ * yönlendiriliyor (`/g/<KOD>/ios`). Kullanıcı kimliği yok (ziyaretçi çoğu zaman
+ * girişsiz) ve dönüşüm gruba yazılamıyor, çünkü Apple webhook'ta yalnız teklifin
+ * adını bildiriyor. Bu tablo iOS'ta gruba yazılabilen TEK halka.
+ */
+export const storeTrialClicks = pgTable(
+  "store_trial_clicks",
+  {
+    id: serial("id").primaryKey(),
+    codeId: integer("code_id").notNull(),
+    /** Bugün yalnız ios; sütun, yarın başka bir web yönlendirmesi eklenirse diye. */
+    platform: text("platform").notNull(),
+    /** monthly | yearly */
+    plan: text("plan").notNull(),
+    clickedAt: timestamp("clicked_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("store_trial_clicks_code_idx").on(t.codeId)],
 );
 
 /**

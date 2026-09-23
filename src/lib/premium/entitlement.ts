@@ -61,6 +61,7 @@ const emptyRow = (): Omit<Row, "userId"> => ({
   storeState: null,
   storeRef: null,
   storePaidAt: null,
+  storeEnvironment: null,
   bonusMinutes: 0,
   bonusUntil: null,
   updatedAt: new Date(),
@@ -288,7 +289,7 @@ export async function applyStoreEvent(ev: StoreEvent): Promise<{ applied: boolea
           until: storeUntil,
           ref: ev.eventId,
           actor: ev.provider,
-          note: `${ev.state}${ev.productId ? ` · ${ev.productId}` : ""}${ev.paid ? " · ödendi" : ""}`,
+          note: `${ev.state}${ev.productId ? ` · ${ev.productId}` : ""}${ev.paid ? " · ödendi" : ""}${ev.sandbox ? " · sandbox" : ""}`,
         })
         .onConflictDoNothing()
         .returning({ id: premiumGrants.id });
@@ -303,6 +304,8 @@ export async function applyStoreEvent(ev: StoreEvent): Promise<{ applied: boolea
         storeState: ev.state,
         storeRef: ev.ref,
         storePaidAt,
+        // Son olayın ortamı; gelir sayımları sandbox satırını dışarıda bırakıyor.
+        storeEnvironment: ev.sandbox ? "sandbox" : "production",
         updatedAt: new Date(),
       };
       await tx
@@ -367,6 +370,7 @@ export async function applyStoreTransfer(tr: StoreTransfer): Promise<{ applied: 
         storeState: source.storeState,
         storeRef: source.storeRef,
         storePaidAt: toRow?.storePaidAt ?? source.storePaidAt,
+        storeEnvironment: source.storeEnvironment,
         updatedAt: new Date(),
       };
       await tx

@@ -56,6 +56,7 @@
     "check:pairs": "npm run lessons:apply && npm run lessons:apply-de && tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-pairs.ts",
     "test:legal-db": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-legal-db.ts",
     "test:entitlement": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-entitlement.ts",
+    "test:store-trial": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-store-trial.ts",
     "test:consent": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-consent.ts",
     "test:push-sql": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-push-sql.ts",
     "test:guest-merge": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-guest-merge.ts",

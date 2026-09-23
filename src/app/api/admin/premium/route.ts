@@ -3,6 +3,7 @@ import { adminGate, adminWriteGate, logAdminAction, type AdminWriter } from "@/l
 import { sameOrigin } from "@/lib/auth/origin";
 import { savePremiumConfig, premiumConfig, grantPremiumDays, revokeEntitlement, findPremiumAccount } from "@/lib/premium";
 import { createCodes, listCodes, setCodeDisabled } from "@/lib/premium/promo";
+import { createStoreTrialCodes, listStoreTrialCodes } from "@/lib/premium/store-trial";
 import { topReferrers } from "@/lib/premium/referral";
 
 export const dynamic = "force-dynamic";
@@ -59,6 +60,7 @@ export async function POST(req: Request) {
       ...(peek.reason ? { reason: String(peek.reason).slice(0, 120) } : {}),
       ...(peek.note ? { note: String(peek.note).slice(0, 120) } : {}),
       ...(peek.audience ? { audience: peek.audience } : {}),
+      ...(peek.campaign ? { campaign: String(peek.campaign).slice(0, 80) } : {}),
     });
   }
   return res;
@@ -97,6 +99,25 @@ async function handle(req: Request, gate: { ok: true; email: string }): Promise<
           createdBy: gate.email,
         });
         return NextResponse.json({ ok: true, codes });
+      }
+      /*
+        GRUP KODLARI (mağaza denemesi) — kampanya başına, grup başına bir kod.
+        Gün vermiyorlar (lib/premium/store-trial); kapatma `toggle_code` ile
+        aynı yol, çünkü ikisi de `promo_codes` satırı.
+      */
+      case "create_trial_codes": {
+        const groups = Array.isArray(body.groups) ? body.groups.map(String) : String(body.groups ?? "").split("\n");
+        const campaign = String(body.campaign ?? "").trim();
+        if (!campaign || !groups.some((g) => g.trim())) return NextResponse.json({ error: "bad_input" }, { status: 400 });
+        const codes = await createStoreTrialCodes({
+          campaign,
+          groups,
+          prefix: (body.prefix as string) || null,
+          maxUses: Number(body.maxUses ?? 500),
+          expiresAt: body.expiresAt ? new Date(String(body.expiresAt)) : null,
+          createdBy: gate.email,
+        });
+        return NextResponse.json({ ok: true, codes, list: await listStoreTrialCodes() });
       }
       case "toggle_code": {
         await setCodeDisabled(Number(body.id), Boolean(body.disabled));

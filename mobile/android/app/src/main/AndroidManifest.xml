@@ -106,6 +106,13 @@
                  yolluyor. Kuruluysa uygulamada paywall açılır, değilse sunucu
                  mağazaya yönlendirir (src/app/get/[target]). -->
             <data android:scheme="https" android:host="www.lernomi.app" android:path="/get/premium" />
+            <!-- GRUP KODU ("2 ay ücretsiz" kampanyası): paywall kod alanı dolu
+                 açılır (lib/deepLink kind "group"). YALNIZ ANDROID'DE iddia
+                 ediliyor: iOS'ta kendi kodumuzla içerik açmak App Store
+                 Guideline 3.1.1'e aykırı, iOS beyanı (AASA) bu yolu bilerek
+                 içermiyor ve iPhone'da bağlantı web sayfasında kalıyor.
+                 Kod değişken olduğu için `pathPrefix`. -->
+            <data android:scheme="https" android:host="www.lernomi.app" android:pathPrefix="/g/" />
         </intent-filter>
       </activity>
       <service

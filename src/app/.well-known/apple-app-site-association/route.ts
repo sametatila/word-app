@@ -72,6 +72,16 @@ export const dynamic = "force-dynamic";
  * kuruluysa paywall'ı açıyor (`parseDeepLink` kind "paywall"), değilse aynı
  * adres sunucuda mağaza sayfasına yönlendiriyor (`app/get/[target]`).
  */
+/**
+ * BİLEREK OLMAYAN YOL: `/g/<KOD>` (grup kodu, "2 ay ücretsiz" kampanyası).
+ * Android manifestosu onu iddia ediyor, burası ETMİYOR. iOS uygulaması kendi
+ * koduyla içerik açamaz (App Store Guideline 3.1.1); iPhone'da bağlantı
+ * Safari'de web sayfasında kalıyor ve oradan Apple'ın KENDİ teklif kodu
+ * sayfasına gidiliyor (`app/g/[code]`). Buraya eklenirse bağlantı iOS
+ * uygulamasını açar ve uygulama onu tanımıyor (`parseDeepLink` iOS'ta null):
+ * kullanıcı boş bir ekranda kalır, üstelik inceleme 3.1.1 gerekçesiyle
+ * reddeder. `check:parity` bu yolun iOS'ta OLMADIĞINI da ölçüyor.
+ */
 export const APP_LINK_PATHS = ["/reset-password", "/api/auth/verify-email", "/auth/app", "/u/", "/r/", "/get/premium"] as const;
 
 export async function GET() {

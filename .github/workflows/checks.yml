@@ -460,6 +460,9 @@ jobs:
       # ilgili olduğu için geri alınması pahalıdır. Boş veritabanına bütün
       # migration'lar uygulanıp şema kodla karşılaştırılıyor: migration yazmayı
       # unutmak da burada düşüyor.
+      # `test:store-trial` grup kodu (2 ay ücretsiz mağaza denemesi): talebin hak
+      # sayacı yarışı, hesap başına tek deneme, iOS'un reddi (3.1.1) ve webhook
+      # hunisinin damgaları — hepsi koşullu SQL, yalnız gerçek veritabanında görünür.
       # `test:legal-db` de burada: hukuki metinler artık panelden düzenleniyor ve
       # o yolun her adımı yayına çıkmış bir sözleşme sayfasını değiştiriyor —
       # bozuk girdinin geri çevrildiği, "varsayılana dön"ün gerçekten döndüğü ve
@@ -483,6 +486,7 @@ jobs:
           npx tsx scripts/migrate-all.ts
           npx tsx scripts/schema-check.ts
           npm run test:entitlement
+          npm run test:store-trial
           npm run test:consent
           npm run test:push-sql
           npm run test:guest-merge

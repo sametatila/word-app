@@ -68,7 +68,8 @@ export type RootStackParams = {
    * görüyor. Web karşılığı `/premium?ref=…`, cümleler de aynı.
    */
   /** `from: "web"` — webdeki satın alma yönlendirmesinden geldi (`/get/premium`). */
-  Paywall: { ref?: string; from?: "web" } | undefined;
+  /* `group`: `/g/<KOD>` bağlantısından gelen grup kodu (yalnız Android, bkz. lib/deepLink). */
+  Paywall: { ref?: string; from?: "web"; group?: string } | undefined;
   Unit: { index: number; level: string; theme: string; items?: { id: string; kind: string; title: string; titleTr?: string | null; done: boolean; playable: boolean; attempted?: boolean; open?: boolean; ref?: string | null }[] };
   Lesson: { id: string };
   /** Rol yapma sınavı (WP-22): aynı sahne, yardım yok, 5 tur, puanlı. */
