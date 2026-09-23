@@ -53,6 +53,11 @@ target 'Lernomi' do
     #   Google'a gidiyor. Play'in tanımı Firebase installation ID'yi bu kutuya
     #   yazdığı için iki mağaza aynı şeyi söylesin diye burada da beyan ediliyor.
     #   Reklam kimliği toplanmıyor.
+    # - NSPrivacyCollectedDataTypeCrashData + ...OtherDiagnosticData: yakalanmayan
+    #   JS hataları (mesaj, yığın, ekran adı, uygulama sürümü) kendi sunucumuza
+    #   gidiyor (`src/lib/errorReport` → `/api/client-errors`). Hesaba bağlanmıyor
+    #   (Linked: false), üçüncü tarafa gitmiyor; amaç uygulamanın çalışması.
+    #   Crashlytics 2026-09-23'te kaldırıldı, bu beyan birinci taraf raporlar için.
     react_native_post_install(
       installer,
       config[:reactNativePath],
