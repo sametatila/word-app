@@ -27,6 +27,8 @@ import { setSessionCookie } from "better-auth/cookies";
 import { eq } from "drizzle-orm";
 import { TWO_FACTOR_ALLOWED_ATTEMPTS, TWO_FACTOR_CODE_DIGITS, TWO_FACTOR_CODE_MINUTES, TWO_FACTOR_TRUST_DAYS } from "@/lib/auth/two-factor-config";
 import { SESSION_MAX_DAYS } from "@/lib/auth/session-config";
+import { guestAttestationMode, startGuestAttestation } from "@/lib/auth/play-integrity";
+import { CLIENT_HEADER } from "@/lib/app-control-shared";
 
 /**
  * Yanıttaki `Set-Cookie` satırlarından verilen adlarla (ve parçalı
@@ -703,6 +705,25 @@ export const auth = betterAuth({
      * koduna bakmaktan sağlam, çünkü kancaya durum kodu gelmiyor.
      */
     after: createAuthMiddleware(async (ctx) => {
+      /*
+        MİSAFİR AÇILIŞINDA CİHAZ DOĞRULAMASI — KAYIT KİPİ (lib/auth/play-integrity).
+        Yalnız kimlik gerçekten açıldıysa ve kip açıksa; iş başlatılıp
+        BEKLENMİYOR, sonucu ne olursa olsun misafir açılışı değişmiyor.
+        Engelleme (Aşama 3) geldiğinde karar `before`a taşınacak.
+      */
+      if (ctx.path === "/sign-in/anonymous") {
+        const mode = guestAttestationMode();
+        const uid = ctx.context.newSession?.user.id;
+        if (mode !== "off" && uid) {
+          startGuestAttestation({
+            userId: uid,
+            mode,
+            clientHeader: ctx.headers?.get(CLIENT_HEADER) ?? ctx.request?.headers.get(CLIENT_HEADER),
+            body: ctx.body,
+          });
+        }
+        return;
+      }
       /*
         DOĞRULANAN MİSAFİRİN ÇEREZİ TAZELENİYOR. `/verify-email` oturumu
         doğrulamadan ÖNCE okunan kullanıcıyla yazıyor; çerezdeki kullanıcı
