@@ -51,7 +51,7 @@ const FIRST_TARGET = 160;
  * tarayıcı sentezinden devralındı; ses kaynağı değişse de gerekçesi aynı.
  */
 export function cleanForSpeech(text: string): string {
-  return (
+  const out = (
     text
       /* İSTEĞE BAĞLI ÖN EK BİRLEŞİYOR, ATILMIYOR. "(Back-)Ofen" başlığında
          parantez bir açıklama değil, kelimenin parçası: genel parantez silme
@@ -77,6 +77,10 @@ export function cleanForSpeech(text: string): string {
       .replace(/\s+/g, " ")
       .trim()
   );
+  /* HARFSİZ PARÇA OKUNMUYOR. Yürüyüş modunun ipucu cümlesi hedef sözcüğün çevresinde bölünüyor ("…sag" +
+     "weiter" + "."); son parça yalnız bir nokta kalıyordu ve seslendirmeye gidiyordu — motor boş bir ses ya da
+     "dot" üretiyordu (2026-09-23, kulak kontrolü). Harf ya da rakam yoksa okunacak bir şey yok. */
+  return /[\p{L}\p{N}]/u.test(out) ? out : "";
 }
 
 /** Cümle sonu sayılan noktalama — bölme öncelikle burada yapılıyor. */
