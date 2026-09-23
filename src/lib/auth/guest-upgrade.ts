@@ -68,7 +68,8 @@ export const guestUpgrade = () =>
         const hash = await ctx.context.password.hash(password);
         const updated = await ctx.context.internalAdapter.updateUser(guest.id, {
           email,
-          name: name || email.split("@")[0],
+          // E-posta öneki ad yapılmıyor: görünen ad herkese açık (içerik denetimi CNT-3).
+          name: name || "",
           emailVerified: false,
           ...(verify ? {} : { isAnonymous: false }),
         });

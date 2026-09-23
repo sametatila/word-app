@@ -111,7 +111,12 @@ export async function signIn(email: string, password: string, captchaToken?: str
 }
 
 export async function signUp(name: string, email: string, password: string, captchaToken?: string | null, guest = false): Promise<AuthOutcome> {
-  const body = { email, password, name: name.trim() || email.split("@")[0] };
+  /* Ad boşsa BOŞ gidiyor (web `auth-form` ile aynı). E-postanın "@" öncesi
+     eskiden görünen ad oluyordu ve lig tablosunda herkese açık görünüyordu:
+     adresin yarısını başkalarına göstermek demekti (içerik denetimi CNT-3).
+     Adsız profil sosyal ekranlarda kullanıcı adıyla ya da nötr yedekle
+     görünüyor; ad Ayarlar'dan sonradan eklenebiliyor. */
+  const body = { email, password, name: name.trim() };
   try {
     /* MİSAFİR YERİNDE HESAP OLUYOR (sunucu lib/auth/guest-upgrade): kimlik aynı
        kalıyor, satır taşınmıyor; yanıt kayıtla aynı biçimde. Uç henüz yayında

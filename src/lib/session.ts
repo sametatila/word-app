@@ -10,6 +10,8 @@ import { chatConfigured } from "@/lib/chat-providers";
 import { FREQUENT_ERROR_WEIGHT, frequentErrorTypes } from "@/lib/error-analytics";
 import { grade, schedule, xpForQuality, type SrsState, MASTERED_DAYS } from "@/lib/srs";
 import { nextStreak, shiftDay } from "@/lib/award";
+import { displayNameAllowed } from "@/lib/moderation";
+import { PROFILE_LIMITS } from "@/lib/profile-limits";
 import { onActivityAwarded } from "@/lib/social/hooks";
 import { ANSWERS_DAILY_XP_CAP, cappedDailyXp, xpForChallengeRecord, xpForWager } from "@/lib/xp";
 import { firstExample } from "@/lib/example";
@@ -430,27 +432,45 @@ function pickNewWords(
  * — örneğin `/api/profile` GET). O sırada `displayName` null kalıyor ve bir
  * daha hiç dolmuyordu: hesabın adı belliyken profil isimsiz kalıyordu.
  * Onboarding ismi artık sormadığı için bu boşluğu kapatan tek yer burası.
+ *
+ * AD SÜZGEÇTEN GEÇİYOR (içerik denetimi CNT-3). Bu ad lig tablosunda ve
+ * arkadaş listesinde başkalarına görünüyor; süzgeç eskiden yalnız
+ * `/api/profile`teydi ve kayıt formundan, misafir yükseltmeden ya da
+ * Google/Apple'dan gelen ad doğrudan yazılıyordu. Takılan ad YAZILMIYOR
+ * (null kalıyor): arayüz adsız profilde kullanıcı adını / nötr bir yedeği
+ * gösteriyor, kullanıcı profilinden süzgeçten geçen bir ad seçebiliyor.
  */
 export async function ensureProfile(userId: string, name?: string | null) {
+  const clean = publicDisplayName(name);
   const [existing] = await db.select().from(profiles).where(eq(profiles.userId, userId));
   if (existing) {
-    const clean = name?.trim().replace(/\s+/g, " ") ?? "";
-    if (existing.displayName || clean.length < 2) return existing;
+    if (existing.displayName || !clean) return existing;
     const [filled] = await db
       .update(profiles)
-      .set({ displayName: clean.slice(0, 40) })
+      .set({ displayName: clean })
       .where(eq(profiles.userId, userId))
       .returning();
     return filled ?? existing;
   }
   const [created] = await db
     .insert(profiles)
-    .values({ userId, displayName: name ?? null })
+    .values({ userId, displayName: clean })
     .onConflictDoNothing()
     .returning();
   if (created) return created;
   const [again] = await db.select().from(profiles).where(eq(profiles.userId, userId));
   return again;
+}
+
+/**
+ * Kimlik sağlayıcısından / kayıt formundan gelen adın herkese açık hâli:
+ * boşluk sadeleşir, `/api/profile`teki sınırla kırpılır, iki karakterden
+ * kısası ve moderasyona takılanı `null` olur.
+ */
+export function publicDisplayName(name: string | null | undefined): string | null {
+  const clean = (name ?? "").trim().replace(/\s+/g, " ").slice(0, PROFILE_LIMITS.displayNameMax);
+  if (clean.length < 2) return null;
+  return displayNameAllowed(clean) ? clean : null;
 }
 
 /**

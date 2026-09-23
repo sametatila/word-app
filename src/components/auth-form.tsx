@@ -109,7 +109,11 @@ export function AuthForm({
 
       const res = await authApi<SignUpResponse>(
         "sign-up/email",
-        { email, password, name: name.trim() || email.split("@")[0] },
+        /* Ad boşsa BOŞ gidiyor: e-postanın "@" öncesi eskiden görünen ad
+           oluyordu ve lig tablosunda herkese açık görünüyordu (içerik
+           denetimi CNT-3). Adsız profil sosyal ekranlarda kullanıcı adıyla
+           ya da nötr "İsimsiz" yedeğiyle görünüyor. */
+        { email, password, name: name.trim() },
         captchaToken,
       );
       if (!res.ok) {
