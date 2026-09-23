@@ -21,6 +21,8 @@
  *   walk_skip     yürüyüş modunun "geç" sözcüğü (ipucunda hedef dilde okunuyor)
  *   first_word    girişten önceki ısınmanın beş kelimesi (`lib/first-words`, elle yazılmış liste)
  *   voice_sample  ayarlardaki ses önizlemesinin cümlesi (`voice-picker` SAMPLE; mobil kopyası parite kapısında)
+ *   walk_*        yürüyüş modunun anlatım cümleleri (`tts-walk-jobs.ts`; tur özetleri 0–20 bütün birleşimler).
+ *                 Anlatım `k=n` ile gidiyor: eksikse Edge karşılığı çalar, susmaz — ama karakter tutarlılığı için sayılıyor.
  *
  * Boşluklu cümle BİLEREK yok: mobildeki hoparlörü boşluğu atlayıp bozuk bir cümle okuyordu ("Sind der neue
  * Lehrer?") ve webde hiç yoktu; 2026-09-23'te kaldırıldı. Tam cümle cevaptan sonra `cloze` olarak okunuyor.
@@ -40,6 +42,7 @@ import { courseOrDefault, NATIVE_LANGS, PAIR_READY } from "../src/lib/courses";
 import { OWN_CHARACTERS } from "../src/lib/tts/voices";
 import { skipWord } from "../src/lib/voice-intent";
 import { firstWordsFor } from "../src/lib/first-words";
+import { walkLines } from "./tts-walk-jobs";
 
 /** Kursu hangi anadiller öğreniyor — yürüyüş modunun anlam sesi bu dillerde. */
 const nativesFor = (course: string) => NATIVE_LANGS.filter((l) => PAIR_READY[l]?.includes(course as never));
@@ -112,6 +115,8 @@ for (const course of ["de", "en"] as const) {
     }
   }
 }
+
+for (const l of walkLines()) extra("de", l.field.replace(/[^\w]/g, "_"), l.lang, l.text);
 
 // Önizleme cümlesi bileşenden okunuyor (bileşeni içe aktarmak istemci kodunu da çekerdi).
 const picker = readFileSync(path.join(__dirname, "../src/components/voice-picker.tsx"), "utf8");
