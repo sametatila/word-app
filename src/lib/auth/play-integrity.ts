@@ -61,7 +61,7 @@ export function guestAttestationMode(): GuestAttestationMode {
   if (mode === "off" || !process.env.PLAY_INTEGRITY_KEY_PATH) return "off";
   if (mode === "enforce" && !warnedEnforce) {
     warnedEnforce = true;
-    console.warn("[attest] GUEST_ATTESTATION=enforce henüz yok (Aşama 3); kayıt kipi gibi çalışıyor, kimse reddedilmiyor");
+    console.warn("[attest] GUEST_ATTESTATION=enforce is not implemented yet (stage 3); running as log, nobody is rejected");
   }
   return mode;
 }
