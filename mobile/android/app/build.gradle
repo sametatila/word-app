@@ -160,7 +160,7 @@ android {
           görünen bir etkisi yok. versionName ayrı bir eksen, o kullanıcıya
           görünüyor ve ürün sürümünü anlatıyor.
         */
-        versionCode 5
+        versionCode 6
         versionName "1.0.0"
     }
     signingConfigs {
