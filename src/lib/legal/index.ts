@@ -112,6 +112,14 @@ export const LEGAL_ENTITY = {
   publisherAddress: "Akpınar Mah. Akpınar Merkez Küme Evler No:6, Tufanbeyli, Adana, Türkiye",
   /** Yayıncının bağlı olduğu vergi dairesi — ticaret sicil/MERSİS yok, tacir değil. */
   publisherTaxOffice: "Tufanbeyli Vergi Dairesi",
+  /**
+   * Google Play'deki GÖRÜNEN geliştirici adı. Play bireysel hesapta da ayrı bir
+   * geliştirici adı kullanmaya izin veriyor ve hesap "RumpusKit" adıyla açık
+   * (Samet, 2026-09-23). App Store'da bireysel hesap satıcı olarak kişinin kendi
+   * adını gösteriyor (Musa Atila), orada ayrı bir ad YOK. Mağaza sayfasındaki
+   * ad ile metindeki tarafın bağı kurulabilsin diye kimlik bloğunda basılıyor.
+   */
+  publisherPlayName: "RumpusKit",
 
   /**
    * KVKK veri sorumlusu temsilcisi: Türkiye'de yerleşik olmayan veri sorumlusu

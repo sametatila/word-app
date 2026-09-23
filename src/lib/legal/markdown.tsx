@@ -132,19 +132,19 @@ function entityValue(cfg: LegalConfig, key: string): ReactNode {
 const ENTITY_LABELS: Record<LegalLocale, Record<string, string>> = {
   tr: {
     controller: "Veri sorumlusu", publisher: "Yayıncı ve veri işleyen",
-    address: "Yazışma adresi", taxOffice: "Vergi dairesi",
+    address: "Yazışma adresi", taxOffice: "Vergi dairesi", playName: "Google Play'deki geliştirici adı",
     trRep: "Türkiye veri sorumlusu temsilcisi (KVKK)",
     privacy: "KVKK başvuruları", privacyEu: "GDPR başvuruları", support: "Destek",
   },
   en: {
     controller: "Data controller", publisher: "Publisher and processor",
-    address: "Postal address", taxOffice: "Tax office",
+    address: "Postal address", taxOffice: "Tax office", playName: "Developer name on Google Play",
     trRep: "Representative in Türkiye (KVKK)",
     privacy: "KVKK requests (Türkiye)", privacyEu: "GDPR / UK GDPR requests", support: "Support",
   },
   de: {
     controller: "Verantwortlicher", publisher: "Herausgeber und Auftragsverarbeiter",
-    address: "Postanschrift", taxOffice: "Finanzamt",
+    address: "Postanschrift", taxOffice: "Finanzamt", playName: "Entwicklername bei Google Play",
     trRep: "Vertreter in der Türkei (KVKK)",
     privacy: "KVKK-Anträge (Türkei)", privacyEu: "DSGVO- / UK-GDPR-Anträge", support: "Support",
   },
@@ -170,6 +170,7 @@ function EntityBlock({ cfg, locale, party, contact }: {
       <dd>{entityValue(cfg, party === "controller" ? "controllerName" : "publisherName")}</dd>
       {row(l.address, party === "controller" ? "controllerAddress" : "publisherAddress")}
       {party === "publisher" ? row(l.taxOffice, "publisherTaxOffice") : null}
+      {party === "publisher" ? row(l.playName, "publisherPlayName") : null}
       {party === "controller" ? row(l.trRep, "trRepresentative") : null}
       {contact ? (
         <>

@@ -48,6 +48,7 @@ type Labels = {
   responsible: string;
   publisher: string;
   publisherNote: string;
+  playName: string;
   more: string;
   privacy: string;
   terms: string;
@@ -69,6 +70,7 @@ export const IMPRESSUM_TEXT: Record<LegalLocale, Labels> = {
     supportPageText: "Support- und Kontaktseite",
     responsible: "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV",
     publisher: "Veröffentlichung der App in den App-Stores",
+    playName: "Entwicklername bei Google Play",
     publisherNote: "Der Herausgeber veröffentlicht die App bei Google Play und im App Store und vereinnahmt die Abonnementzahlungen; Diensteanbieter ist der oben Genannte.",
     more: "Weitere Angaben",
     privacy: "Datenschutzerklärung",
@@ -89,6 +91,7 @@ export const IMPRESSUM_TEXT: Record<LegalLocale, Labels> = {
     supportPageText: "Support and contact page",
     responsible: "Responsible for content under § 18(2) MStV",
     publisher: "Publication of the app in the app stores",
+    playName: "Developer name on Google Play",
     publisherNote: "The publisher publishes the app on Google Play and the App Store and collects the subscription payments; the service provider is the person named above.",
     more: "More information",
     privacy: "Privacy policy",
@@ -109,6 +112,7 @@ export const IMPRESSUM_TEXT: Record<LegalLocale, Labels> = {
     supportPageText: "Destek ve iletişim sayfası",
     responsible: "İçerikten sorumlu kişi (§18(2) MStV)",
     publisher: "Uygulamanın mağazalarda yayımlanması",
+    playName: "Google Play'deki geliştirici adı",
     publisherNote: "Yayıncı uygulamayı Google Play'de ve App Store'da yayımlar ve abonelik ödemelerini tahsil eder; hizmet sağlayıcı yukarıda adı geçen kişidir.",
     more: "Diğer bilgiler",
     privacy: "Gizlilik politikası",
@@ -202,6 +206,7 @@ export function ImpressumBody({ cfg, locale }: { cfg: LegalConfig; locale: Legal
             <p>
               <Value v={e.publisherName} />
               {has(e.publisherAddress) ? (<><br /><Value v={localizeAddress(e.publisherAddress, locale)} /></>) : null}
+              {has(e.publisherPlayName) ? (<><br />{t.playName}: <Value v={e.publisherPlayName} /></>) : null}
             </p>
             <p className="muted">{t.publisherNote}</p>
           </>

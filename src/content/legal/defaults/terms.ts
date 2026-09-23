@@ -22,9 +22,8 @@ import type { LegalDocDefault } from "./types";
  * §1 hizmeti işleteni Dortmund'daki veri sorumlusu olarak tanıtıyor ve
  * sunucular Almanya'da; Türkiye'de olan yayıncı. Hukuk seçimi (§12, Türk
  * hukuku) değişmedi, yalnız özet §1 ile çelişmez oldu.
- * TODO(Samet): Play geliştirici hesabının görünen adı "RumpusKit" ise metne
- * "RumpusKit adıyla yayımlayan Musa Atila" eklenmeli; ad doğrulanmadığı için
- * eklenmedi.
+ * Play'deki görünen geliştirici adı "RumpusKit" (bireysel hesapta izinli; App
+ * Store'da satıcı adı Musa Atila): kimlik bloğunda `publisherPlayName` satırı.
  *
  * §4/§5'TEKİ "24 SAAT" VE "SIFIR TOLERANS" (App Store 1.2, denetim CNT-7):
  * söz, panelin iç uyarısındaki 24 saatle aynı (`lib/alerts`); bildirene
