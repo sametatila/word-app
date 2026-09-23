@@ -171,3 +171,18 @@ export function splitForSpeech(text: string, hard: number = MAX_TEXT): string[] 
   }
   return pack(pieces, hard);
 }
+
+/**
+ * CÜMLE DİZME KUTUSUNUN okunacak hâli — sözcüğün kendisi, kenar noktalaması olmadan.
+ *
+ * Kutu cümledeki biçimi taşıyor ("Berlin,", "„Hallo"): virgüllü tek sözcük "devamı var" ezgisiyle
+ * (yükselen) okunuyor ve her noktalama çeşidi ayrı bir ses kaydı demek. Kutunun sesi 2026-09-23'ten beri
+ * Defne/Aras'ın ayrı üretilmiş kaydı (kelime katmanı); kayıt da istek de bu biçimden geçiyor. Büyük harf
+ * korunuyor: Almancada ad ile fiil ayrımı ("Essen"/"essen") büyük harfte. Web ve mobilde AYNI kopya
+ * (`check:tts` 4. bölüm).
+ */
+export function tileSpeech(token: string): string {
+  return token.replace(TILE_EDGE_START, "").replace(TILE_EDGE_END, "");
+}
+const TILE_EDGE_START = /^[\s"„“”»«‹›([‘’‚'-]+/u;
+const TILE_EDGE_END = /[\s"„“”»«‹›)\]‘’‚',;:.!?…-]+$/u;

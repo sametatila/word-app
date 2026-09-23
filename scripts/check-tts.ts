@@ -327,6 +327,14 @@ console.log("\n4. Web ↔ mobil paritesi");
   const mobN = nums(read("mobile/src/lib/ttsText.ts"));
   if (webN !== mobN) err("parite", `bölme sayıları ayrışmış — web ${webN}, mobil ${mobN}`);
   else console.log(`   bölme sayıları: ${webN}, aynı`);
+
+  // Cümle dizme kutusunun okunacak hâli: kayıt anahtarı bu, iki tarafta birebir aynı olmalı.
+  const tile = (src: string) => (src.match(/const TILE_EDGE_(START|END) = .+;/g) ?? []).join("\n");
+  const webT = tile(read("src/lib/tts/text.ts"));
+  const mobT = tile(read("mobile/src/lib/ttsText.ts"));
+  if (!webT || webT !== mobT) err("parite", `kutu metni kuralı (tileSpeech) ayrışmış:\n      web  ${webT}\n      mobil ${mobT}`);
+  else console.log("   kutu metni kuralı (tileSpeech): aynı");
+
 }
 
 console.log(`\n${errors === 0 ? "tamam" : "BAŞARISIZ"}: ${errors} hata, ${warnings} uyarı`);
