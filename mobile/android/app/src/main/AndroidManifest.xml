@@ -16,6 +16,14 @@
     <!-- notifee'nin eklediği kısıtlı izinler: hatırlatmalar WorkManager zamanlayıcısıyla kurulur,
          tam-zamanlı alarm kullanılmaz. Play "exact alarm" beyanı gerektirmesin diye düşülür. -->
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" tools:node="remove" />
+    <!-- notifee'nin "Rahatsız Etmeyin" politikası izni: hiçbir bildirim DND'yi delmiyor
+         (bypassDnd kullanılmıyor), izin listesini boşuna uzatmasın. -->
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" tools:node="remove" />
+    <!-- react-native-keychain'in biyometri izinleri: misafir kaydı Keychain'de biyometrisiz
+         (accessControl yok, bkz. lib/guest.ts) duruyor. Biyometrik kilit eklenirse bu iki
+         satır silinir. -->
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" tools:node="remove" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" tools:node="remove" />
 
     <!-- Konuşma tanıma servisini görebilmek için (Android 11+ paket görünürlüğü).
          Yoksa Voice.isAvailable() false döner ve yürüyüş modunda STT hiç açılmaz. -->
