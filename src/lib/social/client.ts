@@ -284,6 +284,10 @@ export function notificationText(n: NotificationView, lang: NativeLang): string 
           ? describeShort(String(d.eventType), (d.payload as Record<string, unknown>) ?? {}, lang)
           : T("social.on_default"),
       });
+    /* Karar tarafsız söyleniyor: kimin bildirildiği ya da ne yapıldığının
+       ayrıntısı yok, yalnız incelendiği ve sonucun türü (CNT-7). */
+    case "report_closed":
+      return T(d.decision === "resolved" ? "notifw.report_resolved" : d.decision === "dismissed" ? "notifw.report_dismissed" : "notifw.report_closed");
     default:
       return T("social.notif_default");
   }

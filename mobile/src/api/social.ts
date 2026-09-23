@@ -193,6 +193,12 @@ export function notificationText(n: NotificationView): string {
     case "quest_completed": return t("social.notif_quest_done", { who });
     case "league_up": return t("social.notif_league_up", { league: tierName(Number(payload.tier ?? 0)) });
     case "friend_milestone": return t("social.notif_milestone", { who, event: feedPhrase(String(d.eventType ?? ""), payload) });
+    /* Karar tarafsız söyleniyor: kimin bildirildiği ya da ne yapıldığının
+       ayrıntısı yok, yalnız incelendiği ve sonucun türü (CNT-7, web
+       `lib/social/client` ile aynı üç cümle). Karar bilinmiyorsa (null)
+       genel "incelendi ve kapatıldı". */
+    case "report_closed":
+      return t(d.decision === "resolved" ? "social.notif_report_resolved" : d.decision === "dismissed" ? "social.notif_report_dismissed" : "social.notif_report_closed");
     default: return t("social.notif_default");
   }
 }

@@ -32,6 +32,8 @@ function tileFor(n: NotificationView, colors: Palette): { icon: IconCmp; tint: s
     /* Lig yükselişinin aktörü yok: simge, satırın neyle ilgili olduğunu
        söyleyen tek şey (web `inbox` ile aynı karo). */
     case "league_up": return { icon: PodiumIcon, tint: colors.accent };
+    /* Bildirdiğin içerik ya da kullanıcı incelendi (CNT-7): aktör yok. */
+    case "report_closed": return { icon: CheckIcon, tint: colors.success };
     default: return { icon: InboxIcon, tint: colors.primary };
   }
 }
@@ -75,6 +77,9 @@ export function InboxScreen() {
       case "quest_invite": case "quest_accepted": case "quest_completed": goFriends(nav, "friends"); break;
       case "nudge": nav.navigate("Tabs"); break;
       case "league_up": nav.navigate("Leaderboard"); break;
+      /* Şikâyet sonucu: gidilecek içerik yok (kaldırılmış olabilir), satır
+         kendini anlatıyor; akışa atmak alakasız bir yere götürürdü. */
+      case "report_closed": break;
       default: goFriends(nav, "feed");
     }
   }

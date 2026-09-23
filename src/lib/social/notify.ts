@@ -1,6 +1,6 @@
 import { and, desc, eq, inArray, lt, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
-import { activityEvents, eventReactions, friendQuests, nudges, socialNotifications } from "@/lib/db/schema";
+import { activityEvents, eventReactions, friendQuests, moderationActions, nudges, socialNotifications } from "@/lib/db/schema";
 import { sendToUser, type PushPayload } from "@/lib/push";
 import { track } from "@/lib/events";
 import { serverToday } from "./dates";
@@ -25,7 +25,7 @@ import { translate, isNativeLang, DEFAULT_NATIVE, type NativeLang } from "@/lib/
 export type NotifyInput = {
   type: NotificationType;
   actorId?: string | null;
-  refType?: "friendship" | "event" | "nudge" | "quest" | null;
+  refType?: "friendship" | "event" | "nudge" | "quest" | "content_report" | "user_report" | null;
   refId?: number | null;
 };
 
@@ -167,12 +167,20 @@ export async function listNotifications(
   const eventIds = [...new Set(page.filter((r) => r.refType === "event" && r.refId).map((r) => r.refId as number))];
   const questIds = [...new Set(page.filter((r) => r.refType === "quest" && r.refId).map((r) => r.refId as number))];
   const nudgeIds = [...new Set(page.filter((r) => r.refType === "nudge" && r.refId).map((r) => r.refId as number))];
-  const [events, quests, nudgeRows, reactions] = await Promise.all([
+  const reportIds = [...new Set(page.filter((r) => r.type === "report_closed" && r.refId).map((r) => r.refId as number))];
+  const [events, quests, nudgeRows, reactions, decisions] = await Promise.all([
     eventIds.length ? db.select().from(activityEvents).where(inArray(activityEvents.id, eventIds)) : Promise.resolve([]),
     questIds.length ? db.select().from(friendQuests).where(inArray(friendQuests.id, questIds)) : Promise.resolve([]),
     nudgeIds.length ? db.select().from(nudges).where(inArray(nudges.id, nudgeIds)) : Promise.resolve([]),
     eventIds.length ? db.select().from(eventReactions).where(inArray(eventReactions.eventId, eventIds)) : Promise.resolve([]),
+    /* Karar tablosu canlıda yoksa (0059 uygulanmamış) sorgu düşer: satır
+       yine görünsün, karar bilinmiyor diye. */
+    reportIds.length
+      ? db.select({ target: moderationActions.target, refId: moderationActions.refId, action: moderationActions.action })
+          .from(moderationActions).where(inArray(moderationActions.refId, reportIds)).catch(() => [])
+      : Promise.resolve([]),
   ]);
+  const decisionMap = new Map(decisions.map((d) => [`${d.target}:${d.refId}`, d.action]));
   const eventMap = new Map(events.map((e) => [e.id, e]));
   const questMap = new Map(quests.map((q) => [q.id, q]));
   const nudgeMap = new Map(nudgeRows.map((n) => [n.id, n]));
@@ -190,6 +198,8 @@ export async function listNotifications(
     } else if (r.refType === "nudge" && r.refId) {
       const n = nudgeMap.get(r.refId);
       if (n) detail.kind = n.kind;
+    } else if (r.type === "report_closed" && r.refType && r.refId) {
+      detail.decision = decisionMap.get(`${r.refType}:${r.refId}`) ?? null;
     }
     return {
       id: r.id,

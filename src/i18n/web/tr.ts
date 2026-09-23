@@ -223,6 +223,10 @@ export const trWeb: Record<string, string> = {
   "termsw.read_terms": "Kullanım Şartları",
   "termsw.read_privacy": "Gizlilik Politikası",
   "termsw.ok": "Anladım",
+  /* Şikâyet sonucu gelen kutusunda (lib/social/client `report_closed`, CNT-7). */
+  "notifw.report_resolved": "Bildirimin incelendi ve gereği yapıldı. Teşekkürler.",
+  "notifw.report_dismissed": "Bildirimin incelendi; kurallarımıza aykırı bir durum bulunmadı. İtiraz için Destek sayfasına bakabilirsin.",
+  "notifw.report_closed": "Bildirimin incelendi ve kapatıldı. Teşekkürler.",
   "settings.add_to_home": "Ana ekrana ekle",
   "settings.add_to_home_hint": "tam ekran, çevrimdışı",
   /* Kelime turu — etap, bahis ve özet ekranları. Mobil `GameScreen` daha

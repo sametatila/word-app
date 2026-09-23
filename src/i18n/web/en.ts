@@ -190,6 +190,9 @@ export const enWeb: Record<string, string> = {
   "termsw.read_terms": "Terms of Use",
   "termsw.read_privacy": "Privacy Policy",
   "termsw.ok": "Got it",
+  "notifw.report_resolved": "Your report was reviewed and action was taken. Thank you.",
+  "notifw.report_dismissed": "Your report was reviewed; we found no breach of our rules. See the Support page if you want to appeal.",
+  "notifw.report_closed": "Your report was reviewed and closed. Thank you.",
   "settings.add_to_home": "Add to home screen",
   "settings.add_to_home_hint": "full screen, offline",
   /* Kelime turu — bkz. tr.ts notu. */

@@ -1,6 +1,7 @@
 import "server-only";
 import { sql } from "drizzle-orm";
 import { db } from "@/lib/db";
+import { notify } from "@/lib/social/notify";
 
 /**
  * Şikâyet kuyruğu — yönetim panelinin moderasyon sayfası (/admin/moderation).
@@ -181,14 +182,39 @@ export async function closeReport(
   // İçerik bildiriminin kendi `status` sütunu var: karar kaydı yazılamasa da
   // kapanabiliyor. Kullanıcı şikâyetinin tek kapanma yeri karar tablosu.
   if (!ready && target === "user_report") return "not_ready";
+  let first = false;
   if (ready) {
-    await db.execute(sql`
+    const ins = await rows(sql`
       insert into moderation_actions (target, ref_id, action, actor, note)
       values (${target}, ${refId}, ${action}, ${actor}, ${note})
-      on conflict (target, ref_id) do nothing`);
+      on conflict (target, ref_id) do nothing
+      returning id`);
+    first = ins.length > 0;
   }
+  let reporter: string | null = null;
   if (target === "content_report") {
-    await db.execute(sql`update content_reports set status = 'closed' where id = ${refId}`);
+    const upd = await rows(sql`update content_reports set status = 'closed' where id = ${refId} and status <> 'closed' returning user_id`);
+    if (!ready) first = upd.length > 0;
+    reporter = upd.length ? str(upd[0].user_id) : null;
+    if (!reporter && first) {
+      const r = await rows(sql`select user_id from content_reports where id = ${refId}`);
+      reporter = r.length ? str(r[0].user_id) : null;
+    }
+  } else if (first) {
+    const r = await rows(sql`select reporter_id from user_reports where id = ${refId}`);
+    reporter = r.length ? str(r[0].reporter_id) : null;
+  }
+  /*
+    BİLDİRENE SONUÇ (içerik denetimi CNT-7; DSA m.16(5), Şartlar §5 "karar
+    bildirene iletilir"). Yalnız İLK kararda: aynı kaydı iki sekmeden kapatmak
+    iki bildirim üretmesin. Gelen kutusuna düşüyor (her hesapta var, izin
+    istemiyor); metin tarafsız, kimin bildirildiği yazmıyor. Hata kararı
+    geri almaz: karar yazıldı, bildirim yalnız bir nezaket.
+  */
+  if (first && reporter) {
+    await notify(reporter, { type: "report_closed", refType: target, refId }).catch((err) =>
+      console.error("[moderation] report notice failed", refId, err),
+    );
   }
   return "ok";
 }

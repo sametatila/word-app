@@ -42,6 +42,10 @@ export const NOTIFICATION_TYPES = [
   "quest_completed",
   "friend_milestone",
   "league_up",
+  /* Bildirdiğin içerik/kullanıcı incelendi (içerik denetimi CNT-7, DSA m.16(5)).
+     refType "content_report" | "user_report", refId şikâyetin kimliği;
+     `detail.decision` = resolved | dismissed | null. */
+  "report_closed",
 ] as const;
 export type NotificationType = (typeof NOTIFICATION_TYPES)[number];
 

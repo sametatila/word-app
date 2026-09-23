@@ -38,6 +38,10 @@ function hrefFor(n: NotificationView): string {
        (`InboxScreen` `open`). */
     case "league_up":
       return "/leaderboard";
+    /* Şikâyet sonucu: gidilecek içerik yok (kaldırılmış olabilir); destek
+       sayfası itiraz yolunu anlatıyor. */
+    case "report_closed":
+      return "/support";
     default:
       return "/friends?tab=feed";
   }
@@ -71,6 +75,8 @@ function tileFor(n: NotificationView): { Icon: (p: { size?: number }) => React.J
        aktörü de yok, yani başka bir ipucu da yok. */
     case "league_up":
       return { Icon: PodiumIcon, tint: "var(--color-violet)", fill: "var(--color-violet-500)" };
+    case "report_closed":
+      return { Icon: CheckIcon, tint: "var(--color-mint)", fill: "var(--color-mint-500)" };
     default:
       return { Icon: InboxIcon, tint: "var(--color-brand)", fill: "var(--color-brand-500)" };
   }
