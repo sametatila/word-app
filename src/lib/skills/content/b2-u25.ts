@@ -131,7 +131,7 @@ export const b2U25: SkillExercise[] = [
       { de: "beherrschen", tr: "hâkim olmak", en: "to master" },
       { de: "der Wortschatz", tr: "kelime hazinesi", en: "vocabulary" },
       { de: "der Sprachkurs", tr: "dil kursu", en: "language course" },
-      { de: "der Muttersprachler", tr: "ana dili konuşuru", en: "native speaker" },
+      { de: "der Muttersprachler", tr: "ana dili olarak konuşan kişi", en: "native speaker" },
       { de: "begreifen", tr: "kavramak", en: "to grasp" },
       { de: "akzentfrei", tr: "aksansız", en: "accent-free" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
