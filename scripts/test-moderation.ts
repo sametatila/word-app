@@ -77,6 +77,11 @@ const KACAMAK: Record<string, string[]> = {
     "anaavrat", "ana avrat", "eşşoğlueşşek", "essogluessek",
     "ananı sikeyim", "avradını sikeyim", "amına koyayım", "amina koyayim",
   ],
+  // İçerik denetimi CNT-5 (2026-09-23): eskiden geçenler.
+  ingilizceCNT5: ["nigga", "f*ck", "fvck", "shit", "dick", "pussy", "rape", "porn", "kike", "tranny", "sh*t", "p*ssy", "a**hole"],
+  türkçeCNT5: ["orosbu", "dalyarak", "kocadalyarak", "piçkurusu", "pickurusu", "kancık", "taşak", "dürzü", "kaşar"],
+  almancaCNT5: ["fick dich", "Schwuchtel", "Kanake", "Neger", "Spast"],
+  naziCNT5: ["Hitler", "Heil Hitler", "nazi", "Sieg Heil"],
 };
 for (const [tür, liste] of Object.entries(KACAMAK)) {
   const kaçan = liste.filter((s) => displayNameAllowed(s) !== false);
@@ -94,9 +99,16 @@ const MASUM: Record<string, string[]> = {
   // ASCII'ye katlanınca küfür köküne benzeyen Türkçe sözcükler
   türkçeTuzak: ["sıkıntı yok", "sıkıcı film", "sıkış tepiş", "sıkmış", "karmaşıktır", "sikke koleksiyonu", "götürmek", "götürüyor", "akşamına", "anlamına", "bağlayarak", "sayarak", "dikkat", "şık giyinen"],
   // Almanca bileşikler: küfür kökü sözcüğün ortasında kalıyor
-  almancaTuzak: ["Aufmerksamkeit", "Achtsamkeit", "Langsamkeit", "Tischlampe", "Broschüre", "Gott", "Götter", "dick", "Minute", "weniger", "einiger", "Stammkunde", "Sg", "Instagram-Konto"],
+  // "dick" (kalın) tek başına artık engelli (CNT-5, ASCII_EXACT); cümle içinde serbest.
+  almancaTuzak: ["Aufmerksamkeit", "Achtsamkeit", "Langsamkeit", "Tischlampe", "Broschüre", "Gott", "Götter", "dick und rund", "Minute", "weniger", "einiger", "Stammkunde", "Sg", "Instagram-Konto"],
   ingilizceTuzak: ["viscount", "Scunthorpe", "who reports the past", "massage", "assist", "cocktail", "aqua"],
   gerçekAd: ["Bitchell", "Sikorski", "Amina Yıldız", "Nigar Hanım", "Nigeria", "Dickinson", "Picasso", "Pissarro", "Kussmaul", "Assunta", "Götz", "Jörg Müller", "Ayşe Yılmaz", "Mustafa Kemal", "李雷", "O'Brien-Smith"],
+  // İçerik denetimi CNT-4 (2026-09-23): eskiden yanlış engellenenler.
+  yanlışPozitifCNT4: [
+    "Bu eksiktir", "Hürrem Yılmaz", "Yiğitoğlu", "İslam Çıkrıkçı", "fukara", "Fukushima", "Kaçkar",
+    "Aminata", "musikisever", "Musikmischung", "Sikkim", "Cunta", "Puste", "Nazım", "Nazif", "nazik",
+    "Nazilli", "fickle", "Scunthorpe",
+  ],
   rakamlıAd: ["ahmet1907", "fener1907", "user1453", "ali4544", "mehmet0655", "elif2005", "kadir34"],
 };
 for (const [tür, liste] of Object.entries(MASUM)) {
@@ -107,7 +119,10 @@ for (const [tür, liste] of Object.entries(MASUM)) {
 // 7) Kendi ders içeriğimizin tamamı — yanlış pozitif için en geniş gövde.
 //    Yeni bir isabet çıkarsa ya sözlük hatalıdır ya da girdi gerçekten küfürdür;
 //    ikisi de elle bakılmayı hak eder, o yüzden bilinen küme dar tutuluyor.
-const BİLİNEN_İSABET = new Set(["am"]); // "am" yalnız girdinin TAMAMI buysa engelleniyor
+// "am" ve "dick" yalnız girdinin TAMAMI buysa engelleniyor. "nazi/nazis" tarih
+// okumalarında geçiyor; görünen ad olarak bilerek reddediliyor (CNT-5), ders
+// metni bu süzgeçten geçmiyor.
+const BİLİNEN_İSABET = new Set(["am", "dick", "nazi", "nazis"]);
 {
   const kelimeler = new Set<string>();
   const topla = (s: string) => {
