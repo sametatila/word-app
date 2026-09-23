@@ -10,6 +10,7 @@ import { FlowNote } from "./flow";
 import { useAuth } from "../lib/AuthContext";
 import { API_BASE, fetchWithTimeout } from "../api/client";
 import { useTheme, spacing, radii } from "../theme";
+import { ContentColumn } from "./ContentColumn";
 
 /**
  * Sertifika — geçilmiş (deneme olmayan) bir sınavın paylaşılabilir kâğıdı.
@@ -60,6 +61,8 @@ export function CertificateSheet({ examId, visible, onClose }: { examId: number;
       {/* Tam ekran sayfa: arka plandaki ekran erişilebilirlik ağacında
           kalmasın — bkz. `ConfirmDialog` içindeki not. */}
       <View accessibilityViewIsModal style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top }}>
+        {/* Modal gezginin DIŞINDA: ekranlarla aynı kolon burada elle veriliyor. */}
+        <ContentColumn>
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingHorizontal: spacing.lg, paddingVertical: spacing.sm }}>
           <Text variant="h3" style={{ flex: 1 }}>{t("exam.open_certificate")}</Text>
           <PressableScale hitSlop={4} onPress={onClose} accessibilityLabel={t("common.close")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
@@ -91,6 +94,7 @@ export function CertificateSheet({ examId, visible, onClose }: { examId: number;
             onShouldStartLoadWithRequest={() => false}
           />
         )}
+        </ContentColumn>
       </View>
     </Modal>
   );

@@ -9,6 +9,7 @@ import { openLegal } from "../lib/legal";
 import { ProcessorList } from "./AiConsentSheet";
 import type { AiConsentProcessor } from "../lib/aiConsent";
 import { useTheme, spacing, radii, softShadow, type Palette, ds } from "../theme";
+import { ContentColumn } from "./ContentColumn";
 
 /**
  * Ekranın üç kullanımı — iki mağazanın kuralı birbirinin TERSİ olduğu için.
@@ -104,6 +105,9 @@ export function MicDisclosure({ visible, mode, onAccept, onCancel, processors, p
         accessibilityLabel={t("micdisclosure.microphone_and_voice_data")}
         style={{ flex: 1, backgroundColor: colors.bg }}
       >
+        {/* Modal gezginin DIŞINDA çiziliyor, yani ekranların kolonunu almıyor:
+            tablette kenardan kenara yayılıyordu. Aynı kolon burada da. */}
+        <ContentColumn>
         <ScrollView contentContainerStyle={{ paddingTop: insets.top + spacing.xxl, paddingHorizontal: spacing.xl, paddingBottom: spacing.xl, gap: spacing.lg }} showsVerticalScrollIndicator={false}>
           <View style={[{ width: ds(72), height: ds(72), borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary, alignSelf: "center" }, softShadow(colors.primary, 12)]}>
             <MicIcon color={colors.onPrimary} size={36} />
@@ -136,6 +140,7 @@ export function MicDisclosure({ visible, mode, onAccept, onCancel, processors, p
             </PressableScale>
           ) : null}
         </View>
+        </ContentColumn>
       </View>
     </Modal>
   );
