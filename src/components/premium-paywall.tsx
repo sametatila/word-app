@@ -201,8 +201,14 @@ export function PremiumPaywall({
                 <PlanCard label={t("paywall.monthly")} price={price.monthly} />
                 <PlanCard label={t("paywall.yearly")} price={price.yearly} savePct={price.yearlySavePct} highlight />
               </div>
+              {/* MAĞAZALARIN DENEMESİ "1 AY" (App Store P1M, Play `free-trial-1m`),
+                  30 gün değil: şubatta 28, başka ayda 31 gün sürüyor. Metin
+                  mağazanın kendi birimini söylüyor. Deneme iki mağazada da var,
+                  Android ziyaretçisinden de gizlenmiyor. */}
               {plans.trialDays > 0 && (
-                <p className="muted mt-3 text-center text-caption">{t("paywall.trial_note", { n: plans.trialDays })}</p>
+                <p className="muted mt-3 text-center text-caption">
+                  {plans.trialDays >= 28 && plans.trialDays <= 31 ? t("paywallw.trial_one_month") : t("paywall.trial_note", { n: plans.trialDays })}
+                </p>
               )}
             </section>
           )}

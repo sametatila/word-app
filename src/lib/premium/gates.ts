@@ -128,7 +128,9 @@ export type Plans = {
   /** Mağazadaki ürün kimlikleri — RevenueCat offering'i bunlara bağlanır. */
   productMonthly: string;
   productYearly: string;
-  /** Ücretsiz deneme (gün). Mağazada da AYNI değer tanımlanmalı. */
+  /** Ücretsiz deneme (gün). Mağazada da AYNI değer tanımlanmalı. 28-31 "1 ay"
+   *  diye gösteriliyor: iki mağazanın denemesi de takvim ayı (P1M,
+   *  `free-trial-1m`), sabit 30 gün değil. */
   trialDays: number;
   prices: PlanPrice[];
 };

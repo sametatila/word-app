@@ -190,6 +190,7 @@ export const enWeb: Record<string, string> = {
   "termsw.read_terms": "Terms of Use",
   "termsw.read_privacy": "Privacy Policy",
   "termsw.ok": "Got it",
+  "paywallw.trial_one_month": "The first month is free. Cancel before the trial ends and you are not charged.",
   "notifw.report_resolved": "Your report was reviewed and action was taken. Thank you.",
   "notifw.report_dismissed": "Your report was reviewed; we found no breach of our rules. See the Support page if you want to appeal.",
   "notifw.report_closed": "Your report was reviewed and closed. Thank you.",

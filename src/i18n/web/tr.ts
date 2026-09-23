@@ -223,6 +223,7 @@ export const trWeb: Record<string, string> = {
   "termsw.read_terms": "Kullanım Şartları",
   "termsw.read_privacy": "Gizlilik Politikası",
   "termsw.ok": "Anladım",
+  "paywallw.trial_one_month": "İlk 1 ay ücretsiz. Deneme süresi bitmeden iptal edersen ücret alınmaz.",
   /* Şikâyet sonucu gelen kutusunda (lib/social/client `report_closed`, CNT-7). */
   "notifw.report_resolved": "Bildirimin incelendi ve gereği yapıldı. Teşekkürler.",
   "notifw.report_dismissed": "Bildirimin incelendi; kurallarımıza aykırı bir durum bulunmadı. İtiraz için Destek sayfasına bakabilirsin.",

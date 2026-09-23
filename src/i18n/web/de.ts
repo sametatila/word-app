@@ -190,6 +190,7 @@ export const deWeb: Record<string, string> = {
   "termsw.read_terms": "Nutzungsbedingungen",
   "termsw.read_privacy": "Datenschutzerklärung",
   "termsw.ok": "Verstanden",
+  "paywallw.trial_one_month": "Der erste Monat ist kostenlos. Kündigst du vor Ablauf der Testphase, wird nichts berechnet.",
   "notifw.report_resolved": "Deine Meldung wurde geprüft und es wurden Maßnahmen ergriffen. Danke.",
   "notifw.report_dismissed": "Deine Meldung wurde geprüft; wir haben keinen Verstoß gegen unsere Regeln festgestellt. Einspruch ist über die Support-Seite möglich.",
   "notifw.report_closed": "Deine Meldung wurde geprüft und abgeschlossen. Danke.",
