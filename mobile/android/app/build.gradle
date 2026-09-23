@@ -223,6 +223,10 @@ dependencies {
     // Android 12+ sistem açılış ekranı (marka rengi + ikon); eski sürümlerde uyumluluk katmanı.
     implementation("androidx.core:core-splashscreen:1.0.1")
 
+    // Play Integrity standart istek: misafir açılışında cihaz doğrulaması (kendi modülümüz
+    // com.lernomi.integrity; sunucu lib/auth/play-integrity). iOS'ta karşılığı yok.
+    implementation("com.google.android.play:integrity:1.6.0")
+
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")
     } else {

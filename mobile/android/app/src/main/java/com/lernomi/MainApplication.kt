@@ -16,6 +16,8 @@ class MainApplication : Application(), ReactApplication {
         PackageList(this).packages.apply {
           // Kendi native STT modülümüz (autolink değil, elle eklenir).
           add(com.lernomi.speech.LernomiSpeechPackage())
+          // Play Integrity (misafir açılışında cihaz doğrulaması, kayıt kipi).
+          add(com.lernomi.integrity.LernomiIntegrityPackage())
         },
     )
   }
