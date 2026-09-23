@@ -47,8 +47,8 @@ Bu cümle üç şey söylüyor: **kapsam** (A1'den C1'e dersler), **sınav** (de
 ve **kullanım biçimi** (yürürken, sesli). 30 karakterlik Subtitle'a üçü birden sığmıyor.
 
 **Tutulan:** yürürken + sınav → `Yürürken konuş, sınava çalış` (28).
-Uygulama adı zaten iki kursu ("Almanca ve İngilizce") söylediği için altyazının onları
-tekrar etmesine gerek yok; ayırt edici olan yürüyüş modu, "sınav" ise arayanın niyetini
+Mağaza adı ana kursu ve seviye aralığını ("Almanca Öğren A1-C1") söylüyor; altyazı bunu
+tekrar etmiyor; ayırt edici olan yürüyüş modu, "sınav" ise arayanın niyetini
 yakalayan sözcük.
 
 **Feda edilen:** "dersler", "A1–C1" ve ürünün çekirdek mekaniği olan "kelime". Nereye gitti:
@@ -189,12 +189,12 @@ Her yerelleştirme kendi ekran görüntülerini de ister (§4).
 **App Name**
 
 ```
-Lernomi: Almanca ve İngilizce
+Lernomi: Almanca Öğren A1-C1
 ```
-_29/30 karakter._
+_28/30 karakter._
 
-Türkçe arayüzde iki kurs var (Almanca ve İngilizce), ikisi de adda. Eski ad "Almanca Öğren"
-yalnız birini söylüyordu.
+**Karar (Samet, 2026-09-23):** uygulama adı (cihazda) **Lernomi**, mağaza adı **Lernomi: Almanca Öğren A1-C1**.
+Connect ve Play'deki canlı ad zaten bu; belge ona hizalandı. İngilizce kurs altyazıda ve açıklamada anılıyor.
 
 **Subtitle**
 
@@ -284,9 +284,9 @@ _10/4000 karakter._
 **App Name**
 
 ```
-Lernomi: Learn German
+Lernomi: Learn German A1-C1
 ```
-_21/30 karakter._
+_27/30 karakter._
 
 **Subtitle**
 
@@ -379,9 +379,9 @@ _14/4000 karakter._
 **App Name**
 
 ```
-Lernomi: Englisch lernen
+Lernomi: Englisch lernen A1-C1
 ```
-_24/30 karakter._
+_30/30 karakter._
 
 **Subtitle**
 

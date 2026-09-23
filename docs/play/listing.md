@@ -127,11 +127,12 @@ kırılma olmasın. Sayımlara satır sonları dahil.
 **Başlık** (en çok 30 karakter)
 
 ```
-Lernomi: Almanca ve İngilizce
+Lernomi: Almanca Öğren A1-C1
 ```
-_29/30 karakter._
+_28/30 karakter._
 
-Son ek, uygulamanın ne öğrettiğini söylüyor: Türkçe arayüzde iki kurs var, ikisi de adda.
+**Karar (Samet, 2026-09-23):** uygulama adı (cihazda) **Lernomi**, mağaza adı **Lernomi: Almanca Öğren A1-C1**,
+App Store ile aynı. İngilizce kurs kısa ve tam açıklamada anılıyor.
 Eski gerekçe ("Lernomi Play'de başka bir uygulamayla çakışıyor") 2026-09-14 sorgusunda
 doğrulanmadı, bkz. §4.1.
 
@@ -202,9 +203,9 @@ yayından önce girilmeli.
 **Başlık**
 
 ```
-Lernomi: Learn German
+Lernomi: Learn German A1-C1
 ```
-_21/30 karakter._
+_27/30 karakter._
 
 **Kısa açıklama**
 
@@ -272,9 +273,9 @@ kullanıcıya açılmayan Almanca ve Zürih kurslarını anlatıyordu (B25). Ad 
 **Başlık**
 
 ```
-Lernomi: Englisch lernen
+Lernomi: Englisch lernen A1-C1
 ```
-_24/30 karakter._
+_30/30 karakter._
 
 **Kısa açıklama**
 
