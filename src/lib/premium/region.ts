@@ -22,18 +22,22 @@ import type { PlanPrice } from "./gates";
 export type PriceRegion = "TR" | "EU" | "GLOBAL";
 
 /**
- * AB/AEA saat dilimleri. Liste ülke değil DİLİM adı taşıyor çünkü elimizdeki
- * veri o. Avrupa'da olup Euro bölgesinde olmayan yerler (Londra, Zürih,
- * Moskova) bilerek dışarıda: fiyat Euro değil.
+ * EURO ile ödenen yerlerin saat dilimleri (bölgenin adı "EU" ama ölçüt para
+ * birimi: vitrin "4,99 €" yazıyor). Liste ülke değil DİLİM adı taşıyor çünkü
+ * elimizdeki veri o. Avrupa'da olup euro kullanmayan yerler bilerek dışarıda
+ * ve GLOBAL fiyat görüyor: Londra, Zürih, Vaduz (CHF), Moskova, ve AB içinde
+ * olup kendi parası olan Oslo, Stockholm, Kopenhag, Varşova, Prag, Budapeşte,
+ * Bükreş, Saraybosna, Üsküp. Onlar eskiden listedeydi ve mağazanın yerel para
+ * birimindeki fiyatıyla çelişen bir euro fiyatı görüyorlardı (denetim X-9).
+ * Sofya euroya 2026-01-01'de geçti, listede.
  */
 const EU_ZONES = new Set([
   "Europe/Amsterdam", "Europe/Andorra", "Europe/Athens", "Europe/Berlin", "Europe/Bratislava",
-  "Europe/Brussels", "Europe/Bucharest", "Europe/Budapest", "Europe/Copenhagen", "Europe/Dublin",
-  "Europe/Helsinki", "Europe/Lisbon", "Europe/Ljubljana", "Europe/Luxembourg", "Europe/Madrid",
-  "Europe/Malta", "Europe/Monaco", "Europe/Oslo", "Europe/Paris", "Europe/Prague",
-  "Europe/Riga", "Europe/Rome", "Europe/San_Marino", "Europe/Sarajevo", "Europe/Skopje",
-  "Europe/Sofia", "Europe/Stockholm", "Europe/Tallinn", "Europe/Vaduz", "Europe/Vienna",
-  "Europe/Vilnius", "Europe/Warsaw", "Europe/Zagreb", "Atlantic/Canary", "Atlantic/Madeira",
+  "Europe/Brussels", "Europe/Dublin", "Europe/Helsinki", "Europe/Lisbon", "Europe/Ljubljana",
+  "Europe/Luxembourg", "Europe/Madrid", "Europe/Malta", "Europe/Monaco", "Europe/Paris",
+  "Europe/Riga", "Europe/Rome", "Europe/San_Marino", "Europe/Sofia", "Europe/Tallinn",
+  "Europe/Vienna", "Europe/Vilnius", "Europe/Zagreb", "Europe/Nicosia", "Asia/Nicosia",
+  "Atlantic/Canary", "Atlantic/Madeira",
 ]);
 
 /**
