@@ -141,6 +141,15 @@ async function endpoint() {
   assert.equal(res.status, 404);
   ok("yavaş hız üretilmedi: kelime isteği 404");
 
+  res = await req("v=de-DE-Defne&t=der%20Hund&k=n");
+  assert.equal(res.status, 200);
+  assert.equal(res.headers.get("x-tts-source"), "own");
+  ok("anlatım isteği (k=n) tabloda varsa karakterin dosyası");
+
+  res = await req("v=de-DE-Defne&t=Yeni%20kelime.&k=n");
+  assert.equal(res.status, 401);
+  ok("anlatım tabloda yoksa 404 DEĞİL, sentez yoluna gidiyor (oturumsuz: 401)");
+
   res = await req("v=de-DE-Defne&t=der%20Hund&k=w", {
     referer: "https://saldirgan.example/x",
   });

@@ -109,6 +109,9 @@ export async function GET(req: Request) {
     İşaretsiz istek (ders, beceri, rol yapma — henüz üretilmemiş katmanlar) Edge karşılığıyla sürüyor.
   */
   const word = url.searchParams.get("k") === "w";
+  /* KARAKTER ANLATIMI (`k=n`, 2026-09-23) — yürüyüş modunun yönergeleri. Dosya varsa karakterin kendi sesi, yoksa
+     aynı karakterin Edge karşılığı: anlatım kelime katmanı değil, üretimi (tur özetleri) sürerken tur susmamalı. */
+  const narration = url.searchParams.get("k") === "n";
 
   if (!text || text.length > MAX_TEXT) {
     return NextResponse.json({ error: "bad_text" }, { status: 400 });
@@ -124,7 +127,7 @@ export async function GET(req: Request) {
   // YALNIZ KELİME İSTEĞİNE. İşaretsiz istek (rol yapma, beceri, ders cümlesi) metni tabloda bulsa da
   // Edge karşılığında kalıyor: yoksa bir örnek cümleyle birebir aynı tek replik Defne'nin kendi sesiyle,
   // çevresi Katja'yla çalardı. Kelime dışı her şey üretilene kadar Katja/Conrad (Samet, 2026-09-23).
-  const own = word ? await ownVoiceAudio(text, voice as VoiceId, slow, pitch) : null;
+  const own = word || narration ? await ownVoiceAudio(text, voice as VoiceId, slow, pitch) : null;
   if (own) return ownResponse(req, own.audio, own.name);
   if (word && isOwnVoice(voice) && ownVoicesLive()) {
     console.warn("[tts-own] kelime tabloda yok:", voice, slow, pitch, JSON.stringify(text.slice(0, 120)));
