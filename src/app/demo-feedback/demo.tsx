@@ -1,0 +1,118 @@
+"use client";
+
+import { FeedbackLine } from "@/components/feedback/feedback-line";
+import { PronounceCard } from "@/components/feedback/pronounce-card";
+import { AssessmentCard } from "@/components/feedback/assessment-card";
+import { CharDiff, DiffLegend, TokenDiff, TypedTokens } from "@/components/feedback/diff-text";
+import { ERROR_TYPES } from "@/lib/errors";
+import { matchSentence } from "@/lib/sentence-match";
+import { charDiff, whyFor } from "@/lib/why";
+import type { Assessment } from "@/lib/assess-prompts";
+import { fallbackAssessment } from "@/lib/assess-client";
+import { useLang } from "@/lib/i18n/client";
+
+/**
+ * Geri bildirim hikâye sayfası (WP-61) — `demo-games` deseninde, yalnız
+ * geliştirme kontrolü: bütün geri bildirim bileşenleri tek sayfada, gerçek
+ * verilerle. Şerit, çeviri, drill ve yazma değerlendirmesi burada görülen
+ * dilin dışına çıkmaz.
+ */
+const WORD = { de: "Wohnung", artikel: "die", tr: "daire", formen: "-en" };
+const T = "Ich gehe heute ins Kino.";
+
+const SAMPLE: Assessment = {
+  score: { task: 3, grammar: 2, vocab: 3, structure: 3, overall: 66 },
+  errors: [
+    { span: [11, 21], wrong: "ein Kaffee", type: "article", fix: "einen Kaffee", why_tr: "„Kaffee“ eril; Akkusativ nesne „einen“ alır." },
+    { span: [22, 37], wrong: "mit mein Freund", type: "case", fix: "mit meinem Freund", why_tr: "„mit“ her zaman Dativ ister." },
+  ],
+  corrected: "Ich trinke einen Kaffee mit meinem Freund.",
+  praise_tr: "Cümle yapısı ve fiil çekimi doğru.",
+  next_tip_tr: "Akkusativ/Dativ artikellerini bir kez daha gözden geçir.",
+};
+const SAMPLE_ANSWER = "Ich trinke ein Kaffee mit mein Freund.";
+
+export default function DemoFeedback() {
+  const lang = useLang();
+  const fb = fallbackAssessment({
+    kind: "sentence",
+    level: "A1",
+    task: { prompt: "cümle kur", targets: ["Kaffee", "trinken"] },
+    answer: { text: "Ich trinke Kaffee." },
+                lang: "de",
+  });
+  return (
+    <div className="mx-auto max-w-2xl space-y-8 p-6">
+      <section className="card p-5">
+        <h2 className="muted mb-3 text-micro uppercase">FeedbackLine — her hata tipi</h2>
+        <ul className="space-y-2">
+          {ERROR_TYPES.map((type) => (
+            <li key={type} className="rounded-panel px-3 py-2 surface-2">
+              <FeedbackLine
+                why={whyFor({
+                  type,
+                  word: WORD,
+                  detail: type === "spelling" ? "Wonung" : type === "article" ? "der" : type === "plural" ? "Wohnungs" : "köpek",
+                  answer: T.replace(".", "").split(" "),
+                  tail: ".",
+                }, lang)}
+              />
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="card p-5">
+        <h2 className="muted mb-3 text-micro uppercase">CharDiff — harf farkı</h2>
+        <p className="text-body">
+          <CharDiff diff={charDiff("Katse", "Katze")} /> · <CharDiff diff={charDiff("Strase", "Straße")} /> ·{" "}
+          <CharDiff diff={charDiff("arbaiten", "arbeiten")} />
+        </p>
+      </section>
+
+      <section className="card p-5">
+        <h2 className="muted mb-3 text-micro uppercase">TokenDiff — cümle farkı</h2>
+        <DiffLegend />
+        <ul className="mt-3 space-y-3 text-body">
+          {["Heute ich gehe ins Kino", "Ich gehe heute ins Kinno", "Ich gehe ins Kino", "Ich gehe heute abend ins Kino", "Ich bin heute müde"].map((typed) => {
+            const m = matchSentence(typed, T);
+            return (
+              <li key={typed} className="rounded-panel px-3 py-2 surface-2">
+                <span className="muted mr-2 text-micro uppercase">{m.verdict} · kalite {m.quality}</span>
+                <TokenDiff tokens={m.target} />
+                <span className="muted block text-caption">
+                  Yazdığın: <TypedTokens tokens={m.typed} />
+                </span>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+
+      <section className="card p-5">
+        <h2 className="muted mb-3 text-micro uppercase">AssessmentCard — AI sonucu</h2>
+        <AssessmentCard answer={SAMPLE_ANSWER} result={SAMPLE} example="Ich trinke jeden Morgen einen Kaffee." />
+      </section>
+
+      <section className="card p-5">
+        <h2 className="muted mb-3 text-micro uppercase">AssessmentCard — sağlayıcı kapalı (yedek)</h2>
+        <AssessmentCard answer="Ich trinke Kaffee." result={fb} failure="not_configured" />
+      </section>
+    
+      {/* WP-20: telaffuz kartı — kelime ısı haritası örneği */}
+      <section id="pronounce" className="card p-4">
+        <h2 className="mb-2 font-bold">Telaffuz puanı (WP-20)</h2>
+        <PronounceCard
+          score={{
+            overall: 74, wordAccuracy: 70, completeness: 80, fluency: 85, rate: 3.4, pauses: 1, passed: false, transcript: "ich wohne in der staat",
+            extra: [],
+            words: [
+              { word: "Ich", status: "ok" }, { word: "wohne", status: "ok" }, { word: "in", status: "ok" }, { word: "der", status: "ok" },
+              { word: "Stadt", status: "near", heard: "Staat", hint: "„Stadt“taki a'yı uzattın ve „Staat“ (devlet) duyuldu. Sesi kısa kes: ŞTAT." },
+            ],
+          }}
+        />
+      </section>
+</div>
+  );
+}

@@ -35,6 +35,8 @@ export default function robots(): MetadataRoute.Robots {
         "/verify-email",
         "/tts-bridge",
         "/r/",
+        "/demo-games",
+        "/demo-feedback",
       ],
     },
     sitemap: `${SITE_URL}/sitemap.xml`,

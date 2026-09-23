@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { adminGate, adminPreview, adminSecurityState, ADMIN_FRESH_HOURS } from "@/lib/admin";
 import { openReportCount } from "@/lib/moderation-admin";
 import { loadAlerts } from "./_data";
@@ -6,6 +8,8 @@ import { Linkify } from "./_ui/ui";
 import { APP_LINKS } from "@/lib/admin-links";
 
 export const dynamic = "force-dynamic";
+/* Panel hiçbir koşulda indekslenmesin (robots.txt'e ek; o yalnız bir rica). */
+export const metadata: Metadata = { robots: { index: false, follow: false } };
 
 /**
  * Bütün yönetim sayfalarının kabuğu: üst şerit (ad + gezinme) ve yazma
@@ -18,7 +22,15 @@ export const dynamic = "force-dynamic";
  */
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   const gate = await adminGate();
-  if (!gate.ok) return <>{children}</>;
+  /*
+    GERÇEK 404 (teknik denetim TEC-12). Yetkisiz istek önce sayfaya iniyor ve
+    sayfa "yetkin yok" kartını 200 ile çiziyordu: panel var olduğunu söylüyor,
+    tarayıcı/bot da 200 görüyordu. `notFound()` düzende, hiçbir `await`li
+    Suspense sınırından önce çağrılınca Next.js yanıtı gerçekten 404 ile
+    başlatıyor (bkz. next/dist/docs 02-guides/streaming "Status codes").
+    Admin girişi `/login`den; bu sayfa artık kimseye ipucu vermiyor.
+  */
+  if (!gate.ok) notFound();
   const preview = adminPreview();
   const [state, openReports, alerts] = await Promise.all([
     preview ? null : adminSecurityState(),
