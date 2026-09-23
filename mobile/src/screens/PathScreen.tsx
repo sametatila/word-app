@@ -144,8 +144,12 @@ export function PathScreen() {
     çıktığı genişlikle aynı: o noktada sol panele iki kart rahat sığıyor.
   */
   const ikiPanel = landscape && contentWidth >= IKI_PANEL_MIN;
-  const solPanel = Math.round((contentWidth - spacing.lg) * 0.45);
-  const sagPanel = contentWidth - spacing.lg - solPanel;
+  /* Paneller `Screen`in iki yandaki dolgusunun İÇİNDE: kolonun tamamı
+     paylaştırılınca sağ panel dolgu kadar (32dp) taşıyor, flex onu
+     sıkıştırıp kenarı kolondan kaydırıyordu. */
+  const panelAlani = contentWidth - 2 * spacing.lg;
+  const solPanel = Math.round((panelAlani - spacing.lg) * 0.45);
+  const sagPanel = panelAlani - spacing.lg - solPanel;
   const solGenislik = ikiPanel ? solPanel : contentWidth;
   const gridItemWidth = gridItemWidthFor(gridColumnsFor(solGenislik));
   const [seciliIndex, setSeciliIndex] = useState<number | null>(null);
