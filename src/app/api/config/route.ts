@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { authEnabled, googleConfigured, appleConfigured, appleWebConfigured } from "@/lib/auth/server";
 import { turnstileSiteKey } from "@/lib/auth/captcha";
 import { appControl } from "@/lib/app-control";
+import { guestAttestationConfig } from "@/lib/auth/play-integrity";
 
 export const dynamic = "force-dynamic";
 
@@ -44,6 +45,13 @@ export async function GET() {
         appleWeb: authEnabled && appleWebConfigured,
       },
       turnstileSiteKey,
+      /*
+        Misafir açılışında cihaz doğrulaması (lib/auth/play-integrity). Kip
+        kapalıyken `null`: Android istemci Play Integrity'ye hiç gitmiyor
+        (kota ve gecikme yok). Açıkken hazırlık isteğinin istediği Cloud
+        proje numarası; sır değil.
+      */
+      guestAttestation: guestAttestationConfig(),
       app,
     },
     { headers: { "cache-control": "public, max-age=300" } },
