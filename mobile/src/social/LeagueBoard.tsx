@@ -71,7 +71,7 @@ export function LeagueBoard() {
         <View style={{ gap: spacing.sm }}>
           {view.rows.map((r, i) => (
             <React.Fragment key={r.userId}>
-              <LeagueRowCard row={r} zone={zoneOf(r.rank)} onOpen={() => r.username && nav.navigate("User", { username: r.username })} onReport={() => setReport(r)} />
+              <LeagueRowCard row={r} zone={zoneOf(r.rank)} onOpen={() => !r.hidden && r.username && nav.navigate("User", { username: r.username })} onReport={() => setReport(r)} />
               {view.promote > 0 && i + 1 === view.promote ? <ZoneEdge label={t("league.promote_zone")} tint={colors.success} /> : null}
               {view.demote > 0 && i + 1 === view.rows.length - view.demote ? <ZoneEdge label={t("league.demote_zone")} tint={colors.danger} /> : null}
             </React.Fragment>
@@ -104,13 +104,17 @@ function ZoneEdge({ label, tint }: { label: string; tint: string }) {
 function LeagueRowCard({ row, zone, onOpen, onReport }: { row: LeagueRow; zone: "up" | "down" | null; onOpen: () => void; onReport: () => void }) {
   const { colors } = useTheme();
   const tint = zone === "up" ? colors.success : zone === "down" ? colors.danger : null;
+  /* ENGELLENEN KİŞİ MASKELİ (CNT-16, web `league-board` ile aynı): ad yerine
+     nötr "Öğrenci", profil açılmıyor, bildirilecek bir ad da yok. Satır sıra
+     numaraları ve kuşaklar herkeste aynı kalsın diye duruyor. */
+  const quiet = row.isMe || !!row.hidden;
   return (
     <PressableScale
-      disabled={row.isMe || !row.username}
+      disabled={quiet || !row.username}
       onPress={onOpen}
-      onLongPress={row.isMe ? undefined : onReport}
+      onLongPress={quiet ? undefined : onReport}
       delayLongPress={400}
-      accessibilityHint={row.isMe ? undefined : t("leaderboard.report_hint", { name: row.name ?? t("social.student") })}
+      accessibilityHint={quiet ? undefined : t("leaderboard.report_hint", { name: row.name ?? t("social.student") })}
       style={[
         { flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, paddingHorizontal: spacing.md, paddingVertical: spacing.md, backgroundColor: row.isMe ? colors.primarySoft : colors.surface, borderWidth: 1, borderColor: row.isMe ? colors.primary : colors.hairline },
         tint ? softShadow(tint, 4) : {},
@@ -119,10 +123,10 @@ function LeagueRowCard({ row, zone, onOpen, onReport }: { row: LeagueRow; zone: 
       <View style={{ width: 30, alignItems: "center" }}>
         <Text variant="h3" color={tint ?? colors.textMuted}>{row.rank}</Text>
       </View>
-      <Avatar userId={row.userId} name={row.name} avatar={row.avatar} size={40} ring={tint} />
+      <Avatar userId={row.userId} name={row.hidden ? null : row.name} avatar={row.hidden ? null : row.avatar} size={40} ring={tint} />
       <View style={{ flex: 1 }}>
         <Text variant="bodyStrong" color={row.isMe ? colors.primaryText : colors.text} numberOfLines={1}>
-          {row.name ?? t("social.student")}{row.isMe ? t("social.you_paren") : ""}
+          {row.hidden ? t("social.student") : row.name ?? t("social.student")}{row.isMe ? t("social.you_paren") : ""}
         </Text>
         {row.streak > 0 ? (
           <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs }}>

@@ -255,7 +255,8 @@ function LeagueRow({
           </span>
           <span className="muted block text-micro">XP</span>
         </span>
-        {row.isMe ? null : (
+        {/* Engellenen kişinin satırı maskeli (CNT-16): bildirilecek ad yok. */}
+        {row.isMe || row.hidden ? null : (
           <button
             type="button"
             onClick={() => onReport(row)}

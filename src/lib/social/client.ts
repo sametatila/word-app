@@ -151,6 +151,8 @@ export type LeagueRowView = {
   xp: number;
   streak: number;
   isMe: boolean;
+  /** Engellenen kişi: ad/kullanıcı adı/avatar maskeli gelir (CNT-16). */
+  hidden?: boolean;
 };
 
 export type LeagueView = {

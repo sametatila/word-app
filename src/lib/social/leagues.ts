@@ -9,6 +9,7 @@ import { langOf, notify } from "./notify";
 import { xpBetween } from "./stats";
 import { LEAGUE_TIERS, type LeagueOutcome } from "./types";
 import { ensureUsernames } from "./usernames";
+import { blockedSet } from "./blocks";
 
 /**
  * Haftalık ligler.
@@ -77,6 +78,8 @@ export type LeagueRow = {
   xp: number;
   streak: number;
   isMe: boolean;
+  /** Engellenen (ya da seni engelleyen) kişi: ad, kullanıcı adı ve avatar maskeli. */
+  hidden?: boolean;
 };
 
 export type LeagueResult = {
@@ -203,18 +206,28 @@ export async function leagueBoard(userId: string, today: string): Promise<League
     .where(and(eq(leagueMembers.weekStart, ws), eq(leagueMembers.tier, me.tier), eq(leagueMembers.cohort, me.cohort)));
   const ids = members.map((m) => m.userId);
   await ensureUsernames(ids);
-  const [xp, prof, result] = await Promise.all([
+  const [xp, prof, result, blocked] = await Promise.all([
     xpBetween(ids, ws, shiftDay(ws, 7)),
     db
       .select({ userId: profiles.userId, name: profiles.displayName, username: profiles.username, avatar: profiles.avatar, level: profiles.level, streak: profiles.currentStreak })
       .from(profiles)
       .where(inArray(profiles.userId, ids)),
     pendingResult(userId, ws),
+    blockedSet(userId),
   ]);
+  /*
+    ENGELLENEN KİŞİ MASKELİ (içerik denetimi CNT-16). Profil, arama, akış,
+    dürtme ve tepkiler engeli uyguluyordu; lig tablosu uygulamıyordu ve
+    engellenen kişinin adı aynı tabloda duruyordu. Satır SİLİNMİYOR,
+    maskeleniyor: grup büyüklüğü yükselme/düşme kuşaklarını belirliyor ve
+    sıra numaraları herkeste aynı kalmalı. Sıralama maskeden önce yapılıyor.
+  */
   const rows = prof
     .map((p) => ({ userId: p.userId, name: p.name, username: p.username, avatar: p.avatar, level: p.level, xp: xp.get(p.userId) ?? 0, streak: p.streak, isMe: p.userId === userId }))
     .sort((a, b) => b.xp - a.xp || b.streak - a.streak || (a.name ?? "").localeCompare(b.name ?? "", "tr"))
-    .map((r, i) => ({ rank: i + 1, ...r }));
+    .map((r, i) => (blocked.has(r.userId)
+      ? { rank: i + 1, ...r, name: null, username: null, avatar: null, hidden: true }
+      : { rank: i + 1, ...r }));
   const { promote, demote } = moveCounts(rows.length, me.tier);
   return { weekStart: ws, tier: me.tier, daysLeft: daysLeftInWeek(today), rows, promote, demote, result };
 }

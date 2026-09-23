@@ -53,7 +53,9 @@ export type Suggestion = PublicUser & { mutual: number; reason: "mutual" | "leve
 export type BoardRow = { rank: number; userId: string; name: string | null; username: string | null; avatar: string | null; level: string; xp: number; streak: number; isMe: boolean };
 export type BoardView = { rows: BoardRow[]; start: string; daysLeft: number };
 export type LeagueOutcome = "promoted" | "demoted" | "stayed";
-export type LeagueRow = { rank: number; userId: string; name: string | null; username: string | null; avatar: string | null; level: string; xp: number; streak: number; isMe: boolean };
+/** `hidden`: engellenen (ya da seni engelleyen) kişi. Sunucu adı, kullanıcı
+    adını ve avatarı boş gönderiyor; satır sıra ve kuşak için duruyor (CNT-16). */
+export type LeagueRow = { rank: number; userId: string; name: string | null; username: string | null; avatar: string | null; level: string; xp: number; streak: number; isMe: boolean; hidden?: boolean };
 export type LeagueView = {
   weekStart: string; tier: number; daysLeft: number; rows: LeagueRow[]; promote: number; demote: number;
   result: { weekStart: string; tier: number; nextTier: number; rank: number; xp: number; outcome: LeagueOutcome } | null;
