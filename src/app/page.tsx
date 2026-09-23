@@ -15,11 +15,15 @@ import {
   SortIcon,
   StackIcon,
   TagIcon,
+  TranslateIcon,
   WriteIcon,
 } from "@/components/icons";
 import { getT, getLang } from "@/lib/i18n/server";
 import { courseName, courseSub, onboardingCoursesFor } from "@/lib/courses";
 import { legalPath } from "@/lib/legal";
+import { formatNumber } from "@/lib/i18n/dict";
+import { PLAYABLE_GAMES } from "@/lib/types";
+import { wordCountsByCourse } from "@/lib/landing-stats";
 
 /* Adlar oyunların kendi anahtarlarından: tanıtım sayfası ile turun içi aynı
    sözcüğü kullanmalı, yoksa ziyaretçi gördüğü oyunu uygulamada tanımıyor. */
@@ -40,6 +44,9 @@ const GAMES = [
   { Icon: SortIcon, name: "games.order", desc: "land.game_order" },
   { Icon: StackIcon, name: "games.plural", desc: "land.game_plural" },
   { Icon: CheckIcon, name: "games.truefalse", desc: "land.game_truefalse" },
+  /* Çeviri oyunu listede yoktu: sayfa "on oyun" diyordu, uygulama on bir
+     oynatıyor (`PLAYABLE_GAMES`; "Bütün oyunlar" başarımı da on bir sayıyor). */
+  { Icon: TranslateIcon, name: "games.translate", desc: "land.game_translate" },
 ];
 
 /*
@@ -54,7 +61,6 @@ const GAMES = [
 */
 const COURSE_BODY: Record<string, string> = {
   de: "land.course_de",
-  "gsw-zh": "land.course_gsw",
   en: "land.course_en",
 };
 
@@ -81,6 +87,23 @@ export default async function Home() {
   // Misafir web'de girişsiz: "Başla" onu kuruluma götürür, uygulama düzenine değil.
   const signedIn = Boolean(await getAccountUserId());
   const startHref = signedIn ? "/learn" : "/setup";
+  /*
+    VİTRİN = ZİYARETÇİNİN SEÇEBİLECEĞİ KURSLAR, SAYILAR VERİDEN (içerik
+    denetimi CNT-8). Başlık, rozet ve alt başlık yalnız Almancayı ve
+    duraklatılmış Zürih kursunu anlatıyordu; arayüzü Almanca olan ziyaretçi
+    o kursu seçemiyor bile. Kurslar `onboardingCoursesFor`dan, kelime sayısı
+    `words` tablosundan, oyun sayısı `PLAYABLE_GAMES`ten.
+  */
+  const courses = onboardingCoursesFor(lang);
+  const counts = await wordCountsByCourse();
+  const totalWords = courses.reduce((s, c) => s + (counts.get(c.id) ?? 0), 0);
+  const games = PLAYABLE_GAMES.length;
+  const courseList = new Intl.ListFormat(lang, { style: "long", type: "disjunction" }).format(courses.map((c) => courseName(c.id, lang)));
+  const badge = totalWords > 0
+    ? t("land.badge", { courses: courses.map((c) => courseName(c.id, lang)).join(" · "), words: formatNumber(totalWords, lang), games })
+    : t("land.badge_nowords", { courses: courses.map((c) => courseName(c.id, lang)).join(" · "), games });
+  // "İki kurs, tek ilerleme" yalnız gerçekten iki kurs seçilebiliyorsa.
+  const features = courses.length > 1 ? FEATURES : FEATURES.filter((f) => f.title !== "land.f_courses_title");
 
   return (
     <div className="relative min-h-dvh overflow-hidden">
@@ -136,7 +159,7 @@ export default async function Home() {
         <section className="py-14 text-center short:py-6 sm:py-20">
           <Reveal>
             <span className="muted inline-block rounded-full border px-3 py-1 text-caption" style={{ borderColor: "var(--border)" }}>
-              {t("land.badge")}
+              {badge}
             </span>
           </Reveal>
           <Reveal delay={0.06}>
@@ -152,7 +175,7 @@ export default async function Home() {
                 başlığın hemen altında sistemin çalışma mantığını anlatmak,
                 daha ne olduğu söylenmeden nasıl çalıştığını anlatmak oluyor. */}
             <p className="muted mx-auto mt-5 max-w-xl text-body sm:text-h3">
-              {t("land.hero_sub")}
+              {t("land.hero_sub", { courses: courseList, games })}
             </p>
           </Reveal>
           <Reveal delay={0.18}>
@@ -180,7 +203,7 @@ export default async function Home() {
               `onboardingCoursesFor` kullanıyor. Sayfa "ücretsiz başla"nın hemen
               altında duruyor, yani bu kartlar bir teklif - tutulmayacak bir
               teklif olmamalı. */}
-          {onboardingCoursesFor(lang).map((c, i) => (
+          {courses.map((c, i) => (
             <Reveal key={c.id} delay={i * 0.08}>
               <div className="card h-full p-6">
                 <div className="flex items-baseline gap-2">
@@ -190,13 +213,18 @@ export default async function Home() {
                   </span>
                 </div>
                 <p className="muted mt-2 text-body leading-relaxed">{t(COURSE_BODY[c.id] ?? "land.course_de")}</p>
+                {counts.get(c.id) ? (
+                  <p className="mt-3 text-caption font-semibold text-[color:var(--color-brand)]">
+                    {t("land.words_n", { n: formatNumber(counts.get(c.id) ?? 0, lang) })} · A1–C1
+                  </p>
+                ) : null}
               </div>
             </Reveal>
           ))}
         </section>
 
         <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {FEATURES.map((f, i) => (
+          {features.map((f, i) => (
             <Reveal key={f.title} delay={i * 0.08}>
               <div className="card h-full p-6">
                 <div className="brand-gradient mb-4 h-1.5 w-10 rounded-full" />
@@ -209,7 +237,7 @@ export default async function Home() {
 
         <section className="mt-20">
           <Reveal>
-            <h2 className="text-center text-h1 sm:text-display">{t("land.games_title")}</h2>
+            <h2 className="text-center text-h1 sm:text-display">{t("land.games_title", { n: games })}</h2>
             <p className="muted mx-auto mt-3 max-w-lg text-center text-body">
               {t("land.games_sub")}
             </p>
@@ -269,8 +297,6 @@ export default async function Home() {
 
       <footer className="muted border-t px-5 py-8 text-center text-caption" style={{ borderColor: "var(--border)" }}>
         {t("land.footer_source")}
-        <br />
-        {t("land.footer_gsw")}
         <div className="mt-4 flex flex-wrap justify-center gap-x-4 gap-y-1">
           <Link href={legalPath("privacy", lang)} prefetch={false} className="underline-offset-4 hover:underline">{t("auth.privacy_policy")}</Link>
           <Link href={legalPath("terms", lang)} prefetch={false} className="underline-offset-4 hover:underline">{t("auth.terms_of_use")}</Link>
