@@ -163,6 +163,9 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
                 n: result.score.overall,
               }),
               answer: result.corrected.trim() || value.trim(),
+              /* HOPARLÖR YOK: cümle kullanıcının kendi yazdığı (ya da düzeltilmişi), önceden üretilemez.
+                 Kelime katmanı yalnız Defne/Aras dosyasından çalıyor; düğme burada hep susardı. */
+              speak: "",
               detail: "offline" in result && result.offline ? tx("rounds.basic_check") : null,
               you: result.corrected.trim() && result.corrected.trim() !== value.trim() ? value.trim() : null,
               why,

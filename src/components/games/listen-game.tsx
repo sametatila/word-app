@@ -10,7 +10,7 @@ import { withArtikel, type GameProps, type GameResult , meaningOf } from "./type
 import type { Option, Round } from "@/lib/types";
 import { MeaningText, SentenceTranslation } from "@/components/meaning-text";
 import { vibrate } from "@/lib/fx";
-import { speakGerman, useSpeechAvailable } from "@/components/speak-button";
+import { speakWord, useSpeechAvailable } from "@/components/speak-button";
 import { SpeakerIcon } from "@/components/icons";
 import { firstExample } from "@/lib/example";
 import { useT, useLang } from "@/lib/i18n/client";
@@ -51,7 +51,7 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
     setPending(null);
     setReplays(0);
     // Tur açılır açılmaz bir kez okunur: öğrencinin ilk işi dinlemek.
-    const t = setTimeout(() => speakGerman(spoken), 300);
+    const t = setTimeout(() => speakWord(spoken), 300);
     return () => clearTimeout(t);
   }, [round.id, spoken]);
 
@@ -112,7 +112,7 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
             type="button"
             onClick={() => {
               setReplays((n) => n + 1);
-              speakGerman(spoken);
+              speakWord(spoken);
             }}
             whileTap={{ scale: 0.96 }}
             aria-label={tx("mockexam.listen_again")}

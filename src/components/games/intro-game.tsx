@@ -8,7 +8,7 @@ import { grammarNote, typLabel, withArtikel, type GameProps , meaningOf } from "
 import type { Round } from "@/lib/types";
 import { firstExample } from "@/lib/example";
 import { SentenceTranslation } from "@/components/meaning-text";
-import { SpeakButton, speakGerman } from "@/components/speak-button";
+import { SpeakButton, speakWord } from "@/components/speak-button";
 import { useT, useLang } from "@/lib/i18n/client";
 
 type IntroRound = Extract<Round, { game: "intro" }>;
@@ -37,7 +37,7 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
     setSkipping(false);
     const t = setTimeout(() => setRevealed(true), 900);
     // Yeni kelimeyi bir kez sesli oku: öğrencinin ilk sorusu "nasıl okunuyor?"
-    const s = setTimeout(() => speakGerman(withArtikel(round.word)), 350);
+    const s = setTimeout(() => speakWord(withArtikel(round.word)), 350);
     return () => {
       clearTimeout(t);
       clearTimeout(s);
@@ -79,7 +79,7 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
         ) : null}
         <div className="flex items-center justify-center gap-2">
           <h2 className="text-display sm:text-display">{word.de}</h2>
-          <SpeakButton text={withArtikel(word)} />
+          <SpeakButton word text={withArtikel(word)} />
         </div>
         <p className="muted mt-1 text-body">
           {typLabel(word.typ, meaningOf(word, lang), lang)}
@@ -112,7 +112,7 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
           >
             <span className="inline-flex items-center gap-1">
               {example}
-              <SpeakButton text={example} size="sm" />
+              <SpeakButton word text={example} size="sm" />
             </span>
             <SentenceTranslation
               tr={exampleTr}

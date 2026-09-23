@@ -12,7 +12,7 @@ import { foldTight, withArtikel, type GameProps, type GameResult , meaningOf } f
 import { seededShuffle } from "@/lib/shuffle";
 import type { Round } from "@/lib/types";
 import { vibrate } from "@/lib/fx";
-import { prefetchGerman } from "@/components/speak-button";
+import { prefetchWord } from "@/components/speak-button";
 import { useT, useLang } from "@/lib/i18n/client";
 import { play } from "@/lib/sfx";
 
@@ -77,7 +77,7 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
     setPool(makePool(round.word.de, round.id));
     // Tamamlanınca okunacak metin belli; önden indirilirse dokunuşla ses
     // arasında boşluk kalmıyor.
-    prefetchGerman(withArtikel(round.word));
+    prefetchWord(withArtikel(round.word));
     setPlaced([]);
     setStatus("playing");
     setPending(null);

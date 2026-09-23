@@ -56,6 +56,7 @@ export function useRoundExit() {
     ) => {
       abort();
       const { tail = 0, ...speech } = opts;
+      // Oyunların tamamı kelime katmanı: yalnız Defne/Aras dosyası (bkz. speak-button `speakWord`).
       cancelSpeech.current = speakThen(
         text,
         () => {
@@ -66,7 +67,7 @@ export function useRoundExit() {
           }
           timer.current = setTimeout(() => finish(done), tail);
         },
-        speech,
+        { ...speech, word: true },
       );
     },
     [abort, finish],
@@ -92,7 +93,7 @@ export function useRoundExit() {
   const speak = useCallback(
     (text: string, opts: { maxWaitMs?: number } = {}) => {
       abort();
-      cancelSpeech.current = speakThen(text, () => { cancelSpeech.current = null; }, opts);
+      cancelSpeech.current = speakThen(text, () => { cancelSpeech.current = null; }, { ...opts, word: true });
     },
     [abort],
   );

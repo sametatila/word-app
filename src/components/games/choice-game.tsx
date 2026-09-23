@@ -13,7 +13,7 @@ import { nativeLangName } from "@/lib/i18n/dict";
 import type { Option, Round } from "@/lib/types";
 import { MeaningText } from "@/components/meaning-text";
 import { vibrate } from "@/lib/fx";
-import { prefetchGerman, speakGerman } from "@/components/speak-button";
+import { prefetchWord, speakWord } from "@/components/speak-button";
 import { useT, useLang } from "@/lib/i18n/client";
 
 type ChoiceRound = Extract<Round, { game: "choice" }>;
@@ -48,10 +48,10 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
     // şıklarında ve o, seçim yapılınca okunuyor.
     if (!deSide) {
       // Bu yönde Almanca olan taraf cevap; seçimden sonra o okunacak.
-      prefetchGerman(answer);
+      prefetchWord(answer);
       return;
     }
-    const s = setTimeout(() => speakGerman(question), 350);
+    const s = setTimeout(() => speakWord(question), 350);
     return () => clearTimeout(s);
   }, [round.id, deSide, question, answer]);
 

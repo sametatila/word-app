@@ -10,7 +10,7 @@ import { withArtikel, shuffle, type GameProps, type GameResult , meaningOf, mean
 import type { Round } from "@/lib/types";
 import { MeaningText } from "@/components/meaning-text";
 import { vibrate } from "@/lib/fx";
-import { speakGerman } from "@/components/speak-button";
+import { speakWord } from "@/components/speak-button";
 import { useT, useLang } from "@/lib/i18n/client";
 import { play } from "@/lib/sfx";
 
@@ -104,7 +104,7 @@ export function MatchGame({ round, onDone }: GameProps<MatchRound>) {
     // Almanca kelimeye dokununca telaffuzu da duyulur: eşleştirme aynı zamanda
     // kulak eğitimidir.
     const w = words.find((x) => x.id === wordId);
-    if (w) speakGerman(withArtikel(w));
+    if (w) speakWord(withArtikel(w));
     setSelectedLeft(wordId);
     if (selectedRightIdx != null) {
       tryMatch(wordId, selectedRightIdx);

@@ -296,7 +296,7 @@ function SheetBody({ data }: { data: SheetData }) {
               <span className="min-w-0 flex-1 text-strong" style={{ color: palette.ink }}>
                 {label}
               </span>
-              {speakText ? <SpeakButton text={speakText} size="sm" /> : null}
+              {speakText ? <SpeakButton word text={speakText} size="sm" /> : null}
             </div>
             {data.answerTokens?.length ? (
               <span className="text-h3">

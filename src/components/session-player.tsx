@@ -20,7 +20,7 @@ import {
 import type { GameResult } from "@/components/games/types";
 import { GameSwitch } from "@/components/game-switch";
 import { EASE_AFTER_MISSES, easeRound, isProductionGame } from "@/lib/ladder";
-import { prefetchGerman } from "@/components/speak-button";
+import { prefetchWord } from "@/components/speak-button";
 import { play, resetCombo } from "@/lib/sfx";
 import { vibrate } from "@/lib/fx";
 import { track } from "@/lib/track";
@@ -717,7 +717,7 @@ function SessionRound() {
     const next = session?.rounds[index + 1];
     if (!next) return;
     const words = next.game === "match" ? next.words : [next.word];
-    for (const w of words) prefetchGerman(w.artikel ? `${w.artikel} ${w.de}` : w.de);
+    for (const w of words) prefetchWord(w.artikel ? `${w.artikel} ${w.de}` : w.de);
   }, [session, index]);
 
   useEffect(() => {

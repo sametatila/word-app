@@ -19,7 +19,7 @@ import { Group, Row } from "@/components/settings-section";
 import { LinkedAccounts } from "@/components/account/linked-accounts";
 import { courseName, courseSub, coursesForNative } from "@/lib/courses";
 import { LangSetting } from "@/components/lang-setting";
-import { defaultVoice, type VoiceId } from "@/lib/tts/voices";
+import { resolveVoice, type VoiceId } from "@/lib/tts/voices";
 import { track } from "@/lib/track";
 import { legalPath } from "@/lib/legal";
 import { PROFILE_LIMITS } from "@/lib/profile-limits";
@@ -246,8 +246,10 @@ export function ProfileForm({
                     if (c.id === course) return;
                     setCourse(c.id);
                     // Ses kursa bağlı: Zürih metnini Almanca sesle okutmak
-                    // bu değişikliğin çözdüğü sorunun ta kendisiydi.
-                    const v = defaultVoice(c.id);
+                    // bu değişikliğin çözdüğü sorunun ta kendisiydi. Seçilen
+                    // karakter korunuyor: Aras'ı seçen yeni kursta da Aras'ı
+                    // (Zürih'te Jan'ı) duyuyor, kursun varsayılanına dönmüyor.
+                    const v = resolveVoice(c.id, voice);
                     setVoice(v);
                     void patch({ course: c.id, voice: v }, () => track("setting_change", 0, "course"));
                   }}

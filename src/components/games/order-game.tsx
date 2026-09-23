@@ -12,7 +12,8 @@ import { meaningOf, type GameProps, type GameResult } from "./types";
 import type { Round } from "@/lib/types";
 import { SentenceTranslation } from "@/components/meaning-text";
 import { vibrate } from "@/lib/fx";
-import { prefetchGerman, speakGerman } from "@/components/speak-button";
+import { prefetchWord, speakWord } from "@/components/speak-button";
+import { tileSpeech } from "@/lib/tts/text";
 import { useT, useLang } from "@/lib/i18n/client";
 import { play } from "@/lib/sfx";
 
@@ -54,7 +55,7 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
   // Cümle tamamlanınca doğru hâli okunuyor ve o metin baştan belli; en uzun
   // ses bu oyunda olduğu için önden indirmenin kazancı da en çok burada.
   useEffect(() => {
-    prefetchGerman(`${answer.join(" ")}${tail}`);
+    prefetchWord(`${answer.join(" ")}${tail}`);
   }, [answer, tail]);
   const onDoneRef = useRef(onDone);
 
@@ -144,7 +145,8 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
        onizlemesinde caliniyordu; Android her harf/kelime yerlestirmede ve
        geri almada caliyor (`game/rounds`). Karo hareketi sessizdi. */
     play("tap");
-    speakGerman(token.text);
+    // Kutunun kendi kaydı: kenar noktalaması atılmış sözcük (bkz. lib/tts/text `tileSpeech`).
+    speakWord(tileSpeech(token.text));
     setPlaced((prev) => (prev.length >= answer.length ? prev : [...prev, token]));
   }
 

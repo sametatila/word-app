@@ -44,7 +44,7 @@ function paceOf(slow: Pace | boolean): Pace {
   return slow === true ? "slow" : slow === false ? "normal" : slow;
 }
 
-function ttsUrl(voice: VoiceId, clean: string, slow: Pace | boolean = false, pitch: Pitch = "mid"): string {
+function ttsUrl(voice: VoiceId, clean: string, slow: Pace | boolean = false, pitch: Pitch = "mid", word = false): string {
   const pace = paceOf(slow);
   // Varsayilanlar URL'ye YAZILMIYOR: `r`siz ve `p`siz adres eski adresle
   // birebir ayni kalmali, yoksa bugune kadar isinmis butun onbellek girdileri
@@ -52,7 +52,9 @@ function ttsUrl(voice: VoiceId, clean: string, slow: Pace | boolean = false, pit
   return (
     `/api/tts?v=${voice}&t=${encodeURIComponent(clean)}` +
     (pace === "normal" ? "" : `&r=${PACE_PARAM[pace]}`) +
-    (pitch === "mid" ? "" : `&p=${PITCH_PARAM[pitch]}`)
+    (pitch === "mid" ? "" : `&p=${PITCH_PARAM[pitch]}`) +
+    // Kelime katmanı: sunucu yalnız Defne/Aras dosyasından çalıyor, Edge'e düşmüyor (bkz. app/api/tts).
+    (word ? "&k=w" : "")
   );
 }
 
@@ -224,6 +226,8 @@ export function speakGerman(
   slow: Pace | boolean = false,
   /** Ses gerçekten başlayınca, bir kez (dinleme düğmesinin "yükleniyor"u buna bakıyor). */
   onStart?: () => void,
+  /** Kelime katmanı — `speakWord` bunu açıyor (bkz. `ttsUrl`). */
+  word = false,
 ) {
   /*
     UZUN METİN BÖLÜNÜYOR — bu yol eskiden sessizliğe çıkıyordu.
@@ -261,15 +265,28 @@ export function speakGerman(
       }
     : undefined;
   if (parts.length === 1) {
-    speakChain(parts[0], voice, course, onEnd, slow, startOnce);
+    speakChain(parts[0], voice, course, onEnd, slow, startOnce, word);
     return;
   }
   const lang = voice.startsWith("en") ? "en" : voice.startsWith("tr") ? "tr" : "de";
   speakSegments(
-    parts.map((text) => ({ lang, text, voice, pace: paceOf(slow) }) as SpeechSegment),
+    parts.map((text) => ({ lang, text, voice, pace: paceOf(slow), word }) as SpeechSegment),
     onEnd,
     startOnce,
   );
+}
+
+/**
+ * KELİME KATMANI — günlük tur, pratik ve yürüyüş modunun sesi.
+ *
+ * `speakGerman`le aynı zincir, tek farkla: istek `k=w` taşıyor ve sunucu metni YALNIZ kullanıcının
+ * seçtiği karakterin (Defne/Aras) önceden üretilmiş dosyasından çalıyor. Tabloda yoksa 404 geliyor ve
+ * okuma atlanıyor — Edge'e de, cihaz sesine de düşülmüyor (Samet'in kararı, 2026-09-23). Hangi metinlerin
+ * kelime katmanı olduğu `scripts/tts-own-coverage.ts`te sayılı; buraya yeni bir çağıran eklenirse o
+ * betiğe de kaynağı eklenmeli, yoksa yayında susar.
+ */
+export function speakWord(text: string, onEnd?: () => void, onStart?: () => void) {
+  speakGerman(text, onEnd, false, onStart, true);
 }
 
 /**
@@ -300,12 +317,13 @@ function speakChain(
   onEnd?: () => void,
   slow: Pace | boolean = false,
   onStart?: () => void,
+  word = false,
 ): (() => void) | null {
   const mine = bumpToken();
   stopActiveChain();
   element?.pause();
   extra?.pause();
-  const cancel = playGapless([ttsUrl(voice, clean, slow)], {
+  const cancel = playGapless([ttsUrl(voice, clean, slow, "mid", word)], {
     mine,
     onEnd,
     onStart,
@@ -313,14 +331,14 @@ function speakChain(
       // Ölçüm: nöral ses WebAudio ile çalınamadı. Sık görünüyorsa sorun ağ ya
       // da çözme tarafında; bu iki basamak da hâlâ DOĞRU sesi çalıyor.
       if (typeof window !== "undefined") trackOnce("tts_fallback", 0, "element");
-      play(clean, voice, course, onEnd, slow, onStart);
+      play(clean, voice, course, onEnd, slow, onStart, word);
     },
   });
   if (cancel) {
     activeChainStop = cancel;
     return cancel;
   }
-  play(clean, voice, course, onEnd, slow, onStart);
+  play(clean, voice, course, onEnd, slow, onStart, word);
   return null;
 }
 
@@ -330,11 +348,13 @@ function speakChain(
  * Seçimden önce dinletmek gerekiyor: iki sesin farkı yazıyla anlatılamaz,
  * kullanıcı her gün dinleyeceği sesi duyarak seçmeli.
  */
-export function speakWithVoice(text: string, voice: VoiceId) {
+export function speakWithVoice(text: string, voice: VoiceId, word = false) {
   const clean = cleanForSpeech(text);
   // Zincirin tamamı: önizleme cihazın kendi sesine düşerse ekran tam da
   // seçilmekte olan sesi YANLIŞ duyurur — burada yedeğe düşmek en zararlı yer.
-  if (clean) speakChain(clean, voice, voice.startsWith("de-CH") ? "gsw-zh" : "de");
+  // Karakter sesinin önizlemesi kelime katmanından bir metin (`word`): Defne'yi
+  // seçtiren ekran Defne'nin KENDİ sesini çalmalı, Edge karşılığını değil.
+  if (clean) speakChain(clean, voice, voice.startsWith("de-CH") ? "gsw-zh" : "de", undefined, false, undefined, word);
 }
 
 /**
@@ -359,7 +379,7 @@ export function speakWithVoice(text: string, voice: VoiceId) {
  */
 const TTS_FETCH_TIMEOUT_MS = 8_000;
 
-export function prefetchGerman(text: string) {
+export function prefetchGerman(text: string, word = false) {
   if (typeof fetch === "undefined") return;
   const course = readLocal(COURSE_KEY) ?? "de";
   const voice = resolveVoice(course, readLocal(VOICE_KEY));
@@ -370,13 +390,29 @@ export function prefetchGerman(text: string) {
      onu 400 ile reddedeceği için istek de boşa giderdi). İkisi aynı bölmeden
      geçsin ki ayrışmasınlar. */
   for (const clean of splitForSpeech(text)) {
-    void fetch(ttsUrl(voice, clean), {
+    void fetch(ttsUrl(voice, clean, false, "mid", word), {
       // Öncelik düşük: açık bir isteğin önüne geçmemeli.
       priority: "low",
     } as RequestInit).catch(() => {
       /* önden indirme başarısızsa normal akış zaten çalışıyor */
     });
   }
+}
+
+/**
+ * Kullanıcının seçtiği ses, kursa göre doğrulanmış — kelime katmanının sesi.
+ *
+ * Parça zinciri (`speakSegments`) sesi parçanın dilinden türetiyor ve o türetme DERS sesini veriyor
+ * (`lessonVoice`, sabit). Yürüyüş modu hedef kelimeyi bu yüzden seçilen karakterle değil ders sesiyle
+ * okuyordu; kelime parçası sesini buradan açıkça taşımalı.
+ */
+export function selectedVoice(): VoiceId {
+  return resolveVoice(readLocal(COURSE_KEY) ?? "de", readLocal(VOICE_KEY));
+}
+
+/** Kelime katmanının ön indirmesi — çalınacak adresin (`k=w`) ta kendisi ısınsın. */
+export function prefetchWord(text: string) {
+  prefetchGerman(text, true);
 }
 
 /** Telaffuz çalışması için yavaş okuma — önce heceleri ayırt et, sonra tekrarla. */
@@ -431,6 +467,12 @@ export type SpeechSegment = {
    * öğesi yolunda dosyaların kendi kenar sessizlikleri zaten duruyor.
    */
   gapBefore?: number;
+  /**
+   * Kelime katmanı parçası (yürüyüş modunda hedef kelime ve anadil karşılığı): adres `k=w` taşıyor,
+   * sunucu yalnız Defne/Aras dosyasından çalıyor. Böyle bir parça başka parçayla BİRLEŞMİYOR —
+   * birleşen metin tabloda olmaz — ve çevrimdışıyken cihaz sesine düşmüyor, atlanıyor.
+   */
+  word?: boolean;
 };
 
 /**
@@ -489,6 +531,7 @@ function voiceForSegment(seg: SpeechSegment): { voice: VoiceId; course: string }
 function mergeForSpeech(segments: SpeechSegment[]): SpeechSegment[] {
   const merged: SpeechSegment[] = [];
   const sameVoice = (a: SpeechSegment, b: SpeechSegment) =>
+    !a.word && !b.word &&
     a.lang === b.lang && a.narration === b.narration && a.voice === b.voice && a.pitch === b.pitch && a.pace === b.pace;
   for (const seg of segments) {
     // Üç nokta artık `cleanForSpeech`in içinde (tek kopya, iki platform).
@@ -785,6 +828,11 @@ function chainWithElements(
         onEnd?.();
         return;
       }
+      // Kelime katmanı cihaz sesine hiç düşmüyor: atlanıyor.
+      if (queue[i].word) {
+        step(i + 1);
+        return;
+      }
       const { voice, course } = voiceForSegment(queue[i]);
       // Hız da geçiyor: parça başına `pace` bu çalışmada eklendi ama bu yola
       // hiç ulaşmıyordu, yani çevrimdışı bir dinleme diyaloğu `listen`
@@ -802,7 +850,7 @@ function chainWithElements(
   /* Adres parçanın hızını ve perdesini de taşımak ZORUNDA: taşımasaydı
      WebAudio yolundan bu yola düşen bir diyalog aynı metni başka bir adresle
      ister, yani önbelleği ıskalar ve konuşmacılar tek sese dönerdi. */
-  const srcFor = (seg: SpeechSegment) => ttsUrl(voiceForSegment(seg).voice, seg.text, seg.pace ?? "normal", seg.pitch ?? "mid");
+  const srcFor = (seg: SpeechSegment) => ttsUrl(voiceForSegment(seg).voice, seg.text, seg.pace ?? "normal", seg.pitch ?? "mid", seg.word);
   /** i. parçayı kendi öğesine yükler — çalma değil, hazırlık. */
   const preload = (i: number) => {
     const el = els[i % 2];
@@ -862,7 +910,8 @@ function chainWithElements(
         void el.play().catch(fallback);
         return;
       }
-      if (!offline) {
+      // Kelime katmanı çevrimdışıyken de cihaz sesine düşmüyor: atlanıyor.
+      if (!offline || queue[i].word) {
         if (typeof window !== "undefined") trackOnce("tts_fallback", 0, blocked ? "blocked" : "skip");
         next();
         return;
@@ -990,7 +1039,7 @@ export function speakSegments(
     };
   }
 
-  const urls = queue.map((seg) => ttsUrl(voiceForSegment(seg).voice, seg.text, seg.pace ?? "normal", seg.pitch ?? "mid"));
+  const urls = queue.map((seg) => ttsUrl(voiceForSegment(seg).voice, seg.text, seg.pace ?? "normal", seg.pitch ?? "mid", seg.word));
   const cancel = playGapless(urls, {
     mine,
     onEnd,
@@ -1080,7 +1129,7 @@ export function stopSpeaking() {
 export function prefetchSegments(segments: SpeechSegment[]) {
   if (typeof fetch === "undefined") return;
   for (const seg of mergeForSpeech(segments)) {
-    void fetch(ttsUrl(voiceForSegment(seg).voice, seg.text, seg.pace ?? "normal", seg.pitch ?? "mid"), {
+    void fetch(ttsUrl(voiceForSegment(seg).voice, seg.text, seg.pace ?? "normal", seg.pitch ?? "mid", seg.word), {
       priority: "low",
     } as RequestInit).catch(() => {
       /* önden indirme başarısızsa normal akış zaten çalışıyor */
@@ -1111,10 +1160,13 @@ function play(
   onEnd?: () => void,
   slow: Pace | boolean = false,
   onStart?: () => void,
+  word = false,
 ) {
   const audio = audioElement();
   if (!audio) {
-    speakWithBrowser(clean, voice, course, onEnd, slow, onStart);
+    // Kelime katmanı cihaz sesine düşmüyor (bkz. `speakWord`).
+    if (word) onEnd?.();
+    else speakWithBrowser(clean, voice, course, onEnd, slow, onStart);
     return;
   }
 
@@ -1130,7 +1182,7 @@ function play(
     done = true;
     onEnd?.();
   };
-  const url = ttsUrl(voice, clean, slow);
+  const url = ttsUrl(voice, clean, slow, "mid", word);
   /** Kaçıncı deneme — geç gelen olay önceki denemeye aitse yok sayılır. */
   let attempt = 0;
   let bekci: ReturnType<typeof setTimeout> | undefined;
@@ -1163,7 +1215,8 @@ function play(
     done = true;
     // Öğe hâlâ yüklüyor olabilir (nöbetçi): geç başlayıp üstüne binmesin.
     audio.pause();
-    if (offline) {
+    // Kelime katmanı çevrimdışıyken de cihaz sesine düşmüyor: seçilen karakter yoksa ses yok.
+    if (offline && !word) {
       if (typeof window !== "undefined") trackOnce("tts_fallback", 0, "browser");
       speakWithBrowser(clean, voice, course, onEnd, slow, onStart);
       return;
@@ -1318,6 +1371,7 @@ export function SpeakButton({
   voice,
   pace,
   pitch,
+  word = false,
 }: {
   text: string;
   size?: "sm" | "md";
@@ -1338,17 +1392,23 @@ export function SpeakButton({
    * kendisi geri geliyor.
    */
   pitch?: Pitch;
+  /** Kelime katmanı (günlük tur, pratik, kelime listesi): yalnız Defne/Aras dosyası (bkz. `speakWord`). */
+  word?: boolean;
 }) {
   const available = useSpeechAvailable();
   const t = useT();
   const speak = useCallback(() => {
+    if (word) {
+      speakWord(text);
+      return;
+    }
     if (!voice && !pace && !pitch) {
       speakGerman(text);
       return;
     }
     const lang = voice?.startsWith("en") ? "en" : voice?.startsWith("tr") ? "tr" : "de";
     speakSegments([{ lang, text, voice, pace, pitch }]);
-  }, [text, voice, pace, pitch]);
+  }, [text, voice, pace, pitch, word]);
   if (!available) return null;
   const dim = size === "sm" ? "h-7 w-7" : "h-9 w-9";
   return (
@@ -1410,9 +1470,11 @@ export function speakThen(
   opts: {
     /** Ses hiç çalmazsa turun asılı kalmaması için üst sınır. */
     maxWaitMs?: number;
+    /** Kelime katmanı (oyunların tur kapanışı): yalnız Defne/Aras dosyası (bkz. `speakWord`). */
+    word?: boolean;
   } = {},
 ): () => void {
-  const { maxWaitMs = 6000 } = opts;
+  const { maxWaitMs = 6000, word = false } = opts;
   let finished = false;
   const finish = () => {
     if (finished) return;
@@ -1430,7 +1492,7 @@ export function speakThen(
   const voice = resolveVoice(course, readLocal(VOICE_KEY));
   // speakGerman ile AYNI zincir. Eskiden burası doğrudan play() çağırıyordu ve
   // ikinci basamakta takılan okuma sessizce tarayıcı sentezine düşüyordu.
-  const cancelChain = speakChain(clean, voice, course, finish, false);
+  const cancelChain = speakChain(clean, voice, course, finish, false, undefined, word);
   return () => {
     finished = true;
     clearTimeout(guard);

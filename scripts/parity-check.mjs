@@ -20501,8 +20501,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     /* KÖPRÜ SAYFASININ İÇİNDEKİ ön indirme. Bu `fetch` Node'da değil, mobil
        WebView'inin yüklediği `/tts-bridge` sayfasında çalışıyor (dosyada bir
        şablon dizgesinin içinde duruyor) ve ateşle-unut: cevabı WebView'in
-       HTTP önbelleğine yazmak dışında bir işi yok, kimse beklemiyor. */
-    ["src/app/tts-bridge/route.ts", 1],
+       HTTP önbelleğine yazmak dışında bir işi yok, kimse beklemiyor.
+       İKİNCİSİ (2026-09-23) kelime isteğinin yoklaması: `ttsSpeak` kelime katmanında önce `fetch` ile
+       soruyor, 404 ise "skip" gönderiyor (köprü sağlıklı kalsın), değilse aynı adresi `<audio>` çalıyor.
+       Tavan köprünün RN tarafında: `bridgeSpeakAndWait` native gecikmeyle en geç `cap` sonra bırakıyor. */
+    ["src/app/tts-bridge/route.ts", 2],
   ];
   const walk = (d, out = []) => {
     for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {

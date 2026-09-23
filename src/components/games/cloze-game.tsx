@@ -13,7 +13,7 @@ import { matchesAnswer, type GameProps, type GameResult , meaningOf } from "./ty
 import type { Round } from "@/lib/types";
 import { SentenceTranslation } from "@/components/meaning-text";
 import { vibrate } from "@/lib/fx";
-import { prefetchGerman } from "@/components/speak-button";
+import { prefetchWord } from "@/components/speak-button";
 import { useT, useLang } from "@/lib/i18n/client";
 import { useCourse } from "@/components/app-shell";
 
@@ -51,7 +51,7 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
     // değil ama doğru cümle her hâlükârda okunuyor; önden indirmek dokunuşla
     // sesin başlaması arasındaki boşluğu kapatıyor.
     focusOnFine(inputRef.current);
-    prefetchGerman(`${before}${answer}${after}`.trim());
+    prefetchWord(`${before}${answer}${after}`.trim());
   }, [round.id, before, after, answer]);
 
   // Yazarak tamamlamada büyük/küçük harf ve umlaut yazımı hoş görülür

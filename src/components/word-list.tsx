@@ -354,7 +354,7 @@ export function WordList({
                     style={{ borderColor: "var(--border)" }}
                   >
                     <div className="flex items-center gap-2">
-                      <SpeakButton text={r.artikel ? `${r.artikel} ${r.de}` : r.de} size="sm" />
+                      <SpeakButton word text={r.artikel ? `${r.artikel} ${r.de}` : r.de} size="sm" />
                       <span className="muted">
                         {typLabel(r.typ, r.tr, lang)}
                         {note ? ` · ${note}` : ""}

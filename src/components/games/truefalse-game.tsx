@@ -12,7 +12,7 @@ import { MeaningText } from "@/components/meaning-text";
 import { vibrate } from "@/lib/fx";
 import { CheckIcon, XIcon } from "@/components/icons";
 import { OptionMark } from "./option-mark";
-import { speakGerman, SpeakButton } from "@/components/speak-button";
+import { speakWord, SpeakButton } from "@/components/speak-button";
 import { useT, useLang } from "@/lib/i18n/client";
 
 type TrueFalseRound = Extract<Round, { game: "truefalse" }>;
@@ -45,7 +45,7 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
     setPending(null);
     // Kelime kendiliğinden okunuyor: karar verirken telaffuzu duymak
     // eşleştirmeyi kolaylaştırıyor ve düğmeye basma adımını ortadan kaldırıyor.
-    const s = setTimeout(() => speakGerman(withArtikel(round.word)), 350);
+    const s = setTimeout(() => speakWord(withArtikel(round.word)), 350);
     return () => clearTimeout(s);
   }, [round.id, round.word]);
 
@@ -94,7 +94,7 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
       >
         <div className="flex items-center justify-center gap-2">
           <span className="text-h1 sm:text-display">{withArtikel(word)}</span>
-          <SpeakButton text={withArtikel(word)} size="sm" />
+          <SpeakButton word text={withArtikel(word)} size="sm" />
         </div>
         <div className="my-3 flex items-center justify-center gap-3">
           <span className="h-px w-10" style={{ background: "var(--border)" }} />

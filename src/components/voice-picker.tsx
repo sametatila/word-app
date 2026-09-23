@@ -1,6 +1,6 @@
 "use client";
 
-import { voicesFor, resolveVoice, type VoiceId } from "@/lib/tts/voices";
+import { isOwnVoice, voicesFor, resolveVoice, type VoiceId } from "@/lib/tts/voices";
 import { courseOrDefault } from "@/lib/courses";
 import { speakWithVoice } from "@/components/speak-button";
 import { SpeakerIcon } from "@/components/icons";
@@ -30,8 +30,12 @@ import { useT } from "@/lib/i18n/client";
  */
 export const SAMPLE: Record<string, string> = {
   "gsw-zh": "De nöi Vertrag gilt für alli Bschäftigte.",
-  de: "Der neue Vertrag gilt für alle Beschäftigten.",
-  en: "The new contract applies to all employees.",
+  /* Almanca ve İngilizce örnek KELİME KATMANINDAN (iki örnek cümle, 2026-09-23): Defne ve Aras'ın önceden
+     üretilmiş sesi yalnız orada var. Eski cümle ("Der neue Vertrag…") tabloda yoktu; önizleme karakterin
+     kendi sesini değil Edge karşılığını çalardı — seçimi yanlış duyurmanın ta kendisi. Değiştirilirse yeni
+     cümle kelime tablosunda olmalı: `scripts/tts-own-coverage.ts` bunu denetliyor. */
+  de: "Bei gutem Wetter frühstücken wir auf der Terrasse.",
+  en: "Good friends are always there for each other.",
 };
 
 /*
@@ -61,7 +65,8 @@ export function VoicePicker({
   /* ÇALIYOR GÖSTERGESİ YOK — Android'de de yok (`ui/VoicePicker` hoparlör
      düğmesi yalnız çalıyor). Gösterge kaldırılan geniş kipe aitti. */
   function preview(voice: VoiceId) {
-    speakWithVoice(sample, voice);
+    // Karakter sesi (Defne/Aras) yalnız kendi dosyasından: önizleme Edge karşılığına düşmemeli.
+    speakWithVoice(sample, voice, isOwnVoice(voice));
   }
 
   return (

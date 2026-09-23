@@ -1,11 +1,12 @@
 "use client";
 
 import { glossFor, type GlossWord } from "@/lib/option-label";
+import { glossVoice } from "@/lib/tts/voices";
 import { apiFetch } from "@/lib/api-fetch";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
-import { COURSE_KEY, readLocal, speakSegments, stopSpeaking, type SpeechSegment } from "@/components/speak-button";
+import { COURSE_KEY, readLocal, selectedVoice, speakSegments, stopSpeaking, type SpeechSegment } from "@/components/speak-button";
 import { useT, useLang } from "@/lib/i18n/client";
 import { MicDisclosure } from "@/components/mic-disclosure";
 import { ConfirmDialog } from "@/components/confirm-dialog";
@@ -147,7 +148,21 @@ function encourage(t: T): string {
 function glossSegment(word: GlossWord, lang: NativeLang): SpeechSegment {
   const g = glossFor(word, lang);
   if (!g) return { lang: "tr", text: "", narration: false };
-  return { lang, text: g.text, narration: true };
+  /* Karşılık KELİME KATMANI: anlatım sesiyle (Emel) değil, seçilen karakterin anadil sesiyle ve yalnız
+     önceden üretilmiş dosyadan (`word`). Anlatım bayrağı kalıyor ama ses açıkça verildiği için belirleyici
+     değil; `word` parçası öncesindeki anlatımla BİRLEŞMİYOR (birleşen metin tabloda olmazdı). */
+  return { lang, text: g.text, narration: true, voice: glossVoice(lang, selectedVoice()), word: true };
+}
+
+/**
+ * Hedef kelimenin parçası — kullanıcının SEÇTİĞİ ses, kelime katmanı.
+ *
+ * Burada `{ lang: "de", text }` yazılıydı ve ses parçanın dilinden türüyordu: sabit ders sesi (Katja),
+ * İngilizce kursta da Almanca ses. Seçim ekranında Aras'ı seçen kullanıcı yürüyüşte Katja duyuyordu.
+ */
+function targetSegment(text: string): SpeechSegment {
+  const voice = selectedVoice();
+  return { lang: voice.startsWith("en") ? "en" : "de", text, voice, word: true };
 }
 
 /**
@@ -996,7 +1011,8 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           { lang, narration: true, text: t("walk.skip_hint_before") },
           /* Teslim sözcüğü HEDEF DİLDE: sabit "weiter" yazılıydı ve İngilizce
              kursta öğrenciye almanca bir sözcük okunuyordu. */
-          { lang: course as "de" | "en", text: skipWord(course) },
+          // Seçilen karakterin sesi, kelime katmanı (bkz. `targetSegment`).
+          targetSegment(skipWord(course)),
           { lang, narration: true, text: t("walk.skip_hint_after") },
         );
       }
@@ -1024,9 +1040,9 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             setPhase("speaking");
             await say([
               { lang, narration: true, text: t("walk.new_word") },
-              { lang: "de", text: target },
+              targetSegment(target),
               glossSegment(word, lang),
-              { lang: "de", text: target },
+              targetSegment(target),
             ]);
             if (!alive()) return;
             results.push({
@@ -1111,7 +1127,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             setVerdict("skip");
             await say([
               { lang, narration: true, text: `${encourage(t)} ${t("walk.correct_is")}` },
-              { lang: "de", text: target },
+              targetSegment(target),
             ]);
             if (!alive()) return;
             if (document.visibilityState === "visible") {
@@ -1148,7 +1164,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
 
             await say([
               { lang, narration: true, text: t("walk.not_heard") },
-              { lang: "de", text: target },
+              targetSegment(target),
             ]);
             continue;
           }
@@ -1188,10 +1204,10 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             // başka yolu yok.
             await say([
               { lang, narration: true, text: t("walk.correct_is") },
-              { lang: "de", text: target },
+              targetSegment(target),
             ]);
           } else {
-            await say([{ lang: "de", text: target }]);
+            await say([targetSegment(target)]);
           }
           if (!alive()) return;
           /*

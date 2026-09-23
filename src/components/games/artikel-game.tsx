@@ -10,7 +10,7 @@ import { useRoundExit } from "./use-round-exit";
 import { meaningOf, type GameProps, type GameResult } from "./types";
 import type { Round } from "@/lib/types";
 import { vibrate } from "@/lib/fx";
-import { prefetchGerman } from "@/components/speak-button";
+import { prefetchWord } from "@/components/speak-button";
 import { useT, useLang } from "@/lib/i18n/client";
 
 type ArtikelRound = Extract<Round, { game: "artikel" }>;
@@ -38,7 +38,7 @@ export function ArtikelGame({ round, onDone }: GameProps<ArtikelRound>) {
     setPicked(null);
     setPending(null);
     // Seçimden sonra okunacak metin belli: doğru artikelli kelime.
-    prefetchGerman(`${answer} ${word.de}`);
+    prefetchWord(`${answer} ${word.de}`);
   }, [round.id, answer, word.de]);
 
   function choose(opt: string) {

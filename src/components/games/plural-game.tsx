@@ -10,7 +10,7 @@ import { useRoundExit } from "./use-round-exit";
 import { withArtikel, type GameProps, type GameResult , meaningOf } from "./types";
 import type { Round } from "@/lib/types";
 import { vibrate } from "@/lib/fx";
-import { prefetchGerman, speakGerman, SpeakButton } from "@/components/speak-button";
+import { prefetchWord, speakWord, SpeakButton } from "@/components/speak-button";
 import { useT, useLang } from "@/lib/i18n/client";
 
 type PluralRound = Extract<Round, { game: "plural" }>;
@@ -44,9 +44,9 @@ export function PluralGame({ round, onDone }: GameProps<PluralRound>) {
     // Kelime kendiliğinden okunuyor: soru "çoğulu ne?" ve öğrenci çoğulu
     // sesten hatırlıyor. Düğmeye basmayı beklemek o ipucunu geciktiriyordu.
     // Küçük gecikme kart yerine otururken sesin başlamaması için.
-    const s = setTimeout(() => speakGerman(withArtikel(round.word)), 350);
+    const s = setTimeout(() => speakWord(withArtikel(round.word)), 350);
     // Seçimden sonra okunacak doğru çoğul da önden iniyor.
-    prefetchGerman(`die ${answer}`);
+    prefetchWord(`die ${answer}`);
     return () => clearTimeout(s);
   }, [round.id, answer, round.word]);
 
@@ -84,7 +84,7 @@ export function PluralGame({ round, onDone }: GameProps<PluralRound>) {
             <span className="muted">{word.artikel} </span>
             <span className="brand-text text-h1 sm:text-display">{word.de}</span>
           </span>
-          <SpeakButton text={`${word.artikel ?? ""} ${word.de}`.trim()} size="sm" />
+          <SpeakButton word text={`${word.artikel ?? ""} ${word.de}`.trim()} size="sm" />
         </span>
       }
       hint={

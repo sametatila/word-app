@@ -8,7 +8,7 @@ import { useRoundExit } from "./use-round-exit";
 import { targetName, type GameProps, type GameResult } from "./types";
 import type { Round } from "@/lib/types";
 import { vibrate } from "@/lib/fx";
-import { prefetchGerman } from "@/components/speak-button";
+import { prefetchWord } from "@/components/speak-button";
 import { matchSentence, type SentenceMatch } from "@/lib/sentence-match";
 import { askAssess } from "@/lib/assess-client";
 import { whyFor, type Why } from "@/lib/why";
@@ -72,7 +72,7 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
     setAiAccepted(false);
     started.current = Date.now();
     focusOnFine(inputRef.current);
-    prefetchGerman(sentence.de);
+    prefetchWord(sentence.de);
   }, [round.id, sentence.de]);
 
   const targetWords = sentence.de.replace(/[.!?…]+$/, "").split(/\s+/).filter(Boolean);

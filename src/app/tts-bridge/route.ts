@@ -16,38 +16,54 @@ export const dynamic = "force-dynamic";
  * ön indirme olmadan her sınırda tam bir gidiş-dönüş vardı. `ttsSpeak` artık
  * PERDE de alıyor — diyalogda kadro tükendiğinde konuşmacıyı ayırmanın son
  * çaresi (bkz. lib/tts/voices `Pitch`).
+ *
+ * BEŞİNCİ ARGÜMAN `word` (2026-09-23): kelime katmanı. Adres `k=w` taşıyor ve sunucu metni yalnız Defne/Aras
+ * dosyasından veriyor; tabloda yoksa 404 (bkz. app/api/tts). `<audio>` hatasında durum kodu görünmediği için
+ * kelime isteği önce `fetch` ile soruluyor: 404 → "skip" (okuma atlanır, köprü SAĞLIKLI kalır). "error"
+ * gönderilseydi iki eksik kelime köprüyü sağlıksız sayıp oturumun geri kalanını native yola atardı.
+ * Cevap WebView önbelleğine yazıldığı için ardından gelen `new Audio(u)` ağa ikinci kez çıkmıyor.
  */
 const HTML = `<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
 <body style="margin:0;background:#14100e">
 <script>
 (function () {
   var a = null;
+  var seq = 0;
   function post(m) { try { window.ReactNativeWebView && window.ReactNativeWebView.postMessage(m); } catch (e) {} }
-  function url(voice, text, slow, pitch) {
+  function url(voice, text, slow, pitch, word) {
     var r = slow === true ? "slow" : typeof slow === "string" ? slow : "";
     var p = typeof pitch === "string" && pitch !== "mid" ? pitch : "";
     return "/api/tts?v=" + encodeURIComponent(voice) + "&t=" + encodeURIComponent(text) +
-      (r ? "&r=" + encodeURIComponent(r) : "") + (p ? "&p=" + encodeURIComponent(p) : "");
+      (r ? "&r=" + encodeURIComponent(r) : "") + (p ? "&p=" + encodeURIComponent(p) : "") +
+      (word === true ? "&k=w" : "");
   }
   /* ÖN İNDİRME: cevabı WebView'in kendi HTTP önbelleğine yazar, sonra
      ttsSpeak aynı adresi ağa hiç çıkmadan alır (bkz. dosya başı). */
   window.ttsPrefetch = function (list) {
     try {
       for (var i = 0; i < list.length; i++) {
-        fetch(url(list[i][0], list[i][1], list[i][2], list[i][3]), { cache: "force-cache" }).catch(function () {});
+        fetch(url(list[i][0], list[i][1], list[i][2], list[i][3], list[i][4]), { cache: "force-cache" }).catch(function () {});
       }
     } catch (e) {}
   };
-  window.ttsSpeak = function (voice, text, slow, pitch) {
-    try { if (a) { a.pause(); a = null; } } catch (e) {}
-    if (!text) return;
-    var u = url(voice, text, slow, pitch);
+  function start(u, my) {
+    if (my !== seq) return;
     a = new Audio(u);
     a.addEventListener("ended", function () { post("end"); });
     a.addEventListener("error", function () { post("error"); });
     a.play().then(function () { post("play"); }).catch(function () { post("error"); });
+  }
+  window.ttsSpeak = function (voice, text, slow, pitch, word) {
+    var my = ++seq;
+    try { if (a) { a.pause(); a = null; } } catch (e) {}
+    if (!text) return;
+    var u = url(voice, text, slow, pitch, word);
+    if (word !== true) { start(u, my); return; }
+    fetch(u, { cache: "force-cache" })
+      .then(function (res) { if (my !== seq) return; if (res.status === 404) post("skip"); else start(u, my); })
+      .catch(function () { start(u, my); });
   };
-  window.ttsStop = function () { try { if (a) { a.pause(); a = null; } } catch (e) {} };
+  window.ttsStop = function () { seq++; try { if (a) { a.pause(); a = null; } } catch (e) {} };
   post("ready");
 })();
 </script>

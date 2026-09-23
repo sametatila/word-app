@@ -12,7 +12,7 @@ import { grammarLine } from "./grammar-line";
 import { targetName, matchesAnswer, withArtikel, type GameProps, typLabel, type GameResult , meaningOf } from "./types";
 import type { Round } from "@/lib/types";
 import { vibrate } from "@/lib/fx";
-import { prefetchGerman } from "@/components/speak-button";
+import { prefetchWord } from "@/components/speak-button";
 import { useT, useLang } from "@/lib/i18n/client";
 
 type TypingRound = Extract<Round, { game: "typing" }>;
@@ -78,7 +78,7 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
     focusOnFine(inputRef.current);
     // Cevaptan sonra okunacak metin baştan belli: kelimenin doğru yazımı.
     // Önden indirmek dokunuşla sesin başlaması arasındaki boşluğu kapatıyor.
-    prefetchGerman(withArtikel(word));
+    prefetchWord(withArtikel(word));
   }, [round.id, word, round.assist]);
 
   function submit() {
