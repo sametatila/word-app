@@ -107,7 +107,7 @@ print(rs[-1]["identifier"] if rs else "")
 capture() {
   local file=$1 i
   for ((i = 1; i <= RETRIES; i++)); do
-    xcrun simctl io "$UDID" screenshot "$file" >/dev/null
+    sim 60 io "$UDID" screenshot "$file" >/dev/null || true
     if python3 scripts/png-blank.py "$file" >/dev/null 2>&1; then
       echo "  $(basename "$file")"
       return 0
@@ -118,6 +118,14 @@ capture() {
   # İşi düşürmüyoruz: boş kare de kanıt, artifact'a girsin ve günlükte görünsün.
   echo "  UYARI kare hala bos: $(basename "$file")"
 }
+
+# Her simctl çağrısına süre sınırı. Koşu 35862349130'da iPad simülatörü "zaten
+# açık" dedikten sonra bir simctl çağrısı hiç dönmedi ve iş 87 dakika bekleyip
+# iptal edildi (35771234165'te de aynısı). Başarılı koşularda da tek çağrı
+# 15-17 dk donup sonra dönüyordu (35792286670). Sınır dolunca o kare ya da
+# cihaz atlanıyor; eksik bir kare, bütün işin iptalinden ucuz. macOS'ta
+# `timeout` yok; perl'in alarm'ı aynı işi görüyor, çağrı 142 ile düşer.
+sim() { local secs=$1; shift; perl -e 'alarm shift; exec @ARGV' "$secs" xcrun simctl "$@"; }
 
 BOOTED=()
 cleanup() { for u in ${BOOTED[@]+"${BOOTED[@]}"}; do xcrun simctl shutdown "$u" >/dev/null 2>&1 || true; done; }
@@ -138,16 +146,22 @@ for ENTRY in "${DEVICES[@]}"; do
   echo "UDID: $UDID"
   BOOTED+=("$UDID")
 
-  xcrun simctl boot "$UDID" >/dev/null 2>&1 || true
-  xcrun simctl bootstatus "$UDID" -b
+  sim 60 boot "$UDID" >/dev/null 2>&1 || true
+  if ! sim 600 bootstatus "$UDID" -b; then
+    echo "ATLANDI: $DEV_NAME açılmadı (süre doldu)."
+    continue
+  fi
 
   # Durum çubuğu sabitleniyor: saat ve pil her koşuda değişirse kareler
   # karşılaştırılamaz hâle gelir (her diff'te üst şerit oynar).
-  xcrun simctl status_bar "$UDID" override \
+  sim 60 status_bar "$UDID" override \
     --time "09:41" --batteryState charged --batteryLevel 100 \
     --cellularMode active --cellularBars 4 --wifiMode active --wifiBars 3 >/dev/null 2>&1 || true
 
-  xcrun simctl install "$UDID" "$APP"
+  if ! sim 600 install "$UDID" "$APP"; then
+    echo "ATLANDI: $DEV_NAME'e kurulamadı (süre doldu ya da hata)."
+    continue
+  fi
 
   for LANG_ENTRY in "${LANGS[@]}"; do
     LANG_CODE=${LANG_ENTRY%%|*}
@@ -155,19 +169,20 @@ for ENTRY in "${DEVICES[@]}"; do
     for APPEARANCE in "${APPEARANCES[@]}"; do
       # Tema DEĞİŞİMİ önce ve tek başına: sistem genelinde yeniden çizim
       # tetikliyor, hemen ardından gelen terminate/launch onunla yarışıyordu.
-      xcrun simctl ui "$UDID" appearance "$APPEARANCE" >/dev/null 2>&1 || true
+      sim 90 ui "$UDID" appearance "$APPEARANCE" >/dev/null 2>&1 || true
       sleep 2
-      xcrun simctl terminate "$UDID" "$BUNDLE_ID" >/dev/null 2>&1 || true
+      sim 30 terminate "$UDID" "$BUNDLE_ID" >/dev/null 2>&1 || true
       sleep 1
-      xcrun simctl launch "$UDID" "$BUNDLE_ID" \
-        -AppleLanguages "($LANG_CODE)" -AppleLocale "$LOCALE" >/dev/null
+      sim 120 launch "$UDID" "$BUNDLE_ID" \
+        -AppleLanguages "($LANG_CODE)" -AppleLocale "$LOCALE" >/dev/null \
+        || echo "  UYARI: açılmadı ($LANG_CODE $APPEARANCE)"
       sleep "$SETTLE"
       capture "$OUT/${SLUG}-${LANG_CODE}-${APPEARANCE}.png"
     done
   done
 
   # Uygulama çöktüyse kareler boş çıkar ve sebebi görünmez; günlük artifact'a girsin.
-  xcrun simctl spawn "$UDID" log show --last 10m --predicate "process == 'Lernomi'" \
+  sim 120 spawn "$UDID" log show --last 10m --predicate "process == 'Lernomi'" \
     --style compact > "$OUT/${SLUG}-simulator.log" 2>/dev/null || true
 done
 

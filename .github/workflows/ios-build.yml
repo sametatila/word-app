@@ -156,6 +156,8 @@ jobs:
       # Mikrofon/arka plan sesi/kilit ekranı burada sınanamaz: gerçek cihaz ister.
       - name: Ekran görüntüleri
         working-directory: mobile
+        # Takılan bir simctl çağrısı işin tamamını yiyordu (bkz. betikteki sim()).
+        timeout-minutes: 45
         run: bash scripts/ios-screenshots.sh
 
       # Onboarding'i tıklayarak geçer ve akışın karelerini alır. continue-on-error
