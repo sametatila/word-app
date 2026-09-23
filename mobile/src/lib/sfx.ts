@@ -125,7 +125,7 @@ let lastAt = 0;
 // gecikme native Handler'la (ekran-kapalı da çalışır). Böylece tek tek çalarlar.
 let busyUntil = 0;
 export function sfx(kind: SfxKind): void {
-  console.log("PROBE sfx", kind, "screenOff=", screenOffMode, "acik=", soundOn);
+  if (__DEV__) console.log("PROBE sfx", kind, "screenOff=", screenOffMode, "acik=", soundOn);
   if (!soundOn) return; // kullanıcı kapattı: efektler susuyor, konuşma sesi değil
   const now = Date.now();
   if (kind === lastKind && now - lastAt < 120) return; // aynı sesi kısa sürede çift çalma (dedupe)

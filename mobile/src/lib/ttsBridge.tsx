@@ -203,7 +203,7 @@ function finishPending(): void {
 }
 export function bridgeSpeakAndWait(voice: VoiceId, text: string, slow: Pace | boolean = false, onStart?: () => void, pitch?: Pitch, word = false): Promise<void> {
   return new Promise((resolve) => {
-    console.log("PROBE bridgeSpeak", JSON.stringify(text).slice(0, 40), "ready=", bridgeReady());
+    if (__DEV__) console.log("PROBE bridgeSpeak", JSON.stringify(text).slice(0, 40), "ready=", bridgeReady());
     if (!bridgeReady() || !text) { resolve(); return; }
     finishPending(); // önceki bekleyeni serbest bırak
     pendingResolve = resolve;
@@ -280,7 +280,7 @@ export function TtsBridge() {
         cacheEnabled
         onMessage={(e) => {
           const m = e.nativeEvent.data;
-          console.log("PROBE bridge msg", m);
+          if (__DEV__) console.log("PROBE bridge msg", m);
           if (m === "ready") { ready = true; healthy = true; errors = 0; }
           else if (m === "play") { healthy = true; errors = 0; const s = pendingStart; pendingStart = null; s?.(); }
           else if (m === "end") { healthy = true; errors = 0; finishPending(); } // bekleyen speak-and-wait'i çöz

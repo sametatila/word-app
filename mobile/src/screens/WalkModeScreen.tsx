@@ -38,12 +38,14 @@ const gap = (ms = 850) => nativeDelay(ms); // native (arka planda da çalışır
    tek ada bağlandı — pencere değişirse ölçü kendiliğinden onunla değişir. */
 const AZURE_WINDOW_MS = 3000;
 /* GEÇİCİ ÖLÇÜM (cihaz testi): okumanın ne zaman başlayıp bittiği loga yazılıyor.
+   YALNIZ __DEV__: bu loglar kullanıcının söylediklerini (STT adayları) içeriyor ve
+   sürüm yapısında cihaz loguna düşmesi "kayıt saklanmaz" sözüyle çelişiyordu.
    Bileşenin İÇİNDE tanımlanamaz — `sayNative` ona bağlanınca her render'da yeni
    bir işlev oluyor ve kanca kapısı (exhaustive-deps) haklı olarak düşüyor. */
 const probeSay = (yol: string, txt: string) => {
   const t0 = Date.now();
-  console.log("PROBE say>", yol, JSON.stringify(txt).slice(0, 40));
-  return (p: Promise<unknown>) => p.then(() => { console.log("PROBE say<", yol, Date.now() - t0, "ms"); });
+  if (__DEV__) console.log("PROBE say>", yol, JSON.stringify(txt).slice(0, 40));
+  return (p: Promise<unknown>) => p.then(() => { if (__DEV__) console.log("PROBE say<", yol, Date.now() - t0, "ms"); });
 };
 
 type Phase = "intro" | "teaching" | "speaking" | "listening" | "judging" | "continue" | "done" | "paused" | "stopped" | "denied" | "error";
@@ -448,7 +450,7 @@ export function WalkModeScreen() {
       const sonuc = r.k === "m" ? "manual" : r.heard.length ? "ok" : listenCut.current ? "cut" : "silence";
       track("walk_listen", Math.round(saniye * 10), `${kaynak}:${sonuc}`);
     };
-    console.log("PROBE dinleme baslryor", w.de, "screenOff=", screenOffRef.current);
+    if (__DEV__) console.log("PROBE dinleme baslryor", w.de, "screenOff=", screenOffRef.current);
     let res: { k: "v"; heard: string[] } | { k: "m" };
     /* Kaynak her denemede YENİDEN seçiliyor: bekleme ya da kesinti sırasında ekran
        durumu değişmiş olabilir. Döngü en fazla bir kesinti tekrarı ve kapı
@@ -523,7 +525,7 @@ export function WalkModeScreen() {
       // ikinci argüman olarak dizinin index'ini geçirir.
       const skipped = !unheard && !ok && adaylar.some((h) => parseSkip(h));
       result = unheard ? "unheard" : skipped ? "skip" : ok ? "correct" : "wrong";
-      console.log("PROBE karar", result, "adaylar=", JSON.stringify(adaylar), "hedef=", withArtikel(w));
+      if (__DEV__) console.log("PROBE karar", result, "adaylar=", JSON.stringify(adaylar), "hedef=", withArtikel(w));
     }
 
     // "Duyamadım" penceresi — üst üste sessizlikte turu durdur (web ile aynı).
