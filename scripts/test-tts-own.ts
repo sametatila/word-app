@@ -108,12 +108,17 @@ async function endpoint() {
   assert.deepEqual(Buffer.from(await res.arrayBuffer()), audio);
   ok("kelime tabloda: Defne'nin dosyası, bir gün + ETag");
 
-  res = await req("v=de-DE-Defne&t=der%20%20Hund", {});
+  res = await req("v=de-DE-Defne&t=der%20%20Hund&k=w");
   assert.equal(res.status, 200);
   assert.equal(res.headers.get("x-tts-source"), "own");
-  ok(
-    "işaretsiz istek de tablodaki metni karakterin dosyasından alıyor (temizlik aynı)",
-  );
+  ok("temizlik sunucuyla aynı: fazla boşluklu metin de tabloda bulunuyor");
+
+  // İşaretsiz istek tablodaki metni bulsa da karakter dosyasını ALMIYOR: sentez yoluna, yani oturum
+  // kapısına gidiyor (burada oturum yok → 401). Kelime dışı her şey Edge karşılığında kalıyor.
+  res = await req("v=de-DE-Defne&t=der%20Hund");
+  assert.notEqual(res.headers.get("x-tts-source"), "own");
+  assert.equal(res.status, 401);
+  ok("işaretsiz istek (rol yapma, ders) karakter dosyasını almıyor, Edge karşılığına gidiyor");
 
   res = await req("v=de-DE-Defne&t=der%20Hund&k=w", {
     "if-none-match": '"defne/abc123.m4a"',

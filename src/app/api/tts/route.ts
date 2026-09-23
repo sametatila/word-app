@@ -121,7 +121,10 @@ export async function GET(req: Request) {
   }
   // Kendi karakter seslerimiz (`lib/tts/own`): önceden üretilmiş statik dosya. Sentez yok, maliyet
   // yok — oturum ve günlük tavan kapısı yalnız üretilmemiş metinde kalıyor (plan bölüm 4 "Yetki").
-  const own = await ownVoiceAudio(text, voice as VoiceId, slow, pitch);
+  // YALNIZ KELİME İSTEĞİNE. İşaretsiz istek (rol yapma, beceri, ders cümlesi) metni tabloda bulsa da
+  // Edge karşılığında kalıyor: yoksa bir örnek cümleyle birebir aynı tek replik Defne'nin kendi sesiyle,
+  // çevresi Katja'yla çalardı. Kelime dışı her şey üretilene kadar Katja/Conrad (Samet, 2026-09-23).
+  const own = word ? await ownVoiceAudio(text, voice as VoiceId, slow, pitch) : null;
   if (own) return ownResponse(req, own.audio, own.name);
   if (word && isOwnVoice(voice) && ownVoicesLive()) {
     console.warn("[tts-own] kelime tabloda yok:", voice, slow, pitch, JSON.stringify(text.slice(0, 120)));
