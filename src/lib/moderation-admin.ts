@@ -220,6 +220,45 @@ export async function closeReport(
 }
 
 /**
+ * Saklama süresi dolan şikâyet kayıtları (hukuk denetimi LEG-17).
+ *
+ * Gizlilik §3 bildirim kayıtlarını "inceleme kapanana kadar" tutacağını
+ * söylüyordu; kapanan satırları silen iş yoktu. Karar KAPANIŞTAN 1 YIL sonra
+ * düşüyor: itiraz, tekrar eden hedefin geçmişi ve olası bir resmî soru için
+ * makul bir pencere. Kapanış anı karar tablosundan (`moderation_actions.
+ * created_at`); karar kaydı olmadan kapanmış eski içerik bildiriminde
+ * oluşturulma anı. Kararın kendisi de (notunda eski ad olabilir) birlikte
+ * gidiyor. Açık şikâyete dokunulmuyor. Günlük cron (api/cron/assess) çağırıyor;
+ * tekrar çalışması zararsız.
+ */
+export async function purgeClosedReports(): Promise<{ content: number; user: number }> {
+  const ready = await hasActionsTable();
+  const content = await rows(sql`
+    delete from content_reports c
+    where c.status = 'closed'
+      and coalesce(${ready
+        ? sql`(select m.created_at from moderation_actions m where m.target = 'content_report' and m.ref_id = c.id)`
+        : sql`null`}, c.created_at) < now() - interval '1 year'
+    returning c.id`);
+  let user: Row[] = [];
+  if (ready) {
+    user = await rows(sql`
+      delete from user_reports r
+      using moderation_actions m
+      where m.target = 'user_report' and m.ref_id = r.id and m.created_at < now() - interval '1 year'
+      returning r.id`);
+    // Şikâyeti artık olmayan, bir yılı geçmiş kararlar (bu koşunun sildikleri
+    // ve hesap silmede giden şikâyetlerin arkada kalan kararları).
+    await db.execute(sql`
+      delete from moderation_actions m
+      where m.created_at < now() - interval '1 year'
+        and ((m.target = 'content_report' and not exists (select 1 from content_reports c where c.id = m.ref_id))
+          or (m.target = 'user_report' and not exists (select 1 from user_reports r where r.id = m.ref_id)))`);
+  }
+  return { content: content.length, user: user.length };
+}
+
+/**
  * İhlalli ad/kullanıcı adını SIFIRLAR ve şikâyeti "gereği yapıldı" diye kapatır.
  *
  * Mağaza kuralı yalnız şikâyeti okumayı değil İÇERİĞİ KALDIRABİLMEYİ de istiyor;

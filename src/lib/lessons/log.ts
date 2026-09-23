@@ -61,8 +61,10 @@ export async function logRoleplayTurn(
 /**
  * Süresi geçmiş kayıtları siler. Eskiden bu, her YAZMAYA bağlıydı; gizlilik
  * politikası "30 gün sonra kendiliğinden silinir" diyor ama rol yapma trafiği
- * durursa süresi geçmiş satırlar süresiz kalıyordu. Artık günlük cron çağırıyor
- * (api/cron/summary), yani söz trafikten bağımsız tutuluyor.
+ * durursa süresi geçmiş satırlar süresiz kalıyordu. Artık GÜNLÜK cron çağırıyor
+ * (api/cron/assess, her gün 04:15 UTC), yani söz trafikten bağımsız tutuluyor.
+ * Önceden haftalık `cron/summary`ye asılıydı ve yorumu "günlük" diyordu: satır
+ * 30 değil 30-37 gün yaşıyordu (hukuk denetimi LEG-12).
  */
 export async function purgeExpiredRoleplayLogs(): Promise<number> {
   try {
