@@ -3,6 +3,7 @@ import { sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { revokeAppleSignIn } from "@/lib/account/apple-revoke";
 import { purgeUserData } from "@/lib/account/purge";
+import { deleteRevenueCatCustomer } from "@/lib/account/revenuecat-delete";
 import { recordDeletion } from "@/lib/account/deletion-log";
 
 /**
@@ -25,6 +26,7 @@ export async function adminDeleteUser(userId: string, adminEmail: string | null,
   if (!u) return "not_found";
   await revokeAppleSignIn(userId);
   await purgeUserData(userId);
+  await deleteRevenueCatCustomer(userId);
   await db.execute(sql`delete from "user" where id = ${userId}`);
   await recordDeletion({ source: "admin", adminEmail, reason, wasGuest: u.guest, createdAt: u.created_at });
   return "ok";

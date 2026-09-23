@@ -8,6 +8,7 @@ import { db } from "@/lib/db";
 import { user, session, account, verification, twoFactor as twoFactorTable } from "@/lib/db/auth-schema";
 import { emailConfigured, sendEmail, verificationEmail, resetEmail, passwordChangedEmail, accountExistsEmail, twoFactorCodeEmail } from "@/lib/email";
 import { purgeUserData } from "@/lib/account/purge";
+import { deleteRevenueCatCustomer } from "@/lib/account/revenuecat-delete";
 import { revokeAppleSignIn } from "@/lib/account/apple-revoke";
 import { recordDeletion } from "@/lib/account/deletion-log";
 import { activeSuspension } from "@/lib/account/suspension";
@@ -410,6 +411,8 @@ export const auth = betterAuth({
       beforeDelete: async (u) => {
         await revokeAppleSignIn(u.id);
         await purgeUserData(u.id);
+        // RevenueCat müşteri kaydı (en iyi çaba, silmeyi durdurmaz; bkz. lib/account/revenuecat-delete).
+        await deleteRevenueCatCustomer(u.id);
         // İz: kimlik yok, yalnız yol ve hesabın yaşı (bkz. lib/account/deletion-log).
         await recordDeletion({ source: "self", createdAt: u.createdAt });
       },

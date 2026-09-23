@@ -71,6 +71,7 @@
     "briefs": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/immersion-briefs.ts",
     "test:match": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-sentence-match.ts",
     "test:moderation": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-moderation.ts",
+    "test:rc-delete": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-revenuecat-delete.ts",
     "report:stt": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/stt-capacity.ts",
     "content:confusables": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/confusables.ts",
     "test:pronounce": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-pronounce.ts",

@@ -399,6 +399,7 @@ jobs:
           npm run test:rules
           npm run test:match
           npm run test:moderation
+          npm run test:rc-delete
           npm run test:track
           npm run test:walkqueue
           npm run test:why

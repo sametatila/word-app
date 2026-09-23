@@ -3,6 +3,7 @@ import { and, eq, ne } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { account, session, user } from "@/lib/db/auth-schema";
 import { purgeUserData } from "@/lib/account/purge";
+import { deleteRevenueCatCustomer } from "@/lib/account/revenuecat-delete";
 import type { AppleNotification } from "@/lib/auth/apple-notifications";
 
 /**
@@ -70,6 +71,7 @@ async function unlink(userId: string): Promise<void> {
  */
 async function purge(userId: string): Promise<void> {
   await purgeUserData(userId);
+  await deleteRevenueCatCustomer(userId);
   await db.delete(user).where(eq(user.id, userId));
 }
 
