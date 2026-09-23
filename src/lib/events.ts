@@ -320,13 +320,23 @@ export function cleanKind(kind: unknown): string | null {
 const OPERATIONAL = new Set<EventName>(["push_sent", "push_deliver", "mail_sent", "client_error", "session_done", "placement_finish"]);
 
 /**
+ * GÜNDE BİR KEZ SAYILAN OLAYLAR — tekillik SUNUCUDA (hukuk denetimi LEG-10).
+ * "Günün ilk açılışı" eskiden cihazda (`localStorage` / AsyncStorage) bir
+ * anahtarla ölçülüyordu; analitik amaçlı cihaz erişimi §25 TDDDG'de rızaya
+ * bağlı. İstemci artık her açılışta gönderiyor, satır yalnız (kullanıcı, gün,
+ * etiket) için ilk kez yazılıyor. Etiket dahil: aynı gün webden ve uygulamadan
+ * açan kişi platform tablosunda iki cihaz olarak görünmeye devam etsin.
+ */
+const ONCE_PER_DAY = new Set<EventName>(["app_open"]);
+
+/**
  * Bir olayı yazar.
  *
  * Hiçbir zaman hata fırlatmıyor: ölçüm, ölçtüğü şeyi bozmamalı. Olay
  * yazılamadığında kaybedilen tek şey bir satırlık istatistiktir; kullanıcının
  * turu bundan etkilenmemeli.
  *
- * Tercih kontrolü yazmanın İÇİNDE (tek sorgu): ayrı bir
+ * Tercih kontrolü ve günlük tekillik yazmanın İÇİNDE (tek sorgu): ayrı bir
  * okuma üç Node instance'ında önbelleğe ya da ek gidiş-dönüşe ihtiyaç
  * duyardı; burada kapatma bir sonraki olayda anında geçerli.
  */
@@ -343,10 +353,13 @@ export async function track(
     const optOut = OPERATIONAL.has(name)
       ? sql`false`
       : sql`exists (select 1 from ${profiles} where ${profiles.userId} = ${userId} and ${profiles.analyticsOptOut})`;
+    const seen = ONCE_PER_DAY.has(name)
+      ? sql`exists (select 1 from ${events} where ${events.userId} = ${userId} and ${events.name} = ${name} and ${events.day} = ${day}::date and ${events.kind} is not distinct from ${k}::text)`
+      : sql`false`;
     await db.execute(sql`
       insert into ${events} (user_id, name, day, value, kind)
       select ${userId}::text, ${name}::text, ${day}::date, ${v}::int, ${k}::text
-      where not ${optOut}`);
+      where not ${optOut} and not ${seen}`);
   } catch (err) {
     console.error("[events] yazılamadı", name, err);
   }

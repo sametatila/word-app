@@ -17096,7 +17096,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
        yazilarak girer; liste yalnizca kuculebilir. */
     const WEB_CIHAZ = [
       "lernomi-account", //            hesap degisimini ANLAYAN isaret; silinirse degisim gorulmez
-      "lernomi-app-open", //           gunun ilk acilisi (telemetri) - cihazin gunu
+      /* "lernomi-app-open" 2026-09-23'te cikti: gunun ilk acilisi artik
+         sunucuda tekillesiyor (hukuk denetimi LEG-10, lib/events ONCE_PER_DAY). */
       "lernomi-lesson-handsfree", //   eller serbest tercihi - cihazin kullanim bicimi
       "lernomi-onboarding", //         misafir ilk acilis tercihleri (hesap yok)
       "lernomi-sound", //              ses acik/kapali
@@ -17107,7 +17108,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "lernomi:push-dismissed", //     bildirim karti ertelemesi (izin tarayiciya ait)
     ];
     const MOBIL_CIHAZ = [
-      "lernomi-app-open", //           gunun ilk acilisi (telemetri)
+      /* "lernomi-app-open" 2026-09-23'te cikti (web ile ayni, LEG-10): gunun
+         ilk acilisi sunucuda tekillesiyor, mobil cihaza yazmiyor. */
       "lernomi-daily", //              gunluk hatirlatma bildiriminin OS kimligi (depo anahtari degil; Gunun turu onbellegi 2026-09-15'te kalkti)
       "lernomi-streak", //             seri koruma bildiriminin OS kimligi (notifee; depo anahtari degil, bkz. accountScope)
       "lernomi-weekly", //             haftalik sinav bildiriminin OS kimligi (notifee; depo anahtari degil)

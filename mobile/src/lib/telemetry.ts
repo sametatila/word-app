@@ -18,8 +18,6 @@ import { reportError } from "./errorReport";
 const MIN_SECONDS = 3;
 /** Hata seli olmasın: dakikada en çok bir `client_error` (web ile aynı sınır). */
 const ERROR_WINDOW_MS = 60_000;
-/** Günün ilk açılışı — web `components/telemetry` ile aynı anahtar adı. */
-const OPEN_KEY = "lernomi-app-open";
 
 let ekran = "";
 let gorunurdenBeri: number | null = null;
@@ -51,7 +49,7 @@ export function screenChanged(ad: string | undefined): void {
 
 /** Uygulama ön/arka plan — sayaç yalnız ön planda işliyor. */
 function appState(s: AppStateStatus): void {
-  if (s === "active") { if (gorunurdenBeri === null) gorunurdenBeri = Date.now(); return; }
+  if (s === "active") { if (gorunurdenBeri === null) gorunurdenBeri = Date.now(); ilkAcilis(); return; }
   yaz(); // arkaya atıldı: biriken süre kaydedilir, sayaç durur
 }
 
@@ -68,18 +66,24 @@ function appState(s: AppStateStatus): void {
  * `standalone` (ana ekrana eklenmiş) ve `browser`; yerel uygulama üçüncüsü ve
  * tabloda karışmıyor.
  *
- * Günde bir kez, web'deki kuralın aynısı ve aynı anahtar adıyla. Depolama
- * okunamazsa her açılışta yazılıyor - eksik ölçmektense fazla ölçmek.
+ * CİHAZA YAZMA YOK (hukuk denetimi LEG-10, web `components/telemetry` ile
+ * aynı karar). "Bugün açıldı mı" eskiden cihaz deposunda bir günle
+ * (`lernomi-app-open`) tutuluyordu; analitik amaçlı cihaz erişimi §25 TDDDG'de
+ * önceden rıza istiyor ve gizlilik §7 yerel depoda yalnız tercihleri sayıyor.
+ * Artık her açılışta gönderiliyor ve "günün ilki"ni SUNUCU belirliyor
+ * (`lib/events` ONCE_PER_DAY: kullanıcı, gün, etiket başına bir satır).
+ *
+ * "Açılış" = soğuk başlangıç ve arka plandan dönüş; ikincisi de sayılıyor,
+ * çünkü uygulama günlerce arka planda kalıp ertesi gün açılabiliyor. Bellekte
+ * gün başına bir kez: her ön plana dönüşte istek atmanın anlamı yok. Eski
+ * anahtar bir kez siliniyor.
  */
-async function ilkAcilis(): Promise<void> {
+let acilisGunu = "";
+function ilkAcilis(): void {
   const d = new Date();
   const gun = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
-  try {
-    if ((await AsyncStorage.getItem(OPEN_KEY)) === gun) return;
-    await AsyncStorage.setItem(OPEN_KEY, gun);
-  } catch {
-    /* depolama kapalı: her açılış yazılır, yine de bilgi */
-  }
+  if (acilisGunu === gun) return;
+  acilisGunu = gun;
   /* `native`: panonun platform tablosu ÜÇ görünümü ayırıyor (browser,
      standalone = web'in ana ekrana eklenmiş hâli, native = mağaza uygulaması).
      Kökteki ikinci yazıcı (`App.tsx`, her açılışta `:standalone`) kaldırıldı;
@@ -107,6 +111,8 @@ export function attachTelemetry(): () => void {
   const sub = AppState.addEventListener("change", appState);
   gorunurdenBeri = Date.now();
   void ilkAcilis();
+  /* Eski sürümün "bugün açıldı" anahtarı (bkz. `ilkAcilis`): bir kez silinir. */
+  void AsyncStorage.removeItem("lernomi-app-open").catch(() => {});
   /* Global hata kancası ZİNCİRLENİYOR: RN'in kendi işleyicisi (geliştirmede
      kırmızı ekran, üretimde çökme raporu) çalışmaya devam etmeli - onu
      değiştirmek hata ayıklamayı bozardı. */

@@ -18,6 +18,8 @@ import { reportError } from "@/lib/error-report";
  *   time_spent  ekranda GÖRÜNÜR geçen saniye; sekme arkaya atılınca sayaç durur,
  *               ekran değişince ya da sayfa kapanırken yazılır (keepalive)
  *   app_open    günün ilk açılışı: platform ve görünüm (ana ekrana eklenmiş mi).
+ *               "İlk" SUNUCUDA belirleniyor (lib/events ONCE_PER_DAY): istemci
+ *               her açılışta gönderiyor, cihaza hiçbir şey yazmıyor.
  *               Mobil karşılığı `M/src/lib/telemetry.ts`; oradaki görünüm
  *               `native` ve pano üçünü ayrı satırlarda gösteriyor.
  *   client_error yakalanmamış hata / reddedilmiş promise — dakikada en çok bir
@@ -27,7 +29,6 @@ import { reportError } from "@/lib/error-report";
  */
 const MIN_SECONDS = 3;
 const ERROR_THROTTLE_MS = 60_000;
-const OPEN_KEY = "lernomi-app-open";
 
 export function Telemetry() {
   const pathname = usePathname();
@@ -113,16 +114,18 @@ export function Telemetry() {
     return () => sw.removeEventListener("message", onMessage);
   }, []);
 
-  // Günün ilk açılışı — cihaz karışımı.
+  /*
+    Günün ilk açılışı — cihaz karışımı.
+
+    CİHAZA YAZMA YOK (hukuk denetimi LEG-10). "Bugün açıldı mı" eskiden
+    `localStorage`ta bir günle tutuluyordu; analitik amaçlı uç cihaz erişimi
+    §25 TDDDG'de önceden rıza istiyor ve gizlilik §7 yerel depolamada yalnız
+    tercihleri sayıyor. Her açılış gönderiliyor, sunucu (kullanıcı, gün,
+    etiket) başına yalnız ilkini yazıyor (lib/events ONCE_PER_DAY). Eski
+    anahtar varsa bir kez siliniyor.
+  */
   useEffect(() => {
-    try {
-      const d = new Date();
-      const day = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
-      if (localStorage.getItem(OPEN_KEY) === day) return;
-      localStorage.setItem(OPEN_KEY, day);
-    } catch {
-      /* depolama kapalı: her açılış yazılır, yine de bilgi */
-    }
+    try { localStorage.removeItem("lernomi-app-open"); } catch { /* depolama kapalı */ }
     const ua = navigator.userAgent;
     const platform = /iPad|iPhone|iPod/.test(ua) ? "ios" : /Android/.test(ua) ? "android" : "desktop";
     const standalone =
