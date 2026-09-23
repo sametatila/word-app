@@ -21,6 +21,7 @@ export const dynamic = "force-dynamic";
  * dosyasından veriyor; tabloda yoksa 404 (bkz. app/api/tts). `<audio>` hatasında durum kodu görünmediği için
  * kelime isteği önce `fetch` ile soruluyor: 404 → "skip" (okuma atlanır, köprü SAĞLIKLI kalır). "error"
  * gönderilseydi iki eksik kelime köprüyü sağlıksız sayıp oturumun geri kalanını native yola atardı.
+ * `word === "n"` karakter anlatımı (yürüyüş yönergeleri): adres `k=n`, yoklama yok (sunucu dosya yoksa Edge'e düşer).
  * Cevap WebView önbelleğine yazıldığı için ardından gelen `new Audio(u)` ağa ikinci kez çıkmıyor.
  */
 const HTML = `<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
@@ -35,7 +36,7 @@ const HTML = `<!doctype html><html><head><meta charset="utf-8"><meta name="viewp
     var p = typeof pitch === "string" && pitch !== "mid" ? pitch : "";
     return "/api/tts?v=" + encodeURIComponent(voice) + "&t=" + encodeURIComponent(text) +
       (r ? "&r=" + encodeURIComponent(r) : "") + (p ? "&p=" + encodeURIComponent(p) : "") +
-      (word === true ? "&k=w" : "");
+      (word === true ? "&k=w" : word === "n" ? "&k=n" : "");
   }
   /* ÖN İNDİRME: cevabı WebView'in kendi HTTP önbelleğine yazar, sonra
      ttsSpeak aynı adresi ağa hiç çıkmadan alır (bkz. dosya başı). */

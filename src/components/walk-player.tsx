@@ -541,8 +541,15 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         ve WebAudio çalışıyor — background'a erken geçmenin sebebi yok.
       */
       const background = typeof document !== "undefined" && document.visibilityState === "hidden";
+      /* ANLATIM KARAKTERİN SESİYLE. Yönergeler ("Yeni kelime.", "Doğrusu:") anlatım sesine (Emel/Jenny/Katja)
+         gidiyordu; kelime ve anlamı Defne/Aras okuduğu için bir turda iki ayrı kişi konuşuyordu. Artık seçilen
+         karakterin anadil sesi, önceden üretilmiş kaydı varsa o (`k=n`, bkz. speak-button `ownNarration`). */
+      const sel = selectedVoice();
+      const own = segments.map((s) =>
+        s.narration && !s.voice ? { ...s, voice: glossVoice(s.lang as NativeLang, sel), ownNarration: true } : s,
+      );
       speakSegments(
-        segments,
+        own,
         () => {
           speakDone.current = null;
           resolve();
@@ -1126,7 +1133,9 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           if (skipped) {
             setVerdict("skip");
             await say([
-              { lang, narration: true, text: `${encourage(t)} ${t("walk.correct_is")}` },
+              // İki ayrı parça: her biri kendi kaydıyla (birleşik metin tabloda yok, bkz. scripts/tts-walk-jobs).
+              { lang, narration: true, text: encourage(t) },
+              { lang, narration: true, text: t("walk.correct_is") },
               targetSegment(target),
             ]);
             if (!alive()) return;

@@ -44,7 +44,7 @@ function paceOf(slow: Pace | boolean): Pace {
   return slow === true ? "slow" : slow === false ? "normal" : slow;
 }
 
-function ttsUrl(voice: VoiceId, clean: string, slow: Pace | boolean = false, pitch: Pitch = "mid", word = false): string {
+function ttsUrl(voice: VoiceId, clean: string, slow: Pace | boolean = false, pitch: Pitch = "mid", word = false, narration = false): string {
   const pace = paceOf(slow);
   // Varsayilanlar URL'ye YAZILMIYOR: `r`siz ve `p`siz adres eski adresle
   // birebir ayni kalmali, yoksa bugune kadar isinmis butun onbellek girdileri
@@ -54,7 +54,8 @@ function ttsUrl(voice: VoiceId, clean: string, slow: Pace | boolean = false, pit
     (pace === "normal" ? "" : `&r=${PACE_PARAM[pace]}`) +
     (pitch === "mid" ? "" : `&p=${PITCH_PARAM[pitch]}`) +
     // Kelime katmanı: sunucu yalnız Defne/Aras dosyasından çalıyor, Edge'e düşmüyor (bkz. app/api/tts).
-    (word ? "&k=w" : "")
+    // Karakter anlatımı (`n`): dosya varsa karakterin kendi sesi, yoksa aynı karakterin Edge karşılığı.
+    (word ? "&k=w" : narration ? "&k=n" : "")
   );
 }
 
@@ -473,6 +474,12 @@ export type SpeechSegment = {
    * birleşen metin tabloda olmaz — ve çevrimdışıyken cihaz sesine düşmüyor, atlanıyor.
    */
   word?: boolean;
+  /**
+   * Karakterin ANLATIMI (yürüyüş modunun yönergeleri): ses karakterin anadil sesi, adres `k=n` taşıyor — sunucu
+   * önceden üretilmiş dosyayı veriyor, yoksa aynı karakterin Edge karşılığına düşüyor. Kelime parçası gibi
+   * BİRLEŞMİYOR: birleşen iki cümle tabloda olmaz ve dosya yerine Edge çalardı.
+   */
+  ownNarration?: boolean;
 };
 
 /**
@@ -531,7 +538,7 @@ function voiceForSegment(seg: SpeechSegment): { voice: VoiceId; course: string }
 function mergeForSpeech(segments: SpeechSegment[]): SpeechSegment[] {
   const merged: SpeechSegment[] = [];
   const sameVoice = (a: SpeechSegment, b: SpeechSegment) =>
-    !a.word && !b.word &&
+    !a.word && !b.word && !a.ownNarration && !b.ownNarration &&
     a.lang === b.lang && a.narration === b.narration && a.voice === b.voice && a.pitch === b.pitch && a.pace === b.pace;
   for (const seg of segments) {
     // Üç nokta artık `cleanForSpeech`in içinde (tek kopya, iki platform).
@@ -850,7 +857,7 @@ function chainWithElements(
   /* Adres parçanın hızını ve perdesini de taşımak ZORUNDA: taşımasaydı
      WebAudio yolundan bu yola düşen bir diyalog aynı metni başka bir adresle
      ister, yani önbelleği ıskalar ve konuşmacılar tek sese dönerdi. */
-  const srcFor = (seg: SpeechSegment) => ttsUrl(voiceForSegment(seg).voice, seg.text, seg.pace ?? "normal", seg.pitch ?? "mid", seg.word);
+  const srcFor = (seg: SpeechSegment) => ttsUrl(voiceForSegment(seg).voice, seg.text, seg.pace ?? "normal", seg.pitch ?? "mid", seg.word, seg.ownNarration);
   /** i. parçayı kendi öğesine yükler — çalma değil, hazırlık. */
   const preload = (i: number) => {
     const el = els[i % 2];
@@ -1039,7 +1046,7 @@ export function speakSegments(
     };
   }
 
-  const urls = queue.map((seg) => ttsUrl(voiceForSegment(seg).voice, seg.text, seg.pace ?? "normal", seg.pitch ?? "mid", seg.word));
+  const urls = queue.map((seg) => ttsUrl(voiceForSegment(seg).voice, seg.text, seg.pace ?? "normal", seg.pitch ?? "mid", seg.word, seg.ownNarration));
   const cancel = playGapless(urls, {
     mine,
     onEnd,
@@ -1129,7 +1136,7 @@ export function stopSpeaking() {
 export function prefetchSegments(segments: SpeechSegment[]) {
   if (typeof fetch === "undefined") return;
   for (const seg of mergeForSpeech(segments)) {
-    void fetch(ttsUrl(voiceForSegment(seg).voice, seg.text, seg.pace ?? "normal", seg.pitch ?? "mid", seg.word), {
+    void fetch(ttsUrl(voiceForSegment(seg).voice, seg.text, seg.pace ?? "normal", seg.pitch ?? "mid", seg.word, seg.ownNarration), {
       priority: "low",
     } as RequestInit).catch(() => {
       /* önden indirme başarısızsa normal akış zaten çalışıyor */
