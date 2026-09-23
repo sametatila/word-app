@@ -185,6 +185,10 @@ export async function POST(req: Request) {
       result: outcome.result,
       cached: outcome.cached,
       provider: outcome.provider,
+      /* Ek alan (geriye uyumlu): kaydın kimliği. İstemci anlık sonucu
+         bildirirken `assessment` türüyle bu kimliği ref verebilir
+         (içerik denetimi CNT-6). */
+      id: outcome.id,
       ...(scoreToken ? { scoreToken } : {}),
     });
   }

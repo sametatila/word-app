@@ -407,7 +407,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
           <div role="status">
             <DetailCard title={t("skillp.mono_feedback")}>
               {result ? (
-                <AssessmentCard answer={transcript.trim()} result={result} failure={failure} example={null} />
+                <AssessmentCard answer={transcript.trim()} result={result} failure={failure} example={null} reportRef={`speaking:${exercise.id}`} />
               ) : (
                 <p className="text-body">
                   {t("item.mono_self_done", { n: checks.filter(Boolean).length, total: checks.length })}

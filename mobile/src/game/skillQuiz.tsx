@@ -24,6 +24,7 @@ import type { Gloss, SkillQuestion } from "../data/skills";
 import { MIN_ASSESS_WORDS, RUBRIC_PASS_PCT, SCORE_MID_PCT } from "../lib/learningRules";
 import { accountRequiredError, isAccountRequired } from "../lib/guest";
 import { useAuth } from "../lib/AuthContext";
+import { ReportLink, assessmentRef } from "../ui/ReportLink";
 
 /**
  * Beceri soruları — web'in quiz.tsx'inin mobil karşılığı. sınav kâğıdı gibi
@@ -514,7 +515,7 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
   const [typed, setTyped] = useState("");
   const [reveal, setReveal] = useState(false);
   const [busy, setBusy] = useState(false);
-  const [score, setScore] = useState<{ overall: number; praise: string; tip: string; corrected: string } | null>(null);
+  const [score, setScore] = useState<{ overall: number; praise: string; tip: string; corrected: string; id: number | null } | null>(null);
   const [note, setNote] = useState<string | null>(null);
   const [queued, setQueued] = useState(false);
   const [unscored, setUnscored] = useState(false);
@@ -545,13 +546,13 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
     setNote(null);
     try {
       if (guestLocked) throw accountRequiredError();
-      const d = await api<{ result: { score?: { overall?: number }; praise_tr?: string; next_tip_tr?: string; corrected?: string } }>("/api/assess", {
+      const d = await api<{ result: { score?: { overall?: number }; praise_tr?: string; next_tip_tr?: string; corrected?: string }; id?: number | null }>("/api/assess", {
         method: "POST",
         timeoutMs: ASSESS_TIMEOUT_MS,
         body: JSON.stringify(body()),
       });
       const overall = d.result?.score?.overall ?? 0;
-      setScore({ overall, praise: d.result?.praise_tr ?? "", tip: d.result?.next_tip_tr ?? "", corrected: d.result?.corrected ?? "" });
+      setScore({ overall, praise: d.result?.praise_tr ?? "", tip: d.result?.next_tip_tr ?? "", corrected: d.result?.corrected ?? "", id: d.id ?? null });
       setReveal(true);
     } catch (e) {
       if (isPremiumRefusal(e) || isQuotaRefusal(e)) {
@@ -659,6 +660,8 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
               <Text variant="body">{score.corrected}</Text>
             </View>
           ) : null}
+          {/* Yapay zekâ değerlendirmesinin hemen altında "Bildir" (denetim CNT-6). */}
+          <ReportLink kind="assessment" refId={assessmentRef(score.id, `${exerciseId}:${n}`)} content={JSON.stringify({ answer: typed.trim(), ...score })} style={{ alignSelf: "flex-end", marginTop: spacing.xs }} />
         </View>
       ) : null}
       {score && score.overall < RUBRIC_PASS_PCT ? (

@@ -3,6 +3,7 @@
 import { apiFetch, ROLEPLAY_TIMEOUT_MS } from "@/lib/api-fetch";
 import { isAiConsentDeclined } from "@/lib/ai-consent-client";
 import { AiNotice } from "@/components/ai-notice";
+import { ReportDialog } from "@/components/report-dialog";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import type { Lesson } from "@/lib/lessons/types";
@@ -58,6 +59,8 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
    * söylenmeli ve nereden açılacağı belli olmalı.
    */
   const [consentOff, setConsentOff] = useState(false);
+  /** Bildirilen muhatap yanıtı (içerik denetimi CNT-6; ders sohbetiyle aynı yol). */
+  const [reported, setReported] = useState<{ ref: string; text: string } | null>(null);
   const rec = useRef<Recognition | null>(null);
   const endRef = useRef<HTMLDivElement>(null);
   const userTurns = turns.filter((t) => t.role === "user").length;
@@ -373,7 +376,7 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
           />
         ) : null}
         <DetailCard title={t("rpexam.assessment_title")}>
-          <AssessmentCard answer={said.join("\n")} result={result} failure={failure} example={null} />
+          <AssessmentCard answer={said.join("\n")} result={result} failure={failure} example={null} reportRef={`exam:${lesson.id}`} />
         </DetailCard>
         {best.length ? (
           <DetailCard title={t("rpexam.best_sentences")}>
@@ -403,16 +406,28 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
       </div>
       <AiNotice variant="character" className="mt-3" />
       <div className="mt-3 space-y-2">
-        {turns.map((t, i) => (
-          <motion.p
-            key={i}
-            initial={{ opacity: 0, y: 6 }}
-            animate={{ opacity: 1, y: 0 }}
-            className={`max-w-[88%] rounded-panel px-3 py-2.5 text-body leading-relaxed ${t.role === "user" ? "ml-auto rounded-br-chip brand-gradient text-white" : "rounded-bl-chip surface-2"}`}
-            lang={lesson.course}
-          >
-            {t.content}
-          </motion.p>
+        {turns.map((turn, i) => (
+          <div key={i}>
+            <motion.p
+              initial={{ opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              className={`max-w-[88%] rounded-panel px-3 py-2.5 text-body leading-relaxed ${turn.role === "user" ? "ml-auto rounded-br-chip brand-gradient text-white" : "rounded-bl-chip surface-2"}`}
+              lang={lesson.course}
+            >
+              {turn.content}
+            </motion.p>
+            {/* Bildir — ders sohbetindeki gibi her yapay zekâ yanıtının altında.
+                İlk tur (i = 0) dersin yazılı açılış cümlesi, model çıktısı değil. */}
+            {turn.role === "assistant" && i > 0 ? (
+              <button
+                type="button"
+                onClick={() => setReported({ ref: `${lesson.id}:exam:${i}`, text: turn.content })}
+                className="muted mt-1 text-micro underline underline-offset-2 hit-8"
+              >
+                {t("lesson.report_this_answer")}
+              </button>
+            ) : null}
+          </div>
         ))}
         {busy ? <p className="muted text-caption">…</p> : null}
         <div ref={endRef} />
@@ -468,6 +483,13 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
           {t("common.send")}
         </button>
       </div>
+      <ReportDialog
+        open={reported !== null}
+        kind="roleplay"
+        refId={reported?.ref ?? ""}
+        content={reported?.text ?? ""}
+        onClose={() => setReported(null)}
+      />
     </section>
   );
 }

@@ -579,7 +579,7 @@ function FreeTask({
 
       {result ? (
         <div className="mt-4 flex flex-col gap-3">
-          <AssessmentCard answer={text.trim()} result={result} failure={failure} example={task.sample} />
+          <AssessmentCard answer={text.trim()} result={result} failure={failure} example={task.sample} reportRef={`writing:${exerciseId}`} />
           {queued ? (
             <p className="muted text-caption">{t("writp.queued")}</p>
           ) : null}
@@ -699,7 +699,7 @@ function SentenceTask({ task, level, onDone }: { task: SentenceTaskData; level: 
       </div>
       {result ? (
         <div className="mt-3 flex flex-col gap-3">
-          <AssessmentCard answer={text.trim()} result={result} failure={failure} example={task.sample ?? null} />
+          <AssessmentCard answer={text.trim()} result={result} failure={failure} example={task.sample ?? null} reportRef={`writing:${level}:sentence`} />
           <button type="button" onClick={() => onDone(ok)} className="btn btn-primary min-h-12 px-4 text-body">
             {t("common.continue")}
           </button>

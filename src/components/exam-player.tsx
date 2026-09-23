@@ -831,7 +831,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       </ul>
       {writingResult ? (
         <div className="mt-3 flex flex-col gap-3">
-          <AssessmentCard answer={writingText.trim()} result={writingResult} failure={writingFailure} />
+          <AssessmentCard answer={writingText.trim()} result={writingResult} failure={writingFailure} reportRef={paper ? `exam:${paper.kind}:${paper.level}${paper.module != null ? `:${paper.module}` : ""}` : null} />
           <button type="button" onClick={() => void finishNow()} className="btn btn-primary px-5 py-3 text-body">
             {t("exam.finish_exam")}
           </button>

@@ -28,6 +28,7 @@ import { whyFor, whyLabel, type Why } from "./why";
 import { fallbackAssessment, type FallbackResult } from "../lib/assessFallback";
 import { assessFailKey, fallbackNoteKey } from "../lib/assessFail";
 import { AssessmentCard, type AssessmentResult } from "../ui/AssessmentCard";
+import { assessmentRef } from "../ui/ReportLink";
 import { useNoHints } from "./noHints";
 import { speakTarget, stopSpeaking, ttsAvailable } from "../lib/tts";
 import { tileSpeech } from "../lib/ttsText";
@@ -837,6 +838,8 @@ function FreeSentenceRound({ round, word, onDone, colors }: { round: Round; word
   const [value, setValue] = useState("");
   const [busy, setBusy] = useState(false);
   const [result, setResult] = useState<AssessmentResult | FallbackResult | null>(null);
+  /** Sunucudaki değerlendirme kaydının kimliği — "Bildir" ref'i (bkz. `assessmentRef`). */
+  const [assessId, setAssessId] = useState<number | null>(null);
   const [failNote, setFailNote] = useState<string | null>(null);
   const [outcome, setOutcome] = useState<{ correct: boolean; quality: number } | null>(null);
   const started = useRef(Date.now());
@@ -845,6 +848,7 @@ function FreeSentenceRound({ round, word, onDone, colors }: { round: Round; word
   useEffect(() => {
     setValue("");
     setResult(null);
+    setAssessId(null);
     setFailNote(null);
     setOutcome(null);
     setDetails(false);
@@ -874,11 +878,12 @@ function FreeSentenceRound({ round, word, onDone, colors }: { round: Round; word
     };
     try {
       if (guest) throw accountRequiredError();
-      const d = await api<{ result: AssessmentResult }>("/api/assess", {
+      const d = await api<{ result: AssessmentResult; id?: number | null }>("/api/assess", {
         method: "POST",
         timeoutMs: ASSESS_TIMEOUT_MS,
         body: JSON.stringify({ ...req, day: todayStr() }),
       });
+      setAssessId(d.id ?? null);
       const overall = d.result?.score?.overall ?? 0;
       const quality = overall >= 90 ? 5 : overall >= 70 ? 4 : overall >= 40 ? 3 : 2;
       setResult(d.result);
@@ -980,7 +985,7 @@ function FreeSentenceRound({ round, word, onDone, colors }: { round: Round; word
                 </PressableScale>
                 {details ? (
                   <View style={{ marginTop: spacing.sm }}>
-                    <AssessmentCard answer={value.trim()} result={result} failNote={failNote} example={firstExample(word.beispiel)} />
+                    <AssessmentCard answer={value.trim()} result={result} failNote={failNote} example={firstExample(word.beispiel)} reportRef={"offline" in result && result.offline ? null : assessmentRef(assessId, `word:${word.id}`)} />
                   </View>
                 ) : null}
               </View>

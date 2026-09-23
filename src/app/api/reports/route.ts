@@ -13,8 +13,10 @@ export const dynamic = "force-dynamic";
  * uygulamadan çıkmadan rahatsız edici bir yapay zekâ yanıtını bildirebilmeli.
  *
  *   POST { kind, ref, reason, content }
- *     kind    "roleplay" | "assessment"   (ileride "user" — lider tablosu adı)
- *     ref     roleplay: "<lessonId>:<turn>" · assessment: kayıt kimliği
+ *     kind    "roleplay" | "assessment" | "user" (lider tablosu adı)
+ *     ref     roleplay: "<lessonId>:<turn>" · rol yapma sınavı "<lessonId>:exam:<turn>"
+ *             assessment: kayıt kimliği ("Yazdıklarım") · anlık sonuç "<yüzey>:<kimlik>"
+ *             ("writing:…", "speaking:…", "exam:…", "word:…"; web ve mobil aynı)
  *     reason  "inappropriate" | "offensive" | "wrong" | "impersonation" | "other"
  *     content bildirilen metin (≤ 4000 karakter) — roleplay_logs 30 günde silindiği
  *             için metin burada da saklanır; inceleme kaydın süresine bağlı kalmaz.

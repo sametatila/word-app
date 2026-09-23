@@ -3,6 +3,7 @@ import { View } from "react-native";
 import { Text } from "./Text";
 import { t } from "../lib/i18n";
 import { ERROR_LABEL_KEYS, type ErrorType } from "../lib/errors";
+import { ReportLink } from "./ReportLink";
 import { useTheme, spacing, radii, type Palette } from "../theme";
 
 /**
@@ -33,6 +34,7 @@ export function AssessmentCard({
   result,
   failNote,
   example,
+  reportRef,
 }: {
   /** Öğrencinin metni — hatalı parçalar bunun üstünde vurgulanıyor. */
   answer: string;
@@ -41,6 +43,13 @@ export function AssessmentCard({
   failNote?: string | null;
   /** Kelimenin gerçek örnek cümlesi — "böyle de kurulabilirdi". */
   example?: string | null;
+  /**
+   * Verilirse kartın altında "Bildir" çıkıyor (kind `assessment`, bu ref ile).
+   * Yalnız sonuç GERÇEKTEN yapay zekâdan geldiyse verilir: kural tabanlı
+   * yedek (ağ yok, sağlayıcı kapalı) bir model çıktısı değil, bildirilecek
+   * bir şey yok. Denetim CNT-6: anlık değerlendirmede "Bildir" yoktu.
+   */
+  reportRef?: string | null;
 }) {
   const { colors } = useTheme();
   const s = result.score;
@@ -89,6 +98,9 @@ export function AssessmentCard({
           <Text variant="caption" color={colors.textFaint}>{t("assess.example")} </Text>
           {example}
         </Text>
+      ) : null}
+      {reportRef ? (
+        <ReportLink kind="assessment" refId={reportRef} content={JSON.stringify({ answer, result })} style={{ alignSelf: "flex-end", marginTop: 2 }} />
       ) : null}
     </View>
   );

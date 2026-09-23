@@ -26,6 +26,7 @@ import { notePremiumGate } from "../lib/premium";
 import { todayStr } from "../game/session";
 import { ERROR_LABEL_KEYS, type ErrorType } from "../lib/errors";
 import { AssessmentCard } from "../ui/AssessmentCard";
+import { ReportLink, assessmentRef } from "../ui/ReportLink";
 import { useTheme, spacing, radii, softShadow, ds } from "../theme";
 import { track } from "../lib/track";
 import type { RootStackParams } from "../navigation/RootStack";
@@ -102,6 +103,8 @@ export function RoleplayExamScreen() {
   const [asr, setAsr] = useState(false);
   const [left, setLeft] = useState(EXAM_SECONDS);
   const [result, setResult] = useState<Result | null>(null);
+  /** Sunucudaki değerlendirme kaydının kimliği — "Bildir" ref'i. */
+  const [resultId, setResultId] = useState<number | null>(null);
   const [gateNote, setGateNote] = useState<string | null>(null);
   /**
    * Muhatap cevap vermedi çünkü yapay zekâya izin verilmedi — servis kapalı
@@ -142,7 +145,7 @@ export function RoleplayExamScreen() {
     setPhase("scoring");
     const said = all.filter((x) => x.role === "user").map((x) => x.content);
     try {
-      const d = await api<{ result: Result }>("/api/assess", {
+      const d = await api<{ result: Result; id?: number | null }>("/api/assess", {
         method: "POST",
         timeoutMs: ASSESS_ROLEPLAY_TIMEOUT_MS,
         body: JSON.stringify({
@@ -168,6 +171,7 @@ export function RoleplayExamScreen() {
       });
       if (!mounted.current) return;
       setResult(d.result ?? null);
+      setResultId(d.id ?? null);
     } catch (e) {
       if (!mounted.current) return;
       setGateNote(tx(assessFailKey(e)));
@@ -205,6 +209,7 @@ export function RoleplayExamScreen() {
     scored.current = false;
     deadline.current = 0;
     setResult(null);
+    setResultId(null);
     setGateNote(null);
     setConsentOff(false);
     setTurns([]);
@@ -441,7 +446,7 @@ export function RoleplayExamScreen() {
              öğrenmiyordu. Kart hataların gerekçesini, düzeltilmiş cümleyi,
              övgüyü ve sıradaki ipucunu da yazıyor. */
           <DetailCard title={tx("rpexam.assessment_title")}>
-            <AssessmentCard answer={said.join("\n")} result={result} />
+            <AssessmentCard answer={said.join("\n")} result={result} reportRef={assessmentRef(resultId, `${lesson.id}:exam`)} />
           </DetailCard>
         ) : null}
 
@@ -488,6 +493,13 @@ export function RoleplayExamScreen() {
             }}
           >
             <Text variant="body" color={turn.role === "user" ? colors.onPrimary : colors.text}>{turn.content}</Text>
+            {/* Yapay zekâ yanıtının altında "Bildir" (denetim CNT-6; ders
+                sohbetindekiyle aynı bağlantı ve ref biçimi, sınav eki ile).
+                İlk balon (i = 0) dersin yazılı açılış cümlesi, model çıktısı
+                değil: orada yok. */}
+            {turn.role === "assistant" && i > 0 ? (
+              <ReportLink kind="roleplay" refId={`${lesson.id}:exam:${i}`} content={turn.content} style={{ alignSelf: "flex-end", marginTop: 4 }} />
+            ) : null}
           </View>
         ))}
         {busy ? <ActivityIndicator color={colors.primary} style={{ alignSelf: "flex-start" }} /> : null}

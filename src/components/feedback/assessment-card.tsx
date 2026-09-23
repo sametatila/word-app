@@ -6,6 +6,8 @@ import type { Assessment } from "@/lib/assess-prompts";
 import { useT } from "@/lib/i18n/client";
 import { useCourse } from "@/components/app-shell";
 import { scoreBand } from "@/lib/score-bands";
+import { useState } from "react";
+import { ReportDialog } from "@/components/report-dialog";
 
 /**
  * Değerlendirme kartı (WP-12; WP-30 yazma ile ortak).
@@ -24,6 +26,7 @@ export function AssessmentCard({
   result,
   failure,
   example,
+  reportRef,
 }: {
   /** Öğrencinin metni — span'ler bunun üstünde vurgulanır. */
   answer: string;
@@ -32,9 +35,19 @@ export function AssessmentCard({
   failure?: AssessFailure | null;
   /** Kelimenin gerçek örnek cümlesi — "böyle de kurulabilirdi". */
   example?: string | null;
+  /**
+   * Verilirse kartın altında "Değerlendirmeyi bildir" çıkar (kind
+   * `assessment`, ref bu değer: "<yüzey>:<kimlik>", ör. "writing:w-12").
+   * Anlık sonuçta kayıt kimliği istemcide yok; önek, "Yazdıklarım"daki
+   * yalın kayıt kimliğinden ayırıyor — mobil aynı biçimi kullanıyor
+   * (içerik denetimi CNT-6). Yedek (çevrimdışı) puanda çıkmaz: yapay zekâ
+   * çıktısı yok, bildirilecek bir şey yok.
+   */
+  reportRef?: string | null;
 }) {
   const course = useCourse();
   const t = useT();
+  const [reporting, setReporting] = useState(false);
   const offline = "offline" in result && result.offline;
   const s = result.score;
   /* Bantlar tek kaynaktan (`lib/score-bands`) - ayni 70/40. */
@@ -139,8 +152,44 @@ export function AssessmentCard({
           {example}
         </p>
       ) : null}
+      {reportRef && !offline ? (
+        <>
+          {/* Bildir — ders sohbetindeki ve "Yazdıklarım"daki bağlantıyla aynı
+              biçim (Play "yapay zekâ ile üretilen içerik": çıktı, uygulamadan
+              çıkmadan bildirilebilmeli). */}
+          <button
+            type="button"
+            onClick={() => setReporting(true)}
+            className="muted mt-3 text-micro underline underline-offset-2 hit-8"
+          >
+            {t("writings.report_this_feedback")}
+          </button>
+          <ReportDialog
+            open={reporting}
+            kind="assessment"
+            refId={reportRef}
+            content={assessmentReportText(answer, result as Assessment)}
+            onClose={() => setReporting(false)}
+          />
+        </>
+      ) : null}
     </section>
   );
+}
+
+/**
+ * Bildirimle panoya giden metin: öğrencinin yazdığı + yapay zekânın ÇIKTISI.
+ * İnceleyen kişi bildirilen şeyi (düzeltme, açıklama, övgü, ipucu) görmeli;
+ * yalnız öğrencinin metni gitseydi neyin rahatsız edici olduğu anlaşılmazdı.
+ */
+function assessmentReportText(answer: string, r: Assessment): string {
+  const lines = [`> ${answer}`, "---"];
+  if (r.corrected) lines.push(`corrected: ${r.corrected}`);
+  for (const e of r.errors) lines.push(`- ${e.wrong ? `${e.wrong} → ` : ""}${e.fix}${e.why_tr ? ` — ${e.why_tr}` : ""}`);
+  if (r.praise_tr) lines.push(`praise: ${r.praise_tr}`);
+  if (r.next_tip_tr) lines.push(`tip: ${r.next_tip_tr}`);
+  lines.push(`score: ${r.score.overall}`);
+  return lines.join("\n");
 }
 
 function Bar({ label, value, muted = false }: { label: string; value: number; muted?: boolean }) {

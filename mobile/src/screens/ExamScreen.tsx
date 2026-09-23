@@ -12,6 +12,7 @@ import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { useBackConfirm } from "../lib/useBackConfirm";
 import { PressableScale } from "../ui/PressableScale";
 import { CoachLine } from "../ui/CoachLine";
+import { assessmentRef } from "../ui/ReportLink";
 import { AssessmentCard, type AssessmentResult } from "../ui/AssessmentCard";
 import { CertificateSheet } from "../ui/CertificateSheet";
 import { XIcon, SpeakerIcon, CheckIcon, ExamIcon, ClockIcon, LockIcon, TargetIcon, PenIcon, AlertIcon } from "../ui/icons";
@@ -1205,6 +1206,8 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
   const [score, setScore] = useState<number | null>(null);
   /** Rubrik, hatalar ve düzeltilmiş metin — kart bunu çiziyor. */
   const [detail, setDetail] = useState<AssessmentResult | null>(null);
+  /** Sunucudaki değerlendirme kaydının kimliği — "Bildir" ref'i. */
+  const [detailId, setDetailId] = useState<number | null>(null);
   /** Premium kapısı notu — puan yerine bu gösterilir. */
   const [gateNote, setGateNote] = useState<string | null>(null);
   const wordCount = typed.trim() ? typed.trim().split(/\s+/).length : 0;
@@ -1220,7 +1223,7 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
     }
     setBusy(true);
     try {
-      const d = await api<{ result: AssessmentResult }>("/api/assess", {
+      const d = await api<{ result: AssessmentResult; id?: number | null }>("/api/assess", {
         method: "POST",
         timeoutMs: ASSESS_TIMEOUT_MS,
         body: JSON.stringify({
@@ -1242,6 +1245,7 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
          sayı görüp neyi yanlış yaptığını hiç öğrenmiyordu. Web aynı yerde
          değerlendirme kartını çiziyor (`exam-player` `AssessmentCard`). */
       setDetail(d.result ?? null);
+      setDetailId(d.id ?? null);
       setScore(d.result?.score?.overall ?? null);
     } catch (e) {
       // Premium kapısı ağ hatası DEĞİL. Uydurma bir yedek puan vermek kapıyı
@@ -1297,7 +1301,7 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
         ) : score !== null ? (
           <>
             <Text variant="bodyStrong" color={score >= 60 ? colors.successText : colors.dangerText}>{formatPercent(score)}</Text>
-            {detail ? <AssessmentCard answer={typed.trim()} result={detail} /> : null}
+            {detail ? <AssessmentCard answer={typed.trim()} result={detail} reportRef={assessmentRef(detailId, `exam:${w.id}`)} /> : null}
             <PressableScale onPress={() => onDone(score >= 60, score)} style={{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
               <Text variant="bodyStrong" color={colors.onPrimary}>{t("item.finish")}</Text>
             </PressableScale>

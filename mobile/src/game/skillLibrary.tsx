@@ -21,6 +21,7 @@ import { haptic } from "../lib/haptics";
 import { spacing, radii, softShadow, type Palette, ds } from "../theme";
 import type { Gloss } from "../data/skills";
 import { RUBRIC_PASS_PCT } from "../lib/learningRules";
+import { ReportLink, assessmentRef } from "../ui/ReportLink";
 
 /**
  * Beceriler kütüphanesinin (2026-09) mobil oynatıcı parçaları: dil bilgisi
@@ -226,7 +227,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
   const [transcript, setTranscript] = useState("");
   const [sttOk, setSttOk] = useState<boolean | null>(null);
   const [checks, setChecks] = useState<boolean[]>(() => mono.bulletsTr.map(() => false));
-  const [result, setResult] = useState<{ overall: number; praise: string; tip: string; corrected: string } | null>(null);
+  const [result, setResult] = useState<{ overall: number; praise: string; tip: string; corrected: string; id: number | null } | null>(null);
   const [failed, setFailed] = useState(false);
   /**
    * Sunucu bir KAPI yüzünden reddettiyse gösterilecek not.
@@ -288,7 +289,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
     setPhase("scoring");
     try {
       if (guestLocked) throw accountRequiredError();
-      const d = await api<{ result: { score?: { overall?: number }; praise_tr?: string; next_tip_tr?: string; corrected?: string } }>("/api/assess", {
+      const d = await api<{ result: { score?: { overall?: number }; praise_tr?: string; next_tip_tr?: string; corrected?: string }; id?: number | null }>("/api/assess", {
         method: "POST",
         body: JSON.stringify({
           kind: "speaking", level,
@@ -301,7 +302,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
         }),
       });
       const overall = d.result?.score?.overall ?? 0;
-      setResult({ overall, praise: d.result?.praise_tr ?? "", tip: d.result?.next_tip_tr ?? "", corrected: d.result?.corrected ?? "" });
+      setResult({ overall, praise: d.result?.praise_tr ?? "", tip: d.result?.next_tip_tr ?? "", corrected: d.result?.corrected ?? "", id: d.id ?? null });
       setPhase("result");
       onDone(overall >= RUBRIC_PASS_PCT, overall);
     } catch (e) {
@@ -379,6 +380,8 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
                   <Text variant="body">{result.corrected}</Text>
                 </View>
               ) : null}
+              {/* Yapay zekâ değerlendirmesinin hemen altında "Bildir" (denetim CNT-6). */}
+              <ReportLink kind="assessment" refId={assessmentRef(result.id, `${exerciseId}:mono`)} content={JSON.stringify({ answer: transcript.trim(), ...result })} style={{ alignSelf: "flex-end" }} />
             </>
           ) : (
             <Text variant="body" color={colors.textMuted}>

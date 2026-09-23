@@ -35,7 +35,8 @@ import {
  */
 
 export type AssessOutcome =
-  | { ok: true; result: Assessment; cached: boolean; provider: string | null }
+  /** `id`: `assessments` satırı — istemci anlık sonucu bu kimlikle bildirebilsin. */
+  | { ok: true; result: Assessment; cached: boolean; provider: string | null; id: number | null }
   | { ok: false; reason: "not_configured" | "quota" | "invalid" | "upstream"; detail?: string };
 
 /** Kullanıcı başına günlük değerlendirme; `ASSESS_DAILY_LIMIT` ile ayarlanır. */
@@ -89,7 +90,7 @@ export async function assess(
   // Önbellek: aynı kullanıcının aynı cevabı — "bir daha dene"de değişmemiş
   // metni yeniden göndermek olağan; ikinci çağrı ücretsiz ve anında.
   const [cached] = await db
-    .select({ result: assessments.result, provider: assessments.provider })
+    .select({ id: assessments.id, result: assessments.result, provider: assessments.provider })
     .from(assessments)
     .where(
       and(
@@ -102,7 +103,7 @@ export async function assess(
     .orderBy(desc(assessments.createdAt))
     .limit(1);
   if (cached) {
-    return { ok: true, result: cached.result as Assessment, cached: true, provider: cached.provider };
+    return { ok: true, result: cached.result as Assessment, cached: true, provider: cached.provider, id: cached.id };
   }
 
   // Kota: önbellek isabetleri sayılmaz (ücretsiz), yalnız model çağrıları.
@@ -138,7 +139,7 @@ export async function assess(
 
   // Kayıt ve olay. Cevap metni burada saklanır (öğrenci kendi yazısını
   // görebilsin, WP-52); `events`'e yalnız puan gider — gizlilik kuralı.
-  await db.insert(assessments).values({
+  const [saved] = await db.insert(assessments).values({
     userId,
     kind: clean.kind,
     exerciseId: clean.exerciseId ?? null,
@@ -148,10 +149,10 @@ export async function assess(
     result,
     provider,
     hash,
-  });
+  }).returning({ id: assessments.id });
   await track(userId, "production_attempt", day, result.score.overall, productionKind(clean.kind));
 
-  return { ok: true, result, cached: false, provider };
+  return { ok: true, result, cached: false, provider, id: saved?.id ?? null };
 }
 
 /** KPI 2'nin `kind` etiketi: değerlendirme türünden üretim türüne. */
