@@ -331,8 +331,11 @@ export async function speakAndWaitVoiced(
     native?: boolean;
     /** Kelime katmanı (yürüyüş modunun hedefi ve anlamı): yalnız Defne/Aras dosyası, cihaz sesine düşüş yok. */
     word?: boolean;
+    /** Karakter anlatımı (yürüyüş yönergeleri): dosya varsa karakterin sesi, yoksa Edge karşılığı (`k=n`). */
+    narration?: boolean;
   },
 ): Promise<void> {
+  const kind: boolean | "n" = opts?.word ? true : opts?.narration ? "n" : false;
   /*
     İKİ HATA BİRDEN BURADAYDI.
 
@@ -361,7 +364,7 @@ export async function speakAndWaitVoiced(
     bir de ayrıca istemek işi hızlandırmaz, yalnız ikinci bir istek açardı.
   */
   if (parts.length > 1 && !opts?.native) {
-    bridgePrefetch(parts.map((t) => ({ voice, text: t, slow: opts?.slow ?? false, pitch: opts?.pitch, word: opts?.word })));
+    bridgePrefetch(parts.map((t) => ({ voice, text: t, slow: opts?.slow ?? false, pitch: opts?.pitch, word: kind })));
   }
   const seq = ++speakSeq;
   /*
@@ -384,12 +387,12 @@ export async function speakAndWaitVoiced(
     const first = i === 0;
     if (!opts?.native && bridgeReady()) {
       if (nativePlaying) { stopServerTts(); nativePlaying = false; }
-      await bridgeSpeakAndWait(voice, parts[i], opts?.slow ?? false, first ? opts?.onStart : undefined, opts?.pitch, opts?.word ?? false);
+      await bridgeSpeakAndWait(voice, parts[i], opts?.slow ?? false, first ? opts?.onStart : undefined, opts?.pitch, kind);
       continue;
     }
     if (first) opts?.onStart?.();
     // Köprü yoksa aynı nöral ses native oynatıcıdan (bkz. `stopSpeaking` üstündeki not).
-    if (await speakServerTts(voice, parts[i], opts?.slow ?? false, opts?.pitch ?? "mid", opts?.word ?? false)) { ardarda = 0; continue; }
+    if (await speakServerTts(voice, parts[i], opts?.slow ?? false, opts?.pitch ?? "mid", kind)) { ardarda = 0; continue; }
     if (seq !== speakSeq) return;
     // Kelime katmanı cihaz sesine düşmüyor: parça atlanıyor (bkz. `speakTarget` `word`).
     if (opts?.word) continue;

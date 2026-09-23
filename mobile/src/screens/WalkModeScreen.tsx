@@ -14,7 +14,7 @@ import { useAuth } from "../lib/AuthContext";
 import { speakAndWaitVoiced, currentVoiceId } from "../lib/tts";
 import { bridgeStop } from "../lib/ttsBridge";
 import { usePremiumStatus, notePremiumGate } from "../lib/premium";
-import { glossVoice, narrationVoice } from "../lib/voices";
+import { glossVoice } from "../lib/voices";
 import { currentLang, nativeLangName, targetLangName, formatPercent } from "../lib/i18n";
 import { ensureMicPermission, ensureWalkNotificationPermission, listenOnce, stopListening, setKeepAwake, azureListenOnce, startWalkService, stopWalkService, onScreenState, onWalkStop, onWalkServiceFailed, stopServerTts, nativeDelay, nativeHttpGet } from "../lib/stt";
 import { currentTargetLocale } from "../lib/courses";
@@ -221,10 +221,13 @@ export function WalkModeScreen() {
     da ekranın kapalı olduğu, yani sessizliğin en pahalı olduğu yerde.
     `native` bayrağı köprüyü atlamayı sürdürüyor, geri kalan her şey ortak.
   */
+  /* ANLATIM KARAKTERİN SESİYLE (web `walk-player` `say` ile aynı): yönergeler anlatım sesine (Emel/Jenny/Katja)
+     gidiyordu, kelime ve anlamı ise Defne/Aras okuyordu — bir turda iki ayrı kişi. Artık seçilen karakterin anadil
+     sesi; önceden üretilmiş kaydı varsa o (`k=n`), yoksa aynı karakterin Edge karşılığı. */
   const sayNative = (txt: string) => {
-    const v = narrationVoice(currentLang());
+    const v = glossVoice(currentLang(), currentVoiceId());
     const fin = probeSay("native", txt);
-    return fin(speakAndWaitVoiced(txt, v, { native: screenOffRef.current })) as Promise<void>;
+    return fin(speakAndWaitVoiced(txt, v, { native: screenOffRef.current, narration: true })) as Promise<void>;
   };
   /* Hedef kelime ve anlamı KELİME KATMANI (`word`): seçilen karakterin (Defne/Aras) önceden üretilmiş
      kaydı, düşüş yok. Anlam anlatım sesiyle (Emel) değil karakterin anadil sesiyle — Aras'ı seçen "der Hund"u

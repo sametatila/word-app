@@ -194,13 +194,14 @@ export function setKeepAwake(on: boolean): void {
  * WebView köprüsü ekran kapanınca askıya alınıp susuyor). Neural ses (Katja/Emel) korunur.
  * Bitene kadar bekler. Çerez native tarafta CookieManager'dan alınır (auth).
  */
-export async function speakServerTts(voice: string, text: string, slow: Pace | boolean = false, pitch: Pitch = "mid", word = false): Promise<boolean> {
+export async function speakServerTts(voice: string, text: string, slow: Pace | boolean = false, pitch: Pitch = "mid", word: boolean | "n" = false): Promise<boolean> {
   if (!Native || !text) return false;
   const pace = paceOf(slow);
   /* Varsayilanlar adrese YAZILMIYOR: perdesiz/normal istek eski adresle birebir
      ayni kalmali, yoksa isinmis butun onbellek girdileri iskalanir. */
   // `k=w`: kelime katmanı — sunucu yalnız Defne/Aras dosyasından çalıyor, tabloda yoksa 404 (bkz. web app/api/tts).
-  const url = `${API_BASE}/api/tts?v=${encodeURIComponent(voice)}&t=${encodeURIComponent(text)}${pace === "normal" ? "" : `&r=${PACE_PARAM[pace]}`}${pitch === "mid" ? "" : `&p=${PITCH_PARAM[pitch]}`}${word ? "&k=w" : ""}`;
+  // `k=n`: karakter anlatımı — dosya varsa karakterin sesi, yoksa aynı karakterin Edge karşılığı.
+  const url = `${API_BASE}/api/tts?v=${encodeURIComponent(voice)}&t=${encodeURIComponent(text)}${pace === "normal" ? "" : `&r=${PACE_PARAM[pace]}`}${pitch === "mid" ? "" : `&p=${PITCH_PARAM[pitch]}`}${word === true ? "&k=w" : word === "n" ? "&k=n" : ""}`;
   try { return await Native.playTtsUrl(url); } catch { return false; }
 }
 export function stopServerTts(): void { try { Native?.stopTts(); } catch { /* yut */ } }
