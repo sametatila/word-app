@@ -6,7 +6,9 @@ import { API_BASE, fetchWithTimeout } from "../api/client";
  * `/api/client-errors` mesajı ve yığını gruplayıp panele koyuyor; yeni grup
  * Telegram uyarısına düşüyor. Sürüm bilgisi `fetchWithTimeout`un eklediği
  * `x-lernomi-client` başlığından okunuyor. Native çökmeler (JS'e ulaşmayanlar)
- * bu yolun dışında: onlar Firebase Crashlytics'te.
+ * bu yolun dışında; onlar için mağazaların kendi çökme raporları (Play Console
+ * "ANR ve çökmeler", App Store Connect / Xcode Organizer) var. Crashlytics
+ * 2026-09-23'te kaldırıldı: gizlilik beyanlarında yoktu.
  *
  * Uygulama ömrü başına en çok 10 rapor, aynı mesaj dakikada bir.
  */

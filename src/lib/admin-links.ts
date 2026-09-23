@@ -21,7 +21,6 @@ export type AlertLinks = { panel: PanelLink; external?: { url: string; label: st
 
 /** Dış konsollar — panelin göremediği ya da cevabın orada verildiği yerler. */
 export const EXTERNAL = {
-  crashlytics: "https://console.firebase.google.com/project/nomi-507213/crashlytics",
   appStoreReviews: "https://appstoreconnect.apple.com/apps/6810593275/distribution/activity/ios/ratingsResponses",
   playReviews: "https://play.google.com/console/developers/app/user-feedback/reviews",
   playVitals: "https://play.google.com/console/developers/app/vitals/crashes",
@@ -71,7 +70,9 @@ export function alertLinks(key: string): AlertLinks {
     case "errspike":
       return {
         panel: { path: `/admin/errors?grup=${encodeURIComponent(tail)}#grup-${encodeURIComponent(tail)}`, label: "İşletim › Hatalar (bu grup)" },
-        external: { url: EXTERNAL.crashlytics, label: "Native çökmeler: Crashlytics" },
+        /* Crashlytics uygulamadan çıkarıldı (2026-09-23): Android'in native
+           çökmeleri artık yalnız Play Console › Android vitals'ta. */
+        external: { url: EXTERNAL.playVitals, label: "Android native çökmeler: Play vitals" },
       };
     case "err-review":
     case "reviews-api": {

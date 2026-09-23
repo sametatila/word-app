@@ -34,7 +34,7 @@ target 'Lernomi' do
   # olarak açılıyor.
   pod 'GoogleUtilities', :modular_headers => true
   pod 'RecaptchaInterop', :modular_headers => true
-  # Firebase Crashlytics/Sessions (Swift) aynı sebeple bu ikisini istiyor.
+  # Firebase Messaging/Installations da bu ikisini modül olarak istiyor.
   pod 'GoogleDataTransport', :modular_headers => true
   pod 'nanopb', :modular_headers => true
 

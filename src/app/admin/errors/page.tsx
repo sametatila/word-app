@@ -12,8 +12,9 @@ export const dynamic = "force-dynamic";
 /**
  * lernomi.app/admin/errors — istemci hata grupları (web + mobil JS).
  *
- * Native çökmeler burada değil: Firebase Crashlytics konsolunda (Android ve
- * iOS). Burada mesaj, yığın, ekran ve sürümle gruplanmış JS hataları; yeni
+ * Native çökmeler burada değil: Android'de Play Console › Android vitals,
+ * iOS'ta Xcode › Organizer (Crashlytics 2026-09-23'te uygulamadan çıkarıldı).
+ * Burada mesaj, yığın, ekran ve sürümle gruplanmış JS hataları; yeni
  * grup ayrıca Telegram uyarısına düşüyor (lib/alerts).
  */
 export default async function AdminErrorsPage({ searchParams }: { searchParams: Promise<{ all?: string; grup?: string }> }) {

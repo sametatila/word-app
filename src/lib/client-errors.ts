@@ -11,7 +11,9 @@ import { db } from "@/lib/db";
  * seçildi, çünkü (1) kullanıcı verisi üçüncü bir tarafa gitmiyor (gizlilik
  * politikasına yeni bir alt işleyen eklemek gerekmiyor), (2) hatalar panelde
  * ve Telegram uyarısında zaten olan yerde görünüyor, (3) kota yok. Native
- * çökmeler (JS'e hiç ulaşmayanlar) ayrıca Firebase Crashlytics'te.
+ * çökmeler (JS'e hiç ulaşmayanlar) mağazaların kendi raporlarında: Play
+ * Console › Android vitals ve Xcode › Organizer (Crashlytics 2026-09-23'te
+ * uygulamadan çıkarıldı; üçüncü taraf çökme SDK'sı yok).
  *
  * GRUPLAMA: platform + hata adı + SAYISIZ mesaj + yığının ilk anlamlı karesi.
  * "Cannot read property 'x' of undefined (id 123)" ile "(id 456)" aynı grup.

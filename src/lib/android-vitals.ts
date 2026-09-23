@@ -9,8 +9,9 @@ import { PLAY_PACKAGE } from "@/lib/store-reviews";
  *
  * NEDEN. Google Play bu iki oranı "temel kalite sinyali" sayıyor: 28 günlük
  * kullanıcı ağırlıklı oran KÖTÜ DAVRANIŞ EŞİĞİNİ aşarsa uygulama mağazada
- * geri plana itiliyor ve sayfasında uyarı gösterilebiliyor. Crashlytics tek
- * tek çökmeyi gösteriyor; bu ise mağazanın gördüğü, sıralamayı etkileyen sayı.
+ * geri plana itiliyor ve sayfasında uyarı gösterilebiliyor. Uygulamada çökme
+ * SDK'sı yok (Crashlytics 2026-09-23'te çıkarıldı); native çökmenin tek
+ * kaynağı bu oran ve Play Console'daki ayrıntısı.
  *
  * Eşikler (Play Console, genel): kullanıcının fark ettiği çökme %1,09,
  * kullanıcının fark ettiği ANR %0,47. Değişirse yalnız buradaki sabitler.

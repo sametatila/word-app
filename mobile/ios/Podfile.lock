@@ -43,9 +43,6 @@ PODS:
     - React-Core-prebuilt
   - Firebase/CoreOnly (12.18.0):
     - FirebaseCore (~> 12.18.0)
-  - Firebase/Crashlytics (12.18.0):
-    - Firebase/CoreOnly
-    - FirebaseCrashlytics (~> 12.18.0)
   - Firebase/Messaging (12.18.0):
     - Firebase/CoreOnly
     - FirebaseMessaging (~> 12.18.0)
@@ -57,15 +54,6 @@ PODS:
     - FirebaseCore (~> 12.18.0)
   - FirebaseCoreInternal (12.18.0):
     - "GoogleUtilities/NSData+zlib (~> 8.1)"
-  - FirebaseCrashlytics (12.18.0):
-    - FirebaseCore (~> 12.18.0)
-    - FirebaseInstallations (~> 12.18.0)
-    - FirebaseRemoteConfigInterop (~> 12.18.0)
-    - FirebaseSessions (~> 12.18.0)
-    - GoogleDataTransport (~> 10.1)
-    - GoogleUtilities/Environment (~> 8.1)
-    - nanopb (~> 3.30910.0)
-    - PromisesObjC (~> 2.4)
   - FirebaseInstallations (12.18.0):
     - FirebaseCore (~> 12.18.0)
     - GoogleUtilities/Environment (~> 8.1)
@@ -80,16 +68,6 @@ PODS:
     - GoogleUtilities/Reachability (~> 8.1)
     - GoogleUtilities/UserDefaults (~> 8.1)
     - nanopb (~> 3.30910.0)
-  - FirebaseRemoteConfigInterop (12.18.0)
-  - FirebaseSessions (12.18.0):
-    - FirebaseCore (~> 12.18.0)
-    - FirebaseCoreExtension (~> 12.18.0)
-    - FirebaseInstallations (~> 12.18.0)
-    - GoogleDataTransport (~> 10.1)
-    - GoogleUtilities/Environment (~> 8.1)
-    - GoogleUtilities/UserDefaults (~> 8.1)
-    - nanopb (~> 3.30910.0)
-    - PromisesSwift (~> 2.1)
   - fmt (12.1.0):
     - ReactNativeDependencies
   - glog (0.3.5):
@@ -1867,31 +1845,6 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
-  - RNFBCrashlytics (26.4.0):
-    - Firebase/Crashlytics (= 12.18.0)
-    - FirebaseCoreExtension (= 12.18.0)
-    - hermes-engine
-    - RCTRequired
-    - RCTTypeSafety
-    - React-bridging
-    - React-Core
-    - React-Core-prebuilt
-    - React-debug
-    - React-Fabric
-    - React-featureflags
-    - React-graphics
-    - React-ImageManager
-    - React-jsi
-    - React-NativeModulesApple
-    - React-RCTFabric
-    - React-renderercss
-    - React-rendererdebug
-    - React-utils
-    - ReactCodegen
-    - ReactCommon/turbomodule/core
-    - ReactNativeDependencies
-    - RNFBApp
-    - Yoga
   - RNFBMessaging (26.4.0):
     - Firebase/Messaging (= 12.18.0)
     - FirebaseCoreExtension (= 12.18.0)
@@ -2190,7 +2143,6 @@ DEPENDENCIES:
   - RecaptchaInterop
   - "RNAppleAuthentication (from `../node_modules/@invertase/react-native-apple-authentication`)"
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
-  - "RNFBCrashlytics (from `../node_modules/@react-native-firebase/crashlytics`)"
   - "RNFBMessaging (from `../node_modules/@react-native-firebase/messaging`)"
   - "RNGoogleSignin (from `../node_modules/@react-native-google-signin/google-signin`)"
   - RNKeychain (from `../node_modules/react-native-keychain`)
@@ -2212,11 +2164,8 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseCoreExtension
     - FirebaseCoreInternal
-    - FirebaseCrashlytics
     - FirebaseInstallations
     - FirebaseMessaging
-    - FirebaseRemoteConfigInterop
-    - FirebaseSessions
     - GoogleDataTransport
     - GoogleSignIn
     - GoogleUtilities
@@ -2407,8 +2356,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@invertase/react-native-apple-authentication"
   RNFBApp:
     :path: "../node_modules/@react-native-firebase/app"
-  RNFBCrashlytics:
-    :path: "../node_modules/@react-native-firebase/crashlytics"
   RNFBMessaging:
     :path: "../node_modules/@react-native-firebase/messaging"
   RNGoogleSignin:
@@ -2446,11 +2393,8 @@ SPEC CHECKSUMS:
   FirebaseCore: 96787d19ee32dc2242cc487b301bc616afeb398b
   FirebaseCoreExtension: a86bab02524ca2bff95dddab7a3fcad505c2ddeb
   FirebaseCoreInternal: 93b2d5f9e184c6818a04433891c358b0720a6a38
-  FirebaseCrashlytics: bd160cfa074ad21ed708a466e15d1928ded1642a
   FirebaseInstallations: 933b2747e8594084c9117b65e8358fce29d7ced7
   FirebaseMessaging: 422bb80cbf8ff83e69e50bea4d4984fc4704f665
-  FirebaseRemoteConfigInterop: 3cbd659033c3129ea81a756a52e4bf1cfc20c3a7
-  FirebaseSessions: 3eaac5fd8077513b95f9723efd940438e3e35fb2
   fmt: ba0886e864ebb21d14c98b2e12e164b8002f5b93
   glog: 3cf7cb46f743c4bc758ae3e6d9c15bd1b4cfd6d4
   GoogleDataTransport: a24e58982ab3ba2f64d79613e027fe7f57e88539
@@ -2545,7 +2489,6 @@ SPEC CHECKSUMS:
   RevenueCat: 96e12da1f3de201c65f337ff661506ac28ee1514
   RNAppleAuthentication: a89c9804592b38ed4ab11f0aee68d05ba12ad432
   RNFBApp: 909622e738d3a923b670950f9cdc9aeac9b1e6cc
-  RNFBCrashlytics: f35ddacefa0249e62a91763b6cf3754fb7927a3b
   RNFBMessaging: 5e7cd9fc16c49b0492121c1fa90c9b3aa35aaec6
   RNGoogleSignin: f98d6e730364a34b6551f2cbb7749c4d84ec7ab1
   RNKeychain: 551d42b0ef53426f82551a0cc961cfa10ad33afa
@@ -2559,6 +2502,6 @@ SPEC CHECKSUMS:
   TextToSpeech: 89b239221ec378d213af422d14789a729705360b
   Yoga: d1c536142c5ff8ec8cd856ab2a7c227a1d875c8e
 
-PODFILE CHECKSUM: 4afd55a6b90792d87b7db01298321d1b2607491c
+PODFILE CHECKSUM: 8d1e6233d7eb5e394cc3aeab31ae44f332d0e943
 
 COCOAPODS: 1.15.2

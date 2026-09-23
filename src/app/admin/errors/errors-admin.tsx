@@ -41,7 +41,7 @@ export function ErrorsAdmin({ groups, showAll, top, focus = null }: { groups: Er
     <AdminPage>
       <PageHeader
         title="Hatalar"
-        description={<>Web ve mobil JavaScript hataları, mesaj + yığın + ekran + sürümle gruplanmış. Native (Android/iOS) çökmeler Firebase Crashlytics&apos;te: <a className="underline" href={EXTERNAL.crashlytics} target="_blank" rel="noopener noreferrer">{EXTERNAL.crashlytics}</a></>}
+        description={<>Web ve mobil JavaScript hataları, mesaj + yığın + ekran + sürümle gruplanmış. Native çökmeler burada yok: Android için Play Console › Android vitals (<a className="underline" href={EXTERNAL.playVitals} target="_blank" rel="noopener noreferrer">aç</a>), iOS için Xcode › Organizer › Crashes.</>}
         meta={`${list.length} grup · ${total} olay`}
         actions={<a href={showAll ? "/admin/errors" : "/admin/errors?all=1"} className={BTN.secondary}>{showAll ? "Yalnız açıklar" : "Çözülenler dahil"}</a>}
       />
