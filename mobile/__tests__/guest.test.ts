@@ -20,7 +20,10 @@ jest.mock("../src/api/client", () => {
   return { api: jest.fn(), fetchWithTimeout: jest.fn(), API_BASE: "https://example.test", ApiError: Err };
 });
 
+jest.mock("../src/lib/integrity", () => ({ guestAttestation: jest.fn(async () => null) }));
+
 const { api, fetchWithTimeout } = require("../src/api/client") as { api: jest.Mock; fetchWithTimeout: jest.Mock };
+const { guestAttestation } = require("../src/lib/integrity") as { guestAttestation: jest.Mock };
 const record = { id: "guest-1", token: "t".repeat(32), at: 1 };
 
 const Keychain = require("react-native-keychain") as { __reset: () => void; setGenericPassword: jest.Mock; getGenericPassword: (o: { service: string }) => Promise<false | { password: string }> };
@@ -39,6 +42,26 @@ test("misafir açılınca kimlik ve jeton cihaza yazılır — güvenli depoya, 
   expect(await loadGuestRecord()).toMatchObject({ id: record.id, token: record.token });
   expect(await AsyncStorage.getItem(GUEST_KEY)).toBeNull();
   expect(await Keychain.getGenericPassword({ service: "app.lernomi.guest" })).toBeTruthy();
+});
+
+test("cihaz belgesi yoksa (iOS, kip kapalı) gövde boş kalır", async () => {
+  fetchWithTimeout.mockResolvedValue({ ok: true, status: 200, json: async () => ({ token: record.token, user: { id: record.id } }) });
+  await startGuest();
+  expect(fetchWithTimeout.mock.calls[0][1].body).toBe("{}");
+});
+
+test("cihaz belgesi (Android, kayıt kipi) açılış isteğine eklenir", async () => {
+  guestAttestation.mockResolvedValueOnce({ token: "integrity", nonce: "n1" });
+  fetchWithTimeout.mockResolvedValue({ ok: true, status: 200, json: async () => ({ token: record.token, user: { id: record.id } }) });
+  expect((await startGuest()).ok).toBe(true);
+  expect(JSON.parse(fetchWithTimeout.mock.calls[0][1].body)).toEqual({ attestation: { token: "integrity", nonce: "n1" } });
+});
+
+test("belge alınırken beklenmedik hata: açılış yine sürer", async () => {
+  guestAttestation.mockRejectedValueOnce(new Error("boom"));
+  fetchWithTimeout.mockResolvedValue({ ok: true, status: 200, json: async () => ({ token: record.token, user: { id: record.id } }) });
+  expect((await startGuest()).ok).toBe(true);
+  expect(fetchWithTimeout.mock.calls[0][1].body).toBe("{}");
 });
 
 test("eski sürümün açık metin kaydı ilk okumada güvenli depoya taşınır", async () => {

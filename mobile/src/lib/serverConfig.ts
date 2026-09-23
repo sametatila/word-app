@@ -23,6 +23,12 @@ export type ServerConfig = {
   providers: { google: boolean; apple: boolean; appleWeb: boolean };
   turnstileSiteKey: string;
   /**
+   * Misafir açılışında cihaz doğrulaması (Play Integrity, kayıt kipi). `null`:
+   * kip kapalı, Android istemci belge İSTEMİYOR (bkz. lib/integrity). Doluyken
+   * belge hazırlığının istediği Google Cloud proje numarası.
+   */
+  guestAttestation: { cloudProjectNumber: string } | null;
+  /**
    * Uygulama denetimi (panelden): zorunlu/önerilen build, bakım modu, mağaza
    * bağlantıları. Biçim web `lib/app-control-shared` ile aynı. Eski sunucu ya
    * da hata: `null` - kapı hiçbir şeyi engellemiyor.
@@ -56,6 +62,11 @@ function appControlOf(raw: unknown): AppControl | null {
   };
 }
 
+function attestationOf(raw: unknown): ServerConfig["guestAttestation"] {
+  const n = (raw as { cloudProjectNumber?: unknown } | null | undefined)?.cloudProjectNumber;
+  return typeof n === "string" && /^\d{1,20}$/.test(n) ? { cloudProjectNumber: n } : null;
+}
+
 let cached: ServerConfig | null = null;
 
 /**
@@ -71,13 +82,14 @@ export async function fetchServerConfig(fresh = false): Promise<ServerConfig> {
       auth: c.auth !== false,
       providers: { google: Boolean(c.providers?.google), apple: Boolean(c.providers?.apple), appleWeb: Boolean(c.providers?.appleWeb) },
       turnstileSiteKey: typeof c.turnstileSiteKey === "string" ? c.turnstileSiteKey : "",
+      guestAttestation: attestationOf((c as { guestAttestation?: unknown }).guestAttestation),
       app: appControlOf((c as { app?: unknown }).app),
     };
   } catch {
     /* Taze okuma düştüyse eldeki yapılandırma korunuyor: ağ hıçkırığı bakım
        ekranını kaldırıp geri getirmesin. */
     if (fresh && cached) return cached;
-    cached = { auth: true, providers: { google: false, apple: false, appleWeb: false }, turnstileSiteKey: "", app: null };
+    cached = { auth: true, providers: { google: false, apple: false, appleWeb: false }, turnstileSiteKey: "", guestAttestation: null, app: null };
   }
   return cached;
 }

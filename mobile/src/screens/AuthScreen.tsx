@@ -13,6 +13,7 @@ import { FlowNote } from "../ui/flow";
 import { useAuth } from "../lib/AuthContext";
 import { requestPasswordReset, sendVerificationEmail } from "../lib/auth";
 import { fetchServerConfig } from "../lib/serverConfig";
+import { warmUpIntegrity } from "../lib/integrity";
 import { Turnstile } from "../ui/Turnstile";
 import { sendTwoFactorOtp, verifyTwoFactorOtp } from "../lib/auth";
 import { TWO_FACTOR_CODE_DIGITS, TWO_FACTOR_CODE_MINUTES, TWO_FACTOR_TRUST_DAYS } from "../lib/twoFactor";
@@ -183,6 +184,9 @@ export function AuthScreen() {
         apple: appleSupported() ? c.providers.apple : c.providers.appleWeb,
       });
       setCaptchaOn(Boolean(c.turnstileSiteKey));
+      /* Misafir açılışının cihaz belgesi için sağlayıcı önceden hazırlanıyor
+         (ilk hazırlık saniyeler sürebilir); kip kapalıysa ya da iOS'ta hiçbir şey olmaz. */
+      warmUpIntegrity(c.guestAttestation?.cloudProjectNumber);
     });
     return () => { alive = false; };
   }, []);

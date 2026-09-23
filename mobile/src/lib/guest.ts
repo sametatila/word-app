@@ -1,6 +1,8 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as Keychain from "react-native-keychain";
 import { api, API_BASE, ApiError, fetchWithTimeout } from "../api/client";
+import { fetchServerConfig } from "./serverConfig";
+import { guestAttestation } from "./integrity";
 
 /**
  * MİSAFİR KİMLİĞİ — istemci tarafı (mağaza ön inceleme B24, App Store 5.1.1(v)).
@@ -128,14 +130,25 @@ export type GuestStart =
   /** `status` 429: kimlik açma sınırı (IP başına saatte 10); 0: ağ yok. */
   | { ok: false; status: number; code: string };
 
-/** Sunucuda misafir kimliği açar ve jetonunu cihaza yazar. */
+/**
+ * Sunucuda misafir kimliği açar ve jetonunu cihaza yazar.
+ *
+ * Sunucu cihaz doğrulamasını açtıysa (`/api/config` `guestAttestation`) Android
+ * bir Play Integrity belgesi ekliyor; sunucu onu yalnız kaydediyor. Belge
+ * alınamazsa (zaman aşımı, Play hizmetleri yok) yerine hata kodu gidiyor ve
+ * açılış yine sürüyor (bkz. lib/integrity).
+ */
 export async function startGuest(): Promise<GuestStart> {
   try {
+    let attestation: Awaited<ReturnType<typeof guestAttestation>> = null;
+    try {
+      attestation = await guestAttestation((await fetchServerConfig()).guestAttestation?.cloudProjectNumber);
+    } catch { /* doğrulama açılışı hiçbir zaman durdurmaz */ }
     const res = await fetchWithTimeout(`${API_BASE}/api/auth/sign-in/anonymous`, {
       method: "POST",
       // `origin` elle: RN koymuyor, Better Auth çerez taşıyan POST'ta şart koşuyor.
       headers: { "content-type": "application/json", accept: "application/json", origin: API_BASE },
-      body: "{}",
+      body: attestation ? JSON.stringify({ attestation }) : "{}",
     });
     const json = (await res.json().catch(() => null)) as { token?: unknown; user?: { id?: unknown }; code?: unknown } | null;
     const token = typeof json?.token === "string" ? json.token : "";
