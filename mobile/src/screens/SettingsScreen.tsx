@@ -60,9 +60,17 @@ const THEME_OPTIONS: { key: ThemeMode; label: string }[] = [
  * yüklenirken hesaplansaydı arayüz İngilizceye alındıktan sonra bile kurs
  * adları Türkçe kalırdı. Anadil ayrıca listeden elenir (kimse kendi dilini
  * öğrenmez).
+ *
+ * Yeni kullanıcıya sunulmayan kurs (`offeredToNewUsers: false`, duraklatılmış
+ * Zürih lehçesi) yalnız zaten o kurstaki kullanıcıya görünür. Herkese açık
+ * olsaydı buradan seçilebiliyor ve Yol ekranı "henüz konuşma yolu yok" boş
+ * durumuna düşüyordu; o kurstaki kullanıcıdan ise seçili satırı saklamak
+ * hiçbir seçeneği işaretsiz bırakırdı.
  */
-function courseOptions(lang: NativeLang): { key: string; label: string; sub: string }[] {
-  return coursesForNative(lang).map((c) => ({ key: c.id, label: c.label[lang], sub: c.sub[lang] }));
+function courseOptions(lang: NativeLang, current: string): { key: string; label: string; sub: string }[] {
+  return coursesForNative(lang)
+    .filter((c) => c.offeredToNewUsers || c.id === current)
+    .map((c) => ({ key: c.id, label: c.label[lang], sub: c.sub[lang] }));
 }
 
 
@@ -281,7 +289,7 @@ export function SettingsScreen() {
   async function keepCourseValid(lang: NativeLang) {
     const list = coursesForNative(lang);
     if (list.some((c) => c.id === course)) return;
-    const next = list[0]?.id;
+    const next = (list.find((c) => c.offeredToNewUsers) ?? list[0])?.id;
     if (next) await pickCourse(next);
   }
 
@@ -310,7 +318,7 @@ export function SettingsScreen() {
         <Group title={t("settings.group_learning")} colors={colors}>
           <Row label={t("settings.language_to_learn")} colors={colors}>
             {!learningVisible
-              ? courseOptions(uiLang).map((c, i) => (
+              ? courseOptions(uiLang, course).map((c, i) => (
                   <View key={c.key} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderTopWidth: i === 0 ? 0 : 1, borderTopColor: colors.hairline }}>
                     <View style={{ flex: 1 }}>
                       <SkeletonLine variant="bodyStrong" width="42%" />
@@ -319,7 +327,7 @@ export function SettingsScreen() {
                     <SkeletonTile size={22} radius={11} />
                   </View>
                 ))
-              : courseOptions(uiLang).map((c, i) => {
+              : courseOptions(uiLang, course).map((c, i) => {
               const active = course === c.key;
               return (
                 /* SATIR ZATEN BİR RADYO HALKASI ÇİZİYOR (sağdaki daire) ama
