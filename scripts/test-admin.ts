@@ -133,8 +133,15 @@ async function main() {
   check("deneme dönüşümü işaretleniyor, tutar taşınıyor", conv.ok && "event" in conv && conv.event.ledger?.trialConversion === true && conv.event.ledger.priceUsd === 29.99 && conv.event.ledger.priceLocal === 999);
   const refund = await parse({ ...base, id: "e3", type: "REFUND", period_type: "NORMAL", price: -29.99 });
   check("iade: tür refund, tutar pozitif", refund.ok && "event" in refund && refund.event.ledger?.type === "refund" && refund.event.ledger.priceUsd === 29.99);
+  /* SANDBOX artık İŞARETLİ kabul ediliyor (2026-09-23, IAP-1): TestFlight ve Play iç
+     testte satın alan inceleyici premium'u görmeli; satır `sandbox` taşıyıp gelirden
+     düşülüyor. `REVENUECAT_ALLOW_SANDBOX=0` eski davranışa (yok say) döndürüyor. */
   const sandbox = await parse({ ...base, id: "e4", type: "INITIAL_PURCHASE", environment: "SANDBOX" });
-  check("sandbox deftere de yetkiye de girmiyor", !sandbox.ok);
+  check("sandbox kabul ediliyor ama işaretli", sandbox.ok && "event" in sandbox && sandbox.event.sandbox === true);
+  process.env.REVENUECAT_ALLOW_SANDBOX = "0";
+  const sandboxOff = await parse({ ...base, id: "e5", type: "INITIAL_PURCHASE", environment: "SANDBOX" });
+  check("REVENUECAT_ALLOW_SANDBOX=0 iken sandbox yok sayılıyor", !sandboxOff.ok);
+  delete process.env.REVENUECAT_ALLOW_SANDBOX;
   const wrongSecret = await revenuecat.parse(new Request("https://x", { method: "POST", headers: { authorization: "yanlis" } }), JSON.stringify({ event: base }));
   check("yanlış sır 401", !wrongSecret.ok && wrongSecret.status === 401);
 
