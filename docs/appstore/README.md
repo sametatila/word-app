@@ -79,7 +79,7 @@ de açık (`/api/config` → `"apple":true,"appleWeb":true`), yani bu alıcı iO
 | 2 | ~~Gerçek bundle kimliği~~ → `app.lernomi.ios` **yazıldı** (derlendi, cihazda denenmedi) | Şablon kimliğiyle yükleme kabul edilmez |
 | 3 | ~~**Apple ile Giriş**~~ → **kod ve yetki yazıldı**, Apple Developer hesabı bekliyor | Google ile giriş sunulduğu için App Store Review Guidelines 4.8 istiyor. Metin işi değil, ürün işi. Ayrıntı aşağıda; kalan iki değer madde 10-11'de |
 | 4 | ~~Uygulama içi hesap silme~~ → **iki eksik kapandı** (2026-09-05, derlendi, cihazda denenmedi) · açık kalan: **cihazda doğrulama** | 5.1.1(v). Ekran zaten vardı ama iki yerde iOS'ta tıkanıyordu; ayrıntı aşağıda "Hesap silme" başlığında |
-| 5 | Gizlilik etiketleri | Aşağıdaki tablo App Store Connect'e girilir |
+| 5 | Gizlilik etiketleri | Aşağıdaki tablo App Store Connect'e girilir; 2026-09-23'te Diagnostics satırları eklendi, Connect formu ve `PrivacyInfo.xcprivacy` buna göre güncellenmeli |
 | 6 | Yaş derecelendirmesi | Anket cevapları ve iki mağazanın neden farklı çıkacağı **yazıldı** (`listing.md` §2); Connect'te form doldurulup hesaplanan derece geri yazılacak |
 | 7 | Arka plan sesinin CİHAZDA doğrulanması | Ekran kapalıyken yürüyüş modu kararı verildi ve kod yazıldı, ama macOS/Xcode olmadan derlenip denenemedi (aşağıya bak) |
 | 8 | ~~`.lproj` dosyalarının Xcode hedefine eklenmesi~~ → **bağlandı** (derlendi, cihazda denenmedi) | Dosyalar yazılmıştı ama `project.pbxproj`'da kayıtlı değildi, yani derlemeye girmiyordu |
@@ -140,7 +140,10 @@ açıkça yazılmalı:
    (`55411a3`). Android'deki kalıcı bildirimdeki "Durdur"un karşılığı bu; §6'daki açık
    ürün kararı böyle kapandı.
 
-Video eklemek yine en hızlı çözen yol.
+Video eklemek yine en hızlı çözen yol. Bu üç madde + "ses sunucuda tanınır, saklanmaz,
+izin ekranı sağlayıcıları adıyla gösterir" İngilizce not metni olarak `connect.md` §1'in
+7. adımında hazır (2026-09-23); canlıdaki not hâlâ eski ve mikrofonu "yalnız telaffuz
+puanı için" diye anlatıyor (denetim LEG-6) — Connect'te güncellenmesi Samet'in işi.
 
 
 ## Apple ile Giriş (Şerit A — 2026-09-04)
@@ -305,9 +308,11 @@ düşüyor mu, (c) aynı Apple hesabıyla yeniden giriş temiz bir hesap açıyo
 
 Play'in Veri Güvenliği beyanıyla (`docs/play/data-safety.md`) aynı gerçeği anlatır,
 Apple'ın kategorileriyle. **Hiçbir veri türü izleme (tracking) için kullanılmıyor** —
-reklam kimliği toplanmıyor, üçüncü taraf reklam ya da analitik SDK'sı yok.
+reklam kimliği toplanmıyor, üçüncü taraf reklam, analitik ya da çökme raporlama SDK'sı
+yok (Firebase Crashlytics 2026-09-23'te çıkarıldı; önceki build'lerde vardı ve hiçbir
+beyanda yoktu, denetim LEG-1).
 
-Yedi tür var ve `mobile/ios/Lernomi/PrivacyInfo.xcprivacy` ile BİREBİR aynı olmak
+Dokuz tür var (2026-09-23'e kadar yedi) ve `mobile/ios/Lernomi/PrivacyInfo.xcprivacy` ile BİREBİR aynı olmak
 zorunda; manifest pakette gidiyor ve Apple ikisini karşılaştırabiliyor. Device ID
 2026-09-10'da eklendi: uzak bildirim o gün açıldı ve cihaz başına bir kayıt jetonu
 saklanmaya başladı (`device_tokens`). Apple'ın örnekleri IDFA/IDFV olduğu için bu
@@ -324,12 +329,26 @@ için iki mağazanın aynı şeyi söylemesi tercih edildi.
 | Identifiers › Device ID (bildirim jetonu) | **Evet** | Evet | App Functionality |
 | Usage Data › Product Interaction | Evet | Evet | Analytics (ayarlardan kapatılabilir) |
 | Purchases › Purchase History | Evet | Evet | App Functionality |
-| Diagnostics | Hayır | — | — |
+| Diagnostics › Crash Data (anonim JS hata raporu: ileti, yığın izi) | **Evet** | **Hayır** | App Functionality |
+| Diagnostics › Other Diagnostic Data (hata raporuna eşlik eden ekran adı, uygulama sürümü, platform) | **Evet** | **Hayır** | App Functionality |
 | Location, Contacts, Health, Financial Info, Browsing History, Search History, Sensitive Info | Hayır | — | — |
+
+**Diagnostics 2026-09-23'te Hayır'dan Evet'e döndü.** Web ve mobil JS hataları kendi
+sunucumuza gidiyor (`/api/client-errors`; `src/lib/client-errors.ts`,
+`mobile/src/lib/errorReport.ts`). Kullanıcı kimliği yazılmıyor, e-posta/jeton/uzun
+sayılar sunucuda temizleniyor, kimseyle paylaşılmıyor — yani "Linked to identity: No".
+Apple "collected" için üçüncü tarafı şart koşmuyor; birinci taraf sunucuda saklanan veri
+de toplanmış sayılıyor. Native çökmeler yalnız Apple'ın kendi Organizer raporlarında.
+**Açık iş (mobil):** `PrivacyInfo.xcprivacy`'ye `NSPrivacyCollectedDataTypeCrashData` ve
+`NSPrivacyCollectedDataTypeOtherDiagnosticData` (Linked: false, Tracking: false, Purpose:
+AppFunctionality) eklenmeli; Samet Connect › App Privacy'de aynı iki satırı işaretler.
+FirebaseMessaging/Installations ve GoogleSignIn pod'larının kendi manifestolarının
+beyan ettiği türler için Xcode › Archive › "Generate Privacy Report" çıktısıyla bir
+karşılaştırma ayrıca yapılmalı (denetim LEG-13).
 
 Bu tablo ile uygulama paketindeki `mobile/ios/Lernomi/PrivacyInfo.xcprivacy`
 **birebir aynı olmak zorunda** — ayrışırsa inceleme takılır. 2026-09-04'te makine
-tarafından karşılaştırıldı: altı türün her birinde tür adı, "kimliğe bağlı" bayrağı,
+tarafından karşılaştırıldı (o gün altı tür vardı): altı türün her birinde tür adı, "kimliğe bağlı" bayrağı,
 amaç listesi ve `tracking=false` örtüşüyor; belgede "Hayır" yazan hiçbir tür
 manifestoda yok, manifestoda belgede olmayan tür yok, `NSPrivacyTracking` de false.
 Bu tabloya satır eklenirse manifesto da aynı commit'te değişmeli.
@@ -340,9 +359,12 @@ Bugün eklenen Apple girişi paketi (`@invertase/react-native-apple-authenticati
 `UserDefaults`, dosya zaman damgası, sistem açılış zamanı ya da disk alanı çağrısı
 geçmiyor.
 
-Ses için dikkat: Apple "toplanıyor" derken **cihazdan ayrılıp saklanmayı** kastediyor.
-Ses sunucuya gidiyor ama tanıma biter bitmez siliniyor ve saklanmıyor; bu yüzden
-"collected" değil. Tanınan **metin** saklanıyor ve o User Content olarak beyan ediliyor.
+Ses için dikkat: Apple "toplanıyor" derken **cihazdan ayrılıp saklanmayı** kastediyor
+(gerçek zamanlı işleme dışında). Ses sunucuya gidiyor ama Lernomi'de saklanmıyor;
+sağlayıcı tarafında Speechmatics işi tanımadan sonra siliniyor ve Deepgram'da eğitim
+katılımı kapalı (`mip_opt_out`) — ikisi sunucu tarafında `lib/stt`e bağlı (denetim
+LEG-4). Bu koşullarla "collected" değil; ikisinden biri geri alınırsa bu satır "Evet"e
+döner. Tanınan **metin** saklanıyor ve o User Content olarak beyan ediliyor.
 Bu ayrım gizlilik politikası §3 ve §4 ile birebir aynı.
 
 ## İnceleme notları (App Review Information)
@@ -356,15 +378,21 @@ kullanıcı kimliği, öğrenme ve etkileşim verisi) hesapta da toplanıyor ve 
 Other User Content, Product Interaction); misafirde e-posta ve ad hiç toplanmıyor. Ek olarak açıklanması gereken:
 
 - **Mikrofon ve arka plan sesi:** yürüyüş modu kullanıcı başlattığında mikrofonu açar;
-  ekran kapalıyken ses tanınmak üzere sunucuya gider ve saklanmaz. İnceleyen bunu
-  görebilsin diye adım adım yazılmalı, aksi hâlde arka plan izni sorgulanır.
+  ekran kapalıyken ses tanınmak üzere sunucuya gider ve saklanmaz. Adım adım metin
+  `connect.md` §1, 7. adım (kilit ekranında Now Playing + mikrofon göstergesi, kilit
+  ekranından durdurma, sağlayıcılar izin ekranında adıyla).
+- **Satın alma:** Premium'lu inceleme hesabı paywall'u göremez; notta ikinci, Premium'suz
+  bir demo hesap ve hesap şartının gerekçesi (hesaba bağlı, platformlar arası abonelik)
+  var (`connect.md` §1).
 - **Yapay zekâ içeriği:** rol yapma bir dil modeliyle üretiliyor; uygulamada "gerçek kişi
   değil" bildirimi ekranda kalıcı ve her yanıtın altında "Bildir" var (Guidelines 1.2 ve
   üretken içerik beklentileri).
 - **Kullanıcı içeriği (Guidelines 1.2):** dördü de var — görünen ad, kullanıcı adı ve
   biyografi moderasyondan geçiyor (filtreleme), her yapay zekâ yanıtının altında ve
   profillerde **Bildir**, profillerde **Engelle**, ve **yayımlanmış iletişim bilgisi**
-  olarak `https://www.lernomi.app/support`. Özel mesajlaşma yok.
+  olarak `https://www.lernomi.app/support`. Özel mesajlaşma yok. Şartlar §4/§5 1.5'ten
+  beri "sıfır tolerans, bildirimler 24 saat içinde incelenir, bildirene sonuç iletilir"
+  diyor.
 
   Dördüncüsü 2026-09-09'a kadar EKSİKTİ: destek adresi yalnız gizlilik politikası ve
   şartların içinde geçiyordu, Support URL alanı ise ana sayfayı gösteriyordu ve ana

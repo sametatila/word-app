@@ -9,17 +9,24 @@ ekranındaki "Continue without an account" kelime turlarını, dersleri, beceril
 ekran açık yürüyüş modunu ve sınavları açıyor. Hatırlatmalar (cihaz içi) ve rızayla tek bir yapay zekâ
 değerlendirmesi misafire açık; sosyal özellikler, sonraki değerlendirmeler ve Premium satın alma hesap istiyor; o ekranlar bunu söyleyip "Create account"
 sunuyor ve misafir ilerlemesi hesaba taşınıyor. Arka plan sesini ve yapay zekâyı görebilmesi
-için inceleme yine Premium bir test hesabı ister (Sign-in required: evet). Bu belgedeki hiçbir alan **doldurulmuş değil**: Apple Developer
-hesabı henüz açılmadı (bkz. `docs/appstore/README.md` "iOS yayınından önce bitmesi
-gereken iş" §1).
+için inceleme yine Premium bir test hesabı ister (Sign-in required: evet).
+
+**Durum (2026-09-23, ASC salt GET dökümü):** Apple Developer hesabı açık, uygulama kaydı
+var (`6810593275`, `app.lernomi.ios`), TestFlight'ta build 2, 3 ve 4 geçerli. App Review
+Information'da iletişim, telefon, demo hesap (`apple-review@lernomi.app`, Premium) ve
+notlar **dolu**; ancak canlıdaki notlar aşağıdaki taslaktan eski: mikrofonu "yalnız
+telaffuz puanı için" diye anlatıyor, arka plan sesinden söz etmiyor ve Premium'lu hesapla
+satın alma ekranına gidilemiyor (denetim LEG-6, IAP-5/8). Aşağıdaki metin güncel taslak;
+Connect'e girmek (PATCH) mağazada canlı etki yaptığı için Samet'in işi.
 
 ## 1. App Review Information › Sign-In Required
 
 | Alan | Değer |
 |---|---|
 | Sign-in required | Evet (hesap isteyen özellikler için; çekirdek hesapsız açık) |
-| User name | `[[TEST_HESABI_E_POSTA]]` |
-| Password | `[[TEST_HESABI_PAROLA]]` |
+| User name | `apple-review@lernomi.app` (Premium; Connect'te kayıtlı) |
+| Password | Yalnız Connect'te |
+| İkinci hesap (Notes içinde) | `[[IAP_DEMO_HESABI_E_POSTA]]` — **Premium'suz**, satın alma akışı için. TODO(Samet): üretimde açılması veri yazmak demek, ayrıca onay |
 | Notes | Aşağıdaki İngilizce metin, olduğu gibi |
 
 **Notes alanına İngilizce metin girilir**: inceleyicinin Türkçe bilmesi beklenemez.
@@ -32,13 +39,18 @@ ekranının en altındaki bağlantı da aynı ekrana gidiyor. Düğme adları uy
 İngilizce arayüzünden birebir (`mobile/src/i18n/en.ts`, kilit ekranı metni
 `Localizable.strings` / `values-en/strings.xml`).
 
-> **İnceleme hesabı Premium olmalı.** Ekran kapalı yürüyüş (arka planda dinleme) Premium:
-> ücretsiz hesapta `/api/stt` `mode=walk` 403 döner ve inceleyici kilit ekranı akışını
-> göremez. Hesap üretim veritabanında açılıp Premium tanımlanacağı için bu iş ayrıca
-> onaylanır (mağaza raporu B07).
+> **İki hesap gerekiyor.** Ekran kapalı yürüyüş (arka planda dinleme) Premium: ücretsiz
+> hesapta `/api/stt` `mode=walk` 403 döner ve inceleyici kilit ekranı akışını göremez —
+> bu yüzden ana hesap Premium. Ama Premium hesapta Profil'deki kart dokunulamaz ve
+> paywall plan listesini göstermiyor, yani inceleyici IAP'yi **bulamaz** (2.1 "IAP'leri
+> bulamadık" reddi). Satın alma için ikinci, Premium'suz bir hesap notta verilir;
+> satın alma sandbox'ta o hesapla yapılır. Hesaplar üretim veritabanında açıldığı için
+> ayrıca onaylanır (mağaza raporu B07, denetim IAP-5).
 
 ```text
-Review account: the account above has an active Premium subscription, so walk mode with the screen off and AI feedback work without a paywall. It does not expire and has no two-factor authentication.
+Review accounts: the account above has an active Premium subscription, so walk mode with the screen off and AI feedback work without a paywall. It does not expire and has no two-factor authentication. To review the in-app purchases, please sign in with the second account, which has NO Premium: [[IAP_DEMO_EMAIL]] / [[IAP_DEMO_PASSWORD]]. With it, Profile › "Go Premium" opens the purchase screen with both subscriptions, prices, the free trial terms, auto-renewal text and links to the Terms of Use and Privacy Policy. Purchases in review run in the sandbox.
+
+Why buying needs an account (Guideline 5.1.1(v)): Premium is an account-based, cross-platform subscription. The same Premium works on iPhone, Android and the web (www.lernomi.app) and is restored on any device by signing in, so the purchase must be tied to an account. Everything else in the app works without an account (step 2).
 
 1. Open the app and go through onboarding: course German, level "From scratch", goal "Easy".
 2. No account is needed to use the app (Guideline 5.1.1(v)): on the sign-in screen, "Continue without an account" opens vocabulary rounds, lessons, skills, the path, walk mode with the screen on and exams. Reminders work without an account (set up on the device), and a guest gets one AI writing or speaking assessment after consenting. Friends and leagues, further AI feedback and buying Premium need an account; those screens say so and offer "Create account", and guest progress moves into the account. Guest data can be deleted under Profile › Delete guest data.
@@ -48,7 +60,10 @@ Review account: the account above has an active Premium subscription, so walk mo
 
 6. Third-party AI consent (Guideline 5.1.2(i)): the first time a feature would send your text to an AI provider (for example a writing task in Skills or a conversation in a Path lesson), the app shows a consent screen. It says what is sent, names each provider and links to the privacy policy. Nothing is sent before you tap "Allow and continue". "Continue without AI" keeps the app usable: conversations follow a script and some writing tasks stay unscored. The decision is stored and enforced on our server, and can be changed under Profile › Settings › Privacy.
 
-7. Walk mode / background audio (UIBackgroundModes: audio): Learn › Walk mode › Start. A short screen explains what the microphone is used for; its single "Continue" button opens the system microphone and speech recognition alerts. Because the review account has Premium, a separate consent screen follows that names the speech recognition providers: "Allow and continue" lets short recordings be transcribed on the server while the screen is off; "Continue without sending audio" keeps walk mode working with the screen on. The mode is always started by the user. Lock the phone: the lock screen shows "Walk mode is on" and the system microphone indicator stays on. You don't need to unlock to stop: the lock screen pause control (or the headphone button) ends the session, and it can also be stopped inside the app.
+7. Microphone and background audio (UIBackgroundModes: audio). The microphone is used in two situations, both started by the user:
+   a) Speaking answers with the screen on (lessons, speaking practice, the speaking parts of exams, roleplay): the microphone is open only while the learner says the answer, and recognition runs on the device's own speech recognizer.
+   b) Walk mode, the only feature that uses background audio: Learn › Walk mode › Start. A short screen explains what the microphone is used for; its single "Continue" button opens the system microphone and speech recognition alerts. Because the review account has Premium, a separate consent screen follows that names the speech recognition providers: "Allow and continue" lets short recordings be sent to our server and recognised there while the screen is off; "Continue without sending audio" keeps walk mode working with the screen on only. The audio is recognised on the server and not stored; only the recognised text is kept.
+   While walk mode runs: it is always started by the user; the lock screen shows a Now Playing entry ("Walk mode is on") and the system microphone indicator stays on for the whole session. You don't need to unlock to stop: the lock screen pause control (or the headphone button) ends the session, and it can also be stopped inside the app. Background audio is used for nothing else.
 
 8. Account deletion (Guideline 5.1.1(v)): Profile › Settings › Account › Delete account (the last row). The same screen is also linked at the bottom of the Profile screen. Please test deletion with a separate account, not the review account. Guests delete their data under Profile › Delete guest data.
 ```
@@ -157,7 +172,9 @@ istemci aynı projedeyse üretiyor.
 
 `docs/appstore/README.md`'deki tablo Connect'e girilir. Uygulama paketindeki
 `PrivacyInfo.xcprivacy` ile **birebir aynı** olmalı; ayrışırsa inceleme takılır.
-Bugün ikisi eşit (altı tür, hiçbiri izleme için).
+2026-09-23 itibarıyla tablo **dokuz** tür (yedi eski + Diagnostics › Crash Data ve
+Other Diagnostic Data, anonim hata raporu için); manifest yedi türde. Manifest
+güncellenmeden (mobil iş) iki taraf eşit değil. Hiçbiri izleme için değil.
 
 ## 4. Yayın öncesi kontrol
 
@@ -171,7 +188,7 @@ Bugün ikisi eşit (altı tür, hiçbiri izleme için).
   doğrula: `https://www.lernomi.app/privacy/en` "the Android and iOS apps" diyor, alıcılar
   tablosunda Apple (Sign-In) ve Apple (App Store) var.
 - Yapay zekâ rızası (5.1.2(i)): ilk yapay zekâ çağrısında sağlayıcıları adıyla sayan izin
-  ekranı açılıyor (notlardaki 5. adım). Sunucu kapısı `user_consents` tablosuna bağlı;
+  ekranı açılıyor (notlardaki 6. adım). Sunucu kapısı `user_consents` tablosuna bağlı;
   `drizzle/0052_user_consents.sql` üretimde uygulanmadan bu sürüm yayına çıkmaz.
 - Satın alma ekranında kullanım şartları ve gizlilik politikası bağlantıları var (Schedule 2
   §3.8(b)); App Store açıklamasında da aynı iki bağlantı bulunmalı (3.1.2).
