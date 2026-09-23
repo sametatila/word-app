@@ -84,12 +84,12 @@ export type AttestationInput = { token: string | null; nonce: string | null; cli
 export function readAttestationInput(body: unknown): AttestationInput {
   const a = (body as { attestation?: unknown } | null | undefined)?.attestation;
   const o = (typeof a === "object" && a !== null ? a : {}) as Record<string, unknown>;
-  const token = typeof o.token === "string" && /^[A-Za-z0-9._\-]{20,16384}$/.test(o.token) ? o.token : null;
+  const token = typeof o.token === "string" && /^[A-Za-z0-9._-]{20,32768}$/.test(o.token) ? o.token : null;
   const nonce = typeof o.nonce === "string" && /^[A-Za-z0-9_-]{16,128}$/.test(o.nonce) ? o.nonce : null;
   /* İstemcinin hata kodu (ör. Play Integrity -1 API_NOT_AVAILABLE, "timeout"):
      Google Play hizmetleri olmayan cihazların kaç olduğunu yalnız bu söylüyor.
      Serbest metin değil, dar bir karakter kümesi. */
-  const clientError = typeof o.error === "string" && /^[A-Za-z0-9_:\-]{1,48}$/.test(o.error) ? o.error : null;
+  const clientError = typeof o.error === "string" && /^[A-Za-z0-9_:-]{1,48}$/.test(o.error) ? o.error : null;
   return { token, nonce, clientError };
 }
 
