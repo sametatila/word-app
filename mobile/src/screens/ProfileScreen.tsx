@@ -10,7 +10,7 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { MenuRow } from "../ui/MenuRow";
 import { PressableScale } from "../ui/PressableScale";
-import { ArrowBackIcon, ChevronRightIcon, FlameIcon, BoltIcon, TrophyIcon, LogoutIcon, CrownIcon, ShareIcon, SettingsIcon, PodiumIcon, CheckIcon, HandshakeIcon, InboxIcon, SparkIcon } from "../ui/icons";
+import { ArrowBackIcon, ChevronRightIcon, FlameIcon, BoltIcon, TrophyIcon, LogoutIcon, CrownIcon, ShareIcon, SettingsIcon, PodiumIcon, HandshakeIcon, InboxIcon, SparkIcon } from "../ui/icons";
 import { MyAvatar } from "../ui/Avatar";
 import { SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile, textHeight } from "../ui/Skeleton";
 import { useAuth } from "../lib/AuthContext";
@@ -175,7 +175,12 @@ export function ProfileScreen() {
             </View>
           </SkeletonCard>
         ) : premium ? (
-          <View style={{ borderRadius: radii.xl, backgroundColor: colors.successSoft, padding: spacing.lg, flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.lg }}>
+          /* DOKUNULABİLİR. Eskiden düz bir View'du ve premium kullanıcının
+             paywall'a giden başka yolu yoktu (kilit ekranları premium'da
+             çıkmıyor): abone "Aboneliği yönet"e, inceleme hesabı da (premium)
+             satın alma ekranına uygulama içinden ulaşamıyordu. Paywall'ın
+             premium dalı durumu, bitiş tarihini ve yönetim bağlantısını gösteriyor. */
+          <PressableScale onPress={() => nav.navigate("Paywall")} style={{ borderRadius: radii.xl, backgroundColor: colors.successSoft, padding: spacing.lg, flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.lg }}>
             <View style={{ width: 46, height: 46, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.success }}>
               <CrownIcon color={colors.onFill} size={26} />
             </View>
@@ -183,8 +188,8 @@ export function ProfileScreen() {
               <Text variant="h3" color={colors.successText}>{t("profile.premium_member")}</Text>
               <Text variant="caption" color={colors.textMuted}>{t("profile.all_features_unlocked_thank_you")}</Text>
             </View>
-            <CheckIcon color={colors.successText} size={22} />
-          </View>
+            <ChevronRightIcon color={colors.successText} size={22} />
+          </PressableScale>
         ) : (
           <PressableScale onPress={() => nav.navigate("Paywall")} style={[{ borderRadius: radii.xl, backgroundColor: colors.primary, padding: spacing.lg, flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.lg }, softShadow(colors.primary, 10)]}>
             <View style={{ width: 46, height: 46, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: "#ffffff2e" }}>
