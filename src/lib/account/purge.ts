@@ -42,6 +42,7 @@ import {
   userClients,
   storeEvents,
   storeTrialClaims,
+  guestAttestations,
   weeklyQuizAttempts,
   userConsents,
 } from "@/lib/db/schema";
@@ -148,6 +149,10 @@ export async function purgeUserData(userId: string): Promise<void> {
       .update(storeTrialClaims)
       .set({ userId: sql`'deleted:' || ${storeTrialClaims.id}::text` })
       .where(eq(storeTrialClaims.userId, userId));
+    /* Misafir açılışındaki cihaz doğrulaması (ölçüm kaydı): satır kalır ki
+       geçme oranı geçmişe dönük değişmesin, kişi gider. Belge saklanmıyor;
+       kalan sütunların hiçbiri kimseye işaret etmiyor. */
+    await tx.update(guestAttestations).set({ userId: null }).where(eq(guestAttestations.userId, userId));
     // Davet zinciri: bu kullanıcının tarafı boşalır, karşı tarafın kaydı durur.
     await tx.update(referrals).set({ inviterUserId: "" }).where(eq(referrals.inviterUserId, userId));
     await tx.update(referrals).set({ inviteeUserId: "" }).where(eq(referrals.inviteeUserId, userId));

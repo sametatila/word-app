@@ -323,6 +323,9 @@ function mergeSteps(G: string, T: string): { table: string; statements: SQL[] }[
         sql`update store_trial_claims set user_id = ${T} where user_id = ${G}`,
       ],
     },
+    /* Misafir açılışının cihaz doğrulaması: kimliğin nasıl doğduğunun kaydı,
+       hesaba taşınıyor (aynı kişi, aynı cihaz). */
+    { table: "guest_attestations", statements: [sql`update guest_attestations set user_id = ${T} where user_id = ${G}`] },
     { table: "premium_grants", statements: [sql`update premium_grants set user_id = ${T} where user_id = ${G}`] },
     /* Mağaza olay defteri: misafir satın alamıyor ama RevenueCat misafir kimliğiyle
        olay yollayabilir; olay hesaba taşınıyor. */

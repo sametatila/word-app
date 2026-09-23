@@ -2041,3 +2041,49 @@ export const contentFlags = pgTable(
   },
   (t) => [primaryKey({ name: "content_flags_pk", columns: [t.pack, t.item] })],
 );
+
+/**
+ * Misafir kimliği açılışında cihaz doğrulaması (Play Integrity) — KAYIT KİPİ.
+ *
+ * `POST /sign-in/anonymous` her misafir açılışında Android istemci Play
+ * Integrity belgesi gönderiyor; sunucu onu Google'a çözdürüp sonucu buraya
+ * yazıyor ve KİMSEYİ REDDETMİYOR (bkz. lib/auth/play-integrity,
+ * docs/plan/device-attestation.md Aşama 2). Amaç engellemeden önce ölçmek:
+ * gerçek kullanıcıların kaçı geçiyor, kalanlar neden kalıyor.
+ *
+ * Kişisel veri en aza: kimlik, sonuç, sebep, zaman. Belgenin kendisi
+ * SAKLANMIYOR. `requestHash` istemcinin rastgele tek kullanımlık değerinin
+ * özeti; yalnız aynı belgenin ikinci kez kullanıldığını görmek için duruyor.
+ * Hesap silinince satır kalır, kişi gider (`userId` boşalır): oranlar geçmişe
+ * dönük değişmesin. Gerekçe: `drizzle/0067_guest_attestations.sql`.
+ */
+export const guestAttestations = pgTable(
+  "guest_attestations",
+  {
+    id: serial("id").primaryKey(),
+    userId: text("user_id"),
+    /** android · ios · null (istemci başlığı yok: betik, eski sürüm, web) */
+    platform: text("platform"),
+    /** `x-lernomi-client` build numarası; eski sürümün "yok"unu ayırmak için. */
+    build: integer("build"),
+    /** log · enforce — kaydın yazıldığı kip. */
+    mode: text("mode").notNull(),
+    /** pass · fail · missing · error */
+    result: text("result").notNull(),
+    /** Virgülle ayrık sebepler (ör. "app:UNRECOGNIZED_VERSION,device:none"). */
+    reasons: text("reasons"),
+    /** appIntegrity.appRecognitionVerdict */
+    appVerdict: text("app_verdict"),
+    /** deviceIntegrity.deviceRecognitionVerdict, virgülle birleşik */
+    deviceVerdict: text("device_verdict"),
+    /** accountDetails.appLicensingVerdict */
+    licensingVerdict: text("licensing_verdict"),
+    requestHash: text("request_hash"),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [
+    index("guest_attestations_at_idx").on(t.createdAt),
+    index("guest_attestations_user_idx").on(t.userId),
+    index("guest_attestations_hash_idx").on(t.requestHash),
+  ],
+);
