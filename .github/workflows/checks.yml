@@ -149,9 +149,14 @@ jobs:
       # uzunluk, konuşmacı çözümü ve blok içi ses çakışması, bölme kaybı
       # (parçaların birleşimi metnin birebir aynısı olmalı) ve web↔mobil
       # paritesi. Saf statik; ne veritabanı ne ağ istiyor.
+      # `test:tts-own` (2026-09-23) kelime katmanının Defne/Aras sözleşmesini
+      # sabitliyor: eski seçimlerin cinsiyetine göre çevrilmesi, kelime
+      # isteğinin tabloda yoksa Edge'e DÜŞMEYİP 404 dönmesi, ETag/aralık.
+      # Geçici bir dizinde sahte tabloyla; veritabanı ve ağ yok.
       - name: Tasarım ve kod kapıları
         run: |
           npm run check:tts
+          npm run test:tts-own
           npm run check:client-boundary
           npm run check:purge
           npm run check:guest-merge

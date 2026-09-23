@@ -335,6 +335,18 @@ console.log("\n4. Web ↔ mobil paritesi");
   if (!webT || webT !== mobT) err("parite", `kutu metni kuralı (tileSpeech) ayrışmış:\n      web  ${webT}\n      mobil ${mobT}`);
   else console.log("   kutu metni kuralı (tileSpeech): aynı");
 
+  // Kelime katmanı: seçilebilir sesler, karakter sesleri ve eski seçimlerin cinsiyeti iki tarafta aynı.
+  const ids = (src: string, name: string) => {
+    const at = src.search(new RegExp(`const ${name}\\b`));
+    const body = at < 0 ? "" : src.slice(at, src.indexOf("};", at) > 0 && name !== "VOICES" ? src.indexOf("};", at) : src.indexOf("];", at));
+    return [...body.matchAll(/"([a-z]{2}-[A-Z]{2}-[A-Za-z]+)"/g)].map((m) => m[1]).join(",");
+  };
+  for (const name of ["VOICES", "OWN_VOICES", "GENDER", "LESSON"]) {
+    const w = ids(webV, name);
+    const m = ids(mobV, name);
+    if (!w || w !== m) err("parite", `${name} ayrışmış:\n      web  ${w}\n      mobil ${m}`);
+    else console.log(`   ${name}: aynı`);
+  }
 }
 
 console.log(`\n${errors === 0 ? "tamam" : "BAŞARISIZ"}: ${errors} hata, ${warnings} uyarı`);

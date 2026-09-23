@@ -2,7 +2,8 @@ import type { NativeLang } from "@/lib/courses";
 /**
  * Ses kataloğu — hem sunucu hem arayüz kullanıyor, o yüzden `server-only` değil.
  *
- * Sesler Microsoft'un nöral sesleri; tarayıcının kendi `speechSynthesis`'i
+ * Seçilebilen sesler 2026-09-23'ten beri kendi karakterlerimiz (Defne, Aras — aşağıda); geri kalanlar
+ * Microsoft'un nöral sesleri. İkisinin de tarayıcının kendi `speechSynthesis`'i
  * yerine bunları kullanmamızın sebebi kalitenin cihazdan cihaza değişmemesi.
  * Eskiden aynı hesap Android'de kabul edilebilir, masaüstünde robotik
  * duyuyordu; Zürih kursunda ise çoğu cihazda de-CH sesi hiç bulunmadığı için
@@ -12,7 +13,26 @@ import type { NativeLang } from "@/lib/courses";
  * gerçekten kişisel: aynı sesi her gün dinleyecek olan o.
  */
 
+/**
+ * KENDİ KARAKTERLERİMİZ — Defne (kadın) ve Aras (erkek), 2026-09-23'ten beri seçilebilen iki ses.
+ *
+ * Sesleri Microsoft'un değil bizim: tts-test'te önceden üretilip sunucuda dosya olarak duruyor (`lib/tts/own`).
+ * İkisi de üç dili konuşuyor (hedef dil + anadil karşılığı), o yüzden kimlik dil önekli:
+ * `de-DE-Defne`, `en-US-Aras`, `tr-TR-Defne`. Önek bilerek Edge kimlikleriyle aynı biçimde — dili
+ * kimliğin başından okuyan her yer (`startsWith("en")`, mobil `langOf`, tarayıcı sentezinin dil etiketi)
+ * değişmeden doğru çalışıyor.
+ */
+export const OWN_CHARACTERS = ["defne", "aras"] as const;
+export type OwnCharacter = (typeof OWN_CHARACTERS)[number];
+
 export type VoiceId =
+  | "de-DE-Defne"
+  | "de-DE-Aras"
+  | "en-US-Defne"
+  | "en-US-Aras"
+  | "tr-TR-Defne"
+  | "tr-TR-Aras"
+  | "tr-TR-AhmetNeural"
   | "de-DE-KatjaNeural"
   | "de-DE-ConradNeural"
   | "de-CH-LeniNeural"
@@ -77,11 +97,19 @@ export function narrationVoice(lang: NativeLang): VoiceId {
  * Katja zaten ölçülmüş en hızlı ses; Zürih kursunda lehçeyi doğru okuyan Leni.
  */
 export function lessonVoice(course: string): VoiceId {
-  // Katalogdan: ikili ternary yazılıyken tanınmayan her kurs Almanca sese
-  // düşüyordu, yani İngilizce dersler Almanca sesle anlatılırdı. Kursun ilk
-  // sesi zaten sabit olduğu için önbellek davranışı değişmiyor.
-  return defaultVoice(course);
+  /* AÇIK TABLO, katalogdan türetme DEĞİL. Eskiden `defaultVoice(course)` idi: kursun ilk sesi Katja'ydı.
+     2026-09-23'te kursun ilk sesi Defne oldu ve Defne'nin yalnız kelime katmanı üretildi — türetme sürseydi
+     derslerin, dinlemelerin ve okuma parçalarının bütün cümleleri Defne adıyla Katja'ya gider, bir kısmı
+     (kelime katmanıyla çakışan cümleler) Defne'nin kendi sesiyle çalardı: tek derste iki farklı kadın.
+     Bu katmanlar üretilince burası karakter sesine döner. */
+  return LESSON[course as keyof typeof LESSON] ?? LESSON.de;
 }
+
+const LESSON: Record<"de" | "gsw-zh" | "en", VoiceId> = {
+  de: "de-DE-KatjaNeural",
+  "gsw-zh": "de-CH-LeniNeural",
+  en: "en-US-JennyNeural",
+};
 
 export type Voice = {
   id: VoiceId;
@@ -102,23 +130,22 @@ export type Voice = {
 };
 
 export const VOICES: Voice[] = [
-  // Almanca sesler çok dilli olanlardan (Seraphina, Florian) bunlara geçirildi.
-  // Sebep hız: çok dilli modeller daha büyük ve ilk ses belirgin biçimde geç
-  // geliyordu (ölçümde 1.2-1.6 saniyeye karşı 0.4 saniye). Karşılığında
-  // kaybedilen şey Türkçe okuyabilmeleriydi ama uygulama Türkçeyi hiç sesli
-  // okumuyor — kullanılmayan bir yetenek için gecikme ödeniyordu.
+  /* Almanca ve İngilizce kursta seçim Defne ile Aras arasında (2026-09-23). Katja/Conrad/Jenny/Guy
+     seçimden kalktı: kayıtlı eski tercih cinsiyetine göre Defne'ye ya da Aras'a çevriliyor
+     (`resolveVoice`), yani kimsenin seçimi kaybolmuyor. Zürih kursunda karakterlerimizin İsviçre
+     Almancası yok; orada Leni ve Jan kalıyor. */
   {
-    id: "de-DE-KatjaNeural",
-    label: "Katja",
+    id: "de-DE-Defne",
+    label: "Defne",
     gender: "female",
-    noteKey: "voices.katja_note",
+    noteKey: "voices.defne_note",
     course: "de",
   },
   {
-    id: "de-DE-ConradNeural",
-    label: "Conrad",
+    id: "de-DE-Aras",
+    label: "Aras",
     gender: "male",
-    noteKey: "voices.conrad_note",
+    noteKey: "voices.aras_note",
     course: "de",
   },
   {
@@ -140,20 +167,83 @@ export const VOICES: Voice[] = [
     course: "gsw-zh",
   },
   {
-    id: "en-US-JennyNeural",
-    label: "Jenny",
+    id: "en-US-Defne",
+    label: "Defne",
     gender: "female",
-    noteKey: "voices.jenny_note",
+    noteKey: "voices.defne_note",
     course: "en",
   },
   {
-    id: "en-US-GuyNeural",
-    label: "Guy",
+    id: "en-US-Aras",
+    label: "Aras",
     gender: "male",
-    noteKey: "voices.guy_note",
+    noteKey: "voices.aras_note",
     course: "en",
   },
 ];
+
+/**
+ * Karakter sesinin sahibi ve dili — sunucu dosyayı `<karakter>|<dil>|<metin>` anahtarıyla buluyor.
+ *
+ * `edge`: bu karakterin henüz ÜRETİLMEMİŞ katmanlardaki karşılığı. Kelime katmanı dışındaki içerik
+ * (dersler, beceriler, rol yapma cevapları) bugün Edge'den geliyor; kullanıcı Aras'ı seçtiyse orada
+ * da erkek ses duysun. Kelime isteği bu karşılığa HİÇ düşmüyor (bkz. `app/api/tts`, `k=w`).
+ */
+export const OWN_VOICES: Partial<Record<VoiceId, { character: OwnCharacter; lang: "de" | "en" | "tr"; edge: VoiceId }>> = {
+  "de-DE-Defne": { character: "defne", lang: "de", edge: "de-DE-KatjaNeural" },
+  "de-DE-Aras": { character: "aras", lang: "de", edge: "de-DE-ConradNeural" },
+  "en-US-Defne": { character: "defne", lang: "en", edge: "en-US-JennyNeural" },
+  "en-US-Aras": { character: "aras", lang: "en", edge: "en-US-GuyNeural" },
+  "tr-TR-Defne": { character: "defne", lang: "tr", edge: "tr-TR-EmelNeural" },
+  "tr-TR-Aras": { character: "aras", lang: "tr", edge: "tr-TR-AhmetNeural" },
+};
+
+export function isOwnVoice(voice: string): boolean {
+  return voice in OWN_VOICES;
+}
+
+/** Sentez zincirine giden ses: karakter sesi Edge karşılığına çevrilir, ötekiler aynen. */
+export function edgeVoiceOf(voice: VoiceId): VoiceId {
+  return OWN_VOICES[voice]?.edge ?? voice;
+}
+
+/**
+ * Bir sesin CİNSİYETİ — seçim cinsiyet yuvası olarak saklanıyor.
+ *
+ * Kayıtlı tercih eski bir Edge sesi olabilir (2026-09-23 öncesi seçimler, eski mobil sürümler): Katja
+ * seçmiş kullanıcı Defne'ye, Conrad seçmiş kullanıcı Aras'a geçiyor. Kurs değişince de aynı kural:
+ * Almancada Aras'ı seçen İngilizcede de Aras'ı, Zürih'te Jan'ı duyuyor.
+ */
+const GENDER: Partial<Record<string, "female" | "male">> = {
+  "de-DE-KatjaNeural": "female",
+  "de-DE-ConradNeural": "male",
+  "en-US-JennyNeural": "female",
+  "en-US-GuyNeural": "male",
+  "de-CH-LeniNeural": "female",
+  "de-CH-JanNeural": "male",
+};
+
+function genderOfVoice(voice: string | null | undefined): "female" | "male" | null {
+  if (!voice) return null;
+  const own = OWN_VOICES[voice as VoiceId];
+  if (own) return own.character === "defne" ? "female" : "male";
+  return VOICES.find((v) => v.id === voice)?.gender ?? GENDER[voice] ?? null;
+}
+
+/**
+ * Yürüyüş modunda ANADİL karşılığının sesi — seçilen karakter, anadilde.
+ *
+ * Kelime katmanı her anlamı iki karakterle de üretti (`gloss_tr`, `gloss_en`, `gloss_de`); Aras'ı seçen
+ * kullanıcı "der Hund"u da "köpek"i de Aras'tan duyuyor. Karakteri olmayan kursta (Zürih) anlatım sesi.
+ */
+export function glossVoice(native: NativeLang, selected: VoiceId): VoiceId {
+  if (!OWN_VOICES[selected]) return narrationVoice(native);
+  const character = OWN_VOICES[selected]!.character;
+  const hit = (Object.keys(OWN_VOICES) as VoiceId[]).find(
+    (v) => OWN_VOICES[v]!.character === character && OWN_VOICES[v]!.lang === native,
+  );
+  return hit ?? narrationVoice(native);
+}
 
 /**
  * Kursun sesleri — seçim ekranı bunu listeliyor.
@@ -169,7 +259,7 @@ export function voicesFor(course: string): Voice[] {
 
 /** Kursun varsayılanı: katalogdaki ilk sesi (her kursta kadın ses başta). */
 export function defaultVoice(course: string): VoiceId {
-  return voicesFor(course)[0]?.id ?? "de-DE-KatjaNeural";
+  return voicesFor(course)[0]?.id ?? "de-DE-Defne";
 }
 
 /**
@@ -180,10 +270,12 @@ export function defaultVoice(course: string): VoiceId {
  * Alman aksanıyla okumak olurdu — tam da kaçındığımız şey.
  */
 export function resolveVoice(course: string, voice: string | null | undefined): VoiceId {
-  const allowed = new Set(voicesFor(course).map((v) => v.id));
-  const found = VOICES.find((v) => v.id === voice);
-  if (found && allowed.has(found.id)) return found.id;
-  return defaultVoice(course);
+  const list = voicesFor(course);
+  const found = list.find((v) => v.id === voice);
+  if (found) return found.id;
+  // Başka kursun sesi ya da eski bir Edge sesi: aynı cinsiyetin bu kurstaki sesi.
+  const gender = genderOfVoice(voice);
+  return (gender && list.find((v) => v.gender === gender)?.id) || defaultVoice(course);
 }
 
 /**

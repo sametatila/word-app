@@ -3,8 +3,9 @@ import { getUserInfo } from "@/lib/auth/server";
 import { takeUsage } from "@/lib/premium";
 import { MAX_TEXT } from "@/lib/tts/edge";
 import { synthesizeSpeech } from "@/lib/tts/synth";
+import { ownVoiceAudio, ownVoicesLive } from "@/lib/tts/own";
 import { parseRange } from "@/lib/http-range";
-import { CAST, paceFromParam, pitchFromParam, TURKISH_VOICE, VOICES, type VoiceId } from "@/lib/tts/voices";
+import { CAST, edgeVoiceOf, isOwnVoice, OWN_VOICES, paceFromParam, pitchFromParam, TURKISH_VOICE, VOICES, type VoiceId } from "@/lib/tts/voices";
 
 /**
  * Seslendirme ucu.
@@ -69,6 +70,13 @@ const VOICE_IDS = new Set<string>([
   ...VOICES.map((v) => v.id),
   TURKISH_VOICE,
   ...Object.values(CAST).flatMap((c) => [...c.female, ...c.male]),
+  // Karakter sesleri (Defne/Aras, üç dil) ve Edge'in eski seçilebilir sesleri: 2026-09-23 öncesi
+  // seçimi saklı eski bir mobil sürüm Katja/Conrad/Jenny/Guy istemeye devam ediyor, 400 ile susmasın.
+  ...Object.keys(OWN_VOICES),
+  "de-DE-KatjaNeural",
+  "de-DE-ConradNeural",
+  "en-US-JennyNeural",
+  "en-US-GuyNeural",
 ]);
 
 /** Hesap başına günlük sentez tavanı — gerekçesi aşağıda, kotanın koyulduğu yerde. */
@@ -91,6 +99,16 @@ export async function GET(req: Request) {
   // Perde de hız gibi KAPALI bir küme, aynı sebeple: her değer ayrı bir
   // önbellek girdisi ve serbest bir sayı isabeti eritirdi.
   const pitch = pitchFromParam(url.searchParams.get("p"));
+  /*
+    KELİME İSTEĞİ (`k=w`) — günlük tur, pratik ve yürüyüş modunun kelime katmanı.
+
+    Bu metinlerin hepsi Defne ve Aras'la önceden üretildi ve Samet'in kararıyla (2026-09-23) YALNIZ oradan
+    çalıyor: tabloda yoksa Edge karşılığına DÜŞÜLMÜYOR, 404 dönüyor ve istemci o okumayı atlıyor. Düşüş
+    sessiz bir kalite kaybıydı (Defne seçmiş kullanıcı bir kelimede Katja duyardı) ve kimse fark etmezdi;
+    404 günlüğe düşüyor ve kapsam kapısı (`scripts/tts-own-coverage.ts`) bunu yayından önce yakalıyor.
+    İşaretsiz istek (ders, beceri, rol yapma — henüz üretilmemiş katmanlar) Edge karşılığıyla sürüyor.
+  */
+  const word = url.searchParams.get("k") === "w";
 
   if (!text || text.length > MAX_TEXT) {
     return NextResponse.json({ error: "bad_text" }, { status: 400 });
@@ -101,6 +119,15 @@ export async function GET(req: Request) {
   if (!sameOrigin(req)) {
     return NextResponse.json({ error: "forbidden" }, { status: 403 });
   }
+  // Kendi karakter seslerimiz (`lib/tts/own`): önceden üretilmiş statik dosya. Sentez yok, maliyet
+  // yok — oturum ve günlük tavan kapısı yalnız üretilmemiş metinde kalıyor (plan bölüm 4 "Yetki").
+  const own = await ownVoiceAudio(text, voice as VoiceId, slow, pitch);
+  if (own) return ownResponse(req, own.audio, own.name);
+  if (word && isOwnVoice(voice) && ownVoicesLive()) {
+    console.warn("[tts-own] kelime tabloda yok:", voice, slow, pitch, JSON.stringify(text.slice(0, 120)));
+    return NextResponse.json({ error: "no_own_audio" }, { status: 404, headers: { "cache-control": "no-store" } });
+  }
+
   // Girişsiz sayfaların hiçbiri seslendirme kullanmıyor; açık uç, Azure yedeğinin
   // ücretli kotasını herkesin harcayabildiği bir sentez servisi olurdu.
   const who = await getUserInfo();
@@ -139,47 +166,11 @@ export async function GET(req: Request) {
 
   try {
     if (!hit) {
-      hit = await synthesizeSpeech(text, voice as VoiceId, slow, userId, pitch);
+      // Karakter sesi burada yalnız işaretsiz (kelime dışı) metinde: henüz üretilmemiş katmanın Edge karşılığı.
+      hit = await synthesizeSpeech(text, edgeVoiceOf(voice as VoiceId), slow, userId, pitch);
       remember(key, hit);
     }
-    const { audio, source } = hit;
-    const headers: Record<string, string> = {
-      "content-type": "audio/mpeg",
-      "accept-ranges": "bytes",
-      // Hangi yoldan geldiği yalnızca teşhis için: Edge kırılırsa bu
-      // başlıktan görülüyor, kullanıcı için bir farkı yok.
-      "x-tts-source": source,
-      // Tarayıcı için: `immutable` sayesinde sayfa yenilense bile yeniden
-      // doğrulama isteği bile gitmiyor.
-      "cache-control": `public, max-age=${MAX_AGE}, immutable`,
-      // Paylaşımlı önbellek için ayrı başlık: yukarıdakinin s-maxage'i her
-      // ara katmana ulaşmıyor. Bugün önde önbellek yok, başlık ileriye dönük.
-      "cdn-cache-control": `public, s-maxage=${MAX_AGE}, immutable`,
-    };
-    /*
-      BAYT ARALIĞI — iOS'ta `<audio>` bunsuz HİÇ çalmıyor.
-
-      iOS'un medya katmanı bir ses dosyasını açmadan önce `Range: bytes=0-1`
-      istiyor ve 206 bekliyor; düz 200 gelince oynatmayı hata ile bırakıyor.
-      Uç Range başlığını yok sayıyordu, önündeki nginx de proxy'lenen 200'e
-      aralık uygulamıyor (ölçüldü: 206 yok, `Accept-Ranges` yok). Sonuç: iOS
-      web uygulamasında (Safari ve ana ekrana eklenmiş PWA) ses öğesi yolu hep
-      düşüyor, tarayıcı sentezi de dokunuşun dışında kaldığı için susuyordu.
-      Aynı `<audio>`u mobil uygulamanın iOS'taki ses köprüsü de kullanıyor.
-      Android ve masaüstü Chrome aralık istemediği için orada sorun görünmüyordu.
-    */
-    const range = parseRange(req.headers.get("range"), audio.length);
-    if (range === "unsatisfiable") {
-      return new Response(null, { status: 416, headers: { "content-range": `bytes */${audio.length}`, "cache-control": "no-store" } });
-    }
-    if (range) {
-      const [start, end] = range;
-      return new Response(new Uint8Array(audio.subarray(start, end + 1)), {
-        status: 206,
-        headers: { ...headers, "content-range": `bytes ${start}-${end}/${audio.length}`, "content-length": String(end - start + 1) },
-      });
-    }
-    return new Response(new Uint8Array(audio), { headers: { ...headers, "content-length": String(audio.length) } });
+    return audioResponse(req, hit.audio, "audio/mpeg", hit.source);
   } catch (err) {
     console.error("[tts]", err);
     // 503 ve `no-store`: istemci bunu sessizce tarayıcı sentezine düşerek
@@ -189,6 +180,68 @@ export async function GET(req: Request) {
       { status: 503, headers: { "cache-control": "no-store" } },
     );
   }
+}
+
+/**
+ * Karakter sesi cevabı — önceden üretilmiş m4a.
+ *
+ * `immutable, 1 yıl` DEĞİL, bir gün + ETag: sentez sesinin aksine bu dosyalar değişebiliyor (uyarılı bir
+ * kayıt dinlenip yeniden üretilince aynı adres yeni dosyayı vermeli). Ad içerik özeti olduğu için ETag
+ * tam da bu; ertesi gün tarayıcı `If-None-Match` ile soruyor ve değişmediyse 304 alıyor. nginx de bu
+ * `max-age`i izliyor (`proxy_cache_valid` yalnız başlık yoksa geçerli), yani yenilenen kayıt en geç bir
+ * günde her yerde.
+ */
+function ownResponse(req: Request, audio: Buffer, name: string): Response {
+  const etag = `"${name.replace(/[^\w./-]/g, "")}"`;
+  const cache = `public, max-age=${OWN_MAX_AGE}`;
+  if (req.headers.get("if-none-match") === etag) {
+    return new Response(null, { status: 304, headers: { etag, "cache-control": cache } });
+  }
+  return audioResponse(req, audio, "audio/mp4", "own", { etag, "cache-control": cache, "cdn-cache-control": cache });
+}
+
+const OWN_MAX_AGE = 86_400;
+
+/** Ses cevabı — sentezlenen mp3 de, önceden üretilmiş m4a da aynı aralık kurallarıyla dönüyor. */
+function audioResponse(req: Request, audio: Buffer, type: string, source: string, override: Record<string, string> = {}): Response {
+  const headers: Record<string, string> = {
+    "content-type": type,
+    "accept-ranges": "bytes",
+    // Hangi yoldan geldiği yalnızca teşhis için: Edge kırılırsa bu
+    // başlıktan görülüyor, kullanıcı için bir farkı yok.
+    "x-tts-source": source,
+    // Tarayıcı için: `immutable` sayesinde sayfa yenilense bile yeniden
+    // doğrulama isteği bile gitmiyor.
+    "cache-control": `public, max-age=${MAX_AGE}, immutable`,
+    // Paylaşımlı önbellek için ayrı başlık: yukarıdakinin s-maxage'i her
+    // ara katmana ulaşmıyor. Bugün önde önbellek yok, başlık ileriye dönük.
+    "cdn-cache-control": `public, s-maxage=${MAX_AGE}, immutable`,
+    ...override,
+  };
+  /*
+    BAYT ARALIĞI — iOS'ta `<audio>` bunsuz HİÇ çalmıyor.
+
+    iOS'un medya katmanı bir ses dosyasını açmadan önce `Range: bytes=0-1`
+    istiyor ve 206 bekliyor; düz 200 gelince oynatmayı hata ile bırakıyor.
+    Uç Range başlığını yok sayıyordu, önündeki nginx de proxy'lenen 200'e
+    aralık uygulamıyor (ölçüldü: 206 yok, `Accept-Ranges` yok). Sonuç: iOS
+    web uygulamasında (Safari ve ana ekrana eklenmiş PWA) ses öğesi yolu hep
+    düşüyor, tarayıcı sentezi de dokunuşun dışında kaldığı için susuyordu.
+    Aynı `<audio>`u mobil uygulamanın iOS'taki ses köprüsü de kullanıyor.
+    Android ve masaüstü Chrome aralık istemediği için orada sorun görünmüyordu.
+  */
+  const range = parseRange(req.headers.get("range"), audio.length);
+  if (range === "unsatisfiable") {
+    return new Response(null, { status: 416, headers: { "content-range": `bytes */${audio.length}`, "cache-control": "no-store" } });
+  }
+  if (range) {
+    const [start, end] = range;
+    return new Response(new Uint8Array(audio.subarray(start, end + 1)), {
+      status: 206,
+      headers: { ...headers, "content-range": `bytes ${start}-${end}/${audio.length}`, "content-length": String(end - start + 1) },
+    });
+  }
+  return new Response(new Uint8Array(audio), { headers: { ...headers, "content-length": String(audio.length) } });
 }
 
 /**

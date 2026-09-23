@@ -11024,7 +11024,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
            parametre olarak eklendi ve kapı yalnız "kullanıcı geçiyor mu"
            sorusunu ölçmeli — imzanın tam metnini sabitlemek, muhasebeyle
            ilgisi olmayan her eklemede kapıyı kırardı. */
-        "kullanici geciyor=" + (/synthesizeSpeech\(text, voice as VoiceId, slow, userId[,)]/.test(uc) ? "var" : "YOK"),
+        /* Ses argümanı karakter sesinin Edge karşılığına çevrilerek de geçebiliyor (`edgeVoiceOf`,
+           2026-09-23): Defne/Aras'ın henüz üretilmemiş katmanlarda Katja/Conrad'la okunması. */
+        "kullanici geciyor=" + (/synthesizeSpeech\(text, (?:edgeVoiceOf\()?voice as VoiceId\)?, slow, userId[,)]/.test(uc) ? "var" : "YOK"),
       ],
       ["tur=var", "kolon=var", "gocurme=var", "zincir yaziyor=var", "kullanici geciyor=var"],
       "bulunan",
