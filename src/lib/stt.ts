@@ -261,7 +261,11 @@ async function openaiStyle(p: SttProvider, file: File, language: string, words: 
 }
 
 async function deepgram(p: SttProvider, file: File, language: string): Promise<Raw> {
-  const res = await sttFetch(`${p.baseUrl}?${new URLSearchParams({ model: p.model, language, punctuate: "false", smart_format: "false" })}`, {
+  /* `mip_opt_out`: Deepgram'ın Model İyileştirme Programı varsayılanında ses,
+     model eğitimi için saklanabiliyor. Gizlilik §4 "ses sağlayıcıda saklanmaz"
+     diyor; bu bayrak o sözün bu yoldaki karşılığı (hukuk denetimi LEG-4). */
+  const query = new URLSearchParams({ model: p.model, language, punctuate: "false", smart_format: "false", mip_opt_out: "true" });
+  const res = await sttFetch(`${p.baseUrl}?${query}`, {
     method: "POST",
     headers: { Authorization: `Token ${p.key}`, "content-type": file.type || "audio/webm" },
     body: await file.arrayBuffer(),
@@ -304,6 +308,26 @@ async function speechmatics(p: SttProvider, file: File, language: string): Promi
   const create = await sttFetch(`${p.baseUrl}/v2/jobs`, { method: "POST", headers: { authorization: `Bearer ${p.key}` }, body });
   if (!create.ok) throw httpError(create.status, await create.text().catch(() => ""));
   const { id } = (await create.json()) as { id: string };
+  try {
+    return await speechmaticsPoll(p, id);
+  } finally {
+    /* İŞ SİLİNİYOR. Toplu API işi, sesiyle ve transkriptiyle birlikte iş
+       geçmişinde tutuyor (SaaS varsayılanı günlerce); gizlilik §4 "ses
+       sağlayıcıda saklanmaz" diyor (hukuk denetimi LEG-4). Sonuç okunduktan,
+       hata ya da zaman aşımından sonra da silinir; `force=true` hâlâ koşan
+       işi de durdurup siler. Beklenmiyor (kullanıcı cevabı gecikmesin) ve
+       başarısızlığı yalnız günlüğe düşüyor: silme, tanımayı bozmamalı. */
+    void fetch(`${p.baseUrl}/v2/jobs/${encodeURIComponent(id)}?force=true`, {
+      method: "DELETE",
+      headers: { authorization: `Bearer ${p.key}` },
+      signal: AbortSignal.timeout(PROVIDER_TIMEOUT_MS),
+    })
+      .then((r) => { if (!r.ok && r.status !== 404) console.error("[stt:speechmatics] job delete failed", id, r.status); })
+      .catch((err) => console.error("[stt:speechmatics] job delete failed", id, err instanceof Error ? err.message : err));
+  }
+}
+
+async function speechmaticsPoll(p: SttProvider, id: string): Promise<Raw> {
   const deadline = Date.now() + 12_000;
   while (Date.now() < deadline) {
     await new Promise((r) => setTimeout(r, 700));
