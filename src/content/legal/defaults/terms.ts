@@ -17,6 +17,18 @@ import type { LegalDocDefault } from "./types";
  * ELLE DÜZENLENEBİLİR ama düzenleme yayına ÇIKMAZ: veritabanında o belgenin
  * satırı varsa üstyazım kazanır. Buradaki metni değiştirmek yalnız yeni
  * kurulumları ve "varsayılana dön" düğmesini etkiler.
+ *
+ * ÖZETTEKİ "HİZMET TÜRKİYE'DEN SUNULUR" 1.5'TE DÜZELTİLDİ (denetim LEG-14):
+ * §1 hizmeti işleteni Dortmund'daki veri sorumlusu olarak tanıtıyor ve
+ * sunucular Almanya'da; Türkiye'de olan yayıncı. Hukuk seçimi (§12, Türk
+ * hukuku) değişmedi, yalnız özet §1 ile çelişmez oldu.
+ * TODO(Samet): Play geliştirici hesabının görünen adı "RumpusKit" ise metne
+ * "RumpusKit adıyla yayımlayan Musa Atila" eklenmeli; ad doğrulanmadığı için
+ * eklenmedi.
+ *
+ * §4/§5'TEKİ "24 SAAT" VE "SIFIR TOLERANS" (App Store 1.2, denetim CNT-7):
+ * söz, panelin iç uyarısındaki 24 saatle aynı (`lib/alerts`); bildirene
+ * sonucun iletilmesi sunucu tarafında `closeReport`a bağlı.
  */
 export const TERMS_DEFAULT: Record<"tr" | "en" | "de", LegalDocDefault> = {
   tr: {
@@ -24,7 +36,7 @@ export const TERMS_DEFAULT: Record<"tr" | "en" | "de", LegalDocDefault> = {
     description: "Lernomi'yi kullanmanın kuralları: hesap, kabul edilebilir kullanım, kullanıcı içeriği, yapay zekâ, abonelik, tüketici hakları.",
     summary: [
       "Lernomi'yi kullanarak bu sözleşmeyi kabul edersin.",
-      "Hizmet Türkiye'den sunulur ve Türk hukukuna tabidir. Bulunduğun ülkenin zorunlu tüketici hakları saklıdır.",
+      "Hizmeti Almanya'da yerleşik veri sorumlusu Almanya'daki sunuculardan işletir, uygulamayı Türkiye'de yerleşik yayıncı mağazalarda yayımlar; sözleşme Türk hukukuna tabidir. Bulunduğun ülkenin zorunlu tüketici hakları saklıdır.",
       "Hesabın sana aittir ve başkalarına saygılı kullanılır. Yazdıkların senin kalır.",
       "Yapay zekâ yanıtları hata yapabilir.",
       "Premium abonelik uygulamayı indirdiğin mağazadan alınır ve iptali de oradan yapılır.",
@@ -58,13 +70,13 @@ Lernomi, kelime, dinleme, konuşma ve yazma pratiği sunan bir dil öğrenme uyg
 - Yapay zekâ konuşma pratiğini yasa dışı, zararlı ya da başkalarını hedef alan içerik üretmek için kullanmak,
 - Uygulanan yasaları (fikri mülkiyet, kişisel veriler, yaptırımlar dâhil) ihlal etmek.
 
-İhlalde içeriği kaldırabilir, özellikleri kısıtlayabilir ya da hesabı kapatabiliriz; kararı ve gerekçesini bildirir, itiraz için {{supportEmail}} adresini kullanabilirsin. Ciddi ihlaller önceden uyarı gerektirmez.
+Kabul edilemez içeriğe ve kötü niyetli kullanıcılara tolerans gösterilmez. Bildirimler en geç 24 saat içinde incelenir; kurala aykırı içerik kaldırılır ve ihlali yapan kullanıcının hesabı kısıtlanır ya da kapatılır. Kararı ve gerekçesini bildiririz; itiraz için {{supportEmail}} adresini kullanabilirsin. Ciddi ihlaller önceden uyarı gerektirmez.
 
 ## 5. Senin içeriğin ve bildirme
 
 Yazdığın metinler, söylediklerinin dökümü ve görünen adın sana aittir. Bize yalnız hizmeti sunmak için gereken, dünya çapında, münhasır olmayan ve ücretsiz bir kullanım izni verirsin: değerlendirmek, geri bildirim üretmek, seçtiğin kadarını (görünen ad, ilerleme) diğer kullanıcılara göstermek. İçeriğini reklam ya da model eğitimi için kullanmayız; hesabını silince izin sona erer.
 
-Hukuka aykırı ya da bu şartlara aykırı bir içerik (başka bir kullanıcının adı, davranışı) gördüğünde uygulamadaki "Bildir" düğmesiyle ya da {{supportEmail}} üzerinden bildirebilirsin; AB Dijital Hizmetler Tüzüğü (DSA) kapsamındaki bildirimler için de tek iletişim noktası budur. Bildirimler insan tarafından incelenir; alınan karar ve itiraz yolu bildirene ve içerik sahibine iletilir. Arkadaşlık özelliklerinde engelleme ve bildirme düğmeleri bulunur.
+Hukuka aykırı ya da bu şartlara aykırı bir içerik (başka bir kullanıcının adı, davranışı) gördüğünde uygulamadaki "Bildir" düğmesiyle ya da {{supportEmail}} üzerinden bildirebilirsin; AB Dijital Hizmetler Tüzüğü (DSA) kapsamındaki bildirimler için de tek iletişim noktası budur. Bildirimler en geç 24 saat içinde bir insan tarafından incelenir; alınan karar ve itiraz yolu bildirene ve içerik sahibine iletilir, yani bildirimin sonucunu öğrenirsin. Arkadaşlık özelliklerinde engelleme ve bildirme düğmeleri bulunur.
 
 ## 5a. Sosyal özellikler
 
@@ -135,7 +147,7 @@ Doğal afet, savaş, salgın, geniş çaplı internet ya da altyapı kesintisi, 
 - **Feragat:** Bir hakkın kullanılmaması ondan vazgeçildiği anlamına gelmez.
 - **Dil:** Sözleşmenin bağlayıcı dili Türkçedir; çeviriler bilgi içindir. Yorum farkında Türkçe metin esas alınır.
 - **Tebligat:** Bize yapılacak bildirimler {{supportEmail}} adresine; sana yapılacak bildirimler hesabındaki e-posta adresine ya da uygulama içi mesajla yapılır ve ulaştığı anda tebliğ edilmiş sayılır.
-- **Saklama:** Bu sözleşme elektronik ortamda saklanır; kabul ettiğin sürümü ve tarihini isteyebilirsin.
+- **Saklama:** Bu sözleşme elektronik ortamda saklanır. Kabul ettiğin şartların sürümü ve kabul tarihi hesabına kaydedilir; o sürümün metnini ve tarihini isteyebilirsin.
 
 ## {{ifIos}}13a. Apple App Store için ek koşullar
 
@@ -161,7 +173,7 @@ Uygulamayı App Store'dan indirdiysen aşağıdaki maddeler de geçerlidir. Bunl
     description: "The rules for using Lernomi: account, acceptable use, user content, AI, subscription, consumer rights.",
     summary: [
       "By using Lernomi you accept this agreement.",
-      "The service is provided from Türkiye and governed by Turkish law. The mandatory consumer rights of your own country are unaffected.",
+      "The service is operated by the controller established in Germany from servers in Germany, and the app is published in the stores by the publisher established in Türkiye; the agreement is governed by Turkish law. The mandatory consumer rights of your own country are unaffected.",
       "Your account is yours, and is used with respect for others. What you write stays yours.",
       "AI answers can be wrong.",
       "Premium is bought in the store you downloaded the app from, and cancelled there.",
@@ -195,13 +207,13 @@ You may not:
 - use the AI speaking practice to produce unlawful or harmful content, or content targeting other people,
 - breach applicable law, including intellectual property, personal data and sanctions rules.
 
-In case of a breach we may remove content, restrict features or close the account; we tell you the decision and its reason, and you can appeal at {{supportEmail}}. Serious breaches do not require prior warning.
+There is zero tolerance for objectionable content and abusive users. Reports are reviewed within 24 hours; content that breaks the rules is removed, and the account of the user responsible is restricted or closed. We tell you the decision and its reason, and you can appeal at {{supportEmail}}. Serious breaches do not require prior warning.
 
 ## 5. Your content and reporting
 
 The texts you write, the transcripts of what you say and your display name are yours. You grant us only the worldwide, non-exclusive, royalty-free licence needed to provide the service: to assess your work, generate feedback and show as much as you choose (display name, progress) to other users. We do not use your content for advertising or model training; the licence ends when you delete your account.
 
-If you see content that is unlawful or breaches these terms (another user's name or behaviour), you can report it with the "Report" button in the app or at {{supportEmail}}; this is also the single point of contact for notices under the EU Digital Services Act (DSA). Reports are reviewed by a human; the decision and the route of appeal are communicated to the reporter and to the content owner. The friend features include block and report buttons.
+If you see content that is unlawful or breaches these terms (another user's name or behaviour), you can report it with the "Report" button in the app or at {{supportEmail}}; this is also the single point of contact for notices under the EU Digital Services Act (DSA). Reports are reviewed by a human within 24 hours; the decision and the route of appeal are communicated to the reporter and to the content owner, so you learn the outcome of your report. The friend features include block and report buttons.
 
 ## 5a. Social features
 
@@ -272,7 +284,7 @@ Obligations are suspended for the duration of events beyond the parties' control
 - **Waiver:** Not exercising a right does not mean waiving it.
 - **Language:** The binding language of the agreement is Turkish; translations are for information. In case of a difference in interpretation, the Turkish text prevails.
 - **Notices:** Notices to us go to {{supportEmail}}; notices to you go to the e-mail address on your account or as an in-app message, and are deemed served upon arrival.
-- **Retention:** This agreement is stored electronically; you may request the version you accepted and its date.
+- **Retention:** This agreement is stored electronically. The version of the terms you accepted and the date of acceptance are recorded on your account; you may request the text of that version and its date.
 
 ## {{ifIos}}13a. Additional terms for the Apple App Store
 
@@ -298,7 +310,7 @@ When we update these terms, the effective date and version change; we announce m
     description: "Die Regeln für die Nutzung von Lernomi: Konto, zulässige Nutzung, Nutzerinhalte, KI, Abonnement, Verbraucherrechte.",
     summary: [
       "Mit der Nutzung von Lernomi nimmst du diese Vereinbarung an.",
-      "Der Dienst wird aus der Türkei angeboten und unterliegt türkischem Recht. Die zwingenden Verbraucherrechte deines Landes bleiben unberührt.",
+      "Den Dienst betreibt der in Deutschland niedergelassene Verantwortliche von Servern in Deutschland aus, die App veröffentlicht der in der Türkei niedergelassene Herausgeber in den Stores; die Vereinbarung unterliegt türkischem Recht. Die zwingenden Verbraucherrechte deines Landes bleiben unberührt.",
       "Dein Konto gehört dir und wird respektvoll gegenüber anderen genutzt. Was du schreibst, bleibt dein.",
       "KI-Antworten können falsch sein.",
       "Premium wird in dem Store gekauft, aus dem du die App geladen hast, und dort gekündigt.",
@@ -332,13 +344,13 @@ Untersagt ist:
 - die KI-Sprechpraxis zu nutzen, um rechtswidrige, schädliche oder gegen andere gerichtete Inhalte zu erzeugen,
 - geltendes Recht zu verletzen, einschließlich Urheberrecht, Datenschutzrecht und Sanktionsvorschriften.
 
-Bei einem Verstoß können wir Inhalte entfernen, Funktionen einschränken oder das Konto schließen; wir teilen dir die Entscheidung und ihre Begründung mit, und du kannst unter {{supportEmail}} Widerspruch einlegen. Schwere Verstöße erfordern keine Vorwarnung.
+Für anstößige Inhalte und missbräuchliche Nutzer gilt null Toleranz. Meldungen werden innerhalb von 24 Stunden geprüft; regelwidrige Inhalte werden entfernt, und das Konto der verantwortlichen Person wird eingeschränkt oder geschlossen. Wir teilen dir die Entscheidung und ihre Begründung mit, und du kannst unter {{supportEmail}} Widerspruch einlegen. Schwere Verstöße erfordern keine Vorwarnung.
 
 ## 5. Deine Inhalte und Meldungen
 
 Die Texte, die du schreibst, die Transkripte dessen, was du sprichst, und dein Anzeigename gehören dir. Du erteilst uns nur das weltweite, nicht ausschließliche und unentgeltliche Nutzungsrecht, das zur Erbringung des Dienstes erforderlich ist: bewerten, Rückmeldung erzeugen und so viel wie du auswählst (Anzeigename, Fortschritt) anderen Nutzern zeigen. Wir nutzen deine Inhalte nicht für Werbung oder Modelltraining; mit der Löschung deines Kontos endet das Nutzungsrecht.
 
-Wenn du einen rechtswidrigen oder diesen Bedingungen widersprechenden Inhalt siehst (Name oder Verhalten eines anderen Nutzers), kannst du ihn über die Schaltfläche "Melden" in der App oder unter {{supportEmail}} melden; dies ist auch die einzige Kontaktstelle für Meldungen nach dem EU-Gesetz über digitale Dienste (DSA). Meldungen werden von einem Menschen geprüft; Entscheidung und Rechtsbehelf werden der meldenden Person und dem Inhaber des Inhalts mitgeteilt. Die Freundesfunktionen enthalten Schaltflächen zum Blockieren und Melden.
+Wenn du einen rechtswidrigen oder diesen Bedingungen widersprechenden Inhalt siehst (Name oder Verhalten eines anderen Nutzers), kannst du ihn über die Schaltfläche "Melden" in der App oder unter {{supportEmail}} melden; dies ist auch die einzige Kontaktstelle für Meldungen nach dem EU-Gesetz über digitale Dienste (DSA). Meldungen werden innerhalb von 24 Stunden von einem Menschen geprüft; Entscheidung und Rechtsbehelf werden der meldenden Person und dem Inhaber des Inhalts mitgeteilt, du erfährst also das Ergebnis deiner Meldung. Die Freundesfunktionen enthalten Schaltflächen zum Blockieren und Melden.
 
 ## 5a. Soziale Funktionen
 
@@ -409,7 +421,7 @@ Für die Dauer von Ereignissen außerhalb der Kontrolle der Parteien — Naturka
 - **Verzicht:** Die Nichtausübung eines Rechts bedeutet keinen Verzicht darauf.
 - **Sprache:** Verbindliche Sprache der Vereinbarung ist Türkisch; Übersetzungen dienen der Information. Bei Auslegungsunterschieden ist der türkische Text maßgebend.
 - **Zustellung:** Mitteilungen an uns gehen an {{supportEmail}}; Mitteilungen an dich gehen an die E-Mail-Adresse deines Kontos oder erfolgen als Nachricht in der App und gelten mit Zugang als zugestellt.
-- **Aufbewahrung:** Diese Vereinbarung wird elektronisch aufbewahrt; du kannst die von dir angenommene Fassung und ihr Datum anfordern.
+- **Aufbewahrung:** Diese Vereinbarung wird elektronisch aufbewahrt. Die Version der von dir angenommenen Bedingungen und das Datum der Annahme werden in deinem Konto gespeichert; du kannst den Text dieser Fassung und ihr Datum anfordern.
 
 ## {{ifIos}}13a. Zusätzliche Bedingungen für den Apple App Store
 

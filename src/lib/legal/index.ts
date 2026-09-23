@@ -91,9 +91,16 @@ import { DAILY_QUOTAS } from "@/lib/quotas";
  * 1.4 (2026-09-16) profildeki kısa tanıtımı (biyografi) kaldırdı: alan artık
  * yok ve yazılmış metinler sunucudan silindi. Toplanan bir veri kategorisinin
  * düşmesi işlemenin kapsamını değiştiriyor, o yüzden ikinci basamak.
+ *
+ * 1.5 (2026-09-23) yayın öncesi hukuki denetimin (LEG-1..20, CNT-7) sonucu:
+ * metin, sistemin gerçekte yaptığını söylemiyordu. Cloudflare (vekil,
+ * Turnstile, R2 yedeği) ve Edge seslendirme ucu alıcı olarak hiç yazılı
+ * değildi, anonim hata raporu ve sunucu günlükleri sayılmamıştı, ve birkaç
+ * güvence cümlesi henüz imzalanmamış belgelere dayanıyordu. Yeni alıcılar
+ * eklendiği için ikinci basamak.
  */
-export const LEGAL_EFFECTIVE_DATE = "2026-09-16";
-export const LEGAL_VERSION = "1.4";
+export const LEGAL_EFFECTIVE_DATE = "2026-09-23";
+export const LEGAL_VERSION = "1.5";
 
 export const LEGAL_ENTITY = {
   /** Veri sorumlusu: amaç ve araçlara karar veren gerçek kişi (AB'de yerleşik). */
@@ -118,10 +125,19 @@ export const LEGAL_ENTITY = {
    * (Türkiye'de yerleşik Türk vatandaşı); bu alan Sicil'e girilen bir bilgi,
    * yayımlanan metnin parçası değil.
    *
-   * DİKKAT: aşağıdaki metin "temsilci atanmıştır" diyor. Atama kararı
-   * imzalanmadan yayına çıkarsa bu cümle doğru olmaz.
+   * 2026-09-23'TE BOŞALTILDI (denetim LEG-7). Metin "temsilci belirlenmiştir"
+   * diyordu ama atama kararının imzalandığına ve Kuruma bildirildiğine dair
+   * hiçbir kayıt yok; kanıtlanamayan bir güvenceyi yayımlamak, olmayan bir
+   * yükümlülüğü yerine getirilmiş göstermek demek. Boş dize satırı sayfadan
+   * düşürüyor (bkz. `isLegalOmitted`), gizlilik §1'in ilgili cümlesi de
+   * nötrleştirildi.
+   *
+   * TODO(Samet): atama kararı imzalanıp Kuruma bildirilince değeri geri koy:
+   *   "Musa Atila, Akpınar Mah. Akpınar Merkez Küme Evler No:6, Tufanbeyli, Adana, Türkiye"
+   * ve gizlilik §1'e (üç dil) "Türkiye'den yapılacak başvurular için veri
+   * sorumlusu temsilcisi belirlenmiştir" cümlesini geri ekle.
    */
-  trRepresentative: "Musa Atila, Akpınar Mah. Akpınar Merkez Küme Evler No:6, Tufanbeyli, Adana, Türkiye",
+  trRepresentative: "",
 
   /**
    * Veri hakları başvuruları iki ayrı adrese gidiyor çünkü iki ayrı rejim ve iki
@@ -159,6 +175,14 @@ export const LEGAL_ENTITY = {
    *
    * Bunu karşılayan basit bir düzen: gecelik pg_dump, 7 günlük + 3 haftalık
    * kopya (en eskisi 28 gün) — hepsi 30 günün içinde kalır.
+   *
+   * HARİCİ KOPYA BU SÖZÜN İÇİNDE (1.5'ten beri metinde adıyla). Gecelik döküm
+   * gpg ile şifrelenip Cloudflare R2'ye (AB yargı bölgesi, `.eu.` uç) de
+   * gidiyor; orada Bucket Lock 30 gün silmeyi engelliyor ve budamayı R2
+   * lifecycle kuralı yapıyor. Kural 30 günde silerse silme asenkron olduğu
+   * için fiilen 30-31 gün olur.
+   * TODO(Samet): Cloudflare panelinde lifecycle'ı "29 günden eski nesneleri
+   * sil", kilidi 29 gün yap — yoksa bu sayı R2 için tutulmuyor (denetim LEG-20).
    */
   backupRetentionDays: "30",
 
@@ -307,6 +331,42 @@ export type LegalChangelogEntry = {
 };
 
 export const LEGAL_CHANGELOG: readonly LegalChangelogEntry[] = [
+  {
+    /*
+      İKİNCİ BASAMAK: alıcılar tablosuna yeni alıcılar girdi (Cloudflare,
+      Cloudflare R2, Microsoft Edge seslendirme) ve yeni işlemeler yazıldı
+      (anonim hata raporu, sunucu günlükleri, şartları kabul kaydı).
+      Hiçbiri 1.5'te BAŞLAMADI; metin gerçekte olanı geç de olsa söylüyor.
+      Kayıt bunu saklamıyor.
+
+      Maddeler üç dilde AYNI SAYIDA (kapı `scripts/test-legal.ts`).
+    */
+    version: "1.5",
+    date: "2026-09-23",
+    changes: {
+      tr: [
+        "Alıcılar tablosu gerçek duruma getirildi. Siteye ve uygulamaya giden trafik Cloudflare'in ağından geçiyor (ters vekil ve kayıt, giriş ve parola sıfırlamadaki Turnstile bot koruması) ve veritabanı yedeğinin şifreli bir kopyası Cloudflare R2'de (AB) tutuluyor; ikisi de artık tabloda. Seslendirme önce Microsoft'un Edge sesli okuma servisine, o çalışmazsa Azure'a (AB) gidiyor; Edge için veri işleme sözleşmesi olmadığı ve yalnız seslendirilecek metnin, hesap bilgisi olmadan sunucudan gönderildiği yazıldı. RevenueCat'in mobil uygulama açıldığında (misafirde anonim kimlikle) devreye girdiği yazıldı; hesap silinince RevenueCat'teki müşteri kaydının silinmesi de isteniyor.",
+        "Yurt dışı aktarım güvenceleri yalnız var olanı söyleyecek biçimde daraltıldı: güvence sütunu sağlayıcıya göre AB Standart Sözleşme Hükümleri, sağlayıcının kendi şartları ya da bağımsız veri sorumlusu diye ayrıldı; yayıncıyla işleme sözleşmesine, Türkiye temsilcisine, KVKK standart sözleşmesine ve sağlayıcıların eğitim taahhüdüne dair cümleler, belgeler tamamlanana kadar kaldırıldı.",
+        "Toplanan veriler tablosuna üç satır eklendi: anonim hata raporu (hata iletisi, yığın izi, ekran adı, uygulama sürümü; kullanıcı kimliği olmadan, yalnız Lernomi sunucusuna), sunucu günlükleri (erişim günlükleri IP adresiyle 14 gün, sistem günlükleri 30 gün) ve Cloudflare Turnstile bot koruması. Üçüncü taraf çökme raporlama SDK'sı kullanılmadığı açıkça yazıldı.",
+        "Ses kaydı cümlesi kesinleştirildi: ses Lernomi sunucusunda saklanmaz, Speechmatics'e gönderilen ses iş bitince silinir, Deepgram'da model eğitimine katılım kapalıdır. Konuşma pratiği kayıtları süre dolduktan sonra en geç bir gün içinde siliniyor; kapanan bildirimler kapanıştan 1 yıl sonra siliniyor.",
+        "\"Kullanım verisi gönder\" tercihi artık hesabına kaydediliyor ve sunucu da ona uyuyor; kullanım ölçümü için cihazına bir şey yazılmıyor. Kabul ettiğin şartların sürümü ve tarihi hesabına kaydediliyor (şartlar 12b). Şartlara (4, 5) uygunsuz içerik ve kötü niyetli kullanıcılara tolerans gösterilmediği, bildirimlerin 24 saat içinde incelendiği ve bildirene sonucun iletildiği yazıldı; şartların özeti hizmetin Almanya'dan işletildiğini doğru söylüyor. Künye (Impressum) sayfası eklendi.",
+      ],
+      en: [
+        "The table of recipients now matches reality. Traffic to the site and the app passes through Cloudflare's network (reverse proxy, and Turnstile bot protection on sign-up, sign-in and password reset), and an encrypted copy of the database backup is kept in Cloudflare R2 (EU); both are now in the table. Speech synthesis goes first to Microsoft's Edge Read Aloud service and, if that fails, to Azure (EU); the policy now says there is no data processing agreement for Edge and that only the text to be spoken is sent, from the server and without account data. It now says RevenueCat starts when the mobile app opens (under an anonymous id for guests); when an account is deleted, deletion of the RevenueCat customer record is also requested.",
+        "The transfer safeguards were narrowed to what actually exists: the safeguard column now distinguishes, per provider, EU Standard Contractual Clauses, the provider's own terms, or an independent controller; the sentences about a processing agreement with the publisher, a representative in Türkiye, the KVKK standard contract and the providers' no-training commitment were removed until the documents are in place.",
+        "Three rows were added to the table of collected data: the anonymous error report (error message, stack trace, screen name, app version; without a user id, only to Lernomi's server), server logs (access logs with IP addresses 14 days, system logs 30 days) and Cloudflare Turnstile bot protection. The policy now states explicitly that no third-party crash reporting SDK is used.",
+        "The statement on audio was made precise: audio is not stored on the Lernomi server, audio sent to Speechmatics is deleted when the job finishes, and participation in model training is switched off at Deepgram. Speaking practice logs are deleted within one day after the period ends; closed reports are deleted 1 year after closing.",
+        "The \"Send usage data\" choice is now saved to your account and respected by the server; nothing is written to your device for usage measurement. The version and date of the terms you accepted are recorded on your account (terms 12b). The terms (4, 5) now state zero tolerance for objectionable content and abusive users, that reports are reviewed within 24 hours and that the reporter is told the outcome; the summary of the terms now correctly says the service is operated from Germany. An imprint (Impressum) page was added.",
+      ],
+      de: [
+        "Die Empfängertabelle entspricht jetzt der Wirklichkeit. Der Datenverkehr zu Website und App läuft durch das Netz von Cloudflare (Reverse Proxy sowie Turnstile-Botschutz bei Registrierung, Anmeldung und Passwort-Reset), und eine verschlüsselte Kopie der Datenbanksicherung liegt bei Cloudflare R2 (EU); beides steht jetzt in der Tabelle. Die Sprachausgabe geht zuerst an den Edge-Vorlesedienst von Microsoft und, wenn der ausfällt, an Azure (EU); für Edge steht jetzt darin, dass kein Auftragsverarbeitungsvertrag besteht und nur der vorzulesende Text vom Server aus und ohne Kontodaten gesendet wird. Es steht jetzt darin, dass RevenueCat beim Öffnen der mobilen App startet (bei Gästen unter einer anonymen Kennung); bei der Kontolöschung wird auch die Löschung des Kundendatensatzes bei RevenueCat veranlasst.",
+        "Die Garantien für Übermittlungen ins Ausland wurden auf das tatsächlich Vorhandene beschränkt: Die Garantiespalte unterscheidet je Anbieter EU-Standardvertragsklauseln, die eigenen Bedingungen des Anbieters oder einen eigenständig Verantwortlichen; die Sätze zum Auftragsverarbeitungsvertrag mit dem Herausgeber, zum Vertreter in der Türkei, zum KVKK-Standardvertrag und zur Zusage der Anbieter, nicht zu trainieren, wurden entfernt, bis die Unterlagen vorliegen.",
+        "Die Tabelle der erhobenen Daten hat drei neue Zeilen: den anonymen Fehlerbericht (Fehlermeldung, Stacktrace, Bildschirmname, App-Version; ohne Nutzer-ID, nur an den Lernomi-Server), Server-Logs (Zugriffsprotokolle mit IP-Adressen 14 Tage, Systemprotokolle 30 Tage) und den Cloudflare-Turnstile-Botschutz. Es steht jetzt ausdrücklich darin, dass kein Absturzberichts-SDK Dritter verwendet wird.",
+        "Die Aussage zu Audio wurde präzisiert: Audio wird nicht auf dem Lernomi-Server gespeichert, an Speechmatics gesendetes Audio wird nach Abschluss des Auftrags gelöscht, und bei Deepgram ist die Teilnahme am Modelltraining abgeschaltet. Protokolle der Sprechpraxis werden spätestens einen Tag nach Fristende gelöscht; abgeschlossene Meldungen 1 Jahr nach Abschluss.",
+        "Die Wahl \"Nutzungsdaten senden\" wird jetzt in deinem Konto gespeichert und vom Server beachtet; für die Nutzungsmessung wird nichts auf deinem Gerät gespeichert. Version und Datum der von dir angenommenen Bedingungen werden in deinem Konto gespeichert (Nutzungsbedingungen 12b). Die Nutzungsbedingungen (4, 5) nennen jetzt null Toleranz für anstößige Inhalte und missbräuchliche Nutzer, die Prüfung von Meldungen innerhalb von 24 Stunden und die Mitteilung des Ergebnisses an die meldende Person; die Kurzfassung der Nutzungsbedingungen sagt jetzt richtig, dass der Dienst aus Deutschland betrieben wird. Eine Impressumsseite wurde ergänzt.",
+      ],
+    },
+  },
   {
     /*
       İKİNCİ BASAMAK: toplanan bir veri kategorisi DÜŞTÜ. Kısa tanıtım artık
@@ -486,6 +546,21 @@ export type Trio = { tr: string; en: string; de: string };
 
 const PROCESSOR_NAMES = {
   smtp: { tr: "Resend (e-posta, SMTP ile)", en: "Resend (e-mail, over SMTP)", de: "Resend (E-Mail, über SMTP)" },
+  edgeTts: {
+    tr: "Microsoft (Edge sesli okuma servisi)",
+    en: "Microsoft (Edge Read Aloud service)",
+    de: "Microsoft (Edge-Vorlesedienst)",
+  },
+  cloudflareEdge: {
+    tr: "Cloudflare (ağ, ters vekil ve Turnstile bot koruması)",
+    en: "Cloudflare (network, reverse proxy and Turnstile bot protection)",
+    de: "Cloudflare (Netzwerk, Reverse Proxy und Turnstile-Botschutz)",
+  },
+  cloudflareR2: {
+    tr: "Cloudflare R2 (şifreli yedek kopya)",
+    en: "Cloudflare R2 (encrypted backup copy)",
+    de: "Cloudflare R2 (verschlüsselte Sicherungskopie)",
+  },
 } as const satisfies Record<string, Trio>;
 
 const PURPOSES = {
@@ -501,6 +576,17 @@ const PURPOSES = {
   subscriptionState: { tr: "Abonelik durumu yönetimi", en: "Subscription state management", de: "Verwaltung des Abonnementstatus" },
   transactionalMail: { tr: "Doğrulama ve parola sıfırlama e-postaları", en: "Verification and password reset e-mails", de: "Bestätigungs- und Passwort-Reset-E-Mails" },
   pushDelivery: { tr: "Bildirim gönderimi", en: "Push notification delivery", de: "Zustellung von Push-Benachrichtigungen" },
+  tts: { tr: "Seslendirme", en: "Speech synthesis", de: "Sprachausgabe" },
+  network: {
+    tr: "Siteye ve uygulamaya giden trafiğin iletimi, saldırı ve bot koruması",
+    en: "Delivering traffic to the site and the app, attack and bot protection",
+    de: "Weiterleitung des Datenverkehrs zu Website und App, Angriffs- und Botschutz",
+  },
+  offsiteBackup: {
+    tr: "Felaket kurtarma için harici yedek",
+    en: "Off-site backup for disaster recovery",
+    de: "Externe Sicherung für die Notfallwiederherstellung",
+  },
 } as const satisfies Record<string, Trio>;
 
 const DATA_KINDS = {
@@ -522,6 +608,27 @@ const DATA_KINDS = {
     en: "Device notification token, the notification's title and text",
     de: "Geräte-Token für Benachrichtigungen, Titel und Text der Benachrichtigung",
   },
+  /*
+    Yapay zekâ rızasının alıcı listesine GİRMEYEN bir veri türü, bilerek:
+    `lib/ai-consent` alıcıları veri türüne göre seçiyor ve seslendirme
+    kullanıcının sesi ya da yazdığı metin değil. Buraya "audio…" diye bir tür
+    konsaydı rızanın parmak izi değişir ve herkesten izin yeniden istenirdi.
+  */
+  ttsText: {
+    tr: "Seslendirilecek metin (ders içerikleri, konuşma pratiğinde karakterin yanıtı); istek Lernomi sunucusundan gider, hesap bilgisi ve IP adresin gönderilmez",
+    en: "Text to be spoken (lesson content, the character's reply in speaking practice); the request comes from the Lernomi server, no account data and not your IP address",
+    de: "Vorzulesender Text (Lektionsinhalte, die Antwort der Figur in der Sprechpraxis); die Anfrage kommt vom Lernomi-Server, ohne Kontodaten und ohne deine IP-Adresse",
+  },
+  traffic: {
+    tr: "IP adresi, tarayıcı/cihaz sinyalleri, iletilen istekler ve cevaplar (bağlantı şifrelemesi Cloudflare'de de çözülür)",
+    en: "IP address, browser/device signals, the requests and responses passed through (the connection encryption is also terminated at Cloudflare)",
+    de: "IP-Adresse, Browser-/Gerätesignale, die durchgeleiteten Anfragen und Antworten (die Verbindungsverschlüsselung wird auch bei Cloudflare entschlüsselt)",
+  },
+  encryptedBackup: {
+    tr: "Veritabanının şifreli kopyası (anahtar yalnız Lernomi sunucusunda; Cloudflare içeriği okuyamaz)",
+    en: "Encrypted copy of the database (the key is only on the Lernomi server; Cloudflare cannot read the content)",
+    de: "Verschlüsselte Kopie der Datenbank (der Schlüssel liegt nur auf dem Lernomi-Server; Cloudflare kann den Inhalt nicht lesen)",
+  },
 } as const satisfies Record<string, Trio>;
 
 const REGIONS = {
@@ -529,34 +636,90 @@ const REGIONS = {
   us: { tr: "ABD", en: "USA", de: "USA" },
   uk: { tr: "Birleşik Krallık", en: "United Kingdom", de: "Vereinigtes Königreich" },
   globalNetwork: { tr: "Küresel ağ", en: "Global network", de: "Globales Netz" },
+  usGlobal: {
+    tr: "ABD / küresel (bölge garantisi yok)",
+    en: "USA / global (no region guarantee)",
+    de: "USA / global (keine Regionsgarantie)",
+  },
 } as const satisfies Record<string, Trio>;
 
+/*
+  GÜVENCE SÜTUNU YALNIZ VAR OLANI SÖYLÜYOR (1.5, denetim LEG-7).
+
+  Eskiden her ABD satırında "standart sözleşme hükümleri + veri işleme
+  sözleşmesi" yazıyordu; imzalı/kabul edilmiş bir sözleşmenin kaydı depoda
+  yoktu. Şimdi üç ayrı durum var:
+
+    - `scc`: sağlayıcının herkese sunduğu veri işleme koşulları AB Standart
+      Sözleşme Hükümlerini içeriyor ve hesap açılınca geçerli oluyor
+      (Groq, Deepgram, Resend, RevenueCat, Firebase, Cloudflare).
+    - `providerTerms`: sağlayıcının API şartları geçerli ama SCC'nin
+      kapsamda olduğu doğrulanmadı (Cerebras). İddia edilmiyor.
+    - `independentController`: mağazalar ve giriş sağlayıcıları bizim
+      işleyenimiz değil, kendi hizmetleri için kendileri sorumlu; aktarım
+      kullanıcının seçtiği hizmetin kendisi için gerekli.
+
+  TODO(Samet): her sağlayıcının DPA'sını hesapta kabul et/indir ve bir
+  klasörde sakla; Cerebras'ta SCC'li DPA varsa satırı `scc`e çek.
+*/
 const SAFEGUARDS = {
   scc: {
-    tr: "Standart sözleşme hükümleri + veri işleme sözleşmesi",
-    en: "Standard contractual clauses + data processing agreement",
-    de: "Standardvertragsklauseln + Auftragsverarbeitungsvertrag",
+    tr: "AB Standart Sözleşme Hükümleri (sağlayıcının veri işleme koşullarında)",
+    en: "EU Standard Contractual Clauses (in the provider's data processing terms)",
+    de: "EU-Standardvertragsklauseln (in den Auftragsverarbeitungsbedingungen des Anbieters)",
+  },
+  providerTerms: {
+    tr: "Sağlayıcının API ve veri işleme şartları",
+    en: "The provider's API and data processing terms",
+    de: "API- und Datenverarbeitungsbedingungen des Anbieters",
+  },
+  independentController: {
+    tr: "Sağlayıcı kendi hizmeti için bağımsız veri sorumlusu; aktarım seçtiğin hizmet için gerekli",
+    en: "The provider is an independent controller for its own service; the transfer is necessary for the service you chose",
+    de: "Der Anbieter ist für seinen eigenen Dienst selbst verantwortlich; die Übermittlung ist für den von dir gewählten Dienst erforderlich",
   },
   euAdequacy: { tr: "AB içi (yeterlilik)", en: "Within the EU (adequacy)", de: "Innerhalb der EU (Angemessenheit)" },
-  adequacyPlusDpa: {
-    tr: "Yeterlilik kararı + veri işleme sözleşmesi",
-    en: "Adequacy decision + data processing agreement",
-    de: "Angemessenheitsbeschluss + Auftragsverarbeitungsvertrag",
+  ukAdequacy: {
+    tr: "Birleşik Krallık için yeterlilik kararı",
+    en: "Adequacy decision for the United Kingdom",
+    de: "Angemessenheitsbeschluss für das Vereinigte Königreich",
+  },
+  /*
+    Edge sesli okuma ucu tüketici ürünü: sözleşmesi, bölge garantisi ve veri
+    işleme koşulu yok. Satırın dürüst yazılabilmesinin tek sebebi gönderilen
+    şeyin dar olması (yalnız seslendirilecek metin, sunucudan, kimliksiz).
+  */
+  none: {
+    tr: "Veri işleme sözleşmesi yok; yalnız seslendirilecek metin gönderilir",
+    en: "No data processing agreement; only the text to be spoken is sent",
+    de: "Kein Auftragsverarbeitungsvertrag; nur der vorzulesende Text wird gesendet",
   },
 } as const satisfies Record<string, Trio>;
 
 const OCCASIONS = {
   always: { tr: "Her zaman", en: "Always", de: "Immer" },
   walkAndTts: {
-    tr: "Yürüyüş modu (ekran kapalı / cepte) ve seslendirme",
-    en: "Walk mode (screen off / in pocket) and speech synthesis",
-    de: "Gehmodus (Bildschirm aus / in der Tasche) und Sprachausgabe",
+    tr: "Yürüyüş modu (ekran kapalı / cepte); seslendirmede yedek yol",
+    en: "Walk mode (screen off / in pocket); fallback for speech synthesis",
+    de: "Gehmodus (Bildschirm aus / in der Tasche); Ausweichweg für die Sprachausgabe",
   },
+  tts: { tr: "Bir metin seslendirildiğinde", en: "When a text is read aloud", de: "Wenn ein Text vorgelesen wird" },
+  nightly: { tr: "Her gece", en: "Every night", de: "Jede Nacht" },
   googleSignInChosen: { tr: "Google ile giriş seçilirse", en: "If sign-in with Google is chosen", de: "Wenn die Anmeldung mit Google gewählt wird" },
   appleSignInChosen: { tr: "Apple ile giriş seçilirse", en: "If sign-in with Apple is chosen", de: "Wenn die Anmeldung mit Apple gewählt wird" },
   androidAndSubscription: { tr: "Android uygulaması ve abonelik", en: "Android app and subscription", de: "Android-App und Abonnement" },
   iosAndSubscription: { tr: "iOS uygulaması ve abonelik", en: "iOS app and subscription", de: "iOS-App und Abonnement" },
-  premiumEnabled: { tr: "Premium abonelik açılınca", en: "Once a Premium subscription is active", de: "Sobald ein Premium-Abonnement aktiv ist" },
+  /*
+    RevenueCat SDK'sı ödeme ekranında değil, mobil uygulama açılınca
+    kuruluyor (AuthContext → configureBilling), misafirde de anonim bir
+    RevenueCat kimliğiyle. Eski "Premium abonelik açılınca" bunu saklıyordu
+    (denetim LEG-8).
+  */
+  appOpenBilling: {
+    tr: "Mobil uygulama açıldığında (satın alma altyapısı; misafir dahil, anonim kimlikle)",
+    en: "When the mobile app opens (purchase infrastructure; guests included, under an anonymous id)",
+    de: "Beim Öffnen der mobilen App (Kaufinfrastruktur; auch für Gäste, unter einer anonymen Kennung)",
+  },
   pushAllowed: { tr: "Bildirimlere izin verilirse", en: "If notifications are allowed", de: "Wenn Benachrichtigungen erlaubt sind" },
 } as const satisfies Record<string, Trio>;
 
@@ -586,7 +749,7 @@ export type Processor = {
  * istemcide de kurulu (bkz. LEGAL_PLATFORMS notu).
  */
 const IOS_PROCESSORS: Processor[] = [
-  { name: "Apple (App Store)", purpose: "distribution", data: "purchase", region: "us", safeguard: "scc", when: "iosAndSubscription" },
+  { name: "Apple (App Store)", purpose: "distribution", data: "purchase", region: "us", safeguard: "independentController", when: "iosAndSubscription" },
 ];
 
 /**
@@ -610,21 +773,42 @@ export const IOS_ONLY_PROCESSOR_NAMES: readonly string[] = IOS_PROCESSORS.map((p
  * kullanılmayacak sağlayıcıyı kullanılabilir bırakmamak.
  */
 export const PROCESSORS: Processor[] = [
+  /*
+    Cloudflare İLK SATIR, çünkü her istek ondan geçiyor: www.lernomi.app
+    Cloudflare vekili arkasında (`server: cloudflare`), TLS orada açılıyor;
+    Turnstile kayıt, giriş ve parola sıfırlamada (web ve mobil WebView)
+    çalışıyor. 1.5'e kadar tabloda yalnız "Workers AI" olarak geçiyordu
+    (denetim LEG-2).
+  */
+  { name: "cloudflareEdge", purpose: "network", data: "traffic", region: "globalNetwork", safeguard: "scc" },
+  /* Gecelik gpg şifreli döküm; uç `.eu.r2.cloudflarestorage.com` = AB yargı bölgesi (sunucuda okundu, 2026-09-23). */
+  { name: "cloudflareR2", purpose: "offsiteBackup", data: "encryptedBackup", region: "eu", safeguard: "scc", when: "nightly" },
+  /*
+    SESLENDİRME ÖNCE BURAYA GİDİYOR (lib/tts/synth: Edge → Azure). Edge ucu
+    Microsoft'un tüketici "sesli okuma" ucu, resmî bir API değil; sözleşme ve
+    bölge garantisi yok. Satır bu yüzden dürüstçe "sözleşme yok" diyor
+    (denetim LEG-3).
+
+    KALDIRMA YOLU: seslendirme Azure'a (AB, germanywestcentral) ya da kendi
+    seslerimize (`lib/tts/own`, sunucudaki dosya, alıcı yok) taşınırsa bu
+    satır silinir ve sürüm kaydı düşülür. Hukuken önerilen yol o.
+  */
+  { name: "edgeTts", purpose: "tts", data: "ttsText", region: "usGlobal", safeguard: "none", when: "tts" },
   { name: "Microsoft Azure Speech", purpose: "sttTts", data: "audioAndTtsText", region: "eu", safeguard: "euAdequacy", when: "walkAndTts" },
   { name: "Groq", purpose: "sttWhisperLlm", data: "audioAndTexts", region: "us", safeguard: "scc" },
   { name: "Cloudflare Workers AI", purpose: "sttWhisper", data: "audio", region: "globalNetwork", safeguard: "scc" },
-  { name: "Speechmatics", purpose: "stt", data: "audio", region: "uk", safeguard: "adequacyPlusDpa" },
+  { name: "Speechmatics", purpose: "stt", data: "audio", region: "uk", safeguard: "ukAdequacy" },
   { name: "Deepgram", purpose: "stt", data: "audio", region: "us", safeguard: "scc" },
   { name: "Mistral AI", purpose: "sttLlm", data: "audioAndTexts", region: "eu", safeguard: "euAdequacy" },
-  { name: "Cerebras", purpose: "llm", data: "texts", region: "us", safeguard: "scc" },
-  { name: "Google (Sign-In)", purpose: "googleSignIn", data: "googleIdentity", region: "us", safeguard: "scc", when: "googleSignInChosen" },
+  { name: "Cerebras", purpose: "llm", data: "texts", region: "us", safeguard: "providerTerms" },
+  { name: "Google (Sign-In)", purpose: "googleSignIn", data: "googleIdentity", region: "us", safeguard: "independentController", when: "googleSignInChosen" },
   /*
     Apple ile giriş web'de, Android'de ve iOS'ta açık (canlı `/api/config`:
     "apple":true,"appleWeb":true), yani bayraktan bağımsız. Google (Sign-In)
     satırının simetriği: aynı şey oluyor, sağlayıcı farklı.
   */
-  { name: "Apple (Sign-In)", purpose: "appleSignIn", data: "appleIdentity", region: "us", safeguard: "scc", when: "appleSignInChosen" },
-  { name: "Google Play", purpose: "distribution", data: "purchase", region: "us", safeguard: "scc", when: "androidAndSubscription" },
+  { name: "Apple (Sign-In)", purpose: "appleSignIn", data: "appleIdentity", region: "us", safeguard: "independentController", when: "appleSignInChosen" },
+  { name: "Google Play", purpose: "distribution", data: "purchase", region: "us", safeguard: "independentController", when: "androidAndSubscription" },
   /*
     Firebase Cloud Messaging 2026-09-10'da açıldı ve o güne kadar bu satır DOĞRU
     biçimde yoktu: uzak bildirim yapılandırılmamıştı, web push ise kendi
@@ -633,7 +817,7 @@ export const PROCESSORS: Processor[] = [
   */
   { name: "Google (Firebase Cloud Messaging)", purpose: "pushDelivery", data: "pushToken", region: "us", safeguard: "scc", when: "pushAllowed" },
   ...(LEGAL_PLATFORMS.ios ? IOS_PROCESSORS : []),
-  { name: "RevenueCat", purpose: "subscriptionState", data: "userAndPurchase", region: "us", safeguard: "scc", when: "premiumEnabled" },
+  { name: "RevenueCat", purpose: "subscriptionState", data: "userAndPurchase", region: "us", safeguard: "scc", when: "appOpenBilling" },
   /*
     Sağlayıcı ADIYLA yazılıyor: tablonun işi alıcıyı tanınabilir kılmak ve öteki
     on satırın hepsi adını veriyor. Bölge "ABD": kullanılan uç `smtp.resend.com`,

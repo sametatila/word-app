@@ -17,6 +17,22 @@ import type { LegalDocDefault } from "./types";
  * ELLE DÜZENLENEBİLİR ama düzenleme yayına ÇIKMAZ: veritabanında o belgenin
  * satırı varsa üstyazım kazanır. Buradaki metni değiştirmek yalnız yeni
  * kurulumları ve "varsayılana dön" düğmesini etkiler.
+ *
+ * 1.5'TE GERİ ÇEKİLEN GÜVENCE CÜMLELERİ (denetim LEG-7, 2026-09-23). Aşağıdaki
+ * dört iddia kanıtı depoda olmayan belgelere dayanıyordu ve kaldırıldı; belge
+ * imzalanınca/kabul edilince üç dilde birlikte geri konur:
+ *
+ *   - §1 "taraflar arasında bu kapsamda bir işleme sözleşmesi bulunur"
+ *     → TODO(Samet): Samet↔Musa GDPR m.28 / KVKK m.12 sözleşmesini imzala.
+ *   - §1 "Türkiye'den yapılacak başvurular … için veri sorumlusu temsilcisi
+ *     belirlenmiştir" → TODO(Samet): atama kararı + Kuruma bildirim
+ *     (`LEGAL_ENTITY.trRepresentative` notu).
+ *   - §5 "Sağlayıcılar, verileri model eğitiminde kullanmamayı taahhüt eden
+ *     API şartlarıyla ve veri işleme sözleşmeleriyle çalışır" → TODO(Samet):
+ *     DPA'ları hesapta kabul et, Mistral/Groq/Cerebras'ta eğitim ayarını kapat.
+ *   - §6 "KVKK m.9 kapsamında Kurul'un ilan ettiği standart sözleşme" ve
+ *     "hiçbiri veriyi kendi amaçları için kullanamaz" → TODO(Samet): KVKK
+ *     standart sözleşmelerini imzala ve 5 iş günü içinde Kuruma bildir.
  */
 export const PRIVACY_DEFAULT: Record<"tr" | "en" | "de", LegalDocDefault> = {
   tr: {
@@ -37,11 +53,11 @@ Bu politika kapsamındaki kişisel verilerin sorumlusu, 6698 sayılı Kişisel V
 
 {{entityBlock:controller:contact}}
 
-Uygulamayı mağazalarda yayımlayan ve abonelik tahsilatını yürüten taraf ayrı bir kişidir. Yayıncı, veri sorumlusunun talimatı dışında kişisel veri işlemez; Play Console{{ifIos}} ve App Store Connect{{/ifIos}} üzerinden eriştiği sipariş, abonelik ve yorum verisi bakımından **veri işleyen** sıfatını taşır ve taraflar arasında bu kapsamda bir işleme sözleşmesi bulunur (GDPR m.28, KVKK m.12).
+Uygulamayı mağazalarda yayımlayan ve abonelik tahsilatını yürüten taraf ayrı bir kişidir. Yayıncı, veri sorumlusunun talimatı dışında kişisel veri işlemez; Play Console{{ifIos}} ve App Store Connect{{/ifIos}} üzerinden eriştiği sipariş, abonelik ve yorum verisi bakımından **veri işleyen** sıfatını taşır (GDPR m.28, KVKK m.12).
 
 {{entityBlock:publisher}}
 
-Sunucular {{hosting}} üzerinde çalışır; veriler orada saklanır. Veri sorumlusu Türkiye'de yerleşik değildir; Türkiye'den yapılacak başvurular ve Kurumla yazışma için yukarıda bilgileri verilen veri sorumlusu temsilcisi belirlenmiştir. Temsilcinin belirlenmesi veri sorumlusunun kendi sorumluluğunu ortadan kaldırmaz.
+Sunucular {{hosting}} üzerinde çalışır; veriler orada saklanır. Siteye ve uygulamaya giden trafik sunucuya ulaşmadan önce Cloudflare'in ağından geçer (6. bölüm). Veri sorumlusu Türkiye'de yerleşik değildir; Türkiye'den yapılacak başvurular {{privacyEmailTr}} adresine ya da yukarıdaki yazışma adresine yapılabilir. Hizmet sağlayıcıya ilişkin künye bilgileri [künye sayfasında]({{link:impressum}}) yer alır.
 
 **Toplama yöntemi ve hukuki sebep (KVKK m.10):** Veriler, kayıt ve ayar formları, seçtiğin giriş sağlayıcısı (Google ya da Apple), uygulama içi etkileşimler, cihazın bildirim servisi ve mikrofon aracılığıyla elektronik ortamda, otomatik ya da kısmen otomatik yollarla toplanır; her veri için hukuki sebep 3. bölümdeki tabloda verilmiştir.
 
@@ -61,22 +77,26 @@ Sunucular {{hosting}} üzerinde çalışır; veriler orada saklanır. Veri sorum
 | Öğrenme verisi: kelime durumu, tekrar sonuçları, seri, XP, başarımlar, konuşma ve sınav sonuçları | Uygulamayı kullanırken | Aralıklı tekrar planı, ilerleme, sıralama | Sözleşmenin ifası | Hesap süresince |
 | Yazdığın ve söylediğin metinler (yazma görevleri, konuşma pratiği, sınav cevapları) | Sen | Yapay zekâ ile değerlendirme, geri bildirim ve konuşma pratiğindeki yanıtlar | Dil modeli sağlayıcılarına gönderim için açık rıza (m.5/1 / m.6(1)(a)): uygulama içi izin ekranı, geri alınabilir. Sonuçların hesabında tutulması için sözleşmenin ifası | Değerlendirmeler hesap süresince; konuşma pratiği kayıtları {{speechLogDays}} gün |
 | Sunucuya giden mikrofon ses kaydı | Mikrofon: ekran kapalıyken ya da telefon cebindeyken yürüyüş modu; web'de ayrıca telaffuz puanı ve sınavlardaki konuşma cevapları | Söylediğini yazıya çevirmek ve telaffuzunu puanlamak | Açık rıza (m.5/1 / m.6(1)(a)); uygulama içi izin ekranı, geri alınabilir | Saklanmaz; tanıma biter bitmez silinir, yalnız tanınan metin tutulur |
-| Kullanım olayları: hangi ekran açıldı, tur başladı/bitti, ekran genişliği ve platform | Uygulama | Ürünü iyileştirme (birinci taraf analitik) | Meşru menfaat (m.5/2-f / m.6(1)(f)); ayarlardan kapatılabilir | Hesap süresince |
+| Kullanım olayları: hangi ekran açıldı, tur başladı/bitti, ekran genişliği ve platform | Uygulama | Ürünü iyileştirme (birinci taraf analitik) | Meşru menfaat (m.5/2-f / m.6(1)(f)); ayarlardan kapatılabilir, tercih hesabına kaydedilir (8. bölüm) | Hesap süresince |
+| Anonim hata raporu: hata iletisi, yığın izi (hatanın kodda nerede oluştuğu), ekran adı, uygulama sürümü ve platform | Uygulama ve web sitesi, bir hata oluştuğunda | Hataları bulmak ve düzeltmek | Meşru menfaat (m.5/2-f / m.6(1)(f)) | Kullanıcı kimliği eklenmez; rapor kaydedilmeden önce e-posta adresi, jeton ve uzun sayılardan temizlenir. Hata grubu giderilene kadar tutulur |
 | IP adresi ve tarayıcı/cihaz tanımı (oturum kaydında) | Bağlantın | Oturum güvenliği, kötüye kullanım ve hız sınırı | Meşru menfaat (güvenlik) | Oturum süresince (en çok {{sessionMaxDays}} gün) |
+| Sunucu günlükleri: IP adresi, istenen adres, zaman, tarayıcı tanımı; uygulamanın hata ve işletim iletileri (kullanıcı kimliği içerebilir) | Bağlantın ve sunucunun kendisi | Güvenlik, saldırı ve kötüye kullanımı tespit, hata ayıklama | Meşru menfaat (güvenlik) | Web sunucusu erişim günlükleri 14 gün; sistem ve uygulama günlükleri 30 gün |
+| Bot koruması (Cloudflare Turnstile): IP adresi, tarayıcı/cihaz sinyalleri | Kayıt, giriş ve parola sıfırlama ekranı | Sahte hesap ve otomatik saldırıları önlemek | Meşru menfaat (güvenlik) | Lernomi yalnız doğrulama sonucunu kullanır, sinyalleri saklamaz |
 | Sosyal profil: kullanıcı adı, görünürlük ve istek tercihleri | Sen | Arkadaşların ve (görünürlük "herkese açık" ise) diğer kullanıcıların seni bulması | Sözleşmenin ifası; tercihler için rıza | Hesap süresince |
-| Arkadaşlık istekleri, arkadaş listesi, engellemeler, kullanıcı bildirimleri | Sen ve arkadaşların | Arkadaşlık özellikleri, güvenlik ve moderasyon | Sözleşmenin ifası; meşru menfaat (güvenlik) | Hesap süresince; bildirimler inceleme kapanana kadar |
+| Arkadaşlık istekleri, arkadaş listesi, engellemeler, kullanıcı bildirimleri | Sen ve arkadaşların | Arkadaşlık özellikleri, güvenlik ve moderasyon | Sözleşmenin ifası; meşru menfaat (güvenlik) | Hesap süresince; bildirimler inceleme kapandıktan sonra 1 yıl |
 | Etkinlik akışı, tepkiler, dürtmeler, ortak görevler, gelen kutusu bildirimleri | Uygulamayı kullanırken | Arkadaşlarınla ilerleme paylaşımı ve motivasyon (yalnız arkadaşlarına görünür) | Sözleşmenin ifası; "etkinliğimi göster" tercihiyle kapatılabilir | Hesap süresince |
 | Web push aboneliği (tarayıcı uç noktası ve şifreleme anahtarları) | Tarayıcın, izin verirsen | Web'de hatırlatma bildirimleri | Rıza (tarayıcı izni) | İzin geri alınana ya da uç nokta geçersizleşene kadar |
 | Hatırlatma tercihleri: günlük hatırlatma, seri koruma ve haftalık sınav anahtarları, hatırlatma saati, saat dilimi | Sen (saat dilimi, web'de bildirimleri açtığında tarayıcından alınır) | Hatırlatmaları yerel saatine göre göndermek ve tercihini bütün cihazlarında aynı tutmak | Sözleşmenin ifası | Hesap süresince |
 | Mobil bildirim jetonu ve platform (Android/iOS) | Cihazın, bildirimlere izin verirsen | Hatırlatmaları ve arkadaşlık bildirimlerini (istek, dürtme, ortak görev) telefonuna iletmek; iletimi Firebase Cloud Messaging yapar | Rıza (işletim sisteminin bildirim izni) | Çıkış yapana ya da jeton geçersizleşene kadar; hesap silinince hemen silinir |
 | Yapay zekâ ve ses izni kararların (amaç, karar, tarih, metin sürümü, platform) | Sen (izin ekranı, Ayarlar › Gizlilik) | İznin verildiğini ya da geri alındığını gösterebilmek | Hukuki yükümlülük (m.5/2-ç / m.6(1)(c) ve GDPR m.7(1)) | Hesap süresince |
+| Kabul ettiğin kullanım şartlarının sürümü ve kabul tarihi | Kayıt ve giriş | Hangi sözleşme metnini ne zaman kabul ettiğini gösterebilmek ve sana iletebilmek | Sözleşmenin kurulması ve ifası; hukuki yükümlülük (sözleşmenin saklanması) | Hesap süresince |
 | Satın alma ve abonelik durumu | Uygulama mağazası / RevenueCat | Premium özellikleri açmak | Sözleşmenin ifası; yasal yükümlülük (muhasebe) | Hesap süresince; mali kayıtlar yasal süre boyunca |
-| İçerik bildirimlerin | Sen ("Bildir") | Uygunsuz yapay zekâ yanıtlarını incelemek | Meşru menfaat (güvenli hizmet) | İnceleme kapanana kadar |
+| İçerik bildirimlerin | Sen ("Bildir") | Uygunsuz yapay zekâ yanıtlarını incelemek | Meşru menfaat (güvenli hizmet) | İnceleme kapandıktan sonra 1 yıl |
 | Yazdığın destek ve hak talepleri | Sen | Talebi cevaplamak, yasal kayıt | Yasal yükümlülük (KVKK m.13, GDPR m.12) | Talep kapandıktan sonra 2 yıl |
 
 **Hesapsız (misafir) kullanım:** Hesap oluşturmadan kullanırsan yukarıdaki öğrenme verisi, kişiselleştirme tercihleri, kullanım olayları ve oturum kaydı hesap yerine misafir kimliğine bağlı işlenir. Misafirde sosyal özellikler, sunucudaki ses tanımaya gönderim, bildirim jetonu ve satın alma yoktur; hatırlatmalar yalnız cihazında kurulur ve sunucuya yazılmaz. Yapay zekâya gönderim misafir kimliği başına tek bir yazma ya da konuşma değerlendirmesiyle sınırlıdır ve hesaptaki gibi ancak açık rızanla yapılır (5. bölüm); rıza kararın misafir kimliğine yazılır ve Ayarlar › Gizlilik'ten geri alınabilir. Misafir kimliğinin jetonu yalnız cihazının güvenli deposunda (iOS Anahtar Zinciri, Android Keystore) saklanır ve yalnız oturumunu sürdürmek ya da geri kurmak ve ilerlemeni bir hesaba geçirmek için kullanılır. E-postayla hesap oluşturursan misafir kimliği hesabının kendisi olur (e-posta adresini doğrulayana kadar misafir olarak kalır). Sosyal girişle hesap oluşturursan misafir ilerlemen hesabına taşınır. Var olan ve içinde ilerleme bulunan bir hesaba girersen ilerlemeyi eklemek isteyip istemediğin sorulur: eklersen hesabındaki ilerlemeyle birleşir (aynı kelimede, derste ya da alıştırmada en ileri durum ve toplam emek korunur, hesabının ayarları geçerli kalır), eklemezsen misafir verileri silinir; iki durumda da misafir kimliği silinir.
 
-**Toplanmayanlar:** konum, rehber, takvim, fotoğraf, reklam kimliği, donanım kimlikleri (IMEI, seri numarası gibi), çökme raporu, özel nitelikli kişisel veri. Toplanan cihaz tanımlayıcıları yalnız yukarıdaki mobil bildirim jetonu ve web push aboneliğidir; ikisi de yalnız bildirim göndermek için kullanılır. Lernomi reklam göstermez, üçüncü taraf analitik ya da takip SDK'sı içermez, veri satmaz.
+**Toplanmayanlar:** konum, rehber, takvim, fotoğraf, reklam kimliği, donanım kimlikleri (IMEI, seri numarası gibi), özel nitelikli kişisel veri. Toplanan cihaz tanımlayıcıları yalnız yukarıdaki mobil bildirim jetonu ve web push aboneliğidir; ikisi de yalnız bildirim göndermek için kullanılır. Lernomi reklam göstermez, üçüncü taraf analitik, çökme raporlama ya da takip SDK'sı içermez, veri satmaz. Uygulamada ya da web sitesinde bir hata oluştuğunda gönderilen anonim hata raporu (yukarıdaki tabloda) yalnız Lernomi'nin kendi sunucusuna gider ve üçüncü tarafa aktarılmaz; uygulama mağazaları ise kendi çökme istatistiklerini (Play Console, App Store Connect) kendi koşullarına göre ayrıca toplayabilir.
 
 ## 4. Mikrofon ve ses kayıtları
 
@@ -84,7 +104,7 @@ Mikrofon yalnız konuşarak cevap verdiğin yerlerde ve sen başlattığında a�
 
 Mobil uygulamada ekran açıkken tanıma, cihazın kendi konuşma tanıma servisiyle yapılır; web'de tarayıcının konuşma tanıma servisi kullanılır. Bu servisin sesi cihazda mı işlediği yoksa işletim sistemi ya da tarayıcı sağlayıcısının (Google ya da Apple gibi) sunucularına mı gönderdiği cihaza, tarayıcıya, dile ve ayarlara göre değişir ve o sağlayıcının kendi şartlarına tabidir; bu yol Lernomi sunucusundan geçmez.
 
-Ses Lernomi sunucusuna yalnız şu hâllerde ve yalnız izin verdiysen gider: ekran kapalıyken ya da telefon cebindeyken yürüyüş modu; web'de ayrıca telaffuz puanı ve sınavlardaki konuşma cevaplarının yazıya çevrilmesi. Kayıt kısa bir ses parçası olarak gönderilir ve aşağıdaki konuşma tanıma sağlayıcılarından birine iletilir. Ses dosyası sunucuda ya da sağlayıcıda saklanmaz; yalnız tanınan metin, beklenen kelime ve klip süresi kullanım kaydına yazılır.
+Ses Lernomi sunucusuna yalnız şu hâllerde ve yalnız izin verdiysen gider: ekran kapalıyken ya da telefon cebindeyken yürüyüş modu; web'de ayrıca telaffuz puanı ve sınavlardaki konuşma cevaplarının yazıya çevrilmesi. Kayıt kısa bir ses parçası olarak gönderilir ve aşağıdaki konuşma tanıma sağlayıcılarından birine iletilir. Ses dosyası Lernomi sunucusunda saklanmaz; yalnız tanınan metin, beklenen kelime ve klip süresi kullanım kaydına yazılır. Sağlayıcı tarafında: Speechmatics'e gönderilen ses, tanıma işi bitince silinir; Deepgram'da model eğitimine katılım kapalıdır.
 
 - Yürüyüş modunda mikrofon, modu uygulamadan durdurana kadar açık kalır; Android'de bu süre boyunca sürekli bir bildirim görünür. Öteki ekranlarda mikrofon yalnız cevabını söylediğin süre açıktır.
 - Ekran kapalıyken kayıt, işletim sisteminin bu iş için öngördüğü arka plan yoluyla yapılır: Android'de mikrofon tipli ön plan servisi{{ifIos}}, iOS'ta arka plan ses oturumu{{/ifIos}}. Sistemin mikrofon göstergesi açık kalır.
@@ -109,7 +129,7 @@ Aralıklı tekrar planı, günlük tur içeriği, seviye önerisi ve haftalık s
 
 ## 5. Yapay zekâ ile işlenen metinler
 
-Konuşma pratiği (rol yapma), yazma görevleri ve sınav cevapların, izin verdiysen, geri bildirim üretmek için dil modeli sağlayıcılarına gönderilir. Gönderilen şey yalnız senin yazdığın/söylediğin metin ve konuşmanın senaryosudur; ad ya da e-posta gönderilmez. Sağlayıcılar, verileri model eğitiminde kullanmamayı taahhüt eden API şartlarıyla ve veri işleme sözleşmeleriyle çalışır. Yapay zekâ karakterlerinin gerçek kişi olmadığı uygulamada açıkça belirtilir (AB Yapay Zekâ Tüzüğü m.50 şeffaflık). Yanıtlar hata içerebilir; her yanıtın altındaki "Bildir" ile bildirebilirsin, bildirimler insan tarafından incelenir. Lernomi hakkında yalnız otomatik işlemeye dayanan, hukuki sonuç doğuran bir karar vermez.
+Konuşma pratiği (rol yapma), yazma görevleri ve sınav cevapların, izin verdiysen, geri bildirim üretmek için dil modeli sağlayıcılarına gönderilir. Gönderilen şey yalnız senin yazdığın/söylediğin metin ve konuşmanın senaryosudur; ad ya da e-posta gönderilmez. Metin sağlayıcılara yalnız yanıt üretmek için, API üzerinden gönderilir; her sağlayıcının hangi koşullarla çalıştığı 6. bölümdeki tabloda yazılıdır. Yapay zekâ karakterlerinin gerçek kişi olmadığı uygulamada açıkça belirtilir (AB Yapay Zekâ Tüzüğü m.50 şeffaflık). Yanıtlar hata içerebilir; her yanıtın altındaki "Bildir" ile bildirebilirsin, bildirimler insan tarafından incelenir. Lernomi hakkında yalnız otomatik işlemeye dayanan, hukuki sonuç doğuran bir karar vermez.
 
 **İzin:** Metin bir sağlayıcıya ilk kez gitmeden önce, neyin gönderileceğini ve hangi sağlayıcılara gidebileceğini adıyla gösteren bir izin ekranı açılır. "İzin ver ve devam et"e basmadan metnin hiçbir sağlayıcıya gitmez; bu kural uygulamada değil sunucuda uygulanır, yani uygulamanın eski bir sürümü ya da başka bir cihaz da izni atlayamaz. İzin vermezsen alıştırmalar yapay zekâsız sürer: konuşmalar senaryoyla ilerler, yazma ve sınav cevapları kural tabanlı bir tahminle değerlendirilir ya da puansız kalır. Kararın hesabına tarih ve metin sürümüyle kaydedilir ve bütün cihazlarında geçerlidir; Ayarlar › Gizlilik'ten istediğin an değiştirebilirsin. Alıcı listesi değişirse izin yeniden istenir.
 
@@ -119,7 +139,7 @@ Konuşma pratiği (rol yapma), yazma görevleri ve sınav cevapların, izin verd
 
 ## 6. Verinin ulaştığı hizmet sağlayıcılar ve yurt dışına aktarım
 
-Aşağıdaki sağlayıcılar yalnız belirtilen amaçla ve yalnız o iş için gereken veriyle çalışır; hiçbiri veriyi kendi amaçları için kullanamaz. Sunucular Almanya'dadır. Türkiye'den AB'ye ve AB'den ABD/Birleşik Krallık'a yapılan aktarımlarda kullanılan güvence son sütundadır: KVKK m.9 kapsamında Kurul'un ilan ettiği standart sözleşme ve GDPR Bölüm V kapsamında standart sözleşme hükümleri ya da yeterlilik kararı.
+Aşağıdaki sağlayıcılara yalnız belirtilen amaçla ve yalnız o iş için gereken veri gönderilir. Sunucular Almanya'dadır; ancak siteye ve uygulamaya giden bütün trafik sunucuya ulaşmadan önce Cloudflare'in küresel ağından (ters vekil ve bot koruması) geçer ve bağlantının şifrelemesi orada da çözülür. Her sağlayıcının bulunduğu bölge ve AB dışına aktarımda dayanılan güvence tabloda yazılıdır; mağazalar ve giriş sağlayıcıları (Google, Apple) kendi hizmetleri için bağımsız veri sorumlusudur ve kendi gizlilik koşullarına tabidir.
 
 {{processorsTable}}
 
@@ -127,7 +147,7 @@ Verilerin kamu kurumlarına aktarımı yalnız yasal bir zorunluluk ya da yetkil
 
 ## 7. Çerezler ve yerel depolama
 
-Web'de yalnız zorunlu oturum çerezi kullanılır (giriş yaptığını hatırlamak için, {{sessionMaxDays}} gün); bu nedenle çerez onay bandı yoktur. Pazarlama ya da takip çerezi kullanılmaz. Tarayıcı ve uygulama yerel depolamasında tema ve ses tercihleri ile yarım kalan konuşma gibi yalnız o cihaza ait bilgiler tutulur; bunlar cihazından çıkmaz. Hatırlatma tercihleri ve yapay zekâ izinleri ise bütün cihazlarında geçerli olsun diye hesabına yazılır (3. bölüm).
+Web'de yalnız zorunlu oturum çerezi kullanılır (giriş yaptığını hatırlamak için, {{sessionMaxDays}} gün); bu nedenle çerez onay bandı yoktur. Pazarlama ya da takip çerezi kullanılmaz. Tarayıcı ve uygulama yerel depolamasında tema ve ses tercihleri ile yarım kalan konuşma gibi yalnız o cihaza ait bilgiler tutulur; bunlar cihazından çıkmaz. Kullanım ölçümü (8. bölüm) için cihazına bir şey yazılmaz ve cihazından bir şey okunmaz. Hatırlatma tercihleri, yapay zekâ izinleri ve "Kullanım verisi gönder" tercihin ise bütün cihazlarında geçerli olsun diye hesabına yazılır (3. bölüm). Kayıt, giriş ve parola sıfırlama ekranındaki bot koruması (Cloudflare Turnstile) güvenlik için zorunludur ve pazarlama ya da takip amacı taşımaz.
 
 ## 8. Ürün analitiği ve kapatma
 
@@ -138,7 +158,7 @@ Lernomi, hangi özelliklerin kullanıldığını anlamak için kendi sunucusuna 
 - Etiket yalnız harf, rakam, alt çizgi, iki nokta ve tire kabul eder. Salt rakamdan da oluşamaz. Bu yüzden bir e-posta adresi, bağlantı ya da telefon numarası taşıması mümkün değildir.
 - Bunun dışında serbest metin gönderilmez ve olaylar üçüncü tarafa gitmez.
 
-Ayarlar › Gizlilik bölümündeki "Kullanım verisi gönder" anahtarıyla bunu kapatabilirsin. Bu, KVKK ve GDPR m.21'deki itiraz hakkının karşılığıdır. Kapattığında yalnız hizmet için zorunlu kayıtlar tutulur.
+Ayarlar › Gizlilik bölümündeki "Kullanım verisi gönder" anahtarıyla bunu kapatabilirsin. Bu, KVKK ve GDPR m.21'deki itiraz hakkının karşılığıdır. Tercihin hesabına (hesapsız kullanımda misafir kimliğine) kaydedilir, bütün cihazlarında geçerlidir ve sunucu da ona uyar: kapalıyken ürün analitiği olayı yazılmaz; yalnız hizmetin işleyişi için zorunlu kayıtlar (ör. bir bildirimin teslim edildiği, bir satın almanın doğrulandığı) tutulur.
 
 ## 8a. Ticari elektronik ileti
 
@@ -148,13 +168,16 @@ Sana yalnız hizmetle ilgili iletiler gönderilir: e-posta doğrulama, parola s�
 
 - Hesap ve öğrenme verisi: hesabın açık olduğu sürece; hesap silinince tümü silinir.
 - Misafir verisi (hesapsız kullanım): misafir kimliğini {{sessionMaxDays}} gün kullanmazsan oturumu düşer ve veriler en geç 7 gün içinde silinir; var olan bir hesaba birleşince ya da eklememeyi seçince misafir kimliği hemen silinir, e-postayla hesap oluşturunca hesabın kendisi olur.
-- Konuşma pratiği kayıtları (söylediğin cümle ve model yanıtı): {{speechLogDays}} gün, sonra kendiliğinden silinir.
-- Ses kayıtları: saklanmaz.
+- Konuşma pratiği kayıtları (söylediğin cümle ve model yanıtı): {{speechLogDays}} gün, sonra en geç bir gün içinde kendiliğinden silinir.
+- Ses kayıtları: Lernomi sunucusunda saklanmaz (sağlayıcı tarafı için 4. bölüm).
+- Anonim hata raporları: kişiye bağlanmaz; hata grubu giderilene kadar.
+- Sunucu günlükleri: web sunucusu erişim günlükleri (IP adresi dahil) 14 gün, sistem ve uygulama günlükleri 30 gün.
+- İçerik ve kullanıcı bildirimleri: inceleme kapandıktan sonra 1 yıl.
 - Mobil bildirim jetonu: çıkış yapana ya da jeton geçersizleşene kadar.
 - Oturum kayıtları (IP, cihaz tanımı): oturum süresince, en çok {{sessionMaxDays}} gün.
 - Mali kayıtlar (abonelik faturaları): Türk Ticaret Kanunu ve Vergi Usul Kanunu'nun öngördüğü süre (10 yıl), yalnız uygulama mağazasının (Google Play{{ifIos}} ya da App Store{{/ifIos}}) ilettiği kadarıyla.
 - Hak talepleri yazışmaları: talep kapandıktan sonra 2 yıl.
-- Sunucu yedekleri: silinen veriler yedeklerden en geç {{backupRetentionDays}} gün içinde düşer; yedekler yalnız felaket kurtarma için kullanılır, silinen hesap yedekten geri yüklenmez.
+- Sunucu yedekleri (Cloudflare R2'deki şifreli harici kopya dahil): silinen veriler yedeklerden en geç {{backupRetentionDays}} gün içinde düşer; yedekler yalnız felaket kurtarma için kullanılır, silinen hesap yedekten geri yüklenmez.
 
 ## 10. Hakların
 
@@ -174,7 +197,7 @@ KVKK m.11 ve GDPR m.15-22 uyarınca şunları isteyebilirsin:
 
 ## 11. Hesabını ve verilerini silme
 
-Hesabını iki yoldan silebilirsin: uygulamada **Profil › Ayarlar › Hesap › Hesabı sil**, ya da web'de [www.lernomi.app/account/delete]({{link:deleteAccount}}). Silme anında hesabın, ilerlemen, yazıların, konuşma kayıtların, kullanım olayların ve sosyal izlerin (arkadaşlıklar, tepkiler) kalıcı olarak silinir; geri alınamaz. Yasal saklama yükümlülüğü olan mali kayıtlar anonimleştirilerek tutulur. Mağaza aboneliğin varsa onu aldığın mağaza üzerinden ayrıca iptal etmen gerekir.
+Hesabını iki yoldan silebilirsin: uygulamada **Profil › Ayarlar › Hesap › Hesabı sil**, ya da web'de [www.lernomi.app/account/delete]({{link:deleteAccount}}). Silme anında hesabın, ilerlemen, yazıların, konuşma kayıtların, kullanım olayların ve sosyal izlerin (arkadaşlıklar, tepkiler) kalıcı olarak silinir; geri alınamaz. Yasal saklama yükümlülüğü olan mali kayıtlar anonimleştirilerek tutulur. Satın alma altyapısındaki (RevenueCat) müşteri kaydının silinmesi de istenir; mağazadaki (Google Play{{ifIos}} ya da App Store{{/ifIos}}) satın alma kaydı ise mağazanın kendi yükümlülükleri gereği mağazada kalır. Mağaza aboneliğin varsa onu aldığın mağaza üzerinden ayrıca iptal etmen gerekir.
 
 Hesapsız (misafir) kullanıyorsan verilerini uygulamada **Profil › Misafir verilerini sil** ile silebilirsin: misafir kimliği ve bütün ilerlemen sunucudan ve cihazından kalıcı olarak silinir.
 
@@ -208,11 +231,11 @@ The controller of the personal data covered by this policy, within the meaning o
 
 {{entityBlock:controller:contact}}
 
-The app is published in the app stores and the subscription revenue is collected by a different person. The publisher processes no personal data except on the controller's instructions; for the order, subscription and review data they access through the Play Console{{ifIos}} and App Store Connect{{/ifIos}} they act as a **processor**, and a processing agreement between the parties covers this (Art. 28 GDPR, Art. 12 KVKK).
+The app is published in the app stores and the subscription revenue is collected by a different person. The publisher processes no personal data except on the controller's instructions; for the order, subscription and review data they access through the Play Console{{ifIos}} and App Store Connect{{/ifIos}} they act as a **processor** (Art. 28 GDPR, Art. 12 KVKK).
 
 {{entityBlock:publisher}}
 
-The servers run on {{hosting}}; the data is stored there. The controller is not established in Türkiye; for applications made from Türkiye and for correspondence with the Turkish authority, the representative identified above has been designated. Designating a representative does not remove the controller's own responsibility.
+The servers run on {{hosting}}; the data is stored there. Traffic to the site and the app passes through Cloudflare's network before it reaches the server (section 6). The controller is not established in Türkiye; applications from Türkiye can be sent to {{privacyEmailTr}} or to the postal address above. The provider identification (Impressum) is on the [imprint page]({{link:impressum}}).
 
 **Collection method and legal ground (KVKK Art. 10):** Data is collected electronically, by automated or partly automated means, through registration and settings forms, the sign-in provider you choose (Google or Apple), in-app interactions, your device's notification service and the microphone; the legal ground for each item is given in the table in section 3.
 
@@ -232,22 +255,26 @@ The servers run on {{hosting}}; the data is stored there. The controller is not 
 | Learning data: word state, review results, streak, XP, achievements, speaking practice and exam results | While you use the app | Spaced repetition schedule, progress, leaderboard | Performance of a contract | For the life of the account |
 | Texts you write and say (writing tasks, speaking practice, exam answers) | You | AI assessment, feedback and replies in speaking practice | Explicit consent for sending to language model providers (Art. 5/1 / Art. 6(1)(a)): in-app consent screen, revocable. Performance of a contract for keeping the results in your account | Assessments for the life of the account; speaking practice logs for {{speechLogDays}} days |
 | Microphone audio sent to the server | The microphone: walk mode with the screen off or the phone in your pocket; on the web also pronunciation scores and spoken answers in exams | Transcribing what you said and scoring your pronunciation | Explicit consent (Art. 5/1 / Art. 6(1)(a)); in-app consent screen, revocable | Not kept; deleted as soon as recognition finishes, only the recognised text is retained |
-| Usage events: which screen opened, round started/finished, screen width and platform | The app | Improving the product (first-party analytics) | Legitimate interest (Art. 5/2-f / Art. 6(1)(f)); can be switched off in settings | For the life of the account |
+| Usage events: which screen opened, round started/finished, screen width and platform | The app | Improving the product (first-party analytics) | Legitimate interest (Art. 5/2-f / Art. 6(1)(f)); can be switched off in settings, and the choice is saved to your account (section 8) | For the life of the account |
+| Anonymous error report: error message, stack trace (where in the code the error happened), screen name, app version and platform | The app and the website, when an error occurs | Finding and fixing errors | Legitimate interest (Art. 5/2-f / Art. 6(1)(f)) | No user id is attached; before it is stored the report is scrubbed of e-mail addresses, tokens and long numbers. Kept until the error group is fixed |
 | IP address and browser/device description (in the session record) | Your connection | Session security, abuse prevention and rate limiting | Legitimate interest (security) | For the life of the session (at most {{sessionMaxDays}} days) |
+| Server logs: IP address, requested address, time, browser description; the app's error and operational messages (may contain a user id) | Your connection and the server itself | Security, detecting attacks and abuse, debugging | Legitimate interest (security) | Web server access logs 14 days; system and application logs 30 days |
+| Bot protection (Cloudflare Turnstile): IP address, browser/device signals | Sign-up, sign-in and password reset screen | Preventing fake accounts and automated attacks | Legitimate interest (security) | Lernomi uses only the verification result and does not store the signals |
 | Social profile: username, visibility and request preferences | You | Letting your friends and, if visibility is "public", other users find you | Performance of a contract; consent for the preferences | For the life of the account |
-| Friend requests, friend list, blocks, user reports | You and your friends | Friend features, safety and moderation | Performance of a contract; legitimate interest (safety) | For the life of the account; reports until the review closes |
+| Friend requests, friend list, blocks, user reports | You and your friends | Friend features, safety and moderation | Performance of a contract; legitimate interest (safety) | For the life of the account; reports 1 year after the review closes |
 | Activity feed, reactions, nudges, shared quests, inbox notifications | While you use the app | Sharing progress with your friends and motivation (visible only to your friends) | Performance of a contract; can be switched off with the "show my activity" preference | For the life of the account |
 | Web push subscription (browser endpoint and encryption keys) | Your browser, if you allow it | Reminder notifications on the web | Consent (browser permission) | Until the permission is withdrawn or the endpoint expires |
 | Reminder preferences: daily reminder, streak protection and weekly exam toggles, reminder time, time zone | You (the time zone is taken from your browser when you turn on notifications on the web) | Sending reminders at your local time and keeping your choice the same on all your devices | Performance of a contract | For the life of the account |
 | Mobile notification token and platform (Android/iOS) | Your device, if you allow notifications | Delivering reminders and friend notifications (requests, nudges, shared quests) to your phone; delivery is handled by Firebase Cloud Messaging | Consent (the operating system's notification permission) | Until you sign out or the token expires; deleted immediately when the account is deleted |
 | Your AI and voice consent decisions (purpose, decision, date, text version, platform) | You (consent screen, Settings › Privacy) | Being able to show that consent was given or withdrawn | Legal obligation (Art. 5/2-ç / Art. 6(1)(c) and Art. 7(1) GDPR) | For the life of the account |
+| The version of the terms of use you accepted and the date of acceptance | Sign-up and sign-in | Being able to show which contract text you accepted and when, and to send it to you | Conclusion and performance of a contract; legal obligation (storing the contract) | For the life of the account |
 | Purchase and subscription state | App store / RevenueCat | Unlocking Premium features | Performance of a contract; legal obligation (accounting) | For the life of the account; financial records for the statutory period |
-| Your content reports | You ("Report") | Reviewing inappropriate AI answers | Legitimate interest (a safe service) | Until the review closes |
+| Your content reports | You ("Report") | Reviewing inappropriate AI answers | Legitimate interest (a safe service) | 1 year after the review closes |
 | Support messages and rights requests you send | You | Answering the request, statutory record | Legal obligation (KVKK Art. 13, GDPR Art. 12) | 2 years after the request closes |
 
 **Using the app without an account (guest):** If you use the app without creating an account, the learning data, personalisation preferences, usage events and session record described above are processed under a guest identity instead of an account. Guests have no social features, nothing is sent to server-side speech recognition, and there is no notification token and no purchase; reminders are set up only on your device and are not written to the server. Sending text to AI is limited to a single writing or speaking assessment per guest identity and, as with an account, happens only with your explicit consent (section 5); your consent decision is recorded under the guest identity and can be withdrawn under Settings › Privacy. The guest identity's token is stored only in your device's secure storage (iOS Keychain, Android Keystore) and used only to keep or restore your session and to move your progress into an account. If you create an account with e-mail, the guest identity becomes your account itself (it stays a guest until you verify your e-mail address). If you create an account with a social sign-in, your guest progress moves into it. If you sign in to an existing account that already has progress, you are asked whether to add this progress: if you add it, it is combined with that account's progress (for the same word, lesson or exercise the most advanced state and the total effort are kept, and your account's settings stay in force); if you don't, the guest data is deleted; in both cases the guest identity is deleted.
 
-**What is not collected:** location, contacts, calendar, photos, advertising identifier, hardware identifiers (such as IMEI or serial number), crash reports, special categories of personal data. The only device identifiers collected are the mobile notification token and the web push subscription above; both are used solely to deliver notifications. Lernomi shows no ads, contains no third-party analytics or tracking SDK, and sells no data.
+**What is not collected:** location, contacts, calendar, photos, advertising identifier, hardware identifiers (such as IMEI or serial number), special categories of personal data. The only device identifiers collected are the mobile notification token and the web push subscription above; both are used solely to deliver notifications. Lernomi shows no ads, contains no third-party analytics, crash reporting or tracking SDK, and sells no data. The anonymous error report sent when an error occurs in the app or on the website (in the table above) goes only to Lernomi's own server and is not passed to third parties; the app stores may separately collect their own crash statistics (Play Console, App Store Connect) under their own terms.
 
 ## 4. Microphone and audio recordings
 
@@ -255,7 +282,7 @@ The microphone opens only where you answer by speaking, and only when you start 
 
 In the mobile app, while the screen is on, recognition is performed by the device's own speech recognition service; on the web, the browser's speech recognition service is used. Whether that service processes the audio on the device or sends it to the servers of the operating system or browser provider (such as Google or Apple) depends on the device, the browser, the language and the settings, and is governed by that provider's own terms; this path does not go through the Lernomi server.
 
-Audio reaches the Lernomi server only in the following cases, and only if you have given permission: walk mode with the screen off or the phone in your pocket; and on the web, pronunciation scores and transcribing spoken answers in exams. The recording is sent as a short audio clip and passed to one of the speech recognition providers listed below. The audio file is not stored on the server or at the provider; only the recognised text, the expected word and the clip length are written to the usage record.
+Audio reaches the Lernomi server only in the following cases, and only if you have given permission: walk mode with the screen off or the phone in your pocket; and on the web, pronunciation scores and transcribing spoken answers in exams. The recording is sent as a short audio clip and passed to one of the speech recognition providers listed below. The audio file is not stored on the Lernomi server; only the recognised text, the expected word and the clip length are written to the usage record. On the provider side: audio sent to Speechmatics is deleted once the recognition job finishes; at Deepgram, participation in model training is switched off.
 
 - In walk mode the microphone stays open until you stop the mode in the app; on Android a persistent notification is shown during that time. On other screens the microphone is open only while you say your answer.
 - While the screen is off, recording runs through the background mechanism the operating system provides for this: a microphone-type foreground service on Android{{ifIos}}, a background audio session on iOS{{/ifIos}}. The system microphone indicator stays on.
@@ -280,7 +307,7 @@ The spaced repetition schedule, the content of the daily round, the level sugges
 
 ## 5. Texts processed by AI
 
-If you have given permission, your speaking practice (roleplay), writing tasks and exam answers are sent to language model providers in order to generate feedback. What is sent is only the text you wrote or said and the scenario of the speaking practice; your name and e-mail are not sent. The providers operate under API terms and data processing agreements in which they undertake not to use the data for model training. The app states clearly that AI characters are not real people (transparency under Art. 50 of the EU AI Act). Answers can contain mistakes; you can flag them with the "Report" button under each answer, and reports are reviewed by a human. Lernomi makes no decision about you that is based solely on automated processing and produces a legal effect.
+If you have given permission, your speaking practice (roleplay), writing tasks and exam answers are sent to language model providers in order to generate feedback. What is sent is only the text you wrote or said and the scenario of the speaking practice; your name and e-mail are not sent. The text is sent to the providers through their API only to generate a reply; the terms each provider works under are listed in the table in section 6. The app states clearly that AI characters are not real people (transparency under Art. 50 of the EU AI Act). Answers can contain mistakes; you can flag them with the "Report" button under each answer, and reports are reviewed by a human. Lernomi makes no decision about you that is based solely on automated processing and produces a legal effect.
 
 **Permission:** Before any text goes to a provider for the first time, a consent screen shows what will be sent and names the providers it may go to. Until you press "Allow and continue", your text goes to no provider; this rule is enforced on the server, not in the app, so an older app version or another device cannot bypass it. If you decline, practice continues without AI: conversations follow a script, and writing and exam answers get a rule-based estimate or stay unscored. Your decision is saved to your account with its date and text version and applies on all your devices; you can change it at any time under Settings › Privacy. If the list of recipients changes, you are asked again.
 
@@ -290,7 +317,7 @@ When you press "Allow and continue" on the consent screen you give the following
 
 ## 6. Service providers that receive data, and transfers abroad
 
-The providers below work only for the stated purpose and only with the data that task requires; none of them may use the data for their own purposes. The servers are in Germany. The safeguard used for transfers from Türkiye to the EU and from the EU to the USA/United Kingdom is in the last column: the standard contract published by the Turkish Board under KVKK Art. 9, and standard contractual clauses or an adequacy decision under Chapter V GDPR.
+Data is sent to the providers below only for the stated purpose and only to the extent that task requires. The servers are in Germany; however, all traffic to the site and the app passes through Cloudflare's global network (reverse proxy and bot protection) before it reaches the server, and the connection encryption is also terminated there. The table gives each provider's region and the safeguard relied on for transfers outside the EU; the app stores and the sign-in providers (Google, Apple) are independent controllers for their own services and subject to their own privacy terms.
 
 {{processorsTable}}
 
@@ -298,7 +325,7 @@ Data is transferred to public authorities only where there is a legal obligation
 
 ## 7. Cookies and local storage
 
-On the web only the strictly necessary session cookie is used (to remember that you are signed in, for {{sessionMaxDays}} days); for that reason there is no cookie consent banner. No marketing or tracking cookies are used. Browser and app local storage holds device-specific things like theme and sound preferences and an unfinished speaking practice; these never leave your device. Reminder preferences and AI permissions, by contrast, are saved to your account so that they apply on all your devices (section 3).
+On the web only the strictly necessary session cookie is used (to remember that you are signed in, for {{sessionMaxDays}} days); for that reason there is no cookie consent banner. No marketing or tracking cookies are used. Browser and app local storage holds device-specific things like theme and sound preferences and an unfinished speaking practice; these never leave your device. Nothing is written to or read from your device for usage measurement (section 8). Reminder preferences, AI permissions and your "Send usage data" choice, by contrast, are saved to your account so that they apply on all your devices (section 3). The bot protection on the sign-up, sign-in and password reset screen (Cloudflare Turnstile) is strictly necessary for security and serves no marketing or tracking purpose.
 
 ## 8. Product analytics and switching them off
 
@@ -309,7 +336,7 @@ To understand which features are used, Lernomi writes short usage events to its 
 - The label accepts only letters, digits, underscore, colon and hyphen, and cannot consist of digits alone. It therefore cannot hold an e-mail address, a link or a phone number.
 - Nothing else is sent as free text, and the events go to no third party.
 
-You can switch this off with the "Send usage data" toggle under Settings › Privacy. This is the right to object under KVKK and Art. 21 GDPR. Once it is off, only the records strictly necessary for the service are kept.
+You can switch this off with the "Send usage data" toggle under Settings › Privacy. This is the right to object under KVKK and Art. 21 GDPR. Your choice is saved to your account (to the guest identity when you use the app without an account), applies on all your devices and is respected by the server too: while it is off, no product analytics event is written; only the records strictly necessary for the service to work (e.g. that a notification was delivered or a purchase was verified) are kept.
 
 ## 8a. Commercial electronic messages
 
@@ -319,13 +346,16 @@ You receive only service-related messages: e-mail verification, password reset, 
 
 - Account and learning data: as long as the account exists; when the account is deleted, all of it is deleted.
 - Guest data (use without an account): if you do not use the guest identity for {{sessionMaxDays}} days, its session expires and the data is deleted within 7 days at the latest; when combined with an existing account or when you choose not to add it, the guest identity is deleted immediately; when you create an account with e-mail, it becomes your account itself.
-- Speaking practice logs (the sentence you said and the model's reply): {{speechLogDays}} days, then deleted automatically.
-- Audio recordings: not kept.
+- Speaking practice logs (the sentence you said and the model's reply): {{speechLogDays}} days, then deleted automatically within one more day at the latest.
+- Audio recordings: not kept on the Lernomi server (for the provider side see section 4).
+- Anonymous error reports: not linked to a person; until the error group is fixed.
+- Server logs: web server access logs (including IP addresses) 14 days, system and application logs 30 days.
+- Content and user reports: 1 year after the review closes.
 - Mobile notification token: until you sign out or the token expires.
 - Session records (IP, device description): for the life of the session, at most {{sessionMaxDays}} days.
 - Financial records (subscription invoices): the period required by the Turkish Commercial Code and the Tax Procedure Law (10 years), and only to the extent the app store (Google Play{{ifIos}} or the App Store{{/ifIos}}) passes them on.
 - Correspondence about rights requests: 2 years after the request closes.
-- Server backups: deleted data drops out of the backups within {{backupRetentionDays}} days at the latest; backups are used only for disaster recovery, and a deleted account is never restored from a backup.
+- Server backups (including the encrypted off-site copy in Cloudflare R2): deleted data drops out of the backups within {{backupRetentionDays}} days at the latest; backups are used only for disaster recovery, and a deleted account is never restored from a backup.
 
 ## 10. Your rights
 
@@ -345,7 +375,7 @@ Under KVKK Art. 11 and Art. 15-22 GDPR you may ask to:
 
 ## 11. Deleting your account and your data
 
-You can delete your account in two ways: in the app under **Profile › Settings › Account › Delete account**, or on the web at [www.lernomi.app/account/delete]({{link:deleteAccount}}). At the moment of deletion your account, your progress, your texts, your speaking logs, your usage events and your social traces (friendships, reactions) are permanently deleted; this cannot be undone. Financial records subject to a statutory retention obligation are kept in anonymised form. If you have a store subscription, you need to cancel it separately in the store you bought it from.
+You can delete your account in two ways: in the app under **Profile › Settings › Account › Delete account**, or on the web at [www.lernomi.app/account/delete]({{link:deleteAccount}}). At the moment of deletion your account, your progress, your texts, your speaking logs, your usage events and your social traces (friendships, reactions) are permanently deleted; this cannot be undone. Financial records subject to a statutory retention obligation are kept in anonymised form. Deletion of your customer record in the purchase infrastructure (RevenueCat) is also requested; the purchase record at the store (Google Play{{ifIos}} or the App Store{{/ifIos}}) stays with the store under its own obligations. If you have a store subscription, you need to cancel it separately in the store you bought it from.
 
 If you use the app without an account (as a guest), you can delete your data in the app under **Profile › Delete guest data**: the guest identity and all of your progress are permanently deleted from the server and from your device.
 
@@ -379,11 +409,11 @@ Verantwortlicher für die von dieser Erklärung erfassten personenbezogenen Date
 
 {{entityBlock:controller:contact}}
 
-Die App wird von einer anderen Person in den App-Stores veröffentlicht, die auch die Abonnementeinnahmen vereinnahmt. Der Herausgeber verarbeitet personenbezogene Daten ausschließlich auf Weisung des Verantwortlichen; für die über die Play Console{{ifIos}} und App Store Connect{{/ifIos}} zugänglichen Bestell-, Abonnement- und Rezensionsdaten handelt er als **Auftragsverarbeiter**, und zwischen den Parteien besteht dazu ein Auftragsverarbeitungsvertrag (Art. 28 DSGVO, Art. 12 KVKK).
+Die App wird von einer anderen Person in den App-Stores veröffentlicht, die auch die Abonnementeinnahmen vereinnahmt. Der Herausgeber verarbeitet personenbezogene Daten ausschließlich auf Weisung des Verantwortlichen; für die über die Play Console{{ifIos}} und App Store Connect{{/ifIos}} zugänglichen Bestell-, Abonnement- und Rezensionsdaten handelt er als **Auftragsverarbeiter** (Art. 28 DSGVO, Art. 12 KVKK).
 
 {{entityBlock:publisher}}
 
-Die Server laufen bei {{hosting}}; dort werden die Daten gespeichert. Der Verantwortliche ist nicht in der Türkei niedergelassen; für Anträge aus der Türkei und für die Korrespondenz mit der türkischen Behörde ist der oben genannte Vertreter benannt. Die Benennung eines Vertreters berührt die eigene Verantwortlichkeit des Verantwortlichen nicht.
+Die Server laufen bei {{hosting}}; dort werden die Daten gespeichert. Der Datenverkehr zu Website und App läuft durch das Netz von Cloudflare, bevor er den Server erreicht (Abschnitt 6). Der Verantwortliche ist nicht in der Türkei niedergelassen; Anträge aus der Türkei können an {{privacyEmailTr}} oder an die oben genannte Postanschrift gerichtet werden. Die Anbieterkennzeichnung steht im [Impressum]({{link:impressum}}).
 
 **Art der Erhebung und Rechtsgrundlage (Art. 10 KVKK):** Die Daten werden elektronisch, automatisiert oder teilweise automatisiert über Registrierungs- und Einstellungsformulare, den von dir gewählten Anmeldeanbieter (Google oder Apple), Interaktionen in der App, den Benachrichtigungsdienst deines Geräts und das Mikrofon erhoben; die Rechtsgrundlage für jede Angabe steht in der Tabelle in Abschnitt 3.
 
@@ -403,22 +433,26 @@ Die Server laufen bei {{hosting}}; dort werden die Daten gespeichert. Der Verant
 | Lerndaten: Wortstatus, Wiederholungsergebnisse, Serie, XP, Erfolge, Ergebnisse von Sprechübungen und Prüfungen | Während der Nutzung der App | Wiederholungsplan, Fortschritt, Rangliste | Erfüllung eines Vertrags | Für die Dauer des Kontos |
 | Texte, die du schreibst und sprichst (Schreibaufgaben, Sprechpraxis, Prüfungsantworten) | Du | Bewertung, Rückmeldung und Antworten in der Sprechpraxis durch KI | Ausdrückliche Einwilligung für die Übermittlung an Sprachmodell-Anbieter (Art. 5/1 / Art. 6 Abs. 1 lit. a): Einwilligungsbildschirm in der App, widerruflich. Erfüllung eines Vertrags für die Speicherung der Ergebnisse in deinem Konto | Bewertungen für die Dauer des Kontos; Protokolle der Sprechpraxis {{speechLogDays}} Tage |
 | An den Server gesendetes Mikrofon-Audio | Mikrofon: Gehmodus bei ausgeschaltetem Bildschirm oder mit dem Telefon in der Tasche; im Web außerdem Aussprachebewertung und gesprochene Antworten in Prüfungen | Verschriftlichung des Gesagten und Bewertung der Aussprache | Ausdrückliche Einwilligung (Art. 5/1 / Art. 6 Abs. 1 lit. a); Einwilligungsbildschirm in der App, widerruflich | Wird nicht gespeichert; nach Abschluss der Erkennung gelöscht, nur der erkannte Text bleibt |
-| Nutzungsereignisse: welcher Bildschirm geöffnet wurde, Runde begonnen/beendet, Bildschirmbreite und Plattform | Die App | Verbesserung des Produkts (eigene Analyse, keine Dritten) | Berechtigtes Interesse (Art. 5/2-f / Art. 6 Abs. 1 lit. f); in den Einstellungen abschaltbar | Für die Dauer des Kontos |
+| Nutzungsereignisse: welcher Bildschirm geöffnet wurde, Runde begonnen/beendet, Bildschirmbreite und Plattform | Die App | Verbesserung des Produkts (eigene Analyse, keine Dritten) | Berechtigtes Interesse (Art. 5/2-f / Art. 6 Abs. 1 lit. f); in den Einstellungen abschaltbar, die Wahl wird in deinem Konto gespeichert (Abschnitt 8) | Für die Dauer des Kontos |
+| Anonymer Fehlerbericht: Fehlermeldung, Stacktrace (wo im Code der Fehler auftrat), Bildschirmname, App-Version und Plattform | App und Website, wenn ein Fehler auftritt | Fehler finden und beheben | Berechtigtes Interesse (Art. 5/2-f / Art. 6 Abs. 1 lit. f) | Es wird keine Nutzer-ID angehängt; vor dem Speichern werden E-Mail-Adressen, Tokens und lange Zahlen entfernt. Aufbewahrt, bis die Fehlergruppe behoben ist |
 | IP-Adresse und Browser-/Gerätebezeichnung (im Sitzungsdatensatz) | Deine Verbindung | Sitzungssicherheit, Missbrauchsabwehr und Ratenbegrenzung | Berechtigtes Interesse (Sicherheit) | Für die Dauer der Sitzung (höchstens {{sessionMaxDays}} Tage) |
+| Server-Logs: IP-Adresse, aufgerufene Adresse, Zeit, Browserbezeichnung; Fehler- und Betriebsmeldungen der App (können eine Nutzer-ID enthalten) | Deine Verbindung und der Server selbst | Sicherheit, Erkennung von Angriffen und Missbrauch, Fehlersuche | Berechtigtes Interesse (Sicherheit) | Zugriffsprotokolle des Webservers 14 Tage; System- und Anwendungsprotokolle 30 Tage |
+| Botschutz (Cloudflare Turnstile): IP-Adresse, Browser-/Gerätesignale | Bildschirm für Registrierung, Anmeldung und Passwort-Reset | Verhinderung von Fake-Konten und automatisierten Angriffen | Berechtigtes Interesse (Sicherheit) | Lernomi verwendet nur das Prüfergebnis und speichert die Signale nicht |
 | Soziales Profil: Benutzername, Sichtbarkeits- und Anfrageeinstellungen | Du | Damit deine Freunde und — bei Sichtbarkeit "öffentlich" — andere Nutzer dich finden | Erfüllung eines Vertrags; Einwilligung für die Einstellungen | Für die Dauer des Kontos |
-| Freundschaftsanfragen, Freundesliste, Blockierungen, Nutzermeldungen | Du und deine Freunde | Freundesfunktionen, Sicherheit und Moderation | Erfüllung eines Vertrags; berechtigtes Interesse (Sicherheit) | Für die Dauer des Kontos; Meldungen bis zum Abschluss der Prüfung |
+| Freundschaftsanfragen, Freundesliste, Blockierungen, Nutzermeldungen | Du und deine Freunde | Freundesfunktionen, Sicherheit und Moderation | Erfüllung eines Vertrags; berechtigtes Interesse (Sicherheit) | Für die Dauer des Kontos; Meldungen 1 Jahr nach Abschluss der Prüfung |
 | Aktivitäts-Feed, Reaktionen, Anstöße, gemeinsame Aufgaben, Posteingangs-Benachrichtigungen | Während der Nutzung der App | Teilen des Fortschritts mit deinen Freunden und Motivation (nur für deine Freunde sichtbar) | Erfüllung eines Vertrags; über die Einstellung "Aktivität zeigen" abschaltbar | Für die Dauer des Kontos |
 | Web-Push-Abonnement (Browser-Endpunkt und Verschlüsselungsschlüssel) | Dein Browser, wenn du es erlaubst | Erinnerungen im Web | Einwilligung (Browser-Berechtigung) | Bis zum Widerruf der Berechtigung oder zum Ungültigwerden des Endpunkts |
 | Erinnerungseinstellungen: Schalter für tägliche Erinnerung, Serienschutz und Wochenprüfung, Erinnerungszeit, Zeitzone | Du (die Zeitzone wird beim Aktivieren der Benachrichtigungen im Web aus deinem Browser übernommen) | Erinnerungen zu deiner Ortszeit senden und deine Auswahl auf allen Geräten gleich halten | Erfüllung eines Vertrags | Für die Dauer des Kontos |
 | Mobiles Benachrichtigungs-Token und Plattform (Android/iOS) | Dein Gerät, wenn du Benachrichtigungen erlaubst | Erinnerungen und Freundes-Benachrichtigungen (Anfragen, Anstöße, gemeinsame Aufgaben) auf dein Telefon zustellen; die Zustellung übernimmt Firebase Cloud Messaging | Einwilligung (Benachrichtigungsberechtigung des Betriebssystems) | Bis du dich abmeldest oder das Token ungültig wird; bei Kontolöschung sofort gelöscht |
 | Deine Entscheidungen zur KI- und Spracherlaubnis (Zweck, Entscheidung, Datum, Textversion, Plattform) | Du (Einwilligungsbildschirm, Einstellungen › Datenschutz) | Nachweis, dass die Einwilligung erteilt oder widerrufen wurde | Rechtliche Verpflichtung (Art. 5/2-ç / Art. 6 Abs. 1 lit. c und Art. 7 Abs. 1 DSGVO) | Für die Dauer des Kontos |
+| Version der von dir angenommenen Nutzungsbedingungen und Datum der Annahme | Registrierung und Anmeldung | Nachweis, welchen Vertragstext du wann angenommen hast, und Übermittlung an dich | Abschluss und Erfüllung eines Vertrags; rechtliche Verpflichtung (Speicherung des Vertrags) | Für die Dauer des Kontos |
 | Kauf- und Abonnementstatus | App-Store / RevenueCat | Freischalten der Premium-Funktionen | Erfüllung eines Vertrags; rechtliche Verpflichtung (Buchhaltung) | Für die Dauer des Kontos; Finanzunterlagen für die gesetzliche Frist |
-| Deine Inhaltsmeldungen | Du ("Melden") | Prüfung unangemessener KI-Antworten | Berechtigtes Interesse (sicherer Dienst) | Bis zum Abschluss der Prüfung |
+| Deine Inhaltsmeldungen | Du ("Melden") | Prüfung unangemessener KI-Antworten | Berechtigtes Interesse (sicherer Dienst) | 1 Jahr nach Abschluss der Prüfung |
 | Support-Nachrichten und Rechteanfragen | Du | Beantwortung der Anfrage, gesetzliche Dokumentation | Rechtliche Verpflichtung (Art. 13 KVKK, Art. 12 DSGVO) | 2 Jahre nach Abschluss der Anfrage |
 
 **Nutzung ohne Konto (Gast):** Nutzt du die App ohne Konto, werden die oben beschriebenen Lerndaten, Personalisierungseinstellungen, Nutzungsereignisse und der Sitzungseintrag unter einer Gastidentität statt unter einem Konto verarbeitet. Gäste haben keine sozialen Funktionen, es wird nichts an die serverseitige Spracherkennung gesendet, und es gibt weder ein Benachrichtigungs-Token noch Käufe; Erinnerungen werden nur auf deinem Gerät eingerichtet und nicht auf den Server geschrieben. Das Senden von Text an eine KI ist auf eine einzige Schreib- oder Sprechbewertung pro Gastidentität begrenzt und geschieht wie beim Konto nur mit deiner ausdrücklichen Einwilligung (Abschnitt 5); deine Entscheidung wird unter der Gastidentität gespeichert und lässt sich unter Einstellungen › Datenschutz widerrufen. Das Token der Gastidentität wird nur im sicheren Speicher deines Geräts (iOS-Schlüsselbund, Android Keystore) gespeichert und nur verwendet, um deine Sitzung zu erhalten oder wiederherzustellen und deinen Fortschritt in ein Konto zu übernehmen. Erstellst du ein Konto per E-Mail, wird die Gastidentität zu deinem Konto selbst (bis du deine E-Mail-Adresse bestätigst, bleibt sie ein Gast). Erstellst du ein Konto über eine soziale Anmeldung, wird dein Gastfortschritt übernommen. Meldest du dich bei einem bestehenden Konto mit Fortschritt an, wirst du gefragt, ob du diesen Fortschritt hinzufügen willst: Fügst du ihn hinzu, wird er mit dessen Fortschritt zusammengeführt (bei demselben Wort, derselben Lektion oder Übung bleiben der weiteste Stand und der gesamte Aufwand erhalten, die Einstellungen deines Kontos gelten weiter); wenn nicht, werden die Gastdaten gelöscht; in beiden Fällen wird die Gastidentität gelöscht.
 
-**Was nicht erhoben wird:** Standort, Kontakte, Kalender, Fotos, Werbe-ID, Hardwarekennungen (etwa IMEI oder Seriennummer), Absturzberichte, besondere Kategorien personenbezogener Daten. Die einzigen erhobenen Gerätekennungen sind das oben genannte mobile Benachrichtigungs-Token und das Web-Push-Abonnement; beide dienen nur der Zustellung von Benachrichtigungen. Lernomi zeigt keine Werbung, enthält kein Analyse- oder Tracking-SDK Dritter und verkauft keine Daten.
+**Was nicht erhoben wird:** Standort, Kontakte, Kalender, Fotos, Werbe-ID, Hardwarekennungen (etwa IMEI oder Seriennummer), besondere Kategorien personenbezogener Daten. Die einzigen erhobenen Gerätekennungen sind das oben genannte mobile Benachrichtigungs-Token und das Web-Push-Abonnement; beide dienen nur der Zustellung von Benachrichtigungen. Lernomi zeigt keine Werbung, enthält kein Analyse-, Absturzberichts- oder Tracking-SDK Dritter und verkauft keine Daten. Der anonyme Fehlerbericht, der bei einem Fehler in der App oder auf der Website gesendet wird (Tabelle oben), geht nur an den eigenen Server von Lernomi und wird nicht an Dritte weitergegeben; die App-Stores können ihre eigenen Absturzstatistiken (Play Console, App Store Connect) nach ihren eigenen Bedingungen gesondert erheben.
 
 ## 4. Mikrofon und Audioaufnahmen
 
@@ -426,7 +460,7 @@ Das Mikrofon öffnet sich nur dort, wo du sprechend antwortest, und nur, wenn du
 
 In der mobilen App übernimmt bei eingeschaltetem Bildschirm der geräteeigene Spracherkennungsdienst die Erkennung; im Web wird der Spracherkennungsdienst des Browsers verwendet. Ob dieser Dienst das Audio auf dem Gerät verarbeitet oder an die Server des Betriebssystem- oder Browseranbieters (etwa Google oder Apple) sendet, hängt vom Gerät, vom Browser, von der Sprache und von den Einstellungen ab und richtet sich nach den Bedingungen dieses Anbieters; über den Lernomi-Server läuft dieser Weg nicht.
 
-Audio gelangt nur in folgenden Fällen und nur mit deiner Erlaubnis an den Lernomi-Server: im Gehmodus bei ausgeschaltetem Bildschirm oder mit dem Telefon in der Tasche; im Web außerdem für die Aussprachebewertung und die Verschriftlichung gesprochener Antworten in Prüfungen. Die Aufnahme wird als kurzer Audioausschnitt gesendet und an einen der unten aufgeführten Spracherkennungsanbieter weitergegeben. Die Audiodatei wird weder auf dem Server noch beim Anbieter gespeichert; nur der erkannte Text, das erwartete Wort und die Cliplänge werden im Nutzungsdatensatz festgehalten.
+Audio gelangt nur in folgenden Fällen und nur mit deiner Erlaubnis an den Lernomi-Server: im Gehmodus bei ausgeschaltetem Bildschirm oder mit dem Telefon in der Tasche; im Web außerdem für die Aussprachebewertung und die Verschriftlichung gesprochener Antworten in Prüfungen. Die Aufnahme wird als kurzer Audioausschnitt gesendet und an einen der unten aufgeführten Spracherkennungsanbieter weitergegeben. Die Audiodatei wird nicht auf dem Lernomi-Server gespeichert; nur der erkannte Text, das erwartete Wort und die Cliplänge werden im Nutzungsdatensatz festgehalten. Auf Anbieterseite: An Speechmatics gesendetes Audio wird nach Abschluss des Erkennungsauftrags gelöscht; bei Deepgram ist die Teilnahme am Modelltraining abgeschaltet.
 
 - Im Gehmodus bleibt das Mikrofon geöffnet, bis du den Modus in der App beendest; unter Android ist in dieser Zeit eine dauerhafte Benachrichtigung sichtbar. Auf anderen Bildschirmen ist das Mikrofon nur geöffnet, während du deine Antwort sprichst.
 - Bei ausgeschaltetem Bildschirm läuft die Aufnahme über den Mechanismus, den das Betriebssystem dafür vorsieht: unter Android ein Vordergrunddienst vom Typ "Mikrofon"{{ifIos}}, unter iOS eine Hintergrund-Audiositzung{{/ifIos}}. Die System-Mikrofonanzeige bleibt an.
@@ -451,7 +485,7 @@ Der Wiederholungsplan, der Inhalt der Tagesrunde, der Niveauvorschlag und die Wo
 
 ## 5. Von KI verarbeitete Texte
 
-Wenn du es erlaubt hast, werden deine Sprechpraxis (Rollenspiel), Schreibaufgaben und Prüfungsantworten zur Erzeugung von Rückmeldungen an Anbieter von Sprachmodellen gesendet. Gesendet wird nur der von dir geschriebene oder gesprochene Text und das Szenario der Sprechübung; Name und E-Mail-Adresse werden nicht gesendet. Die Anbieter arbeiten unter API-Bedingungen und Auftragsverarbeitungsverträgen, in denen sie zusagen, die Daten nicht für Modelltraining zu verwenden. Die App weist deutlich darauf hin, dass KI-Figuren keine echten Personen sind (Transparenz nach Art. 50 der KI-Verordnung der EU). Antworten können Fehler enthalten; du kannst sie über die Schaltfläche "Melden" unter jeder Antwort melden, und Meldungen werden von einem Menschen geprüft. Lernomi trifft über dich keine ausschließlich auf automatisierter Verarbeitung beruhende Entscheidung mit rechtlicher Wirkung.
+Wenn du es erlaubt hast, werden deine Sprechpraxis (Rollenspiel), Schreibaufgaben und Prüfungsantworten zur Erzeugung von Rückmeldungen an Anbieter von Sprachmodellen gesendet. Gesendet wird nur der von dir geschriebene oder gesprochene Text und das Szenario der Sprechübung; Name und E-Mail-Adresse werden nicht gesendet. Der Text geht über die API der Anbieter nur zur Erzeugung einer Antwort an sie; unter welchen Bedingungen jeder Anbieter arbeitet, steht in der Tabelle in Abschnitt 6. Die App weist deutlich darauf hin, dass KI-Figuren keine echten Personen sind (Transparenz nach Art. 50 der KI-Verordnung der EU). Antworten können Fehler enthalten; du kannst sie über die Schaltfläche "Melden" unter jeder Antwort melden, und Meldungen werden von einem Menschen geprüft. Lernomi trifft über dich keine ausschließlich auf automatisierter Verarbeitung beruhende Entscheidung mit rechtlicher Wirkung.
 
 **Erlaubnis:** Bevor ein Text zum ersten Mal an einen Anbieter geht, zeigt ein Einwilligungsbildschirm, was gesendet wird, und nennt die Anbieter, an die er gehen kann. Solange du nicht auf "Erlauben und fortfahren" tippst, geht dein Text an keinen Anbieter; diese Regel wird auf dem Server durchgesetzt, nicht in der App, sodass auch eine ältere App-Version oder ein anderes Gerät sie nicht umgehen kann. Lehnst du ab, übst du ohne KI weiter: Gespräche folgen einem Skript, Schreib- und Prüfungsantworten erhalten eine regelbasierte Schätzung oder bleiben unbewertet. Deine Entscheidung wird mit Datum und Textversion in deinem Konto gespeichert und gilt auf all deinen Geräten; du kannst sie jederzeit unter Einstellungen › Datenschutz ändern. Ändert sich die Liste der Empfänger, wirst du erneut gefragt.
 
@@ -461,7 +495,7 @@ Wenn du auf dem Einwilligungsbildschirm auf "Erlauben und fortfahren" tippst, gi
 
 ## 6. Dienstleister, die Daten erhalten, und Übermittlung ins Ausland
 
-Die folgenden Anbieter arbeiten nur zum angegebenen Zweck und nur mit den für diese Aufgabe erforderlichen Daten; keiner von ihnen darf die Daten für eigene Zwecke verwenden. Die Server stehen in Deutschland. Die für Übermittlungen aus der Türkei in die EU und aus der EU in die USA bzw. das Vereinigte Königreich verwendete Garantie steht in der letzten Spalte: der von der türkischen Behörde nach Art. 9 KVKK veröffentlichte Standardvertrag sowie Standardvertragsklauseln oder ein Angemessenheitsbeschluss nach Kapitel V DSGVO.
+An die folgenden Anbieter gehen Daten nur zum angegebenen Zweck und nur im für diese Aufgabe erforderlichen Umfang. Die Server stehen in Deutschland; der gesamte Datenverkehr zu Website und App läuft jedoch durch das globale Netz von Cloudflare (Reverse Proxy und Botschutz), bevor er den Server erreicht, und die Verbindungsverschlüsselung wird auch dort entschlüsselt. Die Tabelle nennt für jeden Anbieter die Region und die Garantie, auf die sich Übermittlungen außerhalb der EU stützen; die App-Stores und die Anmeldeanbieter (Google, Apple) sind für ihre eigenen Dienste selbst verantwortlich und unterliegen ihren eigenen Datenschutzbedingungen.
 
 {{processorsTable}}
 
@@ -469,7 +503,7 @@ Eine Übermittlung an Behörden erfolgt nur bei einer rechtlichen Verpflichtung 
 
 ## 7. Cookies und lokale Speicherung
 
-Im Web wird nur das unbedingt erforderliche Sitzungs-Cookie verwendet (um zu merken, dass du angemeldet bist, {{sessionMaxDays}} Tage); deshalb gibt es kein Cookie-Banner. Marketing- oder Tracking-Cookies werden nicht eingesetzt. In der lokalen Speicherung von Browser und App liegen gerätebezogene Angaben wie Design- und Toneinstellungen und eine unterbrochene Sprechübung; diese verlassen dein Gerät nicht. Erinnerungseinstellungen und KI-Erlaubnisse werden dagegen in deinem Konto gespeichert, damit sie auf all deinen Geräten gelten (Abschnitt 3).
+Im Web wird nur das unbedingt erforderliche Sitzungs-Cookie verwendet (um zu merken, dass du angemeldet bist, {{sessionMaxDays}} Tage); deshalb gibt es kein Cookie-Banner. Marketing- oder Tracking-Cookies werden nicht eingesetzt. In der lokalen Speicherung von Browser und App liegen gerätebezogene Angaben wie Design- und Toneinstellungen und eine unterbrochene Sprechübung; diese verlassen dein Gerät nicht. Für die Nutzungsmessung (Abschnitt 8) wird auf deinem Gerät nichts gespeichert und nichts ausgelesen. Erinnerungseinstellungen, KI-Erlaubnisse und deine Wahl zu "Nutzungsdaten senden" werden dagegen in deinem Konto gespeichert, damit sie auf all deinen Geräten gelten (Abschnitt 3). Der Botschutz auf dem Bildschirm für Registrierung, Anmeldung und Passwort-Reset (Cloudflare Turnstile) ist für die Sicherheit unbedingt erforderlich und dient weder Marketing noch Tracking.
 
 ## 8. Produktanalyse und Abschalten
 
@@ -480,7 +514,7 @@ Um zu verstehen, welche Funktionen genutzt werden, schreibt Lernomi kurze Nutzun
 - Die Kennzeichnung lässt nur Buchstaben, Ziffern, Unterstrich, Doppelpunkt und Bindestrich zu und darf nicht ausschließlich aus Ziffern bestehen. Sie kann daher weder eine E-Mail-Adresse noch einen Link oder eine Telefonnummer enthalten.
 - Darüber hinaus wird kein Freitext gesendet, und die Ereignisse gehen an keinen Dritten.
 
-Über den Schalter "Nutzungsdaten senden" unter Einstellungen › Datenschutz kannst du das abschalten. Das ist das Widerspruchsrecht nach KVKK und Art. 21 DSGVO. Danach werden nur die für den Dienst zwingend erforderlichen Datensätze geführt.
+Über den Schalter "Nutzungsdaten senden" unter Einstellungen › Datenschutz kannst du das abschalten. Das ist das Widerspruchsrecht nach KVKK und Art. 21 DSGVO. Deine Wahl wird in deinem Konto gespeichert (bei Nutzung ohne Konto unter der Gastidentität), gilt auf all deinen Geräten und wird auch vom Server beachtet: Solange sie aus ist, wird kein Produktanalyse-Ereignis geschrieben; geführt werden nur die für den Betrieb des Dienstes zwingend erforderlichen Datensätze (z. B. dass eine Benachrichtigung zugestellt oder ein Kauf bestätigt wurde).
 
 ## 8a. Kommerzielle elektronische Nachrichten
 
@@ -490,13 +524,16 @@ Du erhältst nur dienstbezogene Nachrichten: E-Mail-Bestätigung, Passwort-Reset
 
 - Konto- und Lerndaten: solange das Konto besteht; mit der Löschung des Kontos wird alles gelöscht.
 - Gastdaten (Nutzung ohne Konto): Nutzt du die Gastidentität {{sessionMaxDays}} Tage nicht, läuft ihre Sitzung ab und die Daten werden spätestens nach 7 Tagen gelöscht; bei Zusammenführung mit einem bestehenden Konto oder wenn du sie nicht hinzufügen willst, wird die Gastidentität sofort gelöscht; bei Kontoerstellung per E-Mail wird sie zu deinem Konto selbst.
-- Protokolle der Sprechpraxis (dein Satz und die Antwort des Modells): {{speechLogDays}} Tage, danach automatische Löschung.
-- Audioaufnahmen: werden nicht gespeichert.
+- Protokolle der Sprechpraxis (dein Satz und die Antwort des Modells): {{speechLogDays}} Tage, danach automatische Löschung spätestens innerhalb eines weiteren Tages.
+- Audioaufnahmen: werden nicht auf dem Lernomi-Server gespeichert (zur Anbieterseite siehe Abschnitt 4).
+- Anonyme Fehlerberichte: keiner Person zugeordnet; bis die Fehlergruppe behoben ist.
+- Server-Logs: Zugriffsprotokolle des Webservers (einschließlich IP-Adressen) 14 Tage, System- und Anwendungsprotokolle 30 Tage.
+- Inhalts- und Nutzermeldungen: 1 Jahr nach Abschluss der Prüfung.
 - Mobiles Benachrichtigungs-Token: bis du dich abmeldest oder das Token ungültig wird.
 - Sitzungsdatensätze (IP, Gerätebezeichnung): für die Dauer der Sitzung, höchstens {{sessionMaxDays}} Tage.
 - Finanzunterlagen (Abonnementrechnungen): die vom türkischen Handelsgesetzbuch und vom Steuerverfahrensgesetz vorgesehene Frist (10 Jahre), und nur soweit der App-Store (Google Play{{ifIos}} oder App Store{{/ifIos}}) sie übermittelt.
 - Schriftwechsel zu Rechteanfragen: 2 Jahre nach Abschluss der Anfrage.
-- Server-Backups: gelöschte Daten fallen spätestens innerhalb von {{backupRetentionDays}} Tagen aus den Backups heraus; Backups dienen nur der Notfallwiederherstellung, und ein gelöschtes Konto wird nie aus einem Backup wiederhergestellt.
+- Server-Backups (einschließlich der verschlüsselten externen Kopie bei Cloudflare R2): gelöschte Daten fallen spätestens innerhalb von {{backupRetentionDays}} Tagen aus den Backups heraus; Backups dienen nur der Notfallwiederherstellung, und ein gelöschtes Konto wird nie aus einem Backup wiederhergestellt.
 
 ## 10. Deine Rechte
 
@@ -516,7 +553,7 @@ Nach Art. 11 KVKK und Art. 15-22 DSGVO kannst du verlangen:
 
 ## 11. Konto und Daten löschen
 
-Du kannst dein Konto auf zwei Wegen löschen: in der App unter **Profil › Einstellungen › Konto › Konto löschen** oder im Web unter [www.lernomi.app/account/delete]({{link:deleteAccount}}). Im Moment der Löschung werden dein Konto, dein Fortschritt, deine Texte, deine Sprechprotokolle, deine Nutzungsereignisse und deine sozialen Spuren (Freundschaften, Reaktionen) dauerhaft gelöscht; das ist unwiderruflich. Finanzunterlagen, die einer gesetzlichen Aufbewahrungspflicht unterliegen, werden anonymisiert aufbewahrt. Hast du ein Store-Abonnement, musst du es zusätzlich in dem Store kündigen, in dem du es gekauft hast.
+Du kannst dein Konto auf zwei Wegen löschen: in der App unter **Profil › Einstellungen › Konto › Konto löschen** oder im Web unter [www.lernomi.app/account/delete]({{link:deleteAccount}}). Im Moment der Löschung werden dein Konto, dein Fortschritt, deine Texte, deine Sprechprotokolle, deine Nutzungsereignisse und deine sozialen Spuren (Freundschaften, Reaktionen) dauerhaft gelöscht; das ist unwiderruflich. Finanzunterlagen, die einer gesetzlichen Aufbewahrungspflicht unterliegen, werden anonymisiert aufbewahrt. Die Löschung deines Kundendatensatzes in der Kaufinfrastruktur (RevenueCat) wird ebenfalls veranlasst; der Kaufdatensatz im Store (Google Play{{ifIos}} oder App Store{{/ifIos}}) verbleibt aufgrund der eigenen Pflichten des Stores dort. Hast du ein Store-Abonnement, musst du es zusätzlich in dem Store kündigen, in dem du es gekauft hast.
 
 Nutzt du die App ohne Konto (als Gast), kannst du deine Daten in der App unter **Profil › Gastdaten löschen** löschen: Die Gastidentität und dein gesamter Fortschritt werden dauerhaft vom Server und von deinem Gerät gelöscht.
 
