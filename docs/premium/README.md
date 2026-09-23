@@ -239,6 +239,11 @@ abonelik beyanı kurallarına aykırı.
 
 ### 3.2 Play Console (Android)
 
+> **DURUM (2026-09-23): 1–4. adımlar YAPILDI (API ile).** İki ürün, base plan'lar
+> (`monthly-autorenew` P1M, `yearly-autorenew` P1Y) ve `free-trial-1m` teklifleri
+> ACTIVE, 173 bölge, fiyatlar App Store ile aynı (ayrıntı AGENTS.md › Google Play ›
+> Abonelik ürünleri). Kalan: 5. adım (RevenueCat servis hesabı) ve §3.3 panosu.
+
 > **ÖN KOŞUL — bu bölüm bir yapı yüklenmeden AÇILMAZ.** Play, abonelik
 > ürünlerini ancak imzalı bir AAB en az bir sürüm kanalına (en hızlısı
 > *Internal testing*) yüklendikten sonra gösteriyor. Menüde *Subscriptions*
