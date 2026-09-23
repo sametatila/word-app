@@ -498,7 +498,7 @@ export function RoleplayExamScreen() {
                 İlk balon (i = 0) dersin yazılı açılış cümlesi, model çıktısı
                 değil: orada yok. */}
             {turn.role === "assistant" && i > 0 ? (
-              <ReportLink kind="roleplay" refId={`${lesson.id}:exam:${i}`} content={turn.content} style={{ alignSelf: "flex-end", marginTop: 4 }} />
+              <ReportLink kind="roleplay" refId={`${lesson.id}:exam:${i}`} content={turn.content} style={{ alignSelf: "flex-end", marginTop: spacing.xs }} />
             ) : null}
           </View>
         ))}
