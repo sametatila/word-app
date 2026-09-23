@@ -69,6 +69,9 @@ export function DocHeader({ locale = "tr" }: { locale?: LegalLocale }) {
         <Link href={legalPath("terms", locale)} className="underline-offset-4 hover:underline">{c.terms}</Link>
         <Link href={legalPath("support", locale)} className="underline-offset-4 hover:underline">{c.support}</Link>
         <Link href={legalPath("deleteAccount", locale)} className="underline-offset-4 hover:underline">{c.deleteAccount}</Link>
+        {/* Künye (§5 DDG, LEG-5): hukuki sayfaların hepsinden tek tıkla. Ad
+            her dilde "Impressum". */}
+        <Link href={legalPath("impressum", locale)} className="underline-offset-4 hover:underline">Impressum</Link>
       </nav>
     </>
   );

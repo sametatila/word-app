@@ -217,7 +217,27 @@ export const LEGAL_PATHS = {
    */
   support: "/support",
   deleteAccount: "/account/delete",
+  /**
+   * Künye (Impressum) — §5 DDG ve §18 MStV. Veri sorumlusu Dortmund'da yerleşik
+   * ve Premium ücretli, yani Almanya'dan sunulan ticari bir dijital hizmet:
+   * "kolay tanınır, doğrudan erişilebilir, sürekli mevcut" bir künye zorunlu.
+   * 2026-09-23'e kadar yoktu (denetim LEG-5). Öteki belgelerden farklı olarak
+   * kanonik dili ALMANCA (bkz. `legalPath`): yükümlülük Alman hukukundan.
+   */
+  impressum: "/impressum",
 } as const;
+
+/**
+ * Belgenin kanonik (alt yolsuz) dili. Künye Almanca, gerisi Türkçe.
+ *
+ * Künyenin kanonik dili Almanca çünkü onu isteyen Alman hukuku ve onu arayan
+ * okur (ve rakip avukatı) "/impressum"u Almanca bekliyor. Öteki belgelerde
+ * Türkçe bağlayıcı metin (şartlar §12b); künye bir sözleşme değil, kimlik
+ * beyanı, o yüzden "bağlayıcı dil" sorusu doğmuyor.
+ */
+export function legalCanonicalLocale(doc: LegalDoc): LegalLocale {
+  return doc === "impressum" ? "de" : LEGAL_DEFAULT_LOCALE;
+}
 
 /**
  * Sürüm geçmişi — iki belge de aynı LEGAL_VERSION'ı taşıdığı için tek liste.
@@ -443,10 +463,13 @@ export function isLegalLocale(value: string): value is LegalLocale {
   return (LEGAL_LOCALES as readonly string[]).includes(value);
 }
 
-/** Türkçe kanonik yolda kalır (/terms); çeviriler alt yolda (/terms/en). */
-export function legalPath(doc: LegalDoc, locale: LegalLocale = LEGAL_DEFAULT_LOCALE): string {
+/**
+ * Kanonik dil alt yolsuz kalır (/terms Türkçe, /impressum Almanca); çeviriler
+ * alt yolda (/terms/en, /impressum/tr). Dil verilmezse kanonik yol.
+ */
+export function legalPath(doc: LegalDoc, locale?: LegalLocale): string {
   const base = LEGAL_PATHS[doc];
-  if (locale === LEGAL_DEFAULT_LOCALE) return base;
+  if (!locale || locale === legalCanonicalLocale(doc)) return base;
   return doc === "deleteAccount" ? base : `${base}/${locale}`;
 }
 

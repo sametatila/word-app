@@ -20,15 +20,23 @@ const PATHS = {
    * bilgisi" de istiyor; ayarlardaki satır buraya açılıyor.
    */
   support: "/support",
+  /**
+   * Künye (Impressum). Almanya'daki kullanıcı için yasal zorunluluk (DDG §5):
+   * "kolayca tanınabilir, doğrudan erişilebilir" olmalı, yani uygulamadan da
+   * bir dokunuşla açılmalı. Tek sayfa, dil eki yok.
+   */
+  impressum: "/impressum",
   deleteAccount: "/account/delete",
 } as const;
 
 export type LegalDoc = keyof typeof PATHS;
 
-/** Hesap silme sayfası çevrilmedi; oraya dil eki eklenmiyor. */
+/** Hesap silme sayfası ve künye tek dilde; onlara dil eki eklenmiyor. */
+const UNTRANSLATED: ReadonlySet<LegalDoc> = new Set<LegalDoc>(["deleteAccount", "impressum"]);
+
 export function legalUrl(doc: LegalDoc): string {
   const lang = currentLang();
-  const suffix = lang !== "tr" && doc !== "deleteAccount" ? `/${lang}` : "";
+  const suffix = lang !== "tr" && !UNTRANSLATED.has(doc) ? `/${lang}` : "";
   return `${API_BASE}${PATHS[doc]}${suffix}`;
 }
 

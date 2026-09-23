@@ -1309,6 +1309,7 @@ export const deBase: Record<string, string> = {
   "settings.daily_goal_reviews_day": "TAGESZIEL",
   "settings.delete_account": "Konto löschen",
   "settings.terms_of_use": "Nutzungsbedingungen",
+  "settings.impressum": "Impressum",
   "terms.updated_title": "Nutzungsbedingungen und Datenschutzerklärung wurden aktualisiert",
   "terms.updated_body": "Neue Version: {version}. Was sich geändert hat, steht in den Texten.",
   "terms.read_terms": "Nutzungsbedingungen",

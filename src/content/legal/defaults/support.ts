@@ -43,6 +43,8 @@ Uygulamayı mağazalarda yayımlayan ve destek yükümlülüğünü taşıyan ta
 
 [support@lernomi.app](mailto:support@lernomi.app)
 
+Hizmet sağlayıcının künyesi (Impressum): [künye sayfası]({{link:impressum}}).
+
 ## Uygulamanın içinden
 
 - Bu sayfaya uygulamadan da ulaşabilirsin: Profil › Ayarlar › Destek ve iletişim.
@@ -73,6 +75,8 @@ The party that publishes the app in the stores and carries the support obligatio
 
 [support@lernomi.app](mailto:support@lernomi.app)
 
+Provider identification (Impressum): [imprint page]({{link:impressum}}).
+
 ## From inside the app
 
 - You can reach this page from the app too: Profile › Settings › Support and contact.
@@ -102,6 +106,8 @@ The party that publishes the app in the stores and carries the support obligatio
 Die Partei, die die App in den Stores veröffentlicht und die Supportpflicht trägt. Der Verantwortliche im Datenschutzsinn ist eine andere Person und in Abschnitt 1 der Datenschutzerklärung genannt.
 
 [support@lernomi.app](mailto:support@lernomi.app)
+
+Anbieterkennzeichnung: [Impressum]({{link:impressum}}).
 
 ## Aus der App heraus
 

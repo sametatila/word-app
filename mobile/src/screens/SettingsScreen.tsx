@@ -675,6 +675,12 @@ export function SettingsScreen() {
               <Text variant="bodyStrong" style={{ flex: 1 }}>{t("settings.terms_of_use")}</Text>
               <ChevronRightIcon color={colors.textFaint} size={20} />
             </PressableScale>
+            {/* Künye (Impressum): Almanya'daki kullanıcıya uygulamadan da tek
+                dokunuşla ulaşılabilir olmalı (DDG §5). Sayfa webde. */}
+            <PressableScale onPress={() => openLegal("impressum")} accessibilityRole="link" style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
+              <Text variant="bodyStrong" style={{ flex: 1 }}>{t("settings.impressum")}</Text>
+              <ChevronRightIcon color={colors.textFaint} size={20} />
+            </PressableScale>
             {/*
               İLETİŞİM YÜZEYİ — Apple Guidelines 1.2. Kullanıcı içeriği taşıyan
               uygulamalarda filtreleme, bildirme ve engellemenin YANINDA
