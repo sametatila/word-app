@@ -14,6 +14,7 @@ import { api } from "../api/client";
 import { GROUP_ORDER, GROUP_LABEL_KEY, type Achievement, type Tier, type AchGroup } from "../data/achievements";
 import { useTheme, spacing, radii, softShadow, TIER_COLOR, type Palette } from "../theme";
 import { useLayout } from "../lib/useLayout";
+import { CardGrid } from "../ui/CardGrid";
 
 /** Grup başlığı — sözlükte karşılığı olmayan (sunucudan yeni gelen) grup ham adıyla çizilir. */
 function groupLabel(group: string): string {
@@ -36,11 +37,10 @@ function tierColor(tier: Tier): string {
 }
 
 function Badge({ a, colors }: { a: Achievement; colors: Palette }) {
-  const { gridItemWidth } = useLayout();
   const tc = tierColor(a.tier);
   const pct = a.target ? Math.min(100, Math.round((a.done / a.target) * 100)) : 0;
   return (
-    <View style={{ width: gridItemWidth, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.md, opacity: a.unlocked ? 1 : 0.92 }}>
+    <View style={{ flex: 1, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.md, opacity: a.unlocked ? 1 : 0.92 }}>
       <View style={[{ width: 46, height: 46, borderRadius: radii.pill, alignItems: "center", justifyContent: "center", backgroundColor: a.unlocked ? tc : colors.surface2 }, a.unlocked ? softShadow(tc, 6) : {}]}>
         {/* Rozetin KENDİ ikonu (sunucu `icon` alanında veriyor): eskiden hepsi
             kupaydı ve iki rozeti ayıran tek şey kademe rengiydi. Web baştan
@@ -74,19 +74,21 @@ const NEXT_COUNT = 4;
 
 /** Küçük büyük-harf etiket + rozet ızgarası; grup bölümleri ve "sıradaki" aynı kabı kullanıyor. */
 function Section({ label, rows, colors }: { label: string; rows: Achievement[]; colors: Palette }) {
+  const { gridColumns } = useLayout();
   if (!rows.length) return null;
   return (
     <View style={{ marginTop: spacing.lg }}>
       <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: spacing.xs }}>{label.toLocaleUpperCase(dateLocale())}</Text>
-      <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md }}>
+      <CardGrid columns={gridColumns} stretch>
         {rows.map((a) => <Badge key={a.id} a={a} colors={colors} />)}
-      </View>
+      </CardGrid>
     </View>
   );
 }
 
 export function AchievementsScreen() {
   const { colors } = useTheme();
+  const { gridColumns } = useLayout();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<{ goBack: () => void }>();
   const { user } = useAuth();
@@ -174,9 +176,9 @@ export function AchievementsScreen() {
           {[0, 1, 2].map((g) => (
             <View key={g} style={{ marginTop: spacing.lg }}>
               <SkeletonLine variant="caption" width={96} style={{ marginBottom: spacing.sm, marginLeft: spacing.xs }} />
-              <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md }}>
-                {[0, 1].map((i) => <Skeleton key={i} height={140} width="47.5%" radius={radii.lg} />)}
-              </View>
+              <CardGrid columns={gridColumns}>
+                {[0, 1].map((i) => <Skeleton key={i} height={140} radius={radii.lg} />)}
+              </CardGrid>
             </View>
           ))}
         </ScrollView>

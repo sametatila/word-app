@@ -12,7 +12,8 @@ import { PressableScale } from "../ui/PressableScale";
 import { LearnIcon, ReadIcon, ListenIcon, WriteIcon, GrammarIcon, QuizIcon, CheckIcon, LockIcon, ExamIcon, ChevronRightIcon, PathIcon } from "../ui/icons";
 import { EmptyCard } from "../social/common";
 import { itemOpen, useLearningPath, type LearningPathUnit } from "../lib/useLearningPath";
-import { useLayout, gridColumnsFor, gridItemWidthFor } from "../lib/useLayout";
+import { useLayout, gridColumnsFor } from "../lib/useLayout";
+import { CardGrid } from "../ui/CardGrid";
 import { UnitPane } from "./UnitScreen";
 import { KIND_KEY } from "../data/unit";
 import { AppHeader } from "../ui/AppHeader";
@@ -151,7 +152,7 @@ export function PathScreen() {
   const solPanel = Math.round((panelAlani - spacing.lg) * 0.45);
   const sagPanel = panelAlani - spacing.lg - solPanel;
   const solGenislik = ikiPanel ? solPanel : contentWidth;
-  const gridItemWidth = gridItemWidthFor(gridColumnsFor(solGenislik));
+  const uniteSutun = gridColumnsFor(solGenislik);
   const [seciliIndex, setSeciliIndex] = useState<number | null>(null);
 
   /*
@@ -207,9 +208,9 @@ export function PathScreen() {
           <Skeleton height={68} radius={radii.lg} style={{ marginTop: spacing.md }} />
           <Skeleton height={textHeight("h3") + 30} radius={radii.lg} style={{ marginTop: spacing.md }} />
         </SkeletonCard>
-        <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md }}>
-          {[0, 1, 2, 3].map((i) => <Skeleton key={i} height={116} width={gridItemWidth} radius={radii.lg} />)}
-        </View>
+        <CardGrid columns={uniteSutun}>
+          {[0, 1, 2, 3].map((i) => <Skeleton key={i} height={116} radius={radii.lg} />)}
+        </CardGrid>
       </Screen>
     );
   }
@@ -283,10 +284,10 @@ export function PathScreen() {
           <View key={g.moduleIndex} style={{ marginTop: spacing.lg }}>
             <Text variant="micro" color={colors.textMuted} style={{ marginLeft: spacing.xs, textTransform: "uppercase", letterSpacing: 1 }}>{t("path.module_n", { n: g.moduleIndex + 1 })}</Text>
             <Text variant="h3" style={{ marginLeft: spacing.xs, marginBottom: spacing.sm }}>{g.theme}</Text>
-            <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md }}>
+            <CardGrid columns={uniteSutun} stretch>
               {g.units.map((u) => (
-                <PressableScale key={u.id} style={{ width: gridItemWidth }} onPress={() => openUnit(u)}>
-                  <Card padded style={{ minHeight: ds(132), opacity: u.locked ? 0.6 : 1, borderColor: u.index === vurguluIndex ? colors.primary : colors.border, borderWidth: u.index === vurguluIndex ? 2 : 1 }}>
+                <PressableScale key={u.id} style={{ flex: 1 }} onPress={() => openUnit(u)}>
+                  <Card padded style={{ flex: 1, minHeight: ds(132), opacity: u.locked ? 0.6 : 1, borderColor: u.index === vurguluIndex ? colors.primary : colors.border, borderWidth: u.index === vurguluIndex ? 2 : 1 }}>
                     <View style={{ width: 44, height: 44, borderRadius: radii.lg, borderWidth: 3, borderColor: u.complete ? colors.success : u.index === path.currentIndex ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>
                       {u.complete ? <CheckIcon color={colors.successText} size={18} /> : u.locked ? <LockIcon color={colors.textMuted} size={18} /> : <Text variant="bodyStrong" color={u.index === vurguluIndex ? colors.primaryText : colors.textMuted}>{u.index}</Text>}
                     </View>
@@ -297,7 +298,7 @@ export function PathScreen() {
                   </Card>
                 </PressableScale>
               ))}
-            </View>
+            </CardGrid>
             {sinav ? <ModuleExamRow m={sinav} colors={colors} onPress={() => nav.navigate("Exam", { level: path.level, module: sinav.index })} /> : null}
           </View>
         );

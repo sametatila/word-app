@@ -20,6 +20,7 @@ import { EmptyCard } from "../social/common";
 import { useTheme, spacing, radii, softShadow, onTint, type Palette, soft, ds } from "../theme";
 import { todayStr } from "../game/session";
 import { useLayout } from "../lib/useLayout";
+import { CardGrid } from "../ui/CardGrid";
 
 /** Şeritteki gün sayısı — iki tam hafta, hafta sonu ritmi görünsün diye. */
 const STRIP_DAYS = 14;
@@ -117,9 +118,8 @@ function ActivityStrip({ rows, today, colors }: { rows: { day: string; reviews: 
 }
 
 function Stat({ icon: Icon, value, label, tint, colors }: { icon: (p: { color: string; size: number }) => React.ReactElement; value: string; label: string; tint: string; colors: Palette }) {
-  const { gridItemWidth } = useLayout();
   return (
-    <Card padded style={{ width: gridItemWidth, gap: 6 }}>
+    <Card padded style={{ flex: 1, gap: 6 }}>
       <View style={{ width: 38, height: 38, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: soft(tint) }}>
         <Icon color={onTint(tint, colors)} size={20} />
       </View>
@@ -150,7 +150,7 @@ function levelTint(niveau: string, colors: Palette): string {
 
 export function ProgressScreen() {
   const { colors } = useTheme();
-  const { gridItemWidth } = useLayout();
+  const { gridColumns } = useLayout();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { me, loading } = useMe();
@@ -240,24 +240,24 @@ export function ProgressScreen() {
 
         {/* istatistik ızgarası */}
         {me ? (
-          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md, marginBottom: spacing.lg }}>
+          <CardGrid columns={gridColumns} stretch style={{ marginBottom: spacing.lg }}>
             <Stat icon={LearnIcon} value={String(mastered)} label={t("progress.words_learned")} tint={colors.primary} colors={colors} />
             <Stat icon={BoltIcon} value={formatXp(me.xp)} label={t("progress.total_xp")} tint={colors.success} colors={colors} />
             <Stat icon={ClockIcon} value={formatDuration(me.seconds)} label={t("progress.time_total")} tint={colors.info} colors={colors} />
             <Stat icon={TrophyIcon} value={level} label={t("progress.level")} tint={colors.accent} colors={colors} />
-          </View>
+          </CardGrid>
         ) : (
           // Izgaranın kendi iskeleti (tek satırlık "yükleniyor" kartı yerine):
           // dört karo gelince ekran iki satır boyu uzamasın.
-          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md, marginBottom: spacing.lg }}>
+          <CardGrid columns={gridColumns} style={{ marginBottom: spacing.lg }}>
             {[0, 1, 2, 3].map((i) => (
-              <SkeletonCard key={i} style={{ width: gridItemWidth, gap: 6 }}>
+              <SkeletonCard key={i} style={{ gap: 6 }}>
                 <SkeletonTile size={38} />
                 <SkeletonLine variant="h1" width="55%" />
                 <SkeletonLine variant="caption" width="85%" />
               </SkeletonCard>
             ))}
-          </View>
+          </CardGrid>
         )}
 
         {/*

@@ -1,4 +1,4 @@
-import { CONTENT_MAX, contentWidthFor, gridColumnsFor, gridItemWidthFor, PHONE_MAX_WIDTH, SIDE_GUTTER } from "../src/lib/useLayout";
+import { CONTENT_MAX, contentWidthFor, gridColumnsFor, PHONE_MAX_WIDTH, SIDE_GUTTER } from "../src/lib/useLayout";
 
 /**
  * İçerik sütunu kırılımları — gerçek cihaz genişlikleriyle.
@@ -119,13 +119,5 @@ describe("ızgara sütun sayısı", () => {
     [CONTENT_MAX, 3],
   ])("kap %i dp → %i sütun", (kap, beklenen) => {
     expect(gridColumnsFor(kap)).toBe(beklenen);
-  });
-
-  it("kart genişlikleri sütunla birlikte küçülüyor ve %100'ü aşmıyor", () => {
-    for (const n of [2, 3] as const) {
-      const yuzde = Number(gridItemWidthFor(n).replace("%", ""));
-      expect(yuzde * n).toBeLessThan(100);
-      expect(yuzde * n).toBeGreaterThan(90); // boşluk payı makul kalsın
-    }
   });
 });

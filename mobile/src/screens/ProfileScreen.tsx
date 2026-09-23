@@ -22,12 +22,12 @@ import { currentCourseId } from "../lib/courses";
 import { useTheme, spacing, radii, softShadow, type Palette, soft, ds } from "../theme";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { useLayout } from "../lib/useLayout";
+import { CardGrid } from "../ui/CardGrid";
 import { GuestAccountCard } from "../ui/GuestAccountCard";
 
 function StatTile({ value, label, color, colors }: { value: string; label: string; color: string; colors: Palette }) {
-  const { gridItemWidth } = useLayout();
   return (
-    <Card padded style={{ width: gridItemWidth, gap: 2 }}>
+    <Card padded style={{ gap: 2 }}>
       <Text variant="h1" color={color}>{value}</Text>
       <Text variant="caption" color={colors.textMuted}>{label}</Text>
     </Card>
@@ -37,7 +37,7 @@ function StatTile({ value, label, color, colors }: { value: string; label: strin
 
 export function ProfileScreen() {
   const { colors } = useTheme();
-  const { gridItemWidth } = useLayout();
+  const { gridColumns } = useLayout();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { user, signOut } = useAuth();
@@ -128,19 +128,19 @@ export function ProfileScreen() {
         {meLoading ? (
           // Kısa "yükleniyor" kartı yerine ızgaranın kendi iskeleti: iki karo
           // gelince ekran bir satır boyu uzamıyor.
-          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md, marginBottom: spacing.lg }}>
+          <CardGrid columns={gridColumns} style={{ marginBottom: spacing.lg }}>
             {[0, 1].map((i) => (
-              <SkeletonCard key={i} style={{ width: gridItemWidth, gap: 2 }}>
+              <SkeletonCard key={i} style={{ gap: 2 }}>
                 <SkeletonLine variant="h1" width="60%" />
                 <SkeletonLine variant="caption" width="85%" />
               </SkeletonCard>
             ))}
-          </View>
+          </CardGrid>
         ) : me ? (
-          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md, marginBottom: spacing.lg }}>
+          <CardGrid columns={gridColumns} style={{ marginBottom: spacing.lg }}>
             <StatTile value={String(me.streak)} label={t("profile.day_streak")} color={colors.streakText} colors={colors} />
             <StatTile value={formatNumber(me.xp)} label={t("profile.total_xp")} color={colors.successText} colors={colors} />
-          </View>
+          </CardGrid>
         ) : null}
 
         {/*

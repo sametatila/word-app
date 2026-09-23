@@ -14,6 +14,7 @@ import { practiceGamesFor } from "../game/session";
 import { useMe } from "../lib/useMe";
 import { useTheme, spacing, radii, softShadow, type Palette, fillOf, ds } from "../theme";
 import { useLayout } from "../lib/useLayout";
+import { CardGrid } from "../ui/CardGrid";
 
 /** Oyun → ikon + renk (görsel çeşitlilik). */
 /*
@@ -44,7 +45,7 @@ const FALLBACK_META = {
 
 export function PracticeScreen() {
   const { colors } = useTheme();
-  const { gridItemWidth } = useLayout();
+  const { gridColumns } = useLayout();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   // Tek-oyun listesi kursa göre eleniyor: artikel/çoğul yalnız artikelli
@@ -83,9 +84,9 @@ export function PracticeScreen() {
         <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: spacing.xs, textTransform: "uppercase", letterSpacing: 1 }}>{t("practice.single_game")}</Text>
         {/* Oyun listesi kursa bağlı: kurs bilinmeden çizilirse karo sayısı
             sonradan değişip ızgara boyunu oynatıyor. Önce aynı boyda iskelet. */}
-        <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md }}>
+        <CardGrid columns={gridColumns} stretch>
           {meLoading ? [0, 1, 2, 3, 4, 5].map((i) => (
-            <Skeleton key={i} height={116} width={gridItemWidth} radius={radii.xl} />
+            <Skeleton key={i} height={116} radius={radii.xl} />
           )) : practiceGamesFor(me?.course).map((g) => {
             const m = META[g.game] ?? FALLBACK_META;
             /* Zemin TEMAYA DUYARSIZ (`theme` `fillOf`): koyu temada rol
@@ -94,8 +95,8 @@ export function PracticeScreen() {
                çiziyor. */
             const tint = fillOf(m.tint);
             return (
-              <PressableScale key={g.game} onPress={() => nav.navigate("Game", { game: g.game })} style={{ width: gridItemWidth }}>
-                <Card padded style={{ minHeight: ds(116), justifyContent: "space-between" }}>
+              <PressableScale key={g.game} onPress={() => nav.navigate("Game", { game: g.game })} style={{ flex: 1 }}>
+                <Card padded style={{ flex: 1, minHeight: ds(116), justifyContent: "space-between" }}>
                   <View style={[{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: tint }, softShadow(tint, 6)]}>
                     {m.icon({ color: "#fff", size: 22 })}
                   </View>
@@ -116,7 +117,7 @@ export function PracticeScreen() {
               </PressableScale>
             );
           })}
-        </View>
+        </CardGrid>
         {/* NE OLDUĞUNU SÖYLEYEN SATIR. Turun kendi kelimelerinden kurulduğu,
             oyun türünün sabit kaldığı ve pratiğin kaldığı yerden SÜRMEDİĞİ
             yalnız webde yazıyordu (`learn/practice`); üçü de mobilde

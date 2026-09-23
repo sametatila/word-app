@@ -17,15 +17,15 @@ import { FlameIcon, HandshakeIcon, BellIcon, TargetIcon, LockIcon, XIcon } from 
 import { useTheme, spacing, radii, softShadow, ds } from "../theme";
 import type { Palette } from "../theme/colors";
 import { useLayout } from "../lib/useLayout";
+import { CardGrid } from "../ui/CardGrid";
 import { EmptyCard, ErrorText, Pill, ScreenHeader, SectionTitle, StatPill } from "../social/common";
 import { FeedCard } from "../social/FeedList";
 import { UserActionButton } from "../social/UserActionButton";
 import { GuestAccountCard } from "../ui/GuestAccountCard";
 
 function StatTile({ value, label, color, colors }: { value: string; label: string; color: string; colors: Palette }) {
-  const { gridItemWidth } = useLayout();
   return (
-    <Card padded style={{ width: gridItemWidth, gap: 2 }}>
+    <Card padded style={{ flex: 1, gap: 2 }}>
       <Text variant="h1" color={color}>{value}</Text>
       <Text variant="caption" color={colors.textMuted}>{label}</Text>
     </Card>
@@ -35,7 +35,7 @@ function StatTile({ value, label, color, colors }: { value: string; label: strin
 /** Kişi profili — Profil ekranının kurgusu: ortalanmış kimlik kartı, StatTile ızgarası, kartlar. */
 export function UserScreen() {
   const { colors } = useTheme();
-  const { gridItemWidth } = useLayout();
+  const { gridColumns } = useLayout();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const route = useRoute<RouteProp<RootStackParams, "User">>();
@@ -82,14 +82,14 @@ export function UserScreen() {
           <SkeletonPill width={84} height={41} />
         </View>
       </SkeletonCard>
-      <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md }}>
+      <CardGrid columns={gridColumns}>
         {[0, 1, 2, 3].map((i) => (
-          <SkeletonCard key={i} style={{ width: gridItemWidth, gap: 2 }}>
+          <SkeletonCard key={i} style={{ gap: 2 }}>
             <SkeletonLine variant="h1" width="55%" />
             <SkeletonLine variant="caption" width="80%" />
           </SkeletonCard>
         ))}
-      </View>
+      </CardGrid>
       <ErrorText text={err} />
     </>,
   );
@@ -127,7 +127,7 @@ export function UserScreen() {
         </Card>
 
         {data.stats ? (
-          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md, marginBottom: spacing.lg }}>
+          <CardGrid columns={gridColumns} stretch style={{ marginBottom: spacing.lg }}>
             <StatTile value={String(data.stats.currentStreak)} label={t("user.day_streak")} color={colors.streakText} colors={colors} />
             <StatTile value={formatNumber(data.stats.weeklyXp)} label={t("user.xp_this_week")} color={colors.primaryText} colors={colors} />
             <StatTile value={formatNumber(data.stats.totalXp)} label={t("user.total_xp")} color={colors.successText} colors={colors} />
@@ -141,7 +141,7 @@ export function UserScreen() {
             */}
             <StatTile value={String(data.stats.longestStreak)} label={t("user.longest_streak")} color={colors.streakText} colors={colors} />
             <StatTile value={data.stats.lastActiveDay ? new Date(`${data.stats.lastActiveDay}T00:00:00`).toLocaleDateString(dateLocale(), { day: "numeric", month: "short" }) : "—"} label={t("user.last_active")} color={colors.textMuted} colors={colors} />
-          </View>
+          </CardGrid>
         ) : (
           <View style={{ marginBottom: spacing.lg }}>
             <EmptyCard icon={LockIcon} tint={colors.textMuted} title={t(data.visibility === "friends" ? "user.visible_friends" : "user.private_profile")} text={t(data.visibility === "friends" ? "user.friends_see_stats" : "user.no_stats_shared")} />

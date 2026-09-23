@@ -46,11 +46,6 @@ export function gridColumnsFor(containerWidth: number): 2 | 3 {
   return containerWidth >= THREE_COLUMN_MIN ? 3 : 2;
 }
 
-/** Sütun sayısına düşen kart genişliği — aradaki boşluk düşülmüş. */
-export function gridItemWidthFor(columns: 2 | 3): string {
-  return columns === 3 ? "31.7%" : "47.5%";
-}
-
 /**
  * YÜKSEKLİK kademesi — genişlik kırılımlarının dikey eşi.
  *
@@ -103,8 +98,6 @@ export type Layout = {
    * katlıyor ve satırın kendi genişliği okunur kalıyor.
    */
   listColumns: 1 | 2;
-  /** Izgarada bir kartın yüzde genişliği — aradaki boşluk düşülmüş. */
-  gridItemWidth: string;
 };
 
 export function useLayout(): Layout {
@@ -122,6 +115,5 @@ export function useLayout(): Layout {
     landscape: width > height,
     gridColumns,
     listColumns: contentWidth >= TWO_LIST_COLUMN_MIN ? 2 : 1,
-    gridItemWidth: gridItemWidthFor(gridColumns),
   };
 }
