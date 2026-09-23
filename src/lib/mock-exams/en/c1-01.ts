@@ -60,7 +60,7 @@ export const EN_C1_01: MockPaper = {
           no: 1,
           format: "gapMcq",
           goal: "structure",
-          prompt: "Read the text and decide which answer best fits each gap, 1 to 6. Choose a, b, c or d.",
+          prompt: "Gaps 1–6: pick the option that completes the text correctly — a, b, c or d.",
           promptTr: "Metni oku ve 1–6. boşluklara en uygun seçeneği bul. a, b, c ya da d'yi seç.",
           texts: [
             {
@@ -146,7 +146,7 @@ The reform is easy to describe and hard to sell, {{5}} it appears to weaken the 
           no: 2,
           format: "gap",
           goal: "structure",
-          prompt: "Read the text and think of the word which best fits each gap, 7 to 12. Use only ONE word in each gap.",
+          prompt: "Gaps 7–12: complete the text with a suitable word. Write exactly ONE word per gap.",
           promptTr: "Metni oku ve 7–12. boşluklara en uygun sözcüğü bul. Her boşluğa YALNIZ BİR sözcük yaz.",
           texts: [
             {

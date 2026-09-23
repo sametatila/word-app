@@ -127,7 +127,7 @@ Ehrlich bleiben will ich trotzdem: Zweimal war es wirklich schwierig. Einmal, al
           no: 2,
           format: "mcq",
           goal: "gist",
-          prompt: "Lesen Sie die beiden Texte und die Aufgaben 7 bis 12. Wählen Sie: a, b oder c.",
+          prompt: "Zu den zwei Texten gehören die Aufgaben 7 bis 12. Welche Lösung passt: a, b oder c?",
           promptTr: "İki metni ve 7–12. maddeleri oku. a, b ya da c'yi seç.",
           texts: [
             {

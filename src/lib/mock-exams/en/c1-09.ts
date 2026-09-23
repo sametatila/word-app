@@ -38,7 +38,7 @@ export const EN_C1_09: MockPaper = {
           no: 1,
           format: "gapMcq",
           goal: "structure",
-          prompt: "Read the text and decide which answer best fits each gap, 1 to 6. Choose a, b, c or d.",
+          prompt: "Gaps 1–6: pick the option that completes the text correctly — a, b, c or d.",
           promptTr: "Metni oku ve 1–6. boşluklara en iyi uyan cevabı seç. a, b, c ya da d.",
           texts: [
             {
@@ -128,7 +128,7 @@ Whether the instrument could be used earlier is a question that has never been {
           no: 2,
           format: "gap",
           goal: "structure",
-          prompt: "Read the text and think of the word which best fits each gap, 7 to 12. Use only ONE word in each gap.",
+          prompt: "Gaps 7–12: complete the text with a suitable word. Write exactly ONE word per gap.",
           promptTr: "Metni oku ve 7–12. boşluklara en iyi uyan sözcüğü düşün. Her boşluğa yalnız TEK sözcük yaz.",
           texts: [
             {

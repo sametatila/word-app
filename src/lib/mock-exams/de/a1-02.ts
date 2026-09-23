@@ -35,7 +35,7 @@ export const A1_02: MockPaper = {
           no: 1,
           format: "truefalse",
           goal: "detail",
-          prompt: "Lesen Sie die beiden Texte und die Aufgaben 1 bis 5. Sind die Sätze richtig oder falsch?",
+          prompt: "Hier sind zwei Texte. Sind die Sätze 1 bis 5 richtig oder falsch?",
           promptTr: "İki metni ve 1–5. maddeleri oku. Cümleler doğru mu yanlış mı?",
           texts: [
             {
