@@ -29,6 +29,7 @@ import { t } from "./src/lib/i18n";
 import { Text } from "./src/ui/Text";
 import { AchievementUnlock } from "./src/ui/AchievementUnlock";
 import { GuestClaimNotice } from "./src/ui/GuestClaimNotice";
+import { TermsUpdateNotice } from "./src/ui/TermsUpdateNotice";
 import { GuestMergeDialog } from "./src/ui/GuestMergeDialog";
 import { AiConsentHost } from "./src/ui/AiConsentSheet";
 import { AppGate } from "./src/ui/AppGate";
@@ -414,6 +415,9 @@ function Nav() {
       {/* Misafir hesaba geçince ilerlemenin nereye gittiği — birleşme birden çok
           giriş yolundan geliyor, not bu yüzden kökte (bkz. ui/GuestClaimNotice). */}
       <GuestClaimNotice />
+      {/* "Şartlar güncellendi" notu ve hesap tercihlerinin (analitik)
+          eşitlenmesi — oturum açılınca bir kez (bkz. ui/TermsUpdateNotice). */}
+      <TermsUpdateNotice />
       <GuestMergeDialog />
       {/* YAPAY ZEKÂ RIZASI TEK YERDE, kökte: sunucu metni ya da sesi
           sağlayıcıya göndermeden önce izin istediğinde API istemcisi bu

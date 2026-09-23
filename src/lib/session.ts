@@ -10,7 +10,9 @@ import { chatConfigured } from "@/lib/chat-providers";
 import { FREQUENT_ERROR_WEIGHT, frequentErrorTypes } from "@/lib/error-analytics";
 import { grade, schedule, xpForQuality, type SrsState, MASTERED_DAYS } from "@/lib/srs";
 import { nextStreak, shiftDay } from "@/lib/award";
+import { analyticsOptedOut } from "@/lib/events";
 import { displayNameAllowed } from "@/lib/moderation";
+import { LEGAL_VERSION } from "@/lib/legal";
 import { PROFILE_LIMITS } from "@/lib/profile-limits";
 import { onActivityAwarded } from "@/lib/social/hooks";
 import { ANSWERS_DAILY_XP_CAP, cappedDailyXp, xpForChallengeRecord, xpForWager } from "@/lib/xp";
@@ -439,6 +441,12 @@ function pickNewWords(
  * Google/Apple'dan gelen ad doğrudan yazılıyordu. Takılan ad YAZILMIYOR
  * (null kalıyor): arayüz adsız profilde kullanıcı adını / nötr bir yedeği
  * gösteriyor, kullanıcı profilinden süzgeçten geçen bir ad seçebiliyor.
+ *
+ * ŞARTLARIN KABUL KAYDI (hukuk denetimi LEG-11). Profil ilk kez doğarken o
+ * anki `LEGAL_VERSION` ve zaman yazılıyor: profil, kayıt formu ("şunları kabul
+ * ediyorum") ya da misafir girişinden sonraki ilk oturumlu istekte doğuyor.
+ * Var olan (sütundan önceki) satıra sürüm UYDURULMUYOR; onlara istemci bir kez
+ * "şartlar güncellendi" şeridi gösteriyor (`termsUpdateFor`).
  */
 export async function ensureProfile(userId: string, name?: string | null) {
   const clean = publicDisplayName(name);
@@ -454,7 +462,7 @@ export async function ensureProfile(userId: string, name?: string | null) {
   }
   const [created] = await db
     .insert(profiles)
-    .values({ userId, displayName: clean })
+    .values({ userId, displayName: clean, termsVersion: LEGAL_VERSION, termsAcceptedAt: new Date() })
     .onConflictDoNothing()
     .returning();
   if (created) return created;
@@ -471,6 +479,15 @@ export function publicDisplayName(name: string | null | undefined): string | nul
   const clean = (name ?? "").trim().replace(/\s+/g, " ").slice(0, PROFILE_LIMITS.displayNameMax);
   if (clean.length < 2) return null;
   return displayNameAllowed(clean) ? clean : null;
+}
+
+/**
+ * Şartlar değişti şeridi: profilin kabul ettiği sürüm güncel değilse güncel
+ * sürümü döndürür (istemci bir kez gösterir, onaylayınca `POST /api/profile
+ * { acceptTerms: true }`). Sürüm yoksa (eski hesap) de gösterilir.
+ */
+export function termsUpdateFor(profile: { termsVersion: string | null }): { version: string } | null {
+  return profile.termsVersion === LEGAL_VERSION ? null : { version: LEGAL_VERSION };
 }
 
 /**
@@ -2028,8 +2045,10 @@ export async function submitAnswers(
   if (reviewRows.length) await db.insert(reviews).values(reviewRows);
   if (errorEvents.length) {
     // Ölçüm turu bozmamalı: olay yazılamazsa cevaplar yine kaydedilmiş olur.
+    // Toplu yazma `track`i atlıyor; analitik tercihi burada ayrıca soruluyor
+    // (hukuk denetimi LEG-9, bkz. lib/events OPERATIONAL).
     try {
-      await db.insert(events).values(errorEvents);
+      if (!(await analyticsOptedOut(userId))) await db.insert(events).values(errorEvents);
     } catch (err) {
       console.error("[events] error_recorded yazılamadı", err);
     }

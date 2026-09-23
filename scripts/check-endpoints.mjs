@@ -137,6 +137,7 @@ const WEB_ONLY_METHOD = {
   "POST /api/admin/app": "yonetim panosu",
   "POST /api/admin/users": "yonetim panosu",
   "POST /api/admin/content": "yonetim panosu",
+  "GET /api/profile": "web ayarlarinin hafif tercih okumasi (?prefs=1); mobil ayni alanlari acilista /api/me'den aliyor (analyticsOptOut, termsUpdate)",
 };
 
 const WEB_ONLY = {

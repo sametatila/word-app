@@ -5,7 +5,8 @@ import { adminGate } from "@/lib/admin";
 import { redirect } from "next/navigation";
 import { AppShell } from "@/components/app-shell";
 import { getSessionRead, authEnabled } from "@/lib/auth/server";
-import { ensureProfile } from "@/lib/session";
+import { ensureProfile, termsUpdateFor } from "@/lib/session";
+import { AccountSync } from "@/components/account-sync";
 import { LangSync } from "@/components/lang-sync";
 
 export const dynamic = "force-dynamic";
@@ -45,6 +46,8 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   let avatar: string | null = null;
   let nativeLang: string | null = null;
   let needsOnboarding = false;
+  let analyticsOptOut = false;
+  let termsUpdate: { version: string } | null = null;
   try {
     const profile = await ensureProfile(user.id, user.name);
     streak = profile?.currentStreak ?? 0;
@@ -54,6 +57,8 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     name = profile?.displayName ?? user.name ?? null;
     avatar = profile?.avatar ?? null;
     nativeLang = profile?.nativeLang ?? null;
+    analyticsOptOut = profile?.analyticsOptOut === true;
+    termsUpdate = profile ? termsUpdateFor(profile) : null;
     /*
       Kurs hiç seçilmediyse (yeni kullanıcı) önce kurs/seviye ekranı gelir.
 
@@ -76,6 +81,8 @@ export default async function AppLayout({ children }: { children: React.ReactNod
       {/* Profildeki dil çerezle eşitleniyor: sunucu sayfayı çizerken profili
           okuyamaz (bir veritabanı gidişi), çerezi okur. */}
       <LangSync profileLang={nativeLang} />
+      {/* Analitik tercihi ve "şartlar güncellendi" şeridi (LEG-9 / LEG-11). */}
+      <AccountSync analyticsOptOut={analyticsOptOut} termsUpdate={termsUpdate} />
       <AppShell streak={streak} xp={xp} course={course} voice={voice} userId={user.id} name={name} avatar={avatar}>
         {children}
       </AppShell>

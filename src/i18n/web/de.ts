@@ -185,6 +185,11 @@ export const deWeb: Record<string, string> = {
   "words.subtitle": "{n} Wörter · A1 bis C1",
   "settings.privacy_and_terms": "Datenschutz und Bedingungen",
   "settings.privacy_and_terms_sub": "Welche Daten wir warum verarbeiten, deine Rechte",
+  "termsw.updated_title": "Nutzungsbedingungen und Datenschutzerklärung wurden aktualisiert",
+  "termsw.updated_body": "Neue Version: {version}. Was sich geändert hat, steht in den Texten.",
+  "termsw.read_terms": "Nutzungsbedingungen",
+  "termsw.read_privacy": "Datenschutzerklärung",
+  "termsw.ok": "Verstanden",
   "settings.add_to_home": "Zum Startbildschirm",
   "settings.add_to_home_hint": "Vollbild, offline",
   /* Kelime turu — bkz. tr.ts notu. */

@@ -1,6 +1,7 @@
 import "server-only";
+import { sql } from "drizzle-orm";
 import { db } from "@/lib/db";
-import { events } from "@/lib/db/schema";
+import { events, profiles } from "@/lib/db/schema";
 
 /**
  * Ürün olayları.
@@ -296,11 +297,38 @@ export function cleanKind(kind: unknown): string | null {
 }
 
 /**
+ * KULLANICI ANALİTİĞİ KAPATSA DA YAZILAN OLAYLAR (hukuk denetimi LEG-9).
+ *
+ * Gizlilik §8: "Kapattığında yalnız hizmet için zorunlu kayıtlar tutulur."
+ * Tercih artık hesapta (`profiles.analytics_opt_out`) ve `track` her yazmada
+ * ona bakıyor. Buradakiler ÜRÜN ÖLÇÜMÜ değil, hizmetin kendisi:
+ *
+ *   push_sent / push_deliver  bildirim teslimi: tekrar göndermeme ve kanal
+ *                             sağlığı uyarısı (lib/alerts) buna dayanıyor
+ *   mail_sent                 doğrulama postası kapısının bekçisi (lib/alerts
+ *                             "SMTP reddediyor" uyarısı)
+ *   client_error              hata ayıklama/güvenlik; içeriği yok, ekran adı
+ *   session_done              KULLANICIYA gösterilen günlük plan bunu sayıyor
+ *                             (lib/plan): yazılmazsa "bugünkü turun" hiç bitmez
+ *   placement_finish          gelişim ekranının "başlangıç seviyen" satırı
+ *                             (lib/growth) buradan okunuyor
+ *
+ * Geri kalan her olay (ekran, dokunuş, huni, üretim puanı etiketi, sosyal
+ * sayaçlar…) opt-out'ta hiç yazılmıyor. Yeni bir olayı buraya eklemek
+ * politikada "zorunlu kayıt" demek: gerekçesi yanına yazılır.
+ */
+const OPERATIONAL = new Set<EventName>(["push_sent", "push_deliver", "mail_sent", "client_error", "session_done", "placement_finish"]);
+
+/**
  * Bir olayı yazar.
  *
  * Hiçbir zaman hata fırlatmıyor: ölçüm, ölçtüğü şeyi bozmamalı. Olay
  * yazılamadığında kaybedilen tek şey bir satırlık istatistiktir; kullanıcının
  * turu bundan etkilenmemeli.
+ *
+ * Tercih kontrolü yazmanın İÇİNDE (tek sorgu): ayrı bir
+ * okuma üç Node instance'ında önbelleğe ya da ek gidiş-dönüşe ihtiyaç
+ * duyardı; burada kapatma bir sonraki olayda anında geçerli.
  */
 export async function track(
   userId: string,
@@ -309,11 +337,32 @@ export async function track(
   value = 0,
   kind?: string | null,
 ): Promise<void> {
+  const k = cleanKind(kind);
+  const v = Math.round(value);
   try {
-    await db
-      .insert(events)
-      .values({ userId, name, day, value: Math.round(value), kind: cleanKind(kind) });
+    const optOut = OPERATIONAL.has(name)
+      ? sql`false`
+      : sql`exists (select 1 from ${profiles} where ${profiles.userId} = ${userId} and ${profiles.analyticsOptOut})`;
+    await db.execute(sql`
+      insert into ${events} (user_id, name, day, value, kind)
+      select ${userId}::text, ${name}::text, ${day}::date, ${v}::int, ${k}::text
+      where not ${optOut}`);
   } catch (err) {
     console.error("[events] yazılamadı", name, err);
   }
+}
+
+/** Kullanıcı "kullanım verisi gönder"i kapatmış mı — `track`i atlayan toplu yazmalar için. */
+export async function analyticsOptedOut(userId: string): Promise<boolean> {
+  try {
+    const [row] = await db.select({ off: profiles.analyticsOptOut }).from(profiles).where(sql`${profiles.userId} = ${userId}`).limit(1);
+    return row?.off === true;
+  } catch {
+    return false;
+  }
+}
+
+/** Bu olay kullanıcı analitiği kapatsa da yazılır mı (test ve belge için). */
+export function isOperationalEvent(name: EventName): boolean {
+  return OPERATIONAL.has(name);
 }

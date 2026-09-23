@@ -185,6 +185,11 @@ export const enWeb: Record<string, string> = {
   "words.subtitle": "{n} words · A1 to C1",
   "settings.privacy_and_terms": "Privacy and terms",
   "settings.privacy_and_terms_sub": "What we process, why, and your rights",
+  "termsw.updated_title": "We updated our Terms of Use and Privacy Policy",
+  "termsw.updated_body": "New version: {version}. You can see what changed in the documents.",
+  "termsw.read_terms": "Terms of Use",
+  "termsw.read_privacy": "Privacy Policy",
+  "termsw.ok": "Got it",
   "settings.add_to_home": "Add to home screen",
   "settings.add_to_home_hint": "full screen, offline",
   /* Kelime turu — bkz. tr.ts notu. */

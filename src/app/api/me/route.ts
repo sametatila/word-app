@@ -3,7 +3,7 @@ import { headers } from "next/headers";
 import { recordClient } from "@/lib/app-control";
 import { CLIENT_HEADER } from "@/lib/app-control-shared";
 import { getUserInfo } from "@/lib/auth/server";
-import { ensureProfile, getProgress, newWordsLeft } from "@/lib/session";
+import { ensureProfile, getProgress, newWordsLeft, termsUpdateFor } from "@/lib/session";
 import { parseAvatar } from "@/lib/avatar-config";
 
 export const dynamic = "force-dynamic";
@@ -74,6 +74,13 @@ export async function GET() {
            alanı baştan beri yazabiliyor ve `/api/profile` kabul ediyor
            (0-40), ama ekran mevcut değeri bilmediği için hiç çizemiyordu. */
         newPerDay: profile.newPerDay,
+        /* HESAP TERCİHLERİ (hukuk denetimi LEG-9 / LEG-11). `analyticsOptOut`
+           hesapta duruyor; istemci yerel anahtarını buna eşitliyor, değiştirmek
+           için `POST /api/profile { analyticsOptOut }`. `termsUpdate` doluysa
+           istemci bir kez "şartlar güncellendi" gösterip onayda
+           `POST /api/profile { acceptTerms: true }` gönderiyor. */
+        analyticsOptOut: profile.analyticsOptOut,
+        termsUpdate: termsUpdateFor(profile),
         mastered,
         totalWords,
         seconds: progress?.seconds ?? 0,

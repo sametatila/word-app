@@ -1,6 +1,7 @@
 "use client";
 
 import type { EventName } from "@/lib/events";
+import { apiFetch } from "@/lib/api-fetch";
 
 /**
  * İstemci tarafı olay göndericisi.
@@ -24,13 +25,46 @@ import type { EventName } from "@/lib/events";
  */
 const once = new Set<string>();
 
-/** Kullanıcının analitik tercihi (Gizlilik Politikası §8). Cihazda; varsayılan açık. */
+/**
+ * Kullanıcının analitik tercihi (Gizlilik Politikası §8).
+ *
+ * TERCİHİN ASLI HESAPTA (`profiles.analytics_opt_out`, hukuk denetimi LEG-9):
+ * sunucu kapalı hesabın ürün olaylarını zaten yazmıyor. Buradaki anahtar
+ * yalnız bir AYNA — kapalıyken isteğin hiç çıkmaması için — ve ölçüm değil
+ * tercih saklıyor. Değerler:
+ *   yok       açık
+ *   "server"  kapalı, hesap da biliyor (sunucuyla eşit)
+ *   "off"     kapalı ama hesaba henüz yazılamadı (eski sürümün yerel seçimi ya
+ *             da başarısız istek) — `AccountSync` bir sonraki açılışta taşır
+ */
 const ANALYTICS_KEY = "lernomi:analytics";
 export function analyticsEnabled(): boolean {
-  try { return typeof window !== "undefined" && window.localStorage.getItem(ANALYTICS_KEY) !== "off"; } catch { return true; }
+  try { return typeof window !== "undefined" && window.localStorage.getItem(ANALYTICS_KEY) === null; } catch { return true; }
 }
-export function setAnalyticsEnabled(on: boolean): void {
-  try { if (on) window.localStorage.removeItem(ANALYTICS_KEY); else window.localStorage.setItem(ANALYTICS_KEY, "off"); } catch { /* yut */ }
+/** Yerel aynanın ham değeri (bkz. yukarı). */
+export function analyticsMirror(): "server" | "off" | null {
+  try {
+    const v = window.localStorage.getItem(ANALYTICS_KEY);
+    return v === null ? null : v === "server" ? "server" : "off";
+  } catch { return null; }
+}
+export function setAnalyticsMirror(v: "server" | "off" | null): void {
+  try { if (v === null) window.localStorage.removeItem(ANALYTICS_KEY); else window.localStorage.setItem(ANALYTICS_KEY, v); } catch { /* yut */ }
+}
+/** Tercihi hesaba yazar, aynayı sonuca göre günceller. */
+export async function setAnalyticsEnabled(on: boolean): Promise<boolean> {
+  setAnalyticsMirror(on ? null : "off");
+  try {
+    const res = await apiFetch("/api/profile", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ analyticsOptOut: !on }),
+    });
+    if (res.ok && !on) setAnalyticsMirror("server");
+    return res.ok;
+  } catch {
+    return false;
+  }
 }
 
 export function resetOnce() {

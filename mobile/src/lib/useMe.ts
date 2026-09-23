@@ -38,6 +38,11 @@ export type Me = {
   levels?: { niveau: string; total: number; seen: number; mastered: number; familiar: number; learning: number }[];
   /** Son 55 günün çalışma satırları — etkinlik şeridi kendi penceresini keser. */
   days?: { day: string; reviews: number }[];
+  /** Hesaptaki analitik tercihi (LEG-9) ve "şartlar güncellendi" (LEG-11).
+      Uygulama ikisini `lib/accountSync` üzerinden (`/api/profile?prefs=1`)
+      okuyor; burada tip, uçla alan kümesi aynı kalsın diye. */
+  analyticsOptOut?: boolean;
+  termsUpdate?: { version: string } | null;
 };
 
 /**

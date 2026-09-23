@@ -10,7 +10,8 @@ import { db } from "@/lib/db";
 import { profiles } from "@/lib/db/schema";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
-import { ensureProfile } from "@/lib/session";
+import { ensureProfile, termsUpdateFor } from "@/lib/session";
+import { LEGAL_VERSION } from "@/lib/legal";
 import { proficiencyFor } from "@/lib/proficiency-data";
 import type { CefrLevel } from "@/lib/skills/types";
 import { PROFILE_LIMITS } from "@/lib/profile-limits";
@@ -20,12 +21,27 @@ export const dynamic = "force-dynamic";
 /**
  * Profil özeti (WP-50): seviye + beceri yetkinliği + sıradaki en iyi adım.
  * Ayarlar POST'ta; burası yalnız okur.
+ *
+ * `?prefs=1`: yalnız hesap tercihleri, yetkinlik hesabı olmadan (hafif):
+ *   { analyticsOptOut, termsVersion, termsAcceptedAt, termsUpdate }
+ * `termsUpdate` = { version } ya da null (bkz. lib/session `termsUpdateFor`).
  */
-export async function GET() {
+export async function GET(req: Request) {
   const userId = await getUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   try {
     const profile = await ensureProfile(userId);
+    if (new URL(req.url).searchParams.get("prefs") === "1") {
+      return NextResponse.json(
+        {
+          analyticsOptOut: profile.analyticsOptOut,
+          termsVersion: profile.termsVersion,
+          termsAcceptedAt: profile.termsAcceptedAt ? new Date(profile.termsAcceptedAt).toISOString() : null,
+          termsUpdate: termsUpdateFor(profile),
+        },
+        { headers: { "cache-control": "no-store" } },
+      );
+    }
     const level = (["A1", "A2", "B1", "B2", "C1"].includes(profile.level) ? profile.level : "A1") as CefrLevel;
     const data = await proficiencyFor(userId, profile.course, level);
     return NextResponse.json({ level, ...data }, { headers: { "cache-control": "no-store" } });
@@ -92,6 +108,20 @@ export async function POST(req: Request) {
     */
     if (cfg) cfg = stripLockedParts(cfg, await unlockedAchievementIds(userId));
     patch.avatar = cfg ? serializeAvatar(cfg) : null;
+  }
+  /*
+    ANALİTİK TERCİHİ HESAPTA (hukuk denetimi LEG-9). `true` = "kullanım verisi
+    gönder" kapalı; sunucu ürün olaylarını bu hesap için yazmıyor (lib/events).
+  */
+  if (typeof body.analyticsOptOut === "boolean") patch.analyticsOptOut = body.analyticsOptOut;
+  /*
+    ŞARTLARIN GÜNCEL SÜRÜMÜNÜ KABUL (LEG-11): "şartlar güncellendi" şeridinin
+    onayı. Sürümü istemci söylemiyor, sunucu kendi güncel sürümünü yazıyor:
+    eski bir istemci eski sürümü "kabul etmiş" gibi yazamasın.
+  */
+  if (body.acceptTerms === true) {
+    patch.termsVersion = LEGAL_VERSION;
+    patch.termsAcceptedAt = new Date();
   }
   if (typeof body.dailyGoal === "number") patch.dailyGoal = clampInt(body.dailyGoal, PROFILE_LIMITS.dailyGoal.min, PROFILE_LIMITS.dailyGoal.max);
   /*

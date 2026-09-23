@@ -1,5 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { API_BASE } from "../api/client";
+import { API_BASE, api } from "../api/client";
 
 /**
  * Mobil olay göndericisi (§4 funnel ölçümü) — web'deki lib/track ile aynı
@@ -137,17 +137,45 @@ export type EventName =
   | "time_spent"
   | "client_error";
 
-/** Analitik tercihi (Gizlilik Politikası §8) — cihazda, varsayılan açık; açılışta yüklenir. */
+/**
+ * Analitik tercihi (Gizlilik Politikası §8).
+ *
+ * TERCİHİN ASLI HESAPTA (`profiles.analytics_opt_out`, hukuk denetimi LEG-9;
+ * web `lib/track` ile aynı sözleşme): sunucu kapalı hesabın ürün olaylarını
+ * zaten yazmıyor. Buradaki anahtar yalnız bir AYNA — kapalıyken isteğin hiç
+ * çıkmaması için — ve açılışta yükleniyor. Değerler:
+ *   yok       açık
+ *   "server"  kapalı, hesap da biliyor (sunucuyla eşit)
+ *   "off"     kapalı ama hesaba henüz yazılamadı (eski sürümün yerel seçimi
+ *             ya da başarısız istek) — `lib/accountSync` ilk fırsatta taşır
+ */
 const ANALYTICS_KEY = "lernomi:analytics";
-let analyticsOn = true;
+export type AnalyticsMirror = "server" | "off" | null;
+let mirror: AnalyticsMirror = null;
 export async function loadAnalyticsPref(): Promise<boolean> {
-  try { analyticsOn = (await AsyncStorage.getItem(ANALYTICS_KEY)) !== "off"; } catch { analyticsOn = true; }
-  return analyticsOn;
+  try {
+    const v = await AsyncStorage.getItem(ANALYTICS_KEY);
+    mirror = v === null ? null : v === "server" ? "server" : "off";
+  } catch { mirror = null; }
+  return mirror === null;
 }
-export function analyticsEnabled(): boolean { return analyticsOn; }
-export async function setAnalyticsEnabled(on: boolean): Promise<void> {
-  analyticsOn = on;
-  try { if (on) await AsyncStorage.removeItem(ANALYTICS_KEY); else await AsyncStorage.setItem(ANALYTICS_KEY, "off"); } catch { /* yut */ }
+export function analyticsEnabled(): boolean { return mirror === null; }
+/** Yerel aynanın değeri (bkz. yukarı). */
+export function analyticsMirror(): AnalyticsMirror { return mirror; }
+export async function setAnalyticsMirror(v: AnalyticsMirror): Promise<void> {
+  mirror = v;
+  try { if (v === null) await AsyncStorage.removeItem(ANALYTICS_KEY); else await AsyncStorage.setItem(ANALYTICS_KEY, v); } catch { /* yut */ }
+}
+/** Tercihi hesaba yazar, aynayı sonuca göre günceller. Hesaba yazıldıysa true. */
+export async function setAnalyticsEnabled(on: boolean): Promise<boolean> {
+  await setAnalyticsMirror(on ? null : "off");
+  try {
+    await api("/api/profile", { method: "POST", body: JSON.stringify({ analyticsOptOut: !on }) });
+    if (!on) await setAnalyticsMirror("server");
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 /**
@@ -165,7 +193,7 @@ export function trackOnce(name: EventName, value = 0, kind?: string): void {
 }
 
 export function track(name: EventName, value = 0, kind?: string): void {
-  if (!analyticsOn) return; // kullanıcı kapattı: hiçbir olay gitmez
+  if (mirror !== null) return; // kullanıcı kapattı: hiçbir olay gitmez
   const d = new Date();
   const day = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
   try {

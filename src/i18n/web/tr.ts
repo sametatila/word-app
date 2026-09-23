@@ -217,6 +217,12 @@ export const trWeb: Record<string, string> = {
   "words.subtitle": "{n} kelime · A1'den C1'e",
   "settings.privacy_and_terms": "Gizlilik ve şartlar",
   "settings.privacy_and_terms_sub": "Hangi veriyi neden işlediğimiz, hakların",
+  /* "Şartlar güncellendi" şeridi (components/account-sync, hukuk denetimi LEG-11). */
+  "termsw.updated_title": "Kullanım Şartları ve Gizlilik Politikası güncellendi",
+  "termsw.updated_body": "Yeni sürüm: {version}. Neyin değiştiğini metinlerde görebilirsin.",
+  "termsw.read_terms": "Kullanım Şartları",
+  "termsw.read_privacy": "Gizlilik Politikası",
+  "termsw.ok": "Anladım",
   "settings.add_to_home": "Ana ekrana ekle",
   "settings.add_to_home_hint": "tam ekran, çevrimdışı",
   /* Kelime turu — etap, bahis ve özet ekranları. Mobil `GameScreen` daha

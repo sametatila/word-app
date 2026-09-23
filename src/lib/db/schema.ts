@@ -241,6 +241,22 @@ export const profiles = pgTable("profiles", {
   showActivity: boolean("show_activity").notNull().default(true),
   /** Kullanıcı adı 14 günde bir değişebilir — sık değişen ad, bulunamayan addır. */
   usernameChangedAt: timestamp("username_changed_at", { withTimezone: true }),
+  /**
+   * "Kullanım verisi gönder" kapalı mı (Gizlilik §8, hukuk denetimi LEG-9).
+   * Tercih eskiden yalnız cihazdaydı; sunucunun yazdığı ürün olayları ona hiç
+   * bakmıyordu ve başka cihazda geçerli değildi. `lib/events` `track` her
+   * yazmada okuyor; işletimsel olaylar hariç (liste ve gerekçe orada).
+   */
+  analyticsOptOut: boolean("analytics_opt_out").notNull().default(false),
+  /**
+   * Kabul edilen Kullanım Şartları/Gizlilik sürümü (`lib/legal` LEGAL_VERSION)
+   * ve anı (hukuk denetimi LEG-11; Şartlar §12b "kabul ettiğin sürümü
+   * isteyebilirsin"). Profil doğarken yazılıyor (kayıt anı); sonradan sürüm
+   * artınca istemci şerit gösteriyor ve kullanıcı onaylayınca güncelleniyor.
+   * Null = bu sütundan ÖNCE açılmış hesap: hangi sürümü kabul ettiği bilinmiyor.
+   */
+  termsVersion: text("terms_version"),
+  termsAcceptedAt: timestamp("terms_accepted_at", { withTimezone: true }),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 }, (t) => [
   uniqueIndex("profiles_username_idx").on(t.username),
