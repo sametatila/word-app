@@ -12,7 +12,7 @@ import { XIcon, CheckIcon, CrownIcon, ShareIcon } from "../ui/icons";
 import { SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { track } from "../lib/track";
 import { haptic } from "../lib/haptics";
-import { awaitProcessedPurchase, billingAvailable, getPackages, offerCodesAvailable, presentOfferCodeRedemption, purchase, purchaseGroupTrial, restore, type PurchaseOutcome } from "../lib/billing";
+import { awaitProcessedPurchase, billingAvailable, getPackages, offerCodesAvailable, presentOfferCodeRedemption, purchase, purchaseGroupTrial, restore, trialEligibleProducts, type PurchaseOutcome } from "../lib/billing";
 import { usePremiumStatus, refreshPremium } from "../lib/premium";
 import { inviteLink, shareInvite } from "../lib/share";
 import { api } from "../api/client";
@@ -67,10 +67,15 @@ const GROUP_CODES = Platform.OS === "android";
  * Süre TEKİL/ÇOĞUL anahtarla kuruluyor: "1" + "months" birleştirmesi İngilizcede
  * "1 months", Almancada "1 Monate" basıyordu. Yıllık birim de eksikti ve aya
  * düşüyordu.
+ *
+ * `eligible`: iOS'ta denemeye uygun ürünler (`trialEligibleProducts`). Listede
+ * olmayan ürün için deneme metni YOK — iOS `introPrice`ı uygun olmayana da
+ * dolduruyor (IAP-6). `null` (Android) süzgeçsiz: Play yalnız uygun teklifi veriyor.
  */
-function freeTrialOf(pkg: PurchasesPackage | undefined): string | null {
+function freeTrialOf(pkg: PurchasesPackage | undefined, eligible: Set<string> | null): string | null {
   const intro = pkg?.product.introPrice;
   if (!intro || intro.price !== 0) return null;
+  if (eligible && !eligible.has(pkg.product.identifier)) return null;
   const n = intro.periodNumberOfUnits;
   const unit = intro.periodUnit;
   const key = unit === "DAY" ? "paywall.trial_days" : unit === "WEEK" ? "paywall.trial_weeks" : unit === "YEAR" ? "paywall.trial_years" : "paywall.trial_months";
@@ -209,6 +214,9 @@ export function PaywallScreen() {
     </Text>
   ) : null;
   const [pkgs, setPkgs] = useState<PurchasesPackage[] | null>(null);
+  /* iOS'ta denemeye uygun ürünler; paketlerle BİRLİKTE yazılıyor ki uygunluk
+     gelmeden deneme metni bir an bile görünmesin. Android'de null (süzgeç yok). */
+  const [trialOk, setTrialOk] = useState<Set<string> | null>(null);
   const storeOpen = configured && (pkgs === null || pkgs.length > 0);
   const [selected, setSelected] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
@@ -224,9 +232,11 @@ export function PaywallScreen() {
     track("paywall_view", 0, fromWeb ? "web_link" : "mobile");
     if (!configured) { setPkgs([]); return; }
     let alive = true;
-    void getPackages().then((p) => {
+    void getPackages().then(async (p) => {
+      const eligible = await trialEligibleProducts(p.map((x) => x.product.identifier));
       if (!alive) return;
       const sorted = [...p].sort((a, b) => (a.packageType === "ANNUAL" ? -1 : b.packageType === "ANNUAL" ? 1 : 0));
+      setTrialOk(eligible);
       setPkgs(sorted);
       setSelected(sorted[0]?.identifier ?? null);
     });
@@ -235,7 +245,7 @@ export function PaywallScreen() {
   }, [configured, fromWeb]);
 
   const pkg = pkgs?.find((p) => p.identifier === selected);
-  const trial = freeTrialOf(pkg);
+  const trial = freeTrialOf(pkg, trialOk);
 
   /* Apple'ın teklif kodu sayfası uygulamanın ÜSTÜNDE açılıyor ve sözü sayfa
      gösterilince çözülüyor. Bozdurulan kodun yetkisi webhook'la sunucuya
@@ -444,7 +454,7 @@ export function PaywallScreen() {
           <View style={{ gap: spacing.md }}>
             {pkgs.map((p) => {
               const active = selected === p.identifier;
-              const tr = freeTrialOf(p);
+              const tr = freeTrialOf(p, trialOk);
               return (
                 <PressableScale key={p.identifier} onPress={() => setSelected(p.identifier)} accessibilityRole="radio" accessibilityState={{ selected: active }} accessibilityLabel={`${planLabel(p)}, ${priceLine(p, tr)}`} style={{ borderRadius: radii.lg, borderWidth: 2, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : colors.surface, padding: spacing.lg, flexDirection: "row", alignItems: "center", gap: spacing.md }}>
                   <View style={{ width: 24, height: 24, borderRadius: 12, borderWidth: 2, borderColor: active ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>

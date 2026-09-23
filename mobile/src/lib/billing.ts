@@ -73,6 +73,36 @@ export async function getPackages(): Promise<PurchasesPackage[]> {
 }
 
 /**
+ * iOS'ta ÜCRETSİZ DENEMEYE GERÇEKTEN UYGUN olan ürünler (denetim IAP-6).
+ *
+ * RevenueCat iOS'ta `product.introPrice`ı kullanıcı uygun olmasa da dolduruyor;
+ * Apple denemeyi abonelik grubu başına kişiye bir kez veriyor. Yalnız o alana
+ * bakınca denemeyi kullanmış ya da önceden abone olmuş biri "İlk 1 ay ücretsiz"
+ * ve "Ücretsiz denemeyi başlat" görüyor, ama ilk gün ücretlendiriliyordu:
+ * yanıltıcı fiyat beyanı (3.1.2(a), 5.6).
+ *
+ * Dönüş: iOS'ta UYGUN (`ELIGIBLE`) ürün kimlikleri. Bilinmeyen durum ve hata
+ * "uygun değil" sayılıyor: RevenueCat'in de önerdiği gibi belirsizlikte deneme
+ * vaadi verilmez (uygunsa mağaza denemeyi yine verir, kullanıcı kaybetmez).
+ * Android'de `null` = süzgeç yok: Play teklif listesinde zaten yalnız uygun
+ * teklifi döndürüyor ve bu çağrı orada her zaman UNKNOWN veriyor.
+ */
+export async function trialEligibleProducts(productIds: string[]): Promise<Set<string> | null> {
+  if (platform() !== "ios") return null;
+  if (!configured || productIds.length === 0) return new Set();
+  try {
+    const res = await Purchases.checkTrialOrIntroductoryPriceEligibility(productIds);
+    return new Set(
+      Object.entries(res)
+        .filter(([, e]) => e.status === Purchases.INTRO_ELIGIBILITY_STATUS.INTRO_ELIGIBILITY_STATUS_ELIGIBLE)
+        .map(([id]) => id),
+    );
+  } catch {
+    return new Set();
+  }
+}
+
+/**
  * Satın almanın SONUCU — ekran her birinde başka bir şey söylüyor (denetim IAP-7).
  *
  *   done        yetki sunucuda görünüyor; paywall kapanır
