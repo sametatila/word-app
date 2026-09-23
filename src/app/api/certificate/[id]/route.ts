@@ -96,7 +96,17 @@ export async function GET(_req: Request, ctx: { params: Promise<{ id: string }> 
         `<text x="444" y="${rowTop + i * 44 + 17}" font-size="12" fill="#8a6a4f">${esc(c.tr.length > 56 ? `${c.tr.slice(0, 55)}…` : c.tr)}</text>`,
     )
     .join("");
-  const height = Math.max(560, rowTop + Math.max(exam.sections.length * 26, cando.length * 44) + 110);
+  /*
+    FERAGAT ÜÇ DİLDE, BELGENİN KENDİSİNDE (içerik denetimi CNT-11). Mağaza
+    metni "resmî sertifika yerine geçmez" diyordu ama paylaşılan belgede bu
+    yoktu; üstündeki "B1 · Niveauprüfung" resmî sınav adlarını çağrıştırıyor.
+    Belge paylaşılıyor ve okuyanın dili bilinmiyor: üç dil birden, öğrencinin
+    dili önce.
+  */
+  const height = Math.max(608, rowTop + Math.max(exam.sections.length * 26, cando.length * 44) + 158);
+  const disclaimerRows = [lang, ...(["tr", "en", "de"] as const).filter((l) => l !== lang)]
+    .map((l, i) => `<text x="400" y="${height - 112 + i * 16}" text-anchor="middle" font-size="11" fill="#8a6a4f">${esc(translate(l, "certw.disclaimer"))}</text>`)
+    .join("");
 
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="${height}" viewBox="0 0 800 ${height}">
   <rect width="800" height="${height}" rx="24" fill="#fbf6ef"/>
@@ -113,6 +123,7 @@ export async function GET(_req: Request, ctx: { params: Promise<{ id: string }> 
     ${cando.length ? `<text x="430" y="${rowTop - 22}" font-size="13" font-weight="700" fill="#8a6a4f">${esc(face.canDo)}</text>` : ""}
     ${rows}
     ${candoRows}
+    ${disclaimerRows}
     <text x="72" y="${height - 44}" font-size="14" fill="#8a6a4f">${date}</text>
     <text x="728" y="${height - 44}" text-anchor="end" font-size="14" fill="#8a6a4f">${esc(translate(lang, "certw.pass_rule"))}</text>
   </g>

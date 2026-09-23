@@ -684,10 +684,12 @@ export const trWeb: Record<string, string> = {
   "profw.load_failed": "Profil yüklenemedi",
   "bossw.exam_link": "Modül sınavı (25 dk, yedi bölüm) →",
   "bossw.title": "Modül sınavı",
-  "certw.this_document": "Bu belge",
+  /* "Başarı belgesi", resmî sertifika değil (içerik denetimi CNT-11). */
+  "certw.this_document": "Bu başarı belgesi",
   "certw.awarded_to": "adına, sınavı {pct} ile geçtiği için verilmiştir.",
   "certw.sections": "BÖLÜMLER",
   "certw.pass_rule": "Geçme: toplam ≥ %70, her bölüm ≥ %50",
+  "certw.disclaimer": "Lernomi alıştırma belgesi — resmî bir dil sertifikası değildir; hiçbir sınav kurumuyla bağlantılı değildir.",
   "loginw.continue_demo": "Demo ile devam et",
   "email.verify.subject": "Lernomi — e-posta adresini doğrula",
   "email.verify.heading": "E-postanı doğrula",
