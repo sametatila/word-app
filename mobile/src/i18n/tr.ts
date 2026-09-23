@@ -100,7 +100,7 @@ export const tr: Record<string, string> = {
   "auth.your_progress_is_saved_and": "İlerlemen kaydolur, cihazlar arası devam eder.",
   "auth.sign_up": "Kayıt ol",
   "auth.terms_of_use": "Kullanım Şartları",
-  "auth.legal_notice": "18 yaşından büyüğüm ve şunları kabul ediyorum:",
+  "auth.legal_notice": "18 yaşında ya da daha büyüğüm ve şunları kabul ediyorum:",
   "auth.password_min_hint": "Parola (en az {n} karakter)",
   "auth.password_ok": "Parola uygun",
   "auth.passwords_dont_match": "Parolalar eşleşmiyor.",

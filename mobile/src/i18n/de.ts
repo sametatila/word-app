@@ -95,7 +95,7 @@ export const de: Record<string, string> = {
   "auth.your_progress_is_saved_and": "Dein Fortschritt wird gespeichert und geräteübergreifend fortgesetzt.",
   "auth.sign_up": "Registrieren",
   "auth.terms_of_use": "Nutzungsbedingungen",
-  "auth.legal_notice": "Ich bin über 18 und akzeptiere:",
+  "auth.legal_notice": "Ich bin mindestens 18 Jahre alt und akzeptiere:",
   "auth.password_min_hint": "Passwort (mindestens {n} Zeichen)",
   "auth.password_ok": "Passwort sieht gut aus",
   "auth.passwords_dont_match": "Die Passwörter stimmen nicht überein.",

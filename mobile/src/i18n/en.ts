@@ -95,7 +95,7 @@ export const en: Record<string, string> = {
   "auth.your_progress_is_saved_and": "Your progress is saved and follows you across devices.",
   "auth.sign_up": "Sign up",
   "auth.terms_of_use": "Terms of Use",
-  "auth.legal_notice": "I am over 18 and I accept:",
+  "auth.legal_notice": "I am 18 or older and I accept:",
   "auth.password_min_hint": "Password (at least {n} characters)",
   "auth.password_ok": "Password looks good",
   "auth.passwords_dont_match": "The passwords don't match.",
