@@ -6,9 +6,11 @@ import {
   getInitialNotification,
   getMessaging,
   getToken,
+  isDeviceRegisteredForRemoteMessages,
   onMessage,
   onNotificationOpenedApp,
   onTokenRefresh,
+  registerDeviceForRemoteMessages,
   requestPermission,
   type RemoteMessage,
 } from "@react-native-firebase/messaging";
@@ -82,7 +84,25 @@ export async function registerPushDevice(): Promise<void> {
   if (!ready()) return;
   try {
     if (!(await permitted())) return;
-    const token = await getToken(getMessaging());
+    /*
+     * JETON YALNIZ İZİNDEN SONRA ÜRETİLİYOR.
+     *
+     * `mobile/firebase.json` › `messaging_auto_init_enabled: false`: FCM
+     * otomatik başlatması kapalı, yani uygulama açılır açılmaz kayıt jetonu ve
+     * Firebase kurulum kimliği üretilip Google'a gitmiyor. Veri Güvenliği
+     * beyanı "bildirim izni verilmezse jeton hiç üretilmiyor" diyor; o sözü
+     * tutan yer burası. İlk jeton aşağıdaki açık `getToken` çağrısıyla, izin
+     * verildikten sonra üretiliyor (otomatik başlatma kapalıyken de çalışıyor).
+     *
+     * iOS'ta `getToken` cihaz APNs'e kayıtlı değilse reddediyor. RNFB
+     * açılışta kaydı zaten yapıyor; açık çağrı o adım bir sebeple
+     * gerçekleşmediyse diye (kayıtlıysa hiçbir şey yapmıyor).
+     */
+    const fcm = getMessaging();
+    if (Platform.OS === "ios" && !isDeviceRegisteredForRemoteMessages(fcm)) {
+      await registerDeviceForRemoteMessages(fcm);
+    }
+    const token = await getToken(fcm);
     if (!token || token === current) return;
     await sendToken(token);
     current = token;
