@@ -30,6 +30,7 @@ import { assessFailKey, fallbackNoteKey } from "../lib/assessFail";
 import { AssessmentCard, type AssessmentResult } from "../ui/AssessmentCard";
 import { useNoHints } from "./noHints";
 import { speakTarget, stopSpeaking, ttsAvailable } from "../lib/tts";
+import { tileSpeech } from "../lib/ttsText";
 import { useTheme, spacing, radii, softShadow, cardShadow, soft, type Palette } from "../theme";
 import type { Round, RoundWord, Option } from "./session";
 
@@ -215,14 +216,15 @@ function markAnswer(ok: boolean, speak?: string | null): void {
     okuma kendiliğinden geliyor.
   */
   if (bekleyenOkuma) clearTimeout(bekleyenOkuma);
-  bekleyenOkuma = setTimeout(() => { bekleyenOkuma = null; speakTarget(speak); }, sfxDurationMs(kind) + 60);
+  // Turların hepsi kelime katmanı: yalnız Defne/Aras dosyası (bkz. lib/tts `speakTarget` `word`).
+  bekleyenOkuma = setTimeout(() => { bekleyenOkuma = null; speakTarget(speak, { word: true }); }, sfxDurationMs(kind) + 60);
 }
 
 /** Almanca metnin yanında küçük hoparlör. */
 function SpeakButton({ text, colors, size = 20 }: { text: string; colors: Palette; size?: number }) {
   if (!text?.trim()) return null;
   return (
-    <PressableScale accessibilityLabel={tx("item.listen")} onPress={() => speakTarget(text)} hitSlop={8} style={{ padding: spacing.xs }}>
+    <PressableScale accessibilityLabel={tx("item.listen")} onPress={() => speakTarget(text, { word: true })} hitSlop={8} style={{ padding: spacing.xs }}>
       <SpeakerIcon color={colors.primaryText} size={size} />
     </PressableScale>
   );
@@ -458,7 +460,7 @@ function SheetRow({ label, colors, children }: { label: string; colors: Palette;
 function useAutoSpeak(text: string | null | undefined, key: string | number) {
   useEffect(() => {
     if (!text) return;
-    const t = setTimeout(() => speakTarget(text), 320);
+    const t = setTimeout(() => speakTarget(text, { word: true }), 320);
     return () => clearTimeout(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [key]);
@@ -1119,7 +1121,8 @@ function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; col
           ) : (
             <Text variant="h2" style={{ flex: 1 }}>{sentence}</Text>
           )}
-          <SpeakButton text={sentence} colors={colors} size={22} />
+          {/* Boşluklu cümlenin hoparlörü KALDIRILDI (2026-09-23): boşluğu atlayıp bozuk bir cümle okuyordu
+              ("Sind der neue Lehrer?") ve webde hiç yoktu. Tam cümle cevaptan sonra okunuyor. */}
         </View>
         {round.sentenceTr ? <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{round.sentenceTr}</Text> : null}
       </View>
@@ -1173,7 +1176,7 @@ function SelfAssess({ round, onDone, colors }: { round: Round; onDone: Done; col
   const [skipping, setSkipping] = useState(false);
   const spoke = useRef(false);
   useEffect(() => {
-    if (round.game === "intro" && word && !spoke.current) { spoke.current = true; speakTarget(withArtikel(word)); }
+    if (round.game === "intro" && word && !spoke.current) { spoke.current = true; speakTarget(withArtikel(word), { word: true }); }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [round.id]);
   // Kelime yoksa turu güvenle atla (render sırasında değil, efektte).
@@ -1326,7 +1329,7 @@ function ListenRound({ round, word, onDone, colors }: { round: Round; word: Roun
   // Tur basina bir kez oku: word zaten round.id'den turuyor, bagimliliga
   // eklemek ayni turda tekrar okumaya yol acabilir.
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => { if (audible) speakTarget(withArtikel(word)); }, [audible, round.id]);
+  useEffect(() => { if (audible) speakTarget(withArtikel(word), { word: true }); }, [audible, round.id]);
   const hideWord = audible === true && !picked;
   function choose(o: Option) {
     if (picked) return;
@@ -1340,7 +1343,7 @@ function ListenRound({ round, word, onDone, colors }: { round: Round; word: Roun
       <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, paddingVertical: spacing.xxl, paddingHorizontal: spacing.lg, alignItems: "center", borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.md }, cardShadow(colors, 10)]}>
         <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{tx("rounds.listen_pick_meaning")}</Text>
         {hideWord ? (
-          <PressableScale accessibilityLabel={tx("item.listen")} onPress={() => { setReplays((n) => n + 1); speakTarget(withArtikel(word)); }} style={[{ width: 84, height: 84, borderRadius: 42, backgroundColor: colors.primary, alignItems: "center", justifyContent: "center", marginTop: spacing.lg }, softShadow(colors.primary, 12)]}>
+          <PressableScale accessibilityLabel={tx("item.listen")} onPress={() => { setReplays((n) => n + 1); speakTarget(withArtikel(word), { word: true }); }} style={[{ width: 84, height: 84, borderRadius: 42, backgroundColor: colors.primary, alignItems: "center", justifyContent: "center", marginTop: spacing.lg }, softShadow(colors.primary, 12)]}>
             <SpeakerIcon color={colors.onPrimary} size={38} />
           </PressableScale>
         ) : (
@@ -1524,7 +1527,7 @@ function OrderRound({ round, word, onDone, colors }: { round: Round; word: Round
       setFb({ correct: ok, answer: full, speak: full, meaning: round.sentenceTr ?? word.tr, you: `${np.map((x) => x.text).join(" ")}${tail}`, why: ok ? null : whyFor({ type: classifyOrder(np.map((x) => x.text), answer, tail, currentTargetLang()), word, answer, tail, targetLang: currentTargetLang() }) });
     } else {
       sfx("tap");
-      speakTarget(t.text); // web: her yerleştirilen kelimeyi oku
+      speakTarget(tileSpeech(t.text), { word: true }); // web: her yerleştirilen kelimeyi oku (kutunun kendi kaydı, bkz. ttsText `tileSpeech`)
     }
   }
   /** Sürüklenip bırakılan havuz döşemesi — bırakıldığı yuvaya giriyor. */
@@ -1777,7 +1780,7 @@ function MatchRound({ round, onDone, colors }: { round: Round; onDone: Done; col
     if (matched.has(id) || fb) return;
     sfx("tap");
     const w = words.find((x) => x.id === id);
-    if (w) speakTarget(withArtikel(w)); // web: Almanca kutusuna dokununca oku
+    if (w) speakTarget(withArtikel(w), { word: true }); // web: Almanca kutusuna dokununca oku
     setSelLeft(id); setWrong(null);
   }
   function pickRight(r: { wordId: number; text: string }) {

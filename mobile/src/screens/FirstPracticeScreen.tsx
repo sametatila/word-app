@@ -47,7 +47,7 @@ export function FirstPracticeScreen() {
   // Kelime basina bir kez: level params'tan, w idx'ten turuyor; ikisini
   // bagimliliga eklemek ayni kelimeyi tekrar okutur.
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => { track("first_practice", idx, level); speakTarget(withArtikel(w)); setSeen(false); }, [idx]);
+  useEffect(() => { track("first_practice", idx, level); speakTarget(withArtikel(w), { word: true }); setSeen(false); }, [idx]);
 
   function primary() {
     haptic("tap");
@@ -77,7 +77,7 @@ export function FirstPracticeScreen() {
         <Text variant="caption" color={colors.primaryText} style={{ letterSpacing: 1, textTransform: "uppercase" }}>{kicker}</Text>
         <Text variant="display" style={{ textAlign: "center" }}>{withArtikel(w)}</Text>
 
-        <PressableScale onPress={() => speakTarget(withArtikel(w))} accessibilityRole="button" accessibilityLabel={t("firstpractice.listen_word", { word: w.de })} style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: spacing.lg, paddingVertical: 9 }}>
+        <PressableScale onPress={() => speakTarget(withArtikel(w), { word: true })} accessibilityRole="button" accessibilityLabel={t("firstpractice.listen_word", { word: w.de })} style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: spacing.lg, paddingVertical: 9 }}>
           <SpeakerIcon color={colors.primaryText} size={18} /><Text variant="bodyStrong" color={colors.primaryText}>{t("firstpractice.listen")}</Text>
         </PressableScale>
 

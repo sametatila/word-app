@@ -24,7 +24,7 @@ import { updateProfile } from "../lib/updateProfile";
 import { VoicePicker, VoicePickerSkeleton } from "../ui/VoicePicker";
 import { SkeletonBar, SkeletonLine, SkeletonPill, SkeletonTile, textHeight } from "../ui/Skeleton";
 import { loadVoicePref, setVoicePref } from "../lib/tts";
-import { defaultVoice, type VoiceId } from "../lib/voices";
+import { defaultVoice, resolveVoice, type VoiceId } from "../lib/voices";
 import { coursesForNative, offeredNativeLangs, NATIVE_LANGS, type NativeLang } from "../lib/courses";
 import { currentLang, setLang } from "../lib/i18n";
 import { useTheme, spacing, radii, cardShadow, type Palette, type ThemeMode } from "../theme";
@@ -288,7 +288,8 @@ export function SettingsScreen() {
   async function pickCourse(c: string) {
     if (c === course) return;
     setCourse(c);
-    const v = defaultVoice(c); // kurs değişince o kursun varsayılan sesine dön
+    // Kurs değişince seçilen karakter korunuyor (Aras → yeni kursta Aras, Zürih'te Jan; web profile-form ile aynı).
+    const v = resolveVoice(c, voice);
     setVoice(v);
     void setVoicePref(c, v);
     await updateProfile({ course: c, voice: v });

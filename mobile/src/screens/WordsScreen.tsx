@@ -270,7 +270,7 @@ export function WordsScreen() {
                     {w.lapses ? ` · ${t("words.n_lapses", { n: w.lapses })}` : ""}
                   </Text>
                 </View>
-                <SpeakButton text={say} size={34} />
+                <SpeakButton word text={say} size={34} />
                 <View style={{ backgroundColor: colors.surface2, borderRadius: radii.sm, paddingHorizontal: 7, paddingVertical: 2 }}>
                   <Text variant="micro" color={colors.textMuted}>{w.niveau}</Text>
                 </View>

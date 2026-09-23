@@ -5,7 +5,7 @@ import { t } from "../lib/i18n";
 import { PressableScale } from "./PressableScale";
 import { SpeakerIcon } from "./icons";
 import { useTheme, spacing, radii } from "../theme";
-import { voicesFor, resolveVoice, type VoiceId } from "../lib/voices";
+import { isOwnVoice, voicesFor, resolveVoice, type VoiceId } from "../lib/voices";
 import { courseOrDefault } from "../lib/courses";
 import { speakWithVoice } from "../lib/tts";
 import { SkeletonCard, SkeletonLine, SkeletonTile } from "./Skeleton";
@@ -19,8 +19,12 @@ import { SkeletonCard, SkeletonLine, SkeletonTile } from "./Skeleton";
 // cümle okunmasın diye aşağıda açıkça ele alınıyor.
 export const SAMPLE: Record<string, string> = {
   "gsw-zh": "De nöi Vertrag gilt für alli Bschäftigte.",
-  de: "Der neue Vertrag gilt für alle Beschäftigten.",
-  en: "The new contract applies to all employees.",
+  /* Almanca ve İngilizce örnek KELİME KATMANINDAN (iki örnek cümle, 2026-09-23): Defne ve Aras'ın önceden
+     üretilmiş sesi yalnız orada var. Eski cümle ("Der neue Vertrag…") tabloda yoktu; önizleme karakterin
+     kendi sesini değil Edge karşılığını çalardı — seçimi yanlış duyurmanın ta kendisi. Değiştirilirse yeni
+     cümle kelime tablosunda olmalı: `scripts/tts-own-coverage.ts` bunu denetliyor. */
+  de: "Bei gutem Wetter frühstücken wir auf der Terrasse.",
+  en: "Good friends are always there for each other.",
 };
 
 export function VoicePicker({
@@ -66,7 +70,7 @@ export function VoicePicker({
                    (`voice-picker` `aria-label`); anahtar ortak tabana taşındı. */
                 accessibilityLabel={t("voice.listen_to", { name: v.label })}
                 hitSlop={8}
-                onPress={() => speakWithVoice(sample, v.id)}
+                onPress={() => speakWithVoice(sample, v.id, isOwnVoice(v.id))}
                 style={{ padding: spacing.xs }}
               >
                 <SpeakerIcon color={colors.primaryText} size={20} />

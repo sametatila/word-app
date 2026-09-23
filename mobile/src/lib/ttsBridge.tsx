@@ -61,9 +61,10 @@ function pitchArg(pitch: Pitch | undefined): string {
   return JSON.stringify(pitch && pitch !== "mid" ? PITCH_PARAM[pitch] : "mid");
 }
 
-export function bridgeSpeak(voice: VoiceId, text: string, slow: Pace | boolean, pitch?: Pitch): void {
+export function bridgeSpeak(voice: VoiceId, text: string, slow: Pace | boolean, pitch?: Pitch, word = false): void {
   if (!bridgeReady() || !text) return;
-  const js = `window.ttsSpeak && window.ttsSpeak(${JSON.stringify(voice)},${JSON.stringify(text)},${paceArg(slow)},${pitchArg(pitch)}); true;`;
+  // Beşinci argüman kelime katmanı (`k=w`); eski köprü sayfası onu yok sayıyor.
+  const js = `window.ttsSpeak && window.ttsSpeak(${JSON.stringify(voice)},${JSON.stringify(text)},${paceArg(slow)},${pitchArg(pitch)},${word}); true;`;
   try { viewRef!.injectJavaScript(js); } catch { /* yut */ }
 }
 
@@ -80,9 +81,9 @@ export function bridgeSpeak(voice: VoiceId, text: string, slow: Pace | boolean, 
  * cihazda kalabiliyor) `ttsPrefetch` tanımlamıyor; `&&` koruması o durumda
  * hiçbir şey yapmadan geçiyor.
  */
-export function bridgePrefetch(items: { voice: VoiceId; text: string; slow?: Pace | boolean; pitch?: Pitch }[]): void {
+export function bridgePrefetch(items: { voice: VoiceId; text: string; slow?: Pace | boolean; pitch?: Pitch; word?: boolean }[]): void {
   if (!bridgeReady() || !items.length) return;
-  const list = items.map((i) => `[${JSON.stringify(i.voice)},${JSON.stringify(i.text)},${paceArg(i.slow ?? false)},${pitchArg(i.pitch)}]`);
+  const list = items.map((i) => `[${JSON.stringify(i.voice)},${JSON.stringify(i.text)},${paceArg(i.slow ?? false)},${pitchArg(i.pitch)},${i.word === true}]`);
   const js = `window.ttsPrefetch && window.ttsPrefetch([${list.join(",")}]); true;`;
   try { viewRef!.injectJavaScript(js); } catch { /* yut */ }
 }
@@ -200,7 +201,7 @@ function finishPending(): void {
   pendingResolve = null;
   if (r) r();
 }
-export function bridgeSpeakAndWait(voice: VoiceId, text: string, slow: Pace | boolean = false, onStart?: () => void, pitch?: Pitch): Promise<void> {
+export function bridgeSpeakAndWait(voice: VoiceId, text: string, slow: Pace | boolean = false, onStart?: () => void, pitch?: Pitch, word = false): Promise<void> {
   return new Promise((resolve) => {
     console.log("PROBE bridgeSpeak", JSON.stringify(text).slice(0, 40), "ready=", bridgeReady());
     if (!bridgeReady() || !text) { resolve(); return; }
@@ -240,7 +241,7 @@ export function bridgeSpeakAndWait(voice: VoiceId, text: string, slow: Pace | bo
     // kaldığı yerden devam ediyor. `nativeDelay` bu yüzden zaten vardı
     // (WalkModeScreen'deki `gap`), köprünün emniyet ağına uygulanmamıştı.
     void nativeDelay(cap).then(() => { if (pendingSeq === seq) finishPending(); });
-    const js = `window.ttsSpeak && window.ttsSpeak(${JSON.stringify(voice)},${JSON.stringify(text)},${paceArg(slow)},${pitchArg(pitch)}); true;`;
+    const js = `window.ttsSpeak && window.ttsSpeak(${JSON.stringify(voice)},${JSON.stringify(text)},${paceArg(slow)},${pitchArg(pitch)},${word}); true;`;
     try { viewRef!.injectJavaScript(js); } catch { finishPending(); }
   });
 }
@@ -283,6 +284,9 @@ export function TtsBridge() {
           if (m === "ready") { ready = true; healthy = true; errors = 0; }
           else if (m === "play") { healthy = true; errors = 0; const s = pendingStart; pendingStart = null; s?.(); }
           else if (m === "end") { healthy = true; errors = 0; finishPending(); } // bekleyen speak-and-wait'i çöz
+          // Kelime katmanında tabloda olmayan metin (sunucu 404): okuma atlanıyor, köprü SAĞLIKLI kalıyor —
+          // hata sayılsaydı iki eksik kelime oturumun geri kalanını native yola atardı (bkz. /tts-bridge).
+          else if (m === "skip") { finishPending(); }
           else if (m === "error") {
             // Üst üste hata → cihaz TTS'ine düş; ama köprüyü bir kez tazeleyerek (throttle'lı)
             // kendini iyileştirmeyi dene — geçici 401/ağ o oturumu kalıcı susturmasın.

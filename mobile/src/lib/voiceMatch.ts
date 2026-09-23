@@ -177,9 +177,13 @@ const SKIP: Record<string, RegExp[]> = {
   ],
 };
 
-/** Yürüyüş girişinde bir kez okunan teslim sözcüğü — dile göre (web `skipWord`). */
+/**
+ * Yürüyüş girişinde bir kez okunan teslim sözcüğü — dile göre, web `skipWord` ile AYNI sözcük.
+ * İngilizcede "skip" yazılıydı, web "next" diyordu; sözcük artık seçilen karakterin kelime katmanı
+ * kaydından çalıyor ve kayıt "next" için var (ikisi de teslim sayılıyor, `parseSkip`).
+ */
 export function skipWord(lang: string = currentTargetLang()): string {
-  return lang === "en" ? "skip" : "weiter";
+  return lang === "en" ? "next" : "weiter";
 }
 
 export function parseSkip(said: string, lang: string = currentTargetLang()): boolean {

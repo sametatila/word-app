@@ -14,7 +14,7 @@ import { useAuth } from "../lib/AuthContext";
 import { speakAndWaitVoiced, currentVoiceId } from "../lib/tts";
 import { bridgeStop } from "../lib/ttsBridge";
 import { usePremiumStatus, notePremiumGate } from "../lib/premium";
-import { narrationVoice } from "../lib/voices";
+import { glossVoice, narrationVoice } from "../lib/voices";
 import { currentLang, nativeLangName, targetLangName, formatPercent } from "../lib/i18n";
 import { ensureMicPermission, ensureWalkNotificationPermission, listenOnce, stopListening, setKeepAwake, azureListenOnce, startWalkService, stopWalkService, onScreenState, onWalkStop, onWalkServiceFailed, stopServerTts, nativeDelay, nativeHttpGet } from "../lib/stt";
 import { currentTargetLocale } from "../lib/courses";
@@ -51,7 +51,7 @@ type Verdict = "correct" | "wrong" | "skip" | "unheard" | null;
 
 /** Yürüyüş kelimesi — demo Word + oyunların gösterdiği İngilizce gloss (`en`). */
 type Artikel = "der" | "die" | "das";
-type WalkWord = { id: number; de: string; tr: string; artikel?: Artikel; en?: string | null };
+type WalkWord = { id: number; de: string; tr: string; artikel?: Artikel; en?: string | null; deGloss?: string | null };
 /** Web walk turu: tek kelime + tür (intro = yeni kelimeyi öğret; speak = sor). */
 type WalkRound = { word: WalkWord; kind: "intro" | "speak" };
 
@@ -59,8 +59,20 @@ type WalkRound = { word: WalkWord; kind: "intro" | "speak" };
 const UNHEARD_WINDOW = 4;
 const UNHEARD_LIMIT = 3;
 
-const mapWord = (w: { id: number; de: string; tr: string; artikel?: string | null; en?: string | null }): WalkWord =>
-  ({ id: w.id, de: w.de, tr: w.tr, artikel: (w.artikel as Artikel | null) ?? undefined, en: w.en ?? null });
+const mapWord = (w: { id: number; de: string; tr: string; artikel?: string | null; en?: string | null; deGloss?: string | null }): WalkWord =>
+  ({ id: w.id, de: w.de, tr: w.tr, artikel: (w.artikel as Artikel | null) ?? undefined, en: w.en ?? null, deGloss: w.deGloss ?? null });
+
+/**
+ * Kelimenin ANADİLDEKİ karşılığı — web `lib/option-label` `glossFor` ile aynı kural, düşüşsüz.
+ * Burada hep `w.tr` okunuyordu: anadili İngilizce ya da Almanca olan kullanıcıya anlam Türkçe söyleniyordu
+ * (üstelik İngilizce ya da Almanca anlatım sesiyle). Sunucu karşılığı olmayan kelimeyi tura hiç koymuyor.
+ */
+function glossText(w: WalkWord): string {
+  const lang = currentLang();
+  if (lang === "en") return w.en ?? "";
+  if (lang === "de") return w.deGloss ?? "";
+  return w.tr;
+}
 /* Süzgeç ile ünlem AYRI iki iddia: süzgeç değişirse ünlem sessizce yalan
    söylemeye başlar. Tek geçişte hem eleme hem dönüştürme yapılıyor. */
 const mapRounds = (rs: Round[]): WalkRound[] =>
@@ -212,9 +224,18 @@ export function WalkModeScreen() {
     const fin = probeSay("native", txt);
     return fin(speakAndWaitVoiced(txt, v, { native: screenOffRef.current })) as Promise<void>;
   };
+  /* Hedef kelime ve anlamı KELİME KATMANI (`word`): seçilen karakterin (Defne/Aras) önceden üretilmiş
+     kaydı, düşüş yok. Anlam anlatım sesiyle (Emel) değil karakterin anadil sesiyle — Aras'ı seçen "der Hund"u
+     da "köpek"i de Aras'tan duyuyor (web `walk-player` `glossSegment`). */
   const sayTarget = (txt: string) => {
     const fin = probeSay("target", txt);
-    return fin(speakAndWaitVoiced(txt, currentVoiceId(), { native: screenOffRef.current })) as Promise<void>;
+    return fin(speakAndWaitVoiced(txt, currentVoiceId(), { native: screenOffRef.current, word: true })) as Promise<void>;
+  };
+  const sayGloss = (w: WalkWord) => {
+    const txt = glossText(w);
+    if (!txt) return Promise.resolve();
+    const fin = probeSay("native", txt);
+    return fin(speakAndWaitVoiced(txt, glossVoice(currentLang(), currentVoiceId()), { native: screenOffRef.current, word: true })) as Promise<void>;
   };
 
   /** Biriken cevapları SRS'e yaz (progress YOK — walk stateless). Tur sonunda + çıkışta. */
@@ -397,7 +418,7 @@ export function WalkModeScreen() {
     const target = withArtikel(w);
     await sayNative(tx("walk.new_word")); if (!alive()) return true;
     await sayTarget(target); if (!alive()) return true;
-    await sayNative(w.tr); if (!alive()) return true;
+    await sayGloss(w); if (!alive()) return true;
     await sayTarget(target); if (!alive()) return true;
     if (user && typeof w.id === "number") answers.current.push({ wordId: w.id, game: "intro", correct: true, latencyMs: 0 });
     taughtRef.current += 1;
@@ -409,7 +430,7 @@ export function WalkModeScreen() {
   async function judgeSpeak(w: WalkWord, alive: () => boolean, justTaught: boolean): Promise<"ok" | "stopped"> {
     setPhase("speaking"); setVerdict(null); setHeard(""); wordStart.current = Date.now();
     if (justTaught) { await sayNative(tx("walk.your_turn")); if (!alive()) return "ok"; } // yeni kelime → geçiş
-    await sayNative(w.tr); // Türkçe ipucu (Emel)
+    await sayGloss(w); // anadilde ipucu (seçilen karakter)
     if (!alive()) return "ok";
 
     await gap(120); // TTS kuyruğu kısaca otursun (mic kendi sesimizi kapmasın)
@@ -447,7 +468,7 @@ export function WalkModeScreen() {
         if (v !== "resume" || !alive()) { res = { k: "m" }; break; }
         track("walk_listen", 0, "native:resume");
         setPhase("speaking");
-        await sayNative(w.tr); if (!alive()) return "ok";
+        await sayGloss(w); if (!alive()) return "ok";
         await gap(150); if (!alive()) return "ok";
         setPhase("listening");
         continue;
@@ -473,7 +494,7 @@ export function WalkModeScreen() {
       // korunuyor — kesme bize ulaşmadan tanıyıcı kendi ölmüş olabilir.
       if (!retried && res.k === "v" && res.heard.length === 0 && (listenCut.current || screenOffRef.current) && alive()) {
         retried = true;
-        await sayNative(w.tr); if (!alive()) return "ok";
+        await sayGloss(w); if (!alive()) return "ok";
         continue;
       }
       break;

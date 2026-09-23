@@ -2,7 +2,7 @@ import Tts from "react-native-tts";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { trackOnce } from "./track";
 import { navigationRef } from "./pushRoute";
-import { type Pace, type Pitch, type VoiceId, VOICES, resolveVoice, defaultVoice, langOf, deviceRate } from "./voices";
+import { type Pace, type Pitch, type VoiceId, VOICES, resolveVoice, defaultVoice, lessonVoice, langOf, deviceRate } from "./voices";
 import { splitForSpeech } from "./ttsText";
 import { dialogueCast } from "./speakers";
 import { speechLocaleOf, setCurrentCourse } from "./courses";
@@ -73,9 +73,10 @@ export async function loadVoicePref(course?: string): Promise<VoiceId> {
       const saved = await AsyncStorage.getItem(VOICE_KEY);
       // Kurs bilinmeden yükleniyorsa kayıtlı seçime GÜVEN (kaydederken zaten
       // kursa göre doğrulanmıştı); kurs verildiyse ona göre doğrula.
+      // Eski bir Edge seçimi (Katja/Conrad…) kayıtlıysa cinsiyetine göre Defne/Aras'a çevriliyor.
       currentVoice = course
         ? resolveVoice(course, saved)
-        : (VOICES.find((v) => v.id === saved)?.id ?? defaultVoice(currentCourse));
+        : (VOICES.find((v) => v.id === saved)?.id ?? resolveVoice(currentCourse, saved));
     } catch { currentVoice = defaultVoice(currentCourse); }
     voiceLoaded = true;
   } else if (course) {
@@ -111,7 +112,7 @@ function deviceVoiceFor(voice: VoiceId): string | null {
   if (!cands.length && lang === "de-CH") cands = usable.filter((v) => v.language!.toLowerCase().startsWith("de"));
   if (!cands.length) { deviceVoiceCache.set(voice, null); return null; }
   cands = [...cands].sort((a, b) => (b.quality ?? 0) - (a.quality ?? 0));
-  const female = voice.includes("Katja") || voice.includes("Leni") || voice.includes("Emel");
+  const female = voice.includes("Katja") || voice.includes("Leni") || voice.includes("Emel") || voice.includes("Defne");
   const FEM = /(-x-[a-z]*f|female|femal|katja|hedda|leni|klara|amala|maja|-f-|women)/i;
   const MAL = /(-x-[a-z]*m|male|conrad|jan|bern|kilian|-m-|men)/i;
   const want = female ? FEM : MAL;
@@ -205,7 +206,20 @@ export { cleanForSpeech } from "./ttsText";
  * `opts.voice` verilirse onu kullanır (ön izleme ve diyalog kadrosu),
  * `opts.slow` telaffuz için yavaşlatır, `opts.pitch` konuşmacıyı ayırır.
  */
-export function speakTarget(text: string, opts?: { slow?: Pace | boolean; voice?: VoiceId; pitch?: Pitch }): void {
+export function speakTarget(
+  text: string,
+  opts?: {
+    slow?: Pace | boolean;
+    voice?: VoiceId;
+    pitch?: Pitch;
+    /**
+     * KELİME KATMANI — günlük tur, pratik, yürüyüş, kelime listesi. Adres `k=w` taşıyor ve sunucu metni
+     * yalnız seçilen karakterin (Defne/Aras) önceden üretilmiş dosyasından veriyor; tabloda yoksa okuma
+     * atlanıyor. Edge'e de cihaz sesine de düşülmüyor (Samet'in kararı, 2026-09-23; web `speakWord`).
+     */
+    word?: boolean;
+  },
+): void {
   /*
     UZUN METİN BÖLÜNÜYOR — bu yol eskiden sessizliğe çıkıyordu.
 
@@ -237,32 +251,33 @@ export function speakTarget(text: string, opts?: { slow?: Pace | boolean; voice?
   // okuma zaten üstüne binerdi ve zincir arkasından devam ederdi.
   dialogueSeq++;
   if (parts.length === 1) {
-    speakOne(parts[0], voice, opts?.slow ?? false, opts?.pitch ?? "mid");
+    speakOne(parts[0], voice, opts?.slow ?? false, opts?.pitch ?? "mid", opts?.word ?? false);
     return;
   }
   /* Çok parçalı metin `speakAndWaitVoiced`e devrediliyor: köprüde tek bir
      `Audio` nesnesi var ve ikinci çağrı birincisini keser, yani parçalar
      beklenerek zincirlenmek ZORUNDA — ve o işlev zaten tam bunu yapıyor.
      Burada ikinci bir zincir yazmak aynı mantığın iki kopyası olurdu. */
-  void speakAndWaitVoiced(text, voice, { slow: opts?.slow, pitch: opts?.pitch });
+  void speakAndWaitVoiced(text, voice, { slow: opts?.slow, pitch: opts?.pitch, word: opts?.word });
 }
 
 /** Tek parçanın çalınması — köprü → native → cihaz sesi. */
-function speakOne(clean: string, voice: VoiceId, slow: Pace | boolean, pitch: Pitch): void {
+function speakOne(clean: string, voice: VoiceId, slow: Pace | boolean, pitch: Pitch, word = false): void {
   // Önce Edge köprüsü (web ile birebir aynı ses); hazır değilse aynı ses native
   // oynatıcıdan; ikisi de yoksa ve sunucuya ulaşılamıyorsa cihaz TTS'i.
   if (bridgeReady()) {
     // Köprü hazırlanırken native yoldan başlamış bir okuma sürüyor olabilir: üst üste binmesin.
     if (nativePlaying) { stopServerTts(); nativePlaying = false; }
-    bridgeSpeak(voice, clean, slow, pitch);
+    bridgeSpeak(voice, clean, slow, pitch, word);
     return;
   }
   const seq = ++speakSeq;
   nativePlaying = true;
   try { Tts.stop(); } catch { /* yut */ }
-  void speakServerTts(voice, clean, slow, pitch).then(async (played) => {
+  void speakServerTts(voice, clean, slow, pitch, word).then(async (played) => {
     if (seq === speakSeq) nativePlaying = false;
-    if (played || seq !== speakSeq || !(await serverUnreachable())) return;
+    // Kelime katmanı cihaz sesine hiç düşmüyor: seçilen karakter çalamıyorsa ses yok.
+    if (played || word || seq !== speakSeq || !(await serverUnreachable())) return;
     const ok = await ttsAvailable();
     if (!ok || seq !== speakSeq) return;
     const rate = deviceRate(slow);
@@ -280,8 +295,9 @@ function speakOne(clean: string, voice: VoiceId, slow: Pace | boolean, pitch: Pi
 }
 
 /** Ön izleme: belirli bir sesi hemen çalar (profil seçim ekranı). */
-export function speakWithVoice(text: string, voice: VoiceId): void {
-  speakTarget(text, { voice });
+export function speakWithVoice(text: string, voice: VoiceId, word = false): void {
+  // Karakter sesinin önizlemesi kelime katmanından bir cümle: Defne'yi seçtiren ekran Defne'nin kendi sesini çalmalı.
+  speakTarget(text, { voice, word });
 }
 
 /**
@@ -313,6 +329,8 @@ export async function speakAndWaitVoiced(
      * kapalı olduğu, yani sessizliğin en pahalı olduğu yerde.
      */
     native?: boolean;
+    /** Kelime katmanı (yürüyüş modunun hedefi ve anlamı): yalnız Defne/Aras dosyası, cihaz sesine düşüş yok. */
+    word?: boolean;
   },
 ): Promise<void> {
   /*
@@ -343,7 +361,7 @@ export async function speakAndWaitVoiced(
     bir de ayrıca istemek işi hızlandırmaz, yalnız ikinci bir istek açardı.
   */
   if (parts.length > 1 && !opts?.native) {
-    bridgePrefetch(parts.map((t) => ({ voice, text: t, slow: opts?.slow ?? false, pitch: opts?.pitch })));
+    bridgePrefetch(parts.map((t) => ({ voice, text: t, slow: opts?.slow ?? false, pitch: opts?.pitch, word: opts?.word })));
   }
   const seq = ++speakSeq;
   /*
@@ -366,13 +384,15 @@ export async function speakAndWaitVoiced(
     const first = i === 0;
     if (!opts?.native && bridgeReady()) {
       if (nativePlaying) { stopServerTts(); nativePlaying = false; }
-      await bridgeSpeakAndWait(voice, parts[i], opts?.slow ?? false, first ? opts?.onStart : undefined, opts?.pitch);
+      await bridgeSpeakAndWait(voice, parts[i], opts?.slow ?? false, first ? opts?.onStart : undefined, opts?.pitch, opts?.word ?? false);
       continue;
     }
     if (first) opts?.onStart?.();
     // Köprü yoksa aynı nöral ses native oynatıcıdan (bkz. `stopSpeaking` üstündeki not).
-    if (await speakServerTts(voice, parts[i], opts?.slow ?? false, opts?.pitch ?? "mid")) { ardarda = 0; continue; }
+    if (await speakServerTts(voice, parts[i], opts?.slow ?? false, opts?.pitch ?? "mid", opts?.word ?? false)) { ardarda = 0; continue; }
     if (seq !== speakSeq) return;
+    // Kelime katmanı cihaz sesine düşmüyor: parça atlanıyor (bkz. `speakTarget` `word`).
+    if (opts?.word) continue;
     if (await serverUnreachable()) {
       // Yerel kod sesin id'sinden türüyor (langOf); eskiden "tr değilse de-DE"
       // yazılıydı ve İngilizce ses Almanca okunurdu.
@@ -457,7 +477,8 @@ const PARAGRAPH_GAP_MS = 500;
 export async function speakPassage(text: string, course: string, opts?: { slow?: boolean }): Promise<void> {
   const paragraphs = text.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
   if (!paragraphs.length) return;
-  const voice = defaultVoice(course);
+  // Sabit ders sesi (web `lessonVoice`): okuma katmanı henüz üretilmedi, kursun ilk sesi artık Defne.
+  const voice = lessonVoice(course);
   const pace: Pace = opts?.slow ? "listenSlow" : "listen";
   // Bütün parçalar peşin: boru hattı yok, her paragraf sınırı yoksa bir
   // gidiş-dönüş olurdu.

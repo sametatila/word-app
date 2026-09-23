@@ -21,11 +21,14 @@ export function SpeakButton({
   size = 22,
   slow = false,
   tone,
+  word = false,
 }: {
   text: string;
   size?: number;
   slow?: boolean;
   tone?: string;
+  /** Kelime katmanı (kelime listesi): yalnız Defne/Aras dosyası (bkz. lib/tts `speakTarget` `word`). */
+  word?: boolean;
 }) {
   const { colors } = useTheme();
   if (!text?.trim()) return null;
@@ -34,7 +37,7 @@ export function SpeakButton({
     <PressableScale
       accessibilityLabel={t("speakbutton.read_aloud")}
       hitSlop={8}
-      onPress={() => speakTarget(text, { slow })}
+      onPress={() => speakTarget(text, { slow, word })}
       style={{
         width: size,
         height: size,
