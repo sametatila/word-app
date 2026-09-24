@@ -59,7 +59,7 @@ Uygulamayı mağazalarda yayımlayan ve abonelik tahsilatını yürüten taraf a
 
 Sunucular {{hosting}} üzerinde çalışır; veriler orada saklanır. Siteye ve uygulamaya giden trafik sunucuya ulaşmadan önce Cloudflare'in ağından geçer (6. bölüm). Veri sorumlusu Türkiye'de yerleşik değildir; Türkiye'den yapılacak başvurular {{privacyEmailTr}} adresine ya da yukarıdaki yazışma adresine yapılabilir. Hizmet sağlayıcıya ilişkin künye bilgileri [künye sayfasında]({{link:impressum}}) yer alır.
 
-**Toplama yöntemi ve hukuki sebep (KVKK m.10):** Veriler, kayıt ve ayar formları, seçtiğin giriş sağlayıcısı (Google ya da Apple), uygulama içi etkileşimler, cihazın bildirim servisi ve mikrofon aracılığıyla elektronik ortamda, otomatik ya da kısmen otomatik yollarla toplanır; her veri için hukuki sebep 3. bölümdeki tabloda verilmiştir.
+**Toplama yöntemi ve hukuki sebep (KVKK m.10):** Veriler, kayıt ve ayar formları, seçtiğin giriş sağlayıcısı (Google ya da Apple), uygulama içi etkileşimler, cihazın bildirim servisi, Android'de Google Play'in bütünlük servisi ve mikrofon aracılığıyla elektronik ortamda, otomatik ya da kısmen otomatik yollarla toplanır; her veri için hukuki sebep 3. bölümdeki tabloda verilmiştir.
 
 ## 2. Kimler için hangi hukuk
 
@@ -82,6 +82,7 @@ Sunucular {{hosting}} üzerinde çalışır; veriler orada saklanır. Siteye ve 
 | IP adresi ve tarayıcı/cihaz tanımı (oturum kaydında) | Bağlantın | Oturum güvenliği, kötüye kullanım ve hız sınırı | Meşru menfaat (güvenlik) | Oturum süresince (en çok {{sessionMaxDays}} gün) |
 | Sunucu günlükleri: IP adresi, istenen adres, zaman, tarayıcı tanımı; uygulamanın hata ve işletim iletileri (kullanıcı kimliği içerebilir) | Bağlantın ve sunucunun kendisi | Güvenlik, saldırı ve kötüye kullanımı tespit, hata ayıklama | Meşru menfaat (güvenlik) | Web sunucusu erişim günlükleri 14 gün; sistem ve uygulama günlükleri 30 gün |
 | Bot koruması (Cloudflare Turnstile): IP adresi, tarayıcı/cihaz sinyalleri | Kayıt, giriş ve parola sıfırlama ekranı | Sahte hesap ve otomatik saldırıları önlemek | Meşru menfaat (güvenlik) | Lernomi yalnız doğrulama sonucunu kullanır, sinyalleri saklamaz |
+| Cihaz bütünlüğü kontrolü (Google Play Integrity, yalnız Android uygulamasında): uygulamanın ve cihazın bütünlük sonucu (Google'ın değerlendirmesi: uygulama tanındı mı, cihaz bütünlüğü, lisans durumu) ve sonucun sebebi | Android uygulamasında "Hesapsız devam et"e dokunduğunda | Sahte ve otomatik açılan misafir hesaplarını önlemek | Meşru menfaat (güvenlik) | Lernomi Google'ın imzalı belgesini saklamaz; yalnız sonuç ve sebebi, misafir kimliğine bağlı olarak {{attestationDays}} gün tutulur; hesap ya da misafir kimliği silinince kimlikten ayrılır |
 | Sosyal profil: kullanıcı adı, görünürlük ve istek tercihleri | Sen | Arkadaşların ve (görünürlük "herkese açık" ise) diğer kullanıcıların seni bulması | Sözleşmenin ifası; tercihler için rıza | Hesap süresince |
 | Arkadaşlık istekleri, arkadaş listesi, engellemeler, kullanıcı bildirimleri | Sen ve arkadaşların | Arkadaşlık özellikleri, güvenlik ve moderasyon | Sözleşmenin ifası; meşru menfaat (güvenlik) | Hesap süresince; bildirimler inceleme kapandıktan sonra 1 yıl |
 | Etkinlik akışı, tepkiler, dürtmeler, ortak görevler, gelen kutusu bildirimleri | Uygulamayı kullanırken | Arkadaşlarınla ilerleme paylaşımı ve motivasyon (yalnız arkadaşlarına görünür) | Sözleşmenin ifası; "etkinliğimi göster" tercihiyle kapatılabilir | Hesap süresince |
@@ -175,6 +176,7 @@ Sana yalnız hizmetle ilgili iletiler gönderilir: e-posta doğrulama, parola s�
 - İçerik ve kullanıcı bildirimleri: inceleme kapandıktan sonra 1 yıl.
 - Mobil bildirim jetonu: çıkış yapana ya da jeton geçersizleşene kadar.
 - Oturum kayıtları (IP, cihaz tanımı): oturum süresince, en çok {{sessionMaxDays}} gün.
+- Cihaz bütünlüğü sonucu (Android'de hesapsız açılış): {{attestationDays}} gün, sonra en geç bir gün içinde kendiliğinden silinir.
 - Mali kayıtlar (abonelik faturaları): Türk Ticaret Kanunu ve Vergi Usul Kanunu'nun öngördüğü süre (10 yıl), yalnız uygulama mağazasının (Google Play{{ifIos}} ya da App Store{{/ifIos}}) ilettiği kadarıyla.
 - Hak talepleri yazışmaları: talep kapandıktan sonra 2 yıl.
 - Sunucu yedekleri (Cloudflare R2'deki şifreli harici kopya dahil): silinen veriler yedeklerden en geç {{backupRetentionDays}} gün içinde düşer; yedekler yalnız felaket kurtarma için kullanılır, silinen hesap yedekten geri yüklenmez.
@@ -237,7 +239,7 @@ The app is published in the app stores and the subscription revenue is collected
 
 The servers run on {{hosting}}; the data is stored there. Traffic to the site and the app passes through Cloudflare's network before it reaches the server (section 6). The controller is not established in Türkiye; applications from Türkiye can be sent to {{privacyEmailTr}} or to the postal address above. The provider identification (Impressum) is on the [imprint page]({{link:impressum}}).
 
-**Collection method and legal ground (KVKK Art. 10):** Data is collected electronically, by automated or partly automated means, through registration and settings forms, the sign-in provider you choose (Google or Apple), in-app interactions, your device's notification service and the microphone; the legal ground for each item is given in the table in section 3.
+**Collection method and legal ground (KVKK Art. 10):** Data is collected electronically, by automated or partly automated means, through registration and settings forms, the sign-in provider you choose (Google or Apple), in-app interactions, your device's notification service, Google Play's integrity service on Android and the microphone; the legal ground for each item is given in the table in section 3.
 
 ## 2. Which law applies to whom
 
@@ -260,6 +262,7 @@ The servers run on {{hosting}}; the data is stored there. Traffic to the site an
 | IP address and browser/device description (in the session record) | Your connection | Session security, abuse prevention and rate limiting | Legitimate interest (security) | For the life of the session (at most {{sessionMaxDays}} days) |
 | Server logs: IP address, requested address, time, browser description; the app's error and operational messages (may contain a user id) | Your connection and the server itself | Security, detecting attacks and abuse, debugging | Legitimate interest (security) | Web server access logs 14 days; system and application logs 30 days |
 | Bot protection (Cloudflare Turnstile): IP address, browser/device signals | Sign-up, sign-in and password reset screen | Preventing fake accounts and automated attacks | Legitimate interest (security) | Lernomi uses only the verification result and does not store the signals |
+| Device integrity check (Google Play Integrity, Android app only): the integrity result for the app and the device (Google's assessment: whether the app is recognised, device integrity, licence status) and the reason for the result | When you tap "Continue without an account" in the Android app | Preventing fake and automatically created guest accounts | Legitimate interest (security) | Lernomi does not store Google's signed token; only the result and its reason are kept, linked to the guest identity, for {{attestationDays}} days; when the account or guest identity is deleted they are detached from it |
 | Social profile: username, visibility and request preferences | You | Letting your friends and, if visibility is "public", other users find you | Performance of a contract; consent for the preferences | For the life of the account |
 | Friend requests, friend list, blocks, user reports | You and your friends | Friend features, safety and moderation | Performance of a contract; legitimate interest (safety) | For the life of the account; reports 1 year after the review closes |
 | Activity feed, reactions, nudges, shared quests, inbox notifications | While you use the app | Sharing progress with your friends and motivation (visible only to your friends) | Performance of a contract; can be switched off with the "show my activity" preference | For the life of the account |
@@ -353,6 +356,7 @@ You receive only service-related messages: e-mail verification, password reset, 
 - Content and user reports: 1 year after the review closes.
 - Mobile notification token: until you sign out or the token expires.
 - Session records (IP, device description): for the life of the session, at most {{sessionMaxDays}} days.
+- Device integrity result (starting without an account on Android): {{attestationDays}} days, then deleted automatically within one more day at the latest.
 - Financial records (subscription invoices): the period required by the Turkish Commercial Code and the Tax Procedure Law (10 years), and only to the extent the app store (Google Play{{ifIos}} or the App Store{{/ifIos}}) passes them on.
 - Correspondence about rights requests: 2 years after the request closes.
 - Server backups (including the encrypted off-site copy in Cloudflare R2): deleted data drops out of the backups within {{backupRetentionDays}} days at the latest; backups are used only for disaster recovery, and a deleted account is never restored from a backup.
@@ -415,7 +419,7 @@ Die App wird von einer anderen Person in den App-Stores veröffentlicht, die auc
 
 Die Server laufen bei {{hosting}}; dort werden die Daten gespeichert. Der Datenverkehr zu Website und App läuft durch das Netz von Cloudflare, bevor er den Server erreicht (Abschnitt 6). Der Verantwortliche ist nicht in der Türkei niedergelassen; Anträge aus der Türkei können an {{privacyEmailTr}} oder an die oben genannte Postanschrift gerichtet werden. Die Anbieterkennzeichnung steht im [Impressum]({{link:impressum}}).
 
-**Art der Erhebung und Rechtsgrundlage (Art. 10 KVKK):** Die Daten werden elektronisch, automatisiert oder teilweise automatisiert über Registrierungs- und Einstellungsformulare, den von dir gewählten Anmeldeanbieter (Google oder Apple), Interaktionen in der App, den Benachrichtigungsdienst deines Geräts und das Mikrofon erhoben; die Rechtsgrundlage für jede Angabe steht in der Tabelle in Abschnitt 3.
+**Art der Erhebung und Rechtsgrundlage (Art. 10 KVKK):** Die Daten werden elektronisch, automatisiert oder teilweise automatisiert über Registrierungs- und Einstellungsformulare, den von dir gewählten Anmeldeanbieter (Google oder Apple), Interaktionen in der App, den Benachrichtigungsdienst deines Geräts, den Integritätsdienst von Google Play unter Android und das Mikrofon erhoben; die Rechtsgrundlage für jede Angabe steht in der Tabelle in Abschnitt 3.
 
 ## 2. Wer welchem Recht unterliegt
 
@@ -438,6 +442,7 @@ Die Server laufen bei {{hosting}}; dort werden die Daten gespeichert. Der Datenv
 | IP-Adresse und Browser-/Gerätebezeichnung (im Sitzungsdatensatz) | Deine Verbindung | Sitzungssicherheit, Missbrauchsabwehr und Ratenbegrenzung | Berechtigtes Interesse (Sicherheit) | Für die Dauer der Sitzung (höchstens {{sessionMaxDays}} Tage) |
 | Server-Logs: IP-Adresse, aufgerufene Adresse, Zeit, Browserbezeichnung; Fehler- und Betriebsmeldungen der App (können eine Nutzer-ID enthalten) | Deine Verbindung und der Server selbst | Sicherheit, Erkennung von Angriffen und Missbrauch, Fehlersuche | Berechtigtes Interesse (Sicherheit) | Zugriffsprotokolle des Webservers 14 Tage; System- und Anwendungsprotokolle 30 Tage |
 | Botschutz (Cloudflare Turnstile): IP-Adresse, Browser-/Gerätesignale | Bildschirm für Registrierung, Anmeldung und Passwort-Reset | Verhinderung von Fake-Konten und automatisierten Angriffen | Berechtigtes Interesse (Sicherheit) | Lernomi verwendet nur das Prüfergebnis und speichert die Signale nicht |
+| Geräteintegritätsprüfung (Google Play Integrity, nur in der Android-App): das Integritätsergebnis für App und Gerät (Googles Bewertung: ob die App erkannt wird, Geräteintegrität, Lizenzstatus) und der Grund für das Ergebnis | Wenn du in der Android-App auf "Ohne Konto fortfahren" tippst | Verhinderung gefälschter und automatisiert angelegter Gastkonten | Berechtigtes Interesse (Sicherheit) | Lernomi speichert das signierte Token von Google nicht; nur Ergebnis und Grund werden, der Gastidentität zugeordnet, {{attestationDays}} Tage aufbewahrt; bei Löschung des Kontos oder der Gastidentität werden sie davon getrennt |
 | Soziales Profil: Benutzername, Sichtbarkeits- und Anfrageeinstellungen | Du | Damit deine Freunde und — bei Sichtbarkeit "öffentlich" — andere Nutzer dich finden | Erfüllung eines Vertrags; Einwilligung für die Einstellungen | Für die Dauer des Kontos |
 | Freundschaftsanfragen, Freundesliste, Blockierungen, Nutzermeldungen | Du und deine Freunde | Freundesfunktionen, Sicherheit und Moderation | Erfüllung eines Vertrags; berechtigtes Interesse (Sicherheit) | Für die Dauer des Kontos; Meldungen 1 Jahr nach Abschluss der Prüfung |
 | Aktivitäts-Feed, Reaktionen, Anstöße, gemeinsame Aufgaben, Posteingangs-Benachrichtigungen | Während der Nutzung der App | Teilen des Fortschritts mit deinen Freunden und Motivation (nur für deine Freunde sichtbar) | Erfüllung eines Vertrags; über die Einstellung "Aktivität zeigen" abschaltbar | Für die Dauer des Kontos |
@@ -531,6 +536,7 @@ Du erhältst nur dienstbezogene Nachrichten: E-Mail-Bestätigung, Passwort-Reset
 - Inhalts- und Nutzermeldungen: 1 Jahr nach Abschluss der Prüfung.
 - Mobiles Benachrichtigungs-Token: bis du dich abmeldest oder das Token ungültig wird.
 - Sitzungsdatensätze (IP, Gerätebezeichnung): für die Dauer der Sitzung, höchstens {{sessionMaxDays}} Tage.
+- Ergebnis der Geräteintegritätsprüfung (Start ohne Konto unter Android): {{attestationDays}} Tage, danach automatische Löschung spätestens innerhalb eines weiteren Tages.
 - Finanzunterlagen (Abonnementrechnungen): die vom türkischen Handelsgesetzbuch und vom Steuerverfahrensgesetz vorgesehene Frist (10 Jahre), und nur soweit der App-Store (Google Play{{ifIos}} oder App Store{{/ifIos}}) sie übermittelt.
 - Schriftwechsel zu Rechteanfragen: 2 Jahre nach Abschluss der Anfrage.
 - Server-Backups (einschließlich der verschlüsselten externen Kopie bei Cloudflare R2): gelöschte Daten fallen spätestens innerhalb von {{backupRetentionDays}} Tagen aus den Backups heraus; Backups dienen nur der Notfallwiederherstellung, und ein gelöschtes Konto wird nie aus einem Backup wiederhergestellt.

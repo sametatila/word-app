@@ -6,6 +6,7 @@ import type { LegalDocDefault } from "@/content/legal/defaults/types";
 import { safeHref, unbalancedConditionals, unknownTokens } from "@/lib/legal/markdown";
 import { SPEECH_LOG_RETENTION_DAYS } from "@/lib/lessons/log-const";
 import { SESSION_MAX_DAYS } from "@/lib/auth/session-config";
+import { ATTESTATION_RETENTION_DAYS } from "@/lib/auth/attestation-const";
 import { DAILY_QUOTAS } from "@/lib/quotas";
 import {
   LEGAL_CHANGELOG,
@@ -176,6 +177,13 @@ console.log("\nSaklama süreleri");
       value: SESSION_MAX_DAYS,
       label: "oturum kaydı",
       topic: /oturum süresince|oturum kayıtları|oturum çerezi|life of the session|session records|session cookie|Dauer der Sitzung|Sitzungsdatensätze|Sitzungs-Cookie/i,
+    },
+    {
+      /* Tablo satırı ve §9 listesi; süpürme `purgeExpiredGuestAttestations`. */
+      token: "attestationDays",
+      value: ATTESTATION_RETENTION_DAYS,
+      label: "cihaz doğrulaması",
+      topic: /cihaz bütünlüğü (kontrolü|sonucu)|device integrity (check|result)|Geräteintegritätsprüfung/i,
     },
   ];
 

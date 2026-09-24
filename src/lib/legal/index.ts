@@ -44,6 +44,7 @@
  */
 import { SPEECH_LOG_RETENTION_DAYS } from "@/lib/lessons/log-const";
 import { SESSION_MAX_DAYS } from "@/lib/auth/session-config";
+import { ATTESTATION_RETENTION_DAYS } from "@/lib/auth/attestation-const";
 import { DAILY_QUOTAS } from "@/lib/quotas";
 /**
  * Yürürlük tarihi ve sürüm. İkisi de EN YENİ değişikliği anlatır ve
@@ -98,9 +99,15 @@ import { DAILY_QUOTAS } from "@/lib/quotas";
  * değildi, anonim hata raporu ve sunucu günlükleri sayılmamıştı, ve birkaç
  * güvence cümlesi henüz imzalanmamış belgelere dayanıyordu. Yeni alıcılar
  * eklendiği için ikinci basamak.
+ *
+ * 1.6 (2026-09-24) Android'de "Hesapsız devam et"teki cihaz doğrulamasını
+ * (Google Play Integrity, docs/plan/device-attestation.md) yazdı: yeni bir
+ * işleme (bütünlük sonucu, 90 gün) ve yeni bir alıcı. Kayıt kipi canlıda
+ * açılmadan ÖNCE yayımlandı; metin açık olmayan bir işlemeyi önceden
+ * söylüyor, tersini değil. İkinci basamak.
  */
-export const LEGAL_EFFECTIVE_DATE = "2026-09-23";
-export const LEGAL_VERSION = "1.5";
+export const LEGAL_EFFECTIVE_DATE = "2026-09-24";
+export const LEGAL_VERSION = "1.6";
 
 export const LEGAL_ENTITY = {
   /** Veri sorumlusu: amaç ve araçlara karar veren gerçek kişi (AB'de yerleşik). */
@@ -208,6 +215,8 @@ export const LEGAL_ENTITY = {
    */
   speechLogDays: String(SPEECH_LOG_RETENTION_DAYS),
   sessionMaxDays: String(SESSION_MAX_DAYS),
+  /** Cihaz doğrulaması kaydı (`guest_attestations`); süpürme `lib/auth/play-integrity`. Aynı gerekçe. */
+  attestationDays: String(ATTESTATION_RETENTION_DAYS),
 } as const;
 
 /** Adil kullanım sınırları — koddaki gerçek kotalar (route dosyalarındaki sabitler). */
@@ -339,6 +348,31 @@ export type LegalChangelogEntry = {
 };
 
 export const LEGAL_CHANGELOG: readonly LegalChangelogEntry[] = [
+  {
+    /*
+      İKİNCİ BASAMAK: yeni bir işleme (Android misafir açılışında cihaz
+      bütünlüğü sonucu, 90 gün) ve alıcılar tablosuna yeni bir alıcı
+      (Google Play Integrity). Kayıt kipi canlıda açılmadan önce yazıldı.
+
+      Yapay zekâ rızası ETKİLENMİYOR: yeni veri türü (`integrityToken`) rıza
+      amaçlarının hiçbirine girmiyor, parmak izi aynı kalıyor ve kimseden
+      izin yeniden istenmiyor. Sürüm değiştiği için "şartlar güncellendi"
+      şeridi (`termsUpdateFor`) her hesapta bir kez görünüyor.
+    */
+    version: "1.6",
+    date: "2026-09-24",
+    changes: {
+      tr: [
+        "Android uygulamasında \"Hesapsız devam et\"e dokunduğunda cihaz bütünlüğü kontrolü yapılabiliyor: uygulama Google Play Integrity'den imzalı bir belge alıyor, Lernomi sunucusu belgeyi Google'a doğrulatıyor ve yalnız sonucu (uygulama tanındı mı, cihaz bütünlüğü, lisans durumu) ve sebebini misafir kimliğine bağlı olarak 90 gün tutuyor; belgenin kendisi saklanmıyor, hesap ya da misafir kimliği silinince kayıt kimlikten ayrılıyor. Amaç sahte ve otomatik açılan misafir hesaplarını önlemek; bu aşamada kimse reddedilmiyor. Toplanan veriler tablosuna, saklama sürelerine ve alıcılar tablosuna (Google Play Integrity) eklendi; iOS'ta ve web'de bu kontrol yok.",
+      ],
+      en: [
+        "When you tap \"Continue without an account\" in the Android app, a device integrity check may be carried out: the app obtains a signed token from Google Play Integrity, the Lernomi server has Google verify it, and only the result (whether the app is recognised, device integrity, licence status) and its reason are kept for 90 days, linked to the guest identity; the token itself is not stored, and when the account or guest identity is deleted the record is detached from it. The purpose is to prevent fake and automatically created guest accounts; at this stage nobody is refused. It was added to the table of collected data, the retention periods and the table of recipients (Google Play Integrity); there is no such check on iOS or the web.",
+      ],
+      de: [
+        "Wenn du in der Android-App auf \"Ohne Konto fortfahren\" tippst, kann eine Geräteintegritätsprüfung stattfinden: Die App holt ein signiertes Token von Google Play Integrity, der Lernomi-Server lässt es von Google prüfen und bewahrt nur das Ergebnis (ob die App erkannt wird, Geräteintegrität, Lizenzstatus) und seinen Grund 90 Tage lang, der Gastidentität zugeordnet, auf; das Token selbst wird nicht gespeichert, und bei Löschung des Kontos oder der Gastidentität wird der Eintrag davon getrennt. Zweck ist, gefälschte und automatisiert angelegte Gastkonten zu verhindern; in dieser Phase wird niemand abgewiesen. Die Prüfung wurde in die Tabelle der erhobenen Daten, die Speicherfristen und die Empfängertabelle (Google Play Integrity) aufgenommen; unter iOS und im Web gibt es diese Prüfung nicht.",
+      ],
+    },
+  },
   {
     /*
       İKİNCİ BASAMAK: alıcılar tablosuna yeni alıcılar girdi (Cloudflare,
@@ -590,6 +624,11 @@ const PURPOSES = {
     en: "Delivering traffic to the site and the app, attack and bot protection",
     de: "Weiterleitung des Datenverkehrs zu Website und App, Angriffs- und Botschutz",
   },
+  integrityCheck: {
+    tr: "Cihaz ve uygulama bütünlüğü doğrulaması (sahte misafir hesaplarını önleme)",
+    en: "Device and app integrity verification (preventing fake guest accounts)",
+    de: "Prüfung der Geräte- und App-Integrität (Verhinderung gefälschter Gastkonten)",
+  },
   offsiteBackup: {
     tr: "Felaket kurtarma için harici yedek",
     en: "Off-site backup for disaster recovery",
@@ -631,6 +670,16 @@ const DATA_KINDS = {
     tr: "IP adresi, tarayıcı/cihaz sinyalleri, iletilen istekler ve cevaplar (bağlantı şifrelemesi Cloudflare'de de çözülür)",
     en: "IP address, browser/device signals, the requests and responses passed through (the connection encryption is also terminated at Cloudflare)",
     de: "IP-Adresse, Browser-/Gerätesignale, die durchgeleiteten Anfragen und Antworten (die Verbindungsverschlüsselung wird auch bei Cloudflare entschlüsselt)",
+  },
+  /*
+    Sinyalleri cihazdaki Google Play hizmetleri topluyor ve belgeyi Google
+    şifreliyor; Lernomi yalnız o belgeyi Google'a çözdürüyor. İstekte hesap
+    bilgisi yok: `requestHash` her açılışta yeni, rastgele bir nonce'un özeti.
+  */
+  integrityToken: {
+    tr: "Play Integrity belgesi (cihaz ve uygulama bütünlük sinyalleri, isteğe özgü rastgele özet); hesap bilgisi gönderilmez",
+    en: "Play Integrity token (device and app integrity signals, a random per-request hash); no account data is sent",
+    de: "Play-Integrity-Token (Geräte- und App-Integritätssignale, ein zufälliger anfragebezogener Hash); es werden keine Kontodaten gesendet",
   },
   encryptedBackup: {
     tr: "Veritabanının şifreli kopyası (anahtar yalnız Lernomi sunucusunda; Cloudflare içeriği okuyamaz)",
@@ -729,6 +778,11 @@ const OCCASIONS = {
     de: "Beim Öffnen der mobilen App (Kaufinfrastruktur; auch für Gäste, unter einer anonymen Kennung)",
   },
   pushAllowed: { tr: "Bildirimlere izin verilirse", en: "If notifications are allowed", de: "Wenn Benachrichtigungen erlaubt sind" },
+  androidGuest: {
+    tr: "Android'de hesapsız devam edilirse",
+    en: "If you continue without an account on Android",
+    de: "Wenn du unter Android ohne Konto fortfährst",
+  },
 } as const satisfies Record<string, Trio>;
 
 export type Processor = {
@@ -817,6 +871,19 @@ export const PROCESSORS: Processor[] = [
   */
   { name: "Apple (Sign-In)", purpose: "appleSignIn", data: "appleIdentity", region: "us", safeguard: "independentController", when: "appleSignInChosen" },
   { name: "Google Play", purpose: "distribution", data: "purchase", region: "us", safeguard: "independentController", when: "androidAndSubscription" },
+  /*
+    PLAY INTEGRITY (1.6, docs/plan/device-attestation.md). Güvence
+    `independentController`, `scc` DEĞİL: Google'ın kendi belgesi
+    (developer.android.com/google/play/integrity/terms) API'yi "Play Store ile
+    çalışma zamanı arayüzü" diye tanımlıyor ve Play Store'un bu sırada
+    yürüttüğü veri işlemenin Google Play Hizmet Şartları'na tabi olduğunu
+    söylüyor. Sinyalleri Lernomi değil cihazdaki Google Play hizmetleri
+    topluyor. FCM'deki `scc`in dayanağı olan Firebase veri işleme koşulları
+    bu hizmeti kapsamıyor ve Play Integrity için SCC'li ayrı bir veri işleme
+    koşulu bulamadık; yalnız var olanı söyleyen kural (bkz. SAFEGUARDS notu)
+    Google Play satırıyla aynı seçimi istiyor.
+  */
+  { name: "Google (Play Integrity)", purpose: "integrityCheck", data: "integrityToken", region: "us", safeguard: "independentController", when: "androidGuest" },
   /*
     Firebase Cloud Messaging 2026-09-10'da açıldı ve o güne kadar bu satır DOĞRU
     biçimde yoktu: uzak bildirim yapılandırılmamıştı, web push ise kendi

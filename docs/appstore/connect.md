@@ -183,7 +183,7 @@ güncellenmeden (mobil iş) iki taraf eşit değil. Hiçbiri izleme için değil
 - Yapay zekâ içeriği: rol yapma bir dil modeliyle üretiliyor, "gerçek kişi değil" bildirimi
   ekranda kalıcı, her yanıtın altında "Bildir" var.
 - Yaş derecelendirmesi Play'deki 18+ ile tutarlı dolduruldu.
-- `src/lib/legal/index.ts` › `LEGAL_PLATFORMS.ios` **açık** (1.1'den beri; güncel sürüm 1.5, 2026-09-23): gizlilik
+- `src/lib/legal/index.ts` › `LEGAL_PLATFORMS.ios` **açık** (1.1'den beri; güncel sürüm 1.6, 2026-09-24): gizlilik
   politikası, şartlar ve destek sayfası iOS uygulamasını kapsıyor. Gönderimden önce canlıda
   doğrula: `https://www.lernomi.app/privacy/en` "the Android and iOS apps" diyor, alıcılar
   tablosunda Apple (Sign-In) ve Apple (App Store) var. Künye: `https://www.lernomi.app/impressum`.
