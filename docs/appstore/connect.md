@@ -32,7 +32,7 @@ Connect'e girmek (PATCH) mağazada canlı etki yaptığı için Samet'in işi.
 **Notes alanına İngilizce metin girilir**: inceleyicinin Türkçe bilmesi beklenemez.
 
 **Alan en çok 4.000 karakter.** Taslak 2026-09-24'te 4.224 karaktere çıkmıştı; sıkılaştırılıp
-kullanıcı içeriği maddesi (1.2: engelle/bildir, yapay zekâ yanıtında Bildir) eklendi, 3.244 karakter.
+kullanıcı içeriği maddesi (1.2: engelle/bildir, yapay zekâ yanıtında Bildir) eklendi; 2026-09-24'te 3. maddeye Turnstile kutusu cümlesi (denetim IOS-8), 3.412 karakter.
 Ekleme yapan uzunluğu ölçsün: `awk '/^```text/{f=1;next} /^```/{if(f)exit} f' docs/appstore/connect.md | wc -m`.
 
 Yollar 2026-09-14'te koddan doğrulandı: yürüyüş modu **Öğren** sekmesindeki "Yürüyüş modu"
@@ -58,7 +58,7 @@ Why buying needs an account (5.1.1(v)): Premium is an account-based, cross-platf
 
 1. Onboarding: course German, level "From scratch", goal "Easy".
 2. No account needed: on the sign-in screen, "Continue without an account" opens vocabulary rounds, lessons, skills, the path, walk mode with the screen on and exams. Friends, leagues, further AI feedback and buying Premium need an account; those screens say so, and guest progress moves into the account. Guests delete their data under Profile › Delete guest data.
-3. To review account features: "Continue with email" and the account above.
+3. To review account features: "Continue with email" and the account above. If a Cloudflare "Verify you are human" box appears on the email form, tick it (about 2 seconds); "Sign in with Apple" and "Continue without an account" do not show it.
 4. The notification screen has one "Continue" button that opens the system alert.
 5. Tabs: Learn (daily round, walk mode, mock exams), Path (lessons), Skills, Friends.
 
