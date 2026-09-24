@@ -880,7 +880,7 @@ export const tr: Record<string, string> = {
   "aiconsent.text_title": "Yapay zekâ ile geri bildirim",
   "aiconsent.text_lead": "Yazma, konuşma ve sohbet alıştırmalarında cevabını bir yapay zekâ değerlendiriyor. Bunun için metnin aşağıdaki sağlayıcılardan birine gönderilir.",
   "aiconsent.text_what": "Gönderilen: yazdığın ya da söyleyip yazıya çevrilen metin ve görevin kendisi. Adın ve e-posta adresin gönderilmez.",
-  "aiconsent.text_why": "Ne için: puanın, düzeltmeler ve konuşma karakterinin cevabı. Sağlayıcılar metni model eğitmek için kullanmaz.",
+  "aiconsent.text_why": "Ne için: puanın, düzeltmeler ve konuşma karakterinin cevabı.",
   "aiconsent.text_without": "İzin vermezsen metnin hiçbir yapay zekâya gitmez ve alıştırmalar onsuz sürer: konuşmalar senaryoyla ilerler, bazı yazma görevleri puansız kalır.",
   "aiconsent.voice_title": "Sesinin sunucuda yazıya çevrilmesi",
   "aiconsent.voice_lead": "Telaffuz puanı, sınavlardaki sesli cevapların yazıya çevrilmesi ve ekran kapalıyken dinleme için kısa ses kayıtların aşağıdaki konuşma tanıma sağlayıcılarından birine gönderilir.",

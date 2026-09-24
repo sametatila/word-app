@@ -875,7 +875,7 @@ export const en: Record<string, string> = {
   "aiconsent.text_title": "AI feedback",
   "aiconsent.text_lead": "In writing, speaking and conversation practice, an AI reviews your answer. To do that, your text is sent to one of the providers below.",
   "aiconsent.text_what": "What is sent: the text you write or say (once it has been turned into text) and the task itself. Your name and e-mail address are not sent.",
-  "aiconsent.text_why": "What for: your score, corrections and the conversation character's reply. The providers do not use your text to train models.",
+  "aiconsent.text_why": "What for: your score, corrections and the conversation character's reply.",
   "aiconsent.text_without": "If you don't allow it, your text is not sent to any AI and you keep practising without it: conversations follow a script and some writing tasks stay unscored.",
   "aiconsent.voice_title": "Turning your voice into text on the server",
   "aiconsent.voice_lead": "For pronunciation scores, transcribing spoken answers in exams and listening with the screen off, short recordings of your voice are sent to one of the speech recognition providers below.",

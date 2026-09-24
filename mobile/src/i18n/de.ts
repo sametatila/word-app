@@ -875,7 +875,7 @@ export const de: Record<string, string> = {
   "aiconsent.text_title": "Feedback mit KI",
   "aiconsent.text_lead": "Bei Schreib-, Sprech- und Gesprächsübungen bewertet eine KI deine Antwort. Dafür wird dein Text an einen der unten genannten Anbieter gesendet.",
   "aiconsent.text_what": "Gesendet wird: der Text, den du schreibst oder sprichst (nachdem er in Text umgewandelt wurde), und die Aufgabe selbst. Dein Name und deine E-Mail-Adresse werden nicht gesendet.",
-  "aiconsent.text_why": "Wofür: deine Bewertung, Korrekturen und die Antwort der Gesprächsfigur. Die Anbieter verwenden deinen Text nicht zum Trainieren von Modellen.",
+  "aiconsent.text_why": "Wofür: deine Bewertung, Korrekturen und die Antwort der Gesprächsfigur.",
   "aiconsent.text_without": "Wenn du es nicht erlaubst, geht dein Text an keine KI und du übst ohne sie weiter: Gespräche folgen einem Skript, und manche Schreibaufgaben bleiben unbewertet.",
   "aiconsent.voice_title": "Deine Stimme auf dem Server in Text umwandeln",
   "aiconsent.voice_lead": "Für die Aussprachebewertung, die Verschriftlichung gesprochener Prüfungsantworten und das Zuhören bei ausgeschaltetem Bildschirm werden kurze Aufnahmen deiner Stimme an einen der unten genannten Spracherkennungsanbieter gesendet.",
