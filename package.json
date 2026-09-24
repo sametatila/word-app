@@ -111,6 +111,7 @@
     "check:tts": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-tts.ts",
     "tts:coverage": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/tts-own-coverage.ts",
     "tts:watch": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/tts-own-watch.ts",
+    "tts:reviews": "tsx scripts/tts-reviews.ts",
     "test:tts-own": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-tts-own.ts",
     "test:mix": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/game-mix.ts",
     "icons": "node scripts/icons.mjs",

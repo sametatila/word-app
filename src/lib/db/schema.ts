@@ -2087,3 +2087,41 @@ export const guestAttestations = pgTable(
     index("guest_attestations_hash_idx").on(t.requestHash),
   ],
 );
+
+/**
+ * KENDİ SESLERİMİZİN KULAK KONTROLÜ KARARLARI — Defne/Aras kelime katmanı (docs/plan/tts-own-voices.md).
+ *
+ * Kararlar önce yalnız kontrol sayfasının kendi deposunda ve üretim makinesinin bir JSON dosyasında duruyordu:
+ * başka bir oturum ya da yeni bir Whisper taraması onaylanmış sesi yine "şüpheli" diye getiriyordu. Kalıcı kayıt
+ * burası; üretim hattı (tts-test) paket kurarken ve yeniden üretime aday seçerken buna bakıyor.
+ *
+ * Karar SESE bağlı, metne değil: `file` yayındaki m4a adı ("defne/<sha256[:16]>.m4a", içerik adresli). Aynı
+ * metin yeniden üretilirse dosya adı değişir ve yeni ses yeniden dinlenir; aynı ses bir daha sorulmaz.
+ * Yayında olmayan üretimin kararı (sıkı kapıyı geçemeyen "sorunlu" kayıtlar) o üretimin dosya yolunu taşır.
+ * `file` boşsa kararı verilen sesin dosyası artık bilinmiyor (eski sayfalar): yalnız geçmiş ve not için.
+ */
+export const ttsReviews = pgTable(
+  "tts_reviews",
+  {
+    id: serial("id").primaryKey(),
+    /** defne · aras */
+    voice: text("voice").notNull(),
+    /** tr · en · de */
+    lang: text("lang").notNull(),
+    /** `cleanForSpeech` metni — tts-map anahtarının (`ses|dil|metin`) son parçası. */
+    text: text("text").notNull(),
+    file: text("file").notNull().default(""),
+    /** ok · redo */
+    verdict: text("verdict").notNull(),
+    /** Samet'in notu: ne duydu, nasıl okunmalı. Sesletim düzeltmesinin kaynağı. */
+    note: text("note"),
+    /** Kararın geldiği yer, ör. "kulak-kontrolu v9". */
+    source: text("source"),
+    decidedAt: timestamp("decided_at", { withTimezone: true }).notNull(),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [
+    uniqueIndex("tts_reviews_item_uq").on(t.voice, t.lang, t.text, t.file),
+    index("tts_reviews_file_idx").on(t.file),
+  ],
+);
