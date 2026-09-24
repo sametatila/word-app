@@ -79,9 +79,15 @@ export function cleanForSpeech(text: string): string {
          taşındı, çünkü adres üreten herkesin aynı metni görmesi şart. */
       .replace(/…|\.{3}/g, " ")
       .replace(/_{2,}/g, " ")
+      /* ARA TİRE DURAKLAMADIR. " — " iki cümle parçasını ayırıyor ("…nicht aus — mit Taschenmodus…"); iz
+         bırakmadan silinince iki parça duraklamasız birleşiyordu (2026-09-24, kulak kontrolü). Boşluklu tire
+         virgül oluyor; boşluksuz olan (aralık, "-e/-a") eskisi gibi boşluk. */
+      .replace(/\s+[–—]\s+/g, ", ")
       .replace(/[/–—]/g, " ")
       .replace(/\s+/g, " ")
+      .replace(/\s*,(\s*,)+/g, ",")
       .trim()
+      .replace(/^,\s*|\s*,$/g, "")
   );
   /* HARFSİZ PARÇA OKUNMUYOR. Yürüyüş modunun ipucu cümlesi hedef sözcüğün çevresinde bölünüyor ("…sag" +
      "weiter" + "."); son parça yalnız bir nokta kalıyordu ve seslendirmeye gidiyordu — motor boş bir ses ya da
