@@ -3,13 +3,30 @@ import { LEGAL_LOCALES, isLegalOmitted, isLegalPlaceholder, legalPath, type Lega
 import type { LegalConfig } from "./shape";
 
 /**
- * Künye (Impressum) — §5 DDG ve §18 Abs. 2 MStV.
+ * Künye (Impressum) — hizmet sağlayıcının kimliği ve GDPR m.27 AB temsilcisi.
  *
- * NEDEN VAR. Veri sorumlusu Dortmund'da yerleşik ve Premium ücretli; yani
- * Almanya'dan sunulan, ticari ("geschäftsmäßig") bir dijital hizmet. §5 DDG
- * böyle bir hizmetten "kolay tanınır, doğrudan erişilebilir ve sürekli mevcut"
- * bir künye istiyor: ad, çağrılabilir adres, e-posta ve hızlı ikinci bir
- * iletişim yolu. 2026-09-23'e kadar yoktu (/impressum 404, denetim LEG-5).
+ * NEDEN HÂLÂ VAR (1.7, 2026-09-24). Sayfa 2026-09-23'te §5 DDG için açıldı
+ * (denetim LEG-5): o gün hizmet sağlayıcı Dortmund'daydı. Artık sağlayıcı
+ * Türkiye'de yerleşik ve §5 DDG'nin Almanya dışındaki, AB dışındaki bir
+ * sağlayıcıya uygulanıp uygulanmadığı tartışmalı. Sayfa yine de KALIYOR:
+ *   - AB'deki kullanıcı sağlayıcıyı adıyla ve çağrılabilir adresiyle
+ *     tanıyabilsin (tüketici hukukunun genel bilgi yükümlülükleri);
+ *   - mağazalardaki DSA tüccar beyanı (ad, adres, e-posta, telefon AB
+ *     mağazasında herkese açık) ile aynı kimliği söylesin;
+ *   - GDPR m.27 temsilcisinin iletişim bilgisi aranan bir yerde dursun.
+ *
+ * YANLIŞ DAYANAK İDDİA EDİLMİYOR. Eski başlık "Angaben gemäß § 5 DDG" idi;
+ * uygulanıp uygulanmadığı belirsiz bir kanunu dayanak göstermek yerine nötr
+ * "Anbieterkennzeichnung" diyor. Sayfanın adresi ve adı ("Impressum")
+ * Almanca konuşulan ülkelerde aranan sözcük olduğu için aynı kaldı.
+ *
+ * §18 ABS. 2 MStV SATIRI KALDIRILDI. O hüküm yalnız gazetecilik-redaksiyonel
+ * nitelikli tekliflere (haber, görüş, periyodik yayın) bir "içerikten sorumlu"
+ * kişi istiyor; Lernomi'nin dersleri ve alıştırmaları bir öğrenme ürününün
+ * parçası, kamuoyu oluşumuna yönelik redaksiyonel içerik değil. Üstelik
+ * §18(2) o kişinin yurt içinde ikametini istiyor; satırı Samet'le doldurmak
+ * sağlayıcı olmayan birini içerikten sorumlu göstermek olurdu. Siteye blog ya
+ * da haber gibi redaksiyonel içerik eklenirse bu karar yeniden ele alınır.
  *
  * VERİ KODDA YAZILMIYOR. Ad ve adresler `LEGAL_ENTITY`den, panelden
  * değiştirilmişse oradan (`legalConfig().entity`) geliyor; gizlilik
@@ -22,15 +39,16 @@ import type { LegalConfig } from "./shape";
  * eski adres kalabilirdi.
  *
  * BİLEREK YAZILMAYANLAR (uydurma veri yok):
- *   - USt-IdNr.: depoda yok. TODO(Samet): varsa `LEGAL_ENTITY`ye ekle, satır
- *     buraya eklenir. Küçük işletme (§19 UStG) ise gerekmez.
- *   - Telefon / iletişim formu: yok. §5(1) Nr.2 DDG e-postanın YANINDA hızlı,
- *     doğrudan ikinci bir iletişim yolu istiyor (ABAD C-298/07: form da
- *     olabilir). Destek sayfası yalnız aynı e-postayı veriyor.
- *     TODO(Samet): telefon numarası ya da destek sayfasına iletişim formu.
- *   - Tüketici uyuşmazlık (§36 VSBG) beyanı: katılma/katılmama kararı
- *     Samet'in. 10'dan az çalışanlı işletmede beyan zorunlu değil.
- *     TODO(Samet): karar verilirse buraya bir paragraf.
+ *   - USt-IdNr.: sağlayıcının AB'de KDV kaydı yok; satışı mağazalar yapıyor.
+ *     Vergi kimliği olarak yalnız bağlı olunan vergi dairesi basılıyor
+ *     (VKN/TCKN yayımlanmaz, `LEGAL_ENTITY` notu).
+ *   - Telefon / iletişim formu: yok. DSA tüccar beyanı için mağazalara bir
+ *     telefon numarası girilecek ve AB mağazasında herkese açık görünecek.
+ *     TODO(Musa): o numara belli olunca `LEGAL_ENTITY`ye ekle, satır buraya
+ *     eklenir (künye ile mağaza aynı kanalları söylesin).
+ *   - Tüketici uyuşmazlık (§36 VSBG) beyanı: YOK ve gerekmiyor. VSBG'nin
+ *     bilgi yükümlülüğü Almanya'da yerleşik girişimcilere yönelik; eski TODO
+ *     (katılma/katılmama kararı) sağlayıcı değişince düştü.
  *   - AB ODR platformu bağlantısı: platform 20.07.2025'te kapatıldı
  *     (Tüzük (AB) 2024/3228); bağlantı artık istenmiyor.
  */
@@ -40,15 +58,16 @@ type Labels = {
   description: string;
   lead: string;
   provider: string;
+  taxOffice: string;
+  playName: string;
   contact: string;
   email: string;
   privacyEmail: string;
   supportPage: string;
   supportPageText: string;
-  responsible: string;
-  publisher: string;
-  publisherNote: string;
-  playName: string;
+  euRep: string;
+  euRepContact: string;
+  euRepNote: string;
   more: string;
   privacy: string;
   terms: string;
@@ -60,18 +79,19 @@ type Labels = {
 export const IMPRESSUM_TEXT: Record<LegalLocale, Labels> = {
   de: {
     title: "Impressum",
-    description: "Anbieterkennzeichnung von Lernomi nach § 5 DDG und § 18 MStV.",
-    lead: "Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)",
-    provider: "Diensteanbieter",
+    description: "Anbieterkennzeichnung von Lernomi und EU-Vertreter nach Art. 27 DSGVO.",
+    lead: "Anbieterkennzeichnung",
+    provider: "Anbieter",
+    taxOffice: "Zuständiges Finanzamt (Türkei)",
+    playName: "Entwicklername bei Google Play",
     contact: "Kontakt",
     email: "E-Mail",
     privacyEmail: "Datenschutzanfragen",
     supportPage: "Support",
     supportPageText: "Support- und Kontaktseite",
-    responsible: "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV",
-    publisher: "Veröffentlichung der App in den App-Stores",
-    playName: "Entwicklername bei Google Play",
-    publisherNote: "Der Herausgeber veröffentlicht die App bei Google Play und im App Store und vereinnahmt die Abonnementzahlungen; Diensteanbieter ist der oben Genannte.",
+    euRep: "EU-Vertreter nach Art. 27 DSGVO",
+    euRepContact: "Kontakt",
+    euRepNote: "Der Anbieter ist nicht in der Europäischen Union niedergelassen. Betroffene Personen und Aufsichtsbehörden in der EU und im EWR können sich in allen Fragen des Datenschutzes auch an den Vertreter wenden. Der Vertreter ist weder Anbieter noch Verantwortlicher des Dienstes.",
     more: "Weitere Angaben",
     privacy: "Datenschutzerklärung",
     terms: "Nutzungsbedingungen",
@@ -81,18 +101,19 @@ export const IMPRESSUM_TEXT: Record<LegalLocale, Labels> = {
   },
   en: {
     title: "Imprint (Impressum)",
-    description: "Lernomi's provider identification under § 5 DDG and § 18 MStV (German law).",
-    lead: "Information pursuant to § 5 of the German Digital Services Act (DDG)",
-    provider: "Service provider",
+    description: "Lernomi's provider identification and EU representative under Art. 27 GDPR.",
+    lead: "Provider identification",
+    provider: "Provider",
+    taxOffice: "Tax office (Türkiye)",
+    playName: "Developer name on Google Play",
     contact: "Contact",
     email: "E-mail",
     privacyEmail: "Data protection requests",
     supportPage: "Support",
     supportPageText: "Support and contact page",
-    responsible: "Responsible for content under § 18(2) MStV",
-    publisher: "Publication of the app in the app stores",
-    playName: "Developer name on Google Play",
-    publisherNote: "The publisher publishes the app on Google Play and the App Store and collects the subscription payments; the service provider is the person named above.",
+    euRep: "EU representative under Art. 27 GDPR",
+    euRepContact: "Contact",
+    euRepNote: "The provider is not established in the European Union. Data subjects and supervisory authorities in the EU and EEA may also contact the representative on all data protection matters. The representative is neither the provider nor the controller of the service.",
     more: "More information",
     privacy: "Privacy policy",
     terms: "Terms of use",
@@ -102,18 +123,19 @@ export const IMPRESSUM_TEXT: Record<LegalLocale, Labels> = {
   },
   tr: {
     title: "Künye (Impressum)",
-    description: "Lernomi'nin Alman hukuku (§5 DDG, §18 MStV) uyarınca hizmet sağlayıcı bilgileri.",
-    lead: "Almanya Dijital Hizmetler Kanunu (DDG) §5 uyarınca bilgiler",
+    description: "Lernomi'nin hizmet sağlayıcı bilgileri ve GDPR m.27 AB temsilcisi.",
+    lead: "Hizmet sağlayıcıya ilişkin bilgiler",
     provider: "Hizmet sağlayıcı",
+    taxOffice: "Vergi dairesi (Türkiye)",
+    playName: "Google Play'deki geliştirici adı",
     contact: "İletişim",
     email: "E-posta",
     privacyEmail: "Veri koruma başvuruları",
     supportPage: "Destek",
     supportPageText: "Destek ve iletişim sayfası",
-    responsible: "İçerikten sorumlu kişi (§18(2) MStV)",
-    publisher: "Uygulamanın mağazalarda yayımlanması",
-    playName: "Google Play'deki geliştirici adı",
-    publisherNote: "Yayıncı uygulamayı Google Play'de ve App Store'da yayımlar ve abonelik ödemelerini tahsil eder; hizmet sağlayıcı yukarıda adı geçen kişidir.",
+    euRep: "AB temsilcisi (GDPR m.27)",
+    euRepContact: "İletişim",
+    euRepNote: "Hizmet sağlayıcı Avrupa Birliği'nde yerleşik değildir. AB ve AEA'daki ilgili kişiler ve denetim otoriteleri veri korumaya ilişkin her konuda temsilciye de başvurabilir. Temsilci hizmetin sağlayıcısı ya da veri sorumlusu değildir.",
     more: "Diğer bilgiler",
     privacy: "Gizlilik politikası",
     terms: "Kullanım şartları",
@@ -172,6 +194,12 @@ export function ImpressumBody({ cfg, locale }: { cfg: LegalConfig; locale: Legal
           <Value v={e.providerName} />
           {has(e.providerAddress) ? (<><br /><Value v={localizeAddress(e.providerAddress, locale)} /></>) : null}
         </p>
+        {has(e.providerTaxOffice) || has(e.providerPlayName) ? (
+          <dl className="entity">
+            {has(e.providerTaxOffice) ? (<><dt>{t.taxOffice}</dt><dd><Value v={e.providerTaxOffice} /></dd></>) : null}
+            {has(e.providerPlayName) ? (<><dt>{t.playName}</dt><dd><Value v={e.providerPlayName} /></dd></>) : null}
+          </dl>
+        ) : null}
 
         <h2>{t.contact}</h2>
         <dl className="entity">
@@ -194,16 +222,20 @@ export function ImpressumBody({ cfg, locale }: { cfg: LegalConfig; locale: Legal
           <dd><Link href={legalPath("support", locale)}>{t.supportPageText}</Link></dd>
         </dl>
 
-        <h2>{t.responsible}</h2>
-        <p>
-          <Value v={e.providerName} />
-          {has(e.providerAddress) ? (<><br /><Value v={localizeAddress(e.providerAddress, locale)} /></>) : null}
-        </p>
-
-        {has(e.providerPlayName) ? (
+        {has(e.euRepresentativeName) ? (
           <>
-            <h2>{t.publisher}</h2>
-            <p>{t.playName}: <Value v={e.providerPlayName} /></p>
+            <h2>{t.euRep}</h2>
+            <p>
+              <Value v={e.euRepresentativeName} />
+              {has(e.euRepresentativeAddress) ? (<><br /><Value v={localizeAddress(e.euRepresentativeAddress, locale)} /></>) : null}
+            </p>
+            {has(e.privacyEmailEu) ? (
+              <dl className="entity">
+                <dt>{t.euRepContact}</dt>
+                <dd><a href={`mailto:${e.privacyEmailEu}`}>{e.privacyEmailEu}</a></dd>
+              </dl>
+            ) : null}
+            <p className="muted">{t.euRepNote}</p>
           </>
         ) : null}
 

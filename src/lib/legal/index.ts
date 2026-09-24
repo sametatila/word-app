@@ -271,11 +271,11 @@ export const LEGAL_PATHS = {
   support: "/support",
   deleteAccount: "/account/delete",
   /**
-   * Künye (Impressum) — §5 DDG ve §18 MStV. Veri sorumlusu Dortmund'da yerleşik
-   * ve Premium ücretli, yani Almanya'dan sunulan ticari bir dijital hizmet:
-   * "kolay tanınır, doğrudan erişilebilir, sürekli mevcut" bir künye zorunlu.
-   * 2026-09-23'e kadar yoktu (denetim LEG-5). Öteki belgelerden farklı olarak
-   * kanonik dili ALMANCA (bkz. `legalPath`): yükümlülük Alman hukukundan.
+   * Künye (Impressum) — hizmet sağlayıcının kimliği ve GDPR m.27 AB
+   * temsilcisi. 2026-09-23'te §5 DDG için açıldı (denetim LEG-5); 1.7'den beri
+   * sağlayıcı Türkiye'de ve sayfa belirli bir Alman kanununa dayandırılmıyor,
+   * ama kalıyor (gerekçe `lib/legal/impressum.tsx` başında). Öteki belgelerden
+   * farklı olarak kanonik dili ALMANCA (bkz. `legalPath`).
    */
   impressum: "/impressum",
 } as const;
@@ -283,8 +283,9 @@ export const LEGAL_PATHS = {
 /**
  * Belgenin kanonik (alt yolsuz) dili. Künye Almanca, gerisi Türkçe.
  *
- * Künyenin kanonik dili Almanca çünkü onu isteyen Alman hukuku ve onu arayan
- * okur (ve rakip avukatı) "/impressum"u Almanca bekliyor. Öteki belgelerde
+ * Künyenin kanonik dili Almanca çünkü "/impressum"u arayan okur (Almanca
+ * konuşulan ülkelerdeki kullanıcı, denetim otoritesi, rakip avukatı) onu
+ * Almanca bekliyor. Öteki belgelerde
  * Türkçe bağlayıcı metin (şartlar §12b); künye bir sözleşme değil, kimlik
  * beyanı, o yüzden "bağlayıcı dil" sorusu doğmuyor.
  */

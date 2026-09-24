@@ -302,9 +302,10 @@ export default async function Home() {
           <Link href={legalPath("terms", lang)} prefetch={false} className="underline-offset-4 hover:underline">{t("auth.terms_of_use")}</Link>
           <Link href={legalPath("support", lang)} prefetch={false} className="underline-offset-4 hover:underline">{t("land.support")}</Link>
           <Link href="/account/delete" prefetch={false} className="underline-offset-4 hover:underline">{t("land.delete_account")}</Link>
-          {/* Künye (§5 DDG, hukuk denetimi LEG-5): ana sayfadan "doğrudan
-              erişilebilir" olmalı. Adı her dilde "Impressum" — Almanya'da
-              aranan sözcük bu. */}
+          {/* Künye (hukuk denetimi LEG-5; 1.7'den beri sağlayıcı kimliği +
+              GDPR m.27 AB temsilcisi): ana sayfadan doğrudan erişilebilir.
+              Adı her dilde "Impressum" — Almanca konuşulan ülkelerde aranan
+              sözcük bu. */}
           <Link href={legalPath("impressum", lang)} prefetch={false} className="underline-offset-4 hover:underline">Impressum</Link>
         </div>
       </footer>
