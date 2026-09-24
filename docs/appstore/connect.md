@@ -26,7 +26,7 @@ Connect'e girmek (PATCH) mağazada canlı etki yaptığı için Samet'in işi.
 | Sign-in required | Evet (hesap isteyen özellikler için; çekirdek hesapsız açık) |
 | User name | `apple-review@lernomi.app` (Premium; Connect'te kayıtlı) |
 | Password | Yalnız Connect'te |
-| İkinci hesap (Notes içinde) | `[[IAP_DEMO_HESABI_E_POSTA]]` — **Premium'suz**, satın alma akışı için. TODO(Samet): üretimde açılması veri yazmak demek, ayrıca onay |
+| İkinci hesap (Notes içinde) | `apple-review-free@lernomi.app` — **Premium'suz**, satın alma akışı için. 2026-09-24'te Samet açtı ve doğruladı; not canlı ASC'de ve TestFlight beta notunda (parola yalnız orada). Google karşılığı `google-review-free@lernomi.app` (Play › Uygulama erişimi) |
 | Notes | Aşağıdaki İngilizce metin, olduğu gibi |
 
 **Notes alanına İngilizce metin girilir**: inceleyicinin Türkçe bilmesi beklenemez.
