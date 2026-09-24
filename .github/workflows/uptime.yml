@@ -1,17 +1,23 @@
-# DIŞ İZLEME — sunucudan BAĞIMSIZ bekçi.
+# DIŞ İZLEME — sunucudan BAĞIMSIZ bekçi, GÜNLÜK YEDEK.
 #
 # Sunucudaki uyarı motoru (lib/alerts) ve bekçi (/opt/lernomi/watchdog.sh) aynı
 # makinede çalışıyor: makine tamamen düşerse (Netcup arızası, ağ kesintisi,
-# disk) ikisi de susar ve kimse haber vermez. Bu iş GitHub'ın altyapısında
-# koşuyor ve siteyi DIŞARIDAN yokluyor.
+# disk) ikisi de susar ve kimse haber vermez. Dışarıdan yoklama 2026-09-24'ten
+# beri UptimeRobot'ta (ücretsiz plan, /api/config 5 dakikada bir, bildirim
+# Samet'in e-postası ve UptimeRobot mobil uygulaması; hesap Samet'te).
 #
-# NE YAPIYOR (5 dakikada bir; GitHub zamanlaması yoğunlukta birkaç dakika
-# gecikebilir):
+# NEDEN ARTIK GÜNDE BİR: bu iş 5 dakikada bir koşuyordu ama GitHub zamanlaması
+# fiilen 2-7 saatte bir tetikliyordu (denetim TEC-3), yani kesinti saatler sonra
+# duyuluyordu; depo private olunca da her koşu en az 1 dakika sayılıp ayda
+# ~8.640 dakika yiyecekti (ücretsiz kota 2.000). Günde bir koşu ayda ~30 dakika
+# ve UptimeRobot'un ücretsiz planında olmayan sertifika süresini ölçüyor.
+#
+# NE YAPIYOR (günde bir, 06:17 UTC; elle de tetiklenebilir):
 #   - /api/config HTTP 200 mü (3 deneme, 20 sn arayla - tek hıçkırık alarm değil)
 #   - HTTPS sertifikası 10 günden az mı kaldı
 # SORUN VARSA:
-#   - Telegram'a yazar: kesinti BAŞLADIĞINDA hemen, sürerse saatte bir, düzelince
-#     bir kez. Durum (ne zamandan beri kapalı, son mesaj) Actions önbelleğinde.
+#   - Telegram'a yazar: kesinti BAŞLADIĞINDA hemen, sürerse sonraki koşularda,
+#     düzelince bir kez. Durum (ne zamandan beri kapalı, son mesaj) Actions önbelleğinde.
 #   - İş kırmızı biter: GitHub sahibine e-posta atar (Telegram kurulmamışsa da
 #     haber alınır).
 # Gizliler: repo › Settings › Secrets › TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
@@ -20,7 +26,7 @@ name: Dış izleme
 
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "17 6 * * *"
   workflow_dispatch:
     inputs:
       test:
