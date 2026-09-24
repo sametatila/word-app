@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { FAIR_USE, LEGAL_ENTITY, LEGAL_PATHS, isLegalPlaceholder, isLegalOmitted, legalPath, type LegalLocale } from "./index";
 import { platformText, visibleProcessors, type LegalConfig } from "./shape";
+import { localizeAddress } from "./impressum";
 
 /**
  * Hukuki belge gövdesinin markdown + belirteç motoru.
@@ -162,7 +163,11 @@ function EntityBlock({ cfg, locale, party, contact }: {
 }) {
   const l = ENTITY_LABELS[locale];
   const row = (label: string, key: string) => {
-    const node = entityValue(cfg, key);
+    // Adresler Türkçe yazılı ("…, Almanya"); İngilizce ve Almancada yalnız ülke adı çevriliyor.
+    const raw = (cfg.entity as Record<string, string>)[key] ?? "";
+    const node = key.endsWith("Address") && !isLegalOmitted(raw) && !isLegalPlaceholder(raw)
+      ? <>{localizeAddress(raw, locale)}</>
+      : entityValue(cfg, key);
     return node === null ? null : <><dt key={`${key}-t`}>{label}</dt><dd key={`${key}-d`}>{node}</dd></>;
   };
   if (party === "euRepresentative") {

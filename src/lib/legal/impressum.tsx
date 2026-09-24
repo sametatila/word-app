@@ -148,7 +148,8 @@ export const IMPRESSUM_TEXT: Record<LegalLocale, Labels> = {
 /**
  * Adres alanları `LEGAL_ENTITY`de Türkçe yazılı ("…, Almanya"). Künye
  * Almanca ve İngilizce de basıldığı için yalnız sondaki ülke adı çevriliyor;
- * adresin geri kalanı posta adresi olduğu için olduğu gibi kalıyor.
+ * adresin geri kalanı posta adresi olduğu için olduğu gibi kalıyor. Gizlilik
+ * politikası ve şartlardaki kimlik blokları da bunu kullanıyor (`markdown.tsx`).
  */
 const COUNTRY: Record<LegalLocale, Record<string, string>> = {
   tr: {},
@@ -156,7 +157,7 @@ const COUNTRY: Record<LegalLocale, Record<string, string>> = {
   de: { Almanya: "Deutschland", Türkiye: "Türkei" },
 };
 
-function localizeAddress(address: string, locale: LegalLocale): string {
+export function localizeAddress(address: string, locale: LegalLocale): string {
   return address.replace(/, (Almanya|Türkiye)$/, (_m, c: string) => `, ${COUNTRY[locale][c] ?? c}`);
 }
 
