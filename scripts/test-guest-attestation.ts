@@ -11,6 +11,8 @@ import {
   readAttestationInput,
   setIntegrityDecoderForTests,
   settleGuestAttestations,
+  purgeExpiredGuestAttestations,
+  ATTESTATION_RETENTION_DAYS,
   PLAY_INTEGRITY_PACKAGE,
   type IntegrityPayload,
 } from "../src/lib/auth/play-integrity";
@@ -23,7 +25,8 @@ import {
  * Ölçülenler: hüküm kuralları (paket, özet, tazelik, uygulama, cihaz), kip
  * bayrağı (boş/off hiçbir şey yazmıyor, anahtar yolu yoksa kapalı), her
  * sonuçta misafirin YİNE açıldığı (kimse reddedilmiyor), tekrar kullanılan
- * belge, iOS'un kayda girmemesi ve hesap silmede kimliğin boşalması.
+ * belge, iOS'un kayda girmemesi, hesap silmede kimliğin boşalması ve
+ * saklama süresi dolan satırın günlük süpürmeyle gitmesi (Gizlilik §9).
  *
  *   TEST_DATABASE_URL=postgres://postgres@127.0.0.1:55432/lernomi \
  *   DATABASE_URL=$TEST_DATABASE_URL BETTER_AUTH_SECRET=test-secret-at-least-32-characters-long \
@@ -189,6 +192,24 @@ async function main() {
     const left = rowsOf(await db.execute(sql`select user_id from guest_attestations where request_hash = ${guestRequestHash(n1)} order by id`));
     check("satır kalıyor, kimlik boşalıyor", left.length === 2 && left[0].user_id === null, left);
     await db.execute(sql`delete from guest_attestations where request_hash = ${guestRequestHash(n1)} and user_id is null`);
+
+    console.log("\nSaklama süresi");
+    /* Süpürme tabloyu tümden tarıyor; yerel veritabanındaki öteki satırlara
+       dokunmamak için "şimdi" ileri alınmıyor, test satırları geçmişe yazılıyor. */
+    const tag = `retention-${Math.random().toString(36).slice(2, 10)}`;
+    const days = (d: number) => sql`now() - make_interval(days => ${d}::int)`;
+    for (const [suffix, at] of [["old", days(ATTESTATION_RETENTION_DAYS + 1)], ["edge", days(ATTESTATION_RETENTION_DAYS - 1)], ["new", sql`now()`]] as const) {
+      await db.execute(sql`insert into guest_attestations (user_id, mode, result, request_hash, created_at)
+        values (${suffix === "old" ? null : ok.uid}, 'log', 'pass', ${`${tag}-${suffix}`}, ${at})`);
+    }
+    const purged = await purgeExpiredGuestAttestations();
+    const kept = rowsOf(await db.execute(sql`select request_hash from guest_attestations where request_hash like ${tag + "-%"} order by request_hash`)).map((r) => r.request_hash);
+    check(`${ATTESTATION_RETENTION_DAYS} günü geçen satır silindi`, purged >= 1 && !kept.includes(`${tag}-old`), { purged, kept });
+    check("süresi dolmayanlar kaldı", kept.includes(`${tag}-edge`) && kept.includes(`${tag}-new`), kept);
+    const again = rowsOf(await db.execute(sql`select 1 from guest_attestations where request_hash like ${tag + "-%"}`)).length;
+    await purgeExpiredGuestAttestations();
+    check("ikinci koşu zararsız (kalanlara dokunmuyor)", rowsOf(await db.execute(sql`select 1 from guest_attestations where request_hash like ${tag + "-%"}`)).length === again);
+    await db.execute(sql`delete from guest_attestations where request_hash like ${tag + "-%"}`);
   } finally {
     setIntegrityDecoderForTests(null);
     await cleanup();

@@ -1,10 +1,13 @@
 import "server-only";
 import { createHash, createSign } from "node:crypto";
 import { promises as fs } from "node:fs";
-import { eq, sql } from "drizzle-orm";
+import { eq, lt, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { guestAttestations } from "@/lib/db/schema";
 import { parseClientHeader } from "@/lib/app-control-shared";
+import { ATTESTATION_RETENTION_DAYS } from "./attestation-const";
+
+export { ATTESTATION_RETENTION_DAYS };
 
 /**
  * MİSAFİR AÇILIŞINDA CİHAZ DOĞRULAMASI — Play Integrity, KAYIT KİPİ.
@@ -296,4 +299,24 @@ export function startGuestAttestation(input: Parameters<typeof recordGuestAttest
   });
   inflight.add(p);
   void p.finally(() => inflight.delete(p));
+}
+
+/* ── Saklama ──────────────────────────────────────────────────────────────── */
+
+/**
+ * Süresi dolan kayıtları siler (Gizlilik §3 ve §9: "cihaz bütünlüğü sonucu
+ * {{attestationDays}} gün"). Günlük cron (`api/cron/assess`, 04:15 UTC)
+ * çağırıyor, yani satır en geç süre + bir gün yaşıyor. Tekrar çalışması
+ * zararsız; hatayı yutup 0 döner ki öteki temizlikler ve kuyruk sürsün.
+ * Kimliği boşalmış (hesabı silinmiş) satırlar da aynı süreyle gidiyor.
+ */
+export async function purgeExpiredGuestAttestations(now = new Date()): Promise<number> {
+  try {
+    const cutoff = new Date(now.getTime() - ATTESTATION_RETENTION_DAYS * 86_400_000);
+    const gone = await db.delete(guestAttestations).where(lt(guestAttestations.createdAt, cutoff));
+    return (gone as unknown as { rowCount?: number }).rowCount ?? 0;
+  } catch (err) {
+    console.error("[attest] purge failed", err);
+    return 0;
+  }
 }
