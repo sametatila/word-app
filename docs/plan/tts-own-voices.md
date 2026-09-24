@@ -15,6 +15,7 @@ seçilemez. Günlük tur, pratik ve yürüyüş modunun kelime katmanı canlıda
 | Kutular | cümle dizmede her kutu AYRI üretilmiş kayıt (cümleden kesme değil: yanlış dizilince ezgi saçmalardı); metin `tileSpeech` (kenar noktalaması atılır). |
 | Sunucu | `TTS_OWN_DIR` (`/opt/lernomi/tts-own`: `tts-map.json` + `m4a/`). **Yayın anahtarı**: boşsa kelimeler Edge karşılığıyla, doluysa düşüşsüz. Tablo dakikada bir tazelenir; cevap `max-age=86400` + ETag (nginx aynı başlığa uyar, boşaltma gerekmez). |
 | Kapsam kapısı | `npm run tts:coverage -- --words <döküm> --map <tts-map.json> [--produced …] [--jobs eksik.jsonl]` — uygulamanın kendi işlevleriyle her metni kurar, eksikleri tts-test iş biçiminde yazar. `TTS_OWN_DIR` ancak bu KAPSAM TAM derken doldurulur. |
+| Ses bekçisi (2026-09-24) | `npm run tts:watch` (`scripts/tts-own-watch.ts`, hesap `tts-own-needs` ile aynı): canlı `words` tablosu ↔ `tts-map.json`. Üretim işini `TTS_OWN_DIR/eksik.jsonl`e yazar, YALNIZ yeni eksik varsa tek satır basar. Sunucuda `/opt/lernomi/tts-watch.sh` çağırıyor (repo dışı): her gece `lernomi-tts-watch.timer` + her deploy sonu; gece turu son 24 saatte kullanıcıya 404 dönen kelime isteklerini (`[tts-own]` günlüğü) de ekler, mesaj Telegram'a. Metin düzeltmesi ya da yeni içerik sesi olmadan gelirse buradan duyuluyor. |
 | Test | `npm run test:tts-own` (CI'da). |
 
 Kaldırılanlar: mobil boşluk doldurmada boşluklu cümlenin hoparlörü (bozuk cümle okuyordu, webde yoktu); serbest
