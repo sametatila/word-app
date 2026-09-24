@@ -1582,8 +1582,8 @@ export const tr: Record<string, string> = {
   /* Teslim işareti: yürüyüşe girişte BİR KEZ okunuyor. Android atlamayı
      tanıyordu ama varlığını hiç söylemiyordu. */
   "walk.skip_ok": "Bilmiyorsan sorun değil",
-  "walk.skip_hint_before": "Bilmediğin kelimede",
-  "walk.skip_hint_after": "de.",
+  "walk.skip_hint_before": "Bilmediğin bir kelime olursa şunu söyle:",
+  "walk.skip_hint_after": ".",
   "walk.greeting": "Hazırsan başlıyoruz. Anlamı duy, {lang} karşılığını söyle.",
   "walk.no_more": "Bugünlük tekrar kalmadı.",
   "walk.continue_yes_no": "Devam edelim mi? Evet ya da hayır de.",
