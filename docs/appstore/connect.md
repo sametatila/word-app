@@ -31,6 +31,10 @@ Connect'e girmek (PATCH) mağazada canlı etki yaptığı için Samet'in işi.
 
 **Notes alanına İngilizce metin girilir**: inceleyicinin Türkçe bilmesi beklenemez.
 
+**Alan en çok 4.000 karakter.** Taslak 2026-09-24'te 4.224 karaktere çıkmıştı; sıkılaştırılıp
+kullanıcı içeriği maddesi (1.2: engelle/bildir, yapay zekâ yanıtında Bildir) eklendi, 3.244 karakter.
+Ekleme yapan uzunluğu ölçsün: `awk '/^```text/{f=1;next} /^```/{if(f)exit} f' docs/appstore/connect.md | wc -m`.
+
 Yollar 2026-09-14'te koddan doğrulandı: yürüyüş modu **Öğren** sekmesindeki "Yürüyüş modu"
 kutucuğunda (`mobile/src/screens/LearnScreen.tsx`), Beceriler sekmesinde DEĞİL — eski notlar
 yürüyüş modunu Beceriler'de gösteriyordu ve inceleyiciyi olmayan bir yola gönderiyordu. Hesap
@@ -48,24 +52,25 @@ ekranının en altındaki bağlantı da aynı ekrana gidiyor. Düğme adları uy
 > ayrıca onaylanır (mağaza raporu B07, denetim IAP-5).
 
 ```text
-Review accounts: the account above has an active Premium subscription, so walk mode with the screen off and AI feedback work without a paywall. It does not expire and has no two-factor authentication. To review the in-app purchases, please sign in with the second account, which has NO Premium: [[IAP_DEMO_EMAIL]] / [[IAP_DEMO_PASSWORD]]. With it, Profile › "Go Premium" opens the purchase screen with both subscriptions, prices, the free trial terms, auto-renewal text and links to the Terms of Use and Privacy Policy. Purchases in review run in the sandbox.
+Review accounts: the account above has active Premium, so walk mode with the screen off and AI feedback work without a paywall. It does not expire and has no two-factor authentication. To review the in-app purchases, sign in with the second account, which has NO Premium: [[IAP_DEMO_EMAIL]] / [[IAP_DEMO_PASSWORD]]. There, Profile › "Go Premium" opens the purchase screen with both subscriptions, prices, free trial terms, auto-renewal text and links to the Terms of Use and Privacy Policy. Purchases in review run in the sandbox.
 
-Why buying needs an account (Guideline 5.1.1(v)): Premium is an account-based, cross-platform subscription. The same Premium works on iPhone, Android and the web (www.lernomi.app) and is restored on any device by signing in, so the purchase must be tied to an account. Everything else in the app works without an account (step 2).
+Why buying needs an account (5.1.1(v)): Premium is an account-based, cross-platform subscription (iPhone, Android, web) restored on any device by signing in. Everything else works without an account (step 2).
 
-1. Open the app and go through onboarding: course German, level "From scratch", goal "Easy".
-2. No account is needed to use the app (Guideline 5.1.1(v)): on the sign-in screen, "Continue without an account" opens vocabulary rounds, lessons, skills, the path, walk mode with the screen on and exams. Reminders work without an account (set up on the device), and a guest gets one AI writing or speaking assessment after consenting. Friends and leagues, further AI feedback and buying Premium need an account; those screens say so and offer "Create account", and guest progress moves into the account. Guest data can be deleted under Profile › Delete guest data.
-3. To review the account features, sign in instead: on the sign-in screen tap "Continue with email" and sign in with the account above.
-4. The notification permission screen has a single "Continue" button that opens the system alert; choose "Allow" or "Don't Allow" there.
-5. Tabs: Learn (daily round, walk mode, mock exams), Path (lessons), Skills (reading, listening, writing, speaking, grammar).
+1. Onboarding: course German, level "From scratch", goal "Easy".
+2. No account needed: on the sign-in screen, "Continue without an account" opens vocabulary rounds, lessons, skills, the path, walk mode with the screen on and exams. Friends, leagues, further AI feedback and buying Premium need an account; those screens say so, and guest progress moves into the account. Guests delete their data under Profile › Delete guest data.
+3. To review account features: "Continue with email" and the account above.
+4. The notification screen has one "Continue" button that opens the system alert.
+5. Tabs: Learn (daily round, walk mode, mock exams), Path (lessons), Skills, Friends.
 
-6. Third-party AI consent (Guideline 5.1.2(i)): the first time a feature would send your text to an AI provider (for example a writing task in Skills or a conversation in a Path lesson), the app shows a consent screen. It says what is sent, names each provider and links to the privacy policy. Nothing is sent before you tap "Allow and continue". "Continue without AI" keeps the app usable: conversations follow a script and some writing tasks stay unscored. The decision is stored and enforced on our server, and can be changed under Profile › Settings › Privacy.
+6. AI consent (5.1.2(i)): before a feature first sends text to an AI provider (e.g. a Skills writing task or a Path conversation), a consent screen says what is sent, names each provider and links to the privacy policy. Nothing is sent before "Allow and continue". "Continue without AI" keeps the app usable. The choice is enforced on our server and can be changed in Profile › Settings › Privacy.
 
-7. Microphone and background audio (UIBackgroundModes: audio). The microphone is used in two situations, both started by the user:
-   a) Speaking answers with the screen on (lessons, speaking practice, the speaking parts of exams, roleplay): the microphone is open only while the learner says the answer, and recognition runs on the device's own speech recognizer.
-   b) Walk mode, the only feature that uses background audio: Learn › Walk mode › Start. A short screen explains what the microphone is used for; its single "Continue" button opens the system microphone and speech recognition alerts. Because the review account has Premium, a separate consent screen follows that names the speech recognition providers: "Allow and continue" lets short recordings be sent to our server and recognised there while the screen is off; "Continue without sending audio" keeps walk mode working with the screen on only. The audio is recognised on the server and not stored; only the recognised text is kept.
-   While walk mode runs: it is always started by the user; the lock screen shows a Now Playing entry ("Walk mode is on") and the system microphone indicator stays on for the whole session. You don't need to unlock to stop: the lock screen pause control (or the headphone button) ends the session, and it can also be stopped inside the app. Background audio is used for nothing else.
+7. Microphone and background audio (UIBackgroundModes: audio). Always started by the user:
+a) Speaking answers with the screen on (lessons, speaking practice, exam speaking, roleplay): the mic is open only while the learner answers; recognition runs on the device's speech recognizer.
+b) Walk mode, the ONLY use of background audio: Learn › Walk mode › Start. A screen explains the mic use; "Continue" opens the system mic and speech recognition alerts. A consent screen then names the speech recognition providers: "Allow and continue" lets short recordings go to our server for recognition while the screen is off (audio is not stored, only the recognised text); "Continue without sending audio" keeps walk mode screen-on only. During the session the lock screen shows a Now Playing entry ("Walk mode is on") and the mic indicator stays on; the lock screen pause control or the headphone button ends it, as does the in-app stop.
 
-8. Account deletion (Guideline 5.1.1(v)): Profile › Settings › Account › Delete account (the last row). The same screen is also linked at the bottom of the Profile screen. Please test deletion with a separate account, not the review account. Guests delete their data under Profile › Delete guest data.
+8. User content (1.2): other users' names appear in Friends and leagues. Open a user › "Block / Report", or long-press a leaderboard row to report. Every AI reply in lessons, roleplay exams and assessments has a "Report" link. Reports are reviewed within 24 hours; the reporter is notified of the outcome.
+
+9. Account deletion (5.1.1(v)): Profile › Settings › Account › Delete account (last row), also linked at the bottom of Profile. Please test with a separate account, not the review account.
 ```
 
 Test hesabı gerçek veritabanında açılır, e-posta doğrulaması tamamlanır, seviye A1
