@@ -36,9 +36,10 @@ Sütunlar Console'daki sırayla: toplanıyor / paylaşılıyor / geçici işleme
 | Uygulama bilgisi ve performans › Çökme günlükleri (anonim JS hata raporu: hata iletisi, yığın izi) | **Evet** | Hayır | Hayır | Zorunlu (analitik anahtarından bağımsız gönderiliyor) | Uygulama işlevi, analitik (hata ayıklama) |
 | Uygulama bilgisi ve performans › Tanılama (hata raporuna eşlik eden ekran adı, uygulama sürümü, platform) | **Evet** | Hayır | Hayır | Zorunlu | Uygulama işlevi, analitik |
 | Uygulama bilgisi ve performans › Diğer (ekran genişliği, platform etiketi) | Evet | Hayır | Hayır | İsteğe bağlı (kapatılabilir) | Analitik |
-| Uygulama bilgisi ve performans › Diğer uygulama performans verileri (Play Integrity sonucu: uygulama tanındı mı, cihaz bütünlüğü, lisans durumu, sebep) — **`GUEST_ATTESTATION` açılınca** | Evet | Hayır | Hayır | Zorunlu (Android'de "Hesapsız devam et"; kapatma anahtarı yok) | Dolandırıcılık önleme, güvenlik ve uyumluluk |
+| Uygulama bilgisi ve performans › Diğer uygulama performans verileri (Play Integrity: bizim sunucuya yazdığımız sonuç — uygulama tanındı mı, cihaz bütünlüğü, lisans durumu, sebep — ve Google kütüphanesinin topladığı uygulama meta verisi: paket adı, sürüm, imza sertifikası, Play lisans durumu) — **`GUEST_ATTESTATION` açılınca** | Evet | Hayır | Hayır | Zorunlu (Android'de "Hesapsız devam et"; kapatma anahtarı yok) | Dolandırıcılık önleme, güvenlik ve uyumluluk |
 | Finansal bilgi › Satın alma geçmişi | Evet | Evet (RevenueCat, Google Play) | Hayır | İsteğe bağlı | Uygulama işlevi (abonelik) |
 | Cihaz veya diğer kimlikler › Cihaz bildirim jetonu | **Evet** | **Evet** (Google — Firebase Cloud Messaging) | Hayır | İsteğe bağlı (bildirim izni) | Uygulama işlevi (bildirim gönderimi) |
+| Cihaz veya diğer kimlikler › Play Integrity'nin cihaz bilgisi (anahtar doğrulama sertifikası, cihaz doğrulama belgesi, isteğe özgü `requestHash`) — **`GUEST_ATTESTATION` açılınca** | Evet | Hayır (Google hizmet sağlayıcı olarak işliyor) | Hayır | Zorunlu (Android'de "Hesapsız devam et") | Dolandırıcılık önleme, güvenlik ve uyumluluk |
 | Konum, kişiler, takvim, fotoğraf/video, sağlık | Hayır | Hayır | — | — | Toplanmıyor |
 
 Notlar:
@@ -57,17 +58,22 @@ Notlar:
   **2026-09-23'ten beri bu yapısal olarak garanti:** `mobile/firebase.json` →
   `messaging_auto_init_enabled: false`; FCM jetonu (ve arkasındaki Firebase kurulum
   kimliği) uygulama açılışında değil, bildirim izni verildikten sonra üretiliyor.
-- **Play Integrity (hukuki sürüm 1.6, 2026-09-24; KESİN DEĞİL, aşağıdaki gerekçe).** Android'de "Hesapsız
+- **Play Integrity (hukuki sürüm 1.6, 2026-09-24; beyan kararı Samet, 2026-09-24).** Android'de "Hesapsız
   devam et"te uygulama Google Play Integrity'den imzalı bir belge alıyor, sunucu onu Google'a çözdürüp
   yalnız hükümleri ve sebebi `guest_attestations`a misafir kimliğine bağlı yazıyor (90 gün, günlük cron
   siler; belgenin kendisi yazılmıyor). Kod canlıda KAPALI (`GUEST_ATTESTATION` boş); form satırı kip
   `log`a alındığı sürümle birlikte girilir, önce girmek zararsız fazla beyan olur.
-  - *Kategori:* Play'in listesinde "bütünlük sonucu" diye bir tür yok. En yakın ikisi: **Uygulama bilgisi
-    ve performans › Diğer uygulama performans verileri** (önerilen: hüküm uygulamanın ve çalıştığı
-    ortamın durumu hakkında) ya da **Cihaz veya diğer kimlikler** (REDDEDİLDİ: saklanan şey bir
-    tanımlayıcı değil; `requestHash` her açılışta yeni, rastgele bir nonce'un özeti ve cihazı ya da
-    kişiyi tekrar tanımaya yaramıyor). "Uygulama etkinliği" de uymuyor: kullanıcının eylemi değil,
-    cihazın durumu. Emin olmak için Play Console'daki tür açıklamalarına bir daha bakılmalı.
+  - *Kategori:* İKİ satır, Google kütüphanesinin topladıkları DAHİL (aşağıdaki karar).
+    **Uygulama bilgisi ve performans › Diğer uygulama performans verileri**: bizim yazdığımız sonuç
+    (uygulamanın ve çalıştığı ortamın durumu) ile kütüphanenin gönderdiği uygulama meta verisi (paket
+    adı, sürüm, imza sertifikası) ve oturum açmış kullanıcının Play lisans durumu. **Cihaz veya diğer
+    kimlikler**: kütüphanenin gönderdiği cihaz bilgisi (anahtar doğrulama sertifikası, cihaz doğrulama
+    belgesi) ve `requestHash`. Bizim SAKLADIĞIMIZ şey bir tanımlayıcı değil (`requestHash` her açılışta
+    yeni, rastgele bir nonce'un özeti); satır, cihazdan Google'a giden veri yüzünden var.
+  - *Console'da tek tür:* Play formunda "Cihaz veya diğer kimlikler" TEK bir veri türü; bildirim jetonu
+    satırıyla birleşik cevap: toplanıyor Evet, paylaşılıyor Evet (FCM yüzünden), geçici Hayır,
+    **Zorunlu** (Play Integrity yolunda kullanıcı toplamayı kapatamıyor), amaçlar "Uygulama işlevi" +
+    "Dolandırıcılık önleme, güvenlik ve uyumluluk".
   - *Amaç:* **Dolandırıcılık önleme, güvenlik ve uyumluluk** (Google'ın Play Integrity belgesinin
     tarif ettiği kullanım: uygulama, lisans ve cihaz bütünlüğünü doğrulamak).
   - *Paylaşım:* Hayır. Google'ın kendi beyanı (developer.android.com/google/play/integrity/terms,
@@ -77,11 +83,16 @@ Notlar:
     alıcı olarak yazılı ("Google (Play Integrity)", bağımsız veri sorumlusu).
   - *Geçici:* Hayır (90 gün tutuluyor). *Zorunlu:* misafir yolunda kullanıcının kapatabileceği bir
     anahtar yok; misafir modu isteğe bağlı olsa da satır "zorunlu" işaretlenir (temkinli seçim).
-  - Google'ın SDK'sının kendisinin topladığı (paket adı, sürüm, imza sertifikası, lisans durumu, cihaz
-    doğrulama belgesi) Google'ın beyanında "toplanıyor, paylaşılmıyor, sabit süre sonra siliniyor" ve
-    Play Store'un kendi işlemesi olarak anlatılıyor. Buradaki öneri yalnız bizim sunucuya yazdığımız
-    sonucu kapsıyor; Google'ın toplamasını ayrıca beyan etmenin gerekip gerekmediğini Google açıkça
-    söylemiyor ("formu nasıl dolduracağınıza siz karar verirsiniz"). Kesin karar Samet'te.
+  - *Google kütüphanesinin topladıkları BEYAN EDİLİYOR (Samet, 2026-09-24; yaygın ve temkinli uygulama).*
+    Play Veri güvenliği yardımı geliştiriciyi uygulamadaki bütün kütüphanelerin (Google'ınkiler dahil)
+    cihazdan gönderdiği veriden sorumlu tutuyor. Google'ın sayfası
+    (developer.android.com/google/play/integrity/terms) API'nin topladıklarını sayıyor: `requestHash`/nonce,
+    uygulama meta verisi (paket adı, sürüm, imza sertifikası), oturum açmış kullanıcı için Play lisans
+    durumu, cihaz bilgisi (anahtar doğrulama sertifikası, cihaz doğrulama belgesi). Ortam ayrıntıları
+    (Play Protect durumu, uygulama erişim riski) bizde KAPALI, o yüzden toplanmıyor ve beyan edilmiyor;
+    açılırsa "Diğer uygulama performans verileri" satırına eklenir. Veri şifreli, üçüncü tarafa
+    paylaşılmıyor, sabit süre sonra siliniyor; Google "formu nasıl dolduracağınıza siz karar verirsiniz"
+    diyor, karar temkinli taraf.
   - App Store tarafı etkilenmiyor: iOS'ta kontrol yok (App Attest Aşama 4).
 - Analitik olayları kapalı sözlükten gelir, serbest metin taşımaz; Ayarlar › Gizlilik'ten kapatılabilir. Tercih 1.5'ten beri hesaba (misafirde misafir kimliğine) yazılıyor ve sunucu da uyuyor (LEG-9).
 
