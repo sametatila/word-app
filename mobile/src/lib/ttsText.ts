@@ -79,6 +79,9 @@ export function cleanForSpeech(text: string): string {
       .replace(/\s+[–—]\s+/g, ", ")
       .replace(/[/–—]/g, " ")
       .replace(/\s+/g, " ")
+      /* Silinen notun ardından noktalama boşlukta kalıyordu: "o (dişil), onlar" → "o , onlar" (motor
+         boşluklu virgülü duraklama sanmıyor, kayıt reddedildi). */
+      .replace(/\s+([,;.!?])/g, "$1")
       .replace(/\s*,(\s*,)+/g, ",")
       .trim()
       .replace(/^,\s*|\s*,$/g, "")
