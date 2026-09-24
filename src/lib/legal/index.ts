@@ -130,9 +130,14 @@ import { DAILY_QUOTAS } from "@/lib/quotas";
  * işleme (bütünlük sonucu, 90 gün) ve yeni bir alıcı. Kayıt kipi canlıda
  * açılmadan ÖNCE yayımlandı; metin açık olmayan bir işlemeyi önceden
  * söylüyor, tersini değil. İkinci basamak.
+ *
+ * 1.7 (2026-09-24, 1.6 ile aynı gün) veri sorumlusunu ve sözleşmenin karşı
+ * tarafını değiştirdi: tek taraf Türkiye'deki hizmet sağlayıcı, Samet GDPR
+ * m.27 AB temsilcisi (dosya başındaki KİMLİK notu). Kaydın notunda neden
+ * ikinci basamak olduğu ve kullanıcıya etkisi yazılı.
  */
 export const LEGAL_EFFECTIVE_DATE = "2026-09-24";
-export const LEGAL_VERSION = "1.6";
+export const LEGAL_VERSION = "1.7";
 
 export const LEGAL_ENTITY = {
   /** Hizmet sağlayıcı, veri sorumlusu ve yayıncı: tek gerçek kişi (Türkiye'de yerleşik). */
@@ -361,6 +366,55 @@ export type LegalChangelogEntry = {
 };
 
 export const LEGAL_CHANGELOG: readonly LegalChangelogEntry[] = [
+  {
+    /*
+      İKİNCİ BASAMAK, üçüncü değil, ve "2.0" da değil. Bu dosyanın kuralı iki
+      basamaklı: hak ya da yükümlülüğü değiştiren her şey ikinci basamak.
+      Veri sorumlusunun ve sözleşme tarafının değişmesi bu sınıfın en ağır
+      örneği (kime başvurulacağı, hangi otoritenin yetkili olduğu, verinin
+      yurt dışına çıkıp çıkmadığı değişiyor); ama toplanan veri, amaçlar,
+      alıcılar ve saklama süreleri AYNI kaldı.
+
+      KULLANICIYA ETKİSİ:
+        - `termsUpdateFor` sürümü kod sabitiyle karşılaştırıyor; her hesap
+          "şartlar güncellendi" şeridini bir kez görüyor ve onaylayınca
+          `termsVersion` 1.7 oluyor. Şeridi 1.6'yı onaylamış olan da görüyor.
+        - Yapay zekâ rızası ETKİLENMİYOR: parmak izi alıcı listesinden
+          (`aiConsentFingerprintOf`) üretiliyor ve alıcı listesi değişmedi;
+          kimseden izin yeniden istenmiyor. Rızanın verildiği veri sorumlusu
+          değişti; bunun yeniden rıza gerektirip gerektirmediği hukukçuya
+          soruldu (rapor, 2026-09-24).
+        - Şartlar §13 "aleyhine önemli değişiklikleri 30 gün önce duyururuz"
+          diyor. Karşı tarafın AB'den Türkiye'ye geçmesi AB kullanıcısı için
+          aleyhe sayılabilir; bugün mağazalarda yayın yok ve web hesapları
+          geliştirme/test hesapları, o yüzden şerit yeterli görüldü. Yayından
+          SONRA böyle bir değişiklik 30 gün önceden e-postayla duyurulur.
+
+      Maddeler üç dilde AYNI SAYIDA (kapı `scripts/test-legal.ts`).
+    */
+    version: "1.7",
+    date: "2026-09-24",
+    changes: {
+      tr: [
+        "Veri sorumlusu ve sözleşmenin karşı tarafı değişti. Lernomi'yi artık tek bir kişi sunuyor: Türkiye'de yerleşik Musa Atila hizmet sağlayıcı, veri sorumlusu ve uygulamayı mağazalarda yayımlayan kişi. Önceki sürümdeki iki ayrı taraf (Almanya'da yerleşik veri sorumlusu ile Türkiye'deki yayıncı ve veri işleyen) ve Türkiye temsilcisi kavramı kalktı. Toplanan veriler, amaçlar, alıcılar ve saklama süreleri değişmedi.",
+        "Veri sorumlusu AB'de yerleşik olmadığı için GDPR artık m.3(2) üzerinden uygulanıyor ve politikada GDPR m.27 kapsamındaki AB temsilcisi (Samet Atila, Dortmund) yazılı; AB ve AEA'dan GDPR başvuruları için kullanılan adres temsilciye de ulaşıyor. Şikâyette tek bir öncü denetim otoritesi yok: kendi ülkendeki otoriteye başvurabilirsin. KVKK başvuruları doğrudan Türkiye'deki veri sorumlusuna yapılıyor; Kurul'a şikâyetten önce veri sorumlusuna başvurma sırası yazıldı.",
+        "Sunucular Almanya'da kalıyor: Türkiye'deki kullanıcılar için verilerin yurt dışına aktarıldığı (KVKK m.9), AB ve AEA'daki kullanıcılar için veri sorumlusunun verilere Türkiye'den eriştiği ve Türkiye hakkında AB yeterlilik kararı bulunmadığı yazıldı.",
+        "Kullanım şartlarında sözleşmenin tarafı tek kişi oldu ve özet hizmetin Türkiye'den sunulduğunu söylüyor; Türk hukuku seçimi AB, AEA ve Birleşik Krallık'taki tüketicileri kendi ülkelerinin emredici tüketici koruma hükümlerinden yoksun bırakmıyor (Roma I m.6(2)). Künye yeni yapıya göre düzenlendi: hizmet sağlayıcı ve ayrı bir AB temsilcisi bölümü.",
+      ],
+      en: [
+        "The data controller and the other party to the agreement changed. Lernomi is now provided by a single person: Musa Atila, established in Türkiye, is the service provider, the data controller and the person who publishes the app in the stores. The two separate parties of the previous version (a controller established in Germany and a publisher and processor in Türkiye) and the concept of a representative in Türkiye were removed. The data collected, the purposes, the recipients and the retention periods did not change.",
+        "As the controller is not established in the EU, the GDPR now applies by virtue of Art. 3(2), and the policy names the EU representative under Art. 27 GDPR (Samet Atila, Dortmund); the address used for GDPR requests from the EU and EEA also reaches the representative. There is no single lead supervisory authority for complaints: you can complain to the authority in your own country. KVKK requests go directly to the controller in Türkiye; the rule that you apply to the controller before complaining to the Board is now stated.",
+        "The servers remain in Germany: the policy now states that, for users in Türkiye, data is transferred abroad (Art. 9 KVKK), and that, for users in the EU and EEA, the controller accesses the data from Türkiye, for which there is no EU adequacy decision.",
+        "In the terms of use the other party is now a single person, and the summary says the service is provided from Türkiye; the choice of Turkish law does not deprive consumers in the EU, the EEA and the United Kingdom of the mandatory consumer protection of their own country (Art. 6(2) Rome I). The imprint was rearranged for the new structure: the service provider and a separate section for the EU representative.",
+      ],
+      de: [
+        "Der Verantwortliche und die Vertragspartei haben sich geändert. Lernomi wird jetzt von einer einzigen Person angeboten: Musa Atila, in der Türkei niedergelassen, ist Anbieter, Verantwortlicher und die Person, die die App in den Stores veröffentlicht. Die zwei getrennten Parteien der vorigen Fassung (ein in Deutschland niedergelassener Verantwortlicher und ein Herausgeber und Auftragsverarbeiter in der Türkei) und der Begriff eines Vertreters in der Türkei entfallen. Erhobene Daten, Zwecke, Empfänger und Speicherfristen sind unverändert.",
+        "Da der Verantwortliche nicht in der EU niedergelassen ist, gilt die DSGVO jetzt nach Art. 3 Abs. 2, und die Erklärung nennt den EU-Vertreter nach Art. 27 DSGVO (Samet Atila, Dortmund); die Adresse für DSGVO-Anträge aus der EU und dem EWR erreicht auch den Vertreter. Für Beschwerden gibt es keine federführende Aufsichtsbehörde: Du kannst dich an die Behörde in deinem eigenen Land wenden. KVKK-Anträge gehen direkt an den Verantwortlichen in der Türkei; die Regel, dass du dich vor einer Beschwerde bei der Behörde an den Verantwortlichen wendest, steht jetzt darin.",
+        "Die Server bleiben in Deutschland: Die Erklärung sagt jetzt, dass Daten von Nutzern in der Türkei ins Ausland übermittelt werden (Art. 9 KVKK) und dass der Verantwortliche bei Nutzern in der EU und im EWR aus der Türkei auf die Daten zugreift, für die kein Angemessenheitsbeschluss der EU besteht.",
+        "In den Nutzungsbedingungen ist die Vertragspartei jetzt eine einzige Person, und die Zusammenfassung sagt, dass der Dienst aus der Türkei angeboten wird; die Wahl türkischen Rechts entzieht Verbrauchern in der EU, im EWR und im Vereinigten Königreich nicht den zwingenden Verbraucherschutz ihres Landes (Art. 6 Abs. 2 Rom I). Das Impressum wurde an die neue Struktur angepasst: Anbieter und ein eigener Abschnitt für den EU-Vertreter.",
+      ],
+    },
+  },
   {
     /*
       İKİNCİ BASAMAK: yeni bir işleme (Android misafir açılışında cihaz
