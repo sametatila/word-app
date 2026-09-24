@@ -13,7 +13,7 @@ Klasörde üç belge var, `docs/play/`in üçüne karşılık geliyor:
 | `connect.md` | `console.md` | İnceleme hesabı, giriş sağlayıcılarının kurulumu, yayın öncesi kontrol |
 | `listing.md` | `listing.md` | Yaş derecelendirmesi ve mağaza vitrini (üç dilde metinler, görseller) |
 
-## Durum (2026-09-23)
+## Durum (2026-09-24)
 
 iOS **yayında değil**; App Store Connect kaydı ve TestFlight hazır. Ayrım önemli çünkü
 belgenin geri kalanındaki her "DOĞRULANMADI" notunun anlamı buna bağlı:
@@ -21,7 +21,7 @@ belgenin geri kalanındaki her "DOĞRULANMADI" notunun anlamı buna bağlı:
 | | Durum |
 |---|---|
 | **Derleniyor mu** | ✅ Evet. CI (`.github/workflows/ios-build.yml`, macos-15) ve 2026-09-22'den beri yerel Mac mini (Xcode). |
-| **Mağazaya yüklendi mi** | ✅ App Store Connect'te uygulama kaydı (`6810593275`) ve TestFlight'ta build 2, 3, 4 (`VALID`); sürüm kaydına henüz build bağlı değil (denetim IOS-1). Android: Play dahili test kanalında `1.0.0 (4)`. |
+| **Mağazaya yüklendi mi** | ✅ App Store Connect'te uygulama kaydı (`6810593275`) ve TestFlight'ta build 2–6 (`VALID`; 6 "Dahili test" grubunda, harici grup açık ama build eklenmedi); sürüm 1.0.0 kaydına build 4 bağlı, gönderimden önce son build'e çevrilir. Android: Play dahili test kanalında `1.0.0 (6)`. |
 | **Cihazda koşuldu mu** | Bu belgede kayıtlı bir cihaz koşusu yok. Mikrofon, konuşma tanıma, arka planda ses, kilit ekranı denetimi, haptik ve satın alma yalnız gerçek cihazda (TestFlight) ölçülebiliyor; liste `docs/plan/ios-device-runbook.md`'de. |
 
 Yani bugünkü doğru cümle: **derlendi ve TestFlight'ta; cihaz koşusu bu belgede
@@ -36,7 +36,7 @@ oldu ve sürüm Android'le eşitlendi, `.lproj` dosyaları hedefe bağlandı, uy
 ve markalı açılış ekranı geldi, Apple ile Giriş kuruldu, Google girişi iOS'ta
 kurulabilir hâle getirildi. Açık kalanlar aşağıdaki tabloda.
 
-Hukuki metinler iOS'u **kapsıyor** (2026-09-14, sürüm **1.1**; güncel sürüm **1.5**, 2026-09-23): `src/lib/legal/index.ts`
+Hukuki metinler iOS'u **kapsıyor** (2026-09-14, sürüm **1.1**; güncel sürüm **1.7**, 2026-09-24: sağlayıcı ve veri sorumlusu Musa Atila (Türkiye), GDPR m.27 AB temsilcisi Samet Atila): `src/lib/legal/index.ts`
 içindeki `LEGAL_PLATFORMS.ios` `true`. Bayrak açıkken şunlar basılıyor:
 
 - şartlarda "13a. Apple App Store için ek koşullar" (Apple'ın özel EULA için istediği
@@ -68,6 +68,38 @@ de açık (`/api/config` → `"apple":true,"appleWeb":true`), yani bu alıcı iO
 > **Panel üstyazımı.** Üretimde `app_settings["legal.config"]` satırı oluşursa oradaki
 > `platforms.ios` kodun önüne geçer. 2026-09-14'te satır yok (salt okuma ile ölçüldü);
 > ayrıntı `LEGAL_PLATFORMS` notunda.
+
+## Yayın denetimi — iOS ve satın alma maddeleri
+
+Yayın denetimi 2026-09-23'te yapıldı (55 madde, rapor: https://claude.ai/artifact/KAAoSCw9PuWrHMaZwvvcEj); durumlar 2026-09-24'te
+güncellendi. **Bu tablo iOS ve satın alma (IAP) maddelerinin tek kaydıdır:** yeni bir denetimde önce buraya
+bakılır, "yapıldı" satırları kanıtıyla (commit, API ölçümü, Samet'in kararı) yazılıdır ve
+yeniden araştırılmaz; yalnız kanıtın hâlâ geçerli olduğu kontrol edilir. Madde kapanınca ya
+da karar değişince satır burada güncellenir. Öteki maddeler: iOS/satın alma
+`docs/appstore/README.md`, Android `docs/play/console.md`, hukuk/içerik/teknik/web `AGENTS.md`
+("Yayın denetimi" bölümü).
+
+| Madde | Konu | Durum | Not / kanıt |
+|---|---|---|---|
+| X-4 | İki abonelik MISSING_METADATA: inceleme görseli yok, sürüme eklenmemiş | ⏳ Samet | İnceleme görselleri UI kontrolünden sonra (Samet'in kararı); abonelikler ilk gönderimde sürüme eklenir. |
+| X-7 | İnceleme notu mikrofonu yanlış anlatıyor, arka plan sesinden söz etmiyor | ✅ Yapıldı | Not 4.000 karakter sınırına sığdırıldı, 1.2 bildir/engelle maddesi eklendi, canlı ASC'ye girildi (dde0d53a). Demo hesaplar açılınca ikinci hesap cümlesi eklenecek. |
+| X-8 | 175 bölgenin hepsinde CANNOT_SELL: Paid Apps sözleşmesi, vergi ya da banka eksik olabilir | ✅ Yapıldı | Yanlış alarm (2026-09-24): Free/Paid Apps sözleşmesi, banka (Musa, TRY), W-8BEN ve DSA aktif. 173 bölgede CANNOT_SELL + AVAILABLE_FOR_SALE_UNRELEASED_APP yayınlanmamış uygulamanın normal durumu; CHN ve RUS bilerek kapalı. |
+| IOS-1 | ASC sürümü '1.0', build'ler '1.0.0'; sürüme build bağlı değil | ✅ Yapıldı | Sürüm 1.0.0 yapıldı, build 4 bağlandı (API). |
+| IOS-2 | Açıklama, anahtar kelimeler, altyazı ve tanıtım metni boş | ⏳ Samet | Ürün kararı bekliyor: açıklama ve öne çıkan özellikler seçilince API ile girilecek. |
+| IOS-3 | Ekran görüntüsü yok; iPad beyan edildiği için 13" iPad de zorunlu | ⏳ Samet | Tam UI kontrolünden sonra üretilecek. |
+| IOS-4 | App Privacy (gizlilik etiketleri) yayımlanmış mı? (doğrulanamadı) | ⏳ Samet | Samet doldurduğunu düşünüyor; API'de uç yok. ASC › App Privacy ekranı paylaşılınca bu belgedeki tabloyla karşılaştırılacak. |
+| IOS-5 | Meta veride Kullanım Şartları (EULA) bağlantısı yok | ⏳ Samet | Açıklama yazılınca sonuna Şartlar ve Gizlilik bağlantısı eklenecek (Apple standart EULA + bizim Şartlar). |
+| IOS-6 | iPad düzeni cihazda hiç denenmedi | ✅ Yapıldı | Simülatör yeterli (Samet, 2026-09-24; gerçek tablet yok): iPad Pro 13" ve mini'de dikey/yatay, tek içerik kolonu 840 (bb78092c…075d7f34), build 6'da. |
+| IOS-7 | Mağaza yalnız Türkçe; binary üç dil beyan ediyor | ⏳ Samet | en/de mağaza adları ve gizlilik URL'leri girildi; açıklamalar ürün kararıyla. |
+| IOS-8 | Girişteki Turnstile captcha inceleyiciyi kilitleyebilir | 🔄 Sürüyor | 2026-09-24: simülatör ve tarayıcıda ölçülüyor (Claude). |
+| IOS-9 | Harici TestFlight ön koşulları boş | ✅ Yapıldı | Beta açıklamaları (tr/en/de), geri bildirim e-postası ve beta inceleme bilgisi girildi; 'Harici test' grubu açıldı. Build ekleme ve beta incelemesine gönderme istenince. |
+| IOS-10 | Mac ve Vision Pro'da sunulma ayarı; Çin/Rusya; çift boşluk | ✅ Yapıldı | Mac/Vision Pro Samet tarafından kapalı; Çin/Rusya zaten kapalı; çift boşluk düzeltildi. |
+| IOS-11 | Fotoğraf arşivi izin metni 'erişmiyoruz' diyor | ✅ Yapıldı | Photos bağlantısı Firebase çekirdeğinden geliyor; metin zorunlu kalıyor (değişiklik yok). |
+| IAP-1 | Sandbox satın almaları yetki üretmiyor: inceleyici ödeyince 'Satın alma tamamlanmadı' görüyor | ✅ Yapıldı | Sunucu sandbox'ı işaretleyip kabul ediyor; RevenueCat webhook'u tüm ortamlara açıldı. |
+| IAP-2 | iOS'ta deneme uygunluğu kontrol edilmiyor | ✅ Yapıldı | iOS'ta deneme metni yalnız uygun kullanıcıya (15c614e5). |
+| IAP-3 | İptal ve bekleyen ödemede de 'Satın alma tamamlanmadı' hatası | ✅ Yapıldı | İptal sessiz, bekleyen ödeme ve 'işleniyor' durumları eklendi. |
+| IAP-4 | Deneme durumu hiç kaydedilmiyor; webhook ürün kontrolü yok; yenileme metni eksik | ✅ Yapıldı | Deneme durumu, entitlement kontrolü, yenileme '24 saat' ve 'yasal hakların saklıdır' metinleri (663203ed). |
+| IAP-5 | RevenueCat panosu doğrulanamadı | ✅ Yapıldı | RevenueCat panosu API ile doğrulandı: entitlement, lernomi_default offering, iki mağaza ürünleri. |
 
 ## iOS yayınından önce bitmesi gereken iş
 

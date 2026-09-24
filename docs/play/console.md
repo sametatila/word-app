@@ -177,3 +177,25 @@ kuralının aradığı da tam olarak bu.
   yüklendikten SONRA gönderilir; beyan, video ve uygulama aynı şeyi göstermeli.
 - `drizzle/0052_user_consents.sql` üretimde uygulandı: yapay zekâ ve ses uçlarının izin kapısı
   bu tabloya bağlı.
+
+## 5. Yayın denetimi — Android maddeleri
+
+Yayın denetimi 2026-09-23'te yapıldı (55 madde, rapor: https://claude.ai/artifact/KAAoSCw9PuWrHMaZwvvcEj); durumlar 2026-09-24'te
+güncellendi. **Bu tablo Android maddelerinin tek kaydıdır:** yeni bir denetimde önce buraya
+bakılır, "yapıldı" satırları kanıtıyla (commit, API ölçümü, Samet'in kararı) yazılıdır ve
+yeniden araştırılmaz; yalnız kanıtın hâlâ geçerli olduğu kontrol edilir. Madde kapanınca ya
+da karar değişince satır burada güncellenir. Öteki maddeler: iOS/satın alma
+`docs/appstore/README.md`, Android `docs/play/console.md`, hukuk/içerik/teknik/web `AGENTS.md`
+("Yayın denetimi" bölümü).
+
+| Madde | Konu | Durum | Not / kanıt |
+|---|---|---|---|
+| X-2 | assetlinks.json yalnız yükleme anahtarını içeriyor; Play'den kurulan uygulamada bağlantılar tarayıcıda açılıyor | ✅ Yapıldı | Sunucuya üç parmak izi eklendi; Google Digital Asset Links doğrulaması: bağlı. Hangi SHA-256'nın hangi anahtar olduğu docs/play/console.md'de (679078db). |
+| X-5 | Google Play'de hiç abonelik ürünü yok; Android'de satış imkânsız | ✅ Yapıldı | Play'de iki ürün + 1 aylık deneme + 2 aylık grup teklifi kuruldu; RevenueCat'e bağlandı. |
+| AND-1 | Play mağaza listesi boş: açıklama, ikon, öne çıkan grafik, ekran görüntüsü yok | ⏳ Samet | Ürün kararı ve UI kontrolünden sonra; öne çıkan grafiği Claude tasarlar. |
+| AND-2 | Kişisel hesap: üretimden önce 12+ testçiyle 14 günlük kapalı test | ⏳ Samet | Başlamadı (2026-09-24). Samet Google Grubu açınca Claude kapalı test kanalını API ile bağlar; 12+ testçi, 14 gün. |
+| AND-3 | Uygulama içeriği beyanları, inceleme hesabı ve mikrofon servisi videosu hazır değil | ⏳ Samet | Beklemede (Samet, 2026-09-24). Veri güvenliği beyanı hazır (584bc613, docs/play/data-safety.md). |
+| AND-4 | Google OAuth onay ekranı 'In production' mı; Play yapısında Google girişi denenmedi | ⏳ Samet | Google Cloud'da OAuth onay ekranı 'In production' olmalı; Play sürümünde Google girişi cihazda denenmeli. |
+| AND-5 | FCM jetonu bildirim izninden önce üretiliyor; beyan notu tersini söylüyor | ✅ Yapıldı | FCM otomatik başlatma kapalı, jeton izinden sonra (361d0b0f). |
+| AND-6 | Promo kodu kutusu ve kullanılmayan izinler | ✅ Yapıldı | DND ve biyometri izinleri manifestten düştü (4530840c); promo kodlarının ücretsiz dağıtımı teyidi Samet'te. |
+| TEC-1 | Public depodaki debug.keystore'a bağlı Google OAuth istemcisi | ⏳ Samet | Halka açık Android yayınından önce Google Cloud'daki lernomi-android (debug, 5E:8F…) istemcisi silinecek. |
