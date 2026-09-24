@@ -65,6 +65,9 @@ Ne yapıldı:
 - **Kayıt:** `guest_attestations` (migration 0067): kimlik, platform, build, kip, sonuç
   (`pass`/`fail`/`missing`/`error`), sebepler, üç hüküm, özet, zaman. Belge saklanmıyor.
   Hesap silmede satır kalıyor, kimlik boşalıyor; misafir hesaba birleşince taşınıyor.
+  **Saklama 90 gün (2026-09-24):** `ATTESTATION_RETENTION_DAYS` (`src/lib/auth/attestation-const.ts`),
+  süpürme `purgeExpiredGuestAttestations` günlük cron'da (`api/cron/assess`, 04:15 UTC; özet
+  satırında "silinen cihaz doğrulaması N"). Kimliği boşalmış satırlar da aynı süreyle gidiyor.
   iOS açılışları yazılmıyor; istemci başlığı olmayan (betik) açılış `platform = null`.
 - **Test:** `npm run test:guest-attestation` (CI veritabanı adımında), mobil
   `__tests__/integrity.test.ts` + `guest.test.ts`.
@@ -77,6 +80,12 @@ Env (üç dosyada aynı satır; sunucuda `/opt/lernomi/.env`):
 | `PLAY_INTEGRITY_KEY_PATH` | `playintegrity` çağırabilen servis hesabının JSON yolu (`/opt/lernomi/secrets/…`, `root:lernomi 0640`). Boşken kip ne derse desin kapalı |
 
 Proje numarası (`658160017552`, `nomi-507213`) sunucuda sabit, `/api/config` ile iniyor.
+
+**Gizlilik politikası:** hukuki sürüm **1.6** (2026-09-24) bu işlemeyi yazıyor: toplanan veriler
+tablosunda "Cihaz bütünlüğü kontrolü" satırı, §9'da "Cihaz bütünlüğü sonucu: {{attestationDays}} gün"
+(değer yukarıdaki sabitten), alıcılar tablosunda "Google (Play Integrity)" (bağımsız veri sorumlusu,
+koşul "Android'de hesapsız devam edilirse"). Play Veri güvenliği için önerilen satır
+`docs/play/data-safety.md`'de; Console'a kip açılırken girilir.
 
 **Nasıl açılır:** (1) Aşama 1'deki konsol adımları; (2) belge gönderen Android sürümü
 mağazada (eski sürümler `missing/no_token` yazar, kimseyi etkilemez); (3) sunucuda
@@ -98,9 +107,10 @@ select platform, build, result, count(*) from guest_attestations
  where created_at > now() - interval '7 days' group by 1, 2, 3 order by 1, 2 desc, 3;
 ```
 
-Kalan (ölçüm sırasında bakılacak): satırlar bugün süresiz duruyor; Aşama 3 kararıyla
-birlikte bir saklama süresi (ör. 90 gün) cron'a eklenmeli. Emülatör/debug derlemesi
-`app:UNRECOGNIZED_VERSION` ile `fail` yazar, beklenen bu.
+~~Kalan: satırlar süresiz duruyor~~ → **Yapıldı (2026-09-24):** 90 gün, günlük cron (yukarıda).
+Ölçüm penceresi bu yüzden en çok 90 gün; Aşama 3 kararı daha uzun bir geçmiş isterse süre
+sabitte ve politikada BİRLİKTE değişir (kapı `npm run test:legal`) ve sürüm kaydı düşülür.
+Emülatör/debug derlemesi `app:UNRECOGNIZED_VERSION` ile `fail` yazar, beklenen bu.
 
 ### 3. Engelleme kipi — ölçüm temizse
 - Doğrulanamayan istemci reddedilir ya da sıkı IP sınırına düşer; doğrulanan istemcide
