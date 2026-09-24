@@ -18,21 +18,31 @@ import type { LegalDocDefault } from "./types";
  * satırı varsa üstyazım kazanır. Buradaki metni değiştirmek yalnız yeni
  * kurulumları ve "varsayılana dön" düğmesini etkiler.
  *
- * 1.5'TE GERİ ÇEKİLEN GÜVENCE CÜMLELERİ (denetim LEG-7, 2026-09-23). Aşağıdaki
- * dört iddia kanıtı depoda olmayan belgelere dayanıyordu ve kaldırıldı; belge
- * imzalanınca/kabul edilince üç dilde birlikte geri konur:
+ * 1.5'TE GERİ ÇEKİLEN, 1.7'DE GÜNCELLENEN GÜVENCE CÜMLELERİ (denetim LEG-7,
+ * kimlik değişikliği 2026-09-24). Aşağıdaki iddialar kanıtı depoda olmayan
+ * belgelere dayanıyor ve metinde YOK; belge imzalanınca/kabul edilince üç
+ * dilde birlikte eklenir:
  *
- *   - §1 "taraflar arasında bu kapsamda bir işleme sözleşmesi bulunur"
- *     → TODO(Samet): Samet↔Musa GDPR m.28 / KVKK m.12 sözleşmesini imzala.
- *   - §1 "Türkiye'den yapılacak başvurular … için veri sorumlusu temsilcisi
- *     belirlenmiştir" → TODO(Samet): atama kararı + Kuruma bildirim
- *     (`LEGAL_ENTITY.trRepresentative` notu).
+ *   - §1 AB temsilcisi paragrafına "Temsilci, veri sorumlusunun yazılı
+ *     görevlendirmesiyle hareket eder" → TODO(Musa/Samet): GDPR m.27(1)
+ *     yazılı görevlendirmeyi imzala. Metin bugün yalnız temsilcinin
+ *     KİMLİĞİNİ gösteriyor (m.13(1)(a) bunu zaten istiyor), görevlendirmenin
+ *     biçimini iddia etmiyor.
+ *   - §6 "Türkiye'den yurt dışına aktarım KVKK m.9 uyarınca Kurul'un ilan
+ *     ettiği standart sözleşmeyle yapılır ve sözleşme Kurul'a bildirilmiştir"
+ *     → TODO(Musa): Netcup (barındırma) ve tablodaki yurt dışı sağlayıcılarla
+ *     standart sözleşmeyi imzala, her biri için 5 iş günü içinde Kuruma bildir.
+ *   - §6 AB kullanıcıları için "veri sorumlusunun Türkiye'den erişimi AB
+ *     Standart Sözleşme Hükümlerine dayanır" → hukukçu hangi modülün (ör.
+ *     işleyenden sorumluya, modül 4) gerektiğini söyleyip imzalanınca.
  *   - §5 "Sağlayıcılar, verileri model eğitiminde kullanmamayı taahhüt eden
- *     API şartlarıyla ve veri işleme sözleşmeleriyle çalışır" → TODO(Samet):
+ *     API şartlarıyla ve veri işleme sözleşmeleriyle çalışır" → TODO(Musa):
  *     DPA'ları hesapta kabul et, Mistral/Groq/Cerebras'ta eğitim ayarını kapat.
- *   - §6 "KVKK m.9 kapsamında Kurul'un ilan ettiği standart sözleşme" ve
- *     "hiçbiri veriyi kendi amaçları için kullanamaz" → TODO(Samet): KVKK
- *     standart sözleşmelerini imzala ve 5 iş günü içinde Kuruma bildir.
+ *   - §6 "hiçbiri veriyi kendi amaçları için kullanamaz" → DPA'larla birlikte.
+ *
+ * 1.7'DE DÜŞENLER (kavram kalktı, geri gelmeyecek): Samet↔Musa GDPR m.28 /
+ * KVKK m.12 işleme sözleşmesi (iki taraf artık yok) ve "Türkiye'den yapılacak
+ * başvurular için veri sorumlusu temsilcisi" (veri sorumlusu Türkiye'de).
  */
 export const PRIVACY_DEFAULT: Record<"tr" | "en" | "de", LegalDocDefault> = {
   tr: {
@@ -49,22 +59,22 @@ export const PRIVACY_DEFAULT: Record<"tr" | "en" | "de", LegalDocDefault> = {
     ],
     body: `## 1. Veri sorumlusu
 
-Bu politika kapsamındaki kişisel verilerin sorumlusu, 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) ve Avrupa Birliği Genel Veri Koruma Tüzüğü (GDPR) anlamında aşağıdaki kişidir: hangi verinin hangi amaçla işleneceğine, ne kadar tutulacağına ve hangi sağlayıcıya gideceğine o karar verir. Politika, Lernomi web uygulamasını (www.lernomi.app) ve {{platforms}} kapsar.
+Bu politika kapsamındaki kişisel verilerin sorumlusu, 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) ve Avrupa Birliği Genel Veri Koruma Tüzüğü (GDPR) anlamında aşağıdaki kişidir: hangi verinin hangi amaçla işleneceğine, ne kadar tutulacağına ve hangi sağlayıcıya gideceğine o karar verir. Hizmeti sunan, uygulamayı Google Play'de{{ifIos}} ve App Store'da{{/ifIos}} yayımlayan ve abonelik gelirini alan da aynı kişidir. Politika, Lernomi web uygulamasını (www.lernomi.app) ve {{platforms}} kapsar.
 
 {{entityBlock:provider:contact}}
 
-Uygulamayı mağazalarda yayımlayan ve abonelik tahsilatını yürüten taraf ayrı bir kişidir. Yayıncı, veri sorumlusunun talimatı dışında kişisel veri işlemez; Play Console{{ifIos}} ve App Store Connect{{/ifIos}} üzerinden eriştiği sipariş, abonelik ve yorum verisi bakımından **veri işleyen** sıfatını taşır (GDPR m.28, KVKK m.12).
+Veri sorumlusu Türkiye'de yerleşiktir ve hizmet Türkiye'den sunulur. Sunucular ise {{hosting}} üzerinde çalışır ve veriler orada saklanır; bu nedenle verilerin yurt dışına aktarılır (6. bölüm). Siteye ve uygulamaya giden trafik sunucuya ulaşmadan önce Cloudflare'in ağından geçer. Hizmet sağlayıcıya ilişkin künye bilgileri [künye sayfasında]({{link:impressum}}) yer alır.
 
-{{entityBlock:provider}}
+**AB temsilcisi (GDPR m.27):** Veri sorumlusu Avrupa Birliği'nde yerleşik olmadığı ve hizmeti Birlik'teki kişilere de sunduğu için Birlik'te bir temsilci göstermek zorundadır; temsilcisi aşağıdaki kişidir. AB ve AEA'daki kullanıcılar ile denetim otoriteleri, verilerin işlenmesine ilişkin her konuda veri sorumlusuna ek olarak ya da onun yerine temsilciye başvurabilir. Temsilci veri sorumlusu değildir.
 
-Sunucular {{hosting}} üzerinde çalışır; veriler orada saklanır. Siteye ve uygulamaya giden trafik sunucuya ulaşmadan önce Cloudflare'in ağından geçer (6. bölüm). Veri sorumlusu Türkiye'de yerleşik değildir; Türkiye'den yapılacak başvurular {{privacyEmailTr}} adresine ya da yukarıdaki yazışma adresine yapılabilir. Hizmet sağlayıcıya ilişkin künye bilgileri [künye sayfasında]({{link:impressum}}) yer alır.
+{{entityBlock:euRepresentative}}
 
 **Toplama yöntemi ve hukuki sebep (KVKK m.10):** Veriler, kayıt ve ayar formları, seçtiğin giriş sağlayıcısı (Google ya da Apple), uygulama içi etkileşimler, cihazın bildirim servisi, Android'de Google Play'in bütünlük servisi ve mikrofon aracılığıyla elektronik ortamda, otomatik ya da kısmen otomatik yollarla toplanır; her veri için hukuki sebep 3. bölümdeki tabloda verilmiştir.
 
 ## 2. Kimler için hangi hukuk
 
-- **Türkiye'deki kullanıcılar:** KVKK ve ikincil mevzuatı (Aydınlatma Yükümlülüğü Tebliği, Veri Sorumlusuna Başvuru Tebliği, yurt dışına aktarım usulleri).
-- **AB/AEA'daki kullanıcılar:** Veri sorumlusu Almanya'da yerleşik olduğundan GDPR m.3(1) gereği GDPR ve Alman veri koruma mevzuatı (BDSG); Birleşik Krallık'ta ayrıca UK GDPR ve Data Protection Act 2018. Bu politikadaki hukuki dayanaklar GDPR m.6 ile eşlenmiştir. Veri sorumlusu Birlik içinde yerleşik olduğu için GDPR m.27 kapsamında ayrıca bir AB temsilcisi atanması gerekmez.
+- **Türkiye'deki kullanıcılar:** KVKK ve ikincil mevzuatı (Aydınlatma Yükümlülüğü Tebliği, Veri Sorumlusuna Başvuru Tebliği, yurt dışına aktarım usulleri). Veri sorumlusu Türkiye'de yerleşiktir; başvurular doğrudan ona yapılır (10. bölüm).
+- **AB/AEA'daki kullanıcılar:** Veri sorumlusu Birlik'te yerleşik değildir; hizmet Birlik'teki kişilere sunulduğu için GDPR m.3(2) uyarınca GDPR ve bulunduğun üye devletin tamamlayıcı veri koruma mevzuatı uygulanır; Birleşik Krallık'ta ayrıca UK GDPR ve Data Protection Act 2018. Bu politikadaki hukuki dayanaklar GDPR m.6 ile eşlenmiştir. GDPR m.27 kapsamındaki AB temsilcisinin kimliği ve iletişim bilgisi 1. bölümde yazılıdır.
 - **Diğer ülkeler:** Yerel veri koruma hukukundan doğan haklar saklıdır (10. bölüm). Lernomi kişisel verini satmaz ve davranışsal reklam için paylaşmaz.
 
 ## 3. Hangi veriler, neden işleniyor
@@ -140,7 +150,11 @@ Konuşma pratiği (rol yapma), yazma görevleri ve sınav cevapların, izin verd
 
 ## 6. Verinin ulaştığı hizmet sağlayıcılar ve yurt dışına aktarım
 
-Aşağıdaki sağlayıcılara yalnız belirtilen amaçla ve yalnız o iş için gereken veri gönderilir. Sunucular Almanya'dadır; ancak siteye ve uygulamaya giden bütün trafik sunucuya ulaşmadan önce Cloudflare'in küresel ağından (ters vekil ve bot koruması) geçer ve bağlantının şifrelemesi orada da çözülür. Her sağlayıcının bulunduğu bölge ve AB dışına aktarımda dayanılan güvence tabloda yazılıdır; mağazalar ve giriş sağlayıcıları (Google, Apple) kendi hizmetleri için bağımsız veri sorumlusudur ve kendi gizlilik koşullarına tabidir.
+Aşağıdaki sağlayıcılara yalnız belirtilen amaçla ve yalnız o iş için gereken veri gönderilir.
+
+Veri sorumlusu Türkiye'de, sunucular Almanya'dadır. Türkiye'deki kullanıcıların verileri Almanya'daki sunuculara ve aşağıdaki sağlayıcılara ulaştığında KVKK m.9 anlamında yurt dışına aktarılmış olur. AB ve AEA'daki kullanıcıların verileri AB'deki sunucularda saklanır; veri sorumlusu bu verilere Türkiye'den erişir ve Avrupa Komisyonu'nun Türkiye hakkında bir yeterlilik kararı yoktur. Siteye ve uygulamaya giden bütün trafik ise sunucuya ulaşmadan önce Cloudflare'in küresel ağından (ters vekil ve bot koruması) geçer ve bağlantının şifrelemesi orada da çözülür.
+
+Tabloda her sağlayıcının bulunduğu bölge ve sağlayıcıya aktarımda GDPR açısından dayanılan güvence yazılıdır; mağazalar ve giriş sağlayıcıları (Google, Apple) kendi hizmetleri için bağımsız veri sorumlusudur ve kendi gizlilik koşullarına tabidir.
 
 {{processorsTable}}
 
@@ -193,9 +207,9 @@ KVKK m.11 ve GDPR m.15-22 uyarınca şunları isteyebilirsin:
 - Verilerin üçüncü kişilere aktarılması hâlinde düzeltme ve silmenin onlara bildirilmesini istemek,
 - Zarara uğraman hâlinde tazminat talep etmek.
 
-**Başvuru:** KVKK kapsamındaki talepler için {{privacyEmailTr}}, GDPR ve UK GDPR kapsamındaki talepler için {{privacyEmailEu}} adresine yaz; kimliğini doğrulamak için hesabındaki e-posta adresinden yazman yeterlidir. Türkiye'de KVKK Veri Sorumlusuna Başvuru Usul ve Esasları Hakkında Tebliğ uyarınca ıslak imzalı yazılı başvuru, güvenli elektronik imzalı başvuru ya da hesabında kayıtlı e-posta adresinden başvuru da yapılabilir. Talepler en geç 30 gün içinde ücretsiz sonuçlandırılır; GDPR kapsamında bu süre gerekirse iki ay uzatılabilir ve sana bildirilir.
+**Başvuru:** KVKK kapsamındaki talepler için {{privacyEmailTr}} adresine ya da 1. bölümdeki yazışma adresine, GDPR ve UK GDPR kapsamındaki talepler için {{privacyEmailEu}} adresine yaz (bu adres AB temsilcisine de ulaşır); kimliğini doğrulamak için hesabındaki e-posta adresinden yazman yeterlidir. Türkiye'de KVKK Veri Sorumlusuna Başvuru Usul ve Esasları Hakkında Tebliğ uyarınca ıslak imzalı yazılı başvuru, güvenli elektronik imzalı başvuru ya da hesabında kayıtlı e-posta adresinden başvuru da yapılabilir. Talepler en geç 30 gün içinde ücretsiz sonuçlandırılır; GDPR kapsamında bu süre gerekirse iki ay uzatılabilir ve sana bildirilir.
 
-**Şikâyet:** Türkiye'de Kişisel Verileri Koruma Kurulu'na (kvkk.gov.tr). AB'de veri sorumlusunun yetkili denetim otoritesi, yerleşim yerine göre Kuzey Ren-Vestfalya Eyalet Veri Koruma ve Bilgi Edinme Görevlisi'dir (LDI NRW). GDPR m.77 uyarınca kendi ülkendeki otoriteye de başvurabilirsin. Birleşik Krallık'ta ICO. Şikâyetten önce veri sorumlusuna yazman yeterli olabilir; taleplerin çoğu doğrudan çözülür.
+**Şikâyet:** Türkiye'de Kişisel Verileri Koruma Kurulu'na (kvkk.gov.tr). KVKK m.14 uyarınca Kurul'a şikâyetten önce veri sorumlusuna başvurman gerekir; başvurun reddedilirse, cevabı yetersiz bulursan ya da süresinde cevap verilmezse cevabı öğrendiğin tarihten itibaren 30 gün, her hâlde başvuru tarihinden itibaren 60 gün içinde şikâyette bulunabilirsin. AB ve AEA'da GDPR m.77 uyarınca özellikle mutat meskeninin, işyerinin ya da ihlal iddiasının gerçekleştiği yerin bulunduğu üye devletteki denetim otoritesine başvurabilirsin. Veri sorumlusu Birlik'te yerleşik olmadığından tek bir öncü denetim otoritesi yoktur; AB temsilcisinin bulunduğu Kuzey Ren-Vestfalya'daki otorite (Eyalet Veri Koruma ve Bilgi Edinme Görevlisi, LDI NRW) de yetkili otoritelerden yalnız biridir. Birleşik Krallık'ta ICO. Taleplerin çoğu doğrudan çözülür; önce bize yazman yeterli olabilir.
 
 ## 11. Hesabını ve verilerini silme
 
@@ -229,22 +243,22 @@ Politika değiştiğinde bu sayfadaki yürürlük tarihi ve sürüm güncellenir
     ],
     body: `## 1. Data controller
 
-The controller of the personal data covered by this policy, within the meaning of Turkish Law no. 6698 on the Protection of Personal Data (KVKK) and the European Union General Data Protection Regulation (GDPR), is the person identified below: they decide what data is processed for what purpose, how long it is kept and which providers it goes to. The policy covers the Lernomi web app (www.lernomi.app) and {{platforms}}.
+The controller of the personal data covered by this policy, within the meaning of Turkish Law no. 6698 on the Protection of Personal Data (KVKK) and the European Union General Data Protection Regulation (GDPR), is the person identified below: they decide what data is processed for what purpose, how long it is kept and which providers it goes to. The same person provides the service, publishes the app on Google Play{{ifIos}} and the App Store{{/ifIos}} and receives the subscription revenue. The policy covers the Lernomi web app (www.lernomi.app) and {{platforms}}.
 
 {{entityBlock:provider:contact}}
 
-The app is published in the app stores and the subscription revenue is collected by a different person. The publisher processes no personal data except on the controller's instructions; for the order, subscription and review data they access through the Play Console{{ifIos}} and App Store Connect{{/ifIos}} they act as a **processor** (Art. 28 GDPR, Art. 12 KVKK).
+The controller is established in Türkiye and the service is provided from Türkiye. The servers, however, run on {{hosting}} and the data is stored there; your data is therefore transferred abroad (section 6). Traffic to the site and the app passes through Cloudflare's network before it reaches the server. The provider identification (Impressum) is on the [imprint page]({{link:impressum}}).
 
-{{entityBlock:provider}}
+**EU representative (Art. 27 GDPR):** As the controller is not established in the European Union and also offers the service to people in the Union, it must designate a representative in the Union; its representative is the person identified below. Users in the EU and EEA and supervisory authorities may contact the representative, in addition to or instead of the controller, on all issues related to the processing of data. The representative is not the controller.
 
-The servers run on {{hosting}}; the data is stored there. Traffic to the site and the app passes through Cloudflare's network before it reaches the server (section 6). The controller is not established in Türkiye; applications from Türkiye can be sent to {{privacyEmailTr}} or to the postal address above. The provider identification (Impressum) is on the [imprint page]({{link:impressum}}).
+{{entityBlock:euRepresentative}}
 
 **Collection method and legal ground (KVKK Art. 10):** Data is collected electronically, by automated or partly automated means, through registration and settings forms, the sign-in provider you choose (Google or Apple), in-app interactions, your device's notification service, Google Play's integrity service on Android and the microphone; the legal ground for each item is given in the table in section 3.
 
 ## 2. Which law applies to whom
 
-- **Users in Türkiye:** KVKK and its secondary legislation (Communiqué on the Obligation to Inform, Communiqué on Applications to the Data Controller, rules on transfers abroad).
-- **Users in the EU/EEA:** because the controller is established in Germany, the GDPR applies by virtue of Art. 3(1) GDPR, together with German data protection law (BDSG); in the United Kingdom, the UK GDPR and the Data Protection Act 2018 also apply. The legal grounds in this policy are mapped to Art. 6 GDPR. As the controller is established within the Union, no separate EU representative under Art. 27 GDPR is required.
+- **Users in Türkiye:** KVKK and its secondary legislation (Communiqué on the Obligation to Inform, Communiqué on Applications to the Data Controller, rules on transfers abroad). The controller is established in Türkiye; requests are made directly to them (section 10).
+- **Users in the EU/EEA:** the controller is not established in the Union; because the service is offered to people in the Union, the GDPR applies by virtue of Art. 3(2) GDPR, together with the supplementary data protection law of the member state where you are; in the United Kingdom, the UK GDPR and the Data Protection Act 2018 also apply. The legal grounds in this policy are mapped to Art. 6 GDPR. The identity and contact details of the EU representative under Art. 27 GDPR are given in section 1.
 - **Other countries:** rights under local data protection law are reserved (section 10). Lernomi does not sell your personal data and does not share it for behavioural advertising.
 
 ## 3. What data is processed and why
@@ -320,7 +334,11 @@ When you press "Allow and continue" on the consent screen you give the following
 
 ## 6. Service providers that receive data, and transfers abroad
 
-Data is sent to the providers below only for the stated purpose and only to the extent that task requires. The servers are in Germany; however, all traffic to the site and the app passes through Cloudflare's global network (reverse proxy and bot protection) before it reaches the server, and the connection encryption is also terminated there. The table gives each provider's region and the safeguard relied on for transfers outside the EU; the app stores and the sign-in providers (Google, Apple) are independent controllers for their own services and subject to their own privacy terms.
+Data is sent to the providers below only for the stated purpose and only to the extent that task requires.
+
+The controller is in Türkiye and the servers are in Germany. For users in Türkiye, data reaching the servers in Germany and the providers below is transferred abroad within the meaning of Art. 9 KVKK. The data of users in the EU and EEA is stored on servers in the EU; the controller accesses it from Türkiye, and there is no adequacy decision of the European Commission for Türkiye. All traffic to the site and the app also passes through Cloudflare's global network (reverse proxy and bot protection) before it reaches the server, and the connection encryption is also terminated there.
+
+The table gives each provider's region and the safeguard relied on under the GDPR for the transfer to that provider; the app stores and the sign-in providers (Google, Apple) are independent controllers for their own services and subject to their own privacy terms.
 
 {{processorsTable}}
 
@@ -373,9 +391,9 @@ Under KVKK Art. 11 and Art. 15-22 GDPR you may ask to:
 - request that corrections and erasure be notified to third parties to whom the data was transferred,
 - claim compensation if you suffer damage.
 
-**Making a request:** write to {{privacyEmailEu}} for requests under the GDPR or UK GDPR, or to {{privacyEmailTr}} for requests under Turkish data protection law (KVKK); writing from the e-mail address on your account is enough to verify your identity. In Türkiye, under the Communiqué on the Procedures for Applications to the Data Controller, you may also apply in writing with a wet signature, with a qualified electronic signature, or from the e-mail address registered on your account. Requests are resolved free of charge within 30 days at the latest; under the GDPR this period may be extended by two months where necessary, and you will be told.
+**Making a request:** write to {{privacyEmailEu}} for requests under the GDPR or UK GDPR (this address also reaches the EU representative), or to {{privacyEmailTr}} or the postal address in section 1 for requests under Turkish data protection law (KVKK); writing from the e-mail address on your account is enough to verify your identity. In Türkiye, under the Communiqué on the Procedures for Applications to the Data Controller, you may also apply in writing with a wet signature, with a qualified electronic signature, or from the e-mail address registered on your account. Requests are resolved free of charge within 30 days at the latest; under the GDPR this period may be extended by two months where necessary, and you will be told.
 
-**Complaints:** in Türkiye to the Personal Data Protection Board (kvkk.gov.tr). In the EU the controller's competent supervisory authority is, by place of establishment, the State Commissioner for Data Protection and Freedom of Information of North Rhine-Westphalia (LDI NRW). Under Art. 77 GDPR you may also complain to the authority in your own country. In the United Kingdom, the ICO. Please write to the controller first; most requests can be resolved directly.
+**Complaints:** in Türkiye to the Personal Data Protection Board (kvkk.gov.tr). Under Art. 14 KVKK you must first apply to the controller; if your application is refused, you find the answer insufficient or no answer is given in time, you may complain within 30 days of learning of the answer and in any case within 60 days of your application. In the EU and EEA you may, under Art. 77 GDPR, complain in particular to the supervisory authority of the member state of your habitual residence, place of work or place of the alleged infringement. As the controller is not established in the Union there is no single lead supervisory authority; the authority of North Rhine-Westphalia, where the EU representative is located (State Commissioner for Data Protection and Freedom of Information, LDI NRW), is only one of the competent authorities. In the United Kingdom, the ICO. Most requests can be resolved directly; writing to us first may be enough.
 
 ## 11. Deleting your account and your data
 
@@ -409,22 +427,22 @@ When this policy changes, the effective date and version on this page are update
     ],
     body: `## 1. Verantwortlicher
 
-Verantwortlicher für die von dieser Erklärung erfassten personenbezogenen Daten im Sinne des türkischen Gesetzes Nr. 6698 zum Schutz personenbezogener Daten (KVKK) und der Datenschutz-Grundverordnung der Europäischen Union (DSGVO) ist die unten bezeichnete Person. Diese Person entscheidet, welche Daten zu welchem Zweck verarbeitet, wie lange sie gespeichert und an welche Anbieter sie übermittelt werden. Die Erklärung gilt für die Lernomi-Webanwendung (www.lernomi.app) und {{platforms}}.
+Verantwortlicher für die von dieser Erklärung erfassten personenbezogenen Daten im Sinne des türkischen Gesetzes Nr. 6698 zum Schutz personenbezogener Daten (KVKK) und der Datenschutz-Grundverordnung der Europäischen Union (DSGVO) ist die unten bezeichnete Person. Diese Person entscheidet, welche Daten zu welchem Zweck verarbeitet, wie lange sie gespeichert und an welche Anbieter sie übermittelt werden. Dieselbe Person bietet den Dienst an, veröffentlicht die App bei Google Play{{ifIos}} und im App Store{{/ifIos}} und erhält die Abonnementeinnahmen. Die Erklärung gilt für die Lernomi-Webanwendung (www.lernomi.app) und {{platforms}}.
 
 {{entityBlock:provider:contact}}
 
-Die App wird von einer anderen Person in den App-Stores veröffentlicht, die auch die Abonnementeinnahmen vereinnahmt. Der Herausgeber verarbeitet personenbezogene Daten ausschließlich auf Weisung des Verantwortlichen; für die über die Play Console{{ifIos}} und App Store Connect{{/ifIos}} zugänglichen Bestell-, Abonnement- und Rezensionsdaten handelt er als **Auftragsverarbeiter** (Art. 28 DSGVO, Art. 12 KVKK).
+Der Verantwortliche ist in der Türkei niedergelassen, und der Dienst wird aus der Türkei angeboten. Die Server laufen jedoch bei {{hosting}}, und dort werden die Daten gespeichert; deine Daten werden daher ins Ausland übermittelt (Abschnitt 6). Der Datenverkehr zu Website und App läuft durch das Netz von Cloudflare, bevor er den Server erreicht. Die Anbieterkennzeichnung steht im [Impressum]({{link:impressum}}).
 
-{{entityBlock:provider}}
+**EU-Vertreter (Art. 27 DSGVO):** Da der Verantwortliche nicht in der Europäischen Union niedergelassen ist und den Dienst auch Personen in der Union anbietet, muss er einen Vertreter in der Union benennen; sein Vertreter ist die unten bezeichnete Person. Nutzer in der EU und im EWR sowie Aufsichtsbehörden können sich in allen Fragen der Datenverarbeitung zusätzlich zum Verantwortlichen oder an seiner Stelle an den Vertreter wenden. Der Vertreter ist nicht der Verantwortliche.
 
-Die Server laufen bei {{hosting}}; dort werden die Daten gespeichert. Der Datenverkehr zu Website und App läuft durch das Netz von Cloudflare, bevor er den Server erreicht (Abschnitt 6). Der Verantwortliche ist nicht in der Türkei niedergelassen; Anträge aus der Türkei können an {{privacyEmailTr}} oder an die oben genannte Postanschrift gerichtet werden. Die Anbieterkennzeichnung steht im [Impressum]({{link:impressum}}).
+{{entityBlock:euRepresentative}}
 
 **Art der Erhebung und Rechtsgrundlage (Art. 10 KVKK):** Die Daten werden elektronisch, automatisiert oder teilweise automatisiert über Registrierungs- und Einstellungsformulare, den von dir gewählten Anmeldeanbieter (Google oder Apple), Interaktionen in der App, den Benachrichtigungsdienst deines Geräts, den Integritätsdienst von Google Play unter Android und das Mikrofon erhoben; die Rechtsgrundlage für jede Angabe steht in der Tabelle in Abschnitt 3.
 
 ## 2. Wer welchem Recht unterliegt
 
-- **Nutzer in der Türkei:** KVKK und seine Durchführungsvorschriften (Mitteilung zur Informationspflicht, Mitteilung zu Anträgen an den Verantwortlichen, Regeln zur Übermittlung ins Ausland).
-- **Nutzer in der EU/im EWR:** Da der Verantwortliche in Deutschland niedergelassen ist, gilt die DSGVO nach Art. 3 Abs. 1 DSGVO zusammen mit dem BDSG; im Vereinigten Königreich gelten zusätzlich die UK GDPR und der Data Protection Act 2018. Die Rechtsgrundlagen dieser Erklärung sind Art. 6 DSGVO zugeordnet. Da der Verantwortliche in der Union niedergelassen ist, ist kein gesonderter EU-Vertreter nach Art. 27 DSGVO erforderlich.
+- **Nutzer in der Türkei:** KVKK und seine Durchführungsvorschriften (Mitteilung zur Informationspflicht, Mitteilung zu Anträgen an den Verantwortlichen, Regeln zur Übermittlung ins Ausland). Der Verantwortliche ist in der Türkei niedergelassen; Anträge gehen direkt an ihn (Abschnitt 10).
+- **Nutzer in der EU/im EWR:** Der Verantwortliche ist nicht in der Union niedergelassen; da der Dienst Personen in der Union angeboten wird, gilt die DSGVO nach Art. 3 Abs. 2 DSGVO zusammen mit dem ergänzenden Datenschutzrecht des Mitgliedstaats, in dem du dich befindest; im Vereinigten Königreich gelten zusätzlich die UK GDPR und der Data Protection Act 2018. Die Rechtsgrundlagen dieser Erklärung sind Art. 6 DSGVO zugeordnet. Name und Kontaktdaten des EU-Vertreters nach Art. 27 DSGVO stehen in Abschnitt 1.
 - **Andere Länder:** Rechte aus dem örtlichen Datenschutzrecht bleiben vorbehalten (Abschnitt 10). Lernomi verkauft deine personenbezogenen Daten nicht und gibt sie nicht für verhaltensbasierte Werbung weiter.
 
 ## 3. Welche Daten verarbeitet werden und warum
@@ -500,7 +518,11 @@ Wenn du auf dem Einwilligungsbildschirm auf "Erlauben und fortfahren" tippst, gi
 
 ## 6. Dienstleister, die Daten erhalten, und Übermittlung ins Ausland
 
-An die folgenden Anbieter gehen Daten nur zum angegebenen Zweck und nur im für diese Aufgabe erforderlichen Umfang. Die Server stehen in Deutschland; der gesamte Datenverkehr zu Website und App läuft jedoch durch das globale Netz von Cloudflare (Reverse Proxy und Botschutz), bevor er den Server erreicht, und die Verbindungsverschlüsselung wird auch dort entschlüsselt. Die Tabelle nennt für jeden Anbieter die Region und die Garantie, auf die sich Übermittlungen außerhalb der EU stützen; die App-Stores und die Anmeldeanbieter (Google, Apple) sind für ihre eigenen Dienste selbst verantwortlich und unterliegen ihren eigenen Datenschutzbedingungen.
+An die folgenden Anbieter gehen Daten nur zum angegebenen Zweck und nur im für diese Aufgabe erforderlichen Umfang.
+
+Der Verantwortliche sitzt in der Türkei, die Server stehen in Deutschland. Für Nutzer in der Türkei werden Daten, die die Server in Deutschland und die unten genannten Anbieter erreichen, im Sinne von Art. 9 KVKK ins Ausland übermittelt. Die Daten von Nutzern in der EU und im EWR werden auf Servern in der EU gespeichert; der Verantwortliche greift aus der Türkei darauf zu, und für die Türkei besteht kein Angemessenheitsbeschluss der Europäischen Kommission. Der gesamte Datenverkehr zu Website und App läuft zudem durch das globale Netz von Cloudflare (Reverse Proxy und Botschutz), bevor er den Server erreicht, und die Verbindungsverschlüsselung wird auch dort entschlüsselt.
+
+Die Tabelle nennt für jeden Anbieter die Region und die Garantie, auf die sich die Übermittlung an diesen Anbieter nach der DSGVO stützt; die App-Stores und die Anmeldeanbieter (Google, Apple) sind für ihre eigenen Dienste selbst verantwortlich und unterliegen ihren eigenen Datenschutzbedingungen.
 
 {{processorsTable}}
 
@@ -553,9 +575,9 @@ Nach Art. 11 KVKK und Art. 15-22 DSGVO kannst du verlangen:
 - dass Berichtigung und Löschung den Dritten mitgeteilt werden, an die die Daten übermittelt wurden,
 - Schadensersatz, wenn dir ein Schaden entstanden ist.
 
-**Antragstellung:** Schreibe für Anträge nach DSGVO oder UK GDPR an {{privacyEmailEu}} und für Anträge nach türkischem Datenschutzrecht (KVKK) an {{privacyEmailTr}}; zur Identitätsprüfung genügt es, von der E-Mail-Adresse deines Kontos zu schreiben. In der Türkei kannst du nach der Mitteilung über das Verfahren für Anträge an den Verantwortlichen den Antrag auch schriftlich mit eigenhändiger Unterschrift, mit qualifizierter elektronischer Signatur oder von der in deinem Konto hinterlegten E-Mail-Adresse aus stellen. Anträge werden kostenlos innerhalb von höchstens 30 Tagen bearbeitet; nach der DSGVO kann diese Frist bei Bedarf um zwei Monate verlängert werden, worüber du informiert wirst.
+**Antragstellung:** Schreibe für Anträge nach DSGVO oder UK GDPR an {{privacyEmailEu}} (diese Adresse erreicht auch den EU-Vertreter) und für Anträge nach türkischem Datenschutzrecht (KVKK) an {{privacyEmailTr}} oder an die Postanschrift in Abschnitt 1; zur Identitätsprüfung genügt es, von der E-Mail-Adresse deines Kontos zu schreiben. In der Türkei kannst du nach der Mitteilung über das Verfahren für Anträge an den Verantwortlichen den Antrag auch schriftlich mit eigenhändiger Unterschrift, mit qualifizierter elektronischer Signatur oder von der in deinem Konto hinterlegten E-Mail-Adresse aus stellen. Anträge werden kostenlos innerhalb von höchstens 30 Tagen bearbeitet; nach der DSGVO kann diese Frist bei Bedarf um zwei Monate verlängert werden, worüber du informiert wirst.
 
-**Beschwerde:** in der Türkei bei der Behörde zum Schutz personenbezogener Daten (kvkk.gov.tr). In der EU ist die zuständige Aufsichtsbehörde des Verantwortlichen nach dem Ort der Niederlassung die Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW). Nach Art. 77 DSGVO kannst du dich auch an die Behörde in deinem eigenen Land wenden. Im Vereinigten Königreich beim ICO. Bitte wende dich zuerst an den Verantwortlichen; die meisten Anliegen lassen sich direkt lösen.
+**Beschwerde:** in der Türkei bei der Behörde zum Schutz personenbezogener Daten (kvkk.gov.tr). Nach Art. 14 KVKK musst du dich vorher an den Verantwortlichen wenden; wird dein Antrag abgelehnt, hältst du die Antwort für unzureichend oder wird nicht fristgerecht geantwortet, kannst du innerhalb von 30 Tagen ab Kenntnis der Antwort, spätestens aber 60 Tage nach Antragstellung Beschwerde einlegen. In der EU und im EWR kannst du dich nach Art. 77 DSGVO insbesondere an die Aufsichtsbehörde des Mitgliedstaats deines gewöhnlichen Aufenthalts, deines Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes wenden. Da der Verantwortliche nicht in der Union niedergelassen ist, gibt es keine federführende Aufsichtsbehörde; die Behörde in Nordrhein-Westfalen, wo der EU-Vertreter sitzt (Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen, LDI NRW), ist nur eine der zuständigen Behörden. Im Vereinigten Königreich beim ICO. Die meisten Anliegen lassen sich direkt lösen; es kann genügen, uns zuerst zu schreiben.
 
 ## 11. Konto und Daten löschen
 
