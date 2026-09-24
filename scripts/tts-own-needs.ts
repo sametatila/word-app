@@ -6,7 +6,7 @@
  */
 import { readFileSync } from "node:fs";
 import path from "node:path";
-import { withArtikel, glossFor } from "../src/lib/option-label";
+import { withArtikel, spokenGloss } from "../src/lib/option-label";
 import { firstExample } from "../src/lib/example";
 import { buildCloze, buildOrder } from "../src/lib/session";
 import { pluralChoices } from "../src/lib/german";
@@ -61,7 +61,8 @@ export function ownNeeds(rows: WordRow[]): Need[] {
         for (const t of order.answer) push(w, "token", target, tileSpeech(t));
       }
       for (const native of nativesFor(course)) {
-        push(w, `gloss_${native}`, native, glossFor({ tr: w.tr, en: w.en, deGloss: w.de_gloss }, native)?.text);
+        // Yürüyüş yalnız söylenebilen anlamı soruyor (`spokenGloss`: "-in; -den" gibi ek notları sorulmuyor).
+        push(w, `gloss_${native}`, native, spokenGloss({ tr: w.tr, en: w.en, deGloss: w.de_gloss }, native));
       }
     }
   }

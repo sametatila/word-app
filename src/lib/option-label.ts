@@ -63,6 +63,26 @@ export function hasGloss(w: GlossWord, native: NativeLang): boolean {
 }
 
 /**
+ * Ek ya da dilbilgisi notu: "-in; -den", "-e kadar", "bir; belirsiz tanımlık", "to → -e/-a; mastar eki".
+ * Ekranda doğru ve gerekli, ama söylenecek bir şey değil — sesli okunduğunda "in den", "ir mez" çıkıyor.
+ */
+const GRAMMAR_NOTE = /(^|[\s;,/(])-\p{L}|\b(tanımlık|mastar|ön eki|son eki|(in)?definite article)\b/iu;
+
+/**
+ * ANLAMIN SESLİ HÂLİ — yalnız söylenebiliyorsa.
+ *
+ * Yürüyüş modu anlamı okuyup hedef kelimeyi sözlü istiyor; ekran yok. Yalnız ek ya da dilbilgisi notuyla
+ * anlatılan kelimeler (edatlar, tanımlıklar, bağlaçların bir kısmı) orada sorulmuyor: sesli ve ekransız
+ * kelime çalışmasında bu kelimeler tek başına değil bağlam içinde öğretilir (Pimsleur, sesli ders
+ * uygulamaları). Ekranlı oyunlarda kalıyorlar. Kulak kontrolünde bu anlamların kayıtları hep reddedildi
+ * (2026-09-24): "-ir -mez" → "İrmesele".
+ */
+export function spokenGloss(w: GlossWord, native: NativeLang): string | null {
+  const g = glossFor(w, native);
+  return g && !GRAMMAR_NOTE.test(g.text) ? g.text : null;
+}
+
+/**
  * Örnek cümlenin anadildeki çevirisi. Yoksa null — cümle çevirisi olmadan da
  * gösterilebilir (örnek hedef dilde anlamlıdır), o yüzden burada eleme yok.
  */

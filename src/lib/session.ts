@@ -18,7 +18,7 @@ import { onActivityAwarded } from "@/lib/social/hooks";
 import { ANSWERS_DAILY_XP_CAP, cappedDailyXp, xpForChallengeRecord, xpForWager } from "@/lib/xp";
 import { firstExample } from "@/lib/example";
 import { nativeOf, type NativeLang } from "@/lib/courses";
-import { glossFor, hasGloss, optionLabel } from "@/lib/option-label";
+import { glossFor, hasGloss, optionLabel, spokenGloss } from "@/lib/option-label";
 import { pluralChoices } from "@/lib/german";
 import type {
   Answer,
@@ -1047,9 +1047,14 @@ export async function buildWalk(
   const course = profile.course;
   const band = levelBand(profile.level);
   const T = ROUNDS_PER_SESSION;
+  /* Anlamı sesli söylenemeyen kelime (yalnız ek/dilbilgisi notu: "-in; -den") yürüyüşte sorulmuyor; bkz.
+     `spokenGloss`. Anadilde anlamı hiç olmayan da (`glossFor` null) aynı süzgeçten düşüyor — öncesinde
+     yürüyüş bunu süzmüyordu ve anlam sessiz geçiyordu. */
+  const native = nativeOf(profile.nativeLang);
+  const speakable = (w: typeof words.$inferSelect) => spokenGloss(w, native) !== null;
 
   // Tekrar tabanı: zamanı gelen kelimeler, en eskisi önce, atlananlar hariç.
-  const dueRows = await db
+  const dueRowsRaw = await db
     .select({ w: words })
     .from(userWords)
     .innerJoin(words, eq(words.id, userWords.wordId))
@@ -1062,10 +1067,11 @@ export async function buildWalk(
       ),
     )
     .orderBy(asc(userWords.dueAt))
-    .limit(T);
+    .limit(T * 2);
+  const dueRows = dueRowsRaw.filter((r) => speakable(r.w)).slice(0, T);
 
   // Yeni kelime adayları: hiç görülmemiş, seviyede sıklık sırasıyla.
-  const newCandidates = await db
+  const newCandidatesRaw = await db
     .select()
     .from(words)
     .where(
@@ -1081,6 +1087,7 @@ export async function buildWalk(
     )
     .orderBy(sql`${words.rank} asc nulls last`, asc(words.id))
     .limit(WALK_NEW * 12);
+  const newCandidates = newCandidatesRaw.filter(speakable);
 
   // Kaç yeni kelime: en çok WALK_NEW; ama tekrar kuyruğu turu doldurmuyorsa
   // (yeni/az kullanıcı) yeniyle doldur. Her yeni kelime iki tur (intro + speak).
