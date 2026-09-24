@@ -5,7 +5,7 @@ politikası `/privacy`. Yeni bir sağlayıcı ya da veri türü eklenince önce 
 sonra Console'daki form. "Paylaşım" Play tanımıyla: verinin üçüncü tarafa aktarılması —
 sunucumuz üzerinden konuşma tanıma ve dil modeli sağlayıcılarına giden veri de paylaşımdır.
 
-Son güncelleme: 2026-09-23 (hukuki sürüm 1.5; yayın öncesi denetim LEG-1/2/3/15). Kimlik ve iletişim bilgileri `src/lib/legal/index.ts`'te; Console'a girilecek destek adresi `support@lernomi.app`, gizlilik/veri talepleri `kvkk@lernomi.app` (KVKK) ve `gdpr@lernomi.app` (GDPR). Veri sorumlusu ile Play yayıncısı **ayrı kişiler** (bkz. `docs/play/listing.md` §5): Console'a girilecek kimlik yayıncınındır. Veri sorumlusu Almanya'da yerleşik olduğundan GDPR m.27 AB temsilcisi gerekmiyor. Türkiye temsilcisi ataması imzalanıp Kuruma bildirilene kadar metinler temsilciden söz etmiyor (1.5, LEG-7). VERBİS kaydı yapılmıyor (çalışan sayısı ve mali bilanço eşiklerine dayanan istisna) ve metinler kayıtlı olduğunu iddia etmiyor.
+Son güncelleme: 2026-09-24 (hukuki sürüm 1.6: Play Integrity; önceki 1.5 yayın öncesi denetim LEG-1/2/3/15). Kimlik ve iletişim bilgileri `src/lib/legal/index.ts`'te; Console'a girilecek destek adresi `support@lernomi.app`, gizlilik/veri talepleri `kvkk@lernomi.app` (KVKK) ve `gdpr@lernomi.app` (GDPR). Veri sorumlusu ile Play yayıncısı **ayrı kişiler** (bkz. `docs/play/listing.md` §5): Console'a girilecek kimlik yayıncınındır. Veri sorumlusu Almanya'da yerleşik olduğundan GDPR m.27 AB temsilcisi gerekmiyor. Türkiye temsilcisi ataması imzalanıp Kuruma bildirilene kadar metinler temsilciden söz etmiyor (1.5, LEG-7). VERBİS kaydı yapılmıyor (çalışan sayısı ve mali bilanço eşiklerine dayanan istisna) ve metinler kayıtlı olduğunu iddia etmiyor.
 
 ## Genel sorular
 
@@ -36,6 +36,7 @@ Sütunlar Console'daki sırayla: toplanıyor / paylaşılıyor / geçici işleme
 | Uygulama bilgisi ve performans › Çökme günlükleri (anonim JS hata raporu: hata iletisi, yığın izi) | **Evet** | Hayır | Hayır | Zorunlu (analitik anahtarından bağımsız gönderiliyor) | Uygulama işlevi, analitik (hata ayıklama) |
 | Uygulama bilgisi ve performans › Tanılama (hata raporuna eşlik eden ekran adı, uygulama sürümü, platform) | **Evet** | Hayır | Hayır | Zorunlu | Uygulama işlevi, analitik |
 | Uygulama bilgisi ve performans › Diğer (ekran genişliği, platform etiketi) | Evet | Hayır | Hayır | İsteğe bağlı (kapatılabilir) | Analitik |
+| Uygulama bilgisi ve performans › Diğer uygulama performans verileri (Play Integrity sonucu: uygulama tanındı mı, cihaz bütünlüğü, lisans durumu, sebep) — **`GUEST_ATTESTATION` açılınca** | Evet | Hayır | Hayır | Zorunlu (Android'de "Hesapsız devam et"; kapatma anahtarı yok) | Dolandırıcılık önleme, güvenlik ve uyumluluk |
 | Finansal bilgi › Satın alma geçmişi | Evet | Evet (RevenueCat, Google Play) | Hayır | İsteğe bağlı | Uygulama işlevi (abonelik) |
 | Cihaz veya diğer kimlikler › Cihaz bildirim jetonu | **Evet** | **Evet** (Google — Firebase Cloud Messaging) | Hayır | İsteğe bağlı (bildirim izni) | Uygulama işlevi (bildirim gönderimi) |
 | Konum, kişiler, takvim, fotoğraf/video, sağlık | Hayır | Hayır | — | — | Toplanmıyor |
@@ -56,6 +57,32 @@ Notlar:
   **2026-09-23'ten beri bu yapısal olarak garanti:** `mobile/firebase.json` →
   `messaging_auto_init_enabled: false`; FCM jetonu (ve arkasındaki Firebase kurulum
   kimliği) uygulama açılışında değil, bildirim izni verildikten sonra üretiliyor.
+- **Play Integrity (hukuki sürüm 1.6, 2026-09-24; KESİN DEĞİL, aşağıdaki gerekçe).** Android'de "Hesapsız
+  devam et"te uygulama Google Play Integrity'den imzalı bir belge alıyor, sunucu onu Google'a çözdürüp
+  yalnız hükümleri ve sebebi `guest_attestations`a misafir kimliğine bağlı yazıyor (90 gün, günlük cron
+  siler; belgenin kendisi yazılmıyor). Kod canlıda KAPALI (`GUEST_ATTESTATION` boş); form satırı kip
+  `log`a alındığı sürümle birlikte girilir, önce girmek zararsız fazla beyan olur.
+  - *Kategori:* Play'in listesinde "bütünlük sonucu" diye bir tür yok. En yakın ikisi: **Uygulama bilgisi
+    ve performans › Diğer uygulama performans verileri** (önerilen: hüküm uygulamanın ve çalıştığı
+    ortamın durumu hakkında) ya da **Cihaz veya diğer kimlikler** (REDDEDİLDİ: saklanan şey bir
+    tanımlayıcı değil; `requestHash` her açılışta yeni, rastgele bir nonce'un özeti ve cihazı ya da
+    kişiyi tekrar tanımaya yaramıyor). "Uygulama etkinliği" de uymuyor: kullanıcının eylemi değil,
+    cihazın durumu. Emin olmak için Play Console'daki tür açıklamalarına bir daha bakılmalı.
+  - *Amaç:* **Dolandırıcılık önleme, güvenlik ve uyumluluk** (Google'ın Play Integrity belgesinin
+    tarif ettiği kullanım: uygulama, lisans ve cihaz bütünlüğünü doğrulamak).
+  - *Paylaşım:* Hayır. Google'ın kendi beyanı (developer.android.com/google/play/integrity/terms,
+    "Data safety" bölümü): Play Integrity'nin topladığı veri üçüncü taraflara aktarılmıyor ve Play
+    Store'un bu işlemesi Google Play Hizmet Şartları'na tabi; sunucumuzun belgeyi çözdürmek için
+    Google'a geri göndermesi Play tanımında hizmet sağlayıcıya aktarım, paylaşım değil. Politikada
+    alıcı olarak yazılı ("Google (Play Integrity)", bağımsız veri sorumlusu).
+  - *Geçici:* Hayır (90 gün tutuluyor). *Zorunlu:* misafir yolunda kullanıcının kapatabileceği bir
+    anahtar yok; misafir modu isteğe bağlı olsa da satır "zorunlu" işaretlenir (temkinli seçim).
+  - Google'ın SDK'sının kendisinin topladığı (paket adı, sürüm, imza sertifikası, lisans durumu, cihaz
+    doğrulama belgesi) Google'ın beyanında "toplanıyor, paylaşılmıyor, sabit süre sonra siliniyor" ve
+    Play Store'un kendi işlemesi olarak anlatılıyor. Buradaki öneri yalnız bizim sunucuya yazdığımız
+    sonucu kapsıyor; Google'ın toplamasını ayrıca beyan etmenin gerekip gerekmediğini Google açıkça
+    söylemiyor ("formu nasıl dolduracağınıza siz karar verirsiniz"). Kesin karar Samet'te.
+  - App Store tarafı etkilenmiyor: iOS'ta kontrol yok (App Attest Aşama 4).
 - Analitik olayları kapalı sözlükten gelir, serbest metin taşımaz; Ayarlar › Gizlilik'ten kapatılabilir. Tercih 1.5'ten beri hesaba (misafirde misafir kimliğine) yazılıyor ve sunucu da uyuyor (LEG-9).
 
 ## Güvenlik uygulamaları
