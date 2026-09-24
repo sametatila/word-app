@@ -458,16 +458,7 @@ export function AuthScreen() {
                 <TextInput returnKeyType="go" onSubmitEditing={() => { if (!resetBusy) void doReset(); }} value={email} onChangeText={setEmail} placeholder={t("auth.email")}
                 accessibilityLabel={t("auth.email")} placeholderTextColor={colors.textFaint} keyboardType="email-address" autoCapitalize="none" autoCorrect={false} autoComplete="email" textContentType="emailAddress" style={input} />
                 {error && (<View style={{ backgroundColor: colors.dangerSoft, borderRadius: radii.md, padding: spacing.md }}><Text variant="caption" color={colors.dangerText}>{error}</Text></View>)}
-                {captchaOn && (
-                  <>
-                    <Turnstile resetSignal={captchaNonce} onToken={setCaptchaToken} />
-                    {!captchaToken && (
-                      <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }} accessibilityLiveRegion="polite">
-                        {t("auth.captcha_wait")}
-                      </Text>
-                    )}
-                  </>
-                )}
+                {captchaOn && <Turnstile resetSignal={captchaNonce} onToken={setCaptchaToken} />}
                 <PressableScale onPress={doReset} disabled={captchaBlocked} accessibilityLabel={t("auth.send_reset_link")} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.sm }, softShadow(colors.primary, 10)]}>
                   <Text variant="h3" color={colors.onPrimary}>{resetBusy ? "..." : t("auth.send_reset_link")}</Text>
                 </PressableScale>
@@ -649,16 +640,7 @@ export function AuthScreen() {
               </View>
             )}
 
-            {captchaOn && (
-              <>
-                <Turnstile resetSignal={captchaNonce} onToken={setCaptchaToken} />
-                {!captchaToken && (
-                  <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }} accessibilityLiveRegion="polite">
-                    {t("auth.captcha_wait")}
-                  </Text>
-                )}
-              </>
-            )}
+            {captchaOn && <Turnstile resetSignal={captchaNonce} onToken={setCaptchaToken} />}
             <PressableScale onPress={submit} disabled={captchaBlocked} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.sm }, softShadow(colors.primary, 10)]}>
               <Text variant="h3" color={colors.onPrimary}>{busy ? "..." : mode === "signin" ? t("auth.sign_in") : t("auth.create_account")}</Text>
             </PressableScale>
