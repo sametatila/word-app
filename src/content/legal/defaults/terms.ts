@@ -18,12 +18,23 @@ import type { LegalDocDefault } from "./types";
  * satırı varsa üstyazım kazanır. Buradaki metni değiştirmek yalnız yeni
  * kurulumları ve "varsayılana dön" düğmesini etkiler.
  *
- * ÖZETTEKİ "HİZMET TÜRKİYE'DEN SUNULUR" 1.5'TE DÜZELTİLDİ (denetim LEG-14):
- * §1 hizmeti işleteni Dortmund'daki veri sorumlusu olarak tanıtıyor ve
- * sunucular Almanya'da; Türkiye'de olan yayıncı. Hukuk seçimi (§12, Türk
- * hukuku) değişmedi, yalnız özet §1 ile çelişmez oldu.
+ * TEK TARAF (1.7, 2026-09-24). 1.6'ya kadar §1 iki kişi sayıyordu: hizmeti
+ * işleten Dortmund'daki veri sorumlusu ve Türkiye'deki yayıncı. Artık
+ * sözleşmenin karşı tarafı tek kişi: Türkiye'de yerleşik hizmet sağlayıcı
+ * (aynı zamanda veri sorumlusu ve yayıncı). Özet "hizmet Türkiye'den sunulur,
+ * sunucular Almanya'da" diyor; 1.5'te düzeltilen "Almanya'dan işletilir"
+ * cümlesi yeni yapıda yanlış olduğu için yeniden çevrildi (LEG-14).
  * Play'deki görünen geliştirici adı "RumpusKit" (bireysel hesapta izinli; App
- * Store'da satıcı adı Musa Atila): kimlik bloğunda `publisherPlayName` satırı.
+ * Store'da satıcı adı Musa Atila): kimlik bloğunda `providerPlayName` satırı.
+ *
+ * §12 HUKUK SEÇİMİ DEĞİŞMEDİ, dayanağı yazıldı. Türk hukuku seçili; AB/AEA ve
+ * Birleşik Krallık tüketicileri için bu seçim, mutat meskenlerinin bulunduğu
+ * ülkenin sözleşmeyle ortadan kaldırılamayan hükümlerinin sağladığı korumayı
+ * elinden alamaz (Roma I m.6(2); hizmet AB'ye yöneltildiği için m.6(1)
+ * koşulu var) ve tüketici kendi mahkemesinde dava açabilir (Brüksel Ia
+ * m.18(1), karşı tarafın yerleşim yeri fark etmeksizin). Eski metin bunu
+ * zaten söylüyordu; AEA eksikti, eklendi. §36 VSBG beyanı gerekmiyor: sağlayıcı
+ * Almanya'da yerleşik bir girişimci değil.
  *
  * §4/§5'TEKİ "24 SAAT" VE "SIFIR TOLERANS" (App Store 1.2, denetim CNT-7):
  * söz, panelin iç uyarısındaki 24 saatle aynı (`lib/alerts`); bildirene
@@ -35,18 +46,16 @@ export const TERMS_DEFAULT: Record<"tr" | "en" | "de", LegalDocDefault> = {
     description: "Lernomi'yi kullanmanın kuralları: hesap, kabul edilebilir kullanım, kullanıcı içeriği, yapay zekâ, abonelik, tüketici hakları.",
     summary: [
       "Lernomi'yi kullanarak bu sözleşmeyi kabul edersin.",
-      "Hizmeti Almanya'da yerleşik veri sorumlusu Almanya'daki sunuculardan işletir, uygulamayı Türkiye'de yerleşik yayıncı mağazalarda yayımlar; sözleşme Türk hukukuna tabidir. Bulunduğun ülkenin zorunlu tüketici hakları saklıdır.",
+      "Hizmeti Türkiye'de yerleşik geliştirici sunar ve uygulamayı mağazalarda yayımlar; sunucular Almanya'dadır. Sözleşme Türk hukukuna tabidir. Bulunduğun ülkenin zorunlu tüketici hakları saklıdır.",
       "Hesabın sana aittir ve başkalarına saygılı kullanılır. Yazdıkların senin kalır.",
       "Yapay zekâ yanıtları hata yapabilir.",
       "Premium abonelik uygulamayı indirdiğin mağazadan alınır ve iptali de oradan yapılır.",
     ],
     body: `## 1. Taraflar ve kabul
 
-Bu sözleşme, aşağıda kimliği verilen taraflar ("Lernomi", "biz") ile Lernomi web uygulamasını (www.lernomi.app) ya da {{platforms}} kullanan kişi ("sen") arasındadır. İki kişiyiz: hizmeti tasarlayan, işleten ve verinden sorumlu olan taraf ile uygulamayı mağazalarda yayımlayan ve abonelik tahsilatını yürüten taraf. Hesap açarak ya da uygulamayı kullanarak bu şartları ve [Gizlilik Politikası]({{link:privacy}})'nı kabul etmiş olursun; 6563 sayılı Kanun uyarınca bu metin sözleşme kurulmadan önce erişilebilir durumdadır ve saklanabilir. Kabul etmiyorsan uygulamayı kullanma.
+Bu sözleşme, aşağıda kimliği verilen hizmet sağlayıcı ("Lernomi", "biz") ile Lernomi web uygulamasını (www.lernomi.app) ya da {{platforms}} kullanan kişi ("sen") arasındadır. Hizmeti sunan, verinden sorumlu olan, uygulamayı mağazalarda yayımlayan ve abonelik gelirini alan aynı kişidir; Türkiye'de yerleşiktir. Hesap açarak ya da uygulamayı kullanarak bu şartları ve [Gizlilik Politikası]({{link:privacy}})'nı kabul etmiş olursun; 6563 sayılı Kanun uyarınca bu metin sözleşme kurulmadan önce erişilebilir durumdadır ve saklanabilir. Kabul etmiyorsan uygulamayı kullanma.
 
 {{entityBlock:provider:contact}}
-
-{{entityBlock:provider}}
 
 ## 2. Hizmet
 
@@ -98,7 +107,7 @@ Hukuka aykırı ya da bu şartlara aykırı bir içerik (başka bir kullanıcın
 - **Cayma ve iade:** Premium'u, uygulamayı indirdiğin mağaza satar ve Premium satın aldığın anda açılır. Satın almayı mağazanın kendi ödeme ekranında onaylarsın; uygulama ayrıca bir cayma onayı istemez. Cayma hakkını ve iade taleplerini o mağazanın şartlarına göre mağaza üzerinden kullanırsın: Google Play'de Play desteğinden{{ifIos}}, App Store'da reportaproblem.apple.com adresinden{{/ifIos}}. Mağazanın kabul ettiği iadeleri biz de tanırız; mağaza tarafında çözülmeyen bir durumda bize yazabilirsin. Tüketici olarak yasal hakların saklıdır.
 - **Fiyat değişikliği:** Abonelik ücreti zamanla değişebilir. Kural şu: **ödediğin dönemin fiyatı o dönem boyunca değişmez** — bir artış hiçbir zaman geriye yürümez ve yalnızca bir sonraki yenilemeden itibaren geçerli olur. Bir artıştan önce mağaza üzerinden (e-posta ve mağaza bildirimi) en az **30 gün** önceden, yeni tutar ve yürürlük tarihiyle birlikte bilgilendirilirsin. Artışın büyüklüğüne ve mağazanın kurallarına göre iki yol işler: küçük ve seyrek artışlarda abonelik, sen iptal etmediğin sürece yeni fiyatla yenilenir; bunun dışındaki artışlarda **açık onayın aranır** ve onay vermezsen abonelik yenilenmeden sona erer. Her iki durumda da yürürlük tarihinden önce iptal edersen yeni fiyat senden tahsil edilmez. Para birimi, bölge ya da vergi oranı değişikliklerinden (ör. KDV) kaynaklanan tutar farkları mağaza tarafından uygulanır ve bu maddedeki bildirim süresine tabi değildir.
 - **Tanıtım fiyatları ve hediye süreler:** Ücretsiz deneme, indirimli giriş fiyatı, promosyon kodu ve davet ödülü **yalnız belirtilen süre için** geçerlidir; süre bitince standart fiyat uygulanır ve bu bilgi satın alma anında gösterilir. Hediye ya da kodla kazanılan süre bir para alacağı değildir: nakde çevrilemez, devredilemez ve gelecekteki fiyatların sabit kalacağı anlamına gelmez.
-- **Satış belgesi:** Satışı mağaza yapar ve belgeyi mağaza düzenleyip mağaza hesabındaki e-posta adresine gönderir; belge talebini mağazanın desteğine iletirsin. Yayıncı bir şirket değil, gerçek kişidir ve mobil uygulama geliştiriciliği kazanç istisnası kapsamında olduğundan ayrıca fatura düzenlemez.
+- **Satış belgesi:** Satışı mağaza yapar ve belgeyi mağaza düzenleyip mağaza hesabındaki e-posta adresine gönderir; belge talebini mağazanın desteğine iletirsin. Hizmet sağlayıcı bir şirket değil, gerçek kişidir ve mobil uygulama geliştiriciliği kazanç istisnası kapsamında olduğundan ayrıca fatura düzenlemez.
 
 ## 7a. Adil kullanım
 
@@ -132,7 +141,7 @@ Hesabını istediğin zaman silebilirsin. Biz, bu şartların ihlali ya da hizme
 
 ## 12. Uygulanacak hukuk ve uyuşmazlık çözümü
 
-Bu sözleşme Türkiye Cumhuriyeti hukukuna tabidir. Uyuşmazlıklarda önce {{supportEmail}} üzerinden dostane çözüm ararız. Türkiye'deki tüketiciler, parasal sınırlar dâhilinde Tüketici Hakem Heyetlerine ve tüketici mahkemelerine başvurabilir; diğer uyuşmazlıklarda {{court}} mahkemeleri ve icra daireleri yetkilidir. AB ve Birleşik Krallık'ta yerleşik tüketicilerin, bulundukları ülkenin zorunlu tüketici hükümlerinden ve kendi ülkelerinin mahkemelerine başvurma hakkından doğan hakları etkilenmez; diğer ülkelerdeki kullanıcılar için yerel zorunlu hükümler saklıdır.
+Bu sözleşme Türkiye Cumhuriyeti hukukuna tabidir. Uyuşmazlıklarda önce {{supportEmail}} üzerinden dostane çözüm ararız. Türkiye'deki tüketiciler, parasal sınırlar dâhilinde Tüketici Hakem Heyetlerine ve tüketici mahkemelerine başvurabilir; diğer uyuşmazlıklarda {{court}} mahkemeleri ve icra daireleri yetkilidir. Bu hukuk seçimi, AB, AEA ve Birleşik Krallık'ta mutat meskeni bulunan tüketicileri bulundukları ülkenin sözleşmeyle ortadan kaldırılamayan tüketici koruma hükümlerinden yoksun bırakmaz (Roma I Tüzüğü m.6(2)); bu tüketicilerin kendi ülkelerinin mahkemelerine başvurma hakkı da saklıdır; diğer ülkelerdeki kullanıcılar için yerel zorunlu hükümler saklıdır.
 
 ## 12a. Mücbir sebep
 
@@ -172,18 +181,16 @@ Uygulamayı App Store'dan indirdiysen aşağıdaki maddeler de geçerlidir. Bunl
     description: "The rules for using Lernomi: account, acceptable use, user content, AI, subscription, consumer rights.",
     summary: [
       "By using Lernomi you accept this agreement.",
-      "The service is operated by the controller established in Germany from servers in Germany, and the app is published in the stores by the publisher established in Türkiye; the agreement is governed by Turkish law. The mandatory consumer rights of your own country are unaffected.",
+      "The service is provided, and the app is published in the stores, by a developer established in Türkiye; the servers are in Germany. The agreement is governed by Turkish law. The mandatory consumer rights of your own country are unaffected.",
       "Your account is yours, and is used with respect for others. What you write stays yours.",
       "AI answers can be wrong.",
       "Premium is bought in the store you downloaded the app from, and cancelled there.",
     ],
     body: `## 1. Parties and acceptance
 
-This agreement is between the parties identified below ("Lernomi", "we") and the person using the Lernomi web app (www.lernomi.app) or {{platforms}} ("you"). There are two of us: the person who designs and operates the service and is responsible for your data, and the person who publishes the app in the app stores and collects the subscription revenue. By creating an account or using the app you accept these terms and the [Privacy Policy]({{link:privacy}}). Under Turkish Law no. 6563 this text is accessible and can be stored before the contract is concluded. If you do not accept it, do not use the app.
+This agreement is between the service provider identified below ("Lernomi", "we") and the person using the Lernomi web app (www.lernomi.app) or {{platforms}} ("you"). The same person provides the service, is responsible for your data, publishes the app in the app stores and receives the subscription revenue, and is established in Türkiye. By creating an account or using the app you accept these terms and the [Privacy Policy]({{link:privacy}}). Under Turkish Law no. 6563 this text is accessible and can be stored before the contract is concluded. If you do not accept it, do not use the app.
 
 {{entityBlock:provider:contact}}
-
-{{entityBlock:provider}}
 
 ## 2. The service
 
@@ -235,7 +242,7 @@ If you see content that is unlawful or breaches these terms (another user's name
 - **Withdrawal and refunds:** Premium is sold by the store you downloaded the app from, and it becomes available as soon as you buy it. You confirm the purchase on the store's own payment screen; the app does not ask for a separate withdrawal consent. You exercise your right of withdrawal and request refunds through that store, under its terms: through Play support on Google Play{{ifIos}}, and at reportaproblem.apple.com on the App Store{{/ifIos}}. We honour refunds the store grants; if the store does not resolve an issue, you can write to us. Your statutory rights as a consumer are not affected.
 - **Price changes:** The subscription price can change over time. The rule is this: **the price you paid holds for the period you paid for** — an increase never applies retroactively and only takes effect from the next renewal. Before an increase you are notified through the store (e-mail and store notification) at least **30 days** in advance, with the new amount and the date it takes effect. Depending on the size of the increase and the store's rules, one of two paths applies: for small, infrequent increases the subscription renews at the new price unless you cancel; for anything beyond that **your explicit consent is required**, and without it the subscription simply ends instead of renewing. In both cases, if you cancel before the effective date you are not charged the new price. Amount differences caused by a change of currency, region or tax rate (for example VAT) are applied by the store and are not subject to the notice period in this clause.
 - **Promotional prices and gifted time:** A free trial, a discounted introductory price, a promo code and a referral reward are valid **only for the stated period**; when it ends the standard price applies, and this is shown at the time of purchase. Time gained from a gift or a code is not a monetary claim: it cannot be cashed out or transferred, and it does not mean future prices are fixed.
-- **Proof of purchase:** The sale is made by the store, which issues the receipt and sends it to the e-mail address on your store account; you can request a copy from the store's support. The publisher is not a company but a natural person, and because the earnings fall within the Turkish income tax exemption for mobile application development, no separate invoice is issued.
+- **Proof of purchase:** The sale is made by the store, which issues the receipt and sends it to the e-mail address on your store account; you can request a copy from the store's support. The service provider is not a company but a natural person, and because the earnings fall within the Turkish income tax exemption for mobile application development, no separate invoice is issued.
 
 ## 7a. Fair use
 
@@ -269,7 +276,7 @@ You can delete your account whenever you like. We may close an account with reas
 
 ## 12. Governing law and dispute resolution
 
-This agreement is governed by the law of the Republic of Türkiye. In a dispute we first seek an amicable solution via {{supportEmail}}. Consumers in Türkiye may apply, within the applicable monetary thresholds, to the Consumer Arbitration Committees and the consumer courts; for other disputes the courts and enforcement offices of {{court}} have jurisdiction. The rights of consumers resident in the EU and the United Kingdom under the mandatory consumer provisions of their country and their right to bring proceedings before their own courts are unaffected; for users in other countries local mandatory provisions are reserved.
+This agreement is governed by the law of the Republic of Türkiye. In a dispute we first seek an amicable solution via {{supportEmail}}. Consumers in Türkiye may apply, within the applicable monetary thresholds, to the Consumer Arbitration Committees and the consumer courts; for other disputes the courts and enforcement offices of {{court}} have jurisdiction. This choice of law does not deprive consumers habitually resident in the EU, the EEA or the United Kingdom of the protection of the provisions of their country that cannot be derogated from by agreement (Art. 6(2) Rome I Regulation); their right to bring proceedings before the courts of their own country is also unaffected; for users in other countries local mandatory provisions are reserved.
 
 ## 12a. Force majeure
 
@@ -309,18 +316,16 @@ When we update these terms, the effective date and version change; we announce m
     description: "Die Regeln für die Nutzung von Lernomi: Konto, zulässige Nutzung, Nutzerinhalte, KI, Abonnement, Verbraucherrechte.",
     summary: [
       "Mit der Nutzung von Lernomi nimmst du diese Vereinbarung an.",
-      "Den Dienst betreibt der in Deutschland niedergelassene Verantwortliche von Servern in Deutschland aus, die App veröffentlicht der in der Türkei niedergelassene Herausgeber in den Stores; die Vereinbarung unterliegt türkischem Recht. Die zwingenden Verbraucherrechte deines Landes bleiben unberührt.",
+      "Den Dienst bietet ein in der Türkei niedergelassener Entwickler an, der die App auch in den Stores veröffentlicht; die Server stehen in Deutschland. Die Vereinbarung unterliegt türkischem Recht. Die zwingenden Verbraucherrechte deines Landes bleiben unberührt.",
       "Dein Konto gehört dir und wird respektvoll gegenüber anderen genutzt. Was du schreibst, bleibt dein.",
       "KI-Antworten können falsch sein.",
       "Premium wird in dem Store gekauft, aus dem du die App geladen hast, und dort gekündigt.",
     ],
     body: `## 1. Parteien und Annahme
 
-Diese Vereinbarung besteht zwischen den unten bezeichneten Parteien ("Lernomi", "wir") und der Person, die die Lernomi-Webanwendung (www.lernomi.app) oder {{platforms}} nutzt ("du"). Wir sind zwei Personen: diejenige, die den Dienst gestaltet, betreibt und für deine Daten verantwortlich ist, und diejenige, die die App in den App-Stores veröffentlicht und die Abonnementeinnahmen vereinnahmt. Mit der Erstellung eines Kontos oder der Nutzung der App nimmst du diese Bedingungen und die [Datenschutzerklärung]({{link:privacy}}) an. Nach dem türkischen Gesetz Nr. 6563 ist dieser Text vor Vertragsschluss zugänglich und speicherbar. Wenn du ihn nicht annimmst, nutze die App nicht.
+Diese Vereinbarung besteht zwischen dem unten bezeichneten Anbieter ("Lernomi", "wir") und der Person, die die Lernomi-Webanwendung (www.lernomi.app) oder {{platforms}} nutzt ("du"). Dieselbe Person bietet den Dienst an, ist für deine Daten verantwortlich, veröffentlicht die App in den App-Stores und erhält die Abonnementeinnahmen; sie ist in der Türkei niedergelassen. Mit der Erstellung eines Kontos oder der Nutzung der App nimmst du diese Bedingungen und die [Datenschutzerklärung]({{link:privacy}}) an. Nach dem türkischen Gesetz Nr. 6563 ist dieser Text vor Vertragsschluss zugänglich und speicherbar. Wenn du ihn nicht annimmst, nutze die App nicht.
 
 {{entityBlock:provider:contact}}
-
-{{entityBlock:provider}}
 
 ## 2. Der Dienst
 
@@ -372,7 +377,7 @@ Wenn du einen rechtswidrigen oder diesen Bedingungen widersprechenden Inhalt sie
 - **Widerruf und Erstattung:** Premium verkauft der Store, aus dem du die App geladen hast, und es steht sofort nach dem Kauf zur Verfügung. Den Kauf bestätigst du auf dem Zahlungsbildschirm des Stores; die App holt keine gesonderte Widerrufszustimmung ein. Dein Widerrufsrecht und Erstattungswünsche machst du über diesen Store nach dessen Bedingungen geltend: bei Google Play über den Play-Support{{ifIos}}, im App Store über reportaproblem.apple.com{{/ifIos}}. Vom Store gewährte Erstattungen erkennen wir an; löst der Store ein Problem nicht, kannst du uns schreiben. Deine gesetzlichen Rechte als Verbraucher bleiben unberührt.
 - **Preisänderung:** Der Abopreis kann sich mit der Zeit ändern. Die Regel lautet: **Der bezahlte Preis gilt für den bezahlten Zeitraum** — eine Erhöhung wirkt nie rückwirkend und greift erst ab der nächsten Verlängerung. Vor einer Erhöhung wirst du über den Store (E-Mail und Store-Benachrichtigung) mindestens **30 Tage** vorher informiert, mit dem neuen Betrag und dem Datum des Inkrafttretens. Je nach Höhe der Erhöhung und den Regeln des Stores gilt einer von zwei Wegen: Bei kleinen, seltenen Erhöhungen verlängert sich das Abo zum neuen Preis, sofern du nicht kündigst; darüber hinaus ist **deine ausdrückliche Zustimmung erforderlich**, und ohne sie endet das Abo, statt sich zu verlängern. In beiden Fällen wird dir der neue Preis nicht berechnet, wenn du vor dem Stichtag kündigst. Betragsunterschiede durch geänderte Währung, Region oder Steuersätze (etwa die Mehrwertsteuer) setzt der Store um; sie unterliegen nicht der Frist in dieser Klausel.
 - **Aktionspreise und geschenkte Laufzeit:** Eine kostenlose Testphase, ein vergünstigter Einführungspreis, ein Aktionscode und eine Einladungsprämie gelten **nur für den angegebenen Zeitraum**; danach gilt der Standardpreis, und das wird beim Kauf angezeigt. Durch Geschenk oder Code gewonnene Laufzeit ist kein Geldanspruch: Sie ist weder auszahlbar noch übertragbar und bedeutet nicht, dass künftige Preise festgeschrieben sind.
-- **Kaufbeleg:** Den Verkauf tätigt der Store; er stellt den Beleg aus und sendet ihn an die E-Mail-Adresse deines Store-Kontos. Eine Kopie kannst du beim Support des Stores anfordern. Der Herausgeber ist keine Gesellschaft, sondern eine natürliche Person; da die Einkünfte unter die türkische Einkommensteuerbefreiung für die Entwicklung mobiler Anwendungen fallen, wird keine gesonderte Rechnung ausgestellt.
+- **Kaufbeleg:** Den Verkauf tätigt der Store; er stellt den Beleg aus und sendet ihn an die E-Mail-Adresse deines Store-Kontos. Eine Kopie kannst du beim Support des Stores anfordern. Der Anbieter ist keine Gesellschaft, sondern eine natürliche Person; da die Einkünfte unter die türkische Einkommensteuerbefreiung für die Entwicklung mobiler Anwendungen fallen, wird keine gesonderte Rechnung ausgestellt.
 
 ## 7a. Fair Use
 
@@ -406,7 +411,7 @@ Du kannst dein Konto jederzeit löschen. Wir können ein Konto mit angemessener 
 
 ## 12. Anwendbares Recht und Streitbeilegung
 
-Diese Vereinbarung unterliegt dem Recht der Republik Türkei. Bei Streitigkeiten suchen wir zunächst über {{supportEmail}} eine gütliche Lösung. Verbraucher in der Türkei können sich innerhalb der geltenden Wertgrenzen an die Verbraucherschlichtungsausschüsse und die Verbrauchergerichte wenden; für sonstige Streitigkeiten sind die Gerichte und Vollstreckungsbehörden in {{court}} zuständig. Die Rechte von in der EU und im Vereinigten Königreich wohnhaften Verbrauchern aus den zwingenden Verbraucherschutzvorschriften ihres Landes und ihr Recht, die Gerichte ihres eigenen Landes anzurufen, bleiben unberührt; für Nutzer in anderen Ländern gelten die dortigen zwingenden Vorschriften.
+Diese Vereinbarung unterliegt dem Recht der Republik Türkei. Bei Streitigkeiten suchen wir zunächst über {{supportEmail}} eine gütliche Lösung. Verbraucher in der Türkei können sich innerhalb der geltenden Wertgrenzen an die Verbraucherschlichtungsausschüsse und die Verbrauchergerichte wenden; für sonstige Streitigkeiten sind die Gerichte und Vollstreckungsbehörden in {{court}} zuständig. Diese Rechtswahl entzieht Verbrauchern mit gewöhnlichem Aufenthalt in der EU, im EWR oder im Vereinigten Königreich nicht den Schutz der Vorschriften ihres Landes, von denen nicht durch Vereinbarung abgewichen werden darf (Art. 6 Abs. 2 Rom-I-Verordnung); ihr Recht, die Gerichte ihres eigenen Landes anzurufen, bleibt ebenfalls unberührt; für Nutzer in anderen Ländern gelten die dortigen zwingenden Vorschriften.
 
 ## 12a. Höhere Gewalt
 
