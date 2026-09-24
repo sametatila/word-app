@@ -87,7 +87,7 @@ da karar değişince satır burada güncellenir. Öteki maddeler: iOS/satın alm
 | IOS-1 | ASC sürümü '1.0', build'ler '1.0.0'; sürüme build bağlı değil | ✅ Yapıldı | Sürüm 1.0.0 yapıldı, build 4 bağlandı (API). |
 | IOS-2 | Açıklama, anahtar kelimeler, altyazı ve tanıtım metni boş | ⏳ Samet | Ürün kararı bekliyor: açıklama ve öne çıkan özellikler seçilince API ile girilecek. |
 | IOS-3 | Ekran görüntüsü yok; iPad beyan edildiği için 13" iPad de zorunlu | ⏳ Samet | Tam UI kontrolünden sonra üretilecek. |
-| IOS-4 | App Privacy (gizlilik etiketleri) yayımlanmış mı? (doğrulanamadı) | ⏳ Samet | Samet doldurduğunu düşünüyor; API'de uç yok. ASC › App Privacy ekranı paylaşılınca bu belgedeki tabloyla karşılaştırılacak. |
+| IOS-4 | App Privacy (gizlilik etiketleri) yayımlanmış mı? (doğrulanamadı) | ✅ Yapıldı | Yayımlandı (Musa, 2026-09-24): 9 tür — Name, Email, Other User Content, User ID, Device ID, Purchase History (App Functionality, kimliğe bağlı), Product Interaction (Analytics, bağlı), Crash Data ve Other Diagnostic Data (App Functionality, bağlı DEĞİL). Bu belgedeki tablo ve PrivacyInfo.xcprivacy ile birebir. |
 | IOS-5 | Meta veride Kullanım Şartları (EULA) bağlantısı yok | ⏳ Samet | Açıklama yazılınca sonuna Şartlar ve Gizlilik bağlantısı eklenecek (Apple standart EULA + bizim Şartlar). |
 | IOS-6 | iPad düzeni cihazda hiç denenmedi | ✅ Yapıldı | Simülatör yeterli (Samet, 2026-09-24; gerçek tablet yok): iPad Pro 13" ve mini'de dikey/yatay, tek içerik kolonu 840 (bb78092c…075d7f34), build 6'da. |
 | IOS-7 | Mağaza yalnız Türkçe; binary üç dil beyan ediyor | ⏳ Samet | en/de mağaza adları ve gizlilik URL'leri girildi; açıklamalar ürün kararıyla. |
