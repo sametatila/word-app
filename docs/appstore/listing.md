@@ -499,17 +499,24 @@ görüntüsünü Almanca vitrine koymak 2.3.3'e takılır. Altyazıların kayna�
 | Bundle ID | `app.lernomi.ios` |
 | Primary Category | Education |
 | Secondary Category | Reference |
-| Copyright | `2026 Musa Atila` — `LEGAL_ENTITY.publisherName` ile aynı |
+| Copyright | `2026 Musa Atila` — `LEGAL_ENTITY.providerName` ile aynı |
 | Support URL | `https://www.lernomi.app/support` — **zorunlu**; destek adresi, yanıt süresi ve kanallar orada |
 | Marketing URL | `https://www.lernomi.app` (isteğe bağlı) |
 | Privacy Policy URL | `https://www.lernomi.app/privacy` — **zorunlu** |
 | Uygulama içi satın alma | **Var** — ürünler Connect'te tanımlanır; satın alma akışı RevenueCat üzerinden (`mobile/src/lib/billingConfig.ts`'te iOS anahtarı dolu) |
 | Age Rating | §2 anketinden hesaplanır |
 
-Yayıncı **Musa Atila** (Tufanbeyli, Adana), gizlilik politikasındaki veri sorumlusu ise
-**Samet Atila** (Dortmund). Ayrım bilinçli ve gerekçesi `docs/play/listing.md` §5'te;
-App Store'da da aynı şekilde kalır — Connect'teki yasal ad `LEGAL_ENTITY.publisherName`
-ile aynı olmalı, `controllerName` ile değil.
+Satıcı, hizmet sağlayıcı ve gizlilik politikasındaki veri sorumlusu aynı kişi: **Musa
+Atila** (Tufanbeyli, Adana; hukuki sürüm 1.7). **Samet Atila** (Dortmund) yalnız GDPR
+m.27 AB temsilcisi (gerekçe `docs/play/listing.md` §5). Connect'teki yasal ad
+`LEGAL_ENTITY.providerName` ile aynı olmalı, `euRepresentativeName` ile değil.
+
+**DSA tüccar beyanı (AB storefront'larında satış için zorunlu).** App Store Connect ›
+Business › "Digital Services Act" bölümünde hesap **trader** olarak beyan edilir (Premium
+ücretli); Apple doğrulanmış **adres, telefon ve e-postayı** AB'deki App Store sayfasında
+herkese açık gösterir, beyan edilmezse uygulama AB'de yayımlanmaz. Kimlik Musa'nınki
+(`LEGAL_ENTITY.provider*`), e-posta `support@lernomi.app`; telefon numarası girilince
+künye için `LEGAL_ENTITY`ye de eklenir. Beyan Connect arayüzünden elle yapılır.
 
 **Abonelik (3.1.2):** Apple abonelik bilgisinin satın almadan önce uygulamada açıkça
 gösterilmesini, metadata'da da kullanım şartları (EULA) ve gizlilik politikası

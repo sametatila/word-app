@@ -402,5 +402,6 @@ Other User Content, Product Interaction); misafirde e-posta ve ad hiç toplanmı
 ## Not
 
 Vergi tarafı iOS'ta da aynı: GVK mükerrer m.20/B istisnası "elektronik uygulama paylaşım
-ve satış platformları" diyor, App Store da bunun içinde. Yayıncı Türkiye'de yerleşik
-gerçek kişi olmaya devam ediyor (bkz. `src/lib/legal/index.ts` kimlik notu).
+ve satış platformları" diyor, App Store da bunun içinde. Hizmet sağlayıcı (satıcı ve veri
+sorumlusu, 1.7'den beri tek kişi) Türkiye'de yerleşik gerçek kişi (bkz.
+`src/lib/legal/index.ts` kimlik notu).
