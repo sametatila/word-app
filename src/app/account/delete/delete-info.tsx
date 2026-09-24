@@ -132,13 +132,13 @@ export async function DeleteAccountInfo() {
 
   /*
     KİMLİK: Play kuralı mağaza listesindeki uygulama ya da geliştirici adını
-    istiyor. Uygulama adı başlıkta; yayıncı mağaza hesabının sahibi, veri
-    sorumlusu silme kararının sahibi. İkisi de gizlilik politikası §1'de aynı
-    rollerle yazılı.
+    istiyor. Uygulama adı başlıkta; geliştirici (hizmet sağlayıcı, veri
+    sorumlusu ve mağaza hesabının sahibi aynı kişi, 1.7) ve Play'de görünen
+    geliştirici adı altında. Gizlilik politikası §1'deki blokla aynı alanlar.
   */
   const identity = [
-    { label: t("del.publisher"), value: e.publisherName },
-    { label: t("del.controller"), value: e.controllerName },
+    { label: t("del.controller"), value: e.providerName },
+    { label: t("del.play_name"), value: e.providerPlayName },
   ].filter((x) => usable(x.value));
 
   /*

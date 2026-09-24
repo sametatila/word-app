@@ -51,11 +51,11 @@ export const PRIVACY_DEFAULT: Record<"tr" | "en" | "de", LegalDocDefault> = {
 
 Bu politika kapsamındaki kişisel verilerin sorumlusu, 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) ve Avrupa Birliği Genel Veri Koruma Tüzüğü (GDPR) anlamında aşağıdaki kişidir: hangi verinin hangi amaçla işleneceğine, ne kadar tutulacağına ve hangi sağlayıcıya gideceğine o karar verir. Politika, Lernomi web uygulamasını (www.lernomi.app) ve {{platforms}} kapsar.
 
-{{entityBlock:controller:contact}}
+{{entityBlock:provider:contact}}
 
 Uygulamayı mağazalarda yayımlayan ve abonelik tahsilatını yürüten taraf ayrı bir kişidir. Yayıncı, veri sorumlusunun talimatı dışında kişisel veri işlemez; Play Console{{ifIos}} ve App Store Connect{{/ifIos}} üzerinden eriştiği sipariş, abonelik ve yorum verisi bakımından **veri işleyen** sıfatını taşır (GDPR m.28, KVKK m.12).
 
-{{entityBlock:publisher}}
+{{entityBlock:provider}}
 
 Sunucular {{hosting}} üzerinde çalışır; veriler orada saklanır. Siteye ve uygulamaya giden trafik sunucuya ulaşmadan önce Cloudflare'in ağından geçer (6. bölüm). Veri sorumlusu Türkiye'de yerleşik değildir; Türkiye'den yapılacak başvurular {{privacyEmailTr}} adresine ya da yukarıdaki yazışma adresine yapılabilir. Hizmet sağlayıcıya ilişkin künye bilgileri [künye sayfasında]({{link:impressum}}) yer alır.
 
@@ -231,11 +231,11 @@ Politika değiştiğinde bu sayfadaki yürürlük tarihi ve sürüm güncellenir
 
 The controller of the personal data covered by this policy, within the meaning of Turkish Law no. 6698 on the Protection of Personal Data (KVKK) and the European Union General Data Protection Regulation (GDPR), is the person identified below: they decide what data is processed for what purpose, how long it is kept and which providers it goes to. The policy covers the Lernomi web app (www.lernomi.app) and {{platforms}}.
 
-{{entityBlock:controller:contact}}
+{{entityBlock:provider:contact}}
 
 The app is published in the app stores and the subscription revenue is collected by a different person. The publisher processes no personal data except on the controller's instructions; for the order, subscription and review data they access through the Play Console{{ifIos}} and App Store Connect{{/ifIos}} they act as a **processor** (Art. 28 GDPR, Art. 12 KVKK).
 
-{{entityBlock:publisher}}
+{{entityBlock:provider}}
 
 The servers run on {{hosting}}; the data is stored there. Traffic to the site and the app passes through Cloudflare's network before it reaches the server (section 6). The controller is not established in Türkiye; applications from Türkiye can be sent to {{privacyEmailTr}} or to the postal address above. The provider identification (Impressum) is on the [imprint page]({{link:impressum}}).
 
@@ -411,11 +411,11 @@ When this policy changes, the effective date and version on this page are update
 
 Verantwortlicher für die von dieser Erklärung erfassten personenbezogenen Daten im Sinne des türkischen Gesetzes Nr. 6698 zum Schutz personenbezogener Daten (KVKK) und der Datenschutz-Grundverordnung der Europäischen Union (DSGVO) ist die unten bezeichnete Person. Diese Person entscheidet, welche Daten zu welchem Zweck verarbeitet, wie lange sie gespeichert und an welche Anbieter sie übermittelt werden. Die Erklärung gilt für die Lernomi-Webanwendung (www.lernomi.app) und {{platforms}}.
 
-{{entityBlock:controller:contact}}
+{{entityBlock:provider:contact}}
 
 Die App wird von einer anderen Person in den App-Stores veröffentlicht, die auch die Abonnementeinnahmen vereinnahmt. Der Herausgeber verarbeitet personenbezogene Daten ausschließlich auf Weisung des Verantwortlichen; für die über die Play Console{{ifIos}} und App Store Connect{{/ifIos}} zugänglichen Bestell-, Abonnement- und Rezensionsdaten handelt er als **Auftragsverarbeiter** (Art. 28 DSGVO, Art. 12 KVKK).
 
-{{entityBlock:publisher}}
+{{entityBlock:provider}}
 
 Die Server laufen bei {{hosting}}; dort werden die Daten gespeichert. Der Datenverkehr zu Website und App läuft durch das Netz von Cloudflare, bevor er den Server erreicht (Abschnitt 6). Der Verantwortliche ist nicht in der Türkei niedergelassen; Anträge aus der Türkei können an {{privacyEmailTr}} oder an die oben genannte Postanschrift gerichtet werden. Die Anbieterkennzeichnung steht im [Impressum]({{link:impressum}}).
 

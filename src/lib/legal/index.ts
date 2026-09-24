@@ -3,35 +3,60 @@
  * üçüncü taraflar. Gizlilik politikası (/privacy), kullanım şartları (/terms) ve Play
  * Veri Güvenliği beyanı (docs/play/data-safety.md) bu listeyle tutarlı olmalı.
  *
- * KİMLİK: İKİ TARAF, İKİ AYRI ROL
+ * KİMLİK: TEK TARAF + AB TEMSİLCİSİ (2026-09-24, sürüm 1.7)
  *
- * Roller eskiden tek kişide toplanıyordu; artık ayrı:
+ * 1.6'ya kadar roller iki kişiye bölünmüştü: veri sorumlusu Dortmund'da
+ * (Samet Atila), yayıncı ve veri işleyen Türkiye'de (Musa Atila). Mağaza
+ * hesapları (Play ve App Store) Türk hesabı ve geliştirici Musa olduğu için
+ * yapı sadeleşti:
  *
- *   - VERİ SORUMLUSU (controller*): amaç ve araçlara karar veren, Almanya'da
- *     yerleşik gerçek kişi. Veri koruma yükümlülüğü onda.
- *   - YAYINCI (publisher*): uygulamayı Google Play'de ve App Store'da
- *     yayımlayan, mağazalardan ödeme alan ve Türkiye'de vergilenen gerçek
- *     kişi. Veri sorumlusunun talimatıyla hareket eden VERİ İŞLEYEN sıfatını
- *     da taşıyor (Play Console ve App Store Connect'te sipariş, abone ve yorum
- *     verisine erişim). Aralarında GDPR m.28 / KVKK m.12 işleme sözleşmesi
- *     gerekiyor.
+ *   - HİZMET SAĞLAYICI = VERİ SORUMLUSU = YAYINCI (provider*): Türkiye'de
+ *     yerleşik gerçek kişi Musa Atila. Amaç ve araçlara o karar veriyor,
+ *     uygulamayı mağazalarda o yayımlıyor, ödemeyi o alıyor, sözleşmenin
+ *     karşı tarafı o. Play'deki görünen ad "RumpusKit" onun hesabı.
+ *   - AB TEMSİLCİSİ (euRepresentative*): Dortmund'da yerleşik Samet Atila,
+ *     GDPR m.27. Veri sorumlusu DEĞİL, veri işleyen de değil; AB'deki
+ *     kullanıcıların ve denetim otoritelerinin muhatabı.
  *
- * Bu ayrımın iki büyük sonucu var ve ikisi de birbirinin aynası:
+ * NEDEN publisher* ALANLARI SİLİNDİ, controller'a EŞİTLENMEDİ. Aynı kişiyi iki
+ * alan kümesinde tutmak panelde iki ayrı düzenlenebilir kopya demekti: biri
+ * değişir, öteki eski adresi basmaya devam eder. Tek küme kaldı. Alanlar
+ * `controller*` değil `provider*` diye YENİDEN ADLANDIRILDI, bilerek: panel
+ * `app_settings["legal.config"]` satırında bütün kimlik nesnesini saklıyor ve
+ * `parseLegalConfig` bilinen anahtarları oradan okuyor. Anahtar adı aynı
+ * kalsaydı, panelden bir kez kaydedilmiş eski bir satır `controllerName`
+ * olarak "Samet Atila"yı basmaya devam ederdi; yeni adlar eski satırı
+ * kendiliğinden devre dışı bırakıyor (eski anahtarlar yok sayılıyor).
  *
- *   1. Veri sorumlusu AB'de yerleşik olduğu için GDPR m.3(1) üzerinden
- *      uygulanıyor, m.3(2) üzerinden değil. m.27 AB TEMSİLCİSİ YÜKÜMLÜLÜĞÜ YOK
- *      (m.27 yalnız m.3(2) hâlinde işliyor). Denetim otoritesi, yerleşim yerine
- *      göre Kuzey Ren-Vestfalya (LDI NRW).
- *   2. Buna karşılık veri sorumlusu Türkiye'de YERLEŞİK DEĞİL ve Türkiye'deki
- *      başvurular için bir veri sorumlusu temsilcisi belirlenmiştir (yayıncı).
- *      VERBİS kaydı YAPILMAYACAK: yıllık çalışan sayısı 50'den az ve mali
- *      bilanço eşiğinin altında kalan veri sorumluları Kurul kararlarıyla kayıt
- *      yükümlülüğünden istisna tutuluyor. Bu istisnanın yurt dışında yerleşik
- *      veri sorumlusuna da uygulanıp uygulanmadığı tartışmalı; karar bilinçli
- *      alındı ve metin kayıtlı olduğunu İDDİA ETMİYOR — yalnız temsilciyi
- *      gösteriyor. Kayıt yapılırsa bu not ve metin birlikte güncellenir.
+ * Bu yapının sonuçları:
  *
- * Vergi tarafı yayıncıya ait: Gelir Vergisi Kanunu mükerrer m.20/B'deki mobil
+ *   1. GDPR artık m.3(1) değil m.3(2) üzerinden uygulanıyor (hizmet AB'deki
+ *     kişilere sunuluyor). m.27 AB TEMSİLCİSİ ZORUNLU; metinlerde kimliği
+ *     gösteriliyor. Tek durak mekanizması (m.56) işlemiyor: her üye devletin
+ *     otoritesi kendi ülkesindeki kullanıcılar için yetkili; LDI NRW yalnız
+ *     temsilcinin bulunduğu eyaletin otoritesi olarak anılıyor.
+ *     Temsilcinin YAZILI GÖREVLENDİRMESİ (m.27(1) "in writing") Musa'nın
+ *     imzalayıp Samet'e vereceği bir belge; metin "yazılı görevlendirmeyle"
+ *     DEMİYOR, yalnız temsilcinin kimliğini gösteriyor.
+ *     TODO(Samet/Musa): yazılı görevlendirmeyi imzala ve sakla.
+ *   2. KVKK'da veri sorumlusu Türkiye'de yerleşik: "Türkiye temsilcisi"
+ *     kavramı KALKTI. VERBİS kaydı YAPILMIYOR: yıllık çalışan sayısı 50'den az
+ *     ve yıllık mali bilanço toplamı Kurul'un belirlediği eşiğin altında
+ *     kalan, ana faaliyeti özel nitelikli veri işlemek olmayan veri
+ *     sorumluları Kurul kararlarıyla kayıttan istisna. Metin kayıtlı olduğunu
+ *     İDDİA ETMİYOR ve VERBİS'ten hiç söz etmiyor.
+ *   3. Sunucular Almanya'da (Netcup) kaldığı için Türkiye'deki kullanıcıların
+ *     verisi YURT DIŞINA AKTARILIYOR (KVKK m.9). Yeterlilik kararı yok;
+ *     dayanak standart sözleşme + 5 iş günü içinde Kurul'a bildirim. İmzalı
+ *     sözleşme olmadığı için metin güvence İDDİA ETMİYOR (1.5 ilkesi), yalnız
+ *     aktarımı söylüyor. TODO(Musa): Netcup ve yurt dışı sağlayıcılarla KVKK
+ *     standart sözleşmesi + bildirim.
+ *   4. AB kullanıcıları açısından veri sorumlusu üçüncü ülkede (Türkiye, AB
+ *     Komisyonu yeterlilik kararı yok) ve verilere oradan erişiyor. Metin bunu
+ *     söylüyor; hangi güvencenin (ör. SCC modül 4) gerektiği hukukçuya
+ *     soruldu, cevap gelmeden güvence yazılmıyor.
+ *
+ * Vergi tarafı hizmet sağlayıcıya (Musa) ait: Gelir Vergisi Kanunu mükerrer m.20/B'deki mobil
  * uygulama geliştiriciliği kazanç istisnası, platformdan kazancı elde eden kişiye
  * uygulanır. İstisnanın koşulları (Türkiye'de banka hesabı, hasılatın yalnız o
  * hesaptan tahsili, istisna belgesi, GVK m.103 dördüncü dilim sınırı) mali
@@ -110,15 +135,11 @@ export const LEGAL_EFFECTIVE_DATE = "2026-09-24";
 export const LEGAL_VERSION = "1.6";
 
 export const LEGAL_ENTITY = {
-  /** Veri sorumlusu: amaç ve araçlara karar veren gerçek kişi (AB'de yerleşik). */
-  controllerName: "Samet Atila",
-  controllerAddress: "Emil-Figge-Str. 9, Zimmer 421, 44227 Dortmund, Almanya",
-
-  /** Yayıncı: Play ve App Store hesabı sahibi, tahsilat tarafı ve veri işleyen (Türkiye'de yerleşik). */
-  publisherName: "Musa Atila",
-  publisherAddress: "Akpınar Mah. Akpınar Merkez Küme Evler No:6, Tufanbeyli, Adana, Türkiye",
-  /** Yayıncının bağlı olduğu vergi dairesi — ticaret sicil/MERSİS yok, tacir değil. */
-  publisherTaxOffice: "Tufanbeyli Vergi Dairesi",
+  /** Hizmet sağlayıcı, veri sorumlusu ve yayıncı: tek gerçek kişi (Türkiye'de yerleşik). */
+  providerName: "Musa Atila",
+  providerAddress: "Akpınar Mah. Akpınar Merkez Küme Evler No:6, Tufanbeyli, Adana, Türkiye",
+  /** Bağlı olduğu vergi dairesi — ticaret sicil/MERSİS yok, tacir değil. */
+  providerTaxOffice: "Tufanbeyli Vergi Dairesi",
   /**
    * Google Play'deki GÖRÜNEN geliştirici adı. Play bireysel hesapta da ayrı bir
    * geliştirici adı kullanmaya izin veriyor ve hesap "RumpusKit" adıyla açık
@@ -126,39 +147,30 @@ export const LEGAL_ENTITY = {
    * adını gösteriyor (Musa Atila), orada ayrı bir ad YOK. Mağaza sayfasındaki
    * ad ile metindeki tarafın bağı kurulabilsin diye kimlik bloğunda basılıyor.
    */
-  publisherPlayName: "RumpusKit",
+  providerPlayName: "RumpusKit",
 
   /**
-   * KVKK veri sorumlusu temsilcisi: Türkiye'de yerleşik olmayan veri sorumlusu
-   * için zorunlu. Bu görevi YAYINCI üstleniyor — aynı kişi, aynı adres; adres
-   * değişirse ikisini birlikte güncelle.
-   *
-   * Temsilci olabilmenin şartı Türkiye'de yerleşik Türk vatandaşı gerçek kişi ya
-   * da Türkiye'de kurulu tüzel kişi olmak; yayıncı bunu karşılıyor. Atama, veri
-   * sorumlusunun yazılı kararıyla yapılıp Kuruma bildiriliyor ve VERBİS kaydı
-   * temsilci üzerinden açılıyor. VERBİS ayrıca bir "irtibat kişisi" istiyor
-   * (Türkiye'de yerleşik Türk vatandaşı); bu alan Sicil'e girilen bir bilgi,
-   * yayımlanan metnin parçası değil.
-   *
-   * 2026-09-23'TE BOŞALTILDI (denetim LEG-7). Metin "temsilci belirlenmiştir"
-   * diyordu ama atama kararının imzalandığına ve Kuruma bildirildiğine dair
-   * hiçbir kayıt yok; kanıtlanamayan bir güvenceyi yayımlamak, olmayan bir
-   * yükümlülüğü yerine getirilmiş göstermek demek. Boş dize satırı sayfadan
-   * düşürüyor (bkz. `isLegalOmitted`), gizlilik §1'in ilgili cümlesi de
-   * nötrleştirildi.
-   *
-   * TODO(Samet): atama kararı imzalanıp Kuruma bildirilince değeri geri koy:
-   *   "Musa Atila, Akpınar Mah. Akpınar Merkez Küme Evler No:6, Tufanbeyli, Adana, Türkiye"
-   * ve gizlilik §1'e (üç dil) "Türkiye'den yapılacak başvurular için veri
-   * sorumlusu temsilcisi belirlenmiştir" cümlesini geri ekle.
+   * GDPR m.27 AB temsilcisi. Veri sorumlusu Birlik'te yerleşik değil ve hizmeti
+   * AB'deki kişilere sunuyor; temsilci, kullanıcıların bulunduğu üye
+   * devletlerden birinde yerleşik olmak zorunda (m.27(3)) — Almanya bunu
+   * karşılıyor. İletişim kanalı ayrı bir alan DEĞİL: `privacyEmailEu`
+   * (aşağıdaki not). Adres değişirse künye ve gizlilik politikası birlikte
+   * değişir, ikisi de buradan okuyor.
    */
-  trRepresentative: "",
+  euRepresentativeName: "Samet Atila",
+  euRepresentativeAddress: "Emil-Figge-Str. 9, Zimmer 421, 44227 Dortmund, Almanya",
 
   /**
    * Veri hakları başvuruları iki ayrı adrese gidiyor çünkü iki ayrı rejim ve iki
    * ayrı süre var: KVKK m.13 otuz gün, GDPR m.12(3) bir ay + gerekirse iki ay
    * uzatma. Türkçe metin KVKK adresini, İngilizce ve Almanca metinler GDPR
    * adresini öne çıkarıyor; hakların anlatıldığı bölümde ikisi de yazılı.
+   *
+   * `privacyEmailEu` 1.7'den beri AB TEMSİLCİSİNİN de iletişim kanalı: GDPR
+   * başvuruları zaten oraya gidiyor ve m.27(4) temsilcinin bu başvuruların
+   * muhatabı olmasını istiyor. Ayrı bir alan açmak aynı kutuya iki ad vermek
+   * olurdu. Anahtar adı değişmedi (metinlerde ve silme sayfasında belirteç).
+   * TODO(Samet): gdpr@ kutusuna temsilci olarak erişimin olduğunu doğrula.
    */
   privacyEmailTr: "kvkk@lernomi.app",
   privacyEmailEu: "gdpr@lernomi.app",

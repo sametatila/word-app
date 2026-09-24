@@ -32,14 +32,14 @@ type Problem = { kind: string; tokens?: string[]; headings?: string[] };
 const DOC_LABEL = { privacy: "Gizlilik politikası", terms: "Kullanım şartları", support: "Destek sayfası" } as const;
 const LOC_LABEL: Record<LegalLocale, string> = { tr: "Türkçe", en: "English", de: "Deutsch" };
 const ENTITY_LABEL: Record<string, string> = {
-  controllerName: "Veri sorumlusu — ad",
-  controllerAddress: "Veri sorumlusu — adres",
-  publisherName: "Yayıncı — ad",
-  publisherAddress: "Yayıncı — adres",
-  publisherTaxOffice: "Yayıncı — vergi dairesi",
-  trRepresentative: "Türkiye temsilcisi (KVKK)",
+  providerName: "Hizmet sağlayıcı / veri sorumlusu — ad",
+  providerAddress: "Hizmet sağlayıcı — adres",
+  providerTaxOffice: "Hizmet sağlayıcı — vergi dairesi",
+  providerPlayName: "Google Play geliştirici adı",
+  euRepresentativeName: "AB temsilcisi (GDPR m.27) — ad",
+  euRepresentativeAddress: "AB temsilcisi — adres",
   privacyEmailTr: "KVKK başvuru adresi",
-  privacyEmailEu: "GDPR başvuru adresi",
+  privacyEmailEu: "GDPR başvuru ve AB temsilcisi adresi",
   supportEmail: "Destek adresi",
   court: "Yetkili mahkeme ili",
   backupRetentionDays: "Yedek saklama (gün)",
@@ -134,14 +134,14 @@ export function LegalAdmin({ config, documents, tokens }: { config: LegalConfig;
       ) : null}
 
       {tab === "identity" ? (
-        <Card title="Kimlik ve iletişim" note="Metinlerde {{controllerName}} gibi belirteçlerle geçiyor. Boş bırakılan alan hiç basılmaz — olmayan bir yükümlülük varmış gibi görünmesin diye.">
+        <Card title="Kimlik ve iletişim" note="Metinlerde {{providerName}} gibi belirteçlerle geçiyor. Boş bırakılan alan hiç basılmaz — olmayan bir yükümlülük varmış gibi görünmesin diye.">
           <div className="flex flex-wrap gap-3">
             {Object.keys(cfg.entity).map((k) => (
               <Txt
                 key={k}
                 label={ENTITY_LABEL[k] ?? k}
                 v={(cfg.entity as Record<string, string>)[k]}
-                w={k.includes("Address") || k === "trRepresentative" ? "100%" : "16rem"}
+                w={k.includes("Address") ? "100%" : "16rem"}
                 on={(v) => setCfg({ ...cfg, entity: { ...cfg.entity, [k]: v } })}
               />
             ))}

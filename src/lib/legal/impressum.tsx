@@ -169,8 +169,8 @@ export function ImpressumBody({ cfg, locale }: { cfg: LegalConfig; locale: Legal
 
         <h2>{t.provider}</h2>
         <p>
-          <Value v={e.controllerName} />
-          {has(e.controllerAddress) ? (<><br /><Value v={localizeAddress(e.controllerAddress, locale)} /></>) : null}
+          <Value v={e.providerName} />
+          {has(e.providerAddress) ? (<><br /><Value v={localizeAddress(e.providerAddress, locale)} /></>) : null}
         </p>
 
         <h2>{t.contact}</h2>
@@ -196,19 +196,14 @@ export function ImpressumBody({ cfg, locale }: { cfg: LegalConfig; locale: Legal
 
         <h2>{t.responsible}</h2>
         <p>
-          <Value v={e.controllerName} />
-          {has(e.controllerAddress) ? (<><br /><Value v={localizeAddress(e.controllerAddress, locale)} /></>) : null}
+          <Value v={e.providerName} />
+          {has(e.providerAddress) ? (<><br /><Value v={localizeAddress(e.providerAddress, locale)} /></>) : null}
         </p>
 
-        {has(e.publisherName) ? (
+        {has(e.providerPlayName) ? (
           <>
             <h2>{t.publisher}</h2>
-            <p>
-              <Value v={e.publisherName} />
-              {has(e.publisherAddress) ? (<><br /><Value v={localizeAddress(e.publisherAddress, locale)} /></>) : null}
-              {has(e.publisherPlayName) ? (<><br />{t.playName}: <Value v={e.publisherPlayName} /></>) : null}
-            </p>
-            <p className="muted">{t.publisherNote}</p>
+            <p>{t.playName}: <Value v={e.providerPlayName} /></p>
           </>
         ) : null}
 

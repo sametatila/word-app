@@ -48,7 +48,7 @@ export function safeHref(href: string): string | null {
 /* ── belirteç sözlüğü ───────────────────────────────────────────────────── */
 
 /**
- * Kimlik alanları — `{{controllerName}}` gibi doğrudan adıyla.
+ * Kimlik alanları — `{{providerName}}` gibi doğrudan adıyla.
  *
  * Liste `LEGAL_ENTITY`den TÜRETİLİYOR, elle yazılmıyor. Önceden iki yerde
  * yazılıydı ve ayrışmanın bedeli sessizdi: `LEGAL_ENTITY`ye eklenen bir alan
@@ -59,7 +59,7 @@ const ENTITY_KEYS = Object.keys(LEGAL_ENTITY) as (keyof typeof LEGAL_ENTITY)[];
 
 /* `ENTITY_KEYS` ile aynı gerekçe: liste elle yazılmıyor, tablodan türetiliyor. */
 const FAIR_USE_KEYS = Object.keys(FAIR_USE) as (keyof typeof FAIR_USE)[];
-const ENTITY_BLOCKS = ["controller", "controller:contact", "publisher"] as const;
+const ENTITY_BLOCKS = ["provider", "provider:contact", "euRepresentative"] as const;
 const LINK_KEYS = Object.keys(LEGAL_PATHS) as (keyof typeof LEGAL_PATHS)[];
 
 /**
@@ -131,47 +131,57 @@ function entityValue(cfg: LegalConfig, key: string): ReactNode {
 
 const ENTITY_LABELS: Record<LegalLocale, Record<string, string>> = {
   tr: {
-    controller: "Veri sorumlusu", publisher: "Yayıncı ve veri işleyen",
+    provider: "Hizmet sağlayıcı ve veri sorumlusu", euRep: "AB temsilcisi (GDPR m.27)",
     address: "Yazışma adresi", taxOffice: "Vergi dairesi", playName: "Google Play'deki geliştirici adı",
-    trRep: "Türkiye veri sorumlusu temsilcisi (KVKK)",
-    privacy: "KVKK başvuruları", privacyEu: "GDPR başvuruları", support: "Destek",
+    privacy: "KVKK başvuruları", privacyEu: "GDPR başvuruları ve AB temsilcisi", repContact: "İletişim", support: "Destek",
   },
   en: {
-    controller: "Data controller", publisher: "Publisher and processor",
+    provider: "Service provider and data controller", euRep: "EU representative (Art. 27 GDPR)",
     address: "Postal address", taxOffice: "Tax office", playName: "Developer name on Google Play",
-    trRep: "Representative in Türkiye (KVKK)",
-    privacy: "KVKK requests (Türkiye)", privacyEu: "GDPR / UK GDPR requests", support: "Support",
+    privacy: "KVKK requests (Türkiye)", privacyEu: "GDPR / UK GDPR requests and EU representative", repContact: "Contact", support: "Support",
   },
   de: {
-    controller: "Verantwortlicher", publisher: "Herausgeber und Auftragsverarbeiter",
+    provider: "Anbieter und Verantwortlicher", euRep: "EU-Vertreter (Art. 27 DSGVO)",
     address: "Postanschrift", taxOffice: "Finanzamt", playName: "Entwicklername bei Google Play",
-    trRep: "Vertreter in der Türkei (KVKK)",
-    privacy: "KVKK-Anträge (Türkei)", privacyEu: "DSGVO- / UK-GDPR-Anträge", support: "Support",
+    privacy: "KVKK-Anträge (Türkei)", privacyEu: "DSGVO- / UK-GDPR-Anträge und EU-Vertreter", repContact: "Kontakt", support: "Support",
   },
 };
 
 /**
  * Kimlik bloğu (KVKK aydınlatma ve 6563 tanıtıcı bilgi zorunlu unsuru).
  *
+ * İki blok var (1.7): hizmet sağlayıcı (veri sorumlusu ve yayıncı aynı kişi)
+ * ve GDPR m.27 AB temsilcisi. Temsilcinin iletişim satırı `privacyEmailEu`:
+ * GDPR başvuruları ile temsilciye ulaşma kanalı aynı kutu (`LEGAL_ENTITY` notu).
+ *
  * Uygulanmayan alan (boş dize, ör. KEP'i olmayan gerçek kişi) hiç basılmıyor:
  * boş bir satır, olmayan bir yükümlülüğü varmış gibi gösterir.
  */
 function EntityBlock({ cfg, locale, party, contact }: {
-  cfg: LegalConfig; locale: LegalLocale; party: "controller" | "publisher"; contact: boolean;
+  cfg: LegalConfig; locale: LegalLocale; party: "provider" | "euRepresentative"; contact: boolean;
 }) {
   const l = ENTITY_LABELS[locale];
   const row = (label: string, key: string) => {
     const node = entityValue(cfg, key);
     return node === null ? null : <><dt key={`${key}-t`}>{label}</dt><dd key={`${key}-d`}>{node}</dd></>;
   };
+  if (party === "euRepresentative") {
+    return (
+      <dl className="entity">
+        <dt>{l.euRep}</dt>
+        <dd>{entityValue(cfg, "euRepresentativeName")}</dd>
+        {row(l.address, "euRepresentativeAddress")}
+        {row(l.repContact, "privacyEmailEu")}
+      </dl>
+    );
+  }
   return (
     <dl className="entity">
-      <dt>{party === "controller" ? l.controller : l.publisher}</dt>
-      <dd>{entityValue(cfg, party === "controller" ? "controllerName" : "publisherName")}</dd>
-      {row(l.address, party === "controller" ? "controllerAddress" : "publisherAddress")}
-      {party === "publisher" ? row(l.taxOffice, "publisherTaxOffice") : null}
-      {party === "publisher" ? row(l.playName, "publisherPlayName") : null}
-      {party === "controller" ? row(l.trRep, "trRepresentative") : null}
+      <dt>{l.provider}</dt>
+      <dd>{entityValue(cfg, "providerName")}</dd>
+      {row(l.address, "providerAddress")}
+      {row(l.taxOffice, "providerTaxOffice")}
+      {row(l.playName, "providerPlayName")}
       {contact ? (
         <>
           {row(l.privacy, "privacyEmailTr")}
@@ -312,7 +322,7 @@ function inline(ctx: Ctx, text: string, keyPrefix: string): ReactNode[] {
 
 /* ── blok ayrıştırma ────────────────────────────────────────────────────── */
 
-const BLOCK_TOKEN_RE = /^\{\{(processorsTable|entityBlock:(?:controller|controller:contact|publisher))\}\}$/;
+const BLOCK_TOKEN_RE = /^\{\{(processorsTable|entityBlock:(?:provider|provider:contact|euRepresentative))\}\}$/;
 
 /** Markdown tablo ayracı satırı: |---|---| */
 const isTableRule = (s: string) => /^\|(\s*:?-{2,}:?\s*\|)+$/.test(s.trim());
@@ -343,7 +353,7 @@ export function renderLegalBody(markdown: string, ctx: Ctx): ReactNode[] {
       const name = bt[1];
       if (name === "processorsTable") out.push(<ProcessorsTable key={key} cfg={ctx.cfg} locale={ctx.locale} />);
       else {
-        const party = name.startsWith("entityBlock:publisher") ? "publisher" : "controller";
+        const party = name.startsWith("entityBlock:euRepresentative") ? "euRepresentative" : "provider";
         out.push(
           <EntityBlock key={key} cfg={ctx.cfg} locale={ctx.locale} party={party} contact={name.endsWith(":contact")} />,
         );

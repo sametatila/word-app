@@ -37,7 +37,7 @@ export const SUPPORT_DEFAULT: Record<"tr" | "en" | "de", LegalDocDefault> = {
 
 ## Kime yazıyorsun
 
-{{entityBlock:publisher}}
+{{entityBlock:provider}}
 
 Uygulamayı mağazalarda yayımlayan ve destek yükümlülüğünü taşıyan taraf. Veri sorumlusu ayrı bir kişidir ve gizlilik politikasının 1. bölümünde yazılıdır.
 
@@ -69,7 +69,7 @@ Hizmet sağlayıcının künyesi (Impressum): [künye sayfası]({{link:impressum
 
 ## Who you are writing to
 
-{{entityBlock:publisher}}
+{{entityBlock:provider}}
 
 The party that publishes the app in the stores and carries the support obligation. The data controller is a different person and is named in section 1 of the privacy policy.
 
@@ -101,7 +101,7 @@ Provider identification (Impressum): [imprint page]({{link:impressum}}).
 
 ## An wen du schreibst
 
-{{entityBlock:publisher}}
+{{entityBlock:provider}}
 
 Die Partei, die die App in den Stores veröffentlicht und die Supportpflicht trägt. Der Verantwortliche im Datenschutzsinn ist eine andere Person und in Abschnitt 1 der Datenschutzerklärung genannt.
 

@@ -44,9 +44,9 @@ export const TERMS_DEFAULT: Record<"tr" | "en" | "de", LegalDocDefault> = {
 
 Bu sözleşme, aşağıda kimliği verilen taraflar ("Lernomi", "biz") ile Lernomi web uygulamasını (www.lernomi.app) ya da {{platforms}} kullanan kişi ("sen") arasındadır. İki kişiyiz: hizmeti tasarlayan, işleten ve verinden sorumlu olan taraf ile uygulamayı mağazalarda yayımlayan ve abonelik tahsilatını yürüten taraf. Hesap açarak ya da uygulamayı kullanarak bu şartları ve [Gizlilik Politikası]({{link:privacy}})'nı kabul etmiş olursun; 6563 sayılı Kanun uyarınca bu metin sözleşme kurulmadan önce erişilebilir durumdadır ve saklanabilir. Kabul etmiyorsan uygulamayı kullanma.
 
-{{entityBlock:controller:contact}}
+{{entityBlock:provider:contact}}
 
-{{entityBlock:publisher}}
+{{entityBlock:provider}}
 
 ## 2. Hizmet
 
@@ -181,9 +181,9 @@ Uygulamayı App Store'dan indirdiysen aşağıdaki maddeler de geçerlidir. Bunl
 
 This agreement is between the parties identified below ("Lernomi", "we") and the person using the Lernomi web app (www.lernomi.app) or {{platforms}} ("you"). There are two of us: the person who designs and operates the service and is responsible for your data, and the person who publishes the app in the app stores and collects the subscription revenue. By creating an account or using the app you accept these terms and the [Privacy Policy]({{link:privacy}}). Under Turkish Law no. 6563 this text is accessible and can be stored before the contract is concluded. If you do not accept it, do not use the app.
 
-{{entityBlock:controller:contact}}
+{{entityBlock:provider:contact}}
 
-{{entityBlock:publisher}}
+{{entityBlock:provider}}
 
 ## 2. The service
 
@@ -318,9 +318,9 @@ When we update these terms, the effective date and version change; we announce m
 
 Diese Vereinbarung besteht zwischen den unten bezeichneten Parteien ("Lernomi", "wir") und der Person, die die Lernomi-Webanwendung (www.lernomi.app) oder {{platforms}} nutzt ("du"). Wir sind zwei Personen: diejenige, die den Dienst gestaltet, betreibt und für deine Daten verantwortlich ist, und diejenige, die die App in den App-Stores veröffentlicht und die Abonnementeinnahmen vereinnahmt. Mit der Erstellung eines Kontos oder der Nutzung der App nimmst du diese Bedingungen und die [Datenschutzerklärung]({{link:privacy}}) an. Nach dem türkischen Gesetz Nr. 6563 ist dieser Text vor Vertragsschluss zugänglich und speicherbar. Wenn du ihn nicht annimmst, nutze die App nicht.
 
-{{entityBlock:controller:contact}}
+{{entityBlock:provider:contact}}
 
-{{entityBlock:publisher}}
+{{entityBlock:provider}}
 
 ## 2. Der Dienst
 
