@@ -59,7 +59,10 @@ export async function GET(request: Request) {
      data-theme="${theme}"
      data-callback="lernomiToken"
      data-expired-callback="lernomiExpired"
-     data-error-callback="lernomiError"></div>
+     data-error-callback="lernomiError"
+     data-before-interactive-callback="lernomiInteractive"
+     data-after-interactive-callback="lernomiInteractiveDone"
+     data-unsupported-callback="lernomiUnsupported"></div>
 <script>
   (function () {
     function send(msg) {
@@ -69,6 +72,15 @@ export async function GET(request: Request) {
     window.lernomiExpired = function () { send({ type: "expired" }); };
     // \`true\`: hatayı Turnstile'ın kendi arayüzü göstersin, sayfa çökmesin.
     window.lernomiError = function () { send({ type: "error" }); return true; };
+    /*
+      Managed kip şüphelendiği ziyaretçiye "Gerçek kişi olduğunuzu doğrulayın"
+      kutusunu gösteriyor (iPad simülatöründe ölçüldü, IOS-8). Uygulama bunu
+      bilmezse altında "doğrulama sürüyor" yazmaya devam ediyor ve kullanıcı
+      dokunmak yerine bekliyor. Eski uygulamalar bilmediği türü yok sayıyor.
+    */
+    window.lernomiInteractive = function () { send({ type: "interactive" }); };
+    window.lernomiInteractiveDone = function () { send({ type: "interactive-done" }); };
+    window.lernomiUnsupported = function () { send({ type: "error" }); };
     // Uygulama jetonu harcadıktan sonra buradan yenisini istiyor.
     window.lernomiReset = function () { if (window.turnstile) window.turnstile.reset("#box"); };
   })();
