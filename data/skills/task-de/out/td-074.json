@@ -1,0 +1,17 @@
+[
+ { "tr": "“Not all of the volunteers stayed.” — Bazı gönüllülerin ayrıldığını söyler mi?", "kind": "question.text", "de": "“Not all of the volunteers stayed.” — Sagt der Satz, dass einige Freiwillige gegangen sind?" },
+ { "tr": "„It's time we asked the owner.“ — Bu cümle geçmişte olmuş bir şeyi mi anlatıyor?", "kind": "question.text", "de": "„It's time we asked the owner.“ — Erzählt dieser Satz etwas, das in der Vergangenheit geschehen ist?" },
+ { "tr": "“I was wondering if you could help.” — Bu cümle geçmişteki bir düşünceyi anlatır.", "kind": "question.text", "de": "“I was wondering if you could help.” — Dieser Satz beschreibt einen Gedanken aus der Vergangenheit." },
+ { "tr": "“Only residents can park here” ile “Residents can park only here” aynı anlamdadır.", "kind": "question.text", "de": "“Only residents can park here” und “Residents can park only here” bedeuten dasselbe." },
+ { "tr": "“The school is to stop grading homework.” — Bu cümle resmî bir kararı bildirir mi?", "kind": "question.text", "de": "“The school is to stop grading homework.” — Meldet dieser Satz eine amtliche Entscheidung?" },
+ { "tr": "„When we arrived, the ferry left.“ — Bu cümle vapurun biz gelmeden gittiğini söyler mi?", "kind": "question.text", "de": "„When we arrived, the ferry left.“ — Sagt dieser Satz, dass die Fähre abgefahren war, bevor wir kamen?" },
+ { "tr": "„The results will be sent by someone next week.“ — „by someone“ cümleye bilgi katıyor mu?", "kind": "question.text", "de": "„The results will be sent by someone next week.“ — Fügt „by someone“ dem Satz eine Information hinzu?" },
+ { "tr": "“I'd have thought the second act was the problem.” — Konuşan görüşünü yumuşatarak söylüyor.", "kind": "question.text", "de": "“I'd have thought the second act was the problem.” — Die sprechende Person sagt ihre Meinung abgeschwächt." },
+ { "tr": "“A limit that just moves the crowd solves nothing.” — Burada “just” “yalnızca” anlamındadır.", "kind": "question.text", "de": "“A limit that just moves the crowd solves nothing.” — Hier bedeutet “just” so viel wie “nur”." },
+ { "tr": "“In the event that the coordinator leaves, a volunteer will take over.” — Bu cümle doğru mu?", "kind": "question.text", "de": "“In the event that the coordinator leaves, a volunteer will take over.” — Stimmt dieser Satz?" },
+ { "tr": "„We had been walking for three hours when it started to rain.“ — Yağmur başladığında yürüyüş sürüyor muydu?", "kind": "question.text", "de": "„We had been walking for three hours when it started to rain.“ — War die Wanderung noch im Gang, als der Regen einsetzte?" },
+ { "tr": "“Such was the demand that the list closed.” ile “The demand was so great that the list closed.” aynı anlamdadır.", "kind": "question.text", "de": "“Such was the demand that the list closed.” und “The demand was so great that the list closed.” bedeuten dasselbe." },
+ { "tr": "Yes, please.", "kind": "question.option", "de": "Yes, please." },
+ { "tr": "Yes, I would.", "kind": "question.option", "de": "Yes, I would." },
+ { "tr": "No, not at all.", "kind": "question.option", "de": "No, not at all." }
+]
