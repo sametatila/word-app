@@ -111,7 +111,7 @@ const SKIP_CONTENT = [
   "game/why.ts",
   // Elle yazılmış ünite soruları — öğrenme içeriği, anadil açıklamaları `{ tr, en }`
   // olarak dosyanın içinde. Webde karşılığı `lib/immersion/content` (web tarayıcısının
-  // SKIP listesinde). Kapısı: `check:parity` "VERİ BAŞI"–"VERİ SONU" birebir.
+  // SKIP listesinde). Kapısı: `check:parity` "de-a1-u01 verisi" (VERİ BAŞI–VERİ SONU birebir).
   "data/authoredUnits.ts",
 ].map((p) => path.join(SRC, ...p.split("/")));
 
