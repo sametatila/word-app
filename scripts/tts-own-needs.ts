@@ -16,6 +16,7 @@ import { OWN_CHARACTERS } from "../src/lib/tts/voices";
 import { skipWord } from "../src/lib/voice-intent";
 import { firstWordsFor } from "../src/lib/first-words";
 import { walkLines } from "./tts-walk-jobs";
+import { NOT_PRACTICED_WORD_IDS } from "../src/lib/practice-words";
 
 /** `words` tablosunun sese giden sütunları (veritabanı adlarıyla). */
 export type WordRow = {
@@ -45,6 +46,9 @@ export function ownNeeds(rows: WordRow[]): Need[] {
     const asRound = (r: WordRow) => ({ ...r, deGloss: r.de_gloss, beispielTr: null, beispielEn: null }) as never;
     for (const w of pool) {
       push(w, "word", target, withArtikel(w));
+      // Alıştırmaya girmeyen madde (artikel, ön ek) yalnız sözlükte duruyor:
+      // orada hoparlör yalnız kelimenin kendisini okuyor.
+      if (NOT_PRACTICED_WORD_IDS.includes(w.id)) continue;
       if (w.artikel) {
         const pl = pluralChoices(w.de, w.formen, 3);
         if (pl) push(w, "plural", target, `die ${pl.answer}`);
