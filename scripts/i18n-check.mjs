@@ -280,6 +280,7 @@ const DYNAMIC_WEB = [/^band\./, /^push\.rem_.*_named$/];
     - `promo.*`      → `promo.${reason}` (iki cagri yeri)
     - `league.tier_*` → `league.tier_${LEAGUE_TIERS[t]}`
     - `band.*`, `push.rem_*_named` → web denetimindeki ayni aileler
+    - `usage.*`      → `usage.${c}` (kelime kartinin kullanim bilgisi, `components/games/types.ts`)
 
   KAYITLI BORC (`HAZIR_AMA_BAGLANMAMIS`): premium kota kapisinin cumleleri.
   `lib/premium/access.ts` her karari bir `reason` ile donduruyor
@@ -291,7 +292,7 @@ const DYNAMIC_WEB = [/^band\./, /^push\.rem_.*_named$/];
   bir soz varligi; listede duruyorlar cunku bugun hicbir sey soylemiyorlar.
   Liste UZAYAMAZ: yeni bir olu anahtar dogarsa denetim duser.
 */
-const DINAMIK_ORTAK = [/^genre\./, /^promo\./, /^league\.tier_/, /^band\./, /^push\.rem_.*_named$/];
+const DINAMIK_ORTAK = [/^genre\./, /^promo\./, /^league\.tier_/, /^band\./, /^push\.rem_.*_named$/, /^usage\./];
 const HAZIR_AMA_BAGLANMAMIS = new Set([
   /* `gate.quota_left_day` ve `gate.quota_spent_total` 2026-09-25'te bağlandı:
      haftalık hak kalkınca `gate-note` toplam/gün anahtarlarına geçti. */
