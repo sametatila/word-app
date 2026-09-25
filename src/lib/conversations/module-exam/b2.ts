@@ -552,8 +552,8 @@ export const B2_EXAMS: ModuleExamPlan[] = [
     level: "B2",
     index: 7,
     code: "B2.8",
-    titleDe: "Geld und Karriere",
-    titleTr: "Para ve kariyer",
+    titleDe: "Geld und Karrierestrategie",
+    titleTr: "Para ve kariyer stratejisi",
     focus: [
       { de: "Konjunktiv II", tr: "Ich hätte mir … vorgestellt" },
       { de: "Nebensatz mit sofern", tr: "koşullu söz" },
@@ -704,8 +704,8 @@ export const B2_EXAMS: ModuleExamPlan[] = [
     level: "B2",
     index: 9,
     code: "B2.10",
-    titleDe: "Formelle Korrespondenz und B2-Abschluss",
-    titleTr: "Resmî yazışma ve B2 kapanışı",
+    titleDe: "Formeller Schriftverkehr und Abschluss",
+    titleTr: "Resmî yazışma ve kapanış",
     focus: [
       { de: "Nominalisierung", tr: "Nach Erhalt der Anlage …" },
       { de: "Konjunktiv II", tr: "Wir wären Ihnen dankbar …" },

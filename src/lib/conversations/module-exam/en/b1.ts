@@ -171,8 +171,8 @@ export const EN_B1_EXAMS: ModuleExamPlan[] = [
     level: "B1",
     index: 2,
     code: "B1.3",
-    titleDe: "Reason and result",
-    titleTr: "Bağlaç ustalığı",
+    titleDe: "Linking ideas",
+    titleTr: "Cümleleri bağlamak",
     focus: [
       { de: "because / so / since / therefore", tr: "sebep ve sonuç" },
       { de: "in order to / so that", tr: "amaç bildirmek" },
@@ -247,7 +247,7 @@ export const EN_B1_EXAMS: ModuleExamPlan[] = [
     index: 3,
     code: "B1.4",
     titleDe: "Describing and deciding",
-    titleTr: "İlgi cümleleri",
+    titleTr: "Tarif etmek ve karar vermek",
     focus: [
       { de: "who / which / that / whose", tr: "kişiyi ve şeyi tanımlamak" },
       { de: "the place where …", tr: "yeri tanımlamak" },

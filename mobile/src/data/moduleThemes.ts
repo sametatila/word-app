@@ -39,7 +39,7 @@ const BY_COURSE: Record<string, Record<string, string[]>> = {
   en: {
     A1: ["Tanışma ve ben", "Aile ve insanlar", "Yeme-içme", "Günlük düzen", "Alışveriş", "Şehirde", "Ev ve yaşam", "Boş zaman", "Sağlık ve vücut", "İletişim ve geçmişe ilk adım"],
     A2: ["Geçmişi anlatmak", "Benim hikâyem", "Sağlık", "Ev ve mahalle", "İş hayatı", "Alışveriş ve hizmetler", "Seyahat", "Kutlamalar ve ilişkiler", "Medya ve teknoloji", "Şehir ve resmî işler"],
-    B1: ["İş dünyası", "Ev ve kira dünyası", "Bağlaç ustalığı", "İlgi cümleleri", "Bürokrasi", "Eğitim ve gelişim", "Fikir ve tartışma", "Sağlık sistemi", "Çevre ve şehir yaşamı", "Duygular ve hayaller"],
+    B1: ["İş dünyası", "Ev ve kira dünyası", "Cümleleri bağlamak", "Tarif etmek ve karar vermek", "Bürokrasi", "Eğitim ve gelişim", "Fikir ve tartışma", "Sağlık sistemi", "Çevre ve şehir yaşamı", "Duygular ve hayaller"],
     B2: ["Profesyonel iletişim", "Müzakere ve şikâyet", "Edilgenin bütün hâlleri", "Medya ve aktarılan söz", "Bilim ve teknoloji", "Toplum ve ekonomi", "Kültür ve sanat", "Para ve kariyer stratejisi", "İnsan ilişkileri ve psikoloji", "Resmî yazışma ve kapanış"],
     C1: ["Üslup ve kayıt", "Tartışma ve karşı çıkma", "Hukuk ve sözleşme dili", "Edebiyat ve yorum", "Göç, aidiyet ve kültür", "Çalışma dünyası ve toplu sözleşme", "Toprak, gıda ve tarım", "İklim ve kent", "Ekonomi ve finans", "Kanıt, yargı ve seçim"],
   },
@@ -129,6 +129,8 @@ const NATIVE: Record<"en" | "de", Record<string, string>> = {
     "İklim ve kent": "Climate and the city",
     "Ekonomi ve finans": "Economy and finance",
     "Kanıt, yargı ve seçim": "Evidence, judgement and choice",
+    "Cümleleri bağlamak": "Linking ideas",
+    "Tarif etmek ve karar vermek": "Describing and deciding",
   },
   de: {
     "Tanışma ve ben": "Vorstellen und ich",
@@ -200,6 +202,8 @@ const NATIVE: Record<"en" | "de", Record<string, string>> = {
     "İklim ve kent": "Klima und Stadt",
     "Ekonomi ve finans": "Wirtschaft und Finanzen",
     "Kanıt, yargı ve seçim": "Beweis, Urteil und Wahl",
+    "Cümleleri bağlamak": "Gedanken verbinden",
+    "Tarif etmek ve karar vermek": "Beschreiben und entscheiden",
   },
 };
 

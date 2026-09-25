@@ -90,7 +90,7 @@
  { "tr": "Bir aile kiralık daireyi geziyor.", "kind": "listening.situation", "de": "Eine Familie besichtigt eine Mietwohnung." },
  { "tr": "Bir arkadaşını teselli ediyorsun.", "kind": "speaking.situation", "de": "Du tröstest einen Freund." },
  { "tr": "Bir hedefi etiketten ayırıyorsun.", "kind": "speaking.situation", "de": "Du trennst ein Ziel von einem Etikett." },
- { "tr": "Çalışma dünyası ve toplu sözleşme", "kind": "plan.title", "de": "Arbeitswelt und Tarifverhandlung" },
+ { "tr": "Çalışma dünyası ve toplu sözleşme", "kind": "plan.title", "de": "Arbeitswelt und Tarifverhandlungen" },
  { "tr": "En az üç geçmiş zaman cümlesi kur", "kind": "writing.checklist", "de": "Bilde mindestens drei Sätze in der Vergangenheit" },
  { "tr": "Erken öğüt vermeden bir öneri yaz", "kind": "writing.checklist", "de": "Schreib einen Vorschlag ohne voreiligen Rat" },
  { "tr": "Gidiş dönüş lütfen. Peron nerede?", "kind": "turn", "de": "Hin und zurück, bitte. Wo ist das Gleis?" },

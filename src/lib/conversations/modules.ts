@@ -162,8 +162,8 @@ export const MODULE_THEMES: Record<string, Record<string, string[]>> = {
     B1: [
       "İş dünyası",
       "Ev ve kira dünyası",
-      "Bağlaç ustalığı",
-      "İlgi cümleleri",
+      "Cümleleri bağlamak",
+      "Tarif etmek ve karar vermek",
       "Bürokrasi",
       "Eğitim ve gelişim",
       "Fikir ve tartışma",
@@ -279,6 +279,8 @@ export const MODULE_THEMES_NATIVE: Partial<Record<NativeLang, Record<string, str
     "İklim ve kent": "Climate and the city",
     "Ekonomi ve finans": "Economy and finance",
     "Kanıt, yargı ve seçim": "Evidence, judgement and choice",
+    "Cümleleri bağlamak": "Linking ideas",
+    "Tarif etmek ve karar vermek": "Describing and deciding",
   },
   de: {
     "Tanışma ve ben": "Vorstellen und ich",
@@ -348,6 +350,8 @@ export const MODULE_THEMES_NATIVE: Partial<Record<NativeLang, Record<string, str
     "İklim ve kent": "Klima und Stadt",
     "Ekonomi ve finans": "Wirtschaft und Finanzen",
     "Kanıt, yargı ve seçim": "Beweis, Urteil und Wahl",
+    "Cümleleri bağlamak": "Gedanken verbinden",
+    "Tarif etmek ve karar vermek": "Beschreiben und entscheiden",
   },
 };
 

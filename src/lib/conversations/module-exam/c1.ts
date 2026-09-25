@@ -96,8 +96,8 @@ export const C1_EXAMS: ModuleExamPlan[] = [
     level: "C1",
     index: 1,
     code: "C1.2",
-    titleDe: "Modalpartikeln und Ton",
-    titleTr: "Kip parçacıkları ve ton",
+    titleDe: "Modalpartikeln",
+    titleTr: "Kip parçacıkları",
     focus: [
       { de: "doch, ja, mal", tr: "davet, şaşkınlık, yumuşatma" },
       { de: "eben, halt, schon", tr: "kabullenme ve teselli" },
@@ -171,8 +171,8 @@ export const C1_EXAMS: ModuleExamPlan[] = [
     level: "C1",
     index: 2,
     code: "C1.3",
-    titleDe: "Rhetorik und Vortrag",
-    titleTr: "Retorik ve sunum",
+    titleDe: "Rhetorik und Präsentationskunst",
+    titleTr: "Retorik ve sunum sanatı",
     focus: [
       { de: "Inversion zur Hervorhebung", tr: "Selten habe ich …" },
       { de: "Dreierfigur und Pause", tr: "Kurz, klar, überzeugend" },
@@ -703,8 +703,8 @@ export const C1_EXAMS: ModuleExamPlan[] = [
     level: "C1",
     index: 9,
     code: "C1.10",
-    titleDe: "Meisterszenen und C1-Abschluss",
-    titleTr: "Ustalık sahneleri ve C1 kapanışı",
+    titleDe: "Meisterszenen",
+    titleTr: "Ustalık sahneleri",
     focus: [
       { de: "Funktionsverbgefüge", tr: "Maßnahmen ergreifen / in Kraft setzen" },
       { de: "Konjunktiv II in der Verhandlung", tr: "Unser letztes Wort wäre …" },

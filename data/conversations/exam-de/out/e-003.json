@@ -90,7 +90,7 @@
  { "tr": "saat söylemek ve sormak", "kind": "focus", "de": "die Uhrzeit sagen und erfragen" },
  { "tr": "Sebzeli pilav kaç para?", "kind": "question", "de": "Was kostet der Reis mit Gemüse?" },
  { "tr": "Son satırın vurgusu ne?", "kind": "question", "de": "Worauf zielt die letzte Zeile?" },
- { "tr": "Tartışma ve karşı çıkma", "kind": "plan.title", "de": "Widerspruch ohne Bruch" },
+ { "tr": "Tartışma ve karşı çıkma", "kind": "plan.title", "de": "Debatte und Widerspruch" },
  { "tr": "Telefonda bir sorun var", "kind": "listening.title", "de": "Mit diesem Handy stimmt etwas nicht" },
  { "tr": "Uzmana sevk istiyorsun.", "kind": "speaking.situation", "de": "Du bittest um eine Überweisung." },
  { "tr": "What the play does is …", "kind": "focus", "de": "What the play does is …" },

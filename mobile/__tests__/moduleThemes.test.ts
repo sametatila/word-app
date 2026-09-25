@@ -62,7 +62,10 @@ test("her temanın İngilizcesi ve Almancası var", () => {
     return new Map([...body.matchAll(/"([^"]+)":\s*"([^"]+)"/g)].map((m) => [m[1], m[2]] as const));
   };
   const all = new Set(["de", "en"].flatMap((id) => Object.values(course(webTable, id)).flat()));
-  expect(all.size).toBe(67);
+  /* 69: İngilizce B1'in 3. ve 4. modülü 2026-09-25'te içeriklerine göre
+     adlandırıldı ("Cümleleri bağlamak", "Tarif etmek ve karar vermek");
+     Almanca kurs eski adlarını taşıdığı için benzersiz tema iki arttı. */
+  expect(all.size).toBe(69);
   for (const lang of ["en", "de"] as const) {
     const map = dict(lang);
     const missing = [...all].filter((t) => !map.get(t)?.trim());
