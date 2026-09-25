@@ -135,6 +135,69 @@ fonksiyonla hesaplanır, web ve mobil aynı bilgiyi gösterir.
 (tamamla + 7 günlük seri) açıkça yazılır. Premium'daki sınırlar "sınırsız" denmeden "kötüye
 kullanımı önleyen günlük üst sınır" diye anılır (App Store 3.1.2), sayıları Premium ekranında.
 
+### 2.1 Uygulama (2026-09-25) — kod bu kararları nasıl tutuyor
+
+**Formül (tek yer `src/lib/premium/unlock.ts`, saf, `test:premium`):**
+izin verilen = taban + bonus × k, k = min(⌊en uzun seri ÷ 7⌋, tam bitirilmiş dilim
+sayısı[, `maxTiers`]). İlk dilim tabandır; ikinci dilim ancak tabandaki hakların HEPSİ
+bitirilince VE en uzun seri 7'ye varınca açılır, üçüncüsü ikinci dilim de bitince ve seri
+14'e varınca. Seri tek başına açmaz, bitirmek tek başına açmaz. Ölçü `longest_streak`:
+kazanılan hak geri alınmaz. Kademe tavanı `maxTiers` (panel), varsayılan **0 = sınırsız**
+(karar yok).
+
+**Sayaçlar — hepsi `usage_counters`, hepsi ayrı:**
+
+| Yüzey | Kullanılan hak (ömürlük) | Sahiplenme işareti | "Bitirmek" |
+|---|---|---|---|
+| Patika Konuşma | `conversation:<SEVİYE>` | `conversation_owned:<SEVİYE>:<ders>` | dersin bitmesi (`user_lessons` satırı, `/api/lesson`) |
+| Patika Yazma | `writing_lesson:<SEVİYE>` | `owned_lesson:<egzersiz>` | ilk değerlendirme (sahiplenmek = değerlendirilmiş gönderim) |
+| Beceriler yazma | `writing_skill:<SEVİYE>` | `skill_ai:<egzersiz>` | ilk değerlendirme |
+| Beceriler konuşma (B1+ monolog) | `speaking_skill:<SEVİYE>` | `skill_ai:<egzersiz>` | ilk değerlendirme |
+| Deneme sınavı | — (açık kâğıt = sıradaki ilk N) | — | kâğıdın bitmesi (`mock_exam_attempts.finished_at`) |
+| Yürüyüş modu | `walk_sessions` (gün, UTC) | — | — |
+
+Hak maddenin İLK yapay zekâ kullanımında düşer ve madde sahiplenilir; sahiplenilmiş madde
+hak bitse de açık kalır, yeniden açmak hak yemez (`claimTiered`: önce işaret, sonra seviye
+sayacı izin verilen sayıyla atomik; sayaç doluysa işaret geri alınır). Seviye maddenin
+KENDİ seviyesi, istemcinin gönderdiği değil. Sahiplenilmemiş (senaryolu) bir dersi bitirmek
+dilimi doldurmaz.
+
+**Nerede düşüyor:**
+- Patika Konuşma: `/api/roleplay` ilk turu (ders kimliğiyle). Puanlı kısım ("Sınav olarak
+  dene", `/api/assess` `kind: roleplay`) AYNI hakkı kullanır, ayrı hak düşmez.
+- Patika Yazma ve Beceriler: `/api/assess`, madde `exerciseId`den çözülür.
+- **Modül/seviye sınavı yazma bölümü hak DÜŞÜRMEZ** (web kimlik gönderse de mobil göndermese
+  de): sınav Patika'nın ölçme adımı, tablo onu kotaya bağlamıyor; yalnız kötüye kullanım
+  tavanları (günde 120 çağrı, 60 değerlendirme).
+- Yürüyüş: `/api/session?walk=1` oturumu açar. **Oturum penceresi 30 dakika**: oturum
+  başladıktan sonraki 30 dakikadaki her yürüyüş isteği (tur sonunda "devam", ekrana dönüp
+  yeniden yükleme) aynı oturum sayılır, hak yemez. Ölçü sunucunun saati; istemcinin "devam"
+  demesine bakılmaz. 4. oturum 403 → kilit + paywall. Ekran kapalı yol (`/api/stt`) yalnız
+  premium; kelime tavanı oturum tavanı × 40.
+
+**SENARYOLU YOL İSTİSNASI.** Misafir ve yapay zekâ iznini REDDEDEN (`declined`) kullanıcı
+Konuşma adımını bugünkü gibi senaryolu (yapay zekâsız) konuşmayla yapar; adım kilitlenmez ve
+hak düşmez. Sebep: izin zorlanamaz (App Store 5.1.2(i)) ve senaryolu yolun maliyeti yok.
+Hakkı bitmiş ama izin vermiş kullanıcı senaryoluya DÜŞMEZ, kilidi görür (paywall + "nasıl
+açılır"). Kapı sunucuda: misafir `/api/roleplay`e hiç giremiyor (403 account_required), izni
+reddeden rıza kapısında duruyor (403 consent); ikisi de kotaya varmıyor.
+
+**Premium:** kademe yok. Yazma/konuşma değerlendirmesi alıştırma başına bir kez günlük
+`aiPracticePerDay` (30) tavanına sayılır; Konuşma adımının tavanı sohbet mesajı (günde 300,
+`lib/quotas`); yürüyüş `fairUse.walkSessionsPerDay` (20) oturum, AYNI sayaçla gerçekten
+sayılıyor (eski "günde 20 tur" hiçbir yerde sayılmıyordu). Paywall bunları "kötüye kullanımı
+önleyen günlük üst sınır" diye yazar (`plan.pro_fair_use`).
+
+**Kilit açma görünümü:** `/api/premium/status` → `unlock` (bütün seviyeler tek çağrıda:
+kalan hak, bitir x/y, seri x/7, tahmini gün, sahiplenilmiş maddeler). Web ve mobil aynı
+sayıdan aynı cümleyi kurar.
+
+**Geriye uyum:** üretimde `app_settings` › `premium.config` satırı yok (2026-09-25 ölçüldü),
+kod varsayılanı geçerli. Eski kayıttaki `weeklyAiPractice`, `streakMaxTiers`,
+`free.pocketWalksPerDay`, `fairUse.pocketWalksPerDay`, `mock.unlockPct`,
+`mock.unlockOnComplete` yok sayılır. Durum ucu eski sürümler için `fairUse.pocketWalksPerDay`
+takma adını ve `gates.pocket_walk`u taşımaya devam ediyor.
+
 ## 2a. Ürün kararları (2026-09-08'de verildi) — TARİHÇE, yerini §2 aldı
 
 | | Ücretsiz | Premium |
@@ -459,10 +522,13 @@ npm run db:check                 # şema ↔ kod sapması var mı
 Buradaki her değer **canlıda geçerli**; kod değişikliği veya mağaza sürümü
 gerekmiyor (en geç 30 saniyede üç platformda yürürlükte).
 
-- **Ücretsiz katman**: kotalar. `0` = "bu özellik ücretsizde hiç yok".
-- **Adil kullanım tavanı**: premium'un günlük tavanı. Paywall'da kullanıcıya
-  yazılıyor — değiştirirsen metin de kendiliğinden değişir.
-- **Deneme sınavı paketleri**: paket boyu, açan yüzde, "bitirmek de açsın".
+- **Ücretsiz katman**: seviye başına tabanlar (Patika Konuşma, Patika Yazma,
+  Beceriler konuşma/yazma, deneme sınavı), dilim başına ek hak, seri adımı, kademe
+  tavanı (0 = sınırsız), günde yürüyüş oturumu. `0` = "bu özellik ücretsizde hiç yok".
+- **Kötüye kullanım tavanı**: premium'un günlük tavanı (yürüyüş oturumu,
+  değerlendirme). Paywall'da kullanıcıya yazılıyor — değiştirirsen metin de
+  kendiliğinden değişir. Sohbet mesajı tavanı kodda sabit (300).
+- **Deneme sınavı paketleri**: paket boyu (paketi bitirince sonraki açılır).
 - **Referans**: ödül günü, kişi başı tavan.
 - **Planlar ve fiyat bilgisi**: ürün kimlikleri, deneme süresi ve **vitrin**
   fiyatları. ⚠️ Buradaki fiyatlar **mağazadaki fiyatı değiştirmez**; mobilde

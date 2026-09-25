@@ -42,23 +42,26 @@ satırlık kanıt tablosu oturum çıktısında; kararlar:
 - "8.500'den fazla kelime" (Almanca 8.707; İngilizce "7.000'den fazla", 7.175).
 - "HESAPSIZ BAŞLA" paragrafı kalıyor (hesapsız başlama, ilerlemenin hesaba taşınması, aynı
   hesap telefon/tablet/web, hesap isteyen özellikler).
-- Ücretsiz değerlendirme kotası seri mekaniğiyle somut anlatılır (canlı: 2 konuşma + 2 yazma;
-  her 7 günlük seride +2, en çok 5 kademe; sonra haftada 2). Panelde sayı değişirse metin de.
+- Ücretsiz haklar "bitir + seri" mekaniğiyle somut anlatılır (2026-09-25 kararı, kod varsayılanı:
+  seviye başına Patika 2 Konuşma + 2 Yazma, Beceriler 2 konuşma + 2 yazma, 1 deneme sınavı;
+  açık olanları bitirip 7 günlük seri yapınca +2 / deneme +1, sonra her 7 günlük seride
+  yeniden; kademe tavanı yok; haftalık yenilenen hak KALKTI). Panelde sayı değişirse metin de.
 - Düzeltilen yanlış/yanıltıcı iddialar: rol yapma "daha doğal söyleyiş önermez" (yalnız dil
   bilgisi düzeltir + takılınca 3 öneri; `src/lib/lessons/roleplay.ts` üslup kuralı); Premium'da
   da deneme kâğıtları üçerli paketlerle sırayla açılır (`computePacks`); deneme sınavında
   sonuç tek yüzde + hata→düzeltme (ölçüt çubukları yalnız beceri turu ve modül sınavında);
   aralıklı tekrar SM-2 türevi ("unutmadan önce", "tam unutmak üzereyken" DEĞİL); kulaklık
   zorunlu değil. Metinde Android/Google Play adı geçmez (App Store 2.3.10).
-- AÇIK: ders sonundaki rol yapma SOHBETİ bugün ücretsiz ve kotasız (hesap + yapay zekâ izni,
-  herkese günde 300 tur). Samet kodla sınırlamaya karar verdi; tasarım, yapay zekâ
-  yüzeyleri haritası çıkarıldıktan sonra konuşulacak. Premium tavanı 300 tur/gün KALIYOR.
-  Karar çıkana dek metin rol yapma sohbetini "ücretsiz" diye anmaz.
+- KARAR VERİLDİ (2026-09-25, `docs/premium/README.md` §2): dersin yapay zekâ sohbeti artık
+  Patika'nın **Konuşma** adımı ve ücretsizde seviye başına 2 + "bitir + seri"; hak yoksa adım
+  kilitli ve Premium ister. Misafir ve yapay zekâ iznini reddeden senaryolu konuşmayla devam
+  eder (maliyetsiz). Premium tavanı 300 mesaj/gün KALIYOR. Metin sohbeti "ücretsiz ve
+  sınırsız" diye anmaz.
 
 **Beş sütun (öncelik sırası):** 1) A1'den C1'e tam müfredat, Türkçe anlatım · 2) konuşarak
 öğren: her derste rol yapma + konuşmaya geri bildirim · 3) dört becerili deneme sınavları,
 konuşma ve yazma da puanlanır · 4) Cepte yürüyüş (ekran kapalı, **Premium**; ekran açık
-yürüyüş ücretsiz ve sınırsız, `plan.free_walk`) · 5) günlük kelime turu ve seri.
+yürüyüş ücretsizde günde 3 oturum, `plan.free_walk`) · 5) günlük kelime turu ve seri.
 
 **Kare listesi (iPhone 6.9" ve Play telefon, bu sırayla; ilk üçü aramada görünür):**
 
