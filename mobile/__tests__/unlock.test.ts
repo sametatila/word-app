@@ -59,15 +59,14 @@ test("premium deneme: paket cümlesi", () => {
 });
 
 test("yürüyüş satırı", () => {
-  const w = { premium: false, perDay: 3, used: 1, remaining: 2, sessionOpen: false, pocket: false };
+  const w = { premium: false, perDay: 3, used: 1, remaining: 2, pocket: false };
   expect(walkLine(w)).toEqual({ key: "unlock.walk_left", params: { n: 2 } });
-  expect(walkLine({ ...w, sessionOpen: true })).toEqual({ key: "unlock.walk_open" });
   expect(walkLine({ ...w, used: 3, remaining: 0 })).toEqual({ key: "unlock.walk_spent" });
 });
 
 const overview = (conv: FreeUnlock): UnlockOverview => ({
   streak: { current: 0, longest: 0, step: 7 },
-  walk: { premium: false, perDay: 3, used: 0, remaining: 3, sessionOpen: false, pocket: false },
+  walk: { premium: false, perDay: 3, used: 0, remaining: 3, pocket: false },
   levels: { A1: { conversation: conv, pathWriting: conv, skillSpeaking: conv, skillWriting: conv, mock: null } },
   owned: { conversation: ["l-owned"], pathWriting: ["w-owned"], skills: [] },
   chatTurnsPerDay: 300,

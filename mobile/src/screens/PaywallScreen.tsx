@@ -528,7 +528,7 @@ export function PaywallScreen() {
                   Sohbet mesajı tavanı sabit (sunucu `lib/quotas`); eski sunucu
                   göndermiyorsa aynı sayı. `pocketWalksPerDay` eski sunucunun adı. */}
               {t("plan.pro_fair_use", {
-                w: status.limits.fairUse.walkSessionsPerDay ?? status.limits.fairUse.pocketWalksPerDay ?? 20,
+                w: status.limits.fairUse.walkRoundsPerDay ?? status.limits.fairUse.pocketWalksPerDay ?? 20,
                 a: status.limits.fairUse.aiPracticePerDay,
                 c: status.limits.fairUse.chatTurnsPerDay ?? 300,
               })}

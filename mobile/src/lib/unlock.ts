@@ -78,9 +78,8 @@ export function mockCopy(u: MockUnlock | null | undefined): UnlockCopy | null {
   return { headline: when, spent: false, conditions: [], when: null, gain: null };
 }
 
-/** Yürüyüş modu: bugünün oturumları. */
+/** Yürüyüş modu: bugünün turları (her kuyruk isteği, "devam" dahil, bir tur). */
 export function walkLine(w: WalkUnlock): Line {
-  if (w.sessionOpen) return { key: "unlock.walk_open" };
   if (w.remaining > 0) return { key: "unlock.walk_left", params: { n: w.remaining } };
   return { key: "unlock.walk_spent" };
 }

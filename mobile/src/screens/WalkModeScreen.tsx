@@ -270,8 +270,8 @@ export function WalkModeScreen() {
     gösteriliyordu. Web `walk-player` ayrı bir hata ekranı çiziyor.
   */
   /*
-    GÜNLÜK OTURUM HAKKI (2026-09-25): ücretsizde günde 3 oturum, sunucu kuyruğu
-    açarken sayıyor (`/api/session?walk=1`). Hak yoksa 403 premium_required,
+    GÜNLÜK TUR HAKKI (2026-09-25): ücretsizde günde 3 tur; sunucu her kuyruk
+    isteğini (`/api/session?walk=1`, tur sonundaki "devam" dahil) bir tur sayıyor. Hak yoksa 403 premium_required,
     premium'un kötüye kullanım tavanı dolduysa 429 — ikisi de KAPI, ağ hatası
     değil: kilit ekranı nedenini ve yolunu söylüyor.
   */
@@ -287,7 +287,7 @@ export function WalkModeScreen() {
     setPhase("intro");
     fetchSession(day.current, { walk: true }).then((p) => {
       if (!mounted.current) return;
-      /* Kuyruk açıldı = oturum sunucuda sayıldı; kalan oturum tazelensin. */
+      /* Kuyruk geldi = bir tur sunucuda sayıldı; kalan tur tazelensin. */
       void refreshPremium();
       const wr = mapRounds(p.rounds ?? []);
       if (wr.length) { setRounds(wr); setCurWord(wr[0].word); return; }
@@ -1026,9 +1026,10 @@ export function WalkModeScreen() {
               { icon: RepeatIcon, text: tx("walkmode.rule_continue") },
             ]}
           />
-          {/* Bugünkü oturum hakkı başlamadan görünsün (ücretsiz; premium'da yalnız
-              kötüye kullanım tavanı var, sayı söylenmiyor). */}
-          {premium?.unlock && !premium.unlock.walk.premium ? (
+          {/* Bugün kalan tur başlamadan görünsün — bu tur sayıldıktan SONRAKİ
+              sayı; son turdaysa satır yok (ücretsiz; premium'da yalnız kötüye
+              kullanım tavanı var, sayı söylenmiyor). */}
+          {premium?.unlock && !premium.unlock.walk.premium && premium.unlock.walk.remaining > 0 ? (
             <View style={{ marginTop: spacing.md }}>
               <FlowNote icon={<WalkIcon color={colors.textMuted} size={16} />} text={tx(walkLine(premium.unlock.walk).key, walkLine(premium.unlock.walk).params)} />
             </View>
@@ -1100,7 +1101,7 @@ export function WalkModeScreen() {
           }
         >
           <StateBody
-            title={walkFairUse ? tx("gate.fair_use", { n: premium?.limits.fairUse.walkSessionsPerDay ?? premium?.limits.fairUse.pocketWalksPerDay ?? 20 }) : tx("unlock.walk_spent")}
+            title={walkFairUse ? tx("gate.fair_use", { n: premium?.limits.fairUse.walkRoundsPerDay ?? premium?.limits.fairUse.pocketWalksPerDay ?? 20 }) : tx("unlock.walk_spent")}
             body={walkFairUse ? null : tx("plan.pro_pocket_walk")}
           />
         </FlowScreen>

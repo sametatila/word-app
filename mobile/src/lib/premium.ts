@@ -35,7 +35,7 @@ export type FreeUnlock = { premium: false; open: number; used: number; done: num
 export type TieredUnlock = FreeUnlock | { premium: true };
 export type PremiumMockUnlock = { premium: true; open: number; done: number; packSize: number; next: { complete: { done: number; needed: number } } | null };
 export type MockUnlock = FreeUnlock | PremiumMockUnlock;
-export type WalkUnlock = { premium: boolean; perDay: number; used: number; remaining: number; sessionOpen: boolean; pocket: boolean };
+export type WalkUnlock = { premium: boolean; perDay: number; used: number; remaining: number; pocket: boolean };
 export type LevelUnlock = { conversation: TieredUnlock; pathWriting: TieredUnlock; skillSpeaking: TieredUnlock; skillWriting: TieredUnlock; mock: MockUnlock | null };
 export type UnlockOverview = {
   streak: { current: number; longest: number; step: number };
@@ -56,7 +56,7 @@ export type PremiumStatus = {
   limits: {
     free: Record<string, number>;
     /* `pocketWalksPerDay` eski sunucunun adı (sunucu takma ad olarak da gönderiyor). */
-    fairUse: { walkSessionsPerDay?: number; aiPracticePerDay: number; chatTurnsPerDay?: number; pocketWalksPerDay?: number };
+    fairUse: { walkRoundsPerDay?: number; aiPracticePerDay: number; chatTurnsPerDay?: number; pocketWalksPerDay?: number };
     mock: { packSize: number };
   };
   plans: { productMonthly: string; productYearly: string; trialDays: number; prices: { region: string; currency: string; monthly: string; yearly: string; yearlySavePct: number }[] };
