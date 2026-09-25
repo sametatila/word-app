@@ -6,7 +6,7 @@
  *
  * ÇEVRİMDIŞI SENARYO ARTIK DÖKÜLÜYOR. Eskiden `script` hariç tutuluyordu
  * ("mobil konuşmayı /api/chat ile yürütür") ve bu, sağlayıcı kapalıyken
- * Android'de hiçbir konuşma konuşmasının geçilememesi demekti — geçme koşulu
+ * Android'de hiçbir Konuşma adımının geçilememesi demekti — geçme koşulu
  * konuşmanın yapılmasını istiyor. Web o durumda senaryoya düşüyor; mobil de
  * artık düşüyor (`game/offlineChat`).
  *
@@ -27,7 +27,7 @@ const DIR = "mobile/src/data/conversations";
  * metin sapmasını görmüyordu (gerekçe orada). Projeksiyon tek yerde durmalı,
  * yoksa kapı dökümün kendisinden ayrı düşer ve yanlış yeri gösterir.
  *
- * Konuşmayı olmayan seviye için dosya YAZILMIYOR: mobil yükleyici paketleri tek
+ * Konuşması olmayan seviye için dosya YAZILMIYOR: mobil yükleyici paketleri tek
  * tek import ediyor (`mobile/src/data/conversations/index.ts`) ve boş bir dosyayı
  * hiçbir şey import etmez — yazmak yalnız depoya ölü dosya bırakırdı.
  */

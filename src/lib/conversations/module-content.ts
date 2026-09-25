@@ -37,7 +37,7 @@ export function headword(de: string): string {
  * Üretim adımının Türkçe yönergesinden sınav sorusu.
  *
  * Konuşma yönergesi sesli anlatım için yazılmış ve bir öğretmen ağzı taşıyor:
- * "Sıra sende: 'Bir kedim var.' nasıl konuşmanın?". Sınavda öğretmen yok, kâğıt
+ * "Sıra sende: 'Bir kedim var.' nasıl söylersin?". Sınavda öğretmen yok, kâğıt
  * var; bu yüzden yalnızca **çerçeve** cümleleri atılıyor ve geriye çevrilecek
  * cümle ile onu tek anlama sabitleyen ek bağlam kalıyor ("Burada 'o' bir
  * erkek komşu." gibi). Ek bağlam bilerek KALIYOR: onsuz madde ihm/ihr

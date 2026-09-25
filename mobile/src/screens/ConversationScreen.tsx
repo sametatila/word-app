@@ -202,7 +202,7 @@ export function ConversationScreen() {
    * adımda mikrofona dokunmak gerekmiyor, öğretmen cümlesini bitirir bitirmez
    * dinleme kendiliğinden başlıyor. Telefonda bu farkın webdekinden BÜYÜK
    * olması gerekirdi - cihaz masaya dayalıyken her tur için ekrana uzanmak,
-   * konuşma konuşmasının ritmini kesen tek şey.
+   * Konuşma adımının ritmini kesen tek şey.
    *
    * Sıralama yürüyüş modunun kanıtlanmış kalıbı: önce `speakAndWaitVoiced`,
    * SONRA dinle. `speakTarget` bitişi bildirmiyor ve onunla kurulsaydı
@@ -1312,7 +1312,7 @@ function Summary({ conversation, correct, total, next, roleMsgs, nextDays, passe
         {/* KONUŞMA NEDEN TAMAMLANMADI ve NE YAPILACAK — not + "Konuşmaya dön". */}
         {unfinished ? <FlowNote tone="warn" icon={<AlertIcon color={colors.streakText} size={16} />} text={tx("conversationp.min_turns_note", { n: conversation.chat.minTurns })} /> : null}
         {cando.length ? <FlowNote tone="ok" icon={<CheckIcon color={colors.successText} size={16} />} text={`${tx("conversationp.i_can")} ${cando.join(" · ")}`} /> : null}
-        {/* Misafirin ilk tamamlanan konuşmayı: kaybedecek bir şeyi olduğu ilk an. */}
+        {/* Misafirin ilk tamamlanan konuşması: kaybedecek bir şeyi olduğu ilk an. */}
         <GuestMilestoneCard milestone="first_conversation" when={!unfinished} />
         {!corrections.length && talked ? <FlowNote tone="ok" icon={<CheckIcon color={colors.successText} size={16} />} text={tx("conversationp.no_corrections")} /> : null}
 

@@ -27,7 +27,7 @@ export const NOT_PRACTICED_WORD_IDS = [
     boşluk doldurma kurulamıyor (cümlede yalnız bileşik var), yürüyüş modu
     yarım bir sözcük seslendiriyor, yazma turu var olmayan bir kelime
     istiyordu. Profile Deutsch da bunları sözcük değil sözcük yapım öğesi
-    olarak listeliyor; öğretildikleri yer dersler (bileşikleriyle birlikte).
+    olarak listeliyor; öğretildikleri yer konuşmalar (bileşikleriyle birlikte).
   */
   303, // de: Lieblings(-)
   1676, // de: Doppel(-)

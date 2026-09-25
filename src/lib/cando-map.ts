@@ -72,13 +72,13 @@ const FOCUS_GR_EN: [RegExp, Partial<Record<CefrLevel, number>>][] = [
      ve o satırın B1 sütunu yok — konuşma sessizce dilbilgisi ifadesiz kalırdı.
      Aynı tuzak «Present perfect vs past simple» için de var (`/past simple/`).
      Desenler B1'e özgü tutuldu ki A1/A2 odakları buraya kaymasın. */
-  /* B2 SATIRLARI EN ÖNDE. B1 satırlarının B2 sütunu YOK: bir B2 konuşmayı
+  /* B2 SATIRLARI EN ÖNDE. B1 satırlarının B2 sütunu YOK: bir B2 konuşması
      «Passive report structures» odağıyla aşağıdaki `/passive/i` satırına
      düşseydi `hit[1]["B2"]` undefined dönerdi ve konuşma sessizce ifadesiz
      kalırdı. Desenler B2'ye özgü: «third conditional» yakalanır ama
      «Conditionals» aşağıdaki B1 satırına gitmeye devam eder. */
   /* C1 SATIRLARI HEPSİNDEN ÖNDE, aynı gerekçeyle: B2 satırlarının C1 sütunu
-     YOK. Bir C1 konuşmayı «Reporting verbs and evaluation» odağıyla aşağıdaki
+     YOK. Bir C1 konuşması «Reporting verbs and evaluation» odağıyla aşağıdaki
      `/report structure/i` satırına düşseydi `hit[1]["C1"]` undefined döner,
      konuşma sessizce ifadesiz kalırdı. Desenler C1'e özgü: «fronting» yakalanır
      ama «cleft» aşağıdaki B2 satırına gitmeye devam eder. */

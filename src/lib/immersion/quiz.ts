@@ -24,7 +24,7 @@ export type QuizPool = { vocab: VocabItem[]; patterns: PatternItem[] };
  * Çeldirici adayı: şıkta görünen metin, taşıdığı anlam ve kelimenin başlığı.
  *
  * TEK DOĞRU CEVAP. Çeldirici yalnız doğru cevapla birebir aynı metin değilse
- * alınıyordu; bu yüzden aynı Almanca başlığın başka bir dersteki karşılığı
+ * alınıyordu; bu yüzden aynı Almanca başlığın başka bir konuşmadaki karşılığı
  * ("der Name" → "isim" doğruyken "ad") ve anlam paylaşan kelimeler ikinci bir
  * doğru şık olabiliyordu, iki çeldirici de birbirinin aynısı olabiliyordu.
  * Aday şu durumlarda elenir: metni aynı, başlığı aynı ya da anlam parçaları

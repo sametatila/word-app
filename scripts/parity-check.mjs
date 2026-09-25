@@ -3897,11 +3897,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  *
  * Olculen: an tablosu (sekiz an x bes cumle), yer tutucu kurali (isim yoksa
  * virguluyle duser), tekrar etmeyen secim ve ucu de BAGLI mi - olay tanimli
- * olmasi yetmez, balonun cagrildigi yer de gerekli (§90'in konuşması). */
+ * olmasi yetmez, balonun cagrildigi yer de gerekli (§90'in çıkarımı). */
 {
   /* BAĞLANTI ÖLÇÜMÜ EKRANLARDAN, tablodan DEĞİL. İlk yazımda ikisi birlikte
      okunuyordu ve an tablosu zaten `"weak_done"` dizgesini taşıdığı için
-     ekrandaki çağrı koparıldığında kapı yeşil kalıyordu - §90'in konuşmasını
+     ekrandaki çağrı koparıldığında kapı yeşil kalıyordu - §90'in çıkarımını
      yazdığım satırın altında yine aynı hatayı yaptım. */
   const koc = (tablo, ekranlar) => {
     const kirp = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
@@ -4227,7 +4227,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 
 /* ── 115. konuşma adiminda atlama ────────────────────────────────────────────
  * Tikanan ogrencinin ilerleme yolu mobilde yalniz "yazarak cevapla"ydi ve o
- * da dogru cevabi BILMEYI gerektiriyor: bilmeyen ogrencinin konuşması bitirme
+ * da dogru cevabi BILMEYI gerektiriyor: bilmeyen ogrencinin konuşmayı bitirme
  * yolu yoktu. Web her beklentili adimda bir atlama baglantisi veriyor ve
  * atlanan adimi olcumde SIFIR sayiyor (`conversation_step` degeri 0, kind
  * "<tur>:skip") - yani atlama sessizce "dogru" sayilmiyor. */
@@ -4349,7 +4349,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  * `premium_gate` iki platformun da olay kayit defterinde YAZILIYDI ve
  * gerekcesi de duruyordu ("paywall'i hangi kisit besliyor, oradan gorulur")
  * ama HICBIRI gondermiyordu: paywall'i GORENLER sayiliyor (`paywall_view`),
- * oraya ITEN kilit sayilmiyordu. §90'in konuşması bir kez daha - olayin TANIMLI
+ * oraya ITEN kilit sayilmiyordu. §90'in çıkarımı bir kez daha - olayin TANIMLI
  * olmasi yetmez.
  *
  * Olculen uc sey: iki tarafta da ayni kilit turleri gonderiliyor mu, turler
@@ -4875,7 +4875,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 
   /* `exam_start` tanitimin BASLA dugmesinde yazilmali, ekran acilisinda
      degil: ekrani acan herkesi "basladi" saymak huninin payini oldugundan
-     buyuk gosteriyordu (§11.219'un ayni konuşmayı). */
+     buyuk gosteriyordu (§11.219'un ayni çıkarımı). */
   const ani = (src) => {
     const i = src.indexOf('exam_start", 0, "placement');
     if (i < 0) return "hic yazilmiyor";
@@ -5115,7 +5115,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   /* Dosya adlari farkli; karsilastirma yalniz KAYNAK uzerinden. */
   sameList("zamanli yuzeylerin sure kaynagi", mob.map((x) => x.split("=")[1]), web.map((x) => x.split("=")[1]));
   /* Ucunde de duvar saati olmali: iki taraf ayni sekilde YANLIS olsa ustteki
-     karsilastirma gecerdi - §11.227'nin konuşması. */
+     karsilastirma gecerdi - §11.227'nin çıkarımı. */
   const sayiciyla = [...mob, ...web].filter((x) => x.endsWith("=sayici"));
   sameList("zamanli yuzeyler duvar saatinde", sayiciyla.length ? sayiciyla : ["yok"], ["yok"], "sayiciyla isleyen", "beklenen");
 }
@@ -5504,7 +5504,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  * hicbir sey olcmeden gecti; kendi govdesindeki not ("alt=Infinity diye
  * bildirdi, yani hicbir sey olcmuyordu") bu kez sessiz bicimde tekrar etti.
  *
- * Konuşma: bir kapi olcemedigi seyi "bilinmiyor" diye isaretleyip iki tarafta da
+ * Çıkarım: bir kapi olcemedigi seyi "bilinmiyor" diye isaretleyip iki tarafta da
  * ayni isareti uretiyorsa, karsilastirma kapiyi korumaz. §183 bu yuzden
  * KAYNAGA bakiyor - sayiya degil. */
 
@@ -5782,7 +5782,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  *
  * Olculen: SECILI DURUMA gore stil degistiren her basilabilir, o durumu
  * duyuruyor mu. Kural yuzey tariyor; iki tarafi da ayni anda gezdigi icin
- * "ikisi birden sessiz" hâli de yakalaniyor (§11.228'in konuşması).
+ * "ikisi birden sessiz" hâli de yakalaniyor (§11.228'in çıkarımı).
  *
  * SINIRI YAZILI: tarama etiketin KENDI icine bakiyor. Secili sinifi bir
  * degiskene alinmissa (`const cls = ...; className={cls}`) etikette iz
@@ -6154,7 +6154,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  *
  * Olcum EŞLESTIRME degil MUTLAK: her iki platformda da hata karti gosteren
  * her yuzey kendi tekrar denemesini tasimali. Iki taraf birden eksik olsaydi
- * karsilastirma yesil kalirdi (§157 konuşmayı).
+ * karsilastirma yesil kalirdi (§157 çıkarımı).
  *
  * Her satir cift olcuyor: hata METNI hala orada mi (yuzey duruyor mu) ve
  * tekrar deneme dugmesi var mi. Yalniz dugmeye bakmak, hata dali silinince
@@ -6519,7 +6519,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const mobStart = govde(mob, "const startExam = useCallback(");
   const webStart = govde(web, "async function start()");
   /* Iki tarafi da BEKLENENE olcuyoruz: iki taraf birden mount etkisinde
-     olsaydi karsilastirma yesil kalirdi (§157 konuşmayı). Dugmeye baglilik iki
+     olsaydi karsilastirma yesil kalirdi (§157 çıkarımı). Dugmeye baglilik iki
      sey birden istiyor - POSTun dogru fonksiyonda olmasi ve o fonksiyonun
      baslatma dugmesine bagli olmasi; yalniz birine bakmak, fonksiyonu
      mount etkisinden cagirinca kapiyi kandirirdi. */
@@ -7135,7 +7135,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 }
 
 /* ── 177. puanin duyurulmasi (durum nesnesi kalibi) ───────────────────────
- * §11.272'nin konuşması uygulandi: canli bolge sinifi bu kez GECICI MESAJ degil
+ * §11.272'nin çıkarımı uygulandi: canli bolge sinifi bu kez GECICI MESAJ degil
  * DURUM NESNESI kalibiyla tarandi (`useState<{...} | null>` ve onun cizim
  * bloklari). Web ve mobil birlikte seksen cizim verdi; cogu yuklenen VERI
  * (liste, profil alani) ve duyurulmamasi dogru - ekran okuyucu onlari zaten
@@ -7400,7 +7400,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 {
   const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, " ")).replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
   /* Alanin KENDI etiketine bakiliyor: dosyada baska bir alanin ozniteligi
-     olculen alanin yerine gecmesin (§180'in konuşması). */
+     olculen alanin yerine gecmesin (§180'in çıkarımı). */
   const etiket = (yol, deger) => {
     const src = strip(read(yol));
     const i = src.indexOf(`value={${deger}}`);
@@ -9630,7 +9630,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    *
    * Sayac `left` DEGERINDEN degil `deadline` REF'INDEN okuyor - efekt
    * `if (!deadline.current)` ile bir kez kuruyor, sonra her tik farki oradan
-   * hesapliyor (bu kalip 271'in konuşması: arka plana atilan sinav sureyi
+   * hesapliyor (bu kalip 271'in çıkarımı: arka plana atilan sinav sureyi
    * uzatmasin diye duvar saati kullaniliyor). Android'in SONUC ekranindaki
    * "Tekrar dene" `setLeft(SCORED_SECONDS)` yaziyor ama `deadline.current`i
    * SIFIRLAMIYORDU: ilk tik `left`i hemen 0 yapiyor, "sure bitti" efekti
@@ -9966,7 +9966,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    * Android'in acilis ekrani MARKA TURUNCUSU (`values/styles.xml`
    * `Theme.Lernomi.Splash` -> `ic_launcher_background`).
    *
-   * Konfeti ise "IKISI DE YANLIS" sinifinin konuşma kitabi ornegi: alti degerin
+   * Konfeti ise "IKISI DE YANLIS" sinifinin klasik ornegi: alti degerin
    * besi ailelerin 400'u, ilki hicbir rampanin basamagi olmayan yetim kehribar
    * - ve iki platformda AYNI yetim deger yaziliydi, o yuzden karsilastirma
    * geciyordu (`check:colors` ikisini de "birebir" diye kayda gecirmisti). */
@@ -10175,7 +10175,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    * verilmiyor, ve bunu ancak bir sonraki tura girdiginde (belki gunler
    * sonra) telafi ediyordu. Kuyrugun kendisi calisiyordu; bosaltan yoktu.
    *
-   * Bu 270'in konuşmasının baska bir yuzu: PARCAYI degil KAPSAMI olc. "Kuyruk var
+   * Bu 270'in çıkarımının baska bir yuzu: PARCAYI degil KAPSAMI olc. "Kuyruk var
    * mi" sorusu iki platformda da "var" diyordu. */
   {
     const kabuk = sil(read("src/components/app-shell.tsx"));
@@ -10933,7 +10933,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    * olcumu geciriyor - biri gecirmezse o akisin sessizligi aynen kalir.
    *
    * Pano da gosteriyor: yazilip gosterilmeyen bir sayi, yine kimsenin
-   * bakmadigi yerde durur (272'nin ayni konuşmayı).
+   * bakmadigi yerde durur (272'nin ayni çıkarımı).
    *
    * Sunucu tek, olcu MUTLAK. */
   {
@@ -12726,7 +12726,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
        olcmek". Isaretten sonraki acilis etiketi okunuyor. */
     const ALANLAR = [
       ["konusma sohbeti", "src/components/conversations/conversation-player.tsx", '"conversation.type_in"', "mobile/src/screens/ConversationScreen.tsx", "placeholder={placeholder}", "sentences"],
-      ["sohbet sohbeti", "src/components/conversations/conversation-scored.tsx", "value={draft}", "mobile/src/screens/ConversationScoredScreen.tsx", "value={draft}", "sentences"],
+      ["puanlı kısmın sohbeti", "src/components/conversations/conversation-scored.tsx", "value={draft}", "mobile/src/screens/ConversationScoredScreen.tsx", "value={draft}", "sentences"],
       ["sinav yazma", "src/components/exam-player.tsx", "value={writingText}", "mobile/src/screens/ExamScreen.tsx", '"exam.write_text"', "sentences"],
       ["deneme acik gorev", "src/components/mock-exam-player.tsx", '"mockexam.write_here"', "mobile/src/screens/MockExamScreen.tsx", '"mockexam.write_here"', "sentences"],
       ["beceri yazma", "src/components/skills/writing-player.tsx", '"skillquiz.write_your_answer_in"', "mobile/src/game/skillQuiz.tsx", '"skillquiz.write_your_answer_in"', "sentences"],
@@ -13806,7 +13806,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "web",
     );
 
-    /* Kanca GERCEKTEN dinliyor mu (MUTLAK). 241'in konuşması: cagri yerlerini
+    /* Kanca GERCEKTEN dinliyor mu (MUTLAK). 241'in çıkarımı: cagri yerlerini
        olcmek yetmez, kanca dinlemeyi birakirsa her cagri dogru gorunur. */
     const kw = sil(read("src/lib/use-leave-guard.ts"));
     const km = sil(read("mobile/src/lib/useBackConfirm.ts"));
@@ -14196,7 +14196,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         "sabit=" + ((sm.match(/SPEAK_CLIP_MS = (\d+)/) ?? [])[1] ?? "YOK"),
         /* KULLANIM, varlik degil: `import` satiri da adi tasiyor, o yuzden
            "dosyada gecıyor mu" olcusu sabitten cikmayi gormez (enjeksiyonla
-           yakalandi - §11.351'in ayni konuşmayı). */
+           yakalandi - §11.351'in ayni çıkarımı). */
         "koddan=" + (/listenOnce\([^,]+, SPEAK_CLIP_MS\)/.test(km) ? "sabitten" : "ELLE"),
         "elle ms kaldi mi=" + (km.match(/listenOnce\([^,]+, \d{4,5}\)/g) ?? []).length,
       ],
@@ -17744,7 +17744,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    * Ama `social.student` LISTE satirlarinin yedegi (lider tablosu, gunun
    * turu; iki platformda da oyle) ve `profile.student` profil kartinin kendi
    * yedegi. Ayni yuzeyin iki anahtari olunca biri duzeltilip otekinin eski
-   * kalmasi icin bir yol aciliyor - defterin `cheer`/`celebrate` konuşmayı.
+   * kalmasi icin bir yol aciliyor - defterin `cheer`/`celebrate` çıkarımı.
    *
    * Olcu dort parca: iki platform kartta ayni anahtari kullaniyor, web e-posta
    * adimini tasiyor, ve `social.student` LISTE yuzeylerinde iki tarafta da

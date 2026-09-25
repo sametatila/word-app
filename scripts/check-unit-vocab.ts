@@ -3,7 +3,7 @@
  * dışına çıkıyor mu? Çıkanları sıklığa göre listeler.
  *
  * KAYNAKTAN okur, mobil dökümden değil. Döküm `speaking` becerisini bilerek
- * dışarıda bırakıyor (mobilde konuşma konuşmanın içinde), o yüzden döküm okunduğu
+ * dışarıda bırakıyor (mobilde konuşma alıştırması Konuşma adımının içinde), o yüzden döküm okunduğu
  * sürece konuşma egzersizleri HİÇ denetlenmiyordu.
  *
  * Ölçüm mantığı `lib/vocab-gate.cjs`'de — modül sınavı denetleyicisiyle

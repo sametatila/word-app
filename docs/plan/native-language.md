@@ -1140,7 +1140,7 @@ Bu kalemin kendi kuralı çıktı ve kapıya üç kural olarak yazıldı:
 
    İkinci grup konuşmanın ÖĞRETTİĞİ sözcük: "Sebep: weil" ile "Sebep: denn" ayrı
    iki konuşma ve ikisi de "because" olsaydı başlıkları aynı çıkardı. C1'in
-   `doch` konuşmayı bunun uç hâli — `doch`un İngilizcede tek karşılığı yok,
+   `doch` konuşması bunun uç hâli — `doch`un İngilizcede tek karşılığı yok,
    konuşmanın varlık sebebi de bu.
 
    Partizip'te Türkçe Almancayı koruyor, İngilizce korumuyor; tutarsızlık

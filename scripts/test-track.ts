@@ -97,7 +97,7 @@ check("group = floor((index-1)/GROUP_SIZE)", t.units.every((u) => u.group === Ma
 check("ünite 1 teması A1 ilk modül", t.units[0].theme === "Tanışma ve ben");
 
 // 11. boş seviye → 0 ünite
-check("konuşmayı olmayan seviye 0 ünite", buildTrack({ course: "de", level: "C1", conversations: [] }).units.length === 0);
+check("konuşması olmayan seviye 0 ünite", buildTrack({ course: "de", level: "C1", conversations: [] }).units.length === 0);
 
 // 12. beceri hiç yoksa read/listen/write slotları null ama var
 const noSkills = buildTrack({ course: "de", level: "A1", conversations });

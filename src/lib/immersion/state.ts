@@ -144,7 +144,7 @@ export function buildTrackState(track: ImmersionTrack, c: Completion): TrackStat
         "sıradaki" yuvasını almalarına izin verilince pencere orada park
         ediyordu: quiz açılıyor, arkasındaki ünite quizi sonsuza kadar
         kapalı kalıyordu — çünkü quiz'in denenmiş sayılmasının bir yolu yok.
-        Ölçüldü: ünitenin tüm konuşmayı ve becerisi bitmiş kullanıcıda bile
+        Ölçüldü: ünitenin tüm konuşması ve becerisi bitmiş kullanıcıda bile
         ünite quizi HİÇBİR ünitede açılmıyordu (gramer yazılmış ünitede
         quiz de açılmıyordu).
 
@@ -172,7 +172,7 @@ export function buildTrackState(track: ImmersionTrack, c: Completion): TrackStat
     // bloklamaz. Gerekçe: bu içerik seyrek ve temaya göre yeniden kuruluyor
     // (bkz. plan §İçerik stratejisi); onları kapı yapmak, tematik olarak
     // rastgele/eksik içeriği zorunlu kılardı. Temalı içerik oturunca kural
-    // "tüm item'lar" haline sıkılaştırılabilir. Konuşmayı olmayan ünite (de'de
+    // "tüm item'lar" haline sıkılaştırılabilir. Konuşması olmayan ünite (de'de
     // olmaz) tüm-oynanabilir ölçütüne düşer — boş ünite sonrasını kilitlemesin.
     /*
       İKİ AYRI SORU, İKİ AYRI CEVAP.

@@ -69,8 +69,8 @@ export default async function ImmersionPage() {
     .map(({ index, plan }) => ({ index, code: plan.code, titleTr: examText(plan.titleTr), titleDe: plan.titleDe }));
 
   /* BU SEVİYEDE ÜNİTE YOKSA. İki durum var ve ikisi de canlı: kursun hiç
-     konuşmayı olmayabilir (gsw-zh) ya da konuşmaları BAZI seviyelerde bitmemiş
-     olabilir - İngilizce kursun bugün A1/A2'de 100'er konuşmayı var, B1/B2/C1'de
+     konuşması olmayabilir (gsw-zh) ya da konuşmaları BAZI seviyelerde bitmemiş
+     olabilir - İngilizce kursun bugün A1/A2'de 100'er konuşması var, B1/B2/C1'de
      hiç yok. Metin bu yüzden "bu kursun" değil "bu seviyede" diyor; kursun
      tamamı yokmuş gibi konuşmak İngilizce öğrencisine yanlış bilgi veriyordu.
      Web boş bir Patika çiziyordu, Android sebebi söylüyordu; ikisi de artık

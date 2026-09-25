@@ -124,7 +124,7 @@ async function main() {
   const n = Number(total[0]?.n ?? 0);
   if (!n) {
     console.log(
-      "chat_logs boş. Ya hiç konuşma konuşması yapılmadı ya da kayıtların süresi doldu\n" +
+      "chat_logs boş. Ya hiç sohbet yapılmadı ya da kayıtların süresi doldu\n" +
         "(kayıt kalıcı bir birikim değil, süreli bir teşhis penceresi).",
     );
     return;

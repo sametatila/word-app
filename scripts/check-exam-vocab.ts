@@ -10,7 +10,7 @@
  *
  * Ölçüm mantığı beceri denetleyicisiyle ORTAK (`lib/vocab-gate.cjs`).
  *
- * Modül = 10 konuşma, ünite = 4 konuşma. Modül m'nin son konuşmayı (m+1)*10, yani
+ * Modül = 10 konuşma, ünite = 4 konuşma. Modül m'nin son konuşması (m+1)*10, yani
  * kümülatif sınır ünite ceil((m+1)*10/4).
  */
 import { createRequire } from "node:module";

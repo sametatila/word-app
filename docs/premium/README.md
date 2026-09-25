@@ -103,7 +103,7 @@ Samet'le soru-cevapla verildi. Aşağıdaki 2026-09-08 bölümünü ve "tek havu
 
 "Ders", "lesson", "rol yapma", "roleplay" adları **her yerden** kalkar: dosya adları, fonksiyon
 ve değişken adları, yorumlar, i18n anahtarları, içerik kimlikleri. API adresleri yeni adla açılır,
-eski adres testteki eski build'ler için geçici yönlendirilir; veritabanı tabloları veri kaybı
+eski adresler kapatılır (geçici uyumluluk katmanı 2026-09-25'te, Samet'in kararıyla kaldırıldı); veritabanı tabloları veri kaybı
 olmadan (ALTER … RENAME, deploy'dan önce yedekli) yeniden adlandırılır — `deploy.sh`'taki
 `drizzle-kit push --force` şemada olmayan tabloyu SİLER, sıra buna göre kurulur.
 
@@ -202,7 +202,7 @@ kod varsayılanı geçerli. Eski kayıttaki `weeklyAiPractice`, `streakMaxTiers`
 `mock.unlockOnComplete` yok sayılır. Durum ucu eski sürümler için `fairUse.pocketWalksPerDay`
 takma adını ve `gates.pocket_walk`u taşımaya devam ediyor.
 
-### 2.2 Adlandırma (2026-09-25, aşama 2) — kod sözlüğü, göç ve geçici takma adlar
+### 2.2 Adlandırma (2026-09-25, aşama 2) — kod sözlüğü ve göç
 
 Yukarıdaki sözlük kodda şöyle yazılıyor. Seçim tek kök: **Patika'nın Konuşma adımı
 `conversation`, adımın yapay zekâ sohbeti `chat`**. `speaking` bilerek seçilmedi: o ad zaten
@@ -214,7 +214,7 @@ da bu seçimle aynı.
 | Kavram (arayüz) | Kodda | Not |
 |---|---|---|
 | Konuşma adımı (Patika) | `conversation` — tip `Conversation`, `lib/conversations/`, `/conversations/<id>` | Bugünkü içeriğin kendisi, içerik değişmedi |
-| Anlatım fazı | `lecture` | Değişmedi: yasaklı ad değil ve anadil sözlüğünün yayınlanan maddesi (`native/en` › `lecture`); adı değiştirmek build 6'yı kırardı |
+| Anlatım fazı | `lecture` | Değişmedi: yasaklı ad değil ve anadil sözlüğünün yayınlanan maddesi (`native/en` › `lecture`) |
 | Sohbet fazı | `chat` — `lib/conversations/chat.ts`, `/api/chat`, içerik alanı `chat` | Eskiden `roleplay` |
 | Puanlı kısım ("Kendini puanla") | `scored` — `/conversations/<id>/scored`, sohbet kipi `scored`, madde `<id>:scored` | Eskiden "Sınav olarak dene", `exam`; arayüzde "sınav" demiyor |
 | Quiz (eski "Tekrar") | `quiz` | |
@@ -227,7 +227,7 @@ da bu seçimle aynı.
 | Alan | Eski | Yeni |
 |---|---|---|
 | API | `/api/lesson` · `/api/roleplay` | `/api/conversation` · `/api/chat` |
-| Sayfa | `/lessons/<id>` · `/lessons/<id>/exam` · `/lessons/boss/<sv>/<m>` · `/lessons` | `/conversations/<id>` · `/conversations/<id>/scored` · `/boss/<sv>/<m>` · `/immersion` (308) |
+| Sayfa | `/lessons/<id>` · `/lessons/<id>/exam` · `/lessons/boss/<sv>/<m>` · `/lessons` | `/conversations/<id>` · `/conversations/<id>/scored` · `/boss/<sv>/<m>` · `/immersion` (eski adresler 404) |
 | Tablo | `user_lessons` · `roleplay_logs` | `user_conversations` · `chat_logs` |
 | Sütun | `lesson_id` · `roleplay_done` | `conversation_id` · `chat_done` |
 | Kısıt/indeks/dizi | `user_lessons_user_id_lesson_id_pk` · `roleplay_logs_pkey` · `roleplay_logs_user_idx` · `roleplay_logs_id_seq` | `user_conversations_user_id_conversation_id_pk` · `chat_logs_pkey` · `chat_logs_user_idx` · `chat_logs_id_seq` |
@@ -253,25 +253,10 @@ sildiği için sıra: (1) yedek, (2) 0069 elle, (3) deploy (push artık boş far
 birleşir). Yerelde kanıtlandı: 0068'e kadar göçlü iki karalama veritabanında eski şema ile
 yeni şema + 0069 için `drizzle-kit push` ifade listeleri birebir aynı.
 
-**GEÇİCİ TAKMA ADLAR — build 7 herkese ulaşınca silinecek.** Testteki iOS/Android build 6 eski
-adlarla konuşuyor; aşağıdakiler yalnız onun için duruyor (hepsi yorumla işaretli):
-
-- `src/app/api/lesson/route.ts`, `src/app/api/roleplay/route.ts` (yeni uçları yeniden dışa
-  aktaran ince rotalar) ve `scripts/check-endpoints.mjs` ALLOW'daki iki satırı
-- `src/lib/legacy-names.ts` ve çağrıları: istek gövdesi (`lessonId`, `roleplayDone`), tür
-  (`roleplay`), sohbet kipi (`exam`), puanlı kısım kimlikleri (`:exam`), öğe kimliği
-  (`-checkpoint1`), olay adları/türleri; `x-lernomi-client` build ≤ 6 olan istemciye
-  `/api/immersion`, `/api/boss`, `/api/achievements` cevabında eski tür ve alan adları;
-  anadil manifestinde eski madde adları (aynı hash); göstergede eski paket adıyla kapatma;
-  tarayıcı deposu taşıması; hukuki yapılandırmada eski `roleplayTurnsPerDay` anahtarı
-- `scripts/content-publish.ts`: eski adlı `lessons/<kurs>-<sv>` paketleri (eski projeksiyon)
-- `src/lib/content/serve.ts`: deploy penceresi — canlı sürümde yeni adlı paket yoksa eski
-  adlısı okunup yeni biçime çevriliyor (`deploy.sh` yayını en sonda yaptığı için)
-- `mobile/src/lib/legacyNames.ts` (+ `accountScope`taki iki eski anahtar): cihazdaki eski
-  kayıtların bir kez taşınması, eski paket dizininin silinmesi
-
-KALICI (silinmeyecek): `next.config.ts`teki `/lessons…` → yeni yol 308 yönlendirmeleri
-(dışarıya verilmiş bağlantılar) ve eski göç dosyaları (`drizzle/00xx`).
+**Eski adlar için geçici uyumluluk katmanı kaldırıldı (2026-09-25, Samet'in kararı):** eski
+API adresleri, eski alan/değer çevirisi, eski adlı içerik paketleri ve cihazdaki eski
+kayıtların taşınması yok; eski adla gelen istek reddedilir. Kalıcı olan yalnız eski göç
+dosyaları (`drizzle/00xx`).
 
 ## 2a. Ürün kararları (2026-09-08'de verildi) — TARİHÇE, yerini §2 aldı
 

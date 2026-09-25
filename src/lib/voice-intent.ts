@@ -170,7 +170,7 @@ export function parseConfirm(text: string, lang: "tr" | "en" | "de" = "tr"): Con
 }
 
 /**
- * "Doğru mu yanlış mı" hükmü — konuşma konuşmasındaki `truefalse` adımı.
+ * "Doğru mu yanlış mı" hükmü — Konuşma adımındaki `truefalse` adımı.
  *
  * Ayrıştırma `parseConfirm` ile aynı sorunu taşıyordu: hüküm yalnız Türkçe
  * sözcüklerle aranıyordu ve soru kullanıcının dilinde sorulunca cevabı

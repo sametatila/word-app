@@ -634,7 +634,7 @@ aradaki boşluğu Erdi dolduruyor, şeridin altına "Devam" koyuyor (Enter ve
 boşluk da çalışıyor) ve on bir oyunun tamamı kendiliğinden ilerlemek yerine
 cevabı bekletiyor. Soru rengi de mobildeki gibi düz metin rengine döndü.
 
-**Konuşma:** bir farkı "web daha iyi" diye bırakmadan önce öbür tarafın
+**Çıkarım:** bir farkı "web daha iyi" diye bırakmadan önce öbür tarafın
 tamamına bakmak gerekiyor. Mobil burada kendi çözümünü bulmuştu ve daha
 iyisiydi.
 
@@ -2361,7 +2361,7 @@ kalın yazı eşiği 4.5'in çok altında. Bitmiş (mint) yanı zaten anlamsal
 jetondu. `--color-flame` + %14 ile açık temada 4.55, koyu temada 9.31 -
 `progress-view` ve `app-shell`teki kabul edilmiş kalıbın aynısı.
 
-Üçünün ortak konuşmayı: bir rengin metin olarak kullanıldığı yerde sabit basamak
+Üçünün ortak çıkarımı: bir rengin metin olarak kullanıldığı yerde sabit basamak
 YANLIŞ - basamak dolgu için, anlamsal jeton metin için. Sapma her seferinde
 tek bir ternary'nin bir yanında duruyordu, yani gözle bakan biri "jeton
 kullanılmış" diye geçiyordu.
@@ -2954,7 +2954,7 @@ bırakılmasın diye hepsi birlikte, ayrı bir turda değerlendirilecek.
 
 ### 11.53 "Birebir aynı kalmalı" diyen üç çift daha — şimdi ölçülüyor
 
-§11.52'nin konuşması şuydu: dosya başlığında "birebir aynı kalmalı" yazmak
+§11.52'nin çıkarımı şuydu: dosya başlığında "birebir aynı kalmalı" yazmak
 drift'i durdurmuyor, ölçüm durduruyor. Kalan içerik dosyalarını o gözle
 taradım.
 
@@ -3432,7 +3432,7 @@ telefonda A çıkıp B girdiğinde B şunları görüyordu:
     lernomi-streak          A'nın serisi
     lernomi-daily/-weekly   A'nın günün turu / haftalık önbelleği
     lernomi-items-done      A'nın bitirdiği ünite öğeleri
-    lernomi-conversation-resume:  A'nın yarım kalmış konuşmayı
+    lernomi-conversation-resume:  A'nın yarım kalmış konuşması
     lernomi:mock-done       A'nın bitirdiği deneme kâğıtları
     lernomi:mock-run:       A'nın yarım deneme koşusu
     lernomi-voice           A'nın okuma sesi (webde de hesaba ait)
@@ -4522,7 +4522,7 @@ Bugünküler meşru — farklı uçların hız sınırları (`DAILY_LIMIT` 120/2
 farklı listelerin sayfa boyu (`PAGE_SIZE` 40 sayfa / 30 uç), farklı modların
 eşikleri.
 
-Konuşma: "adı aynı olan sabit" varsayımı, adın **tek** olduğu varsayımını gizlice
+Çıkarım: "adı aynı olan sabit" varsayımı, adın **tek** olduğu varsayımını gizlice
 taşıyor. Otomatik kapı elle bakım istemiyor diye doğru olduğu anlamına gelmiyor;
 eşleştirmenin kendisi de bir varsayım ve o da ölçülmeli.
 
@@ -4562,7 +4562,7 @@ bölümün kendi içinde yapılmıştı; kalan iş yapmaktı.
 **Neden önemliydi:** konuşma geçme koşulu konuşmanın **yapılmasını** istiyor
 (`chatDone`). Sağlayıcı kapalıyken web konuşmaya ait senaryoya düşüp devam
 ediyordu; mobil yalnız "yapay zekâ kapalı" deyip bırakıyordu — yani Android'de
-**hiçbir konuşma konuşmayı tamamlanamıyordu**.
+**hiçbir Konuşma adımı tamamlanamıyordu**.
 
 | adım | ne geldi |
 |---|---|
@@ -4641,7 +4641,7 @@ satırında da geçiyor (`weekly-player`: "Burada `track("exam_start", …)`
 yazıyordu") ve elle bakarken onu gerçeğinden ayırmamıştım — tek geçiş sandım.
 Kapı yorumları ayıkladığı için doğruyu gösterdi.
 
-Konuşma: yanlış pozitif yalnız fazladan iş çıkarmaz, **gerçek bulguyu da
+Çıkarım: yanlış pozitif yalnız fazladan iş çıkarmaz, **gerçek bulguyu da
 gizleyebilir**. §11.85'te kapıya yazdığım "yorumlar ayıklanmalı" kuralının
 ikinci gerekçesi bu.
 
@@ -4755,7 +4755,7 @@ yalnız metin noktalaması kalmışsa temizlenip metin olarak sınanıyor. İki
 tarafta da yeni yanlış pozitif yok (166 / 17 aynı) ve enjekte edilen satır
 ikisinde de yakalanıyor.
 
-§11.96'nın kaydettiği konuşma bir kez daha: **yanlış negatif iş çıkarmıyor,
+§11.96'nın kaydettiği çıkarım bir kez daha: **yanlış negatif iş çıkarmıyor,
 bulguyu gizliyor.**
 
 ### 11.105 Rozet duvarı: bilinmeyen grup sessizce düşüyordu
@@ -4873,7 +4873,7 @@ yapmıyordu, ikisi de genel bir kıvılcımla çiziliyordu.
 
 İkisine de kendi karosu verildi (ortak seri kalp, lig yükselişi taç).
 **Parity 54** iki tarafı hem birbirine hem **paylaşılan listeye** bağlıyor:
-§11.111'in konuşması burada da geçerli — `default` dalı varken yeni bir tür
+§11.111'in çıkarımı burada da geçerli — `default` dalı varken yeni bir tür
 sessizce yanlış çiziliyor ve hiçbir kapı görmüyor.
 
 ### 11.114 Tepki satırında boş ad: tip aynı görünüyordu, değildi
@@ -4917,7 +4917,7 @@ olduğu gibi bırakılıyor; etiket temizliği zaten gövdeyi ayırıp çıkarı
 Ölçüldü: iki tarafta da yeni yanlış pozitif yok (166 / 17 aynı) ve enjekte
 edilen satır yakalanıyor.
 
-§11.104 ve §11.109 ile birlikte üçüncü kez aynı konuşma: **yanlış negatif iş
+§11.104 ve §11.109 ile birlikte üçüncü kez aynı çıkarım: **yanlış negatif iş
 çıkarmıyor, bulguyu gizliyor** — ve gizlediği şey her seferinde gerçek bir
 kullanıcı hatası oldu.
 
@@ -5226,7 +5226,7 @@ ad (`home.greeting`).
 itiraz etti: aynı anahtar artık hem base hem web'de duruyordu. Web kopyaları
 silindi. İki kapı arka arkaya kendi işini yaptı.
 
-**Konuşma:** bir yüzeyi karşı platforma taşırken metnin *varlığı* kadar
+**Çıkarım:** bir yüzeyi karşı platforma taşırken metnin *varlığı* kadar
 *bulunduğu sözlük* de kontrol edilmeli. Bu turdan sonra o kontrol elle değil,
 kapıda.
 
@@ -5382,7 +5382,7 @@ başlıyor. Mobilde hiç yoktu — her tekrar ve üretim adımında ekrana dokun
 gerekiyordu.
 
 Farkın telefonda webdekinden **büyük** olması gerekirdi: cihaz masaya dayalıyken
-her tur için ekrana uzanmak, konuşma konuşmasının ritmini kesen tek şey.
+her tur için ekrana uzanmak, Konuşma adımının ritmini kesen tek şey.
 
 **Sıralama, yürüyüş modunun kanıtlanmış kalıbı:** önce `speakAndWaitVoiced`,
 sonra dinle. `speakTarget` bitişi bildirmiyor; onunla kurulsaydı mikrofon
@@ -5459,7 +5459,7 @@ kullanıyordu; mobilde **kendi yazısını silmenin hiçbir yolu yoktu**. Kendi
 denetimi eksik bırakıyor. Onay isteniyor (geri alınamaz), satır önce gidiyor
 sunucu sonra — kullanıcı beklemiyor.
 
-**§11.144'ün konuşması kapıya yazıldı:** `check-endpoints` artık **yöntem
+**§11.144'ün çıkarımı kapıya yazıldı:** `check-endpoints` artık **yöntem
 düzeyinde** de bakıyor. Aynı ucun bir yönteminin tek platformda kalması, ucun
 tamamen tek platformda kalması kadar sessiz — `GET /api/skills` tam olarak
 böyle kaçmıştı. Yeni kural bu silme eksiğini **kendiliğinden buldu**.
@@ -6021,7 +6021,7 @@ değerlendirme isteği) bu tur kırmızıya döndü — web `locale: "tr"` alan�
 sekiz çağrı yerinden birden kaldırmıştı (`a85566ad`: değerlendirme artık
 öğrencinin dilinde, dili sunucu profilden okuyor). Mobil tarafı da aynı
 oturum düzeltirken ben ölçüyordum; kapı ikisi de bitince yeşile döndü.
-**Konuşma:** kırmızı bir kapı her zaman "bir şey bozuldu" demek değil — bazen
+**Çıkarım:** kırmızı bir kapı her zaman "bir şey bozuldu" demek değil — bazen
 "iki taraftan biri henüz gelmedi" demek. Ölçüp kimin işi olduğunu görmek,
 düzeltmeye atılmaktan önce geliyor; yoksa aynı satırı iki oturum iki kez
 yazar.
@@ -6543,7 +6543,7 @@ hepsi meşru (kurs adları zaten üç dilde yazılı, içerik çözücünün des
 Goethe'nin Almanca bölüm adları, model istemleri, konsol kayıtları, dil adının
 kendi dilinde kalması). Gerekçeleri artık taban dosyasında yazılı - **sayı da
 bir muafiyet listesi ve sebebi yazılmazsa eskiyor**, bu turun dört kaydının
-ortak konuşmayı bu.
+ortak çıkarımı bu.
 
 Denetimi pahalı yapan şey webdeki tarayıcının `--hits` bayrağının olmamasıydı;
 mobilde vardı, eklendi.
@@ -6621,7 +6621,7 @@ uyan kazanıyor), §95 kural parçacıkları, §96 karıştırma çiftleri. Üç
 mobil `i18n-scan`in yeni muafiyetlerinin karşılığı: **muafiyet eklemek kapı
 eklemeyi gerektiriyor**, bu depoda yazılı kural.
 
-**Bu turun konuşması:** "port edilmedi" diye yazılmış bir not, üzerinden zaman
+**Bu turun çıkarımı:** "port edilmedi" diye yazılmış bir not, üzerinden zaman
 geçince bir karar gibi okunuyor. Beş turdur ölçtüğüm şey hep aynı: yazılı
 gerekçe denetlenmezse eskiyor. Bu seferki en pahalısıydı — öğrenme
 uygulamasında "neden yanlış" açıklaması bir ayrıntı değil, ürünün kendisi.
@@ -7070,7 +7070,7 @@ yakalıyor** (§73, §78, §98, §103).
 
 Beklentili adımlarda (tekrar et, üret, doğru/yanlış) mobilde ilerlemenin tek
 yolu "yazarak cevapla"ydı — **ve o da doğru cevabı bilmeyi gerektiriyor.**
-Adımı bilmeyen öğrencinin konuşması bitirme yolu yoktu: ya doğruyu buluyor ya
+Adımı bilmeyen öğrencinin konuşmayı bitirme yolu yoktu: ya doğruyu buluyor ya
 konuşmadan çıkıyordu. Web her beklentili adımda bir atlama bağlantısı veriyor ve
 atlanan adımı ölçümde **sıfır** sayıyor — atlama sessizce "doğru" sayılmıyor.
 
@@ -7205,7 +7205,7 @@ gerekçesi de duruyordu — `lib/events.ts`: *"premium özellik kilide takıldı
 (kind = özellik) … paywall'ı hangi kısıt besliyor, oradan görülür."* Olayı
 **hiçbiri göndermiyordu.** Huninin sonu ölçülüyordu (`paywall_view`,
 `paywall_cta`, `purchase_*`), başı ölçülmüyordu: kimin oraya hangi kapıdan
-itildiği hiç yazılmıyordu. §90'ın konuşmasının aynısı — olayın TANIMLI olması
+itildiği hiç yazılmıyordu. §90'ın çıkarımının aynısı — olayın TANIMLI olması
 gönderildiği anlamına gelmiyor.
 
 Yazılı `kind` listesi de uydurmaydı (`speaking|exam_full|unlimited_tour`);
@@ -7686,7 +7686,7 @@ baştan beri doğru yapıyor (`deadline.current - Date.now()`), yani örnek zate
 evin içindeydi.
 
 İkisi birden yanlış olunca **karşılaştırma hiçbir şey söylemez** — bu turun
-konuşması bu. §135 o yüzden iki şey ölçüyor: (1) üç zamanlı yüzeyde sürenin
+çıkarımı bu. §135 o yüzden iki şey ölçüyor: (1) üç zamanlı yüzeyde sürenin
 kaynağı iki platformda aynı mı, (2) **hiçbiri sayıcıyla işlemiyor mu.**
 İkincisi olmadan "ikisi de sayıcı" durumu yeşil geçerdi ve enjeksiyon bunu
 gösterdi.
@@ -7728,7 +7728,7 @@ Web'de eşik `status >= 400 && < 500` diye yazılıydı, yani **oturumu düşen
 kullanıcının turu siliniyordu.**
 
 **§136** kuyruğun dört özelliğini ve **kuyruğu çağıranı** ayrı ölçüyor —
-§90'ın konuşması: yazılmış olması, çağrılıyor olması demek değil. Dört
+§90'ın çıkarımı: yazılmış olması, çağrılıyor olması demek değil. Dört
 enjeksiyonun dördü de yakalandı.
 
 Kapı bir kez daha komşusunu ölçtü: kuyruk sınırını dosyanın **ilk**
@@ -7916,7 +7916,7 @@ seviyenin ne anlama geldiği yazmıyordu.** Web açıklamayı "bu düğmeyi send
 başkası çevirmiyor" cümlesinin başına koyarak zaten gösteriyor; mobil de artık
 aynı cümleyi kuruyor.
 
-Bu turun asıl konuşmayı **kendi hatamda**: önce webde açıklamanın yalnız `title`
+Bu turun asıl çıkarımı **kendi hatamda**: önce webde açıklamanın yalnız `title`
 niteliğinde olduğunu gördüm ("dokunmatikte hover yok") ve webe **ikinci bir
 açıklama satırı** ekledim. Oysa orada zaten bir tane vardı, on satır aşağıda.
 Yinelenen satırı yazdım, sonra **kapının kendisi yakaladı**: web tarafını
@@ -8013,8 +8013,8 @@ olmuştu). Bloğun tamamını okuyunca sayaç oradaydı.
 bağlanması**. Dört sayı (iki kutu, iki sayaç) kendi dosyalarında elle
 duruyordu — mobil `src/lib`ten import edemiyor, o yüzden sayı orada elle
 yazılmak zorunda. **§146** dördünü hem birbirine hem `lib/social/username`'in
-kendisine bağlıyor: ikisi birlikte kaysa bile kapı düşüyor (§11.228'in konuşması,
-kapıya uygulanmış). Üç enjeksiyonun üçü de yakalandı — sonuncusu tam o konuşmayı
+kendisine bağlıyor: ikisi birlikte kaysa bile kapı düşüyor (§11.228'in çıkarımı,
+kapıya uygulanmış). Üç enjeksiyonun üçü de yakalandı — sonuncusu tam o çıkarımı
 gösterdi: `BIO_MAX`i 200 yapınca iki yüzey birbirine eşit kaldığı için birinci
 kapı yeşil geçti, ikinci kapı kırmızı yandı.
 
@@ -8210,7 +8210,7 @@ doğrulayamaması** demek. On birine de durum kondu (`aria-pressed` /
 `accessibilityState={{ selected }}`).
 
 **§154** kuralı yüzey tarayarak kuruyor ve iki platformu aynı geçişte gezdiği
-için "ikisi birden sessiz" hâlini de yakalıyor (§11.228'in konuşması).
+için "ikisi birden sessiz" hâlini de yakalıyor (§11.228'in çıkarımı).
 
 Kapı üç kez düzeltildi ve üçü de öğretici:
 
@@ -8243,7 +8243,7 @@ yerli. Yani kırk dördü de doğruydu; yazacağım kapı kırk dört yanlış a
 üretecekti.
 
 **Kuralı bilmeden tarama yapmak, taramanın sonucunu yanlış okutuyor.**
-§11.236'daki "neyi saydığına bak" konuşmasının ikizi: orada sayı şişmişti, burada
+§11.236'daki "neyi saydığına bak" çıkarımının ikizi: orada sayı şişmişti, burada
 eksiklik uydurmaydı.
 
 Doğru bulgu bir adım ötedeydi. Eşleştirme maddesinde **kullanılmış bir şık
@@ -8578,7 +8578,7 @@ düşüyordu; o da tek satıra alındı.
 Ayrıca `const ad = …` gibi atamalar ve `t("...", { name: … })` gibi parametre
 nesneleri kapsam dışı, ve her dosyada **en az bir çizim** bulunması ayrıca
 ölçülüyor — yoksa deyim değişince kapı hiçbir şey ölçmeden yeşil kalırdı
-(§11.259'daki boş liste konuşmayı).
+(§11.259'daki boş liste çıkarımı).
 
 Altı enjeksiyonun altısı da doğru tarafta yakalandı.
 
@@ -9008,7 +9008,7 @@ duyuru onu yeşil yapmıyor. Üç enjeksiyonun üçü yakalandı.
 
 ## §11.273 — Puan duyurulmuyordu (aynı sınıf, üçüncü kalıp)
 
-§11.272'nin konuşmasını uyguladım: canlı bölge sınıfını bu kez **geçici mesaj**
+§11.272'nin çıkarımını uyguladım: canlı bölge sınıfını bu kez **geçici mesaj**
 değil **durum nesnesi** kalıbıyla taradım (`useState<{…} | null>` ve onun
 çizim blokları). İki platform birlikte seksen çizim verdi. Çoğu yüklenen
 **veri** — liste satırı, profil alanı, öneri kutusu — ve onların duyurulmaması
@@ -9121,7 +9121,7 @@ tekrarıydı:
 1. Ölçüm mobildeki **tam ifadeyi** arıyordu; web aynı kararı ters sırayla
    yazıyor (`mode === "signin" ? "current-password" : …`) ve kapı doğru kodu
    "yok" diye bildirdi. Önemli olan biçim değil davranış: iki ipucunun da
-   geçmesi ve kararın kipe bağlanması (§167'deki değişken adı konuşmayı).
+   geçmesi ve kararın kipe bağlanması (§167'deki değişken adı çıkarımı).
 2. Ölçüm dosyada ipucunun **geçmesine** bakıyordu; giriş e-postasının ipucu
    silinince sıfırlama ekranındaki e-posta alanı, yeni parolanınki silinince
    "tekrar" alanı kapıyı yeşil tutuyordu — komşu alan ölçülenin yerine
@@ -9198,7 +9198,7 @@ Artık sunucu tarafında `lib/profile-limits` tek kaynak, mobilde
 hepsi sınırı oradan okuyor.
 
 **§50, §144 ve §145 bu değişiklikle düştü ve üçü de §183'e katlandı.** Biri
-konuşma verdi: §144 sayıyı bulamadığında iki tarafta da `"?"` üretiyordu ve
+bir şey öğretti: §144 sayıyı bulamadığında iki tarafta da `"?"` üretiyordu ve
 `"?" === "?"` kapıyı yeşil tutuyordu. Yani kapı, sabitler ortaya çıktığı an
 **hiçbir şey ölçmemeye** başlamış, ama bunu bir arıza gibi değil bir uyum
 gibi bildirmişti. Kural: *bir kapı ölçemediği şeyi "bilinmiyor" diye
@@ -9326,7 +9326,7 @@ cümlede rastlantıyla bulunan bir başkasıydı. Politika tablosuna `yer` alan�
 eklendi; her politika hangi yer tutucuyu beklediğini **kendisi** söylüyor.
 Enjeksiyon 5 (`{min}` → `30`) eski hâlde sessizce geçerdi, şimdi yakalanıyor.
 
-Bu, bu turların en sık tekrar eden konuşmasının bir örneği daha: **bir kapının
+Bu, bu turların en sık tekrar eden çıkarımının bir örneği daha: **bir kapının
 yeşil olması ölçtüğünün doğru şey olduğunu göstermez.** Enjeksiyon, ölçümün
 kendisini ölçmenin tek yolu.
 
@@ -9612,7 +9612,7 @@ göre kurulur.
 ayıklanmış, boşluk teklenmiş). Üç enjeksiyonun üçü yakalandı: seri eşiğinin
 kayması, hız bonusunun yuvarlanması, yanlış cevabın erken dönüşünün kalkması.
 
-Konuşma: **bir sabit çiftini korumak, o sabitleri kullanan formülü korumaz.**
+Çıkarım: **bir sabit çiftini korumak, o sabitleri kullanan formülü korumaz.**
 Aynı sayılarla iki farklı sonuç üretmek gayet mümkün ve bu deftere bugüne
 kadar hep sayılar üzerinden bakılmıştı.
 
@@ -9667,7 +9667,7 @@ birini önceki ünitelerden seçip kendi sorularının arasına serpiyor
 ve aralıklı tekrar bu uygulamanın bütün öğrenme tasarımının dayanağı.
 
 Hiçbir kapı bakmıyordu, çünkü kapılar sayı ve metin karşılaştırıyor;
-**olmayan bir şeyi hiçbiri aramıyordu.** §11.292'nin konuşmasının devamı: sabitleri
+**olmayan bir şeyi hiçbiri aramıyordu.** §11.292'nin çıkarımının devamı: sabitleri
 karşılaştırmak o sabitleri kullanan hesabı korumuyor — ve hesap bir tarafta
 hiç yoksa karşılaştırılacak sayı da yok.
 
@@ -9949,7 +9949,7 @@ Yeni kapı üç şeye bakıyor:
 3. **Seri hâle gelmeyen prop geçiliyor mu** — sunucu bileşeninden istemci
    bileşenine fonksiyon, `Date`, `Map`, `Set`.
 
-**Üçüncü ölçüm bir kez hiçbir şey ölçmedi ve bu turun asıl konuşmayı o.** Açılış
+**Üçüncü ölçüm bir kez hiçbir şey ölçmedi ve bu turun asıl çıkarımı o.** Açılış
 etiketini `[\s\S]{0,700}?/?>` ile kesiyordum; ilk `>` **okun içindeydi**
 (`onPick={() => …}`), yani etiket tam da aranan prop'un önünde bitiyordu.
 Enjeksiyon yakalanmayınca ortaya çıktı — ve tuzağın kaydı depoda zaten vardı:
@@ -10051,7 +10051,7 @@ kapanmıyor. Simetrik.
 
 ## §11.306 — Hesap silme sekiz tabloyu arkada bırakıyordu
 
-Geçen turun konuşmasını uyguladım: **kararlaştırılabilir** bir soru seç. Bu soru
+Geçen turun çıkarımını uyguladım: **kararlaştırılabilir** bir soru seç. Bu soru
 öyle — şemadaki hangi tablolar kullanıcıya bağlı, ve `lib/account/purge` onları
 kapsıyor mu? İkisi de metinden okunabiliyor.
 
@@ -10158,7 +10158,7 @@ var mı" sorusu ancak anahtar tek tek arandığında güvenilir.*
 
 ## §11.309 — Şablonla kurulan anahtarlar: ekrana ham anahtar çıkma riski
 
-§11.308'in konuşmasını geriye dönük uyguladım. Önce körlüğün büyüklüğünü ölçtüm:
+§11.308'in çıkarımını geriye dönük uyguladım. Önce körlüğün büyüklüğünü ölçtüm:
 webde 1562 düz `t("…")` çağrısına karşı **116 koşullu + 40 değişkenli**,
 mobilde 1577'ye karşı **93 + 39**. Yani anahtar kullanımının yaklaşık onda
 biri düz taramaya görünmüyor.
@@ -10191,7 +10191,7 @@ bayatlamasını görmeye devam ediyor.
 
 Kapı bilerek **elle beslenen bir liste** tutuyor: "şablonla kurulan her
 anahtarı bul" diye genel bir tarama, değer kümesini tahmin etmek zorunda kalır
-ve tahmin eden kapı ya gürültü ya kalıcı yeşil üretir (§11.305'in konuşması).
+ve tahmin eden kapı ya gürültü ya kalıcı yeşil üretir (§11.305'in çıkarımı).
 
 ## §11.310 — Belgelenen `kind` kümesi ile üretilen değerler
 
@@ -10383,7 +10383,7 @@ istisnası **karşılıksız** kaldı ve kapı bunu ayrı bir ihlal olarak bildi
 
 ## §11.317 — İngilizce kursta Patika'nın altı yuvası boş (içerik, kod değil)
 
-§11.312'nin konuşması genelleştirildi: her kurs/seviye için gereken yuva sayısı ile
+§11.312'nin çıkarımı genelleştirildi: her kurs/seviye için gereken yuva sayısı ile
 havuzdaki egzersiz sayısı ayrı ayrı sayıldı.
 
 | Kurs | Üniteli egzersiz | Gereken (okuma/dinleme/yazma) |
@@ -10588,7 +10588,7 @@ optik ayar (bir rozeti hizalayan `marginTop: 2`, sıkı bir satırdaki `gap: 6`,
 Yarıçapta durum tersiydi: orada belgelenmiş beş basamak vardı ve mobil ona
 **birebir** uyuyordu, yani sapma tek taraflıydı ve ölçülebilirdi. Burada bir
 kapı 320 bilinçli ayarı ihlal diye bildirirdi; niyeti okuması gerekir ve
-"niyeti okuması gereken kapı yazılmaz" (§11.254'ün konuşması). Ayrışma varsa
+"niyeti okuması gereken kapı yazılmaz" (§11.254'ün çıkarımı). Ayrışma varsa
 yüzey yüzey, karşılığına bakarak bulunur — sohbet balonlarının dolgusunda
 (§11.319) böyle bulundu.
 
@@ -11060,7 +11060,7 @@ Yani sesli okuyucu kullanan biri eyleminin başarısız olduğunu **hiç
 **İki taraf da yanlış olduğu için karşılaştırmalı bir kapı bunu göremezdi.**
 §11.228'in sınıfı: "her iki taraf da aynı yanlışı yapıyorsa eşitlik kontrolü
 geçer". Ölçüt karşılaştırma değil, **mutlak**: bir eylem başarısız olduysa
-duyurulur. Bu turların en çok tekrar eden konuşmayı, tersinden: bazı kusurlar
+duyurulur. Bu turların en çok tekrar eden çıkarımı, tersinden: bazı kusurlar
 ancak iki tarafa da aynı anda bakmayan bir ölçütle görülür.
 
 Düzeltme iki platformda da **tek yerde**: web'de yeni `social/error-text`
@@ -11181,7 +11181,7 @@ pencere tahmini kalıyor ne de "dosyada bir yerde" gevşekliği. Enjeksiyonla ik
 durum ayrı ayrı doğrulandı: rolü silmek **ve** rolü yanlış dala taşımak —
 ikincisi dosya geneline bakan bir desenin kaçıracağı tam durum.
 
-Bu, aynı konuşmanın bu turlardaki dördüncü biçimi: §184 komşu satırı ölçtü, §208
+Bu, aynı çıkarımın bu turlardaki dördüncü biçimi: §184 komşu satırı ölçtü, §208
 420 karakterlik pencere komşuyu gördü, §11.333 `[^)]*` ilk parantezde durdu,
 şimdi 400 karakterlik pencere yetmedi. Ortak kural artık net: **pencere
 yerine yapı** — sınır bir mesafe değil, bir düğüm olmalı.
@@ -11703,7 +11703,7 @@ sonra değil. Çıkarıcı blok içindeki **tüm** i18n benzeri dizeleri toplaya
 
 ## §11.349 — Konuşma kapanışı: kutlamanın ölçütü ve bilinmeyen hüküm
 
-Eksen **konuşma/konuşma oynatıcısı**ydı. İlk ölçüm bir şeyi netleştirdi:
+Eksen **Konuşma adımı oynatıcısı**ydı. İlk ölçüm bir şeyi netleştirdi:
 **özellik düzeyinde iki oynatıcı eşit** — rapor yolu, tur sayacı, devam etme,
 kalıp listesi, düzeltmeler, sınav bağlantısı ikisinde de var. Ayrışma **kopya
 alan adında**: mobil `conversation.*`, web `conversationp.*` (web-özel). Aynı cümlelerin
@@ -11927,7 +11927,7 @@ oldu: karşılık yazılı, çip `speakGerman` ile sesli.
 - **Varlık değil kullanım**: web ölçüsü "dosyada `SPEAK_CLIP_MS` geçiyor mu"
   diyordu; `import` satırı da adı taşıdığı için `const MAX_MS = 8000`a geri
   dönmek kapıyı **yeşil bıraktı**. Ölçü kullanıma çevrildi (§11.351'in aynı
-  konuşmayı).
+  çıkarımı).
 
 Mevcut "telaffuz eşiği ve kayıt süreleri" kapısı da güncellendi: sayıyı
 oynatıcıdan okuyordu, artık **sabitten** okuyup oynatıcının gerçekten oradan
@@ -12075,7 +12075,7 @@ olarak ezen kalıp.
 
 ## §11.358 — Kapı denetimi: "işaret var" ile "işaret işe yarıyor"
 
-§11.357'nin konuşması kapıların kendisiyleydi, bu yüzden bu tur **kapıları**
+§11.357'nin çıkarımı kapıların kendisiyleydi, bu yüzden bu tur **kapıları**
 denetledi: erişilebilirlik işaretini ölçen bütün ölçüler tarandı.
 
 **Sonuç büyük ölçüde iyi.** Ölçülerin neredeyse hepsi düğüm bağlı: bir dal
@@ -12190,7 +12190,7 @@ prop'u aldı (`live` → `accessibilityLiveRegion`, webde `role`) ve beş hata
 çağrısı da onu kullanıyor. Boş hâlde duyuru **istenmiyor**: "henüz arkadaşın
 yok" bir hata değil, sayfanın normal içeriği.
 
-Bunun bir kapı konuşmayı var. §228 ("hata dalı duyuruluyor") duyuruyu **çağrı
+Bunun bir kapı çıkarımı var. §228 ("hata dalı duyuruluyor") duyuruyu **çağrı
 yerinde** arıyor; kabuk prop'u okumayı bıraksa o kapı yeşil kalır ve hiçbir
 şey duyurulmaz — denedim, kalıyor. §241 bu yüzden iletmenin kendisini ayrı
 bir olgu olarak ölçüyor. §228'in mobil deseni de `live="assertive"`i kabul
@@ -12286,7 +12286,7 @@ Dört olgu: dokuz ekranın başlığında adı olan bir çıkış denetimi (iki 
 ayrı listede), ayrılmanın onaya bağlı olması (beş yüzey, **dönüşün gerçekten
 diyaloğu açması** ölçülüyor — kanca çağrılıp dönüşü kullanılmazsa dosyada ad
 geçer ve hiçbir şey değişmez), kancanın gerçekten dinlemesi (mutlak; §241'in
-konuşması) ve çıkış karosunun ölçüsü.
+çıkarımı) ve çıkış karosunun ölçüsü.
 
 Ad ölçüsü **koşullu adı da sayıyor**: `t(phase === "bolum" ? "exam.quit_title"
 : "common.back")` gibi bir ad ilk yazımda görünmüyordu ve iki ekran yanlışlıkla
@@ -12332,7 +12332,7 @@ sürdüğünü söyleyen hiçbir şey olmuyordu. Dört form artık `aria-invalid
 bağlıyor. React Native'de `aria-invalid` yok; mobil karşılık hatanın canlı
 bölgede duyurulması ve o başka kapılarda ölçülüyor.
 
-### İki ölçüm konuşmayı
+### İki ölçüm çıkarımı
 
 **Örtülü etiket de bir addır.** İlk ölçüm `<label>` ile *saran* bağlantıyı
 saymıyordu ve doğru yazılmış beş yönetici alanını "adsız" gösteriyordu —
@@ -12398,7 +12398,7 @@ iki kelimeyi istiyordu. **Burada ileride olan webdi** ve kural webin kuralı
 oldu; Android'in daha gevşek olması bir tasarım tercihi değil, ölçülmemiş bir
 boşluktu.
 
-### §244 ve iki kapı konuşmayı
+### §244 ve iki kapı çıkarımı
 
 Dört olgu: elle yazılmış tabanın kalmaması (mutlak), kapalı düğmenin
 sebebinin yazması (üç yüzey, eşleştirmeli), döküm kapısının kelime sayması ve
@@ -12460,7 +12460,7 @@ kodu** ("tr" yerine "tr-TR"). Aynı sapma Android'de de vardı
 tam sayı geçiriyor, yani görünür bir kusur yok — ama kesirli bir değer
 geçtiği gün iki platform aynı sayıyı farklı yazardı. Web de yuvarlıyor artık.
 
-### §245 ve iki kapı konuşmayı
+### §245 ve iki kapı çıkarımı
 
 Beş olgu: yüzde biçiminin `Intl`den gelmesi ve yuvarlama (eşleştirmeli),
 sözlük anahtarının kalkması (mutlak, ağaç geneli), sabit noktanın kalmaması
@@ -12605,7 +12605,7 @@ anahtarı**. Aynı denetim iki uygulamada iki farklı simge taşıyordu; dişli
 yoktu** — mobilin çizimi karşılığı olarak yazıldı. Aynı sınıf iki tur önce
 `SearchIcon`da çıkmıştı.
 
-### §246 ve kapının dördüncü aynı konuşmayı
+### §246 ve kapının dördüncü aynı çıkarımı
 
 Dört olgu: başlıktaki karonun glif ölçüsü (mobil, mutlak), kapatma karosunun
 ortak bileşenden gelmesi (web, mutlak), bileşenin Android'in sayılarını
@@ -12709,7 +12709,7 @@ arkadaş) Android'in sözcüğüne çevrildi; dört liste olduğu gibi kaldı.
   `formatNumber`inin yuvarlamasını atlıyordu. Bir önceki turda web'i
   biçimleyiciye bağlamıştım; Android'in kendi kaçağı buydu.
 
-### Ölçüm konuşmayı: bir ölçü "ad çizimi" sayınca
+### Ölçüm çıkarımı: bir ölçü "ad çizimi" sayınca
 
 Baş harf dairesini eklediğimde mevcut "liste satırında ad" kapısı düştü:
 probe ad çizimlerini sayıp her birinin bir `truncate` atası olmasını istiyor,
@@ -12955,7 +12955,7 @@ gerekçe: o anahtarlar bir çürümeyi saklamıyordu, sadece ölüydüler.
 `mockpack.progress`in `%{pct}` yazdığı bulgusu ise **doğru** — o tek dosyadan
 okunmuştu.
 
-Konuşma: bir dosyanın adını bastıran bir çıktıya bakıp "hangi dosyadaydı"
+Çıkarım: bir dosyanın adını bastıran bir çıktıya bakıp "hangi dosyadaydı"
 sorusuna cevap vermek, ölçmek değil varsaymaktır. Bu oturumda ölçüm
 hatalarının hepsi aynı aileden çıktı (§252'deki üç hata, §250'deki `walkCue`,
 bu): **bir olguyu, onu taşımayan bir çıktıda aramak.**
@@ -13968,7 +13968,7 @@ kalır. Kapı bunu iki ayrı yoldan ölçüyor: tür listesiyle **ve** `sendEmai
 çağrılarının kaçının `meta` taşımadığını sayarak (0 olmalı).
 
 Pano da gösteriyor, hata kırmızı: yazılıp gösterilmeyen bir sayı yine
-kimsenin bakmadığı yerde durur — §11.395'in aynı konuşmayı.
+kimsenin bakmadığı yerde durur — §11.395'in aynı çıkarımı.
 
 ### §273
 
@@ -14187,7 +14187,7 @@ edilmiş ama karşılanmayan yol.
 
 ## §11.401 — Soğuk açılışta bildirim dokunuşu düşüyordu
 
-§11.400'ün hemen yanındaki kusur, ve **aynı konuşma**: derin bağlantı yolu soğuk
+§11.400'ün hemen yanındaki kusur, ve **aynı çıkarım**: derin bağlantı yolu soğuk
 açılış yarışını öğrenmiş ve çözmüştü —
 
 > "SOĞUK AÇILIŞ YARIŞI. `getInitialURL` gezgin daha kurulmadan çözülüyor; ilk
@@ -14265,10 +14265,10 @@ bozuldu: denetim ucu anında çağıransız bildirdi. Yol biçiminin **tek baş�
 çağıran sayılmadığı ise zaten canlı kanıt: §274 kapıda duruyor ve
 `/api/cron/summary` "belgelenmiş çağıransız" kalıyor.
 
-**Konuşma — enjeksiyon kör olabilir, kapı değil.** İlk deneme `/api/words`in bir
+**Çıkarım — enjeksiyon kör olabilir, kapı değil.** İlk deneme `/api/words`in bir
 çağıranını bozmaktı ve denetim tepki vermedi; bu, tarayıcının zayıfladığı
 anlamına gelmiyordu, o ucun **başka çağıranları** olduğu anlamına geliyordu.
-§276'nın konuşmasının aynısı, bu kez denetim aracının üstünde: bir enjeksiyon
+§276'nın çıkarımının aynısı, bu kez denetim aracının üstünde: bir enjeksiyon
 ateşlemiyorsa önce enjeksiyonun okunan şeyi gerçekten değiştirdiği
 doğrulanmalı.
 
@@ -14453,7 +14453,7 @@ E-postanın paleti tümüyle kendi başınaydı (#faf9f5 zemin, #141413 yazı,
 değerleri oldu; `var(--bg)` kullanılamıyor çünkü e-posta istemcisi CSS
 değişkenini atıyor (aynı kısıt `next/og` için de geçerli).
 
-### Konfeti — "ikisi de yanlış" sınıfının konuşma kitabı örneği
+### Konfeti — "ikisi de yanlış" sınıfının klasik örneği
 
 ```
 ["#eda45d", "#ddb62c", "#45b87a", "#35b2cc", "#ae79d4", "#ee6b7c"]
@@ -14660,7 +14660,7 @@ if (!deadline.current) deadline.current = Date.now() + EXAM_SECONDS * 1000;
 const tick = () => setLeft(Math.max(0, Math.ceil((deadline.current - Date.now()) / 1000)));
 ```
 
-Bu kalıp §271'in konuşması: arka plana atılan sınav süresini uzatamasın diye
+Bu kalıp §271'in çıkarımı: arka plana atılan sınav süresini uzatamasın diye
 **duvar saati** kullanılıyor. Ama Android'in sonuç ekranındaki "Tekrar dene"
 şunu yazıyordu:
 
@@ -16183,7 +16183,7 @@ zincirdi:
 "Öğrenci". Ama `social.student` **liste satırlarının** yedeği (lider tablosu,
 günün turu; iki platformda da öyle) ve `profile.student` profil kartının kendi
 yedeği. Aynı yüzeyin iki anahtarı olunca biri düzeltilip ötekinin eski kalması
-için bir yol açılıyor — defterin `cheer`/`celebrate` konuşmayı.
+için bir yol açılıyor — defterin `cheer`/`celebrate` çıkarımı.
 
 **Eksik adım** ise görünür: adı olmayan bir kullanıcı Android'de e-posta
 adresinin yerel parçasını görüyor ("samet@…" → "samet"), webde doğrudan
@@ -16405,14 +16405,14 @@ ağırlıklar: iki platform aynı metne aynı puanı vermeli."* İddiayı tutan 
 Ölçü dizgi değil **sayı**: ifadeden katsayılar çekiliyor, yani biçimlendirme
 değişse kapı kırmızı vermez ama bir katsayı değişse verir.
 
-### §314 ve bir enjeksiyon konuşmayı
+### §314 ve bir enjeksiyon çıkarımı
 
 Dört enjeksiyon planladım, biri **yakalanmadı** ve sebebi kayda değer:
 `const w = s.task * …` bildirimini `const toplam = …` diye değiştirmek kapıyı
 düşürmedi — çünkü ölçü bildirimin **adına** bakmıyor, katsayı ifadesine ve
 ayrıca `(w / 4) * 100` kalıbına bakıyor; ikincisi hâlâ `w` diyordu. Yani
 enjeksiyon kapının **okuduğu şeyi değiştirmemişti**. Defterin tekrar eden
-konuşmayı: *enjeksiyonun kapının okuduğu yeri gerçekten bozduğunu doğrula.*
+çıkarımı: *enjeksiyonun kapının okuduğu yeri gerçekten bozduğunu doğrula.*
 
 Yerine iki gerçek enjeksiyon konuldu: ifadedeki terim **düzenini** değiştirmek
 (kapı "OKUNAMADI" diyor — toplama değişmeli olduğu için bu bir yanlış pozitif

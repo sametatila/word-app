@@ -45,7 +45,7 @@ function packCourseFor(course: string): "de" | "en" {
  * Kursun konuşmaları, seviye sırasında.
  *
  * Eşleşme TAM: her kurs yalnız kendi konuşmalarını alır. Yalnızca BİLİNMEYEN bir
- * id Almancaya düşer. Not: gsw-zh'ın diskte hiç konuşmayı yok, bu yüzden Almanca
+ * id Almancaya düşer. Not: gsw-zh'ın diskte hiç konuşması yok, bu yüzden Almanca
  * paketlerini okuyor — hedefi de Almanca.
  */
 export async function conversationsFor(course: string): Promise<Conversation[]> {

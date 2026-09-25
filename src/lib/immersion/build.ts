@@ -133,7 +133,7 @@ export function buildTrack(input: BuildTrackInput): ImmersionTrack {
       } else if (kind === "grammar") {
         // Gramer artık TÜRETİLEBİLİYOR (lib/immersion/grammar.ts): elle
         // yazılmış içerik öncelikli, yoksa ünitenin kendi hüküm ve üretim
-        // adımlarından kuruluyor. Konuşma taşıyan her ünitede oynanabilir; konuşmayı
+        // adımlarından kuruluyor. Konuşma taşıyan her ünitede oynanabilir; konuşması
         // olmayan (eksik son ünite) yer tutucu kalır.
         const gRef = hasAuthoredGrammar(unitId) || unitConversations.length ? unitId : null;
         items.push({ id, kind, ref: gRef, title: t("unitkind.grammar"), titleTr: t("path.slot_grammar_sub") });

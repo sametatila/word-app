@@ -1983,7 +1983,7 @@ async function main() {
   check("~120 ifade, kimlikler benzersiz", CANDO.length >= 110 && new Set(CANDO.map((c) => c.id)).size === CANDO.length);
   check("her seviyede 4+ beceri", (["A1", "A2", "B1", "B2", "C1"] as const).every((l) => new Set(CANDO.filter((c) => c.level === l).map((c) => c.skill)).size >= 4));
   check("her konuşma ve egzersiz etiketleniyor", CONVERSATIONS.every((l) => candoForConversation(l).length > 0) && BUNDLED_EXERCISES.every((e) => candoForExercise(e).length > 0));
-  check("tanışma konuşmayı → A1.SPK.1", candoForConversation(findConversation("de-a1-hallo")!).includes("A1.SPK.1"));
+  check("tanışma konuşması → A1.SPK.1", candoForConversation(findConversation("de-a1-hallo")!).includes("A1.SPK.1"));
   check("içeriğin kendi etiketi kazanır", candoForConversation({ level: "A1", icon: "greet", focusId: "x", cando: ["A1.WR.3"] }).join() === "A1.WR.3");
   await reset();
   await ensureProfile(USER, "E2E");

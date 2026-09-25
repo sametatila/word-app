@@ -36,12 +36,12 @@ const MAX_CHARS = 2000;
 const CHAT_DAILY_LIMIT = DAILY_QUOTAS.chatTurns;
 
 /**
- * Sohbet ucu — konuşmanın konuşma bölümü.
+ * Sohbet ucu — Konuşma adımının sohbet bölümü.
  *
- * Eski `/api/chat`'in yerine geçiyor ve tek farkı belirleyici: istek bir konuşma
- * kimliği taşımak zorunda. Serbest sohbet yok, her konuşma bir konuşmanın kuralına
- * bağlı. Bilinmeyen konuşma kimliği reddediliyor — konusuz konuşma bu uçtan
- * çıkamaz.
+ * Eskiden aynı adreste konusuz, serbest bir sohbet ucu vardı; bu uç onun yerini
+ * aldı ve tek farkı belirleyici: istek bir konuşma kimliği taşımak zorunda.
+ * Serbest sohbet yok, her sohbet bir Konuşma adımının kuralına bağlı. Bilinmeyen
+ * konuşma kimliği reddediliyor — konusuz sohbet bu uçtan çıkamaz.
  */
 /**
  * Servis durumu (WP-04): oynatıcı konuşma fazına girerken sorar ve

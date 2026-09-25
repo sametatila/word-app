@@ -58,7 +58,7 @@ const SCRIPT: Step[] = [
 ];
 
 /**
- * Ölçüm konuşmayı.
+ * Ölçüm çıkarımı.
  *
  * Senaryonun gömülü hataları (Akkusativ, V2) genel dilbilgisi hataları;
  * istem konuşmanın kalıplarına odaklansa da her gerçek hatayı düzeltmek zorunda —

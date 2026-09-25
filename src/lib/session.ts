@@ -2244,7 +2244,7 @@ export async function submitAnswers(
   ).length;
 
   // Streak: bugün ilk kez aktifse güncellenir. Hesap `lib/award.ts` ile
-  // ortak — beceriler ve konuşmalar de aynı kuralı uyguluyor.
+  // ortak — beceriler ve konuşmalar da aynı kuralı uyguluyor.
   const {
     currentStreak,
     longestStreak,

@@ -33,7 +33,7 @@ const pool = fs
   .split("\n")
   .map((l) => JSON.parse(l));
 
-/** Seviyenin konuşmaları; konuşmayı olmayan seviyede havuz tek kaynak. */
+/** Seviyenin konuşmaları; konuşması olmayan seviyede havuz tek kaynak. */
 const { konusmaPaketi } = require("./conversation-packs.cjs");
 const konusmalar = (lv) => konusmaPaketi("en", lv);
 

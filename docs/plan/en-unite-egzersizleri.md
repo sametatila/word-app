@@ -66,7 +66,7 @@ mi çıkacağına yazar karar verir.
 | **B2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
 | **C1** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
 
-**A1 ünite 1 (2026-09-11).** Dört konuşmayı Hello! · How are you? · I am, you
+**A1 ünite 1 (2026-09-11).** Dört konuşması Hello! · How are you? · I am, you
 are · Where are you from?. Altı egzersiz: iki okuma ("Three names",
 "Are you a student here?"), iki dinleme ("My name is Ava", "Excuse me,
 are you Mr. Kaya?"), iki yazma ("I introduce myself", "Questions and
@@ -1446,7 +1446,7 @@ DAĞILIMI DİLİN DEĞİL KATMANIN ÖZELLİĞİ** — aynı dil bir katmanda ba�
 ötekinde sona yüklüyor. Pratik sonucu da var: İngilizce yazar öbeğin
 arkasına eklemeye devam edebiliyor ve cümle okunmaz olmuyor; aynı biçimde
 ekleyen Alman yazar bir parantez dolduruyor ve parantezin bir boyu var.
-Ünitenin ikinci konuşmayı bunun küçük kardeşi: „albeit“ cümlecik istemiyor
+Ünitenin ikinci konuşması bunun küçük kardeşi: „albeit“ cümlecik istemiyor
 („Her demeanor, albeit formal, fits the milieu“), ve fiilsiz bir tavizin
 hiçbir zaman savunulması gerekmiyor çünkü hiçbir şey cümle olarak
 söylenmemiş.
@@ -1770,7 +1770,7 @@ koy.“ — hattın yarısında zaten kullanılan biçim).
 Asıl kazanç tarama değil KAPI: `scripts/check-content.ts` artık sıralama
 sorusunun kökündeki Türkçe sayı sözcüğünü madde sayısıyla karşılaştırıyor ve
 tutmuyorsa hata veriyor. Kapının gerçekten ateşlendiği tek bir kökü geri alarak
-doğrulandı. Bir de araç konuşmayı: Türkçe sözcük sınırı ASCII `\b` ile
+doğrulandı. Bir de araç çıkarımı: Türkçe sözcük sınırı ASCII `\b` ile
 çalışmıyor — „üç“ün önündeki „ü“ sözcük karakteri sayılmadığı için `\büç\b`
 hem „Üç satır“ın başında EŞLEŞMİYOR hem de „güçlüye“nin ortasında EŞLEŞİYOR;
 ilk taramada 40 gerçek hatanın hepsi bu yüzden kaçmıştı. Desen harf-dışı

@@ -210,7 +210,7 @@ beceri değil.
 
 ### Bilerek kapatılmayanlar
 
-- **"havuz dışı kelime" (4 A1 konuşmayı).** Perfekt konuşmaları ortaçları kelime
+- **"havuz dışı kelime" (4 A1 konuşması).** Perfekt konuşmaları ortaçları kelime
   kartı olarak öğretiyor — Almancada ortaç ezberlenir, türetilmez — ama
   brief'in kuralı türevi havuza sokmayı yasaklıyor. İkisi de doğru,
   çakışıyorlar. Karar bir sonraki oturumun.

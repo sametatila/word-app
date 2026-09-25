@@ -142,7 +142,7 @@ export async function syncItemProgress(level?: string): Promise<void> {
  * gösteriyor ama sunucu konuşmayı hiç öğrenmiyor: XP verilmiyor, aralıklı tekrar
  * merdiveni kurulmuyor, kullanıcı cihaz değiştirince konuşma geri geliyor.
  * Beceri egzersizlerinde aynı boşluk kuyrukla kapandı (`queueItemRecord`);
- * konuşma de aynı yolu izliyor.
+ * konuşma da aynı yolu izliyor.
  *
  * `day` KAYITLA BİRLİKTE saklanıyor: seri kullanıcının O gününe ait, ertesi
  * gün gönderilen konuşmayı bugüne yazmak seriyi yanlış hesaplardı.

@@ -132,7 +132,7 @@ Bu fazdaki paketler diğer her şeyin üstüne oturduğu zemin: ölçüm, sunucu
 3. 10 A1 konuşmasına senaryo (içerik).
 4. e2e: sağlayıcısız ortamda konuşma geçilebilir.
 
-**Kabul.** `CHAT_PROVIDER`/anahtarlar yokken A1 konuşmayı baştan sona geçilir, `userConversations.passed = true`.
+**Kabul.** `CHAT_PROVIDER`/anahtarlar yokken A1 konuşması baştan sona geçilir, `userConversations.passed = true`.
 
 **Süre.** 3 gün. **Bağımlılık.** Yok (WP-70 şemasıyla uyumlu olmalı).
 

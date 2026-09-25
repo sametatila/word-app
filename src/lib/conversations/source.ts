@@ -87,7 +87,7 @@ import enC1 from "./content/en-c1.json";
  * zorlaştırırdı. İlerleme (hangi konuşma bitti, hangi kural zayıf) veritabanında.
  *
  * İki kurs: Almanca (580 konuşma, TypeScript) ve İngilizce (200 konuşma, JSON —
- * bkz. EN_CONVERSATIONS). Zürih'in kendi konuşmayı yok; hedef dili Almanca olduğu için
+ * bkz. EN_CONVERSATIONS). Zürih'in kendi konuşması yok; hedef dili Almanca olduğu için
  * aynı iskelet doğrulandıktan sonra bu yapıda yeniden yazılacak.
  */
 /**

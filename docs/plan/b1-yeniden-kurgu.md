@@ -10,7 +10,7 @@ başkası (`docs/plan/a2-yeniden-kurgu.md`). **Aynı depoda paralel çalışacak
 
 | Ölçüt | Değer |
 |---|---|
-| B1 konuşmayı | 100 (10 modül × 10) |
+| B1 konuşması | 100 (10 modül × 10) |
 | Havuzun B1 katmanı | 1797 kayıt · normalize **1783** farklı başlık |
 | Konuşmaların öğrettiği | 500 madde (konuşma başına 5) |
 | Seviye **altı** (A1 33 + A2 86) | 119 — **%23,8** |
@@ -43,7 +43,7 @@ gerçek B1 maddesi (havuza eklenmeli), bir kısmı B2'ye ait.
    Alt seviye tekrarı **~%10** (karar verildi, aşağıya bak) — konuşma başına
    ~1 pekiştirme kelimesi. Bugünkü %23,8 fazla.
 2. B1 katmanının kapsanması **%8,4 → ~%73** (karar verildi, aşağıya bak).
-3. Ünite deseni dolsun: **4 konuşma konuşmayı + 2 okuma + 2 dinleme + 2 yazma +
+3. Ünite deseni dolsun: **4 Konuşma adımı + 2 okuma + 2 dinleme + 2 yazma +
    gramer + quiz + kontrol**. 180 konuşma ÷ 4 = **45 ünite** → her beceriden
    **90 egzersiz**. Elde: 12 okuma · 12 dinleme · 8 yazma → **238 eksik**.
    quiz + kontrol ünite brief'inden otomatik türetiliyor, yazman gerekmiyor.
@@ -181,7 +181,7 @@ en az 80 madde bulduğu yerde açıldı.
 Dilbilgisi odağı YENİ değil: modül 1–10 B1'in yapı envanterini zaten kuruyor.
 Genişleme modülleri aynı odakları yeni alanlarda tekrar çalıştırıyor (sarmal).
 
-**Yapısal düzeltme:** modül 10'un son konuşmayı (`de-b1-rueckblick`) metninde
+**Yapısal düzeltme:** modül 10'un son konuşması (`de-b1-rueckblick`) metninde
 "B1'in son konuşmasındayız" diyordu; 80 konuşma eklenince yolun ortasında kalıyor.
 Başlığı zaten «Die Zwischenbilanz» (ara değerlendirme) olduğu için iki cümle
 "ilk bölümün sonu" diye düzeltildi, konuşma yerinde kaldı — id ve katalog sırası

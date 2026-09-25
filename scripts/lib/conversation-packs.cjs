@@ -13,7 +13,7 @@
  */
 const bellek = new Map();
 
-/** Bir kursun bir seviyedeki konuşmaları, kaynaktaki sırayla. Konuşmayı olmayan seviye boş. */
+/** Bir kursun bir seviyedeki konuşmaları, kaynaktaki sırayla. Konuşması olmayan seviye boş. */
 function konusmaPaketi(course, lv) {
   if (!bellek.has(course)) {
     const { buildConversationDump } = require("../dump-conversations-mobile.ts");

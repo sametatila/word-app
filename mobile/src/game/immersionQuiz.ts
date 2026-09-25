@@ -1,7 +1,7 @@
 /**
  * Ünite quiz/unitQuiz sorularını CİHAZDA türetir — web'in brief.ts +
  * quiz.ts'inin mobil portu. İçerik yazımı gerekmez: sorular ünitenin kendi
- * kelime/kalıplarından (4 konuşmayı), distraktörler seviyenin havuzundan. Tema
+ * kelime/kalıplarından (4 konuşması), distraktörler seviyenin havuzundan. Tema
  * hizalı, deterministik (RNG yok → aynı ünite hep aynı quiz). SkillQuestion
  * üretir; QuestionList aynen render eder.
  */
@@ -73,7 +73,7 @@ export function levelPool(level: string): QuizPool {
  * Çeldirici adayı: şıkta görünen metin, taşıdığı anlam ve kelimenin başlığı.
  *
  * TEK DOĞRU CEVAP. Çeldirici yalnız doğru cevapla birebir aynı metin değilse
- * alınıyordu; bu yüzden aynı Almanca başlığın başka bir dersteki karşılığı
+ * alınıyordu; bu yüzden aynı Almanca başlığın başka bir konuşmadaki karşılığı
  * ("der Name" → "isim" doğruyken "ad") ve anlam paylaşan kelimeler ikinci bir
  * doğru şık olabiliyordu, iki çeldirici de birbirinin aynısı olabiliyordu.
  * Aday şu durumlarda elenir: metni aynı, başlığı aynı ya da anlam parçaları

@@ -66,7 +66,7 @@ tekrar ediliyor** — onları değiştirmek hiçbir şey kazandırmaz.
 konuşmanın KENDİ KONUSU: `der Witz` kelime oyunu konuşmasında, `der Humor` Alman
 mizahı konuşmasında, `der Dialekt` lehçe konuşmasında, `das Kompliment` iltifat
 konuşmasında, `trocken` kuru mizah konuşmasında, `das Gegenteil` ironi konuşmasında,
-`die Rede` büyük konuşma konuşmasında. Yirmi dört A1/A2 maddesinden yalnız biri
+`die Rede` büyük söylev konuşmasında. Yirmi dört A1/A2 maddesinden yalnız biri
 (`tragen`) rastlantısal.
 
 Bunları C1 kelimesiyle değiştirmek konuşmanın konusunu elinden alırdı. C1'in

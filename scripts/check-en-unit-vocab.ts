@@ -51,7 +51,7 @@ function feed(pool: Set<string>, raw: string) {
 
 /**
  * Seviyenin `unit`. ünitesine kadar öğretilmiş küme: alt seviyelerin tamamı +
- * bu seviyenin ilk `UNIT_CONVERSATIONS * unit` konuşmayı.
+ * bu seviyenin ilk `UNIT_CONVERSATIONS * unit` konuşması.
  */
 function unitPool(level: string, unit: number): Set<string> {
   const pool = new Set(EN_FREE);

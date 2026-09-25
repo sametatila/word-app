@@ -114,7 +114,7 @@ randevu ve iptal, yönerge vermek, karışıklık, karara varmak.
 
 Modülün teması bir alan değil yine bir beceri, ve ilk iki konuşma aynı kuralı iki
 ayrı bağlayıcıyla (kişi / yer) işliyor — geri kalan sekiz konuşma kuralı başka
-bağlamlara taşıyor. Modül 3'ten devralınan konuşma şu: kuralı ilan etmek değil,
+bağlamlara taşıyor. Modül 3'ten devralınan ilke şu: kuralı ilan etmek değil,
 kuralın SEÇİLDİĞİ yeri göstermek öğretiyor.
 
 **B1 modül 5 — Bürokrasi (2026-09-11).** On konuşma: kayıt işlemleri, form
@@ -197,7 +197,7 @@ cesaret vermek, korkular, sırdaş, minnet, nereye varmak istiyorum.
 
 Modülün dayanağı: duygu sözcüğü tek başına duyguyu anlatmıyor, ZAMAN
 anlatıyor. «Üzgünüm» ile «pazartesiden beri üzgünüm» aynı kelimeyi taşıyor
-ama biri hâl, biri süreç. Pişmanlık konuşmayı de aynı yerden kuruluyor —
+ama biri hâl, biri süreç. Pişmanlık konuşması da aynı yerden kuruluyor —
 pişmanlık iki zamanın arasındaki boşlukta doğuyor.
 
 ### B1 katmanının kapanış ölçümü
@@ -229,7 +229,7 @@ B1'de olduğu gibi konuşma yazmadan ÖNCE dört şey yapıldı ve sırası öne
    Numara 11'den başlıyor çünkü 1-6 Almanca kursun B2 dilbilgisi ve iki kurs
    aynı numarayı paylaşamaz. `EN_GR_IDS` B1 ve B2'yi birlikte üretiyor.
 2. `cando-map.ts` — on yeni satır `FOCUS_GR_EN`'in EN BAŞINA. B1 satırlarının
-   B2 sütunu yok: bir B2 konuşmayı «Passive report structures» odağıyla aşağıdaki
+   B2 sütunu yok: bir B2 konuşması «Passive report structures» odağıyla aşağıdaki
    `/passive/i` satırına düşseydi `hit[1]["B2"]` undefined dönerdi ve konuşma
    sessizce ifadesiz kalırdı. Desenler B2'ye özgü seçildi ki B1 odakları
    yukarı kaymasın: «third conditional» yakalanıyor, «Conditionals» hâlâ
@@ -293,7 +293,7 @@ be» bugünü anlatıyordu; başlık dilinde asıl kullanılan «is thought to h
 been», çünkü olayı verir ama kimsenin sözü olarak vermez. Aynı yapının iki
 zamanı ayrı modüllerde ayrı iş görüyor — spiralin B2'deki karşılığı bu.
 
-Düzeltme konuşmayı modülün ahlaki yükünü taşıyor: `must have` bir çıkarım,
+Düzeltme konuşması modülün ahlaki yükünü taşıyor: `must have` bir çıkarım,
 `can't have` bir ret, `should have` bir eksik tespiti. Karıştırılınca özür
 suçlamaya dönüşüyor ve düzeltme yazısı asıl işini görmüyor.
 
@@ -324,7 +324,7 @@ katılım hiç bu kadar düşmedi, on yılın sonuna kadar, tutmayan kanun, fabr
 kalsaydı, bir kesim hakkında konuşmak.
 
 Modülün kendi ekseni TOPLULUK HAKKINDA KONUŞMAK. Bir kesim hakkındaki cümle
-farkında olmadan herkes hakkında bir cümleye dönüşür; modülün her konuşmayı bu
+farkında olmadan herkes hakkında bir cümleye dönüşür; modülün her konuşması bu
 kaymayı başka bir yerden tutuyor. İsimleştirme faili düşürüyor (rapor dili
 bunu bilerek yapar), edilgen aktarım kaynağı düşürüyor, virgüllü ilgi cümlesi
 bilgi ekliyor ama kimliği DARALTMIYOR — virgülsüzü daraltır ve bir kesimi
@@ -371,7 +371,7 @@ kredi, sözleşme kapsasaydı, maaş konuşması.
 
 Modülün kendi ekseni SAVUNMAYA GEÇMEMEK. Para ve kariyer konuşmaları
 kolayca kişiselleşir: rakam savunulacak bir şeye, kanun bir memurun
-hatasına, kredi bir aile üyesinin suçuna dönüşür. Modülün her konuşmayı bunu
+hatasına, kredi bir aile üyesinin suçuna dönüşür. Modülün her konuşması bunu
 başka bir yapıyla engelliyor — isimleştirme işi kişiden ayırıyor, kip
 bileşimi çıkarımı suçlamadan ayırıyor, yumuşatıcı talebi verirken
 pazarlığı açık bırakıyor. Son konuşma bunu doğrudan söylüyor: kesin cümle
@@ -388,13 +388,13 @@ yanlış anlamış olmalı, konuşsaydık, duyguyu adlandırmak.
 
 Modülün kendi ekseni DUYGUYU KİMİN SÖZÜ OLARAK SÖYLEDİĞİN. Bir duygu
 söylenirken kolayca karşıdaki hakkında bir gerçeğe dönüşür; modülün her
-konuşmayı bunu başka bir yapıyla tutuyor. İlk konuşma bu modülde spirali TERSİNE
+konuşması bunu başka bir yapıyla tutuyor. İlk konuşma bu modülde spirali TERSİNE
 çeviriyor: isimleştirme modül 1'den beri iyi bir araçtı, burada iki
 yüzlü — raporda kişiyi korur, sohbette kişiyi konudan çıkarır. Aynı
 şekilde edilgen aktarım, bir rakamda az zararlıyken bir insanda en yıkıcı
 biçim; konuşma bunu açıkça söylüyor.
 
-Kip bileşimi konuşmayı modülün ahlaki merkezi: `can't have` ilişkide en
+Kip bileşimi konuşması modülün ahlaki merkezi: `can't have` ilişkide en
 cömert kiptir, çünkü karşındakine yapmayacağı şeyi yakıştırmaz. Son konuşma
 ise yumuşatıcıların işini ilişkiye taşıyor: üçü de duyguyu verir ama onu
 karşındaki hakkında bir hükme çevirmez.
@@ -407,7 +407,7 @@ verilen cevap, teklif tutsaydı, kapanış cümlesi.
 Modülün kendi ekseni KAYIT. Resmî yazı işlemi kişiden ayırır, çünkü
 kayıt yıllar sonra da okunacak ve kimin yaptığı değişecek; edilgen aktarım
 bilgiyi verir ama imzayı vermez, imzayı dosyada aramak okuyanın işi;
-devrik yapı sitem etmeden durumu söyler. Şikâyet konuşmayı seviyenin en ince
+devrik yapı sitem etmeden durumu söyler. Şikâyet konuşması seviyenin en ince
 ayrımını taşıyor: `can't have` iyi niyeti kabul edip yine de hakkını
 istemektir — haklıyken haksız duruma düşmemenin dilbilgisi.
 
@@ -426,7 +426,7 @@ olduğu gibi:
    Numara yine 11'den başlıyor: 1-4 Almanca kursun C1 dilbilgisi.
    `EN_GR_IDS` artık B1, B2 ve C1'i birlikte üretiyor.
 2. `cando-map.ts` — on `FOCUS_GR_EN` satırı **hepsinden önde**, aynı
-   gerekçeyle: B2 satırlarının C1 sütunu yok, bir C1 konuşmayı «Reporting verbs»
+   gerekçeyle: B2 satırlarının C1 sütunu yok, bir C1 konuşması «Reporting verbs»
    odağıyla `/report structure/i` satırına düşseydi ifadesiz kalırdı.
 3. `c-006` paketleri (`cando/out` ve `cando-de/out`) — on ifadenin İngilizce
    ve Almanca karşılığı. Kapsam 165 → 175.
@@ -447,13 +447,13 @@ eksiltili övgü, metni bir arada tutmak.
 
 Modülün ekseni SEÇİMİN KENDİSİ ve ilk konuşma bunu doğrudan konu ediyor:
 seviyenin tezi «en kesin cümle her zaman en güçlü cümle değildir».
-Eşdizim konuşmayı bunu en açık söylüyor — eşdizim bir dilbilgisi kuralı değil
+Eşdizim konuşması bunu en açık söylüyor — eşdizim bir dilbilgisi kuralı değil
 bir alışkanlıktır, yanlışı anlaşılır ama kulağa yabancı gelir; sözlük
-bunu söylemez, kullanım söyler. Aktarma fiili konuşmayı ise C1'in en sessiz
+bunu söylemez, kullanım söyler. Aktarma fiili konuşması ise C1'in en sessiz
 aracını gösteriyor: `said`, `claimed` ve `conceded` aynı içeriği üç ayrı
 hükme çevirir ve hiçbiri yorum diye işaretlenmez.
 
-İroni konuşmayı tek yönlü değil: kurmak kadar DUYMAK da öğretiliyor ve
+İroni konuşması tek yönlü değil: kurmak kadar DUYMAK da öğretiliyor ve
 ikisinden zor olanı duymak. Son konuşma modülü kapatırken ölçeği büyütüyor —
 `this`, `such` ve `the latter` cümleyi değil metni bağlıyor, yanlış yere
 gönderirlerse okur cümleyi değil paragrafı kaybediyor.
@@ -476,7 +476,7 @@ iddia saymaz. İroni en hızlı silah ama en kolay geri tepen: duyulmazsa
 etkisiz, fazla duyulursa düşmanlık. Eşdizim ise hazır kutu — yalnız sözü
 değil düşünceyi de taşıyor, «kalıbı seçmek çoğu zaman sonucu seçmektir».
 
-Kayıt konuşmayı modül 1'in bulgusunu bir adım öteye taşıyor: kayıt yalnız
+Kayıt konuşması modül 1'in bulgusunu bir adım öteye taşıyor: kayıt yalnız
 üslubu değil ADI değiştiriyor — konuşma dilinde «öfke dalgası» olan şey
 hukuk kaydında «kamuoyu manipülasyonu» adını alıyor ve artık bir suçlama.
 
@@ -495,9 +495,9 @@ kip belirsizlik değil DERECE taşır (taahhüt için metinde shall aranır),
 yanlış gönderen bir «bu» maddeyi geçersiz kılabilir.
 
 İki konuşma C1'in daha önce öğrettiği aracın sınırını çiziyor. Eksilti
-konuşmayı: maddede hiç anılmayan bir şey eksilti DEĞİLDİR, kapsam dışıdır —
+konuşması: maddede hiç anılmayan bir şey eksilti DEĞİLDİR, kapsam dışıdır —
 hukuk okurken en tehlikeli varsayım söylenmeyeni kendin tamamlamaktır.
-İroni konuşmayı ise modülü kapatıyor: sözleşme HAKKINDA konuşurken ironi
+İroni konuşması ise modülü kapatıyor: sözleşme HAKKINDA konuşurken ironi
 serbest, sözleşmenin İÇİNDE yasak, çünkü orada ton okunmaz, yalnız
 sözcük okunur ve aleyhine yorumlanır.
 
@@ -509,9 +509,9 @@ metnin dili, şiirin eksilttiği, yorum farkı, metin ne kadar söylüyor,
 alaycı eleştiri, uzun bir denemeyi bağlamak.
 
 Modülün ekseni OKURUN PAYI. Modül 3'te biçim geçerlilik koşuluydu; burada
-biçim okura iş veriyor. Eksilti konuşmayı bunu en açık söylüyor: düşürülen öğe
+biçim okura iş veriyor. Eksilti konuşması bunu en açık söylüyor: düşürülen öğe
 kaybolmuyor, okurun zihnine taşınıyor — bu yüzden şiirde eksiltme bir
-kısaltma değil bir davet. Alay konuşmayı aynı mekanizmanın tersini gösteriyor:
+kısaltma değil bir davet. Alay konuşması aynı mekanizmanın tersini gösteriyor:
 eleştiriyi konuşan değil dinleyen tamamlıyor ve tam bu yüzden alaycı cümle
 savunulması en zor cümle — söylenmemiş olanı kimse inkâr edemez.
 
@@ -523,7 +523,7 @@ metnin çekimsiz fiili ise eski olduğu için değil savı isteyenden ayırdığ
 için duruyor; felsefe metninin sav ile kişiyi ayırma iddiası dilbilgisinde
 de sürüyor.
 
-Kapanış konuşmayı uzun metnin kendi sorununu alıyor: bağlantı sözcük değil
+Kapanış konuşması uzun metnin kendi sorununu alıyor: bağlantı sözcük değil
 ADRES veriyor ve okur ipini kaybederse çöken şey sav değil metin oluyor.
 
 C1.GR.11-20'nin onu da modül içinde bir kez kullanılıyor (ölçüldü, 10/10).
@@ -535,19 +535,19 @@ anlam kayarken, aidiyetin söylemediği.
 
 Modülün ekseni ADLANDIRMANIN KENDİSİ BİR HÜKÜMDÜR. Aynı sokak, aynı
 insanlar: kültür sahnesi denirse meşru bir üretici, paralel toplum
-denirse bir sorun — ve ikisi ayrı politika getiriyor. Göç konuşmayı aynı
+denirse bir sorun — ve ikisi ayrı politika getiriyor. Göç konuşması aynı
 şeyi eşdizim üzerinden gösteriyor: göçmen kökeni bir insanın hikâyesini,
 göç akışı bir tabloyu taşıyor; ikisini aynı cümlede kullanmak insanı
 sayıya indiriyor.
 
-Üç konuşma C1'in araçlarını bu eksene bağlıyor. Kip konuşmayı nezaketi değil
+Üç konuşma C1'in araçlarını bu eksene bağlıyor. Kip konuşması nezaketi değil
 DOĞRULUĞU savunuyor: bilmediğin bir hayatı anlatan cümle kesinlikten
 kaçınmayı bilmeli, çünkü kesinlik burada yanlışın adı. Ödün konuşması
 tartışmanın sürmesini ödüne bağlıyor — ödünsüz karşı çıkış haklı olsa
-bile duyulmuyor. Alay konuşmayı ise iki adı yan yana koyunca doğuyor:
+bile duyulmuyor. Alay konuşması ise iki adı yan yana koyunca doğuyor:
 «burada normdan sapma yok, yörede alışılmış bir norm ihlali var».
 
-Kapanış konuşmayı eksiltmeyi bir aidiyet sınavı olarak okuyor: söylenmeyen
+Kapanış konuşması eksiltmeyi bir aidiyet sınavı olarak okuyor: söylenmeyen
 şey bilinmediği için değil herkesçe bilindiği için düşüyor, o yüzden
 düşen öğeyi yalnız içeriden biri tamamlayabiliyor.
 
@@ -561,17 +561,17 @@ girişimi, uzun bir raporu bağlamak, işin söylemediği.
 Modül 5'in ekseni (ad bir hükümdür) burada işyerine iniyor ve SORUMLULUK
 sorusuna dönüşüyor. Raporda verimlilik artışı olan şey atölyede iş
 yoğunlaşması; kimse yalan söylemiyor, yalnız hangi yarısının söylendiği
-değişiyor. Öne alma konuşmayı aynı soruyu dilbilgisiyle soruyor: yapıyı başa
+değişiyor. Öne alma konuşması aynı soruyu dilbilgisiyle soruyor: yapıyı başa
 almak kişiyi gizliyor, kişiyi başa almak yapıyı, ve bir işyerinde kimin
 sorumlu göründüğü çoğu zaman cümlenin başında belli oluyor.
 
-Kip konuşmayı C1'in en ince ayrımını iş hayatına taşıyor: birinin fazla
+Kip konuşması C1'in en ince ayrımını iş hayatına taşıyor: birinin fazla
 çalışmasını «kendi isteği» diye KESİN söylemek, kipin sildiği bir
 hükümdür — burada kip bir çekingenlik değil, başkasının iradesi hakkında
-hüküm vermemektir. Sözleşme konuşmayı ise çekimsiz fiili bir koruma sayıyor:
+hüküm vermemektir. Sözleşme konuşması ise çekimsiz fiili bir koruma sayıyor:
 «ben istiyorum» dersen karşı taraf seninle pazarlık eder, ölçüyle değil.
 
-Kapanış konuşmayı eksiltmeyi okuma işi hâline getiriyor: eksiltilen yarı
+Kapanış konuşması eksiltmeyi okuma işi hâline getiriyor: eksiltilen yarı
 çoğu zaman kimsenin söz vermediği yarıdır — «işgücüne katılım oranı
 yükseldi, tahsis edilmiş para hiç yükselmedi».
 
@@ -586,17 +586,17 @@ Modülün ekseni ADIN İZNE DÖNÜŞMESİ. Modül 5 adın bir hüküm, modül 6 
 sorumluluk dağıtımı olduğunu göstermişti; burada ad doğrudan bir İZİN:
 plan «arazi tüketimi» yazarsa bir kayıp adlandırılmış ve karşı çıkmak
 mümkün olur, «ekili arazi» yazarsa toprak koruma altına girer. Aynı
-mekanizma göç ve fiyat konuşmasında de görünüyor — göçmen kökeni bir insanın,
+mekanizma göç ve fiyat konuşmasında da görünüyor — göçmen kökeni bir insanın,
 göç akışı bir tablonun sözcüğüydü; burada dünya piyasa fiyatı kimsenin
 denetlemediği bir sayı, üretici fiyatı bir hanenin geliri.
 
-Kip konuşmayı iklim tartışmasına özgü bir tuzağı açıyor: kesin söylenen bir
+Kip konuşması iklim tartışmasına özgü bir tuzağı açıyor: kesin söylenen bir
 felaket bir kez gerçekleşmezse bütün savı götürür, o yüzden burada kip
 korkuyu değil KANITIN NE KADAR UZANDIĞINI ölçüyor. Ödün konuşması aynı şeyi
 tersten söylüyor — bedeli yok sayan savunma, haklı olsa bile çiftçiye
 inandırıcı gelmiyor.
 
-Kapanış konuşmayı eksiltmeyi bir hak bilgisi hâline getiriyor: sözleşmede
+Kapanış konuşması eksiltmeyi bir hak bilgisi hâline getiriyor: sözleşmede
 yazmayan şey çiftçinin kaybettiği haktır, ve düşen fiili okuyan koyduğu
 anda orada bir hak el değiştirir.
 
@@ -610,17 +610,17 @@ bağlamak, planın söylemediği.
 Modülün ekseni ADIN KAPSAM BELİRLEMESİ. Modül 7'de ad bir izindi; burada
 ad verilen sözün BÜYÜKLÜĞÜ: «emisyon azaltma» tek bir sayıyı hedefler ve
 sınırlı bir söz verir, «karbonsuzlaştırma» bütün bir ekonomiyi kapsar.
-İkisi aynı yöne gider ve biri çok daha azına söz verir. Atık konuşmayı aynı
+İkisi aynı yöne gider ve biri çok daha azına söz verir. Atık konuşması aynı
 şeyi sıra üzerinden gösteriyor: önleme ile döngüyü eşitleyen cümle,
 önlemeyi geri dönüşümle DEĞİŞTİRMİŞ oluyor.
 
-Kip konuşmayı modelin kendi dürüstlüğüne bağlanıyor: belirsizliği söyleyen
+Kip konuşması modelin kendi dürüstlüğüne bağlanıyor: belirsizliği söyleyen
 model bir kez şaşırdığında güvenini kaybetmiyor, kesin konuşan model ilk
-sapmada kaybediyor. Öne alma konuşmayı ise çevre cümlesinin siyasetini
+sapmada kaybediyor. Öne alma konuşması ise çevre cümlesinin siyasetini
 açıyor — süreci başa almak kimseyi suçlamıyor, faili başa almak
 suçluyor, ve bir sürece soru sorulamaz.
 
-Kapanış konuşmayı eksiltmeyi bir söz vermeme biçimi sayıyor: «inşaatın
+Kapanış konuşması eksiltmeyi bir söz vermeme biçimi sayıyor: «inşaatın
 durdurulması bir tarih olarak» dendiğinde bir tarih verilmiş ama bir söz
 verilmemiş oluyor.
 
@@ -634,7 +634,7 @@ aklama, strateji raporunu bağlamak, teklifin söylemediği.
 Modülün ekseni ADIN SORUMLULUK DAĞITMASI. Modül 8'de ad kapsam
 belirliyordu; burada doğrudan fatura kesiyor: «ekonomik daralma» geçici
 bir dalgayı anlatıp kimseyi sorumlu tutmuyor, «durgunluk» yapısal bir
-tıkanmayı anlatıp bir politikayı sorumlu tutuyor. Maliyet konuşmayı aynı şeyi
+tıkanmayı anlatıp bir politikayı sorumlu tutuyor. Maliyet konuşması aynı şeyi
 karar üzerinden gösteriyor — marjinal maliyeti hesaplayan devam ediyor,
 fırsat maliyetini hesaplayan durabiliyor.
 
@@ -644,7 +644,7 @@ kurumun gözünde savı değil kendisi oluyor. Aktarma konuşmasında fiil bir
 hukuk iddiası — alleges ile proves arasını karıştıran cümle iftira
 olabiliyor.
 
-Kapanış konuşmayı eksiltmeyi bir risk devri sayıyor: işletme modeli
+Kapanış konuşması eksiltmeyi bir risk devri sayıyor: işletme modeli
 adlandırılmadığında risk sessizce karşı tarafa geçiyor, ve bir teklifi
 okumak adlandırılmayanı aramak oluyor.
 
@@ -662,10 +662,10 @@ son olarak seçim. Kapanış konuşmasının kalıbı savı kendi yapısıyla s�
 seçilen aynı cümlede ayrılıyor. Kuralı A1'de öğrendi; C1'de hangisini ne
 zaman kullanacağını seçiyor.
 
-Üç konuşma C1'in araçlarını bir DÜRÜSTLÜK ölçüsüne bağlıyor. Kip konuşmayı:
+Üç konuşma C1'in araçlarını bir DÜRÜSTLÜK ölçüsüne bağlıyor. Kip konuşması:
 kendine dair kesin cümle doğrulanamadığı için en tehlikeli cümle. Aktarma
-konuşmayı: hangi fiili seçtiğin, savın sorumluluğunu paylaşıp paylaşmadığın.
-Alay konuşmayı ise aracın bedelini söylüyor — hükmü sen vermemiş olursun ama
+konuşması: hangi fiili seçtiğin, savın sorumluluğunu paylaşıp paylaşmadığın.
+Alay konuşması ise aracın bedelini söylüyor — hükmü sen vermemiş olursun ama
 hüküm kurulmuş olur, ve bu yüzden alay hem en zor çürütülen hem de en
 kolay yanlış anlaşılan araç.
 

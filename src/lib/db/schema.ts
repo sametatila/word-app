@@ -1715,7 +1715,7 @@ export const referrals = pgTable(
  *
  * Tek tablo üç ayrı pencereyi taşıyor ve ayrım `period` sütununda:
  *   "2026-09-08"  günlük     (ör. cepte yürüyüş turu)
- *   "2026-W37"    haftalık   (ör. yenilenen konuşma konuşmayı hakkı)
+ *   "2026-W37"    haftalık   (ör. yenilenen Konuşma adımı hakkı)
  *   "all"         ömürlük    (ör. seviye başına 2 konuşma — key "conversation:A1")
  *
  * Sayaç neden olayları (events) saymıyor: telemetri kaybolabilir, örneklenebilir

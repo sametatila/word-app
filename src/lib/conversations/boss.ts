@@ -95,7 +95,7 @@ export async function buildModuleBoss(
     )
     .limit(1);
 
-  // Modülün kaç konuşmayı bitmiş. Sınav bunu ZORLAMIYOR — yol haritasındaki
+  // Modülün kaç konuşması bitmiş. Sınav bunu ZORLAMIYOR — yol haritasındaki
   // kilitler de engellemiyor, görsel bir sıralama iması taşıyor. Sayı yalnızca
   // hazır olmadan girene ne beklediğini söylemek için.
   const board = await conversationBoard(userId, course);

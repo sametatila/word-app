@@ -14,7 +14,7 @@ tamamına hiç değinmiyor. Ölçüm (2026-09-04):
 
 | Ölçüt | Değer |
 |---|---|
-| A2 konuşmayı | 100 (10 modül × 10) |
+| A2 konuşması | 100 (10 modül × 10) |
 | Havuzun A2 katmanı | 1416 madde · kart gerektiren **1412** |
 | Konuşmaların öğrettiği | 500 madde (konuşma başına 5) |
 | Bunun **%50,2'si** seviye dışı | B1 144 · B2 31 · C1 4 · havuzda yok 72 |
@@ -33,7 +33,7 @@ kötü durumda.**
    (Sağlam bir tekrar için sınırlı A1 kelimesi kabul edilebilir; ama şu anki
    %26,6 fazla — hedefi kullanıcıyla netleştir.)
 2. A2 katmanının kapsanması olabildiğince yükselsin (§5 Adım 2'ye bak).
-3. Ünite deseni eksiksiz dolsun: **4 konuşma konuşmayı + 2 okuma + 2 dinleme +
+3. Ünite deseni eksiksiz dolsun: **4 Konuşma adımı + 2 okuma + 2 dinleme +
    2 yazma + gramer + quiz + kontrol**.
    - 100 konuşma ÷ 4 = **25 ünite** → her beceriden **50 egzersiz** gerekiyor.
    - Elde: okuma 12 · dinleme 12 · yazma 8 → **118 egzersiz eksik.**
@@ -184,7 +184,7 @@ A1 ve A2 için sekiz kelime zorunlu).
 | A2 içinde tekrar eden | — | **0** |
 
 Kalan 8 A1 maddesi bilerek duruyor: `seit`, `vor`, `zwischen` (Dativ ve
-Wechselpräposition konuşmalarının konusu), `dürfen` (kipli fiil konuşmayı), `denn`
+Wechselpräposition konuşmalarının konusu), `dürfen` (kipli fiil konuşması), `denn`
 (bağlaç karşılaştırması), `gehören`, `vorstellen`, `schenken` (yönelme hâli
 konuşmaları). Bunlar A1'de tanıtılıp A2'de dilbilgisi konusu olarak geri geliyor;
 başka bir kelimeyle değiştirmek konuşmanın kendisini bozardı.

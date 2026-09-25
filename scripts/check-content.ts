@@ -111,7 +111,7 @@ const inPool = (de: string, course = "de") => {
   çekimlisi yok ve olması da gerekmiyor: oyun kartına `machen` ile `gemacht`
   ayrı iki kelime diye girmek havuzu bozardı.
 
-  Ölçüldü: eşiği aşan beş konuşma de bu sınıftan ve hepsinin dışarıda kalan
+  Ölçüldü: eşiği aşan beş konuşma da bu sınıftan ve hepsinin dışarıda kalan
   kelimesi bir çekim. Liste konuşma KİMLİĞİNE bağlı, odağa değil — aynı odaktaki
   öteki konuşmalar (de-a1-perfekt-uebung gibi) sözlükçesini mastarla kuruyor ve
   denetimden geçiyor; onları da muaf tutmak kapıyı gereksiz kör ederdi.
