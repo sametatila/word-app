@@ -25,6 +25,7 @@
  { "conversation": "de-b1-relativ-praep", "de": "die Gegend", "en": "area" },
  { "conversation": "de-b1-relativ-praep", "de": "der Bezirk", "en": "district" },
  { "conversation": "de-b1-relativ-praep", "de": "die Umgebung", "en": "surroundings" },
+ { "conversation": "de-b1-traumhaus", "de": "sich leisten", "en": "to afford" },
  { "conversation": "de-b1-traumhaus", "de": "träumen", "en": "to dream of" },
  { "conversation": "de-b1-gegenstand", "de": "die Fernbedienung", "en": "remote control" },
  { "conversation": "de-b1-gegenstand", "de": "ersetzen", "en": "to replace" },

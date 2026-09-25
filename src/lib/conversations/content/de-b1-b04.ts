@@ -260,7 +260,7 @@ export const deB1B04: Conversation[] = [
     vocab: [
       { de: "die Terrasse", tr: "teras" },
       { de: "das Grundstück", tr: "arsa" },
-      { de: "leisten", tr: "gücü yetmek" },
+      { de: "sich leisten", tr: "gücü yetmek" },
       { de: "träumen", tr: "hayalini kurmak" },
       { de: "sich befinden", tr: "bulunmak" },
       { de: "das Material", tr: "malzeme" },
@@ -276,7 +276,7 @@ export const deB1B04: Conversation[] = [
       { say: [tr("Bu yüzden edatlı fiiller ezberlenirken edatıyla birlikte ezberlenir. İlgi cümlesinde o edat en başa geçer ve hâli belirler. Önce kelimeler.")] },
       word("İlk", { de: "die Terrasse", tr: "teras" }),
       word("İkinci", { de: "das Grundstück", tr: "arsa" }),
-      word("Üçüncü", { de: "leisten", tr: "gücü yetmek" }),
+      word("Üçüncü", { de: "sich leisten", tr: "gücü yetmek" }, "Dönüşlü zamir yönelme hâlinde."),
       word("Dördüncü", { de: "träumen", tr: "hayalini kurmak" }),
       word("Beşinci", { de: "sich befinden", tr: "bulunmak" }),
       word("Altıncı", { de: "das Material", tr: "malzeme" }),
