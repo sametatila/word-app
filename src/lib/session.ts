@@ -826,23 +826,30 @@ export async function buildSession(
   // Yazma turlarında aynı anlama sahip diğer hedef dil kelimeleri de kabul
   // edilir: "hareket etmek, kalkmak" isteminde tek bir doğru cevap dayatmak
   // haksız. Anlam ANADİLDE eşleşiyor — istem kullanıcıya hangi dilde
-  // gösterildiyse o: Türkçe `tr`ye bakmak, İngilizce anadilli öğrenciye
-  // Türkçesi aynı olan kelimeleri de doğru sayıyordu.
+  // gösterildiyse o. Ama anadil karşılığının aynı olması tek başına eşanlam
+  // değil: sesteşler de aynı karşılığı taşıyor ("story" = Stockwerk ve
+  // Geschichte, "yüz" = Gesicht ve hundert) ve biri yazılınca öteki doğru
+  // sayılıyordu. Kabul için İKİNCİ bir dildeki karşılık da aynı olmalı:
+  // Türkçe ve Almanca anadilde İngilizce (İngilizce kursta Almanca),
+  // İngilizce anadilde Türkçe.
   const typing = rounds.filter((r) => r.game === "typing");
   if (typing.length) {
     const col = native === "en" ? words.en : native === "de" ? words.deGloss : words.tr;
     const keys = [...new Set(typing.map((r) => glossFor(r.word, native)?.text).filter((x): x is string => Boolean(x)))];
     const synonyms = keys.length
       ? await db
-          .select({ de: words.de, gloss: col })
+          .select({ de: words.de, tr: words.tr, en: words.en, deGloss: words.deGloss, gloss: col })
           .from(words)
           .where(and(practiceWordsOf(course), inArray(col, keys)))
       : [];
+    const second = (w: { tr: string; en: string | null; deGloss?: string | null }) =>
+      native === "en" ? w.tr : native === "de" ? w.en : (w.en ?? w.deGloss ?? null);
     for (const r of rounds) {
       if (r.game !== "typing") continue;
       const key = glossFor(r.word, native)?.text;
+      const own = second(r.word);
       r.alternatives = synonyms
-        .filter((s) => s.gloss === key && s.de !== r.word.de)
+        .filter((s) => s.gloss === key && s.de !== r.word.de && second(s) === own)
         .map((s) => s.de)
         .slice(0, 6);
     }
