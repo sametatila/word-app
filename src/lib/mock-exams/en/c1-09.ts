@@ -242,7 +242,7 @@ Reviews conclude that an apology unaccompanied by {{18}} is received very differ
               id: "en-c1-09-l3-13",
               no: 13,
               text: "ACKNOWLEDGE",
-              accept: ["acknowledgment", "acknowledgment"],
+              accept: ["acknowledgment"],
               explain:
                 "`by its ___ of responsibility` yapısında iyelikten sonra bir ad geliyor ve `of` tümleci o adın kendi edatıdır. Fiil biçimi bu konumda duramaz.",
             },

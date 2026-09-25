@@ -239,7 +239,7 @@ Reviews of the field conclude that the effect is real, modest in size, and large
               id: "en-b2-07-l3-13",
               no: 13,
               text: "JUDGE",
-              accept: ["judgment", "judgment"],
+              accept: ["judgment"],
               explain:
                 "`a listener's ___ of a speaker` yapısında iyelikten sonra bir ad gerekiyor: `judgment`. Fiil biçimi bu konumda duramaz; `judge` bir kişiyi adlandırır ve `of a speaker` tümleciyle bu anlamı vermez.",
             },

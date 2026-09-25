@@ -278,7 +278,7 @@ The most likely future is therefore an uneven one, with different bodies reporti
               id: "en-c1-03-l3-18",
               no: 18,
               text: "JUDGE",
-              accept: ["judgments", "judgments"],
+              accept: ["judgments"],
               explain:
                 "`according to their own ___` yapısında iyelik sıfatından sonra bir ad geliyor ve özne çoğul (`different bodies`), dolayısıyla ad da çoğul. Britanya ve Amerika yazımı (`judgements` / `judgments`) ikisi de kabul edilir.",
             },
@@ -300,7 +300,7 @@ The most likely future is therefore an uneven one, with different bodies reporti
               no: 19,
               text: "Nobody realized how bad the roof was until the ceiling fell.\nNot until the ceiling fell ______ how bad the roof was.",
               cue: "ANYONE",
-              accept: ["did anyone realize", "did anyone realize"],
+              accept: ["did anyone realize"],
               explain:
                 "Olumsuz bir zaman öbeği cümle başına geçtiğinde özne ile yardımcı fiil devrilir: «Not until … did anyone realize». Anahtar sözcük `anyone` devrik yapının öznesi ve önüne `did` gerekiyor; İngiliz ve Amerikan yazımı ikisi de kabul edilir.",
             },

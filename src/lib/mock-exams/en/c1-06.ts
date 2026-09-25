@@ -278,7 +278,7 @@ The most likely future is therefore a divided one, with different literatures se
               id: "en-c1-06-l3-18",
               no: 18,
               text: "PRACTICE",
-              accept: ["practices", "practices"],
+              accept: ["practices"],
               explain:
                 "`according to their own ___` yapısında iyelik sıfatından sonra bir ad geliyor ve özne çoğul (`different literatures`), dolayısıyla ad da çoğul. Britanya yazımında ad `practice`, fiil `practise`dir; iki yazım da kabul ediliyor.",
             },

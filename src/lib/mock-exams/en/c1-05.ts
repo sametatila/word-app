@@ -243,7 +243,7 @@ Whether that is a price worth paying is a political question rather than a techn
               id: "en-c1-05-l3-14",
               no: 14,
               text: "ORGANIZE",
-              accept: ["organization", "organization"],
+              accept: ["organization"],
               explain:
                 "`not a matter of principle but of ___` yapısı `of` edatının ardında bir ad ister ve karşıtlık ilkeyle kuruluyor: sorun düzenleme biçiminde. Britanya ve Amerika yazımı ikisi de kabul edilir.",
             },

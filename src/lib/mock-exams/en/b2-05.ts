@@ -323,7 +323,7 @@ The most likely future is therefore an open one, with different sports drawing t
               no: 21,
               text: "The committee only realized the problem after the season had ended.\nNot until the season had ended ______ the problem.",
               cue: "DID",
-              accept: ["did the committee realize", "did the committee realize"],
+              accept: ["did the committee realize"],
               explain:
                 "Olumsuz bir zaman öbeği cümle başına geçtiğinde özne ile yardımcı fiil devrilir: «Not until … did the committee realize». Anahtar sözcük `did` bu devrik yapının yardımcı fiili ve ardından yalın fiil gelir.",
             },

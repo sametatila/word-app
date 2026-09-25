@@ -816,7 +816,7 @@ Phone:              {{5}}`,
               id: "en-a1-06-w1-3",
               no: 3,
               text: "Color",
-              accept: ["gray", "gray"],
+              accept: ["gray"],
               explain:
                 "Yönerge rengi veriyor: «She is gray». Britanya yazımı `grey`, Amerika yazımı `gray`; ikisi de kabul edilir.",
             },
