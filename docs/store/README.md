@@ -30,9 +30,9 @@ de-DE: **"Sprechen, verstehen, bestehen"** (29).
 anlatımla." (iOS altyazısıyla aynı cümleyle başlar.)
 
 **Sayılar (2026-09-25, Samet):** birim KELİME + ALIŞTIRMA + DENEME SINAVI; adım/ünite sayısı
-anılmaz. Yuvarlak ve doğru: Almanca "8.500'den fazla kelime, 900'den fazla alıştırma, 60 deneme
-sınavı" (ölçüm: 8.707 kelime, beceri alıştırması canlıda 1.120, repo sayımı 995; 60 deneme
-sınavı); İngilizce "7.000'den fazla kelime, 900'den fazla alıştırma, 60 deneme sınavı" (7.175 /
+anılmaz. Yuvarlak ve doğru: Almanca "8.500'den fazla kelime, 900'den fazla alıştırma, **50'den fazla
+deneme sınavı**" (Samet: içerik artacak, "60" ve seviye başına kesin sayı "her seviyede 12" YAZILMAZ) (ölçüm: 8.707 kelime, beceri alıştırması canlıda 1.120, repo sayımı 995; 60 deneme
+sınavı); İngilizce "7.000'den fazla kelime, 900'den fazla alıştırma, 50'den fazla deneme sınavı" (7.175 /
 1.034 canlı, 939 repo / 60). İçerik azalırsa bu cümleler gözden geçirilir.
 
 **Konuşma adımının vitrindeki anlatımı (Samet'in seçtiği metin):** "Doktorda, iş
