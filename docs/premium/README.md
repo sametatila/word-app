@@ -113,7 +113,7 @@ olmadan (ALTER … RENAME, deploy'dan önce yedekli) yeniden adlandırılır —
 |---|---|---|
 | Kelime çalışma, pratik, okuma, dinleme, dil bilgisi, quiz | sınırsız | sınırsız |
 | Haftalık quiz | haftada 1 | haftada 1 |
-| **Yürüyüş modu** | **günde 3 oturum** (~20 kelime/oturum), yalnız ekran açıkken | ekran kapalı dahil; yalnız kötüye kullanım tavanı |
+| **Yürüyüş modu** | **günde 3 tur**, yalnız ekran açıkken (tur sonundaki "devam" da bir tur) | ekran kapalı dahil; kötüye kullanım tavanı günde 20 tur |
 | **Deneme sınavları** (Öğren) | her seviyede **1** kâğıt açık; o kâğıdı **bitirip 7 günlük seri** yapınca **+1**, sonra her 7 günlük seride +1 | **3'lü paketler**: paketteki 3 kâğıdı **tamamlayınca** sonraki 3 açılır |
 | **Patika Konuşma** (anlatım + yapay zekâ sohbeti + puanlı kısım) | **seviye başına 2** açık; ikisini **tamamlayıp 7 günlük seri** yapınca **+2**, sonra her 7 günlük seride +2. Hak yoksa adım **kilitli, Premium ister** | yalnız kötüye kullanım tavanı |
 | **Patika Yazma** (yapay zekâ değerlendirmesi) | aynı: seviye başına 2 + (tamamla + 7 gün seri) → +2 | yalnız kötüye kullanım tavanı |
@@ -154,7 +154,7 @@ kazanılan hak geri alınmaz. Kademe tavanı `maxTiers` (panel), varsayılan **0
 | Beceriler yazma | `writing_skill:<SEVİYE>` | `skill_ai:<egzersiz>` | ilk değerlendirme |
 | Beceriler konuşma (B1+ monolog) | `speaking_skill:<SEVİYE>` | `skill_ai:<egzersiz>` | ilk değerlendirme |
 | Deneme sınavı | — (açık kâğıt = sıradaki ilk N) | — | kâğıdın bitmesi (`mock_exam_attempts.finished_at`) |
-| Yürüyüş modu | `walk_sessions` (gün, UTC) | — | — |
+| Yürüyüş modu | `walk_rounds` (gün, UTC) | — | — |
 
 Hak maddenin İLK yapay zekâ kullanımında düşer ve madde sahiplenilir; sahiplenilmiş madde
 hak bitse de açık kalır, yeniden açmak hak yemez (`claimTiered`: önce işaret, sonra seviye
@@ -169,11 +169,15 @@ dilimi doldurmaz.
 - **Modül/seviye sınavı yazma bölümü hak DÜŞÜRMEZ** (web kimlik gönderse de mobil göndermese
   de): sınav Patika'nın ölçme adımı, tablo onu kotaya bağlamıyor; yalnız kötüye kullanım
   tavanları (günde 120 çağrı, 60 değerlendirme).
-- Yürüyüş: `/api/session?walk=1` oturumu açar. **Oturum penceresi 30 dakika**: oturum
-  başladıktan sonraki 30 dakikadaki her yürüyüş isteği (tur sonunda "devam", ekrana dönüp
-  yeniden yükleme) aynı oturum sayılır, hak yemez. Ölçü sunucunun saati; istemcinin "devam"
-  demesine bakılmaz. 4. oturum 403 → kilit + paywall. Ekran kapalı yol (`/api/stt`) yalnız
-  premium; kelime tavanı oturum tavanı × 40.
+- Yürüyüş: birim **TUR** (2026-09-25 düzeltmesi, Samet; ilk uygulamadaki "oturum" ve 30
+  dakikalık pencere kalktı). Her `/api/session?walk=1` isteği — tur sonundaki "devam" dahil —
+  bir tur ve günlük haktan bir düşer (`openWalkRound`, tek SQL ifadesi). Yalnız son sayılan
+  turdan 2 saniye içinde gelen istek aynı turun çift gönderimi sayılır (eşzamanlı çift istek
+  iki tur yakmasın); istemcinin tur kimliğine güvenilmez. Kuyruk kurulamazsa (500) tur geri
+  verilir. 4. tur 403 → kilit + paywall. Ekran kapalı yol (`/api/stt`) yalnız premium; kelime
+  tavanı tur tavanı × 40. Eski `walk_sessions` sayacı gün sınırlıydı, taşınmadı.
+  Not: iki istemci de yürüyüş ekranı açılınca kuyruğu yüklüyor, yani ekranı açmak bir tur
+  sayılıyor.
 
 **SENARYOLU YOL İSTİSNASI.** Misafir ve yapay zekâ iznini REDDEDEN (`declined`) kullanıcı
 Konuşma adımını bugünkü gibi senaryolu (yapay zekâsız) konuşmayla yapar; adım kilitlenmez ve
@@ -184,7 +188,7 @@ reddeden rıza kapısında duruyor (403 consent); ikisi de kotaya varmıyor.
 
 **Premium:** kademe yok. Yazma/konuşma değerlendirmesi alıştırma başına bir kez günlük
 `aiPracticePerDay` (30) tavanına sayılır; Konuşma adımının tavanı sohbet mesajı (günde 300,
-`lib/quotas`); yürüyüş `fairUse.walkSessionsPerDay` (20) oturum, AYNI sayaçla gerçekten
+`lib/quotas`); yürüyüş `fairUse.walkRoundsPerDay` (20) tur, AYNI sayaçla gerçekten
 sayılıyor (eski "günde 20 tur" hiçbir yerde sayılmıyordu). Paywall bunları "kötüye kullanımı
 önleyen günlük üst sınır" diye yazar (`plan.pro_fair_use`).
 
@@ -524,8 +528,8 @@ gerekmiyor (en geç 30 saniyede üç platformda yürürlükte).
 
 - **Ücretsiz katman**: seviye başına tabanlar (Patika Konuşma, Patika Yazma,
   Beceriler konuşma/yazma, deneme sınavı), dilim başına ek hak, seri adımı, kademe
-  tavanı (0 = sınırsız), günde yürüyüş oturumu. `0` = "bu özellik ücretsizde hiç yok".
-- **Kötüye kullanım tavanı**: premium'un günlük tavanı (yürüyüş oturumu,
+  tavanı (0 = sınırsız), günde yürüyüş turu. `0` = "bu özellik ücretsizde hiç yok".
+- **Kötüye kullanım tavanı**: premium'un günlük tavanı (yürüyüş turu,
   değerlendirme). Paywall'da kullanıcıya yazılıyor — değiştirirsen metin de
   kendiliğinden değişir. Sohbet mesajı tavanı kodda sabit (300).
 - **Deneme sınavı paketleri**: paket boyu (paketi bitirince sonraki açılır).

@@ -61,7 +61,7 @@ satırlık kanıt tablosu oturum çıktısında; kararlar:
 **Beş sütun (öncelik sırası):** 1) A1'den C1'e tam müfredat, Türkçe anlatım · 2) konuşarak
 öğren: her derste rol yapma + konuşmaya geri bildirim · 3) dört becerili deneme sınavları,
 konuşma ve yazma da puanlanır · 4) Cepte yürüyüş (ekran kapalı, **Premium**; ekran açık
-yürüyüş ücretsizde günde 3 oturum, `plan.free_walk`) · 5) günlük kelime turu ve seri.
+yürüyüş ücretsizde günde 3 tur, `plan.free_walk`) · 5) günlük kelime turu ve seri.
 
 **Kare listesi (iPhone 6.9" ve Play telefon, bu sırayla; ilk üçü aramada görünür):**
 

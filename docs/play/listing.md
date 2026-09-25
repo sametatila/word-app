@@ -90,12 +90,12 @@ kursu bu dile göre sunuyor ve kimseye kendi dilini öğretmiyor: `PAIR_READY` +
 - **Premium ayrımı** `src/lib/premium/gates.ts` (`DEFAULT_PREMIUM_CONFIG`, `describeLimits`)
   ve `docs/premium/README.md` §2'den (2026-09-25 kararları; üretimde panel kaydı yok, kod
   varsayılanı geçerli): ücretsizde kelime çalışma, pratik, okuma, dinleme, dil bilgisi ve
-  quiz sınırsız; yürüyüş modu ekran açıkken günde 3 oturum; seviye başına 1 deneme sınavı,
+  quiz sınırsız; yürüyüş modu ekran açıkken günde 3 tur; seviye başına 1 deneme sınavı,
   Patika'da 2 Konuşma + 2 Yazma adımı, Beceriler'de 2 konuşma + 2 yazma değerlendirmesi;
   "bitir + 7 günlük seri" ile +2 (deneme sınavında +1). Premium'da ekran kapalı yürüyüş,
   tüm kâğıtlar (üçerli paketler, paketi bitirince sonraki), seri beklemeden bütün Konuşma
   ve Yazma; kötüye kullanımı önleyen günlük üst sınır. "Sınırsız" Premium için denmiyor
-  (şartlar §7a). Metin sayı olarak 3 oturum, 1 deneme sınavı, 2+2 hak, +2/+1 ve 7 gün
+  (şartlar §7a). Metin sayı olarak 3 tur, 1 deneme sınavı, 2+2 hak, +2/+1 ve 7 gün
   diyor; panelde (`/admin/premium`) bu değerler değişirse üç dildeki "Ücretsiz ve Premium"
   paragrafı, yürüyüş paragrafı ve deneme sınavı altyazısı (`docs/store/plan/*.json`) da
   değişir. Premium'un sınır sayıları metinde yok, "güncel sınırlar Premium ekranında"
@@ -155,7 +155,7 @@ KELİME TURLARI
 Aralıklı tekrar, her kelimeyi unutmak üzereyken yeniden önüne getirir. Anlamını seç, duyduğunu tanı, yazarak hatırla, eşleştir, cümle kur, çevir. Almanca kursunda artikel ve çoğul turları da var.
 
 YÜRÜYÜŞ MODU
-Kulaklığı tak, ekrana bakmadan çalış: ipucunu Türkçe duyarsın, karşılığını öğrendiğin dilde sesli söylersin. Ekran açıkken günde 3 oturum ücretsizdir. Ekran kapalıyken ya da telefon cebindeyken çalışan Cepte yürüyüş Premium'a dahildir.
+Kulaklığı tak, ekrana bakmadan çalış: ipucunu Türkçe duyarsın, karşılığını öğrendiğin dilde sesli söylersin. Ekran açıkken günde 3 tur ücretsizdir. Ekran kapalıyken ya da telefon cebindeyken çalışan Cepte yürüyüş Premium'a dahildir.
 
 DERSLER VE KONUŞMA
 Her ders Türkçe kısa bir anlatımla başlar, sonra bir sahnede konuşursun: kafede sipariş, doktor randevusu, iş görüşmesi. Karşındaki gerçek bir kişi değil, bir yapay zekâdır; uygulama bunu ekranda söyler ve yanıtlarını uygulamadan çıkmadan bildirebilirsin.
@@ -167,7 +167,7 @@ DENEME SINAVLARI
 Her seviyede 12 deneme sınavı; her birinde okuma, dinleme, yazma ve konuşma bölümleri ve bölüm başına süre var. Okuma ve dinleme otomatik puanlanır; yazma ve konuşma cevaplarını iznin varsa yapay zekâ değerlendirir, ölçütler ve örnek cevap da gösterilir. Haftalık quiz öğrendiklerini düzenli olarak ölçer: on soru, beş yetkinlik, her yanlıştan sonra açıklama. Ücretsizdir. Deneme sınavları Lernomi'nin hazırladığı alıştırmalardır; hiçbir sınav kurumuyla bağlantılı değildir ve resmî bir sertifika yerine geçmez.
 
 ÜCRETSİZ VE PREMIUM
-Kelime çalışma, pratik, okuma, dinleme, dil bilgisi ve quiz ücretsiz ve sınırsızdır; haftalık quiz haftada birdir. Yürüyüş modu ücretsizde ekran açıkken günde 3 oturumdur. Ücretsiz sürümde ayrıca her seviyede 1 deneme sınavı, Patika'da seviye başına 2 Konuşma ve 2 Yazma adımı, Beceriler'de seviye başına 2 konuşma ve 2 yazma değerlendirmesi var. Açık olanları bitirip 7 günlük seri yapınca yenileri açılır (Patika ve Beceriler'de +2, deneme sınavında +1), sonra her 7 günlük seride yeniden. Premium: ekran kapalıyken de çalışan Cepte yürüyüş ve günlük oturum beklemeden yürüyüş modu, tüm deneme sınavları, Patika'daki tüm Konuşma ve Yazma adımları ve Beceriler'de konuşma ve yazma değerlendirmesi, seri ya da bitirme beklemeden. Deneme sınavları üçerli paketler hâlinde sırayla açılır: paketteki üç kâğıdı bitirince sonraki paket açılır. Premium'da da kötüye kullanımı önleyen günlük üst sınırlar vardır; güncel sınırlar uygulamadaki Premium ekranında yazar.
+Kelime çalışma, pratik, okuma, dinleme, dil bilgisi ve quiz ücretsiz ve sınırsızdır; haftalık quiz haftada birdir. Yürüyüş modu ücretsizde ekran açıkken günde 3 turdur. Ücretsiz sürümde ayrıca her seviyede 1 deneme sınavı, Patika'da seviye başına 2 Konuşma ve 2 Yazma adımı, Beceriler'de seviye başına 2 konuşma ve 2 yazma değerlendirmesi var. Açık olanları bitirip 7 günlük seri yapınca yenileri açılır (Patika ve Beceriler'de +2, deneme sınavında +1), sonra her 7 günlük seride yeniden. Premium: ekran kapalıyken de çalışan Cepte yürüyüş ve günlük tur beklemeden yürüyüş modu, tüm deneme sınavları, Patika'daki tüm Konuşma ve Yazma adımları ve Beceriler'de konuşma ve yazma değerlendirmesi, seri ya da bitirme beklemeden. Deneme sınavları üçerli paketler hâlinde sırayla açılır: paketteki üç kâğıdı bitirince sonraki paket açılır. Premium'da da kötüye kullanımı önleyen günlük üst sınırlar vardır; güncel sınırlar uygulamadaki Premium ekranında yazar.
 Premium, aylık ya da yıllık olarak otomatik yenilenen bir aboneliktir. Fiyat ve varsa ücretsiz deneme süresi satın almadan önce uygulamada gösterilir. Aboneliğini Google Play hesabından yönetebilir ya da iptal edebilirsin.
 
 ARKADAŞLARINLA
@@ -224,7 +224,7 @@ VOCABULARY ROUNDS
 Spaced repetition brings each word back just before you would forget it. Choose the meaning, recognize what you hear, type from memory, match, build and translate sentences, and practice German articles and plurals.
 
 WALK MODE
-Put your headphones on and study without looking at the screen: you hear a prompt in English and say the German out loud. Walk mode is free with the screen on, 3 sessions a day. Pocket Walking, which keeps it running with the screen off or with your phone in your pocket, is part of Premium.
+Put your headphones on and study without looking at the screen: you hear a prompt in English and say the German out loud. Walk mode is free with the screen on, 3 rounds a day. Pocket Walking, which keeps it running with the screen off or with your phone in your pocket, is part of Premium.
 
 LESSONS AND SPEAKING
 Each lesson starts with a short explanation, then you talk your way through a scene: ordering in a café, a doctor's appointment, a job interview. Your partner is an AI, not a real person; the app tells you so on screen, and you can report its replies without leaving the app.
@@ -236,7 +236,7 @@ MOCK EXAMS
 12 mock exams at every level, each with reading, listening, writing and speaking sections and a time limit for each section. Reading and listening are scored automatically; with your permission, AI assesses your writing and speaking answers, and you also see the criteria and a sample answer. A weekly quiz checks what you have learned: ten questions, five skills, an explanation after every mistake. It is free. The mock exams are practice material written by Lernomi; they are not affiliated with any exam provider and do not replace an official certificate.
 
 FREE AND PREMIUM
-Vocabulary, practice, reading, listening, grammar and quizzes are free and unlimited; the weekly quiz is once a week. On the free plan, walk mode runs with the screen on for 3 sessions a day. The free plan also includes 1 mock exam per level, 2 Speaking and 2 Writing steps per level in Path, and 2 speaking and 2 writing assessments per level in Skills. Finish what is open and reach a 7-day streak to unlock more (+2 in Path and Skills, +1 mock exam), then again with every further 7 days of streak. Premium: Pocket Walking, which also works with the screen off, walk mode without waiting for daily sessions, every mock exam, every Speaking and Writing step in Path and speaking and writing assessments in Skills, with no streak or finishing needed. Mock exams unlock in packs of three, one after another: finish all three papers in a pack to open the next one. Premium also has daily upper limits to prevent abuse; the current limits are shown on the Premium screen in the app.
+Vocabulary, practice, reading, listening, grammar and quizzes are free and unlimited; the weekly quiz is once a week. On the free plan, walk mode runs with the screen on for 3 rounds a day. The free plan also includes 1 mock exam per level, 2 Speaking and 2 Writing steps per level in Path, and 2 speaking and 2 writing assessments per level in Skills. Finish what is open and reach a 7-day streak to unlock more (+2 in Path and Skills, +1 mock exam), then again with every further 7 days of streak. Premium: Pocket Walking, which also works with the screen off, walk mode without waiting for daily rounds, every mock exam, every Speaking and Writing step in Path and speaking and writing assessments in Skills, with no streak or finishing needed. Mock exams unlock in packs of three, one after another: finish all three papers in a pack to open the next one. Premium also has daily upper limits to prevent abuse; the current limits are shown on the Premium screen in the app.
 Premium is an auto-renewing monthly or yearly subscription. The price and any free trial are shown in the app before you buy. You can manage or cancel your subscription in your Google Play account.
 
 WITH FRIENDS
@@ -294,7 +294,7 @@ VOKABELRUNDEN
 Verteilte Wiederholung legt dir jedes Wort genau dann wieder vor, wenn du es fast vergessen hättest. Bedeutung wählen, Gehörtes erkennen, aus dem Gedächtnis tippen, zuordnen, Sätze bauen und übersetzen.
 
 GEHMODUS
-Kopfhörer auf und lernen, ohne auf den Bildschirm zu schauen: Du hörst eine Vorgabe auf Deutsch und sprichst das englische Wort laut aus. Bei eingeschaltetem Bildschirm ist der Gehmodus kostenlos, 3 Einheiten pro Tag. Der Gehmodus in der Tasche, der auch bei ausgeschaltetem Bildschirm weiterläuft, gehört zu Premium.
+Kopfhörer auf und lernen, ohne auf den Bildschirm zu schauen: Du hörst eine Vorgabe auf Deutsch und sprichst das englische Wort laut aus. Bei eingeschaltetem Bildschirm ist der Gehmodus kostenlos, 3 Runden pro Tag. Der Gehmodus in der Tasche, der auch bei ausgeschaltetem Bildschirm weiterläuft, gehört zu Premium.
 
 LEKTIONEN UND SPRECHEN
 Jede Lektion beginnt mit einer kurzen Erklärung, danach sprichst du dich durch eine Szene: Bestellung im Café, Arzttermin, Vorstellungsgespräch. Dein Gegenüber ist eine KI und kein echter Mensch; die App zeigt das auf dem Bildschirm an, und du kannst Antworten melden, ohne die App zu verlassen.
@@ -306,7 +306,7 @@ PROBEPRÜFUNGEN
 12 Probeprüfungen pro Niveau, jede mit den Teilen Lesen, Hören, Schreiben und Sprechen und einer Zeitvorgabe pro Teil. Lesen und Hören werden automatisch ausgewertet; Schreiben und Sprechen bewertet mit deiner Erlaubnis eine KI, dazu siehst du die Kriterien und eine Musterlösung. Ein Wochen-Quiz zeigt, was du gelernt hast: zehn Fragen, fünf Fertigkeiten, nach jedem Fehler eine Erklärung. Es ist kostenlos. Die Probeprüfungen sind von Lernomi erstellte Übungen; sie stehen mit keinem Prüfungsanbieter in Verbindung und ersetzen kein offizielles Zertifikat.
 
 KOSTENLOS UND PREMIUM
-Vokabeln, Üben, Lesen, Hören, Grammatik und Quiz sind kostenlos und unbegrenzt; das Wochen-Quiz gibt es einmal pro Woche. Kostenlos läuft der Gehmodus bei eingeschaltetem Bildschirm, 3 Einheiten pro Tag. Kostenlos sind außerdem 1 Probeprüfung pro Niveau, im Pfad pro Niveau 2 Sprechen- und 2 Schreiben-Schritte und bei den Fähigkeiten pro Niveau 2 Sprech- und 2 Schreibbewertungen. Schließe Offenes ab und erreiche eine 7-Tage-Serie, dann wird mehr frei (+2 im Pfad und bei den Fähigkeiten, +1 Probeprüfung), danach mit jeden weiteren 7 Serientagen erneut. Premium: Gehmodus in der Tasche, der auch bei ausgeschaltetem Bildschirm läuft, Gehmodus ohne Warten auf Tageseinheiten, alle Probeprüfungen, alle Sprechen- und Schreiben-Schritte im Pfad und Sprech- und Schreibbewertungen bei den Fähigkeiten, ohne Serie oder Abschluss. Probeprüfungen werden nacheinander in Dreierpaketen freigeschaltet: Sind alle drei Prüfungen eines Pakets abgeschlossen, öffnet sich das nächste. Auch Premium hat tägliche Obergrenzen gegen Missbrauch; die aktuellen Grenzen stehen auf dem Premium-Bildschirm der App.
+Vokabeln, Üben, Lesen, Hören, Grammatik und Quiz sind kostenlos und unbegrenzt; das Wochen-Quiz gibt es einmal pro Woche. Kostenlos läuft der Gehmodus bei eingeschaltetem Bildschirm, 3 Runden pro Tag. Kostenlos sind außerdem 1 Probeprüfung pro Niveau, im Pfad pro Niveau 2 Sprechen- und 2 Schreiben-Schritte und bei den Fähigkeiten pro Niveau 2 Sprech- und 2 Schreibbewertungen. Schließe Offenes ab und erreiche eine 7-Tage-Serie, dann wird mehr frei (+2 im Pfad und bei den Fähigkeiten, +1 Probeprüfung), danach mit jeden weiteren 7 Serientagen erneut. Premium: Gehmodus in der Tasche, der auch bei ausgeschaltetem Bildschirm läuft, Gehmodus ohne Warten auf Tagesrunden, alle Probeprüfungen, alle Sprechen- und Schreiben-Schritte im Pfad und Sprech- und Schreibbewertungen bei den Fähigkeiten, ohne Serie oder Abschluss. Probeprüfungen werden nacheinander in Dreierpaketen freigeschaltet: Sind alle drei Prüfungen eines Pakets abgeschlossen, öffnet sich das nächste. Auch Premium hat tägliche Obergrenzen gegen Missbrauch; die aktuellen Grenzen stehen auf dem Premium-Bildschirm der App.
 Premium ist ein automatisch verlängertes Monats- oder Jahresabo. Preis und eine eventuelle kostenlose Testphase werden vor dem Kauf in der App angezeigt. Dein Abo verwaltest oder kündigst du in deinem Google-Play-Konto.
 
 MIT FREUNDEN
