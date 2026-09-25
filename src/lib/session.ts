@@ -830,9 +830,13 @@ export async function buildSession(
   // gösterildiyse o. Ama anadil karşılığının aynı olması tek başına eşanlam
   // değil: sesteşler de aynı karşılığı taşıyor ("story" = Stockwerk ve
   // Geschichte, "yüz" = Gesicht ve hundert) ve biri yazılınca öteki doğru
-  // sayılıyordu. Kabul için İKİNCİ bir dildeki karşılık da aynı olmalı:
-  // Türkçe ve Almanca anadilde İngilizce (İngilizce kursta Almanca),
-  // İngilizce anadilde Türkçe.
+  // sayılıyordu. Kabul için istemin ALT SATIRINDAKİ karşılık da aynı olmalı:
+  // Türkçe ve Almanca anadilde istemin altında İngilizce duruyor, sesteşi o
+  // ayırıyor. İngilizce anadilde istemin alt satırı YOK (`glossFor` sub null):
+  // Türkçeyi şart koşmak öğrenciyi göremediği bir ayrımla yanlış sayıyordu
+  // ("me" isteminde mir yazan mich beklenirken yanlış alıyordu). Orada ölçüt
+  // yalnız görünen karşılık; sesteşin çaresi karşılığın kendisi (Stockwerk
+  // "floor", Geschichte "story").
   const typing = rounds.filter((r) => r.game === "typing");
   if (typing.length) {
     const col = native === "en" ? words.en : native === "de" ? words.deGloss : words.tr;
@@ -844,7 +848,7 @@ export async function buildSession(
           .where(and(practiceWordsOf(course), inArray(col, keys)))
       : [];
     const second = (w: { tr: string; en: string | null; deGloss?: string | null }) =>
-      native === "en" ? w.tr : native === "de" ? w.en : (w.en ?? w.deGloss ?? null);
+      native === "en" ? null : native === "de" ? w.en : (w.en ?? w.deGloss ?? null);
     for (const r of rounds) {
       if (r.game !== "typing") continue;
       const key = glossFor(r.word, native)?.text;
