@@ -13,7 +13,8 @@ import { fetchSession, submitAnswers, todayStr, type AnswerOut, type Round } fro
 import { useAuth } from "../lib/AuthContext";
 import { speakAndWaitVoiced, currentVoiceId } from "../lib/tts";
 import { bridgeStop } from "../lib/ttsBridge";
-import { usePremiumStatus, notePremiumGate } from "../lib/premium";
+import { usePremiumStatus, notePremiumGate, refreshPremium, isPremiumRefusal, isQuotaRefusal } from "../lib/premium";
+import { walkLine } from "../lib/unlock";
 import { glossVoice } from "../lib/voices";
 import { currentLang, nativeLangName, targetLangName, formatPercent } from "../lib/i18n";
 import { ensureMicPermission, ensureWalkNotificationPermission, listenOnce, stopListening, setKeepAwake, azureListenOnce, startWalkService, stopWalkService, onScreenState, onWalkStop, onWalkServiceFailed, stopServerTts, nativeDelay, nativeHttpGet } from "../lib/stt";
@@ -48,7 +49,7 @@ const probeSay = (yol: string, txt: string) => {
   return (p: Promise<unknown>) => p.then(() => { if (__DEV__) console.log("PROBE say<", yol, Date.now() - t0, "ms"); });
 };
 
-type Phase = "intro" | "teaching" | "speaking" | "listening" | "judging" | "continue" | "done" | "paused" | "stopped" | "denied" | "error";
+type Phase = "intro" | "teaching" | "speaking" | "listening" | "judging" | "continue" | "done" | "paused" | "stopped" | "denied" | "error" | "locked";
 type Verdict = "correct" | "wrong" | "skip" | "unheard" | null;
 
 /** Yürüyüş kelimesi — demo Word + oyunların gösterdiği İngilizce gloss (`en`). */
@@ -116,7 +117,8 @@ const CONFIRM_SILENCE_MS = 7000;
 export function WalkModeScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
-  const nav = useNavigation<{ goBack: () => void }>();
+  const nav = useNavigation<{ goBack: () => void; navigate: (name: "Paywall") => void }>();
+  const navPaywall = () => nav.navigate("Paywall");
   const { user } = useAuth();
   /* MİSAFİR: ekran kapalı yol sunucu ses tanıması ve o misafire kapalı
      (`/api/stt` 403 account_required). Kapı Premium'dan önce hesap; misafire
@@ -267,16 +269,31 @@ export function WalkModeScreen() {
     0/0 · kaydedildi" ekranına düşüyordu: bir ağ hatası BİTMİŞ TUR gibi
     gösteriliyordu. Web `walk-player` ayrı bir hata ekranı çiziyor.
   */
+  /*
+    GÜNLÜK OTURUM HAKKI (2026-09-25): ücretsizde günde 3 oturum, sunucu kuyruğu
+    açarken sayıyor (`/api/session?walk=1`). Hak yoksa 403 premium_required,
+    premium'un kötüye kullanım tavanı dolduysa 429 — ikisi de KAPI, ağ hatası
+    değil: kilit ekranı nedenini ve yolunu söylüyor.
+  */
+  const [walkFairUse, setWalkFairUse] = useState(false);
+  function walkGate(e: unknown): boolean {
+    if (isPremiumRefusal(e)) { setWalkFairUse(false); notePremiumGate("walk"); void refreshPremium(); setPhase("locked"); return true; }
+    if (isQuotaRefusal(e)) { setWalkFairUse(true); setPhase("locked"); return true; }
+    return false;
+  }
+
   const loadQueue = useCallback(() => {
     if (!user) return;
     setPhase("intro");
     fetchSession(day.current, { walk: true }).then((p) => {
       if (!mounted.current) return;
+      /* Kuyruk açıldı = oturum sunucuda sayıldı; kalan oturum tazelensin. */
+      void refreshPremium();
       const wr = mapRounds(p.rounds ?? []);
       if (wr.length) { setRounds(wr); setCurWord(wr[0].word); return; }
       // Tekrar zamanı gelen kelime yok: bitiş ekranının kendi "kalmadı" hâli.
       setNoMore(true); setPhase("done");
-    }).catch(() => { if (mounted.current) setPhase("error"); });
+    }).catch((e) => { if (mounted.current) { if (!walkGate(e)) setPhase("error"); } });
   }, [user]);
 
   useEffect(() => { loadQueue(); }, [loadQueue]);
@@ -752,7 +769,7 @@ export function WalkModeScreen() {
       const wr = mapRounds(p.rounds ?? []);
       if (wr.length) { setRounds(wr); setCurWord(wr[0].word); start(wr, false); return; }
       setNoMore(true); setPhase("done"); void sayNative(tx("walk.no_more"));
-    } catch { setPhase("error"); }
+    } catch (e) { if (!walkGate(e)) setPhase("error"); }
   }
 
   function finishDone() { setKeepAwake(false); stopWalkService(); endedAt.current = Date.now(); setPhase("done"); }
@@ -782,9 +799,20 @@ export function WalkModeScreen() {
         const skip = Array.from(askedIds.current).slice(-200).join(",");
         const url = `${API_BASE}/api/session?day=${day.current}&walk=1${skip ? `&skip=${skip}` : ""}`;
         const body = await nativeHttpGet(url);
-        payload = body ? (JSON.parse(body) as { rounds?: Round[] }) : null;
+        payload = body ? (JSON.parse(body) as { rounds?: Round[]; error?: string }) : null;
       } else {
         payload = await fetchSession(day.current, { walk: true, skip: Array.from(askedIds.current) });
+      }
+      /* Ekran kapalı yol ham gövdeyi okuyor: hak bittiyse gövde kuyruk değil
+         kapı (`premium_required`/`quota`). Sesli söylenip kilit ekranına geçiliyor. */
+      const err = (payload as { error?: string } | null)?.error;
+      if (err === "premium_required" || err === "quota") {
+        if (!alive()) return;
+        endWalk(2);
+        await sayNative(tx("unlock.walk_spent"));
+        finishDone();
+        walkGate(err === "quota" ? { status: 429, message: "quota" } : { status: 403, message: "premium_required" });
+        return;
       }
       const wr = mapRounds(payload?.rounds ?? []);
       if (!alive()) return;
@@ -798,7 +826,15 @@ export function WalkModeScreen() {
       }
       endWalk(2);
       await sayNative(tx("walk.no_more")); setNoMore(true); finishDone();
-    } catch { finishDone(); }
+    } catch (e) {
+      if (isPremiumRefusal(e) || isQuotaRefusal(e)) {
+        await sayNative(tx("unlock.walk_spent"));
+        finishDone();
+        walkGate(e);
+        return;
+      }
+      finishDone();
+    }
   }
 
   /** Cepte (eller serbest) tur sonunda sesli devam sorusu — web askContinue ile aynı. */
@@ -990,6 +1026,13 @@ export function WalkModeScreen() {
               { icon: RepeatIcon, text: tx("walkmode.rule_continue") },
             ]}
           />
+          {/* Bugünkü oturum hakkı başlamadan görünsün (ücretsiz; premium'da yalnız
+              kötüye kullanım tavanı var, sayı söylenmiyor). */}
+          {premium?.unlock && !premium.unlock.walk.premium ? (
+            <View style={{ marginTop: spacing.md }}>
+              <FlowNote icon={<WalkIcon color={colors.textMuted} size={16} />} text={tx(walkLine(premium.unlock.walk).key, walkLine(premium.unlock.walk).params)} />
+            </View>
+          ) : null}
         </FlowScreen>
       ) : phase === "done" && noMore && tally.total === 0 ? (
         /* BUGÜNLÜK KELİME YOK — bitmiş bir tur değil, boş kuyruk: durum şablonu. */
@@ -1045,6 +1088,22 @@ export function WalkModeScreen() {
             tertiary={{ label: tx("common.finish"), onPress: () => nav.goBack() }}
           />,
         )
+      ) : phase === "locked" ? (
+        /* OTURUM HAKKI BİTTİ — neden, ne zaman yenilenir, Premium yolu. */
+        <FlowScreen
+          center
+          actions={
+            <FlowActions
+              primary={walkFairUse ? { label: tx("common.go_back"), onPress: () => nav.goBack() } : { label: tx("unlock.premium_now"), onPress: () => navPaywall() }}
+              tertiary={walkFairUse ? null : { label: tx("common.go_back"), onPress: () => nav.goBack() }}
+            />
+          }
+        >
+          <StateBody
+            title={walkFairUse ? tx("gate.fair_use", { n: premium?.limits.fairUse.walkSessionsPerDay ?? premium?.limits.fairUse.pocketWalksPerDay ?? 20 }) : tx("unlock.walk_spent")}
+            body={walkFairUse ? null : tx("plan.pro_pocket_walk")}
+          />
+        </FlowScreen>
       ) : phase === "error" ? (
         <FlowScreen center actions={<FlowActions primary={{ label: tx("common.try_again"), onPress: loadQueue }} tertiary={{ label: tx("common.go_back"), onPress: () => nav.goBack() }} />}>
           <StateBody alert title={tx("walk.error_title")} body={tx("walk.error_sub")} />
