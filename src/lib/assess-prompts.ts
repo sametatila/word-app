@@ -142,7 +142,7 @@ const KIND_BRIEF: Record<AssessKind, string> = {
   speaking:
     "Metin bir KONUŞMA TANIYICI dökümü: noktalama YOK, büyük harf YOK, cümleler virgülsüz art arda gelir — bunlar öğrencinin hatası DEĞİLDİR, errors listesine asla yazılmaz ve puanı düşürmez (corrected alanında sessizce düzeltebilirsin). Art arda gelen iki ana cümle 'und' ile bağlanmak zorunda değildir. Değerlendirilen şey söylenenin dilbilgisi, kelime seçimi ve görevi karşılayıp karşılamadığı. Telaffuz hatası ancak döküm açıkça başka bir kelimeye kaydıysa (schon/schön gibi) 'pronunciation' olarak yazılır.",
   chat:
-    "Metin bir rol yapma konuşmasında öğrencinin söyledikleri (sırayla, her satır bir tur). Görev puanı: senaryonun amacı (sipariş vermek, randevu almak…) gerçekleşti mi ve hedef kalıplar kullanıldı mı. Karşı tarafın replikleri değerlendirilmez.",
+    "Metin bir Konuşma adımındaki sahne sohbetinde öğrencinin söyledikleri (sırayla, her satır bir tur). Görev puanı: senaryonun amacı (sipariş vermek, randevu almak…) gerçekleşti mi ve hedef kalıplar kullanıldı mı. Karşı tarafın replikleri değerlendirilmez.",
 };
 
 /**
