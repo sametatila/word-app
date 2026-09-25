@@ -152,13 +152,13 @@ export function PremiumAdmin({
               <Num label="Kademe tavanı (0 = sınırsız)" v={cfg.free.maxTiers} on={(n) => num(["free", "maxTiers"], n)} />
               <Num label="Deneme sınavı (seviye başına)" v={cfg.free.mockPapersPerLevel} on={(n) => num(["free", "mockPapersPerLevel"], n)} />
               <Num label="Deneme sınavı, dilim başına ek kâğıt" v={cfg.free.mockStreakBonus} on={(n) => num(["free", "mockStreakBonus"], n)} />
-              <Num label="Günde yürüyüş oturumu (ekran açık)" v={cfg.free.walkSessionsPerDay} on={(n) => num(["free", "walkSessionsPerDay"], n)} />
+              <Num label="Günde yürüyüş turu (ekran açık)" v={cfg.free.walkRoundsPerDay} on={(n) => num(["free", "walkRoundsPerDay"], n)} />
             </Grid>
           </Panel>
 
           <Panel title="Premium — kötüye kullanım tavanı" hint={<>Bu sayılar paywall’da kullanıcıya <b>yazılıyor</b>. Tavanı olan bir şeyi “sınırsız” diye sunmak App Store 3.1.2 ve Play’in beyan kurallarına aykırı. Amaç normal kullanıcıyı durdurmak değil, tek bir hesabın bütçeyi yakmasını engellemek. Sohbet mesajı tavanı sabit (kodda, günde 300).</>}>
             <Grid>
-              <Num label="Günde yürüyüş oturumu" v={cfg.fairUse.walkSessionsPerDay} on={(n) => num(["fairUse", "walkSessionsPerDay"], n)} />
+              <Num label="Günde yürüyüş turu" v={cfg.fairUse.walkRoundsPerDay} on={(n) => num(["fairUse", "walkRoundsPerDay"], n)} />
               <Num label="Günde AI değerlendirmesi" v={cfg.fairUse.aiPracticePerDay} on={(n) => num(["fairUse", "aiPracticePerDay"], n)} />
             </Grid>
           </Panel>
