@@ -41,7 +41,7 @@ export const enA1P19: SkillExercise[] = [
       {
         de: "Her heart is strong.",
         tr: "Kalbi güçlü.",
-        hint: "„heart“ = HAAT: uzun ve boğazın gerisinden gelen bir a; r söylenmez.",
+        hint: "„heart“ = HART: uzun ve geride bir a, ardından geri kıvrılan Amerikan r'si.",
         confusions: [
           { heard: ["hat"], fix: "Kısa söylersen „hat“ (şapka) duyulur; ünlüyü uzat ve geride tut.", expected: "heart" },
         ],
@@ -49,7 +49,7 @@ export const enA1P19: SkillExercise[] = [
       {
         de: "We park the car here.",
         tr: "Arabayı buraya park ederiz.",
-        hint: "„park“ ve „car“ uzun a taşır: PAAK, KAA.",
+        hint: "„park“ ve „car“ uzun ve geride bir a taşır, sonra r gelir: PARK, KAR.",
         confusions: [
           { heard: ["pack"], fix: "Kısa ve açık a ile „pack“ (paketlemek) olur; sesi uzat.", expected: "park" },
         ],
@@ -65,7 +65,7 @@ export const enA1P19: SkillExercise[] = [
       {
         de: "The match is in March.",
         tr: "Maç martta.",
-        hint: "„match“ kısa ve açık (MEÇ'e yakın), „March“ uzun ve geride (MAAÇ).",
+        hint: "„match“ kısa ve açık (MEÇ'e yakın), „March“ uzun ve geride, r ile (MARÇ).",
         confusions: [
           { heard: ["The March is in March", "The match is in match"], fix: "İki kelimeyi aynı söyleme; ilki kısa ve açık, ikincisi uzun.", expected: "match" },
         ],
@@ -73,7 +73,7 @@ export const enA1P19: SkillExercise[] = [
       {
         de: "This is a hard hat.",
         tr: "Bu bir baret.",
-        hint: "„hard“ uzun (HAAD), „hat“ kısa ve açık; aynı harf, iki ayrı ses.",
+        hint: "„hard“ uzun ve r'li (HARD), „hat“ kısa ve açık; aynı harf, iki ayrı ses.",
         confusions: [
           { heard: ["hat hat", "hard heart"], fix: "İki a'yı ayır: ilki uzun ve geride, ikincisi kısa ve önde.", expected: "hard hat" },
         ],

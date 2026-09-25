@@ -15,7 +15,7 @@ export const enA1P7: SkillExercise[] = [
     skill: "speaking",
     title: "car, four, teacher",
     genre: "pronounce",
-    intro: "Kelime sonundaki r İngiliz aksanında söylenmez, uzun bir ünlüye dönüşür; bu alıştırma o biçimi çalışıyor.",
+    intro: "Amerikan İngilizcesinde kelime sonundaki r söylenir: dilin ucu hafifçe geri kıvrılır ve Türkçedeki gibi titremez. Bu alıştırma o r'yi çalışıyor.",
     gloss: [
       { de: "car", tr: "araba" },
       { de: "teacher", tr: "öğretmen" },
@@ -27,49 +27,49 @@ export const enA1P7: SkillExercise[] = [
       {
         de: "My car is near the door.",
         tr: "Arabam kapının yanında.",
-        hint: "„car“ = KAA, „door“ = DOO. Sondaki r yazılır ama söylenmez; ünlü uzar.",
+        hint: "„car“ = KAR, „door“ = DOR. Sondaki r söylenir ama titremez: dilin ucu geri kıvrılır, damağa değmez.",
         confusions: [
-          { heard: [], fix: "Dili kıvırma; ses yalnız uzar ve biter.", expected: "car" },
+          { heard: [], fix: "r'yi atlama ve titretme; dili hafifçe geri kıvırıp sesi orada bitir.", expected: "car" },
         ],
       },
       {
         de: "My sister is a teacher.",
         tr: "Kız kardeşim öğretmen.",
-        hint: "Sondaki -er zayıf bir ı sesidir: SİS-tı, TİİÇ-ı. Vurgu ilk hecededir.",
+        hint: "Sondaki -er, r ile kaynaşmış kısa bir ı'dır: SİS-tır, TİİÇ-ır. Vurgu ilk hecededir.",
         confusions: [
-          { heard: [], fix: "-er sonu vurgusuzdur ve r taşımaz; kısa bir ı yeter.", expected: "teacher" },
+          { heard: [], fix: "-er sonu vurgusuzdur; kısa ı ile r'yi birlikte söyle, ayrı bir e yok.", expected: "teacher" },
         ],
       },
       {
         de: "There are four chairs here.",
         tr: "Burada dört sandalye var.",
-        hint: "„four“ = FOO, „chairs“ = ÇEEZ. İkisinde de r ünlüyü uzatıp kayboluyor.",
+        hint: "„four“ = FOR, „chairs“ = ÇERZ, „here“ = HİİR. Üçünde de r ünlünün hemen ardından duyulur.",
         confusions: [
-          { heard: [], fix: "Türkçedeki titrek r buraya hiç girmez.", expected: "four" },
+          { heard: [], fix: "Türkçedeki titrek r buraya girmez; dil geriye kıvrılır, ses yumuşak kalır.", expected: "four" },
         ],
       },
       {
         de: "The car is over there.",
         tr: "Araba şurada.",
-        hint: "Ama „car is“ derken r geri gelir: KAA-rız. Sonraki kelime ünlüyle başlıyorsa r duyulur.",
+        hint: "„car is“ = KA-rız: r bir sonraki ünlüye bağlanır. „there“ = DER, sonda yine r.",
         confusions: [
-          { heard: [], fix: "Bağlanma r'si: ünlüden önce r yeniden söylenir.", expected: "car is" },
+          { heard: [], fix: "car ile is arasında durma; r'yi ikinci kelimeye bağlayıp tek akışta söyle.", expected: "car is" },
         ],
       },
       {
         de: "Her brother works here.",
         tr: "Onun erkek kardeşi burada çalışıyor.",
-        hint: "„her“ = HÖÖ, „brother“ = BRA-dı, „works“ = WÖÖKS. Üçünde de r ünlüye dönüşür.",
+        hint: "„her“ = HÖR, „brother“ = BRA-dır, „works“ = WÖRKS. Üçünde de ünlü ile r tek bir ses gibi kaynaşır.",
         confusions: [
-          { heard: [], fix: "Üç kelimede de r yerine uzun ya da zayıf bir ünlü var.", expected: "brother" },
+          { heard: [], fix: "Üç kelimede de r söylenir; ünlüyü uzatıp r'yi düşürme.", expected: "brother" },
         ],
       },
       {
         de: "Water, please. It's warmer today.",
         tr: "Su lütfen. Bugün daha sıcak.",
-        hint: "„water“ = WOO-tı, „warmer“ = WOO-mı. Karşılaştırma eki -er de aynı zayıf sesle biter.",
+        hint: "„water“ = WA-dır: ortadaki t yumuşayıp d'ye yaklaşır, sonda r söylenir. „warmer“ = WOR-mır.",
         confusions: [
-          { heard: [], fix: "Ek olsa bile -er sonu r taşımaz.", expected: "warmer" },
+          { heard: [], fix: "Karşılaştırma eki -er'in sonunda da r söylenir: WOR-mır.", expected: "warmer" },
         ],
       },
     ],

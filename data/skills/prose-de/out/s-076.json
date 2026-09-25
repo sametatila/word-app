@@ -41,5 +41,7 @@
  { "tr": "„We'll call you when we find the bag.“", "kind": "explain", "de": "„We'll call you when we find the bag.“" },
  { "tr": "„It's coming in forty minutes.“", "kind": "explain", "de": "„It's coming in forty minutes.“" },
  { "tr": "\"Don't forget your ID card. We can't help you without it.\"", "kind": "explain", "de": "\"Don't forget your ID card. We can't help you without it.\"" },
- { "tr": "sıcak hava", "kind": "gloss.tr", "de": "die Hitze" }
+ { "tr": "sıcak hava", "kind": "gloss.tr", "de": "die Hitze" },
+ { "tr": "Yasak günlük dilde „can't“ ile bildirilir; „shouldn't“ yalnız tavsiye, „don't have to“ gerek yok demektir.", "kind": "explain", "de": "Ein Verbot drückt man im Alltag mit „can't“ aus; „shouldn't“ ist nur ein Rat, „don't have to“ heißt: nicht nötig." },
+ { "tr": "Amerikan İngilizcesinde kelime sonundaki r söylenir: dilin ucu hafifçe geri kıvrılır ve Türkçedeki gibi titremez. Bu alıştırma o r'yi çalışıyor.", "kind": "intro", "de": "Im amerikanischen Englisch wird das r am Wortende gesprochen: Die Zungenspitze biegt sich leicht nach hinten, anders als das deutsche Rachen-r. Diese Übung trainiert dieses r." }
 ]

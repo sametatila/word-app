@@ -84,7 +84,7 @@ export const enA2P7: SkillExercise[] = [
     title: "should, must, have to",
     genre: "grammar",
     intro: "Üç sözcük de „gerekli“ der ama gerekliliğin kaynağı ve sertliği farklıdır.",
-    focus: "Zorunluluk ve tavsiye: should, must, have to, mustn't",
+    focus: "Zorunluluk, yasak ve tavsiye: should, must, have to, can't",
     gloss: [
       { de: "to wear", tr: "giymek" },
       { de: "helmet", tr: "kask" },
@@ -104,7 +104,7 @@ export const enA2P7: SkillExercise[] = [
       },
       {
         heading: "must ve have to: zorunluluk",
-        tr: "İkisi de zorunluluk bildirir ama kaynağı farklıdır: „must“ genellikle konuşanın kendi kararı ya da bir kural metnidir, „have to“ ise dışarıdan gelen bir zorunluluktur. Ayrıca „must“ yalnız şimdiki zamanda kullanılır; geçmiş ve gelecek için „had to“, „will have to“ gelir.",
+        tr: "İkisi de zorunluluk bildirir. „must“ daha çok yazılı kurallarda ve resmî dilde geçer; günlük konuşmada Amerikalılar neredeyse hep „have to“ der. Ayrıca „must“ yalnız şimdiki zamanda kullanılır; geçmiş ve gelecek için „had to“, „will have to“ gelir.",
         examples: [
           { de: "You must wear a helmet.", tr: "Kask takmak zorundasın.", note: "kural" },
           { de: "I have to work on Saturday.", tr: "Cumartesi çalışmak zorundayım.", note: "dıştan gelen" },
@@ -112,10 +112,11 @@ export const enA2P7: SkillExercise[] = [
         ],
       },
       {
-        heading: "mustn't ile don't have to aynı DEĞİL",
-        tr: "Bu ikisi karşıt anlamlıdır ve karıştırmak tehlikelidir. „mustn't“ YASAK demektir: „You mustn't smoke here.“ „don't have to“ ise GEREK YOK demektir: „You don't have to come.“ Türkçede ikisi de „-mek zorunda değilsin“ diye çevrilebildiği için hata sıktır.",
+        heading: "can't ile don't have to aynı DEĞİL",
+        tr: "Bu ikisi karşıt anlamlıdır ve karıştırmak tehlikelidir. YASAK günlük dilde „can't“ ile söylenir: „You can't smoke here.“ Tabelada ve yazılı kuralda „must not“ görürsün: „Visitors must not smoke.“ „don't have to“ ise GEREK YOK demektir: „You don't have to come.“ Türkçede ikisi de „-mek zorunda değilsin“ diye çevrilebildiği için hata sıktır.",
         examples: [
-          { de: "You mustn't smoke here.", tr: "Burada sigara içmek yasak.", note: "yasak" },
+          { de: "You can't smoke here.", tr: "Burada sigara içemezsin.", note: "yasak, günlük dil" },
+          { de: "Visitors must not smoke.", tr: "Ziyaretçilerin sigara içmesi yasaktır.", note: "yasak, yazılı kural" },
           { de: "You don't have to come.", tr: "Gelmen gerekmiyor.", note: "gerek yok" },
           { de: "Do I have to bring my passport?", tr: "Pasaportumu getirmem gerekiyor mu?", note: "soru: do + have to" },
         ],
@@ -130,9 +131,9 @@ export const enA2P7: SkillExercise[] = [
       },
       {
         text: "You ___ smoke here — it's forbidden.",
-        options: ["don't have to", "mustn't", "shouldn't"],
+        options: ["don't have to", "can't", "shouldn't"],
         answer: 1,
-        explain: "Yasak „mustn't“ ile bildirilir.",
+        explain: "Yasak günlük dilde „can't“ ile bildirilir; „shouldn't“ yalnız tavsiye, „don't have to“ gerek yok demektir.",
       },
       {
         text: "„You don't have to come.“ means:",
@@ -193,7 +194,7 @@ export const enA2P7: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„You mustn't smoke here.“ ile „You don't have to smoke here.“ aynı anlama gelir.",
+        text: "„You can't smoke here.“ ile „You don't have to smoke here.“ aynı anlama gelir.",
         options: ["True", "False"],
         answer: 1,
         explain: "Birincisi yasak, ikincisi gereklilik yokluğu bildirir.",
