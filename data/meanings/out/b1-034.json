@@ -2,7 +2,7 @@
   {
     "id": 1613,
     "tr": "küçük ekmek",
-    "en": "bread roll",
+    "en": "Swiss word for bread roll",
     "beispiel": "Ich hole schnell ein paar Brötli zum Frühstück.",
     "beispielTr": "Kahvaltı için hemen birkaç küçük ekmek alıyorum.",
     "beispielEn": "I'll quickly grab a few rolls for breakfast."
@@ -10,7 +10,7 @@
   {
     "id": 1628,
     "tr": "kuaför",
-    "en": "hairdresser",
+    "en": "Swiss word for hairdresser",
     "beispiel": "Mein Coiffeur hat mir die Haare zu kurz geschnitten.",
     "beispielTr": "Kuaförüm saçımı çok kısa kesti.",
     "beispielEn": "My hairdresser cut my hair too short."
@@ -18,7 +18,7 @@
   {
     "id": 1629,
     "tr": "kadın kuaför",
-    "en": "female hairdresser",
+    "en": "Swiss word for female hairdresser",
     "beispiel": "Meine Tochter möchte Coiffeuse werden.",
     "beispielTr": "Kızım kuaför olmak istiyor.",
     "beispielEn": "My daughter wants to become a hairdresser."
@@ -130,7 +130,7 @@
   {
     "id": 1782,
     "tr": "patates",
-    "en": "potato",
+    "en": "Austrian word for potato",
     "beispiel": "Kann ich bitte noch Erdäpfel bekommen?",
     "beispielTr": "Biraz daha patates alabilir miyim?",
     "beispielEn": "Could I have some more potatoes, please?"
@@ -162,7 +162,7 @@
   {
     "id": 1857,
     "tr": "karnaval",
-    "en": "carnival",
+    "en": "southern German word for carnival",
     "beispiel": "Im Fasching verkleiden sich alle Kinder.",
     "beispielTr": "Karnavalda bütün çocuklar kostüm giyer.",
     "beispielEn": "At carnival all the children dress up."
@@ -178,7 +178,7 @@
   {
     "id": 1861,
     "tr": "koltuk",
-    "en": "armchair",
+    "en": "Austrian and Swiss word for armchair",
     "beispiel": "Ich hätte gern einen bequemen Fauteuil.",
     "beispielTr": "Rahat bir koltuk istiyorum.",
     "beispielEn": "I'd like a comfortable armchair."
@@ -202,7 +202,7 @@
   {
     "id": 1886,
     "tr": "kasap",
-    "en": "butcher",
+    "en": "Austrian word for butcher",
     "beispiel": "Dieser Fleischhauer macht sehr gute Wurst.",
     "beispielTr": "Bu kasap çok iyi sosis yapıyor.",
     "beispielEn": "This butcher makes very good sausage."
@@ -234,7 +234,7 @@
   {
     "id": 1930,
     "tr": "ehliyet",
-    "en": "driver's license",
+    "en": "Swiss word for driver's license",
     "beispiel": "Hast du einen Führerausweis?",
     "beispielTr": "Ehliyetin var mı?",
     "beispielEn": "Do you have a driver's license?"
@@ -274,7 +274,7 @@
   {
     "id": 1969,
     "tr": "kaldırım",
-    "en": "sidewalk",
+    "en": "southern German word for sidewalk",
     "beispiel": "Das Fahrradfahren auf dem Gehsteig ist nicht erlaubt.",
     "beispielTr": "Kaldırımda bisiklet sürmek yasak.",
     "beispielEn": "Riding a bike on the sidewalk is not allowed."
@@ -298,7 +298,7 @@
   {
     "id": 2006,
     "tr": "dondurma",
-    "en": "ice cream",
+    "en": "Swiss word for ice cream",
     "beispiel": "Die Kinder essen im Sommer gern Glace.",
     "beispielTr": "Çocuklar yazın dondurma yemeyi sever.",
     "beispielEn": "In summer the children love eating ice cream."
@@ -306,7 +306,7 @@
   {
     "id": 2020,
     "tr": "mangal yapmak",
-    "en": "to grill",
+    "en": "to grill in Swiss German",
     "beispiel": "Heute wollen wir im Garten grillieren.",
     "beispielTr": "Bugün bahçede mangal yapmak istiyoruz.",
     "beispielEn": "Today we want to grill in the garden."
@@ -354,7 +354,7 @@
   {
     "id": 2061,
     "tr": "piliç",
-    "en": "chicken",
+    "en": "Austrian word for chicken",
     "beispiel": "Zum Mittagessen gibt es Hendl mit Reis.",
     "beispielTr": "Öğle yemeğinde pilavlı piliç var.",
     "beispielEn": "For lunch there's chicken with rice."

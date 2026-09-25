@@ -26,7 +26,7 @@
   {
     "id": 2133,
     "tr": "ara öğün",
-    "en": "snack",
+    "en": "Austrian word for snack",
     "beispiel": "Es ist Zeit für eine kleine Jause.",
     "beispielTr": "Küçük bir ara öğün vakti geldi.",
     "beispielEn": "It's time for a little snack."
@@ -130,7 +130,7 @@
   {
     "id": 2320,
     "tr": "kayısı",
-    "en": "apricot",
+    "en": "Austrian word for apricot",
     "beispiel": "Schmecken dir die Marillen?",
     "beispielTr": "Kayısıları beğendin mi?",
     "beispielEn": "Do you like the apricots?"
@@ -138,7 +138,7 @@
   {
     "id": 2324,
     "tr": "lise bitirme sınavı",
-    "en": "school leaving exam",
+    "en": "Austrian and Swiss school leaving exam",
     "beispiel": "Meine Tochter hat gerade die Matura gemacht.",
     "beispielTr": "Kızım daha yeni lise bitirme sınavını verdi.",
     "beispielEn": "My daughter has just finished her school leaving exam."
@@ -250,7 +250,7 @@
   {
     "id": 2436,
     "tr": "krema",
-    "en": "cream",
+    "en": "Austrian word for cream",
     "beispiel": "Zu den Erdbeeren gibt es frisches Obers.",
     "beispielTr": "Çileklerin yanında taze krema var.",
     "beispielEn": "There is fresh cream with the strawberries."
@@ -266,7 +266,7 @@
   {
     "id": 2455,
     "tr": "muayenehane",
-    "en": "doctor's office",
+    "en": "Austrian word for doctor's office",
     "beispiel": "Die Ordination ist heute leider geschlossen.",
     "beispielTr": "Muayenehane bugün maalesef kapalı.",
     "beispielEn": "The doctor's office is unfortunately closed today."
@@ -274,7 +274,7 @@
   {
     "id": 2466,
     "tr": "domates",
-    "en": "tomato",
+    "en": "Austrian word for tomato",
     "beispiel": "Kauf bitte noch Paradeiser auf dem Markt.",
     "beispielTr": "Pazardan bir de domates al lütfen.",
     "beispielEn": "Please buy some tomatoes at the market too."
@@ -322,7 +322,7 @@
   {
     "id": 2482,
     "tr": "peron",
-    "en": "platform",
+    "en": "Swiss word for platform",
     "beispiel": "Der Zug nach Bern fährt auf Perron 3 ab.",
     "beispielTr": "Bern treni üçüncü perondan kalkıyor.",
     "beispielEn": "The train to Bern leaves from platform 3."
@@ -338,7 +338,7 @@
   {
     "id": 2509,
     "tr": "postacı",
-    "en": "mailman",
+    "en": "Swiss word for mailman",
     "beispiel": "War der Pöstler heute schon da?",
     "beispielTr": "Postacı bugün geldi mi?",
     "beispielEn": "Has the mailman been here today?"
@@ -346,7 +346,7 @@
   {
     "id": 2510,
     "tr": "tavuk",
-    "en": "chicken",
+    "en": "Swiss word for chicken",
     "beispiel": "Zum Mittagessen gibt es Poulet mit Reis.",
     "beispielTr": "Öğle yemeğinde pilavlı tavuk var.",
     "beispielEn": "For lunch there is chicken with rice."
@@ -362,7 +362,7 @@
   {
     "id": 2536,
     "tr": "krema",
-    "en": "cream",
+    "en": "Swiss word for cream",
     "beispiel": "Zum Apfelkuchen serviert man in der Schweiz Rahm.",
     "beispielTr": "İsviçre'de elmalı pastanın yanında krema servis edilir.",
     "beispielEn": "In Switzerland apple cake is served with cream."

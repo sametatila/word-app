@@ -250,7 +250,7 @@
  {
   "id": 1364,
   "tr": "kapıcı",
-  "en": "caretaker",
+  "en": "Swiss word for caretaker",
   "beispiel": "Der Abwart repariert im Keller die kaputte Waschmaschine.",
   "beispielTr": "Kapıcı bodrumda bozuk çamaşır makinesini tamir ediyor.",
   "beispielEn": "The caretaker is fixing the broken washing machine in the basement."
@@ -322,7 +322,7 @@
  {
   "id": 1490,
   "tr": "banka kartı",
-  "en": "debit card",
+  "en": "Austrian word for debit card",
   "beispiel": "Kann ich mit der Bankomat-Karte bezahlen?",
   "beispielTr": "Banka kartıyla ödeyebilir miyim?",
   "beispielEn": "Can I pay with the debit card?"
@@ -386,7 +386,7 @@
  {
   "id": 1585,
   "tr": "bilet",
-  "en": "ticket",
+  "en": "Swiss word for ticket",
   "beispiel": "Ein Billett für die Fähre kostet zwölf Franken.",
   "beispielTr": "Feribot bileti on iki frank.",
   "beispielEn": "A ticket for the ferry costs twelve francs."
