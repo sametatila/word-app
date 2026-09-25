@@ -88,7 +88,7 @@ export function tierRule(cfg: PremiumConfig, surface: TieredSurface | "mock"): T
     : surface === "path_writing" ? f.pathWritingPerLevel
     : surface === "skill_speaking" ? f.speakingSkills
     : surface === "skill_writing" ? f.writingSkills
-    : f.mockPapersPerLevel;
+    : f.mockExamsPerLevel;
   const bonus = surface === "mock" ? f.mockStreakBonus : f.streakBonus;
   return { base, bonus, step: f.streakStep, maxTiers: f.maxTiers };
 }
@@ -333,35 +333,35 @@ export async function canPocketWalk(userId: string): Promise<Access> {
 /* ───────────────────────── Deneme sınavı ilerlemesi ───────────────────────── */
 
 export type MockPack = {
-  /** Paketteki kâğıt kimlikleri, sırayla. */
+  /** Paketteki deneme sınavlarının kimlikleri, sırayla. */
   ids: string[];
   unlocked: boolean;
   /** Paketteki nesnel maddelerin doğruluk yüzdesi (hiç çözülmediyse null) — yalnız bilgi. */
   pct: number | null;
-  /** Kaç kâğıt en az bir kez bitirildi. */
+  /** Kaç deneme sınavı en az bir kez bitirildi. */
   done: number;
 };
 
 export type MockAccess = {
   premium: boolean;
-  /** Açık kâğıt kimlikleri. */
+  /** Açık deneme sınavlarının kimlikleri. */
   unlocked: string[];
   packs: MockPack[];
   /** Ücretsiz taban (seviye başına). */
   freeLimit: number;
-  /** Bitirilmiş kâğıtlar — liste "✓" çiziyor. */
+  /** Bitirilmiş deneme sınavları — liste "✓" çiziyor. */
   finished: string[];
-  /** Sonraki kâğıdın/paketin nasıl açılacağı (`unlock.ts`). */
+  /** Sonraki sınavın/paketin nasıl açılacağı (`unlock.ts`). */
   unlock: MockUnlock;
 };
 
 /**
- * Bir seviyedeki kâğıtların açık/kilitli durumu.
+ * Bir seviyedeki deneme sınavlarının açık/kilitli durumu.
  *
- * ÜCRETSİZ: taban `mockPapersPerLevel` (1) + her "o kâğıdı bitir ve 7 günlük seri
- * yap" diliminde `mockStreakBonus` (1). Açık kâğıtlar sıradaki ilk N.
+ * ÜCRETSİZ: taban `mockExamsPerLevel` (1) + her "o sınavı bitir ve 7 günlük seri
+ * yap" diliminde `mockStreakBonus` (1). Açık sınavlar sıradaki ilk N.
  *
- * PREMIUM: paketler sırayla; ilk paket açık, sonraki paket öncekinin kâğıtlarının
+ * PREMIUM: paketler sırayla; ilk paket açık, sonraki paket öncekinin sınavlarının
  * HEPSİ bitirilince açılıyor. Bir dönem pakette %60 başarı da açıyordu; kural
  * 2026-09-25'te "yalnız bitir"e indi — iki farklı "başarı" tanımı yok, puanı
  * tutturamayan ödeme yapmış kullanıcı da çalışarak ilerliyor.
@@ -386,7 +386,7 @@ export async function mockAccess(userId: string | null, level: MockLevel, course
       premium: false,
       unlocked: papers.slice(0, open),
       packs: [],
-      freeLimit: cfg.free.mockPapersPerLevel,
+      freeLimit: cfg.free.mockExamsPerLevel,
       finished,
       unlock: capToPapers(unlock, papers.length),
     };
@@ -397,19 +397,19 @@ export async function mockAccess(userId: string | null, level: MockLevel, course
     premium: true,
     unlocked,
     packs,
-    freeLimit: cfg.free.mockPapersPerLevel,
+    freeLimit: cfg.free.mockExamsPerLevel,
     finished,
     unlock: premiumMockUnlock(papers.map((id) => Boolean(stat.get(id)?.done)), cfg.mock.packSize),
   };
 }
 
-/** Kâğıt sayısını aşan açılış vaat edilmiyor: son kâğıt da açıksa "sonraki" yok. */
+/** Sınav sayısını aşan açılış vaat edilmiyor: son sınav da açıksa "sonraki" yok. */
 function capToPapers(u: FreeUnlock, total: number): FreeUnlock {
   const open = Math.min(u.open, total);
   return { ...u, open, remaining: Math.max(0, open - u.used), next: open >= total ? null : u.next };
 }
 
-/** Kâğıt başına doğru/toplam ve "bitirildi mi". */
+/** Sınav başına doğru/toplam ve "bitirildi mi". */
 async function paperStats(userId: string, papers: string[]): Promise<Map<string, PaperStat>> {
   const stat = new Map<string, PaperStat>();
   if (!papers.length) return stat;
@@ -432,7 +432,7 @@ async function paperStats(userId: string, papers: string[]): Promise<Map<string,
   return stat;
 }
 
-/** Tek kâğıt açık mı — oynatıcı başlarken sorulan soru. */
+/** Tek deneme sınavı açık mı — oynatıcı başlarken sorulan soru. */
 export async function canMockPaper(userId: string | null, paperId: string, level: MockLevel, course: string): Promise<Access> {
   const a = await mockAccess(userId, level, course);
   if (a.unlocked.includes(paperId)) {
@@ -441,7 +441,7 @@ export async function canMockPaper(userId: string | null, paperId: string, level
   return { allowed: false, reason: a.premium ? "locked_progression" : "quota_spent", gate: "mock_exam" };
 }
 
-/** Bir kâğıdın biriken istatistiği — `computePacks` girdisi. */
+/** Bir deneme sınavının biriken istatistiği — `computePacks` girdisi. */
 export type PaperStat = { correct: number; total: number; done: boolean };
 
 /**
@@ -452,9 +452,9 @@ export type PaperStat = { correct: number; total: number; done: boolean };
  * gevşek olursa premium'un anlamı kalmaz, sıkı olursa ödeme yapmış kullanıcı
  * kilitli kalır.
  *
- * Kapı TEK: paketteki her kâğıt en az bir kez bitirildiyse sonraki paket açılır.
+ * Kapı TEK: paketteki her sınav en az bir kez bitirildiyse sonraki paket açılır.
  * Yüzde yalnız gösterim için hesaplanıyor (madde başına ağırlıklı: 40 maddelik
- * bir kâğıtla 20 maddelik biri eşit sayılsaydı kısa kâğıtta iyi olan ortalamayı
+ * bir sınavla 20 maddelik biri eşit sayılsaydı kısa sınavda iyi olan ortalamayı
  * hak etmeden yukarı çekerdi).
  */
 export function computePacks(
@@ -512,7 +512,7 @@ export type LevelUnlock = {
  *
  * Tüm seviyeler TEK çağrıda: istemci Patika'da seviye değiştirdikçe ayrı istek
  * atmasın. Maliyeti birkaç sorgu (profil, ömürlük sayaçlar, bitirilmiş konuşmalar,
- * bitirilmiş kâğıtlar) — hesap bellekte.
+ * bitirilmiş deneme sınavları) — hesap bellekte.
  */
 export type UnlockOverview = {
   streak: { current: number; longest: number; step: number };
@@ -549,7 +549,7 @@ export async function unlockOverview(userId: string): Promise<UnlockOverview> {
   const doneConversations = await finishedConversationSet(userId, allConv);
 
   const course = mockCourseOf(profile?.course);
-  /* Künye kataloğu, tam kâğıt değil: durum ucu uygulama her açıldığında
+  /* Künye kataloğu, sınavın tamamı değil: durum ucu uygulama her açıldığında
      çağrılıyor ve yalnız kimlik ile sıra lazım (sıra `no`, `mockPapersFor` ile aynı). */
   const papersByLevel = await Promise.all(LEVELS.map((l) => mockCatalogFor(l, course).then((p) => p.map((x) => x.id)).catch(() => [] as string[])));
   const stat = await paperStats(userId, papersByLevel.flat());

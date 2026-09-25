@@ -109,6 +109,9 @@ console.log("\nYapılandırma doğrulaması");
   const eskiAd = parsePremiumConfig({ free: { walkSessionsPerDay: 5 }, fairUse: { walkSessionsPerDay: 40 } });
   check("eski walkSessionsPerDay adı okunuyor", eskiAd.free.walkRoundsPerDay === 5 && eskiAd.fairUse.walkRoundsPerDay === 40);
   check("yeni ad eskisinden önce", parsePremiumConfig({ free: { walkRoundsPerDay: 4, walkSessionsPerDay: 9 } }).free.walkRoundsPerDay === 4);
+  /* `mockPapersPerLevel` 2026-09-25'te `mockExamsPerLevel` oldu: eski adla yazılmış kayıt da okunuyor. */
+  check("eski mockPapersPerLevel adı okunuyor", parsePremiumConfig({ free: { mockPapersPerLevel: 3 } }).free.mockExamsPerLevel === 3);
+  check("yeni mock adı eskisinden önce", parsePremiumConfig({ free: { mockExamsPerLevel: 2, mockPapersPerLevel: 7 } }).free.mockExamsPerLevel === 2);
 
   /* Kademe panelden kapatılabilmeli: 0 bonus = yalnız taban. */
   const kapali = parsePremiumConfig({ free: { streakBonus: 0 } });

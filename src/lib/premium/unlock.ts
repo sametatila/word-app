@@ -86,9 +86,9 @@ export type MockUnlock =
   | FreeUnlock
   | {
       premium: true;
-      /** Açık kâğıt sayısı. */
+      /** Açık deneme sınavı sayısı. */
       open: number;
-      /** Açık kâğıtlardan bitirilen. */
+      /** Açık sınavlardan bitirilen. */
       done: number;
       packSize: number;
       /** Sonraki paket: açık son paketteki bitirilen / paket boyu. Hepsi açıksa null. */
@@ -169,7 +169,7 @@ export function freeUnlock(
 
 /**
  * Premium deneme sınavı paketleri: ilk paket açık, sonraki paket öncekinin
- * kâğıtlarının HEPSİ bitirilince açılıyor. `finished` kâğıt sırasıyla hizalı.
+ * sınavlarının HEPSİ bitirilince açılıyor. `finished` sınav sırasıyla hizalı.
  */
 export function premiumMockUnlock(finished: boolean[], packSize: number): Extract<MockUnlock, { premium: true }> {
   const size = Math.max(1, packSize);

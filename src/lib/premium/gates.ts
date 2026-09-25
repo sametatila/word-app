@@ -29,9 +29,9 @@
  * Hesap tek yerde, `unlock.ts`.
  */
 export type FreeLimits = {
-  /** Seviye başına açık deneme sınavı kâğıdı (taban). */
-  mockPapersPerLevel: number;
-  /** Deneme sınavında her dilimin açtığı kâğıt (kararda 1). */
+  /** Seviye başına açık deneme sınavı (taban). */
+  mockExamsPerLevel: number;
+  /** Deneme sınavında her dilimin açtığı ek sınav (kararda 1). */
   mockStreakBonus: number;
   /**
    * Yürüyüş modu, günde TUR — yalnız EKRAN AÇIK.
@@ -87,12 +87,12 @@ export type FairUse = {
 };
 
 /**
- * Deneme sınavı paketleri (premium): paketteki kâğıtların HEPSİ bitirilince
+ * Deneme sınavı paketleri (premium): paketteki deneme sınavlarının HEPSİ bitirilince
  * sonraki paket açılır. Bir dönem %60 başarı da açıyordu ("ya da bitir"
  * supabıyla); 2026-09-25'te kalktı — tek kural "bitir".
  */
 export type MockProgression = {
-  /** Bir pakette kaç kâğıt açılır. */
+  /** Bir pakette kaç deneme sınavı açılır. */
   packSize: number;
 };
 
@@ -154,7 +154,7 @@ export type PremiumConfig = {
  */
 export const DEFAULT_PREMIUM_CONFIG: PremiumConfig = {
   free: {
-    mockPapersPerLevel: 1,
+    mockExamsPerLevel: 1,
     mockStreakBonus: 1,
     walkRoundsPerDay: 3,
     conversationsPerLevel: 2,
@@ -261,7 +261,7 @@ export function describeLimits(cfg: PremiumConfig): { free: CopyLine[]; premium:
       /* Haftalık quiz iki katmanda da haftada bir — kota değil, benzersiz kısıt. */
       { key: "plan.free_weekly", params: { n: 1 } },
       ...(free.walkRoundsPerDay > 0 ? [{ key: "plan.free_walk", params: { n: free.walkRoundsPerDay } }] : []),
-      { key: "plan.free_mock", params: { n: free.mockPapersPerLevel } },
+      { key: "plan.free_mock", params: { n: free.mockExamsPerLevel } },
       { key: "plan.free_path_ai", params: { c: free.conversationsPerLevel, w: free.pathWritingPerLevel } },
       { key: "plan.free_skills", params: { s: free.speakingSkills, w: free.writingSkills } },
       /* HAKKIN NASIL KAZANILDIĞI. Kilidi "paran yetmiyor" değil "bitir ve devam

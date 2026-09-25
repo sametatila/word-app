@@ -89,7 +89,9 @@ export function parsePremiumConfig(raw: unknown): PremiumConfig {
        tavan kalktı ve eski değer o karardan önceki bir ayardı. Üretimde bu satır
        hiç yazılmadı (2026-09-25 ölçüldü). */
     free: {
-      mockPapersPerLevel: int(f.mockPapersPerLevel, d.free.mockPapersPerLevel, 0, 50),
+      /* `mockPapersPerLevel`: 2026-09-25'e kadarki adı ("kâğıt" sözcüğü sınav
+         anlamında kalktı). Kayıtta yalnız o varsa o okunuyor. */
+      mockExamsPerLevel: int(f.mockExamsPerLevel ?? f.mockPapersPerLevel, d.free.mockExamsPerLevel, 0, 50),
       mockStreakBonus: int(f.mockStreakBonus, d.free.mockStreakBonus, 0, 10),
       /* `walkSessionsPerDay`: 2026-09-25'teki ilk adın (birim "oturum"du). Kayıtta
          yalnız o varsa o okunuyor. */
