@@ -167,7 +167,10 @@
     "check:conversations-native": "npm run conversations:apply && tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-native-conversations.ts",
     "check:skills-native": "npm run conversations:apply && tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-native-skills.ts",
     "check:mock-native": "npm run conversations:apply && tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-native-mock.ts",
-    "check:native-de": "npm run conversations:apply-de && tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-native-de.ts"
+    "check:native-de": "npm run conversations:apply-de && tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-native-de.ts",
+    "check:quiz-prose": "tsx --tsconfig scripts/tsconfig.e2e.json data/weekly-quiz/prose/check.ts",
+    "check:quiz-prose-de": "tsx --tsconfig scripts/tsconfig.e2e.json data/weekly-quiz/prose/check.ts --de",
+    "check:quiz-native": "npm run conversations:apply && npm run conversations:apply-de && tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-native-quiz.ts"
   },
   "dependencies": {
     "better-auth": "^1.7.5",
