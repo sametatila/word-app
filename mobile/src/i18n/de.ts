@@ -57,6 +57,7 @@ export const de: Record<string, string> = {
   "guest.social_body": "Erstelle ein Konto, um Freunde hinzuzufügen, in der Liga anzutreten und dein Profil zu teilen. Dein Gastfortschritt kommt mit.",
   "guest.premium_title": "Premium braucht ein Konto",
   "guest.premium_body": "Premium ist ein Abo, das mit demselben Konto auf Smartphone, Tablet und im Web funktioniert. Erstelle zuerst ein Konto, damit du es auf jedem Gerät wiederherstellen kannst; dein Gastfortschritt kommt mit.",
+  "guest.restore_body": "Käufe sind an dein Konto gebunden. Melde dich zum Wiederherstellen mit dem Konto an, mit dem du gekauft hast; dort erscheint Premium.",
   "guest.reminders_local": "Deine Erinnerungen werden auf diesem Handy eingerichtet. Mit einem Konto kommen persönliche Erinnerungen auf all deine Geräte.",
   "guest.ai_setting_sub": "Dein Text geht nur mit deiner Erlaubnis an den KI-Anbieter. Ohne Konto hast du eine Bewertung frei; die Erlaubnis kannst du hier widerrufen.",
   "guest.delete_row": "Gastdaten löschen",

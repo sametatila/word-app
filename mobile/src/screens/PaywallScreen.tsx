@@ -151,6 +151,7 @@ export function PaywallScreen() {
     Promosyon kodu ve davet de hesap istiyor.
   */
   const guest = Boolean(useAuth().user?.guest);
+  const [guestRestore, setGuestRestore] = useState(false);
   const { compactHeight } = useLayout();
   const guestPitch = (
     <View style={{ gap: spacing.sm, marginTop: compactHeight ? spacing.lg : 0 }}>
@@ -556,7 +557,21 @@ export function PaywallScreen() {
           <PressableScale onPress={() => nav.navigate("Auth")} accessibilityRole="button" accessibilityLabel={t("guest.create_account")} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 12)]}>
             <Text variant="h3" color={colors.onPrimary}>{t("guest.create_account")}</Text>
           </PressableScale>
+          {/* GERİ YÜKLEME MİSAFİRDE DE (denetim S6, App Store 3.1.1): satın alma
+              hesaba bağlı, yani misafirin geri yükleme yolu giriş yapmak. Düğme
+              bunu söylüyor ve giriş ekranına götürüyor; sessizce saklanmıyor. */}
+          {guestRestore ? (
+            <View style={{ alignItems: "center", gap: spacing.xs }}>
+              <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{t("guest.restore_body")}</Text>
+              <PressableScale onPress={() => nav.navigate("Auth")} hitSlop={6} accessibilityRole="button" accessibilityLabel={t("auth.sign_in")} style={{ paddingVertical: spacing.xs }}>
+                <Text variant="bodyStrong" color={colors.primary}>{t("auth.sign_in")}</Text>
+              </PressableScale>
+            </View>
+          ) : null}
           <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center", columnGap: spacing.lg }}>
+            <PressableScale onPress={() => setGuestRestore(true)} hitSlop={6} accessibilityRole="button" accessibilityLabel={t("paywall.restore_purchase")} style={{ paddingVertical: spacing.sm }}>
+              <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{t("paywall.restore_purchase")}</Text>
+            </PressableScale>
             <LegalLinks colors={colors} />
           </View>
         </View>

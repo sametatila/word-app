@@ -59,6 +59,7 @@ export const trBase: Record<string, string> = {
   "guest.social_body": "Hesap oluştur; arkadaş ekle, ligde yarış, profilini paylaş. Misafir ilerlemen hesabına taşınır.",
   "guest.premium_title": "Premium hesapla alınır",
   "guest.premium_body": "Premium telefonda, tablette ve web'de aynı hesapla çalışan bir abonelik. Başka bir cihazda geri yükleyebilmen için önce hesap oluştur; misafir ilerlemen hesabına taşınır.",
+  "guest.restore_body": "Satın alma hesabına bağlı. Geri yüklemek için satın aldığın hesapla giriş yap; Premium o hesapta görünür.",
   "guest.reminders_local": "Hatırlatmaların bu telefonda kurulur. Hesap oluşturursan kişisel hatırlatmalar bütün cihazlarına gelir.",
   "guest.ai_setting_sub": "Metnin yapay zekâ sağlayıcısına ancak izin verirsen gider. Hesapsız bir değerlendirme hakkın var; izni buradan geri alabilirsin.",
   "guest.delete_row": "Misafir verilerini sil",

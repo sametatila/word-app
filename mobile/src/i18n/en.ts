@@ -57,6 +57,7 @@ export const en: Record<string, string> = {
   "guest.social_body": "Create an account to add friends, compete in the league and share your profile. Your guest progress moves with you.",
   "guest.premium_title": "Premium needs an account",
   "guest.premium_body": "Premium is a subscription that works with the same account on phone, tablet and the web. Create an account first so you can restore it on any device; your guest progress moves with you.",
+  "guest.restore_body": "Purchases are tied to your account. To restore, sign in with the account you bought with; Premium shows up there.",
   "guest.reminders_local": "Your reminders are set up on this phone. Create an account and personal reminders reach all your devices.",
   "guest.ai_setting_sub": "Your text only goes to the AI provider if you allow it. Without an account you have one assessment; you can withdraw permission here.",
   "guest.delete_row": "Delete guest data",
