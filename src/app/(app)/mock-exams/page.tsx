@@ -266,7 +266,7 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
           return (
           <section key={p.id} className="card p-4">
             <div className="flex items-center justify-between gap-3">
-              <p className="muted text-caption tracking-wide">{t("mockexams.paper", { n: p.no })}</p>
+              <p className="muted text-caption tracking-wide">{t("mockexams.mock_n", { n: p.no })}</p>
               {locked ? (
                 <span className="chip flex items-center gap-1 px-2 py-0.5 text-micro font-bold">
                   <LockIcon className="size-3.5" /> {t("mockpack.locked")}

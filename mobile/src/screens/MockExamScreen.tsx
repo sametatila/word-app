@@ -462,7 +462,7 @@ export function MockExamScreen() {
   if (!paper || !part) {
     return (
       <FlowScreen center actions={<FlowActions primary={{ label: t("mockexam.back_to_list"), onPress: () => nav.goBack() }} />}>
-        <StateBody alert title={t("mockexam.paper_missing")} body={t("mockexam.paper_missing_sub")} />
+        <StateBody alert title={t("mockexam.exam_missing")} body={t("mockexam.exam_missing_sub")} />
       </FlowScreen>
     );
   }
@@ -470,7 +470,7 @@ export function MockExamScreen() {
   const task = part.tasks[ix];
   const blanks = blankCount(part, answers);
   /* Kapakta ve sonuç bandında aynı üst satır: hangi kâğıt, hangi bölüm. */
-  const eyebrow = `${paper.level} · ${t("mockexams.paper", { n: paper.no })} · ${mockSkillLabel(paper.course, part.skill)}`;
+  const eyebrow = `${paper.level} · ${t("mockexams.mock_n", { n: paper.no })} · ${mockSkillLabel(paper.course, part.skill)}`;
 
   /* KAPAK ŞABLONU (ui/flow): düğmeler kaydırılan içeriğin dışında, kurallar
      ikonlu satırlar. Başlatılırken düğme meşgul — ikinci basış ikinci bir
@@ -541,7 +541,7 @@ export function MockExamScreen() {
         </PressableScale>
         <View style={{ flex: 1 }}>
           <Text variant="micro" color={colors.textMuted}>
-            {paper.level} · {t("mockexams.paper", { n: paper.no })}
+            {paper.level} · {t("mockexams.mock_n", { n: paper.no })}
           </Text>
           <Text accessibilityRole="header" variant="h3">{mockSkillLabel(paper.course, part.skill)}</Text>
         </View>

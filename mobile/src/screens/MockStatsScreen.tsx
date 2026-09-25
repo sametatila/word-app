@@ -73,7 +73,7 @@ export function MockStatsScreen() {
     const [, level, no] = paperId.split("-");
     const n = Number(no);
     return level && Number.isFinite(n)
-      ? `${level.toUpperCase()} · ${t("mockexams.paper", { n })}`
+      ? `${level.toUpperCase()} · ${t("mockexams.mock_n", { n })}`
       : paperId;
   };
   /*

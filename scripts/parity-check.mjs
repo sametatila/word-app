@@ -8863,11 +8863,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    * BULUNAMADIGINDA. Webin `mock-exams/[paper]/[skill]` sayfasi uc durumda
    * `notFound()` atiyor ve uygulamanin GENEL 404'u ciziliyordu ("Sayfa
    * bulunamadi" + Ogren'e don): kullanici NEYIN bulunamadigini ogrenemiyordu.
-   * Android ayni durumda kagida ozel karti ciziyor ve metinler (`paper_missing`,
+   * Android ayni durumda kagida ozel karti ciziyor ve metinler (`exam_missing`,
    * `_sub`, `back_to_list`) uc dilde zaten vardi, webde hicbir yerden
    * cagrilmiyordu. Bolum artik kendi `not-found.tsx`sini tasiyor. */
   {
-    const HATA = /couldn_t_load|could_not_load|load_failed|paper_missing|_failed|err_/;
+    const HATA = /couldn_t_load|could_not_load|load_failed|exam_missing|_failed|err_/;
     /* Kart cagrisinin GOVDESI: ilk `/>` ya da kapanis etiketi. Pencere degil -
        bazi cagrilar cok satirli ve `action` govdesi de iceriyor. */
     const kartlar = (kok, disla, etiketAdi, oznitelik) => {
@@ -8932,7 +8932,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const mobEkran = sil(read("mobile/src/screens/MockExamScreen.tsx"));
     const varMi = existsSync(new URL("../" + web404, import.meta.url));
     const w404 = varMi ? sil(read(web404)) : "";
-    const anahtarlar = ["mockexam.paper_missing", "mockexam.paper_missing_sub", "mockexam.back_to_list"];
+    const anahtarlar = ["mockexam.exam_missing", "mockexam.exam_missing_sub", "mockexam.back_to_list"];
     sameList(
       "kagit bulunamadi karti",
       anahtarlar.map((k) => k.split(".")[1] + "=" + (mobEkran.includes(`"${k}"`) ? "var" : "YOK")),
@@ -8942,8 +8942,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     );
     sameList(
       "kagit karti duyuruyor",
-      ["mobil=" + (/live="assertive"[\s\S]{0,300}mockexam\.paper_missing/.test(mobEkran) ? "duyuruyor" : "SESSIZ")],
-      ["mobil=" + (/role="alert"[\s\S]{0,300}mockexam\.paper_missing/.test(w404) ? "duyuruyor" : "SESSIZ")],
+      ["mobil=" + (/live="assertive"[\s\S]{0,300}mockexam\.exam_missing/.test(mobEkran) ? "duyuruyor" : "SESSIZ")],
+      ["mobil=" + (/role="alert"[\s\S]{0,300}mockexam\.exam_missing/.test(w404) ? "duyuruyor" : "SESSIZ")],
       "mobil",
       "web",
     );
@@ -14010,7 +14010,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "kagit bulunamadi dogru sebebi soyluyor",
       [
         "yanlis sebep=" + (/mockexams\.none_for_level/.test(me) ? "KALDI" : "yok"),
-        "dogru sebep=" + (/t\("mockexam\.paper_missing"\)/.test(me) ? "var" : "YOK"),
+        "dogru sebep=" + (/t\("mockexam\.exam_missing"\)/.test(me) ? "var" : "YOK"),
         "cikis=" + (/t\("mockexam\.back_to_list"\)/.test(me) ? "var" : "YOK"),
         "web=" + (/notFound\(\)/.test(sil(read("src/app/(app)/mock-exams/[paper]/[skill]/page.tsx"))) ? "404" : "?"),
       ],
@@ -18943,7 +18943,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList(
     "bos hal karosunun rengi ayni rol",
     ["cift=" + cift.length, "ayrisan=" + (ayri.length ? ayri.join("+") : "yok")],
-    /* 20 -> 19 (2026-09-15): "kagit bulunamadi" (`mockexam.paper_missing`)
+    /* 20 -> 19 (2026-09-15): "kagit bulunamadi" (`mockexam.exam_missing`)
        iki tarafta birden DURUM SABLONUNA gecti (`StateBody`, maskotlu, tintli
        karo yok) - renk karari o yuzeyde artik sorulmuyor.
        19 -> 20 (2026-09-17): "arkadaslar yuklenemedi"

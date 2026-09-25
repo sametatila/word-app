@@ -395,7 +395,7 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
   /* Kapakta ve sonuç bandında aynı üst satır: hangi kâğıt, hangi bölüm. */
   const eyebrow = (
     <>
-      {paper.level} · {t("mockexams.paper", { n: paper.no })} · <span lang={paper.course}>{mockSkillLabel(paper.course, part.skill)}</span>
+      {paper.level} · {t("mockexams.mock_n", { n: paper.no })} · <span lang={paper.course}>{mockSkillLabel(paper.course, part.skill)}</span>
     </>
   );
 

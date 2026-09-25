@@ -46,7 +46,7 @@ export default async function MockStatsPage() {
   const paperLabel = (id: string) => {
     const [, lvl, no] = id.split("-");
     const n = Number(no);
-    return lvl && Number.isFinite(n) ? `${lvl.toUpperCase()} · ${t("mockexams.paper", { n })}` : id;
+    return lvl && Number.isFinite(n) ? `${lvl.toUpperCase()} · ${t("mockexams.mock_n", { n })}` : id;
   };
   const skillLabel = (skill: string, paperId?: string) => {
     const course = paperId?.split("-")[0] === "en" ? "en" : "de";

@@ -270,7 +270,7 @@ function PaperCard({ paper, states, locked, hint, showPlans, onOpen, onPlans }: 
   return (
     <Card padded style={{ marginBottom: spacing.md }}>
       <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: spacing.sm }}>
-        <Text variant="micro" color={colors.textMuted}>{t("mockexams.paper", { n: paper.no })}</Text>
+        <Text variant="micro" color={colors.textMuted}>{t("mockexams.mock_n", { n: paper.no })}</Text>
         {locked ? (
           <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs, paddingVertical: 2, paddingHorizontal: spacing.sm, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
             <LockIcon color={colors.textMuted} size={12} />
