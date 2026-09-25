@@ -20,6 +20,30 @@ import { api } from "../api/client";
  */
 
 export type Quota = { allowed: boolean; used: number; limit: number; remaining: number; period: "day" | "week" | "all" };
+
+/*
+ * KİLİT AÇMA GÖRÜNÜMÜ — sunucu `lib/premium/unlock` + `access.unlockOverview`
+ * aynası. Hesap SUNUCUDA; mobil yalnız çiziyor (cümle seçimi `lib/unlock`).
+ */
+export type UnlockNext = {
+  gain: number;
+  complete: { done: number; needed: number };
+  streak: { current: number; needed: number; met: boolean };
+  days: number;
+};
+export type FreeUnlock = { premium: false; open: number; used: number; done: number; remaining: number; tier: number; next: UnlockNext | null };
+export type TieredUnlock = FreeUnlock | { premium: true };
+export type PremiumMockUnlock = { premium: true; open: number; done: number; packSize: number; next: { complete: { done: number; needed: number } } | null };
+export type MockUnlock = FreeUnlock | PremiumMockUnlock;
+export type WalkUnlock = { premium: boolean; perDay: number; used: number; remaining: number; sessionOpen: boolean; pocket: boolean };
+export type LevelUnlock = { conversation: TieredUnlock; pathWriting: TieredUnlock; skillSpeaking: TieredUnlock; skillWriting: TieredUnlock; mock: MockUnlock | null };
+export type UnlockOverview = {
+  streak: { current: number; longest: number; step: number };
+  walk: WalkUnlock;
+  levels: Record<string, LevelUnlock>;
+  owned: { conversation: string[]; pathWriting: string[]; skills: string[] };
+  chatTurnsPerDay: number;
+};
 export type GateInfo = { allowed: boolean; reason: string; gate: string; quota?: Quota } | null;
 
 export type PremiumStatus = {
@@ -31,8 +55,9 @@ export type PremiumStatus = {
   bonusDaysPending: number;
   limits: {
     free: Record<string, number>;
-    fairUse: { pocketWalksPerDay: number; aiPracticePerDay: number };
-    mock: { packSize: number; unlockPct: number; unlockOnComplete: boolean };
+    /* `pocketWalksPerDay` eski sunucunun adı (sunucu takma ad olarak da gönderiyor). */
+    fairUse: { walkSessionsPerDay?: number; aiPracticePerDay: number; chatTurnsPerDay?: number; pocketWalksPerDay?: number };
+    mock: { packSize: number };
   };
   plans: { productMonthly: string; productYearly: string; trialDays: number; prices: { region: string; currency: string; monthly: string; yearly: string; yearlySavePct: number }[] };
   /** Paywall satırları: çeviri anahtarı + parametre (cümle sunucuda kurulmuyor). */
@@ -43,6 +68,8 @@ export type PremiumStatus = {
   /** Misafirin kalan yapay zekâ deneme hakkı (sunucu lib/auth/guest); hesapta null, eski sunucuda yok. */
   guestAiLeft?: number | null;
   gates: { pocket_walk: GateInfo; speaking: GateInfo; writing: GateInfo } | null;
+  /** Kilit açma görünümü — eski sunucuda yok, misafir olmayan oturumsuz hâlde null. */
+  unlock?: UnlockOverview | null;
 };
 
 let cached: PremiumStatus | null = null;
@@ -61,10 +88,11 @@ function publish(s: PremiumStatus | null): void {
  * uygulama açılışında dört ekran birden soruyor ve dördü ayrı istek atarsa
  * hem gecikme hem gereksiz yük olur.
  */
-export async function refreshPremium(level?: string): Promise<PremiumStatus | null> {
+/* Seviye parametresi YOK: sunucu bütün seviyelerin kilit açma durumunu tek
+   çağrıda döndürüyor (`unlock.levels`), Patika seviye değiştirdikçe ayrı istek yok. */
+export async function refreshPremium(): Promise<PremiumStatus | null> {
   if (inflight) return inflight;
-  const q = level ? `?level=${encodeURIComponent(level)}` : "";
-  inflight = api<PremiumStatus>(`/api/premium/status${q}`)
+  inflight = api<PremiumStatus>("/api/premium/status")
     .then((s) => { publish(s); return s; })
     .catch(() => {
       // Ağ yok / uç erişilemez: SON BİLİNEN durumu koru. Sıfırlamak, çevrimdışı
@@ -73,6 +101,12 @@ export async function refreshPremium(level?: string): Promise<PremiumStatus | nu
     })
     .finally(() => { inflight = null; });
   return inflight;
+}
+
+/** Durum değişince haber alır (kök bileşenler için; ekranlar `usePremiumStatus`). Aboneliği bırakan fonksiyon döner. */
+export function subscribePremium(fn: (s: PremiumStatus | null) => void): () => void {
+  listeners.add(fn);
+  return () => { listeners.delete(fn); };
 }
 
 /** Son bilinen durum — senkron okuma (kapı kontrolleri için). */
@@ -86,7 +120,7 @@ export function clearPremium(): void {
 }
 
 /** Tam durum — paywall, profil ve kilit ekranları bunu kullanır. */
-export function usePremiumStatus(level?: string): {
+export function usePremiumStatus(): {
   status: PremiumStatus | null;
   loading: boolean;
   refresh: () => Promise<void>;
@@ -97,15 +131,15 @@ export function usePremiumStatus(level?: string): {
   useEffect(() => {
     listeners.add(setStatus);
     let alive = true;
-    void refreshPremium(level).finally(() => { if (alive) setLoading(false); });
+    void refreshPremium().finally(() => { if (alive) setLoading(false); });
     return () => { alive = false; listeners.delete(setStatus); };
-  }, [level]);
+  }, []);
 
   const refresh = useCallback(async () => {
     setLoading(true);
-    await refreshPremium(level);
+    await refreshPremium();
     setLoading(false);
-  }, [level]);
+  }, []);
 
   return { status, loading, refresh };
 }
@@ -147,9 +181,9 @@ export async function awaitPremiumAfterPurchase(tries = 6): Promise<boolean> {
  * gerekçesi de duruyordu ("paywall'ı hangi kısıt besliyor, oradan görülür")
  * ama HİÇBİRİ göndermiyordu: paywall'ı görenler sayılıyor, oraya iten kilit
  * sayılmıyordu. Tür adları sunucunun kendi sözlüğünden (`lib/premium/gates`
- * `PremiumGate`): mock_exam · pocket_walk · speaking · writing.
+ * `PremiumGate`): mock_exam · pocket_walk · walk · conversation · speaking · writing.
  */
-export function notePremiumGate(gate: "mock_exam" | "pocket_walk" | "speaking" | "writing"): void {
+export function notePremiumGate(gate: "mock_exam" | "pocket_walk" | "walk" | "conversation" | "speaking" | "writing"): void {
   track("premium_gate", 0, gate);
 }
 
