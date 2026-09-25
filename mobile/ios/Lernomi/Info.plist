@@ -69,7 +69,7 @@
 		<true/>
 	</dict>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Konuşarak cevap verebilmen için mikrofon erişimi gerekiyor.</string>
+	<string>Konuşarak cevap verebilmen için mikrofon erişimi gerekiyor. Ekran kapalı yürüyüş modunda, izin verirsen kısa kayıtlar tanınmak için sunucumuza gönderilir.</string>
 	<!-- Uygulama fotoğraf arşivine ERİŞMİYOR. @react-native-firebase/app,
 	     yerel dosya yolu çözmek için Photos.framework'e bağlanıyor (RNFBUtilsModule,
 	     PHAsset) ve Apple bağlı her hassas API için metin istiyor: yoksa yükleme

@@ -1,4 +1,4 @@
 /* Sistem izin diyaloglarindaki metinler. Arayuz uc dilde; bu diyaloglar da oyle olmali. */
-"NSMicrophoneUsageDescription" = "Konuşarak cevap verebilmen için mikrofon erişimi gerekiyor.";
+"NSMicrophoneUsageDescription" = "Konuşarak cevap verebilmen için mikrofon erişimi gerekiyor. Ekran kapalı yürüyüş modunda, izin verirsen kısa kayıtlar tanınmak için sunucumuza gönderilir.";
 "NSSpeechRecognitionUsageDescription" = "Söylediklerini metne çevirip cevabını değerlendirmek için konuşma tanıma kullanılıyor.";
 "NSPhotoLibraryUsageDescription" = "Lernomi fotoğraflarına erişmez. Bu izin istenmez; yalnızca kullandığımız bir kütüphane için gereken bir beyandır.";

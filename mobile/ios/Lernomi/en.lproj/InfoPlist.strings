@@ -1,4 +1,4 @@
 /* System permission dialogs. The UI is in three languages; these should be too. */
-"NSMicrophoneUsageDescription" = "Microphone access is needed so you can answer out loud.";
+"NSMicrophoneUsageDescription" = "Microphone access is needed so you can answer out loud. In walk mode with the screen off, if you allow it, short recordings are sent to our server for recognition.";
 "NSSpeechRecognitionUsageDescription" = "Speech recognition turns what you say into text so your answer can be checked.";
 "NSPhotoLibraryUsageDescription" = "Lernomi does not access your photos. This permission is never requested; it is only a declaration required by a library we use.";
