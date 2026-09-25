@@ -453,7 +453,7 @@ export function ConversationScored({
               {turn.content}
             </motion.p>
             {/* Bildir — konuşma sohbetindeki gibi her yapay zekâ yanıtının altında.
-                İlk tur (i = 0) dersin yazılı açılış cümlesi, model çıktısı değil. */}
+                İlk tur (i = 0) konuşmanın yazılı açılış cümlesi, model çıktısı değil. */}
             {turn.role === "assistant" && i > 0 ? (
               <button
                 type="button"

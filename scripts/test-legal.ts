@@ -270,7 +270,7 @@ console.log("\nAdil kullanım");
     check(`${name}: sınırı kaynaktan okuyor`, new RegExp(`DAILY_QUOTAS\\.${field}\\b`).test(code));
     /* Ve elle yazılmış bir sayıya geri dönmemiş: sınırın SAYISI dosyada
        kalmamalı. Mutlak ölçüt; "iki taraf aynı mı" diye sormak yetmez. */
-    /* Sabitin ADI uçtan uca aynı değil (`ROLEPLAY_DAILY_LIMIT` da var), o
+    /* Sabitin ADI uçtan uca aynı değil (`CHAT_DAILY_LIMIT` da var), o
        yüzden kalıp ada değil BİÇİME bakıyor: herhangi bir `..._LIMIT = sayı`. */
     const plain = /[A-Z_]*LIMIT\s*=\s*\d/.test(code);
     check(`${name}: elle yazılmış sınır kalmadı`, !plain);

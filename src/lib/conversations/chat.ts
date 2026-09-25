@@ -29,8 +29,8 @@ import { DEFAULT_NATIVE, type NativeLang } from "@/lib/courses";
 export type ChatTurn = ChatMessage;
 
 /**
- * Mod (WP-22): `practice` dersin sohbeti — düzeltme, öneri, Türkçe yardım.
- * `exam` sınav — muhatap doğal, yardım yok, düzeltme yok, öneri yok; beş
+ * Mod (WP-22): `practice` Konuşma adımının sohbeti — düzeltme, öneri, Türkçe yardım.
+ * `scored` puanlı kısım — muhatap doğal, yardım yok, düzeltme yok, öneri yok; beş
  * turda kapanır ve sonra bütün konuşma rubrikle puanlanır.
  */
 export type ChatMode = "practice" | "scored";

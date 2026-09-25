@@ -524,7 +524,7 @@ export function ConversationScoredScreen() {
             <Text variant="body" color={turn.role === "user" ? colors.onPrimary : colors.text}>{turn.content}</Text>
             {/* Yapay zekâ yanıtının altında "Bildir" (denetim CNT-6; konuşma
                 sohbetindekiyle aynı bağlantı ve ref biçimi, sınav eki ile).
-                İlk balon (i = 0) dersin yazılı açılış cümlesi, model çıktısı
+                İlk balon (i = 0) konuşmanın yazılı açılış cümlesi, model çıktısı
                 değil: orada yok. */}
             {turn.role === "assistant" && i > 0 ? (
               <ReportLink kind="chat" refId={`${conversation.id}:scored:${i}`} content={turn.content} style={{ alignSelf: "flex-end", marginTop: spacing.xs }} />

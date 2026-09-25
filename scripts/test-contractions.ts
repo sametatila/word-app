@@ -92,7 +92,7 @@ assert.notEqual(
   Katlama `normalize`da, yani kelime turu ile beceri egzersizi aynı kuralı
   paylaşıyor.
 */
-assert.ok(matchesAnswer("colour", ["color"], "en"), "dersin yazımı kabul edilmeli");
+assert.ok(matchesAnswer("colour", ["color"], "en"), "konuşmanın yazımı kabul edilmeli");
 assert.ok(matchesAnswer("color", ["colour"], "en"), "ters yön de");
 assert.ok(matchesAnswer("neighbour", ["neighbor"], "en"));
 assert.ok(matchesAnswer("programme", ["program"], "en"));

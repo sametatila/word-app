@@ -269,7 +269,7 @@ jobs:
       # getirildi: 600 kelime, 496 ipucu, 143 tekrar adımı ve 16 açılış.
       # Sıfıra inince alındı.
       #
-      # `check:conversations-cando` ile `check:conversations-cando-de` dersin altındaki
+      # `check:conversations-cando` ile `check:conversations-cando-de` konuşmanın altındaki
       # "bunu yapabileceksin" köprüsünün iki yönü, 131 ifade. İkisi de
       # çözücüden GEÇMİYOR: karşılığı olmayan ifade hata vermiyor, sessizce
       # DÜŞÜYOR — yani eksik bir çeviri ekranda yalnızca kısalık olarak

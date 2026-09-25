@@ -62,7 +62,7 @@ export function ContentAdmin({ data }: { data: ContentAdminData }) {
     <AdminPage>
       <PageHeader
         title="İçerik sürümü"
-        description="Dersler, beceri egzersizleri, deneme kâğıtları ve anadil sözlükleri veritabanından servis ediliyor. Burada sürüm çevrilir ve bozuk madde kapatılır; içerik git'te düzenlenip npm run content:publish ile yayınlanır."
+        description="Konuşmalar, beceri egzersizleri, deneme kâğıtları ve anadil sözlükleri veritabanından servis ediliyor. Burada sürüm çevrilir ve bozuk madde kapatılır; içerik git'te düzenlenip npm run content:publish ile yayınlanır."
       />
       {data.issues.length ? (
         <Notice tone="bad" title={`${data.issues.length} sorgu başarısız`}>
@@ -82,7 +82,7 @@ export function ContentAdmin({ data }: { data: ContentAdminData }) {
 
       <Panel
         title="Madde kapat"
-        hint="Kapatma göstergeye en geç 30 saniyede düşer; cihazında gövdesi olan istemci de maddeyi gizler. Ders ve egzersizde madde kimliği dersin/egzersizin kimliği (de-a1-hallo), deneme sınavında kâğıt kimliği (de-b1-01). Hangi maddenin sorunlu olduğunu madde analizi gösteriyor: /admin/learning — haftalık quiz maddeleri: /admin/quiz"
+        hint="Kapatma göstergeye en geç 30 saniyede düşer; cihazında gövdesi olan istemci de maddeyi gizler. Konuşma ve egzersizde madde kimliği konuşmanın/egzersizin kimliği (de-a1-hallo), deneme sınavında kâğıt kimliği (de-b1-01). Hangi maddenin sorunlu olduğunu madde analizi gösteriyor: /admin/learning — haftalık quiz maddeleri: /admin/quiz"
       >
         <form
           className="grid gap-3 sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_10rem_auto] sm:items-end"

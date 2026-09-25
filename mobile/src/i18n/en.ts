@@ -838,7 +838,7 @@ export const en: Record<string, string> = {
   "conversation.continue": "Continue →",
   "conversation.listen": "Listen",
   "conversationp.words_of_conversation": "The words in this conversation",
-  /* Rol yapma sınavı (WP-22) - webde vardı, Androidde yoktu; ekran
+  /* Puanlı kısım (WP-22) - webde vardı, Androidde yoktu; ekran
      taşınınca metinleri de ortak sözlüğe geldi. */
   "assess.task": "Task",
   "assess.structure": "Structure",
