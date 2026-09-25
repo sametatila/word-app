@@ -50,9 +50,35 @@ düşürüyordu).
 
 | Parti | Kapsam | Durum |
 |---|---|---|
-| 1 (2026-09-08/09) | Kurs × seviye × beceri başına 1 egzersiz = 50 | **yazıldı, doğrulandı**; kalite kontrol turu bekliyor |
-| 2 | Seviye × beceri başına 5 (250) | parti 1 onaylanınca aynı hatla |
-| 3 | Seviye × beceri başına 25 | hedef |
+| 1 (2026-09-08/09) | Kurs × seviye × beceri başına 1 egzersiz = 50 | yazıldı, doğrulandı |
+| 2–5 | Hücre başına 5 | yazıldı |
+| 6–10 (2026-09-21) | Hücre başına 10 | yazıldı; çeviriler dört hatta |
+| **11–20 (2026-09-25)** | **Hücre başına 20** — iki kurs × beş seviye × beş beceri, 466 yeni egzersiz (kütüphane 470 → 936) | **yazıldı, dört paritede çözülüyor** |
+
+### Parti 11–20 (2026-09-25)
+
+- **İçerik.** Kurs × seviye başına bir yazar, on parti. İngilizce A1/A2'de okuma,
+  dinleme ve yazma mobil partisi yüzünden zaten ondan fazlaydı; oradaki partiler
+  yalnız eksik becerileri taşıyor. Her hücre tam 20.
+- **Seviyeler arası denetim — DERS.** Paralel yazarlar kendi seviyelerinde tekrar
+  yapmadı ama birbirlerinin dil bilgisi odağını, monolog sorusunu ve sahnesini
+  tekrarladı (Almanca B1↔B2↔C1'de üç konu üç seviyede birden; İngilizce B2↔C1'de
+  dört odak). Yazımdan sonra bütün seviyelerin 20'şer odağı, monolog sorusu ve
+  sahnesi tek tabloda karşılaştırıldı; 49 egzersiz yeniden yazıldı. Kural: konu,
+  SPEC'in dil bilgisi tablosunda hangi seviyedeyse orada kalır; açıkça daha derin
+  bir katman (Futur I → Futur II) serbest. Yeni partide ÖTEKİ seviyelere de bakılır.
+- **Karışık kök.** Hedef dildeki soru kökünde Türkçe ipucu („(bile)“, „(-arak)“)
+  çeviri hattına görünmüyor ve öteki anadilde Türkçe sızıyor; 11 kök hedef dile
+  alındı. Öğrenciye görünen metinde iç numara („parti 8'de gördün“) da yasak.
+- **Çeviri.** prose 2.029 · prose-de 1.682 · task 2.393 · task-de 2.265 dize.
+  `check:skills-native` ve `check:native-de` yeni egzersizlerin hepsini çözüyor.
+  İki kapı tırnak içindeki Türkçeyi hedef dil kanıtı sanıyordu (Unicode sözcük
+  sınırı, `ç`); düzeltildi ve sınıf değiştiren 30 açıklığın hepsinin Türkçe
+  olduğu ölçüldü.
+- **Ekran.** Seviye başına 100 satır olunca beş bölüm alt alta kaldırıldı: beş beceri
+  karosu (ad, n/20, ilerleme çubuğu) + seçili becerinin listesi + „bitenleri gizle“.
+  Web `components/skills/skill-browser.tsx`, mobil `SkillsScreen`; mobilde yeni
+  uygulama sürümüyle iner, içerik ise sürümsüz (DB + içerik paketi).
 
 Parti 1 doğrulaması (2026-09-09 kalite kontrolü): `test:content -- skills`
 kütüphane kimlikleri için sıfır hata ve sıfır uyarı; `audit:skills` 984
