@@ -56,7 +56,13 @@ export async function revokeAppleSignIn(userId: string): Promise<void> {
   try {
     const row = await appleAccountOf(userId);
     if (!row?.refreshToken) return;
-    const ok = await revokeAppleToken(row.refreshToken);
+    /* Satır jetonun hangi istemciden geldiğini söylemiyor: native giriş
+       (`storeAppleAuthorizationCode`) bundle kimliğiyle, web ve Android tarayıcı
+       girişi (Better Auth) Services ID ile alıyor. Önce bundle, olmazsa Services ID
+       (denetim S7); Apple yanlış istemciyle imzalanan iptali reddediyor. */
+    let ok = await revokeAppleToken(row.refreshToken);
+    const servicesId = (process.env.APPLE_SERVICES_ID ?? "").trim();
+    if (!ok && servicesId) ok = await revokeAppleToken(row.refreshToken, "refresh_token", servicesId);
     if (!ok) console.warn("apple revoke: Apple isteği başarısız (silme sürüyor)", { userId });
   } catch (e) {
     console.warn("apple revoke: atlandı (silme sürüyor)", e);

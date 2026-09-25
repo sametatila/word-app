@@ -161,11 +161,19 @@ export async function exchangeAppleCode(code: string): Promise<string | null> {
  * durdurmuyor: Apple'ın ucu erişilemez diye kullanıcının hesabı silinemez kalırsa
  * 5.1.1(v) baştan ihlal edilir. Sonuç yalnız günlüğe yazılır.
  */
-export async function revokeAppleToken(token: string, hint: "refresh_token" | "access_token" = "refresh_token"): Promise<boolean> {
+export async function revokeAppleToken(
+  token: string,
+  hint: "refresh_token" | "access_token" = "refresh_token",
+  clientId?: string,
+): Promise<boolean> {
   if (!appleRevokeConfigured() || !token) return false;
+  /* Jeton hangi istemci adına verildiyse iptal de o istemciyle imzalanmalı:
+     native akışınki bundle kimliği, web/Android tarayıcı akışınınki Services ID
+     (denetim S7). Verilmezse bundle. */
+  const sub = subjectOf(clientId);
   const body = new URLSearchParams({
-    client_id: env("APPLE_BUNDLE_ID"),
-    client_secret: appleClientSecret(),
+    client_id: sub,
+    client_secret: appleClientSecret(Date.now(), { sub }),
     token,
     token_type_hint: hint,
   });
