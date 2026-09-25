@@ -121,7 +121,7 @@
  { "tr": "Bulamıyorum demek için cannot'ın kısası olan can't kullanılır:", "kind": "say.tr", "de": "Für ich finde es nicht nimmt man can't, die Kurzform von cannot:" },
  { "tr": "Buradaki yet, \"henüz, daha\" demek ve cümlenin en sonuna gelir.", "kind": "say.tr", "de": "Das yet heißt \"noch\" und steht ganz am Satzende." },
  { "tr": "denmez. Bir arkadaşın güzel bir şey anlattığında şöyle dersin:", "kind": "say.tr", "de": "sagt man nicht. Erzählt dir jemand etwas Schönes, sagst du so:" },
- { "tr": "Dikkat: LON-dri diye okunur, ortadaki harf yutulur. Deneyelim.", "kind": "say.tr", "de": "Achtung: es klingt LON-dri, der mittlere Buchstabe verschwindet. Los." },
+ { "tr": "Dikkat: LAN-dri diye okunur, ortadaki harf yutulur. Deneyelim.", "kind": "say.tr", "de": "Achtung: es klingt LAAN-dri, der mittlere Buchstabe verschwindet. Los." },
  { "tr": "Dinlenmek demek. Şimdi ikisini birleştiriyoruz. Dinlenmelisin:", "kind": "say.tr", "de": "Heißt sich ausruhen. Jetzt verbinden wir beide. Du solltest ruhen:" },
  { "tr": "diyoruz. Ama kelime sesli harfle başlıyorsa a yerine an deriz.", "kind": "say.tr", "de": "sagen wir. Aber beginnt das Wort mit einem Vokal, wird a zu an." },
  { "tr": "Doğum günüm mayısta. Dikkat et, ayla birlikte in kullanıyoruz.", "kind": "say.tr", "de": "Ich habe im Mai Geburtstag. Achtung, beim Monat steht in." },

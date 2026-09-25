@@ -267,9 +267,9 @@ export const enA2P4: SkillExercise[] = [
       {
         de: "Half an hour is enough.",
         tr: "Yarım saat yeter.",
-        hint: "„half“ içindeki l okunmaz: haaf. „hour“ baştaki h de okunmaz: auır.",
+        hint: "„half“ içindeki l okunmaz: hef. „hour“ baştaki h de okunmaz: auır.",
         confusions: [
-          { heard: [], fix: "„half“ta l yok, „hour“da h yok: haaf ın auır.", expected: "hour" },
+          { heard: [], fix: "„half“ta l yok, „hour“da h yok: hef ın auır.", expected: "hour" },
         ],
       },
       {

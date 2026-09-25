@@ -58,7 +58,7 @@
  { "tr": "Son bir cümle senden. Bir arkadaşına soruyorsun: Onu gördün mü?", "kind": "say.tr", "de": "Ein letzter Satz von dir. Du fragst einen Freund: Hast du ihn gesehen?" },
  { "tr": "Son bir doğru-yanlış alıştırması. Şu cümle doğru mu, yanlış mı?", "kind": "say.tr", "de": "Eine letzte Richtig-falsch-Übung. Ist dieser Satz richtig oder falsch?" },
  { "tr": "sözünün kısaltılmışı. Günlük konuşmada hep kısaltma kullanılır.", "kind": "say.tr", "de": "die Kurzform davon. Im Alltag immer die Kurzform." },
- { "tr": "Su demek. Baştaki sesi yumuşak söyle: wo-tır. Lütfen sen de de:", "kind": "say.tr", "de": "Heißt Wasser. Sprich den Anfang weich: wo-ter. Bitte sag du auch:" },
+ { "tr": "Su demek. Baştaki sesi yumuşak söyle: wa-dır. Lütfen sen de de:", "kind": "say.tr", "de": "Heißt Wasser. Sprich den Anfang weich: wa-der. Bitte sag du auch:" },
  { "tr": "Şimdi bir arkadaşın tatilini soracak. Ona kendi tatilini anlat.", "kind": "say.tr", "de": "Gleich fragt dich ein Freund nach dem Urlaub. Erzähl deinen eigenen." },
  { "tr": "Şimdi bir cümle söyleyeceğim, doğru mu yanlış mı sen karar ver.", "kind": "say.tr", "de": "Jetzt sage ich einen Satz, entscheide du, ob er richtig ist." },
  { "tr": "Şimdi bunları gerçek bir konuşmada kullanacaksın. Kolay gelsin!", "kind": "say.tr", "de": "Jetzt nutzt du das in einem echten Gespräch. Viel Erfolg!" },

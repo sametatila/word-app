@@ -288,9 +288,9 @@ export const enA2P5: SkillExercise[] = [
       {
         de: "Turn it off, please.",
         tr: "Kapat lütfen.",
-        hint: "Üç kelime tek öbek olur: tör-ni-tof.",
+        hint: "Üç kelime tek öbek olur ve t yumuşar: tör-ni-DOF.",
         confusions: [
-          { heard: ["Turn off it"], fix: "Zamir araya girer ve her şey birbirine bağlanır: törnitof.", expected: "Turn it off" },
+          { heard: ["Turn off it"], fix: "Zamir araya girer ve her şey birbirine bağlanır: törnidof.", expected: "Turn it off" },
         ],
       },
       {

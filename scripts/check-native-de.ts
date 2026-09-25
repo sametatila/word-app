@@ -56,7 +56,7 @@ const warnings: string[] = [];
  *
  * `isTurkishStem` küçük harfle başlayan `ne`, `mu`, `ve` gibi sözcükleri
  * Türkçe işareti sayıyor. Telaffuz yazımında bunlar sözcük değil HECE
- * oluyor: `be-NAA-ne`, `SI-ne-me`, `wo-ne`, `ve-rite`. Almanca okura göre
+ * oluyor: `be-NÄ-ne`, `SI-ne-me`, `wo-ne`, `ve-rite`. Almanca okura göre
  * yazılmış doğru bir hece, Türkçe bir işlev sözcüğüyle aynı harfleri
  * taşıyabiliyor.
  *
@@ -73,7 +73,7 @@ const warnings: string[] = [];
  * hata değil — kardeş oturum kütüphane içeriğini hâlâ yazıyor).
  */
 const EXEMPT = new Map<string, string>([
-  ["Das „a“ allein ist kein „ei“, sondern ein kurzes „e“. „banana“ = be-NAA-ne.", "be-NAA-ne: schwa hecesi"],
+  ["Das „a“ allein ist kein „ei“, sondern ein kurzes „e“. „banana“ = be-NÄ-ne.", "be-NÄ-ne: schwa hecesi"],
   ["„the“ = de, „children“ = TSCHIL-dren, „cinema“ = SI-ne-me. In allen dreien steckt ein schwacher Vokal.", "SI-ne-me: schwa hecesi"],
   ["„cup of“ = ka-pof. Auch „want a“ wächst zusammen: wo-ne.", "wo-ne: schwa hecesi"],
   ["ve-rite your name", "kaynak içeriği: öğrencinin yanlış okuyuşu, çevrilmiyor"],

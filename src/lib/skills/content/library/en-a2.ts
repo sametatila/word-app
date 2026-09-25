@@ -269,9 +269,9 @@ export const enA2: SkillExercise[] = [
       {
         de: "I walked to work yesterday.",
         tr: "Dün işe yürüyerek gittim.",
-        hint: "„walked“ tek hecedir: WOKT. Sonundaki -ed „t“ okunur, ayrı hece değildir.",
+        hint: "„walked“ tek hecedir: WAKT. Sonundaki -ed „t“ okunur, ayrı hece değildir.",
         confusions: [
-          { heard: ["I walk it to work", "I walk to work"], fix: "-ed'i ne ayrı hece yap ne yut; „walked“ tek hecede „t“ ile biter: wokt.", expected: "walked" },
+          { heard: ["I walk it to work", "I walk to work"], fix: "-ed'i ne ayrı hece yap ne yut; „walked“ tek hecede „t“ ile biter: wakt.", expected: "walked" },
         ],
       },
       {
@@ -285,9 +285,9 @@ export const enA2: SkillExercise[] = [
       {
         de: "She called me twice.",
         tr: "Beni iki kez aradı.",
-        hint: "„called“ = KOLD. „l“ ötümlü (titreşimli) bir sestir, bu yüzden -ed burada „d“ okunur.",
+        hint: "„called“ = KALD. „l“ ötümlü (titreşimli) bir sestir, bu yüzden -ed burada „d“ okunur.",
         confusions: [
-          { heard: ["she call me twice", "she called it"], fix: "Sonu „d“: kold. Ayrı hece yok ama „d“ duyulmalı.", expected: "called" },
+          { heard: ["she call me twice", "she called it"], fix: "Sonu „d“: kald. Ayrı hece yok ama „d“ duyulmalı.", expected: "called" },
         ],
       },
       {

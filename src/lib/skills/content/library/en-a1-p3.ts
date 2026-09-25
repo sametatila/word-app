@@ -276,7 +276,7 @@ export const enA1P3: SkillExercise[] = [
         tr: "Suyu ver lütfen.",
         hint: "„give“ v ile, „water“ w ile başlar; iki kelime arka arkaya geliyor.",
         confusions: [
-          { heard: [], fix: "İlkinde diş, ikincisinde dudak: giv, uo-ta.", expected: "water" },
+          { heard: [], fix: "İlkinde diş, ikincisinde dudak: giv, ua-dır.", expected: "water" },
         ],
       },
       {
