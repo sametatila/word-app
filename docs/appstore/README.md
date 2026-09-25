@@ -172,9 +172,10 @@ açıkça yazılmalı:
 
 Video eklemek yine en hızlı çözen yol. Bu üç madde + "ses sunucuda tanınır, saklanmaz,
 izin ekranı sağlayıcıları adıyla gösterir" İngilizce not metni olarak `connect.md` §1'in
-7. adımında hazır (2026-09-23). Canlı not (2026-09-25 okundu, 3.421 karakter) hâlâ arayüzde
-olmayan "lessons" ve "roleplay" adlarını kullanıyor (denetim 2026-09-25 M11): `connect.md` taslağıyla
-eşitlenip API'den girilecek (Claude, Samet onayıyla).
+7. adımında hazır (2026-09-23). Canlı not 2026-09-25'te arayüz adlarıyla yeniden yazılıp
+API'den girildi (denetim M11 + S4, 3.905 karakter, geri okundu); `connect.md` §1'deki blok canlının aynısı.
+TestFlight beta açıklamaları da aynı gün düzeltildi (M12): her arayüz kendi kursunu anlatıyor (tr Almanca ya
+da İngilizce, en Almanca, de İngilizce), "ders/Lektion/lessons" yok.
 
 
 ## Apple ile Giriş (Şerit A — 2026-09-04)
