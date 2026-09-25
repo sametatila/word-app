@@ -152,9 +152,14 @@ import { DAILY_QUOTAS } from "@/lib/quotas";
  * pratiği" ürünün dilinden kalktı (docs/premium/README.md §2 Sözlük); aynı
  * şey artık Patika'nın Konuşma adımı ve adımın yapay zekâ sohbeti. Toplanan
  * veri, alıcılar, saklama süreleri ve kurallar aynı — yama basamağı.
+ *
+ * 1.8.3 (2026-09-25) yalnız ANLATIM: Play Integrity'nin zamanı doğru yazıldı
+ * (hazırlık giriş ekranında, sonuç "Hesapsız devam et"te) ve "toplanan cihaz
+ * tanımlayıcıları" cümlesi bu kontrolü de anıyor (denetim G2, G3). Toplanan veri,
+ * alıcılar ve süreler aynı — yama basamağı.
  */
 export const LEGAL_EFFECTIVE_DATE = "2026-09-25";
-export const LEGAL_VERSION = "1.8.2";
+export const LEGAL_VERSION = "1.8.3";
 
 export const LEGAL_ENTITY = {
   /** Hizmet sağlayıcı, veri sorumlusu ve yayıncı: tek gerçek kişi (Türkiye'de yerleşik). */
@@ -383,6 +388,22 @@ export type LegalChangelogEntry = {
 };
 
 export const LEGAL_CHANGELOG: readonly LegalChangelogEntry[] = [
+  {
+    /* YAMA BASAMAĞI: anlatım netleşti; veri, alıcı, süre ve kural aynı. */
+    version: "1.8.3",
+    date: "2026-09-25",
+    changes: {
+      tr: [
+        "Gizlilik politikası: Android'deki cihaz bütünlüğü kontrolünün zamanı netleşti (Google Play hizmetleri kontrolü giriş ekranı açılınca hazırlar, sonuç yalnız \"Hesapsız devam et\"e dokununca istenir) ve \"Toplanmayanlar\" paragrafı bu kontrolü de anıyor. Toplanan veri, alıcılar ve saklama süreleri değişmedi.",
+      ],
+      en: [
+        "Privacy policy: the timing of the Android device integrity check is now stated precisely (Google Play services prepares it when the sign-in screen opens; the result is requested only when you tap \"Continue without an account\"), and the \"What is not collected\" paragraph now mentions this check. The data collected, recipients and retention periods did not change.",
+      ],
+      de: [
+        "Datenschutzerklärung: Der Zeitpunkt der Geräteintegritätsprüfung unter Android ist jetzt genau beschrieben (die Google-Play-Dienste bereiten sie beim Öffnen des Anmeldebildschirms vor; das Ergebnis wird nur beim Tippen auf „Ohne Konto fortfahren“ angefordert), und der Absatz „Was nicht erhoben wird“ nennt diese Prüfung. Erhobene Daten, Empfänger und Speicherfristen haben sich nicht geändert.",
+      ],
+    },
+  },
   {
     /* YAMA BASAMAĞI: yalnız adlar değişti; veri, alıcı, süre ve kural aynı. */
     version: "1.8.2",
