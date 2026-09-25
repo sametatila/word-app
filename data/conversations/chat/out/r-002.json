@@ -64,7 +64,7 @@
  },
  {
   "conversation": "de-a1-v2",
-  "sceneEn": "You are at a language course and your teacher is asking when you study. Begin your answers with 'today', 'tomorrow' and 'at the weekend' — that is exactly where the rule has to be used.",
+  "sceneEn": "You are at a language course and your teacher is asking when you study. Begin your answers with 'today', 'tomorrow' and 'on the weekend' — that is exactly where the rule has to be used.",
   "partnerEn": "a curious and encouraging language teacher",
   "openingEn": "Good to have you here! When do you most like studying German?",
   "goalEn": "You have said what you will do today, tomorrow and on the weekend, and the teacher has approved your study plan."
