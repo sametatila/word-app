@@ -1,4 +1,5 @@
 import { api } from "../api/client";
+import { reportError } from "./errorReport";
 
 /**
  * Herkese açık sunucu yapılandırması (GET /api/config): hangi giriş sağlayıcıları açık.
@@ -34,6 +35,8 @@ export type ServerConfig = {
    * da hata: `null` - kapı hiçbir şeyi engellemiyor.
    */
   app: AppControl | null;
+  /** Yalnız okuma düştüğünde: bu değerler sunucudan değil, kapalı yedekten. */
+  offline?: true;
 };
 
 export type AppControl = {
@@ -85,11 +88,20 @@ export async function fetchServerConfig(fresh = false): Promise<ServerConfig> {
       guestAttestation: attestationOf((c as { guestAttestation?: unknown }).guestAttestation),
       app: appControlOf((c as { app?: unknown }).app),
     };
-  } catch {
+  } catch (e) {
     /* Taze okuma düştüyse eldeki yapılandırma korunuyor: ağ hıçkırığı bakım
        ekranını kaldırıp geri getirmesin. */
     if (fresh && cached) return cached;
-    cached = { auth: true, providers: { google: false, apple: false, appleWeb: false }, turnstileSiteKey: "", guestAttestation: null, app: null };
+    /*
+      HATA ÖNBELLEĞE GİRMİYOR (2026-09-25). Eskiden ilk okuma düşünce "kapalı"
+      yedek `cached`e yazılıyordu ve süreç boyunca bir daha denenmiyordu:
+      giriş ekranında Google/Apple düğmeleri kayboluyor, Turnstile anahtarı boş
+      kaldığı için e-posta girişi doğrulamasız gidip reddediliyordu (build 7,
+      Lenovo Tab M11). Artık yedek yalnız bu çağrıya dönüyor, `offline` ile
+      işaretli; bir sonraki çağrı yeniden deniyor ve sebep hata kaydına düşüyor.
+    */
+    reportError(e, "serverConfig");
+    return { auth: true, providers: { google: false, apple: false, appleWeb: false }, turnstileSiteKey: "", guestAttestation: null, app: null, offline: true };
   }
   return cached;
 }

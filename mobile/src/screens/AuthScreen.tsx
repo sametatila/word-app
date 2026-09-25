@@ -170,8 +170,13 @@ export function AuthScreen() {
   const [captchaNonce, setCaptchaNonce] = useState(0);
   useEffect(() => {
     let alive = true;
-    void fetchServerConfig().then((c) => {
+    let retry: ReturnType<typeof setTimeout> | null = null;
+    /* Okuma düşerse (c.offline) birkaç kez yeniden dene: tek bir aksaklık
+       Google/Apple düğmelerini ve Turnstile'ı ekran açık kaldıkça
+       kaybettirmesin (bkz. lib/serverConfig "HATA ÖNBELLEĞE GİRMİYOR"). */
+    const load = (attempt: number) => void fetchServerConfig().then((c) => {
       if (!alive) return;
+      if (c.offline && attempt < 5) retry = setTimeout(() => load(attempt + 1), 2000 * (attempt + 1));
       setProvidersOn({
         google: c.providers.google && googleSupported(),
         /*
@@ -188,7 +193,8 @@ export function AuthScreen() {
          (ilk hazırlık saniyeler sürebilir); kip kapalıysa ya da iOS'ta hiçbir şey olmaz. */
       warmUpIntegrity(c.guestAttestation?.cloudProjectNumber);
     });
-    return () => { alive = false; };
+    load(0);
+    return () => { alive = false; if (retry) clearTimeout(retry); };
   }, []);
 
   /** Doğrulama bekleniyorsa gönderim düğmeleri kapalı. */
