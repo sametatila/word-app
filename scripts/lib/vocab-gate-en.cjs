@@ -21,6 +21,10 @@
  * Amaç oranı görmek ve gözden kaçan ağır sözcüğü yakalamak.
  */
 const fs = require("fs");
+/* Yazım çiftleri (neighbour/neighbor, grey/gray) ÖTEKİ İngilizce kapıyla ORTAK
+   kuraldan: `en-gate.ts` `yazimVaryant`. Kopyalanmadı — iki kapı aynı metne
+   farklı oran basmasın. Bu dosyayı çağıranların hepsi tsx altında çalışıyor. */
+const { yazimVaryant } = require("./en-gate.ts");
 const R = process.cwd();
 
 /* ── veri ─────────────────────────────────────────────────────────────── */
@@ -307,8 +311,14 @@ function olc(ham0, seviye = "a1", ekIzin = []) {
     const parts = w.includes("-") ? w.split("-").filter(Boolean) : [w];
     // Bileşiğin sayı olan parçası da elenir; yoksa "fifteen-year-old" bilinmeyen
     // sayılırdı çünkü sayılar izin kümesinde değil, ölçümün dışında tutuluyor.
+    /* İngiliz/Amerikan yazımı AYNI sözcük: kâğıtlar İngiliz yazımıyla ("grey",
+       "harbour"), havuz Amerikan yazımıyla ("gray", "harbor") yazılı; uygulama
+       cevapta ikisini eşitliyor (`lib/en-spelling`), ölçüm de eşitlemeli. */
     const bilinen = parts.every(
-      (pt) => SAYI_RE.test(pt) || SIRA_RE.test(pt) || [...kokler(pt)].some((k) => izin.has(k)),
+      (pt) =>
+        SAYI_RE.test(pt) ||
+        SIRA_RE.test(pt) ||
+        [pt, ...yazimVaryant(pt)].some((v) => [...kokler(v)].some((k) => izin.has(k))),
     );
     if (!bilinen) disi.push(w);
   }

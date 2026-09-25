@@ -153,7 +153,7 @@ function enContraction(w: string): string | null {
  * "neighbor" kaydı öğretilmemiş görünüyordu — sözcük değil yazım farkı.
  * Liste dar: yalnız düzenli ve tartışmasız olan dönüşümler.
  */
-function yazimVaryant(w: string): string[] {
+export function yazimVaryant(w: string): string[] {
   const v: string[] = [];
   if (w.endsWith("or")) v.push(w.slice(0, -2) + "our");
   if (w.endsWith("our")) v.push(w.slice(0, -3) + "or");
@@ -169,6 +169,10 @@ function yazimVaryant(w: string): string[] {
   if (w.endsWith("re")) v.push(w.slice(0, -2) + "er");
   if (w.endsWith("og")) v.push(w + "ue");
   if (w.endsWith("ogue")) v.push(w.slice(0, -2));
+  // Kural değil, sözcük: grey/gray ve programme/program başka bir sözcüğe genellenemiyor.
+  if (w.startsWith("grey")) v.push("gray" + w.slice(4));
+  if (w.startsWith("gray")) v.push("grey" + w.slice(4));
+  if (w.startsWith("programme")) v.push("program" + w.slice(9));
   return v;
 }
 
