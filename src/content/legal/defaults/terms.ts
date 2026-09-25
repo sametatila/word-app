@@ -111,9 +111,11 @@ Hukuka aykırı ya da bu şartlara aykırı bir içerik (başka bir kullanıcın
 
 ## 7a. Adil kullanım
 
-Yapay zekâ ve konuşma tanıma sağlayıcı kotalarını herkes için korumak amacıyla hesap başına günlük sınırlar uygulanır: konuşma pratiği {{fairUse:roleplayTurnsPerDay}} tur, sunucu konuşma tanıma {{fairUse:sttRequestsPerDay}} istek, telaffuz puanı {{fairUse:pronounceRequestsPerDay}} istek, içerik bildirimi {{fairUse:reportsPerDay}}. Sınıra ulaşınca uygulama bunu gösterir ve ertesi gün açılır. Sınırlar dürüst ağır kullanımın çok üstündedir; yalnız otomasyon ve kötüye kullanımı engellemek içindir ve gerektiğinde güncellenebilir.
+Yapay zekâ ve konuşma tanıma sağlayıcı kotalarını herkes için korumak amacıyla hesap başına günlük sınırlar uygulanır: yapay zekâ sohbeti {{fairUse:roleplayTurnsPerDay}} mesaj, sunucu konuşma tanıma {{fairUse:sttRequestsPerDay}} istek, telaffuz puanı {{fairUse:pronounceRequestsPerDay}} istek, içerik bildirimi {{fairUse:reportsPerDay}}. Sınıra ulaşınca uygulama bunu gösterir ve ertesi gün açılır. Sınırlar dürüst ağır kullanımın çok üstündedir; yalnız otomasyon ve kötüye kullanımı engellemek içindir ve gerektiğinde güncellenebilir.
 
-Premium'un kendi günlük adil kullanım sınırları da vardır (cepte yürüyüş turu ve yapay zekâ değerlendirmesi). Bu sınırlar ürünle birlikte ayarlandığı için burada sabit bir sayı yazılmaz; **yürürlükteki değerler uygulamadaki Premium sayfasında** açıkça gösterilir ve satın almadan önce görülebilir. Bir sınır düşürülürse değişiklik aynı sayfada duyurulur. Premium hiçbir yerde “sınırsız” olarak tanıtılmaz.
+Ücretsiz hesapta yapay zekâyla çalışan bazı özelliklerin hakları sınırlıdır: Patika'daki Konuşma ve Yazma adımları, Beceriler'deki konuşma ve yazma değerlendirmesi ve deneme sınavları seviye başına belirli sayıda açıktır; yürüyüş modu ekran açıkken ve günde belirli sayıda oturumla kullanılır. Yeni haklar, açık olanları bitirip serini sürdürdükçe açılır. Hakların sayısı ve nasıl açıldığı **uygulamadaki Premium sayfasında** yazılıdır. Başladığın bir adım ya da alıştırma, hakların bitse de açık kalır.
+
+Premium'da bu haklar beklemeden açıktır; Premium'un da kötüye kullanımı önleyen günlük üst sınırları vardır (yürüyüş modu oturumu, yapay zekâ değerlendirmesi ve sohbet mesajı). Bu sınırlar ürünle birlikte ayarlandığı için burada sabit bir sayı yazılmaz; **yürürlükteki değerler uygulamadaki Premium sayfasında** açıkça gösterilir ve satın almadan önce görülebilir. Bir sınır düşürülürse değişiklik aynı sayfada duyurulur. Premium hiçbir yerde “sınırsız” olarak tanıtılmaz.
 
 ## 7b. Üçüncü taraf hizmetler
 
@@ -246,9 +248,11 @@ If you see content that is unlawful or breaches these terms (another user's name
 
 ## 7a. Fair use
 
-To protect AI and speech recognition provider quotas for everyone, daily per-account limits apply: {{fairUse:roleplayTurnsPerDay}} speaking practice turns, {{fairUse:sttRequestsPerDay}} server speech recognition requests, {{fairUse:pronounceRequestsPerDay}} pronunciation scoring requests and {{fairUse:reportsPerDay}} content reports. When you reach a limit the app says so and it reopens the next day. The limits sit far above honest heavy use; they exist only to stop automation and abuse and may be updated when needed.
+To protect AI and speech recognition provider quotas for everyone, daily per-account limits apply: {{fairUse:roleplayTurnsPerDay}} AI conversation messages, {{fairUse:sttRequestsPerDay}} server speech recognition requests, {{fairUse:pronounceRequestsPerDay}} pronunciation scoring requests and {{fairUse:reportsPerDay}} content reports. When you reach a limit the app says so and it reopens the next day. The limits sit far above honest heavy use; they exist only to stop automation and abuse and may be updated when needed.
 
-Premium has its own daily fair-use limits too (pocket-walk rounds and AI evaluations). Because these are tuned together with the product, no fixed number is written here; **the values in force are shown on the Premium page in the app** and can be seen before you buy. If a limit is lowered, the change is announced on that same page. Premium is never advertised as “unlimited”.
+On a free account, some AI-powered features have limited allowances: the Speaking and Writing steps in Path, speaking and writing assessments in Skills, and mock exams are open in a set number per level; walk mode is used with the screen on and for a set number of sessions a day. New allowances unlock as you finish what is open and keep your streak going. The numbers and how they unlock are written **on the Premium page in the app**. A step or exercise you have started stays open even when your allowance runs out.
+
+With Premium these allowances are open without waiting; Premium also has daily upper limits to prevent abuse (walk mode sessions, AI assessments and conversation messages). Because these are tuned together with the product, no fixed number is written here; **the values in force are shown on the Premium page in the app** and can be seen before you buy. If a limit is lowered, the change is announced on that same page. Premium is never advertised as “unlimited”.
 
 ## 7b. Third-party services
 
@@ -381,9 +385,11 @@ Wenn du einen rechtswidrigen oder diesen Bedingungen widersprechenden Inhalt sie
 
 ## 7a. Fair Use
 
-Um die Kontingente der KI- und Spracherkennungsanbieter für alle zu schützen, gelten tägliche Grenzen pro Konto: {{fairUse:roleplayTurnsPerDay}} Runden Sprechpraxis, {{fairUse:sttRequestsPerDay}} serverseitige Spracherkennungsanfragen, {{fairUse:pronounceRequestsPerDay}} Anfragen zur Aussprachebewertung und {{fairUse:reportsPerDay}} Inhaltsmeldungen. Ist eine Grenze erreicht, zeigt die App es an, und am nächsten Tag ist sie wieder offen. Die Grenzen liegen weit über ehrlicher intensiver Nutzung; sie bestehen nur, um Automatisierung und Missbrauch zu verhindern, und können bei Bedarf angepasst werden.
+Um die Kontingente der KI- und Spracherkennungsanbieter für alle zu schützen, gelten tägliche Grenzen pro Konto: {{fairUse:roleplayTurnsPerDay}} Nachrichten im KI-Gespräch, {{fairUse:sttRequestsPerDay}} serverseitige Spracherkennungsanfragen, {{fairUse:pronounceRequestsPerDay}} Anfragen zur Aussprachebewertung und {{fairUse:reportsPerDay}} Inhaltsmeldungen. Ist eine Grenze erreicht, zeigt die App es an, und am nächsten Tag ist sie wieder offen. Die Grenzen liegen weit über ehrlicher intensiver Nutzung; sie bestehen nur, um Automatisierung und Missbrauch zu verhindern, und können bei Bedarf angepasst werden.
 
-Auch Premium hat eigene tägliche Fair-Use-Grenzen (Geh-Runden in der Tasche und KI-Bewertungen). Da sie gemeinsam mit dem Produkt justiert werden, steht hier keine feste Zahl; **die geltenden Werte werden auf der Premium-Seite in der App** angezeigt und sind vor dem Kauf einsehbar. Wird eine Grenze gesenkt, wird die Änderung auf derselben Seite bekannt gegeben. Premium wird nirgends als „unbegrenzt“ beworben.
+Mit einem kostenlosen Konto sind einige KI-gestützte Funktionen begrenzt: Die Schritte Sprechen und Schreiben im Pfad, Sprech- und Schreibbewertungen bei den Fähigkeiten und Probeprüfungen stehen pro Niveau in einer bestimmten Anzahl offen; den Gehmodus nutzt du bei eingeschaltetem Bildschirm und für eine bestimmte Zahl von Einheiten pro Tag. Neue Kontingente werden frei, wenn du Offenes abschließt und deine Serie fortsetzt. Wie viele es sind und wie sie frei werden, steht **auf der Premium-Seite in der App**. Ein begonnener Schritt oder eine begonnene Übung bleibt offen, auch wenn dein Kontingent aufgebraucht ist.
+
+Mit Premium ist all das ohne Warten offen; auch Premium hat tägliche Obergrenzen gegen Missbrauch (Einheiten im Gehmodus, KI-Bewertungen und Gesprächsnachrichten). Da sie gemeinsam mit dem Produkt justiert werden, steht hier keine feste Zahl; **die geltenden Werte werden auf der Premium-Seite in der App** angezeigt und sind vor dem Kauf einsehbar. Wird eine Grenze gesenkt, wird die Änderung auf derselben Seite bekannt gegeben. Premium wird nirgends als „unbegrenzt“ beworben.
 
 ## 7b. Dienste Dritter
 

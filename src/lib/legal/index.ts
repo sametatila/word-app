@@ -135,9 +135,16 @@ import { DAILY_QUOTAS } from "@/lib/quotas";
  * tarafını değiştirdi: tek taraf Türkiye'deki hizmet sağlayıcı, Samet GDPR
  * m.27 AB temsilcisi (dosya başındaki KİMLİK notu). Kaydın notunda neden
  * ikinci basamak olduğu ve kullanıcıya etkisi yazılı.
+ *
+ * 1.8 (2026-09-25) şartlar §7a'yı 2026-09-25 kota kararlarına çekti
+ * (`docs/premium/README.md` §2): ücretsiz hesapta Patika Konuşma/Yazma,
+ * Beceriler değerlendirmesi, deneme sınavı ve yürüyüş modu hakları sınırlı ve
+ * "bitir + seri" ile açılıyor; premium sınırlarının birimi (yürüyüş oturumu,
+ * değerlendirme, sohbet mesajı) düzeldi. Ücretsiz kullanımı kısan bir değişiklik
+ * olduğu için ikinci basamak.
  */
-export const LEGAL_EFFECTIVE_DATE = "2026-09-24";
-export const LEGAL_VERSION = "1.7";
+export const LEGAL_EFFECTIVE_DATE = "2026-09-25";
+export const LEGAL_VERSION = "1.8";
 
 export const LEGAL_ENTITY = {
   /** Hizmet sağlayıcı, veri sorumlusu ve yayıncı: tek gerçek kişi (Türkiye'de yerleşik). */
@@ -366,6 +373,33 @@ export type LegalChangelogEntry = {
 };
 
 export const LEGAL_CHANGELOG: readonly LegalChangelogEntry[] = [
+  {
+    /*
+      İKİNCİ BASAMAK: ücretsiz kullanımın kapsamı değişti (kısıldı). Eskiden
+      Konuşma adımının yapay zekâ sohbeti ücretsizde yalnız günlük mesaj
+      tavanıyla sınırlıydı; 2026-09-25 kararıyla seviye başına hakla açılıyor.
+      Toplanan veri, alıcılar ve saklama süreleri DEĞİŞMEDİ — gizlilik metni
+      aynı, yalnız şartlar §7a. Sayılar metne yazılmıyor, Premium sayfasına
+      bağlanıyor (panelden ayarlanıyorlar); metin kuralı ve yeri söylüyor.
+      Maddeler üç dilde AYNI SAYIDA (kapı `scripts/test-legal.ts`).
+    */
+    version: "1.8",
+    date: "2026-09-25",
+    changes: {
+      tr: [
+        "Kullanım şartları §7a (Adil kullanım): ücretsiz hesapta Patika'daki Konuşma ve Yazma adımları, Beceriler'deki konuşma ve yazma değerlendirmesi ve deneme sınavları seviye başına belirli sayıda açık; yürüyüş modu ekran açıkken ve günde belirli sayıda oturumla kullanılıyor. Yeni haklar, açık olanları bitirip serini sürdürdükçe açılıyor; sayılar ve kural uygulamadaki Premium sayfasında. Başladığın bir adım ya da alıştırma hakların bitse de açık kalıyor.",
+        "Premium'un kötüye kullanımı önleyen günlük üst sınırlarının birimi düzeltildi: yürüyüş modu oturumu, yapay zekâ değerlendirmesi ve sohbet mesajı (eskiden 'cepte yürüyüş turu' yazıyordu). Herkese uygulanan günlük sınırda 'konuşma pratiği turu' yerine 'yapay zekâ sohbeti mesajı' yazıyor; sayı aynı.",
+      ],
+      en: [
+        "Terms of use §7a (Fair use): on a free account, the Speaking and Writing steps in Path, speaking and writing assessments in Skills, and mock exams are open in a set number per level; walk mode is used with the screen on and for a set number of sessions a day. New allowances unlock as you finish what is open and keep your streak going; the numbers and the rule are on the Premium page in the app. A step or exercise you have started stays open even when your allowance runs out.",
+        "The unit of Premium's daily upper limits against abuse was corrected: walk mode sessions, AI assessments and conversation messages (it used to say 'pocket-walk rounds'). The daily limit that applies to everyone now says 'AI conversation messages' instead of 'speaking practice turns'; the number is unchanged.",
+      ],
+      de: [
+        "Nutzungsbedingungen §7a (Fair Use): Mit einem kostenlosen Konto stehen die Schritte Sprechen und Schreiben im Pfad, Sprech- und Schreibbewertungen bei den Fähigkeiten und Probeprüfungen pro Niveau in einer bestimmten Anzahl offen; den Gehmodus nutzt du bei eingeschaltetem Bildschirm und für eine bestimmte Zahl von Einheiten pro Tag. Neue Kontingente werden frei, wenn du Offenes abschließt und deine Serie fortsetzt; Zahlen und Regel stehen auf der Premium-Seite in der App. Ein begonnener Schritt oder eine begonnene Übung bleibt offen, auch wenn dein Kontingent aufgebraucht ist.",
+        "Die Einheit der täglichen Obergrenzen von Premium gegen Missbrauch wurde korrigiert: Einheiten im Gehmodus, KI-Bewertungen und Gesprächsnachrichten (vorher stand dort „Geh-Runden in der Tasche“). Bei der täglichen Grenze für alle steht jetzt „Nachrichten im KI-Gespräch“ statt „Runden Sprechpraxis“; die Zahl ist gleich.",
+      ],
+    },
+  },
   {
     /*
       İKİNCİ BASAMAK, üçüncü değil, ve "2.0" da değil. Bu dosyanın kuralı iki
