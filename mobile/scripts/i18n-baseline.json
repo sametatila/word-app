@@ -1,8 +1,9 @@
 {
-  "total": 19,
+  "total": 35,
   "files": {
     "src/data/exams/index.ts": 1,
     "src/game/rounds.tsx": 1,
+    "src/game/immersionQuiz.ts": 16,
     "src/lib/courses.ts": 7,
     "src/lib/i18n.ts": 1,
     "src/lib/native.ts": 2,
@@ -19,6 +20,7 @@
     "src/ui/VoicePicker.tsx": "Züritüütsch ve standart Almanca örnek cümleler: ses seçicinin dinletisi, içerik",
     "src/data/exams/index.ts": "sınav bölüm adları Almanca (Lesen/Hören/Schreiben/Sprechen); web `mock-exams/types.ts` ile birebir",
     "src/screens/ExamScreen.tsx": "aynı Almanca bölüm adları; web `lib/exam-types.ts` ile birebir",
+    "src/game/immersionQuiz.ts": "ünite quizinin çerçeve sözcük listesi (çeldirici benzerliğinde sayılmayan \"kullanılır, söylerken\" gibi sözcükler) - ekrana çıkmıyor; web `lib/immersion/quiz.ts` ile birebir",
     "src/game/rounds.tsx": "modele giden istem (`Çevir: ...`); web `translate-game.tsx` ile birebir aynı dize",
     "src/lib/i18n.ts": "dil adı kendi dilinde (Türkçe) - çevrilmemesi gereken tek metin türü",
     "src/screens/OnboardingScreen.tsx": "aynı dil adı",

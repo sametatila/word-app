@@ -109,6 +109,10 @@ const SKIP_CONTENT = [
   // etiketi; ekrandaki cümle sözlükten geliyor (`artrule.*`).
   // Kapısı: `check:parity` "neden kural tablolari".
   "game/why.ts",
+  // Elle yazılmış ünite soruları — öğrenme içeriği, anadil açıklamaları `{ tr, en }`
+  // olarak dosyanın içinde. Webde karşılığı `lib/immersion/content` (web tarayıcısının
+  // SKIP listesinde). Kapısı: `check:parity` "VERİ BAŞI"–"VERİ SONU" birebir.
+  "data/authoredUnits.ts",
 ].map((p) => path.join(SRC, ...p.split("/")));
 
 /**
