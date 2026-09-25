@@ -238,7 +238,12 @@ Datenschutzerklärung: https://www.lernomi.app/privacy/de
 Anahtar kelime kuralları: ad ve altyazıdaki kelimeler tekrar yazılmaz (Apple onları zaten
 indeksliyor); sınav markası, "ders", "sertifika" yok (başarı belgesi resmî sertifika değil).
 `docs/appstore/listing.md` ve `docs/play/listing.md` içindeki eski taslaklar bunlarla
-değiştirildi sayılır; çelişirse bu tablo geçerli. Mağazaya giriş Samet açıkça isteyince.
+değiştirildi sayılır; çelişirse bu tablo geçerli. **Mağazaya GİRİLDİ (2026-09-25, Samet'in isteğiyle, API):** ASC sürüm 1.0.0 tr/en-US/de-DE: altyazı,
+açıklama (bu belgedeki metinle birebir, geri okunup karşılaştırıldı), anahtar kelimeler, tanıtım metni,
+destek URL'si (`/support`, `/support/en`, `/support/de`), pazarlama URL'si `https://www.lernomi.app`.
+Play tr-TR/en-US/de-DE: başlık, kısa ve tam açıklama (edit commit edildi, geri okundu). Metin değişirse
+önce bu belge, sonra aynı yolla mağaza. Kalan: ekran görüntüleri, öne çıkan grafik, video; Play 512
+ikonu (aşağıda, yükleme betiği hazır).
 
 **Açık:** ekran görüntüleri ve öne çıkan grafik tasarımdan sonra. (Haftalık quizin en/de çevirisi 2026-09-25'te canlıya çıktı, içerik sürümü 24, kilitli `quiznative/*` paketleri; en/de metinlerindeki "explained in English / Erklärungen auf Deutsch" iddiası artık haftalık quiz için de doğru.)
 
