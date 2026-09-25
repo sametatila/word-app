@@ -13185,7 +13185,7 @@
   "icon": "flag",
   "title": "The rules here",
   "titleTr": "Kural ve öğüt",
-  "summary": "Kuralı, yasağı ve öğüdü ayırmayı öğretir: must, mustn't ve should aynı şey değildir.",
+  "summary": "Kuralı, yasağı ve öğüdü ayırmayı öğretir: must, can't ve should aynı şey değildir.",
   "minutes": 10,
   "focusId": "Modals of obligation",
   "vocab": [
@@ -13228,7 +13228,7 @@
     "tr": "kuralı zorunluluk olarak söyler"
    },
    {
-    "de": "You mustn't bring food inside.",
+    "de": "You can't bring food inside.",
     "tr": "yasağı söyler"
    },
    {
@@ -13344,11 +13344,11 @@
      },
      {
       "lang": "en",
-      "text": "mustn't"
+      "text": "can't"
      },
      {
       "lang": "tr",
-      "text": "ise YASAKLAR. Dikkat:"
+      "text": "ise YASAKLAR; yazılı kurallarda bunun yerine must not görürsün. Dikkat:"
      },
      {
       "lang": "en",
@@ -13440,7 +13440,7 @@
       },
       {
        "lang": "en",
-       "text": "You mustn't bring food inside."
+       "text": "You can't bring food inside."
       }
      ]
     }
@@ -13453,7 +13453,7 @@
      },
      {
       "lang": "en",
-      "text": "You mustn't bring food inside."
+      "text": "You can't bring food inside."
      },
      {
       "lang": "tr",
@@ -13462,7 +13462,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "You mustn't bring food inside."
+     "target": "You can't bring food inside."
     }
    },
    {
@@ -13518,10 +13518,12 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "You mustn't use the back door.",
+     "target": "You can't use the back door.",
      "accept": [
-      "You must not use the back door.",
-      "You mustn't use the rear door."
+      "You cannot use the back door.",
+      "You can't use the rear door.",
+      "You mustn't use the back door.",
+      "You must not use the back door."
      ],
      "hint": [
       {
@@ -13530,7 +13532,7 @@
       },
       {
        "lang": "en",
-       "text": "You mustn't use the back door."
+       "text": "You can't use the back door."
       },
       {
        "lang": "tr",
@@ -13649,7 +13651,7 @@
      },
      {
       "lang": "en",
-      "text": "mustn't"
+      "text": "can't"
      },
      {
       "lang": "tr",
@@ -17401,7 +17403,7 @@
     "tr": "zorunluluğu söyler"
    },
    {
-    "de": "You mustn't press both buttons.",
+    "de": "You must not press both buttons.",
     "tr": "yasağı söyler"
    },
    {
@@ -17517,11 +17519,11 @@
      },
      {
       "lang": "en",
-      "text": "mustn't"
+      "text": "must not"
      },
      {
       "lang": "tr",
-      "text": "yasaklar,"
+      "text": "yasaklar; yönergelerde kısaltılmadan yazılır, günlük konuşmada ise yerine can't dersin."
      },
      {
       "lang": "en",
@@ -17605,7 +17607,7 @@
       },
       {
        "lang": "en",
-       "text": "You mustn't press both buttons."
+       "text": "You must not press both buttons."
       }
      ]
     }
@@ -17618,7 +17620,7 @@
      },
      {
       "lang": "en",
-      "text": "You mustn't press both buttons."
+      "text": "You must not press both buttons."
      },
      {
       "lang": "tr",
@@ -17627,7 +17629,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "You mustn't press both buttons."
+     "target": "You must not press both buttons."
     }
    },
    {
@@ -17691,10 +17693,12 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "You mustn't open it while it is on.",
+     "target": "You must not open it while it is on.",
      "accept": [
-      "You must not open it while it is on.",
-      "You mustn't open it when it is on."
+      "You must not open it when it is on.",
+      "You mustn't open it while it is on.",
+      "You can't open it while it is on.",
+      "You can't open it while it's on."
      ],
      "hint": [
       {
@@ -17703,7 +17707,7 @@
       },
       {
        "lang": "en",
-       "text": "You mustn't open it while it is on."
+       "text": "You must not open it while it is on."
       },
       {
        "lang": "tr",
@@ -17814,7 +17818,7 @@
      },
      {
       "lang": "en",
-      "text": "mustn't"
+      "text": "must not"
      },
      {
       "lang": "tr",
@@ -23855,7 +23859,7 @@
     "tr": "zorunluluğu söyler"
    },
    {
-    "de": "You mustn't cheat in the test.",
+    "de": "You can't cheat on the test.",
     "tr": "yasağı söyler"
    },
    {
@@ -23971,11 +23975,11 @@
      },
      {
       "lang": "en",
-      "text": "mustn't"
+      "text": "can't"
      },
      {
       "lang": "tr",
-      "text": "yasaklar,"
+      "text": "yasaklar (sınavın yazılı kurallarında bunun yerine must not görürsün),"
      },
      {
       "lang": "en",
@@ -24045,12 +24049,12 @@
      },
      {
       "lang": "en",
-      "text": "You don't have to cheat in the test."
+      "text": "You don't have to cheat on the test."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "You don't have to cheat in the test.",
+     "statement": "You don't have to cheat on the test.",
      "answer": false,
      "why": [
       {
@@ -24059,7 +24063,7 @@
       },
       {
        "lang": "en",
-       "text": "You mustn't cheat in the test."
+       "text": "You can't cheat on the test."
       }
      ]
     }
@@ -24088,7 +24092,7 @@
      },
      {
       "lang": "en",
-      "text": "You mustn't cheat in the test."
+      "text": "You can't cheat on the test."
      },
      {
       "lang": "tr",
@@ -24097,7 +24101,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "You mustn't cheat in the test."
+     "target": "You can't cheat on the test."
     }
    },
    {
@@ -24109,10 +24113,12 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "You mustn't use your phone in the room.",
+     "target": "You can't use your phone in the room.",
      "accept": [
-      "You must not use your phone in the room.",
-      "You mustn't use a phone in the room."
+      "You cannot use your phone in the room.",
+      "You can't use a phone in the room.",
+      "You mustn't use your phone in the room.",
+      "You must not use your phone in the room."
      ],
      "hint": [
       {
@@ -24121,7 +24127,7 @@
       },
       {
        "lang": "en",
-       "text": "You mustn't use your phone in the room."
+       "text": "You can't use your phone in the room."
       },
       {
        "lang": "tr",
@@ -24244,7 +24250,7 @@
      },
      {
       "lang": "en",
-      "text": "mustn't"
+      "text": "can't"
      },
      {
       "lang": "tr",
@@ -39861,7 +39867,7 @@
     "tr": "zorunluluğun olmadığını söyler"
    },
    {
-    "de": "You must not cycle in the bus lane.",
+    "de": "You can't cycle in the bus lane.",
     "tr": "bir yasağı söyler"
    }
   ],
@@ -39874,7 +39880,7 @@
      },
      {
       "lang": "tr",
-      "text": "Toplu taşımanın yazılı kuralları bu üç kipten çıkıyor ve ikisini karıştırmak ya gereksiz iş ya da ceza demek. Hazır mısın?"
+      "text": "Toplu taşımanın kuralları bu üç kalıpla anlatılıyor ve ikisini karıştırmak ya gereksiz iş ya da ceza demek. Hazır mısın?"
      }
     ],
     "expect": {
@@ -39981,7 +39987,7 @@
      },
      {
       "lang": "en",
-      "text": "You must not cycle in the bus lane."
+      "text": "You can't cycle in the bus lane."
      },
      {
       "lang": "tr",
@@ -39990,7 +39996,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "You must not cycle in the bus lane."
+     "target": "You can't cycle in the bus lane."
     }
    },
    {
@@ -40017,11 +40023,11 @@
      },
      {
       "lang": "en",
-      "text": "must not"
+      "text": "can't"
      },
      {
       "lang": "tr",
-      "text": "ise yasak. Ortadaki serbestlik anlatır ve yasakla karıştırılmamalı."
+      "text": "ise yasak; tabelada ve yazılı kuralda bunun yerine must not görürsün. Ortadaki serbestlik anlatır ve yasakla karıştırılmamalı."
      }
     ]
    },
@@ -40233,10 +40239,12 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "You must not cycle on this path.",
+     "target": "You can't cycle on this path.",
      "accept": [
+      "You cannot cycle on this path.",
+      "You can't cycle on the path.",
       "You mustn't cycle on this path.",
-      "You must not cycle on the path."
+      "You must not cycle on this path."
      ],
      "hint": [
       {
@@ -40245,7 +40253,7 @@
       },
       {
        "lang": "en",
-       "text": "must not"
+       "text": "can't"
       },
       {
        "lang": "tr",
@@ -40253,7 +40261,7 @@
       },
       {
        "lang": "en",
-       "text": "You must not cycle on this path."
+       "text": "You can't cycle on this path."
       },
       {
        "lang": "tr",
@@ -40286,7 +40294,7 @@
      },
      {
       "lang": "en",
-      "text": "must not"
+      "text": "can't"
      },
      {
       "lang": "tr",
@@ -44671,7 +44679,7 @@
     "tr": "zorunluluğun olmadığını söyler"
    },
    {
-    "de": "You must not give advice too early.",
+    "de": "You can't give advice right away.",
     "tr": "bir yasağı söyler"
    }
   ],
@@ -44775,16 +44783,16 @@
      },
      {
       "lang": "en",
-      "text": "You must not give advice too early."
+      "text": "You can't give advice right away."
      },
      {
       "lang": "tr",
-      "text": "Çok erken öğüt vermemelisin."
+      "text": "Hemen öğüt vermemelisin."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "You must not give advice too early."
+     "target": "You can't give advice right away."
     }
    },
    {
@@ -44811,7 +44819,7 @@
      },
      {
       "lang": "en",
-      "text": "must not"
+      "text": "can't"
      },
      {
       "lang": "tr",
@@ -45051,10 +45059,12 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "You must not say that now.",
+     "target": "You can't say that now.",
      "accept": [
+      "You can't say it now.",
+      "You cannot say that now.",
       "You mustn't say that now.",
-      "You must not say it now."
+      "You must not say that now."
      ],
      "hint": [
       {
@@ -45063,7 +45073,7 @@
       },
       {
        "lang": "en",
-       "text": "must not"
+       "text": "can't"
       },
       {
        "lang": "tr",
@@ -45071,7 +45081,7 @@
       },
       {
        "lang": "en",
-       "text": "You must not say that now."
+       "text": "You can't say that now."
       },
       {
        "lang": "tr",
@@ -45104,7 +45114,7 @@
      },
      {
       "lang": "en",
-      "text": "must not"
+      "text": "can't"
      },
      {
       "lang": "tr",

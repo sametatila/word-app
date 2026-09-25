@@ -86,7 +86,7 @@
  { "tr": "Toparlayalım. Beş kelime:", "kind": "say.tr", "de": "Fassen wir zusammen. Fünf Wörter:" },
  { "tr": "Toparlayalım. Sormak için", "kind": "say.tr", "de": "Fassen wir zusammen. Zum Fragen" },
  { "tr": "Ucuz ama parasına değmez.", "kind": "say.tr", "de": "Billig, aber sein Geld nicht wert." },
- { "tr": "ve \"mustn't\" da duyarsın.", "kind": "say.tr", "de": "und \"mustn't\" hörst du auch." },
+ { "tr": "duyarsın; yazılı kurallarda yasak için \"must not\" da görürsün.", "kind": "say.tr", "de": "hörst du; in schriftlichen Regeln siehst du für ein Verbot auch „must not“." },
  { "tr": "Ya da soru gibi sorarsın:", "kind": "say.tr", "de": "Oder du fragst es als Frage:" },
  { "tr": "Yani 'Başta biraz zordu.'", "kind": "say.tr", "de": "Also 'am Anfang war es etwas schwer.'" },
  { "tr": "Yani 'Teslimat ücretsiz.'", "kind": "say.tr", "de": "Also 'die Lieferung ist kostenlos.'" },

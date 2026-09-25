@@ -89,7 +89,7 @@
  { "tr": "Sohbeti sürdürmenin sırrı: cevap verdikten sonra soruyu geri sor. \"Ya sen?\" demek için:", "kind": "say.tr", "de": "Das Geheimnis des Gesprächs: nach deiner Antwort die Frage zurückgeben. Für \"und du?\":" },
  { "tr": "Son alıştırma. Arkadaşın geç kaldığı için özür diledi. Sen \"Sorun değil, dert etme\" de.", "kind": "say.tr", "de": "Letzte Übung. Dein Freund hat sich fürs Zuspätkommen entschuldigt. Sag \"Kein Problem, mach dir nichts draus\"." },
  { "tr": "Son bir meydan okuma: iki tarifi birleştir. 'Dümdüz git, sonra sola dön.' nasıl dersin?", "kind": "say.tr", "de": "Eine letzte Aufgabe: verbinde zwei Angaben. Wie sagst du 'Geh geradeaus, dann links'?" },
- { "tr": "Son bir tekrar. Kural söylerken: You must. Yasak söylerken: You mustn't. İzin sorarken:", "kind": "say.tr", "de": "Eine letzte Wiederholung. Regel: You must. Verbot: You mustn't. Erlaubnis erfragen:" },
+ { "tr": "Son bir tekrar. Kural söylerken: You must. Yasak söylerken: You can't. İzin sorarken:", "kind": "say.tr", "de": "Eine letzte Wiederholung. Regel: You must. Verbot: You can't. Erlaubnis erfragen:" },
  { "tr": "Şimdi aynı cümlenin tersini sen kur. 'Standart daha ucuz ama daha yavaş.' Nasıl dersin?", "kind": "say.tr", "de": "Bilde jetzt den umgekehrten Satz. 'Standard ist billiger, aber langsamer.' Wie geht das?" },
  { "tr": "Şimdi sıra sende. \"Üye olmak istiyorum\" cümlesini İngilizce kur. Kibar kalıbı kullan ve", "kind": "say.tr", "de": "Jetzt bist du dran. Bilde \"Ich möchte Mitglied werden\" auf Englisch. Nimm die höfliche Wendung und" },
  { "tr": "Şimdi soruyu kuralım. İngilizcede yaş sorusu kelime kelime \"ne kadar yaşlısın\" gibidir:", "kind": "say.tr", "de": "Bilden wir die Frage. Die englische Altersfrage lautet Wort für Wort \"wie alt bist du\":" },

@@ -41171,7 +41171,7 @@
   "icon": "home",
   "title": "House rules",
   "titleTr": "Apartman kuralları",
-  "summary": "Apartman kurallarını must ve mustn't ile söylemeyi, bir şeye izin olup olmadığını sormayı öğreniyorsun.",
+  "summary": "Apartman kurallarını must ve can't ile söylemeyi, bir şeye izin olup olmadığını sormayı öğreniyorsun.",
   "minutes": 8,
   "focusId": "Must",
   "vocab": [
@@ -41214,7 +41214,7 @@
     "tr": "bir kuralı, yapılması gerekeni söylerken kullanılır"
    },
    {
-    "de": "You mustn't make noise.",
+    "de": "You can't make noise.",
     "tr": "yasak olan bir şeyi söylerken kullanılır"
    },
    {
@@ -41231,7 +41231,7 @@
      },
      {
       "lang": "tr",
-      "text": "İki küçük kelime öğreneceksin: must ve mustn't. Biri zorunluluk, diğeri yasak. Hazır mısın?"
+      "text": "İki küçük kelime öğreneceksin: must ve can't. Biri zorunluluk, diğeri yasak. Hazır mısın?"
      }
     ],
     "expect": {
@@ -41302,15 +41302,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi yasak tarafı. Must not, yani yapmamalısın, yasak. Konuşurken neredeyse her zaman kısaltırız:"
+      "text": "Şimdi yasak tarafı. Günlük konuşmada yasağı can't ile söyleriz, yani yapamazsın, yasak:"
      },
      {
       "lang": "en",
-      "text": "mustn't"
+      "text": "can't"
      },
      {
       "lang": "tr",
-      "text": "Okunuşu masınt gibi. Ortadaki t neredeyse yutulur."
+      "text": "Okunuşu kent gibi; uzun ve vurgulu söylenir, sondaki t çok hafiftir. Tabelalarda ve yazılı kurallarda bunun yerine must not görürsün."
      }
     ]
    },
@@ -41318,11 +41318,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir yasak duyalım: gürültü yapmamalısın."
+      "text": "Bir yasak duyalım: gürültü yapamazsın."
      },
      {
       "lang": "en",
-      "text": "You mustn't make noise."
+      "text": "You can't make noise."
      },
      {
       "lang": "tr",
@@ -41331,7 +41331,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "You mustn't make noise."
+     "target": "You can't make noise."
     }
    },
    {
@@ -41354,28 +41354,30 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Sıra sende. Komşuna burada sigara içmenin yasak olduğunu söyle. Yani: burada sigara içmemelisin."
+      "text": "Sıra sende. Komşuna burada sigara içmenin yasak olduğunu söyle. Yani: burada sigara içemezsin."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "You mustn't smoke here.",
+     "target": "You can't smoke here.",
      "accept": [
-      "You must not smoke here.",
-      "You mustn't smoke in here."
+      "You cannot smoke here.",
+      "You can't smoke in here.",
+      "You mustn't smoke here.",
+      "You must not smoke here."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Yasak için mustn't, sigara içmek için smoke, burada için here."
+       "text": "Yasak için can't, sigara içmek için smoke, burada için here."
       },
       {
        "lang": "en",
-       "text": "You mustn't ... here."
+       "text": "You can't ... here."
       },
       {
        "lang": "en",
-       "text": "You mustn't smoke here."
+       "text": "You can't smoke here."
       },
       {
        "lang": "tr",
@@ -41563,7 +41565,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son bir tekrar. Kural söylerken: You must. Yasak söylerken: You mustn't. İzin sorarken:"
+      "text": "Son bir tekrar. Kural söylerken: You must. Yasak söylerken: You can't. İzin sorarken:"
      },
      {
       "lang": "en",
@@ -41571,12 +41573,12 @@
      },
      {
       "lang": "en",
-      "text": "You must be quiet. You mustn't make noise. Is it allowed?"
+      "text": "You must be quiet. You can't make noise. Is it allowed?"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "You must be quiet. You mustn't make noise."
+     "target": "You must be quiet. You can't make noise."
     }
    },
    {
@@ -41699,7 +41701,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bugün beş kelime öğrendin: rule, noise, quiet, clean, allow. Ve iki kalıp: must ile zorunluluk, mustn't ile yasak."
+      "text": "Bugün beş kelime öğrendin: rule, noise, quiet, clean, allow. Ve iki kalıp: must ile zorunluluk, can't ile yasak."
      },
      {
       "lang": "tr",
@@ -41713,7 +41715,7 @@
    "partner": "Komşun Emma",
    "opening": "Welcome to the building! Shall I tell you the house rules?",
    "openingTr": "Binaya hoş geldin! Sana apartman kurallarını anlatayım mı?",
-   "goal": "Konuşma, en az bir kuralı must ile tekrarladığında, bir yasağı mustn't ile söylediğinde ve izin sormak için Is it allowed? gibi bir soru sorduğunda başarılı sayılır.",
+   "goal": "Konuşma, en az bir kuralı must ile tekrarladığında, bir yasağı can't ile söylediğinde ve izin sormak için Is it allowed? gibi bir soru sorduğunda başarılı sayılır.",
    "minTurns": 7
   }
  },

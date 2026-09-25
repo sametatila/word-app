@@ -585,9 +585,9 @@
   "de": "und die einzelne Einheit aus dem Mund heißt"
  },
  {
-  "tr": "Çok erken öğüt vermemelisin.",
+  "tr": "Hemen öğüt vermemelisin.",
   "kind": "say.tr",
-  "de": "Du darfst nicht zu früh Ratschläge geben."
+  "de": "Du darfst nicht sofort Ratschläge geben."
  },
  {
   "tr": "bir şeyi yapmaya girişmeye ise",

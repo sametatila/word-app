@@ -355,9 +355,14 @@
   "de": "Für die Entschuldigung sagen wir"
  },
  {
-  "tr": "yasaklar,",
+  "tr": "yasaklar; yönergelerde kısaltılmadan yazılır, günlük konuşmada ise yerine can't dersin.",
   "kind": "say.tr",
-  "de": "verbietet,"
+  "de": "verbietet; in Anleitungen wird es nicht abgekürzt, im Alltag sagst du stattdessen can't."
+ },
+ {
+  "tr": "yasaklar (sınavın yazılı kurallarında bunun yerine must not görürsün),",
+  "kind": "say.tr",
+  "de": "verbietet (in den schriftlichen Prüfungsregeln siehst du stattdessen must not),"
  },
  {
   "tr": "İptal etmek",

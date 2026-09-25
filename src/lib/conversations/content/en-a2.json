@@ -24308,7 +24308,7 @@
   "icon": "home",
   "title": "Building rules",
   "titleTr": "Bina kuralları",
-  "summary": "Bina kurallarını must ve have to ile anlatmayı, mustn't ile yasağı ve don't have to ile gereksizliği ayırmayı öğretir.",
+  "summary": "Bina kurallarını must ve have to ile anlatmayı, can't ile yasağı ve don't have to ile gereksizliği ayırmayı öğretir.",
   "minutes": 9,
   "focusId": "must / have to",
   "vocab": [
@@ -24351,7 +24351,7 @@
     "tr": "uyulması gereken bir kuralı söyler"
    },
    {
-    "de": "You mustn't …",
+    "de": "You can't …",
     "tr": "kesin yasağı söyler"
    },
    {
@@ -24364,7 +24364,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bugün bina kurallarını konuşacağız: çöp ne zaman çıkar, saat kaçtan sonra sessiz olunur, nereye park edilmez. İngilizcede zorunluluğu must ve have to ile, yasağı mustn't ile anlatacağız. Hazır mısın?"
+      "text": "Bugün bina kurallarını konuşacağız: çöp ne zaman çıkar, saat kaçtan sonra sessiz olunur, nereye park edilmez. İngilizcede zorunluluğu must ve have to ile, yasağı can't ile anlatacağız. Hazır mısın?"
      }
     ],
     "expect": {
@@ -24606,11 +24606,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin en önemli noktası geliyor, buna dikkat et. İngilizcede olumsuzda must ve have to aynı şeyi söylemez."
+      "text": "Şimdi dersin en önemli noktası geliyor, buna dikkat et. İngilizcede yasak ile gereksizlik iki ayrı olumsuz kalıpla söylenir. Günlük konuşmada yasak can't ile kurulur:"
      },
      {
       "lang": "en",
-      "text": "You mustn't smoke here."
+      "text": "You can't smoke here."
      },
      {
       "lang": "tr",
@@ -24630,7 +24630,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Kısaca: mustn't yasak koyar, don't have to zorunluluğu kaldırır. Türkçede ikisi de 'zorunda değilsin' gibi çevrilebildiği için karışır; İngilizcede arasında dağlar kadar fark var."
+      "text": "Kısaca: can't yasak koyar, don't have to zorunluluğu kaldırır. Yazılı kurallarda ve tabelalarda yasağı must not olarak da görürsün. don't have to ise asla yasak değildir; ikisinin arasında dağlar kadar fark var."
      }
     ]
    },
@@ -24642,7 +24642,7 @@
      },
      {
       "lang": "en",
-      "text": "You mustn't park in front of the door."
+      "text": "You can't park in front of the door."
      },
      {
       "lang": "tr",
@@ -24650,7 +24650,7 @@
      },
      {
       "lang": "en",
-      "text": "You mustn't park in front of the door"
+      "text": "You can't park in front of the door"
      },
      {
       "lang": "tr",
@@ -24659,7 +24659,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "You mustn't park in front of the door"
+     "target": "You can't park in front of the door"
     }
    },
    {
@@ -24806,6 +24806,8 @@
      "accept": [
       "Dogs aren't allowed in the building",
       "Dogs are not allowed inside the building",
+      "You can't bring dogs into the building",
+      "Dogs can't come into the building",
       "You mustn't bring dogs into the building",
       "Dogs mustn't come into the building"
      ],
@@ -24884,7 +24886,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Özetleyelim: zorunluluk için have to ya da must, yasak için mustn't veya is not allowed, zorunlu olmayan için don't have to. Şimdi yeni binana taşındın ve kuralları öğreniyorsun."
+      "text": "Özetleyelim: zorunluluk için have to ya da must, yasak için can't veya is not allowed, yazılı kuralda must not, zorunlu olmayan için don't have to. Şimdi yeni binana taşındın ve kuralları öğreniyorsun."
      }
     ]
    }
@@ -24894,7 +24896,7 @@
    "partner": "kuralları anlatmayı seven, güler yüzlü bir apartman görevlisi",
    "opening": "Welcome to the building! Shall I tell you the rules?",
    "openingTr": "Binaya hoş geldin! Sana kuralları anlatayım mı?",
-   "goal": "Çöp günü ve sessizlik saati öğrenilmiş, en az bir yasak (mustn't ya da not allowed) duyulmuş ve öğrenci kendisi bir kural sorusu sormuş olur.",
+   "goal": "Çöp günü ve sessizlik saati öğrenilmiş, en az bir yasak (can't ya da not allowed) duyulmuş ve öğrenci kendisi bir kural sorusu sormuş olur.",
    "minTurns": 7
   }
  },
@@ -57078,7 +57080,7 @@
      },
      {
       "lang": "tr",
-      "text": "ve \"mustn't\" da duyarsın."
+      "text": "duyarsın; yazılı kurallarda yasak için \"must not\" da görürsün."
      },
      {
       "lang": "en",

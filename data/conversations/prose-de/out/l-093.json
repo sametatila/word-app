@@ -775,9 +775,9 @@
   "de": "Jetzt bist du dran: Der Bürgermeister hat gesagt, dass der Plan fertig war."
  },
  {
-  "tr": "ise yasak. Ortadaki serbestlik anlatır ve yasakla karıştırılmamalı.",
+  "tr": "ise yasak; tabelada ve yazılı kuralda bunun yerine must not görürsün. Ortadaki serbestlik anlatır ve yasakla karıştırılmamalı.",
   "kind": "say.tr",
-  "de": "und das Verbot. Die mittlere nennt Freiheit und darf nicht mit dem Verbot verwechselt werden."
+  "de": "und das Verbot; auf Schildern und in schriftlichen Regeln siehst du stattdessen must not. Die mittlere nennt Freiheit und darf nicht mit dem Verbot verwechselt werden."
  },
  {
   "tr": "ister. Bu ayrımı kural olarak ezberlemek yerine fiil fiil tanıyacaksın.",
@@ -830,9 +830,9 @@
   "de": "Hallo! Heute lernen wir wiederzugeben, was in einer Versammlung im Viertel gesagt wurde: wer was gesagt hat, was du nicht tun sollst, was gefragt wurde."
  },
  {
-  "tr": "Toplu taşımanın yazılı kuralları bu üç kipten çıkıyor ve ikisini karıştırmak ya gereksiz iş ya da ceza demek. Hazır mısın?",
+  "tr": "Toplu taşımanın kuralları bu üç kalıpla anlatılıyor ve ikisini karıştırmak ya gereksiz iş ya da ceza demek. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Die geschriebenen Regeln der öffentlichen Verkehrsmittel kommen aus diesen drei Modalverben, und zwei davon zu verwechseln heißt unnötige Arbeit oder eine Strafe. Bist du bereit?"
+  "de": "Die Regeln im öffentlichen Nahverkehr erklärt man mit diesen drei Wendungen, und zwei davon zu verwechseln heißt unnötige Arbeit oder eine Strafe. Bist du bereit?"
  },
  {
   "tr": "ile bir kat geriye çekilir; değişikliğin kendisi olağan geçmiş zamanda kalır. Cümledeki sıra değişse bile bu ayrım bozulmaz.",

@@ -90,7 +90,7 @@
  { "tr": "Merhaba! Bugün arkadaşça öğüt vermeyi öğreniyoruz.", "kind": "say.tr", "de": "Hallo! Heute lernen wir, freundschaftlich zu raten." },
  { "tr": "ne kadar demek. Bir şeyin adını da ekleyebilirsin:", "kind": "say.tr", "de": "heißt wie viel. Du kannst auch den Namen der Sache anhängen:" },
  { "tr": "Neyi tebrik ettiğini de ekleyebilirsin. Bunun için", "kind": "say.tr", "de": "Du kannst auch nennen, wozu du gratulierst. Dafür" },
- { "tr": "Okunuşu masınt gibi. Ortadaki t neredeyse yutulur.", "kind": "say.tr", "de": "Es klingt wie massnt. Das t in der Mitte verschwindet fast." },
+ { "tr": "Okunuşu kent gibi; uzun ve vurgulu söylenir, sondaki t çok hafiftir. Tabelalarda ve yazılı kurallarda bunun yerine must not görürsün.", "kind": "say.tr", "de": "Es klingt wie kännt; lang und betont gesprochen, das t am Ende ist ganz leicht. Auf Schildern und in schriftlichen Regeln siehst du stattdessen must not." },
  { "tr": "Özetleyelim: in içinde, on üstünde, under altında,", "kind": "say.tr", "de": "Fassen wir zusammen: in drinnen, on drauf, under darunter," },
  { "tr": "Pahalı. It's, it is demek; bir şey için o diyoruz.", "kind": "say.tr", "de": "Teuer. It's heißt it is; für eine Sache sagen wir es." },
  { "tr": "Sana en iyisini diliyorum demek. Lütfen tekrar et:", "kind": "say.tr", "de": "Heißt ich wünsche dir alles Gute. Bitte wiederhole:" },

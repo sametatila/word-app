@@ -66,7 +66,7 @@
  { "tr": "Olumsuz cümle, demek ki yet kullanacaksın ve yet sona gelecek.", "kind": "hint.tr", "de": "Verneinter Satz, also verwendest du yet und yet kommt ans Ende." },
  { "tr": "Sıra şöyle: kim, sonra 'is', sonra 'different', en sona 'now':", "kind": "hint.tr", "de": "Die Reihenfolge: wer, dann 'is', dann 'different', ganz ans Ende 'now':" },
  { "tr": "Soru 'have you had' ile kurulur, sonra da şikâyetin adı gelir:", "kind": "hint.tr", "de": "Die Frage wird mit 'have you had' gebildet, dann kommt die Beschwerde:" },
- { "tr": "Yasak için mustn't, sigara içmek için smoke, burada için here.", "kind": "hint.tr", "de": "Fürs Verbot mustn't, für rauchen smoke, für hier here." },
+ { "tr": "Yasak için can't, sigara içmek için smoke, burada için here.", "kind": "hint.tr", "de": "Fürs Verbot can't, für rauchen smoke, für hier here." },
  { "tr": "'Can you' ile başla, tartmak fiilini ekle, sonra 'this parcel'.", "kind": "hint.tr", "de": "Mit 'Can you' beginnen, das Verb wiegen anfügen, dann 'this parcel'." },
  { "tr": "'The water bill' ile başla, fiil 'comes', sonuna 'every month'.", "kind": "hint.tr", "de": "Mit 'The water bill' beginnen, Verb 'comes', ans Ende 'every month'." },
  { "tr": "Burada birçok insan var. Çoğul olduğu için there are ile başla.", "kind": "hint.tr", "de": "Hier sind viele Leute. Weil es Plural ist, mit there are beginnen." },

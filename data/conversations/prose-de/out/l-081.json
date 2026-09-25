@@ -35,9 +35,9 @@
   "de": "Vermittelt, wie man eine Besprechung wiedergibt: wer was gesagt hat, was vorgeschlagen und was entschieden wurde."
  },
  {
-  "tr": "Kuralı, yasağı ve öğüdü ayırmayı öğretir: must, mustn't ve should aynı şey değildir.",
+  "tr": "Kuralı, yasağı ve öğüdü ayırmayı öğretir: must, can't ve should aynı şey değildir.",
   "kind": "summary",
-  "de": "Vermittelt, wie man Regel, Verbot und Rat trennt: must, mustn't und should sind nicht dasselbe."
+  "de": "Vermittelt, wie man Regel, Verbot und Rat trennt: must, can't und should sind nicht dasselbe."
  },
  {
   "tr": "Bir aksiliği sırayla anlatmayı öğretir: önce olan geriye alınır, sonra olan öne çıkar.",
@@ -550,9 +550,9 @@
   "de": "Der Fall wird ermittelt."
  },
  {
-  "tr": "ise YASAKLAR. Dikkat:",
+  "tr": "ise YASAKLAR; yazılı kurallarda bunun yerine must not görürsün. Dikkat:",
   "kind": "say.tr",
-  "de": "dagegen VERBIETET. Achtung:"
+  "de": "dagegen VERBIETET; in schriftlichen Regeln siehst du stattdessen must not. Achtung:"
  },
  {
   "tr": "İyi tarafı anlatırken",
