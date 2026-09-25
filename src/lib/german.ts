@@ -137,7 +137,17 @@ export function pluralChoices(
 
   // Kademe içinde sıra rastgele: hep aynı üç çeldirici gelirse şıklar ezberlenir.
   const ordered = [...shufflePlural(tiers[0], rand), ...shufflePlural(tiers[1], rand)];
-  if (ordered.length < count) return null;
+  /*
+    ÜÇ ŞIK YETER. "-e" ile biten ve umlaut almayan isimlerde (Geschichte, Idee,
+    Küche, Reise, Seite; havuzda yüze yakın A1–C1 ismi) gerçekçi ancak iki
+    çeldirici çıkıyor: "Geschichte" (değişmez sanmak) ve "Geschichtes". Dördüncü
+    şıkkı uydurmak yerine tur hiç kurulmuyordu ve bu isimlerin çoğulu, Almanca
+    öğrencisinin en sık yanıldığı yerlerden biri olduğu hâlde, hiç
+    çalıştırılmıyordu. Üç şıklı çoktan seçmeli madde ölçme açısından dört şıklı
+    kadar ayırt edici (Rodriguez 2005, 80 yıllık araştırmanın meta-analizi);
+    iki çeldiricinin altına inilmiyor, çünkü orada tur yazı tura olur.
+  */
+  if (ordered.length < Math.min(count, 2)) return null;
   return { answer, distractors: ordered.slice(0, count) };
 }
 
