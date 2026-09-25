@@ -30,9 +30,9 @@
   "de": "Ein Migrationshintergrund ist keine Migrationsbewegung."
  },
  {
-  "tr": "Ona tuhaflık desek de, o ötekiliktir.",
+  "tr": "Ona ne kadar tuhaflık demeyi sevsek de aslında ötekiliktir.",
   "kind": "build.tr",
-  "de": "So sehr wir es Fremdartigkeit nennen, es ist Andersartigkeit."
+  "de": "So gern wir es Fremdartigkeit nennen, eigentlich ist es Andersartigkeit."
  },
  {
   "tr": "Yemek doyurucuydu; karşılama, daha az.",
@@ -85,9 +85,9 @@
   "de": "Hinter der Demarkationslinie steht die Fremdenfeindlichkeit."
  },
  {
-  "tr": "Her katılım modelinin dayanışma göstermesini istiyorlar.",
+  "tr": "Her katılım modelinin kiracılara oy hakkı tanımasını istiyorlar.",
   "kind": "build.tr",
-  "de": "Sie verlangen, dass jedes Teilhabemodell Solidarität zeige."
+  "de": "Sie verlangen, dass jedes Teilhabemodell den Mietern ein Stimmrecht gebe."
  },
  {
   "tr": "Toplumsallaşma sıra düzenini başlatmadan önce kurabilir.",
@@ -110,9 +110,9 @@
   "de": "Im Feuilleton ist es eine Subkultur, im Ministerium Kulturpolitik."
  },
  {
-  "tr": "Biz ona kültürleşme desek de onlar asimilasyonu kastediyor.",
+  "tr": "Ona ne kadar kültürleşme demeyi sevsek de onlar asimilasyonu kastediyor.",
   "kind": "build.tr",
-  "de": "So sehr wir es Akkulturation nennen, sie meinen Assimilation."
+  "de": "So gern wir es Akkulturation nennen, sie meinen Assimilation."
  },
  {
   "tr": "Dik başlı bir çocuk, dediler, ve epeyce her şeyi merak eden.",
@@ -120,14 +120,14 @@
   "de": "Ein eigensinniges Kind, sagten sie, und ziemlich wissbegierig."
  },
  {
-  "tr": "Yukarıdaki çok katmanlılık aşağıda bir yatkınlığa dönüşüyor.",
+  "tr": "Yukarıda anlatılan çok katmanlılık, aşağıda ele alınan yatkınlığı açıklıyor.",
   "kind": "build.tr",
-  "de": "Die oben genannte Vielschichtigkeit wird unten zu einer Veranlagung."
+  "de": "Die oben beschriebene Vielschichtigkeit erklärt die unten behandelte Veranlagung."
  },
  {
-  "tr": "Eşitlik ilkesi insan onurunun dokunulmaz olmasını talep eder.",
+  "tr": "Eşitlik ilkesi insan onurunun yalnız bazıları için değil, herkes için dokunulmaz olmasını talep eder.",
   "kind": "build.tr",
-  "de": "Der Gleichheitsgrundsatz verlangt, dass die Menschenwürde unantastbar sei."
+  "de": "Der Gleichheitsgrundsatz verlangt, dass die Menschenwürde für alle unantastbar sei, nicht nur für einige."
  },
  {
   "tr": "Burada hiç yabancılaşmayız; uzaklaşmayı sonradan adlandırırız.",
@@ -135,9 +135,9 @@
   "de": "Wir entfremden uns hier nie; wir benennen die Entfremdung nur später."
  },
  {
-  "tr": "O gazap, belirtildiği gibi, önceki bir sayfanın içerlemesidir.",
+  "tr": "Bu gazap, daha önce belirtildiği gibi, eski bir içerlemeden doğuyor.",
   "kind": "build.tr",
-  "de": "Jener Zorn ist, wie erwähnt, der Groll einer früheren Seite."
+  "de": "Dieser Zorn erwächst, wie bereits angemerkt, aus einem alten Groll."
  },
  {
   "tr": "Burada normdan sapma yok, yerel bir âdet var.",
@@ -145,9 +145,9 @@
   "de": "Hier gibt es keine Abweichung, hier gibt es einen örtlichen Brauch."
  },
  {
-  "tr": "Ötekileştirmenin yaptığı şey bir marjinal grubu adlandırmaktır.",
+  "tr": "Ötekileştirmenin yaptığı şey bir marjinal grup yaratmaktır.",
   "kind": "build.tr",
-  "de": "Was die Marginalisierung tut, ist eine Randgruppe zu benennen."
+  "de": "Was die Marginalisierung tut, ist eine Randgruppe zu schaffen."
  },
  {
   "tr": "Birinin kültür sahnesi dediğine bir başkası paralel toplum diyor.",
@@ -285,9 +285,9 @@
   "de": "„Only in name“ nimmt das Gesagte zurück, ohne es zu leugnen."
  },
  {
-  "tr": "İki edat nesnesiz kalmış ve ismin ardına asılmış.",
+  "tr": "İki edat nesnesiz kalmış; ortaçla birlikte ismin ardına asılmış.",
   "kind": "build.hint",
-  "de": "Zwei Präpositionen ohne Objekt, hinter das Nomen gehängt."
+  "de": "Zwei Präpositionen ohne Objekt, mit einem Partizip hinter das Nomen gehängt."
  },
  {
   "tr": "Ara söz okura bunun bir yineleme olduğunu söylüyor.",
@@ -320,8 +320,8 @@
   "de": "Zwei Passive, zwei Arten: das eine verbirgt ein Verfahren, das andere eine Unterschrift."
  },
  {
-  "tr": "Aynı sözcük cümlenin başında ve fiilsiz bir isim öbeği alıyor.",
+  "tr": "Cümle başında „albeit“ değil „although“; ardında yine fiilsiz bir isim öbeği.",
   "kind": "build.hint",
-  "de": "Dasselbe Wort am Satzanfang, und es nimmt eine verblose Nominalphrase."
+  "de": "Am Satzanfang „although“, nicht „albeit“; danach wieder eine verblose Nominalphrase."
  }
 ]

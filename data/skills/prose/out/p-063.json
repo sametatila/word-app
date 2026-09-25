@@ -50,6 +50,11 @@
   "en": "Two prepositions left without an object; the pointer layer."
  },
  {
+  "tr": "Yukarıya ve aşağıya gönderen iki ortaç öbeği: gönderme katmanı.",
+  "kind": "explain",
+  "en": "Two participle phrases pointing up and down the page; the pointer layer."
+ },
+ {
   "tr": "Ağır nesne sona kayıyor; adıl asla kaymıyor.",
   "kind": "intro",
   "en": "The heavy object moves to the end; the pronoun never does."
@@ -70,9 +75,9 @@
   "en": "„„Work intensification“ counts what went in.“"
  },
  {
-  "tr": "Meblağ, ad değişimi, iltifat; en sonda döngü.",
+  "tr": "Hüküm, ad değişimi, iltifat; en sonda döngü.",
   "kind": "explain",
-  "en": "The sum, the change of name, the compliment; the circle last."
+  "en": "The verdict, the change of name, the compliment; the circle last."
  },
  {
   "tr": "Yer bildirmeyen „where“ ve tek ölçünün üç adı.",
@@ -150,9 +155,9 @@
   "en": "„a flat chart can hide more than a tall one.“ — „Far more…“"
  },
  {
-  "tr": "Fonlanan ile fonlanmayan aynı cümlede. Ek neyi ele veriyor?",
+  "tr": "Başarı ile başarısızlık aynı cümlede. Ek neyi ele veriyor?",
   "kind": "intro",
-  "en": "The funded and the unfunded in one sentence. What does the addition give away?"
+  "en": "Success and failure in one sentence. What does the addition give away?"
  },
  {
   "tr": "Tek bir önlem, üç ad. Adı koyan tartışmayı nasıl kazanıyor?",

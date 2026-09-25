@@ -45,14 +45,14 @@
   "de": "Ich würde, wenn ich könnte, und sie auch."
  },
  {
-  "tr": "Rakam pekâlâ varsayılıyor olabilir.",
+  "tr": "Rakam pekâlâ varsayılandan yüksek olabilir.",
   "kind": "build.tr",
-  "de": "Die Zahl wird durchaus angenommen werden."
+  "de": "Die Zahl dürfte durchaus höher sein als angenommen."
  },
  {
-  "tr": "Oturum başkanlığı olmasa ara verirdik.",
+  "tr": "Onun sıkı oturum başkanlığı olmasaydı ara verirdik.",
   "kind": "build.tr",
-  "de": "Wäre da nicht der Vorsitz, würden wir unterbrechen."
+  "de": "Wäre ihre straffe Sitzungsleitung nicht, würden wir vertagen."
  },
  {
   "tr": "İkinci okuma bir huzursuzluk bırakıyor.",
@@ -130,14 +130,14 @@
   "de": "Sie würde den Punkt einräumen, wohingegen er ihn beschönigen würde."
  },
  {
-  "tr": "Bir sözcünün maskesini adını anmadan düşürüyorlar.",
+  "tr": "İsim vermeden sözcünün maskesini düşürüyorlar.",
   "kind": "build.tr",
-  "de": "Sie entlarven ein Sprachrohr, ohne eines zu nennen."
+  "de": "Sie entlarven das Sprachrohr, ohne Namen zu nennen."
  },
  {
-  "tr": "Manifesto, ideolojinin varsaydığını ileri sürüyor.",
+  "tr": "Manifesto, ideolojinin yalnızca varsaydığını açıkça iddia ediyor.",
   "kind": "build.tr",
-  "de": "Das Manifest behauptet, was die Ideologie voraussetzt."
+  "de": "Das Manifest behauptet offen, was die Ideologie bloß annimmt."
  },
  {
   "tr": "Kabul, manevra alanı az, her ne kadar biraz olsa da.",
@@ -145,9 +145,9 @@
   "de": "Zugegeben, der Spielraum ist klein, wenn auch vorhanden."
  },
  {
-  "tr": "Her ne kadar iki tarafı da tartsam da biri daha güçlü.",
+  "tr": "İki tarafı ne kadar eşit tartmak istesem de biri açıkça daha güçlü.",
   "kind": "build.tr",
-  "de": "So sehr ich beide Seiten abwäge, eine ist stärker."
+  "de": "So gern ich beide Seiten gleich abwägen würde, eine ist klar stärker."
  },
  {
   "tr": "Deneme yazarının bundan sonra yaptığı şey bir gönderme.",
@@ -155,9 +155,9 @@
   "de": "Was der Essayist als Nächstes tut, ist eine Anspielung."
  },
  {
-  "tr": "Karşı açıklama, onu taşıyan fiilden daha azını söyledi.",
+  "tr": "Karşı açıklamanın kendisi, onu aktaran fiilden daha azını söylüyordu.",
   "kind": "build.tr",
-  "de": "Die Gegendarstellung sagte weniger als das Verb, das sie trug."
+  "de": "Die Gegendarstellung selbst sagte weniger als das Verb, mit dem sie wiedergegeben wurde."
  },
  {
   "tr": "Kabul, rakam yüksek, her ne kadar açıklanabilir olsa da.",
@@ -225,9 +225,9 @@
   "de": "„whereas“ stellt zwei Personen nebeneinander."
  },
  {
-  "tr": "İçinde bir kişi olan ödün: tartan ben.",
+  "tr": "İçinde bir kişi olan ödün: eşit tartmak isteyen ben.",
   "kind": "build.hint",
-  "de": "Eine Einräumung mit einer Person darin: ich, der abwägt."
+  "de": "Eine Einräumung mit einer Person darin: ich, die gern gleich abwägen würde."
  },
  {
   "tr": "Mastarlı iki yarı karşı karşıya konuyor.",

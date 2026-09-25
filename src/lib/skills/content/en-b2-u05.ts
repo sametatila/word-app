@@ -18,7 +18,7 @@ import type { SkillExercise } from "../types";
  *           Only then will the recipient be obliged. ·
  *           Having reviewed the incident, we wrote the note. ·
  *           Being prompt, the team dispatched the goods. ·
- *           Delayed on Monday, the account was resumed later. ·
+ *           Suspended on Monday, the service was resumed on Wednesday. ·
  *           Ana, who signed the tender, is the director. ·
  *           The procedure, which is why we waited, is slow. ·
  *           The executive to whom we report is new. ·
@@ -256,7 +256,7 @@ export const enB2U05: SkillExercise[] = [
       { speaker: "Hakan", text: "And the second line?" },
       { speaker: "Ceren", text: "Being prompt, the team dispatched the goods. No time gap this time: the promptness and the dispatching are the same fact seen twice." },
       { speaker: "Hakan", text: "The third one is passive." },
-      { speaker: "Ceren", text: "Delayed on Monday, the account was resumed later. It starts with the third form, so somebody delayed it and we are not saying who. In a summary of events that is often honest rather than evasive; nobody knows yet." },
+      { speaker: "Ceren", text: "Suspended on Monday, the service was resumed on Wednesday. It starts with the third form, so somebody suspended it and we are not saying who. In a summary of events that is often honest rather than evasive; nobody knows yet." },
       { speaker: "Hakan", text: "What goes wrong most often?" },
       { speaker: "Ceren", text: "The subject. The participle belongs to whoever the main clause is about. „Having reviewed the incident, the note was written“ hands the reviewing to the note." },
       { speaker: "Hakan", text: "Does anybody actually misread it?" },
@@ -462,7 +462,7 @@ export const enB2U05: SkillExercise[] = [
     gloss: [
       { de: "having reviewed", tr: "inceledikten sonra" },
       { de: "being prompt", tr: "hızlı davranarak" },
-      { de: "delayed", tr: "geciktirilen" },
+      { de: "suspended", tr: "durdurulan" },
       { de: "will have executed", tr: "yürütmüş olacak" },
     ],
     minutes: 9,
@@ -481,9 +481,9 @@ export const enB2U05: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Pazartesi geciktirilen hesap sonra yeniden başlatıldı.",
-        answer: "Delayed on Monday, the account was resumed later.",
-        hint: "Üçüncü hâlle başlıyor: geciktiren söylenmiyor.",
+        tr: "Pazartesi durdurulan hizmet çarşamba yeniden başlatıldı.",
+        answer: "Suspended on Monday, the service was resumed on Wednesday.",
+        hint: "Üçüncü hâlle başlıyor: durduran söylenmiyor.",
       },
       {
         kind: "build",

@@ -20,10 +20,10 @@ import type { SkillExercise } from "../types";
  *           Such composure is rare. ·
  *           The latter reading leaves an unease. ·
  *           Granted, there is little leeway, albeit some. ·
- *           Much as I see the snag, the plan stays viable. ·
+ *           Much as I acknowledge the snag, the plan stays viable. ·
  *           The step is irreversible, whereas the delay is not. ·
  *           She postulates it; he refutes it; they substantiate it. ·
- *           The manifesto claims what the ideology assumes. ·
+ *           The manifesto openly claims what the ideology merely assumes. ·
  *           To report a claim is not to falsify it.
  *
  * Ünitenin tek öğretme noktası OLUMSUZLA SÖYLENEN OLUMLU (litotes).
@@ -256,10 +256,10 @@ export const enC1U03: SkillExercise[] = [
       { speaker: "Ulaş", text: "Because of „albeit some“. Without it the sentence closes the question, and a minute that closes a question nobody agreed to close gets rewritten by somebody else." },
       { speaker: "Peri", text: "So the concession protects you." },
       { speaker: "Ulaş", text: "It protects the room. A position that has been stated with a small opening in it can be walked back without anybody losing anything." },
-      { speaker: "Peri", text: "Much as I see the snag, the plan stays viable." },
-      { speaker: "Ulaş", text: "That one is mine and it is doing something different. It says I have looked at the objection, and it says the answer anyway, and the reader is told both in one breath." },
+      { speaker: "Peri", text: "Much as I acknowledge the snag, the plan stays viable." },
+      { speaker: "Ulaş", text: "That one is mine and it is doing something different. It says I have accepted the objection, and it says the answer anyway, and the reader is told both in one breath." },
       { speaker: "Peri", text: "Is that fair to the objection?" },
-      { speaker: "Ulaş", text: "It is fair only if the objection is named somewhere. „Much as I see the snag“ with no snag written down is the most common dishonest sentence in a minute." },
+      { speaker: "Ulaş", text: "It is fair only if the objection is named somewhere. „Much as I acknowledge the snag“ with no snag written down is the most common dishonest sentence in a minute." },
       { speaker: "Peri", text: "And the last line." },
       { speaker: "Ulaş", text: "The step is irreversible, whereas the delay is not. No concession at all there, and none is needed: the two facts sit side by side and the reader draws the line." },
       { speaker: "Peri", text: "That is the one that will be quoted." },
@@ -273,7 +273,7 @@ export const enC1U03: SkillExercise[] = [
         explain: "„Without it the sentence closes the question…“",
       },
       {
-        text: "When is „much as I see the snag“ fair?",
+        text: "When is „much as I acknowledge the snag“ fair?",
         options: ["if the snag is named somewhere", "always", "never"],
         answer: 0,
         explain: "„It is fair only if the objection is named somewhere.“",
@@ -345,7 +345,7 @@ export const enC1U03: SkillExercise[] = [
       { speaker: "Ceyhun", text: "„Refute“ is the one that goes wrong most often. It does not mean deny; it means prove false." },
       { speaker: "Ceyhun", text: "A writer who uses it for „said it was not true“ has given the opponent's answer a verdict it did not earn." },
       { speaker: "Ceyhun", text: "„Substantiate“ is the strongest of the three: evidence was produced. Three verbs, three positions on the same scale, and the reader takes all of it without stopping." },
-      { speaker: "Ceyhun", text: "The manifesto claims what the ideology assumes. That is a sentence about two documents and it is also a verdict on both, and I would not write it without quoting a line from each." },
+      { speaker: "Ceyhun", text: "The manifesto openly claims what the ideology merely assumes. That is a sentence about two documents and it is also a verdict on both, and I would not write it without quoting a line from each." },
       { speaker: "Ceyhun", text: "To report a claim is not to falsify it. That is the rule I keep at the top of the page when the subject is somebody I disagree with." },
       { speaker: "Ceyhun", text: "Reporting fairly does not mean reporting flatly. It means the verb I choose has to be one I could defend if the other side read the paragraph out loud." },
       { speaker: "Ceyhun", text: "And when I cannot defend it, there is always „said“, which is dull, unchecked by anybody, and the only word in the list that has never once lost me an argument." },
@@ -383,7 +383,7 @@ export const enC1U03: SkillExercise[] = [
         text: "Duyduğun cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["The manifesto claims what the ideology assumes.", "The manifesto claims what the ideology assumes"],
+        accept: ["The manifesto openly claims what the ideology merely assumes.", "The manifesto openly claims what the ideology merely assumes"],
         explain: "İki belge hakkında bir cümle ve ikisi hakkında bir hüküm.",
       },
       {
@@ -478,8 +478,8 @@ export const enC1U03: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Manifesto, ideolojinin varsaydığını ileri sürüyor.",
-        answer: "The manifesto claims what the ideology assumes.",
+        tr: "Manifesto, ideolojinin yalnızca varsaydığını açıkça iddia ediyor.",
+        answer: "The manifesto openly claims what the ideology merely assumes.",
         hint: "İki belge hakkında bir cümle ve bir hüküm.",
       },
       {

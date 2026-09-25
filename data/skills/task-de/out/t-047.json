@@ -60,19 +60,19 @@
   "de": "Im Bericht ist es ein Effizienzgewinn, in der Werkhalle Arbeitsverdichtung."
  },
  {
-  "tr": "Mükemmeliyet girişimi fonlandı; geçiş oranı, daha az.",
+  "tr": "Mükemmeliyet girişimi başarılı oldu; geçiş oranı, o kadar değil.",
   "kind": "build.tr",
-  "de": "Die Exzellenzinitiative wurde finanziert; die Übergangsquote weniger."
+  "de": "Die Exzellenzinitiative war ein Erfolg; die Übergangsquote weniger."
  },
  {
-  "tr": "Yayın baskısı, dediler, ve intihale karşı epeyce iyi.",
+  "tr": "Sağlıklı bir yayın baskısı, dediler, üstelik kaliteye iyi geliyor.",
   "kind": "build.tr",
-  "de": "Publikationsdruck, sagten sie, und ziemlich gut gegen Plagiate."
+  "de": "Gesunder Publikationsdruck, sagten sie, und dazu gut für die Qualität."
  },
  {
-  "tr": "Birimi bünyeden ayırsalar da iş şirket içinde kalıyor.",
+  "tr": "Birimi bünyeden ayırmayı ne kadar isteseler de asıl iş şirket içinde kalıyor.",
   "kind": "build.tr",
-  "de": "So sehr sie die Einheit ausgliedern, die Arbeit bleibt im Haus."
+  "de": "So gern sie die Einheit ausgliedern würden, die eigentliche Arbeit bleibt im Haus."
  },
  {
   "tr": "Uzlaşı sağlama olmasa hiçbir davranış kuralı tutmazdı.",
@@ -105,9 +105,9 @@
   "de": "Was die Machtstruktur tut, ist das Machtgefälle zu verbergen."
  },
  {
-  "tr": "Yukarıdaki dil değişimi aşağıda bir dil normuna dönüşüyor.",
+  "tr": "Yukarıda anlatılan dil değişimi, aşağıda ele alınan dil normuna dönüşüyor.",
   "kind": "build.tr",
-  "de": "Der oben genannte Sprachwandel wird unten zu einer Sprachnorm."
+  "de": "Der oben beschriebene Sprachwandel wird zu der unten behandelten Sprachnorm."
  },
  {
   "tr": "Nitelikli eleman açığı ilan edilir; işgücü rezervi sayılır.",
@@ -135,9 +135,9 @@
   "de": "Was die Geschäftsleitung Flexibilisierung nennt, nennt die Gewerkschaft Prekarisierung."
  },
  {
-  "tr": "Yukarıdaki yapısal değişim aşağıda bir ana iş koluna dönüşüyor.",
+  "tr": "Yukarıda anlatılan yapısal değişim, aşağıda ele alınan ana iş kolunu tehdit ediyor.",
   "kind": "build.tr",
-  "de": "Der oben genannte Strukturwandel wird unten zu einem Kerngeschäft."
+  "de": "Der oben beschriebene Strukturwandel bedroht das unten behandelte Kerngeschäft."
  },
  {
   "tr": "İşgücüne katılım oranı yükseldi; tahsis edilmiş para hiç yükselmedi.",
@@ -150,9 +150,9 @@
   "de": "Der eine verschleiert die Segmentierung; der andere untergräbt die Berufsethik."
  },
  {
-  "tr": "Çevrilemezlik maneviyat olarak, inanç krizi bir soru olarak sağ kalıyor.",
+  "tr": "Eski din maneviyat olarak, inanç krizi bir soru olarak sağ kalıyor.",
   "kind": "build.tr",
-  "de": "Unübersetzbarkeit überlebt als Spiritualität, eine Glaubenskrise als Frage."
+  "de": "Die alte Religion überlebt als Spiritualität, die Glaubenskrise als Frage."
  },
  {
   "tr": "Toplu sözleşme hakkı, müzakerelerin devlet müdahalesi olmadan yürütülmesini gerektirir.",
@@ -220,9 +220,9 @@
   "de": "„Where“ zeigt keinen Ort, sondern einen Fall."
  },
  {
-  "tr": "İlk yarıda meblağ var, ikincide yok.",
+  "tr": "İlk yarıda açık bir hüküm var, ikincide yok.",
   "kind": "build.hint",
-  "de": "In der ersten Hälfte steht eine Summe, in der zweiten keine."
+  "de": "In der ersten Hälfte steht ein klares Urteil, in der zweiten keines."
  },
  {
   "tr": "Çekince burada gerçek bir iş görüyor.",
@@ -290,9 +290,9 @@
   "de": "Das Organigramm ist, was alle sehen können; nicht, wovon es handelt."
  },
  {
-  "tr": "Ağır nesne sona kaymış; „make something permanent“ değil.",
+  "tr": "Üç sözcüklük nesne ağır sayılmıyor; olağan sıra: „make something permanent“.",
   "kind": "build.hint",
-  "de": "Das schwere Objekt ist ans Ende gerückt; nicht „make something permanent“."
+  "de": "Ein Objekt aus drei Wörtern gilt nicht als schwer; die übliche Reihenfolge: „make something permanent“."
  },
  {
   "tr": "Birim ücret parça başına olunca soru sormak para tutuyor.",

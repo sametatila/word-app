@@ -21,9 +21,9 @@ import type { SkillExercise } from "../types";
  *           The financial regulator demands that the disclosure be complete. ·
  *           Were it not for the lack of transparency, no reporting office would be needed. ·
  *           They ask that every whistleblower be heard before the misconduct is buried. ·
- *           Much as the monetary policy works, the key interest rate hurts the young. ·
+ *           Much as I welcome the monetary policy, the key interest rate hurts the young. ·
  *           An expansionary step, albeit restrictive later, buys time. ·
- *           Albeit countercyclical, the fiscal policy arrives too late.
+ *           Although countercyclical, the fiscal policy arrives too late.
  *
  * Ünitenin tek öğretme noktası ÇERÇEVE ÖBEĞİ: „in nominal terms“, „in real
  * terms“, „in terms of scale“, „in urban design terms“ (son ikisi bir
@@ -278,7 +278,7 @@ export const enC1U21: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Melis", text: "Much as the monetary policy works, the key interest rate hurts the young. Both halves are true and the second one is almost never in the same paragraph as the first." },
+      { speaker: "Melis", text: "Much as I welcome the monetary policy, the key interest rate hurts the young. Both halves are true and the second one is almost never in the same paragraph as the first." },
       { speaker: "Arda", text: "Why the young in particular?" },
       { speaker: "Melis", text: "Because they are the borrowers. A saver with an apartment already bought is on the other side of every rate, and the average of the two says nothing about either." },
       { speaker: "Arda", text: "So the average hides two directions." },
@@ -287,7 +287,7 @@ export const enC1U21: SkillExercise[] = [
       { speaker: "Melis", text: "That is the honest defense of the whole policy and it is worth taking seriously. Time is a real thing to buy, and somebody has to decide what it is spent on." },
       { speaker: "Arda", text: "Who usually decides?" },
       { speaker: "Melis", text: "Nobody, in my experience. The time is bought and then it passes, and the same committee meets again with the same question and a worse starting point." },
-      { speaker: "Arda", text: "Albeit countercyclical, the fiscal policy arrives too late." },
+      { speaker: "Arda", text: "Although countercyclical, the fiscal policy arrives too late." },
       { speaker: "Melis", text: "And that is the second half of the same problem. The design is right and the calendar is wrong, because the measurement that triggers it takes two quarters to arrive." },
       { speaker: "Arda", text: "Could that be fixed?" },
       { speaker: "Melis", text: "With rules that start themselves on a number rather than on a vote. It has been proposed in every decade I have read about and it loses the vote every time." },
@@ -325,7 +325,7 @@ export const enC1U21: SkillExercise[] = [
         text: "Duyduğun cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["Albeit countercyclical, the fiscal policy arrives too late.", "Albeit countercyclical, the fiscal policy arrives too late"],
+        accept: ["Although countercyclical, the fiscal policy arrives too late.", "Although countercyclical, the fiscal policy arrives too late"],
         explain: "Tasarım doğru, takvim yanlış.",
       },
       {
@@ -535,14 +535,14 @@ export const enC1U21: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Para politikası ne kadar işlese de politika faizi gençlere zarar veriyor.",
-        answer: "Much as the monetary policy works, the key interest rate hurts the young.",
+        tr: "Para politikasını ne kadar olumlu bulsam da politika faizi gençlere zarar veriyor.",
+        answer: "Much as I welcome the monetary policy, the key interest rate hurts the young.",
         hint: "İki yarı da doğru; ikincisi aynı paragrafta pek durmuyor.",
       },
       {
         kind: "build",
         tr: "Konjonktür karşıtı olsa da maliye politikası çok geç geliyor.",
-        answer: "Albeit countercyclical, the fiscal policy arrives too late.",
+        answer: "Although countercyclical, the fiscal policy arrives too late.",
         hint: "Tasarım doğru, takvim yanlış.",
       },
     ],

@@ -12,15 +12,15 @@ import type { SkillExercise } from "../types";
  *           tout, presumed, precarious, incalculable, perceptible,
  *           erratic, sporadic, opaque, multifaceted.
  *   Kalıp:  Granted, the figure is high, albeit explicable. ·
- *           Much as I weigh up both sides, one is stronger. ·
+ *           Much as I'd like to weigh up both sides equally, one is clearly stronger. ·
  *           She would concede the point, whereas he would gloss over it. ·
- *           To have at one's disposal is not to use. ·
- *           They grapple with a question that will not catch on. ·
+ *           To have money at one's disposal is not to use it. ·
+ *           They grapple with why the idea did not catch on. ·
  *           Let it play out before you call it damage control. ·
  *           He claimed it; she conceded it; they alleged it. ·
- *           The rebuttal said less than the verb that carried it. ·
- *           They unmask a mouthpiece without naming one. ·
- *           The figure may well be presumed. ·
+ *           The rebuttal itself said less than the verb used to report it. ·
+ *           They unmask the mouthpiece without naming names. ·
+ *           The figure may well be higher than presumed. ·
  *           It might have been expected to stay precarious. ·
  *           The risk would tend to be incalculable.
  *
@@ -73,8 +73,8 @@ export const enC1U02: SkillExercise[] = [
       "„Claimed“ puts doubt on it. Whatever follows is what the speaker says, and the reader is told, quietly, that nobody has checked. „Conceded“ does the opposite for the speaker and the same for the fact: she did not want to say it, so it is probably true. „Alleged“ says the thing is unproven and may be disputed in a court, and no journalist uses it by accident.\n" +
       "None of those three is neutral, and that is the point of the unit. The neutral verb is „said“, and it is the only one, and a page that needs more variety than „said“ provides has to buy that variety with judgment.\n" +
       "So the choice is not stylistic. „Pointed out“ makes the following clause a fact. „Admitted“ makes it damaging. „Insisted“ makes it repeated and slightly desperate. „Noted“ makes it small. Each of them arrives without an adjective and without a source, and the reader receives the verdict before reaching the claim.\n" +
-      "The rebuttal said less than the verb that carried it. That sentence is the whole problem in one line: a reply can be quoted in full and still lose, because the reporting verb was chosen by somebody else.\n" +
-      "They unmask a mouthpiece without naming one. Here two of the same kind sit together, and „unmask“ is doing to the subject what „alleged“ does to the object.\n" +
+      "The rebuttal itself said less than the verb used to report it. That sentence is the whole problem in one line: a reply can be quoted in full and still lose, because the reporting verb was chosen by somebody else.\n" +
+      "They unmask the mouthpiece without naming names. Here two of the same kind sit together, and „unmask“ is doing to the subject what „alleged“ does to the object.\n" +
       "What follows from this is uncomfortable. A writer cannot be invisible in reported speech. There is no way to report without choosing, and the only honest options are to use „said“ and be dull, or to choose the loaded verb and know that the choice has a byline on it whether or not the sentence carries one.",
     questions: [
       {
@@ -112,7 +112,7 @@ export const enC1U02: SkillExercise[] = [
         items: [
           "He claimed it; she conceded it; they alleged it.",
           "The neutral verb is „said“.",
-          "The rebuttal said less than the verb that carried it.",
+          "The rebuttal itself said less than the verb used to report it.",
           "A writer cannot be invisible in reported speech.",
         ],
         explain: "Üç yargı, yansız olan, bedeli, en sonda sonuç.",
@@ -171,9 +171,9 @@ export const enC1U02: SkillExercise[] = [
     ],
     minutes: 11,
     text:
-      "The figure may well be presumed. Four words of verb and three of them are doing something other than naming an action.\n" +
-      "„May“ gives possibility. „Well“ raises it: not merely possible but reasonably likely, and „may well“ is one of the few places in English where an adverb changes a modal rather than a verb. „Be presumed“ is a passive with no agent, so the presuming is done by nobody in particular.\n" +
-      "Unpacked, the sentence says: it is quite likely that people assume this, and I am not one of the people. That is a great deal of work for a line that looks like a statistic.\n" +
+      "The figure may well be higher than presumed. The verb is only „may well be“, and not one of its three words names an action.\n" +
+      "„May“ gives possibility. „Well“ raises it: not merely possible but reasonably likely, and „may well“ is one of the few places in English where an adverb changes a modal rather than a verb. „Than presumed“ is a passive with no agent, so the presuming is done by nobody in particular.\n" +
+      "Unpacked, the sentence says: it is quite likely that the true figure is higher than people assume, and I am not one of the people. That is a great deal of work for a line that looks like a statistic.\n" +
       "It might have been expected to stay precarious. Now four layers. „Might“ is weaker than „may“. „Have been“ puts it before now. „Expected“ brings in a second, invisible group of people. „To stay“ carries the whole claim, and by the time the reader reaches it the writer has stepped back three times.\n" +
       "The risk would tend to be incalculable. „Would“ makes it hypothetical, „tend to“ makes it a tendency rather than a fact, and „incalculable“ is the only content word in the sentence.\n" +
       "These stacks are the native register of a certain kind of report, and they are not dishonest in themselves. A writer who genuinely does not know how likely something is has to say so, and English gives him a fine instrument for it.\n" +
@@ -201,11 +201,11 @@ export const enC1U02: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The figure may ___ be presumed.",
+        text: "The figure may ___ be higher than presumed.",
         options: [],
         answer: 0,
         accept: ["well"],
-        explain: "„The figure may well be presumed.“",
+        explain: "„The figure may well be higher than presumed.“",
       },
       {
         kind: "order",
@@ -213,7 +213,7 @@ export const enC1U02: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "The figure may well be presumed.",
+          "The figure may well be higher than presumed.",
           "It might have been expected to stay precarious.",
           "The risk would tend to be incalculable.",
           "Two layers in a sentence, one such sentence in a paragraph.",
@@ -267,7 +267,7 @@ export const enC1U02: SkillExercise[] = [
       { speaker: "Ilgın", text: "And „albeit“ is not a full clause." },
       { speaker: "Devrim", text: "It takes an adjective or a phrase and never a subject. „Albeit explicable“, not „albeit it is explicable“, and that shortness is why it can sit at the end without slowing anything." },
       { speaker: "Ilgın", text: "The second line is longer." },
-      { speaker: "Devrim", text: "Much as I weigh up both sides, one is stronger. „Much as“ is a concession with a person in it: I did the weighing, and I am telling you the result anyway." },
+      { speaker: "Devrim", text: "Much as I'd like to weigh up both sides equally, one is clearly stronger. „Much as“ is a concession with a person in it: I would like to be fair to both, and I am telling you the result anyway." },
       { speaker: "Ilgın", text: "It sounds fairer than it is." },
       { speaker: "Devrim", text: "It sounds fairer than it is, and that is the whole device. A reader who has been shown the weighing accepts the verdict more easily than one who has only been given it." },
       { speaker: "Ilgın", text: "And the third?" },
@@ -308,8 +308,8 @@ export const enC1U02: SkillExercise[] = [
         text: "Duyduğun cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["Much as I weigh up both sides, one is stronger.", "Much as I weigh up both sides, one is stronger"],
-        explain: "Ödün, ama içinde bir kişi var: tartan ben.",
+        accept: ["Much as I'd like to weigh up both sides equally, one is clearly stronger.", "Much as I'd like to weigh up both sides equally, one is clearly stronger"],
+        explain: "Ödün, ama içinde bir kişi var: eşit tartmak isteyen ben.",
       },
       {
         kind: "short_answer",
@@ -352,9 +352,9 @@ export const enC1U02: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Yalın", text: "To have at one's disposal is not to use. Six words of fixed phrase and not one of them can be swapped for a synonym." },
+      { speaker: "Yalın", text: "To have money at one's disposal is not to use it. „At one's disposal“ is a fixed phrase and not one of its words can be swapped for a synonym." },
       { speaker: "Yalın", text: "„At one's command“ exists and means something near it. „At one's disposal“ is the one that goes with resources, and a reader hears the difference before deciding what it is." },
-      { speaker: "Yalın", text: "They grapple with a question that will not catch on. Two settled pairings in one line: you grapple WITH a problem, and an idea catches ON." },
+      { speaker: "Yalın", text: "They grapple with why the idea did not catch on. Two settled pairings in one line: you grapple WITH a problem, and an idea catches ON." },
       { speaker: "Yalın", text: "Neither preposition is guessable. „Grapple against“ and „catch up“ both exist and both say something else, and that is the danger with this class of phrase." },
       { speaker: "Yalın", text: "Let it play out before you call it damage control. „Play out“ means run to its end; „damage control“ is a noun that arrived from one field and settled in every other." },
       { speaker: "Yalın", text: "What makes these hard is not the meaning. A learner at this level can work out every one of them from context on the first reading." },
@@ -383,11 +383,11 @@ export const enC1U02: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "They grapple ___ a question that will not catch on.",
+        text: "They grapple ___ why the idea did not catch on.",
         options: [],
         answer: 0,
         accept: ["with"],
-        explain: "„They grapple with a question that will not catch on.“",
+        explain: "„They grapple with why the idea did not catch on.“",
       },
       {
         kind: "dictation",
@@ -436,20 +436,20 @@ export const enC1U02: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Karşı açıklama, onu taşıyan fiilden daha azını söyledi.",
-        answer: "The rebuttal said less than the verb that carried it.",
+        tr: "Karşı açıklamanın kendisi, onu aktaran fiilden daha azını söylüyordu.",
+        answer: "The rebuttal itself said less than the verb used to report it.",
         hint: "Tam alıntılanan bir yanıt yine de kaybedebiliyor.",
       },
       {
         kind: "build",
-        tr: "Bir sözcünün maskesini adını anmadan düşürüyorlar.",
-        answer: "They unmask a mouthpiece without naming one.",
+        tr: "İsim vermeden sözcünün maskesini düşürüyorlar.",
+        answer: "They unmask the mouthpiece without naming names.",
         hint: "Fiil, nesneye „alleged“ın yaptığını özneye yapıyor.",
       },
       {
         kind: "build",
-        tr: "Rakam pekâlâ varsayılıyor olabilir.",
-        answer: "The figure may well be presumed.",
+        tr: "Rakam pekâlâ varsayılandan yüksek olabilir.",
+        answer: "The figure may well be higher than presumed.",
         hint: "„well“ kipi güçlendiriyor; edilgende fail yok.",
       },
       {
@@ -490,9 +490,9 @@ export const enC1U02: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Her ne kadar iki tarafı da tartsam da biri daha güçlü.",
-        answer: "Much as I weigh up both sides, one is stronger.",
-        hint: "İçinde bir kişi olan ödün: tartan ben.",
+        tr: "İki tarafı ne kadar eşit tartmak istesem de biri açıkça daha güçlü.",
+        answer: "Much as I'd like to weigh up both sides equally, one is clearly stronger.",
+        hint: "İçinde bir kişi olan ödün: eşit tartmak isteyen ben.",
       },
       {
         kind: "build",

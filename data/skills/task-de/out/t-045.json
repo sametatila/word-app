@@ -50,9 +50,9 @@
   "de": "In die Novelle schleicht sich ein Monolog."
  },
  {
-  "tr": "Taahhütnameyi bağlayan yalnızca bu.",
+  "tr": "Sponsoru taahhütnameye bağlayan tek şey bu madde.",
   "kind": "build.tr",
-  "de": "Nur dies bindet die Verpflichtungserklärung."
+  "de": "Nur diese Klausel bindet den Bürgen an die Verpflichtungserklärung."
  },
  {
   "tr": "Likidite önce düşme eğiliminde olur.",
@@ -160,9 +160,9 @@
   "de": "Ein Gespräch zu straffen heißt nicht, eine Frage zu umgehen."
  },
  {
-  "tr": "Borçluluk ne kadar büyümüş olsa da müvekkil ödeme aczinde değil.",
+  "tr": "Borçluluğu ne kadar kabul etsek de müvekkil ödeme aczinde değil.",
   "kind": "build.tr",
-  "de": "So sehr die Verschuldung auch gewachsen ist, der Mandant ist nicht zahlungsunfähig."
+  "de": "So sehr wir die Verschuldung anerkennen, die Mandantin ist nicht zahlungsunfähig."
  },
  {
   "tr": "Kesin bir dille söylenince içi boş bir söz iddia gibi duyuluyor.",
@@ -265,9 +265,9 @@
   "de": "Die Verneinung steht im Subjekt; „be“ bleibt, wie es ist."
  },
  {
-  "tr": "Büyümeyi kabul eden, sonucu reddeden menteşe.",
+  "tr": "Borcu kabul eden, sonucu reddeden menteşe.",
   "kind": "build.hint",
-  "de": "Das Scharnier räumt das Wachstum ein und weist den Schluss zurück."
+  "de": "Das Scharnier räumt die Schuld ein und weist den Schluss zurück."
  },
  {
   "tr": "İkinci yarıda fiil yok; yerini virgül tutuyor.",

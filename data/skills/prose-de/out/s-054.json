@@ -65,9 +65,9 @@
   "de": "Ist es freiwillig, wenn niemand gezwungen hat? Und wo steht die Einschränkung?"
  },
  {
-  "tr": "Fonlanan ile fonlanmayan aynı cümlede. Ek neyi ele veriyor?",
+  "tr": "Başarı ile başarısızlık aynı cümlede. Ek neyi ele veriyor?",
   "kind": "intro",
-  "de": "Das Finanzierte und das Nichtfinanzierte im selben Satz. Was verrät der Zusatz?"
+  "de": "Erfolg und Misserfolg im selben Satz. Was verrät der Zusatz?"
  },
  {
   "tr": "Tek bir önlem, üç ad. Adı koyan tartışmayı nasıl kazanıyor?",
@@ -135,14 +135,19 @@
   "de": "Zwei Präpositionen ohne Objekt; die Verweisebene."
  },
  {
+  "tr": "Yukarıya ve aşağıya gönderen iki ortaç öbeği: gönderme katmanı.",
+  "kind": "explain",
+  "de": "Zwei Partizipgruppen, die nach oben und nach unten verweisen: die Verweisebene."
+ },
+ {
   "tr": "„„Work intensification“ counts what went in.“",
   "kind": "explain",
   "de": "„„Work intensification“ counts what went in.“"
  },
  {
-  "tr": "Meblağ, ad değişimi, iltifat; en sonda döngü.",
+  "tr": "Hüküm, ad değişimi, iltifat; en sonda döngü.",
   "kind": "explain",
-  "de": "Die Summe, der Namenswechsel, das Kompliment; ganz am Ende der Zirkel."
+  "de": "Das Urteil, der Namenswechsel, das Kompliment; ganz am Ende der Zirkel."
  },
  {
   "tr": "„„spin it off“ is the only order anybody writes…“",
@@ -360,11 +365,6 @@
   "de": "überquert"
  },
  {
-  "tr": "intihal",
-  "kind": "gloss.tr",
-  "de": "das Plagiat"
- },
- {
   "tr": "kayıyor",
   "kind": "gloss.tr",
   "de": "rutscht"
@@ -463,11 +463,6 @@
   "tr": "dil normu",
   "kind": "gloss.tr",
   "de": "die Sprachnorm"
- },
- {
-  "tr": "fonlanmış",
-  "kind": "gloss.tr",
-  "de": "finanziert"
  },
  {
   "tr": "iki yönde",
@@ -690,9 +685,9 @@
   "de": "woraufhin"
  },
  {
-  "tr": "çevrilemezlik",
+  "tr": "din",
   "kind": "gloss.tr",
-  "de": "die Unübersetzbarkeit"
+  "de": "die Religion"
  },
  {
   "tr": "esnekleştirme",
@@ -783,11 +778,6 @@
   "tr": "ki bunun üzerine",
   "kind": "gloss.tr",
   "de": "worauf"
- },
- {
-  "tr": "önceki bir sayfa",
-  "kind": "gloss.tr",
-  "de": "eine frühere Seite"
  },
  {
   "tr": "profesyonelleşme",

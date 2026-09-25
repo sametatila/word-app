@@ -13,10 +13,10 @@ import type { SkillExercise } from "../types";
  *           reduction, decarbonization, climate neutrality, energy transition,
  *           pollutant load, overexploitation, carbon sink, species extinction,
  *           permafrost, heat island, rewild.
- *   Kalıp:  The climate adaptation above becomes climate justice below. ·
- *           That environmental compatibility, as noted, is the environmental ethics of an earlier page. ·
+ *   Kalıp:  The climate adaptation described above raises the questions of climate justice discussed below. ·
+ *           Environmental compatibility, as noted earlier, is also a question of environmental ethics. ·
  *           Where a region is import-dependent, no measure works across the board. ·
- *           The right to save seed survives as custom, genetic engineering as a patent. ·
+ *           The right to save seed survives as custom, the seed company's claim as a patent. ·
  *           They reforest the hillside; the plain, they deforest. ·
  *           The precipitation fell; the harvest did not. ·
  *           In the brochure it is emission reduction; in the study, decarbonization. ·
@@ -375,9 +375,9 @@ export const enC1U18: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Hakan", text: "The climate adaptation above becomes climate justice below. Two pointers in one line and a reader who knows the report can follow both without stopping." },
+      { speaker: "Hakan", text: "The climate adaptation described above raises the questions of climate justice discussed below. Two pointers in one line and a reader who knows the report can follow both without stopping." },
       { speaker: "Hakan", text: "A term that changes between two chapters is not a problem. A term that changes without a pointer is, and that is the whole job of these words." },
-      { speaker: "Hakan", text: "That environmental compatibility, as noted, is the environmental ethics of an earlier page. „As noted“ is a promise about an earlier page." },
+      { speaker: "Hakan", text: "Environmental compatibility, as noted earlier, is also a question of environmental ethics. „As noted earlier“ is a promise about an earlier page." },
       { speaker: "Hakan", text: "I check it. Half the time nothing was noted, and then the phrase has made a new claim look like a reminder of an old one." },
       { speaker: "Hakan", text: "In a report with nine authors that is not dishonesty. It is what happens when chapter four was written after chapter seven." },
       { speaker: "Hakan", text: "Where a region is import-dependent, no measure works across the board. This is the line I would put in front of every national plan." },
@@ -419,7 +419,7 @@ export const enC1U18: SkillExercise[] = [
         text: "Duyduğun cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["The climate adaptation above becomes climate justice below.", "The climate adaptation above becomes climate justice below"],
+        accept: ["The climate adaptation described above raises the questions of climate justice discussed below.", "The climate adaptation described above raises the questions of climate justice discussed below"],
         explain: "İki edat nesnesiz kalmış; gönderme katmanı.",
       },
       {
@@ -463,8 +463,8 @@ export const enC1U18: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Tohumu yeniden ekme hakkı âdet olarak, genetik mühendisliği patent olarak sağ kalıyor.",
-        answer: "The right to save seed survives as custom, genetic engineering as a patent.",
+        tr: "Tohumu yeniden ekme hakkı âdet olarak, tohum şirketinin talebi patent olarak sağ kalıyor.",
+        answer: "The right to save seed survives as custom, the seed company's claim as a patent.",
         hint: "İkinci yarıda fiil yok; iki şey iki ayrı biçimde sürüyor.",
       },
       {
@@ -504,7 +504,7 @@ export const enC1U18: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 18,
-    title: "The climate adaptation above becomes climate justice below",
+    title: "The climate adaptation described above",
     genre: "info",
     intro: "Raporun gönderme katmanı ve kirleten kim.",
     gloss: [
@@ -519,15 +519,15 @@ export const enC1U18: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Yukarıdaki iklime uyum aşağıda iklim adaleti oluyor.",
-        answer: "The climate adaptation above becomes climate justice below.",
-        hint: "İki edat nesnesiz kalmış ve ismin ardına asılmış.",
+        tr: "Yukarıda anlatılan iklime uyum, aşağıda ele alınan iklim adaleti sorularını doğuruyor.",
+        answer: "The climate adaptation described above raises the questions of climate justice discussed below.",
+        hint: "İki edat nesnesiz kalmış; ortaçla birlikte ismin ardına asılmış.",
       },
       {
         kind: "build",
-        tr: "O çevreyle uyumluluk, belirtildiği gibi, önceki bir sayfanın çevre etiğidir.",
-        answer: "That environmental compatibility, as noted, is the environmental ethics of an earlier page.",
-        hint: "„As noted“ önceki bir sayfa hakkında bir söz.",
+        tr: "Çevreyle uyumluluk, daha önce belirtildiği gibi, aynı zamanda bir çevre etiği sorusudur.",
+        answer: "Environmental compatibility, as noted earlier, is also a question of environmental ethics.",
+        hint: "„As noted earlier“ daha önceki bir sayfa hakkında bir söz.",
       },
       {
         kind: "build",

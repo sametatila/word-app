@@ -13,11 +13,11 @@ import type { SkillExercise } from "../types";
  *           work intensification, flexibilization, precarization,
  *           standardization, rationalization, power structure, power
  *           imbalance, delegation, subordination.
- *   Kalıp:  The language change above becomes a language norm below. ·
- *           That semantic change, as noted, is the language usage of an earlier page. ·
+ *   Kalıp:  The language change described above becomes the language norm discussed below. ·
+ *           This semantic change, as noted earlier, comes from everyday language usage. ·
  *           Where the semantic context is missing, the literal meaning does not hold. ·
  *           The diaspora keeps the heritage language; the enclave, the silence. ·
- *           Untranslatability survives as spirituality, a crisis of faith as a question. ·
+ *           The old religion survives as spirituality, the crisis of faith as a question. ·
  *           The social stratum changed; its values did not. ·
  *           In the report it is an efficiency gain; on the floor, work intensification. ·
  *           What management calls flexibilization, the union calls precarization. ·
@@ -104,7 +104,7 @@ export const enC1U13: SkillExercise[] = [
       "So this is a good moment for a reader coming from German to feel at home and then to be careful. German built the same family out of the same parts: „wobei“, „wodurch“, „wohingegen“, „worauf“. The mechanism is identical and the meanings line up almost item for item, which is rare enough in this course to be worth saying plainly.\n" +
       "What differs is what a learner can see. German writes the parts and keeps them visible: both halves are still there, and a reader who does not know the word can take it apart and come out roughly right. English fused its versions centuries ago and then let the spelling settle, and „whereas“ cannot be taken apart by anybody who does not already know the answer. „Where“ plus „as“ predicts nothing about holding two things apart.\n" +
       "That is the lesson and it has a practical edge. A word you can take apart is a word you can guess; a word you cannot is a word you have to be taught, and English keeps a long list of these in exactly the registers where guessing is most tempting, because the words are long and look technical.\n" +
-      "The language change above becomes a language norm below. And notice what has changed in that sentence: nothing except the subject matter. The shape is the one from an earlier unit.\n" +
+      "The language change described above becomes the language norm discussed below. And notice what has changed in that sentence: nothing except the subject matter. The shape is the one from an earlier unit.\n" +
       "From here on in this level the shapes stop being new. The vocabulary is the variable, and a shape you can only use on the subject you first met it on has not been learned yet.",
     questions: [
       {
@@ -387,7 +387,7 @@ export const enC1U13: SkillExercise[] = [
       { speaker: "Nesrin", text: "The verb is the same one, which is the point. Both of them are keeping something, and what is kept is not the same thing at all." },
       { speaker: "Nesrin", text: "A language is kept in a kitchen and it shows: a grandmother speaks it, a child answers in another, and everybody in the room can hear the exchange rate." },
       { speaker: "Nesrin", text: "A silence is kept in the same kitchen and nothing shows, because a silence has no speakers and leaves no trace on any form." },
-      { speaker: "Nesrin", text: "Untranslatability survives as spirituality, a crisis of faith as a question. Two more, gapped the same way, and both of them are about what happens to a thing that cannot be carried across." },
+      { speaker: "Nesrin", text: "The old religion survives as spirituality, the crisis of faith as a question. Two more, gapped the same way, and both of them are about what happens to a faith that no longer holds." },
       { speaker: "Nesrin", text: "What cannot be said in the second language does not disappear. It moves into whatever category the second language does have room for, and that category is usually a large and vague one." },
       { speaker: "Nesrin", text: "The social stratum changed; its values did not. This is the line the whole lesson exists for, and it is a finding rather than an opinion." },
       { speaker: "Nesrin", text: "A family can move two strata in one generation. The wage changes in a year, the apartment in three, and what is said at the table changes over a much longer period." },
@@ -471,8 +471,8 @@ export const enC1U13: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Yukarıdaki dil değişimi aşağıda bir dil normuna dönüşüyor.",
-        answer: "The language change above becomes a language norm below.",
+        tr: "Yukarıda anlatılan dil değişimi, aşağıda ele alınan dil normuna dönüşüyor.",
+        answer: "The language change described above becomes the language norm discussed below.",
         hint: "Biçim eski; değişen yalnız konu.",
       },
       {
@@ -518,7 +518,7 @@ export const enC1U13: SkillExercise[] = [
     gloss: [
       { de: "a heritage language", tr: "köken dili" },
       { de: "an enclave", tr: "enklav" },
-      { de: "untranslatability", tr: "çevrilemezlik" },
+      { de: "religion", tr: "din" },
       { de: "a social stratum", tr: "toplumsal katman" },
       { de: "a power imbalance", tr: "güç dengesizliği" },
       { de: "subordination", tr: "boyun eğme" },
@@ -533,8 +533,8 @@ export const enC1U13: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Çevrilemezlik maneviyat olarak, inanç krizi bir soru olarak sağ kalıyor.",
-        answer: "Untranslatability survives as spirituality, a crisis of faith as a question.",
+        tr: "Eski din maneviyat olarak, inanç krizi bir soru olarak sağ kalıyor.",
+        answer: "The old religion survives as spirituality, the crisis of faith as a question.",
         hint: "Taşınamayan şey yok olmuyor, yer değiştiriyor.",
       },
       {

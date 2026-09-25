@@ -21,7 +21,7 @@ import type { SkillExercise } from "../types";
  *           If the insurance coverage had been wider, we would have claimed. ·
  *           It seems to be settled, in view of your letter. ·
  *           Apparently we can close this, provided that the file is complete. ·
- *           On balance I would arguably make clear one last point.
+ *           On balance, one last point is arguably worth making.
  *
  * Ünitenin öğretme noktası „PROVIDED THAT“: koşulun üçüncü biçimi ve „if“
  * ile aynı şey değil — „if“ bir durumu betimliyor, „provided that“ bir
@@ -79,7 +79,7 @@ export const enB2U25: SkillExercise[] = [
     ],
     minutes: 10,
     text:
-      "It seems to be settled, in view of your letter. Apparently we can close this, provided that the file is complete. On balance I would arguably make clear one last point.\n" +
+      "It seems to be settled, in view of your letter. Apparently we can close this, provided that the file is complete. On balance, one last point is arguably worth making.\n" +
       "Two of those three are old friends by now. The third has a word in it this course has not used: „provided that“.\n" +
       "„Provided that“ is a condition and it is not „if“. „If the file is complete, we can close this“ describes a situation. „Provided that the file is complete“ sets a condition — it is something I am requiring, and the difference is who is speaking.\n" +
       "„In view of“ does the opposite job. It gives a reason and it points backwards, at something already on the table: your letter. A sentence can hold both, and then it is a whole negotiation in twenty words.\n" +
@@ -417,7 +417,7 @@ export const enB2U25: SkillExercise[] = [
       { de: "disappears", tr: "yok oluyor" },
       { de: "in view of", tr: "göz önüne alındığında" },
       { de: "provided that", tr: "şartıyla" },
-      { de: "make clear", tr: "açıkça belirtmek" },
+      { de: "worth making", tr: "belirtilmeye değer" },
       { de: "misleading", tr: "yanıltıcı" },
     ],
     minutes: 9,
@@ -436,8 +436,8 @@ export const enB2U25: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Sonuçta son bir noktayı açıkça belirtirdim.",
-        answer: "On balance I would arguably make clear one last point.",
+        tr: "Her şey tartıldığında son bir nokta belki de belirtilmeye değer.",
+        answer: "On balance, one last point is arguably worth making.",
         hint: "İki çekince; söylediği olan „on balance“.",
       },
       {

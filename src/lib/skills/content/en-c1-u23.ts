@@ -13,8 +13,8 @@ import type { SkillExercise } from "../types";
  *           cumbersome, rhetoric, pathos, stylistic device, break in style,
  *           line of argument, flaw in reasoning, prevailing doctrine,
  *           school of thought, contentious issue, debate among experts.
- *   Kalıp:  The market penetration above becomes market saturation below. ·
- *           That competitiveness, as noted, is the monopoly position of an earlier page. ·
+ *   Kalıp:  The market penetration described above leads to the market saturation discussed below. ·
+ *           Our competitiveness, as noted earlier, rests on a monopoly position. ·
  *           Where a rival can undercut us, no price fixing helps. ·
  *           The bidding process survives as a form, the permitting process as a delay. ·
  *           The consortium builds; the operating model, it does not name. ·
@@ -343,7 +343,7 @@ export const enC1U23: SkillExercise[] = [
     unit: 23,
     title: "Holding a strategy paper together",
     genre: "monologue",
-    intro: "Pazara nüfuz aşağıda doygunluğa dönüyor. Gönderme neyi kurtarıyor?",
+    intro: "Pazara nüfuz aşağıda doygunluğa yol açıyor. Gönderme neyi kurtarıyor?",
     gloss: [
       { de: "itself", tr: "kendisi" },
       { de: "calculated", tr: "hesaplanan" },
@@ -363,10 +363,10 @@ export const enC1U23: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Cenk", text: "The market penetration above becomes market saturation below. One number in chapter two and the same number in chapter six, under two names." },
+      { speaker: "Cenk", text: "The market penetration described above leads to the market saturation discussed below. One number in chapter two and the same number in chapter six, under two names." },
       { speaker: "Cenk", text: "Penetration is a share that is still growing. Saturation is the same share when the growth has stopped, and nothing about the number itself tells you which you are looking at." },
       { speaker: "Cenk", text: "Only the second reading has a ceiling in it, and the whole strategy in that paper depends on which of the two chapters the reader believes." },
-      { speaker: "Cenk", text: "That competitiveness, as noted, is the monopoly position of an earlier page. „As noted“ again, and again I check it." },
+      { speaker: "Cenk", text: "Our competitiveness, as noted earlier, rests on a monopoly position. „As noted earlier“ again, and again I check it." },
       { speaker: "Cenk", text: "When it is true, the sentence is honest and useful: it tells the reader that a word has changed its color between two chapters." },
       { speaker: "Cenk", text: "When it is not true, a claim that nobody has made yet is being carried into the reader as a reminder of something they already agreed to." },
       { speaker: "Cenk", text: "Where a rival can undercut us, no price fixing helps. This is the line I would keep out of any paper that leaves the building." },
@@ -407,8 +407,8 @@ export const enC1U23: SkillExercise[] = [
         text: "Duyduğun cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["The market penetration above becomes market saturation below.", "The market penetration above becomes market saturation below"],
-        explain: "İki edat nesnesiz kalmış; gönderme katmanı.",
+        accept: ["The market penetration described above leads to the market saturation discussed below.", "The market penetration described above leads to the market saturation discussed below"],
+        explain: "Yukarıya ve aşağıya gönderen iki ortaç öbeği: gönderme katmanı.",
       },
       {
         kind: "short_answer",
@@ -525,15 +525,15 @@ export const enC1U23: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Yukarıdaki pazara nüfuz aşağıda pazar doygunluğuna dönüşüyor.",
-        answer: "The market penetration above becomes market saturation below.",
+        tr: "Yukarıda anlatılan pazara nüfuz, aşağıda ele alınan pazar doygunluğuna yol açıyor.",
+        answer: "The market penetration described above leads to the market saturation discussed below.",
         hint: "Aynı sayı, iki bölüm, iki ad.",
       },
       {
         kind: "build",
-        tr: "O rekabet gücü, belirtildiği gibi, önceki bir sayfanın tekel konumudur.",
-        answer: "That competitiveness, as noted, is the monopoly position of an earlier page.",
-        hint: "„As noted“ önceki bir sayfa hakkında bir söz.",
+        tr: "Rekabet gücümüz, daha önce belirtildiği gibi, bir tekel konumuna dayanıyor.",
+        answer: "Our competitiveness, as noted earlier, rests on a monopoly position.",
+        hint: "„As noted earlier“ daha önceki bir sayfa hakkında bir söz.",
       },
     ],
   },

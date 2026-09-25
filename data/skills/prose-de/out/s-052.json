@@ -295,6 +295,11 @@
   "de": "die Wendung"
  },
  {
+  "tr": "yazılı kural",
+  "kind": "gloss.tr",
+  "de": "die schriftliche Regel"
+ },
+ {
   "tr": "kulak",
   "kind": "gloss.tr",
   "de": "das Ohr"

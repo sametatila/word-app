@@ -15,15 +15,15 @@ import type { SkillExercise } from "../types";
  *   Kalıp:  In the arts section it is a subculture; in the ministry, cultural policy. ·
  *           What one calls a cultural scene, another calls a parallel society. ·
  *           High culture is a register; dominant culture is a claim. ·
- *           What marginalization does is name a marginal group. ·
+ *           What marginalization does is create a marginal group. ·
  *           Behind the demarcation line stands xenophobia. ·
  *           Statelessness we inherit; foreign rule we remember. ·
- *           The principle of equality demands that human dignity be untouchable. ·
- *           Were it not for educational inequality, the class society would fade. ·
- *           They ask that every participation model show solidarity. ·
- *           Much as we call it acculturation, they mean assimilation. ·
+ *           The principle of equality demands that human dignity be untouchable for all, not just for some. ·
+ *           Were it not for educational inequality, class society would fade. ·
+ *           They ask that every participation model give tenants a vote. ·
+ *           Much as we like to call it acculturation, they mean assimilation. ·
  *           The integration course, albeit useful, is not a culture of welcome. ·
- *           Albeit a sign of hybridity, adaptability is asked of one side only.
+ *           Although a sign of hybridity, adaptability is asked of one side only.
  *
  * Ünitenin tek öğretme noktası GENEL ÖZNE. İngilizcede „hiç kimse“ demenin
  * dört yolu var — „one“ (resmî, yazarla iddia arasına duvar koyuyor), „we“
@@ -193,8 +193,8 @@ export const enC1U11: SkillExercise[] = [
     ],
     minutes: 12,
     text:
-      "What marginalization does is name a marginal group. The shape is one this level has met before, and here it is doing something the earlier examples were not.\n" +
-      "„Marginalization“ is an abstract noun in the front slot of a sentence, and it has been given a verb of its own. It does something. It names. And because it acts, nobody else has to: no ministry, no committee, no policy with a date on it and a person answerable for it.\n" +
+      "What marginalization does is create a marginal group. The shape is one this level has met before, and here it is doing something the earlier examples were not.\n" +
+      "„Marginalization“ is an abstract noun in the front slot of a sentence, and it has been given a verb of its own. It does something. It creates. And because it acts, nobody else has to: no ministry, no committee, no policy with a date on it and a person answerable for it.\n" +
       "That is the first of the two ways this unit gets a sentence written without an agent, and the generic subject from the first lesson is the other. The two look nothing alike and do the same work.\n" +
       "There is a use for it. A process really can be larger than the people inside it, and a paragraph that names four officials where a whole system is at work has told the reader something false. The trouble is that the shape is just as comfortable when the agent is known, and a writer reaches for it most easily in exactly that case.\n" +
       "Behind the demarcation line stands xenophobia. Here the front slot has gone to a place, and again a verb has been given to something that cannot act. Read it as weather and you will have read it the way it was written.\n" +
@@ -235,7 +235,7 @@ export const enC1U11: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "What marginalization does is name a marginal group.",
+          "What marginalization does is create a marginal group.",
           "Behind the demarcation line stands xenophobia.",
           "Statelessness we inherit; foreign rule we remember.",
           "Every such sentence has saved somebody from being named.",
@@ -280,7 +280,7 @@ export const enC1U11: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Defne", text: "Much as we call it acculturation, they mean assimilation. Two subjects in one line, and the whole debate is in the gap between them." },
+      { speaker: "Defne", text: "Much as we like to call it acculturation, they mean assimilation. Two subjects in one line, and the whole debate is in the gap between them." },
       { speaker: "Onur", text: "Is that fair to the other side?" },
       { speaker: "Defne", text: "It is fair if the two words really are being used for the same program. If they are not, the line is a verdict with a translation put in front of it." },
       { speaker: "Onur", text: "„Acculturation“ does sound softer." },
@@ -290,7 +290,7 @@ export const enC1U11: SkillExercise[] = [
       { speaker: "Onur", text: "A course has a schedule and a culture does not." },
       { speaker: "Defne", text: "A course also has an end date, which is the part that matters. Nobody has ever finished a culture of welcome and been handed a certificate for it." },
       { speaker: "Onur", text: "And the last line?" },
-      { speaker: "Defne", text: "Albeit a sign of hybridity, adaptability is asked of one side only. Read the second half slowly, because everything the sentence is about is in the last three words." },
+      { speaker: "Defne", text: "Although a sign of hybridity, adaptability is asked of one side only. Read the second half slowly, because everything the sentence is about is in the last three words." },
       { speaker: "Onur", text: "„Of one side only.“" },
       { speaker: "Defne", text: "Of one side only. A word that means two directions has been measured in one, and the concession at the front makes the reader feel the balance was already considered." },
     ],
@@ -327,7 +327,7 @@ export const enC1U11: SkillExercise[] = [
         text: "Duyduğun cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["Much as we call it acculturation, they mean assimilation.", "Much as we call it acculturation, they mean assimilation"],
+        accept: ["Much as we like to call it acculturation, they mean assimilation.", "Much as we like to call it acculturation, they mean assimilation"],
         explain: "Bir satırda iki özne: „we“ ve „they“.",
       },
       {
@@ -368,12 +368,12 @@ export const enC1U11: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Ela", text: "The principle of equality demands that human dignity be untouchable. Notice who is doing the demanding in that sentence." },
+      { speaker: "Ela", text: "The principle of equality demands that human dignity be untouchable for all, not just for some. Notice who is doing the demanding in that sentence." },
       { speaker: "Ela", text: "A principle is. Not a court, not an author, not the committee that wrote the draft — a principle, and a principle has never been answerable to anybody." },
       { speaker: "Ela", text: "This is the same move as the abstract subject in the last lesson, and here it is doing honest work, because the principle really is older than the people quoting it." },
       { speaker: "Ela", text: "„Be untouchable“, with no ending. The missing letter is the whole mood, and in the third person it is the only thing you can see." },
-      { speaker: "Ela", text: "They ask that every participation model show solidarity. „Show“, not „shows“, and the sentence is a demand rather than a report because of one absent letter." },
-      { speaker: "Ela", text: "Were it not for educational inequality, the class society would fade. That is the ground of the argument and it has been put in the shape of a supposing." },
+      { speaker: "Ela", text: "They ask that every participation model give tenants a vote. „Give“, not „gives“, and the sentence is a demand rather than a report because of one absent letter." },
+      { speaker: "Ela", text: "Were it not for educational inequality, class society would fade. That is the ground of the argument and it has been put in the shape of a supposing." },
       { speaker: "Ela", text: "A supposing is a safe place to make a large claim, because nothing in it has been said to be true. Read it twice before you let it past." },
       { speaker: "Ela", text: "So the order of a demanding text is fixed. The principle first, the demand second, the supposing last, and dates in between." },
       { speaker: "Ela", text: "And one more thing, which is not grammar. A demand with no number in it cannot be answered, and a demand with no target cannot be measured." },
@@ -401,18 +401,18 @@ export const enC1U11: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "They ask that every participation model ___ solidarity.",
+        text: "They ask that every participation model ___ tenants a vote.",
         options: [],
         answer: 0,
-        accept: ["show"],
-        explain: "„They ask that every participation model show solidarity.“",
+        accept: ["give"],
+        explain: "„They ask that every participation model give tenants a vote.“",
       },
       {
         kind: "dictation",
         text: "Duyduğun cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["The principle of equality demands that human dignity be untouchable.", "The principle of equality demands that human dignity be untouchable"],
+        accept: ["The principle of equality demands that human dignity be untouchable for all, not just for some.", "The principle of equality demands that human dignity be untouchable for all, not just for some"],
         explain: "Talep eden bir ilke; „be“, „is“ değil.",
       },
       {
@@ -467,8 +467,8 @@ export const enC1U11: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Ötekileştirmenin yaptığı şey bir marjinal grubu adlandırmaktır.",
-        answer: "What marginalization does is name a marginal group.",
+        tr: "Ötekileştirmenin yaptığı şey bir marjinal grup yaratmaktır.",
+        answer: "What marginalization does is create a marginal group.",
         hint: "Soyut isim baştaki yuvada ve kendi fiili var.",
       },
       {
@@ -496,7 +496,7 @@ export const enC1U11: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 11,
-    title: "The principle of equality demands that human dignity be untouchable",
+    title: "The principle of equality demands that human dignity be untouchable for all, not just for some",
     genre: "info",
     intro: "Talep eden metin ve fiilsiz taviz.",
     gloss: [
@@ -512,32 +512,32 @@ export const enC1U11: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Eşitlik ilkesi insan onurunun dokunulmaz olmasını talep eder.",
-        answer: "The principle of equality demands that human dignity be untouchable.",
+        tr: "Eşitlik ilkesi insan onurunun yalnız bazıları için değil, herkes için dokunulmaz olmasını talep eder.",
+        answer: "The principle of equality demands that human dignity be untouchable for all, not just for some.",
         hint: "Talep eden bir ilke; „be“ olduğu gibi kalıyor.",
       },
       {
         kind: "build",
         tr: "Eğitim eşitsizliği olmasa sınıflı toplum silinirdi.",
-        answer: "Were it not for educational inequality, the class society would fade.",
+        answer: "Were it not for educational inequality, class society would fade.",
         hint: "Varsayım: savın dayanağı burada.",
       },
       {
         kind: "build",
-        tr: "Her katılım modelinin dayanışma göstermesini istiyorlar.",
-        answer: "They ask that every participation model show solidarity.",
+        tr: "Her katılım modelinin kiracılara oy hakkı tanımasını istiyorlar.",
+        answer: "They ask that every participation model give tenants a vote.",
         hint: "Tek eksik harf raporu talebe çeviriyor.",
       },
       {
         kind: "build",
-        tr: "Biz ona kültürleşme desek de onlar asimilasyonu kastediyor.",
-        answer: "Much as we call it acculturation, they mean assimilation.",
+        tr: "Ona ne kadar kültürleşme demeyi sevsek de onlar asimilasyonu kastediyor.",
+        answer: "Much as we like to call it acculturation, they mean assimilation.",
         hint: "Bir satırda iki özne, aradaki boşlukta bütün tartışma.",
       },
       {
         kind: "build",
         tr: "Melezlik işareti olsa da uyum yeteneği yalnız tek taraftan isteniyor.",
-        answer: "Albeit a sign of hybridity, adaptability is asked of one side only.",
+        answer: "Although a sign of hybridity, adaptability is asked of one side only.",
         hint: "Her şey son üç sözcükte.",
       },
     ],

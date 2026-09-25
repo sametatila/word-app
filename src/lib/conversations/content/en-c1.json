@@ -36365,7 +36365,7 @@
   "vocab": [
    {
     "de": "incentive effect",
-    "tr": "yönlendirici etki"
+    "tr": "teşvik etkisi"
    },
    {
     "de": "transformation process",
@@ -36566,7 +36566,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sıra sende: Biri yönlendirici etkiyi aktarıyor, öteki sonuçtan kuşku duyuyor."
+      "text": "Şimdi sıra sende: Biri teşvik etkisini aktarıyor, öteki sonuçtan kuşku duyuyor."
      }
     ],
     "expect": {

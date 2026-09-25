@@ -135,9 +135,9 @@
   "de": "Satz, Lücke, Reparatur; ganz am Ende die sichere Form."
  },
  {
-  "tr": "İki belge: biri iddia ediyor, öteki varsayıyor.",
+  "tr": "İki belge: biri açıkça iddia ediyor, öteki yalnızca işaret ediyor.",
   "kind": "explain",
-  "de": "Zwei Dokumente: das eine behauptet, das andere setzt voraus."
+  "de": "Zwei Dokumente: das eine behauptet offen, das andere deutet bloß an."
  },
  {
   "tr": "Metin ile gelenek: biri açıkça iddia ediyor, öteki yalnızca varsayıyor.",
@@ -170,9 +170,9 @@
   "de": "In der zweiten Hälfte fehlt das Verb; die beiden Hälften lehnen sich aneinander."
  },
  {
-  "tr": "„…„although“, which cannot stand without a clause behind it.“",
+  "tr": "„At the front of a sentence „although“ takes over…“",
   "kind": "explain",
-  "de": "„…„although“, which cannot stand without a clause behind it.“"
+  "de": "„At the front of a sentence „although“ takes over…“"
  },
  {
   "tr": "Sayfada yer, cümle ortasında yineleme, savda yer; en sonda ölçü.",

@@ -160,9 +160,9 @@
   "de": "Die ausführliche Antwort wird bis dahin gesendet worden sein."
  },
  {
-  "tr": "Pazartesi geciktirilen hesap sonra yeniden başlatıldı.",
+  "tr": "Pazartesi durdurulan hizmet çarşamba yeniden başlatıldı.",
   "kind": "build.tr",
-  "de": "Am Montag verzögert, wurde das Konto später wieder aufgenommen."
+  "de": "Der am Montag ausgesetzte Dienst wurde am Mittwoch wieder aufgenommen."
  },
  {
   "tr": "Edilgen ve gelecek bitmiş: will, have, been, üçüncü hâl.",
@@ -215,9 +215,9 @@
   "de": "Ein Substantiv kann eine Zahl tragen; ein Verb nicht."
  },
  {
-  "tr": "Üçüncü hâlle başlıyor: geciktiren söylenmiyor.",
+  "tr": "Üçüncü hâlle başlıyor: durduran söylenmiyor.",
   "kind": "build.hint",
-  "de": "Beginnt mit der dritten Form: wer verzögerte, wird nicht genannt."
+  "de": "Beginnt mit der dritten Form: wer aussetzte, wird nicht genannt."
  },
  {
   "tr": "Üçüncü hâlle başlıyor: yapıştıran söylenmiyor.",

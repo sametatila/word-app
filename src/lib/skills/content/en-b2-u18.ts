@@ -12,7 +12,7 @@ import type { SkillExercise } from "../types";
  *           politeness, moderation, bookkeeping, expansion, profitability,
  *           speculation, pricing, restructure.
  *   Kalıp:  If she had portrayed the room, the work would have been grand. ·
- *           If the depiction had been elegant, the hall would be full now. ·
+ *           If the depiction had been more elegant, the hall would be full now. ·
  *           If the set had been stylish, the play would have lasted. ·
  *           It seems to be an opposing view. ·
  *           Apparently the counterargument is convincing. ·
@@ -250,7 +250,7 @@ export const enB2U18: SkillExercise[] = [
       { speaker: "Sarp", text: "Because she did not." },
       { speaker: "Melis", text: "Because she did not, and the work was made, and neither of those can change now." },
       { speaker: "Sarp", text: "The second line is different." },
-      { speaker: "Melis", text: "If the depiction had been elegant, the hall would be full now. The cause is finished and the result is the row of empty seats in front of us." },
+      { speaker: "Melis", text: "If the depiction had been more elegant, the hall would be full now. The cause is finished and the result is the row of empty seats in front of us." },
       { speaker: "Sarp", text: "So the second half comes forward." },
       { speaker: "Melis", text: "„Would be“, not „would have been“. It is the only sentence of the three that tells you something about tonight." },
       { speaker: "Sarp", text: "And the third?" },
@@ -282,11 +282,11 @@ export const enB2U18: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "If the depiction had been elegant, the hall would be full ___.",
+        text: "If the depiction had been more elegant, the hall would be full ___.",
         options: [],
         answer: 0,
         accept: ["now"],
-        explain: "„If the depiction had been elegant, the hall would be full now.“",
+        explain: "„If the depiction had been more elegant, the hall would be full now.“",
       },
       {
         kind: "dictation",
@@ -453,7 +453,7 @@ export const enB2U18: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 18,
-    title: "If the depiction had been elegant, the hall would be full now",
+    title: "If the depiction had been more elegant, the hall would be full now",
     genre: "opinion",
     intro: "İki kapalı, bir karışık ve iki aktarma.",
     gloss: [
@@ -472,8 +472,8 @@ export const enB2U18: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Tasvir zarif olsaydı salon şimdi dolu olurdu.",
-        answer: "If the depiction had been elegant, the hall would be full now.",
+        tr: "Tasvir daha zarif olsaydı salon şimdi dolu olurdu.",
+        answer: "If the depiction had been more elegant, the hall would be full now.",
         hint: "Karışık koşul: sonuç bu akşamın koltuklarında.",
       },
       {

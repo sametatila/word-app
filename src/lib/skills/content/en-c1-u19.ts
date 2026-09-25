@@ -12,17 +12,17 @@ import type { SkillExercise } from "../types";
  *           criticism of growth, growth imperative, decoupling, sufficiency,
  *           finiteness, circular economy, waste prevention, closed loop,
  *           obsolescence, longevity, reclaim, incentive effect, dilute, volatile.
- *   Kalıp:  The precautionary principle demands that the responsibility to protect be prior. ·
- *           Were it not for the natural capital, no commons would hold. ·
+ *   Kalıp:  The precautionary principle demands that the responsibility to protect be given priority. ·
+ *           Were it not for its natural capital, the village would have no commons to share. ·
  *           They ask that every ecosystem service be counted before the expropriation. ·
- *           Much as the criticism of growth is right, the growth imperative pays the pensions. ·
+ *           Much as I agree with the criticism of growth, the growth imperative pays the pensions. ·
  *           The decoupling, albeit real, does not deliver sufficiency. ·
- *           Albeit aware of finiteness, the circular economy still needs growth. ·
+ *           Although aware of finiteness, the circular economy still needs growth. ·
  *           Waste prevention is not the same as a closed loop. ·
  *           Obsolescence is designed; longevity is paid for. ·
  *           They reclaim the metal and sell it as a recycled raw material. ·
  *           One reports an incentive effect; another doubts the transformation process. ·
- *           The external funding claims what the academic journal assumes. ·
+ *           The sponsor openly claims what the academic journal merely suggests. ·
  *           To dilute a finding is not to call it volatile.
  *
  * Ünitenin tek öğretme noktası EDAT EDİLGENİ. „Longevity is paid for“ —
@@ -159,7 +159,7 @@ export const enC1U19: SkillExercise[] = [
       { de: "large", tr: "büyük" },
       { de: "rises", tr: "yükseliyor" },
       { de: "circle", tr: "çember" },
-      { de: "right", tr: "haklı" },
+      { de: "agree with", tr: "katılmak" },
       { de: "a pension", tr: "emekli aylığı" },
       { de: "uncomfortable", tr: "rahatsız edici" },
       { de: "a household", tr: "hane" },
@@ -182,12 +182,12 @@ export const enC1U19: SkillExercise[] = [
     ],
     minutes: 12,
     text:
-      "Much as the criticism of growth is right, the growth imperative pays the pensions. Two halves, both true, and a reader who wants only one of them will be uncomfortable for the rest of the page.\n" +
+      "Much as I agree with the criticism of growth, the growth imperative pays the pensions. Two halves, both true, and a reader who wants only one of them will be uncomfortable for the rest of the page.\n" +
       "The first half is an argument about limits. The second is an arithmetic about households: a pension is paid out of a tax on something that happened this year, and if less happens the amount falls.\n" +
       "Neither half answers the other, and that is the honest position rather than a failure to take one.\n" +
       "The decoupling, albeit real, does not deliver sufficiency. „Albeit real“ is the concession and it is a large one: the curve has flattened, the measurement is good, and the argument that nothing has changed is no longer available.\n" +
       "What the sentence then denies is that the change is enough. A curve that has flattened is still a curve that rises, and the word „sufficiency“ names a limit rather than a direction.\n" +
-      "Albeit aware of finiteness, the circular economy still needs growth. Here the concession at the front has a whole phrase inside it, and the claim behind it is the one that costs friends.\n" +
+      "Although aware of finiteness, the circular economy still needs growth. Here the concession at the front has a whole phrase inside it, and the claim behind it is the one that costs friends.\n" +
       "A loop needs energy to run. Collection, sorting, cleaning, repair and transport are all work, and work is paid in wages that come out of the same place the pensions do. A circle drawn on a page has no cost in it; a circle running in a city has four of them.\n" +
       "So the useful shape for a paragraph on this subject is the one this lesson keeps repeating: a concession large enough to be quoted by the other side, and then one claim.\n" +
       "The hard part is not the writing. It is being willing to put the strongest version of the other argument in your own paragraph, and most papers on this subject do not.",
@@ -225,9 +225,9 @@ export const enC1U19: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "Much as the criticism of growth is right, the growth imperative pays the pensions.",
+          "Much as I agree with the criticism of growth, the growth imperative pays the pensions.",
           "The decoupling, albeit real, does not deliver sufficiency.",
-          "Albeit aware of finiteness, the circular economy still needs growth.",
+          "Although aware of finiteness, the circular economy still needs growth.",
           "A concession large enough to be quoted, and then one claim.",
         ],
         explain: "İki doğru, büyük bir taviz, dört maliyet; en sonda biçim.",
@@ -262,7 +262,7 @@ export const enC1U19: SkillExercise[] = [
       { de: "confuses", tr: "karıştırıyor" },
       { de: "a finding", tr: "bulgu" },
       { de: "a journal", tr: "dergi" },
-      { de: "funding", tr: "fon" },
+      { de: "a sponsor", tr: "sponsor" },
       { de: "a footnote", tr: "dipnot" },
       { de: "an interest", tr: "çıkar" },
       { de: "a range", tr: "aralık" },
@@ -279,7 +279,7 @@ export const enC1U19: SkillExercise[] = [
       { speaker: "Ayşen", text: "One reports an incentive effect; another doubts the transformation process. Two people reading the same table and only one of them is talking about the table." },
       { speaker: "Kuzey", text: "Which one?" },
       { speaker: "Ayşen", text: "The first. An incentive effect is something you can see in a column. A transformation process is a story about what the column means over thirty years." },
-      { speaker: "Kuzey", text: "The external funding claims what the academic journal assumes." },
+      { speaker: "Kuzey", text: "The sponsor openly claims what the academic journal merely suggests." },
       { speaker: "Ayşen", text: "That line is a verdict on two documents and I would not write it without a footnote for each. But it is worth writing, because the assumption is almost never on the page." },
       { speaker: "Kuzey", text: "What assumption?" },
       { speaker: "Ayşen", text: "That an interest declared is an interest handled. Declaring it changes nothing about the design of the study, and the declaration is the only thing anybody checks." },
@@ -348,7 +348,7 @@ export const enC1U19: SkillExercise[] = [
     gloss: [
       { de: "supposing", tr: "varsayarak" },
       { de: "practical", tr: "işe dönük" },
-      { de: "prior", tr: "önce gelen" },
+      { de: "priority", tr: "öncelik" },
       { de: "an order", tr: "sıra" },
       { de: "a harm", tr: "zarar" },
       { de: "a permit", tr: "izin" },
@@ -361,11 +361,11 @@ export const enC1U19: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Eren", text: "The precautionary principle demands that the responsibility to protect be prior. One word in that sentence is doing all of the work and it is „prior“." },
+      { speaker: "Eren", text: "The precautionary principle demands that the responsibility to protect be given priority. One word in that sentence is doing all of the work and it is „priority“." },
       { speaker: "Eren", text: "Not stronger, not more important: earlier. The principle is about an order, and an order decides who has to prove what." },
       { speaker: "Eren", text: "If protection comes first, the person building the road proves that the harm will not happen. If it comes second, the neighbors prove that it will." },
       { speaker: "Eren", text: "That is the whole fight, and it is usually settled on page one of a permit procedure rather than at the hearing." },
-      { speaker: "Eren", text: "Were it not for the natural capital, no commons would hold. A supposing, and a clean one: it names what the commons is made of." },
+      { speaker: "Eren", text: "Were it not for its natural capital, the village would have no commons to share. A supposing, and a clean one: it names what the commons is made of." },
       { speaker: "Eren", text: "They ask that every ecosystem service be counted before the expropriation. „Be counted“, and again the interesting word is the last one." },
       { speaker: "Eren", text: "Counted before, not counted after. A valuation made after the decision is a compensation, and a compensation is paid for a thing that has already gone." },
       { speaker: "Eren", text: "I have seen a wood valued twice, three years apart, by the same office. The second number was larger and the wood was smaller." },
@@ -374,7 +374,7 @@ export const enC1U19: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "What does „prior“ mean here?",
+        text: "What does „priority“ mean here?",
         options: ["earlier", "stronger", "more important"],
         answer: 0,
         explain: "„Not stronger, not more important: earlier.“",
@@ -405,7 +405,7 @@ export const enC1U19: SkillExercise[] = [
         text: "Duyduğun cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["Were it not for the natural capital, no commons would hold.", "Were it not for the natural capital, no commons would hold"],
+        accept: ["Were it not for its natural capital, the village would have no commons to share.", "Were it not for its natural capital, the village would have no commons to share"],
         explain: "Fiil başta, bağlaç yok; ortak alanın neden yapıldığını adlandırıyor.",
       },
       {
@@ -464,14 +464,14 @@ export const enC1U19: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "İhtiyat ilkesi koruma sorumluluğunun önce gelmesini talep eder.",
-        answer: "The precautionary principle demands that the responsibility to protect be prior.",
-        hint: "Bütün işi „prior“ yapıyor: daha güçlü değil, daha erken.",
+        tr: "İhtiyat ilkesi koruma sorumluluğuna öncelik verilmesini talep eder.",
+        answer: "The precautionary principle demands that the responsibility to protect be given priority.",
+        hint: "Bütün işi „priority“ yapıyor: daha güçlü değil, daha erken.",
       },
       {
         kind: "build",
-        tr: "Doğal sermaye olmasa hiçbir ortak kullanım alanı tutmazdı.",
-        answer: "Were it not for the natural capital, no commons would hold.",
+        tr: "Doğal sermayesi olmasaydı köyün paylaşacak ortak kullanım alanı olmazdı.",
+        answer: "Were it not for its natural capital, the village would have no commons to share.",
         hint: "Fiil başta, bağlaç yok.",
       },
       {
@@ -493,7 +493,7 @@ export const enC1U19: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 19,
-    title: "Much as the criticism of growth is right",
+    title: "Much as I agree with the criticism of growth",
     genre: "info",
     intro: "Büyük taviz, tek iddia; ve ölçümü aktarmak.",
     gloss: [
@@ -501,15 +501,15 @@ export const enC1U19: SkillExercise[] = [
       { de: "decoupling", tr: "kopma" },
       { de: "sufficiency", tr: "yeterlilik" },
       { de: "finiteness", tr: "sonluluk" },
-      { de: "an incentive effect", tr: "yönlendirici etki" },
+      { de: "an incentive effect", tr: "teşvik etkisi" },
       { de: "to dilute", tr: "seyreltmek" },
     ],
     minutes: 10,
     tasks: [
       {
         kind: "build",
-        tr: "Büyüme eleştirisi ne kadar haklı olsa da emekli aylıklarını büyüme zorunluluğu ödüyor.",
-        answer: "Much as the criticism of growth is right, the growth imperative pays the pensions.",
+        tr: "Büyüme eleştirisine ne kadar katılsam da emekli aylıklarını büyüme zorunluluğu ödüyor.",
+        answer: "Much as I agree with the criticism of growth, the growth imperative pays the pensions.",
         hint: "İki yarı da doğru; hiçbiri ötekini yanıtlamıyor.",
       },
       {
@@ -521,12 +521,12 @@ export const enC1U19: SkillExercise[] = [
       {
         kind: "build",
         tr: "Sonluluğun farkında olsa da döngüsel ekonomi hâlâ büyümeye ihtiyaç duyuyor.",
-        answer: "Albeit aware of finiteness, the circular economy still needs growth.",
+        answer: "Although aware of finiteness, the circular economy still needs growth.",
         hint: "Baştaki tavizin içinde bütün bir öbek var.",
       },
       {
         kind: "build",
-        tr: "Biri yönlendirici etki bildiriyor; bir başkası dönüşüm sürecinden kuşku duyuyor.",
+        tr: "Biri teşvik etkisi bildiriyor; bir başkası dönüşüm sürecinden kuşku duyuyor.",
         answer: "One reports an incentive effect; another doubts the transformation process.",
         hint: "Biri sütunu, öteki otuz yılı konuşuyor.",
       },

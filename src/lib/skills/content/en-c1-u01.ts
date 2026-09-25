@@ -22,7 +22,7 @@ import type { SkillExercise } from "../types";
  *           What the essayist does next is an allusion. ·
  *           The denotation we know; the subtext we guess. ·
  *           I insist that the board convene tomorrow. ·
- *           Were it not for the chairing, we would adjourn. ·
+ *           Were it not for her firm chairing, we would adjourn. ·
  *           They ask that no one exert pressure.
  *
  * Ünitenin tek öğretme noktası İSTEK KİPİ (subjunctive). „I insist that
@@ -75,7 +75,7 @@ export const enC1U01: SkillExercise[] = [
       "This is the subjunctive, and in modern English it survives almost nowhere else. It appears after a small set of verbs and nouns that carry a demand: insist, ask, request, require, recommend, propose, and the nouns built from them. They ask that no one exert pressure. It is essential that the file be complete.\n" +
       "Three things mark it. The verb has no ending in the third person. The negative is formed without „do“ — „that he not attend“, never „that he does not attend“. And „be“ stays as „be“, which is where most readers notice it for the first time.\n" +
       "There is an alternative and it is not wrong. „I insist that the board should convene“ says the same thing and is commoner on one side of the Atlantic and rarer on the other. What it is not is more formal. The bare form is the formal one, and in minutes, in a request to a chair, in anything that will be filed, it is what a reader of this register expects.\n" +
-      "Were it not for the chairing, we would adjourn. That is the other survival of the same mood, and it is the one this course met two levels ago: the conditional without „if“, built on „were“.\n" +
+      "Were it not for her firm chairing, we would adjourn. That is the other survival of the same mood, and it is the one this course met two levels ago: the conditional without „if“, built on „were“.\n" +
       "So two remnants of one system, kept for two jobs. The first makes a demand and the second makes a supposition, and between them they are almost the whole of what is left. A language that has lost a mood keeps the pieces where the work was hardest to do any other way.",
     questions: [
       {
@@ -113,7 +113,7 @@ export const enC1U01: SkillExercise[] = [
         items: [
           "I insist that the board convene tomorrow.",
           "They ask that no one exert pressure.",
-          "Were it not for the chairing, we would adjourn.",
+          "Were it not for her firm chairing, we would adjourn.",
           "Two remnants of one system, kept for two jobs.",
         ],
         explain: "İki talep, bir varsayım, en sonda ikisinin adı.",
@@ -444,8 +444,8 @@ export const enC1U01: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Oturum başkanlığı olmasa ara verirdik.",
-        answer: "Were it not for the chairing, we would adjourn.",
+        tr: "Onun sıkı oturum başkanlığı olmasaydı ara verirdik.",
+        answer: "Were it not for her firm chairing, we would adjourn.",
         hint: "Aynı kipin öteki kalıntısı: „if“siz koşul.",
       },
       {

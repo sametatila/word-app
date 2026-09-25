@@ -11,23 +11,23 @@ import type { SkillExercise } from "../types";
  *           stigma, mundane, permeate, ostracize, exoticism, hearty,
  *           estrangement, headstrong, inquisitive, multilayeredness,
  *           predisposition, wrath, resentment, emancipation, stagnate, subside.
- *   Kalıp:  Much as we call it strangeness, it is otherness. ·
+ *   Kalıp:  Much as we like to call it strangeness, it is really otherness. ·
  *           Her demeanor, albeit formal, fits the milieu. ·
- *           Albeit a symbol of purity, the artifact bears a stigma. ·
+ *           Although a symbol of purity, the artifact bears a stigma. ·
  *           The scene may well be mundane rather than highly symbolic. ·
  *           A time-honored reading might permeate a whole field. ·
  *           A culture may hand down its exoticism and ostracize the doubter. ·
  *           The meal was hearty; the welcome, less so. ·
  *           We never become estranged here; we just name the estrangement later. ·
  *           A headstrong child, they said, and rather inquisitive. ·
- *           The multilayeredness above becomes a predisposition below. ·
- *           That wrath, as noted, is the resentment of an earlier page. ·
+ *           The multilayeredness described above explains the predisposition discussed below. ·
+ *           This wrath, as noted earlier, grows out of an old resentment. ·
  *           Where emancipation stagnates, the anger does not subside.
  *
  * Ünitenin tek öğretme noktası SONA ASILAN NİTELEME. İsmi tanımlayan her
  * şey İngilizcede ismin ARDINA, parça parça asılabiliyor („the
- * multilayeredness above“, „the resentment of an earlier page that nobody
- * answered“) ve öbek yol boyunca her noktada tamamlanmış oluyor; Almanca
+ * multilayeredness described above“, „the resentment in the first chapter
+ * that nobody answered“) ve öbek yol boyunca her noktada tamamlanmış oluyor; Almanca
  * aynı öbeği ÖNDEN kuruyor, ismin önünde erken açılan ve isim gelene dek
  * kapanmayan bir parantezle, ve okurun ortada durabileceği bir yer yok.
  * Yeniden ölçüm bu seviyenin açılış ipini TERSİNE çeviriyor: cümle
@@ -84,11 +84,11 @@ export const enC1U10: SkillExercise[] = [
     ],
     minutes: 12,
     text:
-      "The multilayeredness above becomes a predisposition below. Two small words are doing the work of two sentences, and neither of them is a verb.\n" +
-      "„Above“ and „below“ are prepositions that have been left without an object and hung on the end of a noun. English allows this and uses it constantly in long texts: the claim above, the table below, the passage quoted earlier, the objection raised on the first page. Each one is a pointer, and together they make a layer of the essay that says nothing about the subject and everything about where the reader is standing.\n" +
-      "That wrath, as noted, is the resentment of an earlier page. „As noted“ is the same layer speaking from the middle of a sentence, and it is doing a second job as well: it tells the reader that this is a repetition and that nobody is expected to be surprised by it.\n" +
-      "Now the measurement, and it runs against the one this level opened with. In a sentence English puts the heavy thing first and asks the reader to hold it. In a noun phrase it does the opposite. Everything that describes a noun can be hung behind it, one piece at a time, and the phrase is complete at every point along the way: the resentment, the resentment of an earlier page, the resentment of an earlier page that nobody answered.\n" +
-      "German builds the same phrase forwards. The describing material goes in front of the noun, inside a bracket that opens early and does not close until the noun arrives, and the reader cannot stop anywhere in the middle, because until the noun comes there is nothing yet to stop on. „The multilayeredness above“ becomes, word for word, „the above named multilayeredness“.\n" +
+      "The multilayeredness described above explains the predisposition discussed below. Two short phrases are doing the work of two sentences, and neither of them comes before its noun.\n" +
+      "„Above“ and „below“ are prepositions that have been left without an object and hung, together with „described“ and „discussed“, on the end of a noun. English allows this and uses it constantly in long texts: the claim above, the table below, the passage quoted earlier, the objection raised on the first page. Each one is a pointer, and together they make a layer of the essay that says nothing about the subject and everything about where the reader is standing.\n" +
+      "This wrath, as noted earlier, grows out of an old resentment. „As noted earlier“ is the same layer speaking from the middle of a sentence, and it is doing a second job as well: it tells the reader that this is a repetition and that nobody is expected to be surprised by it.\n" +
+      "Now the measurement, and it runs against the one this level opened with. In a sentence English puts the heavy thing first and asks the reader to hold it. In a noun phrase it does the opposite. Everything that describes a noun can be hung behind it, one piece at a time, and the phrase is complete at every point along the way: the resentment, the resentment in the first chapter, the resentment in the first chapter that nobody answered.\n" +
+      "German builds the same phrase forwards. The describing material goes in front of the noun, inside a bracket that opens early and does not close until the noun arrives, and the reader cannot stop anywhere in the middle, because until the noun comes there is nothing yet to stop on. „The multilayeredness described above“ becomes, word for word, „the above described multilayeredness“.\n" +
       "So the two languages load a noun phrase from opposite ends, and the load is a property of the layer rather than of the language: at the level of the sentence it goes one way, at the level of the phrase the other.\n" +
       "The consequence for a long essay is practical. An English writer can keep adding to the back of a phrase and the sentence never becomes unreadable; a German writer who adds in the same way is filling a bracket, and a bracket has a size after which nobody follows.\n" +
       "Where emancipation stagnates, the anger does not subside. And here at the end is a third pointer: not a place on the page but a place in the argument, which is the one kind of pointer both languages build the same way.",
@@ -114,11 +114,11 @@ export const enC1U10: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The multilayeredness above becomes a predisposition ___.",
+        text: "The multilayeredness described above explains the predisposition discussed ___.",
         options: [],
         answer: 0,
         accept: ["below"],
-        explain: "„The multilayeredness above becomes a predisposition below.“",
+        explain: "„The multilayeredness described above explains the predisposition discussed below.“",
       },
       {
         kind: "order",
@@ -126,8 +126,8 @@ export const enC1U10: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "The multilayeredness above becomes a predisposition below.",
-          "That wrath, as noted, is the resentment of an earlier page.",
+          "The multilayeredness described above explains the predisposition discussed below.",
+          "This wrath, as noted earlier, grows out of an old resentment.",
           "Where emancipation stagnates, the anger does not subside.",
           "The two languages load a noun phrase from opposite ends.",
         ],
@@ -189,11 +189,11 @@ export const enC1U10: SkillExercise[] = [
     ],
     minutes: 12,
     text:
-      "Much as we call it strangeness, it is otherness. The sentence is about one word being wrong and another being right, and the difference between them is not a difference in the thing being described.\n" +
+      "Much as we like to call it strangeness, it is really otherness. „Much as“ wants a verb of feeling after its subject, and here it is „like“. The sentence is about one word being wrong and another being right, and the difference between them is not a difference in the thing being described.\n" +
       "„Strangeness“ is a property. It sits in the object, the person, the room, and a reader is invited to agree that it is there. „Otherness“ is a relation. It cannot be in anything on its own; it is measured from where you stand, and the word carries the speaker into the sentence whether the speaker wanted to come or not.\n" +
       "So the choice between the two words is a choice about distance, and it belongs to the writer rather than to the thing.\n" +
-      "Now the grammar this lesson is built on. Her demeanor, albeit formal, fits the milieu. „Albeit“ takes no clause. There is no subject after it and no verb, only „formal“, and that is what separates it from „although“, which cannot stand without a clause behind it.\n" +
-      "Albeit a symbol of purity, the artifact bears a stigma. Here the same word opens the sentence and takes a whole noun phrase, still with no verb anywhere in it. English is holding two things at once: the object is a symbol of purity, and it is marked, and neither half has been argued.\n" +
+      "Now the grammar this lesson is built on. Her demeanor, albeit formal, fits the milieu. „Albeit“ takes no clause. There is no subject after it and no verb, only „formal“, and it sits in the middle of the sentence, between commas.\n" +
+      "Although a symbol of purity, the artifact bears a stigma. At the front of a sentence „although“ takes over, because „albeit“ does not open a sentence in standard English; what follows is still a whole noun phrase, with no verb anywhere in it. English is holding two things at once: the object is a symbol of purity, and it is marked, and neither half has been argued.\n" +
       "That is the useful part. A concession made with a verbless phrase is an admission the writer never has to defend, because nothing in it was stated as a sentence. The reader takes it in as background and the main claim arrives already qualified.\n" +
       "German has the same tool and uses it in the same place, so a reader coming from there will not stumble. What differs is how often it is safe. In English a comma pair will hold almost anything and the sentence stays readable; in German the same material tends to be pulled forward in front of the noun, and two of them in one sentence is one too many.\n" +
       "Which leaves the warning this lesson deserves. A parenthetical concession is the easiest place in a paragraph to smuggle something past a reader, and a writer who notices themselves reaching for one twice on a page should ask which of the two claims they are avoiding writing out in full.",
@@ -212,10 +212,10 @@ export const enC1U10: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„Although“ can stand without a clause behind it.",
+        text: "„Albeit“ normally opens a sentence.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„…„although“, which cannot stand without a clause behind it.“",
+        explain: "„At the front of a sentence „although“ takes over…“",
       },
       {
         kind: "gapfill",
@@ -231,9 +231,9 @@ export const enC1U10: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "Much as we call it strangeness, it is otherness.",
+          "Much as we like to call it strangeness, it is really otherness.",
           "Her demeanor, albeit formal, fits the milieu.",
-          "Albeit a symbol of purity, the artifact bears a stigma.",
+          "Although a symbol of purity, the artifact bears a stigma.",
           "A concession made this way never has to be defended.",
         ],
         explain: "İki sözcük, ara söz, cümle başı; en sonda ölçü.",
@@ -426,7 +426,7 @@ export const enC1U10: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 10,
-    title: "The multilayeredness above becomes a predisposition below",
+    title: "The multilayeredness described above explains the predisposition discussed below",
     genre: "info",
     intro: "Sona asılan niteleme ve fiilsiz taviz.",
     gloss: [
@@ -442,14 +442,14 @@ export const enC1U10: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Yukarıdaki çok katmanlılık aşağıda bir yatkınlığa dönüşüyor.",
-        answer: "The multilayeredness above becomes a predisposition below.",
-        hint: "İki edat nesnesiz kalmış ve ismin ardına asılmış.",
+        tr: "Yukarıda anlatılan çok katmanlılık, aşağıda ele alınan yatkınlığı açıklıyor.",
+        answer: "The multilayeredness described above explains the predisposition discussed below.",
+        hint: "İki edat nesnesiz kalmış; ortaçla birlikte ismin ardına asılmış.",
       },
       {
         kind: "build",
-        tr: "O gazap, belirtildiği gibi, önceki bir sayfanın içerlemesidir.",
-        answer: "That wrath, as noted, is the resentment of an earlier page.",
+        tr: "Bu gazap, daha önce belirtildiği gibi, eski bir içerlemeden doğuyor.",
+        answer: "This wrath, as noted earlier, grows out of an old resentment.",
         hint: "Ara söz okura bunun bir yineleme olduğunu söylüyor.",
       },
       {
@@ -467,8 +467,8 @@ export const enC1U10: SkillExercise[] = [
       {
         kind: "build",
         tr: "Saflık simgesi olsa da eser bir damga taşıyor.",
-        answer: "Albeit a symbol of purity, the artifact bears a stigma.",
-        hint: "Aynı sözcük cümlenin başında ve fiilsiz bir isim öbeği alıyor.",
+        answer: "Although a symbol of purity, the artifact bears a stigma.",
+        hint: "Cümle başında „albeit“ değil „although“; ardında yine fiilsiz bir isim öbeği.",
       },
       {
         kind: "form",
@@ -522,8 +522,8 @@ export const enC1U10: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Ona tuhaflık desek de, o ötekiliktir.",
-        answer: "Much as we call it strangeness, it is otherness.",
+        tr: "Ona ne kadar tuhaflık demeyi sevsek de aslında ötekiliktir.",
+        answer: "Much as we like to call it strangeness, it is really otherness.",
         hint: "Biri özellik, öteki ilişki: fark nesnede değil.",
       },
       {

@@ -90,9 +90,9 @@
   "en": "Four ways of saying nobody. Which one is neutral?"
  },
  {
-  "tr": "İki belge: biri iddia ediyor, öteki varsayıyor.",
+  "tr": "İki belge: biri açıkça iddia ediyor, öteki yalnızca işaret ediyor.",
   "kind": "explain",
-  "en": "Two documents: one claims, the other assumes."
+  "en": "Two documents: one openly claims, the other merely suggests."
  },
  {
   "tr": "Metin ile gelenek: biri açıkça iddia ediyor, öteki yalnızca varsayıyor.",
@@ -160,9 +160,9 @@
   "en": "When does a reading cover a whole field? And where does the hedge stand?"
  },
  {
-  "tr": "„…„although“, which cannot stand without a clause behind it.“",
+  "tr": "„At the front of a sentence „although“ takes over…“",
   "kind": "explain",
-  "en": "„…„although“, which cannot stand without a clause behind it.“"
+  "en": "“At the front of a sentence, ‘although’ takes over…”"
  },
  {
   "tr": "İsim öbeği iki dilde iki ayrı uçtan yükleniyor. Hangisi nereden?",

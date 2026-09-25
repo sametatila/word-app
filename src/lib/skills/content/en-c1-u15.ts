@@ -16,11 +16,11 @@ import type { SkillExercise } from "../types";
  *   Kalıp:  Knowledge work may well end in self-exploitation. ·
  *           A role conflict might look like a pacing problem. ·
  *           Piecework may weaken collegiality and strain the interpersonal side. ·
- *           The excellence initiative was funded; the transition rate, less so. ·
+ *           The excellence initiative was a success; the transition rate, less so. ·
  *           We have no elite formation here; we have a competitive logic. ·
- *           Publication pressure, they said, and rather good against plagiarism. ·
- *           The structural change above becomes a core business below. ·
- *           That distortion of competition, as noted, is the feasibility study of an earlier page. ·
+ *           Healthy publication pressure, they said, and rather good for quality. ·
+ *           The structural change described above threatens the core business discussed below. ·
+ *           The distortion of competition, as noted earlier, was flagged in the feasibility study. ·
  *           Where the operational responsibility is unclear, the performance indicator does not help. ·
  *           The pension level fell; the full retirement age did not. ·
  *           The intergenerational contract promises twilight years, the job self-fulfillment. ·
@@ -162,7 +162,7 @@ export const enC1U15: SkillExercise[] = [
     unit: 15,
     title: "The excellence initiative",
     genre: "opinion",
-    intro: "Fonlanan ile fonlanmayan aynı cümlede. Ek neyi ele veriyor?",
+    intro: "Başarı ile başarısızlık aynı cümlede. Ek neyi ele veriyor?",
     gloss: [
       { de: "failure", tr: "kusur" },
       { de: "none", tr: "hiçbiri" },
@@ -170,7 +170,6 @@ export const enC1U15: SkillExercise[] = [
       { de: "halves", tr: "yarılar" },
       { de: "impossible", tr: "olanaksız" },
       { de: "apart", tr: "ayrı" },
-      { de: "funded", tr: "fonlanmış" },
       { de: "a sum", tr: "meblağ" },
       { de: "a line", tr: "satır" },
       { de: "the second half", tr: "ikinci yarı" },
@@ -192,12 +191,12 @@ export const enC1U15: SkillExercise[] = [
     ],
     minutes: 12,
     text:
-      "The excellence initiative was funded; the transition rate, less so. A sum in the first half, a shape in the second, and the second half is where the audit should start.\n" +
-      "„Less so“ names no number. It does not say the rate was not funded and it does not say by how much less, and it cannot be answered, because there is nothing in it to answer. A reader who wants the figure has to leave the sentence and go looking, and most readers do not.\n" +
-      "So the line is doing two things at once. It reports a success with a sum attached and it admits a failure with no sum attached, and both of those are in the same breath, which is how a report is written when it has to be honest and would rather not be clear.\n" +
+      "The excellence initiative was a success; the transition rate, less so. A success in the first half, a shape in the second, and the second half is where the audit should start.\n" +
+      "„Less so“ names no number. It does not say the rate was a failure and it does not say by how much less, and it cannot be answered, because there is nothing in it to answer. A reader who wants the figure has to leave the sentence and go looking, and most readers do not.\n" +
+      "So the line is doing two things at once. It reports a success openly and it admits a failure with no sum attached, and both of those are in the same breath, which is how a report is written when it has to be honest and would rather not be clear.\n" +
       "We have no elite formation here; we have a competitive logic. The same move seen earlier in a different room, and the second half is again the admission. Something is denied under one word and granted under another, and the second word sounds like a description of how the world works rather than a decision anybody made.\n" +
       "Look at what each name brings with it. Elite formation has people in it: an applicant, a committee, a rank, a hire. A competitive logic has none, and a logic cannot be asked who it left out last year.\n" +
-      "Publication pressure, they said, and rather good against plagiarism. Here is the inserted clause again, arriving after the words it is meant to be reporting, and here is the compliment at the end that should not be trusted.\n" +
+      "Healthy publication pressure, they said, and rather good for quality. Here is the inserted clause again, arriving after the words it is meant to be reporting, and here is the compliment at the end that should not be trusted.\n" +
       "Read the claim on its own and it turns over. Pressure is the cause of the thing it is being offered as a cure for. Nothing in a decade of counting says otherwise, and the sentence survives in meetings because it is short and the counting is long.\n" +
       "That is the reasoning this unit is named for: a claim that uses its own outcome as its evidence. It is easiest to catch when the two halves are as close together as they are here, and almost impossible when they are four pages apart.",
     questions: [
@@ -222,11 +221,11 @@ export const enC1U15: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The excellence initiative was ___; the transition rate, less so.",
+        text: "The excellence initiative was a ___; the transition rate, less so.",
         options: [],
         answer: 0,
-        accept: ["funded"],
-        explain: "„The excellence initiative was funded; the transition rate, less so.“",
+        accept: ["success"],
+        explain: "„The excellence initiative was a success; the transition rate, less so.“",
       },
       {
         kind: "order",
@@ -234,12 +233,12 @@ export const enC1U15: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "The excellence initiative was funded; the transition rate, less so.",
+          "The excellence initiative was a success; the transition rate, less so.",
           "We have no elite formation here; we have a competitive logic.",
-          "Publication pressure, they said, and rather good against plagiarism.",
+          "Healthy publication pressure, they said, and rather good for quality.",
           "A claim that uses its own outcome as its evidence.",
         ],
-        explain: "Meblağ, ad değişimi, iltifat; en sonda döngü.",
+        explain: "Hüküm, ad değişimi, iltifat; en sonda döngü.",
       },
       {
         kind: "short_answer",
@@ -363,14 +362,13 @@ export const enC1U15: SkillExercise[] = [
       { de: "a quarter", tr: "çeyrek" },
       { de: "a dashboard", tr: "gösterge tablosu" },
       { de: "an alarm", tr: "alarm" },
-      { de: "an earlier page", tr: "önceki bir sayfa" },
       { de: "a summary", tr: "özet" },
     ],
     minutes: 8,
     segments: [
-      { speaker: "Ufuk", text: "The structural change above becomes a core business below. Every long report needs a layer of these and most of them have none." },
+      { speaker: "Ufuk", text: "The structural change described above threatens the core business discussed below. Every long report needs a layer of these and most of them have none." },
       { speaker: "Ufuk", text: "A pointer costs one word and saves a reader a page. Without it the same reader is holding two versions of a term and does not know they are the same term." },
-      { speaker: "Ufuk", text: "That distortion of competition, as noted, is the feasibility study of an earlier page. „As noted“ is a promise, and I check it before I sign a report." },
+      { speaker: "Ufuk", text: "The distortion of competition, as noted earlier, was flagged in the feasibility study. „As noted earlier“ is a promise, and I check it before I sign a report." },
       { speaker: "Ufuk", text: "If it was not noted, the phrase has made a repetition look like a reminder, and a reader who trusts it will stop looking for the first mention." },
       { speaker: "Ufuk", text: "Where the operational responsibility is unclear, the performance indicator does not help. This is the line I would put on the first page of every report of this kind." },
       { speaker: "Ufuk", text: "An indicator measures something. It does not decide who has to do anything about it, and a number with no owner is read by everybody and acted on by nobody." },
@@ -412,8 +410,8 @@ export const enC1U15: SkillExercise[] = [
         text: "Duyduğun cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["The structural change above becomes a core business below.", "The structural change above becomes a core business below"],
-        explain: "İki edat nesnesiz kalmış; gönderme katmanı.",
+        accept: ["The structural change described above threatens the core business discussed below.", "The structural change described above threatens the core business discussed below"],
+        explain: "Yukarıya ve aşağıya gönderen iki ortaç öbeği: gönderme katmanı.",
       },
       {
         kind: "short_answer",
@@ -498,25 +496,23 @@ export const enC1U15: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 15,
-    title: "The excellence initiative was funded",
+    title: "The excellence initiative was a success",
     genre: "info",
     intro: "Meblağsız kabul ve raporun gönderme katmanı.",
     gloss: [
       { de: "an excellence initiative", tr: "mükemmeliyet girişimi" },
       { de: "a transition rate", tr: "geçiş oranı" },
       { de: "a competitive logic", tr: "rekabet mantığı" },
-      { de: "plagiarism", tr: "intihal" },
       { de: "a structural change", tr: "yapısal değişim" },
       { de: "a performance indicator", tr: "performans göstergesi" },
-      { de: "fund", tr: "sağlık sigortası kurumu" },
     ],
     minutes: 10,
     tasks: [
       {
         kind: "build",
-        tr: "Mükemmeliyet girişimi fonlandı; geçiş oranı, daha az.",
-        answer: "The excellence initiative was funded; the transition rate, less so.",
-        hint: "İlk yarıda meblağ var, ikincide yok.",
+        tr: "Mükemmeliyet girişimi başarılı oldu; geçiş oranı, o kadar değil.",
+        answer: "The excellence initiative was a success; the transition rate, less so.",
+        hint: "İlk yarıda açık bir hüküm var, ikincide yok.",
       },
       {
         kind: "build",
@@ -526,14 +522,14 @@ export const enC1U15: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Yayın baskısı, dediler, ve intihale karşı epeyce iyi.",
-        answer: "Publication pressure, they said, and rather good against plagiarism.",
+        tr: "Sağlıklı bir yayın baskısı, dediler, üstelik kaliteye iyi geliyor.",
+        answer: "Healthy publication pressure, they said, and rather good for quality.",
         hint: "Sondaki iltifat güvenilmeyecek yer.",
       },
       {
         kind: "build",
-        tr: "Yukarıdaki yapısal değişim aşağıda bir ana iş koluna dönüşüyor.",
-        answer: "The structural change above becomes a core business below.",
+        tr: "Yukarıda anlatılan yapısal değişim, aşağıda ele alınan ana iş kolunu tehdit ediyor.",
+        answer: "The structural change described above threatens the core business discussed below.",
         hint: "Gönderme bir sözcüğe mal oluyor, okura bir sayfa kazandırıyor.",
       },
       {

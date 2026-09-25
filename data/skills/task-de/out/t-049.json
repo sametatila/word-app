@@ -90,9 +90,9 @@
   "de": "Sie gewinnen das Metall zurück und verkaufen es als Sekundärrohstoff."
  },
  {
-  "tr": "Doğal sermaye olmasa hiçbir ortak kullanım alanı tutmazdı.",
+  "tr": "Doğal sermayesi olmasaydı köyün paylaşacak ortak kullanım alanı olmazdı.",
   "kind": "build.tr",
-  "de": "Wäre da nicht das Naturkapital, würde keine Allmende halten."
+  "de": "Ohne sein Naturkapital hätte das Dorf keine Allmende zu teilen."
  },
  {
   "tr": "Kurtarma paketinin arkasında bir spekülasyon balonu duruyor.",
@@ -115,14 +115,14 @@
   "de": "Wir haben hier keine Gentrifizierung; wir verdichten nach und sanieren."
  },
  {
-  "tr": "İhtiyat ilkesi koruma sorumluluğunun önce gelmesini talep eder.",
+  "tr": "İhtiyat ilkesi koruma sorumluluğuna öncelik verilmesini talep eder.",
   "kind": "build.tr",
-  "de": "Das Vorsorgeprinzip verlangt, dass die Schutzverantwortung vorrangig sei."
+  "de": "Das Vorsorgeprinzip verlangt, dass der Schutzverantwortung Vorrang gegeben werde."
  },
  {
-  "tr": "Yukarıdaki mekânsal planlama aşağıda bir imar planına dönüşüyor.",
+  "tr": "Yukarıda özetlenen mekânsal planlama, aşağıdaki imar planında somutlaşıyor.",
   "kind": "build.tr",
-  "de": "Die oben genannte Raumplanung wird unten zu einem Bebauungsplan."
+  "de": "Die oben skizzierte Raumplanung wird im Bebauungsplan unten konkret."
  },
  {
   "tr": "Bütçe açığının yaptığı şey bir piyasa başarısızlığını gizlemektir.",
@@ -145,9 +145,9 @@
   "de": "Die Finanzaufsicht verlangt, dass die Offenlegung vollständig sei."
  },
  {
-  "tr": "Para politikası ne kadar işlese de politika faizi gençlere zarar veriyor.",
+  "tr": "Para politikasını ne kadar olumlu bulsam da politika faizi gençlere zarar veriyor.",
   "kind": "build.tr",
-  "de": "So sehr die Geldpolitik wirkt, der Leitzins schadet den Jungen."
+  "de": "So sehr ich die Geldpolitik begrüße, der Leitzins schadet den Jungen."
  },
  {
   "tr": "Sonluluğun farkında olsa da döngüsel ekonomi hâlâ büyümeye ihtiyaç duyuyor.",
@@ -165,9 +165,9 @@
   "de": "Das Moratorium überlebt als Versprechen, der Baustopp als Datum."
  },
  {
-  "tr": "Biri yönlendirici etki bildiriyor; bir başkası dönüşüm sürecinden kuşku duyuyor.",
+  "tr": "Biri teşvik etkisi bildiriyor; bir başkası dönüşüm sürecinden kuşku duyuyor.",
   "kind": "build.tr",
-  "de": "Der eine berichtet eine Lenkungswirkung; der andere zweifelt am Transformationsprozess."
+  "de": "Der eine berichtet eine Anreizwirkung; der andere zweifelt am Transformationsprozess."
  },
  {
   "tr": "Ölçek bakımından ince ayrıntılı bir mahalle erişilebilirliğe daha iyi hizmet eder.",
@@ -175,9 +175,9 @@
   "de": "Was den Maßstab angeht, dient ein kleinteiliges Quartier der Erreichbarkeit besser."
  },
  {
-  "tr": "Büyüme eleştirisi ne kadar haklı olsa da emekli aylıklarını büyüme zorunluluğu ödüyor.",
+  "tr": "Büyüme eleştirisine ne kadar katılsam da emekli aylıklarını büyüme zorunluluğu ödüyor.",
   "kind": "build.tr",
-  "de": "So berechtigt die Wachstumskritik ist, der Wachstumszwang bezahlt die Renten."
+  "de": "So sehr ich der Wachstumskritik zustimme, der Wachstumszwang bezahlt die Renten."
  },
  {
   "tr": "Tasarım doğru, takvim yanlış.",
@@ -255,9 +255,9 @@
   "de": "Das Verb ist weg; die verbliebene Präposition trägt den Unterschied."
  },
  {
-  "tr": "Biri ekli, öteki eksiz: ikisi de fiilden isim.",
+  "tr": "İkisi de „-ing“ ekli: ikisi de fiilden isim.",
   "kind": "build.hint",
-  "de": "Das eine mit Endung, das andere ohne: beide sind Nomen aus Verben."
+  "de": "Beide mit „-ing“: beide sind Nomen aus Verben."
  },
  {
   "tr": "Edatın nesnesi özne olmuş; edat arkada kalmış.",
@@ -290,9 +290,9 @@
   "de": "Das Zugeständnis ist groß; zurückgewiesen wird, dass die Veränderung genügt."
  },
  {
-  "tr": "Bütün işi „prior“ yapıyor: daha güçlü değil, daha erken.",
+  "tr": "Bütün işi „priority“ yapıyor: daha güçlü değil, daha erken.",
   "kind": "build.hint",
-  "de": "Die ganze Arbeit leistet „prior“: nicht stärker, sondern früher."
+  "de": "Die ganze Arbeit leistet „priority“: nicht stärker, sondern früher."
  },
  {
   "tr": "İki yarı da doğru; ikincisi aynı paragrafta pek durmuyor.",

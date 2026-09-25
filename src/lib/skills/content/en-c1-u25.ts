@@ -17,9 +17,9 @@ import type { SkillExercise } from "../types";
  *           A coping strategy may hide transference and stay latent. ·
  *           The answer was measured; the tone, less so. ·
  *           We have no curt replies here; we have telling silences. ·
- *           A penchant for detail, they said, and rather good against vehemence. ·
- *           The impact assessment above becomes a benefit assessment below. ·
- *           That pivotal decision, as noted, is the technology assessment of an earlier page. ·
+ *           A penchant for detail, they said, and rather charming. ·
+ *           The impact assessment above must be weighed against the benefit assessment below. ·
+ *           That pivotal decision, as noted earlier, rested on a technology assessment. ·
  *           Where irreversibility is real, a coherent plan is not enough. ·
  *           The pursuit survives as a habit, the end in itself as a memory. ·
  *           The transience stayed; the equanimity did not. ·
@@ -192,10 +192,10 @@ export const enC1U25: SkillExercise[] = [
     ],
     minutes: 12,
     text:
-      "The impact assessment above becomes a benefit assessment below. The same project, two chapters apart, under two names that count two different things.\n" +
+      "The impact assessment above must be weighed against the benefit assessment below. The same project, two chapters apart, under two names that count two different things.\n" +
       "An impact assessment counts what will change. A benefit assessment counts what somebody will gain, and the two lists are never the same list, because a change that helps nobody still appears on the first one and never on the second.\n" +
       "The pointer is doing real work here, as it has in three other units of this level, and by now the habit should be automatic: when a term changes between chapters, say so in the line where it changes.\n" +
-      "That pivotal decision, as noted, is the technology assessment of an earlier page. „As noted“ is a promise, and it is worth checking every time, because a claim carried forward as a reminder has skipped the place where it could have been argued with.\n" +
+      "That pivotal decision, as noted earlier, rested on a technology assessment. „As noted earlier“ is a promise, and it is worth checking every time, because a claim carried forward as a reminder has skipped the place where it could have been argued with.\n" +
       "Where irreversibility is real, a coherent plan is not enough. And this is the line the whole unit exists to reach.\n" +
       "A coherent plan is a plan whose parts agree with each other. It can be coherent and wrong, and the question that matters is not whether the parts agree but what happens if they do not hold.\n" +
       "A mistake that can be corrected is a cost. A mistake that cannot is a different kind of thing, and it should be decided by a different rule: not the best expected outcome, but the one that keeps an option open.\n" +
@@ -234,8 +234,8 @@ export const enC1U25: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "The impact assessment above becomes a benefit assessment below.",
-          "That pivotal decision, as noted, is the technology assessment of an earlier page.",
+          "The impact assessment above must be weighed against the benefit assessment below.",
+          "That pivotal decision, as noted earlier, rested on a technology assessment.",
           "Where irreversibility is real, a coherent plan is not enough.",
           "Where a step cannot be taken back, buy the delay.",
         ],
@@ -295,7 +295,7 @@ export const enC1U25: SkillExercise[] = [
       { speaker: "Duru", text: "A category denied and an instance admitted under a friendlier name. The fifth time this level has used that shape, and this is the coldest of the five." },
       { speaker: "Sarp", text: "Why the coldest?" },
       { speaker: "Duru", text: "Because a curt reply can be quoted and a silence cannot. Nobody has ever been shown a pause in an appeal." },
-      { speaker: "Sarp", text: "A penchant for detail, they said, and rather good against vehemence." },
+      { speaker: "Sarp", text: "A penchant for detail, they said, and rather charming." },
       { speaker: "Duru", text: "The inserted clause and the compliment at the end, for the last time in this level, and the compliment is a warning dressed as praise." },
       { speaker: "Sarp", text: "Dressed by whom?" },
       { speaker: "Duru", text: "By people who will be asked in two years what they said, and who will be able to point at a line that reads as a kindness." },
@@ -475,8 +475,8 @@ export const enC1U25: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Yukarıdaki etki değerlendirmesi aşağıda bir fayda değerlendirmesine dönüşüyor.",
-        answer: "The impact assessment above becomes a benefit assessment below.",
+        tr: "Yukarıdaki etki değerlendirmesi, aşağıdaki fayda değerlendirmesiyle tartılmalı.",
+        answer: "The impact assessment above must be weighed against the benefit assessment below.",
         hint: "İki edat nesnesiz kalmış; gönderme katmanı.",
       },
       {

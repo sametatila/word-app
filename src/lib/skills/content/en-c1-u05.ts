@@ -14,8 +14,8 @@ import type { SkillExercise } from "../types";
  *   Kalıp:  We move that the board grant worker participation. ·
  *           Were it not for the rule of law, cohesion would fail. ·
  *           They ask that no member abstain. ·
- *           The wording may well marginalize. ·
- *           It might have been expected to exploit less. ·
+ *           The wording may well marginalize older readers. ·
+ *           The new contract might have been expected to exploit workers less. ·
  *           Such a text would tend to problematize everything. ·
  *           A wave of outrage reads differently in each register. ·
  *           The echo chamber is a filter bubble with a name. ·
@@ -342,9 +342,9 @@ export const enC1U05: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Rüzgar", text: "The wording may well marginalize. Three words of verb and only one of them is about marginalizing." },
+      { speaker: "Rüzgar", text: "The wording may well marginalize older readers. Three words of verb and only one of them is about marginalizing." },
       { speaker: "Rüzgar", text: "„May“ gives possibility and „well“ raises it, and together they say: likely, and I am not going to say how likely." },
-      { speaker: "Rüzgar", text: "It might have been expected to exploit less. Four layers, and the useful one is „expected“, because it brings in people who are not in the sentence." },
+      { speaker: "Rüzgar", text: "The new contract might have been expected to exploit workers less. Four layers, and the useful one is „expected“, because it brings in people who are not in the sentence." },
       { speaker: "Rüzgar", text: "Whose expectation? The text does not say, and in a paper about how language works that is a question the reader is entitled to ask." },
       { speaker: "Rüzgar", text: "Such a text would tend to problematize everything. „Would“ makes it hypothetical and „tend to“ makes it a tendency, and between them the sentence has stopped being about any actual text." },
       { speaker: "Rüzgar", text: "That is the failure mode of this register and it is not rare. A paragraph about how wording can dehumanize, written entirely in stacked modals, has performed the distance it is describing." },
@@ -373,11 +373,11 @@ export const enC1U05: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The wording may ___ marginalize.",
+        text: "The wording may ___ marginalize older readers.",
         options: [],
         answer: 0,
         accept: ["well"],
-        explain: "„The wording may well marginalize.“",
+        explain: "„The wording may well marginalize older readers.“",
       },
       {
         kind: "dictation",
@@ -493,14 +493,14 @@ export const enC1U05: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "İfade biçimi pekâlâ ötekileştirebilir.",
-        answer: "The wording may well marginalize.",
+        tr: "İfade biçimi pekâlâ yaşlı okurları ötekileştirebilir.",
+        answer: "The wording may well marginalize older readers.",
         hint: "„may well“: olası, ama ne kadar olduğu söylenmiyor.",
       },
       {
         kind: "build",
-        tr: "Daha az sömürmesi beklenmiş olabilirdi.",
-        answer: "It might have been expected to exploit less.",
+        tr: "Yeni sözleşmenin işçileri daha az sömürmesi beklenmiş olabilirdi.",
+        answer: "The new contract might have been expected to exploit workers less.",
         hint: "Dört katman; işe yarayan „expected“.",
       },
     ],

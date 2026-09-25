@@ -12,7 +12,7 @@ import type { SkillExercise } from "../types";
  *           proportional, parental leave, maternity leave,
  *           occupational safety.
  *   Kalıp:  By December we will have saved enough to pay off the loan. ·
- *           Next month we will be watching the due date. ·
+ *           Next month we will be preparing for the due date. ·
  *           By the payment deadline we will have decided how to use up the rest. ·
  *           The creditor must have warned them. ·
  *           They can't have signed the mortgage alone. ·
@@ -74,7 +74,7 @@ export const enB2U20: SkillExercise[] = [
       "The same shape works with the other question words. What to say. Where to go. Whether to pay. Each of them is a question with the subject and the tense taken out, and each of them follows a verb that can hold a question: decide, know, wonder, ask, explain, forget.\n" +
       "It does not work after every verb. „I hope how to do it“ is nothing; „hope“ cannot hold a question, and neither can „want“ or „like“.\n" +
       "By December we will have saved enough to pay off the loan. That is a different fold: „enough to“ with an infinitive, where the missing subject is again supplied by the main clause.\n" +
-      "Next month we will be watching the due date. No folding there at all, and it is the easiest sentence on the page to check.\n" +
+      "Next month we will be preparing for the due date. No folding there at all, and it is the easiest sentence on the page to check.\n" +
       "A plan written entirely in folded clauses is short and hard to argue with, and that is both the reason to use them and the reason to count them. Two per paragraph. Beyond that the reader is doing the unfolding, and a reader who unfolds a late fee incorrectly will be back.",
     questions: [
       {
@@ -112,7 +112,7 @@ export const enB2U20: SkillExercise[] = [
         items: [
           "We will have decided how to use up the rest.",
           "We will have saved enough to pay off the loan.",
-          "Next month we will be watching the due date.",
+          "Next month we will be preparing for the due date.",
           "Two per paragraph.",
         ],
         explain: "Soru katlaması, „enough to“ katlaması, katlamasız cümle, en sonda sınır.",
@@ -401,7 +401,7 @@ export const enB2U20: SkillExercise[] = [
       { de: "none", tr: "hiçbiri" },
       { de: "how to use up", tr: "nasıl kullanacağını" },
       { de: "enough to pay off", tr: "ödeyecek kadar" },
-      { de: "will be watching", tr: "izliyor olacak" },
+      { de: "will be preparing", tr: "hazırlanıyor olacak" },
       { de: "must have warned", tr: "uyarmış olmalı" },
       { de: "loan", tr: "kredi" },
     ],
@@ -421,8 +421,8 @@ export const enB2U20: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Gelecek ay vade tarihini izliyor olacağız.",
-        answer: "Next month we will be watching the due date.",
+        tr: "Gelecek ay vade tarihine hazırlanıyor olacağız.",
+        answer: "Next month we will be preparing for the due date.",
         hint: "Katlama yok; sürerli biçim.",
       },
       {

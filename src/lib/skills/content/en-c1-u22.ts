@@ -16,7 +16,7 @@ import type { SkillExercise } from "../types";
  *           Follow-on costs are estimated; a cost overrun is announced. ·
  *           An economy of scale lowers the capital requirement. ·
  *           One alleges accounting fraud; another proves embezzlement. ·
- *           The gray area claims what the pretext assumes. ·
+ *           The whistleblower openly claims what the auditors merely assume. ·
  *           To feign a loss is not to embezzle a gain. ·
  *           The investment cycle may well turn before the savings rate falls. ·
  *           A high savings potential might not mean solvency. ·
@@ -189,7 +189,7 @@ export const enC1U22: SkillExercise[] = [
       "„Alleges“ carries no burden. It names an accusation and puts the name of the person who made it into the sentence, which is why a careful newspaper uses it in every headline about a case that has not been decided.\n" +
       "„Proves“ carries a document, a signature and a transfer. The gap between the two verbs is measured in months of somebody's life, and a reader who treats them as two words for the same thing has skipped the part that matters.\n" +
       "To feign a loss is not to embezzle a gain. Here the difference is an intention rather than an amount. A loss that was made to look larger is a claim about a number; money taken out is a claim about a person, and only the second one is a thing a court can name.\n" +
-      "The gray area claims what the pretext assumes. That is the sentence to keep, and it is about how a boundary moves.\n" +
+      "The whistleblower openly claims what the auditors merely assume. That is the sentence to keep, because the gap between a claim and an assumption is where a boundary starts to move.\n" +
       "A gray area is not a place where the rules are unclear. It is a place where a rule was clear and an assumption was allowed to sit next to it quietly for a few years, and the assumption is what a pretext is built on afterwards.\n" +
       "So the practical rule for reading an audit is about order rather than about numbers. Find the first year in which the note changed. Somebody wrote a sentence that year and meant it as a description of one case, and the sentence was read back later as a permission.\n" +
       "Almost nobody in the room a year later remembers that it was written about one case. That is how a gray area is made, and it is made in writing, by people who were not lying at the time.",
@@ -229,7 +229,7 @@ export const enC1U22: SkillExercise[] = [
         items: [
           "One alleges accounting fraud; another proves embezzlement.",
           "To feign a loss is not to embezzle a gain.",
-          "The gray area claims what the pretext assumes.",
+          "The whistleblower openly claims what the auditors merely assume.",
           "Find the first year in which the note changed.",
         ],
         explain: "İki fiil, kasıt, sınırın kayması; en sonda okuma kuralı.",
@@ -471,9 +471,9 @@ export const enC1U22: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Gri alan, kılıfın varsaydığını iddia ediyor.",
-        answer: "The gray area claims what the pretext assumes.",
-        hint: "Kuralın yanına sessizce oturmuş bir varsayım.",
+        tr: "Muhbir, denetçilerin yalnızca varsaydığını açıkça iddia ediyor.",
+        answer: "The whistleblower openly claims what the auditors merely assume.",
+        hint: "Birinin açık iddiası, ötekinin sessiz varsayımı.",
       },
       {
         kind: "form",

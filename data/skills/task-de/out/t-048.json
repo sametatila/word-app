@@ -50,9 +50,9 @@
   "de": "Ein Weltmarktpreis ist kein Erzeugerpreis."
  },
  {
-  "tr": "Yukarıdaki iklime uyum aşağıda iklim adaleti oluyor.",
+  "tr": "Yukarıda anlatılan iklime uyum, aşağıda ele alınan iklim adaleti sorularını doğuruyor.",
   "kind": "build.tr",
-  "de": "Die oben genannte Klimaanpassung wird unten zur Klimagerechtigkeit."
+  "de": "Die oben beschriebene Klimaanpassung wirft die unten behandelten Fragen der Klimagerechtigkeit auf."
  },
  {
   "tr": "Kıraç tarlalar atıl duruyor; harap ambarlar durmuyor.",
@@ -90,9 +90,9 @@
   "de": "Das Artensterben zählen wir; den Permafrost nicht."
  },
  {
-  "tr": "Gıda egemenliği tarım reformunun yerel olmasını talep eder.",
+  "tr": "Gıda egemenliği tarım reformunun yerel olarak kararlaştırılmasını talep eder.",
   "kind": "build.tr",
-  "de": "Die Ernährungssouveränität verlangt, dass die Agrarreform örtlich sei."
+  "de": "Die Ernährungssouveränität verlangt, dass die Agrarreform vor Ort entschieden werde."
  },
  {
   "tr": "Burada endüstriyel hayvancılık yok, insancıl barındırma var.",
@@ -105,9 +105,9 @@
   "de": "Preisvolatilität wird gemessen; ein Freihandelsabkommen wird unterzeichnet."
  },
  {
-  "tr": "Toprak gaspının yaptığı şey bir toprak talebini giydirmektir.",
+  "tr": "Toprak gaspının yaptığı şey bir toprak talebini yatırım kılığına sokmaktır.",
   "kind": "build.tr",
-  "de": "Was das Landgrabbing tut, ist einen Gebietsanspruch einzukleiden."
+  "de": "Was das Landgrabbing tut, ist einen Gebietsanspruch als Investition zu tarnen."
  },
  {
   "tr": "Bir bölge ithalata bağımlıysa hiçbir önlem her alanda işlemez.",
@@ -150,14 +150,14 @@
   "de": "Zu überdüngen kann Nitratbelastung flussabwärts bedeuten."
  },
  {
-  "tr": "Sürdürülebilirlik raporu, saha araştırmasının varsaydığını iddia ediyor.",
+  "tr": "Sürdürülebilirlik raporu, saha araştırmasının yalnızca işaret ettiğini açıkça iddia ediyor.",
   "kind": "build.tr",
-  "de": "Der Nachhaltigkeitsbericht behauptet, was die Feldforschung voraussetzt."
+  "de": "Der Nachhaltigkeitsbericht behauptet offen, was die Feldforschung bloß andeutet."
  },
  {
-  "tr": "O çevreyle uyumluluk, belirtildiği gibi, önceki bir sayfanın çevre etiğidir.",
+  "tr": "Çevreyle uyumluluk, daha önce belirtildiği gibi, aynı zamanda bir çevre etiği sorusudur.",
   "kind": "build.tr",
-  "de": "Jene Umweltverträglichkeit ist, wie erwähnt, die Umweltethik einer früheren Seite."
+  "de": "Umweltverträglichkeit ist, wie bereits angemerkt, auch eine Frage der Umweltethik."
  },
  {
   "tr": "Arazi kullanım çatışması bir anlaşmazlıktır; toprağın betonlaşması bir olgudur.",
@@ -170,14 +170,14 @@
   "de": "Der eine verteidigt die Herkunftskennzeichnung; der andere zweifelt an der Rückverfolgbarkeit."
  },
  {
-  "tr": "Her sürdürülebilirlik hedefinin bir sürdürülebilirlik standardı taşımasını istiyorlar.",
+  "tr": "Her tedarikçinin bir sürdürülebilirlik standardını karşılamasını istiyorlar.",
   "kind": "build.tr",
-  "de": "Sie verlangen, dass jedes Nachhaltigkeitsziel einen Nachhaltigkeitsstandard trage."
+  "de": "Sie verlangen, dass jeder Lieferant einen Nachhaltigkeitsstandard erfülle."
  },
  {
-  "tr": "Tohumu yeniden ekme hakkı âdet olarak, genetik mühendisliği patent olarak sağ kalıyor.",
+  "tr": "Tohumu yeniden ekme hakkı âdet olarak, tohum şirketinin talebi patent olarak sağ kalıyor.",
   "kind": "build.tr",
-  "de": "Das Nachbaurecht überlebt als Brauch, die Gentechnik als Patent."
+  "de": "Das Nachbaurecht überlebt als Brauch, der Anspruch des Saatgutkonzerns als Patent."
  },
  {
   "tr": "Bu alandaki en dürüst cümle.",
@@ -240,9 +240,9 @@
   "de": "Wieder ein Haltungsverb, diesmal an der vorderen Stelle."
  },
  {
-  "tr": "„As noted“ önceki bir sayfa hakkında bir söz.",
+  "tr": "„As noted earlier“ daha önceki bir sayfa hakkında bir söz.",
   "kind": "build.hint",
-  "de": "„As noted“ ist ein Versprechen über eine frühere Seite."
+  "de": "„As noted earlier“ ist ein Versprechen über eine frühere Seite."
  },
  {
   "tr": "Düz tarlada tüketmez; çekince yerinde duruyor.",

@@ -23,7 +23,7 @@ import type { SkillExercise } from "../types";
  *           Socialization may set the pecking order before the initiation. ·
  *           The banquet was opulent; the welcome, faceless. ·
  *           We have no deviance here; we have a local custom. ·
- *           Taboo breaking, they said, and rather good for the dissonance.
+ *           Healthy taboo breaking, they said, and rather good for the mood.
  *
  * Ünitenin tek öğretme noktası KARŞILAŞTIRMADA EKSİLTME. „…more than the
  * law“ iki ayrı cümle demek olabiliyor (hukuk mu daha az biçimlendiriyor,
@@ -286,7 +286,7 @@ export const enC1U12: SkillExercise[] = [
       { speaker: "Mert", text: "Are there many modifiers like that?" },
       { speaker: "İpek", text: "A small family and every one of them is worth knowing: alleged, nominal, former, supposed. Each of them takes back the noun it is standing in front of." },
       { speaker: "Mert", text: "And the last line?" },
-      { speaker: "İpek", text: "Taboo breaking, they said, and rather good for the dissonance. The inserted clause again, and the compliment at the end is the part I would not trust." },
+      { speaker: "İpek", text: "Healthy taboo breaking, they said, and rather good for the mood. The inserted clause again, and the compliment at the end is the part I would not trust." },
       { speaker: "Mert", text: "Why not?" },
       { speaker: "İpek", text: "Because „rather good for“ is what you say about medicine. Somebody has been swallowed by a sentence and told it was healthy, and the room agreed while it happened." },
     ],
@@ -312,11 +312,11 @@ export const enC1U12: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Taboo breaking, they said, and ___ good for the dissonance.",
+        text: "Healthy taboo breaking, they said, and ___ good for the mood.",
         options: [],
         answer: 0,
         accept: ["rather"],
-        explain: "„Taboo breaking, they said, and rather good for the dissonance.“",
+        explain: "„Healthy taboo breaking, they said, and rather good for the mood.“",
       },
       {
         kind: "dictation",

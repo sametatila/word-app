@@ -18,16 +18,16 @@ import type { SkillExercise } from "../types";
  *           The square was revitalized; the neighbours, less so. ·
  *           We have no gentrification here; we densify and refurbish. ·
  *           Car-friendly, they said, and rather good against traffic gridlock. ·
- *           The spatial planning above becomes a zoning plan below. ·
+ *           The spatial planning outlined above is made concrete in the zoning plan below. ·
  *           That change of use, as noted, works in urban design terms only. ·
  *           In terms of scale, a fine-grained quarter serves accessibility better. ·
  *           The moratorium survives as a promise, the construction freeze as a date. ·
  *           The houses fall into neglect; the halls, into ruin. ·
- *           The dismantling began; the repurpose did not.
+ *           The dismantling began; the repurposing did not.
  *
  * Ünitenin tek öğretme noktası SIFIR TÜRETME. „The dismantling began; the
- * repurpose did not“ — tek satırda fiilden yapılmış iki isim ve ikisi iki
- * ayrı yolla yapılmış. „Dismantling“in eki var; „the repurpose“un hiçbir
+ * repurposing did not“ — tek satırda fiilden yapılmış iki isim, ikisi de
+ * „-ing“ ekli. Öteki yol eksiz dönüşüm; onun hiçbir
  * şeyi yok: ne ek, ne biçim değişikliği, ne görünür bir iz — isim
  * olduğunu söyleyen tek şey önündeki „the“. Buna dönüşüm deniyor ve dilin
  * en ucuz makinesi: a build, a spend, an ask, a reveal, a read; öğrenilecek
@@ -39,7 +39,7 @@ import type { SkillExercise } from "../types";
  * ikisi de beklemeyen okura görünmez, ve ikisinin bedeli de aynı: hiçten
  * kurulmuş yeni bir sözcük TERİM gibi duruyor.** Bir planlama belgesinde
  * başlık olarak „the repurpose“ gören okur, bir yerlerde onun formu
- * olduğunu varsayıyor.
+ * olduğunu varsayıyor; bu yüzden planda „the repurposing“ yazıyor.
  */
 export const enC1U20: SkillExercise[] = [
   // ─────────────────────────── OKUMA ───────────────────────────
@@ -89,17 +89,17 @@ export const enC1U20: SkillExercise[] = [
     ],
     minutes: 12,
     text:
-      "The dismantling began; the repurpose did not. Two nouns in one line, both made out of verbs, and they were made in two different ways.\n" +
-      "„Dismantling“ has an ending on it. That is the shape English has used for this job for a thousand years and it is always available: take a verb, add four letters, and you have a noun naming the activity while it is happening.\n" +
-      "„The repurpose“ has nothing on it at all. The verb has been used as a noun with no ending, no change of shape and no visible mark of any kind, and the only thing saying it is a noun is the word in front of it.\n" +
+      "The dismantling began; the repurposing did not. Two nouns in one line, both made out of verbs, and both made the same way.\n" +
+      "„Dismantling“ and „repurposing“ have an ending on them. That is the shape English has used for this job for a thousand years and it is always available: take a verb, add „-ing“, and you have a noun naming the activity while it is happening.\n" +
+      "The other way is to add nothing at all. A verb is used as a noun with no ending, no change of shape and no visible mark of any kind, and the only thing saying it is a noun is the word in front of it.\n" +
       "This is called conversion and it is one of the cheapest machines in the language. A build. A spend. An ask. A reveal. A read. Any verb can be tried this way and most of them work, and there is no list to learn because there is nothing to add.\n" +
       "German cannot do it. A verb turned into a noun there always leaves a mark: a capital letter at least, usually an article, and often an ending as well, so the result is visibly a different word from the verb it came from. The change of class is written down.\n" +
       "So here is the measurement, and it is the other end of something this level met one unit ago. There, English made a word by adding a prefix; here it makes one by adding nothing at all. Both machines are productive, and both are invisible to a reader who is not expecting them.\n" +
-      "Both have the same cost too, and it is worth saying plainly. A new word built out of nothing looks like a term. „The repurpose“ in a planning document sounds like a stage in a procedure, and a reader who meets it in a heading will assume that somewhere there is a form for it.\n" +
+      "Both have the same cost too, and it is worth saying plainly. A new word built out of nothing looks like a term, or like a mistake. That is why the plan says „the repurposing“: „the repurpose“ in a planning document would sound like a stage in a procedure, and a reader who met it in a heading would assume that somewhere there is a form for it.\n" +
       "The moratorium survives as a promise, the construction freeze as a date. And then the closing line, in a shape this level knows by now: the houses fall into neglect; the halls, into ruin. The verb has gone from the second half and what is left is a preposition, carrying the difference between a slow thing and a finished one.",
     questions: [
       {
-        text: "What says „the repurpose“ is a noun?",
+        text: "What shows that a verb is being used as a noun?",
         options: ["the word in front of it", "an ending", "a capital letter"],
         answer: 0,
         explain: "„the only thing saying it is a noun is the word in front of it.“",
@@ -122,8 +122,8 @@ export const enC1U20: SkillExercise[] = [
         text: "The dismantling began; the ___ did not.",
         options: [],
         answer: 0,
-        accept: ["repurpose"],
-        explain: "„The dismantling began; the repurpose did not.“",
+        accept: ["repurposing"],
+        explain: "„The dismantling began; the repurposing did not.“",
       },
       {
         kind: "order",
@@ -131,7 +131,7 @@ export const enC1U20: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "The dismantling began; the repurpose did not.",
+          "The dismantling began; the repurposing did not.",
           "Any verb can be tried this way.",
           "The change of class is written down in German.",
           "A new word built out of nothing looks like a term.",
@@ -188,7 +188,7 @@ export const enC1U20: SkillExercise[] = [
     ],
     minutes: 12,
     text:
-      "The spatial planning above becomes a zoning plan below. The same area of a city, two chapters apart, and two words that are not the same kind of thing.\n" +
+      "The spatial planning outlined above is made concrete in the zoning plan below. The same area of a city, two chapters apart, and two words that are not the same kind of thing.\n" +
       "Spatial planning is an intention. A zoning plan is a legal document with boundaries on it, and the difference between them is that one can be argued with at a meeting and the other has to be changed by a procedure with dates in it.\n" +
       "The pointer is doing real work in that line. Without it a reader is holding two terms for one area and does not know they belong together, and in a report with nine chapters that happens on almost every page.\n" +
       "That change of use, as noted, works in urban design terms only. Two things to notice here and the second one is the useful half.\n" +
@@ -218,11 +218,11 @@ export const enC1U20: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The spatial planning above becomes a ___ plan below.",
+        text: "The spatial planning outlined above is made concrete in the ___ plan below.",
         options: [],
         answer: 0,
         accept: ["zoning"],
-        explain: "„The spatial planning above becomes a zoning plan below.“",
+        explain: "„The spatial planning outlined above is made concrete in the zoning plan below.“",
       },
       {
         kind: "order",
@@ -230,7 +230,7 @@ export const enC1U20: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "The spatial planning above becomes a zoning plan below.",
+          "The spatial planning outlined above is made concrete in the zoning plan below.",
           "That change of use, as noted, works in urban design terms only.",
           "In terms of scale, a fine-grained quarter serves accessibility better.",
           "A reader told the dimension first knows what to believe.",
@@ -438,9 +438,9 @@ export const enC1U20: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 20,
-    title: "The dismantling began; the repurpose did not",
+    title: "The dismantling began; the repurposing did not",
     genre: "info",
-    intro: "Ekli isim ile eksiz isim; ve raporun göndermeleri.",
+    intro: "Ekli isimler ve raporun göndermeleri.",
     gloss: [
       { de: "visible", tr: "görünür" },
       { de: "a dismantling", tr: "sökme" },
@@ -455,8 +455,8 @@ export const enC1U20: SkillExercise[] = [
       {
         kind: "build",
         tr: "Sökme başladı; yeniden işlevlendirme başlamadı.",
-        answer: "The dismantling began; the repurpose did not.",
-        hint: "Biri ekli, öteki eksiz: ikisi de fiilden isim.",
+        answer: "The dismantling began; the repurposing did not.",
+        hint: "İkisi de „-ing“ ekli: ikisi de fiilden isim.",
       },
       {
         kind: "build",
@@ -472,8 +472,8 @@ export const enC1U20: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Yukarıdaki mekânsal planlama aşağıda bir imar planına dönüşüyor.",
-        answer: "The spatial planning above becomes a zoning plan below.",
+        tr: "Yukarıda özetlenen mekânsal planlama, aşağıdaki imar planında somutlaşıyor.",
+        answer: "The spatial planning outlined above is made concrete in the zoning plan below.",
         hint: "Biri niyet, öteki hukuki belge.",
       },
       {

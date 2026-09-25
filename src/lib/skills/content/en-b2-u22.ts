@@ -20,7 +20,7 @@ import type { SkillExercise } from "../types";
  *           Only after the talk does the coping begin. ·
  *           By next summer we will have passed the turning point. ·
  *           Next year we will be building a sense of security. ·
- *           By then the puberty will have ended. ·
+ *           By then his puberty will have ended. ·
  *           He must have failed to empathize. ·
  *           They can't have been unforgiving. ·
  *           We should have been more open-minded.
@@ -326,7 +326,7 @@ export const enB2U22: SkillExercise[] = [
       { speaker: "Ceren Su", text: "By next summer we will have passed the turning point. A point in time, a finished state, and nobody in the sentence." },
       { speaker: "Ceren Su", text: "That is the shape for a plan and it is the wrong shape for a promise, and a family diary is somewhere between the two." },
       { speaker: "Ceren Su", text: "Next year we will be building a sense of security. Inside the work rather than after it, and honest: building is not a thing that finishes on a date." },
-      { speaker: "Ceren Su", text: "By then the puberty will have ended. Four words of verb, and it is the only sentence on the page that I do not control at all." },
+      { speaker: "Ceren Su", text: "By then his puberty will have ended. Four words of verb, and it is the only sentence on the page that I do not control at all." },
       { speaker: "Ceren Su", text: "That is the interesting one. A future perfect about something nobody arranged reads like a plan and is a hope." },
       { speaker: "Ceren Su", text: "So I keep it, because the page is a diary and not a contract, and a diary is allowed to hope on a calendar." },
       { speaker: "Ceren Su", text: "The obedience line came out. It was written in the same shape and it was not a hope; it was an instruction with a date on it." },
@@ -365,7 +365,7 @@ export const enB2U22: SkillExercise[] = [
         text: "Duyduğun cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["By then the puberty will have ended.", "By then the puberty will have ended"],
+        accept: ["By then his puberty will have ended.", "By then his puberty will have ended"],
         explain: "Edilgen değil ama bitmiş: „will have“ + üçüncü hâl.",
       },
       {

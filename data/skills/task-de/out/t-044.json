@@ -50,9 +50,9 @@
   "de": "Wäre da nicht der Rechtsstaat, würde der Zusammenhalt scheitern."
  },
  {
-  "tr": "İfade biçimi pekâlâ ötekileştirebilir.",
+  "tr": "İfade biçimi pekâlâ yaşlı okurları ötekileştirebilir.",
   "kind": "build.tr",
-  "de": "Die Formulierung dürfte durchaus ausgrenzen."
+  "de": "Die Formulierung dürfte ältere Leser durchaus ausgrenzen."
  },
  {
   "tr": "Tam da vicdansız sayılmazlar, öyle mi?",
@@ -65,9 +65,9 @@
   "de": "In die Darstellung schleicht sich ein Drang zur Idealisierung."
  },
  {
-  "tr": "Daha az sömürmesi beklenmiş olabilirdi.",
+  "tr": "Yeni sözleşmenin işçileri daha az sömürmesi beklenmiş olabilirdi.",
   "kind": "build.tr",
-  "de": "Man hätte erwarten können, dass es weniger ausbeutet."
+  "de": "Man hätte erwarten können, dass der neue Vertrag die Arbeiter weniger ausbeutet."
  },
  {
   "tr": "Tartışmanın yaptığı şey kutuplaştırmak.",
@@ -85,9 +85,9 @@
   "de": "Wir beantragen, dass der Vorstand Mitbestimmung gewährt."
  },
  {
-  "tr": "Büronun itirazı sunmasını talep ediyoruz.",
+  "tr": "Avukatımızın itirazı bugün sunmasını talep ediyoruz.",
   "kind": "build.tr",
-  "de": "Wir beantragen, dass die Behörde den Widerspruch einlegt."
+  "de": "Wir beantragen, dass unsere Anwältin den Widerspruch heute einlegt."
  },
  {
   "tr": "Geçmişi yüceltiriz; bugünü stilize ederiz.",
@@ -135,14 +135,14 @@
   "de": "Eine Regel zu erlassen heißt nicht, sie durchzusetzen."
  },
  {
-  "tr": "Yemin ettiremedikleri bir grubu oylamada yeniyorlar.",
+  "tr": "Yeni üyeler yemin etmeden önce grubu oylamada yendiler.",
   "kind": "build.tr",
-  "de": "Sie überstimmen eine Gruppe, die sie nicht vereidigen können."
+  "de": "Sie überstimmten die Gruppe, bevor die neuen Mitglieder vereidigt wurden."
  },
  {
-  "tr": "Hiçbir belgenin kabul edilemez olmamasını istiyorlar.",
+  "tr": "Hiçbir delilin duruşma yapılmadan kabul edilemez sayılmamasını istiyorlar.",
   "kind": "build.tr",
-  "de": "Sie bitten darum, dass kein Dokument unzulässig sei."
+  "de": "Sie bitten darum, dass kein Beweis ohne Anhörung für unzulässig erklärt werde."
  },
  {
   "tr": "Bir görev süresinin verdiğini takdir yetkisi alabilir.",
@@ -150,9 +150,9 @@
   "de": "Was eine Amtszeit gewährt, das kann das Ermessen nehmen."
  },
  {
-  "tr": "Bir dil düzeyinde hafif suç olan şey, başka birinde kabahattir.",
+  "tr": "Bir raporda hafif suç olan şey, başka birinde kabahattir.",
   "kind": "build.tr",
-  "de": "Was auf der einen Sprachebene ein Vergehen ist, ist auf der anderen eine Ordnungswidrigkeit."
+  "de": "Was in einem Bericht ein Vergehen ist, ist in einem anderen eine Ordnungswidrigkeit."
  },
  {
   "tr": "İdari işlem olarak yazılınca aynı adım daha soğuk okunuyor.",
@@ -250,9 +250,9 @@
   "de": "„hardly“ ist schon verneinend; ein zweites „not“ gibt es nicht."
  },
  {
-  "tr": "İlgi adılı düşmüş; parçacık sonda kalmış.",
+  "tr": "İki eşdizim bir cümlede; edilgende parçacık sonda kalmış.",
   "kind": "build.hint",
-  "de": "Das Relativpronomen ist weggefallen; die Partikel bleibt am Ende."
+  "de": "Zwei Kollokationen in einem Satz; im Passiv bleibt die Partikel am Ende."
  },
  {
   "tr": "Orta çatı: özne okunan şey, fiil etken biçimde.",

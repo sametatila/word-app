@@ -9,17 +9,17 @@ import type { SkillExercise } from "../types";
  *
  *   Kelime: lodge, inadmissible, decree, acquittal, revocation,
  *           guardianship, enact, outvote, discretion.
- *   Kalıp:  We request that the office lodge the appeal. ·
+ *   Kalıp:  We request that our lawyer lodge the appeal today. ·
  *           Were it not for the limitation period, the claim would stand. ·
- *           They ask that no document be inadmissible. ·
- *           A misdemeanor in one register is a civil infraction in another. ·
+ *           They ask that no evidence be ruled inadmissible without a hearing. ·
+ *           A misdemeanor in one report is a civil infraction in another. ·
  *           Written as an administrative decision, the same step reads colder. ·
- *           The acquittal becomes a sentence in the spoken register. ·
+ *           In the spoken register, the acquittal becomes 'he was cleared.' ·
  *           She stated it; he conceded it; they alleged it. ·
- *           The expert report claims what the file assumes. ·
+ *           The expert report openly claims what the file merely assumes. ·
  *           To record a revocation is not to accept it. ·
  *           To enact a rule is not to enforce it. ·
- *           They outvote a group they cannot swear in. ·
+ *           They outvoted the group before the new members were sworn in. ·
  *           What a term of office grants, discretion can take.
  *
  * Ünitenin tek öğretme noktası „TO X IS TO Y“: İngilizce mastarı hiçbir
@@ -48,7 +48,6 @@ export const enC1U06: SkillExercise[] = [
       { de: "object", tr: "nesne" },
       { de: "fourth", tr: "dördüncü" },
       { de: "construction", tr: "kuruluş" },
-      { de: "pronoun", tr: "adıl" },
       { de: "phrasal", tr: "öbeksi" },
       { de: "underneath", tr: "altta" },
       { de: "an infinitive", tr: "mastar" },
@@ -74,7 +73,7 @@ export const enC1U06: SkillExercise[] = [
       "The affirmative version asserts an identity. „To resign oneself is to forfeit the argument“ says the two are one thing, and a reader who accepts the first half has accepted the second before noticing.\n" +
       "The negative version is the more useful of the two, and it is the characteristic sentence of a legal or an academic paragraph. It denies an inference without denying a fact. Everything before it can stand; only the step the reader was about to take is refused. To record a revocation is not to accept it. To report a claim is not to falsify it.\n" +
       "What a term of office grants, discretion can take. A different shape on the same page: the object has been fronted, and by now the first words tell you which construction you are in.\n" +
-      "They outvote a group they cannot swear in. And here the relative pronoun has gone, which a choosing clause allows, and the phrasal verb has been left with its particle stranded at the end, which English does without comment and many languages cannot do at all.\n" +
+      "They outvoted the group before the new members were sworn in. Two settled legal verbs in one line, and the second phrasal verb has left its particle stranded at the end, which English does without comment and many languages cannot do at all.\n" +
       "Three shapes and one habit underneath them. Each of them puts something heavy at the front of the sentence and trusts the reader to carry it until the verb arrives. That trust is the register. A paragraph written this way is telling the reader that it expects to be read slowly, and a reader who is not going to read it slowly should be given a different paragraph.",
     questions: [
       {
@@ -112,10 +111,10 @@ export const enC1U06: SkillExercise[] = [
         items: [
           "To enact a rule is not to enforce it.",
           "What a term of office grants, discretion can take.",
-          "They outvote a group they cannot swear in.",
+          "They outvoted the group before the new members were sworn in.",
           "Each puts something heavy at the front.",
         ],
-        explain: "Mastar özne, öne çıkarılmış nesne, düşmüş adıl; en sonda ortak alışkanlık.",
+        explain: "Mastar özne, öne çıkarılmış nesne, iki eşdizim; en sonda ortak alışkanlık.",
       },
       {
         kind: "short_answer",
@@ -164,10 +163,10 @@ export const enC1U06: SkillExercise[] = [
     ],
     minutes: 12,
     text:
-      "A misdemeanor in one register is a civil infraction in another. The same act, the same file, two words, and the second one has taken the person out of it.\n" +
+      "A misdemeanor in one report is a civil infraction in another. The same act, the same file, two words, and the second one has taken the person out of it.\n" +
       "That is the whole of this lesson and it is worth being slow about. „Misdemeanor“ has somebody in it: a person did a thing that has a name in the code. „Civil infraction“ has a procedure in it, and the person has become an item in one.\n" +
       "Written as an administrative decision, the same step reads colder. Note the verb again: „reads“, middle voice, no reader named, and this unit has now used it twice because it is the only way to talk about how a text behaves.\n" +
-      "The acquittal becomes a sentence in the spoken register. That one goes the other way. A word that is precise in a court becomes a word with a verdict attached in a corridor, and the man who was acquitted spends ten years explaining a term that had been in his favor.\n" +
+      "In the spoken register, the acquittal becomes 'he was cleared.' That one goes the other way. A word that is precise in a court becomes just a verdict in a corridor, and the man who was acquitted spends ten years hearing „cleared“ where the court had given reasons in his favor.\n" +
       "So register here is not politeness and it is not style. It is which facts survive the move from one document to another, and the answer is never all of them.\n" +
       "What survives a move into the administrative register is the procedure. What survives a move into the spoken register is the outcome. Neither keeps the reasoning, and the reasoning was the part that took the court four days.\n" +
       "The practical consequence for a writer is narrow and hard. When a fact has to cross between registers, it has to be rewritten in each one rather than translated, and a sentence that has been carried across unchanged is almost always saying something it did not say at home.",
@@ -205,9 +204,9 @@ export const enC1U06: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "A misdemeanor in one register is a civil infraction in another.",
+          "A misdemeanor in one report is a civil infraction in another.",
           "Written as an administrative decision, the same step reads colder.",
-          "The acquittal becomes a sentence in the spoken register.",
+          "In the spoken register, the acquittal becomes 'he was cleared.'",
           "A fact has to be rewritten in each register.",
         ],
         explain: "İki sözcük, idari dil, konuşma dili; en sonda kural.",
@@ -260,7 +259,7 @@ export const enC1U06: SkillExercise[] = [
       { speaker: "Simge", text: "In a file it is. „Said“ is neutral in a newspaper and „stated“ is neutral in a record, and using the wrong neutral verb is itself a signal." },
       { speaker: "Volkan", text: "And „conceded“?" },
       { speaker: "Simge", text: "He did not want to say it. Which makes it more credible and also makes the file a document with an opinion in it, and that is the part a lawyer will read twice." },
-      { speaker: "Volkan", text: "The expert report claims what the file assumes." },
+      { speaker: "Volkan", text: "The expert report openly claims what the file merely assumes." },
       { speaker: "Simge", text: "That sentence is a verdict on two documents and I would not write it without a page reference for each." },
       { speaker: "Volkan", text: "Is „claims“ fair there?" },
       { speaker: "Simge", text: "It is fair if the report asserts something it does not show. If it shows it, „claims“ is a small act of damage and the report deserves „demonstrates“." },
@@ -302,7 +301,7 @@ export const enC1U06: SkillExercise[] = [
         text: "Duyduğun cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["The expert report claims what the file assumes.", "The expert report claims what the file assumes"],
+        accept: ["The expert report openly claims what the file merely assumes.", "The expert report openly claims what the file merely assumes"],
         explain: "İki belge hakkında bir cümle ve ikisi hakkında bir hüküm.",
       },
       {
@@ -342,9 +341,9 @@ export const enC1U06: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Zümrüt", text: "We request that the office lodge the appeal. „Lodge“, with no ending, and the sentence is a petition because of it." },
-      { speaker: "Zümrüt", text: "This is the one place in English where a missing letter changes what a document is. „The office lodges the appeal“ is a report; „that the office lodge the appeal“ is a request." },
-      { speaker: "Zümrüt", text: "They ask that no document be inadmissible. „Be“, not „is“, and the negative sits in the subject where this register prefers it." },
+      { speaker: "Zümrüt", text: "We request that our lawyer lodge the appeal today. „Lodge“, with no ending, and the sentence is a petition because of it." },
+      { speaker: "Zümrüt", text: "This is the one place in English where a missing letter changes what a document is. „Our lawyer lodges the appeal“ is a report; „that our lawyer lodge the appeal“ is a request." },
+      { speaker: "Zümrüt", text: "They ask that no evidence be ruled inadmissible without a hearing. „Be“, not „is“, and the negative sits in the subject where this register prefers it." },
       { speaker: "Zümrüt", text: "Were it not for the limitation period, the claim would stand. The other half of the same mood, supposing rather than asking, and it is the sentence the whole petition is built to earn." },
       { speaker: "Zümrüt", text: "The order matters. Request first, ground last, and everything in between is dates." },
       { speaker: "Zümrüt", text: "A petition that puts the ground first reads as an argument, and an argument can be answered without the request ever being considered." },
@@ -354,7 +353,7 @@ export const enC1U06: SkillExercise[] = [
     questions: [
       {
         text: "What does the missing letter change?",
-        options: ["what the document is", "the date", "the office"],
+        options: ["what the document is", "the date", "the lawyer"],
         answer: 0,
         explain: "„a missing letter changes what a document is.“",
       },
@@ -373,18 +372,18 @@ export const enC1U06: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "They ask that no document ___ inadmissible.",
+        text: "They ask that no evidence ___ ruled inadmissible without a hearing.",
         options: [],
         answer: 0,
         accept: ["be"],
-        explain: "„They ask that no document be inadmissible.“",
+        explain: "„They ask that no evidence be ruled inadmissible without a hearing.“",
       },
       {
         kind: "dictation",
         text: "Duyduğun cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["We request that the office lodge the appeal.", "We request that the office lodge the appeal"],
+        accept: ["We request that our lawyer lodge the appeal today.", "We request that our lawyer lodge the appeal today"],
         explain: "İstek kipi: „lodge“, „lodges“ değil.",
       },
       {
@@ -438,9 +437,9 @@ export const enC1U06: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Yemin ettiremedikleri bir grubu oylamada yeniyorlar.",
-        answer: "They outvote a group they cannot swear in.",
-        hint: "İlgi adılı düşmüş; parçacık sonda kalmış.",
+        tr: "Yeni üyeler yemin etmeden önce grubu oylamada yendiler.",
+        answer: "They outvoted the group before the new members were sworn in.",
+        hint: "İki eşdizim bir cümlede; edilgende parçacık sonda kalmış.",
       },
       {
         kind: "form",
@@ -461,7 +460,7 @@ export const enC1U06: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 6,
-    title: "We request that the office lodge the appeal",
+    title: "We request that our lawyer lodge the appeal today",
     genre: "info",
     intro: "Dilekçenin kipi ve iki dil düzeyi.",
     gloss: [
@@ -474,14 +473,14 @@ export const enC1U06: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Büronun itirazı sunmasını talep ediyoruz.",
-        answer: "We request that the office lodge the appeal.",
+        tr: "Avukatımızın itirazı bugün sunmasını talep ediyoruz.",
+        answer: "We request that our lawyer lodge the appeal today.",
         hint: "İstek kipi: „lodge“, „lodges“ değil.",
       },
       {
         kind: "build",
-        tr: "Hiçbir belgenin kabul edilemez olmamasını istiyorlar.",
-        answer: "They ask that no document be inadmissible.",
+        tr: "Hiçbir delilin duruşma yapılmadan kabul edilemez sayılmamasını istiyorlar.",
+        answer: "They ask that no evidence be ruled inadmissible without a hearing.",
         hint: "„be“ olduğu gibi kalıyor; olumsuz öznede.",
       },
       {
@@ -492,8 +491,8 @@ export const enC1U06: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Bir dil düzeyinde hafif suç olan şey, başka birinde kabahattir.",
-        answer: "A misdemeanor in one register is a civil infraction in another.",
+        tr: "Bir raporda hafif suç olan şey, başka birinde kabahattir.",
+        answer: "A misdemeanor in one report is a civil infraction in another.",
         hint: "Aynı olay, iki sözcük, iki ayrı dünya.",
       },
       {

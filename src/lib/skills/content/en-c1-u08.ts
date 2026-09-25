@@ -12,7 +12,7 @@ import type { SkillExercise } from "../types";
  *           feel for language, emphatically, empty phrase, haltingly,
  *           accent-free, expressive power, streamline, circumvent,
  *           quick wit, fear of speaking, pay homage, become entrenched.
- *   Kalıp:  This alone binds the affidavit of support. ·
+ *   Kalıp:  This clause alone binds the sponsor to the affidavit of support. ·
  *           Such a hardship case is rare. ·
  *           The latter falls to the federal agency. ·
  *           Not exactly lucrative, is it? ·
@@ -194,7 +194,7 @@ export const enC1U08: SkillExercise[] = [
       "Said emphatically, an empty phrase sounds like a claim. Here is one of those choices, and it is worth holding still over. Nothing in the words has changed. The delivery has, and the delivery has moved the sentence out of one kind of act and into another: what was furniture a second ago is now something a listener can disagree with.\n" +
       "This is the point where a second language becomes dangerous rather than merely difficult. A learner who speaks haltingly is forgiven everything, and one who is accent-free is forgiven nothing, because the second one is assumed to have chosen every word on purpose. Expressive power arrives before the control of it does, and the gap between the two is where the damage happens.\n" +
       "Now the written side, and three lines out of an office.\n" +
-      "This alone binds the affidavit of support. „Alone“ has been put after the subject rather than in front of it, which is a written habit; in speech the stress would have done the same work with no extra word at all.\n" +
+      "This clause alone binds the sponsor to the affidavit of support. „Alone“ has been put after the subject rather than in front of it, which is a written habit; in speech the stress would have done the same work with no extra word at all.\n" +
       "Such a hardship case is rare. „Such a“ points backwards at a description the reader has already been given, and a text that uses it has promised that the description was precise.\n" +
       "The latter falls to the federal agency. „The latter“ saves four words and costs the reader a glance back up the page, and it is only honest when the two items were named in the last two lines.\n" +
       "None of the three could be said aloud without sounding like a document being read out, and that is the test. A written shape that survives speech is neutral; one that does not is carrying a register on its back, and a writer who has not noticed which of the two is in hand will be heard saying something about themselves rather than about the case.",
@@ -232,7 +232,7 @@ export const enC1U08: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "This alone binds the affidavit of support.",
+          "This clause alone binds the sponsor to the affidavit of support.",
           "Such a hardship case is rare.",
           "The latter falls to the federal agency.",
           "A written shape that survives speech is neutral.",
@@ -380,7 +380,7 @@ export const enC1U08: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Tuna", text: "This alone binds the affidavit of support. One paragraph out of nine, and the other eight are dates and addresses." },
+      { speaker: "Tuna", text: "This clause alone binds the sponsor to the affidavit of support. One paragraph out of nine, and the other eight are dates and addresses." },
       { speaker: "Tuna", text: "Notice where „alone“ sits. After the subject, not in front of it, which is an office habit and not a spoken one." },
       { speaker: "Tuna", text: "Said aloud, you would put the stress on „this“ and drop the word entirely. The written page has no stress, so it spends a word." },
       { speaker: "Tuna", text: "Such a hardship case is rare. That line is doing two jobs and only one of them is visible." },
@@ -543,8 +543,8 @@ export const enC1U08: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Taahhütnameyi bağlayan yalnızca bu.",
-        answer: "This alone binds the affidavit of support.",
+        tr: "Sponsoru taahhütnameye bağlayan tek şey bu madde.",
+        answer: "This clause alone binds the sponsor to the affidavit of support.",
         hint: "„Alone“ öznenin ardında: yazılı alışkanlık.",
       },
       {

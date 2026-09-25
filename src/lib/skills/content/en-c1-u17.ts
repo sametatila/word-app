@@ -16,7 +16,7 @@ import type { SkillExercise } from "../types";
  *           Price volatility is measured; a free trade agreement is signed. ·
  *           Trade liberalization and market regulation pull apart. ·
  *           One defends the country-of-origin labeling; another doubts the traceability. ·
- *           The sustainability report claims what the field research assumes. ·
+ *           The sustainability report openly claims what the field research merely suggests. ·
  *           To call it knowledge transfer is not to call it agronomic advice. ·
  *           Soil erosion may well deplete the field in one generation. ·
  *           To overfertilize might mean nitrate pollution downstream. ·
@@ -381,7 +381,7 @@ export const enC1U17: SkillExercise[] = [
       { speaker: "Berna", text: "One defends the country-of-origin labeling; another doubts the traceability. Two people at one table and they are not disagreeing about the same thing." },
       { speaker: "Berna", text: "A label is a claim on a package. Traceability is whether a batch can be followed from a field to a mill to a shelf, and the second is a question about systems." },
       { speaker: "Berna", text: "You can have a perfectly honest label and no traceability at all, because the label says where the last step happened and nothing before it." },
-      { speaker: "Berna", text: "The sustainability report claims what the field research assumes. The same shape this level met in a seminar and in a meeting, and here it is about two documents again." },
+      { speaker: "Berna", text: "The sustainability report openly claims what the field research merely suggests. The same shape this level met in a seminar and in a meeting, and here it is about two documents again." },
       { speaker: "Berna", text: "The assumption is usually the sample. Forty farms, chosen because they answered the letter, and the report says „farms in the region“ with no number in the sentence." },
       { speaker: "Berna", text: "Find the sample size before you read anything else. It is in a footnote, and when it is not in a footnote it is not anywhere." },
       { speaker: "Berna", text: "To call it knowledge transfer is not to call it agronomic advice. Eight words that a farmer needs and a seller does not want written down." },
@@ -422,8 +422,8 @@ export const enC1U17: SkillExercise[] = [
         text: "Duyduğun cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["The sustainability report claims what the field research assumes.", "The sustainability report claims what the field research assumes"],
-        explain: "İki belge: biri iddia ediyor, öteki varsayıyor.",
+        accept: ["The sustainability report openly claims what the field research merely suggests.", "The sustainability report openly claims what the field research merely suggests"],
+        explain: "İki belge: biri açıkça iddia ediyor, öteki yalnızca işaret ediyor.",
       },
       {
         kind: "short_answer",
@@ -529,8 +529,8 @@ export const enC1U17: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Sürdürülebilirlik raporu, saha araştırmasının varsaydığını iddia ediyor.",
-        answer: "The sustainability report claims what the field research assumes.",
+        tr: "Sürdürülebilirlik raporu, saha araştırmasının yalnızca işaret ettiğini açıkça iddia ediyor.",
+        answer: "The sustainability report openly claims what the field research merely suggests.",
         hint: "Varsayım genellikle örneklemdir.",
       },
       {

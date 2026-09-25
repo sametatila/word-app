@@ -15,19 +15,19 @@ import type { SkillExercise } from "../types";
  *           ethic, action pattern, everyday practice, platitude.
  *   Kalıp:  Collective bargaining rights demand that the conduct of negotiations be free from state interference. ·
  *           Were it not for consensus building, no code of conduct would hold. ·
- *           The union representative asks that the firm make permanent every apprenticeship contract. ·
- *           Much as they spin off the unit, the work stays in-house. ·
+ *           The union representative asks that the firm make every apprenticeship contract permanent. ·
+ *           Much as they would like to spin off the unit, the real work stays in-house. ·
  *           The border, albeit permeable, does not remove the job insecurity. ·
- *           Albeit gainfully employed, many still work on the side. ·
+ *           Although gainfully employed, many still work on the side. ·
  *           Deskilling is not the opposite of professionalization. ·
  *           A skilled labor shortage is announced; a labor reserve is counted. ·
  *           Lateral hiring and a competency-based approach arrive together. ·
  *           One obscures the segmentation; another undermines the professional ethic. ·
- *           The action pattern claims what the everyday practice assumes. ·
+ *           The written rule openly claims what everyday practice merely assumes. ·
  *           To call it disciplining is not to call it a platitude.
  *
  * Ünitenin tek öğretme noktası AĞIR NESNENİN SONA KAYMASI. „…make
- * permanent every apprenticeship contract“ — olağan sıra „make something
+ * permanent every apprenticeship contract signed since the merger“ — olağan sıra „make something
  * permanent“ iken nesne, ne olacağını söyleyen sözcüğün ÜSTÜNDEN atlayıp
  * cümlenin sonuna inmiş. Atlama nedeni anlam değil UZUNLUK: İngilizce
  * uzun nesneyi sona atıyor, kısa parçayı fiilin yanında bırakıyor. Aynı
@@ -86,9 +86,9 @@ export const enC1U14: SkillExercise[] = [
     ],
     minutes: 12,
     text:
-      "The union representative asks that the firm make permanent every apprenticeship contract. Read the last six words, notice that they are in the wrong order, and then notice that they are not.\n" +
-      "„Make permanent every apprenticeship contract.“ The ordinary pattern is „make something permanent“: the verb, then the object, then the word that says what the object becomes. Here the object has jumped over that word and landed at the end of the sentence.\n" +
-      "It jumped because it is heavy. „Every apprenticeship contract“ is three words long and „it“ is one. English moves a long object to the end and leaves the short piece next to the verb, and the rule is not about meaning at all. It is about length.\n" +
+      "The union representative asks that the firm make every apprenticeship contract permanent. Three words of object, and they stay in the ordinary place; moved to the end, they would sound like the wrong order. Now make the object longer and watch what happens.\n" +
+      "„Make permanent every apprenticeship contract signed since the merger.“ The ordinary pattern is „make something permanent“: the verb, then the object, then the word that says what the object becomes. Here the object has jumped over that word and landed at the end of the sentence.\n" +
+      "It jumped because it is heavy. „Every apprenticeship contract signed since the merger“ is seven words long and „it“ is one. English moves a long object to the end and leaves the short piece next to the verb, and the rule is not about meaning at all. It is about length.\n" +
       "You have already seen it twice in this level without a name for it. „Spin off the unit“ rather than „spin the unit off“: the object comes after the particle because it is not a single word. And with a pronoun the rule reverses and becomes absolute — „spin it off“ is the only order anybody writes, because one word is never heavy.\n" +
       "So English is sorting the end of a sentence by weight. Light first, heavy last, and the reader is handed the parts in the order that keeps each of them short enough to hold while the next one arrives.\n" +
       "German cannot do this and has no need to. Its verb comes apart and the second half of it sits at the end of the clause, so the end is already occupied. The object stays in front of the verb however long it is, and a German sentence that runs long moves nothing: it simply makes the reader wait longer for the piece that closes the bracket.\n" +
@@ -129,7 +129,7 @@ export const enC1U14: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "Make permanent every apprenticeship contract.",
+          "Make permanent every apprenticeship contract signed since the merger.",
           "It jumped because it is heavy.",
           "Spin it off is the only order anybody writes.",
           "German's order is settled in advance by the verb.",
@@ -274,14 +274,14 @@ export const enC1U14: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Cem", text: "Much as they spin off the unit, the work stays in-house. Read that sentence to anybody who has been through one and watch their face." },
+      { speaker: "Cem", text: "Much as they would like to spin off the unit, the real work stays in-house. Read that sentence to anybody who has been through one and watch their face." },
       { speaker: "Pelin", text: "The same desk, a new badge." },
       { speaker: "Cem", text: "The same desk, the same corridor, the same two people to ask, and a new contract with a different notice period at the bottom of page four." },
       { speaker: "Pelin", text: "The border, albeit permeable, does not remove the job insecurity." },
       { speaker: "Cem", text: "That is the line I would keep out of the whole debate. The border can be crossed both ways and it is still a border, and everybody knows which side of it they are standing on." },
       { speaker: "Pelin", text: "So permeable is not the same as gone." },
       { speaker: "Cem", text: "Permeable is what a border is called by the people who never have to cross it. Ask somebody who crosses it twice a week and you will get a different adjective." },
-      { speaker: "Pelin", text: "Albeit gainfully employed, many still work on the side." },
+      { speaker: "Pelin", text: "Although gainfully employed, many still work on the side." },
       { speaker: "Cem", text: "And this is where the numbers stop helping. A person with a job is counted as having one, and the evening hours are in nobody's figure at all." },
       { speaker: "Pelin", text: "Because the form has one box." },
       { speaker: "Cem", text: "The form has one box and the second job is not in it, so a country can report that almost everybody is employed and be telling the truth about a picture nobody lives in." },
@@ -310,11 +310,11 @@ export const enC1U14: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Much as they spin off the unit, the work stays ___.",
+        text: "Much as they would like to spin off the unit, the real work stays ___.",
         options: [],
         answer: 0,
         accept: ["in-house"],
-        explain: "„Much as they spin off the unit, the work stays in-house.“",
+        explain: "„Much as they would like to spin off the unit, the real work stays in-house.“",
       },
       {
         kind: "dictation",
@@ -350,7 +350,7 @@ export const enC1U14: SkillExercise[] = [
       { de: "a minute", tr: "tutanak" },
       { de: "two verbs", tr: "iki fiil" },
       { de: "an ethic", tr: "ahlak" },
-      { de: "a pattern", tr: "kalıp" },
+      { de: "a written rule", tr: "yazılı kural" },
       { de: "an assumption", tr: "varsayım" },
       { de: "a defense", tr: "savunma" },
       { de: "worn out", tr: "yıpranmış" },
@@ -364,7 +364,7 @@ export const enC1U14: SkillExercise[] = [
       { speaker: "Sevil", text: "One obscures the segmentation; another undermines the professional ethic. Two verbs in one line of a minute, and they are not two ways of saying the same thing." },
       { speaker: "Sevil", text: "To obscure is to leave something where it is and make it hard to see. To undermine is to take a piece out from underneath while the top of it still looks the same." },
       { speaker: "Sevil", text: "The first can be fixed by writing the thing down clearly. The second cannot, because by the time anybody notices, the part that was removed is a year gone." },
-      { speaker: "Sevil", text: "The action pattern claims what the everyday practice assumes. The same shape from two units back, and here it is about a meeting rather than a text." },
+      { speaker: "Sevil", text: "The written rule openly claims what everyday practice merely assumes. The same shape from two units back, and here it is about a meeting rather than a text." },
       { speaker: "Sevil", text: "An assumption in a meeting is whatever nobody wrote on the agenda and everybody arrived with. It gets into the decision without ever being spoken." },
       { speaker: "Sevil", text: "So the useful minute is not the one that records what was said. It is the one that records what was assumed, and almost nobody writes that one." },
       { speaker: "Sevil", text: "To call it disciplining is not to call it a platitude. Eight words, and they are doing the work of a whole paragraph of defense." },
@@ -405,7 +405,7 @@ export const enC1U14: SkillExercise[] = [
         text: "Duyduğun cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["The action pattern claims what the everyday practice assumes.", "The action pattern claims what the everyday practice assumes"],
+        accept: ["The written rule openly claims what everyday practice merely assumes.", "The written rule openly claims what everyday practice merely assumes"],
         explain: "İki katman: iddia ile varsayım.",
       },
       {
@@ -426,7 +426,7 @@ export const enC1U14: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 14,
-    title: "Make permanent every apprenticeship contract",
+    title: "Light first, heavy last",
     genre: "info",
     intro: "Ağır nesne sona kayıyor; adıl asla kaymıyor.",
     gloss: [
@@ -443,8 +443,8 @@ export const enC1U14: SkillExercise[] = [
       {
         kind: "build",
         tr: "Sendika temsilcisi, şirketin her çıraklık sözleşmesini kalıcı hâle getirmesini istiyor.",
-        answer: "The union representative asks that the firm make permanent every apprenticeship contract.",
-        hint: "Ağır nesne sona kaymış; „make something permanent“ değil.",
+        answer: "The union representative asks that the firm make every apprenticeship contract permanent.",
+        hint: "Üç sözcüklük nesne ağır sayılmıyor; olağan sıra: „make something permanent“.",
       },
       {
         kind: "build",
@@ -460,8 +460,8 @@ export const enC1U14: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Birimi bünyeden ayırsalar da iş şirket içinde kalıyor.",
-        answer: "Much as they spin off the unit, the work stays in-house.",
+        tr: "Birimi bünyeden ayırmayı ne kadar isteseler de asıl iş şirket içinde kalıyor.",
+        answer: "Much as they would like to spin off the unit, the real work stays in-house.",
         hint: "Nesne tek sözcük olmadığı için parçacıktan sonra geliyor.",
       },
       {

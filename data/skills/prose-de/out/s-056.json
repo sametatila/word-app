@@ -25,9 +25,9 @@
   "de": "Der Satz, der die Art verneint, und die Einschränkungen des Modells."
  },
  {
-  "tr": "Ekli isim ile eksiz isim; ve raporun göndermeleri.",
+  "tr": "Ekli isimler ve raporun göndermeleri.",
   "kind": "intro",
-  "de": "Das Nomen mit Endung und das ohne; und die Verweise des Berichts."
+  "de": "Nomen mit Endung und die Verweise des Berichts."
  },
  {
   "tr": "Bir açık neyi gizliyor? Hangi riski sigortalıyoruz?",
@@ -170,9 +170,9 @@
   "de": "vertraut"
  },
  {
-  "tr": "fon",
+  "tr": "sponsor",
   "kind": "gloss.tr",
-  "de": "die Förderung"
+  "de": "der Geldgeber"
  },
  {
   "tr": "gaz",
@@ -238,11 +238,6 @@
   "tr": "hakem",
   "kind": "gloss.tr",
   "de": "der Gutachter"
- },
- {
-  "tr": "haklı",
-  "kind": "gloss.tr",
-  "de": "berechtigt"
  },
  {
   "tr": "kısmi",
@@ -530,9 +525,9 @@
   "de": "das Moratorium"
  },
  {
-  "tr": "önce gelen",
+  "tr": "öncelik",
   "kind": "gloss.tr",
-  "de": "vorrangig"
+  "de": "die Priorität"
  },
  {
   "tr": "paylaşılan",
@@ -760,9 +755,9 @@
   "de": "eine Liste zum Lernen"
  },
  {
-  "tr": "yönlendirici etki",
+  "tr": "teşvik etkisi",
   "kind": "gloss.tr",
-  "de": "die Lenkungswirkung"
+  "de": "die Anreizwirkung"
  },
  {
   "tr": "konjonktür karşıtı",

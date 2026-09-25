@@ -15,15 +15,15 @@ import type { SkillExercise } from "../types";
  *   Kalıp:  In the plan it is land consumption; in the village, an arable field. ·
  *           What the council calls land consolidation, the neighbour calls land speculation. ·
  *           A land use conflict is a dispute; paving over land is a fact. ·
- *           What land grabbing does is dress a territorial claim. ·
+ *           What land grabbing does is dress up a territorial claim as investment. ·
  *           Behind the rural exodus stands a failed farm succession. ·
  *           The barren fields lie fallow; the dilapidated barns do not. ·
- *           Food sovereignty demands that the agricultural reform be local. ·
+ *           Food sovereignty demands that the agricultural reform be decided locally. ·
  *           Were it not for the agricultural subsidy, the agricultural transition would stall. ·
- *           They ask that every sustainability goal carry a sustainability standard. ·
+ *           They ask that every supplier meet a sustainability standard. ·
  *           Much as we praise agroecology, the monoculture feeds the city. ·
  *           The method, albeit soil-conserving, does not restore soil fertility. ·
- *           Albeit site-adapted, a species-rich field yields less.
+ *           Although site-adapted, a species-rich field yields less.
  *
  * Ünitenin tek öğretme noktası FİİL + SIFAT YÜKLEMİ: „lie fallow“, „stand
  * empty“, „run dry“, „fall silent“, „come loose“, „go hungry“. Fiil „be“
@@ -292,7 +292,7 @@ export const enC1U16: SkillExercise[] = [
       { speaker: "Ceren", text: "And that is the second honest one. Conserving and restoring are two different verbs, and the years between them are the part nobody funds." },
       { speaker: "Emir", text: "How many years?" },
       { speaker: "Ceren", text: "A decade before the measurements move, on the land I have seen. Nobody writes a decade into a report that has to be approved this spring." },
-      { speaker: "Emir", text: "Albeit site-adapted, a species-rich field yields less." },
+      { speaker: "Emir", text: "Although site-adapted, a species-rich field yields less." },
       { speaker: "Ceren", text: "Less per hectare, in the first years, and that is a trade rather than a failure. The trouble is that only one side of the trade has a price on it." },
       { speaker: "Emir", text: "So the other side never reaches the table." },
       { speaker: "Ceren", text: "It reaches the table as a word. A word loses to a number every time, and the number is in the same column as the wages." },
@@ -366,7 +366,7 @@ export const enC1U16: SkillExercise[] = [
       { de: "a supposing", tr: "varsayım" },
       { de: "a standard", tr: "standart" },
       { de: "a goal", tr: "hedef" },
-      { de: "carry", tr: "taşımak" },
+      { de: "meet", tr: "karşılamak" },
       { de: "a poster", tr: "afiş" },
       { de: "an auditor", tr: "denetçi" },
       { de: "a farm gate", tr: "çiftlik kapısı" },
@@ -375,12 +375,12 @@ export const enC1U16: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Hande", text: "Food sovereignty demands that the agricultural reform be local. Notice again who is doing the demanding in a sentence like that." },
+      { speaker: "Hande", text: "Food sovereignty demands that the agricultural reform be decided locally. Notice again who is doing the demanding in a sentence like that." },
       { speaker: "Hande", text: "A word is. Not a ministry, not an author, not the people who wrote the paper — a concept, and a concept has never been answerable to anybody." },
       { speaker: "Hande", text: "„Be local“, with no ending on the verb. One missing letter is the whole difference between a demand and a report." },
       { speaker: "Hande", text: "Were it not for the agricultural subsidy, the agricultural transition would stall. That is the ground of the argument, put in the shape of a supposing." },
       { speaker: "Hande", text: "It is also the sentence the other side will quote, because it admits in eleven words that the transition does not pay for itself yet." },
-      { speaker: "Hande", text: "They ask that every sustainability goal carry a sustainability standard. „Carry“, not „carries“, and this is the only line in the document with any teeth." },
+      { speaker: "Hande", text: "They ask that every supplier meet a sustainability standard. „Meet“, not „meets“, and this is the only line in the document with any teeth." },
       { speaker: "Hande", text: "A goal is a poster. A standard has a number, a method and somebody who measures it, and an auditor can stand at a farm gate with one." },
       { speaker: "Hande", text: "So read any paper of this kind by counting the standards, not the goals. Six goals and no standard is a poster with a signature on it." },
       { speaker: "Hande", text: "And if you write one, put the standard in the same paragraph as the goal. A standard three pages later is a standard nobody applies." },
@@ -408,18 +408,18 @@ export const enC1U16: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "They ask that every sustainability goal ___ a sustainability standard.",
+        text: "They ask that every supplier ___ a sustainability standard.",
         options: [],
         answer: 0,
-        accept: ["carry"],
-        explain: "„They ask that every sustainability goal carry a sustainability standard.“",
+        accept: ["meet"],
+        explain: "„They ask that every supplier meet a sustainability standard.“",
       },
       {
         kind: "dictation",
         text: "Duyduğun cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["Food sovereignty demands that the agricultural reform be local.", "Food sovereignty demands that the agricultural reform be local"],
+        accept: ["Food sovereignty demands that the agricultural reform be decided locally.", "Food sovereignty demands that the agricultural reform be decided locally"],
         explain: "Talep eden bir kavram; „be“, „is“ değil.",
       },
       {
@@ -463,8 +463,8 @@ export const enC1U16: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Toprak gaspının yaptığı şey bir toprak talebini giydirmektir.",
-        answer: "What land grabbing does is dress a territorial claim.",
+        tr: "Toprak gaspının yaptığı şey bir toprak talebini yatırım kılığına sokmaktır.",
+        answer: "What land grabbing does is dress up a territorial claim as investment.",
         hint: "Soyut isim baştaki yuvada ve kendi fiili var.",
       },
       {
@@ -504,7 +504,7 @@ export const enC1U16: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 16,
-    title: "Food sovereignty demands that the agricultural reform be local",
+    title: "Food sovereignty demands that the agricultural reform be decided locally",
     genre: "info",
     intro: "Talep eden metin ve verim ile çeşit arasındaki takas.",
     gloss: [
@@ -519,8 +519,8 @@ export const enC1U16: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Gıda egemenliği tarım reformunun yerel olmasını talep eder.",
-        answer: "Food sovereignty demands that the agricultural reform be local.",
+        tr: "Gıda egemenliği tarım reformunun yerel olarak kararlaştırılmasını talep eder.",
+        answer: "Food sovereignty demands that the agricultural reform be decided locally.",
         hint: "Talep eden bir kavram; „be“ olduğu gibi kalıyor.",
       },
       {
@@ -531,8 +531,8 @@ export const enC1U16: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Her sürdürülebilirlik hedefinin bir sürdürülebilirlik standardı taşımasını istiyorlar.",
-        answer: "They ask that every sustainability goal carry a sustainability standard.",
+        tr: "Her tedarikçinin bir sürdürülebilirlik standardını karşılamasını istiyorlar.",
+        answer: "They ask that every supplier meet a sustainability standard.",
         hint: "Tek eksik harf, belgenin dişi olan tek satırı.",
       },
       {

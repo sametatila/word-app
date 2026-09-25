@@ -12,12 +12,12 @@ import type { SkillExercise } from "../types";
  *           virtue, integrity, altruism, reference value, guideline value,
  *           significance level, outlier, repeatability, source of error,
  *           advocate, affirm, misrepresent, distortion, truism, knowingly.
- *   Kalıp:  Freedom of conscience demands that academic freedom be untouched. ·
- *           Were it not for artistic freedom, no freedom of information would hold. ·
+ *   Kalıp:  Freedom of conscience demands that no one be forced to act against their beliefs. ·
+ *           Were it not for freedom of information, the public would never see these files. ·
  *           They ask that freedom of contract be tested by judicial review. ·
  *           Much as relativism unsettles us, no maxim survives without doubt. ·
  *           A commandment, albeit ancient, is not a virtue. ·
- *           Albeit a form of integrity, altruism can be a duty too. ·
+ *           Although a form of integrity, altruism can be a duty too. ·
  *           A reference value is not a guideline value. ·
  *           A significance level is chosen; an outlier is found. ·
  *           Repeatability exposes the source of error. ·
@@ -185,7 +185,7 @@ export const enC1U24: SkillExercise[] = [
       "That is the useful reading and it is the harder one, because the easy reading is available in the same words and a tired reader will take it.\n" +
       "A commandment, albeit ancient, is not a virtue. Age is not an argument, which this level has now said three times in three fields, and here it is at its sharpest: a rule that is obeyed out of habit has produced a habit and not a virtue.\n" +
       "A virtue is a thing practiced by somebody who could have done otherwise. That is why it cannot be legislated and why a list of rules is not a moral education, though it is a great deal easier to write.\n" +
-      "Albeit a form of integrity, altruism can be a duty too. And the concession at the front is doing real work: nobody is denying that it is a form of integrity.\n" +
+      "Although a form of integrity, altruism can be a duty too. And the concession at the front is doing real work: nobody is denying that it is a form of integrity.\n" +
       "What is denied is that it is always chosen. A colleague who takes the night shift every December is being good and is also being used, and the second half of that sentence is the one nobody says in the room.\n" +
       "So the honest version of the lesson is short. Unpaid goodness is still work and it should be counted, and counting it does not make it smaller. A person who is thanked in a speech and never in a schedule has been paid in the wrong currency.",
     questions: [
@@ -224,7 +224,7 @@ export const enC1U24: SkillExercise[] = [
         items: [
           "Much as relativism unsettles us, no maxim survives without doubt.",
           "A commandment, albeit ancient, is not a virtue.",
-          "Albeit a form of integrity, altruism can be a duty too.",
+          "Although a form of integrity, altruism can be a duty too.",
           "Unpaid goodness is still work and it should be counted.",
         ],
         explain: "Kuşku, yaş, seçim; en sonda sayılması gereken.",
@@ -347,7 +347,7 @@ export const enC1U24: SkillExercise[] = [
       { de: "whatever", tr: "her ne" },
       { de: "trouble", tr: "sıkıntı" },
       { de: "conscience", tr: "vicdan" },
-      { de: "untouched", tr: "el değmemiş" },
+      { de: "forced", tr: "zorlanmış" },
       { de: "a court", tr: "mahkeme" },
       { de: "a chain", tr: "zincir" },
       { de: "a journalist", tr: "gazeteci" },
@@ -361,9 +361,9 @@ export const enC1U24: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Aslı", text: "Freedom of conscience demands that academic freedom be untouched. A strange sentence at first reading, because the two look like different subjects." },
-      { speaker: "Aslı", text: "They are one chain. A conscience that cannot be informed is a conscience with nothing to work on, and informing it is what a university is for." },
-      { speaker: "Aslı", text: "Were it not for artistic freedom, no freedom of information would hold. The same chain one link further, and this one surprises people." },
+      { speaker: "Aslı", text: "Freedom of conscience demands that no one be forced to act against their beliefs. A strange sentence at first reading, because it seems to protect something nobody can see." },
+      { speaker: "Aslı", text: "But it belongs to a chain. A conscience that cannot be informed is a conscience with nothing to work on, and informing it is what a university is for." },
+      { speaker: "Aslı", text: "Were it not for freedom of information, the public would never see these files. The chain one link further, and the link that holds it surprises people." },
       { speaker: "Aslı", text: "The hardest cases are never about a journalist and a file. They are about a novel, a play or a picture, and they are decided first." },
       { speaker: "Aslı", text: "Whatever a court allows a painter, it will later allow a reporter, and whatever it refuses a painter it will refuse everybody quietly for thirty years." },
       { speaker: "Aslı", text: "They ask that freedom of contract be tested by judicial review. Now the other direction, and it is the half that gets forgotten." },
@@ -394,11 +394,11 @@ export const enC1U24: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Freedom of conscience demands that academic freedom be ___.",
+        text: "Freedom of conscience demands that no one be ___ to act against their beliefs.",
         options: [],
         answer: 0,
-        accept: ["untouched"],
-        explain: "„Freedom of conscience demands that academic freedom be untouched.“",
+        accept: ["forced"],
+        explain: "„Freedom of conscience demands that no one be forced to act against their beliefs.“",
       },
       {
         kind: "dictation",
@@ -489,30 +489,30 @@ export const enC1U24: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 24,
-    title: "Freedom of conscience demands that academic freedom be untouched",
+    title: "Freedom of conscience demands that no one be forced to act against their beliefs",
     genre: "info",
     intro: "Özgürlükler zinciri ve göreceliğin sınaması.",
     gloss: [
       { de: "freedom of conscience", tr: "vicdan özgürlüğü" },
-      { de: "artistic freedom", tr: "sanat özgürlüğü" },
+      { de: "freedom of information", tr: "bilgi edinme özgürlüğü" },
       { de: "freedom of contract", tr: "irade serbestisi" },
       { de: "relativism", tr: "görecelik" },
       { de: "a commandment", tr: "buyruk" },
       { de: "altruism", tr: "özgecilik" },
-      { de: "untouched", tr: "el değmemiş" },
+      { de: "beliefs", tr: "inançlar" },
     ],
     minutes: 10,
     tasks: [
       {
         kind: "build",
-        tr: "Vicdan özgürlüğü akademik özgürlüğe el değmemesini talep eder.",
-        answer: "Freedom of conscience demands that academic freedom be untouched.",
-        hint: "İkisi tek bir zincir.",
+        tr: "Vicdan özgürlüğü kimsenin inançlarına aykırı davranmaya zorlanmamasını talep eder.",
+        answer: "Freedom of conscience demands that no one be forced to act against their beliefs.",
+        hint: "„be forced“, „is forced“ değil: talep kipi.",
       },
       {
         kind: "build",
-        tr: "Sanat özgürlüğü olmasa hiçbir bilgi edinme özgürlüğü tutmazdı.",
-        answer: "Were it not for artistic freedom, no freedom of information would hold.",
+        tr: "Bilgi edinme özgürlüğü olmasaydı kamuoyu bu dosyaları hiç göremezdi.",
+        answer: "Were it not for freedom of information, the public would never see these files.",
         hint: "En zor davalar önce sanatta karara bağlanıyor.",
       },
       {

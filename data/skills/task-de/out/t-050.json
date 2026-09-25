@@ -65,9 +65,9 @@
   "de": "Wir haben hier keine Vetternwirtschaft; wir haben ein Netzwerk alter Bekannter."
  },
  {
-  "tr": "Gri alan, kılıfın varsaydığını iddia ediyor.",
+  "tr": "Muhbir, denetçilerin yalnızca varsaydığını açıkça iddia ediyor.",
   "kind": "build.tr",
-  "de": "Die Grauzone behauptet, was der Vorwand voraussetzt."
+  "de": "Der Hinweisgeber behauptet offen, was die Prüfer bloß annehmen."
  },
  {
   "tr": "Bir buyruk, kadim olsa da, bir erdem değildir.",
@@ -145,9 +145,9 @@
   "de": "Der eine vertritt die Behauptung; ein anderer bestätigt sie bloß."
  },
  {
-  "tr": "Yukarıdaki pazara nüfuz aşağıda pazar doygunluğuna dönüşüyor.",
+  "tr": "Yukarıda anlatılan pazara nüfuz, aşağıda ele alınan pazar doygunluğuna yol açıyor.",
   "kind": "build.tr",
-  "de": "Die oben genannte Marktdurchdringung wird unten zur Marktsättigung."
+  "de": "Die oben beschriebene Marktdurchdringung führt zu der unten behandelten Marktsättigung."
  },
  {
   "tr": "İrade serbestisinin yargısal denetimle sınanmasını istiyorlar.",
@@ -155,14 +155,14 @@
   "de": "Sie verlangen, dass die Privatautonomie richterlich überprüft werde."
  },
  {
-  "tr": "Sanat özgürlüğü olmasa hiçbir bilgi edinme özgürlüğü tutmazdı.",
+  "tr": "Bilgi edinme özgürlüğü olmasaydı kamuoyu bu dosyaları hiç göremezdi.",
   "kind": "build.tr",
-  "de": "Wäre da nicht die Kunstfreiheit, würde keine Informationsfreiheit halten."
+  "de": "Gäbe es die Informationsfreiheit nicht, würde die Öffentlichkeit diese Akten nie sehen."
  },
  {
-  "tr": "Vicdan özgürlüğü akademik özgürlüğe el değmemesini talep eder.",
+  "tr": "Vicdan özgürlüğü kimsenin inançlarına aykırı davranmaya zorlanmamasını talep eder.",
   "kind": "build.tr",
-  "de": "Die Gewissensfreiheit verlangt, dass die Wissenschaftsfreiheit unangetastet bleibe."
+  "de": "Die Gewissensfreiheit verlangt, dass niemand gezwungen werde, gegen seine Überzeugungen zu handeln."
  },
  {
   "tr": "Yatırım döngüsü tasarruf oranı düşmeden önce pekâlâ dönebilir.",
@@ -195,9 +195,9 @@
   "de": "Eine Bewältigungsstrategie kann Übertragung verbergen und latent bleiben."
  },
  {
-  "tr": "O rekabet gücü, belirtildiği gibi, önceki bir sayfanın tekel konumudur.",
+  "tr": "Rekabet gücümüz, daha önce belirtildiği gibi, bir tekel konumuna dayanıyor.",
   "kind": "build.tr",
-  "de": "Jene Wettbewerbsfähigkeit ist, wie erwähnt, die Monopolstellung einer früheren Seite."
+  "de": "Unsere Wettbewerbsfähigkeit beruht, wie bereits angemerkt, auf einer Monopolstellung."
  },
  {
   "tr": "İhale süreci bir form olarak, onay süreci bir gecikme olarak sağ kalıyor.",
@@ -215,9 +215,9 @@
   "de": "So sehr der Relativismus uns verunsichert, keine Maxime überlebt ohne Zweifel."
  },
  {
-  "tr": "Yukarıdaki etki değerlendirmesi aşağıda bir fayda değerlendirmesine dönüşüyor.",
+  "tr": "Yukarıdaki etki değerlendirmesi, aşağıdaki fayda değerlendirmesiyle tartılmalı.",
   "kind": "build.tr",
-  "de": "Die oben genannte Folgenabschätzung wird unten zu einer Nutzenbewertung."
+  "de": "Die Folgenabschätzung oben muss gegen die Nutzenbewertung unten abgewogen werden."
  },
  {
   "tr": "Bir çalışmayı yanlış aktarmak bir çarpıtmadır, herkesin bildiği bir gerçek değil.",
@@ -240,9 +240,9 @@
   "de": "Alter ist kein Argument."
  },
  {
-  "tr": "İkisi tek bir zincir.",
+  "tr": "„be forced“, „is forced“ değil: talep kipi.",
   "kind": "build.hint",
-  "de": "Die beiden sind eine einzige Kette."
+  "de": "„be forced“, nicht „is forced“: der Modus der Forderung."
  },
  {
   "tr": "Dikkatli sözcük „look“.",
@@ -315,9 +315,9 @@
   "de": "Vierzig Seiten gegen vier; das Verhältnis ist die ganze Geschichte."
  },
  {
-  "tr": "Kuralın yanına sessizce oturmuş bir varsayım.",
+  "tr": "Birinin açık iddiası, ötekinin sessiz varsayımı.",
   "kind": "build.hint",
-  "de": "Eine Annahme, die sich still neben die Regel gesetzt hat."
+  "de": "Die offene Behauptung der einen Seite, die stille Annahme der anderen."
  },
  {
   "tr": "„Capital“ çoğul almıyor, „requirement“ alıyor.",

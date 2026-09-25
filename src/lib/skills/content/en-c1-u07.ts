@@ -14,7 +14,7 @@ import type { SkillExercise } from "../types";
  *           The police would apprehend if they could. ·
  *           One road is impassable; the other is not. ·
  *           Granted, the insolvency is real, albeit recent. ·
- *           Much as the indebtedness grew, the client is not insolvent. ·
+ *           Much as we acknowledge the indebtedness, the client is not insolvent. ·
  *           The levy is irrevocable, whereas the fee is not. ·
  *           The deductible may well be raised. ·
  *           It might have been expected to cover long-term disability. ·
@@ -194,7 +194,7 @@ export const enC1U07: SkillExercise[] = [
     text:
       "Granted, the insolvency is real, albeit recent. Seven words, two concessions, and the letter has not given anything away.\n" +
       "„Granted“ opens by handing the reader a fact that cannot be argued with. „Albeit“ takes half of it back: the insolvency is real, and it is also three months old, and three months is not a history. Neither word carries an argument. Both of them arrange one.\n" +
-      "Much as the indebtedness grew, the client is not insolvent. The same move on a different hinge. „Much as“ admits the size of the growth and then refuses the conclusion the reader was assembling, and the refusal is the only claim in the sentence.\n" +
+      "Much as we acknowledge the indebtedness, the client is not insolvent. The same move on a different hinge. „Much as“ admits the debt and then refuses the conclusion the reader was assembling, and the refusal is the only claim in the sentence.\n" +
       "The levy is irrevocable, whereas the fee is not. „Whereas“ is the cold one. It does not concede at all; it separates, and a letter that separates two items is usually about to pay one of them.\n" +
       "Then comes the second half of this register, which is not concession but distance. The deductible may well be raised. A modal, an adverb and a passive, stacked three deep, and at the end of it nobody has raised anything and nobody has promised that anybody will.\n" +
       "It might have been expected to cover long-term disability. Four words of machinery in front of the only word in the line that carries content. Liquidity would tend to fall first. „Would“, then „tend“, and the fall has become a habit that belongs to nobody.\n" +
@@ -236,7 +236,7 @@ export const enC1U07: SkillExercise[] = [
         answer: 0,
         items: [
           "Granted, the insolvency is real, albeit recent.",
-          "Much as the indebtedness grew, the client is not insolvent.",
+          "Much as we acknowledge the indebtedness, the client is not insolvent.",
           "The levy is irrevocable, whereas the fee is not.",
           "English hedges by lengthening.",
         ],
@@ -530,9 +530,9 @@ export const enC1U07: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Borçluluk ne kadar büyümüş olsa da müvekkil ödeme aczinde değil.",
-        answer: "Much as the indebtedness grew, the client is not insolvent.",
-        hint: "Büyümeyi kabul eden, sonucu reddeden menteşe.",
+        tr: "Borçluluğu ne kadar kabul etsek de müvekkil ödeme aczinde değil.",
+        answer: "Much as we acknowledge the indebtedness, the client is not insolvent.",
+        hint: "Borcu kabul eden, sonucu reddeden menteşe.",
       },
       {
         kind: "build",
