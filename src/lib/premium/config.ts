@@ -33,10 +33,6 @@ function int(v: unknown, fallback: number, min: number, max: number): number {
   return Math.min(max, Math.max(min, Math.round(n)));
 }
 
-function bool(v: unknown, fallback: boolean): boolean {
-  return typeof v === "boolean" ? v : fallback;
-}
-
 /** Metin alanı: boş/uzun/yanlış tipte olan varsayılana düşer. */
 function str(v: unknown, fallback: string, max = 120): string {
   if (typeof v !== "string") return fallback;
@@ -71,7 +67,7 @@ function prices(v: unknown, fallback: PlanPrice[]): PlanPrice[] {
  * Üst sınırlar keyfi değil, KORUMA: panelde yanlışlıkla yazılan bir sayı
  * (ör. ücretsiz katmana 100000 AI değerlendirmesi) faturayı patlatabilir ya da
  * premium'u anlamsız kılabilir. Alt sınır 0, çünkü "bu özellik ücretsizde hiç
- * yok" geçerli bir ayar (cepte yürüyüşün varsayılanı tam olarak bu).
+ * yok" geçerli bir ayar.
  */
 export function parsePremiumConfig(raw: unknown): PremiumConfig {
   const d = DEFAULT_PREMIUM_CONFIG;
@@ -81,32 +77,39 @@ export function parsePremiumConfig(raw: unknown): PremiumConfig {
   const m = o.mock ?? {};
   const pl = o.plans ?? {};
   return {
+    /* SIRA VARSAYILANLARLA AYNI OLMAK ZORUNDA: `test:premium` iki nesneyi
+       `JSON.stringify` ile karşılaştırıyor ve anahtar sırası farkı testi
+       düşürüyor — kural değil ama ucuz bir hizalama kapısı.
+
+       GERİYE UYUMLU OKUMA: 2026-09-25 öncesi kayıtlarda artık olmayan alanlar
+       (`weeklyAiPractice`, `streakMaxTiers`, `free.pocketWalksPerDay`,
+       `fairUse.pocketWalksPerDay`, `mock.unlockPct`, `mock.unlockOnComplete`)
+       olabilir; yok sayılıyorlar ve yeni alanlar yoksa varsayılana düşülüyor.
+       Eski `streakMaxTiers` (varsayılanı 5) BİLEREK `maxTiers`e taşınmıyor: kararla
+       tavan kalktı ve eski değer o karardan önceki bir ayardı. Üretimde bu satır
+       hiç yazılmadı (2026-09-25 ölçüldü). */
     free: {
       mockPapersPerLevel: int(f.mockPapersPerLevel, d.free.mockPapersPerLevel, 0, 50),
-      pocketWalksPerDay: int(f.pocketWalksPerDay, d.free.pocketWalksPerDay, 0, 100),
+      mockStreakBonus: int(f.mockStreakBonus, d.free.mockStreakBonus, 0, 10),
+      walkSessionsPerDay: int(f.walkSessionsPerDay, d.free.walkSessionsPerDay, 0, 50),
+      conversationsPerLevel: int(f.conversationsPerLevel, d.free.conversationsPerLevel, 0, 100),
+      pathWritingPerLevel: int(f.pathWritingPerLevel, d.free.pathWritingPerLevel, 0, 100),
       speakingSkills: int(f.speakingSkills, d.free.speakingSkills, 0, 100),
       writingSkills: int(f.writingSkills, d.free.writingSkills, 0, 100),
-      /* SIRA VARSAYILANLARLA AYNI OLMAK ZORUNDA: `test:premium` iki nesneyi
-         `JSON.stringify` ile karşılaştırıyor ve anahtar sırası farkı testi
-         düşürüyor — kural değil ama ucuz bir hizalama kapısı.
-
-         Kararlılık kademesi: adım en az 1 gün; bonus ve kademe sayısı panelden
-         kısılabilsin diye 0'a kadar iniyor (0 = kademe kapalı, yalnız taban). */
+      /* Kademe: adım en az 1 gün; bonus 0'a kadar iniyor (0 = kademe kapalı, yalnız
+         taban). Tavan 0 = sınırsız. */
       streakStep: int(f.streakStep, d.free.streakStep, 1, 365),
       streakBonus: int(f.streakBonus, d.free.streakBonus, 0, 50),
-      streakMaxTiers: int(f.streakMaxTiers, d.free.streakMaxTiers, 0, 50),
-      weeklyAiPractice: int(f.weeklyAiPractice, d.free.weeklyAiPractice, 0, 100),
+      maxTiers: int(f.maxTiers, d.free.maxTiers, 0, 100),
     },
     fairUse: {
       // Tavan 1'den küçük olamaz: 0 yazılırsa premium kullanıcı hiçbir şey
       // yapamaz ve bu, parasını ödemiş birini kilitlemek demektir.
-      pocketWalksPerDay: int(u.pocketWalksPerDay, d.fairUse.pocketWalksPerDay, 1, 500),
+      walkSessionsPerDay: int(u.walkSessionsPerDay, d.fairUse.walkSessionsPerDay, 1, 500),
       aiPracticePerDay: int(u.aiPracticePerDay, d.fairUse.aiPracticePerDay, 1, 500),
     },
     mock: {
       packSize: int(m.packSize, d.mock.packSize, 1, 20),
-      unlockPct: int(m.unlockPct, d.mock.unlockPct, 0, 100),
-      unlockOnComplete: bool(m.unlockOnComplete, d.mock.unlockOnComplete),
     },
     plans: {
       productMonthly: str(pl.productMonthly, d.plans.productMonthly),

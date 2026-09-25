@@ -5,9 +5,8 @@
  * ancak gerçek para akarken fark edilecek hatalara bakıyor:
  *
  *  1. PAKET İLERLEMESİ. Gevşek olursa premium'un anlamı kalmaz; sıkı olursa
- *     ödeme yapmış kullanıcı kilitli kalır. İkinci hata iadenin ve tek yıldızın
- *     en sık sebebi, ve yalnız "%60'ı tutturamayan kullanıcı" senaryosunda
- *     ortaya çıkıyor — yani elle denerken neredeyse hiç görülmez.
+ *     ödeme yapmış kullanıcı kilitli kalır. Kural 2026-09-25'ten beri tek:
+ *     paketteki kâğıtların hepsi bitirilince sonraki paket açılır.
  *  2. YAPILANDIRMA DOĞRULAMASI. Panelden gelen sayı doğrudan faturayı ve ürünü
  *     etkiliyor; bozuk bir değerin varsayılana düşmesi ve aralık dışının
  *     kırpılması sözleşme gibi tutulmalı.
@@ -15,7 +14,8 @@
  *     anahtarı döndürüyor; bir anahtar sözlükte yoksa kullanıcı ham anahtar
  *     görür ("plan.pro_mock") ve bunu ancak üç dilde tek tek bakan biri fark eder.
  */
-import { computePacks, earnedAiLimit, type PaperStat } from "../src/lib/premium/access";
+import { computePacks, type PaperStat } from "../src/lib/premium/access";
+import { allowedCount, completedSlices, freeUnlock, liveStreak, premiumMockUnlock, streakTier, unlockedTier } from "../src/lib/premium/unlock";
 import { parsePremiumConfig } from "../src/lib/premium/config";
 import { DEFAULT_PREMIUM_CONFIG, describeLimits } from "../src/lib/premium/gates";
 import { trBase } from "../src/i18n/base/tr";
@@ -33,12 +33,12 @@ function check(name: string, cond: boolean, detail = "") {
   }
 }
 
-const RULE = { packSize: 3, unlockPct: 60, unlockOnComplete: true };
+const RULE = { packSize: 3 };
 const P = ["p1", "p2", "p3", "p4", "p5", "p6", "p7"];
 const stat = (o: Record<string, [number, number]>): Map<string, PaperStat> =>
   new Map(Object.entries(o).map(([k, [c, t]]) => [k, { correct: c, total: t, done: true }]));
 
-console.log("\nPaket ilerlemesi");
+console.log("\nPaket ilerlemesi (premium)");
 
 // Hiç çözülmemiş: yalnız ilk paket açık.
 {
@@ -48,38 +48,26 @@ console.log("\nPaket ilerlemesi");
   check("paket sayısı doğru", packs.length === 3, `(${packs.length})`);
 }
 
-// Başarı hızlandırır: üçünü beklemeden, iki kâğıtta %80 ile sonraki paket açılır.
+/* %60 KOŞULU KALKTI (2026-09-25): yüksek puan tek başına paketi açmıyor. */
 {
-  const { unlocked } = computePacks(P, stat({ p1: [16, 20], p2: [16, 20] }), RULE);
-  check("iki kâğıtta %80 → sonraki paket açıldı (başarı hızlandırır)", unlocked.includes("p4"));
+  const { unlocked } = computePacks(P, stat({ p1: [20, 20], p2: [20, 20] }), RULE);
+  check("iki kâğıtta %100 ama paket bitmedi → kapalı (başarı yüzdesi açmıyor)", !unlocked.includes("p4"));
 }
 
-// Eşiğin ALTINDA ve paket bitmemiş: kapalı kalmalı.
+// Paketin hepsi bitti: puan düşük olsa da sonraki paket açık.
 {
-  const { unlocked } = computePacks(P, stat({ p1: [8, 20], p2: [8, 20] }), RULE);
-  check("%40 ve paket bitmemiş → kapalı", !unlocked.includes("p4"));
+  const { unlocked } = computePacks(P, stat({ p1: [2, 20], p2: [2, 20], p3: [2, 20] }), RULE);
+  check("%10 ama üçü de bitti → sonraki paket açıldı", unlocked.includes("p4"));
 }
 
-// EMNİYET SUPABI: eşiği tutturamayan ama üçünü de bitiren kullanıcı ilerliyor.
-{
-  const { unlocked } = computePacks(P, stat({ p1: [8, 20], p2: [8, 20], p3: [8, 20] }), RULE);
-  check("%40 ama üçü de bitti → sonraki paket açıldı (çaba da açar)", unlocked.includes("p4"));
-}
-
-// Supap kapalıyken aynı kullanıcı kilitli kalıyor — kapatmanın bedeli bu.
-{
-  const { unlocked } = computePacks(P, stat({ p1: [8, 20], p2: [8, 20], p3: [8, 20] }), { ...RULE, unlockOnComplete: false });
-  check("supap kapalıyken %40 → kilitli kalır", !unlocked.includes("p4"));
-}
-
-// Zincir: ikinci paket açılmadan üçüncü açılamaz (boş paket "tamamlandı" sayılmamalı).
+// Zincir: ikinci paket bitmeden üçüncü açılamaz (boş paket "tamamlandı" sayılmamalı).
 {
   const { unlocked } = computePacks(P, stat({ p1: [20, 20], p2: [20, 20], p3: [20, 20] }), RULE);
   check("ikinci paket açıldı", unlocked.includes("p4"));
-  check("üçüncü paket, ikincisi çözülmeden AÇILMADI", !unlocked.includes("p7"));
+  check("üçüncü paket, ikincisi bitmeden AÇILMADI", !unlocked.includes("p7"));
 }
 
-// Ağırlık madde başına: uzun kâğıttaki kötü sonuç kısa kâğıttaki iyi sonucu yutmamalı.
+// Yüzde yalnız gösterim: madde başına ağırlıklı.
 {
   const { packs } = computePacks(P, stat({ p1: [40, 40], p2: [0, 60] }), RULE);
   check("yüzde madde başına ağırlıklı (40/100 = %40)", packs[0]?.pct === 40, `(${packs[0]?.pct})`);
@@ -91,6 +79,14 @@ console.log("\nPaket ilerlemesi");
   check("son paket eksik boyutta olabiliyor", packs[2]?.ids.length === 1, `(${packs[2]?.ids.length})`);
 }
 
+// Kilit açma görünümü paket kuralıyla aynı sonucu veriyor.
+{
+  const u = premiumMockUnlock([true, true, false, false, false, false, false], 3);
+  check("premium görünüm: ilk paket açık, 2/3 bitti", u.open === 3 && u.next?.complete.done === 2 && u.next?.complete.needed === 3);
+  const all = premiumMockUnlock([true, true, true, true, true, true, false], 3);
+  check("premium görünüm: son paket açık, sonrası yok", all.open === 7 && all.next === null, `(${all.open})`);
+}
+
 console.log("\nYapılandırma doğrulaması");
 {
   const d = DEFAULT_PREMIUM_CONFIG;
@@ -98,25 +94,30 @@ console.log("\nYapılandırma doğrulaması");
   check("null girdi varsayılana düşüyor", JSON.stringify(parsePremiumConfig(null)) === JSON.stringify(d));
   check("çöp girdi varsayılana düşüyor", JSON.stringify(parsePremiumConfig("abc")) === JSON.stringify(d));
 
-  const clamped = parsePremiumConfig({ free: { weeklyAiPractice: 999999 }, fairUse: { aiPracticePerDay: 0 } });
-  check("üst sınır kırpılıyor", clamped.free.weeklyAiPractice === 100, `(${clamped.free.weeklyAiPractice})`);
+  const clamped = parsePremiumConfig({ free: { conversationsPerLevel: 999999 }, fairUse: { aiPracticePerDay: 0, walkSessionsPerDay: 0 } });
+  check("üst sınır kırpılıyor", clamped.free.conversationsPerLevel === 100, `(${clamped.free.conversationsPerLevel})`);
   // Tavanın alt sınırı 1: 0 yazılsaydı ödeme yapmış kullanıcı hiçbir şey yapamazdı.
   check("adil kullanım tavanı 0 olamıyor", clamped.fairUse.aiPracticePerDay === 1, `(${clamped.fairUse.aiPracticePerDay})`);
+  check("premium yürüyüş tavanı 0 olamıyor", clamped.fairUse.walkSessionsPerDay === 1, `(${clamped.fairUse.walkSessionsPerDay})`);
 
   // 0 GEÇERLİ bir ücretsiz kota: "bu özellik ücretsizde hiç yok" demek.
-  const zero = parsePremiumConfig({ free: { pocketWalksPerDay: 0 } });
-  check("ücretsiz kota 0 olabiliyor (premium-only)", zero.free.pocketWalksPerDay === 0);
+  const zero = parsePremiumConfig({ free: { walkSessionsPerDay: 0 } });
+  check("ücretsiz kota 0 olabiliyor (premium-only)", zero.free.walkSessionsPerDay === 0);
 
-  /* Kararlılık kademesi panelden kapatılabilmeli: 0 bonus = yalnız taban. */
+  /* Kademe panelden kapatılabilmeli: 0 bonus = yalnız taban. */
   const kapali = parsePremiumConfig({ free: { streakBonus: 0 } });
-  check("kararlılık kademesi kapatılabiliyor", kapali.free.streakBonus === 0);
+  check("kademe kapatılabiliyor", kapali.free.streakBonus === 0);
   const adim = parsePremiumConfig({ free: { streakStep: 0 } });
   check("seri adımı 1'in altına inemiyor", adim.free.streakStep === 1, `(${adim.free.streakStep})`);
+  check("kademe tavanı varsayılanı 0 (sınırsız)", d.free.maxTiers === 0);
 
-  const bad = parsePremiumConfig({ mock: { packSize: "üç", unlockPct: 250, unlockOnComplete: "evet" } });
+  /* ESKİ KAYIT: 2026-09-25 öncesi alanlar yok sayılıyor, yeniler varsayılana düşüyor. */
+  const eski = parsePremiumConfig({ free: { weeklyAiPractice: 2, streakMaxTiers: 5, pocketWalksPerDay: 0 }, mock: { unlockPct: 60, unlockOnComplete: true } });
+  check("eski kayıt geriye uyumlu okunuyor", JSON.stringify(eski) === JSON.stringify(d));
+  check("eski streakMaxTiers yeni tavana taşınmıyor", eski.free.maxTiers === 0);
+
+  const bad = parsePremiumConfig({ mock: { packSize: "üç" } });
   check("sayı olmayan değer varsayılana düşüyor", bad.mock.packSize === d.mock.packSize);
-  check("yüzde 100'e kırpılıyor", bad.mock.unlockPct === 100);
-  check("boolean olmayan değer varsayılana düşüyor", bad.mock.unlockOnComplete === d.mock.unlockOnComplete);
 
   const prices = parsePremiumConfig({ plans: { prices: [{ region: "X", monthly: "", yearly: "1" }] } });
   check("eksik fiyat satırı varsayılana düşüyor", prices.plans.prices.length === d.plans.prices.length);
@@ -144,27 +145,61 @@ console.log("\nPaywall metinleri üç sözlükte de var");
   }
 }
 
-console.log("\nKararlılığa bağlı ücretsiz kapasite");
+console.log("\nKademe formülü: taban + bonus × min(seri kademesi, bitirilmiş dilim)");
 {
   /*
-    ÜCRETSİZ KAPASİTE SERİYLE BÜYÜYOR (2026-09-17). Taban hak müfredatın
-    tadına bakmaya yetiyor; her yedi günlük seri kademesi iki hak daha açıyor.
-    Kilit "paran yetmiyor" değil "devam edersen açılır" diye kuruldu.
-
-    ÖLÇÜ `longest_streak`: kazanılan hak geri alınmıyor. Bir gün kaçıran
-    kullanıcı elindekini kaybetseydi kilit ödüllendirmek yerine cezalandırırdı.
+    KURAL (2026-09-25, docs/premium/README.md §2): bir sonraki dilim ancak açık
+    hakların hepsi BİTİRİLİNCE ve seri eşiğe VARINCA açılıyor. Seri tek başına
+    hak açmıyor, bitirmek tek başına açmıyor.
   */
-  const { streakStep: adim, streakBonus: bonus, streakMaxTiers: tavan } = DEFAULT_PREMIUM_CONFIG.free;
-  check("seri yokken yalnız taban", earnedAiLimit(2, 0, adim, bonus, tavan) === 2);
-  check("adımın altında kademe açılmıyor", earnedAiLimit(2, adim - 1, adim, bonus, tavan) === 2);
-  check("bir kademe bonus ekliyor", earnedAiLimit(2, adim, adim, bonus, tavan) === 2 + bonus);
-  check("iki kademe iki bonus", earnedAiLimit(2, adim * 2, adim, bonus, tavan) === 2 + bonus * 2);
-  /* TAVAN ŞART: seri sonsuza kadar hak üretseydi ücretsiz katman premium'un
-     yerine geçerdi. */
-  check("tavan aşılmıyor", earnedAiLimit(2, adim * (tavan + 9), adim, bonus, tavan) === 2 + bonus * tavan);
-  check("kademe kapalıyken taban duruyor", earnedAiLimit(2, adim * 3, adim, 0, tavan) === 2);
-  /* Negatif/bozuk seri tabanı bozmamalı. */
-  check("negatif seri tabana düşüyor", earnedAiLimit(2, -5, adim, bonus, tavan) === 2);
+  const r = { base: 2, bonus: 2, step: 7, maxTiers: 0 };
+  check("seri kademesi floor(en uzun / 7)", streakTier(13, 7) === 1 && streakTier(14, 7) === 2 && streakTier(6, 7) === 0);
+  check("dilim: taban bitmeden 0", completedSlices(1, 2, 2) === 0);
+  check("dilim: taban bitti → 1", completedSlices(2, 2, 2) === 1);
+  check("dilim: taban + bir bonus bitti → 2", completedSlices(4, 2, 2) === 2);
+  check("dilim: taban 0 ise baştan 1", completedSlices(0, 0, 2) === 1);
+
+  check("seri yok, hiç bitirmedi → taban", allowedCount(r, 0, 0) === 2);
+  check("seri 30 gün ama bitirmedi → taban (seri tek başına açmaz)", allowedCount(r, 1, 30) === 2);
+  check("ikisini bitirdi ama seri 6 → taban (bitirmek tek başına açmaz)", allowedCount(r, 2, 6) === 2);
+  check("ikisini bitirdi + 7 gün seri → +2", allowedCount(r, 2, 7) === 4);
+  check("dördünü bitirdi ama seri 13 → hâlâ 4", allowedCount(r, 4, 13) === 4);
+  check("dördünü bitirdi + 14 gün → 6", allowedCount(r, 4, 14) === 6);
+  check("seri 50 ama 3 bitti → 4 (ikinci dilim bitmedi)", allowedCount(r, 3, 50) === 4);
+  check("tavan 1 → en çok bir dilim", allowedCount({ ...r, maxTiers: 1 }, 10, 100) === 4);
+  check("bonus 0 → yalnız taban", allowedCount({ ...r, bonus: 0 }, 10, 100) === 2);
+  check("negatif seri tabana düşüyor", unlockedTier(r, 2, -5) === 0);
+
+  // Deneme sınavı: taban 1, bonus 1.
+  const m = { base: 1, bonus: 1, step: 7, maxTiers: 0 };
+  check("deneme: hiç bitirmedi → 1", allowedCount(m, 0, 30) === 1);
+  check("deneme: bitirdi + 7 gün → 2", allowedCount(m, 1, 7) === 2);
+  check("deneme: ikisini bitirdi + 14 gün → 3", allowedCount(m, 2, 14) === 3);
+  check("deneme: ikisini bitirdi ama seri 13 → 2", allowedCount(m, 2, 13) === 2);
+}
+
+console.log("\nKilit açma durumu (arayüzün gösterdiği)");
+{
+  const r = { base: 1, bonus: 1, step: 7, maxTiers: 0 };
+  // Örnek (Samet): deneme sınavını bitirdi, seri 3/7 → 4 gün sonra ikinci kâğıt.
+  const u = freeUnlock(r, { used: 1, done: 1, longestStreak: 3, currentStreak: 3 });
+  check("açık 1, kalan 0", u.open === 1 && u.remaining === 0, JSON.stringify(u));
+  check("bitirme koşulu tamam (1/1)", u.next?.complete.done === 1 && u.next?.complete.needed === 1);
+  check("seri 3/7", u.next?.streak.current === 3 && u.next?.streak.needed === 7 && u.next?.streak.met === false);
+  check("4 gün kaldı", u.next?.days === 4, `(${u.next?.days})`);
+  check("kazanç 1", u.next?.gain === 1);
+
+  // En uzun seri eşiği geçmiş ama güncel seri kopmuş: seri koşulu TAMAM (kazanılan geri alınmıyor).
+  const v = freeUnlock({ base: 2, bonus: 2, step: 7, maxTiers: 0 }, { used: 2, done: 1, longestStreak: 9, currentStreak: 0 });
+  check("en uzun seri yetiyor → seri koşulu tamam, gün 0", v.next?.streak.met === true && v.next?.days === 0);
+  check("bitirme 1/2", v.next?.complete.done === 1 && v.next?.complete.needed === 2);
+
+  const tavan = freeUnlock({ base: 2, bonus: 2, step: 7, maxTiers: 1 }, { used: 4, done: 4, longestStreak: 30, currentStreak: 30 });
+  check("tavana varılınca sonraki yok", tavan.next === null && tavan.open === 4);
+
+  check("seri: dün çalıştıysa yaşıyor", liveStreak(5, "2026-09-24", "2026-09-25") === 5);
+  check("seri: bugün çalıştıysa yaşıyor", liveStreak(5, "2026-09-25", "2026-09-25") === 5);
+  check("seri: iki gün önce ise kopmuş", liveStreak(5, "2026-09-23", "2026-09-25") === 0);
 }
 
 console.log(failures === 0 ? `\ntamam: ${total}/${total}` : `\nKALDI: ${failures}/${total} test`);

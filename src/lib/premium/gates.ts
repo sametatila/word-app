@@ -16,88 +16,83 @@
  * (bkz. `describeLimits`). Tavan normal kullanımda hiç görülmeyecek kadar
  * yüksek; işi bütçeyi tek bir hesabın yakmasından korumak.
  */
-import { MOCK_PASS_PCT } from "@/lib/mock-exams/types";
-
-/** Ücretsiz katmanın sınırları. */
+/**
+ * Ücretsiz katmanın sınırları — 2026-09-25 kararları (`docs/premium/README.md` §2).
+ *
+ * KOTALI BEŞ YÜZEY, HEPSİ AYRI SAYAÇ. Patika Konuşma, Patika Yazma, Beceriler
+ * konuşma ve Beceriler yazma seviye başına; deneme sınavı seviye başına; yürüyüş
+ * modu gün başına. Bir dönem "Patika ve Beceriler ortak / tek havuz" diye
+ * anlatılıyordu ve kod bunu hiç yapmıyordu (sayaçlar ayrıydı); karar artık
+ * ayrı sayaçları AÇIKÇA söylüyor.
+ *
+ * HAK NASIL KAZANILIYOR: taban + her "tamamla ve 7 günlük seri yap" dilimi.
+ * Hesap tek yerde, `unlock.ts`.
+ */
 export type FreeLimits = {
-  /** Seviye başına ücretsiz deneme sınavı kâğıdı sayısı. */
+  /** Seviye başına açık deneme sınavı kâğıdı (taban). */
   mockPapersPerLevel: number;
+  /** Deneme sınavında her dilimin açtığı kâğıt (kararda 1). */
+  mockStreakBonus: number;
   /**
-   * Cebe/ekran kapalı yürüyüş turu — 0 = ücretsizde hiç yok.
+   * Yürüyüş modu, günde oturum — yalnız EKRAN AÇIK.
    *
-   * Ekran AÇIK yürüyüş her iki katmanda da serbest ve sınırsız: cihazın kendi
-   * tanıyıcısı kullanılıyor, bize maliyeti yok. Ekran kapalıyken sunucu STT'ye
-   * (Azure) düşülüyor ve maliyet orada. Bölme bu yüzden "yürüyüş modu" değil,
-   * "cepte yürüyüş" üzerinden yapılıyor — ücretsiz kullanıcı özelliği her gün
-   * kullanabiliyor ama faturayı premium ödüyor.
+   * Oturum sunucuda, yürüyüş kuyruğunun (`/api/session?walk=1`) açıldığı anda
+   * sayılıyor (`walkSession`); istemcinin "başladım" demesine bakılmıyor. Ekran
+   * KAPALI yol (sunucu ses tanıma, maliyetin tamamı orada) ücretsizde hiç yok.
+   * 0 = yürüyüş modu ücretsizde kapalı.
    */
-  pocketWalksPerDay: number;
+  walkSessionsPerDay: number;
   /**
-   * Ömürlük konuşma hakkı — PATİKA VE BECERİLER ORTAK.
+   * Patika Konuşma adımı, seviye başına (taban).
    *
-   * İki ayrı hak değil: patika ünitesindeki ve Beceriler kütüphanesindeki
-   * alıştırma AYNI içerik (`lib/skills/content`), iki ayrı giriş kapısı.
-   * Kota alıştırmanın kimliğine düşüyor (`claimSkillAi`), hangi kapıdan
-   * açıldığına değil. Bir dönem paywall ikisini ayrı satır olarak sayıyordu
-   * (`speakingLessonsPerLevel`) ve o satırın karşılığı olan ayrı bir hak hiç
-   * yoktu — vaat, olmayan bir yüzeyi anlatıyordu (2026-09-17'de kaldırıldı).
+   * Konuşma adımı = Türkçe anlatım + yapay zekâ sohbeti + isteğe bağlı puanlı
+   * kısım; hepsi TEK hak. Hak ilk yapay zekâ turunda düşüyor ve adım
+   * "sahipleniliyor" — yeniden açmak hak yemiyor.
    */
+  conversationsPerLevel: number;
+  /** Patika Yazma (yapay zekâ değerlendirmesi), seviye başına (taban). */
+  pathWritingPerLevel: number;
+  /** Beceriler konuşma (B1+ monolog), seviye başına (taban). A1–A2 drili yapay zekâsız ve sınırsız. */
   speakingSkills: number;
-  /** Ömürlük yazma hakkı — patika ve Beceriler ortak (bkz. üstteki not). */
+  /** Beceriler yazma, seviye başına (taban). */
   writingSkills: number;
-  /**
-   * KARARLILIK KADEMESİ. Ücretsiz kullanıcının kapasitesi uygulamadaki
-   * düzenliliğe bağlı: her `streakStep` günlük seri kademesi `streakBonus`
-   * kadar konuşma VE yazma hakkı açıyor, `streakMaxTiers` kademeye kadar.
-   *
-   * Deneme sınavı ilerlemesiyle aynı fikir (`MockProgression`): hak edilen
-   * şey açılıyor. Kazanılan geri alınmıyor — ölçü `longest_streak`.
-   */
+  /** Seri adımı (gün) — "7 günlük seri". */
   streakStep: number;
+  /** Patika ve Beceriler'de her dilimin açtığı hak. */
   streakBonus: number;
-  streakMaxTiers: number;
   /**
-   * Ömürlük hak bittikten SONRA her hafta yenilenen konuşma+yazma hakkı.
+   * Kademe tavanı — seri kaç kez hak açabilir. 0 = SINIRSIZ.
    *
-   * Ömürlük kota tek başına bir duvar: kullanıcı onu tüketir, özelliği bir daha
-   * hiç görmez ve premium'u hatırlatan hiçbir şey kalmaz. Yenilenen küçük bir
-   * hak ise kilidi her hafta yeniden gösteriyor — hem elde tutuyor hem
-   * dönüştürüyor. Maliyeti sınırlı: kullanıcı başına haftada bu kadar AI
-   * değerlendirmesi.
+   * Karar verilmedi (2026-09-25); varsayılan tavansız. Ücretsiz katmanın premium'un
+   * yerine geçmesini tavan değil "bitir" koşulu frenliyor: her dilim önceki
+   * dilimdeki hakların hepsinin bitirilmesini istiyor.
    */
-  weeklyAiPractice: number;
+  maxTiers: number;
 };
 
-/** Premium'un adil kullanım tavanı — kullanıcıya AÇIKÇA yazılır. */
+/**
+ * Premium'un kötüye kullanım tavanları — kullanıcıya AÇIKÇA yazılır, "sınırsız"
+ * denmez (App Store 3.1.2, Play abonelik beyanı).
+ */
 export type FairUse = {
-  /** Günde en fazla cepte yürüyüş turu. */
-  pocketWalksPerDay: number;
-  /** Günde en fazla AI değerlendirmesi (konuşma + yazma toplamı). */
+  /**
+   * Günde yürüyüş oturumu (ekran açık + kapalı). Ücretsizdeki sayaçla AYNI
+   * sayaç, yani duyurulan sayı gerçekten sayılıyor. Eskiden burada "günde 20
+   * tur" duruyordu ve o turu hiçbir yer saymıyordu.
+   */
+  walkSessionsPerDay: number;
+  /** Günde en fazla yapay zekâ değerlendirmesi (alıştırma başına ilk değerlendirme). */
   aiPracticePerDay: number;
 };
 
-/** Deneme sınavı paket ilerlemesi (premium). */
+/**
+ * Deneme sınavı paketleri (premium): paketteki kâğıtların HEPSİ bitirilince
+ * sonraki paket açılır. Bir dönem %60 başarı da açıyordu ("ya da bitir"
+ * supabıyla); 2026-09-25'te kalktı — tek kural "bitir".
+ */
 export type MockProgression = {
   /** Bir pakette kaç kâğıt açılır. */
   packSize: number;
-  /**
-   * Sonraki paketi açan başarı yüzdesi.
-   *
-   * Varsayılan `MOCK_PASS_PCT` ile aynı olmalı: uygulamanın zaten bir geçme notu
-   * var, ikinci bir eşik icat etmek kullanıcıya iki farklı "başarı" tanımı
-   * göstermek olurdu.
-   */
-  unlockPct: number;
-  /**
-   * Puan yetmese de paketin tamamı çözülünce sonraki paket açılsın mı.
-   *
-   * VARSAYILAN AÇIK ve bu bilinçli bir güvenlik kararı. Kapalıyken %60'ı hiç
-   * tutturamayan bir kullanıcı parasını ödeyip HİÇBİR yeni kâğıt göremez —
-   * iadenin, tek yıldızın ve "aldattılar" yorumunun en sık sebebi bu. Açıkken
-   * ilerleme yine sıralı ve başarı yine hızlandırıyor, ama kimse kilitli
-   * kalmıyor. Kapatılırsa paywall metni bunu AÇIKÇA söylemek zorunda.
-   */
-  unlockOnComplete: boolean;
 };
 
 /**
@@ -145,39 +140,36 @@ export type PremiumConfig = {
 /**
  * TABAN DEĞERLER. Panelde bir anahtar silinirse buraya dönülür.
  *
- * Sayıların gerekçesi:
- *  - `mockPapersPerLevel: 1` — kullanıcı kendi seviyesinde TAM bir deneme çözüp
- *    değeri görüyor; satın alma kararı bilgiyle veriliyor.
- *  - `pocketWalksPerDay: 0` — cepte yürüyüş premium'un vitrini ve maliyetin
- *    tamamı orada.
- *  - `2` ders + `2` beceri — müfredatın tadına bakmaya yetiyor, bitirmeye yetmiyor.
- *  - `weeklyAiPractice: 2` — ömürlük hak bitince haftada iki kez hatırlatma.
- *  - `fairUse` değerleri normal kullanımın çok üstünde: gerçek bir kullanıcı
- *    günde 20 yürüyüş turu yapmaz; tavan yalnız kötüye kullanımı durduruyor.
+ * Sayıların gerekçesi (kararlar `docs/premium/README.md` §2, 2026-09-25):
+ *  - Patika Konuşma/Yazma ve Beceriler konuşma/yazma seviye başına `2` — müfredatın
+ *    tadına bakmaya yetiyor, bitirmeye yetmiyor. Üstü "bitir + 7 günlük seri" ile
+ *    ikişer ikişer açılıyor (`streakBonus`).
+ *  - Deneme sınavı seviye başına `1` + her dilimde `1`.
+ *  - Yürüyüş modu günde `3` oturum, yalnız ekran açık (cihazın tanıyıcısı, maliyet
+ *    yok); ekran kapalı yol premium.
+ *  - `maxTiers: 0` — kademe tavanı yok (karar verilmedi, panelden ayarlanabilir).
+ *  - `fairUse` değerleri normal kullanımın çok üstünde; iş bütçeyi tek bir hesabın
+ *    yakmasından korumak.
  */
 export const DEFAULT_PREMIUM_CONFIG: PremiumConfig = {
   free: {
     mockPapersPerLevel: 1,
-    pocketWalksPerDay: 0,
+    mockStreakBonus: 1,
+    walkSessionsPerDay: 3,
+    conversationsPerLevel: 2,
+    pathWritingPerLevel: 2,
     speakingSkills: 2,
     writingSkills: 2,
     streakStep: 7,
     streakBonus: 2,
-    streakMaxTiers: 5,
-    weeklyAiPractice: 2,
+    maxTiers: 0,
   },
   fairUse: {
-    pocketWalksPerDay: 20,
+    walkSessionsPerDay: 20,
     aiPracticePerDay: 30,
   },
   mock: {
     packSize: 3,
-    /* Sayı DEĞİL sabit: aynı olması gerektiğini söyleyen bir yorum vardı
-       (bkz. `unlockPct` alanının açıklaması), ölçen bir şey yoktu. İkisi
-       ayrışsaydı kullanıcıya iki farklı "başarı" tanımı gösterilirdi —
-       kâğıdı "geçti" diye işaretlenen biri sonraki paketi açamazdı. */
-    unlockPct: MOCK_PASS_PCT,
-    unlockOnComplete: true,
   },
   plans: {
     productMonthly: "lernomi_premium_monthly",
@@ -216,8 +208,10 @@ export const DEFAULT_PREMIUM_CONFIG: PremiumConfig = {
 export const PREMIUM_GATES = {
   mock_exam: "Deneme sınavları",
   pocket_walk: "Cepte yürüyüş (ekran kapalı)",
-  speaking: "Konuşma alıştırmaları",
-  writing: "Yazma alıştırmaları",
+  walk: "Yürüyüş modu oturumu (günlük)",
+  conversation: "Patika Konuşma adımı",
+  speaking: "Konuşma değerlendirmesi (Beceriler)",
+  writing: "Yazma değerlendirmesi (Patika Yazma, Beceriler)",
 } as const;
 
 export type PremiumGate = keyof typeof PREMIUM_GATES;
@@ -240,50 +234,48 @@ export type CopyLine = { key: string; params?: Record<string, string | number> }
 
 export function describeLimits(cfg: PremiumConfig): { free: CopyLine[]; premium: CopyLine[] } {
   const { free, fairUse, mock } = cfg;
+  const tiers = free.streakBonus > 0 && free.streakStep > 0;
   return {
+    /*
+      SATIRLAR 2026-09-25 TABLOSUYLA BİREBİR (`docs/premium/README.md` §2).
+
+      VAR OLAN ANAHTARLAR YENİDEN KULLANILIYOR, yenisi yalnız gerçekten yeni bir
+      satır için: satırlar sunucudan ANAHTAR olarak iniyor, çeviri istemcinin
+      GÖMÜLÜ sözlüğünden geliyor ve bilinmeyen anahtar kurulu eski sürümde ham
+      basılıyor (`bul(key) ?? key`, emülatörde görüldü 2026-09-17). Eski sürüm
+      yeniden kullanılan anahtarda eski cümlesini gösteriyor; yenisi doğrusunu.
+      Parametre ÇIKARILMIYOR, fazlası zararsız (`plan.free_weekly` bu yüzden
+      kullanmadığı `n`'yi taşıyor).
+
+      KALKANLAR: "patika ve Beceriler ortak" (`plan.free_skills`in eski metni),
+      haftada yenilenen hak (`plan.free_weekly_ai`), cepte yürüyüşte sayılmayan
+      "günde 20 tur" (`plan.pro_walk_cap` premium listesinden çıktı; tavan artık
+      gerçekten sayılan oturum ve adil kullanım satırında).
+    */
     free: [
       { key: "plan.free_core" },
-      { key: "plan.free_walk" },
-      { key: "plan.free_mock", params: { n: free.mockPapersPerLevel } },
-      /* Haftalık quiz ÜCRETSİZ (karar 2026-09-16) ve bu satır ücretsiz
-         sütununda kalıyor. Premium sütunundaki karşılığı (`plan.pro_weekly`)
-         KALDIRILDI: "havuzun tamamı ve geçmiş haftalar" diye bir şey hiç
-         yapılmadı, yani ödeme yapan kullanıcı o satır karşılığında hiçbir şey
-         almıyordu. Vaadi silmek, teslim edilmeyen bir vaadi taşımaktan iyidir
-         (App Store 2.3.1 / 3.1.2, Play yanıltıcı beyan). */
-      /* SAYI ARTIK AYARDAN GELMİYOR, SABİT 1 — ve bu doğru: haftada bir quiz
-         bir kota değil, `weekly_quiz_user_week_idx` benzersiz kısıtı. Ama
-         parametre KALDIRILMIYOR: eski paketlerdeki cümle `{n}` taşıyor ve
-         parametre gelmezse ekranda literal "{n}" görünüyor (emülatörde
-         görüldü). Fazladan parametre zararsız, eksik parametre bozuk metin. */
+      /* Haftalık quiz iki katmanda da haftada bir — kota değil, benzersiz kısıt. */
       { key: "plan.free_weekly", params: { n: 1 } },
-      /* TEK SATIR, TEK HAVUZ. Eskiden burada iki satır vardı ("seviye başına N
-         ders" + "kütüphanede N") ve bu, iki ayrı hak olduğunu ima ediyordu.
-         Oysa patika ünitesindeki ve Beceriler'deki alıştırma aynı içerik, kota
-         da aynı — birinci satırın karşılığı olan ayrı bir hak hiç yoktu. */
-      /* ANAHTAR YENİDEN KULLANILIYOR, YENİSİ UYDURULMUYOR. Paywall satırları
-         sunucudan ANAHTAR olarak iniyor ve çeviri istemcinin GÖMÜLÜ sözlüğünden
-         geliyor (`lib/i18n` `bul(key) ?? key`): sunucuya yeni bir anahtar
-         eklemek, o anahtarı bilmeyen kurulu sürümlerde ekrana HAM ANAHTAR
-         bastırıyor. Emülatörde görüldü (2026-09-17). `plan.free_skills` eski
-         paketlerde de var; metni değişti, anahtar durdu — eski sürüm okunur
-         bir cümle gösteriyor, yeni sürüm doğrusunu. */
+      ...(free.walkSessionsPerDay > 0 ? [{ key: "plan.free_walk", params: { n: free.walkSessionsPerDay } }] : []),
+      { key: "plan.free_mock", params: { n: free.mockPapersPerLevel } },
+      { key: "plan.free_path_ai", params: { c: free.conversationsPerLevel, w: free.pathWritingPerLevel } },
       { key: "plan.free_skills", params: { s: free.speakingSkills, w: free.writingSkills } },
-      /* KARARLILIK SATIRI. Ücretsiz katmanın kapasitesi düzenli kullanıma bağlı
-         ve bunu SÖYLÜYORUZ: kilidi "paran yetmiyor" diye değil "devam edersen
-         açılır" diye kurmak, hem doğru hem de kullanıcıyı uygulamada tutan şey.
-         Kademe kapalıysa (panelden 0) satır hiç çizilmiyor — olmayan bir vaadi
+      /* HAKKIN NASIL KAZANILDIĞI. Kilidi "paran yetmiyor" değil "bitir ve devam
+         et, açılır" diye kurmak hem doğru hem kullanıcıyı uygulamada tutan şey.
+         Kademe kapalıysa (panelden bonus 0) satır çizilmiyor — olmayan bir vaadi
          anlatmamak için. */
-      ...(free.streakBonus > 0 && free.streakMaxTiers > 0
-        ? [{ key: "plan.free_streak_ai", params: { d: free.streakStep, n: free.streakBonus } }]
+      ...(tiers
+        ? [{ key: "plan.free_streak_ai", params: { d: free.streakStep, n: free.streakBonus, m: free.mockStreakBonus } }]
         : []),
-      { key: "plan.free_weekly_ai", params: { n: free.weeklyAiPractice } },
+      ...(tiers && free.maxTiers > 0 ? [{ key: "plan.free_streak_cap", params: { n: free.maxTiers } }] : []),
     ],
     premium: [
       { key: "plan.pro_pocket_walk" },
       { key: "plan.pro_mock", params: { n: mock.packSize } },
+      /* `n` KALIYOR: eski sürümlerin cümlesi "günde {n} değerlendirmeye kadar"
+         ve parametresiz kalırsa ekranda literal "{n}" görünür. */
       { key: "plan.pro_ai", params: { n: fairUse.aiPracticePerDay } },
-      { key: "plan.pro_walk_cap", params: { n: fairUse.pocketWalksPerDay } },
     ],
   };
 }
+
