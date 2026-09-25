@@ -74,7 +74,7 @@ export const DE_A1_W03: QuizWeek = {
       stem: "Wie viel Geld hat die Person?",
       options: ["3 Euro", "1 Euro", "20 Euro", "12 Euro"],
       answer: 2,
-      why: "\"Ich habe 20 Euro.\" Öteki sayılar tek tek ürünlerin fiyatı — metinde beş sayı var ve yalnız biri cüzdandaki para.",
+      why: "\"Ich habe 20 Euro.\" Öteki tutarlar ürünlerin fiyatı — metinde üç tutar geçiyor ve yalnız biri cüzdandaki para.",
       targets: ["lesen.detail", "wortfeld.preis"],
     },
     {
@@ -84,7 +84,7 @@ export const DE_A1_W03: QuizWeek = {
       stem: "Wo kauft die Person am Abend ein Buch?",
       options: ["Im Supermarkt", "In der Schule", "Im Laden in der Straße", "In der Stadt"],
       answer: 2,
-      why: "Son cümle: \"…gehe ich noch in den Laden in der Straße und kaufe ein Buch.\" Supermarkt sabaha ait, akşam değil.",
+      why: "Son cümle: \"…gehe ich noch in den Laden in der Straße und kaufe ein Buch.\" Supermarkt metnin başındaki alışveriş, akşama bağlı değil.",
       targets: ["lesen.detail", "fragewort.wo"],
     },
 
@@ -106,7 +106,7 @@ export const DE_A1_W03: QuizWeek = {
       stem: "Was kauft der Kunde?",
       options: ["Das Buch", "Die Zeitung", "Beides", "Nichts"],
       answer: 1,
-      why: "\"Gut, ich nehme die Zeitung.\" Kitabı `teuer` bulup vazgeçiyor; kararı doğrudan söylemiyor, fiyatı yorumlayarak belli ediyor.",
+      why: "\"Gut, ich nehme die Zeitung.\" Kitabı `teuer` bulup almıyor; kitaptan vazgeçtiğini doğrudan söylemiyor, fiyatı yorumlayarak belli ediyor.",
       targets: ["hoeren.zusammenhang", "verb.nehmen"],
     },
     {
@@ -208,7 +208,7 @@ export const DE_A1_W03: QuizWeek = {
     {
       id: "de-a1-w03-v3",
       block: "vocab",
-      stem: "Ich habe 20 Euro. Das ist ___.",
+      stem: "Ich brauche nur 15 Euro, und ich habe 20 Euro. Das ist ___.",
       options: ["genug", "wenig", "teuer", "billig"],
       answer: 0,
       why: "`genug` yeterli demek ve para için doğrudan kullanılır. `teuer`/`billig` paranın değil ÜRÜNÜN niteliğidir — para pahalı olmaz.",

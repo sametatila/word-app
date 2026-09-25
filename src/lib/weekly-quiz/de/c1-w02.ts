@@ -205,7 +205,7 @@ export const DE_C1_W02: QuizWeek = {
       stem: "Sie wollen die Anwesenheitspflicht wieder einführen? Das ist ___ ein Rückschritt.",
       options: ["ja", "doch", "wohl", "eben"],
       answer: 1,
-      why: "`doch` burada bir itirazı işaretler: konuşan, karşı tarafın beklemediği bir şey söylediğini vurguluyor. `ja` bilinen bir şeyi, `wohl` tahmini, `eben` kaçınılmazlığı bildirir — dördü de dilbilgisel, ama tutumları başka.",
+      why: "`doch` burada bir itirazı işaretler: konuşan, karşı tarafın beklemediği bir şey söylediğini vurguluyor. `ja` bilinen bir şeyi, `wohl` tahmini, `eben` kaçınılmazlığı bildirir — dördü de dil bilgisel, ama tutumları başka.",
       targets: ["modalpartikel", "pragmatik.haltung"],
       byNative: {
         tr: {

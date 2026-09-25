@@ -197,10 +197,10 @@ export const DE_C1_W05: QuizWeek = {
     {
       id: "de-c1-w05-g4",
       block: "grammar",
-      stem: "Mich stört ___ weniger die Höhe ___ die Darstellung.",
+      stem: "Die Gebühr finde ich angemessen. Mich stört ___ ihre Höhe, ___ die Darstellung des Verfahrens.",
       options: ["sowohl … als auch", "weder … noch", "nicht … sondern", "zwar … aber"],
       answer: 2,
-      why: "`weniger … als` yapısı zaten bir karşılaştırma kuruyor; boşluklara gelen çift bağlaç de aynı yönde olmalı: birini eleyip ötekini öne çıkaran `nicht … sondern`. Öteki üçü iki öğeyi eşitler ya da ikisini birden dışlar.",
+      why: "İlk cümle tutarı sorun saymıyor, yani boşluklara birini eleyip ötekini öne çıkaran çift bağlaç gelmeli: `nicht … sondern`. `sowohl … als auch` ve `zwar … aber` tutarı da itirazın içine alır; `weder … noch` ise ikisini birden dışlar ve itirazı ortadan kaldırır.",
       targets: ["syntax.nicht-sondern", "konnektor.doppelt"],
     },
     {

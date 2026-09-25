@@ -162,7 +162,7 @@ export const DE_B2_W03: QuizWeek = {
         "Deniz findet es schwach, Emma gefällt es.",
       ],
       answer: 3,
-      why: "`Da bin ich anderer Meinung` karşıt bir görüş açıyor: Deniz sonu zayıf buluyor, Emma açık sonu beğeniyor. İkinci şık görüşlerin sahiplerini yer değiştiriyor; iki kişilik bir tartışmada asıl iş kimin ne dediğini takip etmek.",
+      why: "`Da bin ich anderer Meinung` karşıt bir görüş açıyor: Deniz sonu zayıf buluyor, Emma açık sonu beğeniyor. `zu schnell` diyen şık görüşlerin sahiplerini yer değiştiriyor; iki kişilik bir tartışmada asıl iş kimin ne dediğini takip etmek.",
       targets: ["hoeren.zusammenhang"],
     },
 

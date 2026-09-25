@@ -114,7 +114,7 @@ export const DE_A2_W05: QuizWeek = {
       stem: "Was ist das Problem mit Cans Zimmer?",
       options: ["Es ist im vierten Stock.", "Es ist zu klein.", "Es ist sehr laut.", "Es ist zu teuer."],
       answer: 2,
-      why: "Dördüncü kat sorun değil, çözüm: Can'in yarın geçeceği oda. Sorun ile çözüm aynı konuşmada geçince hangisinin hangisi olduğunu işaretler ayırıyor: sorun `weil` ile gerekçelendiriliyor, çözüm `morgen` ile geliyor.",
+      why: "Dördüncü kat sorun değil, çözüm: Can'ın yarın geçeceği oda. Sorun ile çözüm aynı konuşmada geçince hangisinin hangisi olduğunu işaretler ayırıyor: sorun `weil` ile gerekçelendiriliyor, çözüm `morgen` ile geliyor.",
       targets: ["hoeren.detail"],
     },
     {

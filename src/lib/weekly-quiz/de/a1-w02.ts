@@ -179,7 +179,7 @@ export const DE_A1_W02: QuizWeek = {
         en: {
           options: ["Um", "An", "Am", "In"],
           answer: 2,
-          why: "İngilizcede `in the evening` deniyor, o yüzden `In` doğru görünür. Almancada günün bölümü `am` ister; `in` yalnız ay ve mevsimlerde kullanılır.",
+          why: "İngilizcede `in the evening` deniyor, o yüzden `In` doğru görünür. Almancada günün bölümü `am` ister; `in` ay ve mevsimlerle kullanılır (`im Mai`, `im Winter`).",
         },
       },
     },
@@ -238,7 +238,7 @@ export const DE_A1_W02: QuizWeek = {
       stem: "Ich ___ Kaffee und esse Brot.",
       options: ["trinke", "fahre", "lese", "stehe"],
       answer: 0,
-      why: "`Kaffee` nesnesiyle kurulan tek fiil `trinken`. Öteki üçü de çekimli ve doğru biçimde ama bu nesneyi almıyor — burada seçimi yapan dilbilgisi değil, fiilin nesnesi.",
+      why: "`Kaffee` nesnesiyle kurulan tek fiil `trinken`. Öteki üçü de çekimli ve doğru biçimde ama bu nesneyi almıyor — burada seçimi yapan dil bilgisi değil, fiilin nesnesi.",
       targets: ["verb.trinken", "wortfeld.alltag"],
     },
   ],

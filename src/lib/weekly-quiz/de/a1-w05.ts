@@ -48,7 +48,7 @@ export const DE_A1_W05: QuizWeek = {
       segments: [
         { speaker: "Tim", text: "Hallo! Wie geht es dir in Berlin?" },
         { speaker: "Nina", text: "Gut, danke. Aber ich habe wenig Zeit." },
-        { speaker: "Tim", text: "Warum? Was machst du den Tag?" },
+        { speaker: "Tim", text: "Warum? Was machst du den ganzen Tag?" },
         { speaker: "Nina", text: "Ich lerne Deutsch und arbeite auch. Ich stehe um 6 Uhr auf." },
         { speaker: "Tim", text: "Und wo wohnst du?" },
         { speaker: "Nina", text: "Bei einer Familie. Mein Zimmer ist klein, aber das Haus ist schön." },
@@ -198,7 +198,7 @@ export const DE_A1_W05: QuizWeek = {
       stem: "___ kommst du?",
       options: ["Wann", "Wo", "Woher", "Wohin"],
       answer: 2,
-      why: "`kommen` kaynağı ister: `woher` (nereden). `wohin` yönü, `wo` sabit yeri sorar — üçü Türkçede de İngilizcede de tek sözcüğe düşebiliyor.",
+      why: "`kommen` kaynağı ister: `woher` (nereden). `wohin` yönü (nereye), `wo` sabit yeri (nerede) sorar — İngilizcede üçü de `where` ile kurulduğu için ayrım kolayca kayboluyor.",
       targets: ["fragewort.woher", "fragewort.wohin", "fragewort.wo"],
     },
 

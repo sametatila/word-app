@@ -77,7 +77,7 @@ export const DE_C1_W04: QuizWeek = {
         "Eine ungewöhnlich hohe Zahl gleichzeitiger Buchungen",
       ],
       answer: 1,
-      why: "\"Die Ursache lag in einer Aktualisierung … Sie hätte vorher getestet werden müssen, doch der … Schritt wurde übersprungen.\" Cuma akşamı güncellemenin ZAMANI, sebebi değil.",
+      why: "\"Technisch lag die Ursache in einer Aktualisierung … Sie hätte vorher getestet werden müssen, doch der … Schritt wurde übersprungen.\" Cuma akşamı güncellemenin ZAMANI, sebebi değil.",
       targets: ["lesen.detail", "argumentation.ursache"],
     },
     {
@@ -92,7 +92,7 @@ export const DE_C1_W04: QuizWeek = {
         "Weil sie für Leser ohne Fachkenntnis zu technisch ist",
       ],
       answer: 1,
-      why: "Metin bunu doğrudan söylüyor: \"Das Passiv erlaubt es, ein Ereignis zu schildern, ohne einen Verantwortlichen zu nennen.\" Yani eleştiri dilbilgisine değil, edilgen çatının FAİLİ SİLME imkânına yönelik.",
+      why: "Metin bunu doğrudan söylüyor: \"Das Passiv erlaubt es, ein Ereignis zu schildern, ohne einen Verantwortlichen zu nennen.\" Yani eleştiri dil bilgisine değil, edilgen çatının FAİLİ SİLME imkânına yönelik.",
       targets: ["lesen.sprachkritik", "passiv"],
     },
     {
@@ -235,7 +235,7 @@ export const DE_C1_W04: QuizWeek = {
       stem: "Der dafür vorgesehene Schritt wurde ___.",
       options: ["übergeben", "überzeugt", "übersprungen", "überschritten"],
       answer: 2,
-      why: "`überspringen` bir adımı atlamak demek. Öteki üçü de `über-` önekli gerçek fiiller ama bambaşka alanlara ait: teslim etmek, ikna etmek, para göndermek. Önek benzerliği anlam yakınlığı değildir.",
+      why: "`überspringen` bir adımı atlamak demek. Öteki üçü de `über-` önekli gerçek fiiller ama bambaşka alanlara ait: teslim etmek, ikna etmek, aşmak. Önek benzerliği anlam yakınlığı değildir.",
       targets: ["verb.ueberspringen", "wortbildung.praefix"],
     },
     {
