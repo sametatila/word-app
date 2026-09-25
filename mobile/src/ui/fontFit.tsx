@@ -49,6 +49,11 @@ function report(ratio: number) {
 }
 
 /** Satır kutusunun en düşük oranı (em). */
+/** Kancasız okuma — iskelet ölçüsü gibi düz işlevler için (`ui/Skeleton` textHeight). */
+export function minLineRatioNow(): number {
+  return minRatio;
+}
+
 export function useMinLineRatio(): number {
   return useSyncExternalStore(subscribe, () => minRatio, () => minRatio);
 }

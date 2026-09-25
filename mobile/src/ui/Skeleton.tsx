@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { Animated, PixelRatio, View, type ViewStyle } from "react-native";
 import { Card } from "./Card";
-import { useTheme, radii, spacing, typography } from "../theme";
+import { useTheme, radii, spacing, typography, lineHeightRatio } from "../theme";
+import { minLineRatioNow } from "./fontFit";
 import { reduceMotion } from "../lib/reduceMotion";
 
 /**
@@ -23,7 +24,14 @@ type Variant = keyof typeof typography;
 const MAX_FONT_SCALE = 1.5;
 
 /**
- * Bir metin satırının kapladığı yükseklik (RN varsayılan satır aralığı ~1.2).
+ * Bir metin satırının kapladığı yükseklik — `ui/Text`in çizdiğiyle AYNI hesap.
+ *
+ * Eskiden RN varsayılanı sayılıyordu (× 1,2). Oysa `Text` satırı ölçeğin
+ * kendi oranıyla çiziyor (`lineHeightRatio`: caption 1,6, body 1,5) ve
+ * altına yazı tipi tabanını koyuyor (`fontFit`, en az 1,25). İskelet satırı
+ * gerçeğinden ~%25 kısa kalıyor, içerik gelince ekran aşağı kayıyordu
+ * (2026-09-25, Beceriler iskeletinde görüldü; her ekranda aynıydı). Web
+ * `components/skeleton` textHeight zaten gerçek oranı kullanıyor.
  *
  * Sistem yazı ölçeği de hesaba katılır: gerçek Text ölçekle büyüyor (ui/Text
  * 1.5 katla sınırlar), iskelet sabit kalsaydı büyük yazı ayarındaki
@@ -31,7 +39,8 @@ const MAX_FONT_SCALE = 1.5;
  */
 export function textHeight(variant: Variant): number {
   const scale = Math.min(PixelRatio.getFontScale(), MAX_FONT_SCALE);
-  return Math.round((typography[variant].fontSize as number) * scale * 1.2);
+  const punto = (typography[variant].fontSize as number) * scale;
+  return Math.round(punto * Math.max(lineHeightRatio[variant], minLineRatioNow()));
 }
 
 const pulse = new Animated.Value(0);
