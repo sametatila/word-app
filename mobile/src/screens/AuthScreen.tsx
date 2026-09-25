@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { t } from "../lib/i18n";
-import { View, TextInput, ActivityIndicator } from "react-native";
+import { View, TextInput, ActivityIndicator, Platform } from "react-native";
 import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -187,8 +187,11 @@ export function AuthScreen() {
       if (c.offline && attempt < 5) retry = setTimeout(() => load(attempt + 1), 2000 * (attempt + 1));
       else if (c.offline) void diagnoseNetwork().then((d) => { if (alive) setConfigDiag(d); });
       else setConfigDiag(null);
+      /* 4.8: iOS'ta Google düğmesi ancak Apple da açıkken görünür; Apple bayrağı
+         kapanırsa Google yalnız kalmasın (denetim S3). */
+      const appleOn = appleSupported() ? c.providers.apple : c.providers.appleWeb;
       setProvidersOn({
-        google: c.providers.google && googleSupported(),
+        google: c.providers.google && googleSupported() && (Platform.OS !== "ios" || appleOn),
         /*
           İKİ AYRI KAPI. iOS'ta native akış var ve sunucudaki `apple` bayrağına
           bakıyor. Android'de native yol YOK; oradaki düğme tarayıcı akışına
@@ -196,7 +199,7 @@ export function AuthScreen() {
           ID + client secret). Tek bayrağa bakılsaydı Android'de Apple'ın hata
           sayfasına götüren bir düğme çizilirdi.
         */
-        apple: appleSupported() ? c.providers.apple : c.providers.appleWeb,
+        apple: appleOn,
       });
       setCaptchaOn(Boolean(c.turnstileSiteKey));
       /* Misafir açılışının cihaz belgesi için sağlayıcı önceden hazırlanıyor
