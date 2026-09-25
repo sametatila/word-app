@@ -268,7 +268,7 @@ jobs:
       # Almanca (417 dize). Deneme kâğıdı hattının kurallarına üç kural
       # ekliyor: ters tırnaklı hedef dil açıklıkları birebir kalır, ürün
       # dilinin yasak sözcükleri (lesson/Lektion, role-play/Rollenspiel,
-      # paper/Bogen, Erdi) yazılmaz, Almanca taraf "du" ile konuşur.
+      # paper/Bogen) yazılmaz, Almanca taraf "du" ile konuşur.
       # `check:quiz-native` onların ÇİFTİ: üretilen sözlüğü açıp her haftayı
       # hep-ya-hiç çözücüyle çözüyor, öğrenilen dildeki yüzün (kök, şık,
       # cevap) değişmediğini ve sözlüğün kapılı pakete gittiğini ölçüyor —

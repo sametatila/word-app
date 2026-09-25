@@ -20,7 +20,7 @@
  * Bu hatta ÖZGÜ üç kural:
  *
  * - **Yasak sözcükler** (ürün dili): lesson/Lektion, role-play/Rollenspiel,
- *   paper/Bogen, Erdi. Yalnız YAZANIN seçtiği metinde aranıyor; kanıt
+ *   paper/Bogen (maskotun eski adını genel `check:no-erdi` yakalıyor). Yalnız YAZANIN seçtiği metinde aranıyor; kanıt
  *   açıklıkları (öğrenilen dilin kendisi) yargılanmıyor.
  * - **Almanca taraf "du" ile konuşur.** Cümle ortasında `Sie`/`Ihnen`/`Ihr…`
  *   resmî hitap demektir.
@@ -98,8 +98,8 @@ const chosen = (en: string, r: QuizRow): string => {
 };
 
 const BANNED: Record<"en" | "de", RegExp> = {
-  en: /(?<!\p{L})(?:lessons?|role-?plays?|papers?|Erdi)(?!\p{L})/iu,
-  de: /(?<!\p{L})(?:Lektion(?:en)?|Rollenspiel(?:e|en)?|Bogen|Bögen|Erdi)(?!\p{L})/u,
+  en: /(?<!\p{L})(?:lessons?|role-?plays?|papers?)(?!\p{L})/iu,
+  de: /(?<!\p{L})(?:Lektion(?:en)?|Rollenspiel(?:e|en)?|Bogen|Bögen)(?!\p{L})/u,
 };
 /* Cümle ortasında büyük harfli `Sie`/`Ihnen`/`Ihr…` resmî hitaptır. */
 const FORMAL = /(?<![.!?:]\s|^|["„“»«(]\s?)(?:Sie|Ihnen|Ihre?[mnrs]?)(?!\p{L})/u;
