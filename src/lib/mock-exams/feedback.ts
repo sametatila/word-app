@@ -214,7 +214,7 @@ function wrongDigest(score: MockScore, explains: Record<string, string>): string
     .map(
       (i) =>
         `- [${i.goal}] Madde ${i.no}: verdi "${studentValue(i.given)}", doğrusu "${i.expected}". ` +
-        `Kâğıdın açıklaması: ${(explains[i.id] ?? "").slice(0, 220)}`,
+        `Maddenin açıklaması: ${(explains[i.id] ?? "").slice(0, 220)}`,
     )
     .join("\n");
 }

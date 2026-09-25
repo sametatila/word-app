@@ -52,8 +52,8 @@ export function isContentHash(v: unknown): v is string {
 /**
  * KAPILI PAKETLER — herkese açık uçlardan hiç geçmeyenler.
  *
- * Deneme sınavı kâğıtları da aynı hattan yayınlanıyor: tek üretim yolu, tek
- * doğrulama, tek sürüm defteri. Ama manifest herkese açık, yani kâğıtlar
+ * Deneme sınavları da aynı hattan yayınlanıyor: tek üretim yolu, tek
+ * doğrulama, tek sürüm defteri. Ama manifest herkese açık, yani sınavlar
  * orada görünseydi hash'leri de görünürdü ve hash gövdenin adresi — premium
  * içerik tek bir liste okumasıyla sızardı. Kapı bu yüzden yayının değil
  * TESLİMİN üstünde: bu önekli paketler manifestte yok, gövdeleri
@@ -63,6 +63,13 @@ export function isContentHash(v: unknown): v is string {
  * Liste kapalı ve elle yazılı: yeni bir kapılı içerik türü eklenirken buraya
  * yazmayı unutmak, onu herkese açmak demek. Bu yüzden karar burada duruyor,
  * çağıranın insafında değil.
+ *
+ * ÖNEK `papers/` BİLEREK DEĞİŞMİYOR. "Kâğıt" sözcüğü arayüzden ve içerikten
+ * 2026-09-25'te kalktı (sınavlar "deneme sınavı"), ama bu önek kullanıcıya
+ * hiç görünmüyor ve üretimdeki yayınlanmış içerik satırlarının, önbellekteki
+ * gövde adreslerinin ve kapı denetiminin anahtarı. Adını değiştirmek bir
+ * deploy penceresinde kapılı içeriği kapısız bırakabilecek bir göç ister;
+ * kazancı yalnız bir iç ad.
  */
 const GATED_PREFIXES = ["papers/"];
 

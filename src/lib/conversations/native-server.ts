@@ -234,7 +234,7 @@ export async function localiseExam<T extends ExamShape>(
     if (!de) return plan;
     const out = resolveExamDe(asNative(de), plan);
     if (!out) {
-      console.warn("[native] sınav kâğıdı Almancaya çevrilemedi, Türkçe kalıyor");
+      console.warn("[native] sınav Almancaya çevrilemedi, Türkçe kalıyor");
       return plan;
     }
     return out;
@@ -244,7 +244,7 @@ export async function localiseExam<T extends ExamShape>(
   if (!dict) return plan;
   const out = resolveExam(dict, plan);
   if (!out) {
-    console.warn("[native] sınav kâğıdı çevrilemedi, Türkçe kalıyor");
+    console.warn("[native] sınav çevrilemedi, Türkçe kalıyor");
     return plan;
   }
   return out;
@@ -342,7 +342,7 @@ export async function localiseMockPaper<T extends MockShape>(
     const out = resolveMockPaper(asNative(de), paper);
     if (!out) {
       // İngilizce kursun 60 kâğıdının hepsi çözülüyor (kapı: check:native-de).
-      console.warn("[native] deneme kâğıdı Almancaya çevrilemedi, Türkçe kalıyor");
+      console.warn("[native] deneme sınavı Almancaya çevrilemedi, Türkçe kalıyor");
       return paper;
     }
     return out;
@@ -353,7 +353,7 @@ export async function localiseMockPaper<T extends MockShape>(
   if (!out) {
     // 60 Almanca kâğıdın hepsi çözülüyor (kapı: check:mock-native).
     // Buraya düşen kâğıt başka bir kurstan geliyor demektir.
-    console.warn("[native] deneme kâğıdı çevrilemedi, Türkçe kalıyor");
+    console.warn("[native] deneme sınavı çevrilemedi, Türkçe kalıyor");
     return paper;
   }
   return out;
