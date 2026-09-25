@@ -26,6 +26,14 @@ kampanya vitrinde YOK (görselde fiyat/süreli teklif olmaz), grup sayfasında.
 Play kısa açıklamanın ilk cümlesi). en-US: **"Speak, understand, ace exams"** (28) ·
 de-DE: **"Sprechen, verstehen, bestehen"** (29).
 
+**Play kısa açıklaması (tr, 70):** "Konuş, anla, sınava hazırlan: A1'den C1'e Almanca, Türkçe
+anlatımla." (iOS altyazısıyla aynı cümleyle başlar.)
+
+**Sayılar:** açıklamada somut ama YUVARLAK ve iki kursta da doğru kalacak biçimde (2026-09-25
+ölçümü: Almanca 580 ders / 995 alıştırma / 60 kâğıt, İngilizce 500 / 939 / 60): "Almanca'da
+550'den fazla ders", "900'den fazla beceri alıştırması", "60 deneme sınavı"; İngilizce için
+"500 ders" (500'den fazla DENMEZ). İçerik azalırsa bu cümleler gözden geçirilir.
+
 **Beş sütun (öncelik sırası):** 1) A1'den C1'e tam müfredat, Türkçe anlatım · 2) konuşarak
 öğren: her derste rol yapma + konuşmaya geri bildirim · 3) dört becerili deneme sınavları,
 konuşma ve yazma da puanlanır · 4) Cepte yürüyüş (ekran kapalı, **Premium**; ekran açık
