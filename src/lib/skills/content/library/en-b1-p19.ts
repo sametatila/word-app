@@ -303,7 +303,7 @@ export const enB1P19: SkillExercise[] = [
     skill: "grammar",
     title: "Are we allowed to?",
     genre: "grammar",
-    intro: "„Yapabilir miyiz?“ iki şey sorabilir: izin var mı, yoksa yapmamız mı bekleniyor? İngilizce bu ikisini ayrı kalıplarla söyler.",
+    intro: "Bir şeyi yapıp yapamayacağımızı sormak iki anlama gelebilir: izin var mı, yoksa yapmamız mı bekleniyor? İngilizce bu ikisini ayrı kalıplarla söyler.",
     focus: "be allowed to ve be supposed to: izin ve beklenen davranış",
     gloss: [
       { de: "to feed", tr: "beslemek" },

@@ -322,7 +322,7 @@ export const deB1P19: SkillExercise[] = [
     explanation: [
       {
         heading: "Sıfat isim olunca",
-        tr: "„erwachsen“ (yetişkin) sıfatından „der Erwachsene“ (yetişkin kişi) olur: büyük harfle yazılır ama eki, parti 6'daki sıfat tablosuna göre değişmeye devam eder. Belirli artikelden sonra -e ya da -en, eril belirsiz artikelden sonra yalın hâlde -er gelir.",
+        tr: "„erwachsen“ (yetişkin) sıfatından „der Erwachsene“ (yetişkin kişi) olur: büyük harfle yazılır ama eki, sıfat çekimi tablosuna göre değişmeye devam eder. Belirli artikelden sonra -e ya da -en, eril belirsiz artikelden sonra yalın hâlde -er gelir.",
         examples: [
           { de: "Der Erwachsene zahlt zehn Euro.", tr: "Yetişkin on euro öder.", note: "der → -e" },
           { de: "Ein Erwachsener zahlt zehn Euro.", tr: "Bir yetişkin on euro öder.", note: "ein → -er" },

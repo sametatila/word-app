@@ -338,7 +338,7 @@ export const enC1P15: SkillExercise[] = [
     title: "Gone are the days, much as I like it",
     genre: "grammar",
     intro: "Cümlenin başı en güçlü yerdir; İngilizce bazen bir yüklemi ya da bir ödünü oraya taşır ve sözcük sırası buna göre değişir.",
-    focus: "Vurgu için öne alma (fronting): Gone are the days, Such was …, Much as …, Try as they might, sıfat + as + özne — parti 1'deki olumsuz zarf devriğinden farklı: öne çıkan yüklem ya da ödün",
+    focus: "Vurgu için öne alma (fronting): Gone are the days, Such was …, Much as …, Try as they might, sıfat + as + özne — olumsuz zarflı devrikten (Hardly had we …) farklı: öne çıkan yüklem ya da ödün",
     gloss: [
       { de: "laundry", tr: "çamaşırhane" },
       { de: "demand", tr: "talep" },
@@ -367,7 +367,7 @@ export const enC1P15: SkillExercise[] = [
       },
       {
         heading: "Devrikten farkı",
-        tr: "Parti 1'deki „Hardly had we …“ gibi olumsuz zarflı devrikte yardımcı fiil öne geçer. Ödün yapılarında ise sıra değişmez: „Much as I like it“, „Strange as it may seem“ özne + fiil diye sürer. Yalnız „Gone are“, „Such was“ ve yer öbeğiyle başlayan cümlelerde ana fiil öznenin önüne geçer; özne bir zamirse bu da olmaz: „Here it is“, „Here is it“ değil.",
+        tr: "„Hardly had we …“ gibi olumsuz zarflı devrikte yardımcı fiil öne geçer. Ödün yapılarında ise sıra değişmez: „Much as I like it“, „Strange as it may seem“ özne + fiil diye sürer. Yalnız „Gone are“, „Such was“ ve yer öbeğiyle başlayan cümlelerde ana fiil öznenin önüne geçer; özne bir zamirse bu da olmaz: „Here it is“, „Here is it“ değil.",
         examples: [
           { de: "Hardly had we moved in when the first meeting began.", tr: "Daha taşınır taşınmaz ilk toplantı başladı.", note: "olumsuz zarf + yardımcı fiil" },
           { de: "Strange as it may seem, the laundry made us friends.", tr: "Tuhaf görünse de bizi çamaşırhane arkadaş yaptı.", note: "sıfat + as: devrik yok" },

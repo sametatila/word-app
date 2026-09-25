@@ -308,7 +308,7 @@ export const deB1P15: SkillExercise[] = [
     explanation: [
       {
         heading: "Edat sıfata aittir",
-        tr: "Parti 8'de edatı sabit fiilleri gördün. Bazı SIFATLAR da sabit bir edatla kalıplaşır ve hâli o edat belirler: „stolz auf“ ve „bekannt für“ Akkusativ, „zufrieden mit“ Dativ ister. Edat Türkçedeki hâl ekinden tahmin edilemez; sıfatla birlikte öğrenilir.",
+        tr: "Edatı sabit fiilleri (warten auf, denken an) biliyorsun. Bazı SIFATLAR da sabit bir edatla kalıplaşır ve hâli o edat belirler: „stolz auf“ ve „bekannt für“ Akkusativ, „zufrieden mit“ Dativ ister. Edat Türkçedeki hâl ekinden tahmin edilemez; sıfatla birlikte öğrenilir.",
         examples: [
           { de: "Wir sind stolz auf unseren neuen Chor.", tr: "Yeni koromuzla gurur duyuyoruz.", note: "stolz auf + Akkusativ" },
           { de: "Der Verein ist bekannt für sein Sommerfest.", tr: "Dernek yaz şenliğiyle tanınıyor.", note: "bekannt für + Akkusativ" },

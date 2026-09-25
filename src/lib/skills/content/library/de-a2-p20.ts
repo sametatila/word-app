@@ -205,7 +205,7 @@ export const deA2P20: SkillExercise[] = [
       {
         kind: "free",
         prompt:
-          "Belediyenin „Fikirleriniz“ sayfasına yaz ve pazar meydanına bir içme çeşmesi konmasını öner: kendini kısaca tanıt, sorunu anlat, çeşmenin kimlere yarayacağını yaz, nereye konabileceğini söyle ve kibarca bitir.",
+          "Belediyenin „Ihre Ideen“ sayfasına yaz ve pazar meydanına bir içme çeşmesi konmasını öner: kendini kısaca tanıt, sorunu anlat, çeşmenin kimlere yarayacağını yaz, nereye konabileceğini söyle ve kibarca bitir.",
         checklist: [
           "Kendini kısaca tanıt",
           "Sorunu bir örnekle anlat",

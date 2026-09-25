@@ -21,7 +21,7 @@ export const deA2P17: SkillExercise[] = [
     skill: "reading",
     title: "Lange Nacht der Museen",
     genre: "info",
-    intro: "Şehrin „Müzeler Gecesi“ programı: bilet ne kadar, müzeler arasında nasıl gidilir, hangi müzede ne var.",
+    intro: "Şehrin müzeler gecesi programı: bilet ne kadar, müzeler arasında nasıl gidilir, hangi müzede ne var.",
     gloss: [
       { de: "ermäßigt", tr: "indirimli", en: "reduced" },
       { de: "ausprobieren", tr: "denemek", en: "to try out" },
