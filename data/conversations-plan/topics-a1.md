@@ -1,10 +1,10 @@
 # A1 Konuları (100)
 
 Satır biçimi: `NNN | slug | Titel (DE) | Türkçe | ikon | focusId | çekirdek kalıplar`
-- Kimlik = `de-a1-<slug>`. Sıra = katalog sırası; her ders öncekilerin üstüne kurulur.
-- ✔ işaretli ders üretilmiştir; ilk partide mevcut dosyadan partiye taşınır.
-- "Çekirdek kalıplar" dersin `patterns` alanının tohumudur: üretici bunları
-  ders içinde açar, örnekler ve alıştırmalar bu kalıplardan çıkar.
+- Kimlik = `de-a1-<slug>`. Sıra = katalog sırası; her konuşma öncekilerin üstüne kurulur.
+- ✔ işaretli konuşma üretilmiştir; ilk partide mevcut dosyadan partiye taşınır.
+- "Çekirdek kalıplar" konuşmanın `patterns` alanının tohumudur: üretici bunları
+  konuşma içinde açar, örnekler ve alıştırmalar bu kalıplardan çıkar.
 
 ## Modül 1 — Tanışma ve ben (sein, heißen, W-soruları, du/Sie ayrımı)
 001 | hallo ✔ | Hallo! | Tanışma | greet | Vorstellung | Ich heiße… / Ich komme aus… / Ich wohne in…

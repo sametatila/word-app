@@ -246,8 +246,8 @@ sonrasının çoğu hesapla koşulmalı; misafir akışı 5.0'da.
 
 ### 5.0 · Hesapsız devam et
 **Önce:** 4.2
-**Yap:** Onboarding'i geç, giriş ekranında "Hesapsız devam et"e dokun. Bir kelime turu ve bir ders çöz; Profil'de "Misafir" ve hesap çağrısını gör; Arkadaşlar sekmesini aç. Sonra Profil › Hesap oluştur ile e-postayla kayıt ol.
-**Geçti:** Tur ve ders misafirde çalıştı; Arkadaşlar "Hesap oluştur" kartı gösterdi; kayıttan sonra "Misafir ilerlemen hesabına taşındı" notu çıktı ve tur/ders ilerlemesi hesapta duruyor.
+**Yap:** Onboarding'i geç, giriş ekranında "Hesapsız devam et"e dokun. Bir kelime turu ve bir konuşma çöz; Profil'de "Misafir" ve hesap çağrısını gör; Arkadaşlar sekmesini aç. Sonra Profil › Hesap oluştur ile e-postayla kayıt ol.
+**Geçti:** Tur ve konuşma misafirde çalıştı; Arkadaşlar "Hesap oluştur" kartı gösterdi; kayıttan sonra "Misafir ilerlemen hesabına taşındı" notu çıktı ve tur/konuşma ilerlemesi hesapta duruyor.
 **Geçmezse:** `mobile/src/lib/AuthContext.tsx` `continueAsGuest` / `claimPendingGuest`, sunucu `src/app/api/account/guest/claim/route.ts`; ağ kaydında `/api/auth/sign-in/anonymous` ve `/api/account/guest/claim` cevaplarına bak.
 
 ### 5.1 · E-posta ile giriş
@@ -334,7 +334,7 @@ Ayarlar › Genel › Aktarma veya Sıfırlama › Sıfırla › **Konum ve Gizl
 ### 6.1a · Mikrofon REDDEDİLİRSE
 **Önce:** 6.1 · **Kaynak:** Android `3d9dc25` izin kapısının iOS karşılığı
 **Yap:** Ayarlar › Lernomi › Mikrofon'u **kapat**. Sonra sırayla dört ekranı aç: yürüyüş
-modu, ders diyaloğu, konuşma alıştırması (Sınav), deneme sınavının konuşma bölümü.
+modu, konuşma diyaloğu, konuşma alıştırması (Sınav), deneme sınavının konuşma bölümü.
 **Geçti:** dördü de **başlamadan** "izin yok" ekranını/uyarısını çiziyor. Hiçbiri tura
 girip arka arkaya "duyamadım" demiyor.
 **Neden ölçülüyor:** iOS'ta ses oturumu izin OLMADAN da etkinleşir, yalnız giriş sessizlik

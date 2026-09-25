@@ -32,7 +32,7 @@ eğitim uygulaması olarak doldurulur (Play'in anketinde eğitim seçeneği bu g
 | Konum paylaşımı | Hayır | Konum izni yok |
 | Dijital satın alma | **Evet** (abonelik) | Manifest zaten `com.android.vending.BILLING` taşıyor (react-native-purchases) ve premium ürünün parçası; bkz. aşağıdaki karar |
 | Reklam | Hayır | Reklam SDK'sı yok |
-| Yapay zekâ ile etkileşim / üretilen içerik | **Evet** | Rol yapma diyalogları ve değerlendirme; uygulama içi bildirme |
+| Yapay zekâ ile etkileşim / üretilen içerik | **Evet** | Konuşma adımındaki yapay zekâ sohbeti ve değerlendirme; uygulama içi bildirme |
 | Yarışma (contests) | **Evet, sürekli** | Haftalık lig: küme başına sıralama, yükselme/düşme, haftalık sıfırlama. "Ödülsüz" olması tanımı değiştirmiyor — App Store anketinde ilk taslak bu yüzden yanlıştı, bkz. `docs/appstore/listing.md` §2.3 |
 
 
@@ -64,28 +64,28 @@ Hangi vitrinin hangi kursu anlatacağı kullanıcının **arayüz (anadil) dilin
 kursu bu dile göre sunuyor ve kimseye kendi dilini öğretmiyor: `PAIR_READY` +
 `onboardingCoursesFor` (`mobile/src/lib/courses.ts`; web'de aynı liste `src/lib/courses.ts`).
 
-| Vitrin | Arayüz dili | İlk açılışta sunulan kurs | Seviye | Ders | Beceri alıştırması | Deneme sınavı |
+| Vitrin | Arayüz dili | İlk açılışta sunulan kurs | Seviye | Konuşma | Beceri alıştırması | Deneme sınavı |
 |---|---|---|---|---|---|---|
 | tr-TR | Türkçe | Almanca | A1–C1 | 580 (A1 100 · A2 100 · B1 180 · B2 100 · C1 100) | 995 | 60 (seviye başına 12) |
 | tr-TR | Türkçe | İngilizce | A1–C1 | 500 (seviye başına 100) | 939 | 60 (seviye başına 12) |
 | en-US | İngilizce | Almanca | A1–C1 | 580 | 995 | 60 |
 | de-DE | Almanca | İngilizce | A1–C1 | 500 | 939 | 60 |
 
-- **Kaynaklar.** Dersler `mobile/src/data/lessons/{de,en}-{a1..c1}.json` (web:
-  `src/lib/lessons/content/`); beceri alıştırmaları `mobile/src/data/skills/exercises.json` ve
+- **Kaynaklar.** Konuşmalar `mobile/src/data/conversations/{de,en}-{a1..c1}.json` (web:
+  `src/lib/conversations/content/`); beceri alıştırmaları `mobile/src/data/skills/exercises.json` ve
   `exercises-en.json` (okuma, dinleme, yazma Patika'ya bağlı; kütüphanede beş beceri: okuma,
   dinleme, yazma, konuşma, dil bilgisi); deneme sınavları `mobile/src/data/exams/papers.json`
   ve `papers-en.json` (web: `src/lib/mock-exams/{de,en}/`). Her kâğıtta dört bölüm var: okuma,
-  dinleme, yazma, konuşma. Her iki kursun her dersinde bir rol yapma sahnesi var.
+  dinleme, yazma, konuşma. Her iki kursun her Konuşma adımında bir sohbet sahnesi var.
 - **Anadil katmanı da ölçüldü.** İngilizce ve Almanca arayüzde içerik "hep-ya-hiç" kuralıyla
-  çevriliyor: tek dize eksikse o ders Türkçe kalır (`mobile/src/lib/nativeContent.ts`).
+  çevriliyor: tek dize eksikse o konuşma Türkçe kalır (`mobile/src/lib/nativeContent.ts`).
   Paketteki sözlüklerle (`mobile/src/data/native/en.json`, `de.json`) çözücüler kayıt kayıt
-  koşuldu: İngilizce arayüzde Almanca kursun 580 dersi, 995 alıştırması ve 60 kâğıdı;
-  Almanca arayüzde İngilizce kursun 500 dersi, 939 alıştırması ve 60 kâğıdı eksiksiz
+  koşuldu: İngilizce arayüzde Almanca kursun 580 konuşması, 995 alıştırması ve 60 kâğıdı;
+  Almanca arayüzde İngilizce kursun 500 konuşması, 939 alıştırması ve 60 kâğıdı eksiksiz
   çevrildi. Yani en-US ve de-DE vitrinin anlattığı içerik o arayüzde gerçekten açılıyor.
 - **Zürih Almancası (`gsw-zh`) vitrinde yok, bilerek.** Kurs duraklatılmış: ilk açılışta
   sunulmuyor (`offeredToNewUsers: false`), yalnız Türkçe arayüzde Ayarlar'dan seçilebiliyor
-  ve kendi ders paketi yok (Almanca derslere düşüyor). Vitrinde anmak, yeni kullanıcının
+  ve kendi konuşma paketi yok (Almanca konuşmalara düşüyor). Vitrinde anmak, yeni kullanıcının
   seçemeyeceği bir kursu vaat etmek olurdu.
 - **Premium ayrımı** `src/lib/premium/gates.ts` (`DEFAULT_PREMIUM_CONFIG`, `describeLimits`)
   ve `docs/premium/README.md` §2'den (2026-09-25 kararları; üretimde panel kaydı yok, kod
@@ -110,8 +110,8 @@ kursu bu dile göre sunuyor ve kimseye kendi dilini öğretmiyor: `PAIR_READY` +
 python3 - <<'PY'
 import json
 for c, kagit, alistirma in [("de", "papers.json", "exercises.json"), ("en", "papers-en.json", "exercises-en.json")]:
-    ders = sum(len(json.load(open(f"mobile/src/data/lessons/{c}-{l}.json"))) for l in ["a1", "a2", "b1", "b2", "c1"])
-    print(c, "ders", ders,
+    konusma = sum(len(json.load(open(f"mobile/src/data/conversations/{c}-{l}.json"))) for l in ["a1", "a2", "b1", "b2", "c1"])
+    print(c, "konuşma", konusma,
           "alıştırma", len(json.load(open(f"mobile/src/data/skills/{alistirma}"))),
           "kâğıt", len(json.load(open(f"mobile/src/data/exams/{kagit}"))))
 PY
@@ -137,18 +137,18 @@ doğrulanmadı, bkz. §4.1.
 **Kısa açıklama** (en çok 80 karakter)
 
 ```
-A1'den C1'e dersler, deneme sınavları ve yürürken sesli kelime pratiği.
+A1'den C1'e konuşmalar, deneme sınavları ve yürürken sesli kelime pratiği.
 ```
 _71/80 karakter._
 
 **Tam açıklama** (en çok 4000 karakter)
 
 ```
-Lernomi ile Almanca ya da İngilizce öğren: kısa kelime turları, bir yapay zekâ karakteriyle konuşarak ilerleyen dersler, beceri alıştırmaları ve CEFR seviyelerine göre deneme sınavları. Anlatım ve yönergeler Türkçe.
+Lernomi ile Almanca ya da İngilizce öğren: kısa kelime turları, Patika'da bir yapay zekâ karakteriyle konuşarak ilerleyen Konuşma adımları, beceri alıştırmaları ve CEFR seviyelerine göre deneme sınavları. Anlatım ve yönergeler Türkçe.
 
 KURSLAR
-• Almanca: A1'den C1'e 580 ders
-• İngilizce: A1'den C1'e 500 ders
+• Almanca: A1'den C1'e 580 konuşma
+• İngilizce: A1'den C1'e 500 konuşma
 İki kursta da her seviyede beceri alıştırmaları ve 12 deneme sınavı var. Başlangıç seviyeni kendin seçebilir ya da kısa bir seviye testiyle bulabilirsin.
 
 KELİME TURLARI
@@ -157,8 +157,8 @@ Aralıklı tekrar, her kelimeyi unutmak üzereyken yeniden önüne getirir. Anla
 YÜRÜYÜŞ MODU
 Kulaklığı tak, ekrana bakmadan çalış: ipucunu Türkçe duyarsın, karşılığını öğrendiğin dilde sesli söylersin. Ekran açıkken günde 3 tur ücretsizdir. Ekran kapalıyken ya da telefon cebindeyken çalışan Cepte yürüyüş Premium'a dahildir.
 
-DERSLER VE KONUŞMA
-Her ders Türkçe kısa bir anlatımla başlar, sonra bir sahnede konuşursun: kafede sipariş, doktor randevusu, iş görüşmesi. Karşındaki gerçek bir kişi değil, bir yapay zekâdır; uygulama bunu ekranda söyler ve yanıtlarını uygulamadan çıkmadan bildirebilirsin.
+PATİKA: KONUŞMA ADIMLARI
+Her Konuşma adımı Türkçe kısa bir anlatımla başlar, sonra bir sahnede konuşursun: kafede sipariş, doktor randevusu, iş görüşmesi. Karşındaki gerçek bir kişi değil, bir yapay zekâdır; uygulama bunu ekranda söyler ve yanıtlarını uygulamadan çıkmadan bildirebilirsin.
 
 BECERİLER
 Okuma, dinleme, yazma, konuşma ve dil bilgisi alıştırmaları. İznin varsa yazdıklarını ve söylediklerini yapay zekâ değerlendirir; neyi neden düzeltmen gerektiğini görürsün. "Neler yapabilirim" ekranı hangi becerileri kanıtladığını gösterir.
@@ -208,17 +208,17 @@ _27/30 karakter._
 **Kısa açıklama**
 
 ```
-German from A1 to C1: lessons, mock exams and word practice while you walk.
+German from A1 to C1: conversations, mock exams and word practice while you walk.
 ```
 _75/80 karakter._
 
 **Tam açıklama**
 
 ```
-Learn German with Lernomi: short vocabulary rounds, lessons where you talk with an AI character, skill exercises and mock exams organized by CEFR level. Explanations and instructions are in English.
+Learn German with Lernomi: short vocabulary rounds, Speaking steps on the Path where you talk with an AI character, skill exercises and mock exams organized by CEFR level. Explanations and instructions are in English.
 
 THE GERMAN COURSE
-580 lessons from A1 to C1, skill exercises at every level and 12 mock exams per level. Choose your starting level yourself or find it with a short placement test.
+580 conversations from A1 to C1, skill exercises at every level and 12 mock exams per level. Choose your starting level yourself or find it with a short placement test.
 
 VOCABULARY ROUNDS
 Spaced repetition brings each word back just before you would forget it. Choose the meaning, recognize what you hear, type from memory, match, build and translate sentences, and practice German articles and plurals.
@@ -226,8 +226,8 @@ Spaced repetition brings each word back just before you would forget it. Choose 
 WALK MODE
 Put your headphones on and study without looking at the screen: you hear a prompt in English and say the German out loud. Walk mode is free with the screen on, 3 rounds a day. Pocket Walking, which keeps it running with the screen off or with your phone in your pocket, is part of Premium.
 
-LESSONS AND SPEAKING
-Each lesson starts with a short explanation, then you talk your way through a scene: ordering in a café, a doctor's appointment, a job interview. Your partner is an AI, not a real person; the app tells you so on screen, and you can report its replies without leaving the app.
+THE PATH: SPEAKING STEPS
+Each Speaking step starts with a short explanation, then you talk your way through a scene: ordering in a café, a doctor's appointment, a job interview. Your partner is an AI, not a real person; the app tells you so on screen, and you can report its replies without leaving the app.
 
 SKILLS
 Reading, listening, writing, speaking and grammar exercises. With your permission, AI assesses your writing and speaking, and you see what to fix and why. The "What I can do" screen shows which abilities you have demonstrated.
@@ -278,17 +278,17 @@ _30/30 karakter._
 **Kısa açıklama**
 
 ```
-Englisch von A1 bis C1: Lektionen, Probeprüfungen und Wörter üben beim Gehen.
+Englisch von A1 bis C1: Gespräche, Probeprüfungen und Wörter üben beim Gehen.
 ```
 _77/80 karakter._
 
 **Tam açıklama**
 
 ```
-Lerne Englisch mit Lernomi: kurze Vokabelrunden, Lektionen, in denen du mit einer KI-Figur sprichst, Übungen zu allen Fertigkeiten und Probeprüfungen nach GER-Niveaus. Erklärungen und Anweisungen sind auf Deutsch.
+Lerne Englisch mit Lernomi: kurze Vokabelrunden, Sprechen-Schritte im Pfad, in denen du mit einer KI-Figur sprichst, Übungen zu allen Fertigkeiten und Probeprüfungen nach GER-Niveaus. Erklärungen und Anweisungen sind auf Deutsch.
 
 DER ENGLISCHKURS
-500 Lektionen von A1 bis C1, Übungen auf jedem Niveau und 12 Probeprüfungen pro Niveau. Dein Startniveau wählst du selbst oder findest es mit einem kurzen Einstufungstest heraus.
+500 Gespräche von A1 bis C1, Übungen auf jedem Niveau und 12 Probeprüfungen pro Niveau. Dein Startniveau wählst du selbst oder findest es mit einem kurzen Einstufungstest heraus.
 
 VOKABELRUNDEN
 Verteilte Wiederholung legt dir jedes Wort genau dann wieder vor, wenn du es fast vergessen hättest. Bedeutung wählen, Gehörtes erkennen, aus dem Gedächtnis tippen, zuordnen, Sätze bauen und übersetzen.
@@ -296,8 +296,8 @@ Verteilte Wiederholung legt dir jedes Wort genau dann wieder vor, wenn du es fas
 GEHMODUS
 Kopfhörer auf und lernen, ohne auf den Bildschirm zu schauen: Du hörst eine Vorgabe auf Deutsch und sprichst das englische Wort laut aus. Bei eingeschaltetem Bildschirm ist der Gehmodus kostenlos, 3 Runden pro Tag. Der Gehmodus in der Tasche, der auch bei ausgeschaltetem Bildschirm weiterläuft, gehört zu Premium.
 
-LEKTIONEN UND SPRECHEN
-Jede Lektion beginnt mit einer kurzen Erklärung, danach sprichst du dich durch eine Szene: Bestellung im Café, Arzttermin, Vorstellungsgespräch. Dein Gegenüber ist eine KI und kein echter Mensch; die App zeigt das auf dem Bildschirm an, und du kannst Antworten melden, ohne die App zu verlassen.
+DER PFAD: SPRECHEN-SCHRITTE
+Jeder Sprechen-Schritt beginnt mit einer kurzen Erklärung, danach sprichst du dich durch eine Szene: Bestellung im Café, Arzttermin, Vorstellungsgespräch. Dein Gegenüber ist eine KI und kein echter Mensch; die App zeigt das auf dem Bildschirm an, und du kannst Antworten melden, ohne die App zu verlassen.
 
 FÄHIGKEITEN
 Übungen zu Lesen, Hören, Schreiben, Sprechen und Grammatik. Mit deiner Erlaubnis bewertet eine KI deine Texte und gesprochenen Antworten, und du siehst, was du warum ändern solltest. Der Bildschirm „Was ich kann“ zeigt, welche Fähigkeiten du schon nachgewiesen hast.
@@ -349,12 +349,12 @@ _14/500 karakter._
 - **Mikrofon cümlesi gizlilik politikasıyla aynı:** "Mikrofon yalnız konuşarak cevap verdiğinde
   açılır; sesin sunucuya yalnız izninle gönderilir ve kayıt saklanmaz" (politika §4 ve
   özet kartı, `src/content/legal/defaults/privacy.ts`).
-- **Bildirme kapsamı gerçeğe göre:** yapay zekâ yanıtlarının bildirilebildiği yer derslerdeki
+- **Bildirme kapsamı gerçeğe göre:** yapay zekâ yanıtlarının bildirilebildiği yer Konuşma adımlarındaki
   konuşma; "her ekranda" ya da "her yanıtın altında" denmez (rapor B16).
 
 ### Kategori ve etiketler
 
-Kategori: **Eğitim**. Etiketler: dil öğrenme, Almanca, İngilizce, kelime, deneme sınavı, konuşma pratiği.
+Kategori: **Eğitim**. Etiketler: dil öğrenme, Almanca, İngilizce, kelime, deneme sınavı, konuşma.
 
 ### Görseller
 
@@ -364,7 +364,7 @@ Kategori: **Eğitim**. Etiketler: dil öğrenme, Almanca, İngilizce, kelime, de
 |---|---|---|
 | Uygulama ikonu | 512×512 PNG | Mevcut adaptive ikonun ön planı, turuncu zemin |
 | Feature graphic | 1024×500 | Marka rengi zemin, başlık ve iki ekran görüntüsü; maskot küçük |
-| Telefon ekran görüntüleri (en az 4, 16:9 ya da 9:16) | 1080×1920 önerilir | 1) Günlük tur, 2) Yürüyüş modu, 3) Ders diyaloğu, 4) Beceriler (okuma/dinleme/yazma/konuşma), 5) Deneme sınavları, 6) Sıralama |
+| Telefon ekran görüntüleri (en az 4, 16:9 ya da 9:16) | 1080×1920 önerilir | 1) Günlük tur, 2) Yürüyüş modu, 3) Konuşma adımı sohbeti, 4) Beceriler (okuma/dinleme/yazma/konuşma), 5) Deneme sınavları, 6) Sıralama |
 | 7" ve 10" tablet | en az 1 | Beceriler ekranı yatay |
 
 Ekran görüntüleri gerçek cihazdan, gerçek hesapla; yer tutucu veri yok. Kare altyazıları

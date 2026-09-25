@@ -30,9 +30,9 @@ de-DE: **"Sprechen, verstehen, bestehen"** (29).
 anlatımla." (iOS altyazısıyla aynı cümleyle başlar.)
 
 **Sayılar:** açıklamada somut ama YUVARLAK ve iki kursta da doğru kalacak biçimde (2026-09-25
-ölçümü: Almanca 580 ders / 995 alıştırma / 60 kâğıt, İngilizce 500 / 939 / 60): "Almanca'da
-550'den fazla ders", "900'den fazla beceri alıştırması", "60 deneme sınavı"; İngilizce için
-"500 ders" (500'den fazla DENMEZ). İçerik azalırsa bu cümleler gözden geçirilir.
+ölçümü: Almanca 580 konuşma / 995 alıştırma / 60 kâğıt, İngilizce 500 / 939 / 60): "Almanca'da
+550'den fazla konuşma", "900'den fazla beceri alıştırması", "60 deneme sınavı"; İngilizce için
+"500 konuşma" (500'den fazla DENMEZ). İçerik azalırsa bu cümleler gözden geçirilir.
 
 **Açıklama metni kararları (2026-09-25):** her iddia koda, canlı ayara ve içeriğe göre
 doğrulanır, gerekirse metin değişir (Samet'in kuralı). Doğrulanmış tr taslağı ve 32
@@ -46,20 +46,20 @@ satırlık kanıt tablosu oturum çıktısında; kararlar:
   seviye başına Patika 2 Konuşma + 2 Yazma, Beceriler 2 konuşma + 2 yazma, 1 deneme sınavı;
   açık olanları bitirip 7 günlük seri yapınca +2 / deneme +1, sonra her 7 günlük seride
   yeniden; kademe tavanı yok; haftalık yenilenen hak KALKTI). Panelde sayı değişirse metin de.
-- Düzeltilen yanlış/yanıltıcı iddialar: rol yapma "daha doğal söyleyiş önermez" (yalnız dil
-  bilgisi düzeltir + takılınca 3 öneri; `src/lib/lessons/roleplay.ts` üslup kuralı); Premium'da
+- Düzeltilen yanlış/yanıltıcı iddialar: sohbet "daha doğal söyleyiş önermez" (yalnız dil
+  bilgisi düzeltir + takılınca 3 öneri; `src/lib/conversations/chat.ts` üslup kuralı); Premium'da
   da deneme kâğıtları üçerli paketlerle sırayla açılır (`computePacks`); deneme sınavında
   sonuç tek yüzde + hata→düzeltme (ölçüt çubukları yalnız beceri turu ve modül sınavında);
   aralıklı tekrar SM-2 türevi ("unutmadan önce", "tam unutmak üzereyken" DEĞİL); kulaklık
   zorunlu değil. Metinde Android/Google Play adı geçmez (App Store 2.3.10).
-- KARAR VERİLDİ (2026-09-25, `docs/premium/README.md` §2): dersin yapay zekâ sohbeti artık
+- KARAR VERİLDİ (2026-09-25, `docs/premium/README.md` §2): konuşmanın yapay zekâ sohbeti artık
   Patika'nın **Konuşma** adımı ve ücretsizde seviye başına 2 + "bitir + seri"; hak yoksa adım
   kilitli ve Premium ister. Misafir ve yapay zekâ iznini reddeden senaryolu konuşmayla devam
   eder (maliyetsiz). Premium tavanı 300 mesaj/gün KALIYOR. Metin sohbeti "ücretsiz ve
   sınırsız" diye anmaz.
 
 **Beş sütun (öncelik sırası):** 1) A1'den C1'e tam müfredat, Türkçe anlatım · 2) konuşarak
-öğren: her derste rol yapma + konuşmaya geri bildirim · 3) dört becerili deneme sınavları,
+öğren: her konuşmada sohbet + konuşmaya geri bildirim · 3) dört becerili deneme sınavları,
 konuşma ve yazma da puanlanır · 4) Cepte yürüyüş (ekran kapalı, **Premium**; ekran açık
 yürüyüş ücretsizde günde 3 tur, `plan.free_walk`) · 5) günlük kelime turu ve seri.
 
@@ -68,7 +68,7 @@ yürüyüş ücretsizde günde 3 tur, `plan.free_walk`) · 5) günlük kelime tu
 | # | Sütun | Ekran | İçerik durumu (çekimde hazırlanacak) | Altyazı taslağı |
 |---|---|---|---|---|
 | 1 | Tam müfredat | Patika: A1→C1 ünite haritası | B1'de ilerleyen hesap; A1–A2 tamamlanmış görünür | A1'den C1'e, Türkçe anlatımla |
-| 2 | Konuşma | Ders içi rol yapma | Gerçek bir sahne (ör. B1 doktor randevusu); kullanıcının cümlesi ve düzeltmesi görünür; yapay zekâ bildirimi görünür | Konuş, düzeltmeni anında gör |
+| 2 | Konuşma | Konuşma içi sohbet | Gerçek bir sahne (ör. B1 doktor randevusu); kullanıcının cümlesi ve düzeltmesi görünür; yapay zekâ bildirimi görünür | Konuş, düzeltmeni anında gör |
 | 3 | Sınav | Deneme sınavı sonucu | B1 yazma ya da konuşma değerlendirmesi, ölçüt ölçüt puan | Konuşma ve yazma da puanlanır |
 | 4 | Fark | Cepte yürüyüş + kilit ekranı | Ekran kapalı akış; kilit ekranında "Yürüyüş modu açık" | Ekran kapalı, yolda çalış · Premium |
 | 5 | Alışkanlık | Günlük kelime turu | Sesli tur, kalan kelime sayısı | Her gün, tam unutmadan önce |

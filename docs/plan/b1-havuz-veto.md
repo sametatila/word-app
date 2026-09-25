@@ -1,9 +1,9 @@
 # B1 — havuz boşluğunun vetosu (Adım 3)
 
-`docs/plan/b1-yeniden-kurgu.md` §5 Adım 3'ün çıktısı. B1 derslerinin öğrettiği
+`docs/plan/b1-yeniden-kurgu.md` §5 Adım 3'ün çıktısı. B1 konuşmalarının öğrettiği
 500 kelimeden **116'sı havuzda hiç yoktu**. Hepsi tek tek karara bağlandı.
 
-Bu tablo dersleri yeniden kurgularken kaynak olarak kullanılacak: **D** satırındaki
+Bu tablo konuşmaları yeniden kurgularken kaynak olarak kullanılacak: **D** satırındaki
 hiçbir kelime yeni sözlükçeye girmeyecek, **A** satırındakiler havuzun yazımıyla
 yazılacak.
 
@@ -11,10 +11,10 @@ yazılacak.
 
 | | Kural | Sonuç |
 |---|---|---|
-| **A** | Havuzda aynı anlamı taşıyan kayıt zaten var; ders varyant yazmış | Havuza dokunma, **dersi havuzun yazımına çevir** |
-| **B** | §4.4 anlamında türev: çoğul, Partizip, derece | Madde başı değil; ders başka kelime alır |
+| **A** | Havuzda aynı anlamı taşıyan kayıt zaten var; konuşma varyant yazmış | Havuza dokunma, **konuşmayı havuzun yazımına çevir** |
+| **B** | §4.4 anlamında türev: çoğul, Partizip, derece | Madde başı değil; konuşma başka kelime alır |
 | **C** | Gerçek B1 madde başı | **Havuza ekle** (id 8450+, rank `de_50k.txt`'ten) |
-| **D** | Şeffaf bileşik · üretken türetme · seviye üstü · çok dar | Havuza ekleme, **dersten çıkar** |
+| **D** | Şeffaf bileşik · üretken türetme · seviye üstü · çok dar | Havuza ekleme, **konuşmadan çıkar** |
 
 C ile D arasındaki ayrım üç ölçüte dayandı:
 
@@ -28,7 +28,7 @@ C ile D arasındaki ayrım üç ölçüte dayandı:
    `zuversichtlich` ← `die Zuversicht` [B2] · `der Gutachter` ← `das Gutachten` [C1] ·
    `der Ausbau` ← `ausbauen` [B2] · `der Hauptdarsteller` ← `der Darsteller` [B2].
 
-Gloss gözle okundu (brief §5 Adım 4, tuzak 5). İki yerde ders ile havuz aynı
+Gloss gözle okundu (brief §5 Adım 4, tuzak 5). İki yerde konuşma ile havuz aynı
 yazımda ANLAMCA ayrışıyordu ve bu ayrım C kararını verdi: havuzdaki `einsetzen`
 görevlendirmek, `sich einsetzen` savunmak; havuzdaki `wenden` U dönüşü yapmak,
 `sich wenden` başvurmak.
@@ -40,18 +40,18 @@ görevlendirmek, `sich einsetzen` savunmak; havuzdaki `wenden` U dönüşü yapm
 | A — havuzda zaten var | 3 | yok |
 | B — türev | 3 | yok |
 | C — havuza eklendi | 32 | B1 katmanı 1797 → **1829** |
-| D — dersten çıkar | 78 | yok |
+| D — konuşmadan çıkar | 78 | yok |
 | **toplam** | **116** | |
 
 Payda büyüdüğü için hedef kapsama yeniden hesaplandı: 1296 B1 slotu ÷ 1815
-normalize başlık = **%71,4** (eklemeden önce %72,7). Ders sayısı kararı (180)
+normalize başlık = **%71,4** (eklemeden önce %72,7). Konuşma sayısı kararı (180)
 değişmedi.
 
 ---
 
 ## A — havuzda zaten var (3)
 
-| Ders kelimesi | Gerekçe |
+| Konuşma kelimesi | Gerekçe |
 |---|---|
 | `sich entscheiden` | havuzda `entscheiden` [B1] = 'karar vermek' — birebir aynı anlam |
 | `sich leisten` | havuzda `leisten` [B1] = 'gücü yetmek' — havuzun glossu zaten dönüşlü anlamı veriyor |
@@ -59,7 +59,7 @@ değişmedi.
 
 ## B — türev, madde başı değil (3)
 
-| Ders kelimesi | Gerekçe |
+| Konuşma kelimesi | Gerekçe |
 |---|---|
 | `die Gefühle` | `das Gefühl` [B1] çoğulu — §4.4: çoğul madde başı değil |
 | `die Wurzeln` | `die Wurzel` [A2] çoğulu — hem türev hem seviye altı |
@@ -70,7 +70,7 @@ değişmedi.
 | id | Madde | Türkçesi | rank | Gerekçe |
 |---|---|---|---|---|
 | 8450 | `offensichtlich` | besbelli | 1235 | kanı bildirmenin çekirdeği; havuzda karşılığı yok |
-| 8451 | `die Panik` | panik | 2170 | sınav/acil durum dersleri taşıyıcısı; türetilemez |
+| 8451 | `die Panik` | panik | 2170 | sınav/acil durum konuşmaları taşıyıcısı; türetilemez |
 | 8452 | `bewusst` | bilinçli | 2172 | sık ve türetilemez sıfat |
 | 8453 | `weiterhin` | bundan böyle de | 2181 | `weiter`den anlamca ayrı bağlaç zarfı |
 | 8454 | `der Trick` | numara, hile | 2261 | sık, türetilemez |
@@ -88,30 +88,30 @@ değişmedi.
 | 8466 | `die Haltung` | duruş, tutum | 5973 | hem beden hem tutum; `Halt`tan ayrı |
 | 8467 | `sich beschäftigen` | bir işle uğraşmak | 6061 | havuzdaki `beschäftigen` 'çalıştırmak' — dönüşlüsü ayrı kavram |
 | 8468 | `der Bezirk` | semt, ilçe | 6181 | şehir ve resmî dilde sık; türetilemez |
-| 8469 | `die Dosis` | doz | 6345 | eczane/ilaç dersinin taşıyıcısı |
+| 8469 | `die Dosis` | doz | 6345 | eczane/ilaç konuşmasının taşıyıcısı |
 | 8470 | `das Argument` | argüman, sav | 6995 | tartışma modülünün çekirdeği |
-| 8471 | `die Konzentration` | konsantrasyon | 7212 | öğrenme yöntemleri dersinin çekirdeği |
+| 8471 | `die Konzentration` | konsantrasyon | 7212 | öğrenme yöntemleri konuşmasının çekirdeği |
 | 8472 | `die Branche` | sektör | 7373 | iş dünyası modülünde sık; türetilemez |
-| 8473 | `die Tonne` | konteyner, varil | 10473 | çöp ayrıştırma dersinin taşıyıcısı; bağımsız bir isim |
+| 8473 | `die Tonne` | konteyner, varil | 10473 | çöp ayrıştırma konuşmasının taşıyıcısı; bağımsız bir isim |
 | 8474 | `ablaufen` | süresi dolmak | 10739 | vize/belge dilinin çekirdeği; `laufen`dan anlamca ayrı |
-| 8475 | `die Motivation` | motivasyon | 12544 | başvuru mektubu ve öğrenme derslerinin ortak sözcüğü |
+| 8475 | `die Motivation` | motivasyon | 12544 | başvuru mektubu ve öğrenme konuşmalarının ortak sözcüğü |
 | 8476 | `flüssig` | akıcı | 16949 | havuzda `die Flüssigkeit` [B1] var ama sıfatı yok — gerçek boşluk |
 | 8477 | `sich wohlfühlen` | kendini iyi hissetmek | 17216 | günlük dilin çekirdek kalıbı; `fühlen`den ayrı |
 | 8478 | `die Hochschule` | yükseköğretim kurumu | 20942 | kurum adı; 'high school' sanılan gerçek bir yanlış dost |
 | 8479 | `die WG` | paylaşımlı ev | 31263 | Almanya'da yaşamanın çekirdek sözcüğü; kısaltma olduğu için sıklık listesinde düşük görünüyor |
 | 8480 | `schwerfallen` | zor gelmek | 38238 | 'es fällt mir schwer' B1 konuşmasının kalıbı |
-| 8481 | `das Grundgesetz` | anayasa | — | vatandaşlık dersinin taşıyıcısı; Grund+Gesetz'ten anlamca türetilemez |
+| 8481 | `das Grundgesetz` | anayasa | — | vatandaşlık konuşmasının taşıyıcısı; Grund+Gesetz'ten anlamca türetilemez |
 
-## D — havuza eklenmedi, dersten çıkacak (78)
+## D — havuza eklenmedi, konuşmadan çıkacak (78)
 
-| Ders kelimesi | Gerekçe |
+| Konuşma kelimesi | Gerekçe |
 |---|---|
 | `im Nachhinein` | sıklık 20955; havuzda `nachher` [B1] ve `danach` [B1] zaten var |
 | `die Fremde` | `fremd` [A1] adlaşmış hâli; yazın dili |
 | `die Vision` | sıklık 4098 ama Türkçeye 'vizyon' diye geçen boş bir alıntı; öğretecek şeyi yok |
-| `der Regisseur` | tek bir film dersine bağlı dar sözcük |
+| `der Regisseur` | tek bir film konuşmasına bağlı dar sözcük |
 | `die Ferne` | `fern` adlaşmış hâli; yazın dili |
-| `der Transporter` | tek derse bağlı dar sözcük |
+| `der Transporter` | tek konuşmaya bağlı dar sözcük |
 | `der Nachfolger` | brief'in kendisi iş yeri jargonu diye işaretlemiş; sıklık 7650 |
 | `zerrissen` | Partizip II, kökü (`zerreißen`) havuzda yok; mecazi kullanım B2 |
 | `sich anvertrauen` | kökü `anvertrauen` [A2]; dönüşlü kullanımı B2 kaydı |
@@ -148,7 +148,7 @@ değişmedi.
 | `entmutigt` | Partizip, kökü havuzda yok |
 | `sich weiterentwickeln` | `entwickeln` [B1] + weiter-; şeffaf, sıklık 30457 |
 | `belastend` | Partizip I, kökü `belasten` [B2] |
-| `abstrakt` | sanat dersine bağlı dar alıntı |
+| `abstrakt` | sanat konuşmasına bağlı dar alıntı |
 | `abwechseln` | `wechseln` [A2] + ab- |
 | `mitsingen` | `singen` [A2] + mit-; şeffaf |
 | `das Transparent` | dar (pankart); ayrıca `transparent` sıfatıyla karışır |

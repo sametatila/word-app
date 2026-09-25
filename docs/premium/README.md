@@ -149,22 +149,22 @@ kazanılan hak geri alınmaz. Kademe tavanı `maxTiers` (panel), varsayılan **0
 
 | Yüzey | Kullanılan hak (ömürlük) | Sahiplenme işareti | "Bitirmek" |
 |---|---|---|---|
-| Patika Konuşma | `conversation:<SEVİYE>` | `conversation_owned:<SEVİYE>:<ders>` | dersin bitmesi (`user_conversations` satırı, `/api/conversation`) |
-| Patika Yazma | `writing_lesson:<SEVİYE>` | `owned_lesson:<egzersiz>` | ilk değerlendirme (sahiplenmek = değerlendirilmiş gönderim) |
-| Beceriler yazma | `writing_skill:<SEVİYE>` | `skill_ai:<egzersiz>` | ilk değerlendirme |
-| Beceriler konuşma (B1+ monolog) | `speaking_skill:<SEVİYE>` | `skill_ai:<egzersiz>` | ilk değerlendirme |
+| Patika Konuşma | `conversation:<SEVİYE>` | `conversation_owned:<SEVİYE>:<konuşma>` | Konuşma adımının bitmesi (`user_conversations` satırı, `/api/conversation`) |
+| Patika Yazma | `path_writing:<SEVİYE>` | `path_writing_owned:<egzersiz>` | ilk değerlendirme (sahiplenmek = değerlendirilmiş gönderim) |
+| Beceriler yazma | `skill_writing:<SEVİYE>` | `skill_owned:<egzersiz>` | ilk değerlendirme |
+| Beceriler konuşma (B1+ monolog) | `skill_speaking:<SEVİYE>` | `skill_owned:<egzersiz>` | ilk değerlendirme |
 | Deneme sınavı | — (açık kâğıt = sıradaki ilk N) | — | kâğıdın bitmesi (`mock_exam_attempts.finished_at`) |
 | Yürüyüş modu | `walk_rounds` (gün, UTC) | — | — |
 
 Hak maddenin İLK yapay zekâ kullanımında düşer ve madde sahiplenilir; sahiplenilmiş madde
 hak bitse de açık kalır, yeniden açmak hak yemez (`claimTiered`: önce işaret, sonra seviye
 sayacı izin verilen sayıyla atomik; sayaç doluysa işaret geri alınır). Seviye maddenin
-KENDİ seviyesi, istemcinin gönderdiği değil. Sahiplenilmemiş (senaryolu) bir dersi bitirmek
+KENDİ seviyesi, istemcinin gönderdiği değil. Sahiplenilmemiş (senaryolu) bir konuşmayı bitirmek
 dilimi doldurmaz.
 
 **Nerede düşüyor:**
-- Patika Konuşma: `/api/chat` ilk turu (ders kimliğiyle). Puanlı kısım ("Sınav olarak
-  dene", `/api/assess` `kind: roleplay`) AYNI hakkı kullanır, ayrı hak düşmez.
+- Patika Konuşma: `/api/chat` ilk turu (konuşma kimliğiyle). Puanlı kısım ("Kendini puanla",
+  `/api/assess` `kind: chat`) AYNI hakkı kullanır, ayrı hak düşmez.
 - Patika Yazma ve Beceriler: `/api/assess`, madde `exerciseId`den çözülür.
 - **Modül/seviye sınavı yazma bölümü hak DÜŞÜRMEZ** (web kimlik gönderse de mobil göndermese
   de): sınav Patika'nın ölçme adımı, tablo onu kotaya bağlamıyor; yalnız kötüye kullanım
@@ -202,6 +202,75 @@ kod varsayılanı geçerli. Eski kayıttaki `weeklyAiPractice`, `streakMaxTiers`
 `mock.unlockOnComplete` yok sayılır. Durum ucu eski sürümler için `fairUse.pocketWalksPerDay`
 takma adını ve `gates.pocket_walk`u taşımaya devam ediyor.
 
+### 2.2 Adlandırma (2026-09-25, aşama 2) — kod sözlüğü, göç ve geçici takma adlar
+
+Yukarıdaki sözlük kodda şöyle yazılıyor. Seçim tek kök: **Patika'nın Konuşma adımı
+`conversation`, adımın yapay zekâ sohbeti `chat`**. `speaking` bilerek seçilmedi: o ad zaten
+Beceriler'in Konuşma alıştırmasına ait (egzersiz türü `speaking`, değerlendirme türü
+`speaking`, sayaç `skill_speaking:`); aynı kök iki ayrı yüzeyi adlandırsaydı sayaçlar ve
+değerlendirme türleri birbirine karışırdı. Aşama 1'in sayaç adı (`conversation:<SEVİYE>`)
+da bu seçimle aynı.
+
+| Kavram (arayüz) | Kodda | Not |
+|---|---|---|
+| Konuşma adımı (Patika) | `conversation` — tip `Conversation`, `lib/conversations/`, `/conversations/<id>` | Bugünkü içeriğin kendisi, içerik değişmedi |
+| Anlatım fazı | `lecture` | Değişmedi: yasaklı ad değil ve anadil sözlüğünün yayınlanan maddesi (`native/en` › `lecture`); adı değiştirmek build 6'yı kırardı |
+| Sohbet fazı | `chat` — `lib/conversations/chat.ts`, `/api/chat`, içerik alanı `chat` | Eskiden `roleplay` |
+| Puanlı kısım ("Kendini puanla") | `scored` — `/conversations/<id>/scored`, sohbet kipi `scored`, madde `<id>:scored` | Eskiden "Sınav olarak dene", `exam`; arayüzde "sınav" demiyor |
+| Quiz (eski "Tekrar") | `quiz` | |
+| Ünite quizi (eski "Kontrol") | `unitQuiz` — öğe `<ünite>-unitQuiz1` | Eskiden `checkpoint` |
+| Sınav (modül + seviye) | `exam` — `/exam/<sv>/<modül>`, `/exam/<sv>` | Seviye sınavı Öğren'den Patika'nın sonuna taşındı |
+| Modül hız turu | `boss` — `/boss/<sv>/<modül>` | Eskiden `/lessons/boss/…` |
+
+**Eski → yeni (tam liste):**
+
+| Alan | Eski | Yeni |
+|---|---|---|
+| API | `/api/lesson` · `/api/roleplay` | `/api/conversation` · `/api/chat` |
+| Sayfa | `/lessons/<id>` · `/lessons/<id>/exam` · `/lessons/boss/<sv>/<m>` · `/lessons` | `/conversations/<id>` · `/conversations/<id>/scored` · `/boss/<sv>/<m>` · `/immersion` (308) |
+| Tablo | `user_lessons` · `roleplay_logs` | `user_conversations` · `chat_logs` |
+| Sütun | `lesson_id` · `roleplay_done` | `conversation_id` · `chat_done` |
+| Kısıt/indeks/dizi | `user_lessons_user_id_lesson_id_pk` · `roleplay_logs_pkey` · `roleplay_logs_user_idx` · `roleplay_logs_id_seq` | `user_conversations_user_id_conversation_id_pk` · `chat_logs_pkey` · `chat_logs_user_idx` · `chat_logs_id_seq` |
+| Sayaç (`usage_counters.key`) | `writing_lesson:<SV>` · `owned_lesson:<id>` · `writing_skill:<SV>` · `speaking_skill:<SV>` · `skill_ai:<id>` · `roleplay_turns` (gün) | `path_writing:<SV>` · `path_writing_owned:<id>` · `skill_writing:<SV>` · `skill_speaking:<SV>` · `skill_owned:<id>` · `chat_turns` (gün) |
+| Tür değeri | `ai_usage.kind`, `assessments.kind`, `content_reports.kind` = `roleplay` | `chat` |
+| Olay | `lesson_start/step/finish`; tür `roleplay`, `first_lesson`, `roleplay_exam[:…]`, ekran `lesson`/`lessons`/`Lesson`/`RoleplayExam` | `conversation_*`; `chat`, `first_conversation`, `conversation_scored[:…]`, `conversation`/`conversations`/`Conversation`/`ConversationScored` |
+| Rozet / görev | `lesson1/10/50/100` · görev `lesson1` | `conversation1/10/50/100` · `conversation1` |
+| Puanlı kısım | sohbet kipi `exam`, madde `<id>:exam`, bildirim `<id>:exam:<tur>` | `scored`, `<id>:scored`, `<id>:scored:<tur>` |
+| Patika öğesi | tür `lesson` · `checkpoint`, kimlik `<ünite>-checkpoint1` | `conversation` · `unitQuiz`, `<ünite>-unitQuiz1` |
+| İçerik paketi | `lessons/<kurs>-<sv>` (alan `roleplay`) | `conversations/<kurs>-<sv>` (alan `chat`) |
+| Anadil maddesi | `native/en` › `roleplay` · `native/de` › `lesson` | `chat` · `conversation` |
+| Hukuki yapılandırma | `fairUse.roleplayTurnsPerDay`, `DAILY_QUOTAS.roleplayTurns` | `fairUse.chatTurnsPerDay`, `DAILY_QUOTAS.chatTurns` |
+| i18n aileleri | `lesson.*` · `lessonp.*` · `lessonw.*` · `roleplay.*` · `rpexam.*` · `*_checkpoint` · `learn.level_exam*` | `conversation.*` · `conversationp.*` · `conversationw.*` · `chat.*` · `scored.*` · `*_unit_quiz` · `path.level_exam*` |
+| Mobil ekran/rota | `LessonScreen`/`Lesson` · `RoleplayExamScreen`/`RoleplayExam` | `ConversationScreen`/`Conversation` · `ConversationScoredScreen`/`ConversationScored` |
+| Cihaz deposu | `lernomi-lesson-resume:<id>` · `lernomi-lessons-pending` (mobil) · `lernomi-lesson-progress:<id>` (web) | `lernomi-conversation-resume:<id>` · `lernomi-conversations-pending` · `lernomi-conversation-progress:<id>` |
+| Dizin | `src/lib/lessons`, `src/components/lessons`, `data/lessons` (`roleplay/` hattı `chat/`), `data/lessons-plan`, `mobile/src/data/lessons`, `mobile/src/game/lessonProgress` | `…/conversations`, `data/conversations-plan`, `mobile/src/game/pathProgress` |
+| npm betiği | `lessons:apply(-de)`, `check:lessons*`, `dump:lessons`, `test:roleplay`, `logs:roleplay` | `conversations:apply(-de)`, `check:conversations*`, `dump:conversations`, `test:chat`, `logs:chat` |
+
+**Veritabanı göçü — `drizzle/0069_rename_conversation.sql`.** Yalnız RENAME ve UPDATE, idempotent,
+tek transaction. `deploy.sh`'taki `drizzle-kit push --force` şemada olmayan tabloyu VERİSİYLE
+sildiği için sıra: (1) yedek, (2) 0069 elle, (3) deploy (push artık boş fark görür),
+(4) deploy bitince 0069 bir kez daha (eski rengin swap'e kadar eski adla yazdığı artıklar
+birleşir). Yerelde kanıtlandı: 0068'e kadar göçlü iki karalama veritabanında eski şema ile
+yeni şema + 0069 için `drizzle-kit push` ifade listeleri birebir aynı.
+
+**GEÇİCİ TAKMA ADLAR — build 7 herkese ulaşınca silinecek.** Testteki iOS/Android build 6 eski
+adlarla konuşuyor; aşağıdakiler yalnız onun için duruyor (hepsi yorumla işaretli):
+
+- `src/app/api/lesson/route.ts`, `src/app/api/roleplay/route.ts` (yeni uçları yeniden dışa
+  aktaran ince rotalar) ve `scripts/check-endpoints.mjs` ALLOW'daki iki satırı
+- `src/lib/legacy-names.ts` ve çağrıları: istek gövdesi (`lessonId`, `roleplayDone`), tür
+  (`roleplay`), sohbet kipi (`exam`), puanlı kısım kimlikleri (`:exam`), öğe kimliği
+  (`-checkpoint1`), olay adları/türleri; `x-lernomi-client` build ≤ 6 olan istemciye
+  `/api/immersion`, `/api/boss`, `/api/achievements` cevabında eski tür ve alan adları;
+  anadil manifestinde eski madde adları (aynı hash); göstergede eski paket adıyla kapatma;
+  tarayıcı deposu taşıması; hukuki yapılandırmada eski `roleplayTurnsPerDay` anahtarı
+- `scripts/content-publish.ts`: eski adlı `lessons/<kurs>-<sv>` paketleri (eski projeksiyon)
+- `mobile/src/lib/legacyNames.ts` (+ `accountScope`taki iki eski anahtar): cihazdaki eski
+  kayıtların bir kez taşınması, eski paket dizininin silinmesi
+
+KALICI (silinmeyecek): `next.config.ts`teki `/lessons…` → yeni yol 308 yönlendirmeleri
+(dışarıya verilmiş bağlantılar) ve eski göç dosyaları (`drizzle/00xx`).
+
 ## 2a. Ürün kararları (2026-09-08'de verildi) — TARİHÇE, yerini §2 aldı
 
 | | Ücretsiz | Premium |
@@ -218,11 +287,11 @@ takma adını ve `gates.pocket_walk`u taşımaya devam ediyor.
 kütüphanesindeki konuşma/yazma alıştırması AYNI içerik
 (`src/lib/skills/content`); kota alıştırmanın kimliğine düşüyor
 (`claimSkillAi`), hangi kapıdan açıldığına değil. Paywall bir dönem bunları iki
-ayrı satır olarak sayıyordu ("seviye başına 2 ders" + "kütüphanede 2") ve
+ayrı satır olarak sayıyordu ("seviye başına 2 konuşma" + "kütüphanede 2") ve
 birincinin karşılığı olan ayrı bir hak hiç yoktu — vaat, olmayan bir yüzeyi
-anlatıyordu (2026-09-17'de tek satıra indirildi). Ders yolundan geçen tek
-gerçek yüzey **rol yapma sınavı** ve o da aynı konuşma havuzundan yiyor
-(`claimLessonAi`).
+anlatıyordu (2026-09-17'de tek satıra indirildi). Konuşma yolundan geçen tek
+gerçek yüzey **puanlı kısım** ve o da aynı konuşma havuzundan yiyor
+(`claimConversationAi`).
 
 **KAPASİTE KARARLILIĞA BAĞLI.** Taban hak müfredatın tadına bakmaya yetiyor,
 bitirmeye yetmiyor. Üstüne her `streakStep` (7) günlük seri kademesi
@@ -236,7 +305,7 @@ kurmak hem doğru hem de kullanıcıyı uygulamada tutan şey; paywall bunu
 alınmıyor. Bir gün kaçıran kullanıcı elindekini kaybetseydi kilit,
 ödüllendirmek yerine cezalandıran bir şeye dönerdi.
 
-**KOTA GERÇEKTEN HARCANIYOR.** 2026-09-16 denetiminin 2. bulgusu buydu: ders
+**KOTA GERÇEKTEN HARCANIYOR.** 2026-09-16 denetiminin 2. bulgusu buydu: konuşma
 yolu `canAiPractice` ile yalnız KONTROL ediyordu, sayaç hiç artmıyordu, yani
 kontrol her zaman geçiyordu ve duyurulan hak fiilen sınırsızdı. Birim çağrı
 değil **alıştırma**: hak ilk değerlendirmede düşüyor, aynı alıştırmayı tekrar

@@ -1,6 +1,6 @@
 # Beceriler kütüphanesi — serbest çalışma yüzeyi (2026-09-08)
 
-**Ne.** Patika öğrenciyi bir sıraya sokar (ünite → ders → yuva). Beceriler artık
+**Ne.** Patika öğrenciyi bir sıraya sokar (ünite → konuşma → yuva). Beceriler artık
 onun yanındaki **kütüphane**: öğrenci CEFR seviyesini ve becerisini kendi seçer,
 istediği kadar yalnız okuma ya da yalnız dil bilgisi çalışır, her egzersizde
 geri bildirim alır, bitirince "sıradaki"yi görür. İki kurs (Almanca, İngilizce;
@@ -35,7 +35,7 @@ düşürüyordu).
 
 ## İçerik kuralları (özet; şartname `data/content/SPEC.md` ve yazar brifi)
 
-- **Kopya yok.** Patika dersleri, ünite egzersizleri ve deneme kâğıtlarıyla aynı
+- **Kopya yok.** Patika konuşmaları, ünite egzersizleri ve deneme kâğıtlarıyla aynı
   sahne/konu/metin yok; konu yakın olabilir, metin özgün.
 - **Havuza riayet.** Metin seviyenin ve alt seviyelerin havuz katmanında kalır;
   hedef A1/A2 ≤ %10, B1 ≤ %15, B2/C1 ≤ %20 dışarıda (`check:libvocab`).
@@ -60,7 +60,7 @@ düşürüyordu).
 - **İçerik.** Kurs × seviye başına bir yazar, on parti. İngilizce A1/A2'de okuma,
   dinleme ve yazma mobil partisi yüzünden zaten ondan fazlaydı; oradaki partiler
   yalnız eksik becerileri taşıyor. Her hücre tam 20.
-- **Seviyeler arası denetim — DERS.** Paralel yazarlar kendi seviyelerinde tekrar
+- **Seviyeler arası denetim — KONUŞMA.** Paralel yazarlar kendi seviyelerinde tekrar
   yapmadı ama birbirlerinin dil bilgisi odağını, monolog sorusunu ve sahnesini
   tekrarladı (Almanca B1↔B2↔C1'de üç konu üç seviyede birden; İngilizce B2↔C1'de
   dört odak). Yazımdan sonra bütün seviyelerin 20'şer odağı, monolog sorusu ve
@@ -89,7 +89,7 @@ Pedagojik ölçüm `npm run report:library` ile alınıyor ve şunları basıyor
 kapsam matrisi, egzersiz başına madde/süre/sözlükçe, tanıma-üretim dengesi,
 gerekçe doluluğu, doğru şık konumu ve uzunluğu, metin uzunluğunun seviye
 hedefine uyumu, seviyeler arası tırmanma, yapabilirlik etiketi ve **kopya
-denetimi** (sekiz kelimelik pencerelerin Patika, ders ve deneme kâğıdı
+denetimi** (sekiz kelimelik pencerelerin Patika, konuşma ve deneme kâğıdı
 havuzuyla karşılaştırılması).
 
 Kontrolde düzeltilenler: iki dinleme metni seviye hedefinin altındaydı
@@ -109,7 +109,7 @@ buldu; üçü de formül cümle ("Guten Tag, was kann ich für Sie tun?",
 | B2 | Depozito raporu · şikâyet yönetimi · kuruma itiraz · dört günlük hafta · Passiv | Yıldızlı puanlama · terfi mi işe alım mı · şikâyet yanıtı · bahşiş · conditionals |
 | C1 | İstatistik denemesi · arşiv söyleşisi · jüri gerekçesi · çeviri araçları · Nominalstil | Kamusal alan denemesi · ses tasarımı · okur mektubu · çalışan izleme · inversion |
 
-Konu seçimi Patika derslerinin, ünite egzersizlerinin ve deneme kâğıtlarının
+Konu seçimi Patika konuşmalarının, ünite egzersizlerinin ve deneme kâğıtlarının
 dışından yapıldı (`scratchpad/avoid/*` listeleriyle karşılaştırılarak).
 
 ## Sınavların yeri (2026-09-09)
@@ -122,11 +122,11 @@ bilerek üç sekmede tutuluyor — kapı en yakın boş duvara açılmıştı.
 | Sekme | İçindekiler |
 |---|---|
 | Öğren | deneme sınavları · haftalık sınav · **seviye sınavı** |
-| Patika | dersler · ünite quizi · kontrol noktası · **modül sınavları** |
+| Patika | konuşmalar · ünite quizi · ünite quizi · **modül sınavları** |
 | Beceriler | yalnız serbest çalışma kütüphanesi |
 
-Modül sınavı Patika'da çünkü kâğıdı modülün kendi derslerinden üretiliyor ve
-dersleri geçilmemişse motor kâğıdı "deneme" sayıyor; ön koşulu orada olan bir
+Modül sınavı Patika'da çünkü kâğıdı modülün kendi konuşmalarından üretiliyor ve
+konuşmaları geçilmemişse motor kâğıdı "deneme" sayıyor; ön koşulu orada olan bir
 şeyin girişi başka sekmede duruyordu. Seviye sınavı beş bölüm ve 45 dakika,
 yani ünite ölçeğinde değil.
 

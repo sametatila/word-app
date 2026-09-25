@@ -21,7 +21,7 @@ Rapor: profil yalnız kelime metrikleri; beceri yetkinliği, hata tipleri, zaman
 
 **Süre.** 4 gün. **Bağımlılık.** WP-01, 03, 40–42.
 
-**Durum (2026-08-25).** Bitti. `src/lib/proficiency.ts` (saf: `computeProficiency` ağırlıklı ortalama sınav ×3 / AI ×2 / egzersiz ×1, 30 gün doğrusal sönüm, `bandOf`, `weakestSkill`); `proficiency-data.ts` (`gatherEvidence` üç tablodan, `nextStep`: en düşük kanıtlı beceriden yapılmamış egzersiz → kelime turu / dilbilgisi → sıradaki ders, `proficiencyFor`); `GET /api/profile` (seviye + yetkinlik + sıradaki adım); profilde `ProficiencyCard` (seviye sekmeleri, 6 çubuk, bant, kanıt sayısı, "Sıradaki en iyi adım"); plan kartı 3. öğesi artık bu motordan. e2e §39 (10 kontrol). Kanıt: `reports/shots/wp50-proficiency.png`.
+**Durum (2026-08-25).** Bitti. `src/lib/proficiency.ts` (saf: `computeProficiency` ağırlıklı ortalama sınav ×3 / AI ×2 / egzersiz ×1, 30 gün doğrusal sönüm, `bandOf`, `weakestSkill`); `proficiency-data.ts` (`gatherEvidence` üç tablodan, `nextStep`: en düşük kanıtlı beceriden yapılmamış egzersiz → kelime turu / dilbilgisi → sıradaki konuşma, `proficiencyFor`); `GET /api/profile` (seviye + yetkinlik + sıradaki adım); profilde `ProficiencyCard` (seviye sekmeleri, 6 çubuk, bant, kanıt sayısı, "Sıradaki en iyi adım"); plan kartı 3. öğesi artık bu motordan. e2e §39 (10 kontrol). Kanıt: `reports/shots/wp50-proficiency.png`.
 
 ---
 
@@ -29,10 +29,10 @@ Rapor: profil yalnız kelime metrikleri; beceri yetkinliği, hata tipleri, zaman
 
 **Amaç.** "Zayıf noktaların": hata tipi dağılımı, karıştırılan kelime çiftleri, zayıf kurallar; her birine tek dokunuşla hedefli drill; SRS ağırlığı hata tipine göre.
 
-**Mevcut kod.** `reviews.error_type` (WP-02), `weakRules` (`lessons/progress.ts`), WP-11 drill'ler, `cheatProgress`.
+**Mevcut kod.** `reviews.error_type` (WP-02), `weakRules` (`conversations/progress.ts`), WP-11 drill'ler, `cheatProgress`.
 
 **Tasarım.**
-- Sorgular: son 30 gün hata tipi dağılımı; karıştırma çiftleri (`meaning` hatasında seçilen ↔ doğru); zayıf kurallar (drill + ders).
+- Sorgular: son 30 gün hata tipi dağılımı; karıştırma çiftleri (`meaning` hatasında seçilen ↔ doğru); zayıf kurallar (drill + konuşma).
 - Profil bölümü "Zayıf noktaların": ilk 3 hata tipi → "10 soruluk hedefli çalışma" (WP-11 drill motoru; artikel için kelime havuzundan artikel turu; kelime karıştırma için ikili karşılaştırma turu).
 - SRS: `srs.ts` `schedule()`'a `errorWeight` (WP-02'de iskelet): hata tipi son 14 günde ≥ 5 kez ise o tipteki kelimelerin aralığı ×0.75.
 - Bildirim: haftalık "bu hafta en çok artikel hatası yaptın — 5 dakikalık çalışma" (push, mevcut altyapı).
@@ -62,4 +62,4 @@ Rapor: profil yalnız kelime metrikleri; beceri yetkinliği, hata tipleri, zaman
 
 **Süre.** 4 gün. **Bağımlılık.** WP-30, WP-42, WP-50.
 
-**Durum (2026-08-25).** Bitti. `src/lib/growth.ts` (`growthReport`: 8 haftalık yazma/konuşma/kullanım/cevap serileri, yetkinlik şimdi vs 4 hafta önce, kilometre taşları — ilk sınav, ilk 70+ yazı, ilk konuşmalı ders, seviye testi; `weeklySummary`: geçen haftanın tek satırı), `GET /api/growth`, profilde `GrowthCard` (SVG kıvılcım çizgileri, ▲▼ değişim, taşlar), plan kartında Pzt–Sal özet satırı (`Plan.summary`), `/api/cron/summary` (Pazartesi 07:00, push "Haftalık özetin"). e2e §41 (8 kontrol). Kanıt: `reports/shots/wp52-growth.png`.
+**Durum (2026-08-25).** Bitti. `src/lib/growth.ts` (`growthReport`: 8 haftalık yazma/konuşma/kullanım/cevap serileri, yetkinlik şimdi vs 4 hafta önce, kilometre taşları — ilk sınav, ilk 70+ yazı, ilk konuşmalı konuşma, seviye testi; `weeklySummary`: geçen haftanın tek satırı), `GET /api/growth`, profilde `GrowthCard` (SVG kıvılcım çizgileri, ▲▼ değişim, taşlar), plan kartında Pzt–Sal özet satırı (`Plan.summary`), `/api/cron/summary` (Pazartesi 07:00, push "Haftalık özetin"). e2e §41 (8 kontrol). Kanıt: `reports/shots/wp52-growth.png`.

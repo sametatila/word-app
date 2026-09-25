@@ -1,6 +1,6 @@
 # Faz 6 — Arayüz ve kompozisyon
 
-Rapor: arayüz kalitesi yüksek (8–9) ama kompozisyon "oyun listesi" mantığında; öğrenme odaklı bir akış (bugün ne yapmalı, neden, sonra ne) yok; tek oyun/dilbilgisi gömülü; geri bildirim tek satır; ders ekranında sessizlikler. Bu fazda her ekran "öğrenme planı" fikrinin etrafında yeniden kurulur. Tasarım sistemi korunur (renkler, kartlar, Erdi); yeni bileşenler mevcut `card`, `btn`, `verdict` sınıflarını genişletir.
+Rapor: arayüz kalitesi yüksek (8–9) ama kompozisyon "oyun listesi" mantığında; öğrenme odaklı bir akış (bugün ne yapmalı, neden, sonra ne) yok; tek oyun/dilbilgisi gömülü; geri bildirim tek satır; konuşma ekranında sessizlikler. Bu fazda her ekran "öğrenme planı" fikrinin etrafında yeniden kurulur. Tasarım sistemi korunur (renkler, kartlar, Erdi); yeni bileşenler mevcut `card`, `btn`, `verdict` sınıflarını genişletir.
 
 Genel ilkeler (her WP için):
 - **Mobil ilk, tek el:** okuma üstte, dokunma altta (game-shell'in üç bölge kuralı).
@@ -20,7 +20,7 @@ Genel ilkeler (her WP için):
 
 **Tasarım (yukarıdan aşağıya):**
 1. **Karşılama** (mevcut) + seviye + seri; Erdi.
-2. **Bugünkü plan kartı** (yeni): 3–4 öğe, tahmini süre, tek "Başla": (a) tekrar turu (SRS: N kelime), (b) sıradaki en iyi adım (WP-50 önerisi: bir beceri egzersizi ya da ders), (c) hedefli çalışma (WP-51 zayıf nokta, varsa), (d) haftanın sınavı (WP-42, Pazartesi). Tamamlananlar tik alır; plan `dailyStats`'a yazılır (`plan_done`).
+2. **Bugünkü plan kartı** (yeni): 3–4 öğe, tahmini süre, tek "Başla": (a) tekrar turu (SRS: N kelime), (b) sıradaki en iyi adım (WP-50 önerisi: bir beceri egzersizi ya da konuşma), (c) hedefli çalışma (WP-51 zayıf nokta, varsa), (d) haftanın sınavı (WP-42, Pazartesi). Tamamlananlar tik alır; plan `dailyStats`'a yazılır (`plan_done`).
 3. **Modlar** yatay kaydırmalı kompakt kartlar: Günün turu, Hayatta kalma, Yürürken, **Tek oyun** (artık görünür, oyun seçimiyle), **Dilbilgisi çalışması** (drill girişi).
 4. **Sınavlar** kartı: yerleştirme (henüz alınmadıysa), seviye sınavı durumu, son sınav puanı.
 5. Görevler (mevcut), sıralama (mevcut).
@@ -34,7 +34,7 @@ Genel ilkeler (her WP için):
 
 **Süre.** 5 gün. **Bağımlılık.** WP-50 (öneri; yoksa geçici kural), WP-42, WP-40.
 
-**Durum (2026-08-25).** Adım 1, 2, 5 bitti; 3–4 ertelendi (STATUS karar kaydı). `src/lib/plan.ts` `buildPlan`: (1) kelime turu — vadesi gelen sayı, `session_done` ile yapıldı; (2) sıradaki ders — `nextLesson`, bugün `lastAt` ile yapıldı; (3) seviyede en az çalışılan beceriden ilk yapılmamış egzersiz; (4) son 14 günün en sık hata tipi (≥5) → o tipin tek oyunlu turu (`/learn?game=…`), bugün ≥5 cevapla yapıldı. `GET /api/plan?day=`; `src/components/plan-card.tsx` (iskelet, tik, ~dk, "Başla: …" ilk bitmemiş öğe, `plan_start` olayı kind=öğe). Karşılama kartının hemen altında. e2e §34 (6 kontrol). Kanıt: `reports/shots/wp60-plan.png`.
+**Durum (2026-08-25).** Adım 1, 2, 5 bitti; 3–4 ertelendi (STATUS karar kaydı). `src/lib/plan.ts` `buildPlan`: (1) kelime turu — vadesi gelen sayı, `session_done` ile yapıldı; (2) sıradaki konuşma — `nextConversation`, bugün `lastAt` ile yapıldı; (3) seviyede en az çalışılan beceriden ilk yapılmamış egzersiz; (4) son 14 günün en sık hata tipi (≥5) → o tipin tek oyunlu turu (`/learn?game=…`), bugün ≥5 cevapla yapıldı. `GET /api/plan?day=`; `src/components/plan-card.tsx` (iskelet, tik, ~dk, "Başla: …" ilk bitmemiş öğe, `plan_start` olayı kind=öğe). Karşılama kartının hemen altında. e2e §34 (6 kontrol). Kanıt: `reports/shots/wp60-plan.png`.
 
 ---
 
@@ -56,24 +56,24 @@ Genel ilkeler (her WP için):
 
 ---
 
-## WP-62 · Ders oynatıcı akışı
+## WP-62 · Konuşma oynatıcı akışı
 
-**Amaç.** Ders adımlarının %73'ü "tekrar et"; mikrofon beklerken sessizlik; rol yapma yedeği; ders sonu → drill/ölçme köprüsü.
+**Amaç.** Konuşma adımlarının %73'ü "tekrar et"; mikrofon beklerken sessizlik; sohbet yedeği; konuşma sonu → drill/ölçme köprüsü.
 
-**Mevcut kod.** `lesson-player.tsx` (3 faz: anlatım, konuşma, özet; eller serbest; yazılı yedek; adım atlama), ders içerik şeması (WP-70/71).
+**Mevcut kod.** `conversation-player.tsx` (3 faz: anlatım, konuşma, özet; eller serbest; yazılı yedek; adım atlama), konuşma içerik şeması (WP-70/71).
 
 **Tasarım.**
 - Adım türleri: `repeat` payını %40'a çek, `produce` %35, yeni `transform` (WP-11 motoru: "şimdi aynı cümleyi 'siz' ile söyle"), `choose` (2 seçenekli hızlı karar), `truefalse` — içerik WP-71 ile.
 - Mikrofon: 4 sn ses gelmezse otomatik "yazarak cevapla" alanı açılır (mikrofon açık kalır); eller serbest kapalıyken tek dokunuş.
 - İlerleme çubuğu adım türü renkleriyle (tekrar/üret/dönüştür).
-- Rol yapma: senaryo yedeği (WP-04), sınav modu düğmesi (WP-22).
-- Özet: puan, kullanılan kalıplar, **"pekiştir: 5 soruluk drill"** (WP-11), can-do etiketi, sıradaki ders.
+- Sohbet: senaryo yedeği (WP-04), sınav modu düğmesi (WP-22).
+- Özet: puan, kullanılan kalıplar, **"pekiştir: 5 soruluk drill"** (WP-11), can-do etiketi, sıradaki konuşma.
 
 **Adımlar.** 1. Adım türleri UI. 2. Mikrofon zaman aşımı davranışı. 3. Özet köprüleri. 4. Ekran görüntüleri ve kısa kullanıcı testi (3 kişi).
 
 **Süre.** 4 gün. **Bağımlılık.** WP-04, WP-11, WP-71.
 
-**Durum (2026-08-25).** Adım 2 ve 3 bitti, 1 kısmen (mevcut dört türün gösterimi; `transform`/`choose` WP-11 + WP-71 ile), 4'ün görüntüsü var, 3 kişilik test sahibinde. `lesson-player.tsx`: `TYPE_AFTER_MS` 4000 — kendiliğinden açılan mikrofona ses gelmezse `typing` açılır, mikrofon açık kalır (`heard` bayrağı `onresult`'ta); `LectureProgress` adım başına parça + tür lejantı (`STEP_TONE`/`STEP_LABEL`); özet: kalıp çipleri (`patternUsed`: kalıbın "…" öncesi gövdesi kullanıcı turlarında), "Yapabildiklerim" satırı, "Sıradaki ders" düğmesi. `lessons/[id]/page.tsx` `LessonExtras` (can-do metinleri `candoForLesson`→`candoById`, `nextLesson` aynı ders değilse). Kanıt: `reports/shots/wp62-lesson-progress.png`.
+**Durum (2026-08-25).** Adım 2 ve 3 bitti, 1 kısmen (mevcut dört türün gösterimi; `transform`/`choose` WP-11 + WP-71 ile), 4'ün görüntüsü var, 3 kişilik test sahibinde. `conversation-player.tsx`: `TYPE_AFTER_MS` 4000 — kendiliğinden açılan mikrofona ses gelmezse `typing` açılır, mikrofon açık kalır (`heard` bayrağı `onresult`'ta); `LectureProgress` adım başına parça + tür lejantı (`STEP_TONE`/`STEP_LABEL`); özet: kalıp çipleri (`patternUsed`: kalıbın "…" öncesi gövdesi kullanıcı turlarında), "Yapabildiklerim" satırı, "Sıradaki konuşma" düğmesi. `conversations/[id]/page.tsx` `ConversationExtras` (can-do metinleri `candoForConversation`→`candoById`, `nextConversation` aynı konuşma değilse). Kanıt: `reports/shots/wp62-conversation-progress.png`.
 
 ---
 

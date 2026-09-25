@@ -45,8 +45,8 @@ Raporun ana bulgusu: 12 oyunun 7'si tanıma; cümle kurma yalnız parça dizme; 
 **Tasarım.**
 - İçerik şeması `src/lib/cheatsheet/drills.ts`: `{ id, tableId, level, kind: "transform"|"fill"|"reorder"|"translate", prompt: {de?, tr}, answer, alternatives?, errorType, why_tr }`. Her tabloya 10–15 madde (WP-73 üretir; bu WP 5 tabloyla başlar).
 - UI: tablo başlığında "Çalış (12)" düğmesi → drill oynatıcı (`drill-player.tsx`): yazılı giriş, WP-10 eşleştirme kütüphanesi, fark vurgusu, "neden" satırı, tablo satırına geri bağlantı.
-- İlerleme: `cheatProgress`'e drill sonuçları (tablo başına doğruluk), zayıf kural = `weakRules` (lessons/progress) ile birleşik → WP-51 "zayıf noktaların".
-- Dersle bağ: ders özetinde ilgili tablonun drilline "5 soru çöz" bağlantısı (WP-62).
+- İlerleme: `cheatProgress`'e drill sonuçları (tablo başına doğruluk), zayıf kural = `weakRules` (conversations/progress) ile birleşik → WP-51 "zayıf noktaların".
+- Konuşmayla bağ: konuşma özetinde ilgili tablonun drilline "5 soru çöz" bağlantısı (WP-62).
 - Kelime turuna sızma: WP-14 merdiveninde `transform` turu olarak (olgun kelimelerle, tablo hedefli) günde en çok 2.
 
 **Adımlar.**
@@ -54,7 +54,7 @@ Raporun ana bulgusu: 12 oyunun 7'si tanıma; cümle kurma yalnız parça dizme; 
 2. 5 tablo × 12 madde içerik (A1: artikel/hal, Perfekt, kişi zamirleri; A2: weil/dass, Dativ edatları).
 3. `drill-player.tsx` + rota `/cheatsheet/[table]/drill`.
 4. İlerleme kaydı + tablo kartında doğruluk rozeti.
-5. Ders özeti bağlantısı.
+5. Konuşma özeti bağlantısı.
 
 **Kabul.** Bir tablo için 12 maddelik drill baştan sona oynanıyor; yanlışlarda fark + neden; ilerleme kalıcı; içerik doğrulayıcı CI'da (`npm run test:cheat`).
 
@@ -96,7 +96,7 @@ Raporun ana bulgusu: 12 oyunun 7'si tanıma; cümle kurma yalnız parça dizme; 
 
 **Amaç.** Geri bildirim "ne" diyor, "neden" demiyor. Her yanlışta tek satır gerekçe + dilbilgisi bağlantısı + hata etiketi.
 
-**Mevcut kod.** `src/components/games/game-shell.tsx` (`VerdictBar`), oyunların `feedback` prop'u, `src/components/skills/quiz.tsx` (okuma/dinleme soruları), `src/components/lessons/lesson-player.tsx` (produce/repeat sonucu), `src/lib/german.ts` (artikel/çoğul kuralları var mı — incele).
+**Mevcut kod.** `src/components/games/game-shell.tsx` (`VerdictBar`), oyunların `feedback` prop'u, `src/components/skills/quiz.tsx` (okuma/dinleme soruları), `src/components/conversations/conversation-player.tsx` (produce/repeat sonucu), `src/lib/german.ts` (artikel/çoğul kuralları var mı — incele).
 
 **Tasarım.**
 - `src/lib/why.ts`: hata tipi + kelime/veri → Türkçe tek cümle gerekçe üreten saf fonksiyonlar:
@@ -107,14 +107,14 @@ Raporun ana bulgusu: 12 oyunun 7'si tanıma; cümle kurma yalnız parça dizme; 
   - `spelling`: fark vurgusu (harf düzeyinde).
 - `FeedbackLine` bileşeni: gerekçe metni, `[Kural ↗]` bağlantısı (`/cheatsheet?item=…`), hata etiketi (renk + simge), "Anladım" yok — otomatik ilerleme korunur; şeritte yer darsa 2. satır.
 - Okuma/dinleme sorularına içerikte `why_tr` alanı (WP-70 şeması; olmayanlarda gösterilmez).
-- Ders adımlarında `produce` yanlışında beklenen kalıp + neden.
+- Konuşma adımlarında `produce` yanlışında beklenen kalıp + neden.
 - Ölçüm: `feedback_why_opened`.
 
 **Adımlar.**
 1. `why.ts` + birim testleri (50 kelimelik örneklem).
 2. `FeedbackLine` + `VerdictBar` entegrasyonu (şerit yüksekliği korunur; taşarsa gerekçe küçük yazı).
 3. Soru geri bildirimi (`quiz.tsx`) `why_tr` gösterimi.
-4. Ders `produce` geri bildirimi.
+4. Konuşma `produce` geri bildirimi.
 5. Cheatsheet derin bağlantı (`?item=`) ve vurgulu açılış.
 
 **Kabul.** Artikel yanlışında kural cümlesi; çoğul yanlışında kalıp; okuma sorusunda (içerik varsa) gerekçe; bağlantı ilgili tabloyu açıp vurguluyor.

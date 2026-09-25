@@ -1,7 +1,7 @@
 # B1 Konuları (100)
 
 Satır biçimi: `NNN | slug | Titel (DE) | Türkçe | ikon | focusId | çekirdek kalıplar`
-- Kimlik = `de-b1-<slug>`. ✔ işaretli ders üretilmiştir; ilk partide taşınır.
+- Kimlik = `de-b1-<slug>`. ✔ işaretli konuşma üretilmiştir; ilk partide taşınır.
 - B1 omurgası: yan cümle ailesi (weil/obwohl/als/damit/um zu/nachdem), ilgi
   cümleleri, Passiv, Konjunktiv II, Genitiv, sıfat çekiminin tamamı,
   Infinitiv+zu, dolaylı sorular, Plusquamperfekt.

@@ -1,6 +1,6 @@
 # Faz 2 — Konuşma
 
-Rapor: 24 egzersiz; ASR metin eşleştirmesi, telaffuz puanı yok; öz-değerlendirme her drilde açık; diyaloglar anahtar kelimeyle dallanıyor; rol yapma AI'a bağlı. Hedef: ölçülebilir telaffuz ve konuşma üretimi, seviye başına yeterli içerik, sınav niteliğinde rol yapma.
+Rapor: 24 egzersiz; ASR metin eşleştirmesi, telaffuz puanı yok; öz-değerlendirme her drilde açık; diyaloglar anahtar kelimeyle dallanıyor; sohbet AI'a bağlı. Hedef: ölçülebilir telaffuz ve konuşma üretimi, seviye başına yeterli içerik, sınav niteliğinde sohbet.
 
 ---
 
@@ -23,7 +23,7 @@ Rapor: 24 egzersiz; ASR metin eşleştirmesi, telaffuz puanı yok; öz-değerlen
 1. Değerlendirme seti + sağlayıcı karşılaştırması; karar.
 2. Sağlayıcı adaptörü (`chat-providers.ts` içine `pronounceProviders()`), route, kota.
 3. `speaking-player` ısı haritası + kayıt oynatma.
-4. Ders `repeat/produce` adımlarına aynı puanlama (opsiyonel bayrak; ders akışını yavaşlatmamalı — puan gösterilir, geçiş şartı ≥ 60).
+4. Konuşma `repeat/produce` adımlarına aynı puanlama (opsiyonel bayrak; konuşma akışını yavaşlatmamalı — puan gösterilir, geçiş şartı ≥ 60).
 5. Yürüyüş modunda puan yalnız kaydedilir (ekran yok).
 
 **Kabul.** Bilerek yanlış söylenen ünlü uzunluğu kırmızı kelime olarak görünüyor; puanlar `assessments`'ta; sağlayıcı kapalıyken eski davranış.
@@ -57,16 +57,16 @@ Rapor: 24 egzersiz; ASR metin eşleştirmesi, telaffuz puanı yok; öz-değerlen
 
 ---
 
-## WP-22 · Rol yapma sınav modu
+## WP-22 · Sohbet sınav modu
 
-**Amaç.** Rol yapma alıştırma olarak var; sınav olarak da kullanılsın: puanlı, sınırlı turlu, can-do bağlı, hata raporlu.
+**Amaç.** Sohbet alıştırma olarak var; sınav olarak da kullanılsın: puanlı, sınırlı turlu, can-do bağlı, hata raporlu.
 
-**Mevcut kod.** `src/lib/lessons/roleplay.ts`, `/api/chat`, `chatLogs` tablosu, `lesson-player.tsx` rol yapma fazı, `coachDialogue`.
+**Mevcut kod.** `src/lib/conversations/chat.ts`, `/api/chat`, `chatLogs` tablosu, `conversation-player.tsx` sohbet fazı, `coachDialogue`.
 
 **Tasarım.**
-- Mod parametresi `mode: "practice"|"exam"`: sınavda sistem istemi "yardım etme, yönlendirme, hata düzeltme; doğal muhatap ol"; 5 tur; süre 3 dk; konuşma bitince tüm kullanıcı turları WP-03 `assess(kind:"roleplay")` ile puanlanır (görev, dilbilgisi, kelime, uygunluk) + WP-20 telaffuz ortalaması.
+- Mod parametresi `mode: "practice"|"exam"`: sınavda sistem istemi "yardım etme, yönlendirme, hata düzeltme; doğal muhatap ol"; 5 tur; süre 3 dk; konuşma bitince tüm kullanıcı turları WP-03 `assess(kind:"chat")` ile puanlanır (görev, dilbilgisi, kelime, uygunluk) + WP-20 telaffuz ortalaması.
 - Sonuç: rubrik kartı, en iyi 2 cümle, en çok tekrar eden 2 hata, can-do rozeti (WP-43).
-- Kullanım: WP-41 seviye sınavının konuşma bölümü; ders sonunda isteğe bağlı "sınav olarak dene".
+- Kullanım: WP-41 seviye sınavının konuşma bölümü; konuşma sonunda isteğe bağlı "kendini puanla".
 
 **Adımlar.**
 1. Route + istem varyantı; `chatLogs.mode`.
@@ -77,7 +77,7 @@ Rapor: 24 egzersiz; ASR metin eşleştirmesi, telaffuz puanı yok; öz-değerlen
 
 **Süre.** 4 gün. **Bağımlılık.** WP-03, WP-20, WP-43.
 
-**Durum (2026-08-26).** Adım 1–3 bitti (telaffuz ortalaması WP-20'ye bağlı, yok). `lib/lessons/roleplay.ts`: `RoleplayMode`, `examPrompt` (doğal muhatap, yardım/düzeltme/Türkçe/işaret yok, 2 cümle + soru, `EXAM_TURNS`=5'te kapanış); `streamRoleplay(..., mode)`; `/api/chat` `mode` alır ve `chat_logs.mode`'a yazar (migrasyon 0034, üretime uygulandı). `components/lessons/roleplay-exam.tsx` + `/lessons/[id]/exam`: giriş kartı (sahne, kurallar, kalıplar) → konuşma (tur sayacı, 3 dk sayaç, tek atış mikrofon ya da yazı, TTS) → puanlama (`askAssess` kind `roleplay`, `exerciseId` `<ders>:exam`, `answer.transcript` turlar) → sonuç (`AssessmentCard`, hatasız en uzun 2 cümle, en sık 2 hata tipi, can-do etiketi, Erdi koç). Ders özetinde "Sınav olarak dene". Kanıt: `reports/shots/wp22-exam-{intro,talk,result}.png`; üretimde `assessments` satırı (%88) ve 5 `mode=exam` log satırı doğrulandı.
+**Durum (2026-08-26).** Adım 1–3 bitti (telaffuz ortalaması WP-20'ye bağlı, yok). `lib/conversations/chat.ts`: `ChatMode`, `examPrompt` (doğal muhatap, yardım/düzeltme/Türkçe/işaret yok, 2 cümle + soru, `EXAM_TURNS`=5'te kapanış); `streamChat(..., mode)`; `/api/chat` `mode` alır ve `chat_logs.mode`'a yazar (migrasyon 0034, üretime uygulandı). `components/conversations/conversation-scored.tsx` + `/conversations/[id]/scored`: giriş kartı (sahne, kurallar, kalıplar) → konuşma (tur sayacı, 3 dk sayaç, tek atış mikrofon ya da yazı, TTS) → puanlama (`askAssess` kind `chat`, `exerciseId` `<konuşma>:exam`, `answer.transcript` turlar) → sonuç (`AssessmentCard`, hatasız en uzun 2 cümle, en sık 2 hata tipi, can-do etiketi, Erdi koç). Konuşma özetinde "Kendini puanla". Kanıt: `reports/shots/wp22-exam-{intro,talk,result}.png`; üretimde `assessments` satırı (%88) ve 5 `mode=exam` log satırı doğrulandı.
 
 ---
 
@@ -85,7 +85,7 @@ Rapor: 24 egzersiz; ASR metin eşleştirmesi, telaffuz puanı yok; öz-değerlen
 
 **Amaç.** Beceri diyalogları (7) anahtar kelimeyle dallanıyor. Sağlayıcı varken açık uçlu, temaya bağlı LLM diyalogu; yoksa mevcut senaryo.
 
-**Mevcut kod.** `src/lib/dialogue.ts`, `src/components/skills/dialogue-player.tsx`, `/api/chat` (ders kimliği zorunlu — beceri diyalogları için `exerciseId` desteği eklenir).
+**Mevcut kod.** `src/lib/dialogue.ts`, `src/components/skills/dialogue-player.tsx`, `/api/chat` (konuşma kimliği zorunlu — beceri diyalogları için `exerciseId` desteği eklenir).
 
 **Tasarım.**
 - `SpeakingDialogueExercise`'e `theme_prompt` (LLM için tema/rol/hedef kalıplar/sınır) alanı; senaryo (`dialogue`) yedek olarak kalır.
@@ -100,6 +100,6 @@ Rapor: 24 egzersiz; ASR metin eşleştirmesi, telaffuz puanı yok; öz-değerlen
 
 **Kabul.** Sağlayıcı açıkken senaryoda olmayan bir cevap ("Ich nehme einen Cappuccino, aber ohne Zucker") anlaşılıp konuşma sürüyor; kapalıyken senaryo çalışıyor.
 
-**Durum (2026-08-26).** Adım 1–2 bitti, 3 (7 → 25 diyalog) WP-72'de. `types.ts` `DialogueTheme { role, goal, limits? }` + `SpeakingDialogueExercise.theme?`; 7 diyaloga tema yazıldı (`content/dialogue.ts`), doğrulayıcı tema kontrolü. `lib/dialogue.ts`: `targetsUsed`, `dialogueDone` (≥4 tur ve ≥3 kalıp, en çok 8), sabitler. `lib/lessons/roleplay.ts`: ortak `streamSystem`, `dialoguePrompt` (rol, sahne = intro, hedef, kalıplar; düzeltme ve öneri yok; kapanış turu), `streamDialogue`. `/api/chat` `exerciseId` kabul ediyor (`getExercise`, temalı konuşma diyaloğu), log kimliği egzersiz. `dialogue-player.tsx`: tema + sağlayıcı → `mode: llm`; `askModel` (akış, `parseReply`, kalıp eşiğinde kapanış), hata → senaryoya dönüş; "Yazarak cevapla" alanı iki modda; açık modda payda 4. Kanıt: `reports/shots/wp23-dialogue-{open,done}.png` — "Ich nehme einen Cappuccino, aber ohne Zucker" anlaşıldı ve konuşma sürdü; 4 turda 5/5 kalıp, 4/4.
+**Durum (2026-08-26).** Adım 1–2 bitti, 3 (7 → 25 diyalog) WP-72'de. `types.ts` `DialogueTheme { role, goal, limits? }` + `SpeakingDialogueExercise.theme?`; 7 diyaloga tema yazıldı (`content/dialogue.ts`), doğrulayıcı tema kontrolü. `lib/dialogue.ts`: `targetsUsed`, `dialogueDone` (≥4 tur ve ≥3 kalıp, en çok 8), sabitler. `lib/conversations/chat.ts`: ortak `streamSystem`, `dialoguePrompt` (rol, sahne = intro, hedef, kalıplar; düzeltme ve öneri yok; kapanış turu), `streamDialogue`. `/api/chat` `exerciseId` kabul ediyor (`getExercise`, temalı konuşma diyaloğu), log kimliği egzersiz. `dialogue-player.tsx`: tema + sağlayıcı → `mode: llm`; `askModel` (akış, `parseReply`, kalıp eşiğinde kapanış), hata → senaryoya dönüş; "Yazarak cevapla" alanı iki modda; açık modda payda 4. Kanıt: `reports/shots/wp23-dialogue-{open,done}.png` — "Ich nehme einen Cappuccino, aber ohne Zucker" anlaşıldı ve konuşma sürdü; 4 turda 5/5 kalıp, 4/4.
 
 **Süre.** 4 gün. **Bağımlılık.** WP-03, WP-72.

@@ -10,7 +10,7 @@ seçilemez. Günlük tur, pratik ve yürüyüş modunun kelime katmanı canlıda
 |---|---|
 | Ses kimlikleri | dil önekli: `de-DE-Defne`, `en-US-Aras`, `tr-TR-Defne`… (`lib/tts/voices` `OWN_VOICES`, mobil aynası). Eski Katja/Conrad/Jenny/Guy tercihi cinsiyetine göre çevrilir (`resolveVoice`), DB göçü yok. Zürih: Leni/Jan kalır. |
 | Kelime isteği | istemci `k=w` ekler (web `speakWord`/`prefetchWord`/`SpeakButton word`, mobil `speakTarget(…, { word: true })`); uç tabloda bulamazsa 404 (`no_own_audio`, günlüğe `[tts-own]`). |
-| Kelime dışı içerik | ders, beceri, dinleme, okuma, rol yapma henüz üretilmedi: karakter sesi Edge karşılığıyla (Defne→Katja/Jenny/Emel, Aras→Conrad/Guy/Ahmet); ders/dinleme sabit sesi `lessonVoice` Katja/Jenny/Leni. |
+| Kelime dışı içerik | konuşma, beceri, dinleme, okuma, sohbet henüz üretilmedi: karakter sesi Edge karşılığıyla (Defne→Katja/Jenny/Emel, Aras→Conrad/Guy/Ahmet); konuşma/dinleme sabit sesi `conversationVoice` Katja/Jenny/Leni. |
 | Yürüyüş modu | hedef kelime seçilen karakter; anlam karakterin ANADİL sesi (`glossVoice`); anlatım cümleleri Emel/Jenny/Katja. |
 | Kutular | cümle dizmede her kutu AYRI üretilmiş kayıt (cümleden kesme değil: yanlış dizilince ezgi saçmalardı); metin `tileSpeech` (kenar noktalaması atılır). |
 | Sunucu | `TTS_OWN_DIR` (`/opt/lernomi/tts-own`: `tts-map.json` + `m4a/`). **Yayın anahtarı**: boşsa kelimeler Edge karşılığıyla, doluysa düşüşsüz. Tablo dakikada bir tazelenir; cevap `max-age=86400` + ETag (nginx aynı başlığa uyar, boşaltma gerekmez). |
@@ -23,18 +23,18 @@ Kaldırılanlar: mobil boşluk doldurmada boşluklu cümlenin hoparlörü (bozuk
 cümle geri bildiriminde hoparlör (kullanıcının kendi cümlesi, önceden üretilemez).
 
 Kaynak: `scripts/tts-inventory.ts` (çıktı `reports/tts-inventory.json`) ve tts-test'teki ölçümler.
-Kapsam dışı: **rol yapma** (AI cevapları; Edge'de kalıyor) ve **gsw-zh** (Zürih; karakterlerin İsviçre
+Kapsam dışı: **sohbet** (AI cevapları; Edge'de kalıyor) ve **gsw-zh** (Zürih; karakterlerin İsviçre
 Almancası yok, de-CH Edge sesinde kalıyor).
 
-## 1. Envanter (rol yapma hariç, benzersiz metin)
+## 1. Envanter (sohbet hariç, benzersiz metin)
 
 | Katman | Kaynak | Benzersiz metin | Karakter | Tahmini ses* |
 |---|---|---|---|---|
 | 1 | Kelimeler: madde + artikel, çoğul, örnek cümle, anadil karşılığı (yürüyüş modu) — de + en | 42.800 | 1,07 M | 21 sa |
-| 2 | Ders anlatımı (TR) + dersteki hedef dil parçaları — de + en kursu | 45.400 | 2,05 M | 41 sa |
+| 2 | Konuşma anlatımı (TR) + konuşmadaki hedef dil parçaları — de + en kursu | 45.400 | 2,05 M | 41 sa |
 | 3 | Dinleme diyalogları: deneme sınavı, beceri, modül sınavı | 10.700 | 0,96 M | 19 sa |
 | 4 | Okuma metinleri (deneme + beceri; sesli okuma düğmesi) | 5.000 | 1,16 M | 23 sa |
-| — | Anlatım arayüz cümleleri (yürüyüş, ders geri bildirimi) × 3 anadil | 270 | 0,01 M | — |
+| — | Anlatım arayüz cümleleri (yürüyüş, konuşma geri bildirimi) × 3 anadil | 270 | 0,01 M | — |
 | | **Toplam, tek ses için** | **104.000** | **5,25 M** | **~104 sa** |
 
 *14 karakter/sn konuşma hızıyla. Bu **bir** sesin envanteri. Kurs başına iki seçilebilir ses var
@@ -51,7 +51,7 @@ Hız kademeleri (`slow`, `listen`, `listen-slow`) yeniden üretilmez: yayın an�
 | | Ölçülen | Bileşenler |
 |---|---|---|
 | Cümle (3–4 sn ses) | 24 sn duvar saati, RTF ≈ 5,7 | üretim 2×3,8 sn · Whisper large-v3-turbo CPU 2×8 sn · UTMOS/master ~2 sn |
-| Ders (8–11 parça) | 116 sn / ders, RTF ≈ 8,6 | parça başına aynı sabit maliyet, parçalar 1,4 sn |
+| Konuşma (8–11 parça) | 116 sn / konuşma, RTF ≈ 8,6 | parça başına aynı sabit maliyet, parçalar 1,4 sn |
 | Take sayısı | ortalama 2,05 | MIN_TAKES=2 belirliyor |
 
 **Duvar saatinin ~%70'i CPU'daki kontrol**, GPU o sırada boş. Üretimin kendisi RTF ≈ 1.
@@ -64,7 +64,7 @@ Bu hızla, tek ses için: katman 1 ≈ 240 sa (10 gün), katman 2 ≈ 300 sa. D�
 UTMOS önce, Whisper yalnız ilk kabul edilene kadar; Almanca/İngilizce kontrolü Whisper `small` (130 gerçek take'te
 büyük modelle DE/EN'de 60/60 aynı karar; Türkçede 5/70 fazladan red, hiç yanlış kabul yok → Türkçe büyük modelde
 kaldı); iki iş aynı anda (birinin Whisper süresi ötekinin üretim süresi; üçüncü iş kazandırmıyor, GPU dolu).
-Sonuç: 11 parçalık ders ~250 sn → ~63 sn, parça başına ≈5,5 sn. Bir sesin kelime katmanı ≈ 60 sa, ders katmanı
+Sonuç: 11 parçalık konuşma ~250 sn → ~63 sn, parça başına ≈5,5 sn. Bir sesin kelime katmanı ≈ 60 sa, konuşma katmanı
 ≈ 72 sa (4060). Kalite ayarları (20 adım, 2 take, referans+bağlam) değişmedi.
 
 | Adım | Kazanç | Kalite etkisi |
@@ -106,5 +106,5 @@ Envanter sonlu ve önceden üretiliyor; canlıda sentez YOK. Ölçek = CDN.
 1. Hattı optimize et (örtüştürme, küçük Whisper doğrulaması, UTMOS-önce) ve RTF'yi ölç.
 2. Katman 1'i (kelimeler, A1→C1 sırasıyla) dört karakterle üret; fonem kontrolü + dinleme raporu.
 3. `/api/tts` içinde statik dosya yolu; ilk ses canlıya (bir kadın bir erkek, de kursu).
-4. Katman 2 (dersler), sonra 3; kadro için +2 karakter.
+4. Katman 2 (konuşmalar), sonra 3; kadro için +2 karakter.
 5. Kiralık GPU ile toplu üretim, yerel GPU artımlı.

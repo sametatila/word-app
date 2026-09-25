@@ -7,19 +7,19 @@ Uygulamadaki bütün öğretici içerik kod içinde TypeScript olarak yaşar ve 
 | Tür | Tip | Dosya | Kimlik |
 |---|---|---|---|
 | Beceri egzersizi (okuma/dinleme/yazma/konuşma/dil bilgisi) | `SkillExercise` — `src/lib/skills/types.ts` | Patika üniteleri: `src/lib/skills/content/{a1..c1}-uNN.ts`; Beceriler kütüphanesi (ünitesiz, iki kurs): `content/library/<kurs>-<seviye>.ts` → `bundled.ts` | `"a1-u1-r1"`, `"de-a2-lib-g1"` — kalıcı, değiştirilmez |
-| Ders | `Lesson` — `src/lib/lessons/types.ts` | `src/lib/lessons/content/de-{a1..b1}-bNN.ts` → `index.ts` | `"de-a1-hallo"` |
-| Çevrimdışı rol yapma senaryosu | `DialogueTurn[]` — `src/lib/dialogue.ts` | `src/lib/lessons/content/scripts-*.ts` (ders kimliğiyle) | dersin kimliği |
+| Konuşma | `Conversation` — `src/lib/conversations/types.ts` | `src/lib/conversations/content/de-{a1..b1}-bNN.ts` → `index.ts` | `"de-a1-hallo"` |
+| Çevrimdışı sohbet senaryosu | `DialogueTurn[]` — `src/lib/dialogue.ts` | `src/lib/conversations/content/scripts-*.ts` (konuşma kimliğiyle) | konuşmanın kimliği |
 | Dilbilgisi sayfası | `CheatSheet` — `src/lib/cheatsheet/types.ts` | `src/lib/cheatsheet/de-{a1..c1}.ts` | `"a1-artikel"` |
 | Kelime havuzu | `data/app/words.json` → `words` tablosu | `data/*` hattı (bkz. `data/README.md`) | sayısal |
 | Dilbilgisi drill'i (WP-11) | `Drill` — `src/lib/cheatsheet/drills.ts` (henüz yok) | `src/lib/cheatsheet/drills-*.ts` | `"<sheetId>/<n>"` |
 
-Çalışma zamanı: beceri egzersizleri `npm run db:seed:skills` ile `skill_exercises` tablosuna yüklenir (tablo boşsa gömülü kopya); dersler ve dilbilgisi doğrudan koddan okunur.
+Çalışma zamanı: beceri egzersizleri `npm run db:seed:skills` ile `skill_exercises` tablosuna yüklenir (tablo boşsa gömülü kopya); konuşmalar ve dilbilgisi doğrudan koddan okunur.
 
 ## Dil kuralları (her tür için)
 
 - **Türkçe açıklama, Almanca içerik.** Öğrenciye söylenen her şey Türkçe (`tr`, `explain`, `cue`, `hint`, `why`, `summary`); öğrencinin okuyup söyleyeceği her şey Almanca. İngilizce yalnız `en` alanlarında, ayırt edici olarak.
 - **Tek doğal karşılık.** `tr` ve `en` alanlarında virgülle ikinci anlam yok (`"kalkmak, hareket etmek"` yasak). Kalıplarda (`…`, `/`) çizgi ve üç nokta serbest. Parantezli açıklama `tr`'ye girmez; `note` alanına gider.
-- **Havuzla tutarlılık.** Egzersiz sözlükçesi ve ders kelimeleri kelime havuzundaki karşılığı kullanır; metin gerçekten başka anlam kullanıyorsa bağlamsal karşılık yazılır ve bu bilinçli bir sapmadır (doğrulayıcıda uyarı). Havuzda olmayan kelime uyarıdır; A1/A2 içeriğinde havuz dışı kelime %10'u geçmemeli.
+- **Havuzla tutarlılık.** Egzersiz sözlükçesi ve konuşma kelimeleri kelime havuzundaki karşılığı kullanır; metin gerçekten başka anlam kullanıyorsa bağlamsal karşılık yazılır ve bu bilinçli bir sapmadır (doğrulayıcıda uyarı). Havuzda olmayan kelime uyarıdır; A1/A2 içeriğinde havuz dışı kelime %10'u geçmemeli.
 - **Yazım.** Almanca alanlarda Türkçe harf (ı İ ğ Ğ ş Ş) yok; Türkçe alanlarda ß/umlaut yalnız alıntı içinde. İsimler büyük harfle. `ss`/`ß` kurs kuralına göre: `de` kursunda ß, `gsw-zh` kursunda ss.
 - **Uzunluk.** Okuma metni A1 60–120, A2 100–180, B1 150–260, B2 200–350, C1 250–450 kelime. Dinleme bölümü tek satırda ≤ 40 kelime. Soru ≤ 30 kelime. `explain`/`why` tek cümle, ≤ 200 karakter.
 - **Seviye.** Yapılar seviyenin dilbilgisi tablolarını aşmaz: A1 Präsens/Perfekt(sık fiiller)/ana cümle; A2 Perfekt/Modal/weil-dass/Dativ edatları; B1 yan cümle çeşitleri/Konjunktiv II nezaket/Passiv Präsens; B2 Passiv çeşitleri/Konjunktiv/Partizip; C1 serbest.
@@ -40,11 +40,11 @@ Uygulamadaki bütün öğretici içerik kod içinde TypeScript olarak yaşar ve 
 - Dil bilgisi (`skill: "grammar"`, yalnız kütüphane): `focus` Türkçe tek satır, `explanation[]` 1–5 blok (`tr` Türkçe; `examples[].de` hedef dil, `tr` Türkçe), toplam örnek ≥ 3, `questions[]` 6–12 (okuma/dinlemeyle aynı soru kuralları), `unit` yok.
 - Kütüphane kimliği `<kurs>-<seviye>-lib-<r|l|w|s|g><n>`: kurs, seviye ve beceri harfi egzersizle uyuşur; `unit` yok (Patika'ya sızar). İngilizce kursta (`course: "en"`) `de` alanı hedef dil (İngilizce) metnidir ve sözlükçede `en` aranmaz.
 
-### Lesson
+### Conversation
 - `id` benzersiz, `level`, `course`, `icon` listeden, `title` Almanca, `titleTr`/`summary` Türkçe, `minutes` 3–20, `focusId` boş değil.
 - `vocab` 4–10 (`de`, `tr`), `patterns` 2–5.
 - `lecture` 8–20 adım; puanlanan adım (`produce`/`truefalse`) ≥ 3; `produce` adımında `hint` boş değil, `target` Almanca; `truefalse` adımında `why` boş değil; `repeat` payı ≤ %60 (WP-62 hedefi %40 — uyarı).
-- `roleplay`: `scene` Türkçe, `partner`, `opening` Almanca, `openingTr`, `minTurns` 2–6; `script` varsa: ≥ `minTurns` tur, `script[0].ask === opening`, her `next` var, her turun `fallback.example`i var, `replies[].match` ≥ 2 kök.
+- `chat`: `scene` Türkçe, `partner`, `opening` Almanca, `openingTr`, `minTurns` 2–6; `script` varsa: ≥ `minTurns` tur, `script[0].ask === opening`, her `next` var, her turun `fallback.example`i var, `replies[].match` ≥ 2 kök.
 - `cando?: string[]`.
 
 ### CheatSheet
@@ -64,7 +64,7 @@ Uygulamadaki bütün öğretici içerik kod içinde TypeScript olarak yaşar ve 
 
 ```
 npm run test:content            # hepsi
-npm run test:content -- lessons # tek tür: skills | lessons | cheatsheet | scripts
+npm run test:content -- conversations # tek tür: skills | conversations | cheatsheet | scripts
 npm run test:content -- --baseline   # etiket başına uyarı tavanını yaz (bilinçli kabul)
 npm run test:content -- --verbose    # her uyarıyı tek tek bas
 ```

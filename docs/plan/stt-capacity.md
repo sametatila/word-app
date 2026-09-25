@@ -8,12 +8,12 @@
 - STT istekleri (pocket-mic → /api/stt): 160 istek, 828 sn ses; klip ortalama 5.2 sn, p95 20.0 sn; başarı 81 %, ilk cevap ortalama 663 ms.
 - Sağlayıcı dağılımı: groq/whisper-large-v3-turbo 82 istek (376 sn, ok 61); deepgram/nova-3 49 istek (224 sn, ok 45); mistral/voxtral-mini-latest 13 istek (196 sn, ok 8); cloudflare/@cf/openai/whisper-large-v3-turbo 12 istek (24 sn, ok 12); speechmatics/enhanced 4 istek (8 sn, ok 4).
 - En yoğun gün: Sun Aug 23 — 92 istek, 573 sn; en yoğun saat: 68 istek, 502 sn; en yoğun dakika: 16 istek.
-- Rol yapma turu: 88 (30 gün); konuşma egzersizi denemesi: 5.
+- Sohbet turu: 88 (30 gün); konuşma egzersizi denemesi: 5.
 - Günlük ortalama: 28 sn ses, 5.3 istek → kullanıcı başına gün başına 12 sn / 2.4 istek.
 
 ## Hedef model (WP-20 açıkken, kullanıcı başına gün başına)
 
-10 söyleyiş × 4 sn + 5 rol yapma turu × 7 sn + 0.3 monolog × 45 sn + 0.1 sınav × 35 sn, tekrar çarpanı 1.4 → **129 sn ve 21.6 istek / kullanıcı / gün**; en yoğun saat günün %30'u, en yoğun dakika %5'i.
+10 söyleyiş × 4 sn + 5 sohbet turu × 7 sn + 0.3 monolog × 45 sn + 0.1 sınav × 35 sn, tekrar çarpanı 1.4 → **129 sn ve 21.6 istek / kullanıcı / gün**; en yoğun saat günün %30'u, en yoğun dakika %5'i.
 
 ## Kotalar
 

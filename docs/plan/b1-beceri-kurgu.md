@@ -1,6 +1,6 @@
 # GÖREV — B1 beceri katmanını kur
 
-B1'in 180 dersi bitti (`f33a2e7`), ama beceri katmanı derslerden kopuk. Bu,
+B1'in 180 konuşması bitti (`f33a2e7`), ama beceri katmanı konuşmalardan kopuk. Bu,
 A2'de yapılan işin B1 karşılığı ve **üç patikanın en büyük boşluğu.**
 
 A2 tarafındaki ölçüm, yöntem ve veri güvenliği notları
@@ -11,12 +11,12 @@ bulguların çoğu doğrudan geçerli ve yeniden keşfetmek zaman kaybı.
 
 | Ölçüt | Değer | Hedef |
 |---|---|---|
-| Ders / ünite | 180 / 45 | — |
+| Konuşma / ünite | 180 / 45 | — |
 | Okuma egzersizi | **20** | 90 |
 | Dinleme egzersizi | **20** | 90 |
 | Yazma egzersizi | **16** | 90 |
 | Ünite hizalı ünite | **4/45** | 45/45 |
-| Beceri metinlerinde hiç geçmeyen ders kelimesi | **386/1440** | mümkün olduğunca az |
+| Beceri metinlerinde hiç geçmeyen konuşma kelimesi | **386/1440** | mümkün olduğunca az |
 
 Karşılaştırma: A1 25/25 ünite hizalı, A2 19/25. B1 4/45.
 
@@ -39,9 +39,9 @@ egzersizin hiçbirinin kimliği değiştirilemez, hiçbiri silinemez.** Yeni ün
 dosyalarını listede önlerine ekle: eskiler 90. yuvanın ötesine düşer, kimlikleri
 durur, ilerleme çözülmeye devam eder, sadece patikada zamanlanmazlar.
 
-**(c) SRS kuyruğu havuzdan beslenir, dersten değil.** `src/lib/session.ts:476-549`
-kuyruğu `words` tablosundan `niveau` bandına göre kurar. Ders kelimesi havuzda
-ve doğru seviyede değilse hiç tekrar edilmez. B1 derslerinin havuz uyumunu
+**(c) SRS kuyruğu havuzdan beslenir, konuşmadan değil.** `src/lib/session.ts:476-549`
+kuyruğu `words` tablosundan `niveau` bandına göre kurar. Konuşma kelimesi havuzda
+ve doğru seviyede değilse hiç tekrar edilmez. B1 konuşmalarının havuz uyumunu
 ölçmediysen **önce onu ölç** — A2'de başlangıçtaki yuvaların %21,4'ü tekrar
 motorunun erişemeyeceği yerdeydi ve asıl kazanç oradan geldi.
 
@@ -51,21 +51,21 @@ eski kelime açığa çıkıyor. Bunu tekrar kurma.
 
 ## 3. Yöntem — A2'de işe yarayan sıra
 
-1. **Tanı.** Ders kelimelerini havuzla karşılaştır: kaçı B1 katmanında, kaçı
+1. **Tanı.** Konuşma kelimelerini havuzla karşılaştır: kaçı B1 katmanında, kaçı
    seviye dışı, kaçı havuzda hiç yok, kaçı alt seviye tekrarı. Normalleştirme:
    küçük harfe indir, artikeli ve parantezi ayıkla; **havuz başlıklarını "/"
    ile BÖLME** (`die/das Glace/Glacé` gibi satırlar sahte seviye üretir).
    İşlev sözcüklerini kapsanmamış sayma.
 2. **Kapasiteyi kullanıcıya sor.** 214 egzersiz büyük; ne kadarının bu oturumda
    beklendiğini önceden netleştir.
-3. **Havuz boşluklarını vet et.** Derste öğretilip havuzda olmayan her madde
+3. **Havuz boşluklarını vet et.** Konuşmada öğretilip havuzda olmayan her madde
    için: gerçek başlık mı, türev mi? Türevse `formen` alanına aittir, havuza
    girmez. Girecekler için tam satır üret; **`rank` uydurma**, satır numarasını
    `data/a2-expansion/de_50k.txt`'ten oku.
 4. **Ünite ünite yaz, her modülden sonra dur ve onay al.** Mekanik dağıtım A2'de
    denendi ve reddedildi.
 5. **Her ünite dosyası** 6 egzersiz taşır (`b1-uNN-r1/-r2/-l1/-l2/-w1/-w2`),
-   başında o ünitenin dört dersini, kelimelerini, kalıplarını ve ölçtüğü
+   başında o ünitenin dört konuşmasını, kelimelerini, kalıplarını ve ölçtüğü
    dilbilgisi noktasını sayan bir doküman yorumu bulunur.
 6. **İçerik o üniteye kadar öğretilen kelimelerle sınırlı** — ünite 12'nin metni
    ünite 30'un kelimesini kullanmaz.
@@ -81,18 +81,18 @@ eski kelime açığa çıkıyor. Bunu tekrar kurma.
   onu ölçmüyor. B1'in adayları: `obwohl`/`trotzdem` sıra farkı, Konjunktiv II
   (`wäre`/`hätte`), Passiv (`wird gemacht`), Genitiv, `je … desto`,
   Plusquamperfekt (`nachdem` sonrası), edatlı fiiller (`sich freuen auf/über`).
-- **Rol yapma açılışı `?` içermek zorunda** (`check-lessons.ts` şartı) ve
+- **Sohbet açılışı `?` içermek zorunda** (`check-conversations.ts` şartı) ve
   seviye içinde yinelenemez.
-- Ders başlıkları ve rol yapma açılışları seviye içinde benzersiz olmalı.
+- Konuşma başlıkları ve sohbet açılışları seviye içinde benzersiz olmalı.
 
 ## 5. Kurallar
 
-1. **Ders kimlikleri ve ders sayısı sabit.** `user_conversations` birincil anahtarı
+1. **Konuşma kimlikleri ve konuşma sayısı sabit.** `user_conversations` birincil anahtarı
    `(user_id, conversation_id)`.
-2. **Web canlı.** Ders kaynağı mobille paylaşımlı; iyileştir, bozma, forklama.
-3. **`mobile/src/data/lessons/de-b1.json` TEK SATIR.** Üreteci
-   `JSON.stringify(lessons)`; elle biçimlendirme sahte diff üretir. Ders
-   değişikliğinden sonra `npx tsx scripts/dump-lessons-mobile.ts de`, beceri
+2. **Web canlı.** Konuşma kaynağı mobille paylaşımlı; iyileştir, bozma, forklama.
+3. **`mobile/src/data/conversations/de-b1.json` TEK SATIR.** Üreteci
+   `JSON.stringify(conversations)`; elle biçimlendirme sahte diff üretir. Konuşma
+   değişikliğinden sonra `npx tsx scripts/dump-conversations-mobile.ts de`, beceri
    değişikliğinden sonra `npm run dump:skills` — ikincisinin farkı yalnız kendi
    seviyende olmalı, başka seviyeye taşmışsa dur ve bak.
 4. **Havuza türev eklenmez, `rank` uydurulmaz** (madde 3.3).
@@ -103,14 +103,14 @@ eski kelime açığa çıkıyor. Bunu tekrar kurma.
 ## 6. Doğrulama
 
 Her ünite dosyasından sonra: `npx tsc --noEmit`, `npm run test:content | grep b1-uNN`
-(sıfır uyarı), `npm run check:lessons` (hata sıfır).
+(sıfır uyarı), `npm run check:conversations` (hata sıfır).
 
 Kapanışta ayrıca: `npx tsc --noEmit` `mobile/` içinde, `npm run test:track`,
 `npm run test:options`.
 
-**Uyarı:** `check-lessons.ts`'i doğrudan `npx tsx scripts/check-lessons.ts` ile
-çağırma — `roleplay.ts`'in `server-only` importu yüzünden çöker ve çıktısı boş
-gelir; grep ile sayarsan "sıfır hata" sanırsın. Doğrusu `npm run check:lessons`
+**Uyarı:** `check-conversations.ts`'i doğrudan `npx tsx scripts/check-conversations.ts` ile
+çağırma — `chat.ts`'in `server-only` importu yüzünden çöker ve çıktısı boş
+gelir; grep ile sayarsan "sıfır hata" sanırsın. Doğrusu `npm run check:conversations`
 (e2e tsconfig ile çalışır).
 
 ## 7. Teslim
@@ -123,10 +123,10 @@ nereden geldiği. Sonuç ölçümünü bu dosyanın sonuna yaz.
 
 ## Ek bulgu — 2026-09-05: modül 11-18'in sınav planı yok
 
-B1'e 80 ders eklendi ama o modüllerin sınav planları yazılmadı. Sonuç:
+B1'e 80 konuşma eklendi ama o modüllerin sınav planları yazılmadı. Sonuç:
 
 - `npm run test:exams` → 8 hata: `B1.11 … B1.18: modülün sınav planı yok
-  (src/lib/lessons/module-exam)`
+  (src/lib/conversations/module-exam)`
 - `npm run test:exam-build` → 16 hata: aynı sekiz modülde okuma bölümü ve kapak
   üretilemiyor.
 
@@ -134,7 +134,7 @@ Bu, o modüllerin **modül sınavının çalışmadığı** anlamına geliyor: p
 olmadan `moduleExamPlan` boş dönüyor ve kâğıt eksik kuruluyor.
 
 A1, A2, B2 ve C1'de bu hata yok — dolayısıyla iş B1'e ait. Modül başına bir
-plan (`src/lib/lessons/module-exam`) yazılmalı; mevcut B1.1-B1.10 planları
+plan (`src/lib/conversations/module-exam`) yazılmalı; mevcut B1.1-B1.10 planları
 biçimi gösteriyor.
 
 Not: bu sekiz hata daha önce görünmüyordu, çünkü `exam-dryrun.ts` kaldırılmış
@@ -148,7 +148,7 @@ doğrulayıcı hizalanınca (0 ya da 6) gerçek hata ortaya çıktı.
 İş bitti. Aşağıdaki her sayı §6'daki doğrulayıcılarla ölçüldü; komutlar
 parantez içinde.
 
-### Hedef — 45 ünitenin 45'i kendi derslerinden beslensin
+### Hedef — 45 ünitenin 45'i kendi konuşmalarından beslensin
 
 | Ölçüt | Başlangıç | Şimdi |
 |---|---|---|
@@ -163,7 +163,7 @@ parantez içinde.
 duruyor, `user_skills` kayıtları çözülmeye devam ediyor, yalnız
 zamanlanmıyorlar. Silme değil, sıra değişikliği (§2b).
 
-### Adım 1 tanısının cevabı — B1 derslerinin havuz uyumu
+### Adım 1 tanısının cevabı — B1 konuşmalarının havuz uyumu
 
 1440 sözlükçe yuvası ölçüldü:
 
@@ -176,11 +176,11 @@ zamanlanmıyorlar. Silme değil, sıra değişikliği (§2b).
 | **SRS'in erişemeyeceği yuva** | **0 (%0,0)** |
 
 A2'de asıl kazancın geldiği yer buydu (%21,4 erişilemez). **B1'de o boşluk
-zaten yoktu** — ders kurgusunda (`f33a2e7`) kapanmıştı. Kalan 46 alt seviye
-maddesi bilinçli: hepsi dersin kendi konusu. B1 katmanı kapsama: 1394/1815
+zaten yoktu** — konuşma kurgusunda (`f33a2e7`) kapanmıştı. Kalan 46 alt seviye
+maddesi bilinçli: hepsi konuşmanın kendi konusu. B1 katmanı kapsama: 1394/1815
 farklı başlık (%76,8).
 
-### Beceri metinlerinde hiç geçmeyen ders kelimesi
+### Beceri metinlerinde hiç geçmeyen konuşma kelimesi
 
 | Ölçüm | Başlangıç | Şimdi |
 |---|---|---|
@@ -243,7 +243,7 @@ A1 temiz egzersiz **107 → 113** · B1 **32 → 270**.
 ### Doğrulama (kapanışta)
 
 `npx tsc --noEmit` kökte ve `mobile/` içinde **temiz** ·
-`npm run check:lessons` **hata yok**, 7 uyarı (hepsi B1 bağlaç derslerinin
+`npm run check:conversations` **hata yok**, 7 uyarı (hepsi B1 bağlaç konuşmalarının
 Türkçe açıklamalarında Almanca örnek geçmesi — bağlaç öğretirken
 kaçınılmaz) · `npm run test:track` **64 kontrol geçti** ·
 `npm run test:options` **temiz** · `npm run check:unitvocab -- b1`
@@ -316,7 +316,7 @@ değil.)
 
 Aynı çalışmadan çıkan iki yan bulgu:
 - `b1-u16-r2` ve `b1-u17-r1` metinlerindeki **"Ton" havuzda hiç yok** ve B1
-  derslerinde öğretilmiyor. Sözlükçeye alındı; kapı zaten oradan açık
+  konuşmalarında öğretilmiyor. Sözlükçeye alındı; kapı zaten oradan açık
   (gate egzersizin kendi sözlükçesini serbest sayıyor).
 - **25 sözlükçe karşılığı bilgiyi parantezde taşıyordu** ("mimar (kadın)",
   "(ilaç) almak"). `Gloss` tipinin bunun için ayrılmış `note` alanı var ve
@@ -339,9 +339,9 @@ Aynı çalışmadan çıkan iki yan bulgu:
 | Seviye sınavı Sprechen | dolu (9 drill, 54 uygun cümle) |
 
 `npx tsc --noEmit` kökte ve `mobile/` içinde temiz · `test:track` 64 kontrol
-geçti · `test:options` temiz · `check:lessons` B1'de sıfır hata (kalan 50
+geçti · `test:options` temiz · `check:conversations` B1'de sıfır hata (kalan 50
 hatanın hepsi B2, paralel oturumun sürmekte olan işi) · `test:content`
-bütçesini aşan kategorilerde **B1 payı sıfır** (kalanlar A2/ZH ve dersler) ·
+bütçesini aşan kategorilerde **B1 payı sıfır** (kalanlar A2/ZH ve konuşmalar) ·
 `dump:skills` yenilendi, **farkı yalnız B1'de** (9 yeni, 112 değişen, 0
 silinen).
 
@@ -350,7 +350,7 @@ silinen).
 Yukarıda B1 payı sıfır yazıyor; C1 oturumunun ölçümünde bir kategoride
 B1 uyarısı çıktı:
 
-- `lessons: tekrar adımı payı %N`: 44 uyarının **18'i B1**.
+- `conversations: tekrar adımı payı %N`: 44 uyarının **18'i B1**.
 
 Doğrulayıcı yeniden kullanılabilir olsun diye baseline'a yazıldı;
 kapatılması B1 hattının işi ve kapatılınca tavan da düşürülmeli.

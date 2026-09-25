@@ -1,6 +1,6 @@
 # Faz 7 — İçerik üretim hattı
 
-Rapor: dersler A1/A2 100'er, B1 20, B2/C1 0; konuşma 24 egzersiz; okuma/dinleme yalnız çoktan seçmeli; gerekçe yok. Kod tarafındaki her paket içerik ister; içerik de kod gibi şemalı, doğrulanan ve gözden geçirilen bir hatla üretilmeli. Mevcut desen (`data/skills/SPEC.md`, `make-packets.mjs`, `check.mjs`, `apply-*.ts`) korunur ve genelleştirilir.
+Rapor: konuşmalar A1/A2 100'er, B1 20, B2/C1 0; konuşma 24 egzersiz; okuma/dinleme yalnız çoktan seçmeli; gerekçe yok. Kod tarafındaki her paket içerik ister; içerik de kod gibi şemalı, doğrulanan ve gözden geçirilen bir hatla üretilmeli. Mevcut desen (`data/skills/SPEC.md`, `make-packets.mjs`, `check.mjs`, `apply-*.ts`) korunur ve genelleştirilir.
 
 ---
 
@@ -8,11 +8,11 @@ Rapor: dersler A1/A2 100'er, B1 20, B2/C1 0; konuşma 24 egzersiz; okuma/dinleme
 
 **Amaç.** Her içerik türü için tek şema kaynağı, tek doğrulayıcı, tek üretim/uygulama akışı.
 
-**Mevcut kod.** `src/lib/skills/types.ts`, `src/lib/lessons/types.ts`, `src/lib/cheatsheet/types.ts`, `data/skills/*`, `data/meanings/*`, `data/zurich/*`, `scripts/apply-*.ts`, `scripts/seed-skills.ts`.
+**Mevcut kod.** `src/lib/skills/types.ts`, `src/lib/conversations/types.ts`, `src/lib/cheatsheet/types.ts`, `data/skills/*`, `data/meanings/*`, `data/zurich/*`, `scripts/apply-*.ts`, `scripts/seed-skills.ts`.
 
 **Tasarım.**
 - `data/content/SPEC.md`: tür başına alanlar, dil kuralları (Türkçe sade açıklama; Almanca doğal; tek doğal karşılık ilkesi), seviye ölçütleri (kelime/yapı listeleri), can-do etiketi zorunlu, `why_tr` zorunlu (soru/drill), yasaklar (İngilizce açıklama yok, çeviri yerine örnek).
-- Şema eklemeleri: `SkillQuestion.kind/why_tr`, `WritingTask` yeni türler (WP-31), `SpeakingMonologueExercise` (WP-21), `Lesson.roleplay.script` (WP-04), ders adımı `transform/choose` (WP-62), `Drill` (WP-11), `cando[]` (WP-43).
+- Şema eklemeleri: `SkillQuestion.kind/why_tr`, `WritingTask` yeni türler (WP-31), `SpeakingMonologueExercise` (WP-21), `Conversation.chat.script` (WP-04), konuşma adımı `transform/choose` (WP-62), `Drill` (WP-11), `cando[]` (WP-43).
 - `data/content/check.mjs`: tüm içerik dosyalarını yükler (TS → `tsx` ile), şema + iş kuralları (kimlik benzersiz, can-do var, seviye kelime havuzu dışına çıkan kelime uyarısı — `words` tablosuyla karşılaştırma, umlaut/ß tutarlılığı, Almanca cümle uzunluğu) → CI'da `npm run test:content`.
 - Üretim akışı: `make-packets` → LLM (istem şablonu SPEC'ten) → `check` → insan gözden geçirme listesi (`data/content/review/*.md`, 5 maddede 1 örneklem) → `apply`.
 
@@ -22,28 +22,28 @@ Rapor: dersler A1/A2 100'er, B1 20, B2/C1 0; konuşma 24 egzersiz; okuma/dinleme
 
 **Süre.** 4 gün. **Bağımlılık.** Yok (en başta).
 
-**Durum (2026-08-25).** Adım 1–3 ve 5 bitti; adım 4 WP-71 pilotuna ertelendi (STATUS karar kaydı). `data/content/SPEC.md` (türler, yerler, dil kuralları, zorunlu alanlar/iş kuralları, üretim akışı); tip eklemeleri: `SkillQuestion.kind?`, `ExerciseBase.cando?`, `Lesson.cando?`, `LESSON_ICONS` çalışma zamanı listesi (`Lesson.roleplay.script` WP-04'te eklendi); `scripts/check-content.ts` → `npm run test:content`: 344 egzersiz, 220 ders, 60 sayfa; 0 hata, 2.227 uyarı etiket başına bütçede (`data/content/baseline.json`). `explain` alanı soru gerekçesi (`why_tr`) rolünü üstleniyor.
+**Durum (2026-08-25).** Adım 1–3 ve 5 bitti; adım 4 WP-71 pilotuna ertelendi (STATUS karar kaydı). `data/content/SPEC.md` (türler, yerler, dil kuralları, zorunlu alanlar/iş kuralları, üretim akışı); tip eklemeleri: `SkillQuestion.kind?`, `ExerciseBase.cando?`, `Conversation.cando?`, `CONVERSATION_ICONS` çalışma zamanı listesi (`Conversation.chat.script` WP-04'te eklendi); `scripts/check-content.ts` → `npm run test:content`: 344 egzersiz, 220 konuşma, 60 sayfa; 0 hata, 2.227 uyarı etiket başına bütçede (`data/content/baseline.json`). `explain` alanı soru gerekçesi (`why_tr`) rolünü üstleniyor.
 
 ---
 
-## WP-71 · Ders kapsamı: B1 100, B2 100, C1 60 + adım dengesi
+## WP-71 · Konuşma kapsamı: B1 100, B2 100, C1 60 + adım dengesi
 
-**Amaç.** Ders yolu becerilerin gerisinde; B2/C1 yok. Ayrıca mevcut derslerde tekrar/üret dengesi.
+**Amaç.** Konuşma yolu becerilerin gerisinde; B2/C1 yok. Ayrıca mevcut konuşmalarda tekrar/üret dengesi.
 
 **Tasarım.**
-- Modül temaları `src/lib/lessons/modules.ts`'de var (B1–C1 için tamamla); ders başına: 10–14 adım (tekrar ≤ %40, üret ≥ %35, dönüştür ≥ %15), kelime 6–8 (havuzdan), rol yapma (AI istemi + senaryo yedeği), can-do, özet kalıpları, ilgili dilbilgisi tablosu.
-- Üretim: modül başına paket → LLM → doğrulayıcı → gözden geçirme (her modülde 2 ders tam okuma) → apply. Mevcut 220 derse senaryo yedeği ve adım dengesi (yalnız ekleme: `transform` adımları).
+- Modül temaları `src/lib/conversations/modules.ts`'de var (B1–C1 için tamamla); konuşma başına: 10–14 adım (tekrar ≤ %40, üret ≥ %35, dönüştür ≥ %15), kelime 6–8 (havuzdan), sohbet (AI istemi + senaryo yedeği), can-do, özet kalıpları, ilgili dilbilgisi tablosu.
+- Üretim: modül başına paket → LLM → doğrulayıcı → gözden geçirme (her modülde 2 konuşma tam okuma) → apply. Mevcut 220 konuşmaya senaryo yedeği ve adım dengesi (yalnız ekleme: `transform` adımları).
 - Sıra: B1 (20→100) → B2 (100) → C1 (60).
 
-**Adımlar.** 1. B1 temaları + 10 pilot ders (kalite kalibrasyonu). 2. B1 kalanı. 3. Mevcut 220'ye senaryo + dönüştürme adımları. 4. B2. 5. C1.
+**Adımlar.** 1. B1 temaları + 10 pilot konuşma (kalite kalibrasyonu). 2. B1 kalanı. 3. Mevcut 220'ye senaryo + dönüştürme adımları. 4. B2. 5. C1.
 
-**Kabul.** Her seviyede modül/ders sayısı hedefte; doğrulayıcı yeşil; her derste rol yapma senaryosu.
+**Kabul.** Her seviyede modül/konuşma sayısı hedefte; doğrulayıcı yeşil; her konuşmada sohbet senaryosu.
 
 **Süre.** Sürekli; pilot 4 gün, B1 tamamı ~2 hafta içerik.
 
-**Durum (2026-08-26).** Adım 1 (pilot) bitti: `src/lib/lessons/content/de-b1-b03.ts` — modül 3 "Bağlaç ustalığı" 10 ders (damit, um…zu, obwohl/trotzdem, als/wenn, nachdem, bevor/während, deshalb, je…desto, entweder…oder, anlatı). Kalıp: 14 adım — onay, bağlam, 4 kelime (tekrar), kalıp açıklaması, 1 örnek tekrarı, 4 üretim, 1 doğru/yanlış, geçiş; rol yapma 4–5 tur, açık istem (senaryo yedeği yok; `offline-roleplay` genel görevine düşer). Doğrulayıcı uyarısız. Kalan: B2 100, C1 60; mevcut derslere senaryo yedeği.
+**Durum (2026-08-26).** Adım 1 (pilot) bitti: `src/lib/conversations/content/de-b1-b03.ts` — modül 3 "Bağlaç ustalığı" 10 konuşma (damit, um…zu, obwohl/trotzdem, als/wenn, nachdem, bevor/während, deshalb, je…desto, entweder…oder, anlatı). Kalıp: 14 adım — onay, bağlam, 4 kelime (tekrar), kalıp açıklaması, 1 örnek tekrarı, 4 üretim, 1 doğru/yanlış, geçiş; sohbet 4–5 tur, açık istem (senaryo yedeği yok; `offline-chat` genel görevine düşer). Doğrulayıcı uyarısız. Kalan: B2 100, C1 60; mevcut konuşmalara senaryo yedeği.
 
-**Durum (2026-08-26 akşamı).** B1 tamamlandı: modül 4–10 üretildi (70 ders, `de-b1-b04` … `de-b1-b10`), yani katalog A1 100 + A2 100 + B1 100 = 300 ders. Pilotun kalıbı korundu ama bir düzeltmeyle: pilot partide beş kelimeden yalnızca dördü söyletiliyordu (`check:lessons` 12 hata), yeni partilerde beşi de söyletiliyor ve ders 15–16 adıma çıkıyor. Her modülün ayrıca modül geçiş sınavı planı yazıldı (WP-41 v3). Kelime disiplini: elli kelimenin hepsi seviye içinde yeni, üretim hedefleri katalogda benzersiz.
+**Durum (2026-08-26 akşamı).** B1 tamamlandı: modül 4–10 üretildi (70 konuşma, `de-b1-b04` … `de-b1-b10`), yani katalog A1 100 + A2 100 + B1 100 = 300 konuşma. Pilotun kalıbı korundu ama bir düzeltmeyle: pilot partide beş kelimeden yalnızca dördü söyletiliyordu (`check:conversations` 12 hata), yeni partilerde beşi de söyletiliyor ve konuşma 15–16 adıma çıkıyor. Her modülün ayrıca modül geçiş sınavı planı yazıldı (WP-41 v3). Kelime disiplini: elli kelimenin hepsi seviye içinde yeni, üretim hedefleri katalogda benzersiz.
 
 ---
 

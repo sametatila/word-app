@@ -25,5 +25,5 @@ Bu planı uygulayan her ajan (Claude Code oturumu ya da insan) şu sırayı izle
 ## Kalite çıtası
 - Kullanıcıya yalnız "doğru/yanlış" söyleyen hiçbir yeni ekran kabul edilmez; en az bir "neden" satırı.
 - Her üretim görevi kısmi puan verir (tam/az hata/anlam hatası).
-- Sağlayıcı kapalıyken hiçbir akış kilitlenmez (ders geçme dahil).
+- Sağlayıcı kapalıyken hiçbir akış kilitlenmez (konuşma geçme dahil).
 - Hiçbir metrik yalnız istemcide yaşamaz.

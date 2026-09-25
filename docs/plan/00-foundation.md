@@ -13,8 +13,8 @@ Bu fazdaki paketler diğer her şeyin üstüne oturduğu zemin: ölçüm, sunucu
 **Mevcut kod.** `src/lib/track.ts` (`track(name, value)` → `/api/events`, tablo `events`), `src/lib/ai-usage.ts` (`aiUsage`), `dailyStats`, `reviews`, `userWords`. Raporlama betikleri: `scripts/report-events.ts`, `scripts/report-providers.ts`.
 
 **Tasarım.**
-- Olay sözlüğü genişletilir (`EventName` birliği): `session_round`(game, correct, latency), `production_attempt`(kind: translate|transform|free_sentence|writing_free|speaking_drill|roleplay, score), `exam_start/finish`(kind, level, score), `placement_finish`, `error_recorded`(type), `feedback_why_opened`, `skill_finish`(skill, level, score).
-- KPI tanımları (`docs/plan/kpi.md` olarak WP çıktısı): haftalık aktif öğrenen, **üretim oranı** (üretim cevapları / tüm cevaplar), **kullanım sınavı skoru** (WP-42), beceri yetkinlik değişimi (WP-50), ders geçme oranı, rol yapma tamamlama oranı, hata tipi dağılımı, 7/30 gün tutunma.
+- Olay sözlüğü genişletilir (`EventName` birliği): `session_round`(game, correct, latency), `production_attempt`(kind: translate|transform|free_sentence|writing_free|speaking_drill|chat, score), `exam_start/finish`(kind, level, score), `placement_finish`, `error_recorded`(type), `feedback_why_opened`, `skill_finish`(skill, level, score).
+- KPI tanımları (`docs/plan/kpi.md` olarak WP çıktısı): haftalık aktif öğrenen, **üretim oranı** (üretim cevapları / tüm cevaplar), **kullanım sınavı skoru** (WP-42), beceri yetkinlik değişimi (WP-50), konuşma geçme oranı, sohbet tamamlama oranı, hata tipi dağılımı, 7/30 gün tutunma.
 - `scripts/report-learning.ts`: bu KPI'ları haftalık tablo hâlinde basar (mevcut `report-events.ts` deseni).
 
 **Adımlar.**
@@ -27,7 +27,7 @@ Bu fazdaki paketler diğer her şeyin üstüne oturduğu zemin: ölçüm, sunucu
 
 **Süre.** 2–3 gün. **Bağımlılık.** Yok.
 
-**Durum (2026-08-25).** Bitti. Olay adları eklendi (`src/lib/events.ts`), `events.kind` sütunu + migrasyon `0026_learning_events.sql` (üretim DB'sine uygulandı), `docs/plan/kpi.md` (8 KPI, SQL, hedef), `scripts/report-learning.ts` (`npm run report:learning` üretimde çalıştı: 4 haftalık WAU/ders/tutunma basıyor; üretim, sınav, beceri, hata satırları ilgili WP'ler gelene kadar boş). `session_round` bilinçli olarak yazılmıyor (STATUS karar kaydı).
+**Durum (2026-08-25).** Bitti. Olay adları eklendi (`src/lib/events.ts`), `events.kind` sütunu + migrasyon `0026_learning_events.sql` (üretim DB'sine uygulandı), `docs/plan/kpi.md` (8 KPI, SQL, hedef), `scripts/report-learning.ts` (`npm run report:learning` üretimde çalıştı: 4 haftalık WAU/konuşma/tutunma basıyor; üretim, sınav, beceri, hata satırları ilgili WP'ler gelene kadar boş). `session_round` bilinçli olarak yazılmıyor (STATUS karar kaydı).
 
 ---
 
@@ -87,12 +87,12 @@ Bu fazdaki paketler diğer her şeyin üstüne oturduğu zemin: ölçüm, sunucu
 
 ## WP-03 · AI değerlendirme servisi (`/api/assess`)
 
-**Amaç.** Serbest cümle, serbest yazma, konuşma transkripti ve rol yapma için **tek** değerlendirme ucu; rubrikli, yapılandırılmış JSON döner; sağlayıcı yoksa dürüst yedek.
+**Amaç.** Serbest cümle, serbest yazma, konuşma transkripti ve sohbet için **tek** değerlendirme ucu; rubrikli, yapılandırılmış JSON döner; sağlayıcı yoksa dürüst yedek.
 
 **Mevcut kod.** `src/lib/chat-providers.ts` (`chatProviders`, `completeChat`, `readLimits`), `src/lib/coach.ts` (`coachSpeech`, `coachDialogue` — tek cümlelik teşhis deseni), `src/app/api/coach/route.ts` (istek doğrulama, 503 deseni), `src/lib/ai-usage.ts`.
 
 **Tasarım.**
-- `POST /api/assess` gövde: `{ kind: "sentence"|"writing"|"speaking"|"roleplay", level, task: {prompt, target?, targets?, constraints?}, answer: {text, transcript?, words?}, locale: "tr" }`.
+- `POST /api/assess` gövde: `{ kind: "sentence"|"writing"|"speaking"|"chat", level, task: {prompt, target?, targets?, constraints?}, answer: {text, transcript?, words?}, locale: "tr" }`.
 - Cevap: `{ score: {task:0-4, grammar:0-4, vocab:0-4, structure:0-4, overall:0-100}, errors: [{span:[start,end], type: ErrorType, fix, why_tr}], corrected: string, praise_tr: string, next_tip_tr: string }`.
 - Uygulama: `src/lib/assess.ts` — seviye ve türe göre sistem istemi (Türkçe açıklama, Almanca düzeltme); `completeChat` ile JSON modu (sağlayıcı desteklemiyorsa çıktıyı ayrıştır ve doğrula — `zod` yoksa elle doğrula, geçersizse 502).
 - Sınırlar: metin ≤ 1.500 karakter; kullanıcı başına günlük kota (`readLimits` desenine ek: `ASSESS_DAILY_LIMIT`, varsayılan 60); önbellek (aynı answer+task hash → 24 sa).
@@ -114,26 +114,26 @@ Bu fazdaki paketler diğer her şeyin üstüne oturduğu zemin: ölçüm, sunucu
 
 ---
 
-## WP-04 · Çevrimdışı rol yapma yedeği
+## WP-04 · Çevrimdışı sohbet yedeği
 
-**Amaç.** Ders geçme koşulu `passed = chatDone && oran ≥ 0.7` (`src/lib/lessons/progress.ts:129`); sağlayıcı erişilemezse rol yapma bitmez, ders geçilemez. Yedek: senaryolu, niyet eşleştirmeli yerel diyalog.
+**Amaç.** Konuşma geçme koşulu `passed = chatDone && oran ≥ 0.7` (`src/lib/conversations/progress.ts:129`); sağlayıcı erişilemezse sohbet bitmez, konuşma geçilemez. Yedek: senaryolu, niyet eşleştirmeli yerel diyalog.
 
-**Mevcut kod.** `src/lib/dialogue.ts` (`matchReply`, `usedTargets` — beceri diyaloglarının motoru), `src/lib/lessons/roleplay.ts` (`streamRoleplay`), `src/components/lessons/lesson-player.tsx` (satır ~690: 503 dalı), ders içeriği `roleplay: { opening, minTurns, … }`.
+**Mevcut kod.** `src/lib/dialogue.ts` (`matchReply`, `usedTargets` — beceri diyaloglarının motoru), `src/lib/conversations/chat.ts` (`streamChat`), `src/components/conversations/conversation-player.tsx` (satır ~690: 503 dalı), konuşma içeriği `chat: { opening, minTurns, … }`.
 
 **Tasarım.**
-- Ders içeriğine isteğe bağlı `roleplay.script: DialogueTurn[]` (WP-70 şeması) — kapalı temalı, 3–5 turluk, `minTurns` kadar dal.
-- `lesson-player`: `/api/chat` 503 dönerse (ya da `chatConfigured()` yanlışsa, sunucu `GET /api/chat/status` ile bildirir) `script` ile yerel akışa geç; UI'da "Konuşma servisi kapalı — senaryolu konuşma" rozeti; `chatDone` yerel akışta da sayılır.
+- Konuşma içeriğine isteğe bağlı `chat.script: DialogueTurn[]` (WP-70 şeması) — kapalı temalı, 3–5 turluk, `minTurns` kadar dal.
+- `conversation-player`: `/api/chat` 503 dönerse (ya da `chatConfigured()` yanlışsa, sunucu `GET /api/chat/status` ile bildirir) `script` ile yerel akışa geç; UI'da "Konuşma servisi kapalı — senaryolu konuşma" rozeti; `chatDone` yerel akışta da sayılır.
 - Senaryo yoksa: `usedTargets` mantığıyla "hedef kalıpları kullan" görevine düşülür (kullanıcı 3 hedef kalıbı sesli/yazılı söyler → tamamlandı).
-- İçerik: 220 dersin senaryosu WP-71/72 içinde üretilir; bu WP motor + 10 örnek ders.
+- İçerik: 220 konuşmanın senaryosu WP-71/72 içinde üretilir; bu WP motor + 10 örnek konuşma.
 
 **Adımlar.**
-1. Ders tipine `script` alanı; `dialogue.ts` motorunu ders bağlamında kullanan `src/lib/lessons/offline-roleplay.ts`.
-2. `lesson-player` dal seçimi ve rozet.
-3. 10 A1 dersine senaryo (içerik).
-4. e2e: sağlayıcısız ortamda ders geçilebilir.
+1. Konuşma tipine `script` alanı; `dialogue.ts` motorunu konuşma bağlamında kullanan `src/lib/conversations/offline-chat.ts`.
+2. `conversation-player` dal seçimi ve rozet.
+3. 10 A1 konuşmasına senaryo (içerik).
+4. e2e: sağlayıcısız ortamda konuşma geçilebilir.
 
-**Kabul.** `CHAT_PROVIDER`/anahtarlar yokken A1 dersi baştan sona geçilir, `userConversations.passed = true`.
+**Kabul.** `CHAT_PROVIDER`/anahtarlar yokken A1 konuşmayı baştan sona geçilir, `userConversations.passed = true`.
 
 **Süre.** 3 gün. **Bağımlılık.** Yok (WP-70 şemasıyla uyumlu olmalı).
 
-**Durum (2026-08-25).** Bitti. `LessonRoleplay.script?: DialogueTurn[]`; `src/lib/lessons/offline-roleplay.ts` (`offlineStart/offlineReply/offlineSummary/patternUsed`; senaryo modu = `lib/dialogue` niyet eşleştirme, senaryosuz ders = kalıp modu); `content/scripts-a1.ts` 10 A1 senaryosu (4'er tur, açılışla aynı ilk tur); `GET /api/chat` → `{configured}`; `lesson-player`: konuşmaya girerken ve kayıttan dönerken durum sorgusu, POST 503'te aynı cümleyle senaryoya geçiş, rozet ("Konuşma servisi kapalı — senaryolu konuşma / kalıpları kullan"), `[SAY]` örnek çipi, bitişte `production_attempt(roleplay)` puanı. e2e §30 (16 kontrol, sağlayıcısız `recordLesson.passed === true` dâhil) yeşil. Kanıt: `reports/shots/wp04-roleplay-{start,miss,turns,summary}.png` (demo sunucu, sağlayıcısız).
+**Durum (2026-08-25).** Bitti. `ConversationChat.script?: DialogueTurn[]`; `src/lib/conversations/offline-chat.ts` (`offlineStart/offlineReply/offlineSummary/patternUsed`; senaryo modu = `lib/dialogue` niyet eşleştirme, senaryosuz konuşma = kalıp modu); `content/scripts-a1.ts` 10 A1 senaryosu (4'er tur, açılışla aynı ilk tur); `GET /api/chat` → `{configured}`; `conversation-player`: konuşmaya girerken ve kayıttan dönerken durum sorgusu, POST 503'te aynı cümleyle senaryoya geçiş, rozet ("Konuşma servisi kapalı — senaryolu konuşma / kalıpları kullan"), `[SAY]` örnek çipi, bitişte `production_attempt(chat)` puanı. e2e §30 (16 kontrol, sağlayıcısız `recordConversation.passed === true` dâhil) yeşil. Kanıt: `reports/shots/wp04-chat-{start,miss,turns,summary}.png` (demo sunucu, sağlayıcısız).

@@ -92,15 +92,15 @@ mikrofon açıldı işareti bazen gelmiyor" dedi. `walk_listen` verisi (17:00–
 ```
 
 Altı dinlemenin altısı `end`: tanıyıcı açılıyor, hata vermeden ve hiçbir şey duymadan
-kapanıyor. Aynı kod sahte tanıyıcıyla (`demo-u`, test koşumu) `browser:ok`. Derslerle tek
+kapanıyor. Aynı kod sahte tanıyıcıyla (`demo-u`, test koşumu) `browser:ok`. Konuşmalarla tek
 fark: yürüyüş oturum başında mikrofon akışını tutuyordu (parçaları kapalı). Android eşzamanlı
 kayıt kuralı — sesi üstteki uygulama alır, öteki sessizlik — tanıyıcı servisini sağır
 bırakıyor; aynı akış Bluetooth'ta çıkışı SCO'ya düşürüp okumayı bozuyor (TTS şikâyeti).
 Okumanın diğer yarısı: yürüyüş ses-öğesi zincirini, oyunlar boşluksuz WebAudio yolunu
 kullanıyordu.
 
-Karar: **ekranda kip dersle birebir aynı** (mikrofon tutulmaz, sessiz döngü çalmaz, okuma
-oyunların yolundan, işaret dersin işareti). Cep yolu **"Cebe koy"** ile: mikrofon ve sessiz
+Karar: **ekranda kip konuşmayla birebir aynı** (mikrofon tutulmaz, sessiz döngü çalmaz, okuma
+oyunların yolundan, işaret konuşmanın işareti). Cep yolu **"Cebe koy"** ile: mikrofon ve sessiz
 döngü dokunuşun içinde kuruluyor (mikrofon kilitli ekranda istenemiyor — tek izinli an bu),
 ekran kapanınca kayıt; ekran açıkken cepte kipinde dinlenmiyor (30 sn'de kapanmazsa ekran
 kipi), ekran açılınca kendiliğinden ekran kipi. Ekran kipinde ekran kapanırsa tur durup

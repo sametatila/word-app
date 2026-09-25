@@ -122,7 +122,7 @@ sayfanın içine sıkıştırılmış · **farklı** = var ama kurgusu/yerleşim
 | `UnitScreen` | — | **yok** | Web'de ünite ayrıntısı için ayrı sayfa yok; hub içinde açılıyor |
 | `SkillsScreen` (Beceriler) | `/skills` | **farklı** | Mobilde beceri başına bölüm + egzersiz satırı (nokta + tür + süre + ✓); web'de düz liste, seviye çipleri farklı |
 | `ItemScreen` (egzersiz oynatıcı) | `/immersion/skill/[id]` | **yakın** | |
-| `LessonScreen` | `/lessons/[id]` | **yakın** | |
+| `ConversationScreen` | `/conversations/[id]` | **yakın** | |
 | `QuizScreen` | `/immersion/quiz/[unit]` | **yakın** | |
 | `ExamScreen` | `/exam/[level]/[module]` | **yakın** | |
 | `MockExamsScreen` | `/mock-exams` | **yakın** | Temiz kurulumda 500 (bkz. Y1) |
@@ -154,7 +154,7 @@ sayfanın içine sıkıştırılmış · **farklı** = var ama kurgusu/yerleşim
 | `NotifPrimeScreen` | `push-optin` bileşeni | **gömülü** | |
 | `AuthScreen` | `/login` | **yakın** | |
 | — | `/analytics`, `/admin`, `/demo-games`, `/demo-feedback` | web'e özel | Yönetim/geliştirme yüzeyleri, paritesi gerekmiyor |
-| — | `/lessons`, `/lessons/boss/…` | **web'e özel / eski** | Patika (`/immersion`) ile aynı içeriğin ikinci bir yüzeyi. Alt gezinmede yok, yalnız oynatıcı sonlarından ve `weak-spots-card`'dan bağlanıyor. Mobilde karşılığı yok |
+| — | `/conversations`, `/boss/…` | **web'e özel / eski** | Patika (`/immersion`) ile aynı içeriğin ikinci bir yüzeyi. Alt gezinmede yok, yalnız oynatıcı sonlarından ve `weak-spots-card`'dan bağlanıyor. Mobilde karşılığı yok |
 
 ### 1.4 İşlevsel açıklar
 
@@ -177,7 +177,7 @@ sayfanın içine sıkıştırılmış · **farklı** = var ama kurgusu/yerleşim
 
 | # | Ne | Neden | Kanıt |
 |---|---|---|---|
-| X1 | ~~`/lessons` listesi + `lesson-hub.tsx` (783 satır)~~ | **BİTTİ** (`65e019d`): liste Patika'ya yönlendi, hub silindi, yedi bağlantı çevrildi. Ders (`/lessons/[id]`) ve modül sınavı duruyor | |
+| X1 | ~~`/conversations` listesi + `conversation-hub.tsx` (783 satır)~~ | **BİTTİ** (`65e019d`): liste Patika'ya yönlendi, hub silindi, yedi bağlantı çevrildi. Konuşma (`/conversations/[id]`) ve modül sınavı duruyor | |
 | X2 | ~~`/demo-games`, `/demo-feedback`~~ | **YANLIŞ ALARM**: belgelenmiş geliştirme/ekran görüntüsü sayfaları (README, `docs/plan/60-ui-composition.md`). Dokunulmadı | |
 | X3 | ~~`session-player.tsx` (1690 satır)~~ | **BİTTİ** (`9d2c931`): merkez, üç yan mod ve oynatıcı ayrıldı; dosya 380 satır küçüldü | |
 | X4 | ~~`vercel.json`~~ | **YANLIŞ ALARM**: dosya kendi içinde neden durduğunu yazıyor — cron tanımları KAYIT olarak tutuluyor, çalıştıran systemd timer'ları | |
@@ -312,7 +312,7 @@ Arkadaşlar / kullanıcı / gelen kutusu / sosyal ayarlar ekranlarını yeni dil
 
 ### Şerit X — Temizlik
 
-1. `/lessons` yüzeyinin geleceğine karar (Patika'ya yönlendir ya da koru) — X1.
+1. `/conversations` yüzeyinin geleceğine karar (Patika'ya yönlendir ya da koru) — X1.
 2. `/demo-*` sayfalarını üretimden kaldır — X2.
 3. Y1 (0039 journal) ve Y2 (auth tabloları migrasyonu) düzelt.
 4. `knip` + `eslint` temiz.
@@ -332,7 +332,7 @@ Arkadaşlar / kullanıcı / gelen kutusu / sosyal ayarlar ekranlarını yeni dil
 | S — Sosyal | **bitti** | `97bef74` — kimlik kartı + davet bandı + dolgusuz çipler |
 | O — Onboarding | **bitti** | `b9b68ba` günlük hedef adımı · `11bbbe3` akış mobil sıraya: misafir onboarding + `/first-words` + kararların hesaba taşınması |
 | I — Arayüz dili | **bitti** | Altyapıdan (`b4a5bf2`) son taramaya kadar 14 commit. Arayüzün tamamı üç dilde; kalan yalnızca İÇERİK (aşağıda, §6) |
-| X — Temizlik | **bitti** | `6b992d6` migrasyon açıkları · `65e019d` ders ikiliği + öksüz bileşenler. İki madde yanlış alarmdı (vercel.json, demo sayfaları) |
+| X — Temizlik | **bitti** | `6b992d6` migrasyon açıkları · `65e019d` konuşma ikiliği + öksüz bileşenler. İki madde yanlış alarmdı (vercel.json, demo sayfaları) |
 
 ---
 
@@ -374,7 +374,7 @@ gerekiyor — bu belge kapanmadan.
 ## 6. Şerit I kapanışı — ne bitti, ne bilerek kaldı
 
 **Bitti.** Kabuk, sekmeler, on iki oyun ve tur katmanı, dört yan mod, sınav ve
-deneme sınavı, ders oynatıcısı ve konuşma sınavı, beş beceri oynatıcısı,
+deneme sınavı, konuşma oynatıcısı ve konuşma sınavı, beş beceri oynatıcısı,
 sosyal katmanın tamamı, giriş/kayıt/parola akışı, karşılama sayfası,
 onboarding, kurulum rehberi, ayarlar, profil, ilerleme, başarımlar, avatar,
 yerleştirme testi, hata sayfası ve 404. Sözlük: `src/i18n/base/*` mobilden
@@ -399,7 +399,7 @@ onu görünür kılıyor.
 
 **Bilerek Türkçe kalanlar (karar gerektirenler Samet'e):**
 
-1. **Ders ve sınav içeriği** (~89 bin satır): konuşma senaryoları, deneme
+1. **Konuşma ve sınav içeriği** (~89 bin satır): konuşma senaryoları, deneme
    sınavı kâğıtları, beceri kütüphanesi. Mobilde de Türkçe; ayrı bir içerik
    projesi.
 2. **Can-do ifadeleri** (`lib/cando.ts`, 128) — aynı sınıf.
@@ -492,7 +492,7 @@ testlerde karşılıksız kalmıştı.
   `pg.Pool` şablon etiketi gibi çağrılıyordu (`sql\`…\``), yani o raporlama
   betikleri ilk sorguda patlardı. Etiket doğru biçimde yazıldı.
 - Beş beklenti, ürünün BİLEREK değiştiği yerlerde eskimişti: dilbilgisi
-  bölümü 2026-08'de kaldırıldı (yerleştirme + sınav kâğıdı), rol yapma
+  bölümü 2026-08'de kaldırıldı (yerleştirme + sınav kâğıdı), sohbet
   `894ddb0b` ile 6-9 tura uzatıldı. Testler bugünkü tasarıma göre yazıldı.
 - Bir gerçek hata çıktı: hata analizi `gameLabel`i ham anahtar olarak
   döndürüyordu, yani zayıf nokta kartının ipucunda `games.article_race`
@@ -634,7 +634,7 @@ aradaki boşluğu Erdi dolduruyor, şeridin altına "Devam" koyuyor (Enter ve
 boşluk da çalışıyor) ve on bir oyunun tamamı kendiliğinden ilerlemek yerine
 cevabı bekletiyor. Soru rengi de mobildeki gibi düz metin rengine döndü.
 
-**Ders:** bir farkı "web daha iyi" diye bırakmadan önce öbür tarafın
+**Konuşma:** bir farkı "web daha iyi" diye bırakmadan önce öbür tarafın
 tamamına bakmak gerekiyor. Mobil burada kendi çözümünü bulmuştu ve daha
 iyisiydi.
 
@@ -665,7 +665,7 @@ Belgeye değil koda bakıldı; her iddianın altında koşulan bir ölçüm var.
 | Ne ölçüldü | Nasıl |
 |---|---|
 | Ekran haritası | mobil `screens/` (37) ↔ web `app/**/page.tsx` (57) |
-| İçerik kapsamı | `lessonsFor` · `BUNDLED_EXERCISES` · `MOCK_PAPERS` kurs kurs sayıldı |
+| İçerik kapsamı | `conversationsFor` · `BUNDLED_EXERCISES` · `MOCK_PAPERS` kurs kurs sayıldı |
 | Web → mobil köprüleri | üç döküm betiği de koşuldu, çıktı depodakiyle diff'lendi |
 | Mobil → web sözlüğü | `i18n-pull.mjs` koşuldu, ayrışma arandı |
 | Sözlük kullanımı | `i18n-check`in `KEY_CALL` kalıbıyla iki taraftaki çağrılar çıkarıldı |
@@ -684,28 +684,28 @@ ve Mac'te cihaz koşusu.
 ### 10.3 Web → mobil içerik köprüleri: ayrışma yok
 
 Üç döküm betiği de koşuldu; `mobile/src/data/**` altında **tek satır fark
-çıkmadı**. Yani beceri egzersizleri, deneme kâğıtları ve Almanca dersler için
+çıkmadı**. Yani beceri egzersizleri, deneme kâğıtları ve Almanca konuşmalar için
 "tek kaynak web, mobil türev" kuralı bugün gerçekten tutuyor.
 
-Betiğin kendisinde bir açık vardı: `dump:lessons` `package.json`'da **yoktu**.
-Mobil ders paketinin kaynağın gerisinde kalması (`3c1b7b61`) bu yüzden fark
+Betiğin kendisinde bir açık vardı: `dump:conversations` `package.json`'da **yoktu**.
+Mobil konuşma paketinin kaynağın gerisinde kalması (`3c1b7b61`) bu yüzden fark
 edilmemişti. Eklendi.
 
-### 10.4 Bulunan asıl ayrışma: İngilizce dersler
+### 10.4 Bulunan asıl ayrışma: İngilizce konuşmalar
 
-| kurs | web ders | web egzersiz | web kâğıt | mobil ders |
+| kurs | web konuşma | web egzersiz | web kâğıt | mobil konuşma |
 |---|---|---|---|---|
 | de | 580 | 995 | 60 | 580 |
 | gsw-zh | 0 (hedef dili Almanca) | 0 | 0 | — |
 | en | **0** | 189 | 60 | **200** |
 
-İki yüz ders (A1 100, A2 100) doğrudan `mobile/src/data/lessons/en-*.json`
+İki yüz konuşma (A1 100, A2 100) doğrudan `mobile/src/data/conversations/en-*.json`
 olarak yazılmış ve web'e **hiç girmemiş** — geçmişte de hiç olmamışlar
-(`git log --diff-filter=A 'src/lib/lessons/content/en-*'` boş). Sonuç:
+(`git log --diff-filter=A 'src/lib/conversations/content/en-*'` boş). Sonuç:
 İngilizce kursu seçen web kullanıcısı Patika'da hiçbir konuşma düğümü
-görmüyordu; aynı kullanıcı Android'de yüz dersi birden görüyordu.
+görmüyordu; aynı kullanıcı Android'de yüz konuşmayı birden görüyordu.
 
-`7957f895` ile kapandı: dosyalar `src/lib/lessons/content/` altına taşındı,
+`7957f895` ile kapandı: dosyalar `src/lib/conversations/content/` altına taşındı,
 tek kaynak yeniden web oldu, mobil paketi döküm üretiyor. Dönüşün kayıpsız
 olduğu ölçüldü — dökümden çıkan iki paket depodakiyle nesne nesne aynı.
 
@@ -728,7 +728,7 @@ ayrıldılar:
 | tekil kopyalar (7) | **taşındı** | `lang.app_language`, `anlt.send_usage`, `firstw.title`, `rpexam.listening`, `authw.no_connection`, `authw.reset_sent`, `wordsw.load_failed` |
 | `walk` (34) | **kalıyor** | Web yürüyüşü tarayıcı tanıyıcısıyla çalışıyor; mobilinki native servis. Metinler farklı çünkü DAVRANIŞ farklı ("Chrome ya da Safari", "Cebe koy") |
 | `onb` (21) | **kalıyor** | Web akışı beş adım ve mobilde olmayan bir "amaç" adımı taşıyor |
-| `lessonp` (29) | **kalıyor** | Web oynatıcısında eller serbest kipi, sohbet servisi kapalı uyarısı ve sınav bağlantısı var; mobilde yok |
+| `conversationp` (29) | **kalıyor** | Web oynatıcısında eller serbest kipi, sohbet servisi kapalı uyarısı ve sınav bağlantısı var; mobilde yok |
 | `wordsw`, `authw` kalanı | **kalıyor** | Sayfalama, parola sıfırlama akışı — mobilde karşılığı yok |
 | `bossw`, `challenge`, `land`, `install`, `stage`, `pron` | **kalıyor** | Web'e özgü yüzeyler |
 
@@ -827,7 +827,7 @@ referans taraf da düzeldi — bu oturumdaki `textMuted` kararıyla aynı çizgi
   yüzey; mobildeki başlığın gerçek karşılığı (`app-header.tsx`) zaten aynı
   üçlüyü taşıyor.
 - **Ünite teması ikonları.** Web'in ikon setinde 47 kullanılmayan ikon var
-  (bread, bus, cake…) ve `lesson.icon` alanı İKİ tarafta da uykuda. Asimetri
+  (bread, bus, cake…) ve `conversation.icon` alanı İKİ tarafta da uykuda. Asimetri
   değil, ortak bir uyuyan zemin; temalı Patika için hazırlık gibi duruyor.
 - **Tur başlığının kompozisyonu.** Android tek satırda çıkış, ilerleme çubuğu,
   seri hapı ve sayaç gösteriyor; web bunları iki satıra bölüyor ve üstte
@@ -891,36 +891,36 @@ tarayıcısının içerik listesinde (`first-words.ts` gibi).
 
 ### 11.9 Mobilde eksik: yapay zekâ kapalıyken senaryo yolu
 
-Konuşma dersinin sohbeti yapılandırılmamışsa (`/api/chat` `configured:false`)
+Konuşma konuşmasının sohbeti yapılandırılmamışsa (`/api/chat` `configured:false`)
 iki platform farklı davranıyor:
 
-- **Web** derse ait SENARYOYA düşüyor (`lib/lessons/offline-roleplay`): açılış
-  repliği, ipucu ve dallanan bir tur akışı ders verisinden okunuyor, yani
+- **Web** konuşmaya ait SENARYOYA düşüyor (`lib/conversations/offline-chat`): açılış
+  repliği, ipucu ve dallanan bir tur akışı konuşma verisinden okunuyor, yani
   konuşma çalışmaya devam ediyor.
 - **Mobil** böyle bir yola sahip değil. Eskiden her tur genel `catch`e düşüp
   "bağlantı sorunu" yazıyordu — yanlış teşhis; artık doğrusu söyleniyor
-  (`lesson.ai_off`) ama ders yine de yapılamıyor.
+  (`conversation.ai_off`) ama konuşma yine de yapılamıyor.
 
-Senaryo yolunu mobile taşımak bir durum makinesi ve ders verisi okuma demek;
+Senaryo yolunu mobile taşımak bir durum makinesi ve konuşma verisi okuma demek;
 loop turunun işi değil, ayrıca ölçülmeli. Yön yine TERS (web ileride), §11.7
 ile aynı sınıf.
 
 #### Portun boyutu ölçüldü (bu tur)
 
   modül            satır   bağımlılık
-  offline-roleplay   180   dialogue, speech.normalizeSpoken, chat-format, courses
+  offline-chat   180   dialogue, speech.normalizeSpoken, chat-format, courses
   dialogue           128   yalnız speech.normalizeSpoken
   normalizeSpoken     ~15  foldNumbers + noktalama (mobilde ikisi de var)
 
 Yani zincir kapalı ve mobilde karşılığı olmayan tek parça `normalizeSpoken`,
-o da on beş satır. `SUGGESTION_MARK` mobilde ZATEN var (`game/roleplay`,
+o da on beş satır. `SUGGESTION_MARK` mobilde ZATEN var (`game/chat`,
 kendi kopyası).
 
-KRİTİK VERİ: dallanan senaryo 780 dersin 10'unda var (`roleplay.script`).
-Kalan 770 ders zaten `offlineStart`ın İKİNCİ yoluna düşüyor - açılış repliği
-`roleplay.opening`, yönlendirme `patterns[0]` - ve mobil döküm ikisini de
-taşıyor. Yani portun büyük kısmı döküm değişikliği İSTEMİYOR; yalnız o 10 ders
-için `roleplay.script` alanının döküme eklenmesi gerekiyor.
+KRİTİK VERİ: dallanan senaryo 780 konuşmanın 10'unda var (`chat.script`).
+Kalan 770 konuşma zaten `offlineStart`ın İKİNCİ yoluna düşüyor - açılış repliği
+`chat.opening`, yönlendirme `patterns[0]` - ve mobil döküm ikisini de
+taşıyor. Yani portun büyük kısmı döküm değişikliği İSTEMİYOR; yalnız o 10 konuşma
+için `chat.script` alanının döküme eklenmesi gerekiyor.
 
 #### Yan bulgu, DÜZELTİLDİ: üç yönlendirme Türkçe sabitti
 
@@ -929,7 +929,7 @@ Türkçe SABİT yazıyordu: "Kalıbı kullan: …", "Anlaşılmadı — ör. …
 kalıp / Bu kalıbı dene: …". İngilizce ve Almanca arayüzde de Türkçe
 görünüyorlardı.
 
-Ham metin tarayıcısı bunları GÖREMİYORDU: `lib/lessons` dizini "ders içeriği"
+Ham metin tarayıcısı bunları GÖREMİYORDU: `lib/conversations` dizini "konuşma içeriği"
 diye bütünüyle atlanıyor, oysa bu dosya MANTIK. Kör noktanın kendisi de
 kapatıldı - tarayıcıya `FORCE` listesi eklendi: atlanan dizinin içinde olsa da
 taranan dosyalar.
@@ -947,7 +947,7 @@ borçları betikte yazılı - hepsi birden eklenirse taban 173'ten 281'e çıkar
 
     modules.ts          46   modül adları/açıklamaları (müfredat içeriği)
     module-content.ts   35   bölüm etiketleri + içerik türetme
-    roleplay.ts         19   modele giden yönerge (kullanıcı görmüyor)
+    chat.ts         19   modele giden yönerge (kullanıcı görmüyor)
     native-server.ts     4
     log.ts               2
     native.ts            2
@@ -956,14 +956,14 @@ AYRIM YAPILDI (altısının hepsi tek tek okundu) ve sonuç şu: HİÇBİRİ
 kullanıcıya görünen bir yerelleştirme hatası değil. Beşinde Türkçe olması
 DOĞRU, altıncısı ölü:
 
-    log.ts             2   sunucu logu (`[roleplay-log] yazılamadı`) - tabandaki
+    log.ts             2   sunucu logu (`[chat-log] yazılamadı`) - tabandaki
                            173 dizginin çoğu da aynı sınıf
-    native-server.ts   4   sunucu logu (`[native] ders çevrilemedi…`)
+    native-server.ts   4   sunucu logu (`[native] konuşma çevrilemedi…`)
     native.ts          2   TÜRKÇE İÇERİĞİ TANIYAN çerçeve deseni; Türkçe
                            kalmalı, yoksa desen içeriği bulamaz
     module-content.ts 35   `LEAD_INS` - içerikten yönergeyi kırpan Türkçe
                            desen listesi; aynı sebep
-    roleplay.ts       19   modele giden yönerge metni, kullanıcı görmüyor
+    chat.ts       19   modele giden yönerge metni, kullanıcı görmüyor
     modules.ts        46   `MODULE_THEMES` - ÇAĞIRANI YOK (src, scripts, mobil
                            ve data'da tek kullanım yok; aynı dosyadaki
                            `MODULE_SIZE` beş yerden kullanılıyor, yani ölü olan
@@ -995,7 +995,7 @@ güvenilmez, `CourseId` dört dosyada geçmesine rağmen listede çıkıyor" dem
 İki bağımsız uygulama (belirteç indeksi ve ad ad regex) 346/345 ile hemfikir,
 ve `CourseId` tek tek bakıldığında GERÇEKTEN kullanılmıyor: öteki üç geçişin
 ikisi YORUM içinde (`walk-player`, `mock-exams/types`), üçüncüsü ise başka bir
-ad (`lessons/index`te `isCourseId`). Yani sayı doğru, vazgeçme sebebi tek:
+ad (`conversations/index`te `isCourseId`). Yani sayı doğru, vazgeçme sebebi tek:
 gürültü.
 
 Bu ailenin gerçekten önemli iki kalemi (73 tema ikonu, `MODULE_THEMES`) düz
@@ -1216,19 +1216,19 @@ Oynatıcı yazmak (birinci seçenek) hâlâ açık bir iş: tur webde var ve AI
 hakemli yazma mobilde hiç yok. Bu kapanış "mobil artık YANLIŞ bir şey
 göstermiyor" demek, "mobil de oynuyor" demek değil.
 
-### 11.14 Ders ikonu: alan çalışıyor, ÇİZİMİ iki platformda da yok
+### 11.14 Konuşma ikonu: alan çalışıyor, ÇİZİMİ iki platformda da yok
 
-`LESSON_ICONS` 65 konu simgesi tanımlıyor ve yorumu ne için olduğunu söylüyor:
-"yol haritasındaki düğüm simgesi — dersin konusunu tek bakışta söylüyor".
-İçerik de bunu dolduruyor (780 dersin hepsinde bir `icon` var).
+`CONVERSATION_ICONS` 65 konu simgesi tanımlıyor ve yorumu ne için olduğunu söylüyor:
+"yol haritasındaki düğüm simgesi — konuşmanın konusunu tek bakışta söylüyor".
+İçerik de bunu dolduruyor (780 konuşmanın hepsinde bir `icon` var).
 
-ALAN ÖLÜ DEĞİL: `lib/cando-map` onu okuyup dersi bir can-do temasına
+ALAN ÖLÜ DEĞİL: `lib/cando-map` onu okuyup konuşmayı bir can-do temasına
 (social/service/work) yerleştiriyor ve `check-content` değerin kayıt
 defterinde olduğunu doğruluyor. Sınıflandırmayı sunucu yaptığı için iki
 platform da aynı gruplamayı görüyor.
 
 ÇİZİLMEYEN kısım görsel olan: Patika düğümü hem webde hem Androidde öğenin
-TÜRÜNÜ gösteriyor (kitap/kulaklık/kalem), dersin KONUSUNU değil. Yani burada
+TÜRÜNÜ gösteriyor (kitap/kulaklık/kalem), konuşmanın KONUSUNU değil. Yani burada
 parite YOK DEĞİL - iki platform eşit biçimde eksik.
 
 Web'de bu iş için 73 tema ikonu bileşeni yazılmış (`BabyIcon`, `BreadIcon`,
@@ -1381,7 +1381,7 @@ benzemiyor).
 **a/b ile birlikte ÇIKAN VE İKİ TARAFTA DA DÜZELTİLEN hata:** bu iki okumada
 boşluk sınırı kalktığı için içerme tehlikeli. Hedef "was", söylenen "das
 Wasser" → sıkıştırılmış biçim hedefi içeriyordu ve yanlış cevap doğru
-sayılıyordu; Android bunu baştan beri yapıyordu. Ders havuzundaki 5164 başlık
+sayılıyordu; Android bunu baştan beri yapıyordu. Konuşma havuzundaki 5164 başlık
 ölçüldü: 3 harf eşiğinde 1310 hedef başka bir başlığın içinde geçiyor, 12
 harfte 22 ("der Chef" ⊂ "die Chefin" gibi türevler). Bu iki okumanın içerme
 eşiği ayrıldı ve 12 yapıldı - bölünmüş bileşik zaten EŞİTLİKLE yakalanıyor,
@@ -1428,7 +1428,7 @@ Aynı ölçümde `acceptedForms` da Almancaya sabit çıktı: `normalize`ı dils
 çağırıyordu (simge tablosu Almanca geliyordu) ve baştaki tanımlığı
 `der|die|das` ile düşürüyordu. Dile bağlandı.
 
-**e) Kısaltmalar - iki platformda da yok.** İngilizce derslerde 338 konuşma
+**e) Kısaltmalar - iki platformda da yok.** İngilizce konuşmalarda 338 konuşma
 adımı kısaltma taşıyor (181 repeat, 157 produce: "I'm from Turkey.",
 "What's your name?"). Kesme işareti artık iki tarafta da siliniyor, yani
 "I'm" ile "Im" aynı; ama "I am" hâlâ farklı bir dize. Tanıyıcı ya da kullanıcı
@@ -1436,7 +1436,7 @@ açık biçimi verdiğinde cevap yanlış sayılıyor.
 
 Kaynakta beş `repeat` adımında `accept` alternatifi yazılı (ikisi tam bu
 kısaltma sorunu: "I am waiting at the bus stop."). Ama `accept` repeat'te
-İKİ İSTEMCİDE DE bilerek okunmuyor - web `lesson-player`ın satırı açık:
+İKİ İSTEMCİDE DE bilerek okunmuyor - web `conversation-player`ın satırı açık:
 `[e.target, ...(e.kind === "produce" ? (e.accept ?? []) : [])]`. Yani o beş
 alternatif ölü veri ve düzeltme yeri istemci değil:
 
@@ -1779,9 +1779,9 @@ yeşil olmadan içerik depoya girmez". Ölçüldü:
      adımın içinde yok; kural yalnız yazının kendisine dayanıyor.
   2. Ve bugün KIRMIZI. Uyarı bütçesi üç etikette aşılmış:
 
-         lessons: çok anlamlı vocab tr      188 > 81   (iki kattan fazla)
-         lessons: lecture N adım (N–N)       31 > 25
-         lessons: havuz dışı kelime N/N       5 > 4
+         conversations: çok anlamlı vocab tr      188 > 81   (iki kattan fazla)
+         conversations: lecture N adım (N–N)       31 > 25
+         conversations: havuz dışı kelime N/N       5 > 4
 
      Taban dosyasına son dokunan commit `0915c59f` (beceri kütüphanesi), yani
      borç ÇALIŞMA AĞACINDA değil, ana dalda duruyor.
@@ -1794,7 +1794,7 @@ tarafın kararı.
 
 #### Sebep bulundu: taban İNGİLİZCE KURSTAN ÖNCE donmuş
 
-Üç etiketin hepsi ders ders çıkarıldı ve kurs eksenine göre ayrıldı. Sonuç
+Üç etiketin hepsi konuşma konuşma çıkarıldı ve kurs eksenine göre ayrıldı. Sonuç
 tesadüf olamayacak kadar düzenli:
 
     etiket                          taban   bugün   Almanca   İngilizce
@@ -1803,10 +1803,10 @@ tesadüf olamayacak kadar düzenli:
     havuz dışı kelime N/N               4       5         4           1
 
 ÜÇÜNDE DE Almanca sayı tabana BİREBİR eşit ve aşımın tamamı İngilizce
-kurstan geliyor. Yani Almanca içerik hiç gerilemedi; taban İngilizce dersler
+kurstan geliyor. Yani Almanca içerik hiç gerilemedi; taban İngilizce konuşmalar
 depoya girmeden önce donmuş ve o günden beri güncellenmemiş.
 
-(Dördüncü ders etiketi `tekrar adımı payı %N` bütçe içinde: 44, tabanı da 44,
+(Dördüncü konuşma etiketi `tekrar adımı payı %N` bütçe içinde: 44, tabanı da 44,
 hepsi Almanca. Beceri etiketlerinin hiçbiri aşılmamış.)
 
 Bu, "içerik özensizleşti" değil "kapı bir kursu hiç görmedi" demek ve kararı
@@ -1847,7 +1847,7 @@ sürmekte olan beceri kütüphanesi işi (İngilizce egzersizler) bu etiketi
 tetikleyemez. Yalnız Almanca bir egzersiz İngilizce karşılıksız eklenirse
 kırmızı olur - ki bugünkü standart tam olarak bunu yasaklıyor.
 
-Üç ders etiketine DOKUNULMADI; onlar hâlâ içeriği yazan tarafın kararı.
+Üç konuşma etiketine DOKUNULMADI; onlar hâlâ içeriği yazan tarafın kararı.
 
 #### Taban baştan sona denetlendi
 
@@ -1858,7 +1858,7 @@ On iki kalemin hepsi bugünkü sayıyla karşılaştırıldı:
     2 kalem   BAYAT          borcu ödenmiş, tavan yüksek kalmış:
                              `skills: en yok` 1209 → 0
                              `skills: intro Türkçe olmalı; Almanca harf var` 2 → 0
-    3 kalem   AŞIM           üç ders etiketi; İngilizce kursun payı (yukarıda)
+    3 kalem   AŞIM           üç konuşma etiketi; İngilizce kursun payı (yukarıda)
 
 İkinci bayat kalem de indirildi: kural Türkçe olması gereken bir tanıtım
 metninde Almanca harf arıyor (`intro Türkçe olmalı`) ve bugün hiç tetiklemiyor.
@@ -2167,37 +2167,37 @@ eşlenirken düştü, seviye adımı artık ayrı bir ara adıma geçmiyor.)
 
 Düzeltilmedi çünkü Android'e eşlemenin yolu bu çağrıları başka bir olaya
 taşımak ve o olayın adını UYDURMAK: onboarding çıkış yolu için `onboarding_done`
-gibi bir ad, rol yapma sınavı için de webde-var/Android'de-yok bir yüzeyin
-(WP-22, `/lessons/[id]/exam` - Android'de rol yapma dersin içinde bir aşama,
+gibi bir ad, puanlı kısım için de webde-var/Android'de-yok bir yüzeyin
+(WP-22, `/conversations/[id]/scored` - Android'de sohbet konuşmanın içinde bir aşama,
 ayrı sınav yüzeyi yok) kendi olayı gerekirdi. İkisi de §11.29'da kaydedilen
 sınıf: mevcut bir ada zorlamak veri kaybettirir, yenisini uydurmak Sametin
 kararı. Şu an bir raporu bozmuyor - `nav` kovasını okuyan sorgu yok.
 
-### 11.35 Patika dersleri Androidde HİÇ ölçülmüyordu
+### 11.35 Patika konuşmaları Androidde HİÇ ölçülmüyordu
 
 Ölçüm:
 
     web    conversation_start 1 · conversation_step 4 çağrı · conversation_finish 1
-    mobil  0 · 0 · 0     (LessonScreen'de tek bir track çağrısı yok)
+    mobil  0 · 0 · 0     (ConversationScreen'de tek bir track çağrısı yok)
 
-`LessonScreen` 750 satır ve mobilin patika yüzeyi: anlatım, konuşma, özet.
-Ders bir öğrencinin uygulamada geçirdiği en uzun tek oturum ve Android'de
-hiçbiri kaydedilmiyordu - kaç ders başlandığı, hangi adımda takılındığı, kaç
+`ConversationScreen` 750 satır ve mobilin patika yüzeyi: anlatım, konuşma, özet.
+Konuşma bir öğrencinin uygulamada geçirdiği en uzun tek oturum ve Android'de
+hiçbiri kaydedilmiyordu - kaç konuşma başlandığı, hangi adımda takılındığı, kaç
 tanesinin bittiği yalnız webden sayılabiliyordu. Mobilde track yazan on üç
 ekran var, bu on dördüncüsü değildi.
 
 Web'in dilbilgisi aynen alındı:
 
-    conversation_start   value 1 kaldığı yerden · 0 baştan   kind ders kimliği
+    conversation_start   value 1 kaldığı yerden · 0 baştan   kind konuşma kimliği
     conversation_step    kind "adım:yol"                     value 2 / 1 / 0
-    conversation_finish  value puanlı adımlarda doğru %      kind ders kimliği
+    conversation_finish  value puanlı adımlarda doğru %      kind konuşma kimliği
 
 Üç ayrıntı ölçülerek yerleştirildi:
 
 - **Başlangıç tek yerden.** Anlatıma üç giriş yolu var (ilk açılış, "kaldığın
   yerden", "baştan başla") ve üçü de `presentFrom` çağırıyor. Olay
   `beginLecture` içinde ve bir kerelik bir ref'le korunuyor; yoksa "baştan
-  başla"ya basan öğrenci iki ders başlangıcı üretirdi.
+  başla"ya basan öğrenci iki konuşma başlangıcı üretirdi.
 - **Sıfır yalnız adım GEÇİLEMEDİĞİNDE.** Web de öyle: her yanlış denemeye
   ayrı sıfır yazmak bir adımı üç başarısız adım gibi gösterirdi. Mobilde eşik
   aynı (üçüncü denemeden sonra doğrusu duyurulup geçiliyor).
@@ -2226,8 +2226,8 @@ SUNUCUDA yazılıyor (`lib/assess.ts`, hem doğrudan hem kuyruk yolunda) ve dör
 üretim türünü `productionKind` ile etiketliyor. İki platformun üretim
 görevleri de aynı uçtan (`/api/assess`) geçtiği için Android'in ayrı bir
 yazıcıya ihtiyacı yok - sayı zaten iki platformu birlikte topluyor. Webdeki
-tek istemci çağrısı çevrimdışı rol yapma özetine ait
-(`lib/lessons/offline-roleplay`), o yol Android'de yok ve zaten kayıtlı.
+tek istemci çağrısı çevrimdışı sohbet özetine ait
+(`lib/conversations/offline-chat`), o yol Android'de yok ve zaten kayıtlı.
 Burada yapılacak bir şey çıkmadı.
 
 **Bulunan tasarım hatası: `ARTIKEL_TONE` elle yazılı Tailwind varsayılanıydı.**
@@ -2361,7 +2361,7 @@ kalın yazı eşiği 4.5'in çok altında. Bitmiş (mint) yanı zaten anlamsal
 jetondu. `--color-flame` + %14 ile açık temada 4.55, koyu temada 9.31 -
 `progress-view` ve `app-shell`teki kabul edilmiş kalıbın aynısı.
 
-Üçünün ortak dersi: bir rengin metin olarak kullanıldığı yerde sabit basamak
+Üçünün ortak konuşmayı: bir rengin metin olarak kullanıldığı yerde sabit basamak
 YANLIŞ - basamak dolgu için, anlamsal jeton metin için. Sapma her seferinde
 tek bir ternary'nin bir yanında duruyordu, yani gözle bakan biri "jeton
 kullanılmış" diye geçiyordu.
@@ -2517,7 +2517,7 @@ biçimdeydi -
 yani dolgu bir ternary ve beyaz dalı tam olarak ANLAMSAL dala denk geliyor.
 Sekizi de düzeltildi: "Devam" (onboarding), "Gönder" (bildirme), "Abone ol"
 ve "Uygula" (ödeme), "Hesabımı kalıcı olarak sil", kelime süzgeci çipi,
-ders ilerleme oku, günün turu sıralamasındaki kendi avatarın.
+konuşma ilerleme oku, günün turu sıralamasındaki kendi avatarın.
 
 İkisinin kendi içinde çelişkisi vardı ve teşhisi doğruluyor: ödeme
 ekranındaki iki düğmede bekleme göstergesi zaten `colors.onPrimary`
@@ -2550,7 +2550,7 @@ yüzey** tema duyarlı jetonu dolgu olarak kullanıyor (`var(--color-brand)`,
     sky-300   #6fd1e3     1.76     ~10.5
 
 Açık temada hepsi 5.3-6.1 ile geçiyor, yani hata YALNIZ koyu temada görünüyor:
-mikrofon düğmeleri (ders, sınav), ödeme ekranının simge karosu ve düğmesi,
+mikrofon düğmeleri (konuşma, sınav), ödeme ekranının simge karosu ve düğmesi,
 yerleştirme sınavının harf dairesi, lig tablosunun rozeti, yazma görevinin
 onay işareti, patron turunun sonuç dairesi, yönetim panosunun sekmesi.
 
@@ -2731,13 +2731,13 @@ varyantın ağırlığını da (600) doğru alıyor.
     yuvarlaklık  punto  yer
     -            16     AuthScreen, Find
     md (14)      16     SettingsScreen, DeleteAccountScreen, SocialSettings
-    lg (20)      16     LessonScreen (ders yazma alanı)
+    lg (20)      16     ConversationScreen (konuşma yazma alanı)
     md (14)      15     skillQuiz (5), ExamScreen (2)
     lg (20)      15     WordsScreen, skillLibrary
     lg (20)      18     rounds (3) - tur cevap alanları
 
 Webde `.input` tek bir kural: punto `--text-body` (15), yarıçap
-`--radius-panel` (20). Ama webin kendisi de her yüzeyde eziyor - ders yazma
+`--radius-panel` (20). Ama webin kendisi de her yüzeyde eziyor - konuşma yazma
 alanı `text-sm` (14) yazıyor.
 
 İki gerçek eşleşme var ve ikisi de doğru çıktı: tur cevap alanları iki
@@ -2810,9 +2810,9 @@ yapılacak bir şey yok ve 37 yere `hit-8` serpmek gürültü olurdu.
 **Okunamayan 17'nin içinden üçü gerçekten geride kalmıştı** ve üçü de satır
 içi mikro denetim - kodu satır satır okuyup doğruladım:
 
-- **Ders baloncuğunun dinle düğmesi** (`lesson-player`): 28px daire,
+- **Konuşma baloncuğunun dinle düğmesi** (`conversation-player`): 28px daire,
   genişleme yok. Mobil karşılığı `hitSlop={8}` taşıyor. `hit-8` ile 44.
-- **"Bu yanıtı bildir"** (`lesson-player`) ve **"Bu geri bildirimi bildir"**
+- **"Bu yanıtı bildir"** (`conversation-player`) ve **"Bu geri bildirimi bildir"**
   (`writings-card`): çıplak 11px yazı, dolgu yok - yani hedefin yüksekliği
   yazının kendisi kadardı, **WCAG 2.2'nin 24px asgarisinin altında**. Bu bir
   parite eksiği değil, doğrudan bir erişilebilirlik hatası; üstelik Play'in
@@ -2884,12 +2884,12 @@ düzgün ayıklanıp yönetim panosu, demo sayfaları ve `console.*` satırları
 çıkarılınca liste **25**'e indi. Yirmi beşin hepsini tek tek okudum ve
 hepsi meşru:
 
-- `lesson-player` `TRUE_WORD` / `FALSE_WORD` (doğru/richtig/true …):
+- `conversation-player` `TRUE_WORD` / `FALSE_WORD` (doğru/richtig/true …):
   tanıyıcının dile göre beklediği KELİME. Sözlükten gelemez, üç dilin üçü de
   yazılı.
 - `walk-player` `note("cebe alındı")` ve üç kardeşi: teşhis paneline yazılan
   geliştirici izi (`setDiag`), kullanıcı arayüzü değil.
-- `roleplay-exam` `constraints: ["yardım yok"]`: yapay zekâya GİDEN istemin
+- `conversation-scored` `constraints: ["yardım yok"]`: yapay zekâya GİDEN istemin
   parçası, ekrana çıkan metin değil.
 - `legal-shell`: kendi ÜÇ DİLLİ tablosunu taşıyor (tr/en/de tam çeviri).
   `t()` sözlüğünden geçmiyor ve geçmemesi bilinçli - hukuk metinlerinin
@@ -2927,10 +2927,10 @@ Beş arayüz dosyası dizgesinin hepsi meşru: dil adları kendi dilinde yazıl�
 kendi dilini tanıyabilsin) ve "Hören" bir Almanca sınav bölümü adı.
 
 **Ama ayıklama sırasında canlı bir hata çıktı.** `moduleThemes.ts`in web
-karşılığı `lib/lessons/modules.ts` ve iki kopya elle tutuluyor. Web B1'i
+karşılığı `lib/conversations/modules.ts` ve iki kopya elle tutuluyor. Web B1'i
 **2026-09-05'te on sekiz modüle genişletmiş** (kapsanmayan 1059 B1 maddesi
 kümelendi, bkz. `docs/plan/b1-yeniden-kurgu.md`); mobil listede on tema
-kalmıştı. Oysa `mobile/src/data/lessons/de-b1.json` **180 ders** taşıyor,
+kalmıştı. Oysa `mobile/src/data/conversations/de-b1.json` **180 konuşma** taşıyor,
 yani on sekiz modül: Patika'nın 11-18. üniteleri adını bulamayıp
 `immersionTrack`in jenerik yedeğine ("B1 Ünite 11") düşüyordu. İçerik
 yerindeydi, adı yoktu - sekiz ünite adsız açılıyordu.
@@ -2954,12 +2954,12 @@ bırakılmasın diye hepsi birlikte, ayrı bir turda değerlendirilecek.
 
 ### 11.53 "Birebir aynı kalmalı" diyen üç çift daha — şimdi ölçülüyor
 
-§11.52'nin dersi şuydu: dosya başlığında "birebir aynı kalmalı" yazmak
+§11.52'nin konuşması şuydu: dosya başlığında "birebir aynı kalmalı" yazmak
 drift'i durdurmuyor, ölçüm durduruyor. Kalan içerik dosyalarını o gözle
 taradım.
 
     mobil dosya                web karşılığı              kapı var mıydı
-    data/moduleThemes.ts       lib/lessons/modules.ts     yoktu → 11.52'de eklendi
+    data/moduleThemes.ts       lib/conversations/modules.ts     yoktu → 11.52'de eklendi
     data/firstWords.ts         lib/first-words.ts         YOKTU
     data/demoPlacement.ts      lib/placement-demo.ts      YOKTU
     lib/numbers.ts             lib/numbers.ts             VARDI (gövde paritesi)
@@ -3138,7 +3138,7 @@ zamanlayıcısıyla sürüyor, yani o süpürge ona hiç dokunmuyor. Ölçüm:
     tercihi okuyan (useStill/reducedMotion) 8
     `whileTap` ölçeği (JS, CSS ile kapatılamaz)  11 çağrı / 7 dosya
 
-Yani ders oynatıcısının mikrofon düğmesi, dinleme turunun düğmesi, sıralama ve
+Yani konuşma oynatıcısının mikrofon düğmesi, dinleme turunun düğmesi, sıralama ve
 karıştırma karoları, doğru/yanlış düğmeleri, hoparlör - tercihi açık olan
 kullanıcıda hepsi basınca hâlâ küçülüyordu.
 
@@ -3219,7 +3219,7 @@ WordsScreen aramaları (liste canlı süzülüyor, arama tuşuna gerek yok),
 SocialSettings kullanıcı adı, Settings ad, MockExam kısa cevap.
 
 ÇOK SATIRLI alanlara dokunulmadı ve dokunulmamalı: orada return tuşu satır
-atlamak için (ExamScreen yazma, LessonScreen, skillLibrary, skillQuiz cümle
+atlamak için (ExamScreen yazma, ConversationScreen, skillLibrary, skillQuiz cümle
 alanları, SocialSettings biyografi, rounds serbest cümle).
 
 **b) Promo kodunda ilk dokunuş kayboluyordu.** `PaywallScreen`in
@@ -3304,11 +3304,11 @@ yukarı, çünkü mobil ses yükleyen uçları da (`/api/stt`) aynı istemciden
 ama mesaj artık sebebi söylüyor.
 
 **Yan bulgu: altı çağrı paylaşılan istemciyi atlıyordu.** `ItemScreen` ve
-`LessonScreen` ilerleme POST'ları, `game/roleplay` sohbet turu, `lib/auth`ın
-üç oturum/hesap çağrısı. Her birinin atlama sebebi var (rol yapma METİN
+`ConversationScreen` ilerleme POST'ları, `game/chat` sohbet turu, `lib/auth`ın
+üç oturum/hesap çağrısı. Her birinin atlama sebebi var (sohbet METİN
 döndürüyor, ilerleme POST'ları yanıtı hiç okumuyor, oturum uçları ham yanıtla
 çalışıyor) ama ORTAK eksikleri zaman aşımıydı. `fetchWithTimeout` eklendi:
-yanıtı olduğu gibi döndürüyor, yalnız süreyi bağlıyor. Rol yapma turu kırk
+yanıtı olduğu gibi döndürüyor, yalnız süreyi bağlıyor. Sohbet turu kırk
 beş saniye alıyor (yapay zekâ üretimi, varsayılandan uzun).
 
 Ölçüm doğrulandı: mobilde `api/client.ts` dışında zaman aşımsız `fetch`
@@ -3334,7 +3334,7 @@ Web `EmptyCard`ı on iki dosyada kullanıyor, mobilin karşılığı
     cando-card        CandoScreen                  EKSİK
 
 `CandoScreen` yalnız `loading` / `error` / `ready` biliyordu. Veri gelip de
-içi boşsa (henüz ders/alıştırma bitirilmemiş) iki süzgeç de hiçbir şey
+içi boşsa (henüz konuşma/alıştırma bitirilmemiş) iki süzgeç de hiçbir şey
 döndürüyor ve kullanıcı yalnız başlığı görüyordu: bir şeyin yüklenmediğini mi,
 yapacak bir şey olmadığını mı anlayamıyor.
 
@@ -3352,7 +3352,7 @@ rozetler ortadan yukarı sıçramasın).
 
 Ölçüm: mobilde `ActivityIndicator` kullanan yedi dosya var. Dördü doğru
 kullanıyor - üçü düğme içinde (`AuthScreen` "...", `PaywallScreen`,
-`LessonScreen`) biri ilerlemede. **İkisi SAYFA yükleme durumu olarak ortada
+`ConversationScreen`) biri ilerlemede. **İkisi SAYFA yükleme durumu olarak ortada
 dönen bir çark gösteriyordu** ve ikisinin de web karşılığı iskelet çiziyor:
 
     ExamScreen      → web `exam-player` yükleme yer tutucusu (animate-pulse)
@@ -3432,7 +3432,7 @@ telefonda A çıkıp B girdiğinde B şunları görüyordu:
     lernomi-streak          A'nın serisi
     lernomi-daily/-weekly   A'nın günün turu / haftalık önbelleği
     lernomi-items-done      A'nın bitirdiği ünite öğeleri
-    lernomi-lesson-resume:  A'nın yarım kalmış dersi
+    lernomi-conversation-resume:  A'nın yarım kalmış konuşmayı
     lernomi:mock-done       A'nın bitirdiği deneme kâğıtları
     lernomi:mock-run:       A'nın yarım deneme koşusu
     lernomi-voice           A'nın okuma sesi (webde de hesaba ait)
@@ -3462,7 +3462,7 @@ anahtarı değil (ilk okumada anahtar sanmıştım).
 `DeleteAccountScreen` silme başarılı olunca `AsyncStorage.clear()` çağırıyor ve
 gerekçesi yazılı ("temiz başlangıç"). Webde bu adım YOKTU: silme başarılı
 olunca yalnız `/`ye yönlendiriliyor ve silinen hesabın avatarı, okuma sesi,
-beceri ve ders ilerlemesi, taslakları ve başlangıç önbelleği tarayıcıda
+beceri ve konuşma ilerlemesi, taslakları ve başlangıç önbelleği tarayıcıda
 kalıyordu - kullanıcı unutulmak istedi, gizlilik politikası da bunu söz
 veriyor.
 
@@ -3476,7 +3476,7 @@ değil.
 değiştirmek); silmede her şey gidiyor.
 
 **b) "Yapabildiklerim" ekranı bayat kalıyordu.** Veri bir kez, `user` değişince
-yükleniyordu. Ama bu ekranın içeriğini DEĞİŞTİREN şey ders ve alıştırma
+yükleniyordu. Ama bu ekranın içeriğini DEĞİŞTİREN şey konuşma ve alıştırma
 bitirmek: kullanıcı bir konuşmayı tamamlayıp buraya dönünce eski listeyi
 görüyordu ve yenileme yolu yoktu (mobilde çekerek yenileme yalnız
 `MockStatsScreen`de var). Webin karşılığı sunucu bileşeni ve `force-dynamic` -
@@ -3486,7 +3486,7 @@ oraya her gidişte taze geliyor.
 `MockExamsScreen`).
 
 **Ölçülüp temiz çıkanlar:** veri çeken dokuz mobil ekranın altısı GÖREV ekranı
-(tur, ders, sınav, giriş, ödeme) ve orada çekerek yenileme yanlış olurdu -
+(tur, konuşma, sınav, giriş, ödeme) ve orada çekerek yenileme yanlış olurdu -
 alıştırmanın ortasındasın. `MockExamsScreen` ve `SkillsScreen` odakta yeniden
 çekiyor. `PathScreen`in ana verisi paketten ve yerel işaretlerden geliyor;
 sunucudan çektiği tek şey modül sınavı listesi ve o seviyeye bağlı.
@@ -3611,7 +3611,7 @@ görmüyordu**. Oysa aynı bilgi tur sonunda gösteriliyor (`GameScreen`,
 
 §11.69 bir ucu ölçmüştü; sebebi bu turda çıktı. Web'in `lernomi:stats` olayı
 yerleşik bir kanal: **altı yerden yayınlanıyor** (tur özeti, beceri
-alıştırması, yürüyüş, ders, patron, görev kartı) ve **üç yerde dinleniyor** -
+alıştırması, yürüyüş, konuşma, patron, görev kartı) ve **üç yerde dinleniyor** -
 başlıktaki XP/seri (`app-shell`), rozet açılış tetikleyicisi
 (`achievement-unlock`) ve başlangıç ekranının önbelleği (`lib/use-cached`).
 
@@ -3634,7 +3634,7 @@ yeniden çekiyor - bir istek, karşılığında `mastered`, `dueCount`,
 `reviewsToday` gibi öteki alanlar da tazeleniyor.
 
 Yayın noktaları webin altısına denk geliyor: tur özeti (`GameScreen`), beceri
-alıştırması (`ItemScreen`), ders (`LessonScreen`), yürüyüş
+alıştırması (`ItemScreen`), konuşma (`ConversationScreen`), yürüyüş
 (`WalkModeScreen`), patron (`BossScreen`), günün turu (`DailyScreen`) ve
 haftalık sınav (`WeeklyScreen`) - yedi yer, çünkü mobilde günün turu ve
 haftalık ayrı ekranlar.
@@ -3659,7 +3659,7 @@ ekranında `me`den okunuyor.
 sebepten:** tip tanımını satır penceresiyle kesiyordum. İlk okumada mobilin
 `dueTomorrow`u web tipinde YOK sanmıştım - web `types.ts`ta 316. satırda
 duruyor, penceremin dışında kalmış. İkincisinde `/api/premium/status`ın
-`copy` alanı için aynı şey olmuştu (§11.69). Ders: alan listesini pencereyle
+`copy` alanı için aynı şey olmuştu (§11.69). Konuşma: alan listesini pencereyle
 değil, bloğun sonuna kadar okumak gerekiyor.
 
 `check:parity` bu çifti zaten ölçüyor ("cevap yaniti alanlari") ama YALNIZ
@@ -3728,7 +3728,7 @@ Kapatılan üç eksik:
   dokunulamazdı. Webin kartı bu yönlendirmeyi asıl işi sayıyor (ölçümde
   beceriler bölümünü yedi kullanıcıdan biri açmış). Eşleme adres değil
   KİMLİK üzerinden: webin `/immersion` sayfası mobilde ikiye ayrılmış
-  (Patika = dersler, Beceriler = kütüphane), tek adres ikisini gösteremiyor.
+  (Patika = konuşmalar, Beceriler = kütüphane), tek adres ikisini gösteremiyor.
   Learn'e giden altı görev dokunulmaz — kutular zaten Learn'in içinde.
 
 Ayrıca `quest_claim` olayı mobil ad listesinde YOKTU (webde vardı): ödül
@@ -3846,7 +3846,7 @@ karttı. Bu tur yazıldı.
 **Kutlama.** Kullanıcı rozeti ancak Başarılar ekranına giderek görüyordu;
 açıldığı **an** hiçbir yerde söylenmiyordu — kutlamanın tek varlık sebebi ise
 o an. Web gibi tek yerde, uygulamanın kökünde duruyor: rozet altı ayrı yerde
-kazanılıyor (kelime turu, ders, beceri, görev ödülü, günün turu, patron) ve
+kazanılıyor (kelime turu, konuşma, beceri, görev ödülü, günün turu, patron) ve
 altısına ayrı kutlama koymak altı yerde unutulur.
 
 Webin üç kuralı da geçerli, biri farklı yolla:
@@ -4151,7 +4151,7 @@ olabilir; bugün `byGoal` yeterli sayıldı.
 
 §11.82'nin aracını ters yönde çalıştırdım: taban sözlükte olup **yalnız
 mobilde** çağrılan anahtarlar. 274 aday; `walkmode` (31) ve `notifprime` (10)
-gibi kümeler mobil-özgü ekranlar, `lesson` ve `item` mobilin kendi akışları.
+gibi kümeler mobil-özgü ekranlar, `conversation` ve `item` mobilin kendi akışları.
 `rounds` kümesindeki iki tanesi gerçekti.
 
 **`rounds.a11y_correct` ve `rounds.a11y_wrong` webde hiç çağrılmıyordu.**
@@ -4198,7 +4198,7 @@ sözlükte zaten duruyor ve mobil onları kullanıyor; web sunucu tarafında `t(
 olmadığı için `deriveQuiz`in kalıbı izlendi — metin çağırandan veriliyor.
 
 **Aynı işlevde ikinci bir kusur:** hüküm şıkları `["Richtig", "Falsch"]` diye
-**sabitti** ve İngilizce kursta da Almanca çıkıyordu — İngilizce derslerde
+**sabitti** ve İngilizce kursta da Almanca çıkıyordu — İngilizce konuşmalarda
 **yüz** tane hüküm adımı var. Deneme sınavı aynı çifti kursa göre veriyor
 (`MOCK_LABELS[course].bool`); artık buraya da oradan geliyor. Mobil tarafta da
 aynı sabit vardı, o da düzeltildi.
@@ -4208,7 +4208,7 @@ aynı sabit vardı, o da düzeltildi.
 karşılaştırması (§11.82) tam bu boşluğu dolduruyor — "mobilde çağrılıp webde
 çağrılmayan anahtar" bir kez de **webin o işi başka türlü yaptığını** gösterdi.
 
-**Kural çifti kapıya bağlandı:** ünite gramer alıştırması iki tarafta da ders
+**Kural çifti kapıya bağlandı:** ünite gramer alıştırması iki tarafta da konuşma
 adımlarından türetiliyor ve iki gerçekleştirme ayrı dosyada. Ayrışırlarsa aynı
 ünite iki uygulamada başka sorular verir — öğrenci webde geçip mobilde
 kalabilir. Ölçülen: dizme uzunluğunun alt/üst sınırı, hüküm/dizme bölüşmesi,
@@ -4392,7 +4392,7 @@ verdiği tek değer) iki platformda da aynı; ürün kararı, ayrışma değil.
 "Modele giden istek" karşılaştırmasını (§11.89) öteki değerlendirme
 çağrılarına genişletirken çıktı: mobilde **iki** çağrı yeri var (sınav yazma,
 beceri konuşma), webde **altı**. Farkların çoğu webde olup mobilde olmayan
-yüzeyler (`free_sentence` turu §11.13'te kayıtlı, rol yapma sınavı ayrı bir
+yüzeyler (`free_sentence` turu §11.13'te kayıtlı, puanlı kısım ayrı bir
 ekran). Biri değildi.
 
 **Çeviri turunun ikinci şansı.** Yerel hakem (`lib/sentenceMatch`) kural
@@ -4447,9 +4447,9 @@ yeniden keşfetmesin.
 
 Değerlendirme kuyruğu (§11.12) da aynı sınırın parçası ve orada duruyor.
 
-### 11.92 Derste isabet: mobil kendi ölçümüyle çelişiyordu
+### 11.92 Konuşmada isabet: mobil kendi ölçümüyle çelişiyordu
 
-Ders akışının dört adım türü (`confirm`, `repeat`, `produce`, `truefalse`) iki
+Konuşma akışının dört adım türü (`confirm`, `repeat`, `produce`, `truefalse`) iki
 tarafta da işleniyor ve puanlanan adım yüklemi aynı (`produce` + `truefalse`),
 yüzde formülü aynı. **İsabetin ne zaman sayıldığı** ayrışmıştı.
 
@@ -4463,11 +4463,11 @@ yazıyor — puan onu görmezden geliyordu. Yani parite farkından önce mobil k
 içinde tutarsızdı. Doğru/yanlış adımında fark yok: orada tek deneme var
 (`answered` kilidi).
 
-Sonuç: ders bitiş yüzdesi ve `conversation_finish` ölçümü artık iki uygulamada aynı
+Sonuç: konuşma bitiş yüzdesi ve `conversation_finish` ölçümü artık iki uygulamada aynı
 şeyi anlatıyor.
 
 **Kapı üç kuralı birden ölçüyor** — hangi adımlar puanlanıyor, isabet ne zaman
-sayılıyor, yüzde formülü. Yüklem mobilde ayrı dosyada (`data/lessons`
+sayılıyor, yüzde formülü. Yüklem mobilde ayrı dosyada (`data/conversations`
 `scoredSteps`), webde oynatıcının içinde iki kez yazılı; kapı ikisini de kendi
 yerinden okuyor.
 
@@ -4522,24 +4522,24 @@ Bugünküler meşru — farklı uçların hız sınırları (`DAILY_LIMIT` 120/2
 farklı listelerin sayfa boyu (`PAGE_SIZE` 40 sayfa / 30 uç), farklı modların
 eşikleri.
 
-Ders: "adı aynı olan sabit" varsayımı, adın **tek** olduğu varsayımını gizlice
+Konuşma: "adı aynı olan sabit" varsayımı, adın **tek** olduğu varsayımını gizlice
 taşıyor. Otomatik kapı elle bakım istemiyor diye doğru olduğu anlamına gelmiyor;
 eşleştirmenin kendisi de bir varsayım ve o da ölçülmeli.
 
-### 11.95 Ders özetinde kullanılan kalıp
+### 11.95 Konuşma özetinde kullanılan kalıp
 
-Rol yapma akışını karşılaştırırken çıktı. İki tarafta da ders üç evreli
-(`lecture` → `roleplay` → `summary`) ve evre adları bile aynı; fark **özette**.
+Sohbet akışını karşılaştırırken çıktı. İki tarafta da konuşma üç evreli
+(`lecture` → `chat` → `summary`) ve evre adları bile aynı; fark **özette**.
 
 Web özeti konuşmada geçen kalıbı yeşil tikle işaretliyor, geçmeyeni soluk
-bırakıyor ve gerekçesini yanında yazıyor: *"dersin asıl amacı kalıbı
+bırakıyor ve gerekçesini yanında yazıyor: *"konuşmanın asıl amacı kalıbı
 kullanmak"*. Mobil özeti kalıpları **düz bir liste** olarak yazıyordu — her
 kalıp aynı görünüyor ve öğrenci konuşmada hangisini gerçekten kullandığını
-hiçbir yerden öğrenemiyordu. Dersin geri bildiriminin çekirdeği eksikti.
+hiçbir yerden öğrenemiyordu. Konuşmanın geri bildiriminin çekirdeği eksikti.
 
 Kural webin `patternUsed`inin aynısı: gövde çıkarımı ("Ich möchte …" →
 "ich möchte"), en az üç harf, yalnız kullanıcının turları. Konuşma hiç
-olmadıysa (roleplay atlandı) işaret de yok — yanlış bir "yapmadın" damgası
+olmadıysa (chat atlandı) işaret de yok — yanlış bir "yapmadın" damgası
 vurmasın.
 
 Kural iki tarafta ayrı dosyada kopyalandığı için kapıya bağlandı: ayrışırsa
@@ -4551,7 +4551,7 @@ ayrı "kapat" anahtarı, `TOKEN_URL` iki sağlayıcının jeton adresi. İkisi d
 mobilde yok, yani bugün zarar vermiyorlardı — ama aynı tuzak oradaydı. Artık
 karşılaştırmadan çıkıyor ve kayıtlı listede duruyorlar.
 
-**Rol yapma SINAVI** (`/lessons/[id]/exam`) webe özel; mobilde karşılığı yok
+**Sohbet SINAVI** (`/conversations/[id]/scored`) webe özel; mobilde karşılığı yok
 ve bu §11.11'deki oynatıcı sınırının parçası.
 
 ### 11.96 §11.9 kapandı: sağlayıcı kapalıyken konuşma
@@ -4559,15 +4559,15 @@ ve bu §11.11'deki oynatıcı sınırının parçası.
 Üç turda tamamlandı. §11.9'daki blokaj "port ölçülmedi"ydi ve ölçüm o
 bölümün kendi içinde yapılmıştı; kalan iş yapmaktı.
 
-**Neden önemliydi:** ders geçme koşulu konuşmanın **yapılmasını** istiyor
-(`chatDone`). Sağlayıcı kapalıyken web derse ait senaryoya düşüp devam
+**Neden önemliydi:** konuşma geçme koşulu konuşmanın **yapılmasını** istiyor
+(`chatDone`). Sağlayıcı kapalıyken web konuşmaya ait senaryoya düşüp devam
 ediyordu; mobil yalnız "yapay zekâ kapalı" deyip bırakıyordu — yani Android'de
-**hiçbir konuşma dersi tamamlanamıyordu**.
+**hiçbir konuşma konuşmayı tamamlanamıyordu**.
 
 | adım | ne geldi |
 |---|---|
 | 1/3 | `lib/speech` `normalizeSpoken`, `game/dialogue` `matchReply`/`usedTargets` |
-| 2/3 | `game/offlineRoleplay` durum makinesi + `LessonRoleplay.script` alanı |
+| 2/3 | `game/offlineChat` durum makinesi + `ConversationChat.script` alanı |
 | 3/3 | döküme `script`, ekranın bu yola düşmesi, dört yönlendirme anahtarı |
 
 Her adım kendi kapısıyla geldi: niyet eşleştirme (kısa kök sınırı, kök arama,
@@ -4575,8 +4575,8 @@ puanlama), sözlü metin normalizasyonu (noktalama kümesi, küçültme yereli) 
 çevrimdışı akış (kalıp eşiği, özet puanı, koç cümleleri tablosu).
 
 **Döküm gerekçesi ölçülünce düştü.** Eski karar "paket şişmesin" diyordu;
-senaryo 780 dersin **10'unda** var ve `de-a1.json` 613K'dan 676K'ya çıktı.
-Kalan 770 ders zaten kalıp moduna düşüyor ve döküm gerekli iki alanı baştan
+senaryo 780 konuşmanın **10'unda** var ve `de-a1.json` 613K'dan 676K'ya çıktı.
+Kalan 770 konuşma zaten kalıp moduna düşüyor ve döküm gerekli iki alanı baştan
 beri taşıyordu.
 
 **İki yerde webden ayrıldım, ikisi de gerekçeli:**
@@ -4585,7 +4585,7 @@ beri taşıyordu.
   o etiket tek satır ve kalıp cümlesi sığmıyor, üstelik ekranda zaten "ipucu"
   tonlu baloncuk var.
 - *Karşı tarafın cümleleri hedef dile göre seçiliyor.* Web dördünü de Almanca
-  sabit yazıyordu ve İngilizce kursta (iki yüz ders) Almanca çıkıyordu. Port
+  sabit yazıyordu ve İngilizce kursta (iki yüz konuşma) Almanca çıkıyordu. Port
   sırasında çıktı; **web de düzeltildi** ve tablo kapıya bağlandı. `Richtig/
   Falsch` ile aynı sınıf (§11.84): Türkçe harf taşımadığı için
   `i18n-hardcoded` görmüyor, sözlük anahtarı olmadığı için `i18n:check`
@@ -4641,7 +4641,7 @@ satırında da geçiyor (`weekly-player`: "Burada `track("exam_start", …)`
 yazıyordu") ve elle bakarken onu gerçeğinden ayırmamıştım — tek geçiş sandım.
 Kapı yorumları ayıkladığı için doğruyu gösterdi.
 
-Ders: yanlış pozitif yalnız fazladan iş çıkarmaz, **gerçek bulguyu da
+Konuşma: yanlış pozitif yalnız fazladan iş çıkarmaz, **gerçek bulguyu da
 gizleyebilir**. §11.85'te kapıya yazdığım "yorumlar ayıklanmalı" kuralının
 ikinci gerekçesi bu.
 
@@ -4755,7 +4755,7 @@ yalnız metin noktalaması kalmışsa temizlenip metin olarak sınanıyor. İki
 tarafta da yeni yanlış pozitif yok (166 / 17 aynı) ve enjekte edilen satır
 ikisinde de yakalanıyor.
 
-§11.96'nın kaydettiği ders bir kez daha: **yanlış negatif iş çıkarmıyor,
+§11.96'nın kaydettiği konuşma bir kez daha: **yanlış negatif iş çıkarmıyor,
 bulguyu gizliyor.**
 
 ### 11.105 Rozet duvarı: bilinmeyen grup sessizce düşüyordu
@@ -4873,7 +4873,7 @@ yapmıyordu, ikisi de genel bir kıvılcımla çiziliyordu.
 
 İkisine de kendi karosu verildi (ortak seri kalp, lig yükselişi taç).
 **Parity 54** iki tarafı hem birbirine hem **paylaşılan listeye** bağlıyor:
-§11.111'in dersi burada da geçerli — `default` dalı varken yeni bir tür
+§11.111'in konuşması burada da geçerli — `default` dalı varken yeni bir tür
 sessizce yanlış çiziliyor ve hiçbir kapı görmüyor.
 
 ### 11.114 Tepki satırında boş ad: tip aynı görünüyordu, değildi
@@ -4917,7 +4917,7 @@ olduğu gibi bırakılıyor; etiket temizliği zaten gövdeyi ayırıp çıkarı
 Ölçüldü: iki tarafta da yeni yanlış pozitif yok (166 / 17 aynı) ve enjekte
 edilen satır yakalanıyor.
 
-§11.104 ve §11.109 ile birlikte üçüncü kez aynı ders: **yanlış negatif iş
+§11.104 ve §11.109 ile birlikte üçüncü kez aynı konuşma: **yanlış negatif iş
 çıkarmıyor, bulguyu gizliyor** — ve gizlediği şey her seferinde gerçek bir
 kullanıcı hatası oldu.
 
@@ -5078,7 +5078,7 @@ anahtarlar ölü. İkinci kez silindi, commit mesajı sebebi yazıyor.
 tersini — **sözlükte var ama hiç çağrılmıyor** — yakalamıyor. Bu olay tam da o
 boşluktan geçti. Ölçüldü: düz metinle çağrılmayan 522 web anahtarı var ve
 büyük çoğunluğu dinamik aile (`ach.*` rozet kimliğinden kuruluyor), yani
-kuralın kendisi dikkatli kurulmalı — gürültülü bir kapı §11.109'un dersine
+kuralın kendisi dikkatli kurulmalı — gürültülü bir kapı §11.109'un konuşmasına
 göre bulguyu gizler. Sıradaki turun ilk işi.
 
 ### 11.127 Ölü sözlük anahtarı kapısı
@@ -5092,7 +5092,7 @@ Kuralın şekli ölçümle bulundu, tahminle değil:
 - `t()` çağrılarına bakan bir arama **522 anahtarı** ölü sayıyordu. Sebep:
   anahtarların çoğu bir tabloda duruyor (`titleKey: "ach.streak3.title"`) ve
   sonra çözülüyor — yüz sekiz rozet anahtarı dahil. Böyle bir kapı §11.109'un
-  dersine göre yalnızca gürültü üretip gerçek bulguyu gizlerdi.
+  konuşmasına göre yalnızca gürültü üretip gerçek bulguyu gizlerdi.
 - **Düz metin** araması (anahtar adı kaynakta herhangi bir yerde geçiyor mu)
   on altı aday bıraktı. Dördü çalışma anında kuruluyor ve dosyada tam adıyla
   hiç geçmiyor: `band.*` (`lib/proficiency`: `` `band.${band}` ``) ve
@@ -5162,7 +5162,7 @@ sayfası ve `pushRoute` yorumu). Tekrar ölçülmesin diye kayda geçti.
 Mobil doğrudan ilk soruya giriyordu. Söylenmeyenler: **yalnız yazarak, ipucu
 yok, tek hak** ve — en önemlisi — **yanlış bilinen kelimenin tekrar kuyruğuna
 döneceği**. Sınav bir ölçüm ve ölçümün kuralı önceden bilinmeli; §11.124'ün
-aynı dersi, bu kez haftalık sınavda. Web bir tanıtım adımı gösteriyordu.
+aynı konuşmayı, bu kez haftalık sınavda. Web bir tanıtım adımı gösteriyordu.
 
 Sınav kurulamadığında sonuç ekranı **%0'lık bir halka** çiziyordu: "şu an sınav
 yok" başlığının üstünde sıfır puan, oynanmamış bir sınavdan kalınmış gibi
@@ -5226,7 +5226,7 @@ ad (`home.greeting`).
 itiraz etti: aynı anahtar artık hem base hem web'de duruyordu. Web kopyaları
 silindi. İki kapı arka arkaya kendi işini yaptı.
 
-**Ders:** bir yüzeyi karşı platforma taşırken metnin *varlığı* kadar
+**Konuşma:** bir yüzeyi karşı platforma taşırken metnin *varlığı* kadar
 *bulunduğu sözlük* de kontrol edilmeli. Bu turdan sonra o kontrol elle değil,
 kapıda.
 
@@ -5288,7 +5288,7 @@ duruyorlar, yani sıra doğru.
 
 **Yeni bir sessiz kayıp yolu kapandı.** Önerilen adım sunucudan bir **web
 adresiyle** geliyor (`nextStep.href`: `/learn/game`, `/immersion`,
-`/immersion/skill/<id>`, `/lessons/<id>`) ve mobil onu ekrana çevirmek
+`/immersion/skill/<id>`, `/conversations/<id>`) ve mobil onu ekrana çevirmek
 zorunda. Eşleyici `routeFromHref` olarak `pushRoute`un yanına kondu — o
 **bildirim** adreslerini çeviriyor, bu **yanıt gövdesindekileri**; ikisi ayrı
 küme, aynı dosyada. Tanınmayan adres `null` dönüyor ve düğme hiç çizilmiyor,
@@ -5364,7 +5364,7 @@ yerinde tekrar). Karar bekleyen tek şey ÖLÇÜMÜN KENDİSİ.
 On üç yerde puan `%{n}` diye yazılıyordu — Türkçe yazım ("%62") koda gömülü,
 oysa İngilizce arayüzde "62%", Almancada "62 %" olmalı. Yerler puanın
 gösterildiği yerler: sınav sonucu, deneme sınavı istatistikleri, haftalık
-sınav, ders sonu, beceri kütüphanesi.
+sınav, konuşma sonu, beceri kütüphanesi.
 
 Araç ikisinde de zaten vardı (`formatPercent` / `t("common.pct")`) ve ikisi de
 yereli çalışma anında soruyor. **Parity 51** artık bu deseni de arıyor.
@@ -5374,15 +5374,15 @@ Bu, aynı sınıfın üçüncü örneği: §11.109 harf çevirisi, §11.130 say�
 sessizce yanlış dile taşınıyor** — ve üçü de ancak aranınca görünüyor, çünkü
 Türkçe arayüzde hepsi doğru görünüyor.
 
-### 11.141 Derste eller serbest mobilde hiç yoktu
+### 11.141 Konuşmada eller serbest mobilde hiç yoktu
 
-Web derste kalıcı bir anahtar tutuyor (`conversationp.hands_free`) ve **varsayılan
+Web konuşmada kalıcı bir anahtar tutuyor (`conversationp.hands_free`) ve **varsayılan
 açık**: açıkken öğretmen cümlesini bitirir bitirmez dinleme kendiliğinden
 başlıyor. Mobilde hiç yoktu — her tekrar ve üretim adımında ekrana dokunmak
 gerekiyordu.
 
 Farkın telefonda webdekinden **büyük** olması gerekirdi: cihaz masaya dayalıyken
-her tur için ekrana uzanmak, konuşma dersinin ritmini kesen tek şey.
+her tur için ekrana uzanmak, konuşma konuşmasının ritmini kesen tek şey.
 
 **Sıralama, yürüyüş modunun kanıtlanmış kalıbı:** önce `speakAndWaitVoiced`,
 sonra dinle. `speakTarget` bitişi bildirmiyor; onunla kurulsaydı mikrofon
@@ -5393,36 +5393,36 @@ kapalıyken eski yol (fire-and-forget) korunuyor, yani hiçbir şey yavaşlamıy
 yolu, aynı depoda çalışan ve sahada denenmiş yürüyüş modu sıralamasının
 aynısı; yine de ilk gerçek cihaz denemesinde bakılacak yer burası.
 
-### 11.142 Ders özeti: kelimeler ve düzeltmeler toplu
+### 11.142 Konuşma özeti: kelimeler ve düzeltmeler toplu
 
-**Dersin kelimeleri** kâğıtta zaten vardı (`lesson.vocab`) ve mobil özet onu
-hiç göstermiyordu — dersin dili kapanışta toplu görünmeli. §11.80 sınıfı.
+**Konuşmanın kelimeleri** kâğıtta zaten vardı (`conversation.vocab`) ve mobil özet onu
+hiç göstermiyordu — konuşmanın dili kapanışta toplu görünmeli. §11.80 sınıfı.
 
 **Düzeltmeler** konuşma sırasında her balonun altında tek tek geçiyor ve akışta
-kayboluyordu; kapanışta hepsi bir arada durmalı — dersin öğrettiği şey tam
+kayboluyordu; kapanışta hepsi bir arada durmalı — konuşmanın öğrettiği şey tam
 olarak bunlar. Aynı kural ve aynı ayrıştırıcı (`parseReply`) iki tarafta.
 
-**Ölçüldü, taşınmadı — sıradaki iş:** web özeti dersin **ne zaman geri
-geleceğini** de yazıyor (`lessonp.next_in_days`, aralıklı tekrar merdiveni).
+**Ölçüldü, taşınmadı — sıradaki iş:** web özeti konuşmanın **ne zaman geri
+geleceğini** de yazıyor (`conversationp.next_in_days`, aralıklı tekrar merdiveni).
 O sayı kaydetme yanıtından geliyor; mobil ilerlemeyi yalnız cihazda tutuyor
 (`markItemDone` → AsyncStorage) ve sunucu yanıtını hiç görmüyor. Yani mobil
-ders ilerlemesi **sunucuya yazılmıyor** — bu tek başına ayrı bir soru:
-kullanıcı cihaz değiştirdiğinde ders ilerlemesi gidiyor mu? Bir sonraki tur
+konuşma ilerlemesi **sunucuya yazılmıyor** — bu tek başına ayrı bir soru:
+kullanıcı cihaz değiştirdiğinde konuşma ilerlemesi gidiyor mu? Bir sonraki tur
 bunu ölçecek.
 
-### 11.143 DÜZELTME — mobil ders ilerlemesi sunucuya yazılıyor
+### 11.143 DÜZELTME — mobil konuşma ilerlemesi sunucuya yazılıyor
 
-§11.142'nin sonunda "mobil ders ilerlemesi sunucuya yazılmıyor gibi görünüyor,
+§11.142'nin sonunda "mobil konuşma ilerlemesi sunucuya yazılmıyor gibi görünüyor,
 cihaz değişince gidiyor mu?" diye bir endişe yazmıştım. **Ölçüldü: yanlış.**
-`LessonScreen` ders bitince `/api/conversation`a POST ediyor; yerel AsyncStorage seti
-yalnızca Patika ekranının önbelleği ve `lessonProgress.ts`in kendi başlığı da
-bunu söylüyor. Ucun kendi yorumu da açık: *"telefonda bitirilen ders
+`ConversationScreen` konuşma bitince `/api/conversation`a POST ediyor; yerel AsyncStorage seti
+yalnızca Patika ekranının önbelleği ve `pathProgress.ts`in kendi başlığı da
+bunu söylüyor. Ucun kendi yorumu da açık: *"telefonda bitirilen konuşma
 bilgisayarda da bitmiş sayılmalı."* Cihaz değiştiren kullanıcı ilerlemesini
 kaybetmiyor.
 
 Gerçek eksik daha küçüktü ve şimdi kapandı: **yanıt hiç okunmuyordu**. Uç
 `passed`, `nextDays`, `xpGained`, `currentStreak`, `totalXp` döndürüyor; mobil
-çağrıyı yapıp gövdeyi atıyordu, bu yüzden dersin **ne zaman geri geleceği**
+çağrıyı yapıp gövdeyi atıyordu, bu yüzden konuşmanın **ne zaman geri geleceği**
 (aralıklı tekrar merdiveni) hiçbir yerde yazmıyordu.
 
 **Yöntem notu:** "yazılmıyor gibi görünüyor" ile "yazılmıyor" arasındaki fark,
@@ -5432,7 +5432,7 @@ yapılmadan defterde "bulgu" diye dursaydı yanlış bir iş sırası doğururdu
 
 ### 11.144 Beceri ilerlemesi cihaza hapsolmuştu
 
-§11.143'ün tersi: derste sunucu kaynaktı, **beceri egzersizlerinde değildi**.
+§11.143'ün tersi: konuşmada sunucu kaynaktı, **beceri egzersizlerinde değildi**.
 Mobilin "bitti" kümesi yalnız **o cihazda** bitirilenleri biliyordu. Sonucu:
 
 - Webde çalışan kullanıcı Android'i açınca liste **hiç dokunulmamış** görünüyor.
@@ -5459,7 +5459,7 @@ kullanıyordu; mobilde **kendi yazısını silmenin hiçbir yolu yoktu**. Kendi
 denetimi eksik bırakıyor. Onay isteniyor (geri alınamaz), satır önce gidiyor
 sunucu sonra — kullanıcı beklemiyor.
 
-**§11.144'ün dersi kapıya yazıldı:** `check-endpoints` artık **yöntem
+**§11.144'ün konuşması kapıya yazıldı:** `check-endpoints` artık **yöntem
 düzeyinde** de bakıyor. Aynı ucun bir yönteminin tek platformda kalması, ucun
 tamamen tek platformda kalması kadar sessiz — `GET /api/skills` tam olarak
 böyle kaçmıştı. Yeni kural bu silme eksiğini **kendiliğinden buldu**.
@@ -5560,23 +5560,23 @@ gösterir.
 dokunulmadı.
 
 
-### 11.148 Aynı sınıf hatanın kalan iki yeri: ders ve haftalık sınav
+### 11.148 Aynı sınıf hatanın kalan iki yeri: konuşma ve haftalık sınav
 
 §11.147'nin sorusunu iki uca daha sordum. İkisi de aynı biçimde kaybediyordu.
 
-**Ders (`/api/conversation`) — iki tarafta da.** Ders bitince sonuç yazılıyor, ağ
+**Konuşma (`/api/conversation`) — iki tarafta da.** Konuşma bitince sonuç yazılıyor, ağ
 yoksa istek düşüyor ve bir daha denenmiyordu. Yerel işaret (`markItemDone`)
-Patika'yı bitmiş gösterdiği için hata GÖRÜNMÜYOR: kullanıcı dersi bitmiş
+Patika'yı bitmiş gösterdiği için hata GÖRÜNMÜYOR: kullanıcı konuşmayı bitmiş
 sanıyor, sunucu onu hiç öğrenmiyor — XP verilmiyor, aralıklı tekrar merdiveni
-kurulmuyor, cihaz değişince ders geri geliyor. Kayıt artık kendi günüyle
+kurulmuyor, cihaz değişince konuşma geri geliyor. Kayıt artık kendi günüyle
 kuyruğa alınıyor; iki kuyruk ayrı teknolojide (AsyncStorage / localStorage)
 ama aynı sözleşmeyi tutuyor ve §66 bunu ölçüyor: aynı depolama anahtarı, kendi
-`day`i, ders başına tek kayıt, 4xx kuyruğa girmiyor, biri düşünce kalanı
+`day`i, konuşma başına tek kayıt, 4xx kuyruğa girmiyor, biri düşünce kalanı
 kuyrukta kalıyor.
 
 **Yanında çıkan web hatası:** web `/api/conversation`a `day` ve `seconds`i **hiç
-göndermiyordu**. Yani her ders sunucuda sıfır saniye görünüyor, ve gece
-yarısından sonra bitirilen ders kullanıcının değil SUNUCUNUN gününe (UTC)
+göndermiyordu**. Yani her konuşma sunucuda sıfır saniye görünüyor, ve gece
+yarısından sonra bitirilen konuşma kullanıcının değil SUNUCUNUN gününe (UTC)
 yazılıyordu — seri yanlış güne düşüyor. Mobil ikisini de baştan beri
 gönderiyor. Bunu kuyruğun gövdesini eşlerken kapının kendisi söyledi
 ("yalnız mobil: day, seconds").
@@ -5721,7 +5721,7 @@ ayrıntı.
 ve mobilde onu çizen hiçbir yüzey yok. §11.151'deki `missed` hatasının aynısı
 gibi duruyordu — ama içerik ölçüldü: paketin 995 + 189 egzersizinin
 **hiçbirinde** `dialogue` yok, web'in `BUNDLED_EXERCISES`inde de yok. Tip
-(`SpeakingDialogueExercise`) modellenmiş ve `lib/lessons/roleplay` onu
+(`SpeakingDialogueExercise`) modellenmiş ve `lib/conversations/chat` onu
 kullanıyor, ama içerik henüz yazılmamış. İki tarafta da eşit derecede boş,
 yani bu bir parite açığı değil — içerik geldiğinde mobilde oynatıcı da
 gerekecek, o gün ItemScreen'in `dialogue` dalı yazılmalı.
@@ -5786,7 +5786,7 @@ kota o günün satırları sayılarak bulunuyor; uçtaki yorum bunu açıkça s�
 Web baştan beri gönderiyordu, mobil **dört çağrı yerinin hiçbirinde**
 göndermiyordu. Sonuç: UTC+3'te gece yarısı ile 03:00 arasında yapılan her
 değerlendirme dünkü güne düşüyor, kota da yanlış güne sayılıyordu — §11.148'de
-web'de bulduğum ders hatasının aynısı, bu kez ters tarafta.
+web'de bulduğum konuşma hatasının aynısı, bu kez ters tarafta.
 
 **Kapı sınıfı tutuyor (parity §73):** `clampDay(body.day)` yazan her uç "gün
 isteyen uç" sayılıyor (dokuz uç) ve iki tarafın da o uca gün göndermesi
@@ -5968,7 +5968,7 @@ kapıyı yanıltır.
 
 **Paralel oturum notu:** bu turda web `tsc` beş hatayla, sonra web `lint` bir
 uyarıyla, sonra mobil `tsc` bir hatayla kırmızı gördüm — hiçbiri benim
-dosyalarımda değildi (`lessons/modules`, `immersion/*`, `deepLink`
+dosyalarımda değildi (`conversations/modules`, `immersion/*`, `deepLink`
 auth-handoff). Başka bir oturum aynı ağaçta çalışıyor ve dakikalar içinde
 düzeltti. **Yöntem:** kırmızıyı görünce önce kimin olduğunu ölçüyorum
 (`git status`, hata dosyası benim dokunduklarımda mı), sonra karar veriyorum.
@@ -5987,7 +5987,7 @@ yönlendirmesi.
 
 **Yazılarım listesi ayrışıktı.** `/api/assessments` dört tür döndürüyor;
 mobil haritası yalnız `writing` ve `speaking` biliyordu. Cümle kurma turundan
-(`sentence`) ve rol yapmadan (`roleplay`) gelen satırlar **ham anahtarıyla**
+(`sentence`) ve sohbetten (`chat`) gelen satırlar **ham anahtarıyla**
 çiziliyordu — ekranda "sentence" yazıyordu. Bu, sözlük eksikliğinden değil
 HARİTA eksikliğinden geliyordu: anahtarlar webde vardı, mobil onları hiç
 sormamıştı.
@@ -6021,7 +6021,7 @@ değerlendirme isteği) bu tur kırmızıya döndü — web `locale: "tr"` alan�
 sekiz çağrı yerinden birden kaldırmıştı (`a85566ad`: değerlendirme artık
 öğrencinin dilinde, dili sunucu profilden okuyor). Mobil tarafı da aynı
 oturum düzeltirken ben ölçüyordum; kapı ikisi de bitince yeşile döndü.
-**Ders:** kırmızı bir kapı her zaman "bir şey bozuldu" demek değil — bazen
+**Konuşma:** kırmızı bir kapı her zaman "bir şey bozuldu" demek değil — bazen
 "iki taraftan biri henüz gelmedi" demek. Ölçüp kimin işi olduğunu görmek,
 düzeltmeye atılmaktan önce geliyor; yoksa aynı satırı iki oturum iki kez
 yazar.
@@ -6040,9 +6040,9 @@ başarım rozetlerinde. Web yalnız ikinci aileyi taşıyordu ve onu her iki iş
 için kullanıyordu. Android'in üç çizimi ve `Quiz` webin kütüphanesine
 eklendi; rozet ailesi olduğu gibi duruyor.
 
-**Yan düzeltme:** web'in patika tür haritasında `lesson` varsayılana
+**Yan düzeltme:** web'in patika tür haritasında `conversation` varsayılana
 bırakılmıştı. Aynı simgeyi veriyordu ama harita satır satır
-karşılaştırılamıyordu — kapı "yalnız mobil: lesson" diyordu ve bu doğruydu:
+karşılaştırılamıyordu — kapı "yalnız mobil: conversation" diyordu ve bu doğruydu:
 **yazılmamış bir eşleme, doğru sonucu verse bile ölçülemez.** Tür artık açıkça
 yazılı, varsayılan yalnızca tanınmayan tür için.
 
@@ -6129,7 +6129,7 @@ iki tarafta da sıfır bekliyor.
 **Kapı yine kendi hatasını gösterdi:** ilk yazımı sarmalayıcının KENDİ
 yorumundaki örneği (`haptic("correct"); sfx("correct")` diye yazan açıklama)
 gerçek bir çağrı sandı. Yorumlar taranmadan önce atılıyor — bu turda üçüncü
-kez aynı ders: **kapı kaynak metni okuyorsa, kaynağın yorumlarını da okur.**
+kez aynı konuşma: **kapı kaynak metni okuyorsa, kaynağın yorumlarını da okur.**
 
 
 ### 11.167 Eskimiş kayıt: §11.11 çoktan kapanmıştı
@@ -6185,7 +6185,7 @@ karşılaştırılıyor. **Muafiyet, kapının kendi borcudur** — kapanınca s
 yoksa kapı sonsuza kadar eksik bir gerçeği doğrular.
 
 **Yan iş:** mobil i18n kapısı başka bir oturumun dosyasında yanlış pozitif
-veriyordu (`lib/native-de.ts` içindeki `t(...)` i18n değil, ders içeriğinin
+veriyordu (`lib/native-de.ts` içindeki `t(...)` i18n değil, konuşma içeriğinin
 eşleme tablosunda bir arama). Web'deki eşdeğer denetimin aynı dosya için aynı
 muafiyeti zaten vardı; mobil tarafına da yazıldı. **İki kapı aynı kuralı
 uyguluyorsa aynı istisnaları da taşımalı.**
@@ -6378,7 +6378,7 @@ etiketi, parola sıfırlama formunun üç alanı, "Kopyalandı", "+{xp} XP kazan
 **Kalan 25 bilerek duruyor** ve üç sebepten:
 1. **Eş sesli, ayrı kavram:** "Kelime" (başarım grubu ↔ değerlendirme
    kategorisi), "Görev" (ortak görev ↔ yazma görevi), "tekrar" (tur çipi ↔
-   ayar birimi ↔ ders adımı).
+   ayar birimi ↔ konuşma adımı).
 2. **Ayrı yüzey:** e-posta şablonunun başlığı ile uygulamadaki ekran başlığı
    aynı cümle olabilir ama biri e-posta metni, öteki arayüz.
 3. **Ayrı özellik:** sınavın "Bölüme başla"sı ile deneme sınavınınki.
@@ -6530,11 +6530,11 @@ opaklık formülünü ölçüyordu ama RENGİNİ ölçmüyordu ve koyu temayı "
 diye kapsam dışı bırakmıştı. Artık iki temanın da tintini ve gücünü ölçüyor.
 Dört enjeksiyonla denendi.
 
-### 11.182 Ders sınavındaki iki düğme tıpatıp aynıydı
+### 11.182 Konuşma sınavındaki iki düğme tıpatıp aynıydı
 
-`i18n-hardcoded` tabanını denetlerken çıktı: web `lesson-player`da doğru/yanlış
+`i18n-hardcoded` tabanını denetlerken çıktı: web `conversation-player`da doğru/yanlış
 düğmeleri ikisi de nötr `option` sınıfıydı. Android'de ikisi dolu ve anlamının
-rengini taşıyor - yeşil onay, kırmızı çarpı. Ders akışında en hızlı okunması
+rengini taşıyor - yeşil onay, kırmızı çarpı. Konuşma akışında en hızlı okunması
 gereken yer orası; web onu iki tıpatıp aynı düğmeyle soruyordu. Eşitlendi
 (yazı `on-fill` jetonundan, çünkü dolgu koyu temada açılıyor).
 
@@ -6543,7 +6543,7 @@ hepsi meşru (kurs adları zaten üç dilde yazılı, içerik çözücünün des
 Goethe'nin Almanca bölüm adları, model istemleri, konsol kayıtları, dil adının
 kendi dilinde kalması). Gerekçeleri artık taban dosyasında yazılı - **sayı da
 bir muafiyet listesi ve sebebi yazılmazsa eskiyor**, bu turun dört kaydının
-ortak dersi bu.
+ortak konuşmayı bu.
 
 Denetimi pahalı yapan şey webdeki tarayıcının `--hits` bayrağının olmamasıydı;
 mobilde vardı, eklendi.
@@ -6621,7 +6621,7 @@ uyan kazanıyor), §95 kural parçacıkları, §96 karıştırma çiftleri. Üç
 mobil `i18n-scan`in yeni muafiyetlerinin karşılığı: **muafiyet eklemek kapı
 eklemeyi gerektiriyor**, bu depoda yazılı kural.
 
-**Bu turun dersi:** "port edilmedi" diye yazılmış bir not, üzerinden zaman
+**Bu turun konuşması:** "port edilmedi" diye yazılmış bir not, üzerinden zaman
 geçince bir karar gibi okunuyor. Beş turdur ölçtüğüm şey hep aynı: yazılı
 gerekçe denetlenmezse eskiyor. Bu seferki en pahalısıydı — öğrenme
 uygulamasında "neden yanlış" açıklaması bir ayrıntı değil, ürünün kendisi.
@@ -6647,23 +6647,23 @@ bitmiş tur gibi gösteriliyordu; tekrar zamanı gelen kelime olmadığında da 
 Kapı: §97 dört çıkmaz durumu ölçüyor. `unsupported` ölçüm dışı - tarayıcının
 konuşma tanıması olmayabilir, Android kendi tanıyıcısıyla geliyor.
 
-### 11.186 Rol yapma sınavı Android'de hiç yoktu
+### 11.186 Puanlı kısım Android'de hiç yoktu
 
-`lessonp.` uzayının denetimi (43 web-özel anahtar, mobilde 6) WP-22'ye çıktı.
-Web ders özetinde "Sınav olarak dene" düğmesi var ve `/lessons/[id]/exam`
+`conversationp.` uzayının denetimi (43 web-özel anahtar, mobilde 6) WP-22'ye çıktı.
+Web konuşma özetinde "Kendini puanla" düğmesi var ve `/conversations/[id]/scored`
 yüzeyine gidiyor: aynı sahne, yardım yok, 5 tur, 3 dakika, sonunda BÜTÜN
 turların tek seferde rubrikle puanlanması ve `assessments`'a yazılması.
 
 Android'de bu yüzey hiç yoktu. Kayıt defterinde §11.34'te bir kenar notu olarak
-duruyordu ("Android'de rol yapma dersin içinde bir aşama, ayrı sınav yüzeyi
+duruyordu ("Android'de sohbet konuşmanın içinde bir aşama, ayrı sınav yüzeyi
 yok") - bir eksik olarak değil, bir olay adının neden eşlenemediğinin gerekçesi
-olarak. **Aynı dersi bitiren iki kullanıcıdan yalnız biri ölçülebiliyordu.**
+olarak. **Aynı konuşmayı bitiren iki kullanıcıdan yalnız biri ölçülebiliyordu.**
 
 Taşınan: beş fazlı sınav ekranı (giriş, konuşma, puanlama, sonuç, hata), geri
 sayım, mikrofon tek atış + yazı yolu, rubrik kartı (görev/yapı/dilbilgisi/
 kelime, 0-4), en iyi iki cümle, en sık iki hata tipi, yapabilirlik satırı;
-`candoMap` (tablolar weble birebir, metin `/api/cando`dan); `roleplay.ts`e
-`mode` parametresi; ders özetine giriş düğmesi. 25 metin ortak sözlüğe geldi.
+`candoMap` (tablolar weble birebir, metin `/api/cando`dan); `chat.ts`e
+`mode` parametresi; konuşma özetine giriş düğmesi. 25 metin ortak sözlüğe geldi.
 
 **Bilinçli tek fark:** sağlayıcı kapalıyken web kural tabanlı bir yedek puan
 gösteriyor (`fallbackAssessment`), mobil hiç puan vermiyor. Bu ayrım mobilde
@@ -6673,7 +6673,7 @@ sınavı ölçülmüş gibi göstermemek daha doğru.
 Kapılar: §98 sınavın sözleşmesi, §99 yapabilirlik eşlemesi.
 
 **Kapının kendi hatası da kayda değer:** §98'in "gün anahtarı" ölçümü ilk
-yazımda BİRLEŞİK gövdeye bakıyordu ve ders oynatıcısının kendi `day:` satırını
+yazımda BİRLEŞİK gövdeye bakıyordu ve konuşma oynatıcısının kendi `day:` satırını
 görüp yeşil kalıyordu - sınavdan `day` silindiğinde kırmızı olmadı. Bu, §73/§78
 ile aynı sınıf: **ölçüm penceresi komşu dosyanın satırını çalıyor.** Her taraf
 artık kendi isteği kuran dosyadan okunuyor.
@@ -7063,15 +7063,15 @@ oturumda dördüncü kez aynı sınıf: **desen, ölçmek istediği şeyin komş
 yakalıyor** (§73, §78, §98, §103).
 
 
-### 11.205 Ders adımında tıkanan öğrencinin çıkış yolu yoktu
+### 11.205 Konuşma adımında tıkanan öğrencinin çıkış yolu yoktu
 
-`lessonp.` uzayının (37 web-özel / 12 mobil) denetimi. Çoğu ikiz anahtar
-(mobil aynı şeyleri `lesson.*` altında yazıyor) ama biri gerçek bir eksikti.
+`conversationp.` uzayının (37 web-özel / 12 mobil) denetimi. Çoğu ikiz anahtar
+(mobil aynı şeyleri `conversation.*` altında yazıyor) ama biri gerçek bir eksikti.
 
 Beklentili adımlarda (tekrar et, üret, doğru/yanlış) mobilde ilerlemenin tek
 yolu "yazarak cevapla"ydı — **ve o da doğru cevabı bilmeyi gerektiriyor.**
-Adımı bilmeyen öğrencinin dersi bitirme yolu yoktu: ya doğruyu buluyor ya
-dersten çıkıyordu. Web her beklentili adımda bir atlama bağlantısı veriyor ve
+Adımı bilmeyen öğrencinin konuşması bitirme yolu yoktu: ya doğruyu buluyor ya
+konuşmadan çıkıyordu. Web her beklentili adımda bir atlama bağlantısı veriyor ve
 atlanan adımı ölçümde **sıfır** sayıyor — atlama sessizce "doğru" sayılmıyor.
 
 Bu, §11.201'deki "Bilmiyorum" ile aynı düşünce: **bilmemenin de bir yolu
@@ -7085,14 +7085,14 @@ zorunda, Android'de gerçek bir ön plan servisi var (`startWalkService`).
 
 ### 11.206 Çalışan bir şey bozuk sanılıyordu
 
-`lessonp.` uzayının kalanı. İki yanlış mesaj çıktı.
+`conversationp.` uzayının kalanı. İki yanlış mesaj çıktı.
 
-**"Birazdan tekrar dene" derken ders devam ediyordu.** Sağlayıcı kapalıysa
-mobil çevrimdışı rol yapmaya düşüyor (`game/offlineRoleplay`, §43'te ölçülen
+**"Birazdan tekrar dene" derken konuşma devam ediyordu.** Sağlayıcı kapalıysa
+mobil çevrimdışı sohbete düşüyor (`game/offlineChat`, §43'te ölçülen
 yol) ama ekrandaki cümle "yapay zekâ sohbeti şu an kullanılamıyor; birazdan
-tekrar dene" diyordu. Kullanıcı **çalışan bir şeyi bozuk sanıp** dersi
+tekrar dene" diyordu. Kullanıcı **çalışan bir şeyi bozuk sanıp** konuşmayı
 bırakabiliyordu. Web hangi yedeğe düşüldüğünü adlandırıyor (senaryolu konuşma
-/ kalıplar); aynı iki cümle taşındı, eskiyen `lesson.ai_off` düştü.
+/ kalıplar); aynı iki cümle taşındı, eskiyen `conversation.ai_off` düştü.
 
 **"Konuşma bitti" yarım bırakıldığında da yazılıyordu.** Sunucu `/api/conversation`
 yanıtında `passed` döndürüyor (asgari tur doldu mu) ve mobil yanıtın yalnız
@@ -7101,7 +7101,7 @@ kalan bir parçası.
 
 **Kapının kendi hatası, beşinci kez.** §116'nın "passed okunuyor" ölçümü iki
 enjeksiyon boyunca yeşil kaldı: önce özet bileşeninin KENDİ `passed` alanını,
-sonra `useState` satırını yakaladı. Bu oturumda aynı ders beşinci kez çıktı
+sonra `useState` satırını yakaladı. Bu oturumda aynı konuşma beşinci kez çıktı
 (§73, §78, §98, §103, §114): **gevşek bir desen, ölçmek istediği şeyin
 komşusunu ölçüyor — ve kapı yeşil kaldığı için bu ancak enjeksiyonla
 görülüyor.** Her yeni kapının enjeksiyonla denenmesi bu yüzden pazarlık
@@ -7167,8 +7167,8 @@ yola bir dosya konursa Türkçe metni hiç sayılmadan içeri girer ve kimse kar
 vermemiş olur. Aynı kaldırmadan kalan sahipsiz bir yorum da düştü
 (`lib/errors.ts`, anlattığı dışa aktarım çoktan silinmiş).
 
-**Ölçmek bir varsayımı da düzeltti:** FORCE listesindeki altı `lib/lessons/*`
-satırını önce fazlalık sandım (dizin zaten SKIP'te). Değillermiş — dizin ders
+**Ölçmek bir varsayımı da düzeltti:** FORCE listesindeki altı `lib/conversations/*`
+satırını önce fazlalık sandım (dizin zaten SKIP'te). Değillermiş — dizin konuşma
 içeriği yüzünden atlanıyor ve o altı MANTIK dosyası bilerek geri alınıyor.
 Ölçüm, yanlış bir "temizlik" yapmamı engelledi.
 
@@ -7192,7 +7192,7 @@ olmayan satır, sessiz bir deliktir.**
 | `check:endpoints` ALLOW + WEB_ONLY | zaten kendini denetliyordu | — |
 
 Hiçbirinde bugün eskimiş bir satır yoktu (tek istisna bir önceki turdaki
-`lib/cheatsheet`). Ama bu turların en çok tekrarlayan dersi şu oldu: **doğru
+`lib/cheatsheet`). Ama bu turların en çok tekrarlayan konuşmayı şu oldu: **doğru
 olmak yetmiyor, doğruluğun ölçülüyor olması gerekiyor.** §11.181'de gölge
 tintinin gerekçesi, §11.207'de ekran okuyucu etiketinin gerekçesi yanlıştı ve
 ikisi de kapı olmadığı için yıllarca öyle kaldı.
@@ -7205,7 +7205,7 @@ gerekçesi de duruyordu — `lib/events.ts`: *"premium özellik kilide takıldı
 (kind = özellik) … paywall'ı hangi kısıt besliyor, oradan görülür."* Olayı
 **hiçbiri göndermiyordu.** Huninin sonu ölçülüyordu (`paywall_view`,
 `paywall_cta`, `purchase_*`), başı ölçülmüyordu: kimin oraya hangi kapıdan
-itildiği hiç yazılmıyordu. §90'ın dersinin aynısı — olayın TANIMLI olması
+itildiği hiç yazılmıyordu. §90'ın konuşmasının aynısı — olayın TANIMLI olması
 gönderildiği anlamına gelmiyor.
 
 Yazılı `kind` listesi de uydurmaydı (`speaking|exam_full|unlimited_tour`);
@@ -7219,7 +7219,7 @@ Reddin gerçekten kullanıcıya gösterildiği her yüzey artık yayın yapıyor
 |---|---|---|
 | `pocket_walk` | `WalkModeScreen` (ekran kapalı reddi) | `walk-player` |
 | `writing` | `ExamScreen`, `skillQuiz` | `assess-client` (403 `premium_required`) |
-| `speaking` | `skillLibrary`, `RoleplayExamScreen` | `assess-client` |
+| `speaking` | `skillLibrary`, `ConversationScoredScreen` | `assess-client` |
 | `mock_exam` | `MockExamScreen` (`locked`) | `mock-exam-player` (`locked`) |
 
 `weekly_exam` **bilerek dışarıda**: sözlükte var ama hiç uygulanmıyor —
@@ -7246,7 +7246,7 @@ ayrıldı, tablo mobildeki `assessFailure` ile yeniden satır satır aynı.
 türlerini gönderiyor mu, (2) türler sunucunun sözlüğünde var mı, (3) sözlükteki
 her kilit ya ölçülüyor ya muaf listesinde gerekçeli, (4) **reddeden yüzeylerden
 biri susmuş mu.** Dördüncüsü turun içinde kendini kanıtladı: bir enjeksiyon
-denemesinden sonra `RoleplayExamScreen`in yayını geri alınmıştı ve ilk üç
+denemesinden sonra `ConversationScoredScreen`in yayını geri alınmıştı ve ilk üç
 kontrol de yeşil kalmıştı — aynı türü başka bir ekran hâlâ gönderiyordu.
 Beş enjeksiyonun beşi de yakalandı.
 
@@ -7327,7 +7327,7 @@ Kalan üç ad mobil-özel ve artık gerekçesiyle yazılı:
 
 Turun kendi hatası da kayda değer: enjeksiyon denemesinden dönerken
 `git checkout` **commit edilmemiş** bir düzeltmeyi iki kez sildi (§11.211'de
-rol yapma ekranının yayını, burada web onboarding çağrısı). İlki yalnız
+sohbet ekranının yayını, burada web onboarding çağrısı). İlki yalnız
 §120'ye eklenen dördüncü kontrol sayesinde görüldü; ikincisi bu kapının
 kendisiyle. Enjeksiyon geri alması artık dosya yedeğinden yapılıyor.
 
@@ -7489,24 +7489,24 @@ de artık "Sonra" (`common.later`, haftalık sınavda da).
 **§128** üç şeyi ölçüyor: ekranın fazları, tanıtım kartının bölüm sırası ve
 `session_start`in hangi anda yazıldığı. Dört enjeksiyonun dördü de yakalandı.
 
-### 11.220 Dersin kapanışında ne kazandığın yazmıyordu
+### 11.220 Konuşmanın kapanışında ne kazandığın yazmıyordu
 
-Ders özetinde üç fark çıktı, üçü de Android'de:
+Konuşma özetinde üç fark çıktı, üçü de Android'de:
 
-- **"Yapabildiklerim" satırı hiç yoktu.** Web özetin altında dersin kazandırdığı
+- **"Yapabildiklerim" satırı hiç yoktu.** Web özetin altında konuşmanın kazandırdığı
   can-do ifadelerini yazıyor (`conversationp.i_can`): kullanıcı kaç doğru yaptığını
-  görüyor ama **ne kazandığını** görmüyordu. Kimlikler dersten (`candoMap`),
-  metni `/api/cando`dan — rol yapma sınavındaki yolun aynısı. Alınamazsa satır
+  görüyor ama **ne kazandığını** görmüyordu. Kimlikler konuşmadan (`candoMap`),
+  metni `/api/cando`dan — puanlı kısımdaki yolun aynısı. Alınamazsa satır
   çizilmiyor; etiket bir süs, özet ona bağlı değil.
 - **Konuşma tamamlanmadığında ekran susuyordu.** Başlık "Konuşma tamamlanmadı"
   diyor, orada bitiyordu: **kaç tur gerektiği yazmıyor, konuşmaya dönmenin
-  yolu da görünmüyordu** — dersi kapatmaktan başka yapılacak bir şey yoktu.
+  yolu da görünmüyordu** — konuşmayı kapatmaktan başka yapılacak bir şey yoktu.
   Web ikisini de aynı yerde veriyor. §11.206'nın sınıfı: çalışan bir şey
   bitmiş gibi görünüyor.
 - **İki taraf da iki sayı gösteriyordu ama ikincileri farklıydı** — webde tur
   sayısı, Android'de başarı yüzdesi. İkisi de gerçek bir şey söylüyor (biri
   konuşmanın uzunluğunu, öteki isabeti: beş turda üç doğru ile on beş turda üç
-  doğru aynı ders değil), o yüzden hangisini atacağıma karar vermek yerine
+  doğru aynı konuşma değil), o yüzden hangisini atacağıma karar vermek yerine
   **üçü birden iki tarafta duruyor.**
 
 **§129** özetin bölüm sırasını ölçüyor (on iki bölüm). "Kalıplar" tablonun
@@ -7672,10 +7672,10 @@ buldu (orada webe atıf var), kodda değil. Kapı doğru çalışıyordu; ölçt
 şey yanlıştı. Kodu hedefleyen iki enjeksiyonla tekrarlandı, ikisi de
 yakalandı.
 
-### 11.228 Aynı hata iki platformda birdendi: rol yapma sınavının süresi
+### 11.228 Aynı hata iki platformda birdendi: puanlı kısmın süresi
 
 §11.227'den sonra aynı soruyu bütün zamanlı yüzeylere sordum ve dördüncüsü
-çıktı: **rol yapma sınavı** (üç dakika, beş tur, yardım yok) süreyi her saniye
+çıktı: **puanlı kısım** (üç dakika, beş tur, yardım yok) süreyi her saniye
 bir sayıcıyı azaltarak işletiyordu. Uygulama arka plana alınınca (webde sekme
 gizlenince) sayaç duruyor, yani üç dakikalık ölçüm istenildiği kadar
 uzatılabiliyordu.
@@ -7686,7 +7686,7 @@ baştan beri doğru yapıyor (`deadline.current - Date.now()`), yani örnek zate
 evin içindeydi.
 
 İkisi birden yanlış olunca **karşılaştırma hiçbir şey söylemez** — bu turun
-dersi bu. §135 o yüzden iki şey ölçüyor: (1) üç zamanlı yüzeyde sürenin
+konuşması bu. §135 o yüzden iki şey ölçüyor: (1) üç zamanlı yüzeyde sürenin
 kaynağı iki platformda aynı mı, (2) **hiçbiri sayıcıyla işlemiyor mu.**
 İkincisi olmadan "ikisi de sayıcı" durumu yeşil geçerdi ve enjeksiyon bunu
 gösterdi.
@@ -7714,7 +7714,7 @@ olmayacaktı.
 
 Android bu boşluğu baştan kapatmış (`game/session` `queueAnswers` /
 `flushPendingAnswers`, AsyncStorage). Web'e aynı kuyruk kondu
-(`lib/answer-queue`, `lesson-queue` ile aynı kalıpta) ve aynı üç kuralı
+(`lib/answer-queue`, `conversation-queue` ile aynı kalıpta) ve aynı üç kuralı
 tutuyor: kayıt kendi `day`ini taşıyor, kuyruk son yirmi turla sınırlı, biri
 düşerse sıradakiler denenmiyor. `progress` ve `wager` kuyrukta **taşınmıyor**
 — ikisi de o turun kendi hâli; yarım kalan turu ertesi gün yeniden açmak ya da
@@ -7728,7 +7728,7 @@ Web'de eşik `status >= 400 && < 500` diye yazılıydı, yani **oturumu düşen
 kullanıcının turu siliniyordu.**
 
 **§136** kuyruğun dört özelliğini ve **kuyruğu çağıranı** ayrı ölçüyor —
-§90'ın dersi: yazılmış olması, çağrılıyor olması demek değil. Dört
+§90'ın konuşması: yazılmış olması, çağrılıyor olması demek değil. Dört
 enjeksiyonun dördü de yakalandı.
 
 Kapı bir kez daha komşusunu ölçtü: kuyruk sınırını dosyanın **ilk**
@@ -7902,7 +7902,7 @@ muaf (`formatPercent` Intl yoksa elle yazıyor; orası kuralın kaynağı).
 
 **Ölçünün komşusunu ölçmenin on sekizinci biçimi** — ve ilk kez sonucu
 yalnız yeşil bir kapı değil, **deftere yazılmış yanlış bir bulgu** oldu.
-Ders şu: bir kapı "beklediğimden çok" sayı bulduğunda, ilk iş sayının
+Konuşma şu: bir kapı "beklediğimden çok" sayı bulduğunda, ilk iş sayının
 kendisine değil **neyi saydığına** bakmak.
 
 Üç enjeksiyon: mobilin işareti geri gömülse, webin kutusu gömse, ve düzen
@@ -7916,7 +7916,7 @@ seviyenin ne anlama geldiği yazmıyordu.** Web açıklamayı "bu düğmeyi send
 başkası çevirmiyor" cümlesinin başına koyarak zaten gösteriyor; mobil de artık
 aynı cümleyi kuruyor.
 
-Bu turun asıl dersi **kendi hatamda**: önce webde açıklamanın yalnız `title`
+Bu turun asıl konuşmayı **kendi hatamda**: önce webde açıklamanın yalnız `title`
 niteliğinde olduğunu gördüm ("dokunmatikte hover yok") ve webe **ikinci bir
 açıklama satırı** ekledim. Oysa orada zaten bir tane vardı, on satır aşağıda.
 Yinelenen satırı yazdım, sonra **kapının kendisi yakaladı**: web tarafını
@@ -8013,8 +8013,8 @@ olmuştu). Bloğun tamamını okuyunca sayaç oradaydı.
 bağlanması**. Dört sayı (iki kutu, iki sayaç) kendi dosyalarında elle
 duruyordu — mobil `src/lib`ten import edemiyor, o yüzden sayı orada elle
 yazılmak zorunda. **§146** dördünü hem birbirine hem `lib/social/username`'in
-kendisine bağlıyor: ikisi birlikte kaysa bile kapı düşüyor (§11.228'in dersi,
-kapıya uygulanmış). Üç enjeksiyonun üçü de yakalandı — sonuncusu tam o dersi
+kendisine bağlıyor: ikisi birlikte kaysa bile kapı düşüyor (§11.228'in konuşması,
+kapıya uygulanmış). Üç enjeksiyonun üçü de yakalandı — sonuncusu tam o konuşmayı
 gösterdi: `BIO_MAX`i 200 yapınca iki yüzey birbirine eşit kaldığı için birinci
 kapı yeşil geçti, ikinci kapı kırmızı yandı.
 
@@ -8210,7 +8210,7 @@ doğrulayamaması** demek. On birine de durum kondu (`aria-pressed` /
 `accessibilityState={{ selected }}`).
 
 **§154** kuralı yüzey tarayarak kuruyor ve iki platformu aynı geçişte gezdiği
-için "ikisi birden sessiz" hâlini de yakalıyor (§11.228'in dersi).
+için "ikisi birden sessiz" hâlini de yakalıyor (§11.228'in konuşması).
 
 Kapı üç kez düzeltildi ve üçü de öğretici:
 
@@ -8243,7 +8243,7 @@ yerli. Yani kırk dördü de doğruydu; yazacağım kapı kırk dört yanlış a
 üretecekti.
 
 **Kuralı bilmeden tarama yapmak, taramanın sonucunu yanlış okutuyor.**
-§11.236'daki "neyi saydığına bak" dersinin ikizi: orada sayı şişmişti, burada
+§11.236'daki "neyi saydığına bak" konuşmasının ikizi: orada sayı şişmişti, burada
 eksiklik uydurmaydı.
 
 Doğru bulgu bir adım ötedeydi. Eşleştirme maddesinde **kullanılmış bir şık
@@ -8389,8 +8389,8 @@ artacağını** döndürüyor (`access.counter`) ve o sayacı artıran tek yer
     pocket_walk               — (yok)
     weekly_exam               — (yok)
     ai_practice               — (yok)
-    speaking_lesson:<seviye>  — (yok)
-    writing_lesson:<seviye>   — (yok)
+    speaking_conversation:<seviye>  — (yok)
+    writing_conversation:<seviye>   — (yok)
     ai_practice_weekly        — (yok)
 
 Yani "seviye başına 2 konuşma alıştırması", "haftada 1 sınav", "günde 20 tur"
@@ -8486,7 +8486,7 @@ yorum emojisiz yeniden yazıldı — kapının muafiyet listesi olmasın diye.
 
 **§162** iki platformu da tarıyor ve sıfır bekliyor. İşaret karakterleri (onay,
 yıldız, müzik) kapsam dışı: tek glif, metin akışında duruyorlar. Beceri içerik
-kütüphanesi de dışarıda — ders metinleri gerçek dünyadan alınıyor ve içinde
+kütüphanesi de dışarıda — konuşma metinleri gerçek dünyadan alınıyor ve içinde
 emoji geçen bir uygulama yorumu örnek metnin kendisi. İki enjeksiyonun ikisi
 de yakalandı.
 
@@ -8578,7 +8578,7 @@ düşüyordu; o da tek satıra alındı.
 Ayrıca `const ad = …` gibi atamalar ve `t("...", { name: … })` gibi parametre
 nesneleri kapsam dışı, ve her dosyada **en az bir çizim** bulunması ayrıca
 ölçülüyor — yoksa deyim değişince kapı hiçbir şey ölçmeden yeşil kalırdı
-(§11.259'daki boş liste dersi).
+(§11.259'daki boş liste konuşmayı).
 
 Altı enjeksiyonun altısı da doğru tarafta yakalandı.
 
@@ -8775,7 +8775,7 @@ ikisi birlikte ele alınmalı.
 düzeltilmiş cümle, övgü ve sıradaki ipucu da geliyor. Web bunların hepsini
 ortak bir kartla çiziyor (`feedback/assessment-card`). Android'de:
 
-- **rol yapma sınavı** (canlı yüzey) yalnız dört rubrik çubuğu gösteriyordu,
+- **puanlı kısım** (canlı yüzey) yalnız dört rubrik çubuğu gösteriyordu,
 - **sınav yazması** yalnız bir yüzde gösteriyordu.
 
 Yani öğrenci "72" görüyor, neyi yanlış yaptığını öğrenmiyordu — oysa sınavın
@@ -9008,7 +9008,7 @@ duyuru onu yeşil yapmıyor. Üç enjeksiyonun üçü yakalandı.
 
 ## §11.273 — Puan duyurulmuyordu (aynı sınıf, üçüncü kalıp)
 
-§11.272'nin dersini uyguladım: canlı bölge sınıfını bu kez **geçici mesaj**
+§11.272'nin konuşmasını uyguladım: canlı bölge sınıfını bu kez **geçici mesaj**
 değil **durum nesnesi** kalıbıyla taradım (`useState<{…} | null>` ve onun
 çizim blokları). İki platform birlikte seksen çizim verdi. Çoğu yüklenen
 **veri** — liste satırı, profil alanı, öneri kutusu — ve onların duyurulmaması
@@ -9115,13 +9115,13 @@ parolası, mevcut/yeni parola ve sıfırlanan parola.
 parolayı eskisinin üzerine yazmak gibi. Kapı bu yüzden yalnız "ipucu var mı"
 demiyor, hangi ipucu olduğunu da ölçüyor.
 
-**§180** iki kez düzeltildi ve ikisi de bu oturumda öğrenilmiş derslerin
+**§180** iki kez düzeltildi ve ikisi de bu oturumda öğrenilmiş konuşmaların
 tekrarıydı:
 
 1. Ölçüm mobildeki **tam ifadeyi** arıyordu; web aynı kararı ters sırayla
    yazıyor (`mode === "signin" ? "current-password" : …`) ve kapı doğru kodu
    "yok" diye bildirdi. Önemli olan biçim değil davranış: iki ipucunun da
-   geçmesi ve kararın kipe bağlanması (§167'deki değişken adı dersi).
+   geçmesi ve kararın kipe bağlanması (§167'deki değişken adı konuşmayı).
 2. Ölçüm dosyada ipucunun **geçmesine** bakıyordu; giriş e-postasının ipucu
    silinince sıfırlama ekranındaki e-posta alanı, yeni parolanınki silinince
    "tekrar" alanı kapıyı yeşil tutuyordu — komşu alan ölçülenin yerine
@@ -9198,7 +9198,7 @@ Artık sunucu tarafında `lib/profile-limits` tek kaynak, mobilde
 hepsi sınırı oradan okuyor.
 
 **§50, §144 ve §145 bu değişiklikle düştü ve üçü de §183'e katlandı.** Biri
-ders verdi: §144 sayıyı bulamadığında iki tarafta da `"?"` üretiyordu ve
+konuşma verdi: §144 sayıyı bulamadığında iki tarafta da `"?"` üretiyordu ve
 `"?" === "?"` kapıyı yeşil tutuyordu. Yani kapı, sabitler ortaya çıktığı an
 **hiçbir şey ölçmemeye** başlamış, ama bunu bir arıza gibi değil bir uyum
 gibi bildirmişti. Kural: *bir kapı ölçemediği şeyi "bilinmiyor" diye
@@ -9276,7 +9276,7 @@ ve hane sayısının yanına — o dosya tam da bu gerekçeyle kurulmuştu), ekl
 `lib/twoFactor` içinde, karşılaştırmasını mevcut "ortak sayısal sabitler"
 kapısı zaten yapıyor.
 
-## §11.283 — Rol yapma sınavının geçme eşiği sekiz yerde yazılıydı
+## §11.283 — Puanlı kısmın geçme eşiği sekiz yerde yazılıydı
 
 İkinci bulgu klasik sınıftan ama kararı doğrudan etkiliyordu: eşik hiçbir
 yerde sabit değildi. İki platformun ekranı `overall >= 60` diye **elle**
@@ -9284,7 +9284,7 @@ karşılaştırıyor, eşiği söyleyen cümle ("eşiğin altında (60)") altı 
 dizgesinde ayrıca yazılıydı. Sekiz yer. Biri değişse kullanıcı, ekranın
 söylediği eşiği geçtiği hâlde geçemezdi.
 
-`EXAM_PASS_SCORE` `lib/lessons/roleplay-const` içine girdi (`EXAM_TURNS` ve
+`EXAM_PASS_SCORE` `lib/conversations/chat-const` içine girdi (`EXAM_TURNS` ve
 `EXAM_SECONDS` ile aynı dosya), mobil ekran kendi aynasını tutuyor; hem karar
 hem cümle oradan besleniyor.
 
@@ -9294,7 +9294,7 @@ yeşil bırakacaktı — §144'ün tuzağının aynısı, bu sefer önceden gör
 ikiye ayrıldı: sayının kendisi ve ekranın sabiti kullanıp kullanmadığı.
 
 **§186-187** aynı politika tablosuna eklendi; ayrıca iki mutlak ölçüt:
-sunucunun `trustDeviceMaxAge`i sabitten geçirdiği, ve rol yapma kararının
+sunucunun `trustDeviceMaxAge`i sabitten geçirdiği, ve sohbet kararının
 (yalnız cümlenin değil) sabitten okuduğu. Altı enjeksiyonun altısı yakalandı.
 
 ## §11.284 — Kalan beş politika sayısı ve kapının kendi ölçüm hatası
@@ -9310,9 +9310,9 @@ beş yer daha.
 | Haftalık pekişmiş eşiği | "30'a ulaşınca" | `MIN_MASTERED` |
 | Hız turu süresi | "modülün kelimeleri, 60 sn" | `BOSS_SECONDS` |
 
-İkisi istemciden **erişilemiyordu**: `lib/weekly` ve `lib/lessons/boss`
+İkisi istemciden **erişilemiyordu**: `lib/weekly` ve `lib/conversations/boss`
 `server-only`. §11.280'deki çözümün aynısı uygulandı — `lib/weekly-const` ve
-`lib/lessons/boss-const`, eskiler oradan yeniden dışa veriyor. Mobilde beş
+`lib/conversations/boss-const`, eskiler oradan yeniden dışa veriyor. Mobilde beş
 sayının kopyası `lib/learningRules` içinde toplandı; adlar web'dekiyle birebir
 aynı olduğu için ayrışma zaten var olan "ortak sayısal sabitler" kapısına
 düşüyor (enjeksiyonla doğrulandı).
@@ -9326,7 +9326,7 @@ cümlede rastlantıyla bulunan bir başkasıydı. Politika tablosuna `yer` alan�
 eklendi; her politika hangi yer tutucuyu beklediğini **kendisi** söylüyor.
 Enjeksiyon 5 (`{min}` → `30`) eski hâlde sessizce geçerdi, şimdi yakalanıyor.
 
-Bu, bu turların en sık tekrar eden dersinin bir örneği daha: **bir kapının
+Bu, bu turların en sık tekrar eden konuşmasının bir örneği daha: **bir kapının
 yeşil olması ölçtüğünün doğru şey olduğunu göstermez.** Enjeksiyon, ölçümün
 kendisini ölçmenin tek yolu.
 
@@ -9338,8 +9338,8 @@ durumda, yani tutulmayan bir söz yalnız yanlış metin değil.
 
 İki söz kodun davranışına bağlıydı ama metne düz sayı olarak yazılmıştı:
 
-- "Konuşma pratiği kayıtları **30 gün**, sonra kendiliğinden silinir" —
-  kuralı `lib/lessons/log` içindeki `RETENTION_DAYS` uyguluyor.
+- "Sohbet kayıtları **30 gün**, sonra kendiliğinden silinir" —
+  kuralı `lib/conversations/log` içindeki `RETENTION_DAYS` uyguluyor.
 - "Oturum süresince, **en çok 30 gün**" ve "oturum çerezi … 30 gün" —
   kuralı `lib/auth/server` içindeki `expiresIn: 60 * 60 * 24 * 30` uyguluyor.
 
@@ -9348,7 +9348,7 @@ söylemeye devam ederdi. Metinde zaten bir belirteç düzeni vardı
 (`{{backupRetentionDays}}` tam bu gerekçeyle konulmuş) — eksik olan, bu iki
 sözün ona bağlanmasıydı.
 
-`SPEECH_LOG_RETENTION_DAYS` (`lib/lessons/log-const`) ve `SESSION_MAX_DAYS`
+`SPEECH_LOG_RETENTION_DAYS` (`lib/conversations/log-const`) ve `SESSION_MAX_DAYS`
 (`lib/auth/session-config`) açıldı; ikisi de `server-only` modüllerden
 çıkarıldı çünkü metni besleyen `lib/legal` onlardan okuyor. Yeni iki belirteç
 `{{speechLogDays}}` ve `{{sessionMaxDays}}` **değerini elle almıyor**,
@@ -9359,7 +9359,7 @@ kendisi) iki ayrı elle yazılmış listeydi. Yeni bir alan birine eklenip ötek
 eklenmezse belirteç sayfada ham `{{...}}` görünür, panelde ise kaydı
 engellerdi. Liste artık `Object.keys(LEGAL_ENTITY)`den türetiliyor.
 
-**Kapı iki kez yanlış yerden ölçtü, ikisi de kendi dersini verdi:**
+**Kapı iki kez yanlış yerden ölçtü, ikisi de kendi konuşmasını verdi:**
 
 1. İlk hâl metnin TAMAMINDA "N gün" arıyordu ve üç dilde birden "talepler en
    geç 30 gün içinde sonuçlandırılır" cümlesine takıldı. O otuz gün
@@ -9377,7 +9377,7 @@ engellerdi. Liste artık `Object.keys(LEGAL_ENTITY)`den türetiliyor.
 
 ## §11.286 — Kullanım şartlarındaki adil kullanım sınırları uçların kopyasıydı
 
-Şartlar sayfası dört günlük sınır söylüyor: konuşma pratiği 300 tur, sunucu
+Şartlar sayfası dört günlük sınır söylüyor: sohbet 300 tur, sunucu
 konuşma tanıma 400 istek, telaffuz puanı 120 istek, içerik bildirimi 20.
 Sayılar `lib/legal` içindeki `FAIR_USE` tablosundan geliyordu ve tablo, dört
 uç dosyasındaki yerel sabitlerin **elle tutulmuş kopyasıydı** — tablonun kendi
@@ -9405,7 +9405,7 @@ liste sessizce bayatlamadı.
 **Kapı (test-legal)** üç şey soruyor: tablo kaynakla aynı mı, tablo ile kaynak
 aynı sayıda alan taşıyor mu (kaynağa eklenen bir kota metinde hiç söylenmezse
 görünür), ve her uç sınırı kaynaktan mı okuyor. Sonuncusu iki kalıpla: sabitin
-adı uçtan uca aynı olmadığı için (`ROLEPLAY_DAILY_LIMIT` da var) elle yazılmış
+adı uçtan uca aynı olmadığı için (`CHAT_DAILY_LIMIT` da var) elle yazılmış
 sayı taraması ada değil **biçime** bakıyor. Dört enjeksiyonun dördü yakalandı.
 
 ## §11.287 — Davet ödülü: kod değişmeden bozulabilen bir söz
@@ -9506,7 +9506,7 @@ biçim o taramanın desenine girmiyordu.
 **§195** beşi birden okuyor. Dört enjeksiyonun dördü yakalandı; dördüncüsü tam
 da (b)'nin davet ettiği yanlış düzeltmeydi (beceri kaydını sınava eşitlemek).
 
-**Not — paralel oturum:** `mobile/src/data/lessons/index.ts` içinde
+**Not — paralel oturum:** `mobile/src/data/conversations/index.ts` içinde
 `./en-b2.json` içe alınmış ama dosya henüz yazılmamış (başka bir oturumun
 sürmekte olan işi). Mobil `tsc` tek bu hatayı veriyor ve `App.test.tsx` süiti
 bu yüzden yüklenemiyor (136 test geçiyor, 1 süit yükleme hatası). Benim
@@ -9520,11 +9520,11 @@ değişikliklerimle ilgisi yok ve onların dosyalarına dokunmadım.
 |---|---|---|---|
 | Yürüyüş cevabı | `ANSWER_WINDOW_MS` 8000 | adsız `8000` | aynı sayı, **ada bağlandı** |
 | Yürüyüş onayı | `CONFIRM_SILENCE_MS` 7000 | adsız `7000` | aynı sayı, **ada bağlandı** |
-| Ders | `SILENCE_MS` 12000 | adsız `8000` | **ayrışma** → 12000 |
+| Konuşma | `SILENCE_MS` 12000 | adsız `8000` | **ayrışma** → 12000 |
 | Seviye sınavı | `SPEAK_MAX_MS` 12000 | 8000 | §11.289'da düzeltildi |
-| Rol yapma sınavı | üst sınır yok (tarayıcı bitirir) | 8000 emniyet tavanı | **bilinçli fark**, ölçüm dışı |
+| Puanlı kısım | üst sınır yok (tarayıcı bitirir) | 8000 emniyet tavanı | **bilinçli fark**, ölçüm dışı |
 
-**Ders adımı gerçek bir ayrışmaydı.** Web on iki saniye bekliyor ve gerekçesi
+**Konuşma adımı gerçek bir ayrışmaydı.** Web on iki saniye bekliyor ve gerekçesi
 yazılı: "bir cümleyi düşünmek birkaç saniye, on saniyeyi geçen sessizlik
 takılma." Mobil sekiz saniyede mikrofonu kapatıyordu ve bir gerekçesi yoktu —
 dört saniyelik fark öğrenciyi cümlesini kurarken kesiyordu. Gevşetme yönü
@@ -9536,13 +9536,13 @@ Ad verilince var olan "ortak sayısal sabitler" kapısı ikisini kendiliğinden
 karşılaştırmaya aldı (ortak sabit sayısı 51'e çıktı) ve enjeksiyon bunu
 doğruladı. Bir sayıyı adlandırmak, burada kapı yazmakla aynı şey.
 
-**Ders satırı ayrı bir kapı olarak yazıldı çünkü sayı aynı olmalı, ad
+**Konuşma satırı ayrı bir kapı olarak yazıldı çünkü sayı aynı olmalı, ad
 olmamalı:** webde sayaç yalnız **kendiliğinden açılan** mikrofon için işliyor
 (kullanıcı kendi dokunduysa sınır yok), mobilde her durumda üst sınır. Aynı
 ada zorlamak iki farklı şeyi aynı sanmak olurdu; §196 eşitliği mutlak ölçütle
 tutuyor.
 
-**Rol yapma sınavı bilerek dışarıda:** webde tarayıcı tanıyıcısı kendi
+**Puanlı kısım bilerek dışarıda:** webde tarayıcı tanıyıcısı kendi
 bitiriyor ve hiç üst sınır yok; mobildeki 8000 bir emniyet tavanı. İkisi aynı
 birimi ölçmüyor — karşılaştırmak, ölçtüğünü sanıp başka şeyi ölçmenin bu
 defterdeki en sık hatası olurdu.
@@ -9557,7 +9557,7 @@ Değerlendirme bekleme tavanları eşlendi:
 | Çağrı | Web | Mobil (önce) |
 |---|---|---|
 | Tek cevap (yazma, serbest cümle, beceri) | `ASSESS_TIMEOUT_MS` 20000 | genel tavan 25000 |
-| Rol yapma sınavı puanlaması | varsayılan 20000 | elle `30_000` |
+| Puanlı kısım puanlaması | varsayılan 20000 | elle `30_000` |
 | Çeviri turunda AI onayı | `ASSESS_WAIT_MS` 6000 | `ASSESS_WAIT_MS` 6000 |
 
 Üçüncü satır zaten eşti ve **sebebi öğretici**: iki taraf da sayıyı **aynı
@@ -9565,12 +9565,12 @@ adla** yazıyordu, o yüzden var olan "ortak sayısal sabitler" kapısı onu
 koruyordu. İlk ikisi adsızdı — biri genel tavana düşüyor, öteki çağrı yerinde
 elle yazılı — ve hiçbir şey bakmıyordu.
 
-**Rol yapma satırı webde bir riskti.** Orada konuşmanın tamamı gönderiliyor,
+**Sohbet satırı webde bir riskti.** Orada konuşmanın tamamı gönderiliyor,
 tek cümle değil; mobil baştan beri otuz saniye bekliyordu, web varsayılan
 yirmiyle yetiniyordu. Yani uzun bir konuşma **webde zaman aşımına düşerken
 mobilde puanlanıyordu** — aynı sınav, aynı cevap, farklı sonuç. Fark bilinçli
 olarak korundu (yük gerçekten farklı) ama artık iki tarafta aynı adla yazılı:
-`ASSESS_ROLEPLAY_TIMEOUT_MS`.
+`ASSESS_CHAT_TIMEOUT_MS`.
 
 Bir ayrıntı ölçümü etkiliyordu: webde sayı `20_000` yazılıydı ve ortak sabit
 taraması **alt çizgili biçimi görmüyordu**. Alt çizgi kalktı; §11.290'da
@@ -9612,7 +9612,7 @@ göre kurulur.
 ayıklanmış, boşluk teklenmiş). Üç enjeksiyonun üçü yakalandı: seri eşiğinin
 kayması, hız bonusunun yuvarlanması, yanlış cevabın erken dönüşünün kalkması.
 
-Ders: **bir sabit çiftini korumak, o sabitleri kullanan formülü korumaz.**
+Konuşma: **bir sabit çiftini korumak, o sabitleri kullanan formülü korumaz.**
 Aynı sayılarla iki farklı sonuç üretmek gayet mümkün ve bu deftere bugüne
 kadar hep sayılar üzerinden bakılmıştı.
 
@@ -9667,7 +9667,7 @@ birini önceki ünitelerden seçip kendi sorularının arasına serpiyor
 ve aralıklı tekrar bu uygulamanın bütün öğrenme tasarımının dayanağı.
 
 Hiçbir kapı bakmıyordu, çünkü kapılar sayı ve metin karşılaştırıyor;
-**olmayan bir şeyi hiçbiri aramıyordu.** §11.292'nin dersinin devamı: sabitleri
+**olmayan bir şeyi hiçbiri aramıyordu.** §11.292'nin konuşmasının devamı: sabitleri
 karşılaştırmak o sabitleri kullanan hesabı korumuyor — ve hesap bir tarafta
 hiç yoksa karşılaştırılacak sayı da yok.
 
@@ -9808,7 +9808,7 @@ Mobilde yapılıp webe ulaşmamış düzeltmeleri aradım: mobil yorumlarındaki
 `lang` vermeden çağırıyor, yani niyet eşleştirmesi hep Almanca sayı katlaması
 yapıyor — ilk bakışta İngilizce kursta bir kayıp gibi duruyor. Veriyi saydım:
 **577 diyalog kökünün 58'i sayı içeriyor ve hepsi Almanca**; İngilizce
-derslerde sayısal kök hiç yok. Üstelik iki platform da aynı varsayılanı
+konuşmalarda sayısal kök hiç yok. Üstelik iki platform da aynı varsayılanı
 kullanıyor. Yani ne ayrışma ne kayıp — değiştirmedim.
 
 **Gerçek bulgu tasarım tarafındaydı.** Mobil günün turu sıralamasında ilk üçe
@@ -9949,7 +9949,7 @@ Yeni kapı üç şeye bakıyor:
 3. **Seri hâle gelmeyen prop geçiliyor mu** — sunucu bileşeninden istemci
    bileşenine fonksiyon, `Date`, `Map`, `Set`.
 
-**Üçüncü ölçüm bir kez hiçbir şey ölçmedi ve bu turun asıl dersi o.** Açılış
+**Üçüncü ölçüm bir kez hiçbir şey ölçmedi ve bu turun asıl konuşmayı o.** Açılış
 etiketini `[\s\S]{0,700}?/?>` ile kesiyordum; ilk `>` **okun içindeydi**
 (`onPick={() => …}`), yani etiket tam da aranan prop'un önünde bitiyordu.
 Enjeksiyon yakalanmayınca ortaya çıktı — ve tuzağın kaydı depoda zaten vardı:
@@ -10051,7 +10051,7 @@ kapanmıyor. Simetrik.
 
 ## §11.306 — Hesap silme sekiz tabloyu arkada bırakıyordu
 
-Geçen turun dersini uyguladım: **kararlaştırılabilir** bir soru seç. Bu soru
+Geçen turun konuşmasını uyguladım: **kararlaştırılabilir** bir soru seç. Bu soru
 öyle — şemadaki hangi tablolar kullanıcıya bağlı, ve `lib/account/purge` onları
 kapsıyor mu? İkisi de metinden okunabiliyor.
 
@@ -10152,13 +10152,13 @@ sandığı şeyin yanındakine bakıyor. Gereksiz eklediğim anahtar geri alınd
 mobil ikisini de, ve seçim platforma bağlı mı. Üç enjeksiyonun üçü yakalandı —
 biri tam da bugün düzelttiğim hâl (webin tek mağaza adı yazması).
 
-Ders, bir kural olarak: *anahtar kullanımını `t("…")` deseniyle saymak,
+Konuşma, bir kural olarak: *anahtar kullanımını `t("…")` deseniyle saymak,
 koşullu ve değişkenle çağrılan her yeri gözden kaçırır; "bu yüzeyde şu metin
 var mı" sorusu ancak anahtar tek tek arandığında güvenilir.*
 
 ## §11.309 — Şablonla kurulan anahtarlar: ekrana ham anahtar çıkma riski
 
-§11.308'in dersini geriye dönük uyguladım. Önce körlüğün büyüklüğünü ölçtüm:
+§11.308'in konuşmasını geriye dönük uyguladım. Önce körlüğün büyüklüğünü ölçtüm:
 webde 1562 düz `t("…")` çağrısına karşı **116 koşullu + 40 değişkenli**,
 mobilde 1577'ye karşı **93 + 39**. Yani anahtar kullanımının yaklaşık onda
 biri düz taramaya görünmüyor.
@@ -10191,7 +10191,7 @@ bayatlamasını görmeye devam ediyor.
 
 Kapı bilerek **elle beslenen bir liste** tutuyor: "şablonla kurulan her
 anahtarı bul" diye genel bir tarama, değer kümesini tahmin etmek zorunda kalır
-ve tahmin eden kapı ya gürültü ya kalıcı yeşil üretir (§11.305'in dersi).
+ve tahmin eden kapı ya gürültü ya kalıcı yeşil üretir (§11.305'in konuşması).
 
 ## §11.310 — Belgelenen `kind` kümesi ile üretilen değerler
 
@@ -10207,10 +10207,10 @@ alabileceğini yazıyor ve o cümle bir sözleşme: pano `kind`e göre gruplayı
 satır satır gösteriyor (`lib/admin`). `production_attempt` için yorum **altı**
 değer sayıyordu:
 
-`translate | transform | free_sentence | writing_free | speaking_drill | roleplay`
+`translate | transform | free_sentence | writing_free | speaking_drill | chat`
 
 Üretilen ise **dört**: `lib/assess` `productionKind` yalnız serbest cümle,
-serbest yazma, konuşma alıştırması ve rol yapmayı yazıyor. **Çeviri ve
+serbest yazma, konuşma alıştırması ve sohbeti yazıyor. **Çeviri ve
 dönüştürme turları bu olayı hiç yazmıyor**, yani panonun "üretim görevleri"
 kırılımında o iki satır hiç görünmüyor — okuyan kişi "henüz veri yok" sanıyor.
 
@@ -10261,7 +10261,7 @@ Kullanıcının bildirdiği "13 madde ama x/10" şikâyetinin (§11.284) bir kat
 altında gerçek bir ayrışma vardı.
 
 Sunucu ilerlemeye **yalnız oynanabilir** ve tamamlanabilir maddeleri katıyor:
-`completable = playable ∩ {lesson, read, listen, write}` (`lib/immersion/state`).
+`completable = playable ∩ {conversation, read, listen, write}` (`lib/immersion/state`).
 İki istemci aynı dört türü süzüyordu ama **`playable` şartını atlıyordu.**
 
 Fark Almancada görünmüyor, çünkü havuzlar tam tamına yetiyor: 25 ünite × 2
@@ -10383,7 +10383,7 @@ istisnası **karşılıksız** kaldı ve kapı bunu ayrı bir ihlal olarak bildi
 
 ## §11.317 — İngilizce kursta Patika'nın altı yuvası boş (içerik, kod değil)
 
-§11.312'nin dersi genelleştirildi: her kurs/seviye için gereken yuva sayısı ile
+§11.312'nin konuşması genelleştirildi: her kurs/seviye için gereken yuva sayısı ile
 havuzdaki egzersiz sayısı ayrı ayrı sayıldı.
 
 | Kurs | Üniteli egzersiz | Gereken (okuma/dinleme/yazma) |
@@ -10397,7 +10397,7 @@ kütüphanesinin. Patika'nın ünite başına 2 okuma + 2 dinleme + 2 yazma yuva
 
 **Kod ayrışması yok:** iki istemci de oynanamaz yuvayı listede hiç
 göstermiyor (`unit-pane` ve `UnitScreen` aynı süzgeç) ve §11.312'den sonra
-ilerleme de yalnız dört dersi sayıyor. Eksik olan içerik: 5 seviye × 3 beceri
+ilerleme de yalnız dört konuşmayı sayıyor. Eksik olan içerik: 5 seviye × 3 beceri
 × 50 yuva. Deneme sınavları bu durumda değil — iki kursta da seviye başına 12
 kâğıt tam (120 kâğıt).
 
@@ -10444,14 +10444,14 @@ Kapı ölü istisnayı da bildiriyor — `check:colors`ta bu gerçek bir bulguyd
 
 ## §11.319 — Aynı uygulamada üç farklı sohbet balonu
 
-Uygulamada üç sohbet balonu var: koç balonu, ders balonları ve rol yapma
+Uygulamada üç sohbet balonu var: koç balonu, konuşma balonları ve sohbet
 sınavı. Üçü de aynı şeyi yapıyor, ama biçimleri üç ayrıydı:
 
 | | gövde | kuyruk köşesi |
 |---|---|---|
 | mobil koç | `radii.lg` 20 | `radii.sm` 10 |
-| mobil ders | `radii.lg` 20 | **yok** |
-| mobil rol yapma | `radii.lg` 20 | **yok** |
+| mobil konuşma | `radii.lg` 20 | **yok** |
+| mobil sohbet | `radii.lg` 20 | **yok** |
 | web (üçü) | `rounded-2xl` **16** | `rounded-bl-sm` **4** / `-md` **6** |
 
 Mobilde kuyruk köşesini yalnız koç balonu yapıyordu; web üçünde de yapıyordu
@@ -10588,14 +10588,14 @@ optik ayar (bir rozeti hizalayan `marginTop: 2`, sıkı bir satırdaki `gap: 6`,
 Yarıçapta durum tersiydi: orada belgelenmiş beş basamak vardı ve mobil ona
 **birebir** uyuyordu, yani sapma tek taraflıydı ve ölçülebilirdi. Burada bir
 kapı 320 bilinçli ayarı ihlal diye bildirirdi; niyeti okuması gerekir ve
-"niyeti okuması gereken kapı yazılmaz" (§11.254'ün dersi). Ayrışma varsa
+"niyeti okuması gereken kapı yazılmaz" (§11.254'ün konuşması). Ayrışma varsa
 yüzey yüzey, karşılığına bakarak bulunur — sohbet balonlarının dolgusunda
 (§11.319) böyle bulundu.
 
 ## §11.324 — Tipografi borcu kapandı (943 → 0) ve en görünür karar kaydedildi
 
 §11.322'nin kalan 943 kullanımı da çevrildi. Bu turun yöntemi farklıydı: sınav,
-ders ve beceri oynatıcılarının başlıkları **tek tek mobil karşılığındaki
+konuşma ve beceri oynatıcılarının başlıkları **tek tek mobil karşılığındaki
 `<Text variant>`e bakılarak** eşlendi, toplu kurala bırakılmadı.
 
 O bakış tek başına bir bulguydu: `MockExamScreen`, `ExamScreen`, `skillQuiz` ve
@@ -10648,20 +10648,20 @@ yerde.
 
 | Yuva | Önce | Sonra |
 |---|---|---|
-| `lesson-player` "sürdürüldü" kapat | **14×14** (dolgu yok) | 38 (`p-1` + `hit-8`) |
+| `conversation-player` "sürdürüldü" kapat | **14×14** (dolgu yok) | 38 (`p-1` + `hit-8`) |
 | `league-board` bildir | **21** | 37 |
 | `push-optin` kapat | **23** (WCAG 24'ün altında) | 39 |
 | `install-prompt` kapat | 24 (sınırda) | 40 |
 | `writings-card` sil | ~26 | ~42 |
 | `skills/quiz` dinle | 26 | — (metinli, hedefi geniş) |
-| `lesson-player` ikinci dinle | 28 | 44 |
+| `conversation-player` ikinci dinle | 28 | 44 |
 | `exam-player` çık | 32 | 48 |
 | `placement-test` çık | 32 | 48 |
 | `sound-settings` örnek çal | 32 | 48 |
 | `voice-picker` dinle | 32 | 48 |
 
 Eşik **36** ve kaynağı o yorumun kendisi ("mobilin gerçek hedefi 36–50").
-`lesson-player`'ın ikinci dinle düğmesi özellikle öğreticiydi: kardeşi olan
+`conversation-player`'ın ikinci dinle düğmesi özellikle öğreticiydi: kardeşi olan
 birinci dinle düğmesi `hit-8` taşıyor **ve yanında gerekçesi yazılı**, ikincisi
 taşımıyordu.
 
@@ -10737,7 +10737,7 @@ bundan sonra yeniden ayıklanmaması için buraya yazılıyor:
 1. **Geliştirici günlüğü** — `console.error("[learn] profil okunamadı")` gibi.
    `src/app/(app)` altındaki on beş hitin **hepsi** bu. Ekrana çıkmıyor.
 2. **Yapay zekâya giden istem** — `task.prompt: \`Çevir: ${sentence.tr}\``
-   (`translate-game`), rol yapma sınavının sahne tarifi. Model okuyor, kullanıcı
+   (`translate-game`), puanlı kısmın sahne tarifi. Model okuyor, kullanıcı
    okumuyor.
 3. **Hedef dilin kendi harfleri** — umlaut ekleme düğmeleri (`ö ü Ö Ü`) beş
    oyunda ve yazma oynatıcısında. Çevrilecek metin değil, karakter.
@@ -10746,7 +10746,7 @@ bundan sonra yeniden ayıklanmaması için buraya yazılıyor:
    `Niveauprüfung`/`Modulprüfung` üst satırı (o da yalnız kâğıt Almanca başlık
    taşıyorsa; İngilizce kursta modül sınavı hiç yok — §11.326).
 5. **Anadile göre eşlenmiş tablolar** — `TRUE_WORD`/`FALSE_WORD`
-   (`lesson-player`, tanıyıcı arayüz dilindeki kelimeyi dinliyor), `UNIT_WORD`
+   (`conversation-player`, tanıyıcı arayüz dilindeki kelimeyi dinliyor), `UNIT_WORD`
    (`brief.ts`, sunucu tarafı yedek ad). Üç dilin üçü de yazılı.
 6. **Pazarlama / paylaşım meta verisi** — `layout.tsx` kök başlığı ve
    açıklaması, `manifest.ts`, `opengraph-image.tsx`. Tek dilli ve bilerek:
@@ -10805,7 +10805,7 @@ Kurs ekseninde "karar ile yükleme aynı girdiyi okuyor mu" taraması temiz
 çıktı: sözlük yükleyicilerine sabit kurs geçen tek yerler `catch` dalları
 (profil okunamazsa `"de"`), TTS parçalarının `lang: "de"` etiketi ise iki
 platformda da yalnız "hedef dil" işareti — gerçek ses kurstan geliyor
-(`voiceForSegment` → `lessonVoice(course)`), mobil de aynı düzeni yazıyor.
+(`voiceForSegment` → `conversationVoice(course)`), mobil de aynı düzeni yazıyor.
 Yani taranan hipotez yanlıştı ve bu da bir sonuç.
 
 Kusurlar **rozet duvarını** mobil karşılığıyla satır satır karşılaştırınca
@@ -11060,7 +11060,7 @@ Yani sesli okuyucu kullanan biri eyleminin başarısız olduğunu **hiç
 **İki taraf da yanlış olduğu için karşılaştırmalı bir kapı bunu göremezdi.**
 §11.228'in sınıfı: "her iki taraf da aynı yanlışı yapıyorsa eşitlik kontrolü
 geçer". Ölçüt karşılaştırma değil, **mutlak**: bir eylem başarısız olduysa
-duyurulur. Bu turların en çok tekrar eden dersi, tersinden: bazı kusurlar
+duyurulur. Bu turların en çok tekrar eden konuşmayı, tersinden: bazı kusurlar
 ancak iki tarafa da aynı anda bakmayan bir ölçütle görülür.
 
 Düzeltme iki platformda da **tek yerde**: web'de yeni `social/error-text`
@@ -11115,8 +11115,8 @@ quizinin sonucu. Web'de kabın `role="status"`u, mobilde sonuç metninin
 (`boss-player` ↔ `BossScreen`), meydan okuma (`challenge-player` ↔
 `ChallengeScreen`), günün turu (`daily-player` ↔ `DailyScreen`), haftalık
 (`weekly-player` ↔ `WeeklyScreen`), deneme sınavı (`mock-exam-player` ↔
-`MockExamScreen`), seviye sınavı (`exam-player` ↔ `ExamScreen`), rol yapma
-(`roleplay-exam` ↔ `RoleplayExamScreen`), oturum (`session-player` ↔
+`MockExamScreen`), seviye sınavı (`exam-player` ↔ `ExamScreen`), sohbet
+(`conversation-scored` ↔ `ConversationScoredScreen`), oturum (`session-player` ↔
 `GameScreen`) ve yürüyüş (`walk-player` ↔ `WalkModeScreen`). Hepsini bir
 turda eklemek doğru olmazdı: sonuç kabı her ekranda ayrı yerde ve bazılarında
 birden fazla sonuç durumu var (sınavın bölüm sonu ile kâğıt sonu ayrı). Sırayla
@@ -11151,15 +11151,15 @@ dizesiyle arıyor.
 §223 artık on ölçüt okuyor (beş yüzey × iki platform). Üç enjeksiyon
 yakalandı. **Kalan altı yüzey:** haftalık (`weekly-player` ↔ `WeeklyScreen`),
 deneme sınavı (`mock-exam-player` ↔ `MockExamScreen`), seviye sınavı
-(`exam-player` ↔ `ExamScreen`), rol yapma (`roleplay-exam` ↔
-`RoleplayExamScreen`), oturum (`session-player` ↔ `GameScreen`) ve yürüyüş
+(`exam-player` ↔ `ExamScreen`), sohbet (`conversation-scored` ↔
+`ConversationScoredScreen`), oturum (`session-player` ↔ `GameScreen`) ve yürüyüş
 (`walk-player` ↔ `WalkModeScreen`). Son üçü özellikle dikkat istiyor: sınavın
 **bölüm sonu** ile **kâğıt sonu** ayrı iki sonuç ve oturumun içinde etap
 kartları var.
 
 ## §11.339 — Sonuç duyurusu: üç yüzey daha; kalan üçü çok durumlu
 
-Haftalık sınav, deneme sınavı ve rol yapma sınavı kapandı — §223 artık **sekiz
+Haftalık sınav, deneme sınavı ve puanlı kısım kapandı — §223 artık **sekiz
 yüzey × iki platform = on altı ölçüt** okuyor. Kalan üç yüzey: seviye sınavı
 (`exam-player` ↔ `ExamScreen`), oturum (`session-player` ↔ `GameScreen`) ve
 yürüyüş (`walk-player` ↔ `WalkModeScreen`). Üçü de **çok durumlu** — sınavın
@@ -11181,7 +11181,7 @@ pencere tahmini kalıyor ne de "dosyada bir yerde" gevşekliği. Enjeksiyonla ik
 durum ayrı ayrı doğrulandı: rolü silmek **ve** rolü yanlış dala taşımak —
 ikincisi dosya geneline bakan bir desenin kaçıracağı tam durum.
 
-Bu, aynı dersin bu turlardaki dördüncü biçimi: §184 komşu satırı ölçtü, §208
+Bu, aynı konuşmanın bu turlardaki dördüncü biçimi: §184 komşu satırı ölçtü, §208
 420 karakterlik pencere komşuyu gördü, §11.333 `[^)]*` ilk parantezde durdu,
 şimdi 400 karakterlik pencere yetmedi. Ortak kural artık net: **pencere
 yerine yapı** — sınır bir mesafe değil, bir düğüm olmalı.
@@ -11190,7 +11190,7 @@ yerine yapı** — sınır bir mesafe değil, bir düğüm olmalı.
 
 Kalan üç çok durumlu yüzey de kapandı ve §223 artık **bütün** sonuç
 yüzeylerini tutuyor: beceri egzersizi, ünite quizi, patron turu, meydan okuma,
-günün turu, haftalık sınav, deneme sınavı, rol yapma, seviye sınavı, oturumun
+günün turu, haftalık sınav, deneme sınavı, sohbet, seviye sınavı, oturumun
 **etap** ve **bitiş** kartları, yürüyüş — iki platformda, yirmi dört ölçüt.
 
 **Bir varsayımım ölçümle düzeldi.** §11.338 ve §11.339'da "sınavın bölüm sonu
@@ -11375,7 +11375,7 @@ Eksen **bekleme**ydi ve iki ayrı kusur kümesi çıktı.
 |---|---|
 | `immersion/skill/[id]` | **on istek** (egzersiz, profil, yerelleştirme, ilerleme, sıradaki) |
 | `mock-exams/[paper]/[skill]` | kâğıdın yerelleştirilmesi — sınav başlarken |
-| `lessons/[id]/exam` | rol yapma sahnesinin çözülmesi |
+| `conversations/[id]/scored` | sohbet sahnesinin çözülmesi |
 | `immersion/quiz/[unit]`, `immersion/grammar/[unit]` | ünite özetlerinden soru üretimi |
 | `premium` | beş okuma birden |
 | `u/[username]` | herkese açık profil |
@@ -11401,7 +11401,7 @@ tamamını kaplıyor ve **on üçünün hiçbiri** kendini duyurmuyordu: ekran
 okuyucu kullanan biri "başla"ya basıp hiçbir şey duymuyor, ekranın donduğunu
 mu yoksa hazırlandığını mı bilemiyordu. Web'de sekiz (beceri turu, boss,
 yürüyüş, günlük, meydan, seviye sınavı, haftalık, yerleştirme), Android'de
-beş (boss, meydan, yerleştirme, rol yapma, deneme kâğıdı).
+beş (boss, meydan, yerleştirme, sohbet, deneme kâğıdı).
 
 Üçünde `aria-busy` vardı ve **yetmiyor**: `aria-busy` "bu bölge
 güncelleniyor" der, **monte edildiğinde hiçbir şey okutmaz**. Okutan
@@ -11440,7 +11440,7 @@ yakalandı ve dördü yeniden uygulandı. Doğrusu önceki turda yaptığım gib
 ### 1. Yirmi bir hata dalının hiçbiri kendini duyurmuyordu
 
 Ekranın tamamını kaplayıp "yüklenemedi" yazan yirmi bir dal — web'de on
-(boss, meydan, günün turu, haftalık, yerleştirme, yürüyüş, rol yapma
+(boss, meydan, günün turu, haftalık, yerleştirme, yürüyüş, sohbet
 sınavı, oturum, seviye sınavı, yapabildiklerim), Android'de on bir (aynı
 yüzeyler + kelimeler, yazılar, oyun) — canlı bölge değildi. §222 **sosyal
 eylemlerin** hatasını `ErrorText` ile duyurulur kılmıştı; bunlar ayrı küme.
@@ -11452,7 +11452,7 @@ yok" bir hata değil, duyurulması gerekmiyor.
 
 ### 2. Yapabildiklerim: istek hatası ile boş liste aynı kartla karşılanıyordu
 
-Ağı kopan kullanıcıya **"giriş yapıp dersleri bitir"** yazıyordu — yanlış
+Ağı kopan kullanıcıya **"giriş yapıp konuşmaları bitir"** yazıyordu — yanlış
 sebep — ve tekrar deneme yolu yoktu; o ekranda çekerek yenileme de yok, yani
 tek çıkış ekrandan çıkmaktı. **İkisi de yanlış olduğu için karşılaştırma
 geçiyordu** (§11.228 sınıfı); ölçüt mutlak alındı ve iki platform birlikte
@@ -11500,7 +11500,7 @@ baktı. Üç kusur çıktı.
 ### 1. Maskot: aynı kip bir platformda karakterli, ötekinde çıplak metin
 
 Android'in **yürüyüş ekranı dört yerde** maskot çiziyor (giriş, duraklama,
-bitiş, başlangıç) — **web'de hiç yoktu**. Meydan okumanın boş dalı, rol yapma
+bitiş, başlangıç) — **web'de hiç yoktu**. Meydan okumanın boş dalı, sohbet
 sınavının ve seviye sınavının hata dalları da Android'de maskotlu, web'de
 metin bloğuydu. Maskot uygulamanın karakteri; yok olduğu ekran başka bir
 uygulamaya benziyor.
@@ -11701,26 +11701,26 @@ Bir not ölçümün kendisi hakkında: ilk anahtar diff'i `mockexam.passed`ı
 sonra değil. Çıkarıcı blok içindeki **tüm** i18n benzeri dizeleri toplayacak
 şekilde genişletildi; yoksa üçlü ifade içindeki her anahtar "eksik" görünürdü.
 
-## §11.349 — Ders kapanışı: kutlamanın ölçütü ve bilinmeyen hüküm
+## §11.349 — Konuşma kapanışı: kutlamanın ölçütü ve bilinmeyen hüküm
 
-Eksen **ders/konuşma oynatıcısı**ydı. İlk ölçüm bir şeyi netleştirdi:
+Eksen **konuşma/konuşma oynatıcısı**ydı. İlk ölçüm bir şeyi netleştirdi:
 **özellik düzeyinde iki oynatıcı eşit** — rapor yolu, tur sayacı, devam etme,
 kalıp listesi, düzeltmeler, sınav bağlantısı ikisinde de var. Ayrışma **kopya
-alan adında**: mobil `lesson.*`, web `lessonp.*` (web-özel). Aynı cümlelerin
+alan adında**: mobil `conversation.*`, web `conversationp.*` (web-özel). Aynı cümlelerin
 iki ayrı yazımı; o kümeyi tek turda birleştirmek hem büyük hem riskli, o
 yüzden bu tur **karar verilebilir** olanı aldı: kapanış özetinin ölçütleri.
 
 Üç ayrışma çıktı ve ikisi aynı köke bağlı — web özeti **sunucunun hükmüne**
-bakıyordu, Android ise dersin **alıştırma isabetine**:
+bakıyordu, Android ise konuşmanın **alıştırma isabetine**:
 
 1. **Kutlama ve maskot.** Web `saved?.passed` boolean'ına bağlıydı, yani
-   **%79'la biten bir ders %10'la biten dersle aynı görünüyordu**. Android üç
+   **%79'la biten bir konuşma %10'la biten konuşmayla aynı görünüyordu**. Android üç
    kademe kullanıyor (`pct >= 80` kutla, `>= 50` sevin, altı sakin) ve konfeti
    de aynı eşikten çıkıyor. Hüküm sunucunun kararı, kutlama ise "nasıl
    geçti"nin karşılığı — ikisi ayrı şey ölçüyor.
 2. **Başlığın bilinmeyen hâli.** Web `saved?.passed` truthy değilse "konuşma
    bitmedi" diyordu — **kayıt isteği düştüğünde de öyle diyordu**: kullanıcı
-   dersi bitirmiş ama ekran ona bitirmediğini söylüyordu. Android yalnız hüküm
+   konuşmayı bitirmiş ama ekran ona bitirmediğini söylüyordu. Android yalnız hüküm
    **açıkça** olumsuzken öyle diyor (`passed === false`) ve bilinmeyeni
    "tamamlandı" sayıyor. İki platform aynı bilinmeyene **ters** cevap
    veriyordu.
@@ -11733,7 +11733,7 @@ besleniyor — önce üç yerde üç ayrı hesap vardı.
 
 `parity-check` §233 beş ölçütle okuyor (isabet hesabı, maskot kademeleri,
 konfeti eşiği, başlığın bilinmeyen hâli, ilk karo etiketi) ve ölü anahtarın
-kalkmış olmasını ayrıca arıyor. "Ders kapanış özeti" kapısının `alistirma`
+kalkmış olmasını ayrıca arıyor. "Konuşma kapanış özeti" kapısının `alistirma`
 deseni de güncellendi: web artık ortak anahtarı kullanıyor.
 
 Küçük bir gözlem ölçüm araçları hakkında: `i18n:check`in ölü anahtar
@@ -11742,7 +11742,7 @@ anmak onu "çağrılıyor" sayıyor. Yorum, anahtarı anmadan aynı şeyi
 söyleyecek biçimde yazıldı — yoksa silinmesi gereken anahtar sessizce
 kalırdı.
 
-## §11.350 — Derste mikrofon yolu kapanınca sebebi söylenmiyordu
+## §11.350 — Konuşmada mikrofon yolu kapanınca sebebi söylenmiyordu
 
 Android `sttOk === false` olunca ekranı kalıcı olarak **yazma yoluna**
 geçiriyordu ve **hiçbir şey söylemiyordu**: kullanıcı konuş düğmesinin
@@ -11757,10 +11757,10 @@ izin…") — oysa ikisi ayrı şey söylüyor:
 
 Web ikisini baştan beri ayrı yazıyor. Android'e sebep durumu (`sttSebep`)
 eklendi; `sttAvailable()` düşerse "unavailable", `ensureMicPermission()`
-düşerse "denied" işaretleniyor ve not **iki yüzeyde de** çiziliyor: ders
-adımları ve rol yapma.
+düşerse "denied" işaretleniyor ve not **iki yüzeyde de** çiziliyor: konuşma
+adımları ve sohbet.
 
-"Tanıyıcı yok" metni webde `lessonp.no_asr` diye **yalnız webde** duruyordu;
+"Tanıyıcı yok" metni webde `conversationp.no_asr` diye **yalnız webde** duruyordu;
 `conversation.no_asr` olarak ortak kümeye taşındı (mobile yazılıp `i18n-pull` ile
 çekildi) ve webin kopyası silindi. İzin metni zaten ortaktı
 (`speak.mic_needed`).
@@ -11768,26 +11768,26 @@ adımları ve rol yapma.
 ### Kapı: sayım değil yüzey
 
 İlk ölçüm `{sttNotu}` **sayısını** sayıyordu ve mobil 3, web 2 çıkıyordu —
-kapı kırmızıydı ama **ayrışma yoktu**: mobilin ders adımları iki ayrı dal
+kapı kırmızıydı ama **ayrışma yoktu**: mobilin konuşma adımları iki ayrı dal
 (tekrarla / kur ve söyle), webin tek bir yeri o ikisini birden kapsıyor.
-Ölçü **yüzeye** çevrildi: not ders adımlarında ve rol yapmada çiziliyor mu.
+Ölçü **yüzeye** çevrildi: not konuşma adımlarında ve sohbette çiziliyor mu.
 
 Sınırın kendisi de bir düzeltme gerektirdi: web tarafını `phase ===
-"roleplay"` ile bölmek ders adımlarını rol yapma tarafına atıyordu, çünkü aynı
+"chat"` ile bölmek konuşma adımlarını sohbet tarafına atıyordu, çünkü aynı
 koşul yukarıda iki kez daha geçiyor (bir etkide, bir dinleme çağrısında).
-Sınır artık dalın **çizim** yeri (`phase === "roleplay" ? (`) — yine bir
+Sınır artık dalın **çizim** yeri (`phase === "chat" ? (`) — yine bir
 düğüm, bir mesafe ya da ilk eşleşme değil.
 
-## §11.351 — Ders adımının deneme hakkı: aynı adım, iki ayrı ders
+## §11.351 — Konuşma adımının deneme hakkı: aynı adım, iki ayrı konuşma
 
-Eksen **ders içi deneme hakkı ve cevabın açıldığı an**dı. Üç şey çıktı.
+Eksen **konuşma içi deneme hakkı ve cevabın açıldığı an**dı. Üç şey çıktı.
 
 ### 1. Tavan (3) hiçbir yerde sabit değildi
 
 İki oynatıcı da elle `>= 3` diye karşılaştırıyordu. Biri değişse öteki
-sessizce eski kalır ve **aynı ders iki platformda farklı sayıda hak
-verirdi**. İki tarafta `LESSON_TRY_CEILING` adıyla sabitlendi
-(`src/lib/lessons/roleplay-const.ts` ve `mobile/src/lib/learningRules.ts`).
+sessizce eski kalır ve **aynı konuşma iki platformda farklı sayıda hak
+verirdi**. İki tarafta `CONVERSATION_TRY_CEILING` adıyla sabitlendi
+(`src/lib/conversations/chat-const.ts` ve `mobile/src/lib/learningRules.ts`).
 
 ### 2. Cevabın açıldığı an farklıydı
 
@@ -11797,7 +11797,7 @@ verirdi**. İki tarafta `LESSON_TRY_CEILING` adıyla sabitlendi
 | 2. | ipucu (yine) | **cevabı söylüyor** + "tekrar et", adım yeniden açılıyor |
 | 3. | **cevabı söylüyor** ve geçiyor | "olsun" — cevabı **hiç söylemeden** geçiyor |
 
-Yani aynı adım iki platformda iki ayrı ders veriyordu: birinde cevap görülüp
+Yani aynı adım iki platformda iki ayrı konuşma veriyordu: birinde cevap görülüp
 tekrar ediliyor, ötekinde adım cevapla kapanıyor. Web'in ikinci-yanlış dalı
 kalktı, üçüncü dal cevabı söylüyor; ölü kalan iki web anahtarı silindi.
 
@@ -11811,15 +11811,15 @@ yerde birlikte güncelleniyor.
 
 ### Kapı: "varlık" değil "sayı"
 
-İlk ölçüm `>= LESSON_TRY_CEILING` **var mı** diye bakıyordu ve enjeksiyon
+İlk ölçüm `>= CONVERSATION_TRY_CEILING` **var mı** diye bakıyordu ve enjeksiyon
 (`t >= 99`) kapıyı **yeşil bıraktı**: mobilde iki adım türü var (tekrarla /
 kur ve söyle) ve birinin sabitten çıkması, öteki hâlâ sabitten geldiği için
 görünmüyordu. Ölçü **"elle yazılmış eşik sayısı = 0"**a çevrildi — yalnız
 `3`ü değil, herhangi bir sayıyla karşılaştırmayı arıyor.
 
-## §11.352 — Rol yapma: en az tur kuralı ve servis kapalıyken güvence
+## §11.352 — Sohbet: en az tur kuralı ve servis kapalıyken güvence
 
-Eksen **rol yapma konuşması**ydı. Öneri şıkları, düzeltme balonları,
+Eksen **sohbet konuşması**ydı. Öneri şıkları, düzeltme balonları,
 düzeltme listesi ve "düzeltme yok" hâli, çevrimdışı senaryo yedeği — hepsi
 ikisinde de var. İki şey ayrışıyordu.
 
@@ -11827,13 +11827,13 @@ ikisinde de var. İki şey ayrışıyordu.
 
 Web tipi baştan beri zorunlu (`minTurns: number`), mobil tipi isteğe bağlı
 (`minTurns?: number`) ve iki yerde `?? 6` duruyordu. Alan düşse **Android
-altı tur ister, web `undefined`ı ekrana basardı** — aynı ders iki platformda
+altı tur ister, web `undefined`ı ekrana basardı** — aynı konuşma iki platformda
 başka bir kural uygular.
 
-Ölçüm **bin seksen** rol yapma dersinin **hepsinde** alanın dolu olduğunu
+Ölçüm **bin seksen** sohbet konuşmasının **hepsinde** alanın dolu olduğunu
 gösterdi: varsayılan hiç çalışmıyordu ama sayı kodda duruyordu. Tip zorunlu
-yapıldı, iki `?? 6` kalktı. Biri `?? 0` oldu — `lesson` henüz yüklenmemişken
-de okunuyor, ama uydurulmuş bir eşik değil sıfır: ders gelmeden "yeter"
+yapıldı, iki `?? 6` kalktı. Biri `?? 0` oldu — `conversation` henüz yüklenmemişken
+de okunuyor, ama uydurulmuş bir eşik değil sıfır: konuşma gelmeden "yeter"
 demesin.
 
 ### 2. "Konuşma yine sayılır" güvencesi görünmüyordu
@@ -11843,7 +11843,7 @@ Servis kapalıyken web şunu yazıyordu: "Sohbet servisi şu an kapalı; konuşm
 `title=` **ipucu balonunda**. Dokunmatikte hiç açılmıyor, klavyeyle de
 erişilmiyor; yani en çok güven veren kısım kullanıcıların bir bölümüne **hiç
 ulaşmıyordu**. Android'de cümle **hiç yoktu** — kullanıcı konuşmasının
-sayılmayacağını sanıp dersi bırakabilirdi.
+sayılmayacağını sanıp konuşmayı bırakabilirdi.
 
 Cümle ortak anahtara alındı (`conversation.chat_offline_note`) ve iki tarafta da
 **görünür** yazıldı: webde rozetin altında bir satır, Android'de balonun
@@ -11920,14 +11920,14 @@ Web karşılığı `title=` ipucu balonunda tutuyordu (dokunmatikte hiç açılm
 ve çip sessizdi; Android "de · tr" yazıp dokununca okuyor. Web'de de ikisi
 oldu: karşılık yazılı, çip `speakGerman` ile sesli.
 
-### Kapı iki kez zayıf çıktı, ikisi de tanıdık ders
+### Kapı iki kez zayıf çıktı, ikisi de tanıdık konuşma
 
 - **Önek eşleşmesi**: `/PREP_SECONDS/` sınırsızdı ve deponun kendi
   meta-kapısı reddetti — bu turda ikinci kez.
 - **Varlık değil kullanım**: web ölçüsü "dosyada `SPEAK_CLIP_MS` geçiyor mu"
   diyordu; `import` satırı da adı taşıdığı için `const MAX_MS = 8000`a geri
   dönmek kapıyı **yeşil bıraktı**. Ölçü kullanıma çevrildi (§11.351'in aynı
-  dersi).
+  konuşmayı).
 
 Mevcut "telaffuz eşiği ve kayıt süreleri" kapısı da güncellendi: sayıyı
 oynatıcıdan okuyordu, artık **sabitten** okuyup oynatıcının gerçekten oradan
@@ -11970,7 +11970,7 @@ düştü. Prop ile öznitelik aynı yazılıyor; ayırt eden şey etiketin kendi
    Almancası başka hiçbir yerde görünmüyor. İlk denemede yalnız `p.tr`
    yazmıştım — bir kusuru başkasıyla değişmek olurdu; lint'in "kullanılmayan
    `glossTitle`" uyarısı bunu yakalattı.
-4. **`lesson-player`** — ders özetindeki kalıp listesinin karşılığı hover'daydı;
+4. **`conversation-player`** — konuşma özetindeki kalıp listesinin karşılığı hover'daydı;
    Android aynı listede "de" ve "tr"yi yan yana yazıyor.
 
 İki `title=` de **fazlalık** olduğu için silindi: yazma kartının kelime
@@ -12000,8 +12000,8 @@ Her site için uygulanan kural, Android'in o yerde ne yaptığına bakılarak
 seçildi — üç ayrı çözüm çıktı:
 
 **Android görünür yazıyor → görünür yazıldı.**
-`lesson-player` sınav düğmesinin ipucu (`conversationp.scored_hint`): Android aynı
-düğmenin altına ikinci satır olarak yazıyor (`LessonScreen`), web `title=`
+`conversation-player` sınav düğmesinin ipucu (`conversationp.scored_hint`): Android aynı
+düğmenin altına ikinci satır olarak yazıyor (`ConversationScreen`), web `title=`
 balonunda tutuyordu.
 
 **Android erişilebilir ad/ipucu veriyor → `aria-label` eklendi.**
@@ -12021,7 +12021,7 @@ Android'in ipucuyla aynı yere.
 diye görünür listelenmiş, Android aynı listeyi çiziyor), `diff-text`
 (üst öge tam metni `aria-label`da veriyor), `weak-spots-card`in kaçıncı kez
 sayısı (Android hiç göstermiyor), `friend-list`in üç ipucu ve
-`lesson-player`in sonraki ders adı (düğmede zaten yazılı). Beş ölü
+`conversation-player`in sonraki konuşma adı (düğmede zaten yazılı). Beş ölü
 `socialw.*_hint` anahtarı silindi.
 
 ### Kapı §155 yine pencereye kaçmıştı
@@ -12075,7 +12075,7 @@ olarak ezen kalıp.
 
 ## §11.358 — Kapı denetimi: "işaret var" ile "işaret işe yarıyor"
 
-§11.357'nin dersi kapıların kendisiyleydi, bu yüzden bu tur **kapıları**
+§11.357'nin konuşması kapıların kendisiyleydi, bu yüzden bu tur **kapıları**
 denetledi: erişilebilirlik işaretini ölçen bütün ölçüler tarandı.
 
 **Sonuç büyük ölçüde iyi.** Ölçülerin neredeyse hepsi düğüm bağlı: bir dal
@@ -12190,7 +12190,7 @@ prop'u aldı (`live` → `accessibilityLiveRegion`, webde `role`) ve beş hata
 çağrısı da onu kullanıyor. Boş hâlde duyuru **istenmiyor**: "henüz arkadaşın
 yok" bir hata değil, sayfanın normal içeriği.
 
-Bunun bir kapı dersi var. §228 ("hata dalı duyuruluyor") duyuruyu **çağrı
+Bunun bir kapı konuşmayı var. §228 ("hata dalı duyuruluyor") duyuruyu **çağrı
 yerinde** arıyor; kabuk prop'u okumayı bıraksa o kapı yeşil kalır ve hiçbir
 şey duyurulmaz — denedim, kalıyor. §241 bu yüzden iletmenin kendisini ayrı
 bir olgu olarak ölçüyor. §228'in mobil deseni de `live="assertive"`i kabul
@@ -12286,7 +12286,7 @@ Dört olgu: dokuz ekranın başlığında adı olan bir çıkış denetimi (iki 
 ayrı listede), ayrılmanın onaya bağlı olması (beş yüzey, **dönüşün gerçekten
 diyaloğu açması** ölçülüyor — kanca çağrılıp dönüşü kullanılmazsa dosyada ad
 geçer ve hiçbir şey değişmez), kancanın gerçekten dinlemesi (mutlak; §241'in
-dersi) ve çıkış karosunun ölçüsü.
+konuşması) ve çıkış karosunun ölçüsü.
 
 Ad ölçüsü **koşullu adı da sayıyor**: `t(phase === "bolum" ? "exam.quit_title"
 : "common.back")` gibi bir ad ilk yazımda görünmüyordu ve iki ekran yanlışlıkla
@@ -12332,7 +12332,7 @@ sürdüğünü söyleyen hiçbir şey olmuyordu. Dört form artık `aria-invalid
 bağlıyor. React Native'de `aria-invalid` yok; mobil karşılık hatanın canlı
 bölgede duyurulması ve o başka kapılarda ölçülüyor.
 
-### İki ölçüm dersi
+### İki ölçüm konuşmayı
 
 **Örtülü etiket de bir addır.** İlk ölçüm `<label>` ile *saran* bağlantıyı
 saymıyordu ve doğru yazılmış beş yönetici alanını "adsız" gösteriyordu —
@@ -12398,7 +12398,7 @@ iki kelimeyi istiyordu. **Burada ileride olan webdi** ve kural webin kuralı
 oldu; Android'in daha gevşek olması bir tasarım tercihi değil, ölçülmemiş bir
 boşluktu.
 
-### §244 ve iki kapı dersi
+### §244 ve iki kapı konuşmayı
 
 Dört olgu: elle yazılmış tabanın kalmaması (mutlak), kapalı düğmenin
 sebebinin yazması (üç yüzey, eşleştirmeli), döküm kapısının kelime sayması ve
@@ -12460,7 +12460,7 @@ kodu** ("tr" yerine "tr-TR"). Aynı sapma Android'de de vardı
 tam sayı geçiriyor, yani görünür bir kusur yok — ama kesirli bir değer
 geçtiği gün iki platform aynı sayıyı farklı yazardı. Web de yuvarlıyor artık.
 
-### §245 ve iki kapı dersi
+### §245 ve iki kapı konuşmayı
 
 Beş olgu: yüzde biçiminin `Intl`den gelmesi ve yuvarlama (eşleştirmeli),
 sözlük anahtarının kalkması (mutlak, ağaç geneli), sabit noktanın kalmaması
@@ -12577,7 +12577,7 @@ Ayrışan tek rol **başlıktaki kare düğme**ydi.
 
 Android'in kuralı otuz altı çağrı yerinde aynı: **44×44 karo, `radii.md`,
 `surface2` zemin, glif geri oku ise 24, çapraz ise 22.** Tek istisna
-`RoleplayExamScreen`in geri oku 22'ydi; o da düzeltildi.
+`ConversationScoredScreen`in geri oku 22'ydi; o da düzeltildi.
 
 Webde aynı denetim dört ayrı ölçüdeydi:
 
@@ -12605,7 +12605,7 @@ anahtarı**. Aynı denetim iki uygulamada iki farklı simge taşıyordu; dişli
 yoktu** — mobilin çizimi karşılığı olarak yazıldı. Aynı sınıf iki tur önce
 `SearchIcon`da çıkmıştı.
 
-### §246 ve kapının dördüncü aynı dersi
+### §246 ve kapının dördüncü aynı konuşmayı
 
 Dört olgu: başlıktaki karonun glif ölçüsü (mobil, mutlak), kapatma karosunun
 ortak bileşenden gelmesi (web, mutlak), bileşenin Android'in sayılarını
@@ -12709,7 +12709,7 @@ arkadaş) Android'in sözcüğüne çevrildi; dört liste olduğu gibi kaldı.
   `formatNumber`inin yuvarlamasını atlıyordu. Bir önceki turda web'i
   biçimleyiciye bağlamıştım; Android'in kendi kaçağı buydu.
 
-### Ölçüm dersi: bir ölçü "ad çizimi" sayınca
+### Ölçüm konuşmayı: bir ölçü "ad çizimi" sayınca
 
 Baş harf dairesini eklediğimde mevcut "liste satırında ad" kapısı düştü:
 probe ad çizimlerini sayıp her birinin bir `truncate` atası olmasını istiyor,
@@ -12855,9 +12855,9 @@ taraf da** aynı boşluktaydı. Ayrım önemli: kaydırmanın **kendisi** gerekl
 (sohbet sonuna gitmek), animasyonu değil. Beş çağrı da tercihe bağlandı, ve
 bloğa `scroll-behavior: auto !important` eklendi.
 
-### Yan çıkan: ders sohbeti webde zıplıyordu
+### Yan çıkan: konuşma sohbeti webde zıplıyordu
 
-Ölçü web'in ders sohbetini "kaydırma yok" gösterdi ve sebebi gerçek bir
+Ölçü web'in konuşma sohbetini "kaydırma yok" gösterdi ve sebebi gerçek bir
 ayrışmaydı: Android sohbeti `scrollToEnd({ animated })` ile **kaydırıyor**,
 web `scrollTop`u doğrudan yazıp **atlıyordu**. Aynı sohbet iki uygulamada iki
 ayrı his veriyordu. Hedef hâlâ kabın dibi (web'in kendi notu bunu açıklıyor),
@@ -12895,8 +12895,8 @@ yazan biri "Haus"u "House"a çevrilmiş buluyor, her kısa cevabın ilk harfi
 büyüyor.
 
 **On bir web alanı ve altı Android alanı** bu kuralı hiç söylemiyordu —
-özellikle sohbet alanları (ders, rol yapma) ve deneme kâğıdının açık
-görevleri, yani hedef dilde cümle yazılan yerlerin tamamı. Rol yapma sohbeti
+özellikle sohbet alanları (konuşma, sohbet) ve deneme kâğıdının açık
+görevleri, yani hedef dilde cümle yazılan yerlerin tamamı. Sohbet sohbeti
 ve biyografi **iki tarafta da** açıktı.
 
 Şifre ve kod alanları muaf ve öyle kaldı: `type="password"` zaten büyütmüyor,
@@ -12955,7 +12955,7 @@ gerekçe: o anahtarlar bir çürümeyi saklamıyordu, sadece ölüydüler.
 `mockpack.progress`in `%{pct}` yazdığı bulgusu ise **doğru** — o tek dosyadan
 okunmuştu.
 
-Ders: bir dosyanın adını bastıran bir çıktıya bakıp "hangi dosyadaydı"
+Konuşma: bir dosyanın adını bastıran bir çıktıya bakıp "hangi dosyadaydı"
 sorusuna cevap vermek, ölçmek değil varsaymaktır. Bu oturumda ölçüm
 hatalarının hepsi aynı aileden çıktı (§252'deki üç hata, §250'deki `walkCue`,
 bu): **bir olguyu, onu taşımayan bir çıktıda aramak.**
@@ -12963,8 +12963,8 @@ bu): **bir olguyu, onu taşımayan bir çıktıda aramak.**
 ## §11.375 — Çevrimdışı: yedek puanın yedek olduğu webde yazmıyordu
 
 Eksen **çevrimdışı davranış**tı. Ölçüm önce altyapının **eşit** olduğunu
-doğruladı: cevap kuyruğu (tur cevapları ağ dönünce gönderiliyor), ders
-ilerlemesi kuyruğu, deneme kâğıdının yerel kaydı ve modelsiz rol yapma iki
+doğruladı: cevap kuyruğu (tur cevapları ağ dönünce gönderiliyor), konuşma
+ilerlemesi kuyruğu, deneme kâğıdının yerel kaydı ve modelsiz sohbet iki
 tarafta da var. İki ayrışma çıktı ve ikisi de **cümlede**.
 
 ### Yedeğin yedek olduğu
@@ -13024,7 +13024,7 @@ yalnız **sayfa açılışı** için doğruydu. Muafiyet kalktı.
 yoktu**:
 
 - `lernomi-answer-queue` — ağ yokken biriken **tur cevapları**
-- `lernomi-lessons-pending` — biriken **ders ilerlemesi**
+- `lernomi-conversations-pending` — biriken **konuşma ilerlemesi**
 - mobilde ayrıca `lernomi-items-pending` ve `lernomi-item-scores`
 
 Bu kuyruklar bir sonraki **açılışta** gönderiliyor. Yani A çıkıp B
@@ -13382,7 +13382,7 @@ buldu:
 | Web | **üç** değer — `disabled:opacity-40` (8), `-50` (10), `-60` (24) |
 | Mobil | **beş** anlatım — 0.4, 0.45, 0.5, 0.6 ve renk takası |
 
-Aynı giriş ekranında gönder düğmesi 0.6, aynı ders oynatıcısında ileri
+Aynı giriş ekranında gönder düğmesi 0.6, aynı konuşma oynatıcısında ileri
 düğmesi 0.5, kelime listesinde sayfa düğmesi 0.4 idi. Yazılı bir kural
 yoktu; her çağrı yeri kendi kararını veriyordu.
 
@@ -13397,7 +13397,7 @@ düğme canlı görünüyor. O yüzden her çağrı yeri sönüklüğü kendi ya
 Sönüklük `PressableScale`a taşındı ve **on altı** çağrı yerindeki elle
 sönüklük silindi. Elle bırakılsaydı iki kat sönerdi (0.6 × 0.6 = 0.36).
 
-**Renk takası da kalktı** (`MockExamScreen` `Primary`, `LessonScreen`
+**Renk takası da kalktı** (`MockExamScreen` `Primary`, `ConversationScreen`
 `BigButton`): takas + sönüklük üst üste binince düğme okunmaz oluyordu ve web
 zaten takas yapmıyor.
 
@@ -13439,7 +13439,7 @@ kart, liste satırı, karo, çip, şık, düğme — çünkü hepsi tek bir
 | `.pressable:active` | 0.96 |
 | `.option:active` | 0.985 |
 | `.chip:active` | 0.95 |
-| `whileTap` (konuşma, sıralama, dinleme, harf, ders, beceri) | 0.9 · 0.92 · 0.93 · 0.94 |
+| `whileTap` (konuşma, sıralama, dinleme, harf, konuşma, beceri) | 0.9 · 0.92 · 0.93 · 0.94 |
 
 Aynı parmak hareketi ekranın altı yerinde altı farklı güçte cevap veriyordu.
 Hepsi `--press-scale: 0.96` jetonuna bağlandı; değer Android'inki, ve `.btn`
@@ -13499,7 +13499,7 @@ Süre iki platformda **aynı adı taşıyan** bir sabit — `score-bands` ↔
 
 **Değerlendirme çağrıları bunun dışında ve öyle kalmalı**: yapay zekâ yanıtı
 25 saniyeden uzun sürebiliyor, o yüzden kendi (daha uzun) süreleri var ve
-`ASSESS_TIMEOUT_MS` / `ASSESS_ROLEPLAY_TIMEOUT_MS` ikisi de iki platformda
+`ASSESS_TIMEOUT_MS` / `ASSESS_CHAT_TIMEOUT_MS` ikisi de iki platformda
 eşleşmiş durumda.
 
 ### §263
@@ -13737,7 +13737,7 @@ tur aynı yolu yeniden yürümesin:
   `BackHandler`ı `*.tsx` içinde aradığı için kancayı (`.ts`) görmemişti.
 - **Rota başlıkları.** 61 sayfanın 57'si `generateMetadata` taşıyor; kalan
   dördü iki demo sayfası, açılış sayfası (kabuğun başlığını kullanıyor) ve
-  `/lessons` — o da bir `redirect`, hiç çizilmiyor.
+  `/conversations` — o da bir `redirect`, hiç çizilmiyor.
 - **Sekme kümesi.** Dört sekme, aynı sıra, aynı anahtarlar.
 
 Bir de çevre notu: `check:pairs`, `test:mix`, `test:entitlement` yerel
@@ -13968,7 +13968,7 @@ kalır. Kapı bunu iki ayrı yoldan ölçüyor: tür listesiyle **ve** `sendEmai
 çağrılarının kaçının `meta` taşımadığını sayarak (0 olmalı).
 
 Pano da gösteriyor, hata kırmızı: yazılıp gösterilmeyen bir sayı yine
-kimsenin bakmadığı yerde durur — §11.395'in aynı dersi.
+kimsenin bakmadığı yerde durur — §11.395'in aynı konuşmayı.
 
 ### §273
 
@@ -14121,7 +14121,7 @@ Dört maddenin dördü de kapıya bağlandı. Rozet ikonlarında ölçü **sayı
 ad kümesi**: sayılar eşit kalıp bir ad değişse fark görünmezdi.
 
 Dört enjeksiyon denendi, dördü de yakalandı — **ama ikinci deneme iki kez
-yapıldı ve bu kendi başına bir ders.** İlk denemem `MountainIcon` adını
+yapıldı ve bu kendi başına bir konuşma.** İlk denemem `MountainIcon` adını
 dosyada aradı; o ad **iki yerde** geçiyor (içe alım listesi ve `ICONS`
 haritası) ve `replace(…, 1)` içe alımı vurdu, haritaya dokunmadı. Yani kapı
 kör değildi, **enjeksiyon** kördü. Doğru yere uygulandığında kapı anında
@@ -14162,7 +14162,7 @@ karşılanmasıydı — dört yer birlikte değişti (iOS beyanı · Android man
 · `parseDeepLink` · `App.tsx`).
 
 Soğuk açılışta eylem **bekletiliyor** ve `NavigationContainer.onReady`
-işliyor: sıfırlama yolunun öğrendiği ders (ilk yazımı bağlantıyı sessizce
+işliyor: sıfırlama yolunun öğrendiği konuşma (ilk yazımı bağlantıyı sessizce
 düşürüyor ve uygulama giriş ekranında kalıyordu).
 
 ### Kapı bir kez haklı çıktı, bir kez güncellendi
@@ -14187,7 +14187,7 @@ edilmiş ama karşılanmayan yol.
 
 ## §11.401 — Soğuk açılışta bildirim dokunuşu düşüyordu
 
-§11.400'ün hemen yanındaki kusur, ve **aynı ders**: derin bağlantı yolu soğuk
+§11.400'ün hemen yanındaki kusur, ve **aynı konuşma**: derin bağlantı yolu soğuk
 açılış yarışını öğrenmiş ve çözmüştü —
 
 > "SOĞUK AÇILIŞ YARIŞI. `getInitialURL` gezgin daha kurulmadan çözülüyor; ilk
@@ -14265,10 +14265,10 @@ bozuldu: denetim ucu anında çağıransız bildirdi. Yol biçiminin **tek baş�
 çağıran sayılmadığı ise zaten canlı kanıt: §274 kapıda duruyor ve
 `/api/cron/summary` "belgelenmiş çağıransız" kalıyor.
 
-**Ders — enjeksiyon kör olabilir, kapı değil.** İlk deneme `/api/words`in bir
+**Konuşma — enjeksiyon kör olabilir, kapı değil.** İlk deneme `/api/words`in bir
 çağıranını bozmaktı ve denetim tepki vermedi; bu, tarayıcının zayıfladığı
 anlamına gelmiyordu, o ucun **başka çağıranları** olduğu anlamına geliyordu.
-§276'nın dersinin aynısı, bu kez denetim aracının üstünde: bir enjeksiyon
+§276'nın konuşmasının aynısı, bu kez denetim aracının üstünde: bir enjeksiyon
 ateşlemiyorsa önce enjeksiyonun okunan şeyi gerçekten değiştirdiği
 doğrulanmalı.
 
@@ -14334,9 +14334,9 @@ düşürülüyor, biri düşerse sıradakiler denenmiyor. Kopyalanmayan şey
 **boşaltıldıkları yer** oldu.
 
 ```
-Android (App.tsx)         : useEffect(() => { if (user) { flushPendingAnswers(); flushPendingLessons(); } }, [user])
+Android (App.tsx)         : useEffect(() => { if (user) { flushPendingAnswers(); flushPendingConversations(); } }, [user])
 Web (session-player: 240) : useEffect(() => { void flushPendingAnswers(); }, [])
-Web (lesson-player:  283) : useEffect(() => { void flushPendingLessons(); }, [])
+Web (conversation-player:  283) : useEffect(() => { void flushPendingConversations(); }, [])
 ```
 
 Yani webde kuyruk **yalnız oynatıcı monte edilirken** boşalıyordu. Ağı gidip
@@ -14453,7 +14453,7 @@ E-postanın paleti tümüyle kendi başınaydı (#faf9f5 zemin, #141413 yazı,
 değerleri oldu; `var(--bg)` kullanılamıyor çünkü e-posta istemcisi CSS
 değişkenini atıyor (aynı kısıt `next/og` için de geçerli).
 
-### Konfeti — "ikisi de yanlış" sınıfının ders kitabı örneği
+### Konfeti — "ikisi de yanlış" sınıfının konuşma kitabı örneği
 
 ```
 ["#eda45d", "#ddb62c", "#45b87a", "#35b2cc", "#ae79d4", "#ee6b7c"]
@@ -14583,9 +14583,9 @@ Veri çeken ekranların neredeyse hepsi hata dalında "Tekrar dene" sunuyor.
 aynı şekilde** eksikti — yani karşılaştırma geçiyordu:
 
 - **Modül sınavı** (`boss`): tek düğme "Geri dön". Kazanılmış bir yüzey
-  (dersler bitmeden açılmıyor); geçici bir ağ kesintisinde kullanıcıyı
+  (konuşmalar bitmeden açılmıyor); geçici bir ağ kesintisinde kullanıcıyı
   listeye geri gönderip yeniden girmeye zorlamak o girişi kaybettirir.
-- **Rol yapma sınavı** (`roleplay-exam`): tek çıkış "konuşmaya dön". Bu dala
+- **Puanlı kısım** (`conversation-scored`): tek çıkış "konuşmaya dön". Bu dala
   yalnız muhatap servisi **ilk iki turda** düşünce giriliyor (sonrasında
   konuşma puanlanıyor), yani ölçülmüş hiçbir şey yok — sınav baştan
   başlayabilir.
@@ -14647,7 +14647,7 @@ aşama adını **okuyor** ve bu turda biri tam bu yüzden kırıldı. Dördü de
 ada indirildi (`playing`, `submitting`) ve ölçü ikisinin bir arada olmasını
 yasaklıyor.
 
-## §11.410 — Rol yapma sınavının "Tekrar dene"si Android'de hiç çalışmıyordu
+## §11.410 — Puanlı kısmın "Tekrar dene"si Android'de hiç çalışmıyordu
 
 §11.409'un tekrar düğmesi eklenirken **aynı ekranda duran** bir kusur çıktı ve
 o kusur kullanıcıya görünüyordu.
@@ -14660,7 +14660,7 @@ if (!deadline.current) deadline.current = Date.now() + EXAM_SECONDS * 1000;
 const tick = () => setLeft(Math.max(0, Math.ceil((deadline.current - Date.now()) / 1000)));
 ```
 
-Bu kalıp §271'in dersi: arka plana atılan sınav süresini uzatamasın diye
+Bu kalıp §271'in konuşması: arka plana atılan sınav süresini uzatamasın diye
 **duvar saati** kullanılıyor. Ama Android'in sonuç ekranındaki "Tekrar dene"
 şunu yazıyordu:
 
@@ -14738,9 +14738,9 @@ eklendi.
 ### İkon setinde 48 çağıransız simge — belgelendi
 
 Ölçüm sırasında webin ikon setinde **48 çağıransız** simge çıktı
-(`BreadIcon`, `BusIcon`, `CoffeeIcon`, `WeatherIcon`, …). 500 derslik
-müfredatla geldiler (66cb70b0) ve `lessons/lesson-hub` içindeki konu → ikon
-haritasından çiziliyorlardı; ders merkezi Patika'ya devredilince o dosya
+(`BreadIcon`, `BusIcon`, `CoffeeIcon`, `WeatherIcon`, …). 500 konuşmalık
+müfredatla geldiler (66cb70b0) ve `conversations/conversation-hub` içindeki konu → ikon
+haritasından çiziliyorlardı; konuşma merkezi Patika'ya devredilince o dosya
 silindi. Konu **adları** yaşıyor (`lib/cando-map`, mobil `game/candoMap`) ama
 konu ikonlarını çizen yüzey kalmadı; mobilde karşılığı hiç olmadı.
 
@@ -14760,7 +14760,7 @@ aynı bilgiyi baştan beri `retry-after` **başlığıyla** veriyor
 önemli olduğunu yazmış durumda. Başlık eklendi; gövdedeki alan da kaldı.
 
 **Açık kalan:** `quota` dönen altı 429 (`assess`, `pronounce`, `reports`,
-`roleplay`, `stt`, `tts`) başlık taşımıyor. Oradaki doğru değer "kotanın
+`chat`, `stt`, `tts`) başlık taşımıyor. Oradaki doğru değer "kotanın
 sıfırlanmasına kalan saniye" ve o, kullanıcının kendi saatine bağlı
 (`profiles.timezone`) — premium kota metinleri de zaten kayıtlı borç (11
 `gate.*` anahtarı). Altı rotaya birlikte bakılacak, bu turda alınmadı.
@@ -14832,7 +14832,7 @@ bundan etkileniyordu:
 | Yüzey | web | Android (önce) |
 |---|---|---|
 | sınav girişi (`exam_intro`) | `think` | `idle` |
-| rol yapma sınavı girişi | `think` | `idle` |
+| puanlı kısım girişi | `think` | `idle` |
 | "bu oyuna kelime yok" | `think` | `idle` |
 
 Üçü de birebir eşleşen yüzeyler: aynı `moment`, aynı i18n anahtarı, aynı boy.
@@ -14848,7 +14848,7 @@ Web kipe `cheer` diyordu; gösterdiği dosya ise `celebrate` ve Android baştan
 beri kipe `celebrate` diyor. Ad Android'in adına geçti (dokuz çağrı yeri, bir
 tip, bir klip anahtarı). Bu tam da §11.409'da görülen sürtünmenin aynısı:
 aynı durumun iki adı olması platformlar arası ölçüleri kırıyor — ve nitekim
-§12522 (ders kapanışının maskot kademeleri) adı elle yazdığı için yeniden
+§12522 (konuşma kapanışının maskot kademeleri) adı elle yazdığı için yeniden
 adlandırmayla kırmızıya döndü; ölçü de güncellendi.
 
 ### §288
@@ -15258,12 +15258,12 @@ düzen var:
 | **B** — kutu kaydırma alanından sonra, sabit alt çubukta | çubuğu klavye yüksekliği kadar kaldır (`RoundShell` kalıbı) |
 
 Ölçüldüğünde **A düzenindeki dokuz ekrandan yalnız ikisinde** öznitelik vardı
-(`QuizScreen`, `LessonScreen`) — o ikisi `8b6c084a`'da bilerek eklenmiş, gerisi
+(`QuizScreen`, `ConversationScreen`) — o ikisi `8b6c084a`'da bilerek eklenmiş, gerisi
 geride kalmıştı: giriş, parola sıfırlama, hesap silme, sosyal ayarlar,
 ayarlar, deneme sınavı, ödeme (promo kodu) ve modül sınavının iki yazma
 bölümü.
 
-**B düzeninde rol yapma sınavının sohbet kutusu** kurtarılmıyordu: kutu
+**B düzeninde puanlı kısmın sohbet kutusu** kurtarılmıyordu: kutu
 kaydırma alanının altında sabit bir çubukta duruyor, yani kullanıcı yazarken
 **ne yazdığını görmüyordu** — üç dakikalık bir sınavda. Kalıp turlardan
 alındı, ifadesi `RoundShell`le birebir (klavye yüksekliği − güvenli alan +
@@ -15325,7 +15325,7 @@ yok).
    geçmiş metinde yapılıyordu — yorumlar silindiği için iddia hep "YOK"
    çıkıyordu. O üç ölçü artık **ham** metni okuyor.
 
-Üç enjeksiyon doğrulandı; ikincisi özellikle anlamlı: `RoleplayExamScreen`e
+Üç enjeksiyon doğrulandı; ikincisi özellikle anlamlı: `ConversationScoredScreen`e
 kanca eklenince ölçü onu hemen "hareketi kapatılmamış" diye gösterdi — yani
 yeni bir korumalı ekran eklenince iOS tarafının unutulması artık mümkün değil.
 
@@ -15470,18 +15470,18 @@ depo modülüne belgesiz yeni anahtar eklemek, önek listesinin adını değişt
 (sayı ölçüsü düşüyor), belgeli listeden canlı bir adı düşürmek, belgeli listeye
 artık var olmayan bir ad eklemek.
 
-## §11.426 — Olmayan ders webde uygulamanın dışına düşüyordu
+## §11.426 — Olmayan konuşma webde uygulamanın dışına düşüyordu
 
 Android'de bulunamayan içerik ekranın **kendi kabuğunun içinde** ve neyin
-bulunamadığını **adıyla** söyleniyor: olmayan ders üzgün mirket + "Bu konuşma
-bulunamadı" (`LessonScreen` `!lesson` dalı, aynı anahtarı `RoleplayExamScreen`
+bulunamadığını **adıyla** söyleniyor: olmayan konuşma üzgün mirket + "Bu konuşma
+bulunamadı" (`ConversationScreen` `!conversation` dalı, aynı anahtarı `ConversationScoredScreen`
 de kullanıyor), olmayan kâğıt kırmızı kart (`MockExamScreen`), kapalı profil
 boş kart (`UserScreen`).
 
 Webde aynı adresler `notFound()` atıyor ve Next en **yakın** `not-found.tsx`'i
 çiziyor. Üç durumdan yalnız ikisinin kendi 404'ü vardı (kâğıt §11.419'da,
-profil daha önce). Tanınmayan bir ders kimliği (`/lessons/<id>` ve
-`/lessons/<id>/exam`) kökteki genel 404'e düşüyordu — iki kayıpla birlikte:
+profil daha önce). Tanınmayan bir konuşma kimliği (`/conversations/<id>` ve
+`/conversations/<id>/exam`) kökteki genel 404'e düşüyordu — iki kayıpla birlikte:
 
 - Cümle genel: "Sayfa bulunamadı". Bulunamayan şey bir sayfa değil bir
   **konuşma**; Android'in cümlesi (`conversation.this_conversation_wasn_t_found`) üç dilde
@@ -15491,7 +15491,7 @@ profil daha önce). Tanınmayan bir ders kimliği (`/lessons/<id>` ve
 
 İki dosya eklendi:
 
-- `(app)/lessons/[id]/not-found.tsx` — üzgün mirket, Android'in cümlesi, tek
+- `(app)/conversations/[id]/not-found.tsx` — üzgün mirket, Android'in cümlesi, tek
   "Geri dön". Sınır `[id]` altında olduğu için `exam` alt yolunu da kapsıyor.
 - `(app)/not-found.tsx` — grup düzeyinde, kabuğun **içinde** kart. Geri kalan
   dinamik adresler (sınav seviyesi, ünite indeksi, modül patronu) artık
@@ -15512,7 +15512,7 @@ kalırsa "yalnız mobil" olarak düşüyor, webde kalıp Android'de kalkan bir c
 kartındaki "duyulmadı" etiketi) — muafiyet kapıda belgeli ve liste yalnızca
 küçülebilir.
 
-Üç enjeksiyon doğrulandı: ders 404'ünü kaldırmak (hem dosya ölçüsü hem küme
+Üç enjeksiyon doğrulandı: konuşma 404'ünü kaldırmak (hem dosya ölçüsü hem küme
 ölçüsü düşüyor — yani kapı kusurun kendisini yakalıyor), grup 404'ünü
 kaldırmak, muafiyeti boşaltmak.
 
@@ -15687,7 +15687,7 @@ muafiyetten bir kaydı düşürmek, listeye karşılıksız bir kayıt eklemek.
 tam olarak doğru işi yapıyor (2-9 px'lik ilerleme çubuklarını ve daireleri
 saymıyor, kalanı jeton olmaya zorluyor, onay kutusunun 6'sı sebebiyle yazılı).
 Tarama onu kaçırdı çünkü yolu `path.join(ROOT, "mobile", "src")` ile kuruluyor
-ve ben `"mobile/src"` dizgisini aramıştım — kapının kendi dersinin tekrarı:
+ve ben `"mobile/src"` dizgisini aramıştım — kapının kendi konuşmasının tekrarı:
 **bir olguyu tam metin olarak aramak**.
 
 Doğru envanter, bir daha yanlış yerden başlanmasın diye:
@@ -15710,7 +15710,7 @@ Doğru envanter, bir daha yanlış yerden başlanmasın diye:
 `check:loading` tek gerçek açık kalan: mobilde veri bekleyen ekranların iskelet
 dalı ölçülmüyor. Bu turda elle bakıldı — `Skeleton` 37 dosyada ve bakılan
 ekranlarda (bildirimler, lider tablosu, deneme sınavı) boş ekran değil ya
-iskelet ya da varsayılan değerlerle çizilmiş bir arayüz çıkıyor; `RoleplayExam`
+iskelet ya da varsayılan değerlerle çizilmiş bir arayüz çıkıyor; `ConversationScored`
 dönen çark kullanıyor (web orada iskelet çiziyor). Kapıya dönüştürülmesi
 "ekran veri bekliyor mu" sorusunun mobilde `page.tsx` kadar kesin bir cevabı
 olmadığı için ayrı bir iş.
@@ -15722,7 +15722,7 @@ Maskotun kipi iki yerde karşılaştırılıyordu: sınav girişi (iki ekran) ve
 
 Yüzeyleri eşleştiren şeyin ne olduğu zaten belli: `<Mascot>`ın hemen ardındaki
 ilk sözlük anahtarı. Onunla hesaplandığında yedi ortak yüzey çıktı ve **ikisi
-ayrışıktı** — ikisi de rol yapma sınavında:
+ayrışıktı** — ikisi de puanlı kısımda:
 
 | yüzey | web | mobil |
 |---|---|---|
@@ -15735,7 +15735,7 @@ ve üç yüzey çevrilirken bu dal atlanmıştı.
 
 Boyut da ölçüye giriyor, çünkü eşleşen dört yüzey **baştan beri** aynı boyu
 taşıyordu (96/96, 90/90, 112/112, 104/104) — yani kural yazılı değildi ama
-uygulanıyordu. Rol yapma sınavının iki dalı tek aykırıydı.
+uygulanıyordu. Puanlı kısmın iki dalı tek aykırıydı.
 
 **Haftalık sınavın kapağında mobilde maskot hiç yoktu.** Web aynı kapakta
 `think` / 64 çiziyor ve üç metin ile iki düğme birebir aynı. Mobil kapak ortalı
@@ -15765,31 +15765,31 @@ bakılmamıştı.
 
 | yüzey | web | mobil |
 |---|---|---|
-| sınav girişi (`exam_intro`) | 48 | `ExamScreen` 48 · **`RoleplayExam` 56** |
-| sonuç balonu (`exam_pass`/`exam_fail`) | 56 | `RoleplayExam` 56 · **`ExamScreen` 72** |
+| sınav girişi (`exam_intro`) | 48 | `ExamScreen` 48 · **`ConversationScored` 56** |
+| sonuç balonu (`exam_pass`/`exam_fail`) | 56 | `ConversationScored` 56 · **`ExamScreen` 72** |
 | zayıf nokta turu (`weak_done`) | 72 | 72 |
 
 Web üçünde de kendi içinde tutarlı: giriş 48, sonuç 56, zayıf nokta 72. Mobilde
 iki aykırı var ve ikisi de **mobilin kendi kardeş ekranıyla da** çelişiyor —
-yani düzeltmenin yönü iki ayrı gerekçeyle aynı: `RoleplayExam` girişi 48,
+yani düzeltmenin yönü iki ayrı gerekçeyle aynı: `ConversationScored` girişi 48,
 `ExamScreen` sonucu 56.
 
 Aynı turda maskot tarafında da iki boy aykırısı çıkmıştı (§11.432); ikisi
-birlikte okununca kalıp belli: **rol yapma ve sınav ekranları büyütülmüş
+birlikte okununca kalıp belli: **sohbet ve sınav ekranları büyütülmüş
 kopyalar taşıyor** ve hiçbiri ölçülmüyordu.
 
 ### Kapı
 
 Ölçü **dosya çifti** üzerinden, çünkü balonun kimliği `moment` ve aynı ikili
 (`exam_pass`/`exam_fail`) iki ayrı ekranda kullanılıyor — tek başına anahtar
-olamıyor. Üç çiftin (sınav, rol yapma, tur özeti) balonları **sırayla**
+olamıyor. Üç çiftin (sınav, sohbet, tur özeti) balonları **sırayla**
 çıkarılıp `<an kümesi>/<boy>` olarak karşılaştırılıyor; üçlü koşul ifadesi
 (`passed ? "exam_pass" : "exam_fail"`) böylece tek bir kimliğe dönüyor.
 
 İkinci ölçü sayı: eşleştirme bozulup listeler boşalırsa "fark yok" boş bir
 doğru olurdu.
 
-Üç enjeksiyon doğrulandı: sınav sonucunu 72'ye döndürmek, rol yapma girişini
+Üç enjeksiyon doğrulandı: sınav sonucunu 72'ye döndürmek, sohbet girişini
 56'ya döndürmek, webin bir balonunu kaldırmak (sayı ölçüsü düşüyor).
 
 ## §11.434 — Ölçüldü, temiz: boş hâller ve mobil iskeletler
@@ -15815,7 +15815,7 @@ mobilde 37 dosyada; iskeleti olmayıp veri bekleyen yedi ekran tek tek okundu:
   yok; web de aynı (`NotificationSettings` başlığı ve izin satırını hemen
   basıyor).
 - `Leaderboard`: iskelet alt bileşenlerde (`FriendsBoard`, `LeagueBoard`).
-- `RoleplayExam`: ilk faz yerel (`intro`), veri beklemesi yok.
+- `ConversationScored`: ilk faz yerel (`intro`), veri beklemesi yok.
 - `WalkMode`: ilk faz yerel (`intro`), ilk boyamadan önce ağ yok.
 - `Item`: beceri oynatıcısı — paralel oturumun elinde, dokunulmadı.
 
@@ -15841,7 +15841,7 @@ Kapı neden görmedi: ölçüsü iki şeyi birden istiyordu — kip **dizgi olar
 yazılı olsun (`haptic("correct")`) ve iki çağrı **aynı satırda** olsun.
 Gerçekteki iki artık da üçlü koşul kullanıyordu
 (`haptic(ok ? "correct" : "wrong")`) ve çağrılar **alt altaydı**. Dosyanın
-kendi defterindeki iki dersin ikisi birden: *olguyu tam metin olarak aramak* ve
+kendi defterindeki iki konuşmanın ikisi birden: *olguyu tam metin olarak aramak* ve
 *düğüm yerine pencere gerektiği yerde satıra bakmak*.
 
 Üstelik `lib/haptics`in docblock'u "dört çağrı yeri böyleydi" diye **temizlendi**
@@ -16183,7 +16183,7 @@ zincirdi:
 "Öğrenci". Ama `social.student` **liste satırlarının** yedeği (lider tablosu,
 günün turu; iki platformda da öyle) ve `profile.student` profil kartının kendi
 yedeği. Aynı yüzeyin iki anahtarı olunca biri düzeltilip ötekinin eski kalması
-için bir yol açılıyor — defterin `cheer`/`celebrate` dersi.
+için bir yol açılıyor — defterin `cheer`/`celebrate` konuşmayı.
 
 **Eksik adım** ise görünür: adı olmayan bir kullanıcı Android'de e-posta
 adresinin yerel parçasını görüyor ("samet@…" → "samet"), webde doğrudan
@@ -16271,7 +16271,7 @@ okumadan önce "bulgu" sanmıştım:
   de var) ve ayrışma bilerek görünür bırakılmış.
 - `WeeklyStatus.week` — yukarıda.
 
-Dersi yazıyorum çünkü ölçüm zamanının çoğunu bu üçü aldı: **bir fark bulunca
+Konuşmayı yazıyorum çünkü ölçüm zamanının çoğunu bu üçü aldı: **bir fark bulunca
 önce o satırın kendi yorumunu okumak** gerekiyor; bu depoda kararların gerekçesi
 kodun yanında duruyor ve "ayrışma" sanılan şeyin üçte biri belgelenmiş bir
 tercih.
@@ -16405,14 +16405,14 @@ ağırlıklar: iki platform aynı metne aynı puanı vermeli."* İddiayı tutan 
 Ölçü dizgi değil **sayı**: ifadeden katsayılar çekiliyor, yani biçimlendirme
 değişse kapı kırmızı vermez ama bir katsayı değişse verir.
 
-### §314 ve bir enjeksiyon dersi
+### §314 ve bir enjeksiyon konuşmayı
 
 Dört enjeksiyon planladım, biri **yakalanmadı** ve sebebi kayda değer:
 `const w = s.task * …` bildirimini `const toplam = …` diye değiştirmek kapıyı
 düşürmedi — çünkü ölçü bildirimin **adına** bakmıyor, katsayı ifadesine ve
 ayrıca `(w / 4) * 100` kalıbına bakıyor; ikincisi hâlâ `w` diyordu. Yani
 enjeksiyon kapının **okuduğu şeyi değiştirmemişti**. Defterin tekrar eden
-dersi: *enjeksiyonun kapının okuduğu yeri gerçekten bozduğunu doğrula.*
+konuşmayı: *enjeksiyonun kapının okuduğu yeri gerçekten bozduğunu doğrula.*
 
 Yerine iki gerçek enjeksiyon konuldu: ifadedeki terim **düzenini** değiştirmek
 (kapı "OKUNAMADI" diyor — toplama değişmeli olduğu için bu bir yanlış pozitif
@@ -16851,7 +16851,7 @@ kartı veriyor: başlık + "birazdan tekrar deneyin" + `RetryButton`. Altısınd
 geldiğini duymuyordu, sayfa sessizce boş kalıyordu.
 
 Uygulamanın kendi kalıbı zaten duyuruyor — oyuncu kabukları (`weekly-player`,
-`exam-player`, `roleplay-exam`, `placement-test`) aynı kartta `role="alert"`
+`exam-player`, `conversation-scored`, `placement-test`) aynı kartta `role="alert"`
 yazıyor. Aykırı olan altı **sunucu sayfasıydı**; §241 de aynı kuralı boş durum
 kabuğu için koyuyor (hata hâli duyurulur, boş hâl duyurulmaz).
 
@@ -17083,12 +17083,12 @@ bir biçimi daha.
 ## §11.473 — Puan halkası: iki sonuç ekranında hiç yoktu, ikisinde elle kuruluydu
 
 Sonuç ekranının en önemli sayısı halkanın içinde duruyor. Android dört yüzeyde
-de aynı bileşeni çiziyor (`ui/ProgressRing`): haftalık sınav (160/15), rol yapma
+de aynı bileşeni çiziyor (`ui/ProgressRing`): haftalık sınav (160/15), sohbet
 sınavı (140/13), yürüyüş modu (150/14) ve kelime turu (150/14).
 
 **Web'de iki yüzeyde halka yoktu:**
 
-- **Rol yapma sınavı:** puan başlığın içinde bir ek cümleydi ("Rol yapma
+- **Puanlı kısım:** puan başlığın içinde bir ek cümleydi ("Sohbet
   sınavı · %85"). Android'in başlığında yalnız sınavın adı var, puan halkada.
 - **Yürüyüş modu:** doğru sayısı sönük bir satırdı (`common.n_correct`).
 
@@ -17472,7 +17472,7 @@ listenin yedisi tam bu yüzden **suçlu değildi** (kart zemini + normal metin,
 
 Kalan **yirmi üç** yüzeyin hepsi 500 tabanlı %14'e çekildi: iki hata sayfası,
 üst bar seri hapı, meydan okuma sayacı, günün turu çipi, tanışma turu rozeti,
-ders oynatıcısının dört uyarısı, profil formu hata satırı, tur şeridinin dört
+konuşma oynatıcısının dört uyarısı, profil formu hata satırı, tur şeridinin dört
 yüzeyi, dinleme oynatıcısı, ortak görev düğmesi, akış olay karosu, gelen kutusu
 iki karosu ve yürüyüş modunun üç yüzeyi.
 
@@ -17605,7 +17605,7 @@ deyişiyle "Perfekt arayan bir rubrik".
 Web tarafında alan bugün **zorunlu** (`AssessRequest.lang`) ve dört çağıranın
 hepsi gönderiyor; yorumu da orada: "isteğe bağlıyken **dört çağıran
 unutmuştu** (2026-09-12 ölçüldü)". **Mobilde dördü de göndermiyordu:** çeviri
-turu, serbest cümle turu, sınavın yazma bölümü ve dersin rol yapma sınavı.
+turu, serbest cümle turu, sınavın yazma bölümü ve konuşmanın puanlı kısım.
 Dördüyle de iki kurs birden çalışıyor, yani İngilizce öğrencinin her yazılı
 üretimi yanlış rubrikle puanlanıyordu. Dördüne `currentTargetLang()` eklendi.
 
@@ -17714,7 +17714,7 @@ değiştirilemesin diye). Ama beş yardımcı o taramanın dışında kalmışt�
   gelen kutusu, ortak görev, akış; kırktan fazla çağrı. Sunucu yanıt vermeyi
   bırakırsa ekranda duran şey iskeletin kendisi oluyordu.
 - `lib/answer-queue` — çevrimdışı cevap kuyruğunun boşaltması
-- `lib/lesson-queue` — ders kuyruğu
+- `lib/conversation-queue` — konuşma kuyruğu
 - `lib/push-client` — abonelik kaydı
 - `lib/avatar` — avatar senkronu
 
@@ -17740,13 +17740,13 @@ de eksikti: tarama `src/lib`in **üst dizinine** bakmıştı.
 
 **Sohbet üretimi (Android referans).** `/api/chat` bir cevap *yazdırıyor*
 (değerlendirme gibi hazır metni puanlamıyor) ve uzun bir turda kırk saniyeye
-kadar sürüyor. Android bunu biliyor: `sendRoleplay` kırk beş saniye bekliyor.
-Web'in iki çağıranı (`lessons/lesson-player`, `lessons/roleplay-exam`) kendi
+kadar sürüyor. Android bunu biliyor: `sendChat` kırk beş saniye bekliyor.
+Web'in iki çağıranı (`conversations/conversation-player`, `conversations/conversation-scored`) kendi
 süresini vermediği için **genel tavana (25 sn) düşüyordu** — aynı ağır cevap
 Android'de geliyor, web'de "sohbet kurulamadı" oluyordu. Web yanıtı **akışlı**
 okuduğu için tavan akışın tamamını kapsıyor, yani uzun bir cevap tam ortasından
 kesiliyordu. Sabit artık iki tarafta **aynı adla** duruyor
-(`ROLEPLAY_TIMEOUT_MS = 45_000`).
+(`CHAT_TIMEOUT_MS = 45_000`).
 
 **El listesinin kaçırdığı yedi çağrı.** `src`in tamamı tarandığında §11.490'dan
 arta kalanlar çıktı: `lib/push-client`in **iki** çağrısı (biri bekleniyor —
@@ -17754,7 +17754,7 @@ abonelikten çıkma), `lib/report` (Android `api()` kullanıyor), `lib/skills/pr
 (iki: PUT + GET), `lib/use-cached` (başlangıç ekranının üç bölümünün tazelemesi),
 `components/exam-player` (kapak ön isteği) ve `speak-button`ın **oynatma**
 indirmesi. Sonuncusu ön indirme değil: kullanıcı sesin başlamasını bekliyor ve
-asılı kalan bir istek dersi sessiz bırakıyordu. Tavanı Android'in native
+asılı kalan bir istek konuşmayı sessiz bırakıyordu. Tavanı Android'in native
 oynatıcısıyla aynı sayı (`playTtsUrl` 8000).
 
 **iOS yirmi saniye sessiz kalıyordu.** Android `playTtsUrl`ı sekiz saniyede
@@ -17794,13 +17794,13 @@ indirmesi — sayının **3 değil 2** olması oynatma yolunun tavanlı kaldığ
 ölçüyor.
 
 **Ölçünün kendi üç hatası** (üçü de enjeksiyonla değil, ilk çalıştırmada
-çıktı): (1) `/ROLEPLAY_TIMEOUT_MS = /` deseni `ASSESS_ROLEPLAY_TIMEOUT_MS`
+çıktı): (1) `/CHAT_TIMEOUT_MS = /` deseni `ASSESS_CHAT_TIMEOUT_MS`
 satırını yakalıyordu ve mobil tavan 45000 yerine 30000 okunuyordu — ayrışan
 şey ölçünün kendisiydi; (2) "server-only taşıyan dosyalar" diye kurulan kapsam
 `auth/apple*`ı hiç görmüyordu (o dosyalarda o satır yok) — kapsam bu yüzden
 dosya seçmeyen tam envantere çevrildi; (3) "tarama boş değil" eşiği ölçülmeden
 yirmi yazılmıştı, gerçek sayı on dokuzdu. Ayrıca deponun **kendi meta-kapısı**
-(§138, "kapılarda önek eşleşmesi") sade `/ROLEPLAY_TIMEOUT_MS/` desenini
+(§138, "kapılarda önek eşleşmesi") sade `/CHAT_TIMEOUT_MS/` desenini
 reddetti — haklı olarak: yanlış tavanı geçiren bir çağrı yeri "geçiyor"
 görünürdü.
 
@@ -17810,7 +17810,7 @@ Android'de dolgulu bir yüzeyin gölgesi **nötr değil, yüzeyin kendi rengi**:
 
 | Yüzey | Android |
 |---|---|
-| Ders doğru/yanlış düğmeleri | `softShadow(colors.success \| danger, 8)` |
+| Konuşma doğru/yanlış düğmeleri | `softShadow(colors.success \| danger, 8)` |
 | İlerleme seri kartı | `softShadow(colors.streakDeep, 12)` |
 | Mikrofon izni karosu | `softShadow(colors.primary, 12)` |
 | Biten günlük görev karosu | `softShadow(colors.success, 6)` |
@@ -18129,7 +18129,7 @@ başlamasaydım üçünü de bozacaktım):
   `padding: spacing.xl`
 - **seviye testi**: 20 — Android `PlacementScreen` kart kullanmıyor,
   `padding: spacing.xl`
-- **rol yapma sınavı** (4 yüzey): 20 — Android `RoleplayExamScreen` dört
+- **puanlı kısım** (4 yüzey): 20 — Android `ConversationScoredScreen` dört
   yüzeyinin hepsinde `padding: spacing.xl`
 
 Ayrıca tanıtım/demo/admin sayfaları (Android karşılığı yok) ve

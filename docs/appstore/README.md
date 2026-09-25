@@ -414,7 +414,7 @@ Other User Content, Product Interaction); misafirde e-posta ve ad hiç toplanmı
 - **Satın alma:** Premium'lu inceleme hesabı paywall'u göremez; notta ikinci, Premium'suz
   bir demo hesap ve hesap şartının gerekçesi (hesaba bağlı, platformlar arası abonelik)
   var (`connect.md` §1).
-- **Yapay zekâ içeriği:** rol yapma bir dil modeliyle üretiliyor; uygulamada "gerçek kişi
+- **Yapay zekâ içeriği:** sohbet bir dil modeliyle üretiliyor; uygulamada "gerçek kişi
   değil" bildirimi ekranda kalıcı ve her yanıtın altında "Bildir" var (Guidelines 1.2 ve
   üretken içerik beklentileri).
 - **Kullanıcı içeriği (Guidelines 1.2):** dördü de var — görünen ad ve kullanıcı adı

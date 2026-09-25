@@ -1,7 +1,7 @@
 # İngilizce kursun ünite egzersizleri (WP-75) — 2026-09-11
 
-**Açılıştaki kusur.** WP-74 İngilizce kursun DERS katmanını kapattı (A1'den
-C1'e 500 ders). Kapanır kapanmaz Patika'nın öteki yarısı görünür oldu:
+**Açılıştaki kusur.** WP-74 İngilizce kursun KONUŞMA katmanını kapattı (A1'den
+C1'e 500 konuşma). Kapanır kapanmaz Patika'nın öteki yarısı görünür oldu:
 İngilizce kursun **hiçbir seviyesinde ünite egzersizi yoktu**.
 
 | Kurs · seviye | ünite egzersizi | kütüphane |
@@ -10,8 +10,8 @@ C1'e 500 ders). Kapanır kapanmaz Patika'nın öteki yarısı görünür oldu:
 | de B1 | 270 (45 ünite × 6) | 25 |
 | **en A1…C1** | **0** | 25 |
 
-100 ders 25 ünite eder (`UNIT_LESSONS = 4`) ve her ünitenin deseni
-`4 ders + 2 okuma + 2 dinleme + 2 yazma + gramer + tekrar + kontrol`.
+100 konuşma 25 ünite eder (`UNIT_CONVERSATIONS = 4`) ve her ünitenin deseni
+`4 konuşma + 2 okuma + 2 dinleme + 2 yazma + gramer + tekrar + kontrol`.
 Yani İngilizce öğrencisi her ünitede **altı boş yuva** görüyordu: başlığı
 "Okuma", altı "yakında", `ref: null`, tıklanmıyor. Beş seviyede
 **750 boş yuva**.
@@ -66,7 +66,7 @@ mi çıkacağına yazar karar verir.
 | **B2** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
 | **C1** | **1–25** | **TAM** (2026-09-12) — 150 egzersiz, 150/150 yuva |
 
-**A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
+**A1 ünite 1 (2026-09-11).** Dört konuşmayı Hello! · How are you? · I am, you
 are · Where are you from?. Altı egzersiz: iki okuma ("Three names",
 "Are you a student here?"), iki dinleme ("My name is Ava", "Excuse me,
 are you Mr. Kaya?"), iki yazma ("I introduce myself", "Questions and
@@ -84,8 +84,8 @@ Anadil ekseni aynı turda kapandı: `prose-de` s-017 (43 dize),
 okuyan için doğru değil (Almanca da özneyi düşürmez, „woher“ de tek
 sözcüktür); Almanca karşılıkları İngilizceyi Almancaya karşı ölçüyor.
 
-**A1 ünite 2–3 (2026-09-11).** Ünite 2 dersleri Languages · Numbers 1-100 ·
-Spelling · Jobs; ünite 3 dersleri Age and birthday · Filling a form ·
+**A1 ünite 2–3 (2026-09-11).** Ünite 2 konuşmaları Languages · Numbers 1-100 ·
+Spelling · Jobs; ünite 3 konuşmaları Age and birthday · Filling a form ·
 My family · Brothers and sisters. On iki egzersiz; ünite dışı ölçüm
 %0,2 — kalan iki belirteç, diyalog metninin ilk sözcüğü olan iki konuşmacı
 adı.
@@ -112,7 +112,7 @@ de sahibe bakıyor. Almanca karşılık bunu söylüyor ve asıl farkı gösteri
 için Türkçe okuyandan DAHA zor, çünkü Almancada yardımcı fiille soru kurma
 diye bir şey yok — o satır Almancada uzuyor.
 
-**A1 ünite 4–6 (2026-09-11).** Ünite 4 dersleri I don't … · Pets ·
+**A1 ünite 4–6 (2026-09-11).** Ünite 4 konuşmaları I don't … · Pets ·
 In the photo · One or many; ünite 5 What he looks like · My friends ·
 Relatives · What people are like; ünite 6 At the café · Breakfast ·
 At the kiosk · At the restaurant. On sekiz egzersiz; ünite dışı ölçüm
@@ -604,7 +604,7 @@ ich geschickt habe“ içinde „den“ hiçbir koşulda düşmüyor.
 Ölçüm B1'de ilk kez çalıştı ve beklendiği gibi davrandı: havuz büyüdüğü
 için ilk taslakta oran %2,2 çıktı ve on dokuz sözlükçe maddesiyle %0,0'a
 indi. Bir de içerik düzeltmesi geldi: `en-b1-u1-r2` metninde „agency“
-kullanılmıştı, oysa o sözcük ünite 3'ün dersinde geçiyor — beş yerde
+kullanılmıştı, oysa o sözcük ünite 3'ün konuşmasında geçiyor — beş yerde
 „company“ ile değiştirildi. Ünite sırası sözcüğün hangi üniteye ait
 olduğunu belirliyor ve kapı bunu sayıyor.
 
@@ -871,7 +871,7 @@ sonra biçim sayıya, göreve ve zamana göre hiç değişmiyor. Almanca eksende
 bu turun asıl bulgusu bu: Almanca ilgi adılı cinse ve duruma göre bir
 TABLODAN seçiliyor („der Film, der…“ / „die Frau, die…“), yani Almanca
 okuyan İngilizcede yapılacak işin yarısını fazladan yapmaya alışkın. Ünite
-3 adılın DÜŞMESİNİ, ünite 8 VİRGÜLÜNÜ öğretmişti; üçüncü ders adılın
+3 adılın DÜŞMESİNİ, ünite 8 VİRGÜLÜNÜ öğretmişti; üçüncü konuşma adılın
 kendisinin donuk olduğu.
 
 Ünite 25 seviyeyi KAPANIŞ İPİYLE bitiriyor. Ünitenin dilbilgisi amaç,
@@ -911,7 +911,7 @@ türü: iş BAŞKA BİR KATMANDA yapılıyor. Almanca aynı şeyi edilgen bir
 söyleme fiiliyle değil, bir KİP FİİLİYLE kuruyor — „Die Prognose soll
 sich ändern“, „Der Schadenersatz soll gering sein“. İngilizce sözdizimini
 kullanıyor, Almanca kipliği; ikisi de kaynağı gizliyor ve öğrenci
-Almancadan birebir çevirdiğinde „should“a düşüyor, çünkü „sollen“in ders
+Almancadan birebir çevirdiğinde „should“a düşüyor, çünkü „sollen“in konuşma
 kitabındaki karşılığı o.
 
 Ünite 2'nin noktası KARIŞIK KOŞUL: koşul geçmişte, sonuç ŞİMDİDE.
@@ -940,7 +940,7 @@ kısıtlıyor.
 çıktı; yüz bir sözlükçe maddesiyle %0,0'a indi. Beş madde silindi (soru
 kökünde ya da kabul listesinde geçip metinde geçmeyenler), bir dikte
 bölümü ayrıldı ve iki içerik düzeltmesi geldi: „supplier“ ünite 3'ün
-dersinde geçtiği için ünite 2'nin metninden çıkarıldı (ünite sırası
+konuşmasında geçtiği için ünite 2'nin metninden çıkarıldı (ünite sırası
 sözcüğün hangi üniteye ait olduğunu belirliyor), ve „post-mortem“ tek
 belirteç olarak kapanmadığı için „a review after the event“ diye
 yazıldı — tireli terim de çok sözcüklü terim gibi davranıyor.
@@ -1030,7 +1030,7 @@ söylüyor; ayrıldıkları yer bilginin ne zaman geldiği.
 
 Ölçüm bu turda doksan sözlükçe maddesi ekletti, dokuz maddeyi sildirdi ve
 bir dinleme bölümünü ikiye ayırttırdı (40 kelime sınırı). İki içerik
-düzeltmesi de geldi: „movement“ ünite 9'un dersinde geçtiği için ünite
+düzeltmesi de geldi: „movement“ ünite 9'un konuşmasında geçtiği için ünite
 7'nin metninden çıkarıldı, ve „fact-check“ tireli terim olarak
 kapanmadığı için „a check of this kind“ diye yazıldı — ünite 4'te
 „post-mortem“le konan kural ikinci kez çalıştı.
@@ -1350,13 +1350,13 @@ DA ÖTELİYOR.**
 
 Ölçüm bu turda yüz iki sözlükçe maddesi ekletti ve sekiz maddeyi sildirdi.
 İki tireli terim daha metinden çıkarıldı („middle-voice“, „twenty-page“) —
-kural yedinci kez çalıştı. Bir de araç tarafında küçük bir ders: sözlük
+kural yedinci kez çalıştı. Bir de araç tarafında küçük bir konuşma: sözlük
 dosyasına toplu ekleme yaparken var olan anahtarları atlamak gerekiyor,
 yoksa tek bir çakışma bütün bloğu düşürüyor.
 
 
 Ünite 7'nin noktası EKSİLTME ve bu ünite üç ayrı büyüklükte deliği tek
-derste yan yana koyuyor: fiil siliniyor ve yerini virgül tutuyor („Some
+konuşmada yan yana koyuyor: fiil siliniyor ve yerini virgül tutuyor („Some
 articles name arson; others, bodily harm“), nesne siliniyor ve geçişli
 fiil bir kişiyi değil bir siyaseti adlandırmaya başlıyor („The police
 would apprehend if they could“), yüklem bütünüyle siliniyor ve „is not“
@@ -1413,7 +1413,7 @@ hiçbir şey yanlış değil, yazdığı her şey niyet ettiğinden yüksek sesl
 KİRALAYABİLİR.** Yanında iki ek ölçü var: izinli fiil listesinin üçle
 kapalı olması (were/had/should) B2'deki „Almanca düzenli, İngilizce
 listeli“ ölçüsünün bu seviyedeki karşılığı; ve ünite 7'nin silmesi şiir
-dersinde geri dönüyor ama işlevi değişiyor — orada vurgu ve tasarruftu,
+konuşmasında geri dönüyor ama işlevi değişiyor — orada vurgu ve tasarruftu,
 burada BOŞLUK: „The poem is fragmentary; the reader, contemplative“
 cümlesinde fiili geri koyduğunuzda cümlede hiçbir şey bozulmuyor, şiir
 yalnızca üzerine kurulduğu bir saniyelik sessizliği yitiriyor.
@@ -1446,7 +1446,7 @@ DAĞILIMI DİLİN DEĞİL KATMANIN ÖZELLİĞİ** — aynı dil bir katmanda ba�
 ötekinde sona yüklüyor. Pratik sonucu da var: İngilizce yazar öbeğin
 arkasına eklemeye devam edebiliyor ve cümle okunmaz olmuyor; aynı biçimde
 ekleyen Alman yazar bir parantez dolduruyor ve parantezin bir boyu var.
-Ünitenin ikinci dersi bunun küçük kardeşi: „albeit“ cümlecik istemiyor
+Ünitenin ikinci konuşmayı bunun küçük kardeşi: „albeit“ cümlecik istemiyor
 („Her demeanor, albeit formal, fits the milieu“), ve fiilsiz bir tavizin
 hiçbir zaman savunulması gerekmiyor çünkü hiçbir şey cümle olarak
 söylenmemiş.
@@ -1764,13 +1764,13 @@ görmüyor. 750 ünite egzersizi tarandı ve sınıfın en somut üyesi bulundu:
 **sıralama sorusunun kökü bir sayı veriyor ama listede başka sayıda madde var**
 — „Üç satırın sırası: doğru sıraya koy.“ yazıp dört madde göstermek. 41 soruda
 çıktı (B1 4, B2 10, C1 27); öğrenciye üç şey sıralamasını söyleyip dört şey
-gösteriyordu. Kökler sayısız biçime çevrildi („Dersin sırası: doğru sıraya
+gösteriyordu. Kökler sayısız biçime çevrildi („Konuşmanın sırası: doğru sıraya
 koy.“ — hattın yarısında zaten kullanılan biçim).
 
 Asıl kazanç tarama değil KAPI: `scripts/check-content.ts` artık sıralama
 sorusunun kökündeki Türkçe sayı sözcüğünü madde sayısıyla karşılaştırıyor ve
 tutmuyorsa hata veriyor. Kapının gerçekten ateşlendiği tek bir kökü geri alarak
-doğrulandı. Bir de araç dersi: Türkçe sözcük sınırı ASCII `\b` ile
+doğrulandı. Bir de araç konuşmayı: Türkçe sözcük sınırı ASCII `\b` ile
 çalışmıyor — „üç“ün önündeki „ü“ sözcük karakteri sayılmadığı için `\büç\b`
 hem „Üç satır“ın başında EŞLEŞMİYOR hem de „güçlüye“nin ortasında EŞLEŞİYOR;
 ilk taramada 40 gerçek hatanın hepsi bu yüzden kaçmıştı. Desen harf-dışı
@@ -1830,7 +1830,7 @@ vom Konto“), `a1-u17-r2` „Dazu kommen“ diye başlıyordu (metin „Und“)
 `en-b1-u6-l2` „three per cent“ diyordu (metin „three in a hundred“),
 `en-b1-u10-l1` iki cümleyi bir cümleye bağlıyordu, `en-b2-u19-l1` „two different
 grammars“ diyordu (metin „two grammars“) — ve en kötüsü `en-b1-u15-l1`:
-ders NESNE KONUMUNDAKİ İLGİ ADILININ DÜŞMESİNİ öğretirken açıklama „the part
+konuşma NESNE KONUMUNDAKİ İLGİ ADILININ DÜŞMESİNİ öğretirken açıklama „the part
 that I wrote“ diye adıllı biçimi alıntılıyordu, yani kendi öğrettiğinin tersini.
 
 Bu sınıf kapıya çevrilmedi. Nedeni ölçüldü: kalan 25 işaretin hepsi meşru ve
@@ -1849,7 +1849,7 @@ dört sütunu“), (b) ödev yönergesi („6-9 cümle“, „(1) … (2) …“
 görevinin veri kartı („Gün: pazar; sonuç: 1-1; seyirci: 4000“ — öğrenciye
 verilen veri, metnin iddiası değil), (d) deyim („dört gözle bekliyorum“),
 (e) ünite göndermesi („ünite 43'ün kalıbı“). Betik (a)–(e)'yi eleyecek
-süzgeçlerle çalıştı. Bir de dil özgü ders: Almanca sayıyı BİLEŞİK yazıyor
+süzgeçlerle çalıştı. Bir de dil özgü konuşma: Almanca sayıyı BİLEŞİK yazıyor
 („neunundzwanzig“, „viermal“, „zehnfach“), bu yüzden belirteci tam eşleştirmek
 işe yaramıyor — kök araması gerekiyor; İngilizce tarafta bu sorun yoktu.
 
@@ -1966,7 +1966,7 @@ bandının dışına çıkarsa hata. Bant bilerek geniş — amaç dengeyi dayat
 tek yöne ÇÖKMEYİ yakalamak. Bandı geçici olarak %55–65'e daraltıp kapının
 ateşlendiği doğrulandı.
 
-Dersin kendisi kaydedilmeye değer: bir kapı „şık konumu yanlılığı“ diye
+Konuşmanın kendisi kaydedilmeye değer: bir kapı „şık konumu yanlılığı“ diye
 yazılmıştı ama yalnız ÇOKTAN SEÇMELİYİ sayıyordu; iki şıklı sorular
 karıştırmadan da bilerek muaftı ve muafiyetin gerekçesi başka bir kursun
 ölçümüydü. Böylece bir soru türü hiçbir ölçümün kapsamında kalmadı ve kusur

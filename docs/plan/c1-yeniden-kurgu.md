@@ -5,7 +5,7 @@ bulgular için `docs/plan/a2-yeniden-kurgu.md` §7-§10.
 
 ## 1. Ölçülmüş başlangıç (2026-09-05)
 
-100 ders × 5 kelime = 500 yuva.
+100 konuşma × 5 kelime = 500 yuva.
 
 | Ölçüt | Başlangıç |
 |---|---|
@@ -21,7 +21,7 @@ bulgular için `docs/plan/a2-yeniden-kurgu.md` §7-§10.
 **Sözlükçe sekize çıktı** (5 → 8, yuva 500 → 800). Gerekçe kapsama değil:
 katman 2468, sekizle bile tavan %32. Karar sahibinindir ve alındı.
 
-**Kapsam: sonuna kadar** — havuz, atama, ders içeriği ve 118 beceri egzersizi.
+**Kapsam: sonuna kadar** — havuz, atama, konuşma içeriği ve 118 beceri egzersizi.
 
 ## 3. Yapılanlar
 
@@ -39,7 +39,7 @@ A2'de de aynı tuzağa düşülmüştü.
 **İkinci tuzak:** çok kelimeli maddede sıklığı ilk kelimeden okumak `in Frage
 kommen` için 16 verir — o, "in" edatının sıklığıdır. Hepsinde null bırakıldı.
 
-### Sözlükçe sekize çıktı (100 ders)
+### Sözlükçe sekize çıktı (100 konuşma)
 
 Modül modül, her modülde 30 yeni kelime; hepsi havuzun C1 katmanından ve konu
 uyumlu. Doğrulayıcı geçiş boyunca 5 ya da 8 kabul etti, dönüşüm bitince tam
@@ -63,15 +63,15 @@ bir kusurdu; C1'de değil, ve gerekçesi ölçülebilir.
 tekrar ediliyor** — onları değiştirmek hiçbir şey kazandırmaz.
 
 **İkincisi:** bandın altındaki 75 madde tek tek okundu ve neredeyse hepsi
-dersin KENDİ KONUSU: `der Witz` kelime oyunu dersinde, `der Humor` Alman
-mizahı dersinde, `der Dialekt` lehçe dersinde, `das Kompliment` iltifat
-dersinde, `trocken` kuru mizah dersinde, `das Gegenteil` ironi dersinde,
-`die Rede` büyük konuşma dersinde. Yirmi dört A1/A2 maddesinden yalnız biri
+konuşmanın KENDİ KONUSU: `der Witz` kelime oyunu konuşmasında, `der Humor` Alman
+mizahı konuşmasında, `der Dialekt` lehçe konuşmasında, `das Kompliment` iltifat
+konuşmasında, `trocken` kuru mizah konuşmasında, `das Gegenteil` ironi konuşmasında,
+`die Rede` büyük konuşma konuşmasında. Yirmi dört A1/A2 maddesinden yalnız biri
 (`tragen`) rastlantısal.
 
-Bunları C1 kelimesiyle değiştirmek dersin konusunu elinden alırdı. C1'in
+Bunları C1 kelimesiyle değiştirmek konuşmanın konusunu elinden alırdı. C1'in
 tanımı zaten bu: yeni kelime değil, bilinen kelimeler arasında SEÇİM.
-Alt seviye bir kelimeyi C1 dersinde kullanmak onu öğretmek değil, malzeme
+Alt seviye bir kelimeyi C1 konuşmasında kullanmak onu öğretmek değil, malzeme
 olarak kullanmaktır.
 
 Bedeli açık ve kabul edildi: 148 yuva yeni C1 kelimesine gitmiyor, kapsama
@@ -83,7 +83,7 @@ Bedeli açık ve kabul edildi: 148 yuva yeni C1 kelimesine gitmiyor, kapsama
 |---|---|---|
 | Okuma / dinleme / yazma egzersizi | 12 / 12 / 8 | 62 / 62 / 58 |
 | Ünite hizalı ünite | 0/25 | **25/25** |
-| Beceri metninde hiç geçmeyen ders kelimesi | 106 | **0 / 800** |
+| Beceri metninde hiç geçmeyen konuşma kelimesi | 106 | **0 / 800** |
 | `check-content` C1 sözlükçe borcu | 158 | **0** |
 
 Yuvaya yerleşen 50 slotun tamamı ünite hizalı; 50'nin ötesindeki eski
@@ -92,7 +92,7 @@ sınav havuzunda erişilebilir kalıyorlar.
 
 ### Kapanış doğrulaması (2026-09-05)
 
-`npx tsc --noEmit` temiz · `check:lessons` C1'de sıfır hata (kalan 7 uyarının
+`npx tsc --noEmit` temiz · `check:conversations` C1'de sıfır hata (kalan 7 uyarının
 hepsi B1) · `test:track` 64 kontrol geçti · `test:options` temiz ·
 `test:content` **geçti** · `test:exams` ve `test:exam-build` hatalarının
 hepsi B1 modül 11–18'in eksik sınav planı (modül başına 2 hata), C1'in on
@@ -135,15 +135,15 @@ kelime` 31→4, `parantezli tr` 160→148). Yükseltilen üç tavanın gerekçes
 - **`skills: short_answer` → 108.** Kural "kabul edilenlerden biri beş
   kelimeden uzun" diyor; bu artık cömertlik, kusur değil — uzun biçimler
   ek kabul olarak duruyor, gösterilen örnek cevap kısa.
-- **`lessons: çok anlamlı vocab tr` 57 → 81.** Hepsi C1, aynı gerekçe.
+- **`conversations: çok anlamlı vocab tr` 57 → 81.** Hepsi C1, aynı gerekçe.
 
 ### Bu oturuma ait olmayan borç
 
 Baseline'a iki kategori daha yazıldı ki doğrulayıcı yeniden kullanılabilir
 olsun; **ikisi de bu oturumun içeriği değil** ve sahibinin kapatması gerekiyor:
 
-- `lessons: lecture N adım (N–N)`: 25, **hepsi A1**.
-- `lessons: tekrar adımı payı %N`: 44 — **26'sı A1, 18'i B1**.
+- `conversations: lecture N adım (N–N)`: 25, **hepsi A1**.
+- `conversations: tekrar adımı payı %N`: 44 — **26'sı A1, 18'i B1**.
 
 ## 6. Kalan iş
 

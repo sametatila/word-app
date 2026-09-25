@@ -41,9 +41,9 @@ adları. Bunun iki doğrudan sonucu var:
 
 Play'in 80 karakterlik kısa açıklaması (tr):
 
-> `A1'den C1'e dersler, deneme sınavları ve yürürken sesli kelime pratiği.`
+> `A1'den C1'e konuşmalar, deneme sınavları ve yürürken sesli kelime pratiği.`
 
-Bu cümle üç şey söylüyor: **kapsam** (A1'den C1'e dersler), **sınav** (deneme sınavları)
+Bu cümle üç şey söylüyor: **kapsam** (A1'den C1'e konuşmalar), **sınav** (deneme sınavları)
 ve **kullanım biçimi** (yürürken, sesli). 30 karakterlik Subtitle'a üçü birden sığmıyor.
 
 **Tutulan:** yürürken + sınav → `Yürürken konuş, sınava çalış` (28).
@@ -51,10 +51,10 @@ Mağaza adı ana kursu ve seviye aralığını ("Almanca Öğren A1-C1") söylü
 tekrar etmiyor; ayırt edici olan yürüyüş modu, "sınav" ise arayanın niyetini
 yakalayan sözcük.
 
-**Feda edilen:** "dersler", "A1–C1" ve ürünün çekirdek mekaniği olan "kelime". Nereye gitti:
+**Feda edilen:** "konuşmalar", "A1–C1" ve ürünün çekirdek mekaniği olan "kelime". Nereye gitti:
 
-- `ders`, `kelime`, `deneme`, `a1`…`c1` → **Keywords** (aranabilir ama görünmez).
-- "A1'den C1'e dersler ve deneme sınavları" → **Promotional Text** (görünür, açıklamanın
+- `konuşma`, `kelime`, `deneme`, `a1`…`c1` → **Keywords** (aranabilir ama görünmez).
+- "A1'den C1'e konuşmalar ve deneme sınavları" → **Promotional Text** (görünür, açıklamanın
   üstünde durur ve inceleme beklemeden değiştirilebilir).
 
 Yani kayıp aramada değil, **ilk bakışta**: mağaza sayfasını üç saniye görüp geçen biri
@@ -116,18 +116,18 @@ tahminle değil, içerik TARANARAK verildi — üç tanesi bu yüzden ilk taslak
 
 | Soru | Cevap | Dayanak |
 |---|---|---|
-| Müstehcen mizah / kaba dil | None | Ders içeriği sınav odaklı; STT sonucunda küfür maskeleniyor (`src/lib/moderation.ts`) |
+| Müstehcen mizah / kaba dil | None | Konuşma içeriği sınav odaklı; STT sonucunda küfür maskeleniyor (`src/lib/moderation.ts`) |
 | Korku / gerilim | None | — |
 | **Alkol, tütün, uyuşturucu** | **Infrequent** | ÖLÇÜLDÜ: 8.707 kelimenin 14'ü — `Bier`, `Wein` (A1), `rauchen`, `Zigarette` (A1), `Alkohol`, `betrunken`, `Kneipe`, `Prost`, `Raucher`, `Nichtraucher`, `Droge`, `Sucht`, `süchtig` (B1), `anstoßen` (A2). Atıf var, yani None yanlış beyan olurdu; binde iki, yani Frequent de değil |
-| Tıbbi / tedavi bilgisi | None | "Doktor randevusu" bir rol yapma sahnesi. A2'deki iki sağlık dersi (`Sağlık sigortası`, `Check-up`) dil pratiği — teşhis ya da yönetim yönlendirmesi yok. **Frequent deseydik "Regulated Medical Device" beyanı açılırdı** |
-| Health or Wellness Topics | Hayır | "Check-up" dersi `sollte` ile öneri kurmayı öğretiyor; öneri kullanıcıya değil, dilbilgisi hedefine ait |
+| Tıbbi / tedavi bilgisi | None | "Doktor randevusu" bir Konuşma adımı sahnesi. A2'deki iki sağlık konuşması (`Sağlık sigortası`, `Check-up`) dil pratiği — teşhis ya da yönetim yönlendirmesi yok. **Frequent deseydik "Regulated Medical Device" beyanı açılırdı** |
+| Health or Wellness Topics | Hayır | "Check-up" konuşması `sollte` ile öneri kurmayı öğretiyor; öneri kullanıcıya değil, dilbilgisi hedefine ait |
 | **Mature or Suggestive Themes** | **Infrequent** | ÖLÇÜLDÜ: 269 içerik dosyasında 107 geçiş — `arbeitslos`/`Arbeitslosigkeit` 34, `Tod`/`sterben` 25, `Trennung` 13, `Einsamkeit` 12, `Migration` 10, `Flucht` 5. B1-C1 metinlerinin doğal konuları; tanımın "yetişkin kitleye yönelik gerçek dünya konuları" yarısına giriyor |
 | Cinsel içerik / çıplaklık (üç kademe) | None | ÖLÇÜLDÜ: `sex`, `sexuell`, `erotik`, `nackt`, `intim` — 269 dosyada sıfır geçiş |
 | Şiddet (dört kademe, silahlar dahil) | None | ÖLÇÜLDÜ: `Gewalt` 14 geçişin tamamı B1 hırsızlık ünitesinde (`b1-u37`) kelime listesi maddesi ve metin "hırsızlıkta neredeyse hiç şiddet kullanılmaz" diyor. `Krieg` 9 — dedenin savaştan hiç söz etmemesi (`b1-u34`). `Angriff` 4 ve `Kampf` 2 — hepsi mecaz ("bir laf atma saldırı değildir", "pazar payı savaşı"). Silah geçişi iki tane ve ikisi de mecaz ("taviz bir silahtır", "kendimize karşı mühimmat"); havuzdaki tek kesici alet `Messer` = çatal-bıçak. Tasvir yok |
 | **Contests** | **Frequent** | İLK TASLAK YANLIŞTI. "Ödülsüz" diye None yazılmıştı, ama Apple'ın tanımı ödül şartı koymuyor: *"compete with one another for **rankings**, rewards, or the achievement of personal goals"*. Haftalık lig — küme başına sıralama, yükselme/düşme (`leagues`, CI'da `test:league`), haftalık sıfırlama, sıralama bildirimi — tanıma birebir giriyor ve sürekli çalışıyor |
 | Simulated Gambling / Gambling / Loot Boxes | None / Hayır / Hayır | Şansa ya da paraya dayalı mekanik yok. Kelime turundaki "Meydan okuma" yalnız doğru cevaba bağlı bir XP çarpanı: etabın hepsi doğruysa o etabın XP'si iki katı, iki yanlışta o etaptan XP yok; şans unsuru, para ya da satın alınabilir değer yok. Adı 2026-09-15'e kadar "Bahis" idi ve cevabı değiştirmese de inceleyicide soru doğuruyordu; `check:age-rating` artık arayüz sözlüklerini de bahis dili için tarıyor. Başarımlar ve görevler belirlenimci, rastgele içerik veren satın alınabilir kutu yok |
 | Uygulama içi satın alma | **Evet** | Connect'te ayrı alan, ankete girmiyor |
-| Yapay zekâ ile üretilen içerik | **Evet** | Rol yapma diyalogları; "gerçek kişi değil" bildirimi kalıcı, her yanıtın altında "Bildir" |
+| Yapay zekâ ile üretilen içerik | **Evet** | Konuşma adımındaki yapay zekâ sohbeti; "gerçek kişi değil" bildirimi kalıcı, her yanıtın altında "Bildir" |
 
 **Sonuç: hesaplanan 13+, ELLE 18+'a yükseltildi.**
 
@@ -174,7 +174,7 @@ Her yerelleştirme kendi ekran görüntülerini de ister (§4).
 > "Lesen ve Hören alıştırmaları" diye anlatıyordu, `keywords` bir sınav markasıyla
 > başlıyordu ve Almanca vitrin, Almanca konuşana açılmayan Almanca ve Zürih kurslarını
 > anlatıyordu. Şimdi her yerelleştirme **yalnız o arayüz dilinde gerçekten açılan kursu**
-> anlatıyor. Kurs × arayüz dili × seviye × ders × deneme sınavı ölçümü, anadil çevirisinin
+> anlatıyor. Kurs × arayüz dili × seviye × konuşma × deneme sınavı ölçümü, anadil çevirisinin
 > kapsamı ve Premium ayrımının kaynağı `docs/play/listing.md` §3.0'da; iki mağaza aynı
 > ölçüme dayanıyor.
 >
@@ -206,7 +206,7 @@ _28/30 karakter._
 **Promotional Text** (incelemesiz güncellenebilir)
 
 ```
-Kulaklığı tak, yürürken sesli çalış: ipucunu duy, karşılığını söyle. Almanca ve İngilizce için A1'den C1'e dersler ve deneme sınavları.
+Kulaklığı tak, yürürken sesli çalış: ipucunu duy, karşılığını söyle. Almanca ve İngilizce için A1'den C1'e konuşmalar ve deneme sınavları.
 ```
 _135/170 karakter._
 
@@ -216,7 +216,7 @@ için ücretsiz bir özellik gibi okunuyordu. Yenisi ekran açık da yapılabile
 **Keywords** (virgülle, virgülden sonra BOŞLUK YOK; sınır 100 bayt)
 
 ```
-sertifika,seviye,öğren,dil,kelime,ders,sınav,deneme,gramer,konuşma,dinleme,yazma,a1,a2,b1,b2,c1
+sertifika,seviye,öğren,dil,kelime,patika,sınav,deneme,gramer,konuşma,dinleme,yazma,a1,a2,b1,b2,c1
 ```
 _99/100 bayt (95 karakter)._
 
@@ -225,16 +225,16 @@ listede yok. Çıkanlar ve sebepleri: sınav markası (§7, karar 2); `zürih` (
 yeni kullanıcıya sunulmuyor); `ingilizce` (artık adda); `telaffuz` (mobilde telaffuz notu
 yok, söyleyiş alıştırması yalnız "anlaşıldı mı" diye bakıyor); `ezber`, `tekrar`, `okuma`
 (bayt sınırında daha zayıf aramalar). Girenler: `sertifika,seviye` (markanın yerine
-tanımlayıcı), `öğren`, `dil`, `ders`, `deneme`, `konuşma`, `yazma`, `a2`, `c1`.
+tanımlayıcı), `öğren`, `dil`, `patika`, `deneme`, `konuşma`, `yazma`, `a2`, `c1`.
 
 **Description**
 
 ```
-Lernomi ile Almanca ya da İngilizce öğren: kısa kelime turları, bir yapay zekâ karakteriyle konuşarak ilerleyen dersler, beceri alıştırmaları ve CEFR seviyelerine göre deneme sınavları. Anlatım ve yönergeler Türkçe.
+Lernomi ile Almanca ya da İngilizce öğren: kısa kelime turları, Patika'da bir yapay zekâ karakteriyle konuşarak ilerleyen Konuşma adımları, beceri alıştırmaları ve CEFR seviyelerine göre deneme sınavları. Anlatım ve yönergeler Türkçe.
 
 KURSLAR
-• Almanca: A1'den C1'e 580 ders
-• İngilizce: A1'den C1'e 500 ders
+• Almanca: A1'den C1'e 580 konuşma
+• İngilizce: A1'den C1'e 500 konuşma
 İki kursta da her seviyede beceri alıştırmaları ve 12 deneme sınavı var. Başlangıç seviyeni kendin seçebilir ya da kısa bir seviye testiyle bulabilirsin.
 
 KELİME TURLARI
@@ -243,8 +243,8 @@ Aralıklı tekrar, her kelimeyi unutmak üzereyken yeniden önüne getirir. Anla
 YÜRÜYÜŞ MODU
 Kulaklığı tak, ekrana bakmadan çalış: ipucunu Türkçe duyarsın, karşılığını öğrendiğin dilde sesli söylersin. Ekran açıkken günde 3 tur ücretsizdir. Ekran kapalıyken ya da telefon cebindeyken çalışan Cepte yürüyüş Premium'a dahildir.
 
-DERSLER VE KONUŞMA
-Her ders Türkçe kısa bir anlatımla başlar, sonra bir sahnede konuşursun: kafede sipariş, doktor randevusu, iş görüşmesi. Karşındaki gerçek bir kişi değil, bir yapay zekâdır; uygulama bunu ekranda söyler ve yanıtlarını uygulamadan çıkmadan bildirebilirsin.
+PATİKA: KONUŞMA ADIMLARI
+Her Konuşma adımı Türkçe kısa bir anlatımla başlar, sonra bir sahnede konuşursun: kafede sipariş, doktor randevusu, iş görüşmesi. Karşındaki gerçek bir kişi değil, bir yapay zekâdır; uygulama bunu ekranda söyler ve yanıtlarını uygulamadan çıkmadan bildirebilirsin.
 
 BECERİLER
 Okuma, dinleme, yazma, konuşma ve dil bilgisi alıştırmaları. İznin varsa yazdıklarını ve söylediklerini yapay zekâ değerlendirir; neyi neden düzeltmen gerektiğini görürsün. "Neler yapabilirim" ekranı hangi becerileri kanıtladığını gösterir.
@@ -300,14 +300,14 @@ Eski altyazı "pass exams" diyordu: geçmeyi vaat eden bir ifade. Yenisi "exam p
 **Promotional Text** (incelemesiz güncellenebilir)
 
 ```
-Put your headphones on and practice out loud on a walk: hear the prompt, say the German word. Lessons and mock exams from A1 to C1.
+Put your headphones on and practice out loud on a walk: hear the prompt, say the German word. Conversations and mock exams from A1 to C1.
 ```
 _131/170 karakter._
 
 **Keywords** (virgülle, virgülden sonra BOŞLUK YOK; sınır 100 bayt)
 
 ```
-zertifikat,level,deutsch,vocabulary,words,grammar,listening,lessons,course,mock,test,a1,a2,b1,b2,c1
+zertifikat,level,deutsch,vocabulary,words,grammar,listening,speaking,course,mock,test,a1,a2,b1,b2,c1
 ```
 _99/100 bayt (99 karakter)._
 
@@ -315,16 +315,16 @@ Ad ve altyazıdaki sözcükler (lernomi, learn, german, speak, on, the, go, exam
 listede yok. Çıkanlar: sınav markası (§7, karar 2); `exam` (artık altyazıda); `swiss` (Zürih
 kursu bu arayüzde hiç sunulmuyor); `flashcard`, `reading`, `speaking` (bayt sınırında daha
 zayıf aramalar). Girenler: `zertifikat,level` (markanın yerine tanımlayıcı; `zertifikat`
-Almanca öğrenenin aradığı genel sözcük), `deutsch`, `words`, `lessons`, `course`, `mock`,
+Almanca öğrenenin aradığı genel sözcük), `deutsch`, `words`, `speaking`, `course`, `mock`,
 `test`, `a2`, `c1`.
 
 **Description**
 
 ```
-Learn German with Lernomi: short vocabulary rounds, lessons where you talk with an AI character, skill exercises and mock exams organized by CEFR level. Explanations and instructions are in English.
+Learn German with Lernomi: short vocabulary rounds, Speaking steps on the Path where you talk with an AI character, skill exercises and mock exams organized by CEFR level. Explanations and instructions are in English.
 
 THE GERMAN COURSE
-580 lessons from A1 to C1, skill exercises at every level and 12 mock exams per level. Choose your starting level yourself or find it with a short placement test.
+580 conversations from A1 to C1, skill exercises at every level and 12 mock exams per level. Choose your starting level yourself or find it with a short placement test.
 
 VOCABULARY ROUNDS
 Spaced repetition brings each word back just before you would forget it. Choose the meaning, recognize what you hear, type from memory, match, build and translate sentences, and practice German articles and plurals.
@@ -332,8 +332,8 @@ Spaced repetition brings each word back just before you would forget it. Choose 
 WALK MODE
 Put your headphones on and study without looking at the screen: you hear a prompt in English and say the German out loud. Walk mode is free with the screen on, 3 rounds a day. Pocket Walking, which keeps it running with the screen off or with your phone in your pocket, is part of Premium.
 
-LESSONS AND SPEAKING
-Each lesson starts with a short explanation, then you talk your way through a scene: ordering in a café, a doctor's appointment, a job interview. Your partner is an AI, not a real person; the app tells you so on screen, and you can report its replies without leaving the app.
+THE PATH: SPEAKING STEPS
+Each Speaking step starts with a short explanation, then you talk your way through a scene: ordering in a café, a doctor's appointment, a job interview. Your partner is an AI, not a real person; the app tells you so on screen, and you can report its replies without leaving the app.
 
 SKILLS
 Reading, listening, writing, speaking and grammar exercises. With your permission, AI assesses your writing and speaking, and you see what to fix and why. The "What I can do" screen shows which abilities you have demonstrated.
@@ -373,7 +373,7 @@ _14/4000 karakter._
 > Almanca olduğu için bu arayüzde yok (`coursesForNative` hedef dile bakıyor). Eski metin
 > "Deutsch & Englisch" adıyla bu kullanıcıya Almanca ve Zürih kurslarını anlatıyordu ve
 > İngilizce kursu A1–A2 sanıyordu; ikisi de yanlıştı (B25). Bugünkü İngilizce kurs A1–C1,
-> 500 ders, 939 beceri alıştırması ve 60 deneme sınavı; Almanca arayüzde bunların tamamının
+> 500 konuşma, 939 beceri alıştırması ve 60 deneme sınavı; Almanca arayüzde bunların tamamının
 > yönergesi çevrilmiş (ölçüm `docs/play/listing.md` §3.0). Ad ve metin yalnız bunu anlatıyor.
 
 **App Name**
@@ -393,7 +393,7 @@ _29/30 karakter._
 **Promotional Text** (incelemesiz güncellenebilir)
 
 ```
-Kopfhörer auf und beim Gehen laut üben: Vorgabe hören, das englische Wort sagen. Lektionen und Probeprüfungen von A1 bis C1.
+Kopfhörer auf und beim Gehen laut üben: Vorgabe hören, das englische Wort sagen. Gespräche und Probeprüfungen von A1 bis C1.
 ```
 _124/170 karakter._
 
@@ -412,10 +412,10 @@ tanımlayıcı), `english`, `wortschatz`, `kurs`, `test`, `a2`, `c1`.
 **Description**
 
 ```
-Lerne Englisch mit Lernomi: kurze Vokabelrunden, Lektionen, in denen du mit einer KI-Figur sprichst, Übungen zu allen Fertigkeiten und Probeprüfungen nach GER-Niveaus. Erklärungen und Anweisungen sind auf Deutsch.
+Lerne Englisch mit Lernomi: kurze Vokabelrunden, Sprechen-Schritte im Pfad, in denen du mit einer KI-Figur sprichst, Übungen zu allen Fertigkeiten und Probeprüfungen nach GER-Niveaus. Erklärungen und Anweisungen sind auf Deutsch.
 
 DER ENGLISCHKURS
-500 Lektionen von A1 bis C1, Übungen auf jedem Niveau und 12 Probeprüfungen pro Niveau. Dein Startniveau wählst du selbst oder findest es mit einem kurzen Einstufungstest heraus.
+500 Gespräche von A1 bis C1, Übungen auf jedem Niveau und 12 Probeprüfungen pro Niveau. Dein Startniveau wählst du selbst oder findest es mit einem kurzen Einstufungstest heraus.
 
 VOKABELRUNDEN
 Verteilte Wiederholung legt dir jedes Wort genau dann wieder vor, wenn du es fast vergessen hättest. Bedeutung wählen, Gehörtes erkennen, aus dem Gedächtnis tippen, zuordnen, Sätze bauen und übersetzen.
@@ -423,8 +423,8 @@ Verteilte Wiederholung legt dir jedes Wort genau dann wieder vor, wenn du es fas
 GEHMODUS
 Kopfhörer auf und lernen, ohne auf den Bildschirm zu schauen: Du hörst eine Vorgabe auf Deutsch und sprichst das englische Wort laut aus. Bei eingeschaltetem Bildschirm ist der Gehmodus kostenlos, 3 Runden pro Tag. Der Gehmodus in der Tasche, der auch bei ausgeschaltetem Bildschirm weiterläuft, gehört zu Premium.
 
-LEKTIONEN UND SPRECHEN
-Jede Lektion beginnt mit einer kurzen Erklärung, danach sprichst du dich durch eine Szene: Bestellung im Café, Arzttermin, Vorstellungsgespräch. Dein Gegenüber ist eine KI und kein echter Mensch; die App zeigt das auf dem Bildschirm an, und du kannst Antworten melden, ohne die App zu verlassen.
+DER PFAD: SPRECHEN-SCHRITTE
+Jeder Sprechen-Schritt beginnt mit einer kurzen Erklärung, danach sprichst du dich durch eine Szene: Bestellung im Café, Arzttermin, Vorstellungsgespräch. Dein Gegenüber ist eine KI und kein echter Mensch; die App zeigt das auf dem Bildschirm an, und du kannst Antworten melden, ohne die App zu verlassen.
 
 FÄHIGKEITEN
 Übungen zu Lesen, Hören, Schreiben, Sprechen und Grammatik. Mit deiner Erlaubnis bewertet eine KI deine Texte und gesprochenen Antworten, und du siehst, was du warum ändern solltest. Der Bildschirm „Was ich kann“ zeigt, welche Fähigkeiten du schon nachgewiesen hast.
@@ -470,7 +470,7 @@ görüntüsü **zorunlu**.
 |---|---|---|---|
 | Uygulama ikonu | 1024×1024 PNG, opak, şeffaflık ve yuvarlatma YOK | Evet | `Images.xcassets/AppIcon.appiconset/AppIcon-1024.png` (Şerit R üretti) |
 | iPhone 6.9" | 1290×2796 (ya da 1320×2868) | **Evet** | Aşağıdaki sıra |
-| iPad 13" | 2064×2752 (ya da 2048×2732) | **Evet** (iPad desteklendiği için) | Beceriler ve ders ekranı, yatay düzen |
+| iPad 13" | 2064×2752 (ya da 2048×2732) | **Evet** (iPad desteklendiği için) | Beceriler ve Konuşma adımı ekranı, yatay düzen |
 | Küçük iPhone boyutları | — | Hayır | Apple 6.9"dan türetiyor; **Connect'teki güncel listeye bakılmalı**, Apple bu kuralı sık değiştiriyor |
 | App Preview (video) | boyut başına en çok 3, 15-30 sn | Hayır | Yürüyüş modu videosu incelemede en çok işe yarayan şey (bkz. §7, karar 3) |
 
@@ -479,7 +479,7 @@ o yüzden sıra önemli:
 
 1. Günlük tur (kelime turu)
 2. Yürüyüş modu (ekran kapalı çalışma, yani Cepte yürüyüş gösterilirse altyazıda "Premium" yazar)
-3. Ders diyaloğu (yapay zekâ sahnesi, "gerçek kişi değil" bildirimi görünür durumda)
+3. Konuşma adımı sohbeti (yapay zekâ sahnesi, "gerçek kişi değil" bildirimi görünür durumda)
 4. Beceriler: okuma / dinleme / yazma / konuşma
 5. Deneme sınavları (altyazı seviye başına 12 kâğıttan birinin ücretsiz olduğunu söyler)
 6. Haftalık sıralama
@@ -595,11 +595,11 @@ yerine geçmez"). Tam gerekçe `docs/play/listing.md` §4.2.
 
 **1 numaralı karar — kapandı: iki platform aynı İngilizce içeriği taşıyor.** Madde,
 uygulamada İngilizce kursun A1–A2 olduğu ve web'de yalnız kelime katmanının bulunduğu
-dönemde açılmıştı. 2026-09-14 ölçümü: web'de `src/lib/lessons/content/en-{a1,a2,b1,b2,c1}.json`
-(seviye başına 100 ders), `src/lib/skills/content/en-*` ve `src/lib/mock-exams/en/` (60 kâğıt)
-var ve `src/lib/courses.ts` İngilizce kurs için "Kelime, ders, beceri ve deneme sınavı
-katmanları hazır" diyor; mobil pakette de aynı ders ve kâğıt sayıları var
-(`mobile/src/data/lessons/en-*.json`, `exams/papers-en.json`; beceri alıştırmaları
+dönemde açılmıştı. 2026-09-14 ölçümü: web'de `src/lib/conversations/content/en-{a1,a2,b1,b2,c1}.json`
+(seviye başına 100 konuşma), `src/lib/skills/content/en-*` ve `src/lib/mock-exams/en/` (60 kâğıt)
+var ve `src/lib/courses.ts` İngilizce kurs için "Kelime, konuşma, beceri ve deneme sınavı
+katmanları hazır" diyor; mobil pakette de aynı konuşma ve kâğıt sayıları var
+(`mobile/src/data/conversations/en-*.json`, `exams/papers-en.json`; beceri alıştırmaları
 `skills/exercises-en.json`). Ayrışma kalmadı; vitrin metni iki platformu da doğru anlatıyor.
 
 ---

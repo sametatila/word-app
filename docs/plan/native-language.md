@@ -12,7 +12,7 @@ hangisi"*) durum uzayını üçe katlar, tek bir yeni içerik üretmez.
 `coursesForNative()` hedefi anadille aynı olan kursu eliyor (kendi dilini
 öğretmek anlamsız). Geriye kalanlar:
 
-| Çift | Kelime verisi | Beceri | Ders |
+| Çift | Kelime verisi | Beceri | Konuşma |
 |---|---|---|---|
 | tr → de | ✅ | ✅ | ✅ |
 | tr → gsw | ✅ | ✅ | ✅ |
@@ -30,7 +30,7 @@ mobilde. Üç katmanın üçü de doğrulandı; kelime katmanı için üretim OK
 mobilde. Kelime katmanı o gün üretime tohumlandı (`db:seed:en`; izin ayrıca
 soruldu, öncesinde `words` tablosunun yedeği alındı): 7.175/7.175 Almanca
 karşılık, 7.175/7.175 örnek cümle çevirisi. İçerik katmanı beş hatta yazıldı
-ve `check:native-de` ile ölçüldü — ders 200/200, egzersiz 189/189, kâğıt
+ve `check:native-de` ile ölçüldü — konuşma 200/200, egzersiz 189/189, kâğıt
 60/60, can-do 11/11.
 
 **gsw-zh HİÇBİR paritede düşünülmüyor** (kullanıcı kararı, 2026-09-10).
@@ -47,11 +47,11 @@ words          gsw örnek cümle · Türkçe            351
 words          en kursu · Almanca karşılık       7.175
 words          en kursu · Almanca örnek çevirisi 7.175
 skill_exercises  intro + gloss + açıklama       ~9.400 dize × 2 dil
-lessons (780)    başlık, özet, sözcük, kalıp,
-                 ANLATIM METNİ, rol yapma      ~44.000 alan × 2 dil
+conversations (780)    başlık, özet, sözcük, kalıp,
+                 ANLATIM METNİ, sohbet      ~44.000 alan × 2 dil
 ```
 
-Derslerin `lecture` alanı öğretmenin **konuşma metni** ve tamamı Türkçe. Yani
+Konuşmaların `lecture` alanı öğretmenin **konuşma metni** ve tamamı Türkçe. Yani
 en→de "eksik çeviri" değil, kursun o dilde yeniden anlatılması.
 
 ## Faz 1 — kod ✅ (bu commit)
@@ -63,7 +63,7 @@ Anadil ekseni artık kelime katmanında **gerçekten** çalışıyor.
 - **Karşılık yoksa `null` döner, Türkçeye DÜŞMEZ.** Kelime havuzdan elenir.
   Düşülseydi Alman kullanıcıya Türkçe anlam gösterirdik — eksik çevirinin en
   kötü biçimi, çünkü görünürde çalışıyor.
-- Sunucu: `daily.ts`, `session.ts`, `weekly.ts`, `exam.ts`, `lessons/boss.ts` —
+- Sunucu: `daily.ts`, `session.ts`, `weekly.ts`, `exam.ts`, `conversations/boss.ts` —
   soru, şık, çeldirici, yanlış iddia, benzerlik puanı, yazma eşanlamlıları.
   `makeRound`'un `native` parametresi **zorunlu**: varsayılan verilseydi yeni
   bir çağıran sessizce Türkçeye düşerdi.
@@ -236,18 +236,18 @@ olur.
 ikinci bir oturum şu anda tam orayı düzenliyor (bkz. `8b6a131f`, `d2d11677`).
 Çakışmamak için o dosyalara dokunulmadı.
 
-### 4. lessons — ÖLÇÜLDÜ: eksenin en büyük kalemi, tek başına ötekilerin toplamından fazla
+### 4. conversations — ÖLÇÜLDÜ: eksenin en büyük kalemi, tek başına ötekilerin toplamından fazla
 
-59 dosya, `src/lib/lessons/content/`:
+59 dosya, `src/lib/conversations/content/`:
 
 ```
-ders                 580
+konuşma                 580
 tr() segment      17.369   ← öğretmenin konuşma metni · İngilizcesi 0
 de() segment       8.486   ← hedef dil, çevrilmez
 titleTr + summary  1.160   ← BİTTİ, bkz. aşağısı
 vocab girdisi      4.640   ← havuzda karşılığı olan 4.621, ama bkz. aşağısı
 patterns girdisi   1.292   ← %0,3 · kalıp cümleler havuzda yok, elle
-roleplay (4 alan)  2.320   ← BİTTİ, bkz. aşağısı
+chat (4 alan)  2.320   ← BİTTİ, bkz. aşağısı
 ```
 
 Elle yazılacak: **en az 21.000 dize**. Bunun %83'ü tek bir alan: `lecture`.
@@ -256,7 +256,7 @@ onun üç katı.
 
 **TÜRETİLEBİLİRLİK İKİ AYRI SORU ve ilk ölçüm yanlış yanıtlıyordu.**
 "Havuzda karşılığı var mı" (%99,6) ile "havuzdaki karşılık DOĞRU mu"
-başka şeyler. İkincisi ölçüldü: dersin `tr` alanı havuzun `tr` alanıyla
+başka şeyler. İkincisi ölçüldü: konuşmanın `tr` alanı havuzun `tr` alanıyla
 karşılaştırıldı.
 
 ```
@@ -270,14 +270,14 @@ Farkın bir kısmı yalnız sözcük tercihi (`soyad`/`soyadı`, `nine`/
 karşılık verirdi:
 
 ```
-bitte      ders «lütfen»      ↔ havuz «rica»       (en: request)
-schreiben  ders «yazmak»      ↔ havuz «resmî yazı» (en: letter)
-groß       ders «uzun boylu»  ↔ havuz «büyük»      (en: grand)
-süß        ders «sevimli»     ↔ havuz «tatlı»      (en: sweet)
+bitte      konuşma «lütfen»      ↔ havuz «rica»       (en: request)
+schreiben  konuşma «yazmak»      ↔ havuz «resmî yazı» (en: letter)
+groß       konuşma «uzun boylu»  ↔ havuz «büyük»      (en: grand)
+süß        konuşma «sevimli»     ↔ havuz «tatlı»      (en: sweet)
 ```
 
 Bu, en→de örnek cümlelerinde 174 kez görülen tersine-çevrilemezliğin aynısı:
-ders sözlükçesi kelimenin BU METİNDEKİ anlamını taşıyor, havuz ise birinci
+konuşma sözlükçesi kelimenin BU METİNDEKİ anlamını taşıyor, havuz ise birinci
 sözlük anlamını (bkz. `types.ts`teki `Gloss` yorumu — kural zaten yazılıydı).
 Yani `vocab` için tek tek okunacak madde 19 değil **714** (695 + 19).
 
@@ -291,8 +291,8 @@ yalnız dili değişir. Ama bir bölümü öğrencinin ANA DİLİNE bağlı ve o
 gibi çevrilirse yanlış olur. `Türk*` taraması:
 
 ```
-"Türkçesi '…' demek"        1.580 parça · 200 derste  ← sözlük istemi
-"Türkçede …" dilbilgisi        63 parça ·  60 derste  ← karşılaştırma
+"Türkçesi '…' demek"        1.580 parça · 200 konuşmada  ← sözlük istemi
+"Türkçede …" dilbilgisi        63 parça ·  60 konuşmada  ← karşılaştırma
 "Türkçe konuşan için …"        11 parça               ← zorluk iddiası
 Almanca metinde (Türkisch)     10 parça               ← KALIR, hedef dil
 ```
@@ -302,7 +302,7 @@ Almanca metinde (Türkisch)     10 parça               ← KALIR, hedef dil
 **Birinci grup mekanik değil.** "Türkçesi 'merhaba' demek" cümlesinin
 İngilizcesi "the English for it is 'hello'" — taşınan şey cümle değil,
 İngilizce karşılığın kendisi. 1.580 kelimenin glossu yazılacak ve havuzdan
-türetme burada da güvenilmez: ders bağlamındaki anlam havuzun birinci
+türetme burada da güvenilmez: konuşma bağlamındaki anlam havuzun birinci
 sözlük anlamından farklı olabiliyor (yukarıdaki %84,6 sorununun aynısı).
 
 **İkinci ve üçüncü grup çevrilemez, yeniden KURULMALI** — ve bazıları
@@ -311,7 +311,7 @@ sözlük anlamından farklı olabiliyor (yukarıdaki %84,6 sorununun aynısı).
 ```
 de-b1-sprache-akzent  "Türkçe ile Almanca akraba diller değil."
                       → İngilizce ile Almanca AKRABA. İddia tersine dönüyor,
-                        çevrilirse ders yanlış şey öğretir.
+                        çevrilirse konuşma yanlış şey öğretir.
 
 de-a1-sport           "Türkçede 'haftada iki kez' deriz; Almancada sıra tam
                       tersi: önce kaç kez, sonra hafta."
@@ -354,8 +354,8 @@ bekliyorlar.
 "Türkçe ile Almanca akraba diller değil." Ama bu cümle YANLIŞ DEĞİL —
 Türkçe ile Almanca gerçekten akraba değil, öğrenci kim olursa olsun. Sorun
 doğruluk değil İLGİ: İngilizce öğrenciye kendi dili hakkında bir şey
-söylemiyor. Üstelik aynı derste Almanca hedef cümle de aynı iddiayı
-taşıyor ve o alan "çevrilmez"; İngilizcesini tersine çevirseydim ders
+söylemiyor. Üstelik aynı konuşmada Almanca hedef cümle de aynı iddiayı
+taşıyor ve o alan "çevrilmez"; İngilizcesini tersine çevirseydim konuşma
 kendi içinde çelişirdi.
 
 O yüzden olduğu gibi çevrildi ve toplu karara bırakıldı. Ölçüt netleşti:
@@ -383,7 +383,7 @@ EKLEMEK gerekiyor. Yazılan karşılık farkı açıkça söylüyor, çünkü
 öğrenci kendi dilinin alışkanlığını Almancaya taşırsa tam burada
 hata yapar.
 
-#### Ana dile bağlılık ALMANCA metinde de var: 16 parça, 6 ders
+#### Ana dile bağlılık ALMANCA metinde de var: 16 parça, 6 konuşma
 
 Yukarıdaki tarama Türkçe `tr()` alanlarınaydı. Almanca `de()` ve
 `opening` alanları da tarandı (Izmir, Istanbul, Ankara, Türkei, Türkisch…):
@@ -407,7 +407,7 @@ değil, İÇERİK. İki ayrı sınıf:
 
 2. **Tersine dönen olgu iddiası** (1 parça). `de-b1-sprache-akzent`:
    "Türkisch und Deutsch sind nicht verwandt." İngilizce için bu cümle
-   YANLIŞ — İngilizce ile Almanca akraba. Aynı ders Türkçe `lecture`
+   YANLIŞ — İngilizce ile Almanca akraba. Aynı konuşma Türkçe `lecture`
    tarafında da aynı iddiayı taşıyor; ikisi birlikte değişmeli.
 
 Yani bir çiftin içeriği üç katmanda ana dile bağlanabiliyor: Türkçe anlatım,
@@ -415,10 +415,10 @@ Türkçe sözlük istemi, ve Almanca örnek cümlenin kendisi. İlk ikisi çevir
 turunda görülüyor, üçüncüsü GÖRÜLMÜYOR — çünkü o alan "çevrilmez" diye
 işaretli. Bu 16 parça ayrıca listelenip karara bağlanmalı.
 
-##### YENİDEN SAYILDI (2026-09-10): 16 değil 29 parça, 6 ders
+##### YENİDEN SAYILDI (2026-09-10): 16 değil 29 parça, 6 konuşma
 
 İlk tarama yalnız `say` ve `opening` alanlarına bakmıştı. `target`, `hint`,
-`why`, `vocab.de` ve rol yapma SENARYOSU eklenince sayı iki katına çıktı —
+`why`, `vocab.de` ve sohbet SENARYOSU eklenince sayı iki katına çıktı —
 senaryo hattının kendisi de zaten aynı sebeple geç bulunmuştu (kaynak
 konumsal kısayollarla yazılmış, alan adı yok):
 
@@ -428,7 +428,7 @@ de-a1-hallo           7   "Ich komme aus der Türkei" · "… aus Istanbul" · "
 de-a1-sprachen       12   "Türkisch" (say/target/vocab) · "Ich spreche Türkisch und
                           ein bisschen Deutsch" · senaryonun beş repliği
 de-a1-woher           2   "Ich komme aus der Türkei." · "Ich wohne in Izmir."
-de-b1-als-wenn        3   "Als ich ein Kind war, wohnten wir in Izmir" + rol yapma açılışı
+de-b1-als-wenn        3   "Als ich ein Kind war, wohnten wir in Izmir" + sohbet açılışı
 de-b1-sprache-akzent  2   "Türkisch und Deutsch sind nicht verwandt"
 ```
 
@@ -449,12 +449,12 @@ Bunlar **DEĞİŞMEYECEK** ve sebebi ölçütü tanımlıyor:
   YANLIŞ olan bir cümle öğretiliyor. Ana dile bağlı.
 
 İkisi aynı kelimeleri taşıyor ama biri içerik, öteki varsayım. Tarama
-ayıramaz; ayıran şey cümlenin dersteki ROLÜ.
+ayıramaz; ayıran şey cümlenin konuşmadaki ROLÜ.
 
 ##### Kurulacak katman: `de` takası, çözümden SONRA
 
-Mekanizma çözücüde zaten var — `vocab` gibi `(ders, Almanca)` anahtarlı
-bir sözlük yeter: `swap[ders + AYRAÇ + de] = yeni Almanca`.
+Mekanizma çözücüde zaten var — `vocab` gibi `(konuşma, Almanca)` anahtarlı
+bir sözlük yeter: `swap[konuşma + AYRAÇ + de] = yeni Almanca`.
 
 **SIRA KRİTİK.** Anlatım sözlüğünün bölünmüş anahtarları adımda ÖNCE gelen
 Almanca parçaya bakıyor (`lectureSplit`). Almancayı önce takas edersek
@@ -474,14 +474,14 @@ yani takas iki taraflı ve `lecture/out/` dosyalarına dokunuyor.
 **Bir parça takas değil DÜZELTME istiyor.** `de-b1-sprache-akzent`'in
 "Türkisch und Deutsch sind nicht verwandt" cümlesi İngilizce öğrenci için
 YANLIŞ — İngilizce ile Almanca akraba diller. Burada yapılacak şey başka
-bir ülke adı koymak değil, dersin dayandığı olguyu ana dile göre kurmak.
+bir ülke adı koymak değil, konuşmanın dayandığı olguyu ana dile göre kurmak.
 Dördüncü L1 vakasının (güvence uyarıya dönüyor) Almanca taraftaki eşi.
 
-##### KURULDU (2026-09-10): `data/lessons/swap/` — 6 ders, 25 Almanca + 17 İngilizce
+##### KURULDU (2026-09-10): `data/conversations/swap/` — 6 konuşma, 25 Almanca + 17 İngilizce
 
 Hat değil KARAR TABLOSU: `en.json` elle yazılıyor, her satırın gerekçesi
-yanında duruyor. Çözücü `swap[(ders, özgün Almanca)]` ve
-`swapEn[(ders, özgün İngilizce)]` sözlüklerinden okuyor.
+yanında duruyor. Çözücü `swap[(konuşma, özgün Almanca)]` ve
+`swapEn[(konuşma, özgün İngilizce)]` sözlüklerinden okuyor.
 
 **Sıra kodda yazılı ve kritik.** `prevTarget` ÖZGÜN Almancayı taşıyor;
 bölünmüş anlatım anahtarları ve şablonun kelime araması ona bakıyor.
@@ -512,27 +512,27 @@ geri soruyor, kapanışta "Danke"nin İngilizcesi isteniyor.
 Kural: **takasın birimi, anlamı taşıyan birimdir.** Anlatım satırında
 cümle, diyalogda replik.
 
-###### AYNI DİZE, İKİ DERSTE FARKLI KARAR
+###### AYNI DİZE, İKİ KONUŞMADA FARKLI KARAR
 
 "Ich komme aus der Türkei." iki yerde geçiyor ve ikisinde farklı şey:
 
-| ders | rol | karar |
+| konuşma | rol | karar |
 |---|---|---|
 | `de-a1-hallo` | artikelli ülke kalıbını ÖĞRETEN örnek ("Örnek:" diye sunuluyor) | kalıyor |
-| `de-a1-du-oder-sie` | rol yapmanın yedek örnek cevabı — öğrenciye atfediliyor | takas |
+| `de-a1-du-oder-sie` | sohbetin yedek örnek cevabı — öğrenciye atfediliyor | takas |
 
-Takas anahtarının derse bağlı olmasının sebebi tam olarak bu.
+Takas anahtarının konuşmaya bağlı olmasının sebebi tam olarak bu.
 
-###### KAPI ARTIK REPOYU TARIYOR (`npm run check:lessons-swap`)
+###### KAPI ARTIK REPOYU TARIYOR (`npm run check:conversations-swap`)
 
 İki ayrı ölçüm yapıyor:
 
 1. **Tablo kaynakla TUTUYOR MU** — her `from` dizesi kaynakta gerçekten
-   duruyor mu? Bir ders düzenlenip dize kayarsa takas sessizce hiçbir şey
+   duruyor mu? Bir konuşma düzenlenip dize kayarsa takas sessizce hiçbir şey
    yapmaz ve öğrenci yine "Ich komme aus der Türkei" der. İki sözlükle
    ölçülüyor: takassız kopya `from`u görebilsin, takaslı kopya iz kalıp
    kalmadığını göstersin diye.
-2. **Tablo EKSİK Mİ** — bütün Almanca dersler çözülüp takas uygulandıktan
+2. **Tablo EKSİK Mİ** — bütün Almanca konuşmalar çözülüp takas uygulandıktan
    sonra kalan her iz hata. Bilinen iki istisna gerekçesiyle yazılı
    (`de-a1-hallo`'nun artikel örneği, `de-b1-entweder-oder`'in üçüncü
    şahıs cümlesi). Yeni bir iz çıkarsa listede olmadığı için durduruyor.
@@ -544,9 +544,9 @@ kapatan parça — `report:native` envanteri sayıyordu, bu da içeriği.
 
 Alan adına bakan arama yetmiyor:
 
-- **`fallback.example`** — rol yapmanın yedek örnek cevabı. İki ders daha
+- **`fallback.example`** — sohbetin yedek örnek cevabı. İki konuşma daha
   buradan çıktı (`de-a1-woher`, `de-a1-alter`).
-- **`roleplay.openingTr`** — açılış repliğinin ana dildeki karşılığı.
+- **`chat.openingTr`** — açılış repliğinin ana dildeki karşılığı.
   Almancası "Du bist also in Manchester aufgewachsen?" olup altındaki
   İngilizce "So you grew up in Izmir?" kalıyordu; ikisi birbirini
   yalanlıyordu. Bu bir BUG'dı, tarama bulmasa görünmezdi.
@@ -563,7 +563,7 @@ Ayrıca `Türk` tek başına ölçüt olamıyor: Almancada `Tür` kapı demek ve
 Takas katmanı bitince dağıtım zinciri baştan sona doğrulandı ve zincirin
 ortası kopuk çıktı.
 
-Sözlükçenin **4.640 maddesinin 3.926'sı** `data/lessons/vocab/derived.json`
+Sözlükçenin **4.640 maddesinin 3.926'sı** `data/conversations/vocab/derived.json`
 dosyasında ve o dosya **`.gitignore`'un 39. satırında**. Sunucudaki build
 onu bulamıyor:
 
@@ -572,19 +572,19 @@ sözlükçe 4640 → 714
 çözülen  26375 → 23977      (2.311 dize açıkta)
 ```
 
-Çözücü hep-ya-hiç çalıştığı için o dizelerin geçtiği dersleri TÜMDEN
-reddediyor, `localiseLesson` da Türkçeye düşüyor. Yani **İngilizce kurs
+Çözücü hep-ya-hiç çalıştığı için o dizelerin geçtiği konuşmaları TÜMDEN
+reddediyor, `localiseConversation` da Türkçeye düşüyor. Yani **İngilizce kurs
 üretimde hiç açılmıyordu.**
 
 ##### Hatayı gizleyen şey, hatayı önlemek için konmuş tasarımdı
 
 `native-server.ts` sözlüğü bulamazsa özelliği sessizce kapatıyor. Bu
-BİLEREK konmuştu ve gerekçesi de yazılıydı: "eksik sözlük yüzünden ders
+BİLEREK konmuştu ve gerekçesi de yazılıydı: "eksik sözlük yüzünden konuşma
 sayfasının açılmaması, çeviriden çok daha kötü." Doğru bir karar — ama
 tam olarak bu karar, eksik sözlüğü görünmez yaptı. Hiçbir yerde hata
 yoktu; İngilizce kurs yalnızca Türkçe olarak açılıyordu.
 
-Ders şu: **"eksikse kendini kapat" bir çalışma-anı politikası olabilir,
+Konuşma şu: **"eksikse kendini kapat" bir çalışma-anı politikası olabilir,
 ama build-anı politikası olamaz.** Çalışma anında düşmek kullanıcıyı
 korur; build anında sessizce eksik üretmek yalnızca hatayı saklar.
 
@@ -593,15 +593,15 @@ korur; build anında sessizce eksik üretmek yalnızca hatayı saklar.
 1. **Dosya commit'lenmedi, ÜRETİLİYOR.** `triage.mjs` onu
    `data/app/words.json`tan (depoda, 3,1 MB) deterministik kuruyor.
    Türetilebilen bir dosyayı commit'lemek iki kopyayı ayrışmaya bırakırdı
-   — `seed-db-snapshot-sync` ile aynı gerekçe. `lessons:apply` artık önce
+   — `seed-db-snapshot-sync` ile aynı gerekçe. `conversations:apply` artık önce
    triage'ı çalıştırıyor; `deploy.sh` `npm run build` dediği için zincir
    sunucuya kadar kapanıyor.
 2. **`apply.mjs` artık PATLIYOR.** `existsSync` ile atlamak sessiz
    bozulmanın kaynağıydı: eksik girdiyle yarım sözlük üretmek, hiç
    üretmemekten kötü.
-3. **CI'ya iki kapı eklendi.** Depoda hiçbir `check:lessons-*`
-   çalışmıyordu ve `npx next build` `lessons:apply`i atladığı için sözlük
-   CI'da hiç kurulmuyordu. Bir ders düzenlemesi tek bir dizeyi
+3. **CI'ya iki kapı eklendi.** Depoda hiçbir `check:conversations-*`
+   çalışmıyordu ve `npx next build` `conversations:apply`i atladığı için sözlük
+   CI'da hiç kurulmuyordu. Bir konuşma düzenlemesi tek bir dizeyi
    kaydırdığında aynı sessiz düşüş tekrar olurdu.
 
 ##### Etkilenen kullanıcı: SIFIR (ölçüldü, varsayılmadı)
@@ -636,7 +636,7 @@ tohumlama kararı bekliyor.
 ```
 
 İkisinin de örneği ÜSTÜNLÜK derecesi (`frischer als`, `ruhiger als`), yani
-karşılaştırma. "En üstünlük" ise `am frischesten` olurdu ve derste geçmiyor.
+karşılaştırma. "En üstünlük" ise `am frischesten` olurdu ve konuşmada geçmiyor.
 Türkçede terim kaymış.
 
 İngilizcede kayma yaşayamaz: `comparative` ile `superlative` ayrı sözcükler ve
@@ -648,7 +648,7 @@ orada da Türkçe kaçabildiği için kusur gizliydi).
 
 **Karar bekliyor:** Türkçe kaynak da düzeltilmeli mi? Düzeltilirse `lecture`
 metni değişir ve bu dizelerin İngilizcesi zaten doğru kalır; düzeltilmezse
-iki dil aynı derste farklı terim kullanır. Küçük ama içerik kararı.
+iki dil aynı konuşmada farklı terim kullanır. Küçük ama içerik kararı.
 
 #### `lecture` SAYILDI: 17.369 çağrı ama 8.824 dize (2026-09-10)
 
@@ -669,17 +669,17 @@ Her iki parçadan biri tekrar, ve tekrarlar birkaç kalıpta toplanmış:
 1.797x "Tekrar dene."    345x "cümlesi doğru mu?" 341x "Doğru mu yanlış mı:"
 ```
 
-Hat bu yüzden paketleri SIKLIĞA GÖRE sıralıyor (`data/lessons/lecture/`,
+Hat bu yüzden paketleri SIKLIĞA GÖRE sıralıyor (`data/conversations/lecture/`,
 59 paket × 150 dize): **ilk iki paket bütün anlatımın yarısını kapatıyor.**
 
 ##### ÇÖZÜCÜ KURULDU (2026-09-10): yazılan İngilizce ilk kez çalışıyor
 
 Beş hattın `out/`u elle yazılmıştı ama HİÇBİRİ uygulamaya girmiyordu —
-`data/lessons/` altında duran, kimsenin okumadığı dosyalardı. Zincir
+`data/conversations/` altında duran, kimsenin okumadığı dosyalardı. Zincir
 artık kapalı:
 
 ```
-out/*.json  →  apply.mjs  →  generated/native-en.json  →  native.ts  →  ders sayfası
+out/*.json  →  apply.mjs  →  generated/native-en.json  →  native.ts  →  konuşma sayfası
 ```
 
 Üç karar, üçü de gerçek bir tuzaktan çıktı:
@@ -693,39 +693,39 @@ out/*.json  →  apply.mjs  →  generated/native-en.json  →  native.ts  →  
    desenleriyle tanıyıp üç parçadan yeniden kuruyor. Sıra önemli: önce
    düz sözlüğe bakılıyor, çünkü içerik dosyalarında elle yazılmış aynı
    biçimli dizeler de var.
-3. **Yarım ders yok.** Bir parça bile çözülemezse ders TÜMDEN
-   reddediliyor. Aynı ölçüt sayfada da geçerli: ders İngilizceye
+3. **Yarım konuşma yok.** Bir parça bile çözülemezse konuşma TÜMDEN
+   reddediliyor. Aynı ölçüt sayfada da geçerli: konuşma İngilizceye
    çevrildiyse can-do köprüsü düşüyor, çünkü `Cando` tipinde İngilizce
    alan yok.
 
-Kapı (`npm run check:lessons-native`) hatların kendi kapılarının
+Kapı (`npm run check:conversations-native`) hatların kendi kapılarının
 göremediğini görüyor: onlar ÇIKARIM üzerinden çalışıyor (`make.mjs`
-düzenli ifadeyle tarıyor), bu GERÇEK ders nesnelerini geziyor.
-**580 ders · 26.375 Türkçe parça · 26.375 çözüldü.** Aradaki 9.082
+düzenli ifadeyle tarıyor), bu GERÇEK konuşma nesnelerini geziyor.
+**580 konuşma · 26.375 Türkçe parça · 26.375 çözüldü.** Aradaki 9.082
 parça şablonun ürettiği metin.
 
 ###### Çözücü iki yeni kalem gösterdi
 
 Ekrana bakınca hatların kaçırdığı iki küme göründü:
 
-- **Rol yapma senaryosu: 244 dize — BİTTİ.** `roleplay` hattı dört alanı
+- **Sohbet senaryosu: 244 dize — BİTTİ.** `chat` hattı dört alanı
   kapsıyordu (sahne, muhatap, açılış, amaç — 580×4) ve bitmiş
-  görünüyordu; ama on dersin çevrimdışı senaryosu ayrı bir dosyada
+  görünüyordu; ama on konuşmanın çevrimdışı senaryosu ayrı bir dosyada
   (`scripts-a1.ts`) ve içinde `askTr` (60), `cue` (61), `sayTr` (123)
   duruyor. Kardeş hatların taraması KÖRDÜ ve sebebi ilginç: senaryolar
   iki kısayolla yazılmış — `t(id, ask, askTr, cue, …)` ve
   `r(match, say, sayTr, …)` — yani Türkçe alanların ADI yok, SIRASI var.
-  Kalem önemsiz değil: senaryolu rol yapma modelin çalışmadığı anda
+  Kalem önemsiz değil: senaryolu sohbet modelin çalışmadığı anda
   devreye giren akış, yani tam da ağın olmadığı yerde görünen metin.
 - **Can-do ifadeleri: 131 dize — BİTTİ.** `Cando` tipinde yalnız `tr`
-  var; İngilizcesi kendi hattında (`data/lessons/cando/`, anahtar
+  var; İngilizcesi kendi hattında (`data/conversations/cando/`, anahtar
   `A1.SPK.1`). Kaynak dosyaya dokunulmadı: 131 çağrının hepsine yedinci
   bir konumsal argüman eklemek okunaksız olurdu. Kapıya iki kural —
   BİRİNCİ TEKİL korunuyor ("I can …"; "The learner can…" ekranın sesini
   değiştirirdi) ve iki ifade tek karşılığa düşemez.
 
 İkisi de kapıdan sıfır hata sıfır uyarıyla geçiyor ve çözücüye bağlı.
-Ders sayfasında can-do köprüsü artık düşürülmüyor, İngilizcesi
+Konuşma sayfasında can-do köprüsü artık düşürülmüyor, İngilizcesi
 gösteriliyor.
 
 ###### Envanter artık SAYILIYOR (`npm run report:native`)
@@ -737,7 +737,7 @@ olduğunu ve o kalemin bir çeviri hattı olup olmadığını söylüyor:
 
 ```
 kalem               benzersiz  kapsanan  hat
-ders anlatımı       11620      11620     lecture + word
+konuşma anlatımı       11620      11620     lecture + word
 can-do ifadeleri    131        131       cando
 modül sınavı        2070       2070      exam          ← 2026-09-10'te kapandı
 
@@ -822,10 +822,10 @@ ve öğretmesi gereken farkı gösteremiyor. İngilizcede fark duruyor:
 "the documents to be attached" ile "the documents that have to be
 attached" iki ayrı yapı.
 
-Bu yüzden İngilizce satır Türkçeyi kelimesi kelimesine izlemedi, dersin
+Bu yüzden İngilizce satır Türkçeyi kelimesi kelimesine izlemedi, konuşmanın
 ÖĞRETTİĞİ karşıtlığı izledi. Kural: **çeviri kaynağın kusurunu miras
 almaz** — kaynak dilin yapamadığı bir ayrımı hedef dil yapabiliyorsa,
-ders o ayrımı öğretiyorsa, hedef dil onu yapar.
+konuşma o ayrımı öğretiyorsa, hedef dil onu yapar.
 
 ##### ÇÖZÜCÜYE BAĞLANDI: `resolveExam` (2026-09-10)
 
@@ -886,7 +886,7 @@ parça** satır satır karara bağlandı ve dört ayrı işleme ayrıldı:
    Bu grup en tehlikelisiydi: çevrilse öğrenciyi yanlış tarafa
    hazırlardı.
 
-Ölçüt derse değil SATIRA uygulandı: aynı A1 dersinin içinde birinci ve
+Ölçüt konuşmaya değil SATIRA uygulandı: aynı A1 konuşmasının içinde birinci ve
 dördüncü durumdan satırlar yan yana çıktı.
 
 #### Şablonlar ayrı bir iş ve çok daha küçük
@@ -908,11 +908,11 @@ Yani ~10 karar 9.120 parçayı kapatıyor.
 Tahmin iki yerde şaştı ve ikisi de lehte çıktı:
 
 1. **`w.en` zaten hazır.** Plan onu eksik sayıyordu ama sözlükçe hattı
-   (`data/lessons/vocab/`) 4.640 maddenin hepsini `{lesson, de, en}` diye
+   (`data/conversations/vocab/`) 4.640 maddenin hepsini `{conversation, de, en}` diye
    yazmış. 3.040 `word()` çağrısının 3.040'ı bu kümede — **eksik sıfır.**
    `VocabItem` tipine alan eklemeye de gerek yok: çağrılar `vocab`
    dizisine referans vermiyor, `{ de, tr }` sözlüğünü yerinde yazıyor,
-   yani anahtar `(lesson, de)` çağrı yerinde zaten duruyor.
+   yani anahtar `(conversation, de)` çağrı yerinde zaten duruyor.
 
 2. **Ama NOT diye üçüncü bir argüman var ve hiç sayılmamıştı.** 193 çağrı
    üçüncü argümanla geliyor, 183'ü benzersiz. Şablonun içine gömülü
@@ -927,13 +927,13 @@ Tahmin iki yerde şaştı ve ikisi de lehte çıktı:
    ```
 
 Toplam: **8 sıra sözcüğü + 2 çerçeve + 183 not = 193 dize.** Kendi hattı
-kuruldu (`data/lessons/word/`, kardeşlerinin deseni) ve iki pakette
+kuruldu (`data/conversations/word/`, kardeşlerinin deseni) ve iki pakette
 yazıldı; kapı 0 hata 0 uyarı veriyor.
 
 Kapıya bu alana özgü iki kural eklendi:
 
 - **Çerçevede `{}` yer tutucusu korunur.** Düşerse şablon çalışır ama
-  cümle kelimeyi hiç söylemez — çalışan bir dersin içinde sessiz bir
+  cümle kelimeyi hiç söylemez — çalışan bir konuşmanın içinde sessiz bir
   boşluk, ekranda hiç görünmez.
 - **Sekiz sıra sözcüğü sekiz AYRI karşılık ister.** İkisi aynı olursa
   öğrenci kaçıncı kelimede olduğunu duymaz; kaynak sırayı bilerek
@@ -942,7 +942,7 @@ Kapıya bu alana özgü iki kural eklendi:
 İki not İngilizcede kaynaktan daha az iş yapıyor ve bu kaçınılmaz:
 'kadın biçimi -in ekiyle kurulur' Almanca dilbilgisini anlatıyor,
 İngilizcede öğrencinin kendi dilinden bir dayanağı yok. Çevrildiler ama
-düşürülmediler — dersin verdiği bilgi orada.
+düşürülmediler — konuşmanın verdiği bilgi orada.
 
 #### Aynı Türkçe dize iki İngilizce karşılık isteyebiliyor
 
@@ -994,9 +994,9 @@ söyleyecek. Bu kalem bir çeviri turuna sığmaz, ayrı planlanmalı.
 
 Aynı sorunun küçük bir örneği başlık katmanında zaten çıktı ve çözüldü:
 `de-c1-falsche-freunde-idiome` başlığı "Türkçeyle tuzaklar" → **"Traps from
-English"**. 580 başlıktan ana dili adıyla anan tek ders bu.
+English"**. 580 başlıktan ana dili adıyla anan tek konuşma bu.
 
-**patterns yarısı da BİTTİ (1.291/1.291).** Hat `data/lessons/patterns/`,
+**patterns yarısı da BİTTİ (1.291/1.291).** Hat `data/conversations/patterns/`,
 sözlükçenin kardeşi ama triyajsız: kalıbın havuzda karşılığı yok (%0,3),
 hepsi elle.
 
@@ -1018,9 +1018,9 @@ Er will … haben.       → he himself claims so
 Hepsinde İngilizce çeviri AYRIMI SİLİYOR: "is opened" süreçle durumu,
 "not bad" alayı, "he is said to" kaynağı. Not bu yüzden yapının adını
 taşıyor. Kapıya "aynı not iki kez" gibi bir kural KOYULMADI ve bu doğruydu:
-ders aynı yapıyı farklı ünitelerde bilerek tekrar ediyor.
+konuşma aynı yapıyı farklı ünitelerde bilerek tekrar ediyor.
 
-**vocab yarısı BİTTİ (4.640/4.640).** Hat `data/lessons/vocab/`:
+**vocab yarısı BİTTİ (4.640/4.640).** Hat `data/conversations/vocab/`:
 `extract` → `triage` → elle `out/<paket>.json` → `check` (kapı + kapsam).
 3.926'sı türetildi, 714'ü elle okundu, 0 hata.
 
@@ -1038,8 +1038,8 @@ tersini yapmanın maliyeti çok daha yüksekti — 258 yanlış karşılık sess
 yüklenirdi ve hiçbir kapı görmezdi. `data/meanings/contains.mjs` notundaki
 ilkeyle aynı: yanlış ret yanlış kabulden ucuz.
 
-**roleplay BİTTİ (580/580 ders · 2.320/2.320 dize · 0 hata, 0 uyarı).**
-24 paket, `data/lessons/roleplay/`. Seviye dağılımı:
+**chat BİTTİ (580/580 konuşma · 2.320/2.320 dize · 0 hata, 0 uyarı).**
+24 paket, `data/conversations/chat/`. Seviye dağılımı:
 
 ```
 A1 100/100 ✓   A2 100/100 ✓   B1 180/180 ✓   B2 100/100 ✓   C1 100/100 ✓
@@ -1055,8 +1055,8 @@ Kapının iki alana özgü kuralı yazarken üç kez iş gördü:
   `?` düşürdüğümde.
 - **Sayı denkliği.** 580 açılışın SIFIRINDA rakam var; sayı geçen her yerde
   harfle yazılmış ("Notruf eins eins zwei", "achtundvierzig Euro",
-  "Fünfhundert Lektionen"). Bu ders tasarımı: açılış öğrencinin DUYACAĞI
-  cümle ve sayıyı sesli okumak dersin parçası. Kuralın bu alandaki gerçek
+  "Fünfhundert Lektionen"). Bu konuşma tasarımı: açılış öğrencinin DUYACAĞI
+  cümle ve sayıyı sesli okumak konuşmanın parçası. Kuralın bu alandaki gerçek
   işlevi "değeri koru" değil, **"rakam sokma"**.
 - **`partner` nokta ile bitmemeli** — öbek, cümle değil.
 
@@ -1083,10 +1083,10 @@ de-b2-fotografie  → Der entscheidende Moment   (maç)
 de-b2-kabarett    → Angeblich sehenswert       (tatil tavsiyesi)
 ```
 
-Rol yapma alanları içeriğe göre yazıldı. `id` değiştirilirse mobil bundle
+Sohbet alanları içeriğe göre yazıldı. `id` değiştirilirse mobil bundle
 ve ilerleme kayıtları etkilenir — karar ayrı.
 
-**roleplay SAYILDI: 1.160 değil 2.320 dize.** Bu belge kalemi
+**chat SAYILDI: 1.160 değil 2.320 dize.** Bu belge kalemi
 "scene + goal" diye yazmıştı; blok açılınca DÖRT Türkçe alan çıktı:
 
 ```
@@ -1101,7 +1101,7 @@ duruyor çünkü birbirine bağlı: `goal` sahnede verilen görevin tamamlanmı�
 hâli, `openingTr` partnerin ağzından çıkan ilk cümle. Ayrı paketlense biri
 ötekine bakmadan yazılırdı.
 
-Hat `data/lessons/roleplay/` kuruldu (24 paket × 25 ders × 4 alan), r-001
+Hat `data/conversations/chat/` kuruldu (24 paket × 25 konuşma × 4 alan), r-001
 yazıldı. Kapının iki kuralı bu alana özgü ve ikisi de negatif test edildi:
 
 - **`openingEn` kaynakla noktalama ve SAYI denkliği.** Almanca "Wie heißen
@@ -1112,17 +1112,17 @@ yazıldı. Kapının iki kuralı bu alana özgü ve ikisi de negatif test edildi
 
 Bir de İngilizcenin taşıyamadığı bir ayrım çıktı: açılışların bir kısmı
 `Sie`, bir kısmı `du` kullanıyor, İngilizce "you" ikisini de karşılıyor.
-`de-a1-du-oder-sie` dersinin KONUSU tam olarak bu ayrım, o yüzden görev
+`de-a1-du-oder-sie` konuşmasının KONUSU tam olarak bu ayrım, o yüzden görev
 metnine Almancası yazıldı: "Use the polite form (Sie) throughout". C1'deki
 "The art of switching to du" ile aynı karar.
 
-**başlık ve özet BİTTİ (580/580 ders · 1.160 dize).** Hat
-`data/lessons/meta/`: `make` → elle `out/m-NNN.json` → `check`
+**başlık ve özet BİTTİ (580/580 konuşma · 1.160 dize).** Hat
+`data/conversations/meta/`: `make` → elle `out/m-NNN.json` → `check`
 (kapı + kapsam). 12 paket, 0 hata, 0 uyarı.
 
 Bu kalemin kendi kuralı çıktı ve kapıya üç kural olarak yazıldı:
 
-1. **Alan ne taşıyorsa İngilizcesi de onu taşır.** Almanca `title` dersin
+1. **Alan ne taşıyorsa İngilizcesi de onu taşır.** Almanca `title` konuşmanın
    kendi cümlesidir ("Hallo!"), Türkçe `titleTr` ise konunun adıdır
    ("Tanışma"). İngilizcesi de konunun adı — kapı "başlık Almancanın aynısı"
    olduğunda uyarıyor.
@@ -1138,16 +1138,16 @@ Bu kalemin kendi kuralı çıktı ve kapıya üç kural olarak yazıldı:
    doch · ja · mal · eben · wohl → doch · ja · mal · eben · wohl       (kalır)
    ```
 
-   İkinci grup dersin ÖĞRETTİĞİ sözcük: "Sebep: weil" ile "Sebep: denn" ayrı
-   iki ders ve ikisi de "because" olsaydı başlıkları aynı çıkardı. C1'in
-   `doch` dersi bunun uç hâli — `doch`un İngilizcede tek karşılığı yok,
-   dersin varlık sebebi de bu.
+   İkinci grup konuşmanın ÖĞRETTİĞİ sözcük: "Sebep: weil" ile "Sebep: denn" ayrı
+   iki konuşma ve ikisi de "because" olsaydı başlıkları aynı çıkardı. C1'in
+   `doch` konuşmayı bunun uç hâli — `doch`un İngilizcede tek karşılığı yok,
+   konuşmanın varlık sebebi de bu.
 
    Partizip'te Türkçe Almancayı koruyor, İngilizce korumuyor; tutarsızlık
    değil, aynı ölçütün sonucu: Türkçenin kendi adı yok, İngilizcenin var.
 
 3. **Aynı İngilizce başlık, Türkçeleri farklıysa kusurdur.** Kaynakta 7
-   Türkçe başlık 14 derste tekrar ediyor (Kuaförde A2'de ve B1'de) — orada
+   Türkçe başlık 14 konuşmada tekrar ediyor (Kuaförde A2'de ve B1'de) — orada
    tekrar bilgidir ve İngilizcesi de tekrar etmeli. Kural ilk çalıştırmada
    gerçek bir düzleştirme yakaladı:
 
@@ -1160,13 +1160,13 @@ Bu kalemin kendi kuralı çıktı ve kapıya üç kural olarak yazıldı:
    Almanca ayırıyordu, Türkçe ayırıyordu, İngilizce ayırmıyordu.
 
 Bir de yazım birliği kuralı çıktı ve ÜÇ hatta birden bağlandı
-(`data/lessons/spelling.mjs`): 2.305 yazılmış satır tarandığında hat zaten
+(`data/conversations/spelling.mjs`): 2.305 yazılmış satır tarandığında hat zaten
 İngiliz İngilizcesi yazıyordu (-our 25 / -or 0, flat 6 / apartment 0) ama
 kural yazılı değildi, alışkanlıktı. İki sapma çoğunluğa uyduruldu.
 
 Kalem BÖLÜNEMİYOR. Sözlükçesi ve başlıkları İngilizce, anlatımı Türkçe bir
-ders yarım çeviridir ve Faz 1'in kuralı bunu yasaklıyor: karşılık yoksa
-`null` döner, Türkçeye DÜŞMEZ. Yarım ders "görünürde çalışan" en kötü
+konuşma yarım çeviridir ve Faz 1'in kuralı bunu yasaklıyor: karşılık yoksa
+`null` döner, Türkçeye DÜŞMEZ. Yarım konuşma "görünürde çalışan" en kötü
 biçimdir.
 
 **Tip hazır.** `Segment.lang` birleşimi zaten `"tr" | "de" | "en"` —
@@ -1320,8 +1320,8 @@ var mı.
 
 | eksen | durum |
 |---|---|
-| Ders anlatımı, sözlükçe, kalıp, başlık, rol yapma, senaryo | ✅ 26.375/26.375 · kapı: `check:lessons-native` |
-| Almanca takas tablosu (öğrenciye söyletilen cümleler) | ✅ 25 + 17 · kapı: `check:lessons-swap` |
+| Konuşma anlatımı, sözlükçe, kalıp, başlık, sohbet, senaryo | ✅ 26.375/26.375 · kapı: `check:conversations-native` |
+| Almanca takas tablosu (öğrenciye söyletilen cümleler) | ✅ 25 + 17 · kapı: `check:conversations-swap` |
 | Modül sınavı kâğıtları | ✅ 1.781/1.781 · bağlı |
 | Can-do ifadeleri | ✅ kaynakta `en` dolu |
 | Beceri düz metni (`intro`, `questions.explain`) | ✅ 3.394/3.394 · bağlı |
@@ -1367,7 +1367,7 @@ dizeye bakılsa 6.626 olurdu, yani bir dize iki türde iki ayrı şey anlatıyor
 Tek satırlık bir kazanç gibi görünüyor ama kuralı ucuza doğruluyor —
 anahtarı dizeye indirmek o satırı sessizce yanlış çevirirdi.
 
-Ders ekseninin sınav hattı (1.781) bunun dörtte biri kadardı. Hat deseni
+Konuşma ekseninin sınav hattı (1.781) bunun dörtte biri kadardı. Hat deseni
 yine aynı kuruldu — `data/mock-exams/prose/` altında `make` → `in/` →
 `out/` → `check` — ve 6.627/6.627 yazıldı. `check:mock-prose`, CI'da
 "Ana dil çözücüsü" adımının BEŞİNCİ kapısı; hat yarım dururken bilerek
@@ -1390,8 +1390,8 @@ CI'da "Ana dil çözücüsü" adımında, hepsi yeşil:
 
 | kapı | ne ölçüyor | sayı |
 |---|---|---|
-| `check:lessons-native` | ders anlatımı, sözlükçe, kalıp, rol yapma, senaryo, sınav — çözülmüş çıktı | 26.375/26.375 |
-| `check:lessons-swap` | öğrenciye söyletilen Almanca cümleler | 25 + 17 |
+| `check:conversations-native` | konuşma anlatımı, sözlükçe, kalıp, sohbet, senaryo, sınav — çözülmüş çıktı | 26.375/26.375 |
+| `check:conversations-swap` | öğrenciye söyletilen Almanca cümleler | 25 + 17 |
 | `check:skills-native` | çözülmüş egzersiz çıktısında Türkçe kaldı mı | 995/995 |
 | `check:skills-task` | beceri görev metni, YAZILAN (27 tür) | 3.715/3.715 |
 | `check:mock-prose` | deneme kâğıtları, YAZILAN (11 tür) | 6.627/6.627 |
@@ -1429,7 +1429,7 @@ koşuşunda **408 dize** buldu: metinlerin `gloss` sözlükçeleri hiç
 katlanmıyordu. Ölçüldü — 857 maddenin 857'sinde `en` dolu, yani yazılacak
 hiçbir şey yoktu, yalnız hangi sütunun gösterileceği seçilmemişti.
 
-**Ders alınan:** "çözücü çağrılıyor mu" ile "çözücü her şeyi kapsıyor mu"
+**Konuşma alınan:** "çözücü çağrılıyor mu" ile "çözücü her şeyi kapsıyor mu"
 AYRI iki soru ve ilkine bakan bir tarama ikincisini hiç görmüyor. Alan
 adına bakan her ölçüt, ancak BİLDİĞİ alanlar kadar geniş.
 
@@ -1506,18 +1506,18 @@ cümleler Almanca cümlenin çevirisi değil, bağımsız yazılmış cümleler)
 | hat | birim | dize |
 |---|---|---:|
 | deneme kâğıdı | 60 İngilizce kâğıt | **6.828** (46 paket, `in-de/` kuruldu) |
-| ders anlatımı | 200 ders | ~8.515 benzersiz parça (9.986 geçiş) |
-| ders başlığı/özeti | 200 ders | 400 |
-| ders sözlükçesi | | 1.000 |
-| ders kalıp notu | | 600 |
+| konuşma anlatımı | 200 konuşma | ~8.515 benzersiz parça (9.986 geçiş) |
+| konuşma başlığı/özeti | 200 konuşma | 400 |
+| konuşma sözlükçesi | | 1.000 |
+| konuşma kalıp notu | | 600 |
 | beceri egzersizi | 189 egzersiz | ~2.240 |
 | **içerik toplamı** | | **~19.600** |
 
 **Toplam ~33.700 dize.** Karşılaştırma: en→de'nin sözlüğü 40.000 girdi ve
 haftalar sürdü.
 
-**Bir ürün gerçeği:** İngilizce kursun bugün 200 dersi var (A1 tam, A2'nin
-ilk modülü); B1/B2/C1'de hiç ders yok. de→en açıldığında Almanca konuşan
+**Bir ürün gerçeği:** İngilizce kursun bugün 200 konuşması var (A1 tam, A2'nin
+ilk modülü); B1/B2/C1'de hiç konuşma yok. de→en açıldığında Almanca konuşan
 kullanıcı A1–A2 görecek, üstü "Yakında". Deneme kâğıtları beş seviyede de
 tam. Bu bir engel değil ama beyanla birlikte bilinmesi gereken bir şey.
 
@@ -1529,7 +1529,7 @@ kapısı ayrı yazılacak.
 
 ### de→en nasıl bitti (2026-09-11)
 
-Beş hat yazıldı ve beşinin de kapısı CI'da: ders düzyazısı 11.011, beceri
+Beş hat yazıldı ve beşinin de kapısı CI'da: konuşma düzyazısı 11.011, beceri
 düz metni 1.725 (sözlükçe dahil), görev metni 1.325, deneme kâğıdı 6.828,
 can-do 131. Bağlama tarafı ayrı bir işti ve ayrı kapısı var
 (`check:native-de`) — yazılanı ölçen kapı, yazılanın uygulamaya VARDIĞINI
@@ -1557,7 +1557,7 @@ deploy; mobil ise mağaza sürümü bekliyor. İkisi arasındaki pencerede web
 pariteyi sunar, mobil sunmaz — beyan iki yerde birden dolduruldu ama yayın
 hızları farklı. Push Samet'te.
 
-### Bu fazda üç kez tekrarlanan ders
+### Bu fazda üç kez tekrarlanan konuşma
 
 **Kapı yanlış öterse ÖLÇ, sonra TÜRKÇE tarafı genişlet.** Deneme kâğıtları
 hattında kapı üç kez yanlış öttü ve üçünde de refleks "Almanca ölçütünü

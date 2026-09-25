@@ -6,7 +6,7 @@ dosyasının tamamını oku** — özellikle §7, §8, §9 ve §10. Orada ölç�
 
 ## 1. Ölçülmüş başlangıç (2026-09-05)
 
-100 ders × 5 kelime = **500 sözlükçe yuvası**.
+100 konuşma × 5 kelime = **500 sözlükçe yuvası**.
 
 | Ölçüt | Değer |
 |---|---|
@@ -25,14 +25,14 @@ Beceri katmanı:
 | Dinleme | 12 | 50 |
 | Yazma | 8 | 50 |
 | Ünite hizalı ünite | **0/25** | 25/25 |
-| Beceri metninde hiç geçmeyen ders kelimesi | 55/500 | mümkün olduğunca az |
+| Beceri metninde hiç geçmeyen konuşma kelimesi | 55/500 | mümkün olduğunca az |
 
 **Eksik egzersiz: 118.** A2'de yazılan sayının aynısı.
 
 ## 2. Neden önemli — asıl gerekçe kapsama yüzdesi değil
 
 `src/lib/session.ts:476-549`: oyun/SRS kuyruğu `words` tablosundan `niveau`
-bandına göre kuruluyor (`[alt, seviye, üst]`, %70 seviyede). Yani **derste
+bandına göre kuruluyor (`[alt, seviye, üst]`, %70 seviyede). Yani **konuşmada
 öğretilen bir kelime havuzda değilse ya da bandın dışındaysa hiçbir zaman
 tekrar edilmez.**
 
@@ -69,10 +69,10 @@ sınav malzemesi çoktan seçmeli sorulardan gelir. Her egzersizde en az bir
 
 ## 4. Önce kullanıcıya sorulacak karar: sözlükçe boyu
 
-`scripts/check-lessons.ts` şu an B2 ve C1 için 5 kelime, altındakiler için 8
-istiyor. B2 katmanı 2041 kelime; 100 ders × 5 = 500 yuva ile kapsama tavanı
+`scripts/check-conversations.ts` şu an B2 ve C1 için 5 kelime, altındakiler için 8
+istiyor. B2 katmanı 2041 kelime; 100 konuşma × 5 = 500 yuva ile kapsama tavanı
 **%24,5**. Sekize çıkarılırsa tavan %39 olur, ama bu doğrulayıcı sözleşmesini ve
-100 dersin tamamının içeriğini değiştirir.
+100 konuşmanın tamamının içeriğini değiştirir.
 
 **Bunu kendi başına karara bağlama.** Ölçümü sun, iki seçeneği ve maliyetini
 yaz, kullanıcıya sor. A2'de sekize çıkarma kararı böyle alındı.
@@ -94,9 +94,9 @@ yaz, kullanıcıya sor. A2'de sekize çıkarma kararı böyle alındı.
    aralıklarına girmez.
 4. **Atamayı elle, modül modül yap; her modülden sonra dur ve onay al.**
    Mekanik dağıtım A2'de denendi ve reddedildi.
-5. **Ders içeriğini yaz.** Sözlükçe değişince `lecture` adımları da değişir.
+5. **Konuşma içeriğini yaz.** Sözlükçe değişince `lecture` adımları da değişir.
 6. **Beceri egzersizlerini ünite ünite yaz** (6'şar: `b2-uNN-r1/-r2/-l1/-l2/-w1/-w2`),
-   her dosyanın başına o ünitenin dört dersini, kelimelerini, kalıplarını ve
+   her dosyanın başına o ünitenin dört konuşmasını, kelimelerini, kalıplarını ve
    ölçtüğü dilbilgisi noktasını sayan bir doküman yorumu koy. İçerik o üniteye
    kadar öğretilen kelimelerle sınırlı.
 7. **Doğrula** (§7).
@@ -114,8 +114,8 @@ yaz, kullanıcıya sor. A2'de sekize çıkarma kararı böyle alındı.
   onu ölçmüyor. B2 adayları: Konjunktiv II (`hätte`/`wäre`/`würde`), Passiv ve
   `von`/`durch` farkı, Genitiv, `zwar … aber`, `je … desto`, dolaylı anlatım,
   `lassen`, edatlı fiillerin `da(r)-` biçimleri (`darauf`, `damit`).
-- **Rol yapma açılışı `?` içermeli** (`check-lessons.ts` şartı) ve seviye içinde
-  yinelenmemeli. Ders başlıkları da seviye içinde benzersiz olmalı.
+- **Sohbet açılışı `?` içermeli** (`check-conversations.ts` şartı) ve seviye içinde
+  yinelenmemeli. Konuşma başlıkları da seviye içinde benzersiz olmalı.
 - **Sözlükçe (`gloss`) o metinde gerçekten geçen kelimeleri tanıtsın.** A2'de
   bazı sözlükçeler metinde bulunmayan ünite kelimesini de tanıtıyor; kırık
   değil ama tutarsız, tekrarlama.
@@ -123,7 +123,7 @@ yaz, kullanıcıya sor. A2'de sekize çıkarma kararı böyle alındı.
 ## 7. Doğrulama
 
 Her ünite dosyasından sonra: `npx tsc --noEmit`, `npm run test:content | grep b2-uNN`
-(sıfır uyarı), `npm run check:lessons` (hata sıfır).
+(sıfır uyarı), `npm run check:conversations` (hata sıfır).
 
 Kapanışta ayrıca: `mobile/` içinde `tsc`, `npm run test:track`,
 `npm run test:options`, `npm run test:exams`.
@@ -134,23 +134,23 @@ Adım-6 ölçütleri (A1'de kalibre edildi, hepsi sıfır olmalı):
 - segment metinlerinde baştaki/sondaki fazla boşluk yok,
 - Türkçe segmentlerin içine gömülü Almanca metin yok,
 - doğru cevaplar denetleyici tarafından reddedilmiyor (`accept` varyantları),
-- ders başlığı ve rol yapma açılışı yinelenmiyor.
+- konuşma başlığı ve sohbet açılışı yinelenmiyor.
 
-**UYARI:** `check-lessons`'ı doğrudan `npx tsx scripts/check-lessons.ts` ile
-ÇAĞIRMA — `roleplay.ts`'in `server-only` importu yüzünden sessizce çöker,
+**UYARI:** `check-conversations`'ı doğrudan `npx tsx scripts/check-conversations.ts` ile
+ÇAĞIRMA — `chat.ts`'in `server-only` importu yüzünden sessizce çöker,
 çıktısı boş gelir ve grep ile sayarsan "sıfır hata" sanırsın. Doğrusu
-`npm run check:lessons` (e2e tsconfig ile çalışır).
+`npm run check:conversations` (e2e tsconfig ile çalışır).
 
 ## 8. Kurallar
 
-1. **Ders kimlikleri ve ders sayısı SABİT.** `user_conversations` birincil anahtarı
+1. **Konuşma kimlikleri ve konuşma sayısı SABİT.** `user_conversations` birincil anahtarı
    `(user_id, conversation_id)`; kimlik değişirse canlı ilerleme silinir.
 2. **Beceri egzersizi kimlikleri SABİT** (§3b).
-3. **Web canlı** (lernomi.app). Ders kaynağı mobille paylaşımlı: iyileştir,
+3. **Web canlı** (lernomi.app). Konuşma kaynağı mobille paylaşımlı: iyileştir,
    bozma, kopyasını çıkarma.
-4. **`mobile/src/data/lessons/de-b2.json` TEK SATIR.** Üreteci
-   `JSON.stringify(lessons)`; elle biçimlendirme 40 bin satırlık sahte diff
-   üretir. Ders değişikliğinden sonra `npx tsx scripts/dump-lessons-mobile.ts de`,
+4. **`mobile/src/data/conversations/de-b2.json` TEK SATIR.** Üreteci
+   `JSON.stringify(conversations)`; elle biçimlendirme 40 bin satırlık sahte diff
+   üretir. Konuşma değişikliğinden sonra `npx tsx scripts/dump-conversations-mobile.ts de`,
    beceri değişikliğinden sonra `npm run dump:skills`. Üretilen paketin farkı
    yalnız kendi seviyende olmalı; başka seviyeye taşmışsa dur ve bak (paket tek
    dosyada tüm seviyeleri üretiyor, paralel oturumun işini de kapabilir —
@@ -171,10 +171,10 @@ sonraki oturum başlangıç ölçümünü buradan okuyacak.
 
 ## 10. Ara sonuç — sözlükçe katmanı bitti (2026-09-05)
 
-100 dersin sekizi de yeniden yazıldı. Aşağıdaki her sayı `scripts/check-lessons.ts`
+100 konuşmanın sekizi de yeniden yazıldı. Aşağıdaki her sayı `scripts/check-conversations.ts`
 ve kaynaktan okuyan bir doğrulayıcıyla ölçüldü.
 
-### Hedef 1 — dersler havuzun B2 katmanından öğretsin
+### Hedef 1 — konuşmalar havuzun B2 katmanından öğretsin
 
 Sözlükçe boyu **5'ten 8'e** çıkarıldı (kullanıcı kararı, §4). 100 × 8 = **800 yuva**.
 
@@ -205,19 +205,19 @@ bandın içinde ve %100'ü tam seviyede.
 
 | Ölçüt | Başlangıç | Şimdi |
 |---|---|---|
-| B2 dersleriyle kapsanan | 129/2041 (%6,3) | **800/2061 (%38,8)** |
+| B2 konuşmalarıyla kapsanan | 129/2041 (%6,3) | **800/2061 (%38,8)** |
 
 Katman 2041'den 2061'e çıktı: vetodan sonra 20 gerçek madde başı eklendi
 (id 8535-8554). %38,8 matematiksel tavan — 800 yuva ÷ 2061 madde.
 
-### Havuzun taşımadığı beş ders konusu
+### Havuzun taşımadığı beş konuşma konusu
 
-Beş derste konu havuzda hiç karşılık bulmuyordu; o dersleri olduğu yerde
+Beş konuşmada konu havuzda hiç karşılık bulmuyordu; o konuşmaları olduğu yerde
 tutmak, sekiz yuvanın sekizini de tekrar motorunun göremeyeceği kelimeyle
 doldurmak demekti. Beşinde de **dilbilgisi konusu korunarak** çerçeve havuzun
 taşıdığı alana çevrildi:
 
-| Ders | Eski çerçeve | Neden taşındı | Yeni çerçeve |
+| Konuşma | Eski çerçeve | Neden taşındı | Yeni çerçeve |
 |---|---|---|---|
 | `de-b2-nachbarschaftsstreit` | çit anlaşmazlığı | `der Zaun`, `die Grundstücksgrenze`, `das Einvernehmen` havuz dışı | gürültü / huzur bozma |
 | `de-b2-weltraum` | uzay | `Weltraum`, `Rakete`, `Satellit`, `Astronaut`, `Umlaufbahn` — hiçbiri havuzda yok | iklim ve doğa |
@@ -225,25 +225,25 @@ taşıdığı alana çevrildi:
 | `de-b2-fotografie` | fotoğraf sanatı | `der Bildausschnitt`, `gestellt`, `einfangen`, `authentisch` havuz dışı; havuzda estetik sözcüğü yok | spor (kullanılmayan 4872-4910 öbeği) |
 | `de-b2-kabarett` | hiciv | `die Ironie`, `die Anspielung`, `die Satire` C1; `der Seitenhieb`, `beißend` havuzda yok | duyulan gezi tavsiyesi |
 
-Ders kimlikleri değişmedi; değişen ders adı, özeti, kalıpları ve rol yapma
-sahnesi. Hiciv dersinin amacı (söylenen ile gerçeğin farkını öznel kip
+Konuşma kimlikleri değişmedi; değişen konuşma adı, özeti, kalıpları ve sohbet
+sahnesi. Hiciv konuşmasının amacı (söylenen ile gerçeğin farkını öznel kip
 fiiliyle işaretlemek) korundu — `sollen`in asıl işi zaten duyulanı aktarmak.
 
 ### Doğrulama
 
-`npm run check:lessons` → **hata yok**, 7 uyarı (hepsi B1, paralel oturuma ait).
+`npm run check:conversations` → **hata yok**, 7 uyarı (hepsi B1, paralel oturuma ait).
 `npx tsc --noEmit` kökte ve `mobile/` içinde temiz. `test:track` 64 kontrol,
 `test:options` 8416 kelime 0 hata. Mobil paket her modülden sonra yenilendi;
 fark yalnız `de-b2.json`'da.
 
 `npm run test:exams` 8 hata veriyor: sekizi de B1.11-B1.18 modüllerinin sınav
-planının olmaması. B1 180 derse çıkarıldı ama `module-exam` planları 10 modülde
+planının olmaması. B1 180 konuşmaya çıkarıldı ama `module-exam` planları 10 modülde
 kaldı. **Bu paralel oturuma ait, buradan dokunulmadı.**
 
 ### Sırada ne var
 
 Beceri katmanı hâlâ 12 okuma / 12 dinleme / 8 yazma ve **25 ünitenin 19'unda
-tek bir beceri egzersizi yok** (`buildTrack` çıktısı). Ders sözlükçesindeki
+tek bir beceri egzersizi yok** (`buildTrack` çıktısı). Konuşma sözlükçesindeki
 800 kelimenin **658'i** hiçbir beceri metninde geçmiyor — sözlükçe tümüyle
 yenilendiği için bu sayı işin başındakinden yüksek ve beklenen. 25 ünite × 6 =
 **150 hizalı egzersiz** gerekiyor; brief'in "118" sayısı yalnız 50/50/50
@@ -273,11 +273,11 @@ Yeni 150 egzersiz `b2-u01.ts` … `b2-u25.ts` dosyalarında ve `b2.ts` listesini
 imleç 50. yuvada bittiği için patikaya girmiyorlar ama `user_skills` birincil
 anahtarı (`user_id`, `exercise_id`) ve canlı ilerleme bozulmadı — kural 2.
 
-### Her ünite kendi ders dörtlüsünün dilbilgisini ölçüyor
+### Her ünite kendi konuşma dörtlüsünün dilbilgisini ölçüyor
 
-Ünite dosyalarının başındaki doküman yorumu o ünitenin dört dersini, 32
+Ünite dosyalarının başındaki doküman yorumu o ünitenin dört konuşmasını, 32
 kelimesini ve kalıplarını sayıyor; egzersizler o kalıpları çalıştırıyor.
-Sözlükçe maddelerinin tamamı ünitenin kendi ders kelimeleri.
+Sözlükçe maddelerinin tamamı ünitenin kendi konuşma kelimeleri.
 
 Yazma egzersizlerinin ikincisi her ünitede farklı bir metin türü: haftalık
 rapor, süreç anlatımı, toplantı notu, okur mektubu, düzeltme metni, deneme
@@ -289,7 +289,7 @@ anlatı, kişisel mesaj, resmî mektup, kapanış metni, referans mektubu.
 
 | Komut | Sonuç |
 |---|---|
-| `npm run check:lessons` | **hata yok**, 7 uyarı (hepsi B1, paralel oturum) |
+| `npm run check:conversations` | **hata yok**, 7 uyarı (hepsi B1, paralel oturum) |
 | `npx tsc --noEmit` (kök) | temiz |
 | `npx tsc --noEmit` (`mobile/`) | temiz |
 | `npm run test:track` | 64 kontrol geçti |
@@ -319,9 +319,9 @@ rank uydurulmadı — hepsi `data/a2-expansion/de_50k.txt` satır numarası.
 
 ### Kalan iş
 
-- B2'nin dilbilgisi katmanı (`grammar/`) bu oturumda ele alınmadı; ders ve
+- B2'nin dilbilgisi katmanı (`grammar/`) bu oturumda ele alınmadı; konuşma ve
   beceri katmanları birbirine göre tutarlı, dilbilgisi sayfaları ayrı bir iş.
 - `test:exams`in 8 hatası B1'e ait ve orada duruyor.
 - Kapsama %38,8'de: 800 yuva ÷ 2061 madde matematiksel tavan. Kapsamayı
-  artırmanın tek yolu ders sayısını ya da sözlükçe boyunu büyütmek; ikisi de
-  ders kimliklerini ve sözleşmeyi ilgilendirdiği için ayrı bir karar.
+  artırmanın tek yolu konuşma sayısını ya da sözlükçe boyunu büyütmek; ikisi de
+  konuşma kimliklerini ve sözleşmeyi ilgilendirdiği için ayrı bir karar.

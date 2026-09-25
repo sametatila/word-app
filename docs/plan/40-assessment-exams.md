@@ -6,21 +6,21 @@ Rapor: yerleştirme yok (seviye kullanıcı seçiyor), seviye/beceri sınavı yo
 
 ## WP-43 · CEFR can-do haritası
 
-**Amaç.** Her ders, egzersiz, drill ve sınav bölümü bir can-do ifadesine bağlı olsun; profilde "yapabildiklerim".
+**Amaç.** Her konuşma, egzersiz, drill ve sınav bölümü bir can-do ifadesine bağlı olsun; profilde "yapabildiklerim".
 
 **Tasarım.**
 - `src/lib/cando.ts`: `{ id: "A1.SPK.1", level, skill, text_tr, text_de?, source: "CEFR/Profile Deutsch" }` — seviye başına 4 beceri × 5–8 ifade (toplam ~130). Kaynak: CEFR Companion Volume + Profile Deutsch kalıpları; Türkçe sade yazım.
-- İçerik şemalarına `cando: string[]` (ders, beceri egzersizi, drill, monolog, sınav bölümü). Doğrulayıcı: bilinmeyen kimlik hata.
+- İçerik şemalarına `cando: string[]` (konuşma, beceri egzersizi, drill, monolog, sınav bölümü). Doğrulayıcı: bilinmeyen kimlik hata.
 - Sunucu: `userCando` görünümü (materialize edilmez; sorguyla): bir can-do "kanıtlı" sayılır ⇔ bağlı öğelerden ≥ 2'si tamamlandı ve son sınav bölümü ≥ %70 (WP-41/42).
-- UI: profil "Yapabildiklerim" (WP-64), beceri merkezi filtre, ders/egzersiz kartında küçük etiket.
+- UI: profil "Yapabildiklerim" (WP-64), beceri merkezi filtre, konuşma/egzersiz kartında küçük etiket.
 
-**Adımlar.** 1. Liste (içerik). 2. Şema alanı + doğrulayıcı. 3. Mevcut 220 ders + 345 egzersizin etiketlenmesi (toplu, LLM yardımıyla + gözden geçirme; WP-70 paketi). 4. Sorgu + API (`GET /api/profile` içine). 5. UI (WP-64 ile).
+**Adımlar.** 1. Liste (içerik). 2. Şema alanı + doğrulayıcı. 3. Mevcut 220 konuşma + 345 egzersizin etiketlenmesi (toplu, LLM yardımıyla + gözden geçirme; WP-70 paketi). 4. Sorgu + API (`GET /api/profile` içine). 5. UI (WP-64 ile).
 
-**Kabul.** Tüm içerik etiketli (doğrulayıcı geçiyor); profil ilk can-do'yu bir ders + bir egzersiz sonrasında gösteriyor.
+**Kabul.** Tüm içerik etiketli (doğrulayıcı geçiyor); profil ilk can-do'yu bir konuşma + bir egzersiz sonrasında gösteriyor.
 
 **Süre.** 4 gün (+ etiketleme). **Bağımlılık.** WP-70.
 
-**Durum (2026-08-25).** Adım 1, 2, 4, 5 bitti; adım 3 kural tabanlı (STATUS karar kaydı). `src/lib/cando.ts`: 121 ifade (5 seviye × RD/LS/WR/SPK/GR, Türkçe "…yapabilirim", CEFR-CV/Profile Deutsch kaynağı, kalıcı kimlik `A1.SPK.1`). `cando-map.ts`: `candoForLesson` (simge teması × seviye → SPK; focusId → GR), `candoForExercise` (beceri × seviye × tür). Doğrulayıcı: bilinmeyen kimlik ve etiketsiz içerik hata (bugün 0). `cando-progress.ts` `candoSummary` (kanıtlı ≥2, gelişiyor 1) + `GET /api/cando`; profilde `CandoCard` (seviye sekmeleri, beceri başına ifadeler, kanıt sayacı). e2e §36 (8 kontrol). Kanıt: `reports/shots/wp43-cando.png`.
+**Durum (2026-08-25).** Adım 1, 2, 4, 5 bitti; adım 3 kural tabanlı (STATUS karar kaydı). `src/lib/cando.ts`: 121 ifade (5 seviye × RD/LS/WR/SPK/GR, Türkçe "…yapabilirim", CEFR-CV/Profile Deutsch kaynağı, kalıcı kimlik `A1.SPK.1`). `cando-map.ts`: `candoForConversation` (simge teması × seviye → SPK; focusId → GR), `candoForExercise` (beceri × seviye × tür). Doğrulayıcı: bilinmeyen kimlik ve etiketsiz içerik hata (bugün 0). `cando-progress.ts` `candoSummary` (kanıtlı ≥2, gelişiyor 1) + `GET /api/cando`; profilde `CandoCard` (seviye sekmeleri, beceri başına ifadeler, kanıt sayacı). e2e §36 (8 kontrol). Kanıt: `reports/shots/wp43-cando.png`.
 
 ---
 
@@ -56,10 +56,10 @@ Rapor: yerleştirme yok (seviye kullanıcı seçiyor), seviye/beceri sınavı yo
 
 **Amaç.** Modül patron turu "hız turu" olarak kalır; ayrıca **gerçek sınav**: dört beceri + dilbilgisi, üretim ağırlıklı, zamanlı, geçme eşiği, sertifika.
 
-**Mevcut kod.** `src/lib/lessons/boss.ts` (`BOSS_*`, `moduleClears`), `src/components/boss-player.tsx`, `/lessons/boss/[level]/[module]`, `/api/boss`.
+**Mevcut kod.** `src/lib/conversations/boss.ts` (`BOSS_*`, `moduleClears`), `src/components/boss-player.tsx`, `/boss/[level]/[module]`, `/api/boss`.
 
 **Tasarım.**
-- İki düzey: **Modül sınavı v2** (ders modülü sonu, 20 dk) ve **Seviye sınavı** (seviye sonu, 45 dk). Bölümler ve ağırlıklar:
+- İki düzey: **Modül sınavı v2** (konuşma modülü sonu, 20 dk) ve **Seviye sınavı** (seviye sonu, 45 dk). Bölümler ve ağırlıklar:
   | Bölüm | Modül | Seviye | Kaynak |
   |---|---|---|---|
   | Kelime (üretim: çeviri, yazma) | 6 | 12 | WP-10, modül/seviye kelimeleri |
@@ -67,11 +67,11 @@ Rapor: yerleştirme yok (seviye kullanıcı seçiyor), seviye/beceri sınavı yo
   | Okuma | 3 | 8 | beceri bankası, kullanılmamış |
   | Dinleme | 3 | 8 | beceri bankası |
   | Yazma (1 görev) | 1 | 2 | WP-30 |
-  | Konuşma (2 cümle + 1 rol yapma sınav turu) | 1 | 1 | WP-20, WP-22 |
-- Kurallar: zaman sınırı, geri dönüş yok, ipucu yok, her bölüm ayrı puan; geçme: toplam ≥ %70 ve hiçbir bölüm < %50. Ders modülünde ön koşul: modül derslerinin ≥ %80'i geçilmiş (aksi hâlde "deneme" — sayılmaz).
+  | Konuşma (2 cümle + 1 sohbet sınav turu) | 1 | 1 | WP-20, WP-22 |
+- Kurallar: zaman sınırı, geri dönüş yok, ipucu yok, her bölüm ayrı puan; geçme: toplam ≥ %70 ve hiçbir bölüm < %50. Konuşma modülünde ön koşul: modül konuşmalarının ≥ %80'i geçilmiş (aksi hâlde "deneme" — sayılmaz).
 - Sonuç: bölüm puanları, hata tipi dağılımı (WP-02), can-do kanıtları (WP-43), önerilen çalışma (WP-51), sertifika (paylaşılabilir görsel + PDF: `/api/certificate/[id]`; `share-result.tsx` deseni).
 - Kayıt: `exams` (`userId, kind, level, module?, startedAt, finishedAt, sections jsonb, total, passed`). Rozetler: "Sınav ustası" grubu genişler.
-- Erişim: `/lessons/boss/[level]/[module]` mevcut → "Hız turu" ve "Sınav" sekmeleri; `/skills` ve `/learn`'de "Seviye sınavı" kartı (WP-60/63).
+- Erişim: `/boss/[level]/[module]` mevcut → "Hız turu" ve "Sınav" sekmeleri; `/skills` ve `/learn`'de "Seviye sınavı" kartı (WP-60/63).
 
 **Adımlar.** 1. Sınav kurucu (`src/lib/exam.ts`: bölüm madde seçimi, kullanılmamış madde tercihi, tohumlu rastgelelik). 2. `exam-player.tsx` (bölüm geçişleri, zamanlayıcı, kayıt/devam). 3. Değerlendirme (nesnel + WP-03/20 çağrıları) ve sonuç ekranı. 4. Sertifika. 5. Rozet/quest bağları. 6. e2e: sınav kurulumu deterministik.
 
@@ -79,7 +79,7 @@ Rapor: yerleştirme yok (seviye kullanıcı seçiyor), seviye/beceri sınavı yo
 
 **Süre.** 8 gün. **Bağımlılık.** WP-10, 11, 30, 20, 22, 43, 02.
 
-**Durum (2026-08-25).** Adım 1–4 bitti (konuşma bölümü ve rozetler hariç — STATUS karar kaydı). `src/lib/exam.ts`: `buildExam` (modül 6/6/1/1/1, seviye 12/12/2/2/1; kelime = modül/seviye kelimelerinden çeviri+yazma, dilbilgisi = tablo hücreleri, okuma/dinleme = kullanılmamış egzersiz önce, yazma = serbest görev; tohum kullanıcı+sınav+hafta; modül ön koşulu %80 ders → değilse `trial`), `scoreSections` (toplam ≥70 ve her bölüm ≥50), `finishExam` (`exams`, `exam_finish` kind `level:A1`/`module:A1`), `examHistory/examById`; `POST/GET /api/exam` (kelime cevapları SRS'e de gider); `/exam/[level]` (45 dk) ve `/exam/[level]/[module]` (20 dk) → `exam-player.tsx` (tek zamanlayıcı, süre dolunca gönderir, bölüm puanları, sertifika düğmesi); `/api/certificate/[id]` SVG; hız turu sayfasından ve profil seviye kartından bağlantı. e2e §42 (12 kontrol). Tarayıcıda uçtan uca modül sınavı: `reports/shots/wp41-exam-{intro,vocab,grammar,writing,result}.png`.
+**Durum (2026-08-25).** Adım 1–4 bitti (konuşma bölümü ve rozetler hariç — STATUS karar kaydı). `src/lib/exam.ts`: `buildExam` (modül 6/6/1/1/1, seviye 12/12/2/2/1; kelime = modül/seviye kelimelerinden çeviri+yazma, dilbilgisi = tablo hücreleri, okuma/dinleme = kullanılmamış egzersiz önce, yazma = serbest görev; tohum kullanıcı+sınav+hafta; modül ön koşulu %80 konuşma → değilse `trial`), `scoreSections` (toplam ≥70 ve her bölüm ≥50), `finishExam` (`exams`, `exam_finish` kind `level:A1`/`module:A1`), `examHistory/examById`; `POST/GET /api/exam` (kelime cevapları SRS'e de gider); `/exam/[level]` (45 dk) ve `/exam/[level]/[module]` (20 dk) → `exam-player.tsx` (tek zamanlayıcı, süre dolunca gönderir, bölüm puanları, sertifika düğmesi); `/api/certificate/[id]` SVG; hız turu sayfasından ve profil seviye kartından bağlantı. e2e §42 (12 kontrol). Tarayıcıda uçtan uca modül sınavı: `reports/shots/wp41-exam-{intro,vocab,grammar,writing,result}.png`.
 
 ---
 
@@ -105,22 +105,22 @@ Rapor: yerleştirme yok (seviye kullanıcı seçiyor), seviye/beceri sınavı yo
 
 ## Ek (2026-08-26): modül sınavı v3 — modülün kendi sınavı
 
-**Sorun.** v2 kâğıdında modül yalnızca KELİME bölümünü belirliyordu; dilbilgisi seviye tablolarından, okuma/dinleme seviye beceri bankasından, yazma ve konuşma yine seviyeden geliyordu. "A1 Modül 3 · Yeme-içme" sınavında tren garı metni ve Perfekt sorusu çıkabiliyordu. Dersler ise konuşma üzerine kurulu: her ders bir kalıp öğretiyor, Türkçe cümleyi Almanca kurduruyor, bozuk cümle hakkında hüküm verdiriyor. Sınav bunların hiçbirini ölçmüyordu.
+**Sorun.** v2 kâğıdında modül yalnızca KELİME bölümünü belirliyordu; dilbilgisi seviye tablolarından, okuma/dinleme seviye beceri bankasından, yazma ve konuşma yine seviyeden geliyordu. "A1 Modül 3 · Yeme-içme" sınavında tren garı metni ve Perfekt sorusu çıkabiliyordu. Konuşmalar ise konuşma üzerine kurulu: her konuşma bir kalıp öğretiyor, Türkçe cümleyi Almanca kurduruyor, bozuk cümle hakkında hüküm verdiriyor. Sınav bunların hiçbirini ölçmüyordu.
 
 **Yapılanlar.**
-- `src/lib/lessons/module-content.ts` (saf): modülün on dersinden üretim adımları (`produce` → Türkçe yönerge + Almanca hedef; yönerge çerçeve cümlelerinden ve ders ipuçlarından arındırılıyor, cevabı ele veren madde `selfAnswering` ile düşüyor), hüküm cümleleri (`truefalse` + gerekçe), kalıplar, kelimeler, sahneler; `FOCUS_SHEETS` ders odağı → cheatsheet sayfası köprüsü (65 odak).
-- `src/lib/lessons/module-exam/` (elle yazılı, 23 modül): kâğıdın kapağı (kod, Almanca/Türkçe ad, ölçülen yapılar), **yapabilirlik listesi** (de/tr/en, 4–5 satır), modül sahnesinde geçen **dinleme diyaloğu** (4–8 replik + 3 soru), modül dünyasından **okuma metni** (+2 soru), modül durumunda **konuşma cümleleri** (2), modül temalı **yazma görevi** (kontrol listesi, kalıplar, örnek cevap).
-- Kâğıt (`lib/exam.ts` v3, 25 dk): Wortschatz 6 · Grammatik 6 (3 tablo hücresi + 3 ders hükmü) · **Satzbau 5** (yeni bölüm: 3 yazma + 2 dizme, derslerin üretim adımlarından) · Lesen 2 · Hören 3 · Sprechen 2 · Schreiben 1.
+- `src/lib/conversations/module-content.ts` (saf): modülün on konuşmasından üretim adımları (`produce` → Türkçe yönerge + Almanca hedef; yönerge çerçeve cümlelerinden ve konuşma ipuçlarından arındırılıyor, cevabı ele veren madde `selfAnswering` ile düşüyor), hüküm cümleleri (`truefalse` + gerekçe), kalıplar, kelimeler, sahneler; `FOCUS_SHEETS` konuşma odağı → cheatsheet sayfası köprüsü (65 odak).
+- `src/lib/conversations/module-exam/` (elle yazılı, 23 modül): kâğıdın kapağı (kod, Almanca/Türkçe ad, ölçülen yapılar), **yapabilirlik listesi** (de/tr/en, 4–5 satır), modül sahnesinde geçen **dinleme diyaloğu** (4–8 replik + 3 soru), modül dünyasından **okuma metni** (+2 soru), modül durumunda **konuşma cümleleri** (2), modül temalı **yazma görevi** (kontrol listesi, kalıplar, örnek cevap).
+- Kâğıt (`lib/exam.ts` v3, 25 dk): Wortschatz 6 · Grammatik 6 (3 tablo hücresi + 3 konuşma hükmü) · **Satzbau 5** (yeni bölüm: 3 yazma + 2 dizme, konuşmaların üretim adımlarından) · Lesen 2 · Hören 3 · Sprechen 2 · Schreiben 1.
 - **Bölüm ağırlığı** (`SECTION_WEIGHT`): madde sayısı yerine ağırlık. Modülde Wortschatz 12 · Grammatik 18 · Satzbau 25 · Lesen 8 · Hören 12 · Sprechen 15 · Schreiben 10; üretim bölümleri toplam %50. (Eskiden yazma bölümü 24 maddenin 1'iydi, yani kâğıdın %4'ü.) Kâğıtta bulunmayan bölüm payını bırakır, kalanlar %100'e ölçeklenir.
 - Şıklar tohumlu karıştırılıyor (`shuffleQuestion`): elle yazarken doğru şıkkın hep aynı sıraya düşmesi kullanıcıya ulaşmıyor. Tablo hücrelerinde çeldiriciler artık cevaptan VE birbirinden farklı (aynı biçim iki satırda geçebiliyordu; v2'de aynı şık iki kez basılıyordu).
-- Oynatıcı: kapak (ne ölçülüyor, kaç bölüm, kural) → bölüm arası kartı (Teil n/N · Satzbau) → maddeler (geri dönüş, ipucu, anında geri bildirim yok) → sonuç. Sonuçta bölüm yüzdeleri **ağırlığıyla**, "artık şunları yapabiliyorsun" listesi (de/tr/en) ve **kaçırılan maddelerin dökümü** (doğru cevap, senin cevabın, ders hükmünün gerekçesi, cümle farkı). İpucu düğmeleri sınavda gizli (`components/games/no-hints.tsx` bağlamı; dört oyun okuyor).
+- Oynatıcı: kapak (ne ölçülüyor, kaç bölüm, kural) → bölüm arası kartı (Teil n/N · Satzbau) → maddeler (geri dönüş, ipucu, anında geri bildirim yok) → sonuç. Sonuçta bölüm yüzdeleri **ağırlığıyla**, "artık şunları yapabiliyorsun" listesi (de/tr/en) ve **kaçırılan maddelerin dökümü** (doğru cevap, senin cevabın, konuşma hükmünün gerekçesi, cümle farkı). İpucu düğmeleri sınavda gizli (`components/games/no-hints.tsx` bağlamı; dört oyun okuyor).
 - Sertifika: kod + Almanca modül adı + bölüm yüzdeleri + "DAS KANN ICH JETZT" listesi.
 - Yol haritası: modülün çıkış düğümü artık **sınava** gidiyor (taç ve %puan sınavdan), hız turu altındaki ikincil satır.
 - Doğrulayıcılar: `npm run test:exams` (23 modülün planı, madde bütçesi, odak haritası, soru gövdeleri) ve `npm run test:exam-build` (veritabanısız kuru prova: 23 kâğıt kurulur, bölüm sayıları, dizinler, aidiyet, ağırlık toplamı, tam doğru %100 / boş %0). e2e §42 v3'e göre yenilendi.
 
 **Kanıt.** `reports/shots/wp41v3-exam-{kapak,grammatik,satzbau,hoeren,sonuc,dokum}.png` — demo sunucuda A1.3 kâğıdı uçtan uca oynandı (7 bölüm, sonuç ve döküm dahil).
 
-**Kapsam (2026-08-26 akşamı).** B1 modül 4–10 üretilince kâğıtları da yazıldı: kurs artık A1 10 + A2 10 + B1 10 = **30 modülün hepsinde** yedi bölümlük bir modül geçiş sınavı taşıyor (`test:exam-build` otuzunu da veritabanısız kuruyor). Açık kalan yalnızca B2/C1: ders içeriği üretilince plan dosyalarına eklenecek, `test:exams` plansız modülü hata sayıyor.
+**Kapsam (2026-08-26 akşamı).** B1 modül 4–10 üretilince kâğıtları da yazıldı: kurs artık A1 10 + A2 10 + B1 10 = **30 modülün hepsinde** yedi bölümlük bir modül geçiş sınavı taşıyor (`test:exam-build` otuzunu da veritabanısız kuruyor). Açık kalan yalnızca B2/C1: konuşma içeriği üretilince plan dosyalarına eklenecek, `test:exams` plansız modülü hata sayıyor.
 
 ## Ek (2026-08-26): konuşma bölümü
 

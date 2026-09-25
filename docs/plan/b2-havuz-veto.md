@@ -1,9 +1,9 @@
 # B2 — havuz boşluğunun vetosu (Adım 3)
 
-`docs/plan/b2-yeniden-kurgu.md` §5 Adım 3'ün çıktısı. B2 derslerinin öğrettiği
+`docs/plan/b2-yeniden-kurgu.md` §5 Adım 3'ün çıktısı. B2 konuşmalarının öğrettiği
 500 kelimeden **166'sı havuzda hiç yoktu**. Hepsi tek tek karara bağlandı.
 
-Bu tablo dersleri yeniden kurgularken kaynak: **D** ve **B** satırındaki hiçbir
+Bu tablo konuşmaları yeniden kurgularken kaynak: **D** ve **B** satırındaki hiçbir
 kelime yeni sözlükçeye girmeyecek, **A** satırındakiler havuzun yazımıyla
 yazılacak, **C** satırındakiler havuza eklendi.
 
@@ -22,10 +22,10 @@ havuzdaki `aufhalten` 'alıkoymak').
 
 | | Kural | Sonuç |
 |---|---|---|
-| **A** | Havuzda aynı anlamı taşıyan kayıt zaten var; ders varyant yazmış | Havuza dokunma, **dersi havuzun yazımına çevir** |
-| **B** | Türev: çoğul, Partizip I/II, üretken sonek (-ung, -heit, -keit, -bar, -sam, -schaft, -lich, -er) | Madde başı değil; ders başka kelime alır |
+| **A** | Havuzda aynı anlamı taşıyan kayıt zaten var; konuşma varyant yazmış | Havuza dokunma, **konuşmayı havuzun yazımına çevir** |
+| **B** | Türev: çoğul, Partizip I/II, üretken sonek (-ung, -heit, -keit, -bar, -sam, -schaft, -lich, -er) | Madde başı değil; konuşma başka kelime alır |
 | **C** | Gerçek B2 madde başı | **Havuza ekle** (id 8535+, rank `de_50k.txt`'ten) |
-| **D** | Şeffaf bileşik · üretken türetme · havuzda karşılığı var · çok dar | Havuza ekleme, **dersten çıkar** |
+| **D** | Şeffaf bileşik · üretken türetme · havuzda karşılığı var · çok dar | Havuza ekleme, **konuşmadan çıkar** |
 
 C ile D arasındaki ayrımda B1'in üç ölçütüne bir dördüncüsü eklendi:
 
@@ -38,7 +38,7 @@ C ile D arasındaki ayrımda B1'in üç ölçütüne bir dördüncüsü eklendi:
    Aynı çarpıtma `der Umstand`ta da var (tekil 18592, çoğul 3215).
 3. **Kökü hangi seviyede?** Kökü havuzda ve alt seviyedeyse türev, madde başı
    değil.
-4. **Havuzda o kavram zaten var mı?** B2 katmanı 2041 madde ve ders yalnız 800
+4. **Havuzda o kavram zaten var mı?** B2 katmanı 2041 madde ve konuşma yalnız 800
    yuva taşıyor — arz bol. B1'de oran darken (1296 yuva / 1815 madde) havuza
    eklemek makuldü; B2'de eklemenin eşiği yüksek. Bu yüzden `der Anstieg`
    eklenmedi (`die Zunahme` [B2] var), `die Kooperation` eklenmedi
@@ -50,10 +50,10 @@ C ile D arasındaki ayrımda B1'in üç ölçütüne bir dördüncüsü eklendi:
 B kovasının önemli bir bölümü Partizip I ve Partizip II'nin sıfat kullanımı:
 `laufend`, `steigend`, `zunehmend`, `erprobt`, `zugelassen`, `gestellt`,
 `geregelt`, `verschlossen`, `gekippt`. Bunlar tam olarak `de-b2-partizip-1` ve
-`de-b2-partizip-2` derslerinin **öğrettiği dilbilgisi**.
+`de-b2-partizip-2` konuşmalarının **öğrettiği dilbilgisi**.
 
 Sözlükçe yuvasında duramazlar: havuzda madde başı değiller, dolayısıyla SRS
-kuyruğuna hiç girmezler ve ders onları bir kez gösterip bırakır. Ama
+kuyruğuna hiç girmezler ve konuşma onları bir kez gösterip bırakır. Ama
 `patterns` ve `lecture` içinde havuzdaki fiilden türetilerek öğretilebilirler —
 kural öğretilmeye devam eder, yuva havuzdaki bir kelimeye gider.
 
@@ -64,7 +64,7 @@ kural öğretilmeye devam eder, yuva havuzdaki bir kelimeye gider.
 | A — havuzda zaten var | 7 | yok |
 | B — türev | 53 | yok |
 | C — havuza eklendi | 20 | B2 katmanı 2041 → **2061** |
-| D — dersten çıkar | 86 | yok |
+| D — konuşmadan çıkar | 86 | yok |
 | **toplam** | **166** | |
 
 Payda büyüdüğü için kapsama tavanı yeniden hesaplandı: 800 yuva ÷ 2061 madde =
@@ -80,10 +80,10 @@ Payda büyüdüğü için kapsama tavanı yeniden hesaplandı: 800 yuva ÷ 2061 
 | 8536 | `das Anliegen` | talep, mesele | 9923 | resmî dilde bir kişinin "derdi"; `an`+`liegen`'den türetilemez |
 | 8537 | `eingehen auf` | değinmek, üzerinde durmak | 3837 | tartışma ve sunumun taşıyıcısı; `eingehen` havuzda hiç yok |
 | 8538 | `der Austausch` | fikir alışverişi | 6101 | havuzdaki `der Umtausch` [B1] mal değişimi; bu ayrı kavram |
-| 8539 | `infolge` | sonucunda, yüzünden | 25324 | Genitiv edatı; sebep-sonuç dersinin dilbilgisi konusu, türetilemez |
+| 8539 | `infolge` | sonucunda, yüzünden | 25324 | Genitiv edatı; sebep-sonuç konuşmasının dilbilgisi konusu, türetilemez |
 | 8540 | `bestehen auf` | ısrar etmek | 3195 | havuzdaki `bestehen` [A2] 'sınavı geçmek' — edatlısı ayrı lexeme |
 | 8541 | `bedenken` | göz önünde bulundurmak | 4187 | `denken` [A1] ile anlamca ilgisiz; müzakere dilinin çekirdeği |
-| 8542 | `angeblich` | iddiaya göre, sözde | 2694 | dolaylı anlatım dersinin çekirdeği; havuzda karşılığı yok |
+| 8542 | `angeblich` | iddiaya göre, sözde | 2694 | dolaylı anlatım konuşmasının çekirdeği; havuzda karşılığı yok |
 | 8543 | `sich aufhalten` | bulunmak (bir yerde) | 1311 | havuzdaki `aufhalten` [B1] 'alıkoymak' — dönüşlüsü ayrı kavram |
 | 8544 | `der Anlass` | vesile, sebep | 4926 | `aus diesem Anlass` kalıbı; `der Grund`/`die Ursache` bu kullanımı örtmüyor |
 | 8545 | `der Durchbruch` | atılım | 6963 | `durch`+`Bruch` [C1]'ten anlamca türetilemez; bilim/teknoloji modülünün taşıyıcısı |
@@ -93,13 +93,13 @@ Payda büyüdüğü için kapsama tavanı yeniden hesaplandı: 800 yuva ÷ 2061 
 | 8549 | `die Maßnahme` | tedbir, önlem | 20180 | kurum dilinin çekirdeği; çoğulu 7510. sırada, havuzda karşılığı yok |
 | 8550 | `der Wechsel` | geçiş, değişim | 8388 | isim olarak bağımsız ve çok sık; `wechseln` [A2] fiili bu kullanımı örtmüyor |
 | 8551 | `die Lücke` | boşluk, açık | 10015 | havuzda 'boşluk/açık' kavramı hiç yok |
-| 8552 | `die Geste` | jest, el hareketi | 6389 | beden dili dersinin çekirdeği; `die Gebärde` de havuzda yok |
+| 8552 | `die Geste` | jest, el hareketi | 6389 | beden dili konuşmasının çekirdeği; `die Gebärde` de havuzda yok |
 | 8553 | `die Hürde` | engel | 29949 | havuzda 'engel' karşılığı yok — `das Hindernis` ve `die Barriere` de yok |
 | 8554 | `das Wachstum` | büyüme | 12874 | ekonomi modülünün çekirdeği; `-tum` üretken bir sonek değil |
 
 ## A — havuzda zaten var (7)
 
-| Ders kelimesi | Gerekçe |
+| Konuşma kelimesi | Gerekçe |
 |---|---|
 | `zurückkommen auf` | havuzda zurückkommen [A2] |
 | `sich vernetzen` | havuzda vernetzen [B2] |
@@ -111,7 +111,7 @@ Payda büyüdüğü için kapsama tavanı yeniden hesaplandı: 800 yuva ÷ 2061 
 
 ## B — türev, madde başı değil (53)
 
-| Ders kelimesi | Gerekçe |
+| Konuşma kelimesi | Gerekçe |
 |---|---|
 | `die Abstimmung` | -ung ← abstimmen [B1] |
 | `die Anwesenheit` | -heit ← anwesend [B1] |
@@ -167,9 +167,9 @@ Payda büyüdüğü için kapsama tavanı yeniden hesaplandı: 800 yuva ÷ 2061 
 | `die Einschränkung` | -ung ← einschränken [B2] |
 | `gezielt` | Partizip II ← zielen |
 
-## D — havuza eklenmedi, dersten çıkacak (86)
+## D — havuza eklenmedi, konuşmadan çıkacak (86)
 
-| Ders kelimesi | Gerekçe |
+| Konuşma kelimesi | Gerekçe |
 |---|---|
 | `der Anstieg` | havuzda die Zunahme [B2] var |
 | `der Tagesordnungspunkt` | Tagesordnung[B2]+Punkt — şeffaf |
@@ -177,14 +177,14 @@ Payda büyüdüğü için kapsama tavanı yeniden hesaplandı: 800 yuva ÷ 2061 
 | `die Rückfrage` | Rück+Frage[A1] — şeffaf |
 | `der Abgabetermin` | Abgabe[B2]+Termin[A1] — şeffaf |
 | `dazwischenkommen` | dazwischen+kommen — şeffaf |
-| `der Puffer` | dar, tek derse bağlı · r28408 |
+| `der Puffer` | dar, tek konuşmaya bağlı · r28408 |
 | `die Fachkonferenz` | Fach[A1]+Konferenz[B1] — şeffaf |
 | `der Referent` | havuzda der Redner [B2] var |
 | `sich gezwungen sehen` | eşdizim, madde başı değil |
 | `die Warteschleife` | dar; warten+Schleife |
 | `beiderseitig` | -ig türetmesi, dar |
 | `die Kündigungsbestätigung` | Kündigung[B1]+Bestätigung — şeffaf |
-| `der Zaun` | dar, tek derse bağlı somut ad |
+| `der Zaun` | dar, tek konuşmaya bağlı somut ad |
 | `die Grundstücksgrenze` | Grundstück[B1]+Grenze[B1] — şeffaf |
 | `gütlich` | dar, hukuk dili |
 | `das Einvernehmen` | r42785, dar |
@@ -217,9 +217,9 @@ Payda büyüdüğü için kapsama tavanı yeniden hesaplandı: 800 yuva ÷ 2061 
 | `abwandern` | ab+wandern[A1] — şeffaf |
 | `profitieren` | alıntı; havuzda nutzen/der Vorteil alanı dolu |
 | `fesseln` | mecazi ve dar |
-| `der Applaus` | dar, tek derse bağlı |
+| `der Applaus` | dar, tek konuşmaya bağlı |
 | `erbauen` | er+bauen[A2] — şeffaf |
-| `die Gänsehaut` | dar, tek derse bağlı |
+| `die Gänsehaut` | dar, tek konuşmaya bağlı |
 | `der Bildausschnitt` | Bild[A1]+Ausschnitt — şeffaf, dar |
 | `einfangen` | ein+fangen[B1] — şeffaf |
 | `authentisch` | alıntı; havuzda echt [A2] |
@@ -228,7 +228,7 @@ Payda büyüdüğü için kapsama tavanı yeniden hesaplandı: 800 yuva ÷ 2061 
 | `das Gelände` | havuzda das Grundstück[B1]/der Bereich[B1] |
 | `der Seitenhieb` | çok dar |
 | `durchschauen` | durch+schauen[B1] — şeffaf |
-| `die Auktion` | dar, tek derse bağlı |
+| `die Auktion` | dar, tek konuşmaya bağlı |
 | `ersteigern` | er+steigern[B2] — şeffaf |
 | `knüpfen` | 'Kontakte knüpfen' eşdizimine bağlı, dar |
 | `weiterempfehlen` | weiter+empfehlen[A1] — şeffaf |

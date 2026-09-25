@@ -42,9 +42,9 @@ taşır — İngilizce kursta `de` alanına İngilizce yazılır.** Türkçe ala
    metni, program, yorum…); beş dinleme beş farklı biçim (diyalog, telefon,
    anons, röportaj, sesli mesaj, tanıtım konuşması); beş dil bilgisi BEŞ AYRI
    kural.
-2. `avoid/<kurs>-<seviye>.txt` — Patika, ders ve deneme kâğıdı içeriği.
+2. `avoid/<kurs>-<seviye>.txt` — Patika, konuşma ve deneme kâğıdı içeriği.
 
-`avoid/<kurs>-<seviye>.txt` dosyasını oku. Oradaki ders başlıkları, ünite egzersiz başlıkları ve
+`avoid/<kurs>-<seviye>.txt` dosyasını oku. Oradaki konuşma başlıkları, ünite egzersiz başlıkları ve
 deneme sınavı metinleri **tekrar edilmez**: aynı sahne, aynı karakter adları dizisi, aynı metin
 türü + aynı konu birleşimi yasak. Konu yakın olabilir (A1'de hayat sınırlı) ama metin, durum,
 ayrıntılar ve sorular yeni olacak. Mevcut dosyaları kopyalayıp değiştirmek yasak.

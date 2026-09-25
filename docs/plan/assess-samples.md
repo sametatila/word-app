@@ -1,6 +1,6 @@
 # AI değerlendirme kalite örnekleri (WP-03, adım 5)
 
-20 örnek `scripts/assess-eval.ts` içinde (`SAMPLES`): A1–B2, dört tür (cümle 10, yazma 5, konuşma 2, rol yapma 2, Passiv 1), doğru/yanlış/karışık. Her örnekte insan rubrik puanı (görev/dilbilgisi/kelime/yapı, 0–4) ve beklenen hata tipleri önceden yazılı.
+20 örnek `scripts/assess-eval.ts` içinde (`SAMPLES`): A1–B2, dört tür (cümle 10, yazma 5, konuşma 2, sohbet 2, Passiv 1), doğru/yanlış/karışık. Her örnekte insan rubrik puanı (görev/dilbilgisi/kelime/yapı, 0–4) ve beklenen hata tipleri önceden yazılı.
 
 Çalıştırma:
 
@@ -32,8 +32,8 @@ Kabul ölçütleri (plan): 20 örnekte dört alt puan da insan puanına ±1 içi
 | b1-w-opinion-weak | yazma B1 | aynı görev, 35 kelime, artikelsiz | 2/2/2/1 | article, word_order |
 | b1-sp-ok | konuşma B1 | kendini tanıtma dökümü (noktalamasız) | 4/4/4/4 | — (yazım sayılmamalı) |
 | b1-sp-err | konuşma B1 | "seit zwei jahre", "komme von" | 4/2/3/3 | case |
-| b1-rp-ok | rol yapma B1 | doktor randevusu, 4 tur, kalıplar tam | 4/4/4/4 | — |
-| b1-rp-weak | rol yapma B1 | "ich will Termin", "Kopf tut weh" | 2/2/1/1 | article |
+| b1-rp-ok | sohbet B1 | doktor randevusu, 4 tur, kalıplar tam | 4/4/4/4 | — |
+| b1-rp-weak | sohbet B1 | "ich will Termin", "Kopf tut weh" | 2/2/1/1 | article |
 | b2-s-passiv | cümle B2 | Das Haus wird renoviert. | 4/4/4/4 | — |
 | b2-w-formal | yazma B2 | resmî şikâyet, 100 kelime | 4/4/4/4 | — |
 

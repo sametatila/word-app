@@ -1,7 +1,7 @@
 # A2 Konuları (100)
 
 Satır biçimi: `NNN | slug | Titel (DE) | Türkçe | ikon | focusId | çekirdek kalıplar`
-- Kimlik = `de-a2-<slug>`. ✔ işaretli ders üretilmiştir; ilk partide taşınır.
+- Kimlik = `de-a2-<slug>`. ✔ işaretli konuşma üretilmiştir; ilk partide taşınır.
 - A2 omurgası: Perfekt'in tamamı, Präteritum (sein/haben/modal), Dativ ve
   değişken edatlar, karşılaştırma, weil/denn/dass/wenn, dönüşlü fiiller.
 

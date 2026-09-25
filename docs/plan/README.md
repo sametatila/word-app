@@ -6,14 +6,14 @@ Plan **iş paketlerine (WP)** bölünmüştür. Her WP başka bir ajan tarafınd
 
 | Dosya | Faz | İş paketleri |
 |---|---|---|
-| [00-foundation.md](00-foundation.md) | 0 — Temel altyapı | WP-00 Ölçüm çerçevesi · WP-01 Beceri ilerlemesi sunucuya · WP-02 Hata taksonomisi · WP-03 AI değerlendirme servisi · WP-04 Çevrimdışı rol yapma yedeği |
+| [00-foundation.md](00-foundation.md) | 0 — Temel altyapı | WP-00 Ölçüm çerçevesi · WP-01 Beceri ilerlemesi sunucuya · WP-02 Hata taksonomisi · WP-03 AI değerlendirme servisi · WP-04 Çevrimdışı sohbet yedeği |
 | [10-production-exercises.md](10-production-exercises.md) | 1 — Üretim odaklı alıştırma | WP-10 Çeviri oyunu · WP-11 Dönüştürme drilleri · WP-12 Serbest cümle · WP-13 "Neden" geri bildirimi · WP-14 Oyun merdiveni |
-| [20-speaking.md](20-speaking.md) | 2 — Konuşma | WP-20 Telaffuz puanlama · WP-21 Konuşma içeriği · WP-22 Rol yapma sınavı · WP-23 Açık diyalog |
+| [20-speaking.md](20-speaking.md) | 2 — Konuşma | WP-20 Telaffuz puanlama · WP-21 Konuşma içeriği · WP-22 Puanlı kısım · WP-23 Açık diyalog |
 | [30-writing.md](30-writing.md) | 3 — Yazma | WP-30 AI yazma değerlendirmesi · WP-31 Yazma görev türleri |
 | [40-assessment-exams.md](40-assessment-exams.md) | 4 — Ölçme ve sınav | WP-40 Yerleştirme testi · WP-41 Seviye sınavı v2 · WP-42 Haftalık kullanım sınavı · WP-43 CEFR can-do haritası |
 | [50-analytics-profile.md](50-analytics-profile.md) | 5 — Analitik | WP-50 Beceri yetkinlik modeli · WP-51 Hata analitiği · WP-52 Gelişim raporu |
-| [60-ui-composition.md](60-ui-composition.md) | 6 — Arayüz ve kompozisyon | WP-60 /learn yeniden kompozisyon · WP-61 Geri bildirim bileşeni · WP-62 Ders oynatıcı · WP-63 Beceri merkezi · WP-64 Profil · WP-65 Onboarding · WP-66 Erdi koç sesi |
-| [70-content-pipeline.md](70-content-pipeline.md) | 7 — İçerik üretim hattı | WP-70 İçerik şeması ve doğrulayıcı · WP-71 Ders kapsamı (B1–C1) · WP-72 Konuşma/yazma içeriği · WP-73 Gerekçe ve kural parçacıkları |
+| [60-ui-composition.md](60-ui-composition.md) | 6 — Arayüz ve kompozisyon | WP-60 /learn yeniden kompozisyon · WP-61 Geri bildirim bileşeni · WP-62 Konuşma oynatıcı · WP-63 Beceri merkezi · WP-64 Profil · WP-65 Onboarding · WP-66 Erdi koç sesi |
+| [70-content-pipeline.md](70-content-pipeline.md) | 7 — İçerik üretim hattı | WP-70 İçerik şeması ve doğrulayıcı · WP-71 Konuşma kapsamı (B1–C1) · WP-72 Konuşma/yazma içeriği · WP-73 Gerekçe ve kural parçacıkları |
 
 ## Hedef puanlar
 
@@ -26,7 +26,7 @@ Rapordaki eksenler (İçerik / Pedagoji / Geri bildirim / Ölçme / Arayüz), me
 | Konuşma | 3/5/3/1/8 | 8/9/9/8/9 | 20, 21, 22, 23, 04, 72 |
 | Yazma | 6/5/2/1/8 | 8/9/9/8/9 | 30, 31, 03, 72 |
 | Okuma/Dinleme | 8/6/5/4/9 | 9/8/8/8/9 | 13, 31 (soru türleri), 41, 70 |
-| Dersler + dilbilgisi | 6/5/5/3/8 | 9/9/8/8/9 | 04, 11, 62, 71, 73 |
+| Konuşmalar + dilbilgisi | 6/5/5/3/8 | 9/9/8/8/9 | 04, 11, 62, 71, 73 |
 | Sınav / ölçme | 2/3/4/2/8 | 9/9/9/9/9 | 40, 41, 42, 43 |
 | İlerleme / analitik | –/4/–/3/8 | –/9/–/9/9 | 00, 01, 02, 50, 51, 52, 64 |
 | Motivasyon | 8/8/–/–/9 | 9/9/–/–/9 | 42, 52, 60, 66 |
@@ -40,7 +40,7 @@ Faz 0 (temel)  ─┬─ WP-00 ölçüm çerçevesi
                 ├─ WP-01 beceri ilerlemesi sunucuya ──────────────┐
                 ├─ WP-02 hata taksonomisi ───┬─────────────────────┤
                 ├─ WP-03 AI değerlendirme ───┼── WP-12, 30, 21, 22 │
-                └─ WP-04 çevrimdışı rol yapma┘                     │
+                └─ WP-04 çevrimdışı sohbet┘                     │
 Faz 1 (üretim) ─── WP-10, 11, 13, 14 (02'ye bağlı)                 │
 Faz 2 (konuşma) ── WP-20 (bağımsız), 21 (72'ye), 22 (03'e), 23 (03'e)
 Faz 3 (yazma) ──── WP-30 (03'e), 31 (70'e)                         │
@@ -68,7 +68,7 @@ Faz 8 (takip) ──── WP-80: veri boşluğu kapatma, her yeni yüzeyle birl
 - **Atomik commit:** her adım ayrı commit; mesaj Türkçe, ilk satır ne yapıldığı, gövde neden.
 - **Veritabanı değişikliği:** Drizzle şeması `src/lib/db/schema.ts`; `npm run db:generate` ile migration üret, `drizzle/` altına ekle, `npm run db:migrate`. Neon üretim DB'si gerçek kullanıcı verisi taşır — geri alınabilir, ekleyici (additive) migrasyonlar; sütun silme/yeniden adlandırma yok.
 - **AI çağrıları:** yalnızca `src/lib/chat-providers.ts` (`chatProviders`, `completeChat`, `sttProviders`) üzerinden; her çağrı `recordAiUsage` ile kaydedilir; sağlayıcı yoksa özellik **sessizce bozulmaz**, çevrimdışı yedeğe düşer ve bunu ekranda söyler.
-- **İçerik:** kod içi TS içerik dosyaları (`src/lib/skills/content`, `src/lib/lessons/content`) + `data/*` paket/doğrulayıcı deseni (`data/skills/SPEC.md`, `check.mjs`). Yeni içerik türü = önce şema + doğrulayıcı, sonra içerik.
+- **İçerik:** kod içi TS içerik dosyaları (`src/lib/skills/content`, `src/lib/conversations/content`) + `data/*` paket/doğrulayıcı deseni (`data/skills/SPEC.md`, `check.mjs`). Yeni içerik türü = önce şema + doğrulayıcı, sonra içerik.
 - **Türkçe arayüz metni, Almanca öğrenme içeriği.** Kullanıcıya İngilizce yalnız köprü çevirilerde.
 - **Erişilebilirlik:** hareket azaltma (`useStill`), klavye, renk körlüğü (renk + simge/metin) her yeni bileşende.
 - **Ölçüm:** her yeni özellik en az bir `track()` olayı ve bir kabul metriği ile gelir (bkz. WP-00).

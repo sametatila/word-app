@@ -156,7 +156,7 @@ Zorunlu ölçütler:
    Passiv ve Konjunktiv II serbest.
 6. **Cümlenin taşıdığı anlam, `tr` ve `en` alanına yazdığın anlamdır.**
    `wohl → "galiba"` yazdıysan cümle "iyi hissetmek" anlamını göstermez.
-7. **Doğal.** Gerçek bir Almanın kuracağı cümle. Ders kitabı kokan
+7. **Doğal.** Gerçek bir Almanın kuracağı cümle. Konuşma kitabı kokan
    ("Das ist ein Tisch. Der Tisch ist braun.") cümleler kurma.
 
 Kaynaktaki cümle bu yedi ölçütü **zaten karşılıyorsa aynen koru**. Değiştirmek

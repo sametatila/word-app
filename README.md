@@ -25,19 +25,19 @@ uygulama gibi tam ekran açılır (PWA).
   gerekçe, yazma ve monologda rubrik puanı, hub'da "sıradaki" önerisi ve son puan. İçerik
   `src/lib/skills/content/library/` altında, ünitesiz; Patika bu havuza dokunmaz
   (bkz. `docs/plan/90-beceri-kutuphanesi.md`).
-- **Ders içi rol yapma:** serbest sohbet bölümü kaldırıldı; yerine her dersin sonundaki
+- **Konuşma içi sohbet:** serbest sohbet bölümü kaldırıldı; yerine her konuşmanın sonundaki
   konuşma fazı geçti (`/api/chat`). Fark tek kelimede: **amaç**. Sohbette model her şeye
   cevap veriyordu ve konuşmanın nereye gideceği belirsizdi — boş sayfa serbest sohbetin en
-  pahalı sorunuydu. Rol yapmada sahne, muhatap ve kullanılacak kalıplar belli; model konuşmayı
-  dersin kalıplarına doğru sürüyor ve düzeltmeyi o çerçevede yapıyor. **Eller serbest** anahtarı
+  pahalı sorunuydu. Sohbette sahne, muhatap ve kullanılacak kalıplar belli; model konuşmayı
+  konuşmanın kalıplarına doğru sürüyor ve düzeltmeyi o çerçevede yapıyor. **Eller serbest** anahtarı
   açıkken tek bir döngü kurulur — cevap sesli okunur, okuma biter bitmez mikrofon kendiliğinden
   açılır, söylediğin doğrudan gönderilir. GitHub Models'in ücretsiz Cerebras, Groq ya da
   Mistral'in ücretsiz katmanı üzerinden çalışır; anahtarı olan ilk sağlayıcı seçilir, düşerse
   yedeğe geçilir.
-- **Rol yapmanın adı var:** muhataplar isimsiz değil. Her modül (10 ders) küçük bir kadroya
-  sahip ve aynı üç kişi o modül boyunca dönüyor — yeme-içme modülünde tanıştığın garson üç ders
-  sonra yine karşına çıkıyor. İsimler dersin katalogdaki yerinden türetiliyor
-  (`src/lib/lessons/characters.ts`), içerik dosyalarına tek bir alan bile eklenmedi.
+- **Sohbetin adı var:** muhataplar isimsiz değil. Her modül (10 konuşma) küçük bir kadroya
+  sahip ve aynı üç kişi o modül boyunca dönüyor — yeme-içme modülünde tanıştığın garson üç konuşma
+  sonra yine karşına çıkıyor. İsimler konuşmanın katalogdaki yerinden türetiliyor
+  (`src/lib/conversations/characters.ts`), içerik dosyalarına tek bir alan bile eklenmedi.
 - **Örnek cümle çevirileri:** her örnek cümlenin doğal Türkçe karşılığı vardır; tanıtım kartında,
   kelime listesinde ve Cümleyi Tamamla oyununda görünür.
 - **Adaptif tekrar:** ayrı bir "tekrar et" bölümü yok. Her cevabın hızı ve doğruluğu 0–5 kalite puanına
@@ -78,7 +78,7 @@ uygulama gibi tam ekran açılır (PWA).
 - **Öğrenci arması:** sıralamadaki gri baş-harf dairesi yerine kimlikten türetilen renkli arma
   (gradyan + desen). Sıfır depolama, sıfır ayar, herkes farklı; ilk üçün armasında madalya
   halkası var.
-- **Rozetler:** 41 rozet, yedi grupta (seri · kelime · oyunlar · dersler · beceriler · turlar ·
+- **Rozetler:** 41 rozet, yedi grupta (seri · kelime · oyunlar · konuşmalar · beceriler · turlar ·
   keşif). İlerleme ayrı bir sayaçta biriktirilmiyor, mevcut tablolardan okunuyor — bunun sonucu
   rozetlerin **geriye dönük** olması: sistem açıldığı gün kimse sıfırdan başlamıyor. Kilitli
   rozetler gizlenmiyor, sönük duruyor ve altlarında "ne kadar kaldı" çubuğu var; gizlenmiş
@@ -96,7 +96,7 @@ uygulama gibi tam ekran açılır (PWA).
   gürültü tekrar planını bozmamalı. Yirmi tur bitince **“devam edelim mi?”** sesli sorulur ve
   “evet” demen yeter. **Ekran kapalıyken de çalışır**: cevap tarayıcının konuşma tanıyıcısıyla
   değil, kısa bir ses klibi kaydedilip sunucuda yazıya çevrilerek alınır.
-- **Modül sınavı (patron turu):** ders yolundaki her modülün sonunda, o modülün ~45 kelimesiyle
+- **Modül sınavı (patron turu):** konuşma yolundaki her modülün sonunda, o modülün ~45 kelimesiyle
   süre baskılı bir sınav. Hayatta kalma turundan farkı bir **kaybetme koşulu** olması: 15 soruyu
   60 saniye içinde bitirmek zorundasın (doğru +3 sn, yanlış −5 sn). Geçilen modül yolda taç
   takar ve kalan en iyi süre rekor olarak kalır. Kaybedince hiçbir şey silinmez — cevaplar zaten
@@ -106,7 +106,7 @@ uygulama gibi tam ekran açılır (PWA).
   fazlası" bölümünde, rekorunla birlikte duruyor.
 - **Takip:** günlük seri (streak), günlük hedef, XP, CEFR seviyesine göre ilerleme, 8 haftalık aktivite
   ısı haritası, oyun bazında doğruluk, oturum sonunda "zorlandıkların" listesi.
-- **Günün görevleri:** her gün üç görev, biri mutlaka beceri/ders gibi az
+- **Günün görevleri:** her gün üç görev, biri mutlaka beceri/konuşma gibi az
   uğranan bir bölüme götürür. İlerleme ayrı bir sayaçta biriktirilmez, mevcut tablolardan
   okunur; ödül talep edilince verilir ve tamamlanma sunucuda yeniden doğrulanır.
 - **Tek oyun oyna:** on oyunun her biri 20 turluk bağımsız bir tur olarak seçilebilir.
@@ -149,7 +149,7 @@ DATABASE_URL="postgresql://user:pass@localhost:5432/lernomi"
 BETTER_AUTH_SECRET="openssl rand -base64 32 çıktısı"
 CRON_SECRET="openssl rand -hex 32 çıktısı"   # zamanlanmış uçların Bearer sırrı
 
-# Ders içi rol yapma — üçünden biri yeter. Sıra: cerebras → groq → mistral.
+# Konuşma içi sohbet — üçünden biri yeter. Sıra: cerebras → groq → mistral.
 #
 # Yürürken modunun EKRAN KAPALI çalışması için ayrıca bir yazıya çevirme anahtarı
 # gerekiyor. Önerilen: AZURE_SPEECH_KEY + AZURE_SPEECH_REGION (F0: 5 saat/ay,
@@ -170,12 +170,12 @@ kullanım sıfır görününce sorunun anahtarda mı yoksa zincirin başka bir s
 düşmesinde mi olduğu ayırt edilemiyordu. Cevap `chat_logs` tablosunda: her tur hangi
 sağlayıcı ve modelle verildiyse oraya, bildirilen kalan hakla birlikte yazılıyor.
 
-Rol yapma üçünü de destekler ve **anahtarı olan ilk sağlayıcıyı** kullanır (sıra:
+Sohbet üçünü de destekler ve **anahtarı olan ilk sağlayıcıyı** kullanır (sıra:
 Cerebras → Groq → Mistral). Üçü de OpenAI uyumlu olduğu için tek istemci yetiyor; sıra
 hıza göre kurulu, çünkü konuşmada gecikme her şeyden önemli. Birincil düşerse yedeğe
 geçilir — **akış başlamadan önce**; başladıktan sonra yarım cümlenin üstüne başka modelin
 cevabını eklemek doğru olmazdı. Sırayı `CHAT_PROVIDER` ile ezebilirsin. Hiçbiri yoksa yalnızca
-derslerin konuşma fazı kapalı görünür, uygulamanın geri kalanı etkilenmez.
+konuşmaların konuşma fazı kapalı görünür, uygulamanın geri kalanı etkilenmez.
 
 Anahtarlar **koda gömülmez** — bu depo GitHub'a push ediliyor ve GitHub kendi token biçimini
 tarayıp bulduğu anda iptal ediyor.
@@ -186,7 +186,7 @@ tutulmaz** (gelmeyen bir postayı bekleyip kilitlenme olmasın) ve parola sıfı
 çalışmaz — beş SMTP anahtarı dolunca ikisi de kendiliğinden açılır.
 
 Faydalı adresler: `/` tanıtım · `/kurs-sec` ilk giriş kurs/seviye seçimi · `/learn` oturum ·
-`/words` kelime listesi · `/skills` okuma-dinleme-yazma-konuşma · `/lessons` ders yolu ·
+`/words` kelime listesi · `/skills` okuma-dinleme-yazma-konuşma · `/conversations` konuşma yolu ·
 `/profile` ayarlar + ilerleme ·
 `/demo-games` on oyunun tek sayfada önizlemesi. (`/progress` artık `/profile`'a yönlenir.)
 
@@ -254,9 +254,9 @@ src/
   app/
     page.tsx                tanıtım sayfası
     kurs-sec                ilk giriş: kurs + başlangıç seviyesi
-    (app)/learn|words|skills|lessons|profile
+    (app)/learn|words|skills|conversations|profile
     api/session             oturum kuyruğunu üretir
-    api/roleplay            ders içi rol yapma (akışlı; sağlayıcı seçimi chat-providers.ts)
+    api/chat            konuşma içi sohbet (akışlı; sağlayıcı seçimi chat-providers.ts)
     api/answers             cevapları işler (SRS + streak + istatistik)
     api/profile             ayar güncelleme
     api/words/known         "bunu zaten biliyorum" işaretlemesi
@@ -274,8 +274,8 @@ src/
     events.ts / track.ts    ürün olayları (sunucu yazımı / istemci göndericisi)
     ai-usage.ts             AI çağrılarının muhasebesi (hatalar dâhil)
     xp.ts                   XP tablosu + bahis kuralı (tek referans noktası)
-    lessons/characters.ts   rol yapma kadrosu — isimler katalog sırasından türer
-    lessons/boss.ts         modül sınavı: ders kelimelerinden süreli tur + geçme kaydı
+    conversations/characters.ts   sohbet kadrosu — isimler katalog sırasından türer
+    conversations/boss.ts         modül sınavı: konuşma kelimelerinden süreli tur + geçme kaydı
     shuffle.ts              tohumlu karıştırma (sunucu ve tarayıcı aynı sırayı üretsin)
     example.ts              örnek cümle ayıklama (numaralı liste + kısaltma farkındalığı)
     skills/                 beceri içeriği: types · meta · content/{a1..c1, zh-a1..zh-c1}
@@ -466,28 +466,28 @@ hiçbir dosyasını okumuyor.
 
 | | A1 | A2 | B1 | B2 | C1 |
 |---|---|---|---|---|---|
-| Ders | 100 | 100 | — | — | — |
+| Konuşma | 100 | 100 | — | — | — |
 | Okuma · dinleme · yazma | 12 · 12 · 8 | 12 · 12 · 8 | — | — | — |
 
 Kelime katmanı beş seviyeyi de kapsıyor (`data/app/words-en.json`, 6.975 madde; `course='en'`,
-id aralığı 200001+). Dersler `mobile/src/data/lessons/en-a1.json` ve `en-a2.json`, beceri
+id aralığı 200001+). Konuşmalar `mobile/src/data/conversations/en-a1.json` ve `en-a2.json`, beceri
 egzersizleri `mobile/src/data/skills/exercises-en.json` dosyalarında.
 
 ### Bilerek sonraya bırakılanlar
 
-- **B1, B2 ve C1 dersleri ile beceri egzersizleri.** A1 ve A2 Almanca ile tam paritede
-  bitirildi; üst seviyeler sonraki bir çalışmada üretilecek. Patika o seviyelerde ders
+- **B1, B2 ve C1 konuşmaları ile beceri egzersizleri.** A1 ve A2 Almanca ile tam paritede
+  bitirildi; üst seviyeler sonraki bir çalışmada üretilecek. Patika o seviyelerde konuşma
   bulamadığı için üniteleri "Yakında" gösterir ve **Almanca içeriğe DÜŞMEZ**
   (`bundleFor`/`poolFor`: yalnız aynı hedef dili paylaşan kursa düşülür).
 - **`en → de` paritesi** (anadili İngilizce olan kullanıcı için Almanca). Kelime verisi
   hazır — satırlar üç dilli olduğundan yeni kelime toplamak gerekmiyor; eksik olan, anlatım
-  dili İngilizce olan ders metinleri.
+  dili İngilizce olan konuşma metinleri.
 - **Havuz Almanca listesinden türüyor.** İngilizce 6.975 madde, Almanca 8.267; aradaki 1.292'nin
   hepsi **aynı İngilizce başlığa düşen** Almanca kelimeler (`an`/`bei`/`zu` → *at*), yani veri
   eksik değil, tekilleştirilmiş. Asıl sınır şu: havuz Almanca A1–C1 listesinin İngilizce
   karşılıklarından oluşuyor, bağımsız bir İngilizce CEFR listesi değil. Bu yüzden İngilizceye
-  özgü kelimeler (renkler, gün adları, *fitting room*) derslerde geçiyor ama havuzda karşılığı
-  yok. Derslerde geçen 651 kelimenin 89'u bu durumdaydı; 68'i havuza eklendi (id aralığı
+  özgü kelimeler (renkler, gün adları, *fitting room*) konuşmalarda geçiyor ama havuzda karşılığı
+  yok. Konuşmalarda geçen 651 kelimenin 89'u bu durumdaydı; 68'i havuza eklendi (id aralığı
   209001+, `srcId` yok — Almanca bir satırdan türemiyorlar), 21'i eklenmedi çünkü havuzda
   zaten karşılığı vardı: yazım/lehçe çiftleri (*colour*↔*color*, *neighbour*↔*neighbor*,
   *rubbish*↔*trash*), çekimli biçimler (*played*, *watched*) ve öğretim çiftleri
@@ -499,12 +499,12 @@ Bu kurallar üretim sırasında tek tek hataya yol açtıkları için yazıldı:
 
 - **Seviye sınırı makineyle denetlenir.** A1'de geçmiş zaman, A2'de koşul cümlesi/edilgen
   çatı/dolaylı anlatım metinlere sızmamalı.
-- **`roleplay.partner` TÜRKÇE yazılır** — `src/lib/lessons/roleplay.ts` onu Türkçe bir cümlenin
+- **`chat.partner` TÜRKÇE yazılır** — `src/lib/conversations/chat.ts` onu Türkçe bir cümlenin
   içine koyuyor ("… rolündesin"), İngilizce yazılırsa bozuk okunur.
-- **`icon` yalnız `LESSON_ICONS` listesinden** (`src/lib/lessons/types.ts`). Mobil bu alanı
+- **`icon` yalnız `CONVERSATION_ICONS` listesinden** (`src/lib/conversations/types.ts`). Mobil bu alanı
   okumuyor ama web'in kapalı union'ı okuyor.
-- **Modül sınırı 10 derstir.** `moduleThemes` listesi GERÇEK içerik kadar uzun tutulur; olmayan
-  modüle başlık yazmak, ders eklendikçe sıranın kayıp başlığın içerikten ayrılmasına yol açar.
+- **Modül sınırı 10 konuşmadır.** `moduleThemes` listesi GERÇEK içerik kadar uzun tutulur; olmayan
+  modüle başlık yazmak, konuşma eklendikçe sıranın kayıp başlığın içerikten ayrılmasına yol açar.
 - **Yazma görevlerinde kısaltmalar.** Puanlayıcı (`skillQuiz.tsx`, `written`/`fold`) "I am" ile
   "I'm" arasında köprü kurmaz. Bir cümlede birden çok kısaltma varsa öğrenci karışık yazabilir,
   bu yüzden tüm ara biçimler `alternatives` içinde bulunmalıdır.
@@ -516,15 +516,15 @@ geçirilirse geçirilsin benzer XP kazandırır. Taban `src/lib/xp.ts` içinde t
 ve kelime oyunlarında ölçülen orana eşitlenmiştir (dakikada ~100 XP).
 
 Önceki dağılım öğrenmeyi çarpıtıyordu — ölçüm: kelime oyunları dakikada 99,5 XP, beş
-dakikalık bir okuma alıştırması ~9 XP/dk, dersler ise **sıfır**. Sekiz tamamlanmış ders ve
-sekiz rol yapma turu hesaba hiç yazılmamıştı; üstelik ders çalışılan gün seri bile
+dakikalık bir okuma alıştırması ~9 XP/dk, konuşmalar ise **sıfır**. Sekiz tamamlanmış konuşma ve
+sekiz sohbet turu hesaba hiç yazılmamıştı; üstelik konuşma çalışılan gün seri bile
 ilerlemiyordu. Sıralamada yükselmek isteyen öğrenci kelime kartı çevirmek zorundaydı.
 
 | Yol | XP |
 |---|---|
 | Kelime cevabı | kaliteye göre 3–12 (≈100 XP/dk) |
 | Beceri alıştırması | `minutes × 100 × (0,5 + 0,5 × doğruluk)` |
-| Ders | süreye göre; rol yapma ayrı ağırlık taşır (dersin asıl parçası o) |
+| Konuşma | süreye göre; sohbet ayrı ağırlık taşır (konuşmanın asıl parçası o) |
 | Görev ödülü | görev başına 120–200, üçü birden +300 |
 | Hayatta kalma rekoru | farkla orantılı, 25–400 arası |
 | Bahisli etap | hatasızsa etabın puanı kadar ek, iki yanlışta etabın puanı kadar eksi (tavan 250) |
@@ -555,7 +555,7 @@ Merdiven bilerek pentatonik: hangi basamaktan hangisine atlanırsa atlansın uyu
 çıkmaz. Kromatik bir dizide 7. doğruda kulağı tırmalayan bir aralık duyulur ve "kombo
 yükseliyor" hissi bozulurdu.
 
-Ses tek noktadan bağlı (`src/lib/fx.ts` içindeki `vibrate()`): on oyunun hepsi ve dersler
+Ses tek noktadan bağlı (`src/lib/fx.ts` içindeki `vibrate()`): on oyunun hepsi ve konuşmalar
 cevabı aldığı anda ya `vibrate()` ya da onu zaten çağıran `fx()` üzerinden geçiyor. On bir
 çağrı yerini dolaşmadan bütün uygulama seslendi.
 
@@ -563,7 +563,7 @@ cevabı aldığı anda ya `vibrate()` ya da onu zaten çağıran `fx()` üzerind
 
 Biriken tek şey XP'ydi ve XP tek bir sayı: 41.320'den 41.480'e çıkmak hiçbir şey anlatmıyor.
 Geriye dönüp bakılacak bir yüzey yoktu — oysa veritabanında yüz günlük seriler, binlerce doğru
-cevap ve bitmiş dersler duruyordu. Emek vardı, hatırası yoktu.
+cevap ve bitmiş konuşmalar duruyordu. Emek vardı, hatırası yoktu.
 
 Üç karar:
 
@@ -576,7 +576,7 @@ cevap ve bitmiş dersler duruyordu. Emek vardı, hatırası yoktu.
 
 Kutlama tek bir yerde duruyor (`app-shell.tsx` → `AchievementUnlock`) ve tetikleyicisi zaten var
 olan `lernomi:stats` olayı: XP değiştiğinde bir şey kazanılmış demektir. Rozetin kazanılabileceği
-beş ayrı yere (kelime turu, ders, beceri, görev, hayatta kalma) ayrı kutlama koymak, beş yerde
+beş ayrı yere (kelime turu, konuşma, beceri, görev, hayatta kalma) ayrı kutlama koymak, beş yerde
 unutulabilecek bir şey demekti.
 
 ### Bahis
@@ -596,7 +596,7 @@ istemciden geldiği için sunucuda tavanlı — `xpForWager` 250'yi geçen bir p
 
 ### Yürürken modu
 
-Eller serbest konuşma döngüsü derslerde zaten çalışıyordu: cevap sesli okunuyor, okuma biter
+Eller serbest konuşma döngüsü konuşmalarda zaten çalışıyordu: cevap sesli okunuyor, okuma biter
 bitmez mikrofon kendiliğinden açılıyor, söylenen doğrudan gidiyor. Aynı döngü kelime turuna
 taşınınca ortaya bambaşka bir kullanım anı çıktı — yürürken, bulaşık yıkarken, otobüste.
 
@@ -649,7 +649,7 @@ yanlış cevap sayılıyordu (`der Großvater` → "Wolfsfatter", `raten` → "P
 
 | Karar | Neden |
 |---|---|
-| Ekranda kip **dersle birebir aynı**: yalnız tarayıcı tanıyıcısı, mikrofon tutulmuyor, sessiz döngü çalmıyor, okuma oyunların boşluksuz yolundan | İlk düzeltme mikrofon akışını oturum başında alıp (parçaları kapalı) tutmayı sürdürüyordu; sahibin telefonunda altı dinlemenin altısı `browser:end` — tanıyıcı açılıyor, hata vermeden ve hiçbir şey duymadan kapanıyor. Android eşzamanlı kayıtta sesi üstteki uygulamanın kendi akışına veriyor, tanıyıcı servisi sessizlik alıyor; aynı akış Bluetooth'ta çıkışı telefon yoluna düşürüp okumayı da bozuyordu ("oyunlardaki gibi değil"). Boş dinleme "duyamadım"dır, kip değişmez; sessizlik tavanı 7 sn |
+| Ekranda kip **konuşmayla birebir aynı**: yalnız tarayıcı tanıyıcısı, mikrofon tutulmuyor, sessiz döngü çalmıyor, okuma oyunların boşluksuz yolundan | İlk düzeltme mikrofon akışını oturum başında alıp (parçaları kapalı) tutmayı sürdürüyordu; sahibin telefonunda altı dinlemenin altısı `browser:end` — tanıyıcı açılıyor, hata vermeden ve hiçbir şey duymadan kapanıyor. Android eşzamanlı kayıtta sesi üstteki uygulamanın kendi akışına veriyor, tanıyıcı servisi sessizlik alıyor; aynı akış Bluetooth'ta çıkışı telefon yoluna düşürüp okumayı da bozuyordu ("oyunlardaki gibi değil"). Boş dinleme "duyamadım"dır, kip değişmez; sessizlik tavanı 7 sn |
 | Cep yolu **"Cebe koy" ile** kuruluyor | Mikrofon kilitli ekranda istenemiyor (ölçülmüş), tutulunca da tanıyıcı ölüyor: tek izinli an, kullanıcının ekran açıkken dokunduğu an. Düğme mikrofonu alıp sessiz döngüyü kuruyor, "ekranı kapatabilirsin" diyor; ekran kapanınca kayıt + sunucu. Ekran açık kaldıkça cepte kipinde DİNLENMİYOR, yarım dakikada kapanmazsa ekran kipine dönülüyor. Ekran geri açılınca (süren kayıt bitince) kendiliğinden ekran kipi |
 | Ekran kipinde ekran kapanırsa tur **duruyor ve sebebini söylüyor** | O an yapılabilecek dürüst şey yok. Ekranı KAPATMADAN cebe koyan için ekran kipi zaten yeter: ekran kilidi ekranı açık tutuyor, tanıyıcı sürüyor |
 | Ekran kapalıyken **Deepgram önde** (`mode: walk`) | Klip geçerli webm olarak gidiyor ve Deepgram bunu ham çözüyor; başı-kesik seste UYDURMUYOR, boş dönüyor (Whisper'lar "der Großvater" → "Wolfsfatter" uyduruyor). Azure kısa-ses ucu webm ALMIYOR (yalnız WAV/OGG), o yüzden cep zincirinde değil — Azure yalnız TTS yedeği |
@@ -701,7 +701,7 @@ mekanik hata. Aynı anda çalan ikinci bir ses, kulakta kaliteyi düşüren bir
 
 | Parça | Neden |
 |---|---|
-| Konuşma yolu **iki öğeyi birden** susturuyor | Uygulama iki ses öğesi kullanıyor; parça zinciri (ders anlatımı, yürürken modu) ikisini sırayla çalıyor. Oyunların konuşma yolu ise yalnızca birincisini susturuyordu ve yarım kalmış bir anlatım ikincide çalmayı sürdürüyordu. Susturmanın diğer bütün yolları zaten ikisini de durduruyordu; eksik olan tek yol, oyunların TAMAMININ kullandığı yoldu |
+| Konuşma yolu **iki öğeyi birden** susturuyor | Uygulama iki ses öğesi kullanıyor; parça zinciri (konuşma anlatımı, yürürken modu) ikisini sırayla çalıyor. Oyunların konuşma yolu ise yalnızca birincisini susturuyordu ve yarım kalmış bir anlatım ikincide çalmayı sürdürüyordu. Susturmanın diğer bütün yolları zaten ikisini de durduruyordu; eksik olan tek yol, oyunların TAMAMININ kullandığı yoldu |
 | Dinleme alıştırması da **paylaşılanları** susturuyor | Kendi `Audio` nesnesini kuruyor ve yalnızca kendi sesini durduruyordu |
 | Sessiz döngü **modun dışına taşmıyor** | Yürürken modu arka planda kalmak için sessiz bir ses çalıyor ve o döngünün kendini yeniden başlatan bir gözcüsü var. "Geri dön" düğmesine basmadan çıkılınca (alt gezinmeden başka bir sekmeye geçmek) döngü çalmaya devam ediyordu: durdurulamayan, sürekli açık bir çıkış akışı. Ölçüldü — düzeltmeden önce mod dışında çalmayı sürdürüyor, sonra bırakılıyor |
 | Arka plan gözcüsü **çalan sesi kesmiyor** | `onplaying` kaçırılırsa hâlâ çalan bir parçanın üstüne sıradakini başlatabiliyordu. Ölçüt `paused` değil `currentTime`: `play()` çağrılır çağrılmaz `paused` false oluyor, ses hiç akmasa bile — ilk hâli ona bakıyordu ve ağ takıldığında gözcüyü tamamen devre dışı bırakıyordu |
@@ -776,7 +776,7 @@ Deepgram OpenAI biçimini konuşmuyor (parametreler adreste, ses ham gövdede, c
 yapıda), bu yüzden uçta iki lehçe var.
 
 Her AI çağrısı — **başarısız denemeler dâhil** — `ai_usage` tablosuna yazılıyor: iş türü
-(roleplay · coach · stt), sağlayıcı, model, HTTP durumu, gecikme, jeton sayısı, ses saniyesi ve
+(chat · coach · stt), sağlayıcı, model, HTTP durumu, gecikme, jeton sayısı, ses saniyesi ve
 sağlayıcının bildirdiği kalan hak. Hatalar özellikle önemli, çünkü zincir düşen sağlayıcıyı
 sessizce atlıyor: her istekte 429 alan bir birincil, yalnızca başarıya bakan bir raporda "hiç
 kullanılmıyor" gibi görünür — oysa her seferinde bir gidiş dönüş ve bir kullanıcı gecikmesi
@@ -796,7 +796,7 @@ Yani sınır istek tarafında ve **hesabın tamamı için günde ~90 yürüyüş
 sınıra oranıyla listeleniyor — limite ne kadar yaklaşıldığı 429 gelmeden görülsün diye.
 
 Sesli cevap **sohbet jetonlarını harcamıyor**: Groq'ta yazıya çevirme ses saniyesiyle
-ölçülüyor, ders içi rol yapmanın jeton bütçesine dokunmuyor. Yalnızca `MISTRAL_API_KEY`
+ölçülüyor, konuşma içi sohbetin jeton bütçesine dokunmuyor. Yalnızca `MISTRAL_API_KEY`
 varsa klipler oraya gider; `GROQ_API_KEY` eklemek hem ücretsiz hem de iki yükü birbirinden
 ayırır.
 
@@ -810,7 +810,7 @@ ayırır.
 ### Cevap karşılaştırması (konuşma + yazılı)
 
 Aynı katlama kodu beş ayrı yerde elle yeniden yazılmıştı ve hepsi ayrı ayrı eskimişti:
-`voiceMatch`, `skillQuiz.fold`, `rounds.norm`, `TranslateRound.sn`, `LessonScreen.sn`. Üçü sabit
+`voiceMatch`, `skillQuiz.fold`, `rounds.norm`, `TranslateRound.sn`, `ConversationScreen.sn`. Üçü sabit
 `de-DE` küçültme + koşulsuz umlaut katlaması yapıyordu — yani İngilizce kursta da Almanca kuralı
 işliyordu. Hiçbiri sayı katlamıyordu; sildikleri noktalama kümeleri birbirinden farklıydı.
 
@@ -846,24 +846,24 @@ taşınmamıştı.)
 
 Bilerek yapılmayanlar: serbest sayı dizisi toplanmıyor (`one two three` = `1 2 3`, 6 değil);
 İngilizce/Almanca kısaltma denklikleri (`I'm`↔`I am`, `zum`↔`zu dem`) katlanmıyor çünkü bazı
-dersler tam da o ayrımı öğretiyor — onlar içerikteki `accept` maddeleriyle çözülüyor.
+konuşmalar tam da o ayrımı öğretiyor — onlar içerikteki `accept` maddeleriyle çözülüyor.
 
 #### Ölçüm
 
 | Tarama | Almanca | İngilizce |
 |---|---|---|
 | havuz başlığı, tanıyıcı yazım çeşitlemesi | 16283 deneme · 0 ret | 7377 deneme · 0 ret |
-| ders `produce` hedefi, kullanıcı yazımı | 9465 deneme · 0 ret | 10832 deneme · 0 ret |
+| konuşma `produce` hedefi, kullanıcı yazımı | 9465 deneme · 0 ret | 10832 deneme · 0 ret |
 | beceri egzersizi cevabı | 467 deneme · 0 ret | 945 deneme · 0 ret |
 | **kasten bozulmuş cevap (yanlış kabul)** | 2084 deneme · 0 kabul | 896 deneme · 0 kabul |
-| ders içi anlam çakışması | 4992 adım · 0 | 1844 adım · 0 |
+| konuşma içi anlam çakışması | 4992 adım · 0 | 1844 adım · 0 |
 
 Son iki satır kritik: tolerans arttıkça yanlış kabul de artar. Bozma kümesi olumsuzluğu siliyor,
 sayıyı değiştiriyor, artikeli/özneyi takas ediyor ve sıra sayısını kardinale çeviriyor.
 
 ### Modül sınavı
 
-On ders bitince hiçbir şey olmuyordu: pankartta bir kupa beliriyor, yol devam ediyordu. Sınav
+On konuşma bitince hiçbir şey olmuyordu: pankartta bir kupa beliriyor, yol devam ediyordu. Sınav
 yola bir varış noktası koyuyor.
 
 Hayatta kalma turundan ayıran şey **kaybetme koşulu**. Orada amaç puanı büyütmek ve turun bir
@@ -872,7 +872,7 @@ yenilebilir bir şey. Süre cömert başlıyor (60 sn) ama doğru yalnızca +3 s
 −5 sn yakıyor: yani hız değil **isabet** kazandırıyor (hayatta kalma turunda tersi, çünkü orada
 amaç dayanmak).
 
-Sorular ders içeriğinden geliyor ama kelime tablosundan kuruluyor: ders `vocab`'ı yalnızca
+Sorular konuşma içeriğinden geliyor ama kelime tablosundan kuruluyor: konuşma `vocab`'ı yalnızca
 "das Frühstück / kahvaltı" ikilisi, oysa oyunların artikele, çoğula ve örnek cümleye ihtiyacı
 var. İkisi başlıktan eşleştiriliyor — eşleşme modül başına %64–98 (ortalama ~%86), yani her
 modülde 32–49 kelime kalıyor.
@@ -882,7 +882,7 @@ Kaybedince hiçbir şey silinmiyor: cevaplar zaten tekrar planına işledi, kayb
 ### Ölçüm
 
 Bugüne kadarki kararlar ölçümle alındı ama ölçülebilen yalnızca ardında iz bırakan şeylerdi:
-cevaplar, dersler, XP. Görülemeyen sorular en çok merak edilenlerdi — kaç kişi başlangıç kartını
+cevaplar, konuşmalar, XP. Görülemeyen sorular en çok merak edilenlerdi — kaç kişi başlangıç kartını
 görüp hiç başlamadan çıktı, hangi sekmeye hiç dokunulmadı.
 
 Okuma tarafı `npm run report:events` (varsayılan son 14 gün, `report:events 60` ile daha

@@ -5,7 +5,7 @@
 ile Apple'ın sorduğu şey (arka plan sesi gerekçesi, App Privacy, 4.8) örtüşmüyor.
 
 Uygulama hesapsız da kullanılabiliyor (2026-09-15, mağaza ön inceleme B24): giriş
-ekranındaki "Continue without an account" kelime turlarını, dersleri, becerileri, Patika'yı,
+ekranındaki "Continue without an account" kelime turlarını, konuşmaları, becerileri, Patika'yı,
 ekran açık yürüyüş modunu ve sınavları açıyor. Hatırlatmalar (cihaz içi) ve rızayla tek bir yapay zekâ
 değerlendirmesi misafire açık; sosyal özellikler, sonraki değerlendirmeler ve Premium satın alma hesap istiyor; o ekranlar bunu söyleyip "Create account"
 sunuyor ve misafir ilerlemesi hesaba taşınıyor. Arka plan sesini ve yapay zekâyı görebilmesi
@@ -57,18 +57,18 @@ Review accounts: the account above has active Premium, so walk mode with the scr
 Why buying needs an account (5.1.1(v)): Premium is an account-based, cross-platform subscription (iPhone, Android, web) restored on any device by signing in. Everything else works without an account (step 2).
 
 1. Onboarding: course German, level "From scratch", goal "Easy".
-2. No account needed: on the sign-in screen, "Continue without an account" opens vocabulary rounds, lessons, skills, the path, walk mode with the screen on and exams. Friends, leagues, further AI feedback and buying Premium need an account; those screens say so, and guest progress moves into the account. Guests delete their data under Profile › Delete guest data.
+2. No account needed: on the sign-in screen, "Continue without an account" opens vocabulary rounds, conversations, skills, the path, walk mode with the screen on and exams. Friends, leagues, further AI feedback and buying Premium need an account; those screens say so, and guest progress moves into the account. Guests delete their data under Profile › Delete guest data.
 3. To review account features: "Continue with email" and the account above. If a Cloudflare "Verify you are human" box appears on the email form, tick it (about 2 seconds); "Sign in with Apple" and "Continue without an account" do not show it.
 4. The notification screen has one "Continue" button that opens the system alert.
-5. Tabs: Learn (daily round, walk mode, mock exams), Path (lessons), Skills, Friends.
+5. Tabs: Learn (daily round, walk mode, mock exams), Path (conversations), Skills, Friends.
 
 6. AI consent (5.1.2(i)): before a feature first sends text to an AI provider (e.g. a Skills writing task or a Path conversation), a consent screen says what is sent, names each provider and links to the privacy policy. Nothing is sent before "Allow and continue". "Continue without AI" keeps the app usable. The choice is enforced on our server and can be changed in Profile › Settings › Privacy.
 
 7. Microphone and background audio (UIBackgroundModes: audio). Always started by the user:
-a) Speaking answers with the screen on (lessons, speaking practice, exam speaking, roleplay): the mic is open only while the learner answers; recognition runs on the device's speech recognizer.
+a) Speaking answers with the screen on (conversations, speaking practice, exam speaking, chat): the mic is open only while the learner answers; recognition runs on the device's speech recognizer.
 b) Walk mode, the ONLY use of background audio: Learn › Walk mode › Start. A screen explains the mic use; "Continue" opens the system mic and speech recognition alerts. A consent screen then names the speech recognition providers: "Allow and continue" lets short recordings go to our server for recognition while the screen is off (audio is not stored, only the recognised text); "Continue without sending audio" keeps walk mode screen-on only. During the session the lock screen shows a Now Playing entry ("Walk mode is on") and the mic indicator stays on; the lock screen pause control or the headphone button ends it, as does the in-app stop.
 
-8. User content (1.2): other users' names appear in Friends and leagues. Open a user › "Block / Report", or long-press a leaderboard row to report. Every AI reply in lessons, roleplay exams and assessments has a "Report" link. Reports are reviewed within 24 hours; the reporter is notified of the outcome.
+8. User content (1.2): other users' names appear in Friends and leagues. Open a user › "Block / Report", or long-press a leaderboard row to report. Every AI reply in conversations, chat exams and assessments has a "Report" link. Reports are reviewed within 24 hours; the reporter is notified of the outcome.
 
 9. Account deletion (5.1.1(v)): Profile › Settings › Account › Delete account (last row), also linked at the bottom of Profile. Please test with a separate account, not the review account.
 ```
@@ -185,7 +185,7 @@ güncellenmeden (mobil iş) iki taraf eşit değil. Hiçbiri izleme için değil
 
 - Onboarding, giriş ve ana ekranlarda "yakında" / yer tutucu yok.
 - Yürüyüş modu için arka plan sesi gerekçesi Notes'ta yazılı; video eklemek en hızlı çözen yol.
-- Yapay zekâ içeriği: rol yapma bir dil modeliyle üretiliyor, "gerçek kişi değil" bildirimi
+- Yapay zekâ içeriği: sohbet bir dil modeliyle üretiliyor, "gerçek kişi değil" bildirimi
   ekranda kalıcı, her yanıtın altında "Bildir" var.
 - Yaş derecelendirmesi Play'deki 18+ ile tutarlı dolduruldu.
 - `src/lib/legal/index.ts` › `LEGAL_PLATFORMS.ios` **açık** (1.1'den beri; güncel sürüm 1.6, 2026-09-24): gizlilik

@@ -6,14 +6,14 @@ Haftalar Pazartesi başlar (`date_trunc('week', …)`). Sayılar hem olay hem ki
 
 ## Veri kaynakları
 
-Tam envanter ve davranış olayları (ekran, süre, ders adımı, bildirim hunisi…): `docs/plan/80-tracking.md` (WP-80). Sözlük doğrulaması `npm run test:events`.
+Tam envanter ve davranış olayları (ekran, süre, konuşma adımı, bildirim hunisi…): `docs/plan/80-tracking.md` (WP-80). Sözlük doğrulaması `npm run test:events`.
 
 | Kaynak | Ne taşır | Notlar |
 |---|---|---|
 | `events` | ürün ve öğrenme olayları; `name` kapalı liste, `kind` kısa etiket, `value` sayı | serbest metin yok (bkz. `src/lib/events.ts`) |
 | `reviews` | her kelime cevabı: oyun, doğru/yanlış, gecikme, kalite, **hata tipi** (WP-02: `error_type`) | tur turu ölçüm buradan; `session_round` olayı bu yüzden yazılmıyor — aynı satırı iki tabloya yazmak sorguyu değil yalnız hacmi büyütürdü |
 | `daily_stats` | gün başına cevap, doğru, yeni kelime, XP, saniye | aktiflik ve tutunma |
-| `user_conversations` | ders başına en iyi doğru, toplam, rol yapma bitti mi, deneme | ders geçme, rol yapma |
+| `user_conversations` | konuşma başına en iyi doğru, toplam, sohbet bitti mi, deneme | konuşma geçme, sohbet |
 | `user_skills` | egzersiz başına en iyi doğru/toplam, son puan (WP-01) | beceri yetkinlik hammaddesi |
 | `assessments` | AI değerlendirme sonuçları (WP-03) | yazma/konuşma puan trendi |
 
@@ -22,7 +22,7 @@ Gizlilik: `events`'e hiçbir zaman öğrenci metni yazılmaz; yazma/konuşma iç
 ## KPI'lar
 
 ### 1. Haftalık aktif öğrenen (WAU)
-**Tanım.** O hafta en az bir cevap vermiş ya da ders/egzersiz bitirmiş kullanıcı sayısı.
+**Tanım.** O hafta en az bir cevap vermiş ya da konuşma/egzersiz bitirmiş kullanıcı sayısı.
 **Kaynak.** `daily_stats` (reviews > 0 veya xp > 0).
 ```sql
 select date_trunc('week', day)::date as week, count(distinct user_id) as wau
@@ -33,7 +33,7 @@ group by 1 order by 1;
 **Hedef.** Artan; kayıtlı kullanıcının ≥ %40'ı.
 
 ### 2. Üretim oranı
-**Tanım.** *(26 Ağu düzeltmesi: payda TUR sayar — tanıtım kartı hariç, eşleştirme turu beş cevap yazsa da 1 tur (0,2 ağırlık); eski tanım cevap sayıyordu ve pay yarı yarıya düşük görünüyordu.)* Öğrencinin kendisinin ürettiği cevaplar / bütün cevaplar. Üretim = kelime turunda üretim oyunları (`lib/ladder.ts` `PRODUCTION_GAMES`: yazma, harf bulmacası, cümle diz, çeviri, sesli) + üretim görevleri (`production_attempt`: serbest cümle, yazma, konuşma drill'i, rol yapma). Tanıma = çoktan seçmeli, eşleştirme, doğru-yanlış, artikel, çoğul, dinleme.
+**Tanım.** *(26 Ağu düzeltmesi: payda TUR sayar — tanıtım kartı hariç, eşleştirme turu beş cevap yazsa da 1 tur (0,2 ağırlık); eski tanım cevap sayıyordu ve pay yarı yarıya düşük görünüyordu.)* Öğrencinin kendisinin ürettiği cevaplar / bütün cevaplar. Üretim = kelime turunda üretim oyunları (`lib/ladder.ts` `PRODUCTION_GAMES`: yazma, harf bulmacası, cümle diz, çeviri, sesli) + üretim görevleri (`production_attempt`: serbest cümle, yazma, konuşma drill'i, sohbet). Tanıma = çoktan seçmeli, eşleştirme, doğru-yanlış, artikel, çoğul, dinleme.
 **Kaynak.** `events.production_attempt` + `reviews.game`.
 ```sql
 with p as (
@@ -72,25 +72,25 @@ from events where name = 'skill_finish' group by 1, 2 order by 1, 2;
 ```
 **Hedef.** Aktif seviyede her beceri için 8 haftada ≥ +10 puan.
 
-### 5. Ders geçme oranı
-**Tanım.** O hafta çalışılan derslerden geçilenlerin oranı. Geçme = rol yapma bitti **ve** doğru/toplam ≥ 0,7 (`src/lib/lessons/progress.ts`).
+### 5. Konuşma geçme oranı
+**Tanım.** O hafta çalışılan konuşmalardan geçilenlerin oranı. Geçme = sohbet bitti **ve** doğru/toplam ≥ 0,7 (`src/lib/conversations/progress.ts`).
 **Kaynak.** `user_conversations` (`last_at` haftası).
 ```sql
 select date_trunc('week', last_at)::date as week,
-       count(*) as lessons,
+       count(*) as conversations,
        count(*) filter (where chat_done and correct::float / nullif(total,0) >= 0.7) as passed,
        round(100.0 * count(*) filter (where chat_done and correct::float / nullif(total,0) >= 0.7) / count(*)) as pass_pct,
        count(distinct user_id) as people
 from user_conversations group by 1 order by 1;
 ```
-**Hedef.** %60–80 (çok yüksekse ders kolay, çok düşükse akış kırık).
+**Hedef.** %60–80 (çok yüksekse konuşma kolay, çok düşükse akış kırık).
 
-### 6. Rol yapma tamamlama oranı
-**Tanım.** Çalışılan derslerde rol yapmanın bitirilme oranı; AI ve senaryolu (WP-04) ayrımı `events.production_attempt kind='roleplay'` ile.
+### 6. Sohbet tamamlama oranı
+**Tanım.** Çalışılan konuşmalarda sohbetin bitirilme oranı; AI ve senaryolu (WP-04) ayrımı `events.production_attempt kind='chat'` ile.
 **Kaynak.** `user_conversations.chat_done`.
 ```sql
 select date_trunc('week', last_at)::date as week,
-       count(*) as lessons, count(*) filter (where chat_done) as chat_done,
+       count(*) as conversations, count(*) filter (where chat_done) as chat_done,
        round(100.0 * count(*) filter (where chat_done) / count(*)) as done_pct
 from user_conversations group by 1 order by 1;
 ```
@@ -126,7 +126,7 @@ from first f group by 1 order by 1;
 
 | Olay | `kind` | `value` | Kim yazar |
 |---|---|---|---|
-| `production_attempt` | translate / transform / free_sentence / writing_free / speaking_drill / roleplay | puan 0–100 | üretim görevleri (WP-10/11/12/21/30), rol yapma bitişi (WP-04) |
+| `production_attempt` | translate / transform / free_sentence / writing_free / speaking_drill / chat | puan 0–100 | üretim görevleri (WP-10/11/12/21/30), sohbet bitişi (WP-04) |
 | `exam_start` / `exam_finish` | `<tür>:<seviye>` (level, module, usage, placement) | finish: puan 0–100 | sınavlar (WP-40/41/42) |
 | `placement_finish` | bulunan seviye | puan 0–100 | WP-40 |
 | `error_recorded` | ErrorType | 1 | sunucu, `submitAnswers` (WP-02) |
