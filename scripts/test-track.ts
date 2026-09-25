@@ -6,6 +6,7 @@ import type { ImmersionTrack } from "../src/lib/immersion/types";
 import { buildTrackState, groupComplete } from "../src/lib/immersion/state";
 import { buildUnitBriefs } from "../src/lib/immersion/brief";
 import { deriveQuiz } from "../src/lib/immersion/quiz";
+import { unitQuestions } from "../src/lib/immersion/content";
 import { deriveGrammar, type GrammarText } from "../src/lib/immersion/grammar";
 
 /* Denetim betiği sunucu değil: metinler sabit, kural sayilari olculuyor. */
@@ -284,6 +285,18 @@ check("cevap dizilişi üniteye göre değişir", otherUnit.map((q) => q.answer)
 const eşBrief = { ...laterBrief, vocab: [{ de: "der Betreuer", tr: "bakıcı" }, { de: "der Pfleger", tr: "bakıcı" }, ...laterBrief.vocab] };
 const eşQuiz = deriveQuiz(eşBrief, qpool, 12, reviewPool, say);
 check("aynı quizde iki soru aynı doğru cevabı taşımaz", new Set(eşQuiz.map((q) => q.options[q.answer])).size === eşQuiz.length);
+
+/*
+  ELLE YAZILMIŞ ÜNİTE ANADİLE GÖRE. A1 Ünite 1'in soruları Türkçe yazılmıştı
+  ve her cevap A şıkkıydı; İngilizce anadilde soru kökü de açıklama da Türkçe
+  çıkıyordu.
+*/
+const elTr = unitQuestions("de-a1-u01", "tr")!;
+const elEn = unitQuestions("de-a1-u01", "en")!;
+const elHepsi = (u: typeof elTr) => [...(u.grammar ?? []), ...(u.quiz ?? []), ...(u.unitQuiz ?? [])];
+check("elle yazılmış ünite: İngilizce çözümde Türkçe kalmıyor", elHepsi(elEn).every((q) => !/ne demek|nasıl|hangisi|sorar|resmî|arkadaş|oturmak|nereden/i.test(`${q.text} ${q.options.join(" ")} ${q.explain ?? ""}`)));
+check("elle yazılmış ünite: cevaplar tek konumda toplanmıyor", new Set(elHepsi(elTr).map((q) => q.answer)).size > 1);
+check("elle yazılmış ünite: iki dilde aynı cevap anahtarı", elHepsi(elTr).map((q) => q.answer).join() === elHepsi(elEn).map((q) => q.answer).join());
 
 /*
   PRATİK ÖĞELER PENCEREYİ TIKAMAZ (regresyon).

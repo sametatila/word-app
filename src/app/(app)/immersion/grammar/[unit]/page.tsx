@@ -32,7 +32,7 @@ export default async function ImmersionGrammarPage({ params }: { params: Promise
   const lang = await getLang();
   const { unit } = await params;
 
-  const authored = unitQuestions(unit);
+  const authored = unitQuestions(unit, lang);
 
   // Ünite temasını ve konuşmalarını çöz (`de-a1-u02` → de / A1 / 2).
   const [left, num] = unit.split("-u");

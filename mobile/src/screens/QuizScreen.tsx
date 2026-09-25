@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { t, formatPercent } from "../lib/i18n";
+import { t, formatPercent, currentLang } from "../lib/i18n";
 import { View } from "react-native";
 import { KeyboardAwareScroll } from "../ui/KeyboardAwareScroll";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -10,6 +10,8 @@ import { Celebrate } from "../ui/Celebrate";
 import { XIcon, QuizIcon, CheckIcon } from "../ui/icons";
 import { buildUnitBrief, earlierPool, levelPool, deriveQuiz, deriveGrammar } from "../game/immersionQuiz";
 import { ensureConversations } from "../data/conversations";
+import { unitQuestions } from "../data/authoredUnits";
+import { currentCourseId } from "../lib/courses";
 import { QuestionList } from "../game/skillQuiz";
 import { markItemDone, recordPathItem } from "../game/pathProgress";
 import type { RootStackParams } from "../navigation/RootStack";
@@ -54,8 +56,14 @@ export function QuizScreen() {
       if (dead) return;
       setPackReady(true);
       setPackFailed(!ok);
+      /* Elle yazılmış ünite önce (web ile aynı öncelik), yoksa türet. */
+      const authored = unitQuestions(
+        `${currentCourseId()}-${String(params.level).toLowerCase()}-u${String(params.unitIndex).padStart(2, "0")}`,
+        currentLang(),
+      );
+      const own = isGrammar ? authored?.grammar : isUnitQuiz ? authored?.unitQuiz : authored?.quiz;
       setQuestions(
-        isGrammar
+        own ?? (isGrammar
           ? deriveGrammar(params.level, params.unitIndex)
           : /* Tekrar havuzu = BU üniteden ÖNCEKİ üniteler; soruların üçte biri
                oradan gelir (web `immersion/quiz/[unit]` ile aynı). */
@@ -64,7 +72,7 @@ export function QuizScreen() {
               levelPool(params.level),
               isUnitQuiz ? 12 : 8,
               earlierPool(params.level, params.unitIndex),
-            ),
+            )),
       );
     });
     return () => { dead = true; };

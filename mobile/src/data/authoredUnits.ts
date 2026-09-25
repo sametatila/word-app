@@ -1,26 +1,21 @@
-import type { Authored } from "./types";
-
 /**
- * A1 · Ünite 1 "Tanışma ve ben" — elle yazılmış gramer / quiz / bitiş sınavı.
+ * Elle yazılmış ünite soruları — web `src/lib/immersion/content` portu.
  *
- * Yalnızca bu ünitenin kelime + kalıplarıyla (bkz. a1-u01.ts başlığı). A1'in ilk
- * ünitesi: öğrenci neredeyse hiçbir şey bilmez, o yüzden her soru tek kavram
- * ölçer ve açıklaması sözlük gibi net. Sorular immersion quiz/gramer
- * oynatıcısında (QuestionList) render edilir.
+ * Bir ünite için elle yazılmış gramer / quiz / bitiş sınavı varsa ekran onu
+ * türetilen sorulara tercih ediyor (web `immersion/quiz/[unit]` ve
+ * `immersion/grammar/[unit]` ile aynı öncelik). Mobil bunu hiç okumuyordu:
+ * aynı ünitede web elle yazılmış soruları, telefon türetilmiş soruları
+ * soruyordu.
  *
- * grammar → /immersion/grammar/[unit] · quiz → /immersion/quiz/[unit] ·
- * unitQuiz → /immersion/quiz/[unit]?mode=unitQuiz (elle yazılan öncelikli,
- * yoksa deriveQuiz devreye girer).
- *
- * ANADİLE GÖRE (2026-09-25). Soru kökü ve açıklama Türkçe yazılmıştı; anadili
- * İngilizce olan öğrenci bu ünitede Türkçe soru görüyordu. Kurs dilindeki
- * metin (Almanca cümle, Almanca şık) düz dize, anadildeki metin `{ tr, en }`.
- * Doğru şık HER ZAMAN ilk yazılıyor; yeri `unitQuestions` tohumla karıştırıyor
- * (eskiden bütün cevaplar A şıkkıydı).
- *
- * MOBİLDE AYNI VERİ: `mobile/src/data/authoredUnits.ts`. "VERİ BAŞI" ile
- * "VERİ SONU" arası iki dosyada birebir aynı olmak zorunda (`check:parity`).
+ * "VERİ BAŞI" ile "VERİ SONU" arası web `de-a1-u01.ts` ile BİREBİR aynı
+ * (`check:parity`). Kurs dilindeki metin düz dize, anadildeki `{ tr, en }`;
+ * doğru şık ilk yazılır, yerini tohum belirler (web ile aynı tohum).
  */
+import type { SkillQuestion } from "./skills";
+import { seededShuffle } from "../lib/shuffle";
+
+type Localized = { tr: string; en: string };
+type Authored = { text: string | Localized; options: (string | Localized)[]; explain: Localized };
 
 /* VERİ BAŞI */
 /** Odak: fiil çekimi (ich/du/Sie), du↔Sie, W-soruları. */
@@ -193,3 +188,35 @@ export const unitQuiz: Authored[] = [
   },
 ];
 /* VERİ SONU */
+
+type UnitQuestions = { grammar?: SkillQuestion[]; quiz?: SkillQuestion[]; unitQuiz?: SkillQuestion[] };
+
+const REGISTRY: Record<string, { grammar?: Authored[]; quiz?: Authored[]; unitQuiz?: Authored[] }> = {
+  "de-a1-u01": { grammar, quiz, unitQuiz },
+};
+
+function resolve(list: Authored[] | undefined, seed: string, lang: string): SkillQuestion[] | undefined {
+  if (!list?.length) return undefined;
+  const pick = (x: string | Localized) => (typeof x === "string" ? x : lang === "en" ? x.en : x.tr);
+  return list.map((q, i) => {
+    const order = seededShuffle([...q.options.keys()], `${seed}|${i}`);
+    return {
+      kind: "mcq" as const,
+      text: pick(q.text),
+      options: order.map((k) => pick(q.options[k])),
+      answer: order.indexOf(0),
+      explain: pick(q.explain),
+    };
+  });
+}
+
+/** `unitId` web ile aynı biçimde: `${kurs}-${seviye}-uNN`. */
+export function unitQuestions(unitId: string, lang: string): UnitQuestions | undefined {
+  const u = REGISTRY[unitId];
+  if (!u) return undefined;
+  return {
+    grammar: resolve(u.grammar, `${unitId}|grammar`, lang),
+    quiz: resolve(u.quiz, `${unitId}|quiz`, lang),
+    unitQuiz: resolve(u.unitQuiz, `${unitId}|unitQuiz`, lang),
+  };
+}

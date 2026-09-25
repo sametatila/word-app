@@ -21714,6 +21714,24 @@ console.log("\n" + C.b + "400. YONLENDIRME GENEL ADRESE" + C.off);
   sameList("ic adrese yonlendirme (req.url tabanli)", bulunan.length ? bulunan : ["yok"], ["yok"], "bulunan", "beklenen");
 }
 
+/* ── ELLE YAZILMIŞ ÜNİTE SORULARI ────────────────────────────────────────────
+ * Mobil `data/authoredUnits` elle yazılmış ünite sorularını web
+ * `lib/immersion/content`ten kopyalıyor (mobil `src/`i içe alamıyor). Mobil
+ * bunları hiç okumuyordu: A1 Ünite 1'de web elle yazılmış, telefon türetilmiş
+ * soru soruyordu. Veri iki dosyada "VERİ BAŞI" ile "VERİ SONU" arasında
+ * BİREBİR aynı olmalı; biri düzeltilip öteki unutulursa iki platform aynı
+ * ünitede farklı soru ve cevap anahtarı verir. */
+console.log("\n" + C.b + "ELLE YAZILMIS UNITE SORULARI" + C.off);
+{
+  const veri = (f) => {
+    const m = read(f).match(/\/\* VERİ BAŞI \*\/[\s\S]*?\/\* VERİ SONU \*\//);
+    return m ? m[0] : "";
+  };
+  const w = veri("src/lib/immersion/content/de-a1-u01.ts");
+  const m = veri("mobile/src/data/authoredUnits.ts");
+  sameList("de-a1-u01 verisi", [m && m === w ? "ayni" : "farkli"], ["ayni"]);
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

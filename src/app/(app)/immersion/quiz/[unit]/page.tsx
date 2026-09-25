@@ -48,7 +48,7 @@ export default async function ImmersionQuizPage({
   if (!brief) notFound();
 
   // Elle yazılmış içerik öncelikli; yoksa ünitenin brief'inden türet.
-  const authored = unitQuestions(unit);
+  const authored = unitQuestions(unit, lang);
   let questions: SkillQuestion[];
   if (unitQuiz && authored?.unitQuiz?.length) {
     questions = authored.unitQuiz;
