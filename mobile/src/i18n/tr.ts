@@ -1381,6 +1381,7 @@ export const tr: Record<string, string> = {
   "settings.delete_account": "Hesabı sil",
   "settings.terms_of_use": "Kullanım şartları",
   "settings.impressum": "Künye (Impressum)",
+  "settings.oss_licenses": "Açık kaynak lisansları",
   "terms.updated_title": "Kullanım Şartları ve Gizlilik Politikası güncellendi",
   "terms.updated_body": "Yeni sürüm: {version}. Neyin değiştiğini metinlerde görebilirsin.",
   "terms.read_terms": "Kullanım Şartları",

@@ -27,12 +27,14 @@ const PATHS = {
    */
   impressum: "/impressum",
   deleteAccount: "/account/delete",
+  /** Açık kaynak lisansları (denetim İ7): lisans metinleri İngilizce, sayfa tek dilde. */
+  licenses: "/licenses",
 } as const;
 
 export type LegalDoc = keyof typeof PATHS;
 
-/** Hesap silme sayfası ve künye tek dilde; onlara dil eki eklenmiyor. */
-const UNTRANSLATED: ReadonlySet<LegalDoc> = new Set<LegalDoc>(["deleteAccount", "impressum"]);
+/** Hesap silme sayfası, künye ve lisans listesi tek dilde; onlara dil eki eklenmiyor. */
+const UNTRANSLATED: ReadonlySet<LegalDoc> = new Set<LegalDoc>(["deleteAccount", "impressum", "licenses"]);
 
 export function legalUrl(doc: LegalDoc): string {
   const lang = currentLang();

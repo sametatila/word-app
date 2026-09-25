@@ -1376,6 +1376,7 @@ export const de: Record<string, string> = {
   "settings.delete_account": "Konto löschen",
   "settings.terms_of_use": "Nutzungsbedingungen",
   "settings.impressum": "Impressum",
+  "settings.oss_licenses": "Open-Source-Lizenzen",
   "terms.updated_title": "Nutzungsbedingungen und Datenschutzerklärung wurden aktualisiert",
   "terms.updated_body": "Neue Version: {version}. Was sich geändert hat, steht in den Texten.",
   "terms.read_terms": "Nutzungsbedingungen",

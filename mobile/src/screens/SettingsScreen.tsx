@@ -681,6 +681,12 @@ export function SettingsScreen() {
               <Text variant="bodyStrong" style={{ flex: 1 }}>{t("settings.impressum")}</Text>
               <ChevronRightIcon color={colors.textFaint} size={20} />
             </PressableScale>
+            {/* Açık kaynak lisansları (denetim İ7): MIT/BSD/Apache bildirimi. Liste webde
+                (`/licenses`, `npm run licenses:gen`). */}
+            <PressableScale onPress={() => openLegal("licenses")} accessibilityRole="link" style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
+              <Text variant="bodyStrong" style={{ flex: 1 }}>{t("settings.oss_licenses")}</Text>
+              <ChevronRightIcon color={colors.textFaint} size={20} />
+            </PressableScale>
             {/*
               İLETİŞİM YÜZEYİ — Apple Guidelines 1.2. Kullanıcı içeriği taşıyan
               uygulamalarda filtreleme, bildirme ve engellemenin YANINDA
