@@ -6,6 +6,8 @@ import { LockIcon } from "@/components/icons";
 import { StateBody } from "@/components/flow";
 import { gatedSkillKind, isSkillLocked, skillLibraryAccess } from "@/lib/premium/skill-access";
 import { gateNote } from "@/lib/premium/gate-note";
+import { exerciseQuota } from "@/lib/premium/unlock-view";
+import { UnlockProgress } from "@/components/unlock-progress";
 import { getExercise, libraryMetas, listExerciseMeta } from "@/lib/skills";
 import { listSkillStatus } from "@/lib/skills/record";
 import { isSkillDone } from "@/lib/score-bands";
@@ -56,18 +58,25 @@ export default async function ImmersionSkillPage({
      planlara götürüyor ama adres paylaşılabiliyor. Oynatıcı açılsaydı öğrenci
      yazısını yazıp ancak gönderirken 403 görürdü (bkz. lib/premium/skill-access). */
   const lockedNote = await lockNote(source);
+  /* KALAN HAK VE NASIL AÇILIR (2026-09-25). Kapılı alıştırmada (Beceriler
+     yazma/B1+ monolog, Patika Yazma) kilit kartının ve oynatıcının üstünde
+     aynı gösterge: ✓ koşullar, seri çubuğu, ne zaman açılır, Premium'la hemen. */
+  const quota = await quotaFor(source);
   if (lockedNote) {
     const t = await getT();
     return (
-      <div className="mx-auto w-full max-w-md">
+      <div className="mx-auto w-full max-w-md space-y-3">
         <StateBody icon={<LockIcon size={40} className="muted mx-auto" />} title={t("gate.premium_only")} body={lockedNote}>
-          <Link href="/premium" prefetch={false} className="btn btn-primary w-full px-4 py-2.5 text-body">
-            {t("gate.see_plans")}
-          </Link>
+          {quota ? null : (
+            <Link href="/premium" prefetch={false} className="btn btn-primary w-full px-4 py-2.5 text-body">
+              {t("gate.see_plans")}
+            </Link>
+          )}
           <Link href={`/skills?level=${source.level}`} className="btn btn-ghost mt-2 w-full px-4 py-2.5 text-body">
             {t("item.back_to_skills")}
           </Link>
         </StateBody>
+        {quota ? <UnlockProgress copy={quota.copy} /> : null}
       </div>
     );
   }
@@ -102,7 +111,30 @@ export default async function ImmersionSkillPage({
     next: fromSkills && isLibraryExercise(exercise) ? await nextInLibrary(exercise.id, exercise.course ?? "de", exercise.level, exercise.skill) : null,
   };
 
-  return <PlayerFrame value={frame}>{pickPlayer(exercise, backHref)}</PlayerFrame>;
+  /* Patika Yazma adımı KİLİTLENMİYOR: hak yoksa yazı yine yazılıp bitirilebiliyor,
+     yalnız yapay zekâ puanı gelmiyor. O durumda (bu alıştırmaya hak düşmemişse)
+     oynatıcının üstünde nasıl açılacağı yazıyor. */
+  const banner = quota && !quota.owned && quota.remaining <= 0 ? <UnlockProgress copy={quota.copy} /> : null;
+  return (
+    <PlayerFrame value={frame}>
+      {banner ? <div className="mx-auto mb-3 w-full max-w-2xl">{banner}</div> : null}
+      {pickPlayer(exercise, backHref)}
+    </PlayerFrame>
+  );
+}
+
+/** Kapılı alıştırmanın kotası (misafir ve premium'da null). */
+async function quotaFor(exercise: NonNullable<Awaited<ReturnType<typeof getExercise>>>) {
+  const kind =
+    exercise.unit != null ? (exercise.skill === "writing" ? "writing" : null) : gatedSkillKind(exercise as typeof exercise & { monologue?: unknown });
+  if (!kind) return null;
+  try {
+    const who = await getUserInfo();
+    return who ? await exerciseQuota(who, { id: exercise.id, level: exercise.level, unit: exercise.unit ?? null }, kind) : null;
+  } catch (err) {
+    console.error("[skill] quotaFor", err);
+    return null;
+  }
 }
 
 /** Kilitliyse gösterilecek tek satır (kota durumu), değilse null. */

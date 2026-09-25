@@ -1,3 +1,4 @@
+import { skillQuota } from "@/lib/premium/unlock-view";
 import { titleMeta } from "@/lib/page-meta";
 import Link from "next/link";
 import { AppHeader } from "@/components/app-header";
@@ -94,9 +95,10 @@ export default async function SkillsPage({
     Okunamazsa kilit çizilmiyor; kapıyı zaten `/api/assess` tutuyor.
   */
   let access: SkillLibraryAccess | null = null;
+  let quota: Awaited<ReturnType<typeof skillQuota>> = null;
   if (!user.guest) {
     try {
-      access = await skillLibraryAccess(user.id, level);
+      [access, quota] = await Promise.all([skillLibraryAccess(user.id, level), skillQuota(user, level)]);
     } catch (err) {
       console.error("[skills] skillLibraryAccess", err);
     }
@@ -132,6 +134,9 @@ export default async function SkillsPage({
       skill,
       nextId: next?.id ?? null,
       note: kind && access ? gateNote(access[kind]) : null,
+      /* Kalan hak + nasıl açılır (seviye başına). Yalnız kapılı listede:
+         yazma ve B1+ konuşma. */
+      unlock: kind && quota ? quota[kind] : null,
       rows: list.map((m) => ({
         id: m.id,
         title: m.title,

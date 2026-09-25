@@ -8,6 +8,8 @@ import { SKILL_LABEL_KEYS } from "@/lib/skills/meta";
 import type { CefrLevel, SkillId } from "@/lib/skills/types";
 import { SKILL_ICON, SKILL_TINT } from "@/components/skills/theme";
 import { FlowNote } from "@/components/flow";
+import { UnlockProgress } from "@/components/unlock-progress";
+import type { SurfaceView } from "@/lib/premium/unlock-copy";
 import { CheckIcon, ChevronRightIcon, LockIcon } from "@/components/icons";
 
 export type BrowserRow = {
@@ -28,6 +30,11 @@ export type BrowserSection = {
   nextId: string | null;
   /** Premium kotası notu (`gateNote` çıktısı); yoksa çizilmez. */
   note: { key: string; n: number } | null;
+  /**
+   * Seviyenin kalan hakkı ve sonraki hakkın nasıl açılacağı (2026-09-25:
+   * Beceriler hakkı seviye başına). Varsa not yerine bu çiziliyor.
+   */
+  unlock?: SurfaceView | null;
 };
 
 const LEVELS: CefrLevel[] = ["A1", "A2", "B1", "B2", "C1"];
@@ -202,7 +209,15 @@ export function SkillBrowser({
               ) : null}
             </div>
             {/* Kuralı kilide çarpmadan ÖNCE söyle (deneme sınavlarındaki not). */}
-            {current.note ? (
+            {current.unlock ? (
+              <div className="mb-2">
+                <UnlockProgress
+                  copy={current.unlock.copy}
+                  compact={current.unlock.remaining > 0}
+                  celebrate={{ key: `skill:${current.skill}:${level}`, open: current.unlock.open, gain: current.unlock.copy?.when?.gain }}
+                />
+              </div>
+            ) : current.note ? (
               <div className="mb-2">
                 <FlowNote
                   icon={<LockIcon size={16} className="muted shrink-0" />}
