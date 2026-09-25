@@ -1,3 +1,8 @@
 [
- { "conversation": "de-c1-musik-idiome", "de": "jemandem einen Sturm entfachen", "en": "to stir up a storm" }
+ { "conversation": "de-b2-soll-angeblich", "de": "sich aufhalten", "en": "to stay somewhere" },
+ { "conversation": "de-c1-telefonton", "de": "durchstellen", "en": "to put through" },
+ { "conversation": "de-c1-musik-idiome", "de": "jemandem einen Sturm entfachen", "en": "to stir up a storm" },
+ { "conversation": "de-c1-praezision", "de": "anscheinend", "en": "apparently" },
+ { "conversation": "de-c1-praezision", "de": "effektiv", "en": "effective" },
+ { "conversation": "de-c1-praezision", "de": "effizient", "en": "efficient" }
 ]

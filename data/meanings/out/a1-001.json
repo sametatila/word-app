@@ -9,7 +9,7 @@
   },
   {
     "id": 416,
-    "tr": "o (kadın), onlar",
+    "tr": "o; onlar",
     "en": "she",
     "beispiel": "Das ist Anna, sie wohnt in Köln.",
     "beispielTr": "Bu Anna, o Köln'de oturuyor.",
@@ -41,7 +41,7 @@
   },
   {
     "id": 133,
-    "tr": "o (nötr, cansız)",
+    "tr": "o",
     "en": "it",
     "beispiel": "Das Buch liegt dort, es gehört mir.",
     "beispielTr": "Kitap orada duruyor, o benim.",
@@ -89,7 +89,7 @@
   },
   {
     "id": 129,
-    "tr": "o (erkek)",
+    "tr": "o",
     "en": "he",
     "beispiel": "Was macht er jetzt?",
     "beispielTr": "O şimdi ne yapıyor?",
@@ -209,8 +209,8 @@
   },
   {
     "id": 692,
-    "tr": "ona (eril)",
-    "en": "(to) him",
+    "tr": "ona",
+    "en": "him",
     "beispiel": "Gib ihm bitte das Buch.",
     "beispielTr": "Kitabı ona ver lütfen.",
     "beispielEn": "Please give him the book."
