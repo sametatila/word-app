@@ -1,5 +1,4 @@
 [
- { "id": 201082, "beispielDe": "Mein Sohn kann sehr gut malen." },
  { "id": 201087, "beispielDe": "Was ist deine Meinung dazu?" },
  { "id": 201098, "beispielDe": "Das neue Krankenhaus ist sehr modern." },
  { "id": 201101, "beispielDe": "Kannst du bitte den Müll rausbringen?" },
@@ -48,5 +47,6 @@
  { "id": 201217, "beispielDe": "Im Winter trage ich immer warme Stiefel." },
  { "id": 201229, "beispielDe": "Meine Tochter liest gern auf dem Tablet." },
  { "id": 201231, "beispielDe": "Der Lehrer schreibt das Wort an die Tafel." },
- { "id": 201233, "beispielDe": "Ich arbeite gern im Team." }
+ { "id": 201233, "beispielDe": "Ich arbeite gern im Team." },
+ { "id": 201238, "beispielDe": "Vorsicht, das Wasser ist hier sehr tief!" }
 ]

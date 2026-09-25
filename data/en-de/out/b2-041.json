@@ -1,6 +1,4 @@
 [
- { "id": 207517, "beispielDe": "Nachts laute Musik zu hören ist rücksichtslos." },
- { "id": 207523, "beispielDe": "Meine Schwester ist sehr geschickt mit den Händen." },
  { "id": 207524, "beispielDe": "Ich bin so ungeschickt, dass mir dauernd etwas hinfällt." },
  { "id": 207526, "beispielDe": "Mein Sohn ist musikalisch sehr begabt." },
  { "id": 207528, "beispielDe": "Meine Großmutter ist in letzter Zeit sehr vergesslich geworden." },
@@ -48,5 +46,7 @@
  { "id": 207693, "beispielDe": "Mein Vater ist auf Dienstreise." },
  { "id": 207699, "beispielDe": "In der Werkstatt trägt jeder eine Schutzbrille." },
  { "id": 207720, "beispielDe": "Sie studiert Informatik an einer Fachhochschule." },
- { "id": 207721, "beispielDe": "Unser neuer Azubi lernt sehr schnell." }
+ { "id": 207721, "beispielDe": "Unser neuer Azubi lernt sehr schnell." },
+ { "id": 207722, "beispielDe": "Die Firma hat sie zur Vertriebsleiterin befördert." },
+ { "id": 207724, "beispielDe": "Sie geht so schnell, dass ich nicht mithalten kann." }
 ]

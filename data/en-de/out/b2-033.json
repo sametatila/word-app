@@ -1,6 +1,4 @@
 [
- { "id": 205720, "beispielDe": "Wenige große Schlachtbetriebe bestimmen die Preise am Markt." },
- { "id": 205722, "beispielDe": "Die Überproduktion hat die Milchpreise wieder gedrückt." },
  { "id": 205727, "beispielDe": "Kleinbauern ernähren einen überraschend großen Teil der Welt." },
  { "id": 205729, "beispielDe": "Die Stadt will ihre Ackerflächen an Biobetriebe verpachten." },
  { "id": 205731, "beispielDe": "Der Hersteller muss die Herkunft der Rohstoffe deklarieren." },
@@ -48,5 +46,7 @@
  { "id": 205915, "beispielDe": "Die Preise auf dem Immobilienmarkt steigen weiter." },
  { "id": 205922, "beispielDe": "Die Konversion der alten Fabrik dauert länger als geplant." },
  { "id": 205929, "beispielDe": "Die Familie gründete die Firma 1990." },
- { "id": 205932, "beispielDe": "Der Büroturm dominiert die Silhouette der Stadt." }
+ { "id": 205932, "beispielDe": "Der Büroturm dominiert die Silhouette der Stadt." },
+ { "id": 205945, "beispielDe": "Sie studiert an einer renommierten Universität in London." },
+ { "id": 205947, "beispielDe": "Eine wuchtige Welle traf das kleine Fischerboot." }
 ]

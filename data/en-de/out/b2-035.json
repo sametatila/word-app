@@ -1,6 +1,4 @@
 [
- { "id": 206164, "beispielDe": "Die Kernaussage der Studie wurde in den Medien stark verzerrt." },
- { "id": 206172, "beispielDe": "Sie führte in ihrem Aufsatz drei neue Studien an." },
  { "id": 206179, "beispielDe": "Nach den Anmerkungen der Lehrerin überarbeitete sie ihren Aufsatz." },
  { "id": 206182, "beispielDe": "Die zweite Studie fand hingegen keine Wirkung." },
  { "id": 206183, "beispielDe": "Die Prämisse ist falsch; folglich bricht das ganze Argument zusammen." },
@@ -48,5 +46,7 @@
  { "id": 206395, "beispielDe": "Die Firma hat letzte Woche zwei Manager entlassen." },
  { "id": 206411, "beispielDe": "Der Straftäter zeigte vor Gericht keine Reue." },
  { "id": 206432, "beispielDe": "Die neue Kriminalstatistik zeigt weniger Einbrüche als letztes Jahr." },
- { "id": 206439, "beispielDe": "Rauchen ist der größte Risikofaktor für Lungenkrebs." }
+ { "id": 206439, "beispielDe": "Rauchen ist der größte Risikofaktor für Lungenkrebs." },
+ { "id": 206449, "beispielDe": "Sie sperrten den Dieb bis zum Morgen ein." },
+ { "id": 206450, "beispielDe": "Für seine Fehler büßt er jetzt." }
 ]

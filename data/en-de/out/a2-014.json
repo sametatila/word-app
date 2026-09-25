@@ -1,5 +1,4 @@
 [
- { "id": 202490, "beispielDe": "Sie klebte ein Pflaster auf ihren verletzten Finger." },
  { "id": 202491, "beispielDe": "Die Pflaumen im Garten sind endlich reif." },
  { "id": 202496, "beispielDe": "Am Sonntag machen wir ein Picknick im Park." },
  { "id": 202497, "beispielDe": "Der Arzt hat mir neue Pillen verschrieben." },
@@ -48,5 +47,6 @@
  { "id": 202662, "beispielDe": "Diese Impfung schützt Sie vor einer schweren Grippe." },
  { "id": 202663, "beispielDe": "Diese Creme bietet guten Schutz vor der Sonne." },
  { "id": 202669, "beispielDe": "Beim Sport schwitze ich immer sehr stark." },
- { "id": 202677, "beispielDe": "Wir gehen selten ins Kino." }
+ { "id": 202677, "beispielDe": "Wir gehen selten ins Kino." },
+ { "id": 202683, "beispielDe": "Welchen Sender siehst du am liebsten?" }
 ]

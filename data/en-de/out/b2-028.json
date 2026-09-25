@@ -1,5 +1,4 @@
 [
- { "id": 205269, "beispielDe": "Am Grenzübergang stauten sich die Autos mehrere Kilometer." },
  { "id": 205272, "beispielDe": "Unsere Reiseroute umfasst drei Städte in einer Woche." },
  { "id": 205273, "beispielDe": "Auf dem Rückweg machten wir einen Abstecher zum See." },
  { "id": 205274, "beispielDe": "An klaren Tagen sieht man vom Gipfel bis zum Meer." },
@@ -48,5 +47,6 @@
  { "id": 205341, "beispielDe": "Ohne Schutzausrüstung darf niemand die Halle betreten." },
  { "id": 205343, "beispielDe": "Die Kinder kamen mit einer leichten Vergiftung ins Krankenhaus." },
  { "id": 205344, "beispielDe": "Die Seuche breitete sich zuerst unter den Tieren der Region aus." },
- { "id": 205345, "beispielDe": "Die Regierung rief für die Küstenregion den Ausnahmezustand aus." }
+ { "id": 205345, "beispielDe": "Die Regierung rief für die Küstenregion den Ausnahmezustand aus." },
+ { "id": 205346, "beispielDe": "Die Polizei stellte eine Absperrung quer über die Straße." }
 ]

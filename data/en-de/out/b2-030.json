@@ -1,6 +1,4 @@
 [
- { "id": 205447, "beispielDe": "Die Angreifer verschafften sich mit gestohlenen Passwörtern Zugang." },
- { "id": 205448, "beispielDe": "Gegen den Anbieter wird wegen möglichen Datenmissbrauchs ermittelt." },
  { "id": 205449, "beispielDe": "Regelmäßige Sicherungen schützen am besten vor plötzlichem Datenverlust." },
  { "id": 205450, "beispielDe": "Der Vertrag garantiert uns fast hundert Prozent Verfügbarkeit." },
  { "id": 205451, "beispielDe": "Für diese Auswertung brauchen wir viel mehr Rechenleistung als bisher." },
@@ -48,5 +46,7 @@
  { "id": 205525, "beispielDe": "Der Unfall im Chemiewerk war eine schwere Umweltkatastrophe." },
  { "id": 205526, "beispielDe": "Anwohner beschweren sich über die Lärmbelästigung durch den Flughafen." },
  { "id": 205527, "beispielDe": "Die Ozonschicht erholt sich langsam von früheren Schäden." },
- { "id": 205528, "beispielDe": "Die alte Deponie vor der Stadt wird endlich geschlossen." }
+ { "id": 205528, "beispielDe": "Die alte Deponie vor der Stadt wird endlich geschlossen." },
+ { "id": 205529, "beispielDe": "Fachleute kritisieren die Umweltpolitik der Regierung scharf." },
+ { "id": 205531, "beispielDe": "Der Onlinehandel hat das Konsumverhalten völlig verändert." }
 ]

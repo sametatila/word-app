@@ -256,14 +256,6 @@
     "beispielEn": "Your key is with the lost items."
   },
   {
-    "id": 994,
-    "tr": "doğum",
-    "en": "birth",
-    "beispiel": "Bitte tragen Sie hier Ihren Geburtsort ein.",
-    "beispielTr": "Lütfen doğum yerinizi buraya yazın.",
-    "beispielEn": "Please enter your place of birth here."
-  },
-  {
     "id": 995,
     "tr": "sayın",
     "en": "dear",

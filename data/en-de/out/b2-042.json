@@ -1,6 +1,4 @@
 [
- { "id": 207722, "beispielDe": "Die Firma hat sie zur Vertriebsleiterin befördert." },
- { "id": 207724, "beispielDe": "Sie geht so schnell, dass ich nicht mithalten kann." },
  { "id": 207727, "beispielDe": "Die Lehrerin bewertet unsere Aufsätze nächste Woche." },
  { "id": 207734, "beispielDe": "Meine Schwester hilft mir in Englisch nach." },
  { "id": 207735, "beispielDe": "Mein Sohn macht seinem großen Bruder alles nach." },
@@ -48,5 +46,7 @@
  { "id": 207906, "beispielDe": "Unser junger Hund ist noch sehr verspielt." },
  { "id": 207908, "beispielDe": "Im Winter spielen wir in der Turnhalle Basketball." },
  { "id": 207913, "beispielDe": "Sein Schlagzeug steht im Keller." },
- { "id": 207923, "beispielDe": "Er trägt das rote Trikot mit der Nummer neun." }
+ { "id": 207923, "beispielDe": "Er trägt das rote Trikot mit der Nummer neun." },
+ { "id": 207946, "beispielDe": "Meine Schwester hat oft Migräne und muss sich hinlegen." },
+ { "id": 207947, "beispielDe": "Mein Sohn hat im Winter oft Nasenbluten." }
 ]

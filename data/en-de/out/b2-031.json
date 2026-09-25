@@ -1,6 +1,4 @@
 [
- { "id": 205529, "beispielDe": "Fachleute kritisieren die Umweltpolitik der Regierung scharf." },
- { "id": 205531, "beispielDe": "Der Onlinehandel hat das Konsumverhalten völlig verändert." },
  { "id": 205533, "beispielDe": "Mikroplastik findet sich inzwischen sogar in abgelegenen Seen." },
  { "id": 205534, "beispielDe": "Seit letztem Jahr beziehen wir nur noch Ökostrom." },
  { "id": 205535, "beispielDe": "Die Wärmepumpe ersetzt in vielen Neubauten die alte Gasheizung." },
@@ -48,5 +46,7 @@
  { "id": 205610, "beispielDe": "Ohne genug Eigenkapital gibt die Bank keinen Kredit." },
  { "id": 205614, "beispielDe": "Die Firma hat ihre Büros nach Berlin verlagert." },
  { "id": 205615, "beispielDe": "Trotz der Krise floriert der Handel mit Gebrauchtwagen." },
- { "id": 205616, "beispielDe": "Die Firma will ihre alten Fabriken veräußern." }
+ { "id": 205616, "beispielDe": "Die Firma will ihre alten Fabriken veräußern." },
+ { "id": 205618, "beispielDe": "Das Land ist in einer schwierigen wirtschaftlichen Lage." },
+ { "id": 205619, "beispielDe": "In der Sicherheitstechnik ist die Firma in Europa marktführend." }
 ]

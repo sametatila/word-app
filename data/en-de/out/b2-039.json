@@ -1,6 +1,4 @@
 [
- { "id": 207043, "beispielDe": "Mehrere Religionsgemeinschaften teilen sich dasselbe Gebäude." },
- { "id": 207045, "beispielDe": "Die Schaffung neuer Arbeitsplätze ist das Hauptziel der Regierung." },
  { "id": 207054, "beispielDe": "In diesem alten Tempel beten sie ihre Götter an." },
  { "id": 207055, "beispielDe": "Der Priester segnete die Kinder nach dem Gottesdienst." },
  { "id": 207057, "beispielDe": "Am Sonntag predigte der Pfarrer vor voller Kirche." },
@@ -48,5 +46,7 @@
  { "id": 207313, "beispielDe": "Die Versicherung hat fünftausend Pfund ausgezahlt." },
  { "id": 207314, "beispielDe": "Staatliche Eingriffe können den Wettbewerb erheblich verzerren." },
  { "id": 207327, "beispielDe": "Er wurde festgenommen, weil er dem Beamten Schmiergeld anbot." },
- { "id": 207339, "beispielDe": "Er hatte kein Verantwortungsbewusstsein für die Folgen seiner Entscheidungen." }
+ { "id": 207339, "beispielDe": "Er hatte kein Verantwortungsbewusstsein für die Folgen seiner Entscheidungen." },
+ { "id": 207355, "beispielDe": "Meine Eltern billigen meinen Plan nicht, allein zu reisen." },
+ { "id": 207360, "beispielDe": "Sitz aufrecht und halte den Rücken gerade." }
 ]

@@ -216,20 +216,6 @@
    "currentBeispielTr": "Kızım gazeteci olmak istiyor."
   },
   {
-   "id": 1926,
-   "de": "Früchte",
-   "typ": "Sonstiges",
-   "niveau": "B1",
-   "formen": "A: Obst",
-   "currentTr": "meyve (İsviçre)",
-   "currentBeispiel": "Früchte kaufe ich am liebsten auf dem Markt.",
-   "currentBeispielTr": "Meyveyi en çok pazardan almayı severim.",
-   "overlapping": [
-    "das Obst (A1)",
-    "die Frucht (B1)"
-   ]
-  },
-  {
    "id": 2406,
    "de": "national",
    "typ": "Sonstiges",

@@ -455,20 +455,6 @@
    "currentBeispielTr": "Bugün halletmem gereken birkaç iş daha var."
   },
   {
-   "id": 3734,
-   "de": "sich gewöhnen an",
-   "typ": "Verb",
-   "niveau": "B2",
-   "formen": "gewöhnt sich, hat sich gewöhnt",
-   "currentTr": "alışmak",
-   "currentBeispiel": "Ich habe mich schnell an den neuen Alltag gewöhnt.",
-   "currentBeispielTr": "Yeni günlük düzene çabuk alıştım.",
-   "overlapping": [
-    "gewöhnen (B1)",
-    "sich einleben (C1)"
-   ]
-  },
-  {
    "id": 3737,
    "de": "der Zeitmangel",
    "typ": "Nomen",

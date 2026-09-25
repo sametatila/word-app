@@ -1,6 +1,4 @@
 [
- { "id": 205618, "beispielDe": "Das Land ist in einer schwierigen wirtschaftlichen Lage." },
- { "id": 205619, "beispielDe": "In der Sicherheitstechnik ist die Firma in Europa marktführend." },
  { "id": 205620, "beispielDe": "Die Aufträge aus dem Ausland sind seit Monaten rückläufig." },
  { "id": 205621, "beispielDe": "Diese Woche ist er geschäftlich in Mailand." },
  { "id": 205622, "beispielDe": "Das Navigationssystem ist bei diesem Modell serienmäßig eingebaut." },
@@ -48,5 +46,7 @@
  { "id": 205692, "beispielDe": "Das weltweite Ernährungssystem reagiert empfindlich auf politische Krisen." },
  { "id": 205694, "beispielDe": "Bauern erhalten jedes Jahr Direktzahlungen vom Staat." },
  { "id": 205712, "beispielDe": "Der Ökolandbau wächst langsamer, als die Politik versprochen hatte." },
- { "id": 205719, "beispielDe": "Lange Tiertransporte quer durch Europa sind schwer zu kontrollieren." }
+ { "id": 205719, "beispielDe": "Lange Tiertransporte quer durch Europa sind schwer zu kontrollieren." },
+ { "id": 205720, "beispielDe": "Wenige große Schlachtbetriebe bestimmen die Preise am Markt." },
+ { "id": 205722, "beispielDe": "Die Überproduktion hat die Milchpreise wieder gedrückt." }
 ]

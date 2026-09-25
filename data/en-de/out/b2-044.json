@@ -1,6 +1,4 @@
 [
- { "id": 208162, "beispielDe": "Am Samstag staube ich die Regale ab." },
- { "id": 208163, "beispielDe": "Ich schrubbe den Badezimmerboden mit einer Bürste." },
  { "id": 208173, "beispielDe": "Ich reibe etwas Käse über die Nudeln." },
  { "id": 208174, "beispielDe": "Den Teig musst du zehn Minuten kneten." },
  { "id": 208175, "beispielDe": "Jeden Morgen presse ich eine frische Orange." },
@@ -48,5 +46,7 @@
  { "id": 208335, "beispielDe": "Warum grinst du die ganze Zeit so?" },
  { "id": 208336, "beispielDe": "Er brüllte um Hilfe, aber niemand kam." },
  { "id": 208337, "beispielDe": "Mein Kollege meckert bei der Arbeit über alles." },
- { "id": 208338, "beispielDe": "Er jammert den ganzen Tag über die Hitze." }
+ { "id": 208338, "beispielDe": "Er jammert den ganzen Tag über die Hitze." },
+ { "id": 208341, "beispielDe": "Ich schwöre, dass ich nichts davon wusste." },
+ { "id": 208342, "beispielDe": "Der wütende Mann beschimpfte den Busfahrer." }
 ]

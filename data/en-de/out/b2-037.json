@@ -1,6 +1,4 @@
 [
- { "id": 206683, "beispielDe": "Viele Patienten unterziehen sich der Operation ohne Komplikationen." },
- { "id": 206684, "beispielDe": "Der Arzt sagte, die Krankheit sei unheilbar." },
  { "id": 206685, "beispielDe": "Invasive Arten bedrohen die heimische Tierwelt." },
  { "id": 206686, "beispielDe": "Bei so wenigen Fällen ist das Ergebnis kaum aussagekräftig." },
  { "id": 206696, "beispielDe": "Der Sicherheitsrat stimmte gegen eine militärische Intervention." },
@@ -48,5 +46,7 @@
  { "id": 206802, "beispielDe": "Im Schutzgebiet dürfen keine neuen Häuser gebaut werden." },
  { "id": 206816, "beispielDe": "Jedes Produkt hat einen Lebenszyklus von der Herstellung bis zur Entsorgung." },
  { "id": 206822, "beispielDe": "Wir müssen bei unserer ganzen Marketingstrategie umdenken." },
- { "id": 206823, "beispielDe": "Die Regierung muss umsteuern, bevor es zu spät ist." }
+ { "id": 206823, "beispielDe": "Die Regierung muss umsteuern, bevor es zu spät ist." },
+ { "id": 206836, "beispielDe": "Die Hirnforschung stellt unsere Willensfreiheit ernsthaft infrage." },
+ { "id": 206839, "beispielDe": "Der Richter zeigte gegenüber dem jungen Täter Barmherzigkeit." }
 ]

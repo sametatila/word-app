@@ -1,5 +1,4 @@
 [
- { "id": 201238, "beispielDe": "Vorsicht, das Wasser ist hier sehr tief!" },
  { "id": 201240, "beispielDe": "Der Titel des Buches gefällt mir sehr." },
  { "id": 201241, "beispielDe": "Ich koche die Kartoffeln in einem großen Topf." },
  { "id": 201244, "beispielDe": "Wir haben eine Bustour durch die Stadt gemacht." },
@@ -48,5 +47,6 @@
  { "id": 201374, "beispielDe": "Diese Bedingungen kann ich leider nicht akzeptieren." },
  { "id": 201376, "beispielDe": "Vor dem Autofahren darfst du keinen Alkohol trinken." },
  { "id": 201379, "beispielDe": "Wir haben nur über allgemeine Probleme gesprochen." },
- { "id": 201382, "beispielDe": "Das englische Alphabet hat sechsundzwanzig Buchstaben." }
+ { "id": 201382, "beispielDe": "Das englische Alphabet hat sechsundzwanzig Buchstaben." },
+ { "id": 201389, "beispielDe": "Ich hoffe, ihr amüsiert euch beim Konzert." }
 ]

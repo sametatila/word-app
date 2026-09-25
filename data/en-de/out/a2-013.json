@@ -1,5 +1,4 @@
 [
- { "id": 202278, "beispielDe": "Unsere neue Lehrerin ist sehr freundlich." },
  { "id": 202284, "beispielDe": "Wer leitet eigentlich dieses Projekt?" },
  { "id": 202285, "beispielDe": "Unser neuer Leiter kommt aus München." },
  { "id": 202287, "beispielDe": "Er stellte die Leiter an die Wand." },
@@ -48,5 +47,6 @@
  { "id": 202474, "beispielDe": "Im Urlaub hatten wir Pech mit dem Wetter." },
  { "id": 202483, "beispielDe": "Das ist nur meine persönliche Meinung." },
  { "id": 202487, "beispielDe": "Ich brate die Eier in der Pfanne." },
- { "id": 202488, "beispielDe": "Bringen Sie uns bitte Salz und Pfeffer." }
+ { "id": 202488, "beispielDe": "Bringen Sie uns bitte Salz und Pfeffer." },
+ { "id": 202490, "beispielDe": "Sie klebte ein Pflaster auf ihren verletzten Finger." }
 ]

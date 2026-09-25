@@ -1,5 +1,4 @@
 [
- { "id": 203163, "beispielDe": "In Zukunft werde ich vorsichtiger sein." },
  { "id": 203166, "beispielDe": "Zunächst möchte ich alle herzlich begrüßen." },
  { "id": 203180, "beispielDe": "Das Haus war in ziemlich schlechtem Zustand." },
  { "id": 203188, "beispielDe": "Zu welchem Zweck brauchen Sie dieses Formular?" },
@@ -48,5 +47,6 @@
  { "id": 207507, "beispielDe": "Als Kind war ich sehr schüchtern." },
  { "id": 207525, "beispielDe": "Meine Schwester ist schlau und lernt Sprachen schnell." },
  { "id": 207544, "beispielDe": "Ich war überrascht, dich hier zu sehen." },
- { "id": 207546, "beispielDe": "Die Eltern sind besorgt um ihren kranken Sohn." }
+ { "id": 207546, "beispielDe": "Die Eltern sind besorgt um ihren kranken Sohn." },
+ { "id": 207547, "beispielDe": "Ich war enttäuscht, dass du nicht gekommen bist." }
 ]

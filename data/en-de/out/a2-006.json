@@ -1,5 +1,4 @@
 [
- { "id": 200946, "beispielDe": "Das ist mir egal." },
  { "id": 200948, "beispielDe": "In diesem Text sind einige Fehler." },
  { "id": 200949, "beispielDe": "Kommst du mit mir ins Einkaufszentrum?" },
  { "id": 200957, "beispielDe": "Ich wohne im Erdgeschoss." },
@@ -48,5 +47,6 @@
  { "id": 201074, "beispielDe": "Wir liefern den Schrank zu Ihnen nach Hause." },
  { "id": 201075, "beispielDe": "Ich schicke dir den Link per E-Mail." },
  { "id": 201078, "beispielDe": "Glaub ihm nicht, er lügt!" },
- { "id": 201079, "beispielDe": "Kaffee ist schlecht für meinen Magen." }
+ { "id": 201079, "beispielDe": "Kaffee ist schlecht für meinen Magen." },
+ { "id": 201082, "beispielDe": "Mein Sohn kann sehr gut malen." }
 ]

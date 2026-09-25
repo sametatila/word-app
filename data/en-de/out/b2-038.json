@@ -1,6 +1,4 @@
 [
- { "id": 206836, "beispielDe": "Die Hirnforschung stellt unsere Willensfreiheit ernsthaft infrage." },
- { "id": 206839, "beispielDe": "Der Richter zeigte gegenüber dem jungen Täter Barmherzigkeit." },
  { "id": 206840, "beispielDe": "Sein Egoismus zerstörte die Freundschaft langsam." },
  { "id": 206842, "beispielDe": "Sie blieb rein aus Pflichtgefühl bei ihrer kranken Mutter." },
  { "id": 206843, "beispielDe": "Monatelang kämpfte sie mit einem inneren Zwiespalt." },
@@ -48,5 +46,7 @@
  { "id": 207032, "beispielDe": "Die Predigt am Sonntag dauerte fast eine Stunde." },
  { "id": 207036, "beispielDe": "Jedes Frühjahr gehen Tausende auf Wallfahrt." },
  { "id": 207037, "beispielDe": "Während der Fastenzeit isst er kein Fleisch." },
- { "id": 207041, "beispielDe": "Ihre Angst vor schwarzen Katzen ist reiner Aberglaube." }
+ { "id": 207041, "beispielDe": "Ihre Angst vor schwarzen Katzen ist reiner Aberglaube." },
+ { "id": 207043, "beispielDe": "Mehrere Religionsgemeinschaften teilen sich dasselbe Gebäude." },
+ { "id": 207045, "beispielDe": "Die Schaffung neuer Arbeitsplätze ist das Hauptziel der Regierung." }
 ]

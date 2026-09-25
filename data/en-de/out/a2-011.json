@@ -1,5 +1,4 @@
 [
- { "id": 201853, "beispielDe": "Versuch, den Ball mit beiden Händen zu fangen." },
  { "id": 201855, "beispielDe": "Ich brauche farbiges Papier, kein weißes." },
  { "id": 201863, "beispielDe": "Der erste Mai ist ein gesetzlicher Feiertag." },
  { "id": 201866, "beispielDe": "Hast du die Fernbedienung für den Fernseher gesehen?" },
@@ -48,5 +47,6 @@
  { "id": 202024, "beispielDe": "Aus welchem Grund haben Sie gekündigt?" },
  { "id": 202027, "beispielDe": "Wer war die Frau, die du gerade gegrüßt hast?" },
  { "id": 202040, "beispielDe": "Meine Familie gibt mir viel Halt." },
- { "id": 202046, "beispielDe": "Ich hasse es, morgens früh aufzustehen." }
+ { "id": 202046, "beispielDe": "Ich hasse es, morgens früh aufzustehen." },
+ { "id": 202049, "beispielDe": "Treffen wir uns am Hauptbahnhof?" }
 ]

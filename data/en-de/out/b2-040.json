@@ -1,6 +1,4 @@
 [
- { "id": 207355, "beispielDe": "Meine Eltern billigen meinen Plan nicht, allein zu reisen." },
- { "id": 207360, "beispielDe": "Sitz aufrecht und halte den Rücken gerade." },
  { "id": 207363, "beispielDe": "Die Firma steht vor schwierigen ethischen Fragen." },
  { "id": 207365, "beispielDe": "Sie ist Fremden gegenüber viel zu gutgläubig." },
  { "id": 207366, "beispielDe": "Die Genauigkeit der Messung hängt vom Gerät ab." },
@@ -48,5 +46,7 @@
  { "id": 207510, "beispielDe": "Er ist ein anständiger Mensch und hilft immer." },
  { "id": 207512, "beispielDe": "Mein Kollege ist neidisch auf mein neues Auto." },
  { "id": 207514, "beispielDe": "Manche Hunde werden aggressiv, wenn sie Angst haben." },
- { "id": 207516, "beispielDe": "Die Schüler sind respektvoll gegenüber ihren Lehrern." }
+ { "id": 207516, "beispielDe": "Die Schüler sind respektvoll gegenüber ihren Lehrern." },
+ { "id": 207517, "beispielDe": "Nachts laute Musik zu hören ist rücksichtslos." },
+ { "id": 207523, "beispielDe": "Meine Schwester ist sehr geschickt mit den Händen." }
 ]

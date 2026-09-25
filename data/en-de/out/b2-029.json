@@ -1,5 +1,4 @@
 [
- { "id": 205346, "beispielDe": "Die Polizei stellte eine Absperrung quer über die Straße." },
  { "id": 205347, "beispielDe": "Der Krisenstab tagte bis spät in die Nacht im Rathaus." },
  { "id": 205348, "beispielDe": "In der Turnhalle wurde eine Notunterkunft eingerichtet." },
  { "id": 205349, "beispielDe": "Die Aufnahmen der Kamera gelten als wichtigstes Beweismittel." },
@@ -26,7 +25,6 @@
  { "id": 205387, "beispielDe": "Sie hörte ihm aus reiner Höflichkeit zu." },
  { "id": 205389, "beispielDe": "Seine Mimik verriet mehr als seine Worte." },
  { "id": 205391, "beispielDe": "Diese Geste lässt mehr als eine Deutung zu." },
- { "id": 205393, "beispielDe": "Zwischenfragen sind während des Vortrags willkommen." },
  { "id": 205396, "beispielDe": "Er benutzt gern Fremdwörter, um gebildet zu wirken." },
  { "id": 205397, "beispielDe": "Der Arzt behielt ihn über Nacht zur Beobachtung." },
  { "id": 205398, "beispielDe": "Die Lehrerin schrieb ein paar kritische Anmerkungen an den Rand." },
@@ -48,5 +46,7 @@
  { "id": 205442, "beispielDe": "Nach dem Systemausfall konnten wir stundenlang keine Bestellungen bearbeiten." },
  { "id": 205443, "beispielDe": "Für diesen Raum brauchen Sie eine besondere Berechtigung." },
  { "id": 205445, "beispielDe": "Zum Glück wurde die Sicherheitslücke vor dem Angriff entdeckt." },
- { "id": 205446, "beispielDe": "Über einen Anhang kam Schadsoftware ins ganze Firmennetz." }
+ { "id": 205446, "beispielDe": "Über einen Anhang kam Schadsoftware ins ganze Firmennetz." },
+ { "id": 205447, "beispielDe": "Die Angreifer verschafften sich mit gestohlenen Passwörtern Zugang." },
+ { "id": 205448, "beispielDe": "Gegen den Anbieter wird wegen möglichen Datenmissbrauchs ermittelt." }
 ]

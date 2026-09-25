@@ -351,16 +351,6 @@
    "currentBeispielTr": "Şemsiyemi buldunuz mu? - Şuradaki kayıp eşya bölümüne bakabilirsiniz."
   },
   {
-   "id": 994,
-   "de": "Geburts-",
-   "typ": "Sonstiges",
-   "niveau": "A2",
-   "formen": "ort, tag), (-e, -e, -e)",
-   "currentTr": "doğum- (Geburtstag, Geburtsort, Geburtsjahr)",
-   "currentBeispiel": "Das Geburtsjahr Ihres Sohnes, bitte? Bitte tragen Sie Ihren Geburtsort noch ein. Herzlichen Glückwunsch zum Geburtstag!",
-   "currentBeispielTr": "Oğlunuzun doğum yılı lütfen? Doğum yerinizi de yazın lütfen. Doğum günün kutlu olsun!"
-  },
-  {
    "id": 995,
    "de": "geehrte",
    "typ": "Sonstiges",

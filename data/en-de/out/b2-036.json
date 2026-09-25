@@ -1,6 +1,4 @@
 [
- { "id": 206449, "beispielDe": "Sie sperrten den Dieb bis zum Morgen ein." },
- { "id": 206450, "beispielDe": "Für seine Fehler büßt er jetzt." },
  { "id": 206452, "beispielDe": "Er strauchelte über einen Stein und wäre fast gefallen." },
  { "id": 206453, "beispielDe": "Seine Brille rutschte ihm ständig von der Nase ab." },
  { "id": 206454, "beispielDe": "Das Hotel kann zweihundert Gäste unterbringen." },
@@ -48,5 +46,7 @@
  { "id": 206661, "beispielDe": "Die Kontrollgruppe bekam nur ein Placebo." },
  { "id": 206665, "beispielDe": "Die Firma investiert viel Geld in die Prävention." },
  { "id": 206673, "beispielDe": "Er hat sich vor Jahren für eine Organspende entschieden." },
- { "id": 206682, "beispielDe": "Vor der Operation muss eine zweite Meinung eingeholt werden." }
+ { "id": 206682, "beispielDe": "Vor der Operation muss eine zweite Meinung eingeholt werden." },
+ { "id": 206683, "beispielDe": "Viele Patienten unterziehen sich der Operation ohne Komplikationen." },
+ { "id": 206684, "beispielDe": "Der Arzt sagte, die Krankheit sei unheilbar." }
 ]

@@ -1,6 +1,4 @@
 [
- { "id": 205945, "beispielDe": "Sie studiert an einer renommierten Universität in London." },
- { "id": 205947, "beispielDe": "Eine wuchtige Welle traf das kleine Fischerboot." },
  { "id": 205960, "beispielDe": "Ein Studienabbruch ist im Ingenieurwesen häufig." },
  { "id": 205964, "beispielDe": "Unser Team überstand die Qualifikationsphase nur knapp." },
  { "id": 205969, "beispielDe": "Die externe Evaluierung des Instituts fiel überraschend kritisch aus." },
@@ -48,5 +46,7 @@
  { "id": 206143, "beispielDe": "Der Tenor der Debatte war überraschend versöhnlich." },
  { "id": 206148, "beispielDe": "Die Analogie zwischen Gehirn und Computer hat ihre Grenzen." },
  { "id": 206153, "beispielDe": "Die Anleger reagierten auf die Zahlen mit offener Skepsis." },
- { "id": 206163, "beispielDe": "Die Quintessenz seiner Rede passt in einen einzigen Satz." }
+ { "id": 206163, "beispielDe": "Die Quintessenz seiner Rede passt in einen einzigen Satz." },
+ { "id": 206164, "beispielDe": "Die Kernaussage der Studie wurde in den Medien stark verzerrt." },
+ { "id": 206172, "beispielDe": "Sie führte in ihrem Aufsatz drei neue Studien an." }
 ]

@@ -6,7 +6,6 @@
  { "id": 200662, "beispielDe": "Das Fahrrad gehört meinem Bruder." },
  { "id": 200663, "beispielDe": "Sie hat die Einladung gern angenommen." },
  { "id": 200665, "beispielDe": "Wir hatten ein langes Gespräch." },
- { "id": 200666, "beispielDe": "Mein Großvater ist letztes Jahr gestorben." },
  { "id": 200668, "beispielDe": "Wie hoch ist das Gewicht dieses Pakets?" },
  { "id": 200672, "beispielDe": "Die beiden Koffer haben genau die gleiche Größe." },
  { "id": 200682, "beispielDe": "Meine Mutter ist Hausfrau." },
@@ -48,5 +47,6 @@
  { "id": 200799, "beispielDe": "Könnten wir bitte die Speisekarte haben?" },
  { "id": 200801, "beispielDe": "Er hat sich auf eine Stelle in unserer Firma beworben." },
  { "id": 200804, "beispielDe": "Wo fährt die Straßenbahn ab?" },
- { "id": 200812, "beispielDe": "Ich habe morgen einen Termin beim Zahnarzt." }
+ { "id": 200812, "beispielDe": "Ich habe morgen einen Termin beim Zahnarzt." },
+ { "id": 200814, "beispielDe": "Bitte lesen Sie diesen Text." }
 ]

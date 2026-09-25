@@ -1,6 +1,4 @@
 [
- { "id": 207946, "beispielDe": "Meine Schwester hat oft Migräne und muss sich hinlegen." },
- { "id": 207947, "beispielDe": "Mein Sohn hat im Winter oft Nasenbluten." },
  { "id": 207950, "beispielDe": "Wir haben morgen einen Termin beim Kinderarzt." },
  { "id": 207953, "beispielDe": "Der Chirurg hat das Knie meines Vaters operiert." },
  { "id": 207959, "beispielDe": "Nach der Operation geht sie an Krücken." },
@@ -48,5 +46,7 @@
  { "id": 208151, "beispielDe": "Der Hund ist nachts sehr wachsam." },
  { "id": 208152, "beispielDe": "Nicht jeder Pilz im Wald ist essbar." },
  { "id": 208158, "beispielDe": "Es war für alle eine unangenehme Überraschung." },
- { "id": 208160, "beispielDe": "Nur Anwohner sind hier zum Parken berechtigt." }
+ { "id": 208160, "beispielDe": "Nur Anwohner sind hier zum Parken berechtigt." },
+ { "id": 208162, "beispielDe": "Am Samstag staube ich die Regale ab." },
+ { "id": 208163, "beispielDe": "Ich schrubbe den Badezimmerboden mit einer Bürste." }
 ]

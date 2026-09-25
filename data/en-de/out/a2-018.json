@@ -1,5 +1,4 @@
 [
- { "id": 207547, "beispielDe": "Ich war enttäuscht, dass du nicht gekommen bist." },
  { "id": 207548, "beispielDe": "Die Kinder sind vor der Reise sehr aufgeregt." },
  { "id": 207555, "beispielDe": "Auf langen Autofahrten sind die Kinder schnell gelangweilt." },
  { "id": 207557, "beispielDe": "In seiner alten Stelle war er sehr unglücklich." },
@@ -48,5 +47,6 @@
  { "id": 207762, "beispielDe": "Das Schuhgeschäft hat heute bis acht geöffnet." },
  { "id": 207764, "beispielDe": "Mein Einkaufswagen ist schon voll." },
  { "id": 207765, "beispielDe": "Ohne Einkaufsliste vergesse ich immer etwas." },
- { "id": 207766, "beispielDe": "Leg die Äpfel bitte in den Korb." }
+ { "id": 207766, "beispielDe": "Leg die Äpfel bitte in den Korb." },
+ { "id": 207769, "beispielDe": "Wir mussten eine Stunde lang anstehen." }
 ]

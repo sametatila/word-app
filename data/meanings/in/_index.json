@@ -127,7 +127,7 @@
  {
   "packet": "a2-009",
   "niveau": "A2",
-  "items": 49
+  "items": 48
  },
  {
   "packet": "a2-010",
@@ -332,7 +332,7 @@
  {
   "packet": "b1-021",
   "niveau": "B1",
-  "items": 50
+  "items": 49
  },
  {
   "packet": "b1-022",
@@ -442,7 +442,7 @@
  {
   "packet": "b2-007",
   "niveau": "B2",
-  "items": 50
+  "items": 49
  },
  {
   "packet": "b2-008",
