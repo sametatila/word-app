@@ -125,3 +125,19 @@ Satır biçimi: `NNN | slug | Titel (DE) | Türkçe | ikon | focusId | çekirdek
 098 | heimweh | Zwischen zwei Welten | Memleket özlemi | plane | Nebensatz-als | Als ich ankam… / Ich vermisse…, obwohl… / Beides gehört zu mir
 099 | lebenstraum | Mein großer Traum | Büyük hayal | mountain | Infinitiv-zu | Ich träume davon, … zu … / Eines Tages werde ich… / Schritt für Schritt
 100 | b1-rueckblick | Die Zwischenbilanz | B1 kapanışı | star | Konjunktiv-II | Ohne Deutsch hätte ich… / Ich bin stolz darauf, dass… / Auf zu B2!
+
+## Modül 11–18 — Genişleme (2026-09-05)
+
+B1 on sekiz modül. 101–180 bu dosyada satır satır yok; temalar havuzda
+kapsanmayan B1 maddelerinin kümelenmesinden çıktı ve gerekçesiyle
+`docs/plan/b1-yeniden-kurgu.md` §5'te. Uygulamadaki adlar
+(`src/lib/conversations/modules.ts`) şunlar:
+
+- Modül 11 — Mutfak ve sofra
+- Modül 12 — Alışveriş, para ve banka
+- Modül 13 — Yolculuk ve ulaşım
+- Modül 14 — Beden, bakım ve yaşlanma
+- Modül 15 — Evde teknik ve onarım
+- Modül 16 — Meslekler ve iş yaşamı
+- Modül 17 — Toplum, hukuk ve göç
+- Modül 18 — Kültür, spor ve doğa

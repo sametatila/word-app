@@ -116,7 +116,7 @@ Satır biçimi: `NNN | slug | Titel (DE) | Türkçe | ikon | focusId | çekirdek
 089 | perfektionismus | Gut ist gut genug | Mükemmeliyetçilik | star | Als-ob | Als ob alles perfekt sein müsste / Der Anspruch, den… / loslassen lernen
 090 | veraenderung-b2 | Raus aus der Komfortzone | Değişim cesareti | mountain | Nebensatz-sofern | Sofern man bereit ist… / Wachstum beginnt, wo… / den ersten Schritt wagen
 
-## Modül 10 — Resmî yazışma ve B2 kapanışı
+## Modül 10 — Resmî yazışma ve kapanış (B2 kapanışı)
 091 | formeller-brief | Sehr geehrte Damen und Herren | Resmî mektup | mail | Nominalisierung | Bezug nehmend auf / Mit freundlichen Grüßen / Anbei erhalten Sie…
 092 | anfrage | Die höfliche Anfrage | Bilgi talebi | mail | Konjunktiv-II | Wir wären Ihnen dankbar / Könnten Sie uns mitteilen…? / zeitnah
 093 | angebot-vergleichen | Drei Angebote | Teklif kıyaslama | chart | Je-desto | Je detaillierter, desto… / preislich attraktiv / entscheiden uns für…

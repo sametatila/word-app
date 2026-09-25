@@ -113,7 +113,7 @@ Satır biçimi: `NNN | slug | Titel (DE) | Türkçe | ikon | focusId | çekirdek
 089 | online-termin | Der Online-Termin | Görüntülü görüşme | tech | Nebensatz-wenn | Wenn die Verbindung schlecht ist… / Man hört Sie nicht / Kamera an, bitte
 090 | digital-detox | Ein Tag ohne Handy | Dijital mola | nature | Perfekt | Ich habe es ausprobiert / Zuerst war es komisch / Danach habe ich mich … gefühlt
 
-## Modül 10 — Şehir ve resmi işler (gelecek planları, A2 kapanışı)
+## Modül 10 — Şehir ve resmî işler (gelecek planları, A2 kapanışı)
 091 | buergeramt | Auf dem Bürgeramt | Nüfus dairesi | office | W-Fragen | Ich möchte mich anmelden / Welche Unterlagen…? / Ziehen Sie eine Nummer
 092 | formulare | Das Formular ausfüllen | Form dili | office | Imperativ-Sie | Füllen Sie … aus / in Druckbuchstaben / Was bedeutet…?
 093 | verspaetet-amt | Der Termin ist geplatzt | Randevu sorunu | office | Perfekt | Ich habe gewartet / Der Termin ist ausgefallen / Wann bekomme ich einen neuen?

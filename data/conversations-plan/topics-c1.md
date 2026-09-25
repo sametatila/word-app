@@ -105,7 +105,7 @@ Satır biçimi: `NNN | slug | Titel (DE) | Türkçe | ikon | focusId | çekirdek
 079 | meinungsfreiheit | Die Grenzen des Sagbaren | İfade özgürlüğü | law | Verweiswörter | diesbezüglich / davon zu unterscheiden ist… / die rote Linie
 080 | zukunftsvision | Deutschland 2050 | Gelecek vizyonu | idea | Konjunktiv-II-irreal | Stellte man sich vor… / Es könnte eine Welt geben, in der… / rückblickend aus der Zukunft
 
-## Modül 9 — Mizah, ironi ve kültürel incelik
+## Modül 9 — Mizah, ironi ve incelik (kültürel incelik)
 081 | ironie | Na, das lief ja super | İroniyi duymak | feelings | Ironie-Untertreibung | Na toll / Läuft bei dir / Auch schön
 082 | sarkasmus-grenze | Witz oder Spitze? | Sınırında mizah | question | Ironie-Untertreibung | nur ein Scherz? / auf jemandes Kosten / gut ankommen
 083 | wortspiele | Der feine Wortwitz | Kelime oyunları | idea | Wortschatz-Nuancen | doppelter Boden / Mehr Meer geht nicht / kalauern

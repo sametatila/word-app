@@ -93,7 +93,7 @@ ettiriliyor» diye reddediyor ve haklı — öğrenciden duymadığı bir kelime
 tekrar hedefine taşındı; yazarken baştan tekrar hedefine koymak daha
 ucuz.
 
-**B1 modül 3 — Bağlaç ustalığı (2026-09-11).** On konuşma: sebep ve sonuç,
+**B1 modül 3 — Cümleleri bağlamak (2026-09-11; 2026-09-25'e kadar adı «Bağlaç ustalığı»).** On konuşma: sebep ve sonuç,
 zaman cümleleri, amaç anlatmak, koşul incelikleri, tarif ederek anlatmak,
 hikâyenin sırası, söylenenleri bağlamak, haber dili, kural ve öğüt,
 deneyimi bağlamak.
@@ -108,7 +108,7 @@ Fall, dass hepsi ayrı), «bağlaç nereye koyulursa koyulsun anlaşılır» de
 yanlış (weil ve deshalb kelime sırasını değiştiriyor). İkisi de Almancaya
 karşı yeniden yazıldı — bu satırlar çevrilmez, yeniden ölçülür.
 
-**B1 modül 4 — İlgi cümleleri (2026-09-11).** On konuşma: birini tarif etmek,
+**B1 modül 4 — Tarif etmek ve karar vermek (2026-09-11; 2026-09-25'e kadar adı «İlgi cümleleri»).** On konuşma: birini tarif etmek,
 yeri tarif etmek, tavsiye etmek, seçim yapmak, nasıl çalışır, şikâyet ve iade,
 randevu ve iptal, yönerge vermek, karışıklık, karara varmak.
 
@@ -440,7 +440,7 @@ can-do'suna düşüyor.
 içeriği kaç ayrı biçimde söyleyebildiğin ve hangisini neden seçtiğin. On
 ifade de bu yüzden «kurabilirim» değil çoğu yerde «seçebilirim» diyor.
 
-**C1 modül 1 — Kayıt ve ton (2026-09-11). TAM.** On konuşma: aynı şey üç
+**C1 modül 1 — Üslup ve kayıt (2026-09-11). TAM.** On konuşma: aynı şey üç
 kayıtta, söylenmeyeni bırakmak, ağırlığı sona atmak, resmî dilek,
 imtiyazın tonu, yerleşik eşdizim, hükmü aktarma fiili taşır, kip nüansı,
 eksiltili övgü, metni bir arada tutmak.
@@ -460,7 +460,7 @@ gönderirlerse okur cümleyi değil paragrafı kaybediyor.
 
 C1.GR.11-20'nin onu da modül içinde bir kez kullanılıyor (ölçüldü, 10/10).
 
-**C1 modül 2 — Tartışma ve karşı çıkış (2026-09-11).** On konuşma: kırmadan
+**C1 modül 2 — Tartışma ve karşı çıkma (2026-09-11).** On konuşma: kırmadan
 karşı çıkmak, rakibin sözünü aktarmak, iğneleyici cevap, kısa cevap,
 tartışmanın kalıpları, vurguyu değiştirmek, önerge dili, iddian ne kadar
 güçlü, aynı itiraz üç kayıtta, uzun bir savı bağlamak.
@@ -503,7 +503,7 @@ sözcük okunur ve aleyhine yorumlanır.
 
 C1.GR.11-20'nin onu da modül içinde bir kez kullanılıyor (ölçüldü, 10/10).
 
-**C1 modül 4 — Dil, anlatım ve yorum (2026-09-11).** On konuşma: günlük dil
+**C1 modül 4 — Edebiyat ve yorum (2026-09-11).** On konuşma: günlük dil
 ve yazı dili, konuşmayı yönetmek, anlatıcının yeri, metni aktarmak, klasik
 metnin dili, şiirin eksilttiği, yorum farkı, metin ne kadar söylüyor,
 alaycı eleştiri, uzun bir denemeyi bağlamak.
@@ -528,7 +528,7 @@ ADRES veriyor ve okur ipini kaybederse çöken şey sav değil metin oluyor.
 
 C1.GR.11-20'nin onu da modül içinde bir kez kullanılıyor (ölçüldü, 10/10).
 
-**C1 modül 5 — Kültür ve ötekilik (2026-09-11).** On konuşma: kültürün üç adı,
+**C1 modül 5 — Göç, aidiyet ve kültür (2026-09-11).** On konuşma: kültürün üç adı,
 dışarıda kalanı öne almak, eşitlik istemek, uyum tartışması, göç sözlüğü,
 geçmişi kim aktarıyor, yakınlık ne kadar yakın, ne sıcak bir karşılama,
 anlam kayarken, aidiyetin söylemediği.
@@ -553,7 +553,7 @@ düşen öğeyi yalnız içeriden biri tamamlayabiliyor.
 
 C1.GR.11-20'nin onu da modül içinde bir kez kullanılıyor (ölçüldü, 10/10).
 
-**C1 modül 6 — Emek ve güç (2026-09-11).** On konuşma: tek kararın üç adı,
+**C1 modül 6 — Çalışma dünyası ve toplu sözleşme (2026-09-11).** On konuşma: tek kararın üç adı,
 emri kim veriyor, sözleşme masasında, esnekliğin pazarlığı, nitelik
 sözlüğü, toplantıyı aktarmak, ne kadar kendi isteğiyle, mükemmeliyet
 girişimi, uzun bir raporu bağlamak, işin söylemediği.
@@ -577,7 +577,7 @@ yükseldi, tahsis edilmiş para hiç yükselmedi».
 
 C1.GR.11-20'nin onu da modül içinde bir kez kullanılıyor (ölçüldü, 10/10).
 
-**C1 modül 7 — Toprak ve tarım (2026-09-11).** On konuşma: aynı tarlanın üç
+**C1 modül 7 — Toprak, gıda ve tarım (2026-09-11).** On konuşma: aynı tarlanın üç
 adı, toprağı kim alıyor, gıda egemenliği istemek, verim mi çeşitlilik mi,
 fiyat sözlüğü, etiketi aktarmak, toprak ne kadar dayanır, türüne uygun
 tabii, iklim raporunu bağlamak, tohumun söylemediği.
@@ -602,7 +602,7 @@ anda orada bir hak el değiştirir.
 
 C1.GR.11-20'nin onu da modül içinde bir kez kullanılıyor (ölçüldü, 10/10).
 
-**C1 modül 8 — Çevre ve iklim (2026-09-11).** On konuşma: tek hedefin üç adı,
+**C1 modül 8 — İklim ve kent (2026-09-11).** On konuşma: tek hedefin üç adı,
 kirleten kim, ihtiyat ilkesi, büyüme tartışması, atık sözlüğü, ölçümü
 aktarmak, model ne kadar kesin, canlandırıldı tabii, kent raporunu
 bağlamak, planın söylemediği.
@@ -626,7 +626,7 @@ verilmemiş oluyor.
 
 C1.GR.11-20'nin onu da modül içinde bir kez kullanılıyor (ölçüldü, 10/10).
 
-**C1 modül 9 — Ekonomi ve strateji (2026-09-11).** On konuşma: aynı rakamın
+**C1 modül 9 — Ekonomi ve finans (2026-09-11).** On konuşma: aynı rakamın
 üç adı, parayı kim kaybediyor, şeffaflık istemek, faiz tartışması,
 maliyet sözlüğü, bilançoyu aktarmak, tahmin ne kadar kesin, yeşil
 aklama, strateji raporunu bağlamak, teklifin söylemediği.
@@ -650,7 +650,7 @@ okumak adlandırılmayanı aramak oluyor.
 
 C1.GR.11-20'nin onu da modül içinde bir kez kullanılıyor (ölçüldü, 10/10).
 
-**C1 modül 10 — Kapanış: seçimin kendisi (2026-09-11).** On konuşma: aynı
+**C1 modül 10 — Kanıt, yargı ve seçim (2026-09-11).** On konuşma: aynı
 savın üç kaydı, savın sırası, özgürlüğü istemek, görecelik tartışması,
 kanıt sözlüğü, savı aktarmak, kendini ne kadar tanıyorsun, ölçülü tabii,
 uzun bir savı bağlamak, seçimin kendisi.
