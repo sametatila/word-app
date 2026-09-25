@@ -59,6 +59,7 @@
   "src/lib/i18n/dict.ts": 1,
   "src/lib/immersion/brief.ts": 1,
   "src/lib/immersion/progress.ts": 3,
+  "src/lib/immersion/quiz.ts": 18,
   "src/lib/plan.ts": 4,
   "src/lib/premium/entitlement.ts": 2,
   "src/lib/premium/gates.ts": 5,
