@@ -64,7 +64,7 @@ düşürüyordu).
   yapmadı ama birbirlerinin dil bilgisi odağını, monolog sorusunu ve sahnesini
   tekrarladı (Almanca B1↔B2↔C1'de üç konu üç seviyede birden; İngilizce B2↔C1'de
   dört odak). Yazımdan sonra bütün seviyelerin 20'şer odağı, monolog sorusu ve
-  sahnesi tek tabloda karşılaştırıldı; 49 egzersiz yeniden yazıldı. Kural: konu,
+  sahnesi tek tabloda karşılaştırıldı; 46 egzersiz yeniden yazıldı. Kural: konu,
   SPEC'in dil bilgisi tablosunda hangi seviyedeyse orada kalır; açıkça daha derin
   bir katman (Futur I → Futur II) serbest. Yeni partide ÖTEKİ seviyelere de bakılır.
 - **Karışık kök.** Hedef dildeki soru kökünde Türkçe ipucu („(bile)“, „(-arak)“)
