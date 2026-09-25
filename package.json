@@ -125,6 +125,7 @@
     "audit": "tsx scripts/audit-quality.ts",
     "audit:skills": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/audit-skills.ts",
     "test:options": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-options.ts",
+    "test:rounds": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-round-uniqueness.ts",
     "dump:lessons": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/dump-lessons-mobile.ts",
     "dump:native": "npm run lessons:apply && npm run lessons:apply-de && tsx --tsconfig scripts/tsconfig.e2e.json scripts/dump-native-mobile.ts",
     "content:publish": "tsx --tsconfig scripts/tsconfig.ops.json scripts/content-publish.ts",

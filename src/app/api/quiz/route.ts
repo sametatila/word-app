@@ -6,6 +6,7 @@ import { getUserInfo } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { ensureProfile, submitAnswers } from "@/lib/session";
 import { nativeOf, targetLangOf } from "@/lib/courses";
+import { glossFor, withArtikel } from "@/lib/option-label";
 import { practiceWordsOf } from "@/lib/practice-words";
 import { track } from "@/lib/events";
 import { quizForWeek } from "@/lib/weekly-quiz";
@@ -52,23 +53,29 @@ type Attempt = typeof weeklyQuizAttempts.$inferSelect;
  * Çeldiriciler ÖĞRENCİNİN KENDİ havuzundan: rastgele sözcükler yerine
  * gerçekten karıştırılabilecek, aynı kurstan ve aynı bantta sözcükler.
  */
-async function personalPool(userId: string, course: string): Promise<PersonalWord[]> {
+async function personalPool(userId: string, course: string, native: QuizNative): Promise<PersonalWord[]> {
   try {
     const rows = await db
-      .select({ id: words.id, term: words.de, tr: words.tr, en: words.en })
+      .select({ id: words.id, term: words.de, artikel: words.artikel, tr: words.tr, en: words.en, deGloss: words.deGloss })
       .from(userWords)
       .innerJoin(words, eq(words.id, userWords.wordId))
       .where(and(eq(userWords.userId, userId), practiceWordsOf(course), sql`${userWords.reps} > 0`))
       .orderBy(asc(userWords.dueAt))
       .limit(24);
-    return rows.map((r) => ({ wordId: r.id, term: r.term, gloss: r.tr ?? r.en ?? "" }));
+    /* Soru kökü ANADİLDE (`glossFor`): `tr ?? en` İngilizce anadilli öğrenciye
+       Türkçe kök veriyordu. Anadilde karşılığı olmayan sözcük havuza girmiyor.
+       Şık artikelli (`withArtikel`): kelime oyunlarıyla aynı biçim. */
+    return rows.flatMap((r) => {
+      const gloss = glossFor(r, native)?.text;
+      return gloss ? [{ wordId: r.id, term: withArtikel({ de: r.term, artikel: r.artikel }), gloss }] : [];
+    });
   } catch {
     return [];
   }
 }
 
 /** Yazılı bloklar + (varsa) kişisel blok. */
-async function buildItems(userId: string, course: QuizCourse, level: QuizLevel, week: string, weekIx: number): Promise<{ quizId: string; items: QuizItem[] } | null> {
+async function buildItems(userId: string, course: QuizCourse, level: QuizLevel, week: string, weekIx: number, native: QuizNative): Promise<{ quizId: string; items: QuizItem[] } | null> {
   const pack = quizForWeek(course, level, weekIx);
   if (!pack) return null;
   const seed = `${userId}:${week}`;
@@ -79,9 +86,9 @@ async function buildItems(userId: string, course: QuizCourse, level: QuizLevel, 
      yayını beklemeden düşüyor. */
   const items = selectItems(pack, { seed, disabled: await disabledItemsOf(quizPack(packCourseOf(pack.course))) });
 
-  const pool = await personalPool(userId, course);
+  const pool = await personalPool(userId, course, native);
   if (pool.length >= 3) {
-    const personal = personalItem(pool[0], pool.slice(1), seed);
+    const personal = personalItem(pool[0], pool.slice(1), seed, native);
     if (personal) items.push(personal);
   }
   return { quizId: pack.id, items };
@@ -104,10 +111,11 @@ async function rehydrate(attempt: Attempt, course: QuizCourse, level: QuizLevel,
        kurulması gerekiyor; sözcük havuzu değiştiyse kurulamaz ve madde
        sessizce düşer — puanlama kalan maddeler üzerinden yapılır. */
     const wordId = Number(personalId.slice("personal-".length));
-    const pool = await personalPool(attempt.userId, course);
+    const native = attempt.native as QuizNative;
+    const pool = await personalPool(attempt.userId, course, native);
     const target = pool.find((w) => w.wordId === wordId);
     if (target) {
-      const p = personalItem(target, pool.filter((w) => w.wordId !== wordId), `${attempt.userId}:${attempt.week}`);
+      const p = personalItem(target, pool.filter((w) => w.wordId !== wordId), `${attempt.userId}:${attempt.week}`, native);
       if (p) out.push(p);
     }
   }
@@ -166,7 +174,7 @@ export async function GET() {
       items = await rehydrate(existing, course, level, weekIx);
       quizId = existing.quizId;
     } else {
-      const built = await buildItems(userId, course, level, week, weekIx);
+      const built = await buildItems(userId, course, level, week, weekIx, native);
       if (!built) return NextResponse.json({ week, done: false, quiz: null, empty: true });
       items = built.items;
       quizId = built.quizId;

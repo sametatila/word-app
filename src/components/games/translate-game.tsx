@@ -51,6 +51,10 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
   // Sınav kâğıdında ipucu düğmesi yok (bkz. no-hints.tsx).
   const noHints = useNoHints();
   const { word, sentence, alternatives } = round;
+  /* Çevrilecek cümle ANADİLDE. Sunucu `native`i koyuyor; eski kayıtlı turlarda
+     yoksa `tr`ye düşülüyor (o turlar Türkçe anadil için kurulmuştu). */
+  const source = sentence.native ?? sentence.tr;
+  const sourceSub = sentence.native ? (sentence.nativeSub ?? null) : sentence.en;
   const [value, setValue] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [hintShown, setHintShown] = useState(false);
@@ -93,7 +97,7 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
         {
           kind: "sentence",
           level: (word.niveau as "A1" | "A2" | "B1" | "B2" | "C1") || "A1",
-          task: { prompt: `Çevir: ${sentence.tr}`, target: sentence.de },
+          task: { prompt: `Çevir: ${source}`, target: sentence.de },
           answer: { text: typed },
           /* Hedef dil: verilmezse uç Almancaya düşüyor ve seviye beklentileri
              Almanca rubriğinden geliyor (`assess-prompts` LEVEL_EXPECTATIONS).
@@ -184,7 +188,7 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
               answer: aiAccepted ? sentence.de : null,
               answerTail: result.matched.match(/[.!?…]+$/)?.[0] ?? "",
               speak: sentence.de,
-              meaning: sentence.tr,
+              meaning: source,
               youTokens: status === "wrong" ? result.typed : null,
               diffs: aiAccepted ? null : { target: result.target, typed: result.typed },
               why,
@@ -193,10 +197,10 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
       }
       prompt={
         <span className="text-h2 sm:text-h1">
-          {sentence.tr}
-          {sentence.en ? (
+          {source}
+          {sourceSub ? (
             <span className="block text-body opacity-60" lang="en">
-              {sentence.en}
+              {sourceSub}
             </span>
           ) : null}
         </span>

@@ -96,6 +96,58 @@ export function exampleGlossFor(
 }
 
 /**
+ * Turun taşıdığı örnek cümle çevirileri arasından ANADİLDEKİ — `glossFor` ile
+ * aynı kural: ana satır anadilde, Türkçe ve Almanca anadilde altına İngilizce
+ * ayırt edici. Anadilde çeviri yoksa null (Türkçeye düşmez).
+ *
+ * Cümle turları (dizme, boşluk doldurma) çeviriyi `sentenceTr`/`sentenceEn`
+ * olarak taşıyordu ve ekran ikisini birden basıyordu: anadili İngilizce olan
+ * öğrenci Türkçe cümle görüyordu.
+ */
+export function exampleFor(
+  s: { sentenceTr: string | null; sentenceEn: string | null; sentenceDe?: string | null },
+  native: NativeLang,
+): Option | null {
+  if (native === "en") return s.sentenceEn ? { text: s.sentenceEn, sub: null } : null;
+  if (native === "de") return s.sentenceDe ? { text: s.sentenceDe, sub: s.sentenceEn } : null;
+  return s.sentenceTr ? { text: s.sentenceTr, sub: s.sentenceEn } : null;
+}
+
+/**
+ * Bir karşılığın karşılaştırılabilir anlam parçaları.
+ *
+ * Tek karşılık kuralından sonra çoğu maddede tek parça; işlev sözcüklerinde
+ * "; " ile iki çekirdek anlam, eski maddelerde virgül duruyor. İki kelimenin
+ * anlamı ÇAKIŞIYORSA ikisi aynı soruda şık olamaz: tr→de yönünde ikisi de
+ * doğru olur (anfangen / beginnen "başlamak").
+ */
+export function meaningParts(text: string | null | undefined, native: NativeLang): Set<string> {
+  const locale = native === "tr" ? "tr-TR" : native === "de" ? "de-DE" : "en-US";
+  const out = new Set<string>();
+  for (const part of (text ?? "").split(/[,;]/)) {
+    const m = part.trim().replace(/\s+/g, " ").toLocaleLowerCase(locale);
+    if (m) out.add(m);
+  }
+  return out;
+}
+
+/**
+ * İki kelime aynı soruda şık olabilir mi — anlamları ayrışıyor mu.
+ *
+ * Anadildeki karşılıklar ve İngilizce ayırt edici birlikte bakılıyor: Türkçesi
+ * aynı ama İngilizcesi farklı iki kelime ekranda İngilizce satırla ayrışsa da
+ * mobil istemcinin bazı ekranları yalnız ana satırı gösteriyor; tek doğru
+ * cevap kuralı ekrana bağlı kalmamalı.
+ */
+export function sharesMeaning(a: GlossWord, b: GlossWord, native: NativeLang): boolean {
+  const own = new Set([...meaningParts(glossFor(a, native)?.text, native), ...meaningParts(a.en, "en")]);
+  for (const m of [...meaningParts(glossFor(b, native)?.text, native), ...meaningParts(b.en, "en")]) {
+    if (own.has(m)) return true;
+  }
+  return false;
+}
+
+/**
  * Anlam sorulan yönde (de→tr) şık iki dilli: anadil + İngilizce ayırt edici.
  * Hedef dil sorulan yönde (tr→de) ikinci satır yok — orada sorulan şey anlam
  * değil, kelimenin kendisi; ve artikel kelimenin bir parçası.

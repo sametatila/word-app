@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { OptionMark } from "./option-mark";
 import { useRoundExit } from "./use-round-exit";
-import { withArtikel, type GameProps, type GameResult , meaningOf } from "./types";
+import { withArtikel, type GameProps, type GameResult , meaningOf, meaningSubOf } from "./types";
 import type { Round } from "@/lib/types";
 import { vibrate } from "@/lib/fx";
 import { prefetchWord, speakWord, SpeakButton } from "@/components/speak-button";
@@ -90,10 +90,10 @@ export function PluralGame({ round, onDone }: GameProps<PluralRound>) {
       hint={
         <span>
           {meaningOf(word, lang)}
-          {word.en ? (
+          {meaningSubOf(word, lang) ? (
             <span className="opacity-60" lang="en">
               {" "}
-              · {word.en}
+              · {meaningSubOf(word, lang)}
             </span>
           ) : null}
         </span>

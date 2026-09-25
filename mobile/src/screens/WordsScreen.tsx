@@ -1,3 +1,4 @@
+import { exampleOf, glossOf } from "../game/gloss";
 import React, { useEffect, useMemo, useState } from "react";
 import { t, nativeLangName, targetLangName, formatNumber } from "../lib/i18n";
 import { useMe } from "../lib/useMe";
@@ -44,8 +45,11 @@ function statusColor(s: WordStatus, colors: Palette): string {
  * Örnek cümle — Almanca (italik) + karşılıklar. `rounds` içindeki
  * `ExampleBlock` ile aynı okuma; ayıklama kuralı `data/example` (web ile ortak).
  */
-function ExampleLines({ de, tr, en, colors }: { de: string | null; tr: string | null; en: string | null; colors: Palette }) {
-  const d = firstExample(de), x = firstExample(tr), e = firstExample(en);
+/* Örnek cümle hedef dilde; altındaki çeviri ANADİLDE (`exampleOf`). Türkçe ve
+   İngilizce satır her kullanıcıya birlikte çiziliyordu. */
+function ExampleLines({ de, tr, en, deNative, colors }: { de: string | null; tr: string | null; en: string | null; deNative: string | null; colors: Palette }) {
+  const g = exampleOf({ sentenceTr: firstExample(tr), sentenceEn: firstExample(en), sentenceDe: firstExample(deNative) });
+  const d = firstExample(de), x = g?.text ?? null, e = g?.sub ?? null;
   if (!d && !x && !e) return <Text variant="micro" color={colors.textFaint}>{t("words.not_studied")}</Text>;
   return (
     <View>
@@ -246,6 +250,8 @@ export function WordsScreen() {
           const due = dueLabelKey(w.dueAt);
           const isOpen = open === w.id;
           const say = w.artikel ? `${w.artikel} ${w.de}` : w.de;
+          // Anlam ANADİLDE; satır herkese Türkçe gösteriyordu.
+          const gloss = glossOf(w);
           return (
             // Çok sütunda satır paydan payını alsın; tek sütunda `flex` VERİLMEZ,
             // FlatList'in dikey kabında yüksekliği doldurmaya çalışırdı.
@@ -257,7 +263,7 @@ export function WordsScreen() {
                       böyle yazıyor - üçüncü bir satır listeyi taramayı
                       zorlaştırırdı. Alan uçtan yeni geliyor. */}
                   <Text variant="caption" color={colors.textMuted}>
-                    {w.tr}{w.en ? ` · ${w.en}` : ""}
+                    {gloss.text}{gloss.sub ? ` · ${gloss.sub}` : ""}
                   </Text>
                   {/* Tür ve çoğul — web listesi de aynı satırı yazıyor. */}
                   <Text variant="micro" color={colors.textFaint}>{grammarLine(w, w.tr)}</Text>
@@ -282,7 +288,7 @@ export function WordsScreen() {
                   listesi kelimeyi cümle içinde bir kez bile göstermiyordu. */}
               {isOpen ? (
                 <View style={{ borderTopWidth: 1, borderTopColor: colors.hairline, paddingHorizontal: spacing.lg, paddingVertical: 10 }}>
-                  <ExampleLines de={w.beispiel ?? null} tr={w.beispielTr ?? null} en={w.beispielEn ?? null} colors={colors} />
+                  <ExampleLines de={w.beispiel ?? null} tr={w.beispielTr ?? null} en={w.beispielEn ?? null} deNative={w.beispielDe ?? null} colors={colors} />
                 </View>
               ) : null}
             </View>

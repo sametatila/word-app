@@ -36,7 +36,7 @@ export async function GET(req: Request) {
   }
   if (q) {
     const like = likeContains(q);
-    const cond = or(ilike(words.de, like), ilike(words.tr, like), ilike(words.en, like));
+    const cond = or(ilike(words.de, like), ilike(words.tr, like), ilike(words.en, like), ilike(words.deGloss, like));
     if (cond) filters.push(cond);
   }
   if (level) filters.push(eq(words.niveau, level));
@@ -60,6 +60,8 @@ export async function GET(req: Request) {
         beispiel: words.beispiel,
         beispielTr: words.beispielTr,
         beispielEn: words.beispielEn,
+        deGloss: words.deGloss,
+        beispielDe: words.beispielDe,
         niveau: words.niveau,
         /* Tür ve çoğul kalıbı da gidiyor: web listesi bunları sunucu
            bileşeninde doğrudan tablodan okuyup yazıyor, mobilin tek kaynağı
@@ -94,6 +96,8 @@ export async function GET(req: Request) {
       beispiel: r.beispiel,
       beispielTr: r.beispielTr,
       beispielEn: r.beispielEn,
+      deGloss: r.deGloss,
+      beispielDe: r.beispielDe,
       niveau: r.niveau,
       typ: r.typ,
       formen: r.formen,

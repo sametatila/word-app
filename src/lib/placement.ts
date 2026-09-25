@@ -7,7 +7,7 @@ import { BUNDLED_EXERCISES } from "@/lib/skills/bundled";
 import type { CefrLevel } from "@/lib/skills/types";
 import { track } from "@/lib/events";
 import { scorePlacement, type PlacementAnswer, type PlacementResult } from "@/lib/placement-score";
-import { glossFor } from "@/lib/option-label";
+import { glossFor, sharesMeaning } from "@/lib/option-label";
 import { DEFAULT_NATIVE, type NativeLang } from "@/lib/courses";
 
 /**
@@ -89,9 +89,21 @@ export async function buildPlacement(course: string, native: NativeLang = DEFAUL
       .filter((w): w is typeof w & { gloss: string } => Boolean(w.gloss));
     const picked = shuffle(usable).slice(0, VOCAB_PER_LEVEL);
     vocab[level] = picked.map((w) => {
-      const distractors = shuffle(usable.filter((r) => r.id !== w.id && r.gloss !== w.gloss))
-        .slice(0, 3)
-        .map((r) => r.gloss);
+      /*
+        TEK DOĞRU CEVAP, BİRBİRİNİ TEKRARLAMAYAN ŞIKLAR. Çeldirici yalnız
+        doğru cevapla birebir aynı metin değilse alınıyordu: iki çeldirici
+        aynı karşılığı taşıyabiliyor ("başlamak" iki kez) ve doğru cevapla
+        anlam paylaşan bir kelime ("öğrenci, talebe" / "öğrenci") ikinci
+        doğru şık olabiliyordu. Seviye testinde bu, ölçümün kendisini bozar.
+      */
+      const chosen: typeof usable = [];
+      for (const r of shuffle(usable)) {
+        if (chosen.length === 3) break;
+        if (r.id === w.id || sharesMeaning(w, r, native)) continue;
+        if (chosen.some((c) => c.gloss === r.gloss || sharesMeaning(c, r, native))) continue;
+        chosen.push(r);
+      }
+      const distractors = chosen.map((r) => r.gloss);
       const options = shuffle([w.gloss, ...distractors]);
       return { id: `v${w.id}`, level, de: w.de, artikel: w.artikel, options, answer: options.indexOf(w.gloss) };
     });

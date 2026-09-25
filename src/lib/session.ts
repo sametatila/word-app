@@ -18,7 +18,7 @@ import { onActivityAwarded } from "@/lib/social/hooks";
 import { ANSWERS_DAILY_XP_CAP, cappedDailyXp, xpForChallengeRecord, xpForWager } from "@/lib/xp";
 import { firstExample } from "@/lib/example";
 import { nativeOf, type NativeLang } from "@/lib/courses";
-import { glossFor, hasGloss, optionLabel, spokenGloss } from "@/lib/option-label";
+import { exampleGlossFor, glossFor, hasGloss, meaningParts, optionLabel, sharesMeaning, spokenGloss, withArtikel } from "@/lib/option-label";
 import { pluralChoices } from "@/lib/german";
 import type {
   Answer,
@@ -523,6 +523,8 @@ export function toRoundWord(w: typeof words.$inferSelect, isNew: boolean): Round
     beispielTr: w.beispielTr,
     beispielEn: w.beispielEn,
     formen: w.formen,
+    deGloss: w.deGloss,
+    beispielDe: w.beispielDe,
     isNew,
   };
 }
@@ -821,18 +823,26 @@ export async function buildSession(
 
   const rounds = composeRounds(dueWords, newWords, pool, native, only, skipGames);
 
-  // Yazma turlarında aynı Türkçe anlama sahip diğer Almanca kelimeler de kabul
-  // edilir: "hareket etmek, kalkmak" isteminde tek bir doğru cevap dayatmak haksız.
-  const typingTrs = rounds.filter((r) => r.game === "typing").map((r) => r.word.tr);
-  if (typingTrs.length) {
-    const synonyms = await db
-      .select({ de: words.de, tr: words.tr })
-      .from(words)
-      .where(and(practiceWordsOf(course), inArray(words.tr, [...new Set(typingTrs)])));
+  // Yazma turlarında aynı anlama sahip diğer hedef dil kelimeleri de kabul
+  // edilir: "hareket etmek, kalkmak" isteminde tek bir doğru cevap dayatmak
+  // haksız. Anlam ANADİLDE eşleşiyor — istem kullanıcıya hangi dilde
+  // gösterildiyse o: Türkçe `tr`ye bakmak, İngilizce anadilli öğrenciye
+  // Türkçesi aynı olan kelimeleri de doğru sayıyordu.
+  const typing = rounds.filter((r) => r.game === "typing");
+  if (typing.length) {
+    const col = native === "en" ? words.en : native === "de" ? words.deGloss : words.tr;
+    const keys = [...new Set(typing.map((r) => glossFor(r.word, native)?.text).filter((x): x is string => Boolean(x)))];
+    const synonyms = keys.length
+      ? await db
+          .select({ de: words.de, gloss: col })
+          .from(words)
+          .where(and(practiceWordsOf(course), inArray(col, keys)))
+      : [];
     for (const r of rounds) {
       if (r.game !== "typing") continue;
+      const key = glossFor(r.word, native)?.text;
       r.alternatives = synonyms
-        .filter((s) => s.tr === r.word.tr && s.de !== r.word.de)
+        .filter((s) => s.gloss === key && s.de !== r.word.de)
         .map((s) => s.de)
         .slice(0, 6);
     }
@@ -1172,6 +1182,28 @@ export async function clearSessionState(userId: string) {
 }
 
 /**
+ * Eşleştirme turunun beş kelimesi — her biri tek bir karşılığa eşlenebilmeli.
+ *
+ * Kuyruktan ilk beşi alınıyordu. Aynı anlamı taşıyan iki kelime (ya da havuzda
+ * yinelenen iki madde) aynı turda çıkınca sağ sütunda iki özdeş ya da iki
+ * birbirine uyan karşılık oluyor ve hangisinin hangisine ait olduğu
+ * belirlenemiyordu. Mobil istemci bunu kendi tarafında ayıklıyordu, web hiç.
+ * Sıra korunarak açgözlü seçiliyor; beş ayrışan kelime yoksa tur yok.
+ */
+function matchSet(items: QueueItem[], native: NativeLang): QueueItem[] | null {
+  const out: QueueItem[] = [];
+  for (const item of items) {
+    const head = withArtikel(item.word).toLocaleLowerCase("de-DE");
+    const clash = out.some(
+      (o) => withArtikel(o.word).toLocaleLowerCase("de-DE") === head || sharesMeaning(o.word, item.word, native),
+    );
+    if (!clash && glossFor(item.word, native)) out.push(item);
+    if (out.length === 5) return out;
+  }
+  return null;
+}
+
+/**
  * Oyun seçimi: kelimenin durumuna göre uygun oyunu atar ve aynı oyunun
  * arka arkaya tekrarlanmasını engelleyerek monotonluğu kırar.
  *
@@ -1224,8 +1256,12 @@ function composeRounds(
   // kelime sayısıyla sınırlanıyor. Beşe tamamlanmayan artık bırakılıyor —
   // dört kelimelik bir eşleştirme turu oyunun kendisi olmaz.
   if (only === "match") {
-    for (let i = 0; i + 5 <= merged.length && rounds.length < ROUNDS_PER_SESSION; i += 5) {
-      rounds.push({ id: nextId(), game: "match", words: merged.slice(i, i + 5).map((m) => m.word) });
+    let rest = [...merged];
+    while (rounds.length < ROUNDS_PER_SESSION) {
+      const set = matchSet(rest, native);
+      if (!set) break;
+      rounds.push({ id: nextId(), game: "match", words: set.map((m) => m.word) });
+      rest = rest.filter((m) => !set.includes(m));
     }
     return rounds;
   }
@@ -1235,7 +1271,7 @@ function composeRounds(
   // kelimeler tanıtılmış olur.
   // Tek oyun modunda bu ek tur yok: kullanıcı hangi oyunu istediyse onu
   // oynuyor, araya başka bir oyun sıkıştırılmıyor.
-  const matchCandidates = only ? [] : merged.filter((m) => !m.intro).slice(0, 5);
+  const matchCandidates = only ? [] : (matchSet(merged.filter((m) => !m.intro), native) ?? []);
   const useMatch = matchCandidates.length === 5;
 
   // Yalnızca bir önceki oyunu dışlamak yetmiyordu: "A B A B A" dizilimi kuralı
@@ -1535,6 +1571,7 @@ export function makeRound(
         tail: built.tail,
         sentenceTr: firstExample(word.beispielTr),
         sentenceEn: firstExample(word.beispielEn),
+        sentenceDe: firstExample(word.beispielDe ?? null),
       };
     }
     case "free_sentence": {
@@ -1550,38 +1587,46 @@ export function makeRound(
       // bir turluk iş olmaktan çıkar.
       const de = firstExample(word.beispiel)?.trim();
       const tr = firstExample(word.beispielTr)?.trim();
-      if (!de || !tr) return null;
+      // Çevrilecek cümle ANADİLDE. Anadilde çevirisi olmayan kelimeye bu tur
+      // kurulmuyor: Türkçe cümleyi İngilizce anadilli öğrenciye çevirtmek,
+      // ölçtüğü şeyi Türkçe bilgisine çeviriyordu.
+      const native_ = firstExample(exampleGlossFor(word, native))?.trim();
+      if (!de || !tr || !native_) return null;
       const n = de.replace(/[.!?…]+$/, "").split(/\s+/).filter(Boolean).length;
       if (n < 4 || n > 12) return null;
+      const en = firstExample(word.beispielEn);
       return {
         id: nextId(),
         game: "translate",
         word,
-        sentence: { tr, de, en: firstExample(word.beispielEn) },
+        sentence: { tr, de, en, native: native_, nativeSub: native === "en" ? null : en },
         alternatives: [],
       };
     }
     case "cloze": {
       const cloze = buildCloze(word, pool);
       if (!cloze) return null;
+      const distractors = clozeDistractors(word, cloze, pool, native);
+      const typeChance = clozeTypeChance(strength);
+      // Ele vermeyen üç çeldirici yoksa şıklı tur yok. Yeni ve takılan
+      // kelimede yazarak tamamlama da yok (şık orada öğretmen), yani tur hiç
+      // kurulmuyor; oturmuş kelimede yazarak tamamlamaya dönüyor.
+      const choosable = distractors.length >= 3;
+      if (!choosable && typeChance === 0) return null;
       return {
         id: nextId(),
         game: "cloze",
         word,
         // Yazarak tamamlama: sağlam kelimede yarı yarıya, oturmuşta dörtte
         // bir (lib/ladder.ts). Şıklar yine kuruluyor: basamak inişi onlara döner.
-        mode: Math.random() < clozeTypeChance(strength) ? "type" : undefined,
+        mode: !choosable || Math.random() < typeChance ? "type" : undefined,
         sentence: cloze.sentence,
         // Cümle ilk örnekten kurulduğu için çeviri de ilk parçadan alınır.
         sentenceTr: firstExample(word.beispielTr),
         sentenceEn: firstExample(word.beispielEn),
+        sentenceDe: firstExample(word.beispielDe ?? null),
         answer: cloze.answer,
-        // Bu turda şıklar Almanca biçimlerdir, anlam değil: ikinci dil satırı
-        // yok, çeldirici üreticisinden yalnızca metin alınıyor.
-        options: shuffle([
-          cloze.answer,
-          ...pickDistractors(word, pool, 3, (p) => ({ text: p.de, sub: null })).map((o) => o.text),
-        ]),
+        options: shuffle([cloze.answer, ...distractors]),
       };
     }
     default:
@@ -1762,21 +1807,34 @@ type Labeler = (p: {
   artikel: string | null;
 }) => Option | null;
 
-/** Hedefe en çok benzeyen adaylardan rastgele `count` tane döndürür. */
+/**
+ * Hedefe en çok benzeyen adaylardan rastgele `count` tane döndürür.
+ *
+ * TEK DOĞRU CEVAP. Aday, hedefle anlam paylaşıyorsa (`sharesMeaning`) ya da
+ * aynı başlığı taşıyorsa şık olamaz. Eskiden yalnız ekrandaki metin birebir
+ * aynıysa eleniyordu: tr→de yönünde şıklar Almanca biçim olduğu için
+ * eşanlamlılar (anfangen / beginnen "başlamak") hiç elenmiyor ve aynı soruda
+ * iki doğru şık çıkabiliyordu; de→tr yönünde "öğrenci" ile "öğrenci, talebe"
+ * yan yana geliyordu. Havuzdaki yinelenen maddeler (iki ayrı "zurück") de
+ * aynı yoldan eleniyor.
+ */
 function pickDistractors(
   word: RoundWord,
   pool: (typeof words.$inferSelect)[],
   count: number,
   label: Labeler,
+  native: NativeLang,
 ): Option[] {
   const target = label(word);
   if (!target) return [];
   const seen = new Set([target.text]);
+  const head = withArtikel(word).toLocaleLowerCase("de-DE");
   const scored: { option: Option; score: number }[] = [];
 
   for (const p of pool) {
     const option = label(p);
     if (!option || p.id === word.id || seen.has(option.text)) continue;
+    if (withArtikel(p).toLocaleLowerCase("de-DE") === head || sharesMeaning(word, p, native)) continue;
     seen.add(option.text);
     const typBonus = p.typ === word.typ ? 6 : 0;
     // Anlam benzerliği de ANADİLDE ölçülüyor: Türkçe metinleri karşılaştırmak
@@ -1793,6 +1851,63 @@ function pickDistractors(
 }
 
 /**
+ * Boşluk doldurmanın çeldiricileri — cevapla AYNI BİÇİMDE.
+ *
+ * Cevap cümledeki biçim ("arbeitet", "Arztes", "getting on"), çeldiriciler ise
+ * sözlük biçimiydi ("wohnen", "kaufen"). Tek çekimli şık cevabı ele veriyordu:
+ * öğrenci anlamı bilmeden biçimden bulabiliyordu (test-wiseness). Şimdi:
+ *
+ *   - Cevap başlığın kendisiyse (çekimsiz) çeldiriciler de başlık.
+ *   - Cevap çekimliyse çeldiriciler başka kelimelerin KENDİ örnek
+ *     cümlelerinde geçtikleri çekimli biçimler: hepsi gerçek Almanca
+ *     biçimler (uydurulmuş çekim yok) ve cevapla aynı türden.
+ *   - Yeterli çekimli aday yoksa şıklı tur kurulmaz, tur yazarak tamamlamaya
+ *     döner — ele veren bir şık listesi göstermektense.
+ *
+ * Harf büyüklüğü cevaba uyduruluyor: boşluk cümle başındaysa hepsi büyük
+ * harfle, değilse isim dışındakiler küçük harfle — biçim ipucu kalmasın.
+ * Anlam paylaşan aday (eşanlamlı) cümleye de uyacağı için elenir.
+ */
+function clozeDistractors(
+  word: RoundWord,
+  cloze: { sentence: string; answer: string },
+  pool: (typeof words.$inferSelect)[],
+  native: NativeLang,
+): string[] {
+  const lower = (x: string) => x.toLocaleLowerCase("de-DE");
+  const inflected = lower(cloze.answer) !== lower(word.de.replace(/^sich\s+/, ""));
+  const atStart = cloze.sentence.trimStart().startsWith("_____");
+  const fit = (text: string, typ: string) => {
+    if (atStart) return text.charAt(0).toLocaleUpperCase("de-DE") + text.slice(1);
+    return typ === "Nomen" ? text : text.charAt(0).toLocaleLowerCase("de-DE") + text.slice(1);
+  };
+  const head = lower(withArtikel(word));
+  // Boşluğa giren sözcük sayısı: "sich kümmern" gibi iki sözcüklü bir şık tek
+  // sözcüklük boşlukta kendini ele verir (dönüşlü zamir boşluğa girmiyor).
+  const tokens = (x: string) => x.trim().split(/\s+/).length;
+  const want = tokens(cloze.answer);
+  const seen = new Set([lower(cloze.answer)]);
+  const scored: { text: string; score: number }[] = [];
+  for (const p of pool) {
+    if (p.id === word.id || lower(withArtikel(p)) === head || sharesMeaning(word, p, native)) continue;
+    let surface = p.de.replace(/^sich\s+/, "");
+    if (inflected) {
+      const own = buildCloze(toRoundWord(p, false), pool);
+      if (!own || lower(own.answer) === lower(surface)) continue;
+      surface = own.answer;
+    }
+    if (tokens(surface) !== want) continue;
+    const text = fit(surface, p.typ);
+    if (seen.has(lower(text))) continue;
+    seen.add(lower(text));
+    const typBonus = p.typ === word.typ ? 6 : 0;
+    scored.push({ text, score: similarity(surface, cloze.answer) + typBonus });
+  }
+  scored.sort((a, b) => b.score - a.score);
+  return shuffle(scored.slice(0, 10)).slice(0, 3).map((c) => c.text);
+}
+
+/**
  * Bir maddenin anlamları, karşılaştırılabilir hâlde.
  *
  * Kelime başına tek karşılık yazıldıktan sonra bu çoğu maddede tek elemanlı
@@ -1803,20 +1918,15 @@ function pickDistractors(
  * karşılığı sayılmamalı.
  */
 function meanings(word: { tr: string; en: string | null; deGloss?: string | null }, native: NativeLang): Set<string> {
-  const out = new Set<string>();
   // Ana satır ANADİLDE: Türkçe oynayan için Türkçe karşılıklar, İngilizce
   // oynayan için İngilizce. Yanlış iddianın gerçekten yanlış olması bu kümeye
   // bakıyor; yanlış dilden bakılsaydı "Schüler = student" iddiası İngilizce
-  // oynayan kullanıcıya "yanlış" diye sorulabilirdi.
-  const primary = native === "en" ? word.en : native === "de" ? word.deGloss : word.tr;
-  const locale = native === "tr" ? "tr-TR" : native === "de" ? "de-DE" : "en-US";
-  for (const part of (primary ?? "").split(",")) {
-    const m = part.trim().toLocaleLowerCase(locale);
-    if (m) out.add(m);
-  }
+  // oynayan kullanıcıya "yanlış" diye sorulabilirdi. Parçalama "; " da
+  // ayırıyor: işlev sözcüklerinin iki çekirdek anlamı öyle yazılı.
+  const out = meaningParts(glossFor(word, native)?.text, native);
   // İngilizce her zaman kümede: ayırt edici olarak zaten ikinci satırda
   // duruyor ve iki kelimenin anadilde çöküp İngilizcede ayrışması mümkün.
-  if (word.en) out.add(word.en.trim().toLowerCase());
+  for (const m of meaningParts(word.en, "en")) out.add(m);
   return out;
 }
 
@@ -1873,7 +1983,7 @@ function optionsFor(
   // Havuz süzüldüğü için buraya anlamsız kelime gelmemeli; yine de tip
   // düzeyinde ele alınıyor — sessizce Türkçeye düşmektense boş şık listesi.
   if (!correct) return [];
-  return shuffle([correct, ...pickDistractors(word, pool, 3, label)]);
+  return shuffle([correct, ...pickDistractors(word, pool, 3, label, native)]);
 }
 
 function shuffle<T>(arr: T[]): T[] {

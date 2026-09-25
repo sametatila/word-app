@@ -10,6 +10,7 @@ import { MODULE_SIZE, moduleTheme } from "./modules";
 import { moduleContent } from "./module-content";
 import type { Round } from "@/lib/types";
 import { nativeOf } from "@/lib/courses";
+import { hasGloss } from "@/lib/option-label";
 
 /**
  * Modül sınavı — ders yolunun patron turu.
@@ -116,27 +117,35 @@ export async function buildModuleBoss(
 
   // Modülün kelimeleri. Eşleşmeyen madde sessizce düşüyor: ders içeriği ile
   // kelime listesi ayrı kaynaklar ve birebir örtüşmeleri beklenmiyor.
-  const rows = await db
-    .select()
-    .from(words)
-    .where(
-      and(
-        practiceWordsOf(course),
-        inArray(sql`lower(${words.de})`, heads),
-      ),
-    );
+  /* ANADİLDE KARŞILIĞI OLAN kelimeler — soru olarak da, şık olarak da. Kelime
+     turlarının kuralının aynısı (`hasGloss`): süzülmeseydi karşılığı olmayan
+     kelimenin çoktan seçmelisi boş şıkla, doğru/yanlış turu hiç kurulmadan
+     gelir; çeldirici havuzunda ise boş şık görünürdü. */
+  const rows = (
+    await db
+      .select()
+      .from(words)
+      .where(
+        and(
+          practiceWordsOf(course),
+          inArray(sql`lower(${words.de})`, heads),
+        ),
+      )
+  ).filter((w) => hasGloss(w, native));
 
   if (rows.length < MIN_WORDS) return { meta, rounds: [], pool: rows.length };
 
   // Çeldirici havuzu: aynı seviyeden geniş bir küme. Modülün kendi kelimeleri
   // çeldirici olarak yetmez — on beş turda hepsi şıklarda görünür ve sorular
   // birbirini ele verirdi.
-  const pool = await db
-    .select()
-    .from(words)
-    .where(and(practiceWordsOf(course), eq(words.niveau, level)))
-    .orderBy(sql`random()`)
-    .limit(140);
+  const pool = (
+    await db
+      .select()
+      .from(words)
+      .where(and(practiceWordsOf(course), eq(words.niveau, level)))
+      .orderBy(sql`random()`)
+      .limit(140)
+  ).filter((w) => hasGloss(w, native));
 
   const distractors = pool.length >= 8 ? pool : rows;
 

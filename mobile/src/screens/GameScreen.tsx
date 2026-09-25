@@ -1,3 +1,4 @@
+import { glossOf } from "../game/gloss";
 import React, { useEffect, useRef, useState } from "react";
 import { t, dateLocale, formatPercent } from "../lib/i18n";
 import { View } from "react-native";
@@ -270,9 +271,10 @@ function GameRound() {
 
   /* Web ile aynı kural: artikel varsa kelimenin önüne yazılıyor (özette
      "der Tisch" okunuyor) ve aynı kelime iki kez listelenmiyor. */
-  function noteMissed(w?: { id: number; de: string; artikel: string | null; tr: string; en: string | null }) {
+  function noteMissed(w?: { id: number; de: string; artikel: string | null; tr: string; en: string | null; deGloss?: string | null }) {
     if (!w || missed.current.some((m) => m.id === w.id)) return;
-    missed.current.push({ id: w.id, de: w.artikel ? `${w.artikel} ${w.de}` : w.de, tr: w.tr, en: w.en });
+    // Özet listesindeki anlam ANADİLDE (`glossOf`); alan adı tarihsel.
+    missed.current.push({ id: w.id, de: w.artikel ? `${w.artikel} ${w.de}` : w.de, tr: glossOf(w).text, en: glossOf(w).sub });
   }
 
   function onDone(ok: boolean, extra?: DoneExtra) {

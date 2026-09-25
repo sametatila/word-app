@@ -20,6 +20,9 @@ export type RoundWord = {
   beispielTr: string | null;
   beispielEn?: string | null;
   formen: string | null;
+  /** Almanca karşılık ve örneğin Almancası (İngilizce kurs, Almanca anadil) — web `RoundWord`. */
+  deGloss?: string | null;
+  beispielDe?: string | null;
   isNew: boolean;
 };
 
@@ -67,9 +70,19 @@ export type Round = {
    * kullandığı için ikisi burada yazılı; eskiden yalnız `string` deniyor ve
    * `translate` turu `as unknown as` ile kaçırılıyordu.
    */
-  sentence?: string | { tr: string; de: string; en: string | null };
+  sentence?:
+    | string
+    | {
+        tr: string;
+        de: string;
+        en: string | null;
+        /** Anadildeki cümle — çevrilecek olan bu (web `Round` translate). */
+        native?: string;
+        nativeSub?: string | null;
+      };
   sentenceTr?: string | null;
   sentenceEn?: string | null;
+  sentenceDe?: string | null;
   /**
    * Doğru cevap. `order` turunda DİZİ (sunucu kelimeleri sırayla veriyor),
    * öteki turlarda tek dizge — web `Round` birleşiminde ikisi ayrı üye

@@ -1236,7 +1236,8 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
 
           if (!ok) {
             if (!missed.current.some((m) => m.id === word.id)) {
-              missed.current.push({ id: word.id, de: target, tr: word.tr, en: word.en });
+              // Anlam ANADİLDE (özet listesi onu gösteriyor); alan adı tarihsel.
+              missed.current.push({ id: word.id, de: target, tr: glossFor(word, lang)?.text ?? "", en: glossFor(word, lang)?.sub ?? null });
             }
             // Yanlışta doğrusu okunuyor: ekransız akışta düzeltmeyi görmenin
             // başka yolu yok.

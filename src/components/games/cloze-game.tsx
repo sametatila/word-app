@@ -11,6 +11,7 @@ import { OptionMark } from "./option-mark";
 import { useRoundExit } from "./use-round-exit";
 import { matchesAnswer, type GameProps, type GameResult , meaningOf } from "./types";
 import type { Round } from "@/lib/types";
+import { exampleFor } from "@/lib/option-label";
 import { SentenceTranslation } from "@/components/meaning-text";
 import { vibrate } from "@/lib/fx";
 import { prefetchWord } from "@/components/speak-button";
@@ -30,7 +31,9 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
   const course = useCourse();
   const tx = useT();
   const lang = useLang();
-  const { word, sentence, sentenceTr, sentenceEn, answer, options } = round;
+  const { word, sentence, answer, options } = round;
+  // Cümlenin çevirisi ANADİLDE (`exampleFor`): ikisi birden basılıyordu.
+  const example = exampleFor(round, lang);
   const [before, after] = sentence.split("_____");
   const typeMode = round.mode === "type";
 
@@ -106,7 +109,7 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
           : {
               correct,
               answer: filled(answer),
-              meaning: sentenceTr ?? meaningOf(word, lang),
+              meaning: example?.text ?? meaningOf(word, lang),
               you: filled(picked),
               why: !correct
                 ? whyFor({ type: typeMode ? classifyTyping(picked, [answer]) : "meaning", word: { ...word, de: answer }, detail: picked, targetLang: currentTargetLang() }, lang)
@@ -146,8 +149,8 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
       }
       /* Cümlenin çevirisi baştan gösterilir: bağlamı anlamak seçimi kolaylaştırır. */
       hint={
-        sentenceTr || sentenceEn ? (
-          <SentenceTranslation tr={sentenceTr} en={sentenceEn} className="italic" />
+        example ? (
+          <SentenceTranslation tr={example.text} en={example.sub} className="italic" />
         ) : undefined
       }
     >

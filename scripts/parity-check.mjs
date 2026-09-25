@@ -3479,7 +3479,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const alanlar = (p) => {
     const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
     return [
-      "ingilizce=" + (/\b(w|r)\.en\b/.test(src) ? "var" : "yok"),
+      /* İkinci satır anadile bağlı çözücüden de gelebilir (`glossFor`/`glossOf`
+         `.sub`): anadili İngilizce olana ikinci satır çizilmiyor, doğrusu bu. */
+      "ingilizce=" + (/\b(w|r)\.en\b|\b(meaning|gloss)\??\.sub\b/.test(src) ? "var" : "yok"),
       /* Mobil ikisini bir yardimciya sarmis (`grammarLine` → `typLabel` +
          `grammarNote`), web ikisini satirda yan yana yaziyor: aranan sey
          etiketin kendisi. */
@@ -16625,6 +16627,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     };
     sameList("tekrar secimi govdesi", govde("mobile/src/game/immersionQuiz.ts", "pickReview"), govde("src/lib/immersion/quiz.ts", "pickReview"));
     sameList("tekrar serpistirme govdesi", govde("mobile/src/game/immersionQuiz.ts", "interleave"), govde("src/lib/immersion/quiz.ts", "interleave"));
+    /* Çeldirici seçimi tek doğru cevabı koruyan kural (başlık ya da anlam
+       paylaşan aday şık olamaz); iki tarafta ayrışırsa bir istemcide aynı
+       soruda iki doğru şık yeniden çıkar. */
+    sameList("quiz celdirici govdesi", govde("mobile/src/game/immersionQuiz.ts", "pickDistractors"), govde("src/lib/immersion/quiz.ts", "pickDistractors"));
+    sameList("quiz celdirici cakisma govdesi", govde("mobile/src/game/immersionQuiz.ts", "quizClash"), govde("src/lib/immersion/quiz.ts", "quizClash"));
 
     const mobEkran = sil(read("mobile/src/screens/QuizScreen.tsx"));
     const webSayfa = sil(read("src/app/(app)/immersion/quiz/[unit]/page.tsx"));

@@ -100,6 +100,15 @@ export type RoundWord = {
   /** Aynı cümlenin doğal İngilizce çevirisi (varsa). */
   beispielEn: string | null;
   formen: string | null;
+  /**
+   * Almanca karşılık ve örnek cümlenin Almancası — İngilizce kursu Almanca
+   * anadilli öğrenene açıldığında (PAIR_READY de→en) anlamın kendisi bunlar.
+   * Sunucu bunları tura koymuyordu: `glossFor(word, "de")` boş dönüyor, çoktan
+   * seçmelinin şıkları hiç kurulmuyor ve yürüyüş modu anlamı okumuyordu.
+   * İsteğe bağlılar: demo ve eski kayıtlı turlar bu alanları taşımıyor.
+   */
+  deGloss?: string | null;
+  beispielDe?: string | null;
   isNew: boolean;
 };
 
@@ -134,6 +143,8 @@ export type Round =
       sentenceTr: string | null;
       /** Aynı cümlenin İngilizce çevirisi. */
       sentenceEn: string | null;
+      /** Aynı cümlenin Almanca çevirisi (İngilizce kurs, Almanca anadil). */
+      sentenceDe?: string | null;
       answer: string;
       options: string[];
       /**
@@ -167,6 +178,7 @@ export type Round =
       tail: string;
       sentenceTr: string | null;
       sentenceEn: string | null;
+      sentenceDe?: string | null;
     }
   | {
       id: string;
@@ -199,7 +211,19 @@ export type Round =
        * Çevrilecek cümle: kelimenin kendi örnek cümlesi. Türkçesi soru,
        * Almancası cevap; İngilizcesi ayırt edici olarak küçük yazıyla.
        */
-      sentence: { tr: string; de: string; en: string | null };
+      sentence: {
+        tr: string;
+        de: string;
+        en: string | null;
+        /**
+         * Öğrencinin ANADİLİNDEKİ cümle — çevrilecek olan bu. `tr` adı tarihsel:
+         * İngilizce ya da Almanca anadilli öğrenciye de Türkçe cümle
+         * veriliyordu. İsteğe bağlı: eski istemciler `tr`yi okumaya devam ediyor.
+         */
+        native?: string;
+        /** Anadil Türkçeyken ayırt edici İngilizce satır; öteki anadillerde yok. */
+        nativeSub?: string | null;
+      };
       /** Kabul edilen başka kuruluşlar (içerikten; bugün boş). */
       alternatives: string[];
     }

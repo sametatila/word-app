@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { apiFetch } from "@/lib/api-fetch";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
-import { grammarNote, typLabel, withArtikel, type GameProps , meaningOf } from "./types";
+import { grammarNote, typLabel, withArtikel, type GameProps , meaningOf, meaningSubOf } from "./types";
 import type { Round } from "@/lib/types";
 import { firstExample } from "@/lib/example";
 import { SentenceTranslation } from "@/components/meaning-text";
@@ -95,9 +95,9 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
           {meaningOf(word, lang)}
           {/* İngilizce Türkçenin altında, bir kademe küçük: kartın merkezinde
               hâlâ tek bir karşılık var, ikincisi onu doğrulayan satır. */}
-          {word.en ? (
+          {meaningSubOf(word, lang) ? (
             <span className="mt-0.5 block text-body opacity-70" lang="en">
-              {word.en}
+              {meaningSubOf(word, lang)}
             </span>
           ) : null}
         </motion.p>

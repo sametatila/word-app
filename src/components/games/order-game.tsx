@@ -8,7 +8,8 @@ import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { useNoHints } from "./no-hints";
 import { useRoundExit } from "./use-round-exit";
-import { meaningOf, type GameProps, type GameResult } from "./types";
+import { meaningOf, meaningSubOf, type GameProps, type GameResult } from "./types";
+import { exampleFor } from "@/lib/option-label";
 import type { Round } from "@/lib/types";
 import { SentenceTranslation } from "@/components/meaning-text";
 import { vibrate } from "@/lib/fx";
@@ -39,7 +40,10 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
   const lang = useLang();
   // Sınav kâğıdında ipucu düğmesi yok (bkz. no-hints.tsx).
   const noHints = useNoHints();
-  const { word, tokens, answer, tail, sentenceTr, sentenceEn } = round;
+  const { word, tokens, answer, tail } = round;
+  // Cümlenin çevirisi ANADİLDE: Türkçe cümle İngilizce anadilli öğrenciye de
+  // gösteriliyordu ve istem doğrudan `word.tr` idi.
+  const example = exampleFor(round, lang);
 
   const pool = useMemo<Token[]>(() => tokens.map((text, id) => ({ id, text })), [tokens]);
   const [placed, setPlaced] = useState<Token[]>([]);
@@ -183,7 +187,7 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
           : {
               correct: status === "correct",
               answer: `${answer.join(" ")}${tail}`,
-              meaning: sentenceTr ?? meaningOf(word, lang),
+              meaning: example?.text ?? meaningOf(word, lang),
               you: `${placed.map((t) => t.text).join(" ")}${tail}`,
               why:
                 status === "wrong"
@@ -199,18 +203,16 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
       }
       prompt={
         <span className="brand-text text-h2 sm:text-h1">
-          {word.tr}
-          {word.en ? (
+          {meaningOf(word, lang)}
+          {meaningSubOf(word, lang) ? (
             <span className="block text-body opacity-60" lang="en">
-              {word.en}
+              {meaningSubOf(word, lang)}
             </span>
           ) : null}
         </span>
       }
       hint={
-        sentenceTr || sentenceEn ? (
-          <SentenceTranslation tr={sentenceTr} en={sentenceEn} className="italic" />
-        ) : undefined
+        example ? <SentenceTranslation tr={example.text} en={example.sub} className="italic" /> : undefined
       }
     >
       <div className="mx-auto flex w-full max-w-md flex-col items-center gap-6">

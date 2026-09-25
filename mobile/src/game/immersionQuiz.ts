@@ -69,19 +69,47 @@ export function levelPool(level: string): QuizPool {
   return { vocab: lessons.flatMap((l) => l.vocab), patterns: lessons.flatMap((l) => l.patterns) };
 }
 
-function pickDistractors(correct: string, pool: string[], i: number, n = 3): string[] {
-  const uniqPool = [...new Set(pool)].filter((x) => x && x !== correct);
-  if (uniqPool.length <= n) return uniqPool;
-  const out: string[] = [];
+/**
+ * Çeldirici adayı: şıkta görünen metin, taşıdığı anlam ve kelimenin başlığı.
+ *
+ * TEK DOĞRU CEVAP. Çeldirici yalnız doğru cevapla birebir aynı metin değilse
+ * alınıyordu; bu yüzden aynı Almanca başlığın başka bir dersteki karşılığı
+ * ("der Name" → "isim" doğruyken "ad") ve anlam paylaşan kelimeler ikinci bir
+ * doğru şık olabiliyordu, iki çeldirici de birbirinin aynısı olabiliyordu.
+ * Aday şu durumlarda elenir: metni aynı, başlığı aynı ya da anlam parçaları
+ * (virgül, noktalı virgül, eğik çizgiyle ayrılmış) kesişiyor. Seçilen
+ * çeldiriciler birbirine karşı da aynı kuraldan geçer. Seçim yine
+ * deterministik (aynı ünite hep aynı quiz'i verir).
+ */
+type QuizCand = { text: string; mean: string; head: string };
+
+const quizNorm = (x: string) =>
+  x.toLowerCase().replace(/i̇/g, "i").replace(/[…«»"“”„]/g, "").replace(/\s+/g, " ").trim();
+const quizHead = (x: string) => quizNorm(x).replace(/^(der|die|das|the|to)\s+/, "");
+const quizParts = (x: string) => new Set(x.split(/[,;/]/).map(quizNorm).filter(Boolean));
+
+function quizClash(a: QuizCand, b: QuizCand): boolean {
+  if (quizNorm(a.text) === quizNorm(b.text) || quizHead(a.head) === quizHead(b.head)) return true;
+  const own = quizParts(a.mean);
+  for (const m of quizParts(b.mean)) if (own.has(m)) return true;
+  return false;
+}
+
+function pickDistractors(correct: QuizCand, pool: QuizCand[], i: number, n = 3): string[] {
+  const uniqPool: QuizCand[] = [];
+  for (const c of pool) {
+    if (!c.text || quizClash(correct, c)) continue;
+    if (!uniqPool.some((u) => quizNorm(u.text) === quizNorm(c.text))) uniqPool.push(c);
+  }
+  const out: QuizCand[] = [];
   const step = 1 + (i % 3);
-  let idx = (i * 7) % uniqPool.length;
-  let guard = 0;
-  while (out.length < n && guard++ < uniqPool.length * 2) {
+  let idx = (i * 7) % Math.max(1, uniqPool.length);
+  for (let guard = 0; out.length < n && guard < uniqPool.length * 2; guard++) {
     const cand = uniqPool[idx % uniqPool.length];
-    if (!out.includes(cand)) out.push(cand);
+    if (!out.some((o) => quizClash(o, cand))) out.push(cand);
     idx += step;
   }
-  return out;
+  return out.map((c) => c.text);
 }
 
 function placeAnswer(correct: string, distractors: string[], i: number): { options: string[]; answer: number } {
@@ -146,8 +174,8 @@ export function deriveQuiz(
   review?: QuizPool,
 ): SkillQuestion[] {
   const qs: SkillQuestion[] = [];
-  const trPool = pool.vocab.map((v) => v.tr);
-  const dePatternPool = pool.patterns.map((p) => p.de);
+  const vocabCands = pool.vocab.map((v) => ({ text: v.tr, mean: v.tr, head: v.de }));
+  const dePatternCands = pool.patterns.map((p) => ({ text: p.de, mean: p.tr, head: p.de }));
   const patTarget = brief.patterns.length ? Math.min(2, brief.patterns.length) : 0;
   const reviewWords = pickReview(brief, review, Math.floor(count / 3));
   const vocabTarget = Math.min(brief.vocab.length, count - patTarget - reviewWords.length);
@@ -155,11 +183,11 @@ export function deriveQuiz(
   const own: SkillQuestion[] = [];
   for (let i = 0; i < vocabTarget; i++) {
     const v = brief.vocab[i];
-    const { options, answer } = placeAnswer(v.tr, pickDistractors(v.tr, trPool, i), i);
+    const { options, answer } = placeAnswer(v.tr, pickDistractors({ text: v.tr, mean: v.tr, head: v.de }, vocabCands, i), i);
     own.push({ kind: "mcq", text: t("quiz.what_means", { word: v.de }), options, answer, explain: `${v.de} = ${v.tr}.` });
   }
   const back: SkillQuestion[] = reviewWords.map((v, i) => {
-    const { options, answer } = placeAnswer(v.tr, pickDistractors(v.tr, trPool, i + 101), i + 101);
+    const { options, answer } = placeAnswer(v.tr, pickDistractors({ text: v.tr, mean: v.tr, head: v.de }, vocabCands, i + 101), i + 101);
     /* Soru metni ipucu vermez; açıklama nereden geldiğini söyler. */
     return {
       kind: "mcq" as const,
@@ -177,15 +205,15 @@ export function deriveQuiz(
      denir?" diye okunuyordu. Orada soru tersine dönüyor; web tarafı da öyle
      (bkz. `src/lib/immersion/quiz.ts` `PatternAsk`). */
   const meaning = currentCourseId() === "en";
-  const trPatternPool = pool.patterns.map((p) => p.tr);
+  const trPatternCands = pool.patterns.map((p) => ({ text: p.tr, mean: p.tr, head: p.de }));
   for (let j = 0; j < patTarget && qs.length < count; j++) {
     const p = brief.patterns[j];
     if (meaning) {
-      const { options, answer } = placeAnswer(p.tr, pickDistractors(p.tr, trPatternPool, j), j);
+      const { options, answer } = placeAnswer(p.tr, pickDistractors({ text: p.tr, mean: p.tr, head: p.de }, trPatternCands, j), j);
       qs.push({ kind: "mcq", text: t("quiz.what_means", { word: p.de }), options, answer, explain: `${p.de} = ${p.tr}` });
       continue;
     }
-    const { options, answer } = placeAnswer(p.de, pickDistractors(p.de, dePatternPool, j), j);
+    const { options, answer } = placeAnswer(p.de, pickDistractors({ text: p.de, mean: p.tr, head: p.de }, dePatternCands, j), j);
     qs.push({ kind: "mcq", text: t("quiz.how_to_say", { pattern: p.tr, target: targetLangName() }), options, answer, explain: `${p.tr} → ${p.de}` });
   }
   return qs.slice(0, count);

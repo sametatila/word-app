@@ -193,6 +193,15 @@ check("cevap anahtarı hedefi gösteriyor", pi.options[pi.answer] === target.ter
 check("soru kökü anadildeki karşılık", pi.stem === target.gloss);
 check("hedef şıklara girmiş", pi.options.includes(target.term));
 check("çeldirici yetmezse madde kurulmuyor", personalItem(target, [pool[0]], "s") === null);
+{
+  // Soru kökü anlam: kökle anlamı kesişen sözcük ikinci doğru şık olurdu.
+  const syn = [...pool, { wordId: 5, term: "sich nennen", gloss: "adı olmak" }, { wordId: 6, term: "anfangen", gloss: "başlamak; açılmak" }];
+  const withSyn = personalItem(target, syn, "s")!;
+  check("anlamı kökle kesişen çeldirici elenir", !withSyn.options.includes("sich nennen"));
+  const semi = personalItem({ wordId: 7, term: "beginnen", gloss: "başlamak" }, syn, "s")!;
+  check("noktalı virgüllü karşılık da parçalanarak karşılaştırılır", !semi.options.includes("anfangen"));
+  check("açıklama üç dilde", Boolean(pi.byNative?.en?.why && pi.byNative?.de?.why));
+}
 check(
   "kişisel madde ortak puanlayıcıdan geçiyor",
   scoreQuiz([resolveItem(pi as QuizItem, "tr")], { [pi.id]: pi.answer }).correct === 1,

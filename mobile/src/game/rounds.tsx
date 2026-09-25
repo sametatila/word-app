@@ -1,3 +1,4 @@
+import { exampleOf, glossOf } from "./gloss";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { seededShuffle } from "../lib/shuffle";
 import { grammarLine, typLabel } from "./wordGrammar";
@@ -68,9 +69,10 @@ function grammarDetail(w: RoundWord): string | null {
   return line === typLabel(w.typ, w.tr) ? null : line;
 }
 
-/** Anlam satırı: Türkçe + (varsa) İngilizce ayırt edici. */
-function meaningLine(w: { tr: string; en: string | null }): string {
-  return w.en ? `${w.tr} · ${w.en}` : w.tr;
+/** Anlam satırı ANADİLDE + (Türkçe/Almanca anadilde) İngilizce ayırt edici (`glossOf`). */
+function meaningLine(w: { tr: string; en: string | null; deGloss?: string | null }): string {
+  const g = glossOf(w);
+  return g.sub ? `${g.text} · ${g.sub}` : g.text;
 }
 
 /** İpucu iskeleti (web skeleton): her kelimede ilk harf + her 3. harf açık, gerisi "_". */
@@ -586,8 +588,10 @@ function OptionButton({ text, sub, state, onPress, colors, idleTint, answered = 
 
 function ChoiceRound({ round, word, onDone, colors }: { round: Round; word: RoundWord; onDone: Done; colors: Palette }) {
   const deSide = round.direction === "de-tr";
-  const question = deSide ? withArtikel(word) : word.tr;
-  const answer = deSide ? word.tr : withArtikel(word);
+  // Anlam tarafı ANADİLDE: sunucu şıkları anadilde kuruyor, doğru şık da
+  // aynı çözücüden (`glossOf`) — `word.tr` ile İngilizce anadilde hiç eşleşmiyordu.
+  const question = deSide ? withArtikel(word) : glossOf(word).text;
+  const answer = deSide ? glossOf(word).text : withArtikel(word);
   const [picked, setPicked] = useState<string | null>(null);
   const [fb, setFb] = useState<Feedback | null>(null);
   useAutoSpeak(deSide ? question : null, round.id);
@@ -598,11 +602,11 @@ function ChoiceRound({ round, word, onDone, colors }: { round: Round; word: Roun
     // Almanca CEVAP olduğunda (tr-de) doğru Almanca'yı oku; de-tr'de Almanca zaten
     // soru olarak mount'ta okundu → tekrar okuma.
     markAnswer(ok, deSide ? null : withArtikel(word));
-    setFb({ correct: ok, answer: withArtikel(word), meaning: word.tr, detail: grammarDetail(word), you: o.text, why: ok ? null : whyFor({ type: "meaning", word, detail: o.text }) });
+    setFb({ correct: ok, answer: withArtikel(word), meaning: glossOf(word).text, detail: grammarDetail(word), you: o.text, why: ok ? null : whyFor({ type: "meaning", word, detail: o.text }) });
   }
   return (
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, "meaning", picked))} colors={colors} /> : undefined}>
-      <Prompt label={deSide ? tx("rounds.ask_native", { nativeLang: nativeLangName() }) : tx("rounds.ask_target", { target: targetLangName() })} big={question} speakText={deSide ? question : null} sub={!deSide ? word.en : null} colors={colors} />
+      <Prompt label={deSide ? tx("rounds.ask_native", { nativeLang: nativeLangName() }) : tx("rounds.ask_target", { target: targetLangName() })} big={question} speakText={deSide ? question : null} sub={!deSide ? glossOf(word).sub : null} colors={colors} />
       <View style={{ gap: spacing.md }}>
         {optionCards(round).map((o) => {
           const st = picked ? (o.text === answer ? "correct" : o.text === picked ? "wrong" : "idle") : "idle";
@@ -621,7 +625,7 @@ function ArtikelRound({ word, onDone, colors }: { word: RoundWord; onDone: Done;
     const ok = a === word.artikel;
     setPicked(a);
     markAnswer(ok, withArtikel(word)); // doğru artikel+kelime (Almanca = cevap)
-    setFb({ correct: ok, answer: withArtikel(word), meaning: word.tr, you: `${a} ${word.de}`, why: ok ? null : whyFor({ type: "article", word, detail: a }) });
+    setFb({ correct: ok, answer: withArtikel(word), meaning: glossOf(word).text, you: `${a} ${word.de}`, why: ok ? null : whyFor({ type: "article", word, detail: a }) });
   }
   return (
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, "article", picked))} colors={colors} /> : undefined}>
@@ -645,7 +649,7 @@ function TrueFalseRound({ round, word, onDone, colors }: { round: Round; word: R
     const ok = v === round.isTrue;
     setAns(v);
     markAnswer(ok, null); // Almanca zaten mount'ta okundu
-    setFb({ correct: ok, answer: withArtikel(word), meaning: word.tr, why: ok ? null : whyFor({ type: "meaning", word, detail: round.isTrue ? null : (round.claim?.text ?? null) }) });
+    setFb({ correct: ok, answer: withArtikel(word), meaning: glossOf(word).text, why: ok ? null : whyFor({ type: "meaning", word, detail: round.isTrue ? null : (round.claim?.text ?? null) }) });
   }
   return (
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, "meaning", round.claim?.text ?? null))} colors={colors} /> : undefined}>
@@ -771,7 +775,7 @@ function TypingRound({ round, word, onDone, colors }: { round: Round; word: Roun
     /* Hata tipi yazılandan çıkarılıyor - web `typing-game` de aynı: yazım
        hatası ile anlam hatası farklı gerekçe alıyor. */
     const why = ok ? null : whyFor({ type: classifyTyping(val, [word.de, withArtikel(word), ...(round.alternatives ?? [])]), word, detail: val, targetLang: currentTargetLang() });
-    setFb({ correct: ok, answer: withArtikel(word), meaning: word.tr, detail: grammarDetail(word), you: val.trim(), why });
+    setFb({ correct: ok, answer: withArtikel(word), meaning: glossOf(word).text, detail: grammarDetail(word), you: val.trim(), why });
   }
   const inputBlock = (
     <View>
@@ -806,7 +810,7 @@ function TypingRound({ round, word, onDone, colors }: { round: Round; word: Roun
         kelime, sorunun hemen altında yazılı duruyordu. Tür ("isim", "fiil")
         cevabı vermiyor, hangi biçimin beklendiğini söylüyor.
       */}
-      <Prompt label={tx("rounds.write_equivalent", { lang: targetLangName() })} big={word.tr} sub={word.en} meta={typLabel(word.typ, word.tr)} colors={colors} />
+      <Prompt label={tx("rounds.write_equivalent", { lang: targetLangName() })} big={glossOf(word).text} sub={glossOf(word).sub} meta={typLabel(word.typ, word.tr)} colors={colors} />
     </RoundShell>
   );
 }
@@ -1000,7 +1004,7 @@ function FreeSentenceRound({ round, word, onDone, colors }: { round: Round; word
         {targets.map((x) => (
           <PressableScale key={x.id} onPress={() => insert((value && !value.endsWith(" ") ? " " : "") + x.de + " ")} style={{ borderRadius: radii.pill, backgroundColor: colors.surface2, paddingHorizontal: 14, paddingVertical: 9 }}>
             <Text variant="bodyStrong">{withArtikel(x)}</Text>
-            <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center" }}>{x.tr}</Text>
+            <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center" }}>{glossOf(x).text}</Text>
           </PressableScale>
         ))}
       </View>
@@ -1092,7 +1096,7 @@ function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; col
     setPicked(o);
     markAnswer(ok, full); // web: cevapta TAM tamamlanmış cümleyi oku
     // Geri bildirimde de sadece kelimeyi değil TAM cümleyi göster (çeviri anlamlı olsun).
-    setFb({ correct: ok, answer: full, meaning: round.sentenceTr ?? null, you: fillBlank(sentence, o), why: ok ? null : whyFor({ type: typeMode ? classifyTyping(o, [answer]) : "meaning", word: round.word ? { ...round.word, de: answer } : null, detail: o, targetLang: currentTargetLang() }) });
+    setFb({ correct: ok, answer: full, meaning: exampleOf(round)?.text ?? null, you: fillBlank(sentence, o), why: ok ? null : whyFor({ type: typeMode ? classifyTyping(o, [answer]) : "meaning", word: round.word ? { ...round.word, de: answer } : null, detail: o, targetLang: currentTargetLang() }) });
   }
   const submitTyped = () => { if (val.trim()) choose(val.trim()); };
   const typeFooter = typeMode ? (
@@ -1129,7 +1133,7 @@ function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; col
           {/* Boşluklu cümlenin hoparlörü KALDIRILDI (2026-09-23): boşluğu atlayıp bozuk bir cümle okuyordu
               ("Sind der neue Lehrer?") ve webde hiç yoktu. Tam cümle cevaptan sonra okunuyor. */}
         </View>
-        {round.sentenceTr ? <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{round.sentenceTr}</Text> : null}
+        {exampleOf(round) ? <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{exampleOf(round)!.text}</Text> : null}
       </View>
       {/* Yazarak modda şıklar ÇİZİLMİYOR: web de öyle yapıyor, şıkları
           göstermek zorlaştırmanın kendisini geri alırdı. Şıklar yine
@@ -1159,7 +1163,7 @@ function PluralRound({ round, word, onDone, colors }: { round: Round; word: Roun
     const ok = o === answer;
     setPicked(o);
     markAnswer(ok, `die ${answer}`); // doğru çoğulu oku
-    setFb({ correct: ok, answer: `die ${answer}`, meaning: word.tr, you: `die ${o}`, why: ok ? null : whyFor({ type: "plural", word, detail: o, correct: answer }) });
+    setFb({ correct: ok, answer: `die ${answer}`, meaning: glossOf(word).text, you: `die ${o}`, why: ok ? null : whyFor({ type: "plural", word, detail: o, correct: answer }) });
   }
   return (
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, "plural", picked))} colors={colors} /> : undefined}>
@@ -1338,10 +1342,10 @@ function ListenRound({ round, word, onDone, colors }: { round: Round; word: Roun
   const hideWord = audible === true && !picked;
   function choose(o: Option) {
     if (picked) return;
-    const ok = o.text === word.tr;
+    const ok = o.text === glossOf(word).text;
     setPicked(o.text);
     markAnswer(ok, null); // dinleme turu: Almanca zaten çalındı
-    setFb({ correct: ok, answer: withArtikel(word), meaning: word.tr, you: o.text, why: ok ? null : whyFor({ type: "listening", word, detail: o.text }) });
+    setFb({ correct: ok, answer: withArtikel(word), meaning: glossOf(word).text, you: o.text, why: ok ? null : whyFor({ type: "listening", word, detail: o.text }) });
   }
   return (
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, { ...miss(fb.correct, "listening", picked), hintUsed: replays >= 2 })} colors={colors} /> : undefined}>
@@ -1360,7 +1364,7 @@ function ListenRound({ round, word, onDone, colors }: { round: Round; word: Roun
       </View>
       <View style={{ gap: spacing.md }}>
         {optionCards(round).map((o) => {
-          const st = picked ? (o.text === word.tr ? "correct" : o.text === picked ? "wrong" : "idle") : "idle";
+          const st = picked ? (o.text === glossOf(word).text ? "correct" : o.text === picked ? "wrong" : "idle") : "idle";
           return <OptionButton key={o.text} text={o.text} sub={o.sub} state={st} onPress={() => choose(o)} colors={colors} answered={!!picked} chosen={o.text === picked} />;
         })}
       </View>
@@ -1453,7 +1457,7 @@ function ScrambleRound({ round, word, onDone, colors }: { round: Round; word: Ro
     if (np.length === target.length) {
       const ok = foldTight(np.map((x) => x.char).join(""), currentTargetLang()) === compareTarget;
       markAnswer(ok, withArtikel(word)); // tamamlanınca doğru kelimeyi oku
-      setFb({ correct: ok, answer: word.de, speak: withArtikel(word), meaning: word.tr, you: np.map((x) => x.char).join(""), why: ok ? null : whyFor({ type: "spelling", word, detail: np.map((x) => x.char).join(""), targetLang: currentTargetLang() }) });
+      setFb({ correct: ok, answer: word.de, speak: withArtikel(word), meaning: glossOf(word).text, you: np.map((x) => x.char).join(""), why: ok ? null : whyFor({ type: "spelling", word, detail: np.map((x) => x.char).join(""), targetLang: currentTargetLang() }) });
     } else {
       sfx("tap");
     }
@@ -1475,7 +1479,7 @@ function ScrambleRound({ round, word, onDone, colors }: { round: Round; word: Ro
   const drop = useDropZone();
   return (
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, { ...miss(fb.correct, "spelling", placed.map((x) => x.char).join("")), hintUsed })} colors={colors} /> : undefined}>
-      <Prompt label={tx("rounds.order_letters")} big={word.tr} sub={word.en} colors={colors} />
+      <Prompt label={tx("rounds.order_letters")} big={glossOf(word).text} sub={glossOf(word).sub} colors={colors} />
       <View>
         <View ref={drop.ref} onLayout={drop.olc} collapsable={false} style={{ minHeight: 56, flexDirection: "row", flexWrap: "wrap", gap: spacing.sm, borderWidth: 1.5, borderColor: brd, borderRadius: radii.lg, padding: spacing.md, marginBottom: spacing.lg, backgroundColor: colors.surface }}>
           {placed.length === 0 ? <Text variant="body" color={colors.textFaint}>{tx("rounds.tap_letters")}</Text> : placed.map((t, i) => (
@@ -1529,7 +1533,7 @@ function OrderRound({ round, word, onDone, colors }: { round: Round; word: Round
     if (np.length === answer.length) {
       const ok = np.map((x) => x.text).join(" ") === answer.join(" ");
       markAnswer(ok, full); // tamamlanınca tam cümleyi oku
-      setFb({ correct: ok, answer: full, speak: full, meaning: round.sentenceTr ?? word.tr, you: `${np.map((x) => x.text).join(" ")}${tail}`, why: ok ? null : whyFor({ type: classifyOrder(np.map((x) => x.text), answer, tail, currentTargetLang()), word, answer, tail, targetLang: currentTargetLang() }) });
+      setFb({ correct: ok, answer: full, speak: full, meaning: exampleOf(round)?.text ?? glossOf(word).text, you: `${np.map((x) => x.text).join(" ")}${tail}`, why: ok ? null : whyFor({ type: classifyOrder(np.map((x) => x.text), answer, tail, currentTargetLang()), word, answer, tail, targetLang: currentTargetLang() }) });
     } else {
       sfx("tap");
       speakTarget(tileSpeech(t.text), { word: true }); // web: her yerleştirilen kelimeyi oku (kutunun kendi kaydı, bkz. ttsText `tileSpeech`)
@@ -1550,7 +1554,7 @@ function OrderRound({ round, word, onDone, colors }: { round: Round; word: Round
   const drop = useDropZone();
   return (
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, { ...miss(fb.correct, classifyOrder(placed.map((x) => x.text), answer, tail, currentTargetLang()), placed.map((x) => x.text).join(" ")), hintUsed })} colors={colors} /> : undefined}>
-      <Prompt label={tx("rounds.put_sentence_in_order")} big={round.sentenceTr ?? word.tr} sub={round.sentenceEn ?? null} colors={colors} />
+      <Prompt label={tx("rounds.put_sentence_in_order")} big={exampleOf(round)?.text ?? glossOf(word).text} sub={exampleOf(round)?.sub ?? null} colors={colors} />
       <View>
         <View ref={drop.ref} onLayout={drop.olc} collapsable={false} style={{ minHeight: 56, flexDirection: "row", flexWrap: "wrap", gap: spacing.sm, borderWidth: 1.5, borderColor: brd, borderRadius: radii.lg, padding: spacing.md, marginBottom: spacing.lg, backgroundColor: colors.surface }}>
           {placed.length === 0 ? <Text variant="body" color={colors.textFaint}>{tx("rounds.tap_words")}</Text> : placed.map((t, i) => (
@@ -1577,6 +1581,9 @@ function OrderRound({ round, word, onDone, colors }: { round: Round; word: Round
 function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done; colors: Palette }) {
   const guest = Boolean(useAuth().user?.guest);
   const s = typeof round.sentence === "object" && round.sentence ? round.sentence : { tr: "", de: "", en: null };
+  /* Çevrilecek cümle ANADİLDE (sunucu `native`); eski turlarda `tr`ye düşülür. */
+  const source = s.native ?? s.tr;
+  const sourceSub = s.native ? (s.nativeSub ?? null) : s.en;
   const alts = round.alternatives ?? [];
   const [val, setVal] = useState("");
   const [hintShown, setHintShown] = useState(false);
@@ -1619,7 +1626,7 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
             body: JSON.stringify({
               kind: "sentence",
               level: round.word?.niveau || "A1",
-              task: { prompt: `Çevir: ${s.tr}`, target: s.de },
+              task: { prompt: `Çevir: ${source}`, target: s.de },
               answer: { text: typed },
               /* `day` bir YAZMA anahtarı: değerlendirme satırı o güne yazılıyor ve günlük
               kota o günün satırları sayılarak bulunuyor (bkz. api/assess `parseBody`).
@@ -1671,7 +1678,7 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
       answer: rescued ? s.de : null,
       answerTail: (m.matched.match(/[.!?…]+$/)?.[0] ?? ""),
       speak: s.de,
-      meaning: s.tr,
+      meaning: source,
       youTokens: !ok ? m.typed : null,
       /* NEDEN: sıra ve yazım hatası kendi kuralını söylüyor (fiilin yeri gibi);
          anlam hatasında yazılanın tamamı gerekçeye konmuyor. Web
@@ -1728,7 +1735,7 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
   );
   return (
     <RoundShell footer={inputBlock} sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, payload())} colors={colors} /> : undefined}>
-      <Prompt label={tx("rounds.translate_into", { lang: targetLangName() })} big={s.tr} sub={s.en} colors={colors} />
+      <Prompt label={tx("rounds.translate_into", { lang: targetLangName() })} big={source} sub={sourceSub} colors={colors} />
     </RoundShell>
   );
 }
@@ -1755,12 +1762,13 @@ function MatchCard({ text, sub, state, onPress, colors }: { text: string; sub?: 
 }
 
 function MatchRound({ round, onDone, colors }: { round: Round; onDone: Done; colors: Palette }) {
-  // Aynı Türkçe/Almanca iki kez çıkmasın: sağ sütunda ikiz karşılık kafa karıştırır.
+  // Aynı anlam/başlık iki kez çıkmasın: sağ sütunda ikiz karşılık kafa karıştırır.
+  // Sunucu artık ayrışan beş kelime seçiyor; bu süzgeç eski kayıtlı turlar için.
   const words = React.useMemo(() => {
     const seen = new Set<string>();
     const out: RoundWord[] = [];
     for (const w of round.words ?? []) {
-      const tr = w.tr.trim().toLowerCase();
+      const tr = glossOf(w).text.trim().toLowerCase();
       const de = w.de.trim().toLowerCase();
       if (seen.has(`tr:${tr}`) || seen.has(`de:${de}`)) continue;
       seen.add(`tr:${tr}`); seen.add(`de:${de}`);
@@ -1770,7 +1778,7 @@ function MatchRound({ round, onDone, colors }: { round: Round; onDone: Done; col
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [round.id]);
   const rights = React.useMemo(() => {
-    const arr = words.map((w) => ({ wordId: w.id, text: w.tr, sub: w.en }));
+    const arr = words.map((w) => ({ wordId: w.id, text: glossOf(w).text, sub: glossOf(w).sub }));
     for (let i = arr.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [arr[i], arr[j]] = [arr[j], arr[i]]; }
     return arr;
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -1808,7 +1816,7 @@ function MatchRound({ round, onDone, colors }: { round: Round; onDone: Done; col
               {`${tx("sheet.mixed_up")}: `}
               {karisan.map((w, i) => (
                 <Text key={w.id} variant="caption" color={colors.text}>
-                  <Text variant="caption" color={colors.text} style={{ fontWeight: "800" }}>{withArtikel(w)}</Text>{` = ${w.tr}${i < karisan.length - 1 ? " · " : ""}`}
+                  <Text variant="caption" color={colors.text} style={{ fontWeight: "800" }}>{withArtikel(w)}</Text>{` = ${glossOf(w).text}${i < karisan.length - 1 ? " · " : ""}`}
                 </Text>
               ))}
             </Text>

@@ -18,6 +18,9 @@ export type WordRow = {
   beispiel?: string | null;
   beispielTr?: string | null;
   beispielEn?: string | null;
+  /** Almanca karşılık ve örneğin Almancası — İngilizce kurs, Almanca anadil. */
+  deGloss?: string | null;
+  beispielDe?: string | null;
   status: WordStatus;
   /** SRS aralığı (gün) — "tanıdık" eşiği buna bakıyor. */
   intervalDays?: number | null;

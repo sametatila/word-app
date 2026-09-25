@@ -8,7 +8,7 @@ import { GameShell } from "./game-shell";
 import { OptionMark } from "./option-mark";
 import { useRoundExit } from "./use-round-exit";
 import { grammarLine } from "./grammar-line";
-import { withArtikel, targetName, type GameProps, type GameResult , meaningOf } from "./types";
+import { withArtikel, targetName, type GameProps, type GameResult , meaningOf, meaningSubOf } from "./types";
 import { nativeLangName } from "@/lib/i18n/dict";
 import type { Option, Round } from "@/lib/types";
 import { MeaningText } from "@/components/meaning-text";
@@ -100,9 +100,9 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
           {question}
           {/* Türkçeden Almancaya yönde soru bir anlamdır; İngilizcesi burada
               ayırt edici olarak duruyor ("o" tek başına üç kelimeye uyar). */}
-          {!deSide && word.en ? (
+          {!deSide && meaningSubOf(word, lang) ? (
             <span className="block text-body opacity-60" lang="en">
-              {word.en}
+              {meaningSubOf(word, lang)}
             </span>
           ) : null}
         </span>

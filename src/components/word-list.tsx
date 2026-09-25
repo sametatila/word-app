@@ -3,6 +3,7 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { wordStatus, type WordStatus as WordStatusId } from "@/lib/word-status";
 import { useT, useLang } from "@/lib/i18n/client";
+import { exampleFor, glossFor } from "@/lib/option-label";
 import { LANG_LABEL, formatNumber } from "@/lib/i18n/dict";
 import { courseName } from "@/lib/courses";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -28,6 +29,9 @@ export type WordRow = {
   beispiel: string | null;
   beispielTr: string | null;
   beispielEn: string | null;
+  /** Almanca karşılık ve örneğin Almancası — İngilizce kursta Almanca anadil. */
+  deGloss?: string | null;
+  beispielDe?: string | null;
   formen: string | null;
   intervalDays: number | null;
   dueAt: string | null;
@@ -301,8 +305,12 @@ export function WordList({
             const isOpen = open === r.id;
             const note = grammarNote({ ...r, isNew: false }, lang);
             const example = firstExample(r.beispiel);
-            const exampleTr = firstExample(r.beispielTr);
-            const exampleEn = firstExample(r.beispielEn);
+            // Anlam ve örnek çevirisi ANADİLDE; liste herkese Türkçe gösteriyordu.
+            const meaning = glossFor(r, lang);
+            const exampleGloss = exampleFor(
+              { sentenceTr: firstExample(r.beispielTr), sentenceEn: firstExample(r.beispielEn), sentenceDe: firstExample(r.beispielDe ?? null) },
+              lang,
+            );
             return (
               <motion.li
                 key={r.id}
@@ -328,14 +336,14 @@ export function WordList({
                       {r.de}
                     </p>
                     <p className="muted text-body">
-                      {r.tr}
+                      {meaning?.text ?? ""}
                       {/* İngilizce aynı satırda, ayraçla: liste satırı zaten
                           iki satır (Almanca + karşılık); üçüncü satır listeyi
                           taramayı zorlaştırırdı. */}
-                      {r.en ? (
+                      {meaning?.sub ? (
                         <span className="opacity-60" lang="en">
                           {" "}
-                          · {r.en}
+                          · {meaning.sub}
                         </span>
                       ) : null}
                     </p>
@@ -364,8 +372,8 @@ export function WordList({
                       <>
                         <p className="muted mt-2 italic">{example}</p>
                         <SentenceTranslation
-                          tr={exampleTr}
-                          en={exampleEn}
+                          tr={exampleGloss?.text ?? null}
+                          en={exampleGloss?.sub ?? null}
                           className="muted mt-0.5 text-body"
                         />
                       </>

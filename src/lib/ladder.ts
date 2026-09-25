@@ -1,3 +1,4 @@
+import { firstExample } from "./example";
 import type { GameId, Round, RoundWord } from "@/lib/types";
 
 /**
@@ -101,10 +102,14 @@ export function easeRound(round: Round): Round {
         tail,
         sentenceTr: round.sentence.tr,
         sentenceEn: round.sentence.en,
+        sentenceDe: firstExample(round.word.beispielDe ?? null),
       };
     }
     case "cloze":
-      return round.mode === "type" ? { ...round, mode: undefined } : round;
+      // Şıklar ele vermeyen tam bir takım değilse (çekimli cevaba yeterli
+      // çekimli çeldirici bulunamadı) şıklı hâle dönülmez: tek şıklı ya da
+      // biçimden çözülen bir tur basamak inişi değil, bedava puan olurdu.
+      return round.mode === "type" && round.options.length >= 4 ? { ...round, mode: undefined } : round;
     case "typing":
       return round.assist ? round : { ...round, assist: true };
     default:

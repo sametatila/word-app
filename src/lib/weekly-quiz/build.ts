@@ -1,4 +1,5 @@
-import { QUIZ_PLAN, type QuizItem, type QuizWeek } from "./types";
+import { meaningParts } from "@/lib/option-label";
+import { QUIZ_PLAN, type QuizItem, type QuizNative, type QuizWeek } from "./types";
 
 /**
  * Quiz örneğinin kurulması — HANGİ maddeler, hangi sırada.
@@ -144,21 +145,48 @@ export function personalItem(
   target: PersonalWord,
   distractors: readonly PersonalWord[],
   seed: string,
+  /** Soru kökünün dili; anlam karşılaştırmasında büyük/küçük harf kuralı için. */
+  native: QuizNative = "tr",
 ): QuizItem | null {
-  const picks = seededOrder(
-    distractors.filter((d) => d.wordId !== target.wordId && d.term !== target.term),
-    `${seed}:d`,
-  ).slice(0, 3);
+  /* TEK DOĞRU CEVAP. Çeldirici yalnız aynı sözcük ya da aynı biçim değilse
+     alınıyordu; soru kökü ANLAM olduğu için anlamı kökle kesişen bir sözcük
+     (eşanlamlı, havuzda yinelenen madde) ikinci doğru şık oluyordu. Seçilen
+     çeldiriciler birbirinin biçimini de tekrar etmiyor. */
+  const own = meaningParts(target.gloss, native);
+  const eligible = distractors.filter((d) => {
+    if (d.wordId === target.wordId || d.term === target.term) return false;
+    for (const m of meaningParts(d.gloss, native)) if (own.has(m)) return false;
+    return true;
+  });
+  const picks: PersonalWord[] = [];
+  for (const d of seededOrder(eligible, `${seed}:d`)) {
+    if (picks.length === 3) break;
+    if (picks.some((p) => p.term === d.term)) continue;
+    picks.push(d);
+  }
   if (picks.length < 2) return null; // iki çeldirici bulunamadıysa madde kurulmaz
 
   const options = seededOrder([target, ...picks], `${seed}:o`).map((w) => w.term);
+  const answer = options.indexOf(target.term);
   return {
     id: `personal-${target.wordId}`,
     block: "personal",
     stem: target.gloss,
     options,
-    answer: options.indexOf(target.term),
-    why: "Bu sözcük senin kendi tekrar listenden geldi — quiz onu yeni bir bağlamda bir kez daha yokluyor.",
+    answer,
+    why: PERSONAL_WHY.tr,
+    /* Madde çalışma anında üretildiği için çeviri hattından geçmiyor; açıklama
+       üç dilde burada. Şıklar ve cevap anadile göre değişmiyor. */
+    byNative: {
+      en: { options, answer, why: PERSONAL_WHY.en },
+      de: { options, answer, why: PERSONAL_WHY.de },
+    },
     targets: [`personal.word.${target.wordId}`],
   };
 }
+
+const PERSONAL_WHY: Record<QuizNative, string> = {
+  tr: "Bu sözcük senin kendi tekrar listenden geldi — quiz onu yeni bir bağlamda bir kez daha yokluyor.",
+  en: "This word comes from your own review list — the quiz checks it once more in a new context.",
+  de: "Dieses Wort stammt aus deiner eigenen Wiederholungsliste – das Quiz fragt es in einem neuen Zusammenhang noch einmal ab.",
+};

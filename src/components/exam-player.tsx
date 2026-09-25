@@ -23,6 +23,8 @@ import type { GameResult } from "@/components/games/types";
 import type { ExamPaper, ExamResult, ExamSectionId, ProduceExamItem, TextItem } from "@/lib/exam-types";
 import { DIALOG_WORD_TARGET, SECTION_ORDER, SECTION_TITLE_KEYS, SECTION_TITLE_TARGET, SECTION_WORD_TARGET } from "@/lib/exam-types";
 import { useLang, useT } from "@/lib/i18n/client";
+import { glossFor } from "@/lib/option-label";
+import type { NativeLang } from "@/lib/courses";
 import { useCourse } from "@/components/app-shell";
 import { targetLangOf } from "@/lib/courses";
 import { matchSentence } from "@/lib/sentence-match";
@@ -296,7 +298,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
   function onVocabDone(round: Round, results: GameResult[]) {
     for (const r of results) {
       if (r.correct) score.current.vocab.correct++;
-      else misses.current.push({ section: "vocab", prompt: wordPrompt(round, t), answer: wordAnswer(round) });
+      else misses.current.push({ section: "vocab", prompt: wordPrompt(round, t, lang), answer: wordAnswer(round) });
       vocabAnswers.current.push({ ...r, game: round.game });
     }
     if (idx + 1 < paper!.sections.vocab.length) setIdx(idx + 1);
@@ -1360,8 +1362,12 @@ function Result({
 }
 
 /* Kelime turunda kaçırılan maddenin dökümde görünecek hâli. */
-function wordPrompt(round: Round, t: (k: string) => string): string {
-  if ("word" in round && round.word) return round.game === "translate" && "sentence" in round ? round.sentence.tr : round.word.tr;
+function wordPrompt(round: Round, t: (k: string) => string, lang: NativeLang): string {
+  // Dökümde kaçırılan maddenin anlamı ANADİLDE (`word.tr` herkese Türkçe idi).
+  if ("word" in round && round.word) {
+    if (round.game === "translate" && "sentence" in round) return round.sentence.native ?? round.sentence.tr;
+    return glossFor(round.word, lang)?.text ?? round.word.de;
+  }
   // Kelimesiz bir kelime turu üretilmiyor; yine de sabit Türkçe bırakmamak
   // için yedek de sözlükten geliyor (zayıf nokta kartında görünebilir).
   return t("exam.sec_vocab");

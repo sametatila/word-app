@@ -17,7 +17,7 @@ import {
   type SessionProgress,
   type Wager,
 } from "@/lib/types";
-import type { GameResult } from "@/components/games/types";
+import { meaningOf, meaningSubOf, type GameResult } from "@/components/games/types";
 import { GameSwitch } from "@/components/game-switch";
 import { EASE_AFTER_MISSES, easeRound, isProductionGame } from "@/lib/ladder";
 import { prefetchWord } from "@/components/speak-button";
@@ -119,6 +119,7 @@ export function SessionPlayer() {
 }
 
 function SessionRound() {
+  const lang = useLang();
   const t = useT();
   const router = useRouter();
   const [status, setStatus] = useState<Status>("loading");
@@ -620,8 +621,9 @@ function SessionRound() {
             missed.current.push({
               id: w.id,
               de: w.artikel ? `${w.artikel} ${w.de}` : w.de,
-              tr: w.tr,
-              en: w.en,
+              // Özet listesinde görünen anlam ANADİLDE; alan adı tarihsel.
+              tr: meaningOf(w, lang),
+              en: meaningSubOf(w, lang),
             });
           }
         }
