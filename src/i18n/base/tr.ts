@@ -170,6 +170,7 @@ export const trBase: Record<string, string> = {
   "common.completed": "Tamamlandı",
   "common.confirm": "Onayla",
   "common.connection_failed": "Bağlantı kurulamadı",
+  "common.network_blocked": "Lernomi'ye bu ağdan ulaşılamıyor. Bazı okul ve iş ağları yeni siteleri engelleyebiliyor; mobil veriyle ya da başka bir Wi-Fi ile dene.",
   "common.correct": "Doğru",
   "common.continue": "Devam",
   "common.continue_2": "Devam et",

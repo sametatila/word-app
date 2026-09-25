@@ -168,6 +168,7 @@ export const en: Record<string, string> = {
   "common.completed": "Completed",
   "common.confirm": "Confirm",
   "common.connection_failed": "Could not connect",
+  "common.network_blocked": "Lernomi can't be reached from this network. Some school and work networks block new sites; try mobile data or a different Wi-Fi.",
   "common.correct": "Correct",
   "common.continue": "Continue",
   "common.continue_2": "Continue",

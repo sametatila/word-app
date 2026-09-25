@@ -168,6 +168,7 @@ export const de: Record<string, string> = {
   "common.completed": "Abgeschlossen",
   "common.confirm": "Bestätigen",
   "common.connection_failed": "Keine Verbindung",
+  "common.network_blocked": "Lernomi ist in diesem Netzwerk nicht erreichbar. Manche Schul- und Firmennetze sperren neue Websites; versuch es mit mobilen Daten oder einem anderen WLAN.",
   "common.correct": "Richtig",
   "common.continue": "Weiter",
   "common.continue_2": "Weiter",
