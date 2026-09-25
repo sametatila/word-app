@@ -245,6 +245,19 @@ Play tr-TR/en-US/de-DE: başlık, kısa ve tam açıklama (edit commit edildi, g
 önce bu belge, sonra aynı yolla mağaza. Play 512 ikonu da yüklendi (üç dil, aşağıdaki türetmeyle).
 Kalan: ekran görüntüleri, öne çıkan grafik, video.
 
+**Abonelik açıklamaları (2026-09-25, denetim S9):** paywall'daki iddiayla aynı (`paywall.pitch_exams`): Premium'un
+farkı Cepte yürüyüş, TÜM deneme sınavları ve seri beklemeden Konuşma/Yazma. "Tüm sınavlar" yazılmaz (modül ve
+seviye sınavları ücretsiz), "yapay zekâyla konuşma-yazma" tek başına yazılmaz (ücretsizde de seviye başına hak var).
+
+| Mağaza | tr | en-US | de-DE |
+|---|---|---|---|
+| ASC açıklama (55) | `Cepte yürüyüş, tüm deneme sınavları, Konuşma, Yazma` | `Pocket Walking, every mock exam, Speaking & Writing` | `Taschen-Gehmodus, Probeprüfungen, Sprechen & Schreiben` |
+| Play faydalar (40) | Cepte yürüyüş (ekran kapalı) · Tüm deneme sınavları · Seri beklemeden Konuşma ve Yazma | Pocket Walking (screen off) · Every mock exam · Speaking & Writing, no streak wait | Taschen-Gehmodus (Bildschirm aus) · Alle Probeprüfungen · Sprechen & Schreiben ohne Serie |
+| Play açıklama (80) | Cepte yürüyüş, tüm deneme sınavları, seri beklemeden Konuşma ve Yazma adımları | Pocket Walking, every mock exam, every Speaking and Writing step, no streak wait | Taschen-Gehmodus, alle Probeprüfungen, alle Sprechen- und Schreiben-Schritte |
+
+Play iki üründe girildi ve geri okundu (2026-09-25). ASC girişi izin denetimine takıldı; Samet'in çalıştıracağı
+komut sohbette (girildiğinde bu satır güncellenir).
+
 **Açık:** ekran görüntüleri ve öne çıkan grafik tasarımdan sonra. (Haftalık quizin en/de çevirisi 2026-09-25'te canlıya çıktı, içerik sürümü 24, kilitli `quiznative/*` paketleri; en/de metinlerindeki "explained in English / Erklärungen auf Deutsch" iddiası artık haftalık quiz için de doğru.)
 
 ## Yeniden üretmek
