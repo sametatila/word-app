@@ -23,7 +23,8 @@ Türkçe anlatım); sınav bu eğitimin sonucu olarak ikinci katman. Sınava haz
 kampanya vitrinde YOK (görselde fiyat/süreli teklif olmaz), grup sayfasında.
 
 **Altyazı / tek cümle:** **"Konuş, anla, sınava hazırlan"** (tr, 28 karakter; iOS subtitle,
-Play kısa açıklamanın ilk cümlesi). en/de karşılıkları metin çalışmasında.
+Play kısa açıklamanın ilk cümlesi). en-US: **"Speak, understand, ace exams"** (28) ·
+de-DE: **"Sprechen, verstehen, bestehen"** (29).
 
 **Beş sütun (öncelik sırası):** 1) A1'den C1'e tam müfredat, Türkçe anlatım · 2) konuşarak
 öğren: her derste rol yapma + konuşmaya geri bildirim · 3) dört becerili deneme sınavları,
@@ -48,7 +49,7 @@ kurs; en-US: İngilizce arayüz + Almanca kurs; de-DE: Almanca arayüz + İngili
 gerçek hesap, yer tutucu veri yok; sınav markası yok; Premium özellik altyazıda "Premium"
 der (2.3.2). Aşağıdaki "Kurallar" bölümü de geçerli.
 
-**Açık (sonraki soru-cevap):** en/de altyazılar ve açıklama metinleri, Play öne çıkan grafik
+**Açık (sonraki soru-cevap):** açıklama metinleri, Play öne çıkan grafik
 (1024×500), ikon/maskot kullanımı, App Preview videosu (`docs/appstore/listing.md` §7 karar 3).
 
 ## Yeniden üretmek
