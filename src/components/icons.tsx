@@ -9,7 +9,7 @@ import type { SVGProps } from "react";
  *
  * Setin 48 simgesi (`BreadIcon`, `BusIcon`, `CoffeeIcon`, `WeatherIcon`, …)
  * 500 derslik müfredatla birlikte geldi (66cb70b0) ve o zaman
- * `lessons/lesson-hub` içindeki konu → ikon haritasından çiziliyordu. Ders
+ * `conversations/conversation-hub` içindeki konu → ikon haritasından çiziliyordu. Ders
  * merkezi Patika'ya (Immersion) devredilince o dosya silindi; konu ADLARI
  * yaşamaya devam ediyor (`lib/cando-map`, mobil `game/candoMap`) ama konu
  * ikonlarını çizen bir yüzey KALMADI. Mobilde karşılığı hiç olmadı: oradaki

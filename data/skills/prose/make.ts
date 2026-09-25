@@ -31,7 +31,7 @@ const DIR = new URL(".", import.meta.url).pathname;
 
 /**
  * ALINTI SATIRI — çeviri istemeyen `explain`. Ölçüt ÇÖZÜCÜDE yazılı
- * (`isProseQuote`, src/lib/lessons/native.ts) ve buraya oradan geliyor.
+ * (`isProseQuote`, src/lib/conversations/native.ts) ve buraya oradan geliyor.
  *
  * Neden orada: paketleyici ile çözücü aynı ölçütü kullanmak zorunda.
  * Burada ikinci bir kopya dursaydı, biri daraldığında öteki dizeyi
@@ -39,8 +39,8 @@ const DIR = new URL(".", import.meta.url).pathname;
  * egzersizi Türkçeye düşürürdü — hiçbir yerde hata görünmeden. Gerekçenin
  * tamamı çözücüdeki açıklamada.
  */
-export { isProseQuote as isQuote } from "@/lib/lessons/native";
-import { isProseQuote } from "@/lib/lessons/native";
+export { isProseQuote as isQuote } from "@/lib/conversations/native";
+import { isProseQuote } from "@/lib/conversations/native";
 
 export type ProseRow = {
   tr: string;

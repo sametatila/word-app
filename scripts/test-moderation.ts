@@ -148,7 +148,7 @@ const BİLİNEN_İSABET = new Set(["am", "dick", "nazi", "nazis"]);
       else if (e.name.endsWith(".json")) { try { gez(JSON.parse(readFileSync(p, "utf8"))); } catch { /* üretilmemiş/bozuk dosya: atla */ } }
     }
   };
-  for (const dir of ["data", "src/content", "src/lib/lessons"]) yürü(dir);
+  for (const dir of ["data", "src/content", "src/lib/conversations"]) yürü(dir);
 
   const norm = (s: string) => s.toLocaleLowerCase("tr-TR").replace(/[^\p{L}\p{N}]/gu, "");
   const isabet = [...kelimeler].filter((w) => displayNameAllowed(w) === false);

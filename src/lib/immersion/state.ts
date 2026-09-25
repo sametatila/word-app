@@ -51,9 +51,9 @@ export type UnitState = {
   /** Toplam oynanabilir item sayısı (gösterim için). */
   total: number;
   /** Biten ders item'ı — GATING ölçütü (iskelet). */
-  lessonsDone: number;
+  conversationsDone: number;
   /** Toplam ders item'ı (iskelet). */
-  lessonsTotal: number;
+  conversationsTotal: number;
   items: ItemState[];
 };
 
@@ -66,7 +66,7 @@ export type TrackState = {
 
 /** Tamamlanma yüklemi — Faz 3 userConversations/userSkills'ten türetir. */
 export type Completion = {
-  lessonDone: (ref: string) => boolean;
+  conversationDone: (ref: string) => boolean;
   skillDone: (ref: string) => boolean;
   /**
    * "Denendi" — kayıt var ama puan yetmemiş olabilir. Kapı bunu kullanıyor;
@@ -75,7 +75,7 @@ export type Completion = {
    * İsteğe bağlı: eski çağıranlar (testler, eski adaptör) vermezse davranış
    * bitmiş-öğeye düşer, yani eski hâl.
    */
-  lessonAttempted?: (ref: string) => boolean;
+  conversationAttempted?: (ref: string) => boolean;
   skillAttempted?: (ref: string) => boolean;
   /**
    * Pratik adımlar (dil bilgisi, tekrar, kontrol noktası) — ÖĞE KİMLİĞİYLE,
@@ -96,14 +96,14 @@ export function isPracticeKind(kind: string): boolean {
 
 function itemDone(it: ImmersionItem, c: Completion): boolean {
   if (it.ref === null) return false;
-  if (it.kind === "lesson") return c.lessonDone(it.ref);
+  if (it.kind === "conversation") return c.conversationDone(it.ref);
   if (it.kind === "read" || it.kind === "listen" || it.kind === "write") return c.skillDone(it.ref);
   return c.practiceDone?.(it.id) ?? false;
 }
 
 function itemAttempted(it: ImmersionItem, c: Completion): boolean {
   if (it.ref === null) return false;
-  if (it.kind === "lesson") return c.lessonAttempted?.(it.ref) ?? false;
+  if (it.kind === "conversation") return c.conversationAttempted?.(it.ref) ?? false;
   if (it.kind === "read" || it.kind === "listen" || it.kind === "write") return c.skillAttempted?.(it.ref) ?? false;
   return c.practiceAttempted?.(it.id) ?? false;
 }
@@ -164,10 +164,10 @@ export function buildTrackState(track: ImmersionTrack, c: Completion): TrackStat
     const completable = playable.filter((i) => kayitTutarTur(i.item.kind));
     const total = completable.length;
     const done = completable.filter((i) => i.done).length;
-    const lessons = completable.filter((i) => i.item.kind === "lesson");
-    const lessonsTotal = lessons.length;
-    const lessonsDone = lessons.filter((i) => i.done).length;
-    // GATING İSKELETE (DERSLERE) BAĞLI — sahibin "lesson = iskelet" kararı.
+    const conversations = completable.filter((i) => i.item.kind === "conversation");
+    const conversationsTotal = conversations.length;
+    const conversationsDone = conversations.filter((i) => i.done).length;
+    // GATING İSKELETE (DERSLERE) BAĞLI — sahibin "conversation = iskelet" kararı.
     // Beceri/gramer/quiz item'ları OPSİYONEL zenginleştirme: ünite açılışını
     // bloklamaz. Gerekçe: bu içerik seyrek ve temaya göre yeniden kuruluyor
     // (bkz. plan §İçerik stratejisi); onları kapı yapmak, tematik olarak
@@ -186,9 +186,9 @@ export function buildTrackState(track: ImmersionTrack, c: Completion): TrackStat
       dururken "tamamlandı" görünüyordu. Kendi hesabında görüldü: 4 item bitmiş,
       ünite bitmiş sayılıyordu.
     */
-    const unlocksNext = lessonsTotal > 0 ? lessonsDone === lessonsTotal : total === 0 || done === total;
+    const unlocksNext = conversationsTotal > 0 ? conversationsDone === conversationsTotal : total === 0 || done === total;
     const complete = total === 0 ? unlocksNext : done === total;
-    units.push({ unit, locked, complete, unlocksNext, done, total, lessonsDone, lessonsTotal, items });
+    units.push({ unit, locked, complete, unlocksNext, done, total, conversationsDone, conversationsTotal, items });
     if (!locked && !complete && currentIndex < 0) currentIndex = unit.index;
     prevComplete = unlocksNext;
   }

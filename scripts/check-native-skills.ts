@@ -18,11 +18,11 @@
  */
 import { readFileSync } from "node:fs";
 import { BUNDLED_EXERCISES } from "@/lib/skills";
-import { resolveExercise, isProseQuote, isTurkishStem, type NativeDict } from "@/lib/lessons/native";
+import { resolveExercise, isProseQuote, isTurkishStem, type NativeDict } from "@/lib/conversations/native";
 import { extractTasks } from "../data/skills/task/make.js";
 
 const dict = JSON.parse(
-  readFileSync("src/lib/lessons/generated/native-en.json", "utf8"),
+  readFileSync("src/lib/conversations/generated/native-en.json", "utf8"),
 ) as NativeDict;
 
 type Q = { explain?: string };

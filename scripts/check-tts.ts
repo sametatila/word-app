@@ -26,7 +26,7 @@ import { readFileSync } from "node:fs";
 import { MOCK_PAPERS } from "../src/lib/mock-exams/source";
 import { QUIZ_WEEKS } from "../src/lib/weekly-quiz";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
-import { MODULE_EXAM_ENTRIES } from "../src/lib/lessons/module-exam";
+import { MODULE_EXAM_ENTRIES } from "../src/lib/conversations/module-exam";
 import { MAX_TEXT, cleanForSpeech, splitForSpeech } from "../src/lib/tts/text";
 import { dialogueCast, genderOf, rolePairs, speakerKey, speakerKnown } from "../src/lib/tts/speakers";
 
@@ -341,7 +341,7 @@ console.log("\n4. Web ↔ mobil paritesi");
     const body = at < 0 ? "" : src.slice(at, src.indexOf("};", at) > 0 && name !== "VOICES" ? src.indexOf("};", at) : src.indexOf("];", at));
     return [...body.matchAll(/"([a-z]{2}-[A-Z]{2}-[A-Za-z]+)"/g)].map((m) => m[1]).join(",");
   };
-  for (const name of ["VOICES", "OWN_VOICES", "GENDER", "LESSON"]) {
+  for (const name of ["VOICES", "OWN_VOICES", "GENDER", "CONVERSATION"]) {
     const w = ids(webV, name);
     const m = ids(mobV, name);
     if (!w || w !== m) err("parite", `${name} ayrışmış:\n      web  ${w}\n      mobil ${m}`);

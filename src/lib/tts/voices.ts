@@ -96,16 +96,16 @@ export function narrationVoice(lang: NativeLang): VoiceId {
  * ağa hiç çıkmadan geliyor. Profil sesine saygı bu kazanımı ikiye bölerdi.
  * Katja zaten ölçülmüş en hızlı ses; Zürih kursunda lehçeyi doğru okuyan Leni.
  */
-export function lessonVoice(course: string): VoiceId {
+export function conversationVoice(course: string): VoiceId {
   /* AÇIK TABLO, katalogdan türetme DEĞİL. Eskiden `defaultVoice(course)` idi: kursun ilk sesi Katja'ydı.
      2026-09-23'te kursun ilk sesi Defne oldu ve Defne'nin yalnız kelime katmanı üretildi — türetme sürseydi
      derslerin, dinlemelerin ve okuma parçalarının bütün cümleleri Defne adıyla Katja'ya gider, bir kısmı
      (kelime katmanıyla çakışan cümleler) Defne'nin kendi sesiyle çalardı: tek derste iki farklı kadın.
      Bu katmanlar üretilince burası karakter sesine döner. */
-  return LESSON[course as keyof typeof LESSON] ?? LESSON.de;
+  return CONVERSATION[course as keyof typeof CONVERSATION] ?? CONVERSATION.de;
 }
 
-const LESSON: Record<"de" | "gsw-zh" | "en", VoiceId> = {
+const CONVERSATION: Record<"de" | "gsw-zh" | "en", VoiceId> = {
   de: "de-DE-KatjaNeural",
   "gsw-zh": "de-CH-LeniNeural",
   en: "en-US-JennyNeural",
@@ -348,7 +348,7 @@ export function pitchFor(pitch: Pitch = "mid"): string {
  * dediğini ayırmak — kulakla yapılamaz hâle geliyor; gerçek dinleme
  * sınavlarında her rolü ayrı bir kişi seslendiriyor, çünkü ölçülen beceri bu.
  *
- * KULLANICININ SES TERCİHİNE BAKILMIYOR, bilerek. Gerekçe `lessonVoice` ile
+ * KULLANICININ SES TERCİHİNE BAKILMIYOR, bilerek. Gerekçe `conversationVoice` ile
  * birebir aynı: kadro sabit olunca bir diyaloğun sesi bütün kullanıcılarda
  * TEK önbellek girdisi oluyor ve kâğıdı ilk açan kişi önbelleği herkes için
  * ısıtıyor. Tercihe saygı göstermek her sesi kullanıcı sayısı kadar

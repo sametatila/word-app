@@ -15,7 +15,7 @@ import {
   type AssessRequest,
 } from "@/lib/assess-prompts";
 import { claimTiered, type Access } from "@/lib/premium/access";
-import { findLesson } from "@/lib/lessons";
+import { findConversation } from "@/lib/conversations";
 import { claimSkillAi } from "@/lib/premium/skill-access";
 import { getExercise } from "@/lib/skills";
 import { premiumConfig, takeUsage } from "@/lib/premium";
@@ -126,8 +126,8 @@ export async function POST(req: Request) {
   if (gated && !examVerified && !who.guest && exerciseId) {
     let gate: Access | null = null;
     if (parsed.req.kind === "chat") {
-      const lesson = await findLesson(exerciseId.replace(/:exam$/, ""));
-      if (lesson) gate = await claimTiered(userId, "conversation", lesson.level, lesson.id);
+      const conversation = await findConversation(exerciseId.replace(/:exam$/, ""));
+      if (conversation) gate = await claimTiered(userId, "conversation", conversation.level, conversation.id);
     } else {
       const exercise = await getExercise(exerciseId);
       if (exercise) gate = await claimSkillAi(userId, exercise);
@@ -218,7 +218,7 @@ function list(v: unknown): string[] | undefined {
 function parseBody(body: unknown): { req: AssessRequest; day: string; tooLong: boolean } | null {
   if (typeof body !== "object" || body === null) return null;
   const b = { ...(body as Record<string, unknown>) };
-  b.kind = legacyKind(b.kind); // build 6 `roleplay` gönderiyor (geçici, lib/legacy-names)
+  b.kind = legacyKind(b.kind); // build 6 eski türü gönderiyor (geçici, lib/legacy-names)
   if (!ASSESS_KINDS.includes(b.kind as AssessKind)) return null;
   if (!ASSESS_LEVELS.includes(b.level as AssessLevel)) return null;
   const task = (b.task ?? {}) as Record<string, unknown>;

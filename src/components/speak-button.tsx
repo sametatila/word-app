@@ -8,7 +8,7 @@ import { isAppleMobile } from "@/lib/apple-mobile";
 import { afterMs } from "@/components/pocket-clock";
 import { trackOnce } from "@/lib/track";
 import { screenKey } from "@/lib/screens";
-import { PACE_PARAM, PITCH_PARAM, TURKISH_VOICE, lessonVoice, narrationVoice, resolveVoice, type Pace, type Pitch, type VoiceId } from "@/lib/tts/voices";
+import { PACE_PARAM, PITCH_PARAM, TURKISH_VOICE, conversationVoice, narrationVoice, resolveVoice, type Pace, type Pitch, type VoiceId } from "@/lib/tts/voices";
 import { cleanForSpeech, splitForSpeech } from "@/lib/tts/text";
 import { dialogueCast } from "@/lib/tts/speakers";
 import { useT } from "@/lib/i18n/client";
@@ -404,7 +404,7 @@ export function prefetchGerman(text: string, word = false) {
  * Kullanıcının seçtiği ses, kursa göre doğrulanmış — kelime katmanının sesi.
  *
  * Parça zinciri (`speakSegments`) sesi parçanın dilinden türetiyor ve o türetme DERS sesini veriyor
- * (`lessonVoice`, sabit). Yürüyüş modu hedef kelimeyi bu yüzden seçilen karakterle değil ders sesiyle
+ * (`conversationVoice`, sabit). Yürüyüş modu hedef kelimeyi bu yüzden seçilen karakterle değil ders sesiyle
  * okuyordu; kelime parçası sesini buradan açıkça taşımalı.
  */
 export function selectedVoice(): VoiceId {
@@ -487,7 +487,7 @@ export type SpeechSegment = {
  *
  * Ses sabit olunca dersin her cümlesi kullanıcıdan bağımsız tek önbellek
  * girdisi — ilk dinleyen CDN'i herkes için ısıtıyor (bkz. lib/tts/voices,
- * lessonVoice). Profil sesi konuşma pratiği gibi kullanıcıya özel üretilen
+ * conversationVoice). Profil sesi konuşma pratiği gibi kullanıcıya özel üretilen
  * yerlerde geçerli olmayı sürdürüyor.
  */
 function voiceForSegment(seg: SpeechSegment): { voice: VoiceId; course: string } {
@@ -508,8 +508,8 @@ function voiceForSegment(seg: SpeechSegment): { voice: VoiceId; course: string }
     uyuştuğunda belirleyici — Zürih'te lehçe sesi seçilebilsin diye.
   */
   const course = readLocal(COURSE_KEY) ?? "de";
-  if (seg.lang === "en") return { voice: lessonVoice("en"), course: "en" };
-  return { voice: lessonVoice(course === "en" ? "de" : course), course: course === "en" ? "de" : course };
+  if (seg.lang === "en") return { voice: conversationVoice("en"), course: "en" };
+  return { voice: conversationVoice(course === "en" ? "de" : course), course: course === "en" ? "de" : course };
 }
 
 /**
@@ -1350,7 +1350,7 @@ function speakWithBrowser(
     u.onerror = () => onEnd();
   }
   // cancel() bekleyen konuşmanın onend'ini de tetikler; çağıran taraf hangi
-  // okumanın bittiğini ayırt edebilmeli (bkz. lesson-player, konuşma jetonu).
+  // okumanın bittiğini ayırt edebilmeli (bkz. conversation-player, konuşma jetonu).
   window.speechSynthesis.cancel();
   window.speechSynthesis.speak(u);
 }

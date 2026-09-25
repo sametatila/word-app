@@ -20,7 +20,7 @@ import { writeFileSync } from "node:fs";
 import { MOCK_PAPERS } from "../src/lib/mock-exams/source";
 import { QUIZ_WEEKS } from "../src/lib/weekly-quiz";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
-import { MODULE_EXAMS } from "../src/lib/lessons/module-exam";
+import { MODULE_EXAMS } from "../src/lib/conversations/module-exam";
 import { dialogueCast } from "../src/lib/tts/speakers";
 import { cleanForSpeech, splitForSpeech } from "../src/lib/tts/text";
 

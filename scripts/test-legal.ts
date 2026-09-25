@@ -4,7 +4,7 @@ import { TERMS_DEFAULT } from "@/content/legal/defaults/terms";
 import { SUPPORT_DEFAULT } from "@/content/legal/defaults/support";
 import type { LegalDocDefault } from "@/content/legal/defaults/types";
 import { safeHref, unbalancedConditionals, unknownTokens } from "@/lib/legal/markdown";
-import { SPEECH_LOG_RETENTION_DAYS } from "@/lib/lessons/log-const";
+import { SPEECH_LOG_RETENTION_DAYS } from "@/lib/conversations/log-const";
 import { SESSION_MAX_DAYS } from "@/lib/auth/session-config";
 import { ATTESTATION_RETENTION_DAYS } from "@/lib/auth/attestation-const";
 import { DAILY_QUOTAS } from "@/lib/quotas";
@@ -234,13 +234,13 @@ console.log("\nSaklama süreleri");
 console.log("\nAdil kullanım");
 {
   const ENDPOINTS: { path: string; field: keyof typeof DAILY_QUOTAS }[] = [
-    { path: "src/app/api/chat/route.ts", field: "roleplayTurns" },
+    { path: "src/app/api/chat/route.ts", field: "chatTurns" },
     { path: "src/app/api/stt/route.ts", field: "sttRequests" },
     { path: "src/app/api/pronounce/route.ts", field: "pronounceRequests" },
     { path: "src/app/api/reports/route.ts", field: "reports" },
   ];
   const PAIRS: [keyof typeof FAIR_USE, keyof typeof DAILY_QUOTAS][] = [
-    ["roleplayTurnsPerDay", "roleplayTurns"],
+    ["roleplayTurnsPerDay", "chatTurns"],
     ["sttRequestsPerDay", "sttRequests"],
     ["pronounceRequestsPerDay", "pronounceRequests"],
     ["reportsPerDay", "reports"],

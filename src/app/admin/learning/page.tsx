@@ -28,7 +28,7 @@ export default async function AdminLearningPage({ searchParams }: { searchParams
   const a = analysis.value;
   return (
     <PanelPage title="Öğrenme ve madde analizi" description="Hangi madde öğrencileri düşürüyor (kapatılabilir), altında dersler, beceriler, sınavlar ve oyunların genel metrikleri." href="/admin/learning" at={at} issues={[...panelIssues(value), ...a.issues]} days={days}>
-      <LearningAnalysis lessons={a.lessons} skills={a.skills} path={a.path} mockItems={a.mockItems} mockScanned={a.mockScanned} minAnswers={MIN_ANSWERS} />
+      <LearningAnalysis conversations={a.conversations} skills={a.skills} path={a.path} mockItems={a.mockItems} mockScanned={a.mockScanned} minAnswers={MIN_ANSWERS} />
       <LearningSection days={days} data={value.data} coverage={value.coverage} />
     </PanelPage>
   );

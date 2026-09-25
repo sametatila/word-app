@@ -67,7 +67,7 @@ export type Access = {
  * Sayaç adları: kullanılmış hak `<yüzey>:<SEVİYE>` (ömürlük), sahiplenilmiş madde
  * işareti `<yüzey>_owned:` önekli ayrı bir anahtar. Beceriler'in iki yüzeyi TEK
  * sahiplik işaretini paylaşıyor (`skill_owned:<egzersiz>`): egzersiz ya konuşma
- * ya yazma, ikisi birden değil. Eski adlar (`writing_lesson:`, `owned_lesson:`,
+ * ya yazma, ikisi birden değil. Eski adlar (`writing_conversation:`, `owned_conversation:`,
  * `speaking_skill:`, `writing_skill:`, `skill_ai:`) 2026-09-25'te
  * `drizzle/0069_rename_conversation.sql` ile taşındı.
  */
@@ -137,7 +137,7 @@ async function ownedWithPrefix(userId: string, prefix: string): Promise<string[]
 }
 
 /** Bitirilmiş dersler — Konuşma adımının "bitirildi" ölçüsü (`user_conversations`). */
-async function finishedLessons(userId: string, ids: string[]): Promise<number> {
+async function finishedConversations(userId: string, ids: string[]): Promise<number> {
   if (!ids.length) return 0;
   try {
     const [row] = await db
@@ -164,7 +164,7 @@ async function tieredCounts(userId: string, surface: TieredSurface, level: strin
   const used = await getUsage(userId, SURFACES[surface].used(level), "all");
   if (surface !== "conversation") return { used, done: used };
   const ids = await ownedWithPrefix(userId, `conversation_owned:${level}:`);
-  return { used, done: await finishedLessons(userId, ids) };
+  return { used, done: await finishedConversations(userId, ids) };
 }
 
 /** Tek yüzeyin durumu — kapı ve arayüz aynı hesabı görüyor. */
@@ -189,7 +189,7 @@ export async function tieredState(userId: string, surface: TieredSurface, level:
  *
  * PREMIUM: kademe yok. Yazma/konuşma değerlendirmesi günlük kötüye kullanım
  * tavanına (`ai_practice`) sayılıyor; Konuşma adımının tavanı sohbet mesajı
- * (`roleplay_turns`, `/api/chat`). Premium'da da madde sahipleniliyor:
+ * (`chat_turns`, `/api/chat`). Premium'da da madde sahipleniliyor:
  * abonelik biterse başladığı adım açık kalsın.
  */
 export async function claimTiered(userId: string, surface: TieredSurface, level: string, itemId: string): Promise<Access> {
@@ -546,7 +546,7 @@ export async function unlockOverview(userId: string): Promise<UnlockOverview> {
     else if (key.startsWith("skill_owned:")) skillOwned.push(key.slice("skill_owned:".length));
   }
   const allConv = [...convOwned.values()].flat();
-  const doneLessons = await finishedLessonSet(userId, allConv);
+  const doneConversations = await finishedConversationSet(userId, allConv);
 
   const course = mockCourseOf(profile?.course);
   /* Künye kataloğu, tam kâğıt değil: durum ucu uygulama her açıldığında
@@ -574,7 +574,7 @@ export async function unlockOverview(userId: string): Promise<UnlockOverview> {
       }
     }
     levels[level] = {
-      conversation: tiered("conversation", level, (convOwned.get(level) ?? []).filter((id) => doneLessons.has(id)).length),
+      conversation: tiered("conversation", level, (convOwned.get(level) ?? []).filter((id) => doneConversations.has(id)).length),
       pathWriting: tiered("path_writing", level),
       skillSpeaking: tiered("skill_speaking", level),
       skillWriting: tiered("skill_writing", level),
@@ -587,7 +587,7 @@ export async function unlockOverview(userId: string): Promise<UnlockOverview> {
     walk,
     levels,
     owned: { conversation: allConv, pathWriting: pathOwned, skills: skillOwned },
-    chatTurnsPerDay: DAILY_QUOTAS.roleplayTurns,
+    chatTurnsPerDay: DAILY_QUOTAS.chatTurns,
   };
 }
 
@@ -603,7 +603,7 @@ async function allTimeCounters(userId: string): Promise<Map<string, number>> {
   }
 }
 
-async function finishedLessonSet(userId: string, ids: string[]): Promise<Set<string>> {
+async function finishedConversationSet(userId: string, ids: string[]): Promise<Set<string>> {
   if (!ids.length) return new Set();
   try {
     const rows = await db

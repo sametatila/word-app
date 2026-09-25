@@ -1492,7 +1492,7 @@ function pickRound(
 /**
  * Tek bir tur kurar.
  *
- * Dışa açık, çünkü modül sınavı (lib/lessons/boss.ts) aynı oyunları kendi
+ * Dışa açık, çünkü modül sınavı (lib/conversations/boss.ts) aynı oyunları kendi
  * kelime havuzuyla kuruyor. İkinci bir tur üreteci yazmak, çeldirici
  * seçiminden yön kararına kadar her şeyi ikinci kez — ve er geç farklı —
  * uygulamak demekti.

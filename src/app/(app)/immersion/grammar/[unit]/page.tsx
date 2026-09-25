@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation";
 import { getT, getLang } from "@/lib/i18n/server";
 import { nativeUnitBriefs } from "@/lib/immersion/brief";
-import { localiseLesson } from "@/lib/lessons/native-server";
+import { localiseConversation } from "@/lib/conversations/native-server";
 import { unitQuestions } from "@/lib/immersion/content";
 import { deriveGrammar } from "@/lib/immersion/grammar";
 import { mockBoolLabels } from "@/lib/mock-exams/types";
-import { lessonsFor } from "@/lib/lessons/index";
+import { conversationsFor } from "@/lib/conversations/index";
 import type { CefrLevel } from "@/lib/skills/types";
 import { ImmersionQuizPlayer } from "@/components/immersion/quiz-player";
 import { titleMeta } from "@/lib/page-meta";
@@ -43,14 +43,14 @@ export default async function ImmersionGrammarPage({ params }: { params: Promise
   const index = Number.parseInt(num ?? "", 10);
   const brief =
     course && LEVELS.includes(level)
-      ? (await nativeUnitBriefs(course, level, lang, (l) => localiseLesson(l, lang))).find(
+      ? (await nativeUnitBriefs(course, level, lang, (l) => localiseConversation(l, lang))).find(
           (b) => b.index === index,
         )
       : undefined;
 
   let questions = authored?.grammar ?? [];
   if (!questions.length && course && LEVELS.includes(level) && Number.isInteger(index)) {
-    const dersler = (await lessonsFor(course)).filter((l) => l.level === level);
+    const dersler = (await conversationsFor(course)).filter((l) => l.level === level);
     questions = deriveGrammar(unit, dersler.slice((index - 1) * 4, (index - 1) * 4 + 4), 8, {
       orderQuestion: t("quiz.order_question"),
       orderSentence: t("quiz.order_sentence"),

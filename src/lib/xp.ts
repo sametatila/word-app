@@ -85,7 +85,7 @@ export function xpForSkill(minutes: number, correct: number, total: number): num
  * yalnızca şıkları işaretleyen öğrenci dersi bitirmiş sayılmıyor, puanı da
  * bunu yansıtıyor.
  */
-export function xpForLesson(
+export function xpForConversation(
   minutes: number,
   correct: number,
   total: number,

@@ -2,7 +2,7 @@
  * ALMANCA sözlüğü GERÇEK içerik üzerinde denetler:
  *   `npx tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-native-de.ts`
  *
- * Hatların kendi kapıları (`check:lessons-prose-de`, `check:skills-prose-de`,
+ * Hatların kendi kapıları (`check:conversations-prose-de`, `check:skills-prose-de`,
  * `check:mock-prose-de`) YAZILANI ölçüyor: çıkarıcının bulduğu her dizenin
  * karşılığı var mı, kurallara uyuyor mu. Bu betik tersini soruyor —
  * üretilmiş `native-de.json`ı açıp çözücüleri gerçek ders, egzersiz ve
@@ -21,12 +21,12 @@
  * hiç bakmıyor.
  */
 import { readFileSync } from "node:fs";
-import { LESSONS } from "@/lib/lessons/source";
+import { CONVERSATIONS } from "@/lib/conversations/source";
 import { BUNDLED_EXERCISES } from "@/lib/skills";
 import { MOCK_PAPERS } from "@/lib/mock-exams/source";
-import { courseExams } from "@/lib/lessons/module-exam";
-import { resolveEnLesson, type DeDict } from "@/lib/lessons/native-de";
-import { candoForLesson } from "@/lib/cando-map";
+import { courseExams } from "@/lib/conversations/module-exam";
+import { resolveEnConversation, type DeDict } from "@/lib/conversations/native-de";
+import { candoForConversation } from "@/lib/cando-map";
 import {
   resolveExercise,
   resolveExamDe,
@@ -36,10 +36,10 @@ import {
   type ExerciseShape,
   type MockShape,
   type NativeDict,
-} from "@/lib/lessons/native";
+} from "@/lib/conversations/native";
 
 const dict = JSON.parse(
-  readFileSync("src/lib/lessons/generated/native-de.json", "utf8"),
+  readFileSync("src/lib/conversations/generated/native-de.json", "utf8"),
 ) as DeDict;
 
 /* `resolveExercise` ve `resolveMockPaper` `NativeDict` bekliyor ama yalnız
@@ -83,8 +83,8 @@ const exemptSeen = new Set<string>();
 /* ---- 1. Dersler -------------------------------------------------------- */
 /* Yalnız İNGİLİZCE kurs. Almanca kursu anadili Almanca olan biri almıyor
    (`PAIR_READY`), o yüzden onun Almancası hiç yazılmadı ve aranmıyor. */
-const lessons = LESSONS.filter((l) => l.course === "en");
-let lessonOk = 0;
+const conversations = CONVERSATIONS.filter((l) => l.course === "en");
+let conversationOk = 0;
 const leftover = new Map<string, string>();
 let strings = 0;
 
@@ -104,13 +104,13 @@ const walk = (v: unknown, id: string): void => {
   if (v && typeof v === "object") for (const x of Object.values(v)) walk(x, id);
 };
 
-for (const l of lessons) {
-  const out = resolveEnLesson(dict, l);
+for (const l of conversations) {
+  const out = resolveEnConversation(dict, l);
   if (!out) {
     H(`[ders] çözülemedi: ${l.id}`);
     continue;
   }
-  lessonOk++;
+  conversationOk++;
   /* Öğretilen dilin parçaları TARAMA DIŞINDA: `title`, `vocab[].de`,
      `patterns[].de` ve anlatımın İngilizce parçaları zaten İngilizce ve
      öyle kalmalı. Tarama Türkçe ARIYOR, İngilizceyi Türkçe sanmaz ama
@@ -145,7 +145,7 @@ for (const p of papers) {
 
 /* ---- 3b. Modül sınavı kâğıtları ---------------------------------------- */
 /* YALNIZ İNGİLİZCE KURSUN KÂĞITLARI: Almanca kursu anadili Almanca olan biri
-   almıyor. Hattın kendi kapısı (`check:lessons-exam-de`) YAZILANI ölçüyor —
+   almıyor. Hattın kendi kapısı (`check:conversations-exam-de`) YAZILANI ölçüyor —
    çıkarıcının bulduğu her dizenin karşılığı var mı; bu tarama tersini
    soruyor, üretilmiş sözlükle çözücüyü gerçek kâğıtlar üzerinde
    çalıştırıyor. İkisi ayrı iş: deneme kâğıdı hattında 6.627 dize yazılmıştı,
@@ -170,7 +170,7 @@ if (leftover.size) {
    karşılığı olmayan ifadeyi DÜŞÜRÜYOR — yani eksik bir ifade hata değil,
    sessiz bir boşluk olarak görünür. Ders sayfasının altındaki köprü o
    yüzden burada ayrıca sayılıyor. */
-const candoIds = [...new Set(lessons.flatMap((l) => candoForLesson(l)))].sort();
+const candoIds = [...new Set(conversations.flatMap((l) => candoForConversation(l)))].sort();
 let candoOk = 0;
 for (const id of candoIds) {
   if (dict.cando[id]) candoOk++;
@@ -191,10 +191,10 @@ if (errors.length) {
   if (errors.length > 40) console.log(`  … ${errors.length - 40} tane daha`);
 }
 console.log(
-  `\nözet: ders ${lessonOk}/${lessons.length} · egzersiz ${exerciseOk}/${exercises.length} · ` +
+  `\nözet: ders ${conversationOk}/${conversations.length} · egzersiz ${exerciseOk}/${exercises.length} · ` +
     `kâğıt ${paperOk}/${papers.length} · modül sınavı ${examOk}/${exams.length} · ` +
     `can-do ${candoOk}/${candoIds.length} · taranan dize ${strings}\n` +
-    `sözlük: ders ${Object.keys(dict.lesson).length} · beceri ${Object.keys(dict.prose).length} · ` +
+    `sözlük: ders ${Object.keys(dict.conversation).length} · beceri ${Object.keys(dict.prose).length} · ` +
     `kâğıt ${Object.keys(dict.mock).length} · sınav ${Object.keys(dict.exam).length} · ` +
     `can-do ${Object.keys(dict.cando).length}`,
 );

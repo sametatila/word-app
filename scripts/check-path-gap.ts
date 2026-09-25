@@ -53,7 +53,7 @@
 import { createRequire } from "node:module";
 import { readFileSync } from "node:fs";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
-import { sourceLessonsFor as lessonsFor } from "../src/lib/lessons/source";
+import { sourceConversationsFor as conversationsFor } from "../src/lib/conversations/source";
 import type { SkillExercise } from "../src/lib/skills/types";
 import { germanSurface, englishSurface, type LooseExercise } from "./lib/skill-surface";
 import { enStems, EN_FREE, LEVELS } from "./lib/en-gate";
@@ -103,10 +103,10 @@ function havuz(kurs: Kurs): Map<string, string> {
   return m;
 }
 
-/** Ders sözlükçesi: sözcük → öğretildiği ilk seviye. Kaynak `lessonsFor`. */
+/** Ders sözlükçesi: sözcük → öğretildiği ilk seviye. Kaynak `conversationsFor`. */
 function ders(kurs: Kurs): Map<string, string> {
   const m = new Map<string, string>();
-  for (const l of lessonsFor(kurs)) {
+  for (const l of conversationsFor(kurs)) {
     const lv = l.level.toLowerCase();
     const koy = (raw: string) => {
       for (const w of kelime(raw)) {
@@ -205,13 +205,13 @@ function kullanim(kurs: Kurs, hv: Map<string, string>): Kullanim {
  * DERS YUVASI MUHASEBESİ — boşluğun öteki yarısı.
  *
  * Yukarısı "hangi sözcük öğretilmiyor" diyor; buradaki soru "yer var mı".
- * Ders başına sözlükçe SEKİZ ve bu sayı sözleşmede sabit (`check-lessons`:
+ * Ders başına sözlükçe SEKİZ ve bu sayı sözleşmede sabit (`check-conversations`:
  * "tam 8 kelime"), yani yeni bir sözcük ancak bir yuvayı devralarak girer.
  * Devralınacak yuva da belli: aynı sözcüğü ikinci kez öğreten satır.
  *
  * TEKRAR MUTLAKA İSRAF DEĞİL — ölçüm bunu iddia etmiyor. `help` altı derste
  * geçiyor ve acil durum dersinin onu sözlükçeye alması makul. Ama sözlükçe
- * dersin ANLATIM betiğine bağlı (`check-lessons` her kelimenin sesli tekrar
+ * dersin ANLATIM betiğine bağlı (`check-conversations` her kelimenin sesli tekrar
  * ettirildiğini ve rol yapma isteminde geçtiğini arıyor), yani her yuvanın
  * bir bedeli var. Sayı, "yer yok" ile "yer var ama başka işi görüyor"
  * arasındaki farkı görünür kılmak için.
@@ -219,7 +219,7 @@ function kullanim(kurs: Kurs, hv: Map<string, string>): Kullanim {
 function yuvaMuhasebesi(kurs: Kurs) {
   console.log(`\n=== ${kurs.toUpperCase()} kursu — ders sözlükçesi yuvaları ===`);
   for (const lv of LEVELS) {
-    const dersler = lessonsFor(kurs).filter((l) => l.level.toLowerCase() === lv);
+    const dersler = conversationsFor(kurs).filter((l) => l.level.toLowerCase() === lv);
     if (!dersler.length) continue;
     const gor = new Map<string, string[]>();
     for (const l of dersler) for (const v of l.vocab) {

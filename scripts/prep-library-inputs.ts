@@ -63,10 +63,10 @@ const courseOf = (e: SkillExercise) => e.course ?? "de";
 for (const course of COURSES) {
   for (const level of LEVELS) {
     const lv = level.toLowerCase();
-    let lessons: string[] = [];
-    const lessonPath = `mobile/src/data/lessons/${course}-${lv}.json`;
-    if (existsSync(lessonPath)) {
-      lessons = (JSON.parse(readFileSync(lessonPath, "utf8")) as { title: string; titleTr: string }[]).map(
+    let conversations: string[] = [];
+    const conversationPath = `mobile/src/data/conversations/${course}-${lv}.json`;
+    if (existsSync(conversationPath)) {
+      conversations = (JSON.parse(readFileSync(conversationPath, "utf8")) as { title: string; titleTr: string }[]).map(
         (l) => `${l.title} (${l.titleTr})`,
       );
     }
@@ -85,7 +85,7 @@ for (const course of COURSES) {
     }
     const txt =
       `# ${course.toUpperCase()} ${level} — BU KONULARA/METİNLERE GİRME (kopya yasağı)\n\n` +
-      `## Patika dersleri (${lessons.length})\n${lessons.join(" | ")}\n\n` +
+      `## Patika dersleri (${conversations.length})\n${conversations.join(" | ")}\n\n` +
       `## Patika ünite egzersizleri (${units.length})\n${units.join(" | ")}\n\n` +
       `## Deneme sınavı kâğıtları (tema · metin başlıkları)\n${mocks.join("\n")}\n`;
     writeFileSync(`${OUT}/avoid/${course}-${lv}.txt`, txt);

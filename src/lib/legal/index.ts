@@ -67,7 +67,7 @@
  * iletişim kanalı yeterli. Doldurulmamış alanlar [[...]] biçiminde kalır ve
  * sayfalarda vurguyla basılır (bkz. legal-shell Ph).
  */
-import { SPEECH_LOG_RETENTION_DAYS } from "@/lib/lessons/log-const";
+import { SPEECH_LOG_RETENTION_DAYS } from "@/lib/conversations/log-const";
 import { SESSION_MAX_DAYS } from "@/lib/auth/session-config";
 import { ATTESTATION_RETENTION_DAYS } from "@/lib/auth/attestation-const";
 import { DAILY_QUOTAS } from "@/lib/quotas";
@@ -250,7 +250,7 @@ export const LEGAL_ENTITY = {
 
 /** Adil kullanım sınırları — koddaki gerçek kotalar (route dosyalarındaki sabitler). */
 export const FAIR_USE = {
-  roleplayTurnsPerDay: DAILY_QUOTAS.roleplayTurns,
+  roleplayTurnsPerDay: DAILY_QUOTAS.chatTurns,
   sttRequestsPerDay: DAILY_QUOTAS.sttRequests,
   pronounceRequestsPerDay: DAILY_QUOTAS.pronounceRequests,
   reportsPerDay: DAILY_QUOTAS.reports,

@@ -3,7 +3,8 @@ import { and, eq, inArray, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { contentFlags, contentItems, contentReleaseItems, contentReleases } from "@/lib/db/schema";
 import { FULL_PACK, flagKey, isGatedPack } from "./ids";
-import { lessonPack, levelOfId, packCourseOfId, paperPack, skillPack } from "./packs";
+import { legacyPackName } from "@/lib/legacy-names";
+import { conversationPack, levelOfId, packCourseOfId, paperPack, skillPack } from "./packs";
 
 /**
  * İçeriğin OKUMA tarafı — gösterge, manifest deltası ve gövde.
@@ -53,7 +54,14 @@ export async function pointer(): Promise<Pointer> {
     const flags = await db.select({ pack: contentFlags.pack, item: contentFlags.item }).from(contentFlags);
     const value: Pointer = {
       r: live?.version ?? 0,
-      d: flags.map((f) => flagKey(f.pack, f.item)).sort(),
+      /* Kapatılan Konuşma adımı eski paket adıyla da bildiriliyor: build 6
+         aynı maddeyi `lessons/` önekiyle tutuyor (geçici, lib/legacy-names). */
+      d: flags
+        .flatMap((f) => {
+          const old = legacyPackName(f.pack);
+          return old ? [flagKey(f.pack, f.item), flagKey(old, f.item)] : [flagKey(f.pack, f.item)];
+        })
+        .sort(),
     };
     pointerCache = { at: now, value };
     return value;
@@ -232,9 +240,9 @@ export async function isDisabled(pack: string, item: string): Promise<boolean> {
  * paket adını bilmesi gerekmiyor. Gösterge yarım dakika önbellekli: bu
  * kontroller pratikte bedava.
  */
-export async function lessonDisabled(id: string): Promise<boolean> {
+export async function conversationDisabled(id: string): Promise<boolean> {
   const level = levelOfId(id);
-  return level ? isDisabled(lessonPack(packCourseOfId(id), level), id) : false;
+  return level ? isDisabled(conversationPack(packCourseOfId(id), level), id) : false;
 }
 
 export async function exerciseDisabled(id: string): Promise<boolean> {

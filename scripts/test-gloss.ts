@@ -1,5 +1,5 @@
 import { NATIVE_LANGS, type NativeLang } from "@/lib/courses";
-import { MODULE_THEMES, MODULE_THEMES_NATIVE, moduleCount, moduleTheme } from "@/lib/lessons/modules";
+import { MODULE_THEMES, MODULE_THEMES_NATIVE, moduleCount, moduleTheme } from "@/lib/conversations/modules";
 import { exampleGlossFor, glossFor, hasGloss, optionLabel } from "@/lib/option-label";
 
 /**

@@ -210,7 +210,7 @@ const YANLIS_ESLESME = [/^[Gg]ewaltig/, /^[Gg]ewaltlos/];
 
 function icerikDosyalari(): string[] {
   const out: string[] = [];
-  for (const dir of ["src/lib/mock-exams/de", "src/lib/mock-exams/en", "src/lib/skills/content", "src/lib/lessons/content"]) {
+  for (const dir of ["src/lib/mock-exams/de", "src/lib/mock-exams/en", "src/lib/skills/content", "src/lib/conversations/content"]) {
     const p = path.join(ROOT, dir);
     try {
       for (const f of readdirSync(p)) if (f.endsWith(".ts")) out.push(path.join(p, f));

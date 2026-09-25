@@ -1372,7 +1372,7 @@
 }
 
 /*
- * KALDIRILAN İKİ SÜS: `lesson-ping` (yol haritasında sıradaki dersin nabız
+ * KALDIRILAN İKİ SÜS: `conversation-ping` (yol haritasında sıradaki dersin nabız
  * halkası) ve `animate-pop` / `pop-in`.
  *
  * İkisi de hiçbir yerden çağrılmıyordu ve Android'de karşılıkları YOK: iki

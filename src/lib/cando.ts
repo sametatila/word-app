@@ -198,7 +198,7 @@ export const CANDO: Cando[] = [
   /* ── İNGİLİZCE KURSUN DİLBİLGİSİ İFADELERİ ──────────────────────────
      Yukarıdaki GR ifadeleri ALMANCA kursun müfredatına göre yazılmış
      (der/die/das, Perfekt, Konjunktiv). İki kurs varken bu görünmez bir
-     varsayımdı; İngilizce kurs eklenince görünür oldu: `candoForLesson`
+     varsayımdı; İngilizce kurs eklenince görünür oldu: `candoForConversation`
      17 İngilizce dersi "Isimlerin artikelini (der/die/das)" gibi bir
      ifadeye bağlıyordu — İngilizce öğrenen için yanlış, üstelik Türkçe
      okuyan da öyle görüyordu.
@@ -274,7 +274,7 @@ export const CANDO: Cando[] = [
  *
  * Kurs boyutu `Cando` tipinde YOK ve olmamalı: kimlik kalıcı, ifade metni
  * düzeltilebilir ama kimlik kurs değiştirmez. Ayrım kimlik bloğunda
- * (GR ≥ 11) ve burada adı var — çıkarıcılar (`data/lessons/cando*`) `c(...)`
+ * (GR ≥ 11) ve burada adı var — çıkarıcılar (`data/conversations/cando*`) `c(...)`
  * çağrılarını düz metin olarak okuduğu için tipte yeni bir alan onları
  * kırardı.
  */

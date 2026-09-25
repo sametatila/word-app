@@ -2,14 +2,15 @@ import { NextResponse } from "next/server";
 import { manifest } from "@/lib/content/read";
 import { jsonWithEtag } from "@/lib/content/http";
 import { isPackId } from "@/lib/content/ids";
+import { isLegacyClient, legacyNativeManifest } from "@/lib/legacy-names";
 
 export const dynamic = "force-dynamic";
 
 /**
  * PAKET MANİFESTİ — istemcinin ne indireceğini söyleyen delta.
  *
- *   /api/content/manifest?pack=lessons/de-a1&since=12
- *   { "r":14, "p":"lessons/de-a1",
+ *   /api/content/manifest?pack=conversations/de-a1&since=12
+ *   { "r":14, "p":"conversations/de-a1",
  *     "f":{"h":"…","b":592431},                     paketin tamamının arşivi
  *     "i":[{"i":"de-a1-b03","h":"…","b":12043}],    değişen maddeler
  *     "x":["de-a1-b09"] }                           düşen maddeler
@@ -29,5 +30,9 @@ export async function GET(req: Request) {
   if (!isPackId(pack)) return NextResponse.json({ error: "pack" }, { status: 400 });
   const raw = Number(url.searchParams.get("since") ?? 0);
   const since = Number.isFinite(raw) && raw > 0 ? Math.floor(raw) : 0;
-  return jsonWithEtag(req, await manifest(pack, since), 30);
+  const m = await manifest(pack, since);
+  /* Build 6 anadil maddelerini eski adla istiyor (geçici, lib/legacy-names). */
+  const res = jsonWithEtag(req, isLegacyClient(req.headers) ? legacyNativeManifest(pack, m) : m, 30);
+  res.headers.set("vary", "x-lernomi-client");
+  return res;
 }

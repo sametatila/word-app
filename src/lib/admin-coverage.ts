@@ -62,15 +62,15 @@ export type Coverage = {
     webFunnel: { webViews: number; taps: number; redirects: number; appViews: number; purchases: number };
   };
   learning: {
-    lessons: { started: number; finished: number; users: number; rulesTracked: number; rulesDue: number; chatDone: number };
-    topLessons: { lesson: string; users: number; avgPct: number }[];
+    conversations: { started: number; finished: number; users: number; rulesTracked: number; rulesDue: number; chatDone: number };
+    topConversations: { conversation: string; users: number; avgPct: number }[];
     path: { items: number; users: number; attempts: number; passed: number; avgBest: number };
     pathWeakest: { item: string; users: number; avgBest: number; passRate: number }[];
     skills: Kv[];
     exams: Kv[];
     mock: { level: string; skill: string; started: number; finished: number; passed: number; avgScore: number }[];
     placements: { level: string; count: number; accepted: number }[];
-    roleplay: { turns30: number; users30: number; byMode: { key: string; count: number }[] };
+    chat: { turns30: number; users30: number; byMode: { key: string; count: number }[] };
     assessments: { kind: string; provider: string; count: number }[];
     pronounce: { count: number; users: number; avg: number };
     tts: { plays: number; fallbacks: { key: string; count: number }[] };
@@ -121,7 +121,7 @@ export type Coverage = {
 export async function getCoverage(days = 30): Promise<Coverage> {
   const { rows, issues } = queryRunner("kapsam");
   const [
-    pairs, prem, premPlat, webFunnel, lessonEv, lessonRows, topLessons, path, pathWeak, skills, exams, mock, placements,
+    pairs, prem, premPlat, webFunnel, conversationEv, conversationRows, topConversations, path, pathWeak, skills, exams, mock, placements,
     rpTotals, rpModes, assessments, pron, ttsPlays, ttsFb, walkListen,
   ] = await Promise.all([
     rows(sql`
@@ -192,7 +192,7 @@ export async function getCoverage(days = 30): Promise<Coverage> {
     rows(sql`
       select count(*)::int turns, count(distinct user_id)::int users
       from chat_logs where created_at >= now() - make_interval(days => ${days}::int)`),
-    rows(sql`select coalesce(mode, 'lesson') k, count(*)::int c from chat_logs where created_at >= now() - make_interval(days => ${days}::int) group by 1 order by 2 desc`),
+    rows(sql`select coalesce(mode, 'conversation') k, count(*)::int c from chat_logs where created_at >= now() - make_interval(days => ${days}::int) group by 1 order by 2 desc`),
     rows(sql`
       select kind, coalesce(provider, '—') provider, count(*)::int c
       from assessments where created_at >= now() - make_interval(days => ${days}::int) group by 1, 2 order by 3 desc limit 16`),
@@ -322,8 +322,8 @@ export async function getCoverage(days = 30): Promise<Coverage> {
   const s = social[0] ?? {};
   const ref = refs[0] ?? {};
   const w = warm[0] ?? {};
-  const le = lessonEv[0] ?? {};
-  const lr = lessonRows[0] ?? {};
+  const le = conversationEv[0] ?? {};
+  const lr = conversationRows[0] ?? {};
   const pt = path[0] ?? {};
   const rp = rpTotals[0] ?? {};
   const rm = remind[0] ?? {};
@@ -343,11 +343,11 @@ export async function getCoverage(days = 30): Promise<Coverage> {
       },
     },
     learning: {
-      lessons: {
+      conversations: {
         started: num(le.started), finished: num(le.finished), users: num(le.users),
         rulesTracked: num(lr.rules), rulesDue: num(lr.due), chatDone: num(lr.rp),
       },
-      topLessons: topLessons.map((r) => ({ lesson: str(r.k), users: num(r.u), avgPct: num(r.a) })),
+      topConversations: topConversations.map((r) => ({ conversation: str(r.k), users: num(r.u), avgPct: num(r.a) })),
       path: { items: num(pt.items), users: num(pt.users), attempts: num(pt.attempts), passed: num(pt.passed), avgBest: num(pt.avg_best) },
       pathWeakest: pathWeak.map((r) => ({ item: str(r.k), users: num(r.u), avgBest: num(r.a), passRate: num(r.pr) })),
       skills: skills.map(kv),
@@ -357,7 +357,7 @@ export async function getCoverage(days = 30): Promise<Coverage> {
         passed: num(r.passed), avgScore: num(r.avg_score),
       })),
       placements: placements.map((r) => ({ level: str(r.k), count: num(r.c), accepted: num(r.u) })),
-      roleplay: { turns30: num(rp.turns), users30: num(rp.users), byMode: rpModes.map((r) => ({ key: str(r.k), count: num(r.c) })) },
+      chat: { turns30: num(rp.turns), users30: num(rp.users), byMode: rpModes.map((r) => ({ key: str(r.k), count: num(r.c) })) },
       assessments: assessments.map((r) => ({ kind: str(r.kind), provider: str(r.provider), count: num(r.c) })),
       pronounce: { count: num(pron[0]?.c), users: num(pron[0]?.u), avg: num(pron[0]?.a) },
       tts: { plays: num(ttsPlays[0]?.c), fallbacks: ttsFb.map((r) => ({ key: str(r.k), count: num(r.c) })) },

@@ -24,7 +24,7 @@ import { Pool } from "pg";
 // `kind` olarak sekme adını taşıyor ve rapor ona bakıyor. Eski satırlar için
 // eski sıra: Öğren, Beceriler, Dersler, Kelimeler, Profil.
 const NAV_LABELS_LEGACY = ["Öğren", "Beceriler", "Dersler", "Kelimeler", "Profil"];
-const NAV_KEYS: Record<string, string> = { learn: "Öğren", lessons: "Dersler", skills: "Beceriler" };
+const NAV_KEYS: Record<string, string> = { learn: "Öğren", conversations: "Dersler", skills: "Beceriler" };
 
 type Row = Record<string, unknown>;
 

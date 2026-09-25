@@ -37,7 +37,7 @@ export async function POST(req: Request) {
   const userId = who;
 
   let gate: Gate | null = null;
-  let scope: "lesson" | "skill" = "lesson";
+  let scope: "conversation" | "skill" = "conversation";
   let level = "A1";
   try {
     const body = (await req.json()) as { gate?: string; scope?: string; level?: string };

@@ -1,6 +1,6 @@
-import type { Lesson } from "@/lib/lessons/types";
+import type { Conversation } from "@/lib/conversations/types";
 import type { SkillQuestion } from "@/lib/skills/types";
-import { flatten } from "@/lib/lessons/module-content";
+import { flatten } from "@/lib/conversations/module-content";
 import { seededShuffle } from "@/lib/shuffle";
 
 /**
@@ -52,12 +52,12 @@ export type GrammarText = {
   bool: [string, string];
 };
 
-export function deriveGrammar(unitId: string, lessons: Lesson[], count: number, say: GrammarText): SkillQuestion[] {
+export function deriveGrammar(unitId: string, conversations: Conversation[], count: number, say: GrammarText): SkillQuestion[] {
   const judges: SkillQuestion[] = [];
   const orders: SkillQuestion[] = [];
 
-  for (const lesson of lessons) {
-    for (const step of lesson.lecture) {
+  for (const conversation of conversations) {
+    for (const step of conversation.lecture) {
       if (step.expect?.kind === "truefalse") {
         judges.push({
           kind: "truefalse",
@@ -77,7 +77,7 @@ export function deriveGrammar(unitId: string, lessons: Lesson[], count: number, 
           options: [],
           answer: 0,
           items: parts,
-          explain: `„${step.expect.target}“ — ${lesson.title}`,
+          explain: `„${step.expect.target}“ — ${conversation.title}`,
         });
       }
     }

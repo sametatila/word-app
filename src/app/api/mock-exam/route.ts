@@ -23,7 +23,7 @@ import { mockStats } from "@/lib/mock-exams/stats";
 import type { AssessLevel } from "@/lib/assess-prompts";
 import { isNativeLang, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
 import { ensureProfile } from "@/lib/session";
-import { localiseMockPaper } from "@/lib/lessons/native-server";
+import { localiseMockPaper } from "@/lib/conversations/native-server";
 import { aiConsentGate, hasAiConsent } from "@/lib/ai-consent";
 
 export const dynamic = "force-dynamic";

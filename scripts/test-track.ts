@@ -1,5 +1,5 @@
-import { buildTrack, UNIT_LESSONS, GROUP_SIZE } from "../src/lib/immersion/build";
-import type { Lesson } from "../src/lib/lessons/types";
+import { buildTrack, UNIT_CONVERSATIONS, GROUP_SIZE } from "../src/lib/immersion/build";
+import type { Conversation } from "../src/lib/conversations/types";
 import type { CefrLevel } from "../src/lib/skills/types";
 import type { SkillMeta } from "../src/lib/skills/index";
 import type { ImmersionTrack } from "../src/lib/immersion/types";
@@ -10,7 +10,7 @@ import { deriveGrammar, type GrammarText } from "../src/lib/immersion/grammar";
 
 /* Denetim betiği sunucu değil: metinler sabit, kural sayilari olculuyor. */
 const DENEME_METNI: GrammarText = { orderQuestion: "order?", orderSentence: "order.", bool: ["Richtig", "Falsch"] };
-import { LESSONS } from "../src/lib/lessons/source";
+import { CONVERSATIONS } from "../src/lib/conversations/source";
 
 let pass = 0;
 const fail: string[] = [];
@@ -19,7 +19,7 @@ function check(name: string, cond: boolean) {
   else fail.push(name);
 }
 
-function mkLesson(i: number, level: CefrLevel): Lesson {
+function mkConversation(i: number, level: CefrLevel): Conversation {
   return {
     id: `de-${level.toLowerCase()}-b${String(i).padStart(2, "0")}`,
     level,
@@ -33,7 +33,7 @@ function mkLesson(i: number, level: CefrLevel): Lesson {
     vocab: [],
     patterns: [],
     lecture: [],
-    roleplay: { scene: "", partner: "", opening: "", openingTr: "", goal: "", minTurns: 6 },
+    chat: { scene: "", partner: "", opening: "", openingTr: "", goal: "", minTurns: 6 },
   };
 }
 function mkMeta(id: string, skill: SkillMeta["skill"], level: CefrLevel): SkillMeta {
@@ -41,15 +41,15 @@ function mkMeta(id: string, skill: SkillMeta["skill"], level: CefrLevel): SkillM
   return { id, skill, level, title: `${skill}-${id}`, genre: "İlan", minutes: 4, items: 5, unit: null };
 }
 
-const lessons = Array.from({ length: 10 }, (_, i) => mkLesson(i + 1, "A1"));
+const conversations = Array.from({ length: 10 }, (_, i) => mkConversation(i + 1, "A1"));
 const reading = Array.from({ length: 3 }, (_, i) => mkMeta(`a1-r${i + 1}`, "reading", "A1"));
 const listening = Array.from({ length: 5 }, (_, i) => mkMeta(`a1-l${i + 1}`, "listening", "A1"));
 const writing = Array.from({ length: 5 }, (_, i) => mkMeta(`a1-w${i + 1}`, "writing", "A1"));
 
-const t: ImmersionTrack = buildTrack({ course: "de", level: "A1", lessons, reading, listening, writing });
+const t: ImmersionTrack = buildTrack({ course: "de", level: "A1", conversations, reading, listening, writing });
 
 // 1. unit sayısı = ceil(ders/4)
-check("unit sayısı ceil(10/4)=3", t.units.length === Math.ceil(10 / UNIT_LESSONS) && t.units.length === 3);
+check("unit sayısı ceil(10/4)=3", t.units.length === Math.ceil(10 / UNIT_CONVERSATIONS) && t.units.length === 3);
 
 // 2. her ünite checkpoint ile biter, tek checkpoint
 check(
@@ -63,18 +63,18 @@ check(
   "dolu ünitelerde 4/2/2/2 desen",
   full.every((u) => {
     const c = (k: string) => u.items.filter((i) => i.kind === k).length;
-    return c("lesson") === 4 && c("read") === 2 && c("listen") === 2 && c("write") === 2;
+    return c("conversation") === 4 && c("read") === 2 && c("listen") === 2 && c("write") === 2;
   }),
 );
 
 // 4. kısmi son ünite (10 ders → 4+4+2): 2 ders, boş ders slotu yok
 const last = t.units[2];
-check("kısmi son ünitede 2 ders", last.lessonCount === 2 && last.items.filter((i) => i.kind === "lesson").length === 2);
-check("hiçbir ders item'ı boş ref taşımaz", t.units.every((u) => u.items.filter((i) => i.kind === "lesson").every((i) => i.ref)));
+check("kısmi son ünitede 2 ders", last.conversationCount === 2 && last.items.filter((i) => i.kind === "conversation").length === 2);
+check("hiçbir ders item'ı boş ref taşımaz", t.units.every((u) => u.items.filter((i) => i.kind === "conversation").every((i) => i.ref)));
 
 // 5. ders ref'leri girdi sırasını korur
-const lessonRefs = t.units.flatMap((u) => u.items.filter((i) => i.kind === "lesson").map((i) => i.ref));
-check("ders ref'leri katalog sırasında", JSON.stringify(lessonRefs) === JSON.stringify(lessons.map((l) => l.id)));
+const conversationRefs = t.units.flatMap((u) => u.items.filter((i) => i.kind === "conversation").map((i) => i.ref));
+check("ders ref'leri katalog sırasında", JSON.stringify(conversationRefs) === JSON.stringify(conversations.map((l) => l.id)));
 
 // 6. beceri havuzu sırayla tükenir; bitince ref=null (reading 3 < ihtiyaç)
 const readItems = t.units.flatMap((u) => u.items.filter((i) => i.kind === "read"));
@@ -97,40 +97,40 @@ check("group = floor((index-1)/GROUP_SIZE)", t.units.every((u) => u.group === Ma
 check("ünite 1 teması A1 ilk modül", t.units[0].theme === "Tanışma ve ben");
 
 // 11. boş seviye → 0 ünite
-check("dersi olmayan seviye 0 ünite", buildTrack({ course: "de", level: "C1", lessons: [] }).units.length === 0);
+check("dersi olmayan seviye 0 ünite", buildTrack({ course: "de", level: "C1", conversations: [] }).units.length === 0);
 
 // 12. beceri hiç yoksa read/listen/write slotları null ama var
-const noSkills = buildTrack({ course: "de", level: "A1", lessons });
+const noSkills = buildTrack({ course: "de", level: "A1", conversations });
 check("beceri içeriği yoksa slotlar null yer tutucu", noSkills.units[0].items.filter((i) => i.kind === "read").every((i) => i.ref === null && i.title === "Okuma"));
 
 
 // ---- state / gating (saf) ----
 const u1 = t.units[0];
 const u1Refs = u1.items.filter((i) => i.ref).map((i) => i.ref as string);
-const s0 = buildTrackState(t, { lessonDone: () => false, skillDone: () => false });
+const s0 = buildTrackState(t, { conversationDone: () => false, skillDone: () => false });
 check("boşken ünite1 kilitsiz, ünite2/3 kilitli", !s0.units[0].locked && s0.units[1].locked && s0.units[2].locked);
 check("boşken currentIndex=1", s0.currentIndex === 1);
 check("ünite1 oynanabilir toplam=10 (4+2+2+2), done=0", s0.units[0].total === 10 && s0.units[0].done === 0);
-check("ünite1 iskelet 4 ders, 0 bitti", s0.units[0].lessonsTotal === 4 && s0.units[0].lessonsDone === 0);
+check("ünite1 iskelet 4 ders, 0 bitti", s0.units[0].conversationsTotal === 4 && s0.units[0].conversationsDone === 0);
 check("checkpoint artık oynanabilir (türetilen pratik)", s0.units[0].items.find((i) => i.item.kind === "checkpoint")?.playable === true);
 check("checkpoint/quiz sayıma girmez (total=10, ders+beceri)", s0.units[0].total === 10);
 check("checkpoint/quiz ref = unitId (türetme rotası)", t.units[1].items.filter((i) => i.kind === "checkpoint" || i.kind === "quiz").every((i) => i.ref === t.units[1].id));
 
 const doneSet = new Set(u1Refs);
-const s1 = buildTrackState(t, { lessonDone: (r) => doneSet.has(r), skillDone: (r) => doneSet.has(r) });
+const s1 = buildTrackState(t, { conversationDone: (r) => doneSet.has(r), skillDone: (r) => doneSet.has(r) });
 check("ünite1 tümü bitince complete", s1.units[0].complete && s1.units[0].done === s1.units[0].total);
 check("ünite1 bitince ünite2 açılır, ünite3 kilitli", !s1.units[1].locked && s1.units[2].locked);
 check("currentIndex ünite2'ye ilerler", s1.currentIndex === 2);
 
-const u1Lessons = new Set(u1.items.filter((i) => i.kind === "lesson").map((i) => i.ref as string));
-const s2 = buildTrackState(t, { lessonDone: (r) => u1Lessons.has(r), skillDone: () => false });
+const u1Conversations = new Set(u1.items.filter((i) => i.kind === "conversation").map((i) => i.ref as string));
+const s2 = buildTrackState(t, { conversationDone: (r) => u1Conversations.has(r), skillDone: () => false });
 /*
   İKİ AYRI SORU. "Sonraki ünite açılsın mı?" derslere bakar (beceri içeriği
   seyrek, onu kapı yapmak eksik içeriği zorunlu kılardı). "Bu ünite bitti mi?"
   ise hepsine bakar. Tek bayrakken dört dersi bitiren kullanıcıya, beceri
   yuvaları dururken "tamamlandı" deniyordu.
 */
-check("yalnız dersler bitince ünite1 BİTMİŞ SAYILMAZ", !s2.units[0].complete && s2.units[0].lessonsDone === 4 && s2.units[0].done === 4);
+check("yalnız dersler bitince ünite1 BİTMİŞ SAYILMAZ", !s2.units[0].complete && s2.units[0].conversationsDone === 4 && s2.units[0].done === 4);
 check("ama sonraki üniteyi AÇAR (unlocksNext)", s2.units[0].unlocksNext);
 check("dersler bitince ünite2 açılır (beceri bloklamaz)", !s2.units[1].locked);
 check("bitmemiş ünite 'şu an buradasın' kalır", s2.currentIndex === 1);
@@ -142,23 +142,23 @@ check("bitmemiş ünite 'şu an buradasın' kalır", s2.currentIndex === 1);
 */
 const u1Practice = u1.items.filter((i) => i.kind === "grammar" || i.kind === "quiz" || i.kind === "checkpoint");
 const u1Oynanabilir = u1.items.filter((i) => i.ref !== null);
-const sP0 = buildTrackState(t, { lessonDone: () => false, skillDone: () => false, practiceDone: () => false, practiceAttempted: () => false });
+const sP0 = buildTrackState(t, { conversationDone: () => false, skillDone: () => false, practiceDone: () => false, practiceAttempted: () => false });
 check("pratik kaydı verilince toplam = oynanabilir adım sayısı", sP0.units[0].total === u1Oynanabilir.length && u1Practice.length === 3);
 check("pratik adım sırayı harcar: başta yalnız ilk adım açık", sP0.units[0].items.filter((i) => i.open).length === 1);
 const practiceIds = new Set(u1Practice.map((i) => i.id));
 const sP1 = buildTrackState(t, {
-  lessonDone: (r) => doneSet.has(r),
+  conversationDone: (r) => doneSet.has(r),
   skillDone: (r) => doneSet.has(r),
   practiceDone: (id) => practiceIds.has(id),
   practiceAttempted: (id) => practiceIds.has(id),
 });
 check("ders+beceri+pratik bitince ünite complete ve done=total", sP1.units[0].complete && sP1.units[0].done === sP1.units[0].total);
-const sP2 = buildTrackState(t, { lessonDone: (r) => doneSet.has(r), skillDone: (r) => doneSet.has(r), practiceDone: () => false, practiceAttempted: () => false });
+const sP2 = buildTrackState(t, { conversationDone: (r) => doneSet.has(r), skillDone: (r) => doneSet.has(r), practiceDone: () => false, practiceAttempted: () => false });
 check("pratik adımları bitmeden ünite complete sayılmaz", !sP2.units[0].complete && sP2.units[0].done === sP2.units[0].total - 3);
 check("pratik adımlar sonraki üniteyi kilitlemez (kapı dersler)", !sP2.units[1].locked);
 check("dersler ve beceriler bitince ilk pratik adım (gramer) açılır", sP2.units[0].items.find((i) => i.item.kind === "grammar")?.open === true);
 
-const sAll = buildTrackState(t, { lessonDone: () => true, skillDone: () => true });
+const sAll = buildTrackState(t, { conversationDone: () => true, skillDone: () => true });
 check("her şey bitince tüm üniteler complete", sAll.units.every((u) => u.complete));
 check("grup 0 tamamlanmış (groupComplete)", groupComplete(sAll, 0) && !groupComplete(s0, 0));
 check("her şey bitince currentIndex son ünite", sAll.currentIndex === (t.units.at(-1)?.index ?? -1));
@@ -175,9 +175,9 @@ check("kilitli ünitenin hiçbir adımı açık değil", s0.units[1].items.every
 // İlk adım DENENDİ ama geçilemedi (done değil, attempted)
 const ilkRef = u1Playable[0].item.ref as string;
 const sTried = buildTrackState(t, {
-  lessonDone: () => false,
+  conversationDone: () => false,
   skillDone: () => false,
-  lessonAttempted: (r) => r === ilkRef,
+  conversationAttempted: (r) => r === ilkRef,
   skillAttempted: (r) => r === ilkRef,
 });
 const p1 = sTried.units[0].items.filter((i) => i.playable);
@@ -189,9 +189,9 @@ check("deneme üniteyi TAMAMLAMAZ", !sTried.units[0].complete && sTried.units[1]
 // İkincisi de denenince pencere bir adım daha kayar
 const ikiRef = new Set([ilkRef, p1[1].item.ref as string]);
 const sTried2 = buildTrackState(t, {
-  lessonDone: () => false,
+  conversationDone: () => false,
   skillDone: () => false,
-  lessonAttempted: (r) => ikiRef.has(r),
+  conversationAttempted: (r) => ikiRef.has(r),
   skillAttempted: (r) => ikiRef.has(r),
 });
 const p2 = sTried2.units[0].items.filter((i) => i.playable);
@@ -199,31 +199,31 @@ check("pencere ilerledikçe kayar", p2[0].open && p2[1].open && p2[2].open && p2
 
 // Biten adım kendiliğinden denenmiş sayılır (eski çağıranlar bozulmasın)
 // quiz/checkpoint bugün done takibi taşımıyor; ölçüt ders + beceri.
-const izlenen = (k: string) => k === "lesson" || k === "read" || k === "listen" || k === "write";
+const izlenen = (k: string) => k === "conversation" || k === "read" || k === "listen" || k === "write";
 check("bitmiş adım attempted sayılır", s1.units[0].items.filter((i) => i.playable && izlenen(i.item.kind)).every((i) => i.attempted));
 check("attempted yüklemi verilmezse eski davranış (yalnız bitenler + sıradaki)",
   s2.units[0].items.filter((i) => i.playable && !i.done).filter((i) => i.open).length === 1);
 
-// ---- content brief (lesson'a göre türetme) ----
+// ---- content brief (conversation'a göre türetme) ----
 const bl = (i: number, vocab: [string, string][], patterns: [string, string][], cando: string[]) => ({
-  ...mkLesson(i, "A1"),
+  ...mkConversation(i, "A1"),
   vocab: vocab.map(([de, tr]) => ({ de, tr })),
   patterns: patterns.map(([de, tr]) => ({ de, tr })),
   cando,
 });
-const briefLessons = [
+const briefConversations = [
   bl(1, [["Hallo", "merhaba"], ["Name", "isim"]], [["Ich heiße …", "adım …"]], ["a1.self.introduce"]),
   bl(2, [["Name", "isim"], ["Land", "ülke"]], [["Ich komme aus …", "…'denim"]], ["a1.self.origin"]),
   bl(3, [["Beruf", "meslek"]], [["Ich bin …", "…yim"]], ["a1.self.introduce"]),
   bl(4, [["Hobby", "hobi"]], [["Ich mag …", "…severim"]], ["a1.self.hobby"]),
 ];
-const briefs = buildUnitBriefs("de", "A1", briefLessons, "tr");
+const briefs = buildUnitBriefs("de", "A1", briefConversations, "tr");
 check("4 ders → 1 brief", briefs.length === 1);
 check("brief teması modülden (Tanışma ve ben)", briefs[0].theme === "Tanışma ve ben");
 check("brief vocab de'ye göre tekil (Name bir kez)", briefs[0].vocab.length === 5 && briefs[0].vocab.filter((v) => v.de === "Name").length === 1);
 check("brief pattern birleşik (4)", briefs[0].patterns.length === 4);
 check("brief cando birleşik+tekil (introduce bir kez)", briefs[0].cando.length === 3 && briefs[0].cando.filter((c) => c === "a1.self.introduce").length === 1);
-check("brief 4 lessonId + needs 2/2/2", briefs[0].lessonIds.length === 4 && briefs[0].needs.read === 2 && briefs[0].needs.listen === 2 && briefs[0].needs.write === 2);
+check("brief 4 conversationId + needs 2/2/2", briefs[0].conversationIds.length === 4 && briefs[0].needs.read === 2 && briefs[0].needs.listen === 2 && briefs[0].needs.write === 2);
 
 
 // ---- quiz/checkpoint türetme (brief → SkillQuestion) ----
@@ -284,13 +284,13 @@ check("soru metni tekrar olduğunu ele vermiyor", backQ.every((q) => q.text.star
 */
 const tumRef = new Set(
   t.units[0].items
-    .filter((i) => ["lesson", "read", "listen", "write"].includes(i.kind) && i.ref)
+    .filter((i) => ["conversation", "read", "listen", "write"].includes(i.kind) && i.ref)
     .map((i) => i.ref as string),
 );
 const sTam = buildTrackState(t, {
-  lessonDone: (r) => tumRef.has(r),
+  conversationDone: (r) => tumRef.has(r),
   skillDone: (r) => tumRef.has(r),
-  lessonAttempted: (r) => tumRef.has(r),
+  conversationAttempted: (r) => tumRef.has(r),
   skillAttempted: (r) => tumRef.has(r),
 });
 const tamItems = sTam.units[0].items;
@@ -303,9 +303,9 @@ check("pratik öğeler pencereyi harcamaz (ikisi birden açık)", Boolean(kontro
 // Ünite yarımken pratik öğeleri kapalı kalmalı: sıra hâlâ korunuyor.
 const eksikRef = new Set([...tumRef].slice(0, 2));
 const sYarim = buildTrackState(t, {
-  lessonDone: (r) => eksikRef.has(r),
+  conversationDone: (r) => eksikRef.has(r),
   skillDone: (r) => eksikRef.has(r),
-  lessonAttempted: (r) => eksikRef.has(r),
+  conversationAttempted: (r) => eksikRef.has(r),
   skillAttempted: (r) => eksikRef.has(r),
 });
 const yarimItems = sYarim.units[0].items;
@@ -323,7 +323,7 @@ const gramerItem = t.units[1].items.find((i) => i.kind === "grammar");
 check("gramer adımı ref taşıyor (oynanabilir)", gramerItem?.ref === t.units[1].id);
 // Türetme GERÇEK derslere karşı sınanır: sentetik fixture'da hüküm adımı yok
 // ve olması da gerekmiyor — türetmenin değeri dersin kendi malzemesinde.
-const gercekA1 = LESSONS.filter((l) => l.course === "de" && l.level === "A1");
+const gercekA1 = CONVERSATIONS.filter((l) => l.course === "de" && l.level === "A1");
 let gramerBos = 0;
 for (let u = 0; u < Math.ceil(gercekA1.length / 4); u++) {
   const q = deriveGrammar(`de-a1-u${String(u + 1).padStart(2, "0")}`, gercekA1.slice(u * 4, u * 4 + 4), 8, DENEME_METNI);

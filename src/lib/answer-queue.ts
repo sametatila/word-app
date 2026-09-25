@@ -9,7 +9,7 @@
  *
  * Android bu boşluğu baştan kapatmış (`M/src/game/session.ts`
  * `queueAnswers`/`flushPendingAnswers`); buradaki kuyruk aynı üç kuralı
- * tutuyor ve `lesson-queue` ile aynı kalıpta yazıldı:
+ * tutuyor ve `conversation-queue` ile aynı kalıpta yazıldı:
  *
  *  - kayıt kendi `day`ini taşıyor (seri kullanıcının O gününe ait),
  *  - kuyruk en son yirmi turla sınırlı (eski tur SRS için değerini yitiriyor,

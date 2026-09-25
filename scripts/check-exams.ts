@@ -11,9 +11,9 @@
  * `npm run test:exams`.
  */
 import { targetLangOf } from "../src/lib/courses";
-import { selfAnswering } from "../src/lib/lessons/module-content";
-import { sourceAllModules as allModules, sourceModuleContent as moduleContent } from "../src/lib/lessons/module-content-source";
-import { courseExams, EXAM_COURSES, moduleExamPlan, type ExamQuestion, type ModuleExamPlan } from "../src/lib/lessons/module-exam";
+import { selfAnswering } from "../src/lib/conversations/module-content";
+import { sourceAllModules as allModules, sourceModuleContent as moduleContent } from "../src/lib/conversations/module-content-source";
+import { courseExams, EXAM_COURSES, moduleExamPlan, type ExamQuestion, type ModuleExamPlan } from "../src/lib/conversations/module-exam";
 import { foldSentence } from "../src/lib/sentence-match";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 
@@ -120,7 +120,7 @@ for (const course of COURSES) {
     const plan = moduleExamPlan(course, m.level, m.index);
 
     if (!plan) {
-      fail(where, "modülün sınav planı yok (src/lib/lessons/module-exam)");
+      fail(where, "modülün sınav planı yok (src/lib/conversations/module-exam)");
       continue;
     }
     if (plan.level !== m.level || plan.index !== m.index) fail(where, `plan başka modülü gösteriyor: ${plan.code}`);

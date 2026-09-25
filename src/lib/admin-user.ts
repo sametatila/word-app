@@ -35,7 +35,7 @@ export type AdminUser = {
   premium: { entitlement: Record<string, string> | null; grants: Table };
   activity: { days30: number; reviews30: number; xp30: number; seconds30: number; wordsByState: { state: number; count: number }[] };
   learning: {
-    lessons: Table; path: Table; skills: Table; exams: Table; mock: Table; quiz: Table; placements: Table; boss: Table;
+    conversations: Table; path: Table; skills: Table; exams: Table; mock: Table; quiz: Table; placements: Table; boss: Table;
     achievements: number; quests30: number;
   };
   social: {
@@ -53,7 +53,7 @@ export async function getAdminUser(userId: string): Promise<AdminUser> {
   const { rows, issues } = queryRunner("kullanıcı");
   const id = userId.slice(0, 64);
   const [
-    acc, providers, sessions, prof, ent, grants, act, wordStates, lessons, path, skills, exams, mock, quiz, placements, boss,
+    acc, providers, sessions, prof, ent, grants, act, wordStates, conversations, path, skills, exams, mock, quiz, placements, boss,
     ach, quests, social, league, reportsAgainst, devices, webPush, consents, usage, ai, events, errors, clients,
   ] = await Promise.all([
     rows(sql`select email, coalesce(name, '') name, "emailVerified" verified, coalesce("isAnonymous", false) guest,
@@ -146,7 +146,7 @@ export async function getAdminUser(userId: string): Promise<AdminUser> {
       wordsByState: wordStates.map((r) => ({ state: num(r.state), count: num(r.c) })),
     },
     learning: {
-      lessons: table(lessons, ["conversation_id", "rule_id", "score", "attempts", "chat_done", "due", "last"]),
+      conversations: table(conversations, ["conversation_id", "rule_id", "score", "attempts", "chat_done", "due", "last"]),
       path: table(path, ["item_id", "last_pct", "best_pct", "attempts", "passed", "last"]),
       skills: table(skills, ["exercise_id", "skill", "level", "score", "last_score", "attempts", "last"]),
       exams: table(exams, ["kind", "level", "score", "score_raw", "week", "at"]),

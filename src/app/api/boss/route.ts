@@ -8,7 +8,8 @@ import {
   BOSS_SECONDS,
   buildModuleBoss,
   recordBossClear,
-} from "@/lib/lessons/boss";
+} from "@/lib/conversations/boss";
+import { isLegacyClient, legacyBossModule } from "@/lib/legacy-names";
 
 export const dynamic = "force-dynamic";
 
@@ -34,8 +35,11 @@ export async function GET(req: Request) {
     // Süre kuralları sunucudan gidiyor: istemcide ikinci bir kopya tutmak,
     // dengeyi değiştirdiğimizde iki yerde birden değiştirmeyi hatırlamak
     // demekti.
+    /* Build 6 sayaçları eski adla okuyor (geçici, lib/legacy-names). */
+    const legacy = isLegacyClient(req.headers);
     return NextResponse.json({
       ...payload,
+      ...(legacy ? { meta: legacyBossModule(payload.meta) } : {}),
       seconds: BOSS_SECONDS,
       bonus: BOSS_BONUS,
       penalty: BOSS_PENALTY,

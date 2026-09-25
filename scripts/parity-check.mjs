@@ -206,7 +206,7 @@ function sameSet(title, a, b, labelA = "mobil", labelB = "web") {
  * Bir kaynakta `prop === "x"` ya da `prop !== "x"` biçiminde ADIYLA geçen
  * türler.
  *
- * İki biçimi de sayıyor, çünkü `LessonScreen` `produce`u
+ * İki biçimi de sayıyor, çünkü `ConversationScreen` `produce`u
  * `expect?.kind !== "produce"` ile ayırıyor ve yalnız `===` arayan bir tarama
  * onu GÖRMEZ - kapı yanlışlıkla geçerdi. Kaçırmanın yönü önemli: burada
  * yanlış "geçer" demek hatayı gizlemek olur.
@@ -484,16 +484,16 @@ console.log("\n" + C.b + "11. DERS VE DENEME ICERIGI vs OYNATICI" + C.off);
     return out;
   };
 
-  const lessonFiles = ["de-a1", "de-a2", "de-b1", "de-b2", "de-c1", "en-a1", "en-a2"]
-    .map((n) => `mobile/src/data/lessons/${n}.json`)
+  const conversationFiles = ["de-a1", "de-a2", "de-b1", "de-b2", "de-c1", "en-a1", "en-a2"]
+    .map((n) => `mobile/src/data/conversations/${n}.json`)
     .filter((f) => { try { read(f); return true; } catch { return false; } });
-  const expectKinds = kinds(lessonFiles, (l, out) => {
+  const expectKinds = kinds(conversationFiles, (l, out) => {
     for (const st of l.lecture ?? []) if (st.expect?.kind) out.add(st.expect.kind);
   });
-  const lessonNamed = named(read("mobile/src/screens/LessonScreen.tsx"), "kind");
-  const missingExpect = [...expectKinds].filter((k) => !lessonNamed.has(k));
-  if (!expectKinds.size) fail("anlatim beklentileri okunamadi", [`${lessonFiles.length} dosya`]);
-  else if (missingExpect.length) fail("anlatim beklentisi cizilemez", missingExpect.map((k) => `${k}: LessonScreen tanimiyor`));
+  const conversationNamed = named(read("mobile/src/screens/ConversationScreen.tsx"), "kind");
+  const missingExpect = [...expectKinds].filter((k) => !conversationNamed.has(k));
+  if (!expectKinds.size) fail("anlatim beklentileri okunamadi", [`${conversationFiles.length} dosya`]);
+  else if (missingExpect.length) fail("anlatim beklentisi cizilemez", missingExpect.map((k) => `${k}: ConversationScreen tanimiyor`));
   else pass(`anlatim beklentileri (${[...expectKinds].sort().join(", ")})`);
 
   /*
@@ -933,7 +933,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 
 /* ── modul temalari ─────────────────────────────────────────────────────────
    Patika ünitelerinin adı. İki kopya elle tutuluyor: webde
-   `lib/lessons/modules.ts` `MODULE_THEMES`, mobilde `data/moduleThemes.ts`.
+   `lib/conversations/modules.ts` `MODULE_THEMES`, mobilde `data/moduleThemes.ts`.
    İkisi de 2026-09-21'den beri KURSA VE SEVİYEYE göre anahtarlı, o yüzden
    karşılaştırma kurs kurs. O güne kadar webin tablosu yalnız seviyeye göreydi
    ve iki kurs onu paylaşıyordu: İngilizce C1'in on ünitesi Patika'da Almanca
@@ -944,7 +944,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    (18 modül), yani Patika'nın 11-18. üniteleri adını bulamayıp jenerik
    etikete düşüyordu - içerik yerindeydi, adı yoktu. */
 {
-  const web = read("src/lib/lessons/modules.ts");
+  const web = read("src/lib/conversations/modules.ts");
   const mob = read("mobile/src/data/moduleThemes.ts");
   /* `seg` bu betikte blok-yerel bir yardımcı; burada da aynı işi yapan bir
      kopya duruyor (küçük ve iki satır - paylaşmak için yukarı taşımak
@@ -2078,8 +2078,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   };
   sameList(
     "ders isabet orani",
-    oku("mobile/src/screens/LessonScreen.tsx", /if \(tries === 0\) setCorrect/, "mobile/src/data/lessons/index.ts"),
-    oku("src/components/lessons/lesson-player.tsx", /ok && isFirstTry\) setCorrectCount/),
+    oku("mobile/src/screens/ConversationScreen.tsx", /if \(tries === 0\) setCorrect/, "mobile/src/data/conversations/index.ts"),
+    oku("src/components/conversations/conversation-player.tsx", /ok && isFirstTry\) setCorrectCount/),
   );
 }
 
@@ -2137,7 +2137,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "rol=" + ((body.match(/role === "(\w+)"/) ?? [])[1] ?? "yok"),
     ];
   };
-  sameList("kalip kullanildi mi", kural("mobile/src/game/roleplay.ts"), kural("src/components/lessons/lesson-player.tsx"));
+  sameList("kalip kullanildi mi", kural("mobile/src/game/chat.ts"), kural("src/components/conversations/conversation-player.tsx"));
 }
 
 /* ── 42. niyet eslestirme (dialogue) ───────────────────────────────────────
@@ -2208,7 +2208,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "koc=" + coach,
     ];
   };
-  sameList("cevrimdisi rol yapma", kural("mobile/src/game/offlineRoleplay.ts"), kural("src/lib/lessons/offline-roleplay.ts"));
+  sameList("cevrimdisi rol yapma", kural("mobile/src/game/offlineChat.ts"), kural("src/lib/conversations/offline-chat.ts"));
 }
 
 /* ── 44. olcum paritesi: istemciden atilan olaylar ─────────────────────────
@@ -2774,12 +2774,12 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const sunucu = [...new Set(
     [...read("src/lib/proficiency-data.ts").matchAll(/href:\s*[`"]([^`"$]*)/g)].map((m) => {
       const p = m[1].replace(/\/$/, "");
-      return p.startsWith("/immersion/skill") ? "/immersion/skill/" : p.startsWith("/lessons") ? "/lessons/" : p;
+      return p.startsWith("/immersion/skill") ? "/immersion/skill/" : p.startsWith("/conversations") ? "/conversations/" : p;
     }),
   )].filter(Boolean).sort();
   const mobil = [...new Set(
     [...read("mobile/src/lib/pushRoute.ts").matchAll(/path\s*(?:===|\.startsWith\()\s*"([^"]+)"/g)].map((m) => m[1]),
-  )].filter((p) => /^\/(learn\/game|immersion|lessons)/.test(p)).sort();
+  )].filter((p) => /^\/(learn\/game|immersion|conversations)/.test(p)).sort();
   sameSet("onerilen adim adresleri", mobil, sunucu, "mobil esleyici", "sunucu");
 }
 
@@ -2876,14 +2876,14 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const kuyruk = (p) => {
     const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
     return [
-      "anahtar=" + ((src.match(/"(lernomi-lessons-pending)"/) ?? [])[1] ?? "yok"),
+      "anahtar=" + ((src.match(/"(lernomi-conversations-pending)"/) ?? [])[1] ?? "yok"),
       "gun=" + (/day:/.test(src) ? "var" : "yok"),
       "ders basina tek=" + (/filter\(\(x\) => x\.conversationId !== item\.conversationId\)/.test(src) ? "var" : "yok"),
       "sinir=" + ((src.match(/slice\(-(\d+)\)/) ?? [])[1] ?? "yok"),
       "kalani birak=" + (/slice\(i\)/.test(src) ? "var" : "yok"),
     ];
   };
-  sameList("ders sonucu kuyrugu", kuyruk("mobile/src/game/lessonProgress.ts"), kuyruk("src/lib/lesson-queue.ts"));
+  sameList("ders sonucu kuyrugu", kuyruk("mobile/src/game/pathProgress.ts"), kuyruk("src/lib/conversation-queue.ts"));
 
   /* Gonderim govdesi de esit olmali: web `day` ve `seconds`i HIC
      gondermiyordu - her ders sunucuda sifir saniye goruluyor ve gece
@@ -2897,7 +2897,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
        yalnizca iki nokta arayan bir desen yanlis ayrisma gosterirdi. */
     return ["conversationId", "correct", "chatDone", "day", "seconds"].filter((k) => new RegExp("\\b" + k + "\\s*[:,}]").test(govde)).sort();
   };
-  sameSet("ders kayit govdesi", govde("mobile/src/screens/LessonScreen.tsx"), govde("src/components/lessons/lesson-player.tsx"), "mobil", "web");
+  sameSet("ders kayit govdesi", govde("mobile/src/screens/ConversationScreen.tsx"), govde("src/components/conversations/conversation-player.tsx"), "mobil", "web");
 }
 
 /* ── 67. serbest yazma gorevi rubrikle puanlaniyor mu ─────────────────────
@@ -3257,7 +3257,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 
 /* ── 79. yazilarim listesinde tur adlari ──────────────────────────────────
  * `/api/assessments` dort tur dondurüyor: writing, sentence, speaking,
- * roleplay. Mobil listesi yalniz ikisini biliyordu; otekiler HAM ANAHTARIYLA
+ * chat. Mobil listesi yalniz ikisini biliyordu; otekiler HAM ANAHTARIYLA
  * ("sentence") ciziliyordu - kullanici satirin ne oldugunu anlamiyordu.
  * Iki tarafin haritasi ayni turleri ve AYNI sozluk anahtarlarini tasimali. */
 {
@@ -3333,8 +3333,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
   sameSet(
     "patika turu simgeleri",
-    simge("mobile/src/ui/unitKind.tsx", /^  (read|listen|write|grammar|quiz|lesson|checkpoint): \(p\) => <([A-Za-z]+Icon)/gm),
-    simge("src/components/immersion/unit-pane.tsx", /case "(read|listen|write|grammar|quiz|lesson|checkpoint)":\s*\n?\s*return <([A-Za-z]+Icon)/g),
+    simge("mobile/src/ui/unitKind.tsx", /^  (read|listen|write|grammar|quiz|conversation|checkpoint): \(p\) => <([A-Za-z]+Icon)/gm),
+    simge("src/components/immersion/unit-pane.tsx", /case "(read|listen|write|grammar|quiz|conversation|checkpoint)":\s*\n?\s*return <([A-Za-z]+Icon)/g),
     "mobil", "web",
   );
 }
@@ -3739,7 +3739,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 
 /* ── 98. rol yapma sinavi ─────────────────────────────────────────────────
  * WP-22 webde vardi, Androidde YOKTU: ders ozetindeki "Sinav olarak dene"
- * dugmesi ve `/lessons/[id]/exam` yuzeyi yalniz webdeydi, yani ayni dersi
+ * dugmesi ve `/conversations/[id]/scored` yuzeyi yalniz webdeydi, yani ayni dersi
  * bitiren iki kullanicidan yalniz biri olculebiliyordu.
  *
  * Olculen sey sinavin SOZLESMESI: iki sabit (kac tur, kac saniye), modele
@@ -3764,7 +3764,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "saniye=" + sabit("EXAM_SECONDS"),
       "istem modu=" + (/mode: "exam"|mode\b[^\n]*"exam"/.test(src) ? "var" : "yok"),
       "rubrik turu=" + (/kind: "chat"/.test(src) ? "var" : "yok"),
-      "hedef kaliplar=" + (/targets: lesson\.patterns/.test(src) ? "var" : "yok"),
+      "hedef kaliplar=" + (/targets: conversation\.patterns/.test(src) ? "var" : "yok"),
       "kisitlar=" + (/constraints: \[`\$\{EXAM_TURNS\} tur`/.test(src) ? "var" : "yok"),
       "gun=" + (/day:/.test(solo) ? "var" : "yok"),
       "en iyi cumleler=" + (/scored\.best_sentences/.test(src) ? "var" : "yok"),
@@ -3781,8 +3781,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   };
   sameList(
     "rol yapma sinavi",
-    sinav(["mobile/src/screens/RoleplayExamScreen.tsx", "mobile/src/screens/LessonScreen.tsx", "mobile/src/game/roleplay.ts"], "mobile/src/screens/RoleplayExamScreen.tsx"),
-    sinav(["src/components/lessons/roleplay-exam.tsx", "src/components/lessons/lesson-player.tsx", "src/lib/lessons/roleplay-const.ts"], "src/lib/assess-client.ts"),
+    sinav(["mobile/src/screens/ConversationScoredScreen.tsx", "mobile/src/screens/ConversationScreen.tsx", "mobile/src/game/chat.ts"], "mobile/src/screens/ConversationScoredScreen.tsx"),
+    sinav(["src/components/conversations/conversation-scored.tsx", "src/components/conversations/conversation-player.tsx", "src/lib/conversations/chat-const.ts"], "src/lib/assess-client.ts"),
   );
 }
 
@@ -3927,11 +3927,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "koc cumlesi",
     koc(
       ["mobile/src/game/coachLines.ts", "mobile/src/ui/CoachLine.tsx"],
-      ["mobile/src/screens/ExamScreen.tsx", "mobile/src/screens/RoleplayExamScreen.tsx", "mobile/src/screens/GameScreen.tsx"],
+      ["mobile/src/screens/ExamScreen.tsx", "mobile/src/screens/ConversationScoredScreen.tsx", "mobile/src/screens/GameScreen.tsx"],
     ),
     koc(
       ["src/lib/coach-lines.ts", "src/components/coach-line.tsx"],
-      ["src/components/exam-player.tsx", "src/components/lessons/roleplay-exam.tsx", "src/components/session-player.tsx"],
+      ["src/components/exam-player.tsx", "src/components/conversations/conversation-scored.tsx", "src/components/session-player.tsx"],
     ),
   );
 }
@@ -4239,14 +4239,14 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "olcumde sifir=" + (/track\("conversation_step", 0, `\$\{k\}:skip`\)/.test(src) ? "var" : "yok"),
     ];
   };
-  sameList("ders adiminda atlama", atla("mobile/src/screens/LessonScreen.tsx"), atla("src/components/lessons/lesson-player.tsx"));
+  sameList("ders adiminda atlama", atla("mobile/src/screens/ConversationScreen.tsx"), atla("src/components/conversations/conversation-player.tsx"));
 }
 
 /* ── 116. sohbet servisi kapaliyken ve yarim kalan konusma ────────────────
  * Iki yanlis mesaj:
  *
  * "BIRAZDAN TEKRAR DENE" derken ders DEVAM EDIYORDU. Saglayici kapaliysa
- * mobil cevrimdisi rol yapmaya dusuyor (`game/offlineRoleplay`) ama mesaj
+ * mobil cevrimdisi rol yapmaya dusuyor (`game/offlineChat`) ama mesaj
  * "yapay zeka sohbeti kullanilamiyor, birazdan tekrar dene" diyordu: calisan
  * bir sey bozuk sanilyordu. Web hangi yedege dusuldugunu adlandiriyor
  * (senaryolu konusma / kaliplar).
@@ -4265,7 +4265,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "passed okunuyor=" + (/d\?\.passed|setSaved\(data\)/.test(src) ? "var" : "yok"),
     ];
   };
-  sameList("sohbet yedegi ve yarim konusma", sohbet("mobile/src/screens/LessonScreen.tsx"), sohbet("src/components/lessons/lesson-player.tsx"));
+  sameList("sohbet yedegi ve yarim konusma", sohbet("mobile/src/screens/ConversationScreen.tsx"), sohbet("src/components/conversations/conversation-player.tsx"));
 }
 
 /* ── 117. yerlestirilmis karonun ekran okuyucu etiketi ────────────────────
@@ -4378,15 +4378,15 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
      tur birligi asagida ayrica olculuyor. */
   const MOB = [
     "mobile/src/screens/WalkModeScreen.tsx", "mobile/src/screens/ExamScreen.tsx",
-    "mobile/src/game/skillQuiz.tsx", "mobile/src/game/skillLibrary.tsx", "mobile/src/screens/RoleplayExamScreen.tsx",
+    "mobile/src/game/skillQuiz.tsx", "mobile/src/game/skillLibrary.tsx", "mobile/src/screens/ConversationScoredScreen.tsx",
     "mobile/src/screens/MockExamScreen.tsx",
     /* 2026-09-25: Patika Konuşma kilidi (`conversation`) Konuşma adımında ve
        puanlı kısımda ölçülüyor; ders ekranı listeye girdi (webde oynatıcı). */
-    "mobile/src/screens/LessonScreen.tsx",
+    "mobile/src/screens/ConversationScreen.tsx",
   ];
   const WEB = [
     "src/lib/assess-client.ts", "src/components/walk-player.tsx", "src/components/mock-exam-player.tsx",
-    "src/components/lessons/lesson-player.tsx", "src/components/lessons/roleplay-exam.tsx",
+    "src/components/conversations/conversation-player.tsx", "src/components/conversations/conversation-scored.tsx",
   ];
   const mob = kilitTurleri(MOB);
   const web = kilitTurleri(WEB);
@@ -4784,8 +4784,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 {
   const BOLUM = [
     ["baslik", /conversation\.conversation_complete/, /conversation\.conversation_complete/],
-    /* 2026-09-15 SONUC SABLONU: "alistirma" (`lesson.correct_production`) ve
-       "sonraki gun" (`lessonp.next_in_days`) satirlari iki taraftan da kalkti
+    /* 2026-09-15 SONUC SABLONU: "alistirma" (`conversation.correct_production`) ve
+       "sonraki gun" (`conversationp.next_in_days`) satirlari iki taraftan da kalkti
        - alistirma bandin ana sayisi (dogru/toplam), tekrar gunu uc sayinin
        ucuncusu (`conversationp.stat_review`). Tur sayisi iki tarafta da bandin alt
        satiri (`conversationp.n_turns`); mobilin eski `conversation.phase_chat`
@@ -4802,7 +4802,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     ["patikaya don", /conversation\.back_to_path/, /conversation\.back_to_path/],
   ];
   /* KALIPLAR bolumu tablonun DISINDA: iki taraf ayni listeyi ayri adla
-     yaziyor (`lessonp.patterns` / `conversation.patterns_you_learned`) ve sirasi da
+     yaziyor (`conversationp.patterns` / `conversation.patterns_you_learned`) ve sirasi da
      ayri (webde kelimelerden sonra, mobilde once). Ayni bilgi, ayri yer -
      siralamayi burada zorlamak tasarimi degil olcuyu duzeltmek olurdu. */
   const dilim = (src, bas, son) => {
@@ -4820,8 +4820,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       .filter(([, i]) => i >= 0)
       .sort((a, b) => a[1] - b[1])
       .map(([ad]) => ad);
-  const web = dilim(read("src/components/lessons/lesson-player.tsx"), 'conversation.conversation_complete', "\n  if (phase ===");
-  const mob = dilim(read("mobile/src/screens/LessonScreen.tsx"), "function Summary({", "\nfunction ");
+  const web = dilim(read("src/components/conversations/conversation-player.tsx"), 'conversation.conversation_complete', "\n  if (phase ===");
+  const mob = dilim(read("mobile/src/screens/ConversationScreen.tsx"), "function Summary({", "\nfunction ");
   sameList("ders kapanis ozeti", sira(mob, 1), sira(web, 0));
 }
 
@@ -5110,8 +5110,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const sayici = /setLeft\(\((?:s|n)\) => (?:s|n) - 1\)|setLeft\(\((?:s|n)\) => \((?:s|n) <= 1/.test(src);
     return yol.split("/").pop() + "=" + (sayici ? "sayici" : duvar ? "duvar saati" : "sure yok");
   };
-  const mob = ["mobile/src/screens/ExamScreen.tsx", "mobile/src/screens/RoleplayExamScreen.tsx", "mobile/src/screens/ChallengeScreen.tsx"].map(kaynak);
-  const web = ["src/components/exam-player.tsx", "src/components/lessons/roleplay-exam.tsx", "src/components/challenge-player.tsx"].map(kaynak);
+  const mob = ["mobile/src/screens/ExamScreen.tsx", "mobile/src/screens/ConversationScoredScreen.tsx", "mobile/src/screens/ChallengeScreen.tsx"].map(kaynak);
+  const web = ["src/components/exam-player.tsx", "src/components/conversations/conversation-scored.tsx", "src/components/challenge-player.tsx"].map(kaynak);
   /* Dosya adlari farkli; karsilastirma yalniz KAYNAK uzerinden. */
   sameList("zamanli yuzeylerin sure kaynagi", mob.map((x) => x.split("=")[1]), web.map((x) => x.split("=")[1]));
   /* Ucunde de duvar saati olmali: iki taraf ayni sekilde YANLIS olsa ustteki
@@ -6806,11 +6806,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList(
     "karti kullanan yuzeyler",
     [
-      "rol yapma sinavi=" + kullanan("mobile/src/screens/RoleplayExamScreen.tsx", /<AssessmentCard[\s/>]/),
+      "rol yapma sinavi=" + kullanan("mobile/src/screens/ConversationScoredScreen.tsx", /<AssessmentCard[\s/>]/),
       "sinav yazmasi=" + kullanan("mobile/src/screens/ExamScreen.tsx", /<AssessmentCard[\s/>]/),
     ],
     [
-      "rol yapma sinavi=" + kullanan("src/components/lessons/roleplay-exam.tsx", /<AssessmentCard[\s/>]/),
+      "rol yapma sinavi=" + kullanan("src/components/conversations/conversation-scored.tsx", /<AssessmentCard[\s/>]/),
       "sinav yazmasi=" + kullanan("src/components/exam-player.tsx", /<AssessmentCard[\s/>]/),
     ],
     "mobil",
@@ -7646,7 +7646,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       yer: ["{n}"],
       anahtarlar: ["scored.below_threshold"],
       gecis: /n:\s*EXAM_PASS_SCORE/,
-      cagiranlar: ["src/components/lessons/roleplay-exam.tsx", "mobile/src/screens/RoleplayExamScreen.tsx"],
+      cagiranlar: ["src/components/conversations/conversation-scored.tsx", "mobile/src/screens/ConversationScoredScreen.tsx"],
     },
     {
       ad: "pekisme araligi",
@@ -7907,7 +7907,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    *      yuksekligi kadar kaldir (`game/rounds` `RoundShell` kalibi)
    *
    * Olculdugunde A duzenindeki dokuz kaydirma alanindan yalniz IKISINDE
-   * (`QuizScreen`, `LessonScreen`) oznitelik vardi - o ikisi 8b6c084a'da
+   * (`QuizScreen`, `ConversationScreen`) oznitelik vardi - o ikisi 8b6c084a'da
    * bilerek eklenmisti, gerisi geride kalmisti. B duzeninde ise rol yapma
    * sinavinin SOHBET KUTUSU kurtarilmiyordu: kullanici yazarken ne yazdigini
    * gormuyordu. */
@@ -7927,8 +7927,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 
     const ALT_CUBUK = new Set([
       "mobile/src/game/rounds.tsx",
-      "mobile/src/screens/LessonScreen.tsx",
-      "mobile/src/screens/RoleplayExamScreen.tsx",
+      "mobile/src/screens/ConversationScreen.tsx",
+      "mobile/src/screens/ConversationScoredScreen.tsx",
     ]);
 
     /* A DUZENI: METIN KUTUSU ICEREN her kaydirma alani oznitelikli olacak.
@@ -9070,8 +9070,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
      * IKISI boyca ayrisikti ve ikisi de mobil tarafta, ustelik mobilin
      * KENDI kardes ekraniyla da celisiyordu:
      *
-     *   sinav girisi   web 48 / 48 · mobil ExamScreen 48, RoleplayExam 56
-     *   sonuc balonu   web 56 / 56 · mobil RoleplayExam 56, ExamScreen 72
+     *   sinav girisi   web 48 / 48 · mobil ExamScreen 48, ConversationScored 56
+     *   sonuc balonu   web 56 / 56 · mobil ConversationScored 56, ExamScreen 72
      *
      * Web ucunde de kendi icinde tutarli (giris 48, sonuc 56, zayif nokta 72).
      * Iki aykiri mobilde duzeltildi.
@@ -9092,7 +9092,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     {
       const CIFT = [
         ["sinav", "src/components/exam-player.tsx", "mobile/src/screens/ExamScreen.tsx"],
-        ["rol yapma", "src/components/lessons/roleplay-exam.tsx", "mobile/src/screens/RoleplayExamScreen.tsx"],
+        ["rol yapma", "src/components/conversations/conversation-scored.tsx", "mobile/src/screens/ConversationScoredScreen.tsx"],
         ["tur ozeti", "src/components/session-player.tsx", "mobile/src/screens/GameScreen.tsx"],
         /* 2026-09-15: sonuc/kapak ekranlari sablona gecince mobil kapak
            kurallari ikonu BILESEN olarak veriyor (`icon: ClockIcon`, boy
@@ -9203,7 +9203,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     /* Eslesen yuzeyler ayni kipi geciyor. */
     const YUZEY = [
       ["sinav girisi", "src/components/exam-player.tsx", "mobile/src/screens/ExamScreen.tsx", /moment="exam_intro" mood="(\w+)"/],
-      ["rol yapma girisi", "src/components/lessons/roleplay-exam.tsx", "mobile/src/screens/RoleplayExamScreen.tsx", /moment="exam_intro" mood="(\w+)"/],
+      ["rol yapma girisi", "src/components/conversations/conversation-scored.tsx", "mobile/src/screens/ConversationScoredScreen.tsx", /moment="exam_intro" mood="(\w+)"/],
     ];
     sameList(
       "sinav girisinde maskotun kipi",
@@ -9646,8 +9646,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    * ekrani, iki platform) onu kullaniyor. */
   {
     const CIFT = [
-      ["web", "src/components/lessons/roleplay-exam.tsx"],
-      ["mobil", "mobile/src/screens/RoleplayExamScreen.tsx"],
+      ["web", "src/components/conversations/conversation-scored.tsx"],
+      ["mobil", "mobile/src/screens/ConversationScoredScreen.tsx"],
     ];
     const govde = (metin, ad) => {
       const i = metin.indexOf("const " + ad + " = useCallback(");
@@ -9711,7 +9711,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    *   - MODUL SINAVI (`boss`): tek dugme "Geri don". Kazanilmis bir yuzey
    *     (dersler bitmeden acilmiyor); gecici bir ag kesintisinde kullaniciyi
    *     listeye geri gonderip yeniden girmeye zorlamak o girisi kaybettirir.
-   *   - ROL YAPMA SINAVI (`roleplay-exam`): tek cikis "konusmaya don". Bu dala
+   *   - ROL YAPMA SINAVI (`conversation-scored`): tek cikis "konusmaya don". Bu dala
    *     yalniz muhatap servisi ILK IKI TURDA dusunce giriliyor (sonrasinda
    *     konusma puanlaniyor), yani olculmus hicbir sey yok - sinav bastan
    *     baslayabilir.
@@ -9763,7 +9763,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     };
     const OYNATICI = [
       ["boss", "src/components/boss-player.tsx", "mobile/src/screens/BossScreen.tsx"],
-      ["rol yapma sinavi", "src/components/lessons/roleplay-exam.tsx", "mobile/src/screens/RoleplayExamScreen.tsx"],
+      ["rol yapma sinavi", "src/components/conversations/conversation-scored.tsx", "mobile/src/screens/ConversationScoredScreen.tsx"],
       ["tur", "src/components/session-player.tsx", "mobile/src/screens/GameScreen.tsx"],
       ["meydan okuma", "src/components/challenge-player.tsx", "mobile/src/screens/ChallengeScreen.tsx"],
       ["haftalik", "src/components/weekly-player.tsx", "mobile/src/screens/WeeklyScreen.tsx"],
@@ -10168,9 +10168,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    * kopyalanmadi.
    *
    * Android kullanici bilinir bilinmez ikisini de bosaltiyor (`App.tsx`,
-   * `if (user) { flushPendingAnswers(); flushPendingLessons(); }`). Webde
+   * `if (user) { flushPendingAnswers(); flushPendingConversations(); }`). Webde
    * bosaltma yalniz OYNATICI monte edilirken oluyordu (`session-player`,
-   * `lesson-player`): agi gidip gelen kullanici turu bitirip profile ya da
+   * `conversation-player`): agi gidip gelen kullanici turu bitirip profile ya da
    * kelimelere gectiginde kayitlar kuyrukta bekliyordu - SRS ilerlemiyor, XP
    * verilmiyor, ve bunu ancak bir sonraki tura girdiginde (belki gunler
    * sonra) telafi ediyordu. Kuyrugun kendisi calisiyordu; bosaltan yoktu.
@@ -10194,11 +10194,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "kuyruklar acilista bosaliyor",
       [
         "web cevap=" + (/flushPendingAnswers\(\)/.test(webEtki) ? "var" : "YOK"),
-        "web ders=" + (/flushPendingLessons\(\)/.test(webEtki) ? "var" : "YOK"),
+        "web ders=" + (/flushPendingConversations\(\)/.test(webEtki) ? "var" : "YOK"),
       ],
       [
         "web cevap=" + (/flushPendingAnswers\(\)/.test(mobEtki) ? "var" : "YOK"),
-        "web ders=" + (/flushPendingLessons\(\)/.test(mobEtki) ? "var" : "YOK"),
+        "web ders=" + (/flushPendingConversations\(\)/.test(mobEtki) ? "var" : "YOK"),
       ],
       "web",
       "mobil",
@@ -10208,8 +10208,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     sameList(
       "acilis bosaltmasi iki platformda da var",
       [
-        "web=" + (/flushPendingAnswers\(\)/.test(webEtki) && /flushPendingLessons\(\)/.test(webEtki) ? "iki kuyruk" : "EKSIK"),
-        "mobil=" + (/flushPendingAnswers\(\)/.test(mobEtki) && /flushPendingLessons\(\)/.test(mobEtki) ? "iki kuyruk" : "EKSIK"),
+        "web=" + (/flushPendingAnswers\(\)/.test(webEtki) && /flushPendingConversations\(\)/.test(webEtki) ? "iki kuyruk" : "EKSIK"),
+        "mobil=" + (/flushPendingAnswers\(\)/.test(mobEtki) && /flushPendingConversations\(\)/.test(mobEtki) ? "iki kuyruk" : "EKSIK"),
       ],
       ["web=iki kuyruk", "mobil=iki kuyruk"],
       "bulunan",
@@ -10222,7 +10222,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "oynatici icindeki bosaltma duruyor",
       [
         "web tur=" + (/flushPendingAnswers\(\)/.test(sil(read("src/components/session-player.tsx"))) ? "var" : "YOK"),
-        "web ders=" + (/flushPendingLessons\(\)/.test(sil(read("src/components/lessons/lesson-player.tsx"))) ? "var" : "YOK"),
+        "web ders=" + (/flushPendingConversations\(\)/.test(sil(read("src/components/conversations/conversation-player.tsx"))) ? "var" : "YOK"),
         "mobil tur=" + (/flushPendingAnswers\(\)/.test(sil(read("mobile/src/game/session.ts"))) ? "var" : "YOK"),
       ],
       ["web tur=var", "web ders=var", "mobil tur=var"],
@@ -10234,14 +10234,14 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const sinir = (y) => (sil(read(y)).match(/slice\(-(\d+)\)/) ?? [])[1] ?? "YOK";
     sameList(
       "kuyruk siniri",
-      ["cevap=" + sinir("src/lib/answer-queue.ts"), "ders=" + sinir("src/lib/lesson-queue.ts")],
+      ["cevap=" + sinir("src/lib/answer-queue.ts"), "ders=" + sinir("src/lib/conversation-queue.ts")],
       ["cevap=20", "ders=20"],
       "web",
       "beklenen",
     );
     sameList(
       "kuyruk siniri (mobil)",
-      ["ders=" + (sil(read("mobile/src/game/lessonProgress.ts")).match(/slice\(-(\d+)\)/) ?? [])[1]],
+      ["ders=" + (sil(read("mobile/src/game/pathProgress.ts")).match(/slice\(-(\d+)\)/) ?? [])[1]],
       ["ders=20"],
       "mobil",
       "beklenen",
@@ -11867,7 +11867,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    * her cagri yeri kendi cozuyordu. Sonukluk bilesene tasindi ve on alti
    * cagri yerindeki elle sonukluk silindi.
    *
-   * RENK TAKASI DA KALKTI (`MockExamScreen` `Primary`, `LessonScreen`
+   * RENK TAKASI DA KALKTI (`MockExamScreen` `Primary`, `ConversationScreen`
    * `BigButton`): takas + sonukluk ust uste binince dugme okunmaz oluyordu
    * ve web zaten takas yapmiyor. `BigButton` ayrica `disabled` PROP'unu hic
    * vermiyordu - `onPress`i bos bir islevle degistiriyordu, yani basilamayan
@@ -12121,7 +12121,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       ["yuruyus", "src/components/walk-player.tsx", "mobile/src/screens/WalkModeScreen.tsx"],
       ["meydan okuma", "src/components/challenge-player.tsx", "mobile/src/screens/ChallengeScreen.tsx"],
       ["patron", "src/components/boss-player.tsx", "mobile/src/screens/BossScreen.tsx"],
-      ["ders", "src/components/lessons/lesson-player.tsx", "mobile/src/screens/LessonScreen.tsx"],
+      ["ders", "src/components/conversations/conversation-player.tsx", "mobile/src/screens/ConversationScreen.tsx"],
       ["beceri", "src/components/skills/player-shell.tsx", "mobile/src/screens/ItemScreen.tsx"],
       ["birim sinavi", "src/components/immersion/quiz-player.tsx", "mobile/src/screens/QuizScreen.tsx"],
     ];
@@ -12544,7 +12544,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    * CIKISTA NE SILINIYOR. Iki uygulamada da hesaba ait cihaz anahtarlari
    * cikista siliniyor (`ACCOUNT_SCOPED_PREFIXES`) ama GONDERILMEYI BEKLEYEN
    * KUYRUKLAR listede yoktu: `lernomi-answer-queue` (tur cevaplari),
-   * `lernomi-lessons-pending` (ders ilerlemesi) ve mobilde ayrica
+   * `lernomi-conversations-pending` (ders ilerlemesi) ve mobilde ayrica
    * `lernomi-items-pending` / `lernomi-item-scores`. A cikip B girdiginde
    * A'nin bekleyen cevaplari B'nin hesabina yaziliyordu - B'nin SRS
    * araliklari yabanci cevaplarla ilerliyor, XP'si sisiyordu. IKI TARAF DA
@@ -12578,7 +12578,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     /* MUTLAK: bekleyen kuyruklar cikista siliniyor. */
     const KUYRUKLAR = [
       ["cevap kuyrugu", "lernomi-answer-queue"],
-      ["ders kuyrugu", "lernomi-lessons-pending"],
+      ["ders kuyrugu", "lernomi-conversations-pending"],
     ];
     const webListe = sil(read("src/components/session-keeper.tsx"));
     const mobListe = sil(read("mobile/src/lib/accountScope.ts"));
@@ -12628,9 +12628,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     /* Altyapi: iki tarafta da ayni dort parca. */
     const ALTYAPI = [
       ["cevap kuyrugu", "src/lib/answer-queue.ts", "mobile/src/game/session.ts", /lernomi-answer-queue/],
-      ["ders ilerlemesi", "src/lib/lesson-queue.ts", "mobile/src/game/lessonProgress.ts", /queue|Queue/],
+      ["ders ilerlemesi", "src/lib/conversation-queue.ts", "mobile/src/game/pathProgress.ts", /queue|Queue/],
       ["deneme yerel kaydi", "src/components/mock-exam-player.tsx", "mobile/src/game/mockExamLocal.ts", /LocalRun|localRun/],
-      ["modelsiz rol yapma", "src/lib/lessons/offline-roleplay.ts", "mobile/src/game/offlineRoleplay.ts", /offlineReply|matchReply/],
+      ["modelsiz rol yapma", "src/lib/conversations/offline-chat.ts", "mobile/src/game/offlineChat.ts", /offlineReply|matchReply/],
     ];
     sameList(
       "cevrimdisi altyapisi",
@@ -12725,8 +12725,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
        bakan bir olcu orada HER ZAMAN yesil kalirdi - "yuzeyi degil dosyayi
        olcmek". Isaretten sonraki acilis etiketi okunuyor. */
     const ALANLAR = [
-      ["ders sohbeti", "src/components/lessons/lesson-player.tsx", '"conversation.type_in"', "mobile/src/screens/LessonScreen.tsx", "placeholder={placeholder}", "sentences"],
-      ["rol yapma sohbeti", "src/components/lessons/roleplay-exam.tsx", "value={draft}", "mobile/src/screens/RoleplayExamScreen.tsx", "value={draft}", "sentences"],
+      ["ders sohbeti", "src/components/conversations/conversation-player.tsx", '"conversation.type_in"', "mobile/src/screens/ConversationScreen.tsx", "placeholder={placeholder}", "sentences"],
+      ["rol yapma sohbeti", "src/components/conversations/conversation-scored.tsx", "value={draft}", "mobile/src/screens/ConversationScoredScreen.tsx", "value={draft}", "sentences"],
       ["sinav yazma", "src/components/exam-player.tsx", "value={writingText}", "mobile/src/screens/ExamScreen.tsx", '"exam.write_text"', "sentences"],
       ["deneme acik gorev", "src/components/mock-exam-player.tsx", '"mockexam.write_here"', "mobile/src/screens/MockExamScreen.tsx", '"mockexam.write_here"', "sentences"],
       ["beceri yazma", "src/components/skills/writing-player.tsx", '"skillquiz.write_your_answer_in"', "mobile/src/game/skillQuiz.tsx", '"skillquiz.write_your_answer_in"', "sentences"],
@@ -12919,8 +12919,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 
     /* Kaydirma ANIMASYONU tercihe bagli ama kaydirmanin kendisi duruyor. */
     const KAYDIRMA = [
-      ["sohbet sonu", "src/components/lessons/roleplay-exam.tsx", "mobile/src/screens/RoleplayExamScreen.tsx"],
-      ["ders sohbeti", "src/components/lessons/lesson-player.tsx", "mobile/src/screens/LessonScreen.tsx"],
+      ["sohbet sonu", "src/components/conversations/conversation-scored.tsx", "mobile/src/screens/ConversationScoredScreen.tsx"],
+      ["ders sohbeti", "src/components/conversations/conversation-player.tsx", "mobile/src/screens/ConversationScreen.tsx"],
     ];
     sameList(
       "sohbet kaydirmasi duruyor",
@@ -13180,7 +13180,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    *
    * Android'in basliktaki kare dugmesinin kurali otuz alti cagri yerinde
    * ayni: 44x44 karo, `radii.md`, `surface2` zemin ve glif GERI OKU ise 24,
-   * CAPRAZ ise 22. Tek istisna `RoleplayExamScreen`in geri oku 22'ydi; o da
+   * CAPRAZ ise 22. Tek istisna `ConversationScoredScreen`in geri oku 22'ydi; o da
    * duzeltildi.
    *
    * Webde AYNI DENETIM dort ayri olcudeydi:
@@ -14299,10 +14299,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    *     yoktu. Ortak anahtara alindi (`conversation.chat_offline_note`) ve iki
    *     tarafta da GORUNUR yazildi. */
   {
-    const dm = sil(read("mobile/src/screens/LessonScreen.tsx"));
-    const dw = sil(read("src/components/lessons/lesson-player.tsx"));
-    const tipM = read("mobile/src/data/lessons/index.ts");
-    const tipW = read("src/lib/lessons/types.ts");
+    const dm = sil(read("mobile/src/screens/ConversationScreen.tsx"));
+    const dw = sil(read("src/components/conversations/conversation-player.tsx"));
+    const tipM = read("mobile/src/data/conversations/index.ts");
+    const tipW = read("src/lib/conversations/types.ts");
     const WEB_SOZLUK = ["src/i18n/web/tr.ts", "src/i18n/web/en.ts", "src/i18n/web/de.ts"];
     sameList(
       "rol yapmanin en az tur kurali",
@@ -14332,8 +14332,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     );
     sameList(
       "rol yapmanin olu anahtari kalkti",
-      ["lessonp.chat_offline_note=" + WEB_SOZLUK.reduce((n, y) => n + (read(y).includes('"lessonp.chat_offline_note":') ? 1 : 0), 0)],
-      ["lessonp.chat_offline_note=0"],
+      ["conversationp.chat_offline_note=" + WEB_SOZLUK.reduce((n, y) => n + (read(y).includes('"conversationp.chat_offline_note":') ? 1 : 0), 0)],
+      ["conversationp.chat_offline_note=0"],
       "bulunan",
       "beklenen",
     );
@@ -14346,7 +14346,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    *  1. DENEME TAVANI (3) hicbir yerde sabit degildi: iki oynatici da elle
    *     `>= 3` diye karsilastiriyordu. Biri degisse oteki sessizce eski kalir
    *     ve ayni ders iki platformda farkli sayida hak verirdi. Iki tarafta
-   *     `LESSON_TRY_CEILING` adiyla sabitlendi.
+   *     `CONVERSATION_TRY_CEILING` adiyla sabitlendi.
    *  2. CEVABIN ACILDIGI AN farkliydi. Web cevabi IKINCI yanlista aciyor ve
    *     ogrenciye bir daha deniyordu; UCUNCU yanlista cevabi HIC soylemeden
    *     "olsun" deyip geciyordu. Android ucuncu yanlista cevabi SOYLEYIP
@@ -14359,30 +14359,30 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    *     bir ref'te tutuyordu, yani cizime giremiyordu - yansi bir duruma
    *     alindi ve ref'in degistigi her yerde birlikte guncelleniyor. */
   {
-    const dm = sil(read("mobile/src/screens/LessonScreen.tsx"));
-    const dw = sil(read("src/components/lessons/lesson-player.tsx"));
+    const dm = sil(read("mobile/src/screens/ConversationScreen.tsx"));
+    const dw = sil(read("src/components/conversations/conversation-player.tsx"));
     const sm = read("mobile/src/lib/learningRules.ts");
-    const sw = read("src/lib/lessons/roleplay-const.ts");
+    const sw = read("src/lib/conversations/chat-const.ts");
     const WEB_SOZLUK = ["src/i18n/web/tr.ts", "src/i18n/web/en.ts", "src/i18n/web/de.ts"];
     sameList(
       "ders adiminin deneme hakki",
       [
-        "tavan sabiti=" + ((sm.match(/LESSON_TRY_CEILING = (\d+)/) ?? [])[1] ?? "YOK"),
-        "tavan koddan=" + (/>= LESSON_TRY_CEILING/.test(dm) ? "sabitten" : "ELLE"),
+        "tavan sabiti=" + ((sm.match(/CONVERSATION_TRY_CEILING = (\d+)/) ?? [])[1] ?? "YOK"),
+        "tavan koddan=" + (/>= CONVERSATION_TRY_CEILING/.test(dm) ? "sabitten" : "ELLE"),
         /* HERHANGI BIR SAYIYLA karsilastirma kaldi mi - yalniz `3` degil.
            Ilk yazim `>= 3` ariyordu ve enjeksiyon (`t >= 99`) kapiyi yesil
            birakti: mobilde iki adim turu var (tekrarla / kur ve soyle) ve
            BIRININ sabitten cikmasi oteki hala sabitten geldigi icin
            gorunmuyordu. Olcu artik "elle yazilmis esik sayisi = 0". */
         "elle esik=" + (dm.match(/\b(?:t|tries|attempts\.current) >= \d+/g) ?? []).length,
-        "cevap acilan an=" + (/LESSON_TRY_CEILING\)[\s\S]{0,400}common\.answer_is/.test(dm) ? "tavanda" : "BASKA"),
+        "cevap acilan an=" + (/CONVERSATION_TRY_CEILING\)[\s\S]{0,400}common\.answer_is/.test(dm) ? "tavanda" : "BASKA"),
         "sayac ekranda=" + (/conversation\.try_again", \{ n: tries \}/.test(dm) ? "var" : "YOK"),
       ],
       [
-        "tavan sabiti=" + ((sw.match(/LESSON_TRY_CEILING = (\d+)/) ?? [])[1] ?? "YOK"),
-        "tavan koddan=" + (/>= LESSON_TRY_CEILING/.test(dw) ? "sabitten" : "ELLE"),
+        "tavan sabiti=" + ((sw.match(/CONVERSATION_TRY_CEILING = (\d+)/) ?? [])[1] ?? "YOK"),
+        "tavan koddan=" + (/>= CONVERSATION_TRY_CEILING/.test(dw) ? "sabitten" : "ELLE"),
         "elle esik=" + (dw.match(/\b(?:t|tries|attempts\.current) >= \d+/g) ?? []).length,
-        "cevap acilan an=" + (/LESSON_TRY_CEILING\)[\s\S]{0,400}common\.answer_is/.test(dw) ? "tavanda" : "BASKA"),
+        "cevap acilan an=" + (/CONVERSATION_TRY_CEILING\)[\s\S]{0,400}common\.answer_is/.test(dw) ? "tavanda" : "BASKA"),
         "sayac ekranda=" + (/conversation\.try_again", \{ n: tryCount \}/.test(dw) ? "var" : "YOK"),
       ],
       "mobil",
@@ -14391,10 +14391,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     sameList(
       "ders adiminin olu anahtarlari kalkti",
       [
-        "lessonp.no_worries=" + WEB_SOZLUK.reduce((n, y) => n + (read(y).includes('"lessonp.no_worries":') ? 1 : 0), 0),
-        "lessonp.please_repeat=" + WEB_SOZLUK.reduce((n, y) => n + (read(y).includes('"lessonp.please_repeat":') ? 1 : 0), 0),
+        "conversationp.no_worries=" + WEB_SOZLUK.reduce((n, y) => n + (read(y).includes('"conversationp.no_worries":') ? 1 : 0), 0),
+        "conversationp.please_repeat=" + WEB_SOZLUK.reduce((n, y) => n + (read(y).includes('"conversationp.please_repeat":') ? 1 : 0), 0),
       ],
-      ["lessonp.no_worries=0", "lessonp.please_repeat=0"],
+      ["conversationp.no_worries=0", "conversationp.please_repeat=0"],
       "bulunan",
       "beklenen",
     );
@@ -14415,12 +14415,12 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    * "taniyici yok" notu). Android'e sebep durumu (`sttSebep`) eklendi ve not
    * iki denetim bileseninde de ciziliyor.
    *
-   * "Taniyici yok" metni webde `lessonp.no_asr` diye YALNIZ webde duruyordu;
+   * "Taniyici yok" metni webde `conversationp.no_asr` diye YALNIZ webde duruyordu;
    * `conversation.no_asr` olarak ortak kumeye tasindi (mobile yazilip cekildi) ve
    * webin kopyasi silindi. Izin metni zaten ortakti (`speak.mic_needed`). */
   {
-    const dm = sil(read("mobile/src/screens/LessonScreen.tsx"));
-    const dw = sil(read("src/components/lessons/lesson-player.tsx"));
+    const dm = sil(read("mobile/src/screens/ConversationScreen.tsx"));
+    const dw = sil(read("src/components/conversations/conversation-player.tsx"));
     const WEB_SOZLUK = ["src/i18n/web/tr.ts", "src/i18n/web/en.ts", "src/i18n/web/de.ts"];
     const MOB_SOZLUK = ["mobile/src/i18n/tr.ts", "mobile/src/i18n/en.ts", "mobile/src/i18n/de.ts"];
     sameList(
@@ -14436,8 +14436,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
            ders adimlari iki ayri dal (tekrarla / kur ve soyle), webin tek bir
            yeri o ikisini birden kapsiyor. Olculen sey, notun IKI YUZEYDE de
            cizilmesi: ders adimlari ve rol yapma. */
-        "ders adimlarinda=" + (dm.slice(dm.indexOf("function LectureControls"), dm.indexOf("function RoleplayControls")).includes("{sttNotu}") ? "var" : "YOK"),
-        "rol yapmada=" + (dm.slice(dm.indexOf("function RoleplayControls")).includes("{sttNotu}") ? "var" : "YOK"),
+        "ders adimlarinda=" + (dm.slice(dm.indexOf("function LectureControls"), dm.indexOf("function ChatControls")).includes("{sttNotu}") ? "var" : "YOK"),
+        "rol yapmada=" + (dm.slice(dm.indexOf("function ChatControls")).includes("{sttNotu}") ? "var" : "YOK"),
       ],
       [
         "sebep ayirt ediliyor=" + (/conversationp\.mic_denied/.test(dw) && /conversation\.no_asr/.test(dw) ? "iki sebep" : "TEK"),
@@ -14448,8 +14448,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         /* Sinir, rol yapma dalinin CIZIM yeri (`? (`) - ayni kosul yukarida
            iki kez daha geciyor (etki ve dinleme) ve ilk gecise gore bolmek
            ders adimlarini rol yapma tarafina atiyordu. */
-        "ders adimlarinda=" + (dw.slice(0, dw.indexOf('phase === "roleplay" ? (')).includes('t("conversation.no_asr")') ? "var" : "YOK"),
-        "rol yapmada=" + (dw.slice(dw.indexOf('phase === "roleplay" ? (')).includes('t("conversation.no_asr")') ? "var" : "YOK"),
+        "ders adimlarinda=" + (dw.slice(0, dw.indexOf('phase === "chat" ? (')).includes('t("conversation.no_asr")') ? "var" : "YOK"),
+        "rol yapmada=" + (dw.slice(dw.indexOf('phase === "chat" ? (')).includes('t("conversation.no_asr")') ? "var" : "YOK"),
       ],
       "mobil",
       "web",
@@ -14457,10 +14457,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     sameList(
       "taniyici yok metni ortak kumede",
       [
-        "webde kalan lessonp.no_asr=" + WEB_SOZLUK.reduce((n, y) => n + (read(y).includes('"lessonp.no_asr":') ? 1 : 0), 0),
+        "webde kalan conversationp.no_asr=" + WEB_SOZLUK.reduce((n, y) => n + (read(y).includes('"conversationp.no_asr":') ? 1 : 0), 0),
         "mobil sozlukte conversation.no_asr=" + MOB_SOZLUK.reduce((n, y) => n + (read(y).includes('"conversation.no_asr"') ? 1 : 0), 0),
       ],
-      ["webde kalan lessonp.no_asr=0", "mobil sozlukte conversation.no_asr=3"],
+      ["webde kalan conversationp.no_asr=0", "mobil sozlukte conversation.no_asr=3"],
       "bulunan",
       "beklenen",
     );
@@ -14487,8 +14487,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    *     kaldi, webin kopyasi silindi (`i18n:check` olu anahtar olarak
    *     yakaladi). */
   {
-    const dm = sil(read("mobile/src/screens/LessonScreen.tsx"));
-    const dw = sil(read("src/components/lessons/lesson-player.tsx"));
+    const dm = sil(read("mobile/src/screens/ConversationScreen.tsx"));
+    const dw = sil(read("src/components/conversations/conversation-player.tsx"));
     const WEB_SOZLUK = ["src/i18n/web/tr.ts", "src/i18n/web/en.ts", "src/i18n/web/de.ts"];
     sameList(
       "ders kapanisinin olcutleri",
@@ -14497,7 +14497,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         "maskot=" + (/pct >= 80 \? "celebrate" : pct >= 50 \? "happy" : "idle"/.test(dm) ? "uc kademe" : "TEK"),
         "konfeti=" + (/<Celebrate show=\{pct >= 80\}/.test(dm) ? "80 esigi" : "BASKA"),
         "baslik bilinmeyende=" + (/passed === false \? "conversationp\.conversation_unfinished" : "conversation\.conversation_complete"/.test(dm) ? "tamamlandi" : "BITMEDI"),
-        "ilk karo etiketi=" + (/lesson\.correct_production/.test(dm) ? "ortak" : "?"),
+        "ilk karo etiketi=" + (/conversation\.correct_production/.test(dm) ? "ortak" : "?"),
       ],
       [
         "isabet hesabi=" + (/const pct = scoredTotal \? Math\.round\(\(correctCount \/ scoredTotal\) \* 100\) : 100/.test(dw) ? "correct/total" : (/const pct = /.test(dw) ? "BASKA" : "YOK")),
@@ -14507,15 +14507,15 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         "maskot=" + (/pct >= 80 \? "celebrate" : pct >= 50 \? "happy" : "idle"/.test(dw) ? "uc kademe" : "TEK"),
         "konfeti=" + (/<Confetti fire=\{pct >= 80 \? 1 : 0\}/.test(dw) ? "80 esigi" : "BASKA"),
         "baslik bilinmeyende=" + (/saved\?\.passed === false \? "conversationp\.conversation_unfinished" : "conversation\.conversation_complete"/.test(dw) ? "tamamlandi" : "BITMEDI"),
-        "ilk karo etiketi=" + (/lesson\.correct_production/.test(dw) ? "ortak" : "?"),
+        "ilk karo etiketi=" + (/conversation\.correct_production/.test(dw) ? "ortak" : "?"),
       ],
       "mobil",
       "web",
     );
     sameList(
       "ders kapanisinin olu anahtari kalkti",
-      ["lessonp.practice=" + WEB_SOZLUK.reduce((n, y) => n + (read(y).includes('"lessonp.practice"') ? 1 : 0), 0)],
-      ["lessonp.practice=0"],
+      ["conversationp.practice=" + WEB_SOZLUK.reduce((n, y) => n + (read(y).includes('"conversationp.practice"') ? 1 : 0), 0)],
+      ["conversationp.practice=0"],
       "bulunan",
       "beklenen",
     );
@@ -14869,8 +14869,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 
     const CIFTLER = [
       ["meydan bos", "mobile/src/screens/ChallengeScreen.tsx", 'phase === "empty"', 'challenge.none_title', "src/components/challenge-player.tsx", 'status === "empty"', 'challenge.none_title'],
-      ["rol hata", "mobile/src/screens/RoleplayExamScreen.tsx", 'if (phase === "error")', 'scored.service_down', "src/components/lessons/roleplay-exam.tsx", 'if (phase === "error")', 'scored.service_down'],
-      ["rol puanlama", "mobile/src/screens/RoleplayExamScreen.tsx", 'if (phase === "scoring")', 'item.mono_scoring', "src/components/lessons/roleplay-exam.tsx", 'if (phase === "scoring")', 'item.mono_scoring'],
+      ["rol hata", "mobile/src/screens/ConversationScoredScreen.tsx", 'if (phase === "error")', 'scored.service_down', "src/components/conversations/conversation-scored.tsx", 'if (phase === "error")', 'scored.service_down'],
+      ["rol puanlama", "mobile/src/screens/ConversationScoredScreen.tsx", 'if (phase === "scoring")', 'item.mono_scoring', "src/components/conversations/conversation-scored.tsx", 'if (phase === "scoring")', 'item.mono_scoring'],
       ["sinav hata", "mobile/src/screens/ExamScreen.tsx", "if (err) {", 'title={err}', "src/components/exam-player.tsx", 'if (phase === "error") {', 'exam.load_or_save_failed'],
       /* Web kapagi uc durumlu bir dalin icinde (duraklama / kapak); capa
          kapagin kendi etiketi, tanik iki tarafta ayni baslik anahtari. Eski
@@ -15029,7 +15029,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       ["src/components/weekly-player.tsx", 't("weekly.couldn_t_load_weekly_quiz")'],
       ["src/components/placement/placement-test.tsx", 't("placement.couldn_t_load_test")'],
       ["src/components/walk-player.tsx", 't("walk.error_title")'],
-      ["src/components/lessons/roleplay-exam.tsx", 't("scored.service_down")'],
+      ["src/components/conversations/conversation-scored.tsx", 't("scored.service_down")'],
       ["src/components/session-player.tsx", "title={content.title}"],
       ["src/components/exam-player.tsx", 't("exam.load_or_save_failed")'],
       ["src/components/cando-card.tsx", 't("cando.couldn_t_load")'],
@@ -15040,7 +15040,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       ["mobile/src/screens/WalkModeScreen.tsx", 'tx("walk.error_title")'],
       ["mobile/src/screens/WordsScreen.tsx", 't("words.couldn_t_load_your_words")', 'phase === "error" ? ('],
       ["mobile/src/screens/WritingsScreen.tsx", 't("writings.couldn_t_load_writings")', 'phase === "error" ? ('],
-      ["mobile/src/screens/RoleplayExamScreen.tsx", 'tx("scored.service_down")'],
+      ["mobile/src/screens/ConversationScoredScreen.tsx", 'tx("scored.service_down")'],
       ["mobile/src/screens/ExamScreen.tsx", "title={err}"],
       ["mobile/src/screens/CandoScreen.tsx", 't("cando.couldn_t_load")', 'phase === "error" ? ('],
     ];
@@ -15186,7 +15186,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       ["mobile/src/screens/BossScreen.tsx", 't("exam.preparing")'],
       ["mobile/src/screens/ChallengeScreen.tsx", 't("challenge.preparing")'],
       ["mobile/src/screens/PlacementScreen.tsx", 't("placement.calculating_your_level")'],
-      ["mobile/src/screens/RoleplayExamScreen.tsx", 'tx("item.mono_scoring")'],
+      ["mobile/src/screens/ConversationScoredScreen.tsx", 'tx("item.mono_scoring")'],
       ["mobile/src/screens/MockExamScreen.tsx", 't("mockexam.scoring")'],
     ];
     const kisa = (y) => y.split("/").pop().replace(/\.tsx$/, "");
@@ -15523,10 +15523,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const mobMeydan = sil(read("mobile/src/screens/ChallengeScreen.tsx"));
     const webHaftalik = sil(read("src/components/weekly-player.tsx"));
     const webDeneme = sil(read("src/components/mock-exam-player.tsx"));
-    const webRol = sil(read("src/components/lessons/roleplay-exam.tsx"));
+    const webRol = sil(read("src/components/conversations/conversation-scored.tsx"));
     const mobHaftalik = sil(read("mobile/src/screens/WeeklyScreen.tsx"));
     const mobDeneme = sil(read("mobile/src/screens/MockExamScreen.tsx"));
-    const mobRol = sil(read("mobile/src/screens/RoleplayExamScreen.tsx"));
+    const mobRol = sil(read("mobile/src/screens/ConversationScoredScreen.tsx"));
     const webSinav = sil(read("src/components/exam-player.tsx"));
     const webOturum = sil(read("src/components/session-player.tsx"));
     const webYuruyus = sil(read("src/components/walk-player.tsx"));
@@ -16122,10 +16122,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     sameList(
       "sohbet balonunun bicimi",
       [
-        webBalon("web ders", "src/components/lessons/lesson-player.tsx", "bl"),
-        webBalon("web rol yapma", "src/components/lessons/roleplay-exam.tsx", "bl"),
-        mobBalon("mobil ders", "mobile/src/screens/LessonScreen.tsx", "borderBottomLeftRadius"),
-        mobBalon("mobil rol yapma", "mobile/src/screens/RoleplayExamScreen.tsx", "borderBottomLeftRadius"),
+        webBalon("web ders", "src/components/conversations/conversation-player.tsx", "bl"),
+        webBalon("web rol yapma", "src/components/conversations/conversation-scored.tsx", "bl"),
+        mobBalon("mobil ders", "mobile/src/screens/ConversationScreen.tsx", "borderBottomLeftRadius"),
+        mobBalon("mobil rol yapma", "mobile/src/screens/ConversationScoredScreen.tsx", "borderBottomLeftRadius"),
       ],
       [
         "web ders=panel+chip",
@@ -16211,7 +16211,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         yer("sunucu kapisi", "src/lib/immersion/progress.ts"),
         yer("web liste", "src/app/(app)/skills/page.tsx"),
         yer("web oynatici", "src/app/(app)/immersion/skill/[id]/page.tsx"),
-        yer("mobil sunucu birlesimi", "mobile/src/game/lessonProgress.ts"),
+        yer("mobil sunucu birlesimi", "mobile/src/game/pathProgress.ts"),
         yer("mobil oynatici", "mobile/src/screens/ItemScreen.tsx"),
       ],
       [
@@ -16267,7 +16267,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 
   /* ── 208. ilerlemeye sayilan maddeler: sunucu ile iki istemci ─────────
    * Sunucu `total`a yalniz OYNANABILIR ve tamamlanabilir maddeleri katiyor
-   * (`lib/immersion/state`: `completable = playable ∩ {lesson,read,listen,
+   * (`lib/immersion/state`: `completable = playable ∩ {conversation,read,listen,
    * write}`). Iki istemci ayni kumeyi suzuyordu ama `playable` sartini
    * ATLIYORDU.
    *
@@ -16288,7 +16288,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const turler = (src, ad) => {
       const blok = govdeAl(src, ad);
       if (!blok) return "counted yok";
-      const k = ["lesson", "read", "listen", "write"].filter((t) => blok.includes(`"${t}"`));
+      const k = ["conversation", "read", "listen", "write"].filter((t) => blok.includes(`"${t}"`));
       return k.join("+") || "tur yok";
     };
     /* GOVDE TAM ALINIYOR, PENCEREYLE DEGIL. Ilk yazim `ad`dan sonraki 420
@@ -16769,8 +16769,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       ["mobile/src/screens/ExamScreen.tsx", /timeoutMs: ASSESS_TIMEOUT_MS/],
       ["mobile/src/game/rounds.tsx", /timeoutMs: ASSESS_TIMEOUT_MS/],
       ["mobile/src/game/skillQuiz.tsx", /timeoutMs: ASSESS_TIMEOUT_MS/],
-      ["mobile/src/screens/RoleplayExamScreen.tsx", /timeoutMs: ASSESS_ROLEPLAY_TIMEOUT_MS/],
-      ["src/components/lessons/roleplay-exam.tsx", /timeoutMs: ASSESS_ROLEPLAY_TIMEOUT_MS/],
+      ["mobile/src/screens/ConversationScoredScreen.tsx", /timeoutMs: ASSESS_CHAT_TIMEOUT_MS/],
+      ["src/components/conversations/conversation-scored.tsx", /timeoutMs: ASSESS_CHAT_TIMEOUT_MS/],
     ];
     const bulgu = YUZEYLER.map(([yol, re]) => {
       const src = sil(read(yol));
@@ -16813,8 +16813,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    * bitiriyor ve hic ust sinir yok, mobilde 8000 bir emniyet tavani. Ikisi
    * ayni birimi olcmuyor, karsilastirmak yanlis olurdu. */
   {
-    const webDers = sil(read("src/components/lessons/lesson-player.tsx"));
-    const mobDers = sil(read("mobile/src/screens/LessonScreen.tsx"));
+    const webDers = sil(read("src/components/conversations/conversation-player.tsx"));
+    const mobDers = sil(read("mobile/src/screens/ConversationScreen.tsx"));
     const mobYuruyus = sil(read("mobile/src/screens/WalkModeScreen.tsx"));
     const al = (src, re) => (src.match(re) ?? [])[1] ?? "yok";
     sameList(
@@ -16973,8 +16973,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList(
     "rol yapma esigi kararda da kaynaktan",
     [
-      "web=" + (/overall >= EXAM_PASS_SCORE/.test(sil(read("src/components/lessons/roleplay-exam.tsx"))) ? "kaynaktan" : "elle yazili"),
-      "mobil=" + (/overall >= EXAM_PASS_SCORE/.test(sil(read("mobile/src/screens/RoleplayExamScreen.tsx"))) ? "kaynaktan" : "elle yazili"),
+      "web=" + (/overall >= EXAM_PASS_SCORE/.test(sil(read("src/components/conversations/conversation-scored.tsx"))) ? "kaynaktan" : "elle yazili"),
+      "mobil=" + (/overall >= EXAM_PASS_SCORE/.test(sil(read("mobile/src/screens/ConversationScoredScreen.tsx"))) ? "kaynaktan" : "elle yazili"),
     ],
     ["web=kaynaktan", "mobil=kaynaktan"],
     "bulunan",
@@ -17110,7 +17110,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "lernomi-account", //            hesap degisimini ANLAYAN isaret; silinirse degisim gorulmez
       /* "lernomi-app-open" 2026-09-23'te cikti: gunun ilk acilisi artik
          sunucuda tekillesiyor (hukuk denetimi LEG-10, lib/events ONCE_PER_DAY). */
-      "lernomi-lesson-handsfree", //   eller serbest tercihi - cihazin kullanim bicimi
+      "lernomi-conversation-handsfree", //   eller serbest tercihi - cihazin kullanim bicimi
       "lernomi-onboarding", //         misafir ilk acilis tercihleri (hesap yok)
       "lernomi-sound", //              ses acik/kapali
       "lernomi-theme", //              tema
@@ -17131,7 +17131,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "lernomi:handoff", //            giris devri nonce'u (15 dk)
       "lernomi:guest", //              misafir kimligi ve jetonu: hesaba birlestirmenin tek kaniti, birlesince siliniyor
       "lernomi-lang", //               arayuz dili
-      "lernomi-lesson-handsfree", //   eller serbest tercihi
+      "lernomi-conversation-handsfree", //   eller serbest tercihi
       "lernomi:analytics", //          analitik onayi
       "lernomi:mic-consent:v2", //     mikrofon onayi (v2: saglayicilar adiyla sayiliyor, onay yeniden soruluyor)
       "lernomi:notif-ids-v1", //       bildirim kimlikleri (OS tarafi)
@@ -17168,7 +17168,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    *
    * Android'de olmayan icerik ekranin KENDI kabugunun icinde soyleniyor ve
    * neyin bulunamadigini ADIYLA soyluyor: olmayan ders uzgun mirket + "Bu
-   * konusma bulunamadi" (`LessonScreen`, `RoleplayExamScreen`), olmayan kagit
+   * konusma bulunamadi" (`ConversationScreen`, `ConversationScoredScreen`), olmayan kagit
    * kirmizi kart (`MockExamScreen`), kapali profil (`UserScreen`).
    *
    * Webde ayni adresler `notFound()` atiyor ve en YAKIN `not-found.tsx`
@@ -17214,7 +17214,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "bulunamayan icerik ekrani",
       [
         "grup 404=" + (varMi("src/app/(app)/not-found.tsx") ? "var" : "YOK"),
-        "ders 404=" + (varMi("src/app/(app)/lessons/[id]/not-found.tsx") ? "var" : "YOK"),
+        "ders 404=" + (varMi("src/app/(app)/conversations/[id]/not-found.tsx") ? "var" : "YOK"),
         "kagit 404=" + (varMi("src/app/(app)/mock-exams/[paper]/[skill]/not-found.tsx") ? "var" : "YOK"),
         "profil 404=" + (varMi("src/app/(app)/u/[username]/not-found.tsx") ? "var" : "YOK"),
         "mobil cumle=" + (mob.length > 2 ? "var" : "YOK(" + mob.length + ")"),
@@ -18690,7 +18690,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  * kaliyordu - istedigi ekran yerine bir kart geldigini duymuyordu.
  *
  * Uygulamanin kendi kalibi zaten duyuruyor: oyuncu kabuklari (`weekly-player`,
- * `exam-player`, `roleplay-exam`, `placement-test`) ayni kartta `role="alert"`
+ * `exam-player`, `conversation-scored`, `placement-test`) ayni kartta `role="alert"`
  * yaziyor. Aykiri olan alti SUNUCU SAYFASIYDI. §241 de ayni kurali bos durum
  * kabugu icin koyuyor (hata hali duyurulur, bos hal duyurulmaz).
  *
@@ -19044,8 +19044,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const YUZEYLER = [
     ["yazilar", "output", ["mobile/src/screens/WritingsScreen.tsx"], ["src/components/writings-card.tsx"]],
     ["beceri", "output", ["mobile/src/screens/ItemScreen.tsx"], ["src/components/skills/writing-player.tsx", "src/components/skills/monologue-player.tsx"]],
-    ["rol-yapma", "character", ["mobile/src/screens/RoleplayExamScreen.tsx"], ["src/components/lessons/roleplay-exam.tsx"]],
-    ["ders-sohbet", "character", ["mobile/src/screens/LessonScreen.tsx"], ["src/components/lessons/lesson-player.tsx"]],
+    ["rol-yapma", "character", ["mobile/src/screens/ConversationScoredScreen.tsx"], ["src/components/conversations/conversation-scored.tsx"]],
+    ["ders-sohbet", "character", ["mobile/src/screens/ConversationScreen.tsx"], ["src/components/conversations/conversation-player.tsx"]],
   ];
   const topla = (yollar, cesit) => yollar.reduce((a, y) => a + say(y, cesit), 0);
   sameList(
@@ -19116,7 +19116,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const silH = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (t) => t.replace(/[^\n]/g, " ")).replace(/\/\/[^\n]*/g, "");
   const YUZEY = [
     ["haftalik", "mobile/src/screens/WeeklyScreen.tsx", "src/components/weekly-player.tsx"],
-    ["rol-yapma", "mobile/src/screens/RoleplayExamScreen.tsx", "src/components/lessons/roleplay-exam.tsx"],
+    ["rol-yapma", "mobile/src/screens/ConversationScoredScreen.tsx", "src/components/conversations/conversation-scored.tsx"],
     ["yuruyus", "mobile/src/screens/WalkModeScreen.tsx", "src/components/walk-player.tsx"],
     ["kelime-turu", "mobile/src/screens/GameScreen.tsx", "src/components/session-player.tsx"],
   ];
@@ -20139,11 +20139,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     }
     return out;
   };
-  const MOBIL = ["mobile/src/game/rounds.tsx", "mobile/src/screens/ExamScreen.tsx", "mobile/src/screens/RoleplayExamScreen.tsx"];
+  const MOBIL = ["mobile/src/game/rounds.tsx", "mobile/src/screens/ExamScreen.tsx", "mobile/src/screens/ConversationScoredScreen.tsx"];
   /* Web tarafinda cagri `lib/assess-client` `askAssess` uzerinden gidiyor ve
      `lang` istegi KURAN yerde yaziliyor; o yuzden cagri yerleri istek
      nesnesinin kuruldugu dosyalar. */
-  const WEB = ["src/components/games/translate-game.tsx", "src/components/games/free-sentence-game.tsx", "src/components/exam-player.tsx", "src/components/lessons/roleplay-exam.tsx"];
+  const WEB = ["src/components/games/translate-game.tsx", "src/components/games/free-sentence-game.tsx", "src/components/exam-player.tsx", "src/components/conversations/conversation-scored.tsx"];
   const mob = cagrilar(MOBIL);
   const webLang = WEB.map((y) => ({ yer: y.split("/").slice(-1)[0], lang: /\blang: /.test(silD(read(y))) }));
   sameList(
@@ -20267,7 +20267,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  *
  *      ARADAN GECEN KARAR (2026-09-17): konusma/yazma hakki artik SUNUCUDA,
  *      ozellik ucunun kendi icinde harcaniyor (`claimSkillAi`,
- *      `claimLessonAi`) - birim cagri degil ALISTIRMA, yani istemcinin
+ *      `claimConversationAi`) - birim cagri degil ALISTIRMA, yani istemcinin
  *      "basliyorum" demesine gerek kalmadi. Bu ucun karsiligi olan tek yer
  *      cepte yuruyus turu kaldi ve o da ucretsizde kapali. Uc SILINMEDI: tur
  *      basina sayimin dogru yeri hala burasi.
@@ -20329,10 +20329,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "stt istek=" + alir("src/app/api/stt/route.ts", "stt_requests"),
       "tts=" + alir("src/app/api/tts/route.ts", "tts_calls"),
       "pronounce=" + alir("src/app/api/pronounce/route.ts", "pronounce_requests"),
-      "roleplay=" + alir("src/app/api/chat/route.ts", "roleplay_turns"),
+      "chat=" + alir("src/app/api/chat/route.ts", "chat_turns"),
       "deneme sinavi=" + alir("src/app/api/mock-exam/route.ts", "mock_exam_ai_calls"),
     ],
-    ["assess=artiyor", "stt yuruyus=artiyor", "stt istek=artiyor", "tts=artiyor", "pronounce=artiyor", "roleplay=artiyor", "deneme sinavi=artiyor"],
+    ["assess=artiyor", "stt yuruyus=artiyor", "stt istek=artiyor", "tts=artiyor", "pronounce=artiyor", "chat=artiyor", "deneme sinavi=artiyor"],
     "bulunan",
     "beklenen",
   );
@@ -20347,7 +20347,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  *   `lib/social/client` `call`  sosyal katmanin TAMAMI (arkadaslar, lig, gelen
  *       kutusu, ortak gorev, akis - kirktan fazla cagri) sinirsiz bekliyordu
  *   `lib/answer-queue`          cevrimdisi cevap kuyrugunun bosaltmasi
- *   `lib/lesson-queue`          ders kuyrugu
+ *   `lib/conversation-queue`          ders kuyrugu
  *   `lib/push-client`           abonelik kaydi
  *   `lib/avatar`                avatar senkronu
  * Besi de `apiFetch`e alindi.
@@ -20356,7 +20356,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  *   istemci ses/AI uclari (`pocket-mic` 8 sn, `pronounce-client` 20 sn,
  *       `assess-client`)  kendi daha uzun tavanlari var ve degerlendirme
  *       ikisi de iki platformda eslesmis (`ASSESS_TIMEOUT_MS`,
- *       `ASSESS_ROLEPLAY_TIMEOUT_MS`); sohbet tavani 348'de eslestirildi.
+ *       `ASSESS_CHAT_TIMEOUT_MS`); sohbet tavani 348'de eslestirildi.
  *       `pocket-mic`in sekiz saniyesi Android'in yirmisiyle ESLESMIYOR ve
  *       bu dogru: web ekran-ACIKKEN sunucuya gidiyor (kullanici bekliyor,
  *       suresi gecen metin ise yaramaz), Android'in yirmi saniyesi
@@ -20379,7 +20379,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const DUZELEN = [
     ["sosyal", "src/lib/social/client.ts"],
     ["cevap kuyrugu", "src/lib/answer-queue.ts"],
-    ["ders kuyrugu", "src/lib/lesson-queue.ts"],
+    ["ders kuyrugu", "src/lib/conversation-queue.ts"],
     ["push abonelik", "src/lib/push-client.ts"],
     ["avatar", "src/lib/avatar.ts"],
   ];
@@ -20411,9 +20411,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  * yazdi. Ikisi de olculdu, ikisi de YANLISTI:
  *
  * (a) SOHBET URETIMI. `/api/chat` bir cevap YAZDIRIYOR ve uzun bir turda
- *     kirk saniyeye kadar suruyor. Android bunu biliyor ve `sendRoleplay`
- *     kirk bes saniye bekliyor; webin iki cagirani (`lessons/lesson-player`,
- *     `lessons/roleplay-exam`) kendi suresini vermedigi icin genel tavana
+ *     kirk saniyeye kadar suruyor. Android bunu biliyor ve `sendChat`
+ *     kirk bes saniye bekliyor; webin iki cagirani (`conversations/conversation-player`,
+ *     `conversations/conversation-scored`) kendi suresini vermedigi icin genel tavana
  *     (25 sn) dusuyordu. Yani ayni agir cevap Android'de geliyor, webde
  *     "sohbet kurulamadi" oluyordu. Web yanit AKISLI okudugu icin tavan
  *     akisin tamamini kapsiyor. Sabit iki tarafta ayni ADLA duruyor.
@@ -20447,8 +20447,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  * gecmesin). */
 {
   const silY = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
-  /* OLCUNUN KOMSUSU: `ROLEPLAY_TIMEOUT_MS = ` deseni
-     `ASSESS_ROLEPLAY_TIMEOUT_MS = 30000` satirini da yakaliyordu ve mobil
+  /* OLCUNUN KOMSUSU: `CHAT_TIMEOUT_MS = ` deseni
+     `ASSESS_CHAT_TIMEOUT_MS = 30000` satirini da yakaliyordu ve mobil
      tavan 45000 yerine 30000 okunuyordu - kapi "ayrisma" diyordu, ayrisan
      seyse olcunun kendisiydi. Onundeki harf/alt cizgi artik disarida. */
   const sayi = (src, ad) => (silY(src).match(new RegExp("(?<![A-Z_])" + ad + " = ([\\d_]+)")) ?? [])[1]?.replace(/_/g, "") ?? "YOK";
@@ -20456,37 +20456,37 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   /* (1) Ad da deger de ayni: ayri ayri degistirilemesin. */
   sameList(
     "sohbet zaman asimi tavani",
-    ["ROLEPLAY_TIMEOUT_MS=" + sayi(read("src/lib/api-fetch.ts"), "ROLEPLAY_TIMEOUT_MS")],
-    ["ROLEPLAY_TIMEOUT_MS=" + sayi(read("mobile/src/api/client.ts"), "ROLEPLAY_TIMEOUT_MS")],
+    ["CHAT_TIMEOUT_MS=" + sayi(read("src/lib/api-fetch.ts"), "CHAT_TIMEOUT_MS")],
+    ["CHAT_TIMEOUT_MS=" + sayi(read("mobile/src/api/client.ts"), "CHAT_TIMEOUT_MS")],
     "web",
     "mobil",
   );
 
   /* (2) Cagri yerleri sabiti geciriyor mu. `/api/chat` webde uc yerde
-     cagriliyor; ucuncusu (lesson-player'daki `configured` yoklamasi) GET ve
+     cagriliyor; ucuncusu (conversation-player'daki `configured` yoklamasi) GET ve
      genel tavanda kalmali - bu yuzden olcu POST'lari sayiyor, dosyayi degil. */
   const postGecen = (yol) => {
     const src = silY(read(yol));
     let n = 0;
     for (const par of src.split('apiFetch("/api/chat"').slice(1)) {
       const govde = par.slice(0, par.indexOf("});") + 1);
-      /* Onundeki harf/alt cizgi DISARIDA: sade `/ROLEPLAY_TIMEOUT_MS/`
-         `ASSESS_ROLEPLAY_TIMEOUT_MS`i de sayardi, yani yanlis tavani geciren
+      /* Onundeki harf/alt cizgi DISARIDA: sade `/CHAT_TIMEOUT_MS/`
+         `ASSESS_CHAT_TIMEOUT_MS`i de sayardi, yani yanlis tavani geciren
          bir cagri yeri "geciyor" gorunurdu (deponun kendi meta-kapisi
          "kapilarda onek eslesmesi" bunu reddetti). */
-      if (/method:\s*"POST"/.test(govde) && /(?<![A-Z_])ROLEPLAY_TIMEOUT_MS/.test(govde)) n += 1;
+      if (/method:\s*"POST"/.test(govde) && /(?<![A-Z_])CHAT_TIMEOUT_MS/.test(govde)) n += 1;
     }
     return n;
   };
-  const mobilGecen = /timeoutMs:\s*(?<![A-Z_])ROLEPLAY_TIMEOUT_MS/.test(silY(read("mobile/src/game/roleplay.ts"))) ? 1 : 0;
+  const mobilGecen = /timeoutMs:\s*(?<![A-Z_])CHAT_TIMEOUT_MS/.test(silY(read("mobile/src/game/chat.ts"))) ? 1 : 0;
   sameList(
     "sohbet cagri yerleri tavani geciriyor",
     [
-      "lesson-player=" + postGecen("src/components/lessons/lesson-player.tsx"),
-      "roleplay-exam=" + postGecen("src/components/lessons/roleplay-exam.tsx"),
-      "mobil sendRoleplay=" + mobilGecen,
+      "conversation-player=" + postGecen("src/components/conversations/conversation-player.tsx"),
+      "conversation-scored=" + postGecen("src/components/conversations/conversation-scored.tsx"),
+      "mobil sendChat=" + mobilGecen,
     ],
-    ["lesson-player=1", "roleplay-exam=1", "mobil sendRoleplay=1"],
+    ["conversation-player=1", "conversation-scored=1", "mobil sendChat=1"],
     "bulunan",
     "beklenen",
   );
@@ -20607,7 +20607,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 /* --------- 349. RENKLI GOLGE: DOLGUNUN KENDI RENGIYLE
  *
  * Android'de dolgulu bir yuzeyin golgesi NOTR DEGIL, yuzeyin RENGI:
- *   LessonScreen dogru/yanlis  softShadow(colors.success|danger, 8)
+ *   ConversationScreen dogru/yanlis  softShadow(colors.success|danger, 8)
  *   ProgressScreen seri karti  softShadow(colors.streakDeep, 12)
  *   MicDisclosure karosu       softShadow(colors.primary, 12)
  *   DailyQuests biten karo     softShadow(colors.success, 6)

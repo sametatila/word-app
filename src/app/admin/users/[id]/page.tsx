@@ -110,7 +110,7 @@ export default async function AdminUserPage({ params }: { params: Promise<{ id: 
           <T t={u.reach.clients} empty="Sürüm bildirimi yok (web kullanıcısı ya da eski build)." />
         </Panel>
 
-        <Panel title="Dersler" span><T t={u.learning.lessons} /></Panel>
+        <Panel title="Dersler" span><T t={u.learning.conversations} /></Panel>
         <Panel title="Patika adımları"><T t={u.learning.path} /></Panel>
         <Panel title="Beceri egzersizleri"><T t={u.learning.skills} /></Panel>
         <Panel title="Sınavlar (seviye, modül, haftalık)"><T t={u.learning.exams} /></Panel>

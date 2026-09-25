@@ -10,8 +10,8 @@
  *   npx tsx --tsconfig scripts/tsconfig.dry.json scripts/exam-dryrun.ts
  */
 import { FAKE_WORDS } from "./stub-db";
-import { EXAM_COURSES } from "../src/lib/lessons/module-exam";
-import { sourceAllModules as allModules, sourceModuleContent as moduleContent } from "../src/lib/lessons/module-content-source";
+import { EXAM_COURSES } from "../src/lib/conversations/module-exam";
+import { sourceAllModules as allModules, sourceModuleContent as moduleContent } from "../src/lib/conversations/module-content-source";
 import { foldSentence } from "../src/lib/sentence-match";
 import type { CefrLevel } from "../src/lib/skills/types";
 
@@ -66,7 +66,7 @@ async function main() {
     const where = `${course}·${m.level}.${m.index + 1}`;
     const paper = await buildExam("dry", course, m.level as CefrLevel, m.index, "2026-08-24");
     const s = paper.sections;
-    const lessons = moduleContent(course, m.level, m.index).lessons.map((l) => l.id);
+    const conversations = moduleContent(course, m.level, m.index).conversations.map((l) => l.id);
 
     if (s.vocab.length !== 6) fail(where, `kelime ${s.vocab.length} (6 olmalı)`);
     // Dilbilgisi bölümü 2026-08'de BİLEREK kaldırıldı (`exam.ts`: "cheatsheet
@@ -91,9 +91,9 @@ async function main() {
       if (g.answer < 0 || g.answer >= g.options.length) fail(where, `hücre maddesinde dizin bozuk: ${g.id}`);
       if (new Set(g.options).size !== g.options.length) fail(where, `hücre şıklarında tekrar: ${g.id}`);
     }
-    for (const g of s.grammar) if (g.kind === "judge" && !lessons.some((id) => g.id.startsWith(`j:${id}#`))) fail(where, `hüküm modül dışından: ${g.id}`);
+    for (const g of s.grammar) if (g.kind === "judge" && !conversations.some((id) => g.id.startsWith(`j:${id}#`))) fail(where, `hüküm modül dışından: ${g.id}`);
     for (const p of s.produce) {
-      if (!lessons.some((id) => p.id.startsWith(`p:${id}#`))) fail(where, `üretim modül dışından: ${p.id}`);
+      if (!conversations.some((id) => p.id.startsWith(`p:${id}#`))) fail(where, `üretim modül dışından: ${p.id}`);
       if (foldSentence(p.prompt).includes(foldSentence(p.de))) fail(where, `üretim cevabı ele veriyor: ${p.id}`);
       if (p.mode === "order") {
         const a = [...(p.chunks ?? [])].sort().join(" ");

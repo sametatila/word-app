@@ -214,7 +214,7 @@ export function StatusSection({ days, data: d, coverage: c, openReports, trends,
               <Stat label="Doğruluk" value={pct(k.accuracy)} sub="tüm günlük istatistik" tone={k.accuracy >= 0.7 ? "ok" : "warn"} />
               <Stat label={`Çalışma (${days}g)`} value={`${fmt(k.seconds30d / 3600)} sa`} />
               <Stat label="Tur tamamlama" value={pct(sessRate)} sub={`${fmt(sess.done)}/${fmt(sess.started)} tur`} tone={sessRate >= 0.6 ? "ok" : "warn"} />
-              <Stat label={`Ders (${days}g)`} value={`${fmt(c.learning.lessons.finished)}/${fmt(c.learning.lessons.started)}`} sub={`bitti/başladı · ${fmt(c.learning.lessons.users)} kişi`} />
+              <Stat label={`Ders (${days}g)`} value={`${fmt(c.learning.conversations.finished)}/${fmt(c.learning.conversations.started)}`} sub={`bitti/başladı · ${fmt(c.learning.conversations.users)} kişi`} />
               <Stat label="Premium" value={fmt(c.premium.active)} sub={`${fmt(c.premium.store)} mağaza · ${fmt(c.premium.bonus)} hediye`} />
               <Stat label="Misafir" value={fmt(c.growth.guests.total)} sub={`${fmt(c.growth.guests.active7)} aktif 7g · ${fmt(c.growth.guests.stale20)} silinmeye yakın`} tone={c.growth.guests.stale20 > 0 ? "warn" : undefined} />
               <Stat label="Açık şikâyet" value={fmt(openReports)} sub={<a href="/admin/moderation" className="underline-offset-2 hover:underline">Moderasyon →</a>} tone={openReports > 0 ? "bad" : "ok"} />
@@ -490,8 +490,8 @@ export function LearningSection({ days, data: d, coverage: c }: Base) {
   return (
     <PanelGrid>
         {/* ── 31 Ağustos sonrası gelen öğrenme yüzeyleri ── */}
-        <Panel title="Dersler (Patika)" hint={`${days}g: ${fmt(c.learning.lessons.started)} başladı · ${fmt(c.learning.lessons.finished)} bitti · ${fmt(c.learning.lessons.users)} kişi. Kural tekrarı: ${fmt(c.learning.lessons.rulesTracked)} izleniyor, ${fmt(c.learning.lessons.rulesDue)} vadesi geldi · ${fmt(c.learning.lessons.chatDone)} konuşma fazı bitti.`}>
-          <BarList max={100} items={c.learning.topLessons.map((l) => ({ label: l.lesson, value: l.avgPct, right: `%${l.avgPct} · ${fmt(l.users)} kişi`, tone: l.avgPct < 60 ? "warn" : "ok" }))} />
+        <Panel title="Dersler (Patika)" hint={`${days}g: ${fmt(c.learning.conversations.started)} başladı · ${fmt(c.learning.conversations.finished)} bitti · ${fmt(c.learning.conversations.users)} kişi. Kural tekrarı: ${fmt(c.learning.conversations.rulesTracked)} izleniyor, ${fmt(c.learning.conversations.rulesDue)} vadesi geldi · ${fmt(c.learning.conversations.chatDone)} konuşma fazı bitti.`}>
+          <BarList max={100} items={c.learning.topConversations.map((l) => ({ label: l.conversation, value: l.avgPct, right: `%${l.avgPct} · ${fmt(l.users)} kişi`, tone: l.avgPct < 60 ? "warn" : "ok" }))} />
         </Panel>
 
         <Panel title={`Beceri egzersizleri (${days}g)`} hint="beceri:seviye — ortalama puan, deneme ve kişi.">
@@ -529,8 +529,8 @@ export function LearningSection({ days, data: d, coverage: c }: Base) {
           <BarList share max={Math.max(1, ...c.learning.placements.map((p) => p.count))} items={c.learning.placements.map((p) => ({ label: p.level, value: p.count, right: `${fmt(p.count)} · ${fmt(p.accepted)} kabul` }))} />
         </Panel>
 
-        <Panel title={`Konuşma ve değerlendirme (${days}g)`} hint={`Rol yapma: ${fmt(c.learning.roleplay.turns30)} tur · ${fmt(c.learning.roleplay.users30)} kişi · telaffuz ${fmt(c.learning.pronounce.count)} ölçüm, ort. %${c.learning.pronounce.avg}`}>
-          <Pills items={c.learning.roleplay.byMode.map((m) => ({ key: m.key, text: `${m.key}: ${fmt(m.count)}` }))} />
+        <Panel title={`Konuşma ve değerlendirme (${days}g)`} hint={`Rol yapma: ${fmt(c.learning.chat.turns30)} tur · ${fmt(c.learning.chat.users30)} kişi · telaffuz ${fmt(c.learning.pronounce.count)} ölçüm, ort. %${c.learning.pronounce.avg}`}>
+          <Pills items={c.learning.chat.byMode.map((m) => ({ key: m.key, text: `${m.key}: ${fmt(m.count)}` }))} />
           <div className="mt-3">
             <BarList share max={Math.max(1, ...c.learning.assessments.map((a) => a.count))} items={c.learning.assessments.map((a) => ({ label: `${a.kind} · ${a.provider}`, value: a.count }))} />
           </div>

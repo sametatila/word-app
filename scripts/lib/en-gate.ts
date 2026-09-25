@@ -147,7 +147,7 @@ function enContraction(w: string): string | null {
 
 /**
  * AMERİKAN ↔ İNGİLİZ YAZIM ÇİFTLERİ. Hat İngiliz İngilizcesi yazıyor
- * (`data/lessons/spelling.mjs` ölçümü), havuz ise iki yazımı da taşıyor:
+ * (`data/conversations/spelling.mjs` ölçümü), havuz ise iki yazımı da taşıyor:
  * `neighbor` ve `neighbour`, `defense` ve `defence` ayrı kayıtlar. Ölçüm
  * bunları ayrı sözcük saydığı sürece patika "neighbour" öğretse de havuzun
  * "neighbor" kaydı öğretilmemiş görünüyordu — sözcük değil yazım farkı.
@@ -259,7 +259,7 @@ const enAra = <T,>(m: Map<string, T>, w: string): T | undefined => {
 };
 /**
  * Kapı dışı bir sözcüğü sınıflandır. `dersUnite`: bu seviyenin sözcük →
- * (ilk öğretildiği ünite) haritası; çağıran `lessonsFor("en")`den kuruyor,
+ * (ilk öğretildiği ünite) haritası; çağıran `conversationsFor("en")`den kuruyor,
  * çünkü dersin tek kaynağı orası (mobil döküm bayatlayabilir).
  */
 export function enNerede(w: string, level: string, unit: number, dersUnite: Map<string, number>): { sinif: string; detay: string } {

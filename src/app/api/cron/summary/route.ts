@@ -44,7 +44,7 @@ export async function GET(req: Request) {
         // Haftalık özet bildirimi ALICININ dilinde.
         const lang = await langOf(r.userId);
         const s = await weeklySummary(r.userId, today, undefined, lang);
-        if (!s.answers && !s.exercises && !s.lessonsPassed) continue;
+        if (!s.answers && !s.exercises && !s.conversationsPassed) continue;
         // Gelişim/yetkinlik panosu profildedir (ProgressPanel) — özet oraya götürür.
         // Başlık da gövde gibi alıcının dilinde: gövde çevriliydi, başlık değil.
         /* Deneme ve teslimat ayrı: `sendToUser` kaç kanala ulaştığını

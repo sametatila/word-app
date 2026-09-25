@@ -4,7 +4,7 @@ import { db } from "@/lib/db";
 import { reviews, words } from "@/lib/db/schema";
 import { errorLabel, ERROR_TARGET_GAME, isErrorType, type ErrorType } from "@/lib/errors";
 import { GAME_LABEL_KEYS, type GameId } from "@/lib/types";
-import { weakRules } from "@/lib/lessons/progress";
+import { weakRules } from "@/lib/conversations/progress";
 import { DEFAULT_NATIVE, translate, type NativeLang } from "@/lib/i18n/dict";
 
 /**

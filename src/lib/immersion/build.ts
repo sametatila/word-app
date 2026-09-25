@@ -1,8 +1,8 @@
 import type { CefrLevel } from "@/lib/skills/types";
-import type { Lesson } from "@/lib/lessons/types";
-import { MODULE_SIZE, moduleTheme } from "@/lib/lessons/modules";
+import type { Conversation } from "@/lib/conversations/types";
+import { MODULE_SIZE, moduleTheme } from "@/lib/conversations/modules";
 import { translate, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
-import { lessonsFor } from "@/lib/lessons/index";
+import { conversationsFor } from "@/lib/conversations/index";
 import { listExerciseMeta, pathMetas, type SkillMeta } from "@/lib/skills/index";
 import { hasAuthoredGrammar } from "./content";
 import type { ImmersionItem, ImmersionItemKind, ImmersionTrack, ImmersionUnit } from "./types";
@@ -19,17 +19,17 @@ import type { ImmersionItem, ImmersionItemKind, ImmersionTrack, ImmersionUnit } 
  * checkpoint bugün daima yer tutucu (motorları var, içerikleri sonra).
  */
 
-/** Ünite başına ders sayısı (sahibin kararı: 4 lesson + 2 read + 2 listen + 2 write). */
-export const UNIT_LESSONS = 4;
+/** Ünite başına ders sayısı (sahibin kararı: 4 conversation + 2 read + 2 listen + 2 write). */
+export const UNIT_CONVERSATIONS = 4;
 /** Kaç ünitede bir grup/sayfa sınırı (gating + pagination). */
 export const GROUP_SIZE = 10;
 
 /**
- * Her ünitenin temel deseni: 4 lesson + 2 read + 2 listen + 2 write, serpiştirilmiş
+ * Her ünitenin temel deseni: 4 conversation + 2 read + 2 listen + 2 write, serpiştirilmiş
  * (her dersi bir beceri izler).
  */
 const BASE_PATTERN: ImmersionItemKind[] = [
-  "lesson", "read", "lesson", "listen", "lesson", "write", "lesson", "read", "listen", "write",
+  "conversation", "read", "conversation", "listen", "conversation", "write", "conversation", "read", "listen", "write",
 ];
 
 /**
@@ -50,11 +50,11 @@ const SKILL_TITLE_KEY: Record<"read" | "listen" | "write", string> = {
 function unitTheme(
   course: string,
   level: CefrLevel,
-  firstLessonIndex: number,
+  firstConversationIndex: number,
   fallback: string,
   lang: NativeLang,
 ): string {
-  const theme = moduleTheme(course, level, Math.floor(firstLessonIndex / MODULE_SIZE), lang);
+  const theme = moduleTheme(course, level, Math.floor(firstConversationIndex / MODULE_SIZE), lang);
   return theme || fallback;
 }
 
@@ -62,7 +62,7 @@ export type BuildTrackInput = {
   course: string;
   level: CefrLevel;
   /** Bu seviyenin dersleri, katalog sırasıyla. */
-  lessons: Lesson[];
+  conversations: Conversation[];
   /** Bu seviyenin beceri egzersiz meta'ları (havuzdan sırayla tüketilir). */
   reading?: SkillMeta[];
   listening?: SkillMeta[];
@@ -93,7 +93,7 @@ export type BuildTrackInput = {
 };
 
 export function buildTrack(input: BuildTrackInput): ImmersionTrack {
-  const { course, level, lessons } = input;
+  const { course, level, conversations } = input;
   const t = input.t ?? ((key: string) => translate(DEFAULT_NATIVE, key));
   const lang = input.lang ?? DEFAULT_NATIVE;
   const groupSize = input.groupSize ?? GROUP_SIZE;
@@ -104,24 +104,24 @@ export function buildTrack(input: BuildTrackInput): ImmersionTrack {
     write: input.writing ?? [],
   };
   const cursors = { read: 0, listen: 0, write: 0 };
-  const unitCount = Math.ceil(lessons.length / UNIT_LESSONS);
+  const unitCount = Math.ceil(conversations.length / UNIT_CONVERSATIONS);
   const units: ImmersionUnit[] = [];
 
   for (let u = 0; u < unitCount; u++) {
     const index = u + 1;
     const unitId = `${course}-${levelLower}-u${String(index).padStart(2, "0")}`;
-    const unitLessons = lessons.slice(u * UNIT_LESSONS, u * UNIT_LESSONS + UNIT_LESSONS);
+    const unitConversations = conversations.slice(u * UNIT_CONVERSATIONS, u * UNIT_CONVERSATIONS + UNIT_CONVERSATIONS);
     const items: ImmersionItem[] = [];
     const counters: Partial<Record<ImmersionItemKind, number>> = {};
-    let lessonCursor = 0;
+    let conversationCursor = 0;
 
     for (const kind of slotPlan()) {
       const n = (counters[kind] = (counters[kind] ?? 0) + 1);
       const id = `${unitId}-${kind}${n}`;
-      if (kind === "lesson") {
-        const lesson = unitLessons[lessonCursor++];
-        if (!lesson) continue; // kısmi son ünitede boş ders slotu üretilmez
-        items.push({ id, kind, ref: lesson.id, title: lesson.title, titleTr: lesson.titleTr, icon: lesson.icon });
+      if (kind === "conversation") {
+        const conversation = unitConversations[conversationCursor++];
+        if (!conversation) continue; // kısmi son ünitede boş ders slotu üretilmez
+        items.push({ id, kind, ref: conversation.id, title: conversation.title, titleTr: conversation.titleTr, icon: conversation.icon });
       } else if (kind === "read" || kind === "listen" || kind === "write") {
         const meta = pools[kind][cursors[kind]++];
         items.push({
@@ -135,7 +135,7 @@ export function buildTrack(input: BuildTrackInput): ImmersionTrack {
         // yazılmış içerik öncelikli, yoksa ünitenin kendi hüküm ve üretim
         // adımlarından kuruluyor. Ders taşıyan her ünitede oynanabilir; dersi
         // olmayan (eksik son ünite) yer tutucu kalır.
-        const gRef = hasAuthoredGrammar(unitId) || unitLessons.length ? unitId : null;
+        const gRef = hasAuthoredGrammar(unitId) || unitConversations.length ? unitId : null;
         items.push({ id, kind, ref: gRef, title: t("unitkind.grammar"), titleTr: t("path.slot_grammar_sub") });
       } else if (kind === "quiz") {
         // quiz/checkpoint ünitenin brief'inden TÜRETİLİR (deriveQuiz) → oynanabilir.
@@ -152,11 +152,11 @@ export function buildTrack(input: BuildTrackInput): ImmersionTrack {
       group: Math.floor(u / groupSize),
       level,
       course,
-      theme: unitTheme(course, level, u * UNIT_LESSONS, `${level} · ${t("common.unit")} ${index}`, lang),
-      moduleIndex: Math.floor((u * UNIT_LESSONS) / MODULE_SIZE),
-      topics: unitLessons.map((l) => l.title),
+      theme: unitTheme(course, level, u * UNIT_CONVERSATIONS, `${level} · ${t("common.unit")} ${index}`, lang),
+      moduleIndex: Math.floor((u * UNIT_CONVERSATIONS) / MODULE_SIZE),
+      topics: unitConversations.map((l) => l.title),
       items,
-      lessonCount: items.filter((it) => it.kind === "lesson").length,
+      conversationCount: items.filter((it) => it.kind === "conversation").length,
     });
   }
 
@@ -172,7 +172,7 @@ export async function loadTrack(
   /** Ünite temasının dili (bkz. BuildTrackInput.lang). */
   lang?: NativeLang,
 ): Promise<ImmersionTrack> {
-  const lessons = (await lessonsFor(course)).filter((l) => l.level === level);
+  const conversations = (await conversationsFor(course)).filter((l) => l.level === level);
   // Yalnız üniteye bağlı egzersizler: havuz liste sırasıyla tüketiliyor ve
   // Beceriler kütüphanesinin ünitesiz egzersizleri (2026-09) bu listeye
   // girseydi, dersleri biten son ünitelerin boş yuvalarına sessizce akardı —
@@ -182,7 +182,7 @@ export async function loadTrack(
   return buildTrack({
     course,
     level,
-    lessons,
+    conversations,
     reading: byLevel.filter((m) => m.skill === "reading"),
     listening: byLevel.filter((m) => m.skill === "listening"),
     writing: byLevel.filter((m) => m.skill === "writing"),

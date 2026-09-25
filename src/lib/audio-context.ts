@@ -3,7 +3,7 @@
 /**
  * Paylaşılan WebAudio bağlamı.
  *
- * İki tüketicisi var: dersin işitsel işaretleri (lib/lessons/cues) ve ders
+ * İki tüketicisi var: dersin işitsel işaretleri (lib/conversations/cues) ve ders
  * seslendirmesinin boşluksuz oynatıcısı (components/speak-button). Tarayıcılar
  * sekme başına bağlam sayısını sınırladığı için ikisinin ayrı bağlam açması
  * hem israf hem risk olurdu.

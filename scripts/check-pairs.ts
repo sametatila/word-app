@@ -3,18 +3,18 @@ import { existsSync, readFileSync } from "node:fs";
 import { and, eq, isNotNull, ne, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { words } from "@/lib/db/schema";
-import { LESSONS } from "@/lib/lessons/source";
+import { CONVERSATIONS } from "@/lib/conversations/source";
 import { BUNDLED_EXERCISES } from "@/lib/skills";
 import { MOCK_PAPERS } from "@/lib/mock-exams/source";
 import {
-  resolveLesson,
+  resolveConversation,
   resolveExercise,
   resolveMockPaper,
   type NativeDict,
   type ExerciseShape,
   type MockShape,
-} from "@/lib/lessons/native";
-import { resolveEnLesson, type DeDict } from "@/lib/lessons/native-de";
+} from "@/lib/conversations/native";
+import { resolveEnConversation, type DeDict } from "@/lib/conversations/native-de";
 import {
   NATIVE_LANGS,
   PAIR_READY,
@@ -117,7 +117,7 @@ async function wordLayer(native: NativeLang, course: CourseId): Promise<Layer[]>
  * dosya depoda durmuyor ve eksikliği "çeviri yok" demek değil, "bu
  * kopyada üretilmedi" demek. `check:pairs` betiği ikisini de kuruyor.
  */
-const GENERATED = "src/lib/lessons/generated/";
+const GENERATED = "src/lib/conversations/generated/";
 const dictCache = new Map<string, unknown>();
 function generated<T>(file: string): T | null {
   if (!dictCache.has(file)) {
@@ -134,7 +134,7 @@ function contentLayers(native: NativeLang, course: CourseId): Layer[] {
      süzmek Almanca kursu 995 yerine 125 gösteriyordu, yani parite eksik
      çıkmadan önce YANLIŞ ölçülüyordu. */
   const of = (x: { course?: string }) => x.course ?? "de";
-  const lessons = LESSONS.filter((l) => of(l) === course);
+  const conversations = CONVERSATIONS.filter((l) => of(l) === course);
   const exercises = (BUNDLED_EXERCISES as unknown as (ExerciseShape & { course?: string })[]).filter(
     (e) => of(e) === course,
   );
@@ -142,7 +142,7 @@ function contentLayers(native: NativeLang, course: CourseId): Layer[] {
     (p) => of(p) === course,
   );
   const sizes: [string, number][] = [
-    ["ders metni", lessons.length],
+    ["ders metni", conversations.length],
     ["beceri metni", exercises.length],
     ["kâğıt metni", papers.length],
   ];
@@ -158,8 +158,8 @@ function contentLayers(native: NativeLang, course: CourseId): Layer[] {
   return [
     {
       name: "ders metni",
-      have: lessons.filter((l) => (de ? resolveEnLesson(de, l) : resolveLesson(dict, l))).length,
-      total: lessons.length,
+      have: conversations.filter((l) => (de ? resolveEnConversation(de, l) : resolveConversation(dict, l))).length,
+      total: conversations.length,
     },
     {
       name: "beceri metni",

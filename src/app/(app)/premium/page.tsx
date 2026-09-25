@@ -15,7 +15,7 @@ export const generateMetadata = titleMeta("premium.title");
 export const dynamic = "force-dynamic";
 
 /** Paywall'a nereden gelindiği — huni ölçümünde `paywall_view` kind'ı. */
-const SOURCES = new Set(["exam", "walk", "limit", "profile", "nav", "mock", "skill", "lesson"]);
+const SOURCES = new Set(["exam", "walk", "limit", "profile", "nav", "mock", "skill", "conversation"]);
 
 /** `/r/<kod>`un döndürebileceği sonuçlar — adresten gelen başka değer yok sayılır. */
 const REF_RESULTS = new Set(["ok", "linked", "already", "self", "unknown", "error"]);
@@ -91,7 +91,7 @@ export default async function PremiumPage({ searchParams }: { searchParams: Prom
         trialDays: cfg.plans.trialDays,
       }}
       price={price}
-      fairUse={{ ...cfg.fairUse, chatTurnsPerDay: DAILY_QUOTAS.roleplayTurns }}
+      fairUse={{ ...cfg.fairUse, chatTurnsPerDay: DAILY_QUOTAS.chatTurns }}
       referral={referral}
       /** Davet bağlantısındaki kod alanı doluysa form açık gelir. */
       prefillCode={typeof code === "string" ? code : ""}

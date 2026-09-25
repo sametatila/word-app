@@ -1,8 +1,8 @@
 /**
  * Ekran anahtarları — ölçümün "neredeydi" sözlüğü (WP-80).
  *
- * Yol → kısa, kapalı bir etiket. Olaylara ham yol yazılmıyor: `/lessons/de-a1-hallo`
- * ile `/lessons/de-a1-tschuess` aynı EKRAN, ayrı içerik; içerik kimliği
+ * Yol → kısa, kapalı bir etiket. Olaylara ham yol yazılmıyor: `/conversations/de-a1-hallo`
+ * ile `/conversations/de-a1-tschuess` aynı EKRAN, ayrı içerik; içerik kimliği
  * ilgili olayın kendi `kind`ında (conversation_start, skill_finish…) zaten var.
  * Anahtar kapalı olunca "hangi ekranda ne kadar kalınıyor" sorgusu on satırla
  * cevaplanıyor ve alt gezinme yeniden düzenlense de tarihsel veri kırılmıyor
@@ -16,8 +16,8 @@ export const SCREEN_KEYS = [
   "weekly",
   "immersion",
   "premium",
-  "lessons",
-  "lesson",
+  "conversations",
+  "conversation",
   "conversation_scored",
   "skills",
   "skill",
@@ -44,9 +44,9 @@ export function screenKey(pathname: string): ScreenKey {
       return "immersion";
     case "premium":
       return "premium";
-    case "lessons":
-      if (!b) return "lessons";
-      return c === "exam" ? "conversation_scored" : "lesson";
+    case "conversations":
+      if (!b) return "conversations";
+      return c === "scored" ? "conversation_scored" : "conversation";
     case "skills":
       return b ? "skill" : "skills";
     case "words":

@@ -3,7 +3,7 @@ import { titleMeta } from "@/lib/page-meta";
 import { getUserId } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
 import { isNativeLang } from "@/lib/i18n/dict";
-import { localiseMockPaper } from "@/lib/lessons/native-server";
+import { localiseMockPaper } from "@/lib/conversations/native-server";
 import { MockExamPlayer } from "@/components/mock-exam-player";
 import { type MockPaper, type MockSkill } from "@/lib/mock-exams";
 import { mockPaperById } from "@/lib/mock-exams/serve";

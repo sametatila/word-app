@@ -65,7 +65,7 @@ export type Metric =
   | "gameOrder"
   | "gamePlural"
   | "gameSpeak"
-  | "lessons"
+  | "conversations"
   | "skills"
   | "challengeBest"
   | "nightAnswers"
@@ -168,12 +168,12 @@ export const ACHIEVEMENTS: AchievementDef[] = [
   { id: "grammar25", titleKey: "ach.grammar25.title", hintKey: "ach.grammar25.hint", icon: "MountainIcon", tier: "gold", group: "grammar", metric: "grammarDone", target: 25 },
 
   // ——— Ders ——————————————————————————————————————————————————————
-  { id: "conversation1", titleKey: "ach.conversation1.title", hintKey: "ach.conversation1.hint", icon: "ChatIcon", tier: "bronze", group: "lessons", metric: "lessons", target: 1 },
-  { id: "conversation10", titleKey: "ach.conversation10.title", hintKey: "ach.conversation10.hint", icon: "SchoolIcon", tier: "bronze", group: "lessons", metric: "lessons", target: 10 },
-  { id: "conversation50", titleKey: "ach.conversation50.title", hintKey: "ach.conversation50.hint", icon: "SchoolIcon", tier: "gold", group: "lessons", metric: "lessons", target: 50 },
-  { id: "conversation100", titleKey: "ach.conversation100.title", hintKey: "ach.conversation100.hint", icon: "MountainIcon", tier: "legend", group: "lessons", metric: "lessons", target: 100 },
-  { id: "boss1", titleKey: "ach.boss1.title", hintKey: "ach.boss1.hint", icon: "FlagIcon", tier: "silver", group: "lessons", metric: "bossClears", target: 1 },
-  { id: "boss10", titleKey: "ach.boss10.title", hintKey: "ach.boss10.hint", icon: "FlagIcon", tier: "gold", group: "lessons", metric: "bossClears", target: 10 },
+  { id: "conversation1", titleKey: "ach.conversation1.title", hintKey: "ach.conversation1.hint", icon: "ChatIcon", tier: "bronze", group: "conversations", metric: "conversations", target: 1 },
+  { id: "conversation10", titleKey: "ach.conversation10.title", hintKey: "ach.conversation10.hint", icon: "SchoolIcon", tier: "bronze", group: "conversations", metric: "conversations", target: 10 },
+  { id: "conversation50", titleKey: "ach.conversation50.title", hintKey: "ach.conversation50.hint", icon: "SchoolIcon", tier: "gold", group: "conversations", metric: "conversations", target: 50 },
+  { id: "conversation100", titleKey: "ach.conversation100.title", hintKey: "ach.conversation100.hint", icon: "MountainIcon", tier: "legend", group: "conversations", metric: "conversations", target: 100 },
+  { id: "boss1", titleKey: "ach.boss1.title", hintKey: "ach.boss1.hint", icon: "FlagIcon", tier: "silver", group: "conversations", metric: "bossClears", target: 1 },
+  { id: "boss10", titleKey: "ach.boss10.title", hintKey: "ach.boss10.hint", icon: "FlagIcon", tier: "gold", group: "conversations", metric: "bossClears", target: 10 },
 
   // ——— Sınav ——————————————————————————————————————————————————————
   // Sınavlar (haftanın kısa sınavı ve seviye sınavları) ölçümün en ağır
@@ -257,7 +257,7 @@ async function collectMetrics(userId: string): Promise<Metrics> {
   const [
     masteredRow,
     gameRows,
-    lessonRow,
+    conversationRow,
     skillRow,
     bossRow,
     hourRow,
@@ -415,7 +415,7 @@ async function collectMetrics(userId: string): Promise<Metrics> {
     gameOrder: games.get("order") ?? 0,
     gamePlural: games.get("plural") ?? 0,
     gameSpeak: games.get("speak") ?? 0,
-    lessons: Number(lessonRow[0]?.n ?? 0),
+    conversations: Number(conversationRow[0]?.n ?? 0),
     skills: Number(skillRow[0]?.n ?? 0),
     challengeBest: profile?.challengeBest ?? 0,
     nightAnswers: Number(hourRow[0]?.night ?? 0),

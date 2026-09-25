@@ -35,7 +35,7 @@
  */
 import { writeFileSync, mkdirSync } from "node:fs";
 import { BUNDLED_EXERCISES } from "@/lib/skills";
-import { isTurkishOption, isTurkishStem } from "@/lib/lessons/native";
+import { isTurkishOption, isTurkishStem } from "@/lib/conversations/native";
 
 const DIR = new URL(".", import.meta.url).pathname;
 

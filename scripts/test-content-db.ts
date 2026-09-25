@@ -8,13 +8,14 @@ import {
   disabledItemsOf,
   exerciseDisabled,
   invalidatePointer,
-  lessonDisabled,
+  conversationDisabled,
   manifest,
   paperDisabled,
   releaseDiff,
   pointer,
   readItem,
 } from "@/lib/content/read";
+import { legacyNativeManifest } from "@/lib/legacy-names";
 import { FULL_PACK } from "@/lib/content/ids";
 
 /**
@@ -66,7 +67,7 @@ async function restore(previousLive: number | null) {
   }
   await db.delete(contentFlags).where(like(contentFlags.pack, "tests/%"));
   await db.delete(contentFlags).where(eq(contentFlags.pack, GATED));
-  await db.delete(contentFlags).where(like(contentFlags.pack, "lessons/%"));
+  await db.delete(contentFlags).where(like(contentFlags.pack, "conversations/%"));
   await db.delete(contentFlags).where(like(contentFlags.pack, "skills/%"));
   await db.delete(contentFlags).where(like(contentFlags.pack, "papers/%"));
   await db.delete(contentFlags).where(like(contentFlags.pack, "quiz/%"));
@@ -181,10 +182,19 @@ async function main() {
        Web içeriği koddan okuyor, yani kapatılan madde kendiliğinden
        gizlenmiyor; kimlikten paketi çözen yardımcılar bu boşluğu kapatıyor.
        Yarısı işleyen bir anahtar, hiç işlemeyenden kötü. */
-    await disableItem("lessons/de-b1", "de-b1-bewerbung", "broken", by);
-    check("kapatılan ders webde de kapalı", await lessonDisabled("de-b1-bewerbung"));
-    check("kapatılmamış ders açık", !(await lessonDisabled("de-b1-lebenslauf")));
-    await enableItem("lessons/de-b1", "de-b1-bewerbung");
+    await disableItem("conversations/de-b1", "de-b1-bewerbung", "broken", by);
+    check("kapatılan ders webde de kapalı", await conversationDisabled("de-b1-bewerbung"));
+    check("kapatılmamış ders açık", !(await conversationDisabled("de-b1-lebenslauf")));
+    /* Build 6 aynı maddeyi eski paket adıyla tutuyor (geçici, lib/legacy-names). */
+    check("kapatma göstergede eski paket adıyla da var", (await pointer()).d.includes("lessons/de-b1:de-b1-bewerbung"));
+    {
+      const m = legacyNativeManifest("native/de", { r: 2, p: "native/de", f: { h: "arsiv", b: 9 }, i: [{ i: "conversation", h: "H", b: 1 }], x: ["lesson"] });
+      check(
+        "build 6 anadil manifesti: eski madde adı aynı hash'le, arşiv yok, düşen listesinde değil",
+        m.f === null && m.i.some((e) => e.i === "lesson" && e.h === "H") && !m.x.includes("lesson"),
+      );
+    }
+    await enableItem("conversations/de-b1", "de-b1-bewerbung");
 
     await disableItem("skills/de-a1", "a1-u1-r1", "reported", by);
     check("kapatılan egzersiz webde de kapalı", await exerciseDisabled("a1-u1-r1"));

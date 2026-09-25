@@ -30,8 +30,8 @@ export const FULL_PACK = "*";
  */
 export const ORDER_ITEM = "index";
 
-/** "lessons/de-a1" · "papers/de" · "native/en" · "skills/de-b1" */
-const PACK_RE = /^[a-z]{3,12}\/[a-z0-9-]{1,24}$/;
+/** "conversations/de-a1" · "papers/de" · "native/en" · "skills/de-b1" */
+const PACK_RE = /^[a-z]{3,16}\/[a-z0-9-]{1,24}$/;
 /** "de-a1-b03" · "de-b1-01" · "*" */
 const ITEM_RE = /^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$/;
 /** sha-256'nın ilk 32 hex hanesi. */

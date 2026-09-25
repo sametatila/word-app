@@ -3,9 +3,9 @@ import { targetLangOf } from "@/lib/courses";
 import { getUserId, getUserInfo } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
 import { examById, SECTION_TITLE_KEYS, SECTION_TITLE_TARGET, type ExamSectionId } from "@/lib/exam";
-import { localiseExam } from "@/lib/lessons/native-server";
+import { localiseExam } from "@/lib/conversations/native-server";
 import { translate, formatPercent, localeOf, isNativeLang, DEFAULT_NATIVE } from "@/lib/i18n/dict";
-import { moduleExamPlan } from "@/lib/lessons/module-exam";
+import { moduleExamPlan } from "@/lib/conversations/module-exam";
 
 export const dynamic = "force-dynamic";
 

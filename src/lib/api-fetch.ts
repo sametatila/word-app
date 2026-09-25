@@ -20,7 +20,7 @@ import { aiConsentShouldPrompt, asAiConsentRequired, type AiConsentRequired } fr
  * DEĞERLENDİRME ÇAĞRILARI BU TAVANIN DIŞINDA ve öyle kalmalı: yapay zekâ
  * yanıtı 25 saniyeden uzun sürebiliyor, o yüzden kendi (daha uzun) süreleri
  * var ve ikisi de iki platformda eşleştirilmiş durumda (`ASSESS_TIMEOUT_MS`,
- * `ASSESS_ROLEPLAY_TIMEOUT_MS`). Yine de BU İŞLEVDEN geçiyorlar, sürelerini
+ * `ASSESS_CHAT_TIMEOUT_MS`). Yine de BU İŞLEVDEN geçiyorlar, sürelerini
  * `timeoutMs` ile vererek: yapay zekâ rızası yakalayıcısı (aşağıda) yalnız
  * burada.
  */
@@ -31,16 +31,16 @@ export const API_TIMEOUT_MS = 25_000;
  *
  * `/api/chat` bir cevap yazdırıyor (değerlendirme gibi hazır metni
  * puanlamıyor) ve uzun bir turda kırk saniyeye kadar sürebiliyor. İki
- * çağıran da (`lessons/lesson-player`, `lessons/roleplay-exam`) kendi
+ * çağıran da (`conversations/conversation-player`, `conversations/conversation-scored`) kendi
  * süresini vermediği için 25 saniyede kesiliyordu — Android aynı çağrıyı
- * kırk beş saniye bekliyor (`api/client` `ROLEPLAY_TIMEOUT_MS`), yani
+ * kırk beş saniye bekliyor (`api/client` `CHAT_TIMEOUT_MS`), yani
  * ağır bir cevap mobilde geliyor, webde "sohbet kurulamadı" oluyordu.
  * Yanıt AKIŞLI okunduğu için bu tavan akışın tamamını kapsıyor: sinyal
  * gövde okunurken de geçerli.
  *
  * Sayı ve ad mobildekiyle birebir aynı: iki taraf ayrı ayrı değişmesin.
  */
-export const ROLEPLAY_TIMEOUT_MS = 45_000;
+export const CHAT_TIMEOUT_MS = 45_000;
 
 export type ApiFetchInit = RequestInit & {
   /**

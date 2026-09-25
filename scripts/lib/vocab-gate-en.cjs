@@ -34,8 +34,8 @@ const pool = fs
   .map((l) => JSON.parse(l));
 
 /** Seviyenin dersleri; dersi olmayan seviyede havuz tek kaynak. */
-const { dersPaketi } = require("./lesson-packs.cjs");
-const dersler = (lv) => dersPaketi("en", lv);
+const { konusmaPaketi } = require("./conversation-packs.cjs");
+const dersler = (lv) => konusmaPaketi("en", lv);
 
 /* ── serbest sözcükler ────────────────────────────────────────────────── */
 

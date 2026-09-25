@@ -29,7 +29,7 @@
 --   kısıt/indeks/dizi adları içindeki user_lessons/roleplay_logs/lesson_id
 --   usage_counters.key   writing_lesson: → path_writing: · owned_lesson: → path_writing_owned:
 --                        writing_skill: → skill_writing: · speaking_skill: → skill_speaking:
---                        skill_ai: → skill_owned:
+--                        skill_ai: → skill_owned: · roleplay_turns → chat_turns (günlük)
 --   events.name          lesson_start/step/finish → conversation_start/step/finish
 --   events.kind          lesson → conversation · lessons → conversations · Lesson → Conversation
 --                        RoleplayExam → ConversationScored · roleplay → chat
@@ -37,6 +37,7 @@
 --   achievements         lesson1/10/50/100 → conversation1/10/50/100
 --   quest_claims         lesson1 → conversation1
 --   ai_usage.kind, assessments.kind, content_reports.kind   roleplay → chat
+--   content_flags.pack   lessons/… → conversations/…
 --
 -- Tek transaction: migrate-all ve apply-migration dosyayı tek cümle olarak
 -- gönderiyor (statement-breakpoint yok), psql de BEGIN/COMMIT'e uyuyor.
@@ -115,7 +116,8 @@ INSERT INTO _counter_map VALUES
   ('owned_lesson:',   'path_writing_owned:', false),
   ('writing_skill:',  'skill_writing:',      true),
   ('speaking_skill:', 'skill_speaking:',     true),
-  ('skill_ai:',       'skill_owned:',        false);
+  ('skill_ai:',       'skill_owned:',        false),
+  ('roleplay_turns',  'chat_turns',          true); -- günlük sohbet mesajı sayacı (tam anahtar)
 
 INSERT INTO usage_counters (user_id, key, period, count, updated_at)
 SELECT c.user_id, m.new_prefix || substr(c.key, length(m.old_prefix) + 1), c.period, c.count, c.updated_at
@@ -167,5 +169,16 @@ DELETE FROM quest_claims WHERE quest_id = 'lesson1';
 UPDATE ai_usage SET kind = 'chat' WHERE kind = 'roleplay';
 UPDATE assessments SET kind = 'chat' WHERE kind = 'roleplay';
 UPDATE content_reports SET kind = 'chat' WHERE kind = 'roleplay';
+
+-- ── 7. İçerik kapatmaları: Konuşma adımı paketi `lessons/` → `conversations/` ─
+-- Yayın artık `conversations/<kurs>-<sv>` paketlerini yayınlıyor (build 6 için
+-- eski adlı paketler de, bkz. lib/legacy-names); kapatma yeni adla tutuluyor,
+-- gösterge onu eski adla da bildiriyor. Eski sürümlerin `content_release_items`
+-- satırlarına dokunulmuyor: geçmiş sürüm olduğu gibi kalıyor.
+UPDATE content_flags f SET pack = 'conversations/' || substr(f.pack, length('lessons/') + 1)
+WHERE starts_with(f.pack, 'lessons/')
+  AND NOT EXISTS (SELECT 1 FROM content_flags g
+                  WHERE g.pack = 'conversations/' || substr(f.pack, length('lessons/') + 1) AND g.item = f.item);
+DELETE FROM content_flags WHERE starts_with(pack, 'lessons/');
 
 COMMIT;

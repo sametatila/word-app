@@ -1,0 +1,19 @@
+[
+ { "conversation": "de-c1-pitch", "de": "zünden", "en": "to catch on" },
+ { "conversation": "de-c1-wohl", "de": "die Mutmaßung", "en": "conjecture" },
+ { "conversation": "de-c1-smalltalk-c1", "de": "unverfänglich", "en": "innocuous" },
+ { "conversation": "de-c1-debatte-c1", "de": "zugegeben", "en": "admittedly" },
+ { "conversation": "de-c1-tiere-idiome", "de": "auf den Hund kommen", "en": "to go to the dogs" },
+ { "conversation": "de-c1-wetter-idiome", "de": "eiskalt", "en": "ice-cold / ruthless" },
+ { "conversation": "de-c1-farben-idiome", "de": "blauäugig", "en": "naive" },
+ { "conversation": "de-c1-pressebericht", "de": "vorliegen", "en": "to be available" },
+ { "conversation": "de-c1-podiumsdiskussion", "de": "das Podium", "en": "panel / podium" },
+ { "conversation": "de-c1-vertragsklauseln", "de": "der Verzug", "en": "default / delay" },
+ { "conversation": "de-c1-arbeitsrecht", "de": "fristlos", "en": "without notice" },
+ { "conversation": "de-c1-gericht", "de": "die Kammer", "en": "chamber / division" },
+ { "conversation": "de-c1-gerundiv", "de": "bevorstehen", "en": "to be imminent" },
+ { "conversation": "de-c1-schachtelsatz", "de": "unübersichtlich", "en": "confusing / hard to follow" },
+ { "conversation": "de-c1-migrationsdebatte", "de": "beheimatet", "en": "at home / based" },
+ { "conversation": "de-c1-wortspiele", "de": "der doppelte Boden", "en": "double meaning" },
+ { "conversation": "de-c1-regionale-kultur", "de": "zugeknöpft", "en": "reserved" }
+]

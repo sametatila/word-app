@@ -5,16 +5,16 @@ import { practiceWordsOf } from "@/lib/practice-words";
 import { exams, userConversations, userSkills, words } from "@/lib/db/schema";
 import { chatConfigured, sttProviders } from "@/lib/chat-providers";
 import { track } from "@/lib/events";
-import { lessonsForLevel } from "@/lib/lessons";
-import { MODULE_SIZE } from "@/lib/lessons/modules";
+import { conversationsForLevel } from "@/lib/conversations";
+import { MODULE_SIZE } from "@/lib/conversations/modules";
 import {
   moduleContent,
-  lessonModuleCount,
+  conversationModuleCount,
   selfAnswering,
-  type ProduceItem as LessonProduceItem,
-} from "@/lib/lessons/module-content";
-import { courseExams, moduleExamPlan, type ExamCando, type ModuleExamPlan } from "@/lib/lessons/module-exam";
-import { localiseExam } from "@/lib/lessons/native-server";
+  type ProduceItem as ConversationProduceItem,
+} from "@/lib/conversations/module-content";
+import { courseExams, moduleExamPlan, type ExamCando, type ModuleExamPlan } from "@/lib/conversations/module-exam";
+import { localiseExam } from "@/lib/conversations/native-server";
 import { makeRound, toRoundWord, weekStart , ensureProfile } from "@/lib/session";
 import { seededShuffle } from "@/lib/shuffle";
 import { BUNDLED_EXERCISES } from "@/lib/skills/bundled";
@@ -119,7 +119,7 @@ export function examKindKey(kind: ExamKind, level: CefrLevel, module: number | n
  * söyleyebilmek için kapak ucu da bunu soruyor (bkz. api/exam GET).
  */
 export async function modulePrereq(userId: string, course: string, level: CefrLevel, module: number): Promise<boolean> {
-  const chunk = (await lessonsForLevel(course, level)).filter((l) => l.course === course).slice(module * MODULE_SIZE, (module + 1) * MODULE_SIZE);
+  const chunk = (await conversationsForLevel(course, level)).filter((l) => l.course === course).slice(module * MODULE_SIZE, (module + 1) * MODULE_SIZE);
   if (!chunk.length) return false;
   const rows = await db
     .select({ conversationId: userConversations.conversationId, correct: userConversations.correct, total: userConversations.total, chatDone: userConversations.chatDone })
@@ -139,7 +139,7 @@ export async function modulePrereq(userId: string, course: string, level: CefrLe
  */
 
 /** Üretim adımlarından sınav maddesi: bir kısmı yazma, bir kısmı dizme. */
-function produceItems(source: LessonProduceItem[], seed: string, count: number): ProduceExamItem[] {
+function produceItems(source: ConversationProduceItem[], seed: string, count: number): ProduceExamItem[] {
   const usable = source.filter((p) => !selfAnswering(p) && p.de.trim().split(/\s+/).length >= 2);
   const picked = seededShuffle(usable, `${seed}|produce`).slice(0, count);
   return picked.map((p, i) => {
@@ -260,9 +260,9 @@ export async function buildExam(userId: string, course: string, level: CefrLevel
 
   // Cümle kurma: derslerin üretim adımları. Seviye sınavında seviyenin bütün
   // modülleri havuz.
-  const produceSource: LessonProduceItem[] = content
+  const produceSource: ConversationProduceItem[] = content
     ? content.produce
-    : (await lessonsForLevel(course, level)).filter((l) => l.course === course).length
+    : (await conversationsForLevel(course, level)).filter((l) => l.course === course).length
       ? await allModuleProduce(course, level)
       : [];
   const produce = produceItems(produceSource, seed, c.produce);
@@ -438,9 +438,9 @@ export function examCando(course: string, level: string, module: number | null):
  * bir işleve alındı: ifade içinde `await` ile kurulan `Array.from` okunaksız
  * ve tip çıkarımı da orada şaşıyor.
  */
-async function allModuleProduce(course: string, level: string): Promise<LessonProduceItem[]> {
-  const n = await lessonModuleCount(course, level);
-  const out: LessonProduceItem[] = [];
+async function allModuleProduce(course: string, level: string): Promise<ConversationProduceItem[]> {
+  const n = await conversationModuleCount(course, level);
+  const out: ConversationProduceItem[] = [];
   for (let i = 0; i < n; i++) out.push(...(await moduleContent(course, level, i)).produce);
   return out;
 }

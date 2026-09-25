@@ -38,11 +38,11 @@ import { isSpeechCorrect, judgeSpeech, normalizeSpoken } from "../src/lib/speech
 import { CORRECTION_MARK, SUGGESTION_MARK, parseReply } from "../src/lib/chat-format";
 import { derivedConfusions } from "../src/lib/speech-rules";
 import { germanLexicon } from "../src/lib/speech-lexicon";
-import { LESSONS, sourceLessonsFor as lessonsFor, sourceFindLesson as findLesson } from "../src/lib/lessons/source";
-import { scoredSteps } from "../src/lib/lessons/types";
-import { lessonBoard, nextLesson, recordLesson, weakRules } from "../src/lib/lessons/progress";
-import { MAX_HISTORY } from "../src/lib/lessons/roleplay-const";
-import { roleplayPrompt } from "../src/lib/lessons/roleplay";
+import { CONVERSATIONS, sourceConversationsFor as conversationsFor, sourceFindConversation as findConversation } from "../src/lib/conversations/source";
+import { scoredSteps } from "../src/lib/conversations/types";
+import { conversationBoard, nextConversation, recordConversation, weakRules } from "../src/lib/conversations/progress";
+import { MAX_HISTORY } from "../src/lib/conversations/chat-const";
+import { chatPrompt } from "../src/lib/conversations/chat";
 import { chatConfigured, chatProviders, readLimits } from "../src/lib/chat-providers";
 import { cleanForSpeech } from "../src/lib/tts/edge";
 import { defaultVoice, rateFor, resolveVoice, voicesFor } from "../src/lib/tts/voices";
@@ -59,7 +59,7 @@ import {
   clearedModules,
   moduleVocab,
   recordBossClear,
-} from "../src/lib/lessons/boss";
+} from "../src/lib/conversations/boss";
 import { buildShareText } from "../src/components/share-result";
 import { achievements, aiUsage, assessments, events, exams, moduleClears, placements } from "../src/lib/db/schema";
 import { recordAiUsage } from "../src/lib/ai-usage";
@@ -68,11 +68,11 @@ import { classifyOrder, classifyTyping, miss } from "../src/lib/errors";
 import { overallScore, parseAssessment, repairQuotes } from "../src/lib/assess-prompts";
 import { fallbackAssessment } from "../src/lib/assess-client";
 import { assess, assessHash, deleteAssessment, listAssessments, queueAssessment, runAssessQueue } from "../src/lib/assess";
-import { offlineReply, offlineStart, offlineSummary, patternUsed } from "../src/lib/lessons/offline-roleplay";
+import { offlineReply, offlineStart, offlineSummary, patternUsed } from "../src/lib/conversations/offline-chat";
 import { clozeTypeChance, easeRound, gamesFor as ladderGames, isProductionGame } from "../src/lib/ladder";
 import { buildPlan } from "../src/lib/plan";
 import { CANDO } from "../src/lib/cando";
-import { candoForExercise, candoForLesson } from "../src/lib/cando-map";
+import { candoForExercise, candoForConversation } from "../src/lib/cando-map";
 import { candoSummary } from "../src/lib/cando-progress";
 import { nextLevel, scorePlacement, type PlacementAnswer, type PlacementStage } from "../src/lib/placement-score";
 import { acceptPlacement, buildPlacement, finishPlacement, lastPlacement } from "../src/lib/placement";
@@ -83,7 +83,7 @@ import { gatherEvidence, proficiencyFor } from "../src/lib/proficiency-data";
 import { errorReport, frequentErrorTypes } from "../src/lib/error-analytics";
 import { growthReport } from "../src/lib/growth";
 import { buildExam, examById, examCando, examHistory, finishExam, scoreSections } from "../src/lib/exam";
-import { sourceModuleContent as moduleContent } from "../src/lib/lessons/module-content-source";
+import { sourceModuleContent as moduleContent } from "../src/lib/conversations/module-content-source";
 import { foldSentence } from "../src/lib/sentence-match";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 import { importSkillRecords, listSkillStatus, recordSkillAttempt, scoreOf } from "../src/lib/skills/record";
@@ -703,83 +703,83 @@ async function main() {
 
   console.log("\n11r) Ders içeriği: anlatım senaryosu ve konuşma");
   {
-    check("ders havuzu var", LESSONS.length > 0, `(${LESSONS.length})`);
-    const ids = new Set(LESSONS.map((l) => l.id));
-    check("ders kimlikleri benzersiz", ids.size === LESSONS.length);
+    check("ders havuzu var", CONVERSATIONS.length > 0, `(${CONVERSATIONS.length})`);
+    const ids = new Set(CONVERSATIONS.map((l) => l.id));
+    check("ders kimlikleri benzersiz", ids.size === CONVERSATIONS.length);
 
     // Odak kimliği tekrar kuyruğunun anahtarı olduğu için boş olamaz.
-    check("her dersin odak kimliği var", LESSONS.every((l) => l.focusId.trim().length > 0));
-    check("her derste kelime takımı var", LESSONS.every((l) => l.vocab.length >= 4));
-    check("her derste kalıp var", LESSONS.every((l) => l.patterns.length >= 2));
+    check("her dersin odak kimliği var", CONVERSATIONS.every((l) => l.focusId.trim().length > 0));
+    check("her derste kelime takımı var", CONVERSATIONS.every((l) => l.vocab.length >= 4));
+    check("her derste kalıp var", CONVERSATIONS.every((l) => l.patterns.length >= 2));
     check("her ders seviye başlığı taşıyor",
-      LESSONS.every((l) => l.title.trim().length > 0 && l.titleTr.trim().length > 0));
+      CONVERSATIONS.every((l) => l.title.trim().length > 0 && l.titleTr.trim().length > 0));
 
     // Anlatım "hazır mısın" ile açılmalı: sesli akış öğrencinin haberi olmadan
     // konuşmaya başlamamalı.
     check("anlatım onayla başlıyor",
-      LESSONS.every((l) => l.lecture[0]?.expect?.kind === "confirm"));
+      CONVERSATIONS.every((l) => l.lecture[0]?.expect?.kind === "confirm"));
     check("anlatım yeterince uzun",
-      LESSONS.every((l) => l.lecture.length >= 12),
-      `(en kısa: ${Math.min(...LESSONS.map((l) => l.lecture.length))})`);
+      CONVERSATIONS.every((l) => l.lecture.length >= 12),
+      `(en kısa: ${Math.min(...CONVERSATIONS.map((l) => l.lecture.length))})`);
 
     // Öğretilen her kelime anlatımda tekrar ettirilmeli — listede durup sesli
     // hiç söyletilmeyen kelime öğretilmiş sayılmaz.
-    const repeats = (l: (typeof LESSONS)[number]) =>
+    const repeats = (l: (typeof CONVERSATIONS)[number]) =>
       l.lecture
         .filter((s) => s.expect?.kind === "repeat")
         .map((s) => (s.expect as { target: string }).target.toLowerCase());
     check("her kelime tekrar ettiriliyor",
-      LESSONS.every((l) => l.vocab.every((v) => repeats(l).some((t) => t.includes(v.de.toLowerCase())))),
-      `(${LESSONS.filter((l) => !l.vocab.every((v) => repeats(l).some((t) => t.includes(v.de.toLowerCase())))).map((l) => l.id).join(", ")})`);
+      CONVERSATIONS.every((l) => l.vocab.every((v) => repeats(l).some((t) => t.includes(v.de.toLowerCase())))),
+      `(${CONVERSATIONS.filter((l) => !l.vocab.every((v) => repeats(l).some((t) => t.includes(v.de.toLowerCase())))).map((l) => l.id).join(", ")})`);
 
     // Puanlanan adımlar: üretim kurdurur, doğru/yanlış sınar. İkisi de olmalı.
     check("her derste üretim alıştırması var",
-      LESSONS.every((l) => l.lecture.some((s) => s.expect?.kind === "produce")));
+      CONVERSATIONS.every((l) => l.lecture.some((s) => s.expect?.kind === "produce")));
     check("her derste doğru/yanlış var",
-      LESSONS.every((l) => l.lecture.some((s) => s.expect?.kind === "truefalse")));
+      CONVERSATIONS.every((l) => l.lecture.some((s) => s.expect?.kind === "truefalse")));
     check("puanlanan adım sayısı yeterli",
-      LESSONS.every((l) => scoredSteps(l) >= 3));
+      CONVERSATIONS.every((l) => scoredSteps(l) >= 3));
 
     // Üretim adımının ipucu, hedefi ve yanlışta okunacak açıklaması dolu olmalı.
-    const produces = LESSONS.flatMap((l) =>
+    const produces = CONVERSATIONS.flatMap((l) =>
       l.lecture.filter((s) => s.expect?.kind === "produce").map((s) => s.expect as { target: string; hint: { text: string }[] }));
     check("üretim hedefleri dolu", produces.every((p) => p.target.trim().length > 0));
     check("üretim ipuçları dolu", produces.every((p) => p.hint.length > 0 && p.hint.every((h) => h.text.trim().length > 0)));
-    const tfs = LESSONS.flatMap((l) =>
+    const tfs = CONVERSATIONS.flatMap((l) =>
       l.lecture.filter((s) => s.expect?.kind === "truefalse").map((s) => s.expect as { statement: string; why: { text: string }[] }));
     check("doğru/yanlış gerekçeleri dolu",
       tfs.every((t) => t.statement.trim().length > 0 && t.why.length > 0));
 
     // Segmentler boş olamaz: boş parça seslendirmede sessiz bir delik açar.
     check("bütün segmentler dolu",
-      LESSONS.every((l) => l.lecture.every((s) => s.say.length > 0 && s.say.every((seg) => seg.text.trim().length > 0))));
+      CONVERSATIONS.every((l) => l.lecture.every((s) => s.say.length > 0 && s.say.every((seg) => seg.text.trim().length > 0))));
 
     // Konuşma dersin asıl parçası: sahne, rol ve açılış repliği olmadan
     // öğrenci boş ekranla karşılaşır — serbest sohbetin en pahalı sorunu buydu.
-    check("her derste sahne var", LESSONS.every((l) => l.roleplay.scene.trim().length > 20));
+    check("her derste sahne var", CONVERSATIONS.every((l) => l.chat.scene.trim().length > 20));
     check("her derste açılış repliği var",
-      LESSONS.every((l) => l.roleplay.opening.trim().length > 0 && l.roleplay.openingTr.trim().length > 0));
+      CONVERSATIONS.every((l) => l.chat.opening.trim().length > 0 && l.chat.openingTr.trim().length > 0));
     // Üst sınır 8'di; konuşmalar `894ddb0b` ile 6-9 tura uzatıldı ve 166 ders
     // 9 tur istiyor. Sınır tasarımın söylediği yerde.
     check("konuşmanın alt sınırı makul",
-      LESSONS.every((l) => l.roleplay.minTurns >= 3 && l.roleplay.minTurns <= 9));
+      CONVERSATIONS.every((l) => l.chat.minTurns >= 3 && l.chat.minTurns <= 9));
 
-    check("Almanca kursunda ders var", lessonsFor("de").length > 0);
+    check("Almanca kursunda ders var", conversationsFor("de").length > 0);
     check("kurs süzgeci karıştırmıyor",
-      lessonsFor("gsw-zh").every((l) => l.course === "gsw-zh"));
-    check("ders kimlikle bulunuyor", findLesson(LESSONS[0].id)?.id === LESSONS[0].id);
-    check("bilinmeyen kimlik bulunamıyor", findLesson("yok-boyle-bir-ders") === undefined);
+      conversationsFor("gsw-zh").every((l) => l.course === "gsw-zh"));
+    check("ders kimlikle bulunuyor", findConversation(CONVERSATIONS[0].id)?.id === CONVERSATIONS[0].id);
+    check("bilinmeyen kimlik bulunamıyor", findConversation("yok-boyle-bir-ders") === undefined);
   }
 
   console.log("\n11r1) Ders ilerlemesi ve tekrar merdiveni");
   {
-    const lesson = LESSONS[0];
-    const full = scoredSteps(lesson);
+    const conversation = CONVERSATIONS[0];
+    const full = scoredSteps(conversation);
 
     // Rol yapma tamamlanmadıysa ders geçilmiş sayılmıyor: alıştırmaları doğru
     // yapıp konuşmadan çıkmak dersin asıl parçasını atlamak demek.
-    const lessonDay = "2026-03-20";
-    const skipped = await recordLesson(USER, lesson, full, false, lessonDay);
+    const conversationDay = "2026-03-20";
+    const skipped = await recordConversation(USER, conversation, full, false, conversationDay);
     check("konuşmasız ders geçilmiş sayılmıyor", skipped.passed === false);
     check("geçilmeyen ders ertesi güne planlanıyor", skipped.nextDays === 1);
     // Ders bölümü daha önce hiç XP vermiyordu; artık süre bazlı puan işliyor.
@@ -787,11 +787,11 @@ async function main() {
     check("ders çalışılan gün seriyi ilerletiyor", skipped.currentStreak >= 1);
 
     // Geçilince merdiven yukarı çıkıyor.
-    const first = await recordLesson(USER, lesson, full, true, lessonDay);
+    const first = await recordConversation(USER, conversation, full, true, conversationDay);
     check("konuşmayla birlikte ders geçiliyor", first.passed === true);
     // Rol yapma eklenince puan artıyor: dersin asıl parçası o.
     check("rol yapma ek XP kazandırıyor", first.xpGained > 0, `(${first.xpGained})`);
-    const second = await recordLesson(USER, lesson, full, true, lessonDay);
+    const second = await recordConversation(USER, conversation, full, true, conversationDay);
     check("aralık büyüyor", second.nextDays > first.nextDays,
       `(${first.nextDays} → ${second.nextDays})`);
     // Aynı dersi yeniden çözmek XP kasmaya dönüşmemeli: en iyi sonuç zaten
@@ -800,65 +800,65 @@ async function main() {
 
     // Başarısızlık merdiveni başa alıyor — kural oturmadıysa uzun aralık
     // öğrenciyi kaybettirir.
-    const failed = await recordLesson(USER, lesson, 0, true, lessonDay);
+    const failed = await recordConversation(USER, conversation, 0, true, conversationDay);
     check("başarısızlık merdiveni sıfırlıyor", failed.nextDays === 1 && !failed.passed);
 
     // En iyi skor korunuyor: bir kez doğru yapılanı sonraki denemede
     // kaybetmek ilerlemeyi geri almamalı.
-    const board = await lessonBoard(USER, lesson.course);
-    const card = board.find((c) => c.lesson.id === lesson.id)!;
+    const board = await conversationBoard(USER, conversation.course);
+    const card = board.find((c) => c.conversation.id === conversation.id)!;
     check("en iyi skor korunuyor", card.state?.correct === full, `(${card.state?.correct})`);
     check("rol yapma bayrağı kalıcı", card.state?.chatDone === true);
     check("deneme sayısı artıyor", (card.state?.attempts ?? 0) >= 4);
 
     // Sıradaki ders: yarına planlanan ders bugün "tekrarı gelmiş" değil, o
     // yüzden açılmamış ilk ders öneriliyor.
-    const upcoming = await nextLesson(USER, lesson.course);
-    check("planlanmış ders bugün önerilmiyor", upcoming?.lesson.id !== lesson.id,
-      `(${upcoming?.lesson.id})`);
+    const upcoming = await nextConversation(USER, conversation.course);
+    check("planlanmış ders bugün önerilmiyor", upcoming?.conversation.id !== conversation.id,
+      `(${upcoming?.conversation.id})`);
 
     // Zamanı geldiğinde ise yeni dersin önüne geçiyor: tekrar borcu varken
     // yeni konu açmak öğrenciyi ilerliyormuş gibi hissettirip geride bırakır.
     await db
       .update(userConversations)
       .set({ dueAt: sql`now() - interval '1 day'` })
-      .where(and(eq(userConversations.userId, USER), eq(userConversations.conversationId, lesson.id)));
-    const due = await nextLesson(USER, lesson.course);
-    check("tekrarı gelen ders yeni dersin önüne geçiyor", due?.lesson.id === lesson.id,
-      `(${due?.lesson.id})`);
+      .where(and(eq(userConversations.userId, USER), eq(userConversations.conversationId, conversation.id)));
+    const due = await nextConversation(USER, conversation.course);
+    check("tekrarı gelen ders yeni dersin önüne geçiyor", due?.conversation.id === conversation.id,
+      `(${due?.conversation.id})`);
     check("tekrarı gelen ders due işaretli", due?.due === true);
 
     // Zayıf kural: tekrarı gelmiş ve son denemede geçilememiş olan.
     const weak = await weakRules(USER);
-    check("oturmamış kural listeleniyor", weak.includes(lesson.focusId), `(${weak.join(", ")})`);
+    check("oturmamış kural listeleniyor", weak.includes(conversation.focusId), `(${weak.join(", ")})`);
   }
 
   console.log("\n11r2) Konuşma istemi derse bağlı");
   {
-    const lesson = LESSONS[0];
-    const prompt = roleplayPrompt(lesson);
+    const conversation = CONVERSATIONS[0];
+    const prompt = chatPrompt(conversation);
     // İstem dersin kalıplarını ve kelimelerini taşımak zorunda: düzeltmenin ve
     // yönlendirmenin „bu dersin öğrettiğine göre“ yapılmasını sağlayan tek şey bu.
     check("istem dersin kalıplarını taşıyor",
-      lesson.patterns.every((p) => prompt.includes(p.de)));
+      conversation.patterns.every((p) => prompt.includes(p.de)));
     check("istem dersin kelimelerini taşıyor",
-      lesson.vocab.every((v) => prompt.includes(v.de)));
-    check("istem sahneyi taşıyor", prompt.includes(lesson.roleplay.scene.slice(0, 30)));
-    check("istem seviyeyi taşıyor", prompt.includes(lesson.level));
+      conversation.vocab.every((v) => prompt.includes(v.de)));
+    check("istem sahneyi taşıyor", prompt.includes(conversation.chat.scene.slice(0, 30)));
+    check("istem seviyeyi taşıyor", prompt.includes(conversation.level));
     check("istem düzeltme işaretini taşıyor", prompt.includes(CORRECTION_MARK));
     check("istem öneri işaretini taşıyor", prompt.includes(SUGGESTION_MARK));
     // Konuşmanın yayı: her faz kendi yönergesini almalı. Tek "kapanış" bayrağı
     // yetmiyordu — kapanıştan bir tur önce toparlama olmayınca konuşma
     // bitmiyor, kesiliyordu.
-    check("amaç isteme giriyor", prompt.includes("KONUŞMANIN AMACI") && prompt.includes(lesson.roleplay.goal));
+    check("amaç isteme giriyor", prompt.includes("KONUŞMANIN AMACI") && prompt.includes(conversation.chat.goal));
     check("yay isteme giriyor", prompt.includes("KONUŞMANIN YAYI"));
-    check("açılış yönergesi istenince var", roleplayPrompt(lesson, { phase: "open" }).includes("ŞU AN: AÇILIŞ"));
-    check("toparlama yönergesi istenince var", roleplayPrompt(lesson, { phase: "wrapup" }).includes("TOPARLAMA TURU"));
-    check("kapanış talimatı istenince var", roleplayPrompt(lesson, { phase: "closing" }).includes("KAPANIŞ TURU"));
+    check("açılış yönergesi istenince var", chatPrompt(conversation, { phase: "open" }).includes("ŞU AN: AÇILIŞ"));
+    check("toparlama yönergesi istenince var", chatPrompt(conversation, { phase: "wrapup" }).includes("TOPARLAMA TURU"));
+    check("kapanış talimatı istenince var", chatPrompt(conversation, { phase: "closing" }).includes("KAPANIŞ TURU"));
     check("kapanış talimatı gelişme fazında yok", !prompt.includes("KAPANIŞ TURU"));
     // Geçmiş kırpması en uzun konuşmayı taşımalı: taşımazsa sunucudaki tur
     // sayımı eksik çıkar ve model kapanış fazına hiç geçmez.
-    check("geçmiş sınırı en uzun konuşmayı taşıyor", MAX_HISTORY >= lesson.roleplay.minTurns * 2 + 1, `(${MAX_HISTORY})`);
+    check("geçmiş sınırı en uzun konuşmayı taşıyor", MAX_HISTORY >= conversation.chat.minTurns * 2 + 1, `(${MAX_HISTORY})`);
   }
 
   console.log("\n11s) Sapmalar kuraldan da türetiliyor");
@@ -1546,8 +1546,8 @@ async function main() {
   check("sınav tam sayıda tur üretti", boss.rounds.length === BOSS_ROUNDS, `(${boss.rounds.length})`);
   check("havuz yeterli", boss.pool >= 8, `(${boss.pool})`);
   check("modül başlığı geliyor", boss.meta.title.length > 0, `(${boss.meta.title})`);
-  check("ders sayısı 10", boss.meta.lessonsTotal === 10, `(${boss.meta.lessonsTotal})`);
-  check("hiç ders bitmemişken 0", boss.meta.lessonsDone === 0);
+  check("ders sayısı 10", boss.meta.conversationsTotal === 10, `(${boss.meta.conversationsTotal})`);
+  check("hiç ders bitmemişken 0", boss.meta.conversationsDone === 0);
   check("henüz geçilmemiş", boss.meta.bestLeft === null);
 
   // Sorular modülün kelimelerinden gelmeli — sınavın tek anlamı bu.
@@ -1836,14 +1836,14 @@ async function main() {
   check("sağlayıcısız ortamda not_configured", chatConfigured() ? noProvider.ok || !noProvider.ok : !noProvider.ok && noProvider.reason === "not_configured");
 
   console.log("\n30) Çevrimdışı rol yapma (WP-04)");
-  const scripted = LESSONS.filter((l) => l.roleplay.script?.length);
+  const scripted = CONVERSATIONS.filter((l) => l.chat.script?.length);
   check("10 A1 dersinde senaryo var", scripted.length >= 10 && scripted.every((l) => l.level === "A1"));
-  check("her senaryo minTurns kadar tur içeriyor", scripted.every((l) => l.roleplay.script!.length >= l.roleplay.minTurns));
-  check("senaryonun ilk turu açılışla aynı", scripted.every((l) => l.roleplay.script![0].ask === l.roleplay.opening));
-  check("senaryo dalları var olan turlara gidiyor", scripted.every((l) => l.roleplay.script!.every((t) => t.replies.every((r) => !r.next || l.roleplay.script!.some((x) => x.id === r.next)))));
-  const hallo = findLesson("de-a1-hallo")!;
+  check("her senaryo minTurns kadar tur içeriyor", scripted.every((l) => l.chat.script!.length >= l.chat.minTurns));
+  check("senaryonun ilk turu açılışla aynı", scripted.every((l) => l.chat.script![0].ask === l.chat.opening));
+  check("senaryo dalları var olan turlara gidiyor", scripted.every((l) => l.chat.script!.every((t) => t.replies.every((r) => !r.next || l.chat.script!.some((x) => x.id === r.next)))));
+  const hallo = findConversation("de-a1-hallo")!;
   let os = offlineStart(hallo);
-  check("açılış senaryodan", os.opening === hallo.roleplay.opening && os.hint !== null);
+  check("açılış senaryodan", os.opening === hallo.chat.opening && os.hint !== null);
   let ost = os.state;
   const said = ["ich heisse mehmet", "ich komme aus der türkei", "ich wohne hier im zweiten stock", "mit meiner familie"];
   let ended = false;
@@ -1861,18 +1861,18 @@ async function main() {
     beklenti güncellenmemişti. Ölçüt artık senaryonun kendi uzunluğu: her
     turda örnek cevabı söyleyerek sonuna kadar gidiliyor.
   */
-  for (const turn of hallo.roleplay.script!.slice(said.length)) {
+  for (const turn of hallo.chat.script!.slice(said.length)) {
     if (ended) break;
     const r = offlineReply(hallo, ost, turn.replies[0]?.match[0] ?? turn.fallback.example);
     ost = r.state;
     ended = r.ended;
   }
-  check("senaryo sonuna kadar gidince bitiyor", ended && ost.userTurns >= hallo.roleplay.minTurns, `(${ost.userTurns}/${hallo.roleplay.minTurns})`);
+  check("senaryo sonuna kadar gidince bitiyor", ended && ost.userTurns >= hallo.chat.minTurns, `(${ost.userTurns}/${hallo.chat.minTurns})`);
   const halloSum = offlineSummary(hallo, ost);
   check("özet: üç kalıp kullanıldı, puan 100", halloSum.used.length === 3 && halloSum.score === 100);
   const miss1 = offlineReply(hallo, offlineStart(hallo).state, "guten abend, schönes wetter heute");
   check("anlaşılmayan cevap: tur ilerlemiyor, örnek öneriliyor", !miss1.understood && miss1.state.turnId === "t1" && miss1.content.includes("[SAY] Ich heiße Mehmet."));
-  const noScript = LESSONS.find((l) => !l.roleplay.script?.length && l.patterns.length >= 2)!;
+  const noScript = CONVERSATIONS.find((l) => !l.chat.script?.length && l.patterns.length >= 2)!;
   os = offlineStart(noScript);
   check("senaryosuz ders: kalıp modu, ilk kalıp isteniyor", os.state.turnId === null && os.hint?.key === "chat.hint_use_pattern");
   const p0 = noScript.patterns[0].de;
@@ -1884,9 +1884,9 @@ async function main() {
   for (const p of noScript.patterns.slice(1)) stAll = offlineReply(noScript, stAll, p.de.replace(/…/g, "x")).state;
   check("bütün kalıplar → bitti, puan 100", stAll.ended && offlineSummary(noScript, stAll).score === 100);
   check("patternUsed: kısa kalıp tam kelime ister", patternUsed("Und dir?", "gut und dir") && !patternUsed("Und dir?", "gut, dirigent"));
-  // Sağlayıcısız ortamda ders geçilebiliyor: senaryo bitti → chatDone → recordLesson.passed
+  // Sağlayıcısız ortamda ders geçilebiliyor: senaryo bitti → chatDone → recordConversation.passed
   await db.delete(userConversations).where(eq(userConversations.userId, USER));
-  const offlineRec = await recordLesson(USER, hallo, scoredSteps(hallo), ost.userTurns >= hallo.roleplay.minTurns, monday);
+  const offlineRec = await recordConversation(USER, hallo, scoredSteps(hallo), ost.userTurns >= hallo.chat.minTurns, monday);
   check("senaryolu konuşmayla ders geçildi", offlineRec.passed === true);
 
   console.log("\n31) Çeviri turu ve kısmi kalite (WP-10)");
@@ -1947,7 +1947,7 @@ async function main() {
   await reset();
   const planProfile = await ensureProfile(USER, "E2E");
   let plan = await buildPlan(USER, monday, planProfile.course, "A1", planProfile.dailyGoal);
-  check("plan tur + ders + beceri öğeleri", plan.items.some((i) => i.id === "review") && plan.items.some((i) => i.id === "lesson") && plan.items.some((i) => i.id === "skill"), plan.items.map((i) => i.id).join(","));
+  check("plan tur + ders + beceri öğeleri", plan.items.some((i) => i.id === "review") && plan.items.some((i) => i.id === "conversation") && plan.items.some((i) => i.id === "skill"), plan.items.map((i) => i.id).join(","));
   check("hiçbiri yapılmadı, süre > 0", plan.items.every((i) => !i.done) && plan.minutes > 0 && !plan.complete);
   check("zayıf nokta yok (hata yok)", !plan.items.some((i) => i.id === "weak"));
   const planWords = await db.select().from(words).where(isNotNull(words.artikel)).limit(5);
@@ -1982,17 +1982,17 @@ async function main() {
   console.log("\n36) CEFR can-do haritası (WP-43)");
   check("~120 ifade, kimlikler benzersiz", CANDO.length >= 110 && new Set(CANDO.map((c) => c.id)).size === CANDO.length);
   check("her seviyede 4+ beceri", (["A1", "A2", "B1", "B2", "C1"] as const).every((l) => new Set(CANDO.filter((c) => c.level === l).map((c) => c.skill)).size >= 4));
-  check("her ders ve egzersiz etiketleniyor", LESSONS.every((l) => candoForLesson(l).length > 0) && BUNDLED_EXERCISES.every((e) => candoForExercise(e).length > 0));
-  check("tanışma dersi → A1.SPK.1", candoForLesson(findLesson("de-a1-hallo")!).includes("A1.SPK.1"));
-  check("içeriğin kendi etiketi kazanır", candoForLesson({ level: "A1", icon: "greet", focusId: "x", cando: ["A1.WR.3"] }).join() === "A1.WR.3");
+  check("her ders ve egzersiz etiketleniyor", CONVERSATIONS.every((l) => candoForConversation(l).length > 0) && BUNDLED_EXERCISES.every((e) => candoForExercise(e).length > 0));
+  check("tanışma dersi → A1.SPK.1", candoForConversation(findConversation("de-a1-hallo")!).includes("A1.SPK.1"));
+  check("içeriğin kendi etiketi kazanır", candoForConversation({ level: "A1", icon: "greet", focusId: "x", cando: ["A1.WR.3"] }).join() === "A1.WR.3");
   await reset();
   await ensureProfile(USER, "E2E");
   let cs = await candoSummary(USER, "de");
   check("kanıt yokken hepsi 'none'", cs.items.every((i) => i.state === "none") && cs.byLevel.A1.proven === 0);
   // A1.SPK.1'e bağlı iki ders geçilince kanıtlı
-  const spk1 = LESSONS.filter((l) => l.course === "de" && candoForLesson(l).includes("A1.SPK.1")).slice(0, 2);
+  const spk1 = CONVERSATIONS.filter((l) => l.course === "de" && candoForConversation(l).includes("A1.SPK.1")).slice(0, 2);
   check("A1.SPK.1'e bağlı en az iki ders var", spk1.length === 2, `${spk1.length}`);
-  for (const l of spk1) await recordLesson(USER, l, scoredSteps(l), true, monday);
+  for (const l of spk1) await recordConversation(USER, l, scoredSteps(l), true, monday);
   cs = await candoSummary(USER, "de");
   check("iki ders → A1.SPK.1 kanıtlı", cs.items.find((i) => i.cando.id === "A1.SPK.1")?.state === "proven" && cs.byLevel.A1.proven >= 1);
   const rdEx = BUNDLED_EXERCISES.find((e) => e.skill === "reading" && e.level === "A1" && (!e.course || e.course === "de"))!;
@@ -2143,9 +2143,9 @@ async function main() {
   check("okuma ve dinleme modülün planından", pm.sections.reading[0].id === "r:A1.3" && pm.sections.listening[0].id === "l:A1.3");
   check("dinleme diyaloğu replikli, metni gizli", (pm.sections.listening[0].segments?.length ?? 0) >= 4 && !pm.sections.listening[0].text);
   check("dilbilgisi bölümü kâğıtta yok (2026-08'de kaldırıldı)", pm.sections.grammar.length === 0);
-  const modLessons = moduleContent("de", "A1", 2).lessons.map((l) => l.id);
-  check("hüküm maddeleri modülün derslerinden", pm.sections.grammar.filter((g) => g.kind === "judge").every((g) => modLessons.some((id) => g.id.startsWith(`j:${id}#`))));
-  check("cümle kurma maddeleri modülün derslerinden", pm.sections.produce.every((i) => modLessons.some((id) => i.id.startsWith(`p:${id}#`))));
+  const modConversations = moduleContent("de", "A1", 2).conversations.map((l) => l.id);
+  check("hüküm maddeleri modülün derslerinden", pm.sections.grammar.filter((g) => g.kind === "judge").every((g) => modConversations.some((id) => g.id.startsWith(`j:${id}#`))));
+  check("cümle kurma maddeleri modülün derslerinden", pm.sections.produce.every((i) => modConversations.some((id) => i.id.startsWith(`p:${id}#`))));
   check("cümle kurma sorusu cevabı ele vermiyor", pm.sections.produce.every((i) => !foldSentence(i.prompt).includes(foldSentence(i.de))));
   check("dizme maddesinde parçalar cümlenin kelimeleri", pm.sections.produce.filter((i) => i.mode === "order").every((i) => [...(i.chunks ?? [])].sort().join(" ") === i.de.trim().split(/\s+/).sort().join(" ")));
   const pmB = await buildExam(USER, "de", "A2", 4, monday);

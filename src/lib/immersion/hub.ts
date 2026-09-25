@@ -17,8 +17,8 @@ type TrackState = {
     complete: boolean;
     done: number;
     total: number;
-    lessonsDone: number;
-    lessonsTotal: number;
+    conversationsDone: number;
+    conversationsTotal: number;
     items: { item: ImmersionItem; playable: boolean; done: boolean; attempted: boolean; open: boolean }[];
   }[];
   currentIndex: number;
@@ -36,8 +36,8 @@ export function buildHubUnits(state: TrackState): HubUnit[] {
     complete: u.complete,
     done: u.done,
     total: u.total,
-    lessonsDone: u.lessonsDone,
-    lessonsTotal: u.lessonsTotal,
+    conversationsDone: u.conversationsDone,
+    conversationsTotal: u.conversationsTotal,
     items: u.items.map((s) => ({
       id: s.item.id,
       kind: s.item.kind,
@@ -55,7 +55,7 @@ export function buildHubUnits(state: TrackState): HubUnit[] {
 /** Item → oynatıcı rotası. Yer tutucular (ref=null) ve içeriği-olmayan türler null. */
 export function hrefFor(item: ImmersionItem): string | null {
   if (item.ref === null) return null;
-  if (item.kind === "lesson") return `/lessons/${item.ref}`;
+  if (item.kind === "conversation") return `/conversations/${item.ref}`;
   if (item.kind === "read" || item.kind === "listen" || item.kind === "write") return `/immersion/skill/${item.ref}`;
   if (item.kind === "quiz") return `/immersion/quiz/${item.ref}`;
   if (item.kind === "checkpoint") return `/immersion/quiz/${item.ref}?mode=checkpoint`;

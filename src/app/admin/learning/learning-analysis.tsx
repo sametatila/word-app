@@ -34,8 +34,8 @@ async function post(body: Record<string, unknown>): Promise<string | null> {
   }
 }
 
-export function LearningAnalysis({ lessons, skills, path, mockItems, mockScanned, minAnswers }: {
-  lessons: AnalysisRow[];
+export function LearningAnalysis({ conversations, skills, path, mockItems, mockScanned, minAnswers }: {
+  conversations: AnalysisRow[];
   skills: AnalysisRow[];
   path: AnalysisRow[];
   mockItems: MockItemRow[];
@@ -44,7 +44,7 @@ export function LearningAnalysis({ lessons, skills, path, mockItems, mockScanned
 }) {
   const [tab, setTab] = useState<(typeof TABS)[number]>("Dersler");
   const [off, setOff] = useState<Set<string>>(
-    () => new Set([...lessons, ...skills].filter((r) => r.disabled).map((r) => `${r.pack}:${r.id}`).concat(mockItems.filter((m) => m.disabled).map((m) => `${m.pack}:${m.paperId}`))),
+    () => new Set([...conversations, ...skills].filter((r) => r.disabled).map((r) => `${r.pack}:${r.id}`).concat(mockItems.filter((m) => m.disabled).map((m) => `${m.pack}:${m.paperId}`))),
   );
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<{ tone: Tone; text: string } | null>(null);
@@ -108,7 +108,7 @@ export function LearningAnalysis({ lessons, skills, path, mockItems, mockScanned
       </div>
       {msg ? <div className="mb-3"><Notice tone={msg.tone}>{msg.text}</Notice></div> : null}
 
-      {tab === "Dersler" ? <DataTable head={unitHead} rows={unitRows(lessons)} empty="Analiz için yeterli ders sonucu yok." /> : null}
+      {tab === "Dersler" ? <DataTable head={unitHead} rows={unitRows(conversations)} empty="Analiz için yeterli ders sonucu yok." /> : null}
       {tab === "Beceri egzersizleri" ? <DataTable head={unitHead} rows={unitRows(skills)} empty="Analiz için yeterli egzersiz sonucu yok." /> : null}
       {tab === "Deneme sınavı soruları" ? (
         <>

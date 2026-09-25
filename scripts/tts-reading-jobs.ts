@@ -9,7 +9,7 @@
  * `/api/tts` isteği, yani ayrı bir klip; anahtarı bu temiz metin. `mergeForSpeech` bir istemci
  * bileşeninin içinde (DOM'a dokunuyor), buraya aynısı yazıldı — oradaki bölme değişirse bu da değişmeli.
  *
- * Ses: `lessonVoice(kurs)` — kullanıcı tercihinden bağımsız, de → Katja → Defne, en → Jenny → Defne.
+ * Ses: `conversationVoice(kurs)` — kullanıcı tercihinden bağımsız, de → Katja → Defne, en → Jenny → Defne.
  * Hız: istemci `pace: "listen"` istiyor; dosya doğal hızda üretiliyor, hız sunum tarafının kararı.
  */
 import { writeFileSync } from "node:fs";

@@ -1,6 +1,6 @@
-import type { ExamCando } from "@/lib/lessons/module-exam";
+import type { ExamCando } from "@/lib/conversations/module-exam";
 import type { CefrLevel, SpeechConfusion, WritingTask } from "@/lib/skills/types";
-import type { Segment } from "@/lib/lessons/types";
+import type { Segment } from "@/lib/conversations/types";
 import type { Round } from "@/lib/types";
 
 /**

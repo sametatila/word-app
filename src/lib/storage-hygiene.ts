@@ -4,11 +4,14 @@
  *
  * Mobil karşılığı `mobile/src/lib/storageMigration` `sweepDeviceStorage`.
  */
+import { migrateLegacyWebStorage } from "@/lib/legacy-names";
 
 /** Yarım dersin saklandığı anahtarın öneki: `<önek>:<dersId>`. */
-export const LESSON_RESUME_KEY = "lernomi-lesson-progress";
+export const CONVERSATION_RESUME_KEY = "lernomi-conversation-progress";
 /** Yarım ders bu kadar gün sonra devam ettirilmiyor ve siliniyor. */
-export const LESSON_RESUME_DAYS = 3;
+export const CONVERSATION_RESUME_DAYS = 3;
+/** Gönderilmeyi bekleyen Konuşma adımı sonuçları (`lib/conversation-queue`). */
+export const CONVERSATIONS_PENDING_KEY = "lernomi-conversations-pending";
 
 /*
   SAHİPSİZ ANAHTARLAR. Kodu silinmiş ama cihazlarda duran değerler: okuyan
@@ -57,13 +60,16 @@ export function sweepDeviceStorage(): void {
   } catch {
     return;
   }
+  /* Eski anahtarlardaki yarım adım ve bekleyen sonuç önce yeni anahtara
+     taşınıyor (geçici, bkz. lib/legacy-names), sonra temizlik. */
+  migrateLegacyWebStorage(store, CONVERSATIONS_PENDING_KEY, CONVERSATION_RESUME_KEY);
   try {
     for (const key of DEAD_KEYS) store.removeItem(key);
-    const cutoff = Date.now() - LESSON_RESUME_DAYS * 86400000;
+    const cutoff = Date.now() - CONVERSATION_RESUME_DAYS * 86400000;
     const stale: string[] = [];
     for (let i = 0; i < store.length; i++) {
       const key = store.key(i);
-      if (!key || !key.startsWith(`${LESSON_RESUME_KEY}:`)) continue;
+      if (!key || !key.startsWith(`${CONVERSATION_RESUME_KEY}:`)) continue;
       let at = 0;
       try {
         at = Number((JSON.parse(store.getItem(key) ?? "null") as { at?: unknown } | null)?.at) || 0;

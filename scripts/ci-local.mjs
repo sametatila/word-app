@@ -9,7 +9,7 @@
  * NEDEN VAR. 2026-09-12'de bu oturum 25 komutu CI'a ekledi ve hepsini TEK TEK
  * çalıştırdı; sonra adımları DOSYADAKİ SIRAYLA koşturunca daha önce hiç
  * çalıştırılmamış ÜÇ mevcut kapının kırmızı olduğu çıktı (`typecheck:scripts`,
- * `check:parity`, `check:lessons-swap`) — üçü de aynı oturumun imza
+ * `check:parity`, `check:conversations-swap`) — üçü de aynı oturumun imza
  * değişikliklerinden. Tek tek çalıştırmak bunu göstermiyordu, çünkü kapıların
  * hangisinin var olduğunu bilmek için iş akışını okumak gerekiyordu.
  *

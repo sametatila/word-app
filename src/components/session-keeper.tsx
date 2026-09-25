@@ -63,7 +63,7 @@ const ACCOUNT_SCOPED_PREFIXES = [
   "lernomi-course",
   "lernomi-voice",
   "lernomi-skills",
-  "lernomi-lesson-progress",
+  "lernomi-conversation-progress",
   "lernomi-draft-",
   "lernomi-session-refreshed",
   // Başlangıç ekranının önbelleği (bkz. lib/use-cached): plan ve görevler
@@ -72,7 +72,7 @@ const ACCOUNT_SCOPED_PREFIXES = [
   /*
     GÖNDERİLMEYİ BEKLEYEN KAYITLAR DA HESABA AİT.
 
-    `lernomi-answer-queue` ve `lernomi-lessons-pending` ağ yokken biriken
+    `lernomi-answer-queue` ve `lernomi-conversations-pending` ağ yokken biriken
     cevapları/ilerlemeyi tutuyor ve bir sonraki AÇILIŞTA gönderiliyorlar.
     İkisi de listede yoktu: A çıkıp B girdiğinde A'nın bekleyen cevapları
     B'nin hesabına yazılıyordu — B'nin SRS aralıkları yabancı cevaplarla
@@ -83,7 +83,7 @@ const ACCOUNT_SCOPED_PREFIXES = [
     aynı kuralla siliniyor.
   */
   "lernomi-answer-queue",
-  "lernomi-lessons-pending",
+  "lernomi-conversations-pending",
   /*
     YARIM DENEME KOŞUSU — yukarıdaki yorum bunu "baştan beri aynı kuralla
     siliniyor" diye sayıyordu ama LİSTEDE YOKTU: koşunun anahtarı
@@ -152,7 +152,7 @@ function forgetPreviousAccount() {
  * kullanıcı "çıktım" dediği için izler gitmeli.
  *
  * Gönderilmeyi bekleyen kuyruklar (`lernomi-answer-queue`,
- * `lernomi-lessons-pending`) da gidiyor: çevrimiçiyken açılışta zaten
+ * `lernomi-conversations-pending`) da gidiyor: çevrimiçiyken açılışta zaten
  * boşaltılıyorlar, çevrimdışıysa çıkış isteği de ulaşmıyor. Başka bir
  * hesaba yazılma riski kaybolma riskinden ağır (yukarıdaki listeye bak).
  */

@@ -284,7 +284,7 @@ for (const course of courses) {
   console.log(`Kütüphane içi kopya: ${ic.length ? `${ic.length} çift` : "yok"}`);
   for (const d of ic.slice(0, 8)) console.log(d);
   for (const f of ["de-a1", "de-a2", "de-b1", "de-b2", "de-c1", "en-a1", "en-a2"]) {
-    const path = `mobile/src/data/lessons/${f}.json`;
+    const path = `mobile/src/data/conversations/${f}.json`;
     if (fs.existsSync(path)) others.push(fs.readFileSync(path, "utf8"));
   }
   for (const f of ["papers.json", "papers-en.json"]) {

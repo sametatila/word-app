@@ -50,7 +50,7 @@ import type { PathQuota } from "@/lib/premium/unlock-copy";
 */
 /** Tür → sözlük anahtarı; etiket kullanım anında çözülüyor (mobil `KIND_KEY`). */
 const KIND_KEY: Record<ImmersionItemKind, string> = {
-  lesson: "unitkind.conversation",
+  conversation: "unitkind.conversation",
   read: "unitkind.read",
   listen: "unitkind.listen",
   write: "unitkind.write",
@@ -61,7 +61,7 @@ const KIND_KEY: Record<ImmersionItemKind, string> = {
 
 /** Tür → renk. Mobil `KIND_TINT` ile birebir. */
 export const KIND_TINT: Record<ImmersionItemKind, string> = {
-  lesson: "var(--color-brand-500)",
+  conversation: "var(--color-brand-500)",
   read: "var(--color-sky-500)",
   listen: "var(--color-violet-500)",
   write: "var(--color-mint-500)",
@@ -91,7 +91,7 @@ export function KindIconFor({ kind, size = 22 }: { kind: string; size?: number }
     /* Ders türü AÇIKÇA yazılı (varsayılana bırakılmıyor): harita böyle
        okununca Android'in `unitKind` tablosuyla satır satır karşılaştırılıyor
        ve tanınmayan tür yine varsayılana düşüyor. */
-    case "lesson":
+    case "conversation":
       return <LearnIcon {...p} />;
     default:
       return <LearnIcon {...p} />;
@@ -106,9 +106,9 @@ function counted(items: HubItem[]): HubItem[] {
   return items.filter((i) => i.playable);
 }
 
-/** Konuşma adımının ders kimliği — `hrefFor` `/lessons/<id>` kuruyor. */
-const lessonRef = (it: HubItem): string | null =>
-  it.kind === "lesson" && it.href?.startsWith("/lessons/") ? it.href.slice("/lessons/".length) : null;
+/** Konuşma adımının ders kimliği — `hrefFor` `/conversations/<id>` kuruyor. */
+const conversationRef = (it: HubItem): string | null =>
+  it.kind === "conversation" && it.href?.startsWith("/conversations/") ? it.href.slice("/conversations/".length) : null;
 
 export function UnitPane({
   unit,
@@ -130,7 +130,7 @@ export function UnitPane({
   // yerine ünite yalnız gerçekten yapılabilecek adımları gösteriyor.
   const t = useT();
   const course = useCourse();
-  const items = unit.items.filter((i) => i.playable || i.kind === "lesson");
+  const items = unit.items.filter((i) => i.playable || i.kind === "conversation");
 
   /*
     "Şimdi" = ilk açık ve HENÜZ DENENMEMİŞ adım — bitmemiş ilk adım değil.
@@ -145,10 +145,10 @@ export function UnitPane({
   /* Hakkı bitmiş ve sahiplenilmemiş Konuşma adımı kilitli (sunucu da aynı
      kuralla 403 veriyor — `/api/chat`). */
   const convLocked = (it: HubItem) => {
-    const ref = lessonRef(it);
-    return Boolean(quota?.convLockable && ref && !quota.ownedLessons.includes(ref));
+    const ref = conversationRef(it);
+    return Boolean(quota?.convLockable && ref && !quota.ownedConversations.includes(ref));
   };
-  const hasLesson = items.some((i) => i.kind === "lesson");
+  const hasConversation = items.some((i) => i.kind === "conversation");
   const hasWrite = items.some((i) => i.kind === "write");
 
   const list = counted(items);
@@ -254,7 +254,7 @@ export function UnitPane({
       {/* KALAN HAK VE NASIL AÇILIR — ünitenin altında, adımların hemen
           ardından. Hak varken kısa (başlık + ne zaman), bitmişken tam kart
           (✓ koşullar, seri çubuğu, Premium'la hemen aç). */}
-      {quota?.conv && hasLesson ? (
+      {quota?.conv && hasConversation ? (
         <div className="mt-4">
           <UnlockProgress
             copy={quota.conv.copy}

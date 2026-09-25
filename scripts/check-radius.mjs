@@ -46,9 +46,9 @@ const ALLOW = new Map([
     ["h-5 w-5 shrink-0 items-center justify-center rounded-md",
      "20 px onay kutusu: ölçeğin en küçüğü (chip 10) kareyi daireye çevirir ve daire radyo düğmesi demek. Mobil karşılığı da 6 (`AuthScreen` güven kutusu)"],
   ]],
-  ["src/components/lessons/lesson-player.tsx", [
+  ["src/components/conversations/conversation-player.tsx", [
     ["h-full flex-1 rounded-sm",
-     "saç teli kalınlığındaki adım çubuğu; mobil aynı çubuğa 3 yazıyor (`LessonScreen`), chip 10 çubuğu tamamen yuvarlatırdı"],
+     "saç teli kalınlığındaki adım çubuğu; mobil aynı çubuğa 3 yazıyor (`ConversationScreen`), chip 10 çubuğu tamamen yuvarlatırdı"],
   ]],
 ]);
 
@@ -72,7 +72,7 @@ const STEP = /\brounded-(?:[a-z]{1,2}-)?(?:sm|md|lg|xl|2xl|3xl)\b/g;
  *     11). Mobilin kendi `SkeletonBar`/`SkeletonPill`i de boyle hesapliyor.
  *   SAC TELI CUBUK: 2-9 px yaricap, ilerleme cubuklarinin ucu. Olcegin en
  *     kucugu (10) bu cubuklari tamamen yuvarlatirdi; webde de ayni sinif
- *     kayitli istisna (`lesson-player` adim cubugu).
+ *     kayitli istisna (`conversation-player` adim cubugu).
  *
  * Kalan iki durum kusur ve ikisi de kesin olculebiliyor:
  *   1. Sayi olcekteki bir degere ESIT (10/14/20/26/34) -> jeton yazilmali,

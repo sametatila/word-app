@@ -8,7 +8,7 @@ import { translate, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
 import type { CefrLevel } from "@/lib/skills/types";
 import { computeProficiency } from "@/lib/proficiency";
 import { gatherEvidence, nextStep } from "@/lib/proficiency-data";
-import { nextLesson } from "@/lib/lessons/progress";
+import { nextConversation } from "@/lib/conversations/progress";
 import { weeklyStatus } from "@/lib/weekly";
 import { QUIZ_ITEMS } from "@/lib/weekly-quiz/types";
 import { weeklySummary } from "@/lib/growth";
@@ -22,7 +22,7 @@ import { weeklySummary } from "@/lib/growth";
  *
  * Öğeler ve kaynakları:
  *   1. Tekrar turu — SRS: vadesi gelen kelime sayısı (`user_words.due_at`).
- *   2. Sıradaki ders — `nextLesson` (vadesi gelen ya da ilk açılmamış).
+ *   2. Sıradaki ders — `nextConversation` (vadesi gelen ya da ilk açılmamış).
  *   3. Bir beceri egzersizi — seviyede en az çalışılmış beceriden, yapılmamış
  *      ilk egzersiz (WP-50 yetkinlik modeli gelene kadar geçici kural:
  *      "en az yapılan beceri" = en zayıf varsayımı).
@@ -36,7 +36,7 @@ import { weeklySummary } from "@/lib/growth";
  */
 
 export type PlanItem = {
-  id: "review" | "lesson" | "skill" | "weak" | "weekly";
+  id: "review" | "conversation" | "skill" | "weak" | "weekly";
   title: string;
   detail: string;
   minutes: number;
@@ -93,20 +93,20 @@ export async function buildPlan(
 
   // 2. Sıradaki ders
   try {
-    const next = await nextLesson(userId, course, level);
+    const next = await nextConversation(userId, course, level);
     if (next) {
       const [row] = await db
         .select({ lastAt: userConversations.lastAt })
         .from(userConversations)
-        .where(and(eq(userConversations.userId, userId), eq(userConversations.conversationId, next.lesson.id)));
+        .where(and(eq(userConversations.userId, userId), eq(userConversations.conversationId, next.conversation.id)));
       const doneT = row ? row.lastAt.toISOString().slice(0, 10) >= today : false;
       items.push({
-        id: "lesson",
-        title: translate(lang, next.due ? "plan.conversation_review" : "plan.conversation", { title: next.lesson.title }),
-        detail: next.lesson.titleTr,
-        minutes: next.lesson.minutes,
+        id: "conversation",
+        title: translate(lang, next.due ? "plan.conversation_review" : "plan.conversation", { title: next.conversation.title }),
+        detail: next.conversation.titleTr,
+        minutes: next.conversation.minutes,
         done: doneT,
-        href: `/lessons/${next.lesson.id}`,
+        href: `/conversations/${next.conversation.id}`,
       });
     }
   } catch (err) {
@@ -196,7 +196,7 @@ export async function buildPlan(
   let summary: string | undefined;
   try {
     const s = await weeklySummary(userId, today, undefined, lang);
-    if (s.answers || s.exercises || s.lessonsPassed) summary = s.text;
+    if (s.answers || s.exercises || s.conversationsPassed) summary = s.text;
   } catch (err) {
     console.error("[plan] haftalık özet", err);
   }

@@ -18,7 +18,7 @@ import { UnlockProgress } from "@/components/unlock-progress";
 import { packCopy, tieredCopy } from "@/lib/premium/unlock-copy";
 import { getT, getLang } from "@/lib/i18n/server";
 import { formatPercent, isNativeLang } from "@/lib/i18n/dict";
-import { nativeMockText } from "@/lib/lessons/native-server";
+import { nativeMockText } from "@/lib/conversations/native-server";
 
 export const generateMetadata = titleMeta("mockexams.title");
 export const dynamic = "force-dynamic";

@@ -151,8 +151,8 @@ const DA_RE = /^(?:da|dar|wo|wor)(?:zu|für|mit|von|bei|an|auf|in|über|unter|na
 const TR_ISARET = /[ışğİıŞĞ]|\w+yor\b|\b(ne|neden|neye|neyi|neyden|nasıl|hangi|nedir|demek|sorusu|için|değil|yok|kaç|kim|kime|nerede|var|hasta|kişi)\b/i;
 const türkçeMi = (s) => TR_ISARET.test(String(s || ""));
 
-const { dersPaketi } = require("./lesson-packs.cjs");
-const dersler = (lv) => dersPaketi("de", lv);
+const { konusmaPaketi } = require("./conversation-packs.cjs");
+const dersler = (lv) => konusmaPaketi("de", lv);
 const ekle = (acc, ls) => {
   for (const l of ls) {
     for (const v of l.vocab || []) for (const w of parcala(v.de)) acc.add(w);

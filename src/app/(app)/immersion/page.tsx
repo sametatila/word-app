@@ -12,8 +12,8 @@ import Link from "next/link";
 import { PathIcon } from "@/components/icons";
 import { EmptyCard } from "@/components/empty-card";
 import { buildHubUnits } from "@/lib/immersion/hub";
-import { moduleExamPlan, hasModuleExams } from "@/lib/lessons/module-exam";
-import { nativeExamText } from "@/lib/lessons/native-server";
+import { moduleExamPlan, hasModuleExams } from "@/lib/conversations/module-exam";
+import { nativeExamText } from "@/lib/conversations/native-server";
 import { nativeOf } from "@/lib/courses";
 import { titleMeta } from "@/lib/page-meta";
 

@@ -27,8 +27,8 @@ import type { SkillExercise } from "../src/lib/skills/types";
 import { englishSurface } from "./lib/skill-surface";
 // Bütçe deseni: sıfıra inemeyen bulguyu yine de kapı yapar. Gerekçe `lib/budget.ts`de.
 import { butceUygula, butceBitir } from "./lib/budget";
-import { sourceLessonsFor as lessonsFor } from "../src/lib/lessons/source";
-import { UNIT_LESSONS } from "../src/lib/immersion/build";
+import { sourceConversationsFor as conversationsFor } from "../src/lib/conversations/source";
+import { UNIT_CONVERSATIONS } from "../src/lib/immersion/build";
 import { EN_FREE, LEVELS, measureEn, enNerede } from "./lib/en-gate";
 
 /** Egzersizin kendi sözlükçesi öğrenciye verilmiştir — havuza eklenir. */
@@ -51,18 +51,18 @@ function feed(pool: Set<string>, raw: string) {
 
 /**
  * Seviyenin `unit`. ünitesine kadar öğretilmiş küme: alt seviyelerin tamamı +
- * bu seviyenin ilk `UNIT_LESSONS * unit` dersi.
+ * bu seviyenin ilk `UNIT_CONVERSATIONS * unit` dersi.
  */
 function unitPool(level: string, unit: number): Set<string> {
   const pool = new Set(EN_FREE);
-  const lessons = lessonsFor("en");
+  const conversations = conversationsFor("en");
   const upto = LEVELS.indexOf(level);
-  for (const l of lessons) {
+  for (const l of conversations) {
     const li = LEVELS.indexOf(l.level.toLowerCase());
     if (li > upto) continue;
     if (li === upto) {
-      const n = lessons.filter((x) => x.level === l.level).indexOf(l);
-      if (n >= UNIT_LESSONS * unit) continue;
+      const n = conversations.filter((x) => x.level === l.level).indexOf(l);
+      if (n >= UNIT_CONVERSATIONS * unit) continue;
     }
     for (const v of l.vocab) feed(pool, v.de);
     for (const p of l.patterns) feed(pool, p.de);
@@ -80,9 +80,9 @@ function unitPool(level: string, unit: number): Set<string> {
  */
 function dersUnite(level: string): Map<string, number> {
   const m = new Map<string, number>();
-  const lessons = lessonsFor("en").filter((l) => l.level.toLowerCase() === level);
-  lessons.forEach((l, i) => {
-    const u = Math.floor(i / UNIT_LESSONS) + 1;
+  const conversations = conversationsFor("en").filter((l) => l.level.toLowerCase() === level);
+  conversations.forEach((l, i) => {
+    const u = Math.floor(i / UNIT_CONVERSATIONS) + 1;
     const koy = (raw: string) => {
       for (const w of raw.toLowerCase().replace(/[^\p{L}\p{N}'\s/-]/gu, " ").split(/[\s/]+/)) {
         const c = w.replace(/^'+|'+$/g, "");

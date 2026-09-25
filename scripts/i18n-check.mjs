@@ -117,7 +117,7 @@ for (const r of roots) walk(new URL(`../${r}`, import.meta.url).pathname);
   Muafiyet DOSYA düzeyinde ve gerekçeli; asıl çözüm yerel yardımcının adını
   çevirmenden ayırmak (o dosya başka bir oturumun elinde).
 */
-const YEREL_T = ["lib/lessons/native-de.ts"];
+const YEREL_T = ["lib/conversations/native-de.ts"];
 
 const missingUse = new Map();
 for (const file of files) {

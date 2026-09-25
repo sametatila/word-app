@@ -29,7 +29,7 @@ const ICON_THEME: Record<string, Theme> = {
 };
 
 /** Seviye × tema → konuşma ifadesi (dersin rol yapma sahnesi). */
-const LESSON_SPK: Record<CefrLevel, Record<Theme, number>> = {
+const CONVERSATION_SPK: Record<CefrLevel, Record<Theme, number>> = {
   A1: { social: 1, service: 3, work: 5 },
   A2: { social: 6, service: 1, work: 7 },
   B1: { social: 6, service: 3, work: 7 },
@@ -128,7 +128,7 @@ const FOCUS_GR_EN: [RegExp, Partial<Record<CefrLevel, number>>][] = [
   [/must|have to|should|\bcan\b|advice|rules|conditions|purpose/i, { A2: 16 }],
 ];
 
-export function candoForLesson(lesson: {
+export function candoForConversation(conversation: {
   level: CefrLevel;
   icon: string;
   focusId: string;
@@ -136,10 +136,10 @@ export function candoForLesson(lesson: {
   /** Kurs: dilbilgisi ifadesi bundan seçiliyor (varsayılan Almanca). */
   course?: string;
 }): string[] {
-  if (lesson.cando?.length) return lesson.cando.filter(isCandoId);
-  const theme = ICON_THEME[lesson.icon] ?? "social";
-  const out = [`${lesson.level}.SPK.${LESSON_SPK[lesson.level][theme]}`];
-  const gr = grammarCando(lesson.course, lesson.level, lesson.focusId);
+  if (conversation.cando?.length) return conversation.cando.filter(isCandoId);
+  const theme = ICON_THEME[conversation.icon] ?? "social";
+  const out = [`${conversation.level}.SPK.${CONVERSATION_SPK[conversation.level][theme]}`];
+  const gr = grammarCando(conversation.course, conversation.level, conversation.focusId);
   if (gr) out.push(gr);
   return out.filter(isCandoId);
 }

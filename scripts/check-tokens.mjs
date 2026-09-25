@@ -286,7 +286,7 @@ if (ctaSapan.length) {
  *       (`ui/ConfirmDialog` `padding: spacing.xl`)
  *   seviye testi                                Android `PlacementScreen`
  *       kart kullanmıyor, `padding: spacing.xl` (20)
- *   rol yapma sınavı                            Android `RoleplayExamScreen`
+ *   rol yapma sınavı                            Android `ConversationScoredScreen`
  *       dört yüzeyinin hepsinde `padding: spacing.xl` (20)
  *   tur sonucu ve başarım kartları               Android'in kendi bölünmüş
  *       ölçüleri (28/16 ve 20/16) - tek `p-` değil, yatay ve dikey ayrı yazılı
@@ -300,7 +300,7 @@ if (ctaSapan.length) {
  * üç yüzey öyle çevrildi (sınav ve deneme oynatıcıları, beceri sayfası, dört
  * iskelet, boss, meydan okuma, giriş kabuğu) ve her birinin gerekçesi commit
  * mesajında yazılı. */
-const KART_MUAF = /\/(?:confirm-dialog|mic-disclosure|report-dialog|placement-test|demo-placement|session-player|achievement-unlock|roleplay-exam)\.tsx$|\/placement\/loading\.tsx$|^src\/app\/page\.tsx$|^src\/app\/demo-|^src\/app\/admin\/|^src\/components\/skills\//;
+const KART_MUAF = /\/(?:confirm-dialog|mic-disclosure|report-dialog|placement-test|demo-placement|session-player|achievement-unlock|conversation-scored)\.tsx$|\/placement\/loading\.tsx$|^src\/app\/page\.tsx$|^src\/app\/demo-|^src\/app\/admin\/|^src\/components\/skills\//;
 let kartSapan = 0;
 const kartYer = [];
 for (const f of await walkDir("src")) {

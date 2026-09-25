@@ -202,7 +202,7 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
                   <button
                     type="button"
                     onClick={() => setReported(it)}
-                    /* Bkz. `lesson-player` bildir baglantisi: 11px yazinin
+                    /* Bkz. `conversation-player` bildir baglantisi: 11px yazinin
                        kendisi kadar bir hedef 24px asgarisinin altinda. */
                     className="muted mt-2 text-micro underline underline-offset-2 hit-8"
                   >

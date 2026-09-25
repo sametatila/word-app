@@ -28,7 +28,7 @@
  */
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { extractTasks, type TaskRow } from "./make.js";
-import { usSpelling } from "../../lessons/spelling.mjs";
+import { usSpelling } from "../../conversations/spelling.mjs";
 
 const DIR = new URL(".", import.meta.url).pathname;
 const ARG = (process.argv[2] || "all").toLowerCase();

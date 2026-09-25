@@ -31,7 +31,7 @@ export const PROFICIENCY_LABEL_KEYS: Record<ProficiencySkill, string> = {
   vocab: "unitkind.vocab",
 };
 
-export type EvidenceSource = "exam" | "assessment" | "lesson" | "exercise" | "drill" | "game";
+export type EvidenceSource = "exam" | "assessment" | "conversation" | "exercise" | "drill" | "game";
 
 /**
  * Kaynak ağırlıkları — GÜVENİLİRLİK sırası, çaba sırası değil.
@@ -48,7 +48,7 @@ export type EvidenceSource = "exam" | "assessment" | "lesson" | "exercise" | "dr
 export const SOURCE_WEIGHT: Record<EvidenceSource, number> = {
   exam: 3,
   assessment: 2,
-  lesson: 2,
+  conversation: 2,
   exercise: 1,
   drill: 1,
   game: 1,

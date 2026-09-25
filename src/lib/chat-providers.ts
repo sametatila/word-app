@@ -139,7 +139,7 @@ const ORDER: ProviderName[] = ["mistral", "groq", "cerebras"];
  * harcıyordu.
  *
  * Katman burada db'ye yazmıyor, yalnızca bildiriyor: sağlayıcı dosyası
- * betiklerden de kullanılıyor (roleplay-eval, coach-eval) ve oraya veritabanı
+ * betiklerden de kullanılıyor (chat-eval, coach-eval) ve oraya veritabanı
  * bağımlılığı taşımak testleri veritabanına bağlardı.
  */
 export type CallReport = (r: {

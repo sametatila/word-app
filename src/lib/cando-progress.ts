@@ -3,8 +3,8 @@ import { eq } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { userConversations, userSkills } from "@/lib/db/schema";
 import { CANDO, type Cando } from "@/lib/cando";
-import { candoForExercise, candoForLesson } from "@/lib/cando-map";
-import { allLessons } from "@/lib/lessons";
+import { candoForExercise, candoForConversation } from "@/lib/cando-map";
+import { allConversations } from "@/lib/conversations";
 import { listExerciseMeta } from "@/lib/skills";
 import type { CefrLevel } from "@/lib/skills/types";
 
@@ -35,12 +35,12 @@ export type CandoSummary = {
 const PASS_RATIO = 0.7;
 
 export async function candoSummary(userId: string, course: string): Promise<CandoSummary> {
-  const [lessonRows, skillRows, metas] = await Promise.all([
+  const [conversationRows, skillRows, metas] = await Promise.all([
     db.select().from(userConversations).where(eq(userConversations.userId, userId)),
     db.select({ exerciseId: userSkills.exerciseId, correct: userSkills.correct, total: userSkills.total, lastScore: userSkills.lastScore }).from(userSkills).where(eq(userSkills.userId, userId)),
     listExerciseMeta(course),
   ]);
-  const passedLessons = new Set(lessonRows.filter((r) => r.chatDone && r.total > 0 && r.correct / r.total >= PASS_RATIO).map((r) => r.conversationId));
+  const passedConversations = new Set(conversationRows.filter((r) => r.chatDone && r.total > 0 && r.correct / r.total >= PASS_RATIO).map((r) => r.conversationId));
   const doneExercises = new Set(
     skillRows.filter((r) => (r.lastScore ?? 0) >= 70 || (r.total > 0 && r.correct / r.total >= PASS_RATIO)).map((r) => r.exerciseId),
   );
@@ -54,8 +54,8 @@ export async function candoSummary(userId: string, course: string): Promise<Cand
     }
   };
   // Kurs TAM eşleşiyor: İngilizce öğrencinin "yapabildiklerim" sayacı Almanca
-  // derslerden doluyordu (bkz. lib/lessons/index `lessonsFor`).
-  for (const l of (await allLessons()).filter((l) => l.course === course)) bump(candoForLesson(l), passedLessons.has(l.id));
+  // derslerden doluyordu (bkz. lib/conversations/index `conversationsFor`).
+  for (const l of (await allConversations()).filter((l) => l.course === course)) bump(candoForConversation(l), passedConversations.has(l.id));
   for (const m of metas) bump(candoForExercise(m), doneExercises.has(m.id));
 
   const items: CandoEvidence[] = CANDO.filter((c) => !c.retired).map((c) => {

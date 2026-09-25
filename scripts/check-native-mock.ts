@@ -20,11 +20,11 @@ import {
   isTurkishStem,
   type MockShape,
   type NativeDict,
-} from "@/lib/lessons/native";
+} from "@/lib/conversations/native";
 import { extractMock } from "../data/mock-exams/prose/make.js";
 
 const dict = JSON.parse(
-  readFileSync("src/lib/lessons/generated/native-en.json", "utf8"),
+  readFileSync("src/lib/conversations/generated/native-en.json", "utf8"),
 ) as NativeDict;
 
 /* Almanca kâğıtlar. İngilizce kâğıtlar zaten İngilizce ve ANADİLİ İngilizce

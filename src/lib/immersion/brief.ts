@@ -1,12 +1,12 @@
 import type { CefrLevel } from "@/lib/skills/types";
 import type { NativeLang } from "@/lib/courses";
-import type { Lesson, PatternItem, VocabItem } from "@/lib/lessons/types";
-import { lessonsFor } from "@/lib/lessons/index";
-import { MODULE_SIZE, moduleTheme } from "@/lib/lessons/modules";
-import { UNIT_LESSONS } from "./build";
+import type { Conversation, PatternItem, VocabItem } from "@/lib/conversations/types";
+import { conversationsFor } from "@/lib/conversations/index";
+import { MODULE_SIZE, moduleTheme } from "@/lib/conversations/modules";
+import { UNIT_CONVERSATIONS } from "./build";
 
 /**
- * İçerik brief'i — "diğer item tipleri lesson'a göre türetilir" ilkesinin somut
+ * İçerik brief'i — "diğer item tipleri conversation'a göre türetilir" ilkesinin somut
  * hâli (bkz. docs/plan/immersion.md §İçerik stratejisi).
  *
  * Her ünite için, kendi 4 dersinden tema + hedef kelime/kalıp/cando'yu toplar.
@@ -21,9 +21,9 @@ export type UnitBrief = {
   level: CefrLevel;
   course: string;
   theme: string;
-  lessonIds: string[];
+  conversationIds: string[];
   /** Derslerin başlıkları (Almanca) — sahnenin adları. */
-  lessonTitles: string[];
+  conversationTitles: string[];
   /** Birleşik cando etiketleri (WP-43). */
   cando: string[];
   /** Birleşik kelime havuzu (de'ye göre tekilleştirilmiş). */
@@ -57,19 +57,19 @@ function dedupeBy<T>(xs: T[], key: (x: T) => string): T[] {
 export function buildUnitBriefs(
   course: string,
   level: CefrLevel,
-  lessons: Lesson[],
+  conversations: Conversation[],
   /** Ünite başlığının dili — öğrencinin anadili. */
   lang: NativeLang,
 ): UnitBrief[] {
   const briefs: UnitBrief[] = [];
-  const count = Math.ceil(lessons.length / UNIT_LESSONS);
+  const count = Math.ceil(conversations.length / UNIT_CONVERSATIONS);
   const levelLower = level.toLowerCase();
 
   for (let u = 0; u < count; u++) {
     const index = u + 1;
-    const unitLessons = lessons.slice(u * UNIT_LESSONS, u * UNIT_LESSONS + UNIT_LESSONS);
+    const unitConversations = conversations.slice(u * UNIT_CONVERSATIONS, u * UNIT_CONVERSATIONS + UNIT_CONVERSATIONS);
     const theme =
-      moduleTheme(course, level, Math.floor((u * UNIT_LESSONS) / MODULE_SIZE), lang) ||
+      moduleTheme(course, level, Math.floor((u * UNIT_CONVERSATIONS) / MODULE_SIZE), lang) ||
       `${level} · ${UNIT_WORD[lang]} ${index}`;
     briefs.push({
       unitId: `${course}-${levelLower}-u${String(index).padStart(2, "0")}`,
@@ -77,11 +77,11 @@ export function buildUnitBriefs(
       level,
       course,
       theme,
-      lessonIds: unitLessons.map((l) => l.id),
-      lessonTitles: unitLessons.map((l) => l.title),
-      cando: uniq(unitLessons.flatMap((l) => l.cando ?? [])),
-      vocab: dedupeBy(unitLessons.flatMap((l) => l.vocab), (v) => v.de),
-      patterns: dedupeBy(unitLessons.flatMap((l) => l.patterns), (p) => p.de),
+      conversationIds: unitConversations.map((l) => l.id),
+      conversationTitles: unitConversations.map((l) => l.title),
+      cando: uniq(unitConversations.flatMap((l) => l.cando ?? [])),
+      vocab: dedupeBy(unitConversations.flatMap((l) => l.vocab), (v) => v.de),
+      patterns: dedupeBy(unitConversations.flatMap((l) => l.patterns), (p) => p.de),
       needs: { read: 2, listen: 2, write: 2 },
     });
   }
@@ -106,18 +106,18 @@ export async function nativeUnitBriefs(
   course: string,
   level: CefrLevel,
   lang: NativeLang,
-  localise: (lesson: Lesson) => Promise<Lesson>,
+  localise: (conversation: Conversation) => Promise<Conversation>,
 ): Promise<UnitBrief[]> {
-  const lessons = await Promise.all(
-    (await lessonsFor(course))
+  const conversations = await Promise.all(
+    (await conversationsFor(course))
       .filter((l) => l.level === level)
       .map(localise),
   );
-  return buildUnitBriefs(course, level, lessons, lang);
+  return buildUnitBriefs(course, level, conversations, lang);
 }
 
 /** DB'siz sarmalayıcı: seviyenin derslerini katalogdan alıp brief'leri kurar. */
 export async function unitBriefs(course: string, level: CefrLevel, lang: NativeLang): Promise<UnitBrief[]> {
-  const lessons = (await lessonsFor(course)).filter((l) => l.level === level);
-  return buildUnitBriefs(course, level, lessons, lang);
+  const conversations = (await conversationsFor(course)).filter((l) => l.level === level);
+  return buildUnitBriefs(course, level, conversations, lang);
 }

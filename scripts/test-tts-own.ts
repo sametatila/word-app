@@ -14,7 +14,7 @@ import path from "node:path";
 import {
   edgeVoiceOf,
   glossVoice,
-  lessonVoice,
+  conversationVoice,
   resolveVoice,
   voicesFor,
 } from "../src/lib/tts/voices";
@@ -60,9 +60,9 @@ assert.equal(glossVoice("tr", "de-CH-LeniNeural"), "tr-TR-EmelNeural");
 ok(
   "yürüyüş anlamı seçilen karakterin anadil sesiyle; karaktersiz kursta anlatım sesi",
 );
-assert.equal(lessonVoice("de"), "de-DE-KatjaNeural");
-assert.equal(lessonVoice("en"), "en-US-JennyNeural");
-assert.equal(lessonVoice("gsw-zh"), "de-CH-LeniNeural");
+assert.equal(conversationVoice("de"), "de-DE-KatjaNeural");
+assert.equal(conversationVoice("en"), "en-US-JennyNeural");
+assert.equal(conversationVoice("gsw-zh"), "de-CH-LeniNeural");
 assert.equal(edgeVoiceOf("de-DE-Aras"), "de-DE-ConradNeural");
 assert.equal(edgeVoiceOf("tr-TR-Aras"), "tr-TR-AhmetNeural");
 assert.equal(edgeVoiceOf("de-DE-KatjaNeural"), "de-DE-KatjaNeural");

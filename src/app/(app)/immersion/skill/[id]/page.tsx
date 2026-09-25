@@ -21,7 +21,7 @@ import { MonologuePlayer } from "@/components/skills/monologue-player";
 import { GrammarPlayer } from "@/components/skills/grammar-player";
 import { titleMeta } from "@/lib/page-meta";
 import { ensureProfile } from "@/lib/session";
-import { localiseExercise } from "@/lib/lessons/native-server";
+import { localiseExercise } from "@/lib/conversations/native-server";
 import { isNativeLang } from "@/lib/i18n/dict";
 
 export const dynamic = "force-dynamic";

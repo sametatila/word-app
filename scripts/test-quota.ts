@@ -63,7 +63,7 @@ async function setStreak(id: string, longest: number, current = longest) {
 }
 
 /** Konuşma adımının dersi bitirildi (`/api/conversation`in yazdığı satır). */
-async function finishLesson(id: string, conversationId: string) {
+async function finishConversation(id: string, conversationId: string) {
   await db.insert(userConversations).values({ userId: id, conversationId, ruleId: "r", total: 1 }).onConflictDoNothing();
 }
 
@@ -91,8 +91,8 @@ async function main() {
 
     await setStreak(u, 30);
     check("seri 30 ama adımlar bitmedi → hâlâ kilitli", !(await claimTiered(u, "conversation", "A1", "L3")).allowed);
-    await finishLesson(u, "L1");
-    await finishLesson(u, "L2");
+    await finishConversation(u, "L1");
+    await finishConversation(u, "L2");
     await setStreak(u, 6);
     check("ikisi bitti ama seri 6 → kilitli", !(await claimTiered(u, "conversation", "A1", "L3")).allowed);
     const s6 = await tieredState(u, "conversation", "A1");
@@ -103,7 +103,7 @@ async function main() {
     check("5. adım kilitli (sonraki dilim 14 gün + dört bitirme ister)", !(await claimTiered(u, "conversation", "A1", "L5")).allowed);
     /* Sahiplenilmemiş bir dersi bitirmek dilimi doldurmuyor — hak düşmeyen
        (senaryolu) konuşma sayılmıyor. */
-    await finishLesson(u, "Lx");
+    await finishConversation(u, "Lx");
     const st = await tieredState(u, "conversation", "A1");
     check("sahiplenilmemiş bitirme sayılmıyor (bitir 2/4)", !st.premium && st.next?.complete.done === 2 && st.next?.complete.needed === 4, JSON.stringify(st));
   }
@@ -193,7 +193,7 @@ async function main() {
     const u = await user("ov", { longest: 3, current: 3 });
     await claimTiered(u, "conversation", "A1", "O1");
     await claimTiered(u, "conversation", "A1", "O2");
-    await finishLesson(u, "O1");
+    await finishConversation(u, "O1");
     await claimTiered(u, "skill_writing", "B2", "sk1");
     const o = await unlockOverview(u);
     const c = o.levels.A1.conversation;

@@ -14,7 +14,7 @@
  * kümülatif sınır ünite ceil((m+1)*10/4).
  */
 import { createRequire } from "node:module";
-import { moduleExamPlan } from "../src/lib/lessons/module-exam";
+import { moduleExamPlan } from "../src/lib/conversations/module-exam";
 
 const require = createRequire(import.meta.url);
 const { olc, ozet, türkçeMi } = require("./lib/vocab-gate.cjs") as {

@@ -3,10 +3,10 @@ import { sql } from "drizzle-orm";
 import { queryRunner, type QueryIssue } from "@/lib/admin-query";
 import { pointer, releaseDiff, releasePacks, releases, type ReleaseDiff } from "@/lib/content/read";
 import { flagKey } from "@/lib/content/ids";
-import { lessonPack, levelOfId, packCourseOfId, paperPack, skillPack } from "@/lib/content/packs";
+import { conversationPack, levelOfId, packCourseOfId, paperPack, skillPack } from "@/lib/content/packs";
 import { packItems, packItemsAt } from "@/lib/content/serve";
 import { classifyItem } from "@/lib/content/analytics";
-import type { Lesson } from "@/lib/lessons/types";
+import type { Conversation } from "@/lib/conversations/types";
 import { isItemCorrect, isOpenTask } from "@/lib/mock-exams/scoring";
 import type { MockPaper } from "@/lib/mock-exams/types";
 
@@ -127,7 +127,7 @@ export type MockItemRow = {
 };
 
 export type LearningAnalysis = {
-  lessons: AnalysisRow[];
+  conversations: AnalysisRow[];
   skills: AnalysisRow[];
   path: AnalysisRow[];
   mockItems: MockItemRow[];
@@ -234,10 +234,10 @@ function paperLabeler(papers: Map<string, MockPaper>) {
 
 export async function learningAnalysis(): Promise<LearningAnalysis> {
   const { rows, issues } = queryRunner("madde analizi");
-  const packOf = (id: string, make: typeof lessonPack) => {
+  const packOf = (id: string, make: typeof conversationPack) => {
     const level = levelOfId(id);
     return level ? make(packCourseOfId(id), level) : "";
-  };  const [ptr, lessonRows, skillRows, pathRows, mockRows] = await Promise.all([
+  };  const [ptr, conversationRows, skillRows, pathRows, mockRows] = await Promise.all([
     pointer().catch(() => ({ r: 0, d: [] as string[] })),
     rows(sql`
       select conversation_id id, count(*)::int users, coalesce(sum(attempts), 0)::int attempts,
@@ -259,12 +259,12 @@ export async function learningAnalysis(): Promise<LearningAnalysis> {
       where state = 'done' and skill in ('reading', 'listening') order by finished_at desc nulls last limit 3000`),
   ]);
   /* Başlık için YALNIZ listede geçen derslerin paketleri okunuyor. Bütün
-     ders kataloğu (`allLessons`, ~7 MB) her önbellek tazelemesinde okunup
+     ders kataloğu (`allConversations`, ~7 MB) her önbellek tazelemesinde okunup
      ayrıştırılıyordu; ilk açılış 24 saniye sürdü. */
-  const lessonPacks = [...new Set(lessonRows.map((r) => packOf(String(r.id), lessonPack)).filter(Boolean))];
-  const lessons = (await Promise.all(lessonPacks.map((pk) => packItems<Lesson>(pk).catch(() => [] as Lesson[])))).flat();
+  const conversationPacks = [...new Set(conversationRows.map((r) => packOf(String(r.id), conversationPack)).filter(Boolean))];
+  const conversations = (await Promise.all(conversationPacks.map((pk) => packItems<Conversation>(pk).catch(() => [] as Conversation[])))).flat();
   const flagged = new Set(ptr.d);
-  const title = new Map(lessons.map((l) => [l.id, `${l.title}${l.titleTr ? ` · ${l.titleTr}` : ""}`]));
+  const title = new Map(conversations.map((l) => [l.id, `${l.title}${l.titleTr ? ` · ${l.titleTr}` : ""}`]));
   const row = (r: Record<string, unknown>, pack: string, t: string): AnalysisRow => {
     const id = String(r.id);
     return {
@@ -315,7 +315,7 @@ export async function learningAnalysis(): Promise<LearningAnalysis> {
     });
 
   return {
-    lessons: lessonRows.map((r) => row(r, packOf(String(r.id), lessonPack), title.get(String(r.id)) ?? "")),
+    conversations: conversationRows.map((r) => row(r, packOf(String(r.id), conversationPack), title.get(String(r.id)) ?? "")),
     skills: skillRows.map((r) => row(r, packOf(String(r.id), skillPack), String(r.title))),
     path: pathRows.map((r) => row(r, "", "")),
     mockItems,

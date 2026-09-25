@@ -1,7 +1,7 @@
 "use client";
 
 import { apiFetch } from "@/lib/api-fetch";
-import { BOSS_SECONDS } from "@/lib/lessons/boss-const";
+import { BOSS_SECONDS } from "@/lib/conversations/boss-const";
 import { PASS_SECTION, PASS_TOTAL } from "@/lib/exam-types";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -1355,7 +1355,7 @@ function Result({
           oysa altmış saniyede on beş kelime bir şey KANITLAMIYOR. Sınavdan
           SONRA ise yeri doğru: ölçüm bitti, bu bir oyun.
         */
-        tertiary={moduleIndex !== null ? { label: t("exam.speed_round_link", { n: BOSS_SECONDS }), href: `/lessons/boss/${level}/${moduleIndex}` } : null}
+        tertiary={moduleIndex !== null ? { label: t("exam.speed_round_link", { n: BOSS_SECONDS }), href: `/boss/${level}/${moduleIndex}` } : null}
       />
     </FlowColumn>
   );

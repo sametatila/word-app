@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { getUserId } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
 import { candoSummary } from "@/lib/cando-progress";
-import { nativeCandoText } from "@/lib/lessons/native-server";
+import { nativeCandoText } from "@/lib/conversations/native-server";
 import { isNativeLang } from "@/lib/i18n/dict";
 
 export const dynamic = "force-dynamic";

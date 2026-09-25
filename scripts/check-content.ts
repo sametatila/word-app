@@ -2,7 +2,7 @@
  * İçerik doğrulayıcı — `npm run test:content` (WP-70)
  *
  *   npm run test:content                 # hepsi
- *   npm run test:content -- lessons      # tek tür: skills | lessons | words | cheatsheet
+ *   npm run test:content -- conversations      # tek tür: skills | conversations | words | cheatsheet
  *   npm run test:content -- --baseline   # uyarı sayısını baseline'a yaz
  *
  * Kurallar `data/content/SPEC.md`'de; burası onların kodu. İki liste:
@@ -13,20 +13,20 @@
  *            etiket başına tavan tutar — aşan ya da yeni kategori hata:
  *            mevcut borç bilinir, yeni borç alınmaz.
  *
- * Veritabanı yok: içerik koddan (`bundled`, `LESSONS`, `CHEATSHEETS`),
+ * Veritabanı yok: içerik koddan (`bundled`, `CONVERSATIONS`, `CHEATSHEETS`),
  * kelime havuzu `data/app/words.json`'dan.
  */
 import { readFileSync, writeFileSync, existsSync, readdirSync } from "node:fs";
 import path from "node:path";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
-import { LESSONS } from "../src/lib/lessons/source";
-import { moduleExamPlan } from "../src/lib/lessons/module-exam";
-import { LESSON_ICONS } from "../src/lib/lessons/types";
+import { CONVERSATIONS } from "../src/lib/conversations/source";
+import { moduleExamPlan } from "../src/lib/conversations/module-exam";
+import { CONVERSATION_ICONS } from "../src/lib/conversations/types";
 import type { DialogueTurn } from "../src/lib/dialogue";
-import type { Lesson } from "../src/lib/lessons/types";
+import type { Conversation } from "../src/lib/conversations/types";
 import type { SkillExercise } from "../src/lib/skills/types";
 import { isCandoId } from "../src/lib/cando";
-import { candoForExercise, candoForLesson } from "../src/lib/cando-map";
+import { candoForExercise, candoForConversation } from "../src/lib/cando-map";
 // contains.mjs: kelimenin metinde çekimli hâliyle geçip geçmediği (kelime hattıyla ortak).
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore — .mjs, tip bildirimi yok
@@ -488,18 +488,18 @@ function checkSkills(list: SkillExercise[]) {
 }
 
 /* ───────────── dersler ───────────── */
-function checkLessons(list: Lesson[]) {
+function checkConversations(list: Conversation[]) {
   const ids = new Set<string>();
-  const icons = new Set<string>(LESSON_ICONS);
+  const icons = new Set<string>(CONVERSATION_ICONS);
   for (const l of list) {
-    const w = `[lessons] ${l.id}`;
+    const w = `[conversations] ${l.id}`;
     if (ids.has(l.id)) E(w, "yinelenen kimlik");
     ids.add(l.id);
-    need(w, l as unknown as Record<string, unknown>, ["id", "level", "course", "icon", "title", "titleTr", "summary", "minutes", "focusId", "vocab", "patterns", "lecture", "roleplay"]);
+    need(w, l as unknown as Record<string, unknown>, ["id", "level", "course", "icon", "title", "titleTr", "summary", "minutes", "focusId", "vocab", "patterns", "lecture", "chat"]);
     if (!LEVELS.has(l.level)) E(w, `geçersiz seviye ${l.level}`);
     if (!icons.has(l.icon)) E(w, `bilinmeyen ikon ${l.icon}`);
     for (const id of l.cando ?? []) if (!isCandoId(id)) E(w, `bilinmeyen can-do kimliği ${id}`);
-    if (!candoForLesson(l).length) E(w, "can-do etiketi üretilemedi");
+    if (!candoForConversation(l).length) E(w, "can-do etiketi üretilemedi");
     if (l.minutes < 3 || l.minutes > 20) W(w, `minutes ${l.minutes}`);
     if (l.vocab.length < 4 || l.vocab.length > 10) W(w, `vocab ${l.vocab.length} (4–10)`);
     if (l.patterns.length < 2 || l.patterns.length > 5) W(w, `patterns ${l.patterns.length} (2–5)`);
@@ -516,7 +516,7 @@ function checkLessons(list: Lesson[]) {
     for (const p of l.patterns) if (!p.de?.trim() || !p.tr?.trim()) E(w, `pattern eksik: ${JSON.stringify(p)}`);
 
     const steps = l.lecture;
-    /* ÜST SINIR `check-lessons.ts` İLE AYNI. Burada 20 yazılıydı, orada 24:
+    /* ÜST SINIR `check-conversations.ts` İLE AYNI. Burada 20 yazılıydı, orada 24:
        iki kapı aynı şey hakkında iki ayrı sayı söylüyordu. Sözlükçe sekize
        çıkınca (kullanıcı kararı 2026-09-11, İngilizce kurs Almanca kursun
        sözleşmesine getirildi) her kelime kendi tekrar adımını da getirdi ve
@@ -554,10 +554,10 @@ function checkLessons(list: Lesson[]) {
     if (scored < 3) W(w, `puanlanan adım ${scored} (< 3)`);
     if (steps.length && repeat / steps.length > 0.6) W(w, `tekrar adımı payı %${Math.round((100 * repeat) / steps.length)} (> 60)`);
 
-    const r = l.roleplay;
-    need(`${w} roleplay`, r as unknown as Record<string, unknown>, ["scene", "partner", "opening", "openingTr", "minTurns"]);
-    if (trLetters(r.opening)) E(w, "roleplay.opening içinde Türkçe harf");
-    // Aralık check-lessons.ts ile AYNI olmalı: orada 6-9 zorunlu (HATA), burada
+    const r = l.chat;
+    need(`${w} chat`, r as unknown as Record<string, unknown>, ["scene", "partner", "opening", "openingTr", "minTurns"]);
+    if (trLetters(r.opening)) E(w, "chat.opening içinde Türkçe harf");
+    // Aralık check-conversations.ts ile AYNI olmalı: orada 6-9 zorunlu (HATA), burada
     // 2-6 uyarılıyordu. Rol yapma 6-9 tura çıkınca (894ddb0) bu eşik güncellenmedi
     // ve kataloğun 426 dersi, öteki doğrulayıcının dayattığı değer yüzünden burada
     // uyarı üretir oldu. İki doğrulayıcı aynı alan için farklı şey söyleyemez.
@@ -618,19 +618,19 @@ function checkHeadwords() {
 }
 
 /* ───────────── çalıştır ───────────── */
-const kinds = only ? [only] : ["skills", "lessons", "words"];
+const kinds = only ? [only] : ["skills", "conversations", "words"];
 if (kinds.includes("skills")) checkSkills(BUNDLED_EXERCISES);
-if (kinds.includes("lessons")) checkLessons(LESSONS);
+if (kinds.includes("conversations")) checkConversations(CONVERSATIONS);
 if (kinds.includes("words")) checkHeadwords();
 
 // Muafiyet listesi bayatladıysa söyle: artık eşiği aşmayan bir kimlik listede
 // durursa bir sonraki okuyan onu gerçek bir kusur sanır.
-if (kinds.includes("lessons"))
+if (kinds.includes("conversations"))
   for (const id of INFLECTED_VOCAB)
-    if (!usedInflectedExempt.has(id)) W("[lessons]", `çekimli sözlükçe muafiyeti artık gereksiz: ${id}`);
+    if (!usedInflectedExempt.has(id)) W("[conversations]", `çekimli sözlükçe muafiyeti artık gereksiz: ${id}`);
 
 const poolSizes = Object.entries(POOLS).map(([c, p]) => `${c} ${p.set.size}`).join(" · ");
-const counts = `${BUNDLED_EXERCISES.length} egzersiz · ${LESSONS.length} ders · havuz ${poolSizes}`;
+const counts = `${BUNDLED_EXERCISES.length} egzersiz · ${CONVERSATIONS.length} ders · havuz ${poolSizes}`;
 console.log(`\nİçerik doğrulama — ${kinds.join(", ")} · ${counts}\n`);
 if (errors.length) {
   console.log(`HATA (${errors.length})`);

@@ -64,8 +64,8 @@ export type HubUnit = {
   complete: boolean;
   done: number;
   total: number;
-  lessonsDone: number;
-  lessonsTotal: number;
+  conversationsDone: number;
+  conversationsTotal: number;
   items: HubItem[];
 };
 
@@ -88,7 +88,7 @@ export type ImmersionHubProps = {
 
 /** Tür → sözlük anahtarı; etiket kullanım anında çözülüyor (mobil `KIND_KEY`). */
 const KIND_KEY: Record<ImmersionItemKind, string> = {
-  lesson: "unitkind.conversation",
+  conversation: "unitkind.conversation",
   read: "unitkind.read",
   listen: "unitkind.listen",
   write: "unitkind.write",

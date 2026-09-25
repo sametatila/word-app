@@ -45,8 +45,8 @@ type Meta = {
   level: string;
   moduleIndex: number;
   title: string;
-  lessonsDone: number;
-  lessonsTotal: number;
+  conversationsDone: number;
+  conversationsTotal: number;
   bestLeft: number | null;
 };
 type Payload = {
@@ -264,7 +264,7 @@ export function BossPlayer({
     );
 
   if (status === "ready" && data) {
-    const ready = data.meta.lessonsDone >= data.meta.lessonsTotal;
+    const ready = data.meta.conversationsDone >= data.meta.conversationsTotal;
     /* KAPAK ŞABLONU (`flow`). Kurallar eskiden "·" ile başlayan dört metin
        satırıydı; artık her biri ikonlu tek satır. "Henüz hazır değilsin"
        uyarısı kapağın içinde uyarı notu. Mobil `BossScreen` aynı sırada. */
@@ -284,7 +284,7 @@ export function BossPlayer({
           note={best !== null ? t("bossw.best_left", { n: best }) : null}
         >
           {!ready ? (
-            <FlowNote tone="warn" icon={<AlertIcon size={16} />} text={t("bossw.not_ready_yet", { done: data.meta.lessonsDone, total: data.meta.lessonsTotal })} />
+            <FlowNote tone="warn" icon={<AlertIcon size={16} />} text={t("bossw.not_ready_yet", { done: data.meta.conversationsDone, total: data.meta.conversationsTotal })} />
           ) : null}
         </CoverBody>
         <FlowActions

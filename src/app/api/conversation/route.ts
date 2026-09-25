@@ -3,9 +3,9 @@ import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { clampDay } from "@/lib/award";
 import { legacyBody } from "@/lib/legacy-names";
-import { findLesson } from "@/lib/lessons";
-import { scoredSteps } from "@/lib/lessons/types";
-import { recordLesson } from "@/lib/lessons/progress";
+import { findConversation } from "@/lib/conversations";
+import { scoredSteps } from "@/lib/conversations/types";
+import { recordConversation } from "@/lib/conversations/progress";
 
 export const dynamic = "force-dynamic";
 
@@ -31,27 +31,27 @@ export async function POST(req: Request) {
   if (typeof body !== "object" || body === null) {
     return NextResponse.json({ error: "bad_request" }, { status: 400 });
   }
-  // Build 6 `lessonId`/`roleplayDone` gönderiyor (geçici, lib/legacy-names).
+  // Build 6 alanları eski adla gönderiyor (geçici, lib/legacy-names).
   const { conversationId, correct, chatDone, day, seconds } = legacyBody(body as Record<string, unknown>);
 
-  const lesson = typeof conversationId === "string" ? await findLesson(conversationId) : undefined;
-  if (!lesson) return NextResponse.json({ error: "bad_lesson" }, { status: 400 });
-  if (typeof correct !== "number" || correct < 0 || correct > scoredSteps(lesson)) {
+  const conversation = typeof conversationId === "string" ? await findConversation(conversationId) : undefined;
+  if (!conversation) return NextResponse.json({ error: "bad_conversation" }, { status: 400 });
+  if (typeof correct !== "number" || correct < 0 || correct > scoredSteps(conversation)) {
     return NextResponse.json({ error: "bad_score" }, { status: 400 });
   }
 
   // Gün istemciden geliyor çünkü seri kullanıcının yerel gününe göre işliyor;
   // sunucunun UTC günü Türkiye'de gece yarısından sonra yanlış gün olurdu.
   // clampDay sunucu-bugününün ±1'ine sıkıştırır: yalnız biçim doğrulansaydı
-  // (güvenlik denetimi F5) ileri tarihli lesson istekleriyle seri sınırsız
+  // (güvenlik denetimi F5) ileri tarihli conversation istekleriyle seri sınırsız
   // şişirilip kalıcı dondurulabilirdi.
   const today = clampDay(day);
   const secs = typeof seconds === "number" ? Math.max(0, Math.min(3600, Math.round(seconds))) : 0;
 
   try {
-    const result = await recordLesson(
+    const result = await recordConversation(
       userId,
-      lesson,
+      conversation,
       Math.floor(correct),
       chatDone === true,
       today,
@@ -59,7 +59,7 @@ export async function POST(req: Request) {
     );
     return NextResponse.json(result);
   } catch (err) {
-    console.error("[lesson]", err);
+    console.error("[conversation]", err);
     return NextResponse.json({ error: "db" }, { status: 500 });
   }
 }

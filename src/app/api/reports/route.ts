@@ -41,7 +41,7 @@ export async function POST(req: Request) {
   } catch {
     return NextResponse.json({ error: "bad_json" }, { status: 400 });
   }
-  const rawKind = legacyKind(body.kind); // build 6 `roleplay` gönderiyor (geçici, lib/legacy-names)
+  const rawKind = legacyKind(body.kind); // build 6 eski türü gönderiyor (geçici, lib/legacy-names)
   const kind = typeof rawKind === "string" && KINDS.has(rawKind) ? rawKind : null;
   const reason = typeof body.reason === "string" && REASONS.has(body.reason) ? body.reason : null;
   const ref = typeof body.ref === "string" ? body.ref.trim().slice(0, 120) : "";

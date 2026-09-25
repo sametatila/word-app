@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef } from "react";
 import { recognitionCtor, requestMicrophone, type Recognition } from "@/components/microphone";
-import { cueListen } from "@/lib/lessons/cues";
+import { cueListen } from "@/lib/conversations/cues";
 
 /**
  * Bir kez konuşma dinleyip duyduğunu veren kanca.

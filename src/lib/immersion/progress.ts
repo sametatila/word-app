@@ -2,7 +2,7 @@ import "server-only";
 import { eq } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { userSkills } from "@/lib/db/schema";
-import { lessonBoard } from "@/lib/lessons/progress";
+import { conversationBoard } from "@/lib/conversations/progress";
 import { isSkillDone } from "@/lib/score-bands";
 import { practiceProgress } from "./practice";
 import type { Completion } from "./state";
@@ -10,25 +10,25 @@ import type { Completion } from "./state";
 /**
  * Faz 3 tamamlanma adaptörü — mevcut ilerleme kaynaklarını immersion'ın saf
  * gating katmanına (state.ts `Completion`) çevirir. Yeni tablo yok:
- * - ders "bitti" = userConversations.chatDone (lessonBoard üzerinden)
+ * - ders "bitti" = userConversations.chatDone (conversationBoard üzerinden)
  * - beceri "bitti" = userSkills.lastScore ≥ SKILL_DONE_PCT (lib/score-bands.ts)
  *
  * Her kaynak ayrı denenir; biri okunamazsa o küme boş kalır, sayfa yine açılır.
  */
 export async function immersionCompletion(userId: string, course: string): Promise<Completion> {
-  const doneLessons = new Set<string>();
+  const doneConversations = new Set<string>();
   const doneSkills = new Set<string>();
   // "Denendi" ayrı tutuluyor: patika kapısı bunu kullanıyor, ünite tamamlanması
   // hâlâ "bitti"ye bakıyor. İkisini birleştirmek üniteleri hak edilmeden açardı.
-  const triedLessons = new Set<string>();
+  const triedConversations = new Set<string>();
   const triedSkills = new Set<string>();
 
   try {
-    const cards = await lessonBoard(userId, course);
+    const cards = await conversationBoard(userId, course);
     for (const c of cards) {
-      if (c.state?.chatDone) doneLessons.add(c.lesson.id);
+      if (c.state?.chatDone) doneConversations.add(c.conversation.id);
       // Kayıt varsa ders en az bir kez açılıp cevaplanmıştır.
-      if (c.state) triedLessons.add(c.lesson.id);
+      if (c.state) triedConversations.add(c.conversation.id);
     }
   } catch (err) {
     console.error("[immersion] ders ilerlemesi okunamadı", err);
@@ -59,9 +59,9 @@ export async function immersionCompletion(userId: string, course: string): Promi
   return {
     practiceDone: (id) => practice.passed.has(id),
     practiceAttempted: (id) => practice.tried.has(id),
-    lessonDone: (ref) => doneLessons.has(ref),
+    conversationDone: (ref) => doneConversations.has(ref),
     skillDone: (ref) => doneSkills.has(ref),
-    lessonAttempted: (ref) => triedLessons.has(ref),
+    conversationAttempted: (ref) => triedConversations.has(ref),
     skillAttempted: (ref) => triedSkills.has(ref),
   };
 }

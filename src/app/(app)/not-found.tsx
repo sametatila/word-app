@@ -11,7 +11,7 @@ import { getT } from "@/lib/i18n/server";
  *
  * Android'de böyle bir an yok — ekranlar parametreyle açılıyor, adres
  * yazılamıyor — ve olmayan içerikte ekran kendi kabuğunun İÇİNDE bir kart
- * gösteriyor (`UserScreen`, `MockExamScreen`, `LessonScreen`). Kabuğun hiç
+ * gösteriyor (`UserScreen`, `MockExamScreen`, `ConversationScreen`). Kabuğun hiç
  * kaybolmaması o davranışın webdeki karşılığı.
  *
  * Bölümüne özel 404'ü olan yerler (kâğıt, profil, konuşma) bu sınırdan ÖNCE

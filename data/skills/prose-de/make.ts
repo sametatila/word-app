@@ -11,7 +11,7 @@
  * onları da paketlemek 2.655 dizeyi boşuna yazdırırdı.
  *
  * Aynı ayrım ders ekseninde de yapıldı ve gerekçesi orada yazılı
- * (`data/lessons/prose-de/make.mjs`): `--de` bayrağı ancak iki yönün
+ * (`data/conversations/prose-de/make.mjs`): `--de` bayrağı ancak iki yönün
  * kaynağı aynı biçimdeyken işe yarıyor.
  *
  * ÖLÇÜLDÜ: 189 egzersiz (reading 49, listening 49, writing 41,
@@ -25,7 +25,7 @@
  * is …“ ile „Her name is …“in Türkçe karşılığı aynı ("onun adı …") ve
  * ayıran tek şey not. Çevrilmezse Almanca okuyan kullanıcı kelimenin
  * altında Türkçe bir cümle görür; `resolveExercise` notu zaten hep-ya-hiç
- * kuralına dahil ediyor (gerekçesi `lessons/native.ts` başında).
+ * kuralına dahil ediyor (gerekçesi `conversations/native.ts` başında).
  *
  * SORU KÖKÜ VE ŞIKLAR ÇEVRİLMİYOR: ikisi de ÖĞRENİLEN dilde, yani
  * İngilizce. Öğrencinin yargılayacağı cümle odur. Çözücü onlara hiç
@@ -42,7 +42,7 @@
  */
 import { writeFileSync, mkdirSync, rmSync, existsSync } from "node:fs";
 import { BUNDLED_EXERCISES } from "@/lib/skills";
-import { isProseQuote } from "@/lib/lessons/native";
+import { isProseQuote } from "@/lib/conversations/native";
 
 const DIR = new URL(".", import.meta.url).pathname;
 
@@ -119,7 +119,7 @@ export function extractProse(): ProseRow[] {
        ayrışacak birinci kaynak yok. O zaman tasarımın kendi varsayılanı
        geçerli oluyor: anlam hattan gelir. Aynı karar ders ekseninde de
        verildi ve orada yeşil — `en-a1.json` derslerinin `vocab[].tr`
-       alanı da `data/lessons/prose-de` üzerinden çözülüyor. */
+       alanı da `data/conversations/prose-de` üzerinden çözülüyor. */
     for (const g of [...(e.gloss ?? []), ...(e.tasks ?? []).flatMap((t) => t.phrases ?? [])]) {
       add("gloss.tr", g.tr, e, undefined, g.de);
       add("gloss.note", g.note, e, undefined, g.de);

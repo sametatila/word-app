@@ -7,8 +7,8 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { MOCK_PAPERS } from "../src/lib/mock-exams/source";
 import { QUIZ_WEEKS } from "../src/lib/weekly-quiz";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
-import { MODULE_EXAMS } from "../src/lib/lessons/module-exam";
-import { LESSONS } from "../src/lib/lessons/source";
+import { MODULE_EXAMS } from "../src/lib/conversations/module-exam";
+import { CONVERSATIONS } from "../src/lib/conversations/source";
 import { cleanForSpeech, splitForSpeech } from "../src/lib/tts/text";
 import { cleanHeadword } from "../src/lib/headword";
 import { ownNeeds, type WordRow } from "./tts-own-needs";
@@ -53,7 +53,7 @@ function loadWords(p: string) {
   }
 }
 
-/* 2. dersler — anlatım (lecture) parçaları; roleplay hariç */
+/* 2. dersler — anlatım (lecture) parçaları; chat hariç */
 /* Dinleme bloğu parçası. `lang` YOK: dinleme modelleri (`ListeningSegment`,
    deneme kâğıdı ve haftalık sınav uyaranı) konuşmacı başına ses için
    `{ speaker?, text }` taşıyor (2026-09-18) ve burada zaten yalnız metin
@@ -64,17 +64,17 @@ function walk(v: unknown, course: string, id: string, path: string) {
   if (!v || typeof v !== "object") return;
   const o = v as Record<string, unknown>;
   if (typeof o.lang === "string" && typeof o.text === "string") {
-    add(`lessons.${course}.${o.lang === "tr" ? "narration" : "target"}`, o.lang, o.lang === "tr" ? "narration" : "target", o.text);
+    add(`conversations.${course}.${o.lang === "tr" ? "narration" : "target"}`, o.lang, o.lang === "tr" ? "narration" : "target", o.text);
     return;
   }
   for (const [k, x] of Object.entries(o)) {
-    if (k === "roleplay") continue;
-    if ((k === "target" || k === "statement") && typeof x === "string") add(`lessons.${course}.target`, course, "target", x);
-    else if (k === "accept" && Array.isArray(x)) x.forEach((s) => typeof s === "string" && add(`lessons.${course}.target`, course, "target", s));
+    if (k === "chat") continue;
+    if ((k === "target" || k === "statement") && typeof x === "string") add(`conversations.${course}.target`, course, "target", x);
+    else if (k === "accept" && Array.isArray(x)) x.forEach((s) => typeof s === "string" && add(`conversations.${course}.target`, course, "target", s));
     else walk(x, course, id, `${path}.${k}`);
   }
 }
-for (const l of LESSONS) walk((l as unknown as { lecture: unknown }).lecture, l.course, l.id, "lecture");
+for (const l of CONVERSATIONS) walk((l as unknown as { lecture: unknown }).lecture, l.course, l.id, "lecture");
 
 /* 3. dinleme blokları + okuma metinleri (check-tts ile aynı toplama) */
 for (const paper of MOCK_PAPERS) for (const part of paper.parts) for (const task of part.tasks) for (const st of task.texts ?? []) {

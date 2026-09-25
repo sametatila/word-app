@@ -127,7 +127,7 @@ export async function GET() {
 function limitsOf(cfg: PremiumConfig) {
   return {
     free: cfg.free,
-    fairUse: { ...cfg.fairUse, chatTurnsPerDay: DAILY_QUOTAS.roleplayTurns, pocketWalksPerDay: cfg.fairUse.walkRoundsPerDay },
+    fairUse: { ...cfg.fairUse, chatTurnsPerDay: DAILY_QUOTAS.chatTurns, pocketWalksPerDay: cfg.fairUse.walkRoundsPerDay },
     mock: cfg.mock,
   };
 }

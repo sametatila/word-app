@@ -2,10 +2,10 @@ import "server-only";
 import { and, eq, gte, isNotNull, lte, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { assessments, exams, reviews, userConversations, userSkills, words } from "@/lib/db/schema";
-import { findLesson } from "@/lib/lessons";
+import { findConversation } from "@/lib/conversations";
 import { type GameId } from "@/lib/types";
 import { listExerciseMeta } from "@/lib/skills";
-import { nextLesson } from "@/lib/lessons/progress";
+import { nextConversation } from "@/lib/conversations/progress";
 import type { CefrLevel, SkillId } from "@/lib/skills/types";
 import { computeProficiency, DECAY_DAYS, PROFICIENCY_LABEL_KEYS, bandKey, weakestSkill, type Evidence, type Proficiency, type ProficiencySkill } from "@/lib/proficiency";
 import { translate, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
@@ -24,8 +24,8 @@ import type { Assessment } from "@/lib/assess-prompts";
  * Kaynaklar:
  *   exam       — `exams` (weekly → kelime, diğerleri → dilbilgisi)
  *   assessment — `assessments.result.score.overall` (writing → yazma,
- *                sentence → dilbilgisi, speaking/roleplay → konuşma)
- *   lesson     — `user_conversations` doğru/toplam (dersin seviyesi, dilbilgisi)
+ *                sentence → dilbilgisi, speaking/chat → konuşma)
+ *   conversation     — `user_conversations` doğru/toplam (dersin seviyesi, dilbilgisi)
  *   exercise   — `user_skills.last_score` (beceri, seviye, son deneme)
  *   drill      — `cheat_progress` (dilbilgisi çalışması, sayfanın seviyesi)
  *   game       — `reviews` × `words.niveau` (oyun türüne göre beceri)
@@ -106,7 +106,7 @@ export async function gatherEvidence(userId: string, now = new Date()): Promise<
     out.push({ skill: r.kind === "weekly" ? "vocab" : "grammar", level: r.level as CefrLevel, score: r.score, source: "exam", at: r.createdAt });
   }
 
-  out.push(...(await lessonEvidence(userId, since, now)));
+  out.push(...(await conversationEvidence(userId, since, now)));
   out.push(...(await gameEvidence(userId, since, now)));
   return out;
 }
@@ -123,7 +123,7 @@ export async function gatherEvidence(userId: string, now = new Date()): Promise<
  * Rol oynama puansız olduğu için kanıta girmiyor; yapıldı bilgisi ilerleme
  * hesabında, ölçümde değil.
  */
-async function lessonEvidence(userId: string, since: Date, until: Date): Promise<Evidence[]> {
+async function conversationEvidence(userId: string, since: Date, until: Date): Promise<Evidence[]> {
   const rows = await db
     .select({ conversationId: userConversations.conversationId, correct: userConversations.correct, total: userConversations.total, lastAt: userConversations.lastAt })
     .from(userConversations)
@@ -131,13 +131,13 @@ async function lessonEvidence(userId: string, since: Date, until: Date): Promise
   const out: Evidence[] = [];
   for (const r of rows) {
     if (!r.total) continue;
-    const level = (await findLesson(r.conversationId))?.level;
+    const level = (await findConversation(r.conversationId))?.level;
     if (!level || !LEVELS.has(level)) continue;
     out.push({
       skill: "grammar",
       level: level as CefrLevel,
       score: Math.round((r.correct / r.total) * 100),
-      source: "lesson",
+      source: "conversation",
       at: r.lastAt,
     });
   }
@@ -258,15 +258,15 @@ export async function nextStep(
     const open = metas.find((m) => m.skill === skill && !done.has(m.id));
     if (open) return { skill, label: name, reason, href: `/immersion/skill/${open.id}`, title: open.title, minutes: open.minutes };
   }
-  const lesson = await nextLesson(userId, course, level);
-  if (lesson)
+  const conversation = await nextConversation(userId, course, level);
+  if (conversation)
     return {
       skill: "speaking",
       label: translate(lang, "unitkind.speaking"),
       reason: translate(lang, "proficiency.next_conversation"),
-      href: `/lessons/${lesson.lesson.id}`,
-      title: lesson.lesson.title,
-      minutes: lesson.lesson.minutes,
+      href: `/conversations/${conversation.conversation.id}`,
+      title: conversation.conversation.title,
+      minutes: conversation.conversation.minutes,
     };
   return null;
 }

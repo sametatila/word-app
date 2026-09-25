@@ -53,7 +53,7 @@ export type WeeklySummary = {
   week: string;
   answers: number;
   exercises: number;
-  lessonsPassed: number;
+  conversationsPassed: number;
   writing: { from: number | null; to: number | null };
   usage: number | null;
   topError: { type: string; label: string; n: number } | null;
@@ -152,8 +152,8 @@ export async function growthReport(
     .orderBy(asc(assessments.createdAt))
     .limit(1);
   if (firstGoodWriting) milestones.push({ at: firstGoodWriting.at.toISOString().slice(0, 10), text: translate(lang, "growth.first_good_writing") });
-  const [firstLesson] = await db.select({ at: userConversations.lastAt }).from(userConversations).where(and(eq(userConversations.userId, userId), eq(userConversations.chatDone, true))).orderBy(asc(userConversations.lastAt)).limit(1);
-  if (firstLesson) milestones.push({ at: firstLesson.at.toISOString().slice(0, 10), text: translate(lang, "growth.first_conversation") });
+  const [firstConversation] = await db.select({ at: userConversations.lastAt }).from(userConversations).where(and(eq(userConversations.userId, userId), eq(userConversations.chatDone, true))).orderBy(asc(userConversations.lastAt)).limit(1);
+  if (firstConversation) milestones.push({ at: firstConversation.at.toISOString().slice(0, 10), text: translate(lang, "growth.first_conversation") });
   const [firstPlacement] = await db.select({ day: events.day, kind: events.kind }).from(events).where(and(eq(events.userId, userId), eq(events.name, "placement_finish"))).orderBy(asc(events.createdAt)).limit(1);
   if (firstPlacement) milestones.push({ at: String(firstPlacement.day), text: translate(lang, "growth.first_placement", { level: firstPlacement.kind ?? "?" }) });
   milestones.sort((a, b) => a.at.localeCompare(b.at));
@@ -182,8 +182,8 @@ export async function weeklySummary(
     .select({ exercises: sql<number>`count(*)::int` })
     .from(userSkills)
     .where(and(eq(userSkills.userId, userId), gte(userSkills.lastAt, from), sql`${userSkills.lastAt} < ${to}`));
-  const [{ lessonsPassed }] = await db
-    .select({ lessonsPassed: sql<number>`count(*) filter (where ${userConversations.chatDone} and ${userConversations.correct}::float / nullif(${userConversations.total}, 0) >= 0.7)::int` })
+  const [{ conversationsPassed }] = await db
+    .select({ conversationsPassed: sql<number>`count(*) filter (where ${userConversations.chatDone} and ${userConversations.correct}::float / nullif(${userConversations.total}, 0) >= 0.7)::int` })
     .from(userConversations)
     .where(and(eq(userConversations.userId, userId), gte(userConversations.lastAt, from), sql`${userConversations.lastAt} < ${to}`));
   const [top] = await db
@@ -203,7 +203,7 @@ export async function weeklySummary(
   const T = (k: string, v?: Record<string, string | number>) => translate(lang, k, v);
   if (answers) parts.push(T("growth.p_answers", { n: answers }));
   if (exercises) parts.push(T("growth.p_exercises", { n: exercises }));
-  if (lessonsPassed) parts.push(T("growth.p_conversations", { n: lessonsPassed }));
+  if (conversationsPassed) parts.push(T("growth.p_conversations", { n: conversationsPassed }));
   if (writing.to !== null)
     parts.push(
       writing.from !== null
@@ -215,5 +215,5 @@ export async function weeklySummary(
   const text = parts.length
     ? translate(lang, "growth.last_week", { parts: parts.join(", ") })
     : translate(lang, "growth.last_week_empty");
-  return { week: lastWeek, answers, exercises, lessonsPassed, writing, usage, topError, text };
+  return { week: lastWeek, answers, exercises, conversationsPassed, writing, usage, topError, text };
 }

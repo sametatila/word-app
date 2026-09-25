@@ -14,7 +14,7 @@
  */
 export const DAILY_QUOTAS = {
   /** Rol yapma / konuşma pratiğinde bir günde gönderilebilen tur. */
-  roleplayTurns: 300,
+  chatTurns: 300,
   /** Sunucu tarafı konuşma tanıma isteği. */
   sttRequests: 400,
   /** Telaffuz puanlama isteği. */

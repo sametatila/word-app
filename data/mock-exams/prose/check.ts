@@ -45,7 +45,7 @@
  */
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { extractMock, type MockRow } from "./make.js";
-import { usSpelling } from "../../lessons/spelling.mjs";
+import { usSpelling } from "../../conversations/spelling.mjs";
 
 const DIR = new URL(".", import.meta.url).pathname;
 const args = process.argv.slice(2).filter((a) => a !== "--de");

@@ -27,7 +27,7 @@ export function ReadingPlayer({ exercise, backHref }: { exercise: ReadingExercis
     aynı düğme webe de geldi.
 
     Ses METNİN dilinden ve kullanıcı tercihinden bağımsız (`voiceForSegment`
-    → `lessonVoice`): okuma parçası uzun, yani pahalı bir sentez. Sabit ses
+    → `conversationVoice`): okuma parçası uzun, yani pahalı bir sentez. Sabit ses
     bir parçayı bütün kullanıcılar için TEK önbellek girdisi yapıyor —
     parçayı ilk açan kişi onu herkes için ısıtıyor.
   */

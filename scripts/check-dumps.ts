@@ -1,7 +1,7 @@
 /**
  * MOBİL PAKET KAYNAKLA AYNI İÇERİĞİ TAŞIYOR MU.
  *
- * Üç içerik köprüsü web kaynağından mobil pakete dökülüyor (`dump-lessons-
+ * Üç içerik köprüsü web kaynağından mobil pakete dökülüyor (`dump-conversations-
  * mobile`, `dump-skills-mobile`, `dump-mock-exams-mobile`). Döküm ELLE
  * çalıştırılıyor: kaynağa yeni bir ders/egzersiz/kâğıt eklenip döküm
  * yenilenmezse mobil paket o içeriği sessizce taşımaz. Sonuç ekranda görünür -
@@ -21,11 +21,11 @@
  *     «Ayse»ye çekilmişti. Yani düzeltme web'de yaşıyor, mobilde yok.
  *   · Aynı gün 122 anlatım adımındaki övgü açılışı silindi; kimlik kümesi
  *     kılını kıpırdatmadı.
- * Dökümün YENİDEN ÜRETİLMESİ tek komut (`npm run dump:lessons` …), yani
+ * Dökümün YENİDEN ÜRETİLMESİ tek komut (`npm run dump:conversations` …), yani
  * kırmızı yanmanın bedeli düşük; sessiz sapmanın bedeli ekranda görünmeyen
  * eski içerik. Ana dil dökümünde bayt eşitliği zaten böyle kurulmuştu.
  *
- * İkinci ölçüt dökümün KENDİ işlevini çağırıyor (`buildLessonDump` vb.),
+ * İkinci ölçüt dökümün KENDİ işlevini çağırıyor (`buildConversationDump` vb.),
  * projeksiyonu kopyalamıyor: kopya olsaydı kapı dökümden ayrı düşer ve
  * yanlış yeri gösterirdi.
  *
@@ -33,9 +33,9 @@
  */
 import { readFileSync } from "node:fs";
 import path from "node:path";
-import { LESSONS } from "../src/lib/lessons/source";
+import { CONVERSATIONS } from "../src/lib/conversations/source";
 import { buildNativeDump, NATIVE_DUMP_FILES } from "./dump-native-mobile";
-import { buildLessonDump } from "./dump-lessons-mobile";
+import { buildConversationDump } from "./dump-conversations-mobile";
 
 const ROOT = path.join(__dirname, "..");
 const read = (p: string) => JSON.parse(readFileSync(path.join(ROOT, p), "utf8")) as unknown;
@@ -74,13 +74,13 @@ function compare(label: string, web: Set<string>, mob: Set<string>) {
   console.error(`✗ ${label}: web ${web.size}, mobil ${mob.size}`);
   if (onlyWeb.length) console.error(`   dokumde EKSIK (${onlyWeb.length}): ${onlyWeb.slice(0, 8).join(", ")}${onlyWeb.length > 8 ? " …" : ""}`);
   if (onlyMob.length) console.error(`   dokumde FAZLA (${onlyMob.length}): ${onlyMob.slice(0, 8).join(", ")}${onlyMob.length > 8 ? " …" : ""}`);
-  console.error("   dokumu yenile: npm run dump:lessons / dump:skills / dump:mock-exams (ve :en surumleri)");
+  console.error("   dokumu yenile: npm run dump:conversations / dump:skills / dump:mock-exams (ve :en surumleri)");
 }
 
 /* TOHUM KİMLİKLERİ: ikilide yalnız A1 var, gerisi yayına gidiyor. Ölçüt de
-   bu yüzden A1 ile sınırlı — üst seviyelerin doğrulayıcısı `check:lessons`. */
-const seedFiles = ["de-a1", "en-a1"].map((n) => `mobile/src/data/lessons/${n}.json`);
-compare("ders tohumu", new Set(LESSONS.filter((l) => l.level === "A1").map((l) => l.id)), ids(seedFiles));
+   bu yüzden A1 ile sınırlı — üst seviyelerin doğrulayıcısı `check:conversations`. */
+const seedFiles = ["de-a1", "en-a1"].map((n) => `mobile/src/data/conversations/${n}.json`);
+compare("ders tohumu", new Set(CONVERSATIONS.filter((l) => l.level === "A1").map((l) => l.id)), ids(seedFiles));
 
 /*
   BECERİ EGZERSİZLERİ ARTIK DÖKÜLMÜYOR: iki JSON mobil paketten çıkarıldı ve
@@ -144,13 +144,13 @@ compare("ders tohumu", new Set(LESSONS.filter((l) => l.level === "A1").map((l) =
     /* YALNIZ A1: üst seviyeler mobil paketten çıkarıldı ve yayına gidiyor,
        karşılaştırılacak dosyaları yok. Tohumun kaynakla birebir kalması ise
        hâlâ önemli — ikilinin ağsız açılışı ona bağlı. */
-    for (const pack of buildLessonDump(course)) {
+    for (const pack of buildConversationDump(course)) {
       if (pack.level !== "A1") continue;
       built.push({
         label: `ders tohumu ${course}-${pack.level}`,
         file: pack.file,
         json: pack.json,
-        cmd: `npm run dump:lessons -- ${course}`,
+        cmd: `npm run dump:conversations -- ${course}`,
       });
     }
   }

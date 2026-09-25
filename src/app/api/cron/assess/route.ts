@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { cronGate } from "@/lib/cron-auth";
 import { recordCronRun } from "@/lib/cron-runs";
 import { runAssessQueue } from "@/lib/assess";
-import { purgeExpiredRoleplayLogs } from "@/lib/lessons/log";
+import { purgeExpiredChatLogs } from "@/lib/conversations/log";
 import { purgeClosedReports } from "@/lib/moderation-admin";
 import { purgeExpiredGuestAttestations } from "@/lib/auth/play-integrity";
 
@@ -28,7 +28,7 @@ export async function GET(req: Request) {
   const basladi = Date.now();
   const denied = cronGate(req, "assess");
   if (denied) { void recordCronRun("assess", false, Date.now() - basladi, "denied"); return denied; }
-  const purgedLogs = await purgeExpiredRoleplayLogs();
+  const purgedLogs = await purgeExpiredChatLogs();
   const purgedReports = await purgeClosedReports().catch((err) => {
     console.error("[cron/assess] report purge", err);
     return { content: 0, user: 0 };

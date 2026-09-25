@@ -48,12 +48,12 @@ export const ASSESS_TIMEOUT_MS = 20000;
  *
  * Konuşmanın TAMAMI gönderiliyor, tek bir cümle değil; model yanıtı buna
  * göre uzun sürüyor. Mobil bu çağrıda baştan beri otuz saniye bekliyordu
- * (`RoleplayExamScreen`, `timeoutMs: 30_000`), web ise varsayılan yirmiyle
+ * (`ConversationScoredScreen`, `timeoutMs: 30_000`), web ise varsayılan yirmiyle
  * yetiniyordu: uzun bir konuşma webde zaman aşımına düşerken mobilde
  * puanlanıyordu — aynı sınav, aynı cevap, farklı sonuç. Sayı artık iki
  * tarafta aynı adla yazılı.
  */
-export const ASSESS_ROLEPLAY_TIMEOUT_MS = 30000;
+export const ASSESS_CHAT_TIMEOUT_MS = 30000;
 
 /** Kullanıcıya gösterilecek kısa açıklama. */
 export const ASSESS_FAILURE_KEYS: Record<AssessFailure, string> = {

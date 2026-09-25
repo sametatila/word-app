@@ -16,14 +16,14 @@
  * keşfedilmesini bitirmek.
  */
 import { readFileSync, existsSync } from "node:fs";
-import { LESSONS } from "@/lib/lessons/source";
+import { CONVERSATIONS } from "@/lib/conversations/source";
 import { CANDO } from "@/lib/cando";
-import { courseExams } from "@/lib/lessons/module-exam";
-import type { ModuleExamPlan } from "@/lib/lessons/module-exam/types";
-import type { Segment } from "@/lib/lessons/types";
-import { resolveSegments, type NativeDict } from "@/lib/lessons/native";
+import { courseExams } from "@/lib/conversations/module-exam";
+import type { ModuleExamPlan } from "@/lib/conversations/module-exam/types";
+import type { Segment } from "@/lib/conversations/types";
+import { resolveSegments, type NativeDict } from "@/lib/conversations/native";
 
-const DICT = "src/lib/lessons/generated/native-en.json";
+const DICT = "src/lib/conversations/generated/native-en.json";
 const dict = existsSync(DICT)
   ? (JSON.parse(readFileSync(DICT, "utf8")) as Record<string, Record<string, unknown>>)
   : null;
@@ -46,7 +46,7 @@ const uniq = (xs: Iterable<string | undefined | null>) => {
   */
   const texts = new Set<string>();
   const eksik = new Set<string>();
-  for (const l of LESSONS.filter((x) => x.course === "de"))
+  for (const l of CONVERSATIONS.filter((x) => x.course === "de"))
     for (const st of l.lecture ?? []) {
       const walk = (segs?: Segment[]) => {
         if (!segs) return;
@@ -80,7 +80,7 @@ const uniq = (xs: Iterable<string | undefined | null>) => {
 {
   /* Yalnız Almanca kursun kâğıtları: bu rapor Türkçe→İngilizce boşluğunu
      sayıyor ve İngilizce kursun kâğıtları o yöne hiç girmiyor (bkz.
-     `check-native-lessons.ts`). */
+     `check-native-conversations.ts`). */
   const plans = courseExams("de") as ModuleExamPlan[];
   const texts: string[] = [];
   let candoEn = 0;
@@ -125,4 +125,4 @@ for (const r of rows) {
   );
 }
 console.log(`\nkalan: ${eksik} benzersiz dize`);
-if (!dict) console.log("(sözlük yok — `npm run lessons:apply` çalıştırılmamış)");
+if (!dict) console.log("(sözlük yok — `npm run conversations:apply` çalıştırılmamış)");

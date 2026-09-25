@@ -1,12 +1,12 @@
 import type { SkillQuestion } from "@/lib/skills/types";
-import type { PatternItem, VocabItem } from "@/lib/lessons/types";
+import type { PatternItem, VocabItem } from "@/lib/conversations/types";
 import type { UnitBrief } from "./brief";
 
 /**
  * Ünite brief'inden hatırlama sorusu üretir — `quiz` ve `checkpoint` item'ları için.
  *
  * İÇERİK YAZIMI GEREKMEZ: sorular ünitenin KENDİ kelime/kalıplarından çıkar
- * (lessonların üzerine inşa), distraktörler diğer ünitelerin havuzundan. Böylece
+ * (conversationların üzerine inşa), distraktörler diğer ünitelerin havuzundan. Böylece
  * hep tema-hizalı. Deterministik (RNG yok — aynı ünite hep aynı quiz'i verir, test
  * edilebilir ve resume güvenli). Mevcut `SkillQuestion` tipini üretir; `quiz.tsx`
  * QuestionList aynen render eder.

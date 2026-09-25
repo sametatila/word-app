@@ -3,7 +3,7 @@
  * GİZLİLİK POLİTİKASINA VERİLEN SÖZ.
  *
  * `lib/auth/play-integrity` `server-only`; politika metni ise "cihaz bütünlüğü
- * sonucu 90 gün" diye üç dilde yazılı. `lib/lessons/log-const` ile aynı
+ * sonucu 90 gün" diye üç dilde yazılı. `lib/conversations/log-const` ile aynı
  * gerekçe: sayı tek yerde duruyor, politika onu `{{attestationDays}}`
  * belirteciyle okuyor, süpürme (`purgeExpiredGuestAttestations`, günlük
  * cron `api/cron/assess`) de buradan. Biri değişip öteki eski sözü

@@ -16,8 +16,8 @@ export function packCourseOf(targetLang: string): PackCourse {
   return targetLang === "en" ? "en" : "de";
 }
 
-export function lessonPack(course: PackCourse, level: string): string {
-  return `lessons/${course}-${level.toLowerCase()}`;
+export function conversationPack(course: PackCourse, level: string): string {
+  return `conversations/${course}-${level.toLowerCase()}`;
 }
 
 export function skillPack(course: PackCourse, level: string): string {

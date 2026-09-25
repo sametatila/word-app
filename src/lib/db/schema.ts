@@ -861,7 +861,7 @@ export const aiUsage = pgTable(
     /** Kim tetikledi — arka plan işlerinde boş. */
     userId: text("user_id"),
     day: date("day").notNull(),
-    /** roleplay · coach · stt · assess · tts */
+    /** chat · coach · stt · assess · tts */
     kind: text("kind").notNull(),
     provider: text("provider").notNull(),
     model: text("model").notNull(),
@@ -1031,7 +1031,7 @@ export const assessments = pgTable(
   {
     id: serial("id").primaryKey(),
     userId: text("user_id").notNull(),
-    /** sentence | writing | speaking | roleplay */
+    /** sentence | writing | speaking | chat */
     kind: text("kind").notNull(),
     exerciseId: text("exercise_id"),
     level: text("level").notNull(),
@@ -1401,9 +1401,9 @@ export const contentReports = pgTable(
   {
     id: serial("id").primaryKey(),
     userId: text("user_id").notNull(),
-    /** roleplay | assessment | user */
+    /** chat | assessment | user */
     kind: text("kind").notNull(),
-    /** roleplay: "<conversationId>:<turn>" · assessment: kayıt kimliği · user: kullanıcı kimliği */
+    /** chat: "<conversationId>:<turn>" · assessment: kayıt kimliği · user: kullanıcı kimliği */
     ref: text("ref").notNull(),
     /** inappropriate | offensive | wrong | other */
     reason: text("reason").notNull(),
@@ -2005,7 +2005,7 @@ export const contentReleaseItems = pgTable(
   "content_release_items",
   {
     release: integer("release").notNull(),
-    /** "lessons/de-a1" · "papers/de" · "native/en" · "skills/de-b1" */
+    /** "conversations/de-a1" · "papers/de" · "native/en" · "skills/de-b1" */
     pack: text("pack").notNull(),
     /** Paket içindeki kimlik ("de-a1-b03"), ya da "*" paket arşivi. */
     item: text("item").notNull(),

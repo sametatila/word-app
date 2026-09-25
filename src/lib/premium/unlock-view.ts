@@ -39,20 +39,20 @@ export async function pathQuota(user: { id: string; guest?: boolean }, level: st
   const conv = consent === "declined" ? null : view(lv.conversation, "conv");
   return {
     convLockable: Boolean(conv && conv.remaining <= 0),
-    ownedLessons: o.owned.conversation,
+    ownedConversations: o.owned.conversation,
     conv,
     write: view(lv.pathWriting, "write"),
   };
 }
 
 /** Tek Konuşma adımının kilidi — ders sayfası girişte soruyor. */
-export async function lessonQuota(
+export async function conversationQuota(
   user: { id: string; guest?: boolean },
-  lesson: { id: string; level: string },
+  conversation: { id: string; level: string },
 ): Promise<{ locked: boolean; view: SurfaceView } | null> {
-  const q = await pathQuota(user, lesson.level);
+  const q = await pathQuota(user, conversation.level);
   if (!q?.conv) return null;
-  const owned = q.ownedLessons.includes(lesson.id);
+  const owned = q.ownedConversations.includes(conversation.id);
   return { locked: q.convLockable && !owned, view: q.conv };
 }
 

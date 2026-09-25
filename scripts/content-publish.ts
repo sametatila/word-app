@@ -11,7 +11,7 @@
  * Panelden düzenlenen bir içerik bunların hepsini kaybederdi. Bu betik o
  * hattın SONU: aynı dökümü mobil ağacına yazmak yerine sunucuya yayınlıyor.
  *
- * DÖKÜM İŞLEVLERİ AYNEN KULLANILIYOR (`buildLessonDump`, `buildSkillDump`,
+ * DÖKÜM İŞLEVLERİ AYNEN KULLANILIYOR (`buildConversationDump`, `buildSkillDump`,
  * `buildPaperDump`, `buildNativeDump`). Yeniden projeksiyon yazmak, yayınlanan
  * içeriğin mobil pakettekinden sessizce ayrılması demekti; `check:dumps` de o
  * işlevlere bakıyor. Tek projeksiyon, tek doğruluk.
@@ -22,14 +22,15 @@
  */
 import "dotenv/config";
 import { execFileSync } from "node:child_process";
-import { buildLessonDump } from "./dump-lessons-mobile";
+import { buildConversationDump } from "./dump-conversations-mobile";
 import { buildSkillDump } from "./dump-skills-mobile";
 import { buildPaperDump } from "./dump-mock-exams-mobile";
 import { buildNativeDump } from "./dump-native-mobile";
 import { ORDER_ITEM } from "../src/lib/content/ids";
-import { lessonPack, mockIndexPack, paperPack, skillPack, type PackCourse } from "../src/lib/content/packs";
+import { conversationPack, mockIndexPack, paperPack, skillPack, type PackCourse } from "../src/lib/content/packs";
 import { catalogEntry } from "../src/lib/mock-exams/deliver";
 import { publish, type PackInput } from "../src/lib/content/publish";
+import { legacyConversationItem, legacyPackName } from "../src/lib/legacy-names";
 
 const COURSES = ["de", "en"] as const;
 
@@ -72,10 +73,17 @@ function collect(): Map<string, PackInput> {
     /* DERSLER — seviye başına bir paket, madde başına bir ders.
        Granülerlik burada belirleniyor: bir derste değişen tek kelime, o
        kullanıcıya yalnız o dersin ~10 KB'ını indirtiyor. */
-    for (const pack of buildLessonDump(course)) {
+    for (const pack of buildConversationDump(course)) {
       const rows = JSON.parse(pack.json) as WithId[];
       if (rows.length === 0) continue;
-      packs.set(lessonPack(course as PackCourse, pack.level), withOrder(rows));
+      const name = conversationPack(course as PackCourse, pack.level);
+      packs.set(name, withOrder(rows));
+      /* GEÇİCİ: build 6 aynı içeriği eski paket adıyla ve eski alan adıyla
+         (`roleplay`) istiyor. Gövdeler hash adresli olduğu için ikinci paket
+         yalnız farklı baytları taşıyor; build 7 herkese ulaşınca silinecek
+         (lib/legacy-names). */
+      const old = legacyPackName(name);
+      if (old) packs.set(old, withOrder(rows.map((r) => legacyConversationItem(r as WithId & { chat?: unknown }) as unknown as WithId)));
     }
 
     /* BECERİ ALIŞTIRMALARI — seviye başına paket. Mobilde bugün tek dosya

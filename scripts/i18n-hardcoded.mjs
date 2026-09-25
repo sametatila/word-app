@@ -48,12 +48,12 @@ const SKIP = [
   // `lib/legal/` dizinine bölündü. Yol öneki eşleşmesi ikisini de kapsıyor.
   "lib/legal",
   "components/legal-shell.tsx",
-  "lib/lessons",
+  "lib/conversations",
   "lib/skills/content",
   "lib/mock-exams",
   /*
     Haftalık quiz içeriği: `why`, `stem` ve şıklar öğrenciye gösterilen METİN
-    ama sözlükten gelmiyorlar — `lib/mock-exams` ve `lib/lessons` ile birebir
+    ama sözlükten gelmiyorlar — `lib/mock-exams` ve `lib/conversations` ile birebir
     aynı durum. Türkçe yazılıp `data/**\/out/` hattıyla en/de'ye taşınıyorlar
     (bkz. `lib/weekly-quiz/types.ts` dosya başı).
   */
@@ -132,9 +132,9 @@ const SKIP = [
 /**
  * ATLANAN DİZİNİN İÇİNDE OLSA DA TARANAN dosyalar.
  *
- * `lib/lessons` bütünüyle atlanıyor çünkü ders içeriği orada duruyor — ama o
+ * `lib/conversations` bütünüyle atlanıyor çünkü ders içeriği orada duruyor — ama o
  * dizinde MANTIK da var ve mantığın ürettiği metin kullanıcıya görünüyor.
- * Somut örnek: `offline-roleplay` yapay zekâ kapalıyken mikrofon etiketine
+ * Somut örnek: `offline-chat` yapay zekâ kapalıyken mikrofon etiketine
  * "Kalıbı kullan: …", "Anlaşılmadı — ör. …", "Sıradaki kalıp: …" yazıyordu.
  * Üçü de İngilizce ve Almanca arayüzde Türkçe görünüyordu ve tarayıcı hiçbirini
  * göremiyordu: dizin atlanıyor.
@@ -150,7 +150,7 @@ const SKIP = [
  *
  *   modules.ts          46   modül adları/açıklamaları (müfredat içeriği)
  *   module-content.ts   35   bölüm etiketleri + içerik türetme
- *   roleplay.ts         19   modele giden yönerge metni (kullanıcı görmüyor)
+ *   chat.ts         19   modele giden yönerge metni (kullanıcı görmüyor)
  *   native-server.ts     4
  *   log.ts               2
  *   native.ts            2
@@ -159,12 +159,12 @@ const SKIP = [
  * istiyor. Temizlenen dosya bu listeye eklenir.
  */
 const FORCE = [
-  "lib/lessons/offline-roleplay.ts",
-  "lib/lessons/progress.ts",
-  "lib/lessons/boss.ts",
-  "lib/lessons/module-exam/index.ts",
-  "lib/lessons/index.ts",
-  "lib/lessons/types.ts",
+  "lib/conversations/offline-chat.ts",
+  "lib/conversations/progress.ts",
+  "lib/conversations/boss.ts",
+  "lib/conversations/module-exam/index.ts",
+  "lib/conversations/index.ts",
+  "lib/conversations/types.ts",
 ].map((p) => path.join(SRC, ...p.split("/")));
 
 const TURKISH_LETTERS = /[çğışöüÇĞİŞÖÜ]/;

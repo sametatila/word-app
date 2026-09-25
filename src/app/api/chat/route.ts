@@ -3,15 +3,15 @@ import { requireAccount } from "@/lib/auth/guest";
 import { DAILY_QUOTAS } from "@/lib/quotas";
 import { sameOrigin } from "@/lib/auth/origin";
 import { chatConfigured, type ProviderMeta } from "@/lib/chat-providers";
-import { findLesson } from "@/lib/lessons";
-import { lessonDisabled } from "@/lib/content/read";
-import { streamDialogue, streamRoleplay, type RoleplayMode, type RoleplayTurn } from "@/lib/lessons/roleplay";
-import { MAX_HISTORY } from "@/lib/lessons/roleplay-const";
+import { findConversation } from "@/lib/conversations";
+import { conversationDisabled } from "@/lib/content/read";
+import { streamDialogue, streamChat, type ChatMode, type ChatTurn } from "@/lib/conversations/chat";
+import { MAX_HISTORY } from "@/lib/conversations/chat-const";
 import { getExercise } from "@/lib/skills";
-import { logRoleplayTurn } from "@/lib/lessons/log";
+import { logChatTurn } from "@/lib/conversations/log";
 import { langOf } from "@/lib/social/notify";
 import { translate } from "@/lib/i18n/dict";
-import { localiseExercise, localiseLesson } from "@/lib/lessons/native-server";
+import { localiseExercise, localiseConversation } from "@/lib/conversations/native-server";
 import { recordAiUsage } from "@/lib/ai-usage";
 import { legacyBody } from "@/lib/legacy-names";
 import { takeUsage } from "@/lib/premium";
@@ -22,7 +22,7 @@ export const dynamic = "force-dynamic";
 
 /**
  * Rol yapma geçmişinin taşınacak kadarı — eski turlar bağlamı şişirmeden
- * düşer. Sınır `roleplay-const`ta ve tur sayısından TÜRETİLİYOR: sabit bir
+ * düşer. Sınır `chat-const`ta ve tur sayısından TÜRETİLİYOR: sabit bir
  * sayı, uzun konuşmalarda açılışı kırpıp sunucudaki tur sayımını bozuyordu.
  */
 const MAX_CHARS = 2000;
@@ -34,7 +34,7 @@ const MAX_CHARS = 2000;
  * tüketip herkese "sohbet kapalı" gösterebilmesi bir istismar yoluydu. Sınır
  * cömert: dürüst ağır kullanım ~100-150 turdur.
  */
-const ROLEPLAY_DAILY_LIMIT = DAILY_QUOTAS.roleplayTurns;
+const CHAT_DAILY_LIMIT = DAILY_QUOTAS.chatTurns;
 
 /**
  * Rol yapma ucu — dersin konuşma bölümü.
@@ -98,19 +98,19 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "bad_request" }, { status: 400 });
   }
 
-  // Build 6 `lessonId` gönderiyor (geçici, lib/legacy-names).
+  // Build 6 alanı eski adla gönderiyor (geçici, lib/legacy-names).
   const { conversationId, exerciseId, messages: raw, mode: rawMode } = legacyBody(body as Record<string, unknown>) as { conversationId?: unknown; exerciseId?: unknown; messages?: unknown; mode?: unknown };
   // Mod (WP-22): sınavda yardım/düzeltme yok; kayıtta da işaretlenir.
-  const mode: RoleplayMode = rawMode === "exam" ? "exam" : "practice";
+  const mode: ChatMode = rawMode === "exam" ? "exam" : "practice";
   // Beceri diyaloğu (WP-23): ders yerine temalı egzersiz; senaryo istemcide yedek.
   const dialogue = typeof exerciseId === "string" ? await getExercise(exerciseId) : undefined;
   const dialogueRaw = dialogue && dialogue.skill === "speaking" && "dialogue" in dialogue && dialogue.theme ? dialogue : undefined;
-  const lessonRaw = typeof conversationId === "string" ? await findLesson(conversationId) : undefined;
+  const conversationRaw = typeof conversationId === "string" ? await findConversation(conversationId) : undefined;
   /* Kapatılmış dersin rol yapması da kapalı — içerik aynı yerden geliyor. */
-  if (lessonRaw && (await lessonDisabled(lessonRaw.id))) {
-    return NextResponse.json({ error: "unknown_lesson" }, { status: 400 });
+  if (conversationRaw && (await conversationDisabled(conversationRaw.id))) {
+    return NextResponse.json({ error: "unknown_conversation" }, { status: 400 });
   }
-  if (!lessonRaw && !dialogueRaw) return NextResponse.json({ error: "bad_lesson" }, { status: 400 });
+  if (!conversationRaw && !dialogueRaw) return NextResponse.json({ error: "bad_conversation" }, { status: 400 });
 
   /**
    * ÖĞRENCİNİN DİLİ İKİ YERE BİRDEN GİRİYOR.
@@ -125,9 +125,9 @@ export async function POST(req: Request) {
    * etmeye çalışırdı. Çözülemeyen ders olduğu gibi geçiyor (hep-ya-hiç).
    */
   const native = await langOf(userId);
-  const lesson = lessonRaw ? await localiseLesson(lessonRaw, native) : undefined;
+  const conversation = conversationRaw ? await localiseConversation(conversationRaw, native) : undefined;
   const dialogueEx = dialogueRaw ? await localiseExercise(dialogueRaw, native) : undefined;
-  const logId = lesson?.id ?? dialogueEx!.id;
+  const logId = conversation?.id ?? dialogueEx!.id;
 
   const messages = parseMessages(raw);
   if (!messages) return NextResponse.json({ error: "bad_request" }, { status: 400 });
@@ -145,10 +145,10 @@ export async function POST(req: Request) {
     istemci onlara maliyetsiz senaryolu konuşmayı açıyor ve adım kilitlenmiyor —
     izin zorlanamaz (App Store 5.1.2(i)) ve senaryolu yolun maliyeti yok. Hakkı
     bitmiş ama izin vermiş kullanıcı senaryoluya DÜŞMÜYOR, kilidi görüyor.
-    Premium'da tavan sohbet mesajı (aşağıda, günde `roleplayTurns`).
+    Premium'da tavan sohbet mesajı (aşağıda, günde `chatTurns`).
   */
-  if (lessonRaw) {
-    const gate = await claimTiered(userId, "conversation", lessonRaw.level, lessonRaw.id);
+  if (conversationRaw) {
+    const gate = await claimTiered(userId, "conversation", conversationRaw.level, conversationRaw.id);
     if (!gate.allowed) {
       return NextResponse.json({ error: "premium_required", reason: gate.reason, gate: gate.gate }, { status: 403 });
     }
@@ -156,14 +156,14 @@ export async function POST(req: Request) {
 
   // Paralel patlamaya karşı atomik sayaç — gerekçesi `/api/stt`'de aynı yerde.
   // Gövde doğrulandıktan SONRA: bozuk istek hak yakmasın.
-  if (!(await takeUsage(userId, "roleplay_turns", "day", ROLEPLAY_DAILY_LIMIT))) {
+  if (!(await takeUsage(userId, "chat_turns", "day", CHAT_DAILY_LIMIT))) {
     return NextResponse.json({ error: "quota" }, { status: 429 });
   }
 
   try {
     const encoder = new TextEncoder();
     // Öğrencinin son sözü ve modelin cevabı geçici olarak kaydediliyor
-    // (bkz. lib/lessons/log.ts). Kayıt akışın SONUNDA yazılıyor: akıtırken
+    // (bkz. lib/conversations/log.ts). Kayıt akışın SONUNDA yazılıyor: akıtırken
     // veritabanına gitmek cevabı geciktirirdi.
     const said = messages[messages.length - 1].content;
     const turn = messages.filter((m) => m.role === "user").length;
@@ -178,21 +178,21 @@ export async function POST(req: Request) {
           // Her deneme muhasebeye yazılıyor — düşen sağlayıcı dâhil. Zincir
           // onu sessizce atladığı için, kaydedilmeyen bir hata hiç olmamış
           // gibi duruyordu.
-          const gen = lesson
-            ? streamRoleplay(lesson, messages, (m) => (meta = m), (r) => recordAiUsage(userId, { kind: "chat", ...r }), mode, native)
+          const gen = conversation
+            ? streamChat(conversation, messages, (m) => (meta = m), (r) => recordAiUsage(userId, { kind: "chat", ...r }), mode, native)
             : streamDialogue(dialogueEx!, messages, (m) => (meta = m), (r) => recordAiUsage(userId, { kind: "chat", ...r }), native);
           for await (const delta of gen) {
             full += delta;
             controller.enqueue(encoder.encode(delta));
           }
         } catch (err) {
-          console.error("[roleplay] akış koptu", err);
+          console.error("[chat] akış koptu", err);
           // Akış başladıysa durum kodu değiştirilemez; kullanıcı boş baloncuk
           // görmesin diye kopmayı metnin içinde bildiriyoruz.
           controller.enqueue(encoder.encode(`\n\n[${translate(native, "chat.stream_dropped")}]`));
         } finally {
           controller.close();
-          if (full.trim()) void logRoleplayTurn(userId, logId, turn, said, full, meta, mode);
+          if (full.trim()) void logChatTurn(userId, logId, turn, said, full, meta, mode);
         }
       },
     });
@@ -204,14 +204,14 @@ export async function POST(req: Request) {
       },
     });
   } catch (err) {
-    console.error("[roleplay]", err);
+    console.error("[chat]", err);
     return NextResponse.json({ error: "upstream" }, { status: 502 });
   }
 }
 
-function parseMessages(raw: unknown): RoleplayTurn[] | null {
+function parseMessages(raw: unknown): ChatTurn[] | null {
   if (!Array.isArray(raw) || raw.length === 0) return null;
-  const out: RoleplayTurn[] = [];
+  const out: ChatTurn[] = [];
   for (const item of raw.slice(-MAX_HISTORY)) {
     if (typeof item !== "object" || item === null) return null;
     const m = item as Record<string, unknown>;
@@ -235,7 +235,7 @@ async function underDailyLimit(userId: string): Promise<boolean> {
       .select({ n: sql<number>`count(*)::int` })
       .from(aiUsage)
       .where(and(eq(aiUsage.userId, userId), eq(aiUsage.kind, "chat"), gte(aiUsage.createdAt, sql`now() - interval '1 day'`)));
-    return (row?.n ?? 0) < ROLEPLAY_DAILY_LIMIT;
+    return (row?.n ?? 0) < CHAT_DAILY_LIMIT;
   } catch {
     return true;
   }

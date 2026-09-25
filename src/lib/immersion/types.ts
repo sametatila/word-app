@@ -1,5 +1,5 @@
 import type { CefrLevel } from "@/lib/skills/types";
-import type { LessonIcon } from "@/lib/lessons/types";
+import type { ConversationIcon } from "@/lib/conversations/types";
 
 /**
  * Immersion — ikinci mod (bkz. docs/plan/immersion.md).
@@ -15,7 +15,7 @@ import type { LessonIcon } from "@/lib/lessons/types";
  */
 
 export type ImmersionItemKind =
-  | "lesson" // mevcut ders — üretim/roleplay omurgası (userConversations ilerlemesi)
+  | "conversation" // mevcut ders — üretim/chat omurgası (userConversations ilerlemesi)
   | "read" // okuma egzersizi (skill_exercises → reading)
   | "listen" // dinleme egzersizi
   | "write" // yazma egzersizi
@@ -33,7 +33,7 @@ export type ImmersionItem = {
   id: string;
   kind: ImmersionItemKind;
   /**
-   * Altındaki içeriğin kimliği: `lesson` için ders id'si, read/listen/write için
+   * Altındaki içeriğin kimliği: `conversation` için ders id'si, read/listen/write için
    * skill_exercises id'si. `null` = boş slot (içerik henüz kurulmadı); grammar/
    * quiz/checkpoint bugün daima null (motorları var, içerikleri sonra).
    */
@@ -42,8 +42,8 @@ export type ImmersionItem = {
   title: string;
   /** Türkçe alt başlık — ders titleTr'i, egzersiz türü (genre) ya da kısa açıklama. */
   titleTr?: string;
-  /** Yalnız `lesson`: yol-haritası düğüm simgesi. */
-  icon?: LessonIcon;
+  /** Yalnız `conversation`: yol-haritası düğüm simgesi. */
+  icon?: ConversationIcon;
 };
 
 export type ImmersionUnit = {
@@ -71,7 +71,7 @@ export type ImmersionUnit = {
   /** Sıralı item'lar; sonuncusu daima `checkpoint`. */
   items: ImmersionItem[];
   /** Dolu (ref'li) ders item sayısı — ünitenin iskeleti buna dayanır. */
-  lessonCount: number;
+  conversationCount: number;
 };
 
 export type ImmersionTrack = {
