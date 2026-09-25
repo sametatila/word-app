@@ -29,7 +29,7 @@
  * öğrenilen dilde görüyor. Gerekçesi `make.ts` başında.
  *
  * AMERİKAN YAZIMI DENETİMİ YOK — kardeş hatta var çünkü orada yazılan
- * dil İngilizce. Burada yazılan dil Almanca; `usSpelling` her satırda
+ * dil İngilizce. Burada yazılan dil Almanca; `britishSpelling` her satırda
  * susardı ve yalnız gürültü olurdu.
  */
 import { readFileSync, readdirSync, existsSync } from "node:fs";

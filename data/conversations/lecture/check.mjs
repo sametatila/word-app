@@ -17,7 +17,7 @@
  */
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { extractLecture } from "./make.mjs";
-import { usSpelling } from "../spelling.mjs";
+import { britishSpelling } from "../spelling.mjs";
 
 const DIR = new URL(".", import.meta.url).pathname;
 const ARG = (process.argv[2] || "all").toLowerCase();
@@ -59,7 +59,7 @@ if (existsSync(`${DIR}out`))
         // uzunluk konuşma süresidir. Eşik geniş — İngilizce doğal olarak
         // biraz uzun, mesele KATLANMASI.
         if (en.length > Math.max(40, r.tr.length * 2)) U(`çok uzamış (${en.length}, Türkçesi ${r.tr.length})`);
-        for (const h of usSpelling(en)) U(`Amerikan yazımı ${h}`);
+        for (const h of britishSpelling(en)) U(`İngiliz yazımı ${h}`);
       }
       written.set(key, en);
     }

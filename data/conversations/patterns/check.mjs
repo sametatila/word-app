@@ -10,7 +10,7 @@
  */
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { extractVocab } from "../vocab/extract.mjs";
-import { usSpelling } from "../spelling.mjs";
+import { britishSpelling } from "../spelling.mjs";
 
 const DIR = new URL(".", import.meta.url).pathname;
 const ARG = (process.argv[2] || "all").toLowerCase();
@@ -32,7 +32,7 @@ if (existsSync(`${DIR}out`))
       if (!en) H("not boş");
       else if (en.length < 4) H(`not çok kısa: «${en}»`);
       else if (en.length > 90) U(`not uzun (${en.length})`);
-      for (const h of usSpelling(en)) U(`Amerikan yazımı ${h}`);
+      for (const h of britishSpelling(en)) U(`İngiliz yazımı ${h}`);
       written.set(key, en);
     }
   }

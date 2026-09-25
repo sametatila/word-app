@@ -13,7 +13,7 @@
  */
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { extractWord } from "./make.mjs";
-import { usSpelling } from "../spelling.mjs";
+import { britishSpelling } from "../spelling.mjs";
 
 const DIR = new URL(".", import.meta.url).pathname;
 const ARG = (process.argv[2] || "all").toLowerCase();
@@ -50,7 +50,7 @@ if (existsSync(`${DIR}out`))
         if (r.kind === "frame" && !en.includes("{}")) H("çerçevede {} yer tutucusu yok");
         if (r.kind === "frame" && r.tr.includes("not") && !/\bnot\b/.test(en))
           U("çerçevede not yer tutucusu kaybolmuş olabilir");
-        for (const h of usSpelling(en)) U(`Amerikan yazımı ${h}`);
+        for (const h of britishSpelling(en)) U(`İngiliz yazımı ${h}`);
       }
       written.set(r.tr, en);
     }

@@ -29,7 +29,7 @@
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { extractQuiz, type QuizRow } from "./make.js";
 import { QUIZ_WEEKS } from "@/lib/weekly-quiz";
-import { usSpelling } from "../../conversations/spelling.mjs";
+import { britishSpelling } from "../../conversations/spelling.mjs";
 
 const DIR = new URL(".", import.meta.url).pathname;
 const args = process.argv.slice(2).filter((a) => a !== "--de");
@@ -149,7 +149,7 @@ if (existsSync(`${DIR}${OUT}`))
           H(`tür etiketi cümleye dönmüş (${r.tr.length} → ${en.length})`);
         if (en.length > r.tr.length * 2 + 20 || en.length * 2 + 20 < r.tr.length)
           U(`uzunluk çok sapıyor (${r.tr.length} → ${en.length})`);
-        if (SIDE === "en") for (const h of usSpelling(own)) U(`Amerikan yazımı ${h}`);
+        if (SIDE === "en") for (const h of britishSpelling(own)) U(`İngiliz yazımı ${h}`);
       }
       written.set(key, en);
     }

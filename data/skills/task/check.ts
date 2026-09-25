@@ -28,7 +28,7 @@
  */
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { extractTasks, type TaskRow } from "./make.js";
-import { usSpelling } from "../../conversations/spelling.mjs";
+import { britishSpelling } from "../../conversations/spelling.mjs";
 
 const DIR = new URL(".", import.meta.url).pathname;
 const ARG = (process.argv[2] || "all").toLowerCase();
@@ -261,7 +261,7 @@ if (existsSync(`${DIR}out`))
           .split(/([^\p{L}-]+)/u)
           .filter((w) => !carried.has(w))
           .join(" ");
-        for (const h of usSpelling(chosen)) U(`Amerikan yazımı ${h}`);
+        for (const h of britishSpelling(chosen)) U(`İngiliz yazımı ${h}`);
       }
       written.set(key, en);
     }

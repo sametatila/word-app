@@ -45,7 +45,7 @@
  */
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { extractMock, type MockRow } from "./make.js";
-import { usSpelling } from "../../conversations/spelling.mjs";
+import { britishSpelling } from "../../conversations/spelling.mjs";
 
 const DIR = new URL(".", import.meta.url).pathname;
 const args = process.argv.slice(2).filter((a) => a !== "--de");
@@ -228,7 +228,7 @@ if (existsSync(`${DIR}${OUT}`))
             .split(/([^\p{L}-]+)/u)
             .filter((w) => !carried.has(w))
             .join(" ");
-          for (const h of usSpelling(chosen)) U(`Amerikan yazımı ${h}`);
+          for (const h of britishSpelling(chosen)) U(`İngiliz yazımı ${h}`);
         }
       }
       written.set(key, en);

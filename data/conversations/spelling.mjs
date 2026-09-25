@@ -1,79 +1,56 @@
 /**
- * İngilizce alanlarda yazım birliği: hat İNGİLİZ İngilizcesi yazıyor.
+ * İngilizce alanlarda yazım birliği: hat AMERİKAN İngilizcesi yazıyor.
  *
- * Bu bir tercih değil, ölçüm sonucu. Yazılan İngilizce alanlar tarandığında
- * (2026-09-10, 2.305 satır) tablo tek yönlüydü:
+ * 2026-09-25 Samet'in kararı: İngilizce her yerde Amerikan yazımı ve Amerikan
+ * sözcük seçimiyle yazılır; Amerikan'dan İngiliz'e çevrilmez. Kelime havuzu
+ * (words-en.json) ve ses (en-US) zaten Amerikan'dı. O gün bütün içerik ve
+ * anadil sözlükleri Amerikan'a çevrildi; bu kapı artık İngiliz biçimini
+ * yakalıyor (önceki sürüm tersini yapıyordu).
  *
- * (geçiş sayısı, satır değil)
+ * Liste KAPALI ve dar: yalnız Amerikan karşılığı tartışmasız olanlar.
+ * `flat`, `holiday`, `queue`, `lift`, `football` bağlama göre değiştiği için
+ * DIŞARIDA (düz yüzey, resmî tatil, kaldırmak…). İngiliz/Amerikan farkını
+ * ANLATAN satırlar (ör. "İngiltere'de licence, Amerika'da license") bilerek
+ * İngiliz biçimi taşır; uyarı onlarda yanlıştır, satır haklıdır.
  *
- *   -our (colour, neighbour, favour…)   25      -or                     0
- *   -ise fiilleri (organise, apologise) 6+2     -ize                    2
- *   flat / flatmate                      6      apartment               0
- *   holiday                              2      vacation                0
- *   rubbish, CV, programme               7      trash, garbage, resume  0
- *
- * Yani hat zaten İngiliz İngilizcesi; sapma iki satırdı. Aykırı ikisi
- * (`organization` → `organisation`, `to recognize` → `to recognise`)
- * çoğunluğa uyduruldu, kural tersine çevrilmedi.
- *
- * Not: en→de hattı (7.175 satır) bu taramada temiz çıktı. İlk okumada 7
- * Amerikan yazımı görünmüştü ama hepsi Almanca örnek cümledeki sözcüklerdi
- * (`Labor`, `Humor`, `Apartment`) — tarama satırın tamamına bakıyordu.
- *
- * Liste KAPALI ve dar tutuldu: yalnız İngiliz karşılığı tartışmasız olanlar
- * var. `program` (bilgisayar programı İngiliz İngilizcesinde de böyle),
- * `practice`/`license` (biri ad biri fiil olduğunda değişiyor) ve `check`
- * bilerek DIŞARIDA — yanlış ret yanlış kabulden tehlikeli.
- *
- * Aynı sebeple listede bilerek GEVŞEK kalan bir madde var: `meter`. Ölçü
- * birimi olarak Amerikan yazımı (İngilizcesi `metre`) ama ALET adı olarak
- * İngiliz İngilizcesinde de `meter` (park sayacı, su sayacı). Uyarı yanlış
- * çıkarsa satır haklıdır, kural değil.
- *
- * Uyarı verir, hata değil: bir gün gerçekten Amerikan yazımı gereken bir
- * satır çıkarsa (özel ad, alıntı) kapı işi durdurmasın.
+ * Uyarı verir, hata değil.
  */
-const US = [
-  [/\bcolor(s|ed|ful|less)?\b/gi, "colour…"],
-  [/\bbehavior(s|al)?\b/gi, "behaviour…"],
-  [/\bfavor(s|ed|ite|ites)?\b/gi, "favour…"],
-  [/\bneighbor(s|hood|hoods|ing)?\b/gi, "neighbour…"],
-  // `humorous` DEĞİL: -our sözcüklerinin türevlerinde u düşer ve İngiliz
-  // İngilizcesi de `humorous` yazar (`humourless` yazar ama `humorous` yazmaz).
-  // Desen bunu bir kez yanlış reddetti; ölçüt sözcüğün kendisi.
-  [/\bhumor(less)?\b/gi, "humour…"],
-  [/\bapartments?\b/gi, "flat"],
-  [/\bvacations?\b/gi, "holiday"],
-  [/\btrash\b|\bgarbage\b/gi, "rubbish"],
-  [/\bsidewalks?\b/gi, "pavement"],
-  // Günlük hayat sözcükleri: sohbet sahneleri dükkân, ulaşım ve ev
-  // dolu, bu grup 580 sahnede kaçınılmaz. Yalnız İngiliz karşılığı
-  // TARTIŞMASIZ olanlar; `pants` (İngilizcede iç çamaşırı), `line`,
-  // `cookie` (tarayıcı çerezi) bilerek DIŞARIDA.
-  [/\belevators?\b/gi, "lift"],
-  [/\brestrooms?\b/gi, "toilet"],
-  [/\bgas stations?\b/gi, "petrol station"],
-  [/\bparking lots?\b/gi, "car park"],
-  [/\bcell ?phones?\b/gi, "mobile"],
-  [/\bdrugstores?\b/gi, "chemist"],
-  [/\bfaucets?\b/gi, "tap"],
-  [/\bdiapers?\b/gi, "nappy"],
-  [/\bflashlights?\b/gi, "torch"],
-  [/\bcash registers?\b/gi, "till"],
-  [/\bcenters?\b/gi, "centre"],
-  [/\btheaters?\b/gi, "theatre"],
-  [/\bmeters?\b/gi, "metre"],
-  [/\bgray\b/gi, "grey"],
-  [/\btraveled\b|\btraveling\b/gi, "travelled…"],
-  [/\bcanceled\b|\bcanceling\b/gi, "cancelled…"],
-  [/\bdefense\b|\boffense\b/gi, "defence / offence"],
-  [/\b\w*(organiz|realiz|apologiz|recogniz|specializ|memoriz|summariz|criticiz|emphasiz|minimiz|socializ|authoriz|analyz)\w*\b/gi, "-ise"],
+const UK = [
+  [/\bcolour(s|ed|ful|less)?\b/gi, "color…"],
+  [/\bbehaviour(s|al)?\b/gi, "behavior…"],
+  [/\bfavour(s|ed|ite|ites)?\b/gi, "favor…"],
+  [/\bneighbour(s|hood|hoods|ing)?\b/gi, "neighbor…"],
+  [/\b(humour|honour|labour|harbour|rumour|flavour)(s|ed|less)?\b/gi, "-or"],
+  [/\b(centre|theatre|metre|litre|kilometre|centimetre)s?\b/gi, "-er"],
+  [/\b(organis|realis|recognis|apologis|summaris|memoris|criticis|emphasis|minimis|specialis|prioritis|standardis|authoris|characteris)(e|ed|es|ing|ation|ations)\b/gi, "-ize"],
+  [/\banalys(e|ed|ing)\b/gi, "analyze"],
+  [/\b(cancell|travell|labell|modell)(ed|ing|er|ers)\b/gi, "canceled…"],
+  [/\bprogrammes?\b/gi, "program"],
+  [/\b(licence|defence|offence)s?\b/gi, "-se"],
+  [/\bgrey\b/gi, "gray"],
+  [/\btyres?\b/gi, "tire"],
+  [/\bcatalogues?\b/gi, "catalog"],
+  [/\bjudgements?\b/gi, "judgment"],
+  [/\bper cent\b/gi, "percent"],
+  [/\bpractis(e|ed|es|ing)\b/gi, "practice…"],
+  [/\blearnt\b|\bspelt\b/gi, "learned/spelled"],
+  [/\bwhilst\b|\bamongst\b/gi, "while/among"],
+  [/\bpavements?\b/gi, "sidewalk"],
+  [/\blorr(y|ies)\b/gi, "truck"],
+  [/\bpetrol\b/gi, "gas/gasoline"],
+  [/\bcar parks?\b/gi, "parking lot"],
+  [/\bmobile phones?\b/gi, "cell phone"],
+  [/\bmotorways?\b/gi, "highway"],
+  [/\bpostcodes?\b/gi, "zip code"],
+  [/\bmaths\b/gi, "math"],
+  [/\bfortnight\b/gi, "two weeks"],
+  [/\bat (the )?weekends?\b/gi, "on (the) weekend(s)"],
 ];
 
-/** Metindeki Amerikan yazımlarını `«bulunan» → önerilen` biçiminde döndürür. */
-export function usSpelling(text) {
+/** Metindeki İngiliz yazımlarını `«bulunan» → önerilen` biçiminde döndürür. */
+export function britishSpelling(text) {
   const out = [];
-  for (const [re, hint] of US)
+  for (const [re, hint] of UK)
     for (const m of String(text ?? "").matchAll(re)) out.push(`«${m[0]}» → ${hint}`);
   return out;
 }

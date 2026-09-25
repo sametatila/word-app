@@ -12,7 +12,7 @@
  */
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { extractMeta } from "./make.mjs";
-import { usSpelling } from "../spelling.mjs";
+import { britishSpelling } from "../spelling.mjs";
 
 const DIR = new URL(".", import.meta.url).pathname;
 const ARG = (process.argv[2] || "all").toLowerCase();
@@ -48,7 +48,7 @@ if (existsSync(`${DIR}out`))
       if (!s) H("özet boş");
       else if (!/[.!?]$/.test(s)) H("özet noktalama ile bitmiyor");
       else if (s.length < 20) H(`özet çok kısa (${s.length})`);
-      for (const h of usSpelling(`${t} ${s}`)) U(`Amerikan yazımı ${h}`);
+      for (const h of britishSpelling(`${t} ${s}`)) U(`İngiliz yazımı ${h}`);
       written.set(r.conversation, t);
     }
   }

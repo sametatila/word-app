@@ -21,7 +21,7 @@
  */
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { proseWork } from "./make.js";
-import { usSpelling } from "../../conversations/spelling.mjs";
+import { britishSpelling } from "../../conversations/spelling.mjs";
 
 const DIR = new URL(".", import.meta.url).pathname;
 const ARG = (process.argv[2] || "all").toLowerCase();
@@ -154,7 +154,7 @@ if (existsSync(`${DIR}out`))
           her koşuda tekrar göstermek demekti; asıl uyarılar da o gürültüde
           kayboluyordu.
         */
-        for (const h of usSpelling(en.replace(/[„"][^„"“”]*[“"]/g, " "))) U(`Amerikan yazımı ${h}`);
+        for (const h of britishSpelling(en.replace(/[„"][^„"“”]*[“"]/g, " "))) U(`İngiliz yazımı ${h}`);
       }
       written.set(key, en);
     }

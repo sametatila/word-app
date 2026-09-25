@@ -19,7 +19,7 @@
  */
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { extractChat } from "./make.mjs";
-import { usSpelling } from "../spelling.mjs";
+import { britishSpelling } from "../spelling.mjs";
 
 const DIR = new URL(".", import.meta.url).pathname;
 const ARG = (process.argv[2] || "all").toLowerCase();
@@ -71,8 +71,8 @@ if (existsSync(`${DIR}out`))
       else if (!/[.!?]$/.test(goal)) H("goal noktalama ile bitmiyor");
       else if (goal.length < 25) H(`goal çok kısa (${goal.length})`);
 
-      for (const h of usSpelling(`${scene} ${partner} ${open} ${goal}`))
-        U(`Amerikan yazımı ${h}`);
+      for (const h of britishSpelling(`${scene} ${partner} ${open} ${goal}`))
+        U(`İngiliz yazımı ${h}`);
 
       written.set(r.conversation, true);
     }

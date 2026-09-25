@@ -14,7 +14,7 @@
  */
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { extractExam } from "./make";
-import { usSpelling } from "../spelling.mjs";
+import { britishSpelling } from "../spelling.mjs";
 
 const DIR = new URL(".", import.meta.url).pathname;
 const ARG = (process.argv[2] || "all").toLowerCase();
@@ -62,7 +62,7 @@ if (existsSync(`${DIR}out`))
           if (en.length > de.length * 2 + 16 || en.length * 2 + 16 < de.length)
             U(`Almancadan uzunluk sapması (${de.length} → ${en.length})`);
         }
-        for (const h of usSpelling(en)) U(`Amerikan yazımı ${h}`);
+        for (const h of britishSpelling(en)) U(`İngiliz yazımı ${h}`);
       }
       written.set(r.tr, en);
     }
