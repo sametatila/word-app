@@ -159,7 +159,7 @@ export const enB1P11: SkillExercise[] = [
         text: "Amina and her son walked the last ___.",
         options: [],
         answer: 0,
-        accept: ["kilometer", "kilometer"],
+        accept: ["kilometer", "km"],
         explain: "„walked the last kilometer“ — arabayı bir servise bırakıp yürümüşler.",
       },
       {
@@ -197,7 +197,7 @@ export const enB1P11: SkillExercise[] = [
       { de: "to reverse", tr: "geri geri gitmek" },
       { de: "sign", tr: "tabela" },
       { de: "number plate", tr: "plaka" },
-      { de: "bent", tr: "eğri" },
+      { de: "bent", tr: "bükülmüş" },
     ],
     minutes: 12,
     tasks: [

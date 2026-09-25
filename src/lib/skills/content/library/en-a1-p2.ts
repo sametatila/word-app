@@ -106,8 +106,8 @@ export const enA1P2: SkillExercise[] = [
     minutes: 4,
     segments: [
       { text: "Hello, this is a message for Mr. Karaca. My name is Piotr from Fix It Shoe Repair." },
-      { text: "Your black shoes are ready. We changed both heels and cleaned them." },
-      { text: "The price is twenty-two euros. That is two euros less than we said, because one heel was fine." },
+      { text: "Your black shoes are ready. We changed one heel and cleaned both shoes." },
+      { text: "The price is twenty-two euros. That is two euros less than we said, because the other heel was fine." },
       { text: "We are open from nine to six, but on Wednesday we close at one." },
       { text: "Please bring the little yellow ticket. Without the ticket we cannot give you the shoes." },
       { text: "If you cannot come this week, no problem. We keep them for one month. Thank you and goodbye!" },
@@ -137,7 +137,7 @@ export const enA1P2: SkillExercise[] = [
         text: "What must Mr. Karaca bring?",
         options: [],
         answer: 0,
-        accept: ["the yellow ticket", "the little yellow ticket", "a ticket", "the ticket"],
+        accept: ["the yellow ticket", "yellow ticket", "the little yellow ticket", "a ticket", "the ticket"],
         explain: "„Please bring the little yellow ticket.“",
       },
       {
@@ -150,9 +150,9 @@ export const enA1P2: SkillExercise[] = [
       },
       {
         text: "What did the shop do?",
-        options: ["changed the heels and cleaned the shoes", "made a new pair of shoes", "changed the color of the shoes"],
+        options: ["changed one heel and cleaned the shoes", "made a new pair of shoes", "changed the color of the shoes"],
         answer: 0,
-        explain: "„We changed both heels and cleaned them.“",
+        explain: "„We changed one heel and cleaned both shoes.“",
       },
     ],
   },
@@ -234,7 +234,7 @@ export const enA1P2: SkillExercise[] = [
       {
         de: "This ship is very big.",
         tr: "Bu gemi çok büyük.",
-        hint: "„this“ ve „ship“ kısa i: dil biraz aşağıda, ses gevşek. Türkçedeki i'den daha kapalı.",
+        hint: "„this“ ve „ship“ kısa i: dil biraz aşağıda, ses gevşek; Türkçedeki i'den biraz daha açık.",
         confusions: [
           { heard: ["these sheep", "this sheep"], fix: "Uzun söylersen „sheep“ (koyun) olur; sesi kısa ve gevşek tut.", expected: "ship" },
         ],
@@ -260,7 +260,7 @@ export const enA1P2: SkillExercise[] = [
         tr: "Kız kardeşim denizin yakınında oturuyor.",
         hint: "„lives“ kısa i, „sea“ uzun ii. „leaves“ demek istemiyorsun.",
         confusions: [
-          { heard: ["leaves near", "see"], fix: "„lives“ kısa: livz. Uzun söylersen „leaves“ (ayrılır) olur.", expected: "lives" },
+          { heard: ["leaves near"], fix: "„lives“ kısa: livz. Uzun söylersen „leaves“ (ayrılır) olur.", expected: "lives" },
         ],
       },
       {

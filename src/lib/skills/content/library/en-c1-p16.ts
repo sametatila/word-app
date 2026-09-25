@@ -205,7 +205,7 @@ export const enC1P16: SkillExercise[] = [
           "whether the book is expensive",
         ],
         answer: 0,
-        explain: "Doğru ama tek haber olan bir eleştiri politikanın değişmesine yol açmış.",
+        explain: "Eleştiri doğruydu ama kitap hakkında çıkan tek yazıydı; politika bu yüzden değişti.",
       },
     ],
   },
@@ -312,7 +312,7 @@ export const enC1P16: SkillExercise[] = [
         "I'd rather critics were honest, but honesty has more than one form, and the argument usually confuses " +
         "them. " +
         "The best case for being tougher is that a soft review is a quiet lie to the reader. Someone spends an " +
-        "evening and a ticket on the strength of it, and the writer loses the one piece of outside judgement " +
+        "evening and a ticket on the strength of it, and the writer loses the one piece of outside judgment " +
         "they were going to get. " +
         "But the two situations are not the same. A large company has marketing, a budget and a dozen other " +
         "reviews; a bad notice is one voice among many. " +

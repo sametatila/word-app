@@ -205,7 +205,7 @@ export const deB2P14: SkillExercise[] = [
     gloss: [
       { de: "der Angehörige", tr: "yakın akraba", en: "relative" },
       { de: "die Unterstützung", tr: "destek", en: "support" },
-      { de: "die Vertretung", tr: "vekâlet", en: "cover" },
+      { de: "die Vertretung", tr: "yerine bakan kişi", en: "cover" },
       { de: "erreichbar", tr: "ulaşılabilir", en: "reachable" },
       { de: "absprechen", tr: "kararlaştırmak", en: "to arrange" },
     ],
@@ -268,7 +268,7 @@ export const deB2P14: SkillExercise[] = [
     skill: "speaking",
     title: "Müssen Kinder ihre Eltern pflegen?",
     genre: "monologue",
-    intro: "Bir dakikadan uzun tek başına konuşacaksın: ahlaki bir görevle pratik bir imkânı birbirinden ayır.",
+    intro: "Bir buçuk dakikaya kadar tek başına konuşacaksın: ahlaki bir görevle pratik bir imkânı birbirinden ayır.",
     gloss: [],
     minutes: 7,
     monologue: {

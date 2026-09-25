@@ -148,7 +148,7 @@ export const deB1P3: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Frau Vogt wacht heute meistens ohne Wecker auf.",
+        text: "Frau Vogt wacht heute meistens vor dem Wecker auf.",
         options: ["Richtig", "Falsch"],
         answer: 0,
         explain: "„Heute wache ich zwei Minuten vor dem Wecker auf.“",
@@ -232,13 +232,13 @@ export const deB1P3: SkillExercise[] = [
           { de: "Ich würde es jedem empfehlen, der …", tr: "… olan herkese tavsiye ederdim", en: "I'd recommend it to anyone who …" },
         ],
         sample:
-          "Angefangen hat es mit einer Kiste. Vor drei Jahren habe ich darin vierzig Briefe von meiner Großmutter " +
+          "Angefangen hat es mit einer Kiste. Als Jugendliche habe ich oft Briefe geschrieben, aber mit dem ersten Handy habe ich damit aufgehört, weil Nachrichten schneller waren. Vor drei Jahren habe ich darin vierzig Briefe von meiner Großmutter " +
           "gefunden, an einem Abend gelesen und danach zwei Wochen an nichts anderes gedacht. Von mir würde niemand " +
           "so eine Kiste finden: Alles, was ich schreibe, liegt in Chatverläufen, die niemand aufhebt. " +
           "Seitdem schreibe ich jeden Monat einen Brief mit der Hand. Es dauert eine Stunde, und das ist der Punkt. " +
           "In einer Nachricht schreibe ich, was ich gerade mache; in einem Brief schreibe ich, was ich denke. " +
-          "Zwei von fünf Menschen antworten nie. Die anderen drei aber schreiben Sätze, die sie mir nie geschickt " +
-          "hätten. Ich würde es jedem empfehlen, der glaubt, keine Zeit dafür zu haben.",
+          "Zwei von fünf Menschen antworten nie. Die anderen drei aber schreiben Sätze, die sie mir in einer " +
+          "Nachricht nie geschickt hätten. Ich würde es jedem empfehlen, der glaubt, keine Zeit dafür zu haben.",
       },
     ],
   },

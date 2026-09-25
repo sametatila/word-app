@@ -138,7 +138,7 @@ export const deC1P9: SkillExercise[] = [
       { text: "Der zweite Fehler ist die Vollständigkeit. Wer alles aufhebt, hebt nichts auf, weil das Wiederfinden am Volumen scheitert." },
       { text: "Empfohlen wird deshalb ein umgekehrtes Vorgehen: erst sammeln, dann drei Monate warten, dann ordnen — und zwar nur das, was in dieser Zeit tatsächlich gesucht wurde." },
       { speaker: "Frau Dr. Petri", text: "Das klingt nach Faulheit, ist aber das Gegenteil. Man verschiebt den Aufwand dorthin, wo er nachweislich etwas bringt." },
-      { text: "Drittens: ein einziges Suchfeld schlägt jede Ordnerhierarchie, sofern die Dateinamen brauchbar sind. Der Name ist die eigentliche Ablage." },
+      { text: "Drittens: Ein einziges Suchfeld schlägt jede Ordnerhierarchie, sofern die Dateinamen brauchbar sind. Der Name ist die eigentliche Ablage." },
       { text: "Und schließlich: Auf Versionen kann man fast immer verzichten, auf das Datum im Dateinamen nie." },
       { speaker: "Frau Dr. Petri", text: "Wenn Sie nur eine Regel übernehmen, dann diese. Alles andere ist Geschmack, das Datum ist Handwerk." },
     ],
@@ -168,7 +168,7 @@ export const deC1P9: SkillExercise[] = [
         text: "Laut Beitrag ist der Dateiname die eigentliche Ablage.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "„ein einziges Suchfeld schlägt jede Ordnerhierarchie“ — asıl dosyalama addır.",
+        explain: "„Der Name ist die eigentliche Ablage.“ — dosya adları işe yararsa tek bir arama kutusu her klasör düzenini yener.",
       },
       {
         kind: "gapfill",
@@ -183,7 +183,7 @@ export const deC1P9: SkillExercise[] = [
         text: "Worauf darf man laut Beitrag nie verzichten?",
         options: [],
         answer: 0,
-        accept: ["auf das Datum", "das Datum", "auf das Datum im Dateinamen"],
+        accept: ["auf das Datum", "das Datum", "auf das Datum im Dateinamen", "das Datum im Dateinamen"],
         explain: "„auf das Datum im Dateinamen nie“.",
       },
       {
@@ -235,6 +235,12 @@ export const deC1P9: SkillExercise[] = [
         kind: "free",
         prompt:
           "Bir forum tartışmasına katkı yaz: hangi iki konuma yanıt verdiğini söyle, tartışmayı ilerleten bir ayrım getir, ayrımı bir örnekle göster, karşı tarafa hak verdiğin noktayı kabul et ve tartışmaya bir soru bırak.",
+        stimulus:
+          "Forum — Thema: Was wir auslagern, verlernen wir\n\n" +
+          "mko: Seit ich navigiere statt zu suchen, finde ich in meiner eigenen Stadt Wege nicht mehr, " +
+          "die ich früher im Schlaf gegangen bin. Da geht etwas verloren.\n\n" +
+          "ela_w: Dass eine Fähigkeit abnimmt, wenn man sie nicht nutzt, ist trivial. Ich merke mir keine " +
+          "Telefonnummern mehr, dafür merke ich mir, wo ich was finde — das ist auch eine Leistung, nur eine andere.",
         checklist: [
           "Hangi konumlara yanıt verdiğini yaz",
           "Bir ayrım getir ve tanımla",

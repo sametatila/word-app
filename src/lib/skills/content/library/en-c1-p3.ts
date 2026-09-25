@@ -140,7 +140,7 @@ export const enC1P3: SkillExercise[] = [
       { de: "subsidize", tr: "sübvanse etmek" },
       { de: "threshold", tr: "eşik" },
       { de: "outreach", tr: "erişim çalışması" },
-      { de: "appear", tr: "bizzat gitmek" },
+      { de: "appear", tr: "görünmek" },
       { de: "frequent", tr: "sık" },
       { de: "disagreement", tr: "anlaşmazlık" },
       { de: "summarize", tr: "özetlemek" },
@@ -194,7 +194,7 @@ export const enC1P3: SkillExercise[] = [
         text: "What does Ruth say goes first when a grant is cut?",
         options: [],
         answer: 0,
-        accept: ["the education officer", "education staff", "the education post"],
+        accept: ["the education officer", "education staff", "the education post", "education officer", "the education officer post"],
         explain: "„It is the education officer, who was the person actually changing the mix.“",
       },
       {
@@ -324,8 +324,8 @@ export const enC1P3: SkillExercise[] = [
         "months; the headline will say that the policy works, and the two sentences are not the same sentence. " +
         "The second trap is the opposite and it is more respectable. Somebody notices a limitation, and the " +
         "limitation is used to dismiss the whole thing, as though a study that cannot answer everything answers " +
-        "nothing. What tends to be missed there is the direction: a small sample makes an effect harder to " +
-        "detect, so a result that survives one is usually stronger, not weaker. My own rule when reading is to " +
+        "nothing. What tends to be missed there is that every study has limits, and the useful question is not " +
+        "whether a limitation exists but whether it could have produced the result. My own rule when reading is to " +
         "ask three things before I ask whether I agree. What exactly was measured, over what period, and " +
         "compared with what? If the report does not let me answer those, the problem is not that the finding is " +
         "uncertain. The problem is that I have not been told enough to be uncertain about anything in " +

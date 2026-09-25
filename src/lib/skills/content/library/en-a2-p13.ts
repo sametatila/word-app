@@ -184,7 +184,7 @@ export const enA2P13: SkillExercise[] = [
     intro: "Bu akşam çocuklarına bir bakıcı bakacak; önce iki cümle kur, sonra ona masaya bırakacağın notu yaz.",
     gloss: [
       { de: "babysitter", tr: "bebek bakıcısı" },
-      { de: "allowed", tr: "serbest" },
+      { de: "allowed", tr: "izinli" },
       { de: "bowl", tr: "kase" },
       { de: "reach", tr: "ulaşmak" },
     ],

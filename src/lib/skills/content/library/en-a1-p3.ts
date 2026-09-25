@@ -93,7 +93,7 @@ export const enA1P3: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     title: "The Museum Closes in Twenty Minutes",
-    genre: "phone",
+    genre: "info",
     intro: "Müzede kapanış anonsunu dinleyeceksin: hangi kat önce kapanıyor, mağaza ne zamana kadar açık, yarın ne var.",
     gloss: [
       { de: "floor", tr: "kat" },
@@ -137,7 +137,7 @@ export const enA1P3: SkillExercise[] = [
         text: "How much are the books today?",
         options: [],
         answer: 0,
-        accept: ["five euros", "5 euros", "five"],
+        accept: ["five euros", "5 euros", "five", "5"],
         explain: "„Today all books are five euros.“",
       },
       {
@@ -208,7 +208,7 @@ export const enA1P3: SkillExercise[] = [
         ],
         sample:
           "Hi Bea, I am so sorry! The bus is not here and I am twenty minutes late. There is a problem on my line. " +
-          "Please do not wait outside, it is very cold. Go in and take our table by the window. " +
+          "Please do not wait outside. It is very cold. Go in and take our table by the window. " +
           "Please order a tea for me. See you very soon!",
       },
     ],
@@ -236,7 +236,7 @@ export const enA1P3: SkillExercise[] = [
         tr: "Viyana'yı ziyaret etmek istiyoruz.",
         hint: "„we“ ve „want“ yuvarlak dudakla, dişe değmeden; „visit“ ve „Vienna“ üst dişler alt dudakta.",
         confusions: [
-          { heard: ["Ve vant to", "We want to wisit"], fix: "„w“de dişler dudağa değmez, „v“de değer; ikisini karıştırma.", expected: "visit" },
+          { heard: ["we sit"], fix: "„w“de dişler dudağa değmez, „v“de değer; ikisini karıştırma.", expected: "visit" },
         ],
       },
       {
@@ -244,7 +244,7 @@ export const enA1P3: SkillExercise[] = [
         tr: "Kamyonet çok eski.",
         hint: "„van“ ve „very“ ikisi de v: üst dişler alt dudağa hafifçe dokunur.",
         confusions: [
-          { heard: ["The wan is wery old"], fix: "Dudakları yuvarlama; dişini dudağına koy ve titreştir: van, very.", expected: "van" },
+          { heard: ["the one is very old", "wan"], fix: "Dudakları yuvarlama; dişini dudağına koy ve titreştir: van, very.", expected: "van" },
         ],
       },
       {
@@ -252,7 +252,7 @@ export const enA1P3: SkillExercise[] = [
         tr: "Cüzdanım nerede?",
         hint: "„where“ ve „wallet“ w ile başlar: dudaklar önce yuvarlak, sonra açılır.",
         confusions: [
-          { heard: ["Vere is my vallet"], fix: "Ağzını „u“ der gibi yuvarla ve sonra kelimeye geç: uue-a, uo-lit.", expected: "wallet" },
+          { heard: ["valet", "very is my"], fix: "Ağzını „u“ der gibi yuvarla ve sonra kelimeye geç: uue-a, uo-lit.", expected: "wallet" },
         ],
       },
       {
@@ -260,7 +260,7 @@ export const enA1P3: SkillExercise[] = [
         tr: "Vera her hafta sonu çalışıyor.",
         hint: "Aynı cümlede üç ses: „Vera“ v, „works“ ve „weekend“ w, „every“ yine v.",
         confusions: [
-          { heard: ["Wera vorks", "everi wekend"], fix: "Baştaki ada dikkat: Vera dişle, works dudakla.", expected: "Vera" },
+          { heard: ["wear a works", "where a works"], fix: "Baştaki ada dikkat: Vera dişle, works dudakla.", expected: "Vera" },
         ],
       },
       {
@@ -268,7 +268,7 @@ export const enA1P3: SkillExercise[] = [
         tr: "Beş beyaz penceremiz var.",
         hint: "„have“ ve „five“ v sesi; „we“, „white“ ve „windows“ w sesi.",
         confusions: [
-          { heard: ["We hawe five", "vindows"], fix: "„have“ ve „five“ dişli, „windows“ dudaklı: hev, fayv, uindouz.", expected: "windows" },
+          { heard: [], fix: "„have“ ve „five“ dişli, „windows“ dudaklı: hev, fayv, uindouz.", expected: "windows" },
         ],
       },
       {
@@ -276,7 +276,7 @@ export const enA1P3: SkillExercise[] = [
         tr: "Suyu ver lütfen.",
         hint: "„give“ v ile, „water“ w ile başlar; iki kelime arka arkaya geliyor.",
         confusions: [
-          { heard: ["Giwe me the vater"], fix: "İlkinde diş, ikincisinde dudak: giv, uo-ta.", expected: "water" },
+          { heard: [], fix: "İlkinde diş, ikincisinde dudak: giv, uo-ta.", expected: "water" },
         ],
       },
       {
@@ -284,7 +284,7 @@ export const enA1P3: SkillExercise[] = [
         tr: "Victor bir köyde yaşıyor.",
         hint: "Üç kez v: Victor, lives, village. Cümlenin tamamı diş-dudak çalışması.",
         confusions: [
-          { heard: ["Wictor liwes in a willage"], fix: "Üçünde de üst dişler alt dudağa değsin; hiçbirinde dudak yuvarlanmaz.", expected: "village" },
+          { heard: [], fix: "Üçünde de üst dişler alt dudağa değsin; hiçbirinde dudak yuvarlanmaz.", expected: "village" },
         ],
       },
     ],

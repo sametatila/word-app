@@ -22,7 +22,7 @@
   {
     "tr": "Kendi sonucunu bağla",
     "kind": "monologue.bulletsTr",
-    "de": "Binde deinen eigenen Schluss"
+    "de": "Zieh dein eigenes Fazit"
   },
   {
     "tr": "Kısa bir kapanış yap",
@@ -382,7 +382,7 @@
   {
     "tr": "Doğrusu, karşı taraf … konusunda haklı",
     "kind": "monologue.targets.tr",
-    "de": "Ehrlich gesagt hat die Gegenseite in … recht"
+    "de": "Fairerweise muss man sagen: Die Gegenseite hat recht, wenn …"
   },
   {
     "tr": "Maliyet … seçen kimdeyse orada durmalı",
@@ -572,7 +572,7 @@
   {
     "tr": "Lütfen kapıyı çek.",
     "kind": "drill.tr",
-    "de": "Zieh bitte die Tür zu."
+    "de": "Zieh bitte an der Tür."
   },
   {
     "tr": "O iyi bir öğrenci.",
@@ -657,7 +657,7 @@
   {
     "tr": "Yeterince yemek getirdi.",
     "kind": "drill.tr",
-    "de": "Sie hat genug Essen mitgebracht."
+    "de": "Er hat genug Essen mitgebracht."
   },
   {
     "tr": "Yine de bu zor bir soru.",
@@ -720,9 +720,9 @@
     "de": "Das war ein langer Tag, nicht wahr?"
   },
   {
-    "tr": "Gelecekte sıcaklık ne olacak?",
+    "tr": "Gelecekte sıcaklık daha yüksek olacak.",
     "kind": "drill.tr",
-    "de": "Wie wird die Temperatur in Zukunft sein?"
+    "de": "In Zukunft wird die Temperatur höher sein."
   },
   {
     "tr": "Beklemenizin sakıncası var mı?",

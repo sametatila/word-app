@@ -114,12 +114,12 @@ export const deB2P17: SkillExercise[] = [
     skill: "listening",
     title: "Ein Jahr im vernetzten Zuhause",
     genre: "dialogue",
-    intro: "Bir podcast sohbeti: evini bir yıl önce akıllı hâle getiren sunucu bilançosunu anlatıyor, öteki şüpheyle soruyor.",
+    intro: "Bir podcast sohbeti: evini bir yıl önce akıllı hâle getiren Frau Weber bilançosunu anlatıyor, Herr Krüger şüpheyle soruyor.",
     gloss: [
       { de: "vernetzen", tr: "ağa bağlamak", en: "to network" },
       { de: "die Heizung", tr: "kalorifer", en: "heating" },
       { de: "steuern", tr: "kontrol etmek", en: "to control" },
-      { de: "der Schalter", tr: "şalter", en: "switch" },
+      { de: "der Schalter", tr: "elektrik düğmesi", en: "switch" },
       { de: "die Abhängigkeit", tr: "bağımlılık", en: "dependence" },
       { de: "der Lautsprecher", tr: "hoparlör", en: "speaker" },
     ],
@@ -267,7 +267,7 @@ export const deB2P17: SkillExercise[] = [
     skill: "speaking",
     title: "Ein eigenes Smartphone unter vierzehn?",
     genre: "monologue",
-    intro: "Bir dakikadan uzun tek başına konuşacaksın: yasak ile serbestlik arasında işleyen bir yol öner ve bedelini söyle.",
+    intro: "Bir buçuk dakikaya kadar tek başına konuşacaksın: yasak ile serbestlik arasında işleyen bir yol öner ve bedelini söyle.",
     gloss: [],
     minutes: 7,
     monologue: {

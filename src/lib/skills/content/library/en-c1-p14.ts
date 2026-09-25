@@ -128,7 +128,7 @@ export const enC1P14: SkillExercise[] = [
     intro: "On dokuz yıldır gece müzik yayını yapan bir sunucuyla söyleşi: bir insan, bir algoritmanın yapamadığı neyi yapar?",
     gloss: [
       { de: "algorithm", tr: "algoritma" },
-      { de: "behalf", tr: "ad" },
+      { de: "behalf", tr: "adına" },
       { de: "arrogant", tr: "kibirli" },
       { de: "aware", tr: "farkında" },
       { de: "defense", tr: "savunma" },

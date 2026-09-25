@@ -121,11 +121,11 @@ export const enB2P9: SkillExercise[] = [
       { de: "to overhear", tr: "kulak misafiri olmak" },
       { de: "informal", tr: "gayriresmî" },
       { de: "apprentice", tr: "çırak" },
-      { de: "to schedule", tr: "programlamak" },
+      { de: "to schedule", tr: "planlamak" },
       { de: "corridor", tr: "koridor" },
       { de: "deliberate", tr: "bilinçli" },
       { de: "entire", tr: "tüm" },
-      { de: "definition", tr: "kavram tanımı" },
+      { de: "definition", tr: "tanım" },
       { de: "profession", tr: "meslek" },
     ],
     minutes: 8,
@@ -141,7 +141,7 @@ export const enB2P9: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "Where does the speaker say he learned most?",
+        text: "Where did the speaker learn most about their first profession?",
         options: [
           "in the seconds after meetings",
           "in training sessions",
@@ -182,6 +182,7 @@ export const enB2P9: SkillExercise[] = [
         answer: 0,
         accept: [
           "make the informal deliberate",
+          "making the informal deliberate",
           "say decisions out loud",
           "explain decisions openly",
         ],
@@ -214,18 +215,18 @@ export const enB2P9: SkillExercise[] = [
       { de: "to concede", tr: "kabul etmek" },
       { de: "practical", tr: "uygulanabilir" },
       { de: "assumption", tr: "varsayım" },
-      { de: "trade-off", tr: "takas" },
-      { de: "appear", tr: "bizzat gitmek" },
-      { de: "pick", tr: "gidip almak" },
-      { de: "mandate", tr: "aşı zorunluluğu" },
+      { de: "trade-off", tr: "ödünleşim" },
+      { de: "appear", tr: "görünmek" },
+      { de: "pick", tr: "seçmek" },
+      { de: "mandate", tr: "zorunluluk" },
     ],
     minutes: 14,
     tasks: [
       {
         kind: "build",
-        tr: "Sabit öğleden sonraları kararlaştırır kararlaştırmaz toplantılar birleşti.",
-        answer: "As soon as we agreed fixed afternoons, the meetings came together.",
-        alternatives: ["The meetings came together as soon as we agreed fixed afternoons."],
+        tr: "Sabit öğleden sonralarda anlaşır anlaşmaz toplantılar kısaldı.",
+        answer: "As soon as we agreed on fixed afternoons, the meetings got shorter.",
+        alternatives: ["The meetings got shorter as soon as we agreed on fixed afternoons."],
         hint: "„as soon as“ arkasından geçmiş zaman gelir; gelecek için present kullanılır.",
       },
       {

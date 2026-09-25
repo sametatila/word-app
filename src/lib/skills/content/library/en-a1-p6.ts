@@ -33,7 +33,7 @@ export const enA1P6: SkillExercise[] = [
         tr: "Okul bu caddede.",
         hint: "„school“ SK ile, „street“ STR ile başlar. Baştaki sessizler tek nefeste çıkar, araya ünlü girmez.",
         confusions: [
-          { heard: ["The iskool is on this istreet"], fix: "Kelimenin başına i sesi ekleme; s doğrudan sonraki sessize bağlanır.", expected: "street" },
+          { heard: ["is cool"], fix: "Kelimenin başına i sesi ekleme; s doğrudan sonraki sessize bağlanır.", expected: "street" },
         ],
       },
       {
@@ -41,7 +41,7 @@ export const enA1P6: SkillExercise[] = [
         tr: "İlkbahar martta başlıyor.",
         hint: "„spring“ üç sessizle başlar: s-p-r. Üçü de duyulur ama aralarında ünlü yoktur.",
         confusions: [
-          { heard: ["Isping starts in March", "Sipring"], fix: "Üç sessiz arka arkaya gelir; hiçbiri atlanmaz ve araya ses girmez.", expected: "spring" },
+          { heard: ["is spring"], fix: "Üç sessiz arka arkaya gelir; hiçbiri atlanmaz ve araya ses girmez.", expected: "spring" },
         ],
       },
       {
@@ -49,7 +49,7 @@ export const enA1P6: SkillExercise[] = [
         tr: "Adını harf harf söyleyebilir misin?",
         hint: "„spell“ SP ile başlar: SPEL. Türkçede böyle bir başlangıç yok, bu yüzden dil hazırlanmalı.",
         confusions: [
-          { heard: ["Can you ispell your name"], fix: "Dudaklar p için hazırken s zaten çıkmış olmalı.", expected: "spell" },
+          { heard: ["is spell"], fix: "Dudaklar p için hazırken s zaten çıkmış olmalı.", expected: "spell" },
         ],
       },
       {
@@ -57,15 +57,15 @@ export const enA1P6: SkillExercise[] = [
         tr: "Tren bugün yavaş.",
         hint: "„train“ TR ile, „slow“ SL ile başlar. İkisi de tek hecedir, iki heceye bölünmez.",
         confusions: [
-          { heard: ["The tirain is silow"], fix: "TR ve SL birer küme; araya ünlü koymak heceyi ikiye böler.", expected: "train" },
+          { heard: ["terrain", "silo"], fix: "TR ve SL birer küme; araya ünlü koymak heceyi ikiye böler.", expected: "train" },
         ],
       },
       {
         de: "She's a strong student.",
         tr: "O iyi bir öğrenci.",
-        hint: "„strong“ dört sesle başlar: s-t-r. „student“ ise s-t-y. Zor olan kümeyi yavaş başlayıp hızlandır.",
+        hint: "„strong“ üç sessizle başlar: s-t-r. „student“ ise s-t-y. Zor olan kümeyi yavaş başlayıp hızlandır.",
         confusions: [
-          { heard: ["She's a istrong istudent"], fix: "Önce yavaş söyle, sonra hızlandır; ünlü eklemeden.", expected: "strong" },
+          { heard: ["is strong"], fix: "Önce yavaş söyle, sonra hızlandır; ünlü eklemeden.", expected: "strong" },
         ],
       },
       {
@@ -73,7 +73,7 @@ export const enA1P6: SkillExercise[] = [
         tr: "Lütfen yavaş konuş.",
         hint: "„speak“ ve „slowly“ aynı s ile başlar ama devamı farklıdır: SPİİK, SLOU-li.",
         confusions: [
-          { heard: ["Please ispeak isilowly"], fix: "İki kelimede de s doğrudan sonraki sessize bağlanır.", expected: "speak" },
+          { heard: ["is speak"], fix: "İki kelimede de s doğrudan sonraki sessize bağlanır.", expected: "speak" },
         ],
       },
     ],

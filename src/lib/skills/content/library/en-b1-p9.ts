@@ -176,14 +176,14 @@ export const enB1P9: SkillExercise[] = [
         explain: "„weigh it first“ — iki yıl tat konuşmuşlar, sorun saatmiş.",
       },
       {
-        text: "Why did the third school's solution work?",
+        text: "What is true about the third school's solution?",
         options: [
-          "Smaller portions with free seconds cost nothing.",
+          "It worked almost as well and cost nothing.",
           "It hired more kitchen staff.",
           "It stopped serving vegetables.",
         ],
         answer: 0,
-        explain: "Neredeyse aynı sonucu vermiş ve hiçbir maliyeti olmamış.",
+        explain: "Küçük porsiyon ve ücretsiz ilave: „That worked almost as well and cost nothing.“",
       },
     ],
   },

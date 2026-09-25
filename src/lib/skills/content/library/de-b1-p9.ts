@@ -148,7 +148,7 @@ export const deB1P9: SkillExercise[] = [
           "Die Kündigung muss per Post kommen.",
         ],
         answer: 0,
-        explain: "Devamında fesih süresinin bir ay olduğu söyleniyor.",
+        explain: "„Seit der Gesetzesänderung dürfen sich Verträge nur noch auf unbestimmte Zeit verlängern“; devamında fesih süresinin o zaman bir ay olduğu söyleniyor. Postayla fesih yasanın değil, bazı sağlayıcıların çıkardığı bir zorluk.",
       },
       {
         kind: "truefalse",
@@ -174,6 +174,8 @@ export const deB1P9: SkillExercise[] = [
           "die Bestätigung der Kündigung",
           "die Bestätigung",
           "den Nachweis der Kündigung",
+          "die Kündigungsbestätigung",
+          "den Nachweis",
         ],
         explain: "„heben Sie die Bestätigung der Kündigung auf“ — kanıt olmadan uzun bir tartışma çıkıyor.",
       },
@@ -234,7 +236,7 @@ export const deB1P9: SkillExercise[] = [
         ],
         minWords: 90,
         phrases: [
-          { de: "Ich war im … mit einem defekten …", tr: "…'de bozuk bir … ile bulundum", en: "I was there in … with a broken …" },
+          { de: "Ich war im … mit einem defekten …", tr: "… ayında bozuk bir … ile oradaydım", en: "I was there in … with a broken …" },
           { de: "Der Ablauf ist einfach: …", tr: "İşleyiş basit: …", en: "The process is simple: …" },
           { de: "Positiv ist vor allem, dass …", tr: "En olumlu yanı … olması", en: "What is particularly positive is that …" },
           { de: "Weniger gut gefallen hat mir, dass …", tr: "Daha az hoşuma giden şey … olması", en: "What I liked less was that …" },
@@ -242,10 +244,10 @@ export const deB1P9: SkillExercise[] = [
         ],
         sample:
           "Ich war im März zum ersten Mal im Repair-Café in der Turnhalle, mit einem defekten Toaster " +
-          "und einer Hose ohne Reißverschluss. Der Ablauf ist einfach: Man zieht eine Nummer, wartet, " +
+          "und einer Hose ohne Reißverschluss. Der Ablauf ist einfach: Man zieht eine Nummer, wartet " +
           "und arbeitet dann mit einem ehrenamtlichen Helfer zusammen am eigenen Gerät. " +
           "Positiv ist vor allem, dass niemand einem das Werkzeug aus der Hand nimmt. " +
-          "Mein Helfer war sehr geduldig und hat mir erklärt, warum der Toaster nicht mehr ausschaltet. " +
+          "Mein Helfer war sehr geduldig und hat mir erklärt, warum sich der Toaster nicht mehr ausschaltet. " +
           "Wegen des Andrangs habe ich allerdings eine Stunde gewartet, und die Hose hat niemand " +
           "übernommen, weil an dem Tag keine Näherin da war. " +
           "Für Leute, die etwas lernen wollen, ist das Angebot ideal, für alle, die es einfach schnell " +
@@ -287,8 +289,8 @@ export const deB1P9: SkillExercise[] = [
         "Meine Faustregel ist: Wenn die Reparatur weniger als die Hälfte des Neupreises kostet und " +
         "das Gerät noch nicht halb so alt ist wie seine übliche Lebensdauer, lasse ich reparieren. " +
         "Ein gutes Beispiel dafür war unsere Spülmaschine. Sie war fünf Jahre alt, die Reparatur " +
-        "hat hundertvierzig Euro gekostet, eine neue wäre bei fünfhundert gelegen. " +
-        "Sie läuft jetzt seit zwei weiteren Jahren ohne Probleme. " +
+        "hat hundertvierzig Euro gekostet, eine neue hätte fünfhundert gekostet. " +
+        "Seitdem läuft sie schon zwei Jahre ohne Probleme. " +
         "Die Rechnung geht aber nicht auf, wenn ein Gerät jedes Jahr etwas anderes hat. " +
         "Bei meinem alten Drucker habe ich dreimal hintereinander reparieren lassen und am Ende " +
         "trotzdem einen neuen gekauft; das Geld war einfach weg. " +

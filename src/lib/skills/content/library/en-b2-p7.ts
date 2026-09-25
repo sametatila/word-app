@@ -120,7 +120,7 @@ export const enB2P7: SkillExercise[] = [
     intro: "Bir araştırma haberi: aksana göre değerlendirme üzerine bir çalışma ve yanlış aktarılan sonucu.",
     gloss: [
       { de: "to rate", tr: "puanlamak" },
-      { de: "recording", tr: "kayıt" },
+      { de: "recording", tr: "ses kaydı" },
       { de: "credibility", tr: "inandırıcılık" },
       { de: "transcript", tr: "yazılı döküm" },
       { de: "to replicate", tr: "yinelemek" },
@@ -128,7 +128,7 @@ export const enB2P7: SkillExercise[] = [
       { de: "practical", tr: "pratik" },
       { de: "participant", tr: "katılımcı" },
       { de: "unfamiliar", tr: "tanıdık olmayan" },
-      { de: "poor", tr: "fakir" },
+      { de: "poor", tr: "kötü" },
     ],
     minutes: 8,
     segments: [
@@ -178,7 +178,7 @@ export const enB2P7: SkillExercise[] = [
         text: "What practical suggestion follows from the study?",
         options: [],
         answer: 0,
-        accept: ["captions in meetings", "use captions", "captions"],
+        accept: ["captions in meetings", "captions in online meetings", "use captions", "using captions", "captions"],
         explain: "„captions in an online meeting do more … than months of pronunciation training“.",
       },
       {
@@ -208,7 +208,7 @@ export const enB2P7: SkillExercise[] = [
       { de: "to overstate", tr: "abartmak" },
       { de: "sample", tr: "örneklem" },
       { de: "cautious", tr: "temkinli" },
-      { de: "conclusion", tr: "sonuç" },
+      { de: "conclusion", tr: "vargı" },
       { de: "participant", tr: "katılımcı" },
       { de: "unfamiliar", tr: "tanıdık olmayan" },
     ],
@@ -223,10 +223,10 @@ export const enB2P7: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Gazeteler sonucun çok daha güçlü olduğunu iddia etti.",
-        answer: "The newspapers claimed that the result was much stronger.",
-        alternatives: ["The newspapers claimed the result to be much stronger."],
-        hint: "„claim“ hem „that“ cümlesi hem „to + mastar“ kalıbı alabilir.",
+        tr: "Gazeteler manşetlerinde sonucun çok daha güçlü olduğunu iddia etti.",
+        answer: "In their headlines the newspapers claimed that the result was much stronger.",
+        alternatives: ["The newspapers claimed in their headlines that the result was much stronger."],
+        hint: "„claim“ arkasından „that“ cümlesi gelir; özne aynıysa „to + mastar“ da alır (they claimed to know).",
       },
       {
         kind: "free",

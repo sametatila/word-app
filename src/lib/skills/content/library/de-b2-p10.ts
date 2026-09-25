@@ -179,14 +179,14 @@ export const deB2P10: SkillExercise[] = [
         explain: "Kuralla değil, bir alıştırmayla bitiyor.",
       },
       {
-        text: "Was sagt die dritte Frage?",
+        text: "Worum geht es bei der dritten Frage?",
         options: [
           "ob man den Beitrag mit dem eigenen Namen unterschreiben würde",
           "ob der Beitrag neu ist",
           "ob viele Leute ihn geteilt haben",
         ],
         answer: 0,
-        explain: "Tereddüt eden paylaşmamalı.",
+        explain: "„Wäre ich bereit, das mit meinem Namen zu unterschreiben?“ — tereddüt eden paylaşmamalı.",
       },
     ],
   },
@@ -211,17 +211,17 @@ export const deB2P10: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Bu kural çoğu durumda işe yarıyor olmalı.",
+        tr: "Bu kural büyük olasılıkla çoğu durumda işe yarar.",
         answer: "Diese Regel dürfte in den meisten Fällen funktionieren.",
         alternatives: ["In den meisten Fällen dürfte diese Regel funktionieren."],
         hint: "„dürfte“ burada izin değil, ihtiyatlı bir TAHMİN bildiriyor.",
       },
       {
         kind: "build",
-        tr: "Yazar metni okumamış olmalı.",
-        answer: "Der Verfasser muss den Text nicht gelesen haben.",
-        alternatives: ["Der Verfasser kann den Text nicht gelesen haben."],
-        hint: "Öznel „müssen“ güçlü bir çıkarım bildirir; geçmiş için mastar + „haben“ gelir.",
+        tr: "Yazar bunu bilmiş olmalı.",
+        answer: "Der Verfasser muss das gewusst haben.",
+        alternatives: ["Das muss der Verfasser gewusst haben."],
+        hint: "Öznel „müssen“ güçlü bir çıkarım bildirir; geçmiş için Partizip II + „haben“ gelir: „gewusst haben“.",
       },
       {
         kind: "free",
@@ -266,7 +266,7 @@ export const deB2P10: SkillExercise[] = [
     skill: "speaking",
     title: "Sollten Plattformen Inhalte löschen?",
     genre: "monologue",
-    intro: "Bir dakikadan uzun tek başına konuşacaksın: iki değer çatıştığında nasıl karar verdiğini anlat.",
+    intro: "Bir buçuk dakikaya kadar tek başına konuşacaksın: iki değer çatıştığında nasıl karar verdiğini anlat.",
     gloss: [],
     minutes: 7,
     monologue: {
@@ -280,7 +280,7 @@ export const deB2P10: SkillExercise[] = [
       ],
       targets: [
         { de: "Hier stehen sich zwei berechtigte Interessen gegenüber: …", tr: "Burada iki meşru çıkar karşı karşıya: …" },
-        { de: "Mein Kriterium wäre weniger …, sondern …", tr: "Ölçütüm … değil, … olurdu" },
+        { de: "Mein Kriterium wäre weniger … als …", tr: "Ölçütüm …'den çok … olurdu" },
         { de: "Missbrauchen ließe sich das vor allem dann, wenn …", tr: "Bu özellikle … olursa kötüye kullanılabilir" },
         { de: "Als Absicherung würde ich verlangen, dass …", tr: "Güvence olarak … isterdim" },
       ],
@@ -290,7 +290,7 @@ export const deB2P10: SkillExercise[] = [
         "Hier stehen sich zwei berechtigte Interessen gegenüber: der Schutz vor Schaden auf der " +
         "einen und die Freiheit, auch Unsinn zu sagen, auf der anderen Seite. " +
         "Wer eines von beiden einfach für wichtiger erklärt, macht es sich zu leicht. " +
-        "Mein Kriterium wäre weniger der Wahrheitsgehalt, sondern der konkrete Schaden: " +
+        "Mein Kriterium wäre weniger der Wahrheitsgehalt als der konkrete Schaden: " +
         "Ein falscher Beitrag über ein Medikament kann jemanden ins Krankenhaus bringen, " +
         "ein falscher Beitrag über ein Fußballspiel nicht. " +
         "Missbrauchen ließe sich das vor allem dann, wenn die Plattform selbst entscheidet, " +
@@ -300,7 +300,7 @@ export const deB2P10: SkillExercise[] = [
         "dass die Zahlen veröffentlicht werden und dass eine unabhängige Stelle Stichproben prüft. " +
         "Ohne diese drei Punkte bin ich gegen das Löschen, mit ihnen dafür.",
       rubricHint:
-        "İki değerin adlandırılması, bir ölçüt ve somut güvenceler beklenir; „sich gegenüberstehen“, „weniger … sondern“ ve Konjunktiv II kullanılabilir.",
+        "İki değerin adlandırılması, bir ölçüt ve somut güvenceler beklenir; „sich gegenüberstehen“, „weniger … als“ ve Konjunktiv II kullanılabilir.",
     },
   },
 

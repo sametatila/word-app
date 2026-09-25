@@ -194,7 +194,7 @@ export const enB1P12: SkillExercise[] = [
       { de: "to realize", tr: "fark etmek" },
       { de: "to water", tr: "sulamak" },
       { de: "neat", tr: "düzenli" },
-      { de: "missing", tr: "kayıp" },
+      { de: "missing", tr: "eksik" },
       { de: "handwriting", tr: "el yazısı" },
       { de: "to lock", tr: "kilitlemek" },
     ],
@@ -204,7 +204,9 @@ export const enB1P12: SkillExercise[] = [
         kind: "build",
         tr: "Eve geldiğimde birinin dairede bulunmuş olduğunu fark ettim.",
         answer: "When I got home, I realized that someone had been in the flat.",
-        alternatives: ["I realized that someone had been in the flat when I got home."],
+        alternatives: [
+          "I realized that someone had been in the flat when I got home.",
+        ],
         hint: "Fark etmekten ÖNCE olan iş bir basamak geriye çekilir: had + üçüncü hâl.",
       },
       {

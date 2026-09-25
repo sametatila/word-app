@@ -237,7 +237,7 @@ export const deB1P12: SkillExercise[] = [
         sample:
           "Am vergangenen Samstag fand in der Sporthalle Nord das erste Turnier unserer neuen " +
           "Kindermannschaft statt. Acht Teams aus der Umgebung waren dabei, unsere Spielerinnen und " +
-          "Spieler sind zwischen sieben und neun Jahre alt. Bevor das Spiel begann, waren die Kinder sehr " +
+          "Spieler sind zwischen sieben und neun Jahre alt. Bevor das erste Spiel begann, waren die Kinder sehr " +
           "aufgeregt, und zwei wollten zuerst gar nicht auf das Feld. Sobald das erste Tor gefallen war, " +
           "entspannten sich alle. Unsere Mannschaft hat zwei von fünf Spielen gewonnen und am Ende den " +
           "sechsten Platz erreicht. In Erinnerung bleibt vor allem der Moment, als Lina im letzten Spiel " +

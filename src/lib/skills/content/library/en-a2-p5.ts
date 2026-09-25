@@ -258,15 +258,15 @@ export const enA2P5: SkillExercise[] = [
         tr: "Onu yerden al lütfen.",
         hint: "Sessizle biten kelime ünlüyle başlayan kelimeye yapışır: pi-ki-tap.",
         confusions: [
-          { heard: ["Pick. It. Up.", "pick up it"], fix: "Üç kelimeyi ayrı ayrı söyleme; tek bir öbek gibi bağla.", expected: "Pick it up" },
+          { heard: ["pick up it"], fix: "Üç kelimeyi ayrı ayrı söyleme; tek bir öbek gibi bağla.", expected: "Pick it up" },
         ],
       },
       {
         de: "What time is it?",
         tr: "Saat kaç?",
-        hint: "„is it“ birleşir ve „i-zit“ olur; baştaki t de neredeyse düşer.",
+        hint: "„is it“ birleşir ve „i-zit“ olur; „what“ın sonundaki t de neredeyse düşer.",
         confusions: [
-          { heard: ["What time is it separately", "wat taym is it"], fix: "Son iki kelimeyi birleştir: wat-taym-i-zit.", expected: "is it" },
+          { heard: [], fix: "Son iki kelimeyi birleştir: wat-taym-i-zit.", expected: "is it" },
         ],
       },
       {
@@ -274,7 +274,7 @@ export const enA2P5: SkillExercise[] = [
         tr: "Bir fincan çay istiyorum.",
         hint: "„cup of“ = ka-pıv. „want a“ da birleşir: wo-nı.",
         confusions: [
-          { heard: ["cup off tea", "want ey cup"], fix: "„of“ vurgusuzdur ve önceki kelimeye yapışır: kapıv tii.", expected: "cup of" },
+          { heard: ["cup off tea"], fix: "„of“ vurgusuzdur ve önceki kelimeye yapışır: kapıv tii.", expected: "cup of" },
         ],
       },
       {
@@ -282,7 +282,7 @@ export const enA2P5: SkillExercise[] = [
         tr: "Şu fikre bak.",
         hint: "„look at“ = lu-kıt; „this idea“ da bağlanır: dhi-say-DİA.",
         confusions: [
-          { heard: ["Look. At. This.", "look et"], fix: "„at“ vurgusuz ve önceki k'ye yapışır: lukıt.", expected: "Look at" },
+          { heard: [], fix: "„at“ vurgusuz ve önceki k'ye yapışır: lukıt.", expected: "Look at" },
         ],
       },
       {
@@ -290,7 +290,7 @@ export const enA2P5: SkillExercise[] = [
         tr: "Kapat lütfen.",
         hint: "Üç kelime tek öbek olur: tör-ni-tof.",
         confusions: [
-          { heard: ["Turn off it", "turn it. off"], fix: "Zamir araya girer ve her şey birbirine bağlanır: törnitof.", expected: "Turn it off" },
+          { heard: ["Turn off it"], fix: "Zamir araya girer ve her şey birbirine bağlanır: törnitof.", expected: "Turn it off" },
         ],
       },
       {
@@ -298,7 +298,7 @@ export const enA2P5: SkillExercise[] = [
         tr: "Bu eski bir fikir.",
         hint: "„an old“ = ı-NOULD. Ünlüyle başlayan kelimeden önce „a“ değil „an“ gelir ve yapışır.",
         confusions: [
-          { heard: ["a old idea", "an. old. idea."], fix: "„an“ sonraki kelimeye bağlanır ve tek hece gibi duyulur.", expected: "an old" },
+          { heard: ["a old idea"], fix: "„an“ sonraki kelimeye bağlanır ve tek hece gibi duyulur.", expected: "an old" },
         ],
       },
       {
@@ -306,7 +306,7 @@ export const enA2P5: SkillExercise[] = [
         tr: "İçeri gel ve otur.",
         hint: "„come in“ = ka-min; „and“ vurgusuz olduğu için „ın“ gibi kısalır.",
         confusions: [
-          { heard: ["Come. In. And.", "kam in end"], fix: "„and“ tam söylenmez; bağlaçlar cümlede erir.", expected: "Come in and" },
+          { heard: [], fix: "„and“ tam söylenmez; bağlaçlar cümlede erir.", expected: "Come in and" },
         ],
       },
     ],

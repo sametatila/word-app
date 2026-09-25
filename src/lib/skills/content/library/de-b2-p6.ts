@@ -217,7 +217,7 @@ export const deB2P6: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Maliyetler ancak ikinci yıldan sonra karşılaştırılabilir.",
+        tr: "Maliyetler ancak ikinci yıldan itibaren karşılaştırılabilir.",
         answer: "Die Kosten sind erst ab dem zweiten Jahr zu vergleichen.",
         alternatives: ["Die Kosten lassen sich erst ab dem zweiten Jahr vergleichen."],
         hint: "„sein + zu + mastar“ da edilgen anlam taşır: „verglichen werden können“.",
@@ -228,7 +228,7 @@ export const deB2P6: SkillExercise[] = [
           "İki seçeneği karşılaştıran kısa bir rapor yaz: raporun amacını söyle, üç ölçüt belirle, her seçeneği bu ölçütlere göre değerlendir, hangi bilginin eksik olduğunu yaz ve gerekçeli bir tavsiye ver.",
         checklist: [
           "Raporun amacını ve iki seçeneği yaz",
-          "Üç ölçüt belirle ve ikisini karşılaştır",
+          "Üç ölçüt belirle ve iki seçeneği bunlara göre karşılaştır",
           "Hangi bilginin eksik olduğunu söyle",
           "Gerekçeli bir tavsiyeyle bitir",
         ],
@@ -245,13 +245,13 @@ export const deB2P6: SkillExercise[] = [
           "bereitstellen kann. Verglichen werden ein Neubau auf städtischem Grundstück (Variante A) und " +
           "die Anmietung von vierzig Wohnungen im Bestand (Variante B). " +
           "Als Kriterien wurden Zeit bis zur Verfügbarkeit, Kosten über zehn Jahre und Steuerbarkeit der " +
-          "Belegung herangezogen. Variante B ist in der Zeitachse klar überlegen: " +
+          "Belegung herangezogen. Variante B ist auf der Zeitachse klar überlegen: " +
           "Diese Lösung lässt sich kurzfristig umsetzen, während Variante A frühestens in vier Jahren wirkt. " +
           "Bei den Kosten kehrt sich das Bild um; die Kosten sind allerdings erst ab dem zweiten Jahr " +
           "seriös zu vergleichen, weil die Förderung im ersten Jahr beide Varianten verzerrt. " +
           "Bei der Belegung schneidet Variante A besser ab, da die Stadt als Eigentümerin die Vergabe " +
           "dauerhaft steuern kann. Offen bleibt die Frage, ob sich die vierzig Wohnungen über fünf Jahre " +
-          "binden lassen. Empfohlen wird daher ein verbundener Beschluss: Anmietung ab sofort, " +
+          "binden lassen. Empfohlen wird daher ein kombinierter Beschluss: Anmietung ab sofort, " +
           "verbunden mit der Auflage, den Bauantrag bis Juni einzureichen.",
       },
     ],
@@ -265,7 +265,7 @@ export const deB2P6: SkillExercise[] = [
     skill: "speaking",
     title: "Soll die Stadt selbst bauen?",
     genre: "monologue",
-    intro: "Bir dakikadan uzun tek başına konuşacaksın: bir politika tercihini gerekçelendir ve kendi konumunu sınırla.",
+    intro: "Bir buçuk dakikaya kadar tek başına konuşacaksın: bir politika tercihini gerekçelendir ve kendi konumunu sınırla.",
     gloss: [],
     minutes: 7,
     monologue: {
@@ -294,7 +294,7 @@ export const deB2P6: SkillExercise[] = [
         "Das stärkste Gegenargument lautet, dass Bauen zu lange dauert und die Menschen, um die es " +
         "geht, in vier Jahren längst woanders sind. Ich halte das für berechtigt, sehe darin aber " +
         "kein Argument gegen den Bau, sondern eines für eine Brücke: anmieten, um die Lücke zu " +
-        "schließen, und gleichzeitig bauen. Zustimmen würde ich der reinen Anmietung nur dann, " +
+        "schließen, und gleichzeitig bauen. Einer Anmietung würde ich nur dann zustimmen, " +
         "wenn der Beschluss den Bauantrag verbindlich mit einer Frist verknüpft. " +
         "Ohne diese Verknüpfung wird aus der Übergangslösung erfahrungsgemäß der Dauerzustand.",
       rubricHint:

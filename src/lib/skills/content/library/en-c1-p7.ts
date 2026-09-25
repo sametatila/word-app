@@ -142,11 +142,11 @@ export const enC1P7: SkillExercise[] = [
       { de: "technician", tr: "teknisyen" },
       { de: "assume", tr: "varsaymak" },
       { de: "rise", tr: "yükselmek" },
-      { de: "concern", tr: "kaygı" },
+      { de: "concern", tr: "ilgilendirmek" },
       { de: "bench", tr: "test tezgâhı" },
       { de: "independent", tr: "bağımsız" },
       { de: "uncertainty", tr: "belirsizlik" },
-      { de: "fold", tr: "katlamak" },
+      { de: "fold", tr: "dahil etmek" },
       { de: "diagnosis", tr: "teşhis" },
       { de: "competent", tr: "yetkin" },
       { de: "intervention", tr: "müdahale" },
@@ -158,7 +158,7 @@ export const enC1P7: SkillExercise[] = [
       { text: "Cost is the stated reason in most surveys. In the data, cost decides only about a third of cases." },
       { speaker: "Dr Ferreira", text: "The larger factor is uncertainty. People will pay sixty per cent of the replacement price if they are told what is wrong before they commit." },
       { text: "Where a diagnostic fee is charged separately, abandonment rises sharply, even when the eventual repair is cheap." },
-      { speaker: "Dr Ferreira", text: "That points at a fix nobody is campaigning for: fold the diagnosis into the quote. It costs the workshop almost nothing and moves more devices than any parts policy we modelled." },
+      { speaker: "Dr Ferreira", text: "That points at a fix nobody is campaigning for: fold the diagnosis into the quote. It costs the workshop almost nothing and moves more devices than any parts policy we modeled." },
       { text: "The second finding concerns calibration. Repairs that require proprietary software to complete fail at four times the rate of those that do not." },
       { text: "The part is available, the technician is competent, and the device still leaves the bench unusable because a value cannot be written back." },
       { speaker: "Dr Ferreira", text: "If I had to choose one intervention, it would be that, not the battery adhesive that everyone photographs." },
@@ -175,7 +175,7 @@ export const enC1P7: SkillExercise[] = [
         text: "What does Dr Ferreira say is the larger factor?",
         options: ["uncertainty about what is wrong", "the price of parts", "lack of skilled staff"],
         answer: 0,
-        explain: "Ne olduğu önceden söylenirse insanlar yenisinin %60'ını ödüyor.",
+        explain: "Neyin bozuk olduğu önceden söylenirse insanlar yenisinin fiyatının %60'ını ödemeye razı.",
       },
       {
         kind: "truefalse",
@@ -197,7 +197,7 @@ export const enC1P7: SkillExercise[] = [
         text: "What single intervention would Dr Ferreira choose?",
         options: [],
         answer: 0,
-        accept: ["calibration software", "the software problem", "proprietary software"],
+        accept: ["calibration software", "the software problem", "proprietary software", "calibration", "the calibration step"],
         explain: "Herkesin fotoğrafladığı pil yapıştırıcısı değil, kalibrasyon.",
       },
       {
@@ -228,11 +228,11 @@ export const enC1P7: SkillExercise[] = [
       { de: "to justify", tr: "gerekçelendirmek" },
       { de: "irreversible", tr: "geri alınamaz" },
       { de: "to withhold", tr: "esirgemek" },
-      { de: "appear", tr: "bizzat gitmek" },
+      { de: "appear", tr: "görünmek" },
       { de: "intend", tr: "niyetinde olmak" },
       { de: "manufacturer", tr: "imalatçı" },
-      { de: "commercial", tr: "reklam filmi" },
-      { de: "clip", tr: "ataç" },
+      { de: "commercial", tr: "ticari" },
+      { de: "clip", tr: "klips" },
     ],
     minutes: 16,
     tasks: [
@@ -271,16 +271,16 @@ export const enC1P7: SkillExercise[] = [
         sample:
           "After fourteen months of daily use, I can say more about this device than the reviews " +
           "written in the first week, which is roughly when most of them appear. " +
-          "On the two things that matter to me — battery behaviour under cold and the quality " +
+          "On the two things that matter to me — battery behavior in the cold and the quality " +
           "of the screen at low brightness — it performs well, and better than the model it " +
           "replaced. The battery has lost about nine per cent of its original capacity, " +
           "which is unremarkable and honestly reported by the manufacturer's own tool. " +
           "The caveat is not about performance but about what happens in year three. " +
           "The battery is held in with adhesive rather than clips, and the calibration step " +
-          "after replacement requires software that is only issued to authorised centres. " +
+          "after replacement requires software that is only issued to authorized centers. " +
           "That combination means the decision about whether this device is still worth " +
-          "keeping will not be mine; it will belong to whoever still runs an authorised " +
-          "centre in my city. " +
+          "keeping will not be mine; it will belong to whoever still runs an authorized " +
+          "center in my city. " +
           "Whatever the manufacturer says about durability, an irreversible design choice is " +
           "not a durability feature. " +
           "I would recommend it provided that you intend to keep it for two to three years " +

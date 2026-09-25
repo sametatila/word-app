@@ -227,7 +227,7 @@ export const enB1P13: SkillExercise[] = [
           { de: "You asked me whether …", tr: "… diye sormuştun", en: "" },
           { de: "What I found most interesting was …", tr: "En ilginç bulduğum şey …", en: "" },
           { de: "The tiring part was …", tr: "Yorucu olan kısım …", en: "" },
-          { de: "I was a bit disappointed that …", tr: "…'e biraz hayal kırıklığına uğradım", en: "" },
+          { de: "I was a bit disappointed that …", tr: "…-diği için biraz hayal kırıklığına uğradım", en: "" },
           { de: "If you go, make sure you …", tr: "Gidersen mutlaka …", en: "" },
         ],
         sample:

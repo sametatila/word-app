@@ -255,8 +255,8 @@ export const deC1P12: SkillExercise[] = [
           "ob wir unser treues Publikum etwa nicht mehr wollen. Doch, und gerade Sie. " +
           "In einem Punkt haben Sie ohne Einschränkung recht: Wir haben die neue Reihe " +
           "angekündigt, ohne unseren Abonnentinnen und Abonnenten zu erklären, was sie dort " +
-          "erwartet. Das Konzert war so voll, dass viele von Ihnen keinen gewohnten Platz " +
-          "fanden, und wir hatten niemanden vorgewarnt. " +
+          "erwartet. Das Konzert war so voll, dass viele von ihnen, auch Sie, ihren gewohnten Platz " +
+          "nicht fanden, und wir hatten niemanden vorgewarnt. " +
           "Dass wir dennoch an der Reihe festhalten, hat einen Grund: Ein Drittel der Besucher " +
           "kommt dort zum ersten Mal zu uns, und manche von ihnen sitzen später in Ihren " +
           "Konzerten. Ihre Beschwerde übergehen wir trotzdem nicht: Wir werden die Reihe " +

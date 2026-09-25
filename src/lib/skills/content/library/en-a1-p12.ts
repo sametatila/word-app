@@ -210,12 +210,12 @@ export const enA1P12: SkillExercise[] = [
           { de: "I would like to book …", tr: "… ayırtmak istiyorum." },
           { de: "We are two adults and one child.", tr: "İki yetişkin ve bir çocuğuz." },
           { de: "How much is the room for one night?", tr: "Oda bir gece için ne kadar?" },
-          { de: "Is breakfast in the price?", tr: "Kahvaltı fiyata dahil mi?" },
+          { de: "Is breakfast included in the price?", tr: "Kahvaltı fiyata dâhil mi?" },
           { de: "We arrive at … on …", tr: "… günü saat …'de varıyoruz." },
         ],
         sample:
           "Hello, I would like to book a double room for two nights, from Friday, July 12 to Sunday, July 14. " +
-          "We are two adults and one small child. How much is the room for one night? Is breakfast in the price? " +
+          "We are two adults and one small child. How much is the room for one night? Is breakfast included in the price? " +
           "We arrive at seven on Friday evening. Thank you and best wishes, Kaan Demir",
       },
     ],

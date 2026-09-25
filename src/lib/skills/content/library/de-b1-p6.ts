@@ -105,7 +105,7 @@ export const deB1P6: SkillExercise[] = [
     skill: "listening",
     title: "Weniger Stunden, gleiche Aufgaben?",
     genre: "dialogue",
-    intro: "Bir çalışan yarım güne geçmek istiyor; yöneticisiyle neyin mümkün olduğunu konuşuyorlar.",
+    intro: "Bir çalışan çalışma saatlerini azaltmak istiyor; yöneticisiyle neyin mümkün olduğunu konuşuyorlar.",
     gloss: [
       { de: "reduzieren", tr: "azaltmak", en: "to reduce" },
       { de: "der Antrag", tr: "başvuru", en: "application" },
@@ -152,7 +152,7 @@ export const deB1P6: SkillExercise[] = [
         text: "Herr Kaya soll seine Stunden sofort reduzieren.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Önce üç ay Frau Reuter'i yetiştirecek; başvuruyu da hafta sonuna kadar yazacak.",
+        explain: "Önce üç ay Frau Reuter'i yetiştirecek; başvuruyu da hafta bitmeden yazacak.",
       },
       {
         kind: "gapfill",
@@ -203,7 +203,7 @@ export const deB1P6: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Çalışma süresi kısalırsa daha yoğun çalışılır.",
+        tr: "Çalışma süresi kısalırsa daha odaklı çalışılır.",
         answer: "Wenn die Arbeitszeit kürzer wird, arbeitet man konzentrierter.",
         alternatives: ["Man arbeitet konzentrierter, wenn die Arbeitszeit kürzer wird."],
         hint: "Yan cümle başta: ana cümlenin çekimli fiili virgülden hemen sonra gelir.",
@@ -260,7 +260,7 @@ export const deB1P6: SkillExercise[] = [
     minutes: 6,
     monologue: {
       promptTr:
-        "„Daha az çalışan aynı işi çıkarır“ deniyor. Buna katılıyor musun? Görüşünü söyle, kendi günlük düzeninden bir örnek ver ve bu iddianın hangi işte geçerli olmadığını söyle.",
+        "„Daha az saat çalışan da aynı işi çıkarır“ deniyor. Buna katılıyor musun? Görüşünü söyle, kendi günlük düzeninden bir örnek ver ve bu iddianın hangi işte geçerli olmadığını söyle.",
       bulletsTr: [
         "İddiaya katılıp katılmadığını tek cümleyle söyle",
         "Kendi çalışma ya da ders düzeninden somut bir örnek ver",

@@ -172,7 +172,7 @@ export const deA2P4: SkillExercise[] = [
         text: "Bis wann soll Frau Baran zurückrufen?",
         options: ["bis morgen Mittag", "bis Donnerstag früh", "bis heute achtzehn Uhr"],
         answer: 0,
-        explain: "„Rufen Sie uns bitte bis morgen Mittag zurück.“ Sekiz-on sekiz arası ise açık olunan saatler.",
+        explain: "„Rufen Sie uns bitte bis morgen Mittag zurück.“ „Von acht bis achtzehn Uhr“ ise yalnız muayenehaneye ulaşılabilen saatler.",
       },
     ],
   },
@@ -259,7 +259,7 @@ export const deA2P4: SkillExercise[] = [
         tr: "Bugün cuma, ayın dokuzu.",
         hint: "„heute“ = HOY-te, „neunte“ = NOY-te. „eu“ hep oy okunur.",
         confusions: [
-          { heard: ["Höüte", "Heu-te", "neunte mit e-u"], fix: "İki harfi ayrı ayrı söyleme; tek bir oy sesi çıkar: hoyte, noynte.", expected: "heute" },
+          { heard: ["Höüte", "Hoite"], fix: "İki harfi ayrı ayrı söyleme; tek bir oy sesi çıkar: hoyte, noynte.", expected: "heute" },
         ],
       },
       {
@@ -267,7 +267,7 @@ export const deA2P4: SkillExercise[] = [
         tr: "Arkadaşım yeni ağaçlar alıyor.",
         hint: "„Freundin“ ve „neue“ eu ile, „Bäume“ äu ile — üçü de aynı oy sesi.",
         confusions: [
-          { heard: ["Bäume mit ä-u", "Bahume", "Fröindin"], fix: "„äu“ da tam olarak „eu“ gibi okunur: BOY-me.", expected: "Bäume" },
+          { heard: ["Baume", "Bahume", "Fröindin"], fix: "„äu“ da tam olarak „eu“ gibi okunur: BOY-me.", expected: "Bäume" },
         ],
       },
       {
@@ -275,7 +275,7 @@ export const deA2P4: SkillExercise[] = [
         tr: "Buradaki evler çok pahalı.",
         hint: "„Häuser“ = HOY-za, „teuer“ = TOY-a. Sondaki -er yine „a“ gibi zayıf.",
         confusions: [
-          { heard: ["Hauser", "Häuser mit ä", "teu-er"], fix: "„Haus“ çoğul olunca äu alır ve ses oy'a döner: hoyza.", expected: "Häuser" },
+          { heard: ["Hauser", "Häser", "Tauer"], fix: "„Haus“ çoğul olunca äu alır ve ses oy'a döner: hoyza.", expected: "Häuser" },
         ],
       },
       {
@@ -283,7 +283,7 @@ export const deA2P4: SkillExercise[] = [
         tr: "Gecikmeye sinirleniyor.",
         hint: "Tek başına „ä“ Türkçedeki e gibidir: ER-gert, fer-ŞPEE-tung.",
         confusions: [
-          { heard: ["ärgert wie aygert", "Verspaytung"], fix: "„ä“ ay değil e sesidir; ay sesi için „ei“ yazılır.", expected: "ärgert" },
+          { heard: ["eigert", "Verspaytung"], fix: "„ä“ ay değil e sesidir; ay sesi için „ei“ yazılır.", expected: "ärgert" },
         ],
       },
       {
@@ -299,7 +299,7 @@ export const deA2P4: SkillExercise[] = [
         tr: "Bugün fırına yürüyor musun?",
         hint: "Aynı cümlede iki ses: „Läufst“ oy, „Bäcker“ e. Yazılış benziyor, ses ayrı.",
         confusions: [
-          { heard: ["Laufst du", "Böcker", "Bäcker mit oy"], fix: "„äu“ oy, tek „ä“ e: LOYFST ama BE-ka.", expected: "Läufst" },
+          { heard: ["Laufst du", "Böcker", "Bäucker"], fix: "„äu“ oy, tek „ä“ e: LOYFST ama BE-ka.", expected: "Läufst" },
         ],
       },
       {

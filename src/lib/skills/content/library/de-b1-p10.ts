@@ -209,7 +209,7 @@ export const deB1P10: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Kimin anahtarı olduğunu kimse bilmiyor.",
+        tr: "Anahtarın kimde olduğunu kimse bilmiyor.",
         answer: "Niemand weiß, wer den Schlüssel hat.",
         alternatives: ["Keiner weiß, wer den Schlüssel hat."],
         hint: "Soru sözcüğüyle kurulan dolaylı soruda da fiil yan cümlenin sonuna gider.",
@@ -233,7 +233,7 @@ export const deB1P10: SkillExercise[] = [
           { de: "Bitte gebt mir bis … kurz Rückmeldung.", tr: "Lütfen …'e kadar kısa bir geri bildirim verin.", en: "Please give me brief feedback by …" },
         ],
         sample:
-          "Hallo zusammen, es geht um die Fahrräder im Hof. " +
+          "Hallo zusammen,\n\nes geht um die Fahrräder im Hof. " +
           "Zurzeit ist es so, dass acht Räder an der Wand stehen und der Weg zur Mülltonne schmal wird. " +
           "Zweimal ist schon jemand mit dem Kinderwagen hängen geblieben. " +
           "Mein Vorschlag ist, die alte Holzbank abzubauen und dort einen Ständer für sechs Räder " +
@@ -241,8 +241,8 @@ export const deB1P10: SkillExercise[] = [
           "Ich weiß nicht, ob alle damit einverstanden sind — vor allem die Bank wird von einigen " +
           "im Sommer genutzt, und ich verstehe, wenn das jemandem leidtut. " +
           "Eine zweite Möglichkeit wäre, die Bank an die andere Wand zu stellen. " +
-          "Bitte gebt mir bis Sonntag kurz Rückmeldung, dann zählen wir einfach die Stimmen. " +
-          "Viele Grüße, Yasemin aus Wohnung 9",
+          "Bitte gebt mir bis Sonntag kurz Rückmeldung, dann zählen wir einfach die Stimmen.\n\n" +
+          "Viele Grüße\nYasemin aus Wohnung 9",
       },
     ],
   },

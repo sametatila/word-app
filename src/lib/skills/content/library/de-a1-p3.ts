@@ -234,7 +234,7 @@ export const deA1P3: SkillExercise[] = [
         tr: "Waldstraße'de oturuyoruz.",
         hint: "Üç kelimede de w: VİR VOO-nen … VALT-ştraase. Alt dudak üst dişlere değsin.",
         confusions: [
-          { heard: ["Uir wohnen", "Wir bohnen", "Waldstrasse mit b"], fix: "„w“ ne u ne b: Türkçedeki v gibi, dişle dudak arasından titreşimli.", expected: "wohnen" },
+          { heard: ["Wir bohnen", "Bohnen"], fix: "„w“ ne u ne b: Türkçedeki v gibi, dişle dudak arasından titreşimli.", expected: "wohnen" },
         ],
       },
       {
@@ -242,7 +242,7 @@ export const deA1P3: SkillExercise[] = [
         tr: "Babam saat dörtte geliyor.",
         hint: "„Vater“ = FAA-ter, „vier“ = FİİR. Buradaki v, f gibi ve titreşimsiz.",
         confusions: [
-          { heard: ["Water", "wier", "Vater mit v"], fix: "Almancada „v“ genelde f okunur: faater, fiir. v gibi söylersen başka kelime duyulur.", expected: "Vater" },
+          { heard: ["Water", "wir"], fix: "Almancada „v“ genelde f okunur: faater, fiir. v gibi söylersen başka kelime duyulur.", expected: "Vater" },
         ],
       },
       {

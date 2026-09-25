@@ -115,7 +115,7 @@ export const deB2P4: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     title: "Beratung wegen eines Gebrauchtwagens",
-    genre: "opinion",
+    genre: "dialogue",
     intro: "Tüketici danışma merkezinde bir görüşme: sorun ne, hukuken kimin ne yapması gerekiyor, hangi sırayla.",
     gloss: [
       { de: "das Getriebe", tr: "şanzıman", en: "gearbox" },
@@ -216,7 +216,7 @@ export const deB2P4: SkillExercise[] = [
         kind: "build",
         tr: "Kural sert olsa da çoğu üye onu adil buluyor.",
         answer: "Obwohl die Regel hart ist, finden die meisten Mitglieder sie gerecht.",
-        alternatives: ["Die meisten Mitglieder finden sie gerecht, obwohl die Regel hart ist."],
+        alternatives: ["Die meisten Mitglieder finden die Regel gerecht, obwohl sie hart ist."],
         hint: "„obwohl“ bir yan cümle açar ve fiili sona atar; yan cümle önde de arkada da durabilir.",
       },
       {
@@ -253,10 +253,10 @@ export const deB2P4: SkillExercise[] = [
           "drei Jahre. Zweitens ist eine klare Zahl ehrlicher als der ständige Aufruf im Newsletter, bei dem sich " +
           "immer dieselben melden. Je konkreter eine Pflicht formuliert ist, desto weniger schlechtes Gewissen " +
           "entsteht bei denen, die wirklich nicht können. Einen Einwand nehme ich trotzdem ernst: Achtzig Euro " +
-          "sind für eine Familie mit drei Kindern etwas anderes als für mich. Wer sich freikauft, kauft sich " +
-          "nicht gleich viel. Mein Vorschlag: Wir behalten die acht Stunden, staffeln aber den Ersatzbetrag nach " +
-          "der Zahl der Mitgliedschaften im Haushalt und lassen Stunden auch außerhalb der Wochenenden zu, zum " +
-          "Beispiel Buchhaltung oder Website. Dann ist es eine Pflicht, die man erfüllen kann, und nicht nur " +
+          "sind für eine Familie mit drei Kindern etwas anderes als für mich. Der gleiche Betrag belastet " +
+          "nicht alle gleich. Mein Vorschlag: Wir behalten die acht Stunden, staffeln aber den Ersatzbetrag nach " +
+          "der Zahl der Mitgliedschaften im Haushalt und lassen auch Stunden zu, die man von zu Hause leisten " +
+          "kann, zum Beispiel die Buchhaltung oder die Pflege der Website. Dann ist es eine Pflicht, die man erfüllen kann, und nicht nur " +
           "eine, die man bezahlt.",
       },
     ],
@@ -294,8 +294,9 @@ export const deB2P4: SkillExercise[] = [
         "Ich glaube, die Frage ist falsch gestellt, weil Regeln und Vertrauen keine Gegensätze sind. " +
         "Regeln haben einen klaren Vorteil: Sie schützen die Schwächeren. Wer neu ist, kennt die ungeschriebenen " +
         "Gewohnheiten nicht und ist ohne Regeln immer im Nachteil. Je kleiner eine Gruppe ist, desto besser " +
-        "funktioniert dagegen Vertrauen, weil jeder sieht, wer wie viel tut. Obwohl das stimmt, wächst mit der " +
-        "Größe auch die Zahl derer, die sich unauffällig zurückziehen können. Trotzdem kippt zu viel Regelung " +
+        "funktioniert dagegen Vertrauen, weil jeder sieht, wer wie viel tut. Obwohl das stimmt, reicht Vertrauen " +
+        "in großen Gruppen selten aus, denn mit der Größe wächst die Zahl derer, die sich unauffällig " +
+        "zurückziehen können. Trotzdem kippt zu viel Regelung " +
         "ins Gegenteil: Wenn jede Kleinigkeit geschrieben steht, hört man auf mitzudenken und fragt nur noch, " +
         "was erlaubt ist. Mein Kriterium wäre deshalb nicht die Größe, sondern die Folge eines Fehlers. " +
         "Wo ein Fehler nur ärgerlich ist, reicht Vertrauen. Wo er teuer oder gefährlich wird, braucht es eine " +

@@ -102,11 +102,11 @@ export const deA2P9: SkillExercise[] = [
     genre: "interview",
     intro: "Bir dil kursunda öğretmen, tatilden dönen kursiyere sorular soruyor: nereye gitti, ne yaptı, ne öneriyor.",
     gloss: [
-      { de: "der Urlaub", tr: "tatil", en: "holiday" },
+      { de: "der Urlaub", tr: "tatil", en: "vacation" },
       { de: "die Unterkunft", tr: "konaklama", en: "accommodation" },
       { de: "wandern", tr: "doğa yürüyüşü yapmak", en: "to hike" },
       { de: "die Aussicht", tr: "manzara", en: "view" },
-      { de: "sich erholen", tr: "dinlenmek", en: "to recover" },
+      { de: "sich erholen", tr: "dinlenmek", en: "to rest" },
       { de: "empfehlen", tr: "tavsiye etmek", en: "to recommend" },
     ],
     minutes: 5,
@@ -114,11 +114,11 @@ export const deA2P9: SkillExercise[] = [
       { speaker: "Frau Seidel", text: "Schön, dass du wieder da bist, Nadia. Erzähl mal: Wo warst du im Urlaub?" },
       { speaker: "Nadia", text: "Ich war zwei Wochen in Österreich, in einem kleinen Dorf in den Bergen." },
       { speaker: "Frau Seidel", text: "Und wie war die Unterkunft?" },
-      { speaker: "Nadia", text: "Einfach, aber sehr sauber. Das Zimmer hatte kein Fernsehen, dafür eine tolle Aussicht auf das Tal." },
+      { speaker: "Nadia", text: "Einfach, aber sehr sauber. Das Zimmer hatte keinen Fernseher, dafür eine tolle Aussicht auf das Tal." },
       { speaker: "Frau Seidel", text: "Was hast du den ganzen Tag gemacht?" },
       { speaker: "Nadia", text: "Am Anfang bin ich jeden Tag gewandert. Später habe ich mich einfach auf die Wiese gelegt und gelesen." },
       { speaker: "Frau Seidel", text: "Hast du dich gut erholt?" },
-      { speaker: "Nadia", text: "Sehr gut. In der ersten Woche habe ich mich langweilig gefühlt, in der zweiten war ich richtig ruhig." },
+      { speaker: "Nadia", text: "Sehr gut. In der ersten Woche habe ich mich ein bisschen gelangweilt, in der zweiten war ich richtig ruhig." },
       { speaker: "Frau Seidel", text: "Würdest du es empfehlen?" },
       { speaker: "Nadia", text: "Ja, aber nur ohne Auto. Man braucht dort wirklich gute Schuhe, keinen Parkplatz." },
     ],
@@ -198,7 +198,7 @@ export const deA2P9: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Bir dahaki sefere arka taraftan bir oda isteyeceğim.",
+        tr: "Bir dahaki sefere arka tarafa bakan bir oda alacağım.",
         answer: "Das nächste Mal nehme ich ein Zimmer nach hinten.",
         alternatives: ["Nächstes Mal nehme ich ein Zimmer nach hinten."],
         hint: "Zaman öbeği başa gelince fiil yine ikinci sırada kalır, özne arkaya geçer.",
@@ -217,7 +217,7 @@ export const deA2P9: SkillExercise[] = [
         phrases: [
           { de: "Wir waren im … für … Nächte dort.", tr: "… ayında … gece kaldık", en: "We were there in … for … nights." },
           { de: "Besonders gut hat uns … gefallen.", tr: "Özellikle … hoşumuza gitti", en: "We particularly liked …" },
-          { de: "Weniger schön war …", tr: "Daha az güzel olan şey …", en: "Less nice was …" },
+          { de: "Weniger schön war …", tr: "Pek hoş olmayan şey …", en: "The less pleasant thing was …" },
           { de: "Das Personal war sehr freundlich.", tr: "Personel çok güler yüzlüydü.", en: "The staff were very friendly." },
           { de: "Ich würde die Pension weiterempfehlen.", tr: "Pansiyonu tavsiye ederim.", en: "I would recommend the guesthouse." },
         ],
@@ -255,7 +255,7 @@ export const deA2P9: SkillExercise[] = [
         hint: "„am_Abend“ yapışmaz: A'dan önce çok kısa bir duraklama var. Türkçede „bir elma“ derken sesler birleşir, Almancada birleşmez.",
         confusions: [
           {
-            heard: ["A-mabend esse ich immer spät"],
+            heard: [],
             fix: "m ile A arasında sesi kes: am | Abend. Aksi hâlde tek kelime gibi duyulur.",
             expected: "Abend",
           },
@@ -267,7 +267,7 @@ export const deA2P9: SkillExercise[] = [
         hint: "Üç kelime de ünlüyle başlıyor: eine | einfache | Antwort. Üçünün de önünde küçük bir vuruş var.",
         confusions: [
           {
-            heard: ["Das ist eineeinfacheantwort"],
+            heard: [],
             fix: "Her ünlü başı ayrı başlar; hepsini bir nefeste birleştirmek anlaşılmaz yapar.",
             expected: "Antwort",
           },
@@ -279,7 +279,7 @@ export const deA2P9: SkillExercise[] = [
         hint: "„ein | altes | Auto“ — üç ayrı başlangıç. Hiçbiri öncekinin sonuna eklenmez.",
         confusions: [
           {
-            heard: ["Wir haben einaltes Auto"],
+            heard: [],
             fix: "n ile a birleşmez; „ein“ biter, kısa bir kesme olur, sonra „altes“ başlar.",
             expected: "altes",
           },
@@ -291,7 +291,7 @@ export const deA2P9: SkillExercise[] = [
         hint: "„beantworte“ kelimesinin ORTASINDA da vuruş var: be | ANT-vor-te. Ön ek ile kök ayrılır.",
         confusions: [
           {
-            heard: ["Bitte benantworte meine E-Mail"],
+            heard: [],
             fix: "be- ile -antworten arasında kısa bir kesme duyulur; sesler kaynaşmaz.",
             expected: "beantworte",
           },
@@ -303,7 +303,7 @@ export const deA2P9: SkillExercise[] = [
         hint: "„Er | arbeitet | in | einem | alten“ — art arda beş ünlü başlangıcı.",
         confusions: [
           {
-            heard: ["E-rarbeitet ineinemalten Haus"],
+            heard: [],
             fix: "r sesini sonraki kelimeye taşıma; Almancada bağlanma yoktur.",
             expected: "arbeitet",
           },
@@ -315,7 +315,7 @@ export const deA2P9: SkillExercise[] = [
         hint: "Beş sözcükten dördü ünlüyle başlıyor; hepsinin önünde aynı küçük duraklama var.",
         confusions: [
           {
-            heard: ["Amachten Aprilumacht Uhr"],
+            heard: [],
             fix: "Rakam ve ay adı bile olsa kural değişmez: her ünlü başı ayrı vurulur.",
             expected: "acht",
           },

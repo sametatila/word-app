@@ -202,7 +202,7 @@ export const deC1P18: SkillExercise[] = [
     gloss: [
       { de: "der Quartiersrat", tr: "mahalle meclisi", en: "neighbourhood council" },
       { de: "die Räumlichkeit", tr: "mekân", en: "premises" },
-      { de: "ehrenamtlich", tr: "fahri", en: "voluntary" },
+      { de: "ehrenamtlich", tr: "gönüllü", en: "voluntary" },
       { de: "die Kaution", tr: "depozito", en: "deposit" },
       { de: "der Zuschuss", tr: "sübvansiyon", en: "subsidy" },
     ],

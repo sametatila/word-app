@@ -114,7 +114,7 @@ export const deB2P7: SkillExercise[] = [
     gloss: [
       { de: "der Zeitplan", tr: "zaman planı", en: "schedule" },
       { de: "die Rückmeldung", tr: "geri bildirim", en: "feedback" },
-      { de: "einschätzen", tr: "öngörmek", en: "to assess" },
+      { de: "einschätzen", tr: "değerlendirmek", en: "to assess" },
       { de: "eskalieren", tr: "üst makama taşımak", en: "to escalate" },
       { de: "der Vorwurf", tr: "suçlama", en: "reproach" },
       { de: "im Nachhinein", tr: "sonradan bakınca", en: "in hindsight" },
@@ -128,7 +128,7 @@ export const deB2P7: SkillExercise[] = [
       { speaker: "Frau Jansen", text: "Das ist kein Vorwurf, ich will nur verstehen, woran wir es hätten sehen können." },
       { speaker: "Herr Petrov", text: "Am zweiten Mal, würde ich sagen. Wenn dieselbe Verzögerung zweimal auftritt, ist es ein Muster und kein Zufall." },
       { speaker: "Frau Jansen", text: "Dann schreiben wir genau das in die Lessons Learned: beim zweiten Mal eskalieren, nicht beim vierten." },
-      { speaker: "Herr Petrov", text: "Und wir brauchen jemanden, der das beobachtet. Wir beide waren mitten drin und haben es deshalb nicht gesehen." },
+      { speaker: "Herr Petrov", text: "Und wir brauchen jemanden, der das beobachtet. Wir beide waren mittendrin und haben es deshalb nicht gesehen." },
       { speaker: "Frau Jansen", text: "Guter Punkt. Ich schlage vor, bei größeren Projekten eine Person von außen mit auf die Liste zu setzen." },
     ],
     questions: [
@@ -179,7 +179,7 @@ export const deB2P7: SkillExercise[] = [
           "Die Zahlen waren falsch.",
         ],
         answer: 0,
-        explain: "„Wir beide waren mitten drin und haben es deshalb nicht gesehen.“",
+        explain: "„Wir beide waren mittendrin und haben es deshalb nicht gesehen.“",
       },
     ],
   },
@@ -231,7 +231,7 @@ export const deB2P7: SkillExercise[] = [
           { de: "Es ist lange her, dass wir …", tr: "… üzerinden uzun zaman geçti", en: "It has been a long time since we …" },
           { de: "Inzwischen hat sich einiges verändert: …", tr: "Bu arada bazı şeyler değişti: …", en: "In the meantime, a few things have changed: …" },
           { de: "Im Nachhinein hätte ich wohl …", tr: "Sonradan bakınca herhâlde … yapardım", en: "In hindsight I would probably have …" },
-          { de: "Mich würde interessieren, wie du …", tr: "Senin …'i nasıl … merak ediyorum", en: "I would be interested to know how you …" },
+          { de: "Mich würde interessieren, wie du …", tr: "Senin … nasıl … merak ederdim", en: "I would be interested to know how you …" },
           { de: "Für einen Rat wäre ich dir dankbar.", tr: "Bir tavsiyen olursa minnettar olurum.", en: "I would be grateful for any advice." },
         ],
         sample:
@@ -241,7 +241,7 @@ export const deB2P7: SkillExercise[] = [
           "Die Umstellung war größer, als ich dachte. Die einfachen Aufgaben sind weg, übrig bleibt " +
           "das Schwierige, und das den ganzen Tag. " +
           "Im Nachhinein hätte ich wohl früher fragen sollen, wie sich die Stelle entwickelt; " +
-          "hätte ich das früher gewusst, hätte ich mir die Einarbeitung anders geplant. " +
+          "hätte ich das früher gewusst, hätte ich die Einarbeitung anders geplant. " +
           "Bereut habe ich den Wechsel trotzdem nicht. " +
           "Mich würde interessieren, wie du mit der neuen Software in eurer Abteilung zurechtkommst. " +
           "Gibt es bei euch eine feste Regel, wer einen Entwurf freigibt? " +
@@ -260,7 +260,7 @@ export const deB2P7: SkillExercise[] = [
     skill: "speaking",
     title: "Welche Aufgabe würdest du nie abgeben?",
     genre: "monologue",
-    intro: "Bir dakikadan uzun tek başına konuşacaksın: bir sınır çiz ve gerekçesini savun.",
+    intro: "Bir buçuk dakikaya kadar tek başına konuşacaksın: bir sınır çiz ve gerekçesini savun.",
     gloss: [],
     minutes: 7,
     monologue: {
@@ -274,7 +274,7 @@ export const deB2P7: SkillExercise[] = [
       ],
       targets: [
         { de: "Abgeben würde ich vieles, aber nicht …", tr: "Çoğu şeyi devrederdim ama … hayır" },
-        { de: "Der Grund liegt weniger in …, sondern in …", tr: "Sebep … değil, … " },
+        { de: "Der Grund liegt weniger in … als in …", tr: "Sebep …'den çok …'de yatıyor" },
         { de: "Rückblickend war das bei … deutlich zu sehen.", tr: "Geriye bakınca bu … olayında açıkça görülüyordu." },
         { de: "Ändern würde sich meine Haltung erst, wenn …", tr: "Tutumum ancak … olursa değişir" },
       ],
@@ -282,7 +282,7 @@ export const deB2P7: SkillExercise[] = [
       maxSeconds: 90,
       sampleDe:
         "Abgeben würde ich vieles, aber nicht das erste Gespräch mit jemandem, der sich beschwert. " +
-        "Der Grund liegt weniger in der Sprache, sondern in dem, was in so einem Gespräch " +
+        "Der Grund liegt weniger in der Sprache als in dem, was in so einem Gespräch " +
         "nebenbei passiert: Man hört, was der andere eigentlich will, und das steht fast nie im " +
         "ersten Satz. Rückblickend war das bei einem Fall im letzten Jahr deutlich zu sehen. " +
         "Eine Kundin hat sich schriftlich über eine Rechnung beschwert, und ein automatisch " +
@@ -293,7 +293,7 @@ export const deB2P7: SkillExercise[] = [
         "Hier geht es um etwas anderes als das, was dasteht. " +
         "Solange das nicht geht, bleibt dieser Teil bei einem Menschen.",
       rubricHint:
-        "Somut bir örnek ve bir koşul beklenir; „weniger … sondern“, geçmiş Konjunktiv II („hätte … angerufen“) ve „erst, wenn“ yapıları kullanılabilir.",
+        "Somut bir örnek ve bir koşul beklenir; „weniger … als“, geçmiş Konjunktiv II („hätte … angerufen“) ve „erst, wenn“ yapıları kullanılabilir.",
     },
   },
 

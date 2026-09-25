@@ -126,7 +126,7 @@ export const enC1P18: SkillExercise[] = [
     genre: "info",
     intro: "Müdür yardımcısının velilere sesli duyurusu: ödev değişikliğinde ne değişiyor, ne değişmiyor, takvim nasıl.",
     gloss: [
-      { de: "deputy", tr: "yardımcı" },
+      { de: "deputy", tr: "müdür yardımcısı" },
       { de: "update", tr: "güncelleme" },
       { de: "to attend", tr: "katılmak" },
       { de: "feedback", tr: "geri bildirim" },
@@ -191,7 +191,7 @@ export const enC1P18: SkillExercise[] = [
         text: "When is the parents' evening?",
         options: [],
         answer: 0,
-        accept: ["the fourteenth of May", "14 May", "14th May", "the 14th of May", "May 14", "May 14th", "May the fourteenth", "on the fourteenth of May", "on 14 May"],
+        accept: ["the fourteenth of May", "14 May", "14th May", "the 14th of May", "May 14", "May 14th", "May the fourteenth", "on the fourteenth of May", "on 14 May", "fourteenth of May", "May fourteenth"],
         explain: "„A parents' evening on the changes is set for the fourteenth of May.“",
       },
       {

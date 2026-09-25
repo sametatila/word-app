@@ -48,7 +48,7 @@ export const enA2P6: SkillExercise[] = [
         tr: "Unutmayacağım.",
         hint: "„won't“ = WOUNT, uzun o ile. „want“ (WONT) ile karıştırılmaması için uzunluğa dikkat.",
         confusions: [
-          { heard: ["I want forget", "I wont forget"], fix: "„won't“ uzun ou taşır; kısa söylersen başka kelime duyulur.", expected: "won't" },
+          { heard: ["I want forget"], fix: "„won't“ uzun ou taşır; kısa söylersen başka kelime duyulur.", expected: "won't" },
         ],
       },
       {
@@ -62,7 +62,7 @@ export const enA2P6: SkillExercise[] = [
       {
         de: "They're here and we're late.",
         tr: "Onlar geldi, biz geç kaldık.",
-        hint: "„They're“ = DEE, „we're“ = Wİİ. İkisi de tek hecedir ve are sesi neredeyse kaybolur.",
+        hint: "„They're“ = DER, „we're“ = WİR. İkisi de tek hecedir ve are sesi neredeyse kaybolur.",
         confusions: [
           { heard: ["They are here and we are late"], fix: "Kısaltmalarda „are“ ayrı bir hece oluşturmaz.", expected: "they're" },
         ],

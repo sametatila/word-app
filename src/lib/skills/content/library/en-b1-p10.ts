@@ -116,7 +116,7 @@ export const enB1P10: SkillExercise[] = [
     gloss: [
       { de: "budget", tr: "bütçe" },
       { de: "rent", tr: "kira" },
-      { de: "category", tr: "kalem" },
+      { de: "category", tr: "kategori" },
       { de: "to track", tr: "takip etmek" },
       { de: "to set aside", tr: "ayırmak" },
       { de: "arithmetic", tr: "aritmetik" },
@@ -141,7 +141,7 @@ export const enB1P10: SkillExercise[] = [
           "They forget the password.",
         ],
         answer: 0,
-        explain: "İkinci ayda bırakıyorlar ve sebep hep aynı.",
+        explain: "„they started with a plan instead of with numbers“ — çoğu kişi ikinci ayda bırakıyor ve sebep hep aynı.",
       },
       {
         text: "What should you do in the first four weeks?",
@@ -169,7 +169,12 @@ export const enB1P10: SkillExercise[] = [
         text: "When should you set money aside?",
         options: [],
         answer: 0,
-        accept: ["before you spend", "at the beginning", "before spending"],
+        accept: [
+          "before you spend",
+          "before you spend anything",
+          "at the beginning",
+          "before spending",
+        ],
         explain: "„set aside a small amount before you spend anything, not after“.",
       },
       {
@@ -177,7 +182,7 @@ export const enB1P10: SkillExercise[] = [
         options: [
           "because a budget without room is like a diet",
           "because it is required by banks",
-          "because it makes the maths easier",
+          "because it makes the math easier",
         ],
         answer: 0,
         explain: "„A budget with no room in it is a diet, and diets end.“",
@@ -297,7 +302,7 @@ export const enB1P10: SkillExercise[] = [
         "But a family can only teach what it knows, and that is exactly why the same mistakes " +
         "repeat in the same streets. " +
         "In practice I would not make it a separate subject, because a separate subject gets " +
-        "the worst hour of the week. I would put it inside maths, where the arithmetic already " +
+        "the worst hour of the week. I would put it inside math, where the arithmetic already " +
         "is, and give it real letters and real contracts instead of made-up examples.",
       rubricHint:
         "Somut içerik, bir itiraz ve uygulama önerisi beklenir; „not in the way people imagine“, „somebody could object that“ kullanılabilir.",

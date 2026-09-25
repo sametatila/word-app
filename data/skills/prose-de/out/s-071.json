@@ -87,7 +87,7 @@
  { "tr": "kupon", "kind": "gloss.tr", "de": "Gutschein" },
  { "tr": "metin", "kind": "gloss.tr", "de": "Text" },
  { "tr": "puset", "kind": "gloss.tr", "de": "Buggy" },
- { "tr": "yorum", "kind": "gloss.tr", "de": "Kommentar" },
+ { "tr": "yorum", "kind": "gloss.tr", "de": "Bewertung" },
  { "tr": "bitkin", "kind": "gloss.tr", "de": "erschöpft" },
  { "tr": "bodrum", "kind": "gloss.tr", "de": "Keller" },
  { "tr": "gergin", "kind": "gloss.tr", "de": "nervös" },

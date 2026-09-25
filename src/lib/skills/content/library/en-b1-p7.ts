@@ -123,7 +123,7 @@ export const enB1P7: SkillExercise[] = [
       { de: "canteen", tr: "yemekhane" },
       { de: "probation", tr: "deneme süresi" },
       { de: "handbook", tr: "el kitabı" },
-      { de: "basic", tr: "temel araştırma" },
+      { de: "basic", tr: "basit" },
     ],
     minutes: 6,
     segments: [
@@ -172,7 +172,14 @@ export const enB1P7: SkillExercise[] = [
         text: "Where do most people learn more than in the induction?",
         options: [],
         answer: 0,
-        accept: ["at that table", "in the canteen", "at lunch"],
+        accept: [
+          "in the canteen",
+          "the canteen",
+          "at lunch",
+          "at lunch in the canteen",
+          "at the lunch table",
+          "at that table",
+        ],
         explain: "„most people learn more at that table than in the induction“.",
       },
       {
@@ -249,7 +256,7 @@ export const enB1P7: SkillExercise[] = [
           "What I learned most was not about printing. It was that asking a short question early " +
           "saves an hour later, and I am much more confident about that now. " +
           "I would suggest that the school prepares us for written English at work, " +
-          "because we practise speaking in class but almost never write a short business email.",
+          "because we practice speaking in class but almost never write a short business email.",
       },
     ],
   },

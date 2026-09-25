@@ -184,7 +184,7 @@ export const enB2P6: SkillExercise[] = [
         text: "What does Ms Carr want to add to the scoring sheet?",
         options: [],
         answer: 0,
-        accept: ["one line from her", "a line from her", "one personal line"],
+        accept: ["one line from her", "a line from her", "one personal line", "a personal line", "one line", "a line"],
         explain: "Makineden çıkmış gibi durmaması için kendinden bir satır.",
       },
       {
@@ -215,7 +215,7 @@ export const enB2P6: SkillExercise[] = [
       { de: "strength", tr: "güçlü yan" },
       { de: "to encourage", tr: "yüreklendirmek" },
       { de: "vacancy", tr: "açık pozisyon" },
-      { de: "sheet", tr: "çarşaf" },
+      { de: "sheet", tr: "çizelge" },
       { de: "presentation", tr: "sunum" },
     ],
     minutes: 14,
@@ -259,7 +259,7 @@ export const enB2P6: SkillExercise[] = [
           "Your strongest areas were the written task, where you scored highest of the four, " +
           "and the way you handled the questions about the failed project. " +
           "Against the criteria we use, the difference was in the presentation. " +
-          "We score it on three things: structure, use of evidence and time keeping. " +
+          "We score it on three things: structure, use of evidence and timekeeping. " +
           "Although your structure was clear, two of your three examples came from a different " +
           "kind of team, and you finished six minutes over. " +
           "I have attached the scoring sheet so that you can see it is the same for everyone. " +

@@ -37,7 +37,7 @@ export const enA1P8: SkillExercise[] = [
         tr: "Yemek masanın üstünde.",
         hint: "„food“ uzun ve gergin: FUUD. Dudaklar iyice yuvarlanır ve ses sürer.",
         confusions: [
-          { heard: ["The fud is on the table"], fix: "Kısa söylersen kelime tanınmaz; uzunluk anlamın kendisidir.", expected: "food" },
+          { heard: ["the foot is"], fix: "Kısa söylersen kelime tanınmaz; uzunluk anlamın kendisidir.", expected: "food" },
         ],
       },
       {
@@ -61,7 +61,7 @@ export const enA1P8: SkillExercise[] = [
         tr: "Bu kitap iyi görünüyor.",
         hint: "Üçü de KISA: BUK, LUKS, GUD. Yazımda iki o var ama ses kısa kalır.",
         confusions: [
-          { heard: ["This buuk luuks guud"], fix: "Çift o her zaman uzun demek değil; bu üç kelimede kısadır.", expected: "book" },
+          { heard: [], fix: "Çift o her zaman uzun demek değil; bu üç kelimede kısadır.", expected: "book" },
         ],
       },
       {
@@ -69,7 +69,7 @@ export const enA1P8: SkillExercise[] = [
         tr: "Manzaralı bir oda seç.",
         hint: "Üçü de UZUN: ÇUUZ, RUUM, VYUU. Ses dudakları yuvarlayıp sürer.",
         confusions: [
-          { heard: ["Chose a rum with a vyu"], fix: "Uzunluğu kesme; kısa söylersen başka kelimeler çıkar.", expected: "room" },
+          { heard: ["chose a rum"], fix: "Uzunluğu kesme; kısa söylersen başka kelimeler çıkar.", expected: "room" },
         ],
       },
     ],

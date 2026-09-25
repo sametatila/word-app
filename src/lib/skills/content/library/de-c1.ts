@@ -142,7 +142,7 @@ export const deC1: SkillExercise[] = [
       { speaker: "Moderator", text: "Gibt es Unterlagen, die Ihnen niemand anbietet, die Sie aber gern hätten?" },
       { speaker: "Dr. Lindqvist", text: "Ständig. Vereinsprotokolle, Kassenbücher kleiner Läden, die Korrespondenz von Nachbarschaftsinitiativen. Das Alltägliche wird weggeworfen, weil es niemandem wichtig erscheint, und genau das fehlt später." },
       { speaker: "Moderator", text: "Gibt es eine Entscheidung, die Sie bereuen?" },
-      { speaker: "Dr. Lindqvist", text: "Bereuen wäre zu groß. Aber es gibt Kisten, an die ich denke. Man merkt erst zwanzig Jahre später, ob man richtig lag — und dann ist die Frage ohnehin nicht mehr zu ändern." },
+      { speaker: "Dr. Lindqvist", text: "Bereuen wäre zu groß. Aber es gibt Kisten, an die ich denke. Man merkt erst zwanzig Jahre später, ob man richtig lag — und dann lässt sich ohnehin nichts mehr ändern." },
     ],
     questions: [
       {
@@ -177,7 +177,7 @@ export const deC1: SkillExercise[] = [
         text: "Wie viel des Verwaltungsschriftguts wird dauerhaft aufbewahrt?",
         options: [],
         answer: 0,
-        accept: ["ein bis zwei Prozent", "1 bis 2 Prozent", "ein bis zwei", "1-2 Prozent"],
+        accept: ["ein bis zwei Prozent", "1 bis 2 Prozent", "ein bis zwei", "1-2 Prozent", "1–2 Prozent", "1-2 %", "1 bis 2 %"],
         explain: "„… wird am Ende ungefähr ein bis zwei Prozent dauerhaft aufbewahrt.“",
       },
       {
@@ -263,11 +263,12 @@ export const deC1: SkillExercise[] = [
           "Der Podcast „Aktenlage“ überzeugt vor allem durch seine Methode: Statt über Verwaltung zu sprechen, " +
           "legt er ein einzelnes Dokument auf den Tisch und macht daran nachvollziehbar, wie eine Entscheidung " +
           "entsteht. Wer eine Folge gehört hat, liest den nächsten Bescheid anders. Hinzu kommt die Sorgfalt der " +
-          "Recherche, die in dieser Form ehrenamtlich kaum zu erwarten ist.\n\n" +
+          "Recherche, die weit über das Übliche hinausgeht.\n\n" +
           "Das schmälert die Leistung von „Zettelkasten“ in keiner Weise. Sechzig Kinder wöchentlich zu erreichen " +
           "und dabei die Eltern einzubinden, ist eine organisatorische Leistung, die in keinem Bericht sichtbar wird. " +
-          "Ausschlaggebend war schließlich, dass dieses Projekt bereits über eine gesicherte Finanzierung verfügt, " +
-          "während der Podcast ohne den Preis vermutlich nicht fortgeführt würde.\n\n" +
+          "Ausschlaggebend war schließlich, dass die Wirkung dieses Projekts an die wöchentlichen Termine gebunden " +
+          "und kaum dokumentiert ist, während jede Folge von „Aktenlage“ dauerhaft abrufbar bleibt und auch " +
+          "später noch Menschen ohne Vorkenntnisse erreicht.\n\n" +
           "Die Jury spricht den Preis daher „Aktenlage“ zu — nicht als Auszeichnung für Reichweite, " +
           "sondern für eine Form, die Wissen zugänglich macht, ohne es zu vereinfachen.",
       },

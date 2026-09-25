@@ -130,9 +130,9 @@ export const enB2: SkillExercise[] = [
       { de: "shortlist", tr: "kısa liste" },
       { de: "external", tr: "dışarıdan" },
       { de: "assumption", tr: "varsayım" },
-      { de: "advertise", tr: "ilan vermek" },
+      { de: "advertise", tr: "ilana çıkarmak" },
       { de: "hire", tr: "işe almak" },
-      { de: "search", tr: "arama yapmak" },
+      { de: "search", tr: "arama" },
       { de: "advertisement", tr: "ilan" },
     ],
     minutes: 9,
@@ -270,7 +270,7 @@ export const enB2: SkillExercise[] = [
           { de: "If that does not work for you, …", tr: "Bu size uymazsa …" },
         ],
         sample:
-          "Dear Ms. Demirci,\n\n" +
+          "Dear R. Demirci,\n\n" +
           "Thank you for taking the time to write, and I am sorry that you had to. You are right that three teachers " +
           "in eleven weeks is too many, and you are also right that the repeated unit is the real issue, not the staffing.\n\n" +
           "What happened was that your original teacher left at short notice in week four and her replacement was ill " +

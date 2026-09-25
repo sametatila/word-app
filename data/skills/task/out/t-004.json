@@ -135,11 +135,11 @@
  { "tr": "Hangi durumda değmeyeceğini söyle", "kind": "monologue.bulletsTr", "en": "Say in which case it would not be worth it" },
  { "tr": "Sınırı ve koşulu söyleyerek bitir", "kind": "monologue.bulletsTr", "en": "Finish by stating the limit and the condition" },
  { "tr": "Kendi görüşüne bir karşı örnek bul", "kind": "monologue.bulletsTr", "en": "Find a counter-example to your own view" },
- { "tr": "Sonu neyle bittiğine bakarak bitir", "kind": "monologue.bulletsTr", "en": "Finish by looking at what it ends with" },
+ { "tr": "Eğitimin neyle bittiğine bakarak bitir", "kind": "monologue.bulletsTr", "en": "Finish by looking at what the training ends with" },
  { "tr": "Soruyu iki seçenekten fazlasına aç", "kind": "monologue.bulletsTr", "en": "Open the question up beyond two options" },
  { "tr": "Güvenin güçlü ve zayıf yanını söyle", "kind": "monologue.bulletsTr", "en": "Give the strong and the weak side of trust" },
  { "tr": "Kuralın güçlü ve zayıf yanını söyle", "kind": "monologue.bulletsTr", "en": "Give the strong and the weak side of rules" },
- { "tr": "Kişisel bir örnek ya da gözlem anlat", "kind": "monologue.bulletsTr", "en": "Tell a personal example or observation" },
+ { "tr": "Kişisel bir örnek ya da gözlem anlat", "kind": "monologue.bulletsTr", "en": "Give a personal example or observation" },
  { "tr": "Düzenlenemeyen alan için bir yol öner", "kind": "monologue.bulletsTr", "en": "Suggest a way for the part that cannot be regulated" },
  { "tr": "Karşı tarafın bir argümanını da söyle", "kind": "monologue.bulletsTr", "en": "Give an argument from the other side too" },
  { "tr": "Karşı görüşü kabul et ve sonuçla bitir", "kind": "monologue.bulletsTr", "en": "Accept the opposing view and finish with a conclusion" },
@@ -148,5 +148,5 @@
  { "tr": "Kendi ölçütünü somut bir örnekle göster", "kind": "monologue.bulletsTr", "en": "Show your own criterion with a concrete example" },
  { "tr": "Neyi değiştireceğini tek cümleyle söyle", "kind": "monologue.bulletsTr", "en": "Say what you would change in one sentence" },
  { "tr": "Gönüllülüğün güçlü ve zayıf yanını söyle", "kind": "monologue.bulletsTr", "en": "Give the strong and the weak side of the voluntary route" },
- { "tr": "Kendi deneyiminden somut bir örnek anlat", "kind": "monologue.bulletsTr", "en": "Tell a concrete example from your own experience" }
+ { "tr": "Kendi deneyiminden somut bir örnek anlat", "kind": "monologue.bulletsTr", "en": "Give a concrete example from your own experience" }
 ]

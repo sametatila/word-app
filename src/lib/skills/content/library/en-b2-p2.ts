@@ -122,7 +122,7 @@ export const enB2P2: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     title: "Opt In or Opt Out?",
-    genre: "phone",
+    genre: "interview",
     intro: "Bir podcast bölümünde varsayılan kuralın etkisi tartışılıyor: yasa ne kadar değiştiriyor, asıl darboğaz nerede.",
     gloss: [
       { de: "donor", tr: "bağışçı" },
@@ -131,8 +131,8 @@ export const enB2P2: SkillExercise[] = [
       { de: "bottleneck", tr: "darboğaz" },
       { de: "tick", tr: "işaretlemek" },
       { de: "renew", tr: "yenilemek" },
-      { de: "organ", tr: "organ bağışı" },
-      { de: "donation", tr: "organ bağışı" },
+      { de: "organ", tr: "organ" },
+      { de: "donation", tr: "bağış" },
     ],
     minutes: 9,
     segments: [
@@ -180,7 +180,7 @@ export const enB2P2: SkillExercise[] = [
         text: "What does Ines call the actual bottleneck?",
         options: [],
         answer: 0,
-        accept: ["the family", "families", "the families"],
+        accept: ["the family", "families", "the families", "families who have never discussed it", "families who never discussed it"],
         explain: "„… a family who has never discussed it will usually say no. That is the actual bottleneck.“",
       },
       {
@@ -196,7 +196,7 @@ export const enB2P2: SkillExercise[] = [
         options: [
           "the default rule in pensions",
           "organ donation in other countries",
-          "the rules for driving licences",
+          "the rules for driving licenses",
         ],
         answer: 0,
         explain: "„Next week: the same question about pensions, where the default has already been changed.“",
@@ -262,7 +262,7 @@ export const enB2P2: SkillExercise[] = [
           "a gamble, and a fee would fall hardest on the people who cannot easily get to a shop: those who live " +
           "far out, those who work shifts, those who are not the size the industry designs for. A charge that " +
           "looks fair on paper is not fair on a Tuesday in a village.\n\n" +
-          "So the answer is not a flat fee, it is information. The shop that I mentioned above now shows, on the " +
+          "So the answer is not a flat fee, it is information. One shop I buy from now shows, on the " +
           "product page, how often each item is returned and why. Sales of the worst items fell by a third in " +
           "six months, and nobody had to be charged anything. Shops already know these numbers. The only reason " +
           "we do not see them is that nobody has been made to show them.",

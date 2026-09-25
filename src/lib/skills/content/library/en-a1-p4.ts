@@ -108,8 +108,8 @@ export const enA1P4: SkillExercise[] = [
       { speaker: "Shop", text: "Big cheese and tomato, big mushroom. Anything to drink?" },
       { speaker: "Kaan", text: "Yes, two bottles of water. How much is it?" },
       { speaker: "Shop", text: "That is twenty-six euros fifty. What is your address?" },
-      { speaker: "Kaan", text: "Rose Street fourteen, second floor. The name is Kaan." },
-      { speaker: "Shop", text: "Thank you. It comes in forty minutes. Please have the money ready." },
+      { speaker: "Kaan", text: "Fourteen Rose Street, second floor. The name is Kaan." },
+      { speaker: "Shop", text: "Thank you. It's coming in forty minutes. Please have the money ready." },
       { speaker: "Kaan", text: "Great, thank you. Goodbye!" },
     ],
     questions: [
@@ -137,8 +137,8 @@ export const enA1P4: SkillExercise[] = [
         text: "When does the food come?",
         options: [],
         answer: 0,
-        accept: ["in forty minutes", "forty minutes", "in 40 minutes"],
-        explain: "„It comes in forty minutes.“",
+        accept: ["in forty minutes", "forty minutes", "in 40 minutes", "40 minutes"],
+        explain: "„It's coming in forty minutes.“",
       },
       {
         kind: "dictation",
@@ -172,7 +172,7 @@ export const enA1P4: SkillExercise[] = [
       { de: "warm", tr: "sıcak tutan" },
       { de: "pick up", tr: "gelip almak" },
       { de: "brown", tr: "kahverengi" },
-      { de: "boot", tr: "çizme" },
+      { de: "boot", tr: "bot" },
     ],
     minutes: 8,
     tasks: [
@@ -211,7 +211,7 @@ export const enA1P4: SkillExercise[] = [
         sample:
           "For sale: winter boots, size thirty-eight, and a black coat, size M. The boots are brown and one year old, " +
           "the coat is two years old. Both are warm and clean. The boots are twenty euros, the coat is thirty euros. " +
-          "Together forty-five. You can pick them up on Saturday between ten and six. I live in Rose Street fourteen. " +
+          "Both together are forty-five euros. You can pick them up on Saturday between ten and six. I live at 14 Rose Street. " +
           "Please write me a message!",
       },
     ],
@@ -263,7 +263,7 @@ export const enA1P4: SkillExercise[] = [
         tr: "Elim kırmızı.",
         hint: "„hand“ geniş a, „red“ kapalı e. Sondaki d ikisinde de duyulur.",
         confusions: [
-          { heard: ["My hend is rad"], fix: "İlkinde ağzı aç, ikincisinde kapat: hand, red.", expected: "hand" },
+          { heard: ["hand is rad"], fix: "İlkinde ağzı aç, ikincisinde kapat: hand, red.", expected: "hand" },
         ],
       },
       {
@@ -279,7 +279,7 @@ export const enA1P4: SkillExercise[] = [
         tr: "Adam masada.",
         hint: "„man“ ve „at“ geniş; „desk“ kapalı e.",
         confusions: [
-          { heard: ["The men is at the dask"], fix: "„man“ tekil ve geniş sesli; „men“ çoğul ve kapalı sesli.", expected: "man" },
+          { heard: ["the men is"], fix: "„man“ tekil ve geniş sesli; „men“ çoğul ve kapalı sesli.", expected: "man" },
         ],
       },
       {
@@ -287,7 +287,7 @@ export const enA1P4: SkillExercise[] = [
         tr: "Sally'nin yedi kedisi var.",
         hint: "„Sally“, „has“ ve „cats“ geniş; „seven“ kapalı.",
         confusions: [
-          { heard: ["Selly hes seven kets"], fix: "Üç kelimede ağzını aç, yalnız „seven“de kapat.", expected: "cats" },
+          { heard: [], fix: "Üç kelimede ağzını aç, yalnız „seven“de kapat.", expected: "cats" },
         ],
       },
     ],

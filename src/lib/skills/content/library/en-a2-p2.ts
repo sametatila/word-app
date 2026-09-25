@@ -150,7 +150,7 @@ export const enA2P2: SkillExercise[] = [
         text: "What happens if your books are late this week?",
         options: [],
         answer: 0,
-        accept: ["you pay nothing", "nothing", "you do not pay", "no money"],
+        accept: ["you pay nothing", "nothing", "you do not pay", "you do not pay anything", "you don't pay anything", "no money"],
         explain: "„… if your books are late this week, you do not pay anything.“",
       },
       {
@@ -220,9 +220,9 @@ export const enA2P2: SkillExercise[] = [
           { de: "Best regards,", tr: "Saygılarımla," },
         ],
         sample:
-          "Dear Sir or Madam, my name is Deniz Aksu and my member number is four four seven one. " +
+          "Dear Sir or Madam, my name is Deniz Aksu and my member number is 4471. " +
           "I would like to cancel my membership at the end of September. I am going to move to another city in " +
-          "October for a new job, so I will not be able to come. On my contract the notice period is one month, " +
+          "October for a new job, so I will not be able to come. According to my contract, the notice period is one month, " +
           "so I hope this email is in time. Could you send me a written confirmation? " +
           "Thank you very much. Best regards, Deniz Aksu",
       },
@@ -251,7 +251,7 @@ export const enA2P2: SkillExercise[] = [
         tr: "Otobüs durağı postanenin yanında.",
         hint: "Birleşik adlarda ilk parça vurgulanır: BUS stop, POST office.",
         confusions: [
-          { heard: ["bus STOP", "post OFFICE"], fix: "İkinci kelimeyi yükseltme; ağırlık ilk parçada: BAS stop.", expected: "bus stop" },
+          { heard: [], fix: "İkinci kelimeyi yükseltme; ağırlık ilk parçada: BAS stop.", expected: "bus stop" },
         ],
       },
       {
@@ -259,7 +259,7 @@ export const enA2P2: SkillExercise[] = [
         tr: "Fotoğrafçı olmak istiyorum.",
         hint: "Vurgu ikinci hecede: fo-TO-gra-fır. Dört heceyi de söyle ama ikincisini uzat.",
         confusions: [
-          { heard: ["PHO-tographer", "photo grapher"], fix: "İlk heceyi vurgulama; ağırlık „to“ hecesinde.", expected: "photographer" },
+          { heard: [], fix: "İlk heceyi vurgulama; ağırlık „to“ hecesinde.", expected: "photographer" },
         ],
       },
       {
@@ -267,7 +267,7 @@ export const enA2P2: SkillExercise[] = [
         tr: "Bu güzel bir fotoğraf.",
         hint: "Burada vurgu ilk hecede: FO-to-graf. Aynı kökten iki kelime, iki farklı vurgu.",
         confusions: [
-          { heard: ["photoGRAPH", "photographer"], fix: "Kısa biçimde ağırlık başta: FO-to-graf.", expected: "photograph" },
+          { heard: ["photographer"], fix: "Kısa biçimde ağırlık başta: FO-to-graf.", expected: "photograph" },
         ],
       },
       {
@@ -275,7 +275,7 @@ export const enA2P2: SkillExercise[] = [
         tr: "Otel hakkında daha çok bilgiye ihtiyacımız var.",
         hint: "„-tion“ ile biten kelimelerde vurgu hep ondan bir önceki hecededir: in-for-MEY-şın. „hotel“ ise ho-TEL.",
         confusions: [
-          { heard: ["INformation", "HOtel"], fix: "İkisinde de vurgu sona yakın: informEYşın, hoTEL.", expected: "information" },
+          { heard: [], fix: "İkisinde de vurgu sona yakın: informEYşın, hoTEL.", expected: "information" },
         ],
       },
       {
@@ -283,7 +283,7 @@ export const enA2P2: SkillExercise[] = [
         tr: "Lütfen toplantıyı kaydet.",
         hint: "Fiil olduğunda vurgu ikinci hecededir: ri-KORD.",
         confusions: [
-          { heard: ["REcord the meeting"], fix: "Burada fiil var; ağırlığı ikinci heceye ver: riKORD.", expected: "record" },
+          { heard: [], fix: "Burada fiil var; ağırlığı ikinci heceye ver: riKORD.", expected: "record" },
         ],
       },
       {
@@ -291,7 +291,7 @@ export const enA2P2: SkillExercise[] = [
         tr: "Yeni albümü harika bir kayıt.",
         hint: "Aynı kelime ad olunca vurgu başa kayar: RE-kırd.",
         confusions: [
-          { heard: ["a great reCORD"], fix: "Burada ad var; ilk heceyi vurgula: REkırd.", expected: "record" },
+          { heard: [], fix: "Burada ad var; ilk heceyi vurgula: REkırd.", expected: "record" },
         ],
       },
       {
@@ -299,7 +299,7 @@ export const enA2P2: SkillExercise[] = [
         tr: "Şehir merkezindeki trafik berbat.",
         hint: "Üç kelimede de vurgu ilk hecede: TRA-fik, SI-ti, TE-rıbıl.",
         confusions: [
-          { heard: ["traFFIC", "terRIBLE"], fix: "Bu üç kelimede ağırlık baştadır; sonu hafifçe yut.", expected: "terrible" },
+          { heard: [], fix: "Bu üç kelimede ağırlık baştadır; sonu hafifçe yut.", expected: "terrible" },
         ],
       },
     ],

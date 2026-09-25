@@ -110,7 +110,7 @@ export const enB1P2: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     title: "A Free Year",
-    genre: "phone",
+    genre: "interview",
     intro: "Bir podcast üç kişiye aynı soruyu soruyor: bir yıl boyunca masrafların karşılansaydı ne yapardın?",
     gloss: [
       { de: "warehouse", tr: "depo" },
@@ -119,7 +119,7 @@ export const enB1P2: SkillExercise[] = [
       { de: "bored", tr: "sıkılmış" },
       { de: "electrician", tr: "elektrikçi" },
       { de: "opposite", tr: "zıt" },
-      { de: "host", tr: "davet sahibi" },
+      { de: "host", tr: "sunucu" },
     ],
     minutes: 7,
     segments: [
@@ -162,12 +162,16 @@ export const enB1P2: SkillExercise[] = [
         text: "What would Amal stop doing?",
         options: [],
         answer: 0,
-        accept: ["apologizing for being late", "saying sorry for being late", "apologizing"],
+        accept: [
+          "apologizing for being late",
+          "saying sorry for being late",
+          "apologizing",
+        ],
         explain: "„I would stop apologizing for being late everywhere.“",
       },
       {
         kind: "dictation",
-        text: "Amal'ın herkesin sormadığı soruyu anlattığı cümleyi duyduğun gibi yaz.",
+        text: "Amal'ın kimsenin sormadığı soruyu anlattığı cümleyi duyduğun gibi yaz.",
         options: [],
         answer: 0,
         accept: ["Nobody asks what you would stop doing.", "Nobody asks what you would stop doing"],
@@ -197,7 +201,7 @@ export const enB1P2: SkillExercise[] = [
       { de: "quiet hours", tr: "sessizlik saatleri" },
       { de: "instalment", tr: "taksit" },
       { de: "roof", tr: "çatı" },
-      { de: "shade", tr: "renk tonu" },
+      { de: "shade", tr: "gölge" },
     ],
     minutes: 10,
     tasks: [

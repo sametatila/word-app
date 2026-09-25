@@ -157,6 +157,8 @@ export const deA2P7: SkillExercise[] = [
           "der neue Radweg ist offen",
           "der neue Radweg am Fluss ist offen",
           "der Radweg ist offen",
+          "der Radweg am Fluss ist offen",
+          "der neue Radweg",
         ],
         explain: "„Der neue Radweg am Fluss ist ab heute offen.“",
       },
@@ -254,7 +256,7 @@ export const deA2P7: SkillExercise[] = [
         hint: "Ünlüden önceki tek s TİTRER: ZO-ne, zayt, Zİİben. Türkçedeki z sesi gibi.",
         confusions: [
           {
-            heard: ["Die Ssonne scheint sseit sieben Uhr"],
+            heard: [],
             fix: "Kelime başında ünlüden önce gelen s sessiz değil, ötümlüdür: z gibi.",
             expected: "Sonne",
           },
@@ -266,7 +268,7 @@ export const deA2P7: SkillExercise[] = [
         hint: "Çift s ve ß hiç titremez: VA-ser, HAYS. İkisi de kısa ve sert.",
         confusions: [
           {
-            heard: ["Das Wazer ist heiz"],
+            heard: [],
             fix: "ss ve ß ötümlü olmaz; ses dilin ucundan sürtünerek çıkar, boğaz titremez.",
             expected: "Wasser",
           },
@@ -278,7 +280,7 @@ export const deA2P7: SkillExercise[] = [
         hint: "ß'den önceki ünlü UZUNDUR: ŞTRAA-se. Çift s'den önceki ünlü ise kısadır.",
         confusions: [
           {
-            heard: ["Wir wohnen in der Gartenstrasse"],
+            heard: [],
             fix: "ss yazımı ünlüyü kısaltır; burada a uzun kalmalı.",
             expected: "Straße",
           },
@@ -290,7 +292,7 @@ export const deA2P7: SkillExercise[] = [
         hint: "Üç tek s de ünlüler arasında ya da başta: LEE-ze, Dİİzı, ZAY-tı — üçü de titrer.",
         confusions: [
           {
-            heard: ["Ich lesse diese Seite noch einmal"],
+            heard: [],
             fix: "Tek s iki ünlü arasında her zaman ötümlüdür; sertleştirmek başka kelime yapar.",
             expected: "lese",
           },
@@ -302,7 +304,7 @@ export const deA2P7: SkillExercise[] = [
         hint: "Kelime sonundaki s titremez: BUS, HAUS. Ötümlülük yalnız ünlüden ÖNCE olur.",
         confusions: [
           {
-            heard: ["Der Buz hält vor dem Hauz"],
+            heard: [],
             fix: "Sonda s her zaman sert çıkar; z sesi yalnız başta ve ünlüler arasında duyulur.",
             expected: "Haus",
           },
@@ -315,7 +317,7 @@ export const deA2P7: SkillExercise[] = [
         confusions: [
           {
             heard: ["Wie heisst du, und was ist du gern"],
-            fix: "„isst“ (yiyorsun) ile „ist“ (dir) ayrı kelimelerdir; çift s uzun söylenir.",
+            fix: "„isst“ (yiyorsun) ile „ist“ (-dir) aynı okunur: kısa i, sert s; fark yalnız yazıda ve anlamda.",
             expected: "isst",
           },
         ],

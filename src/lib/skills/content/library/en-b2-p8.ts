@@ -125,14 +125,14 @@ export const enB2P8: SkillExercise[] = [
     gloss: [
       { de: "packaging", tr: "ambalaj" },
       { de: "manufacturer", tr: "üretici" },
-      { de: "levy", tr: "kesinti" },
+      { de: "levy", tr: "harç" },
       { de: "shopper", tr: "alışveriş yapan" },
       { de: "incentive", tr: "teşvik" },
       { de: "kerbside", tr: "kapı önü" },
-      { de: "household", tr: "hane büyüklüğü" },
+      { de: "household", tr: "hane" },
       { de: "anyway", tr: "zaten" },
       { de: "calculate", tr: "hesaplamak" },
-      { de: "tray", tr: "tepsi" },
+      { de: "tray", tr: "ambalaj tepsisi" },
     ],
     minutes: 8,
     segments: [
@@ -179,8 +179,8 @@ export const enB2P8: SkillExercise[] = [
         text: "What problem has nobody solved?",
         options: [],
         answer: 0,
-        accept: ["the small producer", "small producers", "small shops"],
-        explain: "Süpermarketin yutabildiği bir kesinti, dört çalışanlı bir dükkânı kapatabiliyor.",
+        accept: ["the small producer", "small producers", "small shops", "small businesses"],
+        explain: "Süpermarketin yutabildiği bir harç, dört çalışanlı bir dükkânı kapatabiliyor.",
       },
       {
         text: "Why is the levy calculated by material as well as weight?",
@@ -207,11 +207,11 @@ export const enB2P8: SkillExercise[] = [
     gloss: [
       { de: "reliable", tr: "güvenilir" },
       { de: "to miss", tr: "atlamak" },
-      { de: "container", tr: "kutu" },
-      { de: "helpline", tr: "danışma hattı" },
+      { de: "container", tr: "çöp konteyneri" },
+      { de: "helpline", tr: "yardım hattı" },
       { de: "improvement", tr: "iyileşme" },
       { de: "genuine", tr: "hakiki" },
-      { de: "household", tr: "hane büyüklüğü" },
+      { de: "household", tr: "hane" },
       { de: "contaminate", tr: "kirletmek" },
     ],
     minutes: 14,
@@ -252,7 +252,7 @@ export const enB2P8: SkillExercise[] = [
           "We have been using the new two-container service since the beginning of September, " +
           "so this covers about four months and eight collections. " +
           "On reliability, I would say the service is better than the old one. " +
-          "Only a few collections were missed, both in the first fortnight, and both were " +
+          "Only a few collections were missed, two in total, both in the first fortnight, and both were " +
           "collected two days later without our having to phone. " +
           "The information was clear about what goes in which container, less so about what " +
           "happens if a container is contaminated. We found that out from a neighbour, " +

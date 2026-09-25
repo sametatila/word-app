@@ -102,7 +102,7 @@
  { "tr": "En az iki Genitiv var mı?", "kind": "free.checklist", "en": "Are there at least two genitives?" },
  { "tr": "En az iki gerekçe var mı?", "kind": "free.checklist", "en": "Are there at least two reasons?" },
  { "tr": "Eski durum anlatılmış mı?", "kind": "free.checklist", "en": "Has the old situation been described?" },
- { "tr": "Evdeki bir tuhaflığı uyar", "kind": "free.checklist", "en": "Warn about one oddity in the house" },
+ { "tr": "Evdeki bir tuhaflık konusunda uyar", "kind": "free.checklist", "en": "Warn about one oddity in the house" },
  { "tr": "Kendi görüş gerekçeli mi?", "kind": "free.checklist", "en": "Is your own view backed by reasons?" },
  { "tr": "Kural tek cümlede net mi?", "kind": "free.checklist", "en": "Is the rule clear in one sentence?" },
  { "tr": "Olay tarihli ve somut mu?", "kind": "free.checklist", "en": "Is the incident dated and concrete?" },

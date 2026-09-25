@@ -193,7 +193,7 @@ export const deA1P17: SkillExercise[] = [
       {
         kind: "free",
         prompt:
-          "Forum için kısa bir ilan yaz: kendini tanıt, ne zaman ve nerede koştuğunu söyle, ne kadar koştuğunu yaz, nasıl bir koşu arkadaşı aradığını belirt ve nasıl ulaşılacağını söyle.",
+          "Forum için kısa bir ilan yaz: kendini tanıt, ne zaman ve nerede koştuğunu söyle, ne kadar ve ne hızla koştuğunu yaz ve nasıl ulaşılacağını söyle.",
         checklist: [
           "Kendini kısaca tanıt",
           "Ne zaman ve nerede koştuğunu yaz",

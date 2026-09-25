@@ -142,7 +142,7 @@ export const enC1: SkillExercise[] = [
       { de: "engineer", tr: "mühendis" },
       { de: "trouble", tr: "sıkıntı" },
       { de: "attractive", tr: "çekici" },
-      { de: "tension", tr: "kas gerginliği" },
+      { de: "tension", tr: "gerilim" },
       { de: "constantly", tr: "sürekli" },
       { de: "engine", tr: "motor" },
       { de: "unstable", tr: "istikrarsız" },
@@ -209,7 +209,7 @@ export const enC1: SkillExercise[] = [
         text: "Below which speed is a sound legally required?",
         options: [],
         answer: 0,
-        accept: ["twenty kilometers an hour", "twenty kilometers", "20 km/h", "20 kilometers an hour", "twenty"],
+        accept: ["twenty kilometers an hour", "twenty kilometers", "20 km/h", "20 kilometers an hour", "about twenty kilometers an hour", "twenty kilometers per hour", "20 km per hour", "twenty"],
         explain: "„Below about twenty kilometers an hour, electric vehicles are legally required to emit a sound.“",
       },
       {
@@ -247,11 +247,11 @@ export const enC1: SkillExercise[] = [
       { de: "concede", tr: "kabul etmek" },
       { de: "wording", tr: "ifade biçimi" },
       { de: "accountable", tr: "hesap verebilir" },
-      { de: "specific", tr: "özel önleme" },
+      { de: "specific", tr: "somut" },
       { de: "trouble", tr: "sıkıntı" },
-      { de: "affect", tr: "duygulanım" },
+      { de: "affect", tr: "etkilemek" },
       { de: "necessarily", tr: "zorunlu olarak" },
-      { de: "warmth", tr: "ılıklık" },
+      { de: "warmth", tr: "sıcaklık" },
     ],
     minutes: 15,
     tasks: [
@@ -329,7 +329,7 @@ export const enC1: SkillExercise[] = [
       bulletsTr: [
         "Konumunu bir cümleyle koy",
         "Karşı tarafın en güçlü argümanını kendi ağzınla anlat",
-        "Ölçtüğün şeyin ne olduğunu somut bir örnekle göster",
+        "Yazılımın gerçekte neyi ölçtüğünü somut bir örnekle göster",
         "Sınırını bir koşulla birlikte söyle",
       ],
       targets: [

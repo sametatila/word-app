@@ -183,7 +183,7 @@ export const enB2P16: SkillExercise[] = [
         text: "What will the chair do this week?",
         options: [],
         answer: 0,
-        accept: ["write to the owner", "write to the plot owner"],
+        accept: ["write to the owner", "write to the plot owner", "write a letter to the owner"],
         explain: "„I'll write to the owner this week“.",
       },
       {
@@ -214,7 +214,7 @@ export const enB2P16: SkillExercise[] = [
       { de: "washing line", tr: "çamaşır ipi" },
       { de: "water butt", tr: "yağmur suyu deposu" },
       { de: "volunteer", tr: "gönüllü" },
-      { de: "to raise", tr: "toplamak" },
+      { de: "to raise", tr: "para toplamak" },
       { de: "committee", tr: "kurul" },
     ],
     minutes: 14,

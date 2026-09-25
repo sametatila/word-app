@@ -133,11 +133,11 @@ export const enC1P8: SkillExercise[] = [
     genre: "opinion",
     intro: "İki konuk tartışıyor: kurumsal özür anlamlı mı, yoksa ucuz bir hamle mi.",
     gloss: [
-      { de: "to apologise", tr: "özür dilemek" },
+      { de: "to apologize", tr: "özür dilemek" },
       { de: "successor", tr: "halef" },
       { de: "regret", tr: "pişmanlık" },
       { de: "correlation", tr: "bağıntı" },
-      { de: "disclosure", tr: "açıklama" },
+      { de: "disclosure", tr: "ifşa" },
       { de: "obligation", tr: "yükümlülük" },
       { de: "entire", tr: "tüm" },
       { de: "precise", tr: "kesin" },
@@ -153,7 +153,7 @@ export const enC1P8: SkillExercise[] = [
       { speaker: "Prof. Adeyemi", text: "Only if something follows it. An apology with no obligation attached is the cheapest thing an institution can produce, and it is often produced instead of the expensive thing." },
       { speaker: "Ms Larkin", text: "That's an argument against bad apologies, not against apologies. Had the Whitfield said nothing at all, nobody would be asking about the two refused claims." },
       { speaker: "Prof. Adeyemi", text: "A fair point. Though notice what did the work there: not the apology, but the object-by-object disclosure. That could have been done without a word of regret." },
-      { speaker: "Ms Larkin", text: "It could. In practice institutions that disclose tend also to apologise, and those that refuse to apologise rarely disclose. The two travel together." },
+      { speaker: "Ms Larkin", text: "It could. In practice institutions that disclose tend also to apologize, and those that refuse to apologize rarely disclose. The two travel together." },
       { speaker: "Prof. Adeyemi", text: "Correlation, and I suspect the causation runs the other way: the ones willing to disclose are already the ones under pressure." },
       { speaker: "Ms Larkin", text: "Then we agree on the test, at least. Ask what the institution does differently the following year. If the answer is nothing, the apology was decoration." },
       { speaker: "Prof. Adeyemi", text: "On that we agree entirely, and it is a better standard than either of us started with." },
@@ -164,7 +164,7 @@ export const enC1P8: SkillExercise[] = [
         options: [
           "An institution cannot feel regret, so an apology is about the future.",
           "Apologies are always insincere.",
-          "Only individuals should apologise.",
+          "Only individuals should apologize.",
         ],
         answer: 0,
         explain: "Kurum bir kişi değil; pişmanlık duyamaz.",
@@ -203,6 +203,7 @@ export const enC1P8: SkillExercise[] = [
           "what the institution does differently",
           "what changes the following year",
           "what is done differently next year",
+          "what the institution does differently the following year",
         ],
         explain: "Cevap „hiçbir şey“ ise özür süsmüş.",
       },
@@ -234,13 +235,13 @@ export const enC1P8: SkillExercise[] = [
       { de: "wording", tr: "ifade biçimi" },
       { de: "credibility", tr: "inandırıcılık" },
       { de: "follow-up", tr: "takip" },
-      { de: "appear", tr: "bizzat gitmek" },
+      { de: "appear", tr: "görünmek" },
       { de: "passive", tr: "pasif" },
-      { de: "specific", tr: "özel önleme" },
+      { de: "specific", tr: "somut" },
       { de: "institution", tr: "kurum" },
-      { de: "fund", tr: "sağlık sigortası kurumu" },
+      { de: "fund", tr: "finanse etmek" },
       { de: "anyway", tr: "zaten" },
-      { de: "agent", tr: "emlakçı" },
+      { de: "agent", tr: "eylemi yapan" },
       { de: "worthless", tr: "değersiz" },
       { de: "regardless", tr: "-e bakılmaksızın" },
     ],
@@ -249,9 +250,9 @@ export const enC1P8: SkillExercise[] = [
       {
         kind: "build",
         tr: "Kurum sözünü tutmazsa bildiri değersizdir.",
-        answer: "The statement is worthless if the institution fails to honour its commitment.",
-        alternatives: ["If the institution does not honour its commitment, the statement is worthless."],
-        hint: "Resmî kayıt: „fails to“ ve „honour a commitment“ Latin kökenli ve ağır; gündelik biçim „doesn't keep its word“ olurdu.",
+        answer: "The statement is worthless if the institution fails to honor its commitment.",
+        alternatives: ["If the institution does not honor its commitment, the statement is worthless."],
+        hint: "Resmî kayıt: „fails to“ ve „honor a commitment“ Latin kökenli ve ağır; gündelik biçim „doesn't keep its word“ olurdu.",
       },
       {
         kind: "build",
@@ -306,7 +307,7 @@ export const enC1P8: SkillExercise[] = [
     course: "en",
     level: "C1",
     skill: "speaking",
-    title: "Should Institutions Apologise for the Past?",
+    title: "Should Institutions Apologize for the Past?",
     genre: "monologue",
     intro: "Bir buçuk dakikaya kadar tek başına konuşacaksın: bir ayrım kur ve kendi ölçütünü sına.",
     gloss: [],
@@ -333,7 +334,7 @@ export const enC1P8: SkillExercise[] = [
         "an institution is a set of procedures with a name on the door. " +
         "Whatever the people inside it feel, the statement it issues is a promise about " +
         "next year, not a report on anyone's conscience. " +
-        "My criterion is not sincerity but consequence: what does the organisation do in the " +
+        "My criterion is not sincerity but consequence: what does the organization do in the " +
         "twelve months afterwards that it would not have done otherwise? " +
         "Anything already budgeted, already scheduled or already demanded by a regulator " +
         "should be excluded, because it tells you nothing about the statement. " +

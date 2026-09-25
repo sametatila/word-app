@@ -232,15 +232,15 @@ export const deB1P15: SkillExercise[] = [
           { de: "Jeder ist willkommen, auch wenn …", tr: "… olsa bile herkes davetli.", en: "Everyone is welcome, even if …" },
         ],
         sample:
-          "Liebe Nachbarinnen und Nachbarn, ich heiße Leyla Aydin, wohne in der Birkenstraße und möchte " +
+          "Liebe Nachbarinnen und Nachbarn,\n\nich heiße Leyla Aydin, wohne in der Birkenstraße und möchte " +
           "mit euch einen kleinen Verein für unseren Spielplatz gründen. Die Idee ist, dass wir uns selbst " +
           "um den Platz kümmern, statt jedes Jahr auf die Stadt zu warten. Der Spielplatz muss jedes Jahr " +
           "repariert werden, der Sand muss im Frühling getauscht werden, und die Bänke sollten neu " +
           "gestrichen werden. Diese Arbeit kann nicht allein gemacht werden, aber mit fünfzehn Leuten ist " +
           "sie an zwei Samstagen erledigt. Als Verein können wir außerdem Spenden sammeln. Das erste Treffen " +
           "findet am Mittwoch, dem 8. Mai, um 19 Uhr im Café Linde statt. Dort sprechen wir über die " +
-          "Regeln und über einen Namen. Jeder ist willkommen, auch wenn er nur ab und zu Zeit hat. " +
-          "Viele Grüße, Leyla",
+          "Regeln und über einen Namen. Jeder ist willkommen, auch wenn er nur ab und zu Zeit hat.\n\n" +
+          "Viele Grüße\nLeyla",
       },
     ],
   },

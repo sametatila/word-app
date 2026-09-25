@@ -140,9 +140,9 @@
     "en": "The opposite: cutting fixed costs takes months, flexible ones a day."
   },
   {
-    "tr": "„Der Führer kostet nichts“ — ücretsiz, yalnız sonunda geri veriliyor.",
+    "tr": "„Der Audioguide kostet nichts“ — ücretsiz, yalnız sonunda geri veriliyor.",
     "kind": "explain",
-    "en": "„Der Führer kostet nichts“ — it is free and only has to be returned at the end."
+    "en": "„Der Audioguide kostet nichts“ — it is free and only has to be returned at the end."
   },
   {
     "tr": "„it was the route“ — parktan geçen yol yedi dakika uzun ama stressiz.",
@@ -335,9 +335,9 @@
     "en": "Two guests argue about whether an institutional apology is meaningful or just a cheap move."
   },
   {
-    "tr": "Kelime sonundaki üç ek üç ayrı biçimde okunur; altı cümlede farkı duyur.",
+    "tr": "Kelime sonundaki üç ek: -ig ve -lich yumuşak ch ile, -isch ş ile biter; altı cümlede farkı duyur.",
     "kind": "intro",
-    "en": "Three endings at the end of a word are pronounced in three different ways; make the difference audible in six sentences."
+    "en": "Three word endings: -ig and -lich finish with a soft ch, -isch with sh; make the difference heard in six sentences."
   },
   {
     "tr": "Kibar biçimde fiil başta, özne hemen arkasında: Kommen Sie bitte herein!",
@@ -505,9 +505,9 @@
     "en": "A blog post: what two weeks without an alarm clock changed and what it did not."
   },
   {
-    "tr": "Bir radyo dosyası: kentsel mobilyanın sessiz kuralları, üç ses ve bir tarih.",
+    "tr": "Bir radyo dosyası: kentsel mobilyanın sessiz kuralları, üç ses ve bir örnek.",
     "kind": "intro",
-    "en": "A radio feature: the silent rules of street furniture, three voices and one date."
+    "en": "A radio feature: the silent rules of street furniture, three voices and one example."
   },
   {
     "tr": "Doğru takas ama dürüstlüğün her zaman ödüllendirildiğini söylemek istemiyor.",
@@ -540,9 +540,9 @@
     "en": "You cannot ask about a rule you do not know exists; that is why the advice misses the problem."
   },
   {
-    "tr": "„ein einziges Suchfeld schlägt jede Ordnerhierarchie“ — asıl dosyalama addır.",
+    "tr": "„Der Name ist die eigentliche Ablage.“ — dosya adları işe yararsa tek bir arama kutusu her klasör düzenini yener.",
     "kind": "explain",
-    "en": "„ein einziges Suchfeld schlägt jede Ordnerhierarchie“ — the name is the real filing."
+    "en": "„Der Name ist die eigentliche Ablage.“ — if the file names are usable, a single search box beats any folder structure."
   },
   {
     "tr": "„the first three weeks were awful“ ve bunu kimsenin söylemediğini belirtiyor.",

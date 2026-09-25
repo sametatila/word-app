@@ -119,9 +119,9 @@ export const enB1P5: SkillExercise[] = [
       { de: "cash", tr: "nakit" },
       { de: "book", tr: "rezerve etmek" },
       { de: "policy", tr: "poliçe" },
-      { de: "assistance", tr: "idari yardım" },
+      { de: "assistance", tr: "yardım" },
       { de: "consulate", tr: "konsolosluk" },
-      { de: "agent", tr: "emlakçı" },
+      { de: "agent", tr: "müşteri temsilcisi" },
     ],
     minutes: 7,
     segments: [

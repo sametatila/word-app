@@ -100,7 +100,7 @@ export const deA1P8: SkillExercise[] = [
       { de: "umtauschen", tr: "değiştirmek", en: "to exchange" },
       { de: "der Kassenbon", tr: "fiş", en: "receipt" },
       { de: "die Größe", tr: "beden", en: "size" },
-      { de: "passen", tr: "olmak", en: "to fit" },
+      { de: "passen", tr: "uymak", en: "to fit" },
       { de: "die Kasse", tr: "kasa", en: "till" },
     ],
     minutes: 4,
@@ -241,7 +241,7 @@ export const deA1P8: SkillExercise[] = [
         hint: "ä Türkçedeki açık e gibidir: „spät“ = ŞPEET. Uzun yazılır, uzun okunur.",
         confusions: [
           {
-            heard: ["Es ist heute sehr spat", "Es ist heute sehr schpet"],
+            heard: ["Es ist heute sehr spat"],
             fix: "Noktayı yutma: „spat“ başka kelime olur; ayrıca sp başta ŞP okunur.",
             expected: "spät",
           },

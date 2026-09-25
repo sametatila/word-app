@@ -185,7 +185,7 @@ export const deB2P8: SkillExercise[] = [
           "die, die im Sommer stattfinden",
         ],
         answer: 0,
-        explain: "Kasa, yetiştirme ve hukuki sorumluluk sayılıyor.",
+        explain: "Kasa tutma, yeni üyelerin yetiştirilmesi ve hukuki sorumluluk sayılıyor.",
       },
     ],
   },
@@ -238,7 +238,7 @@ export const deB2P8: SkillExercise[] = [
           { de: "Diese Annahme ist bequem, weil …", tr: "Bu varsayım rahat, çünkü …", en: "This assumption is convenient because …" },
           { de: "Dagegen spricht allerdings, dass …", tr: "Buna karşı olan şey ise …", en: "However, what speaks against it is that …" },
           { de: "Plausibler erscheint mir, dass …", tr: "Bana daha inandırıcı gelen şey …", en: "It seems more plausible to me that …" },
-          { de: "Zugegeben: …", tr: "İtiraf edeyim: …", en: "Admittedly: …" },
+          { de: "Zugegeben: …", tr: "Kabul etmek gerek: …", en: "Admittedly: …" },
         ],
         sample:
           "Die gängige Erklärung lautet, dass sich niemand mehr ehrenamtlich engagieren will. " +
@@ -266,7 +266,7 @@ export const deB2P8: SkillExercise[] = [
     skill: "speaking",
     title: "Sollte Ehrenamt bezahlt werden?",
     genre: "monologue",
-    intro: "Bir dakikadan uzun tek başına konuşacaksın: bir öneriyi değerlendir ve istenmeyen sonuçlarını düşün.",
+    intro: "Bir buçuk dakikaya kadar tek başına konuşacaksın: bir öneriyi değerlendir ve istenmeyen sonuçlarını düşün.",
     gloss: [],
     minutes: 7,
     monologue: {
@@ -280,9 +280,9 @@ export const deB2P8: SkillExercise[] = [
       ],
       targets: [
         { de: "Auf den ersten Blick spricht viel dafür, …", tr: "İlk bakışta … lehine çok şey var" },
-        { de: "Problematisch wird es dann, wenn …", tr: "Sorun şu noktada başlıyor: …" },
+        { de: "Problematisch wird es dann, wenn …", tr: "Sorun, … olduğunda başlıyor" },
         { de: "Es besteht die Gefahr, dass …", tr: "… tehlikesi var" },
-        { de: "Ich würde deshalb dafür plädieren, …", tr: "Bu yüzden … savunurum" },
+        { de: "Ich würde deshalb dafür plädieren, …", tr: "Bu yüzden …'i savunurdum" },
       ],
       minSeconds: 50,
       maxSeconds: 90,

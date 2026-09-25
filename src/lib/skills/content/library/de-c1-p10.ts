@@ -237,7 +237,7 @@ export const deC1P10: SkillExercise[] = [
         phrases: [
           { de: "Dieser Leitfaden gilt für den Fall, dass …", tr: "Bu kılavuz … durumunda geçerlidir", en: "This guide applies in the case that …" },
           { de: "Schritt eins, und zwar vor allem anderen: …", tr: "Birinci adım, her şeyden önce: …", en: "Step one, before anything else: …" },
-          { de: "Der Grund dafür ist weniger …, sondern …", tr: "Bunun sebebi … değil, …", en: "The reason for this is less … than …" },
+          { de: "Der Grund dafür ist weniger … als …", tr: "Bunun sebebi …'den çok …", en: "The reason for this is less … than …" },
           { de: "Verzichten können Sie auf …, sofern …", tr: "… şartıyla …'den vazgeçebilirsiniz", en: "You can do without …, provided that …" },
           { de: "Was dieser Leitfaden nicht leistet: …", tr: "Bu kılavuzun yapmadığı şey: …", en: "What this guide does not do: …" },
         ],

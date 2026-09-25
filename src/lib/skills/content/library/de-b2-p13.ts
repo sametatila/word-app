@@ -122,8 +122,8 @@ export const deB2P13: SkillExercise[] = [
       { de: "die Einwilligung", tr: "rıza", en: "consent" },
       { de: "erkennen", tr: "tanımak", en: "to recognize" },
       { de: "löschen", tr: "silmek", en: "to delete" },
-      { de: "einverstanden", tr: "hemfikir", en: "agreed" },
-      { de: "ansprechen", tr: "hitap etmek", en: "to approach" },
+      { de: "einverstanden", tr: "razı", en: "in agreement" },
+      { de: "ansprechen", tr: "yanına gidip konuşmak", en: "to approach" },
     ],
     minutes: 8,
     segments: [
@@ -268,7 +268,7 @@ export const deB2P13: SkillExercise[] = [
     skill: "speaking",
     title: "Sollten Museen keinen Eintritt verlangen?",
     genre: "monologue",
-    intro: "Bir dakikadan uzun tek başına konuşacaksın: bir öneriyi kimin kazanıp kimin ödediğine bakarak değerlendir.",
+    intro: "Bir buçuk dakikaya kadar tek başına konuşacaksın: bir öneriyi kimin kazanıp kimin ödediğine bakarak değerlendir.",
     gloss: [],
     minutes: 7,
     monologue: {

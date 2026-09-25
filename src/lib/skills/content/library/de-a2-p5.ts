@@ -260,7 +260,7 @@ export const deA2P5: SkillExercise[] = [
         tr: "Bugün kartla ödüyoruz.",
         hint: "„be-“ ayrılmayan ön ektir ve hiç vurgu almaz: be-TSAA-len.",
         confusions: [
-          { heard: ["BE-zahlen", "bezahlen mit Betonung vorn"], fix: "Ön eki yutar gibi hafif söyle, vurgu kökte: betsaalen.", expected: "bezahlen" },
+          { heard: [], fix: "Ön eki yutar gibi hafif söyle, vurgu kökte: betsaalen.", expected: "bezahlen" },
         ],
       },
       {
@@ -268,7 +268,7 @@ export const deA2P5: SkillExercise[] = [
         tr: "İstasyon hastanenin yanında.",
         hint: "Birleşik kelimede ilk parça vurgulanır: BAAN-hof, KRAN-ken-haus.",
         confusions: [
-          { heard: ["Bahn-HOF", "Kranken-HAUS"], fix: "İkinci parçayı yükseltme; ilk parça baskın: BAAN-hof.", expected: "Bahnhof" },
+          { heard: [], fix: "İkinci parçayı yükseltme; ilk parça baskın: BAAN-hof.", expected: "Bahnhof" },
         ],
       },
       {
@@ -276,15 +276,15 @@ export const deA2P5: SkillExercise[] = [
         tr: "Kızım bilişim okuyor.",
         hint: "Yabancı kökenli kelimelerde vurgu genelde sona kayar: ştu-DİİRT, in-for-MAA-tik.",
         confusions: [
-          { heard: ["STU-diert", "IN-formatik"], fix: "Bu iki kelimede vurgu baştaki hecede değil, sondan bir önceki hecede.", expected: "Informatik" },
+          { heard: [], fix: "Bu iki kelimede vurgu baştaki hecede değil, sona yakın hecede: ştu-DİİRT, in-for-MAA-tik.", expected: "Informatik" },
         ],
       },
       {
         de: "Wir besuchen morgen unsere Großeltern.",
-        tr: "Yarın büyüklerimizi ziyaret ediyoruz.",
+        tr: "Yarın büyükanne ve büyükbabamızı ziyaret ediyoruz.",
         hint: "„be-suchen“ vurgusuz ön ek, „GROSS-eltern“ ise birleşik: ilk parça vurgulu.",
         confusions: [
-          { heard: ["BE-suchen", "Groß-ELTERN"], fix: "Bir kelimede vurgu kökte, ötekinde ilk parçada: be-ZUU-hen, GROOS-eltern.", expected: "Großeltern" },
+          { heard: [], fix: "Bir kelimede vurgu kökte, ötekinde ilk parçada: be-ZUU-hen, GROOS-eltern.", expected: "Großeltern" },
         ],
       },
       {
@@ -292,7 +292,7 @@ export const deA2P5: SkillExercise[] = [
         tr: "Restoran pazar meydanında.",
         hint: "„Restaurant“ sonda vurgulanır, „Marktplatz“ ise başta.",
         confusions: [
-          { heard: ["RES-taurant", "Markt-PLATZ"], fix: "Yabancı kelime sonda, Almanca birleşik kelime başta vurgulanır.", expected: "Restaurant" },
+          { heard: [], fix: "Yabancı kelime sonda, Almanca birleşik kelime başta vurgulanır.", expected: "Restaurant" },
         ],
       },
       {

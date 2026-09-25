@@ -151,7 +151,7 @@ export const enA2P4: SkillExercise[] = [
         text: "What is Bruno going to buy?",
         options: [],
         answer: 0,
-        accept: ["pots and some soil", "pots and soil", "big pots and soil"],
+        accept: ["pots and some soil", "pots and soil", "big pots and soil", "big pots and some soil", "the big pots and some soil", "pots"],
         explain: "„… that is enough for the big pots and some soil.“ — „I can buy them on Saturday.“",
       },
       {
@@ -190,7 +190,7 @@ export const enA2P4: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Toplantıda fazla bilgi vardı.",
+        tr: "Toplantıda çok fazla bilgi vardı.",
         answer: "There was too much information in the meeting.",
         alternatives: ["In the meeting there was too much information."],
         hint: "„information“ sayılamaz: çoğulu yoktur ve „much“ ile kullanılır.",
@@ -253,7 +253,7 @@ export const enA2P4: SkillExercise[] = [
         tr: "Cevabı biliyorum.",
         hint: "„know“ baştaki k okunmaz: nou. „answer“ ortadaki w de okunmaz: AAN-sır.",
         confusions: [
-          { heard: ["I ke-now the an-swer"], fix: "kn- ile başlayan kelimelerde k sessizdir; „answer“da w yoktur.", expected: "know" },
+          { heard: [], fix: "kn- ile başlayan kelimelerde k sessizdir; „answer“da w yoktur.", expected: "know" },
         ],
       },
       {
@@ -261,7 +261,7 @@ export const enA2P4: SkillExercise[] = [
         tr: "Lütfen adını buraya yaz.",
         hint: "„write“ baştaki w okunmaz: rayt. Aynı kural „wrong“ ve „wrist“ için de geçerli.",
         confusions: [
-          { heard: ["ve-rite your name"], fix: "wr- ile başlayan kelimelerde w sessizdir: rayt.", expected: "Write" },
+          { heard: [], fix: "wr- ile başlayan kelimelerde w sessizdir: rayt.", expected: "Write" },
         ],
       },
       {
@@ -269,7 +269,7 @@ export const enA2P4: SkillExercise[] = [
         tr: "Yarım saat yeter.",
         hint: "„half“ içindeki l okunmaz: haaf. „hour“ baştaki h de okunmaz: auır.",
         confusions: [
-          { heard: ["hal-f an hour with h"], fix: "„half“ta l yok, „hour“da h yok: haaf ın auır.", expected: "hour" },
+          { heard: [], fix: "„half“ta l yok, „hour“da h yok: haaf ın auır.", expected: "hour" },
         ],
       },
       {
@@ -277,7 +277,7 @@ export const enA2P4: SkillExercise[] = [
         tr: "Dinle! Kapıda biri var.",
         hint: "„listen“ ortadaki t okunmaz: Lİ-sın. Aynısı „castle“ ve „often“ için de olur.",
         confusions: [
-          { heard: ["Lis-ten", "listten"], fix: "st- birleşiminde t düşer: lisın.", expected: "Listen" },
+          { heard: [], fix: "st- birleşiminde t düşer: lisın.", expected: "Listen" },
         ],
       },
       {
@@ -285,7 +285,7 @@ export const enA2P4: SkillExercise[] = [
         tr: "Ada çok güzel.",
         hint: "„island“ içindeki s okunmaz: AY-lınd.",
         confusions: [
-          { heard: ["is-land", "isslend"], fix: "Baştaki i uzun „ay“, arkasından gelen s ise hiç duyulmaz.", expected: "island" },
+          { heard: ["the is land"], fix: "Baştaki i uzun „ay“, arkasından gelen s ise hiç duyulmaz.", expected: "island" },
         ],
       },
       {
@@ -293,7 +293,7 @@ export const enA2P4: SkillExercise[] = [
         tr: "Merdivenleri çıkabilir misin?",
         hint: "„could“ içindeki l okunmaz: kud. „climb“ sonundaki b de okunmaz: klaym.",
         confusions: [
-          { heard: ["could with l", "climb with b"], fix: "İkisinde de bir harf yazılır ama söylenmez: kud, klaym.", expected: "climb" },
+          { heard: [], fix: "İkisinde de bir harf yazılır ama söylenmez: kud, klaym.", expected: "climb" },
         ],
       },
       {
@@ -301,7 +301,7 @@ export const enA2P4: SkillExercise[] = [
         tr: "Arkadaşım yabancı bir öğrenci.",
         hint: "„friend“ içindeki i okunmaz: frend. „foreign“ sonundaki g de düşer: FO-rın.",
         confusions: [
-          { heard: ["fri-end", "foreign with g"], fix: "İkisi de kısalır: frend ve forın.", expected: "friend" },
+          { heard: [], fix: "İkisi de kısalır: frend ve forın.", expected: "friend" },
         ],
       },
     ],

@@ -237,7 +237,7 @@ export const deB1P8: SkillExercise[] = [
           "Ziel der Umfrage war, herauszufinden, wann die gemeinsame Kernzeit im Team liegen sollte. " +
           "An der Umfrage haben vierzehn von achtzehn Personen teilgenommen. " +
           "Von vierzehn Befragten gaben neun an, dass sie eine Kernzeit am Vormittag bevorzugen; " +
-          "vier wünschten sich den frühen Nachmittag, eine Person war es egal. " +
+          "vier wünschten sich den frühen Nachmittag, einer Person war es egal. " +
           "Auffällig ist, dass alle vier Personen mit kleinen Kindern für den Vormittag gestimmt haben. " +
           "Das könnte daran liegen, dass der Nachmittag durch Kita und Schule fest verplant ist. " +
           "Auffällig war außerdem eine Bemerkung im freien Feld: Mehrere Leute stören sich weniger an der " +
@@ -270,7 +270,7 @@ export const deB1P8: SkillExercise[] = [
       ],
       targets: [
         { de: "Grundsätzlich halte ich den Rat für …", tr: "Temelde bu tavsiyeyi … buluyorum" },
-        { de: "Ich habe die Erfahrung gemacht, dass …", tr: "Şunu deneyimledim: …" },
+        { de: "Ich habe die Erfahrung gemacht, dass …", tr: "Deneyimlerimden biliyorum ki …" },
         { de: "Für Leute, die …, funktioniert das nicht.", tr: "… olan kişiler için bu işlemiyor." },
         { de: "Sinnvoller finde ich die Regel, …", tr: "Daha mantıklı bulduğum kural …" },
       ],
@@ -284,7 +284,7 @@ export const deB1P8: SkillExercise[] = [
         "eingeschlafen, habe aber dreimal verschlafen, weil ich keinen Wecker hatte. " +
         "Für Leute, die nachts erreichbar sein müssen, zum Beispiel für kranke Eltern, " +
         "funktioniert das ohnehin nicht. Sinnvoller finde ich die Regel, dass das Handy im Zimmer " +
-        "bleiben darf, aber nach dem Licht ausmachen nicht mehr in die Hand genommen wird. " +
+        "bleiben darf, aber nicht mehr in die Hand genommen wird, wenn das Licht aus ist. " +
         "Das kann man durchhalten, und genau darauf kommt es bei solchen Regeln an.",
       rubricHint:
         "Tavsiyenin sınırı ve kişisel bir örnek beklenir; „nicht … sondern“, „als“ ve „darauf kommt es an“ yapıları kullanılabilir.",
@@ -305,7 +305,7 @@ export const deB1P8: SkillExercise[] = [
       { de: "warten", tr: "beklemek", en: "to wait" },
       { de: "sich kümmern", tr: "ilgilenmek", en: "to take care" },
       { de: "denken", tr: "düşünmek", en: "to think" },
-      { de: "der Urlaub", tr: "tatil", en: "holiday" },
+      { de: "der Urlaub", tr: "tatil", en: "vacation" },
       { de: "der Bus", tr: "otobüs", en: "bus" },
     ],
     minutes: 9,

@@ -120,9 +120,9 @@ export const enB1P14: SkillExercise[] = [
       { de: "washing machine", tr: "çamaşır makinesi" },
       { de: "to move in", tr: "taşınmak" },
       { de: "quiet", tr: "sessiz" },
-      { de: "nearby", tr: "yakında" },
+      { de: "nearby", tr: "yakınlarda" },
       { de: "dryer", tr: "kurutma makinesi" },
-      { de: "properly", tr: "tam olarak" },
+      { de: "properly", tr: "iyice" },
     ],
     minutes: 6,
     segments: [
@@ -223,7 +223,7 @@ export const enB1P14: SkillExercise[] = [
       {
         kind: "free",
         prompt:
-          "Bir dil değişimi ilanına cevap yazıyorsun: Manchester'da yaşayan Emily Türkçe öğrenmek istiyor ve karşılığında İngilizce pratik teklif ediyor. Kendini tanıt, neden İngilizce çalıştığını söyle, ne zaman ve nasıl buluşabileceğinizi öner, ilandaki bir bilgiyi soru ekiyle teyit et ve bir soruyla bitir.",
+          "Bir dil değişimi ilanına cevap yazıyorsun: Manchester'da yaşayan Emily senin ana dilini öğrenmek istiyor ve karşılığında İngilizce pratik teklif ediyor. Kendini tanıt, neden İngilizce çalıştığını söyle, ne zaman ve nasıl buluşabileceğinizi öner, ilandaki bir bilgiyi soru ekiyle teyit et ve bir soruyla bitir.",
         checklist: [
           "Kendini kısaca tanıt",
           "Neden İngilizce çalıştığını söyle",

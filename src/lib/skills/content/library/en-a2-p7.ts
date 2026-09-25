@@ -29,7 +29,7 @@ export const enA2P7: SkillExercise[] = [
         tr: "Cevap sonda.",
         hint: "„the answer“ ünlüyle başlıyor → Dİ; „the end“ de öyle → Dİ-END.",
         confusions: [
-          { heard: ["thuh answer is at thuh end"], fix: "Ünlüden önce „the“ uzun i ile okunur ve sonraki kelimeye bağlanır.", expected: "the answer" },
+          { heard: [], fix: "Ünlüden önce „the“ uzun i ile okunur ve sonraki kelimeye bağlanır.", expected: "the answer" },
         ],
       },
       {
@@ -37,7 +37,7 @@ export const enA2P7: SkillExercise[] = [
         tr: "Kitap masanın üstünde.",
         hint: "„book“ ve „table“ sessizle başlıyor → Dı-BUK, Dı-TEY-bıl. Kısa ve zayıf.",
         confusions: [
-          { heard: ["thee book is on thee table"], fix: "Sessizden önce „the“ zayıf bir ı taşır; uzun söylemek yapay duyulur.", expected: "the book" },
+          { heard: [], fix: "Sessizden önce „the“ zayıf bir ı taşır; uzun söylemek yapay duyulur.", expected: "the book" },
         ],
       },
       {
@@ -53,7 +53,7 @@ export const enA2P7: SkillExercise[] = [
         tr: "Üniversitenin yanındaki ofiste çalışıyor.",
         hint: "„the office“ → Dİ; ama „the university“ → Dı, çünkü YU sesiyle başlar, ünlüyle değil.",
         confusions: [
-          { heard: ["thuh office next to thee university"], fix: "„university“ yu- ile başlar; bu bir sessiz sayılır.", expected: "the university" },
+          { heard: [], fix: "„university“ yu- ile başlar; bu bir sessiz sayılır.", expected: "the university" },
         ],
       },
       {
@@ -61,7 +61,7 @@ export const enA2P7: SkillExercise[] = [
         tr: "Öbürü daha iyi.",
         hint: "„other“ ünlüyle başlar → Dİ-A-dı. İki kelime tek parça gibi akar.",
         confusions: [
-          { heard: ["thuh other one"], fix: "Ünlüden önce uzun i gelir ve araya küçük bir y sesi girer.", expected: "the other" },
+          { heard: [], fix: "Ünlüden önce uzun i gelir ve araya küçük bir y sesi girer.", expected: "the other" },
         ],
       },
       {
@@ -69,7 +69,7 @@ export const enA2P7: SkillExercise[] = [
         tr: "Asıl cevap, herhangi bir cevap değil.",
         hint: "Vurgulamak istersen „the“ her zaman Dİİ okunur — sessizden önce bile.",
         confusions: [
-          { heard: ["thuh answer, not an answer"], fix: "Vurgulu „the“ uzun i taşır; bu bilinçli bir seçimdir.", expected: "THE answer" },
+          { heard: [], fix: "Vurgulu „the“ uzun i taşır; bu bilinçli bir seçimdir.", expected: "THE answer" },
         ],
       },
     ],

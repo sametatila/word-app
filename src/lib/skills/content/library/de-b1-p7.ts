@@ -124,7 +124,7 @@ export const deB1P7: SkillExercise[] = [
     segments: [
       { text: "Willkommen bei der Volkshochschule Nordstadt. Das neue Semester beginnt am zwölften September." },
       { text: "Neu im Programm sind vier Kurse: Reparieren im Haushalt, Nähen für Anfänger, Podcast machen und Stadtgeschichte." },
-      { text: "Die Sprachkurse bleiben im Angebot, aber mit einer Änderung: Es gibt jetzt zwei Tempi, einmal zweimal und einmal einmal pro Woche." },
+      { text: "Die Sprachkurse bleiben im Angebot, aber mit einer Änderung: Es gibt jetzt zwei Tempi: Kurse mit zwei Terminen pro Woche und Kurse mit einem Termin pro Woche." },
       { text: "Wer einen Schulabschluss nachholen möchte, meldet sich bitte persönlich. Für diese Kurse gibt es ein Beratungsgespräch." },
       { text: "Die Gebühren steigen leider um vier Prozent. Eine Ermäßigung von fünfzig Prozent bekommen Menschen ohne Arbeit und Studierende." },
       { text: "Die Anmeldung läuft ab Montag online. Kurse mit wenigen Plätzen sind oft nach zwei Tagen voll." },
@@ -139,7 +139,7 @@ export const deB1P7: SkillExercise[] = [
           "Sie finden nur noch online statt.",
         ],
         answer: 1,
-        explain: "„Es gibt jetzt zwei Tempi, einmal zweimal und einmal einmal pro Woche.“",
+        explain: "„Es gibt jetzt zwei Tempi: Kurse mit zwei Terminen pro Woche und Kurse mit einem Termin pro Woche.“",
       },
       {
         text: "Wie meldet man sich für den Schulabschluss an?",
@@ -171,6 +171,10 @@ export const deB1P7: SkillExercise[] = [
           "zwanzig Prozent werden frei",
           "Plätze werden wieder frei",
           "es werden Plätze frei",
+          "zwanzig Prozent der Plätze werden wieder frei",
+          "weil Plätze wieder frei werden",
+          "weil zwanzig Prozent der Plätze wieder frei werden",
+          "weil oft Plätze frei werden",
         ],
         explain: "„werden bis Kursbeginn zwanzig Prozent der Plätze wieder frei“.",
       },
@@ -234,15 +238,15 @@ export const deB1P7: SkillExercise[] = [
           { de: "Ich würde mich freuen, wenn wir darüber sprechen könnten.", tr: "Bunu konuşabilirsek sevinirim.", en: "I would be glad if we could talk about it." },
         ],
         sample:
-          "Sehr geehrte Frau Dr. Rehm, mein Name ist Sinan Aktas und meine Tochter besucht die Klasse 6c. " +
+          "Sehr geehrte Frau Dr. Rehm,\n\nmein Name ist Sinan Aktas und meine Tochter besucht die Klasse 6c. " +
           "Ich wende mich an Sie, weil viele Kinder aus unserer Straße mit dem Rad zur Schule kommen " +
           "und die Abstellplätze nicht reichen. Mein Vorschlag wäre, den kleinen Hof hinter der Turnhalle " +
           "für zwanzig weitere Fahrräder zu öffnen. Dafür spricht erstens, dass der Hof morgens leer steht, " +
           "und zweitens, dass die Räder dort vom Fenster des Sekretariats aus zu sehen sind. " +
           "Mir ist bewusst, dass dafür ein Tor geöffnet und abends wieder geschlossen werden müsste. " +
           "Ich glaube aber, dass das keinen großen Aufwand bedeutet, und einige Eltern haben schon angeboten, " +
-          "eine feste Reihenfolge dafür zu übernehmen. Ich würde mich freuen, wenn wir am nächsten " +
-          "Elternabend zehn Minuten darüber sprechen könnten. Mit freundlichen Grüßen, Sinan Aktas",
+          "sich dabei abzuwechseln. Ich würde mich freuen, wenn wir am nächsten " +
+          "Elternabend zehn Minuten darüber sprechen könnten.\n\nMit freundlichen Grüßen\nSinan Aktas",
       },
     ],
   },

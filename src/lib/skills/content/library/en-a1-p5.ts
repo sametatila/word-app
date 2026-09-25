@@ -91,8 +91,8 @@ export const enA1P5: SkillExercise[] = [
     course: "en",
     level: "A1",
     skill: "listening",
-    title: "Welcome on the City Bus Tour",
-    genre: "profile",
+    title: "Welcome to the City Bus Tour",
+    genre: "info",
     intro: "Şehir turunda rehberin karşılama konuşmasını dinleyeceksin: tur ne kadar sürüyor, nerede duruluyor, kurallar neler.",
     gloss: [
       { de: "guide", tr: "rehber" },
@@ -107,10 +107,10 @@ export const enA1P5: SkillExercise[] = [
       { text: "Hello everyone and welcome! My name is Rick and I am your guide today." },
       { text: "The tour is ninety minutes. We stop two times: at the castle and at the river." },
       { text: "At the castle you have twenty minutes. Please come back to the bus at half past three." },
-      { text: "The bus is warm, so you can leave your coats here. Nobody comes in." },
+      { text: "The bus is warm, so you can leave your coats here. The driver stays on the bus." },
       { text: "Please do not eat on the bus, but water is fine." },
       { text: "If you have a question, come to the front. I am here all the time." },
-      { text: "And now, look on your right: that is the old market. Let's go!" },
+      { text: "And now, look to your right: that is the old market. Let's go!" },
     ],
     questions: [
       {
@@ -137,7 +137,7 @@ export const enA1P5: SkillExercise[] = [
         text: "When must people come back to the bus?",
         options: [],
         answer: 0,
-        accept: ["at half past three", "half past three", "at 3.30"],
+        accept: ["at half past three", "half past three", "at 3.30", "3:30", "at 3:30"],
         explain: "„Please come back to the bus at half past three.“",
       },
       {
@@ -152,7 +152,7 @@ export const enA1P5: SkillExercise[] = [
         text: "What is on the right at the start?",
         options: ["the old market", "the castle", "the river"],
         answer: 0,
-        explain: "„… look on your right: that is the old market.“",
+        explain: "„… look to your right: that is the old market.“",
       },
     ],
   },
@@ -204,13 +204,13 @@ export const enA1P5: SkillExercise[] = [
           { de: "The room is …", tr: "Oda …" },
           { de: "Breakfast starts at …", tr: "Kahvaltı … başlıyor." },
           { de: "Only one thing is not good: …", tr: "Yalnız bir şey iyi değil: …" },
-          { de: "I give … stars from five.", tr: "Beş üzerinden … yıldız veriyorum." },
+          { de: "I give it … stars out of five.", tr: "Beş üzerinden … yıldız veriyorum." },
         ],
         sample:
           "Hotel Rosa is in the old town, five minutes from the station. The room is small but very clean, and the bed " +
           "is good. Breakfast starts at seven in the morning: bread, eggs, cheese and fruit. The people at the desk " +
           "are very friendly and they speak English. Only one thing is not good: the street is loud at night. " +
-          "I give four stars from five.",
+          "I give it four stars out of five.",
       },
     ],
   },
@@ -237,7 +237,7 @@ export const enA1P5: SkillExercise[] = [
         tr: "Kediler ve kitaplar burada.",
         hint: "„cats“ ve „books“ sert sesle biter (t, k), bu yüzden ek „s“ okunur: kets, buks.",
         confusions: [
-          { heard: ["catz and bookz"], fix: "Sert sessizden sonra ek titreşimsizdir: s sesi, z değil.", expected: "cats" },
+          { heard: ["The cat and the book are here"], fix: "Çoğul eki düşmesin; sert sessizden sonra ek „s“ olarak okunur: kets, buks.", expected: "cats" },
         ],
       },
       {
@@ -245,7 +245,7 @@ export const enA1P5: SkillExercise[] = [
         tr: "Arkadaşlarımın iki köpeği var.",
         hint: "„friends“ ve „dogs“ titreşimli sesle biter (n, g), bu yüzden ek „z“ okunur.",
         confusions: [
-          { heard: ["frends have two dokss"], fix: "Titreşimli sessizden sonra ek z olur: frendz, dogz.", expected: "dogs" },
+          { heard: ["docks"], fix: "Titreşimli sessizden sonra ek z olur: frendz, dogz.", expected: "dogs" },
         ],
       },
       {
@@ -253,7 +253,7 @@ export const enA1P5: SkillExercise[] = [
         tr: "Otobüsler köprülerde duruyor.",
         hint: "„bus“ ve „bridge“ ıslıklı sesle biter, bu yüzden araya bir hece girer: BA-siz, BRİ-ciz.",
         confusions: [
-          { heard: ["The buss stop at the bridgs"], fix: "s ve c seslerinden sonra ek ayrı bir hecedir: -iz.", expected: "buses" },
+          { heard: ["The bus stop at the bridge"], fix: "s ve c seslerinden sonra ek ayrı bir hecedir: -iz.", expected: "buses" },
         ],
       },
       {
@@ -261,7 +261,7 @@ export const enA1P5: SkillExercise[] = [
         tr: "Bulaşıkları yıkıyor.",
         hint: "Fiildeki -es de aynı kuralı izler: WO-şiz, Dİ-şiz. İki kez fazladan hece.",
         confusions: [
-          { heard: ["She wash the dish", "washs"], fix: "„sh“ sesinden sonra ek ayrı hece olarak eklenir: -iz.", expected: "washes" },
+          { heard: ["She wash the dish"], fix: "„sh“ sesinden sonra ek ayrı hece olarak eklenir: -iz.", expected: "washes" },
         ],
       },
       {
@@ -269,7 +269,7 @@ export const enA1P5: SkillExercise[] = [
         tr: "İki dükkânda çalışıyor.",
         hint: "„works“ ve „shops“ sert sesle bitiyor: wörks, şops. Ek s okunur.",
         confusions: [
-          { heard: ["workz in two shopz"], fix: "k ve p sert olduğu için ek de sert kalır: s.", expected: "works" },
+          { heard: ["He work in two shop"], fix: "Eki düşürme: works, shops; k ve p sert olduğu için ek „s“ okunur.", expected: "works" },
         ],
       },
       {
@@ -277,7 +277,7 @@ export const enA1P5: SkillExercise[] = [
         tr: "Kutular masaların üstünde.",
         hint: "„boxes“ fazladan hece alır (BOK-siz), „tables“ ise yalnız z sesiyle biter.",
         confusions: [
-          { heard: ["The box are on the tablez", "boxs"], fix: "x sesinden sonra -iz gelir; l sesinden sonra yalnız z.", expected: "boxes" },
+          { heard: ["The box are on the table"], fix: "x sesinden sonra -iz gelir; l sesinden sonra yalnız z.", expected: "boxes" },
         ],
       },
       {
@@ -285,7 +285,7 @@ export const enA1P5: SkillExercise[] = [
         tr: "Kız kardeşim film izliyor.",
         hint: "„watches“ ayrı hece alır (WO-çiz), „films“ ise z ile biter.",
         confusions: [
-          { heard: ["watch films", "watchs"], fix: "„ch“ sesinden sonra -iz gelir: woçiz.", expected: "watches" },
+          { heard: ["watch films"], fix: "„ch“ sesinden sonra -iz gelir: woçiz.", expected: "watches" },
         ],
       },
     ],

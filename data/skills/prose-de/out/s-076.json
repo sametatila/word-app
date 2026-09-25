@@ -35,5 +35,10 @@
  { "tr": "Şehirde herkes uyurken çalışan bir gece otobüsü şoförünü anlatan kısa portreyi okuyacaksın.", "kind": "intro", "de": "Du liest ein kurzes Porträt über einen Nachtbusfahrer, der arbeitet, während die Stadt schläft." },
  { "tr": "Bir anneyle on beş yaşındaki oğluna aynı soru soruluyor: ebeveynler bir gence neye izin vermeli, neye vermemeli?", "kind": "intro", "de": "Einer Mutter und ihrem fünfzehnjährigen Sohn wird dieselbe Frage gestellt: Was sollten Eltern einem Jugendlichen erlauben und was nicht?" },
  { "tr": "boşaltmak", "kind": "gloss.tr", "de": "freigeben" },
- { "tr": "Tasarruf etmek için neredeyse planlardan çıkarılıyordu; tanışıklıkların çoğu orada başlıyor.", "kind": "explain", "de": "Um Geld zu sparen, wäre sie fast aus den Plänen gestrichen worden; die meisten Bekanntschaften beginnen dort." }
+ { "tr": "Tasarruf etmek için neredeyse planlardan çıkarılıyordu; tanışıklıkların çoğu orada başlıyor.", "kind": "explain", "de": "Um Geld zu sparen, wäre sie fast aus den Plänen gestrichen worden; die meisten Bekanntschaften beginnen dort." },
+ { "tr": "\"We are closed next Monday, October sixth. It's a public holiday.\" Pazartesi resmî tatil olduğu için ofisler kapalı.", "kind": "explain", "de": "\"We are closed next Monday, October sixth. It's a public holiday.\" Weil Montag ein Feiertag ist, sind die Büros geschlossen." },
+ { "tr": "„No, the water is not made softer here. That is done in your house, or not at all.“ Klor kurak yazlarda ekleniyor, test her gün yapılıyor.", "kind": "explain", "de": "„No, the water is not made softer here. That is done in your house, or not at all.“ Chlor kommt in trockenen Sommern dazu, getestet wird jeden Tag." },
+ { "tr": "„We'll call you when we find the bag.“", "kind": "explain", "de": "„We'll call you when we find the bag.“" },
+ { "tr": "„It's coming in forty minutes.“", "kind": "explain", "de": "„It's coming in forty minutes.“" },
+ { "tr": "\"Don't forget your ID card. We can't help you without it.\"", "kind": "explain", "de": "\"Don't forget your ID card. We can't help you without it.\"" }
 ]

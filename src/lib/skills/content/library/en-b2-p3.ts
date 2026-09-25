@@ -264,7 +264,7 @@ export const enB2P3: SkillExercise[] = [
           "What happens then. We have the machines serviced by an outside company, so nothing is repaired the " +
           "same morning. Repairs are said to take two working days, and in our experience three is more " +
           "realistic. If you cannot work without the machine, write that in the first line and a replacement " +
-          "will be brought from the store room.\n\n" +
+          "will be brought from the storeroom.\n\n" +
           "Please do not open anything yourself, and please do not have a repair done privately and send us the " +
           "bill. Both are refused, and the second one is refused twice.\n\n" +
           "In an urgent case, for example water or smoke, call the internal number three three three first and " +

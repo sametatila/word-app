@@ -235,7 +235,7 @@ export const deA1P7: SkillExercise[] = [
         hint: "Baştaki r Türkçedeki titrek r değil: dilin arkası küçük dile yaklaşır, hafif bir gıcırtı duyulur.",
         confusions: [
           {
-            heard: ["Meine Rreise beginnt am Montag"],
+            heard: [],
             fix: "Dilin ucunu titretme; ses boğazın arkasından ve kısa çıkar.",
             expected: "Reise",
           },
@@ -271,8 +271,8 @@ export const deA1P7: SkillExercise[] = [
         hint: "„Rostock“ başta sert r; „wieder“ sonda yumuşak -er; „fahren“ ortada ikisinin arası.",
         confusions: [
           {
-            heard: ["Wir fahren wieder nach Rostok"],
-            fix: "„Rostock“ sonundaki ck tek k'dir ama baştaki r boğazdan gelmeli.",
+            heard: [],
+            fix: "„Rostock“ başındaki r dilin ucuyla değil, boğazın arkasından gelir.",
             expected: "Rostock",
           },
         ],
@@ -280,10 +280,10 @@ export const deA1P7: SkillExercise[] = [
       {
         de: "Der Lehrer erklärt die Regel.",
         tr: "Öğretmen kuralı açıklıyor.",
-        hint: "Üç r üç ayrı yerde: „Lehrer“ sonu a gibi, „erklärt“ başı boğazdan, „Regel“ baştaki tam r.",
+        hint: "r üç ayrı hâlde: „Lehrer“ sonu a gibi, „erklärt“ içindeki iki r de a'ya yakın, „Regel“ ise baştaki tam r.",
         confusions: [
           {
-            heard: ["Der Lehra erklärt die Regel"],
+            heard: [],
             fix: "„Lehrer“ iki heceli: LEE-ra. Ama ilk r yazıda da seste de duruyor, atlanmaz.",
             expected: "Lehrer",
           },
@@ -295,7 +295,7 @@ export const deA1P7: SkillExercise[] = [
         hint: "„Wer“ sonda a gibi, „repariert“ içinde iki r, „Fahrrad“ içinde çift r tek ses.",
         confusions: [
           {
-            heard: ["Wer repariert mein Fahrad"],
+            heard: [],
             fix: "Çift r tek ses verir ama önündeki a kısalmaz: FAAR-raat.",
             expected: "Fahrrad",
           },

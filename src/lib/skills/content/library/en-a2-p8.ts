@@ -29,7 +29,7 @@ export const enA2P8: SkillExercise[] = [
         tr: "İstasyon danışmanın yanında.",
         hint: "„-tion“ her zaman ŞIN okunur: STEY-şın, in-fı-MEY-şın. Vurgu ekten hemen ÖNCEKİ hecededir.",
         confusions: [
-          { heard: ["The stat-ion is near the informat-ion desk"], fix: "t ve ion ayrı okunmaz; tek bir ş sesi verir.", expected: "station" },
+          { heard: [], fix: "t ve ion ayrı okunmaz; tek bir ş sesi verir.", expected: "station" },
         ],
       },
       {
@@ -37,7 +37,7 @@ export const enA2P8: SkillExercise[] = [
         tr: "Zor bir karardı.",
         hint: "„-sion“ ünlüden sonra JIN okunur: di-Sİ-jın. „television“ da öyle: TE-li-vi-jın.",
         confusions: [
-          { heard: ["a difficult desis-ion"], fix: "Ünlüden sonra gelen -sion yumuşak j sesi taşır.", expected: "decision" },
+          { heard: [], fix: "Ünlüden sonra gelen -sion yumuşak j sesi taşır.", expected: "decision" },
         ],
       },
       {
@@ -45,7 +45,7 @@ export const enA2P8: SkillExercise[] = [
         tr: "Bu resim kışın doğayı gösteriyor.",
         hint: "„-ture“ ÇIR okunur: PİK-çır, NEY-çır. t ile u birleşip ç verir.",
         confusions: [
-          { heard: ["This pic-tur shows na-tur"], fix: "-ture eki ayrı bir t taşımaz; tek bir ç sesi çıkar.", expected: "picture" },
+          { heard: [], fix: "-ture eki ayrı bir t taşımaz; tek bir ç sesi çıkar.", expected: "picture" },
         ],
       },
       {
@@ -53,15 +53,15 @@ export const enA2P8: SkillExercise[] = [
         tr: "Tartışma eğitim üzerineydi.",
         hint: "„discussion“ sessizden sonra ŞIN (dis-KA-şın), „education“ da ŞIN (e-cu-KEY-şın).",
         confusions: [
-          { heard: ["The discus-sion was about educat-ion"], fix: "İki ekte de tek bir ş sesi vardır.", expected: "discussion" },
+          { heard: [], fix: "İki ekte de tek bir ş sesi vardır.", expected: "discussion" },
         ],
       },
       {
-        de: "What's the temperature in the future?",
-        tr: "Gelecekte sıcaklık ne olacak?",
+        de: "The temperature will be higher in the future.",
+        tr: "Gelecekte sıcaklık daha yüksek olacak.",
         hint: "„temperature“ üç heceye iner: TEM-pri-çır. „future“ = FYUU-çır.",
         confusions: [
-          { heard: ["tem-pe-ra-tu-re in the fu-tu-re"], fix: "Uzun görünen kelimeler konuşmada hece kaybeder.", expected: "temperature" },
+          { heard: [], fix: "Uzun görünen kelimeler konuşmada hece kaybeder.", expected: "temperature" },
         ],
       },
       {
@@ -69,7 +69,7 @@ export const enA2P8: SkillExercise[] = [
         tr: "Soru bir çözümle ilgili.",
         hint: "„question“ istisnadır: ŞIN değil ÇIN okunur (KWES-çın). „solution“ ise normal: sı-LUU-şın.",
         confusions: [
-          { heard: ["The kwes-shun is about a solut-ion"], fix: "„question“ içindeki -tion s'den sonra geldiği için ç olur.", expected: "question" },
+          { heard: [], fix: "„question“ içindeki -tion s'den sonra geldiği için ç olur.", expected: "question" },
         ],
       },
     ],

@@ -153,7 +153,7 @@ export const deB1P18: SkillExercise[] = [
       },
       {
         kind: "dictation",
-        text: "Müdürün mezunlardan ricasını duyduğun gibi yaz.",
+        text: "Müdürün „Eine Bitte habe ich trotzdem.“ dedikten sonraki ricasını duyduğun gibi yaz.",
         options: [],
         answer: 0,
         accept: ["Bleiben Sie neugierig.", "Bleiben Sie neugierig"],
@@ -186,7 +186,7 @@ export const deB1P18: SkillExercise[] = [
     genre: "personal",
     intro: "Bir kursun kapanışında on yıl sonra açılacak bir mektup yazıyorsun: önce iki cümle kur, sonra geleceğe bir mektup yaz.",
     gloss: [
-      { de: "vermuten", tr: "sanmak", en: "to suspect" },
+      { de: "vermuten", tr: "sanmak", en: "to suppose" },
       { de: "inzwischen", tr: "artık", en: "by now" },
       { de: "wahrscheinlich", tr: "muhtemelen", en: "probably" },
       { de: "versprechen", tr: "söz vermek", en: "to promise" },
@@ -227,14 +227,14 @@ export const deB1P18: SkillExercise[] = [
           { de: "Ich verspreche dir, dass ich …", tr: "Sana … diye söz veriyorum.", en: "I promise you that I will …" },
         ],
         sample:
-          "Liebe Aylin in zehn Jahren, wenn du diesen Brief liest, bist du achtunddreißig. Im Moment wohne " +
+          "Liebe Aylin in zehn Jahren,\n\nwenn du diesen Brief liest, bist du achtunddreißig. Im Moment wohne " +
           "ich mit zwei Freundinnen in einer kleinen Wohnung in Leipzig und mache eine Ausbildung zur " +
           "Physiotherapeutin. Mein Deutsch ist gut, aber am Telefon werde ich immer noch nervös. Ich vermute, " +
-          "dass du inzwischen in einer großen Praxis arbeitest oder sogar eine eigene hast. In zehn Jahren " +
+          "dass du inzwischen in einer großen Praxis arbeitest oder sogar eine eigene hast. Vielleicht wirst du sogar schon Kinder haben. In zehn Jahren " +
           "werde ich wahrscheinlich in einer anderen Stadt wohnen, vielleicht am Meer. Hast du eigentlich den " +
           "Führerschein gemacht? Und telefonierst du ohne Angst? Ich hoffe, dass du immer noch jeden Tag " +
           "Deutsch sprichst und dass du Oma in Izmir öfter besuchst als ich heute. Ich verspreche dir, dass " +
-          "ich ab jetzt jedes Jahr eine Reise allein mache. Bleib neugierig! Deine Aylin von heute",
+          "ich ab jetzt jedes Jahr eine Reise allein mache. Bleib neugierig!\n\nDeine Aylin von heute",
       },
     ],
   },
@@ -272,7 +272,7 @@ export const deB1P18: SkillExercise[] = [
         "Ich selbst bezahle inzwischen fast nur mit dem Handy, sogar beim Bäcker. Mein Portemonnaie liegt " +
         "meistens zu Hause, und ich vermisse es nicht. Trotzdem werde ich nie vergessen, wie im letzten " +
         "Winter das Netz in unserem Supermarkt ausgefallen ist: Eine halbe Stunde konnte niemand bezahlen, " +
-        "nur die Leute mit Münzen. Schwer haben werden es vor allem ältere Menschen und Kinder, die ihr " +
+        "nur die Leute mit Bargeld. Schwer haben werden es vor allem ältere Menschen und Kinder, die ihr " +
         "Taschengeld noch in der Hand halten wollen. Auch wer wenig Geld hat, behält mit Scheinen und Münzen " +
         "oft einen besseren Überblick. Deshalb sollte man digital bezahlen dürfen, aber jedes Geschäft " +
         "sollte auch in Zukunft Bargeld annehmen müssen.",

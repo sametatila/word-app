@@ -240,7 +240,7 @@ export const deA1P5: SkillExercise[] = [
         tr: "Fırın hâlâ açık.",
         hint: "„Ofen“ uzun o (OO-fen), „offen“ kısa o. Çift sessiz her zaman kısa ünlü demek.",
         confusions: [
-          { heard: ["Der offen ist noch Ofen", "Der Ofen ist noch Ofen"], fix: "Tek sessizden önce ünlü uzar, çift sessizden önce kısalır: OO-fen ama O-fen değil, of-fen.", expected: "offen" },
+          { heard: ["Der offen ist noch Ofen", "Der Ofen ist noch Ofen"], fix: "Tek sessizden önce ünlü uzun, çift sessizden önce kısa: „Ofen“ OO-fen, „offen“ ise kısa OF-fen.", expected: "offen" },
         ],
       },
       {
@@ -256,7 +256,7 @@ export const deA1P5: SkillExercise[] = [
         tr: "Yazın göle gidiyoruz.",
         hint: "„Sommer“ kısa o, „See“ uzun e. İki ünlü yan yana geldiğinde ses uzar.",
         confusions: [
-          { heard: ["Im Soomer", "zum se"], fix: "„Sommer“ çift m yüzünden kısa; „See“ çift e yüzünden uzun: zee.", expected: "See" },
+          { heard: [], fix: "„Sommer“ çift m yüzünden kısa; „See“ çift e yüzünden uzun: zee.", expected: "See" },
         ],
       },
       {
@@ -269,10 +269,10 @@ export const deA1P5: SkillExercise[] = [
       },
       {
         de: "Meine Oma kommt am Sonntag.",
-        tr: "Babaannem pazar günü geliyor.",
+        tr: "Büyükannem pazar günü geliyor.",
         hint: "„Oma“ uzun o (OO-ma), „kommt“ ve „Sonntag“ kısa o.",
         confusions: [
-          { heard: ["Meine Omma", "koomt"], fix: "Tek m'li „Oma“ uzun, çift m'li „kommt“ kısa okunur.", expected: "Oma" },
+          { heard: [], fix: "Tek m'li „Oma“ uzun, çift m'li „kommt“ kısa okunur.", expected: "Oma" },
         ],
       },
       {
@@ -280,7 +280,7 @@ export const deA1P5: SkillExercise[] = [
         tr: "Şimdi uyumaya gidiyoruz.",
         hint: "„gehen“ uzun e, „jetzt“ kısa e, „schlafen“ uzun a.",
         confusions: [
-          { heard: ["Wir gehn jetz schlaffen"], fix: "„schlafen“ tek f ile yazılır, bu yüzden a uzun: ŞLAA-fen.", expected: "schlafen" },
+          { heard: [], fix: "„schlafen“ tek f ile yazılır, bu yüzden a uzun: ŞLAA-fen.", expected: "schlafen" },
         ],
       },
       {
@@ -288,7 +288,7 @@ export const deA1P5: SkillExercise[] = [
         tr: "Lütfen kapıyı kapat.",
         hint: "„Tür“ uzun ü, „zu“ uzun u. „mach“ ise kısa a.",
         confusions: [
-          { heard: ["mach die Tur zu", "Bitte mach die Tür tsuu"], fix: "„Tür“ uzun ü ile; ayrıca „zu“ burada fiile ait, ts sesiyle ve uzun u ile söylenir.", expected: "Tür" },
+          { heard: [], fix: "„Tür“ uzun ü ile; ayrıca „zu“ burada fiile ait, ts sesiyle ve uzun u ile söylenir.", expected: "Tür" },
         ],
       },
     ],

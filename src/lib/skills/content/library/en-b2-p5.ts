@@ -119,7 +119,7 @@ export const enB2P5: SkillExercise[] = [
     skill: "listening",
     title: "Why Volunteers Stop",
     genre: "meeting",
-    intro: "Üç konuşmacılı bir panel dinleyeceksin: gönüllüler neden ayrılıyor, çıkış görüşmeleri neden işe yaramıyor, ne yapılabilir.",
+    intro: "Üç konuklu bir panel dinleyeceksin: gönüllüler neden ayrılıyor, çıkış görüşmeleri neden işe yaramıyor, ne yapılabilir.",
     gloss: [
       { de: "coordinate", tr: "koordine etmek" },
       { de: "finding", tr: "bulgu" },
@@ -128,10 +128,10 @@ export const enB2P5: SkillExercise[] = [
       { de: "role", tr: "rol" },
       { de: "rarely", tr: "nadiren" },
       { de: "practical", tr: "pratik" },
-      { de: "event", tr: "etkinlik" },
-      { de: "exit", tr: "çıkış" },
+      { de: "event", tr: "olay" },
+      { de: "exit", tr: "ayrılış" },
       { de: "panel", tr: "panel" },
-      { de: "departure", tr: "yola çıkış" },
+      { de: "departure", tr: "ayrılma" },
     ],
     minutes: 9,
     segments: [
@@ -182,7 +182,7 @@ export const enB2P5: SkillExercise[] = [
         text: "Who should you ask, according to Ruth?",
         options: [],
         answer: 0,
-        accept: ["reduced their hours", "people who reduced their hours", "those who do less now"],
+        accept: ["people who reduced their hours", "people who have reduced their hours", "those who reduced their hours", "reduced their hours", "those who do less now"],
         explain: "„What tells you a lot is asking people who have just reduced their hours …“",
       },
       {
@@ -220,8 +220,8 @@ export const enB2P5: SkillExercise[] = [
       { de: "amend", tr: "değiştirmek" },
       { de: "exempt", tr: "muaf tutmak" },
       { de: "slot", tr: "zaman dilimi" },
-      { de: "household", tr: "hane büyüklüğü" },
-      { de: "provide", tr: "temin etmek" },
+      { de: "household", tr: "hane" },
+      { de: "provide", tr: "sağlamak" },
       { de: "bulky", tr: "hacimli" },
     ],
     minutes: 12,
@@ -260,7 +260,7 @@ export const enB2P5: SkillExercise[] = [
           { de: "We object to …", tr: "…'e itiraz ediyoruz" },
           { de: "Removing … will not solve …", tr: "…'i kaldırmak …'i çözmez" },
           { de: "We propose amending …", tr: "…'in değiştirilmesini öneriyoruz" },
-          { de: "We would expect …", tr: "… beklerdik" },
+          { de: "We would expect …", tr: "… bekleriz" },
         ],
         sample:
           "Dear Sir or Madam,\n\n" +
@@ -271,7 +271,7 @@ export const enB2P5: SkillExercise[] = [
           "measure, but they solve different problems. Removing the busiest day will not solve congestion; it " +
           "will move it, and it will move it onto people who cannot take a morning off work. Roughly a third of " +
           "our members work shifts, and for them Saturday is not a convenience.\n\n" +
-          "We propose amending point four so that the yard stays open on Saturdays with booked slots only, and " +
+          "We propose amending the plan so that the yard stays open on Saturdays with booked slots only, and " +
           "so that households without internet access can book by telephone. Without that second part, the rule " +
           "will exempt nobody and will simply be impossible to follow for our oldest members.\n\n" +
           "We would expect a written response before the fifteenth of June, and we would be glad to provide our " +

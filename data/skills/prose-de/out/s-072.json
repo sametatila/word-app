@@ -1,5 +1,5 @@
 [
- { "tr": "stok", "kind": "gloss.tr", "de": "Ware" },
+ { "tr": "stok", "kind": "gloss.tr", "de": "Lagerbestand" },
  { "tr": "şans", "kind": "gloss.tr", "de": "Glück" },
  { "tr": "uçuş", "kind": "gloss.tr", "de": "Flug" },
  { "tr": "yine", "kind": "gloss.tr", "de": "wieder" },
@@ -24,7 +24,7 @@
  { "tr": "inmek", "kind": "gloss.tr", "de": "aussteigen" },
  { "tr": "ipucu", "kind": "gloss.tr", "de": "Hinweis" },
  { "tr": "kabin", "kind": "gloss.tr", "de": "Kabine" },
- { "tr": "kâğıt", "kind": "gloss.tr", "de": "Papier" },
+ { "tr": "kâğıt", "kind": "gloss.tr", "de": "Blatt Papier" },
  { "tr": "kanat", "kind": "gloss.tr", "de": "Flügel" },
  { "tr": "kazak", "kind": "gloss.tr", "de": "Pullover" },
  { "tr": "kılıf", "kind": "gloss.tr", "de": "Hülle" },

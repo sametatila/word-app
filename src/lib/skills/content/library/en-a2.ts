@@ -271,23 +271,23 @@ export const enA2: SkillExercise[] = [
         tr: "Dün işe yürüyerek gittim.",
         hint: "„walked“ tek hecedir: WOKT. Sonundaki -ed „t“ okunur, ayrı hece değildir.",
         confusions: [
-          { heard: ["I walk ed", "I walkid", "I walk it"], fix: "-ed'i ayrı hece yapma; „walked“ tek hecede biter: wokt.", expected: "walked" },
+          { heard: ["I walk it to work", "I walk to work"], fix: "-ed'i ne ayrı hece yap ne yut; „walked“ tek hecede „t“ ile biter: wokt.", expected: "walked" },
         ],
       },
       {
         de: "We watched a film last night.",
         tr: "Dün gece bir film izledik.",
-        hint: "„watched“ = WOÇT. Sessiz harften (ç) sonra -ed „t“ olur.",
+        hint: "„watched“ = WOÇT. Ötümsüz bir sesten (ç) sonra -ed „t“ olur.",
         confusions: [
-          { heard: ["we watch ed", "we watchid"], fix: "„watched“ tek hece: woçt. Sonuna „ıd“ ekleme.", expected: "watched" },
+          { heard: ["we watch a film last night"], fix: "„watched“ tek hece: woçt. Sonuna „ıd“ ekleme.", expected: "watched" },
         ],
       },
       {
         de: "She called me twice.",
         tr: "Beni iki kez aradı.",
-        hint: "„called“ = KOLD. „l“ sesli bir harftir, bu yüzden -ed burada „d“ okunur.",
+        hint: "„called“ = KOLD. „l“ ötümlü (titreşimli) bir sestir, bu yüzden -ed burada „d“ okunur.",
         confusions: [
-          { heard: ["she call ed", "she called it", "she call"], fix: "Sonu „d“: kold. Ayrı hece yok ama „d“ duyulmalı.", expected: "called" },
+          { heard: ["she call me twice", "she called it"], fix: "Sonu „d“: kold. Ayrı hece yok ama „d“ duyulmalı.", expected: "called" },
         ],
       },
       {
@@ -295,7 +295,7 @@ export const enA2: SkillExercise[] = [
         tr: "Mutfağı birlikte temizlediler.",
         hint: "„cleaned“ = KLİİND. Yine „d“, tek hece.",
         confusions: [
-          { heard: ["they clean ed", "they clean the kitchen"], fix: "Geçmiş zamanın „d“ sesini yutma: kliind.", expected: "cleaned" },
+          { heard: ["they clean the kitchen"], fix: "Geçmiş zamanın „d“ sesini yutma: kliind.", expected: "cleaned" },
         ],
       },
       {
@@ -303,7 +303,7 @@ export const enA2: SkillExercise[] = [
         tr: "Sana yardım etmek istedim.",
         hint: "„wanted“ = WON-tıd, İKİ hece. Kök „t“ ile bittiği için -ed burada ayrı hece olur.",
         confusions: [
-          { heard: ["I want to help", "I wantd"], fix: "„t“den sonra -ed ayrı hecedir: won-tıd. Burada hece eklemek DOĞRU.", expected: "wanted" },
+          { heard: ["I want to help"], fix: "„t“den sonra -ed ayrı hecedir: won-tıd. Burada hece eklemek DOĞRU.", expected: "wanted" },
         ],
       },
       {
@@ -311,7 +311,7 @@ export const enA2: SkillExercise[] = [
         tr: "Bir saat bekledik.",
         hint: "„waited“ = WEY-tıd, iki hece. „hour“ baştaki h okunmaz: AUIR.",
         confusions: [
-          { heard: ["we wait for an hour", "we weyted"], fix: "„waited“ iki hece; „hour“ h'siz başlar.", expected: "waited" },
+          { heard: ["we wait for an hour"], fix: "„waited“ iki hece; „hour“ h'siz başlar.", expected: "waited" },
         ],
       },
       {
@@ -319,7 +319,7 @@ export const enA2: SkillExercise[] = [
         tr: "Çok iyi bir soru sordu.",
         hint: "„asked“ = AASKT, tek hece ve üç sessiz üst üste: s-k-t. Araya ünlü koyma.",
         confusions: [
-          { heard: ["he ask ed", "he askid", "he ask a very good question"], fix: "Sonu „skt“ diye biter; hece ekleme.", expected: "asked" },
+          { heard: ["he ask a very good question"], fix: "Sonu „skt“ diye biter; hece ekleme.", expected: "asked" },
         ],
       },
     ],

@@ -152,7 +152,7 @@ export const deB1: SkillExercise[] = [
           "Es gibt zu viele Besucher im Wald.",
         ],
         answer: 0,
-        explain: "„Vor allem an der Trockenheit … und die bekommt er nicht mehr.“ Yaş ve ziyaretçi başka bağlamda geçiyor.",
+        explain: "„Vor allem an der Trockenheit … und die bekommt er nicht mehr.“ Yaş hiç geçmiyor; ziyaretçiler yalnız çöp konusunda anılıyor.",
       },
       {
         kind: "truefalse",

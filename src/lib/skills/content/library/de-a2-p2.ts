@@ -124,7 +124,7 @@ export const deA2P2: SkillExercise[] = [
         text: "Wo hört man diese Durchsage?",
         options: ["in einem Möbelhaus", "in einem Supermarkt", "in einem Kaufhaus für Kleidung"],
         answer: 0,
-        explain: "„Herzlich willkommen im Möbelhaus Nord“ — mutfak danışmanlığı ve mobilya teslimi de bunu gösteriyor.",
+        explain: "„Herzlich willkommen im Möbelhaus Nord“ — mutfak danışmanlığı ve büyük mobilyaları teslim alma yeri de bunu gösteriyor.",
       },
       {
         text: "Wie lange gilt das Angebot für Lampen?",
@@ -144,7 +144,7 @@ export const deA2P2: SkillExercise[] = [
         text: "Wo wartet der Junge?",
         options: [],
         answer: 0,
-        accept: ["bei der Information am Ausgang", "bei der Information", "an der Information", "am Ausgang"],
+        accept: ["bei der Information am Ausgang", "bei der Information", "an der Information", "am Ausgang", "Information am Ausgang"],
         explain: "„Er wartet bei der Information am Ausgang.“",
       },
       {
@@ -192,7 +192,7 @@ export const deA2P2: SkillExercise[] = [
         kind: "build",
         tr: "Adresinizi kimliğinizde buldum.",
         answer: "Auf Ihrem Ausweis habe ich Ihre Adresse gefunden.",
-        alternatives: ["Ihre Adresse habe ich auf Ihrem Ausweis gefunden."],
+        alternatives: ["Ihre Adresse habe ich auf Ihrem Ausweis gefunden.", "Ich habe Ihre Adresse auf Ihrem Ausweis gefunden."],
         hint: "Cümlenin başına yer ya da nesne alabilirsin; çekimli fiil yine ikinci sırada kalır.",
       },
       {
@@ -201,7 +201,7 @@ export const deA2P2: SkillExercise[] = [
           "İçinde kimlik ve adres olan bir cüzdan buldun. Sahibine e-posta yaz: neyi nerede ve ne zaman buldun, içinde ne var, nasıl ve ne zaman geri alabilir, sana nasıl ulaşabilir.",
         checklist: [
           "Neyi nerede ve ne zaman bulduğunu yaz",
-          "Nasıl adresi bulduğunu açıkla",
+          "Adresi nasıl bulduğunu açıkla",
           "İçinde ne olduğunu kısaca say",
           "Teslim yerini, saatini ve iletişim bilgini yaz",
         ],
@@ -209,7 +209,7 @@ export const deA2P2: SkillExercise[] = [
         phrases: [
           { de: "Ich habe … gefunden.", tr: "… buldum.", en: "I've found …" },
           { de: "Auf Ihrem Ausweis steht …", tr: "Kimliğinizde … yazıyor", en: "Your ID says …" },
-          { de: "In der Börse sind …", tr: "Cüzdanın içinde … var", en: "There is … in the purse" },
+          { de: "In der Börse sind …", tr: "Cüzdanın içinde … var", en: "There is … in the wallet" },
           { de: "Sie können … abholen.", tr: "… gelip alabilirsiniz.", en: "You can pick … up." },
           { de: "Sie erreichen mich unter …", tr: "Bana … numarasından ulaşabilirsiniz.", en: "You can reach me on …" },
         ],
@@ -218,7 +218,7 @@ export const deA2P2: SkillExercise[] = [
           "Auf Ihrem Ausweis habe ich Ihre Adresse gefunden, deshalb schreibe ich Ihnen. " +
           "In der Börse sind ein Ausweis, eine Buskarte und etwas Kleingeld. Ich wohne in der Wielandstraße 14 " +
           "und bin abends ab achtzehn Uhr zu Hause. Sie können die Börse dort abholen. " +
-          "Sie erreichen mich auch unter null eins sieben sechs, acht acht, zwei eins, vier null. " +
+          "Sie erreichen mich auch unter 0176 882140. " +
           "Mit freundlichen Grüßen, Yasin Aydın",
       },
     ],
@@ -254,7 +254,7 @@ export const deA2P2: SkillExercise[] = [
         tr: "Yağmur birazdan duracak.",
         hint: "„Regen“ başta boğaz r'si; „Der“ ve „hört“ sonundaki r ise „a“ gibi zayıflar: dea, höat.",
         confusions: [
-          { heard: ["Der Regen hörrt", "Der Regen hört bald ab"], fix: "Kelime sonundaki r'yi yuvarlama: höat, dea. Yalnız „Regen“de gerçek r var.", expected: "hört" },
+          { heard: [], fix: "Kelime sonundaki r'yi yuvarlama: höat, dea. Yalnız „Regen“de gerçek r var.", expected: "hört" },
         ],
       },
       {
@@ -262,7 +262,7 @@ export const deA2P2: SkillExercise[] = [
         tr: "Erkek kardeşim hastanede çalışıyor.",
         hint: "„Bruder“ içinde iki farklı r: BRUU-da — ilki boğazdan, sonuncusu „a“.",
         confusions: [
-          { heard: ["Bruderr arbeitet", "Bru-der arbeitet"], fix: "Sondaki -er hecesini „er“ diye söyleme, „a“ gibi bitir: bruuda, arbaytet.", expected: "Bruder" },
+          { heard: [], fix: "Sondaki -er hecesini „er“ diye söyleme, „a“ gibi bitir: bruuda, arbaytet.", expected: "Bruder" },
         ],
       },
       {
@@ -270,7 +270,7 @@ export const deA2P2: SkillExercise[] = [
         tr: "Çocuklar evin arkasında oynuyor.",
         hint: "„Kinder“ ve „hinter“ sonundaki -er hep aynı: KİN-da, HİN-ta.",
         confusions: [
-          { heard: ["Die Kinderr", "hinterr dem Haus"], fix: "İki kelimede de son hece „-da“ ve „-ta“ gibi hafif; r duyulmaz.", expected: "hinter" },
+          { heard: [], fix: "İki kelimede de son hece „-da“ ve „-ta“ gibi hafif; r duyulmaz.", expected: "hinter" },
         ],
       },
       {
@@ -278,23 +278,23 @@ export const deA2P2: SkillExercise[] = [
         tr: "Su gerçekten çok soğuk.",
         hint: "„Wasser“ sonu „a“; „wirklich“ ve „sehr“ farklı: biri hece içinde zayıf r, öteki sonda „a“.",
         confusions: [
-          { heard: ["Wasserr ist", "sehrr kalt"], fix: "„Wasser“ = VA-sa, „sehr“ = zea. İkisinde de sondaki r yutulur.", expected: "sehr" },
+          { heard: [], fix: "„Wasser“ = VA-sa, „sehr“ = zea. İkisinde de sondaki r yutulur.", expected: "sehr" },
         ],
       },
       {
         de: "Herr Krause fährt heute nach Berlin.",
         tr: "Bay Krause bugün Berlin'e gidiyor.",
-        hint: "„Herr“ ve „Krause“ boğaz r'si ister; „fährt“ sonunda ise r yine „a“ olur: FEEAT.",
+        hint: "„Krause“ hece başında boğaz r'si ister; „Herr“ ve „fährt“ sonunda ise r „a“ya kayar: HEA, FEEAT.",
         confusions: [
-          { heard: ["Her Krause fahrt", "Herr Krause fährrt"], fix: "Baştaki r boğazdan, sondaki r „a“: her ama KRAU-ze, fee-at.", expected: "fährt" },
+          { heard: [], fix: "Hece başındaki r boğazdan, sondaki r „a“: KRAU-ze ama FEE-at.", expected: "fährt" },
         ],
       },
       {
         de: "Meine Schwester kommt im Sommer zurück.",
         tr: "Kız kardeşim yazın geri dönüyor.",
-        hint: "Üç kez zayıf r: Schwesta, Somma, tsu-RÜK — sonuncuda ise gerçek boğaz r'si var.",
+        hint: "İki kez zayıf r: SCHVES-ta, SOM-ma. „zurück“te ise r hece başında, gerçek boğaz r'si: tsu-RÜK.",
         confusions: [
-          { heard: ["Schwesterr", "Sommerr", "zurruck"], fix: "-er ile bitenlerde r yok, „a“ var; „zurück“ ortasındaki r ise boğazdan çıkar.", expected: "zurück" },
+          { heard: [], fix: "-er ile bitenlerde r yok, „a“ var; „zurück“ ortasındaki r ise boğazdan çıkar.", expected: "zurück" },
         ],
       },
     ],

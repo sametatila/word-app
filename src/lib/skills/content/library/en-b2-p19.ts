@@ -211,7 +211,7 @@ export const enB2P19: SkillExercise[] = [
     gloss: [
       { de: "consent", tr: "onay" },
       { de: "indoors", tr: "ev içinde" },
-      { de: "additional", tr: "ek" },
+      { de: "additional", tr: "ilave" },
       { de: "carpet", tr: "halı" },
       { de: "to take out", tr: "yaptırmak" },
       { de: "vet", tr: "veteriner" },

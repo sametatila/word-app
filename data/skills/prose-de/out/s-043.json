@@ -180,6 +180,11 @@
   "de": "Endung"
  },
  {
+  "tr": "ilave",
+  "kind": "gloss.tr",
+  "de": "zusätzlich"
+ },
+ {
   "tr": "suçlama",
   "kind": "gloss.tr",
   "de": "Vorwurf"
@@ -567,7 +572,7 @@
  {
   "tr": "belirsizlik",
   "kind": "gloss.tr",
-  "de": "Mehrdeutigkeit"
+  "de": "die Unsicherheit"
  },
  {
   "tr": "davet etmek",

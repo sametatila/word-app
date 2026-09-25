@@ -207,7 +207,7 @@
  {
   "tr": "görev",
   "kind": "gloss.tr",
-  "de": "Stelle"
+  "de": "Aufgabe"
  },
  {
   "tr": "satır",
@@ -278,6 +278,16 @@
   "tr": "emlakçı",
   "kind": "gloss.tr",
   "de": "Makler"
+ },
+ {
+  "tr": "eylemi yapan",
+  "kind": "gloss.tr",
+  "de": "der Handelnde"
+ },
+ {
+  "tr": "müşteri temsilcisi",
+  "kind": "gloss.tr",
+  "de": "Kundenberater"
  },
  {
   "tr": "kabahat",

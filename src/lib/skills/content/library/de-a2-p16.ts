@@ -183,9 +183,9 @@ export const deA2P16: SkillExercise[] = [
       {
         kind: "build",
         tr: "Bir şeye ihtiyacın olursa zilimi çal.",
-        answer: "Wenn du etwas brauchst, klingel einfach bei mir.",
-        alternatives: ["Klingel einfach bei mir, wenn du etwas brauchst."],
-        hint: "„wenn“ cümlesinde fiil sona gider; ardından du'ya emir kipi gelir: klingel.",
+        answer: "Wenn du etwas brauchst, klingle einfach bei mir.",
+        alternatives: ["Klingle einfach bei mir, wenn du etwas brauchst."],
+        hint: "„wenn“ cümlesinde fiil sona gider; ardından du'ya emir kipi gelir: klingle (mastarı klingeln).",
       },
       {
         kind: "build",
@@ -218,7 +218,7 @@ export const deA2P16: SkillExercise[] = [
           "und möchte dir ein paar Tipps geben. Die Müllabfuhr kommt jeden Dienstag, die Tonnen stehen im Hof links. " +
           "Die Waschmaschinen sind im Keller, an der Tür hängt eine Liste für die Termine. " +
           "Fahrräder dürfen nicht im Flur stehen, aber hinter dem Haus gibt es einen Raum dafür. " +
-          "Wenn du etwas brauchst, klingel einfach bei mir, ich habe auch eine Leiter. " +
+          "Wenn du etwas brauchst, klingle einfach bei mir, ich habe auch eine Leiter. " +
           "Hast du am Samstag Zeit für einen Kaffee? Ich freue mich!\n\n" +
           "Viele Grüße\nAylin",
       },

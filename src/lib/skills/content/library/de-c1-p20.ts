@@ -252,8 +252,8 @@ export const deC1P20: SkillExercise[] = [
           "3. November zwei Plätze im Liegewagen des Nachtzugs von Hamburg nach Wien gebucht. " +
           "Etwa eine Stunde vor der Abfahrt erhielten wir am Bahnsteig die mündliche Auskunft, " +
           "der Zug falle wegen eines technischen Defekts aus. Der Zug fiel ersatzlos aus, sodass " +
-          "wir um 22 Uhr noch ein Hotel in Bahnhofsnähe haben suchen müssen und am nächsten Morgen " +
-          "einen anderen Anschluss genommen haben. " +
+          "wir um 22 Uhr noch ein Hotel in Bahnhofsnähe suchen mussten. Am nächsten Morgen " +
+          "haben wir einen anderen Anschluss nehmen müssen. " +
           "Dadurch sind mir neben dem ursprünglichen Fahrpreis von 149 Euro folgende Kosten " +
           "entstanden: 164 Euro für die Übernachtung und 58 Euro für die neuen Fahrkarten. Alle " +
           "Belege liegen dieser E-Mail bei. " +

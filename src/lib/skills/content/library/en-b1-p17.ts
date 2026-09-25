@@ -113,7 +113,7 @@ export const enB1P17: SkillExercise[] = [
       { de: "to retire", tr: "emekli olmak" },
       { de: "buyer", tr: "alıcı" },
       { de: "share", tr: "hisse" },
-      { de: "to raise", tr: "toplamak" },
+      { de: "to raise", tr: "para toplamak" },
       { de: "volunteer", tr: "gönüllü" },
       { de: "to compete", tr: "rekabet etmek" },
       { de: "counter", tr: "gişe" },

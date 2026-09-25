@@ -116,7 +116,7 @@ export const deA2P13: SkillExercise[] = [
       { speaker: "Frau Lindner", text: "Guten Tag, Herr Kaya, hier ist Sabine Lindner von der Fahrschule Blinker." },
       { speaker: "Frau Lindner", text: "Ich rufe wegen Ihrer Theorieprüfung an. Der Termin am Dienstag fällt leider aus." },
       { speaker: "Frau Lindner", text: "Das Prüfungsbüro ist an dem Tag geschlossen, das haben wir erst heute erfahren." },
-      { speaker: "Frau Lindner", text: "Wir haben aber schon einen neuen Termin für Sie: Freitag, den 17., um halb neun." },
+      { speaker: "Frau Lindner", text: "Wir haben aber schon einen neuen Termin für Sie: Freitag, den siebzehnten, um halb neun." },
       { speaker: "Frau Lindner", text: "Bitte seien Sie schon um acht Uhr bei uns in der Fahrschule. Wir fahren dann zusammen hin." },
       { speaker: "Frau Lindner", text: "Und bringen Sie Ihren Personalausweis mit. Ohne Ausweis dürfen Sie nicht an der Prüfung teilnehmen." },
       { speaker: "Frau Lindner", text: "Ihre erste Fahrstunde können wir auch schon planen, zum Beispiel am Montag danach um vier." },
@@ -152,7 +152,7 @@ export const deA2P13: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["neun", "9"],
-        explain: "„Freitag, den 17., um halb neun.“",
+        explain: "„Freitag, den siebzehnten, um halb neun.“",
       },
       {
         kind: "short_answer",
@@ -257,7 +257,7 @@ export const deA2P13: SkillExercise[] = [
         hint: "Almanca j, Türkçe y gibidir: YAA-nu-ar, YAA-pan. Türkçedeki j sesi burada hiç yok.",
         confusions: [
           {
-            heard: ["Im Schanuar war ich in Schapan"],
+            heard: ["Schanuar", "Schapan"],
             fix: "j'yi Türkçe j gibi okursan „ş“ye yakın duyulur; dilin ortası damağa kalkar ve y sesi çıkar.",
             expected: "Januar",
           },
@@ -269,7 +269,7 @@ export const deA2P13: SkillExercise[] = [
         hint: "ja = yaa, Jahr = yaar. İkisi de y ile başlar ve ünlü uzundur.",
         confusions: [
           {
-            heard: ["Scha, das Schar war wirklich gut"],
+            heard: ["Schar"],
             fix: "Jahr'ı j ile söylersen başka bir kelimeye döner; y ile başla: YAAR.",
             expected: "Jahr",
           },
@@ -281,7 +281,7 @@ export const deA2P13: SkillExercise[] = [
         hint: "qu = kv: KVA-li-tät. Önce k, hemen ardından alt dudak üst dişlere değer ve v gelir.",
         confusions: [
           {
-            heard: ["Die Kualität ist sehr gut"],
+            heard: ["Kualität"],
             fix: "qu Türkçedeki „ku“ değil; u yerine dudak-diş v sesi gelir: kv.",
             expected: "Qualität",
           },
@@ -293,7 +293,7 @@ export const deA2P13: SkillExercise[] = [
         hint: "Quittung: KVİT-tung. Yine kv; ardından kısa bir i.",
         confusions: [
           {
-            heard: ["Ich habe eine Frage zur Kuittung"],
+            heard: ["Kuittung"],
             fix: "k ile i arasına u koyma; dudaklar yuvarlanmaz, v sesi gelir.",
             expected: "Quittung",
           },
@@ -305,7 +305,7 @@ export const deA2P13: SkillExercise[] = [
         hint: "wachsen: VAK-sen. Burada chs, ks okunur; ş değil.",
         confusions: [
           {
-            heard: ["Die Kinder waschen so schnell"],
+            heard: ["waschen"],
             fix: "chs'yi ş gibi söylersen „yıkamak“ anlamına gelen waschen duyulur; k ile s'yi art arda söyle.",
             expected: "wachsen",
           },
@@ -317,7 +317,7 @@ export const deA2P13: SkillExercise[] = [
         hint: "Fuchs: FUKS. Kısa u, ardından net bir ks.",
         confusions: [
           {
-            heard: ["Der Fusch wohnt im Wald"],
+            heard: ["Fusch"],
             fix: "Sondaki chs ş'ye kayarsa kelime tanınmaz; dilin arkasıyla k, sonra s.",
             expected: "Fuchs",
           },

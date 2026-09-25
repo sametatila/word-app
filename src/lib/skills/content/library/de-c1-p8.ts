@@ -249,17 +249,17 @@ export const deC1P8: SkillExercise[] = [
           { de: "Rückblickend habe ich unterschätzt, wie sehr …", tr: "Geriye bakınca … olduğunu hafife almışım", en: "In hindsight I underestimated how much …" },
         ],
         sample:
-          "Liebe Frau Neumann, vieles steht im Handbuch, dies hier nicht — und genau deshalb " +
+          "Liebe Jana, vieles steht im Handbuch, dies hier nicht — und genau deshalb " +
           "schreibe ich es auf, bevor ich es vergesse. " +
-          "Erstens: Es hat sich eingebürgert, dass Anfragen an die Fachabteilung erst nach " +
-          "drei Tagen nachgefasst werden. Dahinter steckt weniger eine Regel als die Erinnerung " +
+          "Erstens: Es hat sich eingebürgert, dass man bei Anfragen an die Fachabteilung frühestens " +
+          "nach drei Tagen nachfasst. Dahinter steckt weniger eine Regel als die Erinnerung " +
           "an eine Kollegin, die vor Jahren für zu häufiges Nachfragen kritisiert wurde. " +
           "Zweitens: Ein am Freitagabend verschickter Entwurf gilt hier als Belästigung, " +
           "auch wenn niemand das je gesagt hat. Ich habe das in meinem ersten Monat zweimal " +
           "getan und bis heute nicht verstanden, warum die Reaktionen so kühl waren. " +
-          "Drittens: In der Montagsrunde spricht man nicht als Erste, sondern wartet, " +
+          "Drittens: In der Montagsrunde ergreift man nicht als Erstes das Wort, sondern wartet, " +
           "bis die Leitung eine Richtung angedeutet hat. " +
-          "An diese dritte Gepflogenheit würde ich dir raten, dich gerade nicht zu halten. " +
+          "Ich würde dir raten, dich gerade an diese dritte Gepflogenheit nicht zu halten. " +
           "Sie schützt niemanden, sie verlängert nur die Sitzung, und die seit Jahren " +
           "diskutierte Frage der Zuständigkeiten ist auch deshalb ungeklärt. " +
           "Rückblickend habe ich unterschätzt, wie sehr solche Kleinigkeiten darüber " +

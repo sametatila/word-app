@@ -211,7 +211,7 @@ export const enB2P10: SkillExercise[] = [
       { de: "consequence", tr: "sonuç" },
       { de: "to enforce", tr: "uygulatmak" },
       { de: "in hindsight", tr: "sonradan bakınca" },
-      { de: "to revise", tr: "gözden geçirmek" },
+      { de: "to revise", tr: "yeniden düzenlemek" },
       { de: "intend", tr: "niyetinde olmak" },
       { de: "anyway", tr: "zaten" },
     ],
@@ -313,8 +313,8 @@ export const enB2P10: SkillExercise[] = [
         "taken by a person, who knew. " +
         "So I'd add one safeguard: after you have fixed the default and the friction, " +
         "ask whether the people getting it wrong can state the rule. " +
-        "If they can, it was never a knowledge problem. If they can't, it never was one either " +
-        "— it was a documentation problem, and that is still yours, not theirs.",
+        "If they can, it was never a knowledge problem, and somebody has to answer for the decision. " +
+        "If they can't, it isn't their failure — it is a documentation problem, and that is still yours, not theirs.",
       rubricHint:
         "Bir öncelik sırası, somut örnek ve kendi kuralının kötüye kullanımının kabulü beklenir; „where this gets abused“, „I'd add one safeguard“ kullanılabilir.",
     },

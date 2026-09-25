@@ -208,7 +208,7 @@ export const enB2P12: SkillExercise[] = [
       { de: "routine", tr: "rutin" },
       { de: "urgent", tr: "acil" },
       { de: "reminder", tr: "hatırlatma" },
-      { de: "to confirm", tr: "onaylamak" },
+      { de: "to confirm", tr: "teyit etmek" },
       { de: "front desk", tr: "danışma" },
       { de: "waiting list", tr: "bekleme listesi" },
       { de: "to hold against", tr: "aleyhine saymak" },

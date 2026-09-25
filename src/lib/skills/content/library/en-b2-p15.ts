@@ -129,7 +129,7 @@ export const enB2P15: SkillExercise[] = [
       { de: "every other week", tr: "iki haftada bir" },
       { de: "contract", tr: "sözleşme" },
       { de: "to pause", tr: "dondurmak" },
-      { de: "to confirm", tr: "onaylamak" },
+      { de: "to confirm", tr: "teyit etmek" },
       { de: "portion", tr: "porsiyon" },
       { de: "to launch", tr: "piyasaya sürmek" },
       { de: "settings", tr: "ayarlar" },

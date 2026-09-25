@@ -203,7 +203,7 @@ export const deB2P20: SkillExercise[] = [
     skill: "writing",
     title: "Wohin geht das Kartentrinkgeld?",
     genre: "email",
-    intro: "Bir kafede serviste çalışıyorsun ve kartla gelen bahşişin nasıl dağıtıldığını bilmiyorsunuz: önce iki cümle kur, sonra işletme sahibine somut öneri içeren bir e-posta yaz.",
+    intro: "Bir kafede serviste çalışıyorsun ve ekip olarak kartla gelen bahşişin nasıl dağıtıldığını bilmiyorsunuz: önce iki cümle kur, sonra işletme sahibine somut öneri içeren bir e-posta yaz.",
     gloss: [
       { de: "die Abrechnung", tr: "hesap dökümü", en: "statement" },
       { de: "das Misstrauen", tr: "güvensizlik", en: "mistrust" },
@@ -215,7 +215,7 @@ export const deB2P20: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Birçok meslektaşım şimdiye kadar hiçbir liste görmemiş olduğunu söylüyor.",
+        tr: "Birçok meslektaşım şimdiye kadar hiçbir liste görmediğini söylüyor.",
         answer: "Mehrere Kollegen sagen, bisher keine Liste gesehen zu haben.",
         alternatives: ["Bisher keine Liste gesehen zu haben, sagen mehrere Kollegen."],
         hint: "Geçmiş zu-mastarı: Partizip II + „zu haben“ — görmemek, söylemekten önceki bir durum.",
@@ -271,7 +271,7 @@ export const deB2P20: SkillExercise[] = [
     skill: "speaking",
     title: "Trinkgeld: Dank oder Lohnersatz?",
     genre: "monologue",
-    intro: "Bir dakikadan uzun tek başına konuşacaksın: bahşişin kime ne kazandırdığını ve kimi misafirin keyfine bağlı bıraktığını tart.",
+    intro: "Bir buçuk dakikaya kadar tek başına konuşacaksın: bahşişin kime ne kazandırdığını ve kimi misafirin keyfine bağlı bıraktığını tart.",
     gloss: [],
     minutes: 7,
     monologue: {

@@ -255,7 +255,7 @@ export const deA2P11: SkillExercise[] = [
         hint: "Enkel: EN-kel, k açıkça duyulur. Engel: EN-el, ng tek ses, arkasında g yok.",
         confusions: [
           {
-            heard: ["Mein Engel malt einen Engel"],
+            heard: ["Mein Engel malt"],
             fix: "Enkel'deki k düşerse „melek“ demiş olursun; n'den sonra dilin arkası kapanır ve k patlar.",
             expected: "Enkel",
           },
@@ -267,7 +267,7 @@ export const deA2P11: SkillExercise[] = [
         hint: "singen: ZİN-en. „ng“ genizden gelir, ardından ayrı bir g ya da k söylenmez.",
         confusions: [
           {
-            heard: ["Die Kinder sinken im Garten"],
+            heard: ["sinken"],
             fix: "g'yi k gibi sertleştirirsen „batıyorlar“ anlamı çıkar; ng'de dilin arkası kapanır ama patlama olmaz.",
             expected: "singen",
           },
@@ -279,7 +279,7 @@ export const deA2P11: SkillExercise[] = [
         hint: "Dank: sonda k açık. langer: LAN-er, ng tek ses, g duyulmaz.",
         confusions: [
           {
-            heard: ["Vielen Dang, das war ein langer Tag"],
+            heard: ["Dang"],
             fix: "Dank'ın sonundaki k'yı yutma; n'den sonra kısa ve sert bir k gelir.",
             expected: "Dank",
           },
@@ -291,7 +291,7 @@ export const deA2P11: SkillExercise[] = [
         hint: "-ung eki genizde biter: WOO-nung. Sona k ya da ayrı bir g ekleme.",
         confusions: [
           {
-            heard: ["Die Wohnunk liegt an der Ecke"],
+            heard: ["Wohnunk"],
             fix: "-ung sonundaki g, k gibi söylenmez; ses genizden çıkar ve orada biter.",
             expected: "Wohnung",
           },
@@ -303,7 +303,7 @@ export const deA2P11: SkillExercise[] = [
         hint: "trinken: TRİN-ken. Önce genizden n, hemen ardından açık bir k.",
         confusions: [
           {
-            heard: ["Wir tringen Tee in der Küche"],
+            heard: ["tringen"],
             fix: "k yumuşayıp kaybolursa kelime ng'ye döner; k'yı duyulur biçimde patlat.",
             expected: "trinken",
           },
@@ -315,7 +315,7 @@ export const deA2P11: SkillExercise[] = [
         hint: "Onkel ve schlank: nk, k duyulur. jung: ng, sonda hiçbir patlama yok.",
         confusions: [
           {
-            heard: ["Mein Onkel ist jung und schlang"],
+            heard: ["schlang"],
             fix: "schlank'ın sonundaki k düşerse sıfat tanınmaz; nk'yı sert bir k ile bitir.",
             expected: "schlank",
           },

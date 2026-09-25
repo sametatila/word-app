@@ -273,7 +273,7 @@ export const deB2P11: SkillExercise[] = [
     skill: "speaking",
     title: "Sollten beliebte Orte den Zugang begrenzen?",
     genre: "monologue",
-    intro: "Bir dakikadan uzun tek başına konuşacaksın: bir sınırlamayı savun ya da reddet, ama bedelini kimin ödediğini unutma.",
+    intro: "Bir buçuk dakikaya kadar tek başına konuşacaksın: bir sınırlamayı savun ya da reddet, ama bedelini kimin ödediğini unutma.",
     gloss: [],
     minutes: 7,
     monologue: {

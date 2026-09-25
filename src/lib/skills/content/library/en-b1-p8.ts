@@ -121,8 +121,8 @@ export const enB1P8: SkillExercise[] = [
       { de: "to book", tr: "yer ayırtmak" },
       { de: "insurance", tr: "sigorta" },
       { de: "roof", tr: "çatı" },
-      { de: "sheet", tr: "çarşaf" },
-      { de: "cyclist", tr: "bisikletçi" },
+      { de: "sheet", tr: "kâğıt" },
+      { de: "cyclist", tr: "bisiklet süren kişi" },
     ],
     minutes: 6,
     segments: [
@@ -151,7 +151,7 @@ export const enB1P8: SkillExercise[] = [
         text: "Why is the storage room empty?",
         options: ["It is too small.", "The door doesn't lock.", "It is used for deliveries."],
         answer: 1,
-        explain: "Yeni kilit yüz kırk sterlin ve bu yılki bütçede yok.",
+        explain: "„It's empty because the door doesn't lock.“ Yeni kilit yüz kırk sterlin ve bu yılki bütçede yok.",
       },
       {
         kind: "truefalse",
@@ -176,6 +176,7 @@ export const enB1P8: SkillExercise[] = [
         accept: [
           "the insurance",
           "whether insurance covers bikes inside",
+          "whether our insurance covers bikes stored inside",
           "if the insurance covers bikes",
         ],
         explain: "„can you check whether our insurance covers bikes stored inside“.",
@@ -206,7 +207,7 @@ export const enB1P8: SkillExercise[] = [
       { de: "to recommend", tr: "tavsiye etmek" },
       { de: "wheel", tr: "tekerlek" },
       { de: "gear", tr: "vites" },
-      { de: "gears", tr: "vites değiştirmek" },
+      { de: "chain", tr: "zincir" },
       { de: "slip", tr: "yerinden kaymak" },
     ],
     minutes: 12,
@@ -221,8 +222,11 @@ export const enB1P8: SkillExercise[] = [
       {
         kind: "build",
         tr: "Bana ihtiyacım olmayan bir şey satmaya çalışmadılar.",
-        answer: "They didn't try to sell me something I didn't need.",
-        alternatives: ["They did not try to sell me anything I didn't need."],
+        answer: "They didn't try to sell me anything I didn't need.",
+        alternatives: [
+          "They did not try to sell me anything I didn't need.",
+          "They didn't try to sell me something I didn't need.",
+        ],
         hint: "Geçmiş olumsuz: didn't + yalın fiil; ikinci yan cümlede de geçmiş kullanılır.",
       },
       {
@@ -248,7 +252,7 @@ export const enB1P8: SkillExercise[] = [
           "been making a noise for weeks. They gave me a quote of thirty-five pounds before " +
           "starting and called me when they found that the chain also needed replacing, " +
           "which took it to fifty-two. " +
-          "What I liked most was that phone call. They didn't try to sell me something I didn't " +
+          "What I liked most was that phone call. They didn't try to sell me anything I didn't " +
           "need, and the man explained why the chain was the reason the gears kept slipping. " +
           "The only problem was time. They said Wednesday afternoon and it was ready on Thursday, " +
           "and nobody told me — I had to phone. " +
@@ -296,7 +300,7 @@ export const enB1P8: SkillExercise[] = [
         "or who carry equipment, or whose office has nowhere to park. " +
         "Telling them to cycle is not advice, it is just noise. " +
         "Rather than telling people to cycle, I'd spend the money on the boring things: " +
-        "a covered rack, a lock on the storage room, and one safe route into the centre. " +
+        "a covered rack, a lock on the storage room, and one safe route into the center. " +
         "Where those exist, people cycle without being told.",
       rubricHint:
         "Koşullar, kişisel bir örnek ve bir öneri beklenir; „only when“, „the deciding factor was“ ve „rather than“ kullanılabilir.",

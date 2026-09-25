@@ -225,7 +225,7 @@ export const deA2P14: SkillExercise[] = [
           "Deshalb schreibe ich Ihnen heute. Bitte überweisen Sie mir das Geld bis zum 15. Juli. " +
           "Ich habe jetzt ein neues Konto, die Nummer finden Sie unter meinem Namen.\n\n" +
           "Vielen Dank im Voraus.\n\n" +
-          "Mit freundlichen Grüßen\nDeniz Arslan",
+          "Mit freundlichen Grüßen\nDeniz Arslan\nIBAN: DE00 1234 5678 9012 3456 78",
       },
     ],
   },
@@ -277,7 +277,7 @@ export const deA2P14: SkillExercise[] = [
         hint: "VW: fau-VEE. V'nin Almanca adı „fau“, f sesiyle başlar.",
         confusions: [
           {
-            heard: ["Mein Auto ist ein alter WW"],
+            heard: ["WW"],
             fix: "V'yi Türkçe „ve“ diye okursan Almanca kulak W duyar; V'nin adı fau.",
             expected: "VW",
           },

@@ -119,7 +119,7 @@ export const enB1P6: SkillExercise[] = [
       { de: "waiting list", tr: "bekleme listesi" },
       { de: "to extend", tr: "uzatmak" },
       { de: "receipt", tr: "makbuz" },
-      { de: "to waive", tr: "affetmek" },
+      { de: "to waive", tr: "ücreti silmek" },
       { de: "unpaid", tr: "ödenmemiş" },
     ],
     minutes: 6,
@@ -207,7 +207,7 @@ export const enB1P6: SkillExercise[] = [
       { de: "to close down", tr: "kapatmak" },
       { de: "service", tr: "hizmet" },
       { de: "to replace", tr: "yerini almak" },
-      { de: "mill", tr: "öğütmek" },
+      { de: "branch", tr: "şube" },
     ],
     minutes: 12,
     tasks: [

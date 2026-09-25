@@ -213,7 +213,7 @@ export const deB2: SkillExercise[] = [
     genre: "formal",
     intro: "Önce iki cümle kur, sonra bir kurum kararına gerekçeli ve nazik bir itiraz yaz.",
     gloss: [
-      { de: "die Öffnungszeit", tr: "açılış saati", en: "opening hours" },
+      { de: "die Öffnungszeit", tr: "çalışma saati", en: "opening hours" },
       { de: "die Einschränkung", tr: "kısıtlama", en: "restriction" },
       { de: "nachvollziehen", tr: "anlamak", en: "to comprehend" },
       { de: "der Vorschlag", tr: "öneri", en: "proposal" },
@@ -231,7 +231,7 @@ export const deB2: SkillExercise[] = [
         kind: "build",
         tr: "Sorun daha erken bildirilseydi masraf çıkmazdı.",
         answer: "Wenn das Problem früher gemeldet worden wäre, wären keine Kosten entstanden.",
-        alternatives: ["Wären das Problem früher gemeldet worden, wären keine Kosten entstanden."],
+        alternatives: ["Wäre das Problem früher gemeldet worden, wären keine Kosten entstanden."],
         hint: "Geçmişe dönük gerçek dışı koşul: Konjunktiv II + edilgen → „gemeldet worden wäre“. Ana cümlede „wären … entstanden“.",
       },
       {
@@ -252,7 +252,7 @@ export const deB2: SkillExercise[] = [
         ],
         minWords: 90,
         phrases: [
-          { de: "mit Interesse habe ich gelesen, dass …", tr: "… okuduğumu ilgiyle belirtmek isterim", en: "I read with interest that …" },
+          { de: "mit Interesse habe ich gelesen, dass …", tr: "… olduğunu ilgiyle okudum", en: "I read with interest that …" },
           { de: "Ihre Gründe kann ich nachvollziehen, allerdings …", tr: "Gerekçenizi anlıyorum, ancak …", en: "I can follow your reasoning, however …" },
           { de: "Besonders betroffen sind …", tr: "Bundan en çok … etkileniyor", en: "… are affected most" },
           { de: "Ich möchte deshalb vorschlagen, …", tr: "Bu yüzden … önermek istiyorum", en: "I would therefore like to suggest …" },
@@ -305,7 +305,7 @@ export const deB2: SkillExercise[] = [
       sampleDe:
         "Auf den ersten Blick klingt die Vier-Tage-Woche nach einem Geschenk, aber sie ist vor allem eine Frage der " +
         "Organisation. In Büroberufen funktioniert sie oft erstaunlich gut: Wenn Besprechungen kürzer werden und " +
-        "niemand mehr Zeit mit Aufgaben verbringt, die niemand liest, geht dieselbe Arbeit auch in vier Tagen. " +
+        "niemand mehr Zeit mit Berichten verbringt, die niemand liest, geht dieselbe Arbeit auch in vier Tagen. " +
         "Entscheidend ist dabei, ob die Leitung wirklich Aufgaben streicht oder nur den Druck erhöht. " +
         "Das gilt allerdings nicht für Bereiche, in denen Menschen betreut werden. In einer Klinik oder in einer " +
         "Kita kann man nicht effizienter werden, indem man schneller pflegt; dort bedeutet ein freier Tag " +

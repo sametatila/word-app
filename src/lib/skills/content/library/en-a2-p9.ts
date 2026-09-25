@@ -29,7 +29,7 @@ export const enA2P9: SkillExercise[] = [
         tr: "Bilet aldım ve trene yetiştim.",
         hint: "„bought“ = BOOT, „caught“ = KOOT. gh susar, o uzar ve sonda t duyulur.",
         confusions: [
-          { heard: ["I bougt a ticket and caugt the train"], fix: "g ve h söylenmez; yalnız uzun o ile t kalır.", expected: "bought" },
+          { heard: [], fix: "g ve h söylenmez; yalnız uzun o ile t kalır.", expected: "bought" },
         ],
       },
       {
@@ -37,7 +37,7 @@ export const enA2P9: SkillExercise[] = [
         tr: "Kolay sanmıştım.",
         hint: "„thought“ = THOOT. Başta dilin ucu dişlerin arasında, sonda yalnız t.",
         confusions: [
-          { heard: ["I tought it was easy", "I sought it was easy"], fix: "Baştaki th, t ya da s değildir; dil dişlerin arasına gelir.", expected: "thought" },
+          { heard: ["I taught it was easy", "I sought it was easy"], fix: "Baştaki th, t ya da s değildir; dil dişlerin arasına gelir.", expected: "thought" },
         ],
       },
       {
@@ -45,7 +45,7 @@ export const enA2P9: SkillExercise[] = [
         tr: "Bunu bana kızım öğretti.",
         hint: "„daughter“ = DOO-tı, „taught“ = TOOT. Aynı uzun o, aynı susan gh.",
         confusions: [
-          { heard: ["My daugh-ter taugh-t me that"], fix: "Kelimeyi harfleyerek okuma; gh sessizdir.", expected: "daughter" },
+          { heard: [], fix: "Kelimeyi harfleyerek okuma; gh sessizdir.", expected: "daughter" },
         ],
       },
       {
@@ -53,7 +53,7 @@ export const enA2P9: SkillExercise[] = [
         tr: "Yeterince yemek getirdi.",
         hint: "Burada gh iki ayrı iş yapıyor: „brought“ içinde susar (BROOT), „enough“ içinde f olur (i-NAF).",
         confusions: [
-          { heard: ["He brouft enouf food", "He brought enoug food"], fix: "Aynı harf ikilisi iki ayrı biçimde davranır; kelimeyle birlikte öğrenilir.", expected: "enough" },
+          { heard: [], fix: "Aynı harf ikilisi iki ayrı biçimde davranır; kelimeyle birlikte öğrenilir.", expected: "enough" },
         ],
       },
       {
@@ -61,7 +61,7 @@ export const enA2P9: SkillExercise[] = [
         tr: "Gece uçuşu uzundu.",
         hint: "„night“ = NAYT, „flight“ = FLAYT. Burada gh yine susar ama ünlü uzun o değil ay olur.",
         confusions: [
-          { heard: ["The nigt fligt was long"], fix: "gh yazılır, okunmaz; önündeki i ay sesine döner.", expected: "night" },
+          { heard: [], fix: "gh yazılır, okunmaz; önündeki i ay sesine döner.", expected: "night" },
         ],
       },
       {
@@ -69,7 +69,7 @@ export const enA2P9: SkillExercise[] = [
         tr: "Yine de bu zor bir soru.",
         hint: "„tough“ = TAF (gh = f), „though“ = DOU (gh susar). Yazımları neredeyse aynı, sesleri ayrı.",
         confusions: [
-          { heard: ["That's a tou question, thoug"], fix: "İki kelime birbirine benzer ama ortak bir kural yoktur.", expected: "though" },
+          { heard: [], fix: "İki kelime birbirine benzer ama ortak bir kural yoktur.", expected: "though" },
         ],
       },
     ],

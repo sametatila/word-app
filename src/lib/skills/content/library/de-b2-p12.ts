@@ -208,7 +208,7 @@ export const deB2P12: SkillExercise[] = [
     gloss: [
       { de: "der Schrank", tr: "dolap", en: "cupboard" },
       { de: "der Zustand", tr: "durum", en: "condition" },
-      { de: "ersetzen", tr: "yerine koymak", en: "to replace" },
+      { de: "ersetzen", tr: "yenisiyle değiştirmek", en: "to replace" },
       { de: "abholen", tr: "gidip almak", en: "to pick up" },
       { de: "erreichbar", tr: "ulaşılabilir", en: "reachable" },
     ],
@@ -223,7 +223,7 @@ export const deB2P12: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Dolabın atölyeye götürülmesi gerekip gerekmediğini bilmiyorum.",
+        tr: "Dolabın gelip alınması gerekip gerekmediğini bilmiyorum.",
         answer: "Ich weiß nicht, ob der Schrank abgeholt werden muss.",
         alternatives: ["Ob der Schrank abgeholt werden muss, weiß ich nicht."],
         hint: "Yan cümlede çekimli modal fiil en sona geçer: „abgeholt werden muss“.",
@@ -271,7 +271,7 @@ export const deB2P12: SkillExercise[] = [
     skill: "speaking",
     title: "Gehört Handwerk in jeden Lehrplan?",
     genre: "monologue",
-    intro: "Bir dakikadan uzun tek başına konuşacaksın: bir ders önerisini savun ve en güçlü itiraza cevap ver.",
+    intro: "Bir buçuk dakikaya kadar tek başına konuşacaksın: bir ders önerisini savun ve en güçlü itiraza cevap ver.",
     gloss: [],
     minutes: 7,
     monologue: {

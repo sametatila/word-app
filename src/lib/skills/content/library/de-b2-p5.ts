@@ -118,7 +118,7 @@ export const deB2P5: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     title: "Zwei Jahre für einen Hund",
-    genre: "phone",
+    genre: "interview",
     intro: "Bir podcast bölümünde refakat köpeklerini büyüten aileler anlatılıyor: neye alıştırılıyor, en zoru ne, sonunda ne oluyor.",
     gloss: [
       { de: "der Assistenzhund", tr: "refakat köpeği", en: "assistance dog" },
@@ -165,10 +165,10 @@ export const deB2P5: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Rund die Hälfte der Hunde besteht die Prüfung nicht.",
+        text: "Für Nuray ist die Abgabe des Hundes das Schwierigste.",
         options: ["Richtig", "Falsch"],
-        answer: 0,
-        explain: "„Etwa die Hälfte. Die anderen werden vermittelt, meistens an die Familie, die sie großgezogen hat.“",
+        answer: 1,
+        explain: "Tam tersi: „Nicht das Abgeben, was alle denken. Das Schwierigste ist das erste halbe Jahr …“",
       },
       {
         kind: "short_answer",
@@ -215,14 +215,14 @@ export const deB2P5: SkillExercise[] = [
         kind: "build",
         tr: "Köpeği en baştan asansöre alıştır.",
         answer: "Gewöhne den Hund von Anfang an an den Aufzug.",
-        alternatives: ["Von Anfang an gewöhne den Hund an den Aufzug."],
+        alternatives: ["Gewöhn den Hund von Anfang an an den Aufzug."],
         hint: "„gewöhnen an“ edatıyla birlikte öğrenilir ve Akkusativ ister.",
       },
       {
         kind: "build",
         tr: "Bunun uzun süreceğini en baştan hesaba kat.",
         answer: "Rechne von Anfang an damit, dass es lange dauert.",
-        alternatives: ["Von Anfang an rechne damit, dass es lange dauert."],
+        alternatives: ["Rechne von Anfang an damit, dass es lange dauern wird."],
         hint: "„rechnen mit“ nesnesi bir cümleyse edat önce „damit“ olarak duyurulur.",
       },
       {
@@ -278,7 +278,7 @@ export const deB2P5: SkillExercise[] = [
         "Yaygın ölçütü adlandır ve neden yetersiz olduğunu söyle",
         "Birinci ölçütünü ver: hatalarla nasıl davranılıyor",
         "İkinci ölçütünü ver: sorumluluk hangi sırayla veriliyor",
-        "Sonu neyle bittiğine bakarak bitir",
+        "Eğitimin neyle bittiğine bakarak bitir",
       ],
       targets: [
         { de: "Darauf würde ich mich nicht verlassen.", tr: "Buna güvenmezdim." },

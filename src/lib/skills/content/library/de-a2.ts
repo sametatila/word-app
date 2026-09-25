@@ -144,7 +144,7 @@ export const deA2: SkillExercise[] = [
           "Sie hat keine Zeit für einen Kurs.",
         ],
         answer: 0,
-        explain: "„Ich lerne seit einem Jahr Türkisch, aber ich spreche fast nie.“ Hiç anlamamak Murat'ın değil, kimsenin durumu değil.",
+        explain: "„Ich lerne seit einem Jahr Türkisch, aber ich spreche fast nie.“ Türkçeyi hiç anlamadığını söylemiyor; zaman ya da kurs sorunundan da söz etmiyor.",
       },
       {
         kind: "truefalse",
@@ -158,7 +158,7 @@ export const deA2: SkillExercise[] = [
         text: "An welchem Tag treffen sie sich?",
         options: [],
         answer: 0,
-        accept: ["am Dienstag", "Dienstag", "dienstags", "am Dienstagnachmittag"],
+        accept: ["am Dienstag", "Dienstag", "dienstags", "am Dienstagnachmittag", "Dienstagnachmittag"],
         explain: "„Am Dienstagnachmittag, so gegen fünf“ — Lena „Dienstag ist perfekt“ diyor.",
       },
       {
@@ -309,7 +309,7 @@ export const deA2: SkillExercise[] = [
       {
         de: "Ich mache das nicht noch einmal.",
         tr: "Bunu bir daha yapmam.",
-        hint: "„mache“: kalın ch. „ich“ ve „nicht“: ince ch. Üçü bir cümlede.",
+        hint: "„mache“ ve „noch“: kalın ch. „ich“ ve „nicht“: ince ch. Dördü bir cümlede.",
         confusions: [
           { heard: ["ik make", "isch mache das nischt"], fix: "„a“dan sonra kalın, „i“den sonra ince; ikisini de „ş“ yapma.", expected: "mache" },
         ],

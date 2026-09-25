@@ -440,6 +440,11 @@
   "de": "bald"
  },
  {
+  "tr": "yakınlarda",
+  "kind": "gloss.tr",
+  "de": "in der Nähe"
+ },
+ {
   "tr": "yavaşça",
   "kind": "gloss.tr",
   "de": "langsam"

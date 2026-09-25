@@ -60,9 +60,9 @@
   "en": "She says \"Call me back tonight\". She has already booked the taxi: \"I have already booked a taxi for us.\""
  },
  {
-  "tr": "„Herzlich willkommen im Möbelhaus Nord“ — mutfak danışmanlığı ve mobilya teslimi de bunu gösteriyor.",
+  "tr": "„Herzlich willkommen im Möbelhaus Nord“ — mutfak danışmanlığı ve büyük mobilyaları teslim alma yeri de bunu gösteriyor.",
   "kind": "explain",
-  "en": "„Herzlich willkommen im Möbelhaus Nord“ — the kitchen advice and the furniture delivery show it too."
+  "en": "„Herzlich willkommen im Möbelhaus Nord“ — the kitchen advice and the pick-up point for large furniture show it too."
  },
  {
   "tr": "„Man nimmt ein Buch mit und stellt irgendwann ein anderes hinein“ — takas, satış ya da üyelik değil.",
@@ -307,7 +307,7 @@
  {
   "tr": "Bir şehir forumunda çeşme tartışması var; önce iki cümle kur, sonra kendi görüşünü gerekçeleriyle yaz.",
   "kind": "intro",
-  "en": "There is an argument about a fountain on a city forum; first form two sentences, then write your view with reasons."
+  "en": "There is an argument about drinking fountains on a city forum; first form two sentences, then write your view with reasons."
  },
  {
   "tr": "Bu belirtide kişi özne olmaz, yönelme hâlinde durur: „Mir ist schwindlig“, „Ich bin schwindlig“ değil.",
@@ -500,9 +500,9 @@
   "en": "It follows from the sentence \"the new departure time is 3:35\". 3:15 was the old time and 5:40 is the next train."
  },
  {
-  "tr": "„Vor allem an der Trockenheit … und die bekommt er nicht mehr.“ Yaş ve ziyaretçi başka bağlamda geçiyor.",
+  "tr": "„Vor allem an der Trockenheit … und die bekommt er nicht mehr.“ Yaş hiç geçmiyor; ziyaretçiler yalnız çöp konusunda anılıyor.",
   "kind": "explain",
-  "en": "„Vor allem an der Trockenheit … und die bekommt er nicht mehr.“ The age and the visitors come up elsewhere."
+  "en": "„Vor allem an der Trockenheit … und die bekommt er nicht mehr.“ Age never comes up; the visitors are only mentioned in connection with trash."
  },
  {
   "tr": "Bir dakikaya yakın tek başına konuşacaksın: soruya net bir cevap ver ve iki farklı türde gerekçe kullan.",
@@ -523,11 +523,6 @@
   "tr": "C1'in ayırt edici işi iddiayı doğru dereceye ayarlamaktır: ne kadar eminsin ve bunu nasıl gösteriyorsun.",
   "kind": "intro",
   "en": "The distinguishing work of C1 is calibrating a claim: how sure you are, and how you show it."
- },
- {
-  "tr": "Emma sarı portu soruyor, Deniz bakıp 'No, it's in the grey one.' diyor. Kablo yanlışlıkla gri porttaydı.",
-  "kind": "explain",
-  "en": "Emma asks about the yellow port and Deniz looks and says 'No, it's in the grey one.' The cable was in the grey port by mistake."
  },
  {
   "tr": "İngilizcede „w“ dudaklarla, „v“ ise diş ve dudakla çıkar; Türkçedeki tek v sesi ikisinin arasında kalır.",

@@ -123,7 +123,7 @@ export const deB2P18: SkillExercise[] = [
       { de: "die Taschenlampe", tr: "el feneri", en: "torch" },
       { de: "die Mücke", tr: "sivrisinek", en: "mosquito" },
       { de: "das Märchen", tr: "masal", en: "fairy tale" },
-      { de: "fällen", tr: "devirmek", en: "to fell" },
+      { de: "fällen", tr: "kesmek", en: "to fell" },
       { de: "dämmen", tr: "yalıtmak", en: "to insulate" },
     ],
     minutes: 8,
@@ -150,7 +150,7 @@ export const deB2P18: SkillExercise[] = [
           "weil man sonst gar nichts sieht",
         ],
         answer: 2,
-        explain: "„sonst sehen wir gleich gar nichts“ — karanlığa alışmak gerekiyor.",
+        explain: "Rehber bunu açıkça söylüyor: „sonst sehen wir gleich gar nichts“.",
       },
       {
         text: "Wozu dient der Detektor?",
@@ -272,7 +272,7 @@ export const deB2P18: SkillExercise[] = [
     skill: "speaking",
     title: "Wildtiere in der Stadt: vertreiben oder dulden?",
     genre: "monologue",
-    intro: "Bir dakikadan uzun tek başına konuşacaksın: tek bir cevap verme, durumları ayır ve bir kural öner.",
+    intro: "Bir buçuk dakikaya kadar tek başına konuşacaksın: tek bir cevap verme, durumları ayır ve bir kural öner.",
     gloss: [],
     minutes: 7,
     monologue: {

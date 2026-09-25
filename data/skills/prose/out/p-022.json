@@ -145,11 +145,6 @@
   "en": "You are going to read a local report about a fridge put out in the street: whose idea it was, what the rules are, what came of it."
  },
  {
-  "tr": "Sunucu \"he made an app for people who always lose their keys\" diyor; uygulama anahtarlarını kaybedenler için.",
-  "kind": "explain",
-  "en": "The presenter says \"he made an app for people who always lose their keys\"; the app is for people who lose their keys."
- },
- {
   "tr": "Teknoloji üzerine kısa bir podcast bölümünü dinleyeceksin; sunucu genç bir öğrencinin uygulamasını anlatıyor.",
   "kind": "intro",
   "en": "You are going to hear a short podcast episode about technology; the presenter describes a young student's app."
@@ -178,11 +173,6 @@
   "tr": "Belediyenin telefon danışma kaydını dinleyeceksin: çalışma saatleri, gerekli belgeler ve ücretler anlatılıyor.",
   "kind": "intro",
   "en": "You are going to hear a council's recorded phone information: the opening hours, the documents needed and the charges."
- },
- {
-  "tr": "Bir ders dinleyeceksin: hangi altyapı hiçbir strateji belgesinde geçmiyor ve yokluğu kimin şehrini küçültüyor.",
-  "kind": "intro",
-  "en": "You are going to hear a lecture: which infrastructure appears in no strategy paper, and whose city its absence makes smaller."
  },
  {
   "tr": "Görevli önce hasta kayınları, sonra yeni dikilen türleri anlatıyor; yürüyüş tarifi ya da kapatma hiç geçmiyor.",
@@ -237,7 +227,7 @@
  {
   "tr": "Almancada „z“ harfi hep „ts“ okunur, Türkçedeki z sesi gibi değil; yedi cümlede bunu ve „tz“ birleşimini çalış.",
   "kind": "intro",
-  "en": "In German the letter „z“ is always said „ts“, not like the Turkish z; practise that and the „tz“ pair in seven sentences."
+  "en": "In German the letter „z“ is always said „ts“, not like the English z; practice that and the „tz“ pair in seven sentences."
  },
  {
   "tr": "Bir müdür ve insan kaynakları sorumlusu boşalan pozisyonu tartışıyor: içeriden terfi mi, dışarıdan işe alım mı?",
@@ -303,11 +293,6 @@
   "tr": "Emma 'Have you restarted the router already?' diye soruyor, Deniz 'Yes, twice.' yani iki kez diye cevap veriyor.",
   "kind": "explain",
   "en": "Emma asks 'Have you restarted the router already?' and Deniz answers 'Yes, twice.', so two times."
- },
- {
-  "tr": "Emma \"on Sunday I went to the new bookshop near the station\" diyor. Cumartesi evde kaldı, pazar kitapçıya gitti.",
-  "kind": "explain",
-  "en": "Emma says \"on Sunday I went to the new bookshop near the station\". She stayed in on Saturday and went to the bookshop on Sunday."
  },
  {
   "tr": "Fiiller Almancada kendi edatlarını taşır; nesne bir şeyse edat zamirle değil, da- ve wo- bileşikleriyle kurulur.",
@@ -460,11 +445,6 @@
   "en": "The sentence \"On Sundays it closes earlier, at 17:00\" gives the Sunday closing as 17:00; 19:00 is for the other days."
  },
  {
-  "tr": "\"There's a big queue on Bridge Road, because workers are fixing the road\" cümlesinden anlıyoruz: yolda çalışma var.",
-  "kind": "explain",
-  "en": "We know it from \"There's a big queue on Bridge Road, because workers are fixing the road\": there are roadworks."
- },
- {
   "tr": "Araştırma tersini söylüyor: üstünlük ancak yaklaşık yirmi kullanımdan sonra başlıyor, çünkü üretimi daha maliyetli.",
   "kind": "explain",
   "en": "The study says the opposite: the advantage only starts after about twenty uses, because making it costs more."
@@ -555,9 +535,9 @@
   "en": "„Bei uns hängt ein Plan … Jede Woche wechselt die Aufgabe.“ The monthly talk is Aleksandar's answer and the cleaner Meryem's."
  },
  {
-  "tr": "„Ich lerne seit einem Jahr Türkisch, aber ich spreche fast nie.“ Hiç anlamamak Murat'ın değil, kimsenin durumu değil.",
+  "tr": "„Ich lerne seit einem Jahr Türkisch, aber ich spreche fast nie.“ Türkçeyi hiç anlamadığını söylemiyor; zaman ya da kurs sorunundan da söz etmiyor.",
   "kind": "explain",
-  "en": "„Ich lerne seit einem Jahr Türkisch, aber ich spreche fast nie.“ Understanding nothing is not Murat's problem, nor anybody's."
+  "en": "„Ich lerne seit einem Jahr Türkisch, aber ich spreche fast nie.“ She does not say she understands no Turkish at all, and she mentions no problem with time or a course."
  },
  {
   "tr": "„If the code cannot be read, the bag is sent to a small room where a person reads it by hand.“ — yalnız üç yüzde bir.",
@@ -693,11 +673,6 @@
   "tr": "Emma \"the tall man with glasses\" diye soruyor, Kaan da \"He's very tall, and he's got a big beard now.\" diye cevaplıyor.",
   "kind": "explain",
   "en": "\"He's very tall, and he's got a big beard now.\" — that is how Kaan answers about the tall man with glasses."
- },
- {
-  "tr": "Mert otelde kalmayacaklarını söylüyor: \"my cousin has a flat near the sea. We're going to stay there for three nights.\"",
-  "kind": "explain",
-  "en": "Mert says they will not stay in a hotel: \"my cousin has a flat near the sea. We're going to stay there for three nights.\""
  },
  {
   "tr": "Metin \"you must tell us your car number when you arrive\" diyor; otopark ücretsiz ama araç plakasını söylemek gerekiyor.",

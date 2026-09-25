@@ -167,14 +167,14 @@ export const deA2P10: SkillExercise[] = [
         text: "Was kostet die Reparatur ungefähr insgesamt?",
         options: [],
         answer: 0,
-        accept: ["fünfundsiebzig Euro", "75 Euro", "etwa fünfundsiebzig Euro"],
+        accept: ["fünfundsiebzig Euro", "75 Euro", "etwa fünfundsiebzig Euro", "fünfundsiebzig", "etwa 75 Euro"],
         explain: "Otuz euroluk parça artı kırk beş euroluk işçilik: „etwa fünfundsiebzig Euro“.",
       },
       {
         text: "Wann ist die Maschine fertig?",
         options: ["morgen", "am Freitag, wenn das Teil da ist", "in zwei Wochen"],
         answer: 1,
-        explain: "„Wenn das Teil da ist, ist sie am Freitag fertig“; yarın yalnız telefon edecek.",
+        explain: "„Wenn das Teil da ist, ist sie am Freitag fertig“; usta yarın yalnız telefon edecek.",
       },
     ],
   },
@@ -277,7 +277,7 @@ export const deA2P10: SkillExercise[] = [
         confusions: [
           {
             heard: [],
-            fix: "Fiili vurgulamak „geliyorum ama başka şey yapmıyorum“ demek olur; karşıtlık kişide.",
+            fix: "Fiili vurgularsan „gerçekten geliyorum“ demiş olursun; burada karşıtlık kişide.",
             expected: "Ich",
           },
         ],

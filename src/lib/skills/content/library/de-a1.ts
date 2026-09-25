@@ -224,7 +224,7 @@ export const deA1: SkillExercise[] = [
     gloss: [
       { de: "die Miete", tr: "kira", en: "rent" },
       { de: "bleiben", tr: "kalmak", en: "to stay" },
-      { de: "leider", tr: "maalesef", en: "unfortunately" },
+      { de: "spielen", tr: "oynamak", en: "to play" },
       { de: "der Brief", tr: "mektup", en: "letter" },
     ],
     minutes: 4,

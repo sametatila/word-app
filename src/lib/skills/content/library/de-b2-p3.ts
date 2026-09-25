@@ -152,10 +152,10 @@ export const deB2P3: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Die Stadt bewässert einen neuen Baum mehrere Jahre lang.",
+        text: "Bei der Auswahl der Bäume zählt vor allem ihre Herkunft.",
         options: ["Richtig", "Falsch"],
-        answer: 0,
-        explain: "„Die erste Bewässerung übernehmen wir drei Jahre lang.“",
+        answer: 1,
+        explain: "Tam tersi: „Wichtig ist nicht die Herkunft eines Baumes, sondern seine Toleranz gegenüber Trockenheit, Salz und wenig Platz.“",
       },
       {
         kind: "short_answer",
@@ -199,7 +199,7 @@ export const deB2P3: SkillExercise[] = [
       { de: "der Gehweg", tr: "kaldırım", en: "sidewalk" },
       { de: "abstellen", tr: "bırakmak", en: "to park" },
       { de: "der Anspruch", tr: "talep", en: "claim" },
-      { de: "ausweichen", tr: "başka yola sapmak", en: "to step aside" },
+      { de: "ausweichen", tr: "kenara çekilmek", en: "to step aside" },
     ],
     minutes: 12,
     tasks: [
@@ -288,7 +288,7 @@ export const deB2P3: SkillExercise[] = [
         "Betriebe, die ohnehin aufgeschlossen sind. Nach zwanzig Jahren freiwilliger Programme sieht man das " +
         "deutlich. Mein Kriterium wäre deshalb nicht die Größe des Betriebes, sondern die Art des Zugangs: " +
         "Wo eine Leistung ohne Alternative ist — eine Arztpraxis, ein Amt, die einzige Apotheke im Ort —, " +
-        "muss es eine Pflicht sein. Wo es Alternativen gibt, reicht ein Anreiz und eine ehrliche Kennzeichnung.",
+        "muss es eine Pflicht sein. Wo es Alternativen gibt, reichen ein Anreiz und eine ehrliche Kennzeichnung.",
       rubricHint:
         "İki yaklaşımın da güçlü ve zayıf yanı geçmeli; sonuç tek bir ölçütle ayrıştırılmalı, „hepsi zorunlu olsun“ gibi düz bir cevap yeterli değil.",
     },

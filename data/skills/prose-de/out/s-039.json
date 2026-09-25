@@ -177,7 +177,7 @@
  {
   "tr": "hane",
   "kind": "gloss.tr",
-  "de": "Stellen"
+  "de": "Haushalt"
  },
  {
   "tr": "oldu",
@@ -187,7 +187,7 @@
  {
   "tr": "arama",
   "kind": "gloss.tr",
-  "de": "die Suche"
+  "de": "Suche"
  },
  {
   "tr": "kesin",
@@ -222,7 +222,7 @@
  {
   "tr": "editör",
   "kind": "gloss.tr",
-  "de": "Redaktion"
+  "de": "der Redakteur"
  },
  {
   "tr": "gündem",
@@ -342,7 +342,7 @@
  {
   "tr": "şaşırtıcı",
   "kind": "gloss.tr",
-  "de": "schockierend"
+  "de": "überraschend"
  },
  {
   "tr": "bu belirti",

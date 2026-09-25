@@ -262,7 +262,7 @@
  {
   "tr": "gerekçe",
   "kind": "gloss.tr",
-  "de": "das Argument"
+  "de": "die Begründung"
  },
  {
   "tr": "kendime",
@@ -283,6 +283,11 @@
   "tr": "açıklama",
   "kind": "gloss.tr",
   "de": "Erklärung"
+ },
+ {
+  "tr": "ifşa",
+  "kind": "gloss.tr",
+  "de": "die Offenlegung"
  },
  {
   "tr": "besbelli",

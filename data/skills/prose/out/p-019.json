@@ -97,7 +97,7 @@
  {
   "tr": "„eu“ ve „äu“ aynı sesi verir: oy. Tek başına „ä“ ise Türkçedeki e gibidir, ay gibi değil.",
   "kind": "intro",
-  "en": "„eu“ and „äu“ make the same sound: oy. „ä“ on its own is like the Turkish e, not like ay."
+  "en": "„eu“ and „äu“ make the same sound: oy. „ä“ on its own is like the e in bed, not like the ay in day."
  },
  {
   "tr": "\"I am learning English because I want to work in London\" diyor; amacı Londra'da çalışmak.",
@@ -127,7 +127,7 @@
  {
   "tr": "Bir buçuk dakikaya kadar konuşacaksın: iki yaklaşımı karşılaştır ve kendi ölçütünü söyle.",
   "kind": "intro",
-  "en": "You will speak for up to a minute and a half: compare two approaches and state your own test."
+  "en": "You will speak for up to a minute and a half: compare two approaches and state your own criterion."
  },
  {
   "tr": "Bir spor kulübünün toplantısını dinleyeceksin: öneri ne, itiraz ne, hangi karar alınıyor.",
@@ -143,11 +143,6 @@
   "tr": "Çoğulda Konjunktiv I gösterge kipiyle aynı görünürdü, bu yüzden Konjunktiv II'ye geçilir.",
   "kind": "explain",
   "en": "In the plural Konjunktiv I would look like the indicative, so Konjunktiv II is used instead."
- },
- {
-  "tr": "Doktor \"you should drink more water — two litres a day\" diyerek günde iki litre öneriyor.",
-  "kind": "explain",
-  "en": "The doctor says \"you should drink more water — two litres a day\", so two litres a day."
  },
  {
   "tr": "Edilgen özne, wurden, von + kişi, ortaç sonda: Die Akten wurden von der Kollegin geprüft.",
@@ -173,11 +168,6 @@
   "tr": "İki tür ilgi cümlesi vardır ve aralarındaki fark yalnız virgül değil, anlamın kendisidir.",
   "kind": "intro",
   "en": "There are two kinds of relative clause and the difference is not just a comma but the sense itself."
- },
- {
-  "tr": "Merve \"The wedding is on Saturday, the twelfth of June\" diyor, yani düğün cumartesi günü.",
-  "kind": "explain",
-  "en": "Merve says \"The wedding is on Saturday, the twelfth of June\", so the wedding is on Saturday."
  },
  {
   "tr": "Not diyor ki: \"Take one blue tablet before bed.\" Kahvaltıdan sonra alınan hap beyaz olan.",
@@ -605,9 +595,9 @@
   "en": "„I haven't swum in the sea yet“ — the holiday in August will be the first chance."
  },
  {
-  "tr": "„Rufen Sie uns bitte bis morgen Mittag zurück.“ Sekiz-on sekiz arası ise açık olunan saatler.",
+  "tr": "„Rufen Sie uns bitte bis morgen Mittag zurück.“ „Von acht bis achtzehn Uhr“ ise yalnız muayenehaneye ulaşılabilen saatler.",
   "kind": "explain",
-  "en": "„Rufen Sie uns bitte bis morgen Mittag zurück.“ Eight to eighteen are the opening hours."
+  "en": "„Rufen Sie uns bitte bis morgen Mittag zurück.“ „Von acht bis achtzehn Uhr“ are only the hours when the practice can be reached."
  },
  {
   "tr": "„trägt den Beschluss mit, bringt jedoch zum Ausdruck, dass …“ — kabul ve itiraz aynı cümlede.",
@@ -685,9 +675,9 @@
   "en": "Showing the photo Kaan says \"There are six people here.\" So there are six people in the photo."
  },
  {
-  "tr": "Kendi deneyimini paylaşıyor ve tedbirlerin işe yaradığını söylüyor; inkâr eden taraf o değil.",
+  "tr": "Kulübün gürültüsünü inkâr etmiyor; kapıya iki kişi koyduklarından beri şikâyetlerin yarıya indiğini anlatarak sorunu dolaylı olarak kabul ediyor.",
   "kind": "explain",
-  "en": "He shares his own experience and says the measures work; he is not the one denying anything."
+  "en": "He does not deny that his club causes noise; by explaining that complaints have halved since they put two people on the door, he indirectly admits the problem."
  },
  {
   "tr": "Mektup boyunca gerekçeler sıralanıyor ve „genau deshalb sollte man endlich anfangen“ deniyor.",

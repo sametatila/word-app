@@ -125,7 +125,7 @@ export const deB2P9: SkillExercise[] = [
       { text: "Der Weg dorthin ist allerdings aufwendiger, als viele denken: Die Ware muss aussortiert, gekühlt und meistens am selben Tag abgeholt werden." },
       { speaker: "Herr Dr. Sander", text: "Das Problem ist selten der gute Wille. Es scheitert an der Logistik und an der Frage, wer haftet, wenn jemand krank wird." },
       { text: "Rechtlich ist die Lage klarer, als der Ruf vermuten lässt: Wer Lebensmittel spendet, haftet nur bei grober Fahrlässigkeit." },
-      { text: "Trotzdem entscheiden viele Filialleiterinnen im Zweifel für die Tonne, weil sie die Regel nicht genau kennen." },
+      { text: "Trotzdem entscheiden sich viele Filialleiterinnen im Zweifel für die Tonne, weil sie die Regel nicht genau kennen." },
       { speaker: "Frau Kowalski", text: "Bei uns hat erst eine Schulung etwas verändert. Vorher haben wir zwei Kisten gespendet, heute sind es zwölf." },
       { text: "Was bleibt, ist die Kühlkette. Fleisch, Fisch und fertige Salate lassen sich kaum weitergeben, wenn der Transport nicht durchgehend kühl ist." },
     ],
@@ -261,7 +261,7 @@ export const deB2P9: SkillExercise[] = [
     skill: "speaking",
     title: "Wer trägt die Verantwortung für weggeworfenes Essen?",
     genre: "monologue",
-    intro: "Bir dakikadan uzun tek başına konuşacaksın: sorumluluğu paylaştır ve kolay cevaba direnç göster.",
+    intro: "Bir buçuk dakikaya kadar tek başına konuşacaksın: sorumluluğu paylaştır ve kolay cevaba direnç göster.",
     gloss: [],
     minutes: 7,
     monologue: {

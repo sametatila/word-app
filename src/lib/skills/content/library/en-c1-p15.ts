@@ -268,7 +268,7 @@ export const enC1P15: SkillExercise[] = [
           "I hardly use half of mine. I cook at the shared table twice a week, I borrow tools from the " +
           "workshop instead of owning them, and I know more of my neighbors than I did in ten years in my " +
           "old building. The more you take part, the more the place gives back.\n\n" +
-          "The hard part is the meetings. It is every bit as slow as people say, and some weeks it feels as if " +
+          "The hard part is decision-making. It is every bit as slow as people say, and some weeks it feels as if " +
           "every decision about a doormat needs a vote. If you are somebody who wants a problem solved by " +
           "Friday, you will find it far more frustrating than I do.\n\n" +
           "It works best for people who actually want the shared life and not just the lower rent. " +

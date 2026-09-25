@@ -29,7 +29,7 @@ export const enA1P9: SkillExercise[] = [
         tr: "Yüzebiliyorum ama araba kullanamıyorum.",
         hint: "Olumlu „can“ zayıf ve kısadır (kın), olumsuz „can't“ uzun ve vurguludur (KAANT).",
         confusions: [
-          { heard: ["I KAN swim, but I kan drive"], fix: "Olumluda vurgu fiile gider; kelimeyi kısa ve zayıf söyle.", expected: "can" },
+          { heard: [], fix: "Olumluda vurgu fiile gider; kelimeyi kısa ve zayıf söyle.", expected: "can" },
         ],
       },
       {
@@ -37,7 +37,7 @@ export const enA1P9: SkillExercise[] = [
         tr: "Yarın sana yardım edebilir.",
         hint: "„can help“ tek parça gibi akar: kın-HELP. Duraklamak olumsuz duyulmasına yol açar.",
         confusions: [
-          { heard: ["She KAN ... help you"], fix: "Olumlu cümlede „can“ vurgulanmaz ve arkasından duraklama olmaz.", expected: "can help" },
+          { heard: [], fix: "Olumlu cümlede „can“ vurgulanmaz ve arkasından duraklama olmaz.", expected: "can help" },
         ],
       },
       {
@@ -53,7 +53,7 @@ export const enA1P9: SkillExercise[] = [
         tr: "Pencereyi açabilir misin?",
         hint: "Soruda da „can“ zayıftır: kın-yu. Vurgu asıl fiildedir.",
         confusions: [
-          { heard: ["KAN you open the window"], fix: "Soruyu vurgulu başlatmak sabırsız duyulur; kelimeyi hafif söyle.", expected: "Can you" },
+          { heard: [], fix: "Soruyu vurgulu başlatmak sabırsız duyulur; kelimeyi hafif söyle.", expected: "Can you" },
         ],
       },
       {
@@ -69,7 +69,7 @@ export const enA1P9: SkillExercise[] = [
         tr: "Altıda buluşabiliriz, değil mi?",
         hint: "Aynı cümlede iki biçim: ilki zayıf (kın), ikincisi uzun ve vurgulu (KAANT-wi).",
         confusions: [
-          { heard: ["We KAN meet at six, can we"], fix: "Ek soruda olumsuz biçim gelir ve o vurguludur.", expected: "can't we" },
+          { heard: ["six can we"], fix: "Ek soruda olumsuz biçim gelir ve o vurguludur.", expected: "can't we" },
         ],
       },
     ],

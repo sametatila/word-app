@@ -256,7 +256,7 @@ export const enA2P3: SkillExercise[] = [
         tr: "Bir muz alabilir miyim lütfen?",
         hint: "„a“ tek başına „ey“ değil, kısa bir „ı“dır. „banana“ = bı-NAA-nı.",
         confusions: [
-          { heard: ["Can I have ey banana", "ba-na-na"], fix: "Yalnız ortadaki hece uzun; ilk ve son heceyi hafif „ı“ ile söyle.", expected: "banana" },
+          { heard: [], fix: "Yalnız ortadaki hece uzun; ilk ve son heceyi hafif „ı“ ile söyle.", expected: "banana" },
         ],
       },
       {
@@ -264,7 +264,7 @@ export const enA2P3: SkillExercise[] = [
         tr: "Erkek kardeşim öğretmen.",
         hint: "Sondaki -er hecesi „er“ değil, zayıf „ı“ gibidir: BRA-dı, TİİÇ-ı.",
         confusions: [
-          { heard: ["brotherr", "teacherr"], fix: "Son heceyi vurgulama ve r'yi yuvarlama: bradı, tiiçı.", expected: "teacher" },
+          { heard: [], fix: "Son heceyi vurgulama; sondaki r'yi Türkçedeki gibi titretme, dilin ucunu hafifçe geri kıvır: bradır, tiiçır.", expected: "teacher" },
         ],
       },
       {
@@ -272,7 +272,7 @@ export const enA2P3: SkillExercise[] = [
         tr: "Çocuklar sinemada.",
         hint: "„the“ = dı, „children“ = ÇİL-drın, „cinema“ = Sİ-nı-mı. Üçünde de zayıf ünlü var.",
         confusions: [
-          { heard: ["Dee children are at dee cinema"], fix: "„the“ vurgusuzken „dii“ değil „dı“ okunur.", expected: "the" },
+          { heard: [], fix: "„the“ vurgusuzken „dii“ değil „dı“ okunur.", expected: "the" },
         ],
       },
       {
@@ -280,7 +280,7 @@ export const enA2P3: SkillExercise[] = [
         tr: "Pazartesi doktordaydım.",
         hint: "„was“ vurgusuzken „wız“ olur; „doctor“ = DOK-tı, „Monday“ = MAN-di.",
         confusions: [
-          { heard: ["I woz at the doctorr"], fix: "„was“ yardımcı olduğunda kısalır; sondaki -or da zayıflar.", expected: "was" },
+          { heard: [], fix: "„was“ yardımcı olduğunda kısalır; sondaki -or da zayıflar.", expected: "was" },
         ],
       },
       {
@@ -288,7 +288,7 @@ export const enA2P3: SkillExercise[] = [
         tr: "Yarın öğleden sonra gelebiliriz.",
         hint: "„can“ olumluda vurgusuzdur ve „kın“ okunur; „tomorrow“ = tı-MO-rou.",
         confusions: [
-          { heard: ["We KEN come", "to-mo-rrow"], fix: "„can“ olumlu cümlede zayıftır; vurgu asıl fiilde.", expected: "can" },
+          { heard: [], fix: "„can“ olumlu cümlede zayıftır; vurgu asıl fiilde.", expected: "can" },
         ],
       },
       {
@@ -296,7 +296,7 @@ export const enA2P3: SkillExercise[] = [
         tr: "Ofiste yedi bilgisayar var.",
         hint: "„computers“ = kım-PYU-tız; ilk ve son hece zayıf, orta hece güçlü.",
         confusions: [
-          { heard: ["COM-puters", "offiss"], fix: "İlk heceyi vurgulama; vurgu ortadaki „pu“ hecesinde.", expected: "computers" },
+          { heard: [], fix: "İlk heceyi vurgulama; vurgu ortadaki „pu“ hecesinde.", expected: "computers" },
         ],
       },
       {
@@ -304,7 +304,7 @@ export const enA2P3: SkillExercise[] = [
         tr: "Bu, şirket için bir sorundu.",
         hint: "„for“ vurgusuzken „fı“ olur; „company“ = KAM-pı-ni.",
         confusions: [
-          { heard: ["for the com-PA-ny"], fix: "Vurgu ilk hecede ve ortadaki hece neredeyse yutulur: KAMpıni.", expected: "company" },
+          { heard: [], fix: "Vurgu ilk hecede ve ortadaki hece neredeyse yutulur: KAMpıni.", expected: "company" },
         ],
       },
     ],

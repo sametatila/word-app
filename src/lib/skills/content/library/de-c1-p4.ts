@@ -176,7 +176,7 @@ export const deC1P4: SkillExercise[] = [
       },
       {
         kind: "dictation",
-        text: "Akustik açıklamasındaki kısa cümleyi duyduğun gibi yaz.",
+        text: "Akustik açıklamasında insanın kendi sesini nasıl duyduğunu anlatan kısa cümleyi duyduğun gibi yaz.",
         options: [],
         answer: 0,
         accept: ["Man hört sich selbst zweimal.", "Man hört sich selbst zweimal"],
@@ -214,7 +214,7 @@ export const deC1P4: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Bunu bir kere açıkça söylemem lazım.",
+        tr: "Bunu artık açık açık söylemem lazım.",
         answer: "Ich muss das jetzt mal ganz offen sagen.",
         alternatives: ["Jetzt muss ich das mal ganz offen sagen."],
         hint: "„mal“ cümleyi gündelikleştirir ve sertliği alır; anlamı „bir kez“ değildir.",

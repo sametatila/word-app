@@ -222,7 +222,7 @@ export const deC1P6: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Bu ifade söz konusu değil.",
+        tr: "Bu ifade söz konusu bile olamaz.",
         answer: "Diese Formulierung kommt nicht in Frage.",
         alternatives: ["Diese Formulierung kommt nicht infrage."],
         hint: "„in Frage kommen“ kalıbı „möglich sein“ anlamına gelir ve parçalanmaz.",
@@ -235,7 +235,7 @@ export const deC1P6: SkillExercise[] = [
           "Konuyu, tarihi ve katılanları belirt",
           "İki konumu tarafsız biçimde aktar",
           "Anlaşılan nokta ile süren ayrılığı ayır",
-          "Kararı, sorumluyu ve süreyi yaz; öneriyi ayrı bölümde ver",
+          "Kararı, sorumluyu ve son tarihi yaz; öneriyi ayrı bölümde ver",
         ],
         minWords: 140,
         phrases: [

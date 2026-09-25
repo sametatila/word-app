@@ -106,7 +106,7 @@ export const deB1P2: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     title: "Eine Stunde ist eine Stunde",
-    genre: "phone",
+    genre: "interview",
     intro: "Bir podcast bölümünde zaman takasına dayalı bir mahalle ağı anlatılıyor: nasıl işliyor, ne işe yarıyor, sorunu ne.",
     gloss: [
       { de: "der Tauschring", tr: "takas ağı", en: "exchange network" },
@@ -122,7 +122,7 @@ export const deB1P2: SkillExercise[] = [
       { speaker: "Moderator", text: "Die Idee ist einfach: Wer etwas kann, bietet es an. Wer etwas braucht, fragt. Bezahlt wird nicht mit Geld, sondern mit Zeit." },
       { speaker: "Ruth", text: "Eine Stunde ist eine Stunde. Ob ich einen Wasserhahn repariere oder jemandem beim Steuerformular helfe, spielt keine Rolle. Beides bringt eine Stunde auf mein Konto." },
       { speaker: "Moderator", text: "Ruth Barnickel gehört zu den Gründerinnen. Angefangen haben sie im Jahr zweitausendneunzehn zu siebt, heute sind es hundertvierzig Mitglieder." },
-      { speaker: "Ruth", text: "Am Anfang dachten viele, das sei Nachbarschaftshilfe mit extra Bürokratie. Aber das Konto macht etwas Wichtiges: Man muss sich nicht bedanken und schämen. Man hat ja bezahlt." },
+      { speaker: "Ruth", text: "Am Anfang dachten viele, das sei Nachbarschaftshilfe mit extra Bürokratie. Aber das Konto macht etwas Wichtiges: Man muss sich weder bedanken noch schämen. Man hat ja bezahlt." },
       { speaker: "Moderator", text: "Probleme gibt es trotzdem. Manche Fähigkeiten sind viel gefragter als andere." },
       { speaker: "Ruth", text: "Wer Fahrräder repariert, hat ein volles Konto und findet nichts, was er selbst braucht. Deshalb sammeln wir jetzt auch Stunden für den Verein, zum Beispiel für das Sommerfest." },
       { speaker: "Moderator", text: "Wer mitmachen will, kommt am ersten Dienstag im Monat um neunzehn Uhr ins Bürgerhaus. Nächste Woche geht es um ein Café, das niemandem gehört." },
@@ -241,7 +241,7 @@ export const deB1P2: SkillExercise[] = [
           "Tag draußen arbeiten oder unterwegs sind, und für sie ist kostenloses Wasser keine Kleinigkeit, sondern " +
           "Gesundheitsschutz. Zweitens verschwindet mit jedem Brunnen ein Teil der Plastikflaschen, die abends in " +
           "den Parks liegen. Das Gegenargument mit den Kosten verstehe ich trotzdem. Achtzigtausend Euro sind viel " +
-          "Geld, und die Wartung im Winter kostet jedes Jahr weiter. Deshalb mein Vorschlag: Die Stadt baut in " +
+          "Geld, und die Wartung kostet jedes Jahr zusätzlich Geld. Deshalb mein Vorschlag: Die Stadt baut in " +
           "diesem Jahr drei Brunnen dort, wo im Sommer die meisten Menschen sind, misst ein Jahr lang die Nutzung " +
           "und entscheidet dann über den Rest.",
       },
@@ -283,7 +283,7 @@ export const deB1P2: SkillExercise[] = [
         "keine Geschenke aus meiner Kindheit, aber sehr genau an einen Ausflug mit meinem Onkel. " +
         "Natürlich gibt es Gegenbeispiele. Wer weit weg wohnt, kann keine Zeit schenken, und ein Paket ist " +
         "dann ein Zeichen, dass man nicht vergessen wurde. Deshalb würde ich sagen: Zeit, wenn sie möglich " +
-        "ist, und sonst ein Geschenk, das den anderen wirklich trifft.",
+        "ist, und sonst ein Geschenk, das wirklich zum anderen passt.",
       rubricHint:
         "Tercih tek cümleyle net olmalı, en az iki gerekçe ve bir karşı örnek bulunmalı; „wenn“ ve „dass“ yan cümlelerinde fiil sonda olmalı.",
     },

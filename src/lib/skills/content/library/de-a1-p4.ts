@@ -110,7 +110,7 @@ export const deA1P4: SkillExercise[] = [
       { text: "Am Mittag kommt die Sonne. Im Süden wird es warm, bis zu zweiundzwanzig Grad." },
       { text: "Am Nachmittag regnet es im Westen. Nehmt bitte einen Schirm mit!" },
       { text: "Am Abend wird der Wind stark. Fahrt vorsichtig mit dem Fahrrad." },
-      { text: "Am Donnerstag bleibt es trocken und sonnig. Ein schönes Wochenende steht vor der Tür!" },
+      { text: "Am Donnerstag bleibt es trocken und sonnig. Auch das Wochenende wird schön!" },
     ],
     questions: [
       {
@@ -236,7 +236,7 @@ export const deA1P4: SkillExercise[] = [
         tr: "Cadde bugün çok sessiz.",
         hint: "„Straße“ = ŞTRAA-se, „still“ = ŞTİL. Kelime başındaki st hep şt.",
         confusions: [
-          { heard: ["Strasse mit s", "s-till", "die Stelle"], fix: "Baştaki st'yi s ile söyleme: ştraase, ştil.", expected: "Straße" },
+          { heard: [], fix: "Baştaki st'yi s ile söyleme: ştraase, ştil.", expected: "Straße" },
         ],
       },
       {
@@ -244,7 +244,7 @@ export const deA1P4: SkillExercise[] = [
         tr: "Spor sahasında oynamayı seviyoruz.",
         hint: "„spielen“ = ŞPİİ-len, „Sportplatz“ = ŞPORT-plats. Baştaki sp hep şp.",
         confusions: [
-          { heard: ["s-pielen", "Sportplatz mit s"], fix: "Kelime başındaki sp şp okunur: şpiilen, şportplats.", expected: "spielen" },
+          { heard: [], fix: "Kelime başındaki sp şp okunur: şpiilen, şportplats.", expected: "spielen" },
         ],
       },
       {
@@ -252,7 +252,7 @@ export const deA1P4: SkillExercise[] = [
         tr: "Erkek kardeşim Stuttgart'ta okuyor.",
         hint: "İki kez şt: ştu-DİİRT ve ŞTUT-gart.",
         confusions: [
-          { heard: ["studiert mit s", "Sttutgart", "Stutgart mit s"], fix: "Hem fiilde hem şehir adında baştaki st şt: ştudiirt, ştutgart.", expected: "studiert" },
+          { heard: [], fix: "Hem fiilde hem şehir adında baştaki st şt: ştudiirt, ştutgart.", expected: "studiert" },
         ],
       },
       {
@@ -260,7 +260,7 @@ export const deA1P4: SkillExercise[] = [
         tr: "Soruyu anlamıyorum.",
         hint: "Ön ek sayılmaz: „ver-stehe“ kökün başında st var, yani fer-ŞTEE-e.",
         confusions: [
-          { heard: ["verstehe mit s", "fersteehe"], fix: "Ön ekten sonra kök „stehen“ ile başlıyor, o yüzden yine şt: ferşteee.", expected: "verstehe" },
+          { heard: [], fix: "Ön ekten sonra kök „stehen“ ile başlıyor, o yüzden yine şt: fer-ŞTEE-e.", expected: "verstehe" },
         ],
       },
       {
@@ -268,7 +268,7 @@ export const deA1P4: SkillExercise[] = [
         tr: "Otobüs durakta duruyor.",
         hint: "Birleşik kelimede ikinci parça yeni bir kelime gibi: Halte-ŞTE-le.",
         confusions: [
-          { heard: ["Haltestelle mit s", "Halte-selle"], fix: "„Stelle“ birleşiğin içinde yeni kelime başlangıcı, yani şt: halte-ştele.", expected: "Haltestelle" },
+          { heard: [], fix: "„Stelle“ birleşiğin içinde yeni kelime başlangıcı, yani şt: halte-ştele.", expected: "Haltestelle" },
         ],
       },
       {
@@ -276,15 +276,15 @@ export const deA1P4: SkillExercise[] = [
         tr: "Odadaki pencere bozuk.",
         hint: "Burada st kelimenin ORTASINDA: FENS-ter, şt değil.",
         confusions: [
-          { heard: ["Fenschter"], fix: "Ortadaki st şt olmaz; normal s + t: fenster.", expected: "Fenster" },
+          { heard: [], fix: "Ortadaki st şt olmaz; normal s + t: fenster.", expected: "Fenster" },
         ],
       },
       {
         de: "Bist du schon zu Hause?",
-        tr: "Şimdiden evde misin?",
+        tr: "Evde misin artık?",
         hint: "Burada st kelimenin SONUNDA: BİST, yine şt değil.",
         confusions: [
-          { heard: ["Bischt du"], fix: "Kelime sonundaki st normal kalır: bist.", expected: "Bist" },
+          { heard: [], fix: "Kelime sonundaki st normal kalır: bist.", expected: "Bist" },
         ],
       },
     ],

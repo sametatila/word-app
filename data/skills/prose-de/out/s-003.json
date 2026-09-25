@@ -78,7 +78,7 @@
  { "tr": "Sahiplik için „whose“ kullanılır ve hemen arkasından isim gelir.", "kind": "explain", "de": "Für den Besitz nimmt man „whose“, und direkt dahinter kommt das Substantiv." },
  { "tr": "Third conditional'ın yan cümlesi: If they had told us earlier, …", "kind": "explain", "de": "Der Nebensatz des third conditional: If they had told us earlier, …" },
  { "tr": "„If I were you“ kalıbı ikinci tiptir ve ana yarıda „would“ ister.", "kind": "explain", "de": "Die Wendung „If I were you“ ist Typ zwei und verlangt in der Haupthälfte „would“." },
- { "tr": "„Pay with a card if you can.“ — emir kipiyle verilen bir tavsiye.", "kind": "explain", "de": "„Pay with a card if you can.“ — ein Rat, gegeben im Befehl." },
+ { "tr": "„Pay with a card if you can.“ — emir kipiyle verilen bir tavsiye.", "kind": "explain", "de": "„Pay with a card if you can.“ — ein Rat im Imperativ." },
  { "tr": "İlki „gelme, yasak“, ikincisi „gelmek zorunda değilsin“ demektir.", "kind": "explain", "de": "Das erste heißt „komm nicht, verboten“, das zweite „du musst nicht kommen“." },
  { "tr": "Kaynağı belirsiz aktarımda edilgen biçim gelir: it is said that …", "kind": "explain", "de": "Bei einer Wiedergabe ohne klare Quelle steht das Passiv: it is said that …" },
  { "tr": "Öbek fiil yerine tek kelimelik karşılık tercih edilir: determine.", "kind": "explain", "de": "Statt des mehrteiligen Verbs bevorzugt man das einteilige: determine." },
@@ -145,7 +145,7 @@
  { "tr": "„at the moment“ continuous ister; olumsuz „not“ be ile fiil arasına girer.", "kind": "explain", "de": "„at the moment“ verlangt continuous; verneint rutscht „not“ zwischen be und Verb." },
  { "tr": "„The price is twenty-two euros.“ İki euro, söylenen fiyattan olan farktır.", "kind": "explain", "de": "„The price is twenty-two euros.“ Zwei Euro sind der Abstand zum genannten Preis." },
  { "tr": "„var“ için „have“ kullanılmaz; doğrusu „There are two chairs in the room.“", "kind": "explain", "de": "Fürs Vorhandensein nimmt man kein „have“; richtig ist „There are two chairs in the room.“" },
- { "tr": "Doktorun son cümlesi \"And come back in two weeks.\" — yani iki hafta sonra.", "kind": "explain", "de": "Der letzte Satz der Ärztin lautet \"And come back in two weeks.\" — also in zwei Wochen." },
+ { "tr": "Doktorun son cümlesi \"And come back in two weeks.\" — yani iki hafta sonra.", "kind": "explain", "de": "Der letzte Satz des Arztes lautet \"And come back in two weeks.\" — also in zwei Wochen." },
  { "tr": "Emir kipinde özne yoktur ve fiil yalındır; „please“ cümleyi nazikleştirir.", "kind": "explain", "de": "Im Befehl gibt es kein Subjekt und das Verb steht nackt; „please“ macht den Satz höflich." },
  { "tr": "Sayılamayan bir şeyi saymak için araya bir birim girer: a bottle of water.", "kind": "explain", "de": "Um Unzählbares zu zählen, tritt eine Einheit dazwischen: a bottle of water." },
  { "tr": "„It's black, with a small red flower on it.“ Küçük olan çanta değil, çiçek.", "kind": "explain", "de": "„It's black, with a small red flower on it.“ Klein ist nicht die Tasche, sondern die Blume." }

@@ -178,7 +178,7 @@ export const deC1P5: SkillExercise[] = [
       },
       {
         kind: "dictation",
-        text: "Dersin son cümlesindeki iddiayı duyduğun gibi yaz.",
+        text: "Konuşmanın son cümlesindeki iddiayı duyduğun gibi yaz.",
         options: [],
         answer: 0,
         accept: ["Dieses Ding war es wert.", "Dieses Ding war es wert"],

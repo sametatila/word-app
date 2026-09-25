@@ -480,6 +480,11 @@
   "de": "Folge"
  },
  {
+  "tr": "vargı",
+  "kind": "gloss.tr",
+  "de": "Schlussfolgerung"
+ },
+ {
   "tr": "bağlaç",
   "kind": "gloss.tr",
   "de": "Bindewort"
@@ -557,7 +562,7 @@
  {
   "tr": "çizelge",
   "kind": "gloss.tr",
-  "de": "Tabelle"
+  "de": "Bogen"
  },
  {
   "tr": "duyulan",
@@ -598,6 +603,11 @@
   "tr": "affetmek",
   "kind": "gloss.tr",
   "de": "verzeihen"
+ },
+ {
+  "tr": "ücreti silmek",
+  "kind": "gloss.tr",
+  "de": "erlassen"
  },
  {
   "tr": "belirteç",
@@ -823,6 +833,11 @@
   "tr": "tam olarak",
   "kind": "gloss.tr",
   "de": "genau"
+ },
+ {
+  "tr": "iyice",
+  "kind": "gloss.tr",
+  "de": "richtig, gründlich"
  },
  {
   "tr": "yol alıyor",

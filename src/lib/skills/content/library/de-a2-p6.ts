@@ -250,7 +250,7 @@ export const deA2P6: SkillExercise[] = [
         hint: "„Tag“ sonda TAAK; ama çoğul „Tage“ içinde g ortada kalır ve yumuşak okunur.",
         confusions: [
           {
-            heard: ["Der Taag war lang, die Take sind kurz"],
+            heard: ["Take"],
             fix: "Sertleşme yalnız SONDA olur; ünlüden önce gelen g yumuşak kalır.",
             expected: "Tage",
           },
@@ -262,7 +262,7 @@ export const deA2P6: SkillExercise[] = [
         hint: "„Kind“ sonda KİNT; „Kindern“ içinde d ortada kaldığı için yumuşak.",
         confusions: [
           {
-            heard: ["Das Kind spielt mit den Kintern"],
+            heard: ["Kintern"],
             fix: "İkinci kelimede d ile n arasında ünlü var; ses sertleşmez.",
             expected: "Kindern",
           },
@@ -274,7 +274,7 @@ export const deA2P6: SkillExercise[] = [
         hint: "„Korb“ sonda KORP; „Körbe“ içinde b yumuşak kalır.",
         confusions: [
           {
-            heard: ["Der Korb ist voll, die Körpe sind leer"],
+            heard: ["Körpe"],
             fix: "Çoğulda b ünlüden önce geliyor; p diye söylenmez.",
             expected: "Körbe",
           },
@@ -286,7 +286,7 @@ export const deA2P6: SkillExercise[] = [
         hint: "„Zug“ = TSUUK, „ab“ = AP; ama „Züge“ yumuşak g ile.",
         confusions: [
           {
-            heard: ["Der Zug fährt ab, die Züke sind pünktlich"],
+            heard: ["Züke"],
             fix: "„ab“ sertleşir çünkü sondadır; „Züge“ sertleşmez çünkü g ortadadır.",
             expected: "Züge",
           },
@@ -298,20 +298,20 @@ export const deA2P6: SkillExercise[] = [
         hint: "„gesund“ = ge-ZUNT, „bleibt“ = BLAYPT. İki sertleşme aynı cümlede.",
         confusions: [
           {
-            heard: ["Er ist gesund und bleibd gesund"],
+            heard: ["bleibd"],
             fix: "b'den sonra t geldiğinde b de sertleşir: BLAYPT.",
             expected: "bleibt",
           },
         ],
       },
       {
-        de: "Das Lied hat mir leidgetan.",
-        tr: "O şarkı bana dokundu.",
-        hint: "„Lied“ = LİİT. Sondaki d her zaman t gibi duyulur, yazıda d kalsa bile.",
+        de: "Das Lied ist schön, die Lieder auch.",
+        tr: "Şarkı güzel, şarkılar da.",
+        hint: "„Lied“ = LİİT: sondaki d, yazıda d kalsa da t gibi duyulur. Çoğul „Lieder“ içinde ise d ortada kalır ve yumuşak okunur.",
         confusions: [
           {
-            heard: ["Das Liid hat mir leidgetan"],
-            fix: "Yazım ile ses ayrı: d yazılır, t söylenir.",
+            heard: ["Lieter"],
+            fix: "Sertleşme yalnız sonda olur: „Lied“ LİİT, ama „Lieder“ LİİDA.",
             expected: "Lied",
           },
         ],

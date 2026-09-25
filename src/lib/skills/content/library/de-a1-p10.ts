@@ -96,7 +96,7 @@ export const deA1P10: SkillExercise[] = [
       { de: "das Museum", tr: "müze", en: "museum" },
       { de: "der Eingang", tr: "giriş", en: "entrance" },
       { de: "das Bild", tr: "tablo", en: "painting" },
-      { de: "der Führer", tr: "rehber", en: "guide" },
+      { de: "der Rundgang", tr: "gezi turu", en: "tour" },
       { de: "dauern", tr: "sürmek", en: "to last" },
       { de: "verboten", tr: "yasak", en: "forbidden" },
     ],
@@ -107,7 +107,7 @@ export const deA1P10: SkillExercise[] = [
       { text: "Im ersten Raum sehen Sie Bilder aus dem Jahr achtzehnhundert. Bitte drücken Sie die Nummer eins." },
       { text: "Im zweiten Stock finden Sie alte Fotos von der Stadt. Dort ist auch ein kleines Café." },
       { text: "Fotos ohne Blitz sind erlaubt. Essen und Trinken sind in den Räumen verboten." },
-      { text: "Der Führer kostet nichts. Bitte geben Sie ihn am Ende wieder am Eingang ab. Viel Freude!" },
+      { text: "Der Audioguide kostet nichts. Bitte geben Sie ihn am Ende wieder am Eingang ab. Viel Freude!" },
     ],
     questions: [
       {
@@ -127,7 +127,7 @@ export const deA1P10: SkillExercise[] = [
         text: "Der Audioguide kostet zehn Euro.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "„Der Führer kostet nichts“ — ücretsiz, yalnız sonunda geri veriliyor.",
+        explain: "„Der Audioguide kostet nichts“ — ücretsiz, yalnız sonunda geri veriliyor.",
       },
       {
         kind: "gapfill",
@@ -208,7 +208,7 @@ export const deA1P10: SkillExercise[] = [
           "Hallo, ich heiße Melis und interessiere mich für das Zimmer. " +
           "Ich bin zweiundzwanzig Jahre alt und studiere in Leipzig Biologie. " +
           "Ich bin ruhig und ordentlich, ich koche gern und putze auch gern. " +
-          "Rauchen tue ich nicht. Ich kann ab Oktober einziehen und zahle die Miete immer pünktlich. " +
+          "Ich rauche nicht. Ich kann ab Oktober einziehen und zahle die Miete immer pünktlich. " +
           "Kann ich das Zimmer am Wochenende sehen? Viele Grüße, Melis",
       },
     ],

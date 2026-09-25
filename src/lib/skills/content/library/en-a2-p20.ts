@@ -43,15 +43,15 @@ export const enA2P20: SkillExercise[] = [
         tr: "Sana iki mesaj attım.",
         hint: "„texts“ = TEKSTS. Zorlanırsan ortadaki t'yi hafif söyle ama sona ı ekleme: teksts, tekstıs değil.",
         confusions: [
-          { heard: ["I sent you two tex"], fix: "Kümeyi bozma: k-s-t-s tek nefeste.", expected: "texts" },
+          { heard: [], fix: "Kümeyi bozma: k-s-t-s tek nefeste.", expected: "texts" },
         ],
       },
       {
         de: "We waited six months.",
         tr: "Altı ay bekledik.",
-        hint: "„months“ = MANTHS: th'den hemen sonra s. „six“ ise İKS değil SİKS, sonu ks.",
+        hint: "„months“ = MANTHS: th'den hemen sonra s. „six“ = SİKS: sonu da ks kümesi.",
         confusions: [
-          { heard: ["We waited six mons", "we waited six month"], fix: "th'yi düşürme ve çoğul s'yi ekle: manths.", expected: "months" },
+          { heard: ["We waited six mons"], fix: "th'yi düşürme ve çoğul s'yi ekle: manths.", expected: "months" },
         ],
       },
       {

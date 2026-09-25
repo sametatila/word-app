@@ -193,7 +193,7 @@ export const enB1P20: SkillExercise[] = [
     gloss: [
       { de: "internship", tr: "staj" },
       { de: "design", tr: "tasarım" },
-      { de: "unpaid", tr: "ücretsiz" },
+      { de: "unpaid", tr: "maaşsız" },
       { de: "CV", tr: "özgeçmiş" },
       { de: "autumn", tr: "sonbahar" },
     ],

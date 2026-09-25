@@ -177,7 +177,7 @@ export const deA1P9: SkillExercise[] = [
         tr: "Yarınki randevuma gelemiyorum.",
         answer: "Ich kann morgen nicht zu meinem Termin kommen.",
         alternatives: ["Morgen kann ich nicht zu meinem Termin kommen."],
-        hint: "„kann“ ikinci sırada, „kommen“ en sonda; „nicht“ fiilden önce durur.",
+        hint: "„kann“ ikinci sırada, „kommen“ en sonda; „nicht“ „zu meinem Termin“ öbeğinden önce gelir.",
       },
       {
         kind: "build",
@@ -222,7 +222,7 @@ export const deA1P9: SkillExercise[] = [
     skill: "speaking",
     title: "-ig, -lich, -isch",
     genre: "pronounce",
-    intro: "Kelime sonundaki üç ek üç ayrı biçimde okunur; altı cümlede farkı duyur.",
+    intro: "Kelime sonundaki üç ek: -ig ve -lich yumuşak ch ile, -isch ş ile biter; altı cümlede farkı duyur.",
     gloss: [
       { de: "richtig", tr: "doğru", en: "correct" },
       { de: "freundlich", tr: "güler yüzlü", en: "friendly" },

@@ -106,7 +106,7 @@ export const deB1P17: SkillExercise[] = [
     skill: "listening",
     title: "Anruf beim Malerbetrieb",
     genre: "phone",
-    intro: "Bir müşteri iki odayı boyatmak için boya firmasını arıyor: tarih, eşyalar, renk ve fiyat konuşuluyor.",
+    intro: "Bir müşteri iki odayı boyatmak için boyacı firmasını arıyor: tarih, eşyalar, renk ve fiyat konuşuluyor.",
     gloss: [
       { de: "streichen", tr: "boyamak", en: "to paint" },
       { de: "die Decke", tr: "tavan", en: "ceiling" },
@@ -280,7 +280,7 @@ export const deB1P17: SkillExercise[] = [
       maxSeconds: 80,
       sampleDe:
         "Kleine Sachen mache ich selbst, aber alles mit Strom und Wasser lasse ich machen. Eine Lampe " +
-        "aufhängen oder ein Regal an die Wand bringen, das schaffe ich in einer Stunde, und es macht mir " +
+        "aufhängen oder ein Regal an die Wand hängen, das schaffe ich in einer Stunde, und es macht mir " +
         "sogar Spaß. Letztes Jahr habe ich unser Bad neu fliesen lassen, weil ich wusste, dass ich das nicht " +
         "gerade hinbekomme. Das war teuer, aber es sieht heute noch gut aus. Einmal habe ich mich allerdings " +
         "getäuscht: Ich wollte beim Umzug Geld sparen und habe die Küche selbst aufgebaut. Nach drei " +

@@ -128,7 +128,7 @@ export const deA2P12: SkillExercise[] = [
         text: "Wie lange ist Tobias schon in Elternzeit?",
         options: ["seit vier Monaten", "seit acht Monaten", "seit einem Jahr"],
         answer: 0,
-        explain: "Soru hemen başta: „seit vier Monaten in Elternzeit“. Sekiz ay annenin izniydi.",
+        explain: "Bilgi hemen başta: „seit vier Monaten in Elternzeit“. Sekiz ay annenin izniydi.",
       },
       {
         text: "Wie hat der Chef zuerst reagiert?",
@@ -220,7 +220,7 @@ export const deA2P12: SkillExercise[] = [
           { de: "Wir haben uns alle sehr gefreut.", tr: "Hepimiz çok sevindik.", en: "We were all very happy." },
           { de: "Mit dieser Karte bekommt ihr …", tr: "Bu kartla birlikte … alıyorsunuz", en: "With this card you get …" },
           { de: "Wenn ihr etwas braucht, …", tr: "Bir şeye ihtiyacınız olursa …", en: "If you need anything, …" },
-          { de: "Genießt die Zeit zu dritt!", tr: "Üç kişilik zamanın tadını çıkarın!", en: "Enjoy the time as a family of three!" },
+          { de: "Genießt die Zeit zu dritt!", tr: "Üç kişi olarak geçirdiğiniz zamanın tadını çıkarın!", en: "Enjoy the time as a family of three!" },
         ],
         sample:
           "Liebe Jana, lieber Marco,\n\n" +
@@ -257,7 +257,7 @@ export const deA2P12: SkillExercise[] = [
         hint: "TAA-ge: sondaki e Türkçe e kadar açık değil, kısa ve gevşek bir ses. Ama düşmez.",
         confusions: [
           {
-            heard: ["Die Tag im Winter sind kurz"],
+            heard: ["Die Tag im"],
             fix: "Çoğul eki -e düşerse tekil duyulur; kısa da olsa e'yi bırak.",
             expected: "Tage",
           },
@@ -269,7 +269,7 @@ export const deA2P12: SkillExercise[] = [
         hint: "kaufe: KAU-fe, e ile biter. Arkasına n ekleme: ich ile fiil -e alır.",
         confusions: [
           {
-            heard: ["Ich kaufen heute Brot"],
+            heard: ["Ich kaufen"],
             fix: "ich'li fiil -e ile biter; sona n eklersen „wir“ biçimine dönüşür.",
             expected: "kaufe",
           },
@@ -281,7 +281,7 @@ export const deA2P12: SkillExercise[] = [
         hint: "eine, kleine, Pause: üçü de hafif bir e ile biter. machen'de e neredeyse duyulmaz, n hece taşır: MAH-n.",
         confusions: [
           {
-            heard: ["Wir machen ein klein Pause"],
+            heard: ["ein klein Pause"],
             fix: "Artikel ve sıfattaki -e yutulursa ek kaybolur; her birinin sonunda kısa bir e bırak.",
             expected: "kleine",
           },
@@ -293,7 +293,7 @@ export const deA2P12: SkillExercise[] = [
         hint: "warte ve Stunde: sondaki e kısa ama net. Önündeki t açıkça duyulur.",
         confusions: [
           {
-            heard: ["Ich wart seit einer Stund"],
+            heard: ["Ich wart seit", "Stund"],
             fix: "e düşünce kelime t'de kesiliyor; t'den sonra kısa ve gevşek bir e ekle.",
             expected: "Stunde",
           },
@@ -305,7 +305,7 @@ export const deA2P12: SkillExercise[] = [
         hint: "HUN-de, KAT-se: ikisinde de son hece zayıf, vurgu ilk hecede.",
         confusions: [
           {
-            heard: ["Sie haben zwei Hund und eine Katze"],
+            heard: ["zwei Hund und"],
             fix: "Hunde'deki -e çoğul ekidir; düşerse „zwei“ ile isim uyuşmaz.",
             expected: "Hunde",
           },
@@ -317,7 +317,7 @@ export const deA2P12: SkillExercise[] = [
         hint: "schreibe, eine, Karte: üç kısa e. Vurgu hep ilk hecede: ŞRAY-be, AY-ne, KAR-te.",
         confusions: [
           {
-            heard: ["Ich schreib dir ein Karte"],
+            heard: ["ein Karte"],
             fix: "„ein Karte“ yanlış artikel gibi duyulur; eine'nin sonundaki e'yi yutma.",
             expected: "eine",
           },

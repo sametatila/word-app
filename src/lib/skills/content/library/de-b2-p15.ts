@@ -264,7 +264,7 @@ export const deB2P15: SkillExercise[] = [
     skill: "speaking",
     title: "Sollten Städte nachts das Licht ausschalten?",
     genre: "monologue",
-    intro: "Bir dakikadan uzun tek başına konuşacaksın: kazancı ve bedeli karşılaştır, kimin etkilendiğini söyle ve bir orta yol öner.",
+    intro: "Bir buçuk dakikaya kadar tek başına konuşacaksın: kazancı ve bedeli karşılaştır, kimin etkilendiğini söyle ve bir orta yol öner.",
     gloss: [],
     minutes: 7,
     monologue: {
@@ -287,7 +287,7 @@ export const deB2P15: SkillExercise[] = [
       sampleDe:
         "Während die einen im Abschalten der Straßenlaternen vor allem eine Sparmaßnahme sehen, befürchten die " +
         "anderen, dass die Straßen nachts unsicher werden. Ich glaube, beide Seiten haben teilweise recht. " +
-        "Für ein nächtliches Dunkel spricht mehr als nur das Geld: Insekten werden nicht von jeder Lampe " +
+        "Für ein nächtliches Dunkel spricht mehr als nur das Geld: Insekten werden nicht mehr von jeder Lampe " +
         "angelockt, und viele Menschen schlafen besser, wenn es draußen wirklich dunkel ist. " +
         "Dagegen spricht jedoch, dass manche Menschen nachts unterwegs sein müssen, etwa Pflegekräfte oder " +
         "Leute aus der Spätschicht. Ein Beispiel aus meiner Familie: Meine Tante arbeitet im Krankenhaus und " +

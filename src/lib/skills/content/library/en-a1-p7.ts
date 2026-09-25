@@ -15,7 +15,7 @@ export const enA1P7: SkillExercise[] = [
     skill: "speaking",
     title: "car, four, teacher",
     genre: "pronounce",
-    intro: "Kelime sonundaki r İngiliz aksanında söylenmez, uzun bir ünlüye dönüşür; bu ders o biçimi çalışıyor.",
+    intro: "Kelime sonundaki r İngiliz aksanında söylenmez, uzun bir ünlüye dönüşür; bu alıştırma o biçimi çalışıyor.",
     gloss: [
       { de: "car", tr: "araba" },
       { de: "teacher", tr: "öğretmen" },
@@ -29,15 +29,15 @@ export const enA1P7: SkillExercise[] = [
         tr: "Arabam kapının yanında.",
         hint: "„car“ = KAA, „door“ = DOO. Sondaki r yazılır ama söylenmez; ünlü uzar.",
         confusions: [
-          { heard: ["My carrr is near the doorrr"], fix: "Dili kıvırma; ses yalnız uzar ve biter.", expected: "car" },
+          { heard: [], fix: "Dili kıvırma; ses yalnız uzar ve biter.", expected: "car" },
         ],
       },
       {
         de: "My sister is a teacher.",
         tr: "Kız kardeşim öğretmen.",
-        hint: "Sondaki -er zayıf bir ı sesidir: SİS-tı, TİİÇ-ı. Vurgu her zaman baştadır.",
+        hint: "Sondaki -er zayıf bir ı sesidir: SİS-tı, TİİÇ-ı. Vurgu ilk hecededir.",
         confusions: [
-          { heard: ["My sisterrr is a teacherrr"], fix: "-er sonu vurgusuzdur ve r taşımaz; kısa bir ı yeter.", expected: "teacher" },
+          { heard: [], fix: "-er sonu vurgusuzdur ve r taşımaz; kısa bir ı yeter.", expected: "teacher" },
         ],
       },
       {
@@ -45,7 +45,7 @@ export const enA1P7: SkillExercise[] = [
         tr: "Burada dört sandalye var.",
         hint: "„four“ = FOO, „chairs“ = ÇEEZ. İkisinde de r ünlüyü uzatıp kayboluyor.",
         confusions: [
-          { heard: ["There are fourrr chairrrs"], fix: "Türkçedeki titrek r buraya hiç girmez.", expected: "four" },
+          { heard: [], fix: "Türkçedeki titrek r buraya hiç girmez.", expected: "four" },
         ],
       },
       {
@@ -53,7 +53,7 @@ export const enA1P7: SkillExercise[] = [
         tr: "Araba şurada.",
         hint: "Ama „car is“ derken r geri gelir: KAA-rız. Sonraki kelime ünlüyle başlıyorsa r duyulur.",
         confusions: [
-          { heard: ["The caa is over there"], fix: "Bağlanma r'si: ünlüden önce r yeniden söylenir.", expected: "car is" },
+          { heard: [], fix: "Bağlanma r'si: ünlüden önce r yeniden söylenir.", expected: "car is" },
         ],
       },
       {
@@ -61,7 +61,7 @@ export const enA1P7: SkillExercise[] = [
         tr: "Onun erkek kardeşi burada çalışıyor.",
         hint: "„her“ = HÖÖ, „brother“ = BRA-dı, „works“ = WÖÖKS. Üçünde de r ünlüye dönüşür.",
         confusions: [
-          { heard: ["Herrr brotherrr worrrks here"], fix: "Üç kelimede de r yerine uzun ya da zayıf bir ünlü var.", expected: "brother" },
+          { heard: [], fix: "Üç kelimede de r yerine uzun ya da zayıf bir ünlü var.", expected: "brother" },
         ],
       },
       {
@@ -69,7 +69,7 @@ export const enA1P7: SkillExercise[] = [
         tr: "Su lütfen. Bugün daha sıcak.",
         hint: "„water“ = WOO-tı, „warmer“ = WOO-mı. Karşılaştırma eki -er de aynı zayıf sesle biter.",
         confusions: [
-          { heard: ["Waterrr, please. It's warmerrr"], fix: "Ek olsa bile -er sonu r taşımaz.", expected: "warmer" },
+          { heard: [], fix: "Ek olsa bile -er sonu r taşımaz.", expected: "warmer" },
         ],
       },
     ],

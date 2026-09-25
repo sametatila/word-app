@@ -276,7 +276,7 @@ export const deB1P11: SkillExercise[] = [
         { de: "Für mich spielt … eine große Rolle.", tr: "Benim için … büyük rol oynuyor." },
         { de: "Erst nachdem …, habe ich verstanden, dass …", tr: "Ancak …'den sonra … olduğunu anladım" },
         { de: "Was mir bis heute fehlt, ist …", tr: "Bugün hâlâ eksik olan şey …" },
-        { de: "Ich kann nur jedem empfehlen, …", tr: "Herkese yalnızca … önerebilirim" },
+        { de: "Ich kann nur jedem empfehlen, …", tr: "Herkese içtenlikle … öneririm" },
       ],
       minSeconds: 40,
       maxSeconds: 80,

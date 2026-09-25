@@ -104,7 +104,7 @@ export const deA2P8: SkillExercise[] = [
     intro: "Bir podcast bölümünde biri bir haftalık denemesini anlatıyor: neyi zor buldu, ne kazandı.",
     gloss: [
       { de: "der Versuch", tr: "deneme", en: "experiment" },
-      { de: "das Handy", tr: "cep telefonu", en: "mobile phone" },
+      { de: "das Handy", tr: "cep telefonu", en: "cell phone" },
       { de: "langweilig", tr: "sıkıcı", en: "boring" },
       { de: "verabreden", tr: "sözleşmek", en: "to arrange to meet" },
       { de: "auffallen", tr: "dikkatini çekmek", en: "to notice" },
@@ -200,9 +200,9 @@ export const deA2P8: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Frenler yeni çünkü geçen ay değiştirildi.",
-        answer: "Die Bremsen sind neu, weil sie letzten Monat gewechselt wurden.",
-        alternatives: ["Die Bremsen sind neu, weil man sie letzten Monat gewechselt hat."],
+        tr: "Frenler yeni çünkü onları geçen ay değiştirdim.",
+        answer: "Die Bremsen sind neu, weil ich sie letzten Monat gewechselt habe.",
+        alternatives: ["Weil ich sie letzten Monat gewechselt habe, sind die Bremsen neu."],
         hint: "„weil“ yan cümlesinde çekimli fiil en sona gider.",
       },
       {
@@ -226,9 +226,9 @@ export const deA2P8: SkillExercise[] = [
         sample:
           "Ich verkaufe mein Fahrrad, ein blaues Damenrad mit sieben Gängen. " +
           "Ich habe es vor drei Jahren gekauft und bin damit nur im Sommer gefahren. " +
-          "Das Rad ist in gutem Zustand, die Bremsen sind neu, weil sie letzten Monat gewechselt wurden. " +
+          "Das Rad ist in gutem Zustand, die Bremsen sind neu, weil ich sie letzten Monat gewechselt habe. " +
           "Ein kleiner Kratzer ist am Rahmen, aber das sieht man fast nicht. Licht und Schloss sind dabei. " +
-          "Der Preis ist hundertzwanzig Euro, Verhandeln ist möglich. " +
+          "Der Preis ist 120 Euro, Verhandeln ist möglich. " +
           "Abholung in Leipzig-Süd, am besten am Wochenende. Schreiben Sie mir bitte hier eine Nachricht.",
       },
     ],
@@ -242,7 +242,7 @@ export const deA2P8: SkillExercise[] = [
     skill: "speaking",
     title: "pf, z und tsch",
     genre: "pronounce",
-    intro: "Üç ses Türkçede tek parça değil, iki parçanın birleşimi; altı cümlede ikisini de duyur.",
+    intro: "pf ve z (ts) iki sesin birleşimidir, tsch ise Türkçedeki ç; altı cümlede üçünü de net duyur.",
     gloss: [
       { de: "der Apfel", tr: "elma", en: "apple" },
       { de: "die Zeit", tr: "zaman", en: "time" },
@@ -257,7 +257,7 @@ export const deA2P8: SkillExercise[] = [
         hint: "pf tek harf değil: önce dudaklar kapanır (p), hemen sonra hava sürtünür (f). AP-fel.",
         confusions: [
           {
-            heard: ["Der Afel liegt auf dem Tisch", "Der Appel liegt auf dem Tisch"],
+            heard: ["Afel", "Appel"],
             fix: "İki sesin ikisi de duyulmalı; yalnız f ya da yalnız p yanlıştır.",
             expected: "Apfel",
           },
@@ -269,7 +269,7 @@ export const deA2P8: SkillExercise[] = [
         hint: "z harfi TS verir: TSAYT, TSU-ker. Türkçedeki z ile hiç ilgisi yok.",
         confusions: [
           {
-            heard: ["Ich habe keine Zayt für Zucker"],
+            heard: ["Zayt", "Sucker"],
             fix: "Almanca z her zaman ts'dir; ötümlü z sesi tek s harfiyle yazılır.",
             expected: "Zeit",
           },
@@ -281,7 +281,7 @@ export const deA2P8: SkillExercise[] = [
         hint: "tsch tek bir ç sesidir: DOYÇ. Dört harf, tek ses.",
         confusions: [
           {
-            heard: ["Sprichst du schon gut Doyts"],
+            heard: ["Doyts", "Deuts"],
             fix: "tsch = ç; ts ile karıştırma, dil damağa daha geniş temas eder.",
             expected: "Deutsch",
           },
@@ -293,7 +293,7 @@ export const deA2P8: SkillExercise[] = [
         hint: "Sonda pf yine iki parça: KOPF. Ağız p için kapanır, f için hemen açılır.",
         confusions: [
           {
-            heard: ["Mein Kof tut weh"],
+            heard: ["Kof", "Kopp"],
             fix: "Kelime sonundaki pf de tam söylenir; p atlanırsa kelime başka duyulur.",
             expected: "Kopf",
           },
@@ -305,7 +305,7 @@ export const deA2P8: SkillExercise[] = [
         hint: "Üç kelimede de z var: TSVAY, TSÜÜ-ge, TSEEN.",
         confusions: [
           {
-            heard: ["Zvai Züge fahren um zehn"],
+            heard: ["Zvai", "Swei"],
             fix: "zw = tsv; iki ses arka arkaya gelir ve ikisi de duyulur.",
             expected: "Zwei",
           },
@@ -317,7 +317,7 @@ export const deA2P8: SkillExercise[] = [
         hint: "Başta tsch (ÇE-hin), ortada pf (PFLEEKT). İki zor ses tek cümlede.",
         confusions: [
           {
-            heard: ["Die Tsechin flegt ihren Garten"],
+            heard: ["Tsechin", "flegt"],
             fix: "tsch tek ç sesidir; pfl üçlüsünde p, f ve l sırayla duyulur.",
             expected: "pflegt",
           },

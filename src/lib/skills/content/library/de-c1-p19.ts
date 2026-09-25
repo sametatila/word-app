@@ -137,8 +137,8 @@ export const deC1P19: SkillExercise[] = [
       { speaker: "Frau Prof. Engel", text: "Die übliche Antwort lautet: lange Wörter und lange Sätze. Beides stimmt, erklärt aber weniger, als man denkt. Ein langer Satz, der in der richtigen Reihenfolge erzählt, liest sich oft leichter als ein kurzer." },
       { speaker: "Frau Prof. Engel", text: "Viel schwerer wiegt der Abstand zwischen Teilen, die zusammengehören. Kommt das Verb erst nach zwanzig Wörtern, muss man alles davor im Gedächtnis behalten, bis sich der Satz endlich auflöst." },
       { speaker: "Frau Prof. Engel", text: "Wir haben den Blickverlauf von Versuchspersonen gemessen. Bei solchen Sätzen springen die Augen am Satzende zurück an den Anfang, und zwar im Schnitt zweimal." },
-      { speaker: "Frau Prof. Engel", text: "Die zweite große Hürde ist die doppelte Verneinung. Ein Satz wie ‚Eine Nichtberücksichtigung ist nicht ausgeschlossen‘ verlangt von fast allen eine zweite Lektüre." },
-      { speaker: "Frau Prof. Engel", text: "Drittens das Unpersönliche. Sätze ohne handelnde Person, also ohne ‚Sie‘ oder ‚wir‘, werden nicht langsamer gelesen, aber deutlich schlechter behalten." },
+      { speaker: "Frau Prof. Engel", text: "Die zweite große Hürde ist die doppelte Verneinung. Ein Satz wie „Eine Nichtberücksichtigung ist nicht ausgeschlossen“ verlangt von fast allen eine zweite Lektüre." },
+      { speaker: "Frau Prof. Engel", text: "Drittens das Unpersönliche. Sätze ohne handelnde Person, also ohne „Sie“ oder „wir“, werden nicht langsamer gelesen, aber deutlich schlechter behalten." },
       { speaker: "Frau Prof. Engel", text: "Interessant ist, dass geübte Leser von diesen Hürden kaum weniger betroffen sind als ungeübte. Sie sind nur geduldiger. Die Lesezeit steigt bei allen, nur der Ärger nicht gleich stark." },
       { speaker: "Frau Prof. Engel", text: "Daraus folgt etwas Unbequemes. Verständlichkeit ist keine Rücksicht auf Schwache, sondern eine Entlastung für alle, auch für die Fachleute, die solche Texte selbst schreiben." },
       { speaker: "Frau Prof. Engel", text: "Man hat uns oft vorgeworfen, wir wollten die Sprache vereinfachen, bis nichts mehr übrig ist. Das Gegenteil ist der Fall. Wir wollen, dass das Gemeinte ankommt, und zwar vollständig." },
@@ -306,7 +306,7 @@ export const deC1P19: SkillExercise[] = [
         "Ein Beispiel macht das greifbar: Auf einem Beipackzettel stand einmal, das Medikament " +
         "sei bei eingeschränkter Nierenfunktion kontraindiziert. Meine Großmutter hat das " +
         "gelesen und das Mittel trotzdem genommen, weil sie das Wort nicht kannte. Ein Satz wie " +
-        "‚Nehmen Sie es nicht, wenn Ihre Nieren nicht richtig arbeiten‘ wäre weniger fachlich " +
+        "„Nehmen Sie es nicht, wenn Ihre Nieren nicht richtig arbeiten“ wäre weniger fachlich " +
         "gewesen, aber genauer, weil er angekommen wäre. " +
         "Aufhören würde ich dort, wo das Vereinfachen den Inhalt verändert, etwa bei Fristen " +
         "oder bei Ausnahmen. Dort muss der genaue Wortlaut bleiben, aber er kann erklärt werden. " +

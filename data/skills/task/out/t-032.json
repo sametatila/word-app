@@ -157,7 +157,7 @@
   {
     "tr": "Sınırını dürüstçe söyle",
     "kind": "free.checklist",
-    "en": "State your limit honestly"
+    "en": "State its limit honestly"
   },
   {
     "tr": "İki sonucu sayılarla ver",
@@ -500,9 +500,9 @@
     "en": "Tie in with the discussion and write your own rule"
   },
   {
-    "tr": "Üç ölçüt belirle ve ikisini karşılaştır",
+    "tr": "Üç ölçüt belirle ve iki seçeneği bunlara göre karşılaştır",
     "kind": "free.checklist",
-    "en": "Set three criteria and compare the two by them"
+    "en": "Set three criteria and compare the two options against them"
   },
   {
     "tr": "Durumu dürüstçe anlat, kusurunu da söyle",
@@ -620,7 +620,7 @@
     "en": "Say whether you recommend it and whom it suits"
   },
   {
-    "tr": "Kararı, sorumluyu ve süreyi yaz; öneriyi ayrı bölümde ver",
+    "tr": "Kararı, sorumluyu ve son tarihi yaz; öneriyi ayrı bölümde ver",
     "kind": "free.checklist",
     "en": "Write the decision, who is responsible and by when; put the proposal in a separate section"
   },
@@ -650,9 +650,9 @@
     "en": "I need a drill."
   },
   {
-    "tr": "Bu ifade söz konusu değil.",
+    "tr": "Bu ifade söz konusu bile olamaz.",
     "kind": "build.tr",
-    "en": "This statement is out of the question."
+    "en": "This wording is out of the question."
   },
   {
     "tr": "Ekim ayında taşınabilirim.",
@@ -675,9 +675,9 @@
     "en": "About two hundred people came."
   },
   {
-    "tr": "Yazar metni okumamış olmalı.",
+    "tr": "Yazar bunu bilmiş olmalı.",
     "kind": "build.tr",
-    "en": "The author can't have read the text."
+    "en": "The author must have known that."
   },
   {
     "tr": "Yarınki randevuma gelemiyorum.",

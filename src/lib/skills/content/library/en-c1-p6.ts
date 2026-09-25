@@ -160,7 +160,7 @@ export const enC1P6: SkillExercise[] = [
       { speaker: "Ms Halloran", text: "We won't be given three more, and a rule enforced eight per cent of the time is worse than none. People learn that reporting does nothing." },
       { speaker: "Mr Devlin", text: "They learn that faster if we delete the rule. At least now there's a standard, even if we apply it unevenly." },
       { speaker: "Ms Halloran", text: "An unevenly applied standard is exactly what people complain about, though. Not that we're strict — that we're inconsistent." },
-      { speaker: "Mr Devlin", text: "So narrow it. Keep the rule for named individuals and drop it for groups, which is where most of the two hundred and forty sit and where the judgements are hardest." },
+      { speaker: "Mr Devlin", text: "So narrow it. Keep the rule for named individuals and drop it for groups, which is where most of the two hundred and forty sit and where the judgments are hardest." },
       { speaker: "Ms Halloran", text: "That I could defend publicly. What I couldn't defend is quietly doing the same thing without saying so, which is roughly where we are." },
       { speaker: "Mr Devlin", text: "Agreed. If we're going to water it down, we should write down that we have, and why." },
       { speaker: "Ms Halloran", text: "And set a date to look at it again. Otherwise the narrow version becomes permanent by accident, as the last one did." },
@@ -206,7 +206,7 @@ export const enC1P6: SkillExercise[] = [
         text: "What does Ms Halloran want to set at the end?",
         options: [],
         answer: 0,
-        accept: ["a date to review it", "a review date", "a date"],
+        accept: ["a date to review it", "a review date", "a date to look at it again", "a date"],
         explain: "Yoksa dar sürüm kazara kalıcı olur.",
       },
       {
@@ -229,14 +229,14 @@ export const enC1P6: SkillExercise[] = [
     intro: "Bir platformun moderasyon ekibine yazıyorsun: önce iki cümle kur, sonra gerekçeli ve ölçülü bir mektup yaz.",
     gloss: [
       { de: "transparency", tr: "şeffaflık" },
-      { de: "appeal", tr: "itiraz" },
+      { de: "appeal", tr: "itiraz başvurusu" },
       { de: "criterion", tr: "ölçüt" },
       { de: "to publish", tr: "yayımlamak" },
       { de: "proportionate", tr: "orantılı" },
       { de: "individual", tr: "bireysel" },
-      { de: "log", tr: "oturumu kapatmak" },
-      { de: "substance", tr: "bağımlılık yapan madde" },
-      { de: "procedural", tr: "usul güvencesi" },
+      { de: "log", tr: "kaydetmek" },
+      { de: "substance", tr: "esas" },
+      { de: "procedural", tr: "usule ilişkin" },
     ],
     minutes: 16,
     tasks: [
@@ -270,7 +270,7 @@ export const enC1P6: SkillExercise[] = [
           { de: "I accept that …", tr: "Şunu kabul ediyorum: …", en: "" },
           { de: "My concern is procedural: …", tr: "Endişem usule ilişkin: …", en: "" },
           { de: "I would ask for two things.", tr: "İki şey rica ediyorum.", en: "" },
-          { de: "I recognise that resources are limited, but …", tr: "Kaynakların sınırlı olduğunu biliyorum ama …", en: "" },
+          { de: "I recognize that resources are limited, but …", tr: "Kaynakların sınırlı olduğunu biliyorum ama …", en: "" },
         ],
         sample:
           "Dear Moderation Team, I am writing about the decision of 4 March to remove my post " +
@@ -287,7 +287,7 @@ export const enC1P6: SkillExercise[] = [
           "broke the rule, as the previous version of your system did. " +
           "Second, that appeals closed within five minutes are logged separately and reviewed " +
           "monthly, so that you can see the scale of it yourselves. " +
-          "I recognise that resources are limited and that most of your work is invisible and " +
+          "I recognize that resources are limited and that most of your work is invisible and " +
           "thankless. Neither of these requests asks you to moderate more; " +
           "they ask you to show what you already decided. " +
           "Yours sincerely, H. Bergstrom",
@@ -334,7 +334,7 @@ export const enC1P6: SkillExercise[] = [
         "someone sending threats needs the second and has no claim to either. " +
         "The honest cost of my position is that it depends on institutions keeping data they " +
         "will one day be asked to hand over, and the asking will not always come from a " +
-        "government anyone here would recognise as reasonable. " +
+        "government anyone here would recognize as reasonable. " +
         "I don't have a technical answer to that, and I distrust people who say they do. " +
         "What I'd actually build is narrower than the debate usually allows: " +
         "no verification at sign-up, verification only when an account is repeatedly reported, " +

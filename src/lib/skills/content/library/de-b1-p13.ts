@@ -227,15 +227,15 @@ export const deB1P13: SkillExercise[] = [
           { de: "Du bist nicht zu alt, sondern …", tr: "Yaşlı değilsin, aksine …", en: "You are not too old, but rather …" },
         ],
         sample:
-          "Hallo Sabine, ich kann dich gut verstehen, denn ich habe mit 47 eine Umschulung zur " +
+          "Hallo Sabine,\n\nich kann dich gut verstehen, denn ich habe mit 47 eine Umschulung zur " +
           "Altenpflegerin gemacht. Bei mir war es so, dass ich zwölf Jahre im Büro gearbeitet hatte und " +
           "abends nur noch müde und leer war. Ich würde dir raten, zuerst ein Praktikum in einer Kita zu " +
           "machen, am besten zwei Wochen in deinem Urlaub. Dann weißt du, ob dir der Lärm und das Tempo " +
           "wirklich gefallen. Außerdem solltest du sowohl deine Familie als auch deine Bank früh informieren " +
-          "und eine Rücklage für ein Jahr planen. Unterschätze aber nicht, dass die Ausbildung auch den " +
+          "und eine Rücklage für ein Jahr planen. Unterschätze aber nicht, dass der Beruf auch den " +
           "Körper fordert: Man sitzt viel auf kleinen Stühlen und hebt Kinder hoch. Du bist nicht zu alt, " +
-          "sondern erfahren. Entweder du probierst es jetzt, oder du ärgerst dich mit sechzig darüber. " +
-          "Viele Grüße, Ayla",
+          "sondern erfahren. Entweder du probierst es jetzt, oder du ärgerst dich mit sechzig darüber.\n\n" +
+          "Viele Grüße\nAyla",
       },
     ],
   },

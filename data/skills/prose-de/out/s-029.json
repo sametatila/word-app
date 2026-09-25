@@ -237,7 +237,7 @@
  {
   "tr": "eksik",
   "kind": "gloss.tr",
-  "de": "fehlt"
+  "de": "fehlend"
  },
  {
   "tr": "madde",
@@ -252,7 +252,7 @@
  {
   "tr": "parça",
   "kind": "gloss.tr",
-  "de": "Teil"
+  "de": "der Titel"
  },
  {
   "tr": "rekor",
@@ -318,6 +318,11 @@
   "tr": "yardımcı",
   "kind": "gloss.tr",
   "de": "Hilfskraft"
+ },
+ {
+  "tr": "müdür yardımcısı",
+  "kind": "gloss.tr",
+  "de": "der Stellvertreter"
  },
  {
   "tr": "başvurmak",

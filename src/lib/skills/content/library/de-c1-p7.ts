@@ -119,7 +119,7 @@ export const deC1P7: SkillExercise[] = [
     skill: "listening",
     title: "Feature: Was ein Platz erlaubt",
     genre: "report",
-    intro: "Bir radyo dosyası: kentsel mobilyanın sessiz kuralları, üç ses ve bir tarih.",
+    intro: "Bir radyo dosyası: kentsel mobilyanın sessiz kuralları, üç ses ve bir örnek.",
     gloss: [
       { de: "die Bank", tr: "bank", en: "bench" },
       { de: "die Absicht", tr: "niyet", en: "intention" },
@@ -297,7 +297,7 @@ export const deC1P7: SkillExercise[] = [
       sampleDe:
         "Ich würde zwischen Gestaltung, die etwas ermöglicht, und Gestaltung, die etwas " +
         "unmöglich macht, unterscheiden. " +
-        "Das eine ist deshalb zulässig, weil es Alternativen offen lässt: Wer eine breite Stufe " +
+        "Das eine ist deshalb zulässig, weil es Alternativen offenlässt: Wer eine breite Stufe " +
         "baut, lädt zum Sitzen ein, verbietet aber nichts. " +
         "Eine Armlehne in der Mitte einer Bank dagegen entfernt eine Möglichkeit vollständig, " +
         "und zwar ausgerechnet für die Gruppe, die am wenigsten Ausweichmöglichkeiten hat. " +

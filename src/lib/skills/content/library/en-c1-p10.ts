@@ -142,7 +142,7 @@ export const enC1P10: SkillExercise[] = [
       { de: "to recur", tr: "yinelenmek" },
       { de: "audience", tr: "izleyici" },
       { de: "grudging", tr: "gönülsüz" },
-      { de: "appear", tr: "bizzat gitmek" },
+      { de: "appear", tr: "görünmek" },
       { de: "entire", tr: "tüm" },
       { de: "precise", tr: "kesin" },
       { de: "broad", tr: "geniş" },

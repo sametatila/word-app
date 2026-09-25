@@ -319,7 +319,7 @@ export const enC1P17: SkillExercise[] = [
         "The people best placed to judge this are the adults who watch the same children every day, not the " +
         "people who read about one accident. " +
         "So I would give playworkers and teachers clear permission to allow visible risk, and expect them to " +
-        "explain their judgement, rather than asking them to prevent every fall.",
+        "explain their judgment, rather than asking them to prevent every fall.",
       rubricHint:
         "İki tür riskin ayrımı, karşı gerekçenin kabulü ve sorumluluğun kime verileceği beklenir; „when it comes to“, „object to + -ing“ gibi yapılar kullanılabilir.",
     },

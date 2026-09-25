@@ -118,7 +118,7 @@ export const deB2P16: SkillExercise[] = [
     intro: "Radyoda tüketici hattı: bir hukukçu, geri ödenmeyen bir borç ve iade edilmeyen bir depozito için dinleyicilere yol gösteriyor.",
     gloss: [
       { de: "leihen", tr: "ödünç vermek", en: "to lend" },
-      { de: "das Darlehen", tr: "kredi", en: "loan" },
+      { de: "das Darlehen", tr: "borç", en: "loan" },
       { de: "beweisen", tr: "kanıtlamak", en: "to prove" },
       { de: "überweisen", tr: "havale etmek", en: "to transfer" },
       { de: "die Kaution", tr: "depozito", en: "deposit" },
@@ -270,7 +270,7 @@ export const deB2P16: SkillExercise[] = [
     skill: "speaking",
     title: "Freunden Geld leihen?",
     genre: "monologue",
-    intro: "Bir dakikadan uzun tek başına konuşacaksın: kendi kuralını söyle, hangi koşulla ve hangi istisnayla borç verdiğini gerekçelendir.",
+    intro: "Bir buçuk dakikaya kadar tek başına konuşacaksın: kendi kuralını söyle, hangi koşulla ve hangi istisnayla borç verdiğini gerekçelendir.",
     gloss: [],
     minutes: 7,
     monologue: {

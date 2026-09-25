@@ -238,14 +238,14 @@ export const deB1P20: SkillExercise[] = [
           { de: "Du schaffst das bestimmt!", tr: "Kesin başaracaksın!", en: "You'll definitely manage it!" },
         ],
         sample:
-          "Hallo Jonas, das kenne ich nur zu gut! Vor zwei Jahren war ich genau in deiner Situation und habe " +
+          "Hallo Jonas,\n\ndas kenne ich nur zu gut! Vor zwei Jahren war ich genau in deiner Situation und habe " +
           "die Theorie drei Wochen lang aufgeschoben. Bei mir hat es am Ende funktioniert, indem ich jeden Tag " +
           "nach dem Abendessen zwanzig Fragen in der App gemacht habe, nicht mehr und nicht weniger. " +
           "Ich habe mich konzentriert, indem ich das Handy in ein anderes Zimmer gelegt habe; die App war " +
           "auf dem Tablet. Lern jeden Tag ein bisschen, statt am Wochenende alles zu lernen, so bleibt viel " +
           "mehr hängen. Versuch außerdem mal, die schweren Fragen laut zu erklären, ohne auf die Lösung zu " +
           "schauen. Nur eine Warnung: Mach die Probeprüfungen nicht zu früh, sonst verlierst du die Lust. " +
-          "Fünf Wochen sind genug. Du schaffst das bestimmt! Liebe Grüße, Selma",
+          "Fünf Wochen sind genug. Du schaffst das bestimmt!\n\nLiebe Grüße\nSelma",
       },
     ],
   },

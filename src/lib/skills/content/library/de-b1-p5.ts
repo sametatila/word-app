@@ -101,7 +101,7 @@ export const deB1P5: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     title: "Der letzte Meter vor dem Schultor",
-    genre: "opinion",
+    genre: "meeting",
     intro: "Veli toplantısında okul önündeki trafik konuşuluyor: sorun ne, kim itiraz ediyor, hangi karar çıkıyor.",
     gloss: [
       { de: "das Schultor", tr: "okul kapısı", en: "school gate" },
@@ -162,7 +162,7 @@ export const deB1P5: SkillExercise[] = [
       },
       {
         kind: "dictation",
-        text: "Frau Alt sorunun özünü söylüyor: son cümlesini duyduğun gibi yaz.",
+        text: "Frau Alt'ın sorunun özünü söylediği cümleyi duyduğun gibi yaz: herkes nerede durmak istiyor?",
         options: [],
         answer: 0,
         accept: ["Alle wollen direkt vor dem Tor halten.", "Alle wollen direkt vor dem Tor halten"],
@@ -219,7 +219,7 @@ export const deB1P5: SkillExercise[] = [
         checklist: [
           "Bitkiler ve posta için ne yapılacağını yaz",
           "Çöp gününü ve nedenini söyle",
-          "Evdeki bir tuhaflığı uyar",
+          "Evdeki bir tuhaflık konusunda uyar",
           "Acil durum kişisini ve sana ulaşma yolunu yaz",
         ],
         minWords: 60,

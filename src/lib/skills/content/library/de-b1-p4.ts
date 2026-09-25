@@ -235,14 +235,14 @@ export const deB1P4: SkillExercise[] = [
           { de: "Für eine kurze Rückmeldung wäre ich dankbar.", tr: "Kısa bir dönüş için minnettar olurum.", en: "I'd be grateful for a brief reply." },
         ],
         sample:
-          "Sehr geehrte Frau Reinhardt, mein Name ist Kerem Aksoy, ich bin seit vier Jahren Mitglied im Turnverein " +
+          "Sehr geehrte Frau Reinhardt,\n\nmein Name ist Kerem Aksoy, ich bin seit vier Jahren Mitglied im Turnverein " +
           "Ostheim und trainiere zweimal pro Woche in der Volleyballgruppe. Seit dem ersten Juli arbeite ich nur " +
-          "noch halbtags; mein Vertrag wurde befristet auf zwanzig Stunden geändert. Der volle Jahresbeitrag von " +
+          "noch halbtags; mein Vertrag wurde befristet auf zwanzig Stunden pro Woche reduziert. Der volle Jahresbeitrag von " +
           "zweihundertvierzig Euro ist für mich im Moment schwer zu tragen. Deshalb möchte ich fragen, ob mir für " +
           "zwölf Monate der ermäßigte Beitrag gewährt werden kann. Eine Bescheinigung meines Arbeitgebers wird " +
           "als Anhang mitgeschickt; weitere Unterlagen reiche ich gern nach. Ich würde den Verein sehr ungern " +
-          "verlassen und hoffe deshalb auf eine Lösung. Für eine kurze Rückmeldung wäre ich Ihnen dankbar. " +
-          "Mit freundlichen Grüßen, Kerem Aksoy",
+          "verlassen und hoffe deshalb auf eine Lösung. Für eine kurze Rückmeldung wäre ich Ihnen dankbar.\n\n" +
+          "Mit freundlichen Grüßen\nKerem Aksoy",
       },
     ],
   },
@@ -279,7 +279,7 @@ export const deB1P4: SkillExercise[] = [
         "Ich glaube, man muss seine Nachbarn nicht mögen, aber man sollte sie kennen. Der praktische Grund ist " +
         "einfach: Wenn im Winter das Wasser abgestellt wird oder ein Paket ankommt, wird alles viel leichter, " +
         "wenn man drei Namen und eine Nummer hat. Der zweite Grund ist mir wichtiger. In dem Haus, in dem ich " +
-        "vorher gewohnt habe, kannte niemand niemanden. Als eine ältere Frau zwei Wochen nicht mehr aus der " +
+        "vorher gewohnt habe, kannte keiner den anderen. Als eine ältere Frau zwei Wochen nicht mehr aus der " +
         "Wohnung kam, ist es keinem aufgefallen. Ich verstehe trotzdem, dass viele einfach ihre Ruhe wollen; " +
         "Nachbarschaft darf keine Pflicht sein. Deshalb würde ich sagen: Man muss nicht zusammen Kaffee trinken. " +
         "Es reicht, wenn man sich grüßt und weiß, wer hinter welcher Tür wohnt.",

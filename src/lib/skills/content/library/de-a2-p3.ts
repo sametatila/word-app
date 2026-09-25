@@ -149,7 +149,7 @@ export const deA2P3: SkillExercise[] = [
         text: "Was stört Frau Özdemir?",
         options: [],
         answer: 0,
-        accept: ["der Lärm der Lieferwagen", "der Lärm", "die Lieferwagen", "der Lärm am Morgen"],
+        accept: ["der Lärm der Lieferwagen", "der Lärm", "Lärm", "die Lieferwagen", "Lieferwagen", "der Lärm am Morgen"],
         explain: "„Die Lieferwagen kommen morgens sehr früh und machen viel Lärm.“",
       },
       {
@@ -227,7 +227,7 @@ export const deA2P3: SkillExercise[] = [
         ],
         sample:
           "Hallo, ich kenne das Gefühl sehr gut. Vor einem Jahr bin ich in diese Stadt gezogen und am Anfang " +
-          "habe ich nur gearbeitet und ferngesehen. Zwei Dinge haben bei mir geholfen. " +
+          "habe ich nur gearbeitet und ferngesehen. Eine App für neue Freunde hat bei mir nicht funktioniert, dort haben nur wenige Leute geantwortet. Aber zwei Dinge haben bei mir geholfen. " +
           "Erstens gehe ich jeden Dienstag zum Volleyball. Man muss nicht gut spielen, aber man sieht regelmäßig " +
           "dieselben Gesichter. Zweitens habe ich im Haus an drei Türen geklingelt und mich vorgestellt. " +
           "Das war mir peinlich, aber heute trinke ich mit zwei Nachbarn oft Kaffee. " +
@@ -266,7 +266,7 @@ export const deA2P3: SkillExercise[] = [
         tr: "Saat onda eve gidiyorum.",
         hint: "„gehe“ ve „zehn“ içindeki h duyulmaz, ünlüyü uzatır. „Hause“ başındaki h ise söylenir.",
         confusions: [
-          { heard: ["Ich ge-he", "zeh-hen", "nach Ause"], fix: "Ünlüden sonraki h sessizdir: gee-e, tseen. Yalnız „Hause“ başında nefes var.", expected: "zehn" },
+          { heard: ["nach Ause"], fix: "Ünlüden sonraki h sessizdir: gee-e, tseen. Yalnız „Hause“ başında nefes var.", expected: "zehn" },
         ],
       },
       {
@@ -282,7 +282,7 @@ export const deA2P3: SkillExercise[] = [
         tr: "Tatilde nereye gidiyorsun?",
         hint: "„wohin“ iki hecelidir ve h ikinci hecenin başında: vo-HİN, üflenir.",
         confusions: [
-          { heard: ["Woin fährst du", "Wo-in"], fix: "Burada h ünlüden sonra değil, yeni hecenin başında; o yüzden duyulur: vohin.", expected: "Wohin" },
+          { heard: ["Woin fährst du"], fix: "Burada h ünlüden sonra değil, yeni hecenin başında; o yüzden duyulur: vohin.", expected: "Wohin" },
         ],
       },
       {
@@ -290,7 +290,7 @@ export const deA2P3: SkillExercise[] = [
         tr: "Oğlunuz çok kibar.",
         hint: "„Ihr“, „Sohn“ ve „sehr“ içindeki h sessiz; yalnız „höflich“ başındaki h söylenir.",
         confusions: [
-          { heard: ["Ihrr Sohnn", "sehr höflich mit h", "Zohn"], fix: "Üç kelimede h yalnız uzatıyor: iia, zoon, zea. Dördüncüde nefes var: HÖÖF-lih.", expected: "höflich" },
+          { heard: ["sehr öflich", "Zohn"], fix: "Üç kelimede h yalnız uzatıyor: iia, zoon, zea. Dördüncüde nefes var: HÖÖF-lih.", expected: "höflich" },
         ],
       },
       {
@@ -298,15 +298,15 @@ export const deA2P3: SkillExercise[] = [
         tr: "Lütfen oturun.",
         hint: "„nehmen“ içindeki h duyulmaz: NEE-men, uzun e ile.",
         confusions: [
-          { heard: ["Neh-men", "Nechmen"], fix: "Ortadaki h ne nefes ne de ch sesi; yalnız e'yi uzatır: neemen.", expected: "Nehmen" },
+          { heard: ["Nechmen"], fix: "Ortadaki h ne nefes ne de ch sesi; yalnız e'yi uzatır: neemen.", expected: "Nehmen" },
         ],
       },
       {
         de: "Herr Huber hat halb acht gesagt.",
-        tr: "Bay Huber sekiz buçuk dedi.",
+        tr: "Bay Huber yedi buçuk dedi.",
         hint: "Dört kez kelime başında h — bu cümle bir nefes egzersizi gibi.",
         confusions: [
-          { heard: ["Err Uber at alb acht", "Herr Huber hatt"], fix: "Dört h'nin dördü de üflenir; hiçbiri sessiz değil çünkü hepsi kelime başında.", expected: "halb" },
+          { heard: ["Err Uber at alb acht"], fix: "Dört h'nin dördü de üflenir; hiçbiri sessiz değil çünkü hepsi kelime başında.", expected: "halb" },
         ],
       },
     ],

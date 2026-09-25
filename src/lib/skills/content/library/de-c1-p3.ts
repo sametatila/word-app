@@ -293,7 +293,7 @@ export const deC1P3: SkillExercise[] = [
       targets: [
         { de: "Regeln lassen sich dort einsetzen, wo …", tr: "Kurallar … olan yerde işe yarar" },
         { de: "Das ist anders zu behandeln.", tr: "Bunun başka türlü ele alınması gerekir." },
-        { de: "… ist nicht verordenbar.", tr: "… buyrulamaz." },
+        { de: "… ist nicht erzwingbar.", tr: "… zorla sağlanamaz." },
         { de: "Mein Kriterium wäre …", tr: "Benim ölçütüm … olurdu" },
       ],
       minSeconds: 60,
@@ -305,8 +305,8 @@ export const deC1P3: SkillExercise[] = [
         "nicht. Das heißt nicht, dass der zweite Bereich regellos bleiben müsste. Er ist nur anders zu " +
         "behandeln. Prüfbare Dinge werden durch Vorschriften gesichert, nicht prüfbare durch Verfahren: durch " +
         "Zuständigkeiten, durch Fristen, durch die Frage, wer wen um was bitten kann. Ein Beispiel: Höflichkeit " +
-        "ist nicht verordenbar. Regelbar ist aber, dass jede Beschwerde innerhalb von zehn Tagen von einer " +
-        "namentlich benannten Person beantwortet werden muss. Der Ton lässt sich damit nicht erzwingen, das " +
+        "ist nicht erzwingbar. Regelbar ist aber, dass jede Beschwerde innerhalb von zehn Tagen von einer " +
+        "namentlich benannten Person beantwortet werden muss. Der Ton lässt sich damit nicht vorschreiben, das " +
         "Verschwinden aber verhindern. Mein Kriterium wäre deshalb nicht, wie wichtig ein Ziel ist, sondern ob " +
         "sich sein Erreichen von außen feststellen lässt. Wo das nicht geht, sollte man nicht das Ziel " +
         "vorschreiben, sondern den Weg dorthin absichern.",

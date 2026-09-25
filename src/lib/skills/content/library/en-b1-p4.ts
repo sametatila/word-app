@@ -112,7 +112,7 @@ export const enB1P4: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     title: "A Paid Coach?",
-    genre: "opinion",
+    genre: "meeting",
     intro: "Bir spor kulübünün toplantısını dinleyeceksin: öneri ne, itiraz ne, hangi karar alınıyor.",
     gloss: [
       { de: "coach", tr: "antrenör" },
@@ -146,7 +146,7 @@ export const enB1P4: SkillExercise[] = [
       },
       {
         text: "What did Ruben say he was against?",
-        options: ["the way the plan was presented", "the coach herself", "the price of the roof"],
+        options: ["the way the plan was presented", "having a coach at all", "the price of the roof"],
         answer: 0,
         explain: "„I said I was against the way it was presented, not against a coach.“",
       },
@@ -162,7 +162,12 @@ export const enB1P4: SkillExercise[] = [
         text: "What will Tuana write?",
         options: [],
         answer: 0,
-        accept: ["two lines about reduced fees", "about reduced fees", "two lines on lower fees"],
+        accept: [
+          "two lines about reduced fees",
+          "about reduced fees",
+          "reduced fees",
+          "two lines on lower fees",
+        ],
         explain: "„Tuana writes two lines about reduced fees.“",
       },
       {

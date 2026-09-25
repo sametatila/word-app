@@ -151,7 +151,7 @@ export const deA2P15: SkillExercise[] = [
         text: "Wo gibt es heute Getränke?",
         options: [],
         answer: 0,
-        accept: ["am Ausgang", "am Automaten", "an einem Automaten am Ausgang"],
+        accept: ["am Ausgang", "am Automaten", "an einem Automaten am Ausgang", "an einem Automaten", "am Automaten am Ausgang"],
         explain: "Kafe kapalı; „Am Ausgang gibt es aber einen Automaten mit Getränken.“",
       },
       {
