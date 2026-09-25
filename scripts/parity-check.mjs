@@ -4378,8 +4378,14 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "mobile/src/screens/WalkModeScreen.tsx", "mobile/src/screens/ExamScreen.tsx",
     "mobile/src/game/skillQuiz.tsx", "mobile/src/game/skillLibrary.tsx", "mobile/src/screens/RoleplayExamScreen.tsx",
     "mobile/src/screens/MockExamScreen.tsx",
+    /* 2026-09-25: Patika Konuşma kilidi (`conversation`) Konuşma adımında ve
+       puanlı kısımda ölçülüyor; ders ekranı listeye girdi (webde oynatıcı). */
+    "mobile/src/screens/LessonScreen.tsx",
   ];
-  const WEB = ["src/lib/assess-client.ts", "src/components/walk-player.tsx", "src/components/mock-exam-player.tsx"];
+  const WEB = [
+    "src/lib/assess-client.ts", "src/components/walk-player.tsx", "src/components/mock-exam-player.tsx",
+    "src/components/lessons/lesson-player.tsx", "src/components/lessons/roleplay-exam.tsx",
+  ];
   const mob = kilitTurleri(MOB);
   const web = kilitTurleri(WEB);
   sameList("premium kilidi olcumu", mob, web);
