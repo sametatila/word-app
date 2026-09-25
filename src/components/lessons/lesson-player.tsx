@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { apiFetch, ROLEPLAY_TIMEOUT_MS } from "@/lib/api-fetch";
 import { isAiConsentDeclined } from "@/lib/ai-consent-client";
 import { offlineReply, offlineStart, offlineSummary, type Hint, type OfflineState } from "@/lib/lessons/offline-roleplay";
@@ -27,6 +28,9 @@ import { judgeSpeech } from "@/lib/speech";
 import { type Expectation, type Lesson, type Segment } from "@/lib/lessons/types";
 import { useT, useLang } from "@/lib/i18n/client";
 import { ReportDialog } from "@/components/report-dialog";
+import { UnlockProgress } from "@/components/unlock-progress";
+import type { SurfaceView } from "@/lib/premium/unlock-copy";
+import { DAILY_QUOTAS } from "@/lib/quotas";
 import { RoundExit } from "@/components/round-exit";
 import { LESSON_TRY_CEILING } from "@/lib/lessons/roleplay-const";
 import { formatPercent, translate, type NativeLang } from "@/lib/i18n/dict";
@@ -196,15 +200,66 @@ const PRAISE_KEYS = [
 
 
 
+/**
+ * Konuşma adımı — anlatım + yapay zekâ sohbeti + özet.
+ *
+ * PATİKA KONUŞMA HAKKI (2026-09-25, `docs/premium/README.md` §2). Ücretsizde
+ * seviye başına 2 + "bitir ve 7 günlük seri yap" dilimleri; hak ilk yapay zekâ
+ * turunda düşüyor ve adım sahipleniliyor. Hakkı bitmiş ve bu adımı
+ * sahiplenmemiş kullanıcı adıma GİRMEDEN kilit kartını görüyor: anlatımı
+ * dinleyip sohbetin ortasında kilide çarpmak emek kaybı olurdu. Sunucu
+ * sohbetin içinde de 403 premium_required ile kapatırsa aynı kart açılıyor —
+ * "bağlantı sorunu" demek yanlış yere baktırırdı.
+ *
+ * Misafir ve yapay zekâ iznini reddetmiş kullanıcı için kilit YOK: onlar
+ * senaryolu sohbete düşüyor (maliyetsiz, izin zorlanamaz). `quota` o
+ * kullanıcılarda null geliyor (`lib/premium/unlock-view`).
+ */
 export function LessonPlayer({
+  quota = null,
+  ...props
+}: {
+  lesson: Lesson;
+  character: { name: string; note: string };
+  extras?: LessonExtras;
+  quota?: { locked: boolean; view: SurfaceView } | null;
+}) {
+  const t = useT();
+  const [locked, setLocked] = useState(Boolean(quota?.locked));
+  /* Kilide takılan an huninin halkası (`premium_gate`, tür = "conversation");
+     girişteki kilit de sohbet içindeki 403 de aynı olay. */
+  useEffect(() => {
+    if (locked) track("premium_gate", 0, "conversation");
+  }, [locked]);
+  if (locked) {
+    return (
+      <div className="mx-auto w-full max-w-2xl space-y-3">
+        <div className="flex items-center gap-3">
+          <LessonExit />
+        </div>
+        <UnlockProgress copy={quota?.view.copy ?? null} title={{ key: "unlock.locked_conv" }} />
+        {/* Hak yoksa da çıkış yolu var: Patika'ya dönüp açık adımları bitirmek. */}
+        <Link href="/immersion" prefetch={false} className="btn btn-ghost w-full px-4 py-2.5 text-body">
+          {t("nav.path")}
+        </Link>
+      </div>
+    );
+  }
+  return <LessonPlayerBody {...props} onLocked={() => setLocked(true)} />;
+}
+
+function LessonPlayerBody({
   lesson,
   character,
   extras = { cando: [], next: null },
+  onLocked,
 }: {
   lesson: Lesson;
   /** Rol yapma muhatabının adı — sunucuda türetiliyor (lib/lessons/characters). */
   character: { name: string; note: string };
   extras?: LessonExtras;
+  /** Sunucu Konuşma hakkı yok dedi (403 premium_required). */
+  onLocked: () => void;
 }) {
   const t = useT();
   const lang = useLang();
@@ -954,6 +1009,19 @@ export function LessonPlayer({
              kırk beş saniye bekliyor, aynı sabit adıyla. */
           timeoutMs: ROLEPLAY_TIMEOUT_MS,
         });
+        if (res.status === 403 && (await res.clone().json().catch(() => null))?.error === "premium_required") {
+          /* Konuşma hakkı yok (2026-09-25): kilit kartı — nasıl açılır ve
+             Premium'la hemen aç. Bağlantı hatası DEĞİL. */
+          onLocked();
+          return;
+        }
+        if (res.status === 429) {
+          /* Günlük sohbet mesajı tavanı (kötüye kullanım önlemi). Sebebi doğru
+             söyle: "bağlantı yok" demek kullanıcıyı ağına baktırırdı. */
+          setTurns(next);
+          setError(t("lessonp.chat_quota", { n: DAILY_QUOTAS.roleplayTurns }));
+          return;
+        }
         if (res.status === 503) {
           // Sağlayıcı konuşmanın ortasında düştü: aynı cümleyi senaryoya ver.
           // Senaryo baştan başlar (önceki turlar modelindi); hedef kalıplar

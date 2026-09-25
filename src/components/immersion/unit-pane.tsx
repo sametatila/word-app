@@ -16,6 +16,8 @@ import {
 } from "@/components/icons";
 import { useT } from "@/lib/i18n/client";
 import { useCourse } from "@/components/app-shell";
+import { UnlockProgress } from "@/components/unlock-progress";
+import type { PathQuota } from "@/lib/premium/unlock-copy";
 
 /**
  * Ünitenin GÖVDESİ — adımların tam listesi.
@@ -104,14 +106,25 @@ function counted(items: HubItem[]): HubItem[] {
   return items.filter((i) => i.playable);
 }
 
+/** Konuşma adımının ders kimliği — `hrefFor` `/lessons/<id>` kuruyor. */
+const lessonRef = (it: HubItem): string | null =>
+  it.kind === "lesson" && it.href?.startsWith("/lessons/") ? it.href.slice("/lessons/".length) : null;
+
 export function UnitPane({
   unit,
   level,
   embedded = false,
+  quota = null,
 }: {
   unit: HubUnit;
   level: string;
   embedded?: boolean;
+  /**
+   * Patika Konuşma/Yazma hakkı (2026-09-25). Premium ve misafirde null — orada
+   * kilit ve sayaç yok. Hakkı bitmiş Konuşma adımı KİLİT rozetiyle çiziliyor
+   * ama bağlantı kalıyor: ders sayfası kilidin NASIL açılacağını anlatıyor.
+   */
+  quota?: PathQuota | null;
 }) {
   // İçeriği olmayan (oynanamaz) slotlar listede hiç görünmez: "Yakında" rozeti
   // yerine ünite yalnız gerçekten yapılabilecek adımları gösteriyor.
@@ -128,6 +141,15 @@ export function UnitPane({
   */
   const open = items.filter((i) => i.open);
   const currentId = (open.find((i) => !i.attempted) ?? open.find((i) => !i.done))?.id;
+
+  /* Hakkı bitmiş ve sahiplenilmemiş Konuşma adımı kilitli (sunucu da aynı
+     kuralla 403 veriyor — `/api/roleplay`). */
+  const convLocked = (it: HubItem) => {
+    const ref = lessonRef(it);
+    return Boolean(quota?.convLockable && ref && !quota.ownedLessons.includes(ref));
+  };
+  const hasLesson = items.some((i) => i.kind === "lesson");
+  const hasWrite = items.some((i) => i.kind === "write");
 
   const list = counted(items);
   const doneCount = list.filter((i) => i.done).length;
@@ -170,7 +192,15 @@ export function UnitPane({
                 <span className="muted block text-micro">{t(KIND_KEY[it.kind] ?? "") || it.kind}</span>
                 <span className="block truncate text-strong">{it.title}</span>
               </span>
-              {it.done ? (
+              {convLocked(it) ? (
+                <span
+                  className="flex shrink-0 items-center gap-1 rounded-full px-2.5 py-1 text-micro"
+                  style={{ background: "var(--surface-2)" }}
+                  aria-label={t("unlock.locked_conv")}
+                >
+                  <LockIcon size={14} /> {t("mockpack.locked")}
+                </span>
+              ) : it.done ? (
                 <span
                   className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full"
                   /* %14: yumuşak tintin üstünde YAZI/İKON varken uygulamanın
@@ -220,6 +250,28 @@ export function UnitPane({
           );
         })}
       </div>
+
+      {/* KALAN HAK VE NASIL AÇILIR — ünitenin altında, adımların hemen
+          ardından. Hak varken kısa (başlık + ne zaman), bitmişken tam kart
+          (✓ koşullar, seri çubuğu, Premium'la hemen aç). */}
+      {quota?.conv && hasLesson ? (
+        <div className="mt-4">
+          <UnlockProgress
+            copy={quota.conv.copy}
+            compact={quota.conv.remaining > 0}
+            celebrate={{ key: `conv:${level}`, open: quota.conv.open, gain: quota.conv.copy?.when?.gain }}
+          />
+        </div>
+      ) : null}
+      {quota?.write && hasWrite ? (
+        <div className="mt-3">
+          <UnlockProgress
+            copy={quota.write.copy}
+            compact={quota.write.remaining > 0}
+            celebrate={{ key: `write:${level}`, open: quota.write.open, gain: quota.write.copy?.when?.gain }}
+          />
+        </div>
+      ) : null}
     </div>
   );
 }

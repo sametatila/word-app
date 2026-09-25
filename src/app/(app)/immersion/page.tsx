@@ -1,3 +1,4 @@
+import { pathQuota } from "@/lib/premium/unlock-view";
 import { getUserInfo } from "@/lib/auth/server";
 import { getT } from "@/lib/i18n/server";
 import { ensureProfile } from "@/lib/session";
@@ -105,6 +106,7 @@ export default async function ImmersionPage() {
       doneUnits={doneUnits}
       totalUnits={state.units.length}
       moduleExams={moduleExams}
+      quota={await pathQuota(user, level).catch(() => null)}
     />
   );
 }

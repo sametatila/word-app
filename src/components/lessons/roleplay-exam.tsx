@@ -1,5 +1,8 @@
 "use client";
 
+import Link from "next/link";
+import { UnlockProgress } from "@/components/unlock-progress";
+import type { SurfaceView } from "@/lib/premium/unlock-copy";
 import { apiFetch, ROLEPLAY_TIMEOUT_MS } from "@/lib/api-fetch";
 import { isAiConsentDeclined } from "@/lib/ai-consent-client";
 import { AiNotice } from "@/components/ai-notice";
@@ -40,8 +43,25 @@ type Phase = "intro" | "talk" | "scoring" | "result" | "error";
  * Tanıyıcı yoksa ya da izin verilmezse yazarak; sınavda ikisi eşdeğer
  * sayılır (telaffuz puanı WP-20 ile gelecek).
  */
-export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[] }) {
+export function RoleplayExam({
+  lesson,
+  cando,
+  quota = null,
+}: {
+  lesson: Lesson;
+  cando: string[];
+  /**
+   * Konuşma adımının hakkı (2026-09-25). Puanlı kısım adımın KENDİ hakkını
+   * kullanıyor, ayrı hak düşmüyor; adım sahiplenilmemiş ve hak bitmişse sınav
+   * da kilitli — anlatılır, "bağlantı sorunu" denmez.
+   */
+  quota?: { locked: boolean; view: SurfaceView } | null;
+}) {
   const t = useT();
+  const [locked, setLocked] = useState(Boolean(quota?.locked));
+  useEffect(() => {
+    if (locked) track("premium_gate", 0, "conversation");
+  }, [locked]);
   const lang = useLang();
   const targetName = courseName(lesson.course, lang);
   const [phase, setPhase] = useState<Phase>("intro");
@@ -124,6 +144,11 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
       /* İzin diyaloğunda "hayır" dendiyse ya da daha önce denmişse cümle
          sağlayıcıya gitmedi. Akış öteki arızalarla aynı (iki turdan sonra
          eldeki puanlanır, önce ise sınav kurulamaz); değişen yalnız cümle. */
+      if (res.status === 403 && (await res.clone().json().catch(() => null))?.error === "premium_required") {
+        setBusy(false);
+        setLocked(true);
+        return;
+      }
       if (await isAiConsentDeclined(res)) setConsentOff(true);
       if (!res.ok || !res.body) throw new Error(`roleplay ${res.status}`);
       const reader = res.body.getReader();
@@ -246,6 +271,17 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
 
   const mm = Math.floor(Math.max(0, left) / 60);
   const ss = String(Math.max(0, left) % 60).padStart(2, "0");
+
+  if (locked) {
+    return (
+      <FlowColumn>
+        <UnlockProgress copy={quota?.view.copy ?? null} title={{ key: "unlock.locked_conv" }} />
+        <Link href="/immersion" prefetch={false} className="btn btn-ghost w-full px-4 py-2.5 text-body">
+          {t("nav.path")}
+        </Link>
+      </FlowColumn>
+    );
+  }
 
   if (phase === "intro") {
     return (

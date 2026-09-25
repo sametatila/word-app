@@ -6,6 +6,7 @@ import { AppHeader } from "@/components/app-header";
 import { useT, useLang } from "@/lib/i18n/client";
 import { localeOf } from "@/lib/i18n/dict";
 import { UnitPane, KindIconFor } from "@/components/immersion/unit-pane";
+import type { PathQuota } from "@/lib/premium/unlock-copy";
 import { CheckIcon, LockIcon } from "@/components/icons";
 import { useCourse } from "@/components/app-shell";
 import type { CefrLevel } from "@/lib/skills/types";
@@ -70,6 +71,8 @@ export type HubUnit = {
 
 export type ImmersionHubProps = {
   level: CefrLevel;
+  /** Patika Konuşma/Yazma hakkı — sağ paneldeki ünite gövdesine iniyor. */
+  quota?: PathQuota | null;
   units: HubUnit[];
   currentIndex: number;
   doneUnits: number;
@@ -117,7 +120,7 @@ function useTwoPane(): boolean {
   return wide;
 }
 
-export function ImmersionHub({ level, units, currentIndex, doneUnits, totalUnits, moduleExams = [] }: ImmersionHubProps) {
+export function ImmersionHub({ level, units, currentIndex, doneUnits, totalUnits, moduleExams = [], quota = null }: ImmersionHubProps) {
   const t = useT();
   const twoPane = useTwoPane();
   const [selected, setSelected] = useState<number | null>(null);
@@ -208,7 +211,7 @@ export function ImmersionHub({ level, units, currentIndex, doneUnits, totalUnits
           {/* Sağ panel kendi yüzeyini taşıyor: sol taraf kartlardan oluşuyor,
               ayrım olmasa iki sütun tek bir liste gibi okunurdu. */}
           <div className="card p-4">
-            {shown ? <UnitPane key={shown.index} unit={shown} level={level} embedded /> : null}
+            {shown ? <UnitPane key={shown.index} unit={shown} level={level} embedded quota={quota} /> : null}
           </div>
         </div>
       ) : (

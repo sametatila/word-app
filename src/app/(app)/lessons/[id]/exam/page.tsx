@@ -1,5 +1,6 @@
 import { notFound, redirect } from "next/navigation";
-import { getUserId } from "@/lib/auth/server";
+import { getUserInfo } from "@/lib/auth/server";
+import { lessonQuota } from "@/lib/premium/unlock-view";
 import { findLesson } from "@/lib/lessons";
 import { lessonDisabled } from "@/lib/content/read";
 import { candoForLesson } from "@/lib/cando-map";
@@ -16,8 +17,9 @@ export const dynamic = "force-dynamic";
 export const generateMetadata = titleMeta("rpexam.title");
 
 export default async function LessonExamPage({ params }: { params: Promise<{ id: string }> }) {
-  const userId = await getUserId();
-  if (!userId) redirect("/login");
+  const who = await getUserInfo();
+  if (!who) redirect("/login");
+  const userId = who.id;
   const { id } = await params;
   const source = await findLesson(id);
   /* Ders kapatıldıysa sınavı da kapalı: aynı içeriğin türevi. */
@@ -38,5 +40,6 @@ export default async function LessonExamPage({ params }: { params: Promise<{ id:
   } catch (err) {
     console.error("[rpexam]", err);
   }
-  return <RoleplayExam lesson={lesson} cando={cando} />;
+  const quota = await lessonQuota(who, source).catch(() => null);
+  return <RoleplayExam lesson={lesson} cando={cando} quota={quota} />;
 }

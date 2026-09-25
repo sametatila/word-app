@@ -1,5 +1,6 @@
 import { notFound, redirect } from "next/navigation";
-import { getUserId } from "@/lib/auth/server";
+import { getUserInfo } from "@/lib/auth/server";
+import { lessonQuota } from "@/lib/premium/unlock-view";
 import { findLesson, lessonIndexInLevel } from "@/lib/lessons";
 import { characterFor } from "@/lib/lessons/characters";
 import { LessonPlayer, type LessonExtras } from "@/components/lessons/lesson-player";
@@ -17,8 +18,9 @@ export const dynamic = "force-dynamic";
 export const generateMetadata = titleMeta("unitkind.lesson");
 
 export default async function LessonPage({ params }: { params: Promise<{ id: string }> }) {
-  const userId = await getUserId();
-  if (!userId) redirect("/login");
+  const who = await getUserInfo();
+  if (!who) redirect("/login");
+  const userId = who.id;
   const { id } = await params;
   const source = await findLesson(id);
   if (!source) notFound();
@@ -52,5 +54,9 @@ export default async function LessonPage({ params }: { params: Promise<{ id: str
   } catch (err) {
     console.error("[lesson] sıradaki ders okunamadı", err);
   }
-  return <LessonPlayer lesson={lesson} character={character} extras={extras} />;
+  /* Konuşma hakkı: kilitliyse oynatıcı adıma girmeden kilidi ve nasıl
+     açılacağını gösteriyor. Okunamazsa kilit çizilmiyor — kapıyı yine
+     `/api/roleplay` tutuyor. */
+  const quota = await lessonQuota(who, source).catch(() => null);
+  return <LessonPlayer lesson={lesson} character={character} extras={extras} quota={quota} />;
 }

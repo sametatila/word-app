@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { pathQuota } from "@/lib/premium/unlock-view";
 import { getT, getLang } from "@/lib/i18n/server";
 import { getUserInfo } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
@@ -56,7 +57,7 @@ export default async function UnitPage({ params }: { params: Promise<{ index: st
   return (
     <div className="mx-auto w-full max-w-3xl">
       <PageBack fallback="/immersion" title={unit.theme} subtitle={t("unit.header", { level, unit: t("common.unit"), n: unit.index })} />
-      <UnitPane unit={unit} level={level} embedded />
+      <UnitPane unit={unit} level={level} embedded quota={await pathQuota(user, level).catch(() => null)} />
     </div>
   );
 }
