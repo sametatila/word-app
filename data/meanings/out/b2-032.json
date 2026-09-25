@@ -377,10 +377,10 @@
   },
   {
     "id": 5242,
-    "tr": "sorgulamak",
+    "tr": "ifade almak",
     "en": "to question",
     "beispiel": "Die Polizei vernahm den Zeugen mehr als drei Stunden lang.",
-    "beispielTr": "Polis tanığı üç saatten uzun süre sorguladı.",
+    "beispielTr": "Polis tanığın ifadesini üç saatten uzun süre aldı.",
     "beispielEn": "The police questioned the witness for more than three hours."
   },
   {

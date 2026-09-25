@@ -29,5 +29,7 @@
  { "conversation": "de-c1-praezision", "de": "effizient", "en": "efficient" },
  { "conversation": "de-c1-kulturschock-fein", "de": "gewöhnungsbedürftig", "en": "an acquired taste" },
  { "conversation": "de-a1-hallo", "de": "tschüss!", "en": "bye" },
- { "conversation": "de-b1-in-pension", "de": "Achtung!", "en": "watch out" }
+ { "conversation": "de-b1-in-pension", "de": "Achtung!", "en": "watch out" },
+ { "conversation": "de-b2-beschwerde-formell", "de": "der Ansprechpartner", "en": "contact person" },
+ { "conversation": "de-b2-aufgrund-infolge", "de": "gegebenenfalls", "en": "if applicable" }
 ]
