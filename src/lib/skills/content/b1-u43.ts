@@ -17,7 +17,7 @@ import type { SkillExercise } from "../types";
  *                    ULAÇTIR, öznesi yoktur; Almanca zu'lu mastar ister
  *                    ve özneyi yalnız ana cümlede söyler.
  *
- * Yeni 32 kelime: die Religion, der Gott, der Friede, die Mauer,
+ * Yeni 32 kelime: die Religion, der Gott, der Frieden, die Mauer,
  * das Unglück, die Katastrophe, tödlich, geheim, streiken, fördern,
  * eintreten, unterscheiden, die Aktivität, der Beitrag, traditionell,
  * vergeblich, die Oper, das Orchester, das Ballett, die Flöte,
@@ -242,7 +242,7 @@ export const b1U43: SkillExercise[] = [
     gloss: [
       { de: "die Katastrophe", tr: "felaket", en: "disaster" },
       { de: "das Unglück", tr: "kaza / talihsizlik", en: "misfortune" },
-      { de: "der Friede", tr: "barış", en: "peace" },
+      { de: "der Frieden", tr: "barış", en: "peace" },
       { de: "traditionell", tr: "geleneksel", en: "traditional" },
       { de: "sehen", tr: "görmek", en: "to see" },
       { de: "sammeln", tr: "toplamak", en: "to collect" },
@@ -256,7 +256,7 @@ export const b1U43: SkillExercise[] = [
       { text: "Verstehe. Dann sage ich es den Nachbarn weiter." },
       { text: "Sehr gut. Und sag dazu, wofür genau das Geld ist." },
       { text: "Mache ich. Sonst geben die Leute nichts, ohne zu fragen." },
-      { text: "Genau. Traditionell hilft hier jeder — aber jeder will wissen, wem. Erst danach kommt der Friede zurück." },
+      { text: "Genau. Traditionell hilft hier jeder — aber jeder will wissen, wem. Erst danach kommt der Frieden zurück." },
     ],
     questions: [
       {

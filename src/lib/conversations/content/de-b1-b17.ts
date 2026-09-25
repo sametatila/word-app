@@ -468,7 +468,7 @@ export const deB1B17: Conversation[] = [
     vocab: [
       { de: "die Religion", tr: "din" },
       { de: "der Gott", tr: "tanrı" },
-      { de: "der Friede", tr: "barış" },
+      { de: "der Frieden", tr: "barış" },
       { de: "die Mauer", tr: "duvar" },
       { de: "das Unglück", tr: "talihsizlik" },
       { de: "die Katastrophe", tr: "felaket" },
@@ -484,7 +484,7 @@ export const deB1B17: Conversation[] = [
       { say: [tr("Çekince bağlacından sonra fiil sona gider. Bir de kısa bir edat öbeği öğreneceğiz, aynı işi tek sözcükle yapıyor. Önce kelimeler.")] },
       word("İlk", { de: "die Religion", tr: "din" }),
       word("İkinci", { de: "der Gott", tr: "tanrı" }),
-      word("Üçüncü", { de: "der Friede", tr: "barış" }),
+      word("Üçüncü", { de: "der Frieden", tr: "barış" }),
       word("Dördüncü", { de: "die Mauer", tr: "duvar" }, "insan yapımı, taş duvar"),
       word("Beşinci", { de: "das Unglück", tr: "talihsizlik" }),
       word("Altıncı", { de: "die Katastrophe", tr: "felaket" }),
