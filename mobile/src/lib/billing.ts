@@ -169,8 +169,11 @@ export async function purchase(pkg: PurchasesPackage): Promise<PurchaseOutcome> 
 /**
  * Play'deki grup teklifi (`promo-2m`, etiket sunucudan: `offerTag`).
  *
- * Teklif "geliştiricinin belirlediği uygunluk" ile açık: Play onu herkese
- * göstermiyor, paket listesinde varsayılan seçenek değil. Etiketi taşıyan
+ * Teklif "geliştiricinin belirlediği uygunluk" ile açık, ama Play bu tür
+ * teklifleri de her kullanıcıya döndürüyor ve RevenueCat varsayılan seçenekte
+ * en uzun ücretsiz denemeyi seçiyor. Normal satın almanın 2 aylık denemeye
+ * kaymaması için teklif Play'de ayrıca `rc-ignore-offer` etiketini taşıyor
+ * (2026-09-25, denetim S1): SDK onu varsayılana hiç almıyor. Etiketi taşıyan
  * seçenek paketin `subscriptionOptions` listesinden bulunuyor. Yoksa null:
  * ürün bu cihazda teklifi taşımıyor (Play henüz yaymadı, yanlış paket) —
  * çağıran "teklif şu an görünmüyor" diyor, normal fiyattan satın almaya

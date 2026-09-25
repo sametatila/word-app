@@ -21,9 +21,11 @@ import { normalizeCode, randomCode } from "./promo";
  *
  * PLATFORMA GÖRE İKİ YOL — VE İKİSİ BİLEREK FARKLI YERDE:
  *   Android  UYGULAMA İÇİNDE. Play'de her temel planın `promo-2m` teklifi
- *            (geliştiricinin belirlediği uygunluk, etiket `promo2m`). Uygulama
- *            kodu `claimStoreTrial` ile talep edip o seçeneği satın alıyor;
- *            teklif herkese açık değil, kapısı bu kod.
+ *            (geliştiricinin belirlediği uygunluk, etiketler `promo2m` +
+ *            `rc-ignore-offer`). Uygulama kodu `claimStoreTrial` ile talep edip
+ *            o seçeneği satın alıyor. Play teklifi herkese döndürüyor; normal
+ *            satın almada seçilmemesini `rc-ignore-offer` sağlıyor (denetim S1),
+ *            uygulamadaki kapı bu kod.
  *   iOS      YALNIZ WEBDE. App Store Guideline 3.1.1 uygulamanın KENDİ
  *            mekanizmasıyla (lisans anahtarı, promo kodu) içerik açmasını
  *            yasaklıyor; meşru yol Apple'ın kendi teklif kodu. Bu yüzden iOS
