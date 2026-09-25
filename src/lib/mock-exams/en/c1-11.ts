@@ -326,7 +326,7 @@ Reviews of long-running schemes conclude that most of the damage attributed to t
               no: 21,
               text: "Measuring something well is more difficult than people assume.\nThere is more ______ than people assume.",
               cue: "MEASURING",
-              accept: ["to measuring something well"],
+              accept: ["to measuring something well", "to measuring well"],
               explain:
                 "`There is more to X than …` kalıbı bir şeyin göründüğünden karmaşık olduğunu bildirir ve `to` edatı ad-eylem ister.",
             },
@@ -806,7 +806,7 @@ The eight-minute figure was eventually replaced in 2017, and the replacement was
               no: 4,
               ref: "a2",
               text: "What does the second speaker say about the obstacle?",
-              options: ["It has nothing to do with technique", "It is the age of the database", "It is the cost of new software"],
+              options: ["It is not a technical one", "It is the age of the database", "It is the cost of new software"],
               answer: 0,
               explain:
                 "Araştırmacı teknik engeli reddediyor: «Nothing technical has ever stood in the way», veri 2006'dan beri duruyor.",
@@ -1145,7 +1145,7 @@ The main recommendation is to publish the {{14}} instead of the single proportio
             { key: "g", label: "to recommend abolishing published figures altogether" },
             { key: "h", label: "to complain about the workload created by reporting" },
             { key: "i", label: "to point out that the problem is an old one" },
-            { key: "j", label: "to defend a decision the speaker now regrets" },
+            { key: "j", label: "to defend a decision the speaker has been criticised for" },
           ],
           texts: [
             {
@@ -1316,7 +1316,7 @@ The main recommendation is to publish the {{14}} instead of the single proportio
               text: "Speaker 8",
               answer: "j",
               explain:
-                "Sekizinci konuşmacı kararını savunuyor ama pişmanlığını da taşıyor: «I would write them again, and I say that knowing how it sounds».",
+                "Sekizinci konuşmacı bütün eleştirilere rağmen kararını savunuyor: «I would write them again, and I say that knowing how it sounds».",
             },
           ],
         },
@@ -1346,13 +1346,13 @@ The main recommendation is to publish the {{14}} instead of the single proportio
               { de: "Choose one option and argue for it.", tr: "Bir seçeneği seçip savun." },
               { de: "Explain why each of the other two is weaker.", tr: "Öteki ikisinin neden daha zayıf olduğunu açıkla." },
               { de: "Concede at least one point to an option you reject.", tr: "Reddettiğin bir seçeneğe en az bir noktada hak ver." },
-              { de: "Reach a conclusion that follows from the argument.", tr: "Gövdeden çıkan bir sonuca var." },
+              { de: "Reach a conclusion that follows from the argument.", tr: "Savından doğal olarak çıkan bir sonuca var." },
             ],
             sample: `The distortion described in the lecture is a property of thresholds rather than of people, and this points fairly directly to the remedy that is likely to work.
 
 Publishing fuller data is the strongest of the three options precisely because it attacks the mechanism instead of the motive. Effort concentrates at a threshold because a threshold is what is reported; replace the proportion with the whole distribution and there is no edge at which concentrating effort produces a visible gain. The change is technically trivial, which is itself instructive: the obstacle has always been that a distribution cannot be quoted in a speech, and that is a fact about political language rather than about statistics.
 
-Changing the target regularly is weaker for a reason that its advocates rarely address. A target that moves is a target nobody can be held to, and the instability would be exploited more readily than the stability it replaces. It would also destroy comparison over time, which is the single most useful property any published series has.
+Changing the target regularly is weaker for a reason its advocates rarely address. A target that moves is a target nobody can be held to, and the instability would be exploited more readily than the stability it replaces. It would also destroy comparison over time, the most useful property any published series has.
 
 Leaving judgement to professionals deserves more respect than it usually receives, and I will concede its central point: the people at the front understand the trade-offs better than any indicator can. What that argument omits is the arrangement it would restore. Discretion exercised regionally and compared with nothing concealed inequalities considerably larger than those the targets produced, and it concealed them from precisely the people who suffered from them.
 
@@ -1425,7 +1425,7 @@ The change should be judged after twelve months against a stated failure conditi
             { who: "partner", de: "Thank you. Did knowing the measure change how you worked?", tr: "Teşekkürler. Ölçütü bilmek çalışma biçimini değiştirdi mi?" },
             { who: "you", hint: "Değişimi tarif et; kaçınmaya çalışmadan.", expect: "kendi davranışındaki değişimi tarif etmek", seconds: 45 },
             { who: "partner", de: "And what would have been lost if nothing had been measured at all?", tr: "Hiçbir şey ölçülmeseydi ne kaybedilirdi?" },
-            { who: "you", hint: "Karşı olguyu kur ve gerekçelendir.", expect: "karşı olgusal bir durumu kurmak ve gerekçelendirmek", seconds: 45 },
+            { who: "you", hint: "Karşı olgusal durumu kur ve gerekçelendir.", expect: "karşı olgusal bir durumu kurmak ve gerekçelendirmek", seconds: 45 },
           ],
           items: [],
           rubric: {

@@ -36,7 +36,7 @@ export const A2_08: MockPaper = {
       instruction:
         "Dieser Teil hat vier Aufgaben. Sie lesen kurze Nachrichten, zwei längere Texte und Anzeigen. Wählen Sie jeweils die richtige Lösung.",
       instructionTr:
-        "Bu bölümde dört görev var. Kısa iletiler, iki uzun metin ve ilanlar okuyacaksın. Her seferinde doğru cevabı işaretle.",
+        "Bu bölümde dört görev var. Kısa iletiler, iki uzun metin ve ilanlar okuyacaksın. Her madde için doğru cevabı seç.",
       tasks: [
         {
           id: "de-a2-08-l1",
@@ -577,7 +577,7 @@ Ganz ohne Auto bleiben wir wohl nicht für immer. Ein eigenes brauchen wir aber 
               options: ["Mit der Bankkarte.", "Mit Bargeld.", "Sie zahlt später."],
               answer: 1,
               explain:
-                "Kart çalışmıyor ve görevli tek yol bırakıyor: \"Bar geht immer\". Onluk banknot bozuk parayla karşılanıyor.",
+                "Kart çalışmıyor ve görevli tek yol bırakıyor: \"Bar geht immer\". Onluk banknot sorun değil, görevlinin para üstü var.",
             },
             {
               kind: "mcq",
@@ -864,7 +864,7 @@ Ganz ohne Auto bleiben wir wohl nicht für immer. Ein eigenes brauchen wir aber 
               id: "i1",
               genre: "Radiointerview",
               genreTr: "Radyo söyleşisi",
-              situation: "Arabaya kapatılan şehir merkezi bir yılı doldurdu.",
+              situation: "Araç trafiğine kapatılan şehir merkezinde bir yıl doldu.",
               plays: 2,
               segments: [
                 { speaker: "Moderatorin", text: "Herr Grasser, seit einem Jahr ist die Innenstadt für Autos gesperrt. Waren die Händler dafür?" },
@@ -924,7 +924,7 @@ Ganz ohne Auto bleiben wir wohl nicht für immer. Ein eigenes brauchen wir aber 
               text: "Herr Grasser sagt, dass alle Läden geblieben sind.",
               answer: false,
               explain:
-                "Kendi kendine itiraz ediyor: \"Zwei Läden sind trotzdem weggezogen, das gehört zur Wahrheit\".",
+                "Olumsuz yanı kendisi ekliyor: \"Zwei Läden sind trotzdem weggezogen, das gehört zur Wahrheit\".",
             },
             {
               kind: "bool",
@@ -1113,7 +1113,7 @@ Ana Prohaska`,
               { de: "einen Wunsch begründen", tr: "Bir isteği gerekçelendirmek" },
             ],
             sample:
-              "Zur Arbeit fahre ich mit der Straßenbahn, das dauert eine halbe Stunde. Zum Einkaufen gehe ich zu Fuß, der Markt ist gleich um die Ecke. Am Wochenende leihe ich manchmal ein Auto. Ein Problem ist der Abend: Nach zweiundzwanzig Uhr fährt fast nichts mehr. Deshalb möchte ich, dass die Bahn länger fährt. Dann müsste ich nicht immer früher nach Hause gehen.",
+              "Zur Arbeit fahre ich mit der Straßenbahn, das dauert eine halbe Stunde. Zum Einkaufen gehe ich zu Fuß, der Markt ist gleich um die Ecke. Am Wochenende leihe ich mir manchmal ein Auto. Ein Problem ist der Abend: Nach zweiundzwanzig Uhr fährt fast nichts mehr. Deshalb möchte ich, dass die Bahn länger fährt. Dann müsste ich nicht immer früher nach Hause gehen.",
             criteria: [
               "Farklı yollar somut anlatıldı mı (nereye, hangi araçla, ne kadar sürüyor)?",
               "Adlandırılan sorun gerçekten kendi deneyiminden mi geliyor?",

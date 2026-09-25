@@ -971,7 +971,7 @@ Nicht zurückgeben können Sie Waren, die nach Ihren Angaben angefertigt wurden,
                 },
                 {
                   speaker: "Herr Lindqvist",
-                  text: "Drittens der Preis als Information. Wenn zwei Produkte gleich aussehen und eines kostet deutlich mehr, halten viele das teurere für besser — auch dann, wenn es dieselbe Fabrik verlassen hat.",
+                  text: "Drittens der Preis als Information. Wenn zwei Produkte gleich aussehen und eines deutlich mehr kostet, halten viele das teurere für besser — auch dann, wenn es dieselbe Fabrik verlassen hat.",
                 },
                 {
                   speaker: "Herr Lindqvist",
@@ -1220,7 +1220,7 @@ Nicht zurückgeben können Sie Waren, die nach Ihren Angaben angefertigt wurden,
               ref: "d1",
               text: "Unter welcher Bedingung könnte Herr Faber zustimmen?",
               options: [
-                "Wenn die Zuschläge deutlich verdoppelt werden.",
+                "Wenn die Zuschläge verdoppelt werden.",
                 "Wenn nur kleine Läden öffnen dürfen.",
                 "Wenn beides verbindlich geregelt ist.",
               ],
@@ -1316,7 +1316,7 @@ Ines`,
 
 Dafür spricht durchaus etwas: Wer Vollzeit arbeitet und pendelt, hat unter der Woche kaum eine Chance, in Ruhe einzukaufen. Meine Schwester schafft es nur samstags, und dann ist überall Schlange.
 
-Dagegen spricht, dass die Rechnung nicht aufgeht. Der Umsatz steigt nach allem, was ich gelesen habe, kaum — es verteilt sich nur anders. Bezahlt wird das mit den Wochenenden der Beschäftigten.
+Dagegen spricht, dass die Rechnung nicht aufgeht. Der Umsatz steigt nach allem, was ich gelesen habe, kaum — er verteilt sich nur anders. Bezahlt wird das mit den Wochenenden der Beschäftigten.
 
 Mein Fazit: Lieber längere Öffnungszeiten am Abend als ein weiterer Arbeitstag am Sonntag.`,
             criteria: [
@@ -1386,8 +1386,8 @@ Ferit Alkan`,
           exchange: [
             {
               who: "partner",
-              de: "Wir planen zusammen den Tauschmarkt. Wann soll er stattfinden? Am Wochenende haben viele Familie.",
-              tr: "Takas pazarını birlikte planlıyoruz. Ne zaman olsun? Hafta sonu çoğunun ailesi var.",
+              de: "Wir planen zusammen den Tauschmarkt. Wann soll er stattfinden? Am Wochenende sind viele mit der Familie beschäftigt.",
+              tr: "Takas pazarını birlikte planlıyoruz. Ne zaman olsun? Hafta sonu çoğu ailesiyle vakit geçiriyor.",
             },
             { who: "you", hint: "Bir tarih öner ve bu itirazı da hesaba kat.", expect: "somut bir tarih önermek ve bir itirazı dikkate almak", seconds: 40 },
             {
@@ -1490,7 +1490,7 @@ Ferit Alkan`,
             {
               who: "partner",
               de: "Du, kannst du mir bis Freitag zwanzig Euro leihen? Ich habe mein Konto überzogen.",
-              tr: "Cumaya kadar bana yirmi euro borç verebilir misin? Hesabımı aştım.",
+              tr: "Cumaya kadar bana yirmi euro borç verebilir misin? Hesabım eksiye düştü.",
             },
             {
               who: "you",

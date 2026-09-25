@@ -32,9 +32,9 @@ export const C1_11: MockPaper = {
       skill: "reading",
       minutes: 70,
       instruction:
-        "Dieser Teil hat drei Aufgaben: eine Zusammenfassung ergänzen, einen Essay auswerten und einen Text strukturell schließen.",
+        "Dieser Teil hat drei Aufgaben: eine Zusammenfassung ergänzen, einen Essay auswerten und strukturelle Lücken in einem Text schließen.",
       instructionTr:
-        "Bu bölümde üç görev var: bir özeti tamamlamak, bir deneme metnini çözümlemek ve bir metni yapısal olarak kapatmak.",
+        "Bu bölümde üç görev var: bir özeti tamamlamak, bir deneme metnini çözümlemek ve bir metindeki yapısal boşlukları doldurmak.",
       tasks: [
         {
           id: "de-c1-11-l1",
@@ -834,7 +834,7 @@ Meldung eines Wegerechts bis {{10}}.`,
               ],
               answer: 2,
               explain:
-                "Kendisi için sorun olmadığını söylüyor: dört yüz Euro ona az geliyor ama \"jemanden mit dreihundert Metern und schmaler Rente\" için değil.",
+                "Kendisi için sorun olmadığını söylüyor: metre başına kırk sent ona önemsiz geliyor ama \"jemanden mit dreihundert Metern und schmaler Rente\" için değil.",
             },
             {
               kind: "mcq",
@@ -976,7 +976,7 @@ Meldung eines Wegerechts bis {{10}}.`,
           prompt:
             "In einer Regionalzeitung stand: \"Wem etwas gehört, der soll allein darüber bestimmen — alles andere ist kalte Enteignung.\" Schreiben Sie eine Stellungnahme (circa 200 Wörter). Ordnen Sie die These ein, prüfen Sie sie an einem Beispiel, nennen Sie einen Einwand gegen Ihre eigene Position und ziehen Sie eine Schlussfolgerung.",
           promptTr:
-            "Bir yerel gazetede şöyle yazdı: \"Bir şey kimin ise onun hakkında yalnız o karar versin — gerisi soğuk kamulaştırmadır.\" Bir görüş yazısı yaz (yaklaşık 200 kelime). Savı yerine oturt, bir örnekle sına, kendi konumuna yönelik bir itirazı da söyle ve bir sonuca bağla.",
+            "Bir yerel gazetede şöyle yazdı: \"Bir şey kimin ise onun hakkında yalnız o karar versin — gerisi örtülü kamulaştırmadır.\" Bir görüş yazısı yaz (yaklaşık 200 kelime). Savı yerine oturt, bir örnekle sına, kendi konumuna yönelik bir itirazı da söyle ve bir sonuca bağla.",
           items: [],
           rubric: {
             minWords: 200,
@@ -986,7 +986,7 @@ Meldung eines Wegerechts bis {{10}}.`,
               { de: "Einen Einwand gegen die eigene Position nennen.", tr: "Kendi konumuna itiraz getir." },
               { de: "Eine begründete Schlussfolgerung ziehen.", tr: "Gerekçeli bir sonuca bağla." },
             ],
-            sample: `Die These setzt voraus, was sie beweisen müsste: dass Eigentum eine ungeteilte Vollmacht sei. Rechtlich ist es das seit Jahrhunderten nicht. Ein Grundstück mit Wegerecht, ein Wald mit Betretungsrecht, ein Brunnen mit Nutzungsrecht — in allen drei Fällen gibt es einen Eigentümer, und in allen drei Fällen darf er weniger, als der zitierte Satz unterstellt. Wer diese Beschränkungen Enteignung nennt, benennt keinen Eingriff, sondern die Rechtslage.
+            sample: `Die These setzt voraus, was sie beweisen müsste: dass Eigentum eine ungeteilte Verfügungsgewalt sei. Rechtlich ist es das seit Jahrhunderten nicht. Ein Grundstück mit Wegerecht, ein Wald mit Betretungsrecht, ein Brunnen mit Nutzungsrecht — in allen drei Fällen gibt es einen Eigentümer, und in allen drei Fällen darf er weniger, als der zitierte Satz unterstellt. Wer diese Beschränkungen Enteignung nennt, benennt keinen Eingriff, sondern die Rechtslage.
 
 Prüfen lässt sich das an den Feldwegen. Ein Weg, der zwanzig Höfe verbindet, wäre in öffentlicher Hand teuer zu unterhalten und in reinem Privateigentum jederzeit sperrbar. Die geltende Zwischenform verteilt Last und Zugriff so, dass beide Seiten etwas verlieren. Sie ist unelegant und hat gerade deshalb Jahrhunderte überdauert.
 
@@ -1237,8 +1237,8 @@ Marlene {{10}}`,
             minutes: 7,
             points: [
               { de: "eine Position begründen", tr: "Bir konumu gerekçelendirmek" },
-              { de: "auf Einwände eingehen", tr: "İtirazlara girmek" },
-              { de: "einen Kompromiss formulieren", tr: "Bir uzlaşı biçimlendirmek" },
+              { de: "auf Einwände eingehen", tr: "İtirazları ele almak" },
+              { de: "einen Kompromiss formulieren", tr: "Bir uzlaşı önerisi dile getirmek" },
               { de: "Ergebnis und offene Punkte zusammenfassen", tr: "Sonucu ve açık noktaları özetlemek" },
             ],
             sample:

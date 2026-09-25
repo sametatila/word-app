@@ -180,9 +180,9 @@ export const EN_B1_01: MockPaper = {
               id: "en-b1-01-l2-6",
               no: 6,
               text: "Nadia studies during the day and needs to earn money, but she has no car and no bicycle.",
-              answer: "d",
+              answer: "a",
               explain:
-                "Nadia'nın iki ölçütü çakışıyor: gündüz ders var ama ulaşımı yok. Mutfak yardımcılığı yalnız öğle saatlerinde ve ulaşım koşulu taşımıyor. Depo işi hafta sonu ve iyi para veriyor ama «you need your own transport: there is no bus before eight» ölçütünde düşüyor.",
+                "Nadia'nın iki ölçütü var: gündüz ders görüyor ve ulaşım aracı yok. Otel işi akşam ve gece, yani derslerle çakışmıyor; eve dönüş de sorun değil: «We pay for a taxi home after two in the morning». Mutfak yardımcılığı hafta içi öğle saatlerinde, derslerle çakışıyor. Depo işi ise «you need your own transport: there is no bus before eight» ölçütünde düşüyor.",
             },
             {
               kind: "match",

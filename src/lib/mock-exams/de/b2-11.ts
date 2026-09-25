@@ -558,13 +558,13 @@ Mein Vorschlag ist unbescheiden nur in einem Punkt: Wir sollten vorher aufschrei
               text: "Die eigene Entscheidung hatte mit dem Geld nichts zu tun.",
               answer: "c",
               explain:
-                "(c) primi almış olmasına rağmen: \"Das Geld war ein netter Zufall, kein Argument.\"",
+                "(c) primi almış olmasına rağmen şunu söylüyor: \"Das Geld war ein netter Zufall, kein Argument.\"",
             },
             {
               kind: "match",
               id: "de-b2-11-l4-25",
               no: 25,
-              text: "Der Streit über die Gerechtigkeit hat mehr gekostet als das Programm gebracht hat.",
+              text: "Der Streit über die Gerechtigkeit hat mehr gekostet, als das Programm gebracht hat.",
               answer: "d",
               explain:
                 "(d) programı kendisi başlatmış ve tekrarlamayacağını söylüyor: \"Der Streit hat länger gedauert als der Effekt.\"",
@@ -1411,7 +1411,7 @@ Der Antrag ist vor Beginn der Arbeiten zu stellen. Bereits begonnene Maßnahmen 
           prompt:
             "In einer Zeitung stand: \"Wer sein Dorf verlässt, hat kein Recht, sich später über seinen Zustand zu beschweren.\" Schreiben Sie einen Leserbrief (circa 150 Wörter). Setzen Sie sich mit dieser Aussage auseinander, nennen Sie Argumente und ziehen Sie eine begründete Schlussfolgerung.",
           promptTr:
-            "Bir gazetede şöyle yazdı: \"Köyünü terk edenin, sonradan onun durumundan şikâyet etmeye hakkı yoktur.\" Bir okur mektubu yaz (yaklaşık 150 kelime). Bu iddiayı tartış, gerekçeler sun ve gerekçeli bir sonuca bağla.",
+            "Bir gazetede şöyle yazıyordu: \"Köyünü terk edenin, sonradan onun durumundan şikâyet etmeye hakkı yoktur.\" Bir okur mektubu yaz (yaklaşık 150 kelime). Bu iddiayı tartış, gerekçeler sun ve gerekçeli bir sonuca bağla.",
           items: [],
           rubric: {
             minWords: 150,
@@ -1520,10 +1520,10 @@ Rolf Zeplin`,
               { de: "Abschluss", tr: "Kapanış" },
             ],
             sample:
-              "Ich möchte heute darüber sprechen, wovon es abhängt, ob Menschen an einem Ort bleiben. Zuerst schildere ich die Lage in meinem Herkunftsland, dann nenne ich Argumente für beide Seiten und komme am Ende zu meiner Position. In Rumänien ist mein Heimatdorf in zwanzig Jahren von tausendzweihundert auf vierhundert Einwohner geschrumpft. Geblieben sind fast nur Menschen über sechzig. Die eine Seite sagt, das sei eine Frage der Bindung: Wer sich zugehörig fühlt, bleibt. Dafür spricht, dass viele nach dem Tod der Eltern zurückkommen, obwohl sich sonst nichts geändert hat. Die andere Seite sagt, es gehe um Infrastruktur. Dafür spricht, dass in meinem Dorf nach der Schließung der Schule vier Familien innerhalb eines Jahres weggezogen sind. Meine Position ist, dass die zweite Seite den ersten Schritt erklärt und die erste den zweiten. Menschen kommen wegen eines Ereignisses und bleiben wegen der Bedingungen. Zusammenfassend: Wer Bindung fördern will, sollte nicht über Heimat reden, sondern über Öffnungszeiten.",
+              "Ich möchte heute darüber sprechen, wovon es abhängt, ob Menschen an einem Ort bleiben. Zuerst schildere ich die Lage in meinem Herkunftsland, dann nenne ich Argumente für beide Seiten und komme am Ende zu meiner Position. In Rumänien ist mein Heimatdorf in zwanzig Jahren von tausendzweihundert auf vierhundert Einwohner geschrumpft. Geblieben sind fast nur Menschen über sechzig. Die eine Seite sagt, das sei eine Frage der Bindung: Wer sich zugehörig fühlt, bleibt. Dafür spricht, dass viele nach dem Tod der Eltern zurückkommen, obwohl sich sonst nichts geändert hat. Die andere Seite sagt, es gehe um Infrastruktur. Dafür spricht, dass in meinem Dorf nach der Schließung der Schule vier Familien innerhalb eines Jahres weggezogen sind. Meine Position ist, dass die erste Seite den ersten Schritt erklärt und die zweite den zweiten. Menschen kommen wegen eines Ereignisses und bleiben wegen der Bedingungen. Zusammenfassend: Wer Bindung fördern will, sollte nicht über Heimat reden, sondern über Öffnungszeiten.",
             criteria: [
               "Altı bölümün hepsi var mı ve sunum baştan bölümlendi mi?",
-              "Kendi ülkedeki durum somut ve açıklayıcı mı?",
+              "Kendi ülkendeki durum somut ve açıklayıcı mı?",
               "Her iki taraf için de örnekle desteklenmiş gerekçe var mı?",
               "Konum gerekçeli mi ve karşı tarafın noktasını kabul ediyor mu?",
               "Dört dakika boyunca yapı korunabildi mi?",
@@ -1560,7 +1560,7 @@ Rolf Zeplin`,
             },
             {
               who: "you",
-              hint: "İtirazı ele al ve gerekirse bir birleşim öner.",
+              hint: "İtirazı ele al ve gerekirse birleşik bir çözüm öner.",
               expect: "itirazı ele almak ve gerekirse birleşik bir çözüm önermek",
               seconds: 60,
             },
@@ -1592,7 +1592,7 @@ Rolf Zeplin`,
             minutes: 8,
             points: [
               { de: "einen Vorschlag begründen", tr: "Bir öneriyi gerekçelendirmek" },
-              { de: "auf Einwände eingehen", tr: "İtirazlara girmek" },
+              { de: "auf Einwände eingehen", tr: "İtirazları ele almak" },
               { de: "priorisieren und begründen", tr: "Önceliklendirmek ve gerekçelendirmek" },
               { de: "das Ergebnis zusammenfassen", tr: "Sonucu özetlemek" },
             ],

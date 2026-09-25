@@ -36,9 +36,9 @@ export const C1_12: MockPaper = {
       skill: "reading",
       minutes: 70,
       instruction:
-        "Dieser Teil hat drei Aufgaben: eine Zusammenfassung ergänzen, einen Essay auswerten und einen Text strukturell schließen.",
+        "Dieser Teil hat drei Aufgaben: eine Zusammenfassung ergänzen, einen Essay auswerten und strukturelle Lücken in einem Text schließen.",
       instructionTr:
-        "Bu bölümde üç görev var: bir özeti tamamlamak, bir deneme metnini çözümlemek ve bir metni yapısal olarak kapatmak.",
+        "Bu bölümde üç görev var: bir özeti tamamlamak, bir deneme metnini çözümlemek ve bir metindeki yapısal boşlukları doldurmak.",
       tasks: [
         {
           id: "de-c1-12-l1",
@@ -694,7 +694,7 @@ Rückmeldungen zum Verfahren bis {{10}}.`,
                 { speaker: "Moderator", text: "Herr Prochnow, Sie sitzen am Gericht. Wie gehen Sie damit um?" },
                 {
                   speaker: "Herr Prochnow",
-                  text: "Wir behandeln ein Bild wie einen Zeugen. Herkunft, Zeitpunkt, Umstände. Was mich beunruhigt, ist etwas anderes: Auf Bilder wird im Saal seltener nachgefragt als auf Aussagen.",
+                  text: "Wir behandeln ein Bild wie einen Zeugen. Herkunft, Zeitpunkt, Umstände. Was mich beunruhigt, ist etwas anderes: Bei Bildern wird im Saal seltener nachgefragt als bei Aussagen.",
                 },
                 { speaker: "Moderator", text: "Woran liegt das?" },
                 {
@@ -784,7 +784,7 @@ Rückmeldungen zum Verfahren bis {{10}}.`,
               ],
               answer: 2,
               explain:
-                "\"Auf Bilder wird im Saal seltener nachgefragt als auf Aussagen.\"",
+                "\"Bei Bildern wird im Saal seltener nachgefragt als bei Aussagen.\"",
             },
             {
               kind: "mcq",
@@ -996,7 +996,7 @@ Rückmeldungen zum Verfahren bis {{10}}.`,
               { de: "Einen Einwand gegen die eigene Position nennen.", tr: "Kendi konumuna itiraz getir." },
               { de: "Eine begründete Schlussfolgerung ziehen.", tr: "Gerekçeli bir sonuca bağla." },
             ],
-            sample: `Die These verwechselt Unversehrtheit mit Vollständigkeit. Dass an einer Datei nichts verändert wurde, sagt etwas über die Datei und nichts über die Behauptung, die mit ihr aufgestellt wird. Ein Bild belegt, dass sich etwas vor der Linse befunden hat; was es bedeutet, entsteht erst durch Ausschnitt, Zeitpunkt und Bildunterschrift — und diese drei sieht der Betrachter nicht.
+            sample: `Die These verwechselt Unversehrtheit mit Vollständigkeit. Dass an einer Datei nichts verändert wurde, sagt etwas über die Datei und nichts über die Behauptung, die mit ihr aufgestellt wird. Ein Bild belegt, dass sich etwas vor der Linse befunden hat; was es bedeutet, entsteht erst durch Ausschnitt, Zeitpunkt und Bildunterschrift — und wie diese drei gewählt wurden, sieht der Betrachter nicht.
 
 Prüfen lässt sich das an einer Bildserie von einer Demonstration. Auf der einen Aufnahme steht ein Mann mit erhobenem Arm neben einem Polizisten, auf der nächsten reicht derselbe Mann demselben Polizisten eine Flasche Wasser. Beide Bilder sind unbearbeitet, beide sind wahr, und sie legen Entgegengesetztes nahe. Wer eines davon druckt, veröffentlicht zwangsläufig eine Auswahl, die als Beobachtung gelesen wird.
 
@@ -1249,12 +1249,12 @@ Vera {{10}}`,
             minutes: 7,
             points: [
               { de: "eine Position begründen", tr: "Bir konumu gerekçelendirmek" },
-              { de: "auf Einwände eingehen", tr: "İtirazlara girmek" },
-              { de: "einen Kompromiss formulieren", tr: "Bir uzlaşı biçimlendirmek" },
+              { de: "auf Einwände eingehen", tr: "İtirazları ele almak" },
+              { de: "einen Kompromiss formulieren", tr: "Bir uzlaşı önerisi dile getirmek" },
               { de: "Ergebnis und offene Punkte zusammenfassen", tr: "Sonucu ve açık noktaları özetlemek" },
             ],
             sample:
-              "Dass die Software einmalig kostet, stimmt und ist genau der Grund für meine Skepsis. Sie prüft die Datei, und die Datei ist selten das Problem: In der Statistik des Landesarchivs betraf die Fälschung vierzehn von siebenhundertvierzig Fällen, die falsche Zuordnung zweihundertsechs. Für diese zweihundertsechs braucht es jemanden, der weiß, wie eine Straße vor dreißig Jahren aussah. Ich bin deshalb für die Stelle. Zur Kontextzeile schlage ich ein Kriterium statt einer Quote vor: überall dort, wo das Bild eine Handlung zeigt, die sich anders deuten lässt. Das ist nachprüfbar und wirkt weniger willkürlich als eine Beschränkung auf Aufmacher. Bei ungeklärten Fällen würde ich das Wort ausschreiben, statt das Bild wegzulassen: eine Zeile, die sagt, was wir nicht wissen. Ein weggelassenes Bild erzeugt keine Vorsicht, es erzeugt nur eine Lücke. Zusammengefasst: eine zusätzliche Stelle statt Software, Kontextzeile nach Kriterium, ungeklärt sichtbar benennen. Offen bleibt ausdrücklich, wer das im Nachtdienst entscheidet — dafür haben wir bisher keine Regelung, und ich möchte das nicht durch eine optimistische Annahme verdecken.",
+              "Dass die Software einmalig kostet, stimmt und ist genau der Grund für meine Skepsis. Sie prüft die Datei, und die Datei ist selten das Problem: In der Statistik des Landesarchivs betraf die Fälschung vierzehn von siebenhundertvierzig Fällen, die falsche Zuordnung zweihundertsechs. Für diese zweihundertsechs braucht es jemanden, der weiß, wie eine Straße vor dreißig Jahren aussah. Ich bin deshalb für die Stelle. Zur Kontextzeile schlage ich ein Kriterium statt einer Quote vor: überall dort, wo das Bild eine Handlung zeigt, die sich anders deuten lässt. Das ist nachprüfbar und wirkt weniger willkürlich als eine Beschränkung auf Aufmacher. Verbindlich sollte die Regel trotzdem sein, sonst wird sie je nach Ressort wieder willkürlich angewandt. Bei ungeklärten Fällen würde ich das Wort ausschreiben, statt das Bild wegzulassen: eine Zeile, die sagt, was wir nicht wissen. Ein weggelassenes Bild erzeugt keine Vorsicht, es erzeugt nur eine Lücke. Zusammengefasst: eine zusätzliche Stelle statt Software, Kontextzeile nach Kriterium und verbindlich, ungeklärt sichtbar benennen. Offen bleibt ausdrücklich, wer das im Nachtdienst entscheidet — dafür haben wir bisher keine Regelung, und ich möchte das nicht durch eine optimistische Annahme verdecken.",
             criteria: [
               "Konum gerekçelendirildi mi ve karşı tarafın gerekçesi doğrudan ele alındı mı?",
               "Keyfîlik itirazına somut bir ölçüt getirildi mi?",

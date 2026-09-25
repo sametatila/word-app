@@ -107,7 +107,7 @@
  { "tr": "Kurs sözcüğüyle dilbilgisel olarak doğru bir soru kurmak", "kind": "exchange.expect", "en": "forming a grammatically correct question with the word Kurs" },
  { "tr": "somut bir yer önermek ve maliyet itirazını dikkate almak", "kind": "exchange.expect", "en": "proposing a concrete place and taking the cost objection into account" },
  { "tr": "soru kurmak ve geçmiş zamanda (Perfekt) bir örnek vermek", "kind": "exchange.expect", "en": "forming a question and giving an example in the past (Perfekt)" },
- { "tr": "şeffaflık ile güvenlik arasında ölçülü bir çözüm önermek", "kind": "exchange.expect", "en": "proposing a measured solution between transparency and safety" },
+ { "tr": "şeffaflık ile güvenlik arasında ölçülü bir çözüm önermek", "kind": "exchange.expect", "en": "proposing a measured solution between transparency and security" },
  { "tr": "bir öneri sunmak ve karşı tarafın itirazını dikkate almak", "kind": "exchange.expect", "en": "putting forward a suggestion and taking the other side's objection into account" },
  { "tr": "bir yanlış anlamayı düzeltmek ve kendi durumunu açıklamak", "kind": "exchange.expect", "en": "correcting a misunderstanding and explaining your own situation" },
  { "tr": "bir zaman önermek ve karşı tarafın durumunu dikkate almak", "kind": "exchange.expect", "en": "proposing a time and taking the other person's situation into account" },

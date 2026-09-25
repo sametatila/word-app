@@ -385,7 +385,7 @@ Ab 22 Uhr bitte leise sein.`,
               plays: 2,
               segments: [
                 { speaker: "Herr Löbe", text: "Wann kommt der Sperrmüll?" },
-                { speaker: "Frau Radtke", text: "Am achtzehnten. Ich habe es angemeldet." },
+                { speaker: "Frau Radtke", text: "Am Achtzehnten. Ich habe es angemeldet." },
                 { speaker: "Herr Löbe", text: "Gut, dann stelle ich meinen Tisch dazu." },
               ],
             },
@@ -457,7 +457,7 @@ Ab 22 Uhr bitte leise sein.`,
               options: ["Am 18.", "Am 8.", "Am 28."],
               answer: 0,
               explain:
-                "Tarih kayıtta bir kez geçiyor: \"Am achtzehnten. Ich habe es angemeldet.\" Sekiz ve yirmi sekiz hiç söylenmiyor.",
+                "Tarih kayıtta bir kez geçiyor: \"Am Achtzehnten. Ich habe es angemeldet.\" Sekiz ve yirmi sekiz hiç söylenmiyor.",
             },
             {
               kind: "mcq",
@@ -602,7 +602,7 @@ Ab 22 Uhr bitte leise sein.`,
               id: "m2",
               genre: "Nachricht auf dem Anrufbeantworter",
               genreTr: "Telesekreter mesajı",
-              situation: "Komşu anahtar soruyor.",
+              situation: "Komşunun bir ricası var.",
               plays: 2,
               segments: [
                 {
@@ -615,7 +615,7 @@ Ab 22 Uhr bitte leise sein.`,
               id: "m3",
               genre: "Nachricht auf dem Anrufbeantworter",
               genreTr: "Telesekreter mesajı",
-              situation: "Elektrikçi gecikiyor.",
+              situation: "Elektrikçi arıyor.",
               plays: 2,
               segments: [
                 {
@@ -641,7 +641,7 @@ Ab 22 Uhr bitte leise sein.`,
               id: "m5",
               genre: "Nachricht auf dem Anrufbeantworter",
               genreTr: "Telesekreter mesajı",
-              situation: "Kira artışı bildirimi.",
+              situation: "Kira mektubu geliyor.",
               plays: 2,
               segments: [
                 {
@@ -806,7 +806,7 @@ Unterschrift:             A. Dziuba`,
             points: [
               { de: "Warum schreiben Sie?", tr: "Neden yazıyorsun?" },
               { de: "Sagen Sie, wo das Licht kaputt ist.", tr: "Işığın nerede bozuk olduğunu söyle." },
-              { de: "Fragen Sie, wann jemand kommt.", tr: "Ne zaman birinin geleceğini sor." },
+              { de: "Fragen Sie, wann jemand kommt.", tr: "Birinin ne zaman geleceğini sor." },
             ],
             sample: `Sehr geehrte Damen und Herren,
 
@@ -874,13 +874,13 @@ Anna Dziuba`,
           prompt:
             "Thema: Wohnen. Bilden Sie zu jedem Stichwort eine Frage und beantworten Sie sie: Stock — Miete — Aufzug — Waschküche — Nachbarn.",
           promptTr:
-            "Konu: Oturma. Her anahtar sözcük için bir soru kur ve cevapla: kat — kira — asansör — çamaşırhane — komşular.",
+            "Konu: Konut. Her anahtar sözcük için bir soru kur ve cevapla: kat — kira — asansör — çamaşırhane — komşular.",
           prepSeconds: 30,
           exchange: [
             {
               who: "partner",
               de: "Wir sprechen jetzt über das Thema Wohnen. Ihr erstes Stichwort ist: Stock. Stellen Sie mir bitte eine Frage.",
-              tr: "Şimdi oturma konusunu konuşuyoruz. İlk sözcüğün: kat. Bana bir soru sor.",
+              tr: "Şimdi konut konusunu konuşuyoruz. İlk sözcüğün: kat. Bana bir soru sor.",
             },
             { who: "you", hint: "«Stock» sözcüğüyle bir soru kur.", expect: "Stock sözcüğüyle dilbilgisel olarak doğru bir soru kurmak", seconds: 25 },
             {
@@ -950,7 +950,7 @@ Anna Dziuba`,
             {
               who: "partner",
               de: "Natürlich, ich bin morgen zu Hause. Jetzt eine Frage an Sie: Meine Waschmaschine ist kaputt. Kann ich einmal bei Ihnen waschen?",
-              tr: "Tabii, yarın evdeyim. Şimdi sana bir soru: Çamaşır makinem bozuldu. Bir kez sende yıkayabilir miyim?",
+              tr: "Tabii, yarın evdeyim. Şimdi sana bir soru: Çamaşır makinem bozuldu. Bir kereliğine sende çamaşır yıkayabilir miyim?",
             },
             {
               who: "you",

@@ -983,7 +983,7 @@ Amir Rahimi`,
             {
               who: "partner",
               de: "Natürlich, rufen Sie ruhig an. Jetzt bitte ich Sie um etwas: Können Sie mir bitte das Formular geben?",
-              tr: "Elbette, rahatça arayın. Şimdi ben senden bir şey rica ediyorum: Formu bana verebilir misin?",
+              tr: "Elbette, rahatça arayabilirsin. Şimdi ben senden bir şey rica ediyorum: Formu bana verebilir misin?",
             },
             {
               who: "you",

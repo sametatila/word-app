@@ -1212,7 +1212,7 @@ What I do now is different and slightly ridiculous. I write two questions on a c
             { who: "you", hint: "Durumu anlat ve bir örnek ver.", expect: "bir durumu betimlemek ve somut bir örnekle desteklemek", seconds: 40 },
             { who: "partner", de: "Thank you. Has anybody in your family ever told you a story you did not know?", tr: "Teşekkürler. Ailende biri sana bilmediğin bir hikâye anlattı mı?" },
             { who: "you", hint: "Geçmiş zamanla tek bir olay anlat.", expect: "geçmişte olmuş tek bir olayı anlatmak", seconds: 40 },
-            { who: "partner", de: "And if you had one afternoon with the oldest person in your family, what would you ask?", tr: "Ailendeki en yaşlı kişiyle bir öğleden sonran olsa ne sorardın?" },
+            { who: "partner", de: "And if you had one afternoon with the oldest person in your family, what would you ask?", tr: "Ailendeki en yaşlı kişiyle bir öğleden sonra geçirme fırsatın olsa ona ne sorardın?" },
             { who: "you", hint: "Koşul kipiyle cevapla ve gerekçelendir.", expect: "ikinci tip koşul cümlesiyle bir varsayım kurmak", seconds: 40 },
           ],
           items: [],
@@ -1290,7 +1290,7 @@ What I do now is different and slightly ridiculous. I write two questions on a c
               { de: "summarise the plan with times", tr: "Planı süreleriyle özetlemek" },
             ],
             sample:
-              "I would not start with two hundred photographs, because by picture forty she will be tired and the last hundred are the ones nobody else can name. You are right that questions alone give us stories without names, so I would do both in one movement: choose twenty pictures beforehand and ask a question about each. So: half an hour of tea and nothing, ninety minutes on twenty chosen pictures with the recorder running, a break, and the last half hour on the two names we still do not have.",
+              "I would not start with two hundred photographs, because by picture forty she will be tired and the last hundred are the ones nobody else can name. You are right that questions alone give us stories without names, so I would do both at once: choose twenty pictures beforehand and ask a question about each. So: half an hour of tea and nothing, ninety minutes on twenty chosen pictures with the recorder running, a break, and the last half hour on the two names we still do not have.",
             criteria: [
               "İlk öneriye gerekçeli bir karşılık verildi mi?",
               "İtiraz ciddiye alındı mı ve iki amaç birleştirildi mi?",

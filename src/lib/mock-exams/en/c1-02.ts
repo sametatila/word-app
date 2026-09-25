@@ -476,7 +476,7 @@ Whether any institution will adopt it is another matter. Sequencing of this kind
               text: "Which writer says that the disagreement rests on a failure to separate two different things?",
               answer: "c",
               explain:
-                "Yazar C ayrımı kendisi kuruyor: hastaya ölçeklemek ile duruma ölçeklemek farklı işler ve «almost every disagreement I have read collapses once that separation is made». Tartışma bir ayrım yapılmadığı için sürüyor.",
+                "Yazar C ayrımı kendisi kuruyor: daha çok hastaya ölçeklemek ile daha çok hastalığa ölçeklemek farklı işler ve «almost every disagreement I have read collapses once that separation is made». Tartışma bir ayrım yapılmadığı için sürüyor.",
             },
             {
               kind: "match",
@@ -995,7 +995,7 @@ The entry test has been abandoned because the correlation was close to {{13}}.
               gloss: [
                 { de: "to misdiagnose", tr: "yanlış teşhis koymak", en: "falsch diagnostizieren" },
                 { de: "to absorb variation", tr: "değişkenliği soğurmak", en: "Schwankungen auffangen" },
-                { de: "a rhetorical trick", tr: "söz oyunu", en: "der rhetorische Kniff" },
+                { de: "a rhetorical trick", tr: "retorik hile", en: "der rhetorische Kniff" },
               ],
             },
           ],
@@ -1326,7 +1326,7 @@ The entry test has been abandoned because the correlation was close to {{13}}.
           prompt:
             "You have attended a seminar on training and expertise. Write an essay for your tutor summarising which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. Written procedures allow a skill to be taught to many people quickly.\n2. Some parts of a skill are learned only by working alongside an experienced person.\n\nWrite 220 to 260 words.",
           promptTr:
-            "Eğitim ve uzmanlık üzerine bir seminere katıldın. Danışmanın için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Yazılı yordamlar bir beceriyi çok kişiye hızla öğretmeyi sağlar.\n2. Bir becerinin bazı parçaları ancak deneyimli biriyle çalışarak öğrenilir.\n\n220–260 kelime yaz.",
+            "Eğitim ve uzmanlık üzerine bir seminere katıldın. Danışmanın için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Yazılı prosedürler bir beceriyi çok kişiye hızla öğretmeyi sağlar.\n2. Bir becerinin bazı parçaları ancak deneyimli biriyle çalışarak öğrenilir.\n\n220–260 kelime yaz.",
           items: [],
           rubric: {
             minWords: 220,
@@ -1380,7 +1380,7 @@ Intake is carried out by four staff, and the written guidance is two pages long.
 
 Assessment
 
-Standardising would produce real gains. Training currently takes six weeks and would fall, and the variation makes the current data almost useless for comparison. The risk lies in the four undocumented steps. Each was added by an experienced person in response to something that went wrong, and at least one of them accounts for a category of error that the guidance does not mention.
+Standardising would produce real gains. Training currently takes six weeks and would fall, and the variation makes the current data almost useless for comparison. The risk lies in the four undocumented steps. Each was added by an experienced person in response to something that went wrong, and at least one of them guards against a category of error that the guidance does not mention.
 
 Recommendation
 

@@ -737,7 +737,7 @@ None of this argues that behaviour is irrelevant, since a household that heats o
               options: ["It is too narrow to be useful", "It has a clear answer", "Nobody asks it often enough any more"],
               answer: 0,
               explain:
-                "Konuşmacı soruyu ölçek olarak eleştiriyor: «the question is too small», ve iki farklı daire için iki farklı cevap veriyor. Soru haftada bir soruluyor, yani seyrek değil.",
+                "Konuşmacı soruyu kapsamı bakımından eleştiriyor: «the question is too small», ve iki farklı daire için iki farklı cevap veriyor. Soru haftada bir soruluyor, yani seyrek değil.",
             },
             {
               kind: "mcq",
@@ -942,7 +942,7 @@ The households hardest to reach are those in the {{15}} properties.
               situation: "Birinci konuşmacı programın ölçeğinden söz ediyor.",
               plays: 2,
               segments: [
-                { text: "I have no objection to the standard at all. My objection is arithmetical. There are twenty-eight million homes, we are doing about half a million a year, and at that rate the last one is finished in the twenty-second century." },
+                { text: "I have no objection to the standard at all. My objection is arithmetical. There are twenty-eight million homes, we are doing about a quarter of a million a year, and at that rate the last one is finished in the twenty-second century." },
               ],
             },
             {
@@ -1010,7 +1010,7 @@ The households hardest to reach are those in the {{15}} properties.
               text: "Speaker 1",
               answer: "f",
               explain:
-                "Konuşmacı ilkeyi açıkça savunuyor: «I have no objection to the standard at all. My objection is arithmetical» ve sayıları veriyor: yirmi sekiz milyon konut, yılda yarım milyon.",
+                "Konuşmacı ilkeyi açıkça savunuyor: «I have no objection to the standard at all. My objection is arithmetical» ve sayıları veriyor: yirmi sekiz milyon konut, yılda çeyrek milyon.",
             },
             {
               kind: "match",
@@ -1253,7 +1253,7 @@ Landlords should be required to improve, but only alongside inspection and a lim
           rubric: {
             minWords: 140,
             points: [
-              { de: "Say what it does.", tr: "Ne yaptığını söyle." },
+              { de: "Say what it does.", tr: "Ne işe yaradığını söyle." },
               { de: "Say what it does well, with an example.", tr: "Neyi iyi yaptığını bir örnekle söyle." },
               { de: "Say who should not buy it, and why.", tr: "Kimin almaması gerektiğini ve nedenini söyle." },
             ],
@@ -1352,9 +1352,9 @@ For a homeowner deciding which machine to replace first, however, it is fifteen 
           format: "speaking",
           goal: "interaction",
           prompt:
-            "A council has money for one measure to reduce energy use in rented flats. Talk with me about these ideas, then decide which two we would recommend and which one we would reject.",
+            "A council has money for two measures to reduce energy use in rented flats. Talk with me about these ideas, then decide which two we would recommend and which one we would reject.",
           promptTr:
-            "Bir belediyenin kiralık dairelerde enerji tüketimini azaltmak için tek bir önleme parası var. Bu fikirleri benimle konuş, sonra hangi ikisini önereceğimize ve hangisini reddedeceğimize karar ver.",
+            "Bir belediyenin kiralık dairelerde enerji tüketimini azaltmak için iki önleme parası var. Bu fikirleri benimle konuş, sonra hangi ikisini önereceğimize ve hangisini reddedeceğimize karar ver.",
           prepSeconds: 30,
           exchange: [
             { who: "partner", de: "The ideas are: free loft insulation for the worst properties, inspectors who actually enter the buildings, a leaflet in every letterbox, and a grant towards new boilers. Which of these would actually reduce the bills?", tr: "Fikirler: en kötü durumdaki konutlara ücretsiz çatı yalıtımı, gerçekten binaya giren denetçiler, her posta kutusuna bir broşür ve yeni kazanlar için hibe. Sence bunlardan hangisi faturaları gerçekten düşürür?" },
@@ -1373,7 +1373,7 @@ For a homeowner deciding which machine to replace first, however, it is fifteen 
               { de: "reach a joint decision with reasons", tr: "Gerekçeli ortak bir karara varmak" },
             ],
             sample:
-              "The strongest is free loft insulation, because it is the cheapest measure per pound saved and almost nothing has been done since the nineteen-eighties. You are right that inspectors repair nothing, and I want to concede that; what I would defend is a small number of them aimed only at the properties that claim a good rating without ever having been entered. The leaflet seems worse than the disease: it moves responsibility to the person who cannot act. So I would recommend the insulation and the targeted inspection, and reject the leaflet.",
+              "The strongest is free loft insulation, because it is the cheapest measure per pound saved and almost nothing has been done since the nineteen-eighties. You are right that inspectors repair nothing, and I want to concede that; what I would defend is a small number of them aimed only at the properties that claim a good rating without ever having been entered. The leaflet seems like a cure worse than the disease: it moves responsibility to the person who cannot act. So I would recommend the insulation and the targeted inspection, and reject the leaflet.",
             criteria: [
               "Seçenekler birbirine karşı mı değerlendirildi?",
               "İtiraza doğrudan karşılık verildi mi ve kısmi kabul yapılabildi mi?",

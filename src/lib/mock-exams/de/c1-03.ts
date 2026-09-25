@@ -768,7 +768,7 @@ Abgelehnte Vorschläge bleiben {{10}} — wichtigste Lehre aus dem ersten Jahr.`
               text: "Welche Einschränkung macht Herr Kessler?",
               options: [
                 "Die Erhebungen erfassen sein Amt nicht.",
-                "Der Effekt zeigt sich bei ihm zeitversetzt.",
+                "Der Effekt zeigt sich bei ihm erst nach Jahren.",
                 "Erwartungen entstehen außerhalb seiner Behörde.",
               ],
               answer: 2,
@@ -788,7 +788,7 @@ Abgelehnte Vorschläge bleiben {{10}} — wichtigste Lehre aus dem ersten Jahr.`
               ],
               answer: 0,
               explain:
-                "\"Diese Frage ist mir zu bequem\" diyor: istisnalar üzerine yazdıklarını kabul ediyor ama okurun sorgusuz devraldığı varsayımını reddediyor.",
+                "\"Diese Frage ist mir zu bequem\" diyor: istisnalar üzerine yazdıklarını kabul ediyor ama okurun yazılanları sorgusuz benimsediği varsayımını reddediyor.",
             },
             {
               kind: "mcq",
@@ -1144,7 +1144,7 @@ Bianca Hoffmann`,
       skill: "speaking",
       minutes: 15,
       instruction: "Dieser Teil hat zwei Aufgaben: einen Vortrag halten und eine Position im Gespräch verteidigen.",
-      instructionTr: "Bu bölümde iki görev var: bir sunum yapmak ve bir konumu konuşmada savunmak.",
+      instructionTr: "Bu bölümde iki görev var: bir sunum yapmak ve bir görüşü konuşmada savunmak.",
       tasks: [
         {
           id: "de-c1-03-p1",
@@ -1174,7 +1174,7 @@ Bianca Hoffmann`,
             criteria: [
               "Altı bölümün hepsi var mı ve sunum baştan bölümlendi mi?",
               "Kavram tanımı gerçekten yapıldı mı, yoksa örnekle mi geçiştirildi?",
-              "Kendi ülkedeki durum somut ve dönemlendirilmiş mi?",
+              "Kendi ülkesindeki durum somut ve dönemlendirilmiş mi?",
               "Tartma iki yönlü mü ve her yön gerekçeli mi?",
               "Konum ölçülü mü (koşullu, dereceli) yoksa basit bir taraf tutma mı?",
               "Dil C1'de mi: adlaştırma, ilgi cümleleri, `erklärtermaßen/allerdings/seinerseits` gibi bağlayıcılar?",
@@ -1208,7 +1208,7 @@ Bianca Hoffmann`,
             {
               who: "partner",
               de: "Das gestehe ich Ihnen zu. Nur: In der Praxis würde jede Behörde einen Textbaustein verwenden. Eine Pflicht, die formal erfüllt wird, ist schlimmer als keine, weil sie Kritik entwaffnet.",
-              tr: "Bunu size veriyorum. Ama pratikte her idare hazır bir metin parçası kullanır. Biçimsel olarak yerine getirilen bir yükümlülük hiç olmamasından kötüdür, çünkü eleştiriyi silahsızlandırır.",
+              tr: "Bu konuda sana hak veriyorum. Ama pratikte her idare hazır bir metin parçası kullanır. Biçimsel olarak yerine getirilen bir yükümlülük hiç olmamasından kötüdür, çünkü eleştiriyi etkisiz kılar.",
             },
             {
               who: "you",
@@ -1244,7 +1244,7 @@ Bianca Hoffmann`,
             minutes: 7,
             points: [
               { de: "die eigene Position begründen", tr: "Kendi konumunu gerekçelendirmek" },
-              { de: "Einwände aufnehmen statt zu wiederholen", tr: "İtirazları tekrar etmek yerine devralmak" },
+              { de: "Einwände aufnehmen statt zu wiederholen", tr: "İtirazları tekrar etmek yerine ele almak" },
               { de: "die eigene Position anpassen", tr: "Konumu gerektiğinde uyarlamak" },
               { de: "eine gemeinsame Formulierung finden", tr: "Ortak bir formüle varmak" },
             ],
@@ -1252,7 +1252,7 @@ Bianca Hoffmann`,
               "Ich teile Ihren Einwand insoweit, als eine Begründungspflicht Sachverständige tatsächlich aufwertet. Nur richtet sich meine Forderung nicht auf Zustimmung, sondern auf Nachvollziehbarkeit — die Behörde soll nicht recht geben, sondern sagen, woran sie sich orientiert hat. Ihr Einwand mit dem Textbaustein trifft allerdings einen wunden Punkt. Ich würde die Pflicht deshalb inhaltlich binden: Die Begründung muss auf die konkrete Empfehlung eingehen und darf nicht auf allgemeine Abwägung verweisen. Zur Auswahl: Sie haben recht, dort fällt die Vorentscheidung. Das spricht aber nicht gegen die Begründungspflicht, sondern für eine Ergänzung — die Offenlegung, wer ein Gutachten in Auftrag gegeben und bezahlt hat. Als gemeinsame Formulierung schlage ich vor: Wer von einer fachlichen Empfehlung abweicht, benennt die Empfehlung, die Abweichung und den tragenden Grund; zugleich wird offengelegt, wer das Gutachten veranlasst hat. Eine Bindung an die Empfehlung entsteht dadurch ausdrücklich nicht.",
             criteria: [
               "Konum gerekçelendirildi mi ve konuşma boyunca tutarlı kaldı mı?",
-              "İtirazlar gerçekten devralındı mı (kabul edilen kısım adlandırıldı mı)?",
+              "İtirazlar gerçekten ele alındı mı (kabul edilen kısım adlandırıldı mı)?",
               "Konum, itiraz karşısında körü körüne savunulmak yerine uyarlandı mı?",
               "Yeni boyut (seçim sorunu) kendi önerisine bağlanabildi mi?",
               "Ortak formül iki tarafın kabullerini de içeriyor ve kesin mi?",

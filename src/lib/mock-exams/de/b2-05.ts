@@ -544,7 +544,7 @@ Zuletzt ein Wort zur Ehrlichkeit. Solange Schulen behaupten, sie könnten alle K
               kind: "match",
               id: "de-b2-05-l4-23",
               no: 23,
-              text: "Nicht die Zeit fehlt, sondern die andere Unterstützung.",
+              text: "Nicht die Zeit fehlt, sondern eine andere Unterstützung.",
               answer: "b",
               explain:
                 "Herr Prantl ayrımı net kuruyor: \"dasselbe Jahr mit anderer Unterstützung, nicht dasselbe Jahr noch einmal\".",
@@ -986,7 +986,7 @@ Die Einsicht in die korrigierte Arbeit ist innerhalb von vier Wochen nach Bekann
               text: "Was fällt ihr an den Protestbriefen auf?",
               options: [
                 "Sie kamen vor allem von Lehrkräften.",
-                "Kaum von den Betroffenen.",
+                "Sie kamen kaum von den Betroffenen.",
                 "Sie kamen erst nach zwei Jahren.",
               ],
               answer: 1,
@@ -1006,7 +1006,7 @@ Die Einsicht in die korrigierte Arbeit ist innerhalb von vier Wochen nach Bekann
               ],
               answer: 2,
               explain:
-                "Mezuniyet oranı dokuz puan artmış; ortalama notlar neredeyse değişmemiş. \"Was sich verändert hat, ist der Rand\".",
+                "Mezuniyet oranı dokuz puan artmış; orta düzeydeki notlar neredeyse değişmemiş. \"Was sich verändert hat, ist der Rand\".",
             },
             {
               kind: "mcq",
@@ -1021,7 +1021,7 @@ Die Einsicht in die korrigierte Arbeit ist innerhalb von vier Wochen nach Bekann
               ],
               answer: 2,
               explain:
-                "\"Solange im Lehrerzimmer von schwachen Kindern gesprochen wird, ändert kein Plan etwas\" — en uzun süren ve hiçbir konsepte girmeyen kısım bu.",
+                "\"Solange im Lehrerzimmer von schwachen Kindern gesprochen wird, ändert kein Plan etwas\" — en uzun süren ve hiçbir planda yer almayan kısım bu.",
             },
           ],
         },
@@ -1049,7 +1049,7 @@ Die Einsicht in die korrigierte Arbeit ist innerhalb von vier Wochen nach Bekann
                 { speaker: "Moderator", text: "Frau Nabert, Sie sind Schulpsychologin." },
                 {
                   speaker: "Frau Nabert",
-                  text: "Ich teile die Einschätzung fachlich, sehe aber ein anderes Problem. In den Schulen, die abgeschafft haben, wird oft dasselbe Kind einfach mitgeschleppt. Das ist nicht besser, es ist nur unsichtbarer.",
+                  text: "Ich teile die Einschätzung fachlich, sehe aber ein anderes Problem. In den Schulen, die es abgeschafft haben, wird oft dasselbe Kind einfach mitgeschleppt. Das ist nicht besser, es ist nur unsichtbarer.",
                 },
                 {
                   speaker: "Herr Prantl",
@@ -1150,7 +1150,7 @@ Die Einsicht in die korrigierte Arbeit ist innerhalb von vier Wochen nach Bekann
               ],
               answer: 0,
               explain:
-                "Ceza gibi göründüğü sürece ailelerin \"es abwählen\" ettiğini söylüyor, tek tek durumlarda anlamlı olsa bile.",
+                "Ceza gibi göründüğü sürece ailelerin bu yolu seçmediğini söylüyor (\"wählen Familien es ab\"), tek tek durumlarda anlamlı olsa bile.",
             },
             {
               kind: "mcq",
@@ -1357,7 +1357,7 @@ Die Einsicht in die korrigierte Arbeit ist innerhalb von vier Wochen nach Bekann
           prompt:
             "In einer Zeitung stand: \"Wer sich anstrengt, kommt in unserem Bildungssystem überall hin.\" Schreiben Sie einen Leserbrief (circa 150 Wörter). Setzen Sie sich mit dieser Aussage auseinander, nennen Sie Argumente und ziehen Sie eine begründete Schlussfolgerung.",
           promptTr:
-            "Bir gazetede şöyle yazdı: \"Çabalayan, bizim eğitim sistemimizde her yere gelir.\" Bir okur mektubu yaz (yaklaşık 150 kelime). Bu iddiayı tartış, gerekçeler sun ve gerekçeli bir sonuca bağla.",
+            "Bir gazetede şöyle yazıyordu: \"Çabalayan, bizim eğitim sistemimizde istediği her yere ulaşır.\" Bir okur mektubu yaz (yaklaşık 150 kelime). Bu iddiayı tartış, gerekçeler sun ve gerekçeli bir sonuca bağla.",
           items: [],
           rubric: {
             minWords: 150,
@@ -1413,7 +1413,7 @@ Meral Doğan`,
 
 vielen Dank für Ihren Hinweis auf den Förderunterricht in Mathematik, der dienstags in der siebten Stunde stattfindet.
 
-Leider liegt dieser Termin genau auf dem Sportunterricht meiner Tochter. Sie möchte an beidem teilnehmen und muss sich nun entscheiden, was ihr sichtlich schwerfällt.
+Leider fällt dieser Termin genau mit dem Sportunterricht meiner Tochter zusammen. Sie möchte an beidem teilnehmen und muss sich nun entscheiden, was ihr sichtlich schwerfällt.
 
 Dass die Schule das Angebot überhaupt macht, weiß ich zu schätzen; mir ist bewusst, dass die Stunden knapp sind.
 
@@ -1426,7 +1426,7 @@ Jens Brodersen`,
               "Çakışma açıkça anlatıldı mı ve çocuğun durumu görünür mü?",
               "Okulun sınırları kabul edildi mi, yoksa yalnız talep mi var?",
               "Önerilen çözüm uygulanabilir ve birden çok seçenek sunuyor mu?",
-              "Yarı resmî kayıt korunmuş mu, yaklaşık 100 kelime mi?",
+              "Yarı resmî üslup korunmuş mu, yaklaşık 100 kelime mi?",
             ],
           },
         },
@@ -1463,10 +1463,10 @@ Jens Brodersen`,
               { de: "Abschluss", tr: "Kapanış" },
             ],
             sample:
-              "Ich möchte heute darüber sprechen, ob Kinder länger gemeinsam lernen sollten. Zuerst schildere ich die Lage in meinem Herkunftsland, dann nenne ich Vor- und Nachteile, danach meine Position. In Polen gehen alle Kinder acht Jahre gemeinsam zur Schule; die Trennung kommt erst mit fünfzehn. Meine Cousine war lange schwach in Mathematik und hat sich in der siebten Klasse gefangen — in einem getrennten System wäre diese Entscheidung längst gefallen. Ein Vorteil des gemeinsamen Lernens liegt also darin, dass späte Entwicklungen noch etwas ändern können. Ein Nachteil ist die Spannweite: Meine Cousine saß in einer Klasse, in der einige kaum lesen konnten und andere Bücher verschlangen. Ohne Teilung in einzelnen Fächern überfordert das jede Lehrkraft. Meine Position ist deshalb differenziert: gemeinsame Klassen bis sechzehn, aber mit Kursen auf zwei Niveaus in Mathematik und in der Fremdsprache. Zusammenfassend: Die Frage ist weniger, ob man trennt, sondern wann und wie lange die Entscheidung offen bleibt.",
+              "Ich möchte heute darüber sprechen, ob Kinder länger gemeinsam lernen sollten. Zuerst schildere ich die Lage in meinem Herkunftsland, dann nenne ich Vor- und Nachteile, danach meine Position. In Polen gehen alle Kinder acht Jahre gemeinsam zur Schule; die Trennung kommt erst mit fünfzehn. Meine Cousine war lange schwach in Mathematik und hat sich in der siebten Klasse gefangen — in einem getrennten System wäre diese Entscheidung längst gefallen. Ein Vorteil des gemeinsamen Lernens liegt also darin, dass späte Entwicklungen noch etwas ändern können. Ein Nachteil ist die Spannweite: Meine Cousine saß in einer Klasse, in der einige kaum lesen konnten und andere Bücher verschlangen. Ohne Teilung in einzelnen Fächern überfordert das jede Lehrkraft. Meine Position ist deshalb differenziert: gemeinsame Klassen bis sechzehn, aber mit Kursen auf zwei Niveaus in Mathematik und in der Fremdsprache. Zusammenfassend: Die Frage ist weniger, ob man trennt, als vielmehr, wann und wie lange die Entscheidung offen bleibt.",
             criteria: [
               "Altı bölümün hepsi var mı ve sunum baştan bölümlendi mi?",
-              "Kendi ülkedeki durum somut anlatıldı mı?",
+              "Kendi ülkendeki durum somut anlatıldı mı?",
               "Artı ve eksi birer örnekle desteklendi mi?",
               "Konum gerekçeli mi ve dile getirilen eksiği hesaba katıyor mu?",
               "Bağlayıcılar kullanıldı mı? (zunächst, ein Vorteil liegt darin, dagegen, zusammenfassend)",
@@ -1540,7 +1540,7 @@ Jens Brodersen`,
               { de: "das Ergebnis zusammenfassen", tr: "Sonucu özetlemek" },
             ],
             sample:
-              "Den Zustand der Geräte bestreite ich nicht, ich halte die Reihenfolge nur für falsch: Ein neues Tablet hilft dem Kind nicht, das den Text nicht versteht. Ihr Einwand mit der Nachhaltigkeit trifft allerdings zu. Deshalb schlage ich vor: 8000 Euro für Förderstunden, die an feste Personen gebunden sind, und 4000 für Geräte, aber nur für die Klassen, die sie im Förderunterricht wirklich nutzen. Verzichten würde ich zuerst auf die Ferienwoche, weil wir ohne Personal dafür ohnehin niemanden hätten. Wir hätten uns also geeinigt auf: Förderstunden als Schwerpunkt, ein kleinerer Teil für Geräte, keine Ferienwoche in diesem Jahr, und wir beantragen die Sozialarbeit im nächsten Haushalt erneut.",
+              "Den Zustand der Geräte bestreite ich nicht, ich halte die Reihenfolge nur für falsch: Ein neues Tablet hilft dem Kind nicht, das den Text nicht versteht. Ihr Einwand mit der Nachhaltigkeit trifft allerdings zu. Deshalb schlage ich vor: 8000 Euro für Förderstunden, die an feste Personen gebunden sind, und 4000 für Geräte, aber nur für die Klassen, die sie im Förderunterricht wirklich nutzen. Verzichten würde ich zuerst auf die Ferienwoche, weil wir dafür ohnehin kein Personal hätten. Wir hätten uns also geeinigt auf: Förderstunden als Schwerpunkt, ein kleinerer Teil für Geräte, keine Ferienwoche in diesem Jahr, und wir beantragen die Sozialarbeit im nächsten Haushalt erneut.",
             criteria: [
               "Kendi konumu gerekçelendirildi mi?",
               "Karşı tarafın itirazı gerçekten ele alındı mı?",

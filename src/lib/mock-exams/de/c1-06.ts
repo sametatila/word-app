@@ -781,7 +781,7 @@ Vorrat laufend verbrauchen und nachkaufen.`,
               ref: "d1",
               text: "Wie reagiert Frau Dr. Ehlert darauf?",
               options: [
-                "Sie stimmt zu und verschärft ihn.",
+                "Sie stimmt zu und verschärft den Einwand.",
                 "Sie hält den Einwand für nebensächlich.",
                 "Sie widerspricht mit eigenen Zahlen.",
               ],
@@ -916,7 +916,7 @@ Vorrat laufend verbrauchen und nachkaufen.`,
               ref: "d1",
               text: "Womit begründet Herr Vandenberg seinen Vorschlag?",
               options: [
-                "Mit dem Unterschied zum Gespräch.",
+                "Mit dem Unterschied zwischen Broschüre und Gespräch.",
                 "Mit den Kosten einer zentralen Stelle.",
                 "Mit der Erfahrung aus dem letzten Hochwasser.",
               ],
@@ -980,7 +980,7 @@ In meinem Herkunftsland stellt sich die Lage anders dar. Dort ist Vorsorge weitg
 
 In der Abwägung zeigt sich das eigentliche Problem. Private Vorsorge ist sichtbar, motivierend und im Ernstfall begrenzt; öffentliche Vorsorge ist wirksam, aber unsichtbar, solange sie funktioniert. Genau deshalb wird sie regelmäßig zuerst gekürzt.
 
-Daraus folgt für mich, dass die Frage nach dem Wie viel bereits falsch gestellt ist. Entscheidend ist nicht die Menge des privaten Vorrats, sondern ob in den Einrichtungen tatsächlich geübt wird — und ob die daraus abgeleiteten Maßnahmen öffentlich nachvollziehbar sind. Alles andere verschiebt eine gemeinsame Aufgabe in den Keller einzelner Haushalte.`,
+Daraus folgt für mich, dass die Frage nach dem Wieviel bereits falsch gestellt ist. Entscheidend ist nicht die Menge des privaten Vorrats, sondern ob in den Einrichtungen tatsächlich geübt wird — und ob die daraus abgeleiteten Maßnahmen öffentlich nachvollziehbar sind. Alles andere verschiebt eine gemeinsame Aufgabe in den Keller einzelner Haushalte.`,
             criteria: [
               "Beş yönlendirme noktasının hepsi işlendi mi?",
               "Noktalar arasında bağ kuruldu mu, yoksa beş ayrı paragraf mı yan yana duruyor?",
@@ -1130,7 +1130,7 @@ Ruth Sundermann`,
       skill: "speaking",
       minutes: 15,
       instruction: "Dieser Teil hat zwei Aufgaben: einen Vortrag halten und eine Position im Gespräch verteidigen.",
-      instructionTr: "Bu bölümde iki görev var: bir sunum yapmak ve bir konumu konuşmada savunmak.",
+      instructionTr: "Bu bölümde iki görev var: bir sunum yapmak ve bir görüşü konuşmada savunmak.",
       tasks: [
         {
           id: "de-c1-06-p1",
@@ -1160,7 +1160,7 @@ Ruth Sundermann`,
             criteria: [
               "Altı bölümün hepsi var mı ve sunum baştan bölümlendi mi?",
               "Kavram tanımı gerçekten yapıldı mı?",
-              "Kendi ülkedeki durum somut ve dönemlendirilmiş mi?",
+              "Kendi ülkesindeki durum somut ve dönemlendirilmiş mi?",
               "Tartma iki yönlü mü ve her yön gerekçeli mi?",
               "Konum ölçülü mü (dereceli, koşullu) yoksa basit bir taraf tutma mı?",
               "Dil C1'de mi: adlaştırma, ilgi cümleleri, ölçülü ifade araçları?",
@@ -1194,7 +1194,7 @@ Ruth Sundermann`,
             {
               who: "partner",
               de: "Das gestehe ich Ihnen zu. Nur: Ohne Veröffentlichung wird gar nicht geübt, sagen Sie. Meine Erfahrung ist eine andere — es wird geübt, aber die Ergebnisse verschwinden in Ordnern.",
-              tr: "Bunu size veriyorum. Ama yayımlama olmazsa hiç tatbikat yapılmaz diyorsunuz. Benim deneyimim başka — tatbikat yapılıyor, ama sonuçlar klasörlerde kayboluyor.",
+              tr: "Bu konuda sana hak veriyorum. Ama yayımlama olmazsa hiç tatbikat yapılmaz diyorsun. Benim deneyimim başka — tatbikat yapılıyor, ama sonuçlar klasörlerde kayboluyor.",
             },
             {
               who: "you",
@@ -1230,7 +1230,7 @@ Ruth Sundermann`,
             minutes: 7,
             points: [
               { de: "die eigene Position begründen", tr: "Kendi konumunu gerekçelendirmek" },
-              { de: "Einwände aufnehmen statt zu wiederholen", tr: "İtirazları tekrar etmek yerine devralmak" },
+              { de: "Einwände aufnehmen statt zu wiederholen", tr: "İtirazları tekrar etmek yerine ele almak" },
               { de: "die eigene Position anpassen", tr: "Konumu gerektiğinde uyarlamak" },
               { de: "eine gemeinsame Formulierung finden", tr: "Ortak bir formüle varmak" },
             ],
@@ -1238,7 +1238,7 @@ Ruth Sundermann`,
               "Ihren Einwand teile ich insoweit, als eine Veröffentlichungspflicht die Übung verändern kann. Nur richtet sich meine Forderung nicht auf Bloßstellung, sondern auf Verbindlichkeit: Was ich veröffentlicht sehen möchte, ist nicht das Ergebnis, sondern die Tatsache, dass geübt wurde, und die Liste der daraus abgeleiteten Maßnahmen mit Fristen. Ihr zweiter Punkt trifft dabei genau meinen: Wenn Ergebnisse in Ordnern verschwinden, hilft die Übung niemandem. Deshalb würde ich die Pflicht an die Umsetzung binden, nicht an den Bericht. Zur Sicherheit: Sie haben recht, dass Schwachstellen nicht öffentlich gehören. Das spricht aber nicht gegen die Pflicht, sondern für eine Zweiteilung — der Befund geht an die Aufsicht, die Maßnahmenliste an die Öffentlichkeit. Als gemeinsame Formulierung schlage ich vor: Kritische Einrichtungen üben mindestens alle zwei Jahre; veröffentlicht werden das Datum der Übung und die daraus folgenden Maßnahmen samt Umsetzungsfrist, nicht jedoch die einzelnen Befunde. Eine Pflicht zur Offenlegung von Schwachstellen ist ausdrücklich nicht vorgesehen.",
             criteria: [
               "Konum gerekçelendirildi mi ve konuşma boyunca tutarlı kaldı mı?",
-              "İtirazlar gerçekten devralındı mı (kabul edilen kısım adlandırıldı mı)?",
+              "İtirazlar gerçekten ele alındı mı (kabul edilen kısım adlandırıldı mı)?",
               "Konum, itiraz karşısında uyarlandı mı?",
               "Güvenlik çözümü şeffaflık talebiyle çelişmeden kuruldu mu?",
               "Ortak formül iki tarafın kabullerini de içeriyor ve kesin mi?",

@@ -879,7 +879,7 @@ Kommt es über die Auslegung dieser Vereinbarung zu Streit, entscheidet eine par
               ],
               answer: 2,
               explain:
-                "Bugünkü danışma en fazla 20 dakika; ayrıntılı görüşmeler için ayrı randevu veriliyor. Yani mümkün, ama başka bir günde.",
+                "Bugünkü danışma en fazla 20 dakika; ayrıntılı görüşmeler için ayrı randevu veriliyor. Yani mümkün, ama ayrı bir randevuda.",
             },
           ],
         },
@@ -981,7 +981,7 @@ Kommt es über die Auslegung dieser Vereinbarung zu Streit, entscheidet eine par
               ref: "i1",
               text: "Unter welcher Bedingung bleiben Beschäftigte offen?",
               options: [
-                "Wenn Fehler nicht ausgewertet und Zeit nicht verplant wird.",
+                "Wenn Fehler nicht ausgewertet werden und Zeit nicht verplant wird.",
                 "Wenn sie das System vor der Einführung selbst auswählen dürfen.",
                 "Wenn die Einführung schrittweise erfolgt.",
               ],
@@ -994,7 +994,7 @@ Kommt es über die Auslegung dieser Vereinbarung zu Streit, entscheidet eine par
               id: "de-b2-03-h2-15",
               no: 15,
               ref: "i1",
-              text: "Wie sollten Schulungen nach ihrer Ansicht gelegt werden?",
+              text: "Wie sollten Schulungen nach ihrer Ansicht zeitlich gelegt werden?",
               options: [
                 "Vollständig vor dem Start, damit alle gut vorbereitet sind.",
                 "Kurz vor dem Start und ein zweites Mal nach sechs Wochen.",
@@ -1034,7 +1034,7 @@ Kommt es über die Auslegung dieser Vereinbarung zu Streit, entscheidet eine par
               id: "d1",
               genre: "Podiumsdiskussion",
               genreTr: "Panel tartışması",
-              situation: "İki uzman ücretli eğitim hakkını tartışıyor.",
+              situation: "İki uzman ücretli eğitim izni hakkını tartışıyor.",
               plays: 2,
               segments: [
                 {
@@ -1306,7 +1306,7 @@ Kommt es über die Auslegung dieser Vereinbarung zu Streit, entscheidet eine par
               id: "de-b2-03-h4-28",
               no: 28,
               ref: "v1",
-              text: "Wen trifft die Veränderung nach ihm am stärksten?",
+              text: "Wen trifft die Veränderung seiner Ansicht nach am stärksten?",
               options: [
                 "Wer neu in den Beruf kommt.",
                 "Beschäftigte kurz vor der Rente.",
@@ -1366,7 +1366,7 @@ Kommt es über die Auslegung dieser Vereinbarung zu Streit, entscheidet eine par
           prompt:
             "In einer Zeitung stand: \"Wer mit der Technik nicht Schritt hält, ist selbst schuld.\" Schreiben Sie einen Leserbrief (circa 150 Wörter). Setzen Sie sich mit dieser Aussage auseinander, nennen Sie Argumente und ziehen Sie eine begründete Schlussfolgerung.",
           promptTr:
-            "Bir gazetede şöyle yazdı: \"Teknolojiye ayak uyduramayan kendi kabahati.\" Bir okur mektubu yaz (yaklaşık 150 kelime). Bu iddiayı tartış, gerekçeler sun ve gerekçeli bir sonuca bağla.",
+            "Bir gazetede şöyle yazıyordu: \"Teknolojiye ayak uyduramayan kendi kabahati.\" Bir okur mektubu yaz (yaklaşık 150 kelime). Bu iddiayı tartış, gerekçeler sun ve gerekçeli bir sonuca bağla.",
           items: [],
           rubric: {
             minWords: 150,
@@ -1435,7 +1435,7 @@ Deniz Kaya`,
               "Ret gerekçesi inandırıcı ve kısa mı, savunmaya kaçmıyor mu?",
               "Katılma isteği açıkça belirtilmiş mi?",
               "Önerilen çözüm gerçekten uygulanabilir mi ve alternatifi de var mı?",
-              "Yarı resmî kayıt korunmuş mu, yaklaşık 100 kelime mi?",
+              "Yarı resmî üslup korunmuş mu, yaklaşık 100 kelime mi?",
             ],
           },
         },
@@ -1475,7 +1475,7 @@ Deniz Kaya`,
               "Ich möchte heute über eine Pflicht zur Weiterbildung sprechen. Zuerst schildere ich die Lage in meinem Heimatland, dann nenne ich Vor- und Nachteile, danach meine eigene Position. In der Türkei gibt es einen solchen Anspruch nur in wenigen Branchen; in den meisten Betrieben entscheidet die Leitung von Fall zu Fall. Ein Vorteil einer Pflicht liegt auf der Hand: Sie erreicht die Beschäftigten, die von sich aus nie fragen würden. Meine Cousine arbeitet seit zwölf Jahren in einem Lager und ist noch nie auf einem Kurs gewesen. Ein Nachteil ist die Belastung kleiner Betriebe. Wenn in einem Betrieb mit acht Leuten zwei gleichzeitig fehlen, steht der Betrieb. Meine Position ist deshalb eine Mischung: ein verbindlicher Grundanspruch für alle, ergänzt durch einen Ausgleichsfonds für kleine Betriebe. Ohne diesen Ausgleich würde die Pflicht genau die treffen, die sie am wenigsten tragen können. Zusammenfassend: Ich bin dafür, aber nur mit einer Finanzierung, die die Betriebsgröße berücksichtigt.",
             criteria: [
               "Altı bölümün hepsi var mı ve sunum baştan bölümlendi mi?",
-              "Kendi ülkedeki durum somut anlatıldı mı?",
+              "Kendi ülkendeki durum somut anlatıldı mı?",
               "Artı ve eksi birer örnekle desteklendi mi?",
               "Konum gerekçeli mi ve dile getirilen eksiği hesaba katıyor mu?",
               "Bağlayıcılar kullanıldı mı? (zunächst, ein Vorteil liegt darin, dagegen, zusammenfassend)",

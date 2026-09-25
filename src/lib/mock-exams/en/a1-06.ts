@@ -17,7 +17,7 @@ export const EN_A1_06: MockPaper = {
   level: "A1",
   no: 6,
   theme: "Pets, the Park and the Neighbourhood",
-  themeTr: "Hayvanlar, park ve mahalle",
+  themeTr: "Evcil hayvanlar, park ve mahalle",
   minutes: 85,
   parts: [
     /* ── READING ───────────────────────────────────────────────────────── */
@@ -429,7 +429,7 @@ Rune`,
               situation: "Veteriner muayenehanesi ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hello, this is the animal doctor. Your dog is fine. You can come at four in the afternoon, not at two. Please bring the small green card." },
+                { text: "Hello, this is the vet's. Your dog is fine. You can come at four in the afternoon, not at two. Please bring the small green card." },
               ],
             },
             {
@@ -465,7 +465,7 @@ Rune`,
               situation: "Bir komşu ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hi Vito, it is Mila from flat 2. Your bird is very loud in the morning. Can you put the window down before seven? Thank you." },
+                { text: "Hi Vito, it is Mila from flat 2. Your bird is very loud in the morning. Can you close the window before seven? Thank you." },
               ],
             },
             {
@@ -537,7 +537,7 @@ Rune`,
               options: ["To give the bird more food", "To close the window early", "To call her in the morning"],
               answer: 1,
               explain:
-                "Ricanın kendisi kayıtta: «Can you put the window down before seven?». Yem ya da telefon hiç geçmiyor; sorun kuşun sabah gürültüsü.",
+                "Ricanın kendisi kayıtta: «Can you close the window before seven?». Yem ya da telefon hiç geçmiyor; sorun kuşun sabah gürültüsü.",
             },
             {
               kind: "mcq",
@@ -642,13 +642,13 @@ Rune`,
               situation: "Bir arkadaş kedi bakımı için ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hi Orla, thank you for the cat! One more thing: she does not eat the fish food. Please give her the chicken food in the red box." },
+                { text: "Hi Orla, thank you for looking after the cat! One more thing: she does not eat the fish food. Please give her the chicken food in the red box." },
               ],
             },
             {
               kind: "audio",
               id: "c2",
-              genre: "At the animal doctor",
+              genre: "At the vet's",
               genreTr: "Veterinerde",
               situation: "Bir hasta sahibi görevliyle konuşuyor.",
               plays: 2,
@@ -669,7 +669,7 @@ Rune`,
               segments: [
                 { text: "Is the walking group at ten on Sunday?" },
                 { text: "Yes, at the big gate, not at the café." },
-                { text: "Good. I come with my sister." },
+                { text: "Good. I'll come with my sister." },
                 { text: "Bring a warm coat. It is cold at the lake." },
               ],
             },
@@ -846,7 +846,7 @@ Phone:              {{5}}`,
           format: "writing",
           goal: "interaction",
           prompt:
-            "You go away for one week and your neighbour looks after your cat. Write a short message to your neighbour. Write one or two sentences about each point (about 25 words). Do not forget the greeting at the start and at the end.",
+            "You are going away for a week and your neighbour is looking after your cat and your neighbour looks after your cat. Write a short message to your neighbour. Write one or two sentences about each point (about 25 words). Do not forget the greeting at the start and at the end.",
           promptTr:
             "Bir haftalığına şehir dışına çıkıyorsun ve komşun kedine bakacak. Komşuna kısa bir ileti yaz. Her maddeye bir-iki cümle yaz (yaklaşık 25 kelime). Baştaki hitabı ve sondaki veda cümlesini unutma.",
           items: [],
@@ -881,7 +881,7 @@ Vito`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "This part has three tasks: you talk about animals and your street, you ask and answer questions, and you act at the pet shop.",
+      instruction: "This part has three tasks: you talk about animals and your street, you ask and answer questions, and you do a role play at the pet shop.",
       instructionTr: "Bu bölümde üç görev var: hayvanları ve sokağını anlatma, soru sorup cevaplama ve hayvan dükkânında rol yapma.",
       tasks: [
         {

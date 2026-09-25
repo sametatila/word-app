@@ -130,7 +130,6 @@
  { "tr": "En az iki bağımsız gerekçe var mı (tanım değişikliği ve dağılım gibi)?", "kind": "rubric.criteria", "en": "Are there at least two independent arguments (such as the change of definition and the distribution)?" },
  { "tr": "Karşı görüş gerçekten karşı bir görüş mü, yoksa aynı savın tekrarı mı?", "kind": "rubric.criteria", "en": "Is the counter-position really a counter-position, or a repeat of the same claim?" },
  { "tr": "Karşılaştırma yapıları kullanıldı mı? (dafür spricht, dagegen spricht)", "kind": "rubric.criteria", "en": "Were comparative structures used? (dafür spricht, dagegen spricht)" },
- { "tr": "Kendi ülkedeki durum somut ve yalnız betimleyici değil, açıklayıcı mı?", "kind": "rubric.criteria", "en": "Is the situation at home concrete and explanatory rather than merely descriptive?" },
  { "tr": "Resmî hitap doğru mu? (Sehr geehrter Herr … / Mit freundlichen Grüßen)", "kind": "rubric.criteria", "en": "Is the formal greeting right? (Sehr geehrter Herr … / Mit freundlichen Grüßen)" },
  { "tr": "Sunulan çözüm kalıcı mı (yazılı talep, yeni anahtar), yoksa geçici mi?", "kind": "rubric.criteria", "en": "Is the solution offered lasting (a written request, a new key), or only temporary?" },
  { "tr": "Yaklaşık 80 kelime var mı ve metin bir gazete yazısı gibi mi kurulmuş?", "kind": "rubric.criteria", "en": "Are there about 80 words and is the text built like a newspaper piece?" },

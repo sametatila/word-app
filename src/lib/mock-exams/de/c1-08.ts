@@ -40,9 +40,9 @@ export const C1_08: MockPaper = {
       skill: "reading",
       minutes: 70,
       instruction:
-        "Dieser Teil hat drei Aufgaben: eine Zusammenfassung ergänzen, einen Essay auswerten und einen Text strukturell schließen.",
+        "Dieser Teil hat drei Aufgaben: eine Zusammenfassung ergänzen, einen Essay auswerten und strukturelle Lücken in einem Text schließen.",
       instructionTr:
-        "Bu bölümde üç görev var: bir özeti tamamlamak, bir deneme metnini çözümlemek ve bir metni yapısal olarak kapatmak.",
+        "Bu bölümde üç görev var: bir özeti tamamlamak, bir deneme metnini çözümlemek ve bir metindeki yapısal boşlukları doldurmak.",
       tasks: [
         {
           id: "de-c1-08-l1",
@@ -897,7 +897,7 @@ Einwendungen schriftlich bis {{10}}.`,
               ],
               answer: 2,
               explain:
-                "Sınırlı bir kabul: \"Für einen Teil unserer Verbände trifft das zu\" — hesap görmeden işletme biçimi talep edenleri uyarıyor.",
+                "Sınırlı bir kabul: \"Für einen Teil unserer Verbände trifft das zu\" — hiç maliyet hesabı görmeden belli bir işletme biçimi talep edenleri uyarıyor.",
             },
             {
               kind: "mcq",
@@ -977,7 +977,7 @@ Einwendungen schriftlich bis {{10}}.`,
           format: "writing",
           goal: "production",
           prompt:
-            "In einer Regionalzeitung stand: \"Wer Landschaft erhalten will, soll Flächen kaufen statt Auflagen zu machen.\" Schreiben Sie eine Stellungnahme (circa 200 Wörter). Ordnen Sie die These ein, prüfen Sie sie an einem Beispiel, nennen Sie einen Einwand gegen Ihre eigene Position und ziehen Sie eine Schlussfolgerung.",
+            "In einer Regionalzeitung stand: \"Wer Landschaft erhalten will, soll Flächen kaufen, statt Auflagen zu machen.\" Schreiben Sie eine Stellungnahme (circa 200 Wörter). Ordnen Sie die These ein, prüfen Sie sie an einem Beispiel, nennen Sie einen Einwand gegen Ihre eigene Position und ziehen Sie eine Schlussfolgerung.",
           promptTr:
             "Bir yerel gazetede şöyle yazdı: \"Peyzajı korumak isteyen şart koşmak yerine arazi satın alsın.\" Bir görüş yazısı yaz (yaklaşık 200 kelime). Savı yerine oturt, bir örnekle sına, kendi konumuna yönelik bir itirazı da söyle ve bir sonuca bağla.",
           items: [],
@@ -1240,8 +1240,8 @@ Beate {{10}}`,
             minutes: 7,
             points: [
               { de: "eine Position begründen", tr: "Bir konumu gerekçelendirmek" },
-              { de: "auf Einwände eingehen", tr: "İtirazlara girmek" },
-              { de: "einen Kompromiss formulieren", tr: "Bir uzlaşı biçimlendirmek" },
+              { de: "auf Einwände eingehen", tr: "İtirazları ele almak" },
+              { de: "einen Kompromiss formulieren", tr: "Bir uzlaşı formüle etmek" },
               { de: "Ergebnis und offene Punkte zusammenfassen", tr: "Sonucu ve açık noktaları özetlemek" },
             ],
             sample:

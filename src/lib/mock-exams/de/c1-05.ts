@@ -993,7 +993,7 @@ Auftragsrecherche: {{10}} — Beratung reicht meistens.`,
             ],
             sample: `Wer über Denkmäler streitet, streitet selten über die Vergangenheit. Verhandelt wird, wen eine Stadt heute noch ehren möchte — und diese Frage lässt sich nicht historisch entscheiden.
 
-Zwei Gründe erklären die Schärfe der Auseinandersetzungen. Zum einen sind Namen und Standbilder beiläufig entstanden; sie werden erst sichtbar, wenn jemand sie bestreitet, und wirken deshalb wie ein Angriff auf etwas Selbstverständliches. Zum anderen fehlt in den meisten Kommunen ein festes Verfahren, sodass jedes Mal zunächst über das Wie gestritten wird, bevor man zur Sache kommt.
+Zwei Gründe erklären die Schärfe der Auseinandersetzungen. Zum einen sind Namen und Standbilder beiläufig entstanden; sie werden erst sichtbar, wenn jemand sie infrage stellt, und wirken deshalb wie ein Angriff auf etwas Selbstverständliches. Zum anderen fehlt in den meisten Kommunen ein festes Verfahren, sodass jedes Mal zunächst über das Wie gestritten wird, bevor man zur Sache kommt.
 
 In meinem Herkunftsland stellt sich die Lage anders dar. Dort wurden Straßennamen nach 1990 in großer Zahl und binnen weniger Monate geändert, ohne öffentliche Anhörung. Das Ergebnis war effizient und hat wenig geklärt; viele erinnern sich an die Namen, nicht an eine Debatte.
 
@@ -1149,7 +1149,7 @@ Rasmus Kienle`,
       skill: "speaking",
       minutes: 15,
       instruction: "Dieser Teil hat zwei Aufgaben: einen Vortrag halten und eine Position im Gespräch verteidigen.",
-      instructionTr: "Bu bölümde iki görev var: bir sunum yapmak ve bir konumu konuşmada savunmak.",
+      instructionTr: "Bu bölümde iki görev var: bir sunum yapmak ve bir görüşü konuşmada savunmak.",
       tasks: [
         {
           id: "de-c1-05-p1",
@@ -1162,7 +1162,7 @@ Rasmus Kienle`,
           prompt:
             "Halten Sie einen Vortrag von etwa vier Minuten zum Thema \"Wie soll eine Stadt mit belasteten Namen umgehen?\". Gliedern Sie: Einstieg — Begriffsklärung — Lage in Ihrem Herkunftsland — Abwägung — eigene Position — Ausblick.",
           promptTr:
-            "\"Bir şehir yükü olan adlarla nasıl baş etmeli?\" konusunda yaklaşık dört dakikalık bir sunum yap. Şu sırayı izle: giriş — kavramı netleştirme — kendi ülkendeki durum — tartma — kendi konumun — kapanış.",
+            "\"Bir şehir geçmişi lekeli adlarla nasıl baş etmeli?\" konusunda yaklaşık dört dakikalık bir sunum yap. Şu sırayı izle: giriş — kavramı netleştirme — kendi ülkendeki durum — tartma — kendi konumun — kapanış.",
           items: [],
           rubric: {
             minutes: 8,
@@ -1179,7 +1179,7 @@ Rasmus Kienle`,
             criteria: [
               "Altı bölümün hepsi var mı ve sunum baştan bölümlendi mi?",
               "Kavram tanımı gerçekten yapıldı mı, yoksa örnekle mi geçiştirildi?",
-              "Kendi ülkedeki durum somut ve dönemlendirilmiş mi?",
+              "Kendi ülkesindeki durum somut ve dönemlendirilmiş mi?",
               "Tartma iki yönlü mü ve her yön gerekçeli mi?",
               "Konum ölçülü mü (koşullu, dereceli) yoksa basit bir taraf tutma mı?",
               "Dil C1'de mi: adlaştırma, ilgi cümleleri, ölçülü ifade araçları?",
@@ -1213,7 +1213,7 @@ Rasmus Kienle`,
             {
               who: "partner",
               de: "Das gestehe ich Ihnen zu. Nur: In der Praxis wird jedes Verfahren zur Bühne. Wer am lautesten spricht, prägt das Ergebnis — und das sind selten die Betroffenen.",
-              tr: "Bunu size veriyorum. Ama pratikte her süreç sahneye dönüşüyor. En yüksek sesle konuşan sonucu belirliyor ve bu ender olarak mağdurlar oluyor.",
+              tr: "Bu konuda sana hak veriyorum. Ama pratikte her süreç sahneye dönüşüyor. En yüksek sesle konuşan sonucu belirliyor ve bunlar nadiren mağdurların kendisi oluyor.",
             },
             {
               who: "you",
@@ -1224,7 +1224,7 @@ Rasmus Kienle`,
             {
               who: "partner",
               de: "Angenommen, wir lösen das. Bleibt die Frage der Kosten: Zwei Jahre Verfahren binden Personal, das anderswo fehlt. Wer trägt das?",
-              tr: "Diyelim bunu çözdük. Geriye maliyet sorunu kalıyor: İki yıllık süreç başka yerde eksilen personeli bağlıyor. Bunu kim üstlenecek?",
+              tr: "Diyelim bunu çözdük. Geriye maliyet sorunu kalıyor: İki yıllık süreç, başka yerde eksikliği hissedilecek personeli meşgul ediyor. Bunu kim üstlenecek?",
             },
             {
               who: "you",
@@ -1249,7 +1249,7 @@ Rasmus Kienle`,
             minutes: 7,
             points: [
               { de: "die eigene Position begründen", tr: "Kendi konumunu gerekçelendirmek" },
-              { de: "Einwände aufnehmen statt zu wiederholen", tr: "İtirazları tekrar etmek yerine devralmak" },
+              { de: "Einwände aufnehmen statt zu wiederholen", tr: "İtirazları tekrar etmek yerine ele almak" },
               { de: "die eigene Position anpassen", tr: "Konumu gerektiğinde uyarlamak" },
               { de: "eine gemeinsame Formulierung finden", tr: "Ortak bir formüle varmak" },
             ],
@@ -1257,7 +1257,7 @@ Rasmus Kienle`,
               "Ihren Einwand teile ich insoweit, als lange Verfahren tatsächlich zermürben. Nur richtet sich meine Forderung nicht auf Dauer, sondern auf Öffentlichkeit: Entscheidend ist, dass die Gründe nachvollziehbar dokumentiert werden, nicht dass zwei Jahre vergehen. Ihr zweiter Punkt trifft allerdings einen wunden Punkt. Deshalb würde ich das Verfahren anders binden: Anhörungen mit begrenzter Redezeit, eine feste Frist von höchstens neun Monaten und ein Vorrang für die Stimmen derjenigen, die unmittelbar betroffen sind. Zu den Kosten: Sie haben recht, dass Personal gebunden wird. Das spricht aber für einen einmal festgelegten Ablauf, nicht gegen das Verfahren — der teuerste Fall ist der, in dem jedes Mal neu über das Wie gestritten wird. Als gemeinsame Formulierung schlage ich vor: Eine Umbenennung setzt ein öffentliches Verfahren voraus, das binnen neun Monaten abzuschließen ist, die Gründe schriftlich festhält und den unmittelbar Betroffenen Vorrang einräumt. Eine Verlängerung ist ausdrücklich nicht vorgesehen.",
             criteria: [
               "Konum gerekçelendirildi mi ve konuşma boyunca tutarlı kaldı mı?",
-              "İtirazlar gerçekten devralındı mı (kabul edilen kısım adlandırıldı mı)?",
+              "İtirazlar gerçekten ele alındı mı (kabul edilen kısım adlandırıldı mı)?",
               "Konum, itiraz karşısında körü körüne savunulmak yerine uyarlandı mı?",
               "Maliyet sorusu kendi önerisine bağlanabildi mi?",
               "Ortak formül iki tarafın kabullerini de içeriyor ve kesin mi?",

@@ -488,7 +488,7 @@ Clara Weiss`,
               situation: "İki arkadaş hafta sonu planı yapıyor.",
               plays: 2,
               segments: [
-                { speaker: "Rudi", text: "Do you come to the sport club on Saturday?" },
+                { speaker: "Rudi", text: "Are you coming to the sports club on Saturday?" },
                 { speaker: "Clara", text: "I work on Saturday morning. Is there something on Sunday?" },
                 { speaker: "Rudi", text: "Yes, we play in the park at eleven." },
               ],
@@ -528,7 +528,7 @@ Clara Weiss`,
               options: ["Bring the book back", "Finish the homework", "Nothing at all"],
               answer: 0,
               explain:
-                "Meral ödevi perşembeye erteliyor ama «the book must go back tomorrow» diyor. Yarın için tek iş kitabı geri vermek; ödev sorusu tuzak.",
+                "Meral ödevin perşembeye olduğunu söylüyor ama «the book must go back tomorrow» diyor. Yarın için tek iş kitabı geri vermek; ödev sorusu tuzak.",
             },
             {
               kind: "mcq",
@@ -592,7 +592,7 @@ Clara Weiss`,
               situation: "Okulda bir anons yapılıyor.",
               plays: 2,
               segments: [
-                { text: "Good morning. The sport hall is closed this week. Sport is in the park. Please bring warm clothes." },
+                { text: "Good morning. The sports hall is closed this week. Sport is in the park. Please bring warm clothes." },
               ],
             },
             {
@@ -638,7 +638,7 @@ Clara Weiss`,
               text: "There is no sport this week.",
               answer: false,
               explain:
-                "Anons yeri değiştiriyor, dersi iptal etmiyor: «The sport hall is closed this week. Sport is in the park». Kapalı olan salon; ders sürüyor.",
+                "Anons yeri değiştiriyor, dersi iptal etmiyor: «The sports hall is closed this week. Sport is in the park». Kapalı olan salon; ders sürüyor.",
             },
             {
               kind: "bool",
@@ -708,9 +708,9 @@ Clara Weiss`,
             {
               kind: "audio",
               id: "c3",
-              genre: "At the sport club",
+              genre: "At the sports club",
               genreTr: "Spor kulübünde",
-              situation: "Bir kişi kulübe yazılıyor.",
+              situation: "Bir kişi kızını kulübe yazdırıyor.",
               plays: 2,
               segments: [
                 { speaker: "Visitor", text: "How much is one month?" },
@@ -726,7 +726,7 @@ Clara Weiss`,
               situation: "İki kardeş hafta sonunu konuşuyor.",
               plays: 2,
               segments: [
-                { speaker: "Talia", text: "On Saturday we go to Grandma. And on Sunday?" },
+                { speaker: "Talia", text: "On Saturday we're going to Grandma's. And on Sunday?" },
                 { speaker: "Yannis", text: "I play football at ten. After that I am free." },
               ],
             },
@@ -898,12 +898,12 @@ No sport in:         {{5}}`,
             minWords: 25,
             points: [
               { de: "Say why you cannot come.", tr: "Neden gelemediğini söyle." },
-              { de: "Say when you come again.", tr: "Ne zaman geleceğini söyle." },
+              { de: "Say when you will come back.", tr: "Ne zaman geleceğini söyle." },
               { de: "Ask for the homework.", tr: "Ödevi iste." },
             ],
             sample: `Dear Mrs Roth,
 
-I am at home today. I have a bad cold and I cannot come to the class. I come again on Thursday. Can you send me the homework, please?
+I am at home today. I have a bad cold and I cannot come to the class. I will come back on Thursday. Can you send me the homework, please?
 
 Thank you!
 Meral`,
@@ -923,7 +923,7 @@ Meral`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "This part has three tasks: you talk about your week, you ask and answer questions about free time, and you act at the doctor's.",
+      instruction: "This part has three tasks: you talk about your week, you ask and answer questions about free time, and you do a role play at the doctor's.",
       instructionTr: "Bu bölümde üç görev var: haftanı anlatma, boş zaman üzerine soru sorup cevaplama ve doktorda rol yapma.",
       tasks: [
         {
@@ -997,7 +997,7 @@ Meral`,
           format: "speaking",
           goal: "interaction",
           prompt:
-            "You are at the doctor's. Situations: you say what is wrong. — You ask about the medicine. — You ask for a paper for your work.",
+            "You are at the doctor's. Situations: you say what is wrong. — You ask about the medicine. — You ask for a note for your work.",
           promptTr:
             "Doktordasın. Durumlar: Neyin olduğunu söyle. — İlacı sor. — İşin için bir belge iste.",
           prepSeconds: 20,
@@ -1018,7 +1018,7 @@ Meral`,
               { de: "ask for something politely", tr: "Kibarca bir şey istemek" },
             ],
             sample:
-              "My head hurts and I am very tired. It is three days now. — How many days do I take it? Before or after food? — Can I have a paper for my work, please?",
+              "My head hurts and I am very tired. It started three days ago. — How many days do I take it? Before or after food? — Can I have a note for my work, please?",
             criteria: [
               "Rahatsızlık anlaşılır söylendi mi? (My head hurts / I have a cold)",
               "Süre bildirildi mi? (three days, since Monday)",

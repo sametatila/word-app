@@ -673,7 +673,7 @@ Fällt ein Termin durch die Kursleitung aus, wird er nachgeholt. Ist das nicht m
               id: "h4",
               genre: "Durchsage im Schwimmbad",
               genreTr: "Yüzme havuzunda anons",
-              situation: "Bir kulvar düzenlemesi duyuruluyor.",
+              situation: "Havuzların kullanımıyla ilgili bir düzenleme duyuruluyor.",
               plays: 1,
               segments: [
                 {
@@ -690,7 +690,7 @@ Fällt ein Termin durch die Kursleitung aus, wird er nachgeholt. Ist das nicht m
               plays: 1,
               segments: [
                 {
-                  text: "Liebe Gäste, das angekündigte Fischgericht ist heute leider nicht verfügbar. Als Ersatz bieten wir einen Gemüseauflauf zum selben Preis an. Wer bereits bezahlt hat, bekommt an der Kasse die Differenz zurück.",
+                  text: "Liebe Gäste, das angekündigte Fischgericht ist heute leider nicht verfügbar. Als Ersatz bieten wir einen Gemüseauflauf für zwei Euro weniger an. Wer bereits bezahlt hat, bekommt an der Kasse die Differenz zurück.",
                 },
               ],
             },
@@ -802,9 +802,9 @@ Fällt ein Termin durch die Kursleitung aus, wird er nachgeholt. Ist das nicht m
               no: 9,
               ref: "h5",
               text: "Das Ersatzgericht kostet genauso viel wie das geplante.",
-              answer: true,
+              answer: false,
               explain:
-                "Anons \"einen Gemüseauflauf zum selben Preis\" diyor. Fiyat farkı yalnız önceden ödeyenler için söz konusu.",
+                "Yedek yemek daha ucuz: \"einen Gemüseauflauf für zwei Euro weniger\". Bu yüzden önceden ödeyenlere fark geri veriliyor.",
             },
             {
               kind: "mcq",
@@ -819,7 +819,7 @@ Fällt ein Termin durch die Kursleitung aus, wird er nachgeholt. Ist das nicht m
               ],
               answer: 2,
               explain:
-                "Anons yalnız farkın iadesini duyuruyor: \"bekommt an der Kasse die Differenz zurück\". Tam iade ya da fiş geçmiyor.",
+                "Anons yalnız farkın iadesini duyuruyor: \"bekommt an der Kasse die Differenz zurück\". Tam iade ya da kupon geçmiyor.",
             },
           ],
         },
@@ -1140,7 +1140,7 @@ Fällt ein Termin durch die Kursleitung aus, wird er nachgeholt. Ist das nicht m
               id: "de-b1-05-h4-24",
               no: 24,
               ref: "d1",
-              text: "Wie entkräftet er diesen Einwand?",
+              text: "Was setzt er diesem Einwand entgegen?",
               options: [
                 "Die Krankheit treffe sie noch härter.",
                 "Die Steuer sei ohnehin sehr niedrig.",
@@ -1266,7 +1266,7 @@ Fällt ein Termin durch die Kursleitung aus, wird er nachgeholt. Ist das nicht m
             minWords: 80,
             points: [
               { de: "Bedanken Sie sich für die Einladung.", tr: "Davet için teşekkür et." },
-              { de: "Erklären Sie, warum dreimal nicht geht.", tr: "Neden üç kez olmadığını açıkla." },
+              { de: "Erklären Sie, warum dreimal nicht geht.", tr: "Neden üç kez gelemeyeceğini açıkla." },
               { de: "Machen Sie einen realistischen Gegenvorschlag.", tr: "Gerçekçi bir karşı öneri sun." },
               { de: "Fragen Sie nach Ort und Uhrzeit.", tr: "Yeri ve saati sor." },
             ],
@@ -1391,7 +1391,7 @@ Erol Kaya`,
             {
               who: "partner",
               de: "Einverstanden. Und das Programm? Ein Vortrag ist einfach zu organisieren, aber viele finden Vorträge langweilig.",
-              tr: "Anlaştım. Peki program? Bir sunum düzenlemesi kolay ama çoğu kişi sunumları sıkıcı buluyor.",
+              tr: "Anlaştık. Peki program? Bir sunum düzenlemesi kolay ama çoğu kişi sunumları sıkıcı buluyor.",
             },
             {
               who: "you",
@@ -1431,7 +1431,7 @@ Erol Kaya`,
               { de: "zu einer Entscheidung kommen", tr: "Bir karara varmak" },
             ],
             sample:
-              "Ich schlage den letzten Freitag im Monat vor, weil dann der Kurs früher endet. Statt eines Vortrags könnten wir Stationen machen: eine zum Blutdruckmessen, eine mit einfachen Rückenübungen, eine mit Essen. Dann muss niemand vierzig Minuten stillsitzen. Beim Essen wäre ich dafür, dass jeder etwas mitbringt, weil das billiger ist und weil dann auch Gerichte aus verschiedenen Ländern dabei sind. Für die Werbung machen wir beides: einen Zettel an jeder Tür und eine Nachricht in den Kursgruppen. Ich übernehme die Zettel, wenn du die Nachrichten schreibst.",
+              "Ich schlage den letzten Freitag im Monat vor, weil dann der Kurs früher endet. Statt eines Vortrags könnten wir Stationen machen: eine zum Blutdruckmessen, eine mit einfachen Rückenübungen, eine mit Essen. Dann muss niemand vierzig Minuten stillsitzen. Beim Essen wäre ich dafür, dass jeder etwas mitbringt, weil das billiger ist und weil dann auch Gerichte aus verschiedenen Ländern dabei sind. Die übrigen Kosten, zum Beispiel für das Material, bezahlen wir aus der Kurskasse. Für die Werbung machen wir beides: einen Zettel an jeder Tür und eine Nachricht in den Kursgruppen. Ich übernehme die Zettel, wenn du die Nachrichten schreibst.",
             criteria: [
               "Beş noktanın hepsi konuşuldu mu?",
               "Öneriler gerekçelendirildi mi? (weil, damit, deshalb)",

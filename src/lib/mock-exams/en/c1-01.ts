@@ -323,7 +323,7 @@ Neither change is a guarantee, and it would be {{17}} to present them as one. Wh
               no: 19,
               text: "People say the technique was developed in Japan.\nThe technique ______ developed in Japan.",
               cue: "SAID",
-              accept: ["is said to have been", "was said to have been"],
+              accept: ["is said to have been"],
               explain:
                 "Kişisiz aktarım yapısı isteniyor: «The technique is said to have been developed …». Anahtar sözcük `said` edilgen aktarımın çekirdeği; ardından geçmişe gönderme için `to have been` geliyor. Beş sözcük sınırının tam ucunda.",
             },
@@ -1387,7 +1387,7 @@ My own view is that the choice is often false. What is missing is not a decision
           rubric: {
             minWords: 220,
             points: [
-              { de: "Describe the current situation with evidence.", tr: "Mevcut durumu kanıtla anlat." },
+              { de: "Describe the current situation with evidence.", tr: "Mevcut durumu kanıtlara dayanarak anlat." },
               { de: "Make a specific recommendation.", tr: "Belirli bir öneri sun." },
               { de: "Address one objection that the committee is likely to raise.", tr: "Komisyonun getirmesi muhtemel bir itirazı karşıla." },
             ],
@@ -1407,7 +1407,7 @@ The committee may reasonably object that digitisation is more visible and photog
 
 Conclusion
 
-I would add that cataloguing is reversible in a way that spending on equipment is not. If the committee prefers a smaller commitment, half the sum would still complete the two largest uncatalogued series, and I would regard that as a better outcome than an evenly divided budget that finishes neither task.`,
+I would add that cataloguing is divisible in a way that spending on equipment is not. If the committee prefers a smaller commitment, half the sum would still complete the two largest uncatalogued series, and I would regard that as a better outcome than an evenly divided budget that finishes neither task.`,
             criteria: [
               "Mevcut durum somut kanıtla mı anlatıldı? (sayı, kayıt, gözlem)",
               "Öneri belirli mi — ne, ne kadar, ne süreyle?",
@@ -1507,7 +1507,7 @@ I would add that cataloguing is reversible in a way that spending on equipment i
             { who: "you", hint: "İki seçenek seç ve seçim ölçütünü açıkça söyle.", expect: "iki seçeneği seçmek ve seçim ölçütünü açıkça adlandırmak", seconds: 50 },
             { who: "partner", de: "Let me press you on that. Everything you have chosen is invisible to the public, and this archive depends on public support for its funding. Is that not a real risk?", tr: "Bu noktada üsteleyeyim. Seçtiklerinin hepsi halka görünmez ve bu arşiv fonu için kamu desteğine bağlı. Bu gerçek bir risk değil mi?" },
             { who: "you", hint: "İtirazı ciddiye al: gücünü kabul et, sonra ya konumunu değiştir ya da neden değiştirmediğini açıkla.", expect: "güçlü bir itirazı kabul etmek ve konumunu ya revize etmek ya da savunmasını gerekçelendirmek", seconds: 50 },
-            { who: "partner", de: "All right. Can we agree on a priority order for the top three, and say what we would drop?", tr: "Peki. İlk üç için bir öncelik sırasında anlaşabilir miyiz, ve neyi bırakacağımızı söyleyebilir miyiz?" },
+            { who: "partner", de: "All right. Can we agree on a priority order for the top three, and say what we would drop?", tr: "Peki. İlk üç için bir öncelik sırasında anlaşabilir miyiz ve neyi bırakacağımızı söyleyebilir miyiz?" },
             { who: "you", hint: "Sıralamayı ver, her adımı kısaca gerekçelendir ve bırakılanı da açıkla.", expect: "gerekçeli bir öncelik sırası kurmak ve dışarıda bırakılanı açıklamak", seconds: 50 },
           ],
           items: [],

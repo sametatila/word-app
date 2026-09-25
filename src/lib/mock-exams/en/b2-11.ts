@@ -318,7 +318,7 @@ Proposals for a repairability label have been discussed since the nineteen ninet
               cue: "WERE",
               accept: ["were we told"],
               explain:
-                "`At no point` gibi olumsuz bir öbek cümle başına gelince devrik kuruluş zorunludur: yardımcı fiil özneden önce gelir ve yapı edilgen kalır.",
+                "`At no point` gibi olumsuz bir öbek cümle başına gelince devrik kuruluş zorunludur: yardımcı fiil özneden önce gelir ve yapı edilgene döner.",
             },
             {
               kind: "gap",
@@ -549,7 +549,7 @@ None of which makes the four-euro figure useless. It is the clearest short way o
             {
               key: "b",
               label: "b — Design engineer",
-              body: "Every gain from sealing the drum reached the buyer on the day of purchase, and the cost arrives in year seven. No market can weigh those two things against each other. Put a verified repair figure on the label and I will design against it, because a number on a label is what I have always designed against.",
+              body: "Every gain from sealing the drum reaches the buyer on the day of purchase, and the cost arrives in year seven. No market can weigh those two things against each other. Put a verified repair figure on the label and I will design against it, because a number on a label is what I have always designed against.",
             },
             {
               key: "c",
@@ -1084,7 +1084,7 @@ Bring the {{16}} number`,
               text: "Speaker 6",
               answer: "h",
               explain:
-                "Altıncı konuşmacı tıkanmayı tedariğe bağlıyor: «the pump has not been manufactured since 2019» ve «a production line somewhere closed».",
+                "Altıncı konuşmacı tıkanmayı tedarike bağlıyor: «the pump has not been manufactured since 2019» ve «a production line somewhere closed».",
             },
           ],
         },
@@ -1234,7 +1234,7 @@ Bring the {{16}} number`,
           prompt:
             "In your English class you have discussed why household machines are replaced rather than repaired. Now write an essay for your teacher, answering this question: \"Should manufacturers be required to supply spare parts for ten years?\" Use the two ideas below and add one idea of your own.\n\nIdeas: what the requirement would cost — what buyers can find out before they buy",
           promptTr:
-            "İngilizce dersinde ev aletlerinin neden tamir edilmeyip değiştirildiğini tartıştınız. Öğretmenin için bir deneme yaz: \"Üreticiler on yıl boyunca yedek parça sağlamak zorunda bırakılmalı mı?\" Aşağıdaki iki fikri kullan ve kendi fikrinden birini ekle.\n\nFikirler: bu zorunluluğun maliyeti — alıcının satın almadan önce öğrenebildikleri",
+            "İngilizce dersinde ev aletlerinin neden tamir edilmeyip değiştirildiğini tartıştınız. Öğretmenin için bir deneme yaz: \"Üreticiler on yıl boyunca yedek parça sağlamak zorunda tutulmalı mı?\" Aşağıdaki iki fikri kullan ve kendi fikrinden birini ekle.\n\nFikirler: bu zorunluluğun maliyeti — alıcının satın almadan önce öğrenebildikleri",
           items: [],
           rubric: {
             minWords: 140,
@@ -1285,7 +1285,7 @@ I bought your model 4120 in March 2019. It failed in June, was repaired at a cos
 
 I want to be exact about my complaint, because I am not making the one you may expect. I am not claiming that the machine was badly built; it ran for six years without a fault, which is more than some. Nor am I asking you to replace it free of charge.
 
-What I am asking for is the ninety-four euros, on the ground that the repair was sold to me as a repair while your own parts supply was already closing. The workshop was not told either, which is a matter between you and them.
+What I am asking for is the ninety-four euros, on the grounds that the repair was sold to me as a repair while your own parts supply was already closing. The workshop was not told either, which is a matter between you and them.
 
 I would also like the discontinuation date for this model in writing.
 
@@ -1366,12 +1366,12 @@ Fikret Alay`,
               { de: "mention one objection to your own choice", tr: "Kendi seçimine bir itirazı an" },
             ],
             sample:
-              "A ten-year supply rule attacks the problem directly, and it is expensive in a way that is easy to underestimate, because a warehouse is guessing about demand a decade ahead and pays for every wrong guess. The label does nothing on its own, whereas it changes the one moment at which a buyer is actually deciding, and manufacturers design against whatever appears on the label. I would choose the label. The obvious objection is that a number nobody understands gets ignored, exactly as energy ratings were ignored for years, and the answer to that is that energy ratings eventually worked, but they took a decade to start working.",
+              "A ten-year supply rule attacks the problem directly, and it is expensive in a way that is easy to underestimate, because a warehouse is guessing about demand a decade ahead and pays for every wrong guess. The label does nothing on its own, but it changes the one moment at which a buyer is actually deciding, and manufacturers design against whatever appears on the label. I would choose the label. The obvious objection is that a number nobody understands gets ignored, exactly as energy ratings were ignored for years, and the answer to that is that energy ratings eventually worked, but they took a decade to start working.",
             criteria: [
               "İki önlem de karşılaştırıldı mı?",
               "Tercih gerekçelendirildi mi?",
               "Kendi seçimine bir itiraz anıldı mı?",
-              "Karşıtlık bağlaçları kullanıldı mı? (whereas, exactly as)",
+              "Karşıtlık bağlaçları kullanıldı mı? (but, exactly as)",
               "Bir buçuk dakika sürdürüldü mü?",
             ],
           },

@@ -641,7 +641,7 @@ And I tell one person what I am going to do, {{30}} that I have to say it out lo
               id: "a6",
               genre: "Phone call",
               genreTr: "Telefon görüşmesi",
-              situation: "Biri yazma kursu için arıyor.",
+              situation: "Biri klavye kursu için arıyor.",
               plays: 2,
               segments: [
                 { text: "Is there a place on the typing course?" },
@@ -808,7 +808,7 @@ And I tell one person what I am going to do, {{30}} that I have to say it out lo
               id: "b5",
               genre: "Between friends",
               genreTr: "Arkadaşlar arasında",
-              situation: "İki arkadaş yazma kursunu tartışıyor.",
+              situation: "İki arkadaş klavye kursunu tartışıyor.",
               plays: 2,
               segments: [
                 { text: "Six weeks of typing lessons at my age." },
@@ -1306,7 +1306,7 @@ What I have kept is smaller and it still helps: the phone is in the room, but it
           exchange: [
             { who: "partner", de: "Some schools now put every phone in a box for the whole day. Is that going too far?", tr: "Bazı okullar artık bütün gün boyunca her telefonu bir kutuya koyuyor. Bu fazla mı?" },
             { who: "you", hint: "Görüşünü söyle ve bir örnek ver.", expect: "genel bir soruya görüş bildirmek ve örneklendirmek", seconds: 40 },
-            { who: "partner", de: "Others say that a rule taken away from you teaches you nothing about deciding for yourself. Would you agree?", tr: "Kimileri de senden alınmış bir kuralın kendi kararını vermeyi öğretmediğini söylüyor. Katılır mısın?" },
+            { who: "partner", de: "Others say that a decision taken away from you teaches you nothing about deciding for yourself. Would you agree?", tr: "Kimileri de senin yerine verilmiş bir kararın kendi kararını vermeyi öğretmediğini söylüyor. Katılır mısın?" },
             { who: "you", hint: "Kısmen katıl ya da karşı çık; iki yanı da anmaya çalış.", expect: "bir iddiaya kısmen katılmak ya da karşı çıkmak, iki yanı da anmak", seconds: 45 },
           ],
           items: [],

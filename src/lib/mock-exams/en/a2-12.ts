@@ -450,9 +450,9 @@ I have three children at the school and I still {{24}} not know all the teachers
       skill: "listening",
       minutes: 30,
       instruction:
-        "This part has four tasks. You hear conversations, some information and five short speakers. You hear every recording twice.",
+        "This part has four tasks. You hear conversations, some information and five short monologues. You hear every recording twice.",
       instructionTr:
-        "Bu bölümde dört görev var. Konuşmalar, bir bilgilendirme ve beş kısa konuşmacı dinleyeceksin. Her kaydı iki kez dinleyebilirsin.",
+        "Bu bölümde dört görev var. Konuşmalar, bir bilgilendirme ve beş kişinin kısa anlatımını dinleyeceksin. Her kaydı iki kez dinleyebilirsin.",
       tasks: [
         {
           id: "en-a2-12-h1",
@@ -976,16 +976,16 @@ Petra Roth`,
           prompt:
             "Write a short text about a letter or a message that you forgot. Say what it was, what happened and what you do now. Write about 60 words.",
           promptTr:
-            "Unuttuğun bir mektubu ya da iletiyi anlat. Ne olduğunu, ne olduğunu ve şimdi ne yaptığını yaz. Yaklaşık 60 kelime.",
+            "Unuttuğun bir mektubu ya da iletiyi anlat. Bunun ne olduğunu, ne yaşandığını ve şimdi ne yaptığını yaz. Yaklaşık 60 kelime.",
           items: [],
           rubric: {
             minWords: 60,
             points: [
               { de: "Say what the letter or message was.", tr: "Mektubun ya da iletinin ne olduğunu söyle." },
-              { de: "Say what happened.", tr: "Ne olduğunu söyle." },
+              { de: "Say what happened.", tr: "Ne yaşandığını söyle." },
               { de: "Say what you do now.", tr: "Şimdi ne yaptığını söyle." },
             ],
-            sample: `Two years ago the school sent a letter about the photographs. I put it in my bag and I found it in July. My daughter was the only child in her class without a photograph, and she was eight and she cried in the car. Now every letter goes on one page on the kitchen door, and I write the date on it in red.`,
+            sample: `Two years ago the school sent a letter about the photographs. I put it in my bag and I found it in July. My daughter was the only child in her class without a photograph, and she was eight and she cried in the car. Now I put every letter on the kitchen door, and I write the date on it in red.`,
             criteria: [
               "Üç içerik noktasının üçü de var mı?",
               "Geçmiş zaman doğru kullanıldı mı? Düzensiz fiiller (sent, put, found) doğru mu?",
@@ -1016,7 +1016,7 @@ Petra Roth`,
           exchange: [
             { who: "partner", de: "Good afternoon. How do you remember important dates?", tr: "İyi günler. Önemli tarihleri nasıl hatırlıyorsun?" },
             { who: "you", hint: "Yöntemini anlat ve bir örnek ver.", expect: "bir alışkanlığı örnekle anlatmak", seconds: 30 },
-            { who: "partner", de: "Thank you. Is paper or a telephone better for this? Why?", tr: "Teşekkürler. Bunun için kâğıt mı telefon mu daha iyi? Neden?" },
+            { who: "partner", de: "Thank you. Is paper or a phone better for this? Why?", tr: "Teşekkürler. Bunun için kâğıt mı telefon mu daha iyi? Neden?" },
             { who: "you", hint: "Tercihini söyle ve bir gerekçe ver.", expect: "bir tercihi gerekçesiyle bildirmek", seconds: 30 },
             { who: "partner", de: "Interesting. Tell me about a time you forgot something important.", tr: "İlginç. Önemli bir şeyi unuttuğun bir zamanı anlat." },
             { who: "you", hint: "Geçmiş zamanla kısa bir anı anlat.", expect: "geçmiş zamanda kısa bir anlatı vermek", seconds: 35 },
@@ -1030,7 +1030,7 @@ Petra Roth`,
               { de: "use the past simple in the last answer", tr: "Son cevapta geçmiş zamanı kullanmak" },
             ],
             sample:
-              "I write everything on a calendar in the kitchen, and I look at it when I make coffee. I think paper is better, because the telephone shows me the date and then I close it and it is gone. Last year I forgot my sister's birthday. I remembered it on the bus at seven in the evening and I bought flowers at the station.",
+              "I write everything on a calendar in the kitchen, and I look at it when I make coffee. I think paper is better, because the phone shows me the date and then I close it and it is gone. Last year I forgot my sister's birthday. I remembered it on the bus at seven in the evening and I bought flowers at the station.",
             criteria: [
               "Cevaplar tek sözcük değil, tam cümle mi?",
               "Tercih bir gerekçeyle mi verildi? (because …)",
@@ -1095,7 +1095,7 @@ Petra Roth`,
               { de: "make a decision together", tr: "Birlikte bir karara varmak" },
             ],
             sample:
-              "The weekly letter is good for me, because there is one place to look and I do not lose the dates. You are right that it does not help a family who never opens paper; my neighbour is exactly that family. So let us choose the person who telephones, because that reaches everybody, and the school can send the weekly letter as well; it costs nothing extra.",
+              "The weekly letter is good for me, because there is one place to look and I do not lose the dates. You are right that it does not help a family who never reads anything on paper; my neighbour is exactly that family. So let us choose the person who telephones, because that reaches everybody, and the school can send the weekly letter as well; it costs nothing extra.",
             criteria: [
               "Görüş bir gerekçeyle mi verildi? (because …)",
               "Karşı tarafın söylediğine gönderme yapıldı mı? (You are right … / That is true …)",

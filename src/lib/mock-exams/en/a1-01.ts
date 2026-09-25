@@ -459,7 +459,7 @@ Nuray`,
               segments: [
                 { speaker: "Customer", text: "Excuse me, how much is this blue jacket?" },
                 { speaker: "Shop assistant", text: "The blue one is thirty-five euros. The green one is cheaper, only twenty-eight." },
-                { speaker: "Customer", text: "Then I take the green one, please." },
+                { speaker: "Customer", text: "Then I'll take the green one, please." },
               ],
             },
             {
@@ -472,7 +472,7 @@ Nuray`,
               segments: [
                 { speaker: "Ilya", text: "Hi Sam, are we still on for the film at seven?" },
                 { speaker: "Sam", text: "Sorry, I finish work at seven. Can we say half past eight?" },
-                { speaker: "Ilya", text: "Fine. I wait in front of the cinema." },
+                { speaker: "Ilya", text: "Fine. I'll wait in front of the cinema." },
               ],
             },
             {
@@ -526,7 +526,7 @@ Nuray`,
               segments: [
                 { speaker: "Passenger", text: "One ticket to Leeds, please. For today." },
                 { speaker: "Clerk", text: "Single or return?" },
-                { speaker: "Passenger", text: "Return, please. I come back in the evening." },
+                { speaker: "Passenger", text: "Return, please. I'm coming back in the evening." },
                 { speaker: "Clerk", text: "That is nineteen pounds. Platform 6, in twelve minutes." },
               ],
             },
@@ -541,7 +541,7 @@ Nuray`,
               options: ["The green jacket", "The blue jacket", "Both of the jackets"],
               answer: 0,
               explain:
-                "Müşteri son cümlede kararını söylüyor: «I take the green one». Mavi ceket 35 euro, yeşil 28 euro; ilk sorulan mavi olduğu için dinlemeden şık işaretleyen öğrenci onu seçer. Üçüncü şık da tek bir ceket alındığı için elenir (\"the green ONE\").",
+                "Müşteri son cümlede kararını söylüyor: «I'll take the green one». Mavi ceket 35 euro, yeşil 28 euro; ilk sorulan mavi olduğu için dinlemeden şık işaretleyen öğrenci onu seçer. Üçüncü şık da tek bir ceket alındığı için elenir (\"the green ONE\").",
             },
             {
               kind: "mcq",
@@ -712,7 +712,7 @@ Nuray`,
               situation: "Bir arkadaş telesekretere ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hi, it's Nora. I am at the airport, but my bag is not here. I come to you tomorrow, not today. Sorry!" },
+                { text: "Hi, it's Nora. I am at the airport, but my bag is not here. I'll come to you tomorrow, not today. Sorry!" },
               ],
             },
             {
@@ -764,7 +764,7 @@ Nuray`,
               situation: "Bir baba kızına hafta sonu planını anlatıyor.",
               plays: 2,
               segments: [
-                { speaker: "Dad", text: "On Saturday we visit Grandma. On Sunday we go to the zoo." },
+                { speaker: "Dad", text: "On Saturday we're visiting Grandma. On Sunday we're going to the zoo." },
                 { speaker: "Lea", text: "Can Mia come to the zoo too?" },
                 { speaker: "Dad", text: "Yes, but ask her mother first." },
               ],
@@ -780,7 +780,7 @@ Nuray`,
               options: ["Today", "Tomorrow", "On Sunday"],
               answer: 1,
               explain:
-                "İleti «I come to you tomorrow, not today» diyor: yarın. `not today` eki, bugünü bekleyen dinleyicinin düzeltmesi; onu duymayan öğrenci ilk şıkkı seçer.",
+                "İleti «I'll come to you tomorrow, not today» diyor: yarın. `not today` eki, bugünü bekleyen dinleyicinin düzeltmesi; onu duymayan öğrenci ilk şıkkı seçer.",
             },
             {
               kind: "mcq",
@@ -824,7 +824,7 @@ Nuray`,
               options: ["They visit Grandma", "They stay at home", "They go to the zoo"],
               answer: 2,
               explain:
-                "Baba iki günü ayrı ayrı söylüyor; ikinci cümle «On Sunday we go to the zoo». İki günü karıştıran öğrenci ilk şıkkı (büyükanne ziyareti) seçer; madde gün ile etkinliği eşleştirmeyi ölçüyor.",
+                "Baba iki günü ayrı ayrı söylüyor; ikinci cümle «On Sunday we're going to the zoo». İki günü karıştıran öğrenci ilk şıkkı (büyükanne ziyareti) seçer; madde gün ile etkinliği eşleştirmeyi ölçüyor.",
             },
           ],
         },
@@ -924,13 +924,13 @@ Signature:                 A. Kaya`,
           rubric: {
             minWords: 25,
             points: [
-              { de: "Why do you write?", tr: "Neden yazıyorsun?" },
+              { de: "Why are you writing?", tr: "Neden yazıyorsun?" },
               { de: "Ask about the opening times.", tr: "Açılış saatlerini sor." },
               { de: "Ask about the price for students.", tr: "Öğrenci fiyatını sor." },
             ],
             sample: `Dear Sir or Madam,
 
-I come to your city in June and I want to visit the museum. When is the museum open? How much is a ticket for students?
+I am coming to your city in June and I want to visit the museum. When is the museum open? How much is a ticket for students?
 
 Thank you very much.
 

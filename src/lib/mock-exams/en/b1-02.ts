@@ -196,7 +196,7 @@ export const EN_B1_02: MockPaper = {
               kind: "match",
               id: "en-b1-02-l2-10",
               no: 10,
-              text: "Deniz is thinking about panels on his roof but does not want a sales talk.",
+              text: "Deniz is thinking about panels on his roof but does not want a sales pitch.",
               answer: "f",
               explain:
                 "İlan satışı açıkça dışlıyor: «No company is present and nothing is sold», bilgi veren de bağımsız bir mühendis. Deniz'in tek çekincesi satış konuşması olduğu için ölçüt tam bu cümlede karşılanıyor.",
@@ -780,7 +780,7 @@ So I have changed my mind, {{29}} not in the direction people expect. The materi
               id: "b4",
               genre: "On the phone",
               genreTr: "Telefonda",
-              situation: "İki arkadaş bir kurstan söz ediyor.",
+              situation: "İki arkadaş bir tamir kafesinden söz ediyor.",
               plays: 2,
               segments: [
                 { speaker: "Hanne", text: "Is the repair café worth going to?" },
@@ -1044,7 +1044,7 @@ Closed in the month of:  {{19}}`,
               no: 22,
               ref: "d1",
               text: "What does he say about the cost?",
-              options: ["Renting costs about the same as owning", "He has not calculated it carefully", "Renting costs less than his old insurance"],
+              options: ["Renting costs about the same as owning", "He has not calculated it carefully", "Renting costs no more than the insurance on his old car"],
               answer: 2,
               explain:
                 "Kiralama yılda yaklaşık iki yüz pound; eski arabası «that much in insurance alone, before I put any fuel in it». Yani yalnız sigorta bile aynı tutardı, yakıt hariç. Hesaplamadığını söylemiyor, tersine sayı veriyor.",
@@ -1214,7 +1214,7 @@ The difference, I think, is that the bottle needed one decision and the phone ne
           prompt:
             "Talk on your own for about one minute. Compare these two ways of getting food: a weekly delivery box that you cannot choose, and shopping yourself in a market. Say which you would prefer and why.",
           promptTr:
-            "Yaklaşık bir dakika tek başına konuş. Gıda edinmenin şu iki yolunu karşılaştır: içindekini seçemediğin haftalık bir teslimat kutusu ve pazardan kendin alışveriş. Hangisini tercih edeceğini ve nedenini söyle.",
+            "Yaklaşık bir dakika tek başına konuş. Gıda edinmenin şu iki yolunu karşılaştır: içindekini seçemediğin haftalık bir teslimat kutusu ve pazardan kendin alışveriş yapmak. Hangisini tercih edeceğini ve nedenini söyle.",
           prepSeconds: 60,
           speakSeconds: 75,
           items: [],
@@ -1226,7 +1226,7 @@ The difference, I think, is that the bottle needed one decision and the phone ne
               { de: "mention one disadvantage of your choice", tr: "Seçtiğin yolun bir olumsuz yanını da söyle" },
             ],
             sample:
-              "A delivery box saves time and it makes you cook things you would never buy. On the other hand, you cannot plan, and if you do not like something you still have it. Shopping in a market takes longer but you see what you get and you can talk to the person who grew it. I would prefer the market, mainly because I cook from what I see, not from a plan. The disadvantage is honest: on a busy week I do not go, and then I eat badly.",
+              "A delivery box saves time and it makes you cook things you would never buy. On the other hand, you cannot plan, and if you do not like something you still have it. Shopping in a market takes longer but you see what you get and you can talk to the person who grew it. I would prefer the market, mainly because I cook from what I see, not from a plan. To be honest, there is a disadvantage: on a busy week I do not go, and then I eat badly.",
             criteria: [
               "İki yol da gerçekten karşılaştırıldı mı?",
               "Karşılaştırma yapıları kullanıldı mı? (on the other hand, takes longer, whereas)",
@@ -1247,7 +1247,7 @@ The difference, I think, is that the bottle needed one decision and the phone ne
             "Binamızın tek bir iyileştirme için parası var. Seçenekleri benimle konuş ve birlikte karar ver.",
           prepSeconds: 30,
           exchange: [
-            { who: "partner", de: "The options are: a covered bicycle shelter, better lights in the stairwell, a shared garden bed, or new windows in the hall. Which do you think we should choose?", tr: "Seçenekler: kapalı bir bisiklet barınağı, merdiven boşluğunda daha iyi aydınlatma, ortak bir bahçe yatağı ya da girişte yeni pencereler. Sence hangisini seçmeliyiz?" },
+            { who: "partner", de: "The options are: a covered bicycle shelter, better lights in the stairwell, a shared garden bed, or new windows in the hall. Which do you think we should choose?", tr: "Seçenekler: kapalı bir bisiklet barınağı, merdiven boşluğunda daha iyi aydınlatma, ortak bir bahçe tarhı ya da girişte yeni pencereler. Sence hangisini seçmeliyiz?" },
             { who: "you", hint: "Bir seçenek seç ve gerekçelendir.", expect: "bir seçeneği seçmek ve gerekçelendirmek", seconds: 40 },
             { who: "partner", de: "I understand. But only six people in the building have a bicycle, and everybody uses the stairs. Does that change your mind?", tr: "Anlıyorum. Ama binada yalnız altı kişinin bisikleti var, merdiveni ise herkes kullanıyor. Bu fikrini değiştirir mi?" },
             { who: "you", hint: "İtiraza doğrudan karşılık ver: kabul et ya da çürüt.", expect: "bir itiraza doğrudan karşılık vermek", seconds: 40 },
@@ -1277,8 +1277,8 @@ The difference, I think, is that the bottle needed one decision and the phone ne
           no: 4,
           format: "speaking",
           goal: "interaction",
-          prompt: "We talk a little more about the same topic: who should pay for changes like these.",
-          promptTr: "Aynı konu üzerine biraz daha konuşuyoruz: böyle değişikliklerin parasını kim ödemeli.",
+          prompt: "We talk a little more about the same topic: what makes people change their habits.",
+          promptTr: "Aynı konu üzerine biraz daha konuşuyoruz: insanlar alışkanlıklarını neden değiştirir.",
           prepSeconds: 15,
           exchange: [
             { who: "partner", de: "Do you think people change their habits because of money, or because of information?", tr: "Sence insanlar alışkanlıklarını para yüzünden mi bilgi yüzünden mi değiştirir?" },

@@ -790,7 +790,7 @@ Schäden sind bei der Rückgabe zu melden. Wer einen Schaden meldet, zahlt einen
               ],
               answer: 0,
               explain:
-                "Açıklama tek cümlede: birçok kişi başvuruyu daha önce \"aus Zeitgründen gar nicht gestellt\" etmemiş.",
+                "Açıklama tek cümlede: birçok kişi daha önce zaman yüzünden hiç başvurmamış: \"aus Zeitgründen gar nicht gestellt\".",
             },
             {
               kind: "bool",
@@ -811,7 +811,7 @@ Schäden sind bei der Rückgabe zu melden. Wer einen Schaden meldet, zahlt einen
               options: [
                 "Sie werden im Mai eingesammelt.",
                 "Sie gelten nur noch für den Keller.",
-                "Sie bleiben für alle möglich.",
+                "Sie bleiben weiterhin gültig.",
               ],
               answer: 2,
               explain:
@@ -1409,7 +1409,7 @@ Sina Yalçın`,
           prompt:
             "Planen Sie gemeinsam eine Hilfe-Sprechstunde für Ihre Nachbarschaft. Sprechen Sie über: Termin — Ort — welche Themen — wer macht mit?",
           promptTr:
-            "Mahalleniz için birlikte bir yardım saati planla. Şunları konuş: zaman — yer — hangi konular — kim katılacak?",
+            "Mahalleniz için birlikte bir yardım saati planlayın. Şunları konuşun: zaman — yer — hangi konular — kim katılacak?",
           prepSeconds: 60,
           exchange: [
             {
@@ -1432,8 +1432,8 @@ Sina Yalçın`,
             { who: "you", hint: "Konuları sınırla ve bu çekinceyi ciddiye al.", expect: "konuları sınırlamak ve güvenlik çekincesini ele almak", seconds: 45 },
             {
               who: "partner",
-              de: "Bleiben die Leute. Ich kann höchstens einmal im Monat, mehr schaffe ich nicht.",
-              tr: "Geriye insanlar kaldı. Ben en fazla ayda bir gelebilirim, fazlası olmaz.",
+              de: "Bleibt noch die Frage, wer mitmacht. Ich kann höchstens einmal im Monat, mehr schaffe ich nicht.",
+              tr: "Geriye kimin katılacağı kaldı. Ben en fazla ayda bir gelebilirim, fazlası olmaz.",
             },
             { who: "you", hint: "Görevleri paylaştır ve en az birini üstlen.", expect: "yükü paylaştırmak ve açıkça bir iş üstlenmek", seconds: 35 },
           ],
@@ -1442,11 +1442,11 @@ Sina Yalçın`,
             minutes: 4,
             points: [
               { de: "Vorschläge machen und begründen", tr: "Öneri sunmak ve gerekçelendirmek" },
-              { de: "auf Einwände eingehen", tr: "İtirazlara girmek" },
+              { de: "auf Einwände eingehen", tr: "İtirazları ele almak" },
               { de: "eine Aufgabe übernehmen", tr: "Bir işi üstlenmek" },
             ],
             sample:
-              "Ich schlage den späten Nachmittag vor, so ab siebzehn Uhr: Dann sind die Rentner noch wach und die Berufstätigen schon frei. Als Ort würde ich die Bücherei nehmen — klein ist besser als laut, weil man beim Erklären nicht schreien will. Bei den Themen bleiben wir bei Fotos, Terminen und Formularen; Konten lassen wir bewusst weg und sagen das auch offen, dann kommt niemand mit falschen Erwartungen. Und weil du nur einmal im Monat kannst, mache ich die anderen drei Termine und frage im Sprachcafé, ob jemand mitmacht.",
+              "Ich schlage den späten Nachmittag vor, so ab siebzehn Uhr: Dann sind die Rentner noch wach und die Berufstätigen schon frei. Als Ort würde ich die Bücherei nehmen — klein ist besser als laut, weil man beim Erklären nicht schreien will. Bei den Themen bleiben wir bei Fotos, Terminen und Formularen; Konten lassen wir bewusst weg und sagen das auch offen, dann kommt niemand mit falschen Erwartungen. Und weil Sie nur einmal im Monat können, mache ich die anderen drei Termine und frage im Sprachcafé, ob jemand mitmacht.",
             criteria: [
               "Dört noktanın hepsi konuşuldu mu?",
               "Öneriler somut mu (saat, yer, konu listesi)?",
@@ -1536,7 +1536,7 @@ Sina Yalçın`,
             minutes: 4,
             points: [
               { de: "zuhören und ernst nehmen", tr: "Dinlemek ve ciddiye almak" },
-              { de: "auf Einwände eingehen", tr: "İtirazlara girmek" },
+              { de: "auf Einwände eingehen", tr: "İtirazları ele almak" },
               { de: "eine dauerhafte Lösung anbieten", tr: "Kalıcı bir çözüm önermek" },
             ],
             sample:
@@ -1546,7 +1546,7 @@ Sina Yalçın`,
               "Yanlış bilgilendirme açıkça adlandırıldı mı?",
               "Sunulan çözüm kalıcı mı (yazılı talep, yeni anahtar), yoksa geçici mi?",
               "Tekrarı önleyecek bir düzen önerildi mi?",
-              "Ton koruyucu değil, eşit düzeyde mi?",
+              "Ton tepeden bakan değil, eşit düzeyde mi?",
             ],
           },
         },

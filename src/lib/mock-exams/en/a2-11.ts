@@ -159,7 +159,7 @@ Please take the bags home with you; there is no bin here.`,
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
             { key: "a", label: "Dog School", body: "Tuesday evenings, eight weeks. For dogs that bark, pull or run away. Twelve euros an evening." },
-            { key: "b", label: "Animal Home", body: "We look for the owner. Bring the animal to us or ring us; we come in the city for free." },
+            { key: "b", label: "Animal Home", body: "We look for the owner. Bring the animal to us or ring us; we come to you for free anywhere in the city." },
             { key: "c", label: "Holiday Care", body: "We keep cats, dogs and rabbits from three days to a month. Fourteen euros a day. Book two weeks before." },
             { key: "d", label: "The Vet Comes to You", body: "For old animals and for people without a car. Thursday afternoons. Thirty euros and then the treatment." },
             { key: "e", label: "Food Advice", body: "Free, Saturday mornings at the shop in Mill Street. Bring the vet's paper if you have one." },
@@ -457,9 +457,9 @@ I have two good chairs in the kitchen and I still {{24}} not sit on either of th
       skill: "listening",
       minutes: 30,
       instruction:
-        "This part has four tasks. You hear conversations, some information and five short speakers. You hear every recording twice.",
+        "This part has four tasks. You hear conversations, some information and five short monologues. You hear every recording twice.",
       instructionTr:
-        "Bu bölümde dört görev var. Konuşmalar, bir bilgilendirme ve beş kısa konuşmacı dinleyeceksin. Her kaydı iki kez dinleyebilirsin.",
+        "Bu bölümde dört görev var. Konuşmalar, bir bilgilendirme ve beş kişinin kısa anlatımını dinleyeceksin. Her kaydı iki kez dinleyebilirsin.",
       tasks: [
         {
           id: "en-a2-11-h1",
@@ -492,7 +492,7 @@ I have two good chairs in the kitchen and I still {{24}} not sit on either of th
               plays: 2,
               segments: [
                 { text: "Two weeks in Italy? And the rabbit?" },
-                { text: "The animal care takes him." },
+                { text: "The pet hotel is taking him." },
                 { text: "How much?" },
                 { text: "Fourteen a day. That is more than the flight." },
               ],
@@ -551,7 +551,7 @@ I have two good chairs in the kitchen and I still {{24}} not sit on either of th
               id: "en-a2-11-h1-2",
               no: 2,
               ref: "a2",
-              text: "What surprises the first speaker?",
+              text: "What does the second speaker say about the care?",
               options: ["The flight is expensive", "The rabbit is ill", "The care costs a lot"],
               answer: 2,
               explain:
@@ -730,7 +730,7 @@ Please bring the:   {{10}}`,
               situation: "Bir sahip randevusunu değiştirmek istiyor.",
               plays: 2,
               segments: [
-                { text: "Yes, hello, this is about Thursday. I cannot bring the dog at four, because my train is late. Can I come at half past five, or is that too late for you?" },
+                { text: "Yes, hello, this is about Thursday. I cannot bring the dog at four, because my train gets in too late. Can I come at half past five, or is that too late for you?" },
               ],
             },
             {
@@ -788,7 +788,7 @@ Please bring the:   {{10}}`,
               options: ["To cancel the visit", "To ask about the price", "To change the time"],
               answer: 2,
               explain:
-                "Arayan yeni bir saat öneriyor: «Can I come at half past five?», çünkü treni gecikiyor.",
+                "Arayan yeni bir saat öneriyor: «Can I come at half past five?», çünkü treni geç varıyor.",
             },
             {
               kind: "mcq",
@@ -864,7 +864,7 @@ Please bring the:   {{10}}`,
               situation: "Dördüncü konuşmacı ulaşımı anlatıyor.",
               plays: 2,
               segments: [
-                { text: "Nine kilometres and no bus after four. My neighbour drove me twice and I cannot ask a third time. He is fifteen years old and he cannot walk to the corner." },
+                { text: "Nine kilometres and no bus after four. My neighbour drove me twice and I cannot ask a third time. My dog is fifteen years old and he cannot walk to the corner." },
               ],
             },
             {
@@ -948,9 +948,9 @@ Please bring the:   {{10}}`,
           format: "writing",
           goal: "interaction",
           prompt:
-            "You are going away and you want a place for your animal at an animal care house. Write a message to them. Write about 50 words. Answer all three points.",
+            "You are going away and you want a place for your pet at a pet hotel. Write a message to them. Write about 50 words. Answer all three points.",
           promptTr:
-            "Uzağa gidiyorsun ve hayvanın için bir bakım yerinde yer istiyorsun. Onlara bir ileti yaz. Yaklaşık 50 kelime. Üç maddenin hepsine cevap ver.",
+            "Bir süreliğine şehir dışına gidiyorsun ve hayvanın için bir bakım yerinde yer istiyorsun. Onlara bir ileti yaz. Yaklaşık 50 kelime. Üç maddenin hepsine cevap ver.",
           items: [],
           rubric: {
             minWords: 50,
@@ -1020,7 +1020,7 @@ Vesna Roth`,
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about animals. Answer in full sentences.",
+          prompt: "I am going to ask you some questions about animals. Answer in full sentences.",
           promptTr: "Sana hayvanlar hakkında sorular soracağım. Tam cümlelerle cevap ver.",
           prepSeconds: 20,
           exchange: [

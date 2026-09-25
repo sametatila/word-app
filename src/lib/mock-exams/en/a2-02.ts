@@ -196,7 +196,7 @@ export const EN_A2_02: MockPaper = {
               kind: "match",
               id: "en-a2-02-l2-10",
               no: 10,
-              text: "Sofia has short journeys in the city centre and does not want to pay for parking.",
+              text: "Sofia makes short journeys in the city centre and does not want to pay for parking.",
               answer: "b",
               explain:
                 "İlan kısa yolculuk için kurulmuş: «The first thirty minutes are free» ve bisiklet başka istasyona bırakılabiliyor. Park sorunu bisikletle ortadan kalkıyor; geç açık market ilanında da park yok ama o bir ulaşım seçeneği değil.",
@@ -435,9 +435,9 @@ We will come back next year {{24}} the weather is good.`,
       skill: "listening",
       minutes: 30,
       instruction:
-        "This part has four tasks. You hear conversations, a talk and five short speakers. You hear every recording twice.",
+        "This part has four tasks. You hear conversations, a talk and five short monologues. You hear every recording twice.",
       instructionTr:
-        "Bu bölümde dört görev var. Konuşmalar, bir sunum ve beş kısa konuşmacı dinleyeceksin. Her kaydı iki kez dinleyebilirsin.",
+        "Bu bölümde dört görev var. Konuşmalar, bir sunum ve beş kişinin kısa anlatımını dinleyeceksin. Her kaydı iki kez dinleyebilirsin.",
       tasks: [
         {
           id: "en-a2-02-h1",
@@ -534,7 +534,7 @@ We will come back next year {{24}} the weather is good.`,
               options: ["The grey one", "The black one", "A shorter one in another shop"],
               answer: 0,
               explain:
-                "Uzun beden yalnız gride var ve müşteri «Colour is not important. I will try the grey one» diyor. Siyah kayıtta geçiyor ama mevcut olmayan seçenek olarak.",
+                "Daha uzun olanı yalnız gri renkte var ve müşteri «Colour is not important. I will try the grey one» diyor. Siyah kayıtta geçiyor ama mevcut olmayan seçenek olarak.",
             },
             {
               kind: "mcq",
@@ -953,7 +953,7 @@ Elif`,
               "Ay seçimi bir gerekçeyle mi verildi? (because …)",
               "Ulaşım için somut bir bilgi var mı? (süre, fiyat ya da karşılaştırma)",
               "Yaklaşık 50 kelime yazıldı mı?",
-              "Öneri açık bir cümleyle yapıldı mı? (We can … / Let us …)",
+              "Öneri açık bir cümleyle yapıldı mı? (We can … / Let's …)",
             ],
           },
         },
@@ -999,7 +999,7 @@ Elif`,
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about travelling and shopping. Answer in full sentences.",
+          prompt: "I am going to ask you some questions about travelling and shopping. Answer in full sentences.",
           promptTr: "Sana yolculuk ve alışveriş hakkında sorular soracağım. Tam cümlelerle cevap ver.",
           prepSeconds: 20,
           exchange: [
@@ -1065,7 +1065,7 @@ Elif`,
           prompt:
             "A friend from abroad has one free day in your town. Talk with me about the ideas and choose one together.",
           promptTr:
-            "Yurt dışından bir arkadaşının şehrinde bir boş günü var. Fikirleri benimle konuş ve birlikte birini seç.",
+            "Yurt dışından gelen bir arkadaşının senin şehrinde bir boş günü var. Fikirleri benimle konuş ve birlikte birini seç.",
           prepSeconds: 30,
           exchange: [
             { who: "partner", de: "Here are three ideas: a boat trip on the river, a day in the old town with a guide, or a visit to the big market and a cooking evening. What do you think about the boat trip?", tr: "Üç fikir var: nehirde tekne turu, rehberli bir eski şehir günü, ya da büyük pazara gidip akşam yemek yapmak. Tekne turu hakkında ne düşünüyorsun?" },

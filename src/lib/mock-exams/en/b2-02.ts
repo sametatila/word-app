@@ -311,7 +311,7 @@ The most likely future is therefore a mixed one, with different fields making di
               no: 20,
               text: "I regret not applying for that post.\nI ______ for that post.",
               cue: "WISH",
-              accept: ["wish I had applied", "wish that I had applied"],
+              accept: ["wish I had applied", "wish that I had applied", "wish I'd applied"],
               explain:
                 "Geçmişe dair pişmanlık `wish + past perfect` ile kurulur: «I wish I had applied». Anahtar sözcük `wish` değişmeden kullanılıyor. `wish I applied` şimdiki bir durumu anlatırdı ve pişmanlığı geçmişe bağlamazdı.",
             },
@@ -331,7 +331,7 @@ The most likely future is therefore a mixed one, with different fields making di
               no: 22,
               text: "It was a mistake to publish the figure before the check.\nWe ______ the figure before the check.",
               cue: "REGRET",
-              accept: ["regret publishing", "now regret publishing"],
+              accept: ["regret publishing", "now regret publishing", "regret having published", "now regret having published"],
               explain:
                 "«It was a mistake to …» yapısı, `regret + -ing` ile bir pişmanlık cümlesine çevriliyor. Anahtar sözcük `regret` değişmeden kalıyor ve ardından ulaç geliyor; `regret to publish` başka bir anlam taşır (kötü haberi bildirmek).",
             },
@@ -1065,7 +1065,7 @@ The speaker says the greatest risk is the {{16}}, not the abuse.`,
               text: "Speaker 4",
               answer: "c",
               explain:
-                "Konuşmacı kimsenin sahtekâr olmadığını söyleyip zinciri sıralıyor: atıf, kapsama, tıklanma. «Each of them behaves reasonably and the result is an overstated claim» — sorun ölçütlerde.",
+                "Konuşmacı kimsenin sahtekâr olmadığını söyleyip zinciri sıralıyor: atıf, haberlere yansıma, tıklanma. «Each of them behaves reasonably and the result is an overstated claim» — sorun ölçütlerde.",
             },
             {
               kind: "match",
@@ -1401,7 +1401,7 @@ For anybody who reads statistics in the news, however, it is the most useful six
               { de: "reach a joint decision with reasons", tr: "Gerekçeli ortak bir karara varmak" },
             ],
             sample:
-              "The strongest one is the author sign-off, because it puts the person who knows the limits in the way of the sentence that overstates them. You are right that a final paragraph gets skipped, so I would move the limits into the second paragraph rather than drop the idea. Stopping releases altogether seems worse than the disease: journalists would simply work from the abstract, which is often the least careful part. So I would recommend the sign-off and the phone number, and reject abolition.",
+              "The strongest one is the author sign-off, because it puts the person who knows the limits in the way of the sentence that overstates them. You are right that a final paragraph gets skipped, so I would move the limits into the second paragraph rather than drop the idea. Stopping releases altogether seems like a cure worse than the disease: journalists would simply work from the abstract, which is often the least careful part. So I would recommend the sign-off and the phone number, and reject abolition.",
             criteria: [
               "Seçenekler birbirine karşı mı değerlendirildi?",
               "İtiraza doğrudan karşılık verildi mi ve kısmi kabul yapılabildi mi?",

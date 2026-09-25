@@ -16,7 +16,7 @@ export const EN_B1_05: MockPaper = {
   course: "en",
   level: "B1",
   no: 5,
-  theme: "Travel, Tourism and Living Places",
+  theme: "Travel, Tourism and Places to Live",
   themeTr: "Yolculuk, turizm ve yaşanan yerler",
   minutes: 155,
   parts: [
@@ -181,7 +181,7 @@ export const EN_B1_05: MockPaper = {
               text: "Iker has two weeks in the city and wants to speak the language every day.",
               answer: "e",
               explain:
-                "İlan bunu amaç olarak yazıyor: «Good for people who want to practise the language», üstelik bir ailenin evinde ve kahvaltı dahil. Hostel ya da daire takası böyle bir günlük temas vaat etmiyor.",
+                "İlan bunu amaç olarak yazıyor: «Good for people who want to practise the language», üstelik bir ailenin evinde ve kahvaltı dahil. Daire takası (b) böyle bir günlük temas vaat etmiyor.",
             },
             {
               kind: "match",
@@ -658,7 +658,7 @@ It is the second time this year {{30}} the date has moved.`,
               options: ["A bed for twelve hours", "The cheaper option", "Nothing yet"],
               answer: 1,
               explain:
-                "Konuşmacı «A seat, not a bed» diyor ve fiyatı veriyor: yirmi euro. On iki saat sorulan kişinin varsayımı; gerçek süre dokuz saat.",
+                "Konuşmacı «A seat, not a bed» diyor ve fiyatı veriyor: yirmi euro. On iki saat soran kişinin varsayımı; gerçek süre dokuz saat.",
             },
             {
               kind: "mcq",
@@ -1134,7 +1134,7 @@ Anouk Dekker`,
             points: [
               { de: "Describe the place.", tr: "Yeri anlat." },
               { de: "Say why you like it.", tr: "Neden sevdiğini söyle." },
-              { de: "Say whether you would really keep it secret, and why.", tr: "Gerçekten sır tutar mıydın, neden, söyle." },
+              { de: "Say whether you would really keep it secret, and why.", tr: "Gerçekten sır olarak tutup tutmayacağını ve nedenini söyle." },
             ],
             sample: `There is a small beach twenty minutes north of the town, behind a car park that looks closed. There is no café and no sign, and in eight years I have never seen more than nine people there.
 
@@ -1214,7 +1214,7 @@ Would I keep it secret? Honestly, no. The people who live near it sell almost no
               { de: "mention one disadvantage of your choice", tr: "Seçtiğin yolun bir olumsuz yanını da söyle" },
             ],
             sample:
-              "With a plan you see the things you came for, and you do not stand in the street at four o'clock deciding. On the other hand, a list turns three days into work, and the best hour of any trip is usually not on it. I would choose no plan, mainly because I remember the accidents and not the museums. The disadvantage is honest: twice I have gone home without seeing the one thing everybody asks about, and I did feel stupid.",
+              "With a plan you see the things you came for, and you do not stand in the street at four o'clock deciding. On the other hand, a list turns three days into work, and the best hour of any trip is usually not on it. I would choose no plan, mainly because I remember the accidents and not the museums. To be honest, there is a disadvantage: twice I have gone home without seeing the one thing everybody asks about, and I did feel stupid.",
             criteria: [
               "İki yol da gerçekten karşılaştırıldı mı?",
               "Karşılaştırma yapıları kullanıldı mı? (on the other hand, whereas, turns … into)",

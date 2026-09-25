@@ -682,7 +682,7 @@ Runa`,
               plays: 2,
               segments: [
                 { text: "Is this medicine for children?" },
-                { text: "From twelve years." },
+                { text: "From age twelve." },
                 { text: "My son is nine." },
                 { text: "Then this one. It is a little sweeter." },
               ],
@@ -720,7 +720,7 @@ Runa`,
               options: ["The hospital was fast", "She waited four hours", "The doctor was not there"],
               answer: 1,
               explain:
-                "Konuşmacı süreyi iki kez söylüyor: «Four hours» ve «Four?» sorusuna karşılık akşam yediye gitmesini hata sayıyor.",
+                "Konuşmacı süreyi söylüyor: «Four hours»; «Four?» sorusuna karşılık da akşam yedide gitmesini hata sayıyor.",
             },
             {
               kind: "mcq",
@@ -742,7 +742,7 @@ Runa`,
               options: ["The first one", "Both of them", "The second one"],
               answer: 2,
               explain:
-                "Görevli yaşı duyunca öneriyi değiştiriyor: birincisi «From twelve years», oğlan dokuz yaşında, «Then this one».",
+                "Görevli yaşı duyunca öneriyi değiştiriyor: birincisi «From age twelve», oğlan dokuz yaşında, «Then this one».",
             },
           ],
         },
@@ -871,7 +871,7 @@ Aras`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "This part has three tasks: you talk about health, you ask and answer questions, and you act at a surgery.",
+      instruction: "This part has three tasks: you talk about health, you ask and answer questions, and you do a role play at a doctor's surgery.",
       instructionTr: "Bu bölümde üç görev var: sağlığı anlatma, soru sorup cevaplama ve muayenehanede rol yapma.",
       tasks: [
         {

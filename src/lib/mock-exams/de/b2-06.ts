@@ -574,7 +574,7 @@ Bleibt die unbequeme Wahrheit: Ohne Ausgleich wird die Abgabe irgendwann politis
               text: "Menschen orientieren sich an dem, was erlaubt ist.",
               answer: "f",
               explain:
-                "Herr Krüger öğrencilerinin acelesi olduğu için değil \"weil sie es dürfen\" hızlı sürdüğünü söylüyor; belirsiz olan başkalarına bakıyor.",
+                "Herr Krüger öğrencilerinin acelesi olduğu için değil \"weil sie es dürfen\" hızlı sürdüğünü söylüyor; emin olmayan başkalarına bakıyor.",
             },
             {
               kind: "match",
@@ -829,7 +829,7 @@ Die Gebühr richtet sich nach dem Volumen der Restmülltonne, nicht nach der Zah
               ],
               answer: 1,
               explain:
-                "Mesaj gerekçesini de veriyor: geçmiş yıllar olmadan tüketim \"nicht einordnen\" edilemiyor, bu yüzden son üç fatura isteniyor.",
+                "Mesaj gerekçesini de veriyor: geçmiş yıllar olmadan tüketim değerlendirilemiyor (\"nicht einordnen\"), bu yüzden son üç fatura isteniyor.",
             },
             {
               kind: "bool",
@@ -1119,7 +1119,7 @@ Die Gebühr richtet sich nach dem Volumen der Restmülltonne, nicht nach der Zah
               ],
               answer: 2,
               explain:
-                "Güvenlik argümanını kabul ediyor ama sonucunu kaydırıyor: kazaların çoğu kara yollarında, \"diskutieren wir über die falsche Straße\".",
+                "Güvenlik argümanını kabul ediyor ama sonucunu kaydırıyor: kazaların çoğu otoyollarda değil, kırsal yollarda, \"diskutieren wir über die falsche Straße\".",
             },
             {
               kind: "mcq",
@@ -1356,7 +1356,7 @@ Die Gebühr richtet sich nach dem Volumen der Restmülltonne, nicht nach der Zah
           prompt:
             "In einer Zeitung stand: \"Wer wirklich etwas für die Umwelt tun will, muss bei sich selbst anfangen.\" Schreiben Sie einen Leserbrief (circa 150 Wörter). Setzen Sie sich mit dieser Aussage auseinander, nennen Sie Argumente und ziehen Sie eine begründete Schlussfolgerung.",
           promptTr:
-            "Bir gazetede şöyle yazdı: \"Çevre için gerçekten bir şey yapmak isteyen kendinden başlamalı.\" Bir okur mektubu yaz (yaklaşık 150 kelime). Bu iddiayı tartış, gerekçeler sun ve gerekçeli bir sonuca bağla.",
+            "Bir gazetede şöyle yazıyordu: \"Çevre için gerçekten bir şey yapmak isteyen kendinden başlamalı.\" Bir okur mektubu yaz (yaklaşık 150 kelime). Bu iddiayı tartış, gerekçeler sun ve gerekçeli bir sonuca bağla.",
           items: [],
           rubric: {
             minWords: 150,
@@ -1372,7 +1372,7 @@ Ihr Satz klingt vernünftig und verschiebt doch die Verantwortung an die Stelle,
 
 Zum einen ist der Anteil, den ein Haushalt unmittelbar steuert, begrenzt. Ob mein Strom aus Wind kommt, entscheidet nicht mein Verhalten, sondern der Netzausbau, über den ich als Einzelner nicht abstimme.
 
-Zum anderen ist der Ratschlag ungleich verteilt. Meine Nachbarin hat ihr Haus gedämmt und dafür einundfünfzigtausend Euro gezahlt. In derselben Straße können neun von elf Haushalten das nicht. Wer solchen Familien sagt, sie sollten bei sich anfangen, beschreibt nicht ihre Möglichkeiten, sondern sein eigenes Einkommen.
+Zum anderen trifft der Ratschlag nicht alle gleich. Meine Nachbarin hat ihr Haus gedämmt und dafür einundfünfzigtausend Euro gezahlt. In derselben Straße können neun von elf Haushalten das nicht. Wer solchen Familien sagt, sie sollten bei sich anfangen, beschreibt nicht ihre Möglichkeiten, sondern sein eigenes Einkommen.
 
 Natürlich gibt es Menschen, die alle Optionen haben und keine nutzen. Das ist ärgerlich, ändert an der Größenordnung aber nichts.
 
@@ -1398,7 +1398,7 @@ Lea Sonnenberg`,
           prompt:
             "In Ihrem Haus wird der Müll seit Monaten falsch getrennt; die Biotonne wurde zweimal nicht geleert. Schreiben Sie an die Hausverwaltung (circa 100 Wörter).",
           promptTr:
-            "Binanızda aylardır çöp yanlış ayrılıyor; biyoçöp konteyneri iki kez boşaltılmadı. Site yönetimine yaz (yaklaşık 100 kelime).",
+            "Binanızda aylardır çöp yanlış ayrılıyor; organik atık kutusu iki kez boşaltılmadı. Site yönetimine yaz (yaklaşık 100 kelime).",
           items: [],
           rubric: {
             minWords: 100,
@@ -1425,7 +1425,7 @@ Tomas Bihar`,
               "Sonuçlar açıkça yazıldı mı?",
               "Suçlayıcı olmayan bir ton korunmuş mu?",
               "Önerilen çözüm uygulanabilir ve kendi katkısı var mı?",
-              "Yarı resmî kayıt korunmuş mu, yaklaşık 100 kelime mi?",
+              "Yarı resmî üslup korunmuş mu, yaklaşık 100 kelime mi?",
             ],
           },
         },
@@ -1465,7 +1465,7 @@ Tomas Bihar`,
               "Ich möchte heute darüber sprechen, wer für den Umweltschutz zuständig ist. Zuerst schildere ich die Lage in meinem Herkunftsland, dann nenne ich Argumente für beide Seiten und komme am Ende zu meiner Position. In Rumänien wird sehr viel über persönliches Verhalten gesprochen, weil dem Staat wenig zugetraut wird. Getrennt gesammelt wird trotzdem kaum — nicht aus Unwillen, sondern weil in meiner Heimatstadt drei Jahre lang derselbe Wagen alle Tonnen zusammen abgeholt hat. Für die individuelle Seite spricht, dass Gewohnheiten sich nur dort ändern, wo Menschen selbst handeln. Meine Schwester hat ihr Auto abgeschafft, und zwei Nachbarn haben es ihr nachgemacht. Für die staatliche Seite spricht die Größenordnung: Was Haushalte direkt steuern, ist etwa ein Drittel; der Rest entsteht in der Industrie und in den Netzen. Meine Position ist deshalb keine Entweder-oder-Antwort. Der Staat muss die Bedingungen schaffen, unter denen individuelles Handeln überhaupt möglich ist — und der Einzelne muss dort entscheiden, wo er mitbestimmt. Zusammenfassend: Ohne Struktur bleibt Verhalten wirkungslos, und ohne Verhalten bleibt Struktur ungenutzt.",
             criteria: [
               "Altı bölümün hepsi var mı ve sunum baştan bölümlendi mi?",
-              "Kendi ülkedeki durum somut ve açıklayıcı mı?",
+              "Kendi ülkendeki durum somut ve açıklayıcı mı?",
               "Her iki taraf için de örnekle desteklenmiş gerekçe var mı?",
               "Konum gerekçeli mi ve iki tarafı da hesaba katıyor mu?",
               "Bağlayıcılar kullanıldı mı? (zunächst, für die … Seite spricht, dagegen, zusammenfassend)",

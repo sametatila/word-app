@@ -453,7 +453,7 @@ Eren`,
                 { text: "Is it cold outside?" },
                 { text: "Very. Take a hat." },
                 { text: "And an umbrella?" },
-                { text: "No, it does not rain. It is only cold and dry." },
+                { text: "No, it isn't raining. It is only cold and dry." },
               ],
             },
             {
@@ -464,7 +464,7 @@ Eren`,
               situation: "Radyoda hava durumu veriliyor.",
               plays: 2,
               segments: [
-                { text: "Good morning. Today it is cold and grey, four degrees. It rains in the afternoon. Tomorrow the sun comes back and it is nine degrees." },
+                { text: "Good morning. Today it is cold and grey, four degrees. It will rain in the afternoon. Tomorrow the sun will come back and it will be nine degrees. and it is nine degrees." },
               ],
             },
             {
@@ -525,7 +525,7 @@ Eren`,
               options: ["An umbrella", "Nothing", "A hat"],
               answer: 2,
               explain:
-                "Öneri açık: «Take a hat». Şemsiye sorulduğunda cevap «No, it does not rain» oluyor, yani gerekmiyor.",
+                "Öneri açık: «Take a hat». Şemsiye sorulduğunda cevap «No, it isn't raining» oluyor, yani gerekmiyor.",
             },
             {
               kind: "mcq",
@@ -641,7 +641,7 @@ Eren`,
               situation: "Bir arkadaş yolda ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hi Katri, it snows here! I take the train, not the car. I come at four, not at two. Do not wait outside, it is very cold." },
+                { text: "Hi Katri, it is snowing here! I take the train, not the car. I come at four, not at two. Do not wait outside, it is very cold." },
               ],
             },
             {
@@ -681,7 +681,7 @@ Eren`,
               segments: [
                 { text: "Have you got this coat in blue?" },
                 { text: "Only in black and grey. Blue comes next week." },
-                { text: "Then I come back on Tuesday." },
+                { text: "Then I will come back on Tuesday." },
               ],
             },
             {
@@ -692,7 +692,7 @@ Eren`,
               situation: "Pazarda anons yapılıyor.",
               plays: 2,
               segments: [
-                { text: "The market on the square is open until two today, not until four. It rains after two. Bring a bag; we have no plastic bags." },
+                { text: "The market on the square is open until two today, not until four. It will rain after two. Bring a bag; we have no plastic bags." },
               ],
             },
           ],
@@ -736,10 +736,10 @@ Eren`,
               no: 14,
               ref: "c4",
               text: "What does the customer do?",
-              options: ["She buys the black coat today", "She buys nothing today", "She comes back next week"],
+              options: ["She buys the black coat today", "She buys a blue coat today", "She comes back next week"],
               answer: 2,
               explain:
-                "Mavi mont gelecek hafta geliyor ve müşteri «Then I come back on Tuesday» diyor. Siyah ya da gri almıyor.",
+                "Mavi mont gelecek hafta geliyor ve müşteri «Then I will come back on Tuesday» diyor. Siyah ya da gri almıyor.",
             },
             {
               kind: "mcq",
@@ -750,7 +750,7 @@ Eren`,
               options: ["Because of the rain", "Because of the bags", "Because it is Sunday"],
               answer: 0,
               explain:
-                "Anons gerekçeyi hemen veriyor: «It rains after two». Torbalar ayrı bir uyarı; gün ise hiç söylenmiyor.",
+                "Anons gerekçeyi hemen veriyor: «It will rain after two». Torbalar ayrı bir uyarı; gün ise hiç söylenmiyor.",
             },
           ],
         },
@@ -842,7 +842,7 @@ Phone:             {{5}}`,
           format: "writing",
           goal: "interaction",
           prompt:
-            "A friend comes to your city for three days. Write a short message about the weather and clothes. Write one or two sentences about each point (about 25 words). Do not forget the greeting at the start and at the end.",
+            "A friend is coming to your city for three days. Write a short message about the weather and clothes. Write one or two sentences about each point (about 25 words). Do not forget the greeting at the start and at the end.",
           promptTr:
             "Bir arkadaşın üç günlüğüne şehrine geliyor. Hava ve giysiler hakkında kısa bir ileti yaz. Her maddeye bir-iki cümle yaz (yaklaşık 25 kelime). Baştaki hitabı ve sondaki veda cümlesini unutma.",
           items: [],
@@ -855,7 +855,7 @@ Phone:             {{5}}`,
             ],
             sample: `Hi Wren,
 
-It is very cold here, only three degrees, and it rains on Thursday.
+It is very cold here, only three degrees, and it will rain on Thursday.
 
 Please bring a big coat and good shoes. A hat is also good.
 
@@ -879,7 +879,7 @@ Cato`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "This part has three tasks: you talk about clothes and weather, you ask and answer questions, and you act in a shop.",
+      instruction: "This part has three tasks: you talk about clothes and weather, you ask and answer questions, and you do a role play in a shop.",
       instructionTr: "Bu bölümde üç görev var: giysi ve havayı anlatma, soru sorup cevaplama ve mağazada rol yapma.",
       tasks: [
         {
@@ -938,7 +938,7 @@ Cato`,
               { de: "answers to my questions", tr: "Sorulara cevap vermek" },
             ],
             sample:
-              "Where do you buy your clothes? — In a small shop. Have you got a warm coat? — Yes, a black one. How much money do you take? — About fifty euros. What do you wear when it rains? — A coat and old shoes. How much is a warm coat? — Sixty or seventy euros.",
+              "Where do you buy your clothes? — In a small shop. Have you got a warm coat? — Yes, a black one. How much money do you take to the shop? — About fifty euros. Do you go shopping at the weekend? — Yes, on Saturday. What do you wear when it rains? — A coat and old shoes. How much is a warm coat? — Sixty or seventy euros.",
             criteria: [
               "Beş sözcüğün her biri için bir soru kuruldu mu?",
               "Sorular doğru kuruldu mu? (Where … / Have you got … / How much …)",

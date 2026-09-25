@@ -34,9 +34,9 @@ export const C1_10: MockPaper = {
       skill: "reading",
       minutes: 70,
       instruction:
-        "Dieser Teil hat drei Aufgaben: eine Zusammenfassung ergänzen, einen Essay auswerten und einen Text strukturell schließen.",
+        "Dieser Teil hat drei Aufgaben: eine Zusammenfassung ergänzen, einen Essay auswerten und strukturelle Lücken in einem Text schließen.",
       instructionTr:
-        "Bu bölümde üç görev var: bir özeti tamamlamak, bir deneme metnini çözümlemek ve bir metni yapısal olarak kapatmak.",
+        "Bu bölümde üç görev var: bir özeti tamamlamak, bir deneme metnini çözümlemek ve bir metindeki yapısal boşlukları doldurmak.",
       tasks: [
         {
           id: "de-c1-10-l1",
@@ -869,7 +869,7 @@ Rückmeldungen zum Termin bis {{10}}.`,
               ],
               answer: 1,
               explain:
-                "\"Die Zahlen sind besser, als mir lieb ist\" — yüzde dokuz iki yılda, ve bu kendini finanse ediyor.",
+                "\"Die Zahlen sind besser, als mir lieb ist\" — iki yılda yüzde dokuz daha az hastalık günü; bu, masrafını karşılıyor.",
             },
             {
               kind: "mcq",
@@ -959,7 +959,7 @@ Rückmeldungen zum Termin bis {{10}}.`,
               ],
               answer: 0,
               explain:
-                "İlk aylarda nöbet daha seyrek dolacak: \"Wer das verschweigt, verliert die Belegschaft beim ersten Engpass.\"",
+                "İlk aylarda vardiyalarda daha az personel olacak: \"Wer das verschweigt, verliert die Belegschaft beim ersten Engpass.\"",
             },
             {
               kind: "mcq",
@@ -1203,7 +1203,7 @@ Marlies {{10}}`,
           prompt:
             "Treffen Sie gemeinsam eine Entscheidung. Eine Einrichtung will die Belastung der Pflegekräfte senken und muss vier Fragen klären: Supervision oder kürzere Kontaktzeiten? Verpflichtend oder freiwillig? Interne oder externe Leitung? Was passiert bei einem Personalengpass? Einigen Sie sich.",
           promptTr:
-            "Birlikte bir karar verin. Bir kurum bakım personelinin yükünü azaltmak istiyor ve dört soruyu çözmesi gerekiyor: Süpervizyon mu, daha kısa hasta teması mı? Zorunlu mu, gönüllü mü? İç yönetim mi, dış yönetim mi? Personel darboğazında ne olacak? Anlaşın.",
+            "Birlikte bir karar verin. Bir kurum bakım personelinin yükünü azaltmak istiyor ve dört soruyu çözmesi gerekiyor: Süpervizyon mu, daha kısa hasta teması mı? Zorunlu mu, gönüllü mü? Süpervizyonu içeriden biri mi yönetsin, dışarıdan biri mi? Personel darboğazında ne olacak? Anlaşın.",
           minutes: 7,
           prepSeconds: 120,
           exchange: [
@@ -1232,7 +1232,7 @@ Marlies {{10}}`,
             {
               who: "partner",
               de: "Eine externe Leitung kostet vierzehntausend im Jahr. Eine interne wäre umsonst. Können wir uns das Externe wirklich leisten?",
-              tr: "Dış yönetim yılda on dört bin avroya mal oluyor. İçeriden biri bedava olurdu. Dışarıdan birini gerçekten karşılayabilir miyiz?",
+              tr: "Dışarıdan bir yürütücü yılda on dört bin avroya mal oluyor. İçeriden biri bedava olurdu. Dışarıdan birini gerçekten karşılayabilir miyiz?",
             },
             {
               who: "you",
@@ -1257,8 +1257,8 @@ Marlies {{10}}`,
             minutes: 7,
             points: [
               { de: "eine Position begründen", tr: "Bir konumu gerekçelendirmek" },
-              { de: "auf Einwände eingehen", tr: "İtirazlara girmek" },
-              { de: "einen Kompromiss formulieren", tr: "Bir uzlaşı biçimlendirmek" },
+              { de: "auf Einwände eingehen", tr: "İtirazları ele almak" },
+              { de: "einen Kompromiss formulieren", tr: "Bir uzlaşı önerisi dile getirmek" },
               { de: "Ergebnis und offene Punkte zusammenfassen", tr: "Sonucu ve açık noktaları özetlemek" },
             ],
             sample:

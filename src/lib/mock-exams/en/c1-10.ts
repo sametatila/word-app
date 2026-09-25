@@ -340,7 +340,7 @@ Reviews conclude that a resurvey is politically {{18}} in almost every case wher
               no: 22,
               text: "Although the resurvey was cheap, no government ordered one.\nCheap ______ , no government ordered one.",
               cue: "THOUGH",
-              accept: ["though the resurvey was"],
+              accept: ["though the resurvey was", "though it was"],
               explain:
                 "Sıfat öne alınmış bir ödün yapısı kuruluyor: `Adjective + though + özne + fiil`. `although` bu devrik biçimde kullanılmaz.",
             },
@@ -1481,7 +1481,7 @@ I would not move any fence on the basis of it, and I would not approach the neig
           exchange: [
             { who: "partner", de: "The options are: a full resurvey, a permanent inspection unit, a rule giving weight to long practice, or a requirement that affected households sit in the room. Where would you begin?", tr: "Seçenekler: tam bir yeniden ölçüm, kalıcı bir denetim birimi, yerleşik uygulamaya ağırlık veren bir kural ya da etkilenen hanelerin görüşmede bulunmasını zorunlu kılmak. Nereden başlardın?" },
             { who: "you", hint: "Bir seçenek seç ve seçimi açık bir ölçüte bağla.", expect: "bir seçeneği seçmek ve açık bir ölçütle gerekçelendirmek", seconds: 45 },
-            { who: "partner", de: "But a resurvey produces facts that somebody then has to act on, and at present nobody has the authority to act. Does that not make your criterion useless here?", tr: "Ama yeniden ölçüm, sonra birinin harekete geçmesi gereken olgular üretir ve şu an kimsenin yetkisi yok. Bu ölçütünü burada işe yaramaz kılmıyor mu?" },
+            { who: "partner", de: "But a resurvey or an inspection unit produces facts that somebody then has to act on, and at present nobody has the authority to act. Does that not make your criterion useless here?", tr: "Ama yeniden ölçüm de denetim birimi de, sonra birinin harekete geçmesi gereken olgular üretir ve şu an kimsenin yetkisi yok. Bu ölçütünü burada işe yaramaz kılmıyor mu?" },
             { who: "you", hint: "İtirazın gücünü teslim et ve ölçütünü onaracak biçimde yeniden kur.", expect: "bir itirazı teslim edip kendi ölçütünü yeniden kurmak", seconds: 45 },
             { who: "partner", de: "Then give me the rule we would write down, not the option we would pick.", tr: "Öyleyse bana seçeceğimiz seçeneği değil, yazacağımız kuralı ver." },
             { who: "you", hint: "Genel ve uygulanabilir bir kural formüle et.", expect: "tek bir olaydan genel bir kurala geçmek ve onu ifade etmek", seconds: 45 },

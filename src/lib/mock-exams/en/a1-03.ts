@@ -452,7 +452,7 @@ Paulo`,
               segments: [
                 { speaker: "Customer", text: "Do you have warm bread now?" },
                 { speaker: "Baker", text: "Not now. The next warm bread comes at three." },
-                { speaker: "Customer", text: "Then I come back after work." },
+                { speaker: "Customer", text: "Then I'll come back after work." },
               ],
             },
             {
@@ -502,7 +502,7 @@ Paulo`,
               situation: "İki arkadaş sipariş veriyor.",
               plays: 2,
               segments: [
-                { speaker: "Bruno", text: "I take a coffee. And you?" },
+                { speaker: "Bruno", text: "I'll have a coffee. And you?" },
                 { speaker: "Iris", text: "Tea for me, please. And water for both of us." },
                 { speaker: "Waiter", text: "One coffee, one tea, two waters." },
               ],
@@ -714,8 +714,8 @@ Paulo`,
               situation: "İki meslektaş öğle yemeğini konuşuyor.",
               plays: 2,
               segments: [
-                { speaker: "Hakan", text: "Do you come to the canteen at twelve?" },
-                { speaker: "Zeynep", text: "I bring food from home today. But I come for a coffee at one." },
+                { speaker: "Hakan", text: "Are you coming to the canteen at twelve?" },
+                { speaker: "Zeynep", text: "I've brought food from home today. But I'll come for a coffee at one." },
               ],
             },
             {
@@ -777,7 +777,7 @@ Paulo`,
               options: ["She goes to the canteen", "She drinks a coffee there", "She eats her own food"],
               answer: 2,
               explain:
-                "Zeynep «I bring food from home today» diyor, yani on ikide yemekhaneye gitmiyor. Kahve için geliyor ama saat birde; iki saati ayırmak gerekiyor.",
+                "Zeynep «I've brought food from home today» diyor, yani on ikide yemekhaneye gitmiyor. Kahve için geliyor ama saat birde; iki saati ayırmak gerekiyor.",
             },
             {
               kind: "mcq",
@@ -900,12 +900,12 @@ Day:                {{5}}`,
             minWords: 25,
             points: [
               { de: "Say when your friend can come.", tr: "Arkadaşın ne zaman gelebilir, söyle." },
-              { de: "Say what you cook.", tr: "Ne pişireceğini söyle." },
+              { de: "Say what you will cook.", tr: "Ne pişireceğini söyle." },
               { de: "Ask your friend to bring something.", tr: "Arkadaşından bir şey getirmesini iste." },
             ],
             sample: `Dear Bruno,
 
-Can you come to my home on Saturday at seven? I cook fish and rice. Please bring bread or fruit.
+Can you come to my home on Saturday at seven? I am cooking fish and rice. Please bring bread or fruit.
 
 See you on Saturday!
 Iris`,
@@ -925,7 +925,7 @@ Iris`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "This part has three tasks: you introduce yourself, you ask and answer questions about food, and you act in a shop.",
+      instruction: "This part has three tasks: you introduce yourself, you ask and answer questions about food, and you do a role play in a shop.",
       instructionTr: "Bu bölümde üç görev var: kendini tanıtma, yemek üzerine soru sorup cevaplama ve mağazada rol yapma.",
       tasks: [
         {
@@ -1020,7 +1020,7 @@ Iris`,
               { de: "say that something is wrong", tr: "Bir şeyin yanlış olduğunu söylemek" },
             ],
             sample:
-              "Two kilos of tomatoes, please. — No, I do not have a bag. Can I have one, please? — Sorry, I think that is not right. I give you ten euros.",
+              "Two kilos of tomatoes, please. — No, I do not have a bag. Can I have one, please? — Sorry, I think that is not right. I gave you ten euros.",
             criteria: [
               "Miktar doğru söylendi mi? (two kilos of …)",
               "Rica `please` ile ve kibar bir kalıpla mı kuruldu?",

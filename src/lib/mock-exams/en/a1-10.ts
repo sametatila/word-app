@@ -417,7 +417,7 @@ Kiro`,
               situation: "Postane bir müşteriye ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hello, this is the post office. Your parcel is here since Tuesday. We keep it for ten days. Please bring your passport." },
+                { text: "Hello, this is the post office. Your parcel has been here since Tuesday. We keep it for ten days. Please bring your passport." },
               ],
             },
             {
@@ -506,7 +506,7 @@ Kiro`,
               options: ["Two euros", "Ninety cents", "Five euros"],
               answer: 0,
               explain:
-                "Görevli fiyatı mektup olduğu anlaşılınca veriyor: «Two euros, please». Doksan sent ülke içi mektubun ücreti.",
+                "Görevli fiyatı mektup olduğu anlaşılınca veriyor: «Two euros, please». Doksan sent kayıtta hiç geçmiyor.",
             },
             {
               kind: "mcq",
@@ -744,7 +744,7 @@ Kiro`,
               options: ["Five euros", "Seven euros", "Two euros"],
               answer: 1,
               explain:
-                "Koli iki kiloyu yüz gram geçiyor, bu yüzden ucuz fiyat düşüyor: «No. Seven». İki, kilo sayısıdır.",
+                "Koli iki kiloyu yüz gram geçiyor, bu yüzden ucuz fiyat geçerli olmuyor: «No. Seven». İki, kilo sayısıdır.",
             },
           ],
         },
@@ -872,7 +872,7 @@ Kiro`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "This part has three tasks: you talk about post and money, you ask and answer questions, and you act at a post office.",
+      instruction: "This part has three tasks: you talk about post and money, you ask and answer questions, and you do a role play at a post office.",
       instructionTr: "Bu bölümde üç görev var: posta ve parayı anlatma, soru sorup cevaplama ve postanede rol yapma.",
       tasks: [
         {

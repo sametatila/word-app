@@ -1000,7 +1000,7 @@ New players sit in the:     {{19}} row`,
               gloss: [
                 { de: "a cello", tr: "çello", en: "das Cello" },
                 { de: "a bar", tr: "ölçü (müzikte)", en: "der Takt" },
-                { de: "strings", tr: "teller", en: "die Streicher" },
+                { de: "strings", tr: "teller", en: "die Saiten" },
               ],
             },
           ],

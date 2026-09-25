@@ -622,7 +622,7 @@ That is a longer argument and a slower one. Given how few firms have ever asked 
       instruction:
         "This part has four tasks. You hear short extracts, a report, six speakers and an interview. You hear every recording twice.",
       instructionTr:
-        "Bu bölümde dört görev var. Kısa parçalar, bir sunum, altı konuşmacı ve bir söyleşi dinleyeceksin. Her kaydı iki kez dinleyebilirsin.",
+        "Bu bölümde dört görev var. Kısa parçalar, bir rapor, altı konuşmacı ve bir söyleşi dinleyeceksin. Her kaydı iki kez dinleyebilirsin.",
       tasks: [
         {
           id: "en-b2-07-h1",
@@ -1117,7 +1117,7 @@ The study took {{16}} years.`,
                 { text: "And you were wrong." },
                 { text: "I was wrong about the list. I was right about the fortune, incidentally; it cost more than anybody had budgeted. The list changed shape in the first year and it has stayed changed." },
                 { text: "What changed your mind?" },
-                { text: "Not the argument. Two of my own hires. I had turned down a candidate in 2019, and the same person came through the anonymous round three years later and I ranked her second out of sixty. Same person, same qualifications, different process. The only variable that had moved was me not hearing her first." },
+                { text: "Not the argument. Two of my own hiring decisions. I had turned down a candidate in 2019, and the same person came through the anonymous round three years later and I ranked her second out of sixty. Same person, same qualifications, different process. The only variable that had moved was me not hearing her first." },
                 { text: "That is a strong story." },
                 { text: "It is a story, which is why I do not use it in front of the partners. I use the shortlists. But you asked what changed my mind, and the honest answer is the story." },
                 { text: "What do you say to firms that tell you their clients expect a particular kind of voice?" },
@@ -1161,7 +1161,7 @@ The study took {{16}} years.`,
               options: ["A candidate he had rejected earlier", "The published research", "Pressure from younger colleagues"],
               answer: 0,
               explain:
-                "Piet kaynağı adlandırıyor: «Not the argument. Two of my own hires», ardından 2019'da reddettiği adayın üç yıl sonra altmış kişi içinde ikinci sıraya çıkışını anlatıyor.",
+                "Piet kaynağı adlandırıyor: «Not the argument. Two of my own hiring decisions», ardından 2019'da reddettiği adayın üç yıl sonra altmış kişi içinde ikinci sıraya çıkışını anlatıyor.",
             },
             {
               kind: "mcq",

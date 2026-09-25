@@ -370,7 +370,7 @@ Ab Montag ist die Halle wieder offen.`,
               situation: "Bir öğrenci kitabı geç getirmiş.",
               plays: 2,
               segments: [
-                { speaker: "Schüler", text: "Ich bringe das Buch zurück. Es tut mir leid, es ist spät." },
+                { speaker: "Schüler", text: "Ich bringe das Buch zurück. Es tut mir leid, ich bringe es zu spät." },
                 { speaker: "Bibliothekarin", text: "Drei Tage zu spät. Das macht sechzig Cent." },
                 { speaker: "Schüler", text: "Hier, bitte." },
               ],

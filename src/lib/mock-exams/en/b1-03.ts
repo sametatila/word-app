@@ -199,7 +199,7 @@ export const EN_B1_03: MockPaper = {
               text: "Refik lives alone and throws away a lot of food because he cooks too much.",
               answer: "g",
               explain:
-                "İlan sorunu adıyla anıyor: «Simple meals for one person that do not turn into four days of the same food». Tek kişilik pişirme dersinin dışında hiçbir ilan yemekle ilgili değil.",
+                "İlan sorunu adıyla anıyor: «Simple meals for one person that do not turn into four days of the same food». Yemek pişirmeyi öğreten tek ilan bu.",
             },
           ],
         },
@@ -1096,7 +1096,7 @@ New members run in the:  {{19}} group`,
             ],
             sample: `Dear Sir or Madam,
 
-I joined the club on 2 February and I have paid for three months. Two weeks after I joined I hurt my knee, and my physiotherapist has told me not to train until May.
+I joined the club on 2 February and I have paid for three months. Two weeks after I joined I hurt my knee, and my physiotherapist has told me not to train until July.
 
 I have already spoken to the desk twice. I was told to write to you, so I am doing that now.
 
@@ -1165,7 +1165,7 @@ I would recommend it, although not to everybody. If you already walk a lot, it w
           promptTr: "Sana spor ve günün hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [
-            { who: "partner", de: "Good afternoon. Could you tell me how you usually move during a normal week?", tr: "İyi günler. Normal bir haftada nasıl hareket ettiğini anlatır mısın?" },
+            { who: "partner", de: "Good afternoon. Could you tell me how you usually stay active during a normal week?", tr: "İyi günler. Normal bir haftada nasıl hareket ettiğini anlatır mısın?" },
             { who: "you", hint: "Haftanı sırayla anlat; sıklık ifadeleri kullan.", expect: "sıklık ifadeleriyle bir haftayı anlatmak", seconds: 40 },
             { who: "partner", de: "Thank you. Has your sleep changed in the last few years?", tr: "Teşekkürler. Son birkaç yılda uykun değişti mi?" },
             { who: "you", hint: "Present perfect ya da `used to` ile bir değişimi anlat.", expect: "zaman içindeki bir değişimi anlatmak", seconds: 40 },
@@ -1210,7 +1210,7 @@ I would recommend it, although not to everybody. If you already walk a lot, it w
               { de: "mention one disadvantage of your choice", tr: "Seçtiğin yolun bir olumsuz yanını da söyle" },
             ],
             sample:
-              "A club gives you a time that is already decided, and other people who notice when you are not there. On the other hand, it only works if that hour fits your week, and mine changes every month. Exercising alone is flexible, but flexible often means never. I would choose the club, mainly because I need somebody to expect me. The disadvantage is honest: when I miss two weeks, I feel embarrassed and then I miss a third.",
+              "A club gives you a time that is already decided, and other people who notice when you are not there. On the other hand, it only works if that hour fits your week, and mine changes every month. Exercising alone is flexible, but flexible often means never. I would choose the club, mainly because I need somebody to expect me. To be honest, there is a disadvantage: when I miss two weeks, I feel embarrassed and then I miss a third.",
             criteria: [
               "İki yol da gerçekten karşılaştırıldı mı?",
               "Karşılaştırma yapıları kullanıldı mı? (on the other hand, whereas, only works if)",
@@ -1231,7 +1231,7 @@ I would recommend it, although not to everybody. If you already walk a lot, it w
             "İş yerimizin bu yıl tek bir sağlık projesi için parası var. Seçenekleri benimle konuş ve birlikte karar ver.",
           prepSeconds: 30,
           exchange: [
-            { who: "partner", de: "The options are: free fruit in the kitchen, a paid hour of sport in work time, better chairs, or a bicycle store with showers. Which do you think we should choose?", tr: "Seçenekler: mutfakta ücretsiz meyve, mesai içinde ücretli bir saat spor, daha iyi sandalyeler ya da duşlu bir bisiklet deposu. Sence hangisini seçmeliyiz?" },
+            { who: "partner", de: "The options are: free fruit in the kitchen, a paid hour of sport in work time, better chairs, or a bicycle room with showers. Which do you think we should choose?", tr: "Seçenekler: mutfakta ücretsiz meyve, mesai içinde ücretli bir saat spor, daha iyi sandalyeler ya da duşlu bir bisiklet deposu. Sence hangisini seçmeliyiz?" },
             { who: "you", hint: "Bir seçenek seç ve gerekçelendir.", expect: "bir seçeneği seçmek ve gerekçelendirmek", seconds: 40 },
             { who: "partner", de: "I understand. But the fruit reaches everybody every day, and only a few people would use the sport hour. Does that change your mind?", tr: "Anlıyorum. Ama meyve her gün herkese ulaşıyor, spor saatini ise yalnız birkaç kişi kullanır. Bu fikrini değiştirir mi?" },
             { who: "you", hint: "İtiraza doğrudan karşılık ver: kabul et ya da çürüt.", expect: "bir itiraza doğrudan karşılık vermek", seconds: 40 },
@@ -1262,7 +1262,7 @@ I would recommend it, although not to everybody. If you already walk a lot, it w
           format: "speaking",
           goal: "interaction",
           prompt: "We talk a little more about the same topic: how much a workplace should do for people's health.",
-          promptTr: "Aynı konu üzerine biraz daha konuşuyoruz: bir iş yeri çalışanların sağlığı için ne kadarını üstlenmeli.",
+          promptTr: "Aynı konu üzerine biraz daha konuşuyoruz: bir iş yeri çalışanların sağlığı için ne kadar sorumluluk üstlenmeli.",
           prepSeconds: 15,
           exchange: [
             { who: "partner", de: "Do you think health is mostly a personal decision, or does it depend on the place where you work?", tr: "Sence sağlık çoğunlukla kişisel bir karar mı, yoksa çalıştığın yere mi bağlı?" },

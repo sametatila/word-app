@@ -1032,7 +1032,7 @@ The quietest hour starts at: {{19}}`,
                 { text: "That sounds awkward." },
                 { text: "It is awkward the first time and dull every time after that. Dull is the aim. If the meeting is interesting, you left it too late." },
                 { text: "Would you change anything about the way you do it?" },
-                { text: "I would put the money lines first. For two years I put the friendly parts first, so it read like a promise. Now it reads like an invoice, and people take it seriously in a way they did not before." },
+                { text: "I have already changed one thing: I put the money lines first. For two years I put the friendly parts first, so it read like a promise. Now it reads like an invoice, and people take it seriously in a way they did not before." },
               ],
             },
           ],
@@ -1101,7 +1101,7 @@ The quietest hour starts at: {{19}}`,
               options: ["The order of the agreement", "The length of the meetings", "The kind of household she works with"],
               answer: 0,
               explain:
-                "Juno değişikliği adlandırıyor: «I would put the money lines first», çünkü önceki sıralamada metin bir söz gibi okunuyordu.",
+                "Juno değişikliği adlandırıyor: «I put the money lines first», çünkü önceki sıralamada metin bir söz gibi okunuyordu.",
             },
           ],
         },
@@ -1166,11 +1166,11 @@ Vida Roth`,
           rubric: {
             minWords: 100,
             points: [
-              { de: "Say what the question is.", tr: "Sorunun ne olduğunu söyle." },
+              { de: "Say what the question is.", tr: "Soracağın soruyu söyle." },
               { de: "Say why you would ask it.", tr: "Neden soracağını söyle." },
               { de: "Say what happened when you did not ask it.", tr: "Sormadığın zaman ne olduğunu söyle." },
             ],
-            sample: `My question is not about the rent. It is this: who pays the internet when somebody leaves in the middle of a contract?
+            sample: `My question is not about the rent. It is this: who pays for the internet when somebody leaves in the middle of a contract?
 
 I would ask it because it is small enough to answer honestly and large enough to show how the household works. A flat that has never thought about it has never thought about anything.
 
@@ -1248,7 +1248,7 @@ I did not ask it in my last flat. In November one of us moved out and the bill s
               { de: "mention one disadvantage of your choice", tr: "Seçtiğin yolun bir olumsuz yanını da söyle" },
             ],
             sample:
-              "Writing the rules down feels cold in week one, when everybody is polite and nothing has gone wrong. That is exactly why it works: a rule written before there is a problem is a piece of paper, and the same rule written in March is a judgement about somebody. Sorting things out as they come up sounds friendlier, and it puts the whole job on whoever minds first. I would write them down. The disadvantage is real, though: a written list makes people think the difficult things have been covered, and the things that actually break a flat are the ones nobody can put on a fridge door.",
+              "Writing the rules down feels cold in week one, when everybody is polite and nothing has gone wrong. That is exactly why it works: a rule written before there is a problem is a piece of paper, and the same rule written in March is a judgement about somebody. Sorting things out as they come up sounds friendlier, but it puts the whole job on whoever minds first. I would write them down. The disadvantage is real, though: a written list makes people think the difficult things have been covered, and the things that actually break a flat are the ones nobody can put on a fridge door.",
             criteria: [
               "İki yol da gerçekten karşılaştırıldı mı?",
               "Karşılaştırma yapıları kullanıldı mı? (that is exactly why, on the other hand)",
@@ -1273,7 +1273,7 @@ I did not ask it in my last flat. In November one of us moved out and the bill s
             { who: "you", hint: "Öneriye gerekçeli karşılık ver: kabul et ya da değiştir.", expect: "bir öneriye gerekçeli karşılık vermek", seconds: 40 },
             { who: "partner", de: "But he does not want charity, and one of us earns much less than the other two. Does that change the plan?", tr: "Ama o yardım istemiyor ve üçümüzden biri ötekilerden çok daha az kazanıyor. Bu planı değiştirir mi?" },
             { who: "you", hint: "İki kısıtı da hesaba katan somut bir çözüm öner.", expect: "iki ayrı kısıtı birlikte karşılayan bir çözüm önermek", seconds: 40 },
-            { who: "partner", de: "All right. Say the arrangement as we would write it down.", tr: "Peki. Düzeni yazacağımız gibi söyle." },
+            { who: "partner", de: "All right. Sum up the arrangement as we would write it down.", tr: "Peki. Düzeni yazacağımız gibi söyle." },
             { who: "you", hint: "Varılan düzeni tek tek ve uygulanabilir biçimde özetle.", expect: "varılan düzeni açık ve uygulanabilir biçimde özetlemek", seconds: 35 },
           ],
           items: [],
@@ -1303,7 +1303,7 @@ I did not ask it in my last flat. In November one of us moved out and the bill s
           promptTr: "Aynı konu üzerine biraz daha konuşuyoruz: kimlerin birlikte yaşayacağını ev sahipleri mi seçmeli.",
           prepSeconds: 15,
           exchange: [
-            { who: "partner", de: "Some landlords interview every new flatmate themselves. Is that reasonable?", tr: "Bazı ev sahipleri her yeni ev arkadaşıyla kendisi görüşüyor. Bu makul mü?" },
+            { who: "partner", de: "Some landlords interview every new flatmate themselves. Is that reasonable?", tr: "Bazı ev sahipleri her yeni ev arkadaşıyla bizzat görüşüyor. Bu makul mü?" },
             { who: "you", hint: "Görüşünü söyle ve bir örnek ver.", expect: "genel bir soruya görüş bildirmek ve örneklendirmek", seconds: 40 },
             { who: "partner", de: "Others say the people who already live there should decide, because they are the ones who have to share a kitchen. Would you agree?", tr: "Kimileri de kararı orada yaşayanların vermesi gerektiğini söylüyor; mutfağı paylaşacak olanlar onlar. Katılır mısın?" },
             { who: "you", hint: "Kısmen katıl ya da karşı çık; iki yanı da anmaya çalış.", expect: "bir iddiaya kısmen katılmak ya da karşı çıkmak, iki yanı da anmak", seconds: 45 },

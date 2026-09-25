@@ -934,7 +934,7 @@ Fahrtkosten erstatten wir mit dreißig Cent je Kilometer, andere Auslagen nur na
               options: ["Nach dem ersten Besuch.", "Vor dem ersten Besuch.", "Erst nach zwei Monaten."],
               answer: 1,
               explain:
-                "Cevap tek sözcükle veriliyor ve zamanlanıyor: \"Ja, vor dem ersten Besuch\" — başvuru on gün sürdüğü için bu hafta yapılmalı.",
+                "Cevap kısa ve net: \"Ja, vor dem ersten Besuch\" — başvuru on gün sürdüğü için bu hafta yapılmalı.",
             },
             {
               kind: "mcq",
@@ -1214,7 +1214,7 @@ Fahrtkosten erstatten wir mit dreißig Cent je Kilometer, andere Auslagen nur na
               ],
               answer: 2,
               explain:
-                "Prantl gerekçeyi veriyor — dokuzuncu aydan sonra yeni iş aranıyor — Ohlendorf da onaylıyor: \"Kurze Förderungen sind schlimmer als gar keine\".",
+                "Prantl gerekçeyi veriyor — dokuzuncu aydan itibaren yeni iş aranıyor — Ohlendorf da onaylıyor: \"Kurze Förderungen sind schlimmer als gar keine\".",
             },
             {
               kind: "mcq",
@@ -1247,13 +1247,13 @@ Fahrtkosten erstatten wir mit dreißig Cent je Kilometer, andere Auslagen nur na
           prompt:
             "Ihr Freund Jonas fragt, ob Sie zusammen beim Sommerfest des Vereins helfen. Sie möchten helfen, aber nicht den ganzen Tag. Schreiben Sie ihm (circa 80 Wörter).",
           promptTr:
-            "Arkadaşın Jonas, derneğin yaz şenliğinde birlikte yardım etmeyi soruyor. Yardım etmek istiyorsun ama bütün gün değil. Ona yaz (yaklaşık 80 kelime).",
+            "Arkadaşın Jonas, derneğin yaz şenliğinde birlikte yardım edip etmeyeceğinizi soruyor. Yardım etmek istiyorsun ama bütün gün değil. Ona yaz (yaklaşık 80 kelime).",
           items: [],
           rubric: {
             minWords: 80,
             points: [
               { de: "Reagieren Sie auf die Anfrage.", tr: "İsteğe karşılık ver." },
-              { de: "Sagen Sie, was bei Ihnen nicht geht.", tr: "Neyin sende olmayacağını söyle." },
+              { de: "Sagen Sie, was bei Ihnen nicht geht.", tr: "Senin için neyin mümkün olmadığını söyle." },
               { de: "Machen Sie einen konkreten Gegenvorschlag.", tr: "Somut bir karşı öneri sun." },
               { de: "Fragen Sie nach seiner Meinung.", tr: "Onun görüşünü sor." },
             ],
@@ -1263,9 +1263,9 @@ klar bin ich dabei, ich helfe gern mit. Das Fest war letztes Jahr richtig schön
 
 Nur den ganzen Tag schaffe ich nicht. Ich habe morgens meinen Kurs und komme frühestens um zwei aus der Stadt zurück.
 
-Ich könnte dafür den kompletten Abbau übernehmen, ab achtzehn Uhr. Dafür meldet sich sonst nie jemand, und ich bin sowieso gern der Letzte.
+Ich könnte dafür den kompletten Abbau übernehmen, ab achtzehn Uhr. Dafür meldet sich sonst nie jemand, und ich bin sowieso gern die Letzte.
 
-Wärst du dann eher am Vormittag da, damit wir uns nicht doppeln und trotzdem beide dabei sind?
+Wärst du dann eher am Vormittag da, damit wir uns gut aufteilen und trotzdem beide dabei sind?
 
 Sag kurz Bescheid.
 
@@ -1368,7 +1368,7 @@ Ana Brahim`,
           prompt:
             "Planen Sie gemeinsam einen Tag der offenen Tür für Ihren Verein. Sprechen Sie über: Termin — Programm — wie Sie neue Leute erreichen — wer welche Aufgabe übernimmt.",
           promptTr:
-            "Derneğiniz için birlikte bir açık kapı günü planla. Şunları konuş: tarih — program — yeni insanlara nasıl ulaşılacak — kim hangi işi üstlenecek?",
+            "Derneğiniz için birlikte bir açık kapı günü planlayın. Şunları konuşun: tarih — program — yeni insanlara nasıl ulaşılacak — kim hangi işi üstlenecek?",
           prepSeconds: 60,
           exchange: [
             {
@@ -1401,7 +1401,7 @@ Ana Brahim`,
             minutes: 4,
             points: [
               { de: "Vorschläge machen und begründen", tr: "Öneri sunmak ve gerekçelendirmek" },
-              { de: "auf Einwände eingehen", tr: "İtirazlara girmek" },
+              { de: "auf Einwände eingehen", tr: "İtirazlara karşılık vermek" },
               { de: "eine Aufgabe übernehmen", tr: "Bir işi üstlenmek" },
             ],
             sample:

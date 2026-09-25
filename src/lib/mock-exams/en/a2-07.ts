@@ -195,7 +195,7 @@ export const EN_A2_07: MockPaper = {
               kind: "match",
               id: "en-a2-07-l2-10",
               no: 10,
-              text: "Wren wants photographs of her parents' fortieth wedding day.",
+              text: "Wren wants photographs of her parents' fortieth wedding anniversary.",
               answer: "c",
               explain:
                 "İlan konuyu sayıyor: «Weddings, birthdays and family days», altmış fotoğraf aynı akşam gönderiliyor. Başka hiçbir ilanda fotoğraf hizmeti yok.",
@@ -434,9 +434,9 @@ I look at it every morning, and I still {{24}} not know who is standing next to 
       skill: "listening",
       minutes: 30,
       instruction:
-        "This part has four tasks. You hear conversations, a talk and five short speakers. You hear every recording twice.",
+        "This part has four tasks. You hear conversations, a talk and five short monologues. You hear every recording twice.",
       instructionTr:
-        "Bu bölümde dört görev var. Konuşmalar, bir sunum ve beş kısa konuşmacı dinleyeceksin. Her kaydı iki kez dinleyebilirsin.",
+        "Bu bölümde dört görev var. Konuşmalar, bir sunum ve beş kişinin kısa anlatımını dinleyeceksin. Her kaydı iki kez dinleyebilirsin.",
       tasks: [
         {
           id: "en-a2-07-h1",
@@ -941,7 +941,7 @@ Please bring a plate and a {{10}}`,
             ],
             sample: `Hi Wren,
 
-My sister finished her studies, so we have a small party on Saturday at seven at my flat.
+My sister finished her studies, so we are having a small party on Saturday at seven at my flat.
 
 There are about ten of us: my family and two friends from work. Everybody speaks English.
 
@@ -975,7 +975,7 @@ Zsofia`,
               { de: "Say what went wrong.", tr: "Neyin ters gittiğini söyle." },
               { de: "Say what you did in the end.", tr: "Sonunda ne yaptığını söyle." },
             ],
-            sample: `Two years ago we made a party in the garden for my father's sixtieth birthday. We put twenty chairs outside and my brother cooked all morning. At four o'clock the sky went black and it rained for two hours. Everybody came into the flat and we sat on the floor with the food on our knees. My father says it was his best birthday.`,
+            sample: `Two years ago we had a party in the garden for my father's sixtieth birthday. We put twenty chairs outside and my brother cooked all morning. At four o'clock the sky went black and it rained for two hours. Everybody came into the flat and we sat on the floor with the food on our knees. My father says it was his best birthday.`,
             criteria: [
               "Üç içerik noktasının üçü de var mı?",
               "Geçmiş zaman doğru kullanıldı mı? Düzensiz fiiller (put, went, sat) doğru mu?",
@@ -1000,7 +1000,7 @@ Zsofia`,
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about your family and about celebrations. Answer in full sentences.",
+          prompt: "I am going to ask you some questions about your family and about celebrations. Answer in full sentences.",
           promptTr: "Sana ailen ve kutlamalar hakkında sorular soracağım. Tam cümlelerle cevap ver.",
           prepSeconds: 20,
           exchange: [

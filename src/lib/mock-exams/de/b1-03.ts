@@ -274,7 +274,7 @@ Ich fahre gern Fahrrad, im Sommer sogar zur Arbeit. Aber im Januar um halb sechs
           options: [
             {
               key: "a",
-              label: "Fernbus nach Prag",
+              label: "Fernbus nach Dresden",
               body: "Täglich 7.30 Uhr ab Busbahnhof, Ankunft 13.10 Uhr. 19 Euro, ein Gepäckstück inklusive. WLAN an Bord, keine Sitzplatzwahl, keine Fahrräder.",
             },
             {
@@ -340,7 +340,7 @@ Ich fahre gern Fahrrad, im Sommer sogar zur Arbeit. Aber im Januar um halb sechs
               text: "Marek reist allein ins Ausland, hat nur einen Rucksack und wenig Geld.",
               answer: "b",
               explain:
-                "(b) 15 euroyla en ucuzu, yurt dışına gidiyor ve zaten yalnız el bagajı kabul ediyor. (a) da yurt dışı ama 19 euro; tek ölçütte geride kalıyor.",
+                "(b) 15 euroyla en ucuzu, yurt dışına gidiyor ve zaten yalnız el bagajı kabul ediyor. (a) da ucuz ama yurt içinde kalıyor.",
             },
             {
               kind: "match",
@@ -828,7 +828,7 @@ Gefundene Gegenstände werden vier Wochen im Betriebshof aufbewahrt. Danach gehe
                 { speaker: "Frau Roth", text: "Höchstens drei. Bei vier packe ich nur noch Koffer." },
                 {
                   speaker: "Berater",
-                  text: "Gut. Ich hätte hier Ljubljana, Zagreb und Triest. Die Strecken sind kurz, keine mehr als vier Stunden.",
+                  text: "Gut. Ich hätte hier Ljubljana, Zagreb und Triest. Die Strecken sind kurz, keine länger als vier Stunden.",
                 },
                 { speaker: "Frau Roth", text: "Und die Unterkünfte?" },
                 {
@@ -971,7 +971,7 @@ Gefundene Gegenstände werden vier Wochen im Betriebshof aufbewahrt. Danach gehe
               text: "Das Konzept richtet sich vor allem an Menschen ohne eigenes Auto.",
               answer: true,
               explain:
-                "Frau Kohl daha ilk cümlede çerçeveyi kuruyor: \"kein Plan gegen das Auto, sondern ein Plan für die, die keines haben\". 43 yüzdelik sayı da bunu destekliyor.",
+                "Frau Kohl daha ilk cümlede çerçeveyi kuruyor: \"kein Plan gegen das Auto, sondern ein Plan für die, die keines haben\". Yüzde 43'lük oran da bunu destekliyor.",
             },
             {
               kind: "bool",

@@ -573,7 +573,7 @@ Licht bis 22 Uhr. Danach bitte leise sein.`,
               text: "Man kann bis zweiundzwanzig Uhr duschen.",
               answer: false,
               explain:
-                "İki ayrı saat var: salon 22'de kapanıyor ama duşlar için \"bis Viertel vor zehn\", yani 21.45 deniyor.",
+                "İki ayrı saat var: salon 22.00'de kapanıyor ama duşlar için \"bis Viertel vor zehn\", yani 21.45 deniyor.",
             },
           ],
         },
@@ -800,7 +800,7 @@ Unterschrift:             A. Molina`,
           prompt:
             "Sie möchten am Freitag mit Ihrer Freundin Sara ins Kino gehen. Schreiben Sie ihr eine Nachricht. Schreiben Sie zu jedem Punkt ein bis zwei Sätze (circa 30 Wörter). Vergessen Sie Anrede und Gruß nicht.",
           promptTr:
-            "Cuma arkadaşın Sara ile sinemaya gitmek istiyorsun. Ona bir ileti yaz. Her maddeye bir-iki cümle yaz (yaklaşık 30 kelime). Hitap ve veda cümlesini unutma.",
+            "Cuma günü arkadaşın Sara ile sinemaya gitmek istiyorsun. Ona bir ileti yaz. Her maddeye bir-iki cümle yaz (yaklaşık 30 kelime). Hitap ve veda cümlesini unutma.",
           items: [],
           rubric: {
             minWords: 30,

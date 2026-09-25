@@ -163,7 +163,7 @@ export const EN_B1_04: MockPaper = {
               text: "Astrid makes jam at home and wants to find out whether strangers would buy it.",
               answer: "a",
               explain:
-                "İlan tam bu soruyu satıyor: «Good for testing whether people will pay for what you make», üstelik tek bir cumartesi ve on iki pounddan başlayan bir masrafla. Zaman bankasında (e) para hiç el değiştirmiyor, yani satış denemesi olmaz.",
+                "İlan tam bu soruyu satıyor: «Good for testing whether people will pay for what you make», üstelik tek bir cumartesi ve on iki sterlinden başlayan bir masrafla. Zaman bankasında (e) para hiç el değiştirmiyor, yani satış denemesi olmaz.",
             },
             {
               kind: "match",
@@ -1089,7 +1089,7 @@ Sit with an adviser for:  {{19}} appointments`,
           prompt:
             "You booked a course and paid for it, but your employer has now changed your shifts and you cannot attend. Write an email to the course office. Write about 100 words and cover all the points.",
           promptTr:
-            "Bir kursa kaydolup ücretini ödedin, ama işveren vardiyalarını değiştirdi ve derslere gelemiyorsun. Kurs ofisine bir e-posta yaz. Yaklaşık 100 kelime, bütün maddeleri işle.",
+            "Bir kursa kaydolup ücretini ödedin, ama işverenin vardiyalarını değiştirdi ve derslere gelemiyorsun. Kurs ofisine bir e-posta yaz. Yaklaşık 100 kelime, bütün maddeleri işle.",
           items: [],
           rubric: {
             minWords: 100,

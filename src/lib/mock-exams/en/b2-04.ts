@@ -306,7 +306,7 @@ The most likely future is therefore an uneven one, with different countries acti
               no: 19,
               text: "The museum did not tell the family where the painting was.\nThe family ______ where the painting was.",
               cue: "TOLD",
-              accept: ["were not told", "was not told"],
+              accept: ["were not told", "was not told", "weren't told", "wasn't told"],
               explain:
                 "Etken olumsuz cümle edilgene çevriliyor: dolaylı nesne (`the family`) özne oluyor. Anahtar sözcük `told` üçüncü hâl olduğu için `be` yardımcı fiili zorunlu; `family` İngilizcede hem tekil hem çoğul yüklem alabildiği için iki biçim de kabul edilir.",
             },
@@ -1229,7 +1229,7 @@ The communities the project wants to hear from find the {{15}} almost unusable.
               { de: "Add a third idea of your own.", tr: "Kendi üçüncü fikrini ekle." },
               { de: "Reach a clear conclusion.", tr: "Açık bir sonuca var." },
             ],
-            sample: `Almost everyone agrees that an object taken by force should go back. The disagreement begins as soon as the taking was legal at the time, which is true of most of the objects now under discussion.
+            sample: `Almost everyone agrees that an object taken by force should go back. The disagreement begins where the taking was legal at the time, which is true of most of the objects now under discussion.
 
 The access argument is the weaker of the two, in my view. It is often said that more people can see an object in a large European city, and that is arithmetically true. It is also an argument that the people who already hold the object happen to find convincing, which should make us cautious.
 
@@ -1362,9 +1362,9 @@ For anybody interested in how an ordinary place remembers itself, however, it is
           format: "speaking",
           goal: "interaction",
           prompt:
-            "A city museum has money for one change this year. Talk with me about these ideas, then decide which two we would recommend and which one we would reject.",
+            "A city museum has money for two changes this year. Talk with me about these ideas, then decide which two we would recommend and which one we would reject.",
           promptTr:
-            "Bir şehir müzesinin bu yıl tek bir değişiklik için parası var. Bu fikirleri benimle konuş, sonra hangi ikisini önereceğimize ve hangisini reddedeceğimize karar ver.",
+            "Bir şehir müzesinin bu yıl iki değişiklik için parası var. Bu fikirleri benimle konuş, sonra hangi ikisini önereceğimize ve hangisini reddedeceğimize karar ver.",
           prepSeconds: 30,
           exchange: [
             { who: "partner", de: "The ideas are: put the acquisition records online, employ two provenance researchers, rewrite every label in two languages, and make entry free on Sundays. Which of these would actually change what visitors understand?", tr: "Fikirler: edinim kayıtlarını internete koymak, iki köken araştırmacısı işe almak, bütün etiketleri iki dilde yeniden yazmak ve pazar günleri girişi ücretsiz yapmak. Sence bunlardan hangisi ziyaretçinin anladığını gerçekten değiştirir?" },
@@ -1383,7 +1383,7 @@ For anybody interested in how an ordinary place remembers itself, however, it is
               { de: "reach a joint decision with reasons", tr: "Gerekçeli ortak bir karara varmak" },
             ],
             sample:
-              "The two researchers look like the least visible option and are probably the strongest, because without them there is nothing to put on a label or a website. You are right that few people read an acquisition file directly, so I would publish a summary rather than the whole file, which answers most of your objection without a year of scanning. Free Sundays seem worse than the disease: they raise the numbers and change nothing about what those numbers see. So I would recommend the researchers and the published summaries, and reject the free entry.",
+              "The two researchers look like the least visible option and are probably the strongest, because without them there is nothing to put on a label or a website. You are right that few people read an acquisition file directly, so I would publish a summary rather than the whole file, which answers most of your objection without a year of scanning. Free Sundays seem like a cure worse than the disease: they raise the numbers and change nothing about what those visitors see. So I would recommend the researchers and the published summaries, and reject the free entry.",
             criteria: [
               "Seçenekler birbirine karşı mı değerlendirildi?",
               "İtiraza doğrudan karşılık verildi mi ve kısmi kabul yapılabildi mi?",

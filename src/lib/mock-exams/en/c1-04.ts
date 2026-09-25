@@ -1342,7 +1342,7 @@ I recommend adopting the system for daytime alerts immediately and running the n
           promptTr: "Sana risk, uyarılar ve insanların neyi ciddiye alacağına nasıl karar verdiği hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [
-            { who: "partner", de: "Good morning. Can you describe a warning you have received that you did not act on, and say why?", tr: "Günaydın. Aldığın ve harekete geçmediğin bir uyarıyı tarif eder ve nedenini söyler misin?" },
+            { who: "partner", de: "Good morning. Can you describe a warning you have received that you did not act on, and say why?", tr: "Günaydın. Aldığın ama gereğini yapmadığın bir uyarıyı tarif eder ve nedenini söyler misin?" },
             { who: "you", hint: "Somut bir örnek seç ve kendi kararını çözümle.", expect: "somut bir örnek vermek ve kendi kararını çözümlemek", seconds: 50 },
             { who: "partner", de: "Thank you. Do you think that reaction is a failure of the warning, or a reasonable judgement on your part?", tr: "Teşekkürler. Sence bu tepki uyarının bir kusuru mu, yoksa senin makul bir yargın mı?" },
             { who: "you", hint: "Bir konum al ama karşı görüşe bir pay bırak.", expect: "bir konum almak ve karşı görüşe pay bırakmak", seconds: 50 },

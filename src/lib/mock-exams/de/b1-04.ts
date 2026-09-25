@@ -353,7 +353,7 @@ Unsere Antwort ist einfach: Einmal im Monat gibt es nach dem Training Essen, und
               text: "Herr Pirlo singt gern, kann aber keine Noten lesen und arbeitet bis 18 Uhr.",
               answer: "b",
               explain:
-                "(b) provalar saat 20'de, yani mesai sonrası, ve \"Notenkenntnisse nicht nötig\" diyor. İki ölçütü birlikte karşılayan tek ilan bu.",
+                "(b) provalar saat 20.00'de, yani mesai sonrası, ve \"Notenkenntnisse nicht nötig\" diyor. İki ölçütü birlikte karşılayan tek ilan bu.",
             },
             {
               kind: "match",
@@ -362,7 +362,7 @@ Unsere Antwort ist einfach: Einmal im Monat gibt es nach dem Training Essen, und
               text: "Frau Demir ist in Rente und sucht am Vormittag Gesellschaft und Gespräche über Bücher.",
               answer: "c",
               explain:
-                "(c) ayın ilk salısı 10–12 arası, yani sabah, ve konusu kitap. Öteki ilanların hepsi öğleden sonra ya da akşam başlıyor.",
+                "(c) ayın ilk salısı 10–12 arası, yani sabah, ve konusu kitap. Sabah saatinde olan tek öteki ilan (j) koşu grubu, o da kitaplarla ilgili değil.",
             },
             {
               kind: "match",
@@ -691,7 +691,7 @@ Lesungen sind kostenlos, eine Karte ist trotzdem nötig. Nicht abgeholte Karten 
               id: "h5",
               genre: "Durchsage im Schwimmbad",
               genreTr: "Yüzme havuzunda anons",
-              situation: "Bir kulvarın kapatılması duyuruluyor.",
+              situation: "İki kulvarın kursa ayrılması duyuruluyor.",
               plays: 1,
               segments: [
                 {
@@ -1129,7 +1129,7 @@ Lesungen sind kostenlos, eine Karte ist trotzdem nötig. Nicht abgeholte Karten 
               ],
               answer: 2,
               explain:
-                "Evde olmayan şeyi adlandırıyor: \"ein Publikum\". Kanıtı da veriyor — tartışmalı akşamlara aynı filmin sıradan gösterimine göre üç kat fazla kişi geliyor.",
+                "Evde olmayan şeyi adlandırıyor: \"ein Publikum\". Kanıtı da veriyor — söyleşili akşamlara aynı filmin sıradan gösterimine göre üç kat fazla kişi geliyor.",
             },
             {
               kind: "mcq",
@@ -1234,7 +1234,7 @@ Lesungen sind kostenlos, eine Karte ist trotzdem nötig. Nicht abgeholte Karten 
               ],
               answer: 0,
               explain:
-                "Son cümlesi açık: bu sabahlar olmasaydı 3 yıl önce bırakacaktı. Yani kazandırmayan değil, ayakta tutan bir gelir.",
+                "Son cümlesi açık: bu sabahlar olmasaydı 3 yıl önce bırakacaktı. Yani zarar ettiren değil, sinemayı ayakta tutan bir gelir.",
             },
           ],
         },
@@ -1342,7 +1342,7 @@ Mein Fazit: Der Eintritt sollte frei sein, aber die Stadt muss den Ausfall erset
 
 ich bin für den Fotokurs F-214 im Frühjahrssemester angemeldet und habe 180 Euro bezahlt. Nach dem zweiten von zehn Terminen wurde der Kurs ohne Angabe von Gründen abgesagt.
 
-Ich bitte Sie, mir acht Termine zu erstatten oder einen Ersatzkurs anzubieten.
+Ich bitte Sie, mir die Kosten für acht Termine zu erstatten oder einen Ersatzkurs anzubieten.
 
 Mit freundlichen Grüßen
 Kaan Aslan`,
@@ -1419,7 +1419,7 @@ Kaan Aslan`,
               { de: "Aufgaben verteilen", tr: "İşleri paylaşmak" },
             ],
             sample:
-              "Ich schlage den Hof vor, aber wir fragen vorher den Hausmeister, ob wir bei Regen in den Gemeinschaftsraum können. Ich wäre für den Dokumentarfilm, weil dann auch die älteren Nachbarn kommen und danach etwas zu erzählen haben. Für den Ton können wir meine Musikbox nehmen, die ist laut genug für dreißig Leute. Und bei der Werbung machen wir beides: Zettel in allen Briefkästen und eine Nachricht in der Hausgruppe. Ich übernehme die Zettel, wenn du die Nachricht schreibst.",
+              "Ich schlage den Hof vor, aber wir fragen vorher den Hausmeister, ob wir bei Regen in den Gemeinschaftsraum können. Als Termin schlage ich einen Freitag in drei Wochen vor, dann haben wir genug Zeit für die Werbung. Ich wäre für den Dokumentarfilm, weil dann auch die älteren Nachbarn kommen und danach etwas zu erzählen haben. Für den Ton können wir meine Musikbox nehmen, die ist laut genug für dreißig Leute. Und bei der Werbung machen wir beides: Zettel in allen Briefkästen und eine Nachricht in der Hausgruppe. Ich übernehme die Zettel, wenn du die Nachricht schreibst.",
             criteria: [
               "Beş noktanın hepsi konuşuldu mu?",
               "Öneriler gerekçelendirildi mi? (weil, damit, deshalb)",

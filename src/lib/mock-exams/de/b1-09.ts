@@ -38,7 +38,7 @@ export const B1_09: MockPaper = {
       instruction:
         "Dieser Teil hat fünf Aufgaben. Sie lesen einen Bericht, kurze Texte, Anzeigen, Forumsbeiträge und eine Hausordnung.",
       instructionTr:
-        "Bu bölümde beş görev var. Bir haber metni, kısa metinler, ilanlar, forum yorumları ve bir yönetmelik okuyacaksın.",
+        "Bu bölümde beş görev var. Bir haber metni, kısa metinler, ilanlar, forum yorumları ve bir apartman yönetmeliği okuyacaksın.",
       tasks: [
         {
           id: "de-b1-09-l1",
@@ -849,7 +849,7 @@ Schäden sind sofort zu melden. Wer einen Schaden verschweigt, trägt die vollen
               id: "de-b1-09-h1-9",
               no: 9,
               ref: "h5",
-              text: "Ohne das Schreiben ist der Termin sinnlos geworden.",
+              text: "Ohne das Schreiben wäre der Termin sinnlos.",
               answer: true,
               explain:
                 "Mesaj bunu gerekçesiyle söylüyor: belge olmadan yalnız genel cevap verilebiliyor \"und dafür brauchen Sie keinen Termin\".",
@@ -1080,7 +1080,7 @@ Schäden sind sofort zu melden. Wer einen Schaden verschweigt, trägt die vollen
               text: "Sie hält einfache Sitzgelegenheiten für wirksamer als Programme.",
               answer: true,
               explain:
-                "Belediyelere önerisi bu: \"Bänke wirken besser als Programme\" — kulağa sıradan geldiği için planlamaya girmiyor.",
+                "Belediyelere önerisi bu: \"Bänke wirken besser als Programme\" — kulağa sıradan gelse de planlamaya nadiren giriyor.",
             },
             {
               kind: "bool",
@@ -1097,7 +1097,7 @@ Schäden sind sofort zu melden. Wer einen Schaden verschweigt, trägt die vollen
               id: "de-b1-09-h3-22",
               no: 22,
               ref: "v1",
-              text: "Sie rät, zuerst die Wege zu den Angehörigen zu verkürzen.",
+              text: "Sie rät, zuerst die Wege der Angehörigen zu verkürzen.",
               answer: true,
               explain:
                 "Kapanış öğüdü: bakım verenlerden değil \"bei den Wegen dorthin\" başlanmalı, çünkü günde iki saat yol her danışmayı etkisiz kılıyor.",
@@ -1137,7 +1137,7 @@ Schäden sind sofort zu melden. Wer einen Schaden verschweigt, trägt die vollen
                 },
                 {
                   speaker: "Herr Solms",
-                  text: "Da haben Sie recht. Wir reden über Wohnformen, als wäre es eine Sachfrage. Es ist eine Frage über das eigene Zuhause.",
+                  text: "Da haben Sie recht. Wir reden über Wohnformen, als wäre es eine Sachfrage. Es ist eine Frage des eigenen Zuhauses.",
                 },
                 { speaker: "Moderatorin", text: "Was wäre die Alternative?" },
                 {
@@ -1151,7 +1151,7 @@ Schäden sind sofort zu melden. Wer einen Schaden verschweigt, trägt die vollen
                 { speaker: "Moderatorin", text: "Ein gemeinsamer Punkt?" },
                 {
                   speaker: "Herr Solms",
-                  text: "Dass niemand im Notfall entscheiden sollte. Wer erst dann fragt, nimmt jede Wahl.",
+                  text: "Dass niemand im Notfall entscheiden sollte. Wer erst dann fragt, nimmt sich jede Wahl.",
                 },
               ],
             },
@@ -1230,7 +1230,7 @@ Schäden sind sofort zu melden. Wer einen Schaden verschweigt, trägt die vollen
               ],
               answer: 0,
               explain:
-                "\"Wir reden über Wohnformen, als wäre es eine Sachfrage. Es ist eine Frage über das eigene Zuhause.\"",
+                "\"Wir reden über Wohnformen, als wäre es eine Sachfrage. Es ist eine Frage des eigenen Zuhauses.\"",
             },
             {
               kind: "mcq",
@@ -1275,7 +1275,7 @@ Schäden sind sofort zu melden. Wer einen Schaden verschweigt, trägt die vollen
               ],
               answer: 1,
               explain:
-                "Kapanış cümlesi ortak noktayı veriyor: \"Dass niemand im Notfall entscheiden sollte. Wer erst dann fragt, nimmt jede Wahl.\"",
+                "Kapanış cümlesi ortak noktayı veriyor: \"Dass niemand im Notfall entscheiden sollte. Wer erst dann fragt, nimmt sich jede Wahl.\"",
             },
           ],
         },
@@ -1381,7 +1381,7 @@ Mein Rat: Fangen Sie mit etwas an, das man auch wieder lassen kann.`,
             ],
             sample: `Liebe Vereinsmitglieder,
 
-am Samstag, dem 14. Juni, wird mein Vater achtzig. Für diesen Tag ist der Gemeinschaftsraum leider schon eingetragen.
+am Samstag, dem 14. Juni, wird mein Vater achtzig. Für diesen Tag ist der Gemeinschaftsraum leider schon vergeben.
 
 Da meine Geschwister aus dem Ausland anreisen, lässt sich das Datum nicht verschieben.
 
@@ -1416,7 +1416,7 @@ Deniz Kemper`,
           prompt:
             "Planen Sie gemeinsam den achtzigsten Geburtstag eines Familienmitglieds. Sprechen Sie über: Termin — Ort — wer eingeladen wird — wer was übernimmt.",
           promptTr:
-            "Bir aile büyüğünün sekseninci yaş gününü birlikte planla. Şunları konuş: tarih — yer — kimler davet edilecek — kim neyi üstlenecek?",
+            "Bir aile büyüğünün sekseninci yaş gününü birlikte planlayın. Şunları konuşun: tarih — yer — kimler davet edilecek — kim neyi üstlenecek?",
           prepSeconds: 60,
           exchange: [
             {
@@ -1449,7 +1449,7 @@ Deniz Kemper`,
             minutes: 4,
             points: [
               { de: "Vorschläge machen und begründen", tr: "Öneri sunmak ve gerekçelendirmek" },
-              { de: "auf Einwände eingehen", tr: "İtirazlara girmek" },
+              { de: "auf Einwände eingehen", tr: "İtirazlara karşılık vermek" },
               { de: "eine Aufgabe übernehmen", tr: "Bir işi üstlenmek" },
             ],
             sample:
@@ -1518,7 +1518,7 @@ Deniz Kemper`,
             {
               who: "partner",
               de: "Von der Beratung habe ich gehört, aber ich kann ihn nicht allein lassen, um dorthin zu fahren. Genau das ist ja das Problem.",
-              tr: "Danışmayı duydum ama oraya gitmek için onu yalnız bırakamam. Sorun tam da bu zaten.",
+              tr: "Danışma hizmetini duydum ama oraya gitmek için onu yalnız bırakamam. Sorun tam da bu zaten.",
             },
             {
               who: "you",
@@ -1543,17 +1543,17 @@ Deniz Kemper`,
             minutes: 4,
             points: [
               { de: "zuhören und ernst nehmen", tr: "Dinlemek ve ciddiye almak" },
-              { de: "auf Einwände eingehen", tr: "İtirazlara girmek" },
+              { de: "auf Einwände eingehen", tr: "İtirazları ele almak" },
               { de: "eine konkrete Hilfe anbieten", tr: "Somut bir yardım önermek" },
             ],
             sample:
-              "Das klingt nach sehr viel, und ich finde es gut, dass Sie es sagen. Drei Stunden Schlaf hält niemand lange durch. Zur Beratung: Die kommen auch zu Ihnen nach Hause, das wusste ich lange selbst nicht. Ich kann anrufen und fragen, wenn Sie möchten. Und wenn Sie einmal ausfallen — dafür gibt es die Verhinderungspflege, das ist kein Gefallen, sondern ein Anspruch. Zur Last fallen Sie mir nicht. Ich gehe dienstags sowieso einkaufen; ich kann für Sie mitgehen, wenn Sie mir eine Liste schreiben.",
+              "Das klingt nach sehr viel, und ich finde es gut, dass Sie es sagen. Drei Stunden Schlaf hält niemand lange durch. Zur Beratung: Die kommen auch zu Ihnen nach Hause, das wusste ich lange selbst nicht. Ich kann anrufen und fragen, wenn Sie möchten. Und wenn Sie einmal ausfallen — dafür gibt es die Verhinderungspflege, das ist kein Gefallen, sondern ein Anspruch. Zur Last fallen Sie mir nicht. Ich gehe dienstags sowieso einkaufen; ich kann für Sie mit einkaufen, wenn Sie mir eine Liste schreiben.",
             criteria: [
               "Kaygı ciddiye alındı mı, yoksa hemen tavsiyeye mi geçildi?",
               "Karşı tarafın itirazı (gidememe) gerçekten çözüldü mü?",
               "Yük olma kaygısı ele alındı mı ve nasıl yumuşatıldı?",
               "Sunulan yardım gerçek ve sürdürülebilir mi?",
-              "Ton koruyucu değil, eşit düzeyde mi?",
+              "Ton tepeden bakan değil, eşit düzeyde mi?",
             ],
           },
         },

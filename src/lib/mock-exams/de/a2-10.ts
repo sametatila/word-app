@@ -35,7 +35,7 @@ export const A2_10: MockPaper = {
       instruction:
         "Dieser Teil hat vier Aufgaben. Sie lesen kurze Nachrichten, zwei längere Texte und Anzeigen. Wählen Sie jeweils die richtige Lösung.",
       instructionTr:
-        "Bu bölümde dört görev var. Kısa iletiler, iki uzun metin ve ilanlar okuyacaksın. Her seferinde doğru cevabı işaretle.",
+        "Bu bölümde dört görev var. Kısa iletiler, iki uzun metin ve ilanlar okuyacaksın. Her madde için doğru cevabı seç.",
       tasks: [
         {
           id: "de-a2-10-l1",
@@ -474,7 +474,7 @@ Im nächsten Jahr mache ich weiter. Aber ich frage vorher, ob eine Reparatur üb
               kind: "match",
               id: "de-a2-10-l4-17",
               no: 17,
-              text: "Herr Lichtenberg braucht am Samstag eine Leiter für einen Tag.",
+              text: "Herr Lichtenberg braucht am Freitag eine Leiter für einen Tag.",
               answer: "b",
               explain:
                 "(b) merdiveni günlük veriyor: \"Bohrmaschine, Leiter und Säge für einen Tag. 5 Euro\".",
@@ -884,7 +884,7 @@ Im nächsten Jahr mache ich weiter. Aber ich frage vorher, ob eine Reparatur üb
               ],
               answer: 2,
               explain:
-                "Duyuru ikisini ayırıyor: teslim on sekizde bitiyor, ama \"Die Rückgabe ist weiterhin bis zwanzig Uhr möglich\".",
+                "Duyuru ikisini ayırıyor: aletlerin verilmesi on sekizde bitiyor, ama \"Die Rückgabe ist weiterhin bis zwanzig Uhr möglich\".",
             },
             {
               kind: "mcq",
@@ -1182,7 +1182,7 @@ Sina Dobrev`,
             sample:
               "Bei uns kennt fast jede Familie jemanden, der reparieren kann. Man ruft einen Onkel oder einen Nachbarn an, und er kommt am selben Tag. Bezahlt wird mit Geld oder mit Essen. Hier ist das anders: Man ruft eine Firma an und bekommt einen Termin in zwei Wochen. Dafür weiß man vorher, was es kostet. Am Anfang war mir das Warten fremd. Heute finde ich den festen Preis gut, aber die schnelle Hilfe fehlt mir.",
             criteria: [
-              "Kendi ülkedeki düzen somut anlatıldı mı (kim gelir, ne kadar sürer, nasıl ödenir)?",
+              "Kendi ülkesindeki düzen somut anlatıldı mı (kim gelir, ne kadar sürer, nasıl ödenir)?",
               "Fark gerçekten karşılaştırma biçiminde mi verildi?",
               "Kendi tercihi söylendi ve gerekçelendirildi mi?",
               "Geçmiş zaman kullanılabildi mi? (war, habe gefunden)",
@@ -1235,7 +1235,7 @@ Sina Dobrev`,
               { de: "eine Aufgabe übernehmen", tr: "Bir işi üstlenmek" },
             ],
             sample:
-              "Ich schlage vor, dass wir mit einfachem Werkzeug anfangen: Hammer, Zange, Schraubenzieher. Die Bohrmaschine kaufen wir später, wenn wir sehen, dass der Schrank benutzt wird. Für den Ort nehmen wir die Ecke im Fahrradkeller, dort ist es trocken und niemand läuft vorbei. Den Schlüssel bekommen drei Personen aus verschiedenen Stockwerken, und ich mache gern eine davon. Bei Schäden zahlen wir aus einer kleinen Kasse; jede Wohnung gibt einmal im Jahr fünf Euro dazu.",
+              "Ich schlage vor, dass wir mit einfachem Werkzeug anfangen: Hammer, Zange, Schraubenzieher. Die Bohrmaschine kaufen wir später, wenn wir sehen, dass der Schrank benutzt wird. Für den Ort nehmen wir die Ecke im Fahrradkeller, dort ist es trocken und niemand läuft vorbei. Den Schlüssel bekommen drei Personen aus verschiedenen Stockwerken, und ich bin gern eine davon. Bei Schäden zahlen wir aus einer kleinen Kasse; jede Wohnung gibt einmal im Jahr fünf Euro dazu.",
             criteria: [
               "Dört noktanın hepsi konuşuldu mu?",
               "Öneriler somut mu (hangi alet, hangi yer, kaç kişi)?",

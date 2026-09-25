@@ -1119,7 +1119,7 @@ Amina Sow`,
             {
               who: "partner",
               de: "Einverstanden. Wer sammelt das Geld und wer sagt den Kollegen Bescheid?",
-              tr: "Anlaştık. Parayı kim toplayacak, komşulara kim haber verecek?",
+              tr: "Anlaştık. Parayı kim toplayacak, iş arkadaşlarına kim haber verecek?",
             },
             { who: "you", hint: "İşleri paylaş: birini üstlen, ötekini öner.", expect: "bir görevi üstlenmek ve ötekini karşı tarafa önermek", seconds: 35 },
           ],

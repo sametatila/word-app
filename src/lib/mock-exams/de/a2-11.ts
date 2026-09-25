@@ -24,7 +24,7 @@ export const A2_11: MockPaper = {
   level: "A2",
   no: 11,
   theme: "Sport und Verein",
-  themeTr: "Spor ve dernek",
+  themeTr: "Spor ve kulüpler",
   minutes: 105,
   parts: [
     /* ── LESEN ─────────────────────────────────────────────────────────── */
@@ -808,7 +808,7 @@ Wenn Sie unsicher sind, gehen Sie einfach einmal hin. Fast jeder Verein lässt S
               id: "m2",
               genre: "Nachricht auf dem Anrufbeantworter",
               genreTr: "Telesekreter mesajı",
-              situation: "Antrenör maçı erteliyor.",
+              situation: "Antrenör maçın iptal olduğunu bildiriyor.",
               plays: 2,
               segments: [
                 {
@@ -1031,7 +1031,7 @@ Wenn Sie unsicher sind, gehen Sie einfach einmal hin. Fast jeder Verein lässt S
       skill: "writing",
       minutes: 30,
       instruction: "Dieser Teil hat zwei Aufgaben. Schreiben Sie zu jedem Punkt ein bis zwei Sätze.",
-      instructionTr: "Bu bölümde iki görev var. Her maddeye bir-iki cümle yaz.",
+      instructionTr: "Bu bölümde iki görev var. Her maddeye bir iki cümle yaz.",
       tasks: [
         {
           id: "de-a2-11-s1",
@@ -1078,7 +1078,7 @@ Vedat`,
           prompt:
             "Ein Freund fragt Sie, ob er in einen Verein gehen soll. Schreiben Sie ihm (circa 40 Wörter). Erzählen Sie von Ihrer Erfahrung, nennen Sie einen Vorteil und einen Nachteil.",
           promptTr:
-            "Bir arkadaşın derneğe girip girmemesi gerektiğini soruyor. Ona yaz (yaklaşık 40 kelime). Kendi deneyimini anlat, bir iyi bir de zor yanını söyle.",
+            "Bir arkadaşın bir kulübe girip girmemesi gerektiğini soruyor. Ona yaz (yaklaşık 40 kelime). Kendi deneyimini anlat, bir iyi bir de zor yanını söyle.",
           items: [],
           rubric: {
             minWords: 40,
@@ -1141,8 +1141,8 @@ Maren`,
             { who: "you", hint: "«Training» için bir soru kur.", expect: "Training sözcüğüyle bir soru kurmak", seconds: 30 },
             {
               who: "partner",
-              de: "Dienstags und donnerstags um zwanzig Uhr. Jetzt eine Frage an Sie: Waren Sie schon einmal in einem Verein?",
-              tr: "Salı ve perşembe saat sekizde. Şimdi sana bir soru: Hiç bir dernekte bulundun mu?",
+              de: "Dienstags und donnerstags um zwanzig Uhr. Jetzt eine Frage an Sie: Haben Sie schon einmal ein Probetraining gemacht?",
+              tr: "Salı ve perşembe saat sekizde. Şimdi sana bir soru: Hiç deneme antrenmanına katıldın mı?",
             },
             { who: "you", hint: "Soruyu cevapla ve kısa bir ayrıntı ekle.", expect: "soruya tam bir cümleyle cevap verip bir ayrıntı eklemek", seconds: 30 },
             {
@@ -1160,7 +1160,7 @@ Maren`,
               { de: "auf Fragen antworten", tr: "Sorulara cevap vermek" },
             ],
             sample:
-              "Wie hoch ist der Beitrag im Jahr? — Wann ist das Training? — Ja, ich war zwei Jahre im Schwimmverein, aber dann bin ich umgezogen. — Man muss schriftlich kündigen, und zwar bis Ende September.",
+              "Wie hoch ist der Beitrag im Jahr? — Wann ist das Training? — Ja, ich habe letztes Jahr ein Probetraining im Schwimmverein gemacht, und danach bin ich Mitglied geworden. — Man muss schriftlich kündigen, und zwar bis Ende September.",
             criteria: [
               "Dört anahtar sözcüğün her biri işlendi mi?",
               "Sorular doğru kuruldu mu?",
@@ -1227,7 +1227,7 @@ Maren`,
               de: "Beim Essen bin ich unsicher. Grillen oder Kuchen? Was meinen Sie?",
               tr: "Yiyecekte kararsızım. Mangal mı, pasta mı? Sen ne dersin?",
             },
-            { who: "you", hint: "Bir öneri yap ve neden olduğunu söyle.", expect: "gerekçeli bir öneri yapmak", seconds: 30 },
+            { who: "you", hint: "Bir öneri yap ve nedenini söyle.", expect: "gerekçeli bir öneri yapmak", seconds: 30 },
             {
               who: "partner",
               de: "Wir brauchen noch Helfer. Wie finden wir sie?",
@@ -1244,7 +1244,7 @@ Maren`,
               { de: "eine Entscheidung treffen", tr: "Bir karara varmak" },
             ],
             sample:
-              "Der letzte Samstag im Juni passt gut, aber da sind viele im Urlaub. Ich schlage den ersten Samstag im Juli vor. Der Hof vom Bürgerhaus ist besser, weil wir dort ein Dach haben, wenn es regnet. Beim Essen bin ich für Grillen, weil dann alle länger bleiben. Für die Helfer schreiben wir nicht einfach `Wir brauchen Hilfe`, sondern fragen einzeln und nennen die Uhrzeit.",
+              "Der letzte Samstag im Juni passt gut, aber da sind viele im Urlaub. Ich schlage den ersten Samstag im Juli vor. Der Hof vom Bürgerhaus ist besser, weil wir dort ein Dach haben, wenn es regnet. Beim Essen bin ich für Grillen, weil dann alle länger bleiben. Für die Helfer schreiben wir nicht einfach „Wir brauchen Hilfe“, sondern fragen einzeln und nennen die Uhrzeit.",
             criteria: [
               "Dört noktanın hepsi konuşuldu mu?",
               "Öneriler gerekçelendirildi mi?",

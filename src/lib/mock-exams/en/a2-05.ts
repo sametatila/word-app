@@ -436,9 +436,9 @@ I would go again, but next time I will call {{24}} the morning.`,
       skill: "listening",
       minutes: 30,
       instruction:
-        "This part has four tasks. You hear conversations, a talk and five short speakers. You hear every recording twice.",
+        "This part has four tasks. You hear conversations, a talk and five short monologues. You hear every recording twice.",
       instructionTr:
-        "Bu bölümde dört görev var. Konuşmalar, bir sunum ve beş kısa konuşmacı dinleyeceksin. Her kaydı iki kez dinleyebilirsin.",
+        "Bu bölümde dört görev var. Konuşmalar, bir sunum ve beş kişinin kısa anlatımını dinleyeceksin. Her kaydı iki kez dinleyebilirsin.",
       tasks: [
         {
           id: "en-a2-05-h1",
@@ -535,10 +535,10 @@ I would go again, but next time I will call {{24}} the morning.`,
               no: 2,
               ref: "a2",
               text: "What can the caller do now?",
-              options: ["Join the Tuesday course this week", "Wait until March", "Take the Saturday course"],
+              options: ["Join the Tuesday course this week", "Join the Tuesday course in two weeks", "Take the Saturday course"],
               answer: 2,
               explain:
-                "Cumartesi kursu «starts in two weeks and there are places» diyor. Salı kursu marta kadar dolu; beklemek bir seçenek ama görevli iki hafta sonra başlayan yeri öneriyor.",
+                "Görevli cumartesi kursu için «starts in two weeks and there are places» diyor. Salı kursu marta kadar dolu; iki hafta sonra başlayan salı değil, cumartesi kursu.",
             },
             {
               kind: "mcq",
@@ -1003,7 +1003,7 @@ Esme`,
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about food and cooking. Answer in full sentences.",
+          prompt: "I am going to ask you some questions about food and cooking. Answer in full sentences.",
           promptTr: "Sana yemek ve mutfak hakkında sorular soracağım. Tam cümlelerle cevap ver.",
           prepSeconds: 20,
           exchange: [
@@ -1023,7 +1023,7 @@ Esme`,
               { de: "use the past simple in the last answer", tr: "Son cevapta geçmiş zamanı kullanmak" },
             ],
             sample:
-              "In the evening I usually eat soup and bread, at about seven. I prefer cooking at home because it is cheaper and I know what is in the food. Last year I ate fish at the sea with my brother. It was very simple, only fish and lemon, but I still remember it.",
+              "In the evening I usually eat soup and bread, at about seven. I prefer cooking at home because it is cheaper and I know what is in the food. Last year I ate fish by the sea with my brother. It was very simple, only fish and lemon, but I still remember it.",
             criteria: [
               "Cevaplar tek sözcük değil, tam cümle mi?",
               "Tercih bir gerekçeyle mi verildi? (because …)",

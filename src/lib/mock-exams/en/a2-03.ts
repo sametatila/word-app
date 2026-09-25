@@ -173,7 +173,7 @@ export const EN_A2_03: MockPaper = {
               text: "Kiran wants to change the colour of his living room but he has no time at the weekend.",
               answer: "e",
               explain:
-                "İlan hem işi hem günü veriyor: «We work Monday to Friday and a normal room takes one day». Kiran hafta sonu boş değil, bu yüzden cumartesi çalışan bahçe grubu (d) ya da perşembe akşamki tamir saati (b) işe yaramaz.",
+                "İlan hem işi hem günü veriyor: «We work Monday to Friday and a normal room takes one day». Kiran hafta sonu boş değil, bu yüzden cumartesi çalışan bahçe grubu (d) işe yaramaz; perşembe akşamki tamir saati (b) de boya işi yapmıyor.",
             },
             {
               kind: "match",
@@ -191,7 +191,7 @@ export const EN_A2_03: MockPaper = {
               text: "Anja studies alone and works better late in the evening than in the morning.",
               answer: "h",
               explain:
-                "İlan «Open until one in the morning, seven days a week» diyor ve sessiz. Anja tek başına çalışıyor, ev arkadaşı aramıyor; bu yüzden oda ilanı (a) ya da stüdyo (f) sorusuna cevap değil.",
+                "İlan «Open until one in the morning, seven days a week» diyor ve sessiz. Anja tek başına çalışıyor, ev arkadaşı aramıyor; bu yüzden oda ilanı (a) ya da stüdyo (f) ona uymaz.",
             },
             {
               kind: "match",
@@ -438,9 +438,9 @@ I would like to meet you, {{24}} please knock on my door.`,
       skill: "listening",
       minutes: 30,
       instruction:
-        "This part has four tasks. You hear conversations, a talk and five short speakers. You hear every recording twice.",
+        "This part has four tasks. You hear conversations, a talk and five short monologues. You hear every recording twice.",
       instructionTr:
-        "Bu bölümde dört görev var. Konuşmalar, bir sunum ve beş kısa konuşmacı dinleyeceksin. Her kaydı iki kez dinleyebilirsin.",
+        "Bu bölümde dört görev var. Konuşmalar, bir sunum ve beş kişinin kısa anlatımını dinleyeceksin. Her kaydı iki kez dinleyebilirsin.",
       tasks: [
         {
           id: "en-a2-03-h1",
@@ -535,7 +535,7 @@ I would like to meet you, {{24}} please knock on my door.`,
               options: ["A letter and a passport", "Eleven copies of the contract", "Six hundred pounds in cash"],
               answer: 0,
               explain:
-                "Son cümle istenen belgeleri sayıyor: «bring a letter from your work and your passport». Onbir kişi sayısıdır, evrak sayısı değil; altı yüz kiradır ve cumartesi ödenmesi istenmiyor.",
+                "Son cümle istenen belgeleri sayıyor: «bring a letter from your work and your passport». On bir kişi sayısıdır, evrak sayısı değil; altı yüz kiradır ve cumartesi ödenmesi istenmiyor.",
             },
             {
               kind: "mcq",
@@ -964,15 +964,15 @@ Sanne`,
           format: "writing",
           goal: "production",
           prompt:
-            "Write a short text about a problem you had in a home. Say what the problem was, what you did and how it ended. Write about 60 words.",
+            "Write a short text about a problem you had in your home. Say what the problem was, what you did and how it ended. Write about 60 words.",
           promptTr:
             "Bir evde yaşadığın bir sorunu anlat. Sorunun ne olduğunu, ne yaptığını ve nasıl bittiğini yaz. Yaklaşık 60 kelime.",
           items: [],
           rubric: {
             minWords: 60,
             points: [
-              { de: "Say what the problem was.", tr: "Sorunun ne olduğunu söyle." },
-              { de: "Say what you did.", tr: "Ne yaptığını söyle." },
+              { de: "Say what the problem was.", tr: "Yaşadığın sorunu söyle." },
+              { de: "Say what you did.", tr: "Sorunla ilgili ne yaptığını söyle." },
               { de: "Say how it ended.", tr: "Nasıl bittiğini söyle." },
             ],
             sample: `Last winter the heating in our flat stopped in the middle of January. The rooms were cold and my son was ill. I called the office three times, but nobody came. Then I wrote a letter and I gave a copy to the neighbours. Two days later a man came and repaired it. Now the flat is warm, but I still keep the letter.`,
@@ -1000,7 +1000,7 @@ Sanne`,
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about your home and your neighbours. Answer in full sentences.",
+          prompt: "I am going to ask you some questions about your home and your neighbours. Answer in full sentences.",
           promptTr: "Sana evin ve komşuların hakkında sorular soracağım. Tam cümlelerle cevap ver.",
           prepSeconds: 20,
           exchange: [
@@ -1037,7 +1037,7 @@ Sanne`,
           prompt:
             "Describe this situation for about one minute: a family is moving into a flat. Two men are carrying a sofa up the stairs. A child is sitting on a box and a neighbour is watching from her door. Say what you see, what the people are doing, and whether you like moving day.",
           promptTr:
-            "Şu durumu bir dakika kadar anlat: bir aile bir daireye taşınıyor. İki adam merdivenden kanepe çıkarıyor. Bir çocuk kutunun üstünde oturuyor ve bir komşu kapısından izliyor. Ne gördüğünü, insanların ne yaptığını ve taşınma gününü sevip sevmediğini söyle.",
+            "Şu durumu bir dakika kadar anlat: Bir aile bir daireye taşınıyor. İki adam merdivenden kanepe çıkarıyor. Bir çocuk kutunun üstünde oturuyor ve bir komşu kapısından izliyor. Ne gördüğünü, insanların ne yaptığını ve taşınma gününü sevip sevmediğini söyle.",
           prepSeconds: 45,
           speakSeconds: 75,
           items: [],

@@ -497,7 +497,7 @@ I notice that the digital form of this problem is discussed as though it had bee
               text: "Which writer complains that the critics have not read the relevant literature?",
               answer: "c",
               explain:
-                "Writer C suçlamanın kaynağını sorguluyor: «have not opened the literature they are attacking», üstelik mesleğin kırk yıldır açık olduğunu söylüyor.",
+                "Writer C suçlamanın kaynağını sorguluyor: «have not opened the literature they are attacking», üstelik mesleğin kırk yıldır bu konuda açık davrandığını söylüyor.",
             },
             {
               kind: "match",
@@ -766,7 +766,7 @@ Seventeen years on, the pilot has produced about four terabytes and one genuinel
               options: ["The method the historian is using", "The lack of storage space in 1974", "A finding aid that hides the selection"],
               answer: 2,
               explain:
-                "Arşivci suçu açıkça yerleştiriyor: «I blame the profession that produced the silence and then published a finding aid reading as though nothing had been touched». Tarihçiyi ise suçlamıyor.",
+                "Arşivci suçu açıkça kime yüklediğini söylüyor: «I blame the profession that produced the silence and then published a finding aid reading as though nothing had been touched». Tarihçiyi ise suçlamıyor.",
             },
             {
               kind: "mcq",
@@ -1243,7 +1243,7 @@ Cataloguing is the first line {{14}} in a budget round.`,
               text: "Speaker 2",
               answer: "b",
               explain:
-                "Konuşmacı çözümde herkesin anlaştığını söyleyip engeli veriyor: notu yok eden kişi yazmak zorunda ve «there is no line in any contract that pays for it».",
+                "Konuşmacı çözümde herkesin anlaştığını söyleyip engeli veriyor: notu, imhayı yapan kişi yazmak zorunda ve «there is no line in any contract that pays for it».",
             },
             {
               kind: "match",
@@ -1273,7 +1273,7 @@ Cataloguing is the first line {{14}} in a budget round.`,
               text: "Speaker 5",
               answer: "e",
               explain:
-                "Konuşmacı anlaşmazlığı sözcüğe bağlıyor: `permanent` üç meslekte üç ayrı şey demek ve «Three people can say the record is kept permanently and mean three incompatible things».",
+                "Konuşmacı anlaşmazlığı sözcüğe bağlıyor: «permanent» üç meslekte üç ayrı şey demek ve «Three people can say the record is kept permanently and mean three incompatible things».",
             },
             {
               kind: "match",
@@ -1446,7 +1446,7 @@ I would not recommend scanning on request as the sole route of access, and I wou
           prompt:
             "Talk on your own for about two minutes. Compare these two approaches to public records, say which you would defend and explain one serious objection to your own position: keeping as much as possible and describing it lightly, or keeping much less and describing it fully.",
           promptTr:
-            "Yaklaşık iki dakika tek başına konuş. Kamu belgelerine şu iki yaklaşımı karşılaştır, hangisini savunacağını söyle ve kendi konumuna yöneltilebilecek ciddi bir itirazı açıkla: olabildiğince çok saklayıp az betimlemek mi, çok daha az saklayıp tam betimlemek mi?",
+            "Yaklaşık iki dakika tek başına konuş. Kamu belgelerine yönelik şu iki yaklaşımı karşılaştır, hangisini savunacağını söyle ve kendi konumuna yöneltilebilecek ciddi bir itirazı açıkla: olabildiğince çok saklayıp az betimlemek mi, çok daha az saklayıp tam betimlemek mi?",
           prepSeconds: 60,
           speakSeconds: 120,
           items: [],

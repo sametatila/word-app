@@ -734,7 +734,7 @@ Bei Zeitvergleichen ist der Vergleichszeitraum im Fließtext zu nennen. Wurde di
               plays: 1,
               segments: [
                 {
-                  text: "Bevor wir abstimmen, eine Bitte: Die im Antrag genannten sechzig Prozent stammen aus einem Quartalsvergleich. Ich schlage vor, dass wir die Jahreszahl nachreichen lassen und erst danach entscheiden. Der Antrag selbst bleibt auf der Tagesordnung.",
+                  text: "Bevor wir abstimmen, eine Bitte: Die im Antrag genannten sechzig Prozent stammen aus einem Quartalsvergleich. Ich schlage vor, dass wir den Jahresvergleich nachreichen lassen und erst danach entscheiden. Der Antrag selbst bleibt auf der Tagesordnung.",
                 },
               ],
             },
@@ -846,12 +846,12 @@ Bei Zeitvergleichen ist der Vergleichszeitraum im Fließtext zu nennen. Wurde di
               text: "Was soll vor der Entscheidung geschehen?",
               options: [
                 "Der Antrag soll neu formuliert werden.",
-                "Die Jahreszahl soll nachgereicht werden.",
+                "Der Jahresvergleich soll nachgereicht werden.",
                 "Eine externe Prüfung soll beauftragt werden.",
               ],
               answer: 1,
               explain:
-                "Öneri açık: \"dass wir die Jahreszahl nachreichen lassen und erst danach entscheiden\".",
+                "Öneri açık: \"dass wir den Jahresvergleich nachreichen lassen und erst danach entscheiden\".",
             },
             {
               kind: "bool",
@@ -1089,7 +1089,7 @@ Bei Zeitvergleichen ist der Vergleichszeitraum im Fließtext zu nennen. Wurde di
               id: "de-b2-10-h3-18",
               no: 18,
               ref: "d1",
-              text: "Wie beschreibt Frau Ilkay ihr Bedenken?",
+              text: "Wie beschreibt Frau Ilkay ihre Bedenken?",
               options: [
                 "Als bestimmtes, nicht allgemeines Risiko.",
                 "Als grundsätzlichen Einwand gegen die Praxis.",
@@ -1204,7 +1204,7 @@ Bei Zeitvergleichen ist der Vergleichszeitraum im Fließtext zu nennen. Wurde di
               plays: 1,
               segments: [
                 {
-                  text: "Guten Tag, hier ist die Redaktion. Ihr Hinweis war berechtigt: Wir haben eine Verdopplung gemeldet, ohne die absoluten Zahlen zu nennen. Es ging um drei statt anderthalb Fällen. Die Korrektur läuft morgen.",
+                  text: "Guten Tag, hier ist die Redaktion. Ihr Hinweis war berechtigt: Wir haben eine Verdopplung gemeldet, ohne die absoluten Zahlen zu nennen. Es ging um drei statt anderthalb Fälle. Die Korrektur läuft morgen.",
                 },
               ],
             },
@@ -1415,7 +1415,7 @@ Bei Zeitvergleichen ist der Vergleichszeitraum im Fließtext zu nennen. Wurde di
           prompt:
             "In einer Zeitung stand: \"Zahlen lügen nicht — wer sie bestreitet, hat etwas zu verbergen.\" Schreiben Sie einen Leserbrief (circa 150 Wörter). Setzen Sie sich mit dieser Aussage auseinander, nennen Sie Argumente und ziehen Sie eine begründete Schlussfolgerung.",
           promptTr:
-            "Bir gazetede şöyle yazdı: \"Sayılar yalan söylemez — onlara itiraz edenin gizleyecek bir şeyi vardır.\" Bir okur mektubu yaz (yaklaşık 150 kelime). Bu iddiayı tartış, gerekçeler sun ve gerekçeli bir sonuca bağla.",
+            "Bir gazetede şöyle yazıyordu: \"Sayılar yalan söylemez — onlara itiraz edenin gizleyecek bir şeyi vardır.\" Bir okur mektubu yaz (yaklaşık 150 kelime). Bu iddiayı tartış, gerekçeler sun ve gerekçeli bir sonuca bağla.",
           items: [],
           rubric: {
             minWords: 150,
@@ -1463,7 +1463,7 @@ Nadja Detering`,
             minWords: 100,
             points: [
               { de: "Nennen Sie die Stelle im Bericht genau.", tr: "Rapordaki yeri tam olarak belirt." },
-              { de: "Erklären Sie, warum die Angabe fehlt.", tr: "Eksik olan bilginin neden gerektiğini açıkla." },
+              { de: "Erklären Sie, warum die Angabe nötig ist.", tr: "Eksik olan bilginin neden gerektiğini açıkla." },
               { de: "Sagen Sie, was Sie erwarten.", tr: "Ne beklediğini söyle." },
               { de: "Bleiben Sie sachlich und nennen Sie eine Frist.", tr: "Nesnel kal ve bir süre belirt." },
             ],
@@ -1525,7 +1525,7 @@ Nadja Detering`,
               "Ich möchte heute darüber sprechen, wie viel Statistik eine öffentliche Debatte verträgt. Zuerst schildere ich die Lage in meinem Herkunftsland, dann nenne ich Argumente für beide Seiten und komme am Ende zu meiner Position. In Polen werden Zahlen in der Politik häufig genannt, aber selten mit Quelle. Meine Mutter hat vor der letzten Wahl drei verschiedene Arbeitslosenzahlen gehört, alle für dasselbe Jahr, und keine mit Angabe der Methode. Für mehr Statistik spricht, dass ohne Zahlen jede Behauptung gleich viel wiegt. Wer über Kriminalität spricht, ohne die Entwicklung zu kennen, redet über sein Gefühl. Dagegen spricht, dass Zahlen eine Debatte auch schließen können. Wer eine Statistik nennt, wirkt sachlich, und wer nachfragt, wirkt umständlich. Genau daran scheitern viele Gespräche. Meine Position ist deshalb: Nicht mehr Zahlen, sondern weniger Zahlen mit mehr Kontext. Eine einzige Angabe mit Vergleichszeitraum und Grundgesamtheit nützt mehr als fünf ohne. Zusammenfassend: Statistik ersetzt die Debatte nicht — sie sorgt nur dafür, dass beide Seiten über dasselbe streiten.",
             criteria: [
               "Altı bölümün hepsi var mı ve sunum baştan bölümlendi mi?",
-              "Kendi ülkedeki durum somut ve açıklayıcı mı?",
+              "Kendi ülkendeki durum somut ve açıklayıcı mı?",
               "Her iki taraf için de örnekle desteklenmiş gerekçe var mı?",
               "Konum gerekçeli mi ve karşı tarafın noktasını kabul ediyor mu?",
               "Dört dakika boyunca yapı korunabildi mi?",
@@ -1594,7 +1594,7 @@ Nadja Detering`,
             minutes: 8,
             points: [
               { de: "einen Vorschlag begründen", tr: "Bir öneriyi gerekçelendirmek" },
-              { de: "auf Einwände eingehen", tr: "İtirazlara girmek" },
+              { de: "auf Einwände eingehen", tr: "İtirazlara karşılık vermek" },
               { de: "priorisieren und begründen", tr: "Önceliklendirmek ve gerekçelendirmek" },
               { de: "das Ergebnis zusammenfassen", tr: "Sonucu özetlemek" },
             ],

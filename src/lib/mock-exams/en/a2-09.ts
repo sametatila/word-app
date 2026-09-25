@@ -440,9 +440,9 @@ I live on the fourth floor and I still {{24}} not know how my neighbour on the s
       skill: "listening",
       minutes: 30,
       instruction:
-        "This part has four tasks. You hear conversations, some information and five short speakers. You hear every recording twice.",
+        "This part has four tasks. You hear conversations, some information and five short monologues. You hear every recording twice.",
       instructionTr:
-        "Bu bölümde dört görev var. Konuşmalar, bir bilgilendirme ve beş kısa konuşmacı dinleyeceksin. Her kaydı iki kez dinleyebilirsin.",
+        "Bu bölümde dört görev var. Konuşmalar, bir bilgilendirme ve beş kişinin kısa anlatımını dinleyeceksin. Her kaydı iki kez dinleyebilirsin.",
       tasks: [
         {
           id: "en-a2-09-h1",
@@ -477,7 +477,7 @@ I live on the fourth floor and I still {{24}} not know how my neighbour on the s
                 { text: "Did you call the caretaker?" },
                 { text: "Twice. He says the part comes on Thursday." },
                 { text: "Thursday? It is Monday today." },
-                { text: "I know. I carry the shopping up four floors until then." },
+                { text: "I know. I have to carry the shopping up four floors until then." },
               ],
             },
             {
@@ -502,7 +502,7 @@ I live on the fourth floor and I still {{24}} not know how my neighbour on the s
               situation: "Tamirci müşteriye ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hello, this is about your washing machine. The part came today, but it is the wrong one. I ordered the right one and I come on Friday. I am very sorry." },
+                { text: "Hello, this is about your washing machine. The part came today, but it is the wrong one. I ordered the right one and I will come on Friday. I am very sorry." },
               ],
             },
             {
@@ -1006,7 +1006,7 @@ Noor`,
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about machines at home and about repairs. Answer in full sentences.",
+          prompt: "I am going to ask you some questions about machines at home and about repairs. Answer in full sentences.",
           promptTr: "Sana evdeki makineler ve tamir hakkında sorular soracağım. Tam cümlelerle cevap ver.",
           prepSeconds: 20,
           exchange: [
@@ -1026,7 +1026,7 @@ Noor`,
               { de: "use the past simple in the last answer", tr: "Son cevapta geçmiş zamanı kullanmak" },
             ],
             sample:
-              "I use the washing machine most, about four times a week, because we are three people. I do not repair things myself, because I am afraid of water and electricity. Last year our fridge stopped in the summer. The man came after two days and the food was already bad.",
+              "I use the washing machine most, about four times a week, because there are three of us. I do not repair things myself, because I am afraid of water and electricity. Last year our fridge stopped working in the summer. The man came after two days and the food was already bad.",
             criteria: [
               "Cevaplar tek sözcük değil, tam cümle mi?",
               "Tercih bir gerekçeyle mi verildi? (because …)",
@@ -1091,7 +1091,7 @@ Noor`,
               { de: "make a decision together", tr: "Birlikte bir karara varmak" },
             ],
             sample:
-              "I think a hundred and eighty euros is a lot for an old machine, because in two years we pay again. You are right about the children; three weeks is impossible for us. But three hundred for a new one is only a little more than the repair. So let us buy the new machine and give the old one to the shop.",
+              "I think a hundred and eighty euros is a lot for an old machine, because in two years we will pay again. You are right about the children; three weeks is impossible for us. But three hundred for a new one is only a little more than the repair. So let us buy the new machine and give the old one to the shop.",
             criteria: [
               "Görüş bir gerekçeyle mi verildi? (because …)",
               "Karşı tarafın söylediğine gönderme yapıldı mı? (You are right … / That is true …)",

@@ -317,7 +317,7 @@ Reviews carried out after major floods usually conclude that the information exi
               no: 20,
               text: "Nobody warned the villages before the water arrived.\nThe villages ______ before the water arrived.",
               cue: "WARNED",
-              accept: ["were not warned", "had not been warned"],
+              accept: ["were not warned", "had not been warned", "weren't warned", "hadn't been warned"],
               explain:
                 "Etken cümle edilgene çevriliyor ve eylemi yapan `nobody` olduğu için olumsuzluk yükleme taşınır.",
             },
@@ -339,7 +339,7 @@ Reviews carried out after major floods usually conclude that the information exi
               cue: "TAKEN",
               accept: ["were no longer taken", "are no longer taken"],
               explain:
-                "Etken cümle edilgene çevriliyor ve `stopped` süreklilik bildirdiği için karşılığı `no longer` olur.",
+                "Etken cümle edilgene çevriliyor ve `stopped` bir sürekliliğin sona erdiğini bildirdiği için karşılığı `no longer` olur.",
             },
           ],
         },
@@ -550,7 +550,7 @@ The practical consequence is that public pressure pushes in one direction only, 
             {
               key: "b",
               label: "b — Mayor",
-              body: "I have been criticised for both errors in the same term of office, once for closing the market when nothing came and once for waiting three hours too long. The second week was considerably worse, and it did not feel eleven times worse at the time, which is exactly the trap.",
+              body: "I have been criticised for both errors in the same term of office, once for closing the market when nothing came and once for waiting three hours too long. The second error cost eleven times as much, but it did not feel eleven times worse at the time, which is exactly the trap.",
             },
             {
               key: "c",
@@ -636,7 +636,7 @@ The practical consequence is that public pressure pushes in one direction only, 
               id: "a1",
               genre: "Radio",
               genreTr: "Radyo",
-              situation: "Bir tahminci mesleğinin sınırını anlatıyor.",
+              situation: "Bir hava tahmincisi mesleğinin sınırını anlatıyor.",
               plays: 2,
               segments: [
                 { text: "I am asked whether it will rain and I answer with a percentage, and people hear that as an evasion. It is the opposite. The percentage is the honest answer and the yes or no is the one that hides what I do not know." },
@@ -736,7 +736,7 @@ The practical consequence is that public pressure pushes in one direction only, 
               options: ["They are the truthful answer", "They confuse most listeners", "They are required by the service"],
               answer: 0,
               explain:
-                "Tahminci kaçamak suçlamasını tersine çeviriyor: «The percentage is the honest answer and the yes or no is the one that hides what I do not know».",
+                "Hava tahmincisi kaçamak suçlamasını tersine çeviriyor: «The percentage is the honest answer and the yes or no is the one that hides what I do not know».",
             },
             {
               kind: "mcq",
@@ -1323,7 +1323,7 @@ I recommend one change: that the two timings behind any closure be published on 
             { who: "you", hint: "Alışkanlığını anlat ve bir örnek ver.", expect: "bir alışkanlığı örnekle anlatmak", seconds: 45 },
             { who: "partner", de: "Thank you. Tell me about a time you ignored a warning, or followed one that turned out to be unnecessary.", tr: "Teşekkürler. Bir uyarıyı görmezden geldiğin ya da gereksiz çıkan bir uyarıya uyduğun bir zamanı anlat." },
             { who: "you", hint: "Tek bir olayı sonucuyla anlat.", expect: "bir olayı sonucuyla anlatmak", seconds: 45 },
-            { who: "partner", de: "And if you had been told there was a forty per cent chance of flooding tonight, what would you have done?", tr: "Bu gece yüzde kırk sel olasılığı olduğu söylenseydi ne yapardın?" },
+            { who: "partner", de: "And if you had been told there was a forty per cent chance of flooding last night, what would you have done?", tr: "Dün gece yüzde kırk sel olasılığı olduğu söylenseydi ne yapardın?" },
             { who: "you", hint: "Üçüncü tip koşulla cevapla ve gerekçelendir.", expect: "üçüncü tip koşul kurmak", seconds: 45 },
           ],
           items: [],

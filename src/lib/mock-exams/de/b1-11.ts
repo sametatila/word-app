@@ -406,7 +406,7 @@ Selma Idrissi`,
               text: "Frau Pantel möchte selbst etwas anbauen, hat aber keinen Garten.",
               answer: "g",
               explain:
-                "(g) bir mevsimlik parsel veriyor ve alet suyu da var; karşılığında dört çalışma günü zorunlu.",
+                "(g) bir mevsimlik parsel veriyor ve alet ile su da var; karşılığında dört çalışma günü zorunlu.",
             },
             {
               kind: "match",
@@ -1470,7 +1470,7 @@ Ruth Kirchhoff`,
               { de: "zusammenfassen", tr: "Özetlemek" },
             ],
             sample:
-              "Der letzte Freitag im Juni ist schwierig, weil in der Woche die Zeugnisse kommen. Ich würde den ersten Freitag im Juli nehmen. Beim Essen bin ich fürs Selberkochen, aber nur mit einem Plan: zwei Gerichte statt fünf, und jede Klasse stellt zwei Eltern. Beim Einkauf würde ich es teilen — Gemüse vom Hofladen, weil der Unterschied dort klein ist, Getränke aus dem Supermarkt. Zusammengefasst: erster Freitag im Juli, zwei Gerichte, selbst gekocht, Einkauf geteilt, und der Preis bleibt bei drei Euro.",
+              "Der letzte Freitag im Juni ist schwierig, weil in der Woche die Zeugnisse kommen. Ich würde den ersten Freitag im Juli nehmen. Beim Essen bin ich fürs Selberkochen, aber nur mit einem Plan: zwei Gerichte statt fünf, und jede Klasse stellt zwei Eltern. Beim Einkauf würde ich es teilen — Gemüse vom Hofladen, weil der Unterschied dort klein ist, Getränke aus dem Supermarkt. Zusammengefasst: erster Freitag im Juli, zwei Gerichte, selbst gekocht, Einkauf geteilt, und wir nehmen drei Euro pro Portion.",
             criteria: [
               "Beş noktanın hepsi konuşuldu mu?",
               "Öneriler gerekçelendirildi mi?",
@@ -1488,7 +1488,7 @@ Ruth Kirchhoff`,
           prompt:
             "Halten Sie einen Vortrag von etwa drei Minuten zum Thema \"Woher unser Essen kommt\". Gliedern Sie: Einstieg — Situation in Ihrem Herkunftsland — Situation hier — Vorteile — Nachteile — eigene Meinung — Abschluss.",
           promptTr:
-            "\"Yemeğimiz nereden geliyor?\" konusunda yaklaşık üç dakikalık bir sunum yap. Şu sırayı izle: giriş — kendi ülkendeki durum — buradaki durum — iyi yanları — zor yanları — kendi görüşün — kapanış.",
+            "\"Yemeğimiz nereden geliyor?\" konusunda yaklaşık üç dakikalık bir sunum yap. Şu sırayı izle: giriş — kendi ülkendeki durum — buradaki durum — avantajları — dezavantajları — kendi görüşün — kapanış.",
           prepSeconds: 60,
           speakSeconds: 180,
           items: [],
@@ -1497,16 +1497,16 @@ Ruth Kirchhoff`,
             points: [
               { de: "Einstieg und Gliederung", tr: "Giriş ve bölümleme" },
               { de: "Herkunftsland und hier vergleichen", tr: "Kendi ülkeni ve burayı karşılaştırmak" },
-              { de: "Vorteile und Nachteile", tr: "İyi ve zor yanlar" },
+              { de: "Vorteile und Nachteile", tr: "Avantajlar ve dezavantajlar" },
               { de: "eigene Meinung mit Begründung", tr: "Gerekçeli kendi görüşün" },
               { de: "Abschluss", tr: "Kapanış" },
             ],
             sample:
-              "Ich möchte heute darüber sprechen, woher unser Essen kommt. Zuerst erzähle ich von meiner Heimat, dann von hier, danach nenne ich Vorteile und Nachteile und sage am Ende meine Meinung. In Marokko hat meine Familie fast alles auf dem Markt gekauft, und meine Mutter kannte die Händler mit Namen. Hier kaufe ich im Supermarkt, und ich weiß bei den meisten Sachen nicht, aus welchem Land sie kommen. Ein Vorteil hier ist die Auswahl: Es gibt im Januar alles, und die Preise sind stabil. Ein Nachteil ist, dass die Wege lang sind und man den Weg nicht sieht. Ich finde, dass man nicht alles regional kaufen muss. Aber bei Gemüse würde ich es machen, weil der Unterschied dort klein ist und man den Hof besuchen kann. Zusammenfassend: Ich schaue seit einem Jahr auf die Herkunft, und es hat mich weniger gekostet, als ich gedacht habe.",
+              "Ich möchte heute darüber sprechen, woher unser Essen kommt. Zuerst erzähle ich von meiner Heimat, dann von hier, danach nenne ich Vorteile und Nachteile und sage am Ende meine Meinung. In Marokko hat meine Familie fast alles auf dem Markt gekauft, und meine Mutter kannte die Händler mit Namen. Hier kaufe ich im Supermarkt, und ich weiß bei den meisten Sachen nicht, aus welchem Land sie kommen. Ein Vorteil hier ist die Auswahl: Es gibt im Januar alles, und die Preise sind stabil. Ein Nachteil ist, dass die Transportwege lang sind und man nicht sieht, woher die Ware kommt. Ich finde, dass man nicht alles regional kaufen muss. Aber bei Gemüse würde ich es machen, weil der Unterschied dort klein ist und man den Hof besuchen kann. Zusammenfassend: Ich schaue seit einem Jahr auf die Herkunft, und es hat mich weniger gekostet, als ich gedacht habe.",
             criteria: [
               "Yedi bölümün hepsi var mı ve sunum baştan bölümlendi mi?",
               "Kendi ülke ile buradaki durum somut olarak karşılaştırıldı mı?",
-              "En az bir iyi ve bir zor yan örnekle desteklendi mi?",
+              "En az bir avantaj ve bir dezavantaj örnekle desteklendi mi?",
               "Görüş gerekçeli mi?",
               "Üç dakika boyunca yapı korunabildi mi?",
               "B1 yapıları (Konjunktiv II, ilgi cümlesi, ileri bağlaçlar) kullanıldı mı?",
@@ -1526,8 +1526,8 @@ Ruth Kirchhoff`,
           exchange: [
             {
               who: "partner",
-              de: "Danke für den Vortrag. Sie sagen, bei Gemüse lohnt sich regional. Woran merken Sie das?",
-              tr: "Sunum için teşekkürler. Sebzede bölgeselin işe yaradığını söylüyorsun. Bunu nereden anlıyorsun?",
+              de: "Danke für den Vortrag. Sie sagen, bei Gemüse lohnt es sich, regional zu kaufen. Woran merken Sie das?",
+              tr: "Sunum için teşekkürler. Sebzede yerel ürün almanın değdiğini söylüyorsun. Bunu nereden anlıyorsun?",
             },
             { who: "you", hint: "Somut bir gözlem ya da rakam ver.", expect: "iddiayı somut bir gözlemle desteklemek", seconds: 40 },
             {

@@ -357,7 +357,7 @@ There is broad {{17}} that the maps are useful, and equally broad frustration th
               no: 22,
               text: "Nobody told me about the change of room.\nI ______ about the change of room.",
               cue: "BEEN",
-              accept: ["have not been told", "had not been told", "haven't been told"],
+              accept: ["have not been told", "had not been told", "haven't been told", "hadn't been told"],
               explain:
                 "Olumsuz özneli etken cümle («Nobody told me»), olumsuz edilgene çevriliyor. Anahtar sözcük `been` edilgenin ortacını gerektiriyor: «have not been told». Zaman bağlama göre present perfect ya da past perfect olabilir.",
             },

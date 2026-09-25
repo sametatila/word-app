@@ -969,7 +969,7 @@ Two competitions changed their recording {{14}} in the same season.`,
                 { text: "I have, and I want to be precise about why. Not because intention does not matter, since it obviously does, but because a referee cannot see it and a panel three days later can only guess at it. A law that requires a finding nobody can make will be applied by prejudice." },
                 { text: "Kiro?" },
                 { text: "Every legal system in the world manages this. We infer intention from conduct, and we do it in criminal courts with a great deal more at stake than a four-match suspension. The claim that it cannot be done is not a claim about intention. It is a claim about the quality of sports tribunals, and I would rather fix those." },
-                { text: "Aras, from the philosophy?" },
+                { text: "Aras, from the philosophical side?" },
                 { text: "I would say that both of them are right about different questions. Kiro is right that intention is inferable. Vesna is right that in this institution it is not being inferred; it is being asserted. Whether that is a reason to remove intention from the law depends on whether you believe the institution is improvable, and on that I have no view." },
                 { text: "Vesna, does the comparison with the courts move you?" },
                 { text: "It weakens my argument and it does not defeat it. A court has disclosure, evidence, a defence lawyer and months. A disciplinary panel has a video clip, twenty minutes and a chairman who watched the incident live on television. The analogy imports the conclusion and leaves the machinery behind." },
@@ -1206,7 +1206,7 @@ Two competitions changed their recording {{14}} in the same season.`,
             {
               kind: "audio",
               id: "d7",
-              genre: "Seventh speaker",
+              genre: "Speaker 7",
               genreTr: "Yedinci konuşmacı",
               situation: "Yedinci konuşmacı basındaki iddiayı kanıtla karşılaştırıyor.",
               plays: 2,
@@ -1383,7 +1383,7 @@ What I do not propose
 I do not propose a ban on re-entry the following season, which has been suggested twice. It punishes the wrong people, since teams are rebuilt every year, and it would reduce the number of entrants, which is the underlying problem rather than the presenting one.
 
 How we would know it had failed
-Two findings would tell us. First, if withdrawals fell but total entries fell by a comparable number, we will simply have priced out the teams that were least certain of fielding a side. Second, if withdrawals move from after the draw to the week before it, the behaviour has been displaced and not reduced. I suggest we record both figures from the first season and publish them, whatever they show.`,
+Two findings would tell us. First, if withdrawals fall but total entries fall by a comparable number, we will simply have priced out the teams that were least certain of fielding a side. Second, if withdrawals move from after the draw to the week before it, the behaviour has been displaced and not reduced. I suggest we record both figures from the first season and publish them, whatever they show.`,
             criteria: [
               "Sorun somut sayılarla ve kime düştüğüyle birlikte anlatıldı mı?",
               "Önerilen ve bilerek önerilmeyen ayrı ayrı verildi mi?",
@@ -1479,7 +1479,7 @@ Two findings would tell us. First, if withdrawals fell but total entries fell by
           exchange: [
             { who: "partner", de: "The options are: double the penalty, add video review for that offence only, publish the offence counts by team, or train the officials to apply the existing rule consistently. Which would change behaviour?", tr: "Seçenekler: cezayı ikiye katlamak, yalnız o ihlal için video incelemesi eklemek, ihlal sayılarını takım takım yayımlamak ya da hakemleri mevcut kuralı tutarlı uygulamak üzere eğitmek. Hangisi davranışı değiştirir?" },
             { who: "you", hint: "Bir seçenek seç ve neden davranışı değiştireceğini açıkla.", expect: "seçenekleri değerlendirmek ve birini gerekçesiyle savunmak", seconds: 45 },
-            { who: "partner", de: "But if we double the penalty and the recorded offences fall, we will not know whether the behaviour changed or the officials simply started recording it differently. Does that not sink your choice?", tr: "Ama cezayı ikiye katlar ve kayıtlı ihlaller düşerse, davranış mı değişti yoksa hakemler mi farklı kaydetmeye başladı, bilemeyiz. Bu seçimini batırmıyor mu?" },
+            { who: "partner", de: "But whichever change we make, if the recorded offences fall, we will not know whether the behaviour changed or the officials simply started recording it differently. Does that not sink your choice?", tr: "Ama hangi değişikliği yaparsak yapalım, kayıtlı ihlaller düşerse, davranış mı değişti yoksa hakemler mi farklı kaydetmeye başladı, bilemeyiz. Bu, seçimini boşa çıkarmıyor mu?" },
             { who: "you", hint: "İtirazın gücünü teslim et ve ölçme sorununu çözecek bir şey öner.", expect: "bir itirazı teslim edip ölçme sorununa çözüm önermek", seconds: 45 },
             { who: "partner", de: "Then tell me what result, at the end of the season, would make us stop.", tr: "Öyleyse sezon sonunda hangi sonuç bunu bıraktırırdı, söyle." },
             { who: "you", hint: "Sınanabilir bir başarısızlık ölçütü formüle et.", expect: "sınanabilir bir başarısızlık ölçütü formüle etmek", seconds: 45 },
@@ -1493,7 +1493,7 @@ Two findings would tell us. First, if withdrawals fell but total entries fell by
               { de: "formulate a testable failure condition", tr: "Sınanabilir bir başarısızlık ölçütü formüle etmek" },
             ],
             sample:
-              "I would take the training, on the ground that the other three all assume the existing rule is being applied consistently, and every count we have suggests it is not. You are right about the measurement problem, and it applies to my choice more sharply than to yours, since training is precisely a change in how officials see things. What I would do is freeze the recording form for the season and have a second observer code twenty matches independently, which is cheap and is the only way to separate the two. As for abandoning it: if the independent coding shows the same rate of the offence while the official returns fall, we have trained the recording rather than the conduct, and I would stop and say so publicly rather than let the lower number stand.",
+              "I would take the training, on the grounds that the other three all assume the existing rule is being applied consistently, and every count we have suggests it is not. You are right about the measurement problem, and it applies to my choice more sharply than to the others, since training is precisely a change in how officials see things. What I would do is freeze the recording form for the season and have a second observer code twenty matches independently, which is cheap and is the only way to separate the two. As for abandoning it: if the independent coding shows the same rate of the offence while the official returns fall, we have trained the recording rather than the conduct, and I would stop and say so publicly rather than let the lower number stand.",
             criteria: [
               "Seçim seçeneklere karşı mı gerekçelendirildi?",
               "İtirazın gücü teslim edildi mi ve kendi seçimine de uygulandı mı?",

@@ -18,7 +18,7 @@ export const EN_B1_07: MockPaper = {
   level: "B1",
   no: 7,
   theme: "Volunteering, Neighbours and Getting Things Done",
-  themeTr: "Gönüllülük, komşuluk ve işin gerçekten yapılması",
+  themeTr: "Gönüllülük, komşuluk ve işleri halletmek",
   minutes: 155,
   parts: [
     /* ── READING ───────────────────────────────────────────────────────── */
@@ -191,7 +191,7 @@ export const EN_B1_07: MockPaper = {
               text: "Tarek speaks four languages and wants to use them.",
               answer: "f",
               explain:
-                "İlan işi tarif ediyor: «sit between a visitor and an official and say exactly what each of them said». Dil bilgisi başka hiçbir ilanda aranmıyor.",
+                "İlan işi tarif ediyor: «sit between a visitor and an official and say exactly what each of them said». Yabancı dil bilmek başka hiçbir ilanda aranmıyor.",
             },
             {
               kind: "match",
@@ -781,7 +781,7 @@ And if you are ill, tell somebody early. Nothing here depends {{30}} one person,
               situation: "Biri kendisine yapılan bir çağrıya karşılık veriyor.",
               plays: 2,
               segments: [
-                { text: "That is kind of you to think of me, and I have to say no this time. I did the Christmas one and I was no use to my family for two weeks. Ask me again in March and the answer will probably be different." },
+                { text: "That is kind of you to think of me, but I have to say no this time. I did the Christmas one and I was no use to my family for two weeks. Ask me again in March and the answer will probably be different." },
               ],
             },
             {
@@ -1082,7 +1082,7 @@ Tell Selma by:         {{19}}`,
               options: ["He left again after six weeks", "She was right to give him Tuesdays", "He stayed, but he has not forgiven her"],
               answer: 2,
               explain:
-                "Noor sonucu ve süreni birlikte veriyor: «He is still here, and he still tells me I was rude». Kendi kararını da savunmuyor: «I get it wrong».",
+                "Noor sonucu ve süreyi birlikte veriyor: «He is still here, and he still tells me I was rude». Kendi kararını da savunmuyor: «I get it wrong».",
             },
             {
               kind: "mcq",
@@ -1197,7 +1197,7 @@ What surprised me was the effect on me rather than on her. Four minutes a week h
           exchange: [
             { who: "partner", de: "Good afternoon. How well do you know the people who live near you?", tr: "İyi günler. Yakınında oturanları ne kadar tanıyorsun?" },
             { who: "you", hint: "Durumu anlat ve bir örnek ver.", expect: "bir durumu betimlemek ve somut bir örnekle desteklemek", seconds: 40 },
-            { who: "partner", de: "Thank you. Has anybody ever helped you without being asked?", tr: "Teşekkürler. Hiç kimse senden istenmeden yardım etti mi?" },
+            { who: "partner", de: "Thank you. Has anybody ever helped you without being asked?", tr: "Teşekkürler. Sen istemeden sana yardım eden biri hiç oldu mu?" },
             { who: "you", hint: "Present perfect ya da geçmiş zamanla bir olay anlat.", expect: "geçmişte olmuş tek bir olayı anlatmak", seconds: 40 },
             { who: "partner", de: "And if you had one free afternoon a week, who would you give it to?", tr: "Haftada bir boş öğleden sonran olsa onu kime ayırırdın?" },
             { who: "you", hint: "Koşul kipiyle cevapla ve gerekçelendir.", expect: "ikinci tip koşul cümlesiyle bir varsayım kurmak", seconds: 40 },
@@ -1240,7 +1240,7 @@ What surprised me was the effect on me rather than on her. Four minutes a week h
               { de: "mention one disadvantage of your choice", tr: "Seçtiğin yolun bir olumsuz yanını da söyle" },
             ],
             sample:
-              "Money is easy to give and easy to stop, and nobody in the organisation ever learns your name. Time is the opposite: it is hard to give, and after a few months people expect you. On the other hand, money buys things that volunteers cannot buy, such as a van. I would give the two hours, mainly because I want to see what actually happens to what I give. The disadvantage is honest enough: I am worth about nine euros an hour to them, and my monthly payment would be worth more.",
+              "Money is easy to give and easy to stop, and nobody in the organisation ever learns your name. Time is the opposite: it is hard to give, and after a few months people expect you. On the other hand, money buys things that volunteers cannot buy, such as a van. I would give the two hours, mainly because I want to see what actually happens to what I give. To be honest, there is a disadvantage: I am worth about nine euros an hour to them, and my monthly payment would be worth more.",
             criteria: [
               "İki yol da gerçekten karşılaştırıldı mı?",
               "Karşılaştırma yapıları kullanıldı mı? (on the other hand, the opposite)",
@@ -1263,7 +1263,7 @@ What surprised me was the effect on me rather than on her. Four minutes a week h
           exchange: [
             { who: "partner", de: "There are four weeks and four of us, so one week each looks obvious. Do you agree?", tr: "Dört hafta ve dört kişiyiz, herkese bir hafta düşmesi apaçık görünüyor. Katılıyor musun?" },
             { who: "you", hint: "Öneriye karşılık ver: kabul et ya da başka bir bölüşüm öner ve gerekçelendir.", expect: "bir öneriye gerekçeli karşılık vermek", seconds: 40 },
-            { who: "partner", de: "The problem is that two of us work at weekends, and the shelf is worst on a Sunday. How do we handle that?", tr: "Sorun şu: ikimiz hafta sonu çalışıyoruz ve raf en çok pazar günü kötü oluyor. Bunu nasıl çözeriz?" },
+            { who: "partner", de: "The problem is that two of us work at weekends, and the shelf is worst on a Sunday. How do we handle that?", tr: "Sorun şu: aramızdan ikisi hafta sonu çalışıyor ve raf en çok pazar günü kötü oluyor. Bunu nasıl çözeriz?" },
             { who: "you", hint: "Somut bir çözüm öner ve karşı tarafın söylediğine gönderme yap.", expect: "somut bir çözüm önermek ve karşı tarafın kısıtını hesaba katmak", seconds: 40 },
             { who: "partner", de: "All right. What do we write on the note for the others?", tr: "Peki. Ötekiler için nota ne yazıyoruz?" },
             { who: "you", hint: "Vardığınız düzeni tek tek özetle.", expect: "varılan düzeni açık ve sıralı biçimde özetlemek", seconds: 35 },
@@ -1277,7 +1277,7 @@ What surprised me was the effect on me rather than on her. Four minutes a week h
               { de: "summarise the agreement", tr: "Varılan anlaşmayı özetlemek" },
             ],
             sample:
-              "One week each is fair on paper, but the weeks are not the same: the week after the food delivery is twice the work. You are right that Sunday is the problem, so let us split it: the two of you who work at weekends take the Monday to Friday jobs, and we two take the Sundays. On the note: weeks one and three, Tarek and me for Sundays; weeks two and four, you two; and everybody empties the shelf before they go on holiday.",
+              "One week each is fair on paper, but the weeks are not the same: the week after the food delivery is twice the work. You are right that Sunday is the problem, so let us split it: the two of you who work at weekends take the Monday to Friday jobs, and we two take the Sundays. On the note: every Sunday, Tarek and me; Monday to Friday, you two; and everybody empties the shelf before they go on holiday.",
             criteria: [
               "İlk öneriye gerekçeli bir karşılık verildi mi?",
               "Karşı tarafın kısıtı (hafta sonu çalışma) çözüme katıldı mı?",

@@ -449,7 +449,7 @@ Wenn die Lampe rot ist, bitte warten.`,
               options: ["42", "58", "51"],
               answer: 2,
               explain:
-                "İki sayı geçiyor ve karışması kolay: sırada olan kırk iki, kadının elindeki \"einundfünfzig\".",
+                "İki sayı geçiyor ve karışması kolay: şu an sırası gelen kırk iki, kadının elindeki \"einundfünfzig\".",
             },
             {
               kind: "mcq",
@@ -704,7 +704,7 @@ Wenn die Lampe rot ist, bitte warten.`,
               no: 15,
               ref: "m5",
               text: "Wann ist der neue Termin?",
-              options: ["Am zwölften wie geplant.", "Am elften.", "Am achtzehnten."],
+              options: ["Am Zwölften wie geplant.", "Am Elften.", "Am Achtzehnten."],
               answer: 2,
               explain:
                 "İki tarih geçiyor: iptal edilen \"am Zwölften\", yenisi \"am Achtzehnten um elf Uhr\". On bir saat, gün değil.",
@@ -838,7 +838,7 @@ Iwona Nowicka`,
       skill: "speaking",
       minutes: 15,
       instruction: "Dieser Teil hat drei Aufgaben: von einem Amt erzählen, Fragen stellen, um etwas bitten und reagieren.",
-      instructionTr: "Bu bölümde üç görev var: bir daireyi anlatma, soru sorma, rica etme ve yanıt verme.",
+      instructionTr: "Bu bölümde üç görev var: bir resmî daireyi anlatma, soru sorma, rica etme ve yanıt verme.",
       tasks: [
         {
           id: "de-a1-09-p1",
@@ -848,7 +848,7 @@ Iwona Nowicka`,
           prompt:
             "Erzählen Sie von einem Termin bei einem Amt. Sprechen Sie zu den Stichwörtern: welches Amt — warum — Papiere — warten — Sprache — wie es war.",
           promptTr:
-            "Bir dairedeki randevunu anlat. Şu anahtar sözcüklere göre konuş: hangi daire — neden — belgeler — bekleme — dil — nasıl geçti.",
+            "Bir resmî dairedeki randevunu anlat. Şu anahtar sözcüklere göre konuş: hangi daire — neden — belgeler — bekleme — dil — nasıl geçti.",
           prepSeconds: 30,
           speakSeconds: 90,
           items: [],

@@ -303,7 +303,7 @@ The most likely future is therefore an open one, with different sports drawing t
               no: 19,
               text: "They will not announce the result until the second test is finished.\nThe result ______ until the second test is finished.",
               cue: "ANNOUNCED",
-              accept: ["will not be announced"],
+              accept: ["will not be announced", "won't be announced"],
               explain:
                 "Etken gelecek zaman edilgene çevriliyor: «The result will not be announced». Anahtar sözcük üçüncü hâl olduğu için `be` zorunlu; `will not announce` özneyi eyleyen yapar ve anlamı bozar.",
             },
@@ -313,7 +313,7 @@ The most likely future is therefore an open one, with different sports drawing t
               no: 20,
               text: "It was a mistake to let the club sign the contract.\nThe club ______ to sign the contract.",
               cue: "ALLOWED",
-              accept: ["should not have been allowed"],
+              accept: ["should not have been allowed", "shouldn't have been allowed"],
               explain:
                 "«It was a mistake to let …» yapısı geçmişe dönük bir eleştiriye çevriliyor ve cümle edilgen: `should not have been allowed`. Anahtar sözcük üçüncü hâl olduğu için zincir `have been` ile tamamlanıyor.",
             },
@@ -333,7 +333,7 @@ The most likely future is therefore an open one, with different sports drawing t
               no: 22,
               text: "I regret that we sold the training ground.\nI wish ______ the training ground.",
               cue: "SOLD",
-              accept: ["we had not sold"],
+              accept: ["we had not sold", "we hadn't sold"],
               explain:
                 "Geçmişe dair pişmanlık `wish + past perfect` ile kurulur ve pişmanlık yapılmış bir şeye ait olduğu için yapı olumsuza döner: «I wish we had not sold». `wish we did not sell` şimdiki bir durumu anlatırdı.",
             },
@@ -549,7 +549,7 @@ None of this is an argument against rules, which are the only thing standing bet
               text: "Which text describes a decision that had a measurable cost?",
               answer: "a",
               explain:
-                "Bertan kararı ve bedelini birlikte veriyor: aylık üç poundluk zam ve bir dönemde dokuz aile. Kimse şikâyet etmemiş, «they simply stopped coming».",
+                "Bertan kararı ve bedelini birlikte veriyor: aylık üç poundluk zam ve bir dönemde dokuz ailenin kaybı. Kimse şikâyet etmemiş, «they simply stopped coming».",
             },
             {
               kind: "match",
@@ -567,7 +567,7 @@ None of this is an argument against rules, which are the only thing standing bet
               text: "Which text identifies a difficulty that has nothing dramatic in it?",
               answer: "d",
               explain:
-                "Saga öğrencileri asıl zorlayan şeyi tarif ediyor: kulübün hesapları ve seçimleri olan bir kurum olduğu fikri, «because there is nothing dramatic to hold on to».",
+                "Saga öğrencileri asıl zorlayan şeyi tarif ediyor: kulübün hesapları ve tercihleri olan bir kurum olduğu fikri, «because there is nothing dramatic to hold on to».",
             },
             {
               kind: "match",
@@ -1212,12 +1212,12 @@ The families who leave never came to a {{15}}.
           prompt:
             "In your English class you have discussed sport and money. Now write an essay for your teacher, answering this question: \"Should there be a limit on how much a club can spend?\" Use the two ideas below and add one idea of your own.\n\nIdeas: whether it makes the competition closer — who would enforce it",
           promptTr:
-            "İngilizce dersinde sporu ve parayı tartıştınız. Öğretmenin için bir deneme yaz: \"Bir kulübün harcamasına sınır konmalı mı?\" Aşağıdaki iki fikri kullan ve kendi fikrinden birini ekle.\n\nFikirler: rekabeti yakınlaştırır mı — bunu kim denetler",
+            "İngilizce dersinde sporu ve parayı tartıştınız. Öğretmenin için bir deneme yaz: \"Bir kulübün harcamasına sınır konmalı mı?\" Aşağıdaki iki fikri kullan ve kendi fikrinden birini ekle.\n\nFikirler: rekabeti dengeler mi — bunu kim denetler",
           items: [],
           rubric: {
             minWords: 140,
             points: [
-              { de: "Discuss whether a limit makes the competition closer.", tr: "Sınırın rekabeti yakınlaştırıp yakınlaştırmadığını tartış." },
+              { de: "Discuss whether a limit makes the competition closer.", tr: "Sınırın rekabeti dengeleyip dengelemediğini tartış." },
               { de: "Discuss who would enforce it.", tr: "Bunu kimin denetleyeceğini tartış." },
               { de: "Add a third idea of your own.", tr: "Kendi üçüncü fikrini ekle." },
               { de: "Reach a clear conclusion.", tr: "Açık bir sonuca var." },
@@ -1310,7 +1310,7 @@ For somebody starting again after years away, however, it is the easiest door I 
               { de: "analyse your own earlier decision", tr: "Kendi eski kararını çözümlemek" },
             ],
             sample:
-              "I swam with a club until I was seventeen and then stopped for eleven years; I joined a running group last spring, mainly because it meets at a time I can actually reach. The price stopped me once: a gym near my old flat cost fifty a month and I told myself it was about time, which was not true. What makes me think a club is well run now is whether it can tell you where its money goes, although I have to admit I have only asked twice.",
+              "I swam with a club until I was seventeen and then stopped for eleven years; I joined a running group last spring, mainly because it meets at a time I can actually reach. The price stopped me once: a gym near my old flat cost fifty a month and I told myself it was really about time, not money, which was not true. What makes me think a club is well run now is whether it can tell you where its money goes, although I have to admit I have only asked twice.",
             criteria: [
               "Cevaplar geliştirildi mi ve gerekçelendirildi mi?",
               "Somut bir örnek verildi mi, yoksa genel mi konuşuldu?",
@@ -1376,7 +1376,7 @@ For somebody starting again after years away, however, it is the easiest door I 
               { de: "reach a joint decision with reasons", tr: "Gerekçeli ortak bir karara varmak" },
             ],
             sample:
-              "The strongest one is the experienced official at three matches, because the reason people leave is being alone rather than being shouted at. You are right that a fine lands on the wrong people, so I would keep it only for repeated cases and publish the record instead of raising the amount. Higher fees seem worse than the disease: they attract people for the money and the money is never enough. So I would recommend the mentoring and the rule about not working alone, and reject the higher fees.",
+              "The strongest one is the experienced official at three matches, because the reason people leave is being alone rather than being shouted at. You are right that a fine lands on the wrong people, so I would keep it only for repeated cases and publish the record instead of raising the amount. Higher fees seem like a cure worse than the disease: they attract people for the money and the money is never enough. So I would recommend the mentoring and the rule about not working alone, and reject the higher fees.",
             criteria: [
               "Seçenekler birbirine karşı mı değerlendirildi?",
               "İtiraza doğrudan karşılık verildi mi ve kısmi kabul yapılabildi mi?",

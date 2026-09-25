@@ -7,7 +7,7 @@
  { "tr": "Başkalarının tepkisi örneklendi mi?", "kind": "rubric.criteria", "en": "Wurde die Reaktion der anderen mit Beispielen belegt?" },
  { "tr": "İki dakika boyunca yapı korundu mu?", "kind": "rubric.criteria", "en": "Wurde die Struktur zwei Minuten lang gehalten?" },
  { "tr": "İki yaklaşım da karşılaştırıldı mı?", "kind": "rubric.criteria", "en": "Wurden beide Ansätze verglichen?" },
- { "tr": "İtiraz küçümsenmeden karşılandı mı?", "kind": "rubric.criteria", "en": "Wurde der Einwand entkräftet, ohne ihn kleinzureden?" },
+ { "tr": "İtiraz küçümsenmeden karşılandı mı?", "kind": "rubric.criteria", "en": "Wurde auf den Einwand eingegangen, ohne ihn kleinzureden?" },
  { "tr": "Karşı görüşün gücü kabul edildi mi?", "kind": "rubric.criteria", "en": "Wurde die Stärke der Gegenansicht eingeräumt?" },
  { "tr": "Sayılar (fiyat, saat) anlaşıldı mı?", "kind": "rubric.criteria", "en": "Wurden die Zahlen (Preis, Uhrzeit) verstanden?" },
  { "tr": "Somut sayılar ve sıklık verildi mi?", "kind": "rubric.criteria", "en": "Wurden konkrete Zahlen und Häufigkeiten genannt?" },

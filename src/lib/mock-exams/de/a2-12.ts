@@ -594,7 +594,7 @@ Aber ich habe kein Tier, das den ganzen Tag auf mich wartet. Damit kann ich gut 
               segments: [
                 { speaker: "Frau Ehlert", text: "Haben Sie im August noch einen Platz für einen Hund?" },
                 { speaker: "Pension", text: "In der zweiten Augustwoche ja. Die erste ist voll." },
-                { speaker: "Frau Ehlert", text: "Das passt. Ich fahre vom zwölften bis zum neunzehnten weg." },
+                { speaker: "Frau Ehlert", text: "Das passt. Ich fahre vom achten bis zum vierzehnten weg." },
               ],
             },
             {
@@ -844,7 +844,7 @@ Aber ich habe kein Tier, das den ganzen Tag auf mich wartet. Damit kann ich gut 
               plays: 2,
               segments: [
                 {
-                  text: "Hallo Frau Hillenbrand, hier ist das Tierheim. Der Kurs am Donnerstag findet statt. Bringen Sie bitte feste Schuhe mit. Regenjacke haben wir hier für alle.",
+                  text: "Hallo Frau Hillenbrand, hier ist das Tierheim. Der Kurs am Donnerstag findet statt. Bringen Sie bitte feste Schuhe mit. Regenjacken haben wir hier für alle.",
                 },
               ],
             },
@@ -1020,7 +1020,7 @@ Aber ich habe kein Tier, das den ganzen Tag auf mich wartet. Damit kann ich gut 
       skill: "writing",
       minutes: 30,
       instruction: "Dieser Teil hat zwei Aufgaben. Schreiben Sie zu jedem Punkt ein bis zwei Sätze.",
-      instructionTr: "Bu bölümde iki görev var. Her maddeye bir-iki cümle yaz.",
+      instructionTr: "Bu bölümde iki görev var. Her maddeye bir iki cümle yaz.",
       tasks: [
         {
           id: "de-a2-12-s1",
@@ -1030,7 +1030,7 @@ Aber ich habe kein Tier, das den ganzen Tag auf mich wartet. Damit kann ich gut 
           prompt:
             "Sie fahren in den Urlaub und suchen jemanden für Ihre Katze. Schreiben Sie an Ihre Nachbarin Ines Hillenbrand (circa 40 Wörter). Sagen Sie, wann Sie weg sind, was zu tun ist, und fragen Sie, ob es geht.",
           promptTr:
-            "Tatile gidiyorsun ve kedin için birini arıyorsun. Komşun Ines Hillenbrand'e yaz (yaklaşık 40 kelime). Ne zaman gideceğini, ne yapılması gerektiğini söyle ve olup olmayacağını sor.",
+            "Tatile gidiyorsun ve kedin için birini arıyorsun. Komşun Ines Hillenbrand'a yaz (yaklaşık 40 kelime). Ne zaman gideceğini, ne yapılması gerektiğini söyle ve olup olmayacağını sor.",
           items: [],
           rubric: {
             minWords: 40,
@@ -1045,7 +1045,7 @@ wir fahren vom 12. bis 19. August weg. Kannst du in dieser Zeit auf unsere Katze
 
 Du müsstest zweimal am Tag füttern und einmal das Klo sauber machen. Das Futter kaufe ich vorher.
 
-Geht das bei dir? Sag bitte ehrlich Bescheid.
+Geht das bei dir? Sag bitte ehrlich Bescheid, wenn es nicht passt.
 
 Viele Grüße
 Katrin`,
@@ -1130,8 +1130,8 @@ Ines`,
             { who: "you", hint: "«Zeit» için bir soru kur.", expect: "Zeit sözcüğüyle bir soru kurmak", seconds: 30 },
             {
               who: "partner",
-              de: "Etwa zwei Stunden am Tag. Jetzt eine Frage an Sie: Hatten Sie schon einmal ein Tier?",
-              tr: "Günde iki saat kadar. Şimdi sana bir soru: Hiç hayvanın oldu mu?",
+              de: "Etwa zwei Stunden am Tag. Jetzt eine Frage an Sie: Waren Sie mit einem Tier schon einmal beim Tierarzt?",
+              tr: "Günde iki saat kadar. Şimdi sana bir soru: Hiç bir hayvanla veterinere gittin mi?",
             },
             { who: "you", hint: "Soruyu cevapla ve kısa bir ayrıntı ekle.", expect: "soruya tam bir cümleyle cevap verip bir ayrıntı eklemek", seconds: 30 },
             {
@@ -1149,7 +1149,7 @@ Ines`,
               { de: "auf Fragen antworten", tr: "Sorulara cevap vermek" },
             ],
             sample:
-              "Was kostet ein Hund im Monat? — Wie viel Zeit braucht ein Hund am Tag? — Ja, wir hatten eine Katze, aber sie ist letztes Jahr gestorben. — Im Urlaub bringen wir sie zu meiner Schwester, weil sie Tiere mag.",
+              "Was kostet ein Hund im Monat? — Wie viel Zeit braucht ein Hund am Tag? — Ja, mit unserer Katze war ich oft beim Tierarzt, sie war schon alt. — Im Urlaub haben wir sie immer zu meiner Schwester gebracht, weil sie Tiere mag.",
             criteria: [
               "Dört anahtar sözcüğün her biri işlendi mi?",
               "Sorular doğru kuruldu mu?",
@@ -1202,7 +1202,7 @@ Ines`,
             {
               who: "partner",
               de: "Wir wollen im Tierheim helfen. Wann passt es Ihnen? Ich kann am Samstag.",
-              tr: "Barınakta yardım edeceğiz. Sana ne zaman uyar? Ben cumartesi olabilirim.",
+              tr: "Barınakta yardım edeceğiz. Sana ne zaman uyar? Bana cumartesi uyar.",
             },
             { who: "you", hint: "Öneriye karşılık ver ve kendi gününü söyle.", expect: "bir öneriye karşılık verip kendi önerisini söylemek", seconds: 30 },
             {
@@ -1216,7 +1216,7 @@ Ines`,
               de: "Was ziehen wir an? Es soll an dem Tag regnen.",
               tr: "Ne giyeceğiz? O gün yağmur yağacakmış.",
             },
-            { who: "you", hint: "Bir öneri yap ve neden olduğunu söyle.", expect: "gerekçeli bir öneri yapmak", seconds: 30 },
+            { who: "you", hint: "Bir öneri yap ve nedenini söyle.", expect: "gerekçeli bir öneri yapmak", seconds: 30 },
             {
               who: "partner",
               de: "Das Tierheim ist außerhalb. Wie kommen wir hin?",

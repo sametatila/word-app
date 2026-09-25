@@ -39,7 +39,7 @@ export const B1_07: MockPaper = {
       instruction:
         "Dieser Teil hat fünf Aufgaben. Sie lesen einen Bericht, kurze Texte, Anzeigen, Forumsbeiträge und eine Hausordnung.",
       instructionTr:
-        "Bu bölümde beş görev var. Bir haber metni, kısa metinler, ilanlar, forum yorumları ve bir bina yönetmeliği okuyacaksın.",
+        "Bu bölümde beş görev var. Bir haber metni, kısa metinler, ilanlar, forum yorumları ve bir apartman yönetmeliği okuyacaksın.",
       tasks: [
         {
           id: "de-b1-07-l1",
@@ -408,7 +408,7 @@ Wer allein lebt, bleibt deshalb oft in einer Wohnung, die für zwei oder drei Pe
               text: "Frau Kaltenbach zieht in eine kleinere Wohnung und weiß nicht, wohin mit ihren Kisten.",
               answer: "i",
               explain:
-                "(i) \"Trockene Kellerräume ab 4 qm, monatlich kündbar\" sunuyor — geçici depolama isteyen tek ilan bu.",
+                "(i) \"Trockene Kellerräume ab 4 qm, monatlich kündbar\" sunuyor — geçici depolama sunan tek ilan bu.",
             },
             {
               kind: "match",
@@ -723,7 +723,7 @@ Papier, Glas und Restmüll werden getrennt. Sperrmüll gehört nicht in den Hof;
               plays: 1,
               segments: [
                 {
-                  text: "Bevor wir abstimmen, ein Hinweis: Wer eine Vollmacht dabei hat, gibt sie bitte vorne ab. Ohne Vollmacht kann niemand für eine andere Partei stimmen. Und noch einmal: Es geht heute nur um das Dach, nicht um die Fassade.",
+                  text: "Bevor wir abstimmen, ein Hinweis: Wer eine Vollmacht dabeihat, gibt sie bitte vorne ab. Ohne Vollmacht kann niemand für eine andere Partei stimmen. Und noch einmal: Es geht heute nur um das Dach, nicht um die Fassade.",
                 },
               ],
             },
@@ -815,7 +815,7 @@ Papier, Glas und Restmüll werden getrennt. Sperrmüll gehört nicht in den Hof;
               ],
               answer: 1,
               explain:
-                "Gerekçe hemen arkasından geliyor: \"Der neue Sand kommt erst dann\". Bariyerin kaydırılması sonucun kendisi, sebebi değil.",
+                "Gerekçe hemen arkasından geliyor: \"Der neue Sand kommt erst dann\". Bariyerin kaydırılması kapalı kalmanın sonucu, sebebi değil.",
             },
             {
               kind: "bool",
@@ -985,7 +985,7 @@ Papier, Glas und Restmüll werden getrennt. Sperrmüll gehört nicht in den Hof;
                 },
                 {
                   speaker: "Frau Sagert",
-                  text: "Der häufigste Anlass ist nicht Lärm, wie viele denken, sondern sind Bäume und Hecken. Ungefähr vier von zehn Fällen drehen sich um Pflanzen an der Grenze.",
+                  text: "Der häufigste Anlass ist nicht Lärm, wie viele denken, sondern Bäume und Hecken. Ungefähr vier von zehn Fällen drehen sich um Pflanzen an der Grenze.",
                 },
                 {
                   speaker: "Frau Sagert",
@@ -1029,7 +1029,7 @@ Papier, Glas und Restmüll werden getrennt. Sperrmüll gehört nicht in den Hof;
               text: "Der häufigste Streitgrund ist Lärm.",
               answer: false,
               explain:
-                "Sunum tam bu yanılgıyı düzeltiyor: \"nicht Lärm, wie viele denken, sondern sind Bäume und Hecken\". Gürültü üçüncü sırada.",
+                "Sunum tam bu yanılgıyı düzeltiyor: \"nicht Lärm, wie viele denken, sondern Bäume und Hecken\". Gürültü üçüncü sırada.",
             },
             {
               kind: "bool",
@@ -1079,7 +1079,7 @@ Papier, Glas und Restmüll werden getrennt. Sperrmüll gehört nicht in den Hof;
               text: "Eine Einigung bei der Schiedsperson ist rechtlich bindend.",
               answer: true,
               explain:
-                "Sunum bir yanılgıyla kapanıyor: \"Eine Einigung bei mir ist rechtlich bindend. Viele glauben, es sei nur ein Gespräch.\"",
+                "Sunum yaygın bir yanılgıyı düzelterek kapanıyor: \"Eine Einigung bei mir ist rechtlich bindend. Viele glauben, es sei nur ein Gespräch.\"",
             },
           ],
         },
@@ -1184,7 +1184,7 @@ Papier, Glas und Restmüll werden getrennt. Sperrmüll gehört nicht in den Hof;
               id: "de-b1-07-h4-26",
               no: 26,
               ref: "d1",
-              text: "Was sieht der Mieterverein in der Beratung meistens?",
+              text: "Was sieht Herr Wienert in seiner Beratung meistens?",
               options: [
                 "Gut begründete Absagen.",
                 "Absagen ohne Begründung.",
@@ -1313,7 +1313,7 @@ Ana Brahim`,
           prompt:
             "Schreiben Sie einen Beitrag für die Hauszeitung: Was macht gutes Zusammenleben in einem Mietshaus aus? (circa 80 Wörter)",
           promptTr:
-            "Bina gazetesi için bir yazı yaz: Kiralık bir binada iyi bir birlikte yaşamayı ne sağlar? (yaklaşık 80 kelime)",
+            "Bina gazetesi için bir yazı yaz: Kiracıların oturduğu bir apartmanda iyi bir ortak yaşamı ne sağlar? (yaklaşık 80 kelime)",
           items: [],
           rubric: {
             minWords: 80,
@@ -1353,7 +1353,7 @@ Mein Rat: Klopfen Sie an, bevor Sie schreiben. Ein Gespräch dauert fünf Minute
             minWords: 40,
             points: [
               { de: "Sagen Sie, warum Sie schreiben.", tr: "Neden yazdığını söyle." },
-              { de: "Bitten Sie um einen anderen Termin.", tr: "Başka bir gün iste." },
+              { de: "Bitten Sie um einen anderen Termin.", tr: "Başka bir zaman iste." },
               { de: "Nennen Sie zwei mögliche Zeiten.", tr: "İki uygun zaman öner." },
             ],
             sample: `Sehr geehrte Damen und Herren,
@@ -1393,7 +1393,7 @@ Ana Brahim`,
           prompt:
             "Planen Sie gemeinsam ein Hoffest für Ihr Haus. Sprechen Sie über: Termin — Essen — Musik und Ruhezeiten — Wer lädt die Nachbarn ein?",
           promptTr:
-            "Binanız için birlikte bir avlu şenliği planla. Şunları konuş: tarih — yemek — müzik ve sessizlik saatleri — komşuları kim davet edecek?",
+            "Binanız için birlikte bir avlu şenliği planlayın. Şunları konuşun: tarih — yemek — müzik ve sessizlik saatleri — komşuları kim davet edecek?",
           prepSeconds: 60,
           exchange: [
             {
@@ -1426,7 +1426,7 @@ Ana Brahim`,
             minutes: 4,
             points: [
               { de: "Vorschläge machen und begründen", tr: "Öneri sunmak ve gerekçelendirmek" },
-              { de: "auf Einwände eingehen", tr: "İtirazlara girmek" },
+              { de: "auf Einwände eingehen", tr: "İtirazlara karşılık vermek" },
               { de: "eine Aufgabe übernehmen", tr: "Bir işi üstlenmek" },
             ],
             sample:

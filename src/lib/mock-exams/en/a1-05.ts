@@ -465,7 +465,7 @@ Timo`,
               situation: "Bir arkadaş ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hi, it is Zara. My bus is late. I come at half past six, not at six. Do not wait outside, it is cold." },
+                { text: "Hi, it is Zara. My bus is late. I'll come at half past six, not at six. Do not wait outside, it is cold." },
               ],
             },
             {
@@ -537,7 +537,7 @@ Timo`,
               options: ["At six", "At six in the morning", "At half past six"],
               answer: 2,
               explain:
-                "Zara düzeltmeyi kendisi yapıyor: «I come at half past six, not at six». Altı, iptal edilen eski saat.",
+                "Zara düzeltmeyi kendisi yapıyor: «I'll come at half past six, not at six». Altı, iptal edilen eski saat.",
             },
             {
               kind: "mcq",
@@ -653,7 +653,7 @@ Timo`,
               situation: "Bir yolcu bilet alıyor.",
               plays: 2,
               segments: [
-                { text: "Two tickets to Derby, please." },
+                { text: "Two tickets to Cork, please." },
                 { text: "Today or tomorrow?" },
                 { text: "Today, at four." },
                 { text: "That is sixteen euros." },
@@ -680,7 +680,7 @@ Timo`,
               situation: "Bir kişi istasyondan ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hi Alma, I am at the station. The train from the city is thirty minutes late. I wait here and I read. Do not come early." },
+                { text: "Hi Alma, I am at the station. The train from the city is thirty minutes late. I'll wait here and read. Do not come early." },
               ],
             },
             {
@@ -846,7 +846,7 @@ Phone:            {{5}}`,
           format: "writing",
           goal: "interaction",
           prompt:
-            "Your train is late and you come two hours later. Write a short message to your friend. Write one or two sentences about each point (about 25 words). Do not forget the greeting at the start and at the end.",
+            "Your train is late and you will arrive two hours late. Write a short message to your friend. Write one or two sentences about each point (about 25 words). Do not forget the greeting at the start and at the end.",
           promptTr:
             "Trenin gecikti ve iki saat sonra varacaksın. Arkadaşına kısa bir ileti yaz. Her maddeye bir-iki cümle yaz (yaklaşık 25 kelime). Baştaki hitabı ve sondaki veda cümlesini unutma.",
           items: [],
@@ -861,7 +861,7 @@ Phone:            {{5}}`,
 
 My train is two hours late. I am very sorry!
 
-I come at nine in the evening, not at seven. Please do not wait at the station. I take a taxi to your house.
+I will arrive at nine in the evening, not at seven. Please do not wait at the station. I will take a taxi to your house.
 
 See you later!
 Alma`,
@@ -881,7 +881,7 @@ Alma`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "This part has three tasks: you talk about your journeys, you ask and answer questions about travel, and you act at a ticket office.",
+      instruction: "This part has three tasks: you talk about your journeys, you ask and answer questions about travel, and you do a role play at a ticket office.",
       instructionTr: "Bu bölümde üç görev var: yolculuklarını anlatma, yolculuk üzerine soru sorup cevaplama ve bilet gişesinde rol yapma.",
       tasks: [
         {
@@ -903,7 +903,7 @@ Alma`,
               { de: "one thing you do not like", tr: "Sevmediğin bir şey" },
             ],
             sample:
-              "I go to work by bus. The bus comes at half past seven and it takes twenty minutes. A ticket is two euros. Last summer I go to Rome by train. It is a long journey, ten hours, but the train is very good. I like Rome. I do not like the bus in the rain.",
+              "I go to work by bus. The bus comes at half past seven and it takes twenty minutes. A ticket is two euros. Last summer I went to Rome by train. It was a long journey, ten hours, but the train was very good. I like Rome. I do not like the bus in the rain.",
             criteria: [
               "Altı sözcüğün her birine değinildi mi?",
               "Saat, süre ve fiyat söylenebiliyor mu?",
@@ -940,7 +940,7 @@ Alma`,
               { de: "answers to my questions", tr: "Sorulara cevap vermek" },
             ],
             sample:
-              "Do you like the train? — Yes, I read there. Where do you go on holiday? — To the sea. Have you got a car? — No, I have a bike. How do you go to the centre? — By bus, it takes fifteen minutes. How much is a ticket? — Two euros fifty.",
+              "Do you like the train? — Yes, I read on the train. Where do you go on holiday? — To the sea. Have you got a car? — No, I have a bike. How do you go to the city centre? — By bus, it takes fifteen minutes. How much is a ticket? — Two euros fifty.",
             criteria: [
               "Beş sözcüğün her biri için bir soru kuruldu mu?",
               "Sorular doğru kuruldu mu? (Do you … / Where … / How much …)",

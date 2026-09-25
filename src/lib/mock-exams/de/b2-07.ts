@@ -38,7 +38,7 @@ export const B2_07: MockPaper = {
       instruction:
         "Dieser Teil hat fünf Aufgaben. Sie lesen persönliche Texte, einen Sachtext mit Lücken, einen Kommentar, Meinungsbeiträge und eine Erstattungsordnung.",
       instructionTr:
-        "Bu bölümde beş görev var. Kişisel metinler, boşluklu bir bilgi metni, bir köşe yazısı, görüş yazıları ve bir ödeme yönetmeliği okuyacaksın.",
+        "Bu bölümde beş görev var. Kişisel metinler, boşluklu bir bilgi metni, bir köşe yazısı, görüş yazıları ve bir geri ödeme yönetmeliği okuyacaksın.",
       tasks: [
         {
           id: "de-b2-07-l1",
@@ -550,7 +550,7 @@ Mir wäre deshalb eine kleine Lösung lieber als gar keine: Jede Praxis veröffe
               kind: "match",
               id: "de-b2-07-l4-25",
               no: 25,
-              text: "Ohne den Bonus fänden bestimmte Untersuchungen gar nicht statt.",
+              text: "Ohne den Bonus gäbe es in manchen Betrieben gar keine Untersuchungen.",
               answer: "f",
               explain:
                 "(f) bunu kendi alanı için söylüyor: \"Ohne ihn gäbe es die Untersuchungen im Werk überhaupt nicht\" — ve gerekçeyi güzel bulmadığını da ekliyor.",
@@ -1388,7 +1388,7 @@ Anträge sind bis zum 31. März des Folgejahres einzureichen. Verspätet eingega
           prompt:
             "In einer Zeitung stand: \"Wer gesund lebt, sollte weniger in die Krankenkasse einzahlen.\" Schreiben Sie einen Leserbrief (circa 150 Wörter). Setzen Sie sich mit dieser Aussage auseinander, nennen Sie Argumente und ziehen Sie eine begründete Schlussfolgerung.",
           promptTr:
-            "Bir gazetede şöyle yazdı: \"Sağlıklı yaşayan sağlık sigortasına daha az ödemeli.\" Bir okur mektubu yaz (yaklaşık 150 kelime). Bu iddiayı tartış, gerekçeler sun ve gerekçeli bir sonuca bağla.",
+            "Bir gazetede şöyle yazıyordu: \"Sağlıklı yaşayan sağlık sigortasına daha az ödemeli.\" Bir okur mektubu yaz (yaklaşık 150 kelime). Bu iddiayı tartış, gerekçeler sun ve gerekçeli bir sonuca bağla.",
           items: [],
           rubric: {
             minWords: 150,
@@ -1497,10 +1497,10 @@ Lena Kolbe`,
               { de: "Abschluss", tr: "Kapanış" },
             ],
             sample:
-              "Ich möchte heute darüber sprechen, wer für Vorsorge zuständig ist. Zuerst schildere ich die Lage in meinem Herkunftsland, dann nenne ich Argumente für beide Seiten und komme am Ende zu meiner Position. In der Türkei sind Vorsorgeuntersuchungen formal für alle zugänglich, aber die Wege sind lang. Meine Mutter hat für eine Untersuchung, die zwanzig Minuten dauert, einen ganzen Tag gebraucht. Verzichtet haben viele Nachbarinnen nicht aus Gleichgültigkeit, sondern wegen dieses Tages. Für die individuelle Seite spricht, dass niemand einem anderen das Rauchen abgewöhnen kann. Verhalten ändert sich dort, wo Menschen selbst entscheiden. Für die gesellschaftliche Seite spricht die Größenordnung: Wenn eine Untersuchung einen Arbeitstag kostet, entscheidet nicht der Wille, sondern der Arbeitsvertrag. Meine Position ist deshalb keine Entweder-oder-Antwort. Der Einzelne entscheidet, aber die Gesellschaft bestimmt, wie teuer diese Entscheidung ist. Wer Vorsorge will, muss sie zuerst billig machen — in Zeit, nicht nur in Geld. Zusammenfassend: Verantwortung ohne Bedingungen ist eine leere Forderung.",
+              "Ich möchte heute darüber sprechen, wer für Vorsorge zuständig ist. Zuerst schildere ich die Lage in meinem Herkunftsland, dann nenne ich Argumente für beide Seiten und komme am Ende zu meiner Position. In der Türkei sind Vorsorgeuntersuchungen formal für alle zugänglich, aber die Wege sind lang. Meine Mutter hat für eine Untersuchung, die zwanzig Minuten dauert, einen ganzen Tag gebraucht. Verzichtet haben viele Nachbarinnen nicht aus Gleichgültigkeit, sondern wegen dieses Tages. Für die individuelle Seite spricht, dass niemand einem anderen das Rauchen abgewöhnen kann. Verhalten ändert sich dort, wo Menschen selbst entscheiden. Für die gesellschaftliche Seite sprechen die Bedingungen: Wenn eine Untersuchung einen Arbeitstag kostet, entscheidet nicht der Wille, sondern der Arbeitsvertrag. Meine Position ist deshalb keine Entweder-oder-Antwort. Der Einzelne entscheidet, aber die Gesellschaft bestimmt, wie teuer diese Entscheidung ist. Wer Vorsorge will, muss sie zuerst billig machen — in Zeit, nicht nur in Geld. Zusammenfassend: Verantwortung ohne Bedingungen ist eine leere Forderung.",
             criteria: [
               "Altı bölümün hepsi var mı ve sunum baştan bölümlendi mi?",
-              "Kendi ülkedeki durum somut ve açıklayıcı mı?",
+              "Kendi ülkendeki durum somut ve açıklayıcı mı?",
               "Her iki taraf için de örnekle desteklenmiş gerekçe var mı?",
               "Konum gerekçeli mi ve iki tarafı da hesaba katıyor mu?",
               "Dört dakika boyunca yapı korunabildi mi?",
@@ -1571,7 +1571,7 @@ Lena Kolbe`,
             minutes: 8,
             points: [
               { de: "einen Vorschlag begründen", tr: "Bir öneriyi gerekçelendirmek" },
-              { de: "auf Einwände eingehen", tr: "İtirazlara girmek" },
+              { de: "auf Einwände eingehen", tr: "İtirazlara karşılık vermek" },
               { de: "priorisieren und begründen", tr: "Önceliklendirmek ve gerekçelendirmek" },
               { de: "das Ergebnis zusammenfassen", tr: "Sonucu özetlemek" },
             ],

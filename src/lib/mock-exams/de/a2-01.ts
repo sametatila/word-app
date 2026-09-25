@@ -371,7 +371,7 @@ Katja`,
               text: "Herr Neumann (68) hat Rückenschmerzen. Er sucht Bewegung ohne Sprünge und ohne Wettkampf.",
               answer: "b",
               explain:
-                "(b) üç ölçütü de karşılıyor: 60 yaş üstü, \"ohne Sprünge\", \"kein Wettkampf\". (h) da havuzda ama yüzme kursu ve sıçrama/başlangıç meselesi; (a) koşu, sırt için istenen şey değil.",
+                "(b) üç ölçütü de karşılıyor: 60 yaş üstü, \"ohne Sprünge\", \"kein Wettkampf\". (h) da havuzda ama yeni başlayanlar için bir yüzme kursu, yaş ya da sakin hareketle ilgili bir şey söylemiyor; (a) koşu, sırt için istenen şey değil.",
             },
             {
               kind: "match",
@@ -1034,7 +1034,7 @@ Ali Karaca`,
           prepSeconds: 45,
           exchange: [
             { who: "partner", de: "Eine Freundin kommt am Samstag zu Besuch. Wir planen den Tag zusammen. Wann wollen wir uns treffen?", tr: "Cumartesi bir arkadaş ziyarete geliyor. Günü birlikte planlayalım. Ne zaman buluşalım?" },
-            { who: "you", hint: "Bir saat öner.", expect: "saat içeren bir öneri sunmak (Wollen wir … / Sollen wir …)", seconds: 30 },
+            { who: "you", hint: "Saat on biri öner.", expect: "saat içeren bir öneri sunmak (Wollen wir … / Sollen wir …)", seconds: 30 },
             { who: "partner", de: "Elf ist mir ehrlich gesagt zu früh. Geht auch eins? Und wo treffen wir uns am besten?", tr: "On bir bana açıkçası çok erken. Bir de olur mu? Peki nerede buluşalım?" },
             { who: "you", hint: "Saati kabul et ya da başka bir saat öner, sonra bir yer söyle.", expect: "bir öneriye karşılık vermek ve yer önermek", seconds: 35 },
             { who: "partner", de: "Gut, das passt. Sollen wir etwas zu essen mitnehmen?", tr: "Tamam, uyar. Yanımıza yiyecek bir şey alalım mı?" },

@@ -338,7 +338,7 @@ Reviews conclude that shortening the process has been discussed for decades with
               no: 22,
               text: "It was a mistake to send the original documents by post.\nThe original documents ______ by post.",
               cue: "SENT",
-              accept: ["should not have been sent"],
+              accept: ["should not have been sent", "shouldn't have been sent"],
               explain:
                 "Geçmişe dönük bir yanlış `should not have + üçüncü hâl` ile bildiriliyor ve cümle edilgen olduğu için araya `been` giriyor.",
             },
@@ -622,7 +622,7 @@ The honest reform would be duller and harder: fund the supervisors, or accept th
       instruction:
         "This part has four tasks. You hear short extracts, a report, six speakers and an interview. You hear every recording twice.",
       instructionTr:
-        "Bu bölümde dört görev var. Kısa parçalar, bir sunum, altı konuşmacı ve bir söyleşi dinleyeceksin. Her kaydı iki kez dinleyebilirsin.",
+        "Bu bölümde dört görev var. Kısa parçalar, bir rapor, altı konuşmacı ve bir söyleşi dinleyeceksin. Her kaydı iki kez dinleyebilirsin.",
       tasks: [
         {
           id: "en-b2-10-h1",
@@ -1253,7 +1253,7 @@ The region with the shortest wait had stopped requiring the supervised year in {
 
 The case for the assessment is strong and it is worth stating properly. A qualification obtained under an unfamiliar system tells an employer very little on its own, and the public has no way of judging it. Somebody has to look.
 
-What is harder to defend is the period in between. During it a trained person is not merely unemployed but deskilled, and the evidence suggests that most of those who withdraw do so for financial reasons rather than academic ones. The country loses the training twice: once in the country that paid for it and again here.
+What is harder to defend is the period in between. During it a trained person is not merely unemployed but deskilled, and the evidence suggests that most of those who withdraw do so for financial reasons rather than academic ones. The training is lost twice: once in the country that paid for it and again here.
 
 My own view is that the two functions have been confused. Supervision is a form of checking, and it can be carried out on a ward as easily as it can be waited for.
 
@@ -1341,7 +1341,7 @@ Two things. If withdrawal rates among recipients do not fall below twenty per ce
               { de: "use a second conditional", tr: "İkinci tip koşulu kullanmak" },
             ],
             sample:
-              "In teaching, what you can do is demonstrated in a room with thirty people in it, and almost none of that appears on a certificate. My aunt was an accountant for twenty years and moved, and her qualification was recognised on paper but not by any employer, so she spent three years doing the same work at a junior grade. If I had to prove my skills abroad, the hardest part would not be an examination; it would be the year in which nobody would let me do the work that would produce the evidence.",
+              "In teaching, what you can do is demonstrated in a room with thirty people in it, and almost none of that appears on a certificate. My aunt was an accountant for twenty years and then moved abroad, and her qualification was recognised on paper but not by any employer, so she spent three years doing the same work at a junior grade. If I had to prove my skills abroad, the hardest part would not be an examination; it would be the year in which nobody would let me do the work that would produce the evidence.",
             criteria: [
               "İlk cevap örnekten gözleme geçebildi mi?",
               "Durum somut mu ve sonucu verildi mi?",
@@ -1386,9 +1386,9 @@ Two things. If withdrawal rates among recipients do not fall below twenty per ce
           format: "speaking",
           goal: "interaction",
           prompt:
-            "A regional authority has money for one measure to help people waiting for recognition. Talk with me about these ideas, then decide which two we would recommend and which one we would reject.",
+            "A regional authority has money for two measures to help people waiting for recognition. Talk with me about these ideas, then decide which two we would recommend and which one we would reject.",
           promptTr:
-            "Bir bölge yönetiminin denklik bekleyenlere yardım için tek bir önleme parası var. Bu fikirleri benimle konuş, sonra hangi ikisini önereceğimize ve hangisini reddedeceğimize karar ver.",
+            "Bir bölge yönetiminin denklik bekleyenlere yardım için iki önleme yetecek parası var. Bu fikirleri benimle konuş, sonra hangi ikisini önereceğimize ve hangisini reddedeceğimize karar ver.",
           prepSeconds: 30,
           exchange: [
             { who: "partner", de: "The ideas are: paying for more supervisors, a monthly payment to applicants, free preparation courses for the examinations, and an advice service that explains the process. Which of these would reduce the number of people who give up?", tr: "Fikirler: daha çok gözetmenin ücretini karşılamak, başvuru sahiplerine aylık ödeme, sınavlar için ücretsiz hazırlık kursları ve süreci anlatan bir danışma hizmeti. Bunlardan hangisi vazgeçenlerin sayısını azaltır?" },

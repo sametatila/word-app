@@ -1,6 +1,5 @@
 [
  { "tr": "«Kosten» sözcüğüyle bir soru kur.", "kind": "exchange.hint", "en": "Form a question with the word «Kosten»." },
- { "tr": "Bir hediye öner ve gerekçelendir.", "kind": "exchange.hint", "en": "Suggest a present and give reasons." },
  { "tr": "Bir tutar söyle ve nedenini ekle.", "kind": "exchange.hint", "en": "Say an amount and add why." },
  { "tr": "Fiyatlar hakkında sor ve cevapla.", "kind": "exchange.hint", "en": "Ask about prices and answer." },
  { "tr": "Hava kötüyken ne yaptığını söyle.", "kind": "exchange.hint", "en": "Say what you do when the weather is bad." },
@@ -88,11 +87,11 @@
  { "tr": "Onu dışarıda bırakmayan somut bir çözüm öner.", "kind": "exchange.hint", "en": "Propose a concrete solution that does not leave them out." },
  { "tr": "Öneriye karşılık ver ve kendi tarihini söyle.", "kind": "exchange.hint", "en": "Respond to the suggestion and say which date suits you." },
  { "tr": "Somut bir uzlaşma öner: saat, süre ya da yer.", "kind": "exchange.hint", "en": "Propose a concrete compromise: a time, a length or a place." },
- { "tr": "Soruyu cevapla — çamaşırhanede mi yıkıyorsun?", "kind": "exchange.hint", "en": "Answer the question — do you wash your things at the launderette?" },
+ { "tr": "Soruyu cevapla — çamaşırhanede mi yıkıyorsun?", "kind": "exchange.hint", "en": "Answer the question — do you wash your things in the laundry room?" },
  { "tr": "Bu itirazı ciddiye al ve somut bir çözüm öner.", "kind": "exchange.hint", "en": "Take this objection seriously and propose a concrete solution." },
  { "tr": "İki seçeneği karşılaştır ve bir orta yol öner.", "kind": "exchange.hint", "en": "Compare the two options and propose a middle way." },
  { "tr": "Karşı öneriye karşılık ver ve bir gün belirle.", "kind": "exchange.hint", "en": "Respond to the counter-proposal and fix a day." },
- { "tr": "Karşılamayı üstlen ya da başka bir çözüm öner.", "kind": "exchange.hint", "en": "Take on the welcome or propose another solution." },
+ { "tr": "Karşılamayı üstlen ya da başka bir çözüm öner.", "kind": "exchange.hint", "en": "Offer to pick her up or propose another solution." },
  { "tr": "Meselenin tutar olmadığını açıkla ve somut ol.", "kind": "exchange.hint", "en": "Explain that the issue is not the amount, and be concrete." },
  { "tr": "Somut bir tarih öner ve bu itirazı hesaba kat.", "kind": "exchange.hint", "en": "Propose a concrete date and take this objection into account." },
  { "tr": "Şikâyeti kabul et ve kendi durumunu da açıkla.", "kind": "exchange.hint", "en": "Accept the complaint and explain your own situation too." },
@@ -115,7 +114,7 @@
  { "tr": "Somut bir tarih öner ve iki itirazı da hesaba kat.", "kind": "exchange.hint", "en": "Propose a concrete date and take both objections into account." },
  { "tr": "«Sport» için bir soru sor ve kendi cevabını da ver.", "kind": "exchange.hint", "en": "Ask a question about «Sport» and give your own answer too." },
  { "tr": "Bu ayrımı ele al ve önlemini buna göre yeniden kur.", "kind": "exchange.hint", "en": "Address this distinction and rebuild your measure around it." },
- { "tr": "Güvenlik itirazını ele al ve ölçülü bir çözüm öner.", "kind": "exchange.hint", "en": "Address the safety objection and propose a measured solution." },
+ { "tr": "Güvenlik itirazını ele al ve ölçülü bir çözüm öner.", "kind": "exchange.hint", "en": "Address the security objection and propose a measured solution." },
  { "tr": "Ricaya karşılık ver: kabul et ve kısa bir şey ekle.", "kind": "exchange.hint", "en": "Respond to the request: agree and add something brief." },
  { "tr": "Soruyu cevapla — ne sıklıkla alışverişe gidiyorsun?", "kind": "exchange.hint", "en": "Answer the question — how often do you go shopping?" },
  { "tr": "Soruyu cevapla — ne zamandan beri orada oturuyorsun?", "kind": "exchange.hint", "en": "Answer the question — how long have you been living there?" },
@@ -147,6 +146,6 @@
  { "tr": "Bir seçeneği savun ve 'kalıcılık' gerekçesini doğrudan ele al.", "kind": "exchange.hint", "en": "Defend one option and address the argument about durability directly." },
  { "tr": "Bu noktayı ele al ve kendi önerinle nasıl bağlandığını göster.", "kind": "exchange.hint", "en": "Address this point and show how it ties in with your own proposal." },
  { "tr": "Saati kabul et ya da başka bir saat öner, sonra bir yer söyle.", "kind": "exchange.hint", "en": "Accept the time or propose another one, then name a place." },
- { "tr": "Bir konum al ve 'kimse feshedemez' gerekçesini doğrudan ele al.", "kind": "exchange.hint", "en": "Take a position and address the argument that nobody can cancel it directly." },
+ { "tr": "Bir konum al ve 'kimse feshedemez' gerekçesini doğrudan ele al.", "kind": "exchange.hint", "en": "Take a position and directly address the argument that nobody can cancel it." },
  { "tr": "Bu itirazı ciddiye al ve süreci nasıl kurmak gerektiğini söyle.", "kind": "exchange.hint", "en": "Take this objection seriously and say how the process should be set up." }
 ]

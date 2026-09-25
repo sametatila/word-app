@@ -1312,7 +1312,7 @@ Im Kurs habe ich fast alles verstanden, im Betrieb dann kaum etwas. Meine Kolleg
 
 Was mir geholfen hat, war nicht ein neuer Kurs, sondern eine feste Stunde pro Woche mit einer Nachbarin. Ohne Buch, einfach reden.
 
-Wenn du magst, frag im Bürgerhaus nach einer Patenschaft. Und rede viel, auch mit Fehlern — darauf wartet sonst niemand.
+Wenn du magst, frag im Bürgerhaus nach einer Patenschaft. Und rede viel, auch mit Fehlern — auf perfekte Sätze wartet niemand.
 
 Viele Grüße
 Ayla`,
@@ -1388,7 +1388,7 @@ Mit freundlichen Grüßen
 Tesfay Tadesse`,
             criteria: [
               "Gerekçe somut mu ve belge belirtildi mi?",
-              "Soru gerçekten ilerleyişi soruyor mu?",
+              "Soru gerçekten bundan sonra ne yapılacağını soruyor mu?",
               "Hitap ve veda var mı ve kuruma uygun mu?",
               "Yaklaşık 40 kelime var mı ve `Sie` kullanıldı mı?",
               "Konjunktiv II ile kibar bir soru kuruldu mu?",
@@ -1413,7 +1413,7 @@ Tesfay Tadesse`,
           prompt:
             "Planen Sie gemeinsam eine Sprachgruppe für Ihren Ort. Sprechen Sie über: Zeit — Ort — Teilnehmerzahl — Ablauf — Werbung.",
           promptTr:
-            "Bulunduğun yer için birlikte bir konuşma grubu planlayın. Şunları konuşun: zaman — yer — katılımcı sayısı — akış — duyuru.",
+            "Yaşadığınız yer için birlikte bir konuşma grubu planlayın. Şunları konuşun: zaman — yer — katılımcı sayısı — akış — duyuru.",
           prepSeconds: 60,
           exchange: [
             {
@@ -1451,7 +1451,7 @@ Tesfay Tadesse`,
               { de: "zusammenfassen", tr: "Özetlemek" },
             ],
             sample:
-              "Mittwochabend ist schwierig, weil viele im Schichtdienst arbeiten und um achtzehn Uhr noch nicht frei sind. Ich würde später anfangen, ab neunzehn Uhr. Beim Ort bin ich für das Bürgerhaus, obwohl es lauter ist. Im Café müsste jeder etwas bestellen, und genau das hält Leute fern, für die Geld eine Rolle spielt. Zwanzig finde ich zu viel: In einer großen Gruppe reden immer dieselben drei. Acht bis zehn wären besser. Zusammengefasst: mittwochs ab neunzehn Uhr im Bürgerhaus, acht bis zehn Personen, und wir hängen Zettel in der Volkshochschule und in der Bibliothek auf.",
+              "Mittwochabend geht, aber nicht zu früh, weil viele im Schichtdienst arbeiten und um achtzehn Uhr noch nicht frei sind. Ich würde später anfangen, ab neunzehn Uhr. Beim Ort bin ich für das Bürgerhaus, obwohl es lauter ist. Im Café müsste jeder etwas bestellen, und genau das hält Leute fern, für die Geld eine Rolle spielt. Zwanzig finde ich zu viel: In einer großen Gruppe reden immer dieselben drei. Acht bis zehn wären besser. Zum Ablauf: Erst stellen sich alle kurz vor, dann sprechen wir in kleinen Gruppen über ein Thema. Zusammengefasst: mittwochs ab neunzehn Uhr im Bürgerhaus, acht bis zehn Personen, erst Vorstellung, dann Kleingruppen, und wir hängen Zettel in der Volkshochschule und in der Bibliothek auf.",
             criteria: [
               "Beş noktanın hepsi konuşuldu mu?",
               "Öneriler gerekçelendirildi mi?",
@@ -1469,7 +1469,7 @@ Tesfay Tadesse`,
           prompt:
             "Halten Sie einen Vortrag von etwa drei Minuten zum Thema \"Eine Sprache lernen — was wirklich hilft\". Gliedern Sie: Einstieg — eigene Erfahrung — was leicht war — was schwer war — ein Rat — Einwand dagegen — Abschluss.",
           promptTr:
-            "\"Bir dil öğrenmek — gerçekten ne işe yarıyor?\" konusunda yaklaşık üç dakikalık bir sunum yap. Şu sırayı izle: giriş — kendi deneyimin — kolay olan — zor olan — bir tavsiye — ona bir itiraz — kapanış.",
+            "\"Bir dil öğrenmek — gerçekten işe yarayan ne?\" konusunda yaklaşık üç dakikalık bir sunum yap. Şu sırayı izle: giriş — kendi deneyimin — kolay olan — zor olan — bir tavsiye — ona bir itiraz — kapanış.",
           prepSeconds: 60,
           speakSeconds: 180,
           items: [],

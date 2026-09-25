@@ -835,7 +835,7 @@ Unterschrift:             R. Iversen`,
           prompt:
             "Sie sind mit Ihrer Freundin Nora um 18 Uhr am Kino verabredet. Ihr Bus hat Verspätung. Schreiben Sie ihr eine Nachricht. Schreiben Sie zu jedem Punkt ein bis zwei Sätze (circa 30 Wörter). Vergessen Sie Anrede und Gruß nicht.",
           promptTr:
-            "Arkadaşın Nora ile saat 18'de sinemanın önünde buluşacaksın. Otobüsün gecikti. Ona bir ileti yaz. Her maddeye bir-iki cümle yaz (yaklaşık 30 kelime). Hitap ve veda cümlesini unutma.",
+            "Arkadaşın Nora ile saat 18.00'de sinemanın önünde buluşacaksın. Otobüsün gecikti. Ona bir ileti yaz. Her maddeye bir-iki cümle yaz (yaklaşık 30 kelime). Hitap ve veda cümlesini unutma.",
           items: [],
           rubric: {
             minWords: 30,

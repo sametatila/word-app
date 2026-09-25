@@ -506,7 +506,7 @@ Bleibt ein Einwand, den ich ernst nehme: Ohne konkrete Zahl erreicht man womögl
               text: "Ohne gesicherte Langzeitspeicherung bleibt Offenlegung folgenlos.",
               answer: "f",
               explain:
-                "Frau Kraus sorunu sunucuların beş yıl sonra ödenmemesinde görüyor: \"ein Versprechen auf Zeit\".",
+                "Frau Kraus sorunu sunucuların parasını beş yıl sonra kimsenin ödememesinde görüyor: \"ein Versprechen auf Zeit\".",
             },
             {
               kind: "match",
@@ -530,7 +530,7 @@ Bleibt ein Einwand, den ich ernst nehme: Ohne konkrete Zahl erreicht man womögl
               kind: "match",
               id: "de-b2-02-l4-27",
               no: 27,
-              text: "Zumindest der Rechenweg sollte veröffentlicht werden, auch wenn die Rohdaten es nicht können.",
+              text: "Zumindest der Rechenweg sollte veröffentlicht werden, auch wenn die Rohdaten nicht veröffentlicht werden können.",
               answer: "e",
               explain:
                 "Herr Dostál şirket araştırmasının sınırını kabul ediyor ve ara bir çözüm öneriyor: ham veri değil, değerlendirme yolu.",
@@ -734,7 +734,7 @@ Auf Wunsch erhalten Sie nach Abschluss der Studie eine allgemein verständliche 
               options: [
                 "Weil das Labor einen Fehler gemeldet hat.",
                 "Weil der Patient darauf besteht und beunruhigt ist.",
-                "Weil ein einzelner Wert bei ihm stark schwankt.",
+                "Weil der Wert bei ihm stark schwankt.",
               ],
               answer: 2,
               explain:

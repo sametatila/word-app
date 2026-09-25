@@ -442,7 +442,7 @@ None of this would settle an argument that has run for two thousand years. It wo
             {
               key: "e",
               label: "e — Writer E",
-              body: "We have been here before, and not long ago. The same argument, with much the same examples, ran through the eighteen-nineties and was settled by nothing; it simply stopped when the participants died.",
+              body: "We have been here before, more than a century ago. The same argument, with much the same examples, ran through the eighteen-nineties and was settled by nothing; it simply stopped when the participants died.",
             },
           ],
           items: [
@@ -1176,7 +1176,7 @@ The translators the programme most wants to fund are the least likely to {{13}}.
               text: "Speaker 3",
               answer: "c",
               explain:
-                "Konuşmacı bırakma nedenini veriyor ve başarısızlığı açıkça dışlıyor: «It was not abandoned because it failed». Neden, tasarımın okuru kendi ürünlerine güvensizliğe alıştırması.",
+                "Konuşmacı bırakma nedenini veriyor ve başarısızlığı açıkça dışlıyor: «It was not abandoned because it failed». Neden, tasarımın okuru, parası ödenen çeviriye güvenmemeye alıştırması.",
             },
             {
               kind: "match",
@@ -1261,7 +1261,7 @@ The translators the programme most wants to fund are the least likely to {{13}}.
 
 The case for reproducing what the original says rests on verifiability. A reader who does not know the source language has no way of auditing a translator's judgement about effect, whereas a claim about reference can at least be checked. It is worth adding that the alternative has historically been used to justify a great deal of quiet improvement, and that the reader who wanted this author has a legitimate complaint about it.
 
-The second point concerns what a reader actually receives. A sentence that is accurate at every word and lands with no force has not carried the original across in any sense the author would recognise; it has produced a document about the original. On this account, refusing to make a judgement about effect is itself a judgement, and a concealed one.
+The second point concerns what a reader actually receives. A sentence that is accurate at every word and lands with no force has not carried the original across in any sense the author would recognise; it has produced a document about the original. On this account, refusing to make a judgement about effect is itself a concealed judgement.
 
 I regard the second as the more important, though for a narrower reason than is usually offered. The first can be recovered by a note; the second cannot be recovered at all, because a reader who has been bored by a page does not go back to it.
 
@@ -1333,7 +1333,7 @@ I recommend adopting the system for descriptive pages and retaining human transl
           promptTr: "Sana diller, okuma ve diller arasında kaybolanlar hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [
-            { who: "partner", de: "Good morning. Can you describe something you have read in translation that you suspect was different in the original?", tr: "Günaydın. Çeviriden okuduğun ve aslında farklı olduğundan kuşkulandığın bir şeyi anlatır mısın?" },
+            { who: "partner", de: "Good morning. Can you describe something you have read in translation that you suspect was different in the original?", tr: "Günaydın. Çeviri olarak okuduğun ve orijinalinde farklı olduğundan kuşkulandığın bir şeyi anlatır mısın?" },
             { who: "you", hint: "Somut bir örnek seç ve kuşkunun nereden geldiğini adlandır.", expect: "somut bir örnek vermek ve kendi kuşkusunu gerekçelendirmek", seconds: 50 },
             { who: "partner", de: "Thank you. Do you think a reader without the original can ever judge a translation, or is that beyond them?", tr: "Teşekkürler. Sence aslı elinde olmayan bir okur bir çeviriyi yargılayabilir mi, yoksa bu onun sınırının ötesinde mi?" },
             { who: "you", hint: "Bir konum al ama karşı görüşe bir pay bırak.", expect: "bir konum almak ve karşı görüşe pay bırakmak", seconds: 50 },

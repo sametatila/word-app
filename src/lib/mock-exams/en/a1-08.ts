@@ -639,7 +639,7 @@ Juno`,
               situation: "Havuz üyeye ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hello Mirek, this is the pool. Your ten-times card is finished. You can buy a new one at the desk. It is twenty euros, the same as last year." },
+                { text: "Hello Mirek, this is the pool. Your ten-visit card is used up. You can buy a new one at the desk. It is twenty euros, the same as last year." },
               ],
             },
             {
@@ -667,7 +667,7 @@ Juno`,
                 { text: "Where is the game on Saturday?" },
                 { text: "At the school, not at the club." },
                 { text: "Why?" },
-                { text: "The grass at the club is wet. It rains all week." },
+                { text: "The grass at the club is wet. It has rained all week." },
               ],
             },
             {
@@ -692,7 +692,7 @@ Juno`,
                 { text: "Did you win?" },
                 { text: "Two to one." },
                 { text: "Very good!" },
-                { text: "Not really. We play badly and they play worse. That is not the same as good." },
+                { text: "Not really. We played badly and they played worse. That is not the same as good." },
               ],
             },
           ],
@@ -750,7 +750,7 @@ Juno`,
               options: ["They lost", "They played very well together", "They won but played badly"],
               answer: 2,
               explain:
-                "Skor «Two to one», yani kazanmışlar; ama konuşmacı «We play badly and they play worse» diyor. Kazanmak ile iyi oynamak ayrı şeyler.",
+                "Skor «Two to one», yani kazanmışlar; ama konuşmacı «We played badly and they played worse» diyor. Kazanmak ile iyi oynamak ayrı şeyler.",
             },
           ],
         },
@@ -850,14 +850,14 @@ Phone:             {{5}}`,
             minWords: 25,
             points: [
               { de: "Say why you cannot come.", tr: "Neden gelemediğini söyle." },
-              { de: "Say when you come again.", tr: "Ne zaman geleceğini söyle." },
+              { de: "Say when you will come back.", tr: "Ne zaman geleceğini söyle." },
               { de: "Say what the coach should do with your shirt.", tr: "Antrenörün formanla ne yapması gerektiğini söyle." },
             ],
             sample: `Hi Mirek,
 
-I am very sorry. My sister comes from Berlin on Saturday and I go to the station at ten.
+I am very sorry. My sister is coming from Berlin on Saturday and I am going to the station at ten.
 
-I come to the training on Thursday. Please give my shirt to Zeki.
+I will come to training on Thursday. Please give my shirt to Zeki.
 
 See you on Thursday!
 Juno`,
@@ -877,7 +877,7 @@ Juno`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "This part has three tasks: you talk about sport, you ask and answer questions, and you act at a club.",
+      instruction: "This part has three tasks: you talk about sport, you ask and answer questions, and you do a role play at a club.",
       instructionTr: "Bu bölümde üç görev var: sporu anlatma, soru sorup cevaplama ve kulüpte rol yapma.",
       tasks: [
         {
@@ -899,7 +899,7 @@ Juno`,
               { de: "one thing you do not like", tr: "Sevmediğin bir şey" },
             ],
             sample:
-              "I swim two times a week, on Monday and Thursday. I go at seven in the morning. My friend Lena comes with me. On Sunday we watch a football game on television. The pool is three euros, or twenty for ten times. I do not like the water in the winter; it is very cold.",
+              "I swim two times a week, on Monday and Thursday. I go at seven in the morning. My friend Lena comes with me. On Sunday we watch a football game on television. The pool is three euros, or twenty for ten visits. I do not like the water in the winter; it is very cold.",
             criteria: [
               "Altı sözcüğün her birine değinildi mi?",
               "Gün, saat ve fiyat söylenebiliyor mu?",

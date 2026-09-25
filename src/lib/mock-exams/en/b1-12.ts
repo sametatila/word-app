@@ -188,7 +188,7 @@ We do not run this session at the weekend, because the staff who would open it a
               kind: "match",
               id: "en-b1-12-l2-8",
               no: 8,
-              text: "Cosmin cannot plan ahead and wants exercise on a Saturday morning.",
+              text: "Cosmin cannot plan ahead and wants exercise on a Saturday.",
               answer: "c",
               explain:
                 "İlan hem günü hem kayıt gerektirmemeyi veriyor: «Different route every week and no need to book».",
@@ -880,7 +880,7 @@ Please do not book anything in it, {{30}} the building is on fire.`,
               options: ["A campaign would cost more", "The garden was already there", "A poster carries a criticism"],
               answer: 2,
               explain:
-                "Görevli maliyeti kabul edip gerekçeyi başka yere koyuyor: «a poster telling people to rest is a poster telling people they are doing it wrong».",
+                "Görevli maliyeti kabul ediyor ama kararı başka bir gerekçeye dayandırıyor: «a poster telling people to rest is a poster telling people they are doing it wrong».",
             },
             {
               kind: "mcq",
@@ -1248,7 +1248,7 @@ It works for the reason a café never did. In a café I am a customer and someth
               { de: "mention one disadvantage of your choice", tr: "Seçtiğin günün bir olumsuz yanını da söyle" },
             ],
             sample:
-              "A day with nothing arranged sounds like the better one, and in my experience it gets filled by half past ten with jobs I did not choose. A day with one fixed thing is smaller on paper and it holds, because the fixed hour gives the rest of the day a shape to sit around. I would take the second one. The disadvantage is real: one arrangement can become an obligation, and then you are getting ready for it from breakfast onwards, which is exactly what the day was supposed to be free of.",
+              "A day with nothing arranged sounds like the better one, but in my experience it gets filled by half past ten with jobs I did not choose. A day with one fixed thing is smaller on paper and it holds, because the fixed hour gives the rest of the day a shape to sit around. I would take the second one. The disadvantage is real: one arrangement can become an obligation, and then you are getting ready for it from breakfast onwards, which is exactly what the day was supposed to be free of.",
             criteria: [
               "İki gün türü de gerçekten karşılaştırıldı mı?",
               "Karşılaştırma yapıları kullanıldı mı? (sounds like, smaller on paper, exactly what)",
@@ -1266,12 +1266,12 @@ It works for the reason a café never did. In a café I am a customer and someth
           prompt:
             "Our town can spend a small amount of money on one thing for people who never stop. Talk with me about the options and decide together.",
           promptTr:
-            "Kasabamız hiç durmayan insanlar için tek bir şeye küçük bir bütçe ayırabiliyor. Seçenekleri benimle konuş ve birlikte karar ver.",
+            "Kasabamız hiç dinlenmeye fırsat bulamayan insanlar için tek bir şeye küçük bir bütçe ayırabiliyor. Seçenekleri benimle konuş ve birlikte karar ver.",
           prepSeconds: 30,
           exchange: [
             { who: "partner", de: "The options are: a quiet room in the library, a garden that stays open until dark, a poster campaign about resting, or a free swim early on weekdays. Which is worth the money?", tr: "Seçenekler: kütüphanede sessiz bir oda, karanlığa kadar açık bir bahçe, dinlenme üzerine afiş kampanyası ya da hafta içi erken saatte ücretsiz yüzme. Hangisi paraya değer?" },
             { who: "you", hint: "Bir seçenek seç ve gerekçelendir.", expect: "bir seçeneği seçmek ve gerekçelendirmek", seconds: 40 },
-            { who: "partner", de: "I would defend the campaign. It reaches the whole town, and a room reaches the people who already go to the library. Does that change your mind?", tr: "Kampanyayı savunurum. Bütün kasabaya ulaşır, oda ise zaten kütüphaneye gidenlere ulaşır. Bu fikrini değiştirir mi?" },
+            { who: "partner", de: "I would defend the campaign. It reaches the whole town, while a room only reaches the people who already go to the library. Does that change your mind?", tr: "Kampanyayı savunurum. Bütün kasabaya ulaşır, oda ise zaten kütüphaneye gidenlere ulaşır. Bu fikrini değiştirir mi?" },
             { who: "you", hint: "İtiraza doğrudan karşılık ver: kabul et ya da çürüt.", expect: "bir itiraza doğrudan karşılık vermek", seconds: 40 },
             { who: "partner", de: "All right. So what do we recommend?", tr: "Peki. Ne öneriyoruz?" },
             { who: "you", hint: "Ortak bir karar ver ve kısaca özetle.", expect: "ortak bir karara varmak ve gerekçesini özetlemek", seconds: 35 },
@@ -1285,7 +1285,7 @@ It works for the reason a café never did. In a café I am a customer and someth
               { de: "reach a decision together", tr: "Birlikte bir karara varmak" },
             ],
             sample:
-              "I would put the money into the garden, because it is the only option that is open when somebody actually needs it, which is often after work and in the dark half of the year. Your point about reach is the strongest one against me and I will concede half of it: a room does reach fewer people. But a poster that tells a tired person to rest is also telling them they are getting it wrong. So let us recommend the garden, and ask the library to keep the room if it costs nothing.",
+              "I would put the money into the garden, because it is the only option that is open when somebody actually needs it, which is often after work, when the evenings are long. Your point about reach is the strongest one against me and I will concede half of it: a room does reach fewer people. But a poster that tells a tired person to rest is also telling them they are getting it wrong. So let us recommend the garden, and ask the library to keep the room if it costs nothing.",
             criteria: [
               "Görüş gerekçelendirildi mi?",
               "İtiraza doğrudan mı karşılık verildi?",
@@ -1303,7 +1303,7 @@ It works for the reason a café never did. In a café I am a customer and someth
           promptTr: "Aynı konu üzerine biraz daha konuşuyoruz: dükkânlar ve iş yerleri haftada bir gün kapanmalı mı.",
           prepSeconds: 15,
           exchange: [
-            { who: "partner", de: "Some people say every shop should close on the same day each week. Is that a good idea?", tr: "Kimileri bütün dükkânların haftanın aynı günü kapanmasını söylüyor. İyi bir fikir mi?" },
+            { who: "partner", de: "Some people say every shop should close on the same day each week. Is that a good idea?", tr: "Kimileri bütün dükkânların haftanın aynı günü kapanması gerektiğini söylüyor. İyi bir fikir mi?" },
             { who: "you", hint: "Görüşünü söyle ve bir örnek ver.", expect: "genel bir soruya görüş bildirmek ve örneklendirmek", seconds: 40 },
             { who: "partner", de: "Others say that it would only move the work to another day and would hurt people who are paid by the hour. Would you agree?", tr: "Kimileri de bunun işi başka bir güne kaydıracağını ve saat başı ödenen kişilere zarar vereceğini söylüyor. Katılır mısın?" },
             { who: "you", hint: "Kısmen katıl ya da karşı çık; iki yanı da anmaya çalış.", expect: "bir iddiaya kısmen katılmak ya da karşı çıkmak, iki yanı da anmak", seconds: 45 },

@@ -827,7 +827,7 @@ Die Vertreterversammlung beschließt mit einfacher Mehrheit; Änderungen der Sat
               id: "de-b2-04-h1-7",
               no: 7,
               ref: "h4",
-              text: "Wer sich zuerst meldet, kommt zuerst zu Wort.",
+              text: "Wer sich zuerst per Handzeichen meldet, kommt zuerst zu Wort.",
               answer: false,
               explain:
                 "Sıra el kaldırmaya göre değil: \"Wortmeldungen werden in der Reihenfolge der Karten aufgerufen, nicht in der Reihenfolge des Handzeichens\".",
@@ -1191,7 +1191,7 @@ Die Vertreterversammlung beschließt mit einfacher Mehrheit; Änderungen der Sat
                 },
                 {
                   speaker: "Frau Prof. Nolte",
-                  text: "Die enge Nachbarschaft der Fünfzigerjahre war kein Ideal, sondern eine Notwendigkeit. Man teilte Waschküche, Telefon und Werkzeug, weil niemand beides zweimal besaß. Wer damals umzog, verlor nicht Freunde, sondern Infrastruktur.",
+                  text: "Die enge Nachbarschaft der Fünfzigerjahre war kein Ideal, sondern eine Notwendigkeit. Man teilte Waschküche, Telefon und Werkzeug, weil kaum jemand all das selbst besaß. Wer damals umzog, verlor nicht Freunde, sondern Infrastruktur.",
                 },
                 {
                   speaker: "Frau Prof. Nolte",
@@ -1207,7 +1207,7 @@ Die Vertreterversammlung beschließt mit einfacher Mehrheit; Änderungen der Sat
                 },
                 {
                   speaker: "Frau Prof. Nolte",
-                  text: "Daraus folgt für die Planung etwas Unerwartetes: Der Waschmaschinenanschluss in jeder Wohnung, damals ein Fortschritt, war für die Nachbarschaft ein Rückschritt. Ich fordere ihn nicht ab, aber ich weise darauf hin, dass Bequemlichkeit hier einen Preis hatte.",
+                  text: "Daraus folgt für die Planung etwas Unerwartetes: Der Waschmaschinenanschluss in jeder Wohnung, damals ein Fortschritt, war für die Nachbarschaft ein Rückschritt. Ich fordere nicht, ihn abzuschaffen, aber ich weise darauf hin, dass Bequemlichkeit hier einen Preis hatte.",
                 },
                 {
                   speaker: "Frau Prof. Nolte",
@@ -1249,7 +1249,7 @@ Die Vertreterversammlung beschließt mit einfacher Mehrheit; Änderungen der Sat
               ],
               answer: 0,
               explain:
-                "Çamaşırlık, telefon ve alet paylaşılıyordu çünkü kimse ikisine birden sahip değildi: \"Wer damals umzog, verlor nicht Freunde, sondern Infrastruktur\".",
+                "Çamaşırlık, telefon ve alet paylaşılıyordu çünkü neredeyse kimse bunların hepsine kendisi sahip değildi: \"Wer damals umzog, verlor nicht Freunde, sondern Infrastruktur\".",
             },
             {
               kind: "mcq",
@@ -1309,7 +1309,7 @@ Die Vertreterversammlung beschließt mit einfacher Mehrheit; Änderungen der Sat
               ],
               answer: 0,
               explain:
-                "Bunu geri istemediğini açıkça söylüyor, ama \"dass Bequemlichkeit hier einen Preis hatte\" diye ekliyor. Yani ilerleme ve kayıp aynı anda.",
+                "Bağlantının kaldırılmasını istemediğini açıkça söylüyor, ama \"dass Bequemlichkeit hier einen Preis hatte\" diye ekliyor. Yani ilerleme ve kayıp aynı anda.",
             },
             {
               kind: "mcq",
@@ -1361,7 +1361,7 @@ Die Vertreterversammlung beschließt mit einfacher Mehrheit; Änderungen der Sat
           prompt:
             "In Ihrer Stadtzeitung stand: \"Wer mehr Wohnungen will, muss aufhören, jedes Bauprojekt zu bekämpfen.\" Schreiben Sie einen Leserbrief (circa 150 Wörter). Setzen Sie sich mit der Aussage auseinander, nennen Sie Argumente und ziehen Sie eine begründete Schlussfolgerung.",
           promptTr:
-            "Şehir gazetenizde şöyle yazdı: \"Daha çok konut isteyen, her yapı projesine karşı çıkmayı bırakmalı.\" Bir okur mektubu yaz (yaklaşık 150 kelime). İddiayı tartış, gerekçeler sun ve gerekçeli bir sonuca bağla.",
+            "Şehir gazetenizde şöyle yazıyordu: \"Daha çok konut isteyen, her yapı projesine karşı çıkmayı bırakmalı.\" Bir okur mektubu yaz (yaklaşık 150 kelime). İddiayı tartış, gerekçeler sun ve gerekçeli bir sonuca bağla.",
           items: [],
           rubric: {
             minWords: 150,
@@ -1381,7 +1381,7 @@ Hinzu kommt, dass Neubau langsam wirkt. Zwischen Planung und Einzug liegen bei u
 
 Natürlich gibt es auch Widerstand aus reiner Gewohnheit, und dieser schadet der Sache tatsächlich. Er kommt vor, und man sollte ihn benennen. Das entwertet die anderen Einwände jedoch nicht.
 
-Mein Schluss: Wer schneller bauen will, sollte weniger über die Gegner klagen und mehr darüber, was gebaut wird.
+Mein Schluss: Wer schneller bauen will, sollte weniger über die Gegner klagen und mehr darüber sprechen, was gebaut wird.
 
 Mit freundlichen Grüßen
 Petra Lindqvist`,
@@ -1430,7 +1430,7 @@ Aylin Tekin`,
               "İhtiyaç somut gerekçelendirildi mi ve yalnız kendi durumu değil, başkalarınınki de anıldı mı?",
               "Karşı tarafın gerekçesi gerçekten kabul edildi mi?",
               "Önerilen çözüm uygulanabilir ve somut mu?",
-              "Yarı resmî kayıt korunmuş mu, yaklaşık 100 kelime mi?",
+              "Yarı resmî üslup korunmuş mu, yaklaşık 100 kelime mi?",
             ],
           },
         },
@@ -1467,10 +1467,10 @@ Aylin Tekin`,
               { de: "Abschluss", tr: "Kapanış" },
             ],
             sample:
-              "Ich möchte heute über die Frage sprechen, ob man besser in der Stadt oder auf dem Land wohnt. Zuerst schildere ich die Lage in meinem Heimatland, dann nenne ich Vor- und Nachteile, danach meine eigene Position. In der Ukraine ist die Bewegung seit zwanzig Jahren eindeutig in Richtung Stadt gegangen, vor allem wegen der Arbeit. Ein Vorteil der Stadt liegt im Zugang: Meine Schwester hat in Kiew drei Fachärzte in Fußnähe, meine Tante im Dorf fährt für denselben Termin zwei Stunden. Ein Nachteil ist der Preis. Für die Miete einer Zweizimmerwohnung zahlt man in der Stadt etwa das Doppelte. Meine Position ist deshalb differenziert: Für Familien mit kleinen Kindern und für ältere Menschen halte ich die Stadt für die vernünftigere Wahl, weil beide Gruppen auf Erreichbarkeit angewiesen sind. Wer arbeitet und ein Auto hat, kann auf dem Land deutlich besser leben. Zusammenfassend: Die Frage lässt sich nicht allgemein beantworten, sondern nur nach Lebensphase.",
+              "Ich möchte heute über die Frage sprechen, ob man besser in der Stadt oder auf dem Land wohnt. Zuerst schildere ich die Lage in meinem Heimatland, dann nenne ich Vor- und Nachteile, danach meine eigene Position. In der Ukraine ist die Bewegung seit zwanzig Jahren eindeutig in Richtung Stadt gegangen, vor allem wegen der Arbeit. Ein Vorteil der Stadt liegt im Zugang: Meine Schwester hat in Kiew drei Fachärzte in Laufweite, meine Tante im Dorf fährt für denselben Termin zwei Stunden. Ein Nachteil ist der Preis. Für die Miete einer Zweizimmerwohnung zahlt man in der Stadt etwa das Doppelte. Meine Position ist deshalb differenziert: Für Familien mit kleinen Kindern und für ältere Menschen halte ich die Stadt für die vernünftigere Wahl, weil beide Gruppen auf Erreichbarkeit angewiesen sind. Wer arbeitet und ein Auto hat, kann auf dem Land deutlich besser leben. Zusammenfassend: Die Frage lässt sich nicht allgemein beantworten, sondern nur nach Lebensphase.",
             criteria: [
               "Altı bölümün hepsi var mı ve sunum baştan bölümlendi mi?",
-              "Kendi ülkedeki durum somut anlatıldı mı?",
+              "Kendi ülkendeki durum somut anlatıldı mı?",
               "Artı ve eksi birer örnekle desteklendi mi?",
               "Konum gerekçeli mi ve tek yanlı olmaktan kaçınıyor mu?",
               "Bağlayıcılar kullanıldı mı? (zunächst, ein Vorteil liegt darin, dagegen, zusammenfassend)",
@@ -1486,13 +1486,13 @@ Aylin Tekin`,
           prompt:
             "Ihr Haus bekommt 8000 Euro aus einem Förderprogramm für den Innenhof. Einigen Sie sich mit Ihrer Gesprächspartnerin: Spielgeräte für Kinder, ein überdachter Fahrradraum, Bäume und Sitzplätze oder eine gemeinsame Werkstatt.",
           promptTr:
-            "Binanız iç avlu için bir destek programından 8000 euro alıyor. Karşındakiyle anlaş: çocuk oyun grubu, üstü kapalı bisiklet alanı, ağaç ve oturma yerleri ya da ortak atölye.",
+            "Binanız iç avlu için bir destek programından 8000 euro alıyor. Karşındakiyle anlaş: çocuklar için oyun aletleri, üstü kapalı bisiklet alanı, ağaç ve oturma yerleri ya da ortak atölye.",
           prepSeconds: 90,
           exchange: [
             {
               who: "partner",
               de: "Wir müssen dem Verwalter bis Montag eine Antwort geben. Ich wäre für Spielgeräte — im Haus wohnen elf Kinder, das ist der klarste Bedarf. Wie sehen Sie das?",
-              tr: "Yöneticiye pazartesiye kadar cevap vermeliyiz. Ben oyun grubundan yanayım — binada on bir çocuk var, en açık ihtiyaç bu. Sen ne düşünüyorsun?",
+              tr: "Yöneticiye pazartesiye kadar cevap vermeliyiz. Ben oyun aletlerinden yanayım — binada on bir çocuk var, en açık ihtiyaç bu. Sen ne düşünüyorsun?",
             },
             {
               who: "you",

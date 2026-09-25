@@ -829,7 +829,7 @@ Beim Arbeitgeberwechsel ungünstigste Variante: {{10}}.`,
               ],
               answer: 1,
               explain:
-                "Sorunun biçimini değiştirdiğinizde sonucun \"kippt das Ergebnis regelmäßig\" olduğunu söylüyor — itiraz yöntemedir, sayıya değil.",
+                "Soru farklı biçimde sorulunca \"kippt das Ergebnis regelmäßig\" diyor — itiraz yöntemedir, sayıya değil.",
             },
             {
               kind: "mcq",
@@ -1164,7 +1164,7 @@ Halim Yücel`,
           prompt:
             "Halten Sie einen Vortrag von etwa vier Minuten zum Thema \"Verfügbarkeit als neue Währung\". Behandeln Sie fünf Inhaltspunkte: Einstieg — Beschreibung der heutigen Lage — Ursachen — Folgen für verschiedene Gruppen — eigene Bewertung mit Ausblick.",
           promptTr:
-            "\"Yeni bir para birimi olarak erişilebilirlik\" konusunda yaklaşık dört dakikalık bir sunum yap. Beş içerik noktasını işle: giriş — bugünkü durumun betimlenmesi — nedenler — farklı gruplar için sonuçlar — kendi değerlendirmen ve öngörün.",
+            "\"Yeni bir para birimi olarak ulaşılabilirlik\" konusunda yaklaşık dört dakikalık bir sunum yap. Beş içerik noktasını işle: giriş — bugünkü durumun betimlenmesi — nedenler — farklı gruplar için sonuçlar — kendi değerlendirmen ve öngörün.",
           minutes: 8,
           prepSeconds: 180,
           speakSeconds: 240,
@@ -1201,7 +1201,7 @@ Halim Yücel`,
           minutes: 7,
           prepSeconds: 120,
           exchange: [
-            { who: "partner", de: "Unsere Abteilung erhält Mittel für genau eine Maßnahme. Zur Wahl stehen Dienstpläne drei Wochen im Voraus, ein Weiterbildungsbudget und zwei zusätzliche freie Tage. Wofür würden Sie plädieren?", tr: "Bölümümüze tam bir uygulama için bütçe ayrıldı. Seçenekler: üç hafta önceden vardiya planı, eğitim bütçesi ve yılda iki ek izin günü. Sen hangisini savunursun?" },
+            { who: "partner", de: "Unsere Abteilung erhält Mittel für genau eine Maßnahme. Zur Wahl stehen Dienstpläne drei Wochen im Voraus, ein Weiterbildungsbudget und zwei zusätzliche freie Tage. Wofür würden Sie plädieren?", tr: "Bölümümüze yalnızca tek bir uygulama için bütçe ayrıldı. Seçenekler: üç hafta önceden vardiya planı, eğitim bütçesi ve yılda iki ek izin günü. Sen hangisini savunursun?" },
             { who: "you", hint: "Bir seçeneği seç ve ölçütünü adlandırarak gerekçelendir.", expect: "üç seçenekten birini seçmek ve gerekçeyi açık bir ölçüte bağlamak (kapsayıcılık, dayanıklılık, maliyet)", seconds: 60 },
             { who: "partner", de: "Das leuchtet mir ein, allerdings sehe ich einen Haken: Feste Pläne binden uns bei Auftragsspitzen, und die haben wir dreimal im Jahr verlässlich.", tr: "Bu bana mantıklı geldi, ama bir pürüz görüyorum: Sabit planlar sipariş yoğunluğunda elimizi bağlıyor, o da yılda üç kez düzenli oluyor." },
             { who: "you", hint: "İtirazı ele al; gerekirse konumunu düzelt.", expect: "bir itirazı ciddiye alıp karşılamak, gerekirse kendi konumunu düzeltmek", seconds: 60 },

@@ -493,7 +493,7 @@ Mein Fazit fällt entsprechend unbequem aus: Ich halte die Reform für richtig u
             {
               key: "b",
               label: "b — Herr Grohe, Fahrlehrer",
-              body: "Meine Schüler fragen nicht, was es kostet, sondern ob jemand kontrolliert. Solange die Antwort selten lautet, ändert auch ein höherer Betrag nichts. Wir diskutieren über die falsche Stellschraube.",
+              body: "Meine Schüler fragen nicht, was es kostet, sondern ob jemand kontrolliert. Solange die Antwort „selten“ lautet, ändert auch ein höherer Betrag nichts. Wir diskutieren über die falsche Stellschraube.",
             },
             {
               key: "c",
@@ -523,7 +523,7 @@ Mein Fazit fällt entsprechend unbequem aus: Ich halte die Reform für richtig u
             {
               key: "h",
               label: "h — Herr Stadler, Rentner",
-              body: "Ich verstehe beide Seiten und habe deshalb keine feste Meinung. Sicher scheint mir nur, dass die Debatte lauter geführt wird als sie es verdient.",
+              body: "Ich verstehe beide Seiten und habe deshalb keine feste Meinung. Sicher scheint mir nur, dass die Debatte lauter geführt wird, als sie es verdient.",
             },
           ],
           items: [
@@ -779,7 +779,7 @@ Wird der Einspruch zurückgenommen, trägt die einlegende Person die bis dahin e
               text: "Die Höhe der Strafe erklärt die Zahl der Verstöße am besten.",
               answer: false,
               explain:
-                "Değerlendirme bunu eliyor: yükseklik \"erklärt die Zahl der Verstöße kaum\", belirleyici olan denetim sıklığı.",
+                "Değerlendirme bunu eliyor: cezanın tutarı \"erklärt die Zahl der Verstöße kaum\", belirleyici olan denetim sıklığı.",
             },
             {
               kind: "mcq",
@@ -1024,7 +1024,7 @@ Wird der Einspruch zurückgenommen, trägt die einlegende Person die bis dahin e
                   speaker: "Frau Tuncer",
                   text: "Der Einwand ist berechtigt, nur trifft er nicht nur diese Reform. Er trifft jede Regelung, die nach Leistungsfähigkeit fragt — auch die, von denen Sie profitieren.",
                 },
-                { speaker: "Herr Pichler", text: "Das stimmt. Ich halte den Einwand trotzdem." },
+                { speaker: "Herr Pichler", text: "Das stimmt. Ich halte den Einwand trotzdem aufrecht." },
                 { speaker: "Moderatorin", text: "Frau Lammers, Sie müssten es umsetzen." },
                 {
                   speaker: "Frau Lammers",
@@ -1176,7 +1176,7 @@ Wird der Einspruch zurückgenommen, trägt die einlegende Person die bis dahin e
               plays: 1,
               segments: [
                 {
-                  text: "Guten Tag, hier ist die Kanzlei. Der Termin am Donnerstag ist aufgehoben worden, das Gericht hat kurzfristig verlegt. Ein neuer Termin steht noch nicht fest; wir melden uns, sobald wir etwas hören.",
+                  text: "Guten Tag, hier ist die Kanzlei. Der Termin am Donnerstag ist aufgehoben worden, das Gericht hat ihn kurzfristig verlegt. Ein neuer Termin steht noch nicht fest; wir melden uns, sobald wir etwas hören.",
                 },
               ],
             },
@@ -1320,7 +1320,7 @@ Wird der Einspruch zurückgenommen, trägt die einlegende Person die bis dahin e
               ],
               answer: 2,
               explain:
-                "Yaygın talebi kısmen haklı bulup nedeni düzeltiyor: yük sayıdan değil \"ihre Widersprüchlichkeit\" ten geliyor.",
+                "Yaygın talebi kısmen haklı bulup nedeni düzeltiyor: yük sayıdan değil \"ihre Widersprüchlichkeit\"ten geliyor.",
             },
             {
               kind: "mcq",
@@ -1387,7 +1387,7 @@ Wird der Einspruch zurückgenommen, trägt die einlegende Person die bis dahin e
           prompt:
             "In einer Zeitung stand: \"Wer sich nicht an Regeln hält, gehört härter bestraft.\" Schreiben Sie einen Leserbrief (circa 150 Wörter). Setzen Sie sich mit dieser Aussage auseinander, nennen Sie Argumente und ziehen Sie eine begründete Schlussfolgerung.",
           promptTr:
-            "Bir gazetede şöyle yazdı: \"Kurallara uymayan daha ağır cezalandırılmalı.\" Bir okur mektubu yaz (yaklaşık 150 kelime). Bu iddiayı tartış, gerekçeler sun ve gerekçeli bir sonuca bağla.",
+            "Bir gazetede şöyle yazıyordu: \"Kurallara uymayan daha ağır cezalandırılmalı.\" Bir okur mektubu yaz (yaklaşık 150 kelime). Bu iddiayı tartış, gerekçeler sun ve gerekçeli bir sonuca bağla.",
           items: [],
           rubric: {
             minWords: 150,
@@ -1499,7 +1499,7 @@ Deniz Tuncer`,
               "Ich möchte heute darüber sprechen, ob strenge Strafen oder häufige Kontrollen mehr bewirken. Zuerst schildere ich die Lage in meinem Herkunftsland, dann nenne ich Argumente für beide Seiten und komme am Ende zu meiner Position. In der Türkei sind die Bußgelder im Verkehr vergleichsweise hoch, aber die Kontrolle ist ungleich verteilt. In meiner Heimatstadt wusste jeder, an welcher Kreuzung geblitzt wird, und fuhr genau dort langsam. Für strenge Strafen spricht, dass sie ein klares Signal setzen und schwere Fälle abschrecken. Für häufige Kontrollen spricht die Erfahrung: Wo dreimal in der Woche kontrolliert wird, ändert sich das Verhalten in wenigen Wochen — und zwar dauerhaft, solange die Kontrolle bleibt. Meine Position ist deshalb, dass die Kontrolle wichtiger ist. Wer mit Entdeckung nicht rechnet, liest keine Bußgeldtabelle. Ich räume aber ein, dass Kontrolle teuer ist und Strafen billig sind — das erklärt, warum die Politik lieber über Beträge spricht. Zusammenfassend: Höhe wirkt auf die Debatte, Dichte wirkt auf das Verhalten.",
             criteria: [
               "Altı bölümün hepsi var mı ve sunum baştan bölümlendi mi?",
-              "Kendi ülkedeki durum somut ve açıklayıcı mı?",
+              "Kendi ülkendeki durum somut ve açıklayıcı mı?",
               "Her iki taraf için de örnekle desteklenmiş gerekçe var mı?",
               "Konum gerekçeli mi ve karşı tarafın maliyet argümanı kabul edildi mi?",
               "Dört dakika boyunca yapı korunabildi mi?",
@@ -1514,14 +1514,14 @@ Deniz Tuncer`,
           prompt:
             "Treffen Sie gemeinsam eine Entscheidung. Eine Gemeinde hat 60.000 Euro für mehr Verkehrssicherheit. Zur Wahl stehen: zwei zusätzliche Kontrollkräfte, eine feste Messanlage, bauliche Änderungen an einer Kreuzung, eine Kampagne an Schulen. Einigen Sie sich auf eine Verwendung.",
           promptTr:
-            "Birlikte bir karar verin. Bir belediyenin trafik güvenliği için 60.000 avrosu var. Seçenekler: iki ek denetim görevlisi, sabit bir ölçüm cihazı, bir kavşakta yapısal değişiklik, okullarda kampanya. Bir kullanım üzerinde anlaşın.",
+            "Birlikte bir karar verin. Bir belediyenin trafik güvenliği için 60.000 avrosu var. Seçenekler: iki ek denetim görevlisi, sabit bir hız radarı, bir kavşakta yapısal değişiklik, okullarda kampanya. Bir kullanım üzerinde anlaşın.",
           minutes: 8,
           prepSeconds: 60,
           exchange: [
             {
               who: "partner",
               de: "Ich fange an: Ich bin für die feste Messanlage. Sie arbeitet rund um die Uhr und kostet danach fast nichts. Was meinen Sie?",
-              tr: "Ben başlayayım: Sabit ölçüm cihazından yanayım. Yirmi dört saat çalışıyor ve sonrasında neredeyse hiçbir masrafı yok. Sen ne diyorsun?",
+              tr: "Ben başlayayım: Sabit hız radarından yanayım. Yirmi dört saat çalışıyor ve sonrasında neredeyse hiçbir masrafı yok. Sen ne diyorsun?",
             },
             {
               who: "you",
@@ -1568,12 +1568,12 @@ Deniz Tuncer`,
             minutes: 8,
             points: [
               { de: "einen Vorschlag begründen", tr: "Bir öneriyi gerekçelendirmek" },
-              { de: "auf Einwände eingehen", tr: "İtirazlara girmek" },
+              { de: "auf Einwände eingehen", tr: "İtirazlara karşılık vermek" },
               { de: "priorisieren und begründen", tr: "Önceliklendirmek ve gerekçelendirmek" },
               { de: "das Ergebnis zusammenfassen", tr: "Sonucu özetlemek" },
             ],
             sample:
-              "Ihr Argument mit den laufenden Kosten überzeugt mich zur Hälfte. Eine feste Anlage wirkt tatsächlich dauerhaft, aber nur auf zwanzig Metern; alle wissen, wo sie steht, und fahren davor und danach gleich schnell. Bauliche Änderungen wirken auch nur an einer Stelle — das stimmt —, aber sie wirken dort ohne Personal und ohne Diskussion über Datenschutz. Zum Einwand mit dem Geld: Ich schlage eine Aufteilung vor, vierzigtausend für den Umbau der Kreuzung und zwanzigtausend für eine der beiden Kontrollkräfte, befristet auf zwei Jahre. Streichen würde ich die Kampagne an Schulen: Sie erreicht genau die Gruppe, die statistisch am wenigsten Unfälle verursacht. Zusammengefasst: Schwerpunkt auf dem Umbau, dazu eine befristete Kontrollstelle, keine Messanlage und keine Kampagne.",
+              "Ihr Argument mit den laufenden Kosten überzeugt mich zur Hälfte. Eine feste Anlage wirkt tatsächlich dauerhaft, aber nur auf zwanzig Metern; alle wissen, wo sie steht, und fahren davor und danach gleich schnell. Bauliche Änderungen wirken auch nur an einer Stelle — das stimmt —, aber sie wirken dort ohne Personal und ohne Diskussion über Datenschutz. Zum Einwand mit dem Geld: Ich schlage eine Aufteilung vor, vierzigtausend für den Umbau der Kreuzung und zwanzigtausend für eine der beiden Kontrollkräfte, befristet auf zwei Jahre. Streichen würde ich die Kampagne an Schulen: Sie erreicht genau die Gruppe, die statistisch die wenigsten Unfälle verursacht. Zusammengefasst: Schwerpunkt auf dem Umbau, dazu eine befristete Kontrollstelle, keine Messanlage und keine Kampagne.",
             criteria: [
               "Öneri gerekçelendirildi mi ve karşı tarafın gerekçesi doğrudan ele alındı mı?",
               "İtiraz kabul edilip yanıtlandı mı, yoksa görmezden mi gelindi?",

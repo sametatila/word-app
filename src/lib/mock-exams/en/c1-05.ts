@@ -751,7 +751,7 @@ The third attempt was designed by people who had read the second report carefull
               options: ["They were badly out of date and inconsistent", "They described tasks rather than judgements", "The regulator required it"],
               answer: 1,
               explain:
-                "Gerekçe doğrudan veriliyor: «they described a set of tasks and we were hiring for a set of judgements». Tarih ya da denetleyici kayıtta hiç geçmiyor.",
+                "Gerekçe doğrudan veriliyor: «they described a set of tasks and we were hiring for a set of judgements». Güncelliğini yitirmiş olma ya da denetleyici kayıtta hiç geçmiyor.",
             },
             {
               kind: "mcq",
@@ -762,7 +762,7 @@ The third attempt was designed by people who had read the second report carefull
               options: ["It changed the appointments considerably for the better", "It was worth the fourteen months", "It improved the document but not the practice"],
               answer: 2,
               explain:
-                "Kendi cümlesi: «the descriptions are better and the appointments are the same. I improved the instrument and not the practice». On dört ayı bir daha yapmayacağını da söylüyor.",
+                "Kendi cümlesi: «the descriptions are better and the appointments are the same. I improved the instrument and not the practice». On dört ay süren bu işi bir daha yapmayacağını da söylüyor.",
             },
             {
               kind: "mcq",
@@ -941,8 +941,8 @@ Cost of each competition in staff time: {{14}} pounds`,
               ],
               gloss: [
                 { de: "to mark", tr: "değerlendirmek, puanlamak", en: "bewerten" },
-                { de: "imposition", tr: "dayatma", en: "die Zumutung" },
-                { de: "impermanence", tr: "geçicilik", en: "die Vergänglichkeit" },
+                { de: "imposition", tr: "dayatma", en: "das Aufzwingen" },
+                { de: "impermanence", tr: "geçicilik", en: "die Vorläufigkeit" },
               ],
             },
           ],
@@ -967,7 +967,7 @@ Cost of each competition in staff time: {{14}} pounds`,
               options: ["That the marking time turned out not to be a real problem at all", "That panels distrusted a judgement they could not feel", "That the candidates strongly preferred the old method", "That the pilots were too small"],
               answer: 1,
               explain:
-                "Wren süreyi doğruluyor ama eksik buluyor: «What killed two of mine was not time; it was that the panel could see the candidate's answers and could not see their face».",
+                "Wren süreyi doğruluyor ama Lenn'in açıklamasını eksik buluyor: «What killed two of mine was not time; it was that the panel could see the candidate's answers and could not see their face».",
             },
             {
               kind: "mcq",
@@ -978,7 +978,7 @@ Cost of each competition in staff time: {{14}} pounds`,
               options: ["They describe why pilots fail, not the method", "They have misread the data", "They are far too pessimistic about the candidates", "They rely on a single organisation"],
               answer: 0,
               explain:
-                "Juno ayrımı kuruyor: «You are describing the failure of pilots, and pilots fail for pilot reasons», ve asıl sorunun dayatma durumunda ne olduğu olduğunu söylüyor.",
+                "Juno ayrımı kuruyor: «You are describing the failure of pilots, and pilots fail for pilot reasons», ve asıl ilginç sorunun şu olduğunu söylüyor: Bir yöntem doğrudan dayatıldığında ne oluyor?",
             },
             {
               kind: "mcq",
@@ -1217,7 +1217,7 @@ Cost of each competition in staff time: {{14}} pounds`,
               text: "Speaker 7",
               answer: "i",
               explain:
-                "Konuşmacı eleştirilen görevliyi koruyor: puanlı soruları kullanmış, gerekçesini kaydetmiş ve oyla ezilmiş. «If we want to criticise somebody, the papers make it perfectly clear who».",
+                "Konuşmacı eleştirilen görevliyi koruyor: puanlı soruları kullanmış, gerekçesini kaydetmiş ve oylamada azınlıkta kalmış. «If we want to criticise somebody, the papers make it perfectly clear who».",
             },
             {
               kind: "match",
@@ -1298,7 +1298,7 @@ My own view is that the framing conceals the real question, which is not which m
             sample: `Report: proposed work sample for team leader posts
 
 Current practice
-Appointments are made by a panel of three after a forty-five minute interview using six questions, four of which have been unchanged since 2017. Scores are recorded on a grid and, in eleven of the last fourteen competitions, the panel then held a further discussion that is not minuted. Two of those fourteen appointments were subsequently reversed within a year.
+Appointments are made by a panel of three after a forty-five-minute interview using six questions, four of which have been unchanged since 2017. Scores are recorded on a grid and, in eleven of the last fourteen competitions, the panel then held a further discussion that is not minuted. Two of those fourteen appointments were subsequently reversed within a year.
 
 Assessment
 The gain is likely to be real but smaller than the literature suggests. A work sample would replace the least reliable element of the interview, and our own reversal rate implies room for improvement. Two costs are not in the proposal. The first is marking: forty minutes per candidate, against an average of nine candidates, adds six hours per competition to the workload of people who currently have none allocated. The second is the unminuted discussion, which the proposal does not mention and which will survive the change unless it is addressed directly.
@@ -1400,7 +1400,7 @@ I recommend adopting the work sample for these posts, on two conditions: that th
             "Bir işveren, insanları nasıl işe aldığını iyileştirmek için bir yıllık bütçeyi nasıl harcayacağına karar verecek. Seçenekleri benimle konuş, ikisini savun ve benimle bir öncelik sırası belirle.",
           prepSeconds: 40,
           exchange: [
-            { who: "partner", de: "The options are: paying for the marking time of work samples, training every panel chair, auditing last year's appointments against performance, anonymising applications, and reducing panels from five people to three. Which two would you defend, and on what criterion?", tr: "Seçenekler: iş örneği değerlendirmelerinin süresini ücretlendirmek, her kurul başkanını eğitmek, geçen yılın atamalarını başarıyla karşılaştırıp denetlemek, başvuruları anonimleştirmek ve kurulları beş kişiden üçe indirmek. Hangi ikisini savunursun, hangi ölçütle?" },
+            { who: "partner", de: "The options are: paying for the marking time of work samples, training every panel chair, auditing last year's appointments against performance, anonymising applications, and reducing panels from five people to three. Which two would you defend, and on what criterion?", tr: "Seçenekler: iş örneği değerlendirmelerinin süresini ücretlendirmek, her kurul başkanını eğitmek, geçen yılın atamalarını sonraki iş performansıyla karşılaştırarak denetlemek, başvuruları anonimleştirmek ve kurulları beş kişiden üçe indirmek. Hangi ikisini savunursun, hangi ölçütle?" },
             { who: "you", hint: "İki seçenek seç ve ölçütünü açıkça adlandır.", expect: "iki seçeneği seçmek ve seçim ölçütünü açıkça adlandırmak", seconds: 50 },
             { who: "partner", de: "Let me press you. An audit produces a report, and reports are where reforms go to die. Is that not exactly the wrong thing to buy with a single year?", tr: "Üsteleyeyim. Denetim bir rapor üretir ve reformlar raporlarda ölür. Tek bir yılla alınacak en yanlış şey tam da bu değil mi?" },
             { who: "you", hint: "İtirazın gücünü kabul et, sonra ya konumunu değiştir ya da neden değiştirmediğini açıkla.", expect: "güçlü bir itirazı kabul etmek ve konumunu revize etmek ya da savunmasını gerekçelendirmek", seconds: 50 },
@@ -1416,7 +1416,7 @@ I recommend adopting the work sample for these posts, on two conditions: that th
               { de: "settle a justified priority order", tr: "Gerekçeli bir öncelik sırası kurmak" },
             ],
             sample:
-              "I would defend paying for the marking time and reducing the panel size, on the criterion of what fails first: methods die from unfunded labour long before they die from bad design. Your objection to the audit is fair and I want to concede most of it; what I would defend is a very small audit aimed at one question, namely whether the recorded scores predicted anything, which is cheap and produces a number rather than a report. So: fund the marking first, because nothing else survives without it; cut the panels to three second, since it releases the same hours we have just spent; and run the narrow audit third, because it tells us in a year whether any of this was worth doing. I would drop the training this year and say plainly why, rather than fund a course and let the room undo it before lunch.",
+              "I would defend paying for the marking time and the audit of last year's appointments, on the criterion of what fails first: methods die from unfunded labour long before they die from bad design, and nobody notices either without evidence. Your objection to the audit is fair and I want to concede most of it; what I would defend is a very small audit aimed at one question, namely whether the recorded scores predicted anything, which is cheap and produces a number rather than a report. So: fund the marking first, because nothing else survives without it; cut the panels to three second, since it releases the same hours we have just spent; and run the narrow audit third, because it tells us in a year whether any of this was worth doing. I would drop the training this year and say plainly why, rather than fund a course and let the room undo it before lunch.",
             criteria: [
               "Ölçüt açıkça adlandırıldı mı?",
               "İtirazın gücü kabul edildi mi ve konum ya revize edildi ya da gerekçelendirildi mi?",

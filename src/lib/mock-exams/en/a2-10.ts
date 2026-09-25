@@ -211,7 +211,7 @@ We do not buy clothes.`,
               text: "Lenn has old books and does not want money for them.",
               answer: "e",
               explain:
-                "İlan parasız bir düzen kuruyor: «Leave a book, take a book. Free for everybody». Dükkân (m4 türü) ise satın alır, yani para öder.",
+                "İlan parasız bir düzen kuruyor: «Leave a book, take a book. Free for everybody». Giysi dükkânı (f) ise satın alır, yani para öder.",
             },
           ],
         },
@@ -451,9 +451,9 @@ I bought two chairs from a shop and I {{24}} not know where they are now.`,
       skill: "listening",
       minutes: 30,
       instruction:
-        "This part has four tasks. You hear conversations, some information and five short speakers. You hear every recording twice.",
+        "This part has four tasks. You hear conversations, some information and five short monologues. You hear every recording twice.",
       instructionTr:
-        "Bu bölümde dört görev var. Konuşmalar, bir bilgilendirme ve beş kısa konuşmacı dinleyeceksin. Her kaydı iki kez dinleyebilirsin.",
+        "Bu bölümde dört görev var. Konuşmalar, bir bilgilendirme ve beş kişinin kısa anlatımını dinleyeceksin. Her kaydı iki kez dinleyebilirsin.",
       tasks: [
         {
           id: "en-a2-10-h1",
@@ -527,7 +527,7 @@ I bought two chairs from a shop and I {{24}} not know where they are now.`,
               situation: "Bir alıcı buluşma için ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hello, this is about your table. I can come on Saturday, not on Friday. I bring a friend and a car. Is eleven o'clock all right?" },
+                { text: "Hello, this is about your table. I can come on Saturday, not on Friday. I will bring a friend and a car. Is eleven o'clock all right?" },
               ],
             },
           ],
@@ -1017,7 +1017,7 @@ Eren`,
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about buying and selling old things. Answer in full sentences.",
+          prompt: "I am going to ask you some questions about buying and selling old things. Answer in full sentences.",
           promptTr: "Sana eski eşya alıp satmak hakkında sorular soracağım. Tam cümlelerle cevap ver.",
           prepSeconds: 20,
           exchange: [

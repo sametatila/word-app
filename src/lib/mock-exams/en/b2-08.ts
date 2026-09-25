@@ -337,11 +337,11 @@ Reviews conclude that outcomes depend less on the number of hours than on whethe
               kind: "gap",
               id: "en-b2-08-l4-22",
               no: 22,
-              text: "The council has been sending somebody every two weeks since March.\nShe ______ every two weeks since March.",
+              text: "The council has been sending somebody to visit her every two weeks since March.\nShe ______ every two weeks since March.",
               cue: "VISITED",
               accept: ["has been visited"],
               explain:
-                "Mart'tan beri süren bir eylem edilgene çevriliyor ve `since` yakın geçmişin sürerliğini gerektiriyor: «has been visited». Yalın present perfect edilgeni (`has been visited` yerine `was visited`) süreyi taşımaz.",
+                "Mart'tan beri süren bir eylem edilgene çevriliyor ve `since` yakın geçmişin sürerliğini gerektiriyor: «has been visited». Yalın geçmiş zamanın edilgeni (`was visited`) süreyi taşımaz.",
             },
           ],
         },
@@ -623,7 +623,7 @@ The remedy is unglamorous, and it is not expensive. It is a first question, aske
       instruction:
         "This part has four tasks. You hear short extracts, a report, six speakers and an interview. You hear every recording twice.",
       instructionTr:
-        "Bu bölümde dört görev var. Kısa parçalar, bir sunum, altı konuşmacı ve bir söyleşi dinleyeceksin. Her kaydı iki kez dinleyebilirsin.",
+        "Bu bölümde dört görev var. Kısa parçalar, bir rapor, altı konuşmacı ve bir söyleşi dinleyeceksin. Her kaydı iki kez dinleyebilirsin.",
       tasks: [
         {
           id: "en-b2-08-h1",
@@ -1276,7 +1276,7 @@ The state should pay, provided the payment protects the carer's future income ra
           prompt:
             "A local newspaper has printed an article claiming that older people who live alone are lonely and need more visits. You disagree with part of it. Write a letter to the newspaper. Say what the article got right, what it got wrong and what you would like to see instead. Write 140 to 190 words.",
           promptTr:
-            "Yerel bir gazete, yalnız yaşayan yaşlıların yalnız olduğunu ve daha çok ziyarete ihtiyaç duyduğunu öne süren bir yazı yayımladı. Yazının bir bölümüne katılmıyorsun. Gazeteye bir mektup yaz. Yazının neyi doğru, neyi yanlış anladığını ve bunun yerine ne görmek istediğini söyle. 140–190 kelime.",
+            "Yerel bir gazete, yalnız yaşayan yaşlıların yalnızlık çektiğini ve daha çok ziyarete ihtiyaç duyduğunu öne süren bir yazı yayımladı. Yazının bir bölümüne katılmıyorsun. Gazeteye bir mektup yaz. Yazının neyi doğru, neyi yanlış anladığını ve bunun yerine ne görmek istediğini söyle. 140–190 kelime.",
           items: [],
           rubric: {
             minWords: 140,

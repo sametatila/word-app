@@ -507,7 +507,7 @@ Lenn`,
               options: ["A photo of her passport", "Money for the card", "Her passport"],
               answer: 2,
               explain:
-                "Görevli fotoğrafı kabul etmiyor: «We need the passport itself». Kart ücretsiz olduğu için para gerekmiyor.",
+                "Görevli fotoğrafı kabul etmiyor: «We need the passport itself». Paradan hiç söz edilmiyor.",
             },
             {
               kind: "mcq",
@@ -874,7 +874,7 @@ Lenn`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "This part has three tasks: you talk about learning, you ask and answer questions, and you act in a library.",
+      instruction: "This part has three tasks: you talk about learning, you ask and answer questions, and you do a role play in a library.",
       instructionTr: "Bu bölümde üç görev var: öğrenmeyi anlatma, soru sorup cevaplama ve kütüphanede rol yapma.",
       tasks: [
         {
@@ -896,7 +896,7 @@ Lenn`,
               { de: "one difficult thing", tr: "Zor olan bir şey" },
             ],
             sample:
-              "I learn English on Monday and Thursday. The course is at seven in the evening. My teacher is Ines and she is very good. I read a small book about a family in London. The course is twelve euros a month. The numbers are difficult for me.",
+              "I learn English on Monday and Thursday. The course is at seven in the evening. My teacher is Ines and she is very good. I am reading a small book about a family in London. The course is twelve euros a month. The numbers are difficult for me.",
             criteria: [
               "Altı sözcüğün her birine değinildi mi?",
               "Gün, saat ve fiyat söylenebiliyor mu?",
@@ -920,7 +920,7 @@ Lenn`,
             { who: "you", hint: "«library» sözcüğüyle bir soru kur.", expect: "library sözcüğüyle dilbilgisel olarak doğru bir soru kurmak", seconds: 25 },
             { who: "partner", de: "The library near me opens at ten. Your next word is: book.", tr: "Yakınımdaki kütüphane onda açılıyor. Sıradaki sözcüğün: kitap." },
             { who: "you", hint: "«book» için bir soru kur.", expect: "book sözcüğüyle bir soru kurmak", seconds: 25 },
-            { who: "partner", de: "I read a book about a small town in Italy. Now a question for you: what do you do in the evening?", tr: "İtalya'da küçük bir kasabayla ilgili bir kitap okuyorum. Şimdi sana bir soru: Akşamları ne yaparsın?" },
+            { who: "partner", de: "I am reading a book about a small town in Italy. Now a question for you: what do you do in the evening?", tr: "İtalya'da küçük bir kasabayla ilgili bir kitap okuyorum. Şimdi sana bir soru: Akşamları ne yaparsın?" },
             { who: "you", hint: "Bir etkinlik ve saat söyleyerek cevapla.", expect: "bir etkinliği ve saatini tam bir cümleyle söylemek", seconds: 25 },
             { who: "partner", de: "Thank you. Last question: how much is a language course where you live?", tr: "Teşekkürler. Son soru: Yaşadığın yerde bir dil kursu ne kadar?" },
             { who: "you", hint: "Bir fiyat söyle.", expect: "bir fiyatı İngilizce söylemek (para birimiyle)", seconds: 25 },
@@ -933,7 +933,7 @@ Lenn`,
               { de: "answers to my questions", tr: "Sorulara cevap vermek" },
             ],
             sample:
-              "Where is your library? — Near my house. What book do you read? — A book about Italy. What do you do in the evening? — I read at nine. Who is your teacher? — Her name is Ines. How much is a course? — Twelve euros a month.",
+              "Where is your library? — Near my house. What book are you reading? — A book about Italy. What do you do in the evening? — I read at nine. Who is your teacher? — Her name is Ines. How much is a course? — Twelve euros a month.",
             criteria: [
               "Beş sözcüğün her biri için bir soru kuruldu mu?",
               "Sorular doğru kuruldu mu? (Where is … / What … / How much …)",

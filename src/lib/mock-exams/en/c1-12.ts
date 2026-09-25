@@ -657,7 +657,7 @@ What follows from this is not that criteria are worthless. It is that a criterio
               kind: "match",
               id: "en-c1-12-l8-36",
               no: 36,
-              text: "Which text locates the unfairness before the list itself?",
+              text: "Which text says the unfairness the writer witnessed arose before their own part in the process?",
               answer: "a",
               explain:
                 "(a) yeri adlandırıyor: «The unfairness I watched was upstream of me», ve iki başvurucunun erişim farkını örnekliyor.",
@@ -1047,7 +1047,7 @@ The recommendation is to publish the {{14}} alongside the median.`,
               ],
               answer: 0,
               explain:
-                "Hale kendi beklentisini açıklıyor: «I began this review expecting to find one», ama dosyada aynı kurallarla farklı davranacağı biri yok.",
+                "Hale kendi beklentisini açıklıyor: «I began this review expecting to find one», ama dosyada, aynı kurallarla kendisinin yapmayacağı bir şey yapan kimse yok.",
             },
             {
               kind: "mcq",
@@ -1063,7 +1063,7 @@ The recommendation is to publish the {{14}} alongside the median.`,
               ],
               answer: 2,
               explain:
-                "Hale eksiği adlandırıyor: «What nobody modelled was who declines dates», cevap esnek olmayan işler ve çocuk bakımı.",
+                "Hale eksiği adlandırıyor: «What nobody modelled was who declines dates», cevap esnek olmayan işlerde çalışan ve çocuk bakımı desteği olmayan kişiler.",
             },
             {
               kind: "mcq",
@@ -1079,7 +1079,7 @@ The recommendation is to publish the {{14}} alongside the median.`,
               ],
               answer: 1,
               explain:
-                "Hale sonucu kuruyor: kabul edilmeyen her teklif aleyhe sayılırsa hizmetler kısa süreli tarih vermeyi bırakır, «You would remove a visible unfairness and create an invisible one».",
+                "Hale sonucu kuruyor: kabul edilmeyen her teklif aleyhe sayılırsa hizmetler kısa süre kala randevu vermeyi bırakır, «You would remove a visible unfairness and create an invisible one».",
             },
             {
               kind: "mcq",
@@ -1351,7 +1351,7 @@ The recommendation is to publish the {{14}} alongside the median.`,
               { de: "Choose one rule and argue for it.", tr: "Bir kuralı seçip savun." },
               { de: "Explain why each of the other two is weaker.", tr: "Öteki ikisinin neden daha zayıf olduğunu açıkla." },
               { de: "Concede at least one point to a rule you reject.", tr: "Reddettiğin bir kurala en az bir noktada hak ver." },
-              { de: "Reach a conclusion that follows from the argument.", tr: "Gövdeden çıkan bir sonuca var." },
+              { de: "Reach a conclusion that follows from the argument.", tr: "Savından doğal olarak çıkan bir sonuca var." },
             ],
             sample: `Every ordering rule distributes the same scarcity differently, and the useful question is therefore not which rule is fair but which unfairness we are prepared to see.
 
@@ -1379,7 +1379,7 @@ I would assess need, publish both the criteria and the route by which a decision
           prompt:
             "You sit on a committee whose report you have signed but partly disagree with. Write a note of dissent to be published with the report. State what you accept, set out precisely what you object to and why, and give one narrower recommendation of your own. Write 220 to 260 words.",
           promptTr:
-            "İmzaladığın ama bir bölümüne katılmadığın bir komisyon raporunun üyesisin. Raporla birlikte yayımlanacak bir karşı oy yazısı yaz. Neyi kabul ettiğini söyle, neye ve neden itiraz ettiğini kesin biçimde ortaya koy ve kendi daha dar önerini ver. 220–260 kelime.",
+            "Bir komisyonun üyesisin; raporunu imzaladın ama bir bölümüne katılmıyorsun. Raporla birlikte yayımlanacak bir karşı oy yazısı yaz. Neyi kabul ettiğini söyle, neye ve neden itiraz ettiğini kesin biçimde ortaya koy ve kendi daha dar önerini ver. 220–260 kelime.",
           items: [],
           rubric: {
             minWords: 220,
@@ -1394,7 +1394,7 @@ I have signed this report and I dissent from its second recommendation. I set ou
 
 I accept the evidence in chapters four and five in full. It is more thorough than the material available to the previous review, and it establishes that ordering by arrival produces outcomes that no member of this committee would defend if asked to choose them deliberately. I accept, too, that reordering is within our remit and that delay has a cost.
 
-My objection concerns a step the report treats as procedural. Reordering by assessed need requires assessors, and the report gives eleven pages to the criteria and a single paragraph to the people who will apply them. That paragraph promises training. It is silent on accountability, silent on what occurs when two assessors reach different conclusions, and silent on how an applicant contests a judgement made about their own case. Those omissions are not incidental to the reform; they are the machinery by which a criterion becomes a position in a queue, and an unexamined machinery will be filled by whoever already knows how such things work.
+My objection concerns a step the report treats as procedural. Reordering by assessed need requires assessors, and the report gives eleven pages to the criteria and a single paragraph to the people who will apply them. That paragraph promises training. It is silent on accountability, silent on what occurs when two assessors reach different conclusions, and silent on how an applicant contests a judgement made about their own case. Those omissions are not incidental to the reform; they are the machinery by which a criterion becomes a position in a queue, and unexamined machinery will be filled by whoever already knows how such things work.
 
 I recommend, more narrowly than the report, that we publish the assessment rules and the appeal route in language an applicant can act on, and report annually the number of referrals declined before the list is reached. Reordering should follow once there is something against which to check it.`,
             criteria: [
@@ -1458,7 +1458,7 @@ I recommend, more narrowly than the report, that we publish the assessment rules
           prompt:
             "Talk on your own for about two minutes. A service with more applicants than places can order them by arrival, by assessed need, or by lottery among comparable cases. Evaluate the three and say which you would choose, including what your choice costs and who pays it.",
           promptTr:
-            "Yaklaşık iki dakika tek başına konuş. Yerinden çok başvurusu olan bir hizmet, başvuranları varış sırasına, değerlendirilen ihtiyaca ya da benzer durumlar arasında kuraya göre sıralayabilir. Üçünü değerlendir ve hangisini seçeceğini, bedeliyle ve o bedeli kimin ödediğiyle birlikte söyle.",
+            "Yaklaşık iki dakika tek başına konuş. Kontenjanından fazla başvuru alan bir hizmet, başvuranları varış sırasına, değerlendirilen ihtiyaca ya da benzer durumlar arasında kuraya göre sıralayabilir. Üçünü değerlendir ve hangisini seçeceğini, bedeliyle ve o bedeli kimin ödediğiyle birlikte söyle.",
           prepSeconds: 60,
           speakSeconds: 120,
           items: [],
@@ -1493,7 +1493,7 @@ I recommend, more narrowly than the report, that we publish the assessment rules
             { who: "you", hint: "Sorumluluğu nereye koyduğunu açıkla.", expect: "sorumluluğu konumlandırmak ve gerekçelendirmek", seconds: 50 },
             { who: "partner", de: "But that risks letting everybody off. Where does responsibility actually sit?", tr: "Ama bu herkesi aklama riski taşıyor. Sorumluluk tam olarak nerede?" },
             { who: "you", hint: "İtirazı ciddiye al ve daha kesin ol.", expect: "bir itirazı ciddiye alıp daha kesin bir yanıt vermek", seconds: 50 },
-            { who: "partner", de: "And should a service publish the longest wait it has recorded, or only the median?", tr: "Bir hizmet kaydettiği en uzun süreyi mi yayımlamalı, yalnız ortancayı mı?" },
+            { who: "partner", de: "And should a service publish the longest wait it has recorded, or only the median?", tr: "Bir hizmet kaydettiği en uzun bekleme süresini mi yayımlamalı, yalnız ortancayı mı?" },
             { who: "you", hint: "Bir taraf seç ve sakıncasını da an.", expect: "bir tarafı seçmek ve sakıncasını anmak", seconds: 50 },
           ],
           items: [],

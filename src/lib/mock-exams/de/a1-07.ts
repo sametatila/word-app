@@ -168,7 +168,7 @@ Ihr Team vom Markt am Ring`,
               no: 7,
               text: "Sie brauchen am Sonntag Milch und Brot.",
               options: [
-                "Supermarkt Nord\ntäglich 7 bis 22 Uhr\ngroße Auswahl und eigene Bäckerei\nSonntag und Feiertag geschlossen",
+                "Supermarkt Nord\nMo–Sa 7 bis 22 Uhr\ngroße Auswahl und eigene Bäckerei\nSonntag und Feiertag geschlossen",
                 "Kiosk am Bahnhof\njeden Tag von 6 bis 23 Uhr\nMilch, Brot und Getränke\nauch sonntags offen",
               ],
               answer: 1,
@@ -179,14 +179,14 @@ Ihr Team vom Markt am Ring`,
               kind: "mcq",
               id: "de-a1-07-l2-8",
               no: 8,
-              text: "Sie haben eine Hose gekauft. Sie ist zu klein und Sie möchten Ihr Geld zurück.",
+              text: "Sie haben eine Hose gekauft. Sie ist zu klein und Sie möchten sie umtauschen.",
               options: [
                 "Kleiderladen Fina\nUmtausch in vierzehn Tagen\nmit Kassenzettel\nMo–Sa 10 bis 19 Uhr",
                 "Schneiderei am Markt\nwir ändern Ihre Kleidung\nHosen kürzen ab zwölf Euro\nin drei Tagen fertig, ohne Termin",
               ],
               answer: 0,
               explain:
-                "Pantolon geri verilecek. (a) `Umtausch in vierzehn Tagen` diyor. (b) aynı pantolonla ilgilenir ama onu değiştirmez, sadece dikişini düzeltir.",
+                "Pantolon değiştirilecek. (a) `Umtausch in vierzehn Tagen` diyor. (b) aynı pantolonla ilgilenir ama onu değiştirmez, sadece dikişini düzeltir.",
             },
             {
               kind: "mcq",
@@ -199,7 +199,7 @@ Ihr Team vom Markt am Ring`,
               ],
               answer: 1,
               explain:
-                "Saat 19 olduğu için tek ölçüt kapanış saati. (b) `täglich bis 21 Uhr` açık. (a) `18.30 Uhr`'de kapanmış oluyor, yarım saat geç kalınmış.",
+                "Saat 19.00 olduğu için tek ölçüt kapanış saati. (b) `täglich bis 21 Uhr` açık. (a) `18.30 Uhr`'de kapanmış oluyor, yarım saat geç kalınmış.",
             },
             {
               kind: "mcq",
@@ -628,7 +628,7 @@ Den Code finden Sie in Ihrer E-Mail.`,
               plays: 2,
               segments: [
                 {
-                  text: "Hallo Herr Mensah, hier ist der Schuhladen am Ring. Ihre Schuhe sind fertig. Die Reparatur kostet zwölf Euro. Wir haben bis Samstag Mittag offen.",
+                  text: "Hallo Herr Mensah, hier ist der Schuhladen am Ring. Ihre Schuhe sind fertig. Die Reparatur kostet zwölf Euro. Wir haben bis Samstagmittag offen.",
                 },
               ],
             },
@@ -870,13 +870,13 @@ Elif Yalçın`,
           prompt:
             "Thema: Einkaufen. Bilden Sie zu jedem Stichwort eine Frage und beantworten Sie sie: Markt — Preis — Tüte — Kasse — Öffnungszeiten.",
           promptTr:
-            "Konu: Alışveriş. Her anahtar sözcük için bir soru kur ve cevapla: market — fiyat — poşet — kasa — açılış saatleri.",
+            "Konu: Alışveriş. Her anahtar sözcük için bir soru kur ve cevapla: pazar — fiyat — poşet — kasa — açılış saatleri.",
           prepSeconds: 30,
           exchange: [
             {
               who: "partner",
               de: "Wir sprechen jetzt über das Thema Einkaufen. Ihr erstes Stichwort ist: Markt. Stellen Sie mir bitte eine Frage.",
-              tr: "Şimdi alışveriş konusunu konuşuyoruz. İlk sözcüğün: market. Bana bir soru sor.",
+              tr: "Şimdi alışveriş konusunu konuşuyoruz. İlk sözcüğün: pazar. Bana bir soru sor.",
             },
             { who: "you", hint: "«Markt» sözcüğüyle bir soru kur.", expect: "Markt sözcüğüyle dilbilgisel olarak doğru bir soru kurmak", seconds: 25 },
             {

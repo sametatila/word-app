@@ -18,7 +18,7 @@ export const EN_B1_11: MockPaper = {
   level: "B1",
   no: 11,
   theme: "Cooking for One and Eating Alone",
-  themeTr: "Tek kişilik yemek ve yalnız yemek yemek",
+  themeTr: "Tek kişilik yemek pişirmek ve yalnız yemek yemek",
   minutes: 155,
   parts: [
     /* ── READING ───────────────────────────────────────────────────────── */
@@ -1045,7 +1045,7 @@ The next class is on the {{19}}`,
               options: ["The price of the course", "What her students needed", "The number of places"],
               answer: 1,
               explain:
-                "Ines yanılgısını adlandırıyor: öğrencilerin beşte dördü zaten pişirebiliyormuş, «That was the first thing I got wrong».",
+                "Ines yanılgısını adlandırıyor: öğrencilerin beşte dördü zaten yemek yapabiliyormuş, «That was the first thing I got wrong».",
             },
             {
               kind: "mcq",
@@ -1139,7 +1139,7 @@ Almost everything is sold in packets for a family. I buy a bag of six peppers be
 
 My suggestion is narrow: a small loose box for peppers, onions and carrots, priced by weight rather than by the piece.
 
-If you did that, I would buy my vegetables here instead of on Saturday at the market.
+If you did that, I would buy my vegetables here instead of at the market on Saturdays.
 
 Yours faithfully,
 Marta Kral`,
@@ -1249,7 +1249,7 @@ They are wrong. The evening is an hour shorter and I eat properly.`,
               { de: "mention one disadvantage of your choice", tr: "Seçtiğin yolun bir olumsuz yanını da söyle" },
             ],
             sample:
-              "Cooking fresh every evening sounds better and it depends on a thing nobody counts, which is having a decision in you at seven o'clock after work. Cooking once at the weekend removes that decision entirely, and it also removes the shopping problem, because a recipe for six is exactly what the shop is selling. I would cook once at the weekend. The disadvantage is real and it is not about taste: by Thursday you are eating something you chose on Sunday, and the person who chose it was in a much better mood than the person eating it.",
+              "Cooking fresh every evening sounds better, but it depends on a thing nobody counts, which is having a decision in you at seven o'clock after work. Cooking once at the weekend removes that decision entirely, and it also removes the shopping problem, because a recipe for six is exactly what the shop is selling. I would cook once at the weekend. The disadvantage is real and it is not about taste: by Thursday you are eating something you chose on Sunday, and the person who chose it was in a much better mood than the person eating it.",
             criteria: [
               "İki yol da gerçekten karşılaştırıldı mı?",
               "Karşılaştırma yapıları kullanıldı mı? (it depends on, entirely, by Thursday)",
@@ -1304,7 +1304,7 @@ They are wrong. The evening is an hour shorter and I eat properly.`,
           promptTr: "Aynı konu üzerine biraz daha konuşuyoruz: dükkânlar daha küçük miktarlar satmalı mı.",
           prepSeconds: 15,
           exchange: [
-            { who: "partner", de: "Some people say shops should be required to sell food in single portions. Is that reasonable?", tr: "Kimileri dükkânların yiyecekleri tek porsiyon satmak zorunda bırakılmasını söylüyor. Bu makul mü?" },
+            { who: "partner", de: "Some people say shops should be required to sell food in single portions. Is that reasonable?", tr: "Kimileri dükkânların yiyecekleri tek porsiyon satmak zorunda bırakılması gerektiğini söylüyor. Bu makul mü?" },
             { who: "you", hint: "Görüşünü söyle ve bir örnek ver.", expect: "genel bir soruya görüş bildirmek ve örneklendirmek", seconds: 40 },
             { who: "partner", de: "Others say that small portions mean more packaging and a higher price, so the buyer pays twice. Would you agree?", tr: "Kimileri de küçük porsiyonun daha çok ambalaj ve daha yüksek fiyat demek olduğunu, yani alıcının iki kez ödediğini söylüyor. Katılır mısın?" },
             { who: "you", hint: "Kısmen katıl ya da karşı çık; iki yanı da anmaya çalış.", expect: "bir iddiaya kısmen katılmak ya da karşı çıkmak, iki yanı da anmak", seconds: 45 },
@@ -1317,7 +1317,7 @@ They are wrong. The evening is an hour shorter and I eat properly.`,
               { de: "agree or disagree in a nuanced way", tr: "Katılırken ya da karşı çıkarken ince ayrım yapmak" },
             ],
             sample:
-              "Requiring it sounds heavy to me, and there is a smaller version I would support: not charging more per kilo for loose vegetables, which is a decision a shop can take on a Tuesday. I partly agree about the packaging, because six small trays are worse than one bag and everybody knows it. But loose is not the same as packaged small, and the argument about packaging is usually made by people selling the bag.",
+              "Requiring it sounds heavy-handed to me, and there is a smaller version I would support: not charging more per kilo for loose vegetables, which is a decision a shop can take on a Tuesday. I partly agree about the packaging, because six small trays are worse than one bag and everybody knows it. But loose is not the same as packaged small, and the argument about packaging is usually made by people selling the bag.",
             criteria: [
               "Görüş açıkça bildirildi mi?",
               "Somut bir örnek verildi mi?",

@@ -33,9 +33,9 @@ export const C1_09: MockPaper = {
       skill: "reading",
       minutes: 70,
       instruction:
-        "Dieser Teil hat drei Aufgaben: eine Zusammenfassung ergänzen, einen Essay auswerten und einen Text strukturell schließen.",
+        "Dieser Teil hat drei Aufgaben: eine Zusammenfassung ergänzen, einen Essay auswerten und strukturelle Lücken in einem Text schließen.",
       instructionTr:
-        "Bu bölümde üç görev var: bir özeti tamamlamak, bir deneme metnini çözümlemek ve bir metni yapısal olarak kapatmak.",
+        "Bu bölümde üç görev var: bir özeti tamamlamak, bir deneme metnini çözümlemek ve bir metindeki yapısal boşlukları doldurmak.",
       tasks: [
         {
           id: "de-c1-09-l1",
@@ -684,7 +684,7 @@ Bewerbung für eine Werkstattfläche bis {{10}}.`,
                 },
                 {
                   speaker: "Herr Achterberg",
-                  text: "Die Zahl der Anfragen ist gestiegen, das schon. Nur habe ich niemanden, der sie annimmt. Ich hatte im letzten Jahr sechs Bewerbungen auf drei Ausbildungsplätze, und vier davon haben nach dem ersten Monat aufgehört. Der Bonus verschiebt die Nachfrage, er baut keine Werkstatt.",
+                  text: "Die Zahl der Anfragen ist gestiegen, das schon. Nur habe ich niemanden, der sie annimmt. Ich hatte im letzten Jahr sechs Bewerbungen auf drei Ausbildungsplätze, und zwei der drei haben nach dem ersten Monat aufgehört. Der Bonus verschiebt die Nachfrage, er baut keine Werkstatt.",
                 },
                 {
                   speaker: "Moderatorin",
@@ -778,7 +778,7 @@ Bewerbung für eine Werkstattfläche bis {{10}}.`,
               ],
               answer: 1,
               explain:
-                "Üç yere altı başvuru gelmiş, \"vier davon haben nach dem ersten Monat aufgehört\".",
+                "Üç yere altı başvuru gelmiş, \"zwei der drei haben nach dem ersten Monat aufgehört\".",
             },
             {
               kind: "mcq",
@@ -883,7 +883,7 @@ Bewerbung für eine Werkstattfläche bis {{10}}.`,
               ],
               answer: 1,
               explain:
-                "Konusal olarak katılıyor ama: \"Politisch ist sie fast unmöglich, weil die Wirkung in einer anderen Wahlperiode eintritt.\"",
+                "Özünde katılıyor ama: \"Politisch ist sie fast unmöglich, weil die Wirkung in einer anderen Wahlperiode eintritt.\"",
             },
             {
               kind: "mcq",
@@ -939,7 +939,7 @@ Bewerbung für eine Werkstattfläche bis {{10}}.`,
               options: [
                 "Er hat den Bonus zu früh verurteilt.",
                 "Seine Zahlen waren nicht belastbar.",
-                "Der eigene Betrieb hat mitgebaut.",
+                "Der eigene Betrieb hat das Problem mitverursacht.",
               ],
               answer: 2,
               explain:
@@ -958,7 +958,7 @@ Bewerbung für eine Werkstattfläche bis {{10}}.`,
               ],
               answer: 0,
               explain:
-                "Koşul açık: \"Wer ausbildet, bekommt den Zuschuss; wer nicht, bekommt ihn nicht\" — böylece kayıp etkisi büyük ölçüde düşüyor.",
+                "Koşul açık: \"Wer ausbildet, bekommt den Zuschuss; wer nicht, bekommt ihn nicht\" — böylece zaten yapılacak onarımlara para gitmesi büyük ölçüde ortadan kalkıyor.",
             },
             {
               kind: "mcq",
@@ -1005,7 +1005,7 @@ Bewerbung für eine Werkstattfläche bis {{10}}.`,
               { de: "Einen Einwand gegen die eigene Position nennen.", tr: "Kendi konumuna itiraz getir." },
               { de: "Eine begründete Schlussfolgerung ziehen.", tr: "Gerekçeli bir sonuca bağla." },
             ],
-            sample: `Die These hat einen richtigen Kern und zieht daraus die falsche Folgerung. Richtig ist, dass die Reparatur nicht mit den Herstellungskosten konkurriert, sondern mit dem Ladenpreis eines Neugeräts. Solange dieser Preis niedrig bleibt, rechnet sich keine Arbeitsstunde. Falsch ist der Schluss, ein höherer Preis genüge. Er setzt voraus, dass die Werkstatt, in die der verteuerte Kunde ausweichen soll, überhaupt existiert.
+            sample: `Die These hat einen richtigen Kern und zieht daraus die falsche Folgerung. Richtig ist, dass die Reparatur nicht mit den Herstellungskosten konkurriert, sondern mit dem Ladenpreis eines Neugeräts. Solange dieser Preis niedrig bleibt, rechnet sich keine Arbeitsstunde. Falsch ist der Schluss, ein höherer Preis genüge. Er setzt voraus, dass die Werkstatt, in die der Kunde angesichts höherer Preise ausweichen soll, überhaupt existiert.
 
 Prüfen lässt sich das an der Ersatzteilpflicht. Sieben Jahre Vorhaltung sind vorgeschrieben und werden eingehalten; die Bestellung dauert gleichwohl vier Wochen, und die Steuerplatine kostet mehr als die Hälfte des Geräts. Die Pflicht ist erfüllt, die Wirkung bleibt aus. Eine Verteuerung des Neugeräts hätte hier nichts geändert — sie hätte den Kunden lediglich vier Wochen länger warten lassen.
 
@@ -1256,8 +1256,8 @@ Jens {{10}}`,
             minutes: 7,
             points: [
               { de: "eine Position begründen", tr: "Bir konumu gerekçelendirmek" },
-              { de: "auf Einwände eingehen", tr: "İtirazlara girmek" },
-              { de: "einen Kompromiss formulieren", tr: "Bir uzlaşı biçimlendirmek" },
+              { de: "auf Einwände eingehen", tr: "İtirazları ele almak" },
+              { de: "einen Kompromiss formulieren", tr: "Bir uzlaşı formüle etmek" },
               { de: "Ergebnis und offene Punkte zusammenfassen", tr: "Sonucu ve açık noktaları özetlemek" },
             ],
             sample:

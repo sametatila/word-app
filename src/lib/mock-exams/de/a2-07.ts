@@ -34,7 +34,7 @@ export const A2_07: MockPaper = {
       instruction:
         "Dieser Teil hat vier Aufgaben. Sie lesen kurze Nachrichten, zwei längere Texte und Anzeigen. Wählen Sie jeweils die richtige Lösung.",
       instructionTr:
-        "Bu bölümde dört görev var. Kısa iletiler, iki uzun metin ve ilanlar okuyacaksın. Her seferinde doğru cevabı işaretle.",
+        "Bu bölümde dört görev var. Kısa iletiler, iki uzun metin ve ilanlar okuyacaksın. Her madde için doğru cevabı seç.",
       tasks: [
         {
           id: "de-a2-07-l1",
@@ -620,7 +620,7 @@ Ich empfehle den Versuch. Ganz ohne Handy zu leben, das geht bei mir aber nicht.
               options: ["Er schreibt die E-Mail neu.", "Er ruft Frau Doria später an.", "Er sucht die Nachricht."],
               answer: 2,
               explain:
-                "\"Dann schauen wir gleich nach\" — hemen arayacağını söylüyor ve nedenini de veriyor: mesaj yanlış klasöre düşmüş olabilir.",
+                "\"Dann schauen wir gleich nach\" — hemen bakacaklarını söylüyor ve nedenini de veriyor: mesaj yanlış klasöre düşmüş olabilir.",
             },
           ],
         },
@@ -1103,7 +1103,7 @@ Ismail Ayaz`,
           prompt:
             "Erzählen Sie: Wie halten Sie Kontakt zu Ihrer Familie und zu Ihren Freunden, und was hat sich in den letzten Jahren geändert? Sprechen Sie etwa zwei Minuten.",
           promptTr:
-            "Anlat: Ailenle ve arkadaşlarınla nasıl bağını koruyorsun, son yıllarda ne değişti? Yaklaşık iki dakika konuş.",
+            "Anlat: Ailenle ve arkadaşlarınla nasıl iletişimde kalıyorsun, son yıllarda ne değişti? Yaklaşık iki dakika konuş.",
           prepSeconds: 45,
           speakSeconds: 120,
           items: [],
@@ -1133,7 +1133,7 @@ Ismail Ayaz`,
           prompt:
             "Planen Sie gemeinsam etwas. Ihr Kurs möchte eine gemeinsame Gruppe im Netz gründen. Sprechen Sie über: Wer richtet die Gruppe ein? — Welche Regeln? — Wann darf man schreiben? — Was tun, wenn jemand kein Handy hat?",
           promptTr:
-            "Birlikte plan yap. Kursunuz ortak bir grup kurmak istiyor. Şunları konuş: Grubu kim kuracak? — Hangi kurallar? — Ne zaman yazılabilir? — Telefonu olmayan biri varsa ne yapılacak?",
+            "Birlikte plan yap. Kursunuz internette ortak bir grup kurmak istiyor. Şunları konuş: Grubu kim kuracak? — Hangi kurallar? — Ne zaman yazılabilir? — Telefonu olmayan biri varsa ne yapılacak?",
           prepSeconds: 45,
           exchange: [
             {
@@ -1145,7 +1145,7 @@ Ismail Ayaz`,
             {
               who: "partner",
               de: "Gut. Und welche Regeln brauchen wir? Bei mir im letzten Kurs war es sehr unruhig.",
-              tr: "Peki. Hangi kurallar gerekli? Geçen kursumda çok gürültülüydü.",
+              tr: "Peki. Hangi kurallar gerekli? Geçen kursumda grup çok karışıktı.",
             },
             { who: "you", hint: "Somut bir kural öner ve nedenini söyle.", expect: "somut bir kural önermek ve gerekçelendirmek", seconds: 35 },
             {

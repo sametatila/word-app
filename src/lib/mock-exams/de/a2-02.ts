@@ -364,7 +364,7 @@ Selin`,
               text: "Frau Bauer möchte mit ihrem Hund Urlaub am Meer machen.",
               answer: "f",
               explain:
-                "(f) hem denize 300 metre hem de \"Hunde sind herzlich willkommen\". (g) de göl kenarında ama \"Haustiere sind leider nicht erlaubt\" — tek ölçütte düşüyor.",
+                "(f) hem denize 300 metre hem de \"Hunde sind herzlich willkommen\". (g) ise deniz değil göl kenarında, üstelik \"Haustiere sind leider nicht erlaubt\" — iki ölçütte birden düşüyor.",
             },
             {
               kind: "match",
@@ -382,7 +382,7 @@ Selin`,
               text: "Herr Ludwig (72) möchte eine Reise mit Programm, weil er nicht selbst planen will.",
               answer: "b",
               explain:
-                "(b) rehberli: \"Unsere Reiseleitung plant den ganzen Tag für Sie\", üstelik evden alınıyor. (e) de organize ama 14–18 yaş için.",
+                "(b) rehberli: \"Unsere Reiseleitung plant den ganzen Tag für Sie\", üstelik kişi kendi şehrinden alınıyor. (e) de organize ama 14–18 yaş için.",
             },
             {
               kind: "match",
@@ -921,7 +921,7 @@ Emre`,
             points: [
               { de: "Nennen Sie die Bestellung und das Problem.", tr: "Siparişi ve sorunu söyle." },
               { de: "Sagen Sie, was Sie möchten.", tr: "Ne istediğini söyle." },
-              { de: "Fragen Sie nach dem weiteren Weg.", tr: "Bundan sonra ne yapman gerektiğini sor." },
+              { de: "Fragen Sie, wie es jetzt weitergeht.", tr: "Bundan sonra ne yapman gerektiğini sor." },
             ],
             sample: `Sehr geehrte Damen und Herren,
 
@@ -976,7 +976,7 @@ Ayla Demir`,
               { de: "eigene Antwort mit einer Begründung", tr: "Kendi cevabın ve kısa bir gerekçe" },
             ],
             sample:
-              "Wie oft gehst du in den Supermarkt? — Zweimal in der Woche, meistens am Abend. Findest du die Preise hoch? — Ja, Obst ist bei uns sehr teuer geworden. Wo kaufst du Kleidung? — Meistens auf dem Flohmarkt, weil das billiger ist. Bestellst du online? — Nur Bücher, sonst nicht. Hast du ein Lieblingsgeschäft? — Ja, den kleinen Laden an der Ecke.",
+              "Wie oft gehst du in den Supermarkt? — Zweimal in der Woche, meistens am Abend. Findest du die Preise hoch? — Ja, Obst ist bei uns sehr teuer geworden. Wo kaufst du Kleidung? — Meistens auf dem Flohmarkt, weil das billiger ist. Bestellst du online? — Nur Bücher, denn Kleidung probiere ich lieber an. Hast du ein Lieblingsgeschäft? — Ja, den kleinen Laden an der Ecke.",
             criteria: [
               "Beş sözcüğün her biri için bir soru soruldu mu?",
               "En az iki cevapta `weil` ya da `denn` ile gerekçe var mı?",
@@ -1020,11 +1020,11 @@ Ayla Demir`,
           prompt:
             "Planen Sie gemeinsam etwas. Eine Kollegin geht in Rente und Sie möchten ein Geschenk kaufen. Sprechen Sie über: Was kaufen? — Wie viel Geld? — Wer kauft? — Wann übergeben?",
           promptTr:
-            "Birlikte plan yap. Bir iş arkadaşınız emekli oluyor, ona hediye alacaksınız. Şunları konuşun: Ne alınacak? — Ne kadar para? — Kim alacak? — Ne zaman verilecek?",
+            "Birlikte plan yap. Bir iş arkadaşınız emekli oluyor, ona hediye alacaksınız. Şunları konuş: Ne alınacak? — Ne kadar para? — Kim alacak? — Ne zaman verilecek?",
           prepSeconds: 45,
           exchange: [
             { who: "partner", de: "Eine Kollegin geht in Rente und wir möchten ihr etwas schenken. Was schlagen Sie vor?", tr: "Bir iş arkadaşımız emekli oluyor, ona bir hediye alalım. Ne önerirsin?" },
-            { who: "you", hint: "Bir hediye öner ve gerekçelendir.", expect: "öneride bulunmak ve gerekçelendirmek", seconds: 30 },
+            { who: "you", hint: "Hediye olarak çiçek öner ve gerekçelendir.", expect: "öneride bulunmak ve gerekçelendirmek", seconds: 30 },
             { who: "partner", de: "Blumen sind schön, aber sie halten nicht lange. Wie wäre es mit einem Gutschein? Und wie viel geben wir aus?", tr: "Çiçek güzel ama uzun ömürlü değil. Hediye çeki nasıl olur? Peki ne kadar harcayalım?" },
             { who: "you", hint: "Öneriye karşılık ver ve bir tutar söyle.", expect: "bir öneriyi kabul ya da reddetmek ve tutar önermek", seconds: 35 },
             { who: "partner", de: "Einverstanden. Wer kauft den Gutschein, und wann geben wir ihn ihr?", tr: "Anlaştık. Çeki kim alacak ve ne zaman vereceğiz?" },

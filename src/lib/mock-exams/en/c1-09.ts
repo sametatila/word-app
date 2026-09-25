@@ -329,7 +329,7 @@ Reviews conclude that an apology unaccompanied by {{18}} is received very differ
               no: 21,
               text: "Although the apology was welcome, no money followed it.\nWelcome ______ , no money followed it.",
               cue: "THOUGH",
-              accept: ["though the apology was"],
+              accept: ["though the apology was", "though it was"],
               explain:
                 "Sıfat öne alınmış bir ödün yapısı kuruluyor: `Adjective + though + özne + fiil`. `although` bu devrik biçimde kullanılmaz.",
             },
@@ -511,7 +511,7 @@ The uncomfortable implication is that the instrument works best where it is wort
               text: "Which writer says the pressure comes from a different source than is assumed?",
               answer: "d",
               explain:
-                "Writer D varsayımı adlandırıp çürütüyor: «It is assumed that the demand comes from the families», oysa dört olayda talep kurumun kendi ikinci kuşak personelinden gelmiş.",
+                "Writer D varsayımı adlandırıp çürütüyor: «It is assumed that the demand comes from the families», oysa dört olayda da talep kurumun içinden, çoğunlukla ikinci kuşak personelden gelmiş.",
             },
           ],
         },
@@ -1328,7 +1328,7 @@ The most common word in the interviews was {{14}}.`,
           prompt:
             "You have attended a seminar on official apologies. Write an essay for your tutor summarising which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. An apology is worth little unless it is accompanied by compensation.\n2. An apology is valuable in itself, because it fixes the official account of what happened.\n\nWrite 220 to 260 words.",
           promptTr:
-            "Resmî özürler üzerine bir seminere katıldın. Danışmanın için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Tazminat eşlik etmedikçe özürün değeri azdır.\n2. Özür kendi başına değerlidir, çünkü olayın resmî anlatısını sabitler.\n\n220–260 kelime yaz.",
+            "Resmî özürler üzerine bir seminere katıldın. Danışmanın için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Tazminat eşlik etmedikçe özrün değeri azdır.\n2. Özür kendi başına değerlidir, çünkü olayın resmî anlatısını sabitler.\n\n220–260 kelime yaz.",
           items: [],
           rubric: {
             minWords: 220,
@@ -1350,7 +1350,7 @@ My own view is that the argument has been conducted about the wrong variable. Th
               "İki nokta da adil ve tam özetlendi mi?",
               "Seçim gerekçelendirildi mi ve gerekçe özetten çıkıyor mu?",
               "Kendi görüş özetin tekrarı değil, ayrı bir sav mı?",
-              "Adlaştırma ve çekimserlik belirteçleri kullanıldı mı? (on this reading, arguably, the incentive)",
+              "Adlaştırma ve çekimserlik belirteçleri kullanıldı mı? (on this reading, the incentive)",
               "220–260 kelime aralığında mı?",
             ],
           },

@@ -704,7 +704,7 @@ Der Verlust eines Geräts ist unverzüglich zu melden. Bei grober Fahrlässigkei
               id: "g4",
               genre: "Gespräch beim Kundenservice",
               genreTr: "Müşteri hizmetlerinde konuşma",
-              situation: "Bir abone aboneliğini durdurmak istiyor.",
+              situation: "Bir abone aboneliğini iptal etmek istiyor.",
               plays: 1,
               segments: [
                 { speaker: "Kundin", text: "Ich möchte mein Abo kündigen, zum Ende des Monats." },
@@ -802,7 +802,7 @@ Der Verlust eines Geräts ist unverzüglich zu melden. Bei grober Fahrlässigkei
               ],
               answer: 0,
               explain:
-                "\"will nicht, dass das aussieht wie Faulheit\" — korkusu görünürlük ve algı. Mesajın ulaşmadığını sanmıyor, sesin kesilmesinden rahatsız.",
+                "\"will nicht, dass das aussieht wie Faulheit\" — korkusu görünürlük ve algı. Asıl kaygısı mesajların ulaşıp ulaşmaması değil, geç çalışmasının nasıl görüneceği.",
             },
             {
               kind: "bool",

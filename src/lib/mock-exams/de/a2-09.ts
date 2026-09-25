@@ -34,7 +34,7 @@ export const A2_09: MockPaper = {
       instruction:
         "Dieser Teil hat vier Aufgaben. Sie lesen kurze Nachrichten, zwei längere Texte und Anzeigen. Wählen Sie jeweils die richtige Lösung.",
       instructionTr:
-        "Bu bölümde dört görev var. Kısa iletiler, iki uzun metin ve ilanlar okuyacaksın. Her seferinde doğru cevabı işaretle.",
+        "Bu bölümde dört görev var. Kısa iletiler, iki uzun metin ve ilanlar okuyacaksın. Her madde için doğru cevabı seç.",
       tasks: [
         {
           id: "de-a2-09-l1",
@@ -569,7 +569,7 @@ Im Juni habe ich noch einmal Ja gesagt. Diesmal weiß ich, worauf ich mich einla
               kind: "audio",
               id: "a4",
               genre: "Gespräch in der Betreuung",
-              genreTr: "Bakım biriminde konuşma",
+              genreTr: "Okul sonrası bakımda konuşma",
               situation: "Bir anne çocuğunu erken alacağını söylüyor.",
               plays: 2,
               segments: [
@@ -811,7 +811,7 @@ Im Juni habe ich noch einmal Ja gesagt. Diesmal weiß ich, worauf ich mich einla
               kind: "audio",
               id: "m5",
               genre: "Durchsage in der Betreuung",
-              genreTr: "Bakım biriminde anons",
+              genreTr: "Okul sonrası bakımda anons",
               situation: "Yağmur yüzünden plan değişti.",
               plays: 2,
               segments: [
@@ -1116,7 +1116,7 @@ Sara Brink`,
               { de: "eigene Antworten geben", tr: "Kendi cevabını vermek" },
             ],
             sample:
-              "Wie lang ist euer Schulweg? — Fünfzehn Minuten. Wie lange dauern die Hausaufgaben? — Eine Stunde. Hilfst du dabei? — Ja, weil mein Sohn erst in der zweiten Klasse ist. Wann ist der nächste Ausflug? — Im Mai. Was macht ihr in den Ferien? — Wir fahren zu meiner Mutter.",
+              "Wie lang ist euer Schulweg? — Fünfzehn Minuten. Wie lange dauern die Hausaufgaben? — Eine Stunde. Hilfst du dabei? — Ja, weil mein Sohn erst in der zweiten Klasse ist. Magst du die Lehrerin? — Ja, sie ist sehr geduldig. Wann ist der nächste Ausflug? — Im Mai. Was macht ihr in den Ferien? — Wir fahren zu meiner Mutter.",
             criteria: [
               "Beş sözcüğün her biri için bir soru kuruldu mu?",
               "Sorular doğru kuruldu mu ve cevaplar soruya uyuyor mu?",
@@ -1168,7 +1168,7 @@ Sara Brink`,
           exchange: [
             {
               who: "partner",
-              de: "Wir planen zusammen den Ausflug. Zuerst das Ziel: Der Zoo ist teuer, das Museum ist frei. Was schlagen Sie vor?",
+              de: "Wir planen zusammen den Ausflug. Zuerst das Ziel: Der Zoo ist teuer, im Museum ist der Eintritt frei. Was schlagen Sie vor?",
               tr: "Geziyi birlikte planlıyoruz. Önce yer: Hayvanat bahçesi pahalı, müze ücretsiz. Ne önerirsin?",
             },
             { who: "you", hint: "Bir yer öner ve fiyat itirazını hesaba kat.", expect: "somut bir yer önermek ve maliyet itirazını dikkate almak", seconds: 30 },

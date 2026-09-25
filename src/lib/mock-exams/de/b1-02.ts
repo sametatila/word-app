@@ -1062,7 +1062,7 @@ Der Verlust eines Schlüssels ist umgehend zu melden. Die Kosten für eine neue 
                 },
                 {
                   speaker: "Frau Kessler",
-                  text: "Ich fange mit einer Zahl an: Zwei Drittel der Fläche in unserer Innenstadt gehören dem Verkehr. Das ist keine Naturgesetzlichkeit, das war eine Entscheidung.",
+                  text: "Ich fange mit einer Zahl an: Zwei Drittel der Fläche in unserer Innenstadt gehören dem Verkehr. Das ist kein Naturgesetz, das war eine Entscheidung.",
                 },
                 {
                   speaker: "Herr Brunner",

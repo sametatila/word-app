@@ -20,7 +20,7 @@ export const EN_B2_09: MockPaper = {
   level: "B2",
   no: 9,
   theme: "Insurance, Small Print and What You Are Buying",
-  themeTr: "Sigorta, küçük punto ve gerçekte satın alınan şey",
+  themeTr: "Sigorta, küçük puntolu şartlar ve gerçekte satın alınan şey",
   minutes: 195,
   parts: [
     /* ── READING ───────────────────────────────────────────────────────── */
@@ -318,7 +318,7 @@ Reviews of the field conclude that the number of {{18}} claims is a better guide
               cue: "IMPOSSIBLE",
               accept: ["is impossible for"],
               explain:
-                "Yetersizlik bildiren `cannot possibly`, sıfatla kurulan bir yapıya çevriliyor: `is impossible for + kişi + to + fiil`. Kişi `for` ile bağlanır.",
+                "İmkânsızlık bildiren `cannot possibly`, sıfatla kurulan bir yapıya çevriliyor: `is impossible for + kişi + to + fiil`. Kişi `for` ile bağlanır.",
             },
             {
               kind: "gap",
@@ -326,7 +326,7 @@ Reviews of the field conclude that the number of {{18}} claims is a better guide
               no: 21,
               text: "The company refused the claim because the form arrived late.\nHad the form arrived on time, the company ______ the claim.",
               cue: "WOULD",
-              accept: ["would not have refused"],
+              accept: ["would not have refused", "wouldn't have refused"],
               explain:
                 "Devrik `Had + özne + üçüncü hâl` gerçekleşmemiş bir geçmiş kuruyor ve ana cümle `would have + üçüncü hâl` ister; sonuç olumsuz olduğu için araya `not` girer.",
             },
@@ -620,7 +620,7 @@ That is a larger intervention, and it is resisted for a reason that is rarely st
       instruction:
         "This part has four tasks. You hear short extracts, a report, six speakers and an interview. You hear every recording twice.",
       instructionTr:
-        "Bu bölümde dört görev var. Kısa parçalar, bir sunum, altı konuşmacı ve bir söyleşi dinleyeceksin. Her kaydı iki kez dinleyebilirsin.",
+        "Bu bölümde dört görev var. Kısa parçalar, bir rapor, altı konuşmacı ve bir söyleşi dinleyeceksin. Her kaydı iki kez dinleyebilirsin.",
       tasks: [
         {
           id: "en-b2-09-h1",
@@ -1204,7 +1204,7 @@ The reviewers think those customers knew what to {{16}} about.`,
               options: ["They know it without saying it", "They disagree with him openly", "They have never considered the question"],
               answer: 0,
               explain:
-                "Halvard bilgi biçimini tarif ediyor: «they know it in the way you know something you have never had to say out loud», ve netlik ile kesinlik toplantılarını ayırıyor.",
+                "Halvard bilgi biçimini tarif ediyor: «The people I work with know it in the way you know something you have never had to say out loud», ve netlik ile kesinlik toplantılarını ayırıyor.",
             },
             {
               kind: "mcq",
@@ -1328,7 +1328,7 @@ Selma Aro`,
           exchange: [
             { who: "partner", de: "Good afternoon. When did you last sign something without reading all of it?", tr: "İyi günler. En son ne zaman bir şeyi tamamını okumadan imzaladın?" },
             { who: "you", hint: "Somut bir örnek ver ve neden okumadığını açıkla.", expect: "somut bir örnekten genel bir gerekçeye geçmek", seconds: 45 },
-            { who: "partner", de: "Thank you. Has a company ever refused you something and been technically right?", tr: "Teşekkürler. Bir şirket sana bir şeyi teknik olarak haklıyken reddetti mi hiç?" },
+            { who: "partner", de: "Thank you. Has a company ever refused you something and been technically right?", tr: "Teşekkürler. Bir şirketin bir isteğini reddettiği ve kâğıt üzerinde haklı olduğu oldu mu hiç?" },
             { who: "you", hint: "Tek bir olayı sonucuyla anlat.", expect: "geçmişte olmuş tek bir olayı sonucuyla anlatmak", seconds: 45 },
             { who: "partner", de: "And if you had to design one rule for consumer contracts, what would it be?", tr: "Tüketici sözleşmeleri için tek bir kural tasarlasan bu ne olurdu?" },
             { who: "you", hint: "Koşul kipiyle bir kural öner ve gerekçelendir.", expect: "ikinci tip koşulla bir kural önermek ve gerekçelendirmek", seconds: 45 },
@@ -1386,9 +1386,9 @@ Selma Aro`,
           format: "speaking",
           goal: "interaction",
           prompt:
-            "A consumer group can campaign for one change to insurance next year. Talk with me about these ideas, then decide which two we would recommend and which one we would reject.",
+            "A consumer group can campaign for two changes to insurance next year. Talk with me about these ideas, then decide which two we would recommend and which one we would reject.",
           promptTr:
-            "Bir tüketici örgütü gelecek yıl sigortayla ilgili tek bir değişiklik için kampanya yapabiliyor. Bu fikirleri benimle konuş, sonra hangi ikisini önereceğimize ve hangisini reddedeceğimize karar ver.",
+            "Bir tüketici örgütü gelecek yıl sigortayla ilgili iki değişiklik için kampanya yapabiliyor. Bu fikirleri benimle konuş, sonra hangi ikisini önereceğimize ve hangisini reddedeceğimize karar ver.",
           prepSeconds: 30,
           exchange: [
             { who: "partner", de: "The ideas are: a standard two-page summary, publishing refusal rates by clause, banning vague terms such as reasonable care, and a free adviser for anybody whose claim is refused. Which of these would actually change a decision?", tr: "Fikirler: standart iki sayfalık özet, ret oranlarının madde madde yayımlanması, `reasonable care` gibi belirsiz terimlerin yasaklanması ve talebi reddedilen herkes için ücretsiz danışman. Bunlardan hangisi gerçekten bir kararı değiştirir?" },

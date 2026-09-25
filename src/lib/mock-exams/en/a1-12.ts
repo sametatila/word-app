@@ -656,7 +656,7 @@ Eyup`,
               plays: 2,
               segments: [
                 { text: "How was the computer course?" },
-                { text: "Two hours, and I understood the first ten minutes." },
+                { text: "Two hours, and I only understood the first ten minutes." },
                 { text: "Really?" },
                 { text: "I go again on Thursday. It is better the second time." },
               ],
@@ -850,7 +850,7 @@ The canteen is open from twelve to two.
 
 The soup and the bread are free for us. Hot food is four euros.
 
-Bring your card! You cannot pay with money.
+Bring your card! You cannot pay with cash.
 
 See you at twelve,
 Eyup`,
@@ -870,7 +870,7 @@ Eyup`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "This part has three tasks: you talk about work, you ask and answer questions, and you act at an office desk.",
+      instruction: "This part has three tasks: you talk about work, you ask and answer questions, and you do a role play at a reception desk.",
       instructionTr: "Bu bölümde üç görev var: işi anlatma, soru sorup cevaplama ve ofis danışmasında rol yapma.",
       tasks: [
         {
@@ -912,7 +912,7 @@ Eyup`,
             "Konu: iş ve ofis. Her sözcük için bir soru kur ve benim sorularımı cevapla: ofis — iş arkadaşı — mola — bilgisayar — para.",
           prepSeconds: 30,
           exchange: [
-            { who: "partner", de: "Now we talk about work. Your first word is: office. Please ask me a question.", tr: "Şimdi işi konuşuyoruz. İlk sözcüğün: ofis. Bana bir soru sor." },
+            { who: "partner", de: "Now let's talk about work. Your first word is: office. Please ask me a question.", tr: "Şimdi işi konuşuyoruz. İlk sözcüğün: ofis. Bana bir soru sor." },
             { who: "you", hint: "«office» sözcüğüyle bir soru kur.", expect: "office sözcüğüyle dilbilgisel olarak doğru bir soru kurmak", seconds: 25 },
             { who: "partner", de: "My office is on the second floor. Your next word is: colleague.", tr: "Ofisim ikinci katta. Sıradaki sözcüğün: iş arkadaşı." },
             { who: "you", hint: "«colleague» için bir soru kur.", expect: "colleague sözcüğüyle bir soru kurmak", seconds: 25 },
@@ -931,7 +931,7 @@ Eyup`,
             sample:
               "Where is your office? — On the second floor. How many colleagues have you got? — Four. When do you have a break? — At twelve, for half an hour. Do you work on a computer? — Yes, all day. How much is lunch? — Four euros in the canteen.",
             criteria: [
-              "Beş sözcüğün her biri için bir soru kuruldu mu?",
+              "«office» ve «colleague» için birer soru kuruldu mu?",
               "Sorular doğru kuruldu mu? (Where is … / How many … / How much …)",
               "Cevaplar soruya uygun mu?",
               "Sayı ve saat söylenebiliyor mu?",
@@ -944,7 +944,7 @@ Eyup`,
           format: "speaking",
           goal: "interaction",
           prompt:
-            "It is your first day and you are at the office desk. Situations: you say who you are. — You ask where a room is. — You ask about the break.",
+            "It is your first day and you are at reception. Situations: you say who you are. — You ask where a room is. — You ask about the break.",
           promptTr:
             "İlk günün ve ofis danışmasındasın. Durumlar: Kim olduğunu söyle. — Bir odanın nerede olduğunu sor. — Molayı sor.",
           prepSeconds: 20,

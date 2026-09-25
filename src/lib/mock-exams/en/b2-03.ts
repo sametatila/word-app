@@ -312,7 +312,7 @@ The most likely future is therefore a mixed one, with different markets making d
               no: 20,
               text: "They will not finish the harvest unless the rain stops.\nThe harvest ______ unless the rain stops.",
               cue: "COMPLETED",
-              accept: ["will not be completed"],
+              accept: ["will not be completed", "won't be completed"],
               explain:
                 "Etken gelecek zaman, edilgene çevriliyor: «The harvest will not be completed». Anahtar sözcük `completed` üçüncü hâl olduğu için `be` zorunlu; `will not complete` özneyi eyleyen yapar ve anlamı bozar.",
             },
@@ -1379,7 +1379,7 @@ For anybody who cooks from what they find, however, it is the best two hours of 
               { de: "reach a joint decision with reasons", tr: "Gerekçeli ortak bir karara varmak" },
             ],
             sample:
-              "The cooking term looks weakest on paper and is probably the strongest, because it changes what a child can do rather than what is on the counter. You are right that fifty kilometres measures the wrong thing, so I would replace the distance rule with a rule about how the food is grown rather than drop the idea. Banning everything sweet seems worse than the disease: children simply buy it outside the gate, and the school loses the income without changing the diet. So I would recommend the cooking term and the published prices, and reject the ban.",
+              "The cooking term looks weakest on paper and is probably the strongest, because it changes what a child can do rather than what is on the counter. You are right that fifty kilometres measures the wrong thing, so I would replace the distance rule with a rule about how the food is grown rather than drop the idea. Banning everything sweet seems like a cure worse than the disease: children simply buy it outside the gate, and the school loses the income without changing the diet. So I would recommend the cooking term and the published prices, and reject the ban.",
             criteria: [
               "Seçenekler birbirine karşı mı değerlendirildi?",
               "İtiraza doğrudan karşılık verildi mi ve kısmi kabul yapılabildi mi?",

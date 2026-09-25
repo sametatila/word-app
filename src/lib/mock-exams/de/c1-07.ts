@@ -38,9 +38,9 @@ export const C1_07: MockPaper = {
       skill: "reading",
       minutes: 70,
       instruction:
-        "Dieser Teil hat drei Aufgaben: eine Zusammenfassung ergänzen, einen Essay auswerten und einen Text strukturell schließen.",
+        "Dieser Teil hat drei Aufgaben: eine Zusammenfassung ergänzen, einen Essay auswerten und strukturelle Lücken in einem Text schließen.",
       instructionTr:
-        "Bu bölümde üç görev var: bir özeti tamamlamak, bir deneme metnini çözümlemek ve bir metni yapısal olarak kapatmak.",
+        "Bu bölümde üç görev var: bir özeti tamamlamak, bir deneme metnini çözümlemek ve bir metindeki yapısal boşlukları doldurmak.",
       tasks: [
         {
           id: "de-c1-07-l1",
@@ -743,7 +743,7 @@ Beispiel Ampullen: Lagerung nach {{10}} Meldungen getrennt.`,
                 },
                 {
                   speaker: "Herr Möllenkamp",
-                  text: "Von mir aus juristisch: Lassen Sie sich früh sagen, was Sie herausgeben müssen. Es ist unangenehm, es früh zu wissen, und es ist verheerend, es spät zu erfahren.",
+                  text: "Von mir ein juristischer Rat: Lassen Sie sich früh sagen, was Sie herausgeben müssen. Es ist unangenehm, es früh zu wissen, und es ist verheerend, es spät zu erfahren.",
                 },
               ],
             },
@@ -992,7 +992,7 @@ Beispiel Ampullen: Lagerung nach {{10}} Meldungen getrennt.`,
           format: "writing",
           goal: "production",
           prompt:
-            "In einer Fachzeitschrift stand: \"Wer Fehler folgenlos stellt, lädt zur Nachlässigkeit ein.\" Schreiben Sie eine Stellungnahme (circa 200 Wörter). Ordnen Sie die These ein, prüfen Sie sie an einem Beispiel, nennen Sie einen Einwand gegen Ihre eigene Position und ziehen Sie eine Schlussfolgerung.",
+            "In einer Fachzeitschrift stand: \"Wer Fehler folgenlos lässt, lädt zur Nachlässigkeit ein.\" Schreiben Sie eine Stellungnahme (circa 200 Wörter). Ordnen Sie die These ein, prüfen Sie sie an einem Beispiel, nennen Sie einen Einwand gegen Ihre eigene Position und ziehen Sie eine Schlussfolgerung.",
           promptTr:
             "Bir meslek dergisinde şöyle yazdı: \"Hatayı sonuçsuz bırakan, dikkatsizliğe davetiye çıkarır.\" Bir görüş yazısı yaz (yaklaşık 200 kelime). Savı yerine oturt, bir örnekle sına, kendi konumuna yönelik bir itirazı da söyle ve bir sonuca bağla.",
           items: [],
@@ -1182,7 +1182,7 @@ Ruth {{10}}`,
               { de: "Abschluss", tr: "Kapanış" },
             ],
             sample:
-              "Ich möchte darüber sprechen, wem in einer großen Organisation ein Fehler zugerechnet werden kann. Ich kläre zuerst die Begriffe, stelle dann beide Seiten dar und komme am Ende zu meiner Position, gegen die ich selbst einen Einwand vorbringen werde. Mit Person meine ich denjenigen, der handelt; mit Bedingung diejenigen Umstände, die sein Handeln nahelegen. Für die Zurechnung an Personen spricht, dass sie überhaupt erst Zurechnung ermöglicht. Wo niemand benannt wird, ändert sich erfahrungsgemäß wenig; die Erfahrung mit Gremienbeschlüssen ist eindeutig. Für die Bedingungen spricht die Struktur moderner Abläufe. Wer zwei ähnlich aussehende Ampullen nebeneinander lagert, verletzt keine Regel und schafft dennoch die Voraussetzung des Fehlers. Meine Position ist, dass die Zurechnung an Bedingungen mehr verhindert. Der Einwand dagegen wiegt allerdings schwer: Sie entlastet diejenigen, die tatsächlich gehandelt haben, und für Betroffene ist genau das schwer erträglich. Ich halte die Position trotzdem, weil sich Bedingungen ändern lassen und Personen ersetzt, nicht verbessert werden. Zusammenfassend: Wer Fehler zählen will, sucht Personen. Wer sie verringern will, sucht Bedingungen — und muss dafür in Kauf nehmen, dass die zweite Antwort nie so befriedigend klingt wie die erste.",
+              "Ich möchte darüber sprechen, wem in einer großen Organisation ein Fehler zugerechnet werden kann. Ich kläre zuerst die Begriffe, stelle dann beide Seiten dar und komme am Ende zu meiner Position, gegen die ich selbst einen Einwand vorbringen werde. Mit Person meine ich denjenigen, der handelt; mit Bedingung diejenigen Umstände, die sein Handeln nahelegen. Für die Zurechnung an Personen spricht, dass sie überhaupt erst Konsequenzen ermöglicht. Wo niemand benannt wird, ändert sich erfahrungsgemäß wenig; die Erfahrung mit Gremienbeschlüssen ist eindeutig. Für die Bedingungen spricht die Struktur moderner Abläufe. Wer zwei ähnlich aussehende Ampullen nebeneinander lagert, verletzt keine Regel und schafft dennoch die Voraussetzung des Fehlers. Meine Position ist, dass die Zurechnung an Bedingungen mehr verhindert. Der Einwand dagegen wiegt allerdings schwer: Sie entlastet diejenigen, die tatsächlich gehandelt haben, und für Betroffene ist genau das schwer erträglich. Ich halte die Position trotzdem, weil sich Bedingungen ändern lassen und Personen ersetzt, nicht verbessert werden. Zusammenfassend: Wer Fehler zählen will, sucht Personen. Wer sie verringern will, sucht Bedingungen — und muss dafür in Kauf nehmen, dass die zweite Antwort nie so befriedigend klingt wie die erste.",
             criteria: [
               "Altı bölümün hepsi var mı ve sunum baştan bölümlendi mi?",
               "Kavramlar gerçekten açıldı mı, yoksa örtük mü bırakıldı?",
@@ -1219,7 +1219,7 @@ Ruth {{10}}`,
             {
               who: "partner",
               de: "Zur Anonymität: Vollständige Anonymität macht Rückfragen unmöglich. Ohne Rückfrage bleibt die Hälfte der Meldungen unverwertbar. Wie lösen Sie das?",
-              tr: "Anonimlik meselesi: Tam anonimlik geri soru sormayı imkânsız kılıyor. Geri soru olmadan bildirimlerin yarısı işe yaramaz kalıyor. Bunu nasıl çözersin?",
+              tr: "Anonimlik meselesi: Tam anonimlik bildirimi yapana ek soru sormayı imkânsız kılıyor. Ek soru sorulamazsa bildirimlerin yarısı işe yaramaz kalıyor. Bunu nasıl çözersin?",
             },
             {
               who: "you",
@@ -1230,7 +1230,7 @@ Ruth {{10}}`,
             {
               who: "partner",
               de: "Grobe Fahrlässigkeit: Wenn wir dort Konsequenzen zulassen, wird die Grenze im Zweifel weit ausgelegt. Wenn wir sie ausschließen, verlieren wir jede Glaubwürdigkeit. Wo ziehen Sie die Linie?",
-              tr: "Ağır ihmal: Orada yaptırıma izin verirsek sınır tereddütte geniş yorumlanır. Tümden dışlarsak inandırıcılığımız kalmaz. Sen sınırı nereye çekersin?",
+              tr: "Ağır ihmal: Orada yaptırıma izin verirsek sınır şüpheli durumlarda geniş yorumlanır. Tümden dışlarsak inandırıcılığımız kalmaz. Sen sınırı nereye çekersin?",
             },
             {
               who: "you",
@@ -1255,8 +1255,8 @@ Ruth {{10}}`,
             minutes: 7,
             points: [
               { de: "eine Position begründen", tr: "Bir konumu gerekçelendirmek" },
-              { de: "auf Einwände eingehen", tr: "İtirazlara girmek" },
-              { de: "einen Kompromiss formulieren", tr: "Bir uzlaşı biçimlendirmek" },
+              { de: "auf Einwände eingehen", tr: "İtirazları ele almak" },
+              { de: "einen Kompromiss formulieren", tr: "Bir uzlaşı formüle etmek" },
               { de: "Ergebnis und offene Punkte zusammenfassen", tr: "Sonucu ve açık noktaları özetlemek" },
             ],
             sample:

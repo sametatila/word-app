@@ -758,10 +758,10 @@ This has an uncomfortable implication for policy. If the total depends on a defi
               no: 4,
               ref: "a2",
               text: "What does the planner say about his own position?",
-              options: ["He is optimistic about the outcome", "He has no policy for the experience he describes", "He is more precise rather than more hopeful"],
+              options: ["He is optimistic about the outcome", "He has already drafted a policy for the experience he describes", "He is more precise rather than more hopeful"],
               answer: 2,
               explain:
-                "İyimserlik sorusuna verdiği yanıt ayrımı kuruyor: «It makes me specific, which is not the same thing». Politika eksikliği doğru ama kendisine değil, alana ait bir gözlem olarak veriliyor.",
+                "İyimserlik sorusuna verdiği yanıt ayrımı kuruyor: «It makes me specific, which is not the same thing». Bir politika hazırladığını söylemiyor; tersine kimsenin bunun için bir politikası olmadığını söylüyor.",
             },
             {
               kind: "mcq",
@@ -1163,7 +1163,7 @@ The council has eleven inspectors and needs {{14}}.`,
               text: "Speaker 1",
               answer: "a",
               explain:
-                "Konuşmacı eski konumunu anıp geri alıyor: «I was wrong about that, and it seems worth saying so before somebody else does». Amaç bir kabul, bir uyarı ya da bir savunma değil.",
+                "Konuşmacı eski konumunu anıp geri alıyor: «I was wrong about that, and it seems worth saying so before somebody else does». Amaç bir kabul; bir uyarı ya da bir savunma değil.",
             },
             {
               kind: "match",
@@ -1356,7 +1356,7 @@ I recommend a phased repair beginning with the three fenced bays, funded over th
               { de: "propose and justify a criterion", tr: "Bir ölçüt önermek ve gerekçelendirmek" },
             ],
             sample:
-              "The obvious one is the drainage on the hill road, which floods in every other town near here and has not flooded once in my lifetime; nobody notices because the evidence of success is an ordinary morning. I would say the invisibility is structural rather than a reporting failure, although reporting makes it worse: you can publish the maintenance schedule, but you cannot publish the flood that did not occur. As for telling improvement from better reporting, I would look at whichever measure the organisation did not choose for itself, and I would look at it over a period longer than one administration.",
+              "The obvious one is the drainage on the hill road: roads like it flood in every other town near here, and this one has not flooded once in my lifetime; nobody notices because the evidence of success is an ordinary morning. I would say the invisibility is structural rather than a reporting failure, although reporting makes it worse: you can publish the maintenance schedule, but you cannot publish the flood that did not occur. As for telling improvement from better reporting, I would look at whichever measure the organisation did not choose for itself, and I would look at it over a period longer than one administration.",
             criteria: [
               "Örnek somut mu ve çözümlendi mi?",
               "Konum alınırken karşı görüşe pay bırakıldı mı?",
@@ -1373,7 +1373,7 @@ I recommend a phased repair beginning with the three fenced bays, funded over th
           prompt:
             "Talk on your own for about two minutes. A city has enough money either to build one new facility or to bring three existing ones back into full use. Set out the case for each, say which you would choose, and identify the strongest argument against your own choice.",
           promptTr:
-            "Yaklaşık iki dakika tek başına konuş. Bir şehrin parası ya bir yeni tesis yapmaya ya da mevcut üç tesisi tam kullanıma döndürmeye yetiyor. Her ikisinin de savunmasını kur, hangisini seçeceğini söyle ve kendi seçimine karşı en güçlü savı adlandır.",
+            "Yaklaşık iki dakika tek başına konuş. Bir şehrin parası ya yeni bir tesis yapmaya ya da mevcut üç tesisi tam kullanıma döndürmeye yetiyor. Her ikisinin de savunmasını kur, hangisini seçeceğini söyle ve kendi seçimine karşı en güçlü savı adlandır.",
           prepSeconds: 60,
           speakSeconds: 110,
           items: [],

@@ -496,7 +496,7 @@ Mein Vorschlag ist deshalb unspektakulär: Nachweis ja, aber binnen zwölf Monat
             {
               key: "d",
               label: "d — Herr Pistorius, Geschäftsführer",
-              body: "Ich habe die Regel eingeführt und nach acht Monaten zurückgenommen. Nicht aus Einsicht, sondern weil drei gute Leute gekündigt haben. Lösen wollte ich die Kantine, in der sich feste Gruppen bildeten. Gelöst hat die Regel das nicht.",
+              body: "Ich habe die Regel eingeführt und nach acht Monaten zurückgenommen. Nicht aus Einsicht, sondern weil drei gute Leute gekündigt haben. Lösen wollte ich das Problem in der Kantine, wo sich feste Gruppen bildeten. Gelöst hat die Regel das nicht.",
             },
             {
               key: "e",
@@ -536,7 +536,7 @@ Mein Vorschlag ist deshalb unspektakulär: Nachweis ja, aber binnen zwölf Monat
               text: "Für bestimmte Tätigkeiten ist eine gemeinsame Sprache eine Sicherheitsfrage.",
               answer: "b",
               explain:
-                "(b) alanı sınırlıyor: \"In der Halle geht es um Sicherheit\", tesisin dışında karışmadığını da söylüyor.",
+                "(b) alanı sınırlıyor: \"In der Halle geht es um Sicherheit\", makine başı dışında karışmadığını da söylüyor.",
             },
             {
               kind: "match",
@@ -560,7 +560,7 @@ Mein Vorschlag ist deshalb unspektakulär: Nachweis ja, aber binnen zwölf Monat
               kind: "match",
               id: "de-b2-08-l4-26",
               no: 26,
-              text: "Eine Vorschrift bewirkt, dass gar nicht mehr gesprochen wird.",
+              text: "Eine Vorschrift bewirkt, dass man gar nicht mehr angesprochen wird.",
               answer: "e",
               explain:
                 "(e) kendi deneyimini anlatıyor: \"Als es Vorschrift wurde, hat mich niemand mehr angesprochen\".",
@@ -942,7 +942,7 @@ Ergebnisse werden nach etwa vier Wochen zugestellt. Eine Einsicht in die Bewertu
               id: "de-b2-08-h2-13",
               no: 13,
               ref: "i1",
-              text: "Was ist nach ihm das größere Problem?",
+              text: "Was ist seiner Ansicht nach das größere Problem?",
               options: [
                 "Die Zahl der angebotenen Stunden.",
                 "Die Uhrzeit des Kurses.",
@@ -1151,7 +1151,7 @@ Ergebnisse werden nach etwa vier Wochen zugestellt. Eine Einsicht in die Bewertu
               plays: 1,
               segments: [
                 {
-                  text: "Ein Hinweis zur Sprachmittlung: Für Termine ab Mai können Sie eine Dolmetscherin kostenfrei anfordern, allerdings nur bei der Anmeldung. Wer erst am Terminstag danach fragt, muss einen neuen Termin nehmen.",
+                  text: "Ein Hinweis zur Sprachmittlung: Für Termine ab Mai können Sie eine Dolmetscherin kostenfrei anfordern, allerdings nur bei der Anmeldung. Wer erst am Termintag danach fragt, muss einen neuen Termin nehmen.",
                 },
               ],
             },
@@ -1366,7 +1366,7 @@ Ergebnisse werden nach etwa vier Wochen zugestellt. Eine Einsicht in die Bewertu
               ],
               answer: 0,
               explain:
-                "İki eğilim ters yönde: \"seltener sprechen, ihn aber häufiger verstehen\" — sebep olarak dinlenen ama denenmeyen bölgesel dil gösteriliyor.",
+                "İki eğilim ters yönde: \"seltener sprechen, ihn aber häufiger verstehen\" — sebep olarak dinlenen ama pratik edilmeyen bölgesel dil gösteriliyor.",
             },
           ],
         },
@@ -1388,7 +1388,7 @@ Ergebnisse werden nach etwa vier Wochen zugestellt. Eine Einsicht in die Bewertu
           prompt:
             "In einer Zeitung stand: \"Wer hier lebt, sollte auch zu Hause Deutsch sprechen.\" Schreiben Sie einen Leserbrief (circa 150 Wörter). Setzen Sie sich mit dieser Aussage auseinander, nennen Sie Argumente und ziehen Sie eine begründete Schlussfolgerung.",
           promptTr:
-            "Bir gazetede şöyle yazdı: \"Burada yaşayan evinde de Almanca konuşmalı.\" Bir okur mektubu yaz (yaklaşık 150 kelime). Bu iddiayı tartış, gerekçeler sun ve gerekçeli bir sonuca bağla.",
+            "Bir gazetede şöyle yazıyordu: \"Burada yaşayan evinde de Almanca konuşmalı.\" Bir okur mektubu yaz (yaklaşık 150 kelime). Bu iddiayı tartış, gerekçeler sun ve gerekçeli bir sonuca bağla.",
           items: [],
           rubric: {
             minWords: 150,
@@ -1436,7 +1436,7 @@ Nadia Osei`,
             minWords: 100,
             points: [
               { de: "Schildern Sie den Sachverhalt sachlich.", tr: "Durumu nesnel biçimde anlat." },
-              { de: "Erklären Sie, warum der neue Termin nicht geht.", tr: "Yeni saatin neden olmadığını açıkla." },
+              { de: "Erklären Sie, warum der neue Termin nicht geht.", tr: "Yeni saatin sana neden uymadığını açıkla." },
               { de: "Nennen Sie, was Sie erwarten.", tr: "Ne beklediğini söyle." },
               { de: "Setzen Sie eine Frist und bleiben Sie höflich.", tr: "Bir süre belirt ve nazik kal." },
             ],
@@ -1454,7 +1454,7 @@ Mit freundlichen Grüßen
 Nadia Osei`,
             criteria: [
               "Olay tarih ve sırayla anlatıldı mı?",
-              "Yeni saatin neden olmadığı somut mu (iş, izin), yoksa genel bir cümle mi?",
+              "Yeni saatin neden uymadığı somut mu (iş, izin), yoksa genel bir cümle mi?",
               "İki uygulanabilir seçenek sunuldu mu?",
               "Ödenmiş ücret gibi somut dayanak kullanıldı mı?",
               "Süre verildi mi, ton nazik kaldı mı ve yaklaşık 100 kelime mi?",
@@ -1497,10 +1497,10 @@ Nadia Osei`,
               { de: "Abschluss", tr: "Kapanış" },
             ],
             sample:
-              "Ich möchte heute darüber sprechen, ob Mehrsprachigkeit ein Vorteil oder ein Hindernis ist. Zuerst schildere ich die Lage in meinem Herkunftsland, dann nenne ich Argumente für beide Seiten und komme am Ende zu meiner Position. In Ghana wächst fast jedes Kind mit zwei oder drei Sprachen auf, und niemand hält das für bemerkenswert. In der Schule wird Englisch unterrichtet, zu Hause spricht man Twi oder Ewe. Für die Seite des Vorteils spricht, dass diese Kinder früh lernen, zwischen Systemen zu wechseln. Meine Nichte hat mit sieben Jahren erklärt, warum ein Wort in einer Sprache existiert und in der anderen nicht — das ist Sprachbewusstsein. Für die Gegenseite spricht, dass keine der Sprachen automatisch tief wird. Wer in drei Sprachen einkaufen kann, kann noch in keiner argumentieren. Das habe ich bei mir selbst gemerkt, als ich hier meine erste Prüfung schrieb. Meine Position ist deshalb: Mehrsprachigkeit ist ein Vorteil, aber kein Selbstläufer. Sie wird erst dann zum Nachteil, wenn eine Sprache nur geduldet und keine gefördert wird. Zusammenfassend: Nicht die Zahl der Sprachen entscheidet, sondern ob wenigstens eine bis zum Ende gelernt werden darf.",
+              "Ich möchte heute darüber sprechen, ob Mehrsprachigkeit ein Vorteil oder ein Hindernis ist. Zuerst schildere ich die Lage in meinem Herkunftsland, dann nenne ich Argumente für beide Seiten und komme am Ende zu meiner Position. In Ghana wächst fast jedes Kind mit zwei oder drei Sprachen auf, und niemand hält das für bemerkenswert. In der Schule wird Englisch unterrichtet, zu Hause spricht man Twi oder Ewe. Für die Seite des Vorteils spricht, dass diese Kinder früh lernen, zwischen Systemen zu wechseln. Meine Nichte hat mit sieben Jahren erklärt, warum ein Wort in einer Sprache existiert und in der anderen nicht — das ist Sprachbewusstsein. Für die Gegenseite spricht, dass keine der Sprachen automatisch gründlich beherrscht wird. Wer in drei Sprachen einkaufen kann, kann noch in keiner argumentieren. Das habe ich bei mir selbst gemerkt, als ich hier meine erste Prüfung schrieb. Meine Position ist deshalb: Mehrsprachigkeit ist ein Vorteil, aber kein Selbstläufer. Sie wird erst dann zum Nachteil, wenn eine Sprache nur geduldet und keine gefördert wird. Zusammenfassend: Nicht die Zahl der Sprachen entscheidet, sondern ob wenigstens eine bis zum Ende gelernt werden darf.",
             criteria: [
               "Altı bölümün hepsi var mı ve sunum baştan bölümlendi mi?",
-              "Kendi ülkedeki durum somut ve açıklayıcı mı?",
+              "Kendi ülkendeki durum somut ve açıklayıcı mı?",
               "Her iki taraf için de örnekle desteklenmiş gerekçe var mı?",
               "Konum gerekçeli mi ve iki tarafı da hesaba katıyor mu?",
               "Dört dakika boyunca yapı korunabildi mi?",
@@ -1570,7 +1570,7 @@ Nadia Osei`,
             minutes: 8,
             points: [
               { de: "einen Vorschlag begründen", tr: "Bir öneriyi gerekçelendirmek" },
-              { de: "auf Einwände eingehen", tr: "İtirazlara girmek" },
+              { de: "auf Einwände eingehen", tr: "İtirazlara karşılık vermek" },
               { de: "priorisieren und begründen", tr: "Önceliklendirmek ve gerekçelendirmek" },
               { de: "das Ergebnis zusammenfassen", tr: "Sonucu özetlemek" },
             ],

@@ -459,9 +459,9 @@ Leyla`,
       skill: "listening",
       minutes: 30,
       instruction:
-        "This part has four tasks. You hear conversations, a talk and five short speakers. You hear every recording twice.",
+        "This part has four tasks. You hear conversations, a talk and five short monologues. You hear every recording twice.",
       instructionTr:
-        "Bu bölümde dört görev var. Konuşmalar, bir sunum ve beş kısa konuşmacı dinleyeceksin. Her kaydı iki kez dinleyebilirsin.",
+        "Bu bölümde dört görev var. Konuşmalar, bir sunum ve beş kişinin kısa anlatımını dinleyeceksin. Her kaydı iki kez dinleyebilirsin.",
       tasks: [
         {
           id: "en-a2-01-h1",
@@ -481,7 +481,7 @@ Leyla`,
               segments: [
                 { speaker: "Customer", text: "I have a bad cough. Do you have something for it?" },
                 { speaker: "Chemist", text: "This syrup helps, but it makes you tired. These tablets are better if you drive." },
-                { speaker: "Customer", text: "I drive to work every day, so I take the tablets." },
+                { speaker: "Customer", text: "I drive to work every day, so I will take the tablets." },
               ],
             },
             {
@@ -531,9 +531,9 @@ Leyla`,
               situation: "İki ev arkadaşı yemek planını konuşuyor.",
               plays: 2,
               segments: [
-                { speaker: "Bo", text: "I bought rice, eggs and tomatoes. What do we make?" },
+                { speaker: "Bo", text: "I bought rice, eggs and tomatoes. What shall we make?" },
                 { speaker: "Ling", text: "I had rice yesterday. Let us make an omelette." },
-                { speaker: "Bo", text: "Good idea. Then I keep the rice for tomorrow." },
+                { speaker: "Bo", text: "Good idea. Then I will keep the rice for tomorrow." },
               ],
             },
           ],
@@ -547,7 +547,7 @@ Leyla`,
               options: ["The tablets", "The syrup", "Nothing today"],
               answer: 0,
               explain:
-                "Eczacı iki seçeneği ayırıyor: şurup uyku getiriyor, tabletler araba kullananlar için daha uygun. Müşteri her gün araba kullandığını söyleyip «I take the tablets» diyor. Şurup kayıtta önce geçiyor, bu yüzden ilk duyulanı seçen öğrenci yanılır.",
+                "Eczacı iki seçeneği ayırıyor: şurup uyku getiriyor, tabletler araba kullananlar için daha uygun. Müşteri her gün araba kullandığını söyleyip «I will take the tablets» diyor. Şurup kayıtta önce geçiyor, bu yüzden ilk duyulanı seçen öğrenci yanılır.",
             },
             {
               kind: "mcq",
@@ -744,7 +744,7 @@ Price for guests:     {{10}} pounds`,
               situation: "Bir müşteri satış görevlisiyle konuşuyor.",
               plays: 2,
               segments: [
-                { text: "I bought these boots here on Monday. After two days the left one opened at the front. I would like my money back, please." },
+                { text: "I bought these boots here on Monday. After two days the left one came apart at the front. I would like my money back, please." },
               ],
             },
           ],
@@ -942,7 +942,7 @@ Price for guests:     {{10}} pounds`,
     {
       skill: "writing",
       minutes: 30,
-      instruction: "This part has two tasks: you write an email and a short text about a picture or an experience.",
+      instruction: "This part has two tasks: you write an email and a short text about an experience.",
       instructionTr: "Bu bölümde iki görev var: bir e-posta ve bir deneyim üzerine kısa bir metin yazacaksın.",
       tasks: [
         {
@@ -1021,7 +1021,7 @@ Deniz`,
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about you and your free time. Answer in full sentences.",
+          prompt: "I am going to ask you some questions about yourself and your free time. Answer in full sentences.",
           promptTr: "Sana kendin ve boş zamanın hakkında sorular soracağım. Tam cümlelerle cevap ver.",
           prepSeconds: 20,
           exchange: [
@@ -1057,7 +1057,7 @@ Deniz`,
           prompt:
             "Describe this situation for about one minute: a family is having a picnic in a park on a sunny day. Some people are playing football. Say what you see, what the people are doing, and whether you like this kind of day.",
           promptTr:
-            "Şu durumu bir dakika kadar anlat: güneşli bir günde bir aile parkta piknik yapıyor. Bazı insanlar futbol oynuyor. Ne gördüğünü, insanların ne yaptığını ve böyle bir günü sevip sevmediğini söyle.",
+            "Şu durumu bir dakika kadar anlat: Güneşli bir günde bir aile parkta piknik yapıyor. Bazı insanlar futbol oynuyor. Ne gördüğünü, insanların ne yaptığını ve böyle bir günü sevip sevmediğini söyle.",
           prepSeconds: 45,
           speakSeconds: 75,
           items: [],
@@ -1084,7 +1084,7 @@ Deniz`,
           format: "speaking",
           goal: "interaction",
           prompt:
-            "We plan a healthy day for a group of new students. Talk with me about the ideas and choose one together.",
+            "We are planning a healthy day for a group of new students. Talk with me about the ideas and choose one together.",
           promptTr:
             "Yeni öğrenciler için sağlıklı bir gün planlıyoruz. Fikirleri benimle konuş ve birlikte birini seç.",
           prepSeconds: 30,

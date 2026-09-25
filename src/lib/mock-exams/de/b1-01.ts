@@ -45,7 +45,7 @@ export const B1_01: MockPaper = {
       instruction:
         "Dieser Teil hat fünf Aufgaben. Sie lesen einen Blogtext, Zeitungstexte, Anzeigen, Leserbriefe und eine Benutzungsordnung. Sie können mit jeder Aufgabe beginnen.",
       instructionTr:
-        "Bu bölümde beş görev var: bir blog yazısı, gazete metinleri, ilanlar, okur yorumları ve bir kullanım yönergesi okuyacaksın. İstediğin görevle başlayabilirsin.",
+        "Bu bölümde beş görev var: bir blog yazısı, gazete metinleri, ilanlar, okur mektupları ve bir kullanım yönergesi okuyacaksın. İstediğin görevle başlayabilirsin.",
       tasks: [
         {
           id: "de-b1-01-l1",
@@ -880,7 +880,7 @@ Ein Schaden ist sofort zu melden, auch wenn er klein ist. Wer einen Schaden meld
                 "Sie zahlen selbst für die Ausbildung.",
               ],
               answer: 0,
-              explain: "\"Wer hier lernt, hat schon einen Vertrag in der Tasche\" — sözleşme daha gelmeden imzalanmış oluyor.",
+              explain: "\"Wer hier lernt, hat schon einen Vertrag in der Tasche\" — sözleşme, çıraklar merkeze gelmeden önce imzalanmış oluyor.",
             },
             {
               kind: "mcq",
