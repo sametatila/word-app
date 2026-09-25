@@ -362,8 +362,9 @@ için iki mağazanın aynı şeyi söylemesi tercih edildi.
 | Usage Data › Product Interaction | Evet | Evet | Analytics (ayarlardan kapatılabilir) |
 | Purchases › Purchase History | Evet | Evet | App Functionality |
 | Diagnostics › Crash Data (anonim JS hata raporu: ileti, yığın izi) | **Evet** | **Hayır** | App Functionality |
-| Diagnostics › Other Diagnostic Data (hata raporuna eşlik eden ekran adı, uygulama sürümü, platform) | **Evet** | **Hayır** | App Functionality |
-| Location, Contacts, Health, Financial Info, Browsing History, Search History, Sensitive Info | Hayır | — | — |
+| Diagnostics › Other Diagnostic Data (hata raporuna eşlik eden ekran adı, uygulama sürümü, platform; Firebase SDK kalite ölçümü) | **Evet** | **Hayır** | App Functionality **+ Analytics** (2026-09-25, G4) |
+| Location › Coarse Location (Google ile Giriş SDK'sı, IP'den, dolandırıcılık önleme) | **Evet** (2026-09-25, G4) | **Evet** | App Functionality |
+| Contacts, Health, Financial Info, Browsing History, Search History, Sensitive Info, Precise Location | Hayır | — | — |
 
 **Diagnostics 2026-09-23'te Hayır'dan Evet'e döndü.** Web ve mobil JS hataları kendi
 sunucumuza gidiyor (`/api/client-errors`; `src/lib/client-errors.ts`,
@@ -374,9 +375,18 @@ de toplanmış sayılıyor. Native çökmeler yalnız Apple'ın kendi Organizer 
 **Açık iş (mobil):** `PrivacyInfo.xcprivacy`'ye `NSPrivacyCollectedDataTypeCrashData` ve
 `NSPrivacyCollectedDataTypeOtherDiagnosticData` (Linked: false, Tracking: false, Purpose:
 AppFunctionality) eklenmeli; Samet Connect › App Privacy'de aynı iki satırı işaretler.
-FirebaseMessaging/Installations ve GoogleSignIn pod'larının kendi manifestolarının
-beyan ettiği türler için Xcode › Archive › "Generate Privacy Report" çıktısıyla bir
-karşılaştırma ayrıca yapılmalı (denetim LEG-13).
+**Pod manifestleri karşılaştırması (2026-09-25, LEG-13 / denetim G4):** 51 pod manifesti
+toplandı (`ios/Pods/**/PrivacyInfo.xcprivacy`). Fark iki yerdeydi, ikisi de etikete ve
+uygulama manifestine eklendi:
+- Firebase Installations + GoogleDataTransport: Other Diagnostic Data, bağlı değil,
+  **Analytics** (Firebase'in açıklaması: SDK performans/kalite metaverisi).
+- Google ile Giriş: **Coarse Location**, bağlı, App Functionality (Google'ın açıklaması:
+  "IP adresi, dolandırıcılık önleme için genel konum tahmininde kullanılabilir").
+GoogleSignIn manifesti ayrıca PhoneNumber, OtherUsageData ve analitik amaçlı DeviceID/UserID
+sayıyor; Google'ın yayımladığı SDK açıklaması yalnız kullanıcı kimliği ve IP'yi anıyor
+(developers.google.com/identity/sign-in/ios/app-privacy), bu yüzden bunlar beyan edilmedi.
+Apple inceleyicisi sorarsa gerekçe bu. **Connect › App Privacy'yi Samet günceller** (API yok):
+Diagnostics'e Analytics amacı, Location › Coarse Location (Linked, App Functionality).
 
 Bu tablo ile uygulama paketindeki `mobile/ios/Lernomi/PrivacyInfo.xcprivacy`
 **birebir aynı olmak zorunda** — ayrışırsa inceleme takılır. 2026-09-04'te makine
