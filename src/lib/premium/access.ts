@@ -3,7 +3,7 @@ import { and, eq, inArray, isNotNull, like, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { mockExamAttempts, profiles, usageCounters, userLessons } from "@/lib/db/schema";
 import { mockCourseOf } from "@/lib/courses";
-import { mockPapersFor } from "@/lib/mock-exams/serve";
+import { mockCatalogFor, mockPapersFor } from "@/lib/mock-exams/serve";
 import type { MockLevel } from "@/lib/mock-exams/types";
 import { DAILY_QUOTAS } from "@/lib/quotas";
 import { premiumConfig } from "./config";
@@ -535,7 +535,9 @@ export async function unlockOverview(userId: string): Promise<UnlockOverview> {
   const doneLessons = await finishedLessonSet(userId, allConv);
 
   const course = mockCourseOf(profile?.course);
-  const papersByLevel = await Promise.all(LEVELS.map((l) => mockPapersFor(l, course).then((p) => p.map((x) => x.id)).catch(() => [] as string[])));
+  /* Künye kataloğu, tam kâğıt değil: durum ucu uygulama her açıldığında
+     çağrılıyor ve yalnız kimlik ile sıra lazım (sıra `no`, `mockPapersFor` ile aynı). */
+  const papersByLevel = await Promise.all(LEVELS.map((l) => mockCatalogFor(l, course).then((p) => p.map((x) => x.id)).catch(() => [] as string[])));
   const stat = await paperStats(userId, papersByLevel.flat());
 
   const s = { longestStreak: streak.longest, currentStreak: streak.current };
