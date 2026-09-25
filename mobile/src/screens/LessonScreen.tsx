@@ -41,6 +41,12 @@ import { sfx } from "../lib/sfx";
 import { LESSON_TRY_CEILING } from "../lib/learningRules";
 import { track } from "../lib/track";
 import { reduceMotion } from "../lib/reduceMotion";
+import { ApiError } from "../api/client";
+import { useAuth } from "../lib/AuthContext";
+import { notePremiumGate, refreshPremium, usePremiumStatus } from "../lib/premium";
+import { useAiDeclined } from "../lib/useAiDeclined";
+import { conversationLocked, tieredCopy } from "../lib/unlock";
+import { UnlockProgress } from "../ui/UnlockProgress";
 
 /**
  * Konuşma oynatıcısı — anlatım → karşılıklı konuşma → özet. Web'in
@@ -140,6 +146,22 @@ export function LessonScreen() {
      zaten indirmiş oluyor; bu yol bildirimle ya da derin bağlantıyla doğrudan
      buraya gelen kullanıcı için. */
   const [lesson, setLesson] = useState<Lesson | undefined>(() => findLesson(params.id));
+  /*
+    PATİKA KONUŞMA HAKKI (2026-09-25). Hakkı olmayan adım KİLİTLİ: konuşmaya
+    girmeden kilit, nasıl açılacağı ve Premium yolu gösteriliyor (sunucu
+    `/api/roleplay` aynı kararı veriyor; ilk yapay zekâ turunda 403 gelirse de
+    aynı kilit). Misafir ve yapay zekâ iznini REDDEDEN kullanıcı kilit görmüyor —
+    senaryolu konuşma onların yolu.
+  */
+  const { user: authUser } = useAuth();
+  const isGuest = !authUser || Boolean(authUser.guest);
+  const { status: premiumStatus } = usePremiumStatus();
+  const aiDeclined = useAiDeclined(!isGuest);
+  const [serverLocked, setServerLocked] = useState(false);
+  const entryLocked = lesson ? conversationLocked(premiumStatus?.unlock, lesson.id, lesson.level, { guest: isGuest, aiDeclined }) : false;
+  const convLocked = entryLocked || serverLocked;
+  const convCopy = lesson ? tieredCopy(premiumStatus?.unlock?.levels[lesson.level]?.conversation, "conv") : null;
+  useEffect(() => { if (convLocked) notePremiumGate("conversation"); }, [convLocked]);
   /* Paket inmeden "bulunamadı" denmiyor (bkz. ui/flow `ContentLoadingBody`). */
   const [packReady, setPackReady] = useState(() => !!findLesson(params.id));
   /* Paket inemediyse "ders bulunamadı" değil "indirilemedi" deniyor. */
@@ -707,6 +729,15 @@ export function LessonScreen() {
         setSuggestions(parsed.suggestions);
         pushHint(r.hint);
         if (r.speak) speakTarget(r.speak);
+      } else if (e instanceof ApiError && e.status === 403 && e.message === "premium_required") {
+        /* HAK YOK — bağlantı hatası değil, kilit. Tur geri alınıyor (gönderilmedi). */
+        setRoleTurns(turn - 1);
+        setServerLocked(true);
+        void refreshPremium();
+      } else if (e instanceof ApiError && e.status === 429) {
+        /* Günlük sohbet mesajı tavanı (kötüye kullanım sınırı) — "bağlantı
+           sorunu" DEĞİL, yarın sürüyor. */
+        push({ role: "teacher", segments: [{ lang: "tr", text: tx("lessonp.chat_quota", { n: premiumStatus?.limits.fairUse.chatTurnsPerDay ?? 300 }) }], tone: "hint" });
       } else {
         push({ role: "teacher", segments: [{ lang: "tr", text: tx("lesson.connection_problem") }], tone: "hint" });
       }
@@ -762,6 +793,9 @@ export function LessonScreen() {
          ve `totalXp` döndürüyor; mobil hiçbirini okumuyordu ve dersin NE ZAMAN
          geri geleceği (aralıklı tekrar merdiveni) bu yüzden hiçbir yerde
          yazmıyordu. Web özetin altında söylüyor. */
+      /* Ders bitti: Konuşma adımı "bitirildi" sayılıyor ve bir sonraki hak
+         açılmış olabilir — kilit açma durumu tazeleniyor. */
+      if (res.ok) void refreshPremium();
       if (res.ok) {
         const d = (await res.json()) as { nextDays?: number; passed?: boolean };
         if (typeof d?.nextDays === "number") setNextDays(d.nextDays);
@@ -847,7 +881,20 @@ export function LessonScreen() {
         </View>
       )}
 
-      {!resumeChecked ? (
+      {convLocked && phase !== "summary" ? (
+        /* KİLİTLİ KONUŞMA ADIMI: konuşmaya girilmiyor; neden, nasıl açılır ve
+           Premium yolu tek ekranda. */
+        <View style={{ flex: 1, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.md }}>
+          <View style={{ flex: 1, justifyContent: "center", gap: spacing.md }}>
+            <StateBody title={tx("unlock.locked_conv")} />
+            {convCopy ? <UnlockProgress copy={convCopy} /> : null}
+          </View>
+          <FlowActions
+            primary={{ label: tx("unlock.premium_now"), onPress: () => nav.navigate("Paywall") }}
+            tertiary={{ label: tx("lesson.go_back"), onPress: () => nav.goBack() }}
+          />
+        </View>
+      ) : !resumeChecked ? (
         // Sohbet kabuğunun iskeleti: öğretmen baloncukları + alt eylem alanı.
         <>
           <View style={{ flex: 1, paddingHorizontal: spacing.lg, paddingTop: spacing.sm }}>

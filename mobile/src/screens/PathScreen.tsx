@@ -18,6 +18,7 @@ import { UnitPane } from "./UnitScreen";
 import { KIND_KEY } from "../data/unit";
 import { AppHeader } from "../ui/AppHeader";
 import { api } from "../api/client";
+import { PathQuota } from "../ui/PathQuota";
 import { useTheme, spacing, radii, softShadow, type Palette, ds } from "../theme";
 
 const KIND_ICON: Record<string, (p: { color: string; size: number }) => React.ReactElement> = {
@@ -268,6 +269,8 @@ export function PathScreen() {
       <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.lg }}>
         {t("path.units_done", { level: path.level, n: path.doneUnits, total: path.totalUnits })}{source === "local" ? t("path.progress_local") : ""}
       </Text>
+      {/* Seviyenin yapay zekâ hakları: kilide çarpmadan ÖNCE görünsün. */}
+      <PathQuota level={path.level} />
 
       {featured && <Featured unit={featured} isCurrent={featured.index === path.currentIndex} colors={colors} onContinue={() => openUnit(featured)} />}
 

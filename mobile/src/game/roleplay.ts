@@ -1,4 +1,4 @@
-import { api, API_BASE, fetchWithTimeout, ROLEPLAY_TIMEOUT_MS } from "../api/client";
+import { api, API_BASE, ApiError, fetchWithTimeout, ROLEPLAY_TIMEOUT_MS } from "../api/client";
 import { isAccountRequired } from "../lib/guest";
 
 /**
@@ -43,7 +43,13 @@ export async function sendRoleplay(lessonId: string, messages: ChatMsg[], mode: 
     headers: { "content-type": "application/json" },
     body: JSON.stringify({ lessonId, messages, mode }),
   });
-  if (!res.ok) throw new Error(`roleplay ${res.status}`);
+  /* HATA KODU TAŞINIYOR: 403 `premium_required` (Konuşma hakkı yok) ve 429
+     `quota` (günlük sohbet mesajı tavanı) bir KAPI, ağ hatası değil — ekran
+     onları "bağlantı sorunu" diye değil kendi cümlesiyle gösteriyor. */
+  if (!res.ok) {
+    const body = (await res.json().catch(() => null)) as { error?: string } | null;
+    throw new ApiError(res.status, typeof body?.error === "string" ? body.error : `roleplay ${res.status}`);
+  }
   return (await res.text()).trim();
 }
 

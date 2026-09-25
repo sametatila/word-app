@@ -13,6 +13,11 @@ import { ArrowBackIcon, ChevronRightIcon, CheckIcon, LockIcon } from "../ui/icon
 import { KIND_KEY, type ItemKind } from "../data/unit";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 import { useLearningPath } from "../lib/useLearningPath";
+import { usePremiumStatus } from "../lib/premium";
+import { useAuth } from "../lib/AuthContext";
+import { useAiDeclined } from "../lib/useAiDeclined";
+import { conversationLocked, pathWritingSpent } from "../lib/unlock";
+import { PathQuota } from "../ui/PathQuota";
 
 
 /**
@@ -66,6 +71,18 @@ export function UnitPane({ index, level, theme: gelenTheme, items: gelenItems, e
     tutuyor (`POST /api/immersion/item`); tutmadıkları dönemde sayımdan
     düşülüyorlardı ve ekran 13 adım gösterip 10 üzerinden sayıyordu.
   */
+  /*
+    YAPAY ZEKÂ HAKKI (2026-09-25): Konuşma adımı hakkı yoksa KİLİTLİ (dokununca
+    adım ekranı kilidi ve nasıl açılacağını gösteriyor); Yazma adımı kilitlenmiyor,
+    hakkı yoksa rozet taşıyor. Misafir ve izni reddeden kullanıcıda kilit yok.
+  */
+  const { user } = useAuth();
+  const guest = !user || Boolean(user.guest);
+  const { status: premium } = usePremiumStatus();
+  const aiDeclined = useAiDeclined(!guest);
+  const convLocked = (ref: string | null) => Boolean(ref) && conversationLocked(premium?.unlock, ref!, level, { guest, aiDeclined });
+  const writeSpent = (id: string) => pathWritingSpent(premium?.unlock, id, level, guest);
+
   const counted = items.filter((i) => i.playable);
   const done = counted.filter((i) => i.done).length;
   const pct = counted.length ? Math.round((done / counted.length) * 100) : 0;
@@ -108,11 +125,14 @@ export function UnitPane({ index, level, theme: gelenTheme, items: gelenItems, e
           <View style={{ height: "100%", width: `${pct}%`, backgroundColor: colors.success, borderRadius: 5 }} />
         </View>
         <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.lg }}>{t("unit.steps_done", { n: done, total: counted.length })}</Text>
+        <PathQuota level={level} />
 
         <View style={{ gap: spacing.md }}>
           {items.map((it) => {
             const tint = kindFill(it.kind);
             const Icon = kindIcon(it.kind) ?? kindIcon("lesson")!;
+            const aiLock = !it.done && it.kind === "lesson" && convLocked(it.ref);
+            const aiSpent = !it.done && it.kind === "write" && writeSpent(it.ref ?? it.id);
             return (
               <PressableScale key={it.id} onPress={() => openItem(it)}>
                 <Card padded style={{ opacity: it.open ? 1 : 0.55, flexDirection: "row", alignItems: "center", gap: spacing.md, borderWidth: it.current ? 2 : 1, borderColor: it.current ? colors.primary : colors.hairline }}>
@@ -122,8 +142,13 @@ export function UnitPane({ index, level, theme: gelenTheme, items: gelenItems, e
                   <View style={{ flex: 1 }}>
                     <Text variant="micro" color={colors.textMuted}>{t(KIND_KEY[it.kind] ?? "") || it.kind}</Text>
                     <Text variant="bodyStrong" numberOfLines={1}>{it.title}</Text>
+                    {aiLock || aiSpent ? (
+                      <Text variant="micro" color={colors.textMuted}>{t(aiLock ? "unlock.locked_conv" : "unlock.spent_write")}</Text>
+                    ) : null}
                   </View>
-                  {it.done ? (
+                  {aiLock ? (
+                    <LockIcon color={colors.textMuted} size={18} />
+                  ) : it.done ? (
                     <View style={{ width: 26, height: 26, borderRadius: 13, backgroundColor: colors.successSoft, alignItems: "center", justifyContent: "center" }}>
                       <CheckIcon color={colors.successText} size={16} />
                     </View>

@@ -18,10 +18,12 @@ import { fetchCando } from "../game/cando";
 import { speakTarget } from "../lib/tts";
 import { ensureMicPermission, listenOnce, sttAvailable, stopListening } from "../lib/stt";
 import { currentTargetLocale, currentTargetLang } from "../lib/courses";
-import { api, ASSESS_ROLEPLAY_TIMEOUT_MS } from "../api/client";
+import { api, ApiError, ASSESS_ROLEPLAY_TIMEOUT_MS } from "../api/client";
 import { assessFailKey, assessFailure } from "../lib/assessFail";
 import { isAiConsentDeclined } from "../lib/aiConsent";
-import { notePremiumGate } from "../lib/premium";
+import { notePremiumGate, refreshPremium, usePremiumStatus } from "../lib/premium";
+import { tieredCopy } from "../lib/unlock";
+import { UnlockProgress } from "../ui/UnlockProgress";
 
 import { todayStr } from "../game/session";
 import { ERROR_LABEL_KEYS, type ErrorType } from "../lib/errors";
@@ -41,7 +43,7 @@ export const EXAM_SECONDS = 180;
 export const EXAM_PASS_SCORE = 60;
 
 type Turn = { role: "user" | "assistant"; content: string };
-type Phase = "intro" | "talk" | "scoring" | "result" | "error";
+type Phase = "intro" | "talk" | "scoring" | "result" | "error" | "locked";
 
 type Score = { task: number; grammar: number; vocab: number; structure: number; overall: number };
 type AssessError = { type: ErrorType; wrong: string; fix: string; why_tr?: string; span?: [number, number] };
@@ -76,6 +78,7 @@ export function RoleplayExamScreen() {
   const kbLift = useKeyboardLift(rootRef, spacing.sm);
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { id } = useRoute<RouteProp<RootStackParams, "RoleplayExam">>().params;
+  const { status: premiumStatus } = usePremiumStatus();
   /* Dersin seviye paketi inmemişse burada iniyor (bkz. `data/lessons`). */
   const [lesson, setLesson] = useState<Lesson | undefined>(() => findLesson(id) as Lesson | undefined);
   /* Paket inmeden "bulunamadı" denmiyor (bkz. ui/flow `ContentLoadingBody`). */
@@ -174,10 +177,15 @@ export function RoleplayExamScreen() {
       setResultId(d.id ?? null);
     } catch (e) {
       if (!mounted.current) return;
+      /* PUANLI KISIM Konuşma adımının KENDİ hakkını kullanıyor (2026-09-25);
+         hak yoksa (sohbet atlanıp doğrudan buraya gelindiyse) kilit ekranı. */
+      if (assessFailure(e) === "premium") {
+        notePremiumGate("conversation");
+        void refreshPremium();
+        setPhase("locked");
+        return;
+      }
       setGateNote(tx(assessFailKey(e)));
-      // Kilide takılan an ölçülüyor (bkz. lib/premium `notePremiumGate`).
-      if (assessFailure(e) === "premium") notePremiumGate("speaking");
-      
     }
     track("nav", said.length, "roleplay_exam:done");
     if (mounted.current) setPhase("result");
@@ -278,6 +286,13 @@ export function RoleplayExamScreen() {
       /* İzin ekranında "hayır" dendiyse ya da daha önce denmişse cümle
          sağlayıcıya gitmedi. Akış öteki arızalarla aynı; değişen yalnız cümle. */
       if (isAiConsentDeclined(e)) setConsentOff(true);
+      /* Konuşma hakkı yok: kapı, arıza değil — kilit ve nasıl açılacağı. */
+      if (e instanceof ApiError && e.status === 403 && e.message === "premium_required") {
+        notePremiumGate("conversation");
+        void refreshPremium();
+        setPhase("locked");
+        return;
+      }
       // İki turdan sonra kopan bağlantı sınavı çöpe atmaz: eldekini puanla.
       if (n >= 2) void score(next);
       else setPhase("error");
@@ -355,6 +370,20 @@ export function RoleplayExamScreen() {
             <ActivityIndicator color={colors.primary} />
           </StateBody>
         </View>
+      </FlowScreen>
+    );
+  }
+
+  if (phase === "locked") {
+    const copy = lesson ? tieredCopy(premiumStatus?.unlock?.levels[lesson.level]?.conversation, "conv") : null;
+    return (
+      <FlowScreen
+        center
+        actions={<FlowActions primary={{ label: tx("unlock.premium_now"), onPress: () => nav.navigate("Paywall") }} tertiary={{ label: tx("lessonp.back_to_conversation"), onPress: () => nav.goBack() }} />}
+      >
+        <StateBody title={tx("unlock.locked_conv")}>
+          {copy ? <View style={{ alignSelf: "stretch", marginTop: spacing.md }}><UnlockProgress copy={copy} /></View> : null}
+        </StateBody>
       </FlowScreen>
     );
   }
