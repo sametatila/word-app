@@ -3,10 +3,10 @@
  *
  * Kural `docs/premium/README.md` §2 (2026-09-25): Patika Konuşma, Patika Yazma
  * ve Beceriler seviye başına 2 + "bitir ve 7 günlük seri yap" dilimleri, her biri
- * ayrı sayaç; yürüyüş modu günde 3 oturum. Saf formül `test:premium`de; burası
+ * ayrı sayaç; yürüyüş modu günde 3 tur. Saf formül `test:premium`de; burası
  * sayaçların SQL'ini sınıyor: sahiplenme işareti, izin verilen sayıyla atomik
  * sayım, eşzamanlı istekler, bitirmenin `user_lessons`ten okunması ve yürüyüş
- * oturumunun zaman penceresi. Bunlar tek süreçte görünmüyor.
+ * turunun çift istek koruması. Bunlar tek süreçte görünmüyor.
  *
  * Kurulum `scripts/test-entitlement.ts`in başındaki notla aynı (TEST_DATABASE_URL,
  * bütün migration'lar). ÜRETİMDE KOŞMAZ: adres yerel değilse reddediyor.
@@ -17,7 +17,7 @@ import { and, eq, sql } from "drizzle-orm";
 // (bkz. test-entitlement). Premium modülleri de aynı havuzu kullanmalı.
 import { db } from "@/lib/db";
 import { profiles, usageCounters, userLessons } from "../src/lib/db/schema";
-import { claimTiered, isOwned, openWalkSession, tieredState, unlockOverview, walkState } from "../src/lib/premium/access";
+import { claimTiered, isOwned, openWalkRound, refundWalkRound, tieredState, unlockOverview, walkState } from "../src/lib/premium/access";
 import { getUsage } from "../src/lib/premium/quota";
 
 const url = process.env.TEST_DATABASE_URL ?? "";
@@ -150,40 +150,42 @@ async function main() {
     check("durum premium", st.premium === true);
   }
 
-  console.log("\nYürüyüş modu: günde 3 oturum, pencere içindeki devam aynı oturum");
+  console.log("\nYürüyüş modu: günde 3 tur, \"devam\" da bir tur");
   {
     const u = await user("walk");
-    const age = async (min: number) =>
+    /* Son sayılan turu geriye alır — çift istek korumasının (birkaç saniye)
+       dışına düşmek için beklemek yerine. */
+    const age = async () =>
       db
         .update(usageCounters)
-        .set({ updatedAt: sql`now() - make_interval(mins => ${min}::int)` })
-        .where(and(eq(usageCounters.userId, u), eq(usageCounters.key, "walk_sessions")));
-    const a = await openWalkSession(u);
-    check("1. oturum açıldı", a.allowed && !a.continued);
-    const b = await openWalkSession(u);
-    check("devam isteği aynı oturum (sayılmadı)", b.allowed && b.continued && (await walkState(u)).used === 1);
-    const par = await Promise.all(Array.from({ length: 8 }, () => openWalkSession(u)));
-    check("pencere içinde 8 eşzamanlı istek sayılmadı", par.every((x) => x.allowed) && (await walkState(u)).used === 1);
-    await age(31);
-    check("pencere geçince 2. oturum sayıldı", !(await openWalkSession(u)).continued && (await walkState(u)).used === 2);
-    await age(31);
-    await openWalkSession(u);
+        .set({ updatedAt: sql`now() - interval '1 minute'` })
+        .where(and(eq(usageCounters.userId, u), eq(usageCounters.key, "walk_rounds")));
+    const a = await openWalkRound(u);
+    check("1. tur sayıldı", a.allowed && !a.duplicate && (await walkState(u)).used === 1);
+    const dup = await openWalkRound(u);
+    check("hemen gelen çift istek aynı turun tekrarı (sayılmadı)", dup.allowed && dup.duplicate && (await walkState(u)).used === 1);
+    await age();
+    const cont = await openWalkRound(u);
+    check("\"devam\" turu da bir tur (pencere yok)", cont.allowed && !cont.duplicate && (await walkState(u)).used === 2);
+    await age();
+    await openWalkRound(u);
     const st = await walkState(u);
-    check("3 oturum kullanıldı, kalan 0, oturum açık", st.used === 3 && st.remaining === 0 && st.sessionOpen, JSON.stringify(st));
-    check("açık oturumun devamı hak bitse de geçiyor", (await openWalkSession(u)).allowed);
-    await age(31);
-    const d = await openWalkSession(u);
-    check("4. oturum KİLİTLİ (quota_spent)", !d.allowed && d.reason === "quota_spent", d.reason);
+    check("3 tur kullanıldı, kalan 0", st.used === 3 && st.remaining === 0, JSON.stringify(st));
+    await age();
+    const d = await openWalkRound(u);
+    check("4. tur KİLİTLİ (quota_spent)", !d.allowed && d.reason === "quota_spent", d.reason);
     check("kilit sayacı artırmadı", (await walkState(u)).used === 3);
 
     const f = await user("walk-race");
-    const race = await Promise.all(Array.from({ length: 10 }, () => openWalkSession(f)));
-    check("eşzamanlı 10 ilk istek TEK oturum saydı", race.every((x) => x.allowed) && (await walkState(f)).used === 1, (await walkState(f)).used);
+    const race = await Promise.all(Array.from({ length: 10 }, () => openWalkRound(f)));
+    check("eşzamanlı 10 istek TEK tur saydı", race.every((x) => x.allowed) && (await walkState(f)).used === 1, (await walkState(f)).used);
+    await refundWalkRound(f);
+    check("kuyruk kurulamazsa tur geri veriliyor", (await walkState(f)).used === 0);
 
     const p = await user("walk-pro", { premium: true });
-    const ps = await openWalkSession(p);
+    const ps = await openWalkRound(p);
     const pst = await walkState(p);
-    check("premium'da oturum sayılıyor, tavan 20, cepte açık", ps.allowed && pst.perDay === 20 && pst.pocket && pst.used === 1, JSON.stringify(pst));
+    check("premium'da tur sayılıyor, tavan 20, cepte açık", ps.allowed && pst.perDay === 20 && pst.pocket && pst.used === 1, JSON.stringify(pst));
   }
 
   console.log("\nKilit açma görünümü (durum ucu)");
@@ -201,7 +203,7 @@ async function main() {
     const sw = o.levels.B2.skillWriting;
     check("B2 Beceriler yazma kalan 1", !sw.premium && sw.remaining === 1, JSON.stringify(sw));
     check("A2 Konuşma dokunulmamış: kalan 2", !o.levels.A2.conversation.premium && o.levels.A2.conversation.remaining === 2);
-    check("yürüyüş: 3 oturum hakkı", o.walk.perDay === 3 && o.walk.remaining === 3 && !o.walk.pocket);
+    check("yürüyüş: 3 tur hakkı", o.walk.perDay === 3 && o.walk.remaining === 3 && !o.walk.pocket);
     check("seri bilgisi", o.streak.current === 3 && o.streak.longest === 3 && o.streak.step === 7);
   }
 

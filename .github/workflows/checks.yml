@@ -468,7 +468,7 @@ jobs:
       # unutmak da burada düşüyor.
       # `test:quota` 2026-09-25 kota kuralları: sahiplenme işareti, izin verilen
       # sayıyla atomik sayım, bitirmenin `user_lessons`ten okunması ve yürüyüş
-      # oturumunun zaman penceresi — hepsi koşullu SQL, eşzamanlı isteklerle.
+      # turunun çift istek koruması — hepsi koşullu SQL, eşzamanlı isteklerle.
       # `test:store-trial` grup kodu (2 ay ücretsiz mağaza denemesi): talebin hak
       # sayacı yarışı, hesap başına tek deneme, iOS'un reddi (3.1.1) ve webhook
       # hunisinin damgaları — hepsi koşullu SQL, yalnız gerçek veritabanında görünür.

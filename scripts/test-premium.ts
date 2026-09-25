@@ -95,15 +95,20 @@ console.log("\nYapılandırma doğrulaması");
   check("null girdi varsayılana düşüyor", JSON.stringify(parsePremiumConfig(null)) === JSON.stringify(d));
   check("çöp girdi varsayılana düşüyor", JSON.stringify(parsePremiumConfig("abc")) === JSON.stringify(d));
 
-  const clamped = parsePremiumConfig({ free: { conversationsPerLevel: 999999 }, fairUse: { aiPracticePerDay: 0, walkSessionsPerDay: 0 } });
+  const clamped = parsePremiumConfig({ free: { conversationsPerLevel: 999999 }, fairUse: { aiPracticePerDay: 0, walkRoundsPerDay: 0 } });
   check("üst sınır kırpılıyor", clamped.free.conversationsPerLevel === 100, `(${clamped.free.conversationsPerLevel})`);
   // Tavanın alt sınırı 1: 0 yazılsaydı ödeme yapmış kullanıcı hiçbir şey yapamazdı.
   check("adil kullanım tavanı 0 olamıyor", clamped.fairUse.aiPracticePerDay === 1, `(${clamped.fairUse.aiPracticePerDay})`);
-  check("premium yürüyüş tavanı 0 olamıyor", clamped.fairUse.walkSessionsPerDay === 1, `(${clamped.fairUse.walkSessionsPerDay})`);
+  check("premium yürüyüş tavanı 0 olamıyor", clamped.fairUse.walkRoundsPerDay === 1, `(${clamped.fairUse.walkRoundsPerDay})`);
 
   // 0 GEÇERLİ bir ücretsiz kota: "bu özellik ücretsizde hiç yok" demek.
-  const zero = parsePremiumConfig({ free: { walkSessionsPerDay: 0 } });
-  check("ücretsiz kota 0 olabiliyor (premium-only)", zero.free.walkSessionsPerDay === 0);
+  const zero = parsePremiumConfig({ free: { walkRoundsPerDay: 0 } });
+  check("ücretsiz kota 0 olabiliyor (premium-only)", zero.free.walkRoundsPerDay === 0);
+  /* İlk adı `walkSessionsPerDay`di (birim "oturum", 2026-09-25 düzeltildi): o
+     adla yazılmış kayıt da okunuyor. */
+  const eskiAd = parsePremiumConfig({ free: { walkSessionsPerDay: 5 }, fairUse: { walkSessionsPerDay: 40 } });
+  check("eski walkSessionsPerDay adı okunuyor", eskiAd.free.walkRoundsPerDay === 5 && eskiAd.fairUse.walkRoundsPerDay === 40);
+  check("yeni ad eskisinden önce", parsePremiumConfig({ free: { walkRoundsPerDay: 4, walkSessionsPerDay: 9 } }).free.walkRoundsPerDay === 4);
 
   /* Kademe panelden kapatılabilmeli: 0 bonus = yalnız taban. */
   const kapali = parsePremiumConfig({ free: { streakBonus: 0 } });
@@ -226,9 +231,8 @@ console.log("\nKilit açma cümleleri (web ve mobil aynı kural)");
   check("premium paket: sıradaki", packCopy(premiumMockUnlock([true, false, false, false], 3))?.key === "unlock.pack_next");
   check("premium paket: hepsi açık", packCopy(premiumMockUnlock([true, true, true], 3))?.key === "unlock.pack_all");
 
-  const w = { premium: false, perDay: 3, used: 1, remaining: 2, sessionOpen: false, pocket: false };
+  const w = { premium: false, perDay: 3, used: 1, remaining: 2, pocket: false };
   check("yürüyüş: kalan", walkCopy(w)?.key === "unlock.walk_left" && walkCopy(w)?.params?.n === 2);
-  check("yürüyüş: açık oturum", walkCopy({ ...w, sessionOpen: true })?.key === "unlock.walk_open");
   check("yürüyüş: bitti", walkCopy({ ...w, used: 3, remaining: 0 })?.key === "unlock.walk_spent");
 
   // Seçilen her anahtar üç sözlükte var.
@@ -239,7 +243,7 @@ console.log("\nKilit açma cümleleri (web ve mobil aynı kural)");
     x?.when?.gain.key,
   ]).filter((k): k is string => Boolean(k));
   for (const s of ["conv", "write", "skill_speak", "skill_write", "mock"]) all.push(`unlock.left_${s}`, `unlock.spent_${s}`, `unlock.gain_${s}`);
-  all.push("unlock.walk_left", "unlock.walk_open", "unlock.walk_spent", "unlock.pack_next", "unlock.pack_all", "unlock.max", "unlock.premium_now", "unlock.celebrate", "unlock.title", "unlock.locked_conv");
+  all.push("unlock.walk_left", "unlock.walk_spent", "unlock.pack_next", "unlock.pack_all", "unlock.max", "unlock.premium_now", "unlock.celebrate", "unlock.title", "unlock.locked_conv");
   for (const [lang, dict] of [["tr", trBase], ["en", enBase], ["de", deBase]] as const) {
     const missing = [...new Set(all)].filter((k) => !dict[k]);
     check(`${lang}: kilit açma anahtarlarının karşılığı var`, missing.length === 0, missing.join(", "));

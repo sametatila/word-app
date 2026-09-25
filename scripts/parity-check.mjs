@@ -20298,13 +20298,13 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "consume kaydi=" + (/ÇAĞIRANI OLMAYAN UÇ/.test(consumeSrc) ? "yazili" : "YOK"),
       /* 2026-09-25: assess ve stt'deki "consume'u kimse cagirmiyor" kayitlari
          kalkti - kotanin birimi artik ozellik ucunun ICINDE sayiliyor
-         (`claimTiered`, `openWalkSession`), consume'a dayanan bir tasarim
-         kalmadi. Yerine olculen: yuruyus oturumu sunucuda aciliyor ve consume
+         (`claimTiered`, `openWalkRound`), consume'a dayanan bir tasarim
+         kalmadi. Yerine olculen: yuruyus turu sunucuda sayiliyor ve consume
          artik SAYMIYOR (eski bir istemci cagirirsa hak yakmasin). */
-      "yuruyus oturumu sunucuda=" + (/openWalkSession\(/.test(silB(read("src/app/api/session/route.ts"))) ? "evet" : "HAYIR"),
+      "yuruyus turu sunucuda=" + (/openWalkRound\(/.test(silB(read("src/app/api/session/route.ts"))) ? "evet" : "HAYIR"),
       "consume sayiyor=" + (/bumpUsage|takeUsage/.test(silB(consumeSrc)) ? "EVET" : "hayir"),
     ],
-    ["profile goal kabulu=yok", "consume cagirani=0", "consume kaydi=yazili", "yuruyus oturumu sunucuda=evet", "consume sayiyor=hayir"],
+    ["profile goal kabulu=yok", "consume cagirani=0", "consume kaydi=yazili", "yuruyus turu sunucuda=evet", "consume sayiyor=hayir"],
     "bulunan",
     "beklenen",
   );
