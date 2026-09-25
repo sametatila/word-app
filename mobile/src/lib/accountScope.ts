@@ -52,10 +52,6 @@ const ACCOUNT_SCOPED_PREFIXES = [
   "lernomi-item-scores", //        oge puanlari
   "lernomi-coach-seen", //         gosterilen koc cumleleri
   "lernomi:guest-milestones", //   misafire gosterilen kilometre tasi cagrilari (yeni misafirde yeniden)
-  /* ESKİ ADLAR (build 6): `lib/legacyNames` açılışta yenisine taşıyor; taşınmadan
-     hesap değişirse onlar da gitsin. Build 7 herkese ulaşınca silinecek. */
-  "lernomi-lesson-resume:",
-  "lernomi-lessons-pending",
 ];
 
 /** Çıkışta çağrılır. Hata yutulur: temizlik çıkışı engellememeli. */

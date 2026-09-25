@@ -259,29 +259,6 @@ export async function ensurePack(pack: string): Promise<boolean> {
   }
 }
 
-/**
- * Bir paketi cihazdan tamamen atar: dizinini ve başka hiçbir paketin
- * kullanmadığı gövdelerini. Artık istenmeyen bir paket adı (ör. eski adlı
- * paket, bkz. `lib/legacyNames`) cihazda yer tutmasın.
- */
-export async function dropPackIndex(pack: string): Promise<void> {
-  try {
-    const index = await readJson<PackIndex>(packKey(pack));
-    await AsyncStorage.removeItem(packKey(pack));
-    if (!index) return;
-    const others = (await AsyncStorage.getAllKeys()).filter((k) => k.startsWith("content:pack:"));
-    const kept = new Set<string>();
-    for (const k of others) for (const h of Object.values((await readJson<PackIndex>(k))?.items ?? {})) kept.add(h);
-    for (const h of new Set(Object.values(index.items))) {
-      if (kept.has(h)) continue;
-      memory.delete(h);
-      await dropBody(h);
-    }
-  } catch {
-    /* yut */
-  }
-}
-
 async function fetchText(url: string): Promise<string | null> {
   try {
     const res = await fetchWithTimeout(url, { timeoutMs: 20_000 });

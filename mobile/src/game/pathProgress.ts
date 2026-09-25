@@ -7,14 +7,12 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { api } from "../api/client";
 import { isSkillDone, scoreOf } from "../lib/learningRules";
-import { ensureLegacyMigrated } from "../lib/legacyNames";
 
 const KEY = "lernomi-items-done";
 let cache: Set<string> | null = null;
 
 export async function getDoneItems(): Promise<Set<string>> {
   if (cache) return cache;
-  await ensureLegacyMigrated(); // eski öğe kimlikleri (geçici, lib/legacyNames)
   try {
     const raw = await AsyncStorage.getItem(KEY);
     cache = new Set<string>(raw ? (JSON.parse(raw) as string[]) : []);
@@ -72,7 +70,6 @@ export async function queueItemRecord(id: string, correct: number, total: number
 
 export async function getItemScores(): Promise<Record<string, number>> {
   if (scoreCache) return scoreCache;
-  await ensureLegacyMigrated(); // eski öğe kimlikleri (geçici, lib/legacyNames)
   try {
     const raw = await AsyncStorage.getItem(SCORE_KEY);
     scoreCache = raw ? (JSON.parse(raw) as Record<string, number>) : {};
@@ -154,7 +151,6 @@ const CONVERSATION_KEY = "lernomi-conversations-pending";
 export type PendingConversation = { conversationId: string; correct: number; chatDone: boolean; day: string; seconds: number };
 
 export async function queueConversationResult(item: PendingConversation): Promise<void> {
-  await ensureLegacyMigrated(); // eski anahtarlar (geçici, lib/legacyNames)
   try {
     const raw = await AsyncStorage.getItem(CONVERSATION_KEY);
     const list = raw ? (JSON.parse(raw) as PendingConversation[]) : [];
@@ -168,7 +164,6 @@ export async function queueConversationResult(item: PendingConversation): Promis
 
 /** Bekleyen konuşma sonuçlarını gönderir; biri düşerse kalanı kuyrukta bırakır. */
 export async function flushPendingConversations(): Promise<void> {
-  await ensureLegacyMigrated(); // eski anahtarlar (geçici, lib/legacyNames)
   let list: PendingConversation[] = [];
   try {
     const raw = await AsyncStorage.getItem(CONVERSATION_KEY);
@@ -218,7 +213,6 @@ export async function recordPathItem(item: PendingPathItem): Promise<void> {
 
 /** Bekleyen pratik adım sonuçlarını gönderir; biri düşerse kalanı kuyrukta bırakır. */
 export async function flushPendingPathItems(): Promise<void> {
-  await ensureLegacyMigrated(); // eski öğe kimlikleri (geçici, lib/legacyNames)
   let list: PendingPathItem[] = [];
   try {
     const raw = await AsyncStorage.getItem(PATH_ITEM_KEY);
@@ -287,7 +281,6 @@ export async function saveConversationResume(
 }
 
 export async function loadConversationResume(id: string): Promise<ConversationResume | null> {
-  await ensureLegacyMigrated(); // eski anahtarlar (geçici, lib/legacyNames)
   try {
     const raw = await AsyncStorage.getItem(RESUME_PREFIX + id);
     if (!raw) return null;
@@ -312,7 +305,6 @@ export async function loadConversationResume(id: string): Promise<ConversationRe
  * gitmiyordu. Açılışta bir kez çağrılıyor.
  */
 export async function pruneConversationResumes(): Promise<void> {
-  await ensureLegacyMigrated(); // eski anahtarlar (geçici, lib/legacyNames)
   try {
     const keys = (await AsyncStorage.getAllKeys()).filter((k) => k.startsWith(RESUME_PREFIX));
     if (!keys.length) return;
