@@ -129,7 +129,7 @@ export function newlyOpened(prev: Record<string, number> | null, next: Record<st
 }
 
 /**
- * Patika Konuşma adımı KİLİTLİ mi (sunucu `/api/roleplay` kapısının aynası).
+ * Patika Konuşma adımı KİLİTLİ mi (sunucu `/api/chat` kapısının aynası).
  *
  * Kilit YALNIZ yapay zekâ yolunu kullanacak kullanıcıda: misafir ve yapay zekâ
  * iznini REDDEDEN kullanıcı senaryolu (maliyetsiz) konuşmaya gidiyor ve adım

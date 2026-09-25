@@ -143,7 +143,7 @@ export function UnitPane({
   const currentId = (open.find((i) => !i.attempted) ?? open.find((i) => !i.done))?.id;
 
   /* Hakkı bitmiş ve sahiplenilmemiş Konuşma adımı kilitli (sunucu da aynı
-     kuralla 403 veriyor — `/api/roleplay`). */
+     kuralla 403 veriyor — `/api/chat`). */
   const convLocked = (it: HubItem) => {
     const ref = lessonRef(it);
     return Boolean(quota?.convLockable && ref && !quota.ownedLessons.includes(ref));

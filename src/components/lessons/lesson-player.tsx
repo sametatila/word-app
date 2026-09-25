@@ -335,7 +335,7 @@ function LessonPlayerBody({
   const [offlineWhy, setOfflineWhy] = useState<"service" | "consent">("service");
 
   const [saved, setSaved] = useState<{ passed: boolean; nextDays: number } | null>(null);
-  /* Dersin süresi: `/api/lesson` `seconds` alanını istiyor ve web onu HİÇ
+  /* Dersin süresi: `/api/conversation` `seconds` alanını istiyor ve web onu HİÇ
      göndermiyordu - her ders sunucuda sıfır saniye görünüyordu (mobil baştan
      beri gönderiyor). Aynı istekte `day` de eksikti: kullanıcının yerel günü
      yerine sunucunun günü işleniyordu, yani gece yarısından sonra bitirilen
@@ -377,7 +377,7 @@ function LessonPlayerBody({
   // render'da yeni kimlik alırdı — bağımlılığa eklenince effect her render'da
   // yeniden koşardı. Kimlik artık yalnız ders değişince değişiyor.
   const probeRoleplayService = useCallback(() => {
-    void apiFetch("/api/roleplay", { cache: "no-store" })
+    void apiFetch("/api/chat", { cache: "no-store" })
       .then((r) => (r.ok ? (r.json() as Promise<{ configured: boolean; consent?: string | null }>) : null))
       .then((s) => {
         if (!s || offlineRef.current) return;
@@ -1001,7 +1001,7 @@ function LessonPlayerBody({
       }
 
       try {
-        const res = await apiFetch("/api/roleplay", {
+        const res = await apiFetch("/api/chat", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify({ lessonId: lesson.id, messages: next }),
@@ -1163,7 +1163,7 @@ function LessonPlayerBody({
         day: localDay(),
         seconds: Math.round((Date.now() - startedAt.current) / 1000),
       };
-      const res = await apiFetch("/api/lesson", {
+      const res = await apiFetch("/api/conversation", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(payload),

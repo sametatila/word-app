@@ -9,7 +9,7 @@ import type { TieredUnlock, WalkUnlock } from "./unlock";
  *
  * Karar `access.ts`te (`unlockOverview`), cümle `unlock-copy.ts`te; burası
  * yalnız bir sayfanın ihtiyacı olan parçayı kesiyor. Kapıyı tutan yine uç
- * (`/api/roleplay`, `/api/assess`): buradaki "kilitli" bir GÖSTERİM kararı, bir
+ * (`/api/chat`, `/api/assess`): buradaki "kilitli" bir GÖSTERİM kararı, bir
  * yetki kararı değil — yanılırsa sunucu 403 ile düzeltir.
  *
  * KİLİT KİME ÇİZİLMİYOR (2026-09-25 kuralı): misafire ve yapay zekâ iznini

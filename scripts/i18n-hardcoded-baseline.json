@@ -23,7 +23,7 @@
   "src/app/api/notifications/prefs/route.ts": 2,
   "src/app/api/premium/referral/route.ts": 1,
   "src/app/api/pronounce/route.ts": 1,
-  "src/app/api/roleplay/route.ts": 1,
+  "src/app/api/chat/route.ts": 1,
   "src/app/api/skills/route.ts": 2,
   "src/app/api/stt/route.ts": 1,
   "src/app/api/words/route.ts": 1,

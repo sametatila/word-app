@@ -1,7 +1,7 @@
 /**
  * Biten Patika adımlarının cihaz kaydı — /api/immersion canlı olmadan
  * ilerleme. Ders id'leri ve beceri egzersizi id'leri aynı kümede (hepsi item
- * ref'i). Sunucuya da yazılır (/api/lesson, /api/skills); bu yerel set yalnız
+ * ref'i). Sunucuya da yazılır (/api/conversation, /api/skills); bu yerel set yalnız
  * gerçek track gelene kadar Patika'ya hangi adımın bittiğini söyler.
  */
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -137,7 +137,7 @@ export async function syncItemProgress(level?: string): Promise<void> {
 /**
  * ÇEVRİMDIŞI BİTİRİLEN DERS.
  *
- * Ders bitince sonuç `/api/lesson`a yazılıyor; ağ yoksa istek düşüyor ve bir
+ * Ders bitince sonuç `/api/conversation`a yazılıyor; ağ yoksa istek düşüyor ve bir
  * daha DENENMİYORDU. Yerel işaret (`markItemDone`) Patika'yı bitmiş
  * gösteriyor ama sunucu dersi hiç öğrenmiyor: XP verilmiyor, aralıklı tekrar
  * merdiveni kurulmuyor, kullanıcı cihaz değiştirince ders geri geliyor.
@@ -173,7 +173,7 @@ export async function flushPendingLessons(): Promise<void> {
   const kalan: PendingLesson[] = [];
   for (const [i, item] of list.entries()) {
     try {
-      await api("/api/lesson", { method: "POST", body: JSON.stringify(item) });
+      await api("/api/conversation", { method: "POST", body: JSON.stringify(item) });
     } catch {
       kalan.push(...list.slice(i));
       break;

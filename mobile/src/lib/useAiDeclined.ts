@@ -5,7 +5,7 @@ import { fetchAiConsent } from "./aiConsent";
  * Kullanıcı yapay zekâ (metin) iznini REDDETTİ mi — Patika Konuşma kilidi için.
  *
  * İzni reddeden kullanıcı senaryolu konuşmaya gidiyor ve adım kilitlenmiyor
- * (sunucu `/api/roleplay`). Durum kısa süre süreç içinde tutuluyor: Patika'daki
+ * (sunucu `/api/chat`). Durum kısa süre süreç içinde tutuluyor: Patika'daki
  * her kart ayrı istek atmasın. Okunamazsa `false` — kilit sunucunun kararıyla
  * zaten ekranda doğrulanıyor.
  */

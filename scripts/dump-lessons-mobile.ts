@@ -2,10 +2,10 @@
  * Ders kataloğunu mobil pakete döker (seviye başına bir JSON).
  *
  * Web dersi koddan okuyor (findLesson); mobilin de aynı içeriğe ihtiyacı var
- * çünkü /api/lesson yalnızca SONUCU kaydeder, içeriği sunmaz.
+ * çünkü /api/conversation yalnızca SONUCU kaydeder, içeriği sunmaz.
  *
  * ÇEVRİMDIŞI SENARYO ARTIK DÖKÜLÜYOR. Eskiden `script` hariç tutuluyordu
- * ("mobil konuşmayı /api/roleplay ile yürütür") ve bu, sağlayıcı kapalıyken
+ * ("mobil konuşmayı /api/chat ile yürütür") ve bu, sağlayıcı kapalıyken
  * Android'de hiçbir konuşma dersinin geçilememesi demekti — geçme koşulu
  * konuşmanın yapılmasını istiyor. Web o durumda senaryoya düşüyor; mobil de
  * artık düşüyor (`game/offlineRoleplay`).

@@ -61,7 +61,7 @@ Rapor: 24 egzersiz; ASR metin eşleştirmesi, telaffuz puanı yok; öz-değerlen
 
 **Amaç.** Rol yapma alıştırma olarak var; sınav olarak da kullanılsın: puanlı, sınırlı turlu, can-do bağlı, hata raporlu.
 
-**Mevcut kod.** `src/lib/lessons/roleplay.ts`, `/api/roleplay`, `roleplayLogs` tablosu, `lesson-player.tsx` rol yapma fazı, `coachDialogue`.
+**Mevcut kod.** `src/lib/lessons/roleplay.ts`, `/api/chat`, `roleplayLogs` tablosu, `lesson-player.tsx` rol yapma fazı, `coachDialogue`.
 
 **Tasarım.**
 - Mod parametresi `mode: "practice"|"exam"`: sınavda sistem istemi "yardım etme, yönlendirme, hata düzeltme; doğal muhatap ol"; 5 tur; süre 3 dk; konuşma bitince tüm kullanıcı turları WP-03 `assess(kind:"roleplay")` ile puanlanır (görev, dilbilgisi, kelime, uygunluk) + WP-20 telaffuz ortalaması.
@@ -77,7 +77,7 @@ Rapor: 24 egzersiz; ASR metin eşleştirmesi, telaffuz puanı yok; öz-değerlen
 
 **Süre.** 4 gün. **Bağımlılık.** WP-03, WP-20, WP-43.
 
-**Durum (2026-08-26).** Adım 1–3 bitti (telaffuz ortalaması WP-20'ye bağlı, yok). `lib/lessons/roleplay.ts`: `RoleplayMode`, `examPrompt` (doğal muhatap, yardım/düzeltme/Türkçe/işaret yok, 2 cümle + soru, `EXAM_TURNS`=5'te kapanış); `streamRoleplay(..., mode)`; `/api/roleplay` `mode` alır ve `roleplay_logs.mode`'a yazar (migrasyon 0034, üretime uygulandı). `components/lessons/roleplay-exam.tsx` + `/lessons/[id]/exam`: giriş kartı (sahne, kurallar, kalıplar) → konuşma (tur sayacı, 3 dk sayaç, tek atış mikrofon ya da yazı, TTS) → puanlama (`askAssess` kind `roleplay`, `exerciseId` `<ders>:exam`, `answer.transcript` turlar) → sonuç (`AssessmentCard`, hatasız en uzun 2 cümle, en sık 2 hata tipi, can-do etiketi, Erdi koç). Ders özetinde "Sınav olarak dene". Kanıt: `reports/shots/wp22-exam-{intro,talk,result}.png`; üretimde `assessments` satırı (%88) ve 5 `mode=exam` log satırı doğrulandı.
+**Durum (2026-08-26).** Adım 1–3 bitti (telaffuz ortalaması WP-20'ye bağlı, yok). `lib/lessons/roleplay.ts`: `RoleplayMode`, `examPrompt` (doğal muhatap, yardım/düzeltme/Türkçe/işaret yok, 2 cümle + soru, `EXAM_TURNS`=5'te kapanış); `streamRoleplay(..., mode)`; `/api/chat` `mode` alır ve `roleplay_logs.mode`'a yazar (migrasyon 0034, üretime uygulandı). `components/lessons/roleplay-exam.tsx` + `/lessons/[id]/exam`: giriş kartı (sahne, kurallar, kalıplar) → konuşma (tur sayacı, 3 dk sayaç, tek atış mikrofon ya da yazı, TTS) → puanlama (`askAssess` kind `roleplay`, `exerciseId` `<ders>:exam`, `answer.transcript` turlar) → sonuç (`AssessmentCard`, hatasız en uzun 2 cümle, en sık 2 hata tipi, can-do etiketi, Erdi koç). Ders özetinde "Sınav olarak dene". Kanıt: `reports/shots/wp22-exam-{intro,talk,result}.png`; üretimde `assessments` satırı (%88) ve 5 `mode=exam` log satırı doğrulandı.
 
 ---
 
@@ -85,11 +85,11 @@ Rapor: 24 egzersiz; ASR metin eşleştirmesi, telaffuz puanı yok; öz-değerlen
 
 **Amaç.** Beceri diyalogları (7) anahtar kelimeyle dallanıyor. Sağlayıcı varken açık uçlu, temaya bağlı LLM diyalogu; yoksa mevcut senaryo.
 
-**Mevcut kod.** `src/lib/dialogue.ts`, `src/components/skills/dialogue-player.tsx`, `/api/roleplay` (ders kimliği zorunlu — beceri diyalogları için `exerciseId` desteği eklenir).
+**Mevcut kod.** `src/lib/dialogue.ts`, `src/components/skills/dialogue-player.tsx`, `/api/chat` (ders kimliği zorunlu — beceri diyalogları için `exerciseId` desteği eklenir).
 
 **Tasarım.**
 - `SpeakingDialogueExercise`'e `theme_prompt` (LLM için tema/rol/hedef kalıplar/sınır) alanı; senaryo (`dialogue`) yedek olarak kalır.
-- `/api/roleplay` `exerciseId` kabul eder; tema istemi + "kullanıcı hedef kalıpları kullanınca işaretle" çıktısı (`usedTargets` yerini LLM işaretlemesi + yerel eşleştirme birleşimi alır).
+- `/api/chat` `exerciseId` kabul eder; tema istemi + "kullanıcı hedef kalıpları kullanınca işaretle" çıktısı (`usedTargets` yerini LLM işaretlemesi + yerel eşleştirme birleşimi alır).
 - Tamamlama: hedef kalıplardan ≥ 3 kullanıldı ve ≥ 4 tur.
 - İçerik: 7 → 25 diyalog (seviye başına 5; WP-72).
 
@@ -100,6 +100,6 @@ Rapor: 24 egzersiz; ASR metin eşleştirmesi, telaffuz puanı yok; öz-değerlen
 
 **Kabul.** Sağlayıcı açıkken senaryoda olmayan bir cevap ("Ich nehme einen Cappuccino, aber ohne Zucker") anlaşılıp konuşma sürüyor; kapalıyken senaryo çalışıyor.
 
-**Durum (2026-08-26).** Adım 1–2 bitti, 3 (7 → 25 diyalog) WP-72'de. `types.ts` `DialogueTheme { role, goal, limits? }` + `SpeakingDialogueExercise.theme?`; 7 diyaloga tema yazıldı (`content/dialogue.ts`), doğrulayıcı tema kontrolü. `lib/dialogue.ts`: `targetsUsed`, `dialogueDone` (≥4 tur ve ≥3 kalıp, en çok 8), sabitler. `lib/lessons/roleplay.ts`: ortak `streamSystem`, `dialoguePrompt` (rol, sahne = intro, hedef, kalıplar; düzeltme ve öneri yok; kapanış turu), `streamDialogue`. `/api/roleplay` `exerciseId` kabul ediyor (`getExercise`, temalı konuşma diyaloğu), log kimliği egzersiz. `dialogue-player.tsx`: tema + sağlayıcı → `mode: llm`; `askModel` (akış, `parseReply`, kalıp eşiğinde kapanış), hata → senaryoya dönüş; "Yazarak cevapla" alanı iki modda; açık modda payda 4. Kanıt: `reports/shots/wp23-dialogue-{open,done}.png` — "Ich nehme einen Cappuccino, aber ohne Zucker" anlaşıldı ve konuşma sürdü; 4 turda 5/5 kalıp, 4/4.
+**Durum (2026-08-26).** Adım 1–2 bitti, 3 (7 → 25 diyalog) WP-72'de. `types.ts` `DialogueTheme { role, goal, limits? }` + `SpeakingDialogueExercise.theme?`; 7 diyaloga tema yazıldı (`content/dialogue.ts`), doğrulayıcı tema kontrolü. `lib/dialogue.ts`: `targetsUsed`, `dialogueDone` (≥4 tur ve ≥3 kalıp, en çok 8), sabitler. `lib/lessons/roleplay.ts`: ortak `streamSystem`, `dialoguePrompt` (rol, sahne = intro, hedef, kalıplar; düzeltme ve öneri yok; kapanış turu), `streamDialogue`. `/api/chat` `exerciseId` kabul ediyor (`getExercise`, temalı konuşma diyaloğu), log kimliği egzersiz. `dialogue-player.tsx`: tema + sağlayıcı → `mode: llm`; `askModel` (akış, `parseReply`, kalıp eşiğinde kapanış), hata → senaryoya dönüş; "Yazarak cevapla" alanı iki modda; açık modda payda 4. Kanıt: `reports/shots/wp23-dialogue-{open,done}.png` — "Ich nehme einen Cappuccino, aber ohne Zucker" anlaşıldı ve konuşma sürdü; 4 turda 5/5 kalıp, 4/4.
 
 **Süre.** 4 gün. **Bağımlılık.** WP-03, WP-72.

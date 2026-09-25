@@ -1,7 +1,7 @@
 /**
  * ÇEVRİMDIŞI BİTİRİLEN DERS — tarayıcıdaki kuyruk.
  *
- * Ders bitince sonuç `/api/lesson`a yazılıyor; ağ yoksa istek düşüyor ve bir
+ * Ders bitince sonuç `/api/conversation`a yazılıyor; ağ yoksa istek düşüyor ve bir
  * daha DENENMİYORDU (`lesson-player` catch bloğu yalnız özeti çiziyordu).
  * Sunucu dersi hiç öğrenmiyor: XP verilmiyor, aralıklı tekrar merdiveni
  * kurulmuyor, kullanıcı başka bir cihaza geçince ders geri geliyor.
@@ -52,7 +52,7 @@ export async function flushPendingLessons(): Promise<void> {
   const remaining: PendingLesson[] = [];
   for (const [i, item] of list.entries()) {
     try {
-      const res = await apiFetch("/api/lesson", {
+      const res = await apiFetch("/api/conversation", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(item),

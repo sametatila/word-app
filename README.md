@@ -26,7 +26,7 @@ uygulama gibi tam ekran açılır (PWA).
   `src/lib/skills/content/library/` altında, ünitesiz; Patika bu havuza dokunmaz
   (bkz. `docs/plan/90-beceri-kutuphanesi.md`).
 - **Ders içi rol yapma:** serbest sohbet bölümü kaldırıldı; yerine her dersin sonundaki
-  konuşma fazı geçti (`/api/roleplay`). Fark tek kelimede: **amaç**. Sohbette model her şeye
+  konuşma fazı geçti (`/api/chat`). Fark tek kelimede: **amaç**. Sohbette model her şeye
   cevap veriyordu ve konuşmanın nereye gideceği belirsizdi — boş sayfa serbest sohbetin en
   pahalı sorunuydu. Rol yapmada sahne, muhatap ve kullanılacak kalıplar belli; model konuşmayı
   dersin kalıplarına doğru sürüyor ve düzeltmeyi o çerçevede yapıyor. **Eller serbest** anahtarı

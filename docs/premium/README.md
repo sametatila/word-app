@@ -149,7 +149,7 @@ kazanılan hak geri alınmaz. Kademe tavanı `maxTiers` (panel), varsayılan **0
 
 | Yüzey | Kullanılan hak (ömürlük) | Sahiplenme işareti | "Bitirmek" |
 |---|---|---|---|
-| Patika Konuşma | `conversation:<SEVİYE>` | `conversation_owned:<SEVİYE>:<ders>` | dersin bitmesi (`user_lessons` satırı, `/api/lesson`) |
+| Patika Konuşma | `conversation:<SEVİYE>` | `conversation_owned:<SEVİYE>:<ders>` | dersin bitmesi (`user_lessons` satırı, `/api/conversation`) |
 | Patika Yazma | `writing_lesson:<SEVİYE>` | `owned_lesson:<egzersiz>` | ilk değerlendirme (sahiplenmek = değerlendirilmiş gönderim) |
 | Beceriler yazma | `writing_skill:<SEVİYE>` | `skill_ai:<egzersiz>` | ilk değerlendirme |
 | Beceriler konuşma (B1+ monolog) | `speaking_skill:<SEVİYE>` | `skill_ai:<egzersiz>` | ilk değerlendirme |
@@ -163,7 +163,7 @@ KENDİ seviyesi, istemcinin gönderdiği değil. Sahiplenilmemiş (senaryolu) bi
 dilimi doldurmaz.
 
 **Nerede düşüyor:**
-- Patika Konuşma: `/api/roleplay` ilk turu (ders kimliğiyle). Puanlı kısım ("Sınav olarak
+- Patika Konuşma: `/api/chat` ilk turu (ders kimliğiyle). Puanlı kısım ("Sınav olarak
   dene", `/api/assess` `kind: roleplay`) AYNI hakkı kullanır, ayrı hak düşmez.
 - Patika Yazma ve Beceriler: `/api/assess`, madde `exerciseId`den çözülür.
 - **Modül/seviye sınavı yazma bölümü hak DÜŞÜRMEZ** (web kimlik gönderse de mobil göndermese
@@ -183,7 +183,7 @@ dilimi doldurmaz.
 Konuşma adımını bugünkü gibi senaryolu (yapay zekâsız) konuşmayla yapar; adım kilitlenmez ve
 hak düşmez. Sebep: izin zorlanamaz (App Store 5.1.2(i)) ve senaryolu yolun maliyeti yok.
 Hakkı bitmiş ama izin vermiş kullanıcı senaryoluya DÜŞMEZ, kilidi görür (paywall + "nasıl
-açılır"). Kapı sunucuda: misafir `/api/roleplay`e hiç giremiyor (403 account_required), izni
+açılır"). Kapı sunucuda: misafir `/api/chat`e hiç giremiyor (403 account_required), izni
 reddeden rıza kapısında duruyor (403 consent); ikisi de kotaya varmıyor.
 
 **Premium:** kademe yok. Yazma/konuşma değerlendirmesi alıştırma başına bir kez günlük

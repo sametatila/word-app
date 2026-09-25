@@ -85,7 +85,7 @@ describe("fetchWithTimeout() rıza yakalayıcısı", () => {
   it("rol yapma akışı da onaydan sonra yeniden gider", async () => {
     const calls = mockFetch([required("unset"), { status: 200, body: "Hallo!" }]);
     setAiConsentHandler(async () => true);
-    const res = await fetchWithTimeout("https://www.lernomi.app/api/roleplay", { method: "POST", body: "{}" });
+    const res = await fetchWithTimeout("https://www.lernomi.app/api/chat", { method: "POST", body: "{}" });
     expect(res.status).toBe(200);
     expect(calls).toHaveLength(2);
   });

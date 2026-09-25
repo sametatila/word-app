@@ -56,7 +56,7 @@ export default async function LessonPage({ params }: { params: Promise<{ id: str
   }
   /* Konuşma hakkı: kilitliyse oynatıcı adıma girmeden kilidi ve nasıl
      açılacağını gösteriyor. Okunamazsa kilit çizilmiyor — kapıyı yine
-     `/api/roleplay` tutuyor. */
+     `/api/chat` tutuyor. */
   const quota = await lessonQuota(who, source).catch(() => null);
   return <LessonPlayer lesson={lesson} character={character} extras={extras} quota={quota} />;
 }

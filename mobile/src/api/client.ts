@@ -42,7 +42,7 @@ export class ApiError extends Error {
  * ZAMAN AŞIMI — webin `lib/assess-client` kalıbının karşılığı.
  *
  * `api()` hiç zaman aşımı taşımıyordu: yapay zekâ uçları (`/api/assess`,
- * `/api/roleplay`) otuz saniyeyi aşabiliyor ve RN'in `fetch`i işletim sistemi
+ * `/api/chat`) otuz saniyeyi aşabiliyor ve RN'in `fetch`i işletim sistemi
  * vazgeçene kadar bekliyor. Kullanıcı dönmeyen bir spinner'a bakıyordu ve
  * çıkış yolu yoktu. Web aynı çağrıyı yirmi saniyede kesiyor
  * (`ASSESS_TIMEOUT_MS`) ve `timeout` sebebini ayrı gösteriyor.

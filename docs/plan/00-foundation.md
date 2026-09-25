@@ -122,7 +122,7 @@ Bu fazdaki paketler diğer her şeyin üstüne oturduğu zemin: ölçüm, sunucu
 
 **Tasarım.**
 - Ders içeriğine isteğe bağlı `roleplay.script: DialogueTurn[]` (WP-70 şeması) — kapalı temalı, 3–5 turluk, `minTurns` kadar dal.
-- `lesson-player`: `/api/roleplay` 503 dönerse (ya da `chatConfigured()` yanlışsa, sunucu `GET /api/roleplay/status` ile bildirir) `script` ile yerel akışa geç; UI'da "Konuşma servisi kapalı — senaryolu konuşma" rozeti; `roleplayDone` yerel akışta da sayılır.
+- `lesson-player`: `/api/chat` 503 dönerse (ya da `chatConfigured()` yanlışsa, sunucu `GET /api/chat/status` ile bildirir) `script` ile yerel akışa geç; UI'da "Konuşma servisi kapalı — senaryolu konuşma" rozeti; `roleplayDone` yerel akışta da sayılır.
 - Senaryo yoksa: `usedTargets` mantığıyla "hedef kalıpları kullan" görevine düşülür (kullanıcı 3 hedef kalıbı sesli/yazılı söyler → tamamlandı).
 - İçerik: 220 dersin senaryosu WP-71/72 içinde üretilir; bu WP motor + 10 örnek ders.
 
@@ -136,4 +136,4 @@ Bu fazdaki paketler diğer her şeyin üstüne oturduğu zemin: ölçüm, sunucu
 
 **Süre.** 3 gün. **Bağımlılık.** Yok (WP-70 şemasıyla uyumlu olmalı).
 
-**Durum (2026-08-25).** Bitti. `LessonRoleplay.script?: DialogueTurn[]`; `src/lib/lessons/offline-roleplay.ts` (`offlineStart/offlineReply/offlineSummary/patternUsed`; senaryo modu = `lib/dialogue` niyet eşleştirme, senaryosuz ders = kalıp modu); `content/scripts-a1.ts` 10 A1 senaryosu (4'er tur, açılışla aynı ilk tur); `GET /api/roleplay` → `{configured}`; `lesson-player`: konuşmaya girerken ve kayıttan dönerken durum sorgusu, POST 503'te aynı cümleyle senaryoya geçiş, rozet ("Konuşma servisi kapalı — senaryolu konuşma / kalıpları kullan"), `[SAY]` örnek çipi, bitişte `production_attempt(roleplay)` puanı. e2e §30 (16 kontrol, sağlayıcısız `recordLesson.passed === true` dâhil) yeşil. Kanıt: `reports/shots/wp04-roleplay-{start,miss,turns,summary}.png` (demo sunucu, sağlayıcısız).
+**Durum (2026-08-25).** Bitti. `LessonRoleplay.script?: DialogueTurn[]`; `src/lib/lessons/offline-roleplay.ts` (`offlineStart/offlineReply/offlineSummary/patternUsed`; senaryo modu = `lib/dialogue` niyet eşleştirme, senaryosuz ders = kalıp modu); `content/scripts-a1.ts` 10 A1 senaryosu (4'er tur, açılışla aynı ilk tur); `GET /api/chat` → `{configured}`; `lesson-player`: konuşmaya girerken ve kayıttan dönerken durum sorgusu, POST 503'te aynı cümleyle senaryoya geçiş, rozet ("Konuşma servisi kapalı — senaryolu konuşma / kalıpları kullan"), `[SAY]` örnek çipi, bitişte `production_attempt(roleplay)` puanı. e2e §30 (16 kontrol, sağlayıcısız `recordLesson.passed === true` dâhil) yeşil. Kanıt: `reports/shots/wp04-roleplay-{start,miss,turns,summary}.png` (demo sunucu, sağlayıcısız).

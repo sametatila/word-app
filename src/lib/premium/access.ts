@@ -152,7 +152,7 @@ async function finishedLessons(userId: string, ids: string[]): Promise<number> {
  *
  * BİTİRMEK yüzeye göre:
  *  - Konuşma: sahiplenilmiş adımın dersi bitirilmiş (`user_lessons` satırı —
- *    dersin sonunda `/api/lesson` yazıyor). Sahiplenip bitirmemek dilimi
+ *    dersin sonunda `/api/conversation` yazıyor). Sahiplenip bitirmemek dilimi
  *    tamamlamıyor.
  *  - Yazma ve Beceriler: hak ilk değerlendirmede düşüyor, yani sahiplenmek
  *    değerlendirilmiş bir gönderim demek; kullanılan = bitirilen.
@@ -186,7 +186,7 @@ export async function tieredState(userId: string, surface: TieredSurface, level:
  *
  * PREMIUM: kademe yok. Yazma/konuşma değerlendirmesi günlük kötüye kullanım
  * tavanına (`ai_practice`) sayılıyor; Konuşma adımının tavanı sohbet mesajı
- * (`roleplay_turns`, `/api/roleplay`). Premium'da da madde sahipleniliyor:
+ * (`roleplay_turns`, `/api/chat`). Premium'da da madde sahipleniliyor:
  * abonelik biterse başladığı adım açık kalsın.
  */
 export async function claimTiered(userId: string, surface: TieredSurface, level: string, itemId: string): Promise<Access> {

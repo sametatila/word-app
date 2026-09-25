@@ -2,7 +2,7 @@ import { api, API_BASE, ApiError, fetchWithTimeout, ROLEPLAY_TIMEOUT_MS } from "
 import { isAccountRequired } from "../lib/guest";
 
 /**
- * Sohbet (roleplay) — web /api/roleplay (DEPLOY'LU). Senaryo metnini SUNUCU
+ * Sohbet (roleplay) — web /api/chat (DEPLOY'LU). Senaryo metnini SUNUCU
  * tutuyor; mobil yalnız lessonId + mesaj geçmişini yolluyor, asistanın Almanca
  * cevabı DÜZ METİN olarak akıyor (RN akışı parça parça okuyamadığı için tam
  * metni bekliyoruz). LLM yapılandırılmamışsa configured=false döner.
@@ -24,7 +24,7 @@ export type RoleplayRoute = "ai" | "off" | "declined" | "account";
 
 export async function roleplayAvailability(): Promise<RoleplayRoute> {
   try {
-    const r = await api<{ configured: boolean; consent?: string | null }>("/api/roleplay");
+    const r = await api<{ configured: boolean; consent?: string | null }>("/api/chat");
     if (!r.configured) return "off";
     return r.consent === "declined" ? "declined" : "ai";
   } catch (e) {
@@ -37,7 +37,7 @@ export async function sendRoleplay(lessonId: string, messages: ChatMsg[], mode: 
   /* Yapay zekâ üretimi: varsayılandan uzun. Yanıt METİN olduğu için `api()`
      kullanılamıyor (o JSON çözüyor), ama zaman aşımı ortak yardımcıdan.
      Tavanın adı var: web aynı sayıyı aynı adla taşıyor. */
-  const res = await fetchWithTimeout(`${API_BASE}/api/roleplay`, {
+  const res = await fetchWithTimeout(`${API_BASE}/api/chat`, {
     timeoutMs: ROLEPLAY_TIMEOUT_MS,
     method: "POST",
     headers: { "content-type": "application/json" },

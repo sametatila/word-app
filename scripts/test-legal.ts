@@ -234,7 +234,7 @@ console.log("\nSaklama süreleri");
 console.log("\nAdil kullanım");
 {
   const ENDPOINTS: { path: string; field: keyof typeof DAILY_QUOTAS }[] = [
-    { path: "src/app/api/roleplay/route.ts", field: "roleplayTurns" },
+    { path: "src/app/api/chat/route.ts", field: "roleplayTurns" },
     { path: "src/app/api/stt/route.ts", field: "sttRequests" },
     { path: "src/app/api/pronounce/route.ts", field: "pronounceRequests" },
     { path: "src/app/api/reports/route.ts", field: "reports" },

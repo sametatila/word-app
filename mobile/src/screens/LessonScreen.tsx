@@ -59,7 +59,7 @@ import { UnlockProgress } from "../ui/UnlockProgress";
  * sorunsuz çalışıyor. Sonuç şuydu: patikanın konuşma yüzeyi mobilde hiç
  * konuşturmuyor, "söyledim" düğmesi öğrencinin beyanına güveniyordu.
  *
- * İçerik pakette (findLesson); sonuç /api/lesson'a kaydediliyor.
+ * İçerik pakette (findLesson); sonuç /api/conversation'a kaydediliyor.
  */
 
 /** Eller serbest tercihi — web `lesson-player` ile aynı anahtar adı. */
@@ -149,7 +149,7 @@ export function LessonScreen() {
   /*
     PATİKA KONUŞMA HAKKI (2026-09-25). Hakkı olmayan adım KİLİTLİ: konuşmaya
     girmeden kilit, nasıl açılacağı ve Premium yolu gösteriliyor (sunucu
-    `/api/roleplay` aynı kararı veriyor; ilk yapay zekâ turunda 403 gelirse de
+    `/api/chat` aynı kararı veriyor; ilk yapay zekâ turunda 403 gelirse de
     aynı kilit). Misafir ve yapay zekâ iznini REDDEDEN kullanıcı kilit görmüyor —
     senaryolu konuşma onların yolu.
   */
@@ -781,7 +781,7 @@ export function LessonScreen() {
     const seconds = Math.round((Date.now() - startedAt.current) / 1000);
     const payload = { lessonId: lesson.id, correct, roleplayDone: roleDone, day: todayStr(), seconds };
     try {
-      const res = await fetchWithTimeout(`${API_BASE}/api/lesson`, {
+      const res = await fetchWithTimeout(`${API_BASE}/api/conversation`, {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(payload),

@@ -2866,7 +2866,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 }
 
 /* ── 66. cevrimdisi bitirilen dersin kuyrugu ──────────────────────────────
- * Ders bitince sonuc `/api/lesson`a yaziliyor; ag yokken iki tarafta da
+ * Ders bitince sonuc `/api/conversation`a yaziliyor; ag yokken iki tarafta da
  * DUSUYORDU. Yerel isaret Patika'yi bitmis gosteriyor, sunucu dersi hic
  * ogrenmiyor: XP yok, tekrar merdiveni yok, cihaz degisince ders geri
  * geliyor. Iki kuyruk ayri teknolojide (AsyncStorage / localStorage) ama
@@ -20329,7 +20329,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "stt istek=" + alir("src/app/api/stt/route.ts", "stt_requests"),
       "tts=" + alir("src/app/api/tts/route.ts", "tts_calls"),
       "pronounce=" + alir("src/app/api/pronounce/route.ts", "pronounce_requests"),
-      "roleplay=" + alir("src/app/api/roleplay/route.ts", "roleplay_turns"),
+      "roleplay=" + alir("src/app/api/chat/route.ts", "roleplay_turns"),
       "deneme sinavi=" + alir("src/app/api/mock-exam/route.ts", "mock_exam_ai_calls"),
     ],
     ["assess=artiyor", "stt yuruyus=artiyor", "stt istek=artiyor", "tts=artiyor", "pronounce=artiyor", "roleplay=artiyor", "deneme sinavi=artiyor"],
@@ -20410,7 +20410,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  * 347 istemci cagrilarini olctu ve iki muafiyeti "kendi tavanlari var" diye
  * yazdi. Ikisi de olculdu, ikisi de YANLISTI:
  *
- * (a) SOHBET URETIMI. `/api/roleplay` bir cevap YAZDIRIYOR ve uzun bir turda
+ * (a) SOHBET URETIMI. `/api/chat` bir cevap YAZDIRIYOR ve uzun bir turda
  *     kirk saniyeye kadar suruyor. Android bunu biliyor ve `sendRoleplay`
  *     kirk bes saniye bekliyor; webin iki cagirani (`lessons/lesson-player`,
  *     `lessons/roleplay-exam`) kendi suresini vermedigi icin genel tavana
@@ -20462,13 +20462,13 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "mobil",
   );
 
-  /* (2) Cagri yerleri sabiti geciriyor mu. `/api/roleplay` webde uc yerde
+  /* (2) Cagri yerleri sabiti geciriyor mu. `/api/chat` webde uc yerde
      cagriliyor; ucuncusu (lesson-player'daki `configured` yoklamasi) GET ve
      genel tavanda kalmali - bu yuzden olcu POST'lari sayiyor, dosyayi degil. */
   const postGecen = (yol) => {
     const src = silY(read(yol));
     let n = 0;
-    for (const par of src.split('apiFetch("/api/roleplay"').slice(1)) {
+    for (const par of src.split('apiFetch("/api/chat"').slice(1)) {
       const govde = par.slice(0, par.indexOf("});") + 1);
       /* Onundeki harf/alt cizgi DISARIDA: sade `/ROLEPLAY_TIMEOUT_MS/`
          `ASSESS_ROLEPLAY_TIMEOUT_MS`i de sayardi, yani yanlis tavani geciren

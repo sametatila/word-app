@@ -133,7 +133,7 @@ export function RoleplayExam({
     setTurns(next);
     const n = next.filter((t) => t.role === "user").length;
     try {
-      const res = await apiFetch("/api/roleplay", {
+      const res = await apiFetch("/api/chat", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ lessonId: lesson.id, messages: next, mode: "exam" }),

@@ -62,7 +62,7 @@ async function setStreak(id: string, longest: number, current = longest) {
   await db.update(profiles).set({ longestStreak: longest, currentStreak: current }).where(eq(profiles.userId, id));
 }
 
-/** Konuşma adımının dersi bitirildi (`/api/lesson`in yazdığı satır). */
+/** Konuşma adımının dersi bitirildi (`/api/conversation`in yazdığı satır). */
 async function finishLesson(id: string, lessonId: string) {
   await db.insert(userLessons).values({ userId: id, lessonId, ruleId: "r", total: 1 }).onConflictDoNothing();
 }

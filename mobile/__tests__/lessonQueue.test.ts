@@ -34,7 +34,7 @@ test("bağlantı dönünce kuyruk boşalıyor", async () => {
   await queueLessonResult(item);
   api.mockResolvedValue({});
   await flushPendingLessons();
-  expect(api).toHaveBeenCalledWith("/api/lesson", expect.objectContaining({ method: "POST" }));
+  expect(api).toHaveBeenCalledWith("/api/conversation", expect.objectContaining({ method: "POST" }));
   expect(await AsyncStorage.getItem(KEY)).toBeNull();
 });
 

@@ -39,6 +39,10 @@ const ALLOW = {
   "/api/cron/assess": "systemd timer (lernomi-cron-assess, her gün 04:15 UTC)",
   "/api/cron/alerts": "systemd timer (lernomi-cron-alerts, 10 dakikada bir) — uyarı motoru",
   "/api/premium/webhook/[[...provider]]": "mağaza (Play/RevenueCat) sunucudan sunucuya çağırıyor",
+  /* GEÇİCİ TAKMA ADLAR — build 7 herkese ulaşınca uçlarla birlikte silinecek
+     (docs/premium/README.md §2.2). Çağıranları testteki build 6. */
+  "/api/lesson": "eski adres, `/api/conversation`ın takma adı; testteki build 6 çağırıyor",
+  "/api/roleplay": "eski adres, `/api/chat`in takma adı; testteki build 6 çağırıyor",
 };
 
 /** Bütün uç yolları. */

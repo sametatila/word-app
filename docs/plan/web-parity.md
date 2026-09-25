@@ -891,7 +891,7 @@ tarayıcısının içerik listesinde (`first-words.ts` gibi).
 
 ### 11.9 Mobilde eksik: yapay zekâ kapalıyken senaryo yolu
 
-Konuşma dersinin sohbeti yapılandırılmamışsa (`/api/roleplay` `configured:false`)
+Konuşma dersinin sohbeti yapılandırılmamışsa (`/api/chat` `configured:false`)
 iki platform farklı davranıyor:
 
 - **Web** derse ait SENARYOYA düşüyor (`lib/lessons/offline-roleplay`): açılış
@@ -3292,7 +3292,7 @@ kesiyor (`ASSESS_TIMEOUT_MS`) ve `timeout` sebebini `aborted`dan bile ayırıyor
 `chat-providers`, `tts/azure`, `walk-player` ve serbest cümle turu da
 `AbortController` kullanıyor. **Mobilde tek bir zaman aşımı yoktu.**
 
-Sonucu: yapay zekâ uçları (`/api/assess`, `/api/roleplay`) otuz saniyeyi
+Sonucu: yapay zekâ uçları (`/api/assess`, `/api/chat`) otuz saniyeyi
 aşabiliyor ve RN'in `fetch`i işletim sistemi vazgeçene kadar bekliyor.
 Kullanıcı dönmeyen bir spinner'a bakıyordu ve çıkış yolu yoktu.
 
@@ -5414,7 +5414,7 @@ bunu ölçecek.
 
 §11.142'nin sonunda "mobil ders ilerlemesi sunucuya yazılmıyor gibi görünüyor,
 cihaz değişince gidiyor mu?" diye bir endişe yazmıştım. **Ölçüldü: yanlış.**
-`LessonScreen` ders bitince `/api/lesson`a POST ediyor; yerel AsyncStorage seti
+`LessonScreen` ders bitince `/api/conversation`a POST ediyor; yerel AsyncStorage seti
 yalnızca Patika ekranının önbelleği ve `lessonProgress.ts`in kendi başlığı da
 bunu söylüyor. Ucun kendi yorumu da açık: *"telefonda bitirilen ders
 bilgisayarda da bitmiş sayılmalı."* Cihaz değiştiren kullanıcı ilerlemesini
@@ -5564,7 +5564,7 @@ dokunulmadı.
 
 §11.147'nin sorusunu iki uca daha sordum. İkisi de aynı biçimde kaybediyordu.
 
-**Ders (`/api/lesson`) — iki tarafta da.** Ders bitince sonuç yazılıyor, ağ
+**Ders (`/api/conversation`) — iki tarafta da.** Ders bitince sonuç yazılıyor, ağ
 yoksa istek düşüyor ve bir daha denenmiyordu. Yerel işaret (`markItemDone`)
 Patika'yı bitmiş gösterdiği için hata GÖRÜNMÜYOR: kullanıcı dersi bitmiş
 sanıyor, sunucu onu hiç öğrenmiyor — XP verilmiyor, aralıklı tekrar merdiveni
@@ -5574,7 +5574,7 @@ ama aynı sözleşmeyi tutuyor ve §66 bunu ölçüyor: aynı depolama anahtarı
 `day`i, ders başına tek kayıt, 4xx kuyruğa girmiyor, biri düşünce kalanı
 kuyrukta kalıyor.
 
-**Yanında çıkan web hatası:** web `/api/lesson`a `day` ve `seconds`i **hiç
+**Yanında çıkan web hatası:** web `/api/conversation`a `day` ve `seconds`i **hiç
 göndermiyordu**. Yani her ders sunucuda sıfır saniye görünüyor, ve gece
 yarısından sonra bitirilen ders kullanıcının değil SUNUCUNUN gününe (UTC)
 yazılıyordu — seri yanlış güne düşüyor. Mobil ikisini de baştan beri
@@ -7094,7 +7094,7 @@ tekrar dene" diyordu. Kullanıcı **çalışan bir şeyi bozuk sanıp** dersi
 bırakabiliyordu. Web hangi yedeğe düşüldüğünü adlandırıyor (senaryolu konuşma
 / kalıplar); aynı iki cümle taşındı, eskiyen `lesson.ai_off` düştü.
 
-**"Konuşma bitti" yarım bırakıldığında da yazılıyordu.** Sunucu `/api/lesson`
+**"Konuşma bitti" yarım bırakıldığında da yazılıyordu.** Sunucu `/api/conversation`
 yanıtında `passed` döndürüyor (asgari tur doldu mu) ve mobil yanıtın yalnız
 `nextDays` alanını okuyordu — §11.23'te bulunan "yanıt okunmuyor" sınıfının
 kalan bir parçası.
@@ -17738,7 +17738,7 @@ diyor — zaten ölçülmek istenen şey o.
 tavanları var" diye yazdı. İkisi de ölçüldü, ikisi de yanlıştı — ve el listesi
 de eksikti: tarama `src/lib`in **üst dizinine** bakmıştı.
 
-**Sohbet üretimi (Android referans).** `/api/roleplay` bir cevap *yazdırıyor*
+**Sohbet üretimi (Android referans).** `/api/chat` bir cevap *yazdırıyor*
 (değerlendirme gibi hazır metni puanlamıyor) ve uzun bir turda kırk saniyeye
 kadar sürüyor. Android bunu biliyor: `sendRoleplay` kırk beş saniye bekliyor.
 Web'in iki çağıranı (`lessons/lesson-player`, `lessons/roleplay-exam`) kendi

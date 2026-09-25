@@ -29,7 +29,7 @@ export const API_TIMEOUT_MS = 25_000;
 /**
  * SOHBET ÜRETİMİ GENEL TAVANA DÜŞÜYORDU.
  *
- * `/api/roleplay` bir cevap yazdırıyor (değerlendirme gibi hazır metni
+ * `/api/chat` bir cevap yazdırıyor (değerlendirme gibi hazır metni
  * puanlamıyor) ve uzun bir turda kırk saniyeye kadar sürebiliyor. İki
  * çağıran da (`lessons/lesson-player`, `lessons/roleplay-exam`) kendi
  * süresini vermediği için 25 saniyede kesiliyordu — Android aynı çağrıyı
