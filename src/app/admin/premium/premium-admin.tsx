@@ -141,47 +141,32 @@ export function PremiumAdmin({
           binmiyor (eskiden bütün sayfa boyunca kartların üstünü örtüyordu). */}
       <div className="space-y-5">
         <div className="grid gap-5 lg:grid-cols-2">
-          <Panel title="Ücretsiz katman" hint="Ücretsiz hesabın hakları. 0 yazmak “bu özellik ücretsizde hiç yok” demek — cepte yürüyüşün varsayılanı tam olarak bu." span>
+          <Panel title="Ücretsiz katman" hint={<>Kural (2026-09-25): her yüzeyde <b>taban hak</b>; üstüne her dilim, açık hakların hepsi <b>bitirilince VE</b> seri eşiğe varınca açılır — izin verilen = taban + ek hak × k, k = min(⌊en uzun seri ÷ seri adımı⌋, bitirilmiş dilim). Patika Konuşma, Patika Yazma ve Beceriler seviye başına ve <b>ayrı sayaç</b>. 0 yazmak “ücretsizde hiç yok” demek.</>} span>
             <Grid>
-              <Num label="Seviye başına deneme sınavı" v={cfg.free.mockPapersPerLevel} on={(n) => num(["free", "mockPapersPerLevel"], n)} />
-              <Num label="Günde cepte yürüyüş turu" v={cfg.free.pocketWalksPerDay} on={(n) => num(["free", "pocketWalksPerDay"], n)} />
+              <Num label="Patika Konuşma adımı (seviye başına)" v={cfg.free.conversationsPerLevel} on={(n) => num(["free", "conversationsPerLevel"], n)} />
+              <Num label="Patika Yazma (seviye başına)" v={cfg.free.pathWritingPerLevel} on={(n) => num(["free", "pathWritingPerLevel"], n)} />
+              <Num label="Beceriler konuşma (seviye başına)" v={cfg.free.speakingSkills} on={(n) => num(["free", "speakingSkills"], n)} />
+              <Num label="Beceriler yazma (seviye başına)" v={cfg.free.writingSkills} on={(n) => num(["free", "writingSkills"], n)} />
               <Num label="Seri adımı (gün)" v={cfg.free.streakStep} on={(n) => num(["free", "streakStep"], n)} />
-              <Num label="Kademe başına ek hak" v={cfg.free.streakBonus} on={(n) => num(["free", "streakBonus"], n)} />
-              <Num label="En fazla kademe" v={cfg.free.streakMaxTiers} on={(n) => num(["free", "streakMaxTiers"], n)} />
-              <Num label="Konuşma becerisi (ömürlük)" v={cfg.free.speakingSkills} on={(n) => num(["free", "speakingSkills"], n)} />
-              <Num label="Yazma becerisi (ömürlük)" v={cfg.free.writingSkills} on={(n) => num(["free", "writingSkills"], n)} />
-              <Num label="Haftada yenilenen AI alıştırması" v={cfg.free.weeklyAiPractice} on={(n) => num(["free", "weeklyAiPractice"], n)} />
+              <Num label="Dilim başına ek hak (Patika, Beceriler)" v={cfg.free.streakBonus} on={(n) => num(["free", "streakBonus"], n)} />
+              <Num label="Kademe tavanı (0 = sınırsız)" v={cfg.free.maxTiers} on={(n) => num(["free", "maxTiers"], n)} />
+              <Num label="Deneme sınavı (seviye başına)" v={cfg.free.mockPapersPerLevel} on={(n) => num(["free", "mockPapersPerLevel"], n)} />
+              <Num label="Deneme sınavı, dilim başına ek kâğıt" v={cfg.free.mockStreakBonus} on={(n) => num(["free", "mockStreakBonus"], n)} />
+              <Num label="Günde yürüyüş oturumu (ekran açık)" v={cfg.free.walkSessionsPerDay} on={(n) => num(["free", "walkSessionsPerDay"], n)} />
             </Grid>
           </Panel>
 
-          <Panel title="Premium — adil kullanım tavanı" hint={<>Bu sayılar paywall’da kullanıcıya <b>yazılıyor</b>. Tavanı olan bir şeyi “sınırsız” diye sunmak App Store 3.1.2 ve Play’in beyan kurallarına aykırı. Amaç normal kullanıcıyı durdurmak değil, tek bir hesabın bütçeyi yakmasını engellemek.</>}>
+          <Panel title="Premium — kötüye kullanım tavanı" hint={<>Bu sayılar paywall’da kullanıcıya <b>yazılıyor</b>. Tavanı olan bir şeyi “sınırsız” diye sunmak App Store 3.1.2 ve Play’in beyan kurallarına aykırı. Amaç normal kullanıcıyı durdurmak değil, tek bir hesabın bütçeyi yakmasını engellemek. Sohbet mesajı tavanı sabit (kodda, günde 300).</>}>
             <Grid>
-              <Num label="Günde cepte yürüyüş turu" v={cfg.fairUse.pocketWalksPerDay} on={(n) => num(["fairUse", "pocketWalksPerDay"], n)} />
+              <Num label="Günde yürüyüş oturumu" v={cfg.fairUse.walkSessionsPerDay} on={(n) => num(["fairUse", "walkSessionsPerDay"], n)} />
               <Num label="Günde AI değerlendirmesi" v={cfg.fairUse.aiPracticePerDay} on={(n) => num(["fairUse", "aiPracticePerDay"], n)} />
             </Grid>
           </Panel>
 
-          <Panel title="Deneme sınavı paketleri">
+          <Panel title="Deneme sınavı paketleri" hint="Premium: paketteki kâğıtların hepsi bitirilince sonraki paket açılır. Başarı yüzdesi koşulu 2026-09-25’te kalktı.">
             <Grid>
               <Num label="Paket boyu (kâğıt)" v={cfg.mock.packSize} on={(n) => num(["mock", "packSize"], n)} />
-              <Num label="Sonraki paketi açan yüzde" v={cfg.mock.unlockPct} on={(n) => num(["mock", "unlockPct"], n)} />
             </Grid>
-            <label className="mt-3 flex items-start gap-2 text-body">
-              <input
-                type="checkbox"
-                checked={cfg.mock.unlockOnComplete}
-                onChange={(e) => setCfg({ ...cfg, mock: { ...cfg.mock, unlockOnComplete: e.target.checked } })}
-                className="mt-1"
-              />
-              <span>
-                <b>Paketi bitirmek de açsın</b> (puan yetmese bile)
-                <span className="muted block text-caption">
-                  Kapatırsan yüzdeyi tutturamayan bir <b>ödeme yapmış</b> kullanıcı hiçbir yeni
-                  kâğıt göremez. İadenin ve tek yıldızın en sık sebebi budur. Kapatacaksan paywall
-                  metnine “puan yetmezse paket açılmaz” cümlesi eklenmeli.
-                </span>
-              </span>
-            </label>
           </Panel>
 
           <Panel title="Planlar ve fiyat bilgisi" hint={<><b>Buradaki fiyatlar mağazadaki fiyatı değiştirmez.</b> Mobilde fiyat mağazadan gelir (politika gereği); bu tablo web vitrini ve mağaza kurulumunda referans. Değiştirirsen App Store Connect ve Play Console’daki tutarları da elle eşitle.</>} span>
