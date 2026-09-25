@@ -30,5 +30,6 @@
  { "tr": "… göz önüne alındığında daha büyük bir pay …'e gidecek", "kind": "gloss.tr", "de": "Angesichts … wird ein größerer Anteil für … verwendet" },
  { "tr": "… konusunda küçük bir değişiklik önermek için yazıyorum", "kind": "gloss.tr", "de": "Ich schreibe, um eine kleine Änderung bei … vorzuschlagen" },
  { "tr": "Hepimiz aynı fikirde değildik. Karşı çıkanlar … diye savundu.", "kind": "gloss.tr", "de": "Nicht alle waren einer Meinung. Dass …, war das Argument der Gegner." },
- { "tr": "İki değişikliği ve değişmeyen bir şeyi açıklamak için yazıyorum.", "kind": "gloss.tr", "de": "Ich schreibe, um zwei Änderungen und eine Sache zu erklären, die sich nicht ändert." }
+ { "tr": "İki değişikliği ve değişmeyen bir şeyi açıklamak için yazıyorum.", "kind": "gloss.tr", "de": "Ich schreibe, um zwei Änderungen und eine Sache zu erklären, die sich nicht ändert." },
+ { "tr": "sürpriz", "kind": "gloss.tr", "de": "Überraschung" }
 ]
