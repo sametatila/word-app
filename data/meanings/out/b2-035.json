@@ -314,7 +314,7 @@
   {
     "id": 5385,
     "tr": "konuşma",
-    "en": "speaking contribution",
+    "en": "contribution",
     "beispiel": "Jeder Redebeitrag sollte höchstens drei Minuten dauern.",
     "beispielTr": "Her konuşma en fazla üç dakika sürmeli.",
     "beispielEn": "Each speaking contribution should last three minutes at most."
@@ -378,7 +378,7 @@
   {
     "id": 5393,
     "tr": "ara soru",
-    "en": "interrupting question",
+    "en": "interjected question",
     "beispiel": "Darf ich an dieser Stelle eine kurze Zwischenfrage stellen?",
     "beispielTr": "Bu noktada kısa bir ara soru sorabilir miyim?",
     "beispielEn": "May I interrupt with a quick question at this point?"
