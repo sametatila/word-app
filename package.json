@@ -45,6 +45,7 @@
     "check:guest-merge": "node scripts/check-guest-merge.mjs",
     "check:key-families": "node scripts/check-key-families.mjs",
     "check:no-paper-word": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-no-paper-word.ts",
+    "check:no-erdi": "node scripts/check-no-erdi.mjs",
     "export:user": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/export-user.ts",
     "check:colors": "node scripts/check-colors.mjs",
     "check:tokens": "node scripts/check-tokens.mjs",
