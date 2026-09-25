@@ -37,7 +37,7 @@ export function useRoundExit() {
 
   useEffect(() => abort, [abort]);
 
-  /* Kapanış eskiden Erdi'nin şeridi çekme koreografisini bekliyordu
+  /* Kapanış eskiden Nomi'nin şeridi çekme koreografisini bekliyordu
      (`lib/mascot-hold`); maskot 2026-09-22'de turdan tamamen kalkınca
      bekleyecek bir şey kalmadı ve kapanış doğrudan. */
   const finish = useCallback((done: () => void) => done(), []);

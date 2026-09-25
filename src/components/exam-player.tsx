@@ -931,7 +931,7 @@ function Cover({ level, module, onStart }: { level: CefrLevel; module: number | 
   ];
   return (
     <FlowColumn>
-      {/* Erdi koç (WP-66): sınav girişinde düşünceli, tek cümle. */}
+      {/* Nomi koç (WP-66): sınav girişinde düşünceli, tek cümle. */}
       <CoachLine moment="exam_intro" />
       <CoverBody
         icon={<ExamIcon size={28} />}
@@ -1228,7 +1228,7 @@ function Result({
         title={result.passed ? t("exam.passed") : t("exam.not_passed")}
         figure={formatPercent(result.total, lang)}
         sub={t("exam.rules_body", { total: PASS_TOTAL, section: PASS_SECTION })}
-        /* Erdi bandın ALTINDA konuşuyor (koç balonu); bandda ikinci maskot yok. */
+        /* Nomi bandın ALTINDA konuşuyor (koç balonu); bandda ikinci maskot yok. */
         pill={pill}
         quiet={!result.passed}
       />

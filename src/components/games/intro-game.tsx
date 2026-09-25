@@ -50,7 +50,7 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
       /* Tanıtım kartında doğru/yanlış diye bir şey yok: sonuç katmanı hiç
          kurulmuyor ve yeri de ayrılmıyor. İki düğme kartın kendi akışında. */
       /* Okuma bölgesi bu turda BOŞ: tanıtım kartında sorulan bir soru yok.
-         Bir süre Erdi oraya oturuyordu; maskot artık yalnız Öğren ekranının
+         Bir süre Nomi oraya oturuyordu; maskot artık yalnız Öğren ekranının
          günlük tur kutusunda (2026-09-22), kart yine prompt'suz çiziliyor. */
     >
       <motion.div

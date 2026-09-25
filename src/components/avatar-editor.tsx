@@ -12,7 +12,7 @@ import { PageBack } from "@/components/page-back";
 import { useT } from "@/lib/i18n/client";
 
 /**
- * Avatar düzenleme — Erdi'ye şapka (renkli), gözlük, bıyık.
+ * Avatar düzenleme — Nomi'ye şapka (renkli), gözlük, bıyık.
  *
  * Mobilde bu ekran baştan beri var (`AvatarScreen`), web'de hiç yoktu: web
  * kullanıcısının avatarı kimliğinden türetilen bir baş-harf armasıydı ve

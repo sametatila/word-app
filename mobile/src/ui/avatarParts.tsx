@@ -3,7 +3,7 @@ import Svg, { Path, Circle, Rect, Line } from "react-native-svg";
 import type { AvatarConfig } from "../lib/avatar";
 
 /**
- * Avatar aksesuar katmanları — 100x100 viewBox'ta, Erdi tabanının ÜZERİNE bindirilir.
+ * Avatar aksesuar katmanları — 100x100 viewBox'ta, Nomi tabanının ÜZERİNE bindirilir.
  * Placeholder vektörler; Replicate aşamasında gerçek sanata dönüşecek. Katalog
  * (HATS/GLASSES/MUSTACHES) düzenleme ekranını besler.
  */

@@ -172,7 +172,7 @@ export const en: Record<string, string> = {
   "common.continue": "Continue",
   "common.continue_2": "Continue",
   "common.exit": "Exit",
-  /* KOÇ CÜMLELERİ - Erdi'nin sekiz andaki lafları. Webin kendi sözlüğünde
+  /* KOÇ CÜMLELERİ - Nomi'nin sekiz andaki lafları. Webin kendi sözlüğünde
      duruyordu, yani Android kullanıcısı hiç duymuyordu. `plan_*` ve
      `weekly` iki tarafta da BUGÜN çağrılmıyor; yüzeyleri geri gelirse
      yeniden yazılmasın diye duruyor (web `lib/coach-lines` aynı notu

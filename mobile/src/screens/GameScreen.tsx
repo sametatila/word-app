@@ -50,7 +50,7 @@ const STAGE_SIZE = 5;
 /**
  * GÜNLÜK TUR — animasyonun kaldığı tek ağaç.
  *
- * Sağlayıcı BURADA, çünkü Erdi'yi çizen şeylerin bir kısmı paylaşımlı: tur
+ * Sağlayıcı BURADA, çünkü Nomi'yi çizen şeylerin bir kısmı paylaşımlı: tur
  * kartı (`game/rounds` `RoundView`) patron turundan, meydan okumadan ve
  * seviye sınavından da çağrılıyor. Sınır ağaç düzeyinde olmasa maskot o üç
  * ekranda da oynardı (bkz. `game/dailyRound`). Ekranın bütün dalları —
@@ -528,7 +528,7 @@ function GameRound() {
           title={t(total ? (stoppedEarly.current ? "summary.stopped" : "common.round_done") : "game.done_no_more")}
           figure={total ? `${finalCorrect}/${total}` : null}
           sub={total ? (xp > 0 ? `+${xp} XP · ${t("game.saved")}` : t("game.saved")) : t("game.nothing_to_review")}
-          /* ZAYIF NOKTA TURUNDA Erdi bandda değil, altında konuşuyor (web `weak_done`). */
+          /* ZAYIF NOKTA TURUNDA Nomi bandda değil, altında konuşuyor (web `weak_done`). */
         />
         {onlyGame && total > 0 ? <CoachLine moment="weak_done" /> : null}
         {total > 0 ? (

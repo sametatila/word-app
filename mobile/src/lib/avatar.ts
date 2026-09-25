@@ -3,7 +3,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { updateProfile } from "./updateProfile";
 
 /**
- * Kullanıcı avatarı — Erdi maskotu tabanına aksesuar katmanları (şapka + renk,
+ * Kullanıcı avatarı — Nomi maskotu tabanına aksesuar katmanları (şapka + renk,
  * gözlük, bıyık).
  *
  * Web `src/lib/avatar.ts` ile aynı model, aynı JSON biçimi. Cihazdaki kopya

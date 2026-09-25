@@ -164,7 +164,7 @@ ve iki tarafta da yorumlanmış (`LernomiSpeechModule.kt` `isAvailable` docblock
 | R2 | `LaunchScreen.storyboard` hâlâ RN şablonu: "Lernomi" + **"Powered by React Native"** yazısı, sistem zemini | `M/ios/Lernomi/LaunchScreen.storyboard` | Android'de markalı açılış var: turuncu `#FA7C13` + launcher ikonu (`values/styles.xml` `Theme.Lernomi.Splash`) |
 | R3 | Gece/gündüz pencere zemini yok | Android: `values/colors.xml` `window_bg #FBF7F2`, `values-night/colors.xml` `#17120E` | iOS'ta koyu temada açılışta beyaz flaş |
 | R4 | SFX yedek mp3'leri iOS paketinde yok | Android `res/raw/*.mp3` (6 dosya); `M/scripts/render-sfx.py:29` yalnız `res/raw`'a yazıyor; `M/src/lib/sfx.ts:31` iOS'ta `"${name}.mp3"` arıyor | `react-native-sound` yedek yolu iOS'ta **kalıcı ölü**. Köprü hazır değilken (açılış, çevrimdışı) hiç ses yok |
-| R5 | Bildirim küçük ikonu | Android `drawable/ic_notification.xml` (Erdi silüeti) | iOS uygulama ikonunu kullanır — **eksik değil**, ama R1 çözülmeden bildirim de ikonsuz |
+| R5 | Bildirim küçük ikonu | Android `drawable/ic_notification.xml` (Nomi silüeti) | iOS uygulama ikonunu kullanır — **eksik değil**, ama R1 çözülmeden bildirim de ikonsuz |
 
 ### 1.4 Mağaza ve uyum
 

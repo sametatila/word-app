@@ -3,7 +3,7 @@
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-    <!-- Android 13+ tematik ikon katmanı: bildirim ikonuyla aynı Erdi silüeti,
+    <!-- Android 13+ tematik ikon katmanı: bildirim ikonuyla aynı Nomi silüeti,
          108dp tuvalin güvenli iç 66dp dairesine ölçeklenmiş (24 birim × 2.5 = 60dp;
          en uzak noktası merkeze ~30dp, dairenin içinde). -->
     <group android:scaleX="2.5" android:scaleY="2.5" android:translateX="24" android:translateY="24">

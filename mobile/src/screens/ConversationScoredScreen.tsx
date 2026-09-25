@@ -439,7 +439,7 @@ export function ConversationScoredScreen() {
           title={result ? tx(passed ? "exam.passed" : "exam.not_passed") : tx("scored.not_scored")}
           figure={result ? formatPercent(overall) : null}
           sub={`${conversation.title} · ${tx("conversationp.n_turns", { n: userTurns })}`}
-          /* Puanlandıysa Erdi bandın ALTINDA konuşuyor (koç balonu). */
+          /* Puanlandıysa Nomi bandın ALTINDA konuşuyor (koç balonu). */
           pill={result ? { text: tx("scored.below_threshold", { n: SCORED_PASS_SCORE }), tone: passed ? "ok" : "bad" } : null}
           quiet={!passed}
         />

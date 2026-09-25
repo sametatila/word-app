@@ -12,7 +12,7 @@ Plan **iş paketlerine (WP)** bölünmüştür. Her WP başka bir ajan tarafınd
 | [30-writing.md](30-writing.md) | 3 — Yazma | WP-30 AI yazma değerlendirmesi · WP-31 Yazma görev türleri |
 | [40-assessment-exams.md](40-assessment-exams.md) | 4 — Ölçme ve sınav | WP-40 Yerleştirme testi · WP-41 Seviye sınavı v2 · WP-42 Haftalık kullanım sınavı · WP-43 CEFR can-do haritası |
 | [50-analytics-profile.md](50-analytics-profile.md) | 5 — Analitik | WP-50 Beceri yetkinlik modeli · WP-51 Hata analitiği · WP-52 Gelişim raporu |
-| [60-ui-composition.md](60-ui-composition.md) | 6 — Arayüz ve kompozisyon | WP-60 /learn yeniden kompozisyon · WP-61 Geri bildirim bileşeni · WP-62 Konuşma oynatıcı · WP-63 Beceri merkezi · WP-64 Profil · WP-65 Onboarding · WP-66 Erdi koç sesi |
+| [60-ui-composition.md](60-ui-composition.md) | 6 — Arayüz ve kompozisyon | WP-60 /learn yeniden kompozisyon · WP-61 Geri bildirim bileşeni · WP-62 Konuşma oynatıcı · WP-63 Beceri merkezi · WP-64 Profil · WP-65 Onboarding · WP-66 Nomi koç sesi |
 | [70-content-pipeline.md](70-content-pipeline.md) | 7 — İçerik üretim hattı | WP-70 İçerik şeması ve doğrulayıcı · WP-71 Konuşma kapsamı (B1–C1) · WP-72 Konuşma/yazma içeriği · WP-73 Gerekçe ve kural parçacıkları |
 
 ## Hedef puanlar

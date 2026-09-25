@@ -10,7 +10,7 @@ import { parseAvatar, type AvatarConfig } from "@/lib/avatar-config";
  *
  * Eskiden avatar seçmemiş kişi kimliğinden türeyen baş harfli, renkli bir
  * armayla çiziliyordu. Avatar sunucuya taşındıktan sonra listeler iki ayrı
- * dil konuşmaya başladı: seçmiş iki kişi Erdi, geri kalan herkes (canlıda 23
+ * dil konuşmaya başladı: seçmiş iki kişi Nomi, geri kalan herkes (canlıda 23
  * profilin 21'i) eski arma. Arkadaşlar, Bul sekmesi ve sıralama baştan sona
  * eski görünüyordu.
  *
@@ -82,7 +82,7 @@ export function Avatar({
 }
 
 /**
- * Maskot avatarı — Erdi tabanı + aksesuar katmanları.
+ * Maskot avatarı — Nomi tabanı + aksesuar katmanları.
  *
  * TEK çizim yeri: hem başkalarının avatarı (`Avatar`), hem kendi avatarın
  * (`MyAvatar`), hem düzenleme ekranının önizlemesi buradan geçiyor. Üç ayrı

@@ -5,7 +5,7 @@ import { DEFAULT_AVATAR, parseAvatar, type AvatarConfig } from "@/lib/avatar-con
 import { apiFetch } from "@/lib/api-fetch";
 
 /**
- * Kullanıcının KENDİ avatarı — Erdi maskotu tabanına aksesuar katmanları
+ * Kullanıcının KENDİ avatarı — Nomi maskotu tabanına aksesuar katmanları
  * (şapka + renk, gözlük, bıyık).
  *
  * Mobil `M/src/lib/avatar.ts` ile aynı model, aynı JSON biçimi ve aynı

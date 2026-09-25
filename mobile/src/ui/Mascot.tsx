@@ -2,12 +2,12 @@ import React from "react";
 import { Image, View } from "react-native";
 
 /**
- * Erdi (maskot) — animasyonlu WebP klipler. Android'de Fresco animated-webp
+ * Nomi (maskot) — animasyonlu WebP klipler. Android'de Fresco animated-webp
  * eklentisiyle oynar. Klipler 2:3 oranında; boy = en × 1.5.
  *
  * ANİMASYON YALNIZ GÜNLÜK TURDA (2026-09-18, Samet'in kararı).
  *
- * Erdi otuzdan fazla yüzeyde oynuyordu: her sonuç bandı, her durum ekranı
+ * Nomi otuzdan fazla yüzeyde oynuyordu: her sonuç bandı, her durum ekranı
  * ("bulunamadı", "bağlantı yok"), sınav girişleri, seviye testi, yürüyüş
  * modu, gelişim kartı, hata sınırı. Karar şu: animasyon öğrenmenin
  * KENDİSİNDE kalır, ürünün geri kalanında durur. Kalan tek yer Öğren
@@ -21,7 +21,7 @@ import { Image, View } from "react-native";
  * bırakıyordu. Akış şablonları (`ui/flow`) da maskotu artık tanımıyor: sonuç
  * bandı `aside`, durum gövdesi `icon` düğümü alıyor.
  *
- * Kapı: `check:parity` "maskot yalnız günlük turda" — hem Erdi'yi çizen dosya
+ * Kapı: `check:parity` "maskot yalnız günlük turda" — hem Nomi'yi çizen dosya
  * listesine hem sağlayıcının tek kökten kurulduğuna bakıyor.
  *
  * Klip listesi ARŞİVLE BİRLİKTE DÜŞÜNÜLÜR: haritadan çıkan klip ikiliye
@@ -40,7 +40,7 @@ const CLIP = {
 export type Mood = keyof typeof CLIP;
 
 /**
- * Erdi'nin boyu — TEK sayı, çünkü Erdi'nin tek yeri var: Öğren ekranının
+ * Nomi'nin boyu — TEK sayı, çünkü Nomi'nin tek yeri var: Öğren ekranının
  * günlük tur kutusu (2026-09-22, Samet'in kararı). Önce `ui/flow` içindeydi
  * (şablonlar maskotu kendisi çiziyordu), sonra iki sayı olarak buraya taşındı
  * (sonuç bandı 80, durum ekranı 96); tur içindeki bütün yüzeyler kalkınca

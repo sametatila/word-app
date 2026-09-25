@@ -20,7 +20,7 @@ import { useAvatar, parseAvatar, type AvatarConfig } from "../lib/avatar";
  * korunuyor: seçmemiş kişinin aksesuarları kimliğinden türetiliyor.
  */
 
-// Erdi (maskot) forward-facing tabanı — web `public/logo-mark.png` ile AYNI dosya (aynı md5).
+// Nomi (maskot) forward-facing tabanı — web `public/logo-mark.png` ile AYNI dosya (aynı md5).
 const BASE = require("../assets/avatar-base.png");
 
 /** Kimlikten sayı: aynı kimlik her zaman aynı avatarı verir (web `hash` ile aynı). */
@@ -77,7 +77,7 @@ export function Avatar({
 }
 
 /**
- * Maskot avatarı — Erdi tabanı + aksesuar katmanları.
+ * Maskot avatarı — Nomi tabanı + aksesuar katmanları.
  *
  * TEK çizim yeri: kendi avatarın, başkalarınınki ve düzenleme ekranının
  * önizlemesi hep buradan geçiyor.

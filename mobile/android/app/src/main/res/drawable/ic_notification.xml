@@ -3,7 +3,7 @@
     android:height="24dp"
     android:viewportWidth="24"
     android:viewportHeight="24">
-    <!-- Erdi, uygulama ikonundaki (public/icon-512.png) profil duruşuyla: yukarı
+    <!-- Nomi, uygulama ikonundaki (public/icon-512.png) profil duruşuyla: yukarı
          bakan kafa + boyun. Tek renk beyaz; Android yalnız alfayı okur ve durum
          çubuğunda açık/koyu temaya, bildirim panelinde vurgu rengine göre
          kendisi boyar. Bu yüzden ikonun renkleri boşlukla anlatılıyor: göz

@@ -127,7 +127,7 @@ export function GameShell({
         İKİ BÖLGE ARASI — ARTAN BOŞLUK BURADA TOPLANIYOR, sorunun ÜSTÜNDE
         değil. Önce üstteydi ve uzun ekranda soru kartı dibe çöküyordu;
         mobilde soru en üstte kalır, esneyen tek yer bu orta bölge.
-        Bir süre boşluğu Erdi dolduruyordu; maskot 2026-09-22'de turun
+        Bir süre boşluğu Nomi dolduruyordu; maskot 2026-09-22'de turun
         içinden de kalktı (yalnız Öğren ekranının günlük tur kutusunda).
       */}
       <div aria-hidden={sheet != null} className="min-h-5 grow md:hidden" />

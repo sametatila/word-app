@@ -2,7 +2,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { t } from "../lib/i18n";
 
 /**
- * Erdi'nin koç cümleleri — web `src/lib/coach-lines.ts` ile aynı tablo.
+ * Nomi'nin koç cümleleri — web `src/lib/coach-lines.ts` ile aynı tablo.
  *
  * Cümle TABLOSU ve seçim kuralı birebir aynı; tek fark depolama: webde
  * `localStorage` senkron, mobilde AsyncStorage söz döndürüyor (aşağıya bak).

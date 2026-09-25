@@ -141,10 +141,10 @@ export function ResultHero({ eyebrow, title, figure, sub, aside, pill, quiet = f
   figure?: string | null;
   sub?: string | null;
   /**
-   * Bandın sağ ucundaki düğüm. ESKİDEN `mood` ALIRDI ve Erdi'yi kendisi
+   * Bandın sağ ucundaki düğüm. ESKİDEN `mood` ALIRDI ve Nomi'yi kendisi
    * çizerdi; animasyon artık yalnız günlük turda olduğu için bu şablon
    * maskotu tanımıyor (bkz. ui/Mascot dosya başı). Turun sonuç bandı kendi
-   * Erdi'sini buraya veriyor, öteki on üç sonuç ekranı boş bırakıyor.
+   * Nomi'sini buraya veriyor, öteki on üç sonuç ekranı boş bırakıyor.
    */
   aside?: React.ReactNode;
   pill?: { text: string; tone?: PillTone } | null;

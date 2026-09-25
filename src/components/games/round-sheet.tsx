@@ -264,7 +264,7 @@ function SheetBody({ data }: { data: SheetData }) {
     !!data.diffs && (data.diffs.target.some((k) => k.mark !== "same") || data.diffs.typed.some((k) => k.mark === "extra"));
   const showWhy = wrong && !!data.why;
 
-  /* ÇEKME KOREOGRAFİSİ KALDIRILDI (2026-09-22). Şeridi Erdi sürükleyerek
+  /* ÇEKME KOREOGRAFİSİ KALDIRILDI (2026-09-22). Şeridi Nomi sürükleyerek
      getiriyordu (`pull-left`/`pull-right` klipleri, sahne kilidi ve
      `holdRound` ile tur kapanışını bekletme). Maskot artık yalnız Öğren
      ekranının günlük tur kutusunda; sürükleyen olmayınca kayarak giren bir

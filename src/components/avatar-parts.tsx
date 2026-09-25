@@ -1,7 +1,7 @@
 import type { AvatarConfig } from "@/lib/avatar";
 
 /**
- * Avatar aksesuar katmanları — 100×100 viewBox'ta, Erdi tabanının ÜZERİNE
+ * Avatar aksesuar katmanları — 100×100 viewBox'ta, Nomi tabanının ÜZERİNE
  * bindirilir. Yollar mobil `M/src/ui/avatarParts.tsx` ile BİREBİR: aynı
  * seçenek aynı görünmeli, yoksa "aynı avatar" iki platformda iki şey olur.
  *

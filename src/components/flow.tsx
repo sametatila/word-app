@@ -104,10 +104,10 @@ export function ResultHero({
   segments?: { done: number; total: number } | null;
   live?: boolean;
   /**
-   * Bandın sağ ucundaki düğüm. ESKİDEN `mood` ALIRDI ve Erdi'yi kendisi
+   * Bandın sağ ucundaki düğüm. ESKİDEN `mood` ALIRDI ve Nomi'yi kendisi
    * çizerdi; animasyon artık yalnız günlük turda olduğu için bu şablon
    * maskotu tanımıyor (bkz. `components/mascot` dosya başı). Turun sonuç
-   * bandı kendi Erdi'sini buraya veriyor, öteki sonuç ekranları boş bırakıyor.
+   * bandı kendi Nomi'sini buraya veriyor, öteki sonuç ekranları boş bırakıyor.
    */
   aside?: ReactNode;
 }) {

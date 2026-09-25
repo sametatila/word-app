@@ -364,7 +364,7 @@ düzeltildi; kalan ~18 çağrı yeri sırada.
 
 **Açık kalan parite maddesi (G4).** Mobilde cevaptan sonra **"Devam" düğmesi**
 var (`FeedbackFooter`, tek elle erişim için ekranın dibinde); web'de şerit
-kendiliğinden ilerliyor ve arada Erdi şeridi sürükleyerek getiriyor. İkisi
+kendiliğinden ilerliyor ve arada Nomi şeridi sürükleyerek getiriyor. İkisi
 bilinçli tasarlanmış ve mobil kodu web'i kaynak gösteriyor
 (`M/src/game/rounds.tsx`: "web VerdictBar'ın taşıdığı bilgi"). Karar
 gerekiyor — bu belge kapanmadan.
@@ -621,7 +621,7 @@ noktada da daha iyi çıktı:
 | | Mobil | Web (önce) |
 |---|---|---|
 | Soru | kendi kartı: yüzey, kenarlık, gölge | kartsız, dolgulu çip + düz metin |
-| Soru ↔ şık arası | `MascotMid` — boşluğu Erdi dolduruyor, cevaptan sonra gizlenip **yerini koruyor** | boş `aria-hidden` div |
+| Soru ↔ şık arası | `MascotMid` — boşluğu Nomi dolduruyor, cevaptan sonra gizlenip **yerini koruyor** | boş `aria-hidden` div |
 | Aksiyon alanı | `RoundShell` footer — dipte, klavye açılınca kalkıyor | akışın içinde |
 | İlerleme | **"Devam" düğmesi** — kararı öğrenci veriyor | zamanlayıcı: doğruda 620 ms, yanlışta 1200 ms |
 
@@ -630,7 +630,7 @@ yetmiyor, üstelik hoparlöre basıp tekrar dinlemek de mümkün değildi — tu
 çoktan geçmiş oluyordu. Mobil kararı öğrenciye bırakıyor.
 
 Dördü de web'de düzeltildi: `game-shell` artık soruyu kartın içine alıyor,
-aradaki boşluğu Erdi dolduruyor, şeridin altına "Devam" koyuyor (Enter ve
+aradaki boşluğu Nomi dolduruyor, şeridin altına "Devam" koyuyor (Enter ve
 boşluk da çalışıyor) ve on bir oyunun tamamı kendiliğinden ilerlemek yerine
 cevabı bekletiyor. Soru rengi de mobildeki gibi düz metin rengine döndü.
 
@@ -2317,7 +2317,7 @@ gülü (rose) yerine pembe. Konfetinin üstünde yazı yok, yani kontrast konusu
 değil; konu kimlik - kutlama kullanıcının ekran görüntüsü aldığı an ve iki
 uygulama farklı renklerle kutluyordu. Liste webin altı değeriyle eşlendi.
 
-**Meşru çıkanlar, dokunulmadı:** `#FA7C13` (avatar dairesinin zemini - Erdi
+**Meşru çıkanlar, dokunulmadı:** `#FA7C13` (avatar dairesinin zemini - Nomi
 çiziminin PNG zeminiyle aynı değer ve webde de aynı satır), `softShadow`un
 sıcak kahve tinti `#5a3418` (gölge rengi, iki temada da aynı olması bilinçli),
 `avatar.ts` şapka varsayılanı (kullanıcının seçtiği aksesuar rengi, palet
@@ -6770,7 +6770,7 @@ sonra ipucu, temizle, doğruda onay satırı. `lib/shuffle` webin
 Kapılar: §101 yazma görevinin on bir noktası, §102 karıştırma gövdesi.
 
 
-### 11.191 Erdi Android'de hiç konuşmuyordu
+### 11.191 Nomi Android'de hiç konuşmuyordu
 
 `coach.` uzayı: webde 40 anahtar, mobilde sıfır. Web öğrenme ANLARINDA
 maskotun yanında tek cümle gösteriyor (WP-66) — sınav başlarken, sonucunda ve
@@ -8264,7 +8264,7 @@ enjeksiyonun üçü de yakalandı.
 "Yalnız göze söylenen bilgi" taramasını canlı bölgelere çevirdim ve iki şey
 çıktı:
 
-- **Erdi'nin cümlesi.** Koç balonu dört saniye durup kayboluyor: ekran okuyucu
+- **Nomi'nin cümlesi.** Koç balonu dört saniye durup kayboluyor: ekran okuyucu
   kullanan biri onu **hiç** duymuyordu — ne odakta ne de canlı bir bölgedeydi.
   Web aynı cümleyi `role="status"` ile duyuruyor, hem de **iki dalında da**
   (hareket azaltmada düz metin, normalde balon). Geçici metin, canlı bölgenin
@@ -10324,7 +10324,7 @@ Bantlar toplandı (`scoreBand`, iki platformda aynı ad), ve toplarken bir
 **tasarım ayrışması** çıktı: Android sonuç kartında üç bant + konfeti
 kullanıyor (`pct >= 70` kutlama, `>= 40` gülümseme, altı nötr), web ise yalnız
 "hepsi doğruysa kutlama, değilse gülümseme" biliyordu ve konfeti hiç yoktu.
-%30 alan öğrenci de gülümseyen bir Erdi görüyordu — sonuç bir geri bildirim
+%30 alan öğrenci de gülümseyen bir Nomi görüyordu — sonuç bir geri bildirim
 taşımıyordu. Web Android'in davranışına bağlandı (`cheer` klibi mobildeki
 `celebrate` ile aynı dosya).
 
@@ -17010,17 +17010,17 @@ Kapı **§330** web tablosunu **CSS'ten çözerek** karşılaştırıyor
 (`var(--color-mint-600)` → `#237a4c`): kapının içinde tonların bir kopyası yok,
 yani biri değişirse kapı ötekini de değişmeye zorluyor.
 
-## §11.471 — Tek Erdi kuralı Android'de hiç yoktu; ortam dikizlemesi üç noktada ayrışıyordu
+## §11.471 — Tek Nomi kuralı Android'de hiç yoktu; ortam dikizlemesi üç noktada ayrışıyordu
 
 Bir tane mirket var. Ekranın kenarından dikizlerken cevap şeridinde de
 belirmesi, köşede kutlarken şeritte de baş parmak göstermesi karakteri ikiye
 bölüyor. **Web bunu bir kusur olarak bulup sahne kurdu** (`lib/mascot-stage`):
-gezici hareketler sahneyi süreli kilitliyor, sahne başkasınınken öteki her Erdi
+gezici hareketler sahneyi süreli kilitliyor, sahne başkasınınken öteki her Nomi
 örneği görünmez oluyor; cevap şeridinin maskotu **muaf** (`pinned`), çünkü o süs
 değil cevabın kendisi.
 
 **Mobilde sahne hiç yoktu.** Ortam dikizlemesi, kutlama pop'u ve şeridin
-maskotu birbirinden habersiz çiziliyordu; aynı ekranda iki (bazen üç) Erdi
+maskotu birbirinden habersiz çiziliyordu; aynı ekranda iki (bazen üç) Nomi
 görünebiliyordu. Modül birebir port edildi (`lib/mascotStage`), pop ve
 dikizleme sahneyi alıp bırakıyor, `Mascot` `stage`/`pinned` alıyor ve şeridin
 maskotu muaf işaretlendi.

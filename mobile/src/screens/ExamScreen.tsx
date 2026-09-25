@@ -487,7 +487,7 @@ export function ExamScreen() {
           />
         }
       >
-        {/* Sınav başlarken Erdi tek cümle söylüyor - web `exam-player` de
+        {/* Sınav başlarken Nomi tek cümle söylüyor - web `exam-player` de
             aynı yerde. Androidde maskot bu ekranda hiç yoktu. */}
         <CoachLine moment="exam_intro" />
         <CoverBody
@@ -589,7 +589,7 @@ export function ExamScreen() {
           title={result ? (result.passed ? t("exam.passed") : t("exam.not_passed")) : t("exam.saved_offline")}
           figure={formatPercent(pct)}
           sub={result ? t("exam.rules_body", { total: PASS_TOTAL, section: PASS_SECTION }) : null}
-          /* Sonuçta Erdi bandın ALTINDA konuşuyor (koç balonu); bandda ikinci
+          /* Sonuçta Nomi bandın ALTINDA konuşuyor (koç balonu); bandda ikinci
              bir maskot çizilmiyor. Kayıt düştüyse balon yok, maskot bandda. */
           pill={pill}
           quiet={!passed}

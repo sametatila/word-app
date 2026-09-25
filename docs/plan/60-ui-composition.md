@@ -1,12 +1,12 @@
 # Faz 6 — Arayüz ve kompozisyon
 
-Rapor: arayüz kalitesi yüksek (8–9) ama kompozisyon "oyun listesi" mantığında; öğrenme odaklı bir akış (bugün ne yapmalı, neden, sonra ne) yok; tek oyun/dilbilgisi gömülü; geri bildirim tek satır; konuşma ekranında sessizlikler. Bu fazda her ekran "öğrenme planı" fikrinin etrafında yeniden kurulur. Tasarım sistemi korunur (renkler, kartlar, Erdi); yeni bileşenler mevcut `card`, `btn`, `verdict` sınıflarını genişletir.
+Rapor: arayüz kalitesi yüksek (8–9) ama kompozisyon "oyun listesi" mantığında; öğrenme odaklı bir akış (bugün ne yapmalı, neden, sonra ne) yok; tek oyun/dilbilgisi gömülü; geri bildirim tek satır; konuşma ekranında sessizlikler. Bu fazda her ekran "öğrenme planı" fikrinin etrafında yeniden kurulur. Tasarım sistemi korunur (renkler, kartlar, Nomi); yeni bileşenler mevcut `card`, `btn`, `verdict` sınıflarını genişletir.
 
 Genel ilkeler (her WP için):
 - **Mobil ilk, tek el:** okuma üstte, dokunma altta (game-shell'in üç bölge kuralı).
 - **Her ekranda bir sonraki adım tek düğme;** ikincil seçenekler ghost.
 - **Geri bildirim üç katman:** sonuç (renk+simge) → gerekçe (tek satır) → derinleşme (bağlantı). Asla yalnız renk.
-- **Erdi = koç sesi:** kutlama ve teşvik onun; hata açıklaması metin (WP-66).
+- **Nomi = koç sesi:** kutlama ve teşvik onun; hata açıklaması metin (WP-66).
 - **Ölçüm:** her yeni kart/düğme bir `track` olayı.
 - **Kanıt:** her WP mobil (390px) ve masaüstü (1024px) ekran görüntüsüyle kapanır.
 
@@ -19,7 +19,7 @@ Genel ilkeler (her WP için):
 **Mevcut kod.** `src/components/session-player.tsx` (ready ekranı: karşılama kartı, tekrar/yeni sayıları, başla, "Başka türlü oyna", görevler, tek oyun, sıralama), `daily-card`, `challenge-card`, `walk-card`, `cheatsheet-card`, `quest-card`, `leaderboard`.
 
 **Tasarım (yukarıdan aşağıya):**
-1. **Karşılama** (mevcut) + seviye + seri; Erdi.
+1. **Karşılama** (mevcut) + seviye + seri; Nomi.
 2. **Bugünkü plan kartı** (yeni): 3–4 öğe, tahmini süre, tek "Başla": (a) tekrar turu (SRS: N kelime), (b) sıradaki en iyi adım (WP-50 önerisi: bir beceri egzersizi ya da konuşma), (c) hedefli çalışma (WP-51 zayıf nokta, varsa), (d) haftanın sınavı (WP-42, Pazartesi). Tamamlananlar tik alır; plan `dailyStats`'a yazılır (`plan_done`).
 3. **Modlar** yatay kaydırmalı kompakt kartlar: Günün turu, Hayatta kalma, Yürürken, **Tek oyun** (artık görünür, oyun seçimiyle), **Dilbilgisi çalışması** (drill girişi).
 4. **Sınavlar** kartı: yerleştirme (henüz alınmadıysa), seviye sınavı durumu, son sınav puanı.
@@ -111,24 +111,24 @@ Genel ilkeler (her WP için):
 
 **Mevcut kod.** `course-onboarding.tsx`, `/setup`.
 
-**Tasarım.** 4 ekran; her biri tek karar; ilerleme noktaları; Erdi rehber. Hedef seçimi görev ve içerik önerisini etkiler (`profiles.goal`). Yerleştirme WP-40; atlanırsa seviye seçimi mevcut. Son ekran: "Bugünkü planın hazır" (WP-60'a çıkış).
+**Tasarım.** 4 ekran; her biri tek karar; ilerleme noktaları; Nomi rehber. Hedef seçimi görev ve içerik önerisini etkiler (`profiles.goal`). Yerleştirme WP-40; atlanırsa seviye seçimi mevcut. Son ekran: "Bugünkü planın hazır" (WP-60'a çıkış).
 
 **Adımlar.** 1. Akış bileşenleri. 2. `profiles.goal` + migrasyon. 3. Görüntüler; 3 kişilik test.
 
 **Süre.** 3 gün. **Bağımlılık.** WP-40, WP-60.
 
-**Durum (2026-08-25).** Adım 1–2 bitti, 3'ün görüntüleri var, 3 kişilik test proje sahibinde. `src/components/course-onboarding.tsx`: dört adım — (1) isim + kurs + ses, (2) "Neden Almanca?" iş/günlük/sınav/İsviçre, (3) "Seviyemi ölçelim" (profil A1 ile kaydedilir → `/placement`) ya da "Seviyemi biliyorum" (A1–C1 çipi, kısa açıklama), (4) "Bugünkü planın hazır, {isim}" → `/learn`. Başlıkta "Adım n / 4", ilerleme çubuğu, her adımda Erdi'nin bir cümlesi; Geri düğmesi. `profiles.goal` (migrasyon 0033, üretime uygulandı), `POST /api/profile` `goal` kabul ediyor; `nav` olayı kind `onboarding:<adım>`. Kanıt: `reports/shots/wp65-onboarding-{1..4}.png` (demo kullanıcının `course_chosen_at` alanı sıfırlanıp akış baştan yürütüldü; profil A2 · daily ile yazıldı).
+**Durum (2026-08-25).** Adım 1–2 bitti, 3'ün görüntüleri var, 3 kişilik test proje sahibinde. `src/components/course-onboarding.tsx`: dört adım — (1) isim + kurs + ses, (2) "Neden Almanca?" iş/günlük/sınav/İsviçre, (3) "Seviyemi ölçelim" (profil A1 ile kaydedilir → `/placement`) ya da "Seviyemi biliyorum" (A1–C1 çipi, kısa açıklama), (4) "Bugünkü planın hazır, {isim}" → `/learn`. Başlıkta "Adım n / 4", ilerleme çubuğu, her adımda Nomi'nin bir cümlesi; Geri düğmesi. `profiles.goal` (migrasyon 0033, üretime uygulandı), `POST /api/profile` `goal` kabul ediyor; `nav` olayı kind `onboarding:<adım>`. Kanıt: `reports/shots/wp65-onboarding-{1..4}.png` (demo kullanıcının `course_chosen_at` alanı sıfırlanıp akış baştan yürütüldü; profil A2 · daily ile yazıldı).
 
 ---
 
-## WP-66 · Erdi koç sesi
+## WP-66 · Nomi koç sesi
 
 **Amaç.** Maskot (3. nesil klipler, `mascot.tsx`, `mascot-fx.tsx`, sahne kilidi) yalnız kutlama değil, öğrenme anlarında da rol alsın — ama hata açıklaması metin olarak kalır.
 
 **Tasarım.**
 - Anlar: plan kartı (sabah selamı `wave`), sınav girişi (`think`), sınav sonucu (`celebrate`/`sad` + kısa Türkçe cümle), zayıf nokta çalışması bitince (`thumbsup`), haftalık özet (`peek` ile "bak ne oldu").
-- Koç balonu: Erdi'nin yanında 1 cümlelik Türkçe metin (`coach-bubble.tsx`), 4 sn, hareket azaltmada yalnız metin.
-- Tek Erdi kuralı (`mascot-stage.ts`) korunur; balon sahneyi almaz.
+- Koç balonu: Nomi'nin yanında 1 cümlelik Türkçe metin (`coach-bubble.tsx`), 4 sn, hareket azaltmada yalnız metin.
+- Tek Nomi kuralı (`mascot-stage.ts`) korunur; balon sahneyi almaz.
 
 **Adımlar.** 1. `coach-bubble.tsx`. 2. Anlara bağlama (5 yer). 3. Metin listesi (`src/lib/coach-lines.ts`, 40 cümle, tekrar etmeyen seçim).
 
@@ -137,7 +137,7 @@ Genel ilkeler (her WP için):
 **Güncelleme (2026-09-18 → 2026-09-22) — yukarıdaki "anlar" listesi artık
 geçerli değil.** Karar iki adımda daraldı ve son yerine oturdu:
 
-1. 18 Eylül: Erdi ürünün geri kalanından çekildi, yalnız günlük turda kaldı.
+1. 18 Eylül: Nomi ürünün geri kalanından çekildi, yalnız günlük turda kaldı.
    Koçun CÜMLESİ maskotsuz ortak gövdeye taşındı (`ui/CoachLine`,
    `components/coach-line`).
 2. 22 Eylül: maskot TURUN İÇİNDE de kalmadı. Tek yeri **Öğren ekranındaki
@@ -146,13 +146,13 @@ geçerli değil.** Karar iki adımda daraldı ve son yerine oturdu:
 
 Bu yüzden silindiler: gün turu sağlayıcısı (`daily-round.tsx`,
 `game/dailyRound.tsx`), kutlama pop'u, ortam yürüyüşü, koç balonu, cevap
-şeridini çekme koreografisi (`lib/mascot-hold`) ve tek-Erdi sahne kilidi
+şeridini çekme koreografisi (`lib/mascot-hold`) ve tek-Nomi sahne kilidi
 (`lib/mascot-stage`). Çağrılanı kalmayan sekiz klip arşive alındı
 (`assets-archive/mascot/`), mobil paketten çıktı.
 
-Kapı: `check:parity` "maskot yalnız günlük tur kutusunda" — Erdi'yi çizen
+Kapı: `check:parity` "maskot yalnız günlük tur kutusunda" — Nomi'yi çizen
 dosya listesi iki satır (bileşen + kutu, her platformda) ve kutunun kendisi
 ölçülüyor, yani maskot ne başka yere sızabilir ne de sessizce kaybolabilir.
 Boy tek sabitte: `MASCOT_CARD`.
 
-**Durum (2026-08-25).** Adım 1–3 bitti. `src/components/coach-bubble.tsx` (`moment`, `mood`, `vars`, `hold` 4000, `tone` card/dark, `role=status`; balon kapanır, Erdi kalır; hareket azaltmada yalnız metin), `src/lib/coach-lines.ts` (8 an × 5 = 40 cümle; `pickCoachLine` cihazda son söylenenleri dışlar, `fillCoachLine` isim yoksa virgülüyle düşürür, `planMoment` saat → sabah/gün/akşam). Bağlanan anlar: plan kartı selamı (`wave`, ada göre), haftalık özet Pzt–Sal (`peek`, "bak ne oldu"), sınav girişi (`think`), sınav sonucu (`cheer`/`sad` + puan ve seviye), hedefli tur özeti (`thumbsup`/`sad`, `/learn?game=` ile açılan tur). `Mood`'a `peek` eklendi (klip `peek.webp`). Birim test `npm run test:coach-lines` (mevcut `test:coach` AI koç değerlendirmesiydi, ad çakışmasın diye). Kanıt: `reports/shots/wp66-coach-{plan,exam-intro,exam-result,targeted-start,weak-done}.png`.
+**Durum (2026-08-25).** Adım 1–3 bitti. `src/components/coach-bubble.tsx` (`moment`, `mood`, `vars`, `hold` 4000, `tone` card/dark, `role=status`; balon kapanır, Nomi kalır; hareket azaltmada yalnız metin), `src/lib/coach-lines.ts` (8 an × 5 = 40 cümle; `pickCoachLine` cihazda son söylenenleri dışlar, `fillCoachLine` isim yoksa virgülüyle düşürür, `planMoment` saat → sabah/gün/akşam). Bağlanan anlar: plan kartı selamı (`wave`, ada göre), haftalık özet Pzt–Sal (`peek`, "bak ne oldu"), sınav girişi (`think`), sınav sonucu (`cheer`/`sad` + puan ve seviye), hedefli tur özeti (`thumbsup`/`sad`, `/learn?game=` ile açılan tur). `Mood`'a `peek` eklendi (klip `peek.webp`). Birim test `npm run test:coach-lines` (mevcut `test:coach` AI koç değerlendirmesiydi, ad çakışmasın diye). Kanıt: `reports/shots/wp66-coach-{plan,exam-intro,exam-result,targeted-start,weak-done}.png`.

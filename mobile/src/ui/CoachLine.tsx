@@ -7,7 +7,7 @@ import { useTheme } from "../theme";
 /**
  * KOÇUN CÜMLESİ — maskotsuz.
  *
- * Koç balonu (`ui/CoachBubble`) Erdi + balon demek ve Erdi artık yalnız
+ * Koç balonu (`ui/CoachBubble`) Nomi + balon demek ve Nomi artık yalnız
  * günlük turda oynuyor (bkz. `ui/Mascot` dosya başı). Ama cümlenin kendisi
  * animasyon değil İÇERİK: kırk cümlelik tablo sözlükte duruyor (`coach.*`) ve
  * sınav girişinde "hazırsan başlayalım", sonucunda "bunu hak ettin" demek

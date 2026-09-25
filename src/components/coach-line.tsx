@@ -8,7 +8,7 @@ import { useLang } from "@/lib/i18n/client";
 /**
  * KOÇUN CÜMLESİ — maskotsuz.
  *
- * Koç balonu (`components/coach-bubble`) Erdi + balon demek ve Erdi artık
+ * Koç balonu (`components/coach-bubble`) Nomi + balon demek ve Nomi artık
  * yalnız günlük turda oynuyor (bkz. `components/mascot` dosya başı). Ama
  * cümlenin kendisi animasyon değil İÇERİK: kırk cümlelik tablo sözlükte
  * duruyor (`coach.*`) ve sınav girişinde "hazırsan başlayalım", sonucunda

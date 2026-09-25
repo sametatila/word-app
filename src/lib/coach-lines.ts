@@ -1,13 +1,13 @@
 import { translate, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
 /**
- * Erdi'nin koç cümleleri (WP-66).
+ * Nomi'nin koç cümleleri (WP-66).
  *
  * Maskot şimdiye kadar yalnız kutluyordu; burada öğrenme ANLARINDA tek
  * cümlelik Türkçe bir şey söylüyor. Kurallar:
  *   - Cümle tek ve kısa: balon 4 saniye duruyor, okunması gereken bir paragraf
  *     değil bir laf.
  *   - Hata AÇIKLAMASI burada yok — o iş geri bildirim şeridinin (WP-13);
- *     Erdi öğretmen değil, yanında duran arkadaş.
+ *     Nomi öğretmen değil, yanında duran arkadaş.
  *   - Tekrar etmeyen seçim: aynı anda söylenen son birkaç cümle bir daha
  *     seçilmiyor (`pickCoachLine`), yoksa üçüncü sabahta ezberlenir.
  *

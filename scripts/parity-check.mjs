@@ -3890,7 +3890,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 }
 
 /* ── 103. koc balonu ──────────────────────────────────────────────────────
- * Erdi'nin ogrenme anlarinda soyledigi tek cumle. Kirk cumlelik tablo webin
+ * Nomi'nin ogrenme anlarinda soyledigi tek cumle. Kirk cumlelik tablo webin
  * KENDI sozlugunde duruyordu (`coach.*`), bilesen de yalniz webdeydi: sinav
  * baslarken, sonucunda ve zayif nokta turunun ozetinde web konusuyor, Android
  * yalnizca bir maskot gosteriyordu.
@@ -3919,7 +3919,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "zayif nokta=" + (ekran.match(/"weak_done"/g) ?? []).length,
     ];
   };
-  /* BALON GITTI, CUMLE KALDI (2026-09-22). Koc balonu Erdi + balon demekti;
+  /* BALON GITTI, CUMLE KALDI (2026-09-22). Koc balonu Nomi + balon demekti;
      maskot yalniz Ogren ekraninin gunluk tur kutusunda kalinca balon da
      kalkti. Olculen sey cumlenin KENDISI (`CoachLine` / `ui/CoachLine`) ve
      hangi anlarda soylendigi — o degismedi. */
@@ -9081,7 +9081,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
      * kullaniyor - tek basina anahtar olamiyor. Sayi olcusu de var: eslestirme
      * bozulup listeler bosalirsa "fark yok" bos bir dogru olurdu.
      *
-     * 2026-09-18: BALON ARTIK YALNIZ TURDA. Balon Erdi'yi ciziyor ve animasyon
+     * 2026-09-18: BALON ARTIK YALNIZ TURDA. Balon Nomi'yi ciziyor ve animasyon
      * yalniz gunluk turda kaldi (bkz. 288 basligi). Sinav ve sohbet
      * ekranlari balonun CUMLESINI koruyor, maskotunu birakti: ortak
      * `CoachLine` (mobil `ui/CoachLine`, web `components/coach-line`). Cumle
@@ -9117,7 +9117,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         }
         return out;
       };
-      /* BALON KALMADI (2026-09-22). Koc balonu Erdi + balon demekti ve maskot
+      /* BALON KALMADI (2026-09-22). Koc balonu Nomi + balon demekti ve maskot
          artik yalnizca Ogren ekraninin gunluk tur kutusunda; balon iki
          platformdan da silindi (`coach-bubble.tsx`, `ui/CoachBubble.tsx`).
          Kapi bunu olcuyor: hicbir dosyada `<CoachBubble` gecmeyecek — geri
@@ -9273,11 +9273,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         MASKOT YALNIZ OGREN EKRANININ GUNLUK TUR KUTUSUNDA
         (2026-09-22, Samet'in karari).
 
-        Karar iki adimda daraldi. 18 Eylul'de Erdi otuzdan fazla yuzeyden
+        Karar iki adimda daraldi. 18 Eylul'de Nomi otuzdan fazla yuzeyden
         cekilip yalniz gunluk tura birakildi; sinir once DOSYA listesiydi,
         sonra AGAC oldu (`DailyRound` saglayicisi), cunku tur bilesenleri
         paylasimli. 22 Eylul'de sinir son yerine oturdu: animasyon TURUN
-        ICINDE de yok. Erdi yalnizca Ogren sekmesindeki gunluk tur KUTUSUNDA
+        ICINDE de yok. Nomi yalnizca Ogren sekmesindeki gunluk tur KUTUSUNDA
         duruyor — davetin parcasi; tur baslayinca ekranda kalmiyor.
 
         Bu yuzden agac makinesi de kalkti: saglayici (`daily-round.tsx`,
@@ -9292,13 +9292,13 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
                 `screens/LearnScreen.tsx`
 
         Kapi iki yonu birden olcuyor: listeden KACAN yok (yeni bir ekran
-        Erdi'yi geri cagiramaz) ve kutuda VAR (sessizce kaybolamaz).
+        Nomi'yi geri cagiramaz) ve kutuda VAR (sessizce kaybolamaz).
       */
       const IZINLI = {
         web: ["src/components/mascot.tsx", "src/components/learn/learn-hub.tsx"],
         mobil: ["mobile/src/ui/Mascot.tsx", "mobile/src/screens/LearnScreen.tsx"],
       };
-      /* Kutunun kendisi: Erdi'nin TEK yeri sessizce bosalmasin. */
+      /* Kutunun kendisi: Nomi'nin TEK yeri sessizce bosalmasin. */
       const KUTU = { web: "src/components/learn/learn-hub.tsx", mobil: "mobile/src/screens/LearnScreen.tsx" };
       const CIZIM = /<Mascot\b|useClipUrl\(|assets\/mascot\//;
       const cizenler = (kok) => {
@@ -9309,7 +9309,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         return out.sort();
       };
       const kacak = (kok, izin) => cizenler(kok).filter((f) => !izin.some((p) => f.startsWith(p)));
-      /* Kutuda Erdi VAR MI: `<Mascot` etiketi kutunun dosyasinda gecmeli.
+      /* Kutuda Nomi VAR MI: `<Mascot` etiketi kutunun dosyasinda gecmeli.
          Yalnizca "kacak yok" olculseydi maskotu bustun silmek de kapiyi
          yesil birakirdi. */
       const kutuda = (yol) => (/<Mascot\b/.test(sil(read(yol))) ? "var" : "YOK");
@@ -9329,7 +9329,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         "bulunan",
         "beklenen",
       );
-      /* TEK YUZEY, IKI PLATFORM: kutudaki Erdi'nin kipi ve boyu ayni olmali.
+      /* TEK YUZEY, IKI PLATFORM: kutudaki Nomi'nin kipi ve boyu ayni olmali.
          Eskiden yedi ortak yuzey vardi ve tablo onlari eslestiriyordu; bugun
          yuzey bir tane, o yuzden dogrudan etiket okunuyor. Boy SAYIYLA degil
          SABITLE veriliyor (`MASCOT_CARD`), sabitin degeri de karsilastiriliyor
@@ -19074,18 +19074,18 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
-/* -------------------- 331. TEK ERDI KURALI KALKTI (2026-09-22)
+/* -------------------- 331. TEK NOMI KURALI KALKTI (2026-09-22)
  *
- * Kural "ayni anda iki Erdi gorunmesin" diyordu ve bir sahne kilidi
+ * Kural "ayni anda iki Nomi gorunmesin" diyordu ve bir sahne kilidi
  * (`lib/mascot-stage` / `lib/mascotStage`) ile uygulaniyordu: gezici
  * hareketler — ortam dikizlemesi, kutlama pop'u, seridi cekme — sahneyi
  * sureli aliyor, oteki ornekler o sirada gorunmez oluyordu.
  *
  * Maskot artik YALNIZ Ogren ekranindaki gunluk tur kutusunda (Samet'in
- * karari, bkz. 288). Ekranda tek bir Erdi var ve gezici hareketlerin hepsi
+ * karari, bkz. 288). Ekranda tek bir Nomi var ve gezici hareketlerin hepsi
  * silindi, yani kilidin koruyacagi bir sey kalmadi; sahne modulu de silindi.
  * Bugun kuralin yerini "maskot yalniz gunluk tur kutusunda" olcusu tutuyor:
- * Erdi'yi cizen dosya listesi iki satir ve kutunun kendisi olculuyor.
+ * Nomi'yi cizen dosya listesi iki satir ve kutunun kendisi olculuyor.
  */
 
 /* ----------------------- 332. PUAN HALKASI: DORT SONUC EKRANINDA DA VAR

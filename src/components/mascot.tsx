@@ -6,14 +6,14 @@ import { useStill } from "@/lib/use-still";
 import { preloadClips, useClipUrl } from "@/lib/mascot-clips";
 
 /**
- * Erdi — uygulamanın mirketi.
+ * Nomi — uygulamanın mirketi.
  *
  * Mirketin Almancası **Erdmännchen**; ad oradan, karakter de öyle seçildi.
  *
  * ## Üçüncü nesil: üretilmiş kare animasyonları
  *
  * 1. nesil elle çizilmiş SVG'ydi ve boyalı referansın yanında "clipart" kaldı.
- * 2. nesil referans illüstrasyonun renkli izlemesiydi (`public/erdi.svg`) —
+ * 2. nesil referans illüstrasyonun renkli izlemesiydi (`public/nomi.svg`) —
  * görüntü kalitesi tutuyordu ama hareket, tek parça resmi eğip zıplatmaktan
  * öteye geçemiyordu: kafa çevrilemiyor, kol kalkmıyordu.
  *
@@ -39,7 +39,7 @@ import { preloadClips, useClipUrl } from "@/lib/mascot-clips";
  * döngüde — bileşen zamanlama yönetmiyor, yalnızca klibi seçiyor.
  *
  * Hareket azaltma tercihinde klip hiç yüklenmiyor; izlenmiş statik
- * illüstrasyon (`public/erdi.svg`) gösteriliyor.
+ * illüstrasyon (`public/nomi.svg`) gösteriliyor.
  */
 export type Mood =
   | "idle"
@@ -61,7 +61,7 @@ export type Mood =
   "bu da ne?" hâlini zaten taşıyor.
 */
 /**
- * Erdi'nin boyu — TEK sayı, çünkü Erdi'nin tek yeri var: Öğren ekranının
+ * Nomi'nin boyu — TEK sayı, çünkü Nomi'nin tek yeri var: Öğren ekranının
  * günlük tur kutusu (2026-09-22, Samet'in kararı). Önce `components/flow`
  * içindeydi (şablonlar maskotu kendisi çiziyordu), sonra iki sayı olarak
  * buraya taşındı (sonuç bandı 80, durum ekranı 96); tur içindeki bütün
@@ -231,7 +231,7 @@ export function Mascot({
       />
       {still ? (
         // eslint-disable-next-line @next/next/no-img-element -- SVG; next/image için `dangerouslyAllowSVG` gerekir ve SVG'de optimizasyonun kazancı yok
-        <img src="/erdi.svg" alt="" className="block h-full w-full object-contain" draggable={false} />
+        <img src="/nomi.svg" alt="" className="block h-full w-full object-contain" draggable={false} />
       ) : (
         <>
           {/* Takas tamponu: yeni klip çözülene kadar eskinin donmuş nötr karesi. */}
@@ -270,7 +270,7 @@ export function Mascot({
             /* Klip yoksa (henüz üretilmedi / yüklenemedi) statik illüstrasyona düş. */
             onError={(e) => {
               e.currentTarget.onerror = null;
-              e.currentTarget.src = "/erdi.svg";
+              e.currentTarget.src = "/nomi.svg";
             }}
           />
           )}

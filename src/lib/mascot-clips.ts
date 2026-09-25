@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 /**
- * Erdi kliplerini blob URL olarak veren yükleyici.
+ * Nomi kliplerini blob URL olarak veren yükleyici.
  *
  * Neden doğrudan `/anim/x.webp` değil: Safari animasyonlu görselin oynatma
  * durumunu ÖĞE başına değil URL başına tutuyor. Klipler bir tur oynayıp

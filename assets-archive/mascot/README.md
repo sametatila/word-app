@@ -1,4 +1,4 @@
-# Arşivlenmiş Erdi klipleri
+# Arşivlenmiş Nomi klipleri
 
 Bu dizin **yayına girmiyor**: ne mobil ikiliye (metro yalnız `require` edilen
 varlığı paketliyor) ne web deploy'una (`public/` dışında). Klipler silinmedi,

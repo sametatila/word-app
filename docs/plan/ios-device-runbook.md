@@ -153,7 +153,7 @@ Bu faz 4'ten bağımsız: uygulama açıldığı anda bakılabilir, giriş gerek
 ### 3.1 · Uygulama ikonu
 **Önce:** 2.3 · **Kaynak:** R1, `ios-parity-R-T-teslim.md` §3.1
 **Yap:** Ana ekran, Ayarlar › Lernomi, Spotlight araması ve uygulama seçici — dördüne bak.
-**Geçti:** dördünde de turuncu zeminli Erdi portresi; boş/beyaz ikon ya da bulanık kenar
+**Geçti:** dördünde de turuncu zeminli Nomi portresi; boş/beyaz ikon ya da bulanık kenar
 yok. En küçük görünen boyut 40 piksel (bildirim ikonu), orada da maskot tanınmalı.
 **Geçmezse:** `mobile/ios/Lernomi/Images.xcassets/AppIcon.appiconset/Contents.json` ile
 klasördeki PNG'ler eşleşiyor mu; pbxproj'da `ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon`

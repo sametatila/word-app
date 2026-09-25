@@ -64,7 +64,7 @@ function Group({ title, colors, children }: { title: string; colors: Palette; ch
 }
 
 /**
- * Avatar düzenleme — Erdi maskotuna şapka (renkli), gözlük, bıyık ekleme. Canlı
+ * Avatar düzenleme — Nomi maskotuna şapka (renkli), gözlük, bıyık ekleme. Canlı
  * önizleme; seçim yerelde saklanır ve header/profilde anında görünür (Replicate
  * sanatı sonra). Profil kimlik avatarına veya "Avatarını düzenle"ye dokununca açılır.
  */

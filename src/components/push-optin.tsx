@@ -121,7 +121,7 @@ export function PushOptIn({ streak }: { streak: number }) {
 
   return (
     /*
-      Zil yerine uyuyan Erdi.
+      Zil yerine uyuyan Nomi.
 
       Zil genel bir simge; kartın söylediği şey ise özel: "çalışmadığın bir
       günde seni dürteyim mi?". Uyuyan mirket o cümlenin birebir resmi ve

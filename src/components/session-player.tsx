@@ -107,7 +107,7 @@ function sessionKey(game: PlayableGame | null): string {
 /**
  * Kelime turu — MASKOTSUZ (2026-09-22, Samet'in kararı).
  *
- * 18 Eylül'de Erdi ürünün geri kalanından çekilip yalnız bu tura bırakılmıştı;
+ * 18 Eylül'de Nomi ürünün geri kalanından çekilip yalnız bu tura bırakılmıştı;
  * karar bir adım daha gitti: animasyon turun İÇİNDE de yok, yalnız Öğren
  * ekranının günlük tur KUTUSUNDA duruyor (`components/learn/learn-hub`).
  * Bu yüzden `DailyRound` sağlayıcısı, kutlama pop'u, ortam yürüyüşü ve koç
@@ -356,7 +356,7 @@ function SessionRound() {
 
   useEffect(() => {
     // Adresteki hedefli oyun turu tek oyuna kilitler; tur "zayıf nokta
-    // çalışması" sayılır ve özet ekranında Erdi ona göre konuşur (WP-66).
+    // çalışması" sayılır ve özet ekranında Nomi ona göre konuşur (WP-66).
     const game = readGameParam();
     if (game) targeted.current = true;
 
@@ -1258,7 +1258,7 @@ function SummaryCard({
   level: string;
   /** Tur bitmeden bırakıldıysa özet "tamamlandı" demiyor. */
   partial?: boolean;
-  /** Hedefli tur (zayıf nokta): Erdi bandda değil, altında konuşuyor (WP-66). */
+  /** Hedefli tur (zayıf nokta): Nomi bandda değil, altında konuşuyor (WP-66). */
   targeted?: boolean;
   /** Tek oyunlu tur: bandın üst satırı pratiğin adı. */
   onlyGame: PlayableGame | null;

@@ -1,10 +1,10 @@
 /**
  * Uygulama ikonlarını tek kaynaktan üretir: `node scripts/icons.mjs`
  *
- * Kaynak: `scripts/logo-source.png` — maskotun (Erdi) sağa bakan portresinin
+ * Kaynak: `scripts/logo-source.png` — maskotun (Nomi) sağa bakan portresinin
  * turuncu app-ikon hâli (marka görseli #6'dan temizlenmiş: siyah kenar +
  * yuvarlak köşe kalıntısı atılmış, düz turuncu içerik). Logo ile maskot AYNI
- * karakter; maskotun tam gövdesi `public/erdi.svg`, logo ise portresi.
+ * karakter; maskotun tam gövdesi `public/nomi.svg`, logo ise portresi.
  *
  * Kadraj:
  *   - büyük ikonlar (192/512/apple/maskable/logo-mark): #6 çerçevesi (portre).
@@ -60,4 +60,4 @@ await run("magick", [
   ]),
 );
 
-console.log("İkonlar üretildi: logo-source.png (Erdi portresi).");
+console.log("İkonlar üretildi: logo-source.png (Nomi portresi).");

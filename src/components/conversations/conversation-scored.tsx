@@ -384,7 +384,7 @@ export function ConversationScored({
               <span lang={conversation.course}>{conversation.title}</span> · {t("conversationp.n_turns", { n: userTurns })}
             </>
           }
-          /* Erdi bandın ALTINDA konuşuyor (koç balonu). */
+          /* Nomi bandın ALTINDA konuşuyor (koç balonu). */
           pill={{ text: t("scored.below_threshold", { n: SCORED_PASS_SCORE }), tone: passed ? "ok" : "bad" }}
           quiet={!passed}
         />
