@@ -1,0 +1,752 @@
+[
+  {
+    "tr": "„werden“ çekimlenir (ich werde, du wirst, er wird, wir werden, ihr werdet, sie werden) ve asıl fiil mastar olarak EN SONA gider. Dikkat: „werden“ tek başına „olmak“ demektir; „Er wird Arzt“ gelecek zaman değil, „doktor oluyor“ anlamındadır.",
+    "kind": "explanation.tr",
+    "en": "„werden“ is conjugated (ich werde, du wirst, er wird, wir werden, ihr werdet, sie werden) and the main verb goes to the VERY END as an infinitive. Careful: „werden“ on its own means „to become“; „Er wird Arzt“ is not the future but means „he is becoming a doctor“."
+  },
+  {
+    "tr": "„falls“ bir olasılığı koşul yapar (… olursa; belki olur, belki olmaz). „sofern“ ise sınırlayıcı bir koşuldur (… olduğu sürece). İkisi de „wenn“ gibi yan cümle kurar: çekimli fiil en sona gider. Yan cümle başa gelirse ana cümle fiille başlar.",
+    "kind": "explanation.tr",
+    "en": "„falls“ makes a possibility the condition (in case …; it may happen, it may not). „sofern“ is a limiting condition (as long as …). Both build a subordinate clause like „wenn“: the finite verb goes to the very end. If the subordinate clause comes first, the main clause starts with the verb."
+  },
+  {
+    "tr": "A2'de gördüğün ayrımın özü: „nicht müssen“ gerek olmadığını, „nicht dürfen“ yasağı söyler. Türkçede ikisi de olumsuz ekle kurulabildiği için karışır: „şifreyi girmen gerekmiyor“ ile „şifreni kimseye söylememelisin“ Almancada iki ayrı fiildir.",
+    "kind": "explanation.tr",
+    "en": "The core of the distinction you met at A2: „nicht müssen“ says there is no need, „nicht dürfen“ states a prohibition. They are easy to mix up in English, because „must not“ looks like the negative of „must“: „you don't have to enter the password“ and „you mustn't tell anyone your password“ are two different verbs in German."
+  },
+  {
+    "tr": "Futur I, „werden“ + mastar ile kurulur. Almancada gelecek çoğu zaman şimdiki zamanla anlatılır („Morgen regnet es“); Futur I özellikle bir TAHMİN, bir söz ya da bir kararlılık vurgulanacaksa seçilir. Yan cümlede çekimli „werden“ en sona gider.",
+    "kind": "explanation.tr",
+    "en": "Futur I is built with „werden“ + infinitive. German often expresses the future with the present tense („Morgen regnet es“); Futur I is chosen especially when a GUESS, a promise or determination is to be stressed. In a subordinate clause the finite „werden“ goes to the end."
+  },
+  {
+    "tr": "„helfen“, „danken“, „antworten“ gibi fiillerin nesnesi Akkusativ değil Dativ'dir. Türkçede „birine yardım etmek, birine teşekkür etmek“ dediğimiz gibi, kişi „-e“ hâline benzer bir biçim alır. Burada Dativ'i bir edat değil, fiilin kendisi ister.",
+    "kind": "explanation.tr",
+    "en": "The object of verbs like „helfen“, „danken“, „antworten“ is not Akkusativ but Dativ. English „help someone“ and „thank someone“ look like ordinary direct objects, so this is a real trap: the person goes into the Dativ. Here it is not a preposition but the verb itself that demands the Dativ."
+  },
+  {
+    "tr": "„pflegen + zu“ bir alışkanlığı bildirir ve yazılı dile özgüdür. „vermögen + zu“ ise „können“in resmî karşılığıdır. İkisi de tek başına kullanılınca (den Rasen pflegen, das Vermögen) anlamı tamamen değişir; yarı modallığı „zu“lu mastar belirler.",
+    "kind": "explanation.tr",
+    "en": "„pflegen + zu“ expresses a habit and belongs to the written language. „vermögen + zu“ is the formal equivalent of „können“. Used on their own (den Rasen pflegen, das Vermögen) both have a completely different meaning; it is the „zu“ infinitive that makes them semi-modal."
+  },
+  {
+    "tr": "Çift mastar varsa yan cümlede çekimli yardımcı fiil sona değil, iki mastarın ÖNÜNE geçer: „…, dass wir haben warten müssen“, „…, weil man uns hätte informieren sollen“. Bu, yan cümlede çekimli fiilin sona gittiği kuralın en önemli istisnasıdır.",
+    "kind": "explanation.tr",
+    "en": "With a double infinitive the finite auxiliary in a subordinate clause does not go to the end but IN FRONT OF the two infinitives: „…, dass wir haben warten müssen“, „…, weil man uns hätte informieren sollen“. This is the most important exception to the rule that the finite verb goes to the end of a subordinate clause."
+  },
+  {
+    "tr": "Bazen „es“ yalnız fiilden önceki yeri doldurmak için gelir; asıl özne arkada durur: „Es meldeten sich drei Zeugen.“ Fiil gerçek özneye göre çekimlenir. Başka bir öge öne geçince bu yer tutucu tamamen kaybolur. Öznesiz edilgende de aynı şey olur.",
+    "kind": "explanation.tr",
+    "en": "Sometimes „es“ only comes to fill the position before the verb; the real subject stands further back: „Es meldeten sich drei Zeugen.“ The verb agrees with the real subject. When another element moves to the front, this placeholder disappears completely. The same happens in the passive without a subject."
+  },
+  {
+    "tr": "Öncül bir kişiyse wo(r)- kullanılmaz; edat + der/die/das gelir: „die Ärztin, mit der …“. Somut bir şeyin adında da yazı dili edat + zamiri seçer: „der Antrag, auf den wir warten“. Oradaki „worauf“ konuşmada duyulur ama resmî metinde zayıf kalır.",
+    "kind": "explanation.tr",
+    "en": "If the antecedent is a person, wo(r)- is not used; you use preposition + der/die/das: „die Ärztin, mit der …“. For a concrete thing, too, written language chooses preposition + pronoun: „der Antrag, auf den wir warten“. „worauf“ is heard there in speech but sounds weak in a formal text."
+  },
+  {
+    "tr": "Partizip I (beobachtend, ausgehend) ana cümleyle AYNI ANDA süren etken bir eylem bildirir. Partizip II (angekommen, entlassen) ya daha önce tamamlanmış bir eylemi ya da edilgen bir durumu bildirir. Bu yüzden seçim hem zamanı hem çatıyı belirler.",
+    "kind": "explanation.tr",
+    "en": "Partizip I (beobachtend, ausgehend) expresses an active action going on AT THE SAME TIME as the main clause. Partizip II (angekommen, entlassen) expresses either an action completed earlier or a passive state. So the choice decides both the time and the voice."
+  },
+  {
+    "tr": "„mangels“ (… olmadığından) bir eksikliği gerekçe yapar; artikelsiz çoğulda Genitiv görünmezse Dativ'e kayar. „ungeachtet“ (… -e bakmaksızın) bir engeli önemsiz sayar; „trotz“un daha resmî ve daha vurgulu kardeşidir ve ismin arkasına da gelebilir.",
+    "kind": "explanation.tr",
+    "en": "„mangels“ (for lack of …) makes a lack the reason; in the plural without an article, when the Genitiv does not show, it shifts to the Dativ. „ungeachtet“ (regardless of …) treats an obstacle as unimportant; it is a more formal and more emphatic sibling of „trotz“ and can also follow the noun."
+  },
+  {
+    "tr": "„noch so“ bir sıfatın derecesini uca taşır: „auch wenn die Gebühr noch so hoch ist“ — ücret ne kadar yüksek olursa olsun. „mögen“ imtiyazı daha resmî ve mesafeli kılar: „so berechtigt sie auch sein mag“. İki biçim de ana cümlenin sırasına dokunmaz.",
+    "kind": "explanation.tr",
+    "en": "„noch so“ pushes the degree of an adjective to the extreme: „auch wenn die Gebühr noch so hoch ist“ — however high the fee may be. „mögen“ makes the concession more formal and distant: „so berechtigt sie auch sein mag“. Neither form touches the word order of the main clause."
+  },
+  {
+    "tr": "Öncül bir isim değil de „alles, etwas, vieles, das Erste“ ya da bütün bir cümleyse, edat + was yerine wo(r)- birleşik biçimi gelir: worüber, womit, worum. Edat ünlüyle başlıyorsa araya -r- girer: wo + auf → worauf. Yalın „was“ın edatlı biçimi budur.",
+    "kind": "explanation.tr",
+    "en": "If the antecedent is not a noun but „alles, etwas, vieles, das Erste“ or a whole clause, the compound form wo(r)- is used instead of preposition + was: worüber, womit, worum. If the preposition begins with a vowel, an -r- is inserted: wo + auf → worauf. This is the prepositional form of plain „was“."
+  },
+  {
+    "tr": "Soruda „nicht“ ya da „kein“ varsa iş değişir. Olumsuzluğu düzeltip „hayır, aslında geliyorum“ demek istiyorsan „doch“ dersin. Olumsuzluğu onaylıyorsan „nein“ dersin. Türkçede burada „evet“ ile „hayır“ karışabilir; Almancada „doch“ karışıklığı çözer.",
+    "kind": "explanation.tr",
+    "en": "If the question contains „nicht“ or „kein“, things change. If you want to correct the negative and say „yes I am, actually“, you say „doch“. If you agree with the negative, you say „nein“. In English „yes“ and „no“ can be ambiguous here; in German „doch“ clears up the confusion."
+  },
+  {
+    "tr": "„erwachsen“ (yetişkin) sıfatından „der Erwachsene“ (yetişkin kişi) olur: büyük harfle yazılır ama eki, sıfat çekimi tablosuna göre değişmeye devam eder. Belirli artikelden sonra -e ya da -en, eril belirsiz artikelden sonra yalın hâlde -er gelir.",
+    "kind": "explanation.tr",
+    "en": "From the adjective „erwachsen“ (grown-up) you get „der Erwachsene“ (the adult): it is written with a capital letter, but its ending keeps changing according to the adjective declension table. After the definite article it is -e or -en; after the masculine indefinite article in the nominative it is -er."
+  },
+  {
+    "tr": "Edatı sabit fiilleri (warten auf, denken an) biliyorsun. Bazı SIFATLAR da sabit bir edatla kalıplaşır ve hâli o edat belirler: „stolz auf“ ve „bekannt für“ Akkusativ, „zufrieden mit“ Dativ ister. Edat Türkçedeki hâl ekinden tahmin edilemez; sıfatla birlikte öğrenilir.",
+    "kind": "explanation.tr",
+    "en": "You already know verbs with a fixed preposition (warten auf, denken an). Some ADJECTIVES also go with a fixed preposition, and that preposition decides the case: „stolz auf“ and „bekannt für“ take the Akkusativ, „zufrieden mit“ the Dativ. The preposition cannot be guessed from English („proud of“, „happy with“); it is learnt together with the adjective."
+  },
+  {
+    "tr": "wissen, brauchen, bringen gibi karma fiiller de kendi biçimini alır: wusste → wüsste, brauchte → bräuchte, brachte → brächte. „bräuchte“ konuşmada çok yaygındır. „tun“ → „täte“ ise daha çok kalıplarda yaşar: „Das täte mir leid.“, „Du tätest gut daran, …“",
+    "kind": "explanation.tr",
+    "en": "Mixed verbs like wissen, brauchen, bringen also have their own forms: wusste → wüsste, brauchte → bräuchte, brachte → brächte. „bräuchte“ is very common in speech. „tun“ → „täte“ lives on mostly in set phrases: „Das täte mir leid.“, „Du tätest gut daran, …“"
+  },
+  {
+    "tr": "„scheinen + zu“ konuşanın izlenimini bildirir: öyle görünüyor ama emin değilim. Geçmişe dönük izlenimde mastar geçmişe konur: „Er scheint es gewusst zu haben.“ Tek başına „scheinen“ (ışımak) başka bir fiildir; yarı modal kullanımda hep „zu“lu mastar gelir.",
+    "kind": "explanation.tr",
+    "en": "„scheinen + zu“ gives the speaker's impression: it looks like it, but I am not sure. For an impression about the past the infinitive goes into the past: „Er scheint es gewusst zu haben.“ „scheinen“ on its own (to shine) is a different verb; in the semi-modal use a „zu“ infinitive always follows."
+  },
+  {
+    "tr": "Düzenli fiillerin Konjunktiv II'si Präteritum'la aynıdır: „wenn sie fütterten“ geçmiş gibi okunur. Bu yüzden düzenli fiillerde „würde + mastar“ kullanılır. Güçlü fiillerde iki yol da doğrudur; ama bir cümlede iki kez „würde“ ağırlaşır, kısa biçim bunu önler.",
+    "kind": "explanation.tr",
+    "en": "The Konjunktiv II of regular verbs is the same as the Präteritum: „wenn sie fütterten“ reads like the past. That is why regular verbs use „würde + infinitive“. With strong verbs both ways are correct; but „würde“ twice in one sentence feels heavy, and the short form avoids that."
+  },
+  {
+    "tr": "Yazı dilinde ve kibar anlatımda „nicht müssen“ yerine sık sık „nicht / kein / nichts + brauchen + zu-mastar“ kullanılır; anlam aynıdır. Burada zu'yu atlama: konuşmada zu'suz biçim duyulur ama yazıda hata sayılır. Ayrılabilen fiilde zu araya girer: anzulegen.",
+    "kind": "explanation.tr",
+    "en": "In written language and polite speech „nicht / kein / nichts + brauchen + zu-infinitive“ is often used instead of „nicht müssen“; the meaning is the same. Do not leave out the zu here: the form without zu is heard in speech but counts as a mistake in writing. With separable verbs the zu goes in the middle: anzulegen."
+  },
+  {
+    "tr": "„man“ ile kurulan Konjunktiv I bir talimat verir: „Man nehme zwei Eier“ tarif dilinden bilinir. Resmî ve bilimsel metinde okuru yönlendirir: „Man beachte …“, „Man vergleiche Seite 12“. Emir kipinin kişisiz ve mesafeli karşılığıdır; kimseye doğrudan seslenmez.",
+    "kind": "explanation.tr",
+    "en": "Konjunktiv I built with „man“ gives an instruction: „Man nehme zwei Eier“ is familiar from recipes. In formal and academic texts it guides the reader: „Man beachte …“, „Man vergleiche Seite 12“. It is the impersonal, distant counterpart of the imperative; it addresses nobody directly."
+  },
+  {
+    "tr": "„Es ist uns bewusst, dass …“ cümlesinde „es“ arkadan gelen „dass“ cümlesini ya da mastarlı öbeği önceden haber verir. Yan cümle öne geçince bu „es“ çoğunlukla düşer. Bazı fiillerde (ablehnen, genießen, schaffen) korelat nesne görevindedir ve orta alanda kalır.",
+    "kind": "explanation.tr",
+    "en": "In the sentence „Es ist uns bewusst, dass …“ the „es“ announces the „dass“ clause or the infinitive phrase that follows. When the subordinate clause moves to the front, this „es“ usually drops. With some verbs (ablehnen, genießen, schaffen) the correlate is an object and stays in the middle field."
+  },
+  {
+    "tr": "Türkçe konuşan, edatı çoğu zaman Türkçedeki hâl ekinden tahmin eder ve yanılır: „-e ilgi“ „das Interesse an“ (Dativ), „-den korku“ „die Angst vor“, „-e cevap“ „die Antwort auf“, „… sorusu“ „die Frage nach“. Bu yüzden isim her zaman edatıyla birlikte öğrenilir.",
+    "kind": "explanation.tr",
+    "en": "English speakers often guess the preposition from English and get it wrong: „interest in“ is „das Interesse an“ (Dativ), „fear of“ is „die Angst vor“, „answer to“ is „die Antwort auf“, „a question about“ is „die Frage nach“. That is why a noun is always learnt together with its preposition."
+  },
+  {
+    "tr": "Zaman „bekommen“ ile kurulur: bekommt … geschickt (Präsens), bekam … erklärt (Präteritum), hat … erstattet bekommen (Perfekt). Konuşmada „kriegen“, resmî yazıda „erhalten“ de kullanılır: „Sie erhalten die Kaution erstattet.“ Anlam değişmez, yalnız üslup değişir.",
+    "kind": "explanation.tr",
+    "en": "The tense is carried by „bekommen“: bekommt … geschickt (Präsens), bekam … erklärt (Präteritum), hat … erstattet bekommen (Perfekt). In speech „kriegen“ is also used, in formal writing „erhalten“: „Sie erhalten die Kaution erstattet.“ The meaning does not change, only the style."
+  },
+  {
+    "tr": "„sich etwas leisten“, „sich etwas merken“, „sich etwas ansehen“, „sich etwas überlegen“ hep bir nesneyle kullanılır, zamir hep Dativ'dir. Nesne bir isimse dönüşlü zamir önce gelir; nesne de bir zamirse (es, sie) önce Akkusativ zamiri gelir: „Ich sehe sie mir an.“",
+    "kind": "explanation.tr",
+    "en": "„sich etwas leisten“, „sich etwas merken“, „sich etwas ansehen“, „sich etwas überlegen“ are always used with an object, and the pronoun is always Dativ. If the object is a noun, the reflexive pronoun comes first; if the object is also a pronoun (es, sie), the Akkusativ pronoun comes first: „Ich sehe sie mir an.“"
+  },
+  {
+    "tr": "Etken cümledeki „Man muss das Kabel ersetzen“ edilgende „Das Kabel muss ersetzt werden“ olur. Modal fiil çekimlenir ve ikinci sırada durur; cümlenin sonuna asıl fiilin Partizip II'si ve mastar hâlinde „werden“ gelir. Yapanı söylemek gerekirse „von“ + Dativ eklenir.",
+    "kind": "explanation.tr",
+    "en": "The active sentence „Man muss das Kabel ersetzen“ becomes „Das Kabel muss ersetzt werden“ in the passive. The modal verb is conjugated and stands in second position; at the end of the sentence come the Partizip II of the main verb and „werden“ as an infinitive. If the agent needs to be named, „von“ + Dativ is added."
+  },
+  {
+    "tr": "B1'de wäre, hätte, könnte gibi kısa biçimleri gördün. Öteki güçlü fiillerin Konjunktiv II'si de Präteritum kökünden yapılır: a, o, u ünlüsü noktalanır ve -e eklenir: kam → käme, gab → gäbe. Ünlüsü noktalanamayan kökte yalnız -e eklenir: ging → ginge, hielt → hielte.",
+    "kind": "explanation.tr",
+    "en": "At B1 you saw short forms like wäre, hätte, könnte. The Konjunktiv II of the other strong verbs is also formed from the Präteritum stem: the vowels a, o, u take an umlaut and -e is added: kam → käme, gab → gäbe. If the stem vowel cannot take an umlaut, only -e is added: ging → ginge, hielt → hielte."
+  },
+  {
+    "tr": "Eşya ve durumlarda soru wo(r)-, gönderme da(r)- ile kurulur: „Womit bist du zufrieden? — Damit.“ Arkadan bir dass-cümlesi ya da zu-mastarı geliyorsa edat „da(r)-“ biçiminde ana cümlede kalır ve ileriyi gösterir. Kişilerde ise edat + zamir kullanılır: „stolz auf sie“.",
+    "kind": "explanation.tr",
+    "en": "For things and situations the question is built with wo(r)-, the reference with da(r)-: „Womit bist du zufrieden? — Damit.“ If a dass-clause or a zu-infinitive follows, the preposition stays in the main clause as „da(r)-“ and points ahead. For people you use preposition + pronoun: „stolz auf sie“."
+  },
+  {
+    "tr": "Fiil sabit bir edatla kullanılıyorsa (sich kümmern um, sich verlassen auf, sprechen mit) ilgi cümlesinde edat en başa, ilgi zamirinin önüne geçer. Zamirin cinsini isim, hâlini edat belirler. Türkçedeki „ilgilendiğim anne“ yapısında edat görünmez; Almancada asla düşmez.",
+    "kind": "explanation.tr",
+    "en": "If the verb comes with a fixed preposition (sich kümmern um, sich verlassen auf, sprechen mit), the preposition goes to the very front of the relative clause, before the relative pronoun. The noun decides the gender of the pronoun, the preposition its case. English can leave the preposition at the end or drop the pronoun („the mother I look after“); in German the preposition never drops."
+  },
+  {
+    "tr": "„als“ ve „wie“ ile kurulan karşılaştırmalar çoğunlukla Nachfeld'e gider: „Das Gespräch hat länger gedauert als geplant.“ Çerçevenin içinde de durabilirler („länger als geplant gedauert“); özellikle karşılaştırma uzunsa arkaya almak yazıda daha doğal ve daha anlaşılırdır.",
+    "kind": "explanation.tr",
+    "en": "Comparisons with „als“ and „wie“ mostly go into the Nachfeld: „Das Gespräch hat länger gedauert als geplant.“ They can also stand inside the bracket („länger als geplant gedauert“); especially if the comparison is long, putting it at the back is more natural and clearer in writing."
+  },
+  {
+    "tr": "Soru sözcüğüyle ya da „so“ ile başlayan bir yan cümle „auch“ alınca „ne kadar … olursa olsun“ anlamına gelir. Yan cümlede fiil sondadır. Asıl önemli nokta ana cümlededir: öteki yan cümlelerin tersine, arkasından çekimli fiil gelmez; ana cümle normal sırayla, özneyle başlar.",
+    "kind": "explanation.tr",
+    "en": "A subordinate clause beginning with a question word or with „so“ means „however … it may be“ when it takes „auch“. In the subordinate clause the verb is at the end. The key point is in the main clause: unlike after other subordinate clauses, it is not followed by the finite verb; the main clause starts in normal order, with the subject."
+  },
+  {
+    "tr": "„angesichts“ (… göz önüne alınınca) bir durumu gerekçe yapar; „infolge“ (… sonucunda) bir olayın sonucunu bağlar; „aufgrund“ (… nedeniyle) „wegen“in resmî karşılığıdır. Üçü de Genitiv ister ve bir yan cümlenin yerini tutar: „weil die Zahlen so waren“ yerine „angesichts der Zahlen“.",
+    "kind": "explanation.tr",
+    "en": "„angesichts“ (in view of …) makes a situation the reason; „infolge“ (as a result of …) links the result of an event; „aufgrund“ (because of …) is the formal equivalent of „wegen“. All three take the Genitiv and stand in for a subordinate clause: „angesichts der Zahlen“ instead of „weil die Zahlen so waren“."
+  },
+  {
+    "tr": "„dagegen“ ve „jedoch“ zarftır, yan cümle kurmaz. Birinci konuma geçerlerse arkalarından doğrudan çekimli fiil gelir; orta alanda da, vurgulanan öğeden hemen sonra da durabilirler. „aber“dan farkı: „aber“ sıfır konumdadır ve sırayı değiştirmez („…, aber die Nebenstraßen sind dunkel“).",
+    "kind": "explanation.tr",
+    "en": "„dagegen“ and „jedoch“ are adverbs and do not form a subordinate clause. If they move to first position, the finite verb follows directly; they can also stand in the middle field or right after the element being stressed. The difference from „aber“: „aber“ is in position zero and does not change the order („…, aber die Nebenstraßen sind dunkel“)."
+  },
+  {
+    "tr": "Hava fiilleri ve bazı kalıplar (es gibt, es geht um, es handelt sich um) anlam bakımından bir özne taşımaz, ama Almanca cümle bir özne ister. Bu „es“ hiçbir konumda düşmez; başka bir öge öne geçerse fiilin arkasına geçer. Türkçede öznesiz kurulan pek çok cümle Almancada bu „es“i alır.",
+    "kind": "explanation.tr",
+    "en": "Weather verbs and some set phrases (es gibt, es geht um, es handelt sich um) have no subject in terms of meaning, but a German sentence needs a subject. This „es“ never drops, in any position; if another element moves to the front, it goes behind the verb. English does the same with „it“ and „there“: „it is raining“, „there is“."
+  },
+  {
+    "tr": "Edilgenin Perfekt'i her zaman „sein“ ile kurulur, çünkü yardımcı fiil „werden“dir ve „werden“ Perfekt'te „sein“ alır. Cümlenin sonuna iki öge gelir: asıl fiilin Partizip II'si ve „worden“. Konuşmada geçmişteki edilgen çoğunlukla bu biçimle anlatılır; „wurde gebaut“ daha çok yazı dilidir.",
+    "kind": "explanation.tr",
+    "en": "The Perfekt of the passive is always built with „sein“, because the auxiliary is „werden“, and „werden“ takes „sein“ in the Perfekt. Two elements come at the end of the sentence: the Partizip II of the main verb and „worden“. In speech a passive in the past is usually expressed with this form; „wurde gebaut“ belongs more to the written language."
+  },
+  {
+    "tr": "„lassen“ ve algı fiilleri (sehen, hören) bir mastarla birlikteyken Perfekt'te de mastar biçimini alır: „Ich habe das Ticket umbuchen lassen.“ „sehen“ ve „hören“de ortaçlı biçim de duyulur, ama yazıda mastar daha yaygındır. „lassen“de ise ortaçlı biçim („gelassen“) bu yapıda yanlış sayılır.",
+    "kind": "explanation.tr",
+    "en": "„lassen“ and verbs of perception (sehen, hören) also take the infinitive form in the Perfekt when they are used with an infinitive: „Ich habe das Ticket umbuchen lassen.“ With „sehen“ and „hören“ the participle form is heard too, but in writing the infinitive is more common. With „lassen“, however, the participle form („gelassen“) counts as wrong in this structure."
+  },
+  {
+    "tr": "„während“ yalnız zaman bildirmez (-irken); iki durumu karşılaştırırken de kullanılır: „A aydınlıkken B karanlık“. Hangi anlamın kastedildiğini bağlam söyler. „wohingegen“ ise yalnız karşıtlık bildirir ve çoğunlukla ana cümleden SONRA gelir. İkisi de yan cümle kurar: çekimli fiil sona gider.",
+    "kind": "explanation.tr",
+    "en": "„während“ does not only express time (while); it is also used to compare two situations: „A is bright, whereas B is dark“. The context tells you which meaning is intended. „wohingegen“ only expresses contrast and usually comes AFTER the main clause. Both form a subordinate clause: the finite verb goes to the end."
+  },
+  {
+    "tr": "Resmî duyurularda „Es sei darauf hingewiesen, dass …“ (şu hatırlatılır: …) kalıbı kullanılır. Bir kural ya da varsayım konurken de Konjunktiv I gelir: „Es gelte folgende Regel.“ Kalıplaşmış imtiyaz öbekleri de bu kiptendir: „wie dem auch sei“, „koste es, was es wolle“, „sei es …, sei es …“.",
+    "kind": "explanation.tr",
+    "en": "In formal notices the phrase „Es sei darauf hingewiesen, dass …“ (please note that …) is used. When a rule or an assumption is laid down, Konjunktiv I is used too: „Es gelte folgende Regel.“ Fixed concessive phrases also come from this mood: „wie dem auch sei“, „koste es, was es wolle“, „sei es …, sei es …“."
+  },
+  {
+    "tr": "„verzichten auf“ → „der Verzicht auf“, „sich beziehen auf“ → „der Bezug auf“: edat çoğu zaman fiilden isme geçer, ama her zaman değil — „kritisieren“ ve „beeinflussen“ edatsızdır, „die Kritik“ ise „an“, „der Einfluss“ „auf“ ister. Edatın hâli de sabittir: burada „auf“ Akkusativ, „an“ Dativ ister.",
+    "kind": "explanation.tr",
+    "en": "„verzichten auf“ → „der Verzicht auf“, „sich beziehen auf“ → „der Bezug auf“: the preposition usually carries over from the verb to the noun, but not always — „kritisieren“ and „beeinflussen“ have no preposition, while „die Kritik“ takes „an“ and „der Einfluss“ „auf“. The case of the preposition is fixed too: here „auf“ takes the Akkusativ, „an“ the Dativ."
+  },
+  {
+    "tr": "„Weil sie von der Frage überrascht war, schwieg sie“ cümlesi kısaltılabilir: „Von der Frage überrascht, schwieg sie.“ Bağlaç, özne ve çekimli fiil düşer; geriye yalnız ortaç ve tümleçleri kalır. İsim önündeki niteleyiciden farkı şu: öbek bir ismi değil bütün cümleyi niteler ve ortaç çekim eki almaz.",
+    "kind": "explanation.tr",
+    "en": "The sentence „Weil sie von der Frage überrascht war, schwieg sie“ can be shortened: „Von der Frage überrascht, schwieg sie.“ The conjunction, the subject and the finite verb drop; only the participle and its complements remain. The difference from a modifier in front of a noun: the phrase describes not a noun but the whole sentence, and the participle takes no ending."
+  },
+  {
+    "tr": "Ana cümlede üçüncü tekil Konjunktiv I bir dilek ya da kutlama bildirir: „Es lebe die Musik!“ (Yaşasın müzik!), „Gott sei Dank“. Burada kimsenin sözü aktarılmaz; B2'deki dolaylı aktarımdan farkı budur: konuşan kendi dileğini söyler. „möge“ ile kurulan biçim resmî konuşmalarda ve kutlamalarda duyulur.",
+    "kind": "explanation.tr",
+    "en": "In a main clause the third person singular Konjunktiv I expresses a wish or a celebration: „Es lebe die Musik!“ (Long live music!), „Gott sei Dank“. Nobody's words are being reported here; that is the difference from reported speech at B2: the speakers state their own wish. The form with „möge“ is heard in formal speeches and celebrations."
+  },
+  {
+    "tr": "„stattdessen“ bir şeyin YERİNE başka bir şeyin geldiğini söyler; zarftır ve birinci konumda fiili hemen arkasına çeker. Buraya kadarki araçların hepsi iki durumu karşılaştırır. „obwohl“ ve „trotzdem“ ise bir beklentinin boşa çıktığını söyler: karanlığa rağmen yalnız yürümek bir ödündür, karşıtlık değil.",
+    "kind": "explanation.tr",
+    "en": "„stattdessen“ says that something else comes INSTEAD of one thing; it is an adverb, and in first position it pulls the verb right behind it. All the tools so far compare two situations. „obwohl“ and „trotzdem“, however, say that an expectation was not met: walking alone despite the darkness is a concession, not a contrast."
+  },
+  {
+    "tr": "bekommen-edilgeni ancak bir şey birine verildiğinde, gönderildiğinde, açıklandığında ya da ondan alındığında kurulur. Alıcısı olmayan fiillerle kurulmaz: „Die Leiter bekommt repariert“ yanlıştır; doğrusu „Die Leiter wird repariert.“ Olumsuz bir etkide de kullanılır: „Er bekam die Mitgliedschaft gekündigt.“",
+    "kind": "explanation.tr",
+    "en": "The bekommen passive is only built when something is given, sent or explained to someone, or taken away from them. It is not built with verbs that have no recipient: „Die Leiter bekommt repariert“ is wrong; the correct form is „Die Leiter wird repariert.“ It is also used for a negative effect: „Er bekam die Mitgliedschaft gekündigt.“"
+  },
+  {
+    "tr": "Modal fiil başka bir mastarla birlikte Perfekt'e girince ortaç (gemusst, gekonnt) yerine MASTAR biçimi gelir: „Der Zug hat warten müssen.“ Buna Ersatzinfinitiv denir. Modal fiil tek başına kullanılırsa normal ortaç kalır: „Er hat es gemusst.“ „hätte … müssen“ yapısı aynı kuralın Konjunktiv II'deki uygulamasıdır.",
+    "kind": "explanation.tr",
+    "en": "When a modal verb goes into the Perfekt together with another infinitive, the INFINITIVE form is used instead of the participle (gemusst, gekonnt): „Der Zug hat warten müssen.“ This is called Ersatzinfinitiv. If the modal verb is used on its own, the normal participle stays: „Er hat es gemusst.“ The structure „hätte … müssen“ is the same rule applied in the Konjunktiv II."
+  },
+  {
+    "tr": "n-çekimi yalnız bazı ERİL isimlerde görülür: -e ile biten canlılar (der Kunde, der Kollege, der Junge), -ent, -ant ya da -ist ile biten kişi adları (der Student, der Praktikant, der Journalist) ve birkaç ayrı sözcük (der Mensch, der Nachbar, der Herr). Ortak kural: yalın tekil dışında her biçim -n ya da -en alır.",
+    "kind": "explanation.tr",
+    "en": "The n-declension only appears with some MASCULINE nouns: living beings ending in -e (der Kunde, der Kollege, der Junge), words for people ending in -ent, -ant or -ist (der Student, der Praktikant, der Journalist) and a few individual words (der Mensch, der Nachbar, der Herr). The common rule: every form except the nominative singular takes -n or -en."
+  },
+  {
+    "tr": "Uzun bir edat öbeği de vurgu ya da rahatlık için çerçevenin arkasına alınabilir; buna Ausklammerung denir: „Wir haben lange gesprochen über die Risiken.“ Konuşmada çok sıktır, resmî yazıda ölçülü kullanılır. Nesne (Akkusativ) ve kısa zarflar ise çerçevenin içinde kalır: „Ich habe gelesen das Merkblatt“ yanlıştır.",
+    "kind": "explanation.tr",
+    "en": "A long prepositional phrase can also be moved behind the bracket for emphasis or ease; this is called Ausklammerung: „Wir haben lange gesprochen über die Risiken.“ It is very common in speech and used sparingly in formal writing. The object (Akkusativ) and short adverbs stay inside the bracket: „Ich habe gelesen das Merkblatt“ is wrong."
+  },
+  {
+    "tr": "Çekimli fiil ile fiilin ikinci parçası (Partizip, mastar, ayrılan ek) bir çerçeve (Satzklammer) kurar: „Die Ärztin hat mir … geraten.“ Çerçevenin arkasındaki alan Nachfeld'dir. Yan cümleler ve „zu“lu mastar öbekleri neredeyse her zaman oraya gider; çerçevenin içinde kalsalardı okur fiili beklerken bütün cümleyi aklında tutmak zorunda kalırdı.",
+    "kind": "explanation.tr",
+    "en": "The finite verb and the second part of the verb (Partizip, infinitive, separated prefix) form a bracket (Satzklammer): „Die Ärztin hat mir … geraten.“ The area behind the bracket is the Nachfeld. Subordinate clauses and „zu“ infinitive phrases almost always go there; if they stayed inside the bracket, the reader would have to keep the whole sentence in mind while waiting for the verb."
+  },
+  {
+    "tr": "Dativ nesnesi olan fiillerde (schicken, schenken, erklären, erstatten) işin ALICISI özne yapılabilir: „Man schickt dem Mitglied eine Erinnerung“ → „Das Mitglied bekommt eine Erinnerung geschickt.“ „werden“ edilgeninde alıcı Dativ'de kalır: „Dem Mitglied wird eine Erinnerung geschickt.“ bekommen-edilgeni alıcıyı öne çıkarır ve konuşmada çok daha doğal duyulur.",
+    "kind": "explanation.tr",
+    "en": "With verbs that have a Dativ object (schicken, schenken, erklären, erstatten) the RECIPIENT can be made the subject: „Man schickt dem Mitglied eine Erinnerung“ → „Das Mitglied bekommt eine Erinnerung geschickt.“ In the „werden“ passive the recipient stays in the Dativ: „Dem Mitglied wird eine Erinnerung geschickt.“ The bekommen passive puts the recipient first and sounds much more natural in speech."
+  },
+  {
+    "tr": "„werden“ + „wohl“ (ya da „sicher“, „vermutlich“) çoğu zaman gelecek değil, bugüne ya da geçmişe dair bir TAHMİN bildirir. Bugün için Futur I („Sie wird wohl im Büro sein“ = muhtemelen büroda), geçmiş için Futur II („Er wird es wohl vergessen haben“ = herhalde unutmuştur) kullanılır. Öznel modal fiillerden farkı: burada kesinlik derecesini modal fiil değil „wohl“ taşır.",
+    "kind": "explanation.tr",
+    "en": "„werden“ + „wohl“ (or „sicher“, „vermutlich“) often expresses not the future but a GUESS about the present or the past. For the present Futur I is used („Sie wird wohl im Büro sein“ = she is probably at the office), for the past Futur II („Er wird es wohl vergessen haben“ = he has probably forgotten). The difference from the subjective modal verbs: here the degree of certainty is carried not by a modal verb but by „wohl“."
+  },
+  {
+    "tr": "Akşam eve yürüyerek gidiyoruz.",
+    "kind": "explanation.examples.tr",
+    "en": "We walk home in the evening."
+  },
+  {
+    "tr": "Evde kalıyorum, çünkü hastayım.",
+    "kind": "explanation.examples.tr",
+    "en": "I'm staying at home, because I'm ill."
+  },
+  {
+    "tr": "Sorunun açık kaldığının farkındayız.",
+    "kind": "explanation.examples.tr",
+    "en": "We are aware that the question remains open."
+  },
+  {
+    "tr": "Mayısa kadar geri ödemen şartıyla sana parayı ödünç veririm.",
+    "kind": "explanation.examples.tr",
+    "en": "I'll lend you the money, provided that you pay it back by May."
+  },
+  {
+    "tr": "Ne oldu?",
+    "kind": "explanation.examples.tr",
+    "en": "What happened?"
+  },
+  {
+    "tr": "Susadım.",
+    "kind": "explanation.examples.tr",
+    "en": "I'm thirsty."
+  },
+  {
+    "tr": "doğum günü",
+    "kind": "explanation.examples.tr",
+    "en": "birthday"
+  },
+  {
+    "tr": "hafta sonu",
+    "kind": "explanation.examples.tr",
+    "en": "weekend"
+  },
+  {
+    "tr": "bir mayısta",
+    "kind": "explanation.examples.tr",
+    "en": "on the first of May"
+  },
+  {
+    "tr": "çocuk odası",
+    "kind": "explanation.examples.tr",
+    "en": "children's room"
+  },
+  {
+    "tr": "Kışı sever.",
+    "kind": "explanation.examples.tr",
+    "en": "He likes winter."
+  },
+  {
+    "tr": "Öğretmenim.",
+    "kind": "explanation.examples.tr",
+    "en": "I'm a teacher."
+  },
+  {
+    "tr": "oda anahtarı",
+    "kind": "explanation.examples.tr",
+    "en": "room key"
+  },
+  {
+    "tr": "sokak kapısı",
+    "kind": "explanation.examples.tr",
+    "en": "front door"
+  },
+  {
+    "tr": "üçüncü katta",
+    "kind": "explanation.examples.tr",
+    "en": "on the third floor"
+  },
+  {
+    "tr": "yedi mayısta",
+    "kind": "explanation.examples.tr",
+    "en": "on the seventh of May"
+  },
+  {
+    "tr": "Yıkanıyorum.",
+    "kind": "explanation.examples.tr",
+    "en": "I'm washing myself."
+  },
+  {
+    "tr": "Balık sevmez.",
+    "kind": "explanation.examples.tr",
+    "en": "She doesn't like fish."
+  },
+  {
+    "tr": "Çayı severim.",
+    "kind": "explanation.examples.tr",
+    "en": "I like tea."
+  },
+  {
+    "tr": "çikolatalı süt",
+    "kind": "explanation.examples.tr",
+    "en": "chocolate milk"
+  },
+  {
+    "tr": "Doktor oluyor.",
+    "kind": "explanation.examples.tr",
+    "en": "He's becoming a doctor."
+  },
+  {
+    "tr": "Kimse aramadı.",
+    "kind": "explanation.examples.tr",
+    "en": "Nobody called."
+  },
+  {
+    "tr": "Kimse gelmedi.",
+    "kind": "explanation.examples.tr",
+    "en": "Nobody came."
+  },
+  {
+    "tr": "Öğretmen oldu.",
+    "kind": "explanation.examples.tr",
+    "en": "She became a teacher."
+  },
+  {
+    "tr": "sütlü çikolata",
+    "kind": "explanation.examples.tr",
+    "en": "milk chocolate"
+  },
+  {
+    "tr": "Yaşasın müzik!",
+    "kind": "explanation.examples.tr",
+    "en": "Long live music!"
+  },
+  {
+    "tr": "Bilet ne kadar?",
+    "kind": "explanation.examples.tr",
+    "en": "How much is the ticket?"
+  },
+  {
+    "tr": "Bugün iki ekim.",
+    "kind": "explanation.examples.tr",
+    "en": "Today is the second of October."
+  },
+  {
+    "tr": "Bunu istemedim.",
+    "kind": "explanation.examples.tr",
+    "en": "I didn't want that."
+  },
+  {
+    "tr": "domates çorbası",
+    "kind": "explanation.examples.tr",
+    "en": "tomato soup"
+  },
+  {
+    "tr": "Annesini arıyor.",
+    "kind": "explanation.examples.tr",
+    "en": "He's calling his mother."
+  },
+  {
+    "tr": "Dün seni aradım.",
+    "kind": "explanation.examples.tr",
+    "en": "I called you yesterday."
+  },
+  {
+    "tr": "iki sokak kapısı",
+    "kind": "explanation.examples.tr",
+    "en": "two front doors"
+  },
+  {
+    "tr": "Saat daha sekiz.",
+    "kind": "explanation.examples.tr",
+    "en": "It's only eight o'clock."
+  },
+  {
+    "tr": "Yüzmeyi severim.",
+    "kind": "explanation.examples.tr",
+    "en": "I like swimming."
+  },
+  {
+    "tr": "Anahtarı unuttuk.",
+    "kind": "explanation.examples.tr",
+    "en": "We forgot the key."
+  },
+  {
+    "tr": "Bir mektup aldım.",
+    "kind": "explanation.examples.tr",
+    "en": "I got a letter."
+  },
+  {
+    "tr": "Bu benim için mi?",
+    "kind": "explanation.examples.tr",
+    "en": "Is this for me?"
+  },
+  {
+    "tr": "Kıpkırmızı oldun!",
+    "kind": "explanation.examples.tr",
+    "en": "You're going bright red!"
+  },
+  {
+    "tr": "Kızım on yaşında.",
+    "kind": "explanation.examples.tr",
+    "en": "My daughter is ten years old."
+  },
+  {
+    "tr": "Mutfağı boyattık.",
+    "kind": "explanation.examples.tr",
+    "en": "We had the kitchen painted."
+  },
+  {
+    "tr": "Ödevi anladın mı?",
+    "kind": "explanation.examples.tr",
+    "en": "Did you understand the exercise?"
+  },
+  {
+    "tr": "Anonsu anlayamadı.",
+    "kind": "explanation.examples.tr",
+    "en": "She couldn't understand the announcement."
+  },
+  {
+    "tr": "Bisiklet senin mi?",
+    "kind": "explanation.examples.tr",
+    "en": "Does the bicycle belong to you?"
+  },
+  {
+    "tr": "Kaç çocuğunuz var?",
+    "kind": "explanation.examples.tr",
+    "en": "How many children do you have?"
+  },
+  {
+    "tr": "Sensiz gitmiyorum.",
+    "kind": "explanation.examples.tr",
+    "en": "I'm not going without you."
+  },
+  {
+    "tr": "Üç tanık başvurdu.",
+    "kind": "explanation.examples.tr",
+    "en": "Three witnesses came forward."
+  },
+  {
+    "tr": "Bugün çok yorgunum.",
+    "kind": "explanation.examples.tr",
+    "en": "I'm very tired today."
+  },
+  {
+    "tr": "Çay içmeyi severim.",
+    "kind": "explanation.examples.tr",
+    "en": "I like drinking tea."
+  },
+  {
+    "tr": "Dans etmeyi sevmem.",
+    "kind": "explanation.examples.tr",
+    "en": "I don't like dancing."
+  },
+  {
+    "tr": "Evde misiniz artık?",
+    "kind": "explanation.examples.tr",
+    "en": "Are you home already?"
+  },
+  {
+    "tr": "Güzel bir odan var.",
+    "kind": "explanation.examples.tr",
+    "en": "You have a nice room."
+  },
+  {
+    "tr": "Hava birden soğudu.",
+    "kind": "explanation.examples.tr",
+    "en": "It suddenly got cold."
+  },
+  {
+    "tr": "Üyeliği feshedildi.",
+    "kind": "explanation.examples.tr",
+    "en": "His membership was cancelled."
+  },
+  {
+    "tr": "Vedalaşmadan gitti.",
+    "kind": "explanation.examples.tr",
+    "en": "He left without saying goodbye."
+  },
+  {
+    "tr": "Yarın çalışmıyorum.",
+    "kind": "explanation.examples.tr",
+    "en": "I'm not working tomorrow."
+  },
+  {
+    "tr": "Bu peynir çok güzel.",
+    "kind": "explanation.examples.tr",
+    "en": "This cheese is very good."
+  },
+  {
+    "tr": "Bugün vaktin var mı?",
+    "kind": "explanation.examples.tr",
+    "en": "Do you have time today?"
+  },
+  {
+    "tr": "Bugün yirmi haziran.",
+    "kind": "explanation.examples.tr",
+    "en": "Today is the twentieth of June."
+  },
+  {
+    "tr": "Davet edilmek güzel.",
+    "kind": "explanation.examples.tr",
+    "en": "It's nice to be invited."
+  },
+  {
+    "tr": "Geçen yıl baba oldu.",
+    "kind": "explanation.examples.tr",
+    "en": "He became a father last year."
+  },
+  {
+    "tr": "Hâlâ yağmur yağıyor.",
+    "kind": "explanation.examples.tr",
+    "en": "It's still raining."
+  },
+  {
+    "tr": "Hiçbir şey duymadım.",
+    "kind": "explanation.examples.tr",
+    "en": "I didn't hear anything."
+  },
+  {
+    "tr": "Okumayı sever misin?",
+    "kind": "explanation.examples.tr",
+    "en": "Do you like reading?"
+  },
+  {
+    "tr": "Aramadan evden çıktı.",
+    "kind": "explanation.examples.tr",
+    "en": "He left the house without calling."
+  },
+  {
+    "tr": "Bahçeyle ilgileniyor.",
+    "kind": "explanation.examples.tr",
+    "en": "She is interested in the garden."
+  },
+  {
+    "tr": "Bana yolu tarif etti.",
+    "kind": "explanation.examples.tr",
+    "en": "He explained the way to me."
+  },
+  {
+    "tr": "Ben yemek yedim bile.",
+    "kind": "explanation.examples.tr",
+    "en": "I've already eaten."
+  },
+  {
+    "tr": "Bu, komşunun arabası.",
+    "kind": "explanation.examples.tr",
+    "en": "This is the neighbour's car."
+  },
+  {
+    "tr": "Bugün çok tatlısınız.",
+    "kind": "explanation.examples.tr",
+    "en": "You're very sweet today."
+  },
+  {
+    "tr": "Hediye öğretmen için.",
+    "kind": "explanation.examples.tr",
+    "en": "The present is for the teacher."
+  },
+  {
+    "tr": "Kedileri sever misin?",
+    "kind": "explanation.examples.tr",
+    "en": "Do you like cats?"
+  },
+  {
+    "tr": "Köpeklerden korkuyor.",
+    "kind": "explanation.examples.tr",
+    "en": "He's afraid of dogs."
+  },
+  {
+    "tr": "Ninemi ziyaret ettim.",
+    "kind": "explanation.examples.tr",
+    "en": "I visited my grandma."
+  },
+  {
+    "tr": "Otobüs henüz gelmedi.",
+    "kind": "explanation.examples.tr",
+    "en": "The bus isn't here yet."
+  },
+  {
+    "tr": "Pazartesi kursum var.",
+    "kind": "explanation.examples.tr",
+    "en": "I have a course on Monday."
+  },
+  {
+    "tr": "Randevu şefe uymuyor.",
+    "kind": "explanation.examples.tr",
+    "en": "The appointment doesn't suit the boss."
+  },
+  {
+    "tr": "Saçlarını kestiriyor.",
+    "kind": "explanation.examples.tr",
+    "en": "She's having her hair cut."
+  },
+  {
+    "tr": "Yarın yağmur yağacak.",
+    "kind": "explanation.examples.tr",
+    "en": "It will rain tomorrow."
+  },
+  {
+    "tr": "Biletimi değiştirttim.",
+    "kind": "explanation.examples.tr",
+    "en": "I had my ticket changed."
+  },
+  {
+    "tr": "Bir çay rica ediyorum.",
+    "kind": "explanation.examples.tr",
+    "en": "I'd like a tea, please."
+  },
+  {
+    "tr": "Biter bitmez beni ara.",
+    "kind": "explanation.examples.tr",
+    "en": "Call me as soon as you're finished."
+  },
+  {
+    "tr": "Çocuk kitabını arıyor.",
+    "kind": "explanation.examples.tr",
+    "en": "The child is looking for its book."
+  },
+  {
+    "tr": "Dün komşuyla konuştum.",
+    "kind": "explanation.examples.tr",
+    "en": "I talked to the neighbour yesterday."
+  },
+  {
+    "tr": "Dün üç tanık başvurdu.",
+    "kind": "explanation.examples.tr",
+    "en": "Yesterday three witnesses came forward."
+  },
+  {
+    "tr": "Gece burası çok sakin.",
+    "kind": "explanation.examples.tr",
+    "en": "At night it's very quiet here."
+  },
+  {
+    "tr": "Gittikçe büyüyorsunuz.",
+    "kind": "explanation.examples.tr",
+    "en": "You're getting bigger and bigger."
+  },
+  {
+    "tr": "Kahveyi sütsüz içerim.",
+    "kind": "explanation.examples.tr",
+    "en": "I drink coffee without milk."
+  },
+  {
+    "tr": "O ancak yarın geliyor.",
+    "kind": "explanation.examples.tr",
+    "en": "He isn't coming until tomorrow."
+  },
+  {
+    "tr": "Saat sekiz olmuş bile!",
+    "kind": "explanation.examples.tr",
+    "en": "It's already eight o'clock!"
+  },
+  {
+    "tr": "Yarın geliyor musunuz?",
+    "kind": "explanation.examples.tr",
+    "en": "Are you coming tomorrow?"
+  },
+  {
+    "tr": "Yetişkin on euro öder.",
+    "kind": "explanation.examples.tr",
+    "en": "An adult pays ten euros."
+  },
+  {
+    "tr": "Adın yazılışı yanlıştı.",
+    "kind": "explanation.examples.tr",
+    "en": "The spelling of the name was wrong."
+  },
+  {
+    "tr": "Artık sigara içmiyorum.",
+    "kind": "explanation.examples.tr",
+    "en": "I don't smoke any more."
+  },
+  {
+    "tr": "Bu adamı tanıyor musun?",
+    "kind": "explanation.examples.tr",
+    "en": "Do you know this man?"
+  },
+  {
+    "tr": "Bu yüzden vaktimiz yok.",
+    "kind": "explanation.examples.tr",
+    "en": "That's why we have no time."
+  },
+  {
+    "tr": "Ceket güzel ama pahalı.",
+    "kind": "explanation.examples.tr",
+    "en": "The jacket is nice, but it's expensive."
+  },
+  {
+    "tr": "Cihazı herkes açabilir.",
+    "kind": "explanation.examples.tr",
+    "en": "The device can be opened by anyone."
+  },
+  {
+    "tr": "Dairenin kaç odası var?",
+    "kind": "explanation.examples.tr",
+    "en": "How many rooms does the flat have?"
+  },
+  {
+    "tr": "Hafta sonu uzun uyurum.",
+    "kind": "explanation.examples.tr",
+    "en": "At the weekend I sleep in."
+  },
+  {
+    "tr": "Hangi ceketi alıyorsun?",
+    "kind": "explanation.examples.tr",
+    "en": "Which jacket are you taking?"
+  }
+]
