@@ -1,4 +1,5 @@
 import type { SkillQuestion } from "@/lib/skills/types";
+import { seededShuffle } from "@/lib/shuffle";
 import type { PatternItem, VocabItem } from "@/lib/conversations/types";
 import type { UnitBrief } from "./brief";
 
@@ -16,6 +17,15 @@ import type { UnitBrief } from "./brief";
  * Konuşma adımındaki "ad" karşılığı artık şık olmuyor. Metni farklı ama anlamı aynı iki
  * Türkçe sözcüğü (ad / isim) başlık ortak değilse makine ayıramaz; auto-quiz
  * bu yüzden hâlâ gating YAPMAZ (gating Konuşma adımlarına bağlı).
+ *
+ * TOHUM ÜNİTEDEN (2026-09-25). Çeldirici başlangıcı ve cevabın yeri yalnız
+ * sorunun SIRASINDAN geliyordu (`(i*7) % havuz`, `i % 4`). Havuz seviye başına
+ * sabit olduğu için aynı sıradaki soru 50 quizin 48'inde aynı üç çeldiriciyle
+ * geliyordu ve doğru şıkların dizilişi her ünitede aynıydı (A,B,B,C,D,C,A,B):
+ * öğrenci birkaç üniteden sonra soruyu okumadan, konumdan ya da elemeyle
+ * cevaplayabiliyordu. Artık ikisi de `ünite kimliği | soru sayısı | soru`
+ * tohumuyla karışıyor; yine deterministik (aynı ünite hep aynı quiz), mobil
+ * aynı tohumu aynı `seededShuffle` ile kuruyor (`game/immersionQuiz`).
  */
 
 export type QuizPool = { vocab: VocabItem[]; patterns: PatternItem[] };
@@ -46,27 +56,24 @@ function quizClash(a: QuizCand, b: QuizCand): boolean {
   return false;
 }
 
-function pickDistractors(correct: QuizCand, pool: QuizCand[], i: number, n = 3): string[] {
+function pickDistractors(correct: QuizCand, pool: QuizCand[], seed: string, n = 3): string[] {
   const uniqPool: QuizCand[] = [];
   for (const c of pool) {
     if (!c.text || quizClash(correct, c)) continue;
     if (!uniqPool.some((u) => quizNorm(u.text) === quizNorm(c.text))) uniqPool.push(c);
   }
   const out: QuizCand[] = [];
-  const step = 1 + (i % 3);
-  let idx = (i * 7) % Math.max(1, uniqPool.length);
-  for (let guard = 0; out.length < n && guard < uniqPool.length * 2; guard++) {
-    const cand = uniqPool[idx % uniqPool.length];
+  for (const cand of seededShuffle(uniqPool, seed)) {
+    if (out.length >= n) break;
     if (!out.some((o) => quizClash(o, cand))) out.push(cand);
-    idx += step;
   }
   return out.map((c) => c.text);
 }
 
-/** Doğru cevabı distraktörlerin arasına deterministik bir konuma yerleştir. */
-function placeAnswer(correct: string, distractors: string[], i: number): { options: string[]; answer: number } {
+/** Doğru cevabı çeldiricilerin arasına tohumlu bir konuma yerleştir. */
+function placeAnswer(correct: string, distractors: string[], seed: string): { options: string[]; answer: number } {
   const options = [...distractors];
-  const answer = i % (distractors.length + 1);
+  const answer = seededShuffle([...Array(distractors.length + 1).keys()], `${seed}|yer`)[0];
   options.splice(answer, 0, correct);
   return { options, answer };
 }
@@ -133,14 +140,28 @@ export function deriveQuiz(
   const reviewWords = pickReview(brief, review, Math.floor(count / 3));
   const vocabTarget = Math.min(brief.vocab.length, count - patTarget - reviewWords.length);
 
+  /* Aynı quizde iki soru aynı doğru cevabı taşımasın (Betreuer / Pfleger →
+     ikisi de "bakıcı"): ikincisi hem kopya soru hem de birincinin cevabını
+     eleyerek veriyor. Cevabı daha önce kullanılmış kelime atlanıyor, yerine
+     sıradaki geliyor. */
+  const seed = `${brief.unitId}|${count}`;
+  const used = new Set<string>();
+  const fresh = (v: VocabItem) => {
+    const k = quizNorm(v.tr);
+    if (used.has(k)) return false;
+    used.add(k);
+    return true;
+  };
   const own: SkillQuestion[] = [];
-  for (let i = 0; i < vocabTarget; i++) {
-    const v = brief.vocab[i];
-    const { options, answer } = placeAnswer(v.tr, pickDistractors({ text: v.tr, mean: v.tr, head: v.de }, vocabCands, i), i);
+  for (const v of brief.vocab) {
+    if (own.length >= vocabTarget) break;
+    if (!fresh(v)) continue;
+    const i = own.length;
+    const { options, answer } = placeAnswer(v.tr, pickDistractors({ text: v.tr, mean: v.tr, head: v.de }, vocabCands, `${seed}|k${i}`), `${seed}|k${i}`);
     own.push({ kind: "mcq", text: say.whatMeans(v.de), options, answer, explain: `${v.de} = ${v.tr}.` });
   }
-  const back: SkillQuestion[] = reviewWords.map((v, i) => {
-    const { options, answer } = placeAnswer(v.tr, pickDistractors({ text: v.tr, mean: v.tr, head: v.de }, vocabCands, i + 101), i + 101);
+  const back: SkillQuestion[] = reviewWords.filter(fresh).map((v, i) => {
+    const { options, answer } = placeAnswer(v.tr, pickDistractors({ text: v.tr, mean: v.tr, head: v.de }, vocabCands, `${seed}|t${i}`), `${seed}|t${i}`);
     return {
       kind: "mcq" as const,
       text: say.whatMeans(v.de),
@@ -156,11 +177,11 @@ export function deriveQuiz(
   for (let j = 0; j < patTarget && qs.length < count; j++) {
     const p = brief.patterns[j];
     if (patternAsk === "meaning") {
-      const { options, answer } = placeAnswer(p.tr, pickDistractors({ text: p.tr, mean: p.tr, head: p.de }, trPatternCands, j), j);
+      const { options, answer } = placeAnswer(p.tr, pickDistractors({ text: p.tr, mean: p.tr, head: p.de }, trPatternCands, `${seed}|m${j}`), `${seed}|m${j}`);
       qs.push({ kind: "mcq", text: say.whatMeans(p.de), options, answer, explain: `${p.de} = ${p.tr}` });
       continue;
     }
-    const { options, answer } = placeAnswer(p.de, pickDistractors({ text: p.de, mean: p.tr, head: p.de }, dePatternCands, j), j);
+    const { options, answer } = placeAnswer(p.de, pickDistractors({ text: p.de, mean: p.tr, head: p.de }, dePatternCands, `${seed}|m${j}`), `${seed}|m${j}`);
     qs.push({ kind: "mcq", text: say.howToSay(p.tr), options, answer, explain: `${p.tr} → ${p.de}` });
   }
   return qs.slice(0, count);

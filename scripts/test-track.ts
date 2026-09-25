@@ -274,6 +274,18 @@ check("ünite 1'de tekrar yok (geçmiş boş) → eski davranış", JSON.stringi
 check("soru metni tekrar olduğunu ele vermiyor", backQ.every((q) => q.text.startsWith("«") && q.text.endsWith("» ne demek?")));
 
 /*
+  CEVABIN YERİ ÜNİTEYE GÖRE. Konum ve çeldirici yalnız soru sırasından
+  geliyordu: her ünitede doğru şıkların dizilişi aynıydı (A,B,B,C,D,C,A,B) ve
+  aynı sıradaki soru aynı üç çeldiriciyle geliyordu. Aynı soru başka ünitede
+  başka yerde durmalı; aynı quizde iki soru aynı doğru cevabı taşımamalı.
+*/
+const otherUnit = deriveQuiz({ ...briefs[0], unitId: "de-a1-u09" }, qpool, 6, undefined, say);
+check("cevap dizilişi üniteye göre değişir", otherUnit.map((q) => q.answer).join() !== quiz.map((q) => q.answer).join());
+const eşBrief = { ...laterBrief, vocab: [{ de: "der Betreuer", tr: "bakıcı" }, { de: "der Pfleger", tr: "bakıcı" }, ...laterBrief.vocab] };
+const eşQuiz = deriveQuiz(eşBrief, qpool, 12, reviewPool, say);
+check("aynı quizde iki soru aynı doğru cevabı taşımaz", new Set(eşQuiz.map((q) => q.options[q.answer])).size === eşQuiz.length);
+
+/*
   PRATİK ÖĞELER PENCEREYİ TIKAMAZ (regresyon).
 
   Gramer/quiz/ünite quizi ilerleme kaydı tutmuyor: itemAttempted onlara
