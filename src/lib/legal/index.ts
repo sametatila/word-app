@@ -139,12 +139,17 @@ import { DAILY_QUOTAS } from "@/lib/quotas";
  * 1.8 (2026-09-25) şartlar §7a'yı 2026-09-25 kota kararlarına çekti
  * (`docs/premium/README.md` §2): ücretsiz hesapta Patika Konuşma/Yazma,
  * Beceriler değerlendirmesi, deneme sınavı ve yürüyüş modu hakları sınırlı ve
- * "bitir + seri" ile açılıyor; premium sınırlarının birimi (yürüyüş oturumu,
+ * "bitir + seri" ile açılıyor; premium sınırlarının birimi (yürüyüş turu,
  * değerlendirme, sohbet mesajı) düzeldi. Ücretsiz kullanımı kısan bir değişiklik
  * olduğu için ikinci basamak.
+ *
+ * 1.8.1 (2026-09-25, 1.8 ile aynı gün) yürüyüş modunun birimini düzeltti:
+ * "oturum" değil "tur" (Samet). Kural ve kapsam aynı, yalnız birimin adı —
+ * yama basamağı. 1.8'in kaydına madde eklenmedi: yayımlanmış bir sürümün
+ * metnini sessizce değiştirmek, bu dosyanın kuralının tam tersi.
  */
 export const LEGAL_EFFECTIVE_DATE = "2026-09-25";
-export const LEGAL_VERSION = "1.8";
+export const LEGAL_VERSION = "1.8.1";
 
 export const LEGAL_ENTITY = {
   /** Hizmet sağlayıcı, veri sorumlusu ve yayıncı: tek gerçek kişi (Türkiye'de yerleşik). */
@@ -373,6 +378,22 @@ export type LegalChangelogEntry = {
 };
 
 export const LEGAL_CHANGELOG: readonly LegalChangelogEntry[] = [
+  {
+    /* YAMA BASAMAĞI: birim düzeltmesi, hak ya da yükümlülük değişmedi. */
+    version: "1.8.1",
+    date: "2026-09-25",
+    changes: {
+      tr: [
+        "Kullanım şartları §7a: yürüyüş modunun günlük sınırı oturum değil tur olarak yazıldı (ücretsizde ekran açıkken günde belirli sayıda tur; Premium'un kötüye kullanımı önleyen sınırında yürüyüş modu turu). Tur sonundaki \"devam\" da yeni bir turdur. Başka bir şey değişmedi.",
+      ],
+      en: [
+        "Terms of use §7a: the daily walk mode limit is now stated in rounds rather than sessions (on a free account a set number of rounds a day with the screen on; walk mode rounds in Premium's daily limit against abuse). Choosing \"continue\" at the end of a round starts a new round. Nothing else changed.",
+      ],
+      de: [
+        "Nutzungsbedingungen §7a: Die tägliche Grenze des Gehmodus wird jetzt in Runden statt Einheiten angegeben (kostenlos eine bestimmte Zahl von Runden pro Tag bei eingeschaltetem Bildschirm; Runden im Gehmodus bei der täglichen Obergrenze von Premium gegen Missbrauch). „Weiter“ am Ende einer Runde startet eine neue Runde. Sonst hat sich nichts geändert.",
+      ],
+    },
+  },
   {
     /*
       İKİNCİ BASAMAK: ücretsiz kullanımın kapsamı değişti (kısıldı). Eskiden
