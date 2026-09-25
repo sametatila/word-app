@@ -141,7 +141,7 @@ Kullanım Şartları: https://www.lernomi.app/terms
 Gizlilik Politikası: https://www.lernomi.app/privacy
 ```
 
-**Onaylanacak en-US ve de-DE uzun açıklamaları (2026-09-25):** aynı yapı, kendi kitlesine uyarlanmış
+**Onaylanan en-US ve de-DE uzun açıklamaları (Samet onayladı, 2026-09-25):** aynı yapı, kendi kitlesine uyarlanmış
 (en-US: İngilizce konuşup Almanca öğrenen; de-DE: Almanca konuşup İngilizce öğrenen). Her arayüzde tek
 kurs sunulduğu için "öteki kurs" paragrafı yok. Vitrine özgü iddialar doğrulandı (anlatım dili,
 sahneler, bağlantılar). Almanca metinde Beceriler "Fertigkeiten" (Samet'in kararı, uygulamayla aynı).
@@ -228,7 +228,7 @@ Nutzungsbedingungen: https://www.lernomi.app/terms/de
 Datenschutzerklärung: https://www.lernomi.app/privacy/de
 ```
 
-**Açık (sonraki soru-cevap):** en-US ve de-DE metinlerinin Samet onayı; haftalık quiz çevirisinin uygulamaya geçmesi.
+**Açık:** haftalık quizin en/de çevirisinin uygulamaya geçmesi (en/de metinlerindeki "explained in English / Erklärungen auf Deutsch" iddiası o zamana kadar haftalık quiz için eksik); ekran görüntüleri tasarımdan sonra.
 
 ## Yeniden üretmek
 
