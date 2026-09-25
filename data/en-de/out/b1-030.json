@@ -1,5 +1,4 @@
 [
- { "id": 208267, "beispielDe": "Ich muss den Tisch noch abwischen." },
  { "id": 208269, "beispielDe": "Lass das Seil bitte nicht los!" },
  { "id": 208272, "beispielDe": "Der Vater hebt seine Tochter hoch." },
  { "id": 208275, "beispielDe": "Stell die schweren Taschen kurz hin." },
@@ -48,5 +47,6 @@
  { "id": 208382, "beispielDe": "Der Wasserhahn in der Küche tropft schon wieder." },
  { "id": 208383, "beispielDe": "Kannst du bitte die Tür aufschließen?" },
  { "id": 208384, "beispielDe": "Ich wechsle jeden Samstag die Bettwäsche." },
- { "id": 208385, "beispielDe": "Unsere Wohnung hat 65 Quadratmeter." }
+ { "id": 208385, "beispielDe": "Unsere Wohnung hat 65 Quadratmeter." },
+ { "id": 208386, "beispielDe": "Die alte Tapete gefällt mir überhaupt nicht." }
 ]

@@ -1,4 +1,5 @@
 [
+ { "id": 208060, "beispielDe": "Wir müssen bis mittags aus dem Hotel auschecken." },
  { "id": 208064, "beispielDe": "Unser Hotelzimmer ist im dritten Stock." },
  { "id": 208065, "beispielDe": "Ich habe den Zimmerschlüssel an der Rezeption gelassen." },
  { "id": 208074, "beispielDe": "Mein Opa benutzt immer noch lieber eine Landkarte aus Papier." },
@@ -47,6 +48,5 @@
  { "id": 208358, "beispielDe": "Vergiss nicht, die Haustür abzuschließen." },
  { "id": 208361, "beispielDe": "Meine Schwester schläft im Gästezimmer." },
  { "id": 208364, "beispielDe": "Die Waschmaschine steht im Keller." },
- { "id": 208365, "beispielDe": "Kannst du bitte den Mülleimer leeren?" },
- { "id": 208366, "beispielDe": "Im Kinderzimmer liegt überall Spielzeug." }
+ { "id": 208365, "beispielDe": "Kannst du bitte den Mülleimer leeren?" }
 ]

@@ -1,4 +1,5 @@
 [
+ { "id": 202864, "beispielDe": "Sie wischte sich die Tränen vom Gesicht." },
  { "id": 202882, "beispielDe": "Vom Turm aus sieht man die ganze Stadt." },
  { "id": 202884, "beispielDe": "Mein neuer Nachbar ist ein netter Typ." },
  { "id": 202885, "beispielDe": "Der Arzt sagte, ich brauche mehr Bewegung." },
@@ -47,6 +48,5 @@
  { "id": 203144, "beispielDe": "Ich habe noch nie gezeltet." },
  { "id": 203151, "beispielDe": "Sie müssen an der Tür ziehen, nicht drücken." },
  { "id": 203152, "beispielDe": "Ich musste beim Arzt ziemlich lange warten." },
- { "id": 203161, "beispielDe": "Der Koffer geht nicht zu, er ist zu voll." },
- { "id": 203163, "beispielDe": "In Zukunft werde ich vorsichtiger sein." }
+ { "id": 203161, "beispielDe": "Der Koffer geht nicht zu, er ist zu voll." }
 ]

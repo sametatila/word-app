@@ -1,5 +1,4 @@
 [
- { "id": 208124, "beispielDe": "Die Sonne geht jeden Abend hinter den Bergen unter." },
  { "id": 208132, "beispielDe": "Der Fuchs jagt nachts kleine Tiere." },
  { "id": 208133, "beispielDe": "Man darf im Garten kein Laub verbrennen." },
  { "id": 208134, "beispielDe": "Wir haben den Strand nach dem Picknick gesäubert." },
@@ -48,5 +47,6 @@
  { "id": 208262, "beispielDe": "Meine Kollegen bauen das Zelt für die Feier auf." },
  { "id": 208263, "beispielDe": "Sie stellen die Stühle vor dem Konzert auf." },
  { "id": 208265, "beispielDe": "Die Arbeiter graben ein Loch für den Baum." },
- { "id": 208266, "beispielDe": "Er fegt jeden Morgen den Hof." }
+ { "id": 208266, "beispielDe": "Er fegt jeden Morgen den Hof." },
+ { "id": 208267, "beispielDe": "Ich muss den Tisch noch abwischen." }
 ]

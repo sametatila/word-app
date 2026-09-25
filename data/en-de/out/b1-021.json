@@ -1,5 +1,4 @@
 [
- { "id": 204874, "beispielDe": "Die Meisterschaft findet nächstes Jahr in Norwegen statt." },
  { "id": 204876, "beispielDe": "Der Schiedsrichter beendete das Spiel drei Minuten früher." },
  { "id": 204884, "beispielDe": "Als Reiseziel wählten sie eine kleine nördliche Insel." },
  { "id": 204885, "beispielDe": "Der markierte Wanderweg führt am Fluss entlang zur Mühle." },
@@ -48,5 +47,6 @@
  { "id": 205309, "beispielDe": "Alle Zimmer am See sind bereits ausgebucht." },
  { "id": 205315, "beispielDe": "Der Feuerlöscher im Flur wird jährlich geprüft." },
  { "id": 205321, "beispielDe": "Nach dem Anschlag wurden die Kontrollen an Bahnhöfen verschärft." },
- { "id": 205323, "beispielDe": "Das Verbrechen blieb trotz jahrelanger Ermittlungen ungeklärt." }
+ { "id": 205323, "beispielDe": "Das Verbrechen blieb trotz jahrelanger Ermittlungen ungeklärt." },
+ { "id": 205324, "beispielDe": "Das Erdbeben zerstörte mehrere Brücken in der Region." }
 ]

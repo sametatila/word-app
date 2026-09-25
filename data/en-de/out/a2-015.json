@@ -1,4 +1,5 @@
 [
+ { "id": 202683, "beispielDe": "Welchen Sender siehst du am liebsten?" },
  { "id": 202686, "beispielDe": "Meine Tochter sieht jeden Abend eine neue Serie." },
  { "id": 202688, "beispielDe": "Er saß den ganzen Abend im Sessel." },
  { "id": 202690, "beispielDe": "Die Sicherheit der Kinder ist uns besonders wichtig." },
@@ -47,6 +48,5 @@
  { "id": 202852, "beispielDe": "Ich habe ihn kurz vor seinem Tod besucht." },
  { "id": 202856, "beispielDe": "Der Tote wurde erst am nächsten Morgen gefunden." },
  { "id": 202857, "beispielDe": "Die Tote wurde am Flussufer gefunden." },
- { "id": 202859, "beispielDe": "Die Touristin fragte mich nach dem Weg zum Museum." },
- { "id": 202864, "beispielDe": "Sie wischte sich die Tränen vom Gesicht." }
+ { "id": 202859, "beispielDe": "Die Touristin fragte mich nach dem Weg zum Museum." }
 ]

@@ -1,5 +1,4 @@
 [
- { "id": 203063, "beispielDe": "Ich schlage vor, dass wir eine Pause machen." },
  { "id": 203070, "beispielDe": "Zeichnen Sie bitte eine waagerechte Linie." },
  { "id": 203073, "beispielDe": "Die neue Wohnung ist wahnsinnig teuer." },
  { "id": 203074, "beispielDe": "Niemand im Raum wollte die Wahrheit hören." },
@@ -48,5 +47,6 @@
  { "id": 203331, "beispielDe": "Er steckt in einem Kreislauf aus Schulden und Krediten." },
  { "id": 203333, "beispielDe": "Schlafmangel macht das Konzentrieren schwer." },
  { "id": 203334, "beispielDe": "Der Kunde hat eine schriftliche Beschwerde eingereicht." },
- { "id": 203336, "beispielDe": "Die ersten Symptome traten vor Tagen auf." }
+ { "id": 203336, "beispielDe": "Die ersten Symptome traten vor Tagen auf." },
+ { "id": 203342, "beispielDe": "Die Narbe auf seiner Stirn ist kaum noch sichtbar." }
 ]

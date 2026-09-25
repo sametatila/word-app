@@ -1,5 +1,4 @@
 [
- { "id": 203342, "beispielDe": "Die Narbe auf seiner Stirn ist kaum noch sichtbar." },
  { "id": 203343, "beispielDe": "Nach der Operation sollte er sich schonen." },
  { "id": 203378, "beispielDe": "Sie ist für ihr großzügiges Trinkgeld bekannt." },
  { "id": 203408, "beispielDe": "Ich habe eine drahtlose Tastatur für meinen neuen Laptop gekauft." },
@@ -48,5 +47,6 @@
  { "id": 203862, "beispielDe": "Der Sachbearbeiter stempelte mein Formular und lächelte." },
  { "id": 203866, "beispielDe": "Eine kurze Nachricht kann man leicht missverstehen." },
  { "id": 203868, "beispielDe": "Notfalls könnten wir uns auf Englisch verständigen." },
- { "id": 203875, "beispielDe": "Leider ist sie letzte Woche durch die Prüfung gefallen." }
+ { "id": 203875, "beispielDe": "Leider ist sie letzte Woche durch die Prüfung gefallen." },
+ { "id": 203881, "beispielDe": "Sie schrieb einen ausführlichen Bericht über den Unfall." }
 ]

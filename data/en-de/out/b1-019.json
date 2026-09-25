@@ -1,5 +1,4 @@
 [
- { "id": 203881, "beispielDe": "Sie schrieb einen ausführlichen Bericht über den Unfall." },
  { "id": 203898, "beispielDe": "Er beharrte darauf, das Abendessen zu bezahlen." },
  { "id": 204048, "beispielDe": "Mein Arbeitgeber übernimmt die Kosten der Fortbildung." },
  { "id": 204053, "beispielDe": "Der Abteilungsleiter hat den Urlaubsantrag noch nicht unterschrieben." },
@@ -48,5 +47,6 @@
  { "id": 204443, "beispielDe": "Die Familie steckte ihre Ersparnisse in die Renovierung." },
  { "id": 204455, "beispielDe": "Die Sicherheitskontrolle am Flughafen prüfte jede Tasche sorgfältig." },
  { "id": 204461, "beispielDe": "Das Finanzamt hat mir letzte Woche einen Brief geschickt." },
- { "id": 204469, "beispielDe": "Er freut sich auf seinen Ruhestand im nächsten Jahr." }
+ { "id": 204469, "beispielDe": "Er freut sich auf seinen Ruhestand im nächsten Jahr." },
+ { "id": 204478, "beispielDe": "Die Währung des Landes verliert seit Monaten an Wert." }
 ]

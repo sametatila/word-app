@@ -1,5 +1,4 @@
 [
- { "id": 204478, "beispielDe": "Die Währung des Landes verliert seit Monaten an Wert." },
  { "id": 204479, "beispielDe": "Der Etat für Kultur wurde dieses Jahr wieder gekürzt." },
  { "id": 204514, "beispielDe": "Der ganze Streit kam von einem einfachen Missverständnis." },
  { "id": 204517, "beispielDe": "Die Persönlichkeit eines Menschen entwickelt sich lebenslang weiter." },
@@ -48,5 +47,6 @@
  { "id": 204861, "beispielDe": "Seine private Sammlung umfasst mehr als vierhundert Zeichnungen." },
  { "id": 204868, "beispielDe": "Diese Melodie geht mir seit gestern nicht aus dem Kopf." },
  { "id": 204869, "beispielDe": "Der Rhythmus des Liedes ändert sich in der zweiten Hälfte." },
- { "id": 204873, "beispielDe": "Das Turnier findet dieses Jahr in drei Städten statt." }
+ { "id": 204873, "beispielDe": "Das Turnier findet dieses Jahr in drei Städten statt." },
+ { "id": 204874, "beispielDe": "Die Meisterschaft findet nächstes Jahr in Norwegen statt." }
 ]

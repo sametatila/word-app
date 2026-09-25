@@ -1,5 +1,4 @@
 [
- { "id": 207680, "beispielDe": "Der neue Dienstplan hängt am schwarzen Brett." },
  { "id": 207683, "beispielDe": "Im Dezember bekommen alle Mitarbeiter einen Bonus." },
  { "id": 207686, "beispielDe": "Mein Arbeitskollege hilft mir bei schwierigen Aufgaben." },
  { "id": 207690, "beispielDe": "Ich besuche meine Kunden mit dem Firmenwagen." },
@@ -48,5 +47,6 @@
  { "id": 207799, "beispielDe": "Leg bitte den Deckel auf den Topf." },
  { "id": 207800, "beispielDe": "Stell das Essen zwei Minuten in die Mikrowelle." },
  { "id": 207807, "beispielDe": "Die Flaschen sind in einem großen Karton." },
- { "id": 207808, "beispielDe": "Legen Sie das Obst bitte auf die Waage." }
+ { "id": 207808, "beispielDe": "Legen Sie das Obst bitte auf die Waage." },
+ { "id": 207809, "beispielDe": "Wir brauchen noch eine Tube Zahnpasta." }
 ]

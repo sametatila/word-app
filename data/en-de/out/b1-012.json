@@ -1,5 +1,4 @@
 [
- { "id": 202372, "beispielDe": "Versuch dich möglichst viel auszuruhen." },
  { "id": 202375, "beispielDe": "Ich habe mir einen größeren Monitor gekauft." },
  { "id": 202378, "beispielDe": "Die Müllabfuhr kommt hier zweimal pro Woche." },
  { "id": 202382, "beispielDe": "Mein Sohn hat großes musikalisches Talent." },
@@ -48,5 +47,6 @@
  { "id": 202501, "beispielDe": "Ich interessiere mich nicht für Politik." },
  { "id": 202502, "beispielDe": "Kennst du den Namen dieses Politikers?" },
  { "id": 202503, "beispielDe": "Gestern haben wir lange über politische Themen gesprochen." },
- { "id": 202505, "beispielDe": "Die Polizistin hat meinen Ausweis kontrolliert." }
+ { "id": 202505, "beispielDe": "Die Polizistin hat meinen Ausweis kontrolliert." },
+ { "id": 202514, "beispielDe": "Sie hat für ihre Präsentation eine gute Note bekommen." }
 ]

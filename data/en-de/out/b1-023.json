@@ -1,5 +1,4 @@
 [
- { "id": 206940, "beispielDe": "Beim Abschied konnte er seine Emotionen kaum verbergen." },
  { "id": 206941, "beispielDe": "Seine Abneigung gegen große Feiern wurde immer stärker." },
  { "id": 207107, "beispielDe": "Die neue Bahnstrecke verkürzt die Fahrt um zwanzig Minuten." },
  { "id": 207271, "beispielDe": "Er schrieb einen formellen Brief an die Firma." },
@@ -48,5 +47,6 @@
  { "id": 207567, "beispielDe": "Der Platz vorne ist für behinderte Fahrgäste." },
  { "id": 207569, "beispielDe": "Seine Stimme klingt mir sehr vertraut." },
  { "id": 207570, "beispielDe": "Künftig arbeite ich nur noch vier Tage pro Woche." },
- { "id": 207572, "beispielDe": "Bislang habe ich keine Antwort bekommen." }
+ { "id": 207572, "beispielDe": "Bislang habe ich keine Antwort bekommen." },
+ { "id": 207574, "beispielDe": "Sie hatte zuvor in einem Krankenhaus gearbeitet." }
 ]

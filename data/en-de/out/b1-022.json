@@ -1,5 +1,4 @@
 [
- { "id": 205324, "beispielDe": "Das Erdbeben zerstörte mehrere Brücken in der Region." },
  { "id": 205330, "beispielDe": "Nach dem Raub flohen die Diebe mit einem Auto." },
  { "id": 205360, "beispielDe": "Fahr vorsichtig, damit du nicht verunglückst." },
  { "id": 205371, "beispielDe": "An dieser Stelle zu überholen wäre viel zu riskant." },
@@ -48,5 +47,6 @@
  { "id": 206748, "beispielDe": "In großer Höhe enthält die Luft weniger Sauerstoff." },
  { "id": 206762, "beispielDe": "Wir haben den Kuchen in sechs Stücke geteilt." },
  { "id": 206771, "beispielDe": "Die Polizei ließ ihn nach zwei Stunden frei." },
- { "id": 206920, "beispielDe": "Der Betrüger nutzte jahrelang eine falsche Identität." }
+ { "id": 206920, "beispielDe": "Der Betrüger nutzte jahrelang eine falsche Identität." },
+ { "id": 206940, "beispielDe": "Beim Abschied konnte er seine Emotionen kaum verbergen." }
 ]

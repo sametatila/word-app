@@ -1,5 +1,4 @@
 [
- { "id": 202226, "beispielDe": "Diese Arbeit erfordert viel Kraft." },
  { "id": 202228, "beispielDe": "In dieser Straße sind Kraftfahrzeuge nicht erlaubt." },
  { "id": 202229, "beispielDe": "Die Leute protestieren gegen das neue Kraftwerk." },
  { "id": 202232, "beispielDe": "Er arbeitet als Krankenpfleger in einem großen Krankenhaus." },
@@ -48,5 +47,6 @@
  { "id": 202353, "beispielDe": "Die Soße ist mild, du kannst sie ruhig probieren." },
  { "id": 202364, "beispielDe": "Mittlerweile habe ich mich an die Arbeit gewöhnt." },
  { "id": 202366, "beispielDe": "Wir haben in der Altstadt eine möblierte Wohnung gemietet." },
- { "id": 202371, "beispielDe": "Heute besteht durchaus die Möglichkeit, dass es regnet." }
+ { "id": 202371, "beispielDe": "Heute besteht durchaus die Möglichkeit, dass es regnet." },
+ { "id": 202372, "beispielDe": "Versuch dich möglichst viel auszuruhen." }
 ]

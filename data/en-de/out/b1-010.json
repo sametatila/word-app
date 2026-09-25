@@ -1,5 +1,4 @@
 [
- { "id": 202092, "beispielDe": "Viele Hörer riefen während der Sendung an." },
  { "id": 202093, "beispielDe": "Eine Hörerin rief beim Radiosender an." },
  { "id": 202096, "beispielDe": "Ich mag ihn, weil er so viel Humor hat." },
  { "id": 202102, "beispielDe": "Eine Wohnung mit Garten wäre für uns ideal." },
@@ -48,5 +47,6 @@
  { "id": 202216, "beispielDe": "Ich muss mich jetzt auf die Prüfung konzentrieren." },
  { "id": 202219, "beispielDe": "Der Kopierer im Büro ist schon wieder kaputt." },
  { "id": 202220, "beispielDe": "Die Arbeit erfordert viel körperliche Kraft." },
- { "id": 202225, "beispielDe": "Die Tänzer trugen auf der Bühne bunte Kostüme." }
+ { "id": 202225, "beispielDe": "Die Tänzer trugen auf der Bühne bunte Kostüme." },
+ { "id": 202226, "beispielDe": "Diese Arbeit erfordert viel Kraft." }
 ]

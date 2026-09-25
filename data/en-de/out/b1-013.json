@@ -1,5 +1,4 @@
 [
- { "id": 202514, "beispielDe": "Sie hat für ihre Präsentation eine gute Note bekommen." },
  { "id": 202518, "beispielDe": "Die Produktion von Käse dauert oft viele Wochen." },
  { "id": 202520, "beispielDe": "Unsere Nachbarin ist Professorin an der Universität." },
  { "id": 202521, "beispielDe": "Sie spielt Tennis wie ein echter Profi." },
@@ -48,5 +47,6 @@
  { "id": 202631, "beispielDe": "Der Jäger schießt nie auf junge Tiere." },
  { "id": 202636, "beispielDe": "In diesem Kleid siehst du sehr schlank aus." },
  { "id": 202637, "beispielDe": "Ich wartete lange, aber schließlich kam der Bus." },
- { "id": 202639, "beispielDe": "Der Arzt hat mir ein starkes Schmerzmittel verschrieben." }
+ { "id": 202639, "beispielDe": "Der Arzt hat mir ein starkes Schmerzmittel verschrieben." },
+ { "id": 202643, "beispielDe": "Der Fluss wurde jahrelang von der Fabrik verschmutzt." }
 ]

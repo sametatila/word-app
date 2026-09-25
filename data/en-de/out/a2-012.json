@@ -1,4 +1,5 @@
 [
+ { "id": 202049, "beispielDe": "Treffen wir uns am Hauptbahnhof?" },
  { "id": 202052, "beispielDe": "Haben Sie eine Creme für trockene Haut?" },
  { "id": 202059, "beispielDe": "Für seine Tochter ist er ein echter Held." },
  { "id": 202072, "beispielDe": "Die heutigen Handys können fast alles." },
@@ -47,6 +48,5 @@
  { "id": 202266, "beispielDe": "Auf einer langen Reise will sich niemand langweilen." },
  { "id": 202268, "beispielDe": "Der Lärm von der Baustelle stört mich wirklich." },
  { "id": 202272, "beispielDe": "Der Lautsprecher ist kaputt, man hört nichts." },
- { "id": 202275, "beispielDe": "Die Jacke ist aus echtem Leder." },
- { "id": 202278, "beispielDe": "Unsere neue Lehrerin ist sehr freundlich." }
+ { "id": 202275, "beispielDe": "Die Jacke ist aus echtem Leder." }
 ]

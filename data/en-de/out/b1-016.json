@@ -1,5 +1,4 @@
 [
- { "id": 202931, "beispielDe": "Bitte unterbrich mich nicht, wenn ich spreche." },
  { "id": 202938, "beispielDe": "Rauchen ist hier untersagt." },
  { "id": 202939, "beispielDe": "Auf diesem Foto kann ich die Zwillinge kaum unterscheiden." },
  { "id": 202941, "beispielDe": "Bitte unterstreichen Sie alle wichtigen Wörter." },
@@ -48,5 +47,6 @@
  { "id": 203051, "beispielDe": "Der erwartete Regen kam nie." },
  { "id": 203054, "beispielDe": "Die Vorbereitung auf die Prüfung dauert mehrere Wochen." },
  { "id": 203058, "beispielDe": "Sie hat vorhin angerufen und nach dir gefragt." },
- { "id": 203061, "beispielDe": "Ich lese meinen Kindern jeden Abend vor." }
+ { "id": 203061, "beispielDe": "Ich lese meinen Kindern jeden Abend vor." },
+ { "id": 203063, "beispielDe": "Ich schlage vor, dass wir eine Pause machen." }
 ]

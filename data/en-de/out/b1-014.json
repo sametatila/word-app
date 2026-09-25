@@ -1,5 +1,4 @@
 [
- { "id": 202643, "beispielDe": "Der Fluss wurde jahrelang von der Fabrik verschmutzt." },
  { "id": 202646, "beispielDe": "Ich habe seit gestern einen starken Schnupfen." },
  { "id": 202651, "beispielDe": "Leider kann ich deine Schrift nicht lesen." },
  { "id": 202654, "beispielDe": "Es ist nicht meine Schuld, dass der Plan scheiterte." },
@@ -48,5 +47,6 @@
  { "id": 202791, "beispielDe": "Wegen des Streiks fielen gestern alle Flüge aus." },
  { "id": 202793, "beispielDe": "Der Lärm führte zu einem Streit mit den Nachbarn." },
  { "id": 202806, "beispielDe": "Computerspiele können bei Jugendlichen zur Sucht werden." },
- { "id": 202807, "beispielDe": "Mein Bruder ist süchtig nach Computerspielen." }
+ { "id": 202807, "beispielDe": "Mein Bruder ist süchtig nach Computerspielen." },
+ { "id": 202809, "beispielDe": "Die Summe auf der Rechnung scheint mir zu hoch." }
 ]

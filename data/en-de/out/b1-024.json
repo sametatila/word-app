@@ -1,5 +1,4 @@
 [
- { "id": 207574, "beispielDe": "Sie hatte zuvor in einem Krankenhaus gearbeitet." },
  { "id": 207575, "beispielDe": "Zuerst essen wir, anschließend gehen wir ins Kino." },
  { "id": 207576, "beispielDe": "Das Paket kommt frühestens am Montag an." },
  { "id": 207577, "beispielDe": "Hast du ihn in letzter Zeit gesehen?" },
@@ -48,5 +47,6 @@
  { "id": 207672, "beispielDe": "Der Friseursalon ist montags geschlossen." },
  { "id": 207673, "beispielDe": "In der Arztpraxis warten heute viele Patienten." },
  { "id": 207676, "beispielDe": "Diese Woche arbeite ich Nachtschicht." },
- { "id": 207678, "beispielDe": "Heute war ein langer und harter Arbeitstag." }
+ { "id": 207678, "beispielDe": "Heute war ein langer und harter Arbeitstag." },
+ { "id": 207680, "beispielDe": "Der neue Dienstplan hängt am schwarzen Brett." }
 ]

@@ -1,5 +1,4 @@
 [
- { "id": 207925, "beispielDe": "In der Halbzeit haben wir etwas getrunken." },
  { "id": 207927, "beispielDe": "Der Arzt bat mich, die Zunge zu zeigen." },
  { "id": 207928, "beispielDe": "Ich habe mir beim Kochen den Daumen verletzt." },
  { "id": 207929, "beispielDe": "Er ist gestürzt und hat jetzt eine Wunde am Kinn." },
@@ -48,5 +47,6 @@
  { "id": 208013, "beispielDe": "Ich habe meinen Benutzernamen für diese Seite vergessen." },
  { "id": 208014, "beispielDe": "Bitte melden Sie sich ab, bevor Sie gehen." },
  { "id": 208015, "beispielDe": "Mein Bruder war den ganzen Tag offline." },
- { "id": 208017, "beispielDe": "Auf meinem Profil ist ein Urlaubsfoto." }
+ { "id": 208017, "beispielDe": "Auf meinem Profil ist ein Urlaubsfoto." },
+ { "id": 208019, "beispielDe": "Hast du den Anhang geöffnet, den ich geschickt habe?" }
 ]

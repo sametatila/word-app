@@ -33,7 +33,6 @@
  { "id": 202023, "beispielDe": "Sie hat letztes Jahr ihre eigene Firma gegründet." },
  { "id": 202029, "beispielDe": "Ich mache jeden Morgen vor der Arbeit Gymnastik." },
  { "id": 202030, "beispielDe": "Für die Soße brauchen wir 500 Gramm Hackfleisch." },
- { "id": 202031, "beispielDe": "Vom Hafen aus sieht man große Schiffe." },
  { "id": 202035, "beispielDe": "Seit der Geburt arbeitet sie nur noch halbtags." },
  { "id": 202037, "beispielDe": "Im Winter gehen wir oft ins Hallenbad." },
  { "id": 202043, "beispielDe": "Die Firma handelt mit Kaffee und Tee." },
@@ -48,5 +47,6 @@
  { "id": 202079, "beispielDe": "Ich möchte auf ein kleines Problem hinweisen." },
  { "id": 202081, "beispielDe": "Die Altstadt hat viele historische Gebäude." },
  { "id": 202084, "beispielDe": "Kannst du bitte die Datei für die Hausaufgabe hochladen?" },
- { "id": 202085, "beispielDe": "Ich kann höchstens fünfzehn Minuten bleiben." }
+ { "id": 202085, "beispielDe": "Ich kann höchstens fünfzehn Minuten bleiben." },
+ { "id": 202092, "beispielDe": "Viele Hörer riefen während der Sendung an." }
 ]

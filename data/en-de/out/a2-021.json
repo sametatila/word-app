@@ -1,4 +1,5 @@
 [
+ { "id": 208366, "beispielDe": "Im Kinderzimmer liegt überall Spielzeug." },
  { "id": 208368, "beispielDe": "Sonntags essen wir alle im Esszimmer." },
  { "id": 208369, "beispielDe": "Das Waschbecken im Bad ist verstopft." },
  { "id": 208387, "beispielDe": "Die Kaffeemaschine steht neben dem Kühlschrank." },
@@ -47,6 +48,5 @@
  { "id": 209088, "beispielDe": "Kannst du dieses Geschenk für meine Schwester einpacken?" },
  { "id": 209089, "beispielDe": "Der Bus ist noch nicht an der Haltestelle angekommen." },
  { "id": 209129, "beispielDe": "Die Reise an die Küste dauert zwei Stunden." },
- { "id": 209131, "beispielDe": "Wenn die Fahne rot ist, geh nicht ins Wasser." },
- { "id": 209132, "beispielDe": "Ich habe die Wohnung über eine Anzeige gefunden." }
+ { "id": 209131, "beispielDe": "Wenn die Fahne rot ist, geh nicht ins Wasser." }
 ]

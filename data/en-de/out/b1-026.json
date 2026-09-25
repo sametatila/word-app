@@ -1,5 +1,4 @@
 [
- { "id": 207809, "beispielDe": "Wir brauchen noch eine Tube Zahnpasta." },
  { "id": 207813, "beispielDe": "Eine Rückgabe ist nur mit Kassenzettel möglich." },
  { "id": 207815, "beispielDe": "Ich will die Jacke zurückschicken, weil sie nicht passt." },
  { "id": 207817, "beispielDe": "Meine Schwiegermutter kocht jeden Sonntag für uns." },
@@ -48,5 +47,6 @@
  { "id": 207920, "beispielDe": "Wir sangen bis Mitternacht Lieder am Lagerfeuer." },
  { "id": 207921, "beispielDe": "Wasch den Pinsel bitte nach dem Malen aus." },
  { "id": 207922, "beispielDe": "Sie hat gestern neue weiße Turnschuhe gekauft." },
- { "id": 207924, "beispielDe": "Unser Torwart hat heute sehr gut gespielt." }
+ { "id": 207924, "beispielDe": "Unser Torwart hat heute sehr gut gespielt." },
+ { "id": 207925, "beispielDe": "In der Halbzeit haben wir etwas getrunken." }
 ]
