@@ -1,3 +1,4 @@
+import { DAILY_QUOTAS } from "@/lib/quotas";
 import { cookies, headers } from "next/headers";
 import QRCode from "qrcode";
 import { appControl } from "@/lib/app-control";
@@ -90,7 +91,7 @@ export default async function PremiumPage({ searchParams }: { searchParams: Prom
         trialDays: cfg.plans.trialDays,
       }}
       price={price}
-      fairUse={cfg.fairUse}
+      fairUse={{ ...cfg.fairUse, chatTurnsPerDay: DAILY_QUOTAS.roleplayTurns }}
       referral={referral}
       /** Davet bağlantısındaki kod alanı doluysa form açık gelir. */
       prefillCode={typeof code === "string" ? code : ""}

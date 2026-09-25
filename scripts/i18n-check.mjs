@@ -293,9 +293,9 @@ const DYNAMIC_WEB = [/^band\./, /^push\.rem_.*_named$/];
 */
 const DINAMIK_ORTAK = [/^genre\./, /^promo\./, /^league\.tier_/, /^band\./, /^push\.rem_.*_named$/];
 const HAZIR_AMA_BAGLANMAMIS = new Set([
-  "gate.quota_left_day",
+  /* `gate.quota_left_day` ve `gate.quota_spent_total` 2026-09-25'te bağlandı:
+     haftalık hak kalkınca `gate-note` toplam/gün anahtarlarına geçti. */
   "gate.quota_spent_day",
-  "gate.quota_spent_total",
   "gate.pocket_walk_locked",
   "gate.upgrade",
 ]);
