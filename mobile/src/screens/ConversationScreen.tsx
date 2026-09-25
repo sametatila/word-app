@@ -18,14 +18,14 @@ import { ArrowBackIcon, ArrowRightIcon, SpeakerIcon, CheckIcon, XIcon, MicIcon, 
 import { FlowScreen, FlowActions, FlowNote, ContentLoadingBody, ResultHero, StatRow, DetailCard, DetailRow, StateBody } from "../ui/flow";
 import { GuestMilestoneCard } from "../ui/GuestMilestoneCard";
 import { Celebrate } from "../ui/Celebrate";
-import { ensureLessons, findLesson, lessonLevelOf, scoredSteps, type Lesson, type Segment, type Expectation, type LectureStep } from "../data/lessons";
+import { ensureConversations, findConversation, conversationLevelOf, scoredSteps, type Conversation, type Segment, type Expectation, type LectureStep } from "../data/conversations";
 import { foldCompare, foldTight } from "../lib/textFold";
 import { foldContractions } from "../lib/contractions";
 import { foldEnglishSpelling } from "../lib/en-spelling";
-import { sendRoleplay, roleplayAvailability, parseReply, patternUsed, type ChatMsg } from "../game/roleplay";
+import { sendChat, chatAvailability, parseReply, patternUsed, type ChatMsg } from "../game/chat";
 import { isAiConsentDeclined } from "../lib/aiConsent";
-import { offlineStart, offlineReply, offlineSummary, type OfflineState, type Hint } from "../game/offlineRoleplay";
-import { markItemDone, queueLessonResult, loadLessonResume, saveLessonResume, clearLessonResume, type LessonResume } from "../game/lessonProgress";
+import { offlineStart, offlineReply, offlineSummary, type OfflineState, type Hint } from "../game/offlineChat";
+import { markItemDone, queueConversationResult, loadConversationResume, saveConversationResume, clearConversationResume, type ConversationResume } from "../game/pathProgress";
 import { speakTarget, speakAndWaitVoiced, currentVoiceId } from "../lib/tts";
 import { ensureMicPermission, listenOnce, sttAvailable, stopListening } from "../lib/stt";
 import { spokenMatches } from "../lib/voiceMatch";
@@ -34,11 +34,11 @@ import { haptic } from "../lib/haptics";
 import { API_BASE, fetchWithTimeout } from "../api/client";
 import { bumpStats } from "../lib/statsSignal";
 import { todayStr } from "../game/session";
-import { candoIdsForLesson } from "../game/candoMap";
+import { candoIdsForConversation } from "../game/candoMap";
 import { fetchCando } from "../game/cando";
 import { useTheme, spacing, radii, softShadow, type Palette, ds } from "../theme";
 import { sfx } from "../lib/sfx";
-import { LESSON_TRY_CEILING } from "../lib/learningRules";
+import { CONVERSATION_TRY_CEILING } from "../lib/learningRules";
 import { track } from "../lib/track";
 import { reduceMotion } from "../lib/reduceMotion";
 import { ApiError } from "../api/client";
@@ -50,7 +50,7 @@ import { UnlockProgress } from "../ui/UnlockProgress";
 
 /**
  * Konuşma oynatıcısı — anlatım → karşılıklı konuşma → özet. Web'in
- * lesson-player'ının mobil karşılığı ve artık onunla aynı yolu yürüyor:
+ * conversation-player'ının mobil karşılığı ve artık onunla aynı yolu yürüyor:
  * öğrenci KONUŞUYOR (native STT), yazmak yalnızca yedek.
  *
  * Eskiden mobilde tek yol yazmaktı; gerekçe olarak "cihaz STT'si ekran kapanınca
@@ -59,13 +59,13 @@ import { UnlockProgress } from "../ui/UnlockProgress";
  * sorunsuz çalışıyor. Sonuç şuydu: patikanın konuşma yüzeyi mobilde hiç
  * konuşturmuyor, "söyledim" düğmesi öğrencinin beyanına güveniyordu.
  *
- * İçerik pakette (findLesson); sonuç /api/conversation'a kaydediliyor.
+ * İçerik pakette (findConversation); sonuç /api/conversation'a kaydediliyor.
  */
 
-/** Eller serbest tercihi — web `lesson-player` ile aynı anahtar adı. */
-const HANDSFREE_KEY = "lernomi-lesson-handsfree";
+/** Eller serbest tercihi — web `conversation-player` ile aynı anahtar adı. */
+const HANDSFREE_KEY = "lernomi-conversation-handsfree";
 
-type Phase = "lecture" | "roleplay" | "summary";
+type Phase = "lecture" | "chat" | "summary";
 
 /** Cevabın hangi yoldan geldiği — `conversation_step` kind'ının ikinci parçası. */
 type Via = "mic" | "typed";
@@ -121,7 +121,7 @@ function stepTone(step: LectureStep, colors: Palette): string {
  * Mikrofonun açık kalacağı en uzun süre (ms) — GÜVENLİK ÜST SINIRI.
  *
  * Sekiz saniyeydi ve gerekçesi yazılı değildi. Web aynı adımda on iki saniye
- * bekliyor (`lessons/lesson-player` `SILENCE_MS`) ve orada gerekçe yazılı:
+ * bekliyor (`conversations/conversation-player` `SILENCE_MS`) ve orada gerekçe yazılı:
  * "bir cümleyi düşünmek birkaç saniye, on saniyeyi geçen sessizlik takılma".
  * Aynı gerekçe Android için de geçerli; dört saniyelik fark öğrenciyi
  * cümlesini kurarken kesiyordu.
@@ -136,16 +136,16 @@ function stepTone(step: LectureStep, colors: Palette): string {
  */
 const LISTEN_CEILING_MS = 12000;
 
-export function LessonScreen() {
+export function ConversationScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
   const { compactWidth } = useLayout();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
-  const { params } = useRoute<RouteProp<RootStackParams, "Lesson">>();
+  const { params } = useRoute<RouteProp<RootStackParams, "Conversation">>();
   /* Ders A1 dışındaysa ikilide yok, seviye paketiyle iniyor. Normalde patika
      zaten indirmiş oluyor; bu yol bildirimle ya da derin bağlantıyla doğrudan
      buraya gelen kullanıcı için. */
-  const [lesson, setLesson] = useState<Lesson | undefined>(() => findLesson(params.id));
+  const [conversation, setConversation] = useState<Conversation | undefined>(() => findConversation(params.id));
   /*
     PATİKA KONUŞMA HAKKI (2026-09-25). Hakkı olmayan adım KİLİTLİ: konuşmaya
     girmeden kilit, nasıl açılacağı ve Premium yolu gösteriliyor (sunucu
@@ -158,21 +158,21 @@ export function LessonScreen() {
   const { status: premiumStatus } = usePremiumStatus();
   const aiDeclined = useAiDeclined(!isGuest);
   const [serverLocked, setServerLocked] = useState(false);
-  const entryLocked = lesson ? conversationLocked(premiumStatus?.unlock, lesson.id, lesson.level, { guest: isGuest, aiDeclined }) : false;
+  const entryLocked = conversation ? conversationLocked(premiumStatus?.unlock, conversation.id, conversation.level, { guest: isGuest, aiDeclined }) : false;
   const convLocked = entryLocked || serverLocked;
-  const convCopy = lesson ? tieredCopy(premiumStatus?.unlock?.levels[lesson.level]?.conversation, "conv") : null;
+  const convCopy = conversation ? tieredCopy(premiumStatus?.unlock?.levels[conversation.level]?.conversation, "conv") : null;
   useEffect(() => { if (convLocked) notePremiumGate("conversation"); }, [convLocked]);
   /* Paket inmeden "bulunamadı" denmiyor (bkz. ui/flow `ContentLoadingBody`). */
-  const [packReady, setPackReady] = useState(() => !!findLesson(params.id));
+  const [packReady, setPackReady] = useState(() => !!findConversation(params.id));
   /* Paket inemediyse "ders bulunamadı" değil "indirilemedi" deniyor. */
   const [packFailed, setPackFailed] = useState(false);
   useEffect(() => {
-    const level = lessonLevelOf(params.id);
-    if (!level) { setLesson(findLesson(params.id)); setPackReady(true); return; }
+    const level = conversationLevelOf(params.id);
+    if (!level) { setConversation(findConversation(params.id)); setPackReady(true); return; }
     let dead = false;
-    void ensureLessons(level).then((ok) => {
+    void ensureConversations(level).then((ok) => {
       if (dead) return;
-      setLesson(findLesson(params.id));
+      setConversation(findConversation(params.id));
       setPackFailed(!ok);
       setPackReady(true);
     });
@@ -194,7 +194,7 @@ export function LessonScreen() {
   const [tries, setTries] = useState(0);          // üretim adımında deneme sayısı
   const [answered, setAnswered] = useState(false); // doğru/yanlış cevaplandı mı
   const [input, setInput] = useState("");
-  const [busy, setBusy] = useState(false);        // roleplay bekleme
+  const [busy, setBusy] = useState(false);        // chat bekleme
   /*
    * ELLER SERBEST — mobilde HİÇ YOKTU.
    *
@@ -247,7 +247,7 @@ export function LessonScreen() {
     tamamlanması HİÇ yazılmıyordu.
   */
   const kaydedilen = useRef<boolean | null>(null);
-  const [resumeOffer, setResumeOffer] = useState<LessonResume | null>(null);
+  const [resumeOffer, setResumeOffer] = useState<ConversationResume | null>(null);
   // Yarım kayıt okunana dek boş sohbet kabuğu çizilmez: ya "devam et" ekranı ya
   // da ilk baloncuklar geliyor, ikisi de boş kabuğun yerine geçip ekranı zıplatır.
   const [resumeChecked, setResumeChecked] = useState(false);
@@ -277,7 +277,7 @@ export function LessonScreen() {
   // geçen öğrenci her adımda o düğmeyi yeniden aramasın.
   const [typing, setTyping] = useState(false);
 
-  const scoreTotal = lesson ? scoredSteps(lesson) : 0;
+  const scoreTotal = conversation ? scoredSteps(conversation) : 0;
   /* Kaydirma ANIMASYONU "hareketi azalt"a bagli; kaydirmanin kendisi degil.
      Web ayni ayrimi yapiyor (`behavior: reducedMotion() ? "auto" : "smooth"`). */
   const scrollDown = () => setTimeout(() => scrollRef.current?.scrollToEnd({ animated: !reduceMotion() }), 60);
@@ -307,14 +307,14 @@ export function LessonScreen() {
      * Yapılandırma yoksa sunucu 503 dönüyor ve her tur genel `catch`e düşüp
      * "bağlantı sorunu" yazıyordu — yanlış teşhis: bağlantı yerinde, sohbet
      * yapılandırılmamış. Kullanıcı aynı yanlış cümleyi her denemede yeniden
-     * görüyordu. Durumu okuyan yardımcı (`roleplayConfigured`) yazılmıştı ama
+     * görüyordu. Durumu okuyan yardımcı (`chatConfigured`) yazılmıştı ama
      * çağıran yoktu.
      *
-     * Web bu durumda derse ait SENARYOYA düşüyor (`lib/lessons/offline-roleplay`)
+     * Web bu durumda derse ait SENARYOYA düşüyor (`lib/conversations/offline-chat`)
      * ve konuşma çalışmaya devam ediyor; o yolun mobile taşınması ayrı bir iş.
      * Burada yapılan yalnız doğruyu söylemek.
      */
-    roleplayAvailability()
+    chatAvailability()
       .then((route) => {
         if (alive && route === "account") {
           /* MİSAFİR: yapay zekâyla konuşma hesap istiyor (mağaza ön inceleme
@@ -338,7 +338,7 @@ export function LessonScreen() {
           offlineRef.current = true;
           /* HANGİ YEDEĞE DÜŞTÜĞÜ SÖYLENİYOR. Mesaj "birazdan tekrar dene"
              diyordu ama ders DURMUYOR: çevrimdışı rol yapma devralıyor
-             (`game/offlineRoleplay`) - senaryosu olan derste senaryo, olmayanda
+             (`game/offlineChat`) - senaryosu olan derste senaryo, olmayanda
              kalıplar. Yani kullanıcı çalışan bir şeyi bozuk sanıyordu. Web iki
              yedeği ayrı ayrı adlandırıyor. */
           /* "KONUŞMA YİNE SAYILIR" da söyleniyor. Balon yalnız "servis kapalı"
@@ -349,7 +349,7 @@ export function LessonScreen() {
           offNoteRef.current = {
             role: "teacher",
             segments: [
-              { lang: "tr", text: tx(lesson?.roleplay.script?.length ? "conversationp.chat_off_scripted" : "conversationp.chat_off_patterns") },
+              { lang: "tr", text: tx(conversation?.chat.script?.length ? "conversationp.chat_off_scripted" : "conversationp.chat_off_patterns") },
               { lang: "tr", text: tx("conversation.chat_offline_note") },
             ],
             tone: "hint",
@@ -360,38 +360,38 @@ export function LessonScreen() {
       .catch(() => {});
     return () => { alive = false; stopListening(); };
     /* Efekt yalnız MOUNT içindir (ders kimliği değişmiyor, ekran yeniden
-       kuruluyor); `lesson` bağımlılığa eklenirse sohbet uyarısı her çizimde
+       kuruluyor); `conversation` bağımlılığa eklenirse sohbet uyarısı her çizimde
        yeniden basılır. */
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Anlatımı başlat: yarım kalan kayıt varsa devam teklif et, yoksa baştan.
   useEffect(() => {
-    if (!lesson) return;
-    loadLessonResume(lesson.id).then((r) => {
-      if (r && (r.phase === "roleplay" || r.cursor < lesson.lecture.length)) setResumeOffer(r);
+    if (!conversation) return;
+    loadConversationResume(conversation.id).then((r) => {
+      if (r && (r.phase === "chat" || r.cursor < conversation.lecture.length)) setResumeOffer(r);
       else beginLecture(0, false);
       setResumeChecked(true);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [lesson]);
+  }, [conversation]);
 
   // Anlatım ilerledikçe cihazda sakla (yarım kalırsa "devam et").
   useEffect(() => {
-    if (!lesson || phase !== "lecture") return;
-    if (cursor > 0 && cursor < lesson.lecture.length) void saveLessonResume(lesson.id, cursor, correct);
+    if (!conversation || phase !== "lecture") return;
+    if (cursor > 0 && cursor < conversation.lecture.length) void saveConversationResume(conversation.id, cursor, correct);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cursor, phase]);
 
   // Konuşma ilerledikçe de sakla: sohbet, tur sayısı, senaryo yolunun durumu.
   useEffect(() => {
-    if (!lesson || phase !== "roleplay" || kaydedilen.current === true || !roleMsgs.length) return;
-    void saveLessonResume(lesson.id, lesson.lecture.length, correct, { phase: "roleplay", roleMsgs, roleTurns, offline });
+    if (!conversation || phase !== "chat" || kaydedilen.current === true || !roleMsgs.length) return;
+    void saveConversationResume(conversation.id, conversation.lecture.length, correct, { phase: "chat", roleMsgs, roleTurns, offline });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [roleMsgs, roleTurns, phase]);
 
   /**
-   * Ders BAŞLADI - web `lesson-player` ile aynı olay, aynı değer (1 kaldığı
+   * Ders BAŞLADI - web `conversation-player` ile aynı olay, aynı değer (1 kaldığı
    * yerden, 0 baştan) ve aynı kind (ders kimliği).
    *
    * Üç giriş yolu var (ilk açılış, "kaldığın yerden", "baştan başla") ve üçü
@@ -411,20 +411,20 @@ export function LessonScreen() {
 
   const lectureStarted = useRef(false);
   function beginLecture(from: number, resumed: boolean) {
-    if (lesson && !lectureStarted.current) {
+    if (conversation && !lectureStarted.current) {
       lectureStarted.current = true;
-      track("conversation_start", resumed ? 1 : 0, lesson.id);
+      track("conversation_start", resumed ? 1 : 0, conversation.id);
     }
     presentFrom(from);
   }
 
   /** cursor'dan itibaren: anlatım baloncuklarını aç, ilk `expect`li adımda dur. */
   function presentFrom(from: number) {
-    if (!lesson) return;
+    if (!conversation) return;
     let k = from;
     const add: Bubble[] = [];
-    while (k < lesson.lecture.length) {
-      const step = lesson.lecture[k];
+    while (k < conversation.lecture.length) {
+      const step = conversation.lecture[k];
       add.push({ id: bubbleId.current++, role: "teacher", segments: step.say });
       if (step.expect) break; // her beklenti (confirm/repeat/produce/truefalse) burada bekletir
       k++;
@@ -434,7 +434,7 @@ export function LessonScreen() {
     setTries(0);
     setAnswered(false);
     const spoken = add.map((b) => (b.role === "teacher" ? targetText(b.segments) : "")).filter(Boolean).join(". ");
-    const bekleyen = lesson.lecture[k]?.expect;
+    const bekleyen = conversation.lecture[k]?.expect;
     /* Eller serbestken cümle BİTİNCE dinleniyor; kapalıyken eski yol
        (fire-and-forget) korunuyor, yani hiçbir şey yavaşlamıyor. */
     if (spoken && handsFreeRef.current && (bekleyen?.kind === "repeat" || bekleyen?.kind === "produce")) {
@@ -447,11 +447,11 @@ export function LessonScreen() {
     } else if (spoken) {
       speakTarget(spoken);
     }
-    if (k >= lesson.lecture.length) enterRoleplay();
+    if (k >= conversation.lecture.length) enterChat();
     scrollDown();
   }
 
-  const current = lesson && cursor < lesson.lecture.length ? lesson.lecture[cursor] : null;
+  const current = conversation && cursor < conversation.lecture.length ? conversation.lecture[cursor] : null;
   const expect = current?.expect;
 
   function advance() { presentFrom(cursor + 1); }
@@ -461,7 +461,7 @@ export function LessonScreen() {
   /**
    * ADIMI ATLA. Tıkanan öğrencinin ilerleme yolu yalnız "yazarak cevapla"ydı
    * ve o da doğru cevabı BİLMEYİ gerektiriyor; web her beklentili adımda bir
-   * atlama bağlantısı veriyor (`lesson-player` `skipStep`). Atlanan adım
+   * atlama bağlantısı veriyor (`conversation-player` `skipStep`). Atlanan adım
    * ölçümde sıfır sayılıyor - aynı olay, aynı değer, aynı kind biçimi.
    */
   function skipStep() {
@@ -512,7 +512,7 @@ export function LessonScreen() {
     }
     const t = tries + 1;
     setTries(t);
-    if (t >= LESSON_TRY_CEILING) {
+    if (t >= CONVERSATION_TRY_CEILING) {
       /* Adım geçilemedi. Web de sıfırı YALNIZ burada yazıyor: her yanlış
          denemeye ayrı bir sıfır yazmak, bir adımı üç başarısız adım gibi
          gösterirdi. */
@@ -577,7 +577,7 @@ export function LessonScreen() {
        * adımı üçüncü denemede bilen öğrenci de ilk denemede bilenle aynı
        * yüzdeyi alıyordu. Ekranın kendi ölçümü zaten ayrımı biliyor
        * (`conversation_step` değeri 2 ilk denemede, 1 sonrakinde) - puan onu
-       * görmezden geliyordu. Web `lesson-player` iki adım türünde de
+       * görmezden geliyordu. Web `conversation-player` iki adım türünde de
        * `ok && isFirstTry` istiyor.
        *
        * Doğru/yanlış adımında fark yok: orada tek deneme var (`answered`
@@ -591,7 +591,7 @@ export function LessonScreen() {
       haptic("wrong");
       const t = tries + 1;
       setTries(t);
-      if (t >= LESSON_TRY_CEILING) {
+      if (t >= CONVERSATION_TRY_CEILING) {
         track("conversation_step", 0, `produce:${via}`);
         // Doğru cevap balonu: dil etiketi KURSTAN gelir. Sabit "de" yazıyordu;
         // çizim `lang !== "tr"` diye baktığı için görünürde bir şey bozulmuyordu
@@ -622,25 +622,25 @@ export function LessonScreen() {
     scrollDown();
   }
 
-  // ---- Konuşma (roleplay) ----
-  function enterRoleplay() {
-    if (!lesson) return;
-    setPhase("roleplay");
-    /* Kayıt SİLİNMİYOR: konuşma fazı da saklanıyor (bkz. `saveLessonResume`). */
+  // ---- Konuşma (chat) ----
+  function enterChat() {
+    if (!conversation) return;
+    setPhase("chat");
+    /* Kayıt SİLİNMİYOR: konuşma fazı da saklanıyor (bkz. `saveConversationResume`). */
     setFeed([]);
-    push({ role: "teacher", segments: [{ lang: "tr", text: tx("conversation.scene", { scene: lesson.roleplay.scene }) }] });
+    push({ role: "teacher", segments: [{ lang: "tr", text: tx("conversation.scene", { scene: conversation.chat.scene }) }] });
     if (offlineRef.current && offNoteRef.current) push(offNoteRef.current);
     /* Çevrimdışı yolda açılış senaryodan geliyor (ilk turun sorusu); model
        çalışıyorsa dersin kendi açılış repliği. */
-    let opening = lesson.roleplay.opening;
+    let opening = conversation.chat.opening;
     if (offlineRef.current) {
-      const st = offlineStart(lesson);
+      const st = offlineStart(conversation);
       setOffline(st.state);
       opening = st.opening;
       pushHint(st.hint);
     }
     if (opening) {
-      push({ role: "teacher", segments: [{ lang: "de", text: opening }, ...(lesson.roleplay.openingTr ? [{ lang: "tr" as const, text: lesson.roleplay.openingTr }] : [])] });
+      push({ role: "teacher", segments: [{ lang: "de", text: opening }, ...(conversation.chat.openingTr ? [{ lang: "tr" as const, text: conversation.chat.openingTr }] : [])] });
       setRoleMsgs([{ role: "assistant", content: opening }]);
       speakTarget(opening);
     }
@@ -648,14 +648,14 @@ export function LessonScreen() {
   }
 
   /** Yarım kalan konuşmayı geri kurar: sahne, sohbet, tur sayısı, senaryo yolu. */
-  function resumeRoleplay(r: LessonResume) {
-    if (!lesson) return;
-    track("conversation_start", 1, lesson.id);
+  function resumeChat(r: ConversationResume) {
+    if (!conversation) return;
+    track("conversation_start", 1, conversation.id);
     setCorrect(r.correct);
-    setCursor(lesson.lecture.length);
-    setPhase("roleplay");
+    setCursor(conversation.lecture.length);
+    setPhase("chat");
     setFeed([]);
-    push({ role: "teacher", segments: [{ lang: "tr", text: tx("conversation.scene", { scene: lesson.roleplay.scene }) }] });
+    push({ role: "teacher", segments: [{ lang: "tr", text: tx("conversation.scene", { scene: conversation.chat.scene }) }] });
     const msgs = r.roleMsgs ?? [];
     for (const m of msgs) {
       if (m.role === "user") push({ role: "student", text: m.content });
@@ -673,7 +673,7 @@ export function LessonScreen() {
   }
 
   async function sendRole(textArg?: string) {
-    if (!lesson || busy) return;
+    if (!conversation || busy) return;
     const text = (textArg ?? input).trim();
     if (!text) return;
     push({ role: "student", text });
@@ -688,7 +688,7 @@ export function LessonScreen() {
     /* ÇEVRİMDIŞI: model yok, cevabı senaryo veriyor. Aynı baloncuk, aynı
        ayrıştırıcı - `[SAY]` satırı yine öneri çipi oluyor. */
     if (offline) {
-      const r = offlineReply(lesson, offline, text);
+      const r = offlineReply(conversation, offline, text);
       setOffline(r.state);
       const parsed = parseReply(r.content);
       const bodyText = parsed.body || r.content;
@@ -702,11 +702,11 @@ export function LessonScreen() {
       return;
     }
     try {
-      const reply = await sendRoleplay(lesson.id, next);
+      const reply = await sendChat(conversation.id, next);
       const parsed = parseReply(reply || "…");
       const bodyText = parsed.body || reply || "…";
       setRoleMsgs([...next, { role: "assistant", content: bodyText }]);
-      push({ role: "teacher", segments: [{ lang: "de", text: bodyText }], fix: parsed.corrections.length ? parsed.corrections : undefined, report: { ref: `${lesson.id}:${turn}`, text: reply } });
+      push({ role: "teacher", segments: [{ lang: "de", text: bodyText }], fix: parsed.corrections.length ? parsed.corrections : undefined, report: { ref: `${conversation.id}:${turn}`, text: reply } });
       setSuggestions(parsed.suggestions);
       if (bodyText) speakTarget(bodyText);
     } catch (e) {
@@ -718,8 +718,8 @@ export function LessonScreen() {
           yerinde, yalnız yapay zekâ kapalı.
         */
         offlineRef.current = true;
-        const st = offlineStart(lesson);
-        const r = offlineReply(lesson, st.state, text);
+        const st = offlineStart(conversation);
+        const r = offlineReply(conversation, st.state, text);
         setOffline(r.state);
         push({ role: "teacher", segments: [{ lang: "tr", text: tx("conversationp.chat_off_consent") }], tone: "hint" });
         const parsed = parseReply(r.content);
@@ -747,15 +747,15 @@ export function LessonScreen() {
     }
   }
 
-  /* `lesson` henüz yüklenmemişken de okunuyor, o yüzden `??` kalıyor - ama
+  /* `conversation` henüz yüklenmemişken de okunuyor, o yüzden `??` kalıyor - ama
      uydurulmuş bir eşik değil sıfır: ders gelmeden "yeter" demesin. Eşiğin
      kendisi içerikten, artık zorunlu alandan geliyor. */
-  const minTurns = lesson?.roleplay.minTurns ?? 0;
-  const roleplayReady = roleTurns >= minTurns;
+  const minTurns = conversation?.chat.minTurns ?? 0;
+  const chatReady = roleTurns >= minTurns;
 
   // ---- Özet + kayıt ----
   async function finish(roleDone: boolean) {
-    if (!lesson) return;
+    if (!conversation) return;
     setPhase("summary");
     /* Aynı hüküm iki kez yazılmıyor; ama yarım kaydın ardından gelen
        tamamlanma yazılıyor. */
@@ -765,21 +765,21 @@ export function LessonScreen() {
     /* Puan yüzdesi web ile aynı formül: puanlanan adımlar içinde doğru oranı
        (`correct` üstten kırpılıyor - konuşma fazı `correct`i artırmıyor ama
        formül yine de tavanı aşmasın). Geçme kaydı sunucuda. */
-    track("conversation_finish", scoreTotal ? Math.round((100 * Math.min(correct, scoreTotal)) / scoreTotal) : 0, lesson.id);
+    track("conversation_finish", scoreTotal ? Math.round((100 * Math.min(correct, scoreTotal)) / scoreTotal) : 0, conversation.id);
     /* Senaryolu konuşmanın puanı: kalıpların kaçı kullanıldı. Web
-       `lesson-player` aynı adı aynı değerle yazıyor; mobilde çevrimdışı yol
+       `conversation-player` aynı adı aynı değerle yazıyor; mobilde çevrimdışı yol
        yeni geldiği için ölçüm de şimdi geliyor. */
-    if (offline) track("production_attempt", offlineSummary(lesson, offline).score, "chat");
+    if (offline) track("production_attempt", offlineSummary(conversation, offline).score, "chat");
     bumpStats(); // ders bitti: XP/seri değişti
     /* "Şimdilik bırak" dersi BİTMİŞ işaretlemiyor ve kaldığı yeri silmiyor:
        bir sonraki açılışta konuşmaya dönülüyor. Sunucuya yine yazılıyor ki
        Patika adımı "denendi" görünsün ve sıra ilerlesin. */
     if (roleDone) {
-      void markItemDone(lesson.id);
-      void clearLessonResume(lesson.id);
+      void markItemDone(conversation.id);
+      void clearConversationResume(conversation.id);
     }
     const seconds = Math.round((Date.now() - startedAt.current) / 1000);
-    const payload = { conversationId: lesson.id, correct, chatDone: roleDone, day: todayStr(), seconds };
+    const payload = { conversationId: conversation.id, correct, chatDone: roleDone, day: todayStr(), seconds };
     try {
       const res = await fetchWithTimeout(`${API_BASE}/api/conversation`, {
         method: "POST",
@@ -788,7 +788,7 @@ export function LessonScreen() {
       });
       /* Sunucu gövdeyi reddettiyse (4xx) kuyruğa almanın anlamı yok; ağ ya da
          sunucu kaynaklı bir düşüş ise sonuç bekletiliyor. */
-      if (!res.ok && res.status >= 500) await queueLessonResult(payload);
+      if (!res.ok && res.status >= 500) await queueConversationResult(payload);
       /* YANIT OKUNUYOR. Uç `passed`, `nextDays`, `xpGained`, `currentStreak`
          ve `totalXp` döndürüyor; mobil hiçbirini okumuyordu ve dersin NE ZAMAN
          geri geleceği (aralıklı tekrar merdiveni) bu yüzden hiçbir yerde
@@ -808,24 +808,24 @@ export function LessonScreen() {
       /* ÇEVRİMDIŞI: yerel işaret Patika'yı bitmiş gösteriyor ama sunucu dersi
          hiç öğrenmiyordu - XP yok, tekrar merdiveni yok, cihaz değiştirince
          ders geri geliyordu. Sonuç kendi günüyle kuyruğa alınıyor. */
-      await queueLessonResult(payload);
+      await queueConversationResult(payload);
     }
   }
 
-  const nextLesson = useMemo(() => {
-    if (!lesson) return null;
-    const list = require("../data/lessons").lessonsForLevel(lesson.level) as Lesson[];
-    const i = list.findIndex((l) => l.id === lesson.id);
+  const nextConversation = useMemo(() => {
+    if (!conversation) return null;
+    const list = require("../data/conversations").conversationsForLevel(conversation.level) as Conversation[];
+    const i = list.findIndex((l) => l.id === conversation.id);
     return i >= 0 && i + 1 < list.length ? list[i + 1] : null;
-  }, [lesson]);
+  }, [conversation]);
 
-  if (!lesson && !packReady) {
+  if (!conversation && !packReady) {
     return <FlowScreen><ContentLoadingBody /></FlowScreen>;
   }
-  if (!lesson) {
+  if (!conversation) {
     return (
       <FlowScreen center actions={<FlowActions primary={{ label: tx("conversation.go_back"), onPress: () => nav.goBack() }} />}>
-        {/* DURUM ŞABLONU: bulunamayan konuşma = üzgün maskot, tek çıkış (web `lessons/[id]/not-found`). */}
+        {/* DURUM ŞABLONU: bulunamayan konuşma = üzgün maskot, tek çıkış (web `conversations/[id]/not-found`). */}
         <StateBody alert title={packFailed ? tx("content.couldn_t_load") : tx("conversation.this_conversation_wasn_t_found")} body={packFailed ? tx("social.err_offline") : null} />
       </FlowScreen>
     );
@@ -839,9 +839,9 @@ export function LessonScreen() {
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
         <View style={{ flex: 1 }}>
-          <Text variant="h3" numberOfLines={1}>{lesson.title}</Text>
+          <Text variant="h3" numberOfLines={1}>{conversation.title}</Text>
           <Text variant="caption" color={colors.textMuted} numberOfLines={1}>
-            {tx(phase === "lecture" ? "conversation.phase_lecture" : phase === "roleplay" ? "conversation.phase_chat" : "conversation.phase_summary")} · {lesson.titleTr}
+            {tx(phase === "lecture" ? "conversation.phase_lecture" : phase === "chat" ? "conversation.phase_chat" : "conversation.phase_summary")} · {conversation.titleTr}
           </Text>
         </View>
         {/* ELLER SERBEST anahtarı — web başlık şeridinde tutuyor. Mikrofon
@@ -870,12 +870,12 @@ export function LessonScreen() {
           baloncuk, konuşmanın ortasına dönen kullanıcıya hiçbir şey söylemez. */}
       {/* Senaryoda (misafir, izin yok, servis kapalı) karşıdaki yapay zekâ
           değil: "yapay zekâ ile konuşuyorsun" demek yanlış olurdu. */}
-      {phase === "roleplay" && !offline && (
+      {phase === "chat" && !offline && (
         <AiNotice variant="character" style={{ marginHorizontal: spacing.lg, marginBottom: spacing.xs }} />
       )}
       {phase === "lecture" && (
         <View style={{ flexDirection: "row", gap: 3, paddingHorizontal: spacing.lg, marginBottom: spacing.xs }}>
-          {lesson.lecture.map((s, i) => (
+          {conversation.lecture.map((s, i) => (
             <View key={i} style={{ flex: 1, height: 5, borderRadius: 3, backgroundColor: i < cursor ? colors.success : i === cursor ? stepTone(s, colors) : colors.surface2 }} />
           ))}
         </View>
@@ -910,20 +910,20 @@ export function LessonScreen() {
           </View>
         </>
       ) : phase === "summary" ? (
-        <Summary lesson={lesson} correct={correct} total={scoreTotal} next={nextLesson} roleMsgs={roleMsgs} nextDays={nextDays} colors={colors} insets={insets}
+        <Summary conversation={conversation} correct={correct} total={scoreTotal} next={nextConversation} roleMsgs={roleMsgs} nextDays={nextDays} colors={colors} insets={insets}
           onBack={() => nav.goBack()}
-          onNext={nextLesson ? () => nav.replace("Lesson", { id: nextLesson.id }) : undefined}
+          onNext={nextConversation ? () => nav.replace("Conversation", { id: nextConversation.id }) : undefined}
           passed={passed}
-          turnsDone={roleplayReady}
-          onResume={() => setPhase("roleplay")}
-          onExam={() => nav.navigate("RoleplayExam", { id: lesson.id })} />
+          turnsDone={chatReady}
+          onResume={() => setPhase("chat")}
+          onExam={() => nav.navigate("ConversationScored", { id: conversation.id })} />
       ) : resumeOffer ? (
         /*
           KALDIĞIN YERDEN — durum şablonu (el sallayan maskot) + nerede
           kalındığını söyleyen kart. Eskiden yalnız "ara vermiştin" yazıyordu:
           öğrenci anlatımın sonunda mı, konuşmanın ortasında mı olduğunu
           bilmeden seçiyordu. Web kaydı kendiliğinden sürdürüp ince bir not
-          gösteriyor (`lesson-player` `resumed`) — bilinçli fark: webde ekran
+          gösteriyor (`conversation-player` `resumed`) — bilinçli fark: webde ekran
           sohbetin kendisi, burada tam ekran bir soru.
         */
         <View style={{ flex: 1, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.md }}>
@@ -932,17 +932,17 @@ export function LessonScreen() {
             <DetailCard title={tx("conversationp.resume_where")}>
               <DetailRow
                 left={tx("conversation.phase_lecture")}
-                right={resumeOffer.phase === "roleplay" || resumeOffer.cursor >= lesson.lecture.length ? `${lesson.lecture.length}/${lesson.lecture.length} ✓` : `${resumeOffer.cursor}/${lesson.lecture.length}`}
-                faded={resumeOffer.phase === "roleplay"}
+                right={resumeOffer.phase === "chat" || resumeOffer.cursor >= conversation.lecture.length ? `${conversation.lecture.length}/${conversation.lecture.length} ✓` : `${resumeOffer.cursor}/${conversation.lecture.length}`}
+                faded={resumeOffer.phase === "chat"}
               />
-              {resumeOffer.phase === "roleplay" ? (
-                <DetailRow left={tx("conversation.phase_chat")} right={tx("conversationp.resume_turns", { n: resumeOffer.roleTurns ?? (resumeOffer.roleMsgs ?? []).filter((m) => m.role === "user").length, min: lesson.roleplay.minTurns })} />
+              {resumeOffer.phase === "chat" ? (
+                <DetailRow left={tx("conversation.phase_chat")} right={tx("conversationp.resume_turns", { n: resumeOffer.roleTurns ?? (resumeOffer.roleMsgs ?? []).filter((m) => m.role === "user").length, min: conversation.chat.minTurns })} />
               ) : null}
             </DetailCard>
           </View>
           <FlowActions
-            primary={{ label: tx("conversation.continue_where_you_left_off"), onPress: () => { const r = resumeOffer; setResumeOffer(null); if (r.phase === "roleplay") resumeRoleplay(r); else { setCorrect(r.correct); beginLecture(r.cursor, true); } } }}
-            tertiary={{ label: tx("conversation.start_over"), onPress: () => { setResumeOffer(null); void clearLessonResume(lesson.id); beginLecture(0, false); } }}
+            primary={{ label: tx("conversation.continue_where_you_left_off"), onPress: () => { const r = resumeOffer; setResumeOffer(null); if (r.phase === "chat") resumeChat(r); else { setCorrect(r.correct); beginLecture(r.cursor, true); } } }}
+            tertiary={{ label: tx("conversation.start_over"), onPress: () => { setResumeOffer(null); void clearConversationResume(conversation.id); beginLecture(0, false); } }}
           />
         </View>
       ) : (
@@ -965,10 +965,10 @@ export function LessonScreen() {
                 sttOk={sttOk} sttSebep={sttSebep} listening={listening} typing={typing} setTyping={setTyping}
                 onSkip={skipStep} colors={colors} />
             ) : (
-              <RoleplayControls input={input} setInput={setInput} busy={busy} onSend={() => sendRole()}
+              <ChatControls input={input} setInput={setInput} busy={busy} onSend={() => sendRole()}
                 onSpeak={() => void speakRole()}
                 suggestions={suggestions} onSuggest={(s) => sendRole(s)}
-                ready={roleplayReady} turns={roleTurns} minTurns={minTurns} onFinish={() => finish(true)} onLeave={() => void finish(false)}
+                ready={chatReady} turns={roleTurns} minTurns={minTurns} onFinish={() => finish(true)} onLeave={() => void finish(false)}
                 sttOk={sttOk} sttSebep={sttSebep} listening={listening} typing={typing} setTyping={setTyping} colors={colors} />
             )}
           </View>
@@ -1116,7 +1116,7 @@ function LectureControls({ expect, tries, input, setInput, onConfirm, onSpeakRep
       </Text>
     ) : null;
   /* Beklentili her adımda atlama yolu: tıkanan öğrenci dersi bırakmak zorunda
-     kalmasın (web `lesson-player` aynı bağlantıyı veriyor). "Devam" ve
+     kalmasın (web `conversation-player` aynı bağlantıyı veriyor). "Devam" ve
      "hazırım" adımlarında anlamsız - orada beklenti yok. */
   const atla = (
     <PressableScale onPress={onSkip} style={{ alignItems: "center", paddingVertical: spacing.xs }}>
@@ -1184,7 +1184,7 @@ function LectureControls({ expect, tries, input, setInput, onConfirm, onSpeakRep
   );
 }
 
-function RoleplayControls({ input, setInput, busy, onSend, onSpeak, suggestions, onSuggest, ready, turns, minTurns, onFinish, onLeave, sttOk, sttSebep, listening, typing, setTyping, colors }: {
+function ChatControls({ input, setInput, busy, onSend, onSpeak, suggestions, onSuggest, ready, turns, minTurns, onFinish, onLeave, sttOk, sttSebep, listening, typing, setTyping, colors }: {
   input: string; setInput: (s: string) => void; busy: boolean; onSend: () => void; onSpeak: () => void;
   suggestions: string[]; onSuggest: (s: string) => void;
   ready: boolean; turns: number; minTurns: number; onFinish: () => void; onLeave: () => void;
@@ -1215,7 +1215,7 @@ function RoleplayControls({ input, setInput, busy, onSend, onSpeak, suggestions,
       {ready ? (
         <BigButton label={tx("conversation.end_conversation_summary")} onPress={onFinish} tint={colors.success} colors={colors} />
       ) : (
-        /* "ŞİMDİLİK BIRAK" — web `lesson-player` ile aynı çıkış. Yoktu: tur
+        /* "ŞİMDİLİK BIRAK" — web `conversation-player` ile aynı çıkış. Yoktu: tur
            sayısı dolmadan konuşmadan çıkmanın tek yolu geri tuşuydu ve deneme
            hiçbir yere yazılmıyordu. Kaldığı yer saklı kalıyor. */
         <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: spacing.sm }}>
@@ -1239,8 +1239,8 @@ function RoleplayControls({ input, setInput, busy, onSend, onSpeak, suggestions,
   );
 }
 
-function Summary({ lesson, correct, total, next, roleMsgs, nextDays, passed, turnsDone, colors, insets, onBack, onNext, onExam, onResume }: {
-  lesson: Lesson; correct: number; total: number; next: Lesson | null; roleMsgs: ChatMsg[]; nextDays: number | null; colors: Palette;
+function Summary({ conversation, correct, total, next, roleMsgs, nextDays, passed, turnsDone, colors, insets, onBack, onNext, onExam, onResume }: {
+  conversation: Conversation; correct: number; total: number; next: Conversation | null; roleMsgs: ChatMsg[]; nextDays: number | null; colors: Palette;
   passed: boolean | null;
   /** Yerel hüküm: asgari tur doldu mu. Sunucu yanıtı gelmezse (çevrimdışı) başlık buna bakıyor. */
   turnsDone: boolean;
@@ -1253,13 +1253,13 @@ function Summary({ lesson, correct, total, next, roleMsgs, nextDays, passed, tur
    * Web özetin altında bunu yazıyor (`conversationp.i_can`): kullanıcı turu
    * bitiriyor, kaç doğru yaptığını görüyor ama NE KAZANDIĞINI görmüyordu.
    * Kimlikler dersten (`candoMap`), metni `/api/cando`dan — rol yapma
-   * sınavındaki yolun aynısı (`RoleplayExamScreen`). Alınamazsa satır
+   * sınavındaki yolun aynısı (`ConversationScoredScreen`). Alınamazsa satır
    * çizilmiyor: etiket bir süs, ders özeti ona bağlı değil.
    */
   const [cando, setCando] = useState<string[]>([]);
   useEffect(() => {
     let alive = true;
-    const want = candoIdsForLesson(lesson);
+    const want = candoIdsForConversation(conversation);
     if (!want.length) return;
     fetchCando()
       .then((d) => {
@@ -1269,7 +1269,7 @@ function Summary({ lesson, correct, total, next, roleMsgs, nextDays, passed, tur
       })
       .catch(() => { /* etiket alınamadı */ });
     return () => { alive = false; };
-  }, [lesson]);
+  }, [conversation]);
   /* Düzeltmeler karşı tarafın cevaplarından çıkarılıyor — web ile aynı kural
      ve aynı ayrıştırıcı (`parseReply`). */
   const corrections = roleMsgs.filter((m) => m.role === "assistant").flatMap((m) => parseReply(m.content).corrections);
@@ -1293,37 +1293,37 @@ function Summary({ lesson, correct, total, next, roleMsgs, nextDays, passed, tur
       <Celebrate show={!unfinished && pct >= 80} />
       <KeyboardAwareScroll contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: spacing.lg, gap: spacing.md }} showsVerticalScrollIndicator={false}>
         <ResultHero
-          eyebrow={`${tx("unitkind.conversation")} · ${lesson.title}`}
+          eyebrow={`${tx("unitkind.conversation")} · ${conversation.title}`}
           title={tx(unfinished ? "conversationp.conversation_unfinished" : "conversation.conversation_complete")}
           figure={total ? `${correct}/${total}` : null}
           sub={tx("conversationp.n_turns", { n: userTurns })}
           quiet={unfinished}
-          pill={unfinished ? { text: tx("conversationp.pill_min_turns", { n: lesson.roleplay.minTurns }), tone: "bad" } : null}
+          pill={unfinished ? { text: tx("conversationp.pill_min_turns", { n: conversation.chat.minTurns }), tone: "bad" } : null}
         />
         {/* Tur sayısı KONUŞMANIN UZUNLUĞU, isabetten ayrı bir şey söylüyor;
             eşikle birlikte yazılıyor ki eksik kalanı görünsün. Tekrar günü
             aralıklı tekrar merdiveninden (kayıt yanıtı). */}
         <StatRow items={[
           { value: formatPercent(pct), label: tx("conversation.accuracy") },
-          { value: `${userTurns}/${lesson.roleplay.minTurns}`, label: tx("conversationp.stat_turns"), tone: unfinished ? "bad" : "ok" },
+          { value: `${userTurns}/${conversation.chat.minTurns}`, label: tx("conversationp.stat_turns"), tone: unfinished ? "bad" : "ok" },
           ...(!unfinished && nextDays !== null ? [{ value: tx("profile.days", { n: nextDays }), label: tx("conversationp.stat_review") }] : []),
         ]} />
 
         {/* KONUŞMA NEDEN TAMAMLANMADI ve NE YAPILACAK — not + "Konuşmaya dön". */}
-        {unfinished ? <FlowNote tone="warn" icon={<AlertIcon color={colors.streakText} size={16} />} text={tx("conversationp.min_turns_note", { n: lesson.roleplay.minTurns })} /> : null}
+        {unfinished ? <FlowNote tone="warn" icon={<AlertIcon color={colors.streakText} size={16} />} text={tx("conversationp.min_turns_note", { n: conversation.chat.minTurns })} /> : null}
         {cando.length ? <FlowNote tone="ok" icon={<CheckIcon color={colors.successText} size={16} />} text={`${tx("conversationp.i_can")} ${cando.join(" · ")}`} /> : null}
         {/* Misafirin ilk tamamlanan dersi: kaybedecek bir şeyi olduğu ilk an. */}
         <GuestMilestoneCard milestone="first_conversation" when={!unfinished} />
         {!corrections.length && talked ? <FlowNote tone="ok" icon={<CheckIcon color={colors.successText} size={16} />} text={tx("conversationp.no_corrections")} /> : null}
 
-        {lesson.patterns?.length ? (
+        {conversation.patterns?.length ? (
           <DetailCard title={tx("conversation.patterns_you_learned")}>
             {/*
               KULLANILAN KALIP İŞARETLİ — dersin asıl amacı kalıbı KULLANMAK.
               Web aynı `patternUsed` kuralıyla işaretliyor. Konuşma hiç
               olmadıysa işaret de yok: yanlış bir "yapmadın" damgası vurmasın.
             */}
-            {lesson.patterns.map((p, i) => {
+            {conversation.patterns.map((p, i) => {
               const used = talked && patternUsed(p.de, roleMsgs);
               return (
                 <View key={i} style={{ flexDirection: "row", gap: spacing.sm, alignItems: "flex-start", opacity: talked && !used ? 0.6 : 1 }}>
@@ -1350,10 +1350,10 @@ function Summary({ lesson, correct, total, next, roleMsgs, nextDays, passed, tur
         ) : null}
 
         {/* DERSİN KELİMELERİ kapanışta bir kez daha — dersin dili toplu. */}
-        {lesson.vocab?.length ? (
+        {conversation.vocab?.length ? (
           <DetailCard title={tx("conversationp.words_of_conversation")}>
             <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6 }}>
-              {lesson.vocab.map((v) => (
+              {conversation.vocab.map((v) => (
                 <View key={v.de} style={{ paddingHorizontal: 10, paddingVertical: 6, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
                   <Text variant="micro" color={colors.text}><Text variant="micro" color={colors.text} style={{ fontWeight: "700" }}>{v.de}</Text> · {v.tr}</Text>
                 </View>

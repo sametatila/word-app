@@ -1,8 +1,8 @@
-import { api, API_BASE, ApiError, fetchWithTimeout, ROLEPLAY_TIMEOUT_MS } from "../api/client";
+import { api, API_BASE, ApiError, fetchWithTimeout, CHAT_TIMEOUT_MS } from "../api/client";
 import { isAccountRequired } from "../lib/guest";
 
 /**
- * Sohbet (roleplay) — web /api/chat (DEPLOY'LU). Senaryo metnini SUNUCU
+ * Sohbet (chat) — web /api/chat (DEPLOY'LU). Senaryo metnini SUNUCU
  * tutuyor; mobil yalnız conversationId + mesaj geçmişini yolluyor, asistanın Almanca
  * cevabı DÜZ METİN olarak akıyor (RN akışı parça parça okuyamadığı için tam
  * metni bekliyoruz). LLM yapılandırılmamışsa configured=false döner.
@@ -20,9 +20,9 @@ export type ChatMsg = { role: "user" | "assistant"; content: string };
  * Hiç karar vermemiş kullanıcı "ai" döner: izin ilk turda, metin gitmeden
  * önce soruluyor (`api/client` yakalayıcısı).
  */
-export type RoleplayRoute = "ai" | "off" | "declined" | "account";
+export type ChatRoute = "ai" | "off" | "declined" | "account";
 
-export async function roleplayAvailability(): Promise<RoleplayRoute> {
+export async function chatAvailability(): Promise<ChatRoute> {
   try {
     const r = await api<{ configured: boolean; consent?: string | null }>("/api/chat");
     if (!r.configured) return "off";
@@ -33,12 +33,12 @@ export async function roleplayAvailability(): Promise<RoleplayRoute> {
   }
 }
 
-export async function sendRoleplay(conversationId: string, messages: ChatMsg[], mode: "practice" | "exam" = "practice"): Promise<string> {
+export async function sendChat(conversationId: string, messages: ChatMsg[], mode: "practice" | "exam" = "practice"): Promise<string> {
   /* Yapay zekâ üretimi: varsayılandan uzun. Yanıt METİN olduğu için `api()`
      kullanılamıyor (o JSON çözüyor), ama zaman aşımı ortak yardımcıdan.
      Tavanın adı var: web aynı sayıyı aynı adla taşıyor. */
   const res = await fetchWithTimeout(`${API_BASE}/api/chat`, {
-    timeoutMs: ROLEPLAY_TIMEOUT_MS,
+    timeoutMs: CHAT_TIMEOUT_MS,
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify({ conversationId, messages, mode }),
@@ -48,7 +48,7 @@ export async function sendRoleplay(conversationId: string, messages: ChatMsg[], 
      onları "bağlantı sorunu" diye değil kendi cümlesiyle gösteriyor. */
   if (!res.ok) {
     const body = (await res.json().catch(() => null)) as { error?: string } | null;
-    throw new ApiError(res.status, typeof body?.error === "string" ? body.error : `roleplay ${res.status}`);
+    throw new ApiError(res.status, typeof body?.error === "string" ? body.error : `chat ${res.status}`);
   }
   return (await res.text()).trim();
 }
@@ -107,7 +107,7 @@ export function parseReply(text: string): ParsedReply {
 /**
  * Kalıbın gövdesi ("Ich möchte …" → "ich möchte") konuşma turunda geçiyor mu.
  *
- * Web `lessons/lesson-player` `patternUsed` ile AYNI kural. Ders özeti buna
+ * Web `conversations/conversation-player` `patternUsed` ile AYNI kural. Ders özeti buna
  * göre kalıbı işaretliyor: dersin asıl amacı kalıbı KULLANMAK, yalnız görmek
  * değil - mobil özeti kalıpları düz bir liste olarak yazıyordu ve öğrenci
  * hangisini gerçekten kullandığını hiçbir yerden öğrenemiyordu.

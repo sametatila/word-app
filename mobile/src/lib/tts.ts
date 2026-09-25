@@ -2,7 +2,7 @@ import Tts from "react-native-tts";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { trackOnce } from "./track";
 import { navigationRef } from "./pushRoute";
-import { type Pace, type Pitch, type VoiceId, VOICES, resolveVoice, defaultVoice, lessonVoice, langOf, deviceRate } from "./voices";
+import { type Pace, type Pitch, type VoiceId, VOICES, resolveVoice, defaultVoice, conversationVoice, langOf, deviceRate } from "./voices";
 import { splitForSpeech } from "./ttsText";
 import { dialogueCast } from "./speakers";
 import { speechLocaleOf, setCurrentCourse } from "./courses";
@@ -473,15 +473,15 @@ const PARAGRAPH_GAP_MS = 500;
  * parça iki platformda hiç kesişmeyen iki önbellek kümesi üretiyordu
  * (2 245 karakterlik bir metinde ~8+8 ayrı sentez).
  *
- * Ses kullanıcı tercihinden bağımsız (`defaultVoice`, webde `lessonVoice`):
+ * Ses kullanıcı tercihinden bağımsız (`defaultVoice`, webde `conversationVoice`):
  * okuma parçası uzun, yani pahalı bir sentez ve sabit ses onu bütün
  * kullanıcılar için tek önbellek girdisi yapıyor.
  */
 export async function speakPassage(text: string, course: string, opts?: { slow?: boolean }): Promise<void> {
   const paragraphs = text.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
   if (!paragraphs.length) return;
-  // Sabit ders sesi (web `lessonVoice`): okuma katmanı henüz üretilmedi, kursun ilk sesi artık Defne.
-  const voice = lessonVoice(course);
+  // Sabit ders sesi (web `conversationVoice`): okuma katmanı henüz üretilmedi, kursun ilk sesi artık Defne.
+  const voice = conversationVoice(course);
   const pace: Pace = opts?.slow ? "listenSlow" : "listen";
   // Bütün parçalar peşin: boru hattı yok, her paragraf sınırı yoksa bir
   // gidiş-dönüş olurdu.

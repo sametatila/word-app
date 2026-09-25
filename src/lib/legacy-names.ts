@@ -116,7 +116,7 @@ export function legacyNativeManifest<M extends ManifestLike>(pack: string, m: M)
  * Kullanıcının yerel ilerlemesi kaybolmuyor.
  */
 const OLD_PENDING = "lernomi-lessons-pending";
-const OLD_RESUME = "lernomi-lesson-progress:";
+const OLD_PROGRESS = "lernomi-lesson-progress:";
 
 export function migrateLegacyWebStorage(store: Storage, pendingKey: string, resumePrefix: string): void {
   try {
@@ -135,7 +135,7 @@ export function migrateLegacyWebStorage(store: Storage, pendingKey: string, resu
     const keys: string[] = [];
     for (let i = 0; i < store.length; i++) {
       const key = store.key(i);
-      if (key?.startsWith(OLD_RESUME)) keys.push(key);
+      if (key?.startsWith(OLD_PROGRESS)) keys.push(key);
     }
     for (const key of keys) {
       const raw = store.getItem(key);
@@ -143,7 +143,7 @@ export function migrateLegacyWebStorage(store: Storage, pendingKey: string, resu
       if (!raw) continue;
       const v = JSON.parse(raw) as { phase?: string };
       if (v && v.phase === "roleplay") v.phase = "chat";
-      store.setItem(`${resumePrefix}:${key.slice(OLD_RESUME.length)}`, JSON.stringify(v));
+      store.setItem(`${resumePrefix}:${key.slice(OLD_PROGRESS.length)}`, JSON.stringify(v));
     }
   } catch {
     /* depolama kapalı */

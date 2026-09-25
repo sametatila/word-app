@@ -129,16 +129,16 @@ export function glossVoice(native: NativeLang, selected: VoiceId): VoiceId {
 }
 
 /**
- * Ders, dinleme ve okuma parçasının SABİT sesi — web `lessonVoice` ile aynı tablo. Katalogdan türetilmiyor:
+ * Ders, dinleme ve okuma parçasının SABİT sesi — web `conversationVoice` ile aynı tablo. Katalogdan türetilmiyor:
  * kursun ilk sesi artık Defne ve Defne'nin yalnız kelime katmanı üretildi.
  */
-const LESSON: Record<"de" | "gsw-zh" | "en", VoiceId> = {
+const CONVERSATION: Record<"de" | "gsw-zh" | "en", VoiceId> = {
   de: "de-DE-KatjaNeural",
   "gsw-zh": "de-CH-LeniNeural",
   en: "en-US-JennyNeural",
 };
-export function lessonVoice(course: string): VoiceId {
-  return LESSON[courseOrDefault(course).id as keyof typeof LESSON] ?? LESSON.de;
+export function conversationVoice(course: string): VoiceId {
+  return CONVERSATION[courseOrDefault(course).id as keyof typeof CONVERSATION] ?? CONVERSATION.de;
 }
 
 /** Kursun sesleri — seçim ekranı bunu listeler. */

@@ -22,7 +22,7 @@ import { PathQuota } from "../ui/PathQuota";
 import { useTheme, spacing, radii, softShadow, type Palette, ds } from "../theme";
 
 const KIND_ICON: Record<string, (p: { color: string; size: number }) => React.ReactElement> = {
-  lesson: (p) => <LearnIcon {...p} />, read: (p) => <ReadIcon {...p} />, listen: (p) => <ListenIcon {...p} />,
+  conversation: (p) => <LearnIcon {...p} />, read: (p) => <ReadIcon {...p} />, listen: (p) => <ListenIcon {...p} />,
   write: (p) => <WriteIcon {...p} />, grammar: (p) => <GrammarIcon {...p} />, quiz: (p) => <QuizIcon {...p} />, checkpoint: (p) => <CheckIcon {...p} />,
 };
 
@@ -32,7 +32,7 @@ function Featured({ unit, isCurrent, colors, onContinue }: { unit: LearningPathU
   const acik = unit.items.filter((i) => i.playable && itemOpen(i));
   const denenmedi = (i: (typeof acik)[number]) => !(i.attempted ?? i.done);
   const next =
-    acik.find((i) => i.kind === "lesson" && denenmedi(i)) ??
+    acik.find((i) => i.kind === "conversation" && denenmedi(i)) ??
     acik.find(denenmedi) ??
     acik.find((i) => !i.done) ??
     null;
@@ -216,7 +216,7 @@ export function PathScreen() {
     );
   }
 
-  // Ders paketi olmayan kursta ünite üretilemez (bkz. data/lessons). Sessizce boş
+  // Ders paketi olmayan kursta ünite üretilemez (bkz. data/conversations). Sessizce boş
   // bir Patika göstermek yerine sebebi ve çalışan yolları söylüyoruz.
   if (!path.units.length) {
     return (

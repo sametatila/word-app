@@ -28,8 +28,8 @@ import { useTheme, spacing, radii, softShadow, ds } from "../theme";
  */
 
 const BUSY_ROUTES = new Set([
-  "Game", "Lesson", "Quiz", "Item", "Walk", "Boss", "Weekly",
-  "Exam", "MockExam", "Placement", "FirstPractice", "RoleplayExam",
+  "Game", "Conversation", "Quiz", "Item", "Walk", "Boss", "Weekly",
+  "Exam", "MockExam", "Placement", "FirstPractice", "ConversationScored",
 ]);
 const SHOW_MS = 3200;
 const REFRESH_DELAY_MS = 1500;

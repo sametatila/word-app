@@ -1,15 +1,15 @@
 /* ÜRETİLEN DOSYA — ELLE DEĞİŞTİRME.
-   Kaynak: src/lib/lessons/native-de.ts
+   Kaynak: src/lib/conversations/native-de.ts
    Üretici: npx tsx scripts/dump-native-mobile.ts
    Değişiklik kaynakta yapılır ve betik yeniden koşturulur. */
 
-import type { Lesson, Segment } from "./native";
+import type { Conversation, Segment } from "./native";
 
 /**
  * İngilizce kursun derslerini ALMANCAYA çevirir — anadili Almanca olan
  * kullanıcı için.
  *
- * NEDEN `native.ts`TEKİ ÇÖZÜCÜ KULLANILAMIYOR. `resolveLesson` Almanca
+ * NEDEN `native.ts`TEKİ ÇÖZÜCÜ KULLANILAMIYOR. `resolveConversation` Almanca
  * kursun TS derslerine göre kurulmuş: sözlüğü `meta`, `lecture`,
  * `lectureSplit`, `frames`, `vocab` gibi alt sözlüklere bölüyor ve
  * `word()` şablonunu çalışma anında yeniden kuruyor. İngilizce kursun
@@ -28,12 +28,12 @@ import type { Lesson, Segment } from "./native";
  * ders, hiç çevrilmemişinden kötü.
  */
 
-/** Bileşik anahtarların ayracı — `data/lessons/apply-de.mjs` ile aynı. */
+/** Bileşik anahtarların ayracı — `data/conversations/apply-de.mjs` ile aynı. */
 const SEP = String.fromCharCode(0);
 
 export type DeDict = {
   /** Ders düzyazısı — anahtar `tür + AYRAÇ + tr` (`prose-de/out/`). */
-  lesson: Record<string, string>;
+  conversation: Record<string, string>;
   /** Beceri egzersizlerinin düz metni — anahtar DÜZ `tr`. */
   prose: Record<string, string>;
   /** Beceri egzersizlerinin görev metni — anahtar `tür + AYRAÇ + tr`. */
@@ -78,7 +78,7 @@ const segments = (
        doğru/yanlış adımında `{lang:"tr", text:""}` duruyor ve ders 200'ün
        199'u çözülürken tek başına düşüyordu. */
     if (!s.text || !s.text.trim()) return s;
-    const de = dict.lesson[deKey(kind, s.text)];
+    const de = dict.conversation[deKey(kind, s.text)];
     if (de === undefined) {
       fail();
       return s;
@@ -87,7 +87,7 @@ const segments = (
   });
 };
 
-export function resolveEnLesson(dict: DeDict, lesson: Lesson): Lesson | null {
+export function resolveEnConversation(dict: DeDict, conversation: Conversation): Conversation | null {
   let failed = false;
   const fail = () => {
     failed = true;
@@ -95,18 +95,18 @@ export function resolveEnLesson(dict: DeDict, lesson: Lesson): Lesson | null {
   /** Boş alan ÇEVRİLMİYOR: çıkarıcı da boşu hiç eklemedi (`add()` süzgeci). */
   const t = (kind: string, s: string | undefined): string | undefined => {
     if (!s || !s.trim()) return s;
-    const de = dict.lesson[deKey(kind, s)];
+    const de = dict.conversation[deKey(kind, s)];
     if (de === undefined) fail();
     return de ?? s;
   };
 
-  const out: Lesson = {
-    ...lesson,
-    titleTr: t("titleTr", lesson.titleTr) ?? lesson.titleTr,
-    summary: t("summary", lesson.summary) ?? lesson.summary,
-    vocab: lesson.vocab?.map((v) => ({ ...v, tr: t("vocab.tr", v.tr) ?? v.tr })),
-    patterns: lesson.patterns?.map((p) => ({ ...p, tr: t("pattern.tr", p.tr) ?? p.tr })),
-    lecture: lesson.lecture?.map((step) => {
+  const out: Conversation = {
+    ...conversation,
+    titleTr: t("titleTr", conversation.titleTr) ?? conversation.titleTr,
+    summary: t("summary", conversation.summary) ?? conversation.summary,
+    vocab: conversation.vocab?.map((v) => ({ ...v, tr: t("vocab.tr", v.tr) ?? v.tr })),
+    patterns: conversation.patterns?.map((p) => ({ ...p, tr: t("pattern.tr", p.tr) ?? p.tr })),
+    lecture: conversation.lecture?.map((step) => {
       const say = segments(dict, "say.tr", step.say, fail) ?? step.say;
       const e = step.expect;
       if (!e) return { ...step, say };
@@ -116,14 +116,14 @@ export function resolveEnLesson(dict: DeDict, lesson: Lesson): Lesson | null {
         return { ...step, say, expect: { ...e, hint: segments(dict, "hint.tr", e.hint, fail) ?? e.hint } };
       return { ...step, say, expect: e };
     }),
-    roleplay: {
-      ...lesson.roleplay,
-      scene: t("scene", lesson.roleplay?.scene) ?? lesson.roleplay?.scene,
-      partner: t("partner", lesson.roleplay?.partner) ?? lesson.roleplay?.partner,
-      openingTr: t("openingTr", lesson.roleplay?.openingTr) ?? lesson.roleplay?.openingTr,
-      goal: t("goal", lesson.roleplay?.goal) ?? lesson.roleplay?.goal,
+    chat: {
+      ...conversation.chat,
+      scene: t("scene", conversation.chat?.scene) ?? conversation.chat?.scene,
+      partner: t("partner", conversation.chat?.partner) ?? conversation.chat?.partner,
+      openingTr: t("openingTr", conversation.chat?.openingTr) ?? conversation.chat?.openingTr,
+      goal: t("goal", conversation.chat?.goal) ?? conversation.chat?.goal,
     },
-  } as Lesson;
+  } as Conversation;
 
   return failed ? null : out;
 }

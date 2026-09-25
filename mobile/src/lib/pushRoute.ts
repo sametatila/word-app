@@ -75,7 +75,7 @@ export function routeFromPush(url: string): PushRoute | null {
  * yanıt gövdesinde verdiği yönlendirmeleri (`nextStep.href`).
  *
  * Dört biçim var ve hepsi `lib/proficiency-data` `nextStep`ten geliyor:
- * `/learn/game`, `/immersion`, `/immersion/skill/<id>`, `/lessons/<id>`.
+ * `/learn/game`, `/immersion`, `/immersion/skill/<id>`, `/conversations/<id>`.
  * `check:parity` sunucunun ürettiği biçimlerle burayı eşliyor — yeni bir
  * biçim eklenirse mobil onu sessizce yutmasın (tanınmayan adres `null`
  * dönüyor ve çağıran düğmeyi hiç çizmiyor).
@@ -89,9 +89,9 @@ export function routeFromHref(href: string): PushRoute | null {
     return id ? { name: "Item", params: { id, kind: "skill", title: "" } } : null;
   }
   if (path.startsWith("/immersion")) return { name: "Tabs", params: { screen: "Path" } };
-  if (path.startsWith("/lessons/")) {
-    const id = decodeURIComponent(path.slice("/lessons/".length));
-    return id ? { name: "Lesson", params: { id } } : null;
+  if (path.startsWith("/conversations/")) {
+    const id = decodeURIComponent(path.slice("/conversations/".length));
+    return id ? { name: "Conversation", params: { id } } : null;
   }
   return null;
 }

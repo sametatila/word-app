@@ -7,7 +7,7 @@ import { foldNumbers } from "./numbers";
  * Söylenen metnin karşılaştırma biçimi — web `lib/speech.ts` `normalizeSpoken`
  * ile AYNI kural.
  *
- * Çevrimdışı rol yapma yolunun (`game/offlineRoleplay`) ve niyet
+ * Çevrimdışı rol yapma yolunun (`game/offlineChat`) ve niyet
  * eşleştirmesinin (`game/dialogue`) tabanı: tanıyıcı "fünf" yerine "5"
  * yazabiliyor, noktalama serbest geliyor.
  *

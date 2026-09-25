@@ -14,7 +14,7 @@ export type AchGroup =
   | "vocab"
   | "games"
   | "grammar"
-  | "lessons"
+  | "conversations"
   | "exams"
   | "skills"
   | "rounds"
@@ -47,7 +47,7 @@ export const GROUP_ORDER: AchGroup[] = [
   "vocab",
   "games",
   "grammar",
-  "lessons",
+  "conversations",
   "exams",
   "skills",
   "rounds",
@@ -61,7 +61,7 @@ export const GROUP_LABEL_KEY: Record<AchGroup, string> = {
   vocab: "achgroup.vocab",
   games: "achgroup.games",
   grammar: "achgroup.grammar",
-  lessons: "achgroup.conversations",
+  conversations: "achgroup.conversations",
   exams: "achgroup.exams",
   skills: "achgroup.skills",
   rounds: "achgroup.rounds",

@@ -19,7 +19,7 @@ import { loadCoachSeen } from "./src/game/coachLines";
 import { loadLang, useLang } from "./src/lib/i18n";
 import { attachPushListeners } from "./src/lib/pushDevice";
 import { flushPendingAnswers } from "./src/game/session";
-import { flushPendingLessons, flushPendingPathItems, pruneLessonResumes } from "./src/game/lessonProgress";
+import { flushPendingConversations, flushPendingPathItems, pruneConversationResumes } from "./src/game/pathProgress";
 import { flushPendingPush, navigationRef } from "./src/lib/pushRoute";
 import { parseDeepLink, type DeepLinkAction } from "./src/lib/deepLink";
 import { completeEmailVerification, verifyOneTimeToken } from "./src/lib/auth";
@@ -301,13 +301,13 @@ function Nav() {
     (navigationRef.reset as (s: object) => void)({ index: 0, routes: [{ name: "Auth" }] });
   }, [loading, user, guestGone]);
 
-  useEffect(() => { if (user) { void flushPendingAnswers(); void flushPendingLessons(); void flushPendingPathItems(); } }, [user]);
+  useEffect(() => { if (user) { void flushPendingAnswers(); void flushPendingConversations(); void flushPendingPathItems(); } }, [user]);
 
   // İlk açılış akışı bir kez gösterilir; görüldüğü yerelde tutulur.
   useEffect(() => {
     migrateLegacyKeys()
       // Göçten SONRA: eski adlar önce yeni adlara çevrilmiş olmalı (bkz. storageMigration).
-      .then(() => Promise.all([sweepDeadKeys(), pruneLessonResumes()]))
+      .then(() => Promise.all([sweepDeadKeys(), pruneConversationResumes()]))
       .then(() => loadLang())
       // Anahtar göçünden SONRA (tercihler yeni önekten okunur) ve loadLang'den
       // SONRA (hatırlatma metni kullanıcının dilinde kurulsun).

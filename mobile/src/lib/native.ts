@@ -1,10 +1,10 @@
 /* ÜRETİLEN DOSYA — ELLE DEĞİŞTİRME.
-   Kaynak: src/lib/lessons/native.ts
+   Kaynak: src/lib/conversations/native.ts
    Üretici: npx tsx scripts/dump-native-mobile.ts
    Değişiklik kaynakta yapılır ve betik yeniden koşturulur. */
 
 /* Çözücünün okuduğu dört tip, yapısal olarak. Gerçekleri
-   `src/lib/lessons/types.ts` ve `src/lib/dialogue.ts` içinde; oradan içe
+   `src/lib/conversations/types.ts` ve `src/lib/dialogue.ts` içinde; oradan içe
    aktarmak mobil pakete sunucu tarafının tip ağacını sokardı. */
 export type Segment = { lang: "tr" | "de" | "en"; text: string };
 export type Expectation =
@@ -28,14 +28,14 @@ export type DialogueTurn = {
   replies: DialogueReply[];
   fallback: { say: string; sayTr: string; example: string };
 };
-export type Lesson = {
+export type Conversation = {
   id: string;
   titleTr: string;
   summary: string;
   vocab: { de: string; tr: string }[];
   patterns: { de: string; tr: string }[];
   lecture: LectureStep[];
-  roleplay: {
+  chat: {
     scene: string;
     partner: string;
     opening: string;
@@ -49,7 +49,7 @@ export type Lesson = {
 /**
  * Anlatımı öğrencinin ANA DİLİNE çevirir.
  *
- * Ders içeriği Türkçe yazıldı ve öyle kalıyor — karşılıklar `data/lessons/`
+ * Ders içeriği Türkçe yazıldı ve öyle kalıyor — karşılıklar `data/conversations/`
  * altındaki beş hatta elle yazılıp `apply.mjs` ile tek bir üretilen sözlüğe
  * toplanıyor. Burası o sözlüğü okuyan taraf.
  *
@@ -63,7 +63,7 @@ export type Lesson = {
  * yazmak yetmez, etiket de değişmeli.
  */
 
-/** Bileşik anahtarların ayracı — `data/lessons/apply.mjs` ile aynı olmak zorunda. */
+/** Bileşik anahtarların ayracı — `data/conversations/apply.mjs` ile aynı olmak zorunda. */
 const SEP = "\u0000";
 
 export type NativeDict = {
@@ -93,7 +93,7 @@ export type NativeDict = {
    * karşılığı — Almanca replik (`opening`) olduğu gibi kalıyor, model onu
    * konuşuyor.
    */
-  roleplay: Record<string, { scene: string; partner: string; openingTr: string; goal: string }>;
+  chat: Record<string, { scene: string; partner: string; openingTr: string; goal: string }>;
   /** Can-do ifadesi — anahtar `A1.SPK.1` biçiminde. */
   cando: Record<string, string>;
   /**
@@ -115,7 +115,7 @@ export type NativeDict = {
    * söyletiyorsa ("Ich bin in Izmir geboren", "Ich spreche Türkisch") o cümle
    * Türk öğrenciye göre kurulmuş demektir; İngilizce konuşan için yanlış.
    * Diyalogdaki BİR KİŞİNİN Türkiyeli olması ise içerik ve olduğu gibi kalır
-   * — ayıran şey cümlenin dersteki rolü. Tablo: `data/lessons/swap/en.json`.
+   * — ayıran şey cümlenin dersteki rolü. Tablo: `data/conversations/swap/en.json`.
    */
   swap: Record<string, string>;
   /**
@@ -200,34 +200,34 @@ function fill(frame: string, word: string, note: string | null): string {
  * uygulansaydı o satırı hiç yakalayamazdı — parçaya uygulanınca kelime
  * karşılığı daha kurulmadan dönüyor.
  */
-const swapEn = (dict: NativeDict, lesson: string, en: string): string =>
-  dict.swapEn[lesson + SEP + en] ?? en;
+const swapEn = (dict: NativeDict, conversation: string, en: string): string =>
+  dict.swapEn[conversation + SEP + en] ?? en;
 
 /** Tek bir Türkçe parçanın İngilizcesi; bulunamazsa `null`. */
 function resolveText(
   dict: NativeDict,
-  lesson: string,
+  conversation: string,
   text: string,
   prevTarget: string | null,
 ): string | null {
   const split = prevTarget ? dict.lectureSplit[text + SEP + prevTarget] : undefined;
-  if (split !== undefined) return swapEn(dict, lesson, split);
+  if (split !== undefined) return swapEn(dict, conversation, split);
   const plain = dict.lecture[text];
-  if (plain !== undefined) return swapEn(dict, lesson, plain);
+  if (plain !== undefined) return swapEn(dict, conversation, plain);
   const ordinal = dict.ordinals[text];
-  if (ordinal !== undefined) return swapEn(dict, lesson, ordinal);
+  if (ordinal !== undefined) return swapEn(dict, conversation, ordinal);
 
   for (const f of [FRAME_A, FRAME_B]) {
     const m = f.re.exec(text);
     if (!m || !prevTarget) continue;
-    const word = dict.vocab[lesson + SEP + prevTarget];
+    const word = dict.vocab[conversation + SEP + prevTarget];
     if (word === undefined) return null;
     const note = m[2] ?? null;
     const noteEn = note === null ? null : (dict.notes[note] ?? null);
     if (note !== null && noteEn === null) return null;
     const frame = dict.frames[f.tr];
     if (frame === undefined) return null;
-    return fill(frame, swapEn(dict, lesson, word), noteEn === null ? null : swapEn(dict, lesson, noteEn));
+    return fill(frame, swapEn(dict, conversation, word), noteEn === null ? null : swapEn(dict, conversation, noteEn));
   }
   return null;
 }
@@ -241,7 +241,7 @@ function resolveText(
  */
 export function resolveSegments(
   dict: NativeDict,
-  lesson: string,
+  conversation: string,
   segs: Segment[],
 ): Segment[] | null {
   const out: Segment[] = [];
@@ -255,11 +255,11 @@ export function resolveSegments(
         69 satırın karşılığı sessizce bulunamazdı. Ekrana giden metin
         takas edilmiş, anahtar özgün.
       */
-      out.push({ ...s, text: dict.swap[lesson + SEP + s.text] ?? s.text });
+      out.push({ ...s, text: dict.swap[conversation + SEP + s.text] ?? s.text });
       prevTarget = s.text;
       continue;
     }
-    const en = resolveText(dict, lesson, s.text, prevTarget);
+    const en = resolveText(dict, conversation, s.text, prevTarget);
     if (en === null) return null;
     out.push({ ...s, lang: "en", text: en });
     prevTarget = null;
@@ -274,16 +274,16 @@ export function resolveSegments(
  * Sözlükçenin kendisi (`vocab`) ekranda kelime listesi olarak görünüyor ve
  * ayrı okunuyor — burada yalnız anlatımın içine giren karşılığı kullanılıyor.
  */
-export function resolveLesson(dict: NativeDict, lesson: Lesson): Lesson | null {
-  const meta = dict.meta[lesson.id];
+export function resolveConversation(dict: NativeDict, conversation: Conversation): Conversation | null {
+  const meta = dict.meta[conversation.id];
   if (!meta) return null;
 
   /** Almanca takası — `(ders, özgün)` → yeni. Yoksa dize olduğu gibi döner. */
-  const sw = (de: string): string => dict.swap[lesson.id + SEP + de] ?? de;
+  const sw = (de: string): string => dict.swap[conversation.id + SEP + de] ?? de;
 
   const lecture: LectureStep[] = [];
-  for (const step of lesson.lecture ?? []) {
-    const say = resolveSegments(dict, lesson.id, step.say);
+  for (const step of conversation.lecture ?? []) {
+    const say = resolveSegments(dict, conversation.id, step.say);
     if (!say) return null;
     let expect = step.expect;
     /*
@@ -294,27 +294,27 @@ export function resolveLesson(dict: NativeDict, lesson: Lesson): Lesson | null {
     if (expect && "target" in expect && typeof expect.target === "string")
       expect = { ...expect, target: sw(expect.target) };
     if (expect && "hint" in expect && expect.hint) {
-      const hint = resolveSegments(dict, lesson.id, expect.hint);
+      const hint = resolveSegments(dict, conversation.id, expect.hint);
       if (!hint) return null;
       expect = { ...expect, hint };
     }
     if (expect && "why" in expect && expect.why) {
-      const why = resolveSegments(dict, lesson.id, expect.why);
+      const why = resolveSegments(dict, conversation.id, expect.why);
       if (!why) return null;
       expect = { ...expect, why };
     }
     lecture.push({ ...step, say, expect });
   }
 
-  const rp = dict.roleplay[lesson.id];
+  const rp = dict.chat[conversation.id];
 
   /*
-    SENARYO, ROL YAPMANIN İÇİNDE. On dersin `roleplay.script` dizisi var ve
+    SENARYO, ROL YAPMANIN İÇİNDE. On dersin `chat.script` dizisi var ve
     içindeki üç alan Türkçe. Buradaki eksik de dersi TÜMDEN düşürüyor:
     modelin çalışmadığı anda devreye giren akış bu, yani yarım çevrilirse
     tam da en kırılgan anda Türkçe çıkar.
   */
-  const src = lesson.roleplay as unknown as { script?: DialogueTurn[] };
+  const src = conversation.chat as unknown as { script?: DialogueTurn[] };
   let script: DialogueTurn[] | undefined;
   if (src.script) {
     const turns: DialogueTurn[] = [];
@@ -326,7 +326,7 @@ export function resolveLesson(dict: NativeDict, lesson: Lesson): Lesson | null {
       for (const r of t.replies ?? []) {
         const sayTr = dict.script[r.sayTr];
         if (sayTr === undefined) return null;
-        replies.push({ ...r, sayTr: swapEn(dict, lesson.id, sayTr), say: sw(r.say) });
+        replies.push({ ...r, sayTr: swapEn(dict, conversation.id, sayTr), say: sw(r.say) });
       }
       let fallback = t.fallback;
       if (fallback) {
@@ -337,7 +337,7 @@ export function resolveLesson(dict: NativeDict, lesson: Lesson): Lesson | null {
         const ex = (fallback as { example?: string }).example;
         fallback = {
           ...fallback,
-          sayTr: swapEn(dict, lesson.id, sayTr),
+          sayTr: swapEn(dict, conversation.id, sayTr),
           say: sw(fallback.say),
           ...(ex ? { example: sw(ex) } : {}),
         };
@@ -345,8 +345,8 @@ export function resolveLesson(dict: NativeDict, lesson: Lesson): Lesson | null {
       turns.push({
         ...t,
         ask: sw(t.ask),
-        askTr: swapEn(dict, lesson.id, askTr),
-        cue: swapEn(dict, lesson.id, cue),
+        askTr: swapEn(dict, conversation.id, askTr),
+        cue: swapEn(dict, conversation.id, cue),
         replies,
         fallback,
       });
@@ -360,7 +360,7 @@ export function resolveLesson(dict: NativeDict, lesson: Lesson): Lesson | null {
      görmedi, sözlüğe hiç girmedi, HİÇBİR kapı fark etmedi ve ders
      İngilizce açılıp altında Türkçe bir kullanım notu taşıdı. Eksik anahtar
      artık dersi düşürüyor — çevrilmemiş bir ders, yarım çevrilmişten
-     iyidir. (Çıkarıcı da düzeltildi: `data/lessons/vocab/extract.mjs`.) */
+     iyidir. (Çıkarıcı da düzeltildi: `data/conversations/vocab/extract.mjs`.) */
   let miss = false;
   const look = (table: Record<string, string>, key: string, fallback: string): string => {
     const en = table[key];
@@ -369,28 +369,28 @@ export function resolveLesson(dict: NativeDict, lesson: Lesson): Lesson | null {
   };
 
   const out = {
-    ...lesson,
+    ...conversation,
     titleTr: meta.title,
     summary: meta.summary,
     /* Arama ÖZGÜN Almancayla, gösterilen takas edilmiş: anahtar `v.de`nin
        eski hâli, kart üstündeki kelime yenisi. */
-    vocab: lesson.vocab.map((v) => ({
+    vocab: conversation.vocab.map((v) => ({
       ...v,
       de: sw(v.de),
-      tr: swapEn(dict, lesson.id, look(dict.vocab, lesson.id + SEP + v.de, v.tr)),
+      tr: swapEn(dict, conversation.id, look(dict.vocab, conversation.id + SEP + v.de, v.tr)),
     })),
-    patterns: lesson.patterns.map((p) => ({
+    patterns: conversation.patterns.map((p) => ({
       ...p,
-      tr: look(dict.patterns, lesson.id + SEP + p.de, p.tr),
+      tr: look(dict.patterns, conversation.id + SEP + p.de, p.tr),
     })),
-    roleplay: {
-      ...lesson.roleplay,
+    chat: {
+      ...conversation.chat,
       ...(rp ?? {}),
-      ...(lesson.roleplay?.opening ? { opening: sw(lesson.roleplay.opening) } : {}),
+      ...(conversation.chat?.opening ? { opening: sw(conversation.chat.opening) } : {}),
       /* Açılış repliğinin ANA DİLDEKİ karşılığı da takas ediliyor: Almancası
          "Du bist also in Manchester aufgewachsen?" olup altındaki İngilizce
          "So you grew up in Izmir?" kalsaydı ikisi birbirini yalanlardı. */
-      ...(rp?.openingTr ? { openingTr: swapEn(dict, lesson.id, rp.openingTr) } : {}),
+      ...(rp?.openingTr ? { openingTr: swapEn(dict, conversation.id, rp.openingTr) } : {}),
       ...(script ? { script } : {}),
     },
     lecture,
@@ -426,7 +426,7 @@ export function resolveExam<T extends ExamShape>(dict: NativeDict, plan: T): T |
  * olan onu kullanmaktı: Almanca kursun kâğıtlarında 290 satırın 290'ı dolu.
  * İngilizce kursta aynı alan hedef dilin KENDİSİ — `de` ile aynı dize — yani
  * Almanca okur için bir karşılık taşımıyor. Bu yüzden bu yönde ikisi de
- * `exam` tablosundan geliyor (`data/lessons/exam-de/`).
+ * `exam` tablosundan geliyor (`data/conversations/exam-de/`).
  *
  * Hep-ya-hiç kuralı değişmiyor: bir satır bile eksikse kâğıt tümden Türkçe
  * kalıyor — yarı Almanca bir sınav kâğıdı, öğrencinin yönergeye

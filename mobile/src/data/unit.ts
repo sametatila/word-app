@@ -10,13 +10,13 @@
   anahtarı (`unitkind.speaking`) DURUYOR, çünkü onu Yapabildiklerim ve
   Yazılarım ekranları beceri adı olarak kullanıyor.
 */
-export type ItemKind = "lesson" | "read" | "listen" | "write" | "grammar" | "quiz" | "checkpoint";
+export type ItemKind = "conversation" | "read" | "listen" | "write" | "grammar" | "quiz" | "checkpoint";
 export type ItemStatus = "done" | "current" | "locked";
 export type UnitItem = { id: string; kind: ItemKind; title: string; status: ItemStatus };
 
 /** Tür -> sözlük anahtarı; etiket kullanım anında t() ile çözülür. */
 export const KIND_KEY: Record<ItemKind, string> = {
-  lesson: "unitkind.conversation",
+  conversation: "unitkind.conversation",
   read: "unitkind.read",
   listen: "unitkind.listen",
   write: "unitkind.write",

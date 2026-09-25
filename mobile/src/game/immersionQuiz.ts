@@ -5,7 +5,7 @@
  * hizalı, deterministik (RNG yok → aynı ünite hep aynı quiz). SkillQuestion
  * üretir; QuestionList aynen render eder.
  */
-import { lessonsForLevel } from "../data/lessons";
+import { conversationsForLevel } from "../data/conversations";
 import { seededShuffle } from "../lib/shuffle";
 import { moduleTheme } from "../data/moduleThemes";
 import { t, targetLangName } from "../lib/i18n";
@@ -13,7 +13,7 @@ import { currentCourseId } from "../lib/courses";
 import { MOCK_LABELS } from "../data/exams";
 import type { SkillQuestion } from "../data/skills";
 
-const UNIT_LESSONS = 4;
+const UNIT_CONVERSATIONS = 4;
 const MODULE_SIZE = 10;
 type VocabItem = { de: string; tr: string };
 type PatternItem = { de: string; tr: string };
@@ -35,20 +35,20 @@ export type UnitBrief = {
   vocab: VocabItem[];
   patterns: PatternItem[];
   theme: string;
-  lessonTitles: string[];
+  conversationTitles: string[];
 };
 
 export function buildUnitBrief(level: string, unitIndex: number): UnitBrief {
-  const lessons = lessonsForLevel(level);
+  const conversations = conversationsForLevel(level);
   const u = unitIndex - 1;
-  const unitLessons = lessons.slice(u * UNIT_LESSONS, u * UNIT_LESSONS + UNIT_LESSONS);
-  const theme = moduleTheme(currentCourseId(), level, Math.floor((u * UNIT_LESSONS) / MODULE_SIZE)) || t("path.unit_fallback", { level: level, n: unitIndex });
+  const unitConversations = conversations.slice(u * UNIT_CONVERSATIONS, u * UNIT_CONVERSATIONS + UNIT_CONVERSATIONS);
+  const theme = moduleTheme(currentCourseId(), level, Math.floor((u * UNIT_CONVERSATIONS) / MODULE_SIZE)) || t("path.unit_fallback", { level: level, n: unitIndex });
   return {
     index: unitIndex,
-    vocab: dedupeBy(unitLessons.flatMap((l) => l.vocab), (v) => v.de),
-    patterns: dedupeBy(unitLessons.flatMap((l) => l.patterns), (p) => p.de),
+    vocab: dedupeBy(unitConversations.flatMap((l) => l.vocab), (v) => v.de),
+    patterns: dedupeBy(unitConversations.flatMap((l) => l.patterns), (p) => p.de),
     theme,
-    lessonTitles: unitLessons.map((l) => l.title),
+    conversationTitles: unitConversations.map((l) => l.title),
   };
 }
 
@@ -60,13 +60,13 @@ export function buildUnitBrief(level: string, unitIndex: number): UnitBrief {
  * boş döner ve `deriveQuiz` tekrar sorusu üretmez.
  */
 export function earlierPool(level: string, unitIndex: number): QuizPool {
-  const lessons = lessonsForLevel(level).slice(0, Math.max(0, unitIndex - 1) * UNIT_LESSONS);
-  return { vocab: lessons.flatMap((l) => l.vocab), patterns: lessons.flatMap((l) => l.patterns) };
+  const conversations = conversationsForLevel(level).slice(0, Math.max(0, unitIndex - 1) * UNIT_CONVERSATIONS);
+  return { vocab: conversations.flatMap((l) => l.vocab), patterns: conversations.flatMap((l) => l.patterns) };
 }
 
 export function levelPool(level: string): QuizPool {
-  const lessons = lessonsForLevel(level);
-  return { vocab: lessons.flatMap((l) => l.vocab), patterns: lessons.flatMap((l) => l.patterns) };
+  const conversations = conversationsForLevel(level);
+  return { vocab: conversations.flatMap((l) => l.vocab), patterns: conversations.flatMap((l) => l.patterns) };
 }
 
 /**
@@ -242,7 +242,7 @@ export function deriveQuiz(
  * sınırı, tohumlu sıra.
  */
 export function deriveGrammar(level: string, unitIndex: number, count = 8): SkillQuestion[] {
-  const lessons = lessonsForLevel(level).slice((unitIndex - 1) * 4, (unitIndex - 1) * 4 + 4);
+  const conversations = conversationsForLevel(level).slice((unitIndex - 1) * 4, (unitIndex - 1) * 4 + 4);
   /* Tohum web ile AYNI biçimde kurulmalı: `${kurs}-${seviye}-uNN`
      (bkz. `lib/immersion/brief` `unitId`). "de-" SABİT yazılıydı, yani
      İngilizce kursta mobilin tohumu webinkinden farklıydı ve aynı ünitede
@@ -251,8 +251,8 @@ export function deriveGrammar(level: string, unitIndex: number, count = 8): Skil
   const judges: SkillQuestion[] = [];
   const orders: SkillQuestion[] = [];
 
-  for (const lesson of lessons as { title: string; lecture?: { expect?: Record<string, unknown> }[] }[]) {
-    for (const step of lesson.lecture ?? []) {
+  for (const conversation of conversations as { title: string; lecture?: { expect?: Record<string, unknown> }[] }[]) {
+    for (const step of conversation.lecture ?? []) {
       const e = step.expect as { kind?: string; statement?: string; answer?: boolean; why?: { text: string }[]; target?: string } | undefined;
       if (e?.kind === "truefalse" && e.statement) {
         judges.push({
@@ -275,7 +275,7 @@ export function deriveGrammar(level: string, unitIndex: number, count = 8): Skil
           options: [],
           answer: 0,
           items: parts,
-          explain: `„${e.target}“ — ${lesson.title}`,
+          explain: `„${e.target}“ — ${conversation.title}`,
         });
       }
     }

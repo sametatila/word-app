@@ -8,7 +8,7 @@ import { fillOf } from "../theme/colors";
  * Ünite öğesinin TÜRÜ → ikon ve renk.
  *
  * İki ekranda ayrı ayrı yazılıydı (Patika'nın ünite listesi ve egzersiz
- * oynatıcısı) ve ikinci kopya EKSİKTİ: `lesson`, `quiz` ve `checkpoint` yoktu,
+ * oynatıcısı) ve ikinci kopya EKSİKTİ: `conversation`, `quiz` ve `checkpoint` yoktu,
  * yani oynatıcı bir kontrol noktası açtığında rengi kırmızı yerine turuncuya
  * düşüyordu. Bugün o yol kullanılmıyor ama iki liste sessizce ayrışmıştı ve
  * ayrışma büyümeye açıktı.
@@ -24,7 +24,7 @@ import { fillOf } from "../theme/colors";
   kümesi değiştiğinde derleyici burayı da zorluyor.
 */
 export const KIND_TINT: Record<ItemKind, keyof Palette> = {
-  lesson: "primary",
+  conversation: "primary",
   read: "info",
   listen: "accent",
   write: "success",
@@ -34,7 +34,7 @@ export const KIND_TINT: Record<ItemKind, keyof Palette> = {
 };
 
 const ICONS: Record<ItemKind, (p: { color: string; size: number }) => React.ReactElement> = {
-  lesson: (p) => <LearnIcon {...p} />,
+  conversation: (p) => <LearnIcon {...p} />,
   read: (p) => <ReadIcon {...p} />,
   listen: (p) => <ListenIcon {...p} />,
   write: (p) => <WriteIcon {...p} />,

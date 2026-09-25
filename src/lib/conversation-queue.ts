@@ -16,7 +16,7 @@
  */
 import { apiFetch } from "@/lib/api-fetch";
 import { migrateLegacyWebStorage } from "@/lib/legacy-names";
-import { CONVERSATION_RESUME_KEY, CONVERSATIONS_PENDING_KEY } from "@/lib/storage-hygiene";
+import { CONVERSATION_RESUME_KEY } from "@/lib/storage-hygiene";
 
 export type PendingConversation = {
   conversationId: string;
@@ -26,7 +26,7 @@ export type PendingConversation = {
   seconds: number;
 };
 
-const KEY = CONVERSATIONS_PENDING_KEY;
+const KEY = "lernomi-conversations-pending"; // storage-hygiene CONVERSATIONS_PENDING_KEY ile aynı
 
 function read(): PendingConversation[] {
   try {

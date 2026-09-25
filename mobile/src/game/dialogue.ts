@@ -6,7 +6,7 @@ import type { DialogueReply } from "../lib/native";
  *
  * Kapalı temalı senaryolarda öğrencinin söylediği, dalların `match` köklerine
  * göre eşleştiriliyor. Model gerekmiyor: sağlayıcı kapalıyken de konuşma
- * çalışsın diye (bkz. `game/offlineRoleplay`).
+ * çalışsın diye (bkz. `game/offlineChat`).
  */
 
 /** Üçten kısa kökler yalnızca tam kelime olarak aranır. */

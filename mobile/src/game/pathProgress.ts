@@ -7,6 +7,7 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { api } from "../api/client";
 import { isSkillDone, scoreOf } from "../lib/learningRules";
+import { ensureLegacyMigrated } from "../lib/legacyNames";
 
 const KEY = "lernomi-items-done";
 let cache: Set<string> | null = null;
@@ -147,30 +148,32 @@ export async function syncItemProgress(level?: string): Promise<void> {
  * `day` KAYITLA BİRLİKTE saklanıyor: seri kullanıcının O gününe ait, ertesi
  * gün gönderilen dersi bugüne yazmak seriyi yanlış hesaplardı.
  */
-const LESSON_KEY = "lernomi-lessons-pending";
-export type PendingLesson = { conversationId: string; correct: number; chatDone: boolean; day: string; seconds: number };
+const CONVERSATION_KEY = "lernomi-conversations-pending";
+export type PendingConversation = { conversationId: string; correct: number; chatDone: boolean; day: string; seconds: number };
 
-export async function queueLessonResult(item: PendingLesson): Promise<void> {
+export async function queueConversationResult(item: PendingConversation): Promise<void> {
+  await ensureLegacyMigrated(); // eski anahtarlar (geçici, lib/legacyNames)
   try {
-    const raw = await AsyncStorage.getItem(LESSON_KEY);
-    const list = raw ? (JSON.parse(raw) as PendingLesson[]) : [];
+    const raw = await AsyncStorage.getItem(CONVERSATION_KEY);
+    const list = raw ? (JSON.parse(raw) as PendingConversation[]) : [];
     /* Aynı ders iki kez bitirilmişse sonuncusu kalıyor: uç en iyi denemeyi
        tutuyor ama iki kayıt göndermenin de bir faydası yok. */
     const kalan = list.filter((x) => x.conversationId !== item.conversationId);
     kalan.push(item);
-    await AsyncStorage.setItem(LESSON_KEY, JSON.stringify(kalan.slice(-20)));
+    await AsyncStorage.setItem(CONVERSATION_KEY, JSON.stringify(kalan.slice(-20)));
   } catch { /* depolama yoksa yapacak bir şey yok */ }
 }
 
 /** Bekleyen ders sonuçlarını gönderir; biri düşerse kalanı kuyrukta bırakır. */
-export async function flushPendingLessons(): Promise<void> {
-  let list: PendingLesson[] = [];
+export async function flushPendingConversations(): Promise<void> {
+  await ensureLegacyMigrated(); // eski anahtarlar (geçici, lib/legacyNames)
+  let list: PendingConversation[] = [];
   try {
-    const raw = await AsyncStorage.getItem(LESSON_KEY);
-    list = raw ? (JSON.parse(raw) as PendingLesson[]) : [];
+    const raw = await AsyncStorage.getItem(CONVERSATION_KEY);
+    list = raw ? (JSON.parse(raw) as PendingConversation[]) : [];
   } catch { return; }
   if (!list.length) return;
-  const kalan: PendingLesson[] = [];
+  const kalan: PendingConversation[] = [];
   for (const [i, item] of list.entries()) {
     try {
       await api("/api/conversation", { method: "POST", body: JSON.stringify(item) });
@@ -180,8 +183,8 @@ export async function flushPendingLessons(): Promise<void> {
     }
   }
   try {
-    if (kalan.length) await AsyncStorage.setItem(LESSON_KEY, JSON.stringify(kalan));
-    else await AsyncStorage.removeItem(LESSON_KEY);
+    if (kalan.length) await AsyncStorage.setItem(CONVERSATION_KEY, JSON.stringify(kalan));
+    else await AsyncStorage.removeItem(CONVERSATION_KEY);
   } catch { /* yut */ }
 }
 
@@ -244,7 +247,7 @@ export async function recordItemScore(id: string, score: number): Promise<void> 
 }
 
 /**
- * Yarım kalan dersin cihazda saklanması (web lesson-player RESUME_KEY karşılığı).
+ * Yarım kalan dersin cihazda saklanması (web conversation-player RESUME_KEY karşılığı).
  * Anlatım uzun; ortasında çıkan öğrenci baştan başlamamalı. 3 günden eski kayıt
  * atılır.
  *
@@ -254,40 +257,41 @@ export async function recordItemScore(id: string, score: number): Promise<void> 
  * olmadığı için Patika adımı "denenmemiş" gösteriyordu. Web konuşmayı ve
  * turlarını baştan beri saklıyor.
  */
-const RESUME_PREFIX = "lernomi-lesson-resume:";
+const RESUME_PREFIX = "lernomi-conversation-resume:";
 const RESUME_TTL_MS = 3 * 86400000;
 
-export type LessonResume = {
+export type ConversationResume = {
   cursor: number;
   correct: number;
   at: number;
   /** Yoksa anlatım (eski kayıtlar). */
-  phase?: "lecture" | "roleplay";
+  phase?: "lecture" | "chat";
   /** Konuşma fazı: sohbetin kendisi, tur sayısı ve senaryo yolunun durumu. */
   roleMsgs?: { role: "user" | "assistant"; content: string }[];
   roleTurns?: number;
   offline?: unknown;
 };
 
-export async function saveLessonResume(
+export async function saveConversationResume(
   id: string,
   cursor: number,
   correct: number,
-  extra?: Pick<LessonResume, "phase" | "roleMsgs" | "roleTurns" | "offline">,
+  extra?: Pick<ConversationResume, "phase" | "roleMsgs" | "roleTurns" | "offline">,
 ): Promise<void> {
   try {
     await AsyncStorage.setItem(RESUME_PREFIX + id, JSON.stringify({ cursor, correct, at: Date.now(), ...extra }));
   } catch { /* yut */ }
 }
 
-export async function loadLessonResume(id: string): Promise<LessonResume | null> {
+export async function loadConversationResume(id: string): Promise<ConversationResume | null> {
+  await ensureLegacyMigrated(); // eski anahtarlar (geçici, lib/legacyNames)
   try {
     const raw = await AsyncStorage.getItem(RESUME_PREFIX + id);
     if (!raw) return null;
-    const v = JSON.parse(raw) as LessonResume;
+    const v = JSON.parse(raw) as ConversationResume;
     if (!v || typeof v.cursor !== "number" || typeof v.at !== "number") return null;
     if (Date.now() - v.at > RESUME_TTL_MS) return null;
-    if (v.phase === "roleplay") return Array.isArray(v.roleMsgs) && v.roleMsgs.length ? v : null;
+    if (v.phase === "chat") return Array.isArray(v.roleMsgs) && v.roleMsgs.length ? v : null;
     if (v.cursor <= 0) return null;
     return v;
   } catch {
@@ -298,13 +302,14 @@ export async function loadLessonResume(id: string): Promise<LessonResume | null>
 /**
  * Süresi geçmiş yarım dersleri siler.
  *
- * `loadLessonResume` üç günden eski kaydı yok sayıyor ama silmiyordu: dönülmeyen
+ * `loadConversationResume` üç günden eski kaydı yok sayıyor ama silmiyordu: dönülmeyen
  * her ders cihazda süresiz kalıyordu. Kayıt rol yapma fazında konuşmanın
  * kendisini (`roleMsgs`, kullanıcının yazdıkları) taşıyor; sunucu aynı
  * konuşmayı 30 günde siliyor (gizlilik politikası §9), cihazdaki kopya hiç
  * gitmiyordu. Açılışta bir kez çağrılıyor.
  */
-export async function pruneLessonResumes(): Promise<void> {
+export async function pruneConversationResumes(): Promise<void> {
+  await ensureLegacyMigrated(); // eski anahtarlar (geçici, lib/legacyNames)
   try {
     const keys = (await AsyncStorage.getAllKeys()).filter((k) => k.startsWith(RESUME_PREFIX));
     if (!keys.length) return;
@@ -321,6 +326,6 @@ export async function pruneLessonResumes(): Promise<void> {
   } catch { /* yut */ }
 }
 
-export async function clearLessonResume(id: string): Promise<void> {
+export async function clearConversationResume(id: string): Promise<void> {
   try { await AsyncStorage.removeItem(RESUME_PREFIX + id); } catch { /* yut */ }
 }

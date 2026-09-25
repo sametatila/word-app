@@ -53,7 +53,7 @@ export function UnitPane({ index, level, theme: gelenTheme, items: gelenItems, e
   // İçeriği olmayan (oynanamaz) slotlar listede hiç görünmez: "Yakında" rozeti yerine
   // ünite yalnız gerçekten yapılabilecek adımları gösterir; ilerleme yüzdesi de onlara göre.
   const raw = (canliUnit?.items ?? gelenItems ?? [])
-    .filter((i) => i.playable || i.kind === "lesson")
+    .filter((i) => i.playable || i.kind === "conversation")
     .map((i) => ({ id: i.id, kind: i.kind as ItemKind, title: i.title, done: i.done, playable: i.playable, open: i.open !== false, attempted: i.attempted ?? i.done, ref: i.ref ?? null }));
   /*
     "Şimdi" = ilk açık ve HENÜZ DENENMEMİŞ adım — bitmemiş ilk adım değil.
@@ -91,7 +91,7 @@ export function UnitPane({ index, level, theme: gelenTheme, items: gelenItems, e
     // Kapalı adım açılmaz: kullanıcı sıradakine geçebilir ama daha sonrakine
     // geçemez — pencere ilerledikçe kendiliğinden kayar.
     if (!it.open) return;
-    if (it.kind === "lesson") { if (it.ref) nav.navigate("Lesson", { id: it.ref }); return; }
+    if (it.kind === "conversation") { if (it.ref) nav.navigate("Conversation", { id: it.ref }); return; }
     if (!it.playable) return;
     // Gramer de ünite kimliğinden TÜRETİLİYOR (immersionQuiz.deriveGrammar),
     // yani egzersiz havuzunda karşılığı yok. Item ekranına gönderilirse
@@ -130,8 +130,8 @@ export function UnitPane({ index, level, theme: gelenTheme, items: gelenItems, e
         <View style={{ gap: spacing.md }}>
           {items.map((it) => {
             const tint = kindFill(it.kind);
-            const Icon = kindIcon(it.kind) ?? kindIcon("lesson")!;
-            const aiLock = !it.done && it.kind === "lesson" && convLocked(it.ref);
+            const Icon = kindIcon(it.kind) ?? kindIcon("conversation")!;
+            const aiLock = !it.done && it.kind === "conversation" && convLocked(it.ref);
             const aiSpent = !it.done && it.kind === "write" && writeSpent(it.ref ?? it.id);
             return (
               <PressableScale key={it.id} onPress={() => openItem(it)}>

@@ -18,7 +18,7 @@ const BY_COURSE: Record<string, Record<string, string[]>> = {
   de: {
     A1: ["Tanışma ve ben", "Aile ve insanlar", "Yeme-içme", "Günlük düzen", "Alışveriş", "Şehirde", "Ev ve yaşam", "Boş zaman", "Sağlık ve vücut", "İletişim ve geçmişe ilk adım"],
     A2: ["Geçmişi anlatmak", "Benim hikâyem", "Sağlık", "Ev ve mahalle", "İş hayatı", "Alışveriş ve hizmetler", "Seyahat", "Kutlamalar ve ilişkiler", "Medya ve teknoloji", "Şehir ve resmî işler"],
-    /* 11-18 web `lib/lessons/modules.ts` ile birebir. Web B1'i 2026-09-05'te on
+    /* 11-18 web `lib/conversations/modules.ts` ile birebir. Web B1'i 2026-09-05'te on
        sekiz modüle genişletmişti (kapsanmayan 1059 B1 maddesi kümelendi, bkz.
        docs/plan/b1-yeniden-kurgu.md); mobil listede on tema kalmıştı. Oysa
        `de-b1.json` 180 ders taşıyor, yani 18 modül: Patika'nın 11-18. üniteleri
@@ -52,7 +52,7 @@ const BY_COURSE: Record<string, Record<string, string[]>> = {
  * kursta birden geçiyor (`de` ve `en` A1-B2 listelerinin kırk teması birebir
  * aynı). Paralel dizi bunları dört kez yazdırırdı — iki kurs × iki dil — ve
  * dördünün sırası ayrı ayrı kayabilirdi. Web 2026-09-21'de aynı şekle geçti
- * (`lib/lessons/modules.ts`): iki tablodaki Türkçe tema kümesi birebir aynı,
+ * (`lib/conversations/modules.ts`): iki tablodaki Türkçe tema kümesi birebir aynı,
  * 67 = 67.
  *
  * Eksik çeviride başlık KAYBOLMUYOR, Türkçe kalıyor — kartın kimliği o

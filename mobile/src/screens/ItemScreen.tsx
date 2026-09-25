@@ -18,7 +18,7 @@ import { KIND_KEY, type ItemKind } from "../data/unit";
 import { ensureSkills, getExercise, skillLevelOf, type ListeningSegment } from "../data/skills";
 import { QuestionList, GlossPanel, WritingList, type WritingTask } from "../game/skillQuiz";
 import { GrammarBody, SpeakingDrill, MonologueBody, type SpeakingTask } from "../game/skillLibrary";
-import { markItemDone, recordItemScore, queueItemRecord } from "../game/lessonProgress";
+import { markItemDone, recordItemScore, queueItemRecord } from "../game/pathProgress";
 import { isSkillDone, scoreBand, scoreOf, RUBRIC_PASS_PCT, SKILL_DONE_PCT } from "../lib/learningRules";
 import { speakTarget, speakAndWaitVoiced, prefetchDialogue, speakPassage, stopSpeaking } from "../lib/tts";
 import { dialogueCast } from "../lib/speakers";

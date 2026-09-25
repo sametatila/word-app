@@ -2,17 +2,17 @@ import { matchReply, usedTargets } from "./dialogue";
 import { normalizeSpoken } from "../lib/speech";
 import { courseOrDefault } from "../lib/courses";
 import type { DialogueReply, DialogueTurn } from "../lib/native";
-import type { Lesson } from "../data/lessons";
+import type { Conversation } from "../data/conversations";
 
 /**
- * Çevrimdışı rol yapma — web `lib/lessons/offline-roleplay.ts` ile aynı akış.
+ * Çevrimdışı rol yapma — web `lib/conversations/offline-chat.ts` ile aynı akış.
  *
  * Ders geçme koşulu konuşmanın YAPILMASINI istiyor; konuşma yalnız modelle
  * çalışsaydı sağlayıcı kapalıyken Android'de hiçbir ders geçilemezdi — ve
  * bugün durum tam olarak buydu (bkz. web-parity §11.9). Aynı sahne modelsiz
  * oynanıyor:
  *
- *   1. Dersin `roleplay.script`i varsa: niyet eşleştirme motoru
+ *   1. Dersin `chat.script`i varsa: niyet eşleştirme motoru
  *      (`game/dialogue`) — kapalı temalı, dallanan senaryo. Yazılmamış bir
  *      cevap "anlaşılmadı" olur ve örnek gösterilir.
  *   2. Senaryo yoksa: "hedef kalıpları kullan" görevi — dersin kalıpları
@@ -22,7 +22,7 @@ import type { Lesson } from "../data/lessons";
  * aynı baloncukla çiziyor ve öneri çipleri aynı ayrıştırıcıdan çıkıyor.
  */
 
-/** Web `chat-format` ile aynı işaret; `game/roleplay` da aynısını kullanıyor. */
+/** Web `chat-format` ile aynı işaret; `game/chat` da aynısını kullanıyor. */
 const SUGGESTION_MARK = "[SAY]";
 
 export type OfflineState = {
@@ -53,7 +53,7 @@ export type OfflineReply = {
 /**
  * Mikrofon etiketine düşen yönlendirme: ANAHTAR + değişkenler.
  *
- * Metin DEĞİL — çeviri gösterildiği yerde yapılıyor (`LessonScreen`), webin
+ * Metin DEĞİL — çeviri gösterildiği yerde yapılıyor (`ConversationScreen`), webin
  * aynı kararı gibi. Boş anahtar + `text` değişkeni "olduğu gibi göster"
  * demek: senaryo dalının `cue`su içerikten geliyor.
  */
@@ -83,18 +83,18 @@ const COACH: Record<string, { allDone: string; next: (p: string) => string; notU
 
 const coachFor = (course: string) => COACH[courseOrDefault(course).targetLang] ?? COACH.de;
 
-export function hasScript(lesson: Lesson): boolean {
-  return Boolean(lesson.roleplay.script?.length);
+export function hasScript(conversation: Conversation): boolean {
+  return Boolean(conversation.chat.script?.length);
 }
 
-function turnById(lesson: Lesson, id: string | null): DialogueTurn | undefined {
+function turnById(conversation: Conversation, id: string | null): DialogueTurn | undefined {
   if (!id) return undefined;
-  return lesson.roleplay.script?.find((t) => t.id === id);
+  return conversation.chat.script?.find((t) => t.id === id);
 }
 
 /** Açılış: senaryonun ilk turu (açılış repliğiyle aynı) ya da dersin açılışı. */
-export function offlineStart(lesson: Lesson): { state: OfflineState; opening: string; hint: Hint | null } {
-  const script = lesson.roleplay.script;
+export function offlineStart(conversation: Conversation): { state: OfflineState; opening: string; hint: Hint | null } {
+  const script = conversation.chat.script;
   if (script?.length) {
     return {
       state: { turnId: script[0].id, path: [], usedPatterns: [], userTurns: 0, ended: false },
@@ -102,10 +102,10 @@ export function offlineStart(lesson: Lesson): { state: OfflineState; opening: st
       hint: script[0].cue ? { key: "", vars: { text: script[0].cue } } : null,
     };
   }
-  const first = lesson.patterns[0];
+  const first = conversation.patterns[0];
   return {
     state: { turnId: null, path: [], usedPatterns: [], userTurns: 0, ended: false },
-    opening: lesson.roleplay.opening,
+    opening: conversation.chat.opening,
     hint: first ? { key: "chat.hint_use_pattern", vars: { pattern: first.de } } : null,
   };
 }
@@ -133,16 +133,16 @@ function say(body: string, example?: string): string {
   return example ? `${body}\n${SUGGESTION_MARK} ${example}` : body;
 }
 
-export function offlineReply(lesson: Lesson, state: OfflineState, said: string): OfflineReply {
+export function offlineReply(conversation: Conversation, state: OfflineState, said: string): OfflineReply {
   const userTurns = state.userTurns + 1;
-  const coach = coachFor(lesson.course);
+  const coach = coachFor(conversation.course);
 
   // ── Senaryo modu ──
-  const turn = turnById(lesson, state.turnId);
+  const turn = turnById(conversation, state.turnId);
   if (turn) {
     const match = matchReply(said, turn.replies);
     if (match) {
-      const next = turnById(lesson, match.reply.next ?? null);
+      const next = turnById(conversation, match.reply.next ?? null);
       const ended = !next;
       return {
         state: { ...state, turnId: next?.id ?? null, path: [...state.path, match.reply], userTurns, ended },
@@ -176,11 +176,11 @@ export function offlineReply(lesson: Lesson, state: OfflineState, said: string):
   }
 
   // ── Kalıp modu ──
-  const patterns = lesson.patterns.map((p) => p.de);
+  const patterns = conversation.patterns.map((p) => p.de);
   const used = new Set(state.usedPatterns);
   let understood = false;
   for (const p of patterns) {
-    if (!used.has(p) && patternUsed(p, said, courseOrDefault(lesson.course).targetLang)) {
+    if (!used.has(p) && patternUsed(p, said, courseOrDefault(conversation.course).targetLang)) {
       used.add(p);
       understood = true;
     }
@@ -203,8 +203,8 @@ export function offlineReply(lesson: Lesson, state: OfflineState, said: string):
 }
 
 /** Özet: hangi kalıplar kullanıldı, puan 0–100. */
-export function offlineSummary(lesson: Lesson, state: OfflineState): { used: string[]; missing: string[]; score: number } {
-  const all = lesson.patterns.map((p) => p.de);
+export function offlineSummary(conversation: Conversation, state: OfflineState): { used: string[]; missing: string[]; score: number } {
+  const all = conversation.patterns.map((p) => p.de);
   const used = state.turnId !== null || state.path.length ? usedTargets(state.path) : state.usedPatterns;
   const usedSet = new Set(used);
   const missing = all.filter((p) => !usedSet.has(p));

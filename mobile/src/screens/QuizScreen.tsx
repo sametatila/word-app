@@ -9,9 +9,9 @@ import { PressableScale } from "../ui/PressableScale";
 import { Celebrate } from "../ui/Celebrate";
 import { XIcon, QuizIcon, CheckIcon } from "../ui/icons";
 import { buildUnitBrief, earlierPool, levelPool, deriveQuiz, deriveGrammar } from "../game/immersionQuiz";
-import { ensureLessons } from "../data/lessons";
+import { ensureConversations } from "../data/conversations";
 import { QuestionList } from "../game/skillQuiz";
-import { markItemDone, recordPathItem } from "../game/lessonProgress";
+import { markItemDone, recordPathItem } from "../game/pathProgress";
 import type { RootStackParams } from "../navigation/RootStack";
 import { useTheme, spacing, radii } from "../theme";
 import { FlowActions, ContentLoadingBody, ResultHero, StatRow, StateBody } from "../ui/flow";
@@ -50,7 +50,7 @@ export function QuizScreen() {
   useEffect(() => {
     let dead = false;
     setPackReady(false);
-    void ensureLessons(params.level).then((ok) => {
+    void ensureConversations(params.level).then((ok) => {
       if (dead) return;
       setPackReady(true);
       setPackFailed(!ok);

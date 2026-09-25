@@ -8,19 +8,19 @@
  * Dersler pakette olduğu için oynanabilir. /api/immersion açıldığında
  * useLearningPath onu tercih eder ve gerçek ilerleme/gating gelir.
  */
-import { lessonsForLevel } from "../data/lessons";
+import { conversationsForLevel } from "../data/conversations";
 import { moduleTheme } from "../data/moduleThemes";
 import { t } from "../lib/i18n";
 import { currentCourseId } from "../lib/courses";
 import { listPathSkillMeta, type SkillMeta } from "../data/skills";
 import type { LearningPath, LearningPathItem, LearningPathUnit } from "../lib/useLearningPath";
 
-const UNIT_LESSONS = 4;
+const UNIT_CONVERSATIONS = 4;
 const GROUP_SIZE = 10;
 const MODULE_SIZE = 10;
 
 /** Her ünitenin deseni: 4 ders + 2 okuma + 2 dinleme + 2 yazma + gramer + quiz + kontrol. */
-const BASE_PATTERN = ["lesson", "read", "lesson", "listen", "lesson", "write", "lesson", "read", "listen", "write"] as const;
+const BASE_PATTERN = ["conversation", "read", "conversation", "listen", "conversation", "write", "conversation", "read", "listen", "write"] as const;
 function slotPlan(): string[] { return [...BASE_PATTERN, "grammar", "quiz", "checkpoint"]; }
 
 /** Slot başlıkları çeviriden; `sub` Patika kartındaki ikinci satır. */
@@ -32,8 +32,8 @@ const SLOT_KEY: Record<string, { title: string; sub: string }> = {
 };
 
 
-function unitTheme(level: string, firstLessonIndex: number, unitIndex: number): string {
-  const theme = moduleTheme(currentCourseId(), level, Math.floor(firstLessonIndex / MODULE_SIZE));
+function unitTheme(level: string, firstConversationIndex: number, unitIndex: number): string {
+  const theme = moduleTheme(currentCourseId(), level, Math.floor(firstConversationIndex / MODULE_SIZE));
   return theme || t("path.unit_fallback", { level: level, n: unitIndex });
 }
 
@@ -43,7 +43,7 @@ function unitTheme(level: string, firstLessonIndex: number, unitIndex: number): 
  * ilk ünitede kilitler; onun yerine hepsi açık, ilerleme derse göre.
  */
 export function buildLocalLearningPath(level: string, done: Set<string>): LearningPath {
-  const lessons = lessonsForLevel(level);
+  const conversations = conversationsForLevel(level);
   // Beceri havuzları — web builder gibi sırayla tüketilir (2/ünite/tür);
   // biterse slot boş (ref=null → "Yakında"). Erken üniteler dolu.
   const pools: Record<string, SkillMeta[]> = {
@@ -52,7 +52,7 @@ export function buildLocalLearningPath(level: string, done: Set<string>): Learni
     write: listPathSkillMeta(level, "writing"),
   };
   const cursors: Record<string, number> = { read: 0, listen: 0, write: 0 };
-  const unitCount = Math.ceil(lessons.length / UNIT_LESSONS) || 1;
+  const unitCount = Math.ceil(conversations.length / UNIT_CONVERSATIONS) || 1;
   const units: LearningPathUnit[] = [];
 
   for (let u = 0; u < unitCount; u++) {
@@ -60,18 +60,18 @@ export function buildLocalLearningPath(level: string, done: Set<string>): Learni
     // Kurs önekli: "de-a1-u01". Sabit "de-" olsaydı başka bir kursun üniteleri
     // Almanca kursunun ilerlemesiyle aynı kimliği paylaşırdı.
     const unitId = `${currentCourseId()}-${level.toLowerCase()}-u${String(index).padStart(2, "0")}`;
-    const unitLessons = lessons.slice(u * UNIT_LESSONS, u * UNIT_LESSONS + UNIT_LESSONS);
+    const unitConversations = conversations.slice(u * UNIT_CONVERSATIONS, u * UNIT_CONVERSATIONS + UNIT_CONVERSATIONS);
     const items: LearningPathItem[] = [];
     const counters: Record<string, number> = {};
-    let lessonCursor = 0;
+    let conversationCursor = 0;
 
     for (const kind of slotPlan()) {
       const n = (counters[kind] = (counters[kind] ?? 0) + 1);
       const id = `${unitId}-${kind}${n}`;
-      if (kind === "lesson") {
-        const lesson = unitLessons[lessonCursor++];
-        if (!lesson) continue; // kısmi son ünitede boş ders slotu üretilmez
-        items.push({ id, kind, title: lesson.title, titleTr: lesson.titleTr, playable: true, done: done.has(lesson.id), open: true, ref: lesson.id });
+      if (kind === "conversation") {
+        const conversation = unitConversations[conversationCursor++];
+        if (!conversation) continue; // kısmi son ünitede boş ders slotu üretilmez
+        items.push({ id, kind, title: conversation.title, titleTr: conversation.titleTr, playable: true, done: done.has(conversation.id), open: true, ref: conversation.id });
       } else if (kind === "read" || kind === "listen" || kind === "write") {
         const meta = pools[kind][cursors[kind]++];
         items.push({
@@ -89,20 +89,20 @@ export function buildLocalLearningPath(level: string, done: Set<string>): Learni
         // açmak olurdu. Ders paketi olmayan kurslarda (ör. İngilizce, henüz
         // ders içeriği yazılmadı) tüm ünite bu durumda.
         const slot = SLOT_KEY[kind];
-        const derivable = unitLessons.length > 0;
+        const derivable = unitConversations.length > 0;
         items.push({ id, kind, title: t(slot.title), titleTr: t(slot.sub), playable: derivable, done: derivable && done.has(id), open: true, ref: derivable ? unitId : null });
       } else {
         // grammar — sunucuyla aynı: ders taşıyan ünitede TÜRETİLİYOR
         // (`immersionQuiz.deriveGrammar`, QuizScreen onu çiziyor). "Yakında"
         // yazılıydı ama oynatıcı hazırdı: yerel patika 12, sunucu 13 adım sayıyordu.
         const slot = SLOT_KEY[kind];
-        const derivable = unitLessons.length > 0;
+        const derivable = unitConversations.length > 0;
         items.push({ id, kind, title: t(slot.title), titleTr: t(slot.sub), playable: derivable, done: derivable && done.has(id), open: true, ref: derivable ? unitId : null });
       }
     }
 
-    const lessonItems = items.filter((it) => it.kind === "lesson");
-    const lessonsDone = lessonItems.filter((it) => it.done).length;
+    const conversationItems = items.filter((it) => it.kind === "conversation");
+    const conversationsDone = conversationItems.filter((it) => it.done).length;
     /*
       SAYILABİLİR item'lar: OYNANABİLİR HER ADIM (sunucu `state.ts` ile aynı,
       pratik adımlar artık kayıt tutuyor). Aşağıdaki not eski ölçütün tarihçesi.
@@ -119,16 +119,16 @@ export function buildLocalLearningPath(level: string, done: Set<string>): Learni
     const doneCount = completable.filter((it) => it.done).length;
     units.push({
       id: unitId, index, group: Math.floor(u / GROUP_SIZE),
-      theme: unitTheme(level, u * UNIT_LESSONS, index),
-      moduleIndex: Math.floor((u * UNIT_LESSONS) / MODULE_SIZE),
-      topics: unitLessons.map((l) => l.title),
+      theme: unitTheme(level, u * UNIT_CONVERSATIONS, index),
+      moduleIndex: Math.floor((u * UNIT_CONVERSATIONS) / MODULE_SIZE),
+      topics: unitConversations.map((l) => l.title),
       locked: false,
       // Sunucudaki kuralla aynı (lib/immersion/state.ts): "bitti" ünitedeki
       // BÜTÜN sayılabilir item'lara bakar. Yalnız derslere bakmak, dört dersi
       // bitiren kullanıcıya beceri yuvaları dururken "tamamlandı" diyordu.
       complete: completableCount > 0 && doneCount === completableCount,
       done: doneCount, total: completableCount,
-      lessonsDone, lessonsTotal: lessonItems.length,
+      conversationsDone, conversationsTotal: conversationItems.length,
       items,
     });
   }

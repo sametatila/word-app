@@ -19,7 +19,7 @@ import { castFor, type Pitch, type VoiceId } from "./voices";
  * (742'ye karşı) tek konuşmacılı: haber bülteni, anons, ders anlatımı. Bunlar
  * artık kullanıcının SEÇTİĞİ sesle değil kadronun ilk sesiyle okunuyor —
  * beceri dinlemesinde davranış değişikliği bu. Bilinçli: deneme sınavı zaten
- * `lessonVoice`u kullanıyordu, yani profil sesine saygı gösteren tek yüzey
+ * `conversationVoice`u kullanıyordu, yani profil sesine saygı gösteren tek yüzey
  * beceri dinlemesiydi ve aynı alıştırma setinde iki kişilik bir diyalog
  * kadroyla, tek kişilik bir kayıt profil sesiyle okunurdu. Kayıt dediğimiz şey
  * "senin öğretmenin" değil, başka birinin sesi; ses seçici her gün duyulan

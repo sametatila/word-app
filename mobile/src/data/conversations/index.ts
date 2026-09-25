@@ -10,11 +10,11 @@ import type { DialogueTurn } from "../../lib/native";
  * bilmiyor (kurs hesapta), o yüzden ikisinin de A1'i gömülü — brotli ile
  * ~250 KB. İlk açılışın ağa bağlı olmaması bu tohuma bağlı.
  *
- * Kaynak yine tek: `scripts/dump-lessons-mobile` projeksiyonu hem tohumu
+ * Kaynak yine tek: `scripts/dump-conversations-mobile` projeksiyonu hem tohumu
  * yazıyor hem yayını besliyor (`content:publish`).
  */
 import { courseOrDefault, currentCourseId } from "../../lib/courses";
-import { nativeLesson } from "../../lib/nativeContent";
+import { nativeConversation } from "../../lib/nativeContent";
 import { ensurePack, getContentItem, listContentItems } from "../../content/store";
 import a1 from "./de-a1.json";
 import enA1 from "./en-a1.json";
@@ -36,12 +36,12 @@ export type Expectation =
 export type LectureStep = { say: Segment[]; expect?: Expectation };
 export type VocabItem = { de: string; tr: string };
 export type PatternItem = { de: string; tr: string };
-export type LessonRoleplay = {
+export type ConversationChat = {
   /*
    * `minTurns` ZORUNLU. Tip isteğe bağlı tanımlıydı ve iki yerde `?? 6`
    * yazılıydı: alan düşse Android altı tur ister, web `undefined`ı ekrana
    * basardı - yani aynı ders iki platformda başka bir kural uygular. Web tipi
-   * baştan beri zorunlu (`src/lib/lessons/types.ts`) ve içerik webden
+   * baştan beri zorunlu (`src/lib/conversations/types.ts`) ve içerik webden
    * dökülüyor; ölçüm bin seksen rol yapma dersinin HEPSİNDE alanın dolu
    * olduğunu gösterdi, yani varsayılan hiç çalışmıyordu ama sayı kodda
    * duruyordu.
@@ -49,16 +49,16 @@ export type LessonRoleplay = {
   scene: string; partner: string; opening: string; openingTr: string; goal: string; minTurns: number;
   /**
    * Dallanan senaryo — yalnız 780 dersin 10'unda var. Sağlayıcı kapalıyken
-   * konuşma bundan oynanıyor (`game/offlineRoleplay`); yoksa dersin kalıpları
+   * konuşma bundan oynanıyor (`game/offlineChat`); yoksa dersin kalıpları
    * sırayla isteniyor. Tip `lib/native` içindekiyle aynı (döküm yolu onu
    * çevirmek için zaten tanıyor).
    */
   script?: DialogueTurn[];
 };
-export type Lesson = {
+export type Conversation = {
   id: string; level: string; course: string; icon: string;
   title: string; titleTr: string; summary: string; minutes: number; focusId: string;
-  vocab: VocabItem[]; patterns: PatternItem[]; lecture: LectureStep[]; roleplay: LessonRoleplay;
+  vocab: VocabItem[]; patterns: PatternItem[]; lecture: LectureStep[]; chat: ConversationChat;
 };
 
 /**
@@ -68,13 +68,13 @@ export type Lesson = {
  * "Yakında" gösteriyor ve farklı bir dilin derslerine ASLA düşmüyor
  * (gsw-zh → de meşru, çünkü ikisinin hedefi de Almanca).
  */
-const SEED: Record<string, Record<string, Lesson[]>> = {
-  de: { A1: a1 as Lesson[] },
-  en: { A1: enA1 as Lesson[] },
+const SEED: Record<string, Record<string, Conversation[]>> = {
+  de: { A1: a1 as Conversation[] },
+  en: { A1: enA1 as Conversation[] },
 };
 
 /** İnen seviyeler — anahtar `"<paketKursu>-<SEVİYE>"`. */
-const pools = new Map<string, Lesson[]>();
+const pools = new Map<string, Conversation[]>();
 
 /** Kursun ders paketinin kursu: hedef dile göre, kurs kimliğine göre değil. */
 function packCourse(course: string): "de" | "en" {
@@ -82,11 +82,11 @@ function packCourse(course: string): "de" | "en" {
 }
 
 function packOf(course: string, level: string): string {
-  return `lessons/${packCourse(course)}-${level.toLowerCase()}`;
+  return `conversations/${packCourse(course)}-${level.toLowerCase()}`;
 }
 
 /** Kimlikten seviye: "de-b1-bewerbung" → B1, "en-c1-weight" → C1. */
-export function lessonLevelOf(id: string): string | null {
+export function conversationLevelOf(id: string): string | null {
   const part = id.split("-")[1];
   return part && /^[abc][12]$/i.test(part) ? part.toUpperCase() : null;
 }
@@ -106,7 +106,7 @@ function courseOfId(id: string): "de" | "en" {
  * "paket inemedi" ile "ders gerçekten yok" arasını buna bakarak ayırıyor;
  * ikisi de eli boş bırakıyor ama biri ağ hatası, öteki eksik içerik.
  */
-export async function ensureLessons(level: string, course: string = currentCourseId()): Promise<boolean> {
+export async function ensureConversations(level: string, course: string = currentCourseId()): Promise<boolean> {
   const lv = level.toUpperCase();
   const c = packCourse(course);
   if (SEED[c]?.[lv]) return true;
@@ -116,10 +116,10 @@ export async function ensureLessons(level: string, course: string = currentCours
   const ok = await ensurePack(pack);
   if (!ok) return false;
   const ids = await listContentItems(pack);
-  const out: Lesson[] = [];
+  const out: Conversation[] = [];
   for (const id of ids) {
-    const lesson = await getContentItem<Lesson>(pack, id);
-    if (lesson) out.push(lesson);
+    const conversation = await getContentItem<Conversation>(pack, id);
+    if (conversation) out.push(conversation);
   }
   /* SIRA `listContentItems`ten geliyor: paket kaynak sırasını ayrı bir
      maddede taşıyor (bkz. `content/store` ORDER_ITEM). Kimliğe göre
@@ -129,7 +129,7 @@ export async function ensureLessons(level: string, course: string = currentCours
   return true;
 }
 
-function poolOf(course: string, level: string): Lesson[] {
+function poolOf(course: string, level: string): Conversation[] {
   const lv = level.toUpperCase();
   const c = packCourse(course);
   return SEED[c]?.[lv] ?? pools.get(`${c}-${lv}`) ?? [];
@@ -141,11 +141,11 @@ function poolOf(course: string, level: string): Lesson[] {
   Ders içeriğini okuyan her yer (Patika listesi, oynatıcı, ilerleme, tekrar
   kuyruğu) buradan geçiyor; çeviriyi çağıranlara dağıtmak, birini unutunca
   aynı dersin bir ekranda İngilizce bir ekranda Türkçe görünmesi demekti.
-  Çeviri gerekmiyorsa (`native_lang` Türkçe) `nativeLesson` nesneyi aynen
+  Çeviri gerekmiyorsa (`native_lang` Türkçe) `nativeConversation` nesneyi aynen
   döndürüyor ve 4,62 MB'lık sözlük hiç açılmıyor.
 */
-export function lessonsForLevel(level: string, course: string = currentCourseId()): Lesson[] {
-  return poolOf(course, level).map(nativeLesson);
+export function conversationsForLevel(level: string, course: string = currentCourseId()): Conversation[] {
+  return poolOf(course, level).map(nativeConversation);
 }
 
 /**
@@ -155,14 +155,14 @@ export function lessonsForLevel(level: string, course: string = currentCourseId(
  * göre öyle bir dizin ya eksik olur ya da her şeyi indirmeyi gerektirir.
  * Kimlik zaten "kurs-seviye-slug": doğru havuza doğrudan gidiliyor.
  */
-export function findLesson(id: string): Lesson | undefined {
-  const level = lessonLevelOf(id);
+export function findConversation(id: string): Conversation | undefined {
+  const level = conversationLevelOf(id);
   if (!level) return undefined;
   const l = poolOf(courseOfId(id), level).find((x) => x.id === id);
-  return l ? nativeLesson(l) : undefined;
+  return l ? nativeConversation(l) : undefined;
 }
 
 /** Puanlanan adım sayısı — ders kaydının paydası (üretim + doğru/yanlış). */
-export function scoredSteps(l: Lesson): number {
+export function scoredSteps(l: Conversation): number {
   return l.lecture.filter((s) => s.expect?.kind === "produce" || s.expect?.kind === "truefalse").length;
 }

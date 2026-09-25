@@ -22,7 +22,7 @@ import { useTheme, spacing, radii } from "../theme";
  *
  * Modülün derslerindeki kelimelerden kurulan SÜRELİ tur: her doğru cevap süre
  * ekliyor, her yanlış süre siliyor, süre bitmeden hepsini bitiren modül tacını
- * alıyor. Uç (`/api/boss`) ve mantık (`lib/lessons/boss`) baştan beri vardı;
+ * alıyor. Uç (`/api/boss`) ve mantık (`lib/conversations/boss`) baştan beri vardı;
  * mobilde EKRAN yoktu, yani Android kullanıcısı modül tacını hiç alamıyordu
  * (bkz. web-parity §11.25).
  *
@@ -37,8 +37,8 @@ type BossMeta = {
   level: string;
   moduleIndex: number;
   title: string;
-  lessonsDone: number;
-  lessonsTotal: number;
+  conversationsDone: number;
+  conversationsTotal: number;
   bestLeft: number | null;
 };
 type BossPayload = {
@@ -251,7 +251,7 @@ export function BossScreen() {
   }
 
   if (phase === "ready" && data) {
-    const ready = data.meta.lessonsDone >= data.meta.lessonsTotal;
+    const ready = data.meta.conversationsDone >= data.meta.conversationsTotal;
     /* KAPAK ŞABLONU (ui/flow). Kurallar eskiden "·" ile başlayan dört metin
        satırıydı; artık her biri ikonlu tek satır. "Henüz hazır değilsin"
        uyarısı kapağın içinde uyarı notu. Web `boss-player` aynı sırada. */
@@ -270,7 +270,7 @@ export function BossScreen() {
           ]}
           note={best !== null ? t("bossw.best_left", { n: best }) : null}
         >
-          {!ready ? <FlowNote tone="warn" icon={<AlertIcon color={colors.streakText} size={16} />} text={t("bossw.not_ready_yet", { done: data.meta.lessonsDone, total: data.meta.lessonsTotal })} /> : null}
+          {!ready ? <FlowNote tone="warn" icon={<AlertIcon color={colors.streakText} size={16} />} text={t("bossw.not_ready_yet", { done: data.meta.conversationsDone, total: data.meta.conversationsTotal })} /> : null}
         </CoverBody>
       </FlowScreen>
     );

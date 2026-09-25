@@ -5,8 +5,8 @@ import { useAuth } from "./AuthContext";
 import { useMe } from "./useMe";
 import { buildLocalLearningPath, refIndex } from "../game/immersionTrack";
 import { ensureSkills } from "../data/skills";
-import { ensureLessons } from "../data/lessons";
-import { getDoneItems } from "../game/lessonProgress";
+import { ensureConversations } from "../data/conversations";
+import { getDoneItems } from "../game/pathProgress";
 
 /** Pratik adım — içeriği ünitenin derslerinden türetilen, kaydı öğe kimliğiyle tutulan. */
 export const isPracticeKind = (kind: string): boolean => kind === "grammar" || kind === "quiz" || kind === "checkpoint";
@@ -49,8 +49,8 @@ export type LearningPathUnit = {
   complete: boolean;
   done: number;
   total: number;
-  lessonsDone: number;
-  lessonsTotal: number;
+  conversationsDone: number;
+  conversationsTotal: number;
   items: LearningPathItem[];
 };
 export type LearningPath = { level: string; units: LearningPathUnit[]; currentIndex: number; doneUnits: number; totalUnits: number };
@@ -111,7 +111,7 @@ async function yukle(level: string | undefined): Promise<void> {
        paket inmeden patikadaki ders adımına basmak SESSİZCE işe yaramıyordu.
        Aşağıdaki yerel dal paketi zaten bekliyordu; sunucu dalı beklemiyordu.
        İkinci çağrı ucuz: paket eldeyse `ensure*` hemen dönüyor. */
-    await Promise.all([ensureSkills(d.level), ensureLessons(d.level)]);
+    await Promise.all([ensureSkills(d.level), ensureConversations(d.level)]);
     const idx = refIndex(d.level);
     const enriched: LearningPath = {
       ...d,
@@ -133,7 +133,7 @@ async function yukle(level: string | undefined): Promise<void> {
     /* Patika beceri havuzlarını kullanıyor ve onlar artık seviye paketi
        hâlinde iniyor: kurulum ÖNCESİ paket hazır olmalı, yoksa yuvalar
        "yakında" diye boş çizilir. */
-    await Promise.all([ensureSkills(lv), ensureLessons(lv)]);
+    await Promise.all([ensureSkills(lv), ensureConversations(lv)]);
     yay({ data: buildLocalLearningPath(lv, done), source: "local" });
   } finally {
     yay({ loading: false });

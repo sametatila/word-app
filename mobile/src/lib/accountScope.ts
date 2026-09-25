@@ -30,7 +30,7 @@ const ACCOUNT_SCOPED_PREFIXES = [
      önek hiçbir anahtara uymuyordu. Bildirimler çıkışta `cancelLocalReminders`
      ile kapanıyor. */
   "lernomi-items-done", //         bitirilen ünite öğeleri
-  "lernomi-lesson-resume:", //     yarım kalmış ders
+  "lernomi-conversation-resume:", //     yarım kalmış ders
   "lernomi:mock-done", //          bitirilen deneme kâğıtları
   "lernomi:mock-run:", //          yarım kalmış deneme koşusu
   /*
@@ -46,12 +46,16 @@ const ACCOUNT_SCOPED_PREFIXES = [
     iyi, ve listedeki oteki yarim isler de ayni kuralla siliniyor.
   */
   "lernomi-answer-queue", //       gonderilmeyi bekleyen tur cevaplari
-  "lernomi-lessons-pending", //    gonderilmeyi bekleyen ders ilerlemesi
+  "lernomi-conversations-pending", //    gonderilmeyi bekleyen ders ilerlemesi
   "lernomi-items-pending", //      gonderilmeyi bekleyen beceri ogeleri
   "lernomi-path-items-pending", // gonderilmeyi bekleyen patika pratik adimlari
   "lernomi-item-scores", //        oge puanlari
   "lernomi-coach-seen", //         gosterilen koc cumleleri
   "lernomi:guest-milestones", //   misafire gosterilen kilometre tasi cagrilari (yeni misafirde yeniden)
+  /* ESKİ ADLAR (build 6): `lib/legacyNames` açılışta yenisine taşıyor; taşınmadan
+     hesap değişirse onlar da gitsin. Build 7 herkese ulaşınca silinecek. */
+  "lernomi-lesson-resume:",
+  "lernomi-lessons-pending",
 ];
 
 /** Çıkışta çağrılır. Hata yutulur: temizlik çıkışı engellememeli. */

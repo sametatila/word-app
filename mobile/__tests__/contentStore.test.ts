@@ -16,7 +16,7 @@ import { listContentItems, getContentItem } from "../src/content/store";
  * değil (de-a2, de-b1, de-c1, en-a2, en-b2 hepsinde ilk madde bile farklı).
  */
 
-const PACK = "lessons/de-a2";
+const PACK = "conversations/de-a2";
 /* Kaynak sırası kimlik sırasının TERSİ: kimliğe göre sıralayan bir kusur
    burada hemen görünür. */
 const SOURCE_ORDER = ["de-a2-zeta", "de-a2-mu", "de-a2-alpha"];

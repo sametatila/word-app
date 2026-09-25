@@ -7,7 +7,7 @@ import { setLang } from "../src/lib/i18n";
 /**
  * Patika ünite başlıkları — iki kopya, üç dil.
  *
- * Tema listesi web'de (`src/lib/lessons/modules.ts`) ve mobilde
+ * Tema listesi web'de (`src/lib/conversations/modules.ts`) ve mobilde
  * (`src/data/moduleThemes.ts`) ayrı ayrı duruyor; mobil React Native'e bağlı
  * olduğu için web'inkini içe aktaramıyor. Kopyalar SESSİZCE ayrıştı ve bunun
  * bedeli ölçüldü: web B1'i 2026-09-05'te on sekiz modüle çıkardı, mobil
@@ -26,7 +26,7 @@ import { setLang } from "../src/lib/i18n";
  */
 const REPO = path.join(__dirname, "..", "..");
 const MOB = readFileSync(path.join(REPO, "mobile/src/data/moduleThemes.ts"), "utf8");
-const WEB = readFileSync(path.join(REPO, "src/lib/lessons/modules.ts"), "utf8");
+const WEB = readFileSync(path.join(REPO, "src/lib/conversations/modules.ts"), "utf8");
 
 /** `A1: [ "a", "b" ]` — tek satır ya da çok satır, dizeleri sırayla verir. */
 function levels(source: string): Record<string, string[]> {

@@ -70,10 +70,10 @@ export const API_TIMEOUT_MS = 25_000;
 export const ASSESS_TIMEOUT_MS = 20000;
 
 /** Rol yapma sınavı: konuşmanın TAMAMI gönderiliyor, tavan daha uzun. */
-export const ASSESS_ROLEPLAY_TIMEOUT_MS = 30000;
+export const ASSESS_CHAT_TIMEOUT_MS = 30000;
 
 /**
- * Sohbet (roleplay) ÜRETİMİ — değerlendirmeden de uzun.
+ * Sohbet (chat) ÜRETİMİ — değerlendirmeden de uzun.
  *
  * Model burada bir cevap YAZIYOR (değerlendirmede olduğu gibi hazır bir
  * metni puanlamıyor) ve uzun bir turda kırk saniyeye kadar sürebiliyor.
@@ -81,7 +81,7 @@ export const ASSESS_ROLEPLAY_TIMEOUT_MS = 30000;
  * tavana (25 sn) düşüyordu, yani aynı cevap mobilde geliyor webde
  * kesiliyordu.
  */
-export const ROLEPLAY_TIMEOUT_MS = 45_000;
+export const CHAT_TIMEOUT_MS = 45_000;
 
 export type ApiInit = RequestInit & {
   timeoutMs?: number;

@@ -13,7 +13,7 @@ import { useTheme, spacing, radii, type Palette } from "../theme";
  * hiç göstermiyordu: her hatanın gerekçesi (`why_tr`), düzeltilmiş cümle,
  * övgü ve sıradaki ipucu. Yani öğrenci "72" görüyor, neyi yanlış yaptığını
  * öğrenmiyordu — oysa sınavın varlık sebebi tam olarak o. Web aynı sonucu
- * baştan beri açık açık yazıyor (`roleplay-exam`, `exam-player`).
+ * baştan beri açık açık yazıyor (`conversation-scored`, `exam-player`).
  *
  * Kart bilgiyi taşıyor, işaretlemeyi değil: web'in kart düzeni tarayıcıya,
  * buradaki düzen uygulamanın kendi diline ait. Ölçülen şey aynı olmalı —

@@ -18,7 +18,7 @@ import { tieredCopy } from "../lib/unlock";
 import { UnlockProgress } from "../ui/UnlockProgress";
 import { useMe } from "../lib/useMe";
 import { ensureSkills, listOwnSkillMeta, type SkillMeta, type SkillKey } from "../data/skills";
-import { getDoneItems, getItemScores, syncItemProgress } from "../game/lessonProgress";
+import { getDoneItems, getItemScores, syncItemProgress } from "../game/pathProgress";
 import { loadOnboardingPrefs } from "../lib/onboardingPrefs";
 import { useTheme, spacing, radii, type Palette } from "../theme";
 

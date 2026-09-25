@@ -64,7 +64,7 @@ const SKIP_ASCII = ["data/firstWords.ts", "lib/courses.ts"].map((p) => path.join
  * da muaf. Gerekçe: bu dosyadaki Türkçe çevrilecek bir arayüz dizgesi değil,
  * kursun ne öğrettiğini anlatan veri - "Bürokrasi", "Mutfak ve sofra" gibi
  * modül başlıkları. Sözlüğe taşımak yanlış olurdu: aynı müfredat webde de
- * `lib/lessons/modules.ts` içinde aynı biçimde duruyor ve iki kopya
+ * `lib/conversations/modules.ts` içinde aynı biçimde duruyor ve iki kopya
  * `check:parity` ile karşılaştırılıyor.
  *
  * Liste DAR tutuluyor: yalnız başlığında içerik olduğu yazılı, saf veri

@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { migrateLegacyKeys, sweepDeadKeys } from "../src/lib/storageMigration";
-import { pruneLessonResumes } from "../src/game/lessonProgress";
+import { pruneConversationResumes } from "../src/game/pathProgress";
 
 /**
  * CİHAZ DEPOSU TEMİZLİĞİ.
@@ -30,11 +30,11 @@ test("sahipsiz anahtarlar silinir, güncel olanlar kalır", async () => {
 test("süresi geçmiş ve bozuk yarım ders silinir, taze olan kalır", async () => {
   const now = Date.now();
   await AsyncStorage.setMany({
-    "lernomi-lesson-resume:eski": JSON.stringify({ cursor: 2, correct: 1, at: now - 4 * 86400000, phase: "roleplay", roleMsgs: [{ role: "user", content: "özel" }] }),
-    "lernomi-lesson-resume:taze": JSON.stringify({ cursor: 2, correct: 1, at: now - 86400000 }),
-    "lernomi-lesson-resume:bozuk": "{",
+    "lernomi-conversation-resume:eski": JSON.stringify({ cursor: 2, correct: 1, at: now - 4 * 86400000, phase: "chat", roleMsgs: [{ role: "user", content: "özel" }] }),
+    "lernomi-conversation-resume:taze": JSON.stringify({ cursor: 2, correct: 1, at: now - 86400000 }),
+    "lernomi-conversation-resume:bozuk": "{",
     "lernomi-theme": "dark",
   });
-  await pruneLessonResumes();
-  expect([...(await AsyncStorage.getAllKeys())].sort()).toEqual(["lernomi-lesson-resume:taze", "lernomi-theme"]);
+  await pruneConversationResumes();
+  expect([...(await AsyncStorage.getAllKeys())].sort()).toEqual(["lernomi-conversation-resume:taze", "lernomi-theme"]);
 });

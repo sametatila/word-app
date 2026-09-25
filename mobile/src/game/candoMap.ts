@@ -1,7 +1,7 @@
 /**
  * İçerik → yapabilirlik etiketi — web `src/lib/cando-map.ts`in ders kısmı.
  *
- * Yalnız DERS eşlemesi taşındı (`candoForLesson`); becerilerin tür/seviye
+ * Yalnız DERS eşlemesi taşındı (`candoForConversation`); becerilerin tür/seviye
  * eşlemesi webde kaldı, mobilde çağıranı yok. Tablolar birebir aynı ve
  * `check:parity` "ders yapabilirlik eslemesi" ile ölçülüyor.
  */
@@ -24,7 +24,7 @@ const ICON_THEME: Record<string, Theme> = {
 };
 
 /** Seviye × tema → konuşma ifadesi (dersin rol yapma sahnesi). */
-const LESSON_SPK: Record<CefrLevel, Record<Theme, number>> = {
+const CONVERSATION_SPK: Record<CefrLevel, Record<Theme, number>> = {
   A1: { social: 1, service: 3, work: 5 },
   A2: { social: 6, service: 1, work: 7 },
   B1: { social: 6, service: 3, work: 7 },
@@ -52,12 +52,12 @@ const FOCUS_GR: [RegExp, Record<CefrLevel, number>][] = [
  * 213 satırlık veri dosyasına bakıyor, burada kimlikler `/api/cando`dan gelen
  * listeyle doğrulanıyor (o listenin metni de zaten gerekiyor).
  */
-export function candoIdsForLesson(lesson: { level: string; icon: string; focusId: string; cando?: string[] }): string[] {
-  if (lesson.cando?.length) return lesson.cando;
-  const level = lesson.level as CefrLevel;
-  const theme = ICON_THEME[lesson.icon] ?? "social";
-  const out = [`${level}.SPK.${LESSON_SPK[level]?.[theme] ?? 1}`];
-  const gr = FOCUS_GR.find(([re]) => re.test(lesson.focusId));
+export function candoIdsForConversation(conversation: { level: string; icon: string; focusId: string; cando?: string[] }): string[] {
+  if (conversation.cando?.length) return conversation.cando;
+  const level = conversation.level as CefrLevel;
+  const theme = ICON_THEME[conversation.icon] ?? "social";
+  const out = [`${level}.SPK.${CONVERSATION_SPK[level]?.[theme] ?? 1}`];
+  const gr = FOCUS_GR.find(([re]) => re.test(conversation.focusId));
   if (gr) out.push(`${level}.GR.${gr[1][level]}`);
   return out;
 }

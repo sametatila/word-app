@@ -134,7 +134,7 @@ export const COURSES: Course[] = [
     },
     // İngilizcede isimlerin cinsiyeti yok; artikel/çoğul turları anlamsız.
     hasArticles: false,
-    // A1–C1 ders içeriği tam (seviye başına 100 ders, `data/lessons`).
+    // A1–C1 ders içeriği tam (seviye başına 100 ders, `data/conversations`).
     enabled: true,
     offeredToNewUsers: true,
   },
@@ -193,8 +193,8 @@ export const PAIR_READY: Record<NativeLang, CourseId[]> = {
   /*
     en→de AÇILDI (2026-09-10). Üç katman da tam:
       kelime      üretimde 8.707/8.707 İngilizce karşılık + örnek çevirisi
-      ders/beceri/deneme  altı kapı yeşil (check:lessons-native,
-                  check:lessons-swap, check:skills-native, check:skills-task,
+      ders/beceri/deneme  altı kapı yeşil (check:conversations-native,
+                  check:conversations-swap, check:skills-native, check:skills-task,
                   check:mock-prose, check:mock-native)
       arayüz      1.203 anahtar × 3 dil (i18n:check)
 

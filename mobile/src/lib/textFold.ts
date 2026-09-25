@@ -2,7 +2,7 @@
  * Karşılaştırma katlaması — yazılı ve sözlü cevapların ORTAK biçimi.
  *
  * Aynı katlama kodu dört ayrı yerde elle yeniden yazılmıştı (voiceMatch,
- * skillQuiz, rounds.norm, rounds TranslateRound, LessonScreen) ve hepsi
+ * skillQuiz, rounds.norm, rounds TranslateRound, ConversationScreen) ve hepsi
  * birbirinden ayrı ayrı eskimişti:
  *  • hiçbiri sayı katlamıyordu — öğrenci "2" yazınca hedef "two" reddediliyordu,
  *  • skillQuiz sabit `de-DE` küçültme + umlaut katlaması yapıyordu, yani

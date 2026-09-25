@@ -11,14 +11,14 @@ import { PressableScale } from "../ui/PressableScale";
 import { MicIcon, ChatIcon, ClockIcon, LockIcon, TargetIcon, AlertIcon, CheckIcon } from "../ui/icons";
 import { CoachLine } from "../ui/CoachLine";
 import { FlowScreen, FlowActions, FlowTopBar, FlowNote, ContentLoadingBody, ResultHero, StatRow, DetailCard, DetailRow, CoverBody, StateBody } from "../ui/flow";
-import { ensureLessons, findLesson, lessonLevelOf, type Lesson } from "../data/lessons";
-import { sendRoleplay, parseReply, type ChatMsg } from "../game/roleplay";
-import { candoIdsForLesson } from "../game/candoMap";
+import { ensureConversations, findConversation, conversationLevelOf, type Conversation } from "../data/conversations";
+import { sendChat, parseReply, type ChatMsg } from "../game/chat";
+import { candoIdsForConversation } from "../game/candoMap";
 import { fetchCando } from "../game/cando";
 import { speakTarget } from "../lib/tts";
 import { ensureMicPermission, listenOnce, sttAvailable, stopListening } from "../lib/stt";
 import { currentTargetLocale, currentTargetLang } from "../lib/courses";
-import { api, ApiError, ASSESS_ROLEPLAY_TIMEOUT_MS } from "../api/client";
+import { api, ApiError, ASSESS_CHAT_TIMEOUT_MS } from "../api/client";
 import { assessFailKey, assessFailure } from "../lib/assessFail";
 import { isAiConsentDeclined } from "../lib/aiConsent";
 import { notePremiumGate, refreshPremium, usePremiumStatus } from "../lib/premium";
@@ -36,7 +36,7 @@ import { reduceMotion } from "../lib/reduceMotion";
 import { useKeyboardLift } from "../lib/useKeyboardHeight";
 import { useAuth } from "../lib/AuthContext";
 
-/** Web `lib/lessons/roleplay-const` ile aynı üç sayı. */
+/** Web `lib/conversations/chat-const` ile aynı üç sayı. */
 export const EXAM_TURNS = 5;
 export const EXAM_SECONDS = 180;
 /** Geçme eşiği — bütünsel puan yüzdesi; eşiği SÖYLEYEN cümle de bundan besleniyor. */
@@ -48,14 +48,14 @@ type Phase = "intro" | "talk" | "scoring" | "result" | "error" | "locked";
 type Score = { task: number; grammar: number; vocab: number; structure: number; overall: number };
 type AssessError = { type: ErrorType; wrong: string; fix: string; why_tr?: string; span?: [number, number] };
 /* `praise_tr` ve `next_tip_tr` SUNUCUDAN GELİYORDU ve burada düşüyordu: web
-   ikisini de gösteriyor (`roleplay-exam` `AssessmentCard`). */
+   ikisini de gösteriyor (`conversation-scored` `AssessmentCard`). */
 type Result = { score: Score; errors: AssessError[]; corrected?: string | null; praise_tr?: string | null; next_tip_tr?: string | null };
 
 /**
  * Rol yapma sınavı (WP-22) — aynı sahne, yardım yok, 5 tur, 3 dakika.
  *
  * WEBDE VARDI, ANDROİD'DE YOKTU. Ders oynatıcısının özetinde web "Sınav olarak
- * dene" düğmesini gösteriyor ve `/lessons/[id]/exam` sayfasına gidiyordu;
+ * dene" düğmesini gösteriyor ve `/conversations/[id]/scored` sayfasına gidiyordu;
  * mobilde o yüzey hiç yoktu, yani aynı dersi bitiren iki kullanıcıdan yalnız
  * biri ölçülebiliyordu.
  *
@@ -68,7 +68,7 @@ type Result = { score: Score; errors: AssessError[]; corrected?: string | null; 
  * mobilde zaten yerleşik (bkz. `ExamScreen` yazma adımı, `assess.fail_*`) ve
  * ölçülmemiş bir sınavı ölçülmüş gibi göstermemek daha doğru.
  */
-export function RoleplayExamScreen() {
+export function ConversationScoredScreen() {
   const guest = Boolean(useAuth().user?.guest);
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
@@ -77,21 +77,21 @@ export function RoleplayExamScreen() {
   const rootRef = useRef<React.ComponentRef<typeof View>>(null);
   const kbLift = useKeyboardLift(rootRef, spacing.sm);
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
-  const { id } = useRoute<RouteProp<RootStackParams, "RoleplayExam">>().params;
+  const { id } = useRoute<RouteProp<RootStackParams, "ConversationScored">>().params;
   const { status: premiumStatus } = usePremiumStatus();
-  /* Dersin seviye paketi inmemişse burada iniyor (bkz. `data/lessons`). */
-  const [lesson, setLesson] = useState<Lesson | undefined>(() => findLesson(id) as Lesson | undefined);
+  /* Dersin seviye paketi inmemişse burada iniyor (bkz. `data/conversations`). */
+  const [conversation, setConversation] = useState<Conversation | undefined>(() => findConversation(id) as Conversation | undefined);
   /* Paket inmeden "bulunamadı" denmiyor (bkz. ui/flow `ContentLoadingBody`). */
-  const [packReady, setPackReady] = useState(() => !!findLesson(id));
+  const [packReady, setPackReady] = useState(() => !!findConversation(id));
   /* Paket inemediyse "ders bulunamadı" değil "indirilemedi" deniyor. */
   const [packFailed, setPackFailed] = useState(false);
   useEffect(() => {
-    const level = lessonLevelOf(id);
+    const level = conversationLevelOf(id);
     if (!level) { setPackReady(true); return; }
     let dead = false;
-    void ensureLessons(level).then((ok) => {
+    void ensureConversations(level).then((ok) => {
       if (dead) return;
-      setLesson(findLesson(id) as Lesson | undefined);
+      setConversation(findConversation(id) as Conversation | undefined);
       setPackFailed(!ok);
       setPackReady(true);
     });
@@ -112,7 +112,7 @@ export function RoleplayExamScreen() {
   /**
    * Muhatap cevap vermedi çünkü yapay zekâya izin verilmedi — servis kapalı
    * DEĞİL. Sınav senaryoyla yürüyemiyor (sayılmazdı), ama sebep doğru
-   * söylenmeli ve nereden açılacağı belli olmalı (web `roleplay-exam` ile aynı).
+   * söylenmeli ve nereden açılacağı belli olmalı (web `conversation-scored` ile aynı).
    */
   const [consentOff, setConsentOff] = useState(false);
   const [cando, setCando] = useState<string[]>([]);
@@ -130,8 +130,8 @@ export function RoleplayExamScreen() {
   /* Yapabilirlik etiketi: kimlikler dersten (`candoMap`), METNİ `/api/cando`dan.
      Web 213 satırlık veri dosyasından okuyor; mobil o listeyi zaten çekiyor. */
   useEffect(() => {
-    if (!lesson) return;
-    const want = candoIdsForLesson(lesson);
+    if (!conversation) return;
+    const want = candoIdsForConversation(conversation);
     if (!want.length) return;
     fetchCando()
       .then((d) => {
@@ -140,33 +140,33 @@ export function RoleplayExamScreen() {
         setCando(want.map((c) => byId.get(c)).filter((x): x is string => Boolean(x)));
       })
       .catch(() => { /* etiket bir süs; alınamazsa satır çizilmez */ });
-  }, [lesson]);
+  }, [conversation]);
 
   const score = useCallback(async (all: Turn[]) => {
-    if (scored.current || !lesson) return;
+    if (scored.current || !conversation) return;
     scored.current = true;
     setPhase("scoring");
     const said = all.filter((x) => x.role === "user").map((x) => x.content);
     try {
       const d = await api<{ result: Result; id?: number | null }>("/api/assess", {
         method: "POST",
-        timeoutMs: ASSESS_ROLEPLAY_TIMEOUT_MS,
+        timeoutMs: ASSESS_CHAT_TIMEOUT_MS,
         body: JSON.stringify({
           kind: "chat",
-          level: lesson.level,
+          level: conversation.level,
           /* ÜRETİMİN DİLİ — zorunlu. İstemci vermezse sunucu "de"ye düşüyor
              (`api/assess` `parseBody`), yani İngilizce kursta yapılan rol
              yapma sınavı ALMANCA rubriğiyle puanlanıyordu. Web aynı çağrıda
-             `targetLangOf(lesson.course)` gönderiyor; burada kursun hedef
+             `targetLangOf(conversation.course)` gönderiyor; burada kursun hedef
              dili süreç genelinde kurulu (`lib/courses`). */
           lang: currentTargetLang(),
           task: {
-            prompt: `${lesson.roleplay.scene} (Sınav: ${lesson.roleplay.partner} ile konuşma)`,
-            targets: lesson.patterns.map((p) => p.de),
+            prompt: `${conversation.chat.scene} (Sınav: ${conversation.chat.partner} ile konuşma)`,
+            targets: conversation.patterns.map((p) => p.de),
             constraints: [`${EXAM_TURNS} tur`, "yardım yok"],
           },
           answer: { text: said.join("\n"), transcript: said },
-          exerciseId: `${lesson.id}:exam`,
+          exerciseId: `${conversation.id}:exam`,
           /* `day` bir YAZMA anahtarı: değerlendirme satırı o güne yazılıyor ve
              günlük kota o günün satırları sayılarak bulunuyor. */
           day: todayStr(),
@@ -189,7 +189,7 @@ export function RoleplayExamScreen() {
     }
     track("nav", said.length, "conversation_scored:done");
     if (mounted.current) setPhase("result");
-  }, [lesson]);
+  }, [conversation]);
 
   /*
    * Süre: konuşma fazında saniyede bir; sıfırda konuşma biter ve puanlanır.
@@ -211,7 +211,7 @@ export function RoleplayExamScreen() {
    * ANINDA bitiyordu — sonuç ekranındaki "Tekrar dene" tam bu yüzden
    * bozuktu: dokunan kullanıcı sıfır turluk, anında bitmiş bir sınav
    * alıyordu. Hata dalı ve sonuç ekranı artık aynı sıfırlamayı kullanıyor
-   * (web `roleplay-exam` `restart` ile birebir).
+   * (web `conversation-scored` `restart` ile birebir).
    */
   const restart = useCallback(() => {
     scored.current = false;
@@ -237,10 +237,10 @@ export function RoleplayExamScreen() {
     if (phase === "talk" && left <= 0) void score(turns);
   }, [left, phase, score, turns]);
 
-  if (!lesson && !packReady) {
+  if (!conversation && !packReady) {
     return <FlowScreen top={<FlowTopBar back onClose={() => nav.goBack()} />}><ContentLoadingBody /></FlowScreen>;
   }
-  if (!lesson) {
+  if (!conversation) {
     return (
       /* DURUM ŞABLONU. Burada yalnız ortada tek satır metin vardı: ne maskot
          ne bir çıkış yolu; geri dönmenin tek yolu donanım tuşuydu. */
@@ -256,10 +256,10 @@ export function RoleplayExamScreen() {
 
   function start() {
     track("nav", 0, "conversation_scored:start");
-    const opening: Turn = { role: "assistant", content: lesson!.roleplay.opening };
+    const opening: Turn = { role: "assistant", content: conversation!.chat.opening };
     setTurns([opening]);
     setPhase("talk");
-    speakTarget(lesson!.roleplay.opening);
+    speakTarget(conversation!.chat.opening);
   }
 
   async function send(text: string) {
@@ -271,7 +271,7 @@ export function RoleplayExamScreen() {
     setTurns(next);
     const n = next.filter((x) => x.role === "user").length;
     try {
-      const raw = await sendRoleplay(lesson!.id, next as ChatMsg[], "exam");
+      const raw = await sendChat(conversation!.id, next as ChatMsg[], "exam");
       // Sınav isteminde işaret satırı olmamalı; olursa yine de ayıklanır.
       const body = parseReply(raw).body.trim() || raw.trim();
       const all: Turn[] = [...next, { role: "assistant", content: body }];
@@ -331,7 +331,7 @@ export function RoleplayExamScreen() {
           ? <FlowActions primary={{ label: tx("guest.create_account"), onPress: () => nav.navigate("Auth") }} tertiary={{ label: tx("common.discard"), onPress: () => nav.goBack() }} />
           : <FlowActions primary={{ label: tx("exam.start"), onPress: start }} tertiary={{ label: tx("common.discard"), onPress: () => nav.goBack() }} />}
       >
-        {/* 48 — web ile ayni boy (`lessons/roleplay-exam`) ve mobilin KENDI
+        {/* 48 — web ile ayni boy (`conversations/conversation-scored`) ve mobilin KENDI
             sinav girisiyle de ayni (`ExamScreen` 48). */}
         <CoachLine moment="exam_intro" />
         <CoverBody
@@ -339,9 +339,9 @@ export function RoleplayExamScreen() {
           tint={colors.primary}
           /* Dersin adı hedef dilde; üst satır büyük harf ve Türkçe yerelde
              "i" → "İ" oluyordu. JS `toUpperCase` yerelden bağımsız. */
-          eyebrow={`${lesson.title.toUpperCase()} · ${lesson.titleTr}`}
+          eyebrow={`${conversation.title.toUpperCase()} · ${conversation.titleTr}`}
           title={tx("scored.title")}
-          pitch={lesson.roleplay.scene}
+          pitch={conversation.chat.scene}
           rules={[
             { icon: ClockIcon, text: tx("scored.rule_time", { turns: EXAM_TURNS, minutes: EXAM_SECONDS / 60 }) },
             { icon: LockIcon, text: tx("scored.rule_partner") },
@@ -349,9 +349,9 @@ export function RoleplayExamScreen() {
           ]}
         >
           {guest ? <FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={tx("guest.ai_exam")} /> : null}
-          {lesson.patterns.length ? (
+          {conversation.patterns.length ? (
             <DetailCard title={tx("scored.patterns_title")}>
-              {lesson.patterns.map((p) => <DetailRow key={p.de} left={p.de} right={p.tr} />)}
+              {conversation.patterns.map((p) => <DetailRow key={p.de} left={p.de} right={p.tr} />)}
             </DetailCard>
           ) : null}
         </CoverBody>
@@ -375,7 +375,7 @@ export function RoleplayExamScreen() {
   }
 
   if (phase === "locked") {
-    const copy = lesson ? tieredCopy(premiumStatus?.unlock?.levels[lesson.level]?.conversation, "conv") : null;
+    const copy = conversation ? tieredCopy(premiumStatus?.unlock?.levels[conversation.level]?.conversation, "conv") : null;
     return (
       <FlowScreen
         center
@@ -438,12 +438,12 @@ export function RoleplayExamScreen() {
           eyebrow={tx("scored.title")}
           title={result ? tx(passed ? "exam.passed" : "exam.not_passed") : tx("scored.not_scored")}
           figure={result ? formatPercent(overall) : null}
-          sub={`${lesson.title} · ${tx("conversationp.n_turns", { n: userTurns })}`}
+          sub={`${conversation.title} · ${tx("conversationp.n_turns", { n: userTurns })}`}
           /* Puanlandıysa Erdi bandın ALTINDA konuşuyor (koç balonu). */
           pill={result ? { text: tx("scored.below_threshold", { n: EXAM_PASS_SCORE }), tone: passed ? "ok" : "bad" } : null}
           quiet={!passed}
         />
-        {result ? <CoachLine moment={passed ? "exam_pass" : "exam_fail"} vars={{ pct: overall, level: lesson.level }} /> : null}
+        {result ? <CoachLine moment={passed ? "exam_pass" : "exam_fail"} vars={{ pct: overall, level: conversation.level }} /> : null}
         {result ? (
           <StatRow items={[
             { value: String(userTurns), label: tx("scored.stat_turns") },
@@ -475,7 +475,7 @@ export function RoleplayExamScreen() {
              öğrenmiyordu. Kart hataların gerekçesini, düzeltilmiş cümleyi,
              övgüyü ve sıradaki ipucunu da yazıyor. */
           <DetailCard title={tx("scored.assessment_title")}>
-            <AssessmentCard answer={said.join("\n")} result={result} reportRef={assessmentRef(resultId, `${lesson.id}:exam`)} />
+            <AssessmentCard answer={said.join("\n")} result={result} reportRef={assessmentRef(resultId, `${conversation.id}:exam`)} />
           </DetailCard>
         ) : null}
 
@@ -527,7 +527,7 @@ export function RoleplayExamScreen() {
                 İlk balon (i = 0) dersin yazılı açılış cümlesi, model çıktısı
                 değil: orada yok. */}
             {turn.role === "assistant" && i > 0 ? (
-              <ReportLink kind="chat" refId={`${lesson.id}:exam:${i}`} content={turn.content} style={{ alignSelf: "flex-end", marginTop: spacing.xs }} />
+              <ReportLink kind="chat" refId={`${conversation.id}:exam:${i}`} content={turn.content} style={{ alignSelf: "flex-end", marginTop: spacing.xs }} />
             ) : null}
           </View>
         ))}
@@ -555,11 +555,11 @@ export function RoleplayExamScreen() {
           onChangeText={setDraft}
           editable={!busy}
           multiline
-          /* Enter = Gönder (ders ekranıyla aynı; bkz. `LessonScreen` `TypedRow`). */
+          /* Enter = Gönder (ders ekranıyla aynı; bkz. `ConversationScreen` `TypedRow`). */
           submitBehavior="submit"
           returnKeyType="send"
           onSubmitEditing={() => void send(draft)}
-          /* Hedef dilde CUMLE (bkz. `LessonScreen`). Bu alanda hicbiri
+          /* Hedef dilde CUMLE (bkz. `ConversationScreen`). Bu alanda hicbiri
              yoktu ve web tarafinda da yoktu; ikisi birlikte duzeltildi. */
           autoCapitalize="sentences"
           autoCorrect={false}

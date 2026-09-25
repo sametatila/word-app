@@ -1,7 +1,7 @@
 /**
  * İçeriği kullanıcının ANA DİLİNE çeviren mobil katman.
  *
- * Web'deki `src/lib/lessons/native-server.ts`in karşılığı ve aynı kuralları
+ * Web'deki `src/lib/conversations/native-server.ts`in karşılığı ve aynı kuralları
  * taşıyor; farkı, sunucu olmaması. Çözücünün kendisi ELLE YAZILMIYOR:
  * `mobile/src/lib/native.ts` kaynaktan dökülüyor
  * (`npm run dump:native`), sözlük de öyle.
@@ -41,13 +41,13 @@
  */
 import { currentLang, onLangChange } from "./i18n";
 import {
-  resolveLesson,
+  resolveConversation,
   resolveExercise,
   mockKey,
-  type Lesson,
+  type Conversation,
   type NativeDict,
 } from "./native";
-import { resolveEnLesson, type DeDict } from "./native-de";
+import { resolveEnConversation, type DeDict } from "./native-de";
 import { ensurePack, getContentItem, listContentItems } from "../content/store";
 
 /** Sözlük paketleri — anadile göre en fazla biri iniyor. */
@@ -169,19 +169,19 @@ export function clearNativeCache(): void {
  * verilirse hep-ya-hiç kuralı onu zaten reddeder — ama boşuna 200 adım
  * gezmenin anlamı yok.
  */
-export function nativeLesson<T extends { id: string; course?: string }>(lesson: T): T {
+export function nativeConversation<T extends { id: string; course?: string }>(conversation: T): T {
   const course = translatedCourse();
-  if (!course || (lesson.course ?? "de") !== course) return lesson;
+  if (!course || (conversation.course ?? "de") !== course) return conversation;
   if (course === "en") {
     /* AYRI ÇÖZÜCÜ: İngilizce kursun dersleri kendi kendine yeten JSON,
-       `resolveLesson`ın beklediği şablon yapısı yok. */
+       `resolveConversation`ın beklediği şablon yapısı yok. */
     const de = deDict();
-    if (!de) return lesson;
-    return once(`lesson:${lesson.id}`, () => resolveEnLesson(de, lesson as unknown as Lesson) as T | null, lesson);
+    if (!de) return conversation;
+    return once(`conversation:${conversation.id}`, () => resolveEnConversation(de, conversation as unknown as Conversation) as T | null, conversation);
   }
   const d = nativeDict();
-  if (!d) return lesson;
-  return once(`lesson:${lesson.id}`, () => resolveLesson(d, lesson as unknown as Lesson) as T | null, lesson);
+  if (!d) return conversation;
+  return once(`conversation:${conversation.id}`, () => resolveConversation(d, conversation as unknown as Conversation) as T | null, conversation);
 }
 
 export function nativeExercise<T extends { id: string; course?: string }>(ex: T): T {
@@ -224,7 +224,7 @@ export function nativeMockText(kind: string, tr: string): string {
  * için ikinci bir indeks üretmek, kullanılmayan 11.011 satırlık sözlüğe
  * 200 satır daha eklemek olurdu.
  */
-export function nativeLessonMeta(id: string): { title: string; summary: string } | null {
+export function nativeConversationMeta(id: string): { title: string; summary: string } | null {
   return activeDict()?.meta[id] ?? null;
 }
 
