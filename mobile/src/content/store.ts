@@ -6,7 +6,7 @@ import { API_BASE, fetchWithTimeout } from "../api/client";
  *
  * BU DOSYA 1 NUMARALI BUILD'DE OLMAK ZORUNDA. Sunucu ne yayınlarsa
  * yayınlasın, onu sormayı bilmeyen bir uygulamaya hiçbir şey ulaşmaz: ne yeni
- * ders, ne düzeltme, ne bozuk maddenin kapatılması. Kanca eksik çıkarsa o
+ * konuşma, ne düzeltme, ne bozuk maddenin kapatılması. Kanca eksik çıkarsa o
  * sürümdeki kullanıcılar için tek çare zorunlu güncelleme olur.
  *
  * ÜÇ İSTEK, ÜÇ AYRI ÖMÜR:
@@ -28,7 +28,7 @@ import { API_BASE, fetchWithTimeout } from "../api/client";
  *
  * ANAHTARLAR ÇIKIŞTA SİLİNMİYOR. `lib/accountScope` hesaba ait önekleri
  * süpürüyor; içerik hesaba ait değil, CİHAZA ait — aynı telefonda başka bir
- * hesap açıldığında aynı dersler geçerli. Süpürülseydi her hesap değişimi
+ * hesap açıldığında aynı konuşmalar geçerli. Süpürülseydi her hesap değişimi
  * megabaytlarca yeniden indirme demek olurdu. `content:` öneki bu yüzden o
  * listede yok.
  */
@@ -52,8 +52,8 @@ const bodyKey = (hash: string) => `content:body:${hash}`;
  * SIRA MADDESİ — `src/lib/content/ids` `ORDER_ITEM` ile AYNI değer.
  *
  * Paket bir eşleme ve eşlemenin sırası taşınmıyor; sırası anlamlı içerikler
- * (dersler, beceriler) kimlik listesini ayrı bir maddede yayınlıyor. İçerik
- * değil, bu yüzden `listContentItems` onu süzüyor — ekranlar onu bir ders
+ * (konuşmalar, beceriler) kimlik listesini ayrı bir maddede yayınlıyor. İçerik
+ * değil, bu yüzden `listContentItems` onu süzüyor — ekranlar onu bir konuşma
  * sanmasın.
  */
 const ORDER_ITEM = "index";
@@ -254,7 +254,7 @@ export async function ensurePack(pack: string): Promise<boolean> {
   } catch {
     /* İndirme yarıda kaldı: dizin GÜNCELLENMİYOR, yani eldeki sürüm geçerli
        kalıyor ve bir sonraki denemede aynı delta yeniden isteniyor. Yarım bir
-       paketi güncel saymak, eksik içerikle ders açmak olurdu. */
+       paketi güncel saymak, eksik içerikle konuşma açmak olurdu. */
     return Object.keys(local.items).length > 0;
   }
 }

@@ -8,7 +8,7 @@ import { useWindowDimensions } from "react-native";
  *
  * Eskiden İKİ kademe vardı: metin ekranları 640/720'lik dar sütunda, sekme
  * kökleri ve ızgaralar "ekran eksi 96" kadar geniş kapta. Sonuç iPad'de
- * (2026-09-23, Samet): menüden bir derse, tura, paywall'a girince içerik
+ * (2026-09-23, Samet): menüden bir konuşmaya, tura, paywall'a girince içerik
  * kenarı yatay 13"te 64'ten 344'e zıplıyordu; her ekran başka bir standart
  * gibi görünüyordu. Şimdi kural tek ve her ekran aynı kenarları görüyor:
  *

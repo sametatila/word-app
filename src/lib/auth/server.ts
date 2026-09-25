@@ -555,7 +555,7 @@ export const auth = betterAuth({
      * App Store 5.1.1(v): hesaba bağlı olmayan içerik girişsiz açılmalı).
      *
      * `POST /sign-in/anonymous` e-postasız, adsız bir kullanıcı ve oturum
-     * açıyor; öğrenme uçları (kelime turları, dersler, beceriler, Patika,
+     * açıyor; öğrenme uçları (kelime turları, konuşmalar, beceriler, Patika,
      * sınavlar) bu oturumla bugünkü gibi çalışıyor. Hesap isteyen dört alan
      * misafire kapalı: sosyal, yapay zekâ, satın alma ve bildirim
      * (bkz. lib/auth/guest `requireAccount`).

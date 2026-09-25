@@ -2,11 +2,11 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { flushPendingConversations, queueConversationResult, type PendingConversation } from "../src/game/pathProgress";
 
 /**
- * ÇEVRİMDIŞI BİTİRİLEN DERSİN KUYRUĞU.
+ * ÇEVRİMDIŞI BİTİRİLEN KONUŞMANIN KUYRUĞU.
  *
- * NEDEN TEST: cevap kuyruğuyla aynı sebep - hata SESSİZ. Ders bitmiş
+ * NEDEN TEST: cevap kuyruğuyla aynı sebep - hata SESSİZ. Konuşma bitmiş
  * görünüyor (yerel işaret), sunucu onu hiç öğrenmiyor. Üç kural sınanıyor:
- * kayıt kendi gününü taşıyor, aynı ders iki kez bitirilirse tek kayıt kalıyor,
+ * kayıt kendi gününü taşıyor, aynı konuşma iki kez bitirilirse tek kayıt kalıyor,
  * gönderilemeyen kayıt kuyrukta duruyor.
  */
 const KEY = "lernomi-conversations-pending";
@@ -22,7 +22,7 @@ test("kayıt kendi günüyle saklanıyor", async () => {
   expect(JSON.parse((await AsyncStorage.getItem(KEY)) ?? "[]")).toEqual([item]);
 });
 
-test("aynı ders iki kez bitirilirse son kayıt kalıyor", async () => {
+test("aynı konuşma iki kez bitirilirse son kayıt kalıyor", async () => {
   await queueConversationResult(item);
   await queueConversationResult({ ...item, correct: 9 });
   const list = JSON.parse((await AsyncStorage.getItem(KEY)) ?? "[]") as PendingConversation[];

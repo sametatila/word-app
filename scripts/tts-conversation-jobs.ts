@@ -1,5 +1,5 @@
 /**
- * Ders anlatımı seslendirme İŞ LİSTESİ — kendi karakter sesleri için (anadili Türkçe kullanıcının dersleri).
+ * Konuşma anlatımı seslendirme İŞ LİSTESİ — kendi karakter sesleri için (anadili Türkçe kullanıcının konuşmaları).
  *   npx tsx --tsconfig scripts/tsconfig.e2e.json scripts/tts-conversation-jobs.ts <çıktı.jsonl>
  *
  * conversation-player her adımda bir segment dizisini (`say`, ipucu `hint`, düzeltme `why` …) tek parti olarak
@@ -8,7 +8,7 @@
  * karakterlik parçalara bölüyor; her parça ayrı bir /api/tts isteği. Ses (`voiceForSegment`): Türkçe içerik →
  * TURKISH_VOICE (Emel), hedef dil → conversationVoice (Katja/Jenny) — hepsi Defne (tr/de/en). Adımın başına eklenen
  * anlatım övgüleri (`narration` bayraklı, birleşmez) ayrı istek; onlar da listede.
- * Rol yapma (`chat`) Edge'de kalıyor (envanterle aynı karar); Zürih (gsw-zh) dersleri kapsam dışı.
+ * Sohbet (`chat`) Edge'de kalıyor (envanterle aynı karar); Zürih (gsw-zh) konuşmaları kapsam dışı.
  */
 import { writeFileSync } from "node:fs";
 import { CONVERSATIONS } from "../src/lib/conversations/source";
@@ -40,7 +40,7 @@ const by: Record<string, { jobs: number; chars: number }> = {};
 let voiced = 0;
 function emit(id: string, segs: Seg[]) {
   merge(segs).forEach((s, k) => {
-    if (s.voice) { voiced++; return; }            // kendi sesini söyleyen parça (kadro) — derste beklenmiyor, sayılır
+    if (s.voice) { voiced++; return; }            // kendi sesini söyleyen parça (kadro) — konuşmada beklenmiyor, sayılır
     const clean = cleanForSpeech(s.text);
     const key = `${s.lang}|${clean}`;
     if (!clean || seen.has(key)) return;
@@ -51,7 +51,7 @@ function emit(id: string, segs: Seg[]) {
   });
 }
 
-/** Ders ağacında her segment DİZİSİ bir çalma birimi. */
+/** Konuşma ağacında her segment DİZİSİ bir çalma birimi. */
 function walk(v: unknown, id: string) {
   if (Array.isArray(v)) {
     if (v.length && v.every(isSeg)) { emit(id, v as Seg[]); return; }
@@ -73,4 +73,4 @@ for (const key of ["conversation.praise_1", "conversation.praise_2", "conversati
   emit(`nar.${key}`, [{ lang: "tr", text: translate("tr", key), narration: true }]);
 
 writeFileSync(out, lines.join("\n") + "\n");
-console.log(`ders: ${lines.length} iş, kadro sesli (atlanan) ${voiced}`, by);
+console.log(`konuşma: ${lines.length} iş, kadro sesli (atlanan) ${voiced}`, by);

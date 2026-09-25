@@ -13,10 +13,10 @@ import { nativeOf } from "@/lib/courses";
 import { hasGloss } from "@/lib/option-label";
 
 /**
- * Modül sınavı — ders yolunun patron turu.
+ * Modül sınavı — konuşma yolunun patron turu.
  *
- * Yol on derslik modüllere bölünmüştü ama modülün bitişi yalnızca bir
- * pankarttaki kupaydı: on ders bitince hiçbir şey OLMUYORDU. Sınav o boşluğu
+ * Yol on konuşmalık modüllere bölünmüştü ama modülün bitişi yalnızca bir
+ * pankarttaki kupaydı: on konuşma bitince hiçbir şey OLMUYORDU. Sınav o boşluğu
  * dolduruyor ve iki şeyi birden yapıyor — modülün kelimelerini bir arada,
  * baskı altında kullandırıyor; ve yola bir varış noktası koyuyor.
  *
@@ -25,8 +25,8 @@ import { hasGloss } from "@/lib/option-label";
  * bitmeden bitirmek zorundasın. Patron turu tam olarak budur: yenilebilir bir
  * şey.
  *
- * Kelimeler ders içeriğinden geliyor ama sorular kelime tablosundan
- * kuruluyor: ders `vocab`'ı yalnızca "das Frühstück / kahvaltı" ikilisi, oysa
+ * Kelimeler konuşma içeriğinden geliyor ama sorular kelime tablosundan
+ * kuruluyor: konuşma `vocab`'ı yalnızca "das Frühstück / kahvaltı" ikilisi, oysa
  * oyunların artikele, çoğula ve örnek cümleye ihtiyacı var. İkisi başlıktan
  * eşleştiriliyor; eşleşme oranı modül başına %64–98 (ortalama ~%86), yani her
  * modülde 32–49 kelime kalıyor — on beş tur için fazlasıyla yeterli.
@@ -50,7 +50,7 @@ export type BossMeta = {
   level: string;
   moduleIndex: number;
   title: string;
-  /** Modülün on dersinden kaçı bitmiş — sınav bunu bekliyor ama zorlamıyor. */
+  /** Modülün on konuşmasından kaçı bitmiş — sınav bunu bekliyor ama zorlamıyor. */
   conversationsDone: number;
   conversationsTotal: number;
   /** Daha önce geçildiyse kalan en iyi süre. */
@@ -60,7 +60,7 @@ export type BossMeta = {
 export type BossPayload = { meta: BossMeta; rounds: Round[]; pool: number };
 
 /**
- * Modülün derslerindeki kelimeler — tekrarsız, ders sırasıyla, artikelsiz.
+ * Modülün konuşmalarındaki kelimeler — tekrarsız, konuşma sırasıyla, artikelsiz.
  *
  * Türetme `module-content.ts`'te: aynı liste modül sınavının kelime bölümünü
  * de besliyor ve iki yerde ayrı ayrı hesaplanması, birinde artikel kırpma
@@ -95,7 +95,7 @@ export async function buildModuleBoss(
     )
     .limit(1);
 
-  // Modülün kaç dersi bitmiş. Sınav bunu ZORLAMIYOR — yol haritasındaki
+  // Modülün kaç konuşmayı bitmiş. Sınav bunu ZORLAMIYOR — yol haritasındaki
   // kilitler de engellemiyor, görsel bir sıralama iması taşıyor. Sayı yalnızca
   // hazır olmadan girene ne beklediğini söylemek için.
   const board = await conversationBoard(userId, course);
@@ -115,7 +115,7 @@ export async function buildModuleBoss(
   const heads = await moduleVocab(course, level, moduleIndex);
   if (!heads.length) return { meta, rounds: [], pool: 0 };
 
-  // Modülün kelimeleri. Eşleşmeyen madde sessizce düşüyor: ders içeriği ile
+  // Modülün kelimeleri. Eşleşmeyen madde sessizce düşüyor: konuşma içeriği ile
   // kelime listesi ayrı kaynaklar ve birebir örtüşmeleri beklenmiyor.
   /* ANADİLDE KARŞILIĞI OLAN kelimeler — soru olarak da, şık olarak da. Kelime
      turlarının kuralının aynısı (`hasGloss`): süzülmeseydi karşılığı olmayan

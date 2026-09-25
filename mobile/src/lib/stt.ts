@@ -48,7 +48,7 @@ const emitter = Native ? new NativeEventEmitter(NativeModules.LernomiSpeech) : n
 try { Native?.setApiBase?.(API_BASE); } catch { /* yut */ }
 
 /**
- * Mikrofon izni — konuşan her ekranın kapısı (ders, konuşma alıştırması, deneme
+ * Mikrofon izni — konuşan her ekranın kapısı (konuşma, konuşma alıştırması, deneme
  * sınavı, yürüyüş modu). Reddedilirse çağıran "izin yok" ekranını çizer.
  *
  * iOS'ta izni native taraf soruyor (`LernomiSpeech.ensureMicPermission`, Info.plist

@@ -8,7 +8,7 @@ export const generateMetadata = titleMeta("exam.module_exam_title");
 export const dynamic = "force-dynamic";
 const LEVELS = ["A1", "A2", "B1", "B2", "C1"];
 
-/** Modül sınavı v2 (WP-41): 20 dk, beş bölüm; ön koşul modül derslerinin %80'i. */
+/** Modül sınavı v2 (WP-41): 20 dk, beş bölüm; ön koşul modül konuşmalarının %80'i. */
 export default async function ModuleExamPage({ params }: { params: Promise<{ level: string; module: string }> }) {
   const userId = await getUserId();
   if (!userId) redirect("/login");

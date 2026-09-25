@@ -52,7 +52,7 @@ export async function requireAccount(): Promise<string | NextResponse> {
  * Hak yalnız YAZMA ve KONUŞMA değerlendirmesinde (beceri alıştırması,
  * monolog): kelime turundaki kısa cümle hakkı bir çırpıda yakardı. Rıza
  * kapısı hesaptakiyle aynı; misafirin rızası da deftere yazılıyor ve hesaba
- * birleşiyor. Sohbet (rol yapma), ses tanıma ve telaffuz kapalı kalıyor.
+ * birleşiyor. Sohbet (sohbet), ses tanıma ve telaffuz kapalı kalıyor.
  * Hak işin başında alınıyor, sağlayıcı yanıt veremezse geri veriliyor.
  */
 export const GUEST_AI_TRIALS = 1;

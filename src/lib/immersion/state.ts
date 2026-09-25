@@ -44,15 +44,15 @@ export type UnitState = {
   /** Tüm oynanabilir item'lar bitti mi. */
   /** Kullanıcıya gösterilen "bitti" — ünitedeki TÜM sayılabilir item'lar bitti. */
   complete: boolean;
-  /** Sonraki üniteyi açan koşul — yalnız DERSLER (bkz. buildTrackState). */
+  /** Sonraki üniteyi açan koşul — yalnız KONUŞMALAR (bkz. buildTrackState). */
   unlocksNext: boolean;
-  /** Biten oynanabilir item sayısı (dersler + zenginleştirme, gösterim için). */
+  /** Biten oynanabilir item sayısı (konuşmalar + zenginleştirme, gösterim için). */
   done: number;
   /** Toplam oynanabilir item sayısı (gösterim için). */
   total: number;
-  /** Biten ders item'ı — GATING ölçütü (iskelet). */
+  /** Biten konuşma item'ı — GATING ölçütü (iskelet). */
   conversationsDone: number;
-  /** Toplam ders item'ı (iskelet). */
+  /** Toplam konuşma item'ı (iskelet). */
   conversationsTotal: number;
   items: ItemState[];
 };
@@ -78,7 +78,7 @@ export type Completion = {
   conversationAttempted?: (ref: string) => boolean;
   skillAttempted?: (ref: string) => boolean;
   /**
-   * Pratik adımlar (dil bilgisi, tekrar, kontrol noktası) — ÖĞE KİMLİĞİYLE,
+   * Pratik adımlar (dil bilgisi, tekrar, ünite quizi) — ÖĞE KİMLİĞİYLE,
    * ref ile değil: içerikleri türetildiği için ref ünite kimliği ve üç adımda
    * aynı. Kayıt `user_path_items`ta (bkz. `practice.ts`).
    *
@@ -89,7 +89,7 @@ export type Completion = {
   practiceAttempted?: (itemId: string) => boolean;
 };
 
-/** Pratik adım: içeriği ünitenin derslerinden türetilen, kaydı öğe kimliğiyle tutulan. */
+/** Pratik adım: içeriği ünitenin konuşmalarından türetilen, kaydı öğe kimliğiyle tutulan. */
 export function isPracticeKind(kind: string): boolean {
   return kind === "grammar" || kind === "quiz" || kind === "unitQuiz";
 }
@@ -139,13 +139,13 @@ export function buildTrackState(track: ImmersionTrack, c: Completion): TrackStat
       /*
         PRATİK ÖĞELER SIRAYI HARCAMAZ — yer tutucularla aynı gerekçe.
 
-        Gramer/quiz/kontrol noktası ilerleme kaydı TUTMUYOR (itemDone ve
+        Gramer/quiz/ünite quizi ilerleme kaydı TUTMUYOR (itemDone ve
         itemAttempted onlara daima false döndürür; bkz. yukarısı). Pencerenin
         "sıradaki" yuvasını almalarına izin verilince pencere orada park
-        ediyordu: quiz açılıyor, arkasındaki kontrol noktası sonsuza kadar
+        ediyordu: quiz açılıyor, arkasındaki ünite quizi sonsuza kadar
         kapalı kalıyordu — çünkü quiz'in denenmiş sayılmasının bir yolu yok.
-        Ölçüldü: ünitenin tüm dersi ve becerisi bitmiş kullanıcıda bile
-        kontrol noktası HİÇBİR ünitede açılmıyordu (gramer yazılmış ünitede
+        Ölçüldü: ünitenin tüm konuşmayı ve becerisi bitmiş kullanıcıda bile
+        ünite quizi HİÇBİR ünitede açılmıyordu (gramer yazılmış ünitede
         quiz de açılmıyordu).
 
         Doğrusu: bunlar kapı değil pratik. Ünitedeki bütün kayıt tutan adımlar
@@ -158,7 +158,7 @@ export function buildTrackState(track: ImmersionTrack, c: Completion): TrackStat
       if (!siradakiVerildi) { s.open = true; siradakiVerildi = true; }
     }
     const playable = items.filter((i) => i.playable);
-    // total/done = TAMAMLANABİLİR item'lar (ders + beceri). quiz/unitQuiz
+    // total/done = TAMAMLANABİLİR item'lar (konuşma + beceri). quiz/unitQuiz
     // ünite brief'inden türetilen PRATİK: oynanabilir ama done-takibi yok (v1),
     // sayıma girmez — yoksa asla-biten-olmayan bir item done===total'ı bozardı.
     const completable = playable.filter((i) => kayitTutarTur(i.item.kind));
@@ -167,22 +167,22 @@ export function buildTrackState(track: ImmersionTrack, c: Completion): TrackStat
     const conversations = completable.filter((i) => i.item.kind === "conversation");
     const conversationsTotal = conversations.length;
     const conversationsDone = conversations.filter((i) => i.done).length;
-    // GATING İSKELETE (DERSLERE) BAĞLI — sahibin "conversation = iskelet" kararı.
+    // GATING İSKELETE (KONUŞMALARA) BAĞLI — sahibin "conversation = iskelet" kararı.
     // Beceri/gramer/quiz item'ları OPSİYONEL zenginleştirme: ünite açılışını
     // bloklamaz. Gerekçe: bu içerik seyrek ve temaya göre yeniden kuruluyor
     // (bkz. plan §İçerik stratejisi); onları kapı yapmak, tematik olarak
     // rastgele/eksik içeriği zorunlu kılardı. Temalı içerik oturunca kural
-    // "tüm item'lar" haline sıkılaştırılabilir. Dersi olmayan ünite (de'de
+    // "tüm item'lar" haline sıkılaştırılabilir. Konuşmayı olmayan ünite (de'de
     // olmaz) tüm-oynanabilir ölçütüne düşer — boş ünite sonrasını kilitlemesin.
     /*
       İKİ AYRI SORU, İKİ AYRI CEVAP.
 
-      "Sonraki ünite açılsın mı?" — DERSLERE bakar (yukarıdaki gerekçe: beceri
+      "Sonraki ünite açılsın mı?" — KONUŞMALARA bakar (yukarıdaki gerekçe: beceri
       içeriği seyrek ve temaya göre yeniden kuruluyor, onu kapı yapmak eksik
       içeriği zorunlu kılardı).
 
       "Bu ünite bitti mi?" — HEPSİNE bakar. İkisi tek bayrakla anlatılıyordu ve
-      kullanıcı dört dersi bitirince ünite, okuma/dinleme/yazma yuvaları
+      kullanıcı dört konuşmayı bitirince ünite, okuma/dinleme/yazma yuvaları
       dururken "tamamlandı" görünüyordu. Kendi hesabında görüldü: 4 item bitmiş,
       ünite bitmiş sayılıyordu.
     */

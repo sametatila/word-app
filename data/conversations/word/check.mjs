@@ -6,7 +6,7 @@
  *
  * - **Çerçevede yer tutucu korunur.** `{}` kelimenin karşılığının gireceği
  *   yer; düşerse şablon çalışır ama cümle kelimeyi hiç söylemez ve bu
- *   ekranda görünmez — ders sessizce boşalır.
+ *   ekranda görünmez — konuşma sessizce boşalır.
  * - **Sekiz sıra sözcüğü sekiz ayrı karşılık ister.** İkisi aynı olursa
  *   öğrenci kaçıncı kelimede olduğunu duymaz; kaynak sırayı bilerek
  *   söylüyor.
@@ -58,7 +58,7 @@ if (existsSync(`${DIR}out`))
 
 /*
   Sekiz sıra sözcüğü ayrı ayrı duyulmalı. Aynı karşılığa düşen ikisi
-  ekranda görünmez: ders akar ama "kaçıncı kelime" bilgisi silinir.
+  ekranda görünmez: konuşma akar ama "kaçıncı kelime" bilgisi silinir.
 */
 const ord = [...written].filter(([tr]) => src.get(tr)?.kind === "ordinal");
 const byEn = new Map();

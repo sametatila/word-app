@@ -9,7 +9,7 @@
  *
  * Bu sınıf kusur tek tek çıkmaya devam etti (2026-09-11/12): yürüyüşün
  * "konuşma yine sayılır" güvencesi, monologun hedef çipleri, yazma kartının
- * kalıp karşılıkları, ders özetinin kalıp listesi, devre dışı "arkadaş ekle"
+ * kalıp karşılıkları, konuşma özetinin kalıp listesi, devre dışı "arkadaş ekle"
  * düğmesinin sebebi. Hepsi aynı biçimde bulundu, yani mutlak bir ölçütle
  * taranmalı.
  *

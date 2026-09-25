@@ -5,18 +5,18 @@ import { targetLangOf, type TargetLang } from "@/lib/courses";
 import type { Conversation } from "./types";
 
 /**
- * Çevrimdışı rol yapma (plan WP-04).
+ * Çevrimdışı sohbet (plan WP-04).
  *
- * Ders geçme koşulu `chatDone && oran ≥ 0.7` (progress.ts). Konuşma
- * bölümü yalnız modelle çalışsaydı sağlayıcı kapalıyken hiçbir ders
+ * Konuşma geçme koşulu `chatDone && oran ≥ 0.7` (progress.ts). Konuşma
+ * bölümü yalnız modelle çalışsaydı sağlayıcı kapalıyken hiçbir konuşma
  * geçilemezdi — ve sağlayıcılar ücretsiz katmanda, yani kapanmaları olağan.
  * Burada aynı sahne modelsiz oynanıyor:
  *
- *   1. Dersin `chat.script`i varsa: beceri diyaloglarının motoru
+ *   1. Konuşmanın `chat.script`i varsa: beceri diyaloglarının motoru
  *      (`lib/dialogue.ts` niyet eşleştirme) — kapalı temalı, dallanan,
  *      3–5 turluk senaryo. Yazılmamış bir cevap "anlaşılmadı" olur ve örnek
  *      gösterilir; bu, motorun bilinen sınırı ve dürüstçe ekranda söyleniyor.
- *   2. Senaryo yoksa: "hedef kalıpları kullan" görevi — dersin kalıpları
+ *   2. Senaryo yoksa: "hedef kalıpları kullan" görevi — konuşmanın kalıpları
  *      (`conversation.patterns`) sırayla istenir, söylenende kalıbın kökü aranır.
  *
  * Çıktı, model cevabıyla aynı biçimde (`chat-format.ts` işaretleri): gövde +
@@ -55,7 +55,7 @@ export type OfflineReply = {
  * METİN DEĞİL. Bu üç yönlendirme burada Türkçe SABİT yazılıydı ("Kalıbı
  * kullan: …", "Anlaşılmadı — ör. …", "Sıradaki kalıp: …") ve İngilizce ya da
  * Almanca arayüzde de Türkçe görünüyordu. Ham metin tarayıcısı da göremiyordu:
- * `lib/conversations` dizini "ders içeriği" diye atlanıyor, oysa bu dosya MANTIK.
+ * `lib/conversations` dizini "konuşma içeriği" diye atlanıyor, oysa bu dosya MANTIK.
  * Çeviri gösterildiği yerde yapılıyor (`conversation-player`), koç cümlelerinde ve
  * fark vurgusunda olduğu gibi.
  */
@@ -95,14 +95,14 @@ function turnById(conversation: Conversation, id: string | null): DialogueTurn |
   return conversation.chat.script?.find((t) => t.id === id);
 }
 
-/** Açılış: senaryonun ilk turu (açılış repliğiyle aynı) ya da dersin açılışı. */
+/** Açılış: senaryonun ilk turu (açılış repliğiyle aynı) ya da konuşmanın açılışı. */
 export function offlineStart(conversation: Conversation): { state: OfflineState; opening: string; hint: Hint | null } {
   const script = conversation.chat.script;
   if (script?.length) {
     return {
       state: { turnId: script[0].id, path: [], usedPatterns: [], userTurns: 0, ended: false },
       opening: script[0].ask,
-      /* Senaryo dalinin `cue`su ICERIKTEN geliyor (ders verisinde yazili),
+      /* Senaryo dalinin `cue`su ICERIKTEN geliyor (konuşma verisinde yazili),
          anahtar degil: bos anahtar + `text` degiskeni ile oldugu gibi
          gosteriliyor. */
       hint: script[0].cue ? { key: "", vars: { text: script[0].cue } } : null,

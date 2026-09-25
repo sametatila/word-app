@@ -5,8 +5,8 @@ import { Pool } from "pg";
  * Öğrenme raporu — `docs/plan/kpi.md`'deki sekiz KPI, haftalık.
  *
  * `report-events.ts` ürünü ölçer (kim nereye tıkladı); bu betik öğrenmeyi:
- * kaç kişi çalışıyor, ürettiği cevap oranı, sınav ve beceri puanları, ders
- * geçme, rol yapma, hata tipleri, geri gelme. Sorgular kpi.md ile birebir
+ * kaç kişi çalışıyor, ürettiği cevap oranı, sınav ve beceri puanları, konuşma
+ * geçme, sohbet, hata tipleri, geri gelme. Sorgular kpi.md ile birebir
  * aynı — orada değişen burada da değişir.
  *
  * Boş tablo "kırık" değil "henüz yok" demek: üretim olayları Faz 1, sınavlar
@@ -112,7 +112,7 @@ async function main() {
   }
   if (!skills.length) console.log("  (henüz beceri olayı yok — WP-01 sonrası dolar)");
 
-  // 5 + 6. Ders geçme ve rol yapma
+  // 5 + 6. Konuşma geçme ve sohbet
   const conversations = (await q`
     select date_trunc('week', last_at)::date::text as week, count(*)::int as conversations,
            count(*) filter (where chat_done and correct::float / nullif(total,0) >= 0.7)::int as passed,
@@ -120,11 +120,11 @@ async function main() {
            count(distinct user_id)::int as people
     from user_conversations where last_at >= current_date - ${days}::int group by 1 order by 1
   `) as Row[];
-  head("5. Ders geçme oranı", "geçme = rol yapma bitti ve doğru ≥ %70 · hedef %60–80");
+  head("5. Konuşma geçme oranı", "geçme = sohbet bitti ve doğru ≥ %70 · hedef %60–80");
   for (const r of conversations)
-    console.log(`  ${r.week}  ${pad(r.conversations, 4)} ders  ${pad(r.passed, 4)} geçti  → ${pct(n(r.passed), n(r.conversations))} · ${r.people} kişi`);
+    console.log(`  ${r.week}  ${pad(r.conversations, 4)} konuşma  ${pad(r.passed, 4)} geçti  → ${pct(n(r.passed), n(r.conversations))} · ${r.people} kişi`);
   if (!conversations.length) console.log("  (kayıt yok)");
-  head("6. Rol yapma tamamlama", "hedef ≥ %85 (sağlayıcı kapalıyken de)");
+  head("6. Sohbet tamamlama", "hedef ≥ %85 (sağlayıcı kapalıyken de)");
   for (const r of conversations)
     console.log(`  ${r.week}  ${pad(r.chat_done, 4)} / ${pad(r.conversations, 4)}  → ${pct(n(r.chat_done), n(r.conversations))}`);
   const rp = (await q`
@@ -132,7 +132,7 @@ async function main() {
     from events where name = 'production_attempt' and kind = 'chat' and day >= current_date - ${days}::int
     group by 1 order by 1
   `) as Row[];
-  for (const r of rp) console.log(`    ${r.week}  rol yapma puanı ort ${r.avg_score} (${r.n} konuşma)`);
+  for (const r of rp) console.log(`    ${r.week}  sohbet puanı ort ${r.avg_score} (${r.n} konuşma)`);
 
   // 7. Hata tipleri
   const errors = (await q`
@@ -184,7 +184,7 @@ async function main() {
   if (!retention.length) console.log("  (kayıt yok)");
 
   // ── WP-80: öğrenme takibi ────────────────────────────────────────
-  // 9. Ders adımları: nasıl geçiliyor
+  // 9. Konuşma adımları: nasıl geçiliyor
   const steps = (await q`
     select split_part(kind, ':', 1) as step, split_part(kind, ':', 2) as via,
            count(*)::int as n,
@@ -193,20 +193,20 @@ async function main() {
            count(*) filter (where value = 0)::int as failed
     from events where name = 'conversation_step' and day >= current_date - ${days}::int group by 1, 2 order by 1, 2
   `) as Row[];
-  head("9. Ders adımları", "adım türü · yol (mikrofon / yazı / atla) · ilk denemede / sonraki / geçilemedi");
+  head("9. Konuşma adımları", "adım türü · yol (mikrofon / yazı / atla) · ilk denemede / sonraki / geçilemedi");
   for (const r of steps)
     console.log(`  ${String(r.step).padEnd(10)} ${String(r.via).padEnd(6)} ${pad(r.n, 5)}  ilk ${pad(r.first_try, 4)}  sonra ${pad(r.later, 4)}  geçemedi ${pad(r.failed, 4)}  → ilk denemede ${pct(n(r.first_try), n(r.n))}`);
-  if (!steps.length) console.log("  (henüz ders adımı olayı yok — WP-80 sonrası dolar)");
+  if (!steps.length) console.log("  (henüz konuşma adımı olayı yok — WP-80 sonrası dolar)");
   const lf = (await q`
     select date_trunc('week', day)::date::text as week, count(*)::int as n, round(avg(value))::int as avg_pct,
            count(*) filter (where kind is not null)::int as with_id, count(distinct user_id)::int as people
     from events where name = 'conversation_finish' and day >= current_date - ${days}::int group by 1 order by 1
   `) as Row[];
-  for (const r of lf) console.log(`    ${r.week}  ${pad(r.n, 4)} ders bitişi · ort doğru %${r.avg_pct} · ${r.people} kişi`);
+  for (const r of lf) console.log(`    ${r.week}  ${pad(r.n, 4)} konuşma bitişi · ort doğru %${r.avg_pct} · ${r.people} kişi`);
   const ls = (await q`
     select count(*) filter (where value = 1)::int as resumed, count(*)::int as n from events where name = 'conversation_start' and day >= current_date - ${days}::int
   `) as Row[];
-  if (n(ls[0]?.n)) console.log(`    ders başlangıcı ${ls[0].n} · kaldığı yerden ${ls[0].resumed} (${pct(n(ls[0].resumed), n(ls[0].n))})`);
+  if (n(ls[0]?.n)) console.log(`    konuşma başlangıcı ${ls[0].n} · kaldığı yerden ${ls[0].resumed} (${pct(n(ls[0].resumed), n(ls[0].n))})`);
 
   // 10. Söyleyiş: karar kimin
   const ss = (await q`

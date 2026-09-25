@@ -9,26 +9,26 @@ import type { Conversation, Segment } from "./types";
  *
  * Modül sınavı uzun süre modülle yalnızca KELİME düzeyinde ilgiliydi: sorular
  * `words` tablosundan kuruluyor, modül yalnızca hangi kelimelerin
- * seçileceğini söylüyordu. Oysa dersler kelime öğretmiyor — kalıp öğretiyor,
+ * seçileceğini söylüyordu. Oysa konuşmalar kelime öğretmiyor — kalıp öğretiyor,
  * cümle kurdurüyor, hüküm verdiriyor, konuşturuyor. Modülü bitiren birinin
  * "şunları öğrendim" diyebileceği şey `Ich hätte gern einen Kaffee.`
  * cümlesini kurabilmesi; "der Kaffee" kelimesini tanıması değil.
  *
- * Bu modül dersin ürettiği dört tür ham maddeyi bir araya getiriyor:
+ * Bu modül konuşmanın ürettiği dört tür ham maddeyi bir araya getiriyor:
  *
- *   - **üretim** (`produce`) — Türkçe cümle → Almanca kuruluş. Dersin
+ *   - **üretim** (`produce`) — Türkçe cümle → Almanca kuruluş. Konuşmanın
  *     puanlanan adımı zaten bu; sınavın omurgası da bu olmalı.
  *   - **hüküm** (`truefalse`) — bozuk bir Almanca cümle ve gerekçesi. Hazır
  *     yazılmış hata teşhisi: modülün tam olarak hangi yanlışı hedeflediğini
  *     içerikten daha iyi hiçbir kural söyleyemez.
  *   - **kalıp** (`patterns`) — modülün işlevsel dili ("bir şey isterken…").
- *   - **kelime** (`vocab`) — ders sırasıyla, artikelsiz köküyle.
+ *   - **kelime** (`vocab`) — konuşma sırasıyla, artikelsiz köküyle.
  *
  * Hepsi SAF: veritabanı yok, `server-only` yok. Doğrulayıcı betiği
  * (`scripts/check-exams.ts`) ve sınav kurucusu aynı işlevleri çağırıyor.
  */
 
-/** Ders başlığından artikeli ayırır: ders "der Name" yazar, tablo "Name" tutar. */
+/** Konuşma başlığından artikeli ayırır: konuşma "der Name" yazar, tablo "Name" tutar. */
 export function headword(de: string): string {
   return de.replace(/^(der|die|das)\s+/i, "").trim().toLocaleLowerCase("de-DE");
 }
@@ -36,8 +36,8 @@ export function headword(de: string): string {
 /**
  * Üretim adımının Türkçe yönergesinden sınav sorusu.
  *
- * Ders yönergesi sesli anlatım için yazılmış ve bir öğretmen ağzı taşıyor:
- * "Sıra sende: 'Bir kedim var.' nasıl dersin?". Sınavda öğretmen yok, kâğıt
+ * Konuşma yönergesi sesli anlatım için yazılmış ve bir öğretmen ağzı taşıyor:
+ * "Sıra sende: 'Bir kedim var.' nasıl konuşmanın?". Sınavda öğretmen yok, kâğıt
  * var; bu yüzden yalnızca **çerçeve** cümleleri atılıyor ve geriye çevrilecek
  * cümle ile onu tek anlama sabitleyen ek bağlam kalıyor ("Burada 'o' bir
  * erkek komşu." gibi). Ek bağlam bilerek KALIYOR: onsuz madde ihm/ihr
@@ -65,7 +65,7 @@ const LEAD_INS = [
   "Peki",
 ];
 
-/** Yönergenin sonuna eklenmiş ders ipuçları — sınavda kırpılır. */
+/** Yönergenin sonuna eklenmiş konuşma ipuçları — sınavda kırpılır. */
 const HINT_CLAUSES = ["Küçük bir ipucu:", "Küçük bir bilgi:", "İpucu:", "Unutma:", "Hatırlatma:"];
 
 const TAIL_OUTS = [
@@ -100,7 +100,7 @@ export function examStem(say: Segment[]): string {
       break;
     }
   }
-  // Ders ipuçları sınav kâğıdına geçmez: anlatımda "ilk yanlıştan sonra
+  // Konuşma ipuçları sınav kâğıdına geçmez: anlatımda "ilk yanlıştan sonra
   // söylenecek şey" olarak yazılmışlar, sınavda ise kural gereği ipucu yok.
   for (const hint of HINT_CLAUSES) {
     const at = text.indexOf(hint);
@@ -116,7 +116,7 @@ export function examStem(say: Segment[]): string {
  *
  * Anlatımda bazı üretim adımları cümleyi önce ÖRNEK olarak veriyor, sonra
  * söyletiyor ("Almancası: Ich hole dich um acht ab. Şimdi sen söyle: …").
- * Derste bu doğru bir basamak; sınavda cevabın soruda yazılı olması demek.
+ * Konuşmada bu doğru bir basamak; sınavda cevabın soruda yazılı olması demek.
  */
 export function selfAnswering(item: { prompt: string; de: string }): boolean {
   const prompt = foldSentence(item.prompt);
@@ -184,17 +184,17 @@ export type ModuleContent = {
   index: number;
   theme: string;
   conversations: Conversation[];
-  /** Modülün dilbilgisi odakları, ders sırasıyla ve tekrarsız. */
+  /** Modülün dilbilgisi odakları, konuşma sırasıyla ve tekrarsız. */
   focus: string[];
   produce: ProduceItem[];
   judge: JudgeItem[];
   patterns: PatternItem[];
   words: WordItem[];
-  /** Derslerin rol yapma sahneleri — durum maddelerinin kaynağı. */
+  /** Konuşmaların sohbet sahneleri — durum maddelerinin kaynağı. */
   scenes: { conversationId: string; scene: string; partner: string; opening: string; openingTr: string }[];
 };
 
-/** Modülün dersleri — katalog sırasıyla on ders. */
+/** Modülün konuşmaları — katalog sırasıyla on konuşma. */
 export async function moduleConversations(course: string, level: string, index: number): Promise<Conversation[]> {
   const inLevel = (await conversationsForLevel(course, level)).filter((l) => l.course === course);
   return inLevel.slice(index * MODULE_SIZE, (index + 1) * MODULE_SIZE);
@@ -202,11 +202,11 @@ export async function moduleConversations(course: string, level: string, index: 
 
 /** Kursun bir seviyesindeki modül sayısı. */
 /**
- * Kursun bir seviyesindeki modül sayısı — DERSLERDEN sayılıyor.
+ * Kursun bir seviyesindeki modül sayısı — KONUŞMALARDAN sayılıyor.
  *
  * Adı `conversations/modules` içindeki `moduleCount(course, level)` ile karışmasın
  * diye ayrı: o, plandaki modül sayısını veriyor (sabit), bu ise gerçekte
- * yazılmış ders sayısından türüyor. İkisi çoğu seviyede aynı, yarım kalmış
+ * yazılmış konuşma sayısından türüyor. İkisi çoğu seviyede aynı, yarım kalmış
  * bir seviyede değil.
  */
 export async function conversationModuleCount(course: string, level: string): Promise<number> {
@@ -236,12 +236,12 @@ export async function moduleContent(course: string, level: string, index: number
 }
 
 /**
- * MODÜL İÇERİĞİNİN SAF KURUCUSU — dersleri DIŞARIDAN alıyor.
+ * MODÜL İÇERİĞİNİN SAF KURUCUSU — konuşmaları DIŞARIDAN alıyor.
  *
- * İki çağıranı var ve ikisi dersleri ayrı yerden getiriyor: sunucu yayın
+ * İki çağıranı var ve ikisi konuşmaları ayrı yerden getiriyor: sunucu yayın
  * hattından (`moduleContent`), doğrulama betikleri kaynaktan
  * (`module-content-source`). Kurucunun kendisi ikisini de tanımıyor — böylece
- * 8,5 MB'lık ders kaynağı sunucu derlemesine girmiyor.
+ * 8,5 MB'lık konuşma kaynağı sunucu derlemesine girmiyor.
  */
 export function buildModuleContent(course: string, level: string, index: number, conversations: Conversation[]): ModuleContent {
   const focus: string[] = [];
@@ -328,12 +328,12 @@ export function buildModuleContent(course: string, level: string, index: number,
 }
 
 /**
- * Ders odağı → cheatsheet sayfası.
+ * Konuşma odağı → cheatsheet sayfası.
  *
  * Modülün dilbilgisi bölümü seviye havuzundan değil MODÜLÜN konularından
- * kuruluyor; bunun için derslerin `focusId` etiketleriyle tablo sayfalarını
+ * kuruluyor; bunun için konuşmaların `focusId` etiketleriyle tablo sayfalarını
  * birbirine bağlayan bir köprü gerekiyor. Köprü elle yazılı, çünkü iki taraf
- * ayrı sözlükler: ders "Akkusativ-einen" diyor, tablo "a1-artikel".
+ * ayrı sözlükler: konuşma "Akkusativ-einen" diyor, tablo "a1-artikel".
  *
  * Bir odak birden çok sayfaya bağlanabilir (Perfekt hem ortaç tablosunda hem
  * fiil listesinde geçer). Eşleşmeyen odak sessizce düşmez —

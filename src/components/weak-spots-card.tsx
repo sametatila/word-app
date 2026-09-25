@@ -11,7 +11,7 @@ import { formatPercent } from "@/lib/i18n/dict";
 
 /**
  * Profildeki "Zayıf noktalar" kartı (WP-51): son 30 günün ilk üç hata tipi, her
- * birine tek dokunuşla hedefli tur; karıştırılan kelime çiftleri; dersteki
+ * birine tek dokunuşla hedefli tur; karıştırılan kelime çiftleri; konuşmadaki
  * zayıf kurallar. Hata yoksa kart görünmez — boş bir "zayıf nokta yok" kartı
  * ne bilgi verir ne motive eder.
  */

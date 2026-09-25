@@ -8,25 +8,25 @@ import { hasAuthoredGrammar } from "./content";
 import type { ImmersionItem, ImmersionItemKind, ImmersionTrack, ImmersionUnit } from "./types";
 
 /**
- * Track builder — mevcut ders + beceri egzersizlerinden slot desenine göre
+ * Track builder — mevcut konuşma + beceri egzersizlerinden slot desenine göre
  * üniteler kurar (bkz. docs/plan/immersion.md). Saf ve DB'siz: ham malzemeyi
  * argüman alır, böylece test edilebilir. DB'ye dokunan ince sarmalayıcı
  * `loadTrack` altta.
  *
- * Ders = TEK iskelet: ünite dersleri 4'erli tüketir, temasını onlardan alır.
+ * Konuşma = TEK iskelet: ünite konuşmaları 4'erli tüketir, temasını onlardan alır.
  * Beceri egzersizleri havuzdan sırayla akar; biterse slot boş (`ref: null`)
  * kalır — içerik ünite temasına göre sonradan doldurulacak. grammar/quiz/
  * unitQuiz bugün daima yer tutucu (motorları var, içerikleri sonra).
  */
 
-/** Ünite başına ders sayısı (sahibin kararı: 4 conversation + 2 read + 2 listen + 2 write). */
+/** Ünite başına konuşma sayısı (sahibin kararı: 4 conversation + 2 read + 2 listen + 2 write). */
 export const UNIT_CONVERSATIONS = 4;
 /** Kaç ünitede bir grup/sayfa sınırı (gating + pagination). */
 export const GROUP_SIZE = 10;
 
 /**
  * Her ünitenin temel deseni: 4 conversation + 2 read + 2 listen + 2 write, serpiştirilmiş
- * (her dersi bir beceri izler).
+ * (her konuşmayı bir beceri izler).
  */
 const BASE_PATTERN: ImmersionItemKind[] = [
   "conversation", "read", "conversation", "listen", "conversation", "write", "conversation", "read", "listen", "write",
@@ -46,7 +46,7 @@ const SKILL_TITLE_KEY: Record<"read" | "listen" | "write", string> = {
   read: "unitkind.read", listen: "unitkind.listen", write: "unitkind.write",
 };
 
-/** Ünite teması — ilk dersinin düştüğü modülden; taşarsa seviye+sıra. */
+/** Ünite teması — ilk konuşmasının düştüğü modülden; taşarsa seviye+sıra. */
 function unitTheme(
   course: string,
   level: CefrLevel,
@@ -61,7 +61,7 @@ function unitTheme(
 export type BuildTrackInput = {
   course: string;
   level: CefrLevel;
-  /** Bu seviyenin dersleri, katalog sırasıyla. */
+  /** Bu seviyenin konuşmaları, katalog sırasıyla. */
   conversations: Conversation[];
   /** Bu seviyenin beceri egzersiz meta'ları (havuzdan sırayla tüketilir). */
   reading?: SkillMeta[];
@@ -72,8 +72,8 @@ export type BuildTrackInput = {
   /**
    * Yer tutucu başlıkların çevirisi.
    *
-   * Ders ve beceri başlıkları İÇERİK (kendi dilinde yazılmış, çevrilmez); ama
-   * "Dil bilgisi", "Tekrar", "Kontrol Noktası" ve içeriği henüz olmayan beceri
+   * Konuşma ve beceri başlıkları İÇERİK (kendi dilinde yazılmış, çevrilmez); ama
+   * "Dil bilgisi", "Tekrar", "Ünite quizi" ve içeriği henüz olmayan beceri
    * yuvasının adı ARAYÜZ metni. Bunlar sunucuda Türkçe sabit yazılıydı ve
    * /api/immersion onları olduğu gibi gönderiyordu: arayüzü İngilizce olan
    * kullanıcı Patika'da Türkçe satırlar görüyordu. Sözlük denetimi bunu
@@ -120,7 +120,7 @@ export function buildTrack(input: BuildTrackInput): ImmersionTrack {
       const id = `${unitId}-${kind}${n}`;
       if (kind === "conversation") {
         const conversation = unitConversations[conversationCursor++];
-        if (!conversation) continue; // kısmi son ünitede boş ders slotu üretilmez
+        if (!conversation) continue; // kısmi son ünitede boş konuşma slotu üretilmez
         items.push({ id, kind, ref: conversation.id, title: conversation.title, titleTr: conversation.titleTr, icon: conversation.icon });
       } else if (kind === "read" || kind === "listen" || kind === "write") {
         const meta = pools[kind][cursors[kind]++];
@@ -133,7 +133,7 @@ export function buildTrack(input: BuildTrackInput): ImmersionTrack {
       } else if (kind === "grammar") {
         // Gramer artık TÜRETİLEBİLİYOR (lib/immersion/grammar.ts): elle
         // yazılmış içerik öncelikli, yoksa ünitenin kendi hüküm ve üretim
-        // adımlarından kuruluyor. Ders taşıyan her ünitede oynanabilir; dersi
+        // adımlarından kuruluyor. Konuşma taşıyan her ünitede oynanabilir; konuşmayı
         // olmayan (eksik son ünite) yer tutucu kalır.
         const gRef = hasAuthoredGrammar(unitId) || unitConversations.length ? unitId : null;
         items.push({ id, kind, ref: gRef, title: t("unitkind.grammar"), titleTr: t("path.slot_grammar_sub") });
@@ -175,7 +175,7 @@ export async function loadTrack(
   const conversations = (await conversationsFor(course)).filter((l) => l.level === level);
   // Yalnız üniteye bağlı egzersizler: havuz liste sırasıyla tüketiliyor ve
   // Beceriler kütüphanesinin ünitesiz egzersizleri (2026-09) bu listeye
-  // girseydi, dersleri biten son ünitelerin boş yuvalarına sessizce akardı —
+  // girseydi, konuşmaları biten son ünitelerin boş yuvalarına sessizce akardı —
   // mobil `listPathSkillMeta` aynı süzgeci zaten uyguluyor.
   const metas = pathMetas(await listExerciseMeta(course));
   const byLevel = metas.filter((m) => m.level === level);

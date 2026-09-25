@@ -2,21 +2,21 @@ import type { Conversation } from "./types";
 import { MODULE_SIZE } from "./modules";
 
 /**
- * Ders dünyasının insanları.
+ * Konuşma dünyasının insanları.
  *
- * Rol yapma partnerleri isimsizdi: her derste "bir komşu", "bir iş arkadaşı",
- * "bir görevli". 202 dersin her birinde karşına yeni bir yabancı çıkıyordu.
+ * Sohbet partnerleri isimsizdi: her konuşmada "bir komşu", "bir iş arkadaşı",
+ * "bir görevli". 202 konuşmanın her birinde karşına yeni bir yabancı çıkıyordu.
  * Bunun bir öğretme maliyeti var — insan kelimeye değil, kişiye bağlanır ve
  * hatırlamak bağlanmayla kolaylaşır — ama asıl kaybedilen şey daha basitti:
  * bir dünya kurulabilecekken kurulmuyordu.
  *
  * Çözüm SUNUM katmanında, tıpkı modül pankartları gibi (`modules.ts`).
  * İçeriğin 202 dosyasına isim alanı eklemek, yalnızca iki ekranda kullanılan
- * bir alanı beş yüz kez tekrarlamak olurdu. Burada isimler dersin
+ * bir alanı beş yüz kez tekrarlamak olurdu. Burada isimler konuşmanın
  * kataloğdaki yerinden TÜRETİLİYOR:
  *
- *   - Her modül (10 ders) küçük bir kadroya sahip: aynı üç kişi o modül
- *     boyunca dönüyor. Yeme-içme modülünde tanıştığın garson, üç ders sonra
+ *   - Her modül (10 konuşma) küçük bir kadroya sahip: aynı üç kişi o modül
+ *     boyunca dönüyor. Yeme-içme modülünde tanıştığın garson, üç konuşma sonra
  *     yine karşına çıkıyor.
  *   - Kadrolar modülden modüle kayıyor, yani seviye ilerledikçe dünya
  *     genişliyor ama tamamen yenilenmiyor.
@@ -39,7 +39,7 @@ type Cast = { name: string; note: string; gender: "f" | "m" };
 /**
  * Almanca kursunun kadrosu.
  *
- * Adlar bilerek gündelik ve çağdaş: ders kitaplarının "Hans und Grete"
+ * Adlar bilerek gündelik ve çağdaş: konuşma kitaplarının "Hans und Grete"
  * dünyası, öğrencinin Almanya'da gerçekten duyacağı adlarla aynı değil.
  */
 const DE_CAST: Cast[] = [
@@ -135,10 +135,10 @@ function genderHint(partner: string): "f" | "m" | null {
 }
 
 /**
- * Dersin karakteri.
+ * Konuşmanın karakteri.
  *
- * @param conversation        ders
- * @param indexInLevel  dersin kendi seviyesindeki sırası (0 tabanlı) —
+ * @param conversation        konuşma
+ * @param indexInLevel  konuşmanın kendi seviyesindeki sırası (0 tabanlı) —
  *                      modül ve kadro buradan çıkıyor
  */
 export function characterFor(conversation: Conversation, indexInLevel: number): Character {

@@ -25,11 +25,11 @@ import { BoltIcon, FlameIcon, HandshakeIcon, LearnIcon, ListIcon, PathIcon, Skil
  *
  * Üç öğrenme yüzeyi:
  *   - Öğren — kelime turu (SRS/oyun çekirdeği).
- *   - Patika (immersion) — ders iskeleti + okuma/dinleme/yazma harmanı (üretim).
+ *   - Patika (immersion) — konuşma iskeleti + okuma/dinleme/yazma harmanı (üretim).
  *   - Beceriler — patikanın DIŞINDAKİ serbest çalışma yüzeyi: seviyedeki tüm
  *     okuma/dinleme/yazma/ses çalışmaları ve sınavlar (bkz. /skills).
  *
- * Eskiden üç sekmeydi (Öğren / Dersler / Beceriler); "Dersler" ve "Beceriler"
+ * Eskiden üç sekmeydi (Öğren / Konuşmalar / Beceriler); "Konuşmalar" ve "Beceriler"
  * aynı yolun iki parçasıydı ve Immersion ikisini tek moda (Patika) birleştirdi
  * (bkz. docs/plan/immersion.md). Yeni "Beceriler" o eskiyle aynı DEĞİL: Patika
  * sıradaki adımı seçer, burası kütüphane — patikanın yuvalarına sığmayan
@@ -156,7 +156,7 @@ export function AppShell({
   /**
    * ÇEVRİMDIŞI KUYRUKLAR UYGULAMA AÇILIŞINDA BOŞALIYOR.
    *
-   * İki kuyruk da (tur cevapları, ders sonuçları) Android'den alınmıştı ama
+   * İki kuyruk da (tur cevapları, konuşma sonuçları) Android'den alınmıştı ama
    * BOŞALTILDIKLARI YER alınmamıştı: web yalnız oynatıcı monte edilirken
    * boşaltıyordu (`session-player`, `conversation-player`). Ağı gidip gelen
    * kullanıcı turu bitirip profile ya da kelimelere geçtiğinde kayıtlar
@@ -190,7 +190,7 @@ export function AppShell({
    *
    * İki şey buna bakıyor. Biri `main`in alt dolgusu: çubuk artık içeriğin
    * üstünde YÜZDÜĞÜ için son kart onun altında kalmasın. Diğeri çubuğun
-   * üstünde duran serbest öğeler — mirketin açılır balonu, ders yolundaki
+   * üstünde duran serbest öğeler — mirketin açılır balonu, konuşma yolundaki
    * "kaldığın yer" düğmesi ve alt şerit. Sabit bir değer yazılamaz: yükseklik
    * cihazın güvenli alanına ve kullanıcının yazı tipi ölçeğine göre değişiyor.
    *
@@ -265,7 +265,7 @@ export function AppShell({
 
   // Hangi sekmeye gerçekten uğranıyor. Ölçüm bunu bir kez elle yapmıştı ve
   // sonuç görevler bölümünü doğurmuştu: yedi kullanıcıdan biri becerileri,
-  // üçü dersleri açmıştı. Artık her açılış kendiliğinden yazılıyor.
+  // üçü konuşmaları açmıştı. Artık her açılış kendiliğinden yazılıyor.
   useEffect(() => {
     const i = NAV.findIndex((n) => pathname.startsWith(n.href));
     // `kind` sekmenin ADI: sıra değişince (beş sekmeden üçe indi) eski
@@ -314,7 +314,7 @@ export function AppShell({
       <OnboardingAdopt />
       <Telemetry />
       {/* Rozet kutlaması kabukta: rozet altı ayrı yerde kazanılabiliyor
-          (kelime turu, ders, beceri, görev, günün turu, hayatta kalma) ve
+          (kelime turu, konuşma, beceri, görev, günün turu, hayatta kalma) ve
           altısına ayrı kutlama koymak altı yerde unutulacak bir şey demekti.
           Tetikleyici zaten var olan `lernomi:stats` olayı. */}
       <AchievementUnlock />

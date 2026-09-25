@@ -21,14 +21,14 @@ import { aiConsentGate, aiConsentStateFor } from "@/lib/ai-consent";
 export const dynamic = "force-dynamic";
 
 /**
- * Rol yapma geçmişinin taşınacak kadarı — eski turlar bağlamı şişirmeden
+ * Sohbet geçmişinin taşınacak kadarı — eski turlar bağlamı şişirmeden
  * düşer. Sınır `chat-const`ta ve tur sayısından TÜRETİLİYOR: sabit bir
  * sayı, uzun konuşmalarda açılışı kırpıp sunucudaki tur sayımını bozuyordu.
  */
 const MAX_CHARS = 2000;
 
 /**
- * Kullanıcı başına günlük rol yapma/diyalog turu (ai_usage'daki sağlayıcı
+ * Kullanıcı başına günlük sohbet/diyalog turu (ai_usage'daki sağlayıcı
  * denemeleri, düşenler dâhil). Sohbet koçu paylaşılan ücretsiz sağlayıcı
  * kotasına (Groq/Mistral/Cerebras) dayanıyor; tek hesabın döngüyle bu kotayı
  * tüketip herkese "sohbet kapalı" gösterebilmesi bir istismar yoluydu. Sınır
@@ -37,11 +37,11 @@ const MAX_CHARS = 2000;
 const CHAT_DAILY_LIMIT = DAILY_QUOTAS.chatTurns;
 
 /**
- * Rol yapma ucu — dersin konuşma bölümü.
+ * Sohbet ucu — konuşmanın konuşma bölümü.
  *
- * Eski `/api/chat`'in yerine geçiyor ve tek farkı belirleyici: istek bir ders
- * kimliği taşımak zorunda. Serbest sohbet yok, her konuşma bir dersin kuralına
- * bağlı. Bilinmeyen ders kimliği reddediliyor — konusuz konuşma bu uçtan
+ * Eski `/api/chat`'in yerine geçiyor ve tek farkı belirleyici: istek bir konuşma
+ * kimliği taşımak zorunda. Serbest sohbet yok, her konuşma bir konuşmanın kuralına
+ * bağlı. Bilinmeyen konuşma kimliği reddediliyor — konusuz konuşma bu uçtan
  * çıkamaz.
  */
 /**
@@ -103,11 +103,11 @@ export async function POST(req: Request) {
   // Mod (WP-22): puanlı kısımda yardım/düzeltme yok; kayıtta da işaretlenir.
   // Build 6 puanlı kısmı eski adla gönderiyor (geçici, lib/legacy-names).
   const mode: ChatMode = legacyChatMode(rawMode) === "scored" ? "scored" : "practice";
-  // Beceri diyaloğu (WP-23): ders yerine temalı egzersiz; senaryo istemcide yedek.
+  // Beceri diyaloğu (WP-23): konuşma yerine temalı egzersiz; senaryo istemcide yedek.
   const dialogue = typeof exerciseId === "string" ? await getExercise(exerciseId) : undefined;
   const dialogueRaw = dialogue && dialogue.skill === "speaking" && "dialogue" in dialogue && dialogue.theme ? dialogue : undefined;
   const conversationRaw = typeof conversationId === "string" ? await findConversation(conversationId) : undefined;
-  /* Kapatılmış dersin rol yapması da kapalı — içerik aynı yerden geliyor. */
+  /* Kapatılmış konuşmanın sohbeti da kapalı — içerik aynı yerden geliyor. */
   if (conversationRaw && (await conversationDisabled(conversationRaw.id))) {
     return NextResponse.json({ error: "unknown_conversation" }, { status: 400 });
   }
@@ -117,13 +117,13 @@ export async function POST(req: Request) {
    * ÖĞRENCİNİN DİLİ İKİ YERE BİRDEN GİRİYOR.
    *
    * İstem ana dili bildiriyor ve tıkanınca yardım o dilde geliyordu — ama
-   * "Türkçe" sabitti: anadili İngilizce ya da Almanca olan öğrenci dersin en
+   * "Türkçe" sabitti: anadili İngilizce ya da Almanca olan öğrenci konuşmanın en
    * çok konuşulan yerinde Türkçe açıklama alıyordu.
    *
    * İkincisi sahnenin kendisi: model kalıpları ve kelimeleri `p.tr`/`v.tr`
-   * ile görüyor, yani dersin ANA DİL yüzüyle. Ham ders verilseydi model
+   * ile görüyor, yani konuşmanın ANA DİL yüzüyle. Ham konuşma verilseydi model
    * Türkçe bir referans listesine bakıp öğrenciye başka bir dilde yardım
-   * etmeye çalışırdı. Çözülemeyen ders olduğu gibi geçiyor (hep-ya-hiç).
+   * etmeye çalışırdı. Çözülemeyen konuşma olduğu gibi geçiyor (hep-ya-hiç).
    */
   const native = await langOf(userId);
   const conversation = conversationRaw ? await localiseConversation(conversationRaw, native) : undefined;

@@ -5,9 +5,9 @@ import { userPathItems } from "@/lib/db/schema";
 import { PRACTICE_PASS_PCT } from "@/lib/score-bands";
 
 /**
- * Patika'nın pratik adımları (dil bilgisi, tekrar, kontrol noktası) — kayıt.
+ * Patika'nın pratik adımları (dil bilgisi, tekrar, ünite quizi) — kayıt.
  *
- * Bu adımların içeriği ünitenin derslerinden türetiliyor, yani doğrulanacak
+ * Bu adımların içeriği ünitenin konuşmalarından türetiliyor, yani doğrulanacak
  * bir egzersiz satırı yok; doğrulanan şey öğe KİMLİĞİNİN biçimi ve kullanıcının
  * kendi kursu. XP verilmiyor: adım istenildiği kadar tekrar edilebiliyor ve
  * sunucu cevapları görmüyor — XP'ye bağlansa çiftlenebilir bir kapı olurdu.

@@ -11,7 +11,7 @@ import type { MockCourse, MockLevel, MockPart, MockSkill } from "../data/exams";
  * DİSKE YAZILMIYOR ve bu bilinçli bir karar: kâğıt oturum boyunca bellekte
  * duruyor, uygulama kapanınca gidiyor. Böylece ödeyen kullanıcının cihazında
  * bile kalıcı bir kopya birikmiyor. Bedeli şu: sınav ÇEVRİMİÇİ başlıyor.
- * Deneme sınavı zaten oturup çözülen bir iş; ders ve alıştırma tarafı
+ * Deneme sınavı zaten oturup çözülen bir iş; konuşma ve alıştırma tarafı
  * çevrimdışı çalışmaya devam ediyor.
  *
  * Bellekteki kopya bir oturum içinde yeniden kullanılıyor: kapaktan sınava

@@ -6,7 +6,7 @@ import { apiFetch } from "@/lib/api-fetch";
  *
  * UÇ AYLARDIR VARDI, ÇAĞIRAN YOKTU. `POST /api/reports` yazıldı, sınırları
  * kondu, yönetim panosuna bağlandı; ama web'de hiçbir düğme onu çağırmıyordu.
- * Mobilde üç yerde var: rol yapma yanıtı, yazma değerlendirmesi ve sıralamada
+ * Mobilde üç yerde var: sohbet yanıtı, yazma değerlendirmesi ve sıralamada
  * bir kullanıcı adı. Play'in "yapay zekâ ile üretilen içerik" politikası da
  * bunu istiyor: kullanıcı rahatsız edici bir yanıtı uygulamadan çıkmadan
  * bildirebilmeli.
@@ -14,10 +14,10 @@ import { apiFetch } from "@/lib/api-fetch";
 /**
  * Türler — sunucu listesi `api/reports` KINDS ile aynı, mobil aynı dizgeleri
  * kullanıyor. Yeni yüzeyler yeni tür açmıyor, `ref` önekiyle ayrılıyor:
- *   chat    ders sohbeti "<conversationId>:<turn>" · rol yapma SINAVI "<conversationId>:scored:<turn>"
+ *   chat    konuşma sohbeti "<conversationId>:<turn>" · sohbet SINAVI "<conversationId>:scored:<turn>"
  *   assessment  kayıtlı değerlendirme (Yazdıklarım) kayıt kimliği · anlık
  *               değerlendirme "<yüzey>:<kimlik>" (ör. "writing:<alıştırma>",
- *               "speaking:<alıştırma>", "exam:<ders>", "word:<kelime>")
+ *               "speaking:<alıştırma>", "exam:<konuşma>", "word:<kelime>")
  *   user        kullanıcı adı (sıralama) kullanıcı kimliği
  */
 export type ReportKind = "chat" | "assessment" | "user";

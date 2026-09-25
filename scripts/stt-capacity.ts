@@ -7,7 +7,7 @@
  * karşılaştırır ve her birinin kaç günlük aktif kullanıcıya (DAU) yettiğini
  * söyler. İki model:
  *   - GÖZLENEN: son 30 günün STT saniyesi / DAU (bugünkü davranış).
- *   - HEDEF (WP-20 sonrası): telaffuz puanı her söyleyiş turunda, rol yapma
+ *   - HEDEF (WP-20 sonrası): telaffuz puanı her söyleyiş turunda, sohbet
  *     ve monolog kaydı da STT'ye gider — kullanıcı başına gün başına
  *     varsayımlı yük (aşağıda TARGET).
  * Çıktı: docs/plan/stt-capacity.md (tablo) + konsol özeti. Salt okunur.
@@ -111,10 +111,10 @@ async function main() {
   lines.push(`- STT istekleri (pocket-mic → /api/stt): ${stt.n} istek, ${stt.sec} sn ses; klip ortalama ${Number(stt.avg).toFixed(1)} sn, p95 ${Number(stt.p95).toFixed(1)} sn; başarı ${stt.n ? Math.round((100 * Number(stt.ok)) / Number(stt.n)) : 0} %, ilk cevap ortalama ${Math.round(Number(stt.ms))} ms.`);
   lines.push(`- Sağlayıcı dağılımı: ${byProvider.map((p) => `${p.provider}/${p.model} ${p.n} istek (${p.sec} sn, ok ${p.ok})`).join("; ") || "—"}.`);
   lines.push(`- En yoğun gün: ${perDay[0] ? `${String(perDay[0].day).slice(0, 10)} — ${perDay[0].n} istek, ${perDay[0].sec} sn` : "—"}; en yoğun saat: ${peakHour ? `${peakHour.n} istek, ${peakHour.sec} sn` : "—"}; en yoğun dakika: ${peakMin ? `${peakMin.n} istek` : "—"}.`);
-  lines.push(`- Rol yapma turu: ${rp.turns} (30 gün); konuşma egzersizi denemesi: ${sp.attempts}.`);
+  lines.push(`- Sohbet turu: ${rp.turns} (30 gün); konuşma egzersizi denemesi: ${sp.attempts}.`);
   lines.push(`- Günlük ortalama: ${sttSecPerDay.toFixed(0)} sn ses, ${sttReqPerDay.toFixed(1)} istek → kullanıcı başına gün başına ${observedSecPerUser.toFixed(0)} sn / ${observedReqPerUser.toFixed(1)} istek.`, "");
   lines.push("## Hedef model (WP-20 açıkken, kullanıcı başına gün başına)", "");
-  lines.push(`${TARGET.drillTasks} söyleyiş × ${TARGET.drillSec} sn + ${TARGET.chatTurns} rol yapma turu × ${TARGET.chatSec} sn + ${TARGET.monologPerDay} monolog × ${TARGET.monologSec} sn + ${TARGET.examPerDay} sınav × ${TARGET.examSec} sn, tekrar çarpanı ${TARGET.retryFactor} → **${targetSecPerUser.toFixed(0)} sn ve ${targetReqPerUser.toFixed(1)} istek / kullanıcı / gün**; en yoğun saat günün %${TARGET.peakHourShare * 100}'u, en yoğun dakika %${TARGET.peakMinuteShare * 100}'i.`, "");
+  lines.push(`${TARGET.drillTasks} söyleyiş × ${TARGET.drillSec} sn + ${TARGET.chatTurns} sohbet turu × ${TARGET.chatSec} sn + ${TARGET.monologPerDay} monolog × ${TARGET.monologSec} sn + ${TARGET.examPerDay} sınav × ${TARGET.examSec} sn, tekrar çarpanı ${TARGET.retryFactor} → **${targetSecPerUser.toFixed(0)} sn ve ${targetReqPerUser.toFixed(1)} istek / kullanıcı / gün**; en yoğun saat günün %${TARGET.peakHourShare * 100}'u, en yoğun dakika %${TARGET.peakMinuteShare * 100}'i.`, "");
   lines.push("## Kotalar", "");
   lines.push(`- Groq: ${fmt(QUOTA.groq.secPerDay)} sn/gün, ${fmt(QUOTA.groq.secPerHour)} sn/saat, ${fmt(QUOTA.groq.reqPerDay)} istek/gün, ${QUOTA.groq.reqPerMin} istek/dk — ${QUOTA.groq.renew}.`);
   lines.push(`- Cloudflare: 10 000 neuron/gün ÷ 46,63 neuron/dk ≈ ${fmt(QUOTA.cloudflare.secPerDay / 60)} dk = ${fmt(QUOTA.cloudflare.secPerDay)} sn/gün — ${QUOTA.cloudflare.renew}; saat/dakika sınırı belirtilmemiş.`);

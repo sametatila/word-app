@@ -5,7 +5,7 @@
  * kümesi, yer tutucuları ve kodda çağrılan anahtarların varlığı. Ama sözlüğe
  * HİÇ GİRMEMİŞ bir metni göremiyor. Ölçüldüğünde bu boşlukta gerçek şeyler
  * çıktı: doğrulama e-postası Türkçe sabitti, Patika'nın "Dil bilgisi / Tekrar /
- * Kontrol Noktası" satırları sunucuda Türkçe üretiliyordu, AI kapalıyken
+ * Ünite quizi" satırları sunucuda Türkçe üretiliyordu, AI kapalıyken
  * gösterilen geri bildirim Türkçe geliyordu. Üçü de İngilizce arayüzde Türkçe
  * görünüyordu ve hiçbir denetim bunu söylemiyordu.
  *
@@ -34,7 +34,7 @@ const BASELINE = path.join(ROOT, "scripts", "i18n-hardcoded-baseline.json");
  *
  *   1. Sözlüklerin kendisi (src/i18n) ve hukuki metinlerin dil dosyaları
  *      (src/content, app/privacy, app/terms): her dil kendi dosyasında.
- *   2. Öğrenme içeriği ve veri: dersler, beceri/deneme sınavı içerikleri,
+ *   2. Öğrenme içeriği ve veri: konuşmalar, beceri/deneme sınavı içerikleri,
  *      dilbilgisi tabloları, kelime listeleri. Bunlar ürünün kendisi.
  *   3. İç araçlar: yönetici panosu ve dönüşüm hunisi — tek kullanıcılı,
  *      ADMIN_EMAILS kapısının arkasında, bilerek tek dil.
@@ -132,7 +132,7 @@ const SKIP = [
 /**
  * ATLANAN DİZİNİN İÇİNDE OLSA DA TARANAN dosyalar.
  *
- * `lib/conversations` bütünüyle atlanıyor çünkü ders içeriği orada duruyor — ama o
+ * `lib/conversations` bütünüyle atlanıyor çünkü konuşma içeriği orada duruyor — ama o
  * dizinde MANTIK da var ve mantığın ürettiği metin kullanıcıya görünüyor.
  * Somut örnek: `offline-chat` yapay zekâ kapalıyken mikrofon etiketine
  * "Kalıbı kullan: …", "Anlaşılmadı — ör. …", "Sıradaki kalıp: …" yazıyordu.

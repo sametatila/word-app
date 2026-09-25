@@ -100,7 +100,7 @@ type Miss = {
   answer: string;
   /** Öğrencinin verdiği cevap (varsa). */
   given?: string;
-  /** Gerekçe — hüküm maddelerinde dersin kendi açıklaması. */
+  /** Gerekçe — hüküm maddelerinde konuşmanın kendi açıklaması. */
   why?: string;
 };
 

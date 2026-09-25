@@ -4,19 +4,19 @@ import { flatten } from "@/lib/conversations/module-content";
 import { seededShuffle } from "@/lib/shuffle";
 
 /**
- * Ünitenin gramer adımını DERSLERİNDEN türetir.
+ * Ünitenin gramer adımını KONUŞMALARINDAN türetir.
  *
  * NEDEN TÜRETİM: gramer yuvası deseninde 145 ünitede var, ama elle yazılmış
  * içerik yalnız birinde vardı (A1 ünite 1). Kalan 144'ünde adım "yakında"
  * olarak duruyordu — yani desende yer kaplayan ama oynanamayan bir öğe.
  * 144 üniteyi elle yazmak ~1150 soru demek; quiz'de olduğu gibi burada da
- * doğru cevap türetme: ders katmanı zaten gerekli malzemeyi taşıyor.
+ * doğru cevap türetme: konuşma katmanı zaten gerekli malzemeyi taşıyor.
  *
- * İki kaynak, ikisi de dersin KENDİ malzemesi — hiçbir şey uydurulmuyor:
+ * İki kaynak, ikisi de konuşmanın KENDİ malzemesi — hiçbir şey uydurulmuyor:
  *
- *   1. HÜKÜM adımları (`expect.kind === "truefalse"`). Ders zaten öğrenciye
+ *   1. HÜKÜM adımları (`expect.kind === "truefalse"`). Konuşma zaten öğrenciye
  *      bozuk ya da doğru bir cümle gösterip hüküm verdiriyor ve gerekçesini
- *      (`why`) yazıyor. Ünite başına tam dört tane var (ders başına bir).
+ *      (`why`) yazıyor. Ünite başına tam dört tane var (konuşma başına bir).
  *      Bunlar doğrudan dilbilgisi yargısı: gramer adımının çekirdeği.
  *
  *   2. ÜRETİM adımlarının hedef cümleleri (`expect.kind === "produce"`).
@@ -45,7 +45,7 @@ export type GrammarText = {
   orderSentence: string;
   /**
    * Hüküm şıkları — KURSUN dilinde. `["Richtig", "Falsch"]` sabitti ve
-   * İngilizce kursta da Almanca çıkıyordu; İngilizce derslerde yüz tane hüküm
+   * İngilizce kursta da Almanca çıkıyordu; İngilizce konuşmalarda yüz tane hüküm
    * adımı var. Deneme sınavı aynı çifti `MOCK_LABELS[course].bool` ile
    * kursuna göre veriyor, buraya da oradan geliyor.
    */

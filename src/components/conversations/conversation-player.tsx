@@ -41,7 +41,7 @@ import { flushPendingConversations, queueConversationResult } from "@/lib/conver
 import { CONVERSATION_RESUME_DAYS, CONVERSATION_RESUME_KEY } from "@/lib/storage-hygiene";
 
 /**
- * Ders oynatıcısı — anlatım, konuşma pratiği, özet.
+ * Konuşma oynatıcısı — anlatım, sohbet, özet.
  *
  * Anlatım bir sohbet gibi akıyor ama senaryosu yazılı: öğretmen söylüyor,
  * öğrenci KONUŞARAK cevap veriyor, senaryo ilerliyor. Model beklenmediği için
@@ -114,7 +114,7 @@ const STEP_LABEL_KEYS: Record<string, string> = {
 
 /** Özet köprüleri — sunucuda hesaplanıp sayfadan gelir. */
 export type ConversationExtras = {
-  /** Dersin kanıt olduğu can-do ifadeleri, Türkçe. */
+  /** Konuşmanın kanıt olduğu can-do ifadeleri, Türkçe. */
   cando: string[];
   next: { id: string; title: string; titleTr: string } | null;
 };
@@ -131,7 +131,7 @@ export type ConversationExtras = {
 const PAUSE_MS = 2600;
 
 /**
- * Yarım kalan dersin cihazda saklanması.
+ * Yarım kalan konuşmanın cihazda saklanması.
  *
  * Anlatım uzun bir akış ve konuşma daha da uzun; ortasında çıkan öğrenci
  * döndüğünde baştan başlamamalı. Sunucuda değil cihazda: yarım bir akışın
@@ -172,7 +172,7 @@ function readSaved(conversation: Conversation): Saved | null {
 /**
  * ANLATIM parçası — metin sözlükten geliyor, yani parçanın dili gerçekten
  * arayüz dili. `narration` bayrağı sesi anlatım sesine bağlıyor (bkz.
- * speak-button `voiceForSegment`); ders İÇERİĞİ Türkçe kaldığı için o
+ * speak-button `voiceForSegment`); konuşma İÇERİĞİ Türkçe kaldığı için o
  * parçalar bayraksız kalıyor ve bugünkü sesle okunuyor.
  */
 function narFor(lang: NativeLang) {
@@ -255,7 +255,7 @@ function ConversationPlayerBody({
   onLocked,
 }: {
   conversation: Conversation;
-  /** Rol yapma muhatabının adı — sunucuda türetiliyor (lib/conversations/characters). */
+  /** Sohbet muhatabının adı — sunucuda türetiliyor (lib/conversations/characters). */
   character: { name: string; note: string };
   extras?: ConversationExtras;
   /** Sunucu Konuşma hakkı yok dedi (403 premium_required). */
@@ -335,13 +335,13 @@ function ConversationPlayerBody({
   const [offlineWhy, setOfflineWhy] = useState<"service" | "consent">("service");
 
   const [saved, setSaved] = useState<{ passed: boolean; nextDays: number } | null>(null);
-  /* Dersin süresi: `/api/conversation` `seconds` alanını istiyor ve web onu HİÇ
-     göndermiyordu - her ders sunucuda sıfır saniye görünüyordu (mobil baştan
+  /* Konuşmanın süresi: `/api/conversation` `seconds` alanını istiyor ve web onu HİÇ
+     göndermiyordu - her konuşma sunucuda sıfır saniye görünüyordu (mobil baştan
      beri gönderiyor). Aynı istekte `day` de eksikti: kullanıcının yerel günü
      yerine sunucunun günü işleniyordu, yani gece yarısından sonra bitirilen
-     ders serinin yanlış gününe yazılıyordu. */
+     konuşma serinin yanlış gününe yazılıyordu. */
   const startedAt = useRef(Date.now());
-  /* Önceki oturumda gönderilemeyen ders sonuçları: ekran açılır açılmaz
+  /* Önceki oturumda gönderilemeyen konuşma sonuçları: ekran açılır açılmaz
      denenmeleri yeter, kullanıcı bir şey yapmıyor. */
   useEffect(() => { void flushPendingConversations(); }, []);
   const [resumed, setResumed] = useState(false);
@@ -375,7 +375,7 @@ function ConversationPlayerBody({
    */
   // `useCallback`: kayıttan dönüş effect'i buna bağımlı ve DÜZ bir fonksiyon her
   // render'da yeni kimlik alırdı — bağımlılığa eklenince effect her render'da
-  // yeniden koşardı. Kimlik artık yalnız ders değişince değişiyor.
+  // yeniden koşardı. Kimlik artık yalnız konuşma değişince değişiyor.
   const probeChatService = useCallback(() => {
     void apiFetch("/api/chat", { cache: "no-store" })
       .then((r) => (r.ok ? (r.json() as Promise<{ configured: boolean; consent?: string | null }>) : null))
@@ -774,8 +774,8 @@ function ConversationPlayerBody({
    * Öğrencinin cevabını değerlendirir — anlatımın kalbi.
    *
    * İpucu merdiveni: ilk yanlışta hedefe özgü ipucu, ikincisinde doğrusu
-   * söylenip bir kez daha isteniyor, üçüncüsünde ders takılmadan devam ediyor
-   * — takılan adım konuşma pratiğinde zaten tekrar karşına çıkacak. Amaç
+   * söylenip bir kez daha isteniyor, üçüncüsünde konuşma takılmadan devam ediyor
+   * — takılan adım sohbette zaten tekrar karşına çıkacak. Amaç
    * sınamak değil söyletmek; üç denemeden sonra dördüncüyü istemek öğretmeyi
    * bırakıp sınava dönüşmek olurdu.
    */
@@ -817,7 +817,7 @@ function ConversationPlayerBody({
       }
 
       // repeat | produce — hedef dille karşılaştırma. Dil PARAMETRE olarak
-      // gidiyor: `judgeSpeech` varsayılanı "de" ve İngilizce ders Almanca
+      // gidiyor: `judgeSpeech` varsayılanı "de" ve İngilizce konuşma Almanca
       // kuralıyla yargılanıyordu (sayı katlaması ve kısaltma açma çalışmıyordu).
       const targets = [e.target, ...(e.kind === "produce" ? (e.accept ?? []) : [])];
       const verdicts = targets.map((t) =>
@@ -850,7 +850,7 @@ function ConversationPlayerBody({
         Web cevabi IKINCI yanlista aciyor ve ogrenciye bir daha deniyordu
         (`please_repeat` + `reopen`); UCUNCU yanlista ise cevabi hic
         soylemeden "olsun" deyip geciyordu. Android ucuncu yanlista CEVABI
-        SOYLEYIP geciyor - yani ayni adim iki platformda iki ayri ders
+        SOYLEYIP geciyor - yani ayni adim iki platformda iki ayri konuşma
         veriyordu: birinde cevap gorulup tekrar ediliyor, otekinde adim
         cevapla kapaniyor.
 
@@ -922,7 +922,7 @@ function ConversationPlayerBody({
     evaluate([clean]);
   }
 
-  // ─────────────────────────── konuşma pratiği ───────────────────────────
+  // ─────────────────────────── sohbet ───────────────────────────
 
   function startChat() {
     recognition.current?.abort();
@@ -958,13 +958,13 @@ function ConversationPlayerBody({
       const stopThinking = startThinking();
 
       // Alt sınıra ulaşan cevaba sunucu kapanış talimatı veriyor (bkz.
-      // lib/conversations/chat); okuma bitince ders kendiliğinden özete geçiyor.
+      // lib/conversations/chat); okuma bitince konuşma kendiliğinden özete geçiyor.
       const closing = next.filter((m) => m.role === "user").length >= conversation.chat.minTurns;
 
       /**
        * Senaryolu cevap: model yerine niyet eşleştirme. Kapanış kuralı
        * modelle aynı (alt sınır kadar tur) — ama senaryo daha erken biterse
-       * o da kapanıştır; ders yine sayılır.
+       * o da kapanıştır; konuşma yine sayılır.
        */
       const local = (state: OfflineState) => {
         stopThinking();
@@ -1025,7 +1025,7 @@ function ConversationPlayerBody({
         if (res.status === 503) {
           // Sağlayıcı konuşmanın ortasında düştü: aynı cümleyi senaryoya ver.
           // Senaryo baştan başlar (önceki turlar modelindi); hedef kalıplar
-          // yine de ölçülür ve ders geçilebilir.
+          // yine de ölçülür ve konuşma geçilebilir.
           setOfflineWhy("service");
           local(offlineRef.current ?? offlineStart(conversation).state);
           return;
@@ -1145,7 +1145,7 @@ function ConversationPlayerBody({
     setSpeakingTurn(null);
     setPhase("summary");
     {
-      // Ders sonucu olay olarak da düşüyor (WP-80): user_conversations en iyi denemeyi
+      // Konuşma sonucu olay olarak da düşüyor (WP-80): user_conversations en iyi denemeyi
       // tutar, buradaki satır BU denemeyi — trend ancak böyle çizilir.
       const scored = conversation.lecture.filter((s) => s.expect?.kind === "produce" || s.expect?.kind === "truefalse").length;
       track("conversation_finish", scored ? Math.round((100 * Math.min(correctCount, scored)) / scored) : 0, conversation.id);
@@ -1179,7 +1179,7 @@ function ConversationPlayerBody({
         };
         setSaved(data);
         // Üst bardaki XP/seri rozetleri ve rozet kontrolü bu olayı dinliyor.
-        // Ders bölümü bunu dispatch etmiyordu: puan kazanılıyor ama ekranda
+        // Konuşma bölümü bunu dispatch etmiyordu: puan kazanılıyor ama ekranda
         // hiçbir şey değişmiyordu.
         window.dispatchEvent(
           new CustomEvent("lernomi:stats", {
@@ -1237,10 +1237,10 @@ function ConversationPlayerBody({
        aralıklar `short`ta daralıyor, sohbet dışındaki her şey `kb`de
        kalkıyor (bkz. globals.css yükseklik kırılımları). */
     <div className="mx-auto flex min-h-0 w-full max-w-2xl flex-1 flex-col gap-4 short:gap-2">
-      {/* ÇIKIŞ. Ders ekranında hiçbir çıkış düğmesi yoktu: alt sekmeler bu
+      {/* ÇIKIŞ. Konuşma ekranında hiçbir çıkış düğmesi yoktu: alt sekmeler bu
           ekranda gizli, kenar çubuğu yalnız masaüstünde. Telefonda tek yol
           tarayıcının geri düğmesiydi — ana ekrana eklenmiş uygulamada o da
-          yok. Yarıda çıkmak emek kaybı değil: ders kaldığı yeri yerel
+          yok. Yarıda çıkmak emek kaybı değil: konuşma kaldığı yeri yerel
           depoya yazıyor ve dönüşte "kaldığın yerden" notuyla açılıyor. */}
       <div className="flex shrink-0 items-center gap-3 kb:hidden">
         <ConversationExit />
@@ -1378,7 +1378,7 @@ function ConversationPlayerBody({
                   {/* Android'deki hâliyle aynı: iki düğme de DOLU ve anlamlarının
                       rengini taşıyor (yeşil/kırmızı + işaret). Burada ikisi de nötr
                       `option`du, yani "doğru mu yanlış mı" sorusu iki tıpatıp aynı
-                      düğmeyle soruluyordu; ders akışında en hızlı okunması gereken
+                      düğmeyle soruluyordu; konuşma akışında en hızlı okunması gereken
                       yer orası. */}
                   <button
                     type="button"
@@ -1776,13 +1776,13 @@ function ConversationPlayerBody({
               kartları → en çok üç düğme. Mobil `ConversationScreen` `Summary` ile
               alanlar ve sıra birebir.
 
-              KUTLAMANIN VE MASKOTUN ÖLÇÜTÜ dersin ALIŞTIRMA İSABETİ (`pct >= 80`
+              KUTLAMANIN VE MASKOTUN ÖLÇÜTÜ konuşmanın ALIŞTIRMA İSABETİ (`pct >= 80`
               kutla, `>= 50` sevin); hüküm (yarım kaldı mı) ayrı: yarım kalan
               konuşma band sessizleşiyor ve konfeti hiç atılmıyor.
 
               BAŞLIĞIN BİLİNMEYEN HÂLİ: kayıt isteği düşerse `saved` null kalır;
               yarım sayılması için ya sunucu açıkça "sayılmadı" demeli ya da
-              asgari tur yerelde dolmamış olmalı — ders yerelde bittiyse bitti.
+              asgari tur yerelde dolmamış olmalı — konuşma yerelde bittiyse bitti.
             */}
             <FlowColumn celebrate={!unfinished && pct >= 80}>
               <ResultHero
@@ -1814,7 +1814,7 @@ function ConversationPlayerBody({
               ) : null}
 
               {/* Kullanılan kalıplar (WP-62): konuşmada geçen kalıp yeşil tik,
-                  geçmeyen soluk — dersin asıl amacı kalıbı kullanmak. Konuşma
+                  geçmeyen soluk — konuşmanın asıl amacı kalıbı kullanmak. Konuşma
                   hiç olmadıysa işaret yok (yanlış bir "yapmadın" damgası). */}
               {conversation.patterns.length ? (
                 <DetailCard title={t("conversation.patterns_you_learned")}>
@@ -1850,7 +1850,7 @@ function ConversationPlayerBody({
                 </DetailCard>
               ) : null}
 
-              {/* Öğrenilen kelimeler özette bir kez daha: dersin dili kapanışta toplu. */}
+              {/* Öğrenilen kelimeler özette bir kez daha: konuşmanın dili kapanışta toplu. */}
               {conversation.vocab.length ? (
                 <DetailCard title={t("conversationp.words_of_conversation")}>
                   <div className="flex flex-wrap gap-1.5">
@@ -1897,14 +1897,14 @@ function ConversationPlayerBody({
 }
 
 /**
- * Dersten çıkış — geldiği yere döner (birim sayfası, patika, bildirim).
+ * Konuşmadan çıkış — geldiği yere döner (birim sayfası, patika, bildirim).
  *
  * "Geri" yalnız bir önceki kayıt BU SİTEDEYSE: `history.length` başka
- * sitelerin kayıtlarını da sayıyor ve dersi bir aramadan ya da paylaşılan bir
+ * sitelerin kayıtlarını da sayıyor ve konuşmayı bir aramadan ya da paylaşılan bir
  * bağlantıdan açan kullanıcıyı uygulamanın dışına atardı. Navigation API
  * (`navigation.canGoBack`) yalnız aynı kökenin kayıtlarına bakıyor; olmayan
  * tarayıcıda aynı kökenli `referrer` yedek ölçü. İkisi de yoksa patikaya:
- * dersin evi orası.
+ * konuşmanın evi orası.
  */
 function ConversationExit() {
   const router = useRouter();
@@ -1955,9 +1955,9 @@ function Steps({ phase }: { phase: Phase }) {
 /**
  * Anlatımın ilerleme çizgisi — adım başına bir parça, rengi adım türü
  * (WP-62): tekrar mavi, üret turuncu, doğru/yanlış mor, yalnız anlatım gri.
- * Geçilen parçalar dolu, gelecekler soluk; öğrenci dersin kaçta kaçının
+ * Geçilen parçalar dolu, gelecekler soluk; öğrenci konuşmanın kaçta kaçının
  * "söyle" kaçının "kendin kur" olduğunu baştan görüyor. Lejant yalnız
- * derste olan türleri sayar.
+ * konuşmada olan türleri sayar.
  */
 function LectureProgress({ at, steps }: { at: number; steps: { expect?: Expectation }[] }) {
   const t = useT();

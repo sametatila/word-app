@@ -145,7 +145,7 @@ for (const [doc, byLocale] of Object.entries(DOCS)) {
 /**
  * SAKLAMA SÜRELERİ: POLİTİKANIN SÖZÜ İLE KODUN DAVRANIŞI.
  *
- * Politika üç dilde "konuşma pratiği kayıtları N gün, sonra kendiliğinden
+ * Politika üç dilde "sohbet kayıtları N gün, sonra kendiliğinden
  * silinir" ve "oturum süresince, en çok N gün" diyor. Bu iki cümle bir
  * taahhüt: sayfa Play Console ve App Store Connect'e URL olarak verilmiş
  * durumda. Sayı metnin içine düz yazıldığı sürece kuralı uygulayan sabit

@@ -1,9 +1,9 @@
 /**
- * Seviye seviye ders paketleri — kelime kapılarının ders kaynağı.
+ * Seviye seviye konuşma paketleri — kelime kapılarının konuşma kaynağı.
  *
  * Kapılar kümülatif kümeyi eskiden `mobile/src/data/conversations/<kurs>-<sv>.json`
  * dökümlerinden okuyordu. 74ce0a05'te A2-C1 dökümleri mobil paketten çıktı
- * (dersler artık sunucudan iniyor) ve kapılar SESSİZCE yarım kaldı: İngilizce
+ * (konuşmalar artık sunucudan iniyor) ve kapılar SESSİZCE yarım kaldı: İngilizce
  * kapı olmayan dosyayı boş liste sayıyordu, Almanca kapının ünite yolu hatayı
  * yutuyordu, yalnız `check:unitvocab` ENOENT ile düşüyordu.
  *
@@ -13,7 +13,7 @@
  */
 const bellek = new Map();
 
-/** Bir kursun bir seviyedeki dersleri, kaynaktaki sırayla. Dersi olmayan seviye boş. */
+/** Bir kursun bir seviyedeki konuşmaları, kaynaktaki sırayla. Konuşmayı olmayan seviye boş. */
 function konusmaPaketi(course, lv) {
   if (!bellek.has(course)) {
     const { buildConversationDump } = require("../dump-conversations-mobile.ts");

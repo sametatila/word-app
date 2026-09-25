@@ -295,7 +295,7 @@ if (mode === "--baseline") {
  */
 /*
  * KENDİ `t`si OLAN DOSYA. `lib/native-de.ts` içindeki `t(...)` i18n değil:
- * ders içeriğinin Almanca-Türkçe eşleme tablosunda bir arama ve ikinci
+ * konuşma içeriğinin Almanca-Türkçe eşleme tablosunda bir arama ve ikinci
  * argümanı yedek metin. Anahtarları ("vocab.tr", "pattern.tr") sözlükte
  * OLMAMALI. Web tarafındaki eşdeğer denetim aynı dosyayı aynı sebeple muaf
  * tutuyor (`scripts/i18n-check.mjs` YEREL_T).

@@ -62,7 +62,7 @@ async function setStreak(id: string, longest: number, current = longest) {
   await db.update(profiles).set({ longestStreak: longest, currentStreak: current }).where(eq(profiles.userId, id));
 }
 
-/** Konuşma adımının dersi bitirildi (`/api/conversation`in yazdığı satır). */
+/** Konuşma adımının konuşması bitirildi (`/api/conversation`in yazdığı satır). */
 async function finishConversation(id: string, conversationId: string) {
   await db.insert(userConversations).values({ userId: id, conversationId, ruleId: "r", total: 1 }).onConflictDoNothing();
 }
@@ -101,7 +101,7 @@ async function main() {
     check("ikisi bitti + 7 gün → 3. adım açıldı", (await claimTiered(u, "conversation", "A1", "L3")).allowed);
     check("4. adım da açık (dilim +2)", (await claimTiered(u, "conversation", "A1", "L4")).allowed);
     check("5. adım kilitli (sonraki dilim 14 gün + dört bitirme ister)", !(await claimTiered(u, "conversation", "A1", "L5")).allowed);
-    /* Sahiplenilmemiş bir dersi bitirmek dilimi doldurmuyor — hak düşmeyen
+    /* Sahiplenilmemiş bir konuşmayı bitirmek dilimi doldurmuyor — hak düşmeyen
        (senaryolu) konuşma sayılmıyor. */
     await finishConversation(u, "Lx");
     const st = await tieredState(u, "conversation", "A1");

@@ -2,8 +2,8 @@ import { LoadingRegion } from "@/components/loading-region";
 import { SkeletonLine } from "@/components/skeleton";
 
 /**
- * Rol yapma sınavı gelene kadar iskelet — sahne kapağı: başlık, amaç kartı
- * ve başlat düğmesi. Ders sayfasının (`conversations/[id]/loading`) kardeşi;
+ * Puanlı kısım gelene kadar iskelet — sahne kapağı: başlık, amaç kartı
+ * ve başlat düğmesi. Konuşma sayfasının (`conversations/[id]/loading`) kardeşi;
  * sayfa aynı çözücüden geçiyor ve beş istek yapıyor.
  */
 export default function Loading() {

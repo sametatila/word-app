@@ -99,7 +99,7 @@ export async function POST(req: Request) {
    *
    *  - Patika Yazma adımı (ünite egzersizi)  → Patika Yazma, seviye başına
    *  - Beceriler yazma / B1+ monolog         → Beceriler, seviye başına, AYRI sayaç
-   *  - `chat` (Konuşma adımının puanlı kısmı, "Sınav olarak dene")
+   *  - `chat` (Konuşma adımının puanlı kısmı, "Kendini puanla")
    *                                          → Patika Konuşma adımının KENDİ hakkı:
    *    sohbet adımı zaten sahiplendi, puanlı kısım ayrı hak düşürmüyor. Sohbeti
    *    atlayıp doğrudan puanlı kısma gelen istek adımı burada sahipleniyor.

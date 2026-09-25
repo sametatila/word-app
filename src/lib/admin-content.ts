@@ -21,7 +21,7 @@ import type { MockPaper } from "@/lib/mock-exams/types";
  * düşürüyor.
  *
  * MADDE ANALİZİ neden burada. Haftalık quiz'in madde analizi vardı, daha çok
- * kullanılan dersler, beceriler ve deneme sınavlarının yoktu. Çok düşük bir
+ * kullanılan konuşmalar, beceriler ve deneme sınavlarının yoktu. Çok düşük bir
  * başarı oranı çoğunlukla öğrencinin değil maddenin kusurudur (yanlış anahtar,
  * belirsiz soru); kontrol betikleri bunu göremez, ancak cevaplar birikince
  * görünür. Her satır kapatılabileceği paketi de taşıyor.
@@ -258,8 +258,8 @@ export async function learningAnalysis(): Promise<LearningAnalysis> {
       select paper_id, skill, release, coalesce(score, 0) score, answers from mock_exam_attempts
       where state = 'done' and skill in ('reading', 'listening') order by finished_at desc nulls last limit 3000`),
   ]);
-  /* Başlık için YALNIZ listede geçen derslerin paketleri okunuyor. Bütün
-     ders kataloğu (`allConversations`, ~7 MB) her önbellek tazelemesinde okunup
+  /* Başlık için YALNIZ listede geçen konuşmaların paketleri okunuyor. Bütün
+     konuşma kataloğu (`allConversations`, ~7 MB) her önbellek tazelemesinde okunup
      ayrıştırılıyordu; ilk açılış 24 saniye sürdü. */
   const conversationPacks = [...new Set(conversationRows.map((r) => packOf(String(r.id), conversationPack)).filter(Boolean))];
   const conversations = (await Promise.all(conversationPacks.map((pk) => packItems<Conversation>(pk).catch(() => [] as Conversation[])))).flat();

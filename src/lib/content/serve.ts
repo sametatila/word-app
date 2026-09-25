@@ -9,7 +9,7 @@ import { body, pointer } from "./read";
  * WEBİN İÇERİK KAPISI — paket paket okuma, ayrıştırılmış ve sıcak.
  *
  * `read.ts` tek madde veriyor ve gövdeyi sıkıştırılmış tutuyor; sunucu
- * sayfaları ise genellikle paketin TAMAMINI istiyor (seviyenin dersleri,
+ * sayfaları ise genellikle paketin TAMAMINI istiyor (seviyenin konuşmaları,
  * kursun kâğıtları). Her sayfa çiziminde yüz maddeyi tek tek çözmek anlamsız,
  * o yüzden burada paket bir kez kuruluyor ve süreç belleğinde kalıyor.
  *
@@ -30,7 +30,7 @@ import { body, pointer } from "./read";
 type Entry = { at: number; value: unknown[] };
 const packs = new Map<string, Entry>();
 /* Süreç ömrü boyunca duruyor; tavan paket SAYISI, çünkü paketler benzer
-   boyda (bir seviyenin dersleri ~0,7 MB) ve sayıları otuz civarı. */
+   boyda (bir seviyenin konuşmaları ~0,7 MB) ve sayıları otuz civarı. */
 const MAX_PACKS = 40;
 
 function remember(key: string, value: unknown[]): void {
@@ -48,7 +48,7 @@ const objects = new Map<string, Record<string, unknown>>();
  * Paketin maddelerini kimliğiyle eşler — EKSİK PARÇA VARSA null.
  *
  * Hep-ya-hiç: yarım bir sözlükle çevirmek, içinde tek bir Türkçe cümle kalmış
- * bir İngilizce ders demek — çalışıyor görünen en kötü biçim.
+ * bir İngilizce konuşma demek — çalışıyor görünen en kötü biçim.
  */
 async function loadPackObject(release: number, pack: string): Promise<Record<string, unknown> | null> {
   const rows = await db

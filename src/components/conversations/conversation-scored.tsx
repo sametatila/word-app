@@ -31,13 +31,13 @@ type Turn = { role: "user" | "assistant"; content: string };
 type Phase = "intro" | "talk" | "scoring" | "result" | "error";
 
 /**
- * Rol yapma sınavı (WP-22): aynı sahne, yardım yok, 5 tur, 3 dakika.
+ * Puanlı kısım (WP-22): aynı sahne, yardım yok, 5 tur, 3 dakika.
  *
  * Alıştırmadan farkı ölçüm: muhatap düzeltmez, öneri vermez, Türkçe
  * konuşmaz (bkz. `scoredPrompt`); konuşma bitince öğrencinin bütün turları tek
  * seferde rubrikle puanlanır (`kind: "chat"`) ve `assessments`'a yazılır.
  * Sonuç: rubrik kartı, en iyi iki cümle (hatasız ve en uzun), en sık iki
- * hata tipi, dersin can-do etiketi.
+ * hata tipi, konuşmanın can-do etiketi.
  *
  * Mikrofon tek atış: dokun, konuş, sus — tanıyıcı kapanınca metin gönderilir.
  * Tanıyıcı yoksa ya da izin verilmezse yazarak; sınavda ikisi eşdeğer
@@ -79,7 +79,7 @@ export function ConversationScored({
    * söylenmeli ve nereden açılacağı belli olmalı.
    */
   const [consentOff, setConsentOff] = useState(false);
-  /** Bildirilen muhatap yanıtı (içerik denetimi CNT-6; ders sohbetiyle aynı yol). */
+  /** Bildirilen muhatap yanıtı (içerik denetimi CNT-6; konuşma sohbetiyle aynı yol). */
   const [reported, setReported] = useState<{ ref: string; text: string } | null>(null);
   const rec = useRef<Recognition | null>(null);
   const endRef = useRef<HTMLDivElement>(null);
@@ -219,7 +219,7 @@ export function ConversationScored({
       answer: { text: said.join("\n"), transcript: said },
       exerciseId: `${conversation.id}:scored`,
       /* Hedef dil: verilmezse uç Almancaya düşüyor ve seviye beklentileri
-         Almanca rubriğinden geliyor — İngilizce dersin rol yapma sınavı
+         Almanca rubriğinden geliyor — İngilizce konuşmanın puanlı kısım
          yanlış ölçütle puanlanırdı (bkz. `api/assess`). */
       lang: targetLangOf(conversation.course),
     };
@@ -285,7 +285,7 @@ export function ConversationScored({
 
   if (phase === "intro") {
     return (
-      /* KAPAK ŞABLONU: ikon karosu · dersin adı · sınavın adı · sahne · ikonlu
+      /* KAPAK ŞABLONU: ikon karosu · konuşmanın adı · sınavın adı · sahne · ikonlu
          kurallar · kalıplar kartı · Başla / Vazgeç. Kurallar "·" ile başlayan
          soluk satırlardı ve kalıplar o listenin dördüncü "kuralı" gibi okunuyordu. */
       <FlowColumn>
@@ -452,7 +452,7 @@ export function ConversationScored({
             >
               {turn.content}
             </motion.p>
-            {/* Bildir — ders sohbetindeki gibi her yapay zekâ yanıtının altında.
+            {/* Bildir — konuşma sohbetindeki gibi her yapay zekâ yanıtının altında.
                 İlk tur (i = 0) dersin yazılı açılış cümlesi, model çıktısı değil. */}
             {turn.role === "assistant" && i > 0 ? (
               <button

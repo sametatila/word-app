@@ -1,12 +1,12 @@
 /**
- * Ders sözlükçesini TS içeriğinden çıkarır: (dersId, de, tr) üçlüleri.
+ * Konuşma sözlükçesini TS içeriğinden çıkarır: (konusmaId, de, tr) üçlüleri.
  *
  * Neden regex ve neden TS'i import etmiyoruz: içerik dosyaları uygulamanın
  * geri kalanını (tip, yardımcı, sabit) içeri alıyor ve bu hattın çalışmak
  * için derleyiciye ihtiyacı yok. Tek istediği alan adları — onlar da
  * `VocabItem = { de, tr }` olarak sabit.
  *
- * Ders sınırı `id: "…"` satırıyla belirleniyor; bir `vocab:` bloğu kendinden
+ * Konuşma sınırı `id: "…"` satırıyla belirleniyor; bir `vocab:` bloğu kendinden
  * ÖNCEKİ en yakın `id`ye aittir. Sıra dosyada zaten böyle.
  */
 import { readFileSync, readdirSync } from "node:fs";
@@ -15,7 +15,7 @@ const DIR = new URL("../../../src/lib/conversations/content/", import.meta.url).
 
 /**
  * `block` ya `vocab` ya `patterns`: ikisi de `{ de, tr }` öğesi taşıyor ve
- * ikisi de derse konum sırasıyla bağlanıyor. Ayrı iki çıkarıcı yazmak iki
+ * ikisi de konuşmaya konum sırasıyla bağlanıyor. Ayrı iki çıkarıcı yazmak iki
  * kopyanın ayrışması demekti (aynı gerekçe `data/en-de/check.mjs`in
  * `contains`i paylaşmasında da yazılı).
  */
@@ -23,8 +23,8 @@ export function extractVocab(block = "vocab") {
   const rows = [];
   for (const f of readdirSync(DIR).filter((x) => x.endsWith(".ts")).sort()) {
     const src = readFileSync(`${DIR}${f}`, "utf8");
-    // Dersin kimliği ve blokları TEK taramada, konum sırasıyla al: ayrı ayrı
-    // toplanırsa hangi bloğun hangi derse ait olduğu kaybolur.
+    // Konuşmanın kimliği ve blokları TEK taramada, konum sırasıyla al: ayrı ayrı
+    // toplanırsa hangi bloğun hangi konuşmaya ait olduğu kaybolur.
     let conversation = null;
     const re = new RegExp(`^\\s*id:\\s*"([^"]+)"|${block}:\\s*\\[([\\s\\S]*?)\\n\\s*\\]`, "gm");
     for (const m of src.matchAll(re)) {
@@ -49,6 +49,6 @@ export function extractVocab(block = "vocab") {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const rows = extractVocab(process.argv[2] || "vocab");
   const noConversation = rows.filter((r) => !r.conversation).length;
-  console.log(`${rows.length} sözlükçe girdisi · ${new Set(rows.map((r) => r.conversation)).size} ders`);
-  if (noConversation) console.log(`UYARI: ${noConversation} girdi bir derse bağlanamadı`);
+  console.log(`${rows.length} sözlükçe girdisi · ${new Set(rows.map((r) => r.conversation)).size} konuşma`);
+  if (noConversation) console.log(`UYARI: ${noConversation} girdi bir konuşmaya bağlanamadı`);
 }

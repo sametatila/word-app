@@ -4,12 +4,12 @@ import type { DialogueTurn } from "@/lib/dialogue";
 /**
  * Anlatımı öğrencinin ANA DİLİNE çevirir.
  *
- * Ders içeriği Türkçe yazıldı ve öyle kalıyor — karşılıklar `data/conversations/`
+ * Konuşma içeriği Türkçe yazıldı ve öyle kalıyor — karşılıklar `data/conversations/`
  * altındaki beş hatta elle yazılıp `apply.mjs` ile tek bir üretilen sözlüğe
  * toplanıyor. Burası o sözlüğü okuyan taraf.
  *
- * YARIM DERS YOK. Bir parçanın karşılığı bulunamazsa çözücü o dersi TÜMDEN
- * reddediyor (`null`) — tek bir Türkçe cümle kalmış İngilizce ders, çalışıyor
+ * YARIM KONUŞMA YOK. Bir parçanın karşılığı bulunamazsa çözücü o konuşmayı TÜMDEN
+ * reddediyor (`null`) — tek bir Türkçe cümle kalmış İngilizce konuşma, çalışıyor
  * görünen en kötü biçim. Faz 1'in kuralı da bu: karşılık yoksa `null` döner,
  * Türkçeye DÜŞMEZ.
  *
@@ -39,12 +39,12 @@ export type NativeDict = {
   ordinals: Record<string, string>;
   /** `word()`in üçüncü argümanı — kullanım notu. */
   notes: Record<string, string>;
-  /** `(ders, Almanca)` → kelimenin İngilizce karşılığı. */
+  /** `(konuşma, Almanca)` → kelimenin İngilizce karşılığı. */
   vocab: Record<string, string>;
   patterns: Record<string, string>;
   meta: Record<string, { title: string; summary: string }>;
   /**
-   * Rol yapma sahnesi. `openingTr` Almanca açılış repliğinin ANA DİLDEKİ
+   * Sohbet sahnesi. `openingTr` Almanca açılış repliğinin ANA DİLDEKİ
    * karşılığı — Almanca replik (`opening`) olduğu gibi kalıyor, model onu
    * konuşuyor.
    */
@@ -52,7 +52,7 @@ export type NativeDict = {
   /** Can-do ifadesi — anahtar `A1.SPK.1` biçiminde. */
   cando: Record<string, string>;
   /**
-   * Çevrimdışı rol yapma senaryosunun Türkçe alanları. Anahtar DİZENİN
+   * Çevrimdışı sohbet senaryosunun Türkçe alanları. Anahtar DİZENİN
    * KENDİSİ: kaynak konumsal kısayollarla yazıldığı için alanların adı yok.
    */
   script: Record<string, string>;
@@ -64,17 +64,17 @@ export type NativeDict = {
    */
   exam: Record<string, string>;
   /**
-   * ALMANCA takas tablosu — `(ders, özgün Almanca)` → yeni Almanca.
+   * ALMANCA takas tablosu — `(konuşma, özgün Almanca)` → yeni Almanca.
    *
-   * Çeviri değil KARAR. Ders öğrenciye kendisi hakkında bir cümle
+   * Çeviri değil KARAR. Konuşma öğrenciye kendisi hakkında bir cümle
    * söyletiyorsa ("Ich bin in Izmir geboren", "Ich spreche Türkisch") o cümle
    * Türk öğrenciye göre kurulmuş demektir; İngilizce konuşan için yanlış.
    * Diyalogdaki BİR KİŞİNİN Türkiyeli olması ise içerik ve olduğu gibi kalır
-   * — ayıran şey cümlenin dersteki rolü. Tablo: `data/conversations/swap/en.json`.
+   * — ayıran şey cümlenin konuşmadaki rolü. Tablo: `data/conversations/swap/en.json`.
    */
   swap: Record<string, string>;
   /**
-   * İngilizce taraftaki eşi — `(ders, özgün İngilizce)` → yeni İngilizce.
+   * İngilizce taraftaki eşi — `(konuşma, özgün İngilizce)` → yeni İngilizce.
    *
    * Almanca değişince onu ALINTILAYAN İngilizce satır da değişmeli:
    * "Last: 'Turkish and German are not related languages.'" satırı, altındaki
@@ -85,8 +85,8 @@ export type NativeDict = {
    * BECERİ EGZERSİZLERİNİN düz metni — `intro` ve `questions[].explain`.
    * Anahtar dizenin kendisi (`data/skills/prose/out/`).
    *
-   * Ders ekseninden ayrı bir sözlük çünkü kaynağı da ayrı: bu dizeler
-   * `BUNDLED_EXERCISES`ten çıkıyor, derslerden değil. Aynı Türkçe cümle iki
+   * Konuşma ekseninden ayrı bir sözlük çünkü kaynağı da ayrı: bu dizeler
+   * `BUNDLED_EXERCISES`ten çıkıyor, konuşmalardan değil. Aynı Türkçe cümle iki
    * eksende farklı çevrilebilir ve tek sözlüğe konsalar biri ötekini ezerdi.
    *
    * ALINTILAR BURADA YOK ve olmamalı: 1.885 `explain` satırı düz Türkçe
@@ -118,7 +118,7 @@ export type NativeDict = {
    * (`data/mock-exams/prose/out/`). Anahtar `tür + AYRAÇ + tr`.
    *
    * Neden ayrı bir sözlük: kâğıtlar `src/lib/mock-exams/` altında duruyor,
-   * ne dersten ne egzersizden çıkıyor. Neden bileşik anahtar: ölçüldü —
+   * ne konuşmadan ne egzersizden çıkıyor. Neden bileşik anahtar: ölçüldü —
    * yalnız dizeye bakılsa 6.626 girdi olurdu, yani bir Türkçe dize iki
    * türde iki ayrı şey anlatıyor ve düz anahtar birini sessizce yerdi.
    */
@@ -223,7 +223,7 @@ export function resolveSegments(
 }
 
 /**
- * Dersin anlatımını çevirir; bir adım bile çözülemezse ders TÜMDEN reddedilir.
+ * Konuşmanın anlatımını çevirir; bir adım bile çözülemezse konuşma TÜMDEN reddedilir.
  *
  * Başlık ve özet de `meta` hattından geliyor; kalıp notu `patterns`ten.
  * Sözlükçenin kendisi (`vocab`) ekranda kelime listesi olarak görünüyor ve
@@ -233,7 +233,7 @@ export function resolveConversation(dict: NativeDict, conversation: Conversation
   const meta = dict.meta[conversation.id];
   if (!meta) return null;
 
-  /** Almanca takası — `(ders, özgün)` → yeni. Yoksa dize olduğu gibi döner. */
+  /** Almanca takası — `(konuşma, özgün)` → yeni. Yoksa dize olduğu gibi döner. */
   const sw = (de: string): string => dict.swap[conversation.id + SEP + de] ?? de;
 
   const lecture: LectureStep[] = [];
@@ -264,8 +264,8 @@ export function resolveConversation(dict: NativeDict, conversation: Conversation
   const rp = dict.chat[conversation.id];
 
   /*
-    SENARYO, ROL YAPMANIN İÇİNDE. On dersin `chat.script` dizisi var ve
-    içindeki üç alan Türkçe. Buradaki eksik de dersi TÜMDEN düşürüyor:
+    SENARYO, SOHBETNIN İÇİNDE. On konuşmanın `chat.script` dizisi var ve
+    içindeki üç alan Türkçe. Buradaki eksik de konuşmayı TÜMDEN düşürüyor:
     modelin çalışmadığı anda devreye giren akış bu, yani yarım çevrilirse
     tam da en kırılgan anda Türkçe çıkar.
   */
@@ -312,9 +312,9 @@ export function resolveConversation(dict: NativeDict, conversation: Conversation
   /* SÖZLÜKÇE VE KALIP DA HEP-YA-HİÇ. Eskiden ikisi de `?? v.tr` ile sessizce
      Türkçesine düşüyordu ve bu bir kez gerçekten oldu: biçimlendirici bir
      kalıp maddesini üç satıra açıp sonuna virgül koyunca çıkarıcı onu
-     görmedi, sözlüğe hiç girmedi, HİÇBİR kapı fark etmedi ve ders
+     görmedi, sözlüğe hiç girmedi, HİÇBİR kapı fark etmedi ve konuşma
      İngilizce açılıp altında Türkçe bir kullanım notu taşıdı. Eksik anahtar
-     artık dersi düşürüyor — çevrilmemiş bir ders, yarım çevrilmişten
+     artık konuşmayı düşürüyor — çevrilmemiş bir konuşma, yarım çevrilmişten
      iyidir. (Çıkarıcı da düzeltildi: `data/conversations/vocab/extract.mjs`.) */
   let miss = false;
   const look = (table: Record<string, string>, key: string, fallback: string): string => {
@@ -366,7 +366,7 @@ export function resolveConversation(dict: NativeDict, conversation: Conversation
  * kaynakta zaten dolu. Aynı şey için iki doğruluk kaynağı tutmak, ayrıştıkları
  * gün hangisinin doğru olduğunu bilinemez hâle getirir.
  *
- * Ders çözücüsüyle aynı kural: HEP YA HİÇ. Tek bir yönerge Türkçe kalırsa
+ * Konuşma çözücüsüyle aynı kural: HEP YA HİÇ. Tek bir yönerge Türkçe kalırsa
  * kâğıt reddediliyor — yarı Türkçe bir sınav kâğıdı, öğrencinin okuduğu
  * yönergeye güvenemediği bir kâğıttır.
  */
@@ -876,7 +876,7 @@ export function resolveMockPaper<T extends MockShape>(dict: NativeDict, paper: T
    * SÖZLÜKÇE KATLANIYOR, çevrilmiyor: `tr ← en`, `en` düşüyor. Kaynak
    * zaten iki karşılığı da taşıyor — ölçüldü, 857 maddenin 857'sinde `en`
    * dolu — yani burada yazılacak hiçbir şey yok, yalnız hangi sütunun
-   * gösterileceği seçiliyor. Ders ve egzersiz hatlarında aynı kural.
+   * gösterileceği seçiliyor. Konuşma ve egzersiz hatlarında aynı kural.
    *
    * `note` alanı bugün HİÇ yok (ölçüldü: 0/857). Biri eklenirse kâğıt
    * düşecek ve kapı kırmızı yanacak — çünkü notun İngilizcesi için bir hat

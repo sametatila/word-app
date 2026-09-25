@@ -9,7 +9,7 @@ import { spokenMatches } from "../src/lib/voiceMatch";
  * TEHLİKELİ: hedef "was", söylenen "das Wasser" → sıkıştırılmış biçim hedefi
  * içeriyor ve yanlış cevap doğru sayılıyordu.
  *
- * Ders havuzundaki 5164 başlık ölçüldü: 3 harf eşiğinde 1310 hedef başka bir
+ * Konuşma havuzundaki 5164 başlık ölçüldü: 3 harf eşiğinde 1310 hedef başka bir
  * başlığın içinde geçiyor, 12 harfte 22. Eşik bu yüzden bu iki okumada ayrı
  * ve 12; bölünmüş bileşik zaten EŞİTLİKLE yakalanıyor, içerme yalnız bölünme
  * artı dolgu sözcüğü bir aradayken gerekiyor ve orada hedef hep uzun.

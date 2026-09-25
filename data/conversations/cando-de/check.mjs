@@ -11,7 +11,7 @@
  *   yeterlik; ikisi aynı Almancaya düşerse ekranda tekrar görünür ve
  *   aradaki fark kaybolur. Kardeş kapının aynı kuralı, aynı gerekçeyle.
  * - **Karakter kümesi.** Türkçeye özgü harfler kümenin dışında: kalan bir
- *   `ş` çevrilmemiş metin demek. Bu hatta ÖZEL AD GEVŞETMESİ YOK — ders
+ *   `ş` çevrilmemiş metin demek. Bu hatta ÖZEL AD GEVŞETMESİ YOK — konuşma
  *   düzyazısının tersine can-do ifadelerinde ad geçmiyor, hepsi
  *   "…yapabilirim" biçiminde genel yeterlik.
  */

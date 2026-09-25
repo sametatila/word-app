@@ -1,9 +1,9 @@
 /**
- * İçerik → yapabilirlik etiketi — web `src/lib/cando-map.ts`in ders kısmı.
+ * İçerik → yapabilirlik etiketi — web `src/lib/cando-map.ts`in konuşma kısmı.
  *
- * Yalnız DERS eşlemesi taşındı (`candoForConversation`); becerilerin tür/seviye
+ * Yalnız KONUŞMA eşlemesi taşındı (`candoForConversation`); becerilerin tür/seviye
  * eşlemesi webde kaldı, mobilde çağıranı yok. Tablolar birebir aynı ve
- * `check:parity` "ders yapabilirlik eslemesi" ile ölçülüyor.
+ * `check:parity` "konuşma yapabilirlik eslemesi" ile ölçülüyor.
  */
 type CefrLevel = "A1" | "A2" | "B1" | "B2" | "C1";
 
@@ -23,7 +23,7 @@ const ICON_THEME: Record<string, Theme> = {
   run: "work", sport: "work",
 };
 
-/** Seviye × tema → konuşma ifadesi (dersin rol yapma sahnesi). */
+/** Seviye × tema → konuşma ifadesi (konuşmanın sohbet sahnesi). */
 const CONVERSATION_SPK: Record<CefrLevel, Record<Theme, number>> = {
   A1: { social: 1, service: 3, work: 5 },
   A2: { social: 6, service: 1, work: 7 },
@@ -32,7 +32,7 @@ const CONVERSATION_SPK: Record<CefrLevel, Record<Theme, number>> = {
   C1: { social: 2, service: 3, work: 1 },
 };
 
-/** Dersin dilbilgisi odağı (focusId) → dilbilgisi ifadesi. */
+/** Konuşmanın dilbilgisi odağı (focusId) → dilbilgisi ifadesi. */
 const FOCUS_GR: [RegExp, Record<CefrLevel, number>][] = [
   [/artikel|plural|nomen|genus/i, { A1: 1, A2: 2, B1: 6, B2: 4, C1: 4 }],
   [/perfekt|partizip|vergangen|prateritum|präteritum/i, { A1: 2, A2: 1, B1: 5, B2: 6, C1: 3 }],
@@ -48,7 +48,7 @@ const FOCUS_GR: [RegExp, Record<CefrLevel, number>][] = [
 ];
 
 /**
- * Dersin yapabilirlik etiketleri. Webden tek farkı süzgeç: orada `isCandoId`
+ * Konuşmanın yapabilirlik etiketleri. Webden tek farkı süzgeç: orada `isCandoId`
  * 213 satırlık veri dosyasına bakıyor, burada kimlikler `/api/cando`dan gelen
  * listeyle doğrulanıyor (o listenin metni de zaten gerekiyor).
  */

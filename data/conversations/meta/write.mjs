@@ -1,7 +1,7 @@
 /**
  * Paketi yazar: `node data/conversations/meta/write.mjs <paket> < satirlar.txt`
  *
- * Her ders İKİ satır alıyor: önce başlık, sonra özet. Tek satıra sığdırıp
+ * Her konuşma İKİ satır alıyor: önce başlık, sonra özet. Tek satıra sığdırıp
  * ayırıcı kullanmak, özetin içindeki noktalama yüzünden kırılgan olurdu.
  *
  * `conversation` alanı paket dosyasından kopyalanıyor — sözlükçe hattında anahtarı
@@ -35,4 +35,4 @@ writeFileSync(
     )
     .join(",\n")}\n]\n`,
 );
-console.log(`${packet}: ${out.length} ders yazıldı`);
+console.log(`${packet}: ${out.length} konuşma yazıldı`);

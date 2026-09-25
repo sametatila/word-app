@@ -68,7 +68,7 @@ export function AccountDeleteForm({ email }: { email: string | null }) {
     /*
       CİHAZDA HİÇBİR ŞEY KALMIYOR.
       Silme başarılı olunca yalnız yönlendirme vardı: silinen hesabın avatarı,
-      okuma sesi, beceri/ders ilerlemesi, taslakları ve başlangıç önbelleği
+      okuma sesi, beceri/konuşma ilerlemesi, taslakları ve başlangıç önbelleği
       tarayıcıda kalıyordu - kullanıcı unutulmak istedi, gizlilik politikası da
       bunu söz veriyor. Mobil karşılığı (`DeleteAccountScreen` `finishDeleted`)
       aynı kararı baştan beri veriyor.

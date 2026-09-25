@@ -4,9 +4,9 @@ import type { ConversationIcon } from "@/lib/conversations/types";
 /**
  * Immersion — ikinci mod (bkz. docs/plan/immersion.md).
  *
- * "Beceriler" bölümü kalktı; içeriği derslerin arasına serpiliyor. Yeni yapı üç
+ * "Beceriler" bölümü kalktı; içeriği konuşmaların arasına serpiliyor. Yeni yapı üç
  * katman: **Track** (kurs+seviye) → sıralı **Unit**'ler → sıralı **Item**'lar.
- * Item, altındaki mevcut içeriğe (ders ya da beceri egzersizi) `ref` ile bağlanır;
+ * Item, altındaki mevcut içeriğe (konuşma ya da beceri egzersizi) `ref` ile bağlanır;
  * içeriği henüz kurulmamış slotlar `ref: null` taşır (yer tutucu — read/listen/
  * write/grammar/quiz içeriği ünite temasına göre sonradan doldurulacak).
  *
@@ -15,7 +15,7 @@ import type { ConversationIcon } from "@/lib/conversations/types";
  */
 
 export type ImmersionItemKind =
-  | "conversation" // mevcut ders — üretim/chat omurgası (userConversations ilerlemesi)
+  | "conversation" // mevcut konuşma — üretim/chat omurgası (userConversations ilerlemesi)
   | "read" // okuma egzersizi (skill_exercises → reading)
   | "listen" // dinleme egzersizi
   | "write" // yazma egzersizi
@@ -33,14 +33,14 @@ export type ImmersionItem = {
   id: string;
   kind: ImmersionItemKind;
   /**
-   * Altındaki içeriğin kimliği: `conversation` için ders id'si, read/listen/write için
+   * Altındaki içeriğin kimliği: `conversation` için konuşma id'si, read/listen/write için
    * skill_exercises id'si. `null` = boş slot (içerik henüz kurulmadı); grammar/
    * quiz/unitQuiz bugün daima null (motorları var, içerikleri sonra).
    */
   ref: string | null;
-  /** Almanca başlık — ders/egzersiz başlığı ya da tür etiketi ("Kontrol Noktası"). */
+  /** Almanca başlık — konuşma/egzersiz başlığı ya da tür etiketi ("Ünite quizi"). */
   title: string;
-  /** Türkçe alt başlık — ders titleTr'i, egzersiz türü (genre) ya da kısa açıklama. */
+  /** Türkçe alt başlık — konuşma titleTr'i, egzersiz türü (genre) ya da kısa açıklama. */
   titleTr?: string;
   /** Yalnız `conversation`: yol-haritası düğüm simgesi. */
   icon?: ConversationIcon;
@@ -55,22 +55,22 @@ export type ImmersionUnit = {
   group: number;
   level: CefrLevel;
   course: string;
-  /** Tema — ünitenin ilk dersinin düştüğü modülden (moduleTheme). */
+  /** Tema — ünitenin ilk konuşmasının düştüğü modülden (moduleTheme). */
   theme: string;
   /**
    * Temanın geldiği modülün sırası (0 tabanlı) — Patika üniteleri bununla
    * modül başlıkları altında grupluyor.
    *
-   * Neden gerekli: ünite 4 ders, modül 10 ders. Tema modülden geldiği için aynı
+   * Neden gerekli: ünite 4 konuşma, modül 10 konuşma. Tema modülden geldiği için aynı
    * ad art arda 2-3 kartta tekrar ediyordu ("Tanışma ve ben" ×3) ve kartlar
    * birbirinden ayırt edilemiyordu. Tema artık grubun başlığı, kartın adı değil.
    */
   moduleIndex: number;
-  /** Ünitenin derslerinin başlıkları (hedef dilde) — kartı ayırt eden ad. */
+  /** Ünitenin konuşmalarının başlıkları (hedef dilde) — kartı ayırt eden ad. */
   topics: string[];
   /** Sıralı item'lar; sonuncusu daima `unitQuiz`. */
   items: ImmersionItem[];
-  /** Dolu (ref'li) ders item sayısı — ünitenin iskeleti buna dayanır. */
+  /** Dolu (ref'li) konuşma item sayısı — ünitenin iskeleti buna dayanır. */
   conversationCount: number;
 };
 

@@ -74,7 +74,7 @@ test("her temanın İngilizcesi ve Almancası var", () => {
 });
 
 // İngilizce C1 müfredatı Almancadan ayrışıyor; tablo kursa göre bölünmeseydi
-// bu on ünite Patika'da başka bir dersin adını taşırdı.
+// bu on ünite Patika'da başka bir konuşmanın adını taşırdı.
 test("kurs ayrımı gerçek: İngilizce C1 Almancadan farklı", () => {
   const de = course(mobTable, "de").C1;
   const en = course(mobTable, "en").C1;

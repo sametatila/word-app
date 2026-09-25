@@ -36,7 +36,7 @@ export const MIN_MASTERED = 30;
 export const BOSS_SECONDS = 60;
 
 /**
- * Ders adımında bir öğrencinin deneme hakkı.
+ * Konuşma adımında bir öğrencinin deneme hakkı.
  *
  * Sayı hiçbir yerde sabit değildi: iki oynatıcı da `>= 3` diye elle
  * karşılaştırıyordu. Web karşılığı `src/lib/conversations/chat-const.ts`

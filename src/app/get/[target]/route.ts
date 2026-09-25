@@ -29,7 +29,7 @@ export async function GET(req: Request, ctx: { params: Promise<{ target: string 
   const source = cleanSource(url.searchParams.get("src"));
   /* GENEL ADRESE yönlendirme: `req.url` nginx arkasında iç adres
      (`https://localhost:3011`) taşıyor; ilk sürüm kullanıcıyı oraya yolladı
-     (bkz. auth/handoff aynı ders). */
+     (bkz. auth/handoff aynı konuşma). */
   const back = (q: string) => NextResponse.redirect(new URL(`/premium?${q}`, AUTH_BASE_URL));
 
   if (target !== "premium") return back("from=get");

@@ -58,7 +58,7 @@ export type SkillExercise = {
 const pools = new Map<string, SkillExercise[]>();
 
 /**
- * Kursun paket adı. Ders yükleyicisiyle aynı kural: aynı hedef dili paylaşan
+ * Kursun paket adı. Konuşma yükleyicisiyle aynı kural: aynı hedef dili paylaşan
  * kursa düşmek meşru (gsw-zh → de), farklı dile ASLA düşülmez.
  */
 function packOf(course: string, level: string): string {

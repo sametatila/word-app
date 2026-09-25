@@ -263,9 +263,9 @@ async function mergeIntoExisting() {
 
   const conversations = await db.select().from(userConversations).where(eq(userConversations.userId, T));
   const l1 = conversations.find((l) => l.conversationId === "gm-l1");
-  check("ders: en iyi doğru 8, konuşma bitti, deneme 3", l1?.correct === 8 && l1?.chatDone === true && l1?.attempts === 3, l1);
-  check("ders: tekrar planı en son çalışılandan (misafir, aralık 1)", l1?.intervalDays === 1 && l1?.ruleId === "r-new", l1);
-  check("misafirin öteki dersi taşındı", conversations.some((l) => l.conversationId === "gm-l2"));
+  check("konuşma: en iyi doğru 8, konuşma bitti, deneme 3", l1?.correct === 8 && l1?.chatDone === true && l1?.attempts === 3, l1);
+  check("konuşma: tekrar planı en son çalışılandan (misafir, aralık 1)", l1?.intervalDays === 1 && l1?.ruleId === "r-new", l1);
+  check("misafirin öteki konuşmayı taşındı", conversations.some((l) => l.conversationId === "gm-l2"));
 
   check("seviye testi taşındı", (await db.select().from(placements).where(eq(placements.userId, T))).length === 1);
   const ex = await db.select().from(exams).where(inArray(exams.userId, [G, T]));

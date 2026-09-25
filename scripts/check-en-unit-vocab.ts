@@ -7,13 +7,13 @@
  *
  * Almanca kardeşi `check-unit-vocab.ts`; ondan tek farkı ölçen makine
  * (`lib/en-gate.ts`, Almancada `lib/vocab-gate.cjs`) ve havuzun kaynağı.
- * Ölçü aynı: Patika'da ünite 1'i açan öğrenci HENÜZ dört ders görmüştür;
+ * Ölçü aynı: Patika'da ünite 1'i açan öğrenci HENÜZ dört konuşma görmüştür;
  * seviyenin tamamını bildiğini varsaymak o egzersizi ölçülemez kılar.
  * Kütüphane denetleyicisi (`check:libvocab`) seviye ölçüsünü kullanır ve
  * orada doğrudur: kütüphane egzersizinin ünitesi yok, öğrenci seviyeyi
  * kendi seçiyor.
  *
- * HAVUZ = bu seviyenin 1..4u. derslerinin kelime ve kalıpları + ALT
+ * HAVUZ = bu seviyenin 1..4u. konuşmalarının kelime ve kalıpları + ALT
  * seviyelerin tamamı + serbest işlev sözcükleri + egzersizin KENDİ
  * sözlükçesi. Sonuncusu bilerek: sözlükçedeki kelime öğrenciye o ekranda
  * veriliyor, yani "bilinmeyen" değil. Almanca hat da aynısını yapıyor.
@@ -51,7 +51,7 @@ function feed(pool: Set<string>, raw: string) {
 
 /**
  * Seviyenin `unit`. ünitesine kadar öğretilmiş küme: alt seviyelerin tamamı +
- * bu seviyenin ilk `UNIT_CONVERSATIONS * unit` dersi.
+ * bu seviyenin ilk `UNIT_CONVERSATIONS * unit` konuşmayı.
  */
 function unitPool(level: string, unit: number): Set<string> {
   const pool = new Set(EN_FREE);
@@ -78,7 +78,7 @@ function unitPool(level: string, unit: number): Set<string> {
  * sınıflandırması ikincisine muhtaç — "yirmi ünite sonra öğretiliyor" ile
  * "bir ünite sonra" aynı iş değil.
  */
-function dersUnite(level: string): Map<string, number> {
+function konusmaUnite(level: string): Map<string, number> {
   const m = new Map<string, number>();
   const conversations = conversationsFor("en").filter((l) => l.level.toLowerCase() === level);
   conversations.forEach((l, i) => {
@@ -97,8 +97,8 @@ function dersUnite(level: string): Map<string, number> {
 
 const BASLIK: Record<string, string> = {
   ustu: "SEVİYE ÜSTÜ   — havuzda var ama üst seviyede; metin sadeleşmeli ya da sözlükçeye girmeli",
-  erken: "ERKEN         — bu seviyenin dersi öğretiyor, ama daha sonraki ünitede",
-  derssiz: "DERSSİZ       — havuzda var ama BU SEVİYENİN dersleri öğretmiyor (üst seviyede öğretiliyor olabilir; patika boşluğu)",
+  erken: "ERKEN         — bu seviyenin konuşması öğretiyor, ama daha sonraki ünitede",
+  konusmasiz: "KONUŞMASIZ    — havuzda var ama BU SEVİYENİN konuşmaları öğretmiyor (üst seviyede öğretiliyor olabilir; patika boşluğu)",
   turev: "TÜREV         — kök bu üniteye kadar öğretilmiş; kapı yüzey biçimini tanımadı (içerik kusuru DEĞİL)",
   yabanci: "HAVUZDA YOK   — ödünç sözcük, kısaltma, özel ad ya da yazım hatası",
 };
@@ -117,7 +117,7 @@ for (const level of levels) {
   if (!list.length) continue;
   console.log(`\nEN ${level.toUpperCase()} · ünite hizalı egzersiz: ${list.length}`);
   const genel = new Map<string, number>();
-  const du = dersUnite(level);
+  const du = konusmaUnite(level);
   const sinifSay = new Map<string, number>();
   const sinifKelime = new Map<string, Map<string, string>>();
   const egzersizSoz = new Map<string, Map<string, string>>();
@@ -152,7 +152,7 @@ for (const level of levels) {
   const toplam = [...sinifSay.values()].reduce((a, b) => a + b, 0);
   if (toplam) {
     console.log("  bulgu sınıfları:");
-    for (const k of ["ustu", "erken", "derssiz", "turev", "yabanci"]) {
+    for (const k of ["ustu", "erken", "konusmasiz", "turev", "yabanci"]) {
       const n = sinifSay.get(k) ?? 0;
       if (!n) continue;
       const ornek = [...(sinifKelime.get(k) ?? new Map())].slice(0, 6).map(([w, d]) => `${w} (${d})`).join(" · ");

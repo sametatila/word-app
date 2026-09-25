@@ -1,5 +1,5 @@
 /**
- * Rol yapma sınavının sabitleri (WP-22) — istemciye de iniyor, o yüzden
+ * Puanlı kısmın sabitleri (WP-22) — istemciye de iniyor, o yüzden
  * `server-only` olan chat.ts'den ayrı.
  */
 export const SCORED_TURNS = 5;
@@ -15,15 +15,15 @@ export const SCORED_SECONDS = 180;
  */
 export const SCORED_PASS_SCORE = 60;
 
-/** Rol yapmada bir dersin isteyebileceği en çok tur (bkz. ConversationChat.minTurns). */
+/** Sohbette bir konuşmanın isteyebileceği en çok tur (bkz. ConversationChat.minTurns). */
 export const MAX_MIN_TURNS = 9;
 
 /**
- * Ders adımında bir öğrencinin deneme hakkı.
+ * Konuşma adımında bir öğrencinin deneme hakkı.
  *
  * Sayı hiçbir yerde sabit değildi: iki oynatıcı da `>= 3` diye ELLE
  * karşılaştırıyordu (`conversation-player` `attempts`, Android `ConversationScreen`
- * `tries`). Biri değişse öteki sessizce eski kalır ve aynı ders iki
+ * `tries`). Biri değişse öteki sessizce eski kalır ve aynı konuşma iki
  * platformda farklı sayıda hak verirdi.
  *
  * Mobil karşılığı `mobile/src/lib/learningRules.ts` `CONVERSATION_TRY_CEILING`.

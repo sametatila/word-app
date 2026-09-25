@@ -12,7 +12,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
  * siliyor, RevenueCat oturumunu ve bellekteki premium durumunu kapatıyor -
  * ama `AsyncStorage` olduğu gibi kalıyordu. Yani aynı telefonda A çıkıp B
  * girdiğinde B, A'nın avatarını, bitirdiği öğeleri, bekleyen kuyruklarını,
- * yarım kalmış dersini ve deneme sınavı koşularını görüyordu. `AuthContext`in
+ * yarım kalmış konuşmasını ve deneme sınavı koşularını görüyordu. `AuthContext`in
  * kendi yorumu bu sorunu bellek katmanı için anlatıyor ("bir sonraki kullanıcı
  * öncekinin yetkisini görmesin"); bu, aynı sorunun KALICI katmanı.
  *
@@ -30,13 +30,13 @@ const ACCOUNT_SCOPED_PREFIXES = [
      önek hiçbir anahtara uymuyordu. Bildirimler çıkışta `cancelLocalReminders`
      ile kapanıyor. */
   "lernomi-items-done", //         bitirilen ünite öğeleri
-  "lernomi-conversation-resume:", //     yarım kalmış ders
+  "lernomi-conversation-resume:", //     yarım kalmış konuşma
   "lernomi:mock-done", //          bitirilen deneme kâğıtları
   "lernomi:mock-run:", //          yarım kalmış deneme koşusu
   /*
     GONDERILMEYI BEKLEYEN KAYITLAR DA HESABA AIT.
 
-    Bu uc kuyruk ag yokken biriken cevaplari, ders ilerlemesini ve beceri
+    Bu uc kuyruk ag yokken biriken cevaplari, konuşma ilerlemesini ve beceri
     ogesi sonuclarini tutuyor ve bir sonraki acilista gonderiliyorlar.
     Ucu de listede yoktu: A cikip B girdiginde A'nin bekleyen cevaplari
     B'nin hesabina yaziliyordu. Ayni bosluk webde de vardi
@@ -46,7 +46,7 @@ const ACCOUNT_SCOPED_PREFIXES = [
     iyi, ve listedeki oteki yarim isler de ayni kuralla siliniyor.
   */
   "lernomi-answer-queue", //       gonderilmeyi bekleyen tur cevaplari
-  "lernomi-conversations-pending", //    gonderilmeyi bekleyen ders ilerlemesi
+  "lernomi-conversations-pending", //    gonderilmeyi bekleyen konuşma ilerlemesi
   "lernomi-items-pending", //      gonderilmeyi bekleyen beceri ogeleri
   "lernomi-path-items-pending", // gonderilmeyi bekleyen patika pratik adimlari
   "lernomi-item-scores", //        oge puanlari

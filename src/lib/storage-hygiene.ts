@@ -1,14 +1,14 @@
 /**
  * Cihaz deposunun temizliği: artık hiçbir kodun okumadığı anahtarlar ve
- * süresi geçmiş yarım ders kayıtları.
+ * süresi geçmiş yarım konuşma kayıtları.
  *
  * Mobil karşılığı `mobile/src/lib/storageMigration` `sweepDeviceStorage`.
  */
 import { migrateLegacyWebStorage } from "@/lib/legacy-names";
 
-/** Yarım dersin saklandığı anahtarın öneki: `<önek>:<dersId>`. */
+/** Yarım konuşmanın saklandığı anahtarın öneki: `<önek>:<dersId>`. */
 export const CONVERSATION_RESUME_KEY = "lernomi-conversation-progress";
-/** Yarım ders bu kadar gün sonra devam ettirilmiyor ve siliniyor. */
+/** Yarım konuşma bu kadar gün sonra devam ettirilmiyor ve siliniyor. */
 export const CONVERSATION_RESUME_DAYS = 3;
 /** Gönderilmeyi bekleyen Konuşma adımı sonuçları (`lib/conversation-queue`). */
 export const CONVERSATIONS_PENDING_KEY = "lernomi-conversations-pending";
@@ -47,9 +47,9 @@ const DEAD_KEYS = [
  * Temizliği yapar. Uygulama açılışında bir kez çağrılıyor; olmayan anahtarı
  * silmek iş sayılmadığı için her açılışta çalışması zararsız.
  *
- * SÜRESİ GEÇMİŞ YARIM DERS. Ders oynatıcısı üç günden eski kaydı yok sayıyor
- * ama silmiyordu: kullanıcının dönmediği her ders cihazda süresiz kalıyordu.
- * Kayıt rol yapma turlarını, yani kullanıcının yazdığı konuşmanın metnini de
+ * SÜRESİ GEÇMİŞ YARIM KONUŞMA. Konuşma oynatıcısı üç günden eski kaydı yok sayıyor
+ * ama silmiyordu: kullanıcının dönmediği her konuşma cihazda süresiz kalıyordu.
+ * Kayıt sohbet turlarını, yani kullanıcının yazdığı konuşmanın metnini de
  * taşıyor; sunucu aynı konuşmayı 30 günde siliyor (gizlilik politikası §9),
  * cihazdaki kopyası hiç silinmiyordu.
  */

@@ -4,14 +4,14 @@ import { getT } from "@/lib/i18n/server";
 /**
  * KONUŞMA BULUNAMADI — bu bölümün kendi 404'ü.
  *
- * `[id]/page.tsx` ve `[id]/exam/page.tsx` tanınmayan bir ders kimliğinde
+ * `[id]/page.tsx` ve `[id]/exam/page.tsx` tanınmayan bir konuşma kimliğinde
  * `notFound()` atıyor ve ikisinde de uygulamanın GENEL 404'ü çiziliyordu:
  * "Sayfa bulunamadı" + Öğren'e dön. Bulunamayan şey bir sayfa değil bir
  * KONUŞMA ve genel sayfa uygulama kabuğunun DIŞINDA çiziliyor — kullanıcı
  * hem neyin eksik olduğunu hem de gezinmeyi aynı anda kaybediyordu.
  *
- * Android aynı yerde üzgün mirketi, dersin kendi cümlesini ve tek bir "Geri
- * dön" düğmesini gösteriyor (`ConversationScreen` `!conversation` dalı; rol yapma sınavı
+ * Android aynı yerde üzgün mirketi, konuşmanın kendi cümlesini ve tek bir "Geri
+ * dön" düğmesini gösteriyor (`ConversationScreen` `!conversation` dalı; puanlı kısım
  * `ConversationScoredScreen` aynı anahtarı kullanıyor). Metinler tabanda zaten
  * vardı ve webde hiçbir yerden çağrılmıyordu.
  *

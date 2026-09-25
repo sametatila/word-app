@@ -17,7 +17,7 @@ import type { Assessment } from "@/lib/assess-prompts";
  *
  * Model başlangıçta üç kaynak okuyordu — beceri egzersizleri, AI
  * değerlendirmeleri ve sınavlar — ve bu, uygulamada geçirilen zamanın
- * AZINLIĞIYDI. Kullanıcı günlerce kelime oyunu oynayıp ders bitiriyor,
+ * AZINLIĞIYDI. Kullanıcı günlerce kelime oyunu oynayıp konuşma bitiriyor,
  * dilbilgisi çalışıyor, sonra "yetkinlik" panosunda "ölçülmedi" görüyordu.
  * Ölçülmemiş değildi; ölçülene bakılmıyordu.
  *
@@ -25,7 +25,7 @@ import type { Assessment } from "@/lib/assess-prompts";
  *   exam       — `exams` (weekly → kelime, diğerleri → dilbilgisi)
  *   assessment — `assessments.result.score.overall` (writing → yazma,
  *                sentence → dilbilgisi, speaking/chat → konuşma)
- *   conversation     — `user_conversations` doğru/toplam (dersin seviyesi, dilbilgisi)
+ *   conversation     — `user_conversations` doğru/toplam (konuşmanın seviyesi, dilbilgisi)
  *   exercise   — `user_skills.last_score` (beceri, seviye, son deneme)
  *   drill      — `cheat_progress` (dilbilgisi çalışması, sayfanın seviyesi)
  *   game       — `reviews` × `words.niveau` (oyun türüne göre beceri)
@@ -112,11 +112,11 @@ export async function gatherEvidence(userId: string, now = new Date()): Promise<
 }
 
 /**
- * Dersler.
+ * Konuşmalar.
  *
- * Bir ders bir dilbilgisi kuralını öğretip hemen ölçüyor (`correct`/`total`),
+ * Bir konuşma bir dilbilgisi kuralını öğretip hemen ölçüyor (`correct`/`total`),
  * yani puanı olan bir bütün — kanıt olarak sınavın altında, tek egzersiğin
- * üstünde. Seviye ders kimliğinden değil ders tanımından okunuyor: kimlik
+ * üstünde. Seviye konuşma kimliğinden değil konuşma tanımından okunuyor: kimlik
  * biçimi ("de-a1-familie") kural değil gelenek ve değişirse sessizce yanlış
  * seviyeye yazardı.
  *
@@ -232,7 +232,7 @@ export type NextStep = {
 /**
  * En düşük kanıtlı beceri × mevcut seviye → o beceriden yapılmamış bir
  * egzersiz; beceri egzersizi olmayan beceriler (kelime, dilbilgisi) için
- * kelime turu / dilbilgisi çalışması; hiçbiri yoksa sıradaki ders.
+ * kelime turu / dilbilgisi çalışması; hiçbiri yoksa sıradaki konuşma.
  */
 export async function nextStep(
   userId: string,

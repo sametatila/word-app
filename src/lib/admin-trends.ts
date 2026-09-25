@@ -49,7 +49,7 @@ export async function weeklyTrends(): Promise<{ metrics: TrendMetric[]; issues: 
       { key: "reviews", label: "Cevap", current: n("reviews_c"), previous: n("reviews_p"), good: "up" },
       { key: "minutes", label: "Çalışma", current: n("minutes_c"), previous: n("minutes_p"), good: "up", unit: "min" },
       { key: "completion", label: "Tur tamamlama", current: n("completion_c"), previous: n("completion_p"), good: "up", unit: "pct" },
-      { key: "conversations", label: "Biten ders", current: n("conversations_c"), previous: n("conversations_p"), good: "up" },
+      { key: "conversations", label: "Biten konuşma", current: n("conversations_c"), previous: n("conversations_p"), good: "up" },
       { key: "paid", label: "Ödeme", current: n("paid_c"), previous: n("paid_p"), good: "up" },
       { key: "errors", label: "İstemci hatası", current: n("errors_c"), previous: n("errors_p"), good: "down" },
     ],

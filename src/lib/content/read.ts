@@ -151,7 +151,7 @@ export async function manifest(pack: string, since: number): Promise<Manifest> {
  * Gövde önbelleği — hash adresli olduğu için GEÇERSİZLEŞTİRME YOK.
  *
  * Bir hash'in gövdesi tanım gereği değişemez, dolayısıyla tek sınır bellek.
- * Tavan bayt cinsinden, çünkü maddeler çok farklı boylarda: 10 KB'lık bir ders
+ * Tavan bayt cinsinden, çünkü maddeler çok farklı boylarda: 10 KB'lık bir konuşma
  * maddesiyle 1,2 MB'lık anadil arşivini aynı "en fazla N kayıt" kuralıyla
  * saymak, tavanı ya anlamsız ya tehlikeli yapardı.
  *
@@ -308,7 +308,7 @@ export async function releasePacks(version: number) {
  * Panel sürüm listesini gösteriyordu ama "bu sürümde NE değişti" sorusunun
  * cevabı yoktu; geri alma düğmesine basan kişi neyi geri aldığını
  * bilmiyordu. Fark paket paket veriliyor, çünkü karar de öyle veriliyor:
- * "B1 derslerinde üç madde değişmiş" cümlesi eyleme dönüşebilir, "yedi madde
+ * "B1 konuşmalarında üç madde değişmiş" cümlesi eyleme dönüşebilir, "yedi madde
  * değişmiş" cümlesi dönüşmez.
  *
  * Gövde İÇERİĞİ karşılaştırılmıyor, hash'i karşılaştırılıyor: hash zaten

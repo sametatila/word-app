@@ -5,17 +5,17 @@ import type { DialogueReply, DialogueTurn } from "../lib/native";
 import type { Conversation } from "../data/conversations";
 
 /**
- * Çevrimdışı rol yapma — web `lib/conversations/offline-chat.ts` ile aynı akış.
+ * Çevrimdışı sohbet — web `lib/conversations/offline-chat.ts` ile aynı akış.
  *
- * Ders geçme koşulu konuşmanın YAPILMASINI istiyor; konuşma yalnız modelle
- * çalışsaydı sağlayıcı kapalıyken Android'de hiçbir ders geçilemezdi — ve
+ * Konuşma geçme koşulu konuşmanın YAPILMASINI istiyor; konuşma yalnız modelle
+ * çalışsaydı sağlayıcı kapalıyken Android'de hiçbir konuşma geçilemezdi — ve
  * bugün durum tam olarak buydu (bkz. web-parity §11.9). Aynı sahne modelsiz
  * oynanıyor:
  *
- *   1. Dersin `chat.script`i varsa: niyet eşleştirme motoru
+ *   1. Konuşmanın `chat.script`i varsa: niyet eşleştirme motoru
  *      (`game/dialogue`) — kapalı temalı, dallanan senaryo. Yazılmamış bir
  *      cevap "anlaşılmadı" olur ve örnek gösterilir.
- *   2. Senaryo yoksa: "hedef kalıpları kullan" görevi — dersin kalıpları
+ *   2. Senaryo yoksa: "hedef kalıpları kullan" görevi — konuşmanın kalıpları
  *      sırayla istenir, söylenende kalıbın kökü aranır.
  *
  * Çıktı model cevabıyla AYNI biçimde (`[SAY]` işareti): oynatıcı iki yolu da
@@ -92,7 +92,7 @@ function turnById(conversation: Conversation, id: string | null): DialogueTurn |
   return conversation.chat.script?.find((t) => t.id === id);
 }
 
-/** Açılış: senaryonun ilk turu (açılış repliğiyle aynı) ya da dersin açılışı. */
+/** Açılış: senaryonun ilk turu (açılış repliğiyle aynı) ya da konuşmanın açılışı. */
 export function offlineStart(conversation: Conversation): { state: OfflineState; opening: string; hint: Hint | null } {
   const script = conversation.chat.script;
   if (script?.length) {

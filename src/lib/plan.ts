@@ -22,7 +22,7 @@ import { weeklySummary } from "@/lib/growth";
  *
  * Öğeler ve kaynakları:
  *   1. Tekrar turu — SRS: vadesi gelen kelime sayısı (`user_words.due_at`).
- *   2. Sıradaki ders — `nextConversation` (vadesi gelen ya da ilk açılmamış).
+ *   2. Sıradaki konuşma — `nextConversation` (vadesi gelen ya da ilk açılmamış).
  *   3. Bir beceri egzersizi — seviyede en az çalışılmış beceriden, yapılmamış
  *      ilk egzersiz (WP-50 yetkinlik modeli gelene kadar geçici kural:
  *      "en az yapılan beceri" = en zayıf varsayımı).
@@ -91,7 +91,7 @@ export async function buildPlan(
     action: "session",
   });
 
-  // 2. Sıradaki ders
+  // 2. Sıradaki konuşma
   try {
     const next = await nextConversation(userId, course, level);
     if (next) {
@@ -110,7 +110,7 @@ export async function buildPlan(
       });
     }
   } catch (err) {
-    console.error("[plan] ders okunamadı", err);
+    console.error("[plan] konuşma okunamadı", err);
   }
 
   // 3. Sıradaki en iyi adım — yetkinlik modeli (WP-50): en düşük kanıtlı

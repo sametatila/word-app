@@ -9,7 +9,7 @@
  * ÜÇ KURAL, üçü de web'le aynı:
  *
  * 1. HEP-YA-HİÇ. Bir dize bile eksikse çözücü `null` dönüyor ve içerik
- *    OLDUĞU GİBİ kalıyor. Yarım çevrilmiş bir ders — içinde tek bir Türkçe
+ *    OLDUĞU GİBİ kalıyor. Yarım çevrilmiş bir konuşma — içinde tek bir Türkçe
  *    cümle kalmış İngilizce anlatım — çalışıyor görünen en kötü biçim.
  * 2. İKİ YÖN, İKİ SÖZLÜK. Türkçe kullanan zaten kaynağı görüyor. Anadili
  *    İngilizce olan ALMANCA kursu alıyor (`en.json`), anadili Almanca olan
@@ -17,7 +17,7 @@
  *    göre değişiyor ve kural tek yerde: `translatedCourse()`.
  * 3. ÖĞRENİLEN DİL DEĞİŞMİYOR. Çevrilen yalnız anadil yüzü: yönerge,
  *    açıklama, kalıp notu, sözlükçe karşılığı. Almanca metin sınavın ve
- *    dersin kendisidir.
+ *    konuşmanın kendisidir.
  *
  * SÖZLÜK ARTIK PAKETTE DEĞİL, İNDİRİLİYOR.
  *
@@ -35,7 +35,7 @@
  * YÜKLENENE KADAR ÇEVİRİ YOK ve bu hep-ya-hiç kuralının doğal uzantısı:
  * sözlük yoksa içerik kaynak dilinde kalıyor, yarım çevrilmiş hâlde değil.
  *
- * ÇÖZÜLEN SONUÇ ÖNBELLEKTE. Aynı ders bir oturumda onlarca kez okunuyor
+ * ÇÖZÜLEN SONUÇ ÖNBELLEKTE. Aynı konuşma bir oturumda onlarca kez okunuyor
  * (liste, oynatıcı, ilerleme) ve her seferinde 200 adımlık bir anlatımı
  * yeniden kurmak boşuna. Dil değişince önbellek tümden boşalıyor (en altta).
  */
@@ -164,8 +164,8 @@ export function clearNativeCache(): void {
 }
 
 /**
- * Dersi ana dile çevirir. Kurs süzgeci ÇAĞIRANDA değil burada: sözlük
- * yalnız Almanca kursun içeriğini tanıyor ve İngilizce kursun dersi
+ * Konuşmayı ana dile çevirir. Kurs süzgeci ÇAĞIRANDA değil burada: sözlük
+ * yalnız Almanca kursun içeriğini tanıyor ve İngilizce kursun konuşması
  * verilirse hep-ya-hiç kuralı onu zaten reddeder — ama boşuna 200 adım
  * gezmenin anlamı yok.
  */
@@ -173,7 +173,7 @@ export function nativeConversation<T extends { id: string; course?: string }>(co
   const course = translatedCourse();
   if (!course || (conversation.course ?? "de") !== course) return conversation;
   if (course === "en") {
-    /* AYRI ÇÖZÜCÜ: İngilizce kursun dersleri kendi kendine yeten JSON,
+    /* AYRI ÇÖZÜCÜ: İngilizce kursun konuşmaları kendi kendine yeten JSON,
        `resolveConversation`ın beklediği şablon yapısı yok. */
     const de = deDict();
     if (!de) return conversation;
@@ -216,10 +216,10 @@ export function nativeMockText(kind: string, tr: string): string {
 }
 
 /**
- * Ders başlığı/özeti — liste satırları için, yine hep-ya-hiç olmadan.
+ * Konuşma başlığı/özeti — liste satırları için, yine hep-ya-hiç olmadan.
  *
  * ALMANCA TARAFTA YOK: `meta` id'ye göre indeksli bir alan ve Almanca
- * sözlükte yalnız METNİN KENDİSİ anahtar (başlık `titleTr` türüyle ders
+ * sözlükte yalnız METNİN KENDİSİ anahtar (başlık `titleTr` türüyle konuşma
  * düzyazısı hattında duruyor). Bu işlevin mobilde çağıranı da yok; Almanca
  * için ikinci bir indeks üretmek, kullanılmayan 11.011 satırlık sözlüğe
  * 200 satır daha eklemek olurdu.

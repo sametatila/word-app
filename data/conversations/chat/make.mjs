@@ -1,5 +1,5 @@
 /**
- * Rol yapma alanlarını paketler: `node data/conversations/chat/make.mjs`
+ * Sohbet alanlarını paketler: `node data/conversations/chat/make.mjs`
  *
  * Plan bu kalemi "scene + goal = 1.160 dize" diye yazmıştı; SAYILDI, dört
  * Türkçe alan var ve toplam 2.320:
@@ -15,7 +15,7 @@
  * verilen görevin tamamlanmış hâli, `openingTr` ise partnerin ağzından
  * çıkan ilk cümle. Ayrı paketlense biri ötekine bakmadan yazılırdı.
  *
- * Paket 25 ders = 100 dize; meta hattındaki ritmin aynısı.
+ * Paket 25 konuşma = 100 dize; meta hattındaki ritmin aynısı.
  */
 import { readFileSync, readdirSync, writeFileSync, mkdirSync } from "node:fs";
 
@@ -26,7 +26,7 @@ export function extractChat() {
   const rows = [];
   for (const f of readdirSync(SRC).filter((x) => /^de-.*\.ts$/.test(x)).sort()) {
     const src = readFileSync(`${SRC}${f}`, "utf8");
-    // Konum sırası şart: `id` dersi açar, sonraki chat bloğu ona aittir.
+    // Konum sırası şart: `id` konuşmayı açar, sonraki chat bloğu ona aittir.
     let conversation = null;
     for (const m of src.matchAll(/id:\s*"(de-[^"]+)"|chat:\s*\{([\s\S]*?)\n    \}/g)) {
       if (m[1] !== undefined) {
@@ -68,6 +68,6 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     );
   }
   const miss = rows.filter((r) => !r.scene || !r.partner || !r.opening || !r.openingTr || !r.goal);
-  console.log(`${rows.length} ders · ${n} paket · eksik alanlı ders: ${miss.length}`);
+  console.log(`${rows.length} konuşma · ${n} paket · eksik alanlı konuşma: ${miss.length}`);
   for (const r of miss.slice(0, 5)) console.log(`  ${r.conversation}`);
 }

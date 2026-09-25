@@ -286,7 +286,7 @@ if (ctaSapan.length) {
  *       (`ui/ConfirmDialog` `padding: spacing.xl`)
  *   seviye testi                                Android `PlacementScreen`
  *       kart kullanmıyor, `padding: spacing.xl` (20)
- *   rol yapma sınavı                            Android `ConversationScoredScreen`
+ *   puanlı kısım                            Android `ConversationScoredScreen`
  *       dört yüzeyinin hepsinde `padding: spacing.xl` (20)
  *   tur sonucu ve başarım kartları               Android'in kendi bölünmüş
  *       ölçüleri (28/16 ve 20/16) - tek `p-` değil, yatay ve dikey ayrı yazılı

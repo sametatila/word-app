@@ -21,7 +21,7 @@ import { localDay } from "@/lib/day";
 /**
  * Modül sınavı — patron turu.
  *
- * Ders yolu on derslik modüllere bölünmüştü ama modülün bitişinde hiçbir şey
+ * Konuşma yolu on konuşmalık modüllere bölünmüştü ama modülün bitişinde hiçbir şey
  * olmuyordu: pankartta bir kupa beliriyor, yol devam ediyordu. Sınav o boşluğu
  * dolduruyor.
  *
@@ -90,7 +90,7 @@ export function BossPlayer({
    * YUKLEME AYRI BIR ISLEV: hata dalindan YENIDEN cagrilabilsin.
    *
    * Once yalnizca etkinin icindeydi ve hata ekraninda tek dugme "Geri don"du.
-   * Modul sinavi kazanilmis bir yuzey (dersler bitmeden acilmiyor); gecici bir
+   * Modul sinavi kazanilmis bir yuzey (konuşmalar bitmeden acilmiyor); gecici bir
    * ag kesintisinde kullaniciyi listeye geri gonderip yeniden girmeye zorlamak
    * o girisi kaybettirir. Uygulamadaki her veri ekrani "Tekrar dene" sunuyor,
    * yalniz burasi sunmuyordu — ve Androidde de sunmuyordu, yani iki taraf ayni

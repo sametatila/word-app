@@ -4,7 +4,7 @@ import { db } from "@/lib/db";
 import { chatLogs } from "@/lib/db/schema";
 
 /**
- * Rol yapma turlarının geçici metin kaydı.
+ * Sohbet turlarının geçici metin kaydı.
  *
  * Amaç teşhis: konuşma kalitesindeki sorunlar ancak gerçek konuşmaya bakarak
  * anlaşılıyor. Ölçüm senaryoları sekiz turda bitiyor ve modelin kendini
@@ -60,7 +60,7 @@ export async function logChatTurn(
 
 /**
  * Süresi geçmiş kayıtları siler. Eskiden bu, her YAZMAYA bağlıydı; gizlilik
- * politikası "30 gün sonra kendiliğinden silinir" diyor ama rol yapma trafiği
+ * politikası "30 gün sonra kendiliğinden silinir" diyor ama sohbet trafiği
  * durursa süresi geçmiş satırlar süresiz kalıyordu. Artık GÜNLÜK cron çağırıyor
  * (api/cron/assess, her gün 04:15 UTC), yani söz trafikten bağımsız tutuluyor.
  * Önceden haftalık `cron/summary`ye asılıydı ve yorumu "günlük" diyordu: satır

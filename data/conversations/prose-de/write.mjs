@@ -9,12 +9,12 @@
  * hattındaki üç ölçüt burada da geçerli, sırasıyla:
  *
  *   sayı      harfe bitişik olmayan sayılar iki tarafta da aynı olmalı
- *   kanıt     dersin İngilizce yüzeyinde geçen alıntı aynen durmalı
+ *   kanıt     konuşmanın İngilizce yüzeyinde geçen alıntı aynen durmalı
  *   uzunluk   kayık hizanın üç satır üst üste daha iyi oturduğu ilk yer
  *
  * KANIT ÖLÇÜTÜ BURADA DAHA GÜVENİLİR. Deneme kâğıdı hattında açıklığın
  * Almanca olup olmadığı harf ve büyük-küçük ölçütüyle TAHMİN ediliyordu;
- * burada tahmine gerek yok, çünkü paket satırı dersin İngilizce yüzeyini
+ * burada tahmine gerek yok, çünkü paket satırı konuşmanın İngilizce yüzeyini
  * (`en` alanı) yanında taşıyor. Açıklık orada varsa İngilizcedir.
  *
  * Uzunluk ölçütünün ilettiği yer kaymanın GÖRÜNÜR olduğu yerdir,

@@ -40,7 +40,7 @@ import { vibrate } from "@/lib/fx";
  * Yürürken modu — ekransız kelime turu.
  *
  * Uygulamanın tamamı bir ekrana bakmayı gerektiriyordu. Oysa eller serbest
- * konuşma döngüsü derslerde zaten çalışıyordu: cevap sesli okunuyor, okuma
+ * konuşma döngüsü konuşmalarda zaten çalışıyordu: cevap sesli okunuyor, okuma
  * biter bitmez mikrofon kendiliğinden açılıyor, söylenen doğrudan gidiyor.
  * Aynı döngü kelime turuna taşındığında ortaya bambaşka bir kullanım anı
  * çıkıyor — yürürken, bulaşık yıkarken, otobüste.
@@ -80,7 +80,7 @@ import { vibrate } from "@/lib/fx";
  *
  * Bu yüzden ekran HİÇ kapanmıyor, iki kipin ikisinde de:
  *
- *   - **Ekranda** — dersle birebir aynı: tarayıcının kendi tanıyıcısı, başka
+ *   - **Ekranda** — konuşmayla birebir aynı: tarayıcının kendi tanıyıcısı, başka
  *     hiçbir şey. Mikrofon akışı tutulmuyor, okuma oyunlardaki boşluksuz
  *     yoldan. Sebebi ölçüldü: mikrofon akışı oturum başında alınıp (parçaları
  *     kapalı) tutulduğunda, sahibin telefonunda altı dinlemenin altısı
@@ -163,7 +163,7 @@ function glossSegment(word: GlossWord, lang: NativeLang): SpeechSegment {
 /**
  * Hedef kelimenin parçası — kullanıcının SEÇTİĞİ ses, kelime katmanı.
  *
- * Burada `{ lang: "de", text }` yazılıydı ve ses parçanın dilinden türüyordu: sabit ders sesi (Katja),
+ * Burada `{ lang: "de", text }` yazılıydı ve ses parçanın dilinden türüyordu: sabit konuşma sesi (Katja),
  * İngilizce kursta da Almanca ses. Seçim ekranında Aras'ı seçen kullanıcı yürüyüşte Katja duyuyordu.
  */
 function targetSegment(text: string): SpeechSegment {
@@ -597,7 +597,7 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
    *
    * Yürüyüş modunun tamamı ekrana bakmadan kullanılıyor; mikrofonun ne zaman
    * dinlediğini söyleyen tek şey bu iki ton. Eskiden yalnız AÇILIŞ vardı
-   * (`cueListen`, derslerin işareti) ve kapanış hiç duyulmuyordu: kullanıcı
+   * (`cueListen`, konuşmaların işareti) ve kapanış hiç duyulmuyordu: kullanıcı
    * konuşmayı ne zaman bitireceğini bilemiyordu. Mobilde ikisi de var ve
    * ayrı seslerdi; artık üçü de tek nota tablosundan geliyor (`WALK_NOTES`).
    *
@@ -1412,7 +1412,7 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
     if (!browserRef.current && !sttReady.current) return setStatus("unsupported");
 
     // Ekran kilidi DOKUNUŞUN İÇİNDE; WebAudio bağlamı da burada uyandırılıyor
-    // (dersin işareti ve boşluksuz okuma ona bağlı).
+    // (konuşmanın işareti ve boşluksuz okuma ona bağlı).
     void acquire();
     sharedAudioContext();
     resetCombo();

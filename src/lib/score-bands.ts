@@ -38,7 +38,7 @@ export const SKILL_DONE_PCT = 70;
 export const RUBRIC_PASS_PCT = 60;
 
 /**
- * Patika'nın pratik adımlarında (dil bilgisi, tekrar, kontrol noktası) geçer
+ * Patika'nın pratik adımlarında (dil bilgisi, tekrar, ünite quizi) geçer
  * puan. Oynatıcıların "geçtin" dediği eşikle AYNI sayı olmalı: ekran "geçtin"
  * deyip adım bitmemiş kalırsa ikisi birbirini yalanlar.
  */

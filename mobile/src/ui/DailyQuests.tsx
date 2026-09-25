@@ -23,11 +23,11 @@ import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
  *
  * Web'de tamamlanmamış görevin etiketi bir bağlantı ve kartın yorumu asıl işin
  * bu olduğunu yazıyor: ölçümde beceriler bölümünü yedi kullanıcıdan biri,
- * dersleri üçü açmıştı; görev oraya götürmek için var. Mobilde `href` alanı
+ * konuşmaları üçü açmıştı; görev oraya götürmek için var. Mobilde `href` alanı
  * tipte VARDI ama hiçbir şey bağlamıyordu - satır dokunulamazdı.
  *
  * Eşleme `href` değil KİMLİK üzerinden, çünkü webin `/immersion` sayfası
- * mobilde ikiye ayrılmış (Patika = dersler, Beceriler = beceri kütüphanesi) ve
+ * mobilde ikiye ayrılmış (Patika = konuşmalar, Beceriler = beceri kütüphanesi) ve
  * tek bir adres ikisini birden gösteremiyor. Learn'e giden altı görev `null`:
  * bu kutular zaten Learn ekranının içinde, kendi bulunduğu yere götüren bir
  * satır dokunulabilir görünmemeli. Tanınmayan kimlik de `null` - sunucudan

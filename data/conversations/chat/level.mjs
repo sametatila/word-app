@@ -34,4 +34,4 @@ for (const l of done) {
   if (/\?\s*$/.test(src.get(l).opening)) q++;
   else d++;
 }
-console.log(`${done.size}/${rows.length} ders · ${done.size * 4}/${rows.length * 4} dize · açılış: ${q} soru · ${d} nokta`);
+console.log(`${done.size}/${rows.length} konuşma · ${done.size * 4}/${rows.length * 4} dize · açılış: ${q} soru · ${d} nokta`);

@@ -132,8 +132,8 @@ export function normalize(s: string, lang: TargetLang = currentTargetLang()): st
   /*
     İNGİLİZ/AMERİKAN YAZIM da yazım toleransının parçası ve ölçüldü: havuz
     Amerikan yazımıyla yazılmış ("color", "neighbor", "center", "program"),
-    dersler İngiliz yazımıyla ("colour", "neighbour", "centre", "programme")
-    — yani DERSİN ÖĞRETTİĞİ yazımı yazan öğrenci kelime turunda
+    konuşmalar İngiliz yazımıyla ("colour", "neighbour", "centre", "programme")
+    — yani KONUŞMANIN ÖĞRETTİĞİ yazımı yazan öğrenci kelime turunda
     reddediliyordu; 61 havuz kelimesi bu durumda.
 
     Katlama burada, çünkü `normalize` hem `foldCompare` hem `foldSpelling`in
@@ -358,7 +358,7 @@ const CONTAINS_MIN = 3;
  *
  * Boşluk sınırı kalktığı için kısa bir hedef başka bir kelimenin İÇİNDE
  * tesadüfen geçiyor ve yanlış cevap doğru sayılıyor: hedef "was", söylenen
- * "das Wasser" → sıkıştırılmış biçim hedefi içeriyor. Ders havuzundaki 5164
+ * "das Wasser" → sıkıştırılmış biçim hedefi içeriyor. Konuşma havuzundaki 5164
  * başlık ölçüldü - 3 harf eşiğinde 1310 hedef başka bir başlığın içinde
  * geçiyor, 12 harfte 22 (onlar da "der Chef" ⊂ "die Chefin" gibi türevler).
  *
@@ -481,7 +481,7 @@ export function acceptedForms(raw: string, lang: TargetLang = currentTargetLang(
  * çoğu zaman havuzda ayrı bir madde, yani başka bir kelime — onu doğru saymak
  * yanlış cevabı ödüllendiriyordu. Seslendirme (`cleanForSpeech`) aynı kuralla
  * ön eki birleştiriyor; içerik denetimi (`test:content`) bu biçimi havuzda
- * zaten reddediyor, burası dersler ve eski veri için emniyet.
+ * zaten reddediyor, burası konuşmalar ve eski veri için emniyet.
  */
 function parenVariants(raw: string): string[] {
   if (!raw.includes("(")) return [raw];

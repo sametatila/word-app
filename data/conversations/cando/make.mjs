@@ -1,10 +1,10 @@
 /**
  * Can-do ifadelerini paketler: `node data/conversations/cando/make.mjs`
  *
- * ÇÖZÜCÜ GÖSTERDİ. Beş hat bittikten ve ders sayfası ana dile bağlandıktan
- * sonra ekranda hâlâ Türkçe kalan bir yer vardı: dersin altındaki "bunu
+ * ÇÖZÜCÜ GÖSTERDİ. Beş hat bittikten ve konuşma sayfası ana dile bağlandıktan
+ * sonra ekranda hâlâ Türkçe kalan bir yer vardı: konuşmanın altındaki "bunu
  * yapabileceksin" köprüsü. `Cando` tipinde yalnız `tr` var (`de` isteğe
- * bağlı, sınav görünümü için) ve bu metin üç yerde okunuyor — ders özeti,
+ * bağlı, sınav görünümü için) ve bu metin üç yerde okunuyor — konuşma özeti,
  * Yapabildiklerim ekranı ve sertifika.
  *
  * Kaynak dosyaya (`src/lib/cando.ts`) dokunulmuyor: 131 çağrının hepsine

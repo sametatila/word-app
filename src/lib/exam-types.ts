@@ -112,7 +112,7 @@ export type GrammarItem =
       answer: number;
     }
   | {
-      /** Hüküm: modülün dersinden gelen cümle doğru mu yanlış mı. */
+      /** Hüküm: modülün konuşmasından gelen cümle doğru mu yanlış mı. */
       kind: "judge";
       id: string;
       statement: string;

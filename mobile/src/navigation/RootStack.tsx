@@ -57,7 +57,7 @@ export type RootStackParams = {
   MockStats: undefined;
   /** Sınav: modül (module = 0..) ya da seviye sınavı (module = null). */
   Exam: { level: string; module: number | null };
-  /** Modul patronu - sureli tur; modulun derslerindeki kelimelerden kuruluyor. */
+  /** Modul patronu - sureli tur; modulun konuşmalarındaki kelimelerden kuruluyor. */
   Boss: { level: string; moduleIndex: number };
   Walk: undefined;
   /** Hayatta kalma turu: süre doğru cevapla kazanılıyor, yanlışta yanıyor. */
@@ -72,7 +72,7 @@ export type RootStackParams = {
   Paywall: { ref?: string; from?: "web"; group?: string } | undefined;
   Unit: { index: number; level: string; theme: string; items?: { id: string; kind: string; title: string; titleTr?: string | null; done: boolean; playable: boolean; attempted?: boolean; open?: boolean; ref?: string | null }[] };
   Conversation: { id: string };
-  /** Rol yapma sınavı (WP-22): aynı sahne, yardım yok, 5 tur, puanlı. */
+  /** Puanlı kısım (WP-22): aynı sahne, yardım yok, 5 tur, puanlı. */
   ConversationScored: { id: string };
   Quiz: { itemId: string; level: string; unitIndex: number; kind: string; theme: string };
   Auth: undefined;

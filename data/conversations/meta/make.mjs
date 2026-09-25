@@ -1,11 +1,11 @@
 /**
- * Ders başlığı ve özetini paketler: `node data/conversations/meta/make.mjs`
+ * Konuşma başlığı ve özetini paketler: `node data/conversations/meta/make.mjs`
  *
- * Sözlükçe ve kalıptan yapı olarak farkı: burada blok yok. Her dersin
+ * Sözlükçe ve kalıptan yapı olarak farkı: burada blok yok. Her konuşmanın
  * TEK bir `titleTr` ve TEK bir `summary` alanı var, ikisi de Türkçe.
  * Almanca `title` çevrilmez — o zaten hedef dil ("Hallo!").
  *
- * Bir satır bir ders taşıyor, iki alanla birden. Ayrı paketlemek ikisini
+ * Bir satır bir konuşma taşıyor, iki alanla birden. Ayrı paketlemek ikisini
  * ayrı turlarda yazdırırdı ve özet başlığa bakmadan yazılamaz: başlık
  * "Tanışma" ise özet onun ne öğrettiğini söylüyor.
  */
@@ -18,7 +18,7 @@ export function extractMeta() {
   const rows = [];
   for (const f of readdirSync(SRC).filter((x) => x.endsWith(".ts")).sort()) {
     const src = readFileSync(`${SRC}${f}`, "utf8");
-    // Tek taramada, konum sırasıyla: id bir dersi açar, sonraki title/titleTr/
+    // Tek taramada, konum sırasıyla: id bir konuşmayı açar, sonraki title/titleTr/
     // summary ona aittir. Ayrı ayrı toplansaydı eşleşme kaybolurdu.
     let cur = null;
     const re = /^\s*id:\s*"([^"]+)"|^\s*title:\s*"([^"]*)"|^\s*titleTr:\s*"([^"]*)"|^\s*summary:\s*"([^"]*)"/gm;
@@ -33,8 +33,8 @@ export function extractMeta() {
       }
     }
   }
-  // `id` alanı derste olduğu gibi egzersizde ve soruda da geçebiliyor; yalnız
-  // başlığı VE özeti dolu olanlar ders sayılıyor.
+  // `id` alanı konuşmada olduğu gibi egzersizde ve soruda da geçebiliyor; yalnız
+  // başlığı VE özeti dolu olanlar konuşma sayılıyor.
   return rows.filter((r) => r.titleTr && r.summary);
 }
 
@@ -52,5 +52,5 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       `${JSON.stringify({ packet: name, words: rows.slice(i, i + SIZE) }, null, 1)}\n`,
     );
   }
-  console.log(`${rows.length} ders · ${n} paket`);
+  console.log(`${rows.length} konuşma · ${n} paket`);
 }

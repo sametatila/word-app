@@ -22,9 +22,9 @@ import { Pool } from "pg";
 
 // Sekme SIRASI 26 Ağu 2026'da değişti (beş → üç); o günden sonra `nav` olayı
 // `kind` olarak sekme adını taşıyor ve rapor ona bakıyor. Eski satırlar için
-// eski sıra: Öğren, Beceriler, Dersler, Kelimeler, Profil.
-const NAV_LABELS_LEGACY = ["Öğren", "Beceriler", "Dersler", "Kelimeler", "Profil"];
-const NAV_KEYS: Record<string, string> = { learn: "Öğren", conversations: "Dersler", skills: "Beceriler" };
+// eski sıra: Öğren, Beceriler, Konuşmalar, Kelimeler, Profil.
+const NAV_LABELS_LEGACY = ["Öğren", "Beceriler", "Konuşmalar", "Kelimeler", "Profil"];
+const NAV_KEYS: Record<string, string> = { learn: "Öğren", conversations: "Konuşmalar", skills: "Beceriler" };
 
 type Row = Record<string, unknown>;
 

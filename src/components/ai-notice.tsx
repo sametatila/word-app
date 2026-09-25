@@ -16,7 +16,7 @@ import { useT } from "@/lib/i18n/client";
  * hükmündedir.
  *
  * `variant`:
- *  - "character" — konuşulan taraf bir karakter (rol yapma). Gerçek kişi değil.
+ *  - "character" — konuşulan taraf bir karakter (sohbet). Gerçek kişi değil.
  *  - "output"    — metni/puanı üreten taraf model (değerlendirme). Yanılabilir.
  */
 export function AiNotice({ variant, className = "" }: { variant: "character" | "output"; className?: string }) {

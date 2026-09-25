@@ -10,7 +10,7 @@ import { GUEST_EMAIL_DOMAIN } from "@/lib/auth/guest-email";
  * MİSAFİRİN İLERLEMESİ HESABA — mağaza ön inceleme B24.
  *
  * Mobil uygulama hesapsız kullanılabiliyor: misafir sunucuda e-postasız bir
- * kimlikle (better-auth `anonymous`) kelime turu, ders, beceri ve sınav
+ * kimlikle (better-auth `anonymous`) kelime turu, konuşma, beceri ve sınav
  * çözüyor. Hesap oluşturduğunda ya da var olan hesabına girdiğinde uygulama
  * misafirin oturum jetonunu `/api/account/guest/claim`e veriyor; bu dosya o
  * misafirin HER satırını hesaba birleştirip misafiri siliyor.
@@ -19,7 +19,7 @@ import { GUEST_EMAIL_DOMAIN } from "@/lib/auth/guest-email";
  * olmadığı için birleştirme düz taşımaya dönüşüyor; var olan hesapta her tablo
  * aşağıdaki kuralla birleşiyor. Kurallar iki ilke üstüne kurulu:
  *
- *   1. ÖĞRENME KAYBOLMAZ. Aynı kelimenin, dersin, alıştırmanın iki kaydı varsa
+ *   1. ÖĞRENME KAYBOLMAZ. Aynı kelimenin, konuşmanın, alıştırmanın iki kaydı varsa
  *      en ileri durum ve toplam emek kalıyor: en iyi skor, toplam deneme,
  *      en taze tekrar planı.
  *   2. HESABIN KİMLİĞİ VE AYARLARI KAZANIR. Görünen ad, kullanıcı adı, kurs,
@@ -220,7 +220,7 @@ function mergeSteps(G: string, T: string): { table: string; statements: SQL[] }[
     },
     { table: "ai_usage", statements: [sql`update ai_usage set user_id = ${T} where user_id = ${G}`] },
     {
-      /* Ders: en iyi doğru, konuşma biri bitirdiyse bitti, deneme toplamı; tekrar planı en son çalışılandan. */
+      /* Konuşma: en iyi doğru, konuşma biri bitirdiyse bitti, deneme toplamı; tekrar planı en son çalışılandan. */
       table: "user_conversations",
       statements: [
         sql`update user_conversations t set

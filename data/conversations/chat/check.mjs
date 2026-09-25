@@ -1,5 +1,5 @@
 /**
- * Rol yapma alanlarının İngilizcesini denetler:
+ * Sohbet alanlarının İngilizcesini denetler:
  *   `node data/conversations/chat/check.mjs [paket|all]`
  *
  * Dört alanın dördü ayrı bir ŞEY ve kurallar buna göre ayrışıyor:
@@ -15,7 +15,7 @@
  * - `goal` başarı koşulu: cümle.
  *
  * Kapsam ayrı bir soru: paket denetimi yazılanın geçerliliğine bakar, kapsam
- * "580 dersin hepsi dört alanını aldı mı"ya.
+ * "580 konuşmanın hepsi dört alanını aldı mı"ya.
  */
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { extractChat } from "./make.mjs";
@@ -40,7 +40,7 @@ if (existsSync(`${DIR}out`))
     for (const r of JSON.parse(readFileSync(`${DIR}out/${f}`, "utf8"))) {
       const H = (m) => errors.push(`  [${packet}] ${r.conversation} — ${m}`);
       const U = (m) => warnings.push(`  [${packet}] ${r.conversation} — ${m}`);
-      if (written.has(r.conversation)) H("aynı ders iki pakette");
+      if (written.has(r.conversation)) H("aynı konuşma iki pakette");
       const s0 = src.get(r.conversation);
 
       const scene = String(r.sceneEn ?? "").trim();
@@ -86,7 +86,7 @@ if (ARG === "all") {
   const rows = [...src.keys()];
   const missing = rows.filter((l) => !written.has(l)).length;
   coverage = { rows: rows.length, missing };
-  if (missing) errors.push(`  [kapsam] ${missing} dersin İngilizce rol yapma alanları yok`);
+  if (missing) errors.push(`  [kapsam] ${missing} konuşmanın İngilizce sohbet alanları yok`);
 }
 
 if (errors.length) {
@@ -99,7 +99,7 @@ if (warnings.length) {
   console.log(warnings.slice(0, 20).join("\n"));
 }
 console.log(
-  `\nözet: ${written.size} ders · ${written.size * 4} dize · ${errors.length} hata · ${warnings.length} uyarı` +
+  `\nözet: ${written.size} konuşma · ${written.size * 4} dize · ${errors.length} hata · ${warnings.length} uyarı` +
     (coverage ? `\nkapsam: ${coverage.rows - coverage.missing}/${coverage.rows}` : ""),
 );
 process.exit(errors.length ? 1 : 0);

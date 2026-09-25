@@ -59,7 +59,7 @@ function wavUrl(ms: number, fill?: (i: number, rate: number) => number): string 
 /**
  * Kısa bir bip — ses ÖĞESİ olarak.
  *
- * Dersin işitsel işaretleri (`lib/conversations/cues`) WebAudio ile üretiliyor ve
+ * Konuşmanın işitsel işaretleri (`lib/conversations/cues`) WebAudio ile üretiliyor ve
  * ekran kapandığında `AudioContext` askıya alındığı için tam ihtiyaç duyulan
  * yerde susuyorlar. Cepteki kullanıcı mikrofonun açıldığını yalnızca kulağıyla
  * anlayabiliyor; işaret duyulmazsa ya boşluğa konuşuyor ya da sessizce

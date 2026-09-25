@@ -11,7 +11,7 @@
  * Dahası tekrarlar birkaç kalıpta toplanmış: 287 dize tek başına 8.792
  * parçayı (%51) karşılıyor — 2.116x "deyin.", 1.797x "Tekrar dene.".
  * Bu yüzden paketler SIKLIĞA GÖRE sıralanıyor: ilk paket anlatımın
- * yarısını kapatıyor. Ders sırasına göre paketlemek aynı işi elli pakete
+ * yarısını kapatıyor. Konuşma sırasına göre paketlemek aynı işi elli pakete
  * yayardı.
  *
  * BAĞLAM ADIMIN TAMAMI. Kısa parçalar tek başına çevrilemez:
@@ -37,7 +37,7 @@ export function extractLecture() {
   const rows = new Map();
   for (const f of readdirSync(SRC).filter((x) => /^de-.*\.ts$/.test(x)).sort()) {
     const src = readFileSync(`${SRC}${f}`, "utf8");
-    // Konum sırası: `id` bir dersi açar, sonraki bloklar ona aittir.
+    // Konum sırası: `id` bir konuşmayı açar, sonraki bloklar ona aittir.
     // ÜÇ dizi var, hepsi parça taşıyor: `say` (7.408), `hint` (443),
     // `why` (220). Yalnız `say` taransaydı 268 dize / 315 parça sessizce
     // düşerdi — `why` doğru-yanlış cevabından sonraki açıklama.

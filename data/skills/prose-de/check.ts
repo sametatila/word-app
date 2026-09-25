@@ -12,7 +12,7 @@
  * (Almanca işlev sözcüğü mü taşıyor, büyük harfli bir ad var mı). Burada
  * paket satırı egzersizin bütün İNGİLİZCE yüzeyini yanında taşıyor
  * (`en` alanı: metin, soru kökleri, şıklar); açıklık orada BİREBİR varsa
- * kanıttır, yoksa Türkçe karşılıktır ve çevrilir. Aynı çözüm ders
+ * kanıttır, yoksa Türkçe karşılıktır ve çevrilir. Aynı çözüm konuşma
  * hattında da bu sırayla bulundu ve gerekçesi orada yazılı.
  *
  * ÖLÇÜLDÜ: 555 aday açıklığın 300'ü yüzeyde bulunuyor. Bulunmayanların
@@ -153,7 +153,7 @@ if (existsSync(`${DIR}out`))
 
         /* SÖZLÜKÇE KARŞILIĞI CÜMLE DEĞİL. `gloss.tr` bir kelimenin anlamı
            ("sinema"), açıklaması değil; iki katından uzun bir Almanca
-           yanlış alana yazılmış demektir. Aynı kural ders ekseninde
+           yanlış alana yazılmış demektir. Aynı kural konuşma ekseninde
            `vocab.tr` için de var. */
         if (row.kind === "gloss.tr" && de.length > r.tr.length * 2 + 10)
           H(`karşılık cümleye dönmüş (${r.tr.length} → ${de.length})`);

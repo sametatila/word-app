@@ -1,10 +1,10 @@
 import type { DialogueTurn } from "../../lib/native";
 /**
- * Ders kataloğu — A1 İKİLİDE, gerisi iniyor.
+ * Konuşma kataloğu — A1 İKİLİDE, gerisi iniyor.
  *
  * On JSON (7,2 MB) pakette duruyordu ve kullanıcı aynı anda tek seviyede
  * çalışıyor. Artık yalnız A1 tohumu ikilide: uygulama ağ olmadan da açılıyor,
- * ilk ders hemen başlıyor, üst seviyeler girildiğinde inip diskte kalıyor.
+ * ilk konuşma hemen başlıyor, üst seviyeler girildiğinde inip diskte kalıyor.
  *
  * TOHUM NEDEN A1 VE NEDEN İKİ KURS BİRDEN: ikili hangi kursun seçileceğini
  * bilmiyor (kurs hesapta), o yüzden ikisinin de A1'i gömülü — brotli ile
@@ -24,7 +24,7 @@ import enA1 from "./en-a1.json";
  *
  * `lang` ANLATIM mı HEDEF dil mi olduğunu ayırır: "tr" öğretmenin (anadil)
  * sesi, diğerleri öğrenilen dil. Bu yüzden okuyucular "=== de" diye değil
- * "!== tr" diye bakmalı — yoksa İngilizce dersler hedef dil sayılmaz ve ne
+ * "!== tr" diye bakmalı — yoksa İngilizce konuşmalar hedef dil sayılmaz ve ne
  * seslendirilir ne de vurgulanır.
  */
 export type Segment = { lang: "tr" | "de" | "en"; text: string };
@@ -40,16 +40,16 @@ export type ConversationChat = {
   /*
    * `minTurns` ZORUNLU. Tip isteğe bağlı tanımlıydı ve iki yerde `?? 6`
    * yazılıydı: alan düşse Android altı tur ister, web `undefined`ı ekrana
-   * basardı - yani aynı ders iki platformda başka bir kural uygular. Web tipi
+   * basardı - yani aynı konuşma iki platformda başka bir kural uygular. Web tipi
    * baştan beri zorunlu (`src/lib/conversations/types.ts`) ve içerik webden
-   * dökülüyor; ölçüm bin seksen rol yapma dersinin HEPSİNDE alanın dolu
+   * dökülüyor; ölçüm bin seksen sohbet konuşmasının HEPSİNDE alanın dolu
    * olduğunu gösterdi, yani varsayılan hiç çalışmıyordu ama sayı kodda
    * duruyordu.
    */
   scene: string; partner: string; opening: string; openingTr: string; goal: string; minTurns: number;
   /**
-   * Dallanan senaryo — yalnız 780 dersin 10'unda var. Sağlayıcı kapalıyken
-   * konuşma bundan oynanıyor (`game/offlineChat`); yoksa dersin kalıpları
+   * Dallanan senaryo — yalnız 780 konuşmanın 10'unda var. Sağlayıcı kapalıyken
+   * konuşma bundan oynanıyor (`game/offlineChat`); yoksa konuşmanın kalıpları
    * sırayla isteniyor. Tip `lib/native` içindekiyle aynı (döküm yolu onu
    * çevirmek için zaten tanıyor).
    */
@@ -65,7 +65,7 @@ export type Conversation = {
  * İKİLİDEKİ TOHUM — yalnız A1, iki kurs için.
  *
  * Seviye anahtarı olmayan ve inmemiş seviye boş dönüyor; Patika o ünitelerde
- * "Yakında" gösteriyor ve farklı bir dilin derslerine ASLA düşmüyor
+ * "Yakında" gösteriyor ve farklı bir dilin konuşmalarına ASLA düşmüyor
  * (gsw-zh → de meşru, çünkü ikisinin hedefi de Almanca).
  */
 const SEED: Record<string, Record<string, Conversation[]>> = {
@@ -76,7 +76,7 @@ const SEED: Record<string, Record<string, Conversation[]>> = {
 /** İnen seviyeler — anahtar `"<paketKursu>-<SEVİYE>"`. */
 const pools = new Map<string, Conversation[]>();
 
-/** Kursun ders paketinin kursu: hedef dile göre, kurs kimliğine göre değil. */
+/** Kursun konuşma paketinin kursu: hedef dile göre, kurs kimliğine göre değil. */
 function packCourse(course: string): "de" | "en" {
   return courseOrDefault(course).targetLang === "en" ? "en" : "de";
 }
@@ -97,13 +97,13 @@ function courseOfId(id: string): "de" | "en" {
 }
 
 /**
- * Seviye derslerini indirir ve belleğe alır — ekran çizmeden ÖNCE.
+ * Seviye konuşmalarını indirir ve belleğe alır — ekran çizmeden ÖNCE.
  *
  * A1 tohumdan geliyor, indirme hiç yapılmıyor. Sync okuyucular paket inmeden
- * boş dönüyor: Patika "Yakında" gösteriyor, uydurma bir ders göstermiyor.
+ * boş dönüyor: Patika "Yakında" gösteriyor, uydurma bir konuşma göstermiyor.
  *
  * @returns Havuz KULLANILABİLİR mi (tohum ya da inen paket). Çağıran ekran
- * "paket inemedi" ile "ders gerçekten yok" arasını buna bakarak ayırıyor;
+ * "paket inemedi" ile "konuşma gerçekten yok" arasını buna bakarak ayırıyor;
  * ikisi de eli boş bırakıyor ama biri ağ hatası, öteki eksik içerik.
  */
 export async function ensureConversations(level: string, course: string = currentCourseId()): Promise<boolean> {
@@ -138,9 +138,9 @@ function poolOf(course: string, level: string): Conversation[] {
 /*
   ANA DİL BURADA UYGULANIYOR, çağıranda değil.
 
-  Ders içeriğini okuyan her yer (Patika listesi, oynatıcı, ilerleme, tekrar
+  Konuşma içeriğini okuyan her yer (Patika listesi, oynatıcı, ilerleme, tekrar
   kuyruğu) buradan geçiyor; çeviriyi çağıranlara dağıtmak, birini unutunca
-  aynı dersin bir ekranda İngilizce bir ekranda Türkçe görünmesi demekti.
+  aynı konuşmanın bir ekranda İngilizce bir ekranda Türkçe görünmesi demekti.
   Çeviri gerekmiyorsa (`native_lang` Türkçe) `nativeConversation` nesneyi aynen
   döndürüyor ve 4,62 MB'lık sözlük hiç açılmıyor.
 */
@@ -149,7 +149,7 @@ export function conversationsForLevel(level: string, course: string = currentCou
 }
 
 /**
- * Dersi kimliğinden bulur — kurs ve seviye kimliğin İÇİNDE.
+ * Konuşmayı kimliğinden bulur — kurs ve seviye kimliğin İÇİNDE.
  *
  * Eskiden bütün paketlerden kurulmuş tek bir dizin vardı; paketler indiğine
  * göre öyle bir dizin ya eksik olur ya da her şeyi indirmeyi gerektirir.
@@ -162,7 +162,7 @@ export function findConversation(id: string): Conversation | undefined {
   return l ? nativeConversation(l) : undefined;
 }
 
-/** Puanlanan adım sayısı — ders kaydının paydası (üretim + doğru/yanlış). */
+/** Puanlanan adım sayısı — konuşma kaydının paydası (üretim + doğru/yanlış). */
 export function scoredSteps(l: Conversation): number {
   return l.lecture.filter((s) => s.expect?.kind === "produce" || s.expect?.kind === "truefalse").length;
 }

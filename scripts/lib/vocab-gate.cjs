@@ -128,7 +128,7 @@ const DUZENSIZ = {
 const DUZENSIZ_SIFAT = { hoch: ["hoh", "hohe", "hohen", "hoher", "hohes", "hohem", "höher", "höhere", "höheren"] };
 
 // Almanca sayı BİLEŞİKTİR: "achtunddreißig" = acht+und+dreißig. Parçaları
-// öğretiliyor ama bileşiğin kendisi hiçbir ders listesinde yok, o yüzden
+// öğretiliyor ama bileşiğin kendisi hiçbir konuşma listesinde yok, o yüzden
 // kayma sanılıyordu. Yalnız sayı morfemlerinden kurulmuş bir sözcük sayıdır.
 const SAYI_MORFEM = "null|eins|ein|eine|zwei|drei|vier|fünf|sechs|sech|sieben|sieb|acht|neun|zehn|elf|zwölf|zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig|hundert|tausend|und";
 // Kerecik sayısı da sayıdır: einmal, zweimal, dreimal, zehnmal. "mal"
@@ -152,7 +152,7 @@ const TR_ISARET = /[ışğİıŞĞ]|\w+yor\b|\b(ne|neden|neye|neyi|neyden|nasıl
 const türkçeMi = (s) => TR_ISARET.test(String(s || ""));
 
 const { konusmaPaketi } = require("./conversation-packs.cjs");
-const dersler = (lv) => konusmaPaketi("de", lv);
+const konusmalar = (lv) => konusmaPaketi("de", lv);
 const ekle = (acc, ls) => {
   for (const l of ls) {
     for (const v of l.vocab || []) for (const w of parcala(v.de)) acc.add(w);
@@ -177,12 +177,12 @@ const ekle = (acc, ls) => {
 const ONCEKI = { a1: [], a2: ["A1"], b1: ["A1", "A2"], b2: ["A1", "A2", "B1"], c1: ["A1", "A2", "B1", "B2"] };
 
 /**
- * Alt seviyeler DERS sözlükçesiyle değil HAVUZ KATMANIYLA giriyor.
+ * Alt seviyeler KONUŞMA sözlükçesiyle değil HAVUZ KATMANIYLA giriyor.
  *
  * Sebep ölçülebilir: A1 patikası havuzun A1 katmanının %75'ini öğretiyor,
  * gerisi yalnız kart motorundan geliyor (session.ts seviye bandı). Bir B1
- * öğrencisi "also" ya da "deshalb"ı hiçbir A1 dersinde görmemiş olabilir ama
- * kartlarda görmüştür. Ders sözlükçesini eşik almak bu sözcükleri kayma
+ * öğrencisi "also" ya da "deshalb"ı hiçbir A1 konuşmasında görmemiş olabilir ama
+ * kartlarda görmüştür. Konuşma sözlükçesini eşik almak bu sözcükleri kayma
  * sayıyordu ve B1 metninde onlarsız yazmak imkânsız.
  */
 const havuzKatman = (lv) => {
@@ -196,7 +196,7 @@ function cumFor(seviye = "a1") {
   if (cumBellek.has(lv)) return cumBellek.get(lv);
   const taban = new Set();
   for (const alt of ONCEKI[lv] || []) for (const w of havuzKatman(alt)) taban.add(w);
-  const L = dersler(lv);
+  const L = konusmalar(lv);
   const m = new Map();
   let acc = new Set(taban);
   for (let u = 1; u <= Math.ceil(L.length / 4); u++) {
@@ -406,11 +406,11 @@ const ozet = (disi) => {
  *
  *   ustu     — sözcük havuzda AMA ÜST seviyede. A2 metninde B1 sözcüğü:
  *              ya metin sadeleşmeli ya sözcük sözlükçeye girmeli.
- *   erken    — bu seviyenin dersleri öğretiyor ama DAHA SONRAKİ ünitede.
- *              Ya egzersiz ileri taşınır ya ders öne alınır; kaç ünite
+ *   erken    — bu seviyenin konuşmaları öğretiyor ama DAHA SONRAKİ ünitede.
+ *              Ya egzersiz ileri taşınır ya konuşma öne alınır; kaç ünite
  *              erken olduğu da yazılıyor, çünkü bir ünite erken ile on
  *              ünite erken aynı şey değil.
- *   derssiz  — havuzda BU seviyede ama hiçbir ders öğretmiyor. Patika
+ *   konuşmasız  — havuzda BU seviyede ama hiçbir konuşma öğretmiyor. Patika
  *              boşluğu: öğrenci sözcüğü yalnız kart motorundan görmüş
  *              olabilir (A1 patikası havuzun A1 katmanının ancak %75'ini
  *              öğretiyor — bkz. `havuzKatman` gerekçesi).
@@ -418,25 +418,25 @@ const ozet = (disi) => {
  *              yazım hatası; içerik kararı.
  *
  * Eşleştirme önce birebir, sonra ÖN EK ile: "ganzen" havuzda yok ama "ganz"
- * var ve ders onu öğretiyor — bunu "yabanci" saymak yazarı yanlış yere
+ * var ve konuşma onu öğretiyor — bunu "yabanci" saymak yazarı yanlış yere
  * gönderir. Ön ek en az dört harf, yoksa "ab" her şeye uyar. */
 const havuzSeviye = new Map();
 for (const r of pool) {
   const lv = String(r.niveau || "").toLowerCase();
   for (const w of parcala(r.de)) if (w.length >= 2 && !havuzSeviye.has(w)) havuzSeviye.set(w, lv);
 }
-const dersUniteBellek = new Map();
-function dersUnite(lv) {
-  if (dersUniteBellek.has(lv)) return dersUniteBellek.get(lv);
+const konusmaUniteBellek = new Map();
+function konusmaUnite(lv) {
+  if (konusmaUniteBellek.has(lv)) return konusmaUniteBellek.get(lv);
   const m = new Map();
-  const L = dersler(lv);
+  const L = konusmalar(lv);
   L.forEach((l, i) => {
     const u = Math.ceil((i + 1) / 4);
     const koy = (w) => { if (w && !m.has(w)) m.set(w, u); };
     for (const v of l.vocab || []) for (const w of parcala(v.de)) koy(w);
     for (const p of l.patterns || []) for (const w of String(p.de).toLowerCase().match(/[a-zäöüßéèêáàóúï]+/g) || []) koy(w);
   });
-  dersUniteBellek.set(lv, m);
+  konusmaUniteBellek.set(lv, m);
   return m;
 }
 const SIRA = ["a1", "a2", "b1", "b2", "c1"];
@@ -461,7 +461,7 @@ for (const [mastar, formlar] of Object.entries(DUZENSIZ)) for (const f of formla
 /* ÜNSÜZ İSKELETİ DENENDİ VE ATILDI. Güçlü fiilin ünlü değişimini aşmak için
    (`schwimmen` ↔ `geschwommen`) sözcüğü ünsüzlerine indirip ilk dördünü
    karşılaştırmayı denedim. Bir sözcük kazandırdı, ama `sondern`i A2'nin 13.
-   ünitesinde ÖĞRETİLİYOR gibi etiketledi — oysa A2 dersleri `sondern`i hiç
+   ünitesinde ÖĞRETİLİYOR gibi etiketledi — oysa A2 konuşmaları `sondern`i hiç
    öğretmiyor, o bir B1 sözcüğü. Yanlış sınıf yazarı yanlış işe gönderir:
    "egzersizi ileri taşı" ile "metni sadeleştir" aynı şey değil. Ünlü değişimi
    sınıflandırmada çözülmeden kalıyor ve böyle bir ortaç "havuzda yok"
@@ -552,7 +552,7 @@ function sonTakas(m, w) {
 /** Kapı dışı bir sözcüğü sınıflandır: {sinif, detay}. */
 function nerede(w, seviye, unit) {
   const lv = String(seviye).toLowerCase();
-  const u = dersUnite(lv);
+  const u = konusmaUnite(lv);
   const du = ara(u, w);
   if (du !== undefined) return du > unit
     ? { sinif: "erken", detay: `u${du} (${du - unit} ünite sonra)` }
@@ -566,7 +566,7 @@ function nerede(w, seviye, unit) {
   if (hv === undefined) return { sinif: "yabanci", detay: "havuzda yok" };
   return SIRA.indexOf(hv) > SIRA.indexOf(lv)
     ? { sinif: "ustu", detay: hv.toUpperCase() }
-    : { sinif: "derssiz", detay: `havuz ${hv.toUpperCase()}, bu seviyede ders yok` };
+    : { sinif: "konusmasiz", detay: `havuz ${hv.toUpperCase()}, bu seviyede konuşma yok` };
 }
 
 module.exports = { SERBEST, havuzKok, cum, cumFor, norm, parcala, türkçeMi, olc, ozet, TAKVIM, sayiMi, nerede, kokAra: ara };

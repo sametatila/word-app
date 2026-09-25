@@ -1,10 +1,10 @@
 /**
- * Çözücüyü GERÇEK ders nesneleri üzerinde denetler:
+ * Çözücüyü GERÇEK konuşma nesneleri üzerinde denetler:
  *   `npx tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-native-conversations.ts`
  *
  * Hatların kendi kapıları (her hattın `check.mjs`'i) yazılanı denetliyor
  * ama hepsi ÇIKARIM üzerinden çalışıyor: `make.mjs` içerik dosyalarını
- * düzenli ifadeyle tarıyor. Bu betik tersini yapıyor — dersleri import edip
+ * düzenli ifadeyle tarıyor. Bu betik tersini yapıyor — konuşmaları import edip
  * çalışma anındaki parçaları geziyor. İkisi arasındaki her sapma burada
  * görünür:
  *
@@ -12,16 +12,16 @@
  *   - kaçış karakteri yüzünden farklı çıkan dize
  *   - `say` dışındaki diziler (`hint`, `why`)
  *
- * Ölçüt SERT: bir parça bile çözülemezse ders reddediliyor. Yarım ders —
+ * Ölçüt SERT: bir parça bile çözülemezse konuşma reddediliyor. Yarım konuşma —
  * içinde tek bir Türkçe cümle kalmış İngilizce anlatım — çalışıyor görünen
  * en kötü biçim.
  *
  * İKİ ÖLÇÜT VAR ve ikincisi ALAN ADINA HİÇ BAKMIYOR. Birincisi anlatım
  * parçalarını tek tek çözüyor ve nerede eksik olduğunu söylüyor; ikincisi
- * dersin TAMAMINI çözüp çıktıyı geziyor — hangi alan olduğu umurunda değil.
+ * konuşmanın TAMAMINI çözüp çıktıyı geziyor — hangi alan olduğu umurunda değil.
  * Fark, birincinin yalnız BİLDİĞİ alanları görmesi: bir kalıp maddesi tam
  * o boşluktan kaçtı (sondaki virgül yüzünden çıkarıcı onu hiç görmedi) ve
- * ders İngilizce açılıp altında Türkçe bir kullanım notu taşıdı.
+ * konuşma İngilizce açılıp altında Türkçe bir kullanım notu taşıdı.
  */
 import { readFileSync } from "node:fs";
 import { CONVERSATIONS } from "@/lib/conversations/source";
@@ -77,7 +77,7 @@ for (const l of conversations) {
   }
 }
 
-/* ÇIKTI TARAMASI — dersin TAMAMI çözülüyor mu, ve çözüldükten sonra Türkçe
+/* ÇIKTI TARAMASI — konuşmanın TAMAMI çözülüyor mu, ve çözüldükten sonra Türkçe
    kalan var mı.
 
    Yukarıdaki ölçüt yalnız ANLATIM parçalarına bakıyor ve uzun süre tek
@@ -114,7 +114,7 @@ for (const l of conversations) {
 }
 
 /* MODÜL SINAVI da bu eksenin parçası: sözlükteki `exam` tablosu (1.781 dize)
-   `apply.mjs` içinde ders hattıyla birlikte kuruluyor ve `resolveExam` onu
+   `apply.mjs` içinde konuşma hattıyla birlikte kuruluyor ve `resolveExam` onu
    okuyor. Ama BUGÜNE KADAR hiçbir kapı `resolveExam`i çalıştırmıyordu —
    hattın kendi kapısı (`check:conversations-exam`) yalnız yazılanı ölçüyor.
    Ölçüldü: 58 kâğıt, 6.728 dize, 0 reddedilen, 0 Türkçe. Yani bugün temiz;
@@ -133,7 +133,7 @@ for (const p of courseExams("de")) {
 }
 
 console.log(
-  `ders ${conversations.length} · tr parça ${segs} · çözülen ${ok} · ` +
+  `konuşma ${conversations.length} · tr parça ${segs} · çözülen ${ok} · ` +
     `modül sınavı ${courseExams("de").length} · ` +
     `çözülen ${conversations.length + courseExams("de").length - rejected.length} · taranan dize ${strings}`,
 );
@@ -145,7 +145,7 @@ if (misses.size) {
   process.exit(1);
 }
 if (rejected.length) {
-  console.log(`\nHATA: ${rejected.length} ders/kâğıt reddedildi: ${rejected.slice(0, 10).join(", ")}`);
+  console.log(`\nHATA: ${rejected.length} konuşma/kâğıt reddedildi: ${rejected.slice(0, 10).join(", ")}`);
   process.exit(1);
 }
 if (leftover.size) {
@@ -155,6 +155,6 @@ if (leftover.size) {
   process.exit(1);
 }
 console.log(
-  "\ntamam: her Türkçe parçanın İngilizcesi var; çözülmüş derste ve modül" +
+  "\ntamam: her Türkçe parçanın İngilizcesi var; çözülmüş konuşmada ve modül" +
     " sınavında Türkçe kalmıyor",
 );

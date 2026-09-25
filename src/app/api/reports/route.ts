@@ -15,7 +15,7 @@ export const dynamic = "force-dynamic";
  *
  *   POST { kind, ref, reason, content }
  *     kind    "chat" | "assessment" | "user" (lider tablosu adı)
- *     ref     chat: "<conversationId>:<turn>" · rol yapma sınavı "<conversationId>:scored:<turn>"
+ *     ref     chat: "<conversationId>:<turn>" · puanlı kısım "<conversationId>:scored:<turn>"
  *             assessment: kayıt kimliği ("Yazdıklarım") · anlık sonuç "<yüzey>:<kimlik>"
  *             ("writing:…", "speaking:…", "exam:…", "word:…"; web ve mobil aynı)
  *     reason  "inappropriate" | "offensive" | "wrong" | "impersonation" | "other"

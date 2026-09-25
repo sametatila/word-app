@@ -3,7 +3,7 @@
  *
  * Üç içerik köprüsü web kaynağından mobil pakete dökülüyor (`dump-conversations-
  * mobile`, `dump-skills-mobile`, `dump-mock-exams-mobile`). Döküm ELLE
- * çalıştırılıyor: kaynağa yeni bir ders/egzersiz/kâğıt eklenip döküm
+ * çalıştırılıyor: kaynağa yeni bir konuşma/egzersiz/kâğıt eklenip döküm
  * yenilenmezse mobil paket o içeriği sessizce taşımaz. Sonuç ekranda görünür -
  * Patika'da açılamayan bir ünite, listede olmayan bir kâğıt - ama hiçbir kapı
  * söylemez.
@@ -80,7 +80,7 @@ function compare(label: string, web: Set<string>, mob: Set<string>) {
 /* TOHUM KİMLİKLERİ: ikilide yalnız A1 var, gerisi yayına gidiyor. Ölçüt de
    bu yüzden A1 ile sınırlı — üst seviyelerin doğrulayıcısı `check:conversations`. */
 const seedFiles = ["de-a1", "en-a1"].map((n) => `mobile/src/data/conversations/${n}.json`);
-compare("ders tohumu", new Set(CONVERSATIONS.filter((l) => l.level === "A1").map((l) => l.id)), ids(seedFiles));
+compare("konuşma tohumu", new Set(CONVERSATIONS.filter((l) => l.level === "A1").map((l) => l.id)), ids(seedFiles));
 
 /*
   BECERİ EGZERSİZLERİ ARTIK DÖKÜLMÜYOR: iki JSON mobil paketten çıkarıldı ve
@@ -147,7 +147,7 @@ compare("ders tohumu", new Set(CONVERSATIONS.filter((l) => l.level === "A1").map
     for (const pack of buildConversationDump(course)) {
       if (pack.level !== "A1") continue;
       built.push({
-        label: `ders tohumu ${course}-${pack.level}`,
+        label: `konuşma tohumu ${course}-${pack.level}`,
         file: pack.file,
         json: pack.json,
         cmd: `npm run dump:conversations -- ${course}`,

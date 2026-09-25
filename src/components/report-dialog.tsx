@@ -24,7 +24,7 @@ export function ReportDialog({
 }: {
   open: boolean;
   kind: ReportKind;
-  /** Bildirilen şeyin kimliği: ders kimliği, yazı kimliği, kullanıcı kimliği. */
+  /** Bildirilen şeyin kimliği: konuşma kimliği, yazı kimliği, kullanıcı kimliği. */
   refId: string;
   /** Bildirilen metnin kendisi — panoda okunacak olan bu. */
   content: string;

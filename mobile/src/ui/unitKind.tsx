@@ -9,7 +9,7 @@ import { fillOf } from "../theme/colors";
  *
  * İki ekranda ayrı ayrı yazılıydı (Patika'nın ünite listesi ve egzersiz
  * oynatıcısı) ve ikinci kopya EKSİKTİ: `conversation`, `quiz` ve `unitQuiz` yoktu,
- * yani oynatıcı bir kontrol noktası açtığında rengi kırmızı yerine turuncuya
+ * yani oynatıcı bir ünite quizi açtığında rengi kırmızı yerine turuncuya
  * düşüyordu. Bugün o yol kullanılmıyor ama iki liste sessizce ayrışmıştı ve
  * ayrışma büyümeye açıktı.
  *

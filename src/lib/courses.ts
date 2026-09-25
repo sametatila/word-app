@@ -120,7 +120,7 @@ export const COURSES: Course[] = [
     enabled: true,
     offeredToNewUsers: false, // duraklatılmış lehçe kursu — mevcut öğrenciye açık, yeniye sunulmuyor
   },
-  // Kelime, ders, beceri ve deneme sınavı katmanları hazır.
+  // Kelime, konuşma, beceri ve deneme sınavı katmanları hazır.
   {
     id: "en",
     targetLang: "en",
@@ -189,9 +189,9 @@ export function enabledCourses(): Course[] {
  * SUNULAN ÇİFTLER — hangi (anadil, hedef) ikilisi kullanıcıya gösteriliyor.
  *
  * Bir çiftin "çalışması" tek katman değil: kelime karşılıkları, beceri
- * egzersizlerinin yönergeleri ve derslerin ANLATIM metni. Kelime katmanı
+ * egzersizlerinin yönergeleri ve konuşmaların ANLATIM metni. Kelime katmanı
  * hazırken ötekiler Türkçe kalırsa kullanıcı alıştırmayı kendi dilinde,
- * dersi Türkçe görür — yarım bir parite, çalışıyormuş gibi görünen.
+ * konuşmayı Türkçe görür — yarım bir parite, çalışıyormuş gibi görünen.
  *
  * Bu yüzden sunum bir BEYAN: burada yazılı olmayan çift hiç gösterilmiyor.
  * Beyanın iyimser kalmaması `npm run check:pairs` ile veriden doğrulanıyor —
@@ -207,7 +207,7 @@ export const PAIR_READY: Record<NativeLang, CourseId[]> = {
   /*
     en→de AÇILDI (2026-09-10). Üç katman da tam:
       kelime      üretimde 8.707/8.707 İngilizce karşılık + örnek çevirisi
-      ders/beceri/deneme  altı kapı yeşil (check:conversations-native,
+      konuşma/beceri/deneme  altı kapı yeşil (check:conversations-native,
                   check:conversations-swap, check:skills-native, check:skills-task,
                   check:mock-prose, check:mock-native)
       arayüz      1.203 anahtar × 3 dil (i18n:check)
@@ -221,7 +221,7 @@ export const PAIR_READY: Record<NativeLang, CourseId[]> = {
     de→en AÇILDI (2026-09-11). Dört katman da tam:
       kelime      üretimde 7.175/7.175 Almanca karşılık + örnek çevirisi
                   (`db:seed:en`, 6.801 türetildi + 374 elle yazılmış)
-      ders/beceri/deneme/can-do  `check:native-de` yeşil — ders 200/200,
+      konuşma/beceri/deneme/can-do  `check:native-de` yeşil — konuşma 200/200,
                   egzersiz 189/189, kâğıt 60/60, can-do 11/11; yazan
                   hatların kendi kapıları da CI'da (prose-de 11.011,
                   skills-prose-de 1.725, skills-task-de 1.325, mock-prose-de

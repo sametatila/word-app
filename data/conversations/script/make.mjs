@@ -1,20 +1,20 @@
 /**
- * Rol yapma SENARYOSUNU paketler: `node data/conversations/script/make.mjs`
+ * Sohbet SENARYOSUNU paketler: `node data/conversations/script/make.mjs`
  *
  * ÇÖZÜCÜ GÖSTERDİ. `chat` hattı dört alanı kapsıyor (sahne, muhatap,
- * açılış, amaç — 580×4) ve bitmiş görünüyordu. Ama on dersin çevrimdışı
+ * açılış, amaç — 580×4) ve bitmiş görünüyordu. Ama on konuşmanın çevrimdışı
  * senaryosu ayrı bir dosyada duruyor ve içinde üç Türkçe alan daha var:
  *
  *   askTr   modelin repliğinin Türkçesi
  *   cue     öğrenciye ne söyleyeceğini fısıldayan ipucu
  *   sayTr   cevaba verilen karşılığın Türkçesi
  *
- * Senaryolu rol yapma, modelin çalışmadığı ya da çalışmasının istenmediği
+ * Senaryolu sohbet, modelin çalışmadığı ya da çalışmasının istenmediği
  * yerde devreye giren HAZIR akış — yani tam da ağın olmadığı, modelin
  * yavaş olduğu anda görünen metin. Çevrilmemiş kalırsa İngilizce bir
- * dersin en kırılgan yerinde Türkçe çıkar.
+ * konuşmanın en kırılgan yerinde Türkçe çıkar.
  *
- * TEK DOSYA, KONUMSAL ARGÜMAN. Ders içeriği `tr("…")` gibi adlandırılmış
+ * TEK DOSYA, KONUMSAL ARGÜMAN. Konuşma içeriği `tr("…")` gibi adlandırılmış
  * çağrılar kullanıyor ama senaryolar iki kısayolla yazılmış:
  *
  *   t(id, ask, askTr, cue, replies, fallback)
@@ -49,7 +49,7 @@ export function extractScript() {
     rows.set(text, r);
   };
 
-  // Tek taramada, konum sırasıyla: ders anahtarı bir bloğu açıyor, `t(` bir
+  // Tek taramada, konum sırasıyla: konuşma anahtarı bir bloğu açıyor, `t(` bir
   // turu, `r(` o turun cevabını. Ayrı ayrı toplansaydı bağlam kaybolurdu.
   const re = new RegExp(
     [

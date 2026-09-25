@@ -1,7 +1,7 @@
 /**
  * Sahte içerik teslim hattı — sınav kurucusunun kuru provası için.
  *
- * NEDEN GEREKTİ. `buildExam` dersleri artık yayın hattından okuyor
+ * NEDEN GEREKTİ. `buildExam` konuşmaları artık yayın hattından okuyor
  * (`conversationsForLevel` → `packItems`, içerik hattı 2026-09-17) ve o yol
  * veritabanına gidiyor. Kuru prova ise veritabanını saplıyor
  * (`stub-db.ts`): gösterge sorgusu boş dönüyor, `packItems` "bu paketi
@@ -34,8 +34,8 @@ function parseConversationPack(pack: string): { course: PackCourse; level: strin
 export async function packItems<T>(pack: string): Promise<T[]> {
   const at = parseConversationPack(pack);
   if (!at) return [];
-  /* Paket kursu HEDEF DİLE göre (`packCourseOf`), ders alanı ise kursun
-     kendisine: Züritüütsch dersleri Almanca pakette duruyor. Kuru provada
+  /* Paket kursu HEDEF DİLE göre (`packCourseOf`), konuşma alanı ise kursun
+     kendisine: Züritüütsch konuşmaları Almanca pakette duruyor. Kuru provada
      ikisi de kâğıdı etkilemiyor, yine de süzgeç aynı kuralı taşıyor. */
   return sourceConversationsFor(at.course).filter((l) => l.level === at.level) as unknown as T[];
 }

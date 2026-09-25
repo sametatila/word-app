@@ -139,7 +139,7 @@ function ChoiceInput({ q, done, onSettle }: { q: SkillQuestion; done: boolean; o
 function fold(s: string, lang: TargetLang = currentTargetLang()): string {
   /*
     Kısaltma ve İngiliz/Amerikan yazım da eşitleniyor — gerekçe
-    `lib/contractions.ts` ve `lib/en-spelling.ts`. Ders katmanında ölçülen
+    `lib/contractions.ts` ve `lib/en-spelling.ts`. Konuşma katmanında ölçülen
     aynı kusur burada da vardı: "I've worked…" yazan öğrenci "I have
     worked…" cevabını tutturamıyordu. `foldTight` yoluna DOKUNULMUYOR
     (bu yüzden katlama `written`in kendi `fold`unda, `foldCompare`da değil):

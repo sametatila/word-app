@@ -20,7 +20,7 @@ import { TwoStep } from "../_ui/two-step";
  * maddesi kâğıt kimliği): tek soru kapatılamıyor, kâğıt kapatılıyor.
  */
 const tone = (pct: number): Tone => (pct < 35 ? "bad" : pct < 60 ? "warn" : "ok");
-const TABS = ["Dersler", "Beceri egzersizleri", "Deneme sınavı soruları", "Patika adımları"] as const;
+const TABS = ["Konuşmalar", "Beceri egzersizleri", "Deneme sınavı soruları", "Patika adımları"] as const;
 const SKILL_TR: Record<string, string> = { reading: "okuma", listening: "dinleme" };
 
 async function post(body: Record<string, unknown>): Promise<string | null> {
@@ -42,7 +42,7 @@ export function LearningAnalysis({ conversations, skills, path, mockItems, mockS
   mockScanned: number;
   minAnswers: number;
 }) {
-  const [tab, setTab] = useState<(typeof TABS)[number]>("Dersler");
+  const [tab, setTab] = useState<(typeof TABS)[number]>("Konuşmalar");
   const [off, setOff] = useState<Set<string>>(
     () => new Set([...conversations, ...skills].filter((r) => r.disabled).map((r) => `${r.pack}:${r.id}`).concat(mockItems.filter((m) => m.disabled).map((m) => `${m.pack}:${m.paperId}`))),
   );
@@ -108,7 +108,7 @@ export function LearningAnalysis({ conversations, skills, path, mockItems, mockS
       </div>
       {msg ? <div className="mb-3"><Notice tone={msg.tone}>{msg.text}</Notice></div> : null}
 
-      {tab === "Dersler" ? <DataTable head={unitHead} rows={unitRows(conversations)} empty="Analiz için yeterli ders sonucu yok." /> : null}
+      {tab === "Konuşmalar" ? <DataTable head={unitHead} rows={unitRows(conversations)} empty="Analiz için yeterli konuşma sonucu yok." /> : null}
       {tab === "Beceri egzersizleri" ? <DataTable head={unitHead} rows={unitRows(skills)} empty="Analiz için yeterli egzersiz sonucu yok." /> : null}
       {tab === "Deneme sınavı soruları" ? (
         <>
@@ -148,7 +148,7 @@ export function LearningAnalysis({ conversations, skills, path, mockItems, mockS
       ) : null}
       {tab === "Patika adımları" ? (
         <>
-          <p className="muted mb-2 text-caption">Patika adımları dersten ve egzersizden türetiliyor, ayrıca yayınlanmıyor: kapatmak için adımın dersini ya da egzersizini kapat.</p>
+          <p className="muted mb-2 text-caption">Patika adımları konuşmadan ve egzersizden türetiliyor, ayrıca yayınlanmıyor: kapatmak için adımın konuşmasını ya da egzersizini kapat.</p>
           <DataTable head={["Adım", { label: "Ort. en iyi", align: "right" }, { label: "Kişi", align: "right" }, { label: "Deneme", align: "right" }]} rows={path.map((r) => [<span key="i" className="font-mono">{r.id}</span>, pctCell(r.pct), r.users, r.attempts])} empty="Analiz için yeterli adım sonucu yok." />
         </>
       ) : null}

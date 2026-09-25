@@ -17,7 +17,7 @@
  *
  * Yani kalan yazı işi 9.120 değil 193 dize. Notlar kısa (15–64 karakter)
  * ama gerçek öğretim içeriği: "hep çoğul kullanılır", "işveren yapar;
- * çalışanın kendi ayrılması bu değil". Düşerlerse ders sessizce eksilir.
+ * çalışanın kendi ayrılması bu değil". Düşerlerse konuşma sessizce eksilir.
  *
  * BAĞLAM ADIMIN TAMAMI, anlatım hattındaki gibi. Not tek başına
  * çevrilemez — "kadın biçimi -in ekiyle kurulur" hangi kelime için
@@ -36,7 +36,7 @@ export function extractWord() {
   const calls = [];
   for (const f of readdirSync(SRC).filter((x) => /^de-.*\.ts$/.test(x)).sort()) {
     const src = readFileSync(`${SRC}${f}`, "utf8");
-    // Konum sırası: `id` bir dersi açar, sonraki `word()` çağrıları ona ait.
+    // Konum sırası: `id` bir konuşmayı açar, sonraki `word()` çağrıları ona ait.
     const re =
       /id:\s*"(de-[^"]+)"|word\(\s*"([^"]*)"\s*,\s*\{\s*de:\s*"((?:[^"\\]|\\.)*)"\s*,\s*tr:\s*"((?:[^"\\]|\\.)*)"\s*\}\s*(?:,\s*"((?:[^"\\]|\\.)*)")?/g;
     let conversation = null;

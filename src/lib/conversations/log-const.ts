@@ -1,7 +1,7 @@
 /**
- * Konuşma pratiği kaydının saklama süresi — GİZLİLİK POLİTİKASINA VERİLEN SÖZ.
+ * Sohbet kaydının saklama süresi — GİZLİLİK POLİTİKASINA VERİLEN SÖZ.
  *
- * `lib/conversations/log` `server-only`; politika metni ise "konuşma pratiği
+ * `lib/conversations/log` `server-only`; politika metni ise "sohbet
  * kayıtları 30 gün, sonra kendiliğinden silinir" diye üç dilde yazılı.
  * Sayı iki yerde ayrı durduğu sürece biri değiştiğinde öteki eski sözü
  * söylemeye devam ederdi — ve burada eski söz yalnız yanlış değil, Play

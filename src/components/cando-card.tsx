@@ -96,7 +96,7 @@ export function CandoCard() {
     );
 
   /* İSTEK HATASI ile BOŞ LİSTE AYRI İKİ ŞEY ve tek kartla karşılanıyordu:
-     ağı kopan kullanıcıya "giriş yapıp dersleri bitir" yazıyordu — yanlış
+     ağı kopan kullanıcıya "giriş yapıp konuşmaları bitir" yazıyordu — yanlış
      sebep, üstelik tekrar deneme yolu da yoktu. Aynı kusur Android'de de
      vardı (`CandoScreen` hata dalı) ve ikisi birlikte düzeltildi.
 

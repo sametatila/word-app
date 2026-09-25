@@ -9,10 +9,10 @@ import { UNIT_CONVERSATIONS } from "./build";
  * İçerik brief'i — "diğer item tipleri conversation'a göre türetilir" ilkesinin somut
  * hâli (bkz. docs/plan/immersion.md §İçerik stratejisi).
  *
- * Her ünite için, kendi 4 dersinden tema + hedef kelime/kalıp/cando'yu toplar.
+ * Her ünite için, kendi 4 konuşmasından tema + hedef kelime/kalıp/cando'yu toplar.
  * Bu, o üniteye yazılacak temalı okuma/dinleme/yazma/quiz/gramer içeriğinin
  * ŞARTNAMESİdir: yeni içerik bu kelimeleri/kalıpları/temayı kullanmalı ki
- * ünitenin dersleriyle aynı dünyada olsun. Saf ve DB'siz — test edilebilir.
+ * ünitenin konuşmalarıyla aynı dünyada olsun. Saf ve DB'siz — test edilebilir.
  */
 
 export type UnitBrief = {
@@ -22,7 +22,7 @@ export type UnitBrief = {
   course: string;
   theme: string;
   conversationIds: string[];
-  /** Derslerin başlıkları (Almanca) — sahnenin adları. */
+  /** Konuşmaların başlıkları (Almanca) — sahnenin adları. */
   conversationTitles: string[];
   /** Birleşik cando etiketleri (WP-43). */
   cando: string[];
@@ -53,7 +53,7 @@ function dedupeBy<T>(xs: T[], key: (x: T) => string): T[] {
   return out;
 }
 
-/** Saf çekirdek: brief'leri verilen derslerden kurar (buildTrack ile aynı 4'erli bölme). */
+/** Saf çekirdek: brief'leri verilen konuşmalardan kurar (buildTrack ile aynı 4'erli bölme). */
 export function buildUnitBriefs(
   course: string,
   level: CefrLevel,
@@ -89,18 +89,18 @@ export function buildUnitBriefs(
 }
 
 /**
- * Brief'ler, dizeleri ÖĞRENCİNİN DİLİNE çevrilmiş derslerden.
+ * Brief'ler, dizeleri ÖĞRENCİNİN DİLİNE çevrilmiş konuşmalardan.
  *
  * Ünite quiz'i ve dilbilgisi alıştırması sorularını brief'in kelime ve kalıp
  * havuzundan kuruyor: soru kökü arayüz sözlüğünden geliyor ama ŞIKLAR
- * `v.tr`/`p.tr`, yani dersin anadil yüzü. Ham dersten kurulduğunda o yüz
+ * `v.tr`/`p.tr`, yani konuşmanın anadil yüzü. Ham konuşmadan kurulduğunda o yüz
  * Türkçe kalıyordu ve anadili İngilizce ya da Almanca olan kullanıcı Türkçe
  * şıklar arasında seçim yapıyordu — soruyu anladığı hâlde cevaplayamıyordu.
  *
  * ÇEVİRİYİ ÇAĞIRAN VERİYOR. Sözlük yükleyicisi sunucuya bağlı
  * (`native-server.ts`, `import "server-only"`); bu dosya saf kalmalı ki
- * `test:track` onu veritabanısız koşturabilsin. Çözülemeyen ders OLDUĞU GİBİ
- * geçiyor — hep-ya-hiç kuralı ders başına, havuz başına değil.
+ * `test:track` onu veritabanısız koşturabilsin. Çözülemeyen konuşma OLDUĞU GİBİ
+ * geçiyor — hep-ya-hiç kuralı konuşma başına, havuz başına değil.
  */
 export async function nativeUnitBriefs(
   course: string,
@@ -116,7 +116,7 @@ export async function nativeUnitBriefs(
   return buildUnitBriefs(course, level, conversations, lang);
 }
 
-/** DB'siz sarmalayıcı: seviyenin derslerini katalogdan alıp brief'leri kurar. */
+/** DB'siz sarmalayıcı: seviyenin konuşmalarını katalogdan alıp brief'leri kurar. */
 export async function unitBriefs(course: string, level: CefrLevel, lang: NativeLang): Promise<UnitBrief[]> {
   const conversations = (await conversationsFor(course)).filter((l) => l.level === level);
   return buildUnitBriefs(course, level, conversations, lang);

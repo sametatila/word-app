@@ -50,7 +50,7 @@ function byId(rows: WithId[]): PackInput {
 /**
  * Sırası anlamlı paketler sıra maddesini de taşıyor.
  *
- * Ders ve beceri listeleri patika ünitelerinde SIRAYLA tüketiliyor; paket bir
+ * Konuşma ve beceri listeleri patika ünitelerinde SIRAYLA tüketiliyor; paket bir
  * eşleme olduğu için sıra taşınmıyor ve delta güncellemesinde büsbütün
  * kayboluyor. Kimlik sırasına göre sıralamak DOĞRU DEĞİL: ölçüldü, hiçbir
  * seviyede kaynak sırası kimlik sırasıyla aynı değil.
@@ -70,9 +70,9 @@ function collect(): Map<string, PackInput> {
   const packs = new Map<string, PackInput>();
 
   for (const course of COURSES) {
-    /* DERSLER — seviye başına bir paket, madde başına bir ders.
-       Granülerlik burada belirleniyor: bir derste değişen tek kelime, o
-       kullanıcıya yalnız o dersin ~10 KB'ını indirtiyor. */
+    /* KONUŞMALAR — seviye başına bir paket, madde başına bir konuşma.
+       Granülerlik burada belirleniyor: bir konuşmada değişen tek kelime, o
+       kullanıcıya yalnız o konuşmanın ~10 KB'ını indirtiyor. */
     for (const pack of buildConversationDump(course)) {
       const rows = JSON.parse(pack.json) as WithId[];
       if (rows.length === 0) continue;

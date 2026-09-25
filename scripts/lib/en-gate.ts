@@ -223,8 +223,8 @@ export function enStems(w: string): string[] {
  * Almanca kapıdaki `nerede`nin İngilizce ikizi; sınıflar ve gerekçeleri
  * orada yazılı (`lib/vocab-gate.cjs`). Özet: "kapı dışı" tek bir şey değil,
  * yazarın yapacağı iş sınıfa göre değişiyor — seviye üstü sözcük metni
- * sadeleştirmeyi ister, erken sözcük egzersizi taşımayı, derssiz sözcük
- * patikaya ders eklemeyi, türev hiçbir şey (kapının eksiği).
+ * sadeleştirmeyi ister, erken sözcük egzersizi taşımayı, konuşmasız sözcük
+ * patikaya konuşma eklemeyi, türev hiçbir şey (kapının eksiği).
  *
  * ALMANCADAN TEK FARKI EŞLEŞTİRME. Orada çekim/ayrılabilen önek makinesi
  * gerekiyordu; burada `enStems` zaten var ve düzensiz fiil tablosunu,
@@ -258,12 +258,12 @@ const enAra = <T,>(m: Map<string, T>, w: string): T | undefined => {
   return undefined;
 };
 /**
- * Kapı dışı bir sözcüğü sınıflandır. `dersUnite`: bu seviyenin sözcük →
+ * Kapı dışı bir sözcüğü sınıflandır. `konusmaUnite`: bu seviyenin sözcük →
  * (ilk öğretildiği ünite) haritası; çağıran `conversationsFor("en")`den kuruyor,
- * çünkü dersin tek kaynağı orası (mobil döküm bayatlayabilir).
+ * çünkü konuşmanın tek kaynağı orası (mobil döküm bayatlayabilir).
  */
-export function enNerede(w: string, level: string, unit: number, dersUnite: Map<string, number>): { sinif: string; detay: string } {
-  const du = enAra(dersUnite, w);
+export function enNerede(w: string, level: string, unit: number, konusmaUnite: Map<string, number>): { sinif: string; detay: string } {
+  const du = enAra(konusmaUnite, w);
   if (du !== undefined) return du > unit
     ? { sinif: "erken", detay: `u${du} (${du - unit} ünite sonra)` }
     : { sinif: "turev", detay: `kök u${du}'de öğretiliyor` };
@@ -271,7 +271,7 @@ export function enNerede(w: string, level: string, unit: number, dersUnite: Map<
   if (hv === undefined) return { sinif: "yabanci", detay: "havuzda yok" };
   return EN_SIRA.indexOf(hv) > EN_SIRA.indexOf(level)
     ? { sinif: "ustu", detay: hv.toUpperCase() }
-    : { sinif: "derssiz", detay: `havuz ${hv.toUpperCase()}, bu seviyede ders yok` };
+    : { sinif: "konusmasiz", detay: `havuz ${hv.toUpperCase()}, bu seviyede konuşma yok` };
 }
 
 export function measureEn(text: string, pool: Set<string>, ek: string[]): { tok: string[]; disi: string[] } {

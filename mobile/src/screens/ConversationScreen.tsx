@@ -142,7 +142,7 @@ export function ConversationScreen() {
   const { compactWidth } = useLayout();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { params } = useRoute<RouteProp<RootStackParams, "Conversation">>();
-  /* Ders A1 dışındaysa ikilide yok, seviye paketiyle iniyor. Normalde patika
+  /* Konuşma A1 dışındaysa ikilide yok, seviye paketiyle iniyor. Normalde patika
      zaten indirmiş oluyor; bu yol bildirimle ya da derin bağlantıyla doğrudan
      buraya gelen kullanıcı için. */
   const [conversation, setConversation] = useState<Conversation | undefined>(() => findConversation(params.id));
@@ -164,7 +164,7 @@ export function ConversationScreen() {
   useEffect(() => { if (convLocked) notePremiumGate("conversation"); }, [convLocked]);
   /* Paket inmeden "bulunamadı" denmiyor (bkz. ui/flow `ContentLoadingBody`). */
   const [packReady, setPackReady] = useState(() => !!findConversation(params.id));
-  /* Paket inemediyse "ders bulunamadı" değil "indirilemedi" deniyor. */
+  /* Paket inemediyse "konuşma bulunamadı" değil "indirilemedi" deniyor. */
   const [packFailed, setPackFailed] = useState(false);
   useEffect(() => {
     const level = conversationLevelOf(params.id);
@@ -198,17 +198,17 @@ export function ConversationScreen() {
   /*
    * ELLER SERBEST — mobilde HİÇ YOKTU.
    *
-   * Web derste kalıcı bir anahtar tutuyor (`conversationp.hands_free`): açıkken her
+   * Web konuşmada kalıcı bir anahtar tutuyor (`conversationp.hands_free`): açıkken her
    * adımda mikrofona dokunmak gerekmiyor, öğretmen cümlesini bitirir bitirmez
    * dinleme kendiliğinden başlıyor. Telefonda bu farkın webdekinden BÜYÜK
    * olması gerekirdi - cihaz masaya dayalıyken her tur için ekrana uzanmak,
-   * konuşma dersinin ritmini kesen tek şey.
+   * konuşma konuşmasının ritmini kesen tek şey.
    *
    * Sıralama yürüyüş modunun kanıtlanmış kalıbı: önce `speakAndWaitVoiced`,
    * SONRA dinle. `speakTarget` bitişi bildirmiyor ve onunla kurulsaydı
    * mikrofon öğretmenin sesinin üstüne açılırdı.
    */
-  /** Dersin bir sonraki tekrarı kaç gün sonra — kayıt yanıtından. */
+  /** Konuşmanın bir sonraki tekrarı kaç gün sonra — kayıt yanıtından. */
   const [nextDays, setNextDays] = useState<number | null>(null);
   /** Sunucunun hükmü: konuşma sayıldı mı (asgari tur doldu mu). */
   const [passed, setPassed] = useState<boolean | null>(null);
@@ -218,13 +218,13 @@ export function ConversationScreen() {
   const [roleMsgs, setRoleMsgs] = useState<ChatMsg[]>([]);
   /*
    * SAĞLAYICI KAPALIYSA SENARYO YOLU. `null` = model çalışıyor. Web aynı
-   * durumda derse ait senaryoya düşüyor ve konuşma sürüyor; mobil yalnız
-   * "yapay zekâ kapalı" deyip bırakıyordu ve ders GEÇİLEMİYORDU - geçme
+   * durumda konuşmaya ait senaryoya düşüyor ve konuşma sürüyor; mobil yalnız
+   * "yapay zekâ kapalı" deyip bırakıyordu ve konuşma GEÇİLEMİYORDU - geçme
    * koşulu konuşmanın yapılmasını istiyor (bkz. web-parity 11.9).
    */
   const [offline, setOffline] = useState<OfflineState | null>(null);
   const offlineRef = useRef(false);
-  /* Senaryoya NEDEN düşüldüğünü söyleyen öğretmen notu. Ders açılırken
+  /* Senaryoya NEDEN düşüldüğünü söyleyen öğretmen notu. Konuşma açılırken
      basılıyor, ama konuşmaya geçiş akışı temizliyor (`setFeed([])`) ve not
      tam senaryonun başladığı anda kayboluyordu; giriş ve devamda yeniden basılıyor. */
   const offNoteRef = useRef<BubbleData | null>(null);
@@ -253,7 +253,7 @@ export function ConversationScreen() {
   const [resumeChecked, setResumeChecked] = useState(false);
   const [report, setReport] = useState<ReportRef | null>(null); // "Bildir" açık olan yapay zekâ yanıtı
   // Konuşma tanıma durumu. `sttOk === false` tek yer: mikrofon yok ya da izin
-  // verilmedi — o zaman yazma alanı açılır, yoksa ders tamamlanamaz hâle gelir.
+  // verilmedi — o zaman yazma alanı açılır, yoksa konuşma tamamlanamaz hâle gelir.
   const [sttOk, setSttOk] = useState<boolean | null>(null);
   /*
    * MİKROFON YOLUNUN NEDEN KAPANDIĞI SÖYLENİYOR.
@@ -310,7 +310,7 @@ export function ConversationScreen() {
      * görüyordu. Durumu okuyan yardımcı (`chatConfigured`) yazılmıştı ama
      * çağıran yoktu.
      *
-     * Web bu durumda derse ait SENARYOYA düşüyor (`lib/conversations/offline-chat`)
+     * Web bu durumda konuşmaya ait SENARYOYA düşüyor (`lib/conversations/offline-chat`)
      * ve konuşma çalışmaya devam ediyor; o yolun mobile taşınması ayrı bir iş.
      * Burada yapılan yalnız doğruyu söylemek.
      */
@@ -337,12 +337,12 @@ export function ConversationScreen() {
         if (alive && route === "off") {
           offlineRef.current = true;
           /* HANGİ YEDEĞE DÜŞTÜĞÜ SÖYLENİYOR. Mesaj "birazdan tekrar dene"
-             diyordu ama ders DURMUYOR: çevrimdışı rol yapma devralıyor
-             (`game/offlineChat`) - senaryosu olan derste senaryo, olmayanda
+             diyordu ama konuşma DURMUYOR: çevrimdışı sohbet devralıyor
+             (`game/offlineChat`) - senaryosu olan konuşmada senaryo, olmayanda
              kalıplar. Yani kullanıcı çalışan bir şeyi bozuk sanıyordu. Web iki
              yedeği ayrı ayrı adlandırıyor. */
           /* "KONUŞMA YİNE SAYILIR" da söyleniyor. Balon yalnız "servis kapalı"
-             diyordu; kullanıcı konuşmasının sayılmayacağını sanıp dersi
+             diyordu; kullanıcı konuşmasının sayılmayacağını sanıp konuşmayı
              bırakabilirdi. Web'de bu cümle vardı ama `title=` ipucu balonunda
              duruyordu (dokunmatikte hiç açılmıyor) - aynı turda ortak anahtara
              alındı ve iki tarafta da yazılır oldu. */
@@ -359,7 +359,7 @@ export function ConversationScreen() {
       })
       .catch(() => {});
     return () => { alive = false; stopListening(); };
-    /* Efekt yalnız MOUNT içindir (ders kimliği değişmiyor, ekran yeniden
+    /* Efekt yalnız MOUNT içindir (konuşma kimliği değişmiyor, ekran yeniden
        kuruluyor); `conversation` bağımlılığa eklenirse sohbet uyarısı her çizimde
        yeniden basılır. */
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -391,12 +391,12 @@ export function ConversationScreen() {
   }, [roleMsgs, roleTurns, phase]);
 
   /**
-   * Ders BAŞLADI - web `conversation-player` ile aynı olay, aynı değer (1 kaldığı
-   * yerden, 0 baştan) ve aynı kind (ders kimliği).
+   * Konuşma BAŞLADI - web `conversation-player` ile aynı olay, aynı değer (1 kaldığı
+   * yerden, 0 baştan) ve aynı kind (konuşma kimliği).
    *
    * Üç giriş yolu var (ilk açılış, "kaldığın yerden", "baştan başla") ve üçü
    * de `presentFrom` çağırıyor; olay tek bir yerden ve bir kez yazılıyor,
-   * yoksa "baştan başla"ya basan öğrenci iki ders başlangıcı üretirdi.
+   * yoksa "baştan başla"ya basan öğrenci iki konuşma başlangıcı üretirdi.
    */
   useEffect(() => { handsFreeRef.current = handsFree; }, [handsFree]);
   useEffect(() => {
@@ -497,7 +497,7 @@ export function ConversationScreen() {
   /**
    * Tekrar adımının sonucu. PUANLANMIYOR (bkz. scoredSteps): tekrar bir ölçme
    * değil, kelimeyi ağza alma denemesi. Üçüncü denemeden sonra doğrusu
-   * duyurulup geçiliyor ki ders takılmasın.
+   * duyurulup geçiliyor ki konuşma takılmasın.
    */
   function gradeRepeat(shown: string, ok: boolean, via: Via) {
     if (expect?.kind !== "repeat") return;
@@ -631,7 +631,7 @@ export function ConversationScreen() {
     push({ role: "teacher", segments: [{ lang: "tr", text: tx("conversation.scene", { scene: conversation.chat.scene }) }] });
     if (offlineRef.current && offNoteRef.current) push(offNoteRef.current);
     /* Çevrimdışı yolda açılış senaryodan geliyor (ilk turun sorusu); model
-       çalışıyorsa dersin kendi açılış repliği. */
+       çalışıyorsa konuşmanın kendi açılış repliği. */
     let opening = conversation.chat.opening;
     if (offlineRef.current) {
       const st = offlineStart(conversation);
@@ -748,7 +748,7 @@ export function ConversationScreen() {
   }
 
   /* `conversation` henüz yüklenmemişken de okunuyor, o yüzden `??` kalıyor - ama
-     uydurulmuş bir eşik değil sıfır: ders gelmeden "yeter" demesin. Eşiğin
+     uydurulmuş bir eşik değil sıfır: konuşma gelmeden "yeter" demesin. Eşiğin
      kendisi içerikten, artık zorunlu alandan geliyor. */
   const minTurns = conversation?.chat.minTurns ?? 0;
   const chatReady = roleTurns >= minTurns;
@@ -770,8 +770,8 @@ export function ConversationScreen() {
        `conversation-player` aynı adı aynı değerle yazıyor; mobilde çevrimdışı yol
        yeni geldiği için ölçüm de şimdi geliyor. */
     if (offline) track("production_attempt", offlineSummary(conversation, offline).score, "chat");
-    bumpStats(); // ders bitti: XP/seri değişti
-    /* "Şimdilik bırak" dersi BİTMİŞ işaretlemiyor ve kaldığı yeri silmiyor:
+    bumpStats(); // konuşma bitti: XP/seri değişti
+    /* "Şimdilik bırak" konuşmayı BİTMİŞ işaretlemiyor ve kaldığı yeri silmiyor:
        bir sonraki açılışta konuşmaya dönülüyor. Sunucuya yine yazılıyor ki
        Patika adımı "denendi" görünsün ve sıra ilerlesin. */
     if (roleDone) {
@@ -790,10 +790,10 @@ export function ConversationScreen() {
          sunucu kaynaklı bir düşüş ise sonuç bekletiliyor. */
       if (!res.ok && res.status >= 500) await queueConversationResult(payload);
       /* YANIT OKUNUYOR. Uç `passed`, `nextDays`, `xpGained`, `currentStreak`
-         ve `totalXp` döndürüyor; mobil hiçbirini okumuyordu ve dersin NE ZAMAN
+         ve `totalXp` döndürüyor; mobil hiçbirini okumuyordu ve konuşmanın NE ZAMAN
          geri geleceği (aralıklı tekrar merdiveni) bu yüzden hiçbir yerde
          yazmıyordu. Web özetin altında söylüyor. */
-      /* Ders bitti: Konuşma adımı "bitirildi" sayılıyor ve bir sonraki hak
+      /* Konuşma bitti: Konuşma adımı "bitirildi" sayılıyor ve bir sonraki hak
          açılmış olabilir — kilit açma durumu tazeleniyor. */
       if (res.ok) void refreshPremium();
       if (res.ok) {
@@ -805,9 +805,9 @@ export function ConversationScreen() {
         if (typeof d?.passed === "boolean") setPassed(d.passed);
       }
     } catch {
-      /* ÇEVRİMDIŞI: yerel işaret Patika'yı bitmiş gösteriyor ama sunucu dersi
+      /* ÇEVRİMDIŞI: yerel işaret Patika'yı bitmiş gösteriyor ama sunucu konuşmayı
          hiç öğrenmiyordu - XP yok, tekrar merdiveni yok, cihaz değiştirince
-         ders geri geliyordu. Sonuç kendi günüyle kuyruğa alınıyor. */
+         konuşma geri geliyordu. Sonuç kendi günüyle kuyruğa alınıyor. */
       await queueConversationResult(payload);
     }
   }
@@ -866,7 +866,7 @@ export function ConversationScreen() {
           </PressableScale>
         ) : null}
       </View>
-      {/* Rol yapma boyunca EKRANDA KALIR — akışta kaybolan tek seferlik bir
+      {/* Sohbet boyunca EKRANDA KALIR — akışta kaybolan tek seferlik bir
           baloncuk, konuşmanın ortasına dönen kullanıcıya hiçbir şey söylemez. */}
       {/* Senaryoda (misafir, izin yok, servis kapalı) karşıdaki yapay zekâ
           değil: "yapay zekâ ile konuşuyorsun" demek yanlış olurdu. */}
@@ -987,7 +987,7 @@ function BubbleView({ b, colors, onReport }: { b: Bubble; colors: Palette; onRep
     return (
       <View style={{ alignSelf: "flex-end", maxWidth: "84%", marginBottom: spacing.md, flexDirection: "row", alignItems: "center", gap: 6 }}>
         {/* KUYRUK KÖŞESİ: konuşan tarafa bakan alt köşe küçülüyor (radii.sm).
-            Koç balonu bunu baştan beri yapıyor (`ui/CoachBubble`), ders ve rol
+            Koç balonu bunu baştan beri yapıyor (`ui/CoachBubble`), konuşma ve rol
             yapma balonları ise dört köşesi eşit duruyordu; web de öyleydi ama
             orada kuyruk 4 px'lik ölçek dışı bir değerdi. Üç balon artık aynı
             biçimde. */}
@@ -1104,7 +1104,7 @@ function LectureControls({ expect, tries, input, setInput, onConfirm, onSpeakRep
   sttOk: boolean | null; sttSebep: "denied" | "unavailable" | null; listening: boolean; typing: boolean; setTyping: (v: boolean) => void;
   onSkip: () => void; colors: Palette;
 }) {
-  // Mikrofon yoksa/izin verilmediyse yazma tek yol — ders tamamlanabilir kalmalı.
+  // Mikrofon yoksa/izin verilmediyse yazma tek yol — konuşma tamamlanabilir kalmalı.
   const yaziYolu = sttOk === false || typing;
   /* Yazma yoluna GEÇİLDİYSE sebebi yazılıyor (bkz. `sttSebep`). Yalnız
      mikrofon düştüğünde: kullanıcı kendi isteğiyle yazmaya geçtiyse
@@ -1115,7 +1115,7 @@ function LectureControls({ expect, tries, input, setInput, onConfirm, onSpeakRep
         {tx(sttSebep === "denied" ? "speak.mic_needed" : "conversation.no_asr")}
       </Text>
     ) : null;
-  /* Beklentili her adımda atlama yolu: tıkanan öğrenci dersi bırakmak zorunda
+  /* Beklentili her adımda atlama yolu: tıkanan öğrenci konuşmayı bırakmak zorunda
      kalmasın (web `conversation-player` aynı bağlantıyı veriyor). "Devam" ve
      "hazırım" adımlarında anlamsız - orada beklenti yok. */
   const atla = (
@@ -1248,13 +1248,13 @@ function Summary({ conversation, correct, total, next, roleMsgs, nextDays, passe
 }) {
   const pct = total ? Math.round((correct / total) * 100) : 100;
   /*
-   * "ARTIK ŞUNU YAPABİLİRİM" — dersin ödeme satırı ve mobilde hiç yoktu.
+   * "ARTIK ŞUNU YAPABİLİRİM" — konuşmanın ödeme satırı ve mobilde hiç yoktu.
    *
    * Web özetin altında bunu yazıyor (`conversationp.i_can`): kullanıcı turu
    * bitiriyor, kaç doğru yaptığını görüyor ama NE KAZANDIĞINI görmüyordu.
-   * Kimlikler dersten (`candoMap`), metni `/api/cando`dan — rol yapma
+   * Kimlikler konuşmadan (`candoMap`), metni `/api/cando`dan — sohbet
    * sınavındaki yolun aynısı (`ConversationScoredScreen`). Alınamazsa satır
-   * çizilmiyor: etiket bir süs, ders özeti ona bağlı değil.
+   * çizilmiyor: etiket bir süs, konuşma özeti ona bağlı değil.
    */
   const [cando, setCando] = useState<string[]>([]);
   useEffect(() => {
@@ -1312,14 +1312,14 @@ function Summary({ conversation, correct, total, next, roleMsgs, nextDays, passe
         {/* KONUŞMA NEDEN TAMAMLANMADI ve NE YAPILACAK — not + "Konuşmaya dön". */}
         {unfinished ? <FlowNote tone="warn" icon={<AlertIcon color={colors.streakText} size={16} />} text={tx("conversationp.min_turns_note", { n: conversation.chat.minTurns })} /> : null}
         {cando.length ? <FlowNote tone="ok" icon={<CheckIcon color={colors.successText} size={16} />} text={`${tx("conversationp.i_can")} ${cando.join(" · ")}`} /> : null}
-        {/* Misafirin ilk tamamlanan dersi: kaybedecek bir şeyi olduğu ilk an. */}
+        {/* Misafirin ilk tamamlanan konuşmayı: kaybedecek bir şeyi olduğu ilk an. */}
         <GuestMilestoneCard milestone="first_conversation" when={!unfinished} />
         {!corrections.length && talked ? <FlowNote tone="ok" icon={<CheckIcon color={colors.successText} size={16} />} text={tx("conversationp.no_corrections")} /> : null}
 
         {conversation.patterns?.length ? (
           <DetailCard title={tx("conversation.patterns_you_learned")}>
             {/*
-              KULLANILAN KALIP İŞARETLİ — dersin asıl amacı kalıbı KULLANMAK.
+              KULLANILAN KALIP İŞARETLİ — konuşmanın asıl amacı kalıbı KULLANMAK.
               Web aynı `patternUsed` kuralıyla işaretliyor. Konuşma hiç
               olmadıysa işaret de yok: yanlış bir "yapmadın" damgası vurmasın.
             */}
@@ -1349,7 +1349,7 @@ function Summary({ conversation, correct, total, next, roleMsgs, nextDays, passe
           </DetailCard>
         ) : null}
 
-        {/* DERSİN KELİMELERİ kapanışta bir kez daha — dersin dili toplu. */}
+        {/* KONUŞMANIN KELİMELERİ kapanışta bir kez daha — konuşmanın dili toplu. */}
         {conversation.vocab?.length ? (
           <DetailCard title={tx("conversationp.words_of_conversation")}>
             <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6 }}>

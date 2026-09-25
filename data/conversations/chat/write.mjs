@@ -1,7 +1,7 @@
 /**
  * Paketi yazar: `node data/conversations/chat/write.mjs <paket> < satirlar.txt`
  *
- * Her ders DÖRT satır alıyor, hep aynı sırayla:
+ * Her konuşma DÖRT satır alıyor, hep aynı sırayla:
  *
  *   1. scene      görev
  *   2. partner    karşıdaki kim (öbek — nokta YOK)
@@ -45,4 +45,4 @@ writeFileSync(
     )
     .join(",\n")}\n]\n`,
 );
-console.log(`${packet}: ${out.length} ders yazıldı`);
+console.log(`${packet}: ${out.length} konuşma yazıldı`);

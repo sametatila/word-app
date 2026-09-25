@@ -46,13 +46,13 @@ function Featured({ unit, isCurrent, colors, onContinue }: { unit: LearningPathU
         <View style={{ flex: 1 }}>
           <Text variant="micro" color={colors.primaryText}>{t(isCurrent ? "path.now" : "common.unit")} · {t("common.unit")} {unit.index}</Text>
           <Text variant="h2">{unit.theme}</Text>
-          {/* Kartı ayırt eden ünitenin KENDİ dersleri: tema 2-3 ünitede aynı. */}
+          {/* Kartı ayırt eden ünitenin KENDİ konuşmaları: tema 2-3 ünitede aynı. */}
           <Text variant="caption" color={colors.textMuted} numberOfLines={1}>{unit.topics.join(" · ")}</Text>
         </View>
       </View>
       {/* TEK ÖLÇÜT: şeritteki çizgi sayısı = sayacın paydası = ünite ekranındaki
           adım sayısı. Şerit içeriği olmayan yuvaları da çiziyordu, sayaç yalnız
-          dersleri sayıyordu: 13 çizginin yanında "1/4 konuşma" yazıyordu. */}
+          konuşmaları sayıyordu: 13 çizginin yanında "1/4 konuşma" yazıyordu. */}
       <View style={{ flexDirection: "row", justifyContent: "space-between", marginTop: spacing.md, marginBottom: 6 }}>
         <Text variant="caption" color={colors.textMuted}>{t("path.steps_done", { n: unit.done, total: unit.total })}</Text>
         {unit.complete ? <Text variant="caption" color={colors.successText}>{t("common.completed")}</Text> : null}
@@ -173,7 +173,7 @@ export function PathScreen() {
 
   /*
    * Modül sınavları. Patika'da duruyorlar çünkü kâğıt modülün KENDİ
-   * derslerinden üretiliyor ve dersleri geçilmemişse motor kâğıdı "deneme"
+   * konuşmalarından üretiliyor ve konuşmaları geçilmemişse motor kâğıdı "deneme"
    * sayıyor — ön koşul burada, giriş de burada olmalı. Web'de aynı liste
    * ImmersionHub'ın altında.
    *
@@ -231,7 +231,7 @@ export function PathScreen() {
     );
   }
 
-  // Ders paketi olmayan kursta ünite üretilemez (bkz. data/conversations). Sessizce boş
+  // Konuşma paketi olmayan kursta ünite üretilemez (bkz. data/conversations). Sessizce boş
   // bir Patika göstermek yerine sebebi ve çalışan yolları söylüyoruz.
   if (!path.units.length) {
     return (
@@ -290,10 +290,10 @@ export function PathScreen() {
       {featured && <Featured unit={featured} isCurrent={featured.index === path.currentIndex} colors={colors} onContinue={() => openUnit(featured)} />}
 
       {/*
-        MODÜL BAŞLIKLARI ALTINDA. Tema modülden geliyor; modül 10 ders, ünite 4
-        ders olduğu için aynı tema art arda 2-3 kartın ADI oluyordu ("Tanışma ve
+        MODÜL BAŞLIKLARI ALTINDA. Tema modülden geliyor; modül 10 konuşma, ünite 4
+        konuşma olduğu için aynı tema art arda 2-3 kartın ADI oluyordu ("Tanışma ve
         ben" ×3) ve kartlar ayırt edilmiyordu. Tema artık grubun başlığı, kartın
-        adı kendi dersleri. Modülün sınavı da modülün sonunda — ayrı listede
+        adı kendi konuşmaları. Modülün sınavı da modülün sonunda — ayrı listede
         hangi ünitelere ait olduğu okunmuyordu. Web `immersion-hub` ile aynı.
       */}
       {moduleGroups(path.units).map((g) => {

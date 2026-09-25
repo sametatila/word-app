@@ -67,7 +67,7 @@ export type ListenOptions = {
   /**
    * Mikrofon açıldığı anda çalışır — varsayılan işitsel işaret.
    *
-   * Çağıran taraf kendi işaretini verebilsin diye açıldı: dersin WebAudio
+   * Çağıran taraf kendi işaretini verebilsin diye açıldı: konuşmanın WebAudio
    * işareti ekran kapalıyken susuyor ve cepteki kullanıcı mikrofonun
    * açıldığını yalnızca kulağıyla anlayabiliyor.
    */

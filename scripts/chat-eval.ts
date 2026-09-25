@@ -58,10 +58,10 @@ const SCRIPT: Step[] = [
 ];
 
 /**
- * Ölçüm dersi.
+ * Ölçüm konuşmayı.
  *
  * Senaryonun gömülü hataları (Akkusativ, V2) genel dilbilgisi hataları;
- * istem dersin kalıplarına odaklansa da her gerçek hatayı düzeltmek zorunda —
+ * istem konuşmanın kalıplarına odaklansa da her gerçek hatayı düzeltmek zorunda —
  * test tam olarak bunu ölçüyor.
  */
 const CONVERSATION = findConversation("de-a1-hallo")!;

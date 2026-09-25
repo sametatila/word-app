@@ -8,7 +8,7 @@ import en from "../src/data/conversations/en-a1.json";
  * İKİ YÖNLÜ ÇEVİRİ — mobil tarafın kapısı.
  *
  * NEDEN TEST: hata SESSİZ. Çevrilmemiş içerik hata vermiyor, yalnız
- * kullanıcı anlamadığı dilde ders görüyor — ve bu bir kez zaten oldu:
+ * kullanıcı anlamadığı dilde konuşma görüyor — ve bu bir kez zaten oldu:
  * `nativeContent` "yalnız en" diyordu, anadili Almanca olan kullanıcı
  * için sözlük pakette DURUYOR ama hiç açılmıyordu.
  *
@@ -50,18 +50,18 @@ test("çevrilen kurs anadile göre değişiyor", async () => {
   expect(translatedCourse()).toBe("en");
 });
 
-test("anadili Almanca olan İngilizce dersi Almanca görüyor", async () => {
+test("anadili Almanca olan İngilizce konuşmayı Almanca görüyor", async () => {
   await setLang("de");
   await ensureNativeDict();
   const out = nativeConversation(enConversation);
   expect(out.titleTr).not.toBe(enConversation.titleTr);
   // Türkçeye özgü harf kalmamalı: kalan bir `ş` çevrilmemiş metin demek.
   expect(out.vocab.map((v) => v.tr).join(" ")).not.toMatch(/[ışğİŞĞ]/);
-  // Almanca kursun dersi bu anadil için çevrilmiyor (kendi dilini öğretmiyoruz).
+  // Almanca kursun konuşması bu anadil için çevrilmiyor (kendi dilini öğretmiyoruz).
   expect(nativeConversation(deConversation).titleTr).toBe(deConversation.titleTr);
 });
 
-test("anadili İngilizce olan Almanca dersi İngilizce görüyor", async () => {
+test("anadili İngilizce olan Almanca konuşmayı İngilizce görüyor", async () => {
   await setLang("en");
   await ensureNativeDict();
   const out = nativeConversation(deConversation);

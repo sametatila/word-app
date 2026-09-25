@@ -42,7 +42,7 @@ export type VoiceId =
   | "en-US-AndrewNeural"
   | "en-US-ChristopherNeural";
 
-/** Ders anlatım sesi (Türkçe) — kullanıcı seçmez, alternatifi yok. */
+/** Konuşma anlatım sesi (Türkçe) — kullanıcı seçmez, alternatifi yok. */
 export const TURKISH_VOICE: VoiceId = "tr-TR-EmelNeural";
 
 /**
@@ -129,7 +129,7 @@ export function glossVoice(native: NativeLang, selected: VoiceId): VoiceId {
 }
 
 /**
- * Ders, dinleme ve okuma parçasının SABİT sesi — web `conversationVoice` ile aynı tablo. Katalogdan türetilmiyor:
+ * Konuşma, dinleme ve okuma parçasının SABİT sesi — web `conversationVoice` ile aynı tablo. Katalogdan türetilmiyor:
  * kursun ilk sesi artık Defne ve Defne'nin yalnız kelime katmanı üretildi.
  */
 const CONVERSATION: Record<"de" | "gsw-zh" | "en", VoiceId> = {

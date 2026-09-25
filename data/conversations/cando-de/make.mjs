@@ -2,12 +2,12 @@
  * Can-do ifadelerinin ALMANCASINI paketler: `node data/conversations/cando-de/make.mjs`
  *
  * ÇÖZÜCÜ GÖSTERDİ — kardeşiyle aynı biçimde. Almanca eksenin dört hattı
- * (ders düzyazısı, beceri düz metni, görev metni, deneme kâğıdı) bittikten
+ * (konuşma düzyazısı, beceri düz metni, görev metni, deneme kâğıdı) bittikten
  * sonra `check:native-de` yeşil döndü, ama o kapı yalnız ÇÖZÜCÜLERİ
- * çalıştırıyor. Ders sayfasının altındaki "bunu yapabileceksin" köprüsü
+ * çalıştırıyor. Konuşma sayfasının altındaki "bunu yapabileceksin" köprüsü
  * çözücüden geçmiyor: `nativeCando` sözlüğün AYRI bir alanına bakıyor ve
  * o alan Almanca tarafta hiç yoktu — anadili Almanca olan kullanıcı
- * dersin altında Türkçe bir liste görecekti.
+ * konuşmanın altında Türkçe bir liste görecekti.
  *
  * Kaynak yine `src/lib/cando.ts` ve çıkarıcı kardeşinden alınıyor: iki
  * kopya ayrışırsa biri 131 ifadeyi, öteki 130'unu görür ve fark sessiz

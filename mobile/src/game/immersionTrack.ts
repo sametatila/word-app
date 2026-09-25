@@ -5,7 +5,7 @@
  * slot deseni, aynı 4/2/2/2 + gramer + quiz + kontrol düzeni, aynı modül
  * temaları. Fark: beceri içeriği (read/listen/write) veritabanında ve daha canlı
  * değil; o slotlar "yayına alınınca" olarak işaretlenir (playable:false).
- * Dersler pakette olduğu için oynanabilir. /api/immersion açıldığında
+ * Konuşmalar pakette olduğu için oynanabilir. /api/immersion açıldığında
  * useLearningPath onu tercih eder ve gerçek ilerleme/gating gelir.
  */
 import { conversationsForLevel } from "../data/conversations";
@@ -19,7 +19,7 @@ const UNIT_CONVERSATIONS = 4;
 const GROUP_SIZE = 10;
 const MODULE_SIZE = 10;
 
-/** Her ünitenin deseni: 4 ders + 2 okuma + 2 dinleme + 2 yazma + gramer + quiz + kontrol. */
+/** Her ünitenin deseni: 4 konuşma + 2 okuma + 2 dinleme + 2 yazma + gramer + quiz + kontrol. */
 const BASE_PATTERN = ["conversation", "read", "conversation", "listen", "conversation", "write", "conversation", "read", "listen", "write"] as const;
 function slotPlan(): string[] { return [...BASE_PATTERN, "grammar", "quiz", "unitQuiz"]; }
 
@@ -38,9 +38,9 @@ function unitTheme(level: string, firstConversationIndex: number, unitIndex: num
 }
 
 /**
- * Cihazda kurulan Patika. `done` seti biten ders id'leri (yerel + sunucu).
+ * Cihazda kurulan Patika. `done` seti biten konuşma id'leri (yerel + sunucu).
  * Gating YOK: sunucu ilerlemesi olmadan kilit yanıltıcı olur ve kullanıcıyı
- * ilk ünitede kilitler; onun yerine hepsi açık, ilerleme derse göre.
+ * ilk ünitede kilitler; onun yerine hepsi açık, ilerleme konuşmaya göre.
  */
 export function buildLocalLearningPath(level: string, done: Set<string>): LearningPath {
   const conversations = conversationsForLevel(level);
@@ -70,7 +70,7 @@ export function buildLocalLearningPath(level: string, done: Set<string>): Learni
       const id = `${unitId}-${kind}${n}`;
       if (kind === "conversation") {
         const conversation = unitConversations[conversationCursor++];
-        if (!conversation) continue; // kısmi son ünitede boş ders slotu üretilmez
+        if (!conversation) continue; // kısmi son ünitede boş konuşma slotu üretilmez
         items.push({ id, kind, title: conversation.title, titleTr: conversation.titleTr, playable: true, done: done.has(conversation.id), open: true, ref: conversation.id });
       } else if (kind === "read" || kind === "listen" || kind === "write") {
         const meta = pools[kind][cursors[kind]++];
@@ -84,15 +84,15 @@ export function buildLocalLearningPath(level: string, done: Set<string>): Learni
           ref: meta?.id ?? null,
         });
       } else if (kind === "quiz" || kind === "unitQuiz") {
-        // Quiz/unitQuiz ünitenin ders içeriğinden CİHAZDA türetilir. Ünitede
-        // hiç ders yoksa türetecek bir şey de yok: "oynanır" demek boş bir tur
-        // açmak olurdu. Ders paketi olmayan kurslarda (ör. İngilizce, henüz
-        // ders içeriği yazılmadı) tüm ünite bu durumda.
+        // Quiz/unitQuiz ünitenin konuşma içeriğinden CİHAZDA türetilir. Ünitede
+        // hiç konuşma yoksa türetecek bir şey de yok: "oynanır" demek boş bir tur
+        // açmak olurdu. Konuşma paketi olmayan kurslarda (ör. İngilizce, henüz
+        // konuşma içeriği yazılmadı) tüm ünite bu durumda.
         const slot = SLOT_KEY[kind];
         const derivable = unitConversations.length > 0;
         items.push({ id, kind, title: t(slot.title), titleTr: t(slot.sub), playable: derivable, done: derivable && done.has(id), open: true, ref: derivable ? unitId : null });
       } else {
-        // grammar — sunucuyla aynı: ders taşıyan ünitede TÜRETİLİYOR
+        // grammar — sunucuyla aynı: konuşma taşıyan ünitede TÜRETİLİYOR
         // (`immersionQuiz.deriveGrammar`, QuizScreen onu çiziyor). "Yakında"
         // yazılıydı ama oynatıcı hazırdı: yerel patika 12, sunucu 13 adım sayıyordu.
         const slot = SLOT_KEY[kind];
@@ -107,9 +107,9 @@ export function buildLocalLearningPath(level: string, done: Set<string>): Learni
       SAYILABİLİR item'lar: OYNANABİLİR HER ADIM (sunucu `state.ts` ile aynı,
       pratik adımlar artık kayıt tutuyor). Aşağıdaki not eski ölçütün tarihçesi.
 
-      Eski: oynanabilir ders ve beceri yuvaları. Şablon her
+      Eski: oynanabilir konuşma ve beceri yuvaları. Şablon her
       ünitede 13 yuva açıyor ama içerik bitince kalanlar "Yakında" (ref yok) ve
-      gramer/quiz/kontrol noktası done-takibi tutmuyor. `total` bunların
+      gramer/quiz/ünite quizi done-takibi tutmuyor. `total` bunların
       hepsini sayıyordu: ünite, içeriği olmayan yuvalar yüzünden hiç
       dolmayacak bir "x / 13" gösteriyordu. Sunucu (lib/immersion/state.ts)
       zaten sayılabilir olanları sayıyor; yerel kurulum da öyle.
@@ -124,7 +124,7 @@ export function buildLocalLearningPath(level: string, done: Set<string>): Learni
       topics: unitConversations.map((l) => l.title),
       locked: false,
       // Sunucudaki kuralla aynı (lib/immersion/state.ts): "bitti" ünitedeki
-      // BÜTÜN sayılabilir item'lara bakar. Yalnız derslere bakmak, dört dersi
+      // BÜTÜN sayılabilir item'lara bakar. Yalnız konuşmalara bakmak, dört konuşmayı
       // bitiren kullanıcıya beceri yuvaları dururken "tamamlandı" diyordu.
       complete: completableCount > 0 && doneCount === completableCount,
       done: doneCount, total: completableCount,

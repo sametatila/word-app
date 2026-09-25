@@ -1,5 +1,5 @@
 /**
- * Uzun rol yapma denemesi — `npm run test:loop`
+ * Uzun sohbet denemesi — `npm run test:loop`
  *
  * Kalite testi sekiz turda bitiyor ve modelin kendini tekrar etmesi orada
  * görünmüyor; gerçek kullanıcı daha uzun konuşuyor ve döngü orada çıkıyor.
@@ -26,12 +26,12 @@ const REPLIES = [
 ];
 
 /**
- * Ölçünün sınırı: ders kelimeleri zorunlu olarak tekrar ediyor.
+ * Ölçünün sınırı: konuşma kelimeleri zorunlu olarak tekrar ediyor.
  *
- * Kelime kümesi karşılaştırması, dersin kendi kalıbını (V2 dersinde
+ * Kelime kümesi karşılaştırması, konuşmanın kendi kalıbını (V2 konuşmasında
  * „heute“, „morgen“, „machen“) tekrar sanıyor — oysa öğrenci o kelimeleri
  * kullanmak zorunda ve model de onları kurduruyor. Bu yüzden sayı mutlak bir
- * ölçü değil, **karşılaştırma** aracı: aynı ders için önce/sonra bakılır.
+ * ölçü değil, **karşılaştırma** aracı: aynı konuşma için önce/sonra bakılır.
  * Asıl karar çıktıyı gözle okumakla veriliyor.
  */
 function similar(a: string, b: string): boolean {

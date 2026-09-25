@@ -2,7 +2,7 @@
  * Mikrofon ve tarayıcı konuşma tanıyıcısı — sesle konuşan her ekranın ortak yüzeyi.
  *
  * Telaffuz turu (speaking-player), karşılıklı diyalog (dialogue-player) ve
- * ders rol yapması (conversation-player) aynı izin akışını ve aynı tanıyıcıyı kullanıyor;
+ * konuşma sohbeti (conversation-player) aynı izin akışını ve aynı tanıyıcıyı kullanıyor;
  * üç kopya er geç ayrışırdı.
  */
 

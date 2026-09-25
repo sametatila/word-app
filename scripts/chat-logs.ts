@@ -1,5 +1,5 @@
 /**
- * Rol yapma kayıtlarını okur — `npm run logs:chat`
+ * Sohbet kayıtlarını okur — `npm run logs:chat`
  *
  *   npm run logs:chat                 son konuşmalar
  *   npm run logs:chat -- --user Samet tek kullanıcı
@@ -122,12 +122,12 @@ async function main() {
     .limit(200);
 
   if (!rows.length) {
-    console.log("Kayıt yok. Bir derste rol yapma bölümüne girilince dolmaya başlar.");
+    console.log("Kayıt yok. Bir konuşmada sohbet bölümüne girilince dolmaya başlar.");
     await pool.end();
     return;
   }
 
-  // Konuşma bazında grupla: kullanıcı + ders + gün.
+  // Konuşma bazında grupla: kullanıcı + konuşma + gün.
   const groups = new Map<string, typeof rows>();
   for (const r of rows) {
     const key = `${r.userId}|${r.conversationId}|${r.at.toISOString().slice(0, 13)}`;

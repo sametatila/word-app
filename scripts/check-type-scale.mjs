@@ -23,7 +23,7 @@
  * `text-xs` büyük harfle → `micro` (11/700), ağırlıklı `text-xs` → `caption`
  * (12.5/600), düğme etiketi → `h3` (mobil düğme etiketi de h3), kart/ekran
  * başlığı → `h3`, bölüm kapağı → `h2`, büyük sayaç → `h1`/`display`. Sınav ve
- * ders oynatıcılarının başlıkları tek tek mobil karşılığındaki
+ * konuşma oynatıcılarının başlıkları tek tek mobil karşılığındaki
  * `<Text variant>`e bakılarak eşlendi.
  *
  * MOBIL YARISI (2026-09-12, §11.430). Üstteki gerekçe mobili REFERANS alıyor

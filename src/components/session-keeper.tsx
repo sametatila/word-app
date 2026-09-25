@@ -27,7 +27,7 @@ import { dropPushOnSignOut } from "@/lib/push-client";
  *      Böylece oturum yuvarlanıyor: uygulamayı açmak oturumu uzatıyor.
  *
  *   2. **Hesap değişiminde temizlik.** Cihazda hesaba ait kopyalar var
- *      (kurs, ses, beceri ilerlemesi, yarım kalan ders, yazma taslakları).
+ *      (kurs, ses, beceri ilerlemesi, yarım kalan konuşma, yazma taslakları).
  *      Başka bir hesapla giriş yapıldığında bunlar önceki kullanıcıya ait
  *      kalıyor ve yeni hesabın verisiyle karışıyordu. Kimlik değişince
  *      hesaba ait anahtarlar siliniyor; cihaza ait olanlar (tema, kurulum
@@ -52,7 +52,7 @@ const REFRESH_EVERY_MS = 6 * 60 * 60 * 1000;
  * Hesaba ait cihaz anahtarlarının önekleri.
  *
  * Tema (`lernomi-theme`), kurulum/bildirim uyarılarının kapatılması
- * (`lernomi:*-dismissed`) ve ders anlatımının eller serbest tercihi bilerek
+ * (`lernomi:*-dismissed`) ve konuşma anlatımının eller serbest tercihi bilerek
  * dışarıda: bunlar telefonun tercihi, hesabın değil.
  */
 const ACCOUNT_SCOPED_PREFIXES = [
@@ -79,7 +79,7 @@ const ACCOUNT_SCOPED_PREFIXES = [
     ilerliyor, XP'si şişiyordu. Aynı boşluk Android'de de vardı.
 
     Silmenin bedeli: A'nın o kayıtları KAYBOLUYOR. Yanlış hesaba yazmaktan
-    iyi, ve listedeki öteki yarım işler de (yarım ders, yarım deneme koşusu)
+    iyi, ve listedeki öteki yarım işler de (yarım konuşma, yarım deneme koşusu)
     aynı kuralla siliniyor.
   */
   "lernomi-answer-queue",
@@ -111,7 +111,7 @@ const ACCOUNT_SCOPED_PREFIXES = [
  * Mobil karşılığı `DeleteAccountScreen` `finishDeleted`: `AsyncStorage.clear()`
  * ile aynı kararı veriyor ve gerekçesi orada da yazılı ("temiz başlangıç").
  * Webde bu adım YOKTU: silme başarılı olunca yalnız `/`ye yönlendiriliyor ve
- * silinen hesabın avatarı, sesi, beceri/ders ilerlemesi, taslakları ve
+ * silinen hesabın avatarı, sesi, beceri/konuşma ilerlemesi, taslakları ve
  * önbelleği tarayıcıda kalıyordu.
  *
  * `localStorage.clear()` DEĞİL: yalnız kendi anahtarlarımız. Aynı kökte başka
@@ -185,7 +185,7 @@ export function SessionKeeper({ userId, avatar }: { userId: string; avatar: stri
   */
   useEffect(() => { writeTzCookie(); }, []);
 
-  /* Sahipsiz anahtarlar ve süresi geçmiş yarım dersler (bkz. lib/storage-hygiene). */
+  /* Sahipsiz anahtarlar ve süresi geçmiş yarım konuşmalar (bkz. lib/storage-hygiene). */
   useEffect(() => { sweepDeviceStorage(); }, []);
 
   /*

@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * Dersin işitsel işaretleri — konuşma tabanlı arayüzün "imleç"leri.
+ * Konuşmanın işitsel işaretleri — konuşma tabanlı arayüzün "imleç"leri.
  *
  * Ekrana bakmadan kullanılan bir akışta durum ancak sesle anlatılabiliyor:
  * mikrofonun açıldığını görmeyen kullanıcı boşluğa konuşuyor ya da açık

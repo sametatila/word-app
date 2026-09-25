@@ -11,7 +11,7 @@ import { useTheme } from "../theme";
  * "Bildir" bağlantısı + kendi bildirim kartı — bir yapay zekâ çıktısının altına
  * tek satırla konuyor.
  *
- * Ders sohbetinde her yapay zekâ yanıtının altında "Bildir" vardı ama rol yapma
+ * Konuşma sohbetinde her yapay zekâ yanıtının altında "Bildir" vardı ama sohbet
  * sınavının yanıtlarında ve alıştırmanın hemen ardından gelen yapay zekâ
  * değerlendirmesinde yoktu (denetim CNT-6); raporlama yalnız sonradan
  * "Yazdıklarım" geçmişinden yapılabiliyordu. Play "AI-Generated Content"
@@ -20,7 +20,7 @@ import { useTheme } from "../theme";
  * `ReportSheet` kurması gerekmiyor.
  *
  * `content` bildirilen metnin kendisi: sunucu onu saklıyor, çünkü kaynak kayıt
- * (ör. rol yapma günlüğü) 30 günde siliniyor ve inceleme ona bağlı kalmamalı.
+ * (ör. sohbet günlüğü) 30 günde siliniyor ve inceleme ona bağlı kalmamalı.
  */
 /**
  * Anlık değerlendirmenin bildirim ref'i: sunucu kaydın kimliğini döndürdüyse

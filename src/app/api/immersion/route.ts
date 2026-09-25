@@ -22,7 +22,7 @@ export async function GET(req: Request) {
   try {
     const profile = await ensureProfile(userId);
     const level = (LEVELS.includes(profile.level) ? profile.level : "A1") as CefrLevel;
-    // Yer tutucu başlıklar (Dil bilgisi / Tekrar / Kontrol Noktası ve içeriği
+    // Yer tutucu başlıklar (Dil bilgisi / Tekrar / Ünite quizi ve içeriği
     // olmayan beceri yuvası) kullanıcının dilinde gitsin.
     const track = await loadTrack(profile.course, level, await getT(), await getLang());
     const completion = await immersionCompletion(userId, profile.course);
@@ -44,7 +44,7 @@ export async function GET(req: Request) {
       items: u.items.map((s) => ({
         id: s.item.id,
         kind: s.item.kind,
-        // Altındaki içeriğin kimliği: ders id'si / egzersiz id'si / ünite id'si
+        // Altındaki içeriğin kimliği: konuşma id'si / egzersiz id'si / ünite id'si
         // (quiz+unitQuiz). REST istemcisi (mobil) oynatıcıya bununla gider;
         // web sunucu bileşeninde zaten ref'le köprü kuruyor.
         ref: s.item.ref,

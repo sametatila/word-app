@@ -4,7 +4,7 @@
  *
  * NEDEN BİR RAPOR. Bu eksenin her adımında yeni bir kalem çıktı ve hepsi
  * AYNI biçimde çıktı: bir şey bitmiş sayıldı, sonra ekrana bakınca hâlâ
- * Türkçe duran bir yer görüldü. Şablon notları, rol yapma senaryosu,
+ * Türkçe duran bir yer görüldü. Şablon notları, sohbet senaryosu,
  * can-do ifadeleri — üçü de plan "bitti" dedikten sonra bulundu.
  *
  * Tek tek bulmak yerine SAYIYORUZ. Rapor kaynakları geziyor, her birinde
@@ -66,7 +66,7 @@ const uniq = (xs: Iterable<string | undefined | null>) => {
       walk(e?.hint);
       walk(e?.why);
     }
-  rows.push({ kalem: "ders anlatımı", benzersiz: texts.size, hat: "lecture + word", kapsanan: texts.size - eksik.size });
+  rows.push({ kalem: "konuşma anlatımı", benzersiz: texts.size, hat: "lecture + word", kapsanan: texts.size - eksik.size });
 }
 
 // ── Can-do ────────────────────────────────────────────────────────────

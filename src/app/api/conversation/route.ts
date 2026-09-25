@@ -10,10 +10,10 @@ import { recordConversation } from "@/lib/conversations/progress";
 export const dynamic = "force-dynamic";
 
 /**
- * Ders sonucunun kaydı.
+ * Konuşma sonucunun kaydı.
  *
- * Sonuç sunucuda tutuluyor: hangi dersi bitirdiğin ve kuralın ne zaman
- * tekrarlanacağı hesaba ait, cihaza değil — telefonda bitirilen ders
+ * Sonuç sunucuda tutuluyor: hangi konuşmayı bitirdiğin ve kuralın ne zaman
+ * tekrarlanacağı hesaba ait, cihaza değil — telefonda bitirilen konuşma
  * bilgisayarda da bitmiş sayılmalı.
  */
 export async function POST(req: Request) {

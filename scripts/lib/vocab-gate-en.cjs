@@ -4,7 +4,7 @@
  * NEDEN AYRI DOSYA. `vocab-gate.cjs` Almancaya özgü ve parametrelenemez:
  * havuzu `data/app/words.json`, sözcük regexleri `[a-zäöüß]`, biçimbilimi
  * ayrılabilen önek / ge-…-t ortacı / da-bileşiği üzerine kurulu ve kümülatif
- * kümesini Almanca ders kaynağından alıyor. Her
+ * kümesini Almanca konuşma kaynağından alıyor. Her
  * kuralı başka bir dilin kuralı; içine bir `if (dil === "en")` koymak iki
  * dilin morfolojisini tek gövdede tutmak olurdu ve ikisi de okunmaz hale
  * gelirdi.
@@ -33,9 +33,9 @@ const pool = fs
   .split("\n")
   .map((l) => JSON.parse(l));
 
-/** Seviyenin dersleri; dersi olmayan seviyede havuz tek kaynak. */
+/** Seviyenin konuşmaları; konuşmayı olmayan seviyede havuz tek kaynak. */
 const { konusmaPaketi } = require("./conversation-packs.cjs");
-const dersler = (lv) => konusmaPaketi("en", lv);
+const konusmalar = (lv) => konusmaPaketi("en", lv);
 
 /* ── serbest sözcükler ────────────────────────────────────────────────── */
 
@@ -228,11 +228,11 @@ const bellek = new Map();
 /**
  * Seviyeye kadar öğretilmiş sözcükler.
  *
- * Alt seviyeler HAVUZ KATMANIYLA giriyor, ders sözlükçesiyle değil: Almanca
+ * Alt seviyeler HAVUZ KATMANIYLA giriyor, konuşma sözlükçesiyle değil: Almanca
  * kapıda olduğu gibi, patika havuzun tamamını öğretmiyor ama kart motoru
  * seviye bandındaki her sözcüğü öğrenciye gösteriyor. Kendi seviyesi de havuz
- * katmanıyla giriyor; A1 ve A2'de ayrıca ders sözlükçesi ve kalıpları
- * ekleniyor, çünkü ders metinleri havuzda olmayan bağlaç ve kalıp taşıyor.
+ * katmanıyla giriyor; A1 ve A2'de ayrıca konuşma sözlükçesi ve kalıpları
+ * ekleniyor, çünkü konuşma metinleri havuzda olmayan bağlaç ve kalıp taşıyor.
  */
 function izinKumesi(seviye = "a1") {
   const lv = String(seviye).toLowerCase();
@@ -240,7 +240,7 @@ function izinKumesi(seviye = "a1") {
   const acc = new Set(SERBEST);
   for (const alt of ONCEKI[lv] || []) for (const w of katman(alt)) acc.add(w);
   for (const w of katman(lv.toUpperCase())) acc.add(w);
-  for (const l of dersler(lv)) {
+  for (const l of konusmalar(lv)) {
     for (const v of l.vocab || []) for (const w of parcala(v.de)) acc.add(w);
     for (const p of l.patterns || []) for (const w of parcala(p.de)) acc.add(w);
   }

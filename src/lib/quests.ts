@@ -18,7 +18,7 @@ import {
  * görevleri eklediğinde günlük aktif kullanıcısı %25 artmıştı. İkincisi, ve
  * bu uygulamada daha önemlisi, kullanıcıyı **görmediği bölümlere** götürmek:
  * ölçümde yedi kullanıcıdan yalnızca biri beceriler bölümünü açmış, üçü
- * dersleri denemişti. Uygulamanın en zengin içeriği kimsenin uğramadığı
+ * konuşmaları denemişti. Uygulamanın en zengin içeriği kimsenin uğramadığı
  * sekmelerde duruyordu.
  *
  * İlerleme burada BİRİKTİRİLMİYOR, mevcut tablolardan okunuyor. Ayrı bir

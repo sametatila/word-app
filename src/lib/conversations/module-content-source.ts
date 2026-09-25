@@ -8,10 +8,10 @@ import { sourceConversationsFor } from "./source";
  *
  * `module-content` içeriği yayın hattından okuyor ve async; betiklerin
  * veritabanı yok ve zaten kaynağı denetliyorlar. İkisi aynı SAF kurucuyu
- * çağırıyor (`buildModuleContent`), yani kural tek yerde — yalnız derslerin
+ * çağırıyor (`buildModuleContent`), yani kural tek yerde — yalnız konuşmaların
  * nereden geldiği değişiyor.
  *
- * Bu dosya bir rotadan İÇE ALINMAMALI: `source` üzerinden 8,5 MB ders metni
+ * Bu dosya bir rotadan İÇE ALINMAMALI: `source` üzerinden 8,5 MB konuşma metni
  * sunucu derlemesine girer.
  */
 

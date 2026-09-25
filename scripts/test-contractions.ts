@@ -87,8 +87,8 @@ assert.notEqual(
 );
 
 /*
-  KELİME TURU: havuz Amerikan yazımıyla, dersler İngiliz yazımıyla yazılmış —
-  dersin öğrettiği yazımı yazan öğrenci reddediliyordu (61 havuz kelimesi).
+  KELİME TURU: havuz Amerikan yazımıyla, konuşmalar İngiliz yazımıyla yazılmış —
+  konuşmanın öğrettiği yazımı yazan öğrenci reddediliyordu (61 havuz kelimesi).
   Katlama `normalize`da, yani kelime turu ile beceri egzersizi aynı kuralı
   paylaşıyor.
 */
@@ -123,7 +123,7 @@ assert.ok(!matchesAnswer("Farbe", ["Tisch"], "de"));
 /*
   KONUŞMA YOLUNDA DA TİRE: tanıyıcı "T-Shirt"i "t shirt" yazıyor; tire
   noktalama sayılmayınca hedef tek jeton, duyulan iki jeton oluyor ve doğru
-  cevap reddediliyordu (74 ders hedefi tire taşıyor).
+  cevap reddediliyordu (74 konuşma hedefi tire taşıyor).
 */
 assert.equal(judgeSpeech("T-Shirt", ["t shirt"]).kind, "correct", "tanıyıcının tiresiz yazımı kabul edilmeli");
 assert.equal(judgeSpeech("die U-Bahn", ["die u bahn"]).kind, "correct");

@@ -11,7 +11,7 @@ import { FlameIcon, SparkIcon, TrophyIcon } from "./icons";
  *
  * Çağrı eskiden hep aynı yerlerde duruyordu (Öğren satırı, Profil kartı,
  * kilitli özellikler): kullanıcı onu kaybedecek bir şeyi yokken görüyordu.
- * Hesap açtıran an, kaybedilecek bir şeyin OLDUĞU an — ilk ders bitti, seri
+ * Hesap açtıran an, kaybedilecek bir şeyin OLDUĞU an — ilk konuşma bitti, seri
  * üç güne çıktı, ilk sınav geçildi. Her sonuç ekranına koymak ise çağrıyı
  * gürültüye çevirirdi; bu yüzden her taş cihazda bir kez gösteriliyor.
  *

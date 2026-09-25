@@ -1,6 +1,6 @@
 /**
  * Seslendirme ENVANTERİ — `npx tsx --tsconfig scripts/tsconfig.e2e.json scripts/tts-inventory.ts`
- * Uygulamada Edge/Azure'a giden her metni kaynağına göre sayar (rol yapma HARİÇ: o Edge'de kalıyor).
+ * Uygulamada Edge/Azure'a giden her metni kaynağına göre sayar (sohbet HARİÇ: o Edge'de kalıyor).
  * Çıktı: reports/tts-inventory.json + özet. Kendi karakter seslerine geçişin boyutunu ölçmek için.
  */
 import { readFileSync, writeFileSync } from "node:fs";
@@ -53,7 +53,7 @@ function loadWords(p: string) {
   }
 }
 
-/* 2. dersler — anlatım (lecture) parçaları; chat hariç */
+/* 2. konuşmalar — anlatım (lecture) parçaları; chat hariç */
 /* Dinleme bloğu parçası. `lang` YOK: dinleme modelleri (`ListeningSegment`,
    deneme kâğıdı ve haftalık sınav uyaranı) konuşmacı başına ses için
    `{ speaker?, text }` taşıyor (2026-09-18) ve burada zaten yalnız metin
@@ -94,7 +94,7 @@ for (const ex of BUNDLED_EXERCISES) {
 }
 for (const plan of MODULE_EXAMS) plan.listening?.turns?.forEach((t: { de: string }) => add("listening.de.module_exam", "de", "target", t.de));
 
-/* 4. anlatım arayüz cümleleri (yürüyüş modu, ders geri bildirimi) */
+/* 4. anlatım arayüz cümleleri (yürüyüş modu, konuşma geri bildirimi) */
 for (const lang of ["tr", "en", "de"]) {
   const src = readFileSync(`src/i18n/base/${lang}.ts`, "utf8");
   for (const m of src.matchAll(/"((?:walk|walkmode|conversationp|common\.answer_is|aiconsent\.voice_without)[a-z_.]*)"\s*:\s*"((?:[^"\\]|\\.)*)"/g)) add(`ui.${lang}.narration`, lang, "narration", m[2]);

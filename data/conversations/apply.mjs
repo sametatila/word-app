@@ -60,18 +60,18 @@ for (const r of read("word")) {
 }
 
 /*
-  Sözlükçe: `(ders, Almanca)` → İngilizce karşılık. İki kaynak:
+  Sözlükçe: `(konuşma, Almanca)` → İngilizce karşılık. İki kaynak:
 
   - `derived.json` — 3.926 madde, `triage.mjs` `data/app/words.json`tan
     türetiyor. REPODA DURMUYOR (gitignore) ve durmamalı: türetilebilen bir
     dosyayı commit'lemek iki kopyayı ayrışmaya bırakır.
-  - `out/` — 714 madde, elle yazılmış. Havuzun karşılığı dersin anlamıyla
+  - `out/` — 714 madde, elle yazılmış. Havuzun karşılığı konuşmanın anlamıyla
     ayrıştığı yerler.
 
   EKSİKSE PATLIYOR, sessizce eksik sözlük üretmiyor. Bir zamanlar
   `existsSync` ile atlanıyordu ve sonuç şuydu: sunucudaki build `derived`i
   bulamıyor, sözlükçe 4.640 yerine 714 madde oluyor, 2.311 dize
-  çözülemiyor, çözücü dersleri TÜMDEN reddediyor ve İngilizce kurs sessizce
+  çözülemiyor, çözücü konuşmaları TÜMDEN reddediyor ve İngilizce kurs sessizce
   Türkçeye düşüyor. Hiçbir yerde hata görünmüyordu — özelliğin "sözlük
   yoksa kendini kapat" tasarımı tam da bu durumu gizliyor.
 */
@@ -85,14 +85,14 @@ if (!existsSync(derived))
 for (const r of JSON.parse(readFileSync(derived, "utf8"))) vocab[r.conversation + SEP + r.de] = r.en;
 for (const r of read("vocab")) vocab[r.conversation + SEP + r.de] = r.en;
 
-/** Kalıp notu ve ders başlığı/özeti — anahtarları kendi hatlarından geliyor. */
+/** Kalıp notu ve konuşma başlığı/özeti — anahtarları kendi hatlarından geliyor. */
 const patterns = {};
 for (const r of read("patterns")) patterns[r.conversation + SEP + r.de] = r.en;
 const meta = {};
 for (const r of read("meta")) meta[r.conversation] = { title: r.titleEn, summary: r.summaryEn };
 
 /*
-  Rol yapma dört alan taşıyor ve biri kaymıştır: `openingEn`, Almanca
+  Sohbet dört alan taşıyor ve biri kaymıştır: `openingEn`, Almanca
   `opening` repliğinin ANA DİLDEKİ karşılığı, yani kaynakta `openingTr`
   olan alanın yerini alıyor. Almanca replik olduğu gibi kalıyor — model
   onu konuşuyor.
@@ -102,7 +102,7 @@ for (const r of read("chat"))
   chat[r.conversation] = { scene: r.sceneEn, partner: r.partnerEn, openingTr: r.openingEn, goal: r.goalEn };
 
 /**
- * Rol yapma SENARYOSU — anahtar dizenin kendisi. Alanların adı yok (kaynak
+ * Sohbet SENARYOSU — anahtar dizenin kendisi. Alanların adı yok (kaynak
  * konumsal kısayollarla yazılmış), o yüzden metin anahtar oluyor.
  */
 const script = {};
@@ -126,7 +126,7 @@ for (const r of read("exam")) exam[r.tr] = r.en;
 
 /*
   ALMANCA TAKASI — hat değil KARAR TABLOSU (`swap/en.json`, elle yazılıyor).
-  Ders öğrenciye kendisi hakkında bir cümle söyletiyorsa ("Ich bin in Izmir
+  Konuşma öğrenciye kendisi hakkında bir cümle söyletiyorsa ("Ich bin in Izmir
   geboren") o cümle Türk öğrenciye göre kurulmuş; İngilizce konuşan için
   yanlış. Diyalogdaki bir KİŞİNİN Türkiyeli olması ise içerik ve kalır.
   İngilizce taraf da dönüyor: Almancayı alıntılayan satır, altındaki cümle
@@ -134,11 +134,11 @@ for (const r of read("exam")) exam[r.tr] = r.en;
 */
 /*
   BECERİ EGZERSİZLERİNİN düz metni — `intro` ve `questions[].explain`.
-  Kaynağı ders hattının DIŞINDA (`data/skills/prose/out/`), o yüzden
+  Kaynağı konuşma hattının DIŞINDA (`data/skills/prose/out/`), o yüzden
   `read()` değil kendi okuyucusu var.
 
   Ayrı bir sözlük çünkü ayrı bir eksen: bu dizeler `BUNDLED_EXERCISES`ten
-  çıkıyor, derslerden değil. Aynı Türkçe cümle iki eksende farklı
+  çıkıyor, konuşmalardan değil. Aynı Türkçe cümle iki eksende farklı
   çevrilebilir ve tek sözlükte biri ötekini sessizce ezerdi.
 
   ALINTILAR (1.885 satır) burada YOK: karşılıkları kendileri ve çözücü
@@ -178,9 +178,9 @@ if (existsSync(taskDir))
   dizeye bakılsa 6.626 girdi olurdu, yani bir Türkçe dize iki ayrı türde
   iki ayrı şey anlatıyor. Beceri görev metniyle aynı kural.
 
-  Kâğıtlar `BUNDLED_EXERCISES`ten de derslerden de çıkmıyor
+  Kâğıtlar `BUNDLED_EXERCISES`ten de konuşmalardan de çıkmıyor
   (`src/lib/mock-exams/`), o yüzden ayrı sözlük: aynı Türkçe cümle sınav
-  kâğıdında ve derste farklı çevrilebilir.
+  kâğıdında ve konuşmada farklı çevrilebilir.
 */
 const mock = {};
 const mockDir = `${DIR}../mock-exams/prose/out/`;
@@ -206,7 +206,7 @@ const n = (o) => Object.keys(o).length;
 console.log(
   "native-en.json yazıldı\n" +
     `  anlatım ${n(lecture)} (+${n(lectureSplit)} bölünmüş) · çerçeve ${n(frames)} · sıra ${n(ordinals)} · not ${n(notes)}\n` +
-    `  sözlükçe ${n(vocab)} · kalıp ${n(patterns)} · ders ${n(meta)} · rol yapma ${n(chat)} · can-do ${n(cando)} · senaryo ${n(script)} · sınav ${n(exam)}\n` +
+    `  sözlükçe ${n(vocab)} · kalıp ${n(patterns)} · konuşma ${n(meta)} · sohbet ${n(chat)} · can-do ${n(cando)} · senaryo ${n(script)} · sınav ${n(exam)}\n` +
     `  beceri düz metni ${n(prose)} · görev metni ${n(task)} · deneme kâğıdı ${n(mock)}\n` +
     `  takas ${n(swap)} Almanca + ${n(swapEn)} İngilizce`,
 );

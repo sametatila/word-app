@@ -126,7 +126,7 @@ export type SurfaceView = {
 export type PathQuota = {
   /** Konuşma adımının hakkı bitti ve kilit çizilebilir (misafir/izni reddetmiş değil). */
   convLockable: boolean;
-  /** Sahiplenilmiş Konuşma adımları (ders kimlikleri) — hak bitse de açık. */
+  /** Sahiplenilmiş Konuşma adımları (konuşma kimlikleri) — hak bitse de açık. */
   ownedConversations: string[];
   conv: SurfaceView | null;
   write: SurfaceView | null;

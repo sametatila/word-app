@@ -20,7 +20,7 @@
  *
  * KAYNAK DEĞİŞMİYOR. Karşılıklar `out/` altında duruyor ve çalışma anında
  * bir sözlükten okunuyor — `introEn`/`explainEn` diye kardeş alanlar
- * eklenmiyor. Ders ekseninde aynı karar `cando` ve `exam` hatlarında
+ * eklenmiyor. Konuşma ekseninde aynı karar `cando` ve `exam` hatlarında
  * verildi ve orada işe yaradı; ayrıca `src/lib/skills/` altında ikinci bir
  * oturum çalışıyor ve kaynağa dokunmamak çakışmayı da bitiriyor.
  */

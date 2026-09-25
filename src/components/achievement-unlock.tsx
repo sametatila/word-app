@@ -13,7 +13,7 @@ import { track } from "@/lib/track";
  * Rozet açılış kutlaması.
  *
  * Tek bir yerde duruyor: uygulama kabuğunda. Rozetin kazanılabileceği yerler
- * çok — kelime turu, ders, beceri, görev ödülü, günün turu, hayatta kalma —
+ * çok — kelime turu, konuşma, beceri, görev ödülü, günün turu, hayatta kalma —
  * ve altısına ayrı kutlama koymak altı yerde unutulabilecek bir şey demekti.
  * Tetikleyici zaten var olan `lernomi:stats` olayı: XP değiştiyse bir şey
  * KAZANILMIŞ demektir.

@@ -21,7 +21,7 @@ import { useTheme, spacing, radii, softShadow, TIER_COLOR, ds } from "../theme";
  * (`components/achievement-unlock`) ve kutlamanın tek varlık sebebi o an.
  *
  * Web gibi TEK YERDE duruyor: uygulamanın kökünde. Rozetin kazanılabileceği
- * yer çok (kelime turu, ders, beceri, görev ödülü, günün turu, patron) ve
+ * yer çok (kelime turu, konuşma, beceri, görev ödülü, günün turu, patron) ve
  * altısına ayrı kutlama koymak altı yerde unutulabilecek bir şey demek.
  * Tetikleyici de web ile aynı fikirde: XP değiştiyse bir şey KAZANILMIŞ
  * demektir — webde `lernomi:stats` olayı, mobilde `statsSignal` (§11.70).

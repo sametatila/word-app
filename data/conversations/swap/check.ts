@@ -4,9 +4,9 @@
  *
  * KARDEŞ HATLARDAN FARKI: burada çeviri yok. `en.json` bir KARAR TABLOSU —
  * öğrenciye kendisi hakkında yanlış bir şey söyleten Almanca cümleleri
- * İngilizce konuşan öğrenci için değiştiriyor. On bir satır, beş ders.
+ * İngilizce konuşan öğrenci için değiştiriyor. On bir satır, beş konuşma.
  *
- * Kapının tek işi tablonun kaynakla TUTMASI. Bir ders düzenlendiğinde
+ * Kapının tek işi tablonun kaynakla TUTMASI. Bir konuşma düzenlendiğinde
  * takas edilecek dize kayarsa takas sessizce hiçbir şey yapmaz ve öğrenci
  * yine "Ich komme aus der Türkei" der. Sessiz kalmak en kötüsü olduğu için
  * kapı her `from` dizesinin kaynakta GERÇEKTEN durduğunu ölçüyor.
@@ -56,7 +56,7 @@ type ScriptTurn = {
   replies?: { say: string; sayTr: string }[];
   fallback?: { say: string; sayTr: string; example?: string };
 };
-/** Dersin rol yapma senaryosu — yoksa boş. */
+/** Konuşmanın sohbet senaryosu — yoksa boş. */
 const script = (conversation: { chat?: unknown }): ScriptTurn[] =>
   (conversation.chat as { script?: ScriptTurn[] } | undefined)?.script ?? [];
 
@@ -68,13 +68,13 @@ let en = 0;
 for (const r of rows) {
   const conversation = CONVERSATIONS.find((l) => l.id === r.conversation);
   if (!conversation) {
-    H(`[${r.conversation}] ders yok`);
+    H(`[${r.conversation}] konuşma yok`);
     continue;
   }
   if (!r.why?.trim()) H(`[${r.conversation}] gerekçe yazılmamış`);
 
   /* Kaynaktaki bütün Almanca dizeler: anlatım parçaları, tanıma hedefi,
-     sözlükçe maddesi ve rol yapma açılışı. Takas hepsine uygulanacağı için
+     sözlükçe maddesi ve sohbet açılışı. Takas hepsine uygulanacağı için
      kapı da hepsine bakıyor. */
   const source = new Set<string>();
   for (const st of conversation.lecture ?? []) {
@@ -118,7 +118,7 @@ for (const r of rows) {
       const g = d.vocab[conversation.id + SEP + v.de];
       if (g) set.add(d.swapEn[conversation.id + SEP + g] ?? g);
     }
-    /* Rol yapma açılışının ANA DİLDEKİ karşılığı — Almanca replik takas
+    /* Sohbet açılışının ANA DİLDEKİ karşılığı — Almanca replik takas
        edilince bunun da dönmesi gerekiyor, yoksa ikisi birbirini yalanlar. */
     const op = d.chat[conversation.id]?.openingTr;
     if (op) set.add(d.swapEn[conversation.id + SEP + op] ?? op);
@@ -151,7 +151,7 @@ for (const r of rows) {
   for (const t of after) if (LEFTOVER.test(t)) H(`[${r.conversation}] İngilizcede iz kaldı: «${t}»`);
 
   /*
-    ROL YAPMA SENARYOSU UYARI, HATA DEĞİL. `de-a1-sprachen`in senaryosu
+    SOHBET SENARYOSU UYARI, HATA DEĞİL. `de-a1-sprachen`in senaryosu
     1:1 takasla düzelmiyor: muhatap "ich spreche Spanisch und Englisch.
     Sprichst du auch Englisch?" diyor ve sonra "Sprichst du Türkisch?"
     sorusunu bekliyor. Öğrencinin ana dili İngilizce olunca konuşma
@@ -169,7 +169,7 @@ for (const r of rows) {
 /*
   REPO GENELİ TARAMA — bu eksenin "bitti dendikten sonra bulundu" alışkanlığını
   bitiren kısım. Yukarısı tablonun kaynakla tuttuğunu ölçüyor; burası tablonun
-  EKSİK olup olmadığını. Bütün Almanca dersler çözülüp takas uygulandıktan
+  EKSİK olup olmadığını. Bütün Almanca konuşmalar çözülüp takas uygulandıktan
   sonra kalan her iz bildiriliyor.
 
   Bilinen ve KARARA BAĞLANMIŞ istisnalar aşağıda tek tek yazılı. Yeni bir iz
@@ -178,10 +178,10 @@ for (const r of rows) {
 */
 const KEEP: Record<string, string> = {
   /* Artikelli ülke kalıbını ÖĞRETEN yer burası: 'aus der Türkei' artikel
-     alıyor, 'aus Istanbul' almıyor ve ders tam bu karşıtlığı kuruyor.
+     alıyor, 'aus Istanbul' almıyor ve konuşma tam bu karşıtlığı kuruyor.
      Cümleler "Örnek:" diye sunuluyor, öğrenciye atfedilmiyor. Aynı dize
      de-a1-du-oder-sie'de öğrencinin cevabı olarak geçiyor ve ORADA takas
-     ediliyor — anahtarın derse bağlı olmasının sebebi bu. */
+     ediliyor — anahtarın konuşmaya bağlı olmasının sebebi bu. */
   "de-a1-hallo": "artikelli ülke kalıbını öğreten örnek",
   /* Üçüncü şahıs örneği: 'Sie spricht sowohl Deutsch als auch Türkisch.'
      Öğrenci hakkında bir iddia değil, iki parçalı bağlaç için uydurulmuş
@@ -229,7 +229,7 @@ if (warnings.length) {
   console.log(warnings.join("\n"));
 }
 console.log(
-  `\nözet: ${rows.length} ders · ${de} Almanca · ${en} İngilizce takas · ` +
+  `\nözet: ${rows.length} konuşma · ${de} Almanca · ${en} İngilizce takas · ` +
     `${Object.keys(KEEP).length} karara bağlı istisna · ${errors.length} hata · ${warnings.length} uyarı`,
 );
 process.exit(errors.length ? 1 : 0);

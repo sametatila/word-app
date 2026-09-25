@@ -8,7 +8,7 @@
  *
  * Ölçüm (2026-09-11, §11.343): `(app)` altında veri bekleyen 23 sayfa var ve
  * ONUNUN iskeleti yoktu — aralarında beceri alıştırması (sunucuda on istek),
- * deneme sınavı bölümü, rol yapma sınavı, premium (beş okuma birden), herkese
+ * deneme sınavı bölümü, puanlı kısım, premium (beş okuma birden), herkese
  * açık profil ve yönetim hunisi. Dördünün Android karşılığı iskelet çiziyordu
  * (`PaywallScreen`, `UserScreen`, `SocialSettingsScreen`, `PlacementScreen`);
  * geri kalanda içerik Android'de YERELDE paketli olduğu için iskelete gerek

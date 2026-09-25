@@ -166,7 +166,7 @@ export function stopSpeaking(): void {
  * ("hiç hoş değil"). Artık aynı nöral ses NATIVE oynatıcıyla çalıyor
  * (`speakServerTts`: `/api/tts` MP3'ü, oturum çereziyle — yürüyüş modunun
  * ekran kapalıyken zaten kullandığı yol). Cihaz sesi yalnız sunucuya HİÇ
- * ulaşılamıyorsa: çevrimdışı çalışan derste sessizlikten iyi.
+ * ulaşılamıyorsa: çevrimdışı çalışan konuşmada sessizlikten iyi.
  */
 let speakSeq = 0;
 /**
@@ -228,8 +228,8 @@ export function speakTarget(
     85'i (en uzunu 2245 karakter) "Sesli oku"ya basıldığında hiç ses
     vermiyordu — üstelik zararsız da değildi: köprü iki hatadan sonra
     "sağlıksız" sayılıp OTURUMUN GERİ KALANINI cihaz sesine düşürüyordu, yani
-    bir uzun metin bütün uygulamanın sesini bozuyordu. Ders anlatımının
-    birleştirilmiş replikleri, rol yapma cevapları ve seviye tespitinin
+    bir uzun metin bütün uygulamanın sesini bozuyordu. Konuşma anlatımının
+    birleştirilmiş replikleri, sohbet cevapları ve seviye tespitinin
     birleştirilmiş bölümleri de aynı tavana açıktı.
 
     Kısa metinler — kelime turu, tek cümle, yani çağrıların ezici çoğunluğu —
@@ -344,7 +344,7 @@ export async function speakAndWaitVoiced(
        temizlediği için köprü ve native yollar kurtuluyordu ama CİHAZ SESİNE
        düşülen her okumada ham metin gidiyordu: "_____" yeniden "alt tire alt
        tire alt tire" diye okunuyordu. Dinleme oynatıcısı, deneme sınavı,
-       eller serbest ders ve yürüyüş modu bu yoldan geçiyor.
+       eller serbest konuşma ve yürüyüş modu bu yoldan geçiyor.
     2. UZUNLUK SINIRI YOKTU. 600 karakterin üstü 400 dönüyor, yani ses hiç
        çıkmıyordu; üstelik köprü iki hatadan sonra oturum boyu sağlıksız
        sayılıyordu.
@@ -480,7 +480,7 @@ const PARAGRAPH_GAP_MS = 500;
 export async function speakPassage(text: string, course: string, opts?: { slow?: boolean }): Promise<void> {
   const paragraphs = text.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
   if (!paragraphs.length) return;
-  // Sabit ders sesi (web `conversationVoice`): okuma katmanı henüz üretilmedi, kursun ilk sesi artık Defne.
+  // Sabit konuşma sesi (web `conversationVoice`): okuma katmanı henüz üretilmedi, kursun ilk sesi artık Defne.
   const voice = conversationVoice(course);
   const pace: Pace = opts?.slow ? "listenSlow" : "listen";
   // Bütün parçalar peşin: boru hattı yok, her paragraf sınırı yoksa bir

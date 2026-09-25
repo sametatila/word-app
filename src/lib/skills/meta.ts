@@ -20,7 +20,7 @@ export const SKILL_LABEL_KEYS: Record<SkillId, string> = {
  * Beceriler sekmesinin bölüm sırası — BEŞ beceri.
  *
  * Konuşma bir süre bu listede yoktu: ayrı havuz yalnız A1 ve B1'de içerik
- * taşıyordu ve Patika'daki dersle yarışıyordu. 2026-09'da Beceriler kendi
+ * taşıyordu ve Patika'daki konuşmayla yarışıyordu. 2026-09'da Beceriler kendi
  * kütüphanesini aldı (`content/library/`): öğrenci Patika'nın sırasına bağlı
  * kalmadan seviye ve beceri seçip çalışıyor. Orada konuşma (söyleyiş drilli ve
  * monolog) ve dil bilgisi (kural anlatımı + soru) da birer bölüm. Patika'nın

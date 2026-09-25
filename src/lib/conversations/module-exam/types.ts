@@ -3,14 +3,14 @@ import type { CefrLevel, Gloss } from "@/lib/skills/types";
 /**
  * Modül sınavı kâğıdının elle yazılan yarısı.
  *
- * Sınavın maddeleri iki kaynaktan geliyor. Bir yarısı modülün derslerinden
+ * Sınavın maddeleri iki kaynaktan geliyor. Bir yarısı modülün konuşmalarından
  * TÜRETİLİYOR (kelimeler, üretim adımları, hüküm cümleleri, dilbilgisi
- * odakları) — bkz. `module-content.ts`. Bu dosya öbür yarısı: derste
+ * odakları) — bkz. `module-content.ts`. Bu dosya öbür yarısı: konuşmada
  * bulunmayan ama sınavın olmazsa olmazı olan parçalar.
  *
  * Neden elle yazılıyor? Çünkü türetilemezler:
  *
- *   - **Dinleme ve okuma.** Ders bir öğretmen anlatımı; sınav bir metin
+ *   - **Dinleme ve okuma.** Konuşma bir öğretmen anlatımı; sınav bir metin
  *     ister. Beceri bankasındaki metinler ise SEVİYE düzeyinde seçili, modül
  *     düzeyinde değil: "A1 Modül 3 · Yeme-içme" sınavında tren garı metni
  *     çıkıyordu. Modülün kendi sahnesinde geçen kısa bir diyalog ve kısa bir

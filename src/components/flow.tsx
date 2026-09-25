@@ -30,7 +30,7 @@ export function FlowColumn({ children, celebrate = false, className = "" }: { ch
   );
 }
 
-/** `hint`: düğmenin altında ikinci, küçük satır (ör. "Sınav olarak dene" · "yardım yok, 5 tur"). */
+/** `hint`: düğmenin altında ikinci, küçük satır (ör. "Kendini puanla" · "yardım yok, 5 tur"). */
 export type FlowAction =
   | { label: ReactNode; onClick: () => void; href?: undefined; disabled?: boolean; icon?: ReactNode; hint?: ReactNode }
   | { label: ReactNode; href: string; onClick?: () => void; disabled?: undefined; icon?: ReactNode; hint?: ReactNode };

@@ -10,7 +10,7 @@ import { courseOrDefault } from "../lib/courses";
  * (bkz. OnboardingScreen).
  *
  * Aynı hedef dili paylaşan kursa düşmek meşru (gsw-zh → de: ikisi de Almanca),
- * farklı bir dile ASLA düşülmez — ders yükleyicisiyle aynı kural.
+ * farklı bir dile ASLA düşülmez — konuşma yükleyicisiyle aynı kural.
  */
 export type FirstWord = { de: string; artikel: string | null; tr: string; ex: string; exTr: string };
 

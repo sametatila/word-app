@@ -1,14 +1,14 @@
 import type { Conversation, Segment } from "./types";
 
 /**
- * İngilizce kursun derslerini ALMANCAYA çevirir — anadili Almanca olan
+ * İngilizce kursun konuşmalarını ALMANCAYA çevirir — anadili Almanca olan
  * kullanıcı için.
  *
  * NEDEN `native.ts`TEKİ ÇÖZÜCÜ KULLANILAMIYOR. `resolveConversation` Almanca
- * kursun TS derslerine göre kurulmuş: sözlüğü `meta`, `lecture`,
+ * kursun TS konuşmalarına göre kurulmuş: sözlüğü `meta`, `lecture`,
  * `lectureSplit`, `frames`, `vocab` gibi alt sözlüklere bölüyor ve
  * `word()` şablonunu çalışma anında yeniden kuruyor. İngilizce kursun
- * dersleri ise kendi kendine yeten JSON — Türkçe alanlar dersin İÇİNDE,
+ * konuşmaları ise kendi kendine yeten JSON — Türkçe alanlar konuşmanın İÇİNDE,
  * şablon yok, Almanca kelimeye göre bölünecek belirsizlik yok. Aynı
  * çözücüye ikinci bir biçim öğretmek, okunmayan yarısı için ölü dal
  * taşımak olurdu.
@@ -18,16 +18,16 @@ import type { Conversation, Segment } from "./types";
  * ikisinin anahtarları Almanca tarafta da birebir aynı. `DeDict`in o iki
  * alanı bu yüzden aynı adı taşıyor — sözlük olduğu gibi verilebiliyor.
  *
- * HEP-YA-HİÇ, kardeşiyle aynı gerekçeyle: bir dize bile eksikse ders
+ * HEP-YA-HİÇ, kardeşiyle aynı gerekçeyle: bir dize bile eksikse konuşma
  * TÜMDEN reddediliyor ve Türkçe kalıyor. Yarı Almanca yarı Türkçe bir
- * ders, hiç çevrilmemişinden kötü.
+ * konuşma, hiç çevrilmemişinden kötü.
  */
 
 /** Bileşik anahtarların ayracı — `data/conversations/apply-de.mjs` ile aynı. */
 const SEP = String.fromCharCode(0);
 
 export type DeDict = {
-  /** Ders düzyazısı — anahtar `tür + AYRAÇ + tr` (`prose-de/out/`). */
+  /** Konuşma düzyazısı — anahtar `tür + AYRAÇ + tr` (`prose-de/out/`). */
   conversation: Record<string, string>;
   /** Beceri egzersizlerinin düz metni — anahtar DÜZ `tr`. */
   prose: Record<string, string>;
@@ -45,11 +45,11 @@ export type DeDict = {
    */
   exam: Record<string, string>;
   /** Can-do ifadeleri — anahtar `id` (`A1.SPK.1`). ÇÖZÜCÜDEN GEÇMİYOR:
-   *  ders sayfasının altındaki köprü bunu ayrı okuyor (`nativeCando`). */
+   *  konuşma sayfasının altındaki köprü bunu ayrı okuyor (`nativeCando`). */
   cando: Record<string, string>;
 };
 
-/** Ders sözlüğünün anahtarı. Çıkarıcı da (`prose-de/make.mjs`) bunu kuruyor. */
+/** Konuşma sözlüğünün anahtarı. Çıkarıcı da (`prose-de/make.mjs`) bunu kuruyor. */
 export const deKey = (kind: string, tr: string): string => kind + SEP + tr;
 
 /**
@@ -69,8 +69,8 @@ const segments = (
     /* BOŞ PARÇA ÇEVRİLMİYOR ve bu ölçütün çıkarıcıyla aynı olması şart:
        `prose-de/make.mjs` boş dizeyi hiç eklemiyor (`add()` süzgeci), yani
        sözlükte karşılığı yok. Burada aranırsa bulunmaz ve hep-ya-hiç kuralı
-       DERSİN TAMAMINI reddeder. Tam bu oldu: `en-a2-interview`in bir
-       doğru/yanlış adımında `{lang:"tr", text:""}` duruyor ve ders 200'ün
+       KONUŞMANIN TAMAMINI reddeder. Tam bu oldu: `en-a2-interview`in bir
+       doğru/yanlış adımında `{lang:"tr", text:""}` duruyor ve konuşma 200'ün
        199'u çözülürken tek başına düşüyordu. */
     if (!s.text || !s.text.trim()) return s;
     const de = dict.conversation[deKey(kind, s.text)];

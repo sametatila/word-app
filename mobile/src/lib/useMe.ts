@@ -101,7 +101,7 @@ export function useMe(): { me: Me | null; loading: boolean } {
       .then((d) => {
         if (!alive) return;
         // Seçili kursu süreç genelinde kur: TTS yerel kodu, STT tanıma dili,
-        // ders/beceri paketi ve tur elemesi hep buradan okuyor. Eskiden yalnız
+        // konuşma/beceri paketi ve tur elemesi hep buradan okuyor. Eskiden yalnız
         // Ayarlar ekranı açılınca kuruluyordu, yani uygulama açılışında kurs
         // bilinmiyor ve her şey Almanca varsayılanına düşüyordu.
         setCurrentCourse(d.course);

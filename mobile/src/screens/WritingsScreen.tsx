@@ -23,7 +23,7 @@ import { scoreBand } from "../lib/learningRules";
 /** Tür -> sözlük anahtarı. */
 /*
  * DÖRT TÜR. Liste yalnız `writing` ve `speaking` biliyordu; `sentence`
- * (cümle kurma turunun değerlendirmesi) ve `chat` (rol yapma) satırları
+ * (cümle kurma turunun değerlendirmesi) ve `chat` (sohbet) satırları
  * ham anahtarlarıyla ("sentence") çiziliyordu - kullanıcı ne olduğunu
  * anlamıyordu. Web dördünü de adlandırıyor (`writings-card`).
  */

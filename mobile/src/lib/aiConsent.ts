@@ -13,7 +13,7 @@ import { currentLang } from "./i18n";
  * yoksa isteği sağlayıcıya iletmiyor; bu dosya yalnız istemcinin payı:
  * durumu okumak, kararı yazmak ve istenince ekranı açtırmak.
  *
- *   ai_text   metin → dil modeli (değerlendirme, rol yapma, sınav geri bildirimi)
+ *   ai_text   metin → dil modeli (değerlendirme, sohbet, sınav geri bildirimi)
  *   ai_voice  ses → konuşma tanıma (ekran kapalı yürüyüş)
  */
 

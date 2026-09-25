@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
  * "Sayılar değişti" sinyali — web `lernomi:stats` olayının mobil karşılığı.
  *
  * WEBDE VARDI, MOBİLDE HİÇ YOKTU. Web bu olayı altı yerden yayınlıyor (tur
- * özeti, beceri alıştırması, yürüyüş, ders, patron, görev kartı) ve üç yerde
+ * özeti, beceri alıştırması, yürüyüş, konuşma, patron, görev kartı) ve üç yerde
  * dinliyor: başlıktaki XP/seri, rozet açılış tetikleyicisi ve başlangıç
  * ekranının önbelleği (`lib/use-cached`). Mobilde `useMe` bir kez çekiyor ve
  * geçersizleme yolu YOK - üstelik `AppHeader`ı taşıyan üç ekran SEKME, yani

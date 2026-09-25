@@ -42,7 +42,7 @@ import { nativeOf } from "@/lib/courses";
 /**
  * Modül ve seviye sınavı (plan WP-41, v3).
  *
- * **Neyi ölçüyor.** Dersler konuşma üzerine kurulu: her ders bir kalıp
+ * **Neyi ölçüyor.** Konuşmalar konuşma üzerine kurulu: her konuşma bir kalıp
  * öğretiyor, Türkçe bir cümleyi Almanca kurduruyor, bozuk bir cümle hakkında
  * hüküm verdiriyor ve sonunda rol yaptırıyor. Sınav uzun süre bunun hiçbirini
  * ölçmüyordu — modülden yalnızca KELİME listesi alınıyor, geri kalan bölümler
@@ -53,8 +53,8 @@ import { nativeOf } from "@/lib/courses";
  *
  *   Bölüm        madde  ağırlık  kaynak
  *   Wortschatz     6      %12    modülün kelimeleri → çeviri / yazma
- *   Grammatik      6      %18    modülün odak tabloları + derslerin hüküm cümleleri
- *   Satzbau        5      %25    derslerin ÜRETİM adımları (Türkçe → Almanca)
+ *   Grammatik      6      %18    modülün odak tabloları + konuşmaların hüküm cümleleri
+ *   Satzbau        5      %25    konuşmaların ÜRETİM adımları (Türkçe → Almanca)
  *   Lesen          2      %8     modül temalı yazılı metin (elle yazılı)
  *   Hören          3      %12    modül sahnesinde geçen diyalog (elle yazılı)
  *   Sprechen       2      %15    modülün durumunda söylenecek cümleler
@@ -65,7 +65,7 @@ import { nativeOf } from "@/lib/courses";
  * kursta üretim bölümlerinin toplam ağırlığı %50 olmalı — `SECTION_WEIGHT`
  * bunu söylüyor, madde sayısı değil.
  *
- * **Geçme:** toplam ≥ %70 ve hiçbir bölüm < %50. Ön koşul: modül derslerinin
+ * **Geçme:** toplam ≥ %70 ve hiçbir bölüm < %50. Ön koşul: modül konuşmalarının
  * ≥ %80'i geçilmiş; değilse sınav "deneme" (sayılmaz, sertifika yok).
  *
  * Maddeler tohumlu: aynı kullanıcı, aynı sınav, aynı hafta → aynı kâğıt.
@@ -232,7 +232,7 @@ export async function buildExam(userId: string, course: string, level: CefrLevel
   const plan = await localiseExam(kind === "module" ? moduleExamPlan(course, level, module!) : undefined, native);
   const content = kind === "module" ? await moduleContent(course, level, module!) : null;
 
-  // Kelime: modül kelimeleri (ders başlıkları) ya da seviyenin sık kelimeleri.
+  // Kelime: modül kelimeleri (konuşma başlıkları) ya da seviyenin sık kelimeleri.
   const pool = await db
     .select()
     .from(words)
@@ -258,7 +258,7 @@ export async function buildExam(userId: string, course: string, level: CefrLevel
   // Dilbilgisi kaldırıldı (2026-08): cheatsheet gitti, immersion'da yeniden.
   const grammar: GrammarItem[] = [];
 
-  // Cümle kurma: derslerin üretim adımları. Seviye sınavında seviyenin bütün
+  // Cümle kurma: konuşmaların üretim adımları. Seviye sınavında seviyenin bütün
   // modülleri havuz.
   const produceSource: ConversationProduceItem[] = content
     ? content.produce
@@ -318,7 +318,7 @@ export async function buildExam(userId: string, course: string, level: CefrLevel
     } else {
       // Seviye sınavı: o seviyenin MODÜL kâğıtlarındaki konuşma cümleleri
       // havuzlanır. Eskiden ayrı "Ses çalışması" beceri egzersizlerinden
-      // besleniyordu; o katman kaldırıldı (konuşma artık dersin kendisi, ayrı
+      // besleniyordu; o katman kaldırıldı (konuşma artık konuşmanın kendisi, ayrı
       // beceri düğümü yok) ve zaten yalnız A1 ile B1'de vardı — A2/B2/C1
       // seviye sınavları sessizce konuşmasız kalıyordu. Modül kâğıtları elle
       // yazılmış ve her seviyede fazlasıyla madde taşıyor.
@@ -407,7 +407,7 @@ export async function examById(userId: string, id: number): Promise<ExamResult |
  * Geçilmiş modül sınavları: "A1:2" → en iyi toplam puan.
  *
  * Yol haritasındaki taç buradan okuyor. Deneme kayıtları sayılmıyor: modül
- * dersleri bitmeden girilen sınav bir kanıt değil, bir ön izleme.
+ * konuşmaları bitmeden girilen sınav bir kanıt değil, bir ön izleme.
  */
 export async function passedModuleExams(userId: string): Promise<Map<string, number>> {
   const rows = await db

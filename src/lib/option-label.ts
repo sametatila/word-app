@@ -73,7 +73,7 @@ const GRAMMAR_NOTE = /(^|[\s;,/(])-\p{L}|\b(tanımlık|mastar|ön eki|son eki|(i
  *
  * Yürüyüş modu anlamı okuyup hedef kelimeyi sözlü istiyor; ekran yok. Yalnız ek ya da dilbilgisi notuyla
  * anlatılan kelimeler (edatlar, tanımlıklar, bağlaçların bir kısmı) orada sorulmuyor: sesli ve ekransız
- * kelime çalışmasında bu kelimeler tek başına değil bağlam içinde öğretilir (Pimsleur, sesli ders
+ * kelime çalışmasında bu kelimeler tek başına değil bağlam içinde öğretilir (Pimsleur, sesli konuşma
  * uygulamaları). Ekranlı oyunlarda kalıyorlar. Kulak kontrolünde bu anlamların kayıtları hep reddedildi
  * (2026-09-24): "-ir -mez" → "İrmesele".
  */

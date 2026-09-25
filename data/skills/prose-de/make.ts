@@ -10,7 +10,7 @@
  * alıyor (`PAIR_READY.de`), Almanca kursun egzersizlerini hiç görmüyor;
  * onları da paketlemek 2.655 dizeyi boşuna yazdırırdı.
  *
- * Aynı ayrım ders ekseninde de yapıldı ve gerekçesi orada yazılı
+ * Aynı ayrım konuşma ekseninde de yapıldı ve gerekçesi orada yazılı
  * (`data/conversations/prose-de/make.mjs`): `--de` bayrağı ancak iki yönün
  * kaynağı aynı biçimdeyken işe yarıyor.
  *
@@ -31,7 +31,7 @@
  * İngilizce. Öğrencinin yargılayacağı cümle odur. Çözücü onlara hiç
  * dokunmuyor; paketlense yazan taraf birebir kopyalardı ve kapı da
  * göremezdi (Türkçe harf taşımadıkları için "karşılık Türkçenin aynısı"
- * kuralı susardı). Aynı tuzak ders hattında `statement` alanında
+ * kuralı susardı). Aynı tuzak konuşma hattında `statement` alanında
  * yakalanmıştı.
  *
  * SATIRIN İNGİLİZCE YÜZEYİ DE TAŞINIYOR (`en` alanı: metin, soru kökleri
@@ -117,8 +117,8 @@ export function extractProse(): ProseRow[] {
 
        İngilizce kursta o alan 1.207'nin 1.207'sinde BOŞ, yani ortada
        ayrışacak birinci kaynak yok. O zaman tasarımın kendi varsayılanı
-       geçerli oluyor: anlam hattan gelir. Aynı karar ders ekseninde de
-       verildi ve orada yeşil — `en-a1.json` derslerinin `vocab[].tr`
+       geçerli oluyor: anlam hattan gelir. Aynı karar konuşma ekseninde de
+       verildi ve orada yeşil — `en-a1.json` konuşmalarının `vocab[].tr`
        alanı da `data/conversations/prose-de` üzerinden çözülüyor. */
     for (const g of [...(e.gloss ?? []), ...(e.tasks ?? []).flatMap((t) => t.phrases ?? [])]) {
       add("gloss.tr", g.tr, e, undefined, g.de);

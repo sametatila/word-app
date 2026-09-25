@@ -31,7 +31,7 @@ import { useTheme, spacing, radii, softShadow, soft, type Palette, ds } from "..
  * Web karşılığı `src/components/flow.tsx` — alanlar ve sıra birebir.
  */
 
-/** `hint`: düğmenin altında ikinci, küçük satır (ör. "Sınav olarak dene" · "yardım yok, 5 tur"). */
+/** `hint`: düğmenin altında ikinci, küçük satır (ör. "Kendini puanla" · "yardım yok, 5 tur"). */
 export type FlowAction = { label: string; onPress: () => void; disabled?: boolean; busy?: boolean; icon?: React.ReactNode; hint?: string };
 
 /** Düğme sırası her ekranda aynı: birincil (tek) → çerçeveli (en çok bir) → metin bağlantısı. */
@@ -320,14 +320,14 @@ export function StateBody({ title, body, icon, children, alert = false }: { titl
 /**
  * İÇERİK İNİYOR — "bulunamadı" ile "henüz inmedi" ayrı şeyler.
  *
- * Ders, egzersiz ve soru havuzları A1 tohumu dışında ikilide DEĞİL; seviye
+ * Konuşma, egzersiz ve soru havuzları A1 tohumu dışında ikilide DEĞİL; seviye
  * paketi hâlinde sunucudan iniyor (bkz. `content/store`). Bu ekranlar paketi
  * beklerken elleri boş kalıyor ve boş eli KESİN BİR CÜMLEYLE söylüyorlardı:
- * "Bu ders bulunamadı", "Bu egzersiz bulunamadı", "Bu ünitede henüz soru yok"
+ * "Bu konuşma bulunamadı", "Bu egzersiz bulunamadı", "Bu ünitede henüz soru yok"
  * — üzgün maskotla ve tek çıkışı "Geri" olan bir düğmeyle. Paket saniyesinde
- * inip ders açılıyordu, ama o arada "Geri"ye basan öğrenci dersinden atılmış
+ * inip konuşma açılıyordu, ama o arada "Geri"ye basan öğrenci konuşmasından atılmış
  * oluyordu; bildirimden ya da derin bağlantıdan gelen (paketi hiç olmayan)
- * kullanıcı ise dersin silindiğini sanıyordu.
+ * kullanıcı ise konuşmanın silindiğini sanıyordu.
  *
  * Bu gövde o aralığı dolduruyor. Kesin cümleler yerinde duruyor ama artık
  * yalnız paket GERÇEKTEN indikten sonra, madde yine yoksa çiziliyor.

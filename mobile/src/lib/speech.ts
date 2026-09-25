@@ -7,7 +7,7 @@ import { foldNumbers } from "./numbers";
  * Söylenen metnin karşılaştırma biçimi — web `lib/speech.ts` `normalizeSpoken`
  * ile AYNI kural.
  *
- * Çevrimdışı rol yapma yolunun (`game/offlineChat`) ve niyet
+ * Çevrimdışı sohbet yolunun (`game/offlineChat`) ve niyet
  * eşleştirmesinin (`game/dialogue`) tabanı: tanıyıcı "fünf" yerine "5"
  * yazabiliyor, noktalama serbest geliyor.
  *
@@ -18,7 +18,7 @@ import { foldNumbers } from "./numbers";
 /*
   TİRE DE NOKTALAMA. Tanıyıcı tireli başlığı boşlukla yazıyor ("T-Shirt" →
   "t shirt", "U-Bahn" → "U Bahn"); tire burada kalınca hedef tek jeton,
-  duyulan iki jeton oluyordu ve doğru cevap reddediliyordu. Ders hedeflerinin
+  duyulan iki jeton oluyordu ve doğru cevap reddediliyordu. Konuşma hedeflerinin
   74'ü tire taşıyor; kelime katlaması (`lib/textFold` PUNCT) bunu zaten
   yapıyordu, konuşma katlaması geride kalmıştı.
 */

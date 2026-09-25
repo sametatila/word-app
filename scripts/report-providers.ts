@@ -124,7 +124,7 @@ async function main() {
   const n = Number(total[0]?.n ?? 0);
   if (!n) {
     console.log(
-      "chat_logs boş. Ya hiç ders konuşması yapılmadı ya da kayıtların süresi doldu\n" +
+      "chat_logs boş. Ya hiç konuşma konuşması yapılmadı ya da kayıtların süresi doldu\n" +
         "(kayıt kalıcı bir birikim değil, süreli bir teşhis penceresi).",
     );
     return;
@@ -142,7 +142,7 @@ async function main() {
     order by n desc
   `) as Row[];
 
-  console.log(`\nToplam ${n} rol yapma turu kaydı\n`);
+  console.log(`\nToplam ${n} sohbet turu kaydı\n`);
   console.log("  sağlayıcı      model                              tur    son kullanım");
   for (const r of rows) {
     console.log(

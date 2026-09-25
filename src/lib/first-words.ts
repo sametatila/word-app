@@ -5,7 +5,7 @@ import { courseOrDefault } from "@/lib/courses";
  *
  * Veri mobil `M/src/data/firstWords.ts` ile BİREBİR aynı ve öyle kalmalı: aynı
  * kullanıcı telefonda ve tarayıcıda aynı beş kelimeyi görmeli. Liste elle
- * yazılmış içerik (ders/beceri/sınav paketleri gibi üretilmiyor); iki dosyadan
+ * yazılmış içerik (konuşma/beceri/sınav paketleri gibi üretilmiyor); iki dosyadan
  * biri değişirse diğeri de değişmeli.
  *
  * Anahtar PARİTE: `<anadil>-<kurs>`. İçeriği olmayan paritede ısınma adımı hiç

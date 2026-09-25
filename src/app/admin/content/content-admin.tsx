@@ -12,7 +12,7 @@ import { TwoStep } from "../_ui/two-step";
  *
  *   1. SÜRÜM ÇEVİRMEK: listeden bir sürümü canlıya almak. Geri almanın tek
  *      yolu bu; gövdeler zaten tabloda, hiçbir şey yeniden yayınlanmıyor.
- *   2. MADDE KAPATMAK: bozuk bir dersi, egzersizi ya da deneme kâğıdını
+ *   2. MADDE KAPATMAK: bozuk bir konuşmayı, egzersizi ya da deneme kâğıdını
  *      düzeltmesi git'te yazılıp yayınlanana kadar gizlemek.
  *
  * İçerik burada DÜZENLENMİYOR (Samet'in kararı, AGENTS.md "İçerik teslim

@@ -64,7 +64,7 @@ export function foldCase(s: string, lang: string): string {
 export function foldCompare(s: string, lang: string): string {
   const tablo = SYMBOLS[lang];
   // İngiliz/Amerikan yazım farkı da bir yazım toleransı: havuz Amerikan,
-  // dersler İngiliz yazımıyla (web `games/types` `normalize` ile aynı yer).
+  // konuşmalar İngiliz yazımıyla (web `games/types` `normalize` ile aynı yer).
   const yazım = foldEnglishSpelling(s, lang);
   const açık = tablo ? foldCase(yazım, lang).replace(SYMBOL_RE, (c) => tablo[c] ?? " ") : foldCase(yazım, lang);
   const sade = açık.replace(APOSTROF, "").replace(PUNCT, " ");

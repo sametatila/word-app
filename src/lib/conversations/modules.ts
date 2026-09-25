@@ -3,10 +3,10 @@ import { courseOrDefault, DEFAULT_NATIVE, type NativeLang } from "@/lib/courses"
 /**
  * Yol haritasının modül (ünite) katmanı.
  *
- * Müfredat her seviyeyi 10 derslik tematik modüllere bölüyor
- * (data/conversations-plan/topics-*.md) ama ders verisi bunu taşımıyor: modül,
- * içerik motorunun değil sunumun kavramı. Harita dersleri katalog sırasıyla
- * 10'arlı dilimleyip temayı buradan alıyor — dersin kendisine modül alanı
+ * Müfredat her seviyeyi 10 konuşmalık tematik modüllere bölüyor
+ * (data/conversations-plan/topics-*.md) ama konuşma verisi bunu taşımıyor: modül,
+ * içerik motorunun değil sunumun kavramı. Harita konuşmaları katalog sırasıyla
+ * 10'arlı dilimleyip temayı buradan alıyor — konuşmanın kendisine modül alanı
  * eklemek, 500 dosyalık içerikte tekrarlanan ama yalnızca tek ekranda
  * kullanılan bir alan yaratırdı.
  *
@@ -23,20 +23,20 @@ export const MODULE_SIZE = 10;
  *
  * KURS BOYUTU 2026-09-21'de eklendi ve eklenene kadar sessiz bir kusurdu.
  * Tablo yalnız seviyeye göre anahtarlıydı, yani iki kurs aynı listeyi
- * paylaşıyordu; bu A1-B2'de doğru (İngilizce dersler aynı temalara oturuyor,
+ * paylaşıyordu; bu A1-B2'de doğru (İngilizce konuşmalar aynı temalara oturuyor,
  * ölçüldü: 40/40) ama C1'de ONUNDA BİRDEN yanlıştı — Almanca C1 müfredatı
  * dilin kendisini konu ediyor ("Kip parçacıkları", "Deyimler ve mecazlar"),
  * İngilizce C1 ise alan konularını (hukuk, göç, tarım, iklim). İngilizce
- * öğrenen biri Patika'da on ünitenin onunda da başka bir dersin adını
+ * öğrenen biri Patika'da on ünitenin onunda da başka bir konuşmanın adını
  * görüyordu. `moduleCount` da aynı tablodan okuduğu için İngilizce B1'i on
  * sekiz modül sanıyordu; gerçekte on.
  *
  * Seviye listesinin UZUNLUĞU o kursun gerçek modül sayısı: Almanca B1 on
- * sekiz, İngilizce B1 on. Olmayan modüle tema yazmak, dersler eklendikçe
+ * sekiz, İngilizce B1 on. Olmayan modüle tema yazmak, konuşmalar eklendikçe
  * başlığın içeriğinden ayrılması demek.
  *
- * `src/i18n`'e KONMADI, çünkü bunlar müfredatın adları: hangi on dersin bir
- * arada durduğunu söylüyorlar ve ders listesiyle birlikte değişiyorlar
+ * `src/i18n`'e KONMADI, çünkü bunlar müfredatın adları: hangi on konuşmanın bir
+ * arada durduğunu söylüyorlar ve konuşma listesiyle birlikte değişiyorlar
  * (B1 2026-09-05'te on sekiz modüle çıktığında liste de uzadı). Arayüz
  * sözlüğüne taşımak, müfredat değiştikçe iki dosyanın ayrışması demek olurdu.
  * Bunun yerine tek tablo, üç dil — ve `test:gloss` üçünün de tam olmasını
@@ -56,7 +56,7 @@ export const MODULE_SIZE = 10;
  */
 export const MODULE_THEMES: Record<string, Record<string, string[]>> = {
   // Almanca kurs (Zürih Almancası da bu listeyi kullanıyor: aynı müfredat,
-  // aynı dersler, yalnız hedef ağız farklı).
+  // aynı konuşmalar, yalnız hedef ağız farklı).
   de: {
     A1: [
       "Tanışma ve ben",
@@ -131,8 +131,8 @@ export const MODULE_THEMES: Record<string, Record<string, string[]>> = {
       "Ustalık sahneleri",
     ],
   },
-  // İngilizce kurs. A1-B2 bugün Almanca kursla aynı temalara oturuyor (ders
-  // ders ölçüldü); C1 ayrışıyor, çünkü müfredat orada dilin yapısını değil
+  // İngilizce kurs. A1-B2 bugün Almanca kursla aynı temalara oturuyor (konuşma
+  // konuşma ölçüldü); C1 ayrışıyor, çünkü müfredat orada dilin yapısını değil
   // alanları geziyor.
   en: {
     A1: [
@@ -354,8 +354,8 @@ export const MODULE_THEMES_NATIVE: Partial<Record<NativeLang, Record<string, str
 /**
  * Kursun tema listesi — kendi listesi yoksa AYNI HEDEF DİLİ paylaşan kursunki.
  *
- * Zürih Almancası kursu Almanca kursun derslerini okuyor, dolayısıyla
- * modülleri de onunkiler. Başka bir dile asla düşülmüyor: ders yükleyicisiyle
+ * Zürih Almancası kursu Almanca kursun konuşmalarını okuyor, dolayısıyla
+ * modülleri de onunkiler. Başka bir dile asla düşülmüyor: konuşma yükleyicisiyle
  * aynı kural, mobil `moduleThemes.ts` ile aynı davranış.
  */
 function themesFor(course: string, level: string): string[] {

@@ -14,7 +14,7 @@ export const dynamic = "force-dynamic";
 /**
  * lernomi.app/admin/learning — öğrenme içeriğinin gerçekte nasıl çalıştığı.
  *
- * ÜSTTE MADDE ANALİZİ: eyleme dönen tek görünüm (hangi ders, egzersiz,
+ * ÜSTTE MADDE ANALİZİ: eyleme dönen tek görünüm (hangi konuşma, egzersiz,
  * deneme sorusu öğrencileri düşürüyor; kapatma düğmesiyle). Altında genel
  * öğrenme metrikleri. Haftalık quiz'in kendi analizi kendi sayfasında.
  */
@@ -27,7 +27,7 @@ export default async function AdminLearningPage({ searchParams }: { searchParams
   const [{ value, at }, analysis] = await Promise.all([loadPanel(fresh, days), cached("admin:learning-analysis", 60_000, fresh, learningAnalysis)]);
   const a = analysis.value;
   return (
-    <PanelPage title="Öğrenme ve madde analizi" description="Hangi madde öğrencileri düşürüyor (kapatılabilir), altında dersler, beceriler, sınavlar ve oyunların genel metrikleri." href="/admin/learning" at={at} issues={[...panelIssues(value), ...a.issues]} days={days}>
+    <PanelPage title="Öğrenme ve madde analizi" description="Hangi madde öğrencileri düşürüyor (kapatılabilir), altında konuşmalar, beceriler, sınavlar ve oyunların genel metrikleri." href="/admin/learning" at={at} issues={[...panelIssues(value), ...a.issues]} days={days}>
       <LearningAnalysis conversations={a.conversations} skills={a.skills} path={a.path} mockItems={a.mockItems} mockScanned={a.mockScanned} minAnswers={MIN_ANSWERS} />
       <LearningSection days={days} data={value.data} coverage={value.coverage} />
     </PanelPage>

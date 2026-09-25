@@ -16,7 +16,7 @@ export type { ModuleExamPlan, ExamCando, ExamQuestion, ExamTurn } from "./types"
  * Modül sınavı planları — kurstaki her modül için bir kâğıt.
  *
  * Katalog gibi bu da tamamen kod: içerik kullanıcıya göre değişmiyor ve
- * dersler nasıl kodda duruyorsa sınav kâğıdının elle yazılan yarısı da orada
+ * konuşmalar nasıl kodda duruyorsa sınav kâğıdının elle yazılan yarısı da orada
  * duruyor. Modül eklendiğinde buraya bir plan eklemek zorunlu —
  * `scripts/check-exams.ts` plansız modülü hata sayıyor.
  */

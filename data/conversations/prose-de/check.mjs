@@ -1,11 +1,11 @@
 /**
- * İngilizce kurs derslerinin ALMANCA karşılığını denetler:
+ * İngilizce kurs konuşmalarının ALMANCA karşılığını denetler:
  *   `node data/conversations/prose-de/check.mjs [paket|all]`
  *
  * Ortak kurallar kardeş hatların aynısı — son noktalama, sayı pariteti,
  * karakter kümesi, kanıtın hayatta kalması, uzunluk sapması, mükerrer
  * satır, kapsam. Bunlar dilden bağımsız ve kopyalandıklarında ayrışıyorlar;
- * o ders deneme kâğıdı hattında zaten alındı.
+ * o konuşma deneme kâğıdı hattında zaten alındı.
  *
  * BU HATTA ÖZGÜ OLAN, KANIT ÖLÇÜTÜ.
  *
@@ -27,9 +27,9 @@
  * DAYATIYOR ve o zaman karakter kuralıyla çelişiyor (kalan `ş`
  * çevrilmemiş metin sayılır). İki kural birbiriyle kavga eder.
  *
- * Çözüm tahmini bırakmak: paket satırı dersin bütün İNGİLİZCE yüzeyini
+ * Çözüm tahmini bırakmak: paket satırı konuşmanın bütün İNGİLİZCE yüzeyini
  * yanında taşıyor (`en` alanı — sözlük, kalıp, anlatımın `en` parçaları,
- * beklenen üretim, rol yapma açılışı). Açıklık orada BİREBİR varsa
+ * beklenen üretim, sohbet açılışı). Açıklık orada BİREBİR varsa
  * kanıttır; yoksa Türkçe karşılıktır ve çevrilir.
  *
  * ÖLÇÜLDÜ: 892 aday açıklığın 150'si yüzeyde bulunuyor. Kalan 742'nin
@@ -83,7 +83,7 @@ const spans = (t) => {
    çünkü alt-dize aramasında Türkçe «ve» tam oradan kanıt çıkıyordu. */
 const WORD = /\p{L}+(?:'\p{L}+)*/gu;
 
-/** Kanıt = dersin İngilizce yüzeyinde birebir geçen açıklık.
+/** Kanıt = konuşmanın İngilizce yüzeyinde birebir geçen açıklık.
  *
  *  TEK SÖZCÜKLÜK açıklık yüzeyde SÖZCÜK olarak geçmeli, alt-dize olarak
  *  değil. Ölçüldü: alt-dize aramasıyla kanıt sayılan 129 açıklığın 5'i
@@ -92,7 +92,7 @@ const WORD = /\p{L}+(?:'\p{L}+)*/gu;
  *  kapı onların Almancada AYNEN kalmasını dayatıyor, o da karakter
  *  kuralıyla çelişiyor (docstring'in başındaki kavga). Sözcük ölçütü
  *  124'ünü koruyor: «to», «in», «at», «on», «by», «is», «an», «of» gibi
- *  dersin öğrettiği işlev sözcükleri kanıt olarak kalıyor.
+ *  konuşmanın öğrettiği işlev sözcükleri kanıt olarak kalıyor.
  *
  *  Çok sözcüklü açıklıkta alt-dize yeterli — o boyda rastlantı yok. */
 const evidence = (row) => {
@@ -104,7 +104,7 @@ const evidence = (row) => {
     return /\s/.test(l) ? true : words.has(l);
   });
 };
-/** Dersin İngilizce yüzeyinde SÖZCÜK olarak geçen özel adlar.
+/** Konuşmanın İngilizce yüzeyinde SÖZCÜK olarak geçen özel adlar.
  *  «Ayşe is my best friend.» cümlesini Almancaya çevirirken ad yerinde
  *  kalmak zorunda — ses onu öyle söylüyor. Ama «ş» Almanca karakter
  *  kümesinde yok, o yüzden karakter kuralı adı sızmış Türkçe sanıyordu.
@@ -157,7 +157,7 @@ if (existsSync(`${DIR}out`))
             H(`beklenmedik karakter: «${ch}» (U+${ch.codePointAt(0).toString(16).toUpperCase().padStart(4, "0")})`);
 
         for (const s of evidence(row))
-          if (!flat(de).includes(flat(s))) H(`ders kanıtı düşmüş: «${s.slice(0, 34)}»`);
+          if (!flat(de).includes(flat(s))) H(`konuşma kanıtı düşmüş: «${s.slice(0, 34)}»`);
 
         if (flat(de) === flat(r.tr) && TURKISH_LETTER.test(r.tr)) H("karşılık Türkçenin aynısı");
 

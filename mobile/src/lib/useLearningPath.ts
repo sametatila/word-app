@@ -8,7 +8,7 @@ import { ensureSkills } from "../data/skills";
 import { ensureConversations } from "../data/conversations";
 import { getDoneItems } from "../game/pathProgress";
 
-/** Pratik adım — içeriği ünitenin derslerinden türetilen, kaydı öğe kimliğiyle tutulan. */
+/** Pratik adım — içeriği ünitenin konuşmalarından türetilen, kaydı öğe kimliğiyle tutulan. */
 export const isPracticeKind = (kind: string): boolean => kind === "grammar" || kind === "quiz" || kind === "unitQuiz";
 
 /** Patika (immersion) hub'ı — gerçek track, kullanıcının ilerlemesiyle. */
@@ -43,7 +43,7 @@ export type LearningPathUnit = {
   theme: string;
   /** Temanın modülü (0 tabanlı) — Patika kartları bununla gruplanıyor. */
   moduleIndex: number;
-  /** Derslerin başlıkları (hedef dilde) — kartı ayırt eden ad. */
+  /** Konuşmaların başlıkları (hedef dilde) — kartı ayırt eden ad. */
   topics: string[];
   locked: boolean;
   complete: boolean;
@@ -81,7 +81,7 @@ function yay(next: Partial<PathState>) {
 /**
  * Sunucudan gelen patikaya CİHAZDAKİ işaretleri ekler.
  *
- * Pratik adım (tekrar, kontrol noktası, dil bilgisi) çevrimdışı bitirildiyse
+ * Pratik adım (tekrar, ünite quizi, dil bilgisi) çevrimdışı bitirildiyse
  * sonucu kuyrukta bekliyor; sunucu onu henüz bilmiyor. Ekran o arada adımı
  * bitmemiş gösterirse öğrenci aynı şeyi ikinci kez yapar.
  */
@@ -106,9 +106,9 @@ async function yukle(level: string | undefined): Promise<void> {
     // gömülü aynı-kaynak track'ten ref doldur (item id'leri birebir eşleşir).
     /* REF YEREL TRACK'TEN OKUNUYOR, O DA SEVİYE PAKETİNDEN. Paket inmeden
        `refIndex` boş bir eşleme döndürüyor ve her adımın ref'i null kalıyor;
-       UnitScreen ise ref'siz ders adımında hiçbir şey yapmıyor
+       UnitScreen ise ref'siz konuşma adımında hiçbir şey yapmıyor
        (`if (it.ref) nav.navigate(...)`). Yani A1 dışındaki bir seviyede,
-       paket inmeden patikadaki ders adımına basmak SESSİZCE işe yaramıyordu.
+       paket inmeden patikadaki konuşma adımına basmak SESSİZCE işe yaramıyordu.
        Aşağıdaki yerel dal paketi zaten bekliyordu; sunucu dalı beklemiyordu.
        İkinci çağrı ucuz: paket eldeyse `ensure*` hemen dönüyor. */
     await Promise.all([ensureSkills(d.level), ensureConversations(d.level)]);
@@ -154,7 +154,7 @@ export function clearLearningPath(): void {
 /**
  * Patika'yı getirir. Önce /api/immersion (gerçek gating + beceri içeriği);
  * canlı değilse (404) CİHAZDA kurulan track'e düşer — gerçek seviye (profil),
- * gerçek ~25 ünite, gerçek ders içeriği, yerel ders ilerlemesi.
+ * gerçek ~25 ünite, gerçek konuşma içeriği, yerel konuşma ilerlemesi.
  *
  * Ekran her odağa geldiğinde tazeleniyor (bkz. yukarıdaki depo notu).
  */

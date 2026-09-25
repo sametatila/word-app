@@ -62,14 +62,14 @@ export const API_TIMEOUT_MS = 25_000;
  * ADLA, aynı sayılarla.
  *
  * `/api/assess` çağrıları genel tavana (25 sn) düşüyordu, web ise yirmi
- * saniye bekliyor; rol yapma sınavı ise burada otuz saniye geçiyordu, webde
+ * saniye bekliyor; puanlı kısım ise burada otuz saniye geçiyordu, webde
  * yirmi. Yani aynı cevap iki platformda farklı noktada "zaman aşımı"
  * oluyordu. Adlar web'dekiyle birebir aynı, o yüzden ayrışmayı "ortak sayısal
  * sabitler" kapısı kendiliğinden yakalıyor.
  */
 export const ASSESS_TIMEOUT_MS = 20000;
 
-/** Rol yapma sınavı: konuşmanın TAMAMI gönderiliyor, tavan daha uzun. */
+/** Puanlı kısım: konuşmanın TAMAMI gönderiliyor, tavan daha uzun. */
 export const ASSESS_CHAT_TIMEOUT_MS = 30000;
 
 /**
@@ -138,7 +138,7 @@ async function askConsent(req: AiConsentPrompt): Promise<boolean> {
  * Zaman aşımlı ham `fetch` — `api()`yi KULLANAMAYAN çağrılar için.
  *
  * Altı çağrı yeri paylaşılan istemciyi atlıyor ve her birinin sebebi var:
- * rol yapma metin döndürüyor (`api()` JSON çözüyor), ilerleme POST'ları
+ * sohbet metin döndürüyor (`api()` JSON çözüyor), ilerleme POST'ları
  * yanıtı hiç okumuyor, oturum/hesap uçları ham yanıtla çalışıyor. Hepsinin
  * ORTAK eksiği zaman aşımıydı: sunucu yanıt vermezse istek işletim sistemi
  * vazgeçene kadar duruyordu.

@@ -8,7 +8,7 @@ import { ERROR_TYPES, isErrorType, type ErrorType } from "@/lib/errors";
  * bileşenleri tipleri, `scripts/assess-eval.ts` istemleri kullanıyor. Test
  * üretimde çalışan istemi ölçmeli, kendi kopyasını değil.
  *
- * Tek uç, dört tür: serbest cümle, serbest yazma, konuşma dökümü, rol yapma.
+ * Tek uç, dört tür: serbest cümle, serbest yazma, konuşma dökümü, sohbet.
  * Hepsi aynı rubriği döner; farklı olan şey ne beklendiği (bir cümle mi,
  * bir paragraf mı, bir diyalog mu) ve hangi hataların sayılacağı (konuşma
  * dökümünde noktalama ve büyük harf sayılmaz — tanıyıcı yazmaz).
@@ -25,7 +25,7 @@ export type AssessTask = {
   prompt: string;
   /** Tek hedef cümle/kalıp (çeviri, dönüştürme). */
   target?: string;
-  /** Kullanılması beklenen kalıp/kelimeler (rol yapma, yazma). */
+  /** Kullanılması beklenen kalıp/kelimeler (sohbet, yazma). */
   targets?: string[];
   /** Kısıtlar: "en az 40 kelime", "Perfekt kullan". */
   constraints?: string[];
@@ -62,7 +62,7 @@ export type AssessRequest = {
    * öğretmeni" kimliğiyle değerlendirmek Perfekt arayan bir rubrik üretiyordu.
    *
    * İSTEĞE BAĞLIYKEN DÖRT ÇAĞIRAN UNUTMUŞTU (2026-09-12 ölçüldü): çeviri
-   * turu, serbest cümle turu, sınavın yazma bölümü ve dersin rol yapma
+   * turu, serbest cümle turu, sınavın yazma bölümü ve konuşmanın sohbet
    * sınavı. Dördü de iki kursta birden çalışıyor, yani İngilizce öğrencinin
    * metni Almanca rubriğiyle puanlanıyordu. Varsayılan sessizce doğru
    * görünen bir yanlış üretiyordu; alan zorunlu olunca aynı hata derleme

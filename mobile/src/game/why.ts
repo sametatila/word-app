@@ -81,7 +81,7 @@ const endsWith = (...suffixes: string[]) => (de: string) => {
 /**
  * Sondan başa kontrol edilir; ilk uyan kazanır. Sıra önemli: "-in" kuralı
  * "-ein" ya da "-ion"dan önce uymamalı, "-ei" kuralı "-erei"yi kapsar.
- * Kurallar ders kitaplarının verdiği güvenli listedir; tartışmalı olanlar
+ * Kurallar konuşma kitaplarının verdiği güvenli listedir; tartışmalı olanlar
  * (-nis, -e) "genelde" işaretli.
  */
 const ARTICLE_RULES: ArticleRule[] = [

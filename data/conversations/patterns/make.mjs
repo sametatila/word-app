@@ -1,5 +1,5 @@
 /**
- * Ders kalıplarını paketler: `node data/conversations/patterns/make.mjs`
+ * Konuşma kalıplarını paketler: `node data/conversations/patterns/make.mjs`
  *
  * Sözlükçeden farkı TÜRETME OLMAMASI. `vocab` girdisi bir kelimedir ve kelime
  * havuzunda karşılığı bulunabiliyordu (%84,6'sı güvenle alındı). `patterns`

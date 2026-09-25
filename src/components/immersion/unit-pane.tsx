@@ -88,7 +88,7 @@ export function KindIconFor({ kind, size = 22 }: { kind: string; size?: number }
       return <QuizIcon {...p} />;
     case "unitQuiz":
       return <CheckIcon {...p} />;
-    /* Ders türü AÇIKÇA yazılı (varsayılana bırakılmıyor): harita böyle
+    /* Konuşma türü AÇIKÇA yazılı (varsayılana bırakılmıyor): harita böyle
        okununca Android'in `unitKind` tablosuyla satır satır karşılaştırılıyor
        ve tanınmayan tür yine varsayılana düşüyor. */
     case "conversation":
@@ -100,13 +100,13 @@ export function KindIconFor({ kind, size = 22 }: { kind: string; size?: number }
 
 function counted(items: HubItem[]): HubItem[] {
   /* OYNANABİLİR HER ADIM — Patika kartı, adım şeridi ve sunucunun `total`ı ile
-     aynı küme. Dil bilgisi/tekrar/kontrol noktası artık kayıt tutuyor
+     aynı küme. Dil bilgisi/tekrar/ünite quizi artık kayıt tutuyor
      (`user_path_items`); tutmadıkları dönemde sayımdan düşülüyorlardı ve ekran
      13 adım gösterip 10 üzerinden sayıyordu. */
   return items.filter((i) => i.playable);
 }
 
-/** Konuşma adımının ders kimliği — `hrefFor` `/conversations/<id>` kuruyor. */
+/** Konuşma adımının konuşma kimliği — `hrefFor` `/conversations/<id>` kuruyor. */
 const conversationRef = (it: HubItem): string | null =>
   it.kind === "conversation" && it.href?.startsWith("/conversations/") ? it.href.slice("/conversations/".length) : null;
 
@@ -122,7 +122,7 @@ export function UnitPane({
   /**
    * Patika Konuşma/Yazma hakkı (2026-09-25). Premium ve misafirde null — orada
    * kilit ve sayaç yok. Hakkı bitmiş Konuşma adımı KİLİT rozetiyle çiziliyor
-   * ama bağlantı kalıyor: ders sayfası kilidin NASIL açılacağını anlatıyor.
+   * ama bağlantı kalıyor: konuşma sayfası kilidin NASIL açılacağını anlatıyor.
    */
   quota?: PathQuota | null;
 }) {

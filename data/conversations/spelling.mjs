@@ -46,7 +46,7 @@ const US = [
   [/\bvacations?\b/gi, "holiday"],
   [/\btrash\b|\bgarbage\b/gi, "rubbish"],
   [/\bsidewalks?\b/gi, "pavement"],
-  // Günlük hayat sözcükleri: rol yapma sahneleri dükkân, ulaşım ve ev
+  // Günlük hayat sözcükleri: sohbet sahneleri dükkân, ulaşım ve ev
   // dolu, bu grup 580 sahnede kaçınılmaz. Yalnız İngiliz karşılığı
   // TARTIŞMASIZ olanlar; `pants` (İngilizcede iç çamaşırı), `line`,
   // `cookie` (tarayıcı çerezi) bilerek DIŞARIDA.

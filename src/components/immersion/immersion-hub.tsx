@@ -13,7 +13,7 @@ import type { CefrLevel } from "@/lib/skills/types";
 import type { ImmersionItemKind } from "@/lib/immersion/types";
 
 /**
- * Patika — ders iskeleti + okuma/dinleme/yazma harmanı.
+ * Patika — konuşma iskeleti + okuma/dinleme/yazma harmanı.
  *
  * Yerleşim mobil `M/src/screens/PathScreen.tsx` ile birebir: ilerleme şeridi,
  * ÖNE ÇIKAN ünite kartı (numara/onay dairesi, adım şeridi, sıradaki adım
@@ -58,7 +58,7 @@ export type HubUnit = {
   theme: string;
   /** Temanın modülü (0 tabanlı) — kartlar bununla gruplanıyor. */
   moduleIndex: number;
-  /** Derslerin başlıkları — kartın ayırt edici adı. */
+  /** Konuşmaların başlıkları — kartın ayırt edici adı. */
   topics: string[];
   locked: boolean;
   complete: boolean;
@@ -79,7 +79,7 @@ export type ImmersionHubProps = {
   totalUnits: number;
   /**
    * Seviyenin modül sınavları. Patika'da duruyor çünkü kâğıt modülün KENDİ
-   * derslerinden üretiliyor ve dersleri geçilmemişse motor kâğıdı "deneme"
+   * konuşmalarından üretiliyor ve konuşmaları geçilmemişse motor kâğıdı "deneme"
    * sayıyor. Bir süre Beceriler'in altında listeleniyordu; orası çalışma
    * kütüphanesi, sınavın ön koşulu ise burada.
    */
@@ -158,10 +158,10 @@ export function ImmersionHub({ level, units, currentIndex, doneUnits, totalUnits
       ) : null}
 
       {/*
-        MODÜL BAŞLIKLARI ALTINDA. Tema modülden geliyor ve modül 10 ders, ünite 4
-        ders: aynı tema art arda 2-3 kartın ADI oluyordu ("Tanışma ve ben" ×3) ve
+        MODÜL BAŞLIKLARI ALTINDA. Tema modülden geliyor ve modül 10 konuşma, ünite 4
+        konuşma: aynı tema art arda 2-3 kartın ADI oluyordu ("Tanışma ve ben" ×3) ve
         kartlar birbirinden ayırt edilmiyordu. Tema artık grubun başlığı; kartın
-        adı kendi dersleri. Modülün sınavı da modülün sonunda — ayrı bir listede
+        adı kendi konuşmaları. Modülün sınavı da modülün sonunda — ayrı bir listede
         hangi ünitelere ait olduğu okunmuyordu.
       */}
       {moduleGroups(units).map((g) => {
@@ -277,7 +277,7 @@ function Featured({
               satır. Burası tek satırdı, yani aynı alan aynı uygulamada iki
               farklı bütçeyle çiziliyordu. */}
           <p className="line-clamp-2 text-h2">{unit.theme}</p>
-          {/* Kartı ayırt eden: ünitenin kendi dersleri. Tema 2-3 ünitede aynı. */}
+          {/* Kartı ayırt eden: ünitenin kendi konuşmaları. Tema 2-3 ünitede aynı. */}
           <p className="muted line-clamp-1 text-caption" lang={course}>{unit.topics.join(" · ")}</p>
         </div>
       </div>
@@ -388,7 +388,7 @@ function Tile({
           </span>
         )}
       </span>
-      {/* Kartın adı ÜNİTENİN KENDİ DERSLERİ: tema grubun başlığında (bkz.
+      {/* Kartın adı ÜNİTENİN KENDİ KONUŞMALARI: tema grubun başlığında (bkz.
           `moduleGroups`); kartta tekrar edince yan yana üç kart aynı adı taşıyordu. */}
       {/* `w-full break-words hyphens-auto`: fayans 320 pikselde 138 piksel ve
           "Informationsschalter" gibi tek parça bir Almanca sözcük satıra
@@ -454,7 +454,7 @@ function moduleGroups(units: HubUnit[]): { moduleIndex: number; theme: string; u
 /**
  * Adım şeridi — ünitenin OYNANABİLİR adımları, sayaçla aynı küme.
  *
- * Şerit eskiden içeriği olmayan yuvaları da çiziyordu, sayaç ise yalnız dersleri
+ * Şerit eskiden içeriği olmayan yuvaları da çiziyordu, sayaç ise yalnız konuşmaları
  * sayıyordu: 13 çizginin yanında "1/4 konuşma" yazıyordu.
  */
 export function StepBar({ unit, next, size = "md" }: { unit: HubUnit; next?: HubItem | null; size?: "sm" | "md" }) {

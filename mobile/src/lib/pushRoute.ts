@@ -100,7 +100,7 @@ export function routeFromHref(href: string): PushRoute | null {
  * Gezgin hazır olmadan gelen bildirim dokunuşu.
  *
  * SOĞUK AÇILIŞ YARIŞI - derin bağlantı yolunun ÖĞRENDİĞİ ama buraya
- * taşınmayan ders. Uygulama KAPALIYKEN bildirime dokunulup açıldığında
+ * taşınmayan konuşma. Uygulama KAPALIYKEN bildirime dokunulup açıldığında
  * (`getInitialNotification`) gezgin henüz kurulmamış oluyor ve `isReady()`
  * koruması rotayı SESSİZCE DÜŞÜRÜYORDU: kullanıcı bildirime dokunuyor,
  * uygulama açılıyor ve ana ekranda kalıyor - yani bildirimin çağırdığı yer

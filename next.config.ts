@@ -153,7 +153,7 @@ const nextConfig: NextConfig = {
       { source: "/learn/haftalik", destination: "/learn/weekly", permanent: true },
       { source: "/lessons/sinav/:level/:module", destination: "/boss/:level/:module", permanent: true },
       /*
-        "Ders" adı kalktı (2026-09-25): Patika'nın Konuşma adımı artık
+        "Konuşma" adı kalktı (2026-09-25): Patika'nın Konuşma adımı artık
         `/conversations/<id>`, puanlı kısmı `/conversations/<id>/scored`, modül hız
         turu `/boss/<seviye>/<modül>`. Eski adresler (paylaşılan bağlantı, yer imi,
         eski bildirim) 308 ile yeni yere gidiyor; bu satırlar KALICI.

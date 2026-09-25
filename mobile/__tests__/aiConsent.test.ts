@@ -82,7 +82,7 @@ describe("api() rıza yakalayıcısı", () => {
 });
 
 describe("fetchWithTimeout() rıza yakalayıcısı", () => {
-  it("rol yapma akışı da onaydan sonra yeniden gider", async () => {
+  it("sohbet akışı da onaydan sonra yeniden gider", async () => {
     const calls = mockFetch([required("unset"), { status: 200, body: "Hallo!" }]);
     setAiConsentHandler(async () => true);
     const res = await fetchWithTimeout("https://www.lernomi.app/api/chat", { method: "POST", body: "{}" });

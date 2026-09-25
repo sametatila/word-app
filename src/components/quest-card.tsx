@@ -17,7 +17,7 @@ import { ALL_DONE_ID, ALL_DONE_XP } from "@/lib/quest-constants";
  * Günün görevleri kartı.
  *
  * Görevler yalnızca bir ödül mekaniği değil, bir yönlendirme aracı: ölçümde
- * beceriler bölümünü yedi kullanıcıdan biri, dersleri üçü açmıştı. Günün üç
+ * beceriler bölümünü yedi kullanıcıdan biri, konuşmaları üçü açmıştı. Günün üç
  * görevinden biri hep o bölümlerden birine götürüyor, böylece uygulamanın en
  * zengin içeriği ilk kez görünür oluyor.
  */

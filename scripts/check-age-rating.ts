@@ -4,8 +4,8 @@
  * NEDEN VAR. App Store'un yaş anketi 2026-09-10'da dolduruldu ve verilen her
  * cevap bir BEYAN oldu (bkz. `docs/appstore/listing.md` §2.3). Beyan bir kez
  * verilince içerik üretiminin sınırı hâline geliyor: "cinsel içerik yok" diyen
- * bir uygulamaya sonradan öyle bir ders eklenirse beyan yalan olur ve bunu
- * kimse fark etmez — ders yazan kişi o belgeyi okumaz.
+ * bir uygulamaya sonradan öyle bir konuşma eklenirse beyan yalan olur ve bunu
+ * kimse fark etmez — konuşma yazan kişi o belgeyi okumaz.
  *
  * Bu yüzden cevaplar burada VERİ olarak duruyor ve içerik onlara karşı
  * ölçülüyor. Anketteki cevap değişirse önce buradaki tablo değişir.
@@ -244,7 +244,7 @@ function tara(kural: Kural, dosyalar: string[]): Gecis[] {
   return gecisler;
 }
 
-/** Kelime havuzu da sayılıyor: A1 'Bier' orada duruyor, ders dosyalarında değil. */
+/** Kelime havuzu da sayılıyor: A1 'Bier' orada duruyor, konuşma dosyalarında değil. */
 function havuzGecisleri(kural: Kural): number {
   let n = 0;
   for (const dosya of ["data/app/words.json", "data/app/words-en.json"]) {

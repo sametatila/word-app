@@ -9,7 +9,7 @@ import { onActivityAwarded } from "@/lib/social/hooks";
  *
  * Bu üçü daha önce her özellik tarafından ayrı ayrı yazılıyordu ve sonuç
  * tutarsızdı: kelime oyunları üçünü de güncelliyor, beceriler XP ve seriyi
- * güncelliyor, **dersler hiçbirini güncellemiyordu**. Ders çalışan bir öğrenci
+ * güncelliyor, **konuşmalar hiçbirini güncellemiyordu**. Konuşma çalışan bir öğrenci
  * o gün hiç uğramamış sayılıyordu — puanı artmıyor, günlük ısı haritasında
  * görünmüyor ve en kötüsü, o gün çalışmış olmasına rağmen serisi kırılıyordu.
  *
@@ -126,7 +126,7 @@ export type AwardResult = StreakOutcome & {
 };
 
 /**
- * Kelime oyunları DIŞINDAKİ öğrenme yollarının kaydı: beceriler, dersler.
+ * Kelime oyunları DIŞINDAKİ öğrenme yollarının kaydı: beceriler, konuşmalar.
  *
  * Kelime oyunları bu geçidi kullanmıyor çünkü aynı işlemde SRS güncellemesi,
  * pekişen kelime sayımı ve tekrar kuyruğu hesabı da yapılıyor; oradaki yazım

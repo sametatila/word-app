@@ -7,7 +7,7 @@ import { events, profiles } from "@/lib/db/schema";
  * Ürün olayları.
  *
  * Bugüne kadarki kararlar ölçümle alındı ama ölçülebilen yalnızca ARDINDA iz
- * bırakan şeylerdi: cevaplar, dersler, XP. Görülemeyen sorular tam da en çok
+ * bırakan şeylerdi: cevaplar, konuşmalar, XP. Görülemeyen sorular tam da en çok
  * merak edilenlerdi — kaç kişi başlangıç kartını görüp hiç başlamadan çıktı,
  * hangi sekmeye hiç dokunulmadı, bildirime tıklayıp gelen kaç kişi tur bitirdi.
  *
@@ -111,7 +111,7 @@ export const EVENT_NAMES = [
 
     Buraya kadar ölçülen şey TUR ve SONUÇ'tu. Ölçülmeyen: hangi ekrana ne kadar
     girildiği (alt gezinmeden çıkarılan ekranlar görünmez olmuştu), katlı
-    bölümlerin açılıp açılmadığı, ders adımının sesle mi yazıyla mı geçildiği,
+    bölümlerin açılıp açılmadığı, konuşma adımının sesle mi yazıyla mı geçildiği,
     söyleyişte öğrencinin kendi kararı, ayarların değişip değişmediği, cihaz,
     istemci hataları, bildirim hunisinin gönderim ucu. Aşağıdakiler bunlar.
     Ekran anahtarları `lib/screens.ts`'teki kapalı listeden.
@@ -134,14 +134,14 @@ export const EVENT_NAMES = [
   "app_open",
   "client_error", // yakalanmamış istemci hatası (kind = ekran anahtarı, value = 1 hata sınırı / 0 pencere olayı; dakikada en çok bir)
   "panel_open", // katlı bölüm açıldı/kapandı (kind = bölüm: weak_detail | sheet:<tablo> | words_progress | single_game, value = 1 açık / 0 kapalı)
-  "conversation_start", // ders başladı (kind = ders kimliği, value = 1 kaldığı yerden / 0 baştan)
-  /* Ders adımı sonuçlandı. kind = adım:yol → repeat|produce|truefalse :
+  "conversation_start", // konuşma başladı (kind = konuşma kimliği, value = 1 kaldığı yerden / 0 baştan)
+  /* Konuşma adımı sonuçlandı. kind = adım:yol → repeat|produce|truefalse :
      mic|typed|tap|skip. value = 2 ilk denemede doğru / 1 sonraki denemede doğru
      / 0 geçilemedi ya da atlandı. `tap` doğru/yanlış adımının düğme yolu:
      eskiden o yol `inputMode`u değiştirmediği için "mic" diye sayılıyordu.
      `skip` yalnız webde var - Android'de adım atlama düğmesi yok. */
   "conversation_step",
-  "conversation_finish", // ders bitti (kind = ders kimliği, value = puanlı adımlarda doğru yüzdesi; geçme user_conversations'ta)
+  "conversation_finish", // konuşma bitti (kind = konuşma kimliği, value = puanlı adımlarda doğru yüzdesi; geçme user_conversations'ta)
   /* Onboarding adımı görüldü. value = adım sırası (platforma göre değişir), kind
      = adımın adı. Android: welcome | lang | course | level | goal. Web:
      welcome | motivation | level | goal | ready. Ortak kelimeler aynı soruyu

@@ -36,7 +36,7 @@ export type EvidenceSource = "exam" | "assessment" | "conversation" | "exercise"
 /**
  * Kaynak ağırlıkları — GÜVENİLİRLİK sırası, çaba sırası değil.
  *
- * Sınav en ağır: zamanlı, karışık ve tek oturumda. Değerlendirme ve ders
+ * Sınav en ağır: zamanlı, karışık ve tek oturumda. Değerlendirme ve konuşma
  * ondan hafif ama tek bir alıştırmadan ağır: ikisi de puanlanmış bir bütün.
  * Egzersiz, dilbilgisi çalışması ve kelime oyunu en hafif — tek tek küçük
  * kanıtlar, ama çok sayıda oldukları için toplamda ağırlıkları birikiyor.

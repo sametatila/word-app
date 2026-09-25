@@ -454,12 +454,12 @@ export const userSkills = pgTable(
 );
 
 /**
- * Patika'nın PRATİK adımları — dil bilgisi, tekrar (quiz) ve kontrol noktası.
+ * Patika'nın PRATİK adımları — dil bilgisi, tekrar (quiz) ve ünite quizi.
  *
- * Bu üç adım ünitenin kendi derslerinden türetiliyor; bir egzersiz kaydı
+ * Bu üç adım ünitenin kendi konuşmalarından türetiliyor; bir egzersiz kaydı
  * (`skill_exercises`) yok, bu yüzden `user_skills`e yazılamıyorlardı ve HİÇBİR
  * yerde "bitti" kaydı tutulmuyordu. Sonuç: ünite ekranı 13 adım gösterirken
- * sayaç 10 üzerinden sayıyor, Patika kartları yalnız 4 dersi sayıyor, adım
+ * sayaç 10 üzerinden sayıyor, Patika kartları yalnız 4 konuşmayı sayıyor, adım
  * şeridinin son üç çizgisi hiç dolmuyordu — üç yer üç ayrı ölçüt.
  *
  * Anahtar patika ÖĞESİNİN kimliği (`de-a1-u03-quiz1`): içerik türetildiği için
@@ -513,7 +513,7 @@ export const sessionState = pgTable("session_state", {
  *
  * Yalnızca ödülü ALINMIŞ görevler yazılıyor; ilerlemenin kendisi burada
  * tutulmuyor. Sebebi, ilerlemenin zaten başka tablolarda olması: "10 kelime
- * tekrar et" `daily_stats`'ta, "bir ders bitir" `user_conversations`'ta duruyor.
+ * tekrar et" `daily_stats`'ta, "bir konuşma bitir" `user_conversations`'ta duruyor.
  * Aynı sayıyı ikinci bir yerde biriktirmek, iki sayacın ayrışması demekti —
  * ve ayrıştığında hangisinin doğru olduğu belli olmazdı.
  */
@@ -535,7 +535,7 @@ export const questClaims = pgTable(
  *
  * Yalnızca AÇILMA ANI yazılıyor; ilerlemenin kendisi burada tutulmuyor.
  * Sebebi görev tablosundakiyle aynı: "1.000 kelime pekiştir" ilerlemesi zaten
- * `user_words`'te, "100 ders bitir" `user_conversations`'ta duruyor. Aynı sayıyı
+ * `user_words`'te, "100 konuşma bitir" `user_conversations`'ta duruyor. Aynı sayıyı
  * ikinci bir yerde biriktirmek, er geç ayrışan iki sayı demek.
  *
  * Bu tasarımın bir yan faydası var: rozetler geriye dönük hesaplanabiliyor.
@@ -562,7 +562,7 @@ export const achievements = pgTable(
  *
  * Bugüne kadarki her tasarım kararı ölçüme dayandı ama ölçüm elle SQL
  * yazılarak yapıldı ve yalnızca ARDINDA iz bırakan şeyler görülebildi:
- * cevaplar, dersler, XP. Görülemeyenler tam da en çok merak edilenlerdi —
+ * cevaplar, konuşmalar, XP. Görülemeyenler tam da en çok merak edilenlerdi —
  * kaç kişi başlangıç kartını görüp hiç başlamadan çıktı, hangi sekmeye
  * hiç dokunulmadı, bildirime tıklanıp uygulama açıldı mı.
  *
@@ -810,12 +810,12 @@ export const events = pgTable(
 /**
  * Modül sınavı (patron turu) kayıtları.
  *
- * Ders yolundaki her modül on dersten oluşuyor ve sonunda süre baskılı bir
+ * Konuşma yolundaki her modül on konuşmadan oluşuyor ve sonunda süre baskılı bir
  * sınav var. Tutulan şey skor değil GEÇME: sınavın bir kaybetme koşulu var
  * (süre biterse kaybedilir) ve yol haritasında bir kez geçilmiş modül taç
  * takıyor. En iyi kalan süre de saklanıyor — tekrar girmek için bir sebep.
  *
- * Ayrı tablo, çünkü ölçüsü derslerinkinden farklı: `user_conversations` "bu dersi
+ * Ayrı tablo, çünkü ölçüsü konuşmalarınkinden farklı: `user_conversations` "bu konuşmayı
  * çalıştın mı" diyor, burası "modülün tamamını süreye karşı kullanabildin mi".
  */
 export const moduleClears = pgTable(
@@ -837,14 +837,14 @@ export const moduleClears = pgTable(
 /**
  * AI çağrılarının kaydı.
  *
- * `chat_logs` yalnızca BAŞARILI bir rol yapma turunun sağlayıcısını
+ * `chat_logs` yalnızca BAŞARILI bir sohbet turunun sağlayıcısını
  * tutuyordu ve süreli bir teşhis penceresiydi. Üç şey görünmüyordu:
  *
  *   1. **Hatalar.** Zincir sırayla deniyor ve düşen sağlayıcı sessizce
  *      atlanıyor. Her istekte 429 alan bir birincil, dışarıdan bakınca
  *      "hiç kullanılmıyor" gibi görünüyordu — oysa her seferinde bir gidiş
  *      dönüş ve bir kullanıcı gecikmesi harcıyordu.
- *   2. **Koç ve yazıya çevirme.** Rol yapmanın dışındaki çağrılar hiç
+ *   2. **Koç ve yazıya çevirme.** Sohbetin dışındaki çağrılar hiç
  *      kaydedilmiyordu, yani kullanımın bir kısmı ölçünün dışındaydı.
  *   3. **Maliyetin bileşenleri.** Jeton sayısı, ses saniyesi ve gecikme
  *      yoktu; "hangi model daha pahalı, hangisi daha yavaş" sorusu
@@ -923,11 +923,11 @@ export type UserWord = typeof userWords.$inferSelect;
 export type Profile = typeof profiles.$inferSelect;
 
 /**
- * Ders ilerlemesi ve kuralların tekrar kuyruğu.
+ * Konuşma ilerlemesi ve kuralların tekrar kuyruğu.
  *
  * Kelimelerin tekrarı vardı ama dilbilgisinin yoktu: öğrenci aynı kuralı
- * defalarca yanlış yapıp bunu hiç görmüyordu. Ders bitince kuralın durumu
- * buraya yazılıyor ve zamanı gelince ders tekrar öneriliyor.
+ * defalarca yanlış yapıp bunu hiç görmüyordu. Konuşma bitince kuralın durumu
+ * buraya yazılıyor ve zamanı gelince konuşma tekrar öneriliyor.
  *
  * Kelime tablosundan ayrı duruyor çünkü ölçüsü farklı: kelime "hatırladın mı",
  * kural "kurabildin mi". İkisini aynı tabloya sıkıştırmak ikisinin de
@@ -938,12 +938,12 @@ export const userConversations = pgTable(
   {
     userId: text("user_id").notNull(),
     conversationId: text("conversation_id").notNull(),
-    /** Kuralın kimliği — aynı kural birden çok derste geçebilir. */
+    /** Kuralın kimliği — aynı kural birden çok konuşmada geçebilir. */
     ruleId: text("rule_id").notNull(),
     /** Alıştırmalarda doğru sayısı (en iyi deneme). */
     correct: integer("correct").notNull().default(0),
     total: integer("total").notNull(),
-    /** Rol yapma tamamlandı mı — dersin asıl parçası o. */
+    /** Sohbet tamamlandı mı — konuşmanın asıl parçası o. */
     chatDone: boolean("chat_done").notNull().default(false),
     attempts: integer("attempts").notNull().default(1),
     /** Bir sonraki tekrar; kelimelerdeki gibi artan aralıklarla uzuyor. */
@@ -955,7 +955,7 @@ export const userConversations = pgTable(
 );
 
 /**
- * Rol yapma turlarının metin kaydı — geliştirme amaçlı, süre sınırlı.
+ * Sohbet turlarının metin kaydı — geliştirme amaçlı, süre sınırlı.
  *
  * Neden var: konuşma kalitesindeki sorunlar ancak gerçek konuşmaya bakarak
  * anlaşılıyor. Modelin kendini tekrar edip konuşmayı döngüye sokması ölçüm
@@ -966,7 +966,7 @@ export const userConversations = pgTable(
  *   - Öğrencinin **metne dökülmüş** cevabı. Ses kaydı YOK; tanıyıcı zaten
  *     tarayıcıda çalışıyor ve ses hiçbir zaman sunucuya gelmiyor.
  *   - Modelin cevabı, düzeltme ve öneri satırlarıyla birlikte.
- *   - Hangi ders ve hangi tur.
+ *   - Hangi konuşma ve hangi tur.
  *
  * `expiresAt` her satırda duruyor ve yazarken hesaplanıyor: kayıt kalıcı bir
  * birikim değil, geçici bir teşhis penceresi. Süresi geçenler her yazmada
@@ -1020,7 +1020,7 @@ export const chatLogs = pgTable(
  * AI değerlendirme kayıtları (WP-03).
  *
  * Her satır bir üretim görevinin rubrikli sonucu: serbest cümle, yazma,
- * konuşma dökümü, rol yapma. `answer` öğrencinin metnidir ve BİLEREK burada
+ * konuşma dökümü, sohbet. `answer` öğrencinin metnidir ve BİLEREK burada
  * saklanır — kendi yazılarını geri okuyabilsin, silebilsin (WP-52); `events`
  * tablosuna yalnız puan gider. `result` doğrulanmış JSON (lib/assess-prompts
  * `Assessment`). `hash` görev+cevap özeti: 24 saat içinde aynı cevap
@@ -1291,7 +1291,7 @@ export const userReports = pgTable(
  * Akış olayları — arkadaşların gördüğü kilometre taşları. `events` tablosu
  * ölçüm içindir ve serbest içerik almaz; akış ayrı tutulur ki iki amaç
  * birbirini bozmasın. Yalnız ANLAMLI olaylar yazılır (seri 7/30/100, rozet,
- * ortak görev, haftanın ilk üçü); her ders bitişi yazılsaydı akış gürültü olurdu.
+ * ortak görev, haftanın ilk üçü); her konuşma bitişi yazılsaydı akış gürültü olurdu.
  */
 export const activityEvents = pgTable(
   "activity_events",
@@ -1391,7 +1391,7 @@ export const socialNotifications = pgTable(
 );
 
 /**
- * İçerik bildirimleri — yapay zekâ yanıtı (rol yapma) ya da değerlendirme çıktısı
+ * İçerik bildirimleri — yapay zekâ yanıtı (sohbet) ya da değerlendirme çıktısı
  * için "bildir" (Play üretken yapay zekâ politikası: uygulama içi bildirme yolu).
  * Bildirilen metin burada da saklanır: chat_logs 30 günde silinir, inceleme
  * ona bağlı kalmasın. Yaptırım yok; yönetim panosunda insan okur, `status` ile kapatır.
@@ -1715,8 +1715,8 @@ export const referrals = pgTable(
  *
  * Tek tablo üç ayrı pencereyi taşıyor ve ayrım `period` sütununda:
  *   "2026-09-08"  günlük     (ör. cepte yürüyüş turu)
- *   "2026-W37"    haftalık   (ör. yenilenen konuşma dersi hakkı)
- *   "all"         ömürlük    (ör. seviye başına 2 ders — key "conversation:A1")
+ *   "2026-W37"    haftalık   (ör. yenilenen konuşma konuşmayı hakkı)
+ *   "all"         ömürlük    (ör. seviye başına 2 konuşma — key "conversation:A1")
  *
  * Sayaç neden olayları (events) saymıyor: telemetri kaybolabilir, örneklenebilir
  * ve geriye dönük düzeltilebilir. Kota bir FATURA kapısı, tahmin değil.
@@ -1890,7 +1890,7 @@ export const userConsents = pgTable(
 /**
  * İÇERİK TESLİM HATTI — dört tablo (0062).
  *
- * Dersler, deneme sınavı kâğıtları, beceri alıştırmaları ve anadil paketleri
+ * Konuşmalar, deneme sınavı kâğıtları, beceri alıştırmaları ve anadil paketleri
  * bugün iki uygulamanın İKİLİSİNE gömülü: mobilde 27,7 MB statik `import`.
  * Bunun üç bedeli var ve üçü de kullanıcıya çıkıyor:
  *

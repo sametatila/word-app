@@ -1,7 +1,7 @@
 import type { Conversation } from "./types";
 
 /**
- * DERS KAYNAĞI — elle yazılmış içeriğin kendisi.
+ * KONUŞMA KAYNAĞI — elle yazılmış içeriğin kendisi.
  *
  * Bu dosya içeriği STATİK olarak içe alıyor ve yalnız üç yerde kullanılıyor:
  * doğrulama betikleri (`check:conversations`, `check:pairs`, `check:exams` …),
@@ -10,7 +10,7 @@ import type { Conversation } from "./types";
  *
  * SUNUCU SAYFALARI BURAYI OKUMUYOR: web içeriği yayın hattından alıyor
  * (`lib/conversations/index`, `lib/content/serve`). Ayrım bilinçli — bu dosyayı bir
- * rota içe alsaydı 8,5 MB ders metni Next derlemesine girer ve mobil ile web
+ * rota içe alsaydı 8,5 MB konuşma metni Next derlemesine girer ve mobil ile web
  * yine iki ayrı kaynaktan beslenirdi.
  */
 import { deA1B01 } from "./content/de-a1-b01";
@@ -79,21 +79,21 @@ import enB2 from "./content/en-b2.json";
 import enC1 from "./content/en-c1.json";
 
 /**
- * Ders kataloğu.
+ * Konuşma kataloğu.
  *
- * Beceri içeriğinden farklı olarak veritabanına yüklenmiyor: dersler bütünüyle
- * kod, çünkü hem anlatım senaryosu hem rol yapma istemi ders metninden
+ * Beceri içeriğinden farklı olarak veritabanına yüklenmiyor: konuşmalar bütünüyle
+ * kod, çünkü hem anlatım senaryosu hem sohbet istemi konuşma metninden
  * üretiliyor ve ikisinin ayrı yerlerde durması istemin içeriğe göre değişmesini
- * zorlaştırırdı. İlerleme (hangi ders bitti, hangi kural zayıf) veritabanında.
+ * zorlaştırırdı. İlerleme (hangi konuşma bitti, hangi kural zayıf) veritabanında.
  *
- * İki kurs: Almanca (580 ders, TypeScript) ve İngilizce (200 ders, JSON —
- * bkz. EN_CONVERSATIONS). Zürih'in kendi dersi yok; hedef dili Almanca olduğu için
+ * İki kurs: Almanca (580 konuşma, TypeScript) ve İngilizce (200 konuşma, JSON —
+ * bkz. EN_CONVERSATIONS). Zürih'in kendi konuşmayı yok; hedef dili Almanca olduğu için
  * aynı iskelet doğrulandıktan sonra bu yapıda yeniden yazılacak.
  */
 /**
- * Çevrimdışı senaryolar derse kimliğiyle bağlanıyor (WP-04). Ders dosyasına
+ * Çevrimdışı senaryolar konuşmaya kimliğiyle bağlanıyor (WP-04). Konuşma dosyasına
  * gömülmemesinin sebebi içerik hattı: senaryolar ayrı üretilip ayrı gözden
- * geçiriliyor (WP-71/72) ve ders metnine dokunmadan eklenebiliyor. Derste
+ * geçiriliyor (WP-71/72) ve konuşma metnine dokunmadan eklenebiliyor. Konuşmada
  * zaten `script` varsa o kazanır.
  */
 const SCRIPTS: Record<string, Conversation["chat"]["script"]> = { ...A1_SCRIPTS };
@@ -104,9 +104,9 @@ function withScript(conversation: Conversation): Conversation {
 }
 
 /**
- * İngilizce kursunun dersleri JSON, Almancanınkiler TypeScript.
+ * İngilizce kursunun konuşmaları JSON, Almancanınkiler TypeScript.
  *
- * Sebep tarihsel ve kayda geçiyor: bu 200 ders (A1 100 + A2 100) doğrudan
+ * Sebep tarihsel ve kayda geçiyor: bu 200 konuşma (A1 100 + A2 100) doğrudan
  * `mobile/src/data/conversations/en-*.json` olarak yazıldı ve web'e hiç girmedi —
  * yani İngilizce kursta Patika web'de BOŞTU, mobilde doluydu. Dosyalar
  * buraya taşındı, tek kaynak yine web oldu ve mobil paketi `dump:conversations`
@@ -114,7 +114,7 @@ function withScript(conversation: Conversation): Conversation {
  *
  * JSON'dan TypeScript'e çevrilmediler çünkü kazanç yok: içerik elle yazılmış
  * veri, kod değil; TS'e dökmek 2 MB'lık üretilmiş kaynak dosya demekti.
- * Yeni ders eklerken JSON düzenlenir, `npm run dump:conversations -- en` koşulur.
+ * Yeni konuşma eklerken JSON düzenlenir, `npm run dump:conversations -- en` koşulur.
  *
  * Dönüşüm gerekiyor çünkü `resolveJsonModule` alan tiplerini genişletiyor:
  * `lang: "tr" | "de" | "en"` JSON'da `string` görünüyor. Yapının uygunluğunu

@@ -67,7 +67,7 @@ assert.equal(edgeVoiceOf("de-DE-Aras"), "de-DE-ConradNeural");
 assert.equal(edgeVoiceOf("tr-TR-Aras"), "tr-TR-AhmetNeural");
 assert.equal(edgeVoiceOf("de-DE-KatjaNeural"), "de-DE-KatjaNeural");
 ok(
-  "üretilmemiş katmanlar sabit ders sesinde; karakterin Edge karşılığı aynı cinsiyet",
+  "üretilmemiş katmanlar sabit konuşma sesinde; karakterin Edge karşılığı aynı cinsiyet",
 );
 
 assert.equal(tileSpeech("Berlin,"), "Berlin");
@@ -118,7 +118,7 @@ async function endpoint() {
   res = await req("v=de-DE-Defne&t=der%20Hund");
   assert.notEqual(res.headers.get("x-tts-source"), "own");
   assert.equal(res.status, 401);
-  ok("işaretsiz istek (rol yapma, ders) karakter dosyasını almıyor, Edge karşılığına gidiyor");
+  ok("işaretsiz istek (sohbet, konuşma) karakter dosyasını almıyor, Edge karşılığına gidiyor");
 
   res = await req("v=de-DE-Defne&t=der%20Hund&k=w", {
     "if-none-match": '"defne/abc123.m4a"',

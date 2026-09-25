@@ -1,6 +1,6 @@
 /**
  * Biten Patika adımlarının cihaz kaydı — /api/immersion canlı olmadan
- * ilerleme. Ders id'leri ve beceri egzersizi id'leri aynı kümede (hepsi item
+ * ilerleme. Konuşma id'leri ve beceri egzersizi id'leri aynı kümede (hepsi item
  * ref'i). Sunucuya da yazılır (/api/conversation, /api/skills); bu yerel set yalnız
  * gerçek track gelene kadar Patika'ya hangi adımın bittiğini söyler.
  */
@@ -138,17 +138,17 @@ export async function syncItemProgress(level?: string): Promise<void> {
 }
 
 /**
- * ÇEVRİMDIŞI BİTİRİLEN DERS.
+ * ÇEVRİMDIŞI BİTİRİLEN KONUŞMA.
  *
- * Ders bitince sonuç `/api/conversation`a yazılıyor; ağ yoksa istek düşüyor ve bir
+ * Konuşma bitince sonuç `/api/conversation`a yazılıyor; ağ yoksa istek düşüyor ve bir
  * daha DENENMİYORDU. Yerel işaret (`markItemDone`) Patika'yı bitmiş
- * gösteriyor ama sunucu dersi hiç öğrenmiyor: XP verilmiyor, aralıklı tekrar
- * merdiveni kurulmuyor, kullanıcı cihaz değiştirince ders geri geliyor.
+ * gösteriyor ama sunucu konuşmayı hiç öğrenmiyor: XP verilmiyor, aralıklı tekrar
+ * merdiveni kurulmuyor, kullanıcı cihaz değiştirince konuşma geri geliyor.
  * Beceri egzersizlerinde aynı boşluk kuyrukla kapandı (`queueItemRecord`);
- * ders de aynı yolu izliyor.
+ * konuşma de aynı yolu izliyor.
  *
  * `day` KAYITLA BİRLİKTE saklanıyor: seri kullanıcının O gününe ait, ertesi
- * gün gönderilen dersi bugüne yazmak seriyi yanlış hesaplardı.
+ * gün gönderilen konuşmayı bugüne yazmak seriyi yanlış hesaplardı.
  */
 const CONVERSATION_KEY = "lernomi-conversations-pending";
 export type PendingConversation = { conversationId: string; correct: number; chatDone: boolean; day: string; seconds: number };
@@ -158,7 +158,7 @@ export async function queueConversationResult(item: PendingConversation): Promis
   try {
     const raw = await AsyncStorage.getItem(CONVERSATION_KEY);
     const list = raw ? (JSON.parse(raw) as PendingConversation[]) : [];
-    /* Aynı ders iki kez bitirilmişse sonuncusu kalıyor: uç en iyi denemeyi
+    /* Aynı konuşma iki kez bitirilmişse sonuncusu kalıyor: uç en iyi denemeyi
        tutuyor ama iki kayıt göndermenin de bir faydası yok. */
     const kalan = list.filter((x) => x.conversationId !== item.conversationId);
     kalan.push(item);
@@ -166,7 +166,7 @@ export async function queueConversationResult(item: PendingConversation): Promis
   } catch { /* depolama yoksa yapacak bir şey yok */ }
 }
 
-/** Bekleyen ders sonuçlarını gönderir; biri düşerse kalanı kuyrukta bırakır. */
+/** Bekleyen konuşma sonuçlarını gönderir; biri düşerse kalanı kuyrukta bırakır. */
 export async function flushPendingConversations(): Promise<void> {
   await ensureLegacyMigrated(); // eski anahtarlar (geçici, lib/legacyNames)
   let list: PendingConversation[] = [];
@@ -191,12 +191,12 @@ export async function flushPendingConversations(): Promise<void> {
 }
 
 /**
- * PATİKA PRATİK ADIMI — dil bilgisi, tekrar, kontrol noktası.
+ * PATİKA PRATİK ADIMI — dil bilgisi, tekrar, ünite quizi.
  *
  * Bu adımların sonucu hiçbir yere yazılmıyordu; yalnız cihazda bir işaret
  * (`markItemDone`) vardı ve sunucu patikası onu hiç görmüyordu. Adım bitince
  * `POST /api/immersion/item`; ağ yoksa kuyruğa, uygulama açılışında
- * `flushPendingPathItems` gönderiyor (derslerle aynı yol).
+ * `flushPendingPathItems` gönderiyor (konuşmalarla aynı yol).
  */
 const PATH_ITEM_KEY = "lernomi-path-items-pending";
 export type PendingPathItem = { itemId: string; correct: number; total: number };
@@ -250,13 +250,13 @@ export async function recordItemScore(id: string, score: number): Promise<void> 
 }
 
 /**
- * Yarım kalan dersin cihazda saklanması (web conversation-player RESUME_KEY karşılığı).
+ * Yarım kalan konuşmanın cihazda saklanması (web conversation-player RESUME_KEY karşılığı).
  * Anlatım uzun; ortasında çıkan öğrenci baştan başlamamalı. 3 günden eski kayıt
  * atılır.
  *
  * KONUŞMA FAZI DA SAKLANIYOR. Eskiden yalnız anlatım saklanıyordu ve konuşmaya
  * geçildiği AN kayıt siliniyordu: yirmi adımlık anlatımı bitirip konuşmanın
- * ortasında çıkan öğrenci dersi sıfırdan başlıyordu, sunucuda da hiçbir kayıt
+ * ortasında çıkan öğrenci konuşmayı sıfırdan başlıyordu, sunucuda da hiçbir kayıt
  * olmadığı için Patika adımı "denenmemiş" gösteriyordu. Web konuşmayı ve
  * turlarını baştan beri saklıyor.
  */
@@ -303,10 +303,10 @@ export async function loadConversationResume(id: string): Promise<ConversationRe
 }
 
 /**
- * Süresi geçmiş yarım dersleri siler.
+ * Süresi geçmiş yarım konuşmaları siler.
  *
  * `loadConversationResume` üç günden eski kaydı yok sayıyor ama silmiyordu: dönülmeyen
- * her ders cihazda süresiz kalıyordu. Kayıt rol yapma fazında konuşmanın
+ * her konuşma cihazda süresiz kalıyordu. Kayıt sohbet fazında konuşmanın
  * kendisini (`roleMsgs`, kullanıcının yazdıkları) taşıyor; sunucu aynı
  * konuşmayı 30 günde siliyor (gizlilik politikası §9), cihazdaki kopya hiç
  * gitmiyordu. Açılışta bir kez çağrılıyor.

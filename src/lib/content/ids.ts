@@ -22,7 +22,7 @@ export const FULL_PACK = "*";
  * Paket bir eşleme (madde → gövde) ve eşlemenin sırası taşınmıyor: soğuk
  * dolumda arşivin anahtar sırası korunuyor ama delta güncellemesinde değişen
  * maddeler sona ekleniyor. Oysa bazı içeriklerde SIRA ANLAM taşıyor —
- * patika üniteleri ders listesini sırayla tüketiyor, beceri havuzları da.
+ * patika üniteleri konuşma listesini sırayla tüketiyor, beceri havuzları da.
  * Sıra kaybolursa hiçbir şey hata vermez; müfredat sessizce karışır.
  *
  * Bu yüzden sıra AÇIKÇA yayınlanıyor: paket içinde kimlik listesi taşıyan

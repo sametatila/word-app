@@ -4,8 +4,8 @@ import type { CefrLevel, SkillId } from "@/lib/skills/types";
 /**
  * İçerik → yapabilirlik etiketi (WP-43, adım 3).
  *
- * 220 ders ve 344 egzersizi elle etiketlemek yerine ilk tur KURALLA
- * yapılıyor: dersin simgesi (konu ailesi) + seviyesi, egzersizin becerisi +
+ * 220 konuşma ve 344 egzersizi elle etiketlemek yerine ilk tur KURALLA
+ * yapılıyor: konuşmanın simgesi (konu ailesi) + seviyesi, egzersizin becerisi +
  * seviyesi + türü. İçeriğin kendi `cando` alanı varsa o kazanır; bu harita
  * yalnız boşlukları doldurur. WP-71/72 içerik gözden geçirmesinde etiketler
  * içeriğe yazılır ve bu harita küçülür. Bilinmeyen kimlik üretilmez: her
@@ -28,7 +28,7 @@ const ICON_THEME: Record<string, Theme> = {
   run: "work", sport: "work",
 };
 
-/** Seviye × tema → konuşma ifadesi (dersin rol yapma sahnesi). */
+/** Seviye × tema → konuşma ifadesi (konuşmanın sohbet sahnesi). */
 const CONVERSATION_SPK: Record<CefrLevel, Record<Theme, number>> = {
   A1: { social: 1, service: 3, work: 5 },
   A2: { social: 6, service: 1, work: 7 },
@@ -37,7 +37,7 @@ const CONVERSATION_SPK: Record<CefrLevel, Record<Theme, number>> = {
   C1: { social: 2, service: 3, work: 1 },
 };
 
-/** Dersin dilbilgisi odağı (focusId) → dilbilgisi ifadesi. */
+/** Konuşmanın dilbilgisi odağı (focusId) → dilbilgisi ifadesi. */
 const FOCUS_GR: [RegExp, Record<CefrLevel, number>][] = [
   [/artikel|plural|nomen|genus/i, { A1: 1, A2: 2, B1: 6, B2: 4, C1: 4 }],
   [/perfekt|partizip|vergangen|prateritum|präteritum/i, { A1: 2, A2: 1, B1: 5, B2: 6, C1: 3 }],
@@ -56,31 +56,31 @@ const FOCUS_GR: [RegExp, Record<CefrLevel, number>][] = [
  * İNGİLİZCE KURSUN dilbilgisi odakları — ayrı tablo, ayrı kimlik bloğu.
  *
  * Yukarıdaki `FOCUS_GR` Almanca kursun kuralları için yazılmış ve düzenli
- * ifadeleri de Almanca ("artikel", "perfekt", "nebensatz"). İngilizce ders
+ * ifadeleri de Almanca ("artikel", "perfekt", "nebensatz"). İngilizce konuşma
  * odakları ("Prepositions-place", "Imperatives", "Superlatives") oraya
  * rastgele düşüyordu: `preposition` A1'de 5 numaraya, yani ZAMİR ifadesine
- * bağlanıyordu. Ölçüldü: 17 İngilizce ders yanlış ifadeye bağlıydı.
+ * bağlanıyordu. Ölçüldü: 17 İngilizce konuşma yanlış ifadeye bağlıydı.
  *
  * Kimlikler 11'den başlıyor (bkz. `EN_GR_IDS`); bir seviyede karşılığı
  * olmayan odak sessizce düşüyor, çünkü `isCandoId` bilinmeyen kimliği
- * eliyor. Bugün yalnız A1 ve A2 var — İngilizce kursun dersleri o iki
+ * eliyor. Bugün yalnız A1 ve A2 var — İngilizce kursun konuşmaları o iki
  * seviyede.
  */
 const FOCUS_GR_EN: [RegExp, Partial<Record<CefrLevel, number>>][] = [
   /* B1 SATIRLARI ÖNDE. Sıra önemli: ilk eşleşen kazanıyor ve A1/A2 desenleri
      geniş. «Modals of obligation» aşağıdaki `/must|have to|…/` satırına düşerdi
-     ve o satırın B1 sütunu yok — ders sessizce dilbilgisi ifadesiz kalırdı.
+     ve o satırın B1 sütunu yok — konuşma sessizce dilbilgisi ifadesiz kalırdı.
      Aynı tuzak «Present perfect vs past simple» için de var (`/past simple/`).
      Desenler B1'e özgü tutuldu ki A1/A2 odakları buraya kaymasın. */
-  /* B2 SATIRLARI EN ÖNDE. B1 satırlarının B2 sütunu YOK: bir B2 dersi
+  /* B2 SATIRLARI EN ÖNDE. B1 satırlarının B2 sütunu YOK: bir B2 konuşmayı
      «Passive report structures» odağıyla aşağıdaki `/passive/i` satırına
-     düşseydi `hit[1]["B2"]` undefined dönerdi ve ders sessizce ifadesiz
+     düşseydi `hit[1]["B2"]` undefined dönerdi ve konuşma sessizce ifadesiz
      kalırdı. Desenler B2'ye özgü: «third conditional» yakalanır ama
      «Conditionals» aşağıdaki B1 satırına gitmeye devam eder. */
   /* C1 SATIRLARI HEPSİNDEN ÖNDE, aynı gerekçeyle: B2 satırlarının C1 sütunu
-     YOK. Bir C1 dersi «Reporting verbs and evaluation» odağıyla aşağıdaki
+     YOK. Bir C1 konuşmayı «Reporting verbs and evaluation» odağıyla aşağıdaki
      `/report structure/i` satırına düşseydi `hit[1]["C1"]` undefined döner,
-     ders sessizce ifadesiz kalırdı. Desenler C1'e özgü: «fronting» yakalanır
+     konuşma sessizce ifadesiz kalırdı. Desenler C1'e özgü: «fronting» yakalanır
      ama «cleft» aşağıdaki B2 satırına gitmeye devam eder. */
   [/ellipsis|substitution|former and the latter/i, { C1: 11 }],
   [/fronting|end.weight|marked word order/i, { C1: 12 }],
@@ -174,7 +174,7 @@ const GENRE_INDEX: [RegExp, Partial<Record<CandoSkill, Record<CefrLevel, number>
 export function candoForExercise(ex: { skill: SkillId; level: CefrLevel; genre: string; cando?: string[]; focus?: string; course?: string }): string[] {
   if (ex.cando?.length) return ex.cando.filter(isCandoId);
   const code = SKILL_CODE[ex.skill];
-  // Dil bilgisi egzersizi kuralını `focus` alanında adlandırıyor; dersin
+  // Dil bilgisi egzersizi kuralını `focus` alanında adlandırıyor; konuşmanın
   // `focusId`'sini eşleyen tablo burada da iş görür (aynı kural aileleri).
   if (ex.skill === "grammar" && ex.focus) {
     const id = grammarCando(ex.course, ex.level, ex.focus);

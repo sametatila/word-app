@@ -229,7 +229,7 @@ for (const course of courses) {
 // (e2) KOPYA DENETİMİ — kütüphane metni başka bir içerikle örtüşüyor mu
 {
   /*
-   * Kullanıcının ilk şartı: kütüphane içeriği Patika'nın, derslerin ve deneme
+   * Kullanıcının ilk şartı: kütüphane içeriği Patika'nın, konuşmaların ve deneme
    * kâğıtlarının kopyası olmayacak. Ölçüm sekiz kelimelik pencereler: doğal
    * dilde iki bağımsız metnin sekiz kelimesi arka arkaya aynı olmaz, ama
    * kopyalanmış bir cümle onlarca pencere paylaşır. Kısa kalıplar ("Sehr
@@ -259,7 +259,7 @@ for (const course of courses) {
     return out.join("\n");
   };
 
-  // Karşılaştırma havuzu: Patika egzersizleri + dersler + deneme kâğıtları.
+  // Karşılaştırma havuzu: Patika egzersizleri + konuşmalar + deneme kâğıtları.
   const others: string[] = [];
   for (const e of all) if (!isLib(e)) others.push(surfaceOf(e));
 

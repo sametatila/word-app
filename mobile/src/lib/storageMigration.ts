@@ -3,7 +3,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 /**
  * Cihazdaki anahtarlar uygulama adının önekini taşıyor. Ad iki kez değişti:
  * Wortspiel -> Nomi (2026-08-31) -> Lernomi (2026-09-04). Her iki eski önek de
- * tek seferde yeni öneke taşınır ki kimse onboarding'ini, ders ilerlemesini,
+ * tek seferde yeni öneke taşınır ki kimse onboarding'ini, konuşma ilerlemesini,
  * sesini, avatarını ya da hatırlatma tercihini kaybetmesin.
  *
  * Önekler YENİDEN ESKİYE denenir: iki dönemin anahtarı birden duruyorsa
@@ -48,7 +48,7 @@ export async function migrateLegacyKeys(): Promise<void> {
   çeviriyor, o yüzden liste yalnız `lernomi` adlarını sayıyor ve temizlik
   göçten SONRA çalışmalı. Web karşılığı `src/lib/storage-hygiene`.
 
-    lessons-done    bitirilen dersler (2026-08-30, `lernomi-items-done`e geçti)
+    lessons-done    bitirilen konuşmalar (2026-08-30, `lernomi-items-done`e geçti)
     mic-consent:v1  onay metni değişti, v2 yeniden soruyor (2026-09-14)
 
   Yeni bir anahtar kaldırıldığında buraya eklenmeli.

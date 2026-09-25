@@ -2,7 +2,7 @@
  * Sahte veritabanı — sınav kurucusunun kuru provası için.
  *
  * `buildExam` üç sorgu yapıyor (kelime havuzu, bitmiş egzersizler, modül
- * dersleri) ve üçü de kâğıdın ŞEKLİNİ değiştirmiyor: hangi kelimelerin
+ * konuşmaları) ve üçü de kâğıdın ŞEKLİNİ değiştirmiyor: hangi kelimelerin
  * seçileceğini ve ön koşulun sağlanıp sağlanmadığını belirliyorlar. Kâğıdın
  * kendisini yerel Postgres olmadan denemek için sorgu zinciri burada taklit
  * ediliyor; `scripts/exam-dryrun.ts` bunu kullanıyor.

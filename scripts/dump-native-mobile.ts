@@ -35,7 +35,7 @@ const OUT_DIR = join(ROOT, "mobile/src/data/native");
 const OUT_JSON = join(OUT_DIR, "en.json");
 
 /* ALMANCA YÖN — ayrı çözücü, ayrı sözlük, aynı döküm kuralı. Anadili
-   Almanca olan kullanıcı İNGİLİZCE kursu alıyor ve o dersler kendi kendine
+   Almanca olan kullanıcı İNGİLİZCE kursu alıyor ve o konuşmalar kendi kendine
    yeten JSON; `resolveConversation`ın şablon yapısı burada yok (gerekçe
    `src/lib/conversations/native-de.ts` başında). Beceri ve kâğıt için ikinci bir
    çözücü GEREKMİYOR: `resolveExercise`/`resolveMockPaper` yalnız

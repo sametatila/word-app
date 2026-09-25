@@ -45,7 +45,7 @@ export async function pathQuota(user: { id: string; guest?: boolean }, level: st
   };
 }
 
-/** Tek Konuşma adımının kilidi — ders sayfası girişte soruyor. */
+/** Tek Konuşma adımının kilidi — konuşma sayfası girişte soruyor. */
 export async function conversationQuota(
   user: { id: string; guest?: boolean },
   conversation: { id: string; level: string },

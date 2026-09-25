@@ -236,7 +236,7 @@ export type SpeechConfusion = {
    * TANIYICININ YAZDIĞI ŞEY: hedef dilin alfabesiyle, gerçekten çıkabilecek
    * sözcükler. Tek sözcük jetona, boşluklu girdi tüm transkripte bakılarak
    * aranır (`lib/pronounce`). Vurgu ve ezgi yazıya geçmediği için o
-   * derslerde girdi YOK — dizi boş bırakılır ve `fix` düşük puanda zaten
+   * konuşmalarda girdi YOK — dizi boş bırakılır ve `fix` düşük puanda zaten
    * gösterilir. Hedef cümlenin kendisini yazmak girdiyi ölü yapar: doğru
    * okuyan öğrenciye de eşleşirdi.
    */
@@ -337,7 +337,7 @@ export type SpeakingExercise = SpeakingDrillExercise | SpeakingDialogueExercise 
 /**
  * Dil bilgisi anlatımının bir bloğu: Türkçe açıklama + hedef dilde örnekler.
  *
- * Anlatım Türkçe, örnek hedef dilde — ders anlatımındaki segment disipliniyle
+ * Anlatım Türkçe, örnek hedef dilde — konuşma anlatımındaki segment disipliniyle
  * aynı: hedef dil cümlesi Türkçe paragrafın içine yazılmaz, `examples`
  * dizisinde durur (seslendirme ve `lang` işareti oradan doğru çalışır).
  */
@@ -353,7 +353,7 @@ export type GrammarBlock = {
 /**
  * Dil bilgisi egzersizi (Beceriler kütüphanesi, 2026-09).
  *
- * Patika'nın gramer adımı derslerden TÜRETİLİYOR (immersion/grammar.ts) ve
+ * Patika'nın gramer adımı konuşmalardan TÜRETİLİYOR (immersion/grammar.ts) ve
  * bir üniteye bağlı. Buradaki egzersiz bağımsızdır: tek bir kuralı (`focus`)
  * önce anlatır, sonra aynı soru motoruyla (`SkillQuestion`) sınar. Soru
  * türleri okuma/dinlemeyle aynı olduğu için hem web hem mobil mevcut

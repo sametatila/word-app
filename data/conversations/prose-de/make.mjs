@@ -1,10 +1,10 @@
 /**
- * İngilizce kursun derslerindeki TÜRKÇE alanları paketler:
+ * İngilizce kursun konuşmalarındaki TÜRKÇE alanları paketler:
  *   `node data/conversations/prose-de/make.mjs`
  *
  * NEDEN AYRI BİR HAT. `data/conversations/*` altındaki kardeş hatlar ALMANCA
- * kursun derslerinden (TS dosyaları) Türkçe çıkarıp İngilizce yazdırıyor.
- * Burada kaynak da yön de başka: İngilizce kursun 200 dersi JSON
+ * kursun konuşmalarından (TS dosyaları) Türkçe çıkarıp İngilizce yazdırıyor.
+ * Burada kaynak da yön de başka: İngilizce kursun 200 konuşması JSON
  * (`en-a1.json`, `en-a2.json`) ve yazılacak dil ALMANCA. Aynı hatta
  * `--de` bayrağı takmak, çıkarıcının iki ayrı biçimi birden okumasını
  * gerektirirdi; deneme kâğıdı hattında bayrak işe yaradı çünkü orada iki
@@ -57,8 +57,8 @@ export const KINDS = [
 ];
 
 /**
- * Dersin bütün İNGİLİZCE yüzeyi — sözlük, kalıp, anlatımın `en`
- * parçaları, beklenen üretim ve kabul listesi, rol yapmanın açılışı.
+ * Konuşmanın bütün İNGİLİZCE yüzeyi — sözlük, kalıp, anlatımın `en`
+ * parçaları, beklenen üretim ve kabul listesi, sohbetin açılışı.
  *
  * Kapıdaki kanıt ölçütü buradan besleniyor: Türkçe bir satırda tırnak
  * içinde geçen açıklık, ancak bu yüzeyde birebir varsa KANIT sayılıyor.

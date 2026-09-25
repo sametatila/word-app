@@ -4,7 +4,7 @@
  * Üç klasör yazar (`data/library/in/`, git'te izlenmez):
  *
  *   pools/<kurs>-<seviye>.txt   seviyenin kelime katmanı + alt seviyeler
- *   avoid/<kurs>-<seviye>.txt   Patika dersleri, ünite egzersizleri, deneme
+ *   avoid/<kurs>-<seviye>.txt   Patika konuşmaları, ünite egzersizleri, deneme
  *                               kâğıtları — yazarın GİRMEYECEĞİ konular
  *   used/<kurs>-<seviye>.txt    kütüphanede o hücrede ZATEN VAR olan konular
  *
@@ -85,7 +85,7 @@ for (const course of COURSES) {
     }
     const txt =
       `# ${course.toUpperCase()} ${level} — BU KONULARA/METİNLERE GİRME (kopya yasağı)\n\n` +
-      `## Patika dersleri (${conversations.length})\n${conversations.join(" | ")}\n\n` +
+      `## Patika konuşmaları (${conversations.length})\n${conversations.join(" | ")}\n\n` +
       `## Patika ünite egzersizleri (${units.length})\n${units.join(" | ")}\n\n` +
       `## Deneme sınavı kâğıtları (tema · metin başlıkları)\n${mocks.join("\n")}\n`;
     writeFileSync(`${OUT}/avoid/${course}-${lv}.txt`, txt);

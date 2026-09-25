@@ -8,7 +8,7 @@ import { parsePracticeItemId, recordPracticeItem } from "@/lib/immersion/practic
 export const dynamic = "force-dynamic";
 
 /**
- * Patika pratik adımı bitti — dil bilgisi, tekrar ya da kontrol noktası.
+ * Patika pratik adımı bitti — dil bilgisi, tekrar ya da ünite quizi.
  *
  *   POST { itemId, correct, total } → { bestPct, passed, attempts }
  *

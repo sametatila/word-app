@@ -67,7 +67,7 @@ export function UnitPane({ index, level, theme: gelenTheme, items: gelenItems, e
   const items = raw.map((i) => ({ ...i, current: i.id === currentId }));
   /*
     İLERLEME = OYNANABİLİR HER ADIM — Patika kartı, adım şeridi ve sunucunun
-    `total`ı ile aynı küme. Dil bilgisi/tekrar/kontrol noktası artık kayıt
+    `total`ı ile aynı küme. Dil bilgisi/tekrar/ünite quizi artık kayıt
     tutuyor (`POST /api/immersion/item`); tutmadıkları dönemde sayımdan
     düşülüyorlardı ve ekran 13 adım gösterip 10 üzerinden sayıyordu.
   */

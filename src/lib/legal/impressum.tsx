@@ -22,7 +22,7 @@ import type { LegalConfig } from "./shape";
  *
  * §18 ABS. 2 MStV SATIRI KALDIRILDI. O hüküm yalnız gazetecilik-redaksiyonel
  * nitelikli tekliflere (haber, görüş, periyodik yayın) bir "içerikten sorumlu"
- * kişi istiyor; Lernomi'nin dersleri ve alıştırmaları bir öğrenme ürününün
+ * kişi istiyor; Lernomi'nin konuşmaları ve alıştırmaları bir öğrenme ürününün
  * parçası, kamuoyu oluşumuna yönelik redaksiyonel içerik değil. Üstelik
  * §18(2) o kişinin yurt içinde ikametini istiyor; satırı Samet'le doldurmak
  * sağlayıcı olmayan birini içerikten sorumlu göstermek olurdu. Siteye blog ya

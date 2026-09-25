@@ -5,9 +5,9 @@ import { listContentItems, getContentItem } from "../src/content/store";
  * İÇERİK DEPOSU — SIRA KAYBOLMASIN.
  *
  * NEDEN TEST: hata SESSİZ ve pahalı. Paket bir eşleme (madde → gövde) ve
- * eşlemenin sırası taşınmıyor; oysa ders ve beceri listelerinde SIRA ANLAM
+ * eşlemenin sırası taşınmıyor; oysa konuşma ve beceri listelerinde SIRA ANLAM
  * taşıyor — patika üniteleri listeyi sırayla tüketiyor. Sıra karışırsa hiçbir
- * şey hata vermez, yalnız müfredat karışır: kullanıcı A2'nin yedinci dersini
+ * şey hata vermez, yalnız müfredat karışır: kullanıcı A2'nin yedinci konuşmasını
  * birinci ünitede görür.
  *
  * Bu yüzden sıra AÇIKÇA yayınlanıyor (`ORDER_ITEM`, `src/lib/content/ids`) ve

@@ -67,7 +67,7 @@ const MIN_CONFIDENCE = 0.6;
 /*
   TİRE DE NOKTALAMA. Tanıyıcı tireli başlığı boşlukla yazıyor ("T-Shirt" →
   "t shirt", "U-Bahn" → "U Bahn"); tire burada kalınca hedef tek jeton,
-  duyulan iki jeton oluyordu ve doğru cevap reddediliyordu. Ders hedeflerinin
+  duyulan iki jeton oluyordu ve doğru cevap reddediliyordu. Konuşma hedeflerinin
   74'ü tire taşıyor; kelime katlaması (`lib/textFold` PUNCT) bunu zaten
   yapıyordu, konuşma katlaması geride kalmıştı.
 */
@@ -151,7 +151,7 @@ export function judgeSpeech(
   /*
     HEDEF DİL PARAMETRESİ SONRADAN GELDİ ve eksikliği sessiz bir kusurdu:
     `normalizeSpoken` dili bilmediği için varsayılan "de" ile çalışıyordu,
-    yani İNGİLİZCE dersler Almanca kuralıyla yargılanıyordu. Somut sonucu
+    yani İNGİLİZCE konuşmalar Almanca kuralıyla yargılanıyordu. Somut sonucu
     sayı katlamasıydı — tanıyıcı "at 5 o'clock" yazdığında hedef "at five
     o'clock" ile eşleşmiyordu, çünkü `foldNumbers` Almanca sözcük listesine
     bakıyordu. Aynı yoldan kısaltma açma da hiç çalışmıyordu.

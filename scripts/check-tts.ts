@@ -99,7 +99,7 @@ console.log(`\n1. Uzunluk — tavan ${MAX_TEXT} karakter`);
       worstSegment = Math.max(worstSegment, c.length);
       /* TEK REPLİĞİN tavanı aşması hata DEĞİL, ölçü.
 
-         Bunlar diyalog değil monolog: bir haber bülteni ya da ders anlatımı
+         Bunlar diyalog değil monolog: bir haber bülteni ya da konuşma anlatımı
          tek konuşmacının altmış saniyelik kaydı olarak yazılıyor. Bölücü
          onları cümle sınırından ayırıyor, yani ses çıkıyor — ama bölünme
          konuşmacı DEĞİŞMEDEN oluyor ve o sınır (küçük de olsa) duyulabilir.

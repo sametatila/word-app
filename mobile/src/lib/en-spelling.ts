@@ -8,7 +8,7 @@
  * cevap tutmuyor — seçim öğrencinin değil TANIYICININ. Yazarak cevap
  * verende de aynısı: Amerikan yazımını öğrenmiş biri "color" yazıyor.
  *
- * ÖLÇÜLDÜ (2026-09-12): ders hedeflerinde ve kabul listelerinde 83 İngiliz
+ * ÖLÇÜLDÜ (2026-09-12): konuşma hedeflerinde ve kabul listelerinde 83 İngiliz
  * yazımı geçiyor; bunların 59'u yazım farkı olan kelimeler (neighbour 27,
  * programme 6, colour 4, apologise 4, practise 4, cheque 2, licence 2,
  * memorise 2, centre 2, realise 2, grey/favourite/organise/cancelled 4).

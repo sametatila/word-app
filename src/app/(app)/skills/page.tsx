@@ -24,7 +24,7 @@ const LEVELS: CefrLevel[] = ["A1", "A2", "B1", "B2", "C1"];
 /**
  * Beceriler — Patika'nın YANINDAKİ serbest çalışma yüzeyi.
  *
- * NEDEN VAR: Patika öğrenciyi bir sıraya sokar (ünite, ders, yuva). Burada
+ * NEDEN VAR: Patika öğrenciyi bir sıraya sokar (ünite, konuşma, yuva). Burada
  * sıra yok: öğrenci seviyesini ve becerisini kendi seçer, istediği kadar
  * yalnız okuma ya da yalnız dil bilgisi çalışır. İçerik Patika'nınki DEĞİL:
  * `content/library/` altındaki ünitesiz kütüphane (bkz. lib/skills/index.ts
@@ -45,7 +45,7 @@ const LEVELS: CefrLevel[] = ["A1", "A2", "B1", "B2", "C1"];
  * sayfanın altında listeleniyordu, ama sebebi bir tasarım kararı değil bir
  * kapı eksikliğiydi: `/exam/*` rotaları çalışıyordu ve web'de onlara giden
  * hiçbir bağlantı yoktu. Artık her sınav ait olduğu yerde — modül sınavı
- * Patika'da (kâğıdı zaten modülün derslerinden üretiliyor ve dersler
+ * Patika'da (kâğıdı zaten modülün konuşmalarından üretiliyor ve konuşmalar
  * geçilmeden "deneme" sayılıyor), seviye sınavı ile deneme ve haftalık sınav
  * Öğren'de. Beceriler tek bir iş yapıyor: seçip çalışmak.
  *

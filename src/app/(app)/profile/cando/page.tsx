@@ -7,7 +7,7 @@ export const generateMetadata = titleMeta("cando.what_i_can_do");
 /**
  * "Yapabildiklerim" (WP-43) — web'de HİÇBİR YERDEN açılamıyordu.
  *
- * `CandoCard` yazılmış, `/api/cando` çalışıyor ve `cando-map` ders/egzersiz
+ * `CandoCard` yazılmış, `/api/cando` çalışıyor ve `cando-map` konuşma/egzersiz
  * başına ifadeleri üretiyordu; eksik olan tek şey bileşeni çizen bir sayfaydı.
  * Mobilde aynı liste Profil › "Yapabildiklerim" satırından açılıyor, web'de
  * karşılığı yoktu — aynı hesap, iki platformda iki farklı ürün oluyordu.

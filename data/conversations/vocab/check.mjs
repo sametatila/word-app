@@ -1,5 +1,5 @@
 /**
- * Ders sözlükçesinin İngilizce karşılıklarını denetler:
+ * Konuşma sözlükçesinin İngilizce karşılıklarını denetler:
  *   `node data/conversations/vocab/check.mjs [paket|all]`
  *
  * Ayrım en→de hattındaki gibi: `hata` üretimi durdurur, `uyarı` durdurmaz.

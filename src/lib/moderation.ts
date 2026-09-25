@@ -176,7 +176,7 @@ const ASCII_WORDS = new Set([
   "pussy", "pussies", "rape", "raped", "rapist", "kike", "kikes", "tranny", "trannies",
   "fick", "ficken", "ficker", "neger", "negerin", "negern", "negers", "nazi", "nazis",
 ]);
-/* "dick" yalnız girdinin TAMAMIYSA: Almancada "kalın" demek ve kendi ders
+/* "dick" yalnız girdinin TAMAMIYSA: Almancada "kalın" demek ve kendi konuşma
    içeriğimizde geçiyor; "Dickinson" gibi adlar da serbest kalmalı. */
 const ASCII_EXACT = new Set(["am", "oc", "mk", "pic", "dick"]);
 
@@ -199,7 +199,7 @@ const COMPOUND_INSULTS = [
  * Sözcük düzeyi eşlemeden muaf tutulan gerçek adlar ve masum sözcükler. Kısa
  * tutuluyor: her girdi ölçülmüş bir yanlış pozitifi karşılıyor (Bitchell ⊃
  * bitch, Nigeria/Nigar ⊃ nigger, Amina ⊃ amına, eksiktir ⊃ siktir — başlıktaki
- * "karmaşıktır" örneğinin Türkçe harfle yazılmış hâli; ders içeriğinde geçiyor
+ * "karmaşıktır" örneğinin Türkçe harfle yazılmış hâli; konuşma içeriğinde geçiyor
  * ve `test:moderation`ın içerik taraması 2026-09-22'de yakaladı).
  *
  * Muafiyet SÖZCÜK başınadır (CNT-4): eskiden yalnız girdinin tamamı tek bir

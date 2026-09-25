@@ -69,8 +69,8 @@ const W = (where: string, msg: string) => warnings.push(`${where} — ${msg}`);
 /*
   KELİME HAVUZU KURS BAŞINA.
 
-  Havuz denetimi yalnız Almanca havuzu tanıyordu ve İngilizce dersler
-  `l.course === "de"` koşuluyla tamamen ATLANIYORDU - yani İngilizce bir ders
+  Havuz denetimi yalnız Almanca havuzu tanıyordu ve İngilizce konuşmalar
+  `l.course === "de"` koşuluyla tamamen ATLANIYORDU - yani İngilizce bir konuşma
   kursun kelime havuzunda hiç olmayan kelimeler öğretebilirdi ve hiçbir kapı
   bunu söylemezdi. İngilizce havuz `data/app/words-en.json` olarak zaten var
   (JSONL, 7175 kelime, `de` alanı hedef kelimeyi taşıyor - şema ortak).
@@ -106,17 +106,17 @@ const inPool = (de: string, course = "de") => {
   ÇEKİMLİ SÖZLÜKÇE: HAVUZ DENETİMİNİN GERÇEK YANLIŞ POZİTİFİ.
 
   Havuz sözlük biçimlerini (mastar, yalın ad) tutuyor. Geçmiş biçim öğreten
-  dersler ise sözlükçesine BİLEREK çekimli biçimi yazıyor — öğrettiği şey o:
+  konuşmalar ise sözlükçesine BİLEREK çekimli biçimi yazıyor — öğrettiği şey o:
   `gemacht`, `gegangen`, `aufgestanden`, `worked`. Havuzda mastarı var,
   çekimlisi yok ve olması da gerekmiyor: oyun kartına `machen` ile `gemacht`
   ayrı iki kelime diye girmek havuzu bozardı.
 
-  Ölçüldü: eşiği aşan beş ders de bu sınıftan ve hepsinin dışarıda kalan
-  kelimesi bir çekim. Liste ders KİMLİĞİNE bağlı, odağa değil — aynı odaktaki
-  öteki dersler (de-a1-perfekt-uebung gibi) sözlükçesini mastarla kuruyor ve
+  Ölçüldü: eşiği aşan beş konuşma de bu sınıftan ve hepsinin dışarıda kalan
+  kelimesi bir çekim. Liste konuşma KİMLİĞİNE bağlı, odağa değil — aynı odaktaki
+  öteki konuşmalar (de-a1-perfekt-uebung gibi) sözlükçesini mastarla kuruyor ve
   denetimden geçiyor; onları da muaf tutmak kapıyı gereksiz kör ederdi.
 
-  Liste bayatlamasın diye kendini denetliyor: muaf bir ders artık eşiği
+  Liste bayatlamasın diye kendini denetliyor: muaf bir konuşma artık eşiği
   aşmıyorsa satır fazlalıktır ve uyarı verir.
 */
 const INFLECTED_VOCAB = new Set([
@@ -471,8 +471,8 @@ function checkSkills(list: SkillExercise[]) {
                tanıyıcıdan asla çıkmaz; ipucu hiç ateşlenmez.
              - Hedef cümlenin kendisi girdi olamaz: vurgu ve ezgi yazıya
                geçmediği için doğru okuyan öğrenciye de eşleşirdi. Otuz
-               girdi böyleydi ve ezgi/vurgu derslerinde dizi boşaltıldı;
-               o derslerde `fix` düşük puanda zaten gösteriliyor. */
+               girdi böyleydi ve ezgi/vurgu konuşmalarında dizi boşaltıldı;
+               o konuşmalarda `fix` düşük puanda zaten gösteriliyor. */
           const alphabet = SPEECH_ALPHABET[e.course ?? "de"] ?? SPEECH_ALPHABET.de;
           for (const c of t.confusions ?? []) {
             if (!c.fix?.trim()) E(w, `confusion: fix boş — ${t.de}`);
@@ -487,7 +487,7 @@ function checkSkills(list: SkillExercise[]) {
   }
 }
 
-/* ───────────── dersler ───────────── */
+/* ───────────── konuşmalar ───────────── */
 function checkConversations(list: Conversation[]) {
   const ids = new Set<string>();
   const icons = new Set<string>(CONVERSATION_ICONS);
@@ -520,9 +520,9 @@ function checkConversations(list: Conversation[]) {
        iki kapı aynı şey hakkında iki ayrı sayı söylüyordu. Sözlükçe sekize
        çıkınca (kullanıcı kararı 2026-09-11, İngilizce kurs Almanca kursun
        sözleşmesine getirildi) her kelime kendi tekrar adımını da getirdi ve
-       İngilizce dersler 21-24 adıma yerleşti — birinci kapıya göre yasal,
+       İngilizce konuşmalar 21-24 adıma yerleşti — birinci kapıya göre yasal,
        ikincisine göre uyarı. Tek görüş: 8-24. Alt sınır olduğu gibi kaldı;
-       sekiz adımdan kısa bir anlatı zaten ders değil. */
+       sekiz adımdan kısa bir anlatı zaten konuşma değil. */
     if (steps.length < 8 || steps.length > 24) W(w, `lecture ${steps.length} adım (8–24)`);
     let scored = 0;
     let repeat = 0;
@@ -558,8 +558,8 @@ function checkConversations(list: Conversation[]) {
     need(`${w} chat`, r as unknown as Record<string, unknown>, ["scene", "partner", "opening", "openingTr", "minTurns"]);
     if (trLetters(r.opening)) E(w, "chat.opening içinde Türkçe harf");
     // Aralık check-conversations.ts ile AYNI olmalı: orada 6-9 zorunlu (HATA), burada
-    // 2-6 uyarılıyordu. Rol yapma 6-9 tura çıkınca (894ddb0) bu eşik güncellenmedi
-    // ve kataloğun 426 dersi, öteki doğrulayıcının dayattığı değer yüzünden burada
+    // 2-6 uyarılıyordu. Sohbet 6-9 tura çıkınca (894ddb0) bu eşik güncellenmedi
+    // ve kataloğun 426 konuşması, öteki doğrulayıcının dayattığı değer yüzünden burada
     // uyarı üretir oldu. İki doğrulayıcı aynı alan için farklı şey söyleyemez.
     if (r.minTurns < 6 || r.minTurns > 9) W(w, `minTurns ${r.minTurns} (6–9)`);
     if (r.script?.length) checkTurns(`${w} senaryo`, r.script, { minTurns: r.minTurns, opening: r.opening });
@@ -630,7 +630,7 @@ if (kinds.includes("conversations"))
     if (!usedInflectedExempt.has(id)) W("[conversations]", `çekimli sözlükçe muafiyeti artık gereksiz: ${id}`);
 
 const poolSizes = Object.entries(POOLS).map(([c, p]) => `${c} ${p.set.size}`).join(" · ");
-const counts = `${BUNDLED_EXERCISES.length} egzersiz · ${CONVERSATIONS.length} ders · havuz ${poolSizes}`;
+const counts = `${BUNDLED_EXERCISES.length} egzersiz · ${CONVERSATIONS.length} konuşma · havuz ${poolSizes}`;
 console.log(`\nİçerik doğrulama — ${kinds.join(", ")} · ${counts}\n`);
 if (errors.length) {
   console.log(`HATA (${errors.length})`);

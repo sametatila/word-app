@@ -2,7 +2,7 @@ import type { DialogueTurn } from "@/lib/dialogue";
 import type { CefrLevel } from "../skills/types";
 
 /**
- * Ders — konuşma tabanlı öğretim birimi.
+ * Konuşma — konuşma tabanlı öğretim birimi.
  *
  * İki fazdan oluşuyor ve sıra tasarımın kendisi:
  *
@@ -12,7 +12,7 @@ import type { CefrLevel } from "../skills/types";
  *      öğrenciden kendi cümlesini ÜRETMESİ isteniyor. Her adım konuşarak
  *      cevaplanıyor; yanlışta ipucu verilip yeniden deneniyor.
  *   2. **Konuşma (practice)** — anlatımda öğrenilenlerin kullanılmak zorunda
- *      olduğu serbest rol yapma. Model kalıpları biliyor ve konuşmayı onların
+ *      olduğu serbest sohbet. Model kalıpları biliyor ve konuşmayı onların
  *      kullanılacağı yöne sürüyor. Asıl öğrenme burada; anlatım buna hazırlık.
  *
  * Anlatımın yazılı senaryo olması bilinçli bir tercih: içerik elle yazılınca
@@ -28,7 +28,7 @@ import type { CefrLevel } from "../skills/types";
  * Anlatım cümleleri iki dili aynı anda taşıyor: "İlk kelimemiz: das Wasser."
  * Parçalara bölmek seslendirmenin temelidir — Türkçe parça Türkçe nöral sesle,
  * Almanca parça kursun Almanca sesiyle okunur. Tek parçada karıştırmak iki
- * dilden birinin telaffuzunu bozar ve bozulan telaffuz dersin öğrettiği şeyin
+ * dilden birinin telaffuzunu bozar ve bozulan telaffuz konuşmanın öğrettiği şeyin
  * kendisidir.
  */
 /**
@@ -36,7 +36,7 @@ import type { CefrLevel } from "../skills/types";
  *
  * `lang` ANLATIM mı HEDEF dil mi olduğunu ayırır: "tr" öğretmenin (anadil)
  * sesi, diğerleri öğrenilen dil. Bu yüzden okuyucular "=== de" diye değil
- * "!== tr" diye bakmalı — yoksa İngilizce dersler hedef dil sayılmaz ve ne
+ * "!== tr" diye bakmalı — yoksa İngilizce konuşmalar hedef dil sayılmaz ve ne
  * seslendirilir ne de vurgulanır.
  */
 export type Segment = {
@@ -71,14 +71,14 @@ export type Expectation =
    *
    * Puanlanmıyor: tekrar bir alıştırma değil, kelimeyi ağza alma denemesi.
    * Yanlışta eksik kelimeler söylenip yeniden deneniyor; üçüncü denemeden
-   * sonra ders takılmadan devam ediyor.
+   * sonra konuşma takılmadan devam ediyor.
    */
   | { kind: "repeat"; target: string }
   /**
    * Almanca üretim — Türkçe verilen cümleyi Almanca kurması bekleniyor.
    *
-   * Dersin puanlanan adımı bu (doğru/yanlış ile birlikte): kelimeyi tekrar
-   * etmekle cümleyi kurmak ayrı işler ve ders "geçildi" sayılırken ölçülen
+   * Konuşmanın puanlanan adımı bu (doğru/yanlış ile birlikte): kelimeyi tekrar
+   * etmekle cümleyi kurmak ayrı işler ve konuşma "geçildi" sayılırken ölçülen
    * şey kurabilmek. `accept` eşdeğer doğru cevaplar; `hint` ilk yanlıştan
    * sonra okunacak, hatanın tipik sebebini söyleyen ipucu.
    */
@@ -87,7 +87,7 @@ export type Expectation =
    * Doğru/yanlış — Almanca bir cümle hakkında Türkçe hüküm bekleniyor.
    *
    * Cevaptan sonra `why` okunuyor: hüküm tek başına öğretmiyor, gerekçe
-   * öğretiyor. Yanlış cevapta da aynı gerekçe okunuyor ve ders ilerliyor —
+   * öğretiyor. Yanlış cevapta da aynı gerekçe okunuyor ve konuşma ilerliyor —
    * doğru/yanlışta ikinci deneme anlamsız, cevap artık biliniyor.
    */
   | { kind: "truefalse"; statement: string; answer: boolean; why: Segment[] };
@@ -102,10 +102,10 @@ export type LectureStep = {
   expect?: Expectation;
 };
 
-/** Derste öğretilen kelime — anlatım bunları tek tek tekrar ettiriyor. */
+/** Konuşmada öğretilen kelime — anlatım bunları tek tek tekrar ettiriyor. */
 export type VocabItem = { de: string; tr: string };
 
-/** Derste öğretilen kalıp — konuşma fazının istemi bunlardan kuruluyor. */
+/** Konuşmada öğretilen kalıp — konuşma fazının istemi bunlardan kuruluyor. */
 export type PatternItem = {
   /** Kalıbın kendisi, Almanca: "Ich möchte …". */
   de: string;
@@ -125,7 +125,7 @@ export type ConversationChat = {
   /**
    * Konuşmanın AMACI: ne olunca tamamlanmış sayılır.
    *
-   * Bu alan olmadan rol yapma bir soru-cevap dizisiydi. Model sahneyi
+   * Bu alan olmadan sohbet bir soru-cevap dizisiydi. Model sahneyi
    * biliyordu ama nereye varacağını bilmiyordu; tur sayısı dolunca ortada
    * bir soru asılı kalıyor, muhatap birden veda ediyordu. Öğrenci de
    * konuşmanın bittiğini değil KESİLDİĞİNİ hissediyordu.
@@ -166,7 +166,7 @@ export type ConversationChat = {
    * Çevrimdışı senaryo (WP-04): sohbet sağlayıcısı yokken aynı sahnenin
    * niyet eşleştirmeli, dallanan hâli (`lib/dialogue.ts` motoru). İlk turun
    * `ask`i açılış repliğiyle aynı olmalı; en az `minTurns` tur içermeli ki
-   * sağlayıcısız ortamda da ders geçilebilsin. Yoksa oynatıcı "hedef
+   * sağlayıcısız ortamda da konuşma geçilebilsin. Yoksa oynatıcı "hedef
    * kalıpları kullan" görevine düşer (`lib/conversations/offline-chat.ts`).
    * İçerik ayrı dosyada durur (`content/scripts-*.ts`) ve `index.ts` bağlar.
    */
@@ -174,9 +174,9 @@ export type ConversationChat = {
 };
 
 /**
- * Yol haritasındaki düğüm simgesi — dersin konusunu tek bakışta söylüyor.
+ * Yol haritasındaki düğüm simgesi — konuşmanın konusunu tek bakışta söylüyor.
  *
- * Küme bilerek kapalı ve önden geniş: 500 derslik müfredatın bütün konu
+ * Küme bilerek kapalı ve önden geniş: 500 konuşmalık müfredatın bütün konu
  * aileleri için birer simge var (bkz. data/conversations-plan/SPEC.md). İçerik
  * üreten ajan bu listeden seçiyor ve ikon dosyalarına hiç dokunmuyor.
  */
@@ -253,11 +253,11 @@ export type ConversationIcon = (typeof CONVERSATION_ICONS)[number];
 export type Conversation = {
   id: string;
   level: CefrLevel;
-  /** Hedef dil/lehçe. Kapalı union'du; İngilizce ders temsil edilemiyordu. */
+  /** Hedef dil/lehçe. Kapalı union'du; İngilizce konuşma temsil edilemiyordu. */
   course: "de" | "gsw-zh" | "en";
   /** Yol haritasında düğümün simgesi. */
   icon: ConversationIcon;
-  /** Dersin konusu, Almanca — senaryonun adı: "Beim Arzt", "Im Café". */
+  /** Konuşmanın konusu, Almanca — senaryonun adı: "Beim Arzt", "Im Café". */
   title: string;
   /** Konunun Türkçesi — listede başlığın altında duruyor. */
   titleTr: string;
@@ -265,7 +265,7 @@ export type Conversation = {
   summary: string;
   minutes: number;
   /**
-   * Dersin odağının kimliği — tekrar kuyruğu bunu izliyor.
+   * Konuşmanın odağının kimliği — tekrar kuyruğu bunu izliyor.
    *
    * Konuşma düzeltmelerinin ürettiği etiketlerle (Akkusativ, V2-Regel,
    * Modalverb-sollen) aynı uzayda: ileride düzeltmeler doğrudan bu kuyruğu
@@ -285,7 +285,7 @@ export type Conversation = {
 };
 
 /**
- * Puanlanan adım sayısı — ders kaydının paydası.
+ * Puanlanan adım sayısı — konuşma kaydının paydası.
  *
  * Yalnızca üretim ve doğru/yanlış sayılıyor: tekrar adımları deneme alanı,
  * onay adımları akış. Ölçülen şey "söyleyebildi mi" değil "kurabildi mi".

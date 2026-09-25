@@ -1,5 +1,5 @@
 /**
- * Ders içeriği doğrulaması: `npm run check:conversations`
+ * Konuşma içeriği doğrulaması: `npm run check:conversations`
  *
  * Veritabanı gerektirmez; kataloğu okur ve içerik sözleşmesini denetler.
  * İçerik üreten ajanın her partiden sonra çalıştırması zorunlu (bkz.
@@ -32,7 +32,7 @@ function check(name: string, ok: boolean, extra = "") {
 /**
  * `anahtar` tabandaki kararlı kimlik. Oran, sayı gibi değişen ayrıntı içermemeli;
  * yoksa ilgisiz her içerik düzenlemesi "yeni uyarı" üretir. Aynı anahtar iki kez
- * çıkarsa (bir derste iki kopya) sıra numarası ekleniyor.
+ * çıkarsa (bir konuşmada iki kopya) sıra numarası ekleniyor.
  */
 function warn(name: string, ok: boolean, extra = "", anahtar = name) {
   if (ok) return;
@@ -46,7 +46,7 @@ const repeatsOf = (l: Conversation) =>
     .filter((s) => s.expect?.kind === "repeat")
     .map((s) => (s.expect as { target: string }).target.toLowerCase());
 
-console.log(`Katalog: ${CONVERSATIONS.length} ders\n`);
+console.log(`Katalog: ${CONVERSATIONS.length} konuşma\n`);
 
 // ── Katalog bütünlüğü ──
 check("kimlikler benzersiz", new Set(CONVERSATIONS.map((l) => l.id)).size === CONVERSATIONS.length);
@@ -55,7 +55,7 @@ check("kimlikler benzersiz", new Set(CONVERSATIONS.map((l) => l.id)).size === CO
 
   Kural eskiden yalnız iki kursu biliyordu ("gsw-zh ise zh, değilse de") ve
   İngilizce kurs eklenince `en-a1-hello` gibi DOĞRU kimlikleri hata sayıyordu —
-  dört ders yüzünden kapı kırmızı duruyordu. Aynı sınıf bu depoda başka
+  dört konuşma yüzünden kapı kırmızı duruyordu. Aynı sınıf bu depoda başka
   yerlerde de çıktı (`speechLocale`, sabit `lang="de"`): tek kurs varsayımı,
   kurs eklenince sessizce yanlışa dönüşüyor.
 */
@@ -68,7 +68,7 @@ check("kimlikler kurallı (kurs-seviye-slug)",
 check("kimlikle bulunuyor", findConversation(CONVERSATIONS[0].id)?.id === CONVERSATIONS[0].id);
 check("kurs süzgeci karıştırmıyor", conversationsFor("gsw-zh").every((l) => l.course === "gsw-zh"));
 
-// ── Ders başına sözleşme ──
+// ── Konuşma başına sözleşme ──
 for (const l of CONVERSATIONS) {
   const id = l.id;
   const bad = (msg: string, extra = "") => check(`${id}: ${msg}`, false, extra);
@@ -81,7 +81,7 @@ for (const l of CONVERSATIONS) {
   ok(l.focusId.trim().length > 0, "odak kimliği var");
   ok(l.minutes >= 6 && l.minutes <= 15, "süre 6-15 dk", `(${l.minutes})`);
   // Sözlükçe boyu seviyeye bağlı: bir patika havuzun kendi katmanını
-  // kapsayacak kadar kelime taşımak zorunda (ders × 8). B2 de sekize çıktı:
+  // kapsayacak kadar kelime taşımak zorunda (konuşma × 8). B2 de sekize çıktı:
   // 100 × 5 = 500 yuva ile B2 katmanının (2061 madde) ancak dörtte biri
   // öğretilebiliyordu. C1 hâlâ 5 — sırası gelmedi.
   ok(l.vocab.length === 8, "tam 8 kelime", `(${l.vocab.length})`);
@@ -101,7 +101,7 @@ for (const l of CONVERSATIONS) {
   );
   /*
     Segment ya ANADİL ya KURSUN HEDEF DİLİ. Kural eskiden yalnız "tr" ve "de"
-    kabul ediyordu; İngilizce dersler doğru biçimde `en` segmenti taşıyor ve
+    kabul ediyordu; İngilizce konuşmalar doğru biçimde `en` segmenti taşıyor ve
     kapı onları hata sayıyordu. Ölçüldü: `de` kursu {de, tr}, `en` kursu
     {en, tr} kullanıyor - başka dil yok.
   */
@@ -129,7 +129,7 @@ for (const l of CONVERSATIONS) {
     aynı uyarıyı veriyordu, yani uyarı ne temizlenebiliyordu ne de bir şey
     söylüyordu.
 
-    Ayrım ÖLÇÜLDÜ (2026-09-12): 11 derste 37 alıntı cümlesi vardı ve hepsi
+    Ayrım ÖLÇÜLDÜ (2026-09-12): 11 konuşmada 37 alıntı cümlesi vardı ve hepsi
     kendi parçasına alındı; aynı taramada 25 kısa alıntı terim çıktı ve
     onlar bilerek bırakıldı. Kesme işareti kısaltmada da kullanıldığı için
     (don't, I'd) açıklık yalnız tırnak sözcüğe bitişik DEĞİLSE alıntı
@@ -154,26 +154,26 @@ for (const l of CONVERSATIONS) {
     `(${leakage.slice(0, 2).map((s) => s.text.slice(0, 40)).join(" | ")})`);
 
   /*
-    AYNI DERSTE İKİ KEZ ÖĞRETİLEN KELİME. Ders kelimeyi bir adımda açıklıyor
+    AYNI KONUŞMADA İKİ KEZ ÖĞRETİLEN KELİME. Konuşma kelimeyi bir adımda açıklıyor
     ("floor … demek"), sonra ilerideki bir adımda sıfırdan tanıtıyor:
     "Bir kelime daha: floor · Türkçesi: kat. Lütfen tekrar et:". Öğrenci
-    aynı kelimeyi iki kez "yeni" diye alıyor ve dersin sekiz yuvasından biri
+    aynı kelimeyi iki kez "yeni" diye alıyor ve konuşmanın sekiz yuvasından biri
     boşa gidiyor — havuz A1'de zaten dar (aşağıdaki yineleme ölçümüne bak).
 
     Kaynağı ölçüldü: sözlükçeyi 5'ten 8'e çıkaran iş (2026-09-11) yeni
-    kelimeleri dersin SONUNA şablon adımıyla ekledi ve dersin gövdesinde
+    kelimeleri konuşmanın SONUNA şablon adımıyla ekledi ve konuşmanın gövdesinde
     hâlihazırda açıklanmış kelimeyi göremedi. 2026-09-12'de 36 vaka
     bulundu ve HEPSİ kapatıldı (havuzda boşta duran kelimelerle), o yüzden
     ölçüt uyarı değil HATA.
 
-    C1'de bir ders bilerek önce çifti tanıtıp sonra tek tek çalıştırıyor
-    (`de-c1-praezision`: "scheinbar ≠ anscheinend" kalıbı dersin konusu).
+    C1'de bir konuşma bilerek önce çifti tanıtıp sonra tek tek çalıştırıyor
+    (`de-c1-praezision`: "scheinbar ≠ anscheinend" kalıbı konuşmanın konusu).
     Ölçüt onu saymıyor çünkü o adımlar dört parçadan uzun — yani sınır
     tesadüf değil, önizleme-sonra-drill kalıbını dışarıda bırakıyor.
 
     Ölçüt DAR tutuldu: yalnız şablon adımı ("Bir kelime daha:" ile açılan,
     dört parçalık) ve yalnız kelimenin TEK BAŞINA geçtiği önceki bir adım
-    sayılıyor. Cümle içinde geçmek sayılmıyor — ders örnek cümleyi önce
+    sayılıyor. Cümle içinde geçmek sayılmıyor — konuşma örnek cümleyi önce
     duyurup sonra kelimeyi öğretebilir, o kusur değil.
   */
   const TEMPLATE_OPEN = /^(Bir kelime daha|Sıradaki|İlk kelimemiz|İkinci kelimemiz|Kelimemiz|Son kelimemiz)\b/;
@@ -188,7 +188,7 @@ for (const l of CONVERSATIONS) {
         st.say.some((x) => x.lang === "tr" && /demek/.test(x.text)),
     );
   });
-  ok(twiceTaught.length === 0, "kelime aynı derste iki kez öğretilmiyor",
+  ok(twiceTaught.length === 0, "kelime aynı konuşmada iki kez öğretilmiyor",
     `(${twiceTaught.map((s) => (s.expect as { target: string }).target).join(", ")})`);
 
   // Her kelime sesli tekrar ettiriliyor
@@ -210,7 +210,7 @@ for (const l of CONVERSATIONS) {
     // İpucu DOĞRU CÜMLENİN TAMAMINI söylemeli: "yanlış" demek öğretmez ve
     // yarım ipucu ikinci denemeyi tahmin oyununa çevirir. Eskiden bu gevşek bir
     // uyarıydı (son iki kelime ya da uzun bir metin yeterdi); kalite taraması
-    // 500 dersin 500'ünde tam cümlenin zaten verildiğini gösterdi, o yüzden
+    // 500 konuşmanın 500'ünde tam cümlenin zaten verildiğini gösterdi, o yüzden
     // artık sözleşme: gevşek eşik gerçek bir eksiği örtebilirdi.
     const norm = (x: string) => x.toLowerCase().replace(/[.,!?…]/g, "").replace(/\s+/g, " ").trim();
     ok(norm(e.hint.map((h) => h.text).join(" ")).includes(norm(e.target)),
@@ -223,7 +223,7 @@ for (const l of CONVERSATIONS) {
     /* Cümle, adımın söylediği metinde geçmeli — öğrenci neyi yargılayacağını
        duymalı. PARÇANIN DİLİ KURSTAN geliyor: ölçüt `lang === "de"` yazılıydı
        ve İngilizce kursun parçaları `en` etiketli, yani kural o kursun 200
-       dersinde HİÇ geçemiyordu — içerik kusuru değil, kapının kendisi iki kurs
+       konuşmasında HİÇ geçemiyordu — içerik kusuru değil, kapının kendisi iki kurs
        varken görünmeyen bir varsayım taşıyordu (`hasModuleExams` ve
        `targetLang` ile aynı sınıf). */
     const tag = courseOrDefault(l.course).targetLang;
@@ -243,8 +243,8 @@ for (const l of CONVERSATIONS) {
   ok(l.chat.goal.trim().length > 25, "konuşmanın amacı yazılmış", `(${l.chat.goal.length})`);
   ok(l.chat.goal.trim() !== l.chat.scene.trim(), "amaç sahnenin kopyası değil");
   ok(l.chat.minTurns >= 6 && l.chat.minTurns <= 9, "tur alt sınırı 6-9", `(${l.chat.minTurns})`);
-  // Senaryolu derste çevrimdışı yol da alt sınıra ulaşabilmeli; yoksa
-  // sağlayıcısız ortamda ders hiç geçilemez.
+  // Senaryolu konuşmada çevrimdışı yol da alt sınıra ulaşabilmeli; yoksa
+  // sağlayıcısız ortamda konuşma hiç geçilemez.
   ok(!l.chat.script || l.chat.script.length >= l.chat.minTurns,
     "senaryo tur sayısı alt sınırı karşılıyor",
     l.chat.script ? `(${l.chat.script.length} < ${l.chat.minTurns})` : "");
@@ -255,7 +255,7 @@ for (const l of CONVERSATIONS) {
 
   /*
     Tekrar/üretimden SONRAKİ adım övgüyle BAŞLAMAMALI. İki ayrı kusur, ikisi de
-    ölçüldü (2026-09-12, İngilizce kursta 121 adım / 85 ders):
+    ölçüldü (2026-09-12, İngilizce kursta 121 adım / 85 konuşma):
 
     1. ÜST ÜSTE BİNME. Doğru cevaptan sonra motor övgüyü sıradaki cümlenin
        başına ekliyor (`conversation-player.tsx` → `PRAISE_KEYS`, "Çok iyi!",
@@ -265,7 +265,7 @@ for (const l of CONVERSATIONS) {
     2. YANLIŞ CEVAPTAN SONRA ÖVGÜ — daha keskin olan. Motorun övgüsü yola
        bağlı: atlanan ya da üç denemede geçilemeyen adımda eklenmiyor. İçeriğe
        yazılan övgü ise HER YOLDA okunuyor; öğrenci üç kez yanılıp geçtiğinde
-       ders ona "Güzel." diyor.
+       konuşma ona "Güzel." diyor.
 
     Bu yüzden övgü içerikte değil motorda durur. (Doğru/yanlış ve kapanış
     adımlarından sonra motor övgü eklemiyor; oralarda içerik övgüsü serbest.)
@@ -298,7 +298,7 @@ warn("doğru/yanlış dengesi (hedef %25-60 doğru)",
   answers.length < 8 || (trueRatio >= 0.25 && trueRatio <= 0.6),
   `(doğru oranı ${(trueRatio * 100).toFixed(0)}%)`);
 
-// Aynı kelime iki derste "yeni" diye öğretilmemeli (seviye içinde).
+// Aynı kelime iki konuşmada "yeni" diye öğretilmemeli (seviye içinde).
 //
 // UYARI SAYISI BİR YAPILACAKLAR LİSTESİ DEĞİL — aritmetiği 2026-09-12'de
 // ölçüldü ve İngilizce kursun A1'inde tabanı HAVUZ belirliyor:
@@ -307,15 +307,15 @@ warn("doğru/yanlış dengesi (hedef %25-60 doğru)",
 //   en A2  yuva 800 · havuz 1108 → zorunlu yineleme yok (ölçülen 92)
 //   en B1/B2/C1  yineleme yok (havuz 1516/2225/1634)
 //
-// Yani A1'deki 128 uyarının 108'i kapatılamaz; kapatmaya çalışmak dersten
+// Yani A1'deki 128 uyarının 108'i kapatılamaz; kapatmaya çalışmak konuşmadan
 // temasına ait kelimeyi söküp havuzun artığını ("kral", "önlük") koymak
 // demek olurdu. A2'nin 92'si ise gerçekten açık: 484 kelime boşta duruyor.
-// Yinelemenin 71'i şablon adımıyla öğretiliyor (ucuz takas), kalanı dersin
-// gövdesine dokunmuş durumda (takas dersi bozar).
+// Yinelemenin 71'i şablon adımıyla öğretiliyor (ucuz takas), kalanı konuşmanın
+// gövdesine dokunmuş durumda (takas konuşmayı bozar).
 //
 // Anahtar SEVİYE + HEDEF DİL: kurs değil, çünkü aynı dili öğreten iki kurs
 // (de ve gsw-zh) aynı kelimeyi iki kez öğretmemeli. Ama AYRI dil öğreten iki
-// kurs çakışmaz: Almanca dersteki "wild" ile İngilizce dersteki "wild" aynı
+// kurs çakışmaz: Almanca konuşmadaki "wild" ile İngilizce konuşmadaki "wild" aynı
 // yazılıyor, farklı kelime ve hiçbir öğrenci ikisini birden görmüyor —
 // seviye tek başına anahtar olsaydı bu eş yazımlar uyarı üretirdi.
 const seen = new Map<string, string>();

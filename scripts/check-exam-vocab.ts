@@ -5,12 +5,12 @@
  * Neden ayrı bir denetim gerekti: kâğıtların elle yazılan yarısı (okuma
  * metni, dinleme diyaloğu, konuşma cümleleri, yazma örneği) A1 yeniden
  * kurulmadan ÖNCE yazıldı ve kümülatif kelime denetiminden hiç geçmedi.
- * Kelime bölümü derslerden türetildiği için kendini güncelliyor, bu yarı
+ * Kelime bölümü konuşmalardan türetildiği için kendini güncelliyor, bu yarı
  * güncellemiyor.
  *
  * Ölçüm mantığı beceri denetleyicisiyle ORTAK (`lib/vocab-gate.cjs`).
  *
- * Modül = 10 ders, ünite = 4 ders. Modül m'nin son dersi (m+1)*10, yani
+ * Modül = 10 konuşma, ünite = 4 konuşma. Modül m'nin son konuşmayı (m+1)*10, yani
  * kümülatif sınır ünite ceil((m+1)*10/4).
  */
 import { createRequire } from "node:module";
@@ -27,7 +27,7 @@ const sinirUnite = (m: number) => Math.ceil(((m + 1) * 10) / 4);
 
 // Seviye argümanla seçilir: `npm run check:examvocab -- b1`. Argümansız HEPSİ
 // ölçülür — kâğıtlar beş seviyede de elle yazılıyor ve hepsi aynı riski taşıyor
-// (ders katmanı yenilenince kâğıdın elle yazılan yarısı geride kalabiliyor).
+// (konuşma katmanı yenilenince kâğıdın elle yazılan yarısı geride kalabiliyor).
 const SEVIYELER = ["A1", "A2", "B1", "B2", "C1"];
 const istenen = (process.argv[2] || "").toUpperCase();
 const hedefSeviyeler = SEVIYELER.includes(istenen) ? [istenen] : SEVIYELER;

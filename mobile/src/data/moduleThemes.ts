@@ -2,16 +2,16 @@ import { courseOrDefault } from "../lib/courses";
 import { currentLang } from "../lib/i18n";
 
 /**
- * Patika modül temaları — her 10 dersin ortak başlığı ("Tanışma ve ben",
+ * Patika modül temaları — her 10 konuşmanın ortak başlığı ("Tanışma ve ben",
  * "Bürokrasi"…). Kursun MÜFREDATINI anlatır, arayüz metni değil: hangi on
- * dersin bir arada durduğunu söyler ve ders listesiyle birlikte değişir.
+ * konuşmanın bir arada durduğunu söyler ve konuşma listesiyle birlikte değişir.
  *
  * İki yerde birebir kopyalanmış duruyordu (immersionTrack ve immersionQuiz);
  * ünite başlığı ile o ünitenin quiz'i aynı listeden gelmek zorunda, kopya ikisinin
  * sessizce ayrışmasına açık kapı bırakıyordu. Tek kaynak burası.
  *
  * Kursa göre anahtarlı. Aynı hedef dili paylaşan kursa düşülür (gsw-zh → de),
- * başka dile asla — ders yükleyicisiyle aynı kural. Bir kursun listesi yoksa
+ * başka dile asla — konuşma yükleyicisiyle aynı kural. Bir kursun listesi yoksa
  * Patika ünitelere "A1 Ünite 3" gibi jenerik ad verir (bkz. immersionTrack).
  */
 const BY_COURSE: Record<string, Record<string, string[]>> = {
@@ -21,7 +21,7 @@ const BY_COURSE: Record<string, Record<string, string[]>> = {
     /* 11-18 web `lib/conversations/modules.ts` ile birebir. Web B1'i 2026-09-05'te on
        sekiz modüle genişletmişti (kapsanmayan 1059 B1 maddesi kümelendi, bkz.
        docs/plan/b1-yeniden-kurgu.md); mobil listede on tema kalmıştı. Oysa
-       `de-b1.json` 180 ders taşıyor, yani 18 modül: Patika'nın 11-18. üniteleri
+       `de-b1.json` 180 konuşma taşıyor, yani 18 modül: Patika'nın 11-18. üniteleri
        adını bulamayıp "B1 Ünite 11" gibi jenerik etikete düşüyordu. */
     B1: ["İş dünyası", "Ev ve kira dünyası", "Bağlaç ustalığı", "İlgi cümleleri", "Bürokrasi", "Eğitim ve gelişim", "Fikir ve tartışma", "Sağlık sistemi", "Çevre ve şehir yaşamı", "Duygular ve hayaller", "Mutfak ve sofra", "Alışveriş, para ve banka", "Yolculuk ve ulaşım", "Beden, bakım ve yaşlanma", "Evde teknik ve onarım", "Meslekler ve iş yaşamı", "Toplum, hukuk ve göç", "Kültür, spor ve doğa"],
     B2: ["Profesyonel iletişim", "Müzakere ve şikâyet", "Edilgenin bütün hâlleri", "Medya ve aktarılan söz", "Bilim ve teknoloji", "Toplum ve ekonomi", "Kültür ve sanat", "Para ve kariyer stratejisi", "İnsan ilişkileri ve psikoloji", "Resmî yazışma ve kapanış"],
@@ -31,10 +31,10 @@ const BY_COURSE: Record<string, Record<string, string[]>> = {
      Önce yalnız A1 ve A2 vardı ("A2 henüz yalnız ilk modül" notuyla) ve o gün
      doğruydu. Kurs 2026-09-21'de elli modüle çıkınca eksik kalan otuz ünite
      Patika'da adını bulamayıp "B1 Ünite 3" gibi jenerik etikete düşüyordu.
-     A1-B2 bugün Almanca kursla aynı temalara oturuyor (ders ders ölçüldü);
+     A1-B2 bugün Almanca kursla aynı temalara oturuyor (konuşma konuşma ölçüldü);
      C1 ayrışıyor, çünkü Almanca C1 dilin kendisini konu ediyor ("Kip
      parçacıkları"), İngilizce C1 ise alanları (hukuk, göç, tarım, iklim).
-     Liste GERÇEK içerik kadar uzun: olmayan modüle tema yazmak, dersler
+     Liste GERÇEK içerik kadar uzun: olmayan modüle tema yazmak, konuşmalar
      eklenirken sıranın kaymasıyla başlığın içeriğinden ayrılması demek. */
   en: {
     A1: ["Tanışma ve ben", "Aile ve insanlar", "Yeme-içme", "Günlük düzen", "Alışveriş", "Şehirde", "Ev ve yaşam", "Boş zaman", "Sağlık ve vücut", "İletişim ve geçmişe ilk adım"],

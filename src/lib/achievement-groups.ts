@@ -29,7 +29,7 @@ export type Group =
  * Sekme sırası.
  *
  * Kabaca "yakından uzağa": her gün dokunulan şeyler önde (seri, kelime,
- * oyunlar), ara ara açılanlar ortada (dilbilgisi, dersler, sınavlar,
+ * oyunlar), ara ara açılanlar ortada (dilbilgisi, konuşmalar, sınavlar,
  * beceriler), seyrek olanlar sonda (turlar, keşif).
  */
 export const GROUP_ORDER: Group[] = [

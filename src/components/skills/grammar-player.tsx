@@ -13,8 +13,8 @@ import { useT } from "@/lib/i18n/client";
  * Dil bilgisi egzersizi: önce kural anlatımı (Türkçe, hedef dilde örnekler),
  * sonra aynı soru motoruyla sınama.
  *
- * Patika'nın gramer adımından farkı: orada sorular ünitenin derslerinden
- * TÜRETİLİYOR ve anlatım yok (ders zaten anlattı). Burada egzersiz kendi
+ * Patika'nın gramer adımından farkı: orada sorular ünitenin konuşmalarından
+ * TÜRETİLİYOR ve anlatım yok (konuşma zaten anlattı). Burada egzersiz kendi
  * başına duruyor — öğrenci Beceriler'den doğrudan bu kurala geliyor, o yüzden
  * anlatım şart. Sorular `QuestionList` ile oynanır; yeni bir soru motoru yok.
  *

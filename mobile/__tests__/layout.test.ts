@@ -91,7 +91,7 @@ describe("yatay tablette içerik sütunu", () => {
  * TEK KOLON — menüde ve içerikte aynı kenarlar.
  *
  * Eskiden sekme kökleri ve ızgaralar "ekran eksi 96" kadar geniş bir kapta,
- * metin ekranları 720'lik sütundaydı; iPad'de menüden derse geçerken içerik
+ * metin ekranları 720'lik sütundaydı; iPad'de menüden konuşmaya geçerken içerik
  * kenarı zıplıyordu (2026-09-23). Artık tek bir ölçü var ve kenar payı sabit.
  */
 describe("tek içerik kolonu", () => {

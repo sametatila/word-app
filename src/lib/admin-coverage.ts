@@ -7,8 +7,8 @@ import { queryRunner, type QueryIssue } from "@/lib/admin-query";
  *
  * NEDEN AYRI DOSYA. `lib/admin.ts` panonun ilk kurulduğu günün ürününü
  * ölçüyordu: kelime turu, yürüyüş, oyunlar. Sonra ürünün ağırlığı başka yere
- * kaydı (dersler ve Patika, beceri egzersizleri, seviye/deneme sınavları,
- * yerleştirme, rol yapma, haftalık lig, misafir modu, üç dil çifti) ve panoda
+ * kaydı (konuşmalar ve Patika, beceri egzersizleri, seviye/deneme sınavları,
+ * yerleştirme, sohbet, haftalık lig, misafir modu, üç dil çifti) ve panoda
  * bunların hiçbiri görünmüyordu. Tablolar doluyordu, olaylar akıyordu, kimse
  * bakmıyordu. Buradaki her sorgu o boşluklardan birine karşılık geliyor.
  *

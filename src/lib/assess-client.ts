@@ -44,7 +44,7 @@ export type AssessResponse =
 export const ASSESS_TIMEOUT_MS = 20000;
 
 /**
- * Rol yapma sınavının puanlanmasında bekleme tavanı.
+ * Puanlı kısmın puanlanmasında bekleme tavanı.
  *
  * Konuşmanın TAMAMI gönderiliyor, tek bir cümle değil; model yanıtı buna
  * göre uzun sürüyor. Mobil bu çağrıda baştan beri otuz saniye bekliyordu

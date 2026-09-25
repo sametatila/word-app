@@ -5,7 +5,7 @@ import { AccessibilityInfo } from "react-native";
  * kaynağı. Web karşılığı `src/lib/fx.ts` `reducedMotion()` + `lib/use-still`.
  *
  * WEBDE VARDI, MOBİLDE HİÇ YOKTU. Web altı yerde tercihi onurlandırıyor
- * (konfeti, sayaç animasyonu, ders oynatıcısı, `globals.css` medya sorgusu);
+ * (konfeti, sayaç animasyonu, konuşma oynatıcısı, `globals.css` medya sorgusu);
  * mobilde `AccessibilityInfo` hiç çağrılmıyordu, yani Android'de "Animasyonları
  * kaldır" açık olan kullanıcı yüz on parçacıklı konfetiyi ve her dokunuşta
  * ölçek yayını olduğu gibi alıyordu. Bu, referans platformun geride kaldığı

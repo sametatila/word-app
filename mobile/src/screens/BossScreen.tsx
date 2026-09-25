@@ -20,7 +20,7 @@ import { useTheme, spacing, radii } from "../theme";
 /**
  * MODÜL PATRONU — web `components/boss-player` karşılığı.
  *
- * Modülün derslerindeki kelimelerden kurulan SÜRELİ tur: her doğru cevap süre
+ * Modülün konuşmalarındaki kelimelerden kurulan SÜRELİ tur: her doğru cevap süre
  * ekliyor, her yanlış süre siliyor, süre bitmeden hepsini bitiren modül tacını
  * alıyor. Uç (`/api/boss`) ve mantık (`lib/conversations/boss`) baştan beri vardı;
  * mobilde EKRAN yoktu, yani Android kullanıcısı modül tacını hiç alamıyordu
@@ -85,7 +85,7 @@ export function BossScreen() {
    * YÜKLEME AYRI BİR İŞLEV: hata dalından YENİDEN çağrılabilsin.
    *
    * Önce yalnız etkinin içindeydi ve hata ekranında tek düğme "Geri dön"dü.
-   * Modül sınavı kazanılmış bir yüzey (dersler bitmeden açılmıyor); geçici bir
+   * Modül sınavı kazanılmış bir yüzey (konuşmalar bitmeden açılmıyor); geçici bir
    * ağ kesintisinde kullanıcıyı listeye geri gönderip yeniden girmeye zorlamak
    * o girişi kaybettirir. Uygulamadaki her veri ekranı "Tekrar dene" sunuyor,
    * yalnız burası sunmuyordu — webde de sunmuyordu, yani iki taraf aynı kusuru
@@ -236,7 +236,7 @@ export function BossScreen() {
         actions={
           <FlowActions
             /* "Tekrar dene" YALNIZ gerçek yükleme hatasında: "henüz hazır değil"
-               dalında yeniden denemek aynı cevabı getirir (dersler bitmemiş);
+               dalında yeniden denemek aynı cevabı getirir (konuşmalar bitmemiş);
                orada tek çıkış çerçeveli "Geri dön". */
             primary={data ? null : ({ label: t("common.try_again"), onPress: () => void load() })}
             secondary={data ? { label: t("common.go_back"), onPress: exit } : null}

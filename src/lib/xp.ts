@@ -4,8 +4,8 @@
  * Neden tek dosya: XP kuralları üç ayrı yere dağılmıştı ve sonuç ölçüldüğünde
  * sistem öğrenmeyi çarpıtıyordu. Gerçek kullanımda kelime oyunları dakikada
  * ~100 XP veriyordu (3.959 cevap · 397 dakika · 39.541 XP); aynı sürede bir
- * okuma alıştırması ~9 XP, bir ders ise **sıfır** kazandırıyordu. Sekiz ders
- * ve sekiz rol yapma turu tamamlanmıştı ve hiçbiri sayılmamıştı.
+ * okuma alıştırması ~9 XP, bir konuşma ise **sıfır** kazandırıyordu. Sekiz konuşma
+ * ve sekiz sohbet turu tamamlanmıştı ve hiçbiri sayılmamıştı.
  *
  * Bunun sonucu bir teşvik hatası: sıralamada yükselmek isteyen öğrenci kelime
  * kartı çevirmek zorundaydı, çünkü okumak, dinlemek, yazmak, konuşmak ve
@@ -30,7 +30,7 @@ export const XP_PER_MINUTE = 100;
  * lig (dailyStats.xp'den sıralanıyor) SONSUZ şişirilebiliyordu. Tavan bir güne
  * sığabilecek XP'yi sınırlar. Bilerek YÜKSEK: ölçülen en uç gerçek gün ~40.000
  * XP (100 XP/dk × ~6,6 saat). 60.000, en çalışkan kullanıcıyı bile kırpmadan
- * (xp.ts felsefesi) uydurmayı "bir günde erişilemez" bölgede tutar. Beceri/ders
+ * (xp.ts felsefesi) uydurmayı "bir günde erişilemez" bölgede tutar. Beceri/konuşma
  * XP'si ayrı yollardan gelir; bu tavan yalnız kelime-oyunu yolunu bağlar.
  */
 export const ANSWERS_DAILY_XP_CAP = 60_000;
@@ -78,11 +78,11 @@ export function xpForSkill(minutes: number, correct: number, total: number): num
 }
 
 /**
- * Ders (dilbilgisi anlatımı + alıştırmalar + rol yapma).
+ * Konuşma (dilbilgisi anlatımı + alıştırmalar + sohbet).
  *
- * Rol yapma ayrı ağırlık taşıyor çünkü dersin asıl parçası o: kural bilmek
- * ile kuralı konuşurken kurabilmek aynı şey değil. Rol yapmayı atlayıp
- * yalnızca şıkları işaretleyen öğrenci dersi bitirmiş sayılmıyor, puanı da
+ * Sohbet ayrı ağırlık taşıyor çünkü konuşmanın asıl parçası o: kural bilmek
+ * ile kuralı konuşurken kurabilmek aynı şey değil. Sohbeti atlayıp
+ * yalnızca şıkları işaretleyen öğrenci konuşmayı bitirmiş sayılmıyor, puanı da
  * bunu yansıtıyor.
  */
 export function xpForConversation(

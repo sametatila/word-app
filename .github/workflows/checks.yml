@@ -168,7 +168,7 @@ jobs:
           npm run check:loading
           npm run check:title
       # Mobil paket kaynakla aynı içeriği taşıyor mu. DÖRT köprü ELLE
-      # çalıştırılıyor: kaynağa yeni bir ders/egzersiz/kâğıt eklenip döküm
+      # çalıştırılıyor: kaynağa yeni bir konuşma/egzersiz/kâğıt eklenip döküm
       # yenilenmezse mobil o içeriği sessizce taşımaz ve hata ancak ekranda
       # görünür (Patika'da açılamayan ünite, listede olmayan kâğıt).
       #
@@ -179,11 +179,11 @@ jobs:
       - name: Döküm bütünlüğü
         run: npm run check:dumps
       # Ana dil ekseninin on dört kapısı. On dördü de SESSİZ bozulmaya karşı:
-      # çözücü bir parçanın karşılığını bulamayınca dersi tümden reddediyor
+      # çözücü bir parçanın karşılığını bulamayınca konuşmayı tümden reddediyor
       # ve `localiseConversation` Türkçeye düşüyor — hiçbir yerde hata görünmüyor,
-      # İngilizce kurs yalnızca Türkçe olarak açılıyor. Bir ders düzenlemesi
+      # İngilizce kurs yalnızca Türkçe olarak açılıyor. Bir konuşma düzenlemesi
       # tek bir dizeyi kaydırdığında bu olabiliyor. `check:conversations-native`
-      # sözlüğü baştan kurup 580 dersin her Türkçe parçasını çözüyor;
+      # sözlüğü baştan kurup 580 konuşmanın her Türkçe parçasını çözüyor;
       # `check:conversations-swap` Almanca takas tablosunun kaynakla tuttuğunu ve
       # karara bağlanmamış bir iz kalmadığını ölçüyor; `check:skills-native`
       # aynı şeyi 995 beceri egzersizi için yapıyor (düz metin, görev metni ve
@@ -217,16 +217,16 @@ jobs:
       # metin demek (m-039'da kâğıttaki «Ayse» ile gerekçedeki "Ayşe"nin
       # ayrıştığı böyle görüldü).
       #
-      # `check:conversations-prose-de` ders düzyazısının Almancasını ölçüyor:
-      # 580 dersin Türkçe her parçası — partner, açılış, başlık, özet, sahne,
+      # `check:conversations-prose-de` konuşma düzyazısının Almancasını ölçüyor:
+      # 580 konuşmanın Türkçe her parçası — partner, açılış, başlık, özet, sahne,
       # hedef, gerekçe, örüntü, sözcük, ipucu ve anlatım — 11.011 dize.
       # Öbür ikisiyle aynı gerekçeyle hat 11011/11011'e ulaşana kadar
       # BİLEREK dışarıda tutuldu. Kendi kapısı üç şeyi birden savunuyor:
       # son noktalama (kayan bir satır burada yakalanıyor — bir paket
-      # 149 dize gelince hizalama bozuluyor ve sessizce yanlış derse
+      # 149 dize gelince hizalama bozuluyor ve sessizce yanlış konuşmaya
       # yazılıyordu), sayılar, ve karakter kümesi. Küme kuralı Türkçeye
       # özgü harfleri dışarıda tutuyor: kalan bir `ş` çevrilmemiş metin
-      # demek. Tek gevşetme, dersin İngilizce yüzünde SÖZCÜK olarak geçen
+      # demek. Tek gevşetme, konuşmanın İngilizce yüzünde SÖZCÜK olarak geçen
       # özel adlar — sesin söylediği ad yerinde kalmak zorunda.
       #
       # `check:skills-prose-de` aynı işi beceri egzersizlerinde yapıyor:
@@ -251,7 +251,7 @@ jobs:
       #
       # `check:native-de` bu dördünün ÇİFTİ ve tek başına duruyor: dördü
       # YAZILANI ölçüyor, o ise üretilen `native-de.json`ı açıp çözücüleri
-      # 200 ders, 189 egzersiz ve 60 kâğıt üzerinde çalıştırıyor. Aradaki
+      # 200 konuşma, 189 egzersiz ve 60 kâğıt üzerinde çalıştırıyor. Aradaki
       # boşluk bu depoda bir kez zaten açıldı (kâğıt hattında 6.627 dize
       # yazılmıştı, `apply.mjs` dizini okumuyordu, kapı bunu göremiyordu).
       # Üçüncü bir ölçütü daha var: çözülen içerikte Türkçe kalıp kalmadığı.
@@ -260,10 +260,10 @@ jobs:
       # Alman okurun ekranına çıkar. Tarama alan adına hiç bakmıyor,
       # 102.083 dize geziyor.
       #
-      # `check:conversations` ders SÖZLEŞMESİNİ ölçüyor: sekiz kelime, her kelimenin
+      # `check:conversations` konuşma SÖZLEŞMESİNİ ölçüyor: sekiz kelime, her kelimenin
       # sesli tekrarı, üretim ipucunun tam cümleyi vermesi, 14-24 adım,
-      # açılışın soruyla bitmesi. Almanca kursun 580 dersi baştan beri
-      # geçiyordu; İngilizce kursun 200 dersi 1.017 hata veriyordu ve kapı bu
+      # açılışın soruyla bitmesi. Almanca kursun 580 konuşması baştan beri
+      # geçiyordu; İngilizce kursun 200 konuşması 1.017 hata veriyordu ve kapı bu
       # yüzden CI dışındaydı — okunmayan kırmızı bir kapı, olmayan kapıdır.
       # Kullanıcı kararıyla (2026-09-11) İngilizce kurs aynı sözleşmeye
       # getirildi: 600 kelime, 496 ipucu, 143 tekrar adımı ve 16 açılış.
@@ -293,7 +293,7 @@ jobs:
           npm run check:conversations
       # HATTIN KENDİ KAPILARI — dokuzu da yazılmış, hiçbiri çağrılmıyordu.
       # Yukarıdaki blok TÜRETİLMİŞ tarafı ölçüyor (`-de`, `-native`, `-prose`);
-      # bunlar KAYNAK tarafı: ders sözlükçesi, kalıplar, üstveri, rol yapma,
+      # bunlar KAYNAK tarafı: konuşma sözlükçesi, kalıplar, üstveri, sohbet,
       # anlatım, kelime turu, betik, sınav ve beceri düzyazısı. Türetilmiş
       # tarafın kapısı yeşilken kaynağın bozulması mümkün ve tam da sessiz
       # bozulma sınıfı — çözücü kaynağı bulamayınca Türkçeye düşüyor.
@@ -303,7 +303,7 @@ jobs:
       # ve `data/content/baseline.json` bugün TAMAMEN SIFIR. Bütçe mekanizması
       # tam da CI için yazılmıştı (`--baseline` ile bilinçli kabul) ama kapı
       # hiç çağrılmadı; yani bütçe aşılsa kimse görmeyecekti.
-      - name: Ders ve içerik kaynağı
+      - name: Konuşma ve içerik kaynağı
         run: |
           npm run check:conversations-vocab
           npm run check:conversations-patterns
@@ -348,7 +348,7 @@ jobs:
           npm run check:en-unitvocab
       # PATİKA BÜTÇESİ — aynı desen ama İKİ YÖNLÜ. Burada iki ölçü var ve
       # zıt yönlerde iyi oluyorlar: `bosluk` bir BORÇ (kurs metninde geçip
-      # hiçbir derste öğretilmeyen sözcük sayısı) ve büyüyemez; `kapsam` bir
+      # hiçbir konuşmada öğretilmeyen sözcük sayısı) ve büyüyemez; `kapsam` bir
       # KAZANÇ (patikanın havuzu öğretme oranı) ve DÜŞEMEZ. Kazancı tavanla
       # korumak saçma olurdu — "kapsamı artırma" diyen bir kapı. İkisi aynı
       # taban dosyasında duruyor ki bir seviyenin borcu ile kazancı yan yana
@@ -411,7 +411,7 @@ jobs:
         run: npm run test:gloss
       # Yaş derecelendirmesi beyanı ↔ içerik. App Store anketine verilen her cevap
       # bir BEYAN ve beyan verildiği an içerik üretiminin sınırı oluyor. Kapı
-      # olmadan bu sınır yalnız bir belgede yazılı kalır ve ders yazan kişi o
+      # olmadan bu sınır yalnız bir belgede yazılı kalır ve konuşma yazan kişi o
       # belgeyi okumaz: "cinsel içerik yok" diyen uygulamaya öyle bir metin
       # eklendiğinde beyan sessizce yalan olur. Kurulurken üç yanlış eşleşme
       # yakaladı ve düzeltti (`weinen`≠Wein, `Wetter`≠Wette, `intimidating`≠intim),

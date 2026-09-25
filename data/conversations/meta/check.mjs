@@ -1,12 +1,12 @@
 /**
- * Ders başlık ve özetlerinin İngilizcesini denetler:
+ * Konuşma başlık ve özetlerinin İngilizcesini denetler:
  *   `node data/conversations/meta/check.mjs [paket|all]`
  *
  * Kurallar kardeş hatlarla aynı aileden; iki tanesi bu alana özgü:
  *
- * - Özet bir CÜMLEDİR (ders neyi öğretiyor), başlık ise bir AD. Başlığın
+ * - Özet bir CÜMLEDİR (konuşma neyi öğretiyor), başlık ise bir AD. Başlığın
  *   nokta ile bitmesi ya da özetin bitmemesi ikisinin karıştığını gösterir.
- * - Başlık, Almanca `title` alanının çevirisi DEĞİL: Almanca başlık dersin
+ * - Başlık, Almanca `title` alanının çevirisi DEĞİL: Almanca başlık konuşmanın
  *   kendi cümlesidir ("Hallo!"), Türkçe başlık ise konunun adı ("Tanışma").
  *   İngilizcesi de konunun adı olmalı, o yüzden Almancanın aynısı uyarı.
  */
@@ -30,7 +30,7 @@ if (existsSync(`${DIR}out`))
     for (const r of JSON.parse(readFileSync(`${DIR}out/${f}`, "utf8"))) {
       const H = (m) => errors.push(`  [${packet}] ${r.conversation} — ${m}`);
       const U = (m) => warnings.push(`  [${packet}] ${r.conversation} — ${m}`);
-      if (written.has(r.conversation)) H("aynı ders iki pakette");
+      if (written.has(r.conversation)) H("aynı konuşma iki pakette");
       const t = String(r.titleEn ?? "").trim();
       const s = String(r.summaryEn ?? "").trim();
       if (!t) H("başlık boş");
@@ -44,7 +44,7 @@ if (existsSync(`${DIR}out`))
         U(`başlık uzun (${t.length}, Türkçesi ${turkish.get(r.conversation)?.length})`);
       else if (/[.]$/.test(t)) U("başlık nokta ile bitiyor — özetle karışmış olabilir");
       else if (german.get(r.conversation) && t.toLowerCase() === german.get(r.conversation).toLowerCase())
-        U("başlık Almancanın aynısı — konu adı değil ders cümlesi yazılmış olabilir");
+        U("başlık Almancanın aynısı — konu adı değil konuşma cümlesi yazılmış olabilir");
       if (!s) H("özet boş");
       else if (!/[.!?]$/.test(s)) H("özet noktalama ile bitmiyor");
       else if (s.length < 20) H(`özet çok kısa (${s.length})`);
@@ -57,8 +57,8 @@ for (const conversation of written.keys())
   if (!german.has(conversation)) errors.push(`  [pakete ait değil] ${conversation}`);
 
 /*
-  Aynı İngilizce başlığın iki derse düşmesi tek başına kusur DEĞİL: kaynakta
-  7 Türkçe başlık 14 derste tekrar ediyor ("Kuaförde" hem A2'de hem B1'de,
+  Aynı İngilizce başlığın iki konuşmaya düşmesi tek başına kusur DEĞİL: kaynakta
+  7 Türkçe başlık 14 konuşmada tekrar ediyor ("Kuaförde" hem A2'de hem B1'de,
   "Havalimanında", "Emeklilik"…). Orada tekrar bilgidir — aynı konu daha
   ileri seviyede yeniden ele alınıyor ve İngilizcesinin de tekrar etmesi
   gerekir.
@@ -86,7 +86,7 @@ if (ARG === "all") {
   const rows = extractMeta();
   const missing = rows.filter((r) => !written.has(r.conversation)).length;
   coverage = { rows: rows.length, missing };
-  if (missing) errors.push(`  [kapsam] ${missing} dersin İngilizce başlık/özeti yok`);
+  if (missing) errors.push(`  [kapsam] ${missing} konuşmanın İngilizce başlık/özeti yok`);
 }
 
 if (errors.length) {
@@ -99,7 +99,7 @@ if (warnings.length) {
   console.log(warnings.slice(0, 20).join("\n"));
 }
 console.log(
-  `\nözet: ${written.size} ders · ${errors.length} hata · ${warnings.length} uyarı` +
+  `\nözet: ${written.size} konuşma · ${errors.length} hata · ${warnings.length} uyarı` +
     (coverage ? `\nkapsam: ${coverage.rows - coverage.missing}/${coverage.rows}` : ""),
 );
 process.exit(errors.length ? 1 : 0);

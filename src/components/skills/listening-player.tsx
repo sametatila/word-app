@@ -92,7 +92,7 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
       Uygulamanın DİĞER sesi de susturuluyor.
 
       Bu oyuncu kendi `Audio` nesnesini kuruyor ve yalnızca kendi sesini
-      durduruyordu. Oysa ders anlatımı ve kelime turu paylaşılan iki ses
+      durduruyordu. Oysa konuşma anlatımı ve kelime turu paylaşılan iki ses
       öğesini kullanıyor; oradan yarım kalmış bir okuma varsa bu oyuncunun
       sesi onun ÜSTÜNE biniyor ve iki ses aynı anda duyuluyor. Kullanıcının
       "yankılı" dediği şey bu.

@@ -8,8 +8,8 @@ import type { SVGProps } from "react";
  * KONU AİLESİ İKONLARI ÇAĞIRANSIZ — ve bu bilinçli.
  *
  * Setin 48 simgesi (`BreadIcon`, `BusIcon`, `CoffeeIcon`, `WeatherIcon`, …)
- * 500 derslik müfredatla birlikte geldi (66cb70b0) ve o zaman
- * `conversations/conversation-hub` içindeki konu → ikon haritasından çiziliyordu. Ders
+ * 500 konuşmalık müfredatla birlikte geldi (66cb70b0) ve o zaman
+ * `conversations/conversation-hub` içindeki konu → ikon haritasından çiziliyordu. Konuşma
  * merkezi Patika'ya (Immersion) devredilince o dosya silindi; konu ADLARI
  * yaşamaya devam ediyor (`lib/cando-map`, mobil `game/candoMap`) ama konu
  * ikonlarını çizen bir yüzey KALMADI. Mobilde karşılığı hiç olmadı: oradaki
@@ -454,7 +454,7 @@ export const ArrowLeftIcon = (p: IconProps) => (
 );
 
 /** Yenile */
-/** Kilit — yol haritasında sırası gelmemiş ders. */
+/** Kilit — yol haritasında sırası gelmemiş konuşma. */
 export const LockIcon = (p: IconProps) => (
   <Svg {...p}>
     <rect x="5.5" y="10.5" width="13" height="9" rx="2" />

@@ -2,10 +2,10 @@ import { LoadingRegion } from "@/components/loading-region";
 import { SkeletonLine } from "@/components/skeleton";
 
 /**
- * Ders gelene kadar iskelet — oynatıcının kapağı: karakter yuvarlağı,
+ * Konuşma gelene kadar iskelet — oynatıcının kapağı: karakter yuvarlağı,
  * başlık ve iki satır giriş metni.
  *
- * Ders gövdesi sunucuda kuruluyor; iskelet yokken listeden derse dokunan
+ * Konuşma gövdesi sunucuda kuruluyor; iskelet yokken listeden konuşmaya dokunan
  * kişi boş bir ekran görüyordu.
  */
 export default function Loading() {

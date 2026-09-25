@@ -31,14 +31,14 @@ import {
  *
  *   - Hazır denen çiftte eksik varsa → CI KIRILIR. Yarım bir parite,
  *     çalışıyormuş gibi görünen bir hatadır: kullanıcı alıştırmayı kendi
- *     dilinde, dersi Türkçe görür ve bunu bize bildirmez, sadece bırakır.
+ *     dilinde, konuşmayı Türkçe görür ve bunu bize bildirmez, sadece bırakır.
  *   - Hazır DENMEYEN bir çiftin verisi tamamlandıysa → uyarır. Yoksa
  *     tamamlanmış bir parite aylarca kapalı kalır; kimse bakmaz.
  *
  * Ölçü kelime katmanı: karşılık ve örnek cümle çevirisi. Üç anadilin üçü de
  * artık gerçekten ÖLÇÜLÜYOR: Almanca sütunları (`de_gloss`, `beispiel_de`)
  * 0046 ile geldi ve o güne kadar bu betik Almanca anadilli her çifti koşulsuz
- * "0%" sayıyordu — yani ölçüm değil, bir yer tutucuydu. Beceri ve ders
+ * "0%" sayıyordu — yani ölçüm değil, bir yer tutucuydu. Beceri ve konuşma
  * metinleri ayrı fazlar (bkz. `docs/plan/native-language.md`) ve henüz
  * ölçülebilir bir alan taşımıyorlar — o katmanlar geldiğinde buraya eklenecek.
  *
@@ -98,7 +98,7 @@ async function wordLayer(native: NativeLang, course: CourseId): Promise<Layer[]>
 }
 
 /**
- * İÇERİK KATMANLARI — ders, beceri egzersizi, deneme kâğıdı.
+ * İÇERİK KATMANLARI — konuşma, beceri egzersizi, deneme kâğıdı.
  *
  * ARTIK GERÇEKTEN ÖLÇÜLÜYOR. Eskiden bu yer tutucuydu: `skill_exercises`
  * satırları sayılıyor, Türkçe için "tamam", öteki iki anadil için koşulsuz
@@ -109,8 +109,8 @@ async function wordLayer(native: NativeLang, course: CourseId): Promise<Layer[]>
  * hiç "!" işareti almazdı: kapı tam da onu bildirmek için var.
  *
  * ÖLÇÜT ÇÖZÜCÜNÜN KENDİSİ, alan sayısı değil. Hep-ya-hiç kuralı yüzünden
- * tek bir eksik dize içeriği TÜMDEN Türkçeye düşürüyor; yarım bir ders
- * "yarı hazır" değil, hazır DEĞİL. O yüzden sayılan şey "kaç ders
+ * tek bir eksik dize içeriği TÜMDEN Türkçeye düşürüyor; yarım bir konuşma
+ * "yarı hazır" değil, hazır DEĞİL. O yüzden sayılan şey "kaç konuşma
  * çözülüyor".
  *
  * Sözlük yoksa katman ÖLÇÜLEMEZ sayılıyor (total 0), sıfır değil: üretilen
@@ -142,7 +142,7 @@ function contentLayers(native: NativeLang, course: CourseId): Layer[] {
     (p) => of(p) === course,
   );
   const sizes: [string, number][] = [
-    ["ders metni", conversations.length],
+    ["konuşma metni", conversations.length],
     ["beceri metni", exercises.length],
     ["kâğıt metni", papers.length],
   ];
@@ -157,7 +157,7 @@ function contentLayers(native: NativeLang, course: CourseId): Layer[] {
   const dict = (en ?? (de as unknown as NativeDict)) as NativeDict;
   return [
     {
-      name: "ders metni",
+      name: "konuşma metni",
       have: conversations.filter((l) => (de ? resolveEnConversation(de, l) : resolveConversation(dict, l))).length,
       total: conversations.length,
     },

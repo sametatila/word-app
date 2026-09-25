@@ -10,11 +10,11 @@ import { dialogueDone, targetsUsed } from "@/lib/dialogue";
 import { DEFAULT_NATIVE, type NativeLang } from "@/lib/courses";
 
 /**
- * Rol yapma — dersin son ve asıl parçası.
+ * Sohbet — konuşmanın son ve asıl parçası.
  *
  * Serbest sohbetin yerine geçiyor. Aradaki fark tek bir kelimede toplanabilir:
  * **amaç**. Sohbette model her şeye cevap veriyordu ve konuşmanın nereye
- * gideceği belirsizdi; burada model dersin kalıplarını biliyor ve konuşmayı
+ * gideceği belirsizdi; burada model konuşmanın kalıplarını biliyor ve konuşmayı
  * onların kullanılacağı yere doğru sürüyor.
  *
  * Bunun pratik sonucu şu: öğrenci "ne diyeceğim?" sorusuyla baş başa
@@ -29,7 +29,7 @@ import { DEFAULT_NATIVE, type NativeLang } from "@/lib/courses";
 export type ChatTurn = ChatMessage;
 
 /**
- * Mod (WP-22): `practice` dersin rol yapması — düzeltme, öneri, Türkçe yardım.
+ * Mod (WP-22): `practice` dersin sohbeti — düzeltme, öneri, Türkçe yardım.
  * `exam` sınav — muhatap doğal, yardım yok, düzeltme yok, öneri yok; beş
  * turda kapanır ve sonra bütün konuşma rubrikle puanlanır.
  */
@@ -38,7 +38,7 @@ export type ChatMode = "practice" | "scored";
 /**
  * Konuşmanın hangi yayında olduğu.
  *
- * Rol yapma uzun süre iki hâlliydi: "devam" ve "kapanış". Sonucu ekranda
+ * Sohbet uzun süre iki hâlliydi: "devam" ve "kapanış". Sonucu ekranda
  * görünüyordu — muhatap tur sayısı dolana kadar soru soruyor, sonra birden
  * veda ediyordu. Ortada bir yay yoktu, yani konuşma bitmiyor KESİLİYORDU.
  *
@@ -52,12 +52,12 @@ export type ChatPhase = "open" | "develop" | "wrapup" | "closing";
 export { SCORED_TURNS, SCORED_SECONDS } from "./chat-const";
 
 /**
- * Dersin rol yapma istemi.
+ * Konuşmanın sohbet istemi.
  *
- * Dersin öğrettiği kalıplar ve kelimeler olduğu gibi veriliyor: model
+ * Konuşmanın öğrettiği kalıplar ve kelimeler olduğu gibi veriliyor: model
  * öğrenciye ne öğretildiğini bilmeli ki konuşmayı onların kullanılacağı yöne
  * sürebilsin ve düzeltmeyi o çerçevede yapabilsin. Genel bir dilbilgisi
- * düzeltmesi yerine "bu dersin kalıbına göre" düzeltme almak, dersin
+ * düzeltmesi yerine "bu konuşmanın kalıbına göre" düzeltme almak, konuşmanın
  * bütünlüğünü koruyan şey.
  */
 /**
@@ -95,7 +95,7 @@ function targetLang(course: string | undefined): { name: string; dialect: string
  * `targetLang`ın ikizi, öteki eksende. İstem baştan sona "Türkçe" yazıyordu ve
  * bu üç yerde ekrana çıkıyordu: tıkanınca verilen açıklama, düzeltmedeki kural
  * etiketi ve güvenlik notu. Anadili İngilizce ya da Almanca olan öğrenci
- * tıkandığında TÜRKÇE yardım alıyordu — dersin en çok konuşulan yerinde.
+ * tıkandığında TÜRKÇE yardım alıyordu — konuşmanın en çok konuşulan yerinde.
  *
  * Harf uyarısı ana dile de gerekiyor: model öğrencinin dilinde bir not
  * yazarken o dilin harflerini doğru yazmalı.
@@ -120,7 +120,7 @@ export function chatPrompt(
     /** Öğrencinin ana dili — yardım ve düzeltme etiketi bu dilde. */
     native?: NativeLang;
     /**
-     * Dersin kendi seviyesindeki sırası — rol yapma karakteri buradan türüyor.
+     * Konuşmanın kendi seviyesindeki sırası — sohbet karakteri buradan türüyor.
      *
      * DIŞARIDAN GELİYOR, çünkü katalog artık yayın hattından okunuyor ve o
      * okuma async. İstem kurma işlevinin kendisi saf ve senkron kalmalı:
@@ -138,7 +138,7 @@ export function chatPrompt(
 
   // Karakterin adı isteme giriyor: adı olmayan bir muhatap her turda yeniden
   // yabancı oluyor ve model de kendine "ich" dışında bir kimlik kuramıyordu.
-  // Ad dersin katalogdaki yerinden türüyor (bkz. characters.ts) — aynı modülde
+  // Ad konuşmanın katalogdaki yerinden türüyor (bkz. characters.ts) — aynı modülde
   // aynı kişi dönüyor, öğrenci onu tanıyor.
   const who = characterFor(conversation, opts?.conversationIndex ?? 0);
 
@@ -394,7 +394,7 @@ KAPANIŞ TURU — sınav bitti
 }
 
 /**
- * Rol yapma cevabını akıtır; birincil sağlayıcı düşerse yedeğe geçer.
+ * Sohbet cevabını akıtır; birincil sağlayıcı düşerse yedeğe geçer.
  *
  * Yedeğe yalnızca tek bir parça bile gönderilmeden önce geçiliyor: akış
  * başladıktan sonra sağlayıcı değiştirmek yarım cümlenin üstüne başka bir
@@ -411,9 +411,9 @@ export async function* streamChat(
   /** Öğrencinin ana dili — yardım ve düzeltme etiketi bu dilde. */
   native: NativeLang = DEFAULT_NATIVE,
 ): AsyncGenerator<string> {
-  // Sahnenin nerede olduğunu tur sayısı söylüyor: ders bir sohbet uygulaması
+  // Sahnenin nerede olduğunu tur sayısı söylüyor: konuşma bir sohbet uygulaması
   // değil ve "yeterince konuşuldu"nun kararını öğrenciye bırakmak konuşmayı
-  // 25 tura sürüklüyordu. Kapanış cevabından sonra istemci dersi bitiriyor.
+  // 25 tura sürüklüyordu. Kapanış cevabından sonra istemci konuşmayı bitiriyor.
   const userTurns = messages.filter((m) => m.role === "user").length;
   const limit = mode === "scored" ? SCORED_TURNS : conversation.chat.minTurns;
   const phase: ChatPhase =
@@ -425,7 +425,7 @@ export async function* streamChat(
 /**
  * Beceri diyaloğu istemi (WP-23): tema + hedef kalıplar, senaryodaki açılış
  * sorusuyla aynı sahne. Alıştırma istemine göre daha kısa: düzeltme yok
- * (diyalog anlama/akış çalışması; düzeltme dersin işi), ANA DİLDE yardım
+ * (diyalog anlama/akış çalışması; düzeltme konuşmanın işi), ANA DİLDE yardım
  * yalnız tıkanınca. Her tur en fazla iki cümle + soru; kapanışta veda.
  */
 export function dialoguePrompt(

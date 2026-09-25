@@ -35,7 +35,7 @@ type Props = ScrollViewProps & {
 };
 
 /* Ref DIŞARI DA VERİLİYOR: bazı ekranlar `scrollToEnd` çağırıyor (sınav
-   cevabı, rol yapma konuşması). `ScrollView`un yerine geçen bir bileşen onun
+   cevabı, sohbet konuşması). `ScrollView`un yerine geçen bir bileşen onun
    sözleşmesini daraltmamalı. */
 export const KeyboardAwareScroll = forwardRef<ScrollViewInstance, Props>(function KeyboardAware({
   children,

@@ -1,9 +1,9 @@
 /**
  * Modül sınavı doğrulayıcısı.
  *
- * Sınav kâğıdı iki kaynaktan kuruluyor (dersten türetilen maddeler + elle
- * yazılan plan) ve ikisi de sessizce bozulabiliyor: bir modüle ders eklenince
- * plan eksik kalır, bir ders `focusId` değiştirince dilbilgisi bölümü boşalır,
+ * Sınav kâğıdı iki kaynaktan kuruluyor (konuşmadan türetilen maddeler + elle
+ * yazılan plan) ve ikisi de sessizce bozulabiliyor: bir modüle konuşma eklenince
+ * plan eksik kalır, bir konuşma `focusId` değiştirince dilbilgisi bölümü boşalır,
  * elle yazılan bir soruda doğru şık dizini kayar. Hiçbiri tip hatası vermez —
  * kullanıcı sınava girene kadar da görünmez.
  *

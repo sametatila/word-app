@@ -127,7 +127,7 @@ type Result = { id: number; total: number; passed: boolean; trial: boolean; sect
  *
  * ŞU AN MOBİLDE ULAŞILAMIYOR (2026-09-07). Tek kapısı Deneme Sınavları'na
  * dönüşen sınav hazırlık ekranıydı; oradaki seviye ve modül kâğıtları
- * kaldırıldı, çünkü ikisi de `lib/exam.ts`in ders içeriğinden ürettiği,
+ * kaldırıldı, çünkü ikisi de `lib/exam.ts`in konuşma içeriğinden ürettiği,
  * yani Patika türevi sınavlardı. Ekran ve sunucu tarafı duruyor: elle
  * yazılan deneme sınavının biçimi belli olunca ya buraya bağlanacak ya da
  * Patika'nın kendi içine bir kapı açılacak — karar verilmedi.
@@ -595,7 +595,7 @@ export function ExamScreen() {
           quiet={!passed}
         />
         {/* 56 — web sinav sonucunda ayni boyu kullaniyor (`exam-player`)
-            ve mobilin KENDI rol yapma sonucu da 56. */}
+            ve mobilin KENDI sohbet sonucu da 56. */}
         {result ? <CoachLine moment={result?.passed ? "exam_pass" : "exam_fail"} vars={{ pct, level }} /> : null}
         {result && strongest ? (
           <StatRow items={[

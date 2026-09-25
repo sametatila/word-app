@@ -98,7 +98,7 @@ const CONTAINS_MIN = 3; // fazla kelime bağışlanır ama yalnız ≥3 harfli h
  *
  * Boşluk sınırı kalktığı için kısa bir hedef başka bir kelimenin İÇİNDE
  * tesadüfen geçiyor ve yanlış cevap doğru sayılıyor: hedef "was", söylenen
- * "das Wasser" → sıkıştırılmış biçim hedefi içeriyor. Ders havuzundaki 5164
+ * "das Wasser" → sıkıştırılmış biçim hedefi içeriyor. Konuşma havuzundaki 5164
  * başlık ölçüldü - 3 harf eşiğinde 1310 hedef başka bir başlığın içinde
  * geçiyor, 12 harfte 22 (onlar da "der Chef" ⊂ "die Chefin" gibi türevler).
  *

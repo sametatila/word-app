@@ -34,7 +34,7 @@ export function escapeXml(text: string): string {
  * `mstts:silence` ile kısılmak istendi; Edge'in ücretsiz ucu mstts etiketi
  * gören SSML'i sentezlemeden bağlantıyı kapatıyor — hem `-exact` hem düz
  * türler denendi, ikisi de 503'e düştü. Uç yalnızca voice+prosody alt
- * kümesini kabul ediyor. Bu yüzden sessizlik yönetimi istemcide: ders akışı
+ * kümesini kabul ediyor. Bu yüzden sessizlik yönetimi istemcide: konuşma akışı
  * sesi WebAudio ile çözüp kenar sessizliklerini kırpıyor ve uzun duraklamaları
  * sıkıştırıyor (bkz. components/speak-button, speakSegments).
  */

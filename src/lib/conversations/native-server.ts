@@ -19,7 +19,7 @@ import { packObject } from "@/lib/content/serve";
 /**
  * Anlatım sözlüğünü SUNUCUDA, yalnız gerektiğinde yükler.
  *
- * Sözlük 1,7 MB — 8.824 anlatım dizesi, 4.640 kelime karşılığı, 580 ders
+ * Sözlük 1,7 MB — 8.824 anlatım dizesi, 4.640 kelime karşılığı, 580 konuşma
  * başlığı. Arayüz sözlükleriyle (`src/lib/i18n/dict.ts`) aynı yere konsaydı
  * her isteğe, her kullanıcıya, her dil için binerdi. Oysa Türkçe kullanan
  * biri onu HİÇ kullanmıyor: içerik zaten Türkçe.
@@ -29,8 +29,8 @@ import { packObject } from "@/lib/content/serve";
  * kurulumda dosya hiç açılmıyor.
  *
  * ÜRETİLEN DOSYA: `data/conversations/apply.mjs` yazıyor ve depoda durmuyor.
- * Yoksa özellik sessizce kapanıyor (ders Türkçe kalıyor) — çünkü eksik
- * sözlük yüzünden ders sayfasının açılmaması, çeviriden çok daha kötü.
+ * Yoksa özellik sessizce kapanıyor (konuşma Türkçe kalıyor) — çünkü eksik
+ * sözlük yüzünden konuşma sayfasının açılmaması, çeviriden çok daha kötü.
  */
 let cache: NativeDict | null | undefined;
 
@@ -89,13 +89,13 @@ async function deDict(): Promise<DeDict | null> {
 const asNative = (dict: DeDict): NativeDict => dict as unknown as NativeDict;
 
 /**
- * Dersi öğrencinin ana diline çevirir; çeviremezse dersi OLDUĞU GİBİ döner.
+ * Konuşmayı öğrencinin ana diline çevirir; çeviremezse konuşmayı OLDUĞU GİBİ döner.
  *
- * Geri düşüş bilinçli ve yarım ders DEĞİL: `resolveConversation` hep-ya-hiç
+ * Geri düşüş bilinçli ve yarım konuşma DEĞİL: `resolveConversation` hep-ya-hiç
  * çalışıyor, yani sonuç ya tümüyle İngilizce ya tümüyle Türkçe. Yasak olan
  * ikisinin karışması.
  *
- * Türkçe bir dersi İngilizce konuşana göstermek işe yaramaz ama ders
+ * Türkçe bir konuşmayı İngilizce konuşana göstermek işe yaramaz ama konuşma
  * sayfasını hiç açmamak daha kötü. Asıl çözüm daha yukarıda: içeriği
  * çevrilmemiş bir kurs, o ana dil için kurs listesinde HİÇ görünmemeli
  * (`PAIR_READY`). Burası son çare.
@@ -103,15 +103,15 @@ const asNative = (dict: DeDict): NativeDict => dict as unknown as NativeDict;
 export async function localiseConversation(conversation: Conversation, lang: NativeLang | null | undefined): Promise<Conversation> {
   if (!lang || lang === DEFAULT_NATIVE) return conversation;
   if (lang === "de") {
-    /* AYRI ÇÖZÜCÜ, ayrı sözlük: İngilizce kursun dersleri kendi kendine
+    /* AYRI ÇÖZÜCÜ, ayrı sözlük: İngilizce kursun konuşmaları kendi kendine
        yeten JSON, `resolveConversation`ın beklediği şablon yapısı yok. */
     const de = await deDict();
     if (!de) return conversation;
     const out = resolveEnConversation(de, conversation);
     if (!out) {
-      // İngilizce kursun 200 dersinin hepsi çözülüyor (kapı: check:native-de).
-      // Buraya düşen ders başka bir kurstan geliyor demektir.
-      console.warn(`[native] ders Almancaya çevrilemedi, Türkçe kalıyor: ${conversation.id}`);
+      // İngilizce kursun 200 konuşmasının hepsi çözülüyor (kapı: check:native-de).
+      // Buraya düşen konuşma başka bir kurstan geliyor demektir.
+      console.warn(`[native] konuşma Almancaya çevrilemedi, Türkçe kalıyor: ${conversation.id}`);
       return conversation;
     }
     return out;
@@ -120,17 +120,17 @@ export async function localiseConversation(conversation: Conversation, lang: Nat
   if (!dict) return conversation;
   const out = resolveConversation(dict, conversation);
   if (!out) {
-    // `de-*` derslerinin hepsi çözülüyor (kapı: check:conversations-native).
-    // Buraya düşen ders başka bir kurstan geliyor demektir.
-    console.warn(`[native] ders çevrilemedi, Türkçe kalıyor: ${conversation.id}`);
+    // `de-*` konuşmalarının hepsi çözülüyor (kapı: check:conversations-native).
+    // Buraya düşen konuşma başka bir kurstan geliyor demektir.
+    console.warn(`[native] konuşma çevrilemedi, Türkçe kalıyor: ${conversation.id}`);
     return conversation;
   }
   return out;
 }
 
 /**
- * Bir dersin ana dildeki BAŞLIĞI — bütün dersi çözmeye gerek olmayan yerler
- * için (sıradaki ders köprüsü, liste satırı).
+ * Bir konuşmanın ana dildeki BAŞLIĞI — bütün konuşması çözmeye gerek olmayan yerler
+ * için (sıradaki konuşma köprüsü, liste satırı).
  *
  * Karşılık yoksa `null`: çağıran taraf Türkçeye düşmek yerine o parçayı
  * göstermemeyi seçebilsin. İngilizce bir sayfanın içinde tek bir Türkçe
@@ -142,11 +142,11 @@ export async function nativeTitle(
 ): Promise<string | null> {
   if (!lang || lang === DEFAULT_NATIVE) return null;
   if (lang === "de") {
-    /* ALMANCA SÖZLÜKTE `meta` YOK ve olmasına gerek de yok: başlık ders
+    /* ALMANCA SÖZLÜKTE `meta` YOK ve olmasına gerek de yok: başlık konuşma
        düzyazısı hattında `titleTr` türüyle zaten duruyor, anahtarı METNİN
-       KENDİSİ. Dersi id'den bulup başlığını sormak, sözlüğe ikinci bir
+       KENDİSİ. Konuşmayı id'den bulup başlığını sormak, sözlüğe ikinci bir
        indeks eklemekten ucuz — `findConversation` zaten bellekte duran diziye
-       bakıyor. Ders paketi yalnız bu dalda yükleniyor. */
+       bakıyor. Konuşma paketi yalnız bu dalda yükleniyor. */
     const de = await deDict();
     if (!de) return null;
     const { findConversation } = await import("./index");
@@ -187,7 +187,7 @@ export async function nativeCando(
  * Can-do ifadesinin TEK tek çevirisi — Yapabildiklerim listesi için.
  *
  * `nativeCando` ile aynı sözlük, BAŞKA bir kural: orada karşılığı olmayan
- * ifade DÜŞÜYOR, çünkü ders sayfasının altındaki köprü bir özet ve eksik
+ * ifade DÜŞÜYOR, çünkü konuşma sayfasının altındaki köprü bir özet ve eksik
  * madde orada yalnızca kısalık. Yapabildiklerim ekranı öyle değil: satırın
  * kimliği ifadenin KENDİSİ ve yanında kullanıcının kanıt sayacı duruyor.
  * Satırı düşürmek kullanıcının ilerlemesini gizler, seviye sayaçlarını da
@@ -213,7 +213,7 @@ export async function nativeCandoText(
 /**
  * Modül sınavı kâğıdını ana dile çevirir; çeviremezse kâğıdı OLDUĞU GİBİ döner.
  *
- * Ders çözücüsüyle aynı geri düşüş: yarım değil, tümden Türkçe. Kâğıt hedef
+ * Konuşma çözücüsüyle aynı geri düşüş: yarım değil, tümden Türkçe. Kâğıt hedef
  * dili ölçmeye devam ediyor — çevrilen yalnız yönergeler, durumlar ve soru
  * köklerinin altındaki karşılık.
  *
@@ -286,7 +286,7 @@ export async function nativeExamText(
  * egzersizin ölçtüğü şey onlar.
  *
  * Çağıran TEK yer var: `/immersion/skill/[id]` sayfası. `getExercise` bu
- * işi kendisi yapmıyor çünkü öteki üç çağıranı (puanlama, kayıt, rol yapma
+ * işi kendisi yapmıyor çünkü öteki üç çağıranı (puanlama, kayıt, sohbet
  * uç noktası) düz metni HİÇ kullanmıyor; oralarda çeviri boşa yüklenen bir
  * 1,7 MB sözlük olurdu.
  */

@@ -10,7 +10,7 @@
  * Kuralların ÇOĞU ortak ve olmak zorunda: son noktalama, sayı pariteti,
  * kanıtın hayatta kalması, mükerrer satır, kapsam, uzunluk sapması. Bunlar
  * dilden bağımsız ve ikinci bir dosyaya kopyalansalardı ayrışırlardı — bu
- * hatta o ders zaten alındı.
+ * hatta o konuşma zaten alındı.
  *
  * DİLE BAĞLI OLAN ÜÇ ŞEY ayrıldı:
  *   yazım        İngiliz yazımı kuralı yalnız İngilizce tarafta çalışır;

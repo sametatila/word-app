@@ -11,7 +11,7 @@ import type { CefrLevel } from "@/lib/skills/types";
 /**
  * Kullanıcının yapabilirlik kanıtı (WP-43, adım 4).
  *
- * Bir ifade "kanıtlı" ⇔ ona bağlı en az iki içerik tamamlandı (ders geçildi
+ * Bir ifade "kanıtlı" ⇔ ona bağlı en az iki içerik tamamlandı (konuşma geçildi
  * ya da egzersiz ≥ %70); tek içerik "gelişiyor". Sınav bölümleri (WP-41/42)
  * geldiğinde üçüncü kanıt türü olur ve eşik "≥2 içerik + son sınav ≥ %70"e
  * çıkar. Materialize edilmez; profil açılışında sorguyla hesaplanır — kanıt
@@ -54,7 +54,7 @@ export async function candoSummary(userId: string, course: string): Promise<Cand
     }
   };
   // Kurs TAM eşleşiyor: İngilizce öğrencinin "yapabildiklerim" sayacı Almanca
-  // derslerden doluyordu (bkz. lib/conversations/index `conversationsFor`).
+  // konuşmalardan doluyordu (bkz. lib/conversations/index `conversationsFor`).
   for (const l of (await allConversations()).filter((l) => l.course === course)) bump(candoForConversation(l), passedConversations.has(l.id));
   for (const m of metas) bump(candoForExercise(m), doneExercises.has(m.id));
 

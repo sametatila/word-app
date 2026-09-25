@@ -13,7 +13,7 @@
  * kullanımı engellemek.
  */
 export const DAILY_QUOTAS = {
-  /** Rol yapma / konuşma pratiğinde bir günde gönderilebilen tur. */
+  /** Sohbet / sohbette bir günde gönderilebilen tur. */
   chatTurns: 300,
   /** Sunucu tarafı konuşma tanıma isteği. */
   sttRequests: 400,

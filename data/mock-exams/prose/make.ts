@@ -2,11 +2,11 @@
  * Deneme kâğıtlarının TÜRKÇE alanlarını paketler:
  *   `npx tsx --tsconfig scripts/tsconfig.e2e.json data/mock-exams/prose/make.ts`
  *
- * Bu, ana dil ekseninin ders anlatımından sonraki EN BÜYÜK kalemi ve
+ * Bu, ana dil ekseninin konuşma anlatımından sonraki EN BÜYÜK kalemi ve
  * bugüne kadar hiç ölçülmemişti: 60 Almanca kâğıtta 6.627 benzersiz Türkçe
- * dize. Ders ekseninin sınav hattı (1.781) bunun dörtte biri kadardı.
+ * dize. Konuşma ekseninin sınav hattı (1.781) bunun dörtte biri kadardı.
  *
- * NEDEN AYRI BİR HAT. Kaynağı ayrı (`MOCK_PAPERS`, ders ya da beceri
+ * NEDEN AYRI BİR HAT. Kaynağı ayrı (`MOCK_PAPERS`, konuşma ya da beceri
  * değil), birimi ayrı (kâğıt) ve bağlamı ayrı: bir `explain` maddenin
  * kökünü ve doğru şıkkını görmeden çevrilemez, bir `expect` karşı tarafın
  * söylediği repliği görmeden çevrilemez. Üç hat da aynı desende

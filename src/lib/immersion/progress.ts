@@ -10,7 +10,7 @@ import type { Completion } from "./state";
 /**
  * Faz 3 tamamlanma adaptörü — mevcut ilerleme kaynaklarını immersion'ın saf
  * gating katmanına (state.ts `Completion`) çevirir. Yeni tablo yok:
- * - ders "bitti" = userConversations.chatDone (conversationBoard üzerinden)
+ * - konuşma "bitti" = userConversations.chatDone (conversationBoard üzerinden)
  * - beceri "bitti" = userSkills.lastScore ≥ SKILL_DONE_PCT (lib/score-bands.ts)
  *
  * Her kaynak ayrı denenir; biri okunamazsa o küme boş kalır, sayfa yine açılır.
@@ -27,11 +27,11 @@ export async function immersionCompletion(userId: string, course: string): Promi
     const cards = await conversationBoard(userId, course);
     for (const c of cards) {
       if (c.state?.chatDone) doneConversations.add(c.conversation.id);
-      // Kayıt varsa ders en az bir kez açılıp cevaplanmıştır.
+      // Kayıt varsa konuşma en az bir kez açılıp cevaplanmıştır.
       if (c.state) triedConversations.add(c.conversation.id);
     }
   } catch (err) {
-    console.error("[immersion] ders ilerlemesi okunamadı", err);
+    console.error("[immersion] konuşma ilerlemesi okunamadı", err);
   }
 
   try {
@@ -48,7 +48,7 @@ export async function immersionCompletion(userId: string, course: string): Promi
     console.error("[immersion] beceri ilerlemesi okunamadı", err);
   }
 
-  // Pratik adımlar (dil bilgisi, tekrar, kontrol noktası) — öğe kimliğiyle.
+  // Pratik adımlar (dil bilgisi, tekrar, ünite quizi) — öğe kimliğiyle.
   let practice = { tried: new Set<string>(), passed: new Set<string>() };
   try {
     practice = await practiceProgress(userId, course);

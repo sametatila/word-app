@@ -3,7 +3,7 @@
  * dışına çıkıyor mu? Çıkanları sıklığa göre listeler.
  *
  * KAYNAKTAN okur, mobil dökümden değil. Döküm `speaking` becerisini bilerek
- * dışarıda bırakıyor (mobilde konuşma dersin içinde), o yüzden döküm okunduğu
+ * dışarıda bırakıyor (mobilde konuşma konuşmanın içinde), o yüzden döküm okunduğu
  * sürece konuşma egzersizleri HİÇ denetlenmiyordu.
  *
  * Ölçüm mantığı `lib/vocab-gate.cjs`'de — modül sınavı denetleyicisiyle
@@ -87,8 +87,8 @@ console.log("\nen sık dışarıda kalanlar:", [...genelDisi].sort((a, b) => b[1
 
 const BASLIK: Record<string, string> = {
   ustu: "SEVİYE ÜSTÜ   — havuzda var ama üst seviyede; metin sadeleşmeli ya da sözlükçeye girmeli",
-  erken: "ERKEN         — bu seviyenin dersi öğretiyor, ama daha sonraki ünitede",
-  derssiz: "DERSSİZ       — havuzda var ama BU SEVİYENİN dersleri öğretmiyor (üst seviyede öğretiliyor olabilir; patika boşluğu)",
+  erken: "ERKEN         — bu seviyenin konuşması öğretiyor, ama daha sonraki ünitede",
+  konusmasiz: "KONUŞMASIZ    — havuzda var ama BU SEVİYENİN konuşmaları öğretmiyor (üst seviyede öğretiliyor olabilir; patika boşluğu)",
   turev: "TÜREV         — kök bu üniteye kadar öğretilmiş; kapı yüzey biçimini tanımadı (içerik kusuru DEĞİL)",
   // Bilinen eksik: ünlüsü değişen güçlü fiil ortacı (geschwommen ← schwimmen)
   // de buraya düşüyor; sınıflandırma o değişimi çözemiyor (gerekçe `ara`da).
@@ -97,7 +97,7 @@ const BASLIK: Record<string, string> = {
 const toplam = [...sinifSay.values()].reduce((a, b) => a + b, 0);
 if (toplam) {
   console.log("\nbulgu sınıfları:");
-  for (const k of ["ustu", "erken", "derssiz", "turev", "yabanci"]) {
+  for (const k of ["ustu", "erken", "konusmasiz", "turev", "yabanci"]) {
     const n = sinifSay.get(k) || 0;
     if (!n) continue;
     const ornek = [...(sinifKelime.get(k) || new Map())].slice(0, 6).map(([w, d]) => `${w} (${d})`).join(" · ");

@@ -5,7 +5,7 @@
  * Hatların kendi kapıları (`check:conversations-prose-de`, `check:skills-prose-de`,
  * `check:mock-prose-de`) YAZILANI ölçüyor: çıkarıcının bulduğu her dizenin
  * karşılığı var mı, kurallara uyuyor mu. Bu betik tersini soruyor —
- * üretilmiş `native-de.json`ı açıp çözücüleri gerçek ders, egzersiz ve
+ * üretilmiş `native-de.json`ı açıp çözücüleri gerçek konuşma, egzersiz ve
  * kâğıtlar üzerinde çalıştırıyor.
  *
  * ARADAKİ BOŞLUK BİR KEZ ZATEN AÇILDI ve tam bu sınıftaydı: deneme kâğıdı
@@ -80,7 +80,7 @@ const EXEMPT = new Map<string, string>([
 ]);
 const exemptSeen = new Set<string>();
 
-/* ---- 1. Dersler -------------------------------------------------------- */
+/* ---- 1. Konuşmalar -------------------------------------------------------- */
 /* Yalnız İNGİLİZCE kurs. Almanca kursu anadili Almanca olan biri almıyor
    (`PAIR_READY`), o yüzden onun Almancası hiç yazılmadı ve aranmıyor. */
 const conversations = CONVERSATIONS.filter((l) => l.course === "en");
@@ -107,14 +107,14 @@ const walk = (v: unknown, id: string): void => {
 for (const l of conversations) {
   const out = resolveEnConversation(dict, l);
   if (!out) {
-    H(`[ders] çözülemedi: ${l.id}`);
+    H(`[konuşma] çözülemedi: ${l.id}`);
     continue;
   }
   conversationOk++;
   /* Öğretilen dilin parçaları TARAMA DIŞINDA: `title`, `vocab[].de`,
      `patterns[].de` ve anlatımın İngilizce parçaları zaten İngilizce ve
      öyle kalmalı. Tarama Türkçe ARIYOR, İngilizceyi Türkçe sanmaz ama
-     `statement` gibi alanlarda boşuna gürültü üretmemesi için ders
+     `statement` gibi alanlarda boşuna gürültü üretmemesi için konuşma
      nesnesinin tamamı veriliyor ve ölçüt yalnız Türkçe kökler. */
   walk(out, l.id);
 }
@@ -168,7 +168,7 @@ if (leftover.size) {
 /* ---- 4. Can-do köprüsü -------------------------------------------------- */
 /* ÇÖZÜCÜDEN GEÇMİYOR: `nativeCando` sözlüğün ayrı bir alanını okuyor ve
    karşılığı olmayan ifadeyi DÜŞÜRÜYOR — yani eksik bir ifade hata değil,
-   sessiz bir boşluk olarak görünür. Ders sayfasının altındaki köprü o
+   sessiz bir boşluk olarak görünür. Konuşma sayfasının altındaki köprü o
    yüzden burada ayrıca sayılıyor. */
 const candoIds = [...new Set(conversations.flatMap((l) => candoForConversation(l)))].sort();
 let candoOk = 0;
@@ -191,10 +191,10 @@ if (errors.length) {
   if (errors.length > 40) console.log(`  … ${errors.length - 40} tane daha`);
 }
 console.log(
-  `\nözet: ders ${conversationOk}/${conversations.length} · egzersiz ${exerciseOk}/${exercises.length} · ` +
+  `\nözet: konuşma ${conversationOk}/${conversations.length} · egzersiz ${exerciseOk}/${exercises.length} · ` +
     `kâğıt ${paperOk}/${papers.length} · modül sınavı ${examOk}/${exams.length} · ` +
     `can-do ${candoOk}/${candoIds.length} · taranan dize ${strings}\n` +
-    `sözlük: ders ${Object.keys(dict.conversation).length} · beceri ${Object.keys(dict.prose).length} · ` +
+    `sözlük: konuşma ${Object.keys(dict.conversation).length} · beceri ${Object.keys(dict.prose).length} · ` +
     `kâğıt ${Object.keys(dict.mock).length} · sınav ${Object.keys(dict.exam).length} · ` +
     `can-do ${Object.keys(dict.cando).length}`,
 );

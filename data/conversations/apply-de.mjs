@@ -10,9 +10,9 @@
  * sözlüğün ŞEKLİ de başka. Kardeşi on iki `out/` dizini okuyor ve
  * anlatımı Almanca kelimeye göre bölünmüş anahtarlarla, çerçeve/sıra/not
  * sözlükleriyle, iki takas tablosuyla kuruyor — hepsi Almanca kursun TS
- * derslerinden çıkan yapıların gereği. İngilizce kursun dersleri ise
+ * konuşmalarından çıkan yapıların gereği. İngilizce kursun konuşmaları ise
  * kendi kendine yeten JSON (`en-a1.json`, `en-a2.json`): Türkçe alanlar
- * dersin İÇİNDE duruyor, bölünecek bir belirsizlik yok ve takas tablosu
+ * konuşmanın İÇİNDE duruyor, bölünecek bir belirsizlik yok ve takas tablosu
  * hiç yok. Aynı hatta bayrak takmak, okunmayan yarısı için ölü kod
  * taşımak olurdu.
  *
@@ -24,7 +24,7 @@
  *   mock    `data/mock-exams/prose/out-de/`   anahtar `tür + AYRAÇ + tr`
  *   cando   `data/conversations/cando-de/out/`      anahtar `id` (`A1.SPK.1`)
  *
- * `cando` ÇÖZÜCÜDEN GEÇMİYOR ve bu yüzden kendi hattı var: dersin
+ * `cando` ÇÖZÜCÜDEN GEÇMİYOR ve bu yüzden kendi hattı var: konuşmanın
  * altındaki "bunu yapabileceksin" köprüsü `nativeCando` ile ayrı
  * okunuyor, hep-ya-hiç kuralına girmiyor ve karşılığı olmayan ifade
  * DÜŞÜYOR. Almanca bir listenin ortasındaki tek Türkçe madde, yarım
@@ -38,7 +38,7 @@
  * değişmeden çalışıyor.
  *
  * `conversation` ise BÖLÜNMÜŞ anahtar tutmak zorunda: aynı Türkçe cümle bir
- * derste `summary`, ötekinde `say.tr` olabiliyor ve ikisi farklı
+ * konuşmada `summary`, ötekinde `say.tr` olabiliyor ve ikisi farklı
  * çevrilebilir. Çıkarıcı (`prose-de/make.mjs`) da tam bu anahtarı
  * kullanıyor; ikisi ayrışırsa sözlük dolu olduğu hâlde hiçbir şey
  * bulunmaz.
@@ -107,6 +107,6 @@ writeFileSync(`${OUT}native-de.json`, `${JSON.stringify(data)}\n`);
 const n = (o) => Object.keys(o).length;
 console.log(
   "native-de.json yazıldı\n" +
-    `  ders düzyazısı ${n(conversation)} · beceri düz metni ${n(prose)} · görev metni ${n(task)} · ` +
+    `  konuşma düzyazısı ${n(conversation)} · beceri düz metni ${n(prose)} · görev metni ${n(task)} · ` +
     `deneme kâğıdı ${n(mock)} · can-do ${n(cando)} · modül sınavı ${n(exam)}`,
 );

@@ -60,7 +60,7 @@ const MAX_AGE = 31_536_000;
 /*
   Uç, kullanıcının SEÇEBİLDİĞİNDEN fazlasını seslendiriyor ve ikisi de ayrı
   sebeple listede değil:
-    - anlatım sesi (`TURKISH_VOICE`) — dersin öğretmeni, alternatifi yok;
+    - anlatım sesi (`TURKISH_VOICE`) — konuşmanın öğretmeni, alternatifi yok;
     - kadro sesleri (`CAST`) — diyalogda ikinci/üçüncü konuşmacıyı ayırıyor,
       seçim ekranında görünmesi anlamsız olurdu.
   Küme katalogdan TÜRETİLİYOR: yeni bir kadro sesi eklendiğinde burayı da
@@ -106,7 +106,7 @@ export async function GET(req: Request) {
     çalıyor: tabloda yoksa Edge karşılığına DÜŞÜLMÜYOR, 404 dönüyor ve istemci o okumayı atlıyor. Düşüş
     sessiz bir kalite kaybıydı (Defne seçmiş kullanıcı bir kelimede Katja duyardı) ve kimse fark etmezdi;
     404 günlüğe düşüyor ve kapsam kapısı (`scripts/tts-own-coverage.ts`) bunu yayından önce yakalıyor.
-    İşaretsiz istek (ders, beceri, rol yapma — henüz üretilmemiş katmanlar) Edge karşılığıyla sürüyor.
+    İşaretsiz istek (konuşma, beceri, sohbet — henüz üretilmemiş katmanlar) Edge karşılığıyla sürüyor.
   */
   const word = url.searchParams.get("k") === "w";
   /* KARAKTER ANLATIMI (`k=n`, 2026-09-23) — yürüyüş modunun yönergeleri. Dosya varsa karakterin kendi sesi, yoksa
@@ -124,7 +124,7 @@ export async function GET(req: Request) {
   }
   // Kendi karakter seslerimiz (`lib/tts/own`): önceden üretilmiş statik dosya. Sentez yok, maliyet
   // yok — oturum ve günlük tavan kapısı yalnız üretilmemiş metinde kalıyor (plan bölüm 4 "Yetki").
-  // YALNIZ KELİME İSTEĞİNE. İşaretsiz istek (rol yapma, beceri, ders cümlesi) metni tabloda bulsa da
+  // YALNIZ KELİME İSTEĞİNE. İşaretsiz istek (sohbet, beceri, konuşma cümlesi) metni tabloda bulsa da
   // Edge karşılığında kalıyor: yoksa bir örnek cümleyle birebir aynı tek replik Defne'nin kendi sesiyle,
   // çevresi Katja'yla çalardı. Kelime dışı her şey üretilene kadar Katja/Conrad (Samet, 2026-09-23).
   const own = word || narration ? await ownVoiceAudio(text, voice as VoiceId, slow, pitch) : null;

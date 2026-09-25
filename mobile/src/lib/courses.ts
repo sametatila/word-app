@@ -134,7 +134,7 @@ export const COURSES: Course[] = [
     },
     // İngilizcede isimlerin cinsiyeti yok; artikel/çoğul turları anlamsız.
     hasArticles: false,
-    // A1–C1 ders içeriği tam (seviye başına 100 ders, `data/conversations`).
+    // A1–C1 konuşma içeriği tam (seviye başına 100 konuşma, `data/conversations`).
     enabled: true,
     offeredToNewUsers: true,
   },
@@ -181,8 +181,8 @@ export function enabledCourses(): Course[] {
  * SUNULAN ÇİFTLER — web'deki `src/lib/courses.ts` ile AYNI liste.
  *
  * Bir çiftin çalışması tek katman değil: kelime karşılıkları, beceri
- * yönergeleri ve derslerin ANLATIM metni. Kelime katmanı hazırken ötekiler
- * Türkçe kalırsa kullanıcı alıştırmayı kendi dilinde, dersi Türkçe görür —
+ * yönergeleri ve konuşmaların ANLATIM metni. Kelime katmanı hazırken ötekiler
+ * Türkçe kalırsa kullanıcı alıştırmayı kendi dilinde, konuşmayı Türkçe görür —
  * çalışıyormuş gibi görünen yarım bir parite.
  *
  * İki dosya ayrı (web ve mobil ayrı paketler) ama liste aynı kalmalı;
@@ -193,7 +193,7 @@ export const PAIR_READY: Record<NativeLang, CourseId[]> = {
   /*
     en→de AÇILDI (2026-09-10). Üç katman da tam:
       kelime      üretimde 8.707/8.707 İngilizce karşılık + örnek çevirisi
-      ders/beceri/deneme  altı kapı yeşil (check:conversations-native,
+      konuşma/beceri/deneme  altı kapı yeşil (check:conversations-native,
                   check:conversations-swap, check:skills-native, check:skills-task,
                   check:mock-prose, check:mock-native)
       arayüz      1.203 anahtar × 3 dil (i18n:check)
@@ -206,7 +206,7 @@ export const PAIR_READY: Record<NativeLang, CourseId[]> = {
   /*
     de→en AÇILDI (2026-09-11). Dört katman da tam:
       kelime      üretimde 7.175/7.175 Almanca karşılık + örnek çevirisi
-      ders/beceri/deneme/can-do  `check:native-de` yeşil — ders 200/200,
+      konuşma/beceri/deneme/can-do  `check:native-de` yeşil — konuşma 200/200,
                   egzersiz 189/189, kâğıt 60/60, can-do 11/11
       mobil       Almanca sözlük ve çözücü pakette (`dump:native`)
       arayüz      1.411 anahtar × 3 dil (i18n:check)

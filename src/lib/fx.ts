@@ -12,7 +12,7 @@
  * doluyor ve kimse ona bakmadan kayboluyordu. Çizgiyle birlikte onu besleyen
  * olay ve sesin uzunluğunu ölçen zincir de kalktı.
  *
- * Ses buraya, `vibrate()` içine bağlandı — on oyunun hepsi ve dersler cevabı
+ * Ses buraya, `vibrate()` içine bağlandı — on oyunun hepsi ve konuşmalar cevabı
  * aldığı anda buradan geçiyor. Tek geçit olması, on bir çağrı yerini tek tek
  * dolaşmadan bütün uygulamayı seslendirmeyi mümkün kıldı. Çizgiyi başlatan
  * ikinci bir sarmalayıcı (`fx`) daha vardı; çizgi kalkınca o da kalktı ve

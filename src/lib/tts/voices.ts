@@ -56,10 +56,10 @@ export type VoiceId =
   | "en-US-ChristopherNeural";
 
 /**
- * Ders anlatım sesi — Türkçe.
+ * Konuşma anlatım sesi — Türkçe.
  *
- * Kullanıcının seçtiği ses hedef dilin sesi; anlatım sesi ise dersin
- * öğretmeni ve Türkçe konuşuyor. İkisi ayrı işler: ders içinde "İlk
+ * Kullanıcının seçtiği ses hedef dilin sesi; anlatım sesi ise konuşmanın
+ * öğretmeni ve Türkçe konuşuyor. İkisi ayrı işler: konuşma içinde "İlk
  * kelimemiz…" cümlesi Türkçe sesle, içindeki Almanca kelime Almanca sesle
  * okunuyor (bkz. speak-button, speakSegments). Bu yüzden `VOICES` listesinde
  * değil — seçim ekranında görünmesi anlamsız olurdu, tercih edilecek bir
@@ -87,20 +87,20 @@ export function narrationVoice(lang: NativeLang): VoiceId {
 }
 
 /**
- * Ders anlatımının Almanca sesi — kullanıcının profil tercihi DEĞİL, bilerek.
+ * Konuşma anlatımının Almanca sesi — kullanıcının profil tercihi DEĞİL, bilerek.
  *
- * Derste öncelik gecikme: akış "öğretmen söyler → öğrenci tekrarlar" ritmiyle
+ * Konuşmada öncelik gecikme: akış "öğretmen söyler → öğrenci tekrarlar" ritmiyle
  * ilerliyor ve her cümle öncesi beklemek ritmi öldürüyor. Ses sabit olunca
- * dersin bütün cümleleri kullanıcıdan bağımsız TEK önbellek girdisi oluyor —
- * dersi ilk açan kişi CDN'i herkes için ısıtıyor ve sonraki her öğrencide ses
+ * konuşmanın bütün cümleleri kullanıcıdan bağımsız TEK önbellek girdisi oluyor —
+ * konuşmayı ilk açan kişi CDN'i herkes için ısıtıyor ve sonraki her öğrencide ses
  * ağa hiç çıkmadan geliyor. Profil sesine saygı bu kazanımı ikiye bölerdi.
  * Katja zaten ölçülmüş en hızlı ses; Zürih kursunda lehçeyi doğru okuyan Leni.
  */
 export function conversationVoice(course: string): VoiceId {
   /* AÇIK TABLO, katalogdan türetme DEĞİL. Eskiden `defaultVoice(course)` idi: kursun ilk sesi Katja'ydı.
      2026-09-23'te kursun ilk sesi Defne oldu ve Defne'nin yalnız kelime katmanı üretildi — türetme sürseydi
-     derslerin, dinlemelerin ve okuma parçalarının bütün cümleleri Defne adıyla Katja'ya gider, bir kısmı
-     (kelime katmanıyla çakışan cümleler) Defne'nin kendi sesiyle çalardı: tek derste iki farklı kadın.
+     konuşmaların, dinlemelerin ve okuma parçalarının bütün cümleleri Defne adıyla Katja'ya gider, bir kısmı
+     (kelime katmanıyla çakışan cümleler) Defne'nin kendi sesiyle çalardı: tek konuşmada iki farklı kadın.
      Bu katmanlar üretilince burası karakter sesine döner. */
   return CONVERSATION[course as keyof typeof CONVERSATION] ?? CONVERSATION.de;
 }
@@ -186,7 +186,7 @@ export const VOICES: Voice[] = [
  * Karakter sesinin sahibi ve dili — sunucu dosyayı `<karakter>|<dil>|<metin>` anahtarıyla buluyor.
  *
  * `edge`: bu karakterin henüz ÜRETİLMEMİŞ katmanlardaki karşılığı. Kelime katmanı dışındaki içerik
- * (dersler, beceriler, rol yapma cevapları) bugün Edge'den geliyor; kullanıcı Aras'ı seçtiyse orada
+ * (konuşmalar, beceriler, sohbet cevapları) bugün Edge'den geliyor; kullanıcı Aras'ı seçtiyse orada
  * da erkek ses duysun. Kelime isteği bu karşılığa HİÇ düşmüyor (bkz. `app/api/tts`, `k=w`).
  */
 export const OWN_VOICES: Partial<Record<VoiceId, { character: OwnCharacter; lang: "de" | "en" | "tr"; edge: VoiceId }>> = {

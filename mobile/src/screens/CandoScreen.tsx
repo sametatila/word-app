@@ -61,7 +61,7 @@ export function CandoScreen() {
    * EKRANA HER DÖNÜŞTE TAZE.
    *
    * Veri bir kez, `user` değişince yükleniyordu. Ama bu ekranın içeriğini
-   * DEĞİŞTİREN şey ders ve alıştırma bitirmek: kullanıcı bir konuşmayı
+   * DEĞİŞTİREN şey konuşma ve alıştırma bitirmek: kullanıcı bir konuşmayı
    * tamamlayıp buraya dönünce eski listeyi görüyordu ve yenileme yolu yoktu
    * (çekerek yenileme de yok). Webin karşılığı sunucu bileşeni ve
    * `force-dynamic`, yani oraya her gidişte taze geliyor.
@@ -137,7 +137,7 @@ export function CandoScreen() {
       ) : phase === "ready" && !(data?.items ?? []).length ? (
         /*
           BOŞ DURUM — ekran bomboş açılıyordu.
-          Veri gelip de içi boşsa (henüz ders/alıştırma bitirilmemiş) iki
+          Veri gelip de içi boşsa (henüz konuşma/alıştırma bitirilmemiş) iki
           süzgeç de hiçbir şey döndürüyor ve kullanıcı yalnız başlığı görüyordu:
           bir şeyin yüklenmediğini mi, yapacak bir şey olmadığını mı
           anlayamıyor. Web aynı durumda `EmptyCard` gösteriyor (`cando-card`)
@@ -162,7 +162,7 @@ export function CandoScreen() {
       ) : phase === "error" ? (
         /*
           HATA DALI YANLIŞ SEBEBİ SÖYLÜYORDU. İstek düştüğünde ekran BOŞ
-          DURUM metnini yazıyordu ("giriş yapıp dersleri bitir") — ağı kopan
+          DURUM metnini yazıyordu ("giriş yapıp konuşmaları bitir") — ağı kopan
           kullanıcıya yanlış sebep, üstelik tekrar deneme yolu da yoktu ve
           bu ekranda çekerek yenileme de yok, yani tek çıkış ekrandan
           çıkmaktı. Webde aynı kusur vardı (`cando-card` tek kartla iki

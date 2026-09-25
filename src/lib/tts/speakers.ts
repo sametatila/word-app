@@ -13,14 +13,14 @@ import { castFor, type Pitch, type VoiceId } from "./voices";
  * tam da kimin ne dediğini ayırabilmekken.
  *
  * TEK SESLİ METİNLER DE KADRODAN OKUNUYOR. Dinleme içeriğinin 1 330 bloğu
- * (742'ye karşı) tek konuşmacılı: haber bülteni, anons, ders anlatımı. Bunlar
+ * (742'ye karşı) tek konuşmacılı: haber bülteni, anons, konuşma anlatımı. Bunlar
  * artık kullanıcının SEÇTİĞİ sesle değil kadronun ilk sesiyle okunuyor —
  * beceri dinlemesinde davranış değişikliği bu. Bilinçli: deneme sınavı zaten
  * `conversationVoice`u kullanıyordu, yani profil sesine saygı gösteren tek yüzey
  * beceri dinlemesiydi ve aynı alıştırma setinde iki kişilik bir diyalog
  * kadroyla, tek kişilik bir kayıt profil sesiyle okunurdu. Kayıt dediğimiz şey
  * "senin öğretmenin" değil, başka birinin sesi; ses seçici her gün duyulan
- * kelime turu ve ders için var. Yan kazanç: 1 330 blok kullanıcı başına iki
+ * kelime turu ve konuşma için var. Yan kazanç: 1 330 blok kullanıcı başına iki
  * kopya yerine TEK önbellek girdisi.
  *
  * CİNSİYET TAHMİN EDİLİYOR, ROTASYON DEĞİL. Sırayla kadın/erkek dağıtmak

@@ -7,11 +7,11 @@
  * NEDEN AYRI BİR RAPOR. `check:unitvocab` ve `check:en-unitvocab` bir
  * EGZERSİZİ ölçüyor ("bu metin penceresinin dışına çıkıyor mu"). Bu betik
  * PATİKAYI ölçüyor ("bu sözcük hiç öğretiliyor mu"). İkisinin kesiştiği yerde
- * ünite raporları DERSSİZ sınıfını basıyor ve orası bir eğri değil bir liste
- * istiyor: yazarın sorusu "hangi sözcüğü hangi derse koyayım".
+ * ünite raporları KONUŞMASIZ sınıfını basıyor ve orası bir eğri değil bir liste
+ * istiyor: yazarın sorusu "hangi sözcüğü hangi konuşmaya koyayım".
  *
- * SIRALAMA KULLANIMA GÖRE. Havuzun yarısı hiç öğretilmiyor ve hepsini derse
- * sokmak imkânsız (ders başına sekiz sözcük, sayı sabit). Ama bir sözcük
+ * SIRALAMA KULLANIMA GÖRE. Havuzun yarısı hiç öğretilmiyor ve hepsini konuşmaya
+ * sokmak imkânsız (konuşma başına sekiz sözcük, sayı sabit). Ama bir sözcük
  * kursun KENDİ metinlerinde geçiyorsa öğrenci onunla zaten karşılaşıyor
  * demektir; öğretilmemesi orada gerçek bir boşluk. Liste o sıklığa göre
  * diziliyor — hiç geçmeyenler ayrı sayılıyor, onlar yalnız kart motorunun
@@ -40,10 +40,10 @@
  *      `around`, `during`, `except`, `toward` — hepsi `en-gate`de gerekçesiyle
  *      serbest ("temel edat listesi dilbilgisidir, öğretilecek sözcük değil")
  *      ama burada "hiç öğretilmeyen" diye sayılıyordu.
- *   2. GÖVDE. Kullanım tarafı `enStems` ile eşleşiyor, ders tarafı BİREBİR
+ *   2. GÖVDE. Kullanım tarafı `enStems` ile eşleşiyor, konuşma tarafı BİREBİR
  *      eşleşiyordu: patika `child` öğretse de havuzun `children` kaydı
  *      öğretilmemiş sayılıyordu. Ünite kapısı belirteci
- *      `enStems(w).some((st) => pool.has(st))` ile ölçüyor; buradaki ders
+ *      `enStems(w).some((st) => pool.has(st))` ile ölçüyor; buradaki konuşma
  *      kümesi de artık aynı soruyu soruyor. Etkisi (EN): a2 133→109,
  *      b1 229→179, b2 182→147, c1 43→35; kapsam a2 %68→71, b1 %43→50.
  *
@@ -76,7 +76,7 @@ const kelime = (raw: string) =>
     .replace(/\(.*?\)/g, "")
     .split(/[\s/,-]+/)
     /* NOKTALAMA DA DÜŞER (2026-09-22). Yalnız kesme işareti kırpılıyordu ve
-       ders KALIPLARI cümle: "Was kann man hier sehen?" → `sehen?`. Böyle bir
+       konuşma KALIPLARI cümle: "Was kann man hier sehen?" → `sehen?`. Böyle bir
        belirteç havuzun `sehen` kaydıyla eşleşmiyor ve kalıpta öğretilen sözcük
        "patika hiç öğretmiyor" diye sayılıyordu — Almanca listede `lesen`,
        `sehen`, `genau`, `rechnen` bu yüzden borç görünüyordu. */
@@ -103,8 +103,8 @@ function havuz(kurs: Kurs): Map<string, string> {
   return m;
 }
 
-/** Ders sözlükçesi: sözcük → öğretildiği ilk seviye. Kaynak `conversationsFor`. */
-function ders(kurs: Kurs): Map<string, string> {
+/** Konuşma sözlükçesi: sözcük → öğretildiği ilk seviye. Kaynak `conversationsFor`. */
+function konusmaSozlugu(kurs: Kurs): Map<string, string> {
   const m = new Map<string, string>();
   for (const l of conversationsFor(kurs)) {
     const lv = l.level.toLowerCase();
@@ -202,36 +202,36 @@ function kullanim(kurs: Kurs, hv: Map<string, string>): Kullanim {
 }
 
 /**
- * DERS YUVASI MUHASEBESİ — boşluğun öteki yarısı.
+ * KONUŞMA YUVASI MUHASEBESİ — boşluğun öteki yarısı.
  *
  * Yukarısı "hangi sözcük öğretilmiyor" diyor; buradaki soru "yer var mı".
- * Ders başına sözlükçe SEKİZ ve bu sayı sözleşmede sabit (`check-conversations`:
+ * Konuşma başına sözlükçe SEKİZ ve bu sayı sözleşmede sabit (`check-conversations`:
  * "tam 8 kelime"), yani yeni bir sözcük ancak bir yuvayı devralarak girer.
  * Devralınacak yuva da belli: aynı sözcüğü ikinci kez öğreten satır.
  *
- * TEKRAR MUTLAKA İSRAF DEĞİL — ölçüm bunu iddia etmiyor. `help` altı derste
- * geçiyor ve acil durum dersinin onu sözlükçeye alması makul. Ama sözlükçe
- * dersin ANLATIM betiğine bağlı (`check-conversations` her kelimenin sesli tekrar
- * ettirildiğini ve rol yapma isteminde geçtiğini arıyor), yani her yuvanın
+ * TEKRAR MUTLAKA İSRAF DEĞİL — ölçüm bunu iddia etmiyor. `help` altı konuşmada
+ * geçiyor ve acil durum konuşmasının onu sözlükçeye alması makul. Ama sözlükçe
+ * konuşmanın ANLATIM betiğine bağlı (`check-conversations` her kelimenin sesli tekrar
+ * ettirildiğini ve sohbet isteminde geçtiğini arıyor), yani her yuvanın
  * bir bedeli var. Sayı, "yer yok" ile "yer var ama başka işi görüyor"
  * arasındaki farkı görünür kılmak için.
  */
 function yuvaMuhasebesi(kurs: Kurs) {
-  console.log(`\n=== ${kurs.toUpperCase()} kursu — ders sözlükçesi yuvaları ===`);
+  console.log(`\n=== ${kurs.toUpperCase()} kursu — konuşma sözlükçesi yuvaları ===`);
   for (const lv of LEVELS) {
-    const dersler = conversationsFor(kurs).filter((l) => l.level.toLowerCase() === lv);
-    if (!dersler.length) continue;
+    const konusmalar = conversationsFor(kurs).filter((l) => l.level.toLowerCase() === lv);
+    if (!konusmalar.length) continue;
     const gor = new Map<string, string[]>();
-    for (const l of dersler) for (const v of l.vocab) {
+    for (const l of konusmalar) for (const v of l.vocab) {
       const k = v.de.toLowerCase().trim();
       if (!gor.has(k)) gor.set(k, []);
       gor.get(k)!.push(l.id);
     }
-    const yuva = dersler.reduce((n, l) => n + l.vocab.length, 0);
+    const yuva = konusmalar.reduce((n, l) => n + l.vocab.length, 0);
     const tekrar = [...gor].filter(([, a]) => a.length > 1);
     const fazla = tekrar.reduce((n, [, a]) => n + a.length - 1, 0);
     console.log(
-      `  ${lv.toUpperCase()}  ders ${String(dersler.length).padStart(3)} · yuva ${String(yuva).padStart(4)}` +
+      `  ${lv.toUpperCase()}  konuşma ${String(konusmalar.length).padStart(3)} · yuva ${String(yuva).padStart(4)}` +
       ` · benzersiz ${String(gor.size).padStart(4)} · İKİNCİ KEZ öğretilen yuva ${String(fazla).padStart(4)} (%${((fazla / yuva) * 100).toFixed(0)})`,
     );
     if (tekrar.length) {
@@ -250,9 +250,9 @@ const sayim = new Map<string, number>();
 
 for (const kurs of kurslar) {
   const hv = havuz(kurs);
-  const ds = ders(kurs);
+  const ds = konusmaSozlugu(kurs);
   /* "Patika bunu öğretiyor mu" sorusu, ünite kapısının sorduğu biçimde:
-     İngilizcede havuz kaydının GÖVDELERİ ders kümesine karşı denenir
+     İngilizcede havuz kaydının GÖVDELERİ konuşma kümesine karşı denenir
      (`children` → `child`). Almanca birebir kalıyor — oradaki morfoloji
      `kokAra`da ve onu bu yöne çevirmek Almanca sayıları da oynatırdı;
      ayrı ölçülmesi gereken ayrı bir iş. Başlıktaki (2) numaralı not. */
@@ -285,7 +285,7 @@ for (const kurs of kurslar) {
     );
     /* İki ölçü, iki yön. `bosluk` bir BORÇ: metinde geçip hiç öğretilmeyen
        sözcük sayısı büyüyemez. `kapsam` bir KAZANÇ: patikanın havuzu öğretme
-       oranı düşemez. Yüzde tam sayıya yuvarlanıyor, yoksa bir dersin tek
+       oranı düşemez. Yüzde tam sayıya yuvarlanıyor, yoksa bir konuşmanın tek
        sözcüğü ondalıkta gezinip kapıyı gereksiz yere kırmızı yakardı. */
     sayim.set(`${kurs} ${lv} bosluk`, kullanilan.length);
     sayim.set(`${kurs} ${lv} kapsam`, kapsam);

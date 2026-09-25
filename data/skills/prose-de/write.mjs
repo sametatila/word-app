@@ -6,7 +6,7 @@
  * tutmamıştı.
  *
  * SATIR SAYISI TUTMAZSA NEREDE KAYDIĞINI DA SÖYLÜYOR. Yüz elli satırlık
- * bir pakette eksik satırı elle aramak pahalı ve ders hattında üç kez
+ * bir pakette eksik satırı elle aramak pahalı ve konuşma hattında üç kez
  * gerekti. Ölçüt KANIT: satırın İngilizce yüzeyinde birebir geçen bir
  * açıklık, Almanca karşılıkta da birebir durmak zorunda (kapının kuralı
  * da bu). İlk tutmayan satır kaymanın başladığı yerdir.

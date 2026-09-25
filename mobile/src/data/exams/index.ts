@@ -5,7 +5,7 @@ import { courseOrDefault, type CourseId } from "../../lib/courses";
  *
  * Bu ekran eskiden "Sınav hazırlık"tı ve iki şeyi listeliyordu, ikisi de
  * BAŞKA YERİN içeriğiydi: beceri alıştırmalarının eksik bir kopyası ve
- * `lib/exam.ts`in ders içeriğinden ürettiği Patika türevi kâğıtlar. İkisi de
+ * `lib/exam.ts`in konuşma içeriğinden ürettiği Patika türevi kâğıtlar. İkisi de
  * kaldırıldı. Buradaki kâğıtlar hiçbir yerden türetilmiyor; kaynakları
  * `src/lib/mock-exams` altında duruyor.
  *

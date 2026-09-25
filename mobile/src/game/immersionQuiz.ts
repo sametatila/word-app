@@ -1,7 +1,7 @@
 /**
  * Ünite quiz/unitQuiz sorularını CİHAZDA türetir — web'in brief.ts +
  * quiz.ts'inin mobil portu. İçerik yazımı gerekmez: sorular ünitenin kendi
- * kelime/kalıplarından (4 dersi), distraktörler seviyenin havuzundan. Tema
+ * kelime/kalıplarından (4 konuşmayı), distraktörler seviyenin havuzundan. Tema
  * hizalı, deterministik (RNG yok → aynı ünite hep aynı quiz). SkillQuestion
  * üretir; QuestionList aynen render eder.
  */
@@ -56,7 +56,7 @@ export function buildUnitBrief(level: string, unitIndex: number): UnitBrief {
  * BU üniteden ÖNCEKİ ünitelerin havuzu — quiz'in üçte biri buradan gelir.
  *
  * Web bunu çağrı yerinde kuruyor (`app/(app)/immersion/quiz/[unit]/page`);
- * mobilde ekran ders listesine erişmediği için burada kuruluyor. Ünite 1'de
+ * mobilde ekran konuşma listesine erişmediği için burada kuruluyor. Ünite 1'de
  * boş döner ve `deriveQuiz` tekrar sorusu üretmez.
  */
 export function earlierPool(level: string, unitIndex: number): QuizPool {
@@ -230,10 +230,10 @@ export function deriveQuiz(
    yani aynı ünitede iki platform farklı gramer sorusu soruyordu. */
 
 /**
- * Ünitenin gramer adımı — ünitenin KENDİ derslerinden türetilir.
+ * Ünitenin gramer adımı — ünitenin KENDİ konuşmalarından türetilir.
  *
  * Web'deki `lib/immersion/grammar.ts` ile aynı kural, aynı iki kaynak:
- * dersin hüküm adımları (gerekçesiyle birlikte) ve üretim hedefleri (dizme
+ * konuşmanın hüküm adımları (gerekçesiyle birlikte) ve üretim hedefleri (dizme
  * sorusu olarak). Mobilde ayrı bir uygulama olmasının sebebi quiz ile aynı:
  * cihaz kendi patikasını kurabiliyor ve ağ beklemiyor.
  *
@@ -259,7 +259,7 @@ export function deriveGrammar(level: string, unitIndex: number, count = 8): Skil
           kind: "truefalse",
           text: e.statement,
           /* Hüküm şıkları KURSUN dilinde: sabit "Richtig/Falsch" İngilizce
-             kursta da Almanca çıkıyordu ve İngilizce derslerde yüz tane hüküm
+             kursta da Almanca çıkıyordu ve İngilizce konuşmalarda yüz tane hüküm
              adımı var. Deneme sınavı aynı çifti kursa göre veriyor
              (`MOCK_LABELS[course].bool`), buraya da oradan geliyor. */
           options: [...MOCK_LABELS[currentCourseId() === "en" ? "en" : "de"].bool],

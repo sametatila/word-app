@@ -64,7 +64,7 @@ function ttsUrl(voice: VoiceId, clean: string, slow: Pace | boolean = false, pit
  *
  * Sebebi iOS: kullanıcı hareketi olmadan `play()` engelleniyor ve uygulamada
  * kendiliğinden konuşan yerler var (yeni kelime kartı, dinleme oyunu, diyalog,
- * rol yapma cevabı). Bir kez kullanıcı hareketiyle çalmış öğe sonrasında serbest
+ * sohbet cevabı). Bir kez kullanıcı hareketiyle çalmış öğe sonrasında serbest
  * kalıyor, bu yüzden aynı öğe yeniden kullanılıyor ve ilk dokunuşta sessiz bir
  * kayıtla hazırlanıyor.
  *
@@ -73,7 +73,7 @@ function ttsUrl(voice: VoiceId, clean: string, slow: Pace | boolean = false, pit
  */
 let element: HTMLAudioElement | null = null;
 /**
- * İkinci ses öğesi — yalnızca ders anlatımının parça zinciri kullanıyor.
+ * İkinci ses öğesi — yalnızca konuşma anlatımının parça zinciri kullanıyor.
  *
  * Parçalar tek öğeyle art arda çalındığında her sınırda aynı bekleme vardı:
  * önceki parça bitiyor, src değişiyor, yeni kaynak açılıp çözülüyor ve ancak
@@ -218,7 +218,7 @@ if (typeof window !== "undefined") primeOnFirstGesture();
  *      sessiz kalmasın.
  *
  * `onEnd` her durumda çağrılır — ses çalındığında da, hiç çalınamadığında da.
- * Eller serbest rol yapmada mikrofonun kendiliğinden açılması buna bağlı; hiç
+ * Eller serbest sohbette mikrofonun kendiliğinden açılması buna bağlı; hiç
  * gelmeyecek bir bitiş döngüyü kilitlerdi.
  */
 export function speakGerman(
@@ -236,7 +236,7 @@ export function speakGerman(
     Uç 600 karakterin üstünü 400 `bad_text` ile REDDEDİYOR, kırpmıyor; burası
     ise metni olduğu gibi tek istekte gönderiyordu. Ölçüldü: okuma
     alıştırmalarının 120'sinden 85'i (en uzunu 2245 karakter) bu yüzden hiç
-    seslendirilemiyordu, üstelik hata sessizdi. Rol yapma cevapları ve ders
+    seslendirilemiyordu, üstelik hata sessizdi. Sohbet cevapları ve konuşma
     anlatımının birleştirilmiş replikleri de aynı tavana açıktı.
 
     Kısa metinler — kelime turu, tek cümle, yani çağrıların ezici çoğunluğu —
@@ -403,8 +403,8 @@ export function prefetchGerman(text: string, word = false) {
 /**
  * Kullanıcının seçtiği ses, kursa göre doğrulanmış — kelime katmanının sesi.
  *
- * Parça zinciri (`speakSegments`) sesi parçanın dilinden türetiyor ve o türetme DERS sesini veriyor
- * (`conversationVoice`, sabit). Yürüyüş modu hedef kelimeyi bu yüzden seçilen karakterle değil ders sesiyle
+ * Parça zinciri (`speakSegments`) sesi parçanın dilinden türetiyor ve o türetme KONUŞMA sesini veriyor
+ * (`conversationVoice`, sabit). Yürüyüş modu hedef kelimeyi bu yüzden seçilen karakterle değil konuşma sesiyle
  * okuyordu; kelime parçası sesini buradan açıkça taşımalı.
  */
 export function selectedVoice(): VoiceId {
@@ -422,12 +422,12 @@ export function speakSlowly(text: string, onEnd?: () => void) {
 }
 
 /**
- * Dil bazında bölünmüş metin parçası — ders anlatımının birimi.
+ * Dil bazında bölünmüş metin parçası — konuşma anlatımının birimi.
  *
- * Ders Türkçe anlatıyor ama içinde Almanca hedefler geçiyor: "İlk kelimemiz:
+ * Konuşma Türkçe anlatıyor ama içinde Almanca hedefler geçiyor: "İlk kelimemiz:
  * das Wasser." Tek sesle okumak iki dilden birini bozuyor — Türkçe ses
  * Almancayı Türkçe fonetiğiyle, Almanca ses Türkçeyi Alman aksanıyla okurdu.
- * Öğrencinin duyacağı telaffuz dersin öğrettiği şeyin kendisi olduğu için bu
+ * Öğrencinin duyacağı telaffuz konuşmanın öğrettiği şeyin kendisi olduğu için bu
  * kabul edilebilir bir bozulma değil; parça hangi dildeyse o dilin nöral
  * sesiyle okunuyor.
  */
@@ -437,7 +437,7 @@ export type SpeechSegment = {
   /**
    * Anlatım parçası: metin SÖZLÜKTEN geliyor, yani `lang` gerçekten o parçanın
    * dili. Bayrak olmadan `lang: "tr"` iki ayrı şey demek oluyordu — "Türkçe
-   * metin" ve "anlatım" — ve ders içeriği Türkçe kaldığı için ikisini tek
+   * metin" ve "anlatım" — ve konuşma içeriği Türkçe kaldığı için ikisini tek
    * kuralla ayırmak mümkün değildi. İşaretli parçalar anlatım sesiyle,
    * işaretsizler bugünkü davranışla okunuyor.
    */
@@ -483,11 +483,11 @@ export type SpeechSegment = {
 };
 
 /**
- * Parçanın sesi profil tercihinden BAĞIMSIZ: derste öncelik gecikme.
+ * Parçanın sesi profil tercihinden BAĞIMSIZ: konuşmada öncelik gecikme.
  *
- * Ses sabit olunca dersin her cümlesi kullanıcıdan bağımsız tek önbellek
+ * Ses sabit olunca konuşmanın her cümlesi kullanıcıdan bağımsız tek önbellek
  * girdisi — ilk dinleyen CDN'i herkes için ısıtıyor (bkz. lib/tts/voices,
- * conversationVoice). Profil sesi konuşma pratiği gibi kullanıcıya özel üretilen
+ * conversationVoice). Profil sesi sohbet gibi kullanıcıya özel üretilen
  * yerlerde geçerli olmayı sürdürüyor.
  */
 function voiceForSegment(seg: SpeechSegment): { voice: VoiceId; course: string } {
@@ -710,7 +710,7 @@ function playGapless(
       let buf: AudioBuffer | null = null;
       try {
         /* TAVAN: bu indirme OYNATMA YOLU, on indirme degil - kullanici
-           sesin baslamasini bekliyor ve asili kalan bir istek dersi sessiz
+           sesin baslamasini bekliyor ve asili kalan bir istek konuşmayı sessiz
            birakiyordu. Android ayni indirmeyi native yapiyor ve sekiz
            saniyede vazgeciyor (`LernomiSpeechModule.playTtsUrl`
            connectTimeout/readTimeout 8000); ayni sayi burada. */
@@ -1128,7 +1128,7 @@ export function stopSpeaking() {
 }
 
 /**
- * Parçaların seslerini önceden indirir — ders akışında bekleme olmasın.
+ * Parçaların seslerini önceden indirir — konuşma akışında bekleme olmasın.
  *
  * Oynatmayla AYNI birleştirmeden geçiyor: önbellek anahtarı metnin kendisi,
  * farklı bölünmüş metin ayrı (ve boşuna) bir girdi olurdu.
@@ -1236,7 +1236,7 @@ function play(
     İKİ öğe birden susturuluyor.
 
     Buradaki tek satır uzun süre `audio.pause()` idi, yani yalnızca birinci
-    öğe. İkinci öğeyi ise parça zinciri kullanıyor (ders anlatımı ve yürürken
+    öğe. İkinci öğeyi ise parça zinciri kullanıyor (konuşma anlatımı ve yürürken
     modu, bkz. chainWithElements) ve o zincir yarıda kaldığında ikinci öğe
     ÇALMAYA DEVAM ediyordu. Ardından bir oyun turu konuşunca iki ses üst üste
     biniyor: aynı sesin hafif kaymış iki kopyası, yani "boş bir odada yankı".

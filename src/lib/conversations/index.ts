@@ -5,7 +5,7 @@ import { conversationPack, packCourseOf, packCourseOfId, levelOfId } from "@/lib
 import { courseOrDefault } from "../courses";
 
 /**
- * DERS KATALOĞU — YAYIN HATTINDAN.
+ * KONUŞMA KATALOĞU — YAYIN HATTINDAN.
  *
  * İçerik eskiden burada statik `import` ile duruyordu (8,5 MB) ve mobil aynı
  * içeriği kendi paketinden okuyordu: iki platform, iki kaynak. Artık ikisi de
@@ -42,10 +42,10 @@ function packCourseFor(course: string): "de" | "en" {
 }
 
 /**
- * Kursun dersleri, seviye sırasında.
+ * Kursun konuşmaları, seviye sırasında.
  *
- * Eşleşme TAM: her kurs yalnız kendi derslerini alır. Yalnızca BİLİNMEYEN bir
- * id Almancaya düşer. Not: gsw-zh'ın diskte hiç dersi yok, bu yüzden Almanca
+ * Eşleşme TAM: her kurs yalnız kendi konuşmalarını alır. Yalnızca BİLİNMEYEN bir
+ * id Almancaya düşer. Not: gsw-zh'ın diskte hiç konuşmayı yok, bu yüzden Almanca
  * paketlerini okuyor — hedefi de Almanca.
  */
 export async function conversationsFor(course: string): Promise<Conversation[]> {
@@ -53,17 +53,17 @@ export async function conversationsFor(course: string): Promise<Conversation[]> 
   const pc = packCourseFor(key);
   const all = await packItemsAll<Conversation>(LEVEL_ORDER.map((level) => conversationPack(pc, level)));
   /* Paket kursu ile KURS aynı şey değil: gsw-zh Almanca paketlerini okuyor ama
-     dersin kendi `course` alanı "de". Süzgeç ders alanına bakıyor. */
+     konuşmanın kendi `course` alanı "de". Süzgeç konuşma alanına bakıyor. */
   return all.filter((l) => l.course === (pc === "en" ? "en" : "de") || l.course === key);
 }
 
-/** Bir seviyenin dersleri — tek paket, en ucuz okuma. */
+/** Bir seviyenin konuşmaları — tek paket, en ucuz okuma. */
 export async function conversationsForLevel(course: string, level: string): Promise<Conversation[]> {
   return packItems<Conversation>(conversationPack(packCourseFor(course), level));
 }
 
 /**
- * Dersi kimliğinden bulur — kurs ve seviye kimliğin İÇİNDE ("de-b1-bewerbung").
+ * Konuşmayı kimliğinden bulur — kurs ve seviye kimliğin İÇİNDE ("de-b1-bewerbung").
  * Doğru pakete doğrudan gidiliyor; bütün katalogu okumak gerekmiyor.
  */
 export async function findConversation(id: string): Promise<Conversation | undefined> {
@@ -73,7 +73,7 @@ export async function findConversation(id: string): Promise<Conversation | undef
   return list.find((l) => l.id === id);
 }
 
-/** Tüm dersler — yalnız katalog geneli gereken yerler için (pahalı). */
+/** Tüm konuşmalar — yalnız katalog geneli gereken yerler için (pahalı). */
 export async function allConversations(): Promise<Conversation[]> {
   const packs: string[] = [];
   for (const pc of ["de", "en"] as const) for (const level of LEVEL_ORDER) packs.push(conversationPack(pc, level));
@@ -81,9 +81,9 @@ export async function allConversations(): Promise<Conversation[]> {
 }
 
 /**
- * Dersin kendi seviyesindeki sırası (0 tabanlı).
+ * Konuşmanın kendi seviyesindeki sırası (0 tabanlı).
  *
- * Modül pankartları ve rol yapma karakterleri bu sayıdan türüyor: paket
+ * Modül pankartları ve sohbet karakterleri bu sayıdan türüyor: paket
  * kaynak sırasını taşıdığı için dizin doğrudan o sıradan çıkıyor.
  */
 export async function conversationIndexInLevel(conversation: Conversation): Promise<number> {

@@ -186,7 +186,7 @@
    * kart/ekran başlığı → `h3`, bölüm kapağı → `h2`, büyük sayaç → `h1` ya da
    * `display`. Ölçekte 18 px ve 24 px YOK.
    *
-   * Sınav, ders ve beceri oynatıcılarının başlıkları tek tek mobil
+   * Sınav, konuşma ve beceri oynatıcılarının başlıkları tek tek mobil
    * karşılığındaki `<Text variant>`e bakılarak eşlendi — o ekranlarda mobil
    * neredeyse yalnız `micro/caption/body/bodyStrong` kullanıyor, yani soru
    * metni bir BAŞLIK değil `bodyStrong`.
@@ -1372,7 +1372,7 @@
 }
 
 /*
- * KALDIRILAN İKİ SÜS: `conversation-ping` (yol haritasında sıradaki dersin nabız
+ * KALDIRILAN İKİ SÜS: `conversation-ping` (yol haritasında sıradaki konuşmanın nabız
  * halkası) ve `animate-pop` / `pop-in`.
  *
  * İkisi de hiçbir yerden çağrılmıyordu ve Android'de karşılıkları YOK: iki

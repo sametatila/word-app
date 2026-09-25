@@ -1,16 +1,16 @@
 /**
- * Ders kataloğunu mobil pakete döker (seviye başına bir JSON).
+ * Konuşma kataloğunu mobil pakete döker (seviye başına bir JSON).
  *
- * Web dersi koddan okuyor (findConversation); mobilin de aynı içeriğe ihtiyacı var
+ * Web konuşmayı koddan okuyor (findConversation); mobilin de aynı içeriğe ihtiyacı var
  * çünkü /api/conversation yalnızca SONUCU kaydeder, içeriği sunmaz.
  *
  * ÇEVRİMDIŞI SENARYO ARTIK DÖKÜLÜYOR. Eskiden `script` hariç tutuluyordu
  * ("mobil konuşmayı /api/chat ile yürütür") ve bu, sağlayıcı kapalıyken
- * Android'de hiçbir konuşma dersinin geçilememesi demekti — geçme koşulu
+ * Android'de hiçbir konuşma konuşmasının geçilememesi demekti — geçme koşulu
  * konuşmanın yapılmasını istiyor. Web o durumda senaryoya düşüyor; mobil de
  * artık düşüyor (`game/offlineChat`).
  *
- * Paket şişmesi ölçüldü: senaryo 780 dersin yalnız 10'unda var.
+ * Paket şişmesi ölçüldü: senaryo 780 konuşmanın yalnız 10'unda var.
  */
 import { writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
@@ -27,7 +27,7 @@ const DIR = "mobile/src/data/conversations";
  * metin sapmasını görmüyordu (gerekçe orada). Projeksiyon tek yerde durmalı,
  * yoksa kapı dökümün kendisinden ayrı düşer ve yanlış yeri gösterir.
  *
- * Dersi olmayan seviye için dosya YAZILMIYOR: mobil yükleyici paketleri tek
+ * Konuşmayı olmayan seviye için dosya YAZILMIYOR: mobil yükleyici paketleri tek
  * tek import ediyor (`mobile/src/data/conversations/index.ts`) ve boş bir dosyayı
  * hiçbir şey import etmez — yazmak yalnız depoya ölü dosya bırakırdı.
  */
@@ -67,7 +67,7 @@ if (process.argv[1]?.endsWith("dump-conversations-mobile.ts")) {
   const course = (process.argv[2] ?? "de").toLowerCase();
   const packs = buildConversationDump(course);
   if (!packs.length) {
-    console.error(`"${course}" kursu için ders yok — paket yazılmadı.`);
+    console.error(`"${course}" kursu için konuşma yok — paket yazılmadı.`);
     process.exit(1);
   }
   /*
@@ -75,7 +75,7 @@ if (process.argv[1]?.endsWith("dump-conversations-mobile.ts")) {
 
     Üst seviyeler mobil paketten çıkarıldı (7,2 MB) ve seviye paketi hâlinde
     sunucudan iniyor. A1 ikilide kalıyor ki uygulama ağsız da açılsın ve ilk
-    ders hemen başlasın; ikili hangi kursun seçileceğini bilmediği için iki
+    konuşma hemen başlasın; ikili hangi kursun seçileceğini bilmediği için iki
     kursun da A1'i gömülü.
 
     `buildConversationDump` bütün seviyeleri üretmeye DEVAM ediyor:
@@ -88,9 +88,9 @@ if (process.argv[1]?.endsWith("dump-conversations-mobile.ts")) {
     process.exit(1);
   }
   writeFileSync(join(process.cwd(), seed.file), seed.json);
-  console.log(course, "A1 tohumu yazıldı:", seed.count, "ders");
+  console.log(course, "A1 tohumu yazıldı:", seed.count, "konuşma");
   for (const pack of packs) {
     if (pack.level === "A1") continue;
-    console.log(pack.level.padEnd(3), String(pack.count).padStart(4), "ders — yayına gider, pakete değil");
+    console.log(pack.level.padEnd(3), String(pack.count).padStart(4), "konuşma — yayına gider, pakete değil");
   }
 }

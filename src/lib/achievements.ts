@@ -27,7 +27,7 @@ import {
  * Uygulamada biriken tek şey XP'ydi ve XP tek bir sayı: 41.320'den 41.480'e
  * çıkmak hiçbir şey anlatmıyor. Geriye dönüp bakılacak, "şunu başardım"
  * denecek hiçbir yüzey yoktu — oysa veritabanında yüz günlük seriler, binlerce
- * doğru cevap ve bitmiş dersler duruyordu. Emek vardı, hatırası yoktu.
+ * doğru cevap ve bitmiş konuşmalar duruyordu. Emek vardı, hatırası yoktu.
  *
  * Üç tasarım kararı:
  *
@@ -167,7 +167,7 @@ export const ACHIEVEMENTS: AchievementDef[] = [
   { id: "grammar12", titleKey: "ach.grammar12.title", hintKey: "ach.grammar12.hint", icon: "GrammarIcon", tier: "silver", group: "grammar", metric: "grammarDone", target: 12 },
   { id: "grammar25", titleKey: "ach.grammar25.title", hintKey: "ach.grammar25.hint", icon: "MountainIcon", tier: "gold", group: "grammar", metric: "grammarDone", target: 25 },
 
-  // ——— Ders ——————————————————————————————————————————————————————
+  // ——— Konuşma ——————————————————————————————————————————————————————
   { id: "conversation1", titleKey: "ach.conversation1.title", hintKey: "ach.conversation1.hint", icon: "ChatIcon", tier: "bronze", group: "conversations", metric: "conversations", target: 1 },
   { id: "conversation10", titleKey: "ach.conversation10.title", hintKey: "ach.conversation10.hint", icon: "SchoolIcon", tier: "bronze", group: "conversations", metric: "conversations", target: 10 },
   { id: "conversation50", titleKey: "ach.conversation50.title", hintKey: "ach.conversation50.hint", icon: "SchoolIcon", tier: "gold", group: "conversations", metric: "conversations", target: 50 },

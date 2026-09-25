@@ -203,7 +203,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
    * `resumeGuest`). Çerez gitmiş olabilir — iki adımlı doğrulaması olan bir
    * hesaba giriş denenip kodda vazgeçilmesi bunu yapıyor — ama kimlik
    * sunucuda duruyor: oturum jetonla geri kuruluyor. Kimlik gerçekten
-   * yoksa cihazdaki hesap verisi (seri, kuyruklar, yarım ders) o misafirindi
+   * yoksa cihazdaki hesap verisi (seri, kuyruklar, yarım konuşma) o misafirindi
    * ve siliniyor; yoksa aynı telefonda açılan yeni misafir onları devralırdı.
    */
   const restoreGuest = useCallback(async (rec: GuestRecord): Promise<AuthUser | null> => {
@@ -410,7 +410,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
      *
      * Üstteki iki satır BELLEKTEKİ durumu kapatıyor; `AsyncStorage` olduğu gibi
      * kalıyordu. Yani aynı telefonda A çıkıp B girdiğinde B, A'nın avatarını,
-     * serisini, günün turu/haftalık önbelleğini, yarım dersini ve deneme
+     * serisini, günün turu/haftalık önbelleğini, yarım konuşmasını ve deneme
      * koşularını görüyordu - yukarıdaki gerekçenin kalıcı hâli.
      * Web bunu kimlik değişince yapıyor (`session-keeper`); hangi anahtarların
      * hesaba, hangilerinin cihaza ait olduğu `lib/accountScope`ta yazılı.

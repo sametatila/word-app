@@ -10,7 +10,7 @@
  *     çalışmadan, sabit sürede reddediyor (güvenlik denetimi #3).
  *  3) KAÇAMAK GÖVDESİ — rakam, ayraç, tekrar, homoglif ve öbek hakaretler.
  *  4) MASUM GÖVDESİ — Türkçe/Almanca çakışma tuzakları ve gerçek adlar; ayrıca
- *     uygulamanın KENDİ ders içeriğinin tamamı taranır. Süzgeç kendi öğrettiğimiz
+ *     uygulamanın KENDİ konuşma içeriğinin tamamı taranır. Süzgeç kendi öğrettiğimiz
  *     sözcüğü reddediyorsa bu bir hatadır ve CI'da kırmızı görünür.
  */
 import { readdirSync, readFileSync } from "node:fs";
@@ -116,11 +116,11 @@ for (const [tür, liste] of Object.entries(MASUM)) {
   check(`masum/${tür}: ${liste.length - yanlış.length}/${liste.length} serbest${yanlış.length ? ` — yanlış engel: ${yanlış.join(", ")}` : ""}`, yanlış.length === 0);
 }
 
-// 7) Kendi ders içeriğimizin tamamı — yanlış pozitif için en geniş gövde.
+// 7) Kendi konuşma içeriğimizin tamamı — yanlış pozitif için en geniş gövde.
 //    Yeni bir isabet çıkarsa ya sözlük hatalıdır ya da girdi gerçekten küfürdür;
 //    ikisi de elle bakılmayı hak eder, o yüzden bilinen küme dar tutuluyor.
 // "am" ve "dick" yalnız girdinin TAMAMI buysa engelleniyor. "nazi/nazis" tarih
-// okumalarında geçiyor; görünen ad olarak bilerek reddediliyor (CNT-5), ders
+// okumalarında geçiyor; görünen ad olarak bilerek reddediliyor (CNT-5), konuşma
 // metni bu süzgeçten geçmiyor.
 const BİLİNEN_İSABET = new Set(["am", "dick", "nazi", "nazis"]);
 {
@@ -153,9 +153,9 @@ const BİLİNEN_İSABET = new Set(["am", "dick", "nazi", "nazis"]);
   const norm = (s: string) => s.toLocaleLowerCase("tr-TR").replace(/[^\p{L}\p{N}]/gu, "");
   const isabet = [...kelimeler].filter((w) => displayNameAllowed(w) === false);
   const beklenmeyen = [...new Set(isabet.map(norm))].filter((w) => !BİLİNEN_İSABET.has(w));
-  console.log(`     (${kelimeler.size} ders sözcüğü tarandı, ${isabet.length} isabet)`);
+  console.log(`     (${kelimeler.size} konuşma sözcüğü tarandı, ${isabet.length} isabet)`);
   check(
-    `ders içeriği: beklenmeyen isabet yok${beklenmeyen.length ? ` — ${beklenmeyen.slice(0, 20).join(", ")}` : ""}`,
+    `konuşma içeriği: beklenmeyen isabet yok${beklenmeyen.length ? ` — ${beklenmeyen.slice(0, 20).join(", ")}` : ""}`,
     kelimeler.size > 1000 && beklenmeyen.length === 0,
   );
 }

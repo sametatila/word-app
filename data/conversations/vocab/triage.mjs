@@ -1,16 +1,16 @@
 /**
- * Ders sözlükçesini ikiye ayırır: türetilebilen ve elle okunması gereken.
+ * Konuşma sözlükçesini ikiye ayırır: türetilebilen ve elle okunması gereken.
  *
  * TÜRETMENİN SINIRI ÖLÇÜLDÜ, VARSAYILMADI. Almanca başlığın kelime havuzunda
- * karşılığı olması yetmiyor — havuzdaki `en`in DOĞRU olması gerekiyor. Ders
- * sözlükçesi kelimenin BU DERSTEKİ anlamını taşıyor, havuz ise birinci sözlük
+ * karşılığı olması yetmiyor — havuzdaki `en`in DOĞRU olması gerekiyor. Konuşma
+ * sözlükçesi kelimenin BU KONUŞMADAKİ anlamını taşıyor, havuz ise birinci sözlük
  * anlamını. İkisi ayrıştığında türetme yanlış karşılık verir:
  *
- *   bitte      ders «lütfen»     ↔ havuz «rica»       (en: request)
- *   schreiben  ders «yazmak»     ↔ havuz «resmî yazı» (en: letter)
- *   groß       ders «uzun boylu» ↔ havuz «büyük»      (en: grand)
+ *   bitte      konuşma «lütfen»     ↔ havuz «rica»       (en: request)
+ *   schreiben  konuşma «yazmak»     ↔ havuz «resmî yazı» (en: letter)
+ *   groß       konuşma «uzun boylu» ↔ havuz «büyük»      (en: grand)
  *
- * Ayrışmayı ölçen şey Türkçe: dersin `tr`i havuzun `tr`iyle birebir aynıysa
+ * Ayrışmayı ölçen şey Türkçe: konuşmanın `tr`i havuzun `tr`iyle birebir aynıysa
  * iki taraf aynı anlamı kastediyor ve havuzun `en`i güvenle alınır. Farklıysa
  * madde okunmalı — çoğu yalnız sözcük tercihidir ama ayırt etmek için okumak
  * gerekiyor, ve bu ayrımı makine yapamaz.

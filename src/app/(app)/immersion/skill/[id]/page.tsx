@@ -83,7 +83,7 @@ export default async function ImmersionSkillPage({
 
   /* YÖNERGE VE AÇIKLAMA öğrencinin dilinde. Metin, soru kökü ve şıklar
      öğrenilen dilde kalıyor — egzersizin ölçtüğü şey onlar. Çeviri BURADA,
-     `getExercise`te değil: öteki üç çağıran (puanlama, kayıt, rol yapma uç
+     `getExercise`te değil: öteki üç çağıran (puanlama, kayıt, sohbet uç
      noktası) düz metni hiç kullanmıyor ve orada 1,7 MB sözlük boşa yüklenir.
      Hep-ya-hiç: bir dize bile eksikse egzersiz tümüyle Türkçe kalıyor. */
   let exercise = source;

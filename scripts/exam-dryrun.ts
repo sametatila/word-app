@@ -83,7 +83,7 @@ async function main() {
     if (paper.seconds !== 1500) fail(where, `süre ${paper.seconds}`);
 
     if (s.grammar.length) {
-      if (!s.grammar.some((g) => g.kind === "judge")) fail(where, "dilbilgisinde ders hükmü yok");
+      if (!s.grammar.some((g) => g.kind === "judge")) fail(where, "dilbilgisinde konuşma hükmü yok");
       if (!s.grammar.some((g) => g.kind === "cell")) fail(where, "dilbilgisinde tablo hücresi yok");
     }
     for (const g of s.grammar) {

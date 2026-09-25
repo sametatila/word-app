@@ -75,7 +75,7 @@ function isSectionHeader(line: string): boolean {
  * olmadan döndürüyor: „ich arbeite auch“. Bunu „Ich arbeite auch.“ diye
  * düzeltmek öğrencinin YAPMADIĞI bir hatayı ona yüklemek oluyor — söylediği
  * cümlede öyle bir hata yok, yazıya dökülürken oluşmuş bir fark var. Sesli
- * konuşurken imla düzeltmesi almak dersin güvenilirliğini düşürüyor.
+ * konuşurken imla düzeltmesi almak konuşmanın güvenilirliğini düşürüyor.
  *
  * İstemde „bunu yapma“ demek yardımcı oluyor ama garanti değil. Burada
  * süzmek kesin: iki tarafı harf ve sayı olarak aynı olan satır hiç

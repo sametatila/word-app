@@ -12,7 +12,7 @@
  * "I'd save money").
  *
  * NEDEN `accept` LİSTESİ DEĞİL. 134 satırı elle yazmak aynı kusuru bir
- * dahaki ders yazıldığında geri getirirdi; katlama sayı sözcüklerinde
+ * dahaki konuşma yazıldığında geri getirirdi; katlama sayı sözcüklerinde
  * (`foldNumbers`) zaten bu yolla çözülmüştü ve aynı gerekçe burada da
  * geçerli: kusur içerikte değil KARŞILAŞTIRMADA.
  *

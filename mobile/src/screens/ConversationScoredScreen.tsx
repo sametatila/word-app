@@ -52,11 +52,11 @@ type AssessError = { type: ErrorType; wrong: string; fix: string; why_tr?: strin
 type Result = { score: Score; errors: AssessError[]; corrected?: string | null; praise_tr?: string | null; next_tip_tr?: string | null };
 
 /**
- * Rol yapma sınavı (WP-22) — aynı sahne, yardım yok, 5 tur, 3 dakika.
+ * Puanlı kısım (WP-22) — aynı sahne, yardım yok, 5 tur, 3 dakika.
  *
- * WEBDE VARDI, ANDROİD'DE YOKTU. Ders oynatıcısının özetinde web "Sınav olarak
+ * WEBDE VARDI, ANDROİD'DE YOKTU. Konuşma oynatıcısının özetinde web "Sınav olarak
  * dene" düğmesini gösteriyor ve `/conversations/[id]/scored` sayfasına gidiyordu;
- * mobilde o yüzey hiç yoktu, yani aynı dersi bitiren iki kullanıcıdan yalnız
+ * mobilde o yüzey hiç yoktu, yani aynı konuşmayı bitiren iki kullanıcıdan yalnız
  * biri ölçülebiliyordu.
  *
  * Alıştırmadan farkı ölçüm: muhatap düzeltmez, öneri vermez, anadile geçmez
@@ -79,11 +79,11 @@ export function ConversationScoredScreen() {
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { id } = useRoute<RouteProp<RootStackParams, "ConversationScored">>().params;
   const { status: premiumStatus } = usePremiumStatus();
-  /* Dersin seviye paketi inmemişse burada iniyor (bkz. `data/conversations`). */
+  /* Konuşmanın seviye paketi inmemişse burada iniyor (bkz. `data/conversations`). */
   const [conversation, setConversation] = useState<Conversation | undefined>(() => findConversation(id) as Conversation | undefined);
   /* Paket inmeden "bulunamadı" denmiyor (bkz. ui/flow `ContentLoadingBody`). */
   const [packReady, setPackReady] = useState(() => !!findConversation(id));
-  /* Paket inemediyse "ders bulunamadı" değil "indirilemedi" deniyor. */
+  /* Paket inemediyse "konuşma bulunamadı" değil "indirilemedi" deniyor. */
   const [packFailed, setPackFailed] = useState(false);
   useEffect(() => {
     const level = conversationLevelOf(id);
@@ -127,7 +127,7 @@ export function ConversationScoredScreen() {
     return () => { mounted.current = false; stopListening(); };
   }, []);
 
-  /* Yapabilirlik etiketi: kimlikler dersten (`candoMap`), METNİ `/api/cando`dan.
+  /* Yapabilirlik etiketi: kimlikler konuşmadan (`candoMap`), METNİ `/api/cando`dan.
      Web 213 satırlık veri dosyasından okuyor; mobil o listeyi zaten çekiyor. */
   useEffect(() => {
     if (!conversation) return;
@@ -319,7 +319,7 @@ export function ConversationScoredScreen() {
 
   if (phase === "intro") {
     return (
-      /* KAPAK ŞABLONU (ui/flow): ikon karosu · dersin adı · sınavın adı ·
+      /* KAPAK ŞABLONU (ui/flow): ikon karosu · konuşmanın adı · sınavın adı ·
          sahne · ikonlu kurallar · kalıplar kartı · altta Başla / Vazgeç.
          Kurallar "·" ile başlayan soluk satırlardı ve kalıplar da o listenin
          dördüncü "kuralı" gibi okunuyordu. */
@@ -337,7 +337,7 @@ export function ConversationScoredScreen() {
         <CoverBody
           icon={ChatIcon}
           tint={colors.primary}
-          /* Dersin adı hedef dilde; üst satır büyük harf ve Türkçe yerelde
+          /* Konuşmanın adı hedef dilde; üst satır büyük harf ve Türkçe yerelde
              "i" → "İ" oluyordu. JS `toUpperCase` yerelden bağımsız. */
           eyebrow={`${conversation.title.toUpperCase()} · ${conversation.titleTr}`}
           title={tx("scored.title")}
@@ -513,7 +513,7 @@ export function ConversationScoredScreen() {
               maxWidth: "88%",
               backgroundColor: turn.role === "user" ? colors.primary : colors.surface2,
               borderRadius: radii.lg,
-              /* Kuyruk köşesi konuşan tarafa bakıyor - `CoachBubble` ve ders
+              /* Kuyruk köşesi konuşan tarafa bakıyor - `CoachBubble` ve konuşma
                  balonlarıyla aynı biçim. */
               ...(turn.role === "user" ? { borderBottomRightRadius: radii.sm } : { borderBottomLeftRadius: radii.sm }),
               paddingHorizontal: spacing.md,
@@ -522,7 +522,7 @@ export function ConversationScoredScreen() {
             }}
           >
             <Text variant="body" color={turn.role === "user" ? colors.onPrimary : colors.text}>{turn.content}</Text>
-            {/* Yapay zekâ yanıtının altında "Bildir" (denetim CNT-6; ders
+            {/* Yapay zekâ yanıtının altında "Bildir" (denetim CNT-6; konuşma
                 sohbetindekiyle aynı bağlantı ve ref biçimi, sınav eki ile).
                 İlk balon (i = 0) dersin yazılı açılış cümlesi, model çıktısı
                 değil: orada yok. */}
@@ -555,7 +555,7 @@ export function ConversationScoredScreen() {
           onChangeText={setDraft}
           editable={!busy}
           multiline
-          /* Enter = Gönder (ders ekranıyla aynı; bkz. `ConversationScreen` `TypedRow`). */
+          /* Enter = Gönder (konuşma ekranıyla aynı; bkz. `ConversationScreen` `TypedRow`). */
           submitBehavior="submit"
           returnKeyType="send"
           onSubmitEditing={() => void send(draft)}

@@ -1,12 +1,12 @@
 /**
- * Rol yapma senaryosunun İngilizcesini denetler:
+ * Sohbet senaryosunun İngilizcesini denetler:
  *   `node data/conversations/script/check.mjs [paket|all]`
  *
  * Kurallar kardeş hatlarla aynı aileden; ikisi bu alana özgü:
  *
  * - **İpucu ALMANCA örneği taşır ve o örnek çevrilmez.** `cue` alanının
  *   yarısı "Adını söyle: Ich heiße …" biçiminde: Türkçe yönerge artı
- *   Almanca kalıp. Kalıp dersin ÖĞRETTİĞİ şey; çevrilirse öğrenci
+ *   Almanca kalıp. Kalıp konuşmanın ÖĞRETTİĞİ şey; çevrilirse öğrenci
  *   söyleyeceği cümleyi göremez. Kapı Almanca parçanın olduğu gibi
  *   kaldığını ölçüyor.
  * - **Muhatabın repliği İKİ dilde var.** `askTr` Almanca `ask`in

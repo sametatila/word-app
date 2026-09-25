@@ -22,8 +22,8 @@ export const dynamic = "force-dynamic";
 const LEVELS: CefrLevel[] = ["A1", "A2", "B1", "B2", "C1"];
 
 /**
- * Immersion (2. mod) ana ekranı — eski "Dersler" + "Beceriler"in birleşimi.
- * Ders iskeletinin üzerine okuma/dinleme/yazma (+ ileride gramer/quiz/unitQuiz)
+ * Immersion (2. mod) ana ekranı — eski "Konuşmalar" + "Beceriler"in birleşimi.
+ * Konuşma iskeletinin üzerine okuma/dinleme/yazma (+ ileride gramer/quiz/unitQuiz)
  * item'ları örülür (bkz. docs/plan/immersion.md). Seçili seviyenin track'i
  * kurulur, kullanıcının ilerlemesiyle gating hesaplanır, sunucuda çizilir.
  */
@@ -60,7 +60,7 @@ export default async function ImmersionPage() {
   const units = buildHubUnits(state);
 
   // Modül sınavları: seviyenin planı olan modüller. Ön koşul BURADA
-  // denetlenmiyor — motor, dersleri geçilmemiş modülün kâğıdını "deneme"
+  // denetlenmiyor — motor, konuşmaları geçilmemiş modülün kâğıdını "deneme"
   // olarak veriyor ve bunu kendisi söylüyor; kapıyı iki kez kapatmak,
   // hazır olup olmadığını merak eden öğrenciyi bilgisiz bırakırdı.
   const moduleExams = (hasModuleExams(course) ? [...Array(21).keys()] : [])
@@ -69,8 +69,8 @@ export default async function ImmersionPage() {
     .map(({ index, plan }) => ({ index, code: plan.code, titleTr: examText(plan.titleTr), titleDe: plan.titleDe }));
 
   /* BU SEVİYEDE ÜNİTE YOKSA. İki durum var ve ikisi de canlı: kursun hiç
-     dersi olmayabilir (gsw-zh) ya da dersleri BAZI seviyelerde bitmemiş
-     olabilir - İngilizce kursun bugün A1/A2'de 100'er dersi var, B1/B2/C1'de
+     konuşmayı olmayabilir (gsw-zh) ya da konuşmaları BAZI seviyelerde bitmemiş
+     olabilir - İngilizce kursun bugün A1/A2'de 100'er konuşmayı var, B1/B2/C1'de
      hiç yok. Metin bu yüzden "bu kursun" değil "bu seviyede" diyor; kursun
      tamamı yokmuş gibi konuşmak İngilizce öğrencisine yanlış bilgi veriyordu.
      Web boş bir Patika çiziyordu, Android sebebi söylüyordu; ikisi de artık

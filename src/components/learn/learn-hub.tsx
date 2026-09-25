@@ -167,7 +167,7 @@ export function LearnHub({ data }: { data: LearnHubData }) {
       */}
       {/* GÜNÜN GÖREVLERİ — gömülü, ayrı ekran yok.
           Yanında "bugünkü plan" satırı da vardı; mobilin Öğren ekranında öyle
-          bir yüzey yok ve söylediği şey (sıradaki ders) zaten Patika'nın öne
+          bir yüzey yok ve söylediği şey (sıradaki konuşma) zaten Patika'nın öne
           çıkan ünite kartında yazıyor. İki yerde duran bir cümle, bölüm
           sırasını mobilden ayırmaya değmiyordu. */}
       <div className="mb-5">

@@ -107,8 +107,8 @@ export function parseReply(text: string): ParsedReply {
 /**
  * Kalıbın gövdesi ("Ich möchte …" → "ich möchte") konuşma turunda geçiyor mu.
  *
- * Web `conversations/conversation-player` `patternUsed` ile AYNI kural. Ders özeti buna
- * göre kalıbı işaretliyor: dersin asıl amacı kalıbı KULLANMAK, yalnız görmek
+ * Web `conversations/conversation-player` `patternUsed` ile AYNI kural. Konuşma özeti buna
+ * göre kalıbı işaretliyor: konuşmanın asıl amacı kalıbı KULLANMAK, yalnız görmek
  * değil - mobil özeti kalıpları düz bir liste olarak yazıyordu ve öğrenci
  * hangisini gerçekten kullandığını hiçbir yerden öğrenemiyordu.
  */

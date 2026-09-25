@@ -3,7 +3,7 @@ import type { Gloss } from "@/lib/skills/types";
 /**
  * Deneme sınavı içerik modeli.
  *
- * NEDEN AYRI BİR MODEL. `lib/exam.ts` (modül/seviye sınavı) kâğıdı ders
+ * NEDEN AYRI BİR MODEL. `lib/exam.ts` (modül/seviye sınavı) kâğıdı konuşma
  * içeriğinden ÜRETİYOR: kelime turu, dilbilgisi hücresi, üretim adımı. O sınav
  * Patika'nın türevi ve öğrencinin o modülde ne öğrendiğini ölçüyor. Deneme
  * sınavı bambaşka bir şey ölçüyor: öğrenci, hiç görmediği bir metinle karşı

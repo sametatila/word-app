@@ -18,7 +18,7 @@ import { PRACTICE_PASS_PCT as PASS_PCT } from "@/lib/score-bands";
  *
  * Bitince sonuç `POST /api/immersion/item` ile kaydediliyor: bu adımların
  * "bitti" kaydı yokken Patika 13 adım gösterip 10 üzerinden sayıyordu. Kayıt
- * sonraki üniteyi açmaz (kapı dersler) — ünitenin kendi ilerlemesini tamamlar.
+ * sonraki üniteyi açmaz (kapı konuşmalar) — ünitenin kendi ilerlemesini tamamlar.
  */
 export function ImmersionQuizPlayer({
   title,
@@ -39,7 +39,7 @@ export function ImmersionQuizPlayer({
   intro?: string;
   /**
    * Başlıktaki karonun türü — Patika listesindeki aynı ikon/renk haritasından
-   * okunuyor. Eskiden yalnız "kontrol noktası mı" diye soruluyordu ve dil
+   * okunuyor. Eskiden yalnız "ünite quizi mı" diye soruluyordu ve dil
    * bilgisi turu da tekrar karosuyla açılıyordu; oysa Patika onu kendi
    * ikonuyla (bulmaca) ve kendi rengiyle gösteriyor.
    */
@@ -96,7 +96,7 @@ export function ImmersionQuizPlayer({
           <ArrowLeftIcon size={24} />
         </Link>
         {/* Türün karosu Android'in başlığında var ve Patika listesindeki aynı
-            ikon/renk çiftini kullanıyor: kontrol noktası kırmızı, tekrar marka
+            ikon/renk çiftini kullanıyor: ünite quizi kırmızı, tekrar marka
             rengi. Web'de yalnız düz başlık vardı, ekran hangisi olduğunu ancak
             okununca söylüyordu. */}
         <span

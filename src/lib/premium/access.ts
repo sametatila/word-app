@@ -136,7 +136,7 @@ async function ownedWithPrefix(userId: string, prefix: string): Promise<string[]
   }
 }
 
-/** Bitirilmiş dersler — Konuşma adımının "bitirildi" ölçüsü (`user_conversations`). */
+/** Bitirilmiş konuşmalar — Konuşma adımının "bitirildi" ölçüsü (`user_conversations`). */
 async function finishedConversations(userId: string, ids: string[]): Promise<number> {
   if (!ids.length) return 0;
   try {
@@ -154,8 +154,8 @@ async function finishedConversations(userId: string, ids: string[]): Promise<num
  * Bir yüzeyin o seviyedeki "kullanıldı" ve "bitirildi" sayıları.
  *
  * BİTİRMEK yüzeye göre:
- *  - Konuşma: sahiplenilmiş adımın dersi bitirilmiş (`user_conversations` satırı —
- *    dersin sonunda `/api/conversation` yazıyor). Sahiplenip bitirmemek dilimi
+ *  - Konuşma: sahiplenilmiş adımın konuşması bitirilmiş (`user_conversations` satırı —
+ *    konuşmanın sonunda `/api/conversation` yazıyor). Sahiplenip bitirmemek dilimi
  *    tamamlamıyor.
  *  - Yazma ve Beceriler: hak ilk değerlendirmede düşüyor, yani sahiplenmek
  *    değerlendirilmiş bir gönderim demek; kullanılan = bitirilen.
@@ -511,7 +511,7 @@ export type LevelUnlock = {
  * kuruyor; hesap `unlock.ts`te.
  *
  * Tüm seviyeler TEK çağrıda: istemci Patika'da seviye değiştirdikçe ayrı istek
- * atmasın. Maliyeti birkaç sorgu (profil, ömürlük sayaçlar, bitirilmiş dersler,
+ * atmasın. Maliyeti birkaç sorgu (profil, ömürlük sayaçlar, bitirilmiş konuşmalar,
  * bitirilmiş kâğıtlar) — hesap bellekte.
  */
 export type UnlockOverview = {

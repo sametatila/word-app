@@ -3,7 +3,7 @@ import type { CefrLevel } from "@/lib/skills/types";
 /**
  * CEFR "yapabilirim" haritası (plan WP-43).
  *
- * Dersler, egzersizler, drill'ler ve sınav bölümleri bir yapabilirlik
+ * Konuşmalar, egzersizler, drill'ler ve sınav bölümleri bir yapabilirlik
  * ifadesine bağlanır; profil "Yapabildiklerim" bu ifadeleri kanıtla
  * gösterir. Kaynak: CEFR Companion Volume (2020) ölçekleri ve Profile
  * Deutsch'un seviye kalıpları — Türkçeye sade, günlük dille aktarıldı;
@@ -199,14 +199,14 @@ export const CANDO: Cando[] = [
      Yukarıdaki GR ifadeleri ALMANCA kursun müfredatına göre yazılmış
      (der/die/das, Perfekt, Konjunktiv). İki kurs varken bu görünmez bir
      varsayımdı; İngilizce kurs eklenince görünür oldu: `candoForConversation`
-     17 İngilizce dersi "Isimlerin artikelini (der/die/das)" gibi bir
+     17 İngilizce konuşmayı "Isimlerin artikelini (der/die/das)" gibi bir
      ifadeye bağlıyordu — İngilizce öğrenen için yanlış, üstelik Türkçe
      okuyan da öyle görüyordu.
 
      Kimlik bloğu 11'den başlıyor: kimlikler kalıcı ve kurs boyutu
      taşımıyor, o yüzden ayrışma numarayla yapılıyor (bkz. `EN_GR_IDS`).
      Eşleme `cando-map.ts` içindeki `FOCUS_GR_EN` tablosunda.
-     Bugün yalnız A1 ve A2 var: İngilizce kursun dersleri o iki seviyede. */
+     Bugün yalnız A1 ve A2 var: İngilizce kursun konuşmaları o iki seviyede. */
   c("A1", "GR", 11, "am, is ve are biçimlerini olumlu, olumsuz ve soru cümlelerinde kullanabilirim."),
   c("A1", "GR", 12, "a ile an arasında doğru seçim yapabilir, the'yi bilinen bir şeyden söz ederken kullanabilirim."),
   c("A1", "GR", 13, "İsimleri çoğul yapabilirim: -s, -es ve men, women, children gibi düzensiz biçimler."),
@@ -221,11 +221,11 @@ export const CANDO: Cando[] = [
   c("A2", "GR", 14, "Karşılaştırma yapabilirim: -er ve -est, more ve most, as … as."),
   c("A2", "GR", 15, "Geleceği anlatabilirim: going to ile plan, will ile o an verilen karar."),
   c("A2", "GR", 16, "can, should, must ve have to ile yetenek, tavsiye ve zorunluluk anlatabilirim."),
-  /* B1 bloğu WP-74 ile açıldı: İngilizce kursun B1 dersleri yazılmadan ÖNCE,
-     çünkü ders `focusId`'siyle buraya bağlanıyor ve karşılığı olmayan odak
-     sessizce düşüyor — ders yazılıp sonra etiket aranırsa 100 dersin hiçbiri
+  /* B1 bloğu WP-74 ile açıldı: İngilizce kursun B1 konuşmaları yazılmadan ÖNCE,
+     çünkü konuşma `focusId`'siyle buraya bağlanıyor ve karşılığı olmayan odak
+     sessizce düşüyor — konuşma yazılıp sonra etiket aranırsa 100 konuşmanın hiçbiri
      dilbilgisi ifadesine bağlanmamış olurdu. On ifade, seviyenin on modülüne
-     karşılık geliyor (bkz. `docs/plan/en-ders-kapsami.md`). */
+     karşılık geliyor (bkz. `docs/plan/en-konuşma-kapsami.md`). */
   c("B1", "GR", 11, "Present perfect ile past simple arasında seçim yapabilirim: zamanı belli bitmiş olayda past simple, etkisi süren deneyimde present perfect."),
   c("B1", "GR", 12, "İki geçmiş olayı sıralayabilirim: önce olanı past perfect ile (had + fiilin üçüncü hâli) geriye alırım."),
   c("B1", "GR", 13, "Geleceği üç biçimle anlatabilirim: kararlaşmış program için present continuous, niyet için going to, tahmin ve o anki karar için will."),

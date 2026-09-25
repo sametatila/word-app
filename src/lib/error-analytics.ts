@@ -14,7 +14,7 @@ import { DEFAULT_NATIVE, translate, type NativeLang } from "@/lib/i18n/dict";
  *   1. Son 30 günün hata tipi dağılımı (pay ve sayı).
  *   2. Karıştırma çiftleri: "anlam" hatasında hangi kelime hangi karşılıkla
  *      karıştırıldı (`reviews.detail` = seçilen şık / yazılan kelime).
- *   3. Zayıf kurallar: dersler (`weakRules`).
+ *   3. Zayıf kurallar: konuşmalar (`weakRules`).
  * Her hata tipine tek dokunuşla hedefli çalışma: o tipin oyunuyla tek oyunlu
  * tur (`/learn?game=…`). WP-11 drill motoru geldiğinde dilbilgisi tipleri
  * drill'e yönlenir.

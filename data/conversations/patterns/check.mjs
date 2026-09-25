@@ -1,5 +1,5 @@
 /**
- * Ders kalıplarının İngilizce kullanım notlarını denetler:
+ * Konuşma kalıplarının İngilizce kullanım notlarını denetler:
  *   `node data/conversations/patterns/check.mjs [paket|all]`
  *
  * Kurallar sözlükçe kapısıyla aynı aileden ama bir tanesi farklı: burada

@@ -13,7 +13,7 @@ import { isNativeLang } from "@/lib/i18n/dict";
 
 export const dynamic = "force-dynamic";
 
-/** Dersin rol yapma sahnesi sınav olarak (WP-22): /conversations/[id]/scored. */
+/** Konuşmanın sohbet sahnesi sınav olarak (WP-22): /conversations/[id]/scored. */
 export const generateMetadata = titleMeta("scored.title");
 
 export default async function ConversationScoredPage({ params }: { params: Promise<{ id: string }> }) {
@@ -22,12 +22,12 @@ export default async function ConversationScoredPage({ params }: { params: Promi
   const userId = who.id;
   const { id } = await params;
   const source = await findConversation(id);
-  /* Ders kapatıldıysa sınavı da kapalı: aynı içeriğin türevi. */
+  /* Konuşma kapatıldıysa sınavı da kapalı: aynı içeriğin türevi. */
   if (source && (await conversationDisabled(id))) notFound();
   if (!source) notFound();
 
-  // Sahne, muhatap ve amaç dersin `chat` alanından geliyor; ekranın
-  // tamamı öğrencinin ana dilinde olmalı — sınav sayfası da ders sayfasıyla
+  // Sahne, muhatap ve amaç konuşmanın `chat` alanından geliyor; ekranın
+  // tamamı öğrencinin ana dilinde olmalı — sınav sayfası da konuşma sayfasıyla
   // aynı çözücüden geçiyor.
   let conversation = source;
   let cando = candoForConversation(source).map((c) => candoById(c)?.tr).filter((t): t is string => Boolean(t));

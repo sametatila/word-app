@@ -154,7 +154,7 @@ export function AssessmentCard({
       ) : null}
       {reportRef && !offline ? (
         <>
-          {/* Bildir — ders sohbetindeki ve "Yazdıklarım"daki bağlantıyla aynı
+          {/* Bildir — konuşma sohbetindeki ve "Yazdıklarım"daki bağlantıyla aynı
               biçim (Play "yapay zekâ ile üretilen içerik": çıktı, uygulamadan
               çıkmadan bildirilebilmeli). */}
           <button

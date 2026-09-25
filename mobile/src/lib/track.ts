@@ -68,11 +68,11 @@ export type EventName =
      remind_daily · remind_streak · remind_weekly. Sayısal ayarlarda value yeni
      değer, anahtarlarda 1 açık / 0 kapalı, temada 0 açık / 1 koyu / 2 sistem. */
   | "setting_change"
-  /* Ders (patika konuşması) - web `lib/events` ile aynı dilbilgisi:
-     `conversation_start` value 1 kaldığı yerden / 0 baştan, kind ders kimliği;
+  /* Konuşma (patika konuşması) - web `lib/events` ile aynı dilbilgisi:
+     `conversation_start` value 1 kaldığı yerden / 0 baştan, kind konuşma kimliği;
      `conversation_step` kind "adım:yol" (repeat|produce|truefalse : mic|typed|tap),
      value 2 ilk denemede doğru / 1 sonraki denemede doğru / 0 geçilemedi;
-     `conversation_finish` value puanlanan adımlarda doğru yüzdesi, kind ders kimliği. */
+     `conversation_finish` value puanlanan adımlarda doğru yüzdesi, kind konuşma kimliği. */
   | "conversation_start"
   | "conversation_step"
   | "conversation_finish"
@@ -94,7 +94,7 @@ export type EventName =
   | "first_practice_done"
   /* Yerlestirme sonucu uygulandi (value = yuzde, kind = "demo:a1" gibi). */
   | "placement_finish"
-  /* Rol yapma denemesi (value = ozet puani, kind = "chat"). */
+  /* Sohbet denemesi (value = ozet puani, kind = "chat"). */
   | "production_attempt"
   /* Tur YARIDA birakildi (value = kacinci turda) - web `session-player` ile
      ayni ad. "Kac kisi turu bitirmeden cikiyor ve nerede cikiyor" sorusu

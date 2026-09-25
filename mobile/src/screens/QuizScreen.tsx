@@ -21,7 +21,7 @@ import { sfx } from "../lib/sfx";
 const PASS_PCT = 60;
 
 /**
- * Ünite quiz (Tekrar) / unitQuiz (Kontrol Noktası) oynatıcısı — sorular
+ * Ünite quiz (Tekrar) / unitQuiz (Ünite quizi) oynatıcısı — sorular
  * ünitenin kelime/kalıplarından CİHAZDA türetilir (immersionQuiz). QuestionList
  * aynen render eder; ilerleme cihaza yazılır (türetilen quiz için sunucu ucu yok).
  */
@@ -37,7 +37,7 @@ export function QuizScreen() {
   const [round, setRound] = useState(0);
 
   const isGrammar = params.kind === "grammar";
-  /* Sorular derslerden türüyor ve dersler A1 dışında ikilide değil: seviye
+  /* Sorular konuşmalardan türüyor ve konuşmalar A1 dışında ikilide değil: seviye
      paketi inmeden soru üretilemez. İndikten sonra `ready` listeyi yeniden
      kuruyor; inene kadar ekran kendi yükleniyor durumunu gösteriyor. */
   const [questions, setQuestions] = useState<ReturnType<typeof deriveGrammar>>([]);

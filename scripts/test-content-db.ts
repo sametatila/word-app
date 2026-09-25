@@ -183,8 +183,8 @@ async function main() {
        gizlenmiyor; kimlikten paketi çözen yardımcılar bu boşluğu kapatıyor.
        Yarısı işleyen bir anahtar, hiç işlemeyenden kötü. */
     await disableItem("conversations/de-b1", "de-b1-bewerbung", "broken", by);
-    check("kapatılan ders webde de kapalı", await conversationDisabled("de-b1-bewerbung"));
-    check("kapatılmamış ders açık", !(await conversationDisabled("de-b1-lebenslauf")));
+    check("kapatılan konuşma webde de kapalı", await conversationDisabled("de-b1-bewerbung"));
+    check("kapatılmamış konuşma açık", !(await conversationDisabled("de-b1-lebenslauf")));
     /* Build 6 aynı maddeyi eski paket adıyla tutuyor (geçici, lib/legacy-names). */
     check("kapatma göstergede eski paket adıyla da var", (await pointer()).d.includes("lessons/de-b1:de-b1-bewerbung"));
     {

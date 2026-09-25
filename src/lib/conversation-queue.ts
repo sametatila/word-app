@@ -1,16 +1,16 @@
 /**
- * ÇEVRİMDIŞI BİTİRİLEN DERS — tarayıcıdaki kuyruk.
+ * ÇEVRİMDIŞI BİTİRİLEN KONUŞMA — tarayıcıdaki kuyruk.
  *
- * Ders bitince sonuç `/api/conversation`a yazılıyor; ağ yoksa istek düşüyor ve bir
+ * Konuşma bitince sonuç `/api/conversation`a yazılıyor; ağ yoksa istek düşüyor ve bir
  * daha DENENMİYORDU (`conversation-player` catch bloğu yalnız özeti çiziyordu).
- * Sunucu dersi hiç öğrenmiyor: XP verilmiyor, aralıklı tekrar merdiveni
- * kurulmuyor, kullanıcı başka bir cihaza geçince ders geri geliyor.
+ * Sunucu konuşmayı hiç öğrenmiyor: XP verilmiyor, aralıklı tekrar merdiveni
+ * kurulmuyor, kullanıcı başka bir cihaza geçince konuşma geri geliyor.
  * Android'de aynı boşluk `pathProgress` kuyruğuyla kapandı; iki taraf da
  * aynı üç kuralı tutuyor:
  *
  *  - kayıt kendi `day`ini taşıyor (seri kullanıcının O gününe ait; ertesi gün
  *    gönderileni bugüne yazmak seriyi yanlış hesaplardı),
- *  - aynı ders yeniden bitirilirse son kayıt kalıyor (uç en iyi denemeyi
+ *  - aynı konuşma yeniden bitirilirse son kayıt kalıyor (uç en iyi denemeyi
  *    zaten tutuyor),
  *  - biri düşerse kalanı kuyrukta kalıyor ve sıradakiler denenmiyor.
  */
@@ -48,7 +48,7 @@ export function queueConversationResult(item: PendingConversation): void {
   }
 }
 
-/** Bekleyen ders sonuçlarını gönderir; biri düşerse kalanı kuyrukta bırakır. */
+/** Bekleyen konuşma sonuçlarını gönderir; biri düşerse kalanı kuyrukta bırakır. */
 export async function flushPendingConversations(): Promise<void> {
   const list = read();
   if (!list.length) return;

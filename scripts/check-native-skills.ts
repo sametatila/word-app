@@ -10,7 +10,7 @@
  *   - `apply.mjs` `out/`u okumayı unutur ya da yanlış dizine bakar
  *   - üretilen sözlük sunucu derlemesinde YOKTUR (bkz. `derived.json`
  *     olayı: dosya .gitignore'daydı, sözlük 4.640 yerine 714 madde oldu,
- *     çözücü bütün dersleri reddetti ve İngilizce kurs sessizce Türkçeye
+ *     çözücü bütün konuşmaları reddetti ve İngilizce kurs sessizce Türkçeye
  *     düştü — hiçbir yerde hata görünmeden)
  *   - alıntı ölçütü ile paketleyicinin ölçütü ayrışır
  *
