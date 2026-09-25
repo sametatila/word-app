@@ -274,6 +274,8 @@ export const deBase: Record<string, string> = {
   "deleteaccount.sign_in_with_apple_again_and": "Erneut mit Apple anmelden und löschen",
   "deleteaccount.sign_in_with_google_again_and": "Erneut mit Google anmelden und löschen",
   "deleteaccount.for_security_deleting_your": "Aus Sicherheitsgründen ist zum Löschen eine Anmeldung aus den letzten 24 Stunden nötig.",
+  "deleteaccount.apple_web_return": "Melde dich im Browser mit Apple an. Zurück in der App schließt du das Löschen mit der Schaltfläche unten ab.",
+  "deleteaccount.apple_web_delete": "Ich bin angemeldet, Konto löschen",
   "deleteaccount.delete_account": "Konto löschen",
   "deleteaccount.permanently_delete_my_account": "Mein Konto endgültig löschen",
   "deleteaccount.your_account": "Dein Konto",

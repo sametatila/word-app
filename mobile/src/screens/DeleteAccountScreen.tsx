@@ -15,7 +15,7 @@ import { ArrowBackIcon, CheckIcon, XIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
 import { listAccounts, deleteAccount } from "../lib/auth";
 import { googleSignIn } from "../lib/googleAuth";
-import { appleSignIn, appleSupported } from "../lib/appleAuth";
+import { appleSignIn, appleSupported, appleWebSignIn } from "../lib/appleAuth";
 import { Skeleton } from "../ui/Skeleton";
 import { StateBody } from "../ui/flow";
 import { useTheme, spacing, radii, softShadow, type Palette, ds } from "../theme";
@@ -128,12 +128,33 @@ export function DeleteAccountScreen() {
    */
   const freshProvider = providers.includes("apple") && appleSupported() ? "apple"
     : providers.includes("google") ? "google"
+    /* ANDROID'DE APPLE: native yol yok, giriş ekranındaki gibi tarayıcı akışı
+       (denetim S8). Önceden düğme hiç çizilmiyordu ve Google hesabı olmayan
+       Apple kullanıcısı hesabını silemiyordu. */
+    : providers.includes("apple") && Platform.OS === "android" ? "apple-web"
     : null;
+  /** Tarayıcıdaki Apple girişi başlatıldı; dönüşte oturum tazelenmiş oluyor
+      (App.tsx devri kuruyor, bu ekran yerinde kalıyor). */
+  const [webPending, setWebPending] = useState(false);
 
   async function reauthAndRetry() {
     if (!freshProvider) { setError(tx("autherror.fresh_login")); return; }
     setBusy(true);
     setError(null);
+    if (freshProvider === "apple-web") {
+      if (webPending) {
+        const r = await deleteAccount();
+        setBusy(false);
+        if (r.ok) { await finishDeleted(); return; }
+        setError(r.message);
+        return;
+      }
+      const opened = await appleWebSignIn();
+      setBusy(false);
+      if (!opened.ok) { setError(opened.message); return; }
+      setWebPending(true);
+      return;
+    }
     const s = freshProvider === "apple" ? await appleSignIn() : await googleSignIn();
     if (!s.ok) { setBusy(false); if (s.code !== "CANCELLED") setError(s.message); return; }
     const r = await deleteAccount();
@@ -191,9 +212,9 @@ export function DeleteAccountScreen() {
         {needsFresh ? (
           <Card padded style={{ marginTop: spacing.lg, gap: spacing.sm }}>
             <Text variant="h3">{tx("deleteaccount.sign_in_again_first")}</Text>
-            <Text variant="caption" color={colors.textMuted}>{tx("deleteaccount.for_security_deleting_your")}</Text>
+            <Text variant="caption" color={colors.textMuted}>{tx(webPending ? "deleteaccount.apple_web_return" : "deleteaccount.for_security_deleting_your")}</Text>
             <PressableScale onPress={reauthAndRetry} disabled={busy} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 14, alignItems: "center", marginTop: spacing.xs }, softShadow(colors.primary, 8)]}>
-              <Text variant="bodyStrong" color={colors.onPrimary}>{busy ? "..." : tx(freshProvider === "apple" ? "deleteaccount.sign_in_with_apple_again_and" : "deleteaccount.sign_in_with_google_again_and")}</Text>
+              <Text variant="bodyStrong" color={colors.onPrimary}>{busy ? "..." : tx(webPending ? "deleteaccount.apple_web_delete" : freshProvider === "google" ? "deleteaccount.sign_in_with_google_again_and" : "deleteaccount.sign_in_with_apple_again_and")}</Text>
             </PressableScale>
           </Card>
         ) : (

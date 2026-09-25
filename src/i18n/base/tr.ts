@@ -274,6 +274,8 @@ export const trBase: Record<string, string> = {
   "deleteaccount.sign_in_with_apple_again_and": "Apple ile yeniden giriş yap ve sil",
   "deleteaccount.sign_in_with_google_again_and": "Google ile yeniden gir ve sil",
   "deleteaccount.for_security_deleting_your": "Güvenlik için hesap silme, son 24 saat içinde açılmış bir oturum ister.",
+  "deleteaccount.apple_web_return": "Tarayıcıda Apple ile giriş yap. Uygulamaya dönünce aşağıdaki düğmeyle silmeyi tamamla.",
+  "deleteaccount.apple_web_delete": "Girişi tamamladım, hesabımı sil",
   "deleteaccount.delete_account": "Hesabı sil",
   "deleteaccount.permanently_delete_my_account": "Hesabımı kalıcı olarak sil",
   "deleteaccount.your_account": "Hesabın",

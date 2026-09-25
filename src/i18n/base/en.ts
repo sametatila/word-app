@@ -274,6 +274,8 @@ export const enBase: Record<string, string> = {
   "deleteaccount.sign_in_with_apple_again_and": "Sign in with Apple again and delete",
   "deleteaccount.sign_in_with_google_again_and": "Sign in with Google again and delete",
   "deleteaccount.for_security_deleting_your": "For security, deleting your account requires a session started in the last 24 hours.",
+  "deleteaccount.apple_web_return": "Sign in with Apple in the browser. When you're back in the app, finish with the button below.",
+  "deleteaccount.apple_web_delete": "I've signed in, delete my account",
   "deleteaccount.delete_account": "Delete account",
   "deleteaccount.permanently_delete_my_account": "Permanently delete my account",
   "deleteaccount.your_account": "Your account",
