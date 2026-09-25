@@ -59,7 +59,7 @@ export const enA2P7: SkillExercise[] = [
       {
         de: "The other one is better.",
         tr: "Öbürü daha iyi.",
-        hint: "„other“ ünlüyle başlar → Dİ-A-dı. İki kelime tek parça gibi akar.",
+        hint: "„other“ ünlüyle başlar → Dİ-A-dır. İki kelime tek parça gibi akar.",
         confusions: [
           { heard: [], fix: "Ünlüden önce uzun i gelir ve araya küçük bir y sesi girer.", expected: "the other" },
         ],

@@ -93,7 +93,7 @@ export const enA2P14: SkillExercise[] = [
       {
         de: "I get up at six.",
         tr: "Altıda kalkarım.",
-        hint: "get UP: ikinci parça güçlü ve yüksek. „get“ kısa ve alçak: gi-TAP.",
+        hint: "get UP: ikinci parça güçlü ve yüksek. „get“ kısa ve alçak, t yumuşar: gi-DAP.",
         confusions: [
           { heard: [], fix: "Ağırlığı „get“e verirsen „up“ yutulur ve fiil tanınmaz.", expected: "get up" },
         ],
@@ -101,7 +101,7 @@ export const enA2P14: SkillExercise[] = [
       {
         de: "Please turn it off.",
         tr: "Lütfen onu kapat.",
-        hint: "Zamir araya girse de vurgu edatta kalır: törn-i-TOF.",
+        hint: "Zamir araya girse de vurgu edatta kalır: törn-i-DOF.",
         confusions: [
           { heard: [], fix: "„it“ vurgusuz ve kısa; güçlü olan „off“.", expected: "turn it off" },
         ],
@@ -117,7 +117,7 @@ export const enA2P14: SkillExercise[] = [
       {
         de: "Hurry up, the bus is here.",
         tr: "Acele et, otobüs geldi.",
-        hint: "HA-ri-AP: „up“ burada da güçlü. „bus“ ve „here“ ikinci vurgular.",
+        hint: "HÖ-ri-AP: „up“ burada da güçlü. „bus“ ve „here“ ikinci vurgular.",
         confusions: [
           { heard: [], fix: "Edatı tam söyle; kısa bir „ap“ bile yeter ama duyulmalı.", expected: "hurry up" },
         ],
@@ -125,7 +125,7 @@ export const enA2P14: SkillExercise[] = [
       {
         de: "She looked after my cat.",
         tr: "Kedime o baktı.",
-        hint: "look AF-ter: vurgu edatın ilk hecesinde. „looked“ kısa: lukt.",
+        hint: "look EF-tır: vurgu edatın ilk hecesinde. „looked“ kısa: lukt.",
         confusions: [
           { heard: [], fix: "„after“ın ilk hecesi güçlü; „looked“ ona bağlanır.", expected: "looked after" },
         ],

@@ -227,7 +227,7 @@ export const enA1P13: SkillExercise[] = [
     skill: "speaking",
     title: "work or walk?",
     genre: "pronounce",
-    intro: "„ir, er, ur, or“ yazılışları çoğu zaman tek bir orta ünlü verir: dudaklar gevşek, ağız yarı açık. Türkçedeki ö'ye yakındır ama yuvarlak değildir.",
+    intro: "„ir, er, ur, or“ yazılışları çoğu zaman tek bir orta ünlü verir ve Amerikan söyleyişinde r ile kaynaşır: dudaklar gevşek, dilin ucu geri kıvrılır. Türkçedeki ö'ye yakındır ama yuvarlak değildir.",
     gloss: [
       { de: "to work", tr: "çalışmak" },
       { de: "shirt", tr: "gömlek" },
@@ -239,7 +239,7 @@ export const enA1P13: SkillExercise[] = [
       {
         de: "I work in a big shop.",
         tr: "Büyük bir dükkânda çalışıyorum.",
-        hint: "„work“ = WÖÖK, ama dudaklar yuvarlanmaz. „o“ harfine bakıp o söylersen başka bir fiil çıkar.",
+        hint: "„work“ = WÖRK: ünlü r ile kaynaşır, dudaklar yuvarlanmaz. „o“ harfine bakıp o söylersen başka bir fiil çıkar.",
         confusions: [
           { heard: ["walk"], fix: "Dudakları yuvarlarsan „walk“ (yürümek) duyulur; ağzı gevşek ve yarı açık tut.", expected: "work" },
         ],
@@ -247,7 +247,7 @@ export const enA1P13: SkillExercise[] = [
       {
         de: "Her shirt is blue.",
         tr: "Onun gömleği mavi.",
-        hint: "„her“ ve „shirt“ aynı sesi taşır: HÖÖ, ŞÖÖT. Yazılış farklı, ses aynı.",
+        hint: "„her“ ve „shirt“ aynı sesi taşır: HÖR, ŞÖRT. Yazılış farklı, ses aynı.",
         confusions: [
           { heard: ["short", "shot"], fix: "„shirt“ o ile söylenirse „short“ (kısa) duyulur; dudakları yuvarlama.", expected: "shirt" },
         ],
@@ -255,7 +255,7 @@ export const enA1P13: SkillExercise[] = [
       {
         de: "Say this word again, please.",
         tr: "Bu kelimeyi tekrar söyle lütfen.",
-        hint: "„word“ = WÖÖD. Buradaki „or“ yazılışı o sesi vermez.",
+        hint: "„word“ = WÖRD. Buradaki „or“ yazılışı o sesi vermez.",
         confusions: [
           { heard: ["ward"], fix: "o'ya kaçarsa „ward“ (koğuş) olur; ünlü orta ve uzun kalsın.", expected: "word" },
         ],
@@ -263,7 +263,7 @@ export const enA1P13: SkillExercise[] = [
       {
         de: "The bird is on the roof.",
         tr: "Kuş çatının üstünde.",
-        hint: "„bird“ = BÖÖD; i harfini i diye okuma.",
+        hint: "„bird“ = BÖRD; i harfini i diye okuma.",
         confusions: [
           { heard: ["bid", "bed"], fix: "i ya da e diye okursan „bid“ ya da „bed“ duyulur; ses orta ve uzun.", expected: "bird" },
         ],
@@ -279,7 +279,7 @@ export const enA1P13: SkillExercise[] = [
       {
         de: "My leg hurts a lot.",
         tr: "Bacağım çok ağrıyor.",
-        hint: "„hurts“ = HÖÖTS; u harfi burada u değil, yine orta ünlü.",
+        hint: "„hurts“ = HÖRTS; u harfi burada u değil, yine orta ünlü.",
         confusions: [
           { heard: ["hearts", "hats"], fix: "Ağzı fazla açarsan „hearts“ ya da „hats“ gibi duyulur; ses orta kalsın.", expected: "hurts" },
         ],

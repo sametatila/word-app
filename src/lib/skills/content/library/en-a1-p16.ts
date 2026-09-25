@@ -105,7 +105,7 @@ export const enA1P16: SkillExercise[] = [
       {
         de: "The paper is on the table.",
         tr: "Kâğıt masanın üstünde.",
-        hint: "„paper“ = PEY-pı, „table“ = TEY-bıl; iki kelimenin ilk hecesinde aynı kayan ses.",
+        hint: "„paper“ = PEY-pır, „table“ = TEY-bıl; iki kelimenin ilk hecesinde aynı kayan ses.",
         confusions: [
           { heard: ["pepper"], fix: "İlk hece düz e olursa „pepper“ (biber) duyulur.", expected: "paper" },
         ],

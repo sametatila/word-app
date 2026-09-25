@@ -317,7 +317,7 @@ export const enA2: SkillExercise[] = [
       {
         de: "He asked a very good question.",
         tr: "Çok iyi bir soru sordu.",
-        hint: "„asked“ = AASKT, tek hece ve üç sessiz üst üste: s-k-t. Araya ünlü koyma.",
+        hint: "„asked“ = ESKT, tek hece ve üç sessiz üst üste: s-k-t. Araya ünlü koyma.",
         confusions: [
           { heard: ["he ask a very good question"], fix: "Sonu „skt“ diye biter; hece ekleme.", expected: "asked" },
         ],

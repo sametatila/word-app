@@ -27,7 +27,7 @@ export const enA1P9: SkillExercise[] = [
       {
         de: "I can swim, but I can't drive.",
         tr: "Yüzebiliyorum ama araba kullanamıyorum.",
-        hint: "Olumlu „can“ zayıf ve kısadır (kın), olumsuz „can't“ uzun ve vurguludur (KAANT).",
+        hint: "Olumlu „can“ zayıf ve kısadır (kın), olumsuz „can't“ açık bir e ile ve vurguyla söylenir (KENT).",
         confusions: [
           { heard: [], fix: "Olumluda vurgu fiile gider; kelimeyi kısa ve zayıf söyle.", expected: "can" },
         ],
@@ -43,9 +43,9 @@ export const enA1P9: SkillExercise[] = [
       {
         de: "Sorry, I can't come today.",
         tr: "Kusura bakma, bugün gelemem.",
-        hint: "„can't“ içindeki a uzundur ve t çoğu zaman yutulur; asıl işaret UZUNLUKTUR.",
+        hint: "„can't“ içindeki a açık bir e'dir (KENT) ve t çoğu zaman yutulur; asıl işaret açık ünlü ve VURGUDUR.",
         confusions: [
-          { heard: ["Sorry, I can come today"], fix: "t duyulmasa bile ünlü uzun kalmalı, yoksa anlam tersine döner.", expected: "can't" },
+          { heard: ["Sorry, I can come today"], fix: "t duyulmasa bile ünlü açık ve vurgulu kalmalı; zayıf „kın“ dersen anlam tersine döner.", expected: "can't" },
         ],
       },
       {
@@ -61,13 +61,13 @@ export const enA1P9: SkillExercise[] = [
         tr: "Seni duyamıyor.",
         hint: "„can't hear“ derken iki kelime arasında küçük bir duraklama olur; bu da olumsuzu belli eder.",
         confusions: [
-          { heard: ["He can hear you"], fix: "Olumsuzda ünlüyü uzat ve bir tık dur: KAANT | hiir.", expected: "can't" },
+          { heard: ["He can hear you"], fix: "Olumsuzda ünlüyü aç, vurgula ve bir tık dur: KENT | hiir.", expected: "can't" },
         ],
       },
       {
         de: "We can meet at six, can't we?",
         tr: "Altıda buluşabiliriz, değil mi?",
-        hint: "Aynı cümlede iki biçim: ilki zayıf (kın), ikincisi uzun ve vurgulu (KAANT-wi).",
+        hint: "Aynı cümlede iki biçim: ilki zayıf (kın), ikincisi açık ve vurgulu (KENT-wi).",
         confusions: [
           { heard: ["six can we"], fix: "Ek soruda olumsuz biçim gelir ve o vurguludur.", expected: "can't we" },
         ],

@@ -252,7 +252,7 @@ export const enA2P13: SkillExercise[] = [
       {
         de: "This chair is very comfortable.",
         tr: "Bu sandalye çok rahat.",
-        hint: "„comfortable“ = KAMF-tı-bıl, üç hece. Ortadaki „or“ hiç okunmaz.",
+        hint: "„comfortable“ = KAMF-tır-bıl, üç hece. Ortadaki „or“ hiç okunmaz.",
         confusions: [
           { heard: ["this chair is very come for table"], fix: "Dört heceyi tek tek okuma; ortadaki hece düşer: kamftıbıl.", expected: "comfortable" },
         ],

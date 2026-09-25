@@ -254,7 +254,7 @@ export const enA2P3: SkillExercise[] = [
       {
         de: "Can I have a banana, please?",
         tr: "Bir muz alabilir miyim lütfen?",
-        hint: "„a“ tek başına „ey“ değil, kısa bir „ı“dır. „banana“ = bı-NAA-nı.",
+        hint: "„a“ tek başına „ey“ değil, kısa bir „ı“dır. „banana“ = bı-NE-nı.",
         confusions: [
           { heard: [], fix: "Yalnız ortadaki hece uzun; ilk ve son heceyi hafif „ı“ ile söyle.", expected: "banana" },
         ],
@@ -262,7 +262,7 @@ export const enA2P3: SkillExercise[] = [
       {
         de: "My brother is a teacher.",
         tr: "Erkek kardeşim öğretmen.",
-        hint: "Sondaki -er hecesi „er“ değil, zayıf „ı“ gibidir: BRA-dı, TİİÇ-ı.",
+        hint: "Sondaki -er hecesi „er“ değil, r ile kaynaşmış zayıf bir „ı“dır: BRA-dır, TİİÇ-ır.",
         confusions: [
           { heard: [], fix: "Son heceyi vurgulama; sondaki r'yi Türkçedeki gibi titretme, dilin ucunu hafifçe geri kıvır: bradır, tiiçır.", expected: "teacher" },
         ],
@@ -278,7 +278,7 @@ export const enA2P3: SkillExercise[] = [
       {
         de: "I was at the doctor on Monday.",
         tr: "Pazartesi doktordaydım.",
-        hint: "„was“ vurgusuzken „wız“ olur; „doctor“ = DOK-tı, „Monday“ = MAN-di.",
+        hint: "„was“ vurgusuzken „wız“ olur; „doctor“ = DAK-tır, „Monday“ = MAN-di.",
         confusions: [
           { heard: [], fix: "„was“ yardımcı olduğunda kısalır; sondaki -or da zayıflar.", expected: "was" },
         ],
@@ -294,7 +294,7 @@ export const enA2P3: SkillExercise[] = [
       {
         de: "There are seven computers in the office.",
         tr: "Ofiste yedi bilgisayar var.",
-        hint: "„computers“ = kım-PYU-tız; ilk ve son hece zayıf, orta hece güçlü.",
+        hint: "„computers“ = kım-PYU-dırz; ilk ve son hece zayıf, orta hece güçlü.",
         confusions: [
           { heard: [], fix: "İlk heceyi vurgulama; vurgu ortadaki „pu“ hecesinde.", expected: "computers" },
         ],
@@ -302,7 +302,7 @@ export const enA2P3: SkillExercise[] = [
       {
         de: "It was a problem for the company.",
         tr: "Bu, şirket için bir sorundu.",
-        hint: "„for“ vurgusuzken „fı“ olur; „company“ = KAM-pı-ni.",
+        hint: "„for“ vurgusuzken „fır“ olur; „company“ = KAM-pı-ni.",
         confusions: [
           { heard: [], fix: "Vurgu ilk hecede ve ortadaki hece neredeyse yutulur: KAMpıni.", expected: "company" },
         ],

@@ -36,7 +36,7 @@ export const enA1P20: SkillExercise[] = [
       {
         de: "Dinner is at seven.",
         tr: "Akşam yemeği yedide.",
-        hint: "„dinner“ = Dİ-nı: n bir kez ve kısa söylenir; iki n için duraklama yok.",
+        hint: "„dinner“ = Dİ-nır: n bir kez ve kısa söylenir; iki n için duraklama yok.",
         confusions: [
           { heard: [], fix: "Türkçedeki „anne“ gibi uzun bir n söyleme; tek ve kısa bir n yeter.", expected: "dinner" },
         ],
@@ -52,7 +52,7 @@ export const enA1P20: SkillExercise[] = [
       {
         de: "We swim a lot in summer.",
         tr: "Yazın çok yüzeriz.",
-        hint: "„summer“ = SA-mı: m bir kez söylenir; „swim“ da tek m ile biter.",
+        hint: "„summer“ = SA-mır: m bir kez söylenir; „swim“ da tek m ile biter.",
         confusions: [
           { heard: [], fix: "m'yi uzatırsan kelime iki parçaya bölünmüş gibi duyulur; kısa tut.", expected: "summer" },
         ],
@@ -60,7 +60,7 @@ export const enA1P20: SkillExercise[] = [
       {
         de: "My sister has a letter for you.",
         tr: "Kız kardeşimin sana bir mektubu var.",
-        hint: "„letter“ = LE-tı: t bir kez ve kısa; „sister“ ile aynı ritim.",
+        hint: "„letter“ = LE-dır: t bir kez ve kısa, d'ye yakın yumuşar; „sister“ ile aynı ritim.",
         confusions: [
           { heard: [], fix: "Türkçedeki „itti“ gibi çift t söyleme; dil dişe bir kez değer.", expected: "letter" },
         ],

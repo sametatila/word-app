@@ -59,9 +59,9 @@ export const enA2P10: SkillExercise[] = [
       {
         de: "Can't you come earlier?",
         tr: "Daha erken gelemez misin?",
-        hint: "„can't you“ = KAAN-çu. Olumsuzun uzun ünlüsü korunur ama t ile y birleşir.",
+        hint: "„can't you“ = KEN-çu. Olumsuzun açık, vurgulu ünlüsü korunur ama t ile y birleşir.",
         confusions: [
-          { heard: ["Can you come earlier"], fix: "Kaynaşsa bile olumsuzun uzun ünlüsü duyulmalı, yoksa anlam döner.", expected: "can't you" },
+          { heard: ["Can you come earlier"], fix: "Kaynaşsa bile olumsuzun açık, vurgulu ünlüsü duyulmalı, yoksa anlam döner.", expected: "can't you" },
         ],
       },
       {

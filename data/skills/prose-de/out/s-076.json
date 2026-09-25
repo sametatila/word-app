@@ -52,5 +52,6 @@
  { "tr": "„can't“ burada yasak; „don't have to“ olsaydı gerek yok olurdu.", "kind": "explain", "de": "„can't“ heißt hier Verbot; „don't have to“ hieße keine Pflicht." },
  { "tr": "İlki „gelemezsin, izin yok“, ikincisi „gelmek zorunda değilsin“ demektir.", "kind": "explain", "de": "Das erste heißt „du darfst nicht kommen“, das zweite „du musst nicht kommen“." },
  { "tr": "Yasak günlük dilde „can't“ ile anlatılır; „don't have to“ tam tersini söylerdi.", "kind": "explain", "de": "Ein Verbot sagt man im Alltag mit „can't“; „don't have to“ sagte das Gegenteil." },
- { "tr": "yapamazsın", "kind": "gloss.tr", "de": "du darfst nicht" }
+ { "tr": "yapamazsın", "kind": "gloss.tr", "de": "du darfst nicht" },
+ { "tr": "„ir, er, ur, or“ yazılışları çoğu zaman tek bir orta ünlü verir ve Amerikan söyleyişinde r ile kaynaşır: dudaklar gevşek, dilin ucu geri kıvrılır. Türkçedeki ö'ye yakındır ama yuvarlak değildir.", "kind": "intro", "de": "Die Schreibungen „ir, er, ur, or“ ergeben oft einen einzigen mittleren Vokal, der im amerikanischen Englisch mit dem r verschmilzt: Lippen locker, Zungenspitze zurückgebogen. Er liegt nahe am deutschen ö, aber ohne gerundete Lippen." }
 ]

@@ -251,7 +251,7 @@ export const enA2P4: SkillExercise[] = [
       {
         de: "I know the answer.",
         tr: "Cevabı biliyorum.",
-        hint: "„know“ baştaki k okunmaz: nou. „answer“ ortadaki w de okunmaz: AAN-sır.",
+        hint: "„know“ baştaki k okunmaz: nou. „answer“ ortadaki w de okunmaz: EN-sır.",
         confusions: [
           { heard: [], fix: "kn- ile başlayan kelimelerde k sessizdir; „answer“da w yoktur.", expected: "know" },
         ],

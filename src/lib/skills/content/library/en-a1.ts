@@ -256,7 +256,7 @@ export const enA1: SkillExercise[] = [
       {
         de: "Is this the third bus?",
         tr: "Bu üçüncü otobüs mü?",
-        hint: "„third“ = sessiz th + ö'ye yakın uzun bir ünlü (TÖÖD); dudaklar yuvarlanmaz.",
+        hint: "„third“ = sessiz th + r ile kaynaşan, ö'ye yakın bir ünlü (TÖRD); dudaklar yuvarlanmaz.",
         confusions: [{ heard: ["turd", "dis the"], fix: "„third“ baştaki th üflemeli; t ile söylersen kaba bir kelime çıkar.", expected: "third" }],
       },
       {

@@ -43,7 +43,7 @@ export const enA2P9: SkillExercise[] = [
       {
         de: "My daughter taught me that.",
         tr: "Bunu bana kızım öğretti.",
-        hint: "„daughter“ = DOO-tı, „taught“ = TOOT. Aynı uzun o, aynı susan gh.",
+        hint: "„daughter“ = DOO-dır, „taught“ = TOOT. Aynı uzun o, aynı susan gh.",
         confusions: [
           { heard: [], fix: "Kelimeyi harfleyerek okuma; gh sessizdir.", expected: "daughter" },
         ],
