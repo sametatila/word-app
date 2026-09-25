@@ -201,7 +201,7 @@ export const b2U08: SkillExercise[] = [
     intro: "Bir mahalle şenliğinin hazırlık toplantısı. Neyin öncelikli olduğuna dikkat et.",
     gloss: [
       { de: "die Aufgabenverteilung", tr: "görev dağılımı", en: "division of tasks" },
-      { de: "die Priorisierung", tr: "önceliklendirme", en: "prioritisation" },
+      { de: "die Priorisierung", tr: "önceliklendirme", en: "prioritization" },
       { de: "das Zeitfenster", tr: "zaman aralığı", en: "time slot" },
       { de: "die Stellvertretung", tr: "vekâlet", en: "deputising" },
       { de: "die Verpflegung", tr: "yeme içme", en: "catering" },

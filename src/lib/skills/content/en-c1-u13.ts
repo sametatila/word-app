@@ -188,7 +188,7 @@ export const enC1U13: SkillExercise[] = [
       { de: "lying", tr: "yalan söyleyen" },
       { de: "denied", tr: "yadsınan" },
       { de: "a method", tr: "yöntem" },
-      { de: "a programme", tr: "program" },
+      { de: "a program", tr: "program" },
       { de: "a difference", tr: "fark" },
       { de: "a goal", tr: "hedef" },
       { de: "a budget line", tr: "bütçe kalemi" },
@@ -205,7 +205,7 @@ export const enC1U13: SkillExercise[] = [
       "What management calls flexibilization, the union calls precarization. Here the two names have been put in one sentence with their owners attached, which is the honest way to write the disagreement and also the rarest.\n" +
       "Now the part worth being slow about. A noun cannot be true or false. „Precarization“ is not a claim; it is a name, and a name cannot be denied until somebody has turned it back into a sentence. „They made the contracts shorter and the notice periods longer“ can be answered with dates. „Precarization“ can only be answered with another noun, and an argument between two nouns has no end in it.\n" +
       "So the repair is the same one this level found in a comparison: put the verb back. Whoever restores the verb first has moved the argument onto ground where evidence counts.\n" +
-      "Standardization is a method; rationalization is a programme. And that is the difference the whole lesson is built to reach. A method has a description and can be judged by whether it works. A programme has a goal and a budget line and a person whose year depends on it, and it will be defended for reasons that have nothing to do with whether it works.\n" +
+      "Standardization is a method; rationalization is a program. And that is the difference the whole lesson is built to reach. A method has a description and can be judged by whether it works. A program has a goal and a budget line and a person whose year depends on it, and it will be defended for reasons that have nothing to do with whether it works.\n" +
       "Both words end in the same four letters and the suffix is not neutral, whatever a dictionary says. It takes a verb somebody did, removes the person who did it, removes the time it happened, and leaves a long official word that a paragraph can carry without anybody noticing the weight. That is a habit, not a fact about English, and a writer who knows it can choose.",
     questions: [
       {
@@ -232,8 +232,8 @@ export const enC1U13: SkillExercise[] = [
         text: "Standardization is a method; rationalization is a ___.",
         options: [],
         answer: 0,
-        accept: ["programme"],
-        explain: "„Standardization is a method; rationalization is a programme.“",
+        accept: ["program"],
+        explain: "„Standardization is a method; rationalization is a program.“",
       },
       {
         kind: "order",
@@ -244,7 +244,7 @@ export const enC1U13: SkillExercise[] = [
           "In the report it is an efficiency gain; on the floor, work intensification.",
           "What management calls flexibilization, the union calls precarization.",
           "Whoever restores the verb first has moved the argument.",
-          "Standardization is a method; rationalization is a programme.",
+          "Standardization is a method; rationalization is a program.",
         ],
         explain: "İki defter, iki sahip, onarım; en sonda yöntem ile program.",
       },
@@ -490,7 +490,7 @@ export const enC1U13: SkillExercise[] = [
       {
         kind: "build",
         tr: "Standartlaştırma bir yöntem, rasyonelleştirme bir programdır.",
-        answer: "Standardization is a method; rationalization is a programme.",
+        answer: "Standardization is a method; rationalization is a program.",
         hint: "Yöntem işe yarayıp yaramadığına göre yargılanır; programın bütçesi vardır.",
       },
       {

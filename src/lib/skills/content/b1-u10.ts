@@ -38,7 +38,7 @@ export const b1U10: SkillExercise[] = [
       { de: "die Beschreibung", tr: "tarif", en: "description" },
       { de: "der Inhalt", tr: "içerik", en: "contents" },
       { de: "auffällig", tr: "dikkat çekici", en: "conspicuous" },
-      { de: "erkennen", tr: "tanımak", en: "to recognise" },
+      { de: "erkennen", tr: "tanımak", en: "to recognize" },
       { de: "beste", tr: "en iyi", en: "best" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
       { de: "leicht", tr: "kolay", en: "easy" },

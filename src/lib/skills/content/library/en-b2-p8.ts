@@ -136,8 +136,8 @@ export const enB2P8: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { text: "Household recycling is usually discussed as a question of behaviour. Financially, it is mostly a question of packaging." },
-      { text: "Roughly seventy per cent of the cost of kerbside collection is paid by councils, which means by local taxes." },
+      { text: "Household recycling is usually discussed as a question of behavior. Financially, it is mostly a question of packaging." },
+      { text: "Roughly seventy percent of the cost of kerbside collection is paid by councils, which means by local taxes." },
       { speaker: "Ms Reinhardt", text: "The people who decide what the packaging looks like pay almost none of it. That is the part worth changing." },
       { text: "Several countries have introduced a levy on manufacturers, calculated by weight and by how difficult the material is to recycle." },
       { speaker: "Ms Reinhardt", text: "The effect was not what campaigners expected. Recycling rates moved a little. Packaging design moved a lot." },
@@ -151,7 +151,7 @@ export const enB2P8: SkillExercise[] = [
         text: "Who pays most of the cost of kerbside collection?",
         options: ["manufacturers", "councils, through local taxes", "shoppers, through prices"],
         answer: 1,
-        explain: "„Roughly seventy per cent … is paid by councils, which means by local taxes.“",
+        explain: "„Roughly seventy percent … is paid by councils, which means by local taxes.“",
       },
       {
         text: "What changed most after the levy?",
@@ -252,10 +252,10 @@ export const enB2P8: SkillExercise[] = [
           "We have been using the new two-container service since the beginning of September, " +
           "so this covers about four months and eight collections. " +
           "On reliability, I would say the service is better than the old one. " +
-          "Only a few collections were missed, two in total, both in the first fortnight, and both were " +
+          "Only a few collections were missed, two in total, both in the first two weeks, and both were " +
           "collected two days later without our having to phone. " +
           "The information was clear about what goes in which container, less so about what " +
-          "happens if a container is contaminated. We found that out from a neighbour, " +
+          "happens if a container is contaminated. We found that out from a neighbor, " +
           "not from the leaflet. " +
           "When something went wrong — our paper container disappeared, probably taken by " +
           "mistake — the helpline answered in four minutes and a replacement arrived in a week. " +
@@ -306,7 +306,7 @@ export const enB2P8: SkillExercise[] = [
         "and is the only party that can change it at no real cost. " +
         "Where levies of this kind have been introduced, recycling rates moved slightly " +
         "and packaging design changed a great deal, which is what you would expect if the " +
-        "problem is design rather than behaviour. " +
+        "problem is design rather than behavior. " +
         "The obvious risk is that the cost is simply passed on in prices, so households pay " +
         "anyway. I don't think that defeats the argument — the money still travels through " +
         "the person who made the decision — but it does mean the poorest pay twice, " +

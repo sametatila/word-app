@@ -82,12 +82,12 @@
  {
   "tr": "Program değil, süreklilik.",
   "kind": "explain",
-  "en": "Not a programme — continuation."
+  "en": "Not a program — continuation."
  },
  {
   "tr": "Yeni komşu kapıyı çalıyor.",
   "kind": "intro",
-  "en": "A new neighbour rings the doorbell."
+  "en": "A new neighbor rings the doorbell."
  },
  {
   "tr": "Aynı işlev, farklı ağırlık.",
@@ -167,7 +167,7 @@
  {
   "tr": "İki komşu balkonda konuşuyor.",
   "kind": "intro",
-  "en": "Two neighbours talk on the balcony."
+  "en": "Two neighbors talk on the balcony."
  },
  {
   "tr": "Kayıp değil, yön belirleyici.",
@@ -267,7 +267,7 @@
  {
   "tr": "Bir gezginin sorusuna cevap yaz.",
   "kind": "intro",
-  "en": "Write an answer to a traveller's question."
+  "en": "Write an answer to a traveler's question."
  },
  {
   "tr": "Her malzeme kendi „aus“unu alır.",
@@ -422,7 +422,7 @@
  {
   "tr": "Yeni komşulara bırakılmış bir not.",
   "kind": "intro",
-  "en": "A note left for the new neighbours."
+  "en": "A note left for the new neighbors."
  },
  {
   "tr": "„Ich heiße Ben.“ — erkeğin adı Ben.",
@@ -452,7 +452,7 @@
  {
   "tr": "Sağlık ocağının broşürü. Beş öneri.",
   "kind": "intro",
-  "en": "A leaflet from the health centre. Five tips."
+  "en": "A leaflet from the health center. Five tips."
  },
  {
   "tr": "Sara „Ich komme aus Italien“ diyor.",
@@ -717,7 +717,7 @@
  {
   "tr": "Bir konser başlamak üzere. Program ne?",
   "kind": "intro",
-  "en": "A concert is about to start. What is on the programme?"
+  "en": "A concert is about to start. What is on the program?"
  },
  {
   "tr": "Bir maç raporu. Skor ne, kim ne yaptı?",

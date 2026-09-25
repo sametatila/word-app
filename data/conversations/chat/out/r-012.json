@@ -36,8 +36,8 @@
  },
  {
   "conversation": "de-b1-muelltrennung",
-  "sceneEn": "You are asking a neighbour about the rubbish rules in the building you have just moved into: which rubbish goes in which bin, how the deposit is claimed back, which day it is collected.",
-  "partnerEn": "a slightly meticulous neighbour who knows the rules well",
+  "sceneEn": "You are asking a neighbor about the rubbish rules in the building you have just moved into: which rubbish goes in which bin, how the deposit is claimed back, which day it is collected.",
+  "partnerEn": "a slightly meticulous neighbor who knows the rules well",
   "openingEn": "You're new here, aren't you? Everyone gets the rubbish wrong at first — what would you like to know?",
   "goalEn": "Which rubbish goes where and how the deposit is claimed back have both been found out."
  },
@@ -71,14 +71,14 @@
  },
  {
   "conversation": "de-b1-wetterextrem",
-  "sceneEn": "You are talking to a neighbour about how the weather has changed: how it used to be, how it is now, what you notice. Describe the change with comparative forms.",
-  "partnerEn": "a long-standing neighbour who likes comparing the years",
+  "sceneEn": "You are talking to a neighbor about how the weather has changed: how it used to be, how it is now, what you notice. Describe the change with comparative forms.",
+  "partnerEn": "a long-standing neighbor who likes comparing the years",
   "openingEn": "We never used to have a summer like this. Do you notice it too, or am I imagining it?",
   "goalEn": "Then and now have been compared and what you have noticed has been described."
  },
  {
   "conversation": "de-b1-ehrenamt",
-  "sceneEn": "You are at an introductory meeting at a voluntary organisation: say why you want to volunteer, how much time you have a week and what you could do.",
+  "sceneEn": "You are at an introductory meeting at a voluntary organization: say why you want to volunteer, how much time you have a week and what you could do.",
   "partnerEn": "a warm but realistic volunteer coordinator",
   "openingEn": "Glad you could come. First tell me: why do you want to get involved with us?",
   "goalEn": "Your reason for volunteering, the time you can give and what you could do have all been described."
@@ -87,7 +87,7 @@
   "conversation": "de-b1-stadtentwicklung",
   "sceneEn": "You are talking about the changes with someone who has lived in the area a long time: what has been done up, what has closed, what has happened to the rents, who has left. Describe the change in the past passive.",
   "partnerEn": "a resident who resents the change and misses the old area",
-  "openingEn": "You should have seen this neighbourhood ten years ago. Do you know what's disappeared from here?",
+  "openingEn": "You should have seen this neighborhood ten years ago. Do you know what's disappeared from here?",
   "goalEn": "What has been done up, what has closed and what has happened to the rents have all been discussed."
  },
  {

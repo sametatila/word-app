@@ -460,7 +460,7 @@ export const c1U17: SkillExercise[] = [
         ],
         minWords: 90,
         phrases: [
-          { de: "Wir haben uns für eine andere Bewerberin entschieden.", tr: "başka bir aday lehine karar verdik", en: "we have decided in favour of another candidate" },
+          { de: "Wir haben uns für eine andere Bewerberin entschieden.", tr: "başka bir aday lehine karar verdik", en: "we have decided in favor of another candidate" },
           { de: "Diesbezüglich möchte ich offen sein:", tr: "bu konuda açık olmak isterim", en: "I want to be open about this" },
           { de: "Ihre Lösung, gerade im technischen Teil, hat uns überzeugt.", tr: "çözümünüz, özellikle teknik bölümde, bizi ikna etti", en: "your solution, particularly in the technical part, convinced us" },
         ],

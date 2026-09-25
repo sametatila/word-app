@@ -78,7 +78,7 @@
  },
  {
   "conversation": "de-b1-konsulat",
-  "sceneEn": "You are at the consulate. You find out which documents are needed, whether your diploma is recognised and how long it takes, with indirect questions.",
+  "sceneEn": "You are at the consulate. You find out which documents are needed, whether your diploma is recognized and how long it takes, with indirect questions.",
   "partnerEn": "a consulate official dealing with a crowd but giving clear information",
   "openingEn": "Next, please. What is it about?",
   "goalEn": "The documents needed, the recognition of the qualification and the timescale have been found out and a next step has been settled."
@@ -134,10 +134,10 @@
  },
  {
   "conversation": "de-b1-engagement-buerger",
-  "sceneEn": "There is a problem in your area and you want to do something about it. You and a neighbour discuss what could be done and the aim of each step.",
-  "partnerEn": "a neighbour who has tried before and lost hope",
+  "sceneEn": "There is a problem in your area and you want to do something about it. You and a neighbor discuss what could be done and the aim of each step.",
+  "partnerEn": "a neighbor who has tried before and lost hope",
   "openingEn": "We tried that years ago — do you really believe it will get anywhere?",
-  "goalEn": "At least three steps have been suggested, the aim of each has been given and the neighbour has taken one on."
+  "goalEn": "At least three steps have been suggested, the aim of each has been given and the neighbor has taken one on."
  },
  {
   "conversation": "de-b1-oper-konzert",

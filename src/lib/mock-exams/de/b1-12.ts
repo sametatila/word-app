@@ -1018,7 +1018,7 @@ Bei einem Rücktritt bis eine Woche vor Kursbeginn erstatten wir die volle Gebü
               ],
               gloss: [
                 { de: "die Aussprache", tr: "telaffuz", en: "pronunciation" },
-                { de: "analysieren", tr: "çözümlemek", en: "to analyse" },
+                { de: "analysieren", tr: "çözümlemek", en: "to analyze" },
                 { de: "bremsen", tr: "yavaşlatmak", en: "to slow down" },
                 { de: "vorankommen", tr: "ilerlemek", en: "to make progress" },
               ],

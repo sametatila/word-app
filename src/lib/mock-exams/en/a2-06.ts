@@ -65,7 +65,7 @@ export const EN_A2_06: MockPaper = {
             {
               kind: "text",
               id: "m4",
-              genre: "Note for a neighbour",
+              genre: "Note for a neighbor",
               genreTr: "Komşuya not",
               title: "Snow tonight",
               body: `Ilan, snow is coming tonight. Please move your car before ten; the men clear the street at six in the morning. My son can help you with the snow. Do not put salt on the plants!`,
@@ -170,7 +170,7 @@ export const EN_A2_06: MockPaper = {
               kind: "match",
               id: "en-a2-06-l2-7",
               no: 7,
-              text: "Nuri goes to the mountains at the weekend and has no car.",
+              text: "Nuri goes to the mountains on the weekend and has no car.",
               answer: "f",
               explain:
                 "İlan tam bu boşluğu dolduruyor: «Every Saturday and Sunday in the season», istasyondan kalkıyor ve rezervasyon istemiyor. Arabası olmayan biri için ulaşım sorunu böyle çözülüyor.",
@@ -297,7 +297,7 @@ Close the doors. A small warm room is {{16}} than a big room you never warm up.
 
 Do not dry clothes on the heater. The room gets wet {{17}} the air cannot hold any more water.
 
-Next winter I {{18}} put a thick curtain in front of the door, because my neighbour says it works.
+Next winter I {{18}} put a thick curtain in front of the door, because my neighbor says it works.
 
 And the last thing: {{19}} you feel cold at your desk, stand up and walk for two minutes.`,
             },
@@ -1051,7 +1051,7 @@ Jara`,
               { de: "say if you like winter", tr: "Kışı sevip sevmediğini söyle" },
             ],
             sample:
-              "This is a park on a cold morning in January. There is snow on the grass and the sky is grey. In the middle two people are walking with a big dog. Behind them a woman is brushing the snow off a bench, and she wants to sit down. I like winter because the park is empty and everything is very quiet.",
+              "This is a park on a cold morning in January. There is snow on the grass and the sky is gray. In the middle two people are walking with a big dog. Behind them a woman is brushing the snow off a bench, and she wants to sit down. I like winter because the park is empty and everything is very quiet.",
             criteria: [
               "Şimdiki zaman (present continuous) kullanıldı mı? Bu görevin ana yapısı bu.",
               "Üç içerik noktasının üçü de işlendi mi?",

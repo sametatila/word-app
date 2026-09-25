@@ -67,7 +67,7 @@
  {
   "tr": "Randevu değiştiriliyor. Hangi gün kalıyor, hangisi iptal?",
   "kind": "intro",
-  "en": "An appointment is being moved. Which day stays, which one is cancelled?"
+  "en": "An appointment is being moved. Which day stays, which one is canceled?"
  },
  {
   "tr": "Şikâyeti ve süresini yaz. Sonunda şikâyet formunu doldur.",
@@ -102,7 +102,7 @@
  {
   "tr": "„My dream is to write a book.“ — seyahat artık yapılmayan şey.",
   "kind": "explain",
-  "en": "„My dream is to write a book.“ — the travelling is what no longer happens."
+  "en": "„My dream is to write a book.“ — the traveling is what no longer happens."
  },
  {
   "tr": "„Warm tea with lemon. My grandmother's advice — and it works.“",
@@ -162,7 +162,7 @@
  {
   "tr": "Önce istek, sonra soru, sonra yeni gün, en son eskisinin iptali.",
   "kind": "explain",
-  "en": "First the request, then the question, then the new day, last the cancelling of the old one."
+  "en": "First the request, then the question, then the new day, last the canceling of the old one."
  },
  {
   "tr": "Önce soru, sonra yapılmış olan, sonra az önce olan, en son plan.",
@@ -275,9 +275,9 @@
   "en": "„You should rest for a week.“ — vitamins do no harm, but the real medicine is rest."
  },
  {
-  "tr": "„…it is cheaper than the big places in the centre.“ — kısa sıfat „-er“ alıyor.",
+  "tr": "„…it is cheaper than the big places in the center.“ — kısa sıfat „-er“ alıyor.",
   "kind": "explain",
-  "en": "„…it is cheaper than the big places in the centre.“ — the short adjective takes „-er“."
+  "en": "„…it is cheaper than the big places in the center.“ — the short adjective takes „-er“."
  },
  {
   "tr": "„First, I'm going to visit my sister on Sunday.“ — karar geçen hafta verilmiş.",

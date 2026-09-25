@@ -214,7 +214,7 @@ Neither arrangement is natural. Both were chosen, and both can {{11}} chosen aga
             {
               kind: "text",
               id: "t3",
-              genre: "Encyclopaedia entry",
+              genre: "Encyclopedia entry",
               genreTr: "Ansiklopedi maddesi",
               title: "Amateur status",
               body: `Amateur status was the rule by which an athlete could compete only if they received no payment for their {{13}}.
@@ -321,11 +321,11 @@ The most likely future is therefore an open one, with different sports drawing t
               kind: "gap",
               id: "en-b2-05-l4-21",
               no: 21,
-              text: "The committee only realised the problem after the season had ended.\nNot until the season had ended ______ the problem.",
+              text: "The committee only realized the problem after the season had ended.\nNot until the season had ended ______ the problem.",
               cue: "DID",
-              accept: ["did the committee realise", "did the committee realize"],
+              accept: ["did the committee realize", "did the committee realize"],
               explain:
-                "Olumsuz bir zaman öbeği cümle başına geçtiğinde özne ile yardımcı fiil devrilir: «Not until … did the committee realise». Anahtar sözcük `did` bu devrik yapının yardımcı fiili ve ardından yalın fiil gelir.",
+                "Olumsuz bir zaman öbeği cümle başına geçtiğinde özne ile yardımcı fiil devrilir: «Not until … did the committee realize». Anahtar sözcük `did` bu devrik yapının yardımcı fiili ve ardından yalın fiil gelir.",
             },
             {
               kind: "gap",
@@ -357,7 +357,7 @@ The most likely future is therefore an open one, with different sports drawing t
 
 The visible work is the smallest part. Two training sessions a week and eight meetings a year come to perhaps two hundred hours, which anybody can find. The invisible work is the rest: the forms, the insurance, which is checked by nobody until it matters, and the four hours spent finding out why a bill was wrong. Add the two evenings a month on the telephone to people who had promised something and then not done it.
 
-I kept a record for one year, because a friend asked me to. The total was six hundred and forty hours. At the minimum wage that is about nine thousand pounds of unpaid work, and the club's entire annual income was eleven thousand. Faced with those two numbers side by side, I did nothing for a fortnight. If I had known the figure in the first year, I would have asked for help long before I did.
+I kept a record for one year, because a friend asked me to. The total was six hundred and forty hours. At the minimum wage that is about nine thousand pounds of unpaid work, and the club's entire annual income was eleven thousand. Faced with those two numbers side by side, I did nothing for a two weeks. If I had known the figure in the first year, I would have asked for help long before I did.
 
 I should be careful here, because the obvious conclusion is the wrong one. The answer is not that clubs should employ somebody, since almost none of them could afford it. Nor is it that volunteers should stop, which would close half the sport in this country within a season.
 
@@ -442,7 +442,7 @@ What I have changed is smaller. When somebody now says that a club runs on goodw
 
 Consider a limit on how much a club may spend on wages. The number is the same for everybody and the effect is not. {{29}}
 
-The same difficulty appears with equipment. A rule that allows any suit made from an approved material sounds neutral, and it favours whoever can afford to test forty of them. {{30}}
+The same difficulty appears with equipment. A rule that allows any suit made from an approved material sounds neutral, and it favors whoever can afford to test forty of them. {{30}}
 
 Some federations now publish the expected effect of a rule before adopting it. The change is small and it is resisted, mainly because it makes the trade-off visible. {{31}}
 
@@ -487,7 +487,7 @@ None of this is an argument against rules, which are the only thing standing bet
               text: "Gap 30",
               answer: "c",
               explain:
-                "Paragraf avantajı adlandırıyor: kural «favours whoever can afford to test forty of them». (c) bu avantajın kuralda hiç anılmadığını ekleyerek tarafsızlık görüntüsünü çürütüyor.",
+                "Paragraf avantajı adlandırıyor: kural «favors whoever can afford to test forty of them». (c) bu avantajın kuralda hiç anılmadığını ekleyerek tarafsızlık görüntüsünü çürütüyor.",
             },
             {
               kind: "match",
@@ -529,7 +529,7 @@ None of this is an argument against rules, which are the only thing standing bet
             {
               key: "d",
               label: "d — Saga, teacher",
-              body: "My pupils can name every player in two leagues. What defeats them is the idea that a club is an organisation with accounts and choices, because there is nothing dramatic to hold on to. That is the harder thing to teach and we barely try.",
+              body: "My pupils can name every player in two leagues. What defeats them is the idea that a club is an organization with accounts and choices, because there is nothing dramatic to hold on to. That is the harder thing to teach and we barely try.",
             },
           ],
           items: [
@@ -555,7 +555,7 @@ None of this is an argument against rules, which are the only thing standing bet
               kind: "match",
               id: "en-b2-05-l7-34",
               no: 34,
-              text: "Which text says that changing an incentive would change behaviour quickly?",
+              text: "Which text says that changing an incentive would change behavior quickly?",
               answer: "c",
               explain:
                 "Osku koşulu ve süreyi birlikte söylüyor: «Change what you measure me on and the prices will change within a season». Ölçüt değişirse davranış hızla değişir.",
@@ -666,7 +666,7 @@ None of this is an argument against rules, which are the only thing standing bet
               situation: "Bir gönüllü pazar günü için ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hi, about Sunday. I can do the gate and the programmes, but I have to leave at four for my mother. If we open at one we will have the queue clear by then, and Xenia said she can stay to the end." },
+                { text: "Hi, about Sunday. I can do the gate and the programs, but I have to leave at four for my mother. If we open at one we will have the queue clear by then, and Xenia said she can stay to the end." },
               ],
             },
             {
@@ -757,10 +757,10 @@ None of this is an argument against rules, which are the only thing standing bet
               no: 6,
               ref: "a6",
               text: "What is the speaker doing?",
-              options: ["Agreeing to help within a time limit", "Asking somebody to take her place all day", "Cancelling"],
+              options: ["Agreeing to help within a time limit", "Asking somebody to take her place all day", "Canceling"],
               answer: 0,
               explain:
-                "Konuşmacı geliyor ama sınır koyuyor: «I can do the gate and the programmes, but I have to leave at four». Xenia yerine geçmiyor, sona kadar KALIYOR.",
+                "Konuşmacı geliyor ama sınır koyuyor: «I can do the gate and the programs, but I have to leave at four». Xenia yerine geçmiyor, sona kadar KALIYOR.",
             },
             {
               kind: "mcq",
@@ -805,7 +805,7 @@ None of this is an argument against rules, which are the only thing standing bet
               plays: 2,
               segments: [
                 {
-                  text: "Thank you. I will give you our three-year figures and I will not pretend that all of them are comfortable. We began with sixty junior members and we now have two hundred and forty. In three years we have run about nine hundred training sessions. Here is the first surprise: the group that grows fastest is not the under-twelves, it is the over-fifties, because that is where nothing else in the town exists. Second, the day matters more than the price. A session on Saturday morning fills within an hour; the same session on Tuesday evening is half empty, and that pattern has held for three years. Third, the format of the newsletter. We tried a video, a long email and a single card in the bag, and the card outperformed the other two, which disappointed the two of us who like writing. Fourth, a caution: our own survey shows that the families who leave are the ones who never came to a social event, and we have not solved that. And finally, money. Seventy per cent of our income comes from one grant, and that is the risk that keeps me awake, not the weather.",
+                  text: "Thank you. I will give you our three-year figures and I will not pretend that all of them are comfortable. We began with sixty junior members and we now have two hundred and forty. In three years we have run about nine hundred training sessions. Here is the first surprise: the group that grows fastest is not the under-twelves, it is the over-fifties, because that is where nothing else in the town exists. Second, the day matters more than the price. A session on Saturday morning fills within an hour; the same session on Tuesday evening is half empty, and that pattern has held for three years. Third, the format of the newsletter. We tried a video, a long email and a single card in the bag, and the card outperformed the other two, which disappointed the two of us who like writing. Fourth, a caution: our own survey shows that the families who leave are the ones who never came to a social event, and we have not solved that. And finally, money. Seventy percent of our income comes from one grant, and that is the risk that keeps me awake, not the weather.",
                 },
               ],
             },
@@ -829,7 +829,7 @@ The most effective format was the {{14}}.
 
 The families who leave never came to a {{15}}.
 
-{{16}} per cent of the income comes from one grant.`,
+{{16}} percent of the income comes from one grant.`,
             },
           ],
           items: [
@@ -911,7 +911,7 @@ The families who leave never came to a {{15}}.
               text: "Gap 16",
               accept: ["70", "seventy"],
               explain:
-                "«Seventy per cent of our income comes from one grant» — tek kaynağa bağlılık oranı. Konuşmacı asıl riskin hava değil bu olduğunu ekliyor.",
+                "«Seventy percent of our income comes from one grant» — tek kaynağa bağlılık oranı. Konuşmacı asıl riskin hava değil bu olduğunu ekliyor.",
             },
           ],
         },
@@ -925,9 +925,9 @@ The families who leave never came to a {{15}}.
           promptTr:
             "Spor ve para üzerine konuşan altı kişi dinleyeceksin, 17–22. maddeler. Her konuşmacının söylediğini a'dan h'ye seç. Her harf en fazla bir kez kullanılır. Kayıtları iki kez dinleyebilirsin.",
           options: [
-            { key: "a", label: "The public is blamed for a failure that belongs to the organisers." },
+            { key: "a", label: "The public is blamed for a failure that belongs to the organizers." },
             { key: "b", label: "A true figure can still give a false impression." },
-            { key: "c", label: "The incentives reward the wrong behaviour." },
+            { key: "c", label: "The incentives reward the wrong behavior." },
             { key: "d", label: "The speaker has changed their own practice." },
             { key: "e", label: "Things are better than they used to be." },
             { key: "f", label: "The problem is the scale, not the principle." },
@@ -987,7 +987,7 @@ The families who leave never came to a {{15}}.
               situation: "Beşinci konuşmacı kendi sitelerindeki bir rakamı anlatıyor.",
               plays: 2,
               segments: [
-                { text: "The figure on our website is correct: ninety per cent of our players come from within thirty miles. What it does not say is that those players get about a fifth of the minutes on the pitch." },
+                { text: "The figure on our website is correct: ninety percent of our players come from within thirty miles. What it does not say is that those players get about a fifth of the minutes on the pitch." },
               ],
             },
             {
@@ -1143,7 +1143,7 @@ The families who leave never came to a {{15}}.
               no: 26,
               ref: "d1",
               text: "What does she say has improved?",
-              options: ["The behaviour of spectators at every level", "The number of new officials each season", "The fines and the reporting system"],
+              options: ["The behavior of spectators at every level", "The number of new officials each season", "The fines and the reporting system"],
               answer: 2,
               explain:
                 "Üç somut iyileşme sayıyor: «Clubs are fined properly now, the reporting takes ten minutes instead of an hour, and the county association answers within a week». Seyirci davranışı için böyle bir şey söylemiyor.",
@@ -1307,7 +1307,7 @@ For somebody starting again after years away, however, it is the easiest door I 
             minutes: 5,
             points: [
               { de: "give developed answers with reasons", tr: "Gerekçeli, geliştirilmiş cevaplar vermek" },
-              { de: "analyse your own earlier decision", tr: "Kendi eski kararını çözümlemek" },
+              { de: "analyze your own earlier decision", tr: "Kendi eski kararını çözümlemek" },
             ],
             sample:
               "I swam with a club until I was seventeen and then stopped for eleven years; I joined a running group last spring, mainly because it meets at a time I can actually reach. The price stopped me once: a gym near my old flat cost fifty a month and I told myself it was really about time, not money, which was not true. What makes me think a club is well run now is whether it can tell you where its money goes, although I have to admit I have only asked twice.",

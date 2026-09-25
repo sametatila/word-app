@@ -231,7 +231,7 @@ export const deC1P17: SkillExercise[] = [
         phrases: [
           { de: "Bevor wir über Zahlen sprechen, möchte ich etwas anderes sagen: …", tr: "Rakamlardan önce başka bir şey söylemek istiyorum: …", en: "Before we talk about numbers, I would like to say something else: …" },
           { de: "Mein Vorschlag für die Aufteilung ist folgender: …", tr: "Paylaşım için önerim şu: …", en: "My proposal for the division is as follows: …" },
-          { de: "Zugunsten von … würde ich vorschlagen, dass …", tr: "…'in lehine şunu öneririm: …", en: "In favour of …, I would suggest that …" },
+          { de: "Zugunsten von … würde ich vorschlagen, dass …", tr: "…'in lehine şunu öneririm: …", en: "In favor of …, I would suggest that …" },
           { de: "Sollten wir uns nicht einigen, …", tr: "Anlaşamazsak …", en: "Should we fail to agree, …" },
           { de: "Wichtiger als jede Summe ist mir, dass …", tr: "Benim için her tutardan önemli olan şu: …", en: "More important to me than any sum is that …" },
         ],

@@ -166,7 +166,7 @@ export const enC1U14: SkillExercise[] = [
       { de: "an axis", tr: "eksen" },
       { de: "a trade", tr: "zanaat" },
       { de: "split", tr: "bölünmüş" },
-      { de: "a licence", tr: "ruhsat" },
+      { de: "a license", tr: "ruhsat" },
       { de: "an entry", tr: "giriş" },
       { de: "announced", tr: "ilan edilen" },
       { de: "counted", tr: "sayılan" },
@@ -186,9 +186,9 @@ export const enC1U14: SkillExercise[] = [
     minutes: 12,
     text:
       "Deskilling is not the opposite of professionalization. The sentence looks like a correction of somebody's vocabulary and it is a correction of their whole picture.\n" +
-      "Two words that look like opposites are being taken off the same axis. One of them describes what happens to a trade when the work is split into pieces a new person can be taught in a week. The other describes what happens to a trade when it gets a licence, an entry exam and a name that has to be earned.\n" +
+      "Two words that look like opposites are being taken off the same axis. One of them describes what happens to a trade when the work is split into pieces a new person can be taught in a week. The other describes what happens to a trade when it gets a license, an entry exam and a name that has to be earned.\n" +
       "They are not two ends of one line. They can happen in the same firm, in the same year, to two rooms on the same floor, and they usually do, because the second one is what a trade does when the first one is coming for it.\n" +
-      "A skilled labour shortage is announced; a labour reserve is counted. Two passives with two different owners: the first belongs to a press release and the second to a statistician.\n" +
+      "A skilled labor shortage is announced; a labor reserve is counted. Two passives with two different owners: the first belongs to a press release and the second to a statistician.\n" +
       "That difference is the whole of the lesson. A shortage is a claim about a price nobody wants to pay, and it is announced in the same sentence in which the wage is described as already high. A reserve is a number of people who are not in the work and could be, and it can be counted from a form. A country can have both at once and most of them do.\n" +
       "Lateral entry and competence orientation arrive together. A pair that looks unrelated until you have watched it twice. One is a door that opens for people without the usual papers; the other is a measure that says papers were never the point.\n" +
       "Neither is a bad thing and both of them are also the cheaper thing, and a reader who cannot hold those two facts in one paragraph will end up defending whichever of them was said last to them.\n" +
@@ -228,7 +228,7 @@ export const enC1U14: SkillExercise[] = [
         answer: 0,
         items: [
           "Deskilling is not the opposite of professionalization.",
-          "A skilled labour shortage is announced; a labour reserve is counted.",
+          "A skilled labor shortage is announced; a labor reserve is counted.",
           "Lateral entry and competence orientation arrive together.",
           "Ask who says the word and what it costs.",
         ],
@@ -352,7 +352,7 @@ export const enC1U14: SkillExercise[] = [
       { de: "an ethic", tr: "ahlak" },
       { de: "a pattern", tr: "kalıp" },
       { de: "an assumption", tr: "varsayım" },
-      { de: "a defence", tr: "savunma" },
+      { de: "a defense", tr: "savunma" },
       { de: "worn out", tr: "yıpranmış" },
       { de: "empty", tr: "boş" },
       { de: "an agenda", tr: "gündem" },
@@ -367,7 +367,7 @@ export const enC1U14: SkillExercise[] = [
       { speaker: "Sevil", text: "The action pattern claims what the everyday practice assumes. The same shape from two units back, and here it is about a meeting rather than a text." },
       { speaker: "Sevil", text: "An assumption in a meeting is whatever nobody wrote on the agenda and everybody arrived with. It gets into the decision without ever being spoken." },
       { speaker: "Sevil", text: "So the useful minute is not the one that records what was said. It is the one that records what was assumed, and almost nobody writes that one." },
-      { speaker: "Sevil", text: "To call it disciplining is not to call it a platitude. Eight words, and they are doing the work of a whole paragraph of defence." },
+      { speaker: "Sevil", text: "To call it disciplining is not to call it a platitude. Eight words, and they are doing the work of a whole paragraph of defense." },
       { speaker: "Sevil", text: "A hard word is not made empty by being hard. „Disciplining“ is worn out from use and it still names something that happened in a room to a person." },
       { speaker: "Sevil", text: "The move to watch for is the one where somebody answers a description with a comment about the word rather than about the thing." },
       { speaker: "Sevil", text: "It works almost every time and it costs nothing, and the last line of that meeting will record a discussion of vocabulary and no decision at all." },

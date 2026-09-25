@@ -85,7 +85,7 @@ export const enC1U23: SkillExercise[] = [
     text:
       "In the essay it is rhetoric; in the pamphlet, pathos. Two abstract nouns and not an article in sight, and that is the lesson.\n" +
       "English uses an abstract noun bare when it is meant generally. Rhetoric, pathos, competitiveness, doubt, freedom, work: nothing in front of them at all, and the sentence is about the thing as such.\n" +
-      "A neighbouring language puts an article in front of every one of them and keeps it there. So a speaker coming from that side supplies an article English does not want, and the result is a sentence nobody can point at as wrong which nevertheless reads as translated.\n" +
+      "A neighboring language puts an article in front of every one of them and keeps it there. So a speaker coming from that side supplies an article English does not want, and the result is a sentence nobody can point at as wrong which nevertheless reads as translated.\n" +
       "And now the part that makes this a lesson for this level rather than a rule for a first year. The article comes back the moment something narrows the noun. The rhetoric of the pamphlet. The doubt that stopped the project. The competitiveness we lost in one bad decade. A bare noun is the general thing; an article is a signal that a particular one is meant, and the narrowing usually sits in the words after the noun rather than before it.\n" +
       "So the rule is not that abstract nouns take no article. It is: no article until something narrows it. That is a rule about the whole phrase, and a writer who learns it as a rule about the noun alone will get it wrong in both directions.\n" +
       "A stylistic device is a choice; a stylistic break is a mistake. Here both nouns have an article and they should: these are two countable things put side by side, and the sentence is not about devices in general.\n" +
@@ -367,7 +367,7 @@ export const enC1U23: SkillExercise[] = [
       { speaker: "Cenk", text: "Penetration is a share that is still growing. Saturation is the same share when the growth has stopped, and nothing about the number itself tells you which you are looking at." },
       { speaker: "Cenk", text: "Only the second reading has a ceiling in it, and the whole strategy in that paper depends on which of the two chapters the reader believes." },
       { speaker: "Cenk", text: "That competitiveness, as noted, is the monopoly position of an earlier page. „As noted“ again, and again I check it." },
-      { speaker: "Cenk", text: "When it is true, the sentence is honest and useful: it tells the reader that a word has changed its colour between two chapters." },
+      { speaker: "Cenk", text: "When it is true, the sentence is honest and useful: it tells the reader that a word has changed its color between two chapters." },
       { speaker: "Cenk", text: "When it is not true, a claim that nobody has made yet is being carried into the reader as a reminder of something they already agreed to." },
       { speaker: "Cenk", text: "Where a rival can undercut us, no price fixing helps. This is the line I would keep out of any paper that leaves the building." },
       { speaker: "Cenk", text: "It is true and it is also a sentence about a cartel, and a cartel is illegal, and the fine is calculated on turnover rather than on profit." },

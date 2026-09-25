@@ -233,7 +233,7 @@ export const deB1P7: SkillExercise[] = [
         phrases: [
           { de: "Ich wende mich an Sie, weil …", tr: "Size şunun için yazıyorum: …", en: "I am writing to you because …" },
           { de: "Mein Vorschlag wäre, …", tr: "Önerim şu olurdu: …", en: "My suggestion would be …" },
-          { de: "Dafür spricht erstens …, zweitens …", tr: "Bunun lehine birincisi …, ikincisi …", en: "In favour of this are, firstly … and secondly …" },
+          { de: "Dafür spricht erstens …, zweitens …", tr: "Bunun lehine birincisi …, ikincisi …", en: "In favor of this are, firstly … and secondly …" },
           { de: "Mir ist bewusst, dass …", tr: "Şunun farkındayım: …", en: "I am aware that …" },
           { de: "Ich würde mich freuen, wenn wir darüber sprechen könnten.", tr: "Bunu konuşabilirsek sevinirim.", en: "I would be glad if we could talk about it." },
         ],

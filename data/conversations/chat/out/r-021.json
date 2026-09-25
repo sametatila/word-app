@@ -36,10 +36,10 @@
  },
  {
   "conversation": "de-c1-moderation",
-  "sceneEn": "You are hosting an event and the programme has slipped: the speaker is late. Greet the room, announce the situation politely, build a bridge to fill the gap and restart the programme.",
+  "sceneEn": "You are hosting an event and the program has slipped: the speaker is late. Greet the room, announce the situation politely, build a bridge to fill the gap and restart the program.",
   "partnerEn": "a flustered event manager passing on news from backstage",
   "openingEn": "She'll be at least ten minutes. Can you bridge that somehow?",
-  "goalEn": "The room has been greeted, the delay announced politely, a bridge has been built and the programme restarted."
+  "goalEn": "The room has been greeted, the delay announced politely, a bridge has been built and the program restarted."
  },
  {
   "conversation": "de-c1-schlagfertig",
@@ -123,7 +123,7 @@
   "sceneEn": "You are trying to work out who really carries weight in a team you have just joined. Ask a colleague: who sets the tone, how decisions are made, how you can find your place. Use idioms in measure.",
   "partnerEn": "a plain-spoken but diplomatic colleague who knows the team well",
   "openingEn": "You're new, so I'll tell you straight away: on paper the management decides. And in reality? Have a guess.",
-  "goalEn": "The real balance of power in the team has been learnt and a concrete piece of advice on finding your place has been taken away."
+  "goalEn": "The real balance of power in the team has been learned and a concrete piece of advice on finding your place has been taken away."
  },
  {
   "conversation": "de-c1-falsche-freunde-idiome",

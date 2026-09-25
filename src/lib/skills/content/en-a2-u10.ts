@@ -167,7 +167,7 @@ export const enA2U10: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 10,
-    title: "My neighbourhood",
+    title: "My neighborhood",
     genre: "monologue",
     intro: "Bir mahalle anlatılıyor. Nesi iyi, nesi eksik?",
     gloss: [
@@ -179,7 +179,7 @@ export const enA2U10: SkillExercise[] = [
     segments: [
       { speaker: "Mert", text: "I moved to this area in March and now I don't want to go back." },
       { speaker: "Mert", text: "There is a park nearby. From my front door it takes ten minutes on foot." },
-      { speaker: "Mert", text: "It's quieter than the city centre, but it isn't boring. On Saturday the market is crowded." },
+      { speaker: "Mert", text: "It's quieter than the city center, but it isn't boring. On Saturday the market is crowded." },
       { speaker: "Mert", text: "The bus stop is under my window. That was a problem in the first week and now I don't hear it." },
       { speaker: "Mert", text: "At night the streets are safe. There are always people, because the bakery opens at four." },
       { speaker: "Mert", text: "What is missing? A cinema. For a film I have to take the bus for twenty minutes." },
@@ -201,10 +201,10 @@ export const enA2U10: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The area is quieter than the city centre.",
+        text: "The area is quieter than the city center.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„It's quieter than the city centre, but it isn't boring.“",
+        explain: "„It's quieter than the city center, but it isn't boring.“",
       },
       {
         kind: "gapfill",
@@ -398,8 +398,8 @@ export const enA2U10: SkillExercise[] = [
       {
         kind: "build",
         tr: "Şehir merkezinden daha sessiz.",
-        answer: "It's quieter than the city centre.",
-        alternatives: ["It is quieter than the city centre."],
+        answer: "It's quieter than the city center.",
+        alternatives: ["It is quieter than the city center."],
         hint: "„quiet“ kısa: „-er“ alıyor ve sondaki „t“den önce „e“ düşmüyor.",
       },
       {

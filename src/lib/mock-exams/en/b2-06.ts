@@ -213,7 +213,7 @@ Both methods follow a published standard, and neither {{11}} be called dishonest
             {
               kind: "text",
               id: "t3",
-              genre: "Encyclopaedia entry",
+              genre: "Encyclopedia entry",
               genreTr: "Ansiklopedi maddesi",
               title: "Energy labels",
               body: `An energy label is a mark by which an appliance is placed on a scale according to its {{13}} in normal use.
@@ -358,7 +358,7 @@ The measuring itself was easy. A plug meter costs fifteen pounds and the reading
 
 The fridge, which I had suspected for years, used about eleven pounds a month and could not be improved without buying a new one, which would have cost more than eight years of the difference. The television used less than the router that was never turned off. The kettle, boiled roughly nine times a day, used more than everything else in the kitchen together, and I still boil it nine times a day.
 
-I should be careful here, because the obvious conclusion is the wrong one. The point is not that individual behaviour is pointless; it is that the largest number in my flat was the heating, and the heating is a decision made by whoever owns the building. Faced with that, a plug meter is a hobby. If I had known it at the start, I would have spent the year reading the lease instead.
+I should be careful here, because the obvious conclusion is the wrong one. The point is not that individual behavior is pointless; it is that the largest number in my flat was the heating, and the heating is a decision made by whoever owns the building. Faced with that, a plug meter is a hobby. If I had known it at the start, I would have spent the year reading the lease instead.
 
 Nevertheless, I do not regret the year. What it changed was not my bill but my patience with a certain kind of advice, and that has been worth rather more than the fifteen pounds.`,
               gloss: [
@@ -404,10 +404,10 @@ Nevertheless, I do not regret the year. What it changed was not my bill but my p
               id: "en-b2-06-l5-26",
               no: 26,
               text: "What is the writer's main point?",
-              options: ["Plug meters are inaccurate", "Individual behaviour is entirely pointless", "The biggest decision is not hers to make", "Landlords should pay for heating"],
+              options: ["Plug meters are inaccurate", "Individual behavior is entirely pointless", "The biggest decision is not hers to make", "Landlords should pay for heating"],
               answer: 2,
               explain:
-                "Dördüncü paragraf iki savı ayırıyor: «The point is not that individual behaviour is pointless; it is that the largest number in my flat was the heating», ve ısıtma binanın sahibinin kararı.",
+                "Dördüncü paragraf iki savı ayırıyor: «The point is not that individual behavior is pointless; it is that the largest number in my flat was the heating», ve ısıtma binanın sahibinin kararı.",
             },
             {
               kind: "mcq",
@@ -445,7 +445,7 @@ The same difficulty appears with appliances. A landlord buying a fridge for a fl
 
 Some countries now require a minimum standard before a property may be let. The change is slow and it is resisted, mainly because it turns a preference into a cost. {{31}}
 
-None of this argues that behaviour is irrelevant, since a household that heats one room instead of four uses less whatever the walls are like. It argues for asking who holds the decision before designing the advice.`,
+None of this argues that behavior is irrelevant, since a household that heats one room instead of four uses less whatever the walls are like. It argues for asking who holds the decision before designing the advice.`,
               gloss: [
                 { de: "insulation", tr: "yalıtım", en: "die Dämmung" },
                 { de: "a tenant", tr: "kiracı", en: "der Mieter" },
@@ -528,7 +528,7 @@ None of this argues that behaviour is irrelevant, since a household that heats o
             {
               key: "d",
               label: "d — Bodil, teacher",
-              body: "My pupils can list ten ways to save energy at home. What defeats them is a bill: a page of numbers with no unit they recognise and a total that depends on a decision made before they were born. That is the harder thing to teach.",
+              body: "My pupils can list ten ways to save energy at home. What defeats them is a bill: a page of numbers with no unit they recognize and a total that depends on a decision made before they were born. That is the harder thing to teach.",
             },
           ],
           items: [
@@ -545,7 +545,7 @@ None of this argues that behaviour is irrelevant, since a household that heats o
               kind: "match",
               id: "en-b2-06-l7-33",
               no: 33,
-              text: "Which text says the rules rather than the person should be criticised?",
+              text: "Which text says the rules rather than the person should be criticized?",
               answer: "a",
               explain:
                 "Cosmin ayrımı kendisi yapıyor: «they are describing the tax rules, not my character, and the rules are the thing you can actually change».",
@@ -554,7 +554,7 @@ None of this argues that behaviour is irrelevant, since a household that heats o
               kind: "match",
               id: "en-b2-06-l7-34",
               no: 34,
-              text: "Which text says that changing an incentive would change behaviour quickly?",
+              text: "Which text says that changing an incentive would change behavior quickly?",
               answer: "c",
               explain:
                 "Aurel koşulu ve süreyi birlikte söylüyor: «Change what I am measured on and the display in my shop will change within a month».",
@@ -682,7 +682,7 @@ None of this argues that behaviour is irrelevant, since a household that heats o
             {
               kind: "audio",
               id: "a8",
-              genre: "Between neighbours",
+              genre: "Between neighbors",
               genreTr: "Komşular arasında",
               situation: "İki komşu fatura farkını konuşuyor.",
               plays: 2,
@@ -756,7 +756,7 @@ None of this argues that behaviour is irrelevant, since a household that heats o
               no: 6,
               ref: "a6",
               text: "What is the speaker doing?",
-              options: ["Cancelling the appointment", "Asking somebody to replace her for the day", "Agreeing to help for part of the day"],
+              options: ["Canceling the appointment", "Asking somebody to replace her for the day", "Agreeing to help for part of the day"],
               answer: 2,
               explain:
                 "Konuşmacı geliyor ama sınır koyuyor: «I can meet the engineer and let him in, but I have to leave at twelve». Quim yalnız öğleden sonrayı devralıyor, günün tamamını değil.",
@@ -778,7 +778,7 @@ None of this argues that behaviour is irrelevant, since a household that heats o
               no: 8,
               ref: "a8",
               text: "What explains the difference between the two bills?",
-              options: ["The position of the flat", "The behaviour of the household", "The size of the flat"],
+              options: ["The position of the flat", "The behavior of the household", "The size of the flat"],
               answer: 0,
               explain:
                 "Konuşmacı konumu veriyor: «I am on the top floor and you are on the corner. Three outside walls against my one». Daireler aynı büyüklükte ve «Nothing I do explains it» diyerek davranışı dışlıyor.",
@@ -791,7 +791,7 @@ None of this argues that behaviour is irrelevant, since a household that heats o
           format: "notes",
           goal: "detail",
           prompt:
-            "You hear a man reporting three years of results from a housing programme. Complete the sentences, questions 9 to 16, with a word or a number. You hear the report twice.",
+            "You hear a man reporting three years of results from a housing program. Complete the sentences, questions 9 to 16, with a word or a number. You hear the report twice.",
           promptTr:
             "Bir konut programının üç yıllık sonuçlarını anlatan bir adamı dinleyeceksin. 9–16. maddelerdeki cümleleri bir sözcük ya da sayıyla tamamla. Kaydı iki kez dinleyebilirsin.",
           texts: [
@@ -804,7 +804,7 @@ None of this argues that behaviour is irrelevant, since a household that heats o
               plays: 2,
               segments: [
                 {
-                  text: "Thank you. I will give you our three-year figures and I will not pretend that all of them are comfortable. We began with four hundred properties on the programme and we have now completed three hundred and twenty. In that time we have carried out about twelve thousand individual measures. Here is the first finding: the measure that saves most per pound is not new windows, it is loft insulation, because it is cheap and almost nothing has been done since 1985. Second, the sequence matters more than the total. A property done in the right order costs about fifteen per cent less than the same work done piece by piece. Third, the way we tell tenants. We tried a letter, a phone call and a visit, and the visit produced three times the response of the other two, which is expensive and we are doing it anyway. Fourth, a caution: our own survey shows that the households in the worst properties are the hardest to reach, and we have not solved that. And finally, money. Ninety per cent of our funding comes from one national programme that ends in two years.",
+                  text: "Thank you. I will give you our three-year figures and I will not pretend that all of them are comfortable. We began with four hundred properties on the program and we have now completed three hundred and twenty. In that time we have carried out about twelve thousand individual measures. Here is the first finding: the measure that saves most per pound is not new windows, it is loft insulation, because it is cheap and almost nothing has been done since 1985. Second, the sequence matters more than the total. A property done in the right order costs about fifteen percent less than the same work done piece by piece. Third, the way we tell tenants. We tried a letter, a phone call and a visit, and the visit produced three times the response of the other two, which is expensive and we are doing it anyway. Fourth, a caution: our own survey shows that the households in the worst properties are the hardest to reach, and we have not solved that. And finally, money. Ninety percent of our funding comes from one national program that ends in two years.",
                 },
               ],
             },
@@ -813,8 +813,8 @@ None of this argues that behaviour is irrelevant, since a household that heats o
               id: "n1",
               genre: "Sentences",
               genreTr: "Cümleler",
-              title: "Housing programme — three-year results",
-              body: `The programme began with {{9}} properties.
+              title: "Housing program — three-year results",
+              body: `The program began with {{9}} properties.
 
 {{10}} properties have now been completed.
 
@@ -822,13 +822,13 @@ About {{11}} individual measures have been carried out.
 
 The measure that saves most per pound is {{12}}.
 
-Work done in the right order costs about {{13}} per cent less.
+Work done in the right order costs about {{13}} percent less.
 
 The most effective way of telling tenants was a {{14}}.
 
 The households hardest to reach are those in the {{15}} properties.
 
-{{16}} per cent of the funding comes from one national programme.`,
+{{16}} percent of the funding comes from one national program.`,
             },
           ],
           items: [
@@ -840,7 +840,7 @@ The households hardest to reach are those in the {{15}} properties.
               text: "Gap 9",
               accept: ["400", "four hundred"],
               explain:
-                "«We began with four hundred properties on the programme» — programa alınan toplam. Üç yüz yirmi ise tamamlanan sayı; iki sayı aynı cümlede geçtiği için ayırmak gerekiyor.",
+                "«We began with four hundred properties on the program» — programa alınan toplam. Üç yüz yirmi ise tamamlanan sayı; iki sayı aynı cümlede geçtiği için ayırmak gerekiyor.",
             },
             {
               kind: "gap",
@@ -880,7 +880,7 @@ The households hardest to reach are those in the {{15}} properties.
               text: "Gap 13",
               accept: ["15", "fifteen"],
               explain:
-                "«costs about fifteen per cent less than the same work done piece by piece» — doğru sırayla yapmanın kazancı. Cümlede `per cent less` basılı olduğu için boşluğa yalnız sayı yazılır.",
+                "«costs about fifteen percent less than the same work done piece by piece» — doğru sırayla yapmanın kazancı. Cümlede `percent less` basılı olduğu için boşluğa yalnız sayı yazılır.",
             },
             {
               kind: "gap",
@@ -910,7 +910,7 @@ The households hardest to reach are those in the {{15}} properties.
               text: "Gap 16",
               accept: ["90", "ninety"],
               explain:
-                "«Ninety per cent of our funding comes from one national programme that ends in two years» — tek kaynağa bağlılık ve üstelik süreli.",
+                "«Ninety percent of our funding comes from one national program that ends in two years» — tek kaynağa bağlılık ve üstelik süreli.",
             },
           ],
         },
@@ -926,7 +926,7 @@ The households hardest to reach are those in the {{15}} properties.
           options: [
             { key: "a", label: "The public is blamed for a failure that belongs to the system." },
             { key: "b", label: "A true figure can still give a false impression." },
-            { key: "c", label: "The incentives reward the wrong behaviour." },
+            { key: "c", label: "The incentives reward the wrong behavior." },
             { key: "d", label: "The speaker has changed their own practice." },
             { key: "e", label: "Things are better than they used to be." },
             { key: "f", label: "The problem is the scale, not the principle." },
@@ -986,7 +986,7 @@ The households hardest to reach are those in the {{15}} properties.
               situation: "Beşinci konuşmacı kendi kurumlarının bir rakamını ele alıyor.",
               plays: 2,
               segments: [
-                { text: "The figure on our website is correct: ninety per cent of our properties are rated C or above. What it does not say is that the rating is modelled rather than measured, and that nobody has been inside two thirds of them." },
+                { text: "The figure on our website is correct: ninety percent of our properties are rated C or above. What it does not say is that the rating is modeled rather than measured, and that nobody has been inside two thirds of them." },
               ],
             },
             {
@@ -1050,7 +1050,7 @@ The households hardest to reach are those in the {{15}} properties.
               text: "Speaker 5",
               answer: "b",
               explain:
-                "Rakamın doğruluğu kabul ediliyor ama tamamlanıyor: «the rating is modelled rather than measured, and … nobody has been inside two thirds of them».",
+                "Rakamın doğruluğu kabul ediliyor ama tamamlanıyor: «the rating is modeled rather than measured, and … nobody has been inside two thirds of them».",
             },
             {
               kind: "match",
@@ -1142,7 +1142,7 @@ The households hardest to reach are those in the {{15}} properties.
               no: 26,
               ref: "d1",
               text: "What would he do differently?",
-              options: ["Campaign for a higher standard", "Work on enforcement first", "Involve more organisations"],
+              options: ["Campaign for a higher standard", "Work on enforcement first", "Involve more organizations"],
               answer: 1,
               explain:
                 "«I would spend the first year on enforcement and the last ten on the standard, which is the opposite of what we did». Standardın düzeyi değil, sıra değişecek.",
@@ -1175,7 +1175,7 @@ The households hardest to reach are those in the {{15}} properties.
               no: 29,
               ref: "d1",
               text: "Who writes the details, according to Urho?",
-              options: ["The organisations that funded the campaign", "The public", "The people who have not left"],
+              options: ["The organizations that funded the campaign", "The public", "The people who have not left"],
               answer: 2,
               explain:
                 "«the details are written by whoever is still in the room», çünkü yardım edenlerin çoğu zafer sonrası dağılıyor. Fon verenler ve halk bu aşamada anılmıyor.",
@@ -1221,13 +1221,13 @@ The households hardest to reach are those in the {{15}} properties.
               { de: "Add a third idea of your own.", tr: "Kendi üçüncü fikrini ekle." },
               { de: "Reach a clear conclusion.", tr: "Açık bir sonuca var." },
             ],
-            sample: `Almost everyone agrees that nobody should be cold in a rented flat. The disagreement begins as soon as somebody asks who writes the cheque.
+            sample: `Almost everyone agrees that nobody should be cold in a rented flat. The disagreement begins as soon as somebody asks who writes the check.
 
 The argument about payment is the weaker of the two, in my view. A landlord who improves a property keeps the asset, so the case for the owner paying is strong. What complicates it is that many small landlords own one flat and have no capital, and a rule that assumes deep pockets will simply push those properties out of the rental market.
 
 The second question is harder. If the work raises the rent by more than it lowers the bill, the tenant has paid for an improvement they do not own. That is not a reason to do nothing, but it is a reason to tie the two figures together in the regulation.
 
-My own view is that the missing element is enforcement. A standard that is modelled on paper rather than checked in the building rewards whoever fills in the form best.
+My own view is that the missing element is enforcement. A standard that is modeled on paper rather than checked in the building rewards whoever fills in the form best.
 
 Landlords should be required to improve, but only alongside inspection and a limit on the rent increase.`,
             criteria: [
@@ -1304,7 +1304,7 @@ For a homeowner deciding which machine to replace first, however, it is fifteen 
             minutes: 5,
             points: [
               { de: "give developed answers with reasons", tr: "Gerekçeli, geliştirilmiş cevaplar vermek" },
-              { de: "analyse your own earlier decision", tr: "Kendi eski kararını çözümlemek" },
+              { de: "analyze your own earlier decision", tr: "Kendi eski kararını çözümlemek" },
             ],
             sample:
               "I live on the top floor of a building from about 1960, which means good light and a flat that loses heat on three sides. Two winters ago I bought a small heater for one room, thinking I would heat less; the bill went up, because I stopped opening the door and the rest of the flat got damp instead. What makes me trust a saving now is whether somebody has measured the same house before and after, although I have to admit that almost nobody publishes that.",
@@ -1336,7 +1336,7 @@ For a homeowner deciding which machine to replace first, however, it is fifteen 
               { de: "identify a problem with your own choice", tr: "Kendi seçiminde bir sorunu adlandır" },
             ],
             sample:
-              "Advice is cheap, quick and it respects the fact that people know their own lives. The difficulty is that it addresses the person who very often does not hold the decision: a tenant cannot insulate a wall, however well informed they are. A minimum standard reaches the building instead of the occupant, and the building is where most of the loss is. I would choose the standard. The problem with my own choice is enforcement: a standard that is modelled on paper rather than inspected rewards whoever completes the form best, and the worst properties are exactly the ones nobody visits. So the honest version of my position is that a standard is better only if somebody is paid to go inside.",
+              "Advice is cheap, quick and it respects the fact that people know their own lives. The difficulty is that it addresses the person who very often does not hold the decision: a tenant cannot insulate a wall, however well informed they are. A minimum standard reaches the building instead of the occupant, and the building is where most of the loss is. I would choose the standard. The problem with my own choice is enforcement: a standard that is modeled on paper rather than inspected rewards whoever completes the form best, and the worst properties are exactly the ones nobody visits. So the honest version of my position is that a standard is better only if somebody is paid to go inside.",
             criteria: [
               "İki yaklaşım da gerçekten karşılaştırıldı mı?",
               "Tercih gerekçelendirildi mi?",

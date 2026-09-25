@@ -105,7 +105,7 @@ export const enA2U17: SkillExercise[] = [
     minutes: 5,
     text:
       "Mert: Good morning. I'd like to rent a car for three days.\n" +
-      "Office: Of course. Do you have your licence?\n" +
+      "Office: Of course. Do you have your license?\n" +
       "Mert: Here. And my passport.\n" +
       "Office: Thank you. A small car or a bigger one?\n" +
       "Mert: The small one. Two people, two bags.\n" +
@@ -154,7 +154,7 @@ export const enA2U17: SkillExercise[] = [
         answer: 0,
         items: [
           "I'd like to rent a car for three days.",
-          "Do you have your licence?",
+          "Do you have your license?",
           "Is the fuel included?",
           "I have to return the car at six on Friday, yes?",
         ],

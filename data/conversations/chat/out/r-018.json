@@ -25,7 +25,7 @@
   "sceneEn": "Your computer keeps freezing and you are asking a friend who knows about technology for help. Describe the problem, say when it happens, say what you have tried and repeat the fix in your own words.",
   "partnerEn": "a patient friend who always asks 'have you restarted it' first",
   "openingEn": "Wait, slowly. When does it freeze — always, or only with certain programs?",
-  "goalEn": "The problem has been described, what was tried has been said and the fix has been learnt and repeated back."
+  "goalEn": "The problem has been described, what was tried has been said and the fix has been learned and repeated back."
  },
  {
   "conversation": "de-b2-zukunftstechnologien",
@@ -36,8 +36,8 @@
  },
  {
   "conversation": "de-b2-wegen-trotz",
-  "sceneEn": "An event you were going to has been cancelled because of the weather. Talk to the organiser: find out why it was cancelled, ask whether anything can still go ahead, and discuss a new date or a refund.",
-  "partnerEn": "a sorry organiser trying to come up with a solution",
+  "sceneEn": "An event you were going to has been canceled because of the weather. Talk to the organizer: find out why it was canceled, ask whether anything can still go ahead, and discuss a new date or a refund.",
+  "partnerEn": "a sorry organizer trying to come up with a solution",
   "openingEn": "We had to cancel because of the storm — I really am sorry. Had you already set off?",
   "goalEn": "The reason for the cancellation has been found out and a conclusion has been reached about a new date or a refund."
  },
@@ -57,7 +57,7 @@
  },
  {
   "conversation": "de-b2-wohnungsmarkt",
-  "sceneEn": "You and an acquaintance are talking about the housing market: why rents have risen so far, what the difference is between the centre and the country, what can be done. Make the link with clauses of proportion.",
+  "sceneEn": "You and an acquaintance are talking about the housing market: why rents have risen so far, what the difference is between the center and the country, what can be done. Make the link with clauses of proportion.",
   "partnerEn": "an acquaintance who tells their own flat-hunting story and is keen on solutions",
   "openingEn": "I've been looking for four months and still found nothing. What's actually behind it?",
   "goalEn": "The reason rents have risen has been explained with clauses of proportion and at least one solution has been discussed."
@@ -71,10 +71,10 @@
  },
  {
   "conversation": "de-b2-ehrenamt-b2",
-  "sceneEn": "You are talking to a representative of a voluntary organisation: what exactly the organisation does, how it manages it, how you could contribute and how much time it takes.",
+  "sceneEn": "You are talking to a representative of a voluntary organization: what exactly the organization does, how it manages it, how you could contribute and how much time it takes.",
   "partnerEn": "a representative who loves describing the work and is looking for new volunteers",
   "openingEn": "How nice that you ask! Most people have no idea how much here runs unpaid. What are you interested in?",
-  "goalEn": "What the organisation does and how it manages it have been found out, and a concrete step has been settled on how and for how long you would contribute."
+  "goalEn": "What the organization does and how it manages it have been found out, and a concrete step has been settled on how and for how long you would contribute."
  },
  {
   "conversation": "de-b2-generationen",
@@ -120,10 +120,10 @@
  },
  {
   "conversation": "de-b2-theater",
-  "sceneEn": "You are coming out of the theatre and giving your verdict on the play to the person beside you: what you think of the staging, the acting and the set, what you did not like and whether you would recommend it anyway.",
+  "sceneEn": "You are coming out of the theater and giving your verdict on the play to the person beside you: what you think of the staging, the acting and the set, what you did not like and whether you would recommend it anyway.",
   "partnerEn": "a theatregoer who loved the play and is curious about your objections",
   "openingEn": "I thought that was magnificent — the set especially. How did you like it?",
-  "goalEn": "A separate judgement has been given on the staging, the acting and the set, and whether to recommend it has been said."
+  "goalEn": "A separate judgment has been given on the staging, the acting and the set, and whether to recommend it has been said."
  },
  {
   "conversation": "de-b2-museum-fuehrung",
@@ -148,8 +148,8 @@
  },
  {
   "conversation": "de-b2-architektur",
-  "sceneEn": "An old building in your area is to be demolished and replaced with a new one. You and a neighbour are arguing: should the building be preserved, what do the planning rules say, what could the alternative be.",
-  "partnerEn": "a practical neighbour who is in favour of the new building",
+  "sceneEn": "An old building in your area is to be demolished and replaced with a new one. You and a neighbor are arguing: should the building be preserved, what do the planning rules say, what could the alternative be.",
+  "partnerEn": "a practical neighbor who is in favor of the new building",
   "openingEn": "The old house has stood empty for years. Why shouldn't it just be pulled down?",
   "goalEn": "Whether the building is worth preserving has been justified from both sides and an alternative has been discussed."
  },

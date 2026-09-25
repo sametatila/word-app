@@ -108,7 +108,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
     canDo: [
       { de: "Ich kann den Ton eines Satzes mit Partikeln steuern.", tr: "Bir cümlenin tonunu parçacıklarla ayarlayabiliyorum.", en: "I can steer the tone of a sentence with particles." },
       { de: "Ich kann auf eine negative Frage richtig antworten.", tr: "Olumsuz bir soruya doğru cevap verebiliyorum.", en: "I can answer a negative question correctly." },
-      { de: "Ich kann Untertreibung erkennen und selbst einsetzen.", tr: "Ölçülü ifadeyi anlayabiliyor ve kendim kullanabiliyorum.", en: "I can recognise and use understatement." },
+      { de: "Ich kann Untertreibung erkennen und selbst einsetzen.", tr: "Ölçülü ifadeyi anlayabiliyor ve kendim kullanabiliyorum.", en: "I can recognize and use understatement." },
       { de: "Ich kann jemanden trösten, ohne Floskeln zu benutzen.", tr: "Klişeye kaçmadan birini teselli edebiliyorum.", en: "I can comfort someone without empty phrases." },
       { de: "Ich kann am Telefon besonders höflich formulieren.", tr: "Telefonda özellikle kibar cümleler kurabiliyorum.", en: "I can be especially polite on the phone." },
     ],
@@ -181,7 +181,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
       { de: "konzessive Konnektoren", tr: "Zugegeben …, dennoch …" },
     ],
     canDo: [
-      { de: "Ich kann durch Wortstellung gezielt betonen.", tr: "Kelime dizilimiyle bilinçli vurgu yapabiliyorum.", en: "I can emphasise deliberately through word order." },
+      { de: "Ich kann durch Wortstellung gezielt betonen.", tr: "Kelime dizilimiyle bilinçli vurgu yapabiliyorum.", en: "I can emphasize deliberately through word order." },
       { de: "Ich kann einen Gedanken in drei Punkten strukturieren.", tr: "Bir fikri üç maddede yapılandırabiliyorum.", en: "I can structure a thought into three points." },
       { de: "Ich kann Abstraktes mit einem Bild veranschaulichen.", tr: "Soyut olanı bir imgeyle somutlaştırabiliyorum.", en: "I can illustrate the abstract with an image." },
       { de: "Ich kann auf kritische Zwischenrufe souverän reagieren.", tr: "Sert laf atmalara sakin karşılık verebiliyorum.", en: "I can respond calmly to hostile interruptions." },
@@ -259,7 +259,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
     canDo: [
       { de: "Ich kann gängige Redewendungen im Gespräch verstehen.", tr: "Konuşmada yaygın deyimleri anlayabiliyorum.", en: "I can understand common idioms in conversation." },
       { de: "Ich kann Redewendungen selbst richtig einsetzen.", tr: "Deyimleri kendim doğru kullanabiliyorum.", en: "I can use idioms correctly myself." },
-      { de: "Ich kann erkennen, wenn eine wörtliche Übersetzung nicht trägt.", tr: "Kelimesi kelimesine çevirinin tutmadığını fark edebiliyorum.", en: "I can recognise when a literal translation does not work." },
+      { de: "Ich kann erkennen, wenn eine wörtliche Übersetzung nicht trägt.", tr: "Kelimesi kelimesine çevirinin tutmadığını fark edebiliyorum.", en: "I can recognize when a literal translation does not work." },
       { de: "Ich kann Stimmungen mit Bildern beschreiben.", tr: "Ruh hâllerini ve ortamın havasını imgelerle anlatabiliyorum.", en: "I can describe moods with images." },
       { de: "Ich kann Redewendungen dosiert verwenden.", tr: "Deyimleri dozunda kullanabiliyorum.", en: "I can use idioms in moderation." },
     ],
@@ -637,7 +637,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
       { de: "kulturelle Nuancen", tr: "Kritik direkt, Lob sparsam" },
     ],
     canDo: [
-      { de: "Ich kann Ironie am Tonfall und an Partikeln erkennen.", tr: "İroniyi ses tonundan ve parçacıklardan tanıyabiliyorum.", en: "I can recognise irony from tone and particles." },
+      { de: "Ich kann Ironie am Tonfall und an Partikeln erkennen.", tr: "İroniyi ses tonundan ve parçacıklardan tanıyabiliyorum.", en: "I can recognize irony from tone and particles." },
       { de: "Ich kann Untertreibung richtig deuten und selbst einsetzen.", tr: "Ölçülü ifadeyi doğru yorumlayabiliyor ve kullanabiliyorum.", en: "I can interpret and use understatement." },
       { de: "Ich kann einen missglückten Scherz zurücknehmen.", tr: "Tutmayan bir şakayı geri alabiliyorum.", en: "I can take back a joke that misfired." },
       { de: "Ich kann ein Du-Angebot annehmen oder höflich ablehnen.", tr: "„Sen“ diye hitap etme teklifini kabul edebiliyor ya da kibarca reddedebiliyorum.", en: "I can accept or politely decline an offer to use 'du'." },
@@ -765,7 +765,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
       minWords: 110,
       phrases: [
         { de: "Der Wendepunkt war für mich …", tr: "Benim için dönüm noktası …", en: "The turning point for me was …" },
-        { de: "Ein langer Weg ist zurückgelegt worden.", tr: "Uzun bir yol kat edildi.", en: "A long road has been travelled." },
+        { de: "Ein langer Weg ist zurückgelegt worden.", tr: "Uzun bir yol kat edildi.", en: "A long road has been traveled." },
         { de: "Es ist, als hätte ich zwei Stimmen.", tr: "Sanki iki sesim varmış gibi.", en: "It is as if I had two voices." },
         { de: "Schwer fällt mir nach wie vor …", tr: "Bana hâlâ zor gelen …", en: "What I still find difficult is …" },
         { de: "Der Weg geht weiter.", tr: "Yol devam ediyor.", en: "The road goes on." },

@@ -63,7 +63,7 @@ export const EN_A2_07: MockPaper = {
             {
               kind: "text",
               id: "m4",
-              genre: "Note for a neighbour",
+              genre: "Note for a neighbor",
               genreTr: "Komşuya not",
               title: "Friday evening",
               body: `Hello Celik, we have a small party on Friday evening for my son. About fifteen people, music until ten. If it is too loud, please knock on the door — do not call the office.`,
@@ -116,7 +116,7 @@ export const EN_A2_07: MockPaper = {
               id: "en-a2-07-l1-4",
               no: 4,
               ref: "m4",
-              text: "What does the neighbour ask?",
+              text: "What does the neighbor ask?",
               options: ["To come to the party on Friday evening", "To speak to him if there is a problem", "To call the office"],
               answer: 1,
               explain:
@@ -128,7 +128,7 @@ export const EN_A2_07: MockPaper = {
               no: 5,
               ref: "m5",
               text: "What happens if somebody cancels after Monday?",
-              options: ["The whole dinner is cancelled", "The price for everybody falls", "The writer pays for it"],
+              options: ["The whole dinner is canceled", "The price for everybody falls", "The writer pays for it"],
               answer: 2,
               explain:
                 "Son cümle sonucu veriyor: «after that I pay for the empty seat». Yemek iptal edilmiyor ve fiyat kişi başı otuz euro olarak kalıyor.",
@@ -216,7 +216,7 @@ export const EN_A2_07: MockPaper = {
               genre: "Magazine article",
               genreTr: "Dergi yazısı",
               title: "The birthday I did not want",
-              body: `Last year I did not want a party for my fortieth birthday. My sister organised one anyway, and I was angry with her for two weeks before it.
+              body: `Last year I did not want a party for my fortieth birthday. My sister organized one anyway, and I was angry with her for two weeks before it.
 
 The first problem was the guest list. She invited thirty people and I know about eight of them well. The others were friends of friends, and I spent the first hour saying my own name.
 
@@ -224,10 +224,10 @@ The second thing surprised me. At about nine o'clock my old teacher arrived. I h
 
 The money was the difficult part. My sister paid for everything and she has less money than I do. I asked her about it twice and she changed the subject twice.
 
-This year I am organising something myself: eight people, one long table, no music. My sister says it is boring. She is coming.`,
+This year I am organizing something myself: eight people, one long table, no music. My sister says it is boring. She is coming.`,
               gloss: [
                 { de: "a guest list", tr: "davetli listesi", en: "die Gästeliste" },
-                { de: "to organise", tr: "düzenlemek", en: "organisieren" },
+                { de: "to organize", tr: "düzenlemek", en: "organisieren" },
                 { de: "boring", tr: "sıkıcı", en: "langweilig" },
               ],
             },
@@ -241,7 +241,7 @@ This year I am organising something myself: eight people, one long table, no mus
               options: ["A party was not what she wanted", "Her sister invited only eight people", "Her old teacher could not come"],
               answer: 0,
               explain:
-                "İlk paragraf bunu söylüyor: «I did not want a party … My sister organised one anyway». Davetli sayısı sekiz değil otuz, öğretmen de saat dokuzda gelmiş.",
+                "İlk paragraf bunu söylüyor: «I did not want a party … My sister organized one anyway». Davetli sayısı sekiz değil otuz, öğretmen de saat dokuzda gelmiş.",
             },
             {
               kind: "mcq",
@@ -457,7 +457,7 @@ I look at it every morning, and I still {{24}} not know who is standing next to 
                 { text: "Are you coming to the wedding?" },
                 { text: "I have the invitation but I have not answered." },
                 { text: "Why not?" },
-                { text: "It is four hundred kilometres and I have two days off. I want to go and I do not know how." },
+                { text: "It is four hundred kilometers and I have two days off. I want to go and I do not know how." },
               ],
             },
             {
@@ -524,7 +524,7 @@ I look at it every morning, and I still {{24}} not know who is standing next to 
               options: ["The distance and the time", "She has no invitation", "She does not want to go at all"],
               answer: 0,
               explain:
-                "Konuşmacı iki engeli birlikte veriyor: «It is four hundred kilometres and I have two days off». Davetiye elinde ve gitmek istiyor: «I want to go».",
+                "Konuşmacı iki engeli birlikte veriyor: «It is four hundred kilometers and I have two days off». Davetiye elinde ve gitmek istiyor: «I want to go».",
             },
             {
               kind: "mcq",
@@ -543,7 +543,7 @@ I look at it every morning, and I still {{24}} not know who is standing next to 
               no: 3,
               ref: "a3",
               text: "Who made the cake?",
-              options: ["A shop in the town centre", "The speaker's son", "The speaker"],
+              options: ["A shop in the town center", "The speaker's son", "The speaker"],
               answer: 1,
               explain:
                 "Cevap doğrudan veriliyor: «My son made it. He is eleven». Şeker fazlalığı da onun hakkında söyleniyor.",
@@ -754,7 +754,7 @@ Please bring a plate and a {{10}}`,
               no: 13,
               ref: "c3",
               text: "What is the speaker doing?",
-              options: ["Complaining about the noisy neighbours", "Inviting people", "Explaining how something changed"],
+              options: ["Complaining about the noisy neighbors", "Inviting people", "Explaining how something changed"],
               answer: 2,
               explain:
                 "Anlatı bir değişimi veriyor: on dört yıl hiç girilmemiş, bir düğün davetinden sonra «Now we eat together every month». Şikâyet ya da davet yok.",

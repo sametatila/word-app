@@ -358,7 +358,7 @@ export const b1U08: SkillExercise[] = [
     intro: "Tanıdığın birini anlat. Her cümlede ilgi zamirinin hâlini yan cümledeki görevinden çıkar.",
     minutes: 12,
     gloss: [
-      { de: "das Verhalten", tr: "davranış", en: "behaviour" },
+      { de: "das Verhalten", tr: "davranış", en: "behavior" },
       { de: "auffallen", tr: "dikkat çekmek", en: "to stand out" },
       { de: "höflich", tr: "kibar", en: "polite" },
       { de: "neugierig", tr: "meraklı", en: "curious" },

@@ -230,7 +230,7 @@ export const deB1P17: SkillExercise[] = [
         minWords: 90,
         phrases: [
           { de: "Wir suchen für die Zeit von … bis … jemanden, der …", tr: "… ile … arasındaki dönem için … yapacak birini arıyoruz.", en: "We are looking for someone for the period from … to … who …" },
-          { de: "Der Garten ist etwa … Quadratmeter groß.", tr: "Bahçe yaklaşık … metrekare.", en: "The garden is about … square metres." },
+          { de: "Der Garten ist etwa … Quadratmeter groß.", tr: "Bahçe yaklaşık … metrekare.", en: "The garden is about … square meters." },
           { de: "Wir möchten … lassen.", tr: "…'i yaptırmak istiyoruz.", en: "We would like to have … done." },
           { de: "Wichtig wäre uns außerdem, dass …", tr: "Ayrıca … bizim için önemli olur.", en: "It would also be important to us that …" },
           { de: "Könnten Sie uns ein Angebot schicken?", tr: "Bize bir fiyat teklifi gönderebilir misiniz?", en: "Could you send us a quote?" },

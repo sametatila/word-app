@@ -169,7 +169,7 @@ export const EN_B1_03: MockPaper = {
               kind: "match",
               id: "en-b1-03-l2-7",
               no: 7,
-              text: "Matteo hurt his shoulder at the weekend and cannot decide whether he should see a doctor.",
+              text: "Matteo hurt his shoulder on the weekend and cannot decide whether he should see a doctor.",
               answer: "e",
               explain:
                 "İlan tam bu kararı satıyor: «is this something to rest, or something to see somebody about?». On beş dakikalık telefon görüşmesi bir teşhis değil, bir yönlendirme; uyku kliniği (b) zaten doktor mektubu istiyor.",
@@ -600,7 +600,7 @@ The difference is bigger {{30}} I expected: I am not a different person, but I a
               situation: "Bir koşu yarışının başında anons yapılıyor.",
               plays: 2,
               segments: [
-                { text: "Runners, a quick change. Because of the ice at the bridge, the route turns left at the church and comes back along the river. The distance is exactly the same. Water is still at kilometre five." },
+                { text: "Runners, a quick change. Because of the ice at the bridge, the route turns left at the church and comes back along the river. The distance is exactly the same. Water is still at kilometer five." },
               ],
             },
             {
@@ -680,7 +680,7 @@ The difference is bigger {{30}} I expected: I am not a different person, but I a
               options: ["The distance of the race", "The place of the water station", "The way the runners go"],
               answer: 2,
               explain:
-                "Değişen şey güzergâh: «the route turns left at the church and comes back along the river». Mesafe için «exactly the same», su için «still at kilometre five» deniyor; ikisi de açıkça çürütülüyor.",
+                "Değişen şey güzergâh: «the route turns left at the church and comes back along the river». Mesafe için «exactly the same», su için «still at kilometer five» deniyor; ikisi de açıkça çürütülüyor.",
             },
             {
               kind: "mcq",
@@ -748,7 +748,7 @@ The difference is bigger {{30}} I expected: I am not a different person, but I a
               plays: 2,
               segments: [
                 { speaker: "Ozan", text: "Did you cancel the gym?" },
-                { speaker: "Rana", text: "Not yet. I go once a month and pay every month, so the maths is embarrassing. But I know that the day I cancel, I will never go again." },
+                { speaker: "Rana", text: "Not yet. I go once a month and pay every month, so the math is embarrassing. But I know that the day I cancel, I will never go again." },
               ],
             },
             {
@@ -760,7 +760,7 @@ The difference is bigger {{30}} I expected: I am not a different person, but I a
               plays: 2,
               segments: [
                 { speaker: "Kerem", text: "How was the sleep clinic?" },
-                { speaker: "Sinem", text: "Useful, but not how I thought. They did not give me anything. They changed what time I get up, including at the weekend." },
+                { speaker: "Sinem", text: "Useful, but not how I thought. They did not give me anything. They changed what time I get up, including on the weekend." },
                 { speaker: "Kerem", text: "And?" },
                 { speaker: "Sinem", text: "Three weeks in, it works." },
               ],
@@ -774,7 +774,7 @@ The difference is bigger {{30}} I expected: I am not a different person, but I a
               plays: 2,
               segments: [
                 { speaker: "Customer", text: "Do you have the same shoe in a wider fit?" },
-                { speaker: "Assistant", text: "Not in this colour, but the black one is wider and it is otherwise the same shoe." },
+                { speaker: "Assistant", text: "Not in this color, but the black one is wider and it is otherwise the same shoe." },
                 { speaker: "Customer", text: "I will take the black then. My last pair cost me two toenails." },
               ],
             },
@@ -787,7 +787,7 @@ The difference is bigger {{30}} I expected: I am not a different person, but I a
               plays: 2,
               segments: [
                 { speaker: "Bora", text: "You did the half marathon, didn't you? How was it?" },
-                { speaker: "Ingrid", text: "I finished, which was the plan. But I went too fast for the first five kilometres and I paid for it after ten." },
+                { speaker: "Ingrid", text: "I finished, which was the plan. But I went too fast for the first five kilometers and I paid for it after ten." },
                 { speaker: "Bora", text: "Everybody does that once." },
                 { speaker: "Ingrid", text: "I have done it three times." },
               ],
@@ -825,7 +825,7 @@ The difference is bigger {{30}} I expected: I am not a different person, but I a
               options: ["The gym has raised its price again this year", "She cannot get to the gym", "She pays for something she rarely uses"],
               answer: 2,
               explain:
-                "Rana kendi durumunu özetliyor: «I go once a month and pay every month, so the maths is embarrassing». Fiyat artışı ya da ulaşım hiç geçmiyor; üyeliği bırakmamasının sebebi ayrı bir korku.",
+                "Rana kendi durumunu özetliyor: «I go once a month and pay every month, so the math is embarrassing». Fiyat artışı ya da ulaşım hiç geçmiyor; üyeliği bırakmamasının sebebi ayrı bir korku.",
             },
             {
               kind: "mcq",
@@ -844,7 +844,7 @@ The difference is bigger {{30}} I expected: I am not a different person, but I a
               no: 12,
               ref: "b5",
               text: "What does the customer decide?",
-              options: ["To buy a different colour", "To order the same shoe online later", "To try a bigger size"],
+              options: ["To buy a different color", "To order the same shoe online later", "To try a bigger size"],
               answer: 0,
               explain:
                 "Müşteri «I will take the black then» diyor: geniş kalıp yalnız siyahta var. Bir beden büyüğü değil, daha GENİŞ bir kalıp aranıyor; internet siparişi hiç konuşulmuyor.",
@@ -979,7 +979,7 @@ New members run in the:  {{19}} group`,
               plays: 2,
               segments: [
                 { speaker: "Host", text: "Ingrid, you swam competitively until you were twenty-two. Why did you stop?" },
-                { speaker: "Ingrid", text: "Everybody expects an injury story, and there is not one. I stopped because I realised I had never chosen it. I was in the water at five in the morning at the age of nine because my sister was, and nobody ever asked me again after that." },
+                { speaker: "Ingrid", text: "Everybody expects an injury story, and there is not one. I stopped because I realized I had never chosen it. I was in the water at five in the morning at the age of nine because my sister was, and nobody ever asked me again after that." },
                 { speaker: "Host", text: "Was there a particular moment?" },
                 { speaker: "Ingrid", text: "There was a very ordinary one. A training camp in the south, good weather, everything fine, and I found myself hoping that it would rain. That is not a thought you can un-think." },
                 { speaker: "Host", text: "You now teach adults who cannot swim. Is that a smaller job?" },
@@ -1008,7 +1008,7 @@ New members run in the:  {{19}} group`,
               options: ["An injury ended her career", "She was no longer fast enough for the team", "She had never chosen the sport herself"],
               answer: 2,
               explain:
-                "Ingrid yaygın beklentiyi reddediyor: «Everybody expects an injury story, and there is not one», sonra gerekçeyi veriyor: «I stopped because I realised I had never chosen it». Hızından hiç söz etmiyor.",
+                "Ingrid yaygın beklentiyi reddediyor: «Everybody expects an injury story, and there is not one», sonra gerekçeyi veriyor: «I stopped because I realized I had never chosen it». Hızından hiç söz etmiyor.",
             },
             {
               kind: "mcq",
@@ -1027,7 +1027,7 @@ New members run in the:  {{19}} group`,
               no: 22,
               ref: "d1",
               text: "Why is teaching adults harder?",
-              options: ["They bring old fears with them", "They have less time to practise", "They learn a stroke more slowly"],
+              options: ["They bring old fears with them", "They have less time to practice", "They learn a stroke more slowly"],
               answer: 0,
               explain:
                 "Ingrid işi şöyle tarif ediyor: «You are not teaching a stroke, you are arguing with a memory». Otuz yıllık su hikâyeleri, üstelik yarısı başkasına ait. Zaman ya da öğrenme hızı gerekçe olarak verilmiyor.",
@@ -1038,7 +1038,7 @@ New members run in the:  {{19}} group`,
               no: 23,
               ref: "d1",
               text: "What do adult learners usually get wrong?",
-              options: ["They practise without a teacher", "They start in water that is much too deep", "They think more lessons are the answer"],
+              options: ["They practice without a teacher", "They start in water that is much too deep", "They think more lessons are the answer"],
               answer: 2,
               explain:
                 "Ingrid yanlış teşhisi adlandırıyor: «They think the problem is technique, so they book more lessons», oysa gereken «fewer lessons and a pool where nobody can see them». Derinlik ve öğretmensizlik kayıtta geçmiyor.",
@@ -1049,7 +1049,7 @@ New members run in the:  {{19}} group`,
               no: 24,
               ref: "d1",
               text: "What does she miss about competing?",
-              options: ["The travelling and the training camps", "Knowing exactly where she stood", "The other swimmers in her team"],
+              options: ["The traveling and the training camps", "Knowing exactly where she stood", "The other swimmers in her team"],
               answer: 1,
               explain:
                 "«I miss the certainty» ve hemen açıklıyor: «you know at the end exactly what you are worth, to the hundredth of a second». Kamp anısı olumsuz, takım arkadaşlarından ise hiç söz etmiyor.",
@@ -1278,7 +1278,7 @@ I would recommend it, although not to everybody. If you already walk a lot, it w
               { de: "agree or disagree in a nuanced way", tr: "Katılırken ya da karşı çıkarken ince ayrım yapmak" },
             ],
             sample:
-              "I think it is personal, but the place decides how expensive the personal decision is. In my last job the nearest food was a petrol station, so everybody ate badly. I partly agree about companies: they should not tell people how to live, although I would say that changing the chairs or the hours is not telling anybody anything.",
+              "I think it is personal, but the place decides how expensive the personal decision is. In my last job the nearest food was a gas station, so everybody ate badly. I partly agree about companies: they should not tell people how to live, although I would say that changing the chairs or the hours is not telling anybody anything.",
             criteria: [
               "Görüş açıkça bildirildi mi?",
               "Somut bir örnek verildi mi?",

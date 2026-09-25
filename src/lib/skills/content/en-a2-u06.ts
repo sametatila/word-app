@@ -133,7 +133,7 @@ export const enA2U06: SkillExercise[] = [
       },
       {
         text: "What happens to the Friday appointment?",
-        options: ["it is cancelled", "it stays", "it moves to two"],
+        options: ["it is canceled", "it stays", "it moves to two"],
         answer: 0,
         explain: "„Shall I cancel it? — Yes, please cancel it.“",
       },

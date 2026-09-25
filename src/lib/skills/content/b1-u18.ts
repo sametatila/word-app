@@ -179,7 +179,7 @@ export const b1U18: SkillExercise[] = [
     gloss: [
       { de: "das Argument", tr: "argüman", en: "argument" },
       { de: "die Tatsache", tr: "olgu", en: "fact" },
-      { de: "zusammenfassen", tr: "özetlemek", en: "to summarise" },
+      { de: "zusammenfassen", tr: "özetlemek", en: "to summarize" },
       { de: "feststellen", tr: "tespit etmek", en: "to establish" },
       { de: "die Stiege", tr: "merdiven", en: "staircase" },
       { de: "also", tr: "yani", en: "so" },
@@ -369,7 +369,7 @@ export const b1U18: SkillExercise[] = [
       { de: "das Argument", tr: "argüman", en: "argument" },
       { de: "die Tatsache", tr: "olgu", en: "fact" },
       { de: "erstens", tr: "birincisi", en: "firstly" },
-      { de: "zusammenfassen", tr: "özetlemek", en: "to summarise" },
+      { de: "zusammenfassen", tr: "özetlemek", en: "to summarize" },
       { de: "der Facharzt", tr: "uzman doktor", en: "specialist" },
       { de: "die Stiege", tr: "merdiven", en: "staircase" },
       { de: "gestiegen", tr: "yükselmiş", en: "risen" },
@@ -413,7 +413,7 @@ export const b1U18: SkillExercise[] = [
         phrases: [
           { de: "Erstens … Zweitens …", tr: "Birincisi … İkincisi …", en: "Firstly … Secondly …" },
           { de: "Dem möchte ich widersprechen.", tr: "Buna karşı çıkmak istiyorum.", en: "I would like to contradict that." },
-          { de: "Ich fasse zusammen: …", tr: "Özetliyorum: …", en: "To summarise: …" },
+          { de: "Ich fasse zusammen: …", tr: "Özetliyorum: …", en: "To summarize: …" },
         ],
       },
       {

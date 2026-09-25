@@ -113,7 +113,7 @@ export const b2U10: SkillExercise[] = [
     gloss: [
       { de: "die Reichweite", tr: "erişim", en: "reach" },
       { de: "glaubwürdig", tr: "inandırıcı", en: "credible" },
-      { de: "die Kennzeichnung", tr: "etiketleme", en: "labelling" },
+      { de: "die Kennzeichnung", tr: "etiketleme", en: "labeling" },
       { de: "der Werbespot", tr: "reklam filmi", en: "advertising spot" },
       { de: "die Kampagne", tr: "kampanya", en: "campaign" },
       { de: "der Slogan", tr: "slogan", en: "slogan" },
@@ -370,7 +370,7 @@ export const b2U10: SkillExercise[] = [
     gloss: [
       { de: "die Quelle", tr: "kaynak", en: "source" },
       { de: "werben", tr: "reklam yapmak", en: "to advertise" },
-      { de: "die Kennzeichnung", tr: "etiketleme", en: "labelling" },
+      { de: "die Kennzeichnung", tr: "etiketleme", en: "labeling" },
       { de: "die Behauptung", tr: "iddia", en: "claim" },
       { de: "mehrere", tr: "birden fazla", en: "several" },
     ],

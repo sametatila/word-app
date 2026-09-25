@@ -245,7 +245,7 @@ export const enA1U21: SkillExercise[] = [
       { speaker: "Nil", text: "I have an appointment at ten o'clock. I have to be there at a quarter to ten." },
       { speaker: "Nil", text: "I don't feel well: I have a headache and my knee hurts." },
       { speaker: "Nil", text: "After the doctor I have to wait for the medicine. Then I take the bus home." },
-      { speaker: "Nil", text: "At home I must lock the door. My neighbour is sick too, so I can't ask her." },
+      { speaker: "Nil", text: "At home I must lock the door. My neighbor is sick too, so I can't ask her." },
       { speaker: "Nil", text: "In the evening I need a warm bed and nothing else. That is my plan." },
     ],
     questions: [
@@ -263,10 +263,10 @@ export const enA1U21: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Nil's neighbour can help her.",
+        text: "Nil's neighbor can help her.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„My neighbour is sick too, so I can't ask her.“",
+        explain: "„My neighbor is sick too, so I can't ask her.“",
       },
       {
         kind: "gapfill",

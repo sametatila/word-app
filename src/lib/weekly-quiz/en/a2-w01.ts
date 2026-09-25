@@ -38,7 +38,7 @@ export const EN_A2_W01: QuizWeek = {
         "I ran to the bus stop, but the bus left just before I arrived. " +
         "While I was waiting for the next bus, it started to rain, and I didn't have an umbrella. " +
         "When I finally got to the office, my boss was already in the meeting. " +
-        "After work I wanted to relax, so I went to my favourite restaurant. But it was closed! " +
+        "After work I wanted to relax, so I went to my favorite restaurant. But it was closed! " +
         "In the end I bought a pizza and ate it on the sofa at home. " +
         "It wasn't a great day, but the pizza was really good, and I slept for ten hours.",
     },
@@ -78,7 +78,7 @@ export const EN_A2_W01: QuizWeek = {
       block: "read",
       ref: "t1",
       stem: "Where did the writer have dinner?",
-      options: ["at home", "at the writer's favourite restaurant", "at the office", "at a friend's home"],
+      options: ["at home", "at the writer's favorite restaurant", "at the office", "at a friend's home"],
       answer: 0,
       why: "`wanted to relax, so I went to…` bir planı anlatıyor, ama hemen sonraki `But it was closed!` planı bozuyor. Restorana gitmek olmuş, orada yemek olmamış; `But` ile gelen cümleyi atlayınca plan sonuç gibi okunuyor.",
       targets: ["reading.detail"],

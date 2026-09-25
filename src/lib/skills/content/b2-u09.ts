@@ -35,7 +35,7 @@ export const b2U09: SkillExercise[] = [
     genre: "essay",
     intro: "Söylentilerin nasıl yayıldığını anlatan bir yazı. Kimin iddia ettiğine dikkat et.",
     gloss: [
-      { de: "das Gerücht", tr: "söylenti", en: "rumour" },
+      { de: "das Gerücht", tr: "söylenti", en: "rumor" },
       { de: "sich aufhalten", tr: "bir yerde bulunmak", en: "to be staying" },
       { de: "kursieren", tr: "ortalıkta dolaşmak", en: "to circulate" },
       { de: "die Verschwörungstheorie", tr: "komplo teorisi", en: "conspiracy theory" },

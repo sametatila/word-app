@@ -70,9 +70,9 @@ export const enB2U14: SkillExercise[] = [
     ],
     minutes: 9,
     text:
-      "My neighbour, whose citizenship is recent, votes today. One word in that sentence has not appeared in this course before, and it is „whose“.\n" +
-      "„Whose“ is the possessive of the relative pronoun, and it does the job that an apostrophe does in an ordinary sentence: my neighbour's citizenship, the report's author, the law's effect. Inside a relative clause those become whose citizenship, whose author, whose effect.\n" +
-      "The useful thing about it is that there is one word and no others. It works for a person — my neighbour, whose citizenship is recent. It works for a thing — the report, whose figures nobody disputes. English does not ask whether the owner is alive.\n" +
+      "My neighbor, whose citizenship is recent, votes today. One word in that sentence has not appeared in this course before, and it is „whose“.\n" +
+      "„Whose“ is the possessive of the relative pronoun, and it does the job that an apostrophe does in an ordinary sentence: my neighbor's citizenship, the report's author, the law's effect. Inside a relative clause those become whose citizenship, whose author, whose effect.\n" +
+      "The useful thing about it is that there is one word and no others. It works for a person — my neighbor, whose citizenship is recent. It works for a thing — the report, whose figures nobody disputes. English does not ask whether the owner is alive.\n" +
       "It also does not change for number, or for the job the clause is doing. Whose is whose, always, and the only decision left is the same one as before: with commas if the clause is extra, without them if it is choosing.\n" +
       "The report, which counts every migrant, is public. The law, which mentions migration, is new. Those two are the shapes from earlier units, and „whose“ sits beside them as the third: which for a thing, who for a person, whose for what either of them owns.\n" +
       "Where it goes wrong is with a long owner. „The family whose application for asylum was refused last winter has moved“ is correct and hard to read, and the fix is not a different pronoun. The fix is two sentences.",
@@ -98,11 +98,11 @@ export const enB2U14: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "My neighbour, ___ citizenship is recent, votes today.",
+        text: "My neighbor, ___ citizenship is recent, votes today.",
         options: [],
         answer: 0,
         accept: ["whose"],
-        explain: "„My neighbour, whose citizenship is recent, votes today.“",
+        explain: "„My neighbor, whose citizenship is recent, votes today.“",
       },
       {
         kind: "order",
@@ -112,7 +112,7 @@ export const enB2U14: SkillExercise[] = [
         items: [
           "The report, which counts every migrant, is public.",
           "The law, which mentions migration, is new.",
-          "My neighbour, whose citizenship is recent, votes today.",
+          "My neighbor, whose citizenship is recent, votes today.",
           "The fix is two sentences.",
         ],
         explain: "Şey, şey, iyelik; en sonda uzun sahibin çözümü.",
@@ -410,7 +410,7 @@ export const enB2U14: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 14,
-    title: "My neighbour, whose citizenship is recent, votes today",
+    title: "My neighbor, whose citizenship is recent, votes today",
     genre: "info",
     intro: "Üç ilgi adılı. Hangisi iyelik taşıyor?",
     gloss: [
@@ -424,7 +424,7 @@ export const enB2U14: SkillExercise[] = [
       {
         kind: "build",
         tr: "Vatandaşlığı yeni olan komşum bugün oy veriyor.",
-        answer: "My neighbour, whose citizenship is recent, votes today.",
+        answer: "My neighbor, whose citizenship is recent, votes today.",
         hint: "„whose“ ilgi adılının iyelik hâli; tek biçimi var.",
       },
       {
@@ -451,7 +451,7 @@ export const enB2U14: SkillExercise[] = [
         facts: "Şey için „which“; kişi için „who“; iyelik için „whose“; „whose“ kişide de şeyde de aynı.",
         fields: [
           { label: "A thing", answer: "which", accept: ["the report"] },
-          { label: "A person", answer: "who", accept: ["my neighbour"] },
+          { label: "A person", answer: "who", accept: ["my neighbor"] },
           { label: "What they own", answer: "whose", accept: ["whose citizenship"] },
           { label: "Does it change", answer: "never", accept: ["no"] },
         ],

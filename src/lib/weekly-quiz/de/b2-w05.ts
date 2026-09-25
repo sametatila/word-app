@@ -224,7 +224,7 @@ export const DE_B2_W05: QuizWeek = {
             "von der Nachbarschaft getragenes",
           ],
           answer: 3,
-          why: "İngilizce `a cultural centre supported by the neighbourhood` öbeği ismin arkasına koyar ya da ilgi cümlesine çevirir. Almancada Partizip öbeği `ein` ile isim arasına girer ve nötr yalın hâlde `-es` eki alır.",
+          why: "İngilizce `a cultural center supported by the neighborhood` öbeği ismin arkasına koyar ya da ilgi cümlesine çevirir. Almancada Partizip öbeği `ein` ile isim arasına girer ve nötr yalın hâlde `-es` eki alır.",
         },
       },
     },

@@ -465,7 +465,7 @@ export const c1U15: SkillExercise[] = [
         phrases: [
           { de: "Hiermit lege ich fristwahrend Widerspruch ein.", tr: "işbu yazıyla süreyi koruyarak itiraz ediyorum", en: "I hereby lodge an objection within the deadline" },
           { de: "Die Begründung reiche ich bis zum … nach.", tr: "gerekçeyi …-e kadar sunacağım", en: "I will submit the grounds by …" },
-          { de: "Um eine kurze Eingangsbestätigung wird gebeten.", tr: "kısa bir alındı teyidi rica olunur", en: "a brief acknowledgement of receipt is requested" },
+          { de: "Um eine kurze Eingangsbestätigung wird gebeten.", tr: "kısa bir alındı teyidi rica olunur", en: "a brief acknowledgment of receipt is requested" },
         ],
         sample:
           "Stadt Neustadt\nAmt für Wohnen\n\n" +

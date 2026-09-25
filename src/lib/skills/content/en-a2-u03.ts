@@ -47,7 +47,7 @@ export const enA2U03: SkillExercise[] = [
       "Sena: Where did it happen?\n" +
       "Ali: At home. I was carrying two boxes and I didn't see the last step.\n" +
       "Sena: Were you alone?\n" +
-      "Ali: Yes, I was alone. But my neighbour heard me and she came fast.\n" +
+      "Ali: Yes, I was alone. But my neighbor heard me and she came fast.\n" +
       "Sena: Did you go to the doctor?\n" +
       "Ali: Yes. I waited two hours there. The doctor said: No break, only a bad injury.\n" +
       "Sena: How long do you have to wait?\n" +
@@ -63,9 +63,9 @@ export const enA2U03: SkillExercise[] = [
       },
       {
         text: "Who came fast?",
-        options: ["his neighbour", "the doctor", "Sena"],
+        options: ["his neighbor", "the doctor", "Sena"],
         answer: 0,
-        explain: "„But my neighbour heard me and she came fast.“ — Ali yalnızdı.",
+        explain: "„But my neighbor heard me and she came fast.“ — Ali yalnızdı.",
       },
       {
         kind: "truefalse",

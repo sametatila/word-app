@@ -37,7 +37,7 @@ export const EN_C1_W03: QuizWeek = {
       body:
         "The report on internal migration published last year paints a picture that runs against common " +
         "expectations. It is not the large cities that are growing fastest, but the towns around them.\n\n" +
-        "The reasons are familiar. Rents in the centres have become unaffordable for many. " +
+        "The reasons are familiar. Rents in the centers have become unaffordable for many. " +
         "Those with children look for space; those able to work online need to be near an office less and less " +
         "often. Had anyone predicted this twenty years ago, they would probably have been laughed at.\n\n" +
         "The consequences for the receiving towns are mixed. Revenues rise, which is welcome; " +
@@ -73,7 +73,7 @@ export const EN_C1_W03: QuizWeek = {
       ref: "t1",
       stem: "Which finding runs against expectations?",
       options: [
-        "Rents in the centres are falling",
+        "Rents in the centers are falling",
         "Internal migration has stopped",
         "The towns around the cities grow fastest",
         "The large cities are losing no residents",
@@ -261,7 +261,7 @@ export const EN_C1_W03: QuizWeek = {
     {
       id: "en-c1-w03-v2",
       block: "vocab",
-      stem: "Rents in the centres have become ___ for many households.",
+      stem: "Rents in the centers have become ___ for many households.",
       options: ["unpayable", "uncostly", "unaffordable", "unpriced"],
       answer: 2,
       why: "`unaffordable` bir kişinin gücünün yetmediğini anlatır ve konut dilinin yerleşik sözcüğüdür. `unpayable` bir borcun ödenemezliği için kullanılır; öteki ikisi kurulmuş biçimler değildir.",

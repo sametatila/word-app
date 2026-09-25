@@ -177,7 +177,7 @@ export const b1U32: SkillExercise[] = [
     intro: "Bir liman gezisi planlanıyor. Feribot ne zaman, nereye?",
     minutes: 4,
     gloss: [
-      { de: "der Hafen", tr: "liman", en: "harbour" },
+      { de: "der Hafen", tr: "liman", en: "harbor" },
       { de: "die Fähre", tr: "feribot", en: "ferry" },
       { de: "der Turm", tr: "kule", en: "tower" },
       { de: "das Denkmal", tr: "anıt", en: "monument" },

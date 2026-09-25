@@ -246,7 +246,7 @@ export const enB1P4: SkillExercise[] = [
           "of May and that it would take four working days. He also said that the water would be turned off " +
           "between nine and four on the first two days, and that a notice would be put in the hallway one week " +
           "before. Two points stayed open. He could not say whether the windows in the back rooms would be " +
-          "changed at the same time, and he did not know who I should call if there is a problem at the weekend. " +
+          "changed at the same time, and he did not know who I should call if there is a problem on the weekend. " +
           "Could you send me those two answers in writing before the eighth of May? If any of the above is not " +
           "correct, please tell me. Yours sincerely, Emre Bulut",
       },

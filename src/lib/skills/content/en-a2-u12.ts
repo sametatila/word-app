@@ -121,7 +121,7 @@ export const enA2U12: SkillExercise[] = [
       },
       {
         text: "What does Nil ask for if Friday is not possible?",
-        options: ["to leave early at two", "to work at the weekend", "to take August off"],
+        options: ["to leave early at two", "to work on the weekend", "to take August off"],
         answer: 0,
         explain: "„…would it be possible to leave early, at two?“",
       },

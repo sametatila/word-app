@@ -125,7 +125,7 @@ export const enB1U21: SkillExercise[] = [
     intro: "Ayırma kuralları. Yanlış kutu neye mal oluyor?",
     gloss: [
       { de: "the bin", tr: "çöp kutusu" },
-      { de: "lorry", tr: "kamyon" },
+      { de: "truck", tr: "kamyon" },
       { de: "contaminated", tr: "kirlenmiş" },
       { de: "whole", tr: "bütün" },
       { de: "modal", tr: "kip" },
@@ -133,7 +133,7 @@ export const enB1U21: SkillExercise[] = [
       { de: "tape", tr: "bant" },
       { de: "spoil", tr: "bozmak" },
       { de: "unsorted", tr: "ayrılmamış" },
-      { de: "behaviour", tr: "davranış" },
+      { de: "behavior", tr: "davranış" },
       { de: "leaflet", tr: "broşür" },
       { de: "rinse", tr: "durulamak" },
       { de: "container", tr: "kap" },
@@ -143,8 +143,8 @@ export const enB1U21: SkillExercise[] = [
       "What happens to the bins here, and why one mistake costs more than you would think.\n" +
       "The glass is collected on Tuesdays. Not weekly — every second Tuesday, and the calendar on the door of the building has the dates for the whole year on one page.\n" +
       "Plastic must be separated from paper. A modal and a passive together, and this is the line that is broken most often, usually by a box with tape on it.\n" +
-      "Nothing is thrown into the wrong bin without a cost. One bag of the wrong thing does not spoil one bag; it makes the whole lorry contaminated, and a contaminated lorry goes where the unsorted rubbish goes.\n" +
-      "That is the part that changes behaviour. Not the fine, not the sign — the fact that your one bag decides what happens to the other four hundred.\n" +
+      "Nothing is thrown into the wrong bin without a cost. One bag of the wrong thing does not spoil one bag; it makes the whole truck contaminated, and a contaminated truck goes where the unsorted rubbish goes.\n" +
+      "That is the part that changes behavior. Not the fine, not the sign — the fact that your one bag decides what happens to the other four hundred.\n" +
       "Metal and glass go together in this city and separately in the next one. There is no rule you can carry from one place to another, which is why the calendar is on the door and not in a leaflet.\n" +
       "The one thing nobody does and everybody could: rinse the container. Ten seconds of water, and the paper next to it in the bin stays dry enough to be used.",
     questions: [
@@ -156,9 +156,9 @@ export const enB1U21: SkillExercise[] = [
       },
       {
         text: "What happens with one wrong bag?",
-        options: ["the whole lorry is contaminated", "only that bag is lost", "the fine is doubled"],
+        options: ["the whole truck is contaminated", "only that bag is lost", "the fine is doubled"],
         answer: 0,
-        explain: "„it makes the whole lorry contaminated, and a contaminated lorry goes where the unsorted rubbish goes.“",
+        explain: "„it makes the whole truck contaminated, and a contaminated truck goes where the unsorted rubbish goes.“",
       },
       {
         kind: "truefalse",
@@ -295,7 +295,7 @@ export const enB1U21: SkillExercise[] = [
       { speaker: "Sena", text: "The tree that fell was very old. Two hundred years, the sign said, and the sign is still there next to the space where it stood." },
       { speaker: "Sena", text: "They planted three in its place, which everybody says is a good thing and nobody thinks is the same thing." },
       { speaker: "Sena", text: "The woman who planted the flowers along the path lives here, in the building with the green door, and she is seventy-nine." },
-      { speaker: "Sena", text: "Nobody asked her to and nobody pays her. The city cuts the grass and she does the sixty metres along the path." },
+      { speaker: "Sena", text: "Nobody asked her to and nobody pays her. The city cuts the grass and she does the sixty meters along the path." },
       { speaker: "Sena", text: "The playground is at the far end, away from the road, which was not an accident: four people wrote letters in 2016." },
       { speaker: "Sena", text: "What I like most is the bench near the fountain. It faces the wrong way — towards the path, not towards the water — and that is why you see people and not scenery." },
     ],

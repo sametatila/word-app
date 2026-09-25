@@ -58,7 +58,7 @@ export const enC1P20: SkillExercise[] = [
       "and a donor has no way of checking in advance whether it will be. By virtue of being specific, a restricted " +
       "gift at least makes failure visible.\n\n" +
       "The answer, I think, is not to abolish restrictions but to price them honestly. Some foundations now add a " +
-      "fixed share, often around fifteen per cent, to every restricted grant for general costs, and state this " +
+      "fixed share, often around fifteen percent, to every restricted grant for general costs, and state this " +
       "openly in their terms. In the event of a project being canceled, the money can move to another purpose " +
       "with the donor's agreement rather than being returned.\n\n" +
       "With regard to trust, the lesson is simple. A charity that is never allowed to spend money on itself will " +
@@ -93,11 +93,11 @@ export const enC1P20: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Some foundations add around ___ per cent to every restricted grant.",
+        text: "Some foundations add around ___ percent to every restricted grant.",
         options: [],
         answer: 0,
         accept: ["fifteen", "15"],
-        explain: "„often around fifteen per cent, to every restricted grant for general costs“.",
+        explain: "„often around fifteen percent, to every restricted grant for general costs“.",
       },
       {
         kind: "short_answer",
@@ -146,7 +146,7 @@ export const enC1P20: SkillExercise[] = [
       { speaker: "Mr Farrant", text: "Hello, I'm calling with regard to the small grants round. We run a reading club for adults, and I wanted to check we're eligible before we apply." },
       { speaker: "Ms Obi", text: "Of course. The main condition is that the work is local and open to anyone. In view of what you've described, that shouldn't be a problem." },
       { speaker: "Mr Farrant", text: "The part I'm unsure about is costs. Most of what we need is rent for the room, not books." },
-      { speaker: "Ms Obi", text: "That's fine. We changed the rules two years ago. Up to twenty per cent of any grant can now go on running costs, and you don't need to justify it line by line." },
+      { speaker: "Ms Obi", text: "That's fine. We changed the rules two years ago. Up to twenty percent of any grant can now go on running costs, and you don't need to justify it line by line." },
       { speaker: "Mr Farrant", text: "That's a relief. The last fund we applied to refused on the grounds that rent wasn't a project." },
       { speaker: "Ms Obi", text: "We heard that a lot, which is partly why we changed. A club without a room isn't a club." },
       { speaker: "Mr Farrant", text: "And if we can't spend it all? We're a small group. In the event of our coordinator leaving, things could stop for a while." },
@@ -184,11 +184,11 @@ export const enC1P20: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Up to ___ per cent of any grant can go on running costs.",
+        text: "Up to ___ percent of any grant can go on running costs.",
         options: [],
         answer: 0,
         accept: ["twenty", "20"],
-        explain: "„Up to twenty per cent of any grant can now go on running costs“.",
+        explain: "„Up to twenty percent of any grant can now go on running costs“.",
       },
       {
         kind: "short_answer",
@@ -269,7 +269,7 @@ export const enC1P20: SkillExercise[] = [
           "month. We are applying for £2,400 in order to keep the club running for another year.\n\n" +
           "Most of the money would go on things that are easy to describe: copies of the monthly book for members who " +
           "cannot afford them, and two large-print editions for our two members with poor eyesight. In view of the " +
-          "rising rent, however, a larger share than before will go on the hall itself, roughly twenty per cent. " +
+          "rising rent, however, a larger share than before will go on the hall itself, roughly twenty percent. " +
           "We want to say this openly rather than hide it inside other lines. Without the room there is no club, " +
           "and the rent has gone up twice in eighteen months.\n\n" +
           "The main risk is our size. The club depends heavily on one coordinator. In the event of her leaving, one of " +
@@ -319,7 +319,7 @@ export const enC1P20: SkillExercise[] = [
         "stops being able to run the projects that everybody is so keen to fund. " +
         "It is a little like paying for the meal but refusing to pay for the kitchen. " +
         "What I'd propose is a balance: donors choose the purpose, but a fixed share of every gift, perhaps " +
-        "fifteen per cent, goes on general costs, and the charity says so clearly before anybody gives. " +
+        "fifteen percent, goes on general costs, and the charity says so clearly before anybody gives. " +
         "In the event of a project failing, the money should be moved with the donor's agreement rather than " +
         "returned, because a returned gift helps no one. " +
         "The weakness of this, with regard to trust, is that it asks donors to accept a cost they cannot see. " +

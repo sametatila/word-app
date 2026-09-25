@@ -43,8 +43,8 @@
  },
  {
   "conversation": "de-a2-fruher",
-  "sceneEn": "Your neighbour is much older than you and is talking about the old days. You describe the old days in your own country. Compare what there was, what there was not and what was different.",
-  "partnerEn": "an elderly neighbour who misses the old days",
+  "sceneEn": "Your neighbor is much older than you and is talking about the old days. You describe the old days in your own country. Compare what there was, what there was not and what was different.",
+  "partnerEn": "an elderly neighbor who misses the old days",
   "openingEn": "You know, everything here used to be quite different. Was it like that where you are from too?",
   "goalEn": "Then and now have been compared on at least three points, and both of you have said something about which was better."
  },
@@ -106,10 +106,10 @@
  },
  {
   "conversation": "de-a2-drei-jahre",
-  "sceneEn": "A neighbour is asking how long you have been in this city. Say when you arrived and how long you have been living here in separate sentences, then say how long you have been working.",
-  "partnerEn": "a newly arrived neighbour who wonders how long you have been here",
+  "sceneEn": "A neighbor is asking how long you have been in this city. Say when you arrived and how long you have been living here in separate sentences, then say how long you have been working.",
+  "partnerEn": "a newly arrived neighbor who wonders how long you have been here",
   "openingEn": "Have you been living here long?",
-  "goalEn": "Both the point of arrival and the state that is still going on have been said in separate sentences, and the same question has been put back to the neighbour."
+  "goalEn": "Both the point of arrival and the state that is still going on have been said in separate sentences, and the same question has been put back to the neighbor."
  },
  {
   "conversation": "de-a2-veraenderung",
@@ -172,6 +172,6 @@
   "sceneEn": "You are at the pharmacy and you want something for your cough. Ask whether you need a prescription, how often you take it and how to use it.",
   "partnerEn": "a pharmacist who explains patiently",
   "openingEn": "Good afternoon! How can I help you?",
-  "goalEn": "The product has been bought, the dose and the way to take it have been learnt, and the customer has repeated the instructions in their own words."
+  "goalEn": "The product has been bought, the dose and the way to take it have been learned, and the customer has repeated the instructions in their own words."
  }
 ]

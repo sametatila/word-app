@@ -90,7 +90,7 @@
  { "tr": "En az bir 'freuen auf/über' cümlesi var mı?", "kind": "free.checklist", "en": "Is there at least one 'freuen auf/über' sentence?" },
  { "tr": "En az iki indem ya da dadurch, dass var mı?", "kind": "free.checklist", "en": "Are there at least two of indem or dadurch, dass?" },
  { "tr": "Geleceğini yazdın mı? (Ja, ich komme gern.)", "kind": "free.checklist", "en": "Did you write that you are coming? (Ja, ich komme gern.)" },
- { "tr": "Güven somut bir davranışla desteklenmiş mi?", "kind": "free.checklist", "en": "Is the trust backed by a concrete piece of behaviour?" },
+ { "tr": "Güven somut bir davranışla desteklenmiş mi?", "kind": "free.checklist", "en": "Is the trust backed by a concrete piece of behavior?" },
  { "tr": "Her övgü somut bir olayla destekleniyor mu?", "kind": "free.checklist", "en": "Is every piece of praise backed by a concrete occasion?" },
  { "tr": "Kaygını bir kez, tek noktada ve somut söyle", "kind": "free.checklist", "en": "State your concern once, on one single point, and concretely" },
  { "tr": "Müşteri numarası ve sözleşme belirtildi mi?", "kind": "free.checklist", "en": "Have the customer number and the contract been stated?" },

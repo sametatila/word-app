@@ -101,9 +101,9 @@ export const a2U09: SkillExercise[] = [
     genre: "blog",
     intro: "Mahalle tanıtımı: ne nerede, en yakın durak hangisi?",
     gloss: [
-      { de: "das Zentrum", tr: "merkez", en: "town centre" },
+      { de: "das Zentrum", tr: "merkez", en: "town center" },
       { de: "nebenan", tr: "yan tarafta", en: "next door" },
-      { de: "der Bürgersteig", tr: "kaldırım", en: "pavement" },
+      { de: "der Bürgersteig", tr: "kaldırım", en: "sidewalk" },
       { de: "die Bushaltestelle", tr: "otobüs durağı", en: "bus stop" },
       { de: "drüben", tr: "karşıda", en: "over there" },
       { de: "die Abkürzung", tr: "kestirme yol", en: "shortcut" },
@@ -224,7 +224,7 @@ export const a2U09: SkillExercise[] = [
     gloss: [
       { de: "die Bushaltestelle", tr: "otobüs durağı", en: "bus stop" },
       { de: "die Abkürzung", tr: "kestirme yol", en: "shortcut" },
-      { de: "der Bürgersteig", tr: "kaldırım", en: "pavement" },
+      { de: "der Bürgersteig", tr: "kaldırım", en: "sidewalk" },
       { de: "drüben", tr: "karşıda", en: "over there" },
       { de: "parken", tr: "park etmek", en: "to park" },
       { de: "sehen", tr: "görmek", en: "to see" },
@@ -325,7 +325,7 @@ export const a2U09: SkillExercise[] = [
     genre: "forum",
     intro: "Yeni taşınan birine mahalleni anlat: ne nerede, en yakın durak, bir tavsiye.",
     gloss: [
-      { de: "das Zentrum", tr: "merkez", en: "town centre" },
+      { de: "das Zentrum", tr: "merkez", en: "town center" },
       { de: "die Bushaltestelle", tr: "otobüs durağı", en: "bus stop" },
       { de: "nebenan", tr: "yan tarafta", en: "next door" },
       { de: "drüben", tr: "karşıda", en: "over there" },

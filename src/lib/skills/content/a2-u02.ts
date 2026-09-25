@@ -322,7 +322,7 @@ export const a2U02: SkillExercise[] = [
       { de: "aufregend", tr: "heyecan verici", en: "exciting" },
       { de: "die Erfahrung", tr: "deneyim", en: "experience" },
       { de: "erleichtert", tr: "içi rahatlamış", en: "relieved" },
-      { de: "der Führerschein", tr: "ehliyet", en: "driving licence" },
+      { de: "der Führerschein", tr: "ehliyet", en: "driving license" },
       { de: "egal", tr: "fark etmez", en: "doesn't matter" },
     ],
     minutes: 8,

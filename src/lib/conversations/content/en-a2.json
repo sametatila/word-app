@@ -11803,7 +11803,7 @@
      },
      {
       "lang": "tr",
-      "text": "Not: İngilizler favourite, Amerikalılar favorite yazar; okunuşu aynı."
+      "text": "Not: İngilizler favorite, Amerikalılar favorite yazar; okunuşu aynı."
      }
     ]
    },
@@ -20898,7 +20898,7 @@
      },
      {
       "lang": "en",
-      "text": "neighbourhood"
+      "text": "neighborhood"
      },
      {
       "lang": "tr",
@@ -20906,7 +20906,7 @@
      },
      {
       "lang": "en",
-      "text": "I live in a quiet neighbourhood, but it isn't far from the centre."
+      "text": "I live in a quiet neighborhood, but it isn't far from the center."
      },
      {
       "lang": "tr",
@@ -22420,7 +22420,7 @@
   "level": "A2",
   "course": "en",
   "icon": "home",
-  "title": "Noisy neighbours",
+  "title": "Noisy neighbors",
   "titleTr": "Gürültücü komşular",
   "summary": "Gürültücü komşuna kibarca şikâyet etmeyi, sesi kısmasını rica etmeyi ve rahatsızlığını nazikçe anlatmayı öğretir.",
   "minutes": 9,
@@ -24903,7 +24903,7 @@
   "level": "A2",
   "course": "en",
   "icon": "city",
-  "title": "My neighbourhood",
+  "title": "My neighborhood",
   "titleTr": "Mahallem",
   "summary": "Mahalleni tanıtmayı öğretir: yakınında ne var, nerede, ne kadar uzakta, güvenli mi kalabalık mı ve ne zamandır orada oturuyorsun.",
   "minutes": 9,
@@ -25077,8 +25077,8 @@
      "accept": [
       "It is a safe area.",
       "This is a safe area.",
-      "It's a safe neighbourhood.",
-      "It is a safe neighbourhood."
+      "It's a safe neighborhood.",
+      "It is a safe neighborhood."
      ],
      "hint": [
       {
@@ -25200,12 +25200,12 @@
      },
      {
       "lang": "en",
-      "text": "It's more crowded than my old neighbourhood."
+      "text": "It's more crowded than my old neighborhood."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "It's more crowded than my old neighbourhood."
+     "target": "It's more crowded than my old neighborhood."
     }
    },
    {
@@ -25392,7 +25392,7 @@
      },
      {
       "lang": "en",
-      "text": "What's your neighbourhood like?"
+      "text": "What's your neighborhood like?"
      },
      {
       "lang": "tr",
@@ -25412,7 +25412,7 @@
   "chat": {
    "scene": "İşe yeni başlayan bir arkadaşın senin oturduğun semte taşınmayı düşünüyor. Kahve molasında mahalleni soruyor.",
    "partner": "meraklı yeni iş arkadaşın",
-   "opening": "So, what's your neighbourhood like?",
+   "opening": "So, what's your neighborhood like?",
    "openingTr": "Peki, mahallen nasıl bir yer?",
    "goal": "Mahallende yakınlarda ne olduğunu söyleyip bir yerin ne kadar uzakta olduğunu anlatınca, mahalleni başka bir yerle karşılaştırıp güvenli mi kalabalık mı olduğunu belirtince ve ne zamandır orada oturduğunu söyleyince konuşma başarılı sayılır.",
    "minTurns": 7
@@ -27072,8 +27072,8 @@
      "target": "I learned new skills last year.",
      "accept": [
       "Last year I learned new skills.",
-      "I learnt new skills last year.",
-      "Last year I learnt new skills.",
+      "I learned new skills last year.",
+      "Last year I learned new skills.",
       "I learned new skills last year"
      ],
      "hint": [
@@ -28583,7 +28583,7 @@
      },
      {
       "lang": "en",
-      "text": "I work for a small company in the city centre."
+      "text": "I work for a small company in the city center."
      },
      {
       "lang": "en",
@@ -32887,7 +32887,7 @@
      },
      {
       "lang": "en",
-      "text": "Can I exchange it for a different colour?"
+      "text": "Can I exchange it for a different color?"
      },
      {
       "lang": "tr",
@@ -39203,7 +39203,7 @@
      },
      {
       "lang": "tr",
-      "text": "Cuma günü hazır olacak. Ya da kesinleşmiş bir plan varsa: We're going to send it to the service centre."
+      "text": "Cuma günü hazır olacak. Ya da kesinleşmiş bir plan varsa: We're going to send it to the service center."
      }
     ]
    },
@@ -43091,7 +43091,7 @@
     "tr": "kira; kiralamak"
    },
    {
-    "de": "licence",
+    "de": "license",
     "tr": "ehliyet"
    },
    {
@@ -43241,7 +43241,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kelimemiz: licence. Türkçesi ehliyet demek. Tam hali driving licence, yani sürücü belgesi."
+      "text": "İkinci kelimemiz: license. Türkçesi ehliyet demek. Tam hali driving license, yani sürücü belgesi."
      },
      {
       "lang": "tr",
@@ -43249,7 +43249,7 @@
      },
      {
       "lang": "en",
-      "text": "Can I see your driving licence, please?"
+      "text": "Can I see your driving license, please?"
      },
      {
       "lang": "tr",
@@ -43257,12 +43257,12 @@
      },
      {
       "lang": "en",
-      "text": "Here is my driving licence."
+      "text": "Here is my driving license."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Here is my driving licence."
+     "target": "Here is my driving license."
     }
    },
    {
@@ -43686,7 +43686,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Toparlayalım. Bugün araç kiralama koşullarını konuştuk: rent kiralamak, licence ehliyet, fuel yakıt, return iade etmek, extra fazladan."
+      "text": "Toparlayalım. Bugün araç kiralama koşullarını konuştuk: rent kiralamak, license ehliyet, fuel yakıt, return iade etmek, extra fazladan."
      },
      {
       "lang": "tr",
@@ -49156,7 +49156,7 @@
   "titleTr": "Özür dilemek",
   "summary": "Özür dilemeyi ve bir özrü kabul etmeyi öğretir: I'm sorry about, I apologize, It was my fault ve That's OK gibi kalıplar.",
   "minutes": 9,
-  "focusId": "Apologising",
+  "focusId": "Apologizing",
   "vocab": [
    {
     "de": "apologize",
@@ -53327,7 +53327,7 @@
   ],
   "patterns": [
    {
-    "de": "I usually post photos at the weekend.",
+    "de": "I usually post photos on the weekend.",
     "tr": "bir alışkanlığını ne sıklıkta yaptığını söylerken kullanılır"
    },
    {
@@ -53495,7 +53495,7 @@
      },
      {
       "lang": "en",
-      "text": "I usually post photos at the weekend."
+      "text": "I usually post photos on the weekend."
      },
      {
       "lang": "tr",
@@ -53503,12 +53503,12 @@
      },
      {
       "lang": "en",
-      "text": "I usually post photos at the weekend."
+      "text": "I usually post photos on the weekend."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I usually post photos at the weekend."
+     "target": "I usually post photos on the weekend."
     }
    },
    {
@@ -56338,11 +56338,11 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "I downloaded it to practise English.",
+     "target": "I downloaded it to practice English.",
      "accept": [
       "I downloaded it to practice English.",
-      "I downloaded the app to practise English.",
-      "I downloaded it for practising English."
+      "I downloaded the app to practice English.",
+      "I downloaded it for practicing English."
      ],
      "hint": [
       {
@@ -56351,7 +56351,7 @@
       },
       {
        "lang": "en",
-       "text": "to practise English"
+       "text": "to practice English"
       }
      ]
     }
@@ -61864,7 +61864,7 @@
      "target": "Someone stole my phone.",
      "accept": [
       "Somebody stole my phone.",
-      "Someone stole my mobile phone."
+      "Someone stole my cell phone."
      ],
      "hint": [
       {
@@ -65665,7 +65665,7 @@
      },
      {
       "lang": "en",
-      "text": "the rubbish bin"
+      "text": "the trash can"
      },
      {
       "lang": "tr",

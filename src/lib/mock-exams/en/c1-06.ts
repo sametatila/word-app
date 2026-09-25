@@ -134,9 +134,9 @@ Whether any of this matters outside a magazine is an open question. Translators,
 
 The demand is not unreasonable, {{8}} it is unevenly applied: nobody requires a novelist to explain why a sentence ends where it does.
 
-What it produces is a peculiar habit of mind. The translator learns to hold two defences ready, one for the reader who wants the original and one {{9}} the reader who wants the English, and neither reader is ever in the room.
+What it produces is a peculiar habit of mind. The translator learns to hold two defenses ready, one for the reader who wants the original and one {{9}} the reader who wants the English, and neither reader is ever in the room.
 
-There is, {{10}} addition, an ownership problem. A translation is the only literary work whose author can be criticised for having succeeded, since a version that reads well is immediately suspected {{11}} having drifted.
+There is, {{10}} addition, an ownership problem. A translation is the only literary work whose author can be criticized for having succeeded, since a version that reads well is immediately suspected {{11}} having drifted.
 
 None of this is an argument for leaving books untranslated. It is an argument for reviewing the translation rather than the translator, which is harder and, {{12}} the evidence of most review pages, a great deal rarer.`,
             },
@@ -277,8 +277,8 @@ The most likely future is therefore a divided one, with different literatures se
               kind: "gap",
               id: "en-c1-06-l3-18",
               no: 18,
-              text: "PRACTISE",
-              accept: ["practices", "practises"],
+              text: "PRACTICE",
+              accept: ["practices", "practices"],
               explain:
                 "`according to their own ___` yapısında iyelik sıfatından sonra bir ad geliyor ve özne çoğul (`different literatures`), dolayısıyla ad da çoğul. Britanya yazımında ad `practice`, fiil `practise`dir; iki yazım da kabul ediliyor.",
             },
@@ -512,7 +512,7 @@ Later volumes made the shape of the problem clearer. The words that could be def
 
 {{33}}
 
-This has an implication that the team did not welcome. If the entries that are easy to write are the borrowed ones, then a dictionary produced under time pressure will describe the language as more similar to its neighbour than it actually is.
+This has an implication that the team did not welcome. If the entries that are easy to write are the borrowed ones, then a dictionary produced under time pressure will describe the language as more similar to its neighbor than it actually is.
 
 {{34}}`,
               gloss: [
@@ -564,7 +564,7 @@ This has an implication that the team did not welcome. If the entries that are e
               text: "Gap 34",
               answer: "d",
               explain:
-                "Son paragraf rahatsız edici çıkarımı veriyor: sözlük dili «more similar to its neighbour than it actually is» gösterecek. (d) ekibin bununla ne yaptığını söyleyip yazıyı kapatıyor: hangi maddelere artık güvenmediklerini kendi önsözlerine yazmışlar. (e) kayıt cihazlarının ağırlığından söz ediyor ve metnin hiçbir yerinde donanım tartışılmıyor — hiçbir boşluğa uymayan paragraf odur.",
+                "Son paragraf rahatsız edici çıkarımı veriyor: sözlük dili «more similar to its neighbor than it actually is» gösterecek. (d) ekibin bununla ne yaptığını söyleyip yazıyı kapatıyor: hangi maddelere artık güvenmediklerini kendi önsözlerine yazmışlar. (e) kayıt cihazlarının ağırlığından söz ediyor ve metnin hiçbir yerinde donanım tartışılmıyor — hiçbir boşluğa uymayan paragraf odur.",
             },
           ],
         },
@@ -592,7 +592,7 @@ This has an implication that the team did not welcome. If the entries that are e
             {
               key: "c",
               label: "c — Language teacher",
-              body: "The literature says that exposure to varied texts builds judgement, and I do not dispute it. My difficulty is practical: a student reads whatever is on the syllabus that term, and nobody is arranging for them to meet the passage that cannot be done. We call it reading and treat it as though it were training.",
+              body: "The literature says that exposure to varied texts builds judgment, and I do not dispute it. My difficulty is practical: a student reads whatever is on the syllabus that term, and nobody is arranging for them to meet the passage that cannot be done. We call it reading and treat it as though it were training.",
             },
             {
               key: "d",
@@ -632,7 +632,7 @@ This has an implication that the team did not welcome. If the entries that are e
               kind: "match",
               id: "en-c1-06-l8-38",
               no: 38,
-              text: "Which text criticises a failure to say what was being judged?",
+              text: "Which text criticizes a failure to say what was being judged?",
               answer: "d",
               explain:
                 "Eleştirmen kendi yazdıklarını değil, belirsizliği eleştiriyor: «I almost never said which decisions I was praising, so a reader could not tell whether I had compared anything at all».",
@@ -650,7 +650,7 @@ This has an implication that the team did not welcome. If the entries that are e
               kind: "match",
               id: "en-c1-06-l8-40",
               no: 40,
-              text: "Which text defends the work it also criticises?",
+              text: "Which text defends the work it also criticizes?",
               answer: "d",
               explain:
                 "İki cümle yan yana duruyor: «I would defend most of what I wrote» ve «What I would not defend is …». Savunma yazıların içeriğine, eleştiri ise neyin övüldüğünün söylenmemesine.",
@@ -793,7 +793,7 @@ This has an implication that the team did not welcome. If the entries that are e
           format: "notes",
           goal: "detail",
           prompt:
-            "You hear a man reporting the results of a translation funding programme. Complete the sentences, questions 7 to 14, with a word, a number or a short phrase. You hear the report ONCE only.",
+            "You hear a man reporting the results of a translation funding program. Complete the sentences, questions 7 to 14, with a word, a number or a short phrase. You hear the report ONCE only.",
           promptTr:
             "Bir çeviri destek programının sonuçlarını anlatan bir adamı dinleyeceksin. 7–14. maddelerdeki cümleleri bir sözcük, bir sayı ya da kısa bir öbekle tamamla. Kaydı YALNIZ BİR KEZ dinleyeceksin.",
           texts: [
@@ -806,7 +806,7 @@ This has an implication that the team did not welcome. If the entries that are e
               plays: 1,
               segments: [
                 {
-                  text: "Thank you. I will give you the headline figures and I will not pretend they are comfortable. The programme funded two hundred and forty translations between 2015 and 2024, of which one hundred and eighty have been published. The average grant is nine thousand euros, which is about a third of what the work costs at a professional rate. Here is the first finding: the strongest predictor of whether a book finds a second publisher is not the reviews, it is whether the translator has worked with the same author before. Second, the language pair matters much less than we expected. Third, the format of our application. We tried a long form, a short form and a conversation, and the conversation produced the most complete information, which is expensive and which we have kept. Fourth, a caution: the translators we most want to fund are the ones least likely to apply, and we have not solved that. And finally, money. Seventy per cent of our budget comes from a single ministry that reviews the programme every three years.",
+                  text: "Thank you. I will give you the headline figures and I will not pretend they are comfortable. The program funded two hundred and forty translations between 2015 and 2024, of which one hundred and eighty have been published. The average grant is nine thousand euros, which is about a third of what the work costs at a professional rate. Here is the first finding: the strongest predictor of whether a book finds a second publisher is not the reviews, it is whether the translator has worked with the same author before. Second, the language pair matters much less than we expected. Third, the format of our application. We tried a long form, a short form and a conversation, and the conversation produced the most complete information, which is expensive and which we have kept. Fourth, a caution: the translators we most want to fund are the ones least likely to apply, and we have not solved that. And finally, money. Seventy percent of our budget comes from a single ministry that reviews the program every three years.",
                 },
               ],
             },
@@ -815,15 +815,15 @@ This has an implication that the team did not welcome. If the entries that are e
               id: "n1",
               genre: "Sentences",
               genreTr: "Cümleler",
-              title: "Translation programme — headline figures",
+              title: "Translation program — headline figures",
               body: `Translations funded:     {{7}}
 Translations published:  {{8}}
 Average grant:           {{9}} euros
 The grant covers about a {{10}} of the professional cost.
 The strongest predictor of a second publisher is whether the translator has worked with the same {{11}} before.
 The application format that worked best was the {{12}}.
-The translators the programme most wants to fund are the least likely to {{13}}.
-{{14}} per cent of the budget comes from one ministry.`,
+The translators the program most wants to fund are the least likely to {{13}}.
+{{14}} percent of the budget comes from one ministry.`,
             },
           ],
           items: [
@@ -835,7 +835,7 @@ The translators the programme most wants to fund are the least likely to {{13}}.
               text: "Gap 7",
               accept: ["240", "two hundred and forty"],
               explain:
-                "«The programme funded two hundred and forty translations» — desteklenen toplam. Yüz seksen ise yayımlananların sayısı; iki sayı aynı cümlede geçiyor.",
+                "«The program funded two hundred and forty translations» — desteklenen toplam. Yüz seksen ise yayımlananların sayısı; iki sayı aynı cümlede geçiyor.",
             },
             {
               kind: "gap",
@@ -905,7 +905,7 @@ The translators the programme most wants to fund are the least likely to {{13}}.
               text: "Gap 14",
               accept: ["70", "seventy"],
               explain:
-                "«Seventy per cent of our budget comes from a single ministry that reviews the programme every three years» — tek kaynağa bağlılık ve üstelik üç yılda bir gözden geçirme.",
+                "«Seventy percent of our budget comes from a single ministry that reviews the program every three years» — tek kaynağa bağlılık ve üstelik üç yılda bir gözden geçirme.",
             },
           ],
         },
@@ -925,16 +925,16 @@ The translators the programme most wants to fund are the least likely to {{13}}.
               situation: "Üç konuşmacı yeniden çevirilerin desteklenmesini tartışıyor.",
               plays: 1,
               segments: [
-                { speaker: "Chair", text: "Uma, you have argued that the programme should stop funding retranslations. That is unpopular." },
+                { speaker: "Chair", text: "Uma, you have argued that the program should stop funding retranslations. That is unpopular." },
                 { speaker: "Uma", text: "It is, and I want to be exact about it. My objection is not to retranslation; it is to funding a fourth version of a book that already has three while nine hundred titles have none. That is an allocation question, not a literary one." },
                 { speaker: "Chair", text: "Vida?" },
                 { speaker: "Vida", text: "I accept the arithmetic and I think it hides something. A retranslation is often the only way a book reaches a reader at all, because the existing version is fifty years old and unreadable. Calling that a fourth version flattens a real difference." },
                 { speaker: "Chair", text: "Dragan, does that resolve it?" },
-                { speaker: "Dragan", text: "It relocates it. What both of them are describing is a decision about who the programme is for: the literature or the reader. Nobody has written that down, and every disagreement we have had in eleven years has been this one wearing a different coat." },
+                { speaker: "Dragan", text: "It relocates it. What both of them are describing is a decision about who the program is for: the literature or the reader. Nobody has written that down, and every disagreement we have had in eleven years has been this one wearing a different coat." },
                 { speaker: "Chair", text: "Uma, is there evidence about which retranslations get read?" },
                 { speaker: "Uma", text: "Almost none, and I would rather say so. We have sales figures for about a fifth of the titles and they are not comparable across countries. That is not enough to build a policy on, and I notice that everybody here, including me, has an anecdote that supports their own position." },
                 { speaker: "Chair", text: "Vida, what about the effect on translators?" },
-                { speaker: "Vida", text: "That is the part that worries me most. A programme that funds only first translations rewards whoever gets to a book first, and the person who gets there first is the person with the most free time. That is not the same as the best translator, and it will not correct itself." },
+                { speaker: "Vida", text: "That is the part that worries me most. A program that funds only first translations rewards whoever gets to a book first, and the person who gets there first is the person with the most free time. That is not the same as the best translator, and it will not correct itself." },
                 { speaker: "Chair", text: "Dragan, a last word." },
                 { speaker: "Dragan", text: "Only that the comparison with publishing a new novel is misleading. A publisher who backs a new novel is betting on a market that does not exist yet. We are choosing between books that already exist in another language, which is a smaller and much more answerable question. I would drop the analogy." },
               ],
@@ -973,11 +973,11 @@ The translators the programme most wants to fund are the least likely to {{13}}.
               id: "en-c1-06-h3-17",
               no: 17,
               ref: "c1",
-              text: "How does Dragan characterise the disagreement?",
+              text: "How does Dragan characterize the disagreement?",
               options: ["As a straightforward dispute about money", "As an unwritten choice of audience", "As a misunderstanding", "As a question that has already been settled"],
               answer: 1,
               explain:
-                "Dragan ikisini de aynı karara bağlıyor: «a decision about who the programme is for: the literature or the reader», ve bunun hiç yazıya geçirilmediğini söylüyor.",
+                "Dragan ikisini de aynı karara bağlıyor: «a decision about who the program is for: the literature or the reader», ve bunun hiç yazıya geçirilmediğini söylüyor.",
             },
             {
               kind: "mcq",
@@ -1054,7 +1054,7 @@ The translators the programme most wants to fund are the least likely to {{13}}.
             { key: "f", label: "to object to a comparison used in the debate" },
             { key: "g", label: "to point to a cost that appears in no budget" },
             { key: "h", label: "to ask for a decision to be postponed" },
-            { key: "i", label: "to defend a colleague who has been criticised" },
+            { key: "i", label: "to defend a colleague who has been criticized" },
             { key: "j", label: "to say that the evidence is too thin to act on" },
           ],
           texts: [
@@ -1121,7 +1121,7 @@ The translators the programme most wants to fund are the least likely to {{13}}.
               situation: "Altıncı konuşmacı hiçbir bütçede görünmeyen bir maliyeti anlatıyor.",
               plays: 2,
               segments: [
-                { text: "The book appears in our accounts as a fee of six thousand euros. What appears nowhere is that the translator wrote to the author eleven times, read two earlier novels that will never be published here, and spent a fortnight on a glossary that the printer removed. Nobody has ever been asked to put a figure on that." },
+                { text: "The book appears in our accounts as a fee of six thousand euros. What appears nowhere is that the translator wrote to the author eleven times, read two earlier novels that will never be published here, and spent a two weeks on a glossary that the printer removed. Nobody has ever been asked to put a figure on that." },
               ],
             },
             {
@@ -1132,7 +1132,7 @@ The translators the programme most wants to fund are the least likely to {{13}}.
               situation: "Yedinci konuşmacı eleştirilen bir meslektaşından söz ediyor.",
               plays: 2,
               segments: [
-                { text: "A great deal has been said this week about the translator of that novel, most of it by people who have not read the original. She flagged the passage in her note, she gave her reasoning, and the note was cut by the publisher. If we want to criticise somebody, the correspondence makes it perfectly clear who." },
+                { text: "A great deal has been said this week about the translator of that novel, most of it by people who have not read the original. She flagged the passage in her note, she gave her reasoning, and the note was cut by the publisher. If we want to criticize somebody, the correspondence makes it perfectly clear who." },
               ],
             },
             {
@@ -1246,22 +1246,22 @@ The translators the programme most wants to fund are the least likely to {{13}}.
           format: "writing",
           goal: "production",
           prompt:
-            "You have attended a seminar on translation. Write an essay for your tutor summarising which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. A translation should reproduce as closely as possible what the original says.\n2. A translation should reproduce as closely as possible what the original does to a reader.\n\nWrite 220 to 260 words.",
+            "You have attended a seminar on translation. Write an essay for your tutor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. A translation should reproduce as closely as possible what the original says.\n2. A translation should reproduce as closely as possible what the original does to a reader.\n\nWrite 220 to 260 words.",
           promptTr:
             "Çeviri üzerine bir seminere katıldın. Danışmanın için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Çeviri, aslın SÖYLEDİĞİNİ olabildiğince yakın aktarmalı.\n2. Çeviri, aslın okurda YAPTIĞINI olabildiğince yakın aktarmalı.\n\n220–260 kelime yaz.",
           items: [],
           rubric: {
             minWords: 220,
             points: [
-              { de: "Summarise both points fairly.", tr: "İki noktayı da adil biçimde özetle." },
+              { de: "Summarize both points fairly.", tr: "İki noktayı da adil biçimde özetle." },
               { de: "Say which is more important and justify the choice.", tr: "Hangisinin daha önemli olduğunu söyle ve seçimi gerekçelendir." },
               { de: "Give your own view, distinct from the summary.", tr: "Özetten ayrı olarak kendi görüşünü ver." },
             ],
             sample: `The two points raised in the seminar are usually presented as a choice, and the difficulty is that a translator has to make it several times on every page rather than once at the start.
 
-The case for reproducing what the original says rests on verifiability. A reader who does not know the source language has no way of auditing a translator's judgement about effect, whereas a claim about reference can at least be checked. It is worth adding that the alternative has historically been used to justify a great deal of quiet improvement, and that the reader who wanted this author has a legitimate complaint about it.
+The case for reproducing what the original says rests on verifiability. A reader who does not know the source language has no way of auditing a translator's judgment about effect, whereas a claim about reference can at least be checked. It is worth adding that the alternative has historically been used to justify a great deal of quiet improvement, and that the reader who wanted this author has a legitimate complaint about it.
 
-The second point concerns what a reader actually receives. A sentence that is accurate at every word and lands with no force has not carried the original across in any sense the author would recognise; it has produced a document about the original. On this account, refusing to make a judgement about effect is itself a concealed judgement.
+The second point concerns what a reader actually receives. A sentence that is accurate at every word and lands with no force has not carried the original across in any sense the author would recognize; it has produced a document about the original. On this account, refusing to make a judgment about effect is itself a concealed judgment.
 
 I regard the second as the more important, though for a narrower reason than is usually offered. The first can be recovered by a note; the second cannot be recovered at all, because a reader who has been bored by a page does not go back to it.
 
@@ -1283,7 +1283,7 @@ My own view is that the choice is made false by the format. A translation that c
           format: "writing",
           goal: "interaction",
           prompt:
-            "An organisation you know is about to translate its public information into three further languages using an automatic system with light human checking. Write a report for its management. Describe the current arrangement, assess the likely effects, and recommend a course of action. Write 220 to 260 words.",
+            "An organization you know is about to translate its public information into three further languages using an automatic system with light human checking. Write a report for its management. Describe the current arrangement, assess the likely effects, and recommend a course of action. Write 220 to 260 words.",
           promptTr:
             "Tanıdığın bir kurum, halka açık bilgilerini üç dile daha, hafif insan denetimli otomatik bir sistemle çevirmek üzere. Yönetime bir rapor yaz. Mevcut düzeni anlat, olası etkileri değerlendir ve bir yol öner. 220–260 kelime yaz.",
           items: [],
@@ -1337,14 +1337,14 @@ I recommend adopting the system for descriptive pages and retaining human transl
             { who: "you", hint: "Somut bir örnek seç ve kuşkunun nereden geldiğini adlandır.", expect: "somut bir örnek vermek ve kendi kuşkusunu gerekçelendirmek", seconds: 50 },
             { who: "partner", de: "Thank you. Do you think a reader without the original can ever judge a translation, or is that beyond them?", tr: "Teşekkürler. Sence aslı elinde olmayan bir okur bir çeviriyi yargılayabilir mi, yoksa bu onun sınırının ötesinde mi?" },
             { who: "you", hint: "Bir konum al ama karşı görüşe bir pay bırak.", expect: "bir konum almak ve karşı görüşe pay bırakmak", seconds: 50 },
-            { who: "partner", de: "And how would you decide whether a translation had been improved or merely modernised?", tr: "Bir çevirinin iyileştirildiğine mi yoksa yalnız güncellendiğine mi karar vermek için ne yapardın?" },
+            { who: "partner", de: "And how would you decide whether a translation had been improved or merely modernized?", tr: "Bir çevirinin iyileştirildiğine mi yoksa yalnız güncellendiğine mi karar vermek için ne yapardın?" },
             { who: "you", hint: "Bir ölçüt öner ve onu neden seçtiğini açıkla.", expect: "bir ölçüt önermek ve seçimini gerekçelendirmek", seconds: 50 },
           ],
           items: [],
           rubric: {
             minutes: 5,
             points: [
-              { de: "describe a concrete case and analyse it", tr: "Somut bir durumu betimlemek ve çözümlemek" },
+              { de: "describe a concrete case and analyze it", tr: "Somut bir durumu betimlemek ve çözümlemek" },
               { de: "take a position while conceding something", tr: "Bir konum alırken bir şeyi kabul etmek" },
               { de: "propose and justify a criterion", tr: "Bir ölçüt önermek ve gerekçelendirmek" },
             ],
@@ -1415,7 +1415,7 @@ I recommend adopting the system for descriptive pages and retaining human transl
               { de: "settle a justified priority order", tr: "Gerekçeli bir öncelik sırası kurmak" },
             ],
             sample:
-              "I would defend raising the grant per book and funding the survey, on the criterion of what the programme cannot recover later: a translator who leaves the profession because the rate is a third of the cost does not come back, and a decision made blind in year one is repeated in every year after it. Your objection to the survey is fair and I want to concede part of it; what I would defend is a very small survey aimed at one question, namely who buys these books, which costs a fraction of a title. So: raise the rate first, because the labour is the constraint; run the narrow survey second, because everything after this year depends on it; print the notes third, since they are cheap and they change how the work is reviewed. I would drop the first-translations-only rule this year and say plainly why, rather than adopt a policy we cannot yet justify.",
+              "I would defend raising the grant per book and funding the survey, on the criterion of what the program cannot recover later: a translator who leaves the profession because the rate is a third of the cost does not come back, and a decision made blind in year one is repeated in every year after it. Your objection to the survey is fair and I want to concede part of it; what I would defend is a very small survey aimed at one question, namely who buys these books, which costs a fraction of a title. So: raise the rate first, because the labor is the constraint; run the narrow survey second, because everything after this year depends on it; print the notes third, since they are cheap and they change how the work is reviewed. I would drop the first-translations-only rule this year and say plainly why, rather than adopt a policy we cannot yet justify.",
             criteria: [
               "Ölçüt açıkça adlandırıldı mı?",
               "İtirazın gücü kabul edildi mi ve konum ya revize edildi ya da gerekçelendirildi mi?",

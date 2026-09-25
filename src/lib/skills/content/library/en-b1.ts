@@ -84,7 +84,7 @@ export const enB1: SkillExercise[] = [
         text: "How far did the writer swim last month?",
         options: [],
         answer: 0,
-        accept: ["twenty-five meters", "25 meters", "twenty five meters", "twenty-five metres", "25 m"],
+        accept: ["twenty-five meters", "25 meters", "twenty five meters", "twenty-five meters", "25 m"],
         explain: "„last month I swam twenty-five meters without stopping.“",
       },
     ],

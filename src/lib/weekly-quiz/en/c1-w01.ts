@@ -229,9 +229,9 @@ export const EN_C1_W01: QuizWeek = {
       id: "en-c1-w01-v1",
       block: "vocab",
       stem: "Critics ___ that breaks are useful, but question the evidence.",
-      options: ["acknowledge", "announce", "admit to", "recognise as"],
+      options: ["acknowledge", "announce", "admit to", "recognize as"],
       answer: 0,
-      why: "`acknowledge that` karşı tarafın haklı yanını kabul etmek demek ve `that` cümlesi alır. `announce` duyurmaktır; `admit to` ve `recognise as` başka tamlayıcılar ister ve `that` cümlesiyle kurulmaz.",
+      why: "`acknowledge that` karşı tarafın haklı yanını kabul etmek demek ve `that` cümlesi alır. `announce` duyurmaktır; `admit to` ve `recognize as` başka tamlayıcılar ister ve `that` cümlesiyle kurulmaz.",
       targets: ["verb.acknowledge", "argument.concession"],
     },
     {

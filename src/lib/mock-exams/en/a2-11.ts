@@ -67,7 +67,7 @@ Please bring the little book with your animal's dates. First visit: twenty euros
               genre: "Email",
               genreTr: "E-posta",
               title: "The dog is fine",
-              body: `Dear Hale, the dog is fine. He ate everything and he slept on your chair, which I think is not allowed. He barks at the post every morning at eight. I am sorry about your neighbours.`,
+              body: `Dear Hale, the dog is fine. He ate everything and he slept on your chair, which I think is not allowed. He barks at the post every morning at eight. I am sorry about your neighbors.`,
             },
             {
               kind: "text",
@@ -96,7 +96,7 @@ Please take the bags home with you; there is no bin here.`,
               id: "en-a2-11-l1-1",
               no: 1,
               ref: "m1",
-              text: "What must the neighbour not do?",
+              text: "What must the neighbor not do?",
               options: ["Give the cat fresh water", "Let the cat outside", "Come to the flat before Sunday"],
               answer: 1,
               explain:
@@ -119,10 +119,10 @@ Please take the bags home with you; there is no bin here.`,
               no: 3,
               ref: "m3",
               text: "What is the writer sorry about?",
-              options: ["The dog is ill", "The chair is broken", "The dog wakes the neighbours"],
+              options: ["The dog is ill", "The chair is broken", "The dog wakes the neighbors"],
               answer: 2,
               explain:
-                "E-posta iki şeyi bağlıyor: «He barks at the post every morning at eight. I am sorry about your neighbours». Köpek iyi ve sandalye kırılmamış.",
+                "E-posta iki şeyi bağlıyor: «He barks at the post every morning at eight. I am sorry about your neighbors». Köpek iyi ve sandalye kırılmamış.",
             },
             {
               kind: "mcq",
@@ -172,7 +172,7 @@ Please take the bags home with you; there is no bin here.`,
               kind: "match",
               id: "en-a2-11-l2-6",
               no: 6,
-              text: "Vesna's dog barks when she is at work and the neighbours have complained.",
+              text: "Vesna's dog barks when she is at work and the neighbors have complained.",
               answer: "a",
               explain:
                 "İlan sorunu birebir sayıyor: «For dogs that bark, pull or run away», sekiz haftalık akşam kursu.",
@@ -233,7 +233,7 @@ Please take the bags home with you; there is no bin here.`,
 
 We got a dog in March. He is two years old and he came from the animal home. Everything is good except one thing: he cannot be alone.
 
-When I go to the shop for twenty minutes, he cries. The neighbour told us and she was very kind about it. Now I take him everywhere, and that is not a life for me.
+When I go to the shop for twenty minutes, he cries. The neighbor told us and she was very kind about it. Now I take him everywhere, and that is not a life for me.
 
 Vesna Roth
 
@@ -261,7 +261,7 @@ The Editor`,
               id: "en-a2-11-l3-11",
               no: 11,
               text: "What is Vesna's problem?",
-              options: ["The dog cannot be alone", "The dog is much too old", "The neighbour is angry with her"],
+              options: ["The dog cannot be alone", "The dog is much too old", "The neighbor is angry with her"],
               answer: 0,
               explain:
                 "Mektup sorunu tek cümlede veriyor: «Everything is good except one thing: he cannot be alone». Komşu kibar davranmış, kızgın değil.",
@@ -291,7 +291,7 @@ The Editor`,
               id: "en-a2-11-l3-14",
               no: 14,
               text: "What else should Vesna do?",
-              options: ["Keep taking the dog out", "Ask the neighbour for help", "Take the dog back"],
+              options: ["Keep taking the dog out", "Ask the neighbor for help", "Take the dog back"],
               answer: 0,
               explain:
                 "Yanıtın son satırı bunu istiyor: «do not stop taking him out. A tired dog waits better than a bored one».",
@@ -697,7 +697,7 @@ Please bring the:   {{10}}`,
               situation: "Bir dinleyici köpek okulunu anlatıyor.",
               plays: 2,
               segments: [
-                { text: "The dog school was twelve euros an evening for eight weeks and I said no three times. Then I counted what I paid the neighbour in flowers and apologies. I went in October." },
+                { text: "The dog school was twelve euros an evening for eight weeks and I said no three times. Then I counted what I paid the neighbor in flowers and apologies. I went in October." },
               ],
             },
             {
@@ -752,7 +752,7 @@ Please bring the:   {{10}}`,
               no: 11,
               ref: "c1",
               text: "What is the speaker doing?",
-              options: ["Complaining about the price", "Recommending the neighbour", "Explaining why she changed her mind"],
+              options: ["Complaining about the price", "Recommending the neighbor", "Explaining why she changed her mind"],
               answer: 2,
               explain:
                 "Konuşmacı üç kez hayır demiş, sonra komşuya ödediği çiçek ve özürleri saymış: «I went in October». Yani fikir değişimini anlatıyor.",
@@ -817,7 +817,7 @@ Please bring the:   {{10}}`,
             { key: "b", label: "Paying for the food." },
             { key: "c", label: "Getting to the vet." },
             { key: "d", label: "The animal does not eat." },
-            { key: "e", label: "The neighbours complain." },
+            { key: "e", label: "The neighbors complain." },
             { key: "f", label: "Finding care for the holidays." },
             { key: "g", label: "The animal wakes them early." },
             { key: "h", label: "Walking far enough every day." },
@@ -864,7 +864,7 @@ Please bring the:   {{10}}`,
               situation: "Dördüncü konuşmacı ulaşımı anlatıyor.",
               plays: 2,
               segments: [
-                { text: "Nine kilometres and no bus after four. My neighbour drove me twice and I cannot ask a third time. My dog is fifteen years old and he cannot walk to the corner." },
+                { text: "Nine kilometers and no bus after four. My neighbor drove me twice and I cannot ask a third time. My dog is fifteen years old and he cannot walk to the corner." },
               ],
             },
             {
@@ -918,7 +918,7 @@ Please bring the:   {{10}}`,
               text: "Speaker 4",
               answer: "c",
               explain:
-                "Konuşmacı mesafeyi ve ulaşımı veriyor: «Nine kilometres and no bus after four», köpek de köşeye kadar yürüyemiyor.",
+                "Konuşmacı mesafeyi ve ulaşımı veriyor: «Nine kilometers and no bus after four», köpek de köşeye kadar yürüyemiyor.",
             },
             {
               kind: "match",

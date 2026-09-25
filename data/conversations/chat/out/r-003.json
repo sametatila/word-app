@@ -50,7 +50,7 @@
  },
  {
   "conversation": "de-a1-verlaufen",
-  "sceneEn": "You have realised you are lost and gone into a shop to ask for help. Explain your situation, say where you want to go, listen to the directions and repeat them to be sure.",
+  "sceneEn": "You have realized you are lost and gone into a shop to ask for help. Explain your situation, say where you want to go, listen to the directions and repeat them to be sure.",
   "partnerEn": "a patient shopkeeper who gives directions calmly",
   "openingEn": "You look puzzled. Are you looking for a particular street?",
   "goalEn": "The right way has been described and you have confirmed you understood it by repeating it back."
@@ -92,9 +92,9 @@
  },
  {
   "conversation": "de-a1-nachbarn",
-  "sceneEn": "You have just moved in and knocked on your neighbour's door. Introduce yourself, say you have just moved in, and have a short conversation.",
-  "partnerEn": "a warm neighbour who has lived in the building for years",
-  "openingEn": "Good afternoon! You must be the new neighbours, aren't you?",
+  "sceneEn": "You have just moved in and knocked on your neighbor's door. Introduce yourself, say you have just moved in, and have a short conversation.",
+  "partnerEn": "a warm neighbor who has lived in the building for years",
+  "openingEn": "Good afternoon! You must be the new neighbors, aren't you?",
   "goalEn": "You have introduced yourselves to each other and closed your first short chat with a goodbye."
  },
  {
@@ -127,10 +127,10 @@
  },
  {
   "conversation": "de-a1-garten",
-  "sceneEn": "Your neighbour has seen you on the balcony and started chatting. Say what you have on your balcony, talk about your flowers, and say whether you like sitting out there.",
-  "partnerEn": "a neighbour who is keen on growing flowers",
+  "sceneEn": "Your neighbor has seen you on the balcony and started chatting. Say what you have on your balcony, talk about your flowers, and say whether you like sitting out there.",
+  "partnerEn": "a neighbor who is keen on growing flowers",
   "openingEn": "Your flowers look really lovely! Do you water them every day?",
-  "goalEn": "Everything on your balcony has been described and you have promised your neighbour a coffee."
+  "goalEn": "Everything on your balcony has been described and you have promised your neighbor a coffee."
  },
  {
   "conversation": "de-a1-kaputt",

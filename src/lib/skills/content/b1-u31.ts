@@ -113,7 +113,7 @@ export const b1U31: SkillExercise[] = [
     gloss: [
       { de: "die Vorfahrt", tr: "geçiş üstünlüğü", en: "right of way" },
       { de: "die Fahrbahn", tr: "yol / şerit", en: "carriageway" },
-      { de: "der Gehsteig", tr: "kaldırım", en: "pavement" },
+      { de: "der Gehsteig", tr: "kaldırım", en: "sidewalk" },
       { de: "die Einbahnstraße", tr: "tek yön", en: "one-way street" },
       { de: "überqueren", tr: "karşıdan karşıya geçmek", en: "to cross" },
       { de: "das Schild", tr: "tabela", en: "sign" },
@@ -245,7 +245,7 @@ export const b1U31: SkillExercise[] = [
     minutes: 4,
     gloss: [
       { de: "die Bremse", tr: "fren", en: "brake" },
-      { de: "das Benzin", tr: "benzin", en: "petrol" },
+      { de: "das Benzin", tr: "benzin", en: "gasoline" },
       { de: "der Gang", tr: "vites", en: "gear" },
       { de: "losfahren", tr: "yola çıkmak", en: "to set off" },
       { de: "sehen", tr: "görmek", en: "to see" },
@@ -407,7 +407,7 @@ export const b1U31: SkillExercise[] = [
           "Die Rückfahrt lief besser. Ich bin am Abend losgefahren und " +
           "morgens angekommen, ausgeruht und ohne Umsteigen. Das Flugzeug wäre schneller gelandet, aber der Zug war ruhiger.",
         phrases: [
-          { de: "Ich bin nach … gefahren.", tr: "… şehrine gittim.", en: "I travelled to …" },
+          { de: "Ich bin nach … gefahren.", tr: "… şehrine gittim.", en: "I traveled to …" },
           { de: "… in die Schweiz / in die Türkei", tr: "… İsviçre'ye / Türkiye'ye", en: "… to Switzerland / to Turkey" },
           { de: "… zu einem Kollegen", tr: "… bir meslektaşa", en: "… to a colleague" },
         ],

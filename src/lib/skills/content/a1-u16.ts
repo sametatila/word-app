@@ -94,7 +94,7 @@ export const a1U16: SkillExercise[] = [
     genre: "message",
     intro: "Yeni komşulara bırakılmış bir not.",
     gloss: [
-      { de: "der Nachbar", tr: "komşu", en: "neighbour" },
+      { de: "der Nachbar", tr: "komşu", en: "neighbor" },
       { de: "klopfen", tr: "kapıyı çalmak", en: "to knock" },
       { de: "willkommen", tr: "hoş geldin", en: "welcome" },
     ],
@@ -207,7 +207,7 @@ export const a1U16: SkillExercise[] = [
     gloss: [
       { de: "neu", tr: "yeni", en: "new" },
       { de: "der Aufzug", tr: "asansör", en: "lift" },
-      { de: "die Nachbarin", tr: "kadın komşu", en: "neighbour (f.)" },
+      { de: "die Nachbarin", tr: "kadın komşu", en: "neighbor (f.)" },
     ],
     minutes: 2,
     segments: [

@@ -44,9 +44,9 @@ export const enB2P6: SkillExercise[] = [
       "Companies are not being lazy, at least not only. Legal departments discourage detailed " +
       "feedback because a specific reason can become evidence in a discrimination case, " +
       "and a vague template cannot. In a survey of two hundred employers last year, " +
-      "sixty-one per cent said liability was their main reason for keeping rejections general. " +
-      "Only nine per cent mentioned time.\n\n" +
-      "Despite this, a small number of organisations have moved the other way. " +
+      "sixty-one percent said liability was their main reason for keeping rejections general. " +
+      "Only nine percent mentioned time.\n\n" +
+      "Despite this, a small number of organizations have moved the other way. " +
       "A software firm in Manchester now sends every shortlisted applicant three sentences " +
       "written by the interviewer, and publishes the scoring sheet it uses. " +
       "Its head of recruitment argues that the risk works in reverse: a written score " +
@@ -263,7 +263,7 @@ export const enB2P6: SkillExercise[] = [
           "Although your structure was clear, two of your three examples came from a different " +
           "kind of team, and you finished six minutes over. " +
           "I have attached the scoring sheet so that you can see it is the same for everyone. " +
-          "If you apply again, I would suggest practising the presentation against a clock and " +
+          "If you apply again, I would suggest practicing the presentation against a clock and " +
           "choosing examples from the setting you are applying to, even if they are smaller. " +
           "We expect a similar vacancy in the autumn, and I would be glad to see your name again. " +
           "Yours sincerely, R. Carr",
@@ -305,11 +305,11 @@ export const enB2P6: SkillExercise[] = [
         "The strongest argument against this is legal, and it is not imaginary. " +
         "A specific sentence can be used as evidence, while a template cannot, " +
         "and no legal department is going to recommend a policy that creates written records " +
-        "of judgements about people. " +
+        "of judgments about people. " +
         "I'd answer that by pointing out that the risk runs in both directions. " +
         "Silence is also evidence of a kind: if a company can show nothing about how it decided, " +
         "it cannot show that it decided consistently either. " +
-        "A scoring sheet used for every candidate is a defence, not a danger. " +
+        "A scoring sheet used for every candidate is a defense, not a danger. " +
         "In practice, what I'd require is that feedback comes from the sheet and not from " +
         "memory, that it goes to everyone who reached the same stage rather than only to those " +
         "who ask, and that it is written within two days, while the interviewer still remembers " +

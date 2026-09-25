@@ -256,7 +256,7 @@ export const enA2U09: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 9,
-    title: "Noisy neighbours",
+    title: "Noisy neighbors",
     genre: "monologue",
     intro: "Gürültü şikâyeti, üç adımda. Sonuncusu pastayla bitiyor.",
     gloss: [

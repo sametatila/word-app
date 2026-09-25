@@ -107,7 +107,7 @@ export const enA2U08: SkillExercise[] = [
     gloss: [
       { de: "dark", tr: "karanlık" },
       { de: "high", tr: "yüksek" },
-      { de: "neighbours", tr: "komşular" },
+      { de: "neighbors", tr: "komşular" },
       { de: "fourth", tr: "dördüncü" },
     ],
     minutes: 6,
@@ -117,7 +117,7 @@ export const enA2U08: SkillExercise[] = [
       "The third one was in an old building. The rooms were spacious and bright, the ceiling was high.\n" +
       "But the advert said \"furnished\" and there was only a bed and a table.\n" +
       "The fourth flat was small. The rooms were normal and the kitchen was old.\n" +
-      "But it was quiet, the neighbours were friendly and the deposit was only one month.\n" +
+      "But it was quiet, the neighbors were friendly and the deposit was only one month.\n" +
       "We took the fourth. My sister asked: Why the small one?\n" +
       "I said: Because I sleep there. In the first one I would never sleep — the street is under the window.\n" +
       "We have been here since March and I am happy. The flat is smaller than my old one, but my life is bigger.",
@@ -158,7 +158,7 @@ export const enA2U08: SkillExercise[] = [
           "cheap and dark, on the ground floor",
           "a beautiful balcony, eight hundred euros",
           "spacious and bright, but not really furnished",
-          "small and quiet, with friendly neighbours",
+          "small and quiet, with friendly neighbors",
         ],
         explain: "Metin birinciden dördüncüye doğru gidiyor; alınan sonuncusu.",
       },
@@ -277,7 +277,7 @@ export const enA2U08: SkillExercise[] = [
       { speaker: "Mert", text: "The living room is more comfortable. There is an old chair from my grandmother." },
       { speaker: "Mert", text: "I don't like the ceiling. It is very high and in winter the room is cold." },
       { speaker: "Mert", text: "The curtains are new. Before that the sun came in at five." },
-      { speaker: "Mert", text: "It is quiet here. Only on Saturday my neighbours have a party — and then I go to the balcony." },
+      { speaker: "Mert", text: "It is quiet here. Only on Saturday my neighbors have a party — and then I go to the balcony." },
     ],
     questions: [
       {

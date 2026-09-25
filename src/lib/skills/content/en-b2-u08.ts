@@ -152,7 +152,7 @@ export const enB2U08: SkillExercise[] = [
       { de: "machinery", tr: "düzenek" },
       { de: "the route", tr: "yol" },
       { de: "a newsroom", tr: "haber merkezi" },
-      { de: "a defence", tr: "savunma" },
+      { de: "a defense", tr: "savunma" },
       { de: "unverified", tr: "doğrulanmamış" },
       { de: "a failure mode", tr: "bozulma biçimi" },
       { de: "asserted", tr: "ileri sürülmüş" },
@@ -164,7 +164,7 @@ export const enB2U08: SkillExercise[] = [
       "Look at the verb after „to“. „To show“ is about now. „To have been broadcast“ is about before — before the thinking, not before this morning. The infinitive is carrying a tense of its own, and that is the only thing in the sentence that tells you the broadcasting is already finished.\n" +
       "That is a great deal of work for two words, and a reader in a hurry misses it. „The story is thought to be broadcast twice“ would say something else entirely and would still look like a sentence.\n" +
       "The rest is the usual machinery. „It is claimed that“ is the long route; „are said to“ is the short one; both hide the person doing the claiming and the saying.\n" +
-      "In a newsroom that hiding has a name and a defence. The source may be under an embargo, the readership is large, and a publication that puts a name on an unverified line has made a claim rather than reported one.\n" +
+      "In a newsroom that hiding has a name and a defense. The source may be under an embargo, the readership is large, and a publication that puts a name on an unverified line has made a claim rather than reported one.\n" +
       "It also has a failure mode. A feed that carries fifty of these a day teaches its network of readers that nothing on it is ever quite asserted, and the algorithm cannot tell the difference between a careful sentence and an empty one.",
     questions: [
       {
@@ -329,7 +329,7 @@ export const enB2U08: SkillExercise[] = [
       { de: "a trade", tr: "meslek" },
       { de: "punctuation", tr: "noktalama" },
       { de: "a mark", tr: "işaret" },
-      { de: "a full stop", tr: "nokta" },
+      { de: "a period", tr: "nokta" },
       { de: "keeping them straight", tr: "ayrı tutan" },
       { de: "dislike", tr: "hoşlanmamak" },
       { de: "the piece", tr: "yazı" },
@@ -346,7 +346,7 @@ export const enB2U08: SkillExercise[] = [
       { speaker: "Beren", text: "Transparency in this trade is mostly punctuation. A comma decides whether we are describing one person or dividing a group, and a reader never notices the comma, only the meaning it made." },
       { speaker: "Beren", text: "The intern who found the second quotation is not named in the piece, which is normal and which I dislike." },
       { speaker: "Beren", text: "That sentence has no commas around „who found the second quotation“, and it should not: there are four interns and I mean one of them." },
-      { speaker: "Beren", text: "So the same paragraph holds both kinds, three lines apart, and the only thing keeping them straight is a mark the size of a full stop." },
+      { speaker: "Beren", text: "So the same paragraph holds both kinds, three lines apart, and the only thing keeping them straight is a mark the size of a period." },
     ],
     questions: [
       {

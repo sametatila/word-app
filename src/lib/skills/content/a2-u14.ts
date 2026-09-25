@@ -36,7 +36,7 @@ export const a2U14: SkillExercise[] = [
       { de: "gestreift", tr: "çizgili", en: "striped" },
       { de: "kariert", tr: "kareli", en: "checked" },
       { de: "einfarbig", tr: "tek renkli", en: "plain" },
-      { de: "bunt", tr: "rengârenk", en: "colourful" },
+      { de: "bunt", tr: "rengârenk", en: "colorful" },
       { de: "der Anzug", tr: "takım elbise", en: "suit" },
       { de: "die Mode", tr: "moda", en: "fashion" },
       { de: "dünn", tr: "ince", en: "thin" },
@@ -290,7 +290,7 @@ export const a2U14: SkillExercise[] = [
       { de: "hellblau", tr: "açık mavi", en: "light blue" },
       { de: "kariert", tr: "kareli", en: "checked" },
       { de: "einfarbig", tr: "tek renkli", en: "plain" },
-      { de: "grau", tr: "gri", en: "grey" },
+      { de: "grau", tr: "gri", en: "gray" },
     ],
     minutes: 6,
     tasks: [

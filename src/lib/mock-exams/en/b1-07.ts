@@ -800,7 +800,7 @@ And if you are ill, tell somebody early. Nothing here depends {{30}} one person,
             {
               kind: "audio",
               id: "b5",
-              genre: "Between neighbours",
+              genre: "Between neighbors",
               genreTr: "Komşular arasında",
               situation: "İki kişi bahçe grubunun düzenini tartışıyor.",
               plays: 2,
@@ -833,7 +833,7 @@ And if you are ill, tell somebody early. Nothing here depends {{30}} one person,
               no: 8,
               ref: "b1",
               text: "What is the first speaker doing?",
-              options: ["Complaining about her neighbours", "Explaining why one note worked", "Asking for a lift to the shops"],
+              options: ["Complaining about her neighbors", "Explaining why one note worked", "Asking for a lift to the shops"],
               answer: 1,
               explain:
                 "Konuşmacı iki notu karşılaştırıp farkı adlandırıyor: «Same offer, one difference» — ikincisi gün ve saat veriyor. Komşulardan yakınma yok.",
@@ -914,7 +914,7 @@ And if you are ill, tell somebody early. Nothing here depends {{30}} one person,
               plays: 2,
               segments: [
                 {
-                  text: "Good evening. The volunteer day is on Saturday the eighteenth. We start at nine in the car park, not at the main door. There are three jobs: the river path, the hallway shelf and the homework room. The river path group needs boots; we have gloves for everybody. Lunch is at one and it is free. If you are coming, tell Selma by Wednesday, because she orders the food.",
+                  text: "Good evening. The volunteer day is on Saturday the eighteenth. We start at nine in the parking lot, not at the main door. There are three jobs: the river path, the hallway shelf and the homework room. The river path group needs boots; we have gloves for everybody. Lunch is at one and it is free. If you are coming, tell Selma by Wednesday, because she orders the food.",
                 },
               ],
             },
@@ -949,9 +949,9 @@ Tell Selma by:         {{19}}`,
               no: 15,
               ref: "c1",
               text: "Gap 15",
-              accept: ["car park"],
+              accept: ["parking lot"],
               explain:
-                "Kayıt buluşma yerini karşıtıyla veriyor: «in the car park, not at the main door». Ana kapı bilerek elenen yer.",
+                "Kayıt buluşma yerini karşıtıyla veriyor: «in the parking lot, not at the main door». Ana kapı bilerek elenen yer.",
             },
             {
               kind: "gap",
@@ -1001,7 +1001,7 @@ Tell Selma by:         {{19}}`,
           format: "mcq",
           goal: "opinion",
           prompt:
-            "You hear an interview with a woman who organises volunteers. Choose a, b or c for questions 20 to 25. You hear the interview twice.",
+            "You hear an interview with a woman who organizes volunteers. Choose a, b or c for questions 20 to 25. You hear the interview twice.",
           promptTr:
             "Gönüllüleri düzenleyen bir kadınla söyleşi dinleyeceksin. 20–25. maddeler için a, b ya da c'yi seç. Söyleşiyi iki kez dinleyebilirsin.",
           texts: [
@@ -1130,7 +1130,7 @@ On 3 October I filled in the form on your website and offered to help with the h
 
 I would like to make the offer smaller and clearer. I can be at the building every Tuesday from five to seven. I can sort what is on the shelf, throw away what has gone off and write a list of what is missing.
 
-I cannot drive and I cannot come at weekends, because I work on Saturdays.
+I cannot drive and I cannot come on weekends, because I work on Saturdays.
 
 If Tuesdays are no use, please tell me and I will not ask again.
 
@@ -1166,7 +1166,7 @@ Ilja Berg`,
 
 It started because I heard her fall in the hallway with the bag in her hand. I did not ask her; I just did it the next week, and she did not mention it either.
 
-What surprised me was the effect on me rather than on her. Four minutes a week has made me somebody who knows which flats are empty in August. I did not know a single neighbour before, and I had lived here for nine years.`,
+What surprised me was the effect on me rather than on her. Four minutes a week has made me somebody who knows which flats are empty in August. I did not know a single neighbor before, and I had lived here for nine years.`,
             criteria: [
               "Üç içerik noktasının üçü de işlendi mi?",
               "Anlatılan şey gerçekten küçük mü, yoksa görev yanlış mı okunmuş?",
@@ -1226,7 +1226,7 @@ What surprised me was the effect on me rather than on her. Four minutes a week h
           format: "speaking",
           goal: "production",
           prompt:
-            "Talk on your own for about one minute. Compare these two ways of helping: giving money to an organisation every month, or giving two hours of your own time every week. Say which you would choose and why.",
+            "Talk on your own for about one minute. Compare these two ways of helping: giving money to an organization every month, or giving two hours of your own time every week. Say which you would choose and why.",
           promptTr:
             "Yaklaşık bir dakika tek başına konuş. Yardımın şu iki yolunu karşılaştır: her ay bir kuruluşa para vermek mi, yoksa her hafta kendi zamanından iki saat vermek mi? Hangisini seçeceğini ve nedenini söyle.",
           prepSeconds: 60,
@@ -1240,7 +1240,7 @@ What surprised me was the effect on me rather than on her. Four minutes a week h
               { de: "mention one disadvantage of your choice", tr: "Seçtiğin yolun bir olumsuz yanını da söyle" },
             ],
             sample:
-              "Money is easy to give and easy to stop, and nobody in the organisation ever learns your name. Time is the opposite: it is hard to give, and after a few months people expect you. On the other hand, money buys things that volunteers cannot buy, such as a van. I would give the two hours, mainly because I want to see what actually happens to what I give. To be honest, there is a disadvantage: I am worth about nine euros an hour to them, and my monthly payment would be worth more.",
+              "Money is easy to give and easy to stop, and nobody in the organization ever learns your name. Time is the opposite: it is hard to give, and after a few months people expect you. On the other hand, money buys things that volunteers cannot buy, such as a van. I would give the two hours, mainly because I want to see what actually happens to what I give. To be honest, there is a disadvantage: I am worth about nine euros an hour to them, and my monthly payment would be worth more.",
             criteria: [
               "İki yol da gerçekten karşılaştırıldı mı?",
               "Karşılaştırma yapıları kullanıldı mı? (on the other hand, the opposite)",
@@ -1263,7 +1263,7 @@ What surprised me was the effect on me rather than on her. Four minutes a week h
           exchange: [
             { who: "partner", de: "There are four weeks and four of us, so one week each looks obvious. Do you agree?", tr: "Dört hafta ve dört kişiyiz, herkese bir hafta düşmesi apaçık görünüyor. Katılıyor musun?" },
             { who: "you", hint: "Öneriye karşılık ver: kabul et ya da başka bir bölüşüm öner ve gerekçelendir.", expect: "bir öneriye gerekçeli karşılık vermek", seconds: 40 },
-            { who: "partner", de: "The problem is that two of us work at weekends, and the shelf is worst on a Sunday. How do we handle that?", tr: "Sorun şu: aramızdan ikisi hafta sonu çalışıyor ve raf en çok pazar günü kötü oluyor. Bunu nasıl çözeriz?" },
+            { who: "partner", de: "The problem is that two of us work on weekends, and the shelf is worst on a Sunday. How do we handle that?", tr: "Sorun şu: aramızdan ikisi hafta sonu çalışıyor ve raf en çok pazar günü kötü oluyor. Bunu nasıl çözeriz?" },
             { who: "you", hint: "Somut bir çözüm öner ve karşı tarafın söylediğine gönderme yap.", expect: "somut bir çözüm önermek ve karşı tarafın kısıtını hesaba katmak", seconds: 40 },
             { who: "partner", de: "All right. What do we write on the note for the others?", tr: "Peki. Ötekiler için nota ne yazıyoruz?" },
             { who: "you", hint: "Vardığınız düzeni tek tek özetle.", expect: "varılan düzeni açık ve sıralı biçimde özetlemek", seconds: 35 },
@@ -1274,10 +1274,10 @@ What surprised me was the effect on me rather than on her. Four minutes a week h
             points: [
               { de: "respond to a proposal with a reason", tr: "Bir öneriye gerekçeyle karşılık vermek" },
               { de: "solve a practical problem together", tr: "Somut bir sorunu birlikte çözmek" },
-              { de: "summarise the agreement", tr: "Varılan anlaşmayı özetlemek" },
+              { de: "summarize the agreement", tr: "Varılan anlaşmayı özetlemek" },
             ],
             sample:
-              "One week each is fair on paper, but the weeks are not the same: the week after the food delivery is twice the work. You are right that Sunday is the problem, so let us split it: the two of you who work at weekends take the Monday to Friday jobs, and we two take the Sundays. On the note: every Sunday, Tarek and me; Monday to Friday, you two; and everybody empties the shelf before they go on holiday.",
+              "One week each is fair on paper, but the weeks are not the same: the week after the food delivery is twice the work. You are right that Sunday is the problem, so let us split it: the two of you who work on weekends take the Monday to Friday jobs, and we two take the Sundays. On the note: every Sunday, Tarek and me; Monday to Friday, you two; and everybody empties the shelf before they go on holiday.",
             criteria: [
               "İlk öneriye gerekçeli bir karşılık verildi mi?",
               "Karşı tarafın kısıtı (hafta sonu çalışma) çözüme katıldı mı?",

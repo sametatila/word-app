@@ -54,7 +54,7 @@ export const enC1U03: SkillExercise[] = [
       { de: "below", tr: "altında" },
       { de: "entirely", tr: "tümüyle" },
       { de: "tag", tr: "soru eki" },
-      { de: "judgement", tr: "yargı" },
+      { de: "judgment", tr: "yargı" },
       { de: "resolves", tr: "çözüyor" },
       { de: "backwards", tr: "tersinden" },
       { de: "understatement", tr: "az söyleme" },
@@ -77,7 +77,7 @@ export const enC1U03: SkillExercise[] = [
       "The shape is always the same: a negative in front of a word that means the opposite of what is meant. And the effect is always the same too — the claim is made and it is left deniable, so the room can move on without anybody having to answer it.\n" +
       "That deniability is the whole point and it is not politeness for its own sake. A blunt version of the first sentence would require a reply. The understated one is a remark, and a remark can be heard and not taken up.\n" +
       "Hardly self-righteous, is it? Here the device is doubled, because „hardly“ is itself a negative. It carries its own „not“, and a second one cannot be added: „hardly not self-righteous“ is nothing. That is the same trap as „by no means“ and „unless“, two levels below.\n" +
-      "What „hardly self-righteous“ means depends entirely on context, and this is where the device gets difficult. Said of a modest person it is a compliment. Said with a tag question after a speech full of judgement, it reverses and becomes an insult, and nothing in the words tells you which.\n" +
+      "What „hardly self-righteous“ means depends entirely on context, and this is where the device gets difficult. Said of a modest person it is a compliment. Said with a tag question after a speech full of judgment, it reverses and becomes an insult, and nothing in the words tells you which.\n" +
       "The reader resolves it from what came before. So understatement is the one figure in this course that cannot be taught from the sentence alone, and the only way to use it safely is to be sure the sentence before has done enough work for the reader to read this one backwards.",
     questions: [
       {

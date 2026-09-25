@@ -156,7 +156,7 @@ export const DE_A2_W01: QuizWeek = {
         en: {
           options: ["haben", "hatten", "sind", "seid"],
           answer: 2,
-          why: "İngilizcede `we have travelled` hep `have` ile kurulur. Almancada yer değiştiren fiiller `sein` alır; `haben` İngilizceden gelen aktarım.",
+          why: "İngilizcede `we have traveled` hep `have` ile kurulur. Almancada yer değiştiren fiiller `sein` alır; `haben` İngilizceden gelen aktarım.",
         },
       },
     },

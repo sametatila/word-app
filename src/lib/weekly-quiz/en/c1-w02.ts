@@ -34,7 +34,7 @@ export const EN_C1_W02: QuizWeek = {
       body:
         "The number of employees who work at least partly from home has risen sharply in a few years. " +
         "Many firms now provide equipment that would recently have counted as a luxury.\n\n" +
-        "The advantages are obvious: less travelling, more quiet, a freer arrangement of the day. " +
+        "The advantages are obvious: less traveling, more quiet, a freer arrangement of the day. " +
         "Yet the sums do not add up for everyone. Those who work from home accept that the line between " +
         "work and free time becomes blurred. And it is those who are rarely in the office who tend to be " +
         "overlooked when promotions are decided — an effect that is hard to measure but difficult to deny.\n\n" +

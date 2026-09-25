@@ -7,7 +7,7 @@
  { "tr": "Sipariş ve tarih verilmiş mi?", "kind": "free.checklist", "en": "Have the order and the date been given?" },
  { "tr": "Sonda somut bir istek var mı?", "kind": "free.checklist", "en": "Is there a concrete request at the end?" },
  { "tr": "Sonda somut bir öneri var mı?", "kind": "free.checklist", "en": "Is there a concrete suggestion at the end?" },
- { "tr": "Uzun sessizlik için özür dile", "kind": "free.checklist", "en": "Apologise for the long silence" },
+ { "tr": "Uzun sessizlik için özür dile", "kind": "free.checklist", "en": "Apologize for the long silence" },
  { "tr": "Yolda bir olay anlatılmış mı?", "kind": "free.checklist", "en": "Has an incident on the way been described?" },
  { "tr": "Zorluk dürüstçe söylenmiş mi?", "kind": "free.checklist", "en": "Has the difficulty been stated honestly?" },
  { "tr": "Adını yazdın mı? (Ich heiße …)", "kind": "free.checklist", "en": "Did you write your name? (Ich heiße …)" },

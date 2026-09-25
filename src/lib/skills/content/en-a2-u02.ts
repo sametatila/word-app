@@ -47,7 +47,7 @@ export const enA2U02: SkillExercise[] = [
     text:
       "I grew up in a small village near the sea. When I was a child, we didn't have a computer and I didn't use to watch television.\n\n" +
       "First I went to kindergarten in the village, then to the primary school in the next town. Every morning we walked twenty minutes, and in the winter it was very cold.\n\n" +
-      "I used to play football in the yard with the children of our neighbours. My sister used to play with her doll and she used to shout at us because we were loud.\n\n" +
+      "I used to play football in the yard with the children of our neighbors. My sister used to play with her doll and she used to shout at us because we were loud.\n\n" +
       "After that, when I was ten, we moved to the city. At first I didn't like it. The new school was big and I didn't know anybody.\n\n" +
       "But I remember one good thing: the city had a library. I used to read there every afternoon.",
     questions: [

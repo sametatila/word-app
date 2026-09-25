@@ -301,7 +301,7 @@ export const b1U28: SkillExercise[] = [
     intro: "Bir alışverişi karşılaştır. Belirsiz öncülden sonra 'was' gelir.",
     minutes: 8,
     gloss: [
-      { de: "der Katalog", tr: "katalog", en: "catalogue" },
+      { de: "der Katalog", tr: "katalog", en: "catalog" },
       { de: "der Händler", tr: "satıcı", en: "dealer" },
       { de: "wertvoll", tr: "değerli", en: "valuable" },
       { de: "der Durchschnitt", tr: "ortalama", en: "average" },

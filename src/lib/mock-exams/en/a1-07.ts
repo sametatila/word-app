@@ -64,7 +64,7 @@ Cato`,
               genre: "Notice in a shop",
               genreTr: "Mağaza duyurusu",
               title: "WINTER SALE",
-              body: `Coats and shoes: 30 per cent less.
+              body: `Coats and shoes: 30 percent less.
 
 You can change the size in seven days. Bring the paper.
 
@@ -258,7 +258,7 @@ Do not eat or drink here.`,
               title: "SHOES",
               body: `Please do not walk outside with new shoes.
 
-You can walk on the small grey carpet.
+You can walk on the small gray carpet.
 
 Ask for another size at the desk.`,
             },
@@ -270,7 +270,7 @@ Ask for another size at the desk.`,
               title: "PAY HERE",
               body: `Cards and money.
 
-We do not take cheques.
+We do not take checks.
 
 Children under twelve: not alone at the desk.`,
             },
@@ -303,20 +303,20 @@ Thank you!`,
               id: "en-a1-07-l3-12",
               no: 12,
               ref: "s2",
-              text: "You can walk on the grey carpet with new shoes.",
+              text: "You can walk on the gray carpet with new shoes.",
               answer: true,
               explain:
-                "Levha yasağı ve istisnayı ayrı satırlara koyuyor: dışarıda yürünmez, ama «You can walk on the small grey carpet». İki satırı birlikte okumak gerekiyor.",
+                "Levha yasağı ve istisnayı ayrı satırlara koyuyor: dışarıda yürünmez, ama «You can walk on the small gray carpet». İki satırı birlikte okumak gerekiyor.",
             },
             {
               kind: "bool",
               id: "en-a1-07-l3-13",
               no: 13,
               ref: "s3",
-              text: "You cannot pay with a cheque.",
+              text: "You cannot pay with a check.",
               answer: true,
               explain:
-                "Levha kabul edileni ve edilmeyeni ayrı satırlarda veriyor: «Cards and money» ve «We do not take cheques».",
+                "Levha kabul edileni ve edilmeyeni ayrı satırlarda veriyor: «Cards and money» ve «We do not take checks».",
             },
             {
               kind: "bool",
@@ -464,7 +464,7 @@ Eren`,
               situation: "Radyoda hava durumu veriliyor.",
               plays: 2,
               segments: [
-                { text: "Good morning. Today it is cold and grey, four degrees. It will rain in the afternoon. Tomorrow the sun will come back and it will be nine degrees. and it is nine degrees." },
+                { text: "Good morning. Today it is cold and gray, four degrees. It will rain in the afternoon. Tomorrow the sun will come back and it will be nine degrees. and it is nine degrees." },
               ],
             },
             {
@@ -533,10 +533,10 @@ Eren`,
               no: 4,
               ref: "a4",
               text: "How is the weather today?",
-              options: ["Cold and grey", "Warm and sunny", "Nine degrees"],
+              options: ["Cold and gray", "Warm and sunny", "Nine degrees"],
               answer: 0,
               explain:
-                "Kayıt bugünü ve yarını ayırıyor: «Today it is cold and grey, four degrees». Dokuz derece ve güneş yarına ait.",
+                "Kayıt bugünü ve yarını ayırıyor: «Today it is cold and gray, four degrees». Dokuz derece ve güneş yarına ait.",
             },
             {
               kind: "mcq",
@@ -544,7 +544,7 @@ Eren`,
               no: 5,
               ref: "a5",
               text: "What is the problem with the jumper?",
-              options: ["The colour", "The price", "The size"],
+              options: ["The color", "The price", "The size"],
               answer: 2,
               explain:
                 "Müşteri sorunu söylüyor: «It is too small», ve görevli rafta daha büyüğünü gösteriyor. Renk ve fiyat kayıtta hiç geçmiyor.",
@@ -680,7 +680,7 @@ Eren`,
               plays: 2,
               segments: [
                 { text: "Have you got this coat in blue?" },
-                { text: "Only in black and grey. Blue comes next week." },
+                { text: "Only in black and gray. Blue comes next week." },
                 { text: "Then I will come back on Tuesday." },
               ],
             },
@@ -782,7 +782,7 @@ Eren`,
               title: "COAT — ORDER",
               body: `Family name:       Vidal
 First name:        {{1}}
-Colour:            {{2}}
+Color:            {{2}}
 Size:              {{3}}
 Street and number: {{4}}
 Phone:             {{5}}`,
@@ -802,7 +802,7 @@ Phone:             {{5}}`,
               kind: "gap",
               id: "en-a1-07-w1-2",
               no: 2,
-              text: "Colour",
+              text: "Color",
               accept: ["black"],
               explain:
                 "Yönerge rengi veriyor: «He wants the black coat». Renk adları küçük harfle yazılır ve karşılaştırma büyük-küçük harfe bakmıyor.",
@@ -887,7 +887,7 @@ Cato`,
           no: 1,
           format: "speaking",
           goal: "production",
-          prompt: "Talk about clothes and weather. Speak about these words: today's weather — your coat — a colour you like — winter — summer — something you do not like.",
+          prompt: "Talk about clothes and weather. Speak about these words: today's weather — your coat — a color you like — winter — summer — something you do not like.",
           promptTr: "Giysi ve havayı anlat. Şu sözcüklere göre konuş: bugünkü hava — montun — sevdiğin bir renk — kış — yaz — sevmediğin bir şey.",
           prepSeconds: 30,
           speakSeconds: 90,
@@ -896,12 +896,12 @@ Cato`,
             minutes: 2,
             points: [
               { de: "today's weather", tr: "Bugünkü hava" },
-              { de: "your coat and a colour you like", tr: "Montun ve sevdiğin bir renk" },
+              { de: "your coat and a color you like", tr: "Montun ve sevdiğin bir renk" },
               { de: "winter and summer", tr: "Kış ve yaz" },
               { de: "one thing you do not like", tr: "Sevmediğin bir şey" },
             ],
             sample:
-              "Today it is cold and grey, about six degrees. My coat is black and it is very warm. I like blue and I have three blue shirts. In winter I wear a hat every day. In summer I wear a T-shirt and I go to the sea. I do not like rain in the morning.",
+              "Today it is cold and gray, about six degrees. My coat is black and it is very warm. I like blue and I have three blue shirts. In winter I wear a hat every day. In summer I wear a T-shirt and I go to the sea. I do not like rain in the morning.",
             criteria: [
               "Altı sözcüğün her birine değinildi mi?",
               "Derece ve renk söylenebiliyor mu?",
@@ -938,7 +938,7 @@ Cato`,
               { de: "answers to my questions", tr: "Sorulara cevap vermek" },
             ],
             sample:
-              "Where do you buy your clothes? — In a small shop. Have you got a warm coat? — Yes, a black one. How much money do you take to the shop? — About fifty euros. Do you go shopping at the weekend? — Yes, on Saturday. What do you wear when it rains? — A coat and old shoes. How much is a warm coat? — Sixty or seventy euros.",
+              "Where do you buy your clothes? — In a small shop. Have you got a warm coat? — Yes, a black one. How much money do you take to the shop? — About fifty euros. Do you go shopping on the weekend? — Yes, on Saturday. What do you wear when it rains? — A coat and old shoes. How much is a warm coat? — Sixty or seventy euros.",
             criteria: [
               "Beş sözcüğün her biri için bir soru kuruldu mu?",
               "Sorular doğru kuruldu mu? (Where … / Have you got … / How much …)",
@@ -974,7 +974,7 @@ Cato`,
               { de: "ask about changing it politely", tr: "Kibarca değiştirmeyi sormak" },
             ],
             sample:
-              "I need a warm coat, please. In black or grey. — Have you got size 50? — Can I change it, please? I am not sure about the size.",
+              "I need a warm coat, please. In black or gray. — Have you got size 50? — Can I change it, please? I am not sure about the size.",
             criteria: [
               "İstek açıkça söylendi mi? (giysi ve renk)",
               "Beden sorusu doğru kuruldu mu? (Have you got size …)",

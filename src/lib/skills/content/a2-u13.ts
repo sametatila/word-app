@@ -105,7 +105,7 @@ export const a2U13: SkillExercise[] = [
       { de: "die Qualität", tr: "kalite", en: "quality" },
       { de: "preiswert", tr: "uygun fiyatlı", en: "good value" },
       { de: "das Kaufhaus", tr: "büyük mağaza", en: "department store" },
-      { de: "das Einkaufszentrum", tr: "alışveriş merkezi", en: "shopping centre" },
+      { de: "das Einkaufszentrum", tr: "alışveriş merkezi", en: "shopping center" },
       { de: "der Schlussverkauf", tr: "sezon sonu indirimi", en: "end-of-season sale" },
       { de: "beliebt", tr: "sevilen", en: "popular" },
       { de: "sehen", tr: "görmek", en: "to see" },
@@ -353,7 +353,7 @@ export const a2U13: SkillExercise[] = [
         phrases: [
           { de: "Ich muss Ihnen leider sagen, dass ich krank bin.", tr: "maalesef hasta olduğumu bildirmem gerekiyor", en: "unfortunately I must tell you that I am ill" },
           { de: "Das Attest ist im Anhang.", tr: "rapor ekte", en: "the sick note is attached" },
-          { de: "Meine Termine habe ich abgesagt.", tr: "randevularımı iptal ettim", en: "I have cancelled my appointments" },
+          { de: "Meine Termine habe ich abgesagt.", tr: "randevularımı iptal ettim", en: "I have canceled my appointments" },
         ],
         sample:
           "Betreff: Krankmeldung 3. bis 5. April\n\nSehr geehrte Damen und Herren,\n\nich muss Ihnen leider sagen, dass ich seit gestern Abend krank bin. Ich habe starke Migräne und war heute Morgen beim Arzt.\n\nDer Arzt hat mich bis Freitag krankgeschrieben. Das Attest ist im Anhang, das Original verschicke ich heute noch per Post.\n\nMeine Termine am Donnerstag habe ich abgesagt. Die Unterlagen für das Projekt liegen bei meiner Kollegin auf dem Schreibtisch.\n\nIch melde mich am Freitag wieder.\n\nMit freundlichen Grüßen\nLena Fischer",

@@ -41,10 +41,10 @@ export const EN_B2_W01: QuizWeek = {
         "I wanted to give you a quick update on yesterday's meeting with Hartley Logistics, which, as most of you know, had been put off twice.\n\n" +
         "When we arrived, it was clear that their team had already discussed our proposal in detail. " +
         "Their finance director, who had joined the company only a month earlier, raised a number of concerns that none of us had expected. " +
-        "In particular, she argued that our delivery schedule was not realistic and that the price should be reduced by ten per cent.\n\n" +
+        "In particular, she argued that our delivery schedule was not realistic and that the price should be reduced by ten percent.\n\n" +
         "Looking back, we should have prepared more carefully. If we had checked their latest annual report, we would have seen that they have been cutting costs in every department. " +
         "That said, the meeting went better than I had feared. After a long discussion, we agreed on a compromise: we will keep the original price, but we will deliver the first phase two weeks later than planned. " +
-        "In return, Hartley will pay forty per cent of the fee in advance.\n\n" +
+        "In return, Hartley will pay forty percent of the fee in advance.\n\n" +
         "A few points are still open. Their legal team has been reviewing the contract since Monday, and they have asked us not to make any public announcement until it is signed. " +
         "I would therefore ask you not to mention the deal to anyone outside the project team.\n\n" +
         "This is probably the most important contract we have won this year, so thank you all for the work you have been putting in over the last few weeks. I'll keep you updated.\n\n" +
@@ -96,7 +96,7 @@ export const EN_B2_W01: QuizWeek = {
       ref: "t1",
       stem: "What did the two companies agree on?",
       options: [
-        "a ten per cent price reduction and a faster delivery schedule",
+        "a ten percent price reduction and a faster delivery schedule",
         "a public announcement as soon as the meeting was over",
         "a lower price in exchange for an earlier first delivery",
         "the same price, a later first delivery and payment in advance",

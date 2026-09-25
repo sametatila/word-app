@@ -71,9 +71,9 @@
  },
  {
   "conversation": "de-b1-meinung",
-  "sceneEn": "You are discussing a new decision in the city with an acquaintance: restricting cars in the centre. Give your opinion, justify it, and separate the points you agree with from the ones you do not.",
+  "sceneEn": "You are discussing a new decision in the city with an acquaintance: restricting cars in the center. Give your opinion, justify it, and separate the points you agree with from the ones you do not.",
   "partnerEn": "an acquaintance who defends their own view and enjoys an argument",
-  "openingEn": "Have you heard? Cars are going to be banned from the city centre soon. What do you make of that?",
+  "openingEn": "Have you heard? Cars are going to be banned from the city center soon. What do you make of that?",
   "goalEn": "Your opinion has been given with reasons and the points you agree and disagree with have been separated."
  },
  {
@@ -134,7 +134,7 @@
  },
  {
   "conversation": "de-b1-debatte-kurz",
-  "sceneEn": "You are in a short debate: the subject is shops opening at the weekend. Give your view, line up your reasons and close your turn with a summary.",
+  "sceneEn": "You are in a short debate: the subject is shops opening on the weekend. Give your view, line up your reasons and close your turn with a summary.",
   "partnerEn": "a debating opponent who argues the other side and keeps the time",
   "openingEn": "Two minutes each. I'll start: shops should stay shut on Sundays. What do you say to that?",
   "goalEn": "Your view has been given, at least two reasons have been lined up and the turn has been closed with a summary."

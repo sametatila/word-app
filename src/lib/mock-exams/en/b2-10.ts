@@ -219,7 +219,7 @@ The delay, {{12}} the other hand, is measurable, and it is measured in years of 
             {
               kind: "text",
               id: "t3",
-              genre: "Encyclopaedia entry",
+              genre: "Encyclopedia entry",
               genreTr: "Ansiklopedi maddesi",
               title: "Professional recognition",
               body: `Recognition is the process by which a qualification obtained in one country is accepted as {{13}} to a qualification obtained in another.
@@ -362,7 +362,7 @@ Reviews conclude that shortening the process has been discussed for decades with
 
 I want to be careful with this comparison, because it is the kind that proves too much if you let it. They are different people and nine years is long enough for anything to happen. What can be compared is not their careers but the two processes they entered.
 
-Uma's country recognised the qualification in eleven weeks, on the basis of a language test and a written examination in local law. She was working, at a reduced grade, within four months.
+Uma's country recognized the qualification in eleven weeks, on the basis of a language test and a written examination in local law. She was working, at a reduced grade, within four months.
 
 Zsofia's country required a supervised year. That is defensible in itself. What is not usually mentioned is that the supervisors are senior nurses on the same wards that are short-staffed, and the queue for a place was, in her region, twenty-two months long. She spent those months in a warehouse.
 
@@ -833,7 +833,7 @@ The honest reform would be duller and harder: fund the supervisors, or accept th
               plays: 2,
               segments: [
                 {
-                  text: "Thank you. These are the five-year figures, and I will give you the uncomfortable ones as well. We followed four thousand applications. Of those, fifty-two per cent were completed, and the median time to completion was thirty-one months. The board's own assessment accounted for eleven weeks of that; the rest was waiting. Twenty-eight per cent of applicants withdrew, and when we asked why, the most common reason given was money rather than the examinations. Applicants with a second income in the household were twice as likely to finish. And the finding nobody expected: the region with the shortest waiting time was also the region with the fewest supervisors, because it had stopped requiring the supervised year in 2019.",
+                  text: "Thank you. These are the five-year figures, and I will give you the uncomfortable ones as well. We followed four thousand applications. Of those, fifty-two percent were completed, and the median time to completion was thirty-one months. The board's own assessment accounted for eleven weeks of that; the rest was waiting. Twenty-eight percent of applicants withdrew, and when we asked why, the most common reason given was money rather than the examinations. Applicants with a second income in the household were twice as likely to finish. And the finding nobody expected: the region with the shortest waiting time was also the region with the fewest supervisors, because it had stopped requiring the supervised year in 2019.",
                 },
               ],
             },
@@ -845,13 +845,13 @@ The honest reform would be duller and harder: fund the supervisors, or accept th
               title: "Recognition review — findings",
               body: `The review followed {{9}} applications.
 
-{{10}} per cent of them were completed.
+{{10}} percent of them were completed.
 
 The median time to completion was {{11}} months.
 
 The board's own assessment accounted for {{12}} weeks.
 
-{{13}} per cent of applicants withdrew.
+{{13}} percent of applicants withdrew.
 
 The most common reason given for withdrawing was {{14}}.
 
@@ -879,7 +879,7 @@ The region with the shortest wait had stopped requiring the supervised year in {
               text: "Gap 10",
               accept: ["52", "fifty-two"],
               explain:
-                "«fifty-two per cent were completed» — tamamlanan başvuruların payı. Yirmi sekiz ise vazgeçenlerin payı.",
+                "«fifty-two percent were completed» — tamamlanan başvuruların payı. Yirmi sekiz ise vazgeçenlerin payı.",
             },
             {
               kind: "gap",
@@ -909,7 +909,7 @@ The region with the shortest wait had stopped requiring the supervised year in {
               text: "Gap 13",
               accept: ["28", "twenty-eight"],
               explain:
-                "«Twenty-eight per cent of applicants withdrew» — süreçten çekilenlerin oranı.",
+                "«Twenty-eight percent of applicants withdrew» — süreçten çekilenlerin oranı.",
             },
             {
               kind: "gap",
@@ -1273,7 +1273,7 @@ People should be allowed to work at a reduced grade while their file is open, pr
           format: "writing",
           goal: "interaction",
           prompt:
-            "An organisation you know supports people who are waiting for their qualifications to be recognised. Write a proposal for its committee. Describe the problem, set out what you propose and what you deliberately do not propose, and say what evidence would show that it had failed. Write 140 to 190 words.",
+            "An organization you know supports people who are waiting for their qualifications to be recognized. Write a proposal for its committee. Describe the problem, set out what you propose and what you deliberately do not propose, and say what evidence would show that it had failed. Write 140 to 190 words.",
           promptTr:
             "Tanıdığın bir kuruluş, diploma denkliğini bekleyen insanlara destek veriyor. Yönetim kuruluna bir öneri metni yaz. Sorunu anlat, neyi önerdiğini ve bilerek neyi önermediğini ortaya koy ve hangi kanıtın başarısızlığı göstereceğini söyle. 140–190 kelime.",
           items: [],
@@ -1296,7 +1296,7 @@ What I do not propose
 I do not propose a general hardship fund. We tried one in 2021 and it was spent within four months on applications at every stage, which helped nobody past the point where people actually leave.
 
 How we would know it had failed
-Two things. If withdrawal rates among recipients do not fall below twenty per cent within two years, the payment is too small. And if the average wait rises while we are paying, we are subsidising a delay rather than shortening it.`,
+Two things. If withdrawal rates among recipients do not fall below twenty percent within two years, the payment is too small. And if the average wait rises while we are paying, we are subsidising a delay rather than shortening it.`,
             criteria: [
               "Sorun somut sayılarla anlatıldı mı?",
               "Önerilen ve bilerek önerilmeyen ayrı ayrı verildi mi?",
@@ -1341,7 +1341,7 @@ Two things. If withdrawal rates among recipients do not fall below twenty per ce
               { de: "use a second conditional", tr: "İkinci tip koşulu kullanmak" },
             ],
             sample:
-              "In teaching, what you can do is demonstrated in a room with thirty people in it, and almost none of that appears on a certificate. My aunt was an accountant for twenty years and then moved abroad, and her qualification was recognised on paper but not by any employer, so she spent three years doing the same work at a junior grade. If I had to prove my skills abroad, the hardest part would not be an examination; it would be the year in which nobody would let me do the work that would produce the evidence.",
+              "In teaching, what you can do is demonstrated in a room with thirty people in it, and almost none of that appears on a certificate. My aunt was an accountant for twenty years and then moved abroad, and her qualification was recognized on paper but not by any employer, so she spent three years doing the same work at a junior grade. If I had to prove my skills abroad, the hardest part would not be an examination; it would be the year in which nobody would let me do the work that would produce the evidence.",
             criteria: [
               "İlk cevap örnekten gözleme geçebildi mi?",
               "Durum somut mu ve sonucu verildi mi?",

@@ -63,7 +63,7 @@ export const enB2U18: SkillExercise[] = [
       { de: "the stacking", tr: "üst üste yığma" },
       { de: "a limit", tr: "sınır" },
       { de: "grammatical", tr: "dilbilgisel" },
-      { de: "labelling", tr: "etiketleme" },
+      { de: "labeling", tr: "etiketleme" },
       { de: "heavy", tr: "ağır" },
       { de: "pending", tr: "beklemede" },
       { de: "an estimate", tr: "tahmin" },
@@ -76,7 +76,7 @@ export const enB2U18: SkillExercise[] = [
       "Two rules come with it and both are easy to break. The first is order: a cost estimate is an estimate of costs, and an estimate cost would be the cost of an estimate. Reverse them and the meaning reverses with them.\n" +
       "The second is number. The left noun stays singular even when the sense is plural. It is a cost estimate and not a costs estimate; a budget plan and not a budgets plan. Everything that marks plural or possession goes on the noun to the right: cost estimates, the cost estimate's date.\n" +
       "The checking of the bookkeeping is monthly. The approval of the budget plan is pending. Both of those have a nominalisation on the outside and a compound on the inside, which is why a page of this kind is so heavy to read and so easy to sign.\n" +
-      "There is no limit to the stacking, which is the real danger. „Income tax allowance contract term“ is five nouns and a grammatical sentence could contain it. Two is normal. Three needs a reason. Four is a sign that somebody has stopped writing and started labelling.",
+      "There is no limit to the stacking, which is the real danger. „Income tax allowance contract term“ is five nouns and a grammatical sentence could contain it. Two is normal. Three needs a reason. Four is a sign that somebody has stopped writing and started labeling.",
     questions: [
       {
         text: "What is the first noun doing?",
@@ -114,7 +114,7 @@ export const enB2U18: SkillExercise[] = [
           "Two nouns with nothing between them.",
           "The one on the left describes the one on the right.",
           "The left noun stays singular.",
-          "Four is a sign of labelling.",
+          "Four is a sign of labeling.",
         ],
         explain: "Biçim, iş, sayı, en sonda sınır.",
       },

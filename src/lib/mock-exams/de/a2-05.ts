@@ -151,7 +151,7 @@ Die Verbraucherzentrale hat auch etwas Gutes gefunden. Wenn man anruft und künd
 
 Frisch sagt zum Schluss: "Lesen dauert zehn Minuten. Ein falscher Vertrag dauert zwei Jahre."`,
               gloss: [
-                { de: "die Verbraucherzentrale", tr: "tüketici danışma merkezi", en: "consumer advice centre" },
+                { de: "die Verbraucherzentrale", tr: "tüketici danışma merkezi", en: "consumer advice center" },
                 { de: "kündigen", tr: "fesih bildirimi yapmak", en: "to give notice" },
                 { de: "die Zusatzleistung", tr: "ek hizmet", en: "add-on service" },
               ],

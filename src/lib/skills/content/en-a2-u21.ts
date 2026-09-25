@@ -109,7 +109,7 @@ export const enA2U21: SkillExercise[] = [
     text:
       "Question: My daughter is thirteen and wants an account. What do you say?\n" +
       "Answer 1: I don't think social media is good for that age. But I don't believe you can stop it either. We made the account together and we follow each other. Two years now, no problem.\n" +
-      "Answer 2: I have had this account for two years and I post photos at the weekend. That is all. Nobody needs to see my Tuesday.\n" +
+      "Answer 2: I have had this account for two years and I post photos on the weekend. That is all. Nobody needs to see my Tuesday.\n" +
       "Answer 3: Read the comments under any post about a school. Then decide. I don't think a child of thirteen should read those.\n" +
       "Answer 4: My rule at home: the phone sleeps in the kitchen. Not because I don't trust her — because I don't trust the thing that keeps her awake.\n" +
       "Question: Thank you. We decided: yes to the account, no to the phone in the bedroom.",
@@ -148,7 +148,7 @@ export const enA2U21: SkillExercise[] = [
         answer: 0,
         items: [
           "We made the account together.",
-          "I post photos at the weekend.",
+          "I post photos on the weekend.",
           "Read the comments, then decide.",
           "The phone sleeps in the kitchen.",
         ],

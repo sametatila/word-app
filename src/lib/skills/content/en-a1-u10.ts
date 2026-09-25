@@ -181,7 +181,7 @@ export const enA1U10: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Kaan", text: "What are you going to do at the weekend?" },
+      { speaker: "Kaan", text: "What are you going to do on the weekend?" },
       { speaker: "Sena", text: "I'm going to visit my parents. They live near the sea." },
       { speaker: "Kaan", text: "Nice! Are you going to stay there?" },
       { speaker: "Sena", text: "Yes, two days. On Sunday I'm going to travel back early." },
@@ -196,7 +196,7 @@ export const enA1U10: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "What is Sena going to do at the weekend?",
+        text: "What is Sena going to do on the weekend?",
         options: ["visit her parents", "work", "walk in the city"],
         answer: 0,
         explain: "„I'm going to visit my parents.“ — şehirde yürüyen Kaan.",
@@ -262,7 +262,7 @@ export const enA1U10: SkillExercise[] = [
       { speaker: "Ali", text: "On Monday and Wednesday I walk in the park near my office." },
       { speaker: "Ali", text: "In the afternoon I sometimes listen to music on the radio." },
       { speaker: "Ali", text: "On Friday I meet my friends. We watch a film together." },
-      { speaker: "Ali", text: "At the weekend I am going to travel. I'm going to stay at the sea for two days." },
+      { speaker: "Ali", text: "On the weekend I am going to travel. I'm going to stay at the sea for two days." },
     ],
     questions: [
       {
@@ -273,7 +273,7 @@ export const enA1U10: SkillExercise[] = [
       },
       {
         text: "When does Ali meet his friends?",
-        options: ["on Friday", "on Monday", "at the weekend"],
+        options: ["on Friday", "on Monday", "on the weekend"],
         answer: 0,
         explain: "„On Friday I meet my friends.“ — pazartesi parkta yürüyor.",
       },
@@ -301,17 +301,17 @@ export const enA1U10: SkillExercise[] = [
           "I start work at eight.",
           "I don't like watching television.",
           "On Friday I meet my friends.",
-          "At the weekend I am going to travel.",
+          "On the weekend I am going to travel.",
         ],
         explain: "Önce iş, sonra sevdikleri, sonra cuma, en son hafta sonu planı.",
       },
       {
         kind: "short_answer",
-        text: "What is Ali going to do at the weekend?",
+        text: "What is Ali going to do on the weekend?",
         options: [],
         answer: 0,
         accept: ["travel", "stay at the sea", "he is going to travel"],
-        explain: "„At the weekend I am going to travel.“",
+        explain: "„On the weekend I am going to travel.“",
       },
     ],
   },

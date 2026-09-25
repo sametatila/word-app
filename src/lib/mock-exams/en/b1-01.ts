@@ -86,7 +86,7 @@ export const EN_B1_01: MockPaper = {
               genre: "Advert",
               genreTr: "İlan",
               title: "Weekend job",
-              body: `We need somebody for our garden centre on Saturdays. Experience is welcome but not necessary; we will train you. You must be free from March until October, because we do not open in winter.`,
+              body: `We need somebody for our garden center on Saturdays. Experience is welcome but not necessary; we will train you. You must be free from March until October, because we do not open in winter.`,
             },
             {
               kind: "text",
@@ -136,7 +136,7 @@ export const EN_B1_01: MockPaper = {
               id: "en-b1-01-l1-4",
               no: 4,
               ref: "m4",
-              text: "What does the garden centre ask for?",
+              text: "What does the garden center ask for?",
               options: ["Somebody who has worked in a garden before", "Somebody who is free for eight months of the year", "Somebody who can work every day of the week"],
               answer: 1,
               explain:
@@ -206,7 +206,7 @@ export const EN_B1_01: MockPaper = {
               kind: "match",
               id: "en-b1-01-l2-9",
               no: 9,
-              text: "Mehmet works in an office all week and wants to learn a creative skill at the weekend.",
+              text: "Mehmet works in an office all week and wants to learn a creative skill on the weekend.",
               answer: "g",
               explain:
                 "Atölye baharda altı cumartesi sürüyor, yani hafta içi işiyle çakışmıyor, ve öğrenilen şey yaratıcı bir beceri. Okuma kulübü de gönüllü bir uğraş ama perşembe öğleden sonra, hafta içi çalışan biri için uygun değil.",
@@ -215,7 +215,7 @@ export const EN_B1_01: MockPaper = {
               kind: "match",
               id: "en-b1-01-l2-10",
               no: 10,
-              text: "Ivana wants to do something useful for her neighbourhood and can give one afternoon a week.",
+              text: "Ivana wants to do something useful for her neighborhood and can give one afternoon a week.",
               answer: "c",
               explain:
                 "İlan hem gönüllülüğü hem süreyi karşılıyor: haftada bir saat, perşembe öğleden sonra, şehir kütüphanesinde. Ivana haftada bir öğleden sonra verebiliyor. Dil değişimi de ücretsiz ama kendi yararına, mahalleye bir hizmet değil.",
@@ -242,7 +242,7 @@ The first year was difficult. Meetings that used to take an hour still took an h
 
 What changed things was not a new rule but a new habit. Departments began to write down which meetings actually produced a decision. After six months, a third of the regular meetings had disappeared. Nobody missed them, and this surprised even the people who had defended them.
 
-The numbers are less dramatic than the headlines. Sick days fell by eleven per cent, which is real but small. Applications for jobs at the council, however, doubled. If a town wants good staff and cannot pay more, this may be the strongest argument.
+The numbers are less dramatic than the headlines. Sick days fell by eleven percent, which is real but small. Applications for jobs at the council, however, doubled. If a town wants good staff and cannot pay more, this may be the strongest argument.
 
 There is one group for which the model has not worked well. In services that must be open every day, such as care homes, a shorter week means more staff, not the same staff working differently. Alsdale has not solved this, and the council no longer promises that it will.
 
@@ -264,7 +264,7 @@ My own view after two years of reporting on this town is simple. The four-day we
               options: [
                 "The same amount of work was pushed into fewer days",
                 "The staff lost part of their salary",
-                "The council cancelled the plan for six months",
+                "The council canceled the plan for six months",
                 "Other towns stopped visiting Alsdale",
               ],
               answer: 0,
@@ -290,7 +290,7 @@ My own view after two years of reporting on this town is simple. The four-day we
               kind: "mcq",
               id: "en-b1-01-l3-13",
               no: 13,
-              text: "What is the writer's attitude to the figure of eleven per cent?",
+              text: "What is the writer's attitude to the figure of eleven percent?",
               options: [
                 "It proves that the model works",
                 "It is genuine but not very important",
@@ -519,7 +519,7 @@ You write that the lane has made the journey slower for drivers. This is true, b
 
 If the council {{28}} removed the lane last year, those passengers would be in cars today, and the road would be worse for everybody.
 
-I have lived in this street for eleven years and I have never seen the pavement so busy. People are walking again in the street {{29}} they used to drive two hundred metres to the shop.
+I have lived in this street for eleven years and I have never seen the sidewalk so busy. People are walking again in the street {{29}} they used to drive two hundred meters to the shop.
 
 The lane is not perfect. But it should be judged {{30}} the number of people it moves, not by the speed of a single car.`,
             },
@@ -600,7 +600,7 @@ The lane is not perfect. But it should be judged {{30}} the number of people it 
               situation: "Bir tren istasyonunda anons yapılıyor.",
               plays: 2,
               segments: [
-                { text: "The nine forty to Norwich will leave from platform 2 today. Passengers with tickets for the earlier train, which was cancelled, can use this service without paying extra." },
+                { text: "The nine forty to Norwich will leave from platform 2 today. Passengers with tickets for the earlier train, which was canceled, can use this service without paying extra." },
               ],
             },
             {
@@ -684,7 +684,7 @@ The lane is not perfect. But it should be judged {{30}} the number of people it 
               id: "en-b1-01-h1-1",
               no: 1,
               ref: "a1",
-              text: "What do passengers of the cancelled train have to do?",
+              text: "What do passengers of the canceled train have to do?",
               options: ["Nothing, their ticket is valid", "Buy a new ticket at the ticket office", "Wait for a later service"],
               answer: 0,
               explain:
@@ -927,7 +927,7 @@ The lane is not perfect. But it should be judged {{30}} the number of people it 
               plays: 2,
               segments: [
                 {
-                  text: "Thank you all for coming. Our scheme is called Neighbours First and it started in 2021 with only eleven people. Today we have four hundred volunteers. The idea is simple: you give two hours a week, always on the same day, and you work in your own district. Most people help with shopping or with reading, but the fastest growing area is help with forms — letters from offices, applications, that kind of thing. Before you start you come to one training evening. It lasts three hours and it is the only training we ask for. After that, your coordinator calls you once a month. We do not pay volunteers, but we pay your travel, and there is a free hot meal at the monthly meeting. One last point, and it is important: if you cannot come one week, you tell your coordinator, not the family. That rule protects everybody.",
+                  text: "Thank you all for coming. Our scheme is called Neighbors First and it started in 2021 with only eleven people. Today we have four hundred volunteers. The idea is simple: you give two hours a week, always on the same day, and you work in your own district. Most people help with shopping or with reading, but the fastest growing area is help with forms — letters from offices, applications, that kind of thing. Before you start you come to one training evening. It lasts three hours and it is the only training we ask for. After that, your coordinator calls you once a month. We do not pay volunteers, but we pay your travel, and there is a free hot meal at the monthly meeting. One last point, and it is important: if you cannot come one week, you tell your coordinator, not the family. That rule protects everybody.",
                 },
               ],
             },
@@ -936,7 +936,7 @@ The lane is not perfect. But it should be judged {{30}} the number of people it 
               id: "n1",
               genre: "Notes",
               genreTr: "Not kâğıdı",
-              title: "Neighbours First — notes",
+              title: "Neighbors First — notes",
               body: `Started in:              {{14}}
 Number of volunteers:    {{15}}
 Time given each week:    {{16}} hours
@@ -1029,7 +1029,7 @@ If you cannot come:      tell your {{19}}`,
                 { speaker: "Host", text: "And the village you chose — was it the cheapest one you found?" },
                 { speaker: "Petra", text: "No, and that was the one thing I got right. I chose a village with a shop, a bus and a school. Cheaper places had none of the three. A house you cannot leave is not a saving." },
                 { speaker: "Host", text: "What surprised you most in the first year?" },
-                { speaker: "Petra", text: "How much time I got back. In the city I travelled ninety minutes a day. Here it is twenty. But I have to say, the first winter was harder than I expected. It gets dark and nothing happens." },
+                { speaker: "Petra", text: "How much time I got back. In the city I traveled ninety minutes a day. Here it is twenty. But I have to say, the first winter was harder than I expected. It gets dark and nothing happens." },
                 { speaker: "Host", text: "Do you miss the city?" },
                 { speaker: "Petra", text: "I miss two things: concerts and the possibility of changing my mind at eight in the evening. I do not miss the noise, and I really do not miss paying two thirds of my salary for a room." },
                 { speaker: "Host", text: "Would you tell other people to do the same?" },
@@ -1070,7 +1070,7 @@ If you cannot come:      tell your {{19}}`,
               no: 22,
               ref: "d1",
               text: "What surprised her most?",
-              options: ["The amount of time she gained", "The cost of heating the house", "How friendly the neighbours were"],
+              options: ["The amount of time she gained", "The cost of heating the house", "How friendly the neighbors were"],
               answer: 0,
               explain:
                 "Soru doğrudan soruluyor ve cevap «How much time I got back» — günde doksan dakikadan yirmiye. Isıtma ve komşular kayıtta hiç geçmiyor; kış zorluğu ayrı bir ekleme, sürpriz olarak adlandırılmıyor.",
@@ -1178,7 +1178,7 @@ Selin Aydin`,
               { de: "Explain why it matters to you personally.", tr: "Senin için neden önemli olduğunu açıkla." },
               { de: "Give a visitor one concrete piece of advice.", tr: "Bir ziyaretçiye somut bir tavsiye ver." },
             ],
-            sample: `The best thing about my town is the river path. It runs for eleven kilometres, from the old bridge to the forest, and it costs nothing.
+            sample: `The best thing about my town is the river path. It runs for eleven kilometers, from the old bridge to the forest, and it costs nothing.
 
 For me it is not really about sport. I walk there when I have a problem I cannot solve at my desk. Something about moving in a straight line for an hour makes decisions easier. I have solved more work problems on that path than in any meeting.
 
@@ -1226,7 +1226,7 @@ If you visit, do not start at the bridge like everybody else. Start at the fores
               { de: "use a second conditional in the last answer", tr: "Son cevapta ikinci tip koşulu kullanmak" },
             ],
             sample:
-              "I have worked as a nurse for four years, mostly with older patients. What I like is that no two days are the same. My town has changed a lot: they closed the old market and built a shopping centre, which I think was a mistake. If I could change one thing, I would make the buses run later, because at the moment the last bus leaves at half past ten.",
+              "I have worked as a nurse for four years, mostly with older patients. What I like is that no two days are the same. My town has changed a lot: they closed the old market and built a shopping center, which I think was a mistake. If I could change one thing, I would make the buses run later, because at the moment the last bus leaves at half past ten.",
             criteria: [
               "Cevaplar geliştirildi mi, yoksa tek cümlede mi kaldı?",
               "Present perfect (`I have worked …`) doğru kullanıldı mı?",
@@ -1323,7 +1323,7 @@ If you visit, do not start at the bridge like everybody else. Start at the fores
               { de: "agree or disagree in a nuanced way", tr: "Katılırken ya da karşı çıkarken ince ayrım yapmak" },
             ],
             sample:
-              "I think a few hours a week are good, but not more. A job gives you a reason to organise your time. However, I have seen people work thirty hours and fail their exams, so it depends on the number of hours. I would partly agree with that idea: a job teaches you about people, but it does not teach you the subject.",
+              "I think a few hours a week are good, but not more. A job gives you a reason to organize your time. However, I have seen people work thirty hours and fail their exams, so it depends on the number of hours. I would partly agree with that idea: a job teaches you about people, but it does not teach you the subject.",
             criteria: [
               "Görüş açıkça bildirildi mi?",
               "Kısmi katılım ifadeleri kullanıldı mı? (I partly agree, it depends on …)",

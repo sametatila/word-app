@@ -1,10 +1,10 @@
 [
  {
   "conversation": "de-a1-wetter-smalltalk",
-  "sceneEn": "You have met your neighbour at the entrance to the building. Talk about the weather, say what you are doing today, and ask about their plans too.",
-  "partnerEn": "a chatty neighbour who walks the dog every morning",
+  "sceneEn": "You have met your neighbor at the entrance to the building. Talk about the weather, say what you are doing today, and ask about their plans too.",
+  "partnerEn": "a chatty neighbor who walks the dog every morning",
   "openingEn": "Good morning! Lovely weather today, isn't it?",
-  "goalEn": "A short conversation about the weather has been had and you have both learnt the other's plans for the day."
+  "goalEn": "A short conversation about the weather has been had and you have both learned the other's plans for the day."
  },
  {
   "conversation": "de-a1-park",
@@ -39,7 +39,7 @@
   "sceneEn": "You are on a first aid course. The instructor is pointing at parts of the body: give their names with the articles and ask for the German of the ones you do not know.",
   "partnerEn": "a witty and very patient first aid instructor",
   "openingEn": "Welcome to the course! Tell me, what's this called in German?",
-  "goalEn": "Every part of the body pointed at has been named with its article and you have learnt the German for the ones you did not know."
+  "goalEn": "Every part of the body pointed at has been named with its article and you have learned the German for the ones you did not know."
  },
  {
   "conversation": "de-a1-weh-tun",
@@ -141,10 +141,10 @@
  },
  {
   "conversation": "de-a1-perfekt-sein",
-  "sceneEn": "A friend is asking where you went at the weekend. Say where you went, how you got there, and whether you stayed at home for a day.",
-  "partnerEn": "a friend who loves travelling and keeps suggesting places",
-  "openingEn": "Where did you travel to at the weekend?",
-  "goalEn": "Where and how you travelled, and how you spent one of the days, have been described."
+  "sceneEn": "A friend is asking where you went on the weekend. Say where you went, how you got there, and whether you stayed at home for a day.",
+  "partnerEn": "a friend who loves traveling and keeps suggesting places",
+  "openingEn": "Where did you travel to on the weekend?",
+  "goalEn": "Where and how you traveled, and how you spent one of the days, have been described."
  },
  {
   "conversation": "de-a1-gestern",
@@ -165,13 +165,13 @@
   "sceneEn": "You are talking about the seasons and your birthdays with someone you have just met. Say which season you like and give the date of your birthday.",
   "partnerEn": "a talkative acquaintance who loves the summer",
   "openingEn": "Which season do you like best?",
-  "goalEn": "The season you like and the date of your birthday have been given, and you have learnt theirs."
+  "goalEn": "The season you like and the date of your birthday have been given, and you have learned theirs."
  },
  {
   "conversation": "de-a1-a1-rueckblick",
-  "sceneEn": "An acquaintance is asking how your German is going. Say what you have learnt in the past tense, say what you can do now, and say what comes next.",
+  "sceneEn": "An acquaintance is asking how your German is going. Say what you have learned in the past tense, say what you can do now, and say what comes next.",
   "partnerEn": "an encouraging acquaintance who is proud of you",
   "openingEn": "So, how's it going with your German?",
-  "goalEn": "What you have learnt, what you can do now and your next goal have all been described."
+  "goalEn": "What you have learned, what you can do now and your next goal have all been described."
  }
 ]

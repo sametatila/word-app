@@ -44,7 +44,7 @@ export const enB2P17: SkillExercise[] = [
       "The less time we had, the more carefully we chose what to spend it on. Meetings were the " +
       "first casualty: we now hold about half as many as we used to, and nobody has asked for " +
       "them back.\n\n" +
-      "Sick days fell sharply, by around forty per cent, although six months is not nearly long " +
+      "Sick days fell sharply, by around forty percent, although six months is not nearly long " +
       "enough to be sure that will last. People also seemed noticeably less tired on Monday " +
       "mornings, which is harder to measure but easy to see.\n\n" +
       "Not everything improved. Thursdays became much more intense than any day used to be, and " +
@@ -86,11 +86,11 @@ export const enB2P17: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Sick days fell by around ___ per cent.",
+        text: "Sick days fell by around ___ percent.",
         options: [],
         answer: 0,
         accept: ["forty", "40"],
-        explain: "„Sick days fell sharply, by around forty per cent“.",
+        explain: "„Sick days fell sharply, by around forty percent“.",
       },
       {
         kind: "short_answer",
@@ -128,7 +128,7 @@ export const enB2P17: SkillExercise[] = [
       { de: "worthless", tr: "değersiz" },
       { de: "wellbeing", tr: "iyi oluş" },
       { de: "productivity", tr: "verimlilik" },
-      { de: "judgement", tr: "yargı" },
+      { de: "judgment", tr: "yargı" },
       { de: "turnover", tr: "personel devri" },
       { de: "absence", tr: "devamsızlık" },
       { de: "dramatic", tr: "çarpıcı" },
@@ -140,7 +140,7 @@ export const enB2P17: SkillExercise[] = [
       { text: "In most published trials, around nine in ten firms chose to continue afterwards. Critics point out that firms expecting to fail would rarely have signed up in the first place." },
       { speaker: "Ms Petrova", text: "That doesn't make the results worthless. It means they tell you what happens in the best conditions, which is not nearly as useful as knowing what happens in ordinary ones." },
       { text: "The measures also vary. Wellbeing is usually recorded through surveys, while productivity is often reported by the managers who chose to run the trial." },
-      { speaker: "Ms Petrova", text: "The more a result depends on a manager's own judgement, the more carefully I'd read it. Sick days and staff turnover are much harder to argue with." },
+      { speaker: "Ms Petrova", text: "The more a result depends on a manager's own judgment, the more carefully I'd read it. Sick days and staff turnover are much harder to argue with." },
       { text: "Those harder figures are generally positive too, if a little less dramatic: fewer people leave, and absence falls, at least during the first year." },
       { speaker: "Ms Petrova", text: "What we still don't have is a large trial in hospitals, schools or factories, where the work can't simply be done faster. That's where the real test is." },
     ],

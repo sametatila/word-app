@@ -1,10 +1,10 @@
 [
  {
   "conversation": "de-a1-hallo",
-  "sceneEn": "You have just moved into your block and you meet a neighbour on the stairs. Introduce yourself: say your name, where you are from and where you live.",
-  "partnerEn": "a curious but polite neighbour",
+  "sceneEn": "You have just moved into your block and you meet a neighbor on the stairs. Introduce yourself: say your name, where you are from and where you live.",
+  "partnerEn": "a curious but polite neighbor",
   "openingEn": "Hello! You're new here, aren't you? What's your name?",
-  "goalEn": "Your neighbour has learnt your name, where you are from and which floor you live on, and you have both said you are pleased to meet."
+  "goalEn": "Your neighbor has learned your name, where you are from and which floor you live on, and you have both said you are pleased to meet."
  },
  {
   "conversation": "de-a1-wie-gehts",
@@ -18,21 +18,21 @@
   "sceneEn": "It is your first day at work and you are meeting your new boss. Use the polite form (Sie) throughout: ask their name, introduce yourself and say where you live.",
   "partnerEn": "a serious but warm boss",
   "openingEn": "Good afternoon! Are you new here on the team?",
-  "goalEn": "You have learnt your boss's name and where they live, and they have told you your first task."
+  "goalEn": "You have learned your boss's name and where they live, and they have told you your first task."
  },
  {
   "conversation": "de-a1-woher",
   "sceneEn": "It is the first day of a German course and you are getting to know the person next to you. Ask where they are from and where they live, and talk about yourself too.",
   "partnerEn": "a shy but friendly fellow student",
   "openingEn": "Hello! I'm new here too. Where are you from?",
-  "goalEn": "You have both learnt where the other is from and where they live, and decided to sit next to each other in the course."
+  "goalEn": "You have both learned where the other is from and where they live, and decided to sit next to each other in the course."
  },
  {
   "conversation": "de-a1-sprachen",
   "sceneEn": "Someone at the next table in a café has struck up a conversation with you. Ask which languages they speak and talk about your own.",
   "partnerEn": "a curious and patient student",
   "openingEn": "Excuse me, do you speak German?",
-  "goalEn": "You have each learnt which languages the other speaks and decided which language to carry on in."
+  "goalEn": "You have each learned which languages the other speaks and decided which language to carry on in."
  },
  {
   "conversation": "de-a1-zahlen",
@@ -50,10 +50,10 @@
  },
  {
   "conversation": "de-a1-beruf",
-  "sceneEn": "You are at a party at a neighbour's flat and someone you have just met asks what you do. Say your job, what work it involves and where you work.",
+  "sceneEn": "You are at a party at a neighbor's flat and someone you have just met asks what you do. Say your job, what work it involves and where you work.",
   "partnerEn": "a sociable, slightly nosy guest",
   "openingEn": "Good evening! And what do you do for a living?",
-  "goalEn": "The other person has learnt your job and where you work, and has told you about their own."
+  "goalEn": "The other person has learned your job and where you work, and has told you about their own."
  },
  {
   "conversation": "de-a1-alter",
@@ -64,7 +64,7 @@
  },
  {
   "conversation": "de-a1-formular",
-  "sceneEn": "You are registering your address at the town hall and the clerk is filling in the form for you. Give your name, your address, your postcode and the town you live in.",
+  "sceneEn": "You are registering your address at the town hall and the clerk is filling in the form for you. Give your name, your address, your zip code and the town you live in.",
   "partnerEn": "a formal but helpful clerk",
   "openingEn": "Good afternoon! What's your name, please?",
   "goalEn": "Every field on the form has been filled in and the clerk has told you the registration is complete."
@@ -74,14 +74,14 @@
   "sceneEn": "You are at a work dinner and someone at the table has asked you to talk about your family. Introduce your mother, your father and your children, and give their names.",
   "partnerEn": "a polite table companion who is genuinely interested",
   "openingEn": "Do tell me about your family. Do you have children?",
-  "goalEn": "The person at the table has learnt who your family is made up of, and has told you something about their own."
+  "goalEn": "The person at the table has learned who your family is made up of, and has told you something about their own."
  },
  {
   "conversation": "de-a1-geschwister",
   "sceneEn": "You are on a coffee break at work and talking about your families with a colleague. Talk about your brothers and sisters, and ask about theirs.",
   "partnerEn": "a chatty colleague from a large family",
   "openingEn": "I have three sisters. And you, do you have any brothers or sisters?",
-  "goalEn": "You have both learnt how many brothers and sisters the other has and who lives where."
+  "goalEn": "You have both learned how many brothers and sisters the other has and who lives where."
  },
  {
   "conversation": "de-a1-kein",

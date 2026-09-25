@@ -16,7 +16,7 @@ export const enB2P10: SkillExercise[] = [
     course: "en",
     level: "B2",
     skill: "reading",
-    title: "Fix the System or Fix the Behaviour?",
+    title: "Fix the System or Fix the Behavior?",
     genre: "guide",
     intro: "Bir kılavuz metin: bir sorunu çözerken önce neye bakmalı, hangi sırayla, hangi hata tekrarlanıyor.",
     gloss: [
@@ -34,8 +34,8 @@ export const enB2P10: SkillExercise[] = [
     ],
     minutes: 8,
     text:
-      "Fix the system or fix the behaviour?\n\n" +
-      "When something keeps going wrong, organisations reach for training. " +
+      "Fix the system or fix the behavior?\n\n" +
+      "When something keeps going wrong, organizations reach for training. " +
       "Training is visible, it can be scheduled, and it produces a list of names. " +
       "It is also, in most cases, the last thing that should be tried.\n\n" +
       "A useful order of questions looks like this.\n\n" +
@@ -49,16 +49,16 @@ export const enB2P10: SkillExercise[] = [
       "Third, and only third: is this actually a knowledge problem? Sometimes it is. " +
       "But before you decide that, check whether the people doing it wrong can explain " +
       "the rule when asked. If they can, they do not need training.\n\n" +
-      "By the time most organisations reach this third question, they have already run the " +
+      "By the time most organizations reach this third question, they have already run the " +
       "training and the problem has come back. " +
       "This is not because people are careless. It is because training competes with " +
       "everything that happens after it, while a default competes with nothing.\n\n" +
       "One caution. Systems thinking can become its own excuse. " +
       "“The process made me do it” is true often enough to be dangerous, " +
-      "and a team that never looks at behaviour will eventually protect somebody it shouldn't.",
+      "and a team that never looks at behavior will eventually protect somebody it shouldn't.",
     questions: [
       {
-        text: "Why do organisations reach for training first?",
+        text: "Why do organizations reach for training first?",
         options: [
           "It is visible and produces a list of names.",
           "It is the cheapest option.",

@@ -272,7 +272,7 @@ export const enC1P10: SkillExercise[] = [
         sample:
           "In March I wrote that the new reporting rule had cut processing times by a third. " +
           "That was wrong. The figure came from a single region in a single quarter, " +
-          "and across the service as a whole the reduction was closer to six per cent. " +
+          "and across the service as a whole the reduction was closer to six percent. " +
           "A reader who works in one of the regions I had not looked at wrote to tell me, " +
           "with the numbers attached, which is a more generous response than I had earned. " +
           "What remains true is the direction: times have fallen everywhere I can measure, " +

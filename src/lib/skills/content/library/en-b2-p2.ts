@@ -50,7 +50,7 @@ export const enB2P2: SkillExercise[] = [
       "Then there is the part that appears in no column at all. A building that is demolished takes its " +
       "embodied carbon with it: the energy that was spent making the concrete, which was released decades ago " +
       "and can never be recovered. A study of forty projects in three countries found that a conversion which " +
-      "is thirty per cent more expensive on paper is usually cheaper once that carbon is counted at any " +
+      "is thirty percent more expensive on paper is usually cheaper once that carbon is counted at any " +
       "realistic price.\n\n" +
       "None of this means that every old building should be kept. There are structures whose floors cannot " +
       "carry modern services and whose windows cannot be enlarged without taking the walls apart. Architects " +

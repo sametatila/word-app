@@ -90,7 +90,7 @@ export const enC1U17: SkillExercise[] = [
       "We have no factory farming here; we have species-appropriate housing. Read the first half again and ask why it is not „we do not have factory farming here“.\n" +
       "The two are not the same sentence, and English speakers choose between them without thinking about it. „No“ is a determiner: it stands in front of the noun and denies the whole category. „Not“ is a sentence negator, and with a verb like „have“ it needs the little helping verb; what it denies is that this is the case here.\n" +
       "So the first version says there is no such thing on this farm as a kind. The second says that whatever is here, it is not that. The difference is small in the sentence and large in a room, because the second one cannot be answered by pointing at one shed and the first one can.\n" +
-      "A neighbouring language has only one of these. Its single negative determiner covers both jobs, stands in front of the noun in every case, and carries no choice with it at all. Which means a speaker coming from there reaches for „no“ every time, because that is the shape the reflex already has, and lands on the emphatic English version in the places where English would have used the quiet one.\n" +
+      "A neighboring language has only one of these. Its single negative determiner covers both jobs, stands in front of the noun in every case, and carries no choice with it at all. Which means a speaker coming from there reaches for „no“ every time, because that is the shape the reflex already has, and lands on the emphatic English version in the places where English would have used the quiet one.\n" +
       "That is the warning this unit is for, and it runs the other way from most of them. The error is not a missing word. It is a word that is present and one size too loud, and nobody corrects it because nothing in it is wrong.\n" +
       "Now look at where this level has already used the loud version. „We have no deviance here.“ „We have no formation of elites here.“ Three times, and every time the sentence went on to grant the thing under another name. That is no accident: „no“ denies the category, which leaves the second half free to admit the instance, and the two halves do not contradict each other.\n" +
       "A world market price is not a producer price. And here is the other negator doing its own work — two noun phrases, one sentence, and what is denied is that these two are the same thing.\n" +
@@ -110,10 +110,10 @@ export const enC1U17: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The neighbouring language has only one of these.",
+        text: "The neighboring language has only one of these.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„A neighbouring language has only one of these.“",
+        explain: "„A neighboring language has only one of these.“",
       },
       {
         kind: "gapfill",
@@ -271,7 +271,7 @@ export const enC1U17: SkillExercise[] = [
       { de: "calculation", tr: "hesap" },
       { de: "a generation", tr: "kuşak" },
       { de: "a slope", tr: "yamaç" },
-      { de: "a centimetre", tr: "santimetre" },
+      { de: "a centimeter", tr: "santimetre" },
       { de: "a century", tr: "yüzyıl" },
       { de: "downstream", tr: "akıntı aşağısı" },
       { de: "a well", tr: "kuyu" },
@@ -286,7 +286,7 @@ export const enC1U17: SkillExercise[] = [
     segments: [
       { speaker: "Doruk", text: "Soil erosion may well deplete the field in one generation. The hedge is right there and I keep it, because on a flat field it will not." },
       { speaker: "Sıla", text: "So it depends on the slope." },
-      { speaker: "Doruk", text: "On the slope and on what is holding the top. A centimetre takes a century to build and a bad autumn to move, and those two numbers are the whole subject." },
+      { speaker: "Doruk", text: "On the slope and on what is holding the top. A centimeter takes a century to build and a bad autumn to move, and those two numbers are the whole subject." },
       { speaker: "Sıla", text: "To overfertilize might mean nitrate pollution downstream." },
       { speaker: "Doruk", text: "Might, and usually does, and the word that matters in that line is the last one. The cost does not appear on the field it came from." },
       { speaker: "Sıla", text: "It appears in a well in the next village." },
@@ -300,10 +300,10 @@ export const enC1U17: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "How long does a centimetre take to build?",
+        text: "How long does a centimeter take to build?",
         options: ["a century", "a generation", "an autumn"],
         answer: 0,
-        explain: "„A centimetre takes a century to build and a bad autumn to move…“",
+        explain: "„A centimeter takes a century to build and a bad autumn to move…“",
       },
       {
         text: "Where does the cost appear?",

@@ -627,7 +627,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
       { de: "Ich kann Regeln zur Mülltrennung verstehen und erklären.", tr: "Çöp ayrıştırma kurallarını anlayıp anlatabiliyorum.", en: "I can understand and explain recycling rules." },
       { de: "Ich kann einen Vorschlag machen und ihn begründen.", tr: "Bir öneri sunup gerekçelendirebiliyorum.", en: "I can make a proposal and justify it." },
       { de: "Ich kann über Verkehr und Mobilität diskutieren.", tr: "Ulaşım üzerine tartışabiliyorum.", en: "I can discuss traffic and mobility." },
-      { de: "Ich kann beschreiben, wie sich mein Viertel verändert hat.", tr: "Mahallemin nasıl değiştiğini anlatabiliyorum.", en: "I can describe how my neighbourhood has changed." },
+      { de: "Ich kann beschreiben, wie sich mein Viertel verändert hat.", tr: "Mahallemin nasıl değiştiğini anlatabiliyorum.", en: "I can describe how my neighborhood has changed." },
       { de: "Ich kann sagen, warum ich mich engagiere.", tr: "Neden gönüllü çalıştığımı söyleyebiliyorum.", en: "I can say why I volunteer." },
     ],
     listening: {
@@ -1145,7 +1145,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
       { de: "Ich kann meinen Beruf und meine Aufgaben beschreiben.", tr: "Mesleğimi ve görevlerimi anlatabiliyorum.", en: "I can describe my job and tasks." },
       { de: "Ich kann im Vorstellungsgespräch über meinen Weg sprechen.", tr: "İş görüşmesinde kendi yolumu anlatabiliyorum.", en: "I can talk about my path in a job interview." },
       { de: "Ich kann mit der Chefin über Arbeitszeit sprechen.", tr: "Yöneticiyle çalışma saatini konuşabiliyorum.", en: "I can talk to my manager about working hours." },
-      { de: "Ich kann Zahlen aus einer Studie zusammenfassen.", tr: "Bir araştırmanın sayılarını özetleyebiliyorum.", en: "I can summarise figures from a study." },
+      { de: "Ich kann Zahlen aus einer Studie zusammenfassen.", tr: "Bir araştırmanın sayılarını özetleyebiliyorum.", en: "I can summarize figures from a study." },
       { de: "Ich kann sagen, was mir an einer Arbeit wichtig ist.", tr: "Bir işte benim için neyin önemli olduğunu söyleyebiliyorum.", en: "I can say what matters to me in a job." },
     ],
     listening: {

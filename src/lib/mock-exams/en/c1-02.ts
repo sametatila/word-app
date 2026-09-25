@@ -132,15 +132,15 @@ Whether any of this could have been prevented is an open question. Several citie
               genre: "Academic prose",
               genreTr: "Akademik metin",
               title: "What a checklist cannot carry",
-              body: `It is not the existence of a procedure {{7}} distinguishes a skilled practitioner from a careless one, but the ability to recognise the case in which the procedure does not apply.
+              body: `It is not the existence of a procedure {{7}} distinguishes a skilled practitioner from a careless one, but the ability to recognize the case in which the procedure does not apply.
 
-This is why written protocols, {{8}} valuable, have limits that are structural rather than temporary. A protocol encodes the situations its authors anticipated; the situations they did not anticipate are precisely the ones {{9}} which judgement is required.
+This is why written protocols, {{8}} valuable, have limits that are structural rather than temporary. A protocol encodes the situations its authors anticipated; the situations they did not anticipate are precisely the ones {{9}} which judgment is required.
 
-Nor is the remedy simply more detail. The longer a document becomes, the {{10}} likely it is to be consulted at the moment of need, and a procedure that is not consulted has no effect whatever on behaviour.
+Nor is the remedy simply more detail. The longer a document becomes, the {{10}} likely it is to be consulted at the moment of need, and a procedure that is not consulted has no effect whatever on behavior.
 
 What experienced practitioners appear to acquire is not a longer list {{11}} a faster sense of when the list has stopped describing the room they are in.
 
-That sense resists documentation, which is inconvenient for institutions and, arguably, the reason {{12}} apprenticeship has survived in fields where almost everything else has been standardised.`,
+That sense resists documentation, which is inconvenient for institutions and, arguably, the reason {{12}} apprenticeship has survived in fields where almost everything else has been standardized.`,
             },
           ],
           items: [
@@ -169,7 +169,7 @@ That sense resists documentation, which is inconvenient for institutions and, ar
               text: "Gap 9",
               accept: ["in"],
               explain:
-                "«the ones ___ which judgement is required» yapısında ilgi zamirinden önce bir edat gerekiyor ve `require judgement in a situation` eşdizimi `in` ister. `for which` ya da `on which` bu adla doğal durmaz.",
+                "«the ones ___ which judgment is required» yapısında ilgi zamirinden önce bir edat gerekiyor ve `require judgment in a situation` eşdizimi `in` ister. `for which` ya da `on which` bu adla doğal durmaz.",
             },
             {
               kind: "gap",
@@ -218,11 +218,11 @@ That sense resists documentation, which is inconvenient for institutions and, ar
               title: "Standardisation",
               body: `Standardisation is the process by which a variable practice is replaced by a single agreed method, usually with a gain in {{13}} and a loss that is harder to name.
 
-The gain is easy to measure. A standardised procedure can be taught quickly, audited cheaply, and compared across sites; without it, large organisations would be {{14}}.
+The gain is easy to measure. A standardized procedure can be taught quickly, audited cheaply, and compared across sites; without it, large organizations would be {{14}}.
 
-The loss is a question of scale rather than principle. In a small workshop, {{15}} from the method is a judgement; in a chain of four hundred branches it is a compliance failure, and the two are treated identically by the audit.
+The loss is a question of scale rather than principle. In a small workshop, {{15}} from the method is a judgment; in a chain of four hundred branches it is a compliance failure, and the two are treated identically by the audit.
 
-Critics of over-standardisation are sometimes accused of {{16}}, as though any defence of local judgement were a wish to return to an imagined past. The better versions of the argument are more specific.
+Critics of over-standardisation are sometimes accused of {{16}}, as though any defense of local judgment were a wish to return to an imagined past. The better versions of the argument are more specific.
 
 They hold that a standard should carry an explicit account of its own {{17}}: the conditions under which it applies. Where that account is missing, practitioners are left to infer it, and their inferences are {{18}} inconsistent.`,
             },
@@ -244,7 +244,7 @@ They hold that a standard should carry an explicit account of its own {{17}}: th
               text: "GOVERN",
               accept: ["ungovernable"],
               explain:
-                "«without it, large organisations would be ___» yapısında bir sıfat gerekiyor ve anlam olumsuz: yönetilemez olurlardı. Kökten `governable` sıfatı, ondan da `ungovernable` türetiliyor. Olumsuzluk eki olmadan cümle kendi koşuluyla çelişir.",
+                "«without it, large organizations would be ___» yapısında bir sıfat gerekiyor ve anlam olumsuz: yönetilemez olurlardı. Kökten `governable` sıfatı, ondan da `ungovernable` türetiliyor. Olumsuzluk eki olmadan cümle kendi koşuluyla çelişir.",
             },
             {
               kind: "gap",
@@ -253,7 +253,7 @@ They hold that a standard should carry an explicit account of its own {{17}}: th
               text: "DEPART",
               accept: ["departure"],
               explain:
-                "`___ from the method is a judgement` yapısında özne konumunda bir ad var: yöntemden sapma. `depart` fiilinin adı `departure`. Ulaç biçimi (`departing`) de dilbilgisel olurdu ama kökten türetme görevinde beklenen biçim addır ve devamındaki `it is a compliance failure` bir adı gösteriyor.",
+                "`___ from the method is a judgment` yapısında özne konumunda bir ad var: yöntemden sapma. `depart` fiilinin adı `departure`. Ulaç biçimi (`departing`) de dilbilgisel olurdu ama kökten türetme görevinde beklenen biçim addır ve devamındaki `it is a compliance failure` bir adı gösteriyor.",
             },
             {
               kind: "gap",
@@ -356,7 +356,7 @@ The tendency of the word is to flatten exactly this difference. Scaling is not n
 
 It is precisely this distinction that the vocabulary of scale erases. When we ask whether a practice can be scaled, we are asking an engineering question about a matter that is often not an engineering matter at all, and the framing tends to produce the answer it assumes.
 
-I should be careful here, because the counter-argument is strong and I have no wish to caricature it. A method that helps ten people is, on any reasonable view, worth less than one that helps ten thousand, and appeals to craft have historically been used to defend arrangements that were merely comfortable for the practitioner. Anyone who has watched a profession resist an obvious improvement will recognise the pattern.
+I should be careful here, because the counter-argument is strong and I have no wish to caricature it. A method that helps ten people is, on any reasonable view, worth less than one that helps ten thousand, and appeals to craft have historically been used to defend arrangements that were merely comfortable for the practitioner. Anyone who has watched a profession resist an obvious improvement will recognize the pattern.
 
 My reply is not that scale is bad but that the question is asked in the wrong order. We currently ask what can be scaled and then decide what to value. The better sequence asks what is worth preserving and then, and only then, how much of it can be delivered at volume. That ordering would not settle every case, but it would at least stop us from redefining the goal to fit the method.
 
@@ -423,7 +423,7 @@ Whether any institution will adopt it is another matter. Sequencing of this kind
               options: [
                 "It will be adopted once the costs are better understood",
                 "It will be rejected by practitioners rather than institutions",
-                "It will be tested in a small number of organisations first",
+                "It will be tested in a small number of organizations first",
                 "It will rarely be proposed, because it is hard to defend",
               ],
               answer: 3,
@@ -445,7 +445,7 @@ Whether any institution will adopt it is another matter. Sequencing of this kind
             {
               key: "a",
               label: "a — Writer A",
-              body: "The defence of craft is almost always made by people who already hold a position within it. I do not say that makes it wrong, but it should make us ask who is not in the conversation: the ten thousand people who never got near the practice because it was rationed by apprenticeship.",
+              body: "The defense of craft is almost always made by people who already hold a position within it. I do not say that makes it wrong, but it should make us ask who is not in the conversation: the ten thousand people who never got near the practice because it was rationed by apprenticeship.",
             },
             {
               key: "b",
@@ -460,7 +460,7 @@ Whether any institution will adopt it is another matter. Sequencing of this kind
             {
               key: "d",
               label: "d — Writer D",
-              body: "The economics are usually left out. A practice survives at small scale only where somebody absorbs the cost, and historically that somebody has been the practitioner, working unpaid hours. Any defence of craft that does not say who pays is not an argument, it is a preference.",
+              body: "The economics are usually left out. A practice survives at small scale only where somebody absorbs the cost, and historically that somebody has been the practitioner, working unpaid hours. Any defense of craft that does not say who pays is not an argument, it is a preference.",
             },
             {
               key: "e",
@@ -503,7 +503,7 @@ Whether any institution will adopt it is another matter. Sequencing of this kind
               text: "Which writer says that a case is incomplete unless it identifies who bears the cost?",
               answer: "d",
               explain:
-                "Yazar D koşulu açıkça koyuyor: «Any defence of craft that does not say who pays is not an argument, it is a preference». Maliyeti kimin üstlendiği söylenmedikçe savunma eksik sayılıyor.",
+                "Yazar D koşulu açıkça koyuyor: «Any defense of craft that does not say who pays is not an argument, it is a preference». Maliyeti kimin üstlendiği söylenmedikçe savunma eksik sayılıyor.",
             },
           ],
         },
@@ -556,7 +556,7 @@ None of this shows that the original project was misconceived. It shows that the
             {
               key: "b",
               label: "b",
-              body: "It is worth pausing on that denial, because it is easy to read as modesty and almost certainly was not. Asked to say how they had reached a judgement, several replied that the judgement had arrived before any reasoning they could report.",
+              body: "It is worth pausing on that denial, because it is easy to read as modesty and almost certainly was not. Asked to say how they had reached a judgment, several replied that the judgment had arrived before any reasoning they could report.",
             },
             {
               key: "c",
@@ -627,17 +627,17 @@ None of this shows that the original project was misconceived. It shows that the
             {
               key: "a",
               label: "a — Master baker",
-              body: "People ask for the recipe and I give it to them, and it does not help, which used to embarrass me. The recipe is accurate. What it cannot carry is the twenty small corrections you make on a humid morning, and those corrections are the trade. I have stopped apologising for that and started teaching mornings instead.",
+              body: "People ask for the recipe and I give it to them, and it does not help, which used to embarrass me. The recipe is accurate. What it cannot carry is the twenty small corrections you make on a humid morning, and those corrections are the trade. I have stopped apologizing for that and started teaching mornings instead.",
             },
             {
               key: "b",
               label: "b — Operations director",
-              body: "We standardised eleven processes last year and nine of them were straightforwardly better. The two that were not are the ones I think about: in both cases we removed a step that looked redundant and was in fact where an experienced person noticed something. We have put those steps back, which cost us more than leaving them would have.",
+              body: "We standardized eleven processes last year and nine of them were straightforwardly better. The two that were not are the ones I think about: in both cases we removed a step that looked redundant and was in fact where an experienced person noticed something. We have put those steps back, which cost us more than leaving them would have.",
             },
             {
               key: "c",
               label: "c — Nurse educator",
-              body: "The literature says exposure to cases is what builds judgement, and I do not dispute it. My difficulty is practical: a student on a ward sees whatever comes through the door that fortnight, and nobody is arranging for them to see the rare presentation. We call it experience and treat it as though it were curriculum.",
+              body: "The literature says exposure to cases is what builds judgment, and I do not dispute it. My difficulty is practical: a student on a ward sees whatever comes through the door that two weeks, and nobody is arranging for them to see the rare presentation. We call it experience and treat it as though it were curriculum.",
             },
             {
               key: "d",
@@ -689,7 +689,7 @@ None of this shows that the original project was misconceived. It shows that the
               text: "Which text mentions a reaction the writer has since given up?",
               answer: "a",
               explain:
-                "Fırıncı eski tepkisini ve bıraktığını söylüyor: tarifin işe yaramaması «used to embarrass me» ve «I have stopped apologising for that». Vazgeçilen şey utanç ve özür.",
+                "Fırıncı eski tepkisini ve bıraktığını söylüyor: tarifin işe yaramaması «used to embarrass me» ve «I have stopped apologizing for that». Vazgeçilen şey utanç ve özür.",
             },
             {
               kind: "match",
@@ -730,10 +730,10 @@ None of this shows that the original project was misconceived. It shows that the
               situation: "İki eğitmen bir çıraklık programını konuşuyor.",
               plays: 2,
               segments: [
-                { speaker: "Marta", text: "The programme works, and I say that as someone who spent two years arguing against it. What I still cannot defend is who gets in." },
+                { speaker: "Marta", text: "The program works, and I say that as someone who spent two years arguing against it. What I still cannot defend is who gets in." },
                 { speaker: "Sami", text: "The selection is not ours, though. We take who the employers send." },
                 { speaker: "Marta", text: "Which is precisely the objection, not an answer to it. If we accept a pipeline we did not design, we inherit whatever it filters out, and we should at least say so in the report." },
-                { speaker: "Sami", text: "I would go along with saying so. I would resist the next step, which is to make the programme responsible for fixing recruitment across an entire industry." },
+                { speaker: "Sami", text: "I would go along with saying so. I would resist the next step, which is to make the program responsible for fixing recruitment across an entire industry." },
               ],
             },
             {
@@ -769,7 +769,7 @@ None of this shows that the original project was misconceived. It shows that the
               id: "en-c1-02-h1-1",
               no: 1,
               ref: "a1",
-              text: "What is Marta's position on the programme?",
+              text: "What is Marta's position on the program?",
               options: ["She still opposes it after the argument of the last two years", "She accepts that it works but objects to its intake", "She wants the employers to run the selection"],
               answer: 1,
               explain:
@@ -781,7 +781,7 @@ None of this shows that the original project was misconceived. It shows that the
               no: 2,
               ref: "a1",
               text: "Where does Sami draw a line?",
-              options: ["At making the programme fix industry recruitment", "At acknowledging the problem in the written report", "At continuing to accept employer selection"],
+              options: ["At making the program fix industry recruitment", "At acknowledging the problem in the written report", "At continuing to accept employer selection"],
               answer: 0,
               explain:
                 "Sami ilk adımı kabul ediyor («I would go along with saying so») ve sınırı ikinci adıma çekiyor: programı bütün bir sektörün işe alımını düzeltmekle sorumlu tutmak.",
@@ -978,9 +978,9 @@ The entry test has been abandoned because the correlation was close to {{13}}.
               plays: 1,
               segments: [
                 { speaker: "Chair", text: "Hana, you have written that professional resistance to standardisation is usually misdiagnosed. In what way?" },
-                { speaker: "Hana", text: "It is read as status defence, and sometimes that is exactly what it is. But in the cases I have studied, the resistance clusters around a small number of steps, and those steps almost always turn out to be the ones where the practitioner is absorbing variation that the standard does not see." },
-                { speaker: "Chair", text: "Ruben, you design these systems. Is that recognisable?" },
-                { speaker: "Ruben", text: "Recognisable and, I would add, predictable. We can usually tell in advance which steps will be defended, and we very rarely act on that knowledge, because the project is judged on how much has been standardised rather than on what happened afterwards." },
+                { speaker: "Hana", text: "It is read as status defense, and sometimes that is exactly what it is. But in the cases I have studied, the resistance clusters around a small number of steps, and those steps almost always turn out to be the ones where the practitioner is absorbing variation that the standard does not see." },
+                { speaker: "Chair", text: "Ruben, you design these systems. Is that recognizable?" },
+                { speaker: "Ruben", text: "Recognizable and, I would add, predictable. We can usually tell in advance which steps will be defended, and we very rarely act on that knowledge, because the project is judged on how much has been standardized rather than on what happened afterwards." },
                 { speaker: "Chair", text: "So the measurement drives the design?" },
                 { speaker: "Ruben", text: "It does, and I want to be careful not to sound as though I am blaming a spreadsheet. Somebody chose that measure, and the choice was reasonable at the time; what is unreasonable is that nobody revisits it." },
                 { speaker: "Chair", text: "Ella, from a union perspective?" },
@@ -988,9 +988,9 @@ The entry test has been abandoned because the correlation was close to {{13}}.
                 { speaker: "Hana", text: "That matches my data, and it complicates my own argument, because it means resistance from senior staff can be genuine and self-interested at the same time." },
                 { speaker: "Ella", text: "I would put it more strongly. Those two things are not in tension. A person can be defending the work and their position with the same sentence, and demanding that they choose is a rhetorical trick." },
                 { speaker: "Chair", text: "One recommendation each." },
-                { speaker: "Ruben", text: "Measure what happened six months later, not how much was standardised." },
+                { speaker: "Ruben", text: "Measure what happened six months later, not how much was standardized." },
                 { speaker: "Ella", text: "Ask who absorbs the variation, and put the answer in the proposal." },
-                { speaker: "Hana", text: "Mine is duller. Publish the cases where standardisation was tried and reversed. At present those disappear, and every organisation learns the same lesson from scratch." },
+                { speaker: "Hana", text: "Mine is duller. Publish the cases where standardisation was tried and reversed. At present those disappear, and every organization learns the same lesson from scratch." },
               ],
               gloss: [
                 { de: "to misdiagnose", tr: "yanlış teşhis koymak", en: "falsch diagnostizieren" },
@@ -1005,10 +1005,10 @@ The entry test has been abandoned because the correlation was close to {{13}}.
               id: "en-c1-02-h3-15",
               no: 15,
               ref: "c1",
-              text: "How does Hana characterise professional resistance?",
+              text: "How does Hana characterize professional resistance?",
               options: [
-                "As always a defence of status",
-                "As never a defence of status",
+                "As always a defense of status",
+                "As never a defense of status",
                 "As concentrated on steps that absorb hidden variation",
                 "As a reaction to the speed at which the change was introduced",
               ],
@@ -1104,13 +1104,13 @@ The entry test has been abandoned because the correlation was close to {{13}}.
               text: "What is Ruben's recommendation?",
               options: [
                 "To measure outcomes some months after the change",
-                "To standardise fewer processes each year",
+                "To standardize fewer processes each year",
                 "To involve practitioners in the design stage",
-                "To publish the full cost of each standardisation programme",
+                "To publish the full cost of each standardisation program",
               ],
               answer: 0,
               explain:
-                "Ruben ölçütü değiştirmeyi öneriyor: «Measure what happened six months later, not how much was standardised». Katılım ya da maliyet yayımı onun önerisi değil.",
+                "Ruben ölçütü değiştirmeyi öneriyor: «Measure what happened six months later, not how much was standardized». Katılım ya da maliyet yayımı onun önerisi değil.",
             },
             {
               kind: "mcq",
@@ -1148,7 +1148,7 @@ The entry test has been abandoned because the correlation was close to {{13}}.
             { key: "f", label: "to reject an analogy being used in the debate" },
             { key: "g", label: "to describe a cost that is not recorded anywhere" },
             { key: "h", label: "to ask for the decision to be delayed" },
-            { key: "i", label: "to defend a colleague who has been criticised" },
+            { key: "i", label: "to defend a colleague who has been criticized" },
             { key: "j", label: "to point out that the evidence is too thin to act on" },
           ],
           texts: [
@@ -1324,14 +1324,14 @@ The entry test has been abandoned because the correlation was close to {{13}}.
           format: "writing",
           goal: "production",
           prompt:
-            "You have attended a seminar on training and expertise. Write an essay for your tutor summarising which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. Written procedures allow a skill to be taught to many people quickly.\n2. Some parts of a skill are learned only by working alongside an experienced person.\n\nWrite 220 to 260 words.",
+            "You have attended a seminar on training and expertise. Write an essay for your tutor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. Written procedures allow a skill to be taught to many people quickly.\n2. Some parts of a skill are learned only by working alongside an experienced person.\n\nWrite 220 to 260 words.",
           promptTr:
             "Eğitim ve uzmanlık üzerine bir seminere katıldın. Danışmanın için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Yazılı prosedürler bir beceriyi çok kişiye hızla öğretmeyi sağlar.\n2. Bir becerinin bazı parçaları ancak deneyimli biriyle çalışarak öğrenilir.\n\n220–260 kelime yaz.",
           items: [],
           rubric: {
             minWords: 220,
             points: [
-              { de: "Summarise both points fairly.", tr: "İki noktayı da adil biçimde özetle." },
+              { de: "Summarize both points fairly.", tr: "İki noktayı da adil biçimde özetle." },
               { de: "Say which is more important and justify the choice.", tr: "Hangisinin daha önemli olduğunu söyle ve seçimi gerekçelendir." },
               { de: "Give your own view, distinct from the summary.", tr: "Özetten ayrı olarak kendi görüşünü ver." },
             ],
@@ -1339,7 +1339,7 @@ The entry test has been abandoned because the correlation was close to {{13}}.
 
 The case for written procedure is a case about reach. A documented method can be taught in a classroom, audited afterwards and revised centrally when it turns out to be wrong. Against the alternative, which depends on the availability of an experienced person, this is an enormous practical advantage, and it is worth adding that apprenticeship has historically rationed entry to a trade as effectively as any examination.
 
-The second point concerns what a document can hold. The claim is not that procedures are inaccurate but that they describe the anticipated case, and that the judgement worth having is exercised precisely where the description stops applying. On this account, working alongside someone is not a slower version of reading; it is the only exposure to unanticipated cases that a learner reliably gets.
+The second point concerns what a document can hold. The claim is not that procedures are inaccurate but that they describe the anticipated case, and that the judgment worth having is exercised precisely where the description stops applying. On this account, working alongside someone is not a slower version of reading; it is the only exposure to unanticipated cases that a learner reliably gets.
 
 I regard the second as the more important of the two, though for a narrower reason than is usually offered. Procedures can be improved indefinitely and their limits are visible; what cannot be recovered, once a generation of practitioners has gone, is the stock of cases in their heads.
 
@@ -1361,7 +1361,7 @@ My own view is that the choice is a false one imposed by budgeting. The interest
           format: "writing",
           goal: "interaction",
           prompt:
-            "An organisation you know is about to standardise a process that experienced staff carry out differently. Write a report for its management. Describe what is currently done, assess the likely effects of standardising it, and recommend a course of action. Write 220 to 260 words.",
+            "An organization you know is about to standardize a process that experienced staff carry out differently. Write a report for its management. Describe what is currently done, assess the likely effects of standardising it, and recommend a course of action. Write 220 to 260 words.",
           promptTr:
             "Tanıdığın bir kurum, deneyimli çalışanların farklı farklı yürüttüğü bir süreci standartlaştırmak üzere. Yönetime bir rapor yaz. Şu an ne yapıldığını anlat, standartlaştırmanın olası etkilerini değerlendir ve bir yol öner. 220–260 kelime yaz.",
           items: [],
@@ -1445,7 +1445,7 @@ I recommend standardising the process, but not before the four steps have been e
           format: "speaking",
           goal: "production",
           prompt:
-            "Talk on your own for about two minutes on this question: \"When an organisation replaces a variable practice with a single standard method, what is gained and what is lost?\" Give at least one example and say where you would draw the line.",
+            "Talk on your own for about two minutes on this question: \"When an organization replaces a variable practice with a single standard method, what is gained and what is lost?\" Give at least one example and say where you would draw the line.",
           promptTr:
             "Şu soru üzerine yaklaşık iki dakika tek başına konuş: \"Bir kurum değişken bir uygulamayı tek bir standart yöntemle değiştirdiğinde ne kazanılır, ne kaybedilir?\" En az bir örnek ver ve sınırı nereye çekeceğini söyle.",
           prepSeconds: 60,
@@ -1459,7 +1459,7 @@ I recommend standardising the process, but not before the four steps have been e
               { de: "say where you would draw the line and admit a weakness in it", tr: "Sınırı nereye çekeceğini söyle ve zayıf yanını kabul et" },
             ],
             sample:
-              "The gains are easy to state and genuinely large: a standard can be taught quickly, checked cheaply and corrected in one place. The losses are harder to see because they are absences. When a hospital I worked with standardised its discharge letters, the letters improved in every measurable respect and one thing disappeared: the free-text line where a nurse used to write what worried her. That line had no field, no audit and, it turned out, no replacement. Where I would draw the line is at steps that exist because somebody added them after something went wrong. Those should be examined individually before removal, not swept up in a general tidying. The weakness in my rule is obvious. Almost every step in an old process can be described that way by whoever performs it, and I have no clean test for distinguishing a hard-won correction from a habit. What I would say is that the burden of proof currently sits in the wrong place.",
+              "The gains are easy to state and genuinely large: a standard can be taught quickly, checked cheaply and corrected in one place. The losses are harder to see because they are absences. When a hospital I worked with standardized its discharge letters, the letters improved in every measurable respect and one thing disappeared: the free-text line where a nurse used to write what worried her. That line had no field, no audit and, it turned out, no replacement. Where I would draw the line is at steps that exist because somebody added them after something went wrong. Those should be examined individually before removal, not swept up in a general tidying. The weakness in my rule is obvious. Almost every step in an old process can be described that way by whoever performs it, and I have no clean test for distinguishing a hard-won correction from a habit. What I would say is that the burden of proof currently sits in the wrong place.",
             criteria: [
               "Kazanç ve kayıp ayrı ayrı ortaya konuldu mu?",
               "Somut bir örnek verildi mi?",
@@ -1480,7 +1480,7 @@ I recommend standardising the process, but not before the four steps have been e
             "Bir eğitim birimi bir yıllık sabit bir bütçeye sahip. Seçenekleri benimle konuş ve ilk üç için bir öncelik sırasında anlaş.",
           prepSeconds: 40,
           exchange: [
-            { who: "partner", de: "The options are: writing a full procedure manual, paying experienced staff to mentor, filming demonstrations, running a case-discussion group every fortnight, and buying an off-the-shelf course. Which two would you defend, and on what criterion?", tr: "Seçenekler: eksiksiz bir yordam el kitabı yazmak, deneyimli personele mentorluk için ödeme yapmak, gösterimleri filme almak, iki haftada bir vaka tartışma grubu yapmak ve hazır bir kurs satın almak. Hangi ikisini savunursun, hangi ölçütle?" },
+            { who: "partner", de: "The options are: writing a full procedure manual, paying experienced staff to mentor, filming demonstrations, running a case-discussion group every two weeks, and buying an off-the-shelf course. Which two would you defend, and on what criterion?", tr: "Seçenekler: eksiksiz bir yordam el kitabı yazmak, deneyimli personele mentorluk için ödeme yapmak, gösterimleri filme almak, iki haftada bir vaka tartışma grubu yapmak ve hazır bir kurs satın almak. Hangi ikisini savunursun, hangi ölçütle?" },
             { who: "you", hint: "İki seçenek seç ve ölçütünü açıkça adlandır.", expect: "iki seçeneği seçmek ve seçim ölçütünü açıkça adlandırmak", seconds: 50 },
             { who: "partner", de: "Let me press you. Mentoring costs the most per learner by a wide margin, and it disappears the moment those staff retire. Is that not exactly the wrong thing to buy with a one-year budget?", tr: "Üsteleyeyim. Mentorluk öğrenci başına açık ara en pahalısı ve o personel emekli olduğu anda ortadan kalkıyor. Bir yıllık bütçeyle alınacak en yanlış şey tam da bu değil mi?" },
             { who: "you", hint: "İtirazın gücünü kabul et, sonra ya konumunu değiştir ya da neden değiştirmediğini açıkla.", expect: "güçlü bir itirazı kabul etmek ve konumunu revize etmek ya da savunmasını gerekçelendirmek", seconds: 50 },

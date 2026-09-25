@@ -15,7 +15,7 @@
  },
  {
   "conversation": "de-a2-streit",
-  "sceneEn": "You had an argument with a friend yesterday and you have rung today to talk. Say what happened, apologise and suggest making up.",
+  "sceneEn": "You had an argument with a friend yesterday and you have rung today to talk. Say what happened, apologize and suggest making up.",
   "partnerEn": "a friend who is still a little hurt but open to talking",
   "openingEn": "Hello. I'll be honest, I'm still a bit cross. What happened yesterday?",
   "goalEn": "The incident has been described, an apology has been made, it has been explained that it was not deliberate and the two of you have made up."
@@ -30,7 +30,7 @@
  {
   "conversation": "de-a2-neujahr",
   "sceneEn": "You are talking about your new year's resolutions with a friend on New Year's Eve. Give at least two goals and argue about whether one of them is realistic.",
-  "partnerEn": "a sceptical friend who breaks their resolutions every year",
+  "partnerEn": "a skeptical friend who breaks their resolutions every year",
   "openingEn": "And? Have you set yourself anything for this year?",
   "goalEn": "Two goals have been given, the realism of one has been argued over and you have both agreed on one resolution."
  },
@@ -81,7 +81,7 @@
   "sceneEn": "You are back from holiday and showing a friend the photos on your phone. Describe each photo briefly and say which one you like best.",
   "partnerEn": "a friend who looks at the photos and asks questions",
   "openingEn": "Oh, show me! Where was that, then?",
-  "goalEn": "At least three photos have been described, the favourite has been chosen and the reason has been given."
+  "goalEn": "At least three photos have been described, the favorite has been chosen and the reason has been given."
  },
  {
   "conversation": "de-a2-podcast",
@@ -134,10 +134,10 @@
  },
  {
   "conversation": "de-a2-volkshochschule",
-  "sceneEn": "You have come to the adult education centre and you want to enrol on a course. Ask which courses they offer, find out when it starts and enrol.",
-  "partnerEn": "an adviser holding the course programme",
+  "sceneEn": "You have come to the adult education center and you want to enroll on a course. Ask which courses they offer, find out when it starts and enroll.",
+  "partnerEn": "an adviser holding the course program",
   "openingEn": "Good afternoon! Are you interested in a particular course?",
-  "goalEn": "A course has been chosen, the start date and the timetable have been found out and the enrolment has been completed."
+  "goalEn": "A course has been chosen, the start date and the timetable have been found out and the enrollment has been completed."
  },
  {
   "conversation": "de-a2-zukunftsplaene",
@@ -148,7 +148,7 @@
  },
  {
   "conversation": "de-a2-traumjob",
-  "sceneEn": "You are talking to an adviser at the job centre. Say which occupation you want and why, and ask what steps are needed.",
+  "sceneEn": "You are talking to an adviser at the job center. Say which occupation you want and why, and ask what steps are needed.",
   "partnerEn": "an adviser who guides people through choosing a career",
   "openingEn": "Tell me: what would you like to do for a living?",
   "goalEn": "An occupation and the reason for it have been given, the training needed has been found out and a next step has been agreed."
@@ -169,7 +169,7 @@
  },
  {
   "conversation": "de-a2-a2-rueckblick",
-  "sceneEn": "It is the last day of the course and your teacher is asking what you have learnt this term. Say what you have managed, what is still hard and what you will do next.",
+  "sceneEn": "It is the last day of the course and your teacher is asking what you have learned this term. Say what you have managed, what is still hard and what you will do next.",
   "partnerEn": "a teacher closing the term who is proud of their student",
   "openingEn": "That was our last day of the course. What can you do now that you couldn't do before?",
   "goalEn": "At least two gains and one difficulty have been described and the next step has been given."

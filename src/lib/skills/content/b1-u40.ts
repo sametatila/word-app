@@ -368,7 +368,7 @@ export const b1U40: SkillExercise[] = [
     minutes: 12,
     gloss: [
       { de: "die Umfrage", tr: "anket", en: "survey" },
-      { de: "analysieren", tr: "çözümlemek", en: "to analyse" },
+      { de: "analysieren", tr: "çözümlemek", en: "to analyze" },
       { de: "enthalten", tr: "içermek", en: "to contain" },
       { de: "häufig", tr: "sık", en: "frequently" },
       { de: "langweilig", tr: "sıkıcı", en: "boring" },

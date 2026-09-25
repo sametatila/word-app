@@ -303,7 +303,7 @@ export const b1U29: SkillExercise[] = [
     gloss: [
       { de: "das Leder", tr: "deri", en: "leather" },
       { de: "der Kunststoff", tr: "plastik malzeme", en: "synthetic material" },
-      { de: "der Schmuck", tr: "takı", en: "jewellery" },
+      { de: "der Schmuck", tr: "takı", en: "jewelry" },
       { de: "das Teil", tr: "parça", en: "part" },
     ],
     tasks: [

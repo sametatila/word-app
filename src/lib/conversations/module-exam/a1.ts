@@ -317,7 +317,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
       { de: "möchten", tr: "istek bildirmek" },
     ],
     canDo: [
-      { de: "Ich kann nach Größe, Farbe und Preis fragen.", tr: "Beden, renk ve fiyat sorabiliyorum.", en: "I can ask about size, colour and price." },
+      { de: "Ich kann nach Größe, Farbe und Preis fragen.", tr: "Beden, renk ve fiyat sorabiliyorum.", en: "I can ask about size, color and price." },
       { de: "Ich kann sagen, was mir gefällt und was nicht.", tr: "Neyin hoşuma gidip gitmediğini söyleyebiliyorum.", en: "I can say what I like and don't like." },
       { de: "Ich kann etwas anprobieren und umtauschen.", tr: "Bir şeyi deneyip değiştirebiliyorum.", en: "I can try something on and exchange it." },
       { de: "Ich kann Preise verstehen und bezahlen.", tr: "Fiyatları anlayıp ödeme yapabiliyorum.", en: "I can understand prices and pay." },
@@ -463,7 +463,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
     canDo: [
       { de: "Ich kann meine Wohnung beschreiben.", tr: "Evimi tarif edebiliyorum.", en: "I can describe my flat." },
       { de: "Ich kann sagen, wo etwas steht, liegt oder hängt.", tr: "Bir eşyanın nerede durduğunu söyleyebiliyorum.", en: "I can say where something stands, lies or hangs." },
-      { de: "Ich kann mich bei den Nachbarn vorstellen.", tr: "Komşulara kendimi tanıtabiliyorum.", en: "I can introduce myself to the neighbours." },
+      { de: "Ich kann mich bei den Nachbarn vorstellen.", tr: "Komşulara kendimi tanıtabiliyorum.", en: "I can introduce myself to the neighbors." },
       { de: "Ich kann einen Schaden melden.", tr: "Bir arızayı bildirebiliyorum.", en: "I can report a fault." },
       { de: "Ich kann über Miete und Nebenkosten sprechen.", tr: "Kira ve aidat hakkında konuşabiliyorum.", en: "I can talk about rent and extra costs." },
     ],
@@ -727,7 +727,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
       minWords: 40,
       phrases: [
         { de: "Ich habe … gemacht.", tr: "… yaptım.", en: "I did …" },
-        { de: "Ich bin … gefahren.", tr: "… gittim (araçla).", en: "I travelled …" },
+        { de: "Ich bin … gefahren.", tr: "… gittim (araçla).", en: "I traveled …" },
         { de: "Zuerst … Dann …", tr: "Önce … Sonra …", en: "First … Then …" },
         { de: "Am Abend …", tr: "Akşam …", en: "In the evening …" },
         { de: "Es war schön.", tr: "Güzeldi.", en: "It was nice." },

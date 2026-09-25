@@ -120,7 +120,7 @@ export const b2U11: SkillExercise[] = [
       { de: "die Erkenntnis", tr: "bulgu", en: "finding" },
       { de: "die Meinungsumfrage", tr: "kamuoyu araştırması", en: "opinion poll" },
       { de: "die Größenordnung", tr: "büyüklük mertebesi", en: "order of magnitude" },
-      { de: "auswerten", tr: "çözümlemek", en: "to analyse" },
+      { de: "auswerten", tr: "çözümlemek", en: "to analyze" },
       { de: "ermitteln", tr: "tespit etmek", en: "to determine" },
       { de: "signifikant", tr: "anlamlı", en: "significant" },
       { de: "schätzungsweise", tr: "tahminen", en: "estimated" },
@@ -373,7 +373,7 @@ export const b2U11: SkillExercise[] = [
       { de: "das Verfahren", tr: "yöntem", en: "procedure" },
       { de: "aufwendig", tr: "zahmetli", en: "costly" },
       { de: "automatisieren", tr: "otomatikleştirmek", en: "to automate" },
-      { de: "auswerten", tr: "çözümlemek", en: "to analyse" },
+      { de: "auswerten", tr: "çözümlemek", en: "to analyze" },
     ],
     minutes: 9,
     tasks: [

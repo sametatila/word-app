@@ -115,7 +115,7 @@ export const enB1P18: SkillExercise[] = [
       { de: "trick", tr: "hile" },
       { de: "to block", tr: "önünü kapatmak" },
       { de: "entrance", tr: "giriş" },
-      { de: "pavement", tr: "kaldırım" },
+      { de: "sidewalk", tr: "kaldırım" },
     ],
     minutes: 6,
     segments: [
@@ -123,7 +123,7 @@ export const enB1P18: SkillExercise[] = [
       { speaker: "Mr Novak", text: "Honestly, I didn't plan any of this. I bake such a small amount each day that it sells out by ten. People think it's a clever trick. It isn't. My oven is just very small." },
       { speaker: "Sarah", text: "I come every Saturday. The bread is so good that I don't mind waiting twenty minutes. And you talk to people in the queue. I've made two friends there." },
       { speaker: "Presenter", text: "Not everyone is happy. The shop next door says the queue blocks its entrance, and a neighbor has complained about the noise at half past six." },
-      { speaker: "Mr Novak", text: "That's fair. We've painted a line on the pavement, so people stand on one side, and I've asked customers to keep their voices down before seven." },
+      { speaker: "Mr Novak", text: "That's fair. We've painted a line on the sidewalk, so people stand on one side, and I've asked customers to keep their voices down before seven." },
       { speaker: "Presenter", text: "So will you buy a bigger oven?" },
       { speaker: "Mr Novak", text: "Maybe next year. But I'll tell you something. If the bread gets worse, the queue will disappear, and it should." },
     ],
@@ -161,11 +161,11 @@ export const enB1P18: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What has been painted on the pavement?",
+        text: "What has been painted on the sidewalk?",
         options: [],
         answer: 0,
-        accept: ["a line", "a line on the pavement", "line"],
-        explain: "„We've painted a line on the pavement, so people stand on one side“.",
+        accept: ["a line", "a line on the sidewalk", "line"],
+        explain: "„We've painted a line on the sidewalk, so people stand on one side“.",
       },
       {
         text: "What does Mr Novak say about a bigger oven?",

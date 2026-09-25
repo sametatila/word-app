@@ -18,7 +18,7 @@ export const enB2P16: SkillExercise[] = [
     course: "en",
     level: "B2",
     skill: "reading",
-    title: "The Car Park That Became a Garden",
+    title: "The Parking lot That Became a Garden",
     genre: "interview",
     intro: "Bir söyleşi: bir apartman otoparkını sebze bahçesine çeviren kişi nasıl başladığını, kimin karşı çıktığını ve neyin zor olduğunu anlatıyor.",
     gloss: [
@@ -33,8 +33,8 @@ export const enB2P16: SkillExercise[] = [
     ],
     minutes: 8,
     text:
-      "The car park that became a garden\n\n" +
-      "Three years ago, the car park behind the Elm Street flats was used by eleven cars and a " +
+      "The parking lot that became a garden\n\n" +
+      "Three years ago, the parking lot behind the Elm Street flats was used by eleven cars and a " +
       "great deal of rubbish. Today it grows vegetables for forty households. We asked Ms Varga, " +
       "who started the project, how it happened.\n\n" +
       "How did it begin?\n" +
@@ -44,7 +44,7 @@ export const enB2P16: SkillExercise[] = [
       "as mine.\n\n" +
       "Was everyone in favor?\n" +
       "Not at all. The eleven drivers were understandably unhappy. Two of them said they would " +
-      "rather we left the car park alone and just cleaned it. In the end we kept six spaces and " +
+      "rather we left the parking lot alone and just cleaned it. In the end we kept six spaces and " +
       "turned the rest into raised beds, which were cheap because nothing had to be dug up.\n\n" +
       "What has surprised you?\n" +
       "Who comes. I assumed it would be retired people with time, and some are. But the busiest " +
@@ -73,10 +73,10 @@ export const enB2P16: SkillExercise[] = [
         options: [
           "more parking spaces",
           "a bed of their own",
-          "just a cleaner car park",
+          "just a cleaner parking lot",
         ],
         answer: 2,
-        explain: "„they would rather we left the car park alone and just cleaned it“.",
+        explain: "„they would rather we left the parking lot alone and just cleaned it“.",
       },
       {
         kind: "truefalse",
@@ -229,8 +229,8 @@ export const enB2P16: SkillExercise[] = [
       {
         kind: "build",
         tr: "Otoparkı tamamen kapatmamanızı tercih ederiz.",
-        answer: "We would rather you didn't close the car park completely.",
-        alternatives: ["We would rather you didn't completely close the car park."],
+        answer: "We would rather you didn't close the parking lot completely.",
+        alternatives: ["We would rather you didn't completely close the parking lot."],
         hint: "Başka birinin eylemi için „would rather + özne + geçmiş zaman“.",
       },
       {

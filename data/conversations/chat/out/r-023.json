@@ -30,7 +30,7 @@
  {
   "conversation": "de-c1-klimadebatte",
   "sceneEn": "You and an acquaintance are arguing about responsibility for the climate: the individual or the system. Name the shifting of responsibility, say what an individual step does and does not do, show the conflict of aims and meet on a shared test.",
-  "partnerEn": "an acquaintance who puts everything down to individual behaviour",
+  "partnerEn": "an acquaintance who puts everything down to individual behavior",
   "openingEn": "If everyone starts with themselves, the problem is solved. Or are you just making excuses?",
   "goalEn": "Individual and systemic responsibility have been separated, the conflict of aims has been shown and a shared test has been agreed."
  },
@@ -92,17 +92,17 @@
  },
  {
   "conversation": "de-c1-regionale-kultur",
-  "sceneEn": "An acquaintance is talking in clichés about your country or the area you live in. Accept where the cliché comes from, describe what you have observed, object politely to the sweeping judgement and put a question back to them.",
+  "sceneEn": "An acquaintance is talking in clichés about your country or the area you live in. Accept where the cliché comes from, describe what you have observed, object politely to the sweeping judgment and put a question back to them.",
   "partnerEn": "an acquaintance who means no harm but talks in clichés",
   "openingEn": "People are much more open where you're from than here in the north, aren't they?",
-  "goalEn": "The source of the cliché has been accepted, your own observation has been described and the sweeping judgement has been politely objected to."
+  "goalEn": "The source of the cliché has been accepted, your own observation has been described and the sweeping judgment has been politely objected to."
  },
  {
   "conversation": "de-c1-dialekte-hoeren",
   "sceneEn": "You are talking to someone from another region and you do not understand some of their words. Say so politely, ask what they mean, describe the usage where you live and keep the conversation going.",
   "partnerEn": "an acquaintance who speaks in their own dialect and gladly explains when asked",
   "openingEn": "Would you like a Semmel? Or do you call it something else where you're from?",
-  "goalEn": "The words not understood have been asked about and learnt, your own regional usage has been described and the conversation has been kept going."
+  "goalEn": "The words not understood have been asked about and learned, your own regional usage has been described and the conversation has been kept going."
  },
  {
   "conversation": "de-c1-duzen-siezen-c1",
@@ -113,31 +113,31 @@
  },
  {
   "conversation": "de-c1-komplimente-c1",
-  "sceneEn": "A colleague has pulled off something difficult. Give them credit — concrete, measured and without overdoing it. If they play it down, insist, ask what they learnt and end the conversation warmly.",
+  "sceneEn": "A colleague has pulled off something difficult. Give them credit — concrete, measured and without overdoing it. If they play it down, insist, ask what they learned and end the conversation warmly.",
   "partnerEn": "a colleague who struggles to take praise and plays it down at once",
   "openingEn": "Oh, that was nothing special. Anyone could have managed it, couldn't they?",
   "goalEn": "Concrete and measured credit has been given, the playing-down has been met and the conversation has been ended warmly."
  },
  {
   "conversation": "de-c1-peinlichkeiten",
-  "sceneEn": "You said the wrong thing at a party and the room went cold. Accept the gaffe, apologise without trying to save yourself, close the subject and start the conversation again.",
+  "sceneEn": "You said the wrong thing at a party and the room went cold. Accept the gaffe, apologize without trying to save yourself, close the subject and start the conversation again.",
   "partnerEn": "a host who noticed the gaffe and is trying to smooth it over",
   "openingEn": "No drama — but that was a bit unfortunate just now. Shall we simply put it behind us?",
   "goalEn": "The gaffe has been accepted, an apology has been made without getting defensive and the conversation has been started again."
  },
  {
   "conversation": "de-c1-deutscher-humor",
-  "sceneEn": "You and a friend are comparing the humour of two cultures: what is laughed at, what is not, how dry humour works and why a joke dies in translation. Give an example from your own language.",
-  "partnerEn": "a friend who defends their own humour and asks for examples",
+  "sceneEn": "You and a friend are comparing the humor of two cultures: what is laughed at, what is not, how dry humor works and why a joke dies in translation. Give an example from your own language.",
+  "partnerEn": "a friend who defends their own humor and asks for examples",
   "openingEn": "Give me an example: what do people laugh at where you're from, and what never here?",
-  "goalEn": "The humour of the two cultures has been compared with examples and why a joke does not survive translation has been explained."
+  "goalEn": "The humor of the two cultures has been compared with examples and why a joke does not survive translation has been explained."
  },
  {
   "conversation": "de-c1-kulturschock-fein",
   "sceneEn": "You are explaining to a newcomer what is different here: punctuality, direct criticism, sparing praise. Name it without judging, describe your own beginning and give them a concrete piece of advice.",
-  "partnerEn": "a newcomer who takes some of the behaviour for rudeness",
+  "partnerEn": "a newcomer who takes some of the behavior for rudeness",
   "openingEn": "Are people here always so blunt? Yesterday someone corrected me in front of everyone — was that meant unkindly?",
-  "goalEn": "The cultural difference has been named without judgement, your own experience has been described and a concrete piece of advice has been given to the newcomer."
+  "goalEn": "The cultural difference has been named without judgment, your own experience has been described and a concrete piece of advice has been given to the newcomer."
  },
  {
   "conversation": "de-c1-krisensitzung",

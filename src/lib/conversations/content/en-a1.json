@@ -15400,7 +15400,7 @@
   "level": "A1",
   "course": "en",
   "icon": "food",
-  "title": "Favourite food",
+  "title": "Favorite food",
   "titleTr": "Sevilen yemekler",
   "summary": "Sevdiğin ve sevmediğin yemekleri like, love ve hate + -ing ile anlatmayı, prefer ile tercihini söylemeyi öğretir.",
   "minutes": 9,
@@ -18661,7 +18661,7 @@
     "tr": "birlikte"
    },
    {
-    "de": "cheque",
+    "de": "check",
     "tr": "çek"
    },
    {
@@ -18946,7 +18946,7 @@
      },
      {
       "lang": "en",
-      "text": "cheque"
+      "text": "check"
      },
      {
       "lang": "tr",
@@ -18954,12 +18954,12 @@
      },
      {
       "lang": "en",
-      "text": "cheque"
+      "text": "check"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "cheque"
+     "target": "check"
     }
    },
    {
@@ -20648,7 +20648,7 @@
   "icon": "clock",
   "title": "Days of the week",
   "titleTr": "Haftanın günleri",
-  "summary": "Haftanın günlerini öğreniyor ve zaman edatlarını doğru seçiyorsun: on Monday, at the weekend, in the morning.",
+  "summary": "Haftanın günlerini öğreniyor ve zaman edatlarını doğru seçiyorsun: on Monday, on the weekend, in the morning.",
   "minutes": 9,
   "focusId": "Prepositions-time",
   "vocab": [
@@ -20691,7 +20691,7 @@
     "tr": "belli bir günü söylerken kullanılır: gün adının önüne 'on' gelir"
    },
    {
-    "de": "at the weekend",
+    "de": "on the weekend",
     "tr": "hafta sonunu anlatırken kullanılır"
    },
    {
@@ -20925,7 +20925,7 @@
      },
      {
       "lang": "en",
-      "text": "at the weekend"
+      "text": "on the weekend"
      },
      {
       "lang": "tr",
@@ -20937,7 +20937,7 @@
      },
      {
       "lang": "en",
-      "text": "at the weekend"
+      "text": "on the weekend"
      },
      {
       "lang": "tr",
@@ -20954,9 +20954,9 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "I am at home at the weekend.",
+     "target": "I am at home on the weekend.",
      "accept": [
-      "I'm at home at the weekend.",
+      "I'm at home on the weekend.",
       "I am at home on the weekend.",
       "I'm at home on the weekend."
      ],
@@ -20983,7 +20983,7 @@
       },
       {
        "lang": "en",
-       "text": "I am at home at the weekend."
+       "text": "I am at home on the weekend."
       },
       {
        "lang": "tr",
@@ -21155,7 +21155,7 @@
      },
      {
       "lang": "en",
-      "text": "on Monday, at the weekend, in the morning"
+      "text": "on Monday, on the weekend, in the morning"
      },
      {
       "lang": "tr",
@@ -21234,7 +21234,7 @@
      },
      {
       "lang": "en",
-      "text": "at the weekend"
+      "text": "on the weekend"
      },
      {
       "lang": "tr",
@@ -29040,7 +29040,7 @@
      },
      {
       "lang": "en",
-      "text": "It's nice, but I don't like the colour."
+      "text": "It's nice, but I don't like the color."
      },
      {
       "lang": "tr",
@@ -46162,7 +46162,7 @@
      },
      {
       "lang": "en",
-      "text": "My favourite sport is football."
+      "text": "My favorite sport is football."
      },
      {
       "lang": "tr",
@@ -46528,11 +46528,11 @@
      },
      {
       "lang": "en",
-      "text": "My favourite band is Coldplay."
+      "text": "My favorite band is Coldplay."
      },
      {
       "lang": "tr",
-      "text": "Favourite, yani en sevdiğin. Sen de kendi grubunun adını koyabilirsin."
+      "text": "Favorite, yani en sevdiğin. Sen de kendi grubunun adını koyabilirsin."
      }
     ]
    },
@@ -57698,7 +57698,7 @@
     "tr": "numara / sayı"
    },
    {
-    "de": "mobile phone",
+    "de": "cell phone",
     "tr": "mobil telefon"
    },
    {
@@ -58101,7 +58101,7 @@
      },
      {
       "lang": "en",
-      "text": "mobile phone"
+      "text": "cell phone"
      },
      {
       "lang": "tr",
@@ -58109,12 +58109,12 @@
      },
      {
       "lang": "en",
-      "text": "mobile phone"
+      "text": "cell phone"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "mobile phone"
+     "target": "cell phone"
     }
    },
    {

@@ -139,7 +139,7 @@ export const c1U01: SkillExercise[] = [
       { de: "relativieren", tr: "görecelileştirmek", en: "to qualify" },
       { de: "verbindlich", tr: "bağlayıcı", en: "binding" },
       { de: "positiv", tr: "olumlu", en: "positive" },
-      { de: "hervorheben", tr: "vurgulamak", en: "to emphasise" },
+      { de: "hervorheben", tr: "vurgulamak", en: "to emphasize" },
       { de: "insbesondere", tr: "bilhassa", en: "in particular" },
       { de: "methodisch", tr: "yöntemsel", en: "methodological" },
       { de: "raten", tr: "tavsiye etmek", en: "to advise" },

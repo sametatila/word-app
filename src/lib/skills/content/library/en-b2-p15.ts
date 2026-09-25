@@ -138,7 +138,7 @@ export const enB2P15: SkillExercise[] = [
     segments: [
       { speaker: "Agent", text: "Thanks for holding. I understand you'd like to cancel your weekly recipe box. Can I ask what the reason is?" },
       { speaker: "Mr Hale", text: "It's nothing to do with the food, which is fine. We've just realized we throw away about a third of it, because we're rarely home before eight." },
-      { speaker: "Agent", text: "That's useful to know. Before you go, we could switch you to a box every other week, at twenty per cent off for the first three months." },
+      { speaker: "Agent", text: "That's useful to know. Before you go, we could switch you to a box every other week, at twenty percent off for the first three months." },
       { speaker: "Mr Hale", text: "Would that change my contract? The last time I accepted a discount somewhere, I found out later that I'd agreed to another year." },
       { speaker: "Agent", text: "No, there's no minimum period on this plan. You can pause or cancel at any time, as long as you do it before Wednesday midnight for the following week." },
       { speaker: "Mr Hale", text: "In that case I'll try it, but I'd like it in writing. Could you send me an email confirming the new price and the fact that there's no minimum term?" },
@@ -361,7 +361,7 @@ export const enB2P15: SkillExercise[] = [
       },
       {
         heading: "İsim + edat",
-        tr: "İsimlerin de edatı vardır ve ilgili fiilinkinden farklı olabilir: „a reason for“, „an increase in“, „a solution to“. Artış ve düşüşte „in“ NEYİN değiştiğini, „of“ NE KADAR değiştiğini söyler: „an increase of ten per cent“.",
+        tr: "İsimlerin de edatı vardır ve ilgili fiilinkinden farklı olabilir: „a reason for“, „an increase in“, „a solution to“. Artış ve düşüşte „in“ NEYİN değiştiğini, „of“ NE KADAR değiştiğini söyler: „an increase of ten percent“.",
         examples: [
           { de: "What was the reason for the charge?", tr: "Ücretin sebebi neydi?", note: "reason for" },
           { de: "There has been an increase in complaints.", tr: "Şikâyetlerde artış oldu.", note: "increase in" },

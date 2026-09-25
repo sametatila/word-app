@@ -92,8 +92,8 @@
  },
  {
   "conversation": "de-b1-nachbarn-streit",
-  "sceneEn": "Your upstairs neighbour makes a lot of noise at night and you have knocked on their door. Describe the trouble in polite forms, say it without blame, and suggest a solution together.",
-  "partnerEn": "a neighbour who is defensive at first but comes round",
+  "sceneEn": "Your upstairs neighbor makes a lot of noise at night and you have knocked on their door. Describe the trouble in polite forms, say it without blame, and suggest a solution together.",
+  "partnerEn": "a neighbor who is defensive at first but comes round",
   "openingEn": "Yes? Has something happened?",
   "goalEn": "The trouble has been described without blame and a solution both sides accept has been found."
  },
@@ -128,7 +128,7 @@
  {
   "conversation": "de-b1-umzugshelfer",
   "sceneEn": "It is moving day and a friend has come to help. Split the jobs by time: what happens before you start, what they do while you do something, and what comes afterwards.",
-  "partnerEn": "a friend who likes organising and takes responsibility",
+  "partnerEn": "a friend who likes organizing and takes responsibility",
   "openingEn": "Right, I'm here! What do we do first?",
   "goalEn": "The jobs have been shared out in time order and it has been settled what happens at the end of the day."
  },

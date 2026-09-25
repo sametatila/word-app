@@ -46,7 +46,7 @@ export const EN_B2_03: MockPaper = {
               title: "The price on the label",
               body: `The price on a supermarket label is one of the least informative numbers in the economy, and it is routinely {{1}} for a measurement.
 
-A farmer receives a share of it that varies from about eight per cent for a loaf of bread to nearly forty for a box of eggs. Almost nobody {{2}} this variation into account when comparing two products.
+A farmer receives a share of it that varies from about eight percent for a loaf of bread to nearly forty for a box of eggs. Almost nobody {{2}} this variation into account when comparing two products.
 
 Economists who study the chain {{3}} out that the largest share usually goes to processing and transport rather than to the shop itself. Blaming the retailer alone therefore {{4}} the point.
 
@@ -213,7 +213,7 @@ Officials are therefore being asked to think {{11}} terms of outcomes rather tha
             {
               kind: "text",
               id: "t3",
-              genre: "Encyclopaedia entry",
+              genre: "Encyclopedia entry",
               genreTr: "Ansiklopedi maddesi",
               title: "Food certification",
               body: `Certification is the process by which a farm is judged against a written standard before it may use a protected word in its {{13}}.
@@ -224,7 +224,7 @@ Neither description is complete. Certification rarely detects deliberate {{15}},
 
 What it does well is narrower and still useful: it makes a claim {{16}}, so that a buyer who cares can look something up instead of trusting a picture on a box.
 
-Several schemes have experimented with group certification, in which neighbouring farms are inspected together. Early results suggest a clear {{17}} in cost for the smallest producers.
+Several schemes have experimented with group certification, in which neighboring farms are inspected together. Early results suggest a clear {{17}} in cost for the smallest producers.
 
 The most likely future is therefore a mixed one, with different markets making different choices according to their own {{18}}.`,
             },
@@ -441,16 +441,16 @@ I am not going to recommend that anybody repeat it. What I would recommend is ch
               title: "The problem with local",
               body: `Every campaign for local food rests on a simple idea: the shorter the journey, the smaller the cost. The idea is not wrong, but it is incomplete in a way that is easy to demonstrate. {{28}}
 
-Take tomatoes. A heated glasshouse two hours from the city can use several times the energy of a field two thousand kilometres away, and the label will call the first one local. {{29}}
+Take tomatoes. A heated glasshouse two hours from the city can use several times the energy of a field two thousand kilometers away, and the label will call the first one local. {{29}}
 
-Transport itself is also badly understood. A lorry carrying twenty tonnes uses very little fuel per box, whereas a customer who drives four kilometres for six items uses a great deal. {{30}}
+Transport itself is also badly understood. A truck carrying twenty tonnes uses very little fuel per box, whereas a customer who drives four kilometers for six items uses a great deal. {{30}}
 
 Given all this, some retailers have begun to publish a figure that includes the journey from the shop to the home. It has been resisted, and the reason for the resistance is instructive. {{31}}
 
 None of this argues against buying from a nearby farm, which supports things that no calculation captures. It argues for knowing which part of the journey a number describes.`,
               gloss: [
                 { de: "a glasshouse", tr: "sera", en: "das Gewächshaus" },
-                { de: "a lorry", tr: "kamyon", en: "der Lastwagen" },
+                { de: "a truck", tr: "kamyon", en: "der Lastwagen" },
                 { de: "fuel", tr: "yakıt", en: "der Kraftstoff" },
               ],
             },
@@ -460,7 +460,7 @@ None of this argues against buying from a nearby farm, which supports things tha
             { key: "b", label: "b", body: "It moves part of the responsibility onto the reader, which is not what a label is usually for." },
             { key: "c", label: "c", body: "Distance, in that case, is measuring the wrong thing entirely." },
             { key: "d", label: "d", body: "Supermarket opening hours have lengthened considerably over the last two decades." },
-            { key: "e", label: "e", body: "The last four kilometres are a choice as well, and almost nobody counts them." },
+            { key: "e", label: "e", body: "The last four kilometers are a choice as well, and almost nobody counts them." },
           ],
           items: [
             {
@@ -488,7 +488,7 @@ None of this argues against buying from a nearby farm, which supports things tha
               text: "Gap 30",
               answer: "e",
               explain:
-                "Paragraf kamyonla müşteriyi karşılaştırıyor: «a customer who drives four kilometres for six items uses a great deal». (e) o son dört kilometreyi bir karar olarak adlandırıyor ve sayılmadığını ekliyor.",
+                "Paragraf kamyonla müşteriyi karşılaştırıyor: «a customer who drives four kilometers for six items uses a great deal». (e) o son dört kilometreyi bir karar olarak adlandırıyor ve sayılmadığını ekliyor.",
             },
             {
               kind: "match",
@@ -530,7 +530,7 @@ None of this argues against buying from a nearby farm, which supports things tha
             {
               key: "d",
               label: "d — Nese, market gardener",
-              body: "I sell everything I grow within nine kilometres and I earn less than a delivery driver. I am not complaining, because I chose this. What I object to is being used as a photograph in somebody else's advertising.",
+              body: "I sell everything I grow within nine kilometers and I earn less than a delivery driver. I am not complaining, because I chose this. What I object to is being used as a photograph in somebody else's advertising.",
             },
           ],
           items: [
@@ -690,7 +690,7 @@ None of this argues against buying from a nearby farm, which supports things tha
               plays: 2,
               segments: [
                 { text: "Why is this loaf two pounds more than that one?" },
-                { text: "Different flour. That one is milled forty kilometres away and we pay about double for it." },
+                { text: "Different flour. That one is milled forty kilometers away and we pay about double for it." },
                 { text: "Does anybody notice?" },
                 { text: "About one customer in ten asks. The rest buy the cheaper one and I understand why." },
               ],
@@ -758,7 +758,7 @@ None of this argues against buying from a nearby farm, which supports things tha
               no: 6,
               ref: "a6",
               text: "What is the speaker doing?",
-              options: ["Agreeing to help within a time limit", "Asking somebody to take the round instead", "Cancelling the delivery"],
+              options: ["Agreeing to help within a time limit", "Asking somebody to take the round instead", "Canceling the delivery"],
               answer: 0,
               explain:
                 "Konuşmacı geliyor ama sınır koyuyor: «I can bring the van and do the delivery round, but I have to be back by two». Cengiz köyleri alıyor, onun turunu devralmıyor.",
@@ -806,7 +806,7 @@ None of this argues against buying from a nearby farm, which supports things tha
               plays: 2,
               segments: [
                 {
-                  text: "Thank you. I will give you our three-year figures and I will not pretend that all of them are encouraging. We began with fourteen growers and we now supply two hundred households every week. In three years we have delivered about ninety thousand boxes. Here is the first surprise: the item people most often remove from the standard box is not an unfamiliar vegetable, it is the potato, because they already have some at home. Second, the day matters more than we expected. A box delivered on Thursday is empty by Saturday; the same box on Monday still has something in it on Friday, and that pattern has held across every route. Third, the format of the recipe sheet. We tried videos, printed booklets and a single card, and the single card outperformed everything else, which disappointed the two of us who like writing. Fourth, a caution: our own survey shows that the households who stay are the ones who were already cooking, and the ones we most wanted to reach leave within eight weeks. We have not solved that. And finally, money. Seventy per cent of our income comes from one contract with the council, and that is the risk that keeps me awake, not the weather.",
+                  text: "Thank you. I will give you our three-year figures and I will not pretend that all of them are encouraging. We began with fourteen growers and we now supply two hundred households every week. In three years we have delivered about ninety thousand boxes. Here is the first surprise: the item people most often remove from the standard box is not an unfamiliar vegetable, it is the potato, because they already have some at home. Second, the day matters more than we expected. A box delivered on Thursday is empty by Saturday; the same box on Monday still has something in it on Friday, and that pattern has held across every route. Third, the format of the recipe sheet. We tried videos, printed booklets and a single card, and the single card outperformed everything else, which disappointed the two of us who like writing. Fourth, a caution: our own survey shows that the households who stay are the ones who were already cooking, and the ones we most wanted to reach leave within eight weeks. We have not solved that. And finally, money. Seventy percent of our income comes from one contract with the council, and that is the risk that keeps me awake, not the weather.",
                 },
               ],
             },
@@ -830,7 +830,7 @@ The most effective format was the single {{14}}.
 
 The households who leave within eight weeks are the ones the scheme most wanted to {{15}}.
 
-{{16}} per cent of the income comes from one council contract.`,
+{{16}} percent of the income comes from one council contract.`,
             },
           ],
           items: [
@@ -912,7 +912,7 @@ The households who leave within eight weeks are the ones the scheme most wanted 
               text: "Gap 16",
               accept: ["70", "seventy"],
               explain:
-                "«Seventy per cent of our income comes from one contract with the council» — tek kaynağa bağlılık oranı. Konuşmacı asıl riskin hava değil bu olduğunu ekliyor.",
+                "«Seventy percent of our income comes from one contract with the council» — tek kaynağa bağlılık oranı. Konuşmacı asıl riskin hava değil bu olduğunu ekliyor.",
             },
           ],
         },
@@ -928,7 +928,7 @@ The households who leave within eight weeks are the ones the scheme most wanted 
           options: [
             { key: "a", label: "The consumer is blamed for a choice they cannot really make." },
             { key: "b", label: "A true claim can still give a false impression." },
-            { key: "c", label: "The incentives reward the wrong behaviour." },
+            { key: "c", label: "The incentives reward the wrong behavior." },
             { key: "d", label: "The speaker has changed their own practice." },
             { key: "e", label: "Conditions are better than they used to be." },
             { key: "f", label: "The problem is the scale, not the intention." },
@@ -944,7 +944,7 @@ The households who leave within eight weeks are the ones the scheme most wanted 
               situation: "Birinci konuşmacı bir belgelendirme deneyiminden söz ediyor.",
               plays: 2,
               segments: [
-                { text: "We paid for the certificate for four years. The inspector was thorough and the paperwork was honest. Our sales did not move by a single per cent, and the buyers who actually mattered never mentioned it once." },
+                { text: "We paid for the certificate for four years. The inspector was thorough and the paperwork was honest. Our sales did not move by a single percent, and the buyers who actually mattered never mentioned it once." },
               ],
             },
             {
@@ -988,7 +988,7 @@ The households who leave within eight weeks are the ones the scheme most wanted 
               situation: "Beşinci konuşmacı kendi sitelerindeki bir rakamı anlatıyor.",
               plays: 2,
               segments: [
-                { text: "The figure on our website is correct: ninety per cent of our suppliers are inside the region. What it does not say is that those ninety per cent provide about a fifth of what we actually sell." },
+                { text: "The figure on our website is correct: ninety percent of our suppliers are inside the region. What it does not say is that those ninety percent provide about a fifth of what we actually sell." },
               ],
             },
             {
@@ -1012,7 +1012,7 @@ The households who leave within eight weeks are the ones the scheme most wanted 
               text: "Speaker 1",
               answer: "h",
               explain:
-                "Belge dört yıl alınmış, denetim düzgün yapılmış, ama «Our sales did not move by a single per cent». Sistemi kötülemiyor, etkisinin sanılandan küçük olduğunu söylüyor.",
+                "Belge dört yıl alınmış, denetim düzgün yapılmış, ama «Our sales did not move by a single percent». Sistemi kötülemiyor, etkisinin sanılandan küçük olduğunu söylüyor.",
             },
             {
               kind: "match",
@@ -1052,7 +1052,7 @@ The households who leave within eight weeks are the ones the scheme most wanted 
               text: "Speaker 5",
               answer: "b",
               explain:
-                "Rakamın doğruluğu kabul ediliyor ama tamamlanıyor: «those ninety per cent provide about a fifth of what we actually sell». Doğru bir sayı yanlış bir izlenim bırakabiliyor.",
+                "Rakamın doğruluğu kabul ediliyor ama tamamlanıyor: «those ninety percent provide about a fifth of what we actually sell». Doğru bir sayı yanlış bir izlenim bırakabiliyor.",
             },
             {
               kind: "match",
@@ -1085,11 +1085,11 @@ The households who leave within eight weeks are the ones the scheme most wanted 
                 { speaker: "Host", text: "Ilkay, you farmed two hundred hectares of wheat and you now farm forty. People assume that was forced on you." },
                 { speaker: "Ilkay", text: "They do, and it makes a better story than the truth. Nobody took the land from me; I sold it. I had reached the point where I could not tell you what the farm was for, beyond staying large enough to survive the next year." },
                 { speaker: "Host", text: "Was the money the hardest part?" },
-                { speaker: "Ilkay", text: "No. The hardest part was the neighbours. In this valley, area is the way people measure you, and I made myself smaller in public. Two men who had been at my wedding stopped speaking to me for about a year." },
+                { speaker: "Ilkay", text: "No. The hardest part was the neighbors. In this valley, area is the way people measure you, and I made myself smaller in public. Two men who had been at my wedding stopped speaking to me for about a year." },
                 { speaker: "Host", text: "How long did the decision take?" },
                 { speaker: "Ilkay", text: "Six years, which is embarrassing to say out loud. I built a very detailed spreadsheet, which is what people like me do instead of deciding. It said sell, three times, and I ignored it three times." },
                 { speaker: "Host", text: "What finally moved you?" },
-                { speaker: "Ilkay", text: "A dry August. I watched a younger neighbour take on more land in the same month, and I recognised exactly the reasoning he was using, because it had been mine. It was like hearing a recording of yourself." },
+                { speaker: "Ilkay", text: "A dry August. I watched a younger neighbor take on more land in the same month, and I recognized exactly the reasoning he was using, because it had been mine. It was like hearing a recording of yourself." },
                 { speaker: "Host", text: "And the smaller farm in practice?" },
                 { speaker: "Ilkay", text: "We earn slightly less and we work slightly less, which is not the dramatic answer people want. The real change is that I now know the name of every person who eats what I grow, and I did not expect that to matter as much as it does." },
                 { speaker: "Host", text: "Do you miss anything about the larger farm?" },
@@ -1113,7 +1113,7 @@ The households who leave within eight weeks are the ones the scheme most wanted 
               no: 23,
               ref: "d1",
               text: "Why did Ilkay reduce the size of her farm?",
-              options: ["She had lost her sense of its purpose", "The bank forced her to sell part of the land", "A neighbour made her a good offer"],
+              options: ["She had lost her sense of its purpose", "The bank forced her to sell part of the land", "A neighbor made her a good offer"],
               answer: 0,
               explain:
                 "Ilkay zorlama savını reddedip gerekçesini veriyor: «I could not tell you what the farm was for, beyond staying large enough to survive the next year». Toprağı kimse almamış, kendisi satmış.",
@@ -1127,7 +1127,7 @@ The households who leave within eight weeks are the ones the scheme most wanted 
               options: ["The loss of income in the first years", "The reaction of people nearby", "Learning new work"],
               answer: 1,
               explain:
-                "Parayı açıkça dışarıda bırakıyor: «No. The hardest part was the neighbours». Vadide ölçü dönüm sayısı ve düğününde bulunan iki kişi bir yıl konuşmamış.",
+                "Parayı açıkça dışarıda bırakıyor: «No. The hardest part was the neighbors». Vadide ölçü dönüm sayısı ve düğününde bulunan iki kişi bir yıl konuşmamış.",
             },
             {
               kind: "mcq",
@@ -1146,7 +1146,7 @@ The households who leave within eight weeks are the ones the scheme most wanted 
               no: 26,
               ref: "d1",
               text: "What finally moved her?",
-              options: ["Recognising her own reasoning in somebody else", "A very poor harvest in the driest August for years", "Advice from an older farmer"],
+              options: ["Recognizing her own reasoning in somebody else", "A very poor harvest in the driest August for years", "Advice from an older farmer"],
               answer: 0,
               explain:
                 "Kuru ağustos yalnız sahne: asıl an komşusunda kendi gerekçesini tanıması, «because it had been mine». Kimseden öğüt aldığından söz etmiyor.",
@@ -1190,7 +1190,7 @@ The households who leave within eight weeks are the ones the scheme most wanted 
               no: 30,
               ref: "d1",
               text: "What does she recommend?",
-              options: ["Selling land before it loses any more of its value", "Writing down the purpose and reading it honestly", "Asking a neighbour for advice first"],
+              options: ["Selling land before it loses any more of its value", "Writing down the purpose and reading it honestly", "Asking a neighbor for advice first"],
               answer: 1,
               explain:
                 "Öğüt son cümlede: «writing down what the farm is for, and then reading your own sentence honestly». Genel bir kural olarak küçülmeyi önermiyor, tersine borcu olanlar için çekince koyuyor.",
@@ -1227,7 +1227,7 @@ The households who leave within eight weeks are the ones the scheme most wanted 
             ],
             sample: `Almost everyone agrees that a shopper should be able to find out where the money goes. The disagreement begins as soon as somebody asks what would actually change.
 
-The evidence on behaviour is not encouraging. Where a producer price has been shown, trials suggest that very few shoppers move to a different product, mainly because the cheaper option is chosen for reasons that a label cannot touch. That is an argument against expecting too much, not against the figure itself.
+The evidence on behavior is not encouraging. Where a producer price has been shown, trials suggest that very few shoppers move to a different product, mainly because the cheaper option is chosen for reasons that a label cannot touch. That is an argument against expecting too much, not against the figure itself.
 
 The second objection is stronger. A number on a shelf has to be audited, and auditing a supply chain with four stages is expensive. If the cost falls on the producer, the rule punishes exactly the people it was written to protect.
 
@@ -1310,7 +1310,7 @@ For anybody who cooks from what they find, however, it is the best two hours of 
             minutes: 5,
             points: [
               { de: "give developed answers with reasons", tr: "Gerekçeli, geliştirilmiş cevaplar vermek" },
-              { de: "analyse your own earlier decision", tr: "Kendi eski kararını çözümlemek" },
+              { de: "analyze your own earlier decision", tr: "Kendi eski kararını çözümlemek" },
             ],
             sample:
               "I used to do one big supermarket trip on Saturdays; now I buy vegetables at a market on the way home and everything else online, which is cheaper in time rather than in money. Two years ago I paid nearly double for eggs with a very convincing box, and when I finally looked the farm up it was owned by the same company as the cheap ones. What makes me trust a shop now is whether it will name a supplier when I ask, although I have to admit that most people, including me, almost never ask.",
@@ -1363,9 +1363,9 @@ For anybody who cooks from what they find, however, it is the best two hours of 
             "Bir kasaba okullarında satılan yemeği iyileştirmek istiyor. Bu fikirleri benimle konuş, sonra hangi ikisini önereceğimize ve hangisini reddedeceğimize karar ver.",
           prepSeconds: 30,
           exchange: [
-            { who: "partner", de: "The ideas are: buy a fixed share from farms within fifty kilometres, publish what the town pays for each item, teach cooking to every class for one term, and stop selling anything sweet. Which of these would actually change what children eat?", tr: "Fikirler: alımın belli bir payını elli kilometre içindeki çiftliklerden yapmak, kasabanın her ürüne ne ödediğini yayımlamak, her sınıfa bir dönem yemek pişirme öğretmek ve tatlı olan hiçbir şeyi satmamak. Sence bunlardan hangisi çocukların yediğini gerçekten değiştirir?" },
+            { who: "partner", de: "The ideas are: buy a fixed share from farms within fifty kilometers, publish what the town pays for each item, teach cooking to every class for one term, and stop selling anything sweet. Which of these would actually change what children eat?", tr: "Fikirler: alımın belli bir payını elli kilometre içindeki çiftliklerden yapmak, kasabanın her ürüne ne ödediğini yayımlamak, her sınıfa bir dönem yemek pişirme öğretmek ve tatlı olan hiçbir şeyi satmamak. Sence bunlardan hangisi çocukların yediğini gerçekten değiştirir?" },
             { who: "you", hint: "Bir ya da iki fikri seç ve neden işe yarayacağını açıkla.", expect: "seçenekleri değerlendirmek ve birini gerekçesiyle savunmak", seconds: 45 },
-            { who: "partner", de: "I would question the local buying rule. Fifty kilometres tells you nothing about how the food was grown, and it can cost more. Does that change your view?", tr: "Yerel alım kuralını sorgularım. Elli kilometre yiyeceğin nasıl yetiştirildiği hakkında hiçbir şey söylemiyor ve daha pahalıya da gelebiliyor. Bu görüşünü değiştirir mi?" },
+            { who: "partner", de: "I would question the local buying rule. Fifty kilometers tells you nothing about how the food was grown, and it can cost more. Does that change your view?", tr: "Yerel alım kuralını sorgularım. Elli kilometre yiyeceğin nasıl yetiştirildiği hakkında hiçbir şey söylemiyor ve daha pahalıya da gelebiliyor. Bu görüşünü değiştirir mi?" },
             { who: "you", hint: "İtirazı değerlendir: kabul et, sınırla ya da çürüt.", expect: "bir itirazı değerlendirmek ve kısmen kabul etmek ya da çürütmek", seconds: 45 },
             { who: "partner", de: "Fair. So which two do we recommend, and which one do we reject?", tr: "Peki. Hangi ikisini öneriyoruz, hangisini reddediyoruz?" },
             { who: "you", hint: "İki öneri ve bir ret kararı ver, her birini kısaca gerekçelendir.", expect: "ortak bir karara varmak ve hem seçimi hem reddi gerekçelendirmek", seconds: 45 },
@@ -1379,7 +1379,7 @@ For anybody who cooks from what they find, however, it is the best two hours of 
               { de: "reach a joint decision with reasons", tr: "Gerekçeli ortak bir karara varmak" },
             ],
             sample:
-              "The cooking term looks weakest on paper and is probably the strongest, because it changes what a child can do rather than what is on the counter. You are right that fifty kilometres measures the wrong thing, so I would replace the distance rule with a rule about how the food is grown rather than drop the idea. Banning everything sweet seems like a cure worse than the disease: children simply buy it outside the gate, and the school loses the income without changing the diet. So I would recommend the cooking term and the published prices, and reject the ban.",
+              "The cooking term looks weakest on paper and is probably the strongest, because it changes what a child can do rather than what is on the counter. You are right that fifty kilometers measures the wrong thing, so I would replace the distance rule with a rule about how the food is grown rather than drop the idea. Banning everything sweet seems like a cure worse than the disease: children simply buy it outside the gate, and the school loses the income without changing the diet. So I would recommend the cooking term and the published prices, and reject the ban.",
             criteria: [
               "Seçenekler birbirine karşı mı değerlendirildi?",
               "İtiraza doğrudan karşılık verildi mi ve kısmi kabul yapılabildi mi?",

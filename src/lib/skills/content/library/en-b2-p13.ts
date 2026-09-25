@@ -257,7 +257,7 @@ export const enB2P13: SkillExercise[] = [
           "rings the office. " +
           "Over the term, we observed that break times became noticeably more active and that the " +
           "number of incidents reported by staff fell from thirty-one to twelve. In a short survey, " +
-          "sixty per cent of students said the rule had helped them concentrate. " +
+          "sixty percent of students said the rule had helped them concentrate. " +
           "A less positive finding was that parents felt they had not been consulted. Several had " +
           "relied on messaging their children during the day and heard about the change from " +
           "their children rather than from the school. " +

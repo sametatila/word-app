@@ -106,7 +106,7 @@ export const enA1U12: SkillExercise[] = [
       "Ela: Yes. There is a button here, and it is dirty. Look.\n" +
       "Seller: I see. Have you got the receipt?\n" +
       "Ela: Yes, here it is. I keep all my receipts.\n" +
-      "Seller: Good. Would you like the same sweater in another colour?\n" +
+      "Seller: Good. Would you like the same sweater in another color?\n" +
       "Ela: I'd like to return this and get my money back.\n" +
       "Seller: No problem. How much did you pay?\n" +
       "Ela: Thirty dollars.\n" +
@@ -123,7 +123,7 @@ export const enA1U12: SkillExercise[] = [
       },
       {
         text: "What does Ela want?",
-        options: ["her money back", "another colour", "a second receipt"],
+        options: ["her money back", "another color", "a second receipt"],
         answer: 0,
         explain: "„I'd like to return this and get my money back.“ — satıcı renk öneriyor, Ela istemiyor.",
       },
@@ -184,7 +184,7 @@ export const enA1U12: SkillExercise[] = [
     minutes: 4,
     segments: [
       { speaker: "Sena", text: "Look at this jacket. What do you think?" },
-      { speaker: "Ali", text: "I like it. The colour is beautiful." },
+      { speaker: "Ali", text: "I like it. The color is beautiful." },
       { speaker: "Sena", text: "Really? It's not too big?" },
       { speaker: "Ali", text: "No, it suits you. It is perfect." },
       { speaker: "Sena", text: "How much is it? Ninety dollars. That is a lot of money." },
@@ -192,7 +192,7 @@ export const enA1U12: SkillExercise[] = [
       { speaker: "Sena", text: "I think you are right. And I have enough money today." },
       { speaker: "Ali", text: "Then buy it! You don't have many jackets." },
       { speaker: "Sena", text: "Only two, and both are black. This one is blue." },
-      { speaker: "Ali", text: "Blue is my favorite colour." },
+      { speaker: "Ali", text: "Blue is my favorite color." },
       { speaker: "Sena", text: "Good. Then I am going to choose this one." },
     ],
     questions: [
@@ -233,7 +233,7 @@ export const enA1U12: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What colour is this jacket?",
+        text: "What color is this jacket?",
         options: [],
         answer: 0,
         accept: ["blue", "it is blue"],
@@ -363,7 +363,7 @@ export const enA1U12: SkillExercise[] = [
         facts: "Kazak; kırmızı; otuz dolar; düğmesi kirli.",
         fields: [
           { label: "Item", answer: "sweater", accept: ["a sweater"] },
-          { label: "Colour", answer: "red" },
+          { label: "Color", answer: "red" },
           { label: "Price", answer: "thirty dollars", accept: ["30 dollars", "thirty"] },
           { label: "Problem", answer: "dirty button", accept: ["a dirty button", "the button is dirty"] },
         ],

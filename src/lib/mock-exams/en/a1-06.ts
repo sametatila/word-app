@@ -40,7 +40,7 @@ export const EN_A1_06: MockPaper = {
             {
               kind: "text",
               id: "t1",
-              genre: "Note for a neighbour",
+              genre: "Note for a neighbor",
               genreTr: "Komşuya not",
               title: "For Enzo",
               body: `Hi Enzo,
@@ -90,7 +90,7 @@ On Monday the park is closed. We cut the grass.`,
               id: "en-a1-06-l1-2",
               no: 2,
               ref: "t1",
-              text: "The key is with a neighbour in flat 4.",
+              text: "The key is with a neighbor in flat 4.",
               answer: true,
               explain:
                 "Notun son satırı yeri veriyor: «The key is with Mrs Orla in flat 4». Daire numarası da adı da yazılı.",
@@ -344,7 +344,7 @@ Children: only with an adult.`,
               id: "t4",
               genre: "Message",
               genreTr: "İleti",
-              title: "To the neighbours",
+              title: "To the neighbors",
               body: `Hello everybody,
 
 My name is Rune and I live {{15}} the fourth floor with a small dog.
@@ -441,7 +441,7 @@ Rune`,
               plays: 2,
               segments: [
                 { text: "Is this your cat?" },
-                { text: "No, my cat is black. This one is grey." },
+                { text: "No, my cat is black. This one is gray." },
                 { text: "She sits here every day." },
                 { text: "I think she is from the house on the corner." },
               ],
@@ -511,11 +511,11 @@ Rune`,
               id: "en-a1-06-h1-2",
               no: 2,
               ref: "a2",
-              text: "What colour is the cat in the park?",
-              options: ["Black", "White", "Grey"],
+              text: "What color is the cat in the park?",
+              options: ["Black", "White", "Gray"],
               answer: 2,
               explain:
-                "Konuşmacı iki rengi ayırıyor: «my cat is black. This one is grey». Parktaki kedi gri; siyah olan kendi kedisi.",
+                "Konuşmacı iki rengi ayırıyor: «my cat is black. This one is gray». Parktaki kedi gri; siyah olan kendi kedisi.",
             },
             {
               kind: "mcq",
@@ -750,7 +750,7 @@ Rune`,
               no: 15,
               ref: "c5",
               text: "Whose bird is it?",
-              options: ["The neighbour's", "The speaker's", "His mother's"],
+              options: ["The neighbor's", "The speaker's", "His mother's"],
               answer: 2,
               explain:
                 "Cevap doğrudan veriliyor: «No, it is my mother's». Kuş üç haftalığına konuşmacının evinde; sahibi annesi.",
@@ -773,7 +773,7 @@ Rune`,
           format: "gap",
           goal: "detail",
           prompt:
-            "Your neighbour Vito Ferrero makes a card for his cat at the animal doctor. The cat is called Nika and she is three years old. She is grey. They live at 8 Park Lane. His phone number is 07700 900 245. Five things are missing on the form. Write them in the gaps.",
+            "Your neighbor Vito Ferrero makes a card for his cat at the animal doctor. The cat is called Nika and she is three years old. She is gray. They live at 8 Park Lane. His phone number is 07700 900 245. Five things are missing on the form. Write them in the gaps.",
           promptTr:
             "Komşun Vito Ferrero, veterinerde kedisi için bir kart çıkartıyor. Kedinin adı Nika, üç yaşında ve gri. 8 Park Lane adresinde oturuyorlar. Telefonu 07700 900 245. Formda beş bilgi eksik; boşluklara yaz.",
           texts: [
@@ -787,7 +787,7 @@ Rune`,
 Name of the animal: {{1}}
 Cat or dog?         cat
 Age:                {{2}}
-Colour:             {{3}}
+Color:             {{3}}
 Street and number:  {{4}}
 Phone:              {{5}}`,
             },
@@ -815,10 +815,10 @@ Phone:              {{5}}`,
               kind: "gap",
               id: "en-a1-06-w1-3",
               no: 3,
-              text: "Colour",
-              accept: ["grey", "gray"],
+              text: "Color",
+              accept: ["gray", "gray"],
               explain:
-                "Yönerge rengi veriyor: «She is grey». Britanya yazımı `grey`, Amerika yazımı `gray`; ikisi de kabul edilir.",
+                "Yönerge rengi veriyor: «She is gray». Britanya yazımı `grey`, Amerika yazımı `gray`; ikisi de kabul edilir.",
             },
             {
               kind: "gap",
@@ -846,7 +846,7 @@ Phone:              {{5}}`,
           format: "writing",
           goal: "interaction",
           prompt:
-            "You are going away for a week and your neighbour is looking after your cat and your neighbour looks after your cat. Write a short message to your neighbour. Write one or two sentences about each point (about 25 words). Do not forget the greeting at the start and at the end.",
+            "You are going away for a week and your neighbor is looking after your cat and your neighbor looks after your cat. Write a short message to your neighbor. Write one or two sentences about each point (about 25 words). Do not forget the greeting at the start and at the end.",
           promptTr:
             "Bir haftalığına şehir dışına çıkıyorsun ve komşun kedine bakacak. Komşuna kısa bir ileti yaz. Her maddeye bir-iki cümle yaz (yaklaşık 25 kelime). Baştaki hitabı ve sondaki veda cümlesini unutma.",
           items: [],
@@ -855,7 +855,7 @@ Phone:              {{5}}`,
             points: [
               { de: "Say where the key is.", tr: "Anahtarın nerede olduğunu söyle." },
               { de: "Say what the cat eats and when.", tr: "Kedinin ne ve ne zaman yediğini söyle." },
-              { de: "Say what your neighbour must not do.", tr: "Komşunun neyi yapmaması gerektiğini söyle." },
+              { de: "Say what your neighbor must not do.", tr: "Komşunun neyi yapmaması gerektiğini söyle." },
             ],
             sample: `Dear Orla,
 
@@ -899,11 +899,11 @@ Vito`,
             points: [
               { de: "an animal at home or in your street", tr: "Evdeki ya da sokaktaki bir hayvan" },
               { de: "a park and a shop near you", tr: "Yakındaki bir park ve bir dükkân" },
-              { de: "your street at the weekend", tr: "Hafta sonu sokağın" },
+              { de: "your street on the weekend", tr: "Hafta sonu sokağın" },
               { de: "one thing you do not like", tr: "Sevmediğin bir şey" },
             ],
             sample:
-              "We have a small dog. His name is Bruno and he is four. There is a park behind our house. I walk there every morning at seven. In our street there are many children. The small shop on the corner is open every day. At the weekend the street is very quiet. I do not like the bins on Monday.",
+              "We have a small dog. His name is Bruno and he is four. There is a park behind our house. I walk there every morning at seven. In our street there are many children. The small shop on the corner is open every day. On the weekend the street is very quiet. I do not like the bins on Monday.",
             criteria: [
               "Altı sözcüğün her birine değinildi mi?",
               "`there is / there are` kullanıldı mı?",

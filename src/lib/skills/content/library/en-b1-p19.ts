@@ -126,7 +126,7 @@ export const enB1P19: SkillExercise[] = [
       { text: "You're allowed to light a barbecue, but only on the stone areas next to each pitch, never on the grass. The grass stayed brown for a year after one fire." },
       { text: "Dogs are allowed, but they're supposed to be on a lead everywhere except the field behind the barn. There are sheep next door, and the farmer is not a patient man." },
       { text: "Quiet time starts at half past ten. You're not supposed to play music after that, and yes, that includes the small speakers people think we can't hear." },
-      { text: "Cars aren't allowed on the field after nine at night, because children are running around in the dark. Please use the car park by the gate." },
+      { text: "Cars aren't allowed on the field after nine at night, because children are running around in the dark. Please use the parking lot by the gate." },
       { text: "The showers are free, but the hot water runs out at about eight in the morning, so early swimmers have the advantage." },
       { text: "Finally, the river. You're allowed to swim in it, but nobody is watching, and after rain it gets fast very quickly. If the water is brown, stay out." },
       { text: "If you have any problems, the office is open from eight till six, and my number is on the board outside." },
@@ -137,7 +137,7 @@ export const enB1P19: SkillExercise[] = [
         options: [
           "on the stone areas next to each pitch",
           "anywhere on the grass near the tents",
-          "only in the car park by the gate",
+          "only in the parking lot by the gate",
         ],
         answer: 0,
         explain: "„only on the stone areas next to each pitch, never on the grass“.",

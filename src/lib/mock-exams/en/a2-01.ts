@@ -69,7 +69,7 @@ export const EN_A2_01: MockPaper = {
               id: "m2",
               genre: "Notice",
               genreTr: "Duyuru",
-              title: "Sports Centre",
+              title: "Sports Center",
               body: `From Monday the pool is closed for two weeks. The showers and the gym stay open as usual. We are sorry: the old pipes need new parts.`,
             },
             {
@@ -115,7 +115,7 @@ export const EN_A2_01: MockPaper = {
               no: 2,
               ref: "m2",
               text: "What is the notice about?",
-              options: ["The showers are closed too", "The pool opens two weeks earlier", "A part of the sports centre is closed"],
+              options: ["The showers are closed too", "The pool opens two weeks earlier", "A part of the sports center is closed"],
               answer: 2,
               explain:
                 "Duyuru yalnız havuzu kapatıyor; duşlar ve spor salonu açık kalıyor («stay open as usual»). Birinci şık tam bunu tersine çeviriyor. İkincisi de yanlış yönde: havuz iki hafta erken açılmıyor, iki hafta kapalı.",
@@ -238,15 +238,15 @@ export const EN_A2_01: MockPaper = {
               title: "My first year of running",
               body: `Two years ago I could not run for five minutes. I bought good shoes in March and I started in April, on a cold Tuesday evening.
 
-The first weeks were hard. I ran for one minute and then walked for two. My neighbour saw me and laughed, and I was angry. But after six weeks the minutes got easier.
+The first weeks were hard. I ran for one minute and then walked for two. My neighbor saw me and laughed, and I was angry. But after six weeks the minutes got easier.
 
-In September I ran my first ten kilometres. It took me seventy-two minutes. My friends thought that this was slow, but for me it was the best day of the year.
+In September I ran my first ten kilometers. It took me seventy-two minutes. My friends thought that this was slow, but for me it was the best day of the year.
 
 Now I run three times a week, always in the morning. Morning is better for me because the streets are quiet and I do not think about work.
 
 People often ask me for a secret. There is no secret. The only rule is this: do not run fast at the beginning. If you go too fast in the first month, you will stop in the second.`,
               gloss: [
-                { de: "a kilometre", tr: "kilometre", en: "der Kilometer" },
+                { de: "a kilometer", tr: "kilometre", en: "der Kilometer" },
                 { de: "the beginning", tr: "başlangıç", en: "der Anfang" },
                 { de: "a secret", tr: "sır", en: "das Geheimnis" },
               ],
@@ -267,8 +267,8 @@ People often ask me for a secret. There is no secret. The only rule is this: do 
               kind: "mcq",
               id: "en-a2-01-l3-12",
               no: 12,
-              text: "How did the writer feel about the first ten kilometres?",
-              options: ["Disappointed, because the time was slow", "Angry with the neighbour", "Very happy, even with a slow time"],
+              text: "How did the writer feel about the first ten kilometers?",
+              options: ["Disappointed, because the time was slow", "Angry with the neighbor", "Very happy, even with a slow time"],
               answer: 2,
               explain:
                 "Yazar süreyi veriyor (yetmiş iki dakika) ama kendi duygusunu ayrı söylüyor: «for me it was the best day of the year». Arkadaşların yavaş bulması yazarın görüşü değil; komşuyla ilgili öfke ise ilk haftalara ait, o güne değil.",
@@ -500,7 +500,7 @@ Leyla`,
             {
               kind: "audio",
               id: "a3",
-              genre: "At the sports centre",
+              genre: "At the sports center",
               genreTr: "Spor merkezinde",
               situation: "Bir kişi kurs saatlerini soruyor.",
               plays: 2,
@@ -614,7 +614,7 @@ Leyla`,
               plays: 2,
               segments: [
                 {
-                  text: "Good evening and welcome. Our group is called City Walkers and we started in 2019. We meet every Saturday at the old bridge, always at nine o'clock. In winter we meet at ten, because it is dark early. A normal walk is about twelve kilometres and it takes four hours with a long break. You do not need special clothes, but you need good boots. That is the only thing we ask for. The walk is free for members; for guests it costs three pounds. And please remember: we always stop at a café in the middle, so bring a little money for that.",
+                  text: "Good evening and welcome. Our group is called City Walkers and we started in 2019. We meet every Saturday at the old bridge, always at nine o'clock. In winter we meet at ten, because it is dark early. A normal walk is about twelve kilometers and it takes four hours with a long break. You do not need special clothes, but you need good boots. That is the only thing we ask for. The walk is free for members; for guests it costs three pounds. And please remember: we always stop at a café in the middle, so bring a little money for that.",
                 },
               ],
             },
@@ -626,7 +626,7 @@ Leyla`,
               title: "City Walkers — notes",
               body: `Meeting place:        the {{6}}
 Time in summer:       {{7}} o'clock
-Length of a walk:     {{8}} kilometres
+Length of a walk:     {{8}} kilometers
 Necessary equipment:  good {{9}}
 Price for guests:     {{10}} pounds`,
             },
@@ -660,7 +660,7 @@ Price for guests:     {{10}} pounds`,
               text: "Gap 8",
               accept: ["12", "twelve", "about 12", "about twelve"],
               explain:
-                "«A normal walk is about twelve kilometres» — uzunluk on iki kilometre. Kayıttaki dört sayısı süreyi (dört saat) bildiriyor; hangi sayının neyin sayısı olduğunu ayırmak gerekiyor.",
+                "«A normal walk is about twelve kilometers» — uzunluk on iki kilometre. Kayıttaki dört sayısı süreyi (dört saat) bildiriyor; hangi sayının neyin sayısı olduğunu ayırmak gerekiyor.",
             },
             {
               kind: "gap",
@@ -788,7 +788,7 @@ Price for guests:     {{10}} pounds`,
               no: 14,
               ref: "c4",
               text: "What does the speaker want to say?",
-              options: ["That the party is cancelled", "That the friend does not need to worry", "That she is angry with the friend"],
+              options: ["That the party is canceled", "That the friend does not need to worry", "That she is angry with the friend"],
               answer: 1,
               explain:
                 "İleti arkadaşı rahatlatmak için: «do not worry about the party» ve «Really, it is fine». Parti iptal edilmiyor, yalnız arkadaşın gelememesi sorun edilmiyor; öfke ise tam tersi bir ton olurdu.",
@@ -799,7 +799,7 @@ Price for guests:     {{10}} pounds`,
               no: 15,
               ref: "c5",
               text: "What does the customer want?",
-              options: ["A bigger size in the same colour", "A repair", "Her money back"],
+              options: ["A bigger size in the same color", "A repair", "Her money back"],
               answer: 2,
               explain:
                 "Müşteri son cümlede ne istediğini söylüyor: «I would like my money back, please». Tamir ya da beden değişimi hiç geçmiyor; bot ve kusur yalnız gerekçe olarak anlatılıyor.",

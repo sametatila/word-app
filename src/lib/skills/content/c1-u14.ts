@@ -300,7 +300,7 @@ export const c1U14: SkillExercise[] = [
       { de: "der Tathergang", tr: "olayın seyri", en: "course of events" },
       { de: "wahrheitsgemäß", tr: "gerçeğe uygun", en: "truthful" },
       { de: "die Erinnerungslücke", tr: "hafıza boşluğu", en: "gap in memory" },
-      { de: "das Urteilsvermögen", tr: "muhakeme yetisi", en: "judgement" },
+      { de: "das Urteilsvermögen", tr: "muhakeme yetisi", en: "judgment" },
       { de: "vortäuschen", tr: "numara yapmak", en: "to feign" },
       { de: "sehen", tr: "görmek", en: "to see" },
       { de: "genau", tr: "tam olarak", en: "exactly" },

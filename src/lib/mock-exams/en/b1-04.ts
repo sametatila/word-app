@@ -72,7 +72,7 @@ export const EN_B1_04: MockPaper = {
             {
               kind: "text",
               id: "m5",
-              genre: "Notice at a community centre",
+              genre: "Notice at a community center",
               genreTr: "Toplum merkezi duyurusu",
               title: "Evening course places",
               body: `Places on the evening course are held for ten days after you apply. If the fee has not arrived by then, the place goes to the next person on the list. People who pay for the whole year get the tenth month free.`,
@@ -196,7 +196,7 @@ export const EN_B1_04: MockPaper = {
               kind: "match",
               id: "en-b1-04-l2-10",
               no: 10,
-              text: "Mert can fix almost anything but has no money to pay somebody to teach his daughter maths.",
+              text: "Mert can fix almost anything but has no money to pay somebody to teach his daughter math.",
               answer: "e",
               explain:
                 "İlan takası tarif ediyor: «You give an hour of what you can do and take an hour of what you cannot», üstelik «No money changes hands». Mert'in verecek becerisi var, parası yok; kurulan denklem tam bu.",
@@ -225,7 +225,7 @@ The numbers themselves were less dramatic than I expected. Nine of the eleven we
 
 That is the finding I keep thinking about. The gap was not created by a manager who decided that somebody was worth less. It was created by the month somebody happened to be hired, and then nobody looked at it again.
 
-If somebody had asked me two years ago, I would have said that pay is a private matter. I am still not going to tell you that every company should publish a list. I do not know whether that would help, and I can see how it could go wrong. But the private version cost me nothing, and one colleague, who had never asked for anything, has since asked for eight per cent and received six.`,
+If somebody had asked me two years ago, I would have said that pay is a private matter. I am still not going to tell you that every company should publish a list. I do not know whether that would help, and I can see how it could go wrong. But the private version cost me nothing, and one colleague, who had never asked for anything, has since asked for eight percent and received six.`,
               gloss: [
                 { de: "a rise", tr: "zam", en: "die Gehaltserhöhung" },
                 { de: "relief", tr: "rahatlama", en: "die Erleichterung" },
@@ -282,7 +282,7 @@ If somebody had asked me two years ago, I would have said that pay is a private 
               options: ["The company published a list of all the salaries", "Two colleagues left the company", "The writer received a rise herself", "A colleague asked for more money and got some"],
               answer: 3,
               explain:
-                "Son cümle sonucu veriyor: bir meslektaş «has since asked for eight per cent and received six». Yazarın kendi zammından söz edilmiyor ve şirket bir liste yayımlamıyor; tersine yazı bunu önermekten kaçınıyor.",
+                "Son cümle sonucu veriyor: bir meslektaş «has since asked for eight percent and received six». Yazarın kendi zammından söz edilmiyor ve şirket bir liste yayımlamıyor; tersine yazı bunu önermekten kaçınıyor.",
             },
           ],
         },
@@ -688,7 +688,7 @@ If the page had existed in my first job, I {{30}} have saved two years of guessi
               no: 6,
               ref: "a6",
               text: "What is the speaker doing?",
-              options: ["Agreeing to help with a condition", "Asking somebody to work instead of her", "Cancelling the arrangement"],
+              options: ["Agreeing to help with a condition", "Asking somebody to work instead of her", "Canceling the arrangement"],
               answer: 0,
               explain:
                 "Konuşmacı geleceğini söylüyor ama bir sınır koyuyor: «I can do the market stall with you, but I have to leave at two». Tobias yerine geçmiyor, dörde kadar KALIYOR; iptal de yok.",
@@ -751,7 +751,7 @@ If the page had existed in my first job, I {{30}} have saved two years of guessi
               plays: 2,
               segments: [
                 { speaker: "Mert", text: "How was the return-to-work course?" },
-                { speaker: "Yara", text: "Better than I expected. I thought it would be about writing letters. Half of it was about how to talk about three years at home without apologising for them." },
+                { speaker: "Yara", text: "Better than I expected. I thought it would be about writing letters. Half of it was about how to talk about three years at home without apologizing for them." },
               ],
             },
             {
@@ -778,8 +778,8 @@ If the page had existed in my first job, I {{30}} have saved two years of guessi
               segments: [
                 { speaker: "Tobias", text: "Do you want to split the stall on Saturday?" },
                 { speaker: "Astrid", text: "How much is half?" },
-                { speaker: "Tobias", text: "Twelve pounds, and we would each have about a metre." },
-                { speaker: "Astrid", text: "I only have twenty jars. A metre is more than enough." },
+                { speaker: "Tobias", text: "Twelve pounds, and we would each have about a meter." },
+                { speaker: "Astrid", text: "I only have twenty jars. A meter is more than enough." },
               ],
             },
             {
@@ -791,7 +791,7 @@ If the page had existed in my first job, I {{30}} have saved two years of guessi
               plays: 2,
               segments: [
                 { speaker: "Farah", text: "Did the pay rise come through?" },
-                { speaker: "Pavel", text: "Six per cent, not the eight I asked for." },
+                { speaker: "Pavel", text: "Six percent, not the eight I asked for." },
                 { speaker: "Farah", text: "Are you disappointed?" },
                 { speaker: "Pavel", text: "I asked for eight because somebody told me to ask for more than I wanted. It worked exactly as she said it would." },
               ],
@@ -859,7 +859,7 @@ If the page had existed in my first job, I {{30}} have saved two years of guessi
               no: 13,
               ref: "b6",
               text: "How does Pavel feel about the result?",
-              options: ["Disappointed with six per cent", "Satisfied, because the tactic worked", "Angry that he did not get the eight per cent"],
+              options: ["Disappointed with six percent", "Satisfied, because the tactic worked", "Angry that he did not get the eight percent"],
               answer: 1,
               explain:
                 "Pavel sekizi bilerek istemiş: «somebody told me to ask for more than I wanted. It worked exactly as she said it would». Yani altı, baştan hedeflenen sonuç.",
@@ -872,7 +872,7 @@ If the page had existed in my first job, I {{30}} have saved two years of guessi
           format: "notes",
           goal: "detail",
           prompt:
-            "You hear a talk for new volunteers at a money advice centre. Complete the notes, questions 14 to 19. Write ONE or TWO words or a number in each gap. You hear the talk twice.",
+            "You hear a talk for new volunteers at a money advice center. Complete the notes, questions 14 to 19. Write ONE or TWO words or a number in each gap. You hear the talk twice.",
           promptTr:
             "Bir para danışma merkezinin yeni gönüllülerine yapılan konuşmayı dinleyeceksin. 14–19. maddelerdeki notları tamamla. Her boşluğa BİR ya da İKİ sözcük veya bir sayı yaz. Kaydı iki kez dinleyebilirsin.",
           texts: [
@@ -894,8 +894,8 @@ If the page had existed in my first job, I {{30}} have saved two years of guessi
               id: "n1",
               genre: "Notes",
               genreTr: "Not kâğıdı",
-              title: "Advice centre — notes",
-              body: `Centre opened in:         {{14}}
+              title: "Advice center — notes",
+              body: `Center opened in:         {{14}}
 People seen last year:    {{15}}
 Average appointment:      {{16}} minutes
 Friday is for:            {{17}}
@@ -985,7 +985,7 @@ Sit with an adviser for:  {{19}} appointments`,
                 { speaker: "Host", text: "Pavel, you left a job that paid nearly twice what you earn now. People must ask you why." },
                 { speaker: "Pavel", text: "They do, and they usually want a dramatic answer. There is not one. Nobody shouted at me and nothing terrible happened. I simply could not remember the last week I had been curious about anything." },
                 { speaker: "Host", text: "Did the money make it hard to leave?" },
-                { speaker: "Pavel", text: "The money was not the hard part. The hard part was the job title. I had spent eleven years collecting it, and it was on everything, including the way my parents described me to their neighbours." },
+                { speaker: "Pavel", text: "The money was not the hard part. The hard part was the job title. I had spent eleven years collecting it, and it was on everything, including the way my parents described me to their neighbors." },
                 { speaker: "Host", text: "How long did the decision take?" },
                 { speaker: "Pavel", text: "Fourteen months, which is embarrassing to say out loud. I made a spreadsheet, which is what people like me do instead of deciding. The spreadsheet said go, twice, and I ignored it both times." },
                 { speaker: "Host", text: "What actually changed your mind?" },

@@ -48,7 +48,7 @@ export const enC1U02: SkillExercise[] = [
       { de: "unit", tr: "ünite" },
       { de: "variety", tr: "çeşitlilik" },
       { de: "provides", tr: "sağlıyor" },
-      { de: "judgement", tr: "yargı" },
+      { de: "judgment", tr: "yargı" },
       { de: "stylistic", tr: "üslupla ilgili" },
       { de: "slightly", tr: "biraz" },
       { de: "desperate", tr: "çaresiz" },
@@ -71,7 +71,7 @@ export const enC1U02: SkillExercise[] = [
     text:
       "He claimed it; she conceded it; they alleged it. Three sentences about one event, and nothing in them is different except the verb.\n" +
       "„Claimed“ puts doubt on it. Whatever follows is what the speaker says, and the reader is told, quietly, that nobody has checked. „Conceded“ does the opposite for the speaker and the same for the fact: she did not want to say it, so it is probably true. „Alleged“ says the thing is unproven and may be disputed in a court, and no journalist uses it by accident.\n" +
-      "None of those three is neutral, and that is the point of the unit. The neutral verb is „said“, and it is the only one, and a page that needs more variety than „said“ provides has to buy that variety with judgement.\n" +
+      "None of those three is neutral, and that is the point of the unit. The neutral verb is „said“, and it is the only one, and a page that needs more variety than „said“ provides has to buy that variety with judgment.\n" +
       "So the choice is not stylistic. „Pointed out“ makes the following clause a fact. „Admitted“ makes it damaging. „Insisted“ makes it repeated and slightly desperate. „Noted“ makes it small. Each of them arrives without an adjective and without a source, and the reader receives the verdict before reaching the claim.\n" +
       "The counterstatement said less than the verb that carried it. That sentence is the whole problem in one line: a reply can be quoted in full and still lose, because the reporting verb was chosen by somebody else.\n" +
       "They unmask a mouthpiece without naming one. Here two of the same kind sit together, and „unmask“ is doing to the subject what „alleged“ does to the object.\n" +
@@ -358,7 +358,7 @@ export const enC1U02: SkillExercise[] = [
       { speaker: "Yalın", text: "Neither preposition is guessable. „Grapple against“ and „catch up“ both exist and both say something else, and that is the danger with this class of phrase." },
       { speaker: "Yalın", text: "Let it play out before you call it damage control. „Play out“ means run to its end; „damage control“ is a noun that arrived from one field and settled in every other." },
       { speaker: "Yalın", text: "What makes these hard is not the meaning. A learner at this level can work out every one of them from context on the first reading." },
-      { speaker: "Yalın", text: "What cannot be worked out is which of the near versions is the right one, and that is only learnt by meeting the phrase in place, many times, in the register that owns it." },
+      { speaker: "Yalın", text: "What cannot be worked out is which of the near versions is the right one, and that is only learned by meeting the phrase in place, many times, in the register that owns it." },
       { speaker: "Yalın", text: "So I read these the way I read a list of names. Not to understand them — that is free — but to know them well enough that the wrong version is audible." },
     ],
     questions: [

@@ -49,7 +49,7 @@ export const enB2U04: SkillExercise[] = [
       { de: "performment", tr: "yanlış biçim" },
       { de: "violation", tr: "ihlal" },
       { de: "dismissal", tr: "geçersiz sayma" },
-      { de: "acknowledgement", tr: "kabul bildirimi" },
+      { de: "acknowledgment", tr: "kabul bildirimi" },
       { de: "anywhere", tr: "başka yerde" },
       { de: "entirely", tr: "tümüyle" },
       { de: "sentence", tr: "cümle" },
@@ -80,7 +80,7 @@ export const enB2U04: SkillExercise[] = [
     text:
       "The enforcement of the rule took months. The reimbursement of the cost is due. The performance of the contract was late. Three nouns made from three verbs, and not one of them tells you how the next one will be made.\n" +
       "Enforce becomes enforcement. Reimburse becomes reimbursement. So far there is a pattern, and the pattern breaks at the third: perform does not become performment. It becomes performance.\n" +
-      "There is no rule. There is a list, and it has to be learnt one pair at a time. Violate becomes violation. Dismiss becomes dismissal. Acknowledge becomes acknowledgement, and the spelling of that one is argued about in this office twice a year.\n" +
+      "There is no rule. There is a list, and it has to be learned one pair at a time. Violate becomes violation. Dismiss becomes dismissal. Acknowledge becomes acknowledgment, and the spelling of that one is argued about in this office twice a year.\n" +
       "The reason it matters here rather than anywhere else is that a formal complaint is written almost entirely in these nouns. „We enforced the rule“ is a sentence about us. „The enforcement of the rule“ is a thing, and a thing can be dated, measured and put in a numbered paragraph without anybody appearing in it.\n" +
       "So a letter of this kind has two costs at once. It buries the people, which is usually the point, and it demands a vocabulary in which every second word has an ending you cannot work out from the verb.\n" +
       "My own habit is to write the verb first and convert afterwards. „They did not perform the contract on time“ goes down on the page, and then it becomes „the performance of the contract was late“ in the version that is sent. The sentence that goes out has no people in it. The one underneath still does, which is how I check that I know what I am claiming.",
@@ -92,10 +92,10 @@ export const enB2U04: SkillExercise[] = [
         explain: "„perform does not become performment. It becomes performance.“",
       },
       {
-        text: "How are the endings learnt?",
+        text: "How are the endings learned?",
         options: ["one pair at a time", "from a single rule", "from the spelling"],
         answer: 0,
-        explain: "„There is a list, and it has to be learnt one pair at a time.“",
+        explain: "„There is a list, and it has to be learned one pair at a time.“",
       },
       {
         kind: "truefalse",
@@ -244,7 +244,7 @@ export const enB2U04: SkillExercise[] = [
       { de: "a reading", tr: "okuma" },
       { de: "a signature", tr: "imza" },
       { de: "closed off", tr: "kapatılmış" },
-      { de: "a judgement", tr: "yargı" },
+      { de: "a judgment", tr: "yargı" },
       { de: "an apology", tr: "özür" },
       { de: "invite", tr: "davet etmek" },
       { de: "cheaper", tr: "daha ucuz" },
@@ -262,7 +262,7 @@ export const enB2U04: SkillExercise[] = [
       { speaker: "Ufuk", text: "You did not write „mustn't have“." },
       { speaker: "Deniz", text: "There is no such form. A prohibition cannot point backwards, and every draft that tries it comes back." },
       { speaker: "Ufuk", text: "Then „should have“." },
-      { speaker: "Deniz", text: "They should have acknowledged the letter. That one is different in kind: it is not about what happened but about what did not, and it carries a judgement the other two do not." },
+      { speaker: "Deniz", text: "They should have acknowledged the letter. That one is different in kind: it is not about what happened but about what did not, and it carries a judgment the other two do not." },
       { speaker: "Ufuk", text: "Is that safe in a formal letter?" },
       { speaker: "Deniz", text: "It is the only one of the three that can be answered with goodwill. „Must have“ and „can't have“ invite an argument about facts. „Should have“ invites an apology, and an apology is cheaper than a resolution." },
       { speaker: "Ufuk", text: "So you keep it." },

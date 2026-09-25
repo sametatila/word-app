@@ -139,7 +139,7 @@ export const enB1U19: SkillExercise[] = [
     text:
       "By the time we arrived, the bleeding had stopped. That is the sentence I keep, because it changed everything that came after.\n" +
       "They had already called an ambulance from the building, before I knew anything about it, and the ambulance and I reached the door within a minute of each other.\n" +
-      "The doctor had seen the wound before I spoke. Four seconds, from two metres away, while I was still saying the word „kitchen“. Everything I had prepared in the car was answered by looking.\n" +
+      "The doctor had seen the wound before I spoke. Four seconds, from two meters away, while I was still saying the word „kitchen“. Everything I had prepared in the car was answered by looking.\n" +
       "Then the waiting. Two hours, and the triage nurse explained it in one line: the people who go first are the ones who cannot wait, and tonight that was not us.\n" +
       "The injury needed six stitches and the chest pain that had frightened me most turned out to be breath, not heart. I had made it into something else on the way in, which is what a car journey does.\n" +
       "We left at one in the morning with a paper for the ward on Thursday. In the corridor a man was sitting with a bag and had been there since seven.\n" +

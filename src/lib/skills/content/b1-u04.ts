@@ -305,7 +305,7 @@ export const b1U04: SkillExercise[] = [
       { de: "der Lärm", tr: "gürültü", en: "noise" },
       { de: "still", tr: "sessiz", en: "quiet" },
       { de: "klopfen", tr: "kapıyı çalmak", en: "to knock" },
-      { de: "die Nachbarin", tr: "kadın komşu", en: "neighbour" },
+      { de: "die Nachbarin", tr: "kadın komşu", en: "neighbor" },
       { de: "sich einigen", tr: "uzlaşmak", en: "to agree" },
     ],
     tasks: [

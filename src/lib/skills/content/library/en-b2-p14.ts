@@ -23,7 +23,7 @@ export const enB2P14: SkillExercise[] = [
     genre: "article",
     intro: "Bir dergi yazısı: kiralık scooter denemesinin bir yılı; iki taraf neyi doğru, neyi yanlış tahmin etti?",
     gloss: [
-      { de: "pavement", tr: "kaldırım" },
+      { de: "sidewalk", tr: "kaldırım" },
       { de: "pedestrian", tr: "yaya" },
       { de: "proportion", tr: "oran" },
       { de: "to replace", tr: "yerini almak" },
@@ -42,7 +42,7 @@ export const enB2P14: SkillExercise[] = [
       "A year of shared scooters\n\n" +
       "When the city agreed to a twelve-month trial of rental e-scooters, the arguments on both " +
       "sides were already familiar. Supporters promised fewer short car journeys; opponents " +
-      "predicted crowded pavements and injured pedestrians. A year later, the data suggests that " +
+      "predicted crowded sidewalks and injured pedestrians. A year later, the data suggests that " +
       "both sides were partly right, though not in the proportions they expected.\n\n" +
       "The scooters were used heavily: just over nine hundred thousand trips, most of them " +
       "shorter than two kilometers. However, a survey of riders found that only about one trip " +
@@ -73,7 +73,7 @@ export const enB2P14: SkillExercise[] = [
         text: "Who was involved in most of the injuries?",
         options: [
           "the riders themselves",
-          "pedestrians on pavements",
+          "pedestrians on sidewalks",
           "drivers of cars",
         ],
         answer: 0,
@@ -194,7 +194,7 @@ export const enB2P14: SkillExercise[] = [
         text: "What is Ms Rourke's advice?",
         options: [
           "Check the rules before buying.",
-          "Only ride at the weekend.",
+          "Only ride on the weekend.",
           "Buy insurance online.",
         ],
         answer: 0,
@@ -234,8 +234,8 @@ export const enB2P14: SkillExercise[] = [
       {
         kind: "build",
         tr: "Köşede kaldırım o kadar dardı ki puset geçemiyordu.",
-        answer: "At the corner the pavement was so narrow that a pushchair could not get past.",
-        alternatives: ["The pavement was so narrow at the corner that a pushchair could not get past."],
+        answer: "At the corner the sidewalk was so narrow that a pushchair could not get past.",
+        alternatives: ["The sidewalk was so narrow at the corner that a pushchair could not get past."],
         hint: "so + sıfat + that; isim öbeğiyle „such a … that“ kullanılır.",
       },
       {
@@ -262,7 +262,7 @@ export const enB2P14: SkillExercise[] = [
           "article leaves out is what the trial was like for people who cannot simply step around " +
           "an obstacle. " +
           "As someone who uses a wheelchair, I spent most of last spring planning routes around " +
-          "scooters that had been left across dropped kerbs. On one occasion the pavement outside " +
+          "scooters that had been left across dropped kerbs. On one occasion the sidewalk outside " +
           "my building was so crowded that I had to go into the road. " +
           "The improvement since September is real, and it is largely due to the parking bays, " +
           "not to riders becoming more considerate. When there is somewhere obvious to leave a " +
@@ -313,7 +313,7 @@ export const enB2P14: SkillExercise[] = [
         "and they should be judged as one. " +
         "The cost is mostly carried by people who never ride them: wheelchair users, parents " +
         "with pushchairs, older people who are nervous of anything silent and fast on a " +
-        "pavement. Owing to the way the first schemes were designed, those people paid for " +
+        "sidewalk. Owing to the way the first schemes were designed, those people paid for " +
         "other people's convenience. " +
         "My condition would be that no scooter can end a trip outside a marked bay. It's a " +
         "small rule, it's easy to enforce because the app knows exactly where the scooter is, " +

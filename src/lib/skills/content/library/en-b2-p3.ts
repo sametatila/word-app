@@ -37,7 +37,7 @@ export const enB2P3: SkillExercise[] = [
       "start with two people who each believed something different and never " +
       "wrote it down.\n\n" +
       "Get three quotes, and read them side by side before you read the " +
-      "prices. A quote that is fifteen per cent cheaper is often cheaper " +
+      "prices. A quote that is fifteen percent cheaper is often cheaper " +
       "because something has been left out: the removal of the old material, " +
       "the disposal fee, the second coat. It is said in the trade that the " +
       "second page is where the money is, and the second page is the one " +
@@ -138,7 +138,7 @@ export const enB2P3: SkillExercise[] = [
     minutes: 9,
     segments: [
       { text: "Good evening. I have twenty minutes and one message: almost everything you have been told about bicycle theft is a little bit wrong." },
-      { text: "It is often said that bikes are stolen by organized gangs and driven abroad. Some are. But in this city, seventy per cent of recovered bikes are found within four kilometers of where they were taken." },
+      { text: "It is often said that bikes are stolen by organized gangs and driven abroad. Some are. But in this city, seventy percent of recovered bikes are found within four kilometers of where they were taken." },
       { text: "It is also believed that expensive locks are the answer. They help, but the strongest lock in the world is useless around a wheel." },
       { text: "Now the part that matters. Every year we recover about eleven hundred bikes. Fewer than one in ten is returned to its owner." },
       { text: "That is not because we do not try. It is because we cannot prove whose bike it is." },
@@ -167,14 +167,14 @@ export const enB2P3: SkillExercise[] = [
           "at second-hand markets on Sundays",
         ],
         answer: 0,
-        explain: "„… seventy per cent of recovered bikes are found within four kilometers of where they were taken.“",
+        explain: "„… seventy percent of recovered bikes are found within four kilometers of where they were taken.“",
       },
       {
         kind: "truefalse",
         text: "Most recovered bikes are found near the place of the theft.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„… seventy per cent of recovered bikes are found within four kilometers of where they were taken.“",
+        explain: "„… seventy percent of recovered bikes are found within four kilometers of where they were taken.“",
       },
       {
         kind: "short_answer",

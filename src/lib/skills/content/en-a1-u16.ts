@@ -43,7 +43,7 @@ export const enA1U16: SkillExercise[] = [
       "This is my home. It is an apartment on the second floor, with three rooms.\n\n" +
       "There is a big living room with a sofa and a lamp. The kitchen is small, but there is a fridge and a table with four chairs. There are two bedrooms. In my bedroom there is a bed under the window.\n\n" +
       "Is there a bathroom? Yes, there is one next to the kitchen. The toilet is in the bathroom.\n\n" +
-      "We also have a cellar downstairs. The stairs are old, so please be quiet on them. My neighbour is very friendly, but she works at night.",
+      "We also have a cellar downstairs. The stairs are old, so please be quiet on them. My neighbor is very friendly, but she works at night.",
     questions: [
       {
         text: "How many rooms are there?",
@@ -110,7 +110,7 @@ export const enA1U16: SkillExercise[] = [
       "Ela: No! Wait — I call it.\n" +
       "Can: Good idea. Listen. I hear something. It is in the living room!\n" +
       "Ela: Where? Next to the chair, on the floor!\n" +
-      "Can: Under the chair, I think. Now be quiet, please — the neighbour downstairs!",
+      "Can: Under the chair, I think. Now be quiet, please — the neighbor downstairs!",
     questions: [
       {
         text: "Where is the phone?",
@@ -157,8 +157,8 @@ export const enA1U16: SkillExercise[] = [
         text: "Who lives downstairs?",
         options: [],
         answer: 0,
-        accept: ["the neighbour", "a neighbour", "neighbour"],
-        explain: "„Now be quiet, please — the neighbour downstairs!“",
+        accept: ["the neighbor", "a neighbor", "neighbor"],
+        explain: "„Now be quiet, please — the neighbor downstairs!“",
       },
     ],
   },
@@ -239,7 +239,7 @@ export const enA1U16: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 16,
-    title: "Neighbours",
+    title: "Neighbors",
     genre: "dialogue",
     intro: "Apartmandaki komşular anlatılıyor. Kim hangi katta, nasıl biri?",
     gloss: [
@@ -250,7 +250,7 @@ export const enA1U16: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Ali", text: "Do you know the neighbour next door?" },
+      { speaker: "Ali", text: "Do you know the neighbor next door?" },
       { speaker: "Sena", text: "Yes, she lives next door with her two children. She is very friendly." },
       { speaker: "Ali", text: "And downstairs?" },
       { speaker: "Sena", text: "Downstairs there is an old man. He is quiet, but he doesn't open the door." },
@@ -297,7 +297,7 @@ export const enA1U16: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "Do you know the neighbour next door?",
+          "Do you know the neighbor next door?",
           "And downstairs?",
           "Is there a bell?",
           "And the apartment on the third floor?",
@@ -401,7 +401,7 @@ export const enA1U16: SkillExercise[] = [
       {
         kind: "build",
         tr: "Komşum çok arkadaş canlısı.",
-        answer: "My neighbour is very friendly.",
+        answer: "My neighbor is very friendly.",
         hint: "„friendly“ sonu „-ly“ ama zarf değil sıfat; „be“ ile geliyor.",
       },
       {

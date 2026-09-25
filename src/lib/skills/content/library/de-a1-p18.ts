@@ -203,7 +203,7 @@ export const deA1P18: SkillExercise[] = [
         ],
         minWords: 35,
         phrases: [
-          { de: "Mein Lieblingsort ist …", tr: "En sevdiğim yer …", en: "My favourite place is …" },
+          { de: "Mein Lieblingsort ist …", tr: "En sevdiğim yer …", en: "My favorite place is …" },
           { de: "Er liegt …", tr: "… bulunuyor.", en: "It is located …" },
           { de: "Dort gibt es …", tr: "Orada … var.", en: "There is … there." },
           { de: "Ich bin oft mit … dort.", tr: "Oraya sık sık … ile giderim.", en: "I'm often there with …" },

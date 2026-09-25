@@ -249,7 +249,7 @@ export const DE_B2_W01: QuizWeek = {
         en: {
           options: ["sodass", "um", "damit", "dass"],
           answer: 1,
-          why: "İngilizce `so that` → `sodass` aktarımı. `sodass` sonuç bildirir ve çekimli bir yan cümle ister. `to practise` gibi mastarlı amaç Almancada `um … zu` ile kurulur.",
+          why: "İngilizce `so that` → `sodass` aktarımı. `sodass` sonuç bildirir ve çekimli bir yan cümle ister. `to practice` gibi mastarlı amaç Almancada `um … zu` ile kurulur.",
         },
       },
     },

@@ -644,7 +644,7 @@ export const EN_B1_EXAMS: ModuleExamPlan[] = [
       situation: "Bir mahalle toplantısında park projesi konuşuluyor.",
       turns: [
         { speaker: "Chair", de: "The petition which we started in April was signed by four hundred residents.", tr: "Nisanda başlattığımız dilekçeyi dört yüz kişi imzaladı." },
-        { speaker: "Resident", de: "Before they built the car park, this was a field where children played.", tr: "Otoparkı yapmadan önce burası çocukların oynadığı bir tarlaydı." },
+        { speaker: "Resident", de: "Before they built the parking lot, this was a field where children played.", tr: "Otoparkı yapmadan önce burası çocukların oynadığı bir tarlaydı." },
         { speaker: "Chair", de: "The mayor said that the space was still free for a small park.", tr: "Başkan alanın küçük bir park için hâlâ boş olduğunu söyledi." },
         { speaker: "Planner", de: "The trees would be planted in October, if the committee agreed today.", tr: "Komite bugün kabul etse ağaçlar ekimde dikilirdi." },
         { speaker: "Resident", de: "What about the traffic? The street is noisy; the bus stop, on the other hand, is useful.", tr: "Trafik ne olacak? Sokak gürültülü; otobüs durağı ise işe yarıyor." },
@@ -653,7 +653,7 @@ export const EN_B1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Resident", de: "If we planted flowers as well, the playground would look better.", tr: "Çiçek de diksek oyun alanı daha iyi görünürdü." },
       ],
       questions: [
-        { de: "What was on this space before the car park?", tr: "Otoparktan önce bu alanda ne vardı?", options: ["A field where children played", "A small park", "A bus stop", "A cycle lane"], answer: 0 },
+        { de: "What was on this space before the parking lot?", tr: "Otoparktan önce bu alanda ne vardı?", options: ["A field where children played", "A small park", "A bus stop", "A cycle lane"], answer: 0 },
         { de: "When would the trees be planted?", tr: "Ağaçlar ne zaman dikilirdi?", options: ["In October", "In April", "Next week", "After the next vote"], answer: 0 },
         { de: "What happens to the street when one lane is removed?", tr: "Bir şerit kaldırılınca sokakta ne oluyor?", options: ["The route becomes quieter", "The bus stop is closed", "The traffic grows", "The cycle lane is removed"], answer: 0 },
       ],
@@ -689,7 +689,7 @@ export const EN_B1_EXAMS: ModuleExamPlan[] = [
         { de: "We would be grateful for a reply.", tr: "Cevap verirseniz minnettar oluruz", en: "We would be grateful for a reply." },
       ],
       sample:
-        "Dear Sir or Madam,\n\nI am writing on behalf of the residents of Green Street about the empty space next to the playground.\n\nAt the moment the rubbish is collected there twice a week, but the corner which stands behind the bins is never cleaned. Before they built the car park, this was a field where the children played. Since then the only green space has been the small path by the river.\n\nIf the council planted ten trees and put two seats there, the area would be used every day. On the other hand, we understand that the budget is small; therefore we would help with the planting.\n\nWe would be grateful for a reply before the summer.\n\nYours sincerely,\nThe residents' committee",
+        "Dear Sir or Madam,\n\nI am writing on behalf of the residents of Green Street about the empty space next to the playground.\n\nAt the moment the rubbish is collected there twice a week, but the corner which stands behind the bins is never cleaned. Before they built the parking lot, this was a field where the children played. Since then the only green space has been the small path by the river.\n\nIf the council planted ten trees and put two seats there, the area would be used every day. On the other hand, we understand that the budget is small; therefore we would help with the planting.\n\nWe would be grateful for a reply before the summer.\n\nYours sincerely,\nThe residents' committee",
     },
   },
 

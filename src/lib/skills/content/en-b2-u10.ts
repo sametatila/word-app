@@ -152,7 +152,7 @@ export const enB2U10: SkillExercise[] = [
       { de: "a restriction", tr: "sınırlama" },
       { de: "the thread", tr: "ip ucu" },
       { de: "stated", tr: "söylenmiş" },
-      { de: "a catalogue", tr: "katalog" },
+      { de: "a catalog", tr: "katalog" },
       { de: "an entry", tr: "kayıt" },
       { de: "flat", tr: "düz" },
       { de: "shouts", tr: "bağırıyor" },
@@ -165,8 +165,8 @@ export const enB2U10: SkillExercise[] = [
       "Not once did the legacy reach the public. Here there is no auxiliary in the plain sentence — the legacy reached the public — so „did“ appears to carry the inversion, and the main verb goes back to its bare form. „Did reached“ is the error, and it is the commonest one in this unit.\n" +
       "Only in the memorial is the name written. The fronted element is a place, „only“ makes it a restriction, and what moves is „is“. Notice how long the front is: „the name written“ has to wait, and a reader who loses the thread has lost it at the front and not at the end.\n" +
       "Three sentences, three triggers, and one rule that has not changed since it was first stated: negative or restrictive at the front, auxiliary before subject, and the change happens in the clause that follows.\n" +
-      "The register is the point. A catalogue entry for a collection uses this shape to say, without saying, that the imprint knows what it has. Autonomy, sovereignty and competence are all words that appear on the same page, and all of them would be flat in an ordinary sentence.\n" +
-      "Once, in the first line. After that a catalogue is a list, and a list that shouts is a list nobody reads to the end.",
+      "The register is the point. A catalog entry for a collection uses this shape to say, without saying, that the imprint knows what it has. Autonomy, sovereignty and competence are all words that appear on the same page, and all of them would be flat in an ordinary sentence.\n" +
+      "Once, in the first line. After that a catalog is a list, and a list that shouts is a list nobody reads to the end.",
     questions: [
       {
         text: "What happens to the main verb after „did“?",
@@ -182,10 +182,10 @@ export const enB2U10: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "A catalogue should use the shape in every entry.",
+        text: "A catalog should use the shape in every entry.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„Once, in the first line. After that a catalogue is a list…“",
+        explain: "„Once, in the first line. After that a catalog is a list…“",
       },
       {
         kind: "gapfill",

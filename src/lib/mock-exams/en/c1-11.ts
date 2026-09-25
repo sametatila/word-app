@@ -48,7 +48,7 @@ export const EN_C1_11: MockPaper = {
               title: "Eight minutes",
               body: `The eight-minute target was introduced for an entirely {{1}} reason. Before it existed, nobody could say how long an ambulance took to arrive, and the answer varied by region in ways that were suspected, resented and impossible to demonstrate.
 
-Within four years the proportion of calls answered inside eight minutes had risen from sixty-eight to eighty-four per cent, and the average time taken to reach the patient's side had not {{2}} at all.
+Within four years the proportion of calls answered inside eight minutes had risen from sixty-eight to eighty-four percent, and the average time taken to reach the patient's side had not {{2}} at all.
 
 The two figures are not in conflict. The clock is stopped when a vehicle arrives at the address, and a service under pressure will {{3}} its resources towards the part of the journey that is counted. The allocation of vehicles is settled months in advance, and it is settled against the figure that will be published. A rapid-response car reaches the kerb inside the target; the crew and the equipment that will actually treat the patient arrive some minutes later, and no instrument records that gap.
 
@@ -217,14 +217,14 @@ This is by {{12}} means an argument against measuring things, although it is reg
             {
               kind: "text",
               id: "t3",
-              genre: "Encyclopaedia entry",
+              genre: "Encyclopedia entry",
               genreTr: "Ansiklopedi maddesi",
               title: "Performance indicators",
               body: `A performance indicator is a quantity selected to stand for a condition that cannot be observed directly, and its central weakness is the {{13}} that occurs once the quantity itself becomes the object of effort.
 
 The literature distinguishes deliberate manipulation from the {{14}} adjustment of priorities that follows any published figure, and treats the second as by far the more common.
 
-Indicators are defended on the ground that they make institutions answerable to the public, and this claim to {{15}} is the strongest argument in their favour.
+Indicators are defended on the ground that they make institutions answerable to the public, and this claim to {{15}} is the strongest argument in their favor.
 
 Critics reply that the {{16}} on a single number produces an institution well adapted to that number and to nothing else.
 
@@ -314,9 +314,9 @@ Reviews of long-running schemes conclude that most of the damage attributed to t
               kind: "gap",
               id: "en-c1-11-l4-20",
               no: 20,
-              text: "The crews changed their behaviour, not their intentions.\nIt ______ the crews changed, not their intentions.",
-              cue: "BEHAVIOUR",
-              accept: ["was their behaviour that"],
+              text: "The crews changed their behavior, not their intentions.\nIt ______ the crews changed, not their intentions.",
+              cue: "BEHAVIOR",
+              accept: ["was their behavior that"],
               explain:
                 "Yarma cümle bir öğeyi öne çıkarır: `It was X that …`. Vurgulanan öğe ad öbeği olduğu için `that` bağlacı gerekir.",
             },
@@ -360,7 +360,7 @@ Reviews of long-running schemes conclude that most of the damage attributed to t
 
 Her central claim is by now familiar, and she states it more precisely than her predecessors: the distortion produced by a target is a property of the arrangement rather than of the people inside it, and would survive a complete change of personnel. The chapter that demonstrates this, using two services with markedly different cultures and near-identical patterns of drift, is the best thing in the book.
 
-Where the study is weaker is in its choice of opponent. Kurtay writes as though the case for measurement were being made by people who believe numbers are neutral, and she dismantles that position at length. Almost nobody now holds it. The serious defence of targets concedes the distortion at the outset and argues that the alternative, which is discretion exercised behind closed doors and never compared across regions, produced inequalities that were larger, older and entirely invisible. That argument appears in the book only in a footnote, where it is described as nostalgic.
+Where the study is weaker is in its choice of opponent. Kurtay writes as though the case for measurement were being made by people who believe numbers are neutral, and she dismantles that position at length. Almost nobody now holds it. The serious defense of targets concedes the distortion at the outset and argues that the alternative, which is discretion exercised behind closed doors and never compared across regions, produced inequalities that were larger, older and entirely invisible. That argument appears in the book only in a footnote, where it is described as nostalgic.
 
 The omission matters because it shapes the conclusion. Having established that indicators distort, Kurtay proceeds as though the burden of proof had shifted permanently onto anyone who wants to count anything. It has not. A target that is known to distort in a measurable way may still be preferable to an arrangement whose failures nobody can observe, and the comparison is empirical rather than philosophical.
 
@@ -622,7 +622,7 @@ The eight-minute figure was eventually replaced in 2017, and the replacement was
             {
               key: "a",
               label: "a — Former service director",
-              body: "I signed off the rotas that everybody now criticises, and I would sign them again with the information I had. The target was the only thing anybody above me read. What I would change is not the decision but the reporting: had the distribution been published alongside the proportion, the rota would have looked indefensible on paper within a month, and I would have lost the argument that I won.",
+              body: "I signed off the rotas that everybody now criticizes, and I would sign them again with the information I had. The target was the only thing anybody above me read. What I would change is not the decision but the reporting: had the distribution been published alongside the proportion, the rota would have looked indefensible on paper within a month, and I would have lost the argument that I won.",
             },
             {
               key: "b",
@@ -637,7 +637,7 @@ The eight-minute figure was eventually replaced in 2017, and the replacement was
             {
               key: "d",
               label: "d — Health economist",
-              body: "The counterfactual is what this debate keeps refusing to state. The alternative to a distorting target is not a well-run service; it is the arrangement that preceded it, in which allocation was decided regionally, defended by no one and compared with nothing. On the evidence, that was worse, and saying so is not a defence of the eight-minute figure.",
+              body: "The counterfactual is what this debate keeps refusing to state. The alternative to a distorting target is not a well-run service; it is the arrangement that preceded it, in which allocation was decided regionally, defended by no one and compared with nothing. On the evidence, that was worse, and saying so is not a defense of the eight-minute figure.",
             },
           ],
           items: [
@@ -645,7 +645,7 @@ The eight-minute figure was eventually replaced in 2017, and the replacement was
               kind: "match",
               id: "en-c1-11-l8-35",
               no: 35,
-              text: "Which text says that a change in judgement happened without being noticed?",
+              text: "Which text says that a change in judgment happened without being noticed?",
               answer: "c",
               explain:
                 "(c) farkındalık olmadan gerçekleşen kaymayı anlatıyor: «I could not tell you when my sense of what counts as urgent changed, only that it is not what it was».",
@@ -727,7 +727,7 @@ The eight-minute figure was eventually replaced in 2017, and the replacement was
               segments: [
                 { text: "Do you regret the rotas?" },
                 { text: "Not with the information I had. The target was the only line anybody above me read, and I built around it, and I would do it again on the same evidence." },
-                { text: "That sounds like a defence." },
+                { text: "That sounds like a defense." },
                 { text: "It is an explanation, which is a different thing. What I would change is what was published. Put the whole distribution next to the proportion and my rota looks indefensible inside a month." },
                 { text: "So you would have lost the argument." },
                 { text: "I would have lost it, and the service would have been better for it. That is not a comfortable sentence and I have had eleven years to find a better one." },
@@ -742,7 +742,7 @@ The eight-minute figure was eventually replaced in 2017, and the replacement was
               plays: 2,
               segments: [
                 { text: "Why a proportion rather than the distribution?" },
-                { text: "Because you can say it. Eighty-four per cent inside eight minutes is a sentence. A distribution is a shape, and a shape does not survive being read aloud in a chamber." },
+                { text: "Because you can say it. Eighty-four percent inside eight minutes is a sentence. A distribution is a shape, and a shape does not survive being read aloud in a chamber." },
                 { text: "Is that not slightly cynical?" },
                 { text: "It is descriptive. The computation is trivial and the data has been there since 2006. Nothing technical has ever stood in the way, and pretending the obstacle is technical wastes everybody's time." },
                 { text: "So the fix is presentational." },
@@ -798,7 +798,7 @@ The eight-minute figure was eventually replaced in 2017, and the replacement was
               options: ["It is cheaper to calculate", "It is more accurate in practice than the alternative", "It can be spoken in one sentence"],
               answer: 2,
               explain:
-                "Araştırmacı gerekçeyi veriyor: «Eighty-four per cent inside eight minutes is a sentence. A distribution is a shape».",
+                "Araştırmacı gerekçeyi veriyor: «Eighty-four percent inside eight minutes is a sentence. A distribution is a shape».",
             },
             {
               kind: "mcq",
@@ -854,7 +854,7 @@ The eight-minute figure was eventually replaced in 2017, and the replacement was
               plays: 2,
               segments: [
                 {
-                  text: "Thank you. These are the findings, including the ones we were not hoping for. The target requires arrival within eight minutes. We examined forty-one thousand calls made over three years. In twelve per cent of those, the recorded arrival and the moment a crew reached the patient differed by more than four minutes. After the target was introduced, nine per cent of calls were reclassified into a lower category. The proportion answered within the target rose from sixty-eight per cent to eighty-four. The average time to reach the patient's side did not change. The clock, as you know, is stopped at the kerb. Our central recommendation is that the single proportion be replaced by the distribution, and our second is that reclassification be reported separately every quarter.",
+                  text: "Thank you. These are the findings, including the ones we were not hoping for. The target requires arrival within eight minutes. We examined forty-one thousand calls made over three years. In twelve percent of those, the recorded arrival and the moment a crew reached the patient differed by more than four minutes. After the target was introduced, nine percent of calls were reclassified into a lower category. The proportion answered within the target rose from sixty-eight percent to eighty-four. The average time to reach the patient's side did not change. The clock, as you know, is stopped at the kerb. Our central recommendation is that the single proportion be replaced by the distribution, and our second is that reclassification be reported separately every quarter.",
                 },
               ],
             },
@@ -868,11 +868,11 @@ The eight-minute figure was eventually replaced in 2017, and the replacement was
 
 The review examined calls made over {{8}} years.
 
-The two recorded times differed by more than four minutes in {{9}} per cent of cases.
+The two recorded times differed by more than four minutes in {{9}} percent of cases.
 
-After the target was introduced, {{10}} per cent of calls were reclassified.
+After the target was introduced, {{10}} percent of calls were reclassified.
 
-The proportion answered within the target rose to {{11}} per cent.
+The proportion answered within the target rose to {{11}} percent.
 
 The average time to reach the patient's {{12}} did not change.
 
@@ -910,7 +910,7 @@ The main recommendation is to publish the {{14}} instead of the single proportio
               text: "Gap 9",
               accept: ["12", "twelve"],
               explain:
-                "«In twelve per cent of those, the recorded arrival and the moment a crew reached the patient differed by more than four minutes» — iki kaydın ayrıştığı oran.",
+                "«In twelve percent of those, the recorded arrival and the moment a crew reached the patient differed by more than four minutes» — iki kaydın ayrıştığı oran.",
             },
             {
               kind: "gap",
@@ -920,7 +920,7 @@ The main recommendation is to publish the {{14}} instead of the single proportio
               text: "Gap 10",
               accept: ["9", "nine"],
               explain:
-                "«nine per cent of calls were reclassified into a lower category» — yeniden sınıflandırma oranı. On iki, kayıt farkına aitti.",
+                "«nine percent of calls were reclassified into a lower category» — yeniden sınıflandırma oranı. On iki, kayıt farkına aitti.",
             },
             {
               kind: "gap",
@@ -930,7 +930,7 @@ The main recommendation is to publish the {{14}} instead of the single proportio
               text: "Gap 11",
               accept: ["84", "eighty-four"],
               explain:
-                "«rose from sixty-eight per cent to eighty-four» — varılan oran. Altmış sekiz, başlangıç değeridir.",
+                "«rose from sixty-eight percent to eighty-four» — varılan oran. Altmış sekiz, başlangıç değeridir.",
             },
             {
               kind: "gap",
@@ -989,7 +989,7 @@ The main recommendation is to publish the {{14}} instead of the single proportio
                 { text: "Question from the floor: are you saying the distortion is acceptable?" },
                 { text: "I am saying it is priced. A known distortion of a known size is a cost you can carry deliberately. An unknown one is not a smaller cost; it is an uncounted one, and the two get confused constantly in this debate." },
                 { text: "Second question: what would you actually change?" },
-                { text: "One thing, and it is unglamorous. Publish the distribution, not the proportion. The moment there is no threshold, there is no edge to concentrate effort at, and about half of the behaviour we have been calling gaming simply has nowhere to go." },
+                { text: "One thing, and it is unglamorous. Publish the distribution, not the proportion. The moment there is no threshold, there is no edge to concentrate effort at, and about half of the behavior we have been calling gaming simply has nowhere to go." },
                 { text: "Last question: why has that not been done?" },
                 { text: "Because a distribution cannot be said in a sentence, and public accountability in this country is conducted almost entirely in sentences. That is not a technical obstacle and it is the only real one." },
               ],
@@ -1145,7 +1145,7 @@ The main recommendation is to publish the {{14}} instead of the single proportio
             { key: "g", label: "to recommend abolishing published figures altogether" },
             { key: "h", label: "to complain about the workload created by reporting" },
             { key: "i", label: "to point out that the problem is an old one" },
-            { key: "j", label: "to defend a decision the speaker has been criticised for" },
+            { key: "j", label: "to defend a decision the speaker has been criticized for" },
           ],
           texts: [
             {
@@ -1211,7 +1211,7 @@ The main recommendation is to publish the {{14}} instead of the single proportio
               situation: "Altıncı konuşmacı geçmişle karşılaştırmakta ısrar ediyor.",
               plays: 2,
               segments: [
-                { text: "Compare it with what, though. Not with an ideal service, because there was never one. Before 2004 the difference between two neighbouring districts was bigger than anything we have measured since, and not one person outside those districts could have told you it existed." },
+                { text: "Compare it with what, though. Not with an ideal service, because there was never one. Before 2004 the difference between two neighboring districts was bigger than anything we have measured since, and not one person outside those districts could have told you it existed." },
               ],
             },
             {
@@ -1336,7 +1336,7 @@ The main recommendation is to publish the {{14}} instead of the single proportio
           format: "writing",
           goal: "production",
           prompt:
-            "You have listened to a lecture arguing that published targets distort the services they measure. Write an essay for your tutor discussing which of the following does most to limit that distortion, and explaining why the other two are weaker: publishing fuller data, changing the target regularly, or leaving judgement to professionals. Write 220 to 260 words.",
+            "You have listened to a lecture arguing that published targets distort the services they measure. Write an essay for your tutor discussing which of the following does most to limit that distortion, and explaining why the other two are weaker: publishing fuller data, changing the target regularly, or leaving judgment to professionals. Write 220 to 260 words.",
           promptTr:
             "Yayımlanan hedeflerin ölçtükleri hizmeti bozduğunu savunan bir ders dinledin. Danışmanın için bir deneme yaz: aşağıdakilerden hangisi bu bozulmayı en çok sınırlar ve öteki ikisi neden daha zayıftır? Daha ayrıntılı veri yayımlamak, hedefi düzenli olarak değiştirmek ya da kararı meslek erbabına bırakmak. 220–260 kelime.",
           items: [],
@@ -1354,7 +1354,7 @@ Publishing fuller data is the strongest of the three options precisely because i
 
 Changing the target regularly is weaker for a reason its advocates rarely address. A target that moves is a target nobody can be held to, and the instability would be exploited more readily than the stability it replaces. It would also destroy comparison over time, the most useful property any published series has.
 
-Leaving judgement to professionals deserves more respect than it usually receives, and I will concede its central point: the people at the front understand the trade-offs better than any indicator can. What that argument omits is the arrangement it would restore. Discretion exercised regionally and compared with nothing concealed inequalities considerably larger than those the targets produced, and it concealed them from precisely the people who suffered from them.
+Leaving judgment to professionals deserves more respect than it usually receives, and I will concede its central point: the people at the front understand the trade-offs better than any indicator can. What that argument omits is the arrangement it would restore. Discretion exercised regionally and compared with nothing concealed inequalities considerably larger than those the targets produced, and it concealed them from precisely the people who suffered from them.
 
 I would therefore publish the distribution and keep the target, on the ground that a known distortion is cheaper than an unobservable one.`,
             criteria: [
@@ -1372,7 +1372,7 @@ I would therefore publish the distribution and keep the target, on the ground th
           format: "writing",
           goal: "interaction",
           prompt:
-            "An organisation you know publishes a single monthly figure that has begun to shape its own behaviour. Write a proposal to its board. Set out the problem, propose one change, state what you deliberately do not propose, and say what evidence after twelve months would show that the change had failed. Write 220 to 260 words.",
+            "An organization you know publishes a single monthly figure that has begun to shape its own behavior. Write a proposal to its board. Set out the problem, propose one change, state what you deliberately do not propose, and say what evidence after twelve months would show that the change had failed. Write 220 to 260 words.",
           promptTr:
             "Tanıdığın bir kuruluş, kendi davranışını biçimlendirmeye başlamış tek bir aylık rakam yayımlıyor. Yönetim kuruluna bir öneri metni yaz. Sorunu ortaya koy, tek bir değişiklik öner, bilerek neyi önermediğini belirt ve on iki ay sonra hangi kanıtın başarısızlığı göstereceğini söyle. 220–260 kelime.",
           items: [],
@@ -1385,7 +1385,7 @@ I would therefore publish the distribution and keep the target, on the ground th
             ],
             sample: `Proposal: replace the monthly headline figure with a published distribution
 
-The problem is not that our figure is inaccurate. It is accurate, and that is part of the difficulty. Since it was introduced in March, the proportion of enquiries answered within two working days has risen from seventy-one to eighty-eight per cent, while the median time to a resolved case has lengthened by a day and a half. Both movements are real, and both follow from the same cause: a threshold at two days makes an enquiry answered on day three worth nothing, and staff have responded rationally to that arrangement.
+The problem is not that our figure is inaccurate. It is accurate, and that is part of the difficulty. Since it was introduced in March, the proportion of enquiries answered within two working days has risen from seventy-one to eighty-eight percent, while the median time to a resolved case has lengthened by a day and a half. Both movements are real, and both follow from the same cause: a threshold at two days makes an enquiry answered on day three worth nothing, and staff have responded rationally to that arrangement.
 
 I propose one change. We should publish the full distribution of response times each month and retire the single proportion from the summary page. Where a headline is unavoidable, the median should be used, since it has no threshold for effort to gather at.
 
@@ -1432,7 +1432,7 @@ The change should be judged after twelve months against a stated failure conditi
             minutes: 5,
             points: [
               { de: "give a concrete example and name what it measured", tr: "Somut bir örnek verip ölçüleni adlandırmak" },
-              { de: "describe a change in one's own behaviour", tr: "Kendi davranışındaki değişimi anlatmak" },
+              { de: "describe a change in one's own behavior", tr: "Kendi davranışındaki değişimi anlatmak" },
               { de: "construct a counterfactual", tr: "Karşı olgusal bir durum kurmak" },
             ],
             sample:
@@ -1465,7 +1465,7 @@ The change should be judged after twelve months against a stated failure conditi
               { de: "state what the choice costs", tr: "Seçimin bedelini söyle" },
             ],
             sample:
-              "Publishing nothing is the option that sounds cautious and is in fact the most dangerous, because it does not remove judgement; it merely moves it somewhere unobservable, and the inequalities that grow under those conditions are the oldest and the least contested. A single percentage is the option that actually gets used, and its defect is structural rather than moral: a threshold creates an edge, and effort gathers at edges without anybody deciding that it should. The full distribution removes the edge, and what it costs is the sentence — you can no longer say the thing in eight words at a public meeting, and public accountability in most countries is conducted in eight-word sentences. I would publish the distribution and accept that cost, on the grounds that it is a cost in convenience rather than in information, and that the convenience is being paid for by whoever falls just outside the threshold.",
+              "Publishing nothing is the option that sounds cautious and is in fact the most dangerous, because it does not remove judgment; it merely moves it somewhere unobservable, and the inequalities that grow under those conditions are the oldest and the least contested. A single percentage is the option that actually gets used, and its defect is structural rather than moral: a threshold creates an edge, and effort gathers at edges without anybody deciding that it should. The full distribution removes the edge, and what it costs is the sentence — you can no longer say the thing in eight words at a public meeting, and public accountability in most countries is conducted in eight-word sentences. I would publish the distribution and accept that cost, on the grounds that it is a cost in convenience rather than in information, and that the convenience is being paid for by whoever falls just outside the threshold.",
             criteria: [
               "Üç seçenek de değerlendirildi mi?",
               "Seçim gerekçelendirildi mi?",

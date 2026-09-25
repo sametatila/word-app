@@ -12,7 +12,7 @@
  { "conversation": "de-a1-wohnung-zeigen", "titleEn": "Showing your home", "summaryEn": "Teaches you to show someone round your home: how many rooms it has and what it is like." },
  { "conversation": "de-a1-zimmer", "titleEn": "Rooms", "summaryEn": "Teaches you the rooms of a home and the article that goes with each one." },
  { "conversation": "de-a1-moebel", "titleEn": "Where things are", "summaryEn": "Teaches you to say where things are and to tell the position verbs apart." },
- { "conversation": "de-a1-nachbarn", "titleEn": "Neighbours", "summaryEn": "Teaches you to meet new neighbours and to knock on the door." },
+ { "conversation": "de-a1-nachbarn", "titleEn": "Neighbors", "summaryEn": "Teaches you to meet new neighbors and to knock on the door." },
  { "conversation": "de-a1-hausordnung", "titleEn": "House rules", "summaryEn": "Teaches you to understand house rules and to say what is not allowed." },
  { "conversation": "de-a1-miete-zahlen", "titleEn": "Rent and bills", "summaryEn": "Teaches you to talk about rent and service charges, and shows the warm and cold rent." },
  { "conversation": "de-a1-putzen", "titleEn": "Housework", "summaryEn": "Teaches you to talk about housework and puts separable verbs to work on it." },
@@ -27,9 +27,9 @@
  { "conversation": "de-a1-wetter-smalltalk", "titleEn": "Small talk about the weather", "summaryEn": "Teaches you to describe the weather and to start small talk with it." },
  { "conversation": "de-a1-park", "titleEn": "In the park", "summaryEn": "Teaches you to describe what there is in a park and to make plans together." },
  { "conversation": "de-a1-schwimmbad", "titleEn": "At the pool", "summaryEn": "Teaches you to ask the entrance fee, find the changing rooms and say what you can do." },
- { "conversation": "de-a1-fernsehen", "titleEn": "TV and series", "summaryEn": "Teaches you to say what you watch, ask about the channel and give the time of a programme." },
+ { "conversation": "de-a1-fernsehen", "titleEn": "TV and series", "summaryEn": "Teaches you to say what you watch, ask about the channel and give the time of a program." },
  { "conversation": "de-a1-absage", "titleEn": "Declining politely", "summaryEn": "Teaches you to turn down an invitation without offending and to suggest another day." },
- { "conversation": "de-a1-koerper", "titleEn": "Parts of the body", "summaryEn": "Teaches you to name parts of the body and that each one has to be learnt with its article." },
+ { "conversation": "de-a1-koerper", "titleEn": "Parts of the body", "summaryEn": "Teaches you to name parts of the body and that each one has to be learned with its article." },
  { "conversation": "de-a1-weh-tun", "titleEn": "Describing pain", "summaryEn": "Teaches you two ways to say what hurts and to say how long it has been going on." },
  { "conversation": "de-a1-termin-arzt", "titleEn": "A doctor's appointment", "summaryEn": "Teaches you to make an appointment on the phone and that day and time take different prepositions." },
  { "conversation": "de-a1-muessen", "titleEn": "Obligation", "summaryEn": "Teaches you to express obligation and why the main verb goes to the end of the sentence." },
@@ -48,5 +48,5 @@
  { "conversation": "de-a1-gestern", "titleEn": "Talking about yesterday", "summaryEn": "Teaches you to describe yesterday from start to finish, using both auxiliaries together." },
  { "conversation": "de-a1-wochenende-bericht", "titleEn": "A weekend report", "summaryEn": "Teaches you to describe your weekend and to say how it went." },
  { "conversation": "de-a1-jahreszeiten", "titleEn": "Seasons and dates", "summaryEn": "Teaches you to name the seasons and to give a date." },
- { "conversation": "de-a1-a1-rueckblick", "titleEn": "Closing A1", "summaryEn": "Teaches you to say what you have learnt and what comes next." }
+ { "conversation": "de-a1-a1-rueckblick", "titleEn": "Closing A1", "summaryEn": "Teaches you to say what you have learned and what comes next." }
 ]

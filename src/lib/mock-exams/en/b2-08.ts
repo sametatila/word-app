@@ -218,7 +218,7 @@ There is a further problem. The people least likely to answer a survey are the p
             {
               kind: "text",
               id: "t3",
-              genre: "Encyclopaedia entry",
+              genre: "Encyclopedia entry",
               genreTr: "Ansiklopedi maddesi",
               title: "Home care",
               body: `Home care is the provision of practical help to people who remain in their own housing rather than moving into an institution.
@@ -227,7 +227,7 @@ Its stated aim is to postpone {{13}} on residential services for as long as it i
 
 Social {{14}} is not the same as loneliness, and schemes frequently treat the two as one, with the result that the wrong service is offered.
 
-Assessments carried out at the door have been criticised for their {{15}}: two workers visiting the same household in the same week frequently disagree.
+Assessments carried out at the door have been criticized for their {{15}}: two workers visiting the same household in the same week frequently disagree.
 
 The most common {{16}} is a short visit, typically of twenty minutes, repeated at intervals set by a budget rather than by need.
 
@@ -696,7 +696,7 @@ The remedy is unglamorous, and it is not expensive. It is a first question, aske
               situation: "Alarm hizmetinde bir değişiklik duyuruluyor.",
               plays: 2,
               segments: [
-                { text: "A change to the alarm service. From April the button connects you to a person in this county rather than to a call centre somewhere else. The number is unchanged and the charge is unchanged. What changes is who answers." },
+                { text: "A change to the alarm service. From April the button connects you to a person in this county rather than to a call center somewhere else. The number is unchanged and the charge is unchanged. What changes is who answers." },
               ],
             },
             {
@@ -822,7 +822,7 @@ The remedy is unglamorous, and it is not expensive. It is a first question, aske
           format: "notes",
           goal: "detail",
           prompt:
-            "You hear a woman reporting two years of results from a home-care programme. Complete the sentences, questions 9 to 16, with a word or a number. You hear the report twice.",
+            "You hear a woman reporting two years of results from a home-care program. Complete the sentences, questions 9 to 16, with a word or a number. You hear the report twice.",
           promptTr:
             "Bir ev bakımı programının iki yıllık sonuçlarını anlatan bir kadını dinleyeceksin. 9–16. maddelerdeki cümleleri bir sözcük ya da sayıyla tamamla. Kaydı iki kez dinleyebilirsin.",
           texts: [
@@ -835,7 +835,7 @@ The remedy is unglamorous, and it is not expensive. It is a first question, aske
               plays: 2,
               segments: [
                 {
-                  text: "Thank you. These are the figures from our first two years, and I will include the ones we did not enjoy. We began with nine hundred households and we now work with two thousand. The average visit is twenty minutes, which is set by the contract and not by us. Our first finding is that the strongest predictor of a hospital admission is not age and it is not living alone; it is a fall in the previous year. Second, the households that use the most hours are a small group: eight per cent of them take a third of the time. Third, on notice — when we tell people the day before rather than on the morning, cancellations drop by half. Fourth, and this is the uncomfortable one, our own survey found that forty per cent of the people we visit could not name the person who came last. And finally, funding: the programme is paid for until 2029.",
+                  text: "Thank you. These are the figures from our first two years, and I will include the ones we did not enjoy. We began with nine hundred households and we now work with two thousand. The average visit is twenty minutes, which is set by the contract and not by us. Our first finding is that the strongest predictor of a hospital admission is not age and it is not living alone; it is a fall in the previous year. Second, the households that use the most hours are a small group: eight percent of them take a third of the time. Third, on notice — when we tell people the day before rather than on the morning, cancellations drop by half. Fourth, and this is the uncomfortable one, our own survey found that forty percent of the people we visit could not name the person who came last. And finally, funding: the program is paid for until 2029.",
                 },
               ],
             },
@@ -844,8 +844,8 @@ The remedy is unglamorous, and it is not expensive. It is a first question, aske
               id: "n1",
               genre: "Sentences",
               genreTr: "Cümleler",
-              title: "Home-care programme — two-year results",
-              body: `The programme began with {{9}} households.
+              title: "Home-care program — two-year results",
+              body: `The program began with {{9}} households.
 
 It now works with {{10}} households.
 
@@ -853,13 +853,13 @@ The average visit lasts {{11}} minutes.
 
 The strongest predictor of admission is a {{12}} in the previous year.
 
-Eight per cent of households take a {{13}} of the time.
+Eight percent of households take a {{13}} of the time.
 
 Giving notice the day before halves the number of {{14}}.
 
-{{15}} per cent could not name the person who came last.
+{{15}} percent could not name the person who came last.
 
-The programme is funded until {{16}}.`,
+The program is funded until {{16}}.`,
             },
           ],
           items: [
@@ -911,7 +911,7 @@ The programme is funded until {{16}}.`,
               text: "Gap 13",
               accept: ["third"],
               explain:
-                "«eight per cent of them take a third of the time» — küçük bir grubun aldığı pay. Yüzde sekiz hane oranı, süre oranı değil.",
+                "«eight percent of them take a third of the time» — küçük bir grubun aldığı pay. Yüzde sekiz hane oranı, süre oranı değil.",
             },
             {
               kind: "gap",
@@ -931,7 +931,7 @@ The programme is funded until {{16}}.`,
               text: "Gap 15",
               accept: ["40", "forty"],
               explain:
-                "Rahatsız edici bulgu burada: «forty per cent of the people we visit could not name the person who came last».",
+                "Rahatsız edici bulgu burada: «forty percent of the people we visit could not name the person who came last».",
             },
             {
               kind: "gap",
@@ -941,7 +941,7 @@ The programme is funded until {{16}}.`,
               text: "Gap 16",
               accept: ["2029"],
               explain:
-                "«the programme is paid for until 2029» — finansmanın bitiş yılı.",
+                "«the program is paid for until 2029» — finansmanın bitiş yılı.",
             },
           ],
         },
@@ -1237,21 +1237,21 @@ The programme is funded until {{16}}.`,
           format: "writing",
           goal: "production",
           prompt:
-            "In your English class you have discussed care for older people. Now write an essay for your teacher, answering this question: \"Should the state pay people who look after an older relative at home?\" Use the two ideas below and add one idea of your own.\n\nIdeas: what the payment would recognise — what happens to the carer's own work",
+            "In your English class you have discussed care for older people. Now write an essay for your teacher, answering this question: \"Should the state pay people who look after an older relative at home?\" Use the two ideas below and add one idea of your own.\n\nIdeas: what the payment would recognize — what happens to the carer's own work",
           promptTr:
             "İngilizce dersinde yaşlı bakımını tartıştınız. Öğretmenin için bir deneme yaz: \"Devlet, evde yaşlı bir yakınına bakan kişilere ödeme yapmalı mı?\" Aşağıdaki iki fikri kullan ve kendi fikrinden birini ekle.\n\nFikirler: ödeme neyi tanımış olur — bakan kişinin kendi işine ne olur",
           items: [],
           rubric: {
             minWords: 140,
             points: [
-              { de: "Discuss what the payment would recognise.", tr: "Ödemenin neyi tanıyacağını tartış." },
+              { de: "Discuss what the payment would recognize.", tr: "Ödemenin neyi tanıyacağını tartış." },
               { de: "Discuss what happens to the carer's own work.", tr: "Bakan kişinin kendi işine ne olacağını tartış." },
               { de: "Add a third idea of your own.", tr: "Kendi üçüncü fikrini ekle." },
               { de: "Reach a clear conclusion.", tr: "Açık bir sonuca var." },
             ],
             sample: `Most of the care that older people receive is already given by relatives, without payment and usually without any record that it happened. The question is not whether the work is being done; it is whether it should continue to be invisible.
 
-A payment would recognise something more precise than effort. It would recognise a cost that has already been transferred: somebody has reduced their hours, refused a promotion or left a job entirely. The average person doing this is over sixty, which makes the loss permanent rather than temporary.
+A payment would recognize something more precise than effort. It would recognize a cost that has already been transferred: somebody has reduced their hours, refused a promotion or left a job entirely. The average person doing this is over sixty, which makes the loss permanent rather than temporary.
 
 The counter-argument is not weak. A payment set below the wage of a professional carer risks becoming a reason to stay at home, particularly for women, and it may quietly buy the state a cheaper service.
 
@@ -1289,7 +1289,7 @@ The state should pay, provided the payment protects the carer's future income ra
 
 Your article of 14 March was right about one thing, and it is the thing most reports leave out: the people who need help most are the least likely to ask for it, and a service that waits to be contacted will never meet them.
 
-Where the article went wrong was in treating living alone and being lonely as the same condition. They overlap, but they are not one thing. My neighbour is eighty-four, lives alone and sees a dozen people every week; what she cannot do is carry a basket up her front steps. When she was assessed last year, she was offered a weekly conversation and no handrail.
+Where the article went wrong was in treating living alone and being lonely as the same condition. They overlap, but they are not one thing. My neighbor is eighty-four, lives alone and sees a dozen people every week; what she cannot do is carry a basket up her front steps. When she was assessed last year, she was offered a weekly conversation and no handrail.
 
 What I would like to see is not more visits but a different first question. Ask whether the person wants company or wants a job doing, record the answer, and send what was asked for.
 

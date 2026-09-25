@@ -142,7 +142,7 @@ export const enB1U22: SkillExercise[] = [
       { de: "doubled", tr: "ikiye katlandı" },
       { de: "possible", tr: "olanaklı" },
       { de: "grew", tr: "büyüdü" },
-      { de: "centre", tr: "merkez" },
+      { de: "center", tr: "merkez" },
       { de: "photograph", tr: "fotoğraf" },
       { de: "carries", tr: "taşıyor" },
       { de: "covers", tr: "kapsıyor" },
@@ -154,7 +154,7 @@ export const enB1U22: SkillExercise[] = [
       "So the two forms are not about how long ago something happened. They are about whether the sentence names a moment.\n" +
       "The square was rebuilt in 2018 and the traffic has doubled since then. One page, two forms, and the difference is only in the words that come after the verb.\n" +
       "I have never seen so much traffic. „Never“ has no date inside it; it covers everything up to now, which is why the perfect is the only possible form there.\n" +
-      "The suburb grew fastest of all. Four streets in 2012, thirty by 2019, and the pollution followed the new buildings out of the centre.\n" +
+      "The suburb grew fastest of all. Four streets in 2012, thirty by 2019, and the pollution followed the new buildings out of the center.\n" +
       "What surprised me is that nobody here talks about the bridge. They talk about the square, which is smaller, older and in every photograph. The bridge carries four times more people and has never once been in the paper.",
     questions: [
       {
@@ -227,7 +227,7 @@ export const enB1U22: SkillExercise[] = [
       { de: "agree", tr: "anlaşmak" },
       { de: "measure", tr: "ölçmek" },
       { de: "shape", tr: "biçim" },
-      { de: "learnt", tr: "öğrenildi" },
+      { de: "learned", tr: "öğrenildi" },
       { de: "straight after", tr: "hemen ardından" },
       { de: "slowly", tr: "yavaşça" },
       { de: "thousand", tr: "bin" },
@@ -240,9 +240,9 @@ export const enB1U22: SkillExercise[] = [
       { speaker: "Kerem", text: "Who pays for that?" },
       { speaker: "Ada", text: "The council. They suggested repairing the pipe first and cleaning the water afterwards, which is the right order and took two years to agree." },
       { speaker: "Kerem", text: "And the bottles?" },
-      { speaker: "Ada", text: "We gave up buying bottles at home in March. Six people, one tap, and the landfill is forty kilometres away, so it is a small thing that is easy to measure." },
+      { speaker: "Ada", text: "We gave up buying bottles at home in March. Six people, one tap, and the landfill is forty kilometers away, so it is a small thing that is easy to measure." },
       { speaker: "Kerem", text: "Why does „decided“ take „to“ and „gave up“ take „-ing“?" },
-      { speaker: "Ada", text: "There is no reason. The first verb chooses the shape of the second one, and the list has to be learnt." },
+      { speaker: "Ada", text: "There is no reason. The first verb chooses the shape of the second one, and the list has to be learned." },
       { speaker: "Kerem", text: "So „suggest me to repair it“ is wrong." },
       { speaker: "Ada", text: "It is not a sentence at all. „Suggest“ never takes a person straight after it, and that is the part people still get wrong at C1." },
       { speaker: "Kerem", text: "What was the dirty water doing to the plant?" },
@@ -320,7 +320,7 @@ export const enB1U22: SkillExercise[] = [
       { de: "signed", tr: "imzaladı" },
       { de: "twice a day", tr: "günde iki kez" },
       { de: "in the end", tr: "sonunda" },
-      { de: "learnt", tr: "öğrenildi" },
+      { de: "learned", tr: "öğrenildi" },
     ],
     minutes: 6,
     segments: [
@@ -331,7 +331,7 @@ export const enB1U22: SkillExercise[] = [
       { speaker: "Doruk", text: "She asked whether we had signed the petition. Not „did we sign“: in a reported question the word order goes flat, and „whether“ does the work the inversion used to do." },
       { speaker: "Doruk", text: "Two hundred and forty signatures in the end, and the vote was in September." },
       { speaker: "Doruk", text: "We lost it by nine. The committee had promised a second date and there has not been one." },
-      { speaker: "Doruk", text: "What I learnt is that the poster mattered more than the petition. People sign in thirty seconds and forget in thirty more; a poster on a bus stop is read by the same person twice a day for a month." },
+      { speaker: "Doruk", text: "What I learned is that the poster mattered more than the petition. People sign in thirty seconds and forget in thirty more; a poster on a bus stop is read by the same person twice a day for a month." },
     ],
     questions: [
       {

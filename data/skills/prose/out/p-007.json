@@ -347,7 +347,7 @@
  {
   "tr": "Bir davet iptal ediliyor. Sebep ne, yerine ne öneriliyor?",
   "kind": "intro",
-  "en": "An invitation is cancelled. What is the reason, what is offered instead?"
+  "en": "An invitation is canceled. What is the reason, what is offered instead?"
  },
  {
   "tr": "Bir hırsızlığı bildir. Almanca öznesiz edilgen kurabilir.",
@@ -642,7 +642,7 @@
  {
   "tr": "„Wir sind neu hier, Wohnung 7.“ 5 numara komşunun dairesi.",
   "kind": "explain",
-  "en": "„Wir sind neu hier, Wohnung 7.“ Number 5 is the neighbour's flat."
+  "en": "„Wir sind neu hier, Wohnung 7.“ Number 5 is the neighbor's flat."
  },
  {
   "tr": "„you“ ile yardımcı fiil „do“; „does“ yalnız he/she/it ile.",

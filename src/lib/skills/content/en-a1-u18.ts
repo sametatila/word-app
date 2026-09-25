@@ -42,7 +42,7 @@ export const enA1U18: SkillExercise[] = [
     minutes: 4,
     text:
       "We have a small garden behind the house. There is a tree and there are many flowers.\n\n" +
-      "In the sun the flowers are beautiful, but the ground is dry. I water the plants every morning. My neighbour has a field outside the city — that is a big garden!\n\n" +
+      "In the sun the flowers are beautiful, but the ground is dry. I water the plants every morning. My neighbor has a field outside the city — that is a big garden!\n\n" +
       "On the balcony there are two chairs and a table. In the summer we eat outside. My son plays football in the garden, and sometimes the ball goes over the wall.\n\n" +
       "Is there a tap in the garden? Yes, next to the door. But the tap is broken — it doesn't work. I call a man on Monday.",
     questions: [
@@ -60,10 +60,10 @@ export const enA1U18: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The neighbour's field is outside the city.",
+        text: "The neighbor's field is outside the city.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„My neighbour has a field outside the city…“",
+        explain: "„My neighbor has a field outside the city…“",
       },
       {
         kind: "gapfill",

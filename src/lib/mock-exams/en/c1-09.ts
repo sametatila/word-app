@@ -53,7 +53,7 @@ The standard criticism {{2}} on that oddness: the words are cheap, nobody presen
 
 What an apology actually {{3}} down is a description. Before it, what happened is contested; afterwards it is the official account, and every subsequent argument has to begin from there.
 
-That is not a small thing, although it is routinely {{4}} for one. A government that has apologised cannot later argue that the matter was exaggerated, and the lawyers on both sides know it.
+That is not a small thing, although it is routinely {{4}} for one. A government that has apologized cannot later argue that the matter was exaggerated, and the lawyers on both sides know it.
 
 The timing is where the criticism {{5}} its force. Apologies are almost always issued at the point when the last person who could give evidence has died, and the pattern is too consistent to be an accident.
 
@@ -220,7 +220,7 @@ As it is, the sequence is decided by lawyers, {{12}} duty is to the institution 
             {
               kind: "text",
               id: "t3",
-              genre: "Encyclopaedia entry",
+              genre: "Encyclopedia entry",
               genreTr: "Ansiklopedi maddesi",
               title: "The public apology",
               body: `An apology is distinguished from an expression of regret by its {{13}} of responsibility rather than by its tone.
@@ -242,7 +242,7 @@ Reviews conclude that an apology unaccompanied by {{18}} is received very differ
               id: "en-c1-09-l3-13",
               no: 13,
               text: "ACKNOWLEDGE",
-              accept: ["acknowledgement", "acknowledgment"],
+              accept: ["acknowledgment", "acknowledgment"],
               explain:
                 "`by its ___ of responsibility` yapısında iyelikten sonra bir ad geliyor ve `of` tümleci o adın kendi edatıdır. Fiil biçimi bu konumda duramaz.",
             },
@@ -363,7 +363,7 @@ Reviews conclude that an apology unaccompanied by {{18}} is received very differ
 
 I have gone through thirty-one of them. The median interval between the events and the statement is forty-two years, and the distribution is not what you would expect if the delay were caused by the difficulty of establishing facts. In eleven cases the facts had been established in public, by an inquiry, more than a decade before the words were issued.
 
-The usual explanation is legal. An admission creates a liability, and a government that apologises while claimants are alive may find itself in court. That explanation is correct and it explains rather less than it appears to, because in nine of the thirty-one the claims were already out of time when the apology came.
+The usual explanation is legal. An admission creates a liability, and a government that apologizes while claimants are alive may find itself in court. That explanation is correct and it explains rather less than it appears to, because in nine of the thirty-one the claims were already out of time when the apology came.
 
 What the pattern fits better is something duller. An apology has a cost that is neither legal nor financial: it obliges the person issuing it to say, in public, that an institution they lead did something indefensible. That cost falls entirely on the living, and it is at its lowest when nobody in the room was there.
 
@@ -463,17 +463,17 @@ The uncomfortable implication is that the instrument works best where it is wort
             {
               key: "c",
               label: "c — Writer C",
-              body: "There is no real disagreement about whether to apologise; there is a disagreement about when, and the two have been run together for thirty years. Almost everybody who objects to a particular apology objects to its date, and would have supported the identical words in 1990.",
+              body: "There is no real disagreement about whether to apologize; there is a disagreement about when, and the two have been run together for thirty years. Almost everybody who objects to a particular apology objects to its date, and would have supported the identical words in 1990.",
             },
             {
               key: "d",
               label: "d — Writer D",
-              body: "It is assumed that the demand comes from the families. In the four cases I have worked on it came from inside the institution, usually from the second generation of staff, and the families were consulted afterwards and were frequently more sceptical than anybody had expected.",
+              body: "It is assumed that the demand comes from the families. In the four cases I have worked on it came from inside the institution, usually from the second generation of staff, and the families were consulted afterwards and were frequently more skeptical than anybody had expected.",
             },
             {
               key: "e",
               label: "e — Writer E",
-              body: "This argument has a shape I recognise from other fields. Those under fifty regard the apology as obviously due; those over seventy regard it as an insult to people who acted under different assumptions. That is not a moral disagreement that can be settled. It is a disagreement that will simply end.",
+              body: "This argument has a shape I recognize from other fields. Those under fifty regard the apology as obviously due; those over seventy regard it as an insult to people who acted under different assumptions. That is not a moral disagreement that can be settled. It is a disagreement that will simply end.",
             },
           ],
           items: [
@@ -502,7 +502,7 @@ The uncomfortable implication is that the instrument works best where it is wort
               text: "Which writer says the disagreement concerns timing rather than principle?",
               answer: "c",
               explain:
-                "Writer C ikisini ayırıyor: «There is no real disagreement about whether to apologise; there is a disagreement about when», ve itiraz edenlerin aynı sözleri 1990'da destekleyeceğini söylüyor.",
+                "Writer C ikisini ayırıyor: «There is no real disagreement about whether to apologize; there is a disagreement about when», ve itiraz edenlerin aynı sözleri 1990'da destekleyeceğini söylüyor.",
             },
             {
               kind: "match",
@@ -657,7 +657,7 @@ That is a defensible instinct, and it produces, reliably, the version of the wor
               kind: "match",
               id: "en-c1-09-l8-38",
               no: 38,
-              text: "separates their professional duty from their personal judgement",
+              text: "separates their professional duty from their personal judgment",
               answer: "d",
               explain:
                 "Metin ayrımı açıkça kuruyor: «this is not a view about whether it was deserved. My duty runs to one party».",
@@ -790,7 +790,7 @@ That is a defensible instinct, and it produces, reliably, the version of the wor
               no: 4,
               ref: "a2",
               text: "Why does he think the result is rarely cited?",
-              options: ["It concerns a different subject", "The sample was too small", "The method was criticised"],
+              options: ["It concerns a different subject", "The sample was too small", "The method was criticized"],
               answer: 0,
               explain:
                 "Araştırmacı bulguyu yeniden sınıflandırıyor: «it is not a finding about apology. It is a finding about how much the general public did not know».",
@@ -1326,20 +1326,20 @@ The most common word in the interviews was {{14}}.`,
           format: "writing",
           goal: "production",
           prompt:
-            "You have attended a seminar on official apologies. Write an essay for your tutor summarising which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. An apology is worth little unless it is accompanied by compensation.\n2. An apology is valuable in itself, because it fixes the official account of what happened.\n\nWrite 220 to 260 words.",
+            "You have attended a seminar on official apologies. Write an essay for your tutor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. An apology is worth little unless it is accompanied by compensation.\n2. An apology is valuable in itself, because it fixes the official account of what happened.\n\nWrite 220 to 260 words.",
           promptTr:
             "Resmî özürler üzerine bir seminere katıldın. Danışmanın için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Tazminat eşlik etmedikçe özrün değeri azdır.\n2. Özür kendi başına değerlidir, çünkü olayın resmî anlatısını sabitler.\n\n220–260 kelime yaz.",
           items: [],
           rubric: {
             minWords: 220,
             points: [
-              { de: "Summarise both points fairly.", tr: "İki noktayı da adil biçimde özetle." },
+              { de: "Summarize both points fairly.", tr: "İki noktayı da adil biçimde özetle." },
               { de: "Say which is more important and justify the choice.", tr: "Hangisinin daha önemli olduğunu söyle ve seçimi gerekçelendir." },
               { de: "Give your own view, distinct from the summary.", tr: "Özetten ayrı olarak kendi görüşünü ver." },
             ],
             sample: `The two positions are usually presented as a disagreement about sincerity, which flatters neither of them.
 
-The first rests on a straightforward observation about incentives. Words cost an institution nothing that can be entered in an account, and a body that has apologised may reasonably calculate that the matter is now closed. On this reading the statement is not merely inadequate; it is actively useful to the party that issued it, since it converts a claim into a piece of history.
+The first rests on a straightforward observation about incentives. Words cost an institution nothing that can be entered in an account, and a body that has apologized may reasonably calculate that the matter is now closed. On this reading the statement is not merely inadequate; it is actively useful to the party that issued it, since it converts a claim into a piece of history.
 
 The second position does not dispute the incentive and denies that it settles anything. What an apology produces is a fixed description. Before it, the events are contested and every subsequent argument must establish them again; afterwards they are the official account, and a government that has accepted them cannot later suggest that they were exaggerated. That is a durable asset, and it is one that money does not buy.
 
@@ -1361,7 +1361,7 @@ My own view is that the argument has been conducted about the wrong variable. Th
           format: "writing",
           goal: "interaction",
           prompt:
-            "An organisation you know is preparing a public statement about something it got badly wrong several years ago. Write a report for its board. Describe the present position, assess the likely effects of issuing the statement now, and recommend a course of action. Write 220 to 260 words.",
+            "An organization you know is preparing a public statement about something it got badly wrong several years ago. Write a report for its board. Describe the present position, assess the likely effects of issuing the statement now, and recommend a course of action. Write 220 to 260 words.",
           promptTr:
             "Tanıdığın bir kuruluş, yıllar önce ciddi biçimde yanlış yaptığı bir konuda kamuya açık bir bildiri hazırlıyor. Yönetim kuruluna bir rapor yaz. Bugünkü durumu anlat, bildirinin şimdi yayımlanmasının olası etkilerini değerlendir ve bir yol öner. 220–260 kelime yaz.",
           items: [],
@@ -1414,11 +1414,11 @@ I would not publish it alongside a compensation offer, and I would not describe 
           promptTr: "Sana özürler, kayıtlar ve neyin olduğuna kimin karar verdiği hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [
-            { who: "partner", de: "Good afternoon. What makes an apology from an organisation different from one between two people?", tr: "İyi günler. Bir kurumun özrünü iki kişi arasındaki özürden ayıran nedir?" },
+            { who: "partner", de: "Good afternoon. What makes an apology from an organization different from one between two people?", tr: "İyi günler. Bir kurumun özrünü iki kişi arasındaki özürden ayıran nedir?" },
             { who: "you", hint: "Bir ayrım kur ve örnekle.", expect: "iki durumu ayırt etmek ve örneklendirmek", seconds: 45 },
             { who: "partner", de: "Thank you. Have you ever seen a written account of something you took part in?", tr: "Teşekkürler. Katıldığın bir olayın yazılı anlatısını hiç gördün mü?" },
             { who: "you", hint: "Tek bir olayı ve tepkini anlat.", expect: "tek bir olayı anlatmak ve kendi tepkisini çözümlemek", seconds: 45 },
-            { who: "partner", de: "And if you had to decide when an organisation should apologise, what would your rule be?", tr: "Bir kurumun ne zaman özür dilemesi gerektiğine sen karar versen kuralın ne olurdu?" },
+            { who: "partner", de: "And if you had to decide when an organization should apologize, what would your rule be?", tr: "Bir kurumun ne zaman özür dilemesi gerektiğine sen karar versen kuralın ne olurdu?" },
             { who: "you", hint: "Bir ölçüt öner ve gerekçelendir.", expect: "varsayımsal bir görevde ölçüt önermek ve gerekçelendirmek", seconds: 45 },
           ],
           items: [],
@@ -1426,11 +1426,11 @@ I would not publish it alongside a compensation offer, and I would not describe 
             minutes: 5,
             points: [
               { de: "draw a distinction and illustrate it", tr: "Bir ayrım kurmak ve örneklemek" },
-              { de: "narrate one event and analyse the reaction", tr: "Tek bir olayı anlatıp tepkiyi çözümlemek" },
+              { de: "narrate one event and analyze the reaction", tr: "Tek bir olayı anlatıp tepkiyi çözümlemek" },
               { de: "propose and justify a criterion", tr: "Bir ölçüt önerip gerekçelendirmek" },
             ],
             sample:
-              "Between two people an apology is addressed to the person who was hurt; from an institution it is addressed to everybody, and the person who was hurt is present as an example. My school published an account of a year I was in, and reading it I recognised every fact and none of the emphasis, which taught me that accuracy and honesty are separable. If I had to write a rule, I would tie the apology to the completion of the inquiry rather than to any calendar, because the only defensible reason to wait is that you do not yet know.",
+              "Between two people an apology is addressed to the person who was hurt; from an institution it is addressed to everybody, and the person who was hurt is present as an example. My school published an account of a year I was in, and reading it I recognized every fact and none of the emphasis, which taught me that accuracy and honesty are separable. If I had to write a rule, I would tie the apology to the completion of the inquiry rather than to any calendar, because the only defensible reason to wait is that you do not yet know.",
             criteria: [
               "Ayrım açıkça kuruldu mu ve örneklendi mi?",
               "Anlatı tek ve belirgin mi, tepki çözümlendi mi?",

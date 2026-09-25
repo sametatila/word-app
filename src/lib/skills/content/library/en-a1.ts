@@ -149,7 +149,7 @@ export const enA1: SkillExercise[] = [
         text: "Görevlinin renk sorusunu duyduğun gibi yaz.",
         options: [],
         answer: 0,
-        accept: ["What color is the bag?", "What color is the bag", "What colour is the bag?"],
+        accept: ["What color is the bag?", "What color is the bag", "What color is the bag?"],
         explain: "„What color is the bag?“ — soru kelimesi + is + özne.",
       },
       {

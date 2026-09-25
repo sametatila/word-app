@@ -42,7 +42,7 @@ export const enA2P2: SkillExercise[] = [
       "Better than most people think. In the country there are big fields with only one plant. Here we have " +
       "gardens, parks and balconies, so the bees find something from March to October.\n\n" +
       "What is the hardest part?\n" +
-      "The neighbours, not the bees. Before I put a hive on a roof, I talk to every flat in the building. " +
+      "The neighbors, not the bees. Before I put a hive on a roof, I talk to every flat in the building. " +
       "It takes longer than the beekeeping, but after that nobody is worried.",
     questions: [
       {
@@ -176,7 +176,7 @@ export const enA2P2: SkillExercise[] = [
     course: "en",
     level: "A2",
     skill: "writing",
-    title: "Cancelling a Membership",
+    title: "Canceling a Membership",
     genre: "email",
     intro: "Bir spor salonu üyeliğini bitireceksin; önce iki cümle kur, sonra resmî bir e-posta yaz.",
     gloss: [

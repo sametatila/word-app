@@ -205,9 +205,9 @@
   "de": "Hier ist das Verb „be“, deshalb steht das Adverb DANACH: is never — wie deutsch „ist nie“."
  },
  {
-  "tr": "Ödeme biçimi „by“ ile: by card, by cheque. „with“ değil.",
+  "tr": "Ödeme biçimi „by“ ile: by card, by check. „with“ değil.",
   "kind": "build.hint",
-  "de": "Die Zahlungsart mit „by“: by card, by cheque. Nicht „with“, obwohl das Deutsche „mit“ sagt."
+  "de": "Die Zahlungsart mit „by“: by card, by check. Nicht „with“, obwohl das Deutsche „mit“ sagt."
  },
  {
   "tr": "Gün adından önce „on“ ve gün adı büyük harfle: on Monday.",
@@ -215,9 +215,9 @@
   "de": "Vor dem Tagesnamen steht „on“: on Monday, deutsch „am Montag“."
  },
  {
-  "tr": "Hafta sonunda „at“: at the weekend. Günde „on“, ayda „in“.",
+  "tr": "Hafta sonunda „at“: on the weekend. Günde „on“, ayda „in“.",
   "kind": "build.hint",
-  "de": "Beim Wochenende „at“: at the weekend. Deutsch sagt hier dasselbe „am“ wie beim Tag, Englisch nicht: beim Tag „on“, beim Monat „in“."
+  "de": "Beim Wochenende „at“: on the weekend. Deutsch sagt hier dasselbe „am“ wie beim Tag, Englisch nicht: beim Tag „on“, beim Monat „in“."
  },
  {
   "tr": "Saatte „at“: at seven, at midnight. Günde „on“, ayda „in“.",

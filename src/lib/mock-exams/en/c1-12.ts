@@ -49,7 +49,7 @@ export const EN_C1_12: MockPaper = {
 
 The most common ordering rule is arrival, which has the advantage of being impossible to argue with and the {{2}} of being indifferent to consequence. Two people who arrive on the same morning may be facing wholly different costs of delay, and arrival cannot see the difference.
 
-Ordering by need corrects that and introduces a problem of its own, because need has to be assessed, and assessment can be {{3}}. Once a judgement stands between a person and their place in a line, that judgement will be argued with, appealed against and, occasionally, arranged.
+Ordering by need corrects that and introduces a problem of its own, because need has to be assessed, and assessment can be {{3}}. Once a judgment stands between a person and their place in a line, that judgment will be argued with, appealed against and, occasionally, arranged.
 
 What is least often examined is the queue before the queue. A list records the people who have been {{4}} onto it, and says nothing whatever about those who were never referred, who did not know the service existed or who were turned away at an earlier stage.
 
@@ -141,7 +141,7 @@ It is not the length of a wait that provokes the strongest objection. It is the 
 
 Nor {{9}} the difficulty removed by publishing the criteria. Published criteria are read by the people best equipped to read them, which is not the same population as the people waiting.
 
-{{10}} makes randomisation attractive, in the narrow set of cases where no criterion can distinguish between applicants, is that it is the only rule nobody can present as a judgement about them.
+{{10}} makes randomisation attractive, in the narrow set of cases where no criterion can distinguish between applicants, is that it is the only rule nobody can present as a judgment about them.
 
 At no point {{11}} the profession claimed that a queue is fair. The claim has always been the weaker and more defensible one: that it is more accountable than the arrangement it replaced.
 
@@ -218,7 +218,7 @@ That is by {{12}} means a small claim, although it is routinely dismissed as one
             {
               kind: "text",
               id: "t3",
-              genre: "Encyclopaedia entry",
+              genre: "Encyclopedia entry",
               genreTr: "Ansiklopedi maddesi",
               title: "Waiting lists",
               body: `A waiting list is a mechanism for rationing a service by time rather than by price, and the rule that determines {{13}} within it is the point at which its politics become visible.
@@ -361,7 +361,7 @@ Reviews conclude that the strongest {{18}} for publishing full distributions is 
 
 The report recommends that the list be reordered by expected benefit. I accept the evidence assembled in chapters four and five, which is stronger than I expected when the review began, and I agree that ordering by arrival produces outcomes that nobody would choose deliberately. My objection is not to the direction of the reform but to a step the report treats as administrative.
 
-Expected benefit must be assessed, and assessment requires an assessor. The report devotes eleven pages to the criteria and one paragraph to the people who will apply them. That paragraph states that assessors will be trained. It does not state who they are accountable to, what happens when two assessors disagree, or how an applicant contests a judgement made about their own case. These are not details. They are the whole mechanism by which a criterion becomes a place in a queue.
+Expected benefit must be assessed, and assessment requires an assessor. The report devotes eleven pages to the criteria and one paragraph to the people who will apply them. That paragraph states that assessors will be trained. It does not state who they are accountable to, what happens when two assessors disagree, or how an applicant contests a judgment made about their own case. These are not details. They are the whole mechanism by which a criterion becomes a place in a queue.
 
 I am also unpersuaded by the report's treatment of the hidden queue. Chapter six estimates that eleven hundred people in the district meet the criteria and have never been referred, and then sets that figure aside as outside the review's scope. It is not outside the scope. A reform that reorders four thousand two hundred people while leaving eleven hundred invisible has improved the fairness of a list and not necessarily the fairness of anything else. That is arguably worth doing, and it is not what the recommendation claims to be doing.
 
@@ -384,7 +384,7 @@ I record my thanks to the secretariat, whose work was exemplary, and my regret t
               options: [
                 "She has resigned from the committee",
                 "She signed the report but dissents",
-                "She wrote the chapters she now criticises",
+                "She wrote the chapters she now criticizes",
                 "She refuses to accept the committee's evidence",
               ],
               answer: 1,
@@ -415,7 +415,7 @@ I record my thanks to the secretariat, whose work was exemplary, and my regret t
                 "The report says almost nothing about the assessors",
                 "The criteria themselves are described far too vaguely",
                 "The reform would cost more than the report admits",
-                "The committee met too rarely to reach a judgement",
+                "The committee met too rarely to reach a judgment",
               ],
               answer: 0,
               explain:
@@ -451,7 +451,7 @@ I record my thanks to the secretariat, whose work was exemplary, and my regret t
             {
               key: "a",
               label: "a — Writer A",
-              body: "Ordering by arrival is the only rule that cannot be argued with, and that is exactly what recommends it. Every alternative requires a judgement about the person in front of you, and judgements attract appeals, appeals attract advocates, and advocacy is distributed with almost perfect unfairness across the population that waits.",
+              body: "Ordering by arrival is the only rule that cannot be argued with, and that is exactly what recommends it. Every alternative requires a judgment about the person in front of you, and judgments attract appeals, appeals attract advocates, and advocacy is distributed with almost perfect unfairness across the population that waits.",
             },
             {
               key: "b",
@@ -635,7 +635,7 @@ What follows from this is not that criteria are worthless. It is that a criterio
             {
               key: "c",
               label: "c — Committee member",
-              body: "I signed the report and I dissent from it, which our procedures allow and our habits do not encourage. The evidence for reordering is stronger than I expected. What I cannot accept is eleven pages on criteria and one paragraph on the people who will apply them, with nothing at all on how a judgement is contested.",
+              body: "I signed the report and I dissent from it, which our procedures allow and our habits do not encourage. The evidence for reordering is stronger than I expected. What I cannot accept is eleven pages on criteria and one paragraph on the people who will apply them, with nothing at all on how a judgment is contested.",
             },
             {
               key: "d",
@@ -853,7 +853,7 @@ What follows from this is not that criteria are worthless. It is that a criterio
               plays: 2,
               segments: [
                 {
-                  text: "Thank you. The list we examined holds four thousand two hundred names. The median wait is thirty-one weeks; the longest wait we located was ninety-four. In seven per cent of cases the recorded clock had been reset at least once, in every instance because an offered date was declined. Our estimate of the hidden queue — people who meet the criteria and have never been referred — is eleven hundred. Priority is decided by a panel of three, which meets every two weeks. Our single recommendation is that the service publish the range alongside the median, since the median conceals precisely the cases this committee was convened to examine.",
+                  text: "Thank you. The list we examined holds four thousand two hundred names. The median wait is thirty-one weeks; the longest wait we located was ninety-four. In seven percent of cases the recorded clock had been reset at least once, in every instance because an offered date was declined. Our estimate of the hidden queue — people who meet the criteria and have never been referred — is eleven hundred. Priority is decided by a panel of three, which meets every two weeks. Our single recommendation is that the service publish the range alongside the median, since the median conceals precisely the cases this committee was convened to examine.",
                 },
               ],
             },
@@ -869,7 +869,7 @@ The median wait is {{8}} weeks.
 
 The longest wait located was {{9}} weeks.
 
-The clock had been reset in {{10}} per cent of cases.
+The clock had been reset in {{10}} percent of cases.
 
 The hidden queue is estimated at {{11}} people.
 
@@ -919,7 +919,7 @@ The recommendation is to publish the {{14}} alongside the median.`,
               text: "Gap 10",
               accept: ["7", "seven"],
               explain:
-                "«In seven per cent of cases the recorded clock had been reset at least once» — sıfırlama oranı ve her seferinde nedeni reddedilen bir tarih.",
+                "«In seven percent of cases the recorded clock had been reset at least once» — sıfırlama oranı ve her seferinde nedeni reddedilen bir tarih.",
             },
             {
               kind: "gap",
@@ -983,12 +983,12 @@ The recommendation is to publish the {{14}} alongside the median.`,
               segments: [
                 { text: "Your review found a system that is failing patients." },
                 { text: "It found a system that is doing exactly what it was designed to do, which is a more uncomfortable finding and I would rather we started there." },
-                { text: "That sounds like a defence of it." },
+                { text: "That sounds like a defense of it." },
                 { text: "It is a description. If you tell people the machinery is broken, they will ask who broke it, and the answer will be nobody, and the conversation will stop. The machinery is working. The design is the problem." },
                 { text: "You must have found somebody at fault." },
                 { text: "I kept looking, and I want to be honest about that, because I began this review expecting to find one. There is no individual in the file who did anything I would not have done in the same chair with the same rules." },
                 { text: "The clock resets. Somebody chose to allow that." },
-                { text: "Somebody allowed it in 1998 for a reason that was sound at the time: a service should not be penalised when an applicant declines a date. What nobody modelled was who declines dates, and the answer turns out to be people with inflexible employment and no childcare." },
+                { text: "Somebody allowed it in 1998 for a reason that was sound at the time: a service should not be penalized when an applicant declines a date. What nobody modeled was who declines dates, and the answer turns out to be people with inflexible employment and no childcare." },
                 { text: "So you would abolish the reset." },
                 { text: "No, and this is where I part company with our own submissions. Abolish it and services stop offering dates at short notice, because every unaccepted offer now counts against them. You would remove a visible unfairness and create an invisible one." },
                 { text: "Then what does your report recommend?" },
@@ -1063,7 +1063,7 @@ The recommendation is to publish the {{14}} alongside the median.`,
               ],
               answer: 2,
               explain:
-                "Hale eksiği adlandırıyor: «What nobody modelled was who declines dates», cevap esnek olmayan işlerde çalışan ve çocuk bakımı desteği olmayan kişiler.",
+                "Hale eksiği adlandırıyor: «What nobody modeled was who declines dates», cevap esnek olmayan işlerde çalışan ve çocuk bakımı desteği olmayan kişiler.",
             },
             {
               kind: "mcq",
@@ -1205,7 +1205,7 @@ The recommendation is to publish the {{14}} alongside the median.`,
               situation: "Beşinci konuşmacı varış sırasını savunuyor.",
               plays: 2,
               segments: [
-                { text: "Say what you like about ordering by arrival: nobody can appeal against a date. The moment you introduce judgement you introduce appeals, and appeals are won by whoever has somebody articulate in the family. I would rather have a blunt rule than a subtle one that sorts by confidence." },
+                { text: "Say what you like about ordering by arrival: nobody can appeal against a date. The moment you introduce judgment you introduce appeals, and appeals are won by whoever has somebody articulate in the family. I would rather have a blunt rule than a subtle one that sorts by confidence." },
               ],
             },
             {
@@ -1355,7 +1355,7 @@ The recommendation is to publish the {{14}} alongside the median.`,
             ],
             sample: `Every ordering rule distributes the same scarcity differently, and the useful question is therefore not which rule is fair but which unfairness we are prepared to see.
 
-Assessment of need is the rule I would adopt, for the plain reason that it is the only one of the three that attends to what the queue exists for. A person who will lose their employment within a month and a person who will not are in materially different positions, and both arrival and the lottery are constructed so as to be unable to notice this. The objection to assessment is real and I want to state it properly: a judgement invites an appeal, and appeals are exercised disproportionately by applicants who have encountered such processes before. That is an argument for publishing the appeal route in usable language, not for abandoning judgement.
+Assessment of need is the rule I would adopt, for the plain reason that it is the only one of the three that attends to what the queue exists for. A person who will lose their employment within a month and a person who will not are in materially different positions, and both arrival and the lottery are constructed so as to be unable to notice this. The objection to assessment is real and I want to state it properly: a judgment invites an appeal, and appeals are exercised disproportionately by applicants who have encountered such processes before. That is an argument for publishing the appeal route in usable language, not for abandoning judgment.
 
 Ordering by arrival is defended precisely because it cannot be contested, and its advocates are right that unarguable rules resist manipulation. What they concede too little is that indifference is not neutrality. A rule that treats two unlike cases identically has made a decision about them, and has merely declined to say so.
 
@@ -1394,7 +1394,7 @@ I have signed this report and I dissent from its second recommendation. I set ou
 
 I accept the evidence in chapters four and five in full. It is more thorough than the material available to the previous review, and it establishes that ordering by arrival produces outcomes that no member of this committee would defend if asked to choose them deliberately. I accept, too, that reordering is within our remit and that delay has a cost.
 
-My objection concerns a step the report treats as procedural. Reordering by assessed need requires assessors, and the report gives eleven pages to the criteria and a single paragraph to the people who will apply them. That paragraph promises training. It is silent on accountability, silent on what occurs when two assessors reach different conclusions, and silent on how an applicant contests a judgement made about their own case. Those omissions are not incidental to the reform; they are the machinery by which a criterion becomes a position in a queue, and unexamined machinery will be filled by whoever already knows how such things work.
+My objection concerns a step the report treats as procedural. Reordering by assessed need requires assessors, and the report gives eleven pages to the criteria and a single paragraph to the people who will apply them. That paragraph promises training. It is silent on accountability, silent on what occurs when two assessors reach different conclusions, and silent on how an applicant contests a judgment made about their own case. Those omissions are not incidental to the reform; they are the machinery by which a criterion becomes a position in a queue, and unexamined machinery will be filled by whoever already knows how such things work.
 
 I recommend, more narrowly than the report, that we publish the assessment rules and the appeal route in language an applicant can act on, and report annually the number of referrals declined before the list is reached. Reordering should follow once there is something against which to check it.`,
             criteria: [
@@ -1470,7 +1470,7 @@ I recommend, more narrowly than the report, that we publish the assessment rules
               { de: "say what the choice costs and who pays it", tr: "Seçimin bedelini ve bedeli kimin ödediğini söyle" },
             ],
             sample:
-              "Ordering by arrival has the single great merit of being unarguable, and its cost is paid by whoever happens to be in the worst position on an ordinary Tuesday, which is a form of indifference rather than of neutrality. A lottery is the honest rule inside the narrow band where two cases genuinely cannot be told apart, and outside that band it is modesty used as an excuse. Assessment of need is the one I would choose, and I want to be exact about what it costs: it introduces a judgement, and every judgement can be appealed, and appeals are won disproportionately by applicants who have met a process like this before or who know somebody who has. That cost is paid by the least practised applicant, which is close to the worst possible distribution of it. The answer is not to abandon assessment but to publish the appeal route in language somebody can actually act on, and to report every year how many people used it and who they were.",
+              "Ordering by arrival has the single great merit of being unarguable, and its cost is paid by whoever happens to be in the worst position on an ordinary Tuesday, which is a form of indifference rather than of neutrality. A lottery is the honest rule inside the narrow band where two cases genuinely cannot be told apart, and outside that band it is modesty used as an excuse. Assessment of need is the one I would choose, and I want to be exact about what it costs: it introduces a judgment, and every judgment can be appealed, and appeals are won disproportionately by applicants who have met a process like this before or who know somebody who has. That cost is paid by the least practiced applicant, which is close to the worst possible distribution of it. The answer is not to abandon assessment but to publish the appeal route in language somebody can actually act on, and to report every year how many people used it and who they were.",
             criteria: [
               "Üç kural da değerlendirildi mi?",
               "Seçim gerekçelendirildi mi?",

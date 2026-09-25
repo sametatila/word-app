@@ -50,7 +50,7 @@ export const EN_C1_10: MockPaper = {
               title: "The line and the ground",
               body: `A border drawn on a map is a claim about the ground, and the ground is under no obligation to {{1}} in.
 
-Rivers move. A watercourse that was the frontier in 1893 may now run four hundred metres to the east, and the treaty says the river without saying which river, in which year.
+Rivers move. A watercourse that was the frontier in 1893 may now run four hundred meters to the east, and the treaty says the river without saying which river, in which year.
 
 Villages sit across lines that were {{2}} by somebody who had never seen them, working from a smaller map in a room in another country.
 
@@ -221,7 +221,7 @@ As it is, the line is left alone, {{12}} suits everybody except the eleven house
             {
               kind: "text",
               id: "t3",
-              genre: "Encyclopaedia entry",
+              genre: "Encyclopedia entry",
               genreTr: "Ansiklopedi maddesi",
               title: "Boundary demarcation",
               body: `Demarcation is the physical marking on the ground of a boundary whose {{13}} has already been agreed in a treaty.
@@ -454,12 +454,12 @@ The general point is uncomfortable for my own discipline. The reasons for most s
             {
               key: "a",
               label: "a — Writer A",
-              body: "Nobody in this dispute cares about the line. What is at stake is the water rights that follow from it, and those could be settled without touching the boundary at all. The map is being argued over because it is the only object in the room that both governments already recognise.",
+              body: "Nobody in this dispute cares about the line. What is at stake is the water rights that follow from it, and those could be settled without touching the boundary at all. The map is being argued over because it is the only object in the room that both governments already recognize.",
             },
             {
               key: "b",
               label: "b — Writer B",
-              body: "The standard account holds that lines drawn from a distance ignore the ground. Then there is the eastern section, drawn in the same week by the same men, which follows the watershed for ninety kilometres with an accuracy that took the next survey four months to confirm. Any theory has to accommodate that, and most do not attempt to.",
+              body: "The standard account holds that lines drawn from a distance ignore the ground. Then there is the eastern section, drawn in the same week by the same men, which follows the watershed for ninety kilometers with an accuracy that took the next survey four months to confirm. Any theory has to accommodate that, and most do not attempt to.",
             },
             {
               key: "c",
@@ -469,7 +469,7 @@ The general point is uncomfortable for my own discipline. The reasons for most s
             {
               key: "d",
               label: "d — Writer D",
-              body: "Suppose we accept that the line is in the wrong place. Correcting it means a resurvey, new markers, land registry amendments in two systems that do not share a format, and compensation to about four hundred households. The technical error is forty metres. The correction is a decade, and nobody proposing it has costed the decade.",
+              body: "Suppose we accept that the line is in the wrong place. Correcting it means a resurvey, new markers, land registry amendments in two systems that do not share a format, and compensation to about four hundred households. The technical error is forty meters. The correction is a decade, and nobody proposing it has costed the decade.",
             },
             {
               key: "e",
@@ -494,7 +494,7 @@ The general point is uncomfortable for my own discipline. The reasons for most s
               text: "Which writer offers an example that the usual account cannot absorb?",
               answer: "b",
               explain:
-                "Writer B karşı örneği veriyor: aynı hafta aynı ekipçe çizilen doğu kesimi «follows the watershed for ninety kilometres», ve kuramın bunu açıklaması gerektiğini söylüyor.",
+                "Writer B karşı örneği veriyor: aynı hafta aynı ekipçe çizilen doğu kesimi «follows the watershed for ninety kilometers», ve kuramın bunu açıklaması gerektiğini söylüyor.",
             },
             {
               kind: "match",
@@ -512,7 +512,7 @@ The general point is uncomfortable for my own discipline. The reasons for most s
               text: "Which writer draws attention to the cost of putting it right?",
               answer: "d",
               explain:
-                "Writer D hatayı kabul edip bedeli sayıyor: yeniden ölçüm, işaretler, iki ayrı tapu sistemi ve dört yüz haneye tazminat. «The technical error is forty metres. The correction is a decade».",
+                "Writer D hatayı kabul edip bedeli sayıyor: yeniden ölçüm, işaretler, iki ayrı tapu sistemi ve dört yüz haneye tazminat. «The technical error is forty meters. The correction is a decade».",
             },
           ],
         },
@@ -536,7 +536,7 @@ The general point is uncomfortable for my own discipline. The reasons for most s
 
 The commission that owns the line meets twice a year and has no field staff. The posts are inspected, in practice, by two forestry teams who are paid for something else and who walk that ground anyway, and the arrangement has never been written down. {{32}}
 
-What happens when a post is lost is more revealing than the treaty. It is replaced from the position of the two neighbouring posts, by people with a tape and an afternoon, and the replacement becomes the record for everybody who comes afterwards. {{33}}
+What happens when a post is lost is more revealing than the treaty. It is replaced from the position of the two neighboring posts, by people with a tape and an afternoon, and the replacement becomes the record for everybody who comes afterwards. {{33}}
 
 There have been three proposals since 1990 to establish a permanent inspection unit. All three were costed, all three were affordable, and all three were abandoned at the point where somebody asked which of the two governments would employ the staff. {{34}}
 
@@ -608,7 +608,7 @@ The line, meanwhile, is being maintained perfectly adequately by two men with a 
             {
               key: "a",
               label: "a — Surveyor",
-              body: "People ask me where the boundary is and I tell them it depends what they are going to do with the answer. For a fence, the markers. For a court, the coordinates. For a conversation with a neighbour, the hedge. Those three are not in the same place and none of them is wrong, and the profession has known this since before I was trained.",
+              body: "People ask me where the boundary is and I tell them it depends what they are going to do with the answer. For a fence, the markers. For a court, the coordinates. For a conversation with a neighbor, the hedge. Those three are not in the same place and none of them is wrong, and the profession has known this since before I was trained.",
             },
             {
               key: "b",
@@ -714,7 +714,7 @@ The line, meanwhile, is being maintained perfectly adequately by two men with a 
                 { text: "So where is the boundary?" },
                 { text: "That depends entirely on what you are going to do with the answer." },
                 { text: "That sounds like an evasion." },
-                { text: "It is the opposite of one. For a fence you want the markers. For a court you want the coordinates. For a conversation with a neighbour you want the hedge, and those three are about forty metres apart." },
+                { text: "It is the opposite of one. For a fence you want the markers. For a court you want the coordinates. For a conversation with a neighbor you want the hedge, and those three are about forty meters apart." },
                 { text: "And which is the real one?" },
                 { text: "The question has no answer, and the profession stopped asking it two generations ago. It is only outside the profession that people still expect there to be one." },
               ],
@@ -732,7 +732,7 @@ The line, meanwhile, is being maintained perfectly adequately by two men with a 
                 { text: "Then what?" },
                 { text: "Somebody has to decide which ministry employs the surveyors, and that is a level above everyone who has ever attended. It is not a dispute. It is a vacancy." },
                 { text: "Could it not be escalated?" },
-                { text: "It could, once, by somebody willing to spend the credit. Nobody has ever thought forty metres of hillside was worth that, and they are probably right, which is why it will still be open in ten years." },
+                { text: "It could, once, by somebody willing to spend the credit. Nobody has ever thought forty meters of hillside was worth that, and they are probably right, which is why it will still be open in ten years." },
               ],
             },
             {
@@ -795,7 +795,7 @@ The line, meanwhile, is being maintained perfectly adequately by two men with a 
               options: ["The cost would not justify it", "The rules forbid escalation", "No record of the file exists"],
               answer: 0,
               explain:
-                "Görevli hesabı veriyor: yükseltmek itibar harcamayı gerektirir ve «Nobody has ever thought forty metres of hillside was worth that, and they are probably right».",
+                "Görevli hesabı veriyor: yükseltmek itibar harcamayı gerektirir ve «Nobody has ever thought forty meters of hillside was worth that, and they are probably right».",
             },
             {
               kind: "mcq",
@@ -840,7 +840,7 @@ The line, meanwhile, is being maintained perfectly adequately by two men with a 
               plays: 2,
               segments: [
                 {
-                  text: "Thank you. These are the results of the review, and I will include the awkward ones. The section we examined runs for two hundred and forty kilometres and is marked by nine hundred and twelve posts. We located eight hundred and sixty-one of them. Of those, forty-three were more than ten metres from the position recorded in the archive, and the largest single discrepancy was ninety-four metres. The posts have been inspected, in practice, by two forestry teams, and no written agreement covering that work has ever existed. The last complete survey of this section was carried out in 1954. And the finding we did not expect: where the archive and the ground disagree, local land use follows the ground in every case we checked.",
+                  text: "Thank you. These are the results of the review, and I will include the awkward ones. The section we examined runs for two hundred and forty kilometers and is marked by nine hundred and twelve posts. We located eight hundred and sixty-one of them. Of those, forty-three were more than ten meters from the position recorded in the archive, and the largest single discrepancy was ninety-four meters. The posts have been inspected, in practice, by two forestry teams, and no written agreement covering that work has ever existed. The last complete survey of this section was carried out in 1954. And the finding we did not expect: where the archive and the ground disagree, local land use follows the ground in every case we checked.",
                 },
               ],
             },
@@ -850,15 +850,15 @@ The line, meanwhile, is being maintained perfectly adequately by two men with a 
               genre: "Sentences",
               genreTr: "Cümleler",
               title: "Boundary review — findings",
-              body: `The section examined runs for {{7}} kilometres.
+              body: `The section examined runs for {{7}} kilometers.
 
 It is marked by {{8}} posts.
 
 The team located {{9}} of them.
 
-{{10}} posts were more than ten metres out of position.
+{{10}} posts were more than ten meters out of position.
 
-The largest discrepancy was {{11}} metres.
+The largest discrepancy was {{11}} meters.
 
 The posts are inspected by two {{12}} teams.
 
@@ -876,7 +876,7 @@ Where the archive and the ground disagree, local land use follows the {{14}}.`,
               text: "Gap 7",
               accept: ["240", "two hundred and forty"],
               explain:
-                "Kayıt uzunluğu veriyor: «The section we examined runs for two hundred and forty kilometres».",
+                "Kayıt uzunluğu veriyor: «The section we examined runs for two hundred and forty kilometers».",
             },
             {
               kind: "gap",
@@ -906,7 +906,7 @@ Where the archive and the ground disagree, local land use follows the {{14}}.`,
               text: "Gap 10",
               accept: ["43", "forty-three"],
               explain:
-                "«forty-three were more than ten metres from the position recorded in the archive» — on metreden fazla sapan direk sayısı.",
+                "«forty-three were more than ten meters from the position recorded in the archive» — on metreden fazla sapan direk sayısı.",
             },
             {
               kind: "gap",
@@ -916,7 +916,7 @@ Where the archive and the ground disagree, local land use follows the {{14}}.`,
               text: "Gap 11",
               accept: ["94", "ninety-four"],
               explain:
-                "«the largest single discrepancy was ninety-four metres» — en büyük tekil sapma. On metre ise eşik değer.",
+                "«the largest single discrepancy was ninety-four meters» — en büyük tekil sapma. On metre ise eşik değer.",
             },
             {
               kind: "gap",
@@ -968,14 +968,14 @@ Where the archive and the ground disagree, local land use follows the {{14}}.`,
               situation: "Bir yönetici, ölçüm uzmanı Mira, hukukçu Ondrej ve yerel temsilci Piet ile konuşuyor.",
               plays: 1,
               segments: [
-                { text: "Mira, the survey says the line is forty metres out. Should it be moved?" },
-                { text: "The survey does not say that. It says the posts and the archive disagree by up to ninety-four metres in places. Which of the two is out is a question the survey cannot answer, and I want that on the record before anybody quotes me." },
+                { text: "Mira, the survey says the line is forty meters out. Should it be moved?" },
+                { text: "The survey does not say that. It says the posts and the archive disagree by up to ninety-four meters in places. Which of the two is out is a question the survey cannot answer, and I want that on the record before anybody quotes me." },
                 { text: "Ondrej, legally?" },
                 { text: "Legally the treaty text governs, and the treaty describes a watercourse that has since moved. So the law points at an object that is not where the law thinks it is, and every lawyer in this field knows it and none of us will say it in a filing." },
                 { text: "Piet, from the village?" },
                 { text: "Nobody there is confused about where the boundary is. They know exactly. It is the hedge, it has been the hedge since before the war, and the four hectares your survey has just reassigned have been farmed and taxed on one side for ninety years." },
                 { text: "Mira, does long practice count for anything technically?" },
-                { text: "Not in my report, and that is a limitation of the report rather than a judgement about the practice. I measure what is there. What weight anybody gives the hedge is a decision for somebody else, and I have been careful never to make it." },
+                { text: "Not in my report, and that is a limitation of the report rather than a judgment about the practice. I measure what is there. What weight anybody gives the hedge is a decision for somebody else, and I have been careful never to make it." },
                 { text: "Ondrej, could the practice be given legal weight?" },
                 { text: "In principle, yes, and doing so would open every other section of the frontier to the same argument. That is not a reason against it. It is a reason why nobody will do it for one village." },
                 { text: "Piet, would you accept a correction if compensation followed?" },
@@ -1048,7 +1048,7 @@ Where the archive and the ground disagree, local land use follows the {{14}}.`,
               ],
               answer: 0,
               explain:
-                "Mira sınırı raporuna koyuyor: «that is a limitation of the report rather than a judgement about the practice … I have been careful never to make it».",
+                "Mira sınırı raporuna koyuyor: «that is a limitation of the report rather than a judgment about the practice … I have been careful never to make it».",
             },
             {
               kind: "mcq",
@@ -1146,7 +1146,7 @@ Where the archive and the ground disagree, local land use follows the {{14}}.`,
               situation: "Birinci konuşmacı yaygın bir inancı düzeltiyor.",
               plays: 2,
               segments: [
-                { text: "Everybody repeats that the line was drawn with a ruler by men who had never been there. Half of that is true. They had not been there, and they were working from a survey done on foot by somebody who had, which is why the eastern half follows the watershed to within about eleven metres." },
+                { text: "Everybody repeats that the line was drawn with a ruler by men who had never been there. Half of that is true. They had not been there, and they were working from a survey done on foot by somebody who had, which is why the eastern half follows the watershed to within about eleven meters." },
               ],
             },
             {
@@ -1168,7 +1168,7 @@ Where the archive and the ground disagree, local land use follows the {{14}}.`,
               situation: "Üçüncü konuşmacı fiilî düzeni anlatıyor.",
               plays: 2,
               segments: [
-                { text: "There is a written procedure for replacing a lost marker and it has not been used since 1968. What actually happens is that whichever forestry team finds the stump puts a new post in from the two neighbours, tells nobody, and the line goes on being where they put it." },
+                { text: "There is a written procedure for replacing a lost marker and it has not been used since 1968. What actually happens is that whichever forestry team finds the stump puts a new post in from the two neighbors, tells nobody, and the line goes on being where they put it." },
               ],
             },
             {
@@ -1179,7 +1179,7 @@ Where the archive and the ground disagree, local land use follows the {{14}}.`,
               situation: "Dördüncü konuşmacı tartışmanın asıl konusunu gösteriyor.",
               plays: 2,
               segments: [
-                { text: "Nobody has spent nine years on forty metres of hillside. What is being fought over is the abstraction agreement of 1963, which allocates water by reference to the boundary. Move the line and you move the allocation, and that is what both delegations are actually protecting." },
+                { text: "Nobody has spent nine years on forty meters of hillside. What is being fought over is the abstraction agreement of 1963, which allocates water by reference to the boundary. Move the line and you move the allocation, and that is what both delegations are actually protecting." },
               ],
             },
             {
@@ -1223,7 +1223,7 @@ Where the archive and the ground disagree, local land use follows the {{14}}.`,
               situation: "Sekizinci konuşmacı teknik çözümün sonucunu anlatıyor.",
               plays: 2,
               segments: [
-                { text: "Satellite positioning solves the measurement problem completely and it creates a new one. Once the line can be established to a centimetre, every discrepancy becomes a decision that somebody has to take publicly. Ambiguity was doing a great deal of work, and we are about to remove it without having agreed what replaces it." },
+                { text: "Satellite positioning solves the measurement problem completely and it creates a new one. Once the line can be established to a centimeter, every discrepancy becomes a decision that somebody has to take publicly. Ambiguity was doing a great deal of work, and we are about to remove it without having agreed what replaces it." },
               ],
             },
           ],
@@ -1326,14 +1326,14 @@ Where the archive and the ground disagree, local land use follows the {{14}}.`,
           format: "writing",
           goal: "production",
           prompt:
-            "You have attended a seminar on boundaries and records. Write an essay for your tutor summarising which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. Where a record and long local practice disagree, the record should govern, because it can be checked by anybody.\n2. Where they disagree, practice should govern, because it reflects how people have actually lived.\n\nWrite 220 to 260 words.",
+            "You have attended a seminar on boundaries and records. Write an essay for your tutor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. Where a record and long local practice disagree, the record should govern, because it can be checked by anybody.\n2. Where they disagree, practice should govern, because it reflects how people have actually lived.\n\nWrite 220 to 260 words.",
           promptTr:
             "Sınırlar ve kayıtlar üzerine bir seminere katıldın. Danışmanın için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Kayıt ile yerleşik uygulama çeliştiğinde kayıt esas alınmalı; çünkü kaydı herkes denetleyebilir.\n2. Çeliştiklerinde uygulama esas alınmalı; çünkü insanların gerçekte nasıl yaşadığını gösterir.\n\n220–260 kelime yaz.",
           items: [],
           rubric: {
             minWords: 220,
             points: [
-              { de: "Summarise both points fairly.", tr: "İki noktayı da adil biçimde özetle." },
+              { de: "Summarize both points fairly.", tr: "İki noktayı da adil biçimde özetle." },
               { de: "Say which is more important and justify the choice.", tr: "Hangisinin daha önemli olduğunu söyle ve seçimi gerekçelendir." },
               { de: "Give your own view, distinct from the summary.", tr: "Özetten ayrı olarak kendi görüşünü ver." },
             ],
@@ -1361,7 +1361,7 @@ My own view is that the argument conceals a category error. The text, the marker
           format: "writing",
           goal: "interaction",
           prompt:
-            "An organisation you know maintains a set of physical markers or records that nobody has checked for many years. Write a report for its committee. Describe the present position, assess what would follow from a full check, and recommend a course of action. Write 220 to 260 words.",
+            "An organization you know maintains a set of physical markers or records that nobody has checked for many years. Write a report for its committee. Describe the present position, assess what would follow from a full check, and recommend a course of action. Write 220 to 260 words.",
           promptTr:
             "Tanıdığın bir kuruluş, yıllardır kimsenin denetlemediği bir dizi fiziksel işaret ya da kaydı elinde tutuyor. Yönetim kuruluna bir rapor yaz. Bugünkü durumu anlat, tam bir denetimden neyin doğacağını değerlendir ve bir yol öner. 220–260 kelime yaz.",
           items: [],
@@ -1375,17 +1375,17 @@ My own view is that the argument conceals a category error. The text, the marker
             sample: `Report: the site boundary markers
 
 Present position
-The site is defined by fourteen markers set in 1974. Our records consist of a hand-drawn plan and a schedule of distances. Neither has been checked against the ground since 1991. Two markers are known to have been replaced by contractors, in positions established from the neighbouring pair, and no note of either replacement exists.
+The site is defined by fourteen markers set in 1974. Our records consist of a hand-drawn plan and a schedule of distances. Neither has been checked against the ground since 1991. Two markers are known to have been replaced by contractors, in positions established from the neighboring pair, and no note of either replacement exists.
 
 What a full check would produce
-It would produce a defensible plan, and it would almost certainly produce at least one discrepancy of a size that requires a decision. On the northern edge our fence has stood for thirty years in a position that the schedule does not support, and the neighbouring owner has maintained the hedge on our side of it throughout.
+It would produce a defensible plan, and it would almost certainly produce at least one discrepancy of a size that requires a decision. On the northern edge our fence has stood for thirty years in a position that the schedule does not support, and the neighboring owner has maintained the hedge on our side of it throughout.
 
 That is the uncomfortable part and the committee should see it now rather than in a solicitor's letter. A check we commission is one we control; a check prompted by a sale is not.
 
 Recommendation
 I recommend commissioning a survey this year, and I recommend that the report be written to us and retained rather than circulated.
 
-I would not move any fence on the basis of it, and I would not approach the neighbouring owner until we have taken advice, since raising a question we cannot answer converts a settled arrangement into a dispute.`,
+I would not move any fence on the basis of it, and I would not approach the neighboring owner until we have taken advice, since raising a question we cannot answer converts a settled arrangement into a dispute.`,
             criteria: [
               "Bugünkü durum somut biçimde ve tarihleriyle anlatıldı mı?",
               "Denetimin istenmeyen sonucu açıkça söylendi mi?",

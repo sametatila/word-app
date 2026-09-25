@@ -36,7 +36,7 @@ export const a2U21: SkillExercise[] = [
     intro: "Diziler üstüne bir yazı. Neden hep aynı türü seçiyoruz?",
     gloss: [
       { de: "der Krimi", tr: "polisiye", en: "crime drama" },
-      { de: "die Fernsehsendung", tr: "televizyon programı", en: "TV programme" },
+      { de: "die Fernsehsendung", tr: "televizyon programı", en: "TV program" },
       { de: "der Titel", tr: "başlık / ad", en: "title" },
       { de: "umschalten", tr: "kanal değiştirmek", en: "to switch channels" },
       { de: "anschauen", tr: "izlemek", en: "to watch" },

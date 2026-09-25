@@ -212,7 +212,7 @@ Editors are therefore being asked to think {{12}} terms of prevention rather tha
             {
               kind: "text",
               id: "t3",
-              genre: "Encyclopaedia entry",
+              genre: "Encyclopedia entry",
               genreTr: "Ansiklopedi maddesi",
               title: "Peer review",
               body: `Peer review is the process by which a scientific paper is judged by other researchers before {{13}}.
@@ -221,7 +221,7 @@ Its defenders describe it as a filter. Its critics point to the {{14}} of the pr
 
 Neither description is quite right. Review rarely detects deliberate fraud, and it is {{15}} at doing so, because it assumes that the data it is shown is real.
 
-What it does well is narrower and still valuable: it catches unclear writing, missing detail and {{16}} claims that the authors themselves recognise as too strong once they are named.
+What it does well is narrower and still valuable: it catches unclear writing, missing detail and {{16}} claims that the authors themselves recognize as too strong once they are named.
 
 Several journals have experimented with open review, in which the reports are published. Early results suggest a modest {{17}} in the quality of the reports, and a sharp fall in the number of researchers willing to write them.
 
@@ -485,7 +485,7 @@ None of this is an argument against graphs, which remain the most efficient way 
             { key: "b", label: "b", body: "That resistance is itself informative, since it tells you what the striking version was doing." },
             { key: "c", label: "c", body: "The choice of window is a decision, and it is almost never explained to the reader." },
             { key: "d", label: "d", body: "This is the harder lesson, because it cannot be fixed by a rule about where the axis starts." },
-            { key: "e", label: "e", body: "Colour-blind readers frequently report difficulty with the standard red and green palette." },
+            { key: "e", label: "e", body: "Color-blind readers frequently report difficulty with the standard red and green palette." },
           ],
           items: [
             {
@@ -581,7 +581,7 @@ None of this is an argument against graphs, which remain the most efficient way 
               kind: "match",
               id: "en-b2-02-l7-34",
               no: 34,
-              text: "Which text says that changing an incentive would change behaviour quickly?",
+              text: "Which text says that changing an incentive would change behavior quickly?",
               answer: "c",
               explain:
                 "Grace koşulu ve süreyi birlikte söylüyor: «Change the way I am assessed and the releases will change within a month». Ölçüt değişirse davranış hızla değişir.",
@@ -829,7 +829,7 @@ None of this is an argument against graphs, which remain the most efficient way 
               plays: 2,
               segments: [
                 {
-                  text: "Thank you. I will give you our three-year results and I will not pretend they are all encouraging. We began with six people and we now have a team of nineteen. In three years we have checked about four thousand claims. Here is the first surprise: the claims that spread fastest are not political, they are about health. Second, timing matters far more than we expected. A check published within six hours reaches roughly ten times the audience of one published the next day, and that ratio has been stable across every topic we have looked at. Third, the format. We tried videos, long articles and short cards, and the short card outperformed everything else, which was disappointing for the two of us who like writing. Fourth, a caution: our own surveys show that people who already trust us read the checks, and people who do not, do not. We have not solved that. And finally, funding. Ninety per cent of our money comes from one foundation, and that is the risk that keeps me awake, not the abuse.",
+                  text: "Thank you. I will give you our three-year results and I will not pretend they are all encouraging. We began with six people and we now have a team of nineteen. In three years we have checked about four thousand claims. Here is the first surprise: the claims that spread fastest are not political, they are about health. Second, timing matters far more than we expected. A check published within six hours reaches roughly ten times the audience of one published the next day, and that ratio has been stable across every topic we have looked at. Third, the format. We tried videos, long articles and short cards, and the short card outperformed everything else, which was disappointing for the two of us who like writing. Fourth, a caution: our own surveys show that people who already trust us read the checks, and people who do not, do not. We have not solved that. And finally, funding. Ninety percent of our money comes from one foundation, and that is the risk that keeps me awake, not the abuse.",
                 },
               ],
             },
@@ -851,7 +851,7 @@ The most effective format was the short {{13}}.
 
 The checks are mostly read by people who already {{14}} the project.
 
-{{15}} per cent of the funding comes from one foundation.
+{{15}} percent of the funding comes from one foundation.
 
 The speaker says the greatest risk is the {{16}}, not the abuse.`,
             },
@@ -925,7 +925,7 @@ The speaker says the greatest risk is the {{16}}, not the abuse.`,
               text: "Gap 15",
               accept: ["90", "ninety"],
               explain:
-                "«Ninety per cent of our money comes from one foundation» — fonun yüzde doksanı tek kaynaktan. Cümle tamamlamada `per cent` basılı olduğu için yalnız sayı yazılır.",
+                "«Ninety percent of our money comes from one foundation» — fonun yüzde doksanı tek kaynaktan. Cümle tamamlamada `percent` basılı olduğu için yalnız sayı yazılır.",
             },
             {
               kind: "gap",
@@ -951,7 +951,7 @@ The speaker says the greatest risk is the {{16}}, not the abuse.`,
           options: [
             { key: "a", label: "The audience is blamed for a failure that is not theirs." },
             { key: "b", label: "A correct story can still leave a wrong impression." },
-            { key: "c", label: "The incentives reward the wrong behaviour." },
+            { key: "c", label: "The incentives reward the wrong behavior." },
             { key: "d", label: "The speaker has changed their own practice." },
             { key: "e", label: "Coverage is better than it used to be." },
             { key: "f", label: "The problem is the volume, not the accuracy." },
@@ -1112,7 +1112,7 @@ The speaker says the greatest risk is the {{16}}, not the abuse.`,
                 { speaker: "Host", text: "How do you decide which studies to cover at all?" },
                 { speaker: "Daniel", text: "We ask one question first: would we cover this if the result had been negative? If the answer is no, we are not covering science, we are covering a surprise. That rule has cost us some very popular stories." },
                 { speaker: "Host", text: "Critics say science journalism is too negative about new findings." },
-                { speaker: "Daniel", text: "I hear that, and I think it confuses two things. We are sceptical about single results, which is correct. We are not sceptical about science, and anyone who reads us regularly can see the difference." },
+                { speaker: "Daniel", text: "I hear that, and I think it confuses two things. We are skeptical about single results, which is correct. We are not skeptical about science, and anyone who reads us regularly can see the difference." },
                 { speaker: "Host", text: "What do you say to a researcher who feels misrepresented?" },
                 { speaker: "Daniel", text: "First, that we will correct anything factually wrong, quickly and prominently. Second, and this is less popular, that a fair summary is not the same as the summary they would have written. Those two answers cover almost every complaint I receive." },
                 { speaker: "Host", text: "Has anything you tried simply failed?" },
@@ -1122,7 +1122,7 @@ The speaker says the greatest risk is the {{16}}, not the abuse.`,
               ],
               gloss: [
                 { de: "to hedge", tr: "temkinli ifade kullanmak", en: "sich vorsichtig ausdrücken" },
-                { de: "sceptical", tr: "kuşkucu", en: "skeptisch" },
+                { de: "skeptical", tr: "kuşkucu", en: "skeptisch" },
                 { de: "to misrepresent", tr: "yanlış aktarmak", en: "falsch darstellen" },
                 { de: "prominently", tr: "göze çarpan bir yerde", en: "an prominenter Stelle" },
               ],
@@ -1249,11 +1249,11 @@ The speaker says the greatest risk is the {{16}}, not the abuse.`,
             ],
             sample: `Almost everyone agrees that students should be able to judge what they read. The disagreement begins as soon as somebody asks where the lessons will fit and who will write them.
 
-The timetable objection is the weaker of the two, in my view. A separate subject is probably unnecessary; the skill can be practised inside history and science, where sources are already discussed. What it does require is training for teachers, and that is a genuine cost.
+The timetable objection is the weaker of the two, in my view. A separate subject is probably unnecessary; the skill can be practiced inside history and science, where sources are already discussed. What it does require is training for teachers, and that is a genuine cost.
 
-The second objection is harder. If a school teaches a list of trusted outlets, it is teaching a political judgement, and families will not all accept the same list. A curriculum that avoids this by teaching method instead of lists is more defensible, although it is also more difficult to examine.
+The second objection is harder. If a school teaches a list of trusted outlets, it is teaching a political judgment, and families will not all accept the same list. A curriculum that avoids this by teaching method instead of lists is more defensible, although it is also more difficult to examine.
 
-My own worry is different. These lessons often teach students to spot obvious fakes, which they can already do. The difficult case is an accurate report without its limits, and that is the case we rarely practise.
+My own worry is different. These lessons often teach students to spot obvious fakes, which they can already do. The difficult case is an accurate report without its limits, and that is the case we rarely practice.
 
 Schools should teach this, but they should teach method rather than approved sources.`,
             criteria: [
@@ -1332,7 +1332,7 @@ For anybody who reads statistics in the news, however, it is the most useful six
             minutes: 5,
             points: [
               { de: "give developed answers with reasons", tr: "Gerekçeli, geliştirilmiş cevaplar vermek" },
-              { de: "analyse your own earlier mistake", tr: "Kendi eski hatanı çözümlemek" },
+              { de: "analyze your own earlier mistake", tr: "Kendi eski hatanı çözümlemek" },
             ],
             sample:
               "I used to read one newspaper every morning; now most things reach me through a messaging group, which is faster and much less reliable. Two years ago I passed on a story about a local school closing. It came from someone I trust, and I did not check it, which is exactly the mistake. What makes me trust a source now is whether it corrects itself openly, although I have to admit that is hard to observe unless you follow it for a while.",

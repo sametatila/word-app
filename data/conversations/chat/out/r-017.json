@@ -32,11 +32,11 @@
   "sceneEn": "You are on a tour of a chocolate factory. Ask about the steps of production in order, sum one step up in your own words and ask about a detail you are curious about.",
   "partnerEn": "a factory guide who loves the work and loves giving detail",
   "openingEn": "Welcome! We're right at the beginning of production here. Do you know how cocoa gets to us in the first place?",
-  "goalEn": "The steps of production have been learnt in order, one step has been summed up by the learner and a question of detail has been answered."
+  "goalEn": "The steps of production have been learned in order, one step has been summed up by the learner and a question of detail has been answered."
  },
  {
   "conversation": "de-b2-restaurierung",
-  "sceneEn": "You are on a city tour asking the guide how the old centre was restored: what was repaired, what could be preserved, which building is listed, when the work finished.",
+  "sceneEn": "You are on a city tour asking the guide how the old center was restored: what was repaired, what could be preserved, which building is listed, when the work finished.",
   "partnerEn": "a city guide who loves the history and gives detail",
   "openingEn": "You can see it best from here: this row of houses was completely renovated three years ago. Does anything strike you?",
   "goalEn": "What was repaired, what was preserved and when the work finished have all been found out."
@@ -53,7 +53,7 @@
   "sceneEn": "You are learning the tricks of a difficult recipe from a chef: ask how each thing has to be cooked, what must not be done and how you tell when it is ready.",
   "partnerEn": "a chef who is in a hurry but likes to teach",
   "openingEn": "So you want to try it yourself? Good. First tell me: what do you start with?",
-  "goalEn": "The cooking steps, one thing to avoid and how to tell when it is ready have all been learnt."
+  "goalEn": "The cooking steps, one thing to avoid and how to tell when it is ready have all been learned."
  },
  {
   "conversation": "de-b2-wartung",
@@ -65,7 +65,7 @@
  {
   "conversation": "de-b2-organisation",
   "sceneEn": "The two of you are sharing the preparations for a street party. List what has to be done in the impersonal passive, discuss who takes on what and tie the running order to a date.",
-  "partnerEn": "an eager but disorganised neighbour who keeps throwing in new ideas",
+  "partnerEn": "an eager but disorganised neighbor who keeps throwing in new ideas",
   "openingEn": "Right, I've made a list already — it has got rather long, though. What shall we start with?",
   "goalEn": "The jobs have been listed, who takes on what has been shared out and the running order has been tied to a date."
  },
@@ -73,7 +73,7 @@
   "conversation": "de-b2-schlagzeilen",
   "sceneEn": "You and a friend are discussing today's headline. Say in your own words what the headline says, point out what it does not say, and discuss whether the story is overstated.",
   "partnerEn": "a friend inclined to believe the headline but open to persuasion",
-  "openingEn": "Have you seen this? 'Rents up by thirty per cent' — thirty! Where is this going to end?",
+  "openingEn": "Have you seen this? 'Rents up by thirty percent' — thirty! Where is this going to end?",
   "goalEn": "What the headline says and what it does not say have been separated and a shared conclusion has been reached about whether it is overstated."
  },
  {
@@ -85,10 +85,10 @@
  },
  {
   "conversation": "de-b2-soll-angeblich",
-  "sceneEn": "A rumour is going round at work. Talking to a colleague, keep apart what you heard, what you know and what you are only guessing, and decide how to deal with the rumour.",
-  "partnerEn": "a colleague eager to spread the rumour straight away",
+  "sceneEn": "A rumor is going round at work. Talking to a colleague, keep apart what you heard, what you know and what you are only guessing, and decide how to deal with the rumor.",
+  "partnerEn": "a colleague eager to spread the rumor straight away",
   "openingEn": "Have you heard? The department is supposedly going to be closed. Do you know anything more definite?",
-  "goalEn": "What was heard, what is known and what is guessed have been separated and it has been settled how to deal with the rumour."
+  "goalEn": "What was heard, what is known and what is guessed have been separated and it has been settled how to deal with the rumor."
  },
  {
   "conversation": "de-b2-interview",
@@ -127,7 +127,7 @@
  },
  {
   "conversation": "de-b2-influencer",
-  "sceneEn": "You and a friend are arguing about the line between advertising and genuine opinion on social media: what has to be labelled, who stays credible, what you trust.",
+  "sceneEn": "You and a friend are arguing about the line between advertising and genuine opinion on social media: what has to be labeled, who stays credible, what you trust.",
   "partnerEn": "a friend who defends the people they follow",
   "openingEn": "She always says she uses it herself. Why shouldn't I believe her?",
   "goalEn": "The line between advertising and genuine opinion has been discussed with examples and a shared test of what to trust has been reached."
@@ -163,7 +163,7 @@
  {
   "conversation": "de-b2-studie",
   "sceneEn": "You are telling a friend about a study you read: what it found, how many people took part, how reliable the result is and what you think.",
-  "partnerEn": "a friend who is sceptical of studies and asks about the method",
+  "partnerEn": "a friend who is skeptical of studies and asks about the method",
   "openingEn": "Studies say something different every year. How many people were even in it?",
   "goalEn": "The finding, the method and the sample of the study have been described and a shared conclusion has been reached about how reliable it is."
  },

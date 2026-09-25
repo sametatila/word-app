@@ -77,7 +77,7 @@
   {
     "tr": "Edatı sabit fiilleri (warten auf, denken an) biliyorsun. Bazı SIFATLAR da sabit bir edatla kalıplaşır ve hâli o edat belirler: „stolz auf“ ve „bekannt für“ Akkusativ, „zufrieden mit“ Dativ ister. Edat Türkçedeki hâl ekinden tahmin edilemez; sıfatla birlikte öğrenilir.",
     "kind": "explanation.tr",
-    "en": "You already know verbs with a fixed preposition (warten auf, denken an). Some ADJECTIVES also go with a fixed preposition, and that preposition decides the case: „stolz auf“ and „bekannt für“ take the Akkusativ, „zufrieden mit“ the Dativ. The preposition cannot be guessed from English („proud of“, „happy with“); it is learnt together with the adjective."
+    "en": "You already know verbs with a fixed preposition (warten auf, denken an). Some ADJECTIVES also go with a fixed preposition, and that preposition decides the case: „stolz auf“ and „bekannt für“ take the Akkusativ, „zufrieden mit“ the Dativ. The preposition cannot be guessed from English („proud of“, „happy with“); it is learned together with the adjective."
   },
   {
     "tr": "wissen, bringen gibi karma fiiller de kendi biçimini alır: wusste → wüsste, brachte → brächte. Düzenli bir fiil olan „brauchen“ da konuşmada umlautlu „bräuchte“ biçimini alır; bu biçim çok yaygındır ve artık yazıda da kabul görür. „tun“ → „täte“ ise daha çok kalıplarda yaşar: „Das täte mir leid.“, „Du tätest gut daran, …“",
@@ -112,7 +112,7 @@
   {
     "tr": "Türkçe konuşan, edatı çoğu zaman Türkçedeki hâl ekinden tahmin eder ve yanılır: „-e ilgi“ „das Interesse an“ (Dativ), „-den korku“ „die Angst vor“, „-e cevap“ „die Antwort auf“, „… sorusu“ „die Frage nach“. Bu yüzden isim her zaman edatıyla birlikte öğrenilir.",
     "kind": "explanation.tr",
-    "en": "English speakers often guess the preposition from English and get it wrong: „interest in“ is „das Interesse an“ (Dativ), „fear of“ is „die Angst vor“, „answer to“ is „die Antwort auf“, „a question about“ is „die Frage nach“. That is why a noun is always learnt together with its preposition."
+    "en": "English speakers often guess the preposition from English and get it wrong: „interest in“ is „das Interesse an“ (Dativ), „fear of“ is „die Angst vor“, „answer to“ is „die Antwort auf“, „a question about“ is „die Frage nach“. That is why a noun is always learned together with its preposition."
   },
   {
     "tr": "Zaman „bekommen“ ile kurulur: bekommt … geschickt (Präsens), bekam … erklärt (Präteritum), hat … erstattet bekommen (Perfekt). Konuşmada „kriegen“, resmî yazıda „erhalten“ de kullanılır: „Sie erhalten die Kaution erstattet.“ Anlam değişmez, yalnız üslup değişir.",
@@ -512,7 +512,7 @@
   {
     "tr": "Üyeliği feshedildi.",
     "kind": "explanation.examples.tr",
-    "en": "His membership was cancelled."
+    "en": "His membership was canceled."
   },
   {
     "tr": "Vedalaşmadan gitti.",
@@ -587,7 +587,7 @@
   {
     "tr": "Bu, komşunun arabası.",
     "kind": "explanation.examples.tr",
-    "en": "This is the neighbour's car."
+    "en": "This is the neighbor's car."
   },
   {
     "tr": "Bugün çok tatlısınız.",
@@ -662,7 +662,7 @@
   {
     "tr": "Dün komşuyla konuştum.",
     "kind": "explanation.examples.tr",
-    "en": "I talked to the neighbour yesterday."
+    "en": "I talked to the neighbor yesterday."
   },
   {
     "tr": "Dün üç tanık başvurdu.",
@@ -742,7 +742,7 @@
   {
     "tr": "Hafta sonu uzun uyurum.",
     "kind": "explanation.examples.tr",
-    "en": "At the weekend I sleep in."
+    "en": "On the weekend I sleep in."
   },
   {
     "tr": "Hangi ceketi alıyorsun?",

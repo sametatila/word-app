@@ -294,7 +294,7 @@ We started again in September with one new rule: no counting. Now I do not know 
 
 A private teacher is {{16}} expensive than a group, but in a group nobody hears you.
 
-I practise twenty minutes a day. That is not much, {{17}} it is every day.
+I practice twenty minutes a day. That is not much, {{17}} it is every day.
 
 Next winter I {{18}} play in front of my friends for the first time.
 
@@ -544,7 +544,7 @@ Last year I {{24}} not miss a single evening.`,
               no: 3,
               ref: "a3",
               text: "What is the difference between them?",
-              options: ["The sound is not as good", "The length of the cable", "The colour only"],
+              options: ["The sound is not as good", "The length of the cable", "The color only"],
               answer: 1,
               explain:
                 "Görevli tek farkı adlandırıyor: «They are the same, but the cable is shorter». Ses aynı olduğu için ilk şık yanlış; renk fiyat farkının sebebi değil.",
@@ -834,7 +834,7 @@ Leave the car at the {{10}}`,
               situation: "Üçüncü konuşmacı kızından söz ediyor.",
               plays: 2,
               segments: [
-                { text: "I did not want to learn an instrument. My daughter started the guitar and she practised alone in her room, so I asked for lessons too. Now we play together on Sundays." },
+                { text: "I did not want to learn an instrument. My daughter started the guitar and she practiced alone in her room, so I asked for lessons too. Now we play together on Sundays." },
               ],
             },
             {

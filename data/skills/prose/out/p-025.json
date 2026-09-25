@@ -32,7 +32,7 @@
  {
   "tr": "Programda pazar günü \"09:00 Boat trip\" yazıyor.",
   "kind": "explain",
-  "en": "The programme says \"09:00 Boat trip\" for Sunday."
+  "en": "The program says \"09:00 Boat trip\" for Sunday."
  },
  {
   "tr": "\"I live in Milan with my sister\" — şehir Milano.",
@@ -242,7 +242,7 @@
  {
   "tr": "\"Is the black cable in the yellow port?\" Kablo gri portta olduğu için bağlanmıyordu.",
   "kind": "explain",
-  "en": "\"Is the black cable in the yellow port?\" The cable was in the grey port, so there was no connection."
+  "en": "\"Is the black cable in the yellow port?\" The cable was in the gray port, so there was no connection."
  },
  {
   "tr": "\"We have not got Wi-Fi in the garden, but there is Wi-Fi inside.\" Bahçede yok, içeride var.",
@@ -307,7 +307,7 @@
  {
   "tr": "mizah için",
   "kind": "note",
-  "en": "of humour"
+  "en": "of humor"
  },
  {
   "tr": "tatlı için",

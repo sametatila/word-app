@@ -64,7 +64,7 @@ export const enB2U24: SkillExercise[] = [
     ],
     minutes: 9,
     text:
-      "The division of tasks, which nobody read, is old. Look at „which“ in that sentence: it is the object of „read“, and two levels ago you learnt that an object pronoun can be dropped.\n" +
+      "The division of tasks, which nobody read, is old. Look at „which“ in that sentence: it is the object of „read“, and two levels ago you learned that an object pronoun can be dropped.\n" +
       "„The report I sent“ has no „which“ and needs none. So why can this one not lose it?\n" +
       "Because that rule had a limit nobody stated at the time. An object pronoun can be dropped only in a clause that is choosing — the kind without commas. „The report I sent“ is picking one report out of several.\n" +
       "This clause is not choosing. There is one division of tasks, the commas say so, and the clause is extra. In an extra clause the pronoun stays, whether it is subject or object, and whether it is „who“ or „which“.\n" +

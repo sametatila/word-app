@@ -230,7 +230,7 @@ export const deB1P2: SkillExercise[] = [
         ],
         minWords: 60,
         phrases: [
-          { de: "Ich bin dafür, allerdings …", tr: "Yanayım, ancak …", en: "I'm in favour, however …" },
+          { de: "Ich bin dafür, allerdings …", tr: "Yanayım, ancak …", en: "I'm in favor, however …" },
           { de: "Erstens … Zweitens …", tr: "Birincisi … İkincisi …", en: "Firstly … Secondly …" },
           { de: "Das Gegenargument verstehe ich.", tr: "Karşı argümanı anlıyorum.", en: "I understand the counter-argument." },
           { de: "Deshalb mein Vorschlag: …", tr: "Bu yüzden önerim: …", en: "So here's my suggestion: …" },

@@ -41,7 +41,7 @@ export const enB2P5: SkillExercise[] = [
       "Volume. We collected forty-one tons in two years, against sixty-two tons in the two years before. That " +
       "looks like a failure and it is not. The container took anything; the monthly collection takes what " +
       "somebody was willing to carry to a table and hand to a person. The share that had to be thrown away " +
-      "fell from thirty-one per cent to four.\n\n" +
+      "fell from thirty-one percent to four.\n\n" +
       "Cost. Emptying the old container cost us nothing, because the operator paid us. The monthly collection " +
       "costs about two thousand four hundred euros a year in transport. We decided to accept that when we " +
       "started, and we still recommend accepting it, for the reason below.\n\n" +
@@ -73,7 +73,7 @@ export const enB2P5: SkillExercise[] = [
           "More people live in the area now.",
         ],
         answer: 0,
-        explain: "„The share that had to be thrown away fell from thirty-one per cent to four.“",
+        explain: "„The share that had to be thrown away fell from thirty-one percent to four.“",
       },
       {
         kind: "truefalse",
@@ -84,11 +84,11 @@ export const enB2P5: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The share that had to be thrown away fell to ___ per cent.",
+        text: "The share that had to be thrown away fell to ___ percent.",
         options: [],
         answer: 0,
         accept: ["four", "4"],
-        explain: "„… fell from thirty-one per cent to four.“",
+        explain: "„… fell from thirty-one percent to four.“",
       },
       {
         kind: "short_answer",

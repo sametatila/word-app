@@ -195,7 +195,7 @@ export const enC1U20: SkillExercise[] = [
       "„As noted“ is a promise about an earlier page, and I check it. The other half is „in urban design terms only“, and that is a limit on the claim rather than a decoration. It says the change works for the facade, the street line and the height, and it says nothing about the rent.\n" +
       "In terms of scale, a fine-grained quarter serves accessibility better. The same frame again, and here it is naming the dimension the claim is measured on before the claim arrives.\n" +
       "That order matters. A reader who is told the dimension first knows what they are being asked to believe; a reader who meets it at the end has already believed something larger and has to take half of it back.\n" +
-      "And the claim itself is a good one to test. A quarter of small blocks puts more corners, more shops and shorter distances into the same area, and accessibility is measured in minutes on foot rather than in metres. A survey of residents will say the same thing in different words, and the map in the annex will show it in one page.",
+      "And the claim itself is a good one to test. A quarter of small blocks puts more corners, more shops and shorter distances into the same area, and accessibility is measured in minutes on foot rather than in meters. A survey of residents will say the same thing in different words, and the map in the annex will show it in one page.",
     questions: [
       {
         text: "What is a zoning plan?",
@@ -243,7 +243,7 @@ export const enC1U20: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["in minutes on foot", "in minutes", "on foot"],
-        explain: "„accessibility is measured in minutes on foot rather than in metres.“",
+        explain: "„accessibility is measured in minutes on foot rather than in meters.“",
       },
     ],
   },
@@ -268,7 +268,7 @@ export const enC1U20: SkillExercise[] = [
       { de: "century", tr: "yüzyıl" },
       { de: "proposed", tr: "önerilen" },
       { de: "a square", tr: "meydan" },
-      { de: "a neighbour", tr: "komşu" },
+      { de: "a neighbor", tr: "komşu" },
       { de: "a bench", tr: "bank" },
       { de: "a tree", tr: "ağaç" },
       { de: "a rent", tr: "kira" },
@@ -282,7 +282,7 @@ export const enC1U20: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Bilge", text: "The square was revitalized; the neighbours, less so. Two words at the end of that line and the whole project has been reported." },
+      { speaker: "Bilge", text: "The square was revitalized; the neighbors, less so. Two words at the end of that line and the whole project has been reported." },
       { speaker: "Kaya", text: "The benches and the trees are real." },
       { speaker: "Bilge", text: "They are real and they are good, and the rents went up in the same eighteen months, and both of those are in the same file if anybody opens it." },
       { speaker: "Kaya", text: "We have no gentrification here; we densify and refurbish." },
@@ -329,7 +329,7 @@ export const enC1U20: SkillExercise[] = [
         text: "Duyduğun cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["The square was revitalized; the neighbours, less so.", "The square was revitalized; the neighbours, less so"],
+        accept: ["The square was revitalized; the neighbors, less so.", "The square was revitalized; the neighbors, less so"],
         explain: "İkinci yarı sıfatı da fiili de ödünç alıyor.",
       },
       {
@@ -501,7 +501,7 @@ export const enC1U20: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 20,
-    title: "The square was revitalized; the neighbours, less so",
+    title: "The square was revitalized; the neighbors, less so",
     genre: "info",
     intro: "Türü yadsıyan cümle ve modelin çekinceleri.",
     gloss: [
@@ -517,7 +517,7 @@ export const enC1U20: SkillExercise[] = [
       {
         kind: "build",
         tr: "Meydana canlılık kazandırıldı; komşulara, daha az.",
-        answer: "The square was revitalized; the neighbours, less so.",
+        answer: "The square was revitalized; the neighbors, less so.",
         hint: "İki sözcük bütün projeyi bildiriyor.",
       },
       {

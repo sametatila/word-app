@@ -58,7 +58,7 @@
  {
   "conversation": "de-b1-relativ-praep",
   "sceneEn": "Someone who has just moved to the city is asking about your area. Describe the district you live in, the place you grew up and the places nearby, with relative clauses after a preposition.",
-  "partnerEn": "a new neighbour who knows nothing about the city and asks about everything",
+  "partnerEn": "a new neighbor who knows nothing about the city and asks about everything",
   "openingEn": "I've just moved here and I don't know anything yet. Which district do you live in?",
   "goalEn": "The district you live in, where you grew up and the places nearby have all been described."
  },
@@ -85,10 +85,10 @@
  },
  {
   "conversation": "de-b1-lieblingsort",
-  "sceneEn": "A friend is tired and looking for a place that will do them good. Describe your favourite place with relative clauses: where it is, what you do there, why it helps.",
+  "sceneEn": "A friend is tired and looking for a place that will do them good. Describe your favorite place with relative clauses: where it is, what you do there, why it helps.",
   "partnerEn": "a tired but curious friend",
   "openingEn": "I'm completely worn out. Is there a place where you can really switch off?",
-  "goalEn": "Your favourite place has been described and your friend has decided to go there."
+  "goalEn": "Your favorite place has been described and your friend has decided to go there."
  },
  {
   "conversation": "de-b1-fundbuero",
@@ -127,7 +127,7 @@
  },
  {
   "conversation": "de-b1-widerspruch",
-  "sceneEn": "At an advice centre you are describing to the adviser the decision you want to appeal against: which decision, why you think it is unfair, what you are going to ask for. Put your requests in a 'dass' clause.",
+  "sceneEn": "At an advice center you are describing to the adviser the decision you want to appeal against: which decision, why you think it is unfair, what you are going to ask for. Put your requests in a 'dass' clause.",
   "partnerEn": "a calm adviser who works through it step by step",
   "openingEn": "Do sit down. So you want to lodge an appeal — against which decision exactly?",
   "goalEn": "The decision to be appealed against, your reasons and what you will ask for have all been made clear."

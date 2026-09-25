@@ -48,8 +48,8 @@ export const enA2U11: SkillExercise[] = [
     minutes: 5,
     text:
       "Kitchen helper — full-time\n" +
-      "We are a small business in the city centre. We are looking for a kitchen helper for our restaurant.\n" +
-      "The position: Monday to Friday, from ten to six. No work at the weekend.\n" +
+      "We are a small business in the city center. We are looking for a kitchen helper for our restaurant.\n" +
+      "The position: Monday to Friday, from ten to six. No work on the weekend.\n" +
       "Salary: 2100 euros a month. After one year 2300.\n" +
       "Experience is required: at least one year in a kitchen.\n" +
       "German is not required, but you have to understand simple instructions.\n" +
@@ -59,9 +59,9 @@ export const enA2U11: SkillExercise[] = [
     questions: [
       {
         text: "When is the work?",
-        options: ["Monday to Friday, ten to six", "at the weekend", "every evening"],
+        options: ["Monday to Friday, ten to six", "on the weekend", "every evening"],
         answer: 0,
-        explain: "„The position: Monday to Friday, from ten to six. No work at the weekend.“",
+        explain: "„The position: Monday to Friday, from ten to six. No work on the weekend.“",
       },
       {
         text: "What is required?",

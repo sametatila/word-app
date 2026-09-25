@@ -65,12 +65,12 @@ We scan up to five for you free. More than five costs one euro each.`,
               genre: "Email",
               genreTr: "E-posta",
               title: "The album",
-              body: `Dear Fikret, I found the album. There are about two hundred pictures and I recognise perhaps thirty people. I am not going to guess at the rest. Could we sit down with your mother one Sunday and go through them together?`,
+              body: `Dear Fikret, I found the album. There are about two hundred pictures and I recognize perhaps thirty people. I am not going to guess at the rest. Could we sit down with your mother one Sunday and go through them together?`,
             },
             {
               kind: "text",
               id: "m4",
-              genre: "Notice at a community centre",
+              genre: "Notice at a community center",
               genreTr: "Toplum merkezi duyurusu",
               title: "BRING A PHOTOGRAPH",
               body: `Wednesday evenings. Bring one picture and tell us about it in five minutes.
@@ -128,7 +128,7 @@ We do not keep a copy unless you ask us to.`,
               no: 4,
               ref: "m4",
               text: "What happens to the recording?",
-              options: ["It is yours, and no copy stays here", "The centre puts it on its website", "The centre keeps a copy of every picture"],
+              options: ["It is yours, and no copy stays here", "The center puts it on its website", "The center keeps a copy of every picture"],
               answer: 0,
               explain:
                 "Duyuru iki cümlede bunu kuruyor: «you get the recording» ve «We do not keep a copy unless you ask us to».",
@@ -206,7 +206,7 @@ We do not keep a copy unless you ask us to.`,
               kind: "match",
               id: "en-b1-10-l2-10",
               no: 10,
-              text: "Eyup wants his ninety-year-old neighbour's memories recorded before it is too late.",
+              text: "Eyup wants his ninety-year-old neighbor's memories recorded before it is too late.",
               answer: "e",
               explain:
                 "İlan hizmeti tarif ediyor: «Volunteers visit older people at home with a recorder». Çarşamba akşamları (c) ise kişinin kendisinin gelmesini gerektiriyor.",
@@ -359,7 +359,7 @@ None of this is an argument for throwing them away. It is an argument for writin
             { key: "c", label: "c", body: "My grandmother took every photograph in our house and appears in four of them." },
             { key: "d", label: "d", body: "Two words in brackets would have saved me a year of asking the wrong relatives." },
             { key: "e", label: "e", body: "Nobody noticed until a cousin asked why he was wearing the wrong uniform." },
-            { key: "f", label: "f", body: "Colour film became cheaper than black and white in this country in about 1968." },
+            { key: "f", label: "f", body: "Color film became cheaper than black and white in this country in about 1968." },
           ],
           items: [
             {
@@ -665,7 +665,7 @@ If you find this box, the notes are folded {{30}} the lid.`,
               situation: "Biri arkadaşına bulduğu şeyi anlatıyor.",
               plays: 2,
               segments: [
-                { text: "Hi Hale, it is Lenn. I found the street on the old map. It is under the car park now. I have printed it and I will bring it on Sunday, because your mother will want to see it." },
+                { text: "Hi Hale, it is Lenn. I found the street on the old map. It is under the parking lot now. I have printed it and I will bring it on Sunday, because your mother will want to see it." },
               ],
             },
           ],
@@ -731,7 +731,7 @@ If you find this box, the notes are folded {{30}} the lid.`,
               no: 6,
               ref: "a6",
               text: "What is the reminder about?",
-              options: ["The evening has been cancelled", "Bringing only one picture", "The recordings will be published"],
+              options: ["The evening has been canceled", "Bringing only one picture", "The recordings will be published"],
               answer: 1,
               explain:
                 "Duyuru tek bir kural hatırlatıyor: «Bring one photograph, not a box», çünkü geçen ay on bir kişiden yalnız dördü konuşabilmiş.",
@@ -742,10 +742,10 @@ If you find this box, the notes are folded {{30}} the lid.`,
               no: 7,
               ref: "a7",
               text: "What has Lenn found?",
-              options: ["A photograph of the old street", "The name of the new car park", "The street on an old map"],
+              options: ["A photograph of the old street", "The name of the new parking lot", "The street on an old map"],
               answer: 2,
               explain:
-                "İleti bulguyu veriyor: «I found the street on the old map. It is under the car park now».",
+                "İleti bulguyu veriyor: «I found the street on the old map. It is under the parking lot now».",
             },
           ],
         },
@@ -1014,7 +1014,7 @@ Volunteers come on Saturday: {{19}}`,
           format: "mcq",
           goal: "opinion",
           prompt:
-            "You hear an interview with a woman who labelled four thousand family photographs. Choose a, b or c for questions 20 to 25. You hear the interview twice.",
+            "You hear an interview with a woman who labeled four thousand family photographs. Choose a, b or c for questions 20 to 25. You hear the interview twice.",
           promptTr:
             "Dört bin aile fotoğrafını etiketlemiş bir kadınla söyleşi dinleyeceksin. 20–25. maddeler için a, b ya da c'yi seç. Söyleşiyi iki kez dinleyebilirsin.",
           texts: [
@@ -1081,7 +1081,7 @@ Volunteers come on Saturday: {{19}}`,
               no: 23,
               ref: "d1",
               text: "What surprised her?",
-              options: ["A period with no pictures at all", "How many people she recognised", "How little her family cared"],
+              options: ["A period with no pictures at all", "How many people she recognized", "How little her family cared"],
               answer: 0,
               explain:
                 "Vesna boşluğu tarihiyle veriyor: «There are no pictures at all from 1943 to 1949, and nobody in my family has ever mentioned that».",
@@ -1141,7 +1141,7 @@ Volunteers come on Saturday: {{19}}`,
 
 I was clearing my mother's flat last month and I found a shoebox of photographs at the back of a cupboard. There are about a hundred and fifty and most of them are from before 1960.
 
-I have sorted them by size, which is all I can do on my own. I recognise my mother and perhaps four other faces. Nobody wrote anything on the back.
+I have sorted them by size, which is all I can do on my own. I recognize my mother and perhaps four other faces. Nobody wrote anything on the back.
 
 Could I come on a Sunday afternoon in March with the box and a notebook? I would only need two hours, and we could stop whenever you were tired.
 
@@ -1287,7 +1287,7 @@ What I do now is different and slightly ridiculous. I write two questions on a c
             points: [
               { de: "respond to a proposal with a reason", tr: "Bir öneriye gerekçeyle karşılık vermek" },
               { de: "produce a plan that meets two aims", tr: "İki amacı birden karşılayan bir plan üretmek" },
-              { de: "summarise the plan with times", tr: "Planı süreleriyle özetlemek" },
+              { de: "summarize the plan with times", tr: "Planı süreleriyle özetlemek" },
             ],
             sample:
               "I would not start with two hundred photographs, because by picture forty she will be tired and the last hundred are the ones nobody else can name. You are right that questions alone give us stories without names, so I would do both at once: choose twenty pictures beforehand and ask a question about each. So: half an hour of tea and nothing, ninety minutes on twenty chosen pictures with the recorder running, a break, and the last half hour on the two names we still do not have.",

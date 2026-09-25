@@ -351,10 +351,10 @@ The most likely future is therefore an uneven one, with different regulators app
               id: "t5",
               genre: "Essay",
               genreTr: "Deneme",
-              title: "In defence of the false alarm",
+              title: "In defense of the false alarm",
               body: `The false alarm has no defenders, which is a pity, because a system that never produces one is almost certainly worse than a system that does. This is not a paradox; it is arithmetic, and the arithmetic is not difficult. Any warning system that must decide in advance can be tuned towards missing real events or towards announcing events that do not occur, and it cannot be tuned away from both at once.
 
-What follows from this is not an argument for carelessness. It is an argument about where the errors should be placed. If the cost of a missed flood is a hundred times the cost of an unnecessary evacuation, then a system producing no false alarms is announcing, in effect, that it is prepared to accept the hundredfold loss in order to avoid the embarrassment of the smaller one. It is precisely this preference that goes unstated whenever a service is criticised for crying wolf.
+What follows from this is not an argument for carelessness. It is an argument about where the errors should be placed. If the cost of a missed flood is a hundred times the cost of an unnecessary evacuation, then a system producing no false alarms is announcing, in effect, that it is prepared to accept the hundredfold loss in order to avoid the embarrassment of the smaller one. It is precisely this preference that goes unstated whenever a service is criticized for crying wolf.
 
 I should be careful here, because the counter-argument is strong and I have no wish to caricature it. Warnings that repeatedly come to nothing are ignored, and a system that has trained its public to disregard it has not avoided the missed event; it has merely arranged for the failure to occur later and with better documentation. On balance, the concern about credibility is legitimate, and the people raising it are not fools.
 
@@ -374,7 +374,7 @@ None of this makes the false alarm pleasant. What it might do is make the altern
               id: "en-c1-04-l5-23",
               no: 23,
               text: "What does the writer say about warning systems?",
-              options: ["They can be improved until both errors disappear", "They should be judged only on missed events", "They must trade one kind of error against another", "They are inherently less reliable than human judgement"],
+              options: ["They can be improved until both errors disappear", "They should be judged only on missed events", "They must trade one kind of error against another", "They are inherently less reliable than human judgment"],
               answer: 2,
               explain:
                 "İlk paragraf ikilemi kuruyor: sistem ya gerçek olayları kaçırmaya ya da olmayacak olayları duyurmaya ayarlanabilir, «and it cannot be tuned away from both at once». Birinci şık tam olarak reddedilen olanaktır.",
@@ -424,7 +424,7 @@ None of this makes the false alarm pleasant. What it might do is make the altern
             {
               key: "a",
               label: "a — Writer A",
-              body: "The defence of precaution is almost always made by people who will not bear its costs. It should make us ask who is absent from the conversation: the households for whom a two-year delay is not caution but a rent they cannot pay, and who are never invited to the consultation.",
+              body: "The defense of precaution is almost always made by people who will not bear its costs. It should make us ask who is absent from the conversation: the households for whom a two-year delay is not caution but a rent they cannot pay, and who are never invited to the consultation.",
             },
             {
               key: "b",
@@ -514,7 +514,7 @@ Later work made the mechanism precise. Structures that were inspected more often
 
 {{33}}
 
-This has an uncomfortable implication for any system trained on administrative records. If the record reflects the behaviour of the organisation as much as the state of the world, then a model fitted to it will predict the organisation.
+This has an uncomfortable implication for any system trained on administrative records. If the record reflects the behavior of the organization as much as the state of the world, then a model fitted to it will predict the organization.
 
 {{34}}`,
               gloss: [
@@ -529,7 +529,7 @@ This has an uncomfortable implication for any system trained on administrative r
             { key: "b", label: "b", body: "In one district a bridge was visited twice a year because it lay on the route between two depots; in another, an identical structure was visited once every four years because it did not. Both regimes were defensible, and they were not comparable." },
             { key: "c", label: "c", body: "Once a correction for inspection frequency was applied, the ranking became unremarkable, which was itself the finding: the model added very little to what an experienced inspector already believed." },
             { key: "d", label: "d", body: "The lesson most often drawn is that such models are useless. A better one is that the record must be audited before it is fitted, which is exactly the sort of recommendation that no agency has ever put in a press release." },
-            { key: "e", label: "e", body: "Bridges built with post-tensioned concrete between 1960 and 1980 are now the subject of a separate inspection programme with its own reporting line." },
+            { key: "e", label: "e", body: "Bridges built with post-tensioned concrete between 1960 and 1980 are now the subject of a separate inspection program with its own reporting line." },
           ],
           items: [
             {
@@ -566,7 +566,7 @@ This has an uncomfortable implication for any system trained on administrative r
               text: "Gap 34",
               answer: "d",
               explain:
-                "Son paragraf genel sonucu veriyor: «a model fitted to it will predict the organisation». (d) buradan çıkarılacak dersi tartışıp yazıyı kapatıyor: kayıt, modele verilmeden önce denetlenmeli. (e) belli bir beton türünden söz ediyor ve metnin hiçbir yerinde yapı malzemesi tartışılmıyor — hiçbir boşluğa uymayan paragraf odur.",
+                "Son paragraf genel sonucu veriyor: «a model fitted to it will predict the organization». (d) buradan çıkarılacak dersi tartışıp yazıyı kapatıyor: kayıt, modele verilmeden önce denetlenmeli. (e) belli bir beton türünden söz ediyor ve metnin hiçbir yerinde yapı malzemesi tartışılmıyor — hiçbir boşluğa uymayan paragraf odur.",
             },
           ],
         },
@@ -594,7 +594,7 @@ This has an uncomfortable implication for any system trained on administrative r
             {
               key: "c",
               label: "c — Emergency planner",
-              body: "The guidance says that exercises build judgement, and I do not dispute it. My difficulty is practical: a planner rehearses whatever scenario the calendar offers, and nobody is arranging for them to meet the events that are genuinely rare. We call it experience and treat it as though it were a syllabus.",
+              body: "The guidance says that exercises build judgment, and I do not dispute it. My difficulty is practical: a planner rehearses whatever scenario the calendar offers, and nobody is arranging for them to meet the events that are genuinely rare. We call it experience and treat it as though it were a syllabus.",
             },
             {
               key: "d",
@@ -634,7 +634,7 @@ This has an uncomfortable implication for any system trained on administrative r
               kind: "match",
               id: "en-c1-04-l8-38",
               no: 38,
-              text: "Which text criticises a failure to record what was expected?",
+              text: "Which text criticizes a failure to record what was expected?",
               answer: "d",
               explain:
                 "Müdür kararların kendisini değil, beklentinin yazılmamasını eleştiriyor: «we never recorded what we expected to happen, so nobody can now say whether we were right».",
@@ -652,7 +652,7 @@ This has an uncomfortable implication for any system trained on administrative r
               kind: "match",
               id: "en-c1-04-l8-40",
               no: 40,
-              text: "Which text defends the very decisions it also criticises?",
+              text: "Which text defends the very decisions it also criticizes?",
               answer: "d",
               explain:
                 "İki cümle yan yana duruyor: «I would defend nearly all of them against anybody» ve «What I would not defend is …». Savunma kararlara, eleştiri kayıt tutulmamasına.",
@@ -716,7 +716,7 @@ This has an uncomfortable implication for any system trained on administrative r
               plays: 2,
               segments: [
                 { speaker: "Lecturer", text: "The forecasting literature contains a warning worth repeating whenever a new score is proposed. Any measure of forecast quality that is used to evaluate forecasters will, within about three years, change what they forecast rather than how well they forecast, and the change will be perfectly rational at every step." },
-                { speaker: "Lecturer", text: "The response is not to abandon scoring, which would be worse, but to expect the drift and to score against a benchmark that nobody in the organisation controls. Almost nobody does this, because a benchmark you do not control is one you cannot be seen to beat." },
+                { speaker: "Lecturer", text: "The response is not to abandon scoring, which would be worse, but to expect the drift and to score against a benchmark that nobody in the organization controls. Almost nobody does this, because a benchmark you do not control is one you cannot be seen to beat." },
               ],
             },
           ],
@@ -749,7 +749,7 @@ This has an uncomfortable implication for any system trained on administrative r
               no: 3,
               ref: "a2",
               text: "What does the researcher object to?",
-              options: ["The lack of national funding for defences", "Arguing about whole catchments", "The speed of new building on flood plains"],
+              options: ["The lack of national funding for defenses", "Arguing about whole catchments", "The speed of new building on flood plains"],
               answer: 1,
               explain:
                 "İtiraz ölçek düzeyine: «People argue about whole catchments. A catchment is not a unit of decision». Fon ve yapılaşma hızı kayıtta hiç geçmiyor.",
@@ -808,7 +808,7 @@ This has an uncomfortable implication for any system trained on administrative r
               plays: 1,
               segments: [
                 {
-                  text: "Thank you. I will give you our five-year figures and I will not pretend that all of them are comfortable. We issued four hundred and twelve warnings and, of those, two hundred and nine were followed by flooding at the level warned. The remainder are what the press calls false alarms and what I would call a tuning decision. The total cost of the service is three point six million a year. Here is the first finding: the warnings people act on are not the most severe ones, they are the ones that name a street, because that is the level at which somebody recognises their own house. Second, the timing matters more than the wording. A warning issued the previous evening produces about three times the preparation of one issued at six in the morning, and that ratio has held in every district. Third, the channel. We tried a phone call, a letter and a text message, and the text message outperformed the other two, which disappointed the two of us who had argued for the phone call. Fourth, a caution: our own survey shows that the households who take no action are overwhelmingly those who have been warned before without flooding, and we have not solved that. And finally, staffing. We have nine duty forecasters and we need fourteen, and that is the constraint that keeps me awake, not the budget.",
+                  text: "Thank you. I will give you our five-year figures and I will not pretend that all of them are comfortable. We issued four hundred and twelve warnings and, of those, two hundred and nine were followed by flooding at the level warned. The remainder are what the press calls false alarms and what I would call a tuning decision. The total cost of the service is three point six million a year. Here is the first finding: the warnings people act on are not the most severe ones, they are the ones that name a street, because that is the level at which somebody recognizes their own house. Second, the timing matters more than the wording. A warning issued the previous evening produces about three times the preparation of one issued at six in the morning, and that ratio has held in every district. Third, the channel. We tried a phone call, a letter and a text message, and the text message outperformed the other two, which disappointed the two of us who had argued for the phone call. Fourth, a caution: our own survey shows that the households who take no action are overwhelmingly those who have been warned before without flooding, and we have not solved that. And finally, staffing. We have nine duty forecasters and we need fourteen, and that is the constraint that keeps me awake, not the budget.",
                 },
               ],
             },
@@ -941,11 +941,11 @@ The service has nine duty forecasters and needs {{14}}.`,
                 { speaker: "Chair", text: "Reza, does that resolve it?" },
                 { speaker: "Reza", text: "It sharpens it. What both of them are describing is a trade-off between stability and usefulness, and I would say plainly that we have never had a serious attempt to have both. Nobody has tried publishing the number alongside a fixed, audited statement of consequences, because the consequences are where the political pain is." },
                 { speaker: "Chair", text: "Yuki, is there evidence either way?" },
-                { speaker: "Yuki", text: "Very little, and I would rather say so than pretend. Two services have published consequence tables and both withdrew them within three years. That is not enough to conclude anything, and I notice that everyone on this panel, including me, has a story that explains those withdrawals in their own favour." },
+                { speaker: "Yuki", text: "Very little, and I would rather say so than pretend. Two services have published consequence tables and both withdrew them within three years. That is not enough to conclude anything, and I notice that everyone on this panel, including me, has a story that explains those withdrawals in their own favor." },
                 { speaker: "Chair", text: "Elena, what about the incentive question?" },
                 { speaker: "Elena", text: "That is the part that worries me most. Any threshold attached to an obligation gets managed. If crossing the line triggers an evacuation, forecasts will cluster just below the line, and they will cluster honestly: the estimates have room in them and everybody knows where the boundary sits. I would build the review into the rule from the first day rather than add it once the drift is visible." },
                 { speaker: "Chair", text: "Reza, a last word." },
-                { speaker: "Reza", text: "Only that the comparison with medical screening is misleading and I wish it would stop. A screening programme can offer a second test to the people it worries. A flood warning cannot; the event either arrives or it does not, and there is no confirmatory step in between. Those are not the same problem." },
+                { speaker: "Reza", text: "Only that the comparison with medical screening is misleading and I wish it would stop. A screening program can offer a second test to the people it worries. A flood warning cannot; the event either arrives or it does not, and there is no confirmatory step in between. Those are not the same problem." },
               ],
               gloss: [
                 { de: "a threshold", tr: "eşik", en: "die Schwelle" },
@@ -1004,7 +1004,7 @@ The service has nine duty forecasters and needs {{14}}.`,
               id: "en-c1-04-h3-19",
               no: 19,
               ref: "c1",
-              text: "How does Reza characterise the disagreement?",
+              text: "How does Reza characterize the disagreement?",
               options: ["As a misunderstanding between the two speakers", "As a dispute about the quality of the data", "As a question the evidence has already settled", "As a trade-off that has never been properly tested"],
               answer: 3,
               explain:
@@ -1038,7 +1038,7 @@ The service has nine duty forecasters and needs {{14}}.`,
               no: 22,
               ref: "c1",
               text: "Why does Reza reject the comparison with medical screening?",
-              options: ["Screening programmes are far better funded", "Screening is subject to stricter regulation", "A flood warning has no confirmatory second step", "Screening deals with a much smaller population"],
+              options: ["Screening programs are far better funded", "Screening is subject to stricter regulation", "A flood warning has no confirmatory second step", "Screening deals with a much smaller population"],
               answer: 2,
               explain:
                 "Reza farkı düzenekte buluyor: tarama, kaygılandığı kişiye ikinci bir test sunabilir, «A flood warning cannot; the event either arrives or it does not». Bütçe ya da nüfus karşılaştırması yapılmıyor.",
@@ -1108,7 +1108,7 @@ The service has nine duty forecasters and needs {{14}}.`,
               situation: "Dördüncü konuşmacı bir eşiğin doğuracağı davranışı anlatıyor.",
               plays: 2,
               segments: [
-                { text: "If we publish a rule that any forecast above eighty per cent triggers an evacuation, I can tell you now what will happen. Within two years very few forecasts will be issued above seventy-nine, and nobody will have lied; the estimates simply have room in them, and everybody knows where the line has been drawn." },
+                { text: "If we publish a rule that any forecast above eighty percent triggers an evacuation, I can tell you now what will happen. Within two years very few forecasts will be issued above seventy-nine, and nobody will have lied; the estimates simply have room in them, and everybody knows where the line has been drawn." },
               ],
             },
             {
@@ -1130,7 +1130,7 @@ The service has nine duty forecasters and needs {{14}}.`,
               situation: "Altıncı konuşmacı eleştirilen bir meslektaşından söz ediyor.",
               plays: 2,
               segments: [
-                { text: "A great deal has been said this week about the officer who issued the warning, most of it by people who have not seen the file. She followed the threshold exactly as it is written, she recorded her reasoning at the time, and she escalated it twice. If we want to criticise somebody, the papers make it perfectly clear who." },
+                { text: "A great deal has been said this week about the officer who issued the warning, most of it by people who have not seen the file. She followed the threshold exactly as it is written, she recorded her reasoning at the time, and she escalated it twice. If we want to criticize somebody, the papers make it perfectly clear who." },
               ],
             },
             {
@@ -1215,7 +1215,7 @@ The service has nine duty forecasters and needs {{14}}.`,
               text: "Speaker 6",
               answer: "i",
               explain:
-                "Konuşmacı eleştirilen memuru koruyor: eşiği yazıldığı gibi uygulamış, gerekçesini kaydetmiş ve konuyu iki kez üste taşımış. «If we want to criticise somebody, the papers make it perfectly clear who».",
+                "Konuşmacı eleştirilen memuru koruyor: eşiği yazıldığı gibi uygulamış, gerekçesini kaydetmiş ve konuyu iki kez üste taşımış. «If we want to criticize somebody, the papers make it perfectly clear who».",
             },
             {
               kind: "match",
@@ -1255,14 +1255,14 @@ The service has nine duty forecasters and needs {{14}}.`,
           format: "writing",
           goal: "production",
           prompt:
-            "You have attended a seminar on public warnings. Write an essay for your tutor summarising which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. A warning that is issued too often will eventually be ignored.\n2. A warning that is withheld to protect credibility leaves people unprepared.\n\nWrite 220 to 260 words.",
+            "You have attended a seminar on public warnings. Write an essay for your tutor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. A warning that is issued too often will eventually be ignored.\n2. A warning that is withheld to protect credibility leaves people unprepared.\n\nWrite 220 to 260 words.",
           promptTr:
             "Kamu uyarıları üzerine bir seminere katıldın. Danışmanın için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Çok sık verilen bir uyarı sonunda dikkate alınmaz olur.\n2. İnandırıcılığı korumak için verilmeyen bir uyarı insanları hazırlıksız bırakır.\n\n220–260 kelime yaz.",
           items: [],
           rubric: {
             minWords: 220,
             points: [
-              { de: "Summarise both points fairly.", tr: "İki noktayı da adil biçimde özetle." },
+              { de: "Summarize both points fairly.", tr: "İki noktayı da adil biçimde özetle." },
               { de: "Say which is more important and justify the choice.", tr: "Hangisinin daha önemli olduğunu söyle ve seçimi gerekçelendir." },
               { de: "Give your own view, distinct from the summary.", tr: "Özetten ayrı olarak kendi görüşünü ver." },
             ],
@@ -1292,7 +1292,7 @@ My own view is that the framing conceals the interesting question. Neither point
           format: "writing",
           goal: "interaction",
           prompt:
-            "An organisation you know is about to adopt an automatic alert system that will contact people at any hour. Write a report for its board. Describe the current arrangement, assess the likely effects of the change, and recommend a course of action. Write 220 to 260 words.",
+            "An organization you know is about to adopt an automatic alert system that will contact people at any hour. Write a report for its board. Describe the current arrangement, assess the likely effects of the change, and recommend a course of action. Write 220 to 260 words.",
           promptTr:
             "Tanıdığın bir kurum, insanları her saat arayabilecek otomatik bir uyarı sistemi kurmak üzere. Yönetim kuruluna bir rapor yaz. Mevcut düzeni anlat, değişikliğin olası etkilerini değerlendir ve bir yol öner. 220–260 kelime yaz.",
           items: [],
@@ -1309,7 +1309,7 @@ Current arrangement
 Alerts are issued by a duty officer between seven in the morning and eleven at night, using a text message and a notice on the website. Outside those hours a decision requires a telephone call to a second officer, which adds a median delay of fifty minutes. In the last two years this delay has affected eleven events, of which two would probably have warranted an earlier message.
 
 Assessment
-The gain is real and it is narrow: the system removes the fifty-minute delay and nothing else. Two further effects are not in the proposal. The first is habituation. The system as specified would have contacted residents at night on nineteen occasions last year, of which four were followed by the predicted event; our own survey of the neighbouring authority suggests that a run of three unnecessary night calls reduces subsequent response by about half. The second is the transfer of judgement: the officer currently exercising discretion at two in the morning would be replaced by a rule written eighteen months earlier.
+The gain is real and it is narrow: the system removes the fifty-minute delay and nothing else. Two further effects are not in the proposal. The first is habituation. The system as specified would have contacted residents at night on nineteen occasions last year, of which four were followed by the predicted event; our own survey of the neighboring authority suggests that a run of three unnecessary night calls reduces subsequent response by about half. The second is the transfer of judgment: the officer currently exercising discretion at two in the morning would be replaced by a rule written eighteen months earlier.
 
 Recommendation
 I recommend adopting the system for daytime alerts immediately and running the night function in shadow mode for twelve months, with the messages logged but not sent. That gives us the rate before we impose it on residents. I would not recommend full night activation this year, and I would specifically advise against buying the escalation module until the shadow data exists, since it cannot be assessed without it.`,
@@ -1344,7 +1344,7 @@ I recommend adopting the system for daytime alerts immediately and running the n
           exchange: [
             { who: "partner", de: "Good morning. Can you describe a warning you have received that you did not act on, and say why?", tr: "Günaydın. Aldığın ama gereğini yapmadığın bir uyarıyı tarif eder ve nedenini söyler misin?" },
             { who: "you", hint: "Somut bir örnek seç ve kendi kararını çözümle.", expect: "somut bir örnek vermek ve kendi kararını çözümlemek", seconds: 50 },
-            { who: "partner", de: "Thank you. Do you think that reaction is a failure of the warning, or a reasonable judgement on your part?", tr: "Teşekkürler. Sence bu tepki uyarının bir kusuru mu, yoksa senin makul bir yargın mı?" },
+            { who: "partner", de: "Thank you. Do you think that reaction is a failure of the warning, or a reasonable judgment on your part?", tr: "Teşekkürler. Sence bu tepki uyarının bir kusuru mu, yoksa senin makul bir yargın mı?" },
             { who: "you", hint: "Bir konum al ama karşı görüşe bir pay bırak.", expect: "bir konum almak ve karşı görüşe pay bırakmak", seconds: 50 },
             { who: "partner", de: "And how would you decide whether a public body had warned people well or had simply been lucky?", tr: "Bir kurumun insanları iyi uyardığına mı yoksa yalnız şanslı olduğuna mı karar vermek için ne yapardın?" },
             { who: "you", hint: "Bir ölçüt öner ve onu neden seçtiğini açıkla.", expect: "bir ölçüt önermek ve seçimini gerekçelendirmek", seconds: 50 },
@@ -1353,7 +1353,7 @@ I recommend adopting the system for daytime alerts immediately and running the n
           rubric: {
             minutes: 5,
             points: [
-              { de: "describe a concrete case and analyse it", tr: "Somut bir durumu betimlemek ve çözümlemek" },
+              { de: "describe a concrete case and analyze it", tr: "Somut bir durumu betimlemek ve çözümlemek" },
               { de: "take a position while conceding something", tr: "Bir konum alırken bir şeyi kabul etmek" },
               { de: "propose and justify a criterion", tr: "Bir ölçüt önermek ve gerekçelendirmek" },
             ],

@@ -200,7 +200,7 @@ export const deC1P18: SkillExercise[] = [
     genre: "formal",
     intro: "Mahalle meclisine yazıyorsun: önce iki cümle kur, sonra bir ödünç dükkânı fikrini amacı, işleyişi ve riskleriyle anlatan kısa bir tasarı yaz.",
     gloss: [
-      { de: "der Quartiersrat", tr: "mahalle meclisi", en: "neighbourhood council" },
+      { de: "der Quartiersrat", tr: "mahalle meclisi", en: "neighborhood council" },
       { de: "die Räumlichkeit", tr: "mekân", en: "premises" },
       { de: "ehrenamtlich", tr: "gönüllü", en: "voluntary" },
       { de: "die Kaution", tr: "depozito", en: "deposit" },
@@ -238,7 +238,7 @@ export const deC1P18: SkillExercise[] = [
           { de: "Ziel ist es, … zu ermöglichen, ohne dass …", tr: "Amaç, … olmadan …'i mümkün kılmak", en: "The aim is to make … possible without …" },
           { de: "Der Ablauf ist bewusst einfach gehalten: …", tr: "İşleyiş bilerek basit tutuldu: …", en: "The procedure is deliberately kept simple: …" },
           { de: "Das größte Risiko sehen wir darin, dass …", tr: "En büyük riski … olmasında görüyoruz", en: "We see the greatest risk in the fact that …" },
-          { de: "Vom Quartiersrat erbitten wir …", tr: "Mahalle meclisinden … rica ediyoruz", en: "From the neighbourhood council we request …" },
+          { de: "Vom Quartiersrat erbitten wir …", tr: "Mahalle meclisinden … rica ediyoruz", en: "From the neighborhood council we request …" },
         ],
         sample:
           "Mit diesem Konzept beantragen wir die Nutzung des leerstehenden Ladens in der " +

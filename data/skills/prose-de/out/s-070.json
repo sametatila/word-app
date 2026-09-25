@@ -8,7 +8,7 @@
  { "tr": "„describe“ kişi + şey sırası almaz: „Please describe the man to me.“", "kind": "explain", "de": "„describe“ nimmt nicht die Reihenfolge Person + Sache: „Please describe the man to me.“" },
  { "tr": "„over there“ uzaktaki tek bir şeyi gösteriyor, bu yüzden that gelir.", "kind": "explain", "de": "„over there“ zeigt auf eine einzelne Sache in der Ferne, deshalb steht that." },
  { "tr": "„They need football boots or sports shoes.“ — okul ayakkabısı olmaz.", "kind": "explain", "de": "„They need football boots or sports shoes.“ — Schulschuhe gehen nicht." },
- { "tr": "„We've painted a line on the pavement, so people stand on one side“.", "kind": "explain", "de": "„We've painted a line on the pavement, so people stand on one side“." },
+ { "tr": "„We've painted a line on the sidewalk, so people stand on one side“.", "kind": "explain", "de": "„We've painted a line on the sidewalk, so people stand on one side“." },
  { "tr": "12 numaralı dairenin kapısında bir not vardı: pazar saat dörtte çay.", "kind": "explain", "de": "An der Tür von Wohnung 12 hing ein Zettel: Sonntag um vier zum Tee." },
  { "tr": "Doğru biçim „unreasonable“dır; „dis-“ daha çok fiillerde kullanılır.", "kind": "explain", "de": "Die richtige Form ist „unreasonable“; „dis-“ steht eher bei Verben." },
  { "tr": "Hatırlatma mesajına tek kelimeyle cevap vererek iptal edebiliyorlar.", "kind": "explain", "de": "Sie können absagen, indem sie auf die Erinnerungsnachricht mit einem einzigen Wort antworten." },
@@ -148,5 +148,5 @@
  { "tr": "„risen by roughly eight decibels“ — kulağa neredeyse iki kat yüksek gelen bir fark.", "kind": "explain", "de": "„risen by roughly eight decibels“ — ein Unterschied, der fast doppelt so laut klingt." },
  { "tr": "Eşi on beş yaşında ne yaptığını hatırlamasını istemiş; cevap konserlerden kötüymüş.", "kind": "explain", "de": "Ihr Mann bat sie, sich zu erinnern, was sie mit fünfzehn gemacht hatte; die Antwort war schlimmer als Konzerte." },
  { "tr": "Tam tersi: tilkilere hayran, bahçesine kamera koymuş ve videolarıyla gurur duyuyor.", "kind": "explain", "de": "Im Gegenteil: Er bewundert die Füchse, hat eine Kamera im Garten aufgestellt und ist stolz auf seine Videos." },
- { "tr": "„If rates in any year group fall below seventy per cent“ bir ay içinde toplanılacak.", "kind": "explain", "de": "„If rates in any year group fall below seventy per cent“, trifft man sich innerhalb eines Monats." }
+ { "tr": "„If rates in any year group fall below seventy percent“ bir ay içinde toplanılacak.", "kind": "explain", "de": "„If rates in any year group fall below seventy percent“, trifft man sich innerhalb eines Monats." }
 ]

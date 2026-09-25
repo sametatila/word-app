@@ -236,7 +236,7 @@ Here is why it happens. A letter goes out when the law says we must ask you, whe
 
 We have tried two things. In 2022 we put everything on the website and stopped sending paper. Fewer than half of you looked at it, and the trip in June had eleven children instead of sixty.
 
-Now we do something different. There is one paper letter a week, always on Friday, always the same colour. Everything for that week is on it. If nothing is happening, we still send it and it says so.
+Now we do something different. There is one paper letter a week, always on Friday, always the same color. Everything for that week is on it. If nothing is happening, we still send it and it says so.
 
 The number of letters has not gone down. What has changed is that there is one place to look, and the June trip last year had fifty-eight children.
 
@@ -244,7 +244,7 @@ We know that Friday is not a good day for everybody. Tell us at the parents' eve
               gloss: [
                 { de: "a newsletter", tr: "bülten", en: "der Newsletter" },
                 { de: "a trip", tr: "gezi", en: "der Ausflug" },
-                { de: "the same colour", tr: "aynı renk", en: "dieselbe Farbe" },
+                { de: "the same color", tr: "aynı renk", en: "dieselbe Farbe" },
               ],
             },
           ],
@@ -542,7 +542,7 @@ I have three children at the school and I still {{24}} not know all the teachers
               no: 2,
               ref: "a2",
               text: "What does the second parent learn?",
-              options: ["The last day is the fifth", "The trip is cancelled", "The price has gone up"],
+              options: ["The last day is the fifth", "The trip is canceled", "The price has gone up"],
               answer: 0,
               explain:
                 "Konuşma son günü veriyor: «The fifth», ve veli «Then I have three days» diyerek hesabını yapıyor.",
@@ -1095,7 +1095,7 @@ Petra Roth`,
               { de: "make a decision together", tr: "Birlikte bir karara varmak" },
             ],
             sample:
-              "The weekly letter is good for me, because there is one place to look and I do not lose the dates. You are right that it does not help a family who never reads anything on paper; my neighbour is exactly that family. So let us choose the person who telephones, because that reaches everybody, and the school can send the weekly letter as well; it costs nothing extra.",
+              "The weekly letter is good for me, because there is one place to look and I do not lose the dates. You are right that it does not help a family who never reads anything on paper; my neighbor is exactly that family. So let us choose the person who telephones, because that reaches everybody, and the school can send the weekly letter as well; it costs nothing extra.",
             criteria: [
               "Görüş bir gerekçeyle mi verildi? (because …)",
               "Karşı tarafın söylediğine gönderme yapıldı mı? (You are right … / That is true …)",

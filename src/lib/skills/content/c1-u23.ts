@@ -230,7 +230,7 @@ export const c1U23: SkillExercise[] = [
       { de: "die Selbstironie", tr: "kendiyle dalga geçme", en: "self-irony" },
       { de: "unterschätzt", tr: "hafife alınmış", en: "underrated" },
       { de: "inszenieren", tr: "sahnelemek", en: "to stage" },
-      { de: "praktizieren", tr: "uygulamak", en: "to practise" },
+      { de: "praktizieren", tr: "uygulamak", en: "to practice" },
       { de: "das Ensemble", tr: "topluluk", en: "ensemble" },
       { de: "also", tr: "yani", en: "so" },
       { de: "genau", tr: "tam olarak", en: "exactly" },

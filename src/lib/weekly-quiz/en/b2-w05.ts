@@ -37,9 +37,9 @@ export const EN_B2_W05: QuizWeek = {
       body:
         "Posted by Clara_M\n\n" +
         "I've just heard that Harper's, the book shop on Mill Street which has been part of our town for over sixty years, is closing at the end of the month. " +
-        "I knew it had been having difficulties for a while, but I honestly hadn't realised how bad things were.\n\n" +
+        "I knew it had been having difficulties for a while, but I honestly hadn't realized how bad things were.\n\n" +
         "The family who run the shop are said to have tried everything: evenings with authors, a small café, even an online shop. " +
-        "Apparently none of it was enough. The building is going to be turned into offices for a software company, which, to be fair, will bring some jobs into the town centre.\n\n" +
+        "Apparently none of it was enough. The building is going to be turned into offices for a software company, which, to be fair, will bring some jobs into the town center.\n\n" +
         "What bothers me is that most of us must have seen this coming. How many times did we look at a book in Harper's and then order it online because it was two pounds cheaper? " +
         "I'm not blaming anyone, because I did it myself. But if more of us had bought our books there, the shop might still be open today.\n\n" +
         "I also think the town could have done something. Other towns have reduced taxes for independent shops, and it seems to have worked.\n\n" +
@@ -58,9 +58,9 @@ export const EN_B2_W05: QuizWeek = {
         { speaker: "Host", text: "Today we're talking about software that helps companies choose new staff. With me is Priya Shah, who advises companies on hiring. Priya, how common is it now?" },
         { speaker: "Priya", text: "More common than most people think. Many large companies are believed to use software to check job applications before a person ever reads them." },
         { speaker: "Host", text: "And does it work?" },
-        { speaker: "Priya", text: "It can save a lot of time. But there have been some well-known failures. One company had been using a system for two years before they realised it was rejecting most female applicants." },
+        { speaker: "Priya", text: "It can save a lot of time. But there have been some well-known failures. One company had been using a system for two years before they realized it was rejecting most female applicants." },
         { speaker: "Host", text: "How could that happen?" },
-        { speaker: "Priya", text: "The system had been trained on the applications of people who had been hired in the past, and most of them were men. So it simply learnt to prefer men." },
+        { speaker: "Priya", text: "The system had been trained on the applications of people who had been hired in the past, and most of them were men. So it simply learned to prefer men." },
         { speaker: "Host", text: "Surely someone should have noticed that earlier." },
         { speaker: "Priya", text: "They should have, yes. If the company had tested the results regularly, they would have found the problem within weeks." },
         { speaker: "Host", text: "So would you advise companies not to use these tools?" },
@@ -132,7 +132,7 @@ export const EN_B2_W05: QuizWeek = {
         "The applications were badly written.",
       ],
       answer: 1,
-      why: "`had been using a system for two years before they realised` past perfect continuous: sorun iki yıl sürdü ve ancak sonra fark edildi. Sorun yavaşlık değil, seçimdeki önyargıydı; Priya sistemin tam tersine zaman kazandırdığını söylüyor.",
+      why: "`had been using a system for two years before they realized` past perfect continuous: sorun iki yıl sürdü ve ancak sonra fark edildi. Sorun yavaşlık değil, seçimdeki önyargıydı; Priya sistemin tam tersine zaman kazandırdığını söylüyor.",
       targets: ["listening.detail", "tense.past-perfect-continuous"],
     },
     {
@@ -143,11 +143,11 @@ export const EN_B2_W05: QuizWeek = {
       options: [
         "The company had told it to choose men on purpose.",
         "Women had sent far fewer applications to the company.",
-        "It had learnt from past hiring decisions, which mostly involved men.",
+        "It had learned from past hiring decisions, which mostly involved men.",
         "The software was built by a team that did not include any women.",
       ],
       answer: 2,
-      why: "`had been trained on the applications of people who had been hired in the past` iki past perfect ile nedeni geriye taşıyor: geçmişteki işe alımlar çoğunlukla erkekti ve sistem bunu öğrendi. Bilerek yapıldığını `simply learnt` reddediyor.",
+      why: "`had been trained on the applications of people who had been hired in the past` iki past perfect ile nedeni geriye taşıyor: geçmişteki işe alımlar çoğunlukla erkekti ve sistem bunu öğrendi. Bilerek yapıldığını `simply learned` reddediyor.",
       targets: ["listening.detail", "relative.defining"],
     },
     {
@@ -257,8 +257,8 @@ export const EN_B2_W05: QuizWeek = {
       stem: "Priya advises keeping the language in job applications clear and simple. Which sentence follows her advice?",
       options: [
         "Responsible for the realisation of the reduction of costs and the management of a team.",
-        "Management of a team of five persons and realisation of a cost reduction of ten per cent.",
-        "I led a team of five and reduced costs by ten per cent.",
+        "Management of a team of five persons and realisation of a cost reduction of ten percent.",
+        "I led a team of five and reduced costs by ten percent.",
         "In charge of the carrying out of the management of five members of staff.",
       ],
       answer: 2,
@@ -267,10 +267,10 @@ export const EN_B2_W05: QuizWeek = {
       byNative: {
         de: {
           options: [
-            "I led a team of five and reduced costs by ten per cent.",
+            "I led a team of five and reduced costs by ten percent.",
             "Responsible for the realisation of the reduction of costs and the management of a team.",
             "In charge of the carrying out of the management of five members of staff.",
-            "Management of a team of five persons and realisation of a cost reduction of ten per cent.",
+            "Management of a team of five persons and realisation of a cost reduction of ten percent.",
           ],
           answer: 0,
           why: "Almanca özgeçmiş dili isim üslubunu sever (`Durchführung der Kostenreduzierung`, `Leitung eines Teams`) ve İngilizceye taşınınca ağır cümleler çıkıyor. İngilizce aynı bilgiyi fiille ve birinci kişiyle verir: `I led …, reduced …`.",

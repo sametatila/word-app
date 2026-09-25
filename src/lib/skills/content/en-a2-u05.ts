@@ -38,7 +38,7 @@ export const enA2U05: SkillExercise[] = [
     gloss: [
       { de: "less", tr: "daha az" },
       { de: "almost", tr: "neredeyse" },
-      { de: "centre", tr: "merkez" },
+      { de: "center", tr: "merkez" },
       { de: "book", tr: "kitap" },
     ],
     minutes: 5,
@@ -46,7 +46,7 @@ export const enA2U05: SkillExercise[] = [
       "Ten years ago my life was very different. I used to work in a big office in the city. The job was important but difficult, and I was tired every evening.\n\n" +
       "Now I work at home. The money is less, but the hours are better and I am still here at six when my children come back from school.\n\n" +
       "I used to travel a lot. I don't travel anymore — or hardly ever. Last year I was abroad only once.\n\n" +
-      "Some things are the same. I still read every night, and my favourite café is still the little one near the park. It is tiny, but the coffee is excellent and it is cheaper than the big places in the centre.\n\n" +
+      "Some things are the same. I still read every night, and my favorite café is still the little one near the park. It is tiny, but the coffee is excellent and it is cheaper than the big places in the center.\n\n" +
       "My dream is to write a book. That is my goal for the next two years.",
     questions: [
       {
@@ -70,11 +70,11 @@ export const enA2U05: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The favourite café is ___ than the big places.",
+        text: "The favorite café is ___ than the big places.",
         options: [],
         answer: 0,
         accept: ["cheaper"],
-        explain: "„…it is cheaper than the big places in the centre.“ — kısa sıfat „-er“ alıyor.",
+        explain: "„…it is cheaper than the big places in the center.“ — kısa sıfat „-er“ alıyor.",
       },
       {
         kind: "short_answer",

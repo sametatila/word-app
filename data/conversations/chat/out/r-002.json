@@ -67,7 +67,7 @@
   "sceneEn": "You are at a language course and your teacher is asking when you study. Begin your answers with 'today', 'tomorrow' and 'at the weekend' — that is exactly where the rule has to be used.",
   "partnerEn": "a curious and encouraging language teacher",
   "openingEn": "Good to have you here! When do you most like studying German?",
-  "goalEn": "You have said what you will do today, tomorrow and at the weekend, and the teacher has approved your study plan."
+  "goalEn": "You have said what you will do today, tomorrow and on the weekend, and the teacher has approved your study plan."
  },
  {
   "conversation": "de-a1-morgenroutine",
@@ -120,10 +120,10 @@
  },
  {
   "conversation": "de-a1-farben",
-  "sceneEn": "In a small boutique you like the shirt in the window but you want it in another colour. Ask about the colours, say which one you like, and reply to the colour the assistant suggests.",
-  "partnerEn": "a boutique owner with strong opinions about colour",
-  "openingEn": "This shirt comes in four colours. Which colour are you looking for?",
-  "goalEn": "You have asked for the colour you wanted and settled whether you are buying it."
+  "sceneEn": "In a small boutique you like the shirt in the window but you want it in another color. Ask about the colors, say which one you like, and reply to the color the assistant suggests.",
+  "partnerEn": "a boutique owner with strong opinions about color",
+  "openingEn": "This shirt comes in four colors. Which color are you looking for?",
+  "goalEn": "You have asked for the color you wanted and settled whether you are buying it."
  },
  {
   "conversation": "de-a1-preis",
@@ -170,7 +170,7 @@
  {
   "conversation": "de-a1-online",
   "sceneEn": "The order you placed online still has not arrived and you have rung customer service. Say what you ordered, ask how long the delivery should take, and find out where the parcel is.",
-  "partnerEn": "a calm agent who is used to apologising",
+  "partnerEn": "a calm agent who is used to apologizing",
   "openingEn": "Customer service, good afternoon! How can I help you?",
   "goalEn": "You have found out where your order is and been told when it will arrive."
  }

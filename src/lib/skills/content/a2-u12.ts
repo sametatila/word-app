@@ -37,7 +37,7 @@ export const a2U12: SkillExercise[] = [
       { de: "der Vorschlag", tr: "öneri", en: "proposal" },
       { de: "das Projekt", tr: "proje", en: "project" },
       { de: "berichten", tr: "bildirmek", en: "to report" },
-      { de: "betonen", tr: "vurgulamak", en: "to emphasise" },
+      { de: "betonen", tr: "vurgulamak", en: "to emphasize" },
       { de: "diskutieren", tr: "tartışmak", en: "to discuss" },
       { de: "meinen", tr: "düşünmek / görüşünde olmak", en: "to think" },
       { de: "auf jeden Fall", tr: "kesinlikle", en: "definitely" },

@@ -90,7 +90,7 @@ export const enC1U07: SkillExercise[] = [
       "The third is the largest. One road is impassable; the other is not. The whole predicate has gone and „is not“ carries it alone.\n" +
       "Now the part worth being slow about. English does not delete more than other languages. It deletes in different places, and the place is decided by the shape rather than by the language.\n" +
       "In the first sentence English needs the comma, because nothing else shows that a verb is missing. A language that keeps its verb in second position needs no comma at all: the empty second position is itself the signal, and here the punctuation is doing a job that word order has already done elsewhere.\n" +
-      "In the second sentence English is ahead. „If they could“ ends there, with nothing after it, and most of its neighbours have to leave a small word behind — a pronoun standing in for the thing that was not said.\n" +
+      "In the second sentence English is ahead. „If they could“ ends there, with nothing after it, and most of its neighbors have to leave a small word behind — a pronoun standing in for the thing that was not said.\n" +
       "In the third sentence English is behind. „The other is not“ still has its verb; a good many languages drop that too and leave the negative on its own.\n" +
       "So the sentence that is shortest in English is not the shortest everywhere, and a translator who keeps the holes in the same places has translated the punctuation rather than the sentence.\n" +
       "One last warning, and it belongs to this vocabulary. A paragraph full of holes reads as confident, and the confidence is free: nothing has been argued, only left out. A report on deterrence written in this shape can spend four hundred words without once naming who is deterred.",
@@ -199,7 +199,7 @@ export const enC1U07: SkillExercise[] = [
       "Then comes the second half of this register, which is not concession but distance. The deductible may well be raised. A modal, an adverb and a passive, stacked three deep, and at the end of it nobody has raised anything and nobody has promised that anybody will.\n" +
       "It might have been expected to cover occupational disability. Four words of machinery in front of the only word in the line that carries content. Liquidity would tend to fall first. „Would“, then „tend“, and the fall has become a habit that belongs to nobody.\n" +
       "This is the place where a reader from another language should stop and count. English hedges by lengthening. Each small word takes a little more weight off the claim, and the chain can run to four or five before the verb arrives.\n" +
-      "Its neighbours do it in one piece. A single unstressed particle dropped into the middle of the sentence does the work of the whole English chain, and there is no second word to add because the first one has already said how sure the writer is.\n" +
+      "Its neighbors do it in one piece. A single unstressed particle dropped into the middle of the sentence does the work of the whole English chain, and there is no second word to add because the first one has already said how sure the writer is.\n" +
       "So the same caution comes out long in one language and short in the other. A writer who carries the chain across word for word produces a sentence that sounds evasive rather than careful, and in a letter about creditworthiness that difference is the letter.",
     questions: [
       {

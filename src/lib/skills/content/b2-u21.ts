@@ -39,7 +39,7 @@ export const b2U21: SkillExercise[] = [
       { de: "die Geste", tr: "jest", en: "gesture" },
       { de: "die Mimik", tr: "yüz ifadesi", en: "facial expression" },
       { de: "der Blickkontakt", tr: "göz teması", en: "eye contact" },
-      { de: "die Verhaltensweise", tr: "davranış biçimi", en: "behaviour" },
+      { de: "die Verhaltensweise", tr: "davranış biçimi", en: "behavior" },
       { de: "zwischenmenschlich", tr: "kişiler arası", en: "interpersonal" },
       { de: "aufgeschlossen", tr: "açık fikirli", en: "open-minded" },
       { de: "selbstbewusst", tr: "özgüvenli", en: "self-assured" },

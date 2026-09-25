@@ -33,7 +33,7 @@ export const a1U18: SkillExercise[] = [
     gloss: [
       { de: "die Freizeit", tr: "boş zaman", en: "free time" },
       { de: "der Verein", tr: "dernek", en: "club" },
-      { de: "üben", tr: "alıştırma yapmak", en: "to practise" },
+      { de: "üben", tr: "alıştırma yapmak", en: "to practice" },
       { de: "das Talent", tr: "yetenek", en: "talent" },
     ],
     minutes: 3,
@@ -264,7 +264,7 @@ export const a1U18: SkillExercise[] = [
     gloss: [
       { de: "können", tr: "-ebilmek", en: "can" },
       { de: "funktionieren", tr: "çalışmak", en: "to work" },
-      { de: "üben", tr: "alıştırma yapmak", en: "to practise" },
+      { de: "üben", tr: "alıştırma yapmak", en: "to practice" },
     ],
     minutes: 6,
     tasks: [

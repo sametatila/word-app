@@ -46,7 +46,7 @@ export const enC1P15: SkillExercise[] = [
       "describe something both smaller and more durable than the brochure imagined.\n\n" +
       "Each household has its own flat, kitchen and front door. What is shared is a large dining room, " +
       "a workshop, a guest room and a laundry, together with a meal cooked by a rota of residents three " +
-      "evenings a week. The flats are about fifteen per cent smaller than comparable ones nearby, and the " +
+      "evenings a week. The flats are about fifteen percent smaller than comparable ones nearby, and the " +
       "shared rooms are supposed to make up the difference.\n\n" +
       "Whether they do depends on whom you ask. The more a household uses the common rooms, the less it " +
       "seems to miss the space; families with young children, who eat at the shared table most weeks, " +
@@ -91,11 +91,11 @@ export const enC1P15: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The flats are about ___ per cent smaller than comparable ones nearby.",
+        text: "The flats are about ___ percent smaller than comparable ones nearby.",
         options: [],
         answer: 0,
         accept: ["fifteen", "15"],
-        explain: "„about fifteen per cent smaller than comparable ones nearby“.",
+        explain: "„about fifteen percent smaller than comparable ones nearby“.",
       },
       {
         kind: "short_answer",

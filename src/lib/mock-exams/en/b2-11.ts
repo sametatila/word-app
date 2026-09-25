@@ -217,7 +217,7 @@ The difficulty with that reply is that repairability is not printed on the box, 
             {
               kind: "text",
               id: "t3",
-              genre: "Encyclopaedia entry",
+              genre: "Encyclopedia entry",
               genreTr: "Ansiklopedi maddesi",
               title: "Repairability",
               body: `Repairability describes how easily a product can be returned to working order after a component fails, and it is distinct from {{13}}, which describes how long the product works before it fails at all.
@@ -358,7 +358,7 @@ Proposals for a repairability label have been discussed since the nineteen ninet
               title: "I designed the drum you cannot open",
               body: `I have spent nineteen years designing washing machines, and I have signed off the sealed drum that repair campaigners use as their standard example. I would like to make the case for it properly before I concede what I am going to concede.
 
-Bonding the motor into the drum was not a trick. It removed a joint, and a joint is where noise, leaks and warranty claims begin. The machine got quieter, lighter and about eleven per cent cheaper to build, and every one of those gains reached the customer. The cost I am accused of imposing, by contrast, arrives seven years later and is paid by somebody who has forgotten which model they bought.
+Bonding the motor into the drum was not a trick. It removed a joint, and a joint is where noise, leaks and warranty claims begin. The machine got quieter, lighter and about eleven percent cheaper to build, and every one of those gains reached the customer. The cost I am accused of imposing, by contrast, arrives seven years later and is paid by somebody who has forgotten which model they bought.
 
 That last clause is the whole problem, and I am not going to pretend otherwise. Given that the gain is immediate and the cost is deferred, no competitive process will ever weigh the two honestly. A designer who added the joint back would produce a machine that is louder and dearer on the shop floor and better in its seventh year, and the shop floor is where machines are chosen.
 
@@ -414,7 +414,7 @@ The remedy is not moral instruction aimed at designers. It is a rule that makes 
                 "That year seven was invisible when he designed",
                 "That the sealed drum was bad engineering",
                 "That he ignored the warnings of his colleagues",
-                "That the eleven per cent saving was exaggerated",
+                "That the eleven percent saving was exaggerated",
               ],
               answer: 0,
               explain:
@@ -488,7 +488,7 @@ None of which makes the four-euro figure useless. It is the clearest short way o
             { key: "a", label: "a", body: "A machine assembled so that the motor goes in first can only be opened by undoing everything that went in after it." },
             { key: "b", label: "b", body: "It is quoted in every campaign, it is entirely accurate, and it explains almost nothing on its own." },
             { key: "c", label: "c", body: "The design stage is the only point at which the three hours can be turned into thirty minutes." },
-            { key: "d", label: "d", body: "Nobody is overcharging for labour here; the labour is genuinely there and somebody genuinely does it." },
+            { key: "d", label: "d", body: "Nobody is overcharging for labor here; the labor is genuinely there and somebody genuinely does it." },
             { key: "e", label: "e", body: "The first domestic washing machines sold in Europe weighed more than ninety kilograms." },
           ],
           items: [
@@ -732,7 +732,7 @@ None of which makes the four-euro figure useless. It is the clearest short way o
               no: 1,
               ref: "a1",
               text: "What does the repairer explain?",
-              options: ["The part has become expensive to buy", "The labour is what the bill is for", "The machine cannot be opened at all"],
+              options: ["The part has become expensive to buy", "The labor is what the bill is for", "The machine cannot be opened at all"],
               answer: 1,
               explain:
                 "Tamirci ikisini ayırıyor: «The part is four euros», ödenen şey «three hours of getting to it».",
@@ -988,7 +988,7 @@ Bring the {{16}} number`,
               situation: "Üçüncü konuşmacı tasarım kararını savunuyor.",
               plays: 2,
               segments: [
-                { text: "Removing that joint made the machine eleven per cent cheaper to build, and the whole of that reached the shop price. People bought a better machine for less money. That is not nothing and it is usually left out." },
+                { text: "Removing that joint made the machine eleven percent cheaper to build, and the whole of that reached the shop price. People bought a better machine for less money. That is not nothing and it is usually left out." },
               ],
             },
             {
@@ -1337,7 +1337,7 @@ Fikret Alay`,
               { de: "use a third conditional", tr: "Üçüncü tip koşulu kullanmak" },
             ],
             sample:
-              "The most surprising thing I own is a kitchen radio my grandmother bought in about 1994, which still works and has been dropped twice. I did once have a washing machine repaired: the part was cheap, the labour was three hours, and it failed again eleven weeks later. If the repair had cost almost as much as a new machine, I would have replaced it, and I would have felt slightly worse about doing the obviously sensible thing.",
+              "The most surprising thing I own is a kitchen radio my grandmother bought in about 1994, which still works and has been dropped twice. I did once have a washing machine repaired: the part was cheap, the labor was three hours, and it failed again eleven weeks later. If the repair had cost almost as much as a new machine, I would have replaced it, and I would have felt slightly worse about doing the obviously sensible thing.",
             criteria: [
               "İlk cevapta somut bir süre verildi mi?",
               "Anlatı sonucuyla birlikte verildi mi?",

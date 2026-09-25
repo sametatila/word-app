@@ -8,7 +8,7 @@
  },
  {
   "conversation": "de-a2-superlativ",
-  "sceneEn": "You are walking round a shopping centre with a friend. Argue about which shop is the cheapest and which is the best, and ask whether there is a sale on.",
+  "sceneEn": "You are walking round a shopping center with a friend. Argue about which shop is the cheapest and which is the best, and ask whether there is a sale on.",
   "partnerEn": "a friend who knows every shop and loves comparing prices",
   "openingEn": "Where shall we go first? Where's the best value?",
   "goalEn": "At least three options have been compared in the superlative and it has been decided where to go."
@@ -22,10 +22,10 @@
  },
  {
   "conversation": "de-a2-adjektiv-ein",
-  "sceneEn": "You are looking for a garment in a particular colour and pattern. Describe what you are after, give your verdict on what you are shown, and ask for another colour or pattern.",
+  "sceneEn": "You are looking for a garment in a particular color and pattern. Describe what you are after, give your verdict on what you are shown, and ask for another color or pattern.",
   "partnerEn": "a sales assistant bringing different options off the shelves",
   "openingEn": "Good afternoon! Are you looking for anything in particular?",
-  "goalEn": "The colour and pattern you wanted have been described, at least two options have been judged and one has been chosen."
+  "goalEn": "The color and pattern you wanted have been described, at least two options have been judged and one has been chosen."
  },
  {
   "conversation": "de-a2-friseur",
@@ -71,7 +71,7 @@
  },
  {
   "conversation": "de-a2-reiseplan",
-  "sceneEn": "You and a friend are planning the summer holiday. Talk about where you are going, what you are travelling by and where you will stop on the way.",
+  "sceneEn": "You and a friend are planning the summer holiday. Talk about where you are going, what you are traveling by and where you will stop on the way.",
   "partnerEn": "a friend with the map open who wants to plan everything",
   "openingEn": "So, where are we going this year? To the sea or to the mountains?",
   "goalEn": "The destination, the means of travel and one stop on the route have been settled."
@@ -85,8 +85,8 @@
  },
  {
   "conversation": "de-a2-koffer",
-  "sceneEn": "You are going away tomorrow and packing the cases. Your travelling companion is asking what has gone in; you remind them what has been forgotten.",
-  "partnerEn": "a travelling companion who checks everything twice",
+  "sceneEn": "You are going away tomorrow and packing the cases. Your traveling companion is asking what has gone in; you remind them what has been forgotten.",
+  "partnerEn": "a traveling companion who checks everything twice",
   "openingEn": "Right, I'm nearly done. Have you packed everything?",
   "goalEn": "At least three items have been gone through one by one, one has turned out to be forgotten and the case has been declared done."
  },
@@ -101,7 +101,7 @@
   "conversation": "de-a2-wetterbericht",
   "sceneEn": "You are making plans for the weekend but the weather is uncertain. Describe the forecast, make a prediction in the future tense and suggest a plan to match.",
   "partnerEn": "a friend who plans around the weather",
-  "openingEn": "What do you reckon, what will the weather be like at the weekend?",
+  "openingEn": "What do you reckon, what will the weather be like on the weekend?",
   "goalEn": "The forecast has been described in the future tense and a weekend plan to match has been agreed."
  },
  {
@@ -116,7 +116,7 @@
   "sceneEn": "You have just arrived at a campsite. Ask the attendant what there is and what there is not: showers, electricity, somewhere to shop. And find out where you can light a fire.",
   "partnerEn": "an attendant who knows the campsite rules well",
   "openingEn": "Hello there! Tent or camper van?",
-  "goalEn": "At least three facilities have been asked about, one rule has been learnt and a pitch has been chosen."
+  "goalEn": "At least three facilities have been asked about, one rule has been learned and a pitch has been chosen."
  },
  {
   "conversation": "de-a2-stadtfuehrung",
@@ -134,7 +134,7 @@
  },
  {
   "conversation": "de-a2-reise-problem",
-  "sceneEn": "Your flight has been cancelled and you have decided to go on by train. Explain the situation to the clerk at the counter, buy a ticket and find out what time you arrive.",
+  "sceneEn": "Your flight has been canceled and you have decided to go on by train. Explain the situation to the clerk at the counter, buy a ticket and find out what time you arrive.",
   "partnerEn": "a clerk working at the railway ticket counter",
   "openingEn": "Good afternoon. Where would you like to travel to?",
   "goalEn": "The situation has been explained, a ticket has been bought and the arrival time and any change have been found out."

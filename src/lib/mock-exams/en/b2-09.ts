@@ -217,7 +217,7 @@ As it is, they compare the price, {{12}} is the only number anybody has troubled
             {
               kind: "text",
               id: "t3",
-              genre: "Encyclopaedia entry",
+              genre: "Encyclopedia entry",
               genreTr: "Ansiklopedi maddesi",
               title: "Policy wording",
               body: `A policy is defined less by what it covers than by its {{13}}, which are set out in a numbered list that most buyers never open.
@@ -383,7 +383,7 @@ I do not think this was designed. I think it is what you get when a document is 
               options: [
                 "To show that it is very badly written",
                 "Because it is unusually short for a policy",
-                "To criticise the company that produced it",
+                "To criticize the company that produced it",
                 "Because such arguments usually avoid actual wording",
               ],
               answer: 3,
@@ -474,12 +474,12 @@ The reasoning is sound as far as it goes. Most buyers will read two pages and al
 
 The difficulty appears as soon as anybody tries to write them. A summary that omits the exclusions is misleading, and a summary that includes them is not two pages long. {{30}}
 
-There is a second approach, which is to standardise the product rather than the description. If every household policy covered the same eleven things, price would become the honest comparison it currently pretends to be. {{31}}
+There is a second approach, which is to standardize the product rather than the description. If every household policy covered the same eleven things, price would become the honest comparison it currently pretends to be. {{31}}
 
 That is a larger intervention, and it is resisted for a reason that is rarely stated out loud: a market in which the products are identical is a market in which the margins are visible.`,
               gloss: [
                 { de: "an exclusion", tr: "kapsam dışı hâl", en: "der Ausschluss" },
-                { de: "to standardise", tr: "standartlaştırmak", en: "vereinheitlichen" },
+                { de: "to standardize", tr: "standartlaştırmak", en: "vereinheitlichen" },
                 { de: "a margin", tr: "kâr payı", en: "die Gewinnspanne" },
               ],
             },
@@ -831,7 +831,7 @@ That is a larger intervention, and it is resisted for a reason that is rarely st
               plays: 2,
               segments: [
                 {
-                  text: "Thank you. These are the figures from the two-year review, and I will include the ones we did not enjoy. We looked at eleven thousand complaints across nine companies. Of those, sixty-one per cent concerned a refusal to pay rather than a delay. The single most common subject was water, which accounted for about a quarter on its own. When we asked complainants whether they had read the policy, forty per cent said yes, and among those the outcome of the complaint was no better. The average time from claim to decision was thirty-four days. And the finding we did not expect: the companies with the clearest wording received slightly more complaints, not fewer, which we take to mean that their customers knew what to argue about.",
+                  text: "Thank you. These are the figures from the two-year review, and I will include the ones we did not enjoy. We looked at eleven thousand complaints across nine companies. Of those, sixty-one percent concerned a refusal to pay rather than a delay. The single most common subject was water, which accounted for about a quarter on its own. When we asked complainants whether they had read the policy, forty percent said yes, and among those the outcome of the complaint was no better. The average time from claim to decision was thirty-four days. And the finding we did not expect: the companies with the clearest wording received slightly more complaints, not fewer, which we take to mean that their customers knew what to argue about.",
                 },
               ],
             },
@@ -845,11 +845,11 @@ That is a larger intervention, and it is resisted for a reason that is rarely st
 
 They came from {{10}} companies.
 
-{{11}} per cent concerned a refusal to pay.
+{{11}} percent concerned a refusal to pay.
 
 The most common subject was {{12}}.
 
-{{13}} per cent of complainants had read the policy.
+{{13}} percent of complainants had read the policy.
 
 The average time from claim to decision was {{14}} days.
 
@@ -887,7 +887,7 @@ The reviewers think those customers knew what to {{16}} about.`,
               text: "Gap 11",
               accept: ["61", "sixty-one"],
               explain:
-                "«sixty-one per cent concerned a refusal to pay rather than a delay» — reddedilen ödemelerin payı.",
+                "«sixty-one percent concerned a refusal to pay rather than a delay» — reddedilen ödemelerin payı.",
             },
             {
               kind: "gap",
@@ -907,7 +907,7 @@ The reviewers think those customers knew what to {{16}} about.`,
               text: "Gap 13",
               accept: ["40", "forty"],
               explain:
-                "«forty per cent said yes» — poliçeyi okuduğunu söyleyenlerin oranı, ve sonuçları daha iyi olmamış.",
+                "«forty percent said yes» — poliçeyi okuduğunu söyleyenlerin oranı, ve sonuçları daha iyi olmamış.",
             },
             {
               kind: "gap",
@@ -991,7 +991,7 @@ The reviewers think those customers knew what to {{16}} about.`,
               situation: "Üçüncü konuşmacı müşteriden bekleneni ele alıyor.",
               plays: 2,
               segments: [
-                { text: "We ask a person with no legal training, at the end of a working day, to decide whether a phrase they have never seen will be read in their favour by somebody they have never met. Then we call the result an informed choice." },
+                { text: "We ask a person with no legal training, at the end of a working day, to decide whether a phrase they have never seen will be read in their favor by somebody they have never met. Then we call the result an informed choice." },
               ],
             },
             {
@@ -1134,7 +1134,7 @@ The reviewers think those customers knew what to {{16}} about.`,
               id: "en-b2-09-h4-23",
               no: 23,
               ref: "d1",
-              text: "What does Halvard say people usually criticise?",
+              text: "What does Halvard say people usually criticize?",
               options: ["The length of the document", "The price of the product", "The speed of the claims process"],
               answer: 0,
               explain:
@@ -1251,7 +1251,7 @@ The reviewers think those customers knew what to {{16}} about.`,
 
 The practical objection concerns testing. It is easy to prove that a document arrived and almost impossible to prove that it was understood, and any test that could be written down would immediately be taught to and passed. That is a genuine difficulty, but it is a difficulty about method rather than about principle.
 
-The question of cost seems to me stronger. At present a misunderstanding costs the company nothing and the customer everything, which is precisely the distribution that removes any reason to improve. A rule that moved even part of that cost would change behaviour without anybody having to define comprehension.
+The question of cost seems to me stronger. At present a misunderstanding costs the company nothing and the customer everything, which is precisely the distribution that removes any reason to improve. A rule that moved even part of that cost would change behavior without anybody having to define comprehension.
 
 My own reservation is that clarity and certainty are being confused. A perfectly clear sentence can still leave a buyer unable to know what will happen, because the meaning is fixed afterwards by the seller.
 

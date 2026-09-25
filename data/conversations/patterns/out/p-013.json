@@ -38,7 +38,7 @@
  { "conversation": "de-b1-weiterbildung", "de": "Das bringt mir …", "en": "names the benefit" },
  { "conversation": "de-b1-studium", "de": "Ich informiere mich, wie …", "en": "an indirect question; verb at the end" },
  { "conversation": "de-b1-studium", "de": "Was braucht man, um … zu …?", "en": "asks what is needed" },
- { "conversation": "de-b1-praktikum", "de": "Ich lernte …", "en": "says what you learnt, in the written past tense" },
+ { "conversation": "de-b1-praktikum", "de": "Ich lernte …", "en": "says what you learned, in the written past tense" },
  { "conversation": "de-b1-praktikum", "de": "Am meisten brachte mir …", "en": "says what helped most" },
  { "conversation": "de-b1-lernmethoden", "de": "sowohl … als auch …", "en": "both … and …" },
  { "conversation": "de-b1-lernmethoden", "de": "nicht nur …, sondern auch …", "en": "not only … but also …" },

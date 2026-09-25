@@ -240,9 +240,9 @@
   "de": "„The meat is expensive: nine euros a kilo.“ Im Angebot wird es billiger."
  },
  {
-  "tr": "„At the end I pay by card.“ — ödeme biçimi „by“ ile: by card, by cheque.",
+  "tr": "„At the end I pay by card.“ — ödeme biçimi „by“ ile: by card, by check.",
   "kind": "explain",
-  "de": "„At the end I pay by card.“ — die Zahlungsart mit „by“: by card, by cheque."
+  "de": "„At the end I pay by card.“ — die Zahlungsart mit „by“: by card, by check."
  },
  {
   "tr": "„I don't work on Monday. I wake up at nine…“ — yedi Can'ın kalkma saati.",
@@ -335,9 +335,9 @@
   "de": "„Sometimes I am late, but my teacher is never angry.“ — „never“ steht NACH dem Verb „be“."
  },
  {
-  "tr": "„Then look for a new clock at the weekend!“ — Ali de „On Saturday I have time“ diyor.",
+  "tr": "„Then look for a new clock on the weekend!“ — Ali de „On Saturday I have time“ diyor.",
   "kind": "explain",
-  "de": "„Then look for a new clock at the weekend!“ — Ali stimmt mit „On Saturday I have time“ zu."
+  "de": "„Then look for a new clock on the weekend!“ — Ali stimmt mit „On Saturday I have time“ zu."
  },
  {
   "tr": "„I have dinner at half past seven.“ — „half past seven“ yedi buçuk, sekiz buçuk değil.",

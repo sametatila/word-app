@@ -83,7 +83,7 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
       text: "Language school – new student\n\nFirst name: Elif\nLast name: Yilmaz\nAge: 28\nCountry: Turkey\nCity: Manchester\nAddress: 12 Green Road\nPostcode: M1 4BT\nPhone number: 0161 496 0311\nEmail address: elif.y@mail.com\nWork: teacher\nBirthday: in May",
       questions: [
         { de: "What is the last name?", tr: "Soyadı ne?", options: ["Elif", "Yilmaz", "Manchester", "Teacher"], answer: 1 },
-        { de: "What is the postcode?", tr: "Posta kodu ne?", options: ["M1 4BT", "0161 496 0311", "12 Green Road", "28"], answer: 0 },
+        { de: "What is the zip code?", tr: "Posta kodu ne?", options: ["M1 4BT", "0161 496 0311", "12 Green Road", "28"], answer: 0 },
       ],
     },
     speaking: [
@@ -283,7 +283,7 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
       titleTr: "Hafta sonu buluşması",
       situation: "Sara, Tom'u arıyor ve buluşmak istiyor.",
       turns: [
-        { speaker: "Sara", de: "Hi Tom, are you free at the weekend?", tr: "Merhaba Tom, hafta sonu boş musun?" },
+        { speaker: "Sara", de: "Hi Tom, are you free on the weekend?", tr: "Merhaba Tom, hafta sonu boş musun?" },
         { speaker: "Tom", de: "On Saturday I usually get up at ten, but after lunch I'm free.", tr: "Cumartesi genelde onda kalkıyorum ama öğle yemeğinden sonra boşum." },
         { speaker: "Sara", de: "Good. What time is good for you?", tr: "Güzel. Saat kaç sana uyar?" },
         { speaker: "Tom", de: "At half past three. First I'm going to visit the library.", tr: "Üç buçukta. Önce kütüphaneye gideceğim." },
@@ -301,7 +301,7 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
       title: "A note for Anna",
       titleTr: "Buzdolabına bırakılan not",
       genre: "Not",
-      text: "Anna,\n\nTomorrow I get up at six in the morning and I start work early. Work starts at seven and finishes at four. After that I always visit the library. In the evening I watch television or I read. I am free after five — and at the weekend too!\n\nSee you tomorrow\nMarkus",
+      text: "Anna,\n\nTomorrow I get up at six in the morning and I start work early. Work starts at seven and finishes at four. After that I always visit the library. In the evening I watch television or I read. I am free after five — and on the weekend too!\n\nSee you tomorrow\nMarkus",
       questions: [
         { de: "What time does work start?", tr: "İş saat kaçta başlıyor?", options: ["At six", "At seven", "At four", "At five"], answer: 1 },
         { de: "What does Markus always do after work?", tr: "Markus işten sonra her zaman ne yapıyor?", options: ["He sleeps", "He visits the library", "He starts work", "He has lunch"], answer: 1 },

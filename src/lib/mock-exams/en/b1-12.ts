@@ -77,7 +77,7 @@ You do not have to be reading. Sitting is also allowed, although most people arr
 
 Half price, and the lanes are empty.
 
-We do not run this session at the weekend, because the staff who would open it are the ones it is meant for.`,
+We do not run this session on the weekend, because the staff who would open it are the ones it is meant for.`,
             },
             {
               kind: "text",
@@ -85,7 +85,7 @@ We do not run this session at the weekend, because the staff who would open it a
               genre: "Message",
               genreTr: "İleti",
               title: "It did not work",
-              body: `Rasim, I did what you said. I kept Sunday completely free and by eleven I had cleaned the oven, answered nine emails and bought a lamp I do not need. Doing nothing turns out to be a thing you have to practise.`,
+              body: `Rasim, I did what you said. I kept Sunday completely free and by eleven I had cleaned the oven, answered nine emails and bought a lamp I do not need. Doing nothing turns out to be a thing you have to practice.`,
             },
           ],
           items: [
@@ -127,7 +127,7 @@ We do not run this session at the weekend, because the staff who would open it a
               id: "en-b1-12-l1-4",
               no: 4,
               ref: "m4",
-              text: "Why is there no early session at the weekend?",
+              text: "Why is there no early session on the weekend?",
               options: ["Too few people come at that hour", "The lanes are cleaned on those two days", "The staff would lose their own rest"],
               answer: 2,
               explain:
@@ -706,7 +706,7 @@ Please do not book anything in it, {{30}} the building is on fire.`,
               no: 4,
               ref: "a4",
               text: "What does the announcement refuse to do?",
-              options: ["Lower the price any further", "Open the session at the weekend", "Extend the session by an hour"],
+              options: ["Lower the price any further", "Open the session on the weekend", "Extend the session by an hour"],
               answer: 1,
               explain:
                 "Duyuru isteği ve reddi birlikte veriyor: «We are often asked to add a Saturday session. We will not».",
@@ -765,7 +765,7 @@ Please do not book anything in it, {{30}} the building is on fire.`,
                 { text: "You are out on Thursday afternoons now." },
                 { text: "Every week since March." },
                 { text: "Does nobody mind?" },
-                { text: "Somebody minded for about a fortnight. Then it became a fact about Thursday, like the meeting on Monday, and nobody has mentioned it since." },
+                { text: "Somebody minded for about a two weeks. Then it became a fact about Thursday, like the meeting on Monday, and nobody has mentioned it since." },
               ],
             },
             {
@@ -847,7 +847,7 @@ Please do not book anything in it, {{30}} the building is on fire.`,
               options: ["The objection did not last", "Her manager still refuses", "She may have to stop it"],
               answer: 0,
               explain:
-                "Konuşmacı süreyi veriyor: «Somebody minded for about a fortnight», sonra durum sıradanlaşmış ve kimse bir daha söz etmemiş.",
+                "Konuşmacı süreyi veriyor: «Somebody minded for about a two weeks», sonra durum sıradanlaşmış ve kimse bir daha söz etmemiş.",
             },
             {
               kind: "mcq",
@@ -1012,7 +1012,7 @@ Paid for with money left from the {{19}}`,
           format: "mcq",
           goal: "opinion",
           prompt:
-            "You hear an interview with a woman who works at weekends. Choose a, b or c for questions 20 to 25. You hear the interview twice.",
+            "You hear an interview with a woman who works on weekends. Choose a, b or c for questions 20 to 25. You hear the interview twice.",
           promptTr:
             "Hafta sonları çalışan bir kadınla söyleşi dinleyeceksin. 20–25. maddeler için a, b ya da c'yi seç. Söyleşiyi iki kez dinleyebilirsin.",
           texts: [
@@ -1035,7 +1035,7 @@ Paid for with money left from the {{19}}`,
                 { text: "Have you tried joining something?" },
                 { text: "I joined a course, and I left after six weeks. It was on a Tuesday, so that part worked. It was also a course, which means homework, and I had swapped one obligation for another." },
                 { text: "So what does work?" },
-                { text: "Two things, and neither is organised. A friend who also works weekends, and a garden that does not close until dark. I have gone there most Tuesdays since the spring, and it is the only hour that has held." },
+                { text: "Two things, and neither is organized. A friend who also works weekends, and a garden that does not close until dark. I have gone there most Tuesdays since the spring, and it is the only hour that has held." },
               ],
             },
           ],
@@ -1101,10 +1101,10 @@ Paid for with money left from the {{19}}`,
               no: 25,
               ref: "d1",
               text: "What has worked for her?",
-              options: ["A club she joined in spring", "Two things nobody organised", "Working fewer weekends"],
+              options: ["A club she joined in spring", "Two things nobody organized", "Working fewer weekends"],
               answer: 1,
               explain:
-                "Yrsa ikisini sayıyor ve niteliğini veriyor: «Two things, and neither is organised» — hafta sonu çalışan bir arkadaş ve karanlığa kadar açık bir bahçe.",
+                "Yrsa ikisini sayıyor ve niteliğini veriyor: «Two things, and neither is organized» — hafta sonu çalışan bir arkadaş ve karanlığa kadar açık bir bahçe.",
             },
           ],
         },
@@ -1316,7 +1316,7 @@ It works for the reason a café never did. In a café I am a customer and someth
               { de: "agree or disagree in a nuanced way", tr: "Katılırken ya da karşı çıkarken ince ayrım yapmak" },
             ],
             sample:
-              "The same day for everybody is the part I like, because a free day is only worth much if the people you know have it too. My neighbour has Tuesdays off and spends them alone in an empty town. I partly agree about the hourly pay, and it is the serious objection: fewer hours can mean less money, and nobody who says this is a small problem is being paid that way. But moving the work is not automatic, and a shop that closes on Sunday does not usually sell less in the week.",
+              "The same day for everybody is the part I like, because a free day is only worth much if the people you know have it too. My neighbor has Tuesdays off and spends them alone in an empty town. I partly agree about the hourly pay, and it is the serious objection: fewer hours can mean less money, and nobody who says this is a small problem is being paid that way. But moving the work is not automatic, and a shop that closes on Sunday does not usually sell less in the week.",
             criteria: [
               "Görüş açıkça bildirildi mi?",
               "Somut bir örnek verildi mi?",

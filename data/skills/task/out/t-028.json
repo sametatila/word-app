@@ -127,7 +127,7 @@
   {
     "tr": "Yağmur olursa antrenman iptal.",
     "kind": "explanation.examples.tr",
-    "en": "If it rains, the training is cancelled."
+    "en": "If it rains, the training is canceled."
   },
   {
     "tr": "Bir yıldır Almanca öğreniyorum.",
@@ -147,7 +147,7 @@
   {
     "tr": "Gecikme yüzünden randevu iptal.",
     "kind": "explanation.examples.tr",
-    "en": "The appointment is cancelled because of the delay."
+    "en": "The appointment is canceled because of the delay."
   },
   {
     "tr": "Hava iyi olursa denize gideriz.",
@@ -432,7 +432,7 @@
   {
     "tr": "Randevuyu iptal ediyoruz çünkü çocuğun ateşi var.",
     "kind": "explanation.examples.tr",
-    "en": "We're cancelling the appointment because the child has a fever."
+    "en": "We're canceling the appointment because the child has a fever."
   },
   {
     "tr": "Karşılaştırma şu ölçüde yanlış: olaylar aynı değil.",

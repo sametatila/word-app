@@ -134,7 +134,7 @@
  { "tr": "Tartışma dili C1 düzeyinde mi (einräumen, abwägen, staffeln, offenlegen)?", "kind": "rubric.criteria", "en": "Is the language of debate at C1 level (einräumen, abwägen, staffeln, offenlegen)?" },
  { "tr": "Arkadaşa yazıldığı için `du` kullanıldı mı? `Sie` burada fazla resmî kalır.", "kind": "rubric.criteria", "en": "As this is written to a friend, was `du` used? `Sie` would be too formal here." },
  { "tr": "Hitap ve veda var mı? Arkadaşa yazıldığı için `Liebe …` ve `Liebe Grüße` uygun.", "kind": "rubric.criteria", "en": "Is there a greeting and a closing? As this goes to a friend, `Liebe …` and `Liebe Grüße` fit." },
- { "tr": "Komşuya yazıldığı için nazik ama sıcak bir ton mu? `Sie` kullanmak burada doğru.", "kind": "rubric.criteria", "en": "As this goes to a neighbour, is the tone polite but warm? Using `Sie` is right here." },
+ { "tr": "Komşuya yazıldığı için nazik ama sıcak bir ton mu? `Sie` kullanmak burada doğru.", "kind": "rubric.criteria", "en": "As this goes to a neighbor, is the tone polite but warm? Using `Sie` is right here." },
  { "tr": "Dil C1'de mi: `insoweit als`, `ausdrücklich nicht vorgesehen` gibi kesinlik araçları?", "kind": "rubric.criteria", "en": "Is the language at C1: precision devices such as `insoweit als`, `ausdrücklich nicht vorgesehen`?" },
  { "tr": "C1 yapıları (adlaştırma, edilgen, ölçü belirteçleri, `lässt sich`) kullanılabiliyor mu?", "kind": "rubric.criteria", "en": "Are C1 structures (nominalisation, passive, hedging adverbs, `lässt sich`) handled?" },
  { "tr": "Dil C1 düzeyinde mi: adlaştırma, `zum einen … zum anderen`, ölçülü ifade, ilgi cümleleri?", "kind": "rubric.criteria", "en": "Is the language at C1 level: nominalisation, `zum einen … zum anderen`, hedging, relative clauses?" },

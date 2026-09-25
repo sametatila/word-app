@@ -86,7 +86,7 @@ Am Nachmittag spielt eine Band.
 Bei Regen fällt das Fest aus.`,
               gloss: [
                 { de: "umsonst", tr: "bedava", en: "free of charge" },
-                { de: "ausfallen", tr: "iptal olmak", en: "to be cancelled" },
+                { de: "ausfallen", tr: "iptal olmak", en: "to be canceled" },
               ],
             },
           ],

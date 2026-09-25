@@ -50,7 +50,7 @@ export const enA1U20: SkillExercise[] = [
     questions: [
       {
         text: "When does the writer go to the pool?",
-        options: ["every week in the summer", "every day", "at the weekend"],
+        options: ["every week in the summer", "every day", "on the weekend"],
         answer: 0,
         explain: "„In the summer I go to the pool every week.“",
       },
@@ -262,12 +262,12 @@ export const enA1U20: SkillExercise[] = [
       { speaker: "Deniz", text: "On Wednesday I'm going to watch the new series. Every evening, two hours!" },
       { speaker: "Deniz", text: "On Thursday I am busy at work. I'm not going to do something in the evening." },
       { speaker: "Deniz", text: "On Friday my sister comes. We are going to cook together." },
-      { speaker: "Deniz", text: "And at the weekend? Maybe the cinema, maybe the park. I decide later." },
+      { speaker: "Deniz", text: "And on the weekend? Maybe the cinema, maybe the park. I decide later." },
     ],
     questions: [
       {
         text: "When does Deniz meet Ali?",
-        options: ["on Monday", "on Tuesday", "at the weekend"],
+        options: ["on Monday", "on Tuesday", "on the weekend"],
         answer: 0,
         explain: "„On Monday I'm going to meet Ali.“ — salı havuz günü.",
       },
@@ -311,7 +311,7 @@ export const enA1U20: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["the weekend", "the weekend plan", "cinema or park"],
-        explain: "„And at the weekend? Maybe the cinema, maybe the park. I decide later.“",
+        explain: "„And on the weekend? Maybe the cinema, maybe the park. I decide later.“",
       },
     ],
   },

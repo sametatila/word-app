@@ -98,7 +98,7 @@ export const enC1U11: SkillExercise[] = [
       "„We“ does the opposite. It puts the writer inside the group that is speaking, and the reader then has to decide who else was put inside without being asked.\n" +
       "„You“ turns the sentence towards the reader. It is the friendliest of the four and the least safe, because it hands the reader an opinion and then leaves them holding it.\n" +
       "And the passive names nobody at all. „A cultural scene is called a parallel society“ — by whom, in which ministry, since when: all of it gone inside one verb.\n" +
-      "So English makes a writer choose, and there is no neutral option among the four. A neighbouring language has one word for this and only one. It is short, it is unmarked, it is used in a kitchen and in a court, and it carries no position whatever. A writer there can say who calls what a parallel society without putting themselves anywhere on the page at all.\n" +
+      "So English makes a writer choose, and there is no neutral option among the four. A neighboring language has one word for this and only one. It is short, it is unmarked, it is used in a kitchen and in a court, and it carries no position whatever. A writer there can say who calls what a parallel society without putting themselves anywhere on the page at all.\n" +
       "That is the measurement of this unit and it is not a small one. Where one language has a single unmarked word, the other has a set of four, and every use of one of them places the writer somewhere in relation to the people being described.\n" +
       "In the arts section it is a subculture; in the ministry, cultural policy. Two rooms, two words, one thing, and the sentence names neither speaker: the rooms are standing in for them.\n" +
       "High culture is a register; guiding culture is a claim. And that is the line the unit is built to reach. Both terms describe a culture. Only the second says what everybody else ought to do about it, and a reader who cannot hear the difference between a description and an instruction will take the second sentence for information.\n" +
@@ -282,7 +282,7 @@ export const enC1U11: SkillExercise[] = [
     segments: [
       { speaker: "Defne", text: "Much as we call it acculturation, they mean assimilation. Two subjects in one line, and the whole debate is in the gap between them." },
       { speaker: "Onur", text: "Is that fair to the other side?" },
-      { speaker: "Defne", text: "It is fair if the two words really are being used for the same programme. If they are not, the line is a verdict with a translation put in front of it." },
+      { speaker: "Defne", text: "It is fair if the two words really are being used for the same program. If they are not, the line is a verdict with a translation put in front of it." },
       { speaker: "Onur", text: "„Acculturation“ does sound softer." },
       { speaker: "Defne", text: "It sounds softer because it is mutual in the dictionary. Whether it is mutual in the building is a question the word cannot answer, and the word is doing a great deal of work in that sentence." },
       { speaker: "Onur", text: "The adaptation course, albeit useful, is not a welcoming culture." },

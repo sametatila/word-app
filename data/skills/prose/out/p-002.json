@@ -642,7 +642,7 @@
  {
   "tr": "Bir kıyafet aranıyor. Beden, renk, malzeme?",
   "kind": "intro",
-  "en": "An item of clothing is being looked for. Size, colour, material?"
+  "en": "An item of clothing is being looked for. Size, color, material?"
  },
  {
   "tr": "Boş zamanını, sporunu ve müzik zevkini yaz.",
@@ -667,12 +667,12 @@
  {
   "tr": "Evde bakım nasıl düzenlenir? Hangi iş kime?",
   "kind": "intro",
-  "en": "How is care at home organised? Which job goes to whom?"
+  "en": "How is care at home organized? Which job goes to whom?"
  },
  {
   "tr": "Fiil varış bildiriyor; hüküm karşı tarafta.",
   "kind": "explain",
-  "en": "The verb reports arrival; the judgement sits with the other side."
+  "en": "The verb reports arrival; the judgment sits with the other side."
  },
  {
   "tr": "Geçen yıla bakılıyor. Ne kaldı, ne değişti?",

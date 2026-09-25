@@ -157,7 +157,7 @@ export const enC1P6: SkillExercise[] = [
     segments: [
       { speaker: "Ms Halloran", text: "We've had the personal-attack rule for two years. Last month we acted on nineteen reports out of two hundred and forty." },
       { speaker: "Mr Devlin", text: "Which tells us about the backlog, not about the rule. Given three more moderators we'd act on all of them." },
-      { speaker: "Ms Halloran", text: "We won't be given three more, and a rule enforced eight per cent of the time is worse than none. People learn that reporting does nothing." },
+      { speaker: "Ms Halloran", text: "We won't be given three more, and a rule enforced eight percent of the time is worse than none. People learn that reporting does nothing." },
       { speaker: "Mr Devlin", text: "They learn that faster if we delete the rule. At least now there's a standard, even if we apply it unevenly." },
       { speaker: "Ms Halloran", text: "An unevenly applied standard is exactly what people complain about, though. Not that we're strict — that we're inconsistent." },
       { speaker: "Mr Devlin", text: "So narrow it. Keep the rule for named individuals and drop it for groups, which is where most of the two hundred and forty sit and where the judgments are hardest." },
@@ -169,7 +169,7 @@ export const enC1P6: SkillExercise[] = [
       {
         text: "What is Ms Halloran's main concern?",
         options: [
-          "A rule enforced eight per cent of the time teaches people that reporting is pointless.",
+          "A rule enforced eight percent of the time teaches people that reporting is pointless.",
           "The rule is too strict.",
           "Moderators are not trained.",
         ],

@@ -43,7 +43,7 @@ export const enA1U17: SkillExercise[] = [
       "HOUSE RULES\n\n" +
       "You must be quiet from ten at night to seven in the morning. You mustn't make noise on Sunday.\n\n" +
       "The stairs must be clean. Please put the rubbish in the bin downstairs, not in front of your door.\n\n" +
-      "Is it allowed to have a party? Yes, but you have to ask your neighbours. A party has to end at eleven.\n\n" +
+      "Is it allowed to have a party? Yes, but you have to ask your neighbors. A party has to end at eleven.\n\n" +
       "Water and electricity are not included in the rent. Each apartment pays the bill every month.\n\n" +
       "In a fire: don't take the lift. Go down the stairs.\n\n" +
       "Thank you!",
@@ -263,7 +263,7 @@ export const enA1U17: SkillExercise[] = [
       { speaker: "Deniz", text: "The electricity bill comes every three months. It is about ninety euros." },
       { speaker: "Deniz", text: "I pay at the bank. Sometimes I get a paper bill, sometimes only an email." },
       { speaker: "Deniz", text: "Each person in the house pays for the stairs. That is ten euros a month." },
-      { speaker: "Deniz", text: "My apartment is not expensive, and the neighbours are quiet. I am happy here." },
+      { speaker: "Deniz", text: "My apartment is not expensive, and the neighbors are quiet. I am happy here." },
     ],
     questions: [
       {

@@ -303,7 +303,7 @@ export const deB1P16: SkillExercise[] = [
     focus: "n-çekimi (n-Deklination): der Kunde → den Kunden",
     gloss: [
       { de: "der Kunde", tr: "müşteri", en: "customer" },
-      { de: "der Nachbar", tr: "komşu", en: "neighbour" },
+      { de: "der Nachbar", tr: "komşu", en: "neighbor" },
       { de: "der Student", tr: "üniversite öğrencisi", en: "student" },
       { de: "der Herr", tr: "bay", en: "gentleman" },
       { de: "der Junge", tr: "erkek çocuk", en: "boy" },

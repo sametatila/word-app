@@ -62,7 +62,7 @@
  { "tr": "Türkçesi 'memnun olmayan' demek. Lütfen", "en": "It means 'dissatisfied'. Please say" },
  { "tr": "Türkçesi 'meydana gelmek' demek. Lütfen", "en": "It means 'to happen'. Please say" },
  { "tr": "Türkçesi 'midesi bulanan' demek. Lütfen", "en": "It means 'queasy'. Please say" },
- { "tr": "Türkçesi 'organize etmek' demek. Lütfen", "en": "It means 'to organise'. Please say" },
+ { "tr": "Türkçesi 'organize etmek' demek. Lütfen", "en": "It means 'to organize'. Please say" },
  { "tr": "Türkçesi 'öksürük şurubu' demek. Lütfen", "en": "It means 'cough syrup'. Please say" },
  { "tr": "Türkçesi 'patlamış mısır' demek. Lütfen", "en": "It means 'popcorn'. Please say" },
  { "tr": "Türkçesi 'rahatsız etmek' demek. Lütfen", "en": "It means 'to disturb'. Please say" },
@@ -90,7 +90,7 @@
  { "tr": "yönelme ister ve modal fiil sona gider:", "en": "takes the dative and the modal verb goes last:" },
  { "tr": "Yöntem bağlacı; yan cümlede fiil sonda:", "en": "The method conjunction; the verb last in the subclause:" },
  { "tr": "Zarf başta, çekimli fiil ikinci sırada:", "en": "The adverb first, the finite verb in second place:" },
- { "tr": "'Güçlü yönüm organizasyon' demek. Lütfen", "en": "It means 'My strength is organisation'. Please say" },
+ { "tr": "'Güçlü yönüm organizasyon' demek. Lütfen", "en": "It means 'My strength is organization'. Please say" },
  { "tr": "Amaç öbeğinde özne yok, doğrudan mastar:", "en": "No subject in the purpose phrase, straight to the infinitive:" },
  { "tr": "Ayrılmayan fiil; nesne belirtme hâlinde:", "en": "An inseparable verb; the object in the accusative:" },
  { "tr": "Basit ana cümle, sıfat yüklem konumunda:", "en": "A simple main clause, the adjective as the predicate:" },
@@ -147,6 +147,6 @@
  { "tr": "Olumsuzluk niyet fiilinin yanında durur:", "en": "The negation stands next to the intention verb:" },
  { "tr": "Ortaç sıfat gibi yüklem yerinde duruyor:", "en": "The participle stands as the predicate like an adjective:" },
  { "tr": "Önce olan iş bir basamak geriye çekilir:", "en": "The earlier event is pulled one step further back:" },
- { "tr": "Önce program, sonra fiil, en sonda saat:", "en": "First the programme, then the verb, the time last:" },
+ { "tr": "Önce program, sonra fiil, en sonda saat:", "en": "First the program, then the verb, the time last:" },
  { "tr": "Önce zaman, sonra tekrar kelimesi gelir:", "en": "First the time, then the word for repetition:" }
 ]

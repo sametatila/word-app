@@ -30,7 +30,7 @@
  {
   "conversation": "de-b1-heimatgericht",
   "sceneEn": "You are at a barbecue. You introduce the dish you brought and describe who made it and how it is made, with relative clauses.",
-  "partnerEn": "a sociable neighbour who wants to taste everything",
+  "partnerEn": "a sociable neighbor who wants to taste everything",
   "openingEn": "That smells fantastic! What have you brought, then?",
   "goalEn": "The dish you brought has been introduced and who made it and how it was cooked have been described with relative clauses."
  },
@@ -44,7 +44,7 @@
  {
   "conversation": "de-b1-haltbar-machen",
   "sceneEn": "A lot is left over after a big meal. You and your flatmate discuss what to keep and how, and what to do with what tomorrow.",
-  "partnerEn": "an organised flatmate who cannot bear waste",
+  "partnerEn": "an organized flatmate who cannot bear waste",
   "openingEn": "Well, that really is a lot left over. What are you going to do with it?",
   "goalEn": "A plan has been given for each of the leftovers and the two of you have agreed who does what."
  },
@@ -155,14 +155,14 @@
  },
  {
   "conversation": "de-b1-auto-unterwegs",
-  "sceneEn": "You and a friend are setting off on a long drive. You talk about what you will do if things come up on the way: petrol, breaks, the weather.",
-  "partnerEn": "a travelling companion who wants every eventuality talked through",
+  "sceneEn": "You and a friend are setting off on a long drive. You talk about what you will do if things come up on the way: gasoline, breaks, the weather.",
+  "partnerEn": "a traveling companion who wants every eventuality talked through",
   "openingEn": "Six hours' driving — what do we do if we get tired?",
   "goalEn": "What to do has been settled with conditional clauses for at least three eventualities."
  },
  {
   "conversation": "de-b1-verkehrsregeln",
-  "sceneEn": "You are explaining the traffic rules here to a friend who has just arrived in the country: right of way, one-way streets, the pavement, parking. Give the rules impersonally.",
+  "sceneEn": "You are explaining the traffic rules here to a friend who has just arrived in the country: right of way, one-way streets, the sidewalk, parking. Give the rules impersonally.",
   "partnerEn": "a friend who has driven in another country and likes comparing",
   "openingEn": "It was quite different where I come from — what's actually forbidden here?",
   "goalEn": "At least three rules have been described impersonally and one difference between the two countries has been given."

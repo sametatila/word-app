@@ -199,7 +199,7 @@ export const enB1P2: SkillExercise[] = [
       { de: "terrace", tr: "teras" },
       { de: "railing", tr: "korkuluk" },
       { de: "quiet hours", tr: "sessizlik saatleri" },
-      { de: "instalment", tr: "taksit" },
+      { de: "installment", tr: "taksit" },
       { de: "roof", tr: "çatı" },
       { de: "shade", tr: "gölge" },
     ],
@@ -249,7 +249,7 @@ export const enB1P2: SkillExercise[] = [
           "for everybody's summer. I would put quiet hours from ten at night in the same paper as the costs. " +
           "I also accept the objection about money: two thousand euros is a lot in one year. If the payment were " +
           "spread over three years, I think most of us could manage it. So: yes to the terrace, with quiet hours " +
-          "and with instalments.",
+          "and with installments.",
       },
     ],
   },

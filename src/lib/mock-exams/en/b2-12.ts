@@ -44,14 +44,14 @@ export const EN_B2_12: MockPaper = {
               id: "t1",
               genre: "Feature article",
               genreTr: "İnceleme yazısı",
-              title: "The storm that went thirty kilometres north",
+              title: "The storm that went thirty kilometers north",
               body: `A warning that is issued too often stops being a warning, and everybody in the field knows it. The difficulty is that the same is true of a warning that is issued too {{1}}.
 
-Forecasters work with probabilities. On a Tuesday evening in March they may believe there is a forty per cent chance that a river will {{2}} its banks before dawn. That is a genuine statement about the world, and it cannot be turned into a yes or a no without losing the very thing that makes it honest.
+Forecasters work with probabilities. On a Tuesday evening in March they may believe there is a forty percent chance that a river will {{2}} its banks before dawn. That is a genuine statement about the world, and it cannot be turned into a yes or a no without losing the very thing that makes it honest.
 
 The public, however, is given a decision rather than a number. A road is closed or it is not. Nobody can half-close a road, and the officer on duty is therefore {{3}} to convert a probability into an action.
 
-When the storm goes thirty kilometres north and the closed road stays dry, the officer is accused of {{4}} the situation. When the storm arrives and the road was open, the same officer is accused of ignoring the forecast. The two accusations are made by the same newspapers, sometimes in the same month.
+When the storm goes thirty kilometers north and the closed road stays dry, the officer is accused of {{4}} the situation. When the storm arrives and the road was open, the same officer is accused of ignoring the forecast. The two accusations are made by the same newspapers, sometimes in the same month.
 
 What is rarely {{5}} out is that these two errors are not equally expensive. A closed road costs a morning. A river that arrives without warning costs considerably more, and the difference is not a matter of opinion.
 
@@ -145,7 +145,7 @@ Nor {{9}} the confusion accidental. Broadcasters shorten probabilities because a
 
 Attempts to publish the raw figures have been made {{11}} the nineteen eighties, and they have generally increased trust among people who already understood probability.
 
-The rest of the audience treats forty per cent {{12}} a failed prediction whenever the rain does not arrive, which is, of course, sixty times out of a hundred.`,
+The rest of the audience treats forty percent {{12}} a failed prediction whenever the rain does not arrive, which is, of course, sixty times out of a hundred.`,
             },
           ],
           items: [
@@ -201,7 +201,7 @@ The rest of the audience treats forty per cent {{12}} a failed prediction whenev
               text: "Gap 12",
               accept: ["as"],
               explain:
-                "`treat something as something` bir şeyi bir şey saymayı anlatır: «treats forty per cent as a failed prediction». `like` bu yapıda ad öbeğiyle benzetme kurar, sayma değil.",
+                "`treat something as something` bir şeyi bir şey saymayı anlatır: «treats forty percent as a failed prediction». `like` bu yapıda ad öbeğiyle benzetme kurar, sayma değil.",
             },
           ],
         },
@@ -218,7 +218,7 @@ The rest of the audience treats forty per cent {{12}} a failed prediction whenev
             {
               kind: "text",
               id: "t3",
-              genre: "Encyclopaedia entry",
+              genre: "Encyclopedia entry",
               genreTr: "Ansiklopedi maddesi",
               title: "Public warning systems",
               body: `A public warning system is the arrangement by which a technical forecast is converted into instructions, and its central problem is the {{13}} of a probability into a single action.
@@ -357,13 +357,13 @@ Reviews carried out after major floods usually conclude that the information exi
               genre: "Reconstruction",
               genreTr: "Olay yeniden kurulumu",
               title: "One night in March, hour by hour",
-              body: `At 19.40 the duty officer for the district, Lenn Vanek, received a forecast giving a forty per cent probability that the river would rise above the wall before dawn. Forty per cent is the least useful number in the profession. It is too high to file and too low to justify anything expensive.
+              body: `At 19.40 the duty officer for the district, Lenn Vanek, received a forecast giving a forty percent probability that the river would rise above the wall before dawn. Forty percent is the least useful number in the profession. It is too high to file and too low to justify anything expensive.
 
 At 20.10 she asked for the two figures nobody publishes: how long an evacuation of the lower street would take, and how long the warning would give her. The answers were ninety minutes and, at worst, forty. Given that gap, the decision stopped being about probability and became about arithmetic.
 
-At 20.35 she closed the lower street and moved eleven households to the school. The road was reopened at 06.00. The river rose to within thirty centimetres of the wall and stopped there, and the storm turned north over the hills.
+At 20.35 she closed the lower street and moved eleven households to the school. The road was reopened at 06.00. The river rose to within thirty centimeters of the wall and stopped there, and the storm turned north over the hills.
 
-The following week she was criticised in two newspapers. The criticism was not stupid, and it deserves to be stated at its strongest: eleven families spent a night in a school hall for an event that did not occur, and the same officer had closed the same street twice in the previous eighteen months.
+The following week she was criticized in two newspapers. The criticism was not stupid, and it deserves to be stated at its strongest: eleven families spent a night in a school hall for an event that did not occur, and the same officer had closed the same street twice in the previous eighteen months.
 
 What the criticism omitted was the ninety minutes. If she had waited for certainty, it would have arrived at about half past three, and the evacuation would have finished long after the water reached the doors. She was not predicting a flood. She was deciding at what point a decision would still be possible.
 
@@ -380,7 +380,7 @@ Three years later the same street was closed on the same reasoning and the water
               kind: "mcq",
               id: "en-b2-12-l5-23",
               no: 23,
-              text: "Why does the writer call forty per cent the least useful number?",
+              text: "Why does the writer call forty percent the least useful number?",
               options: [
                 "It is almost never produced by forecasts",
                 "It is usually wrong by a wide margin",
@@ -430,7 +430,7 @@ Three years later the same street was closed on the same reasoning and the water
                 "The cost of keeping the school hall open",
                 "The time the evacuation itself required",
                 "The number of families in the lower street",
-                "The distance the storm travelled north",
+                "The distance the storm traveled north",
               ],
               answer: 1,
               explain:
@@ -545,12 +545,12 @@ The practical consequence is that public pressure pushes in one direction only, 
             {
               key: "a",
               label: "a — Forecaster",
-              body: "I can tell you there is a forty per cent chance and I cannot tell you whether to close the road, and people find that answer evasive. It is not evasive. Those are two different jobs, and mixing them is how a technical service ends up making political decisions it was never given the authority to make.",
+              body: "I can tell you there is a forty percent chance and I cannot tell you whether to close the road, and people find that answer evasive. It is not evasive. Those are two different jobs, and mixing them is how a technical service ends up making political decisions it was never given the authority to make.",
             },
             {
               key: "b",
               label: "b — Mayor",
-              body: "I have been criticised for both errors in the same term of office, once for closing the market when nothing came and once for waiting three hours too long. The second error cost eleven times as much, but it did not feel eleven times worse at the time, which is exactly the trap.",
+              body: "I have been criticized for both errors in the same term of office, once for closing the market when nothing came and once for waiting three hours too long. The second error cost eleven times as much, but it did not feel eleven times worse at the time, which is exactly the trap.",
             },
             {
               key: "c",
@@ -670,7 +670,7 @@ The practical consequence is that public pressure pushes in one direction only, 
             {
               kind: "audio",
               id: "a4",
-              genre: "Between neighbours",
+              genre: "Between neighbors",
               genreTr: "Komşular arasında",
               situation: "İki komşu üçüncü kapatmayı konuşuyor.",
               plays: 2,
@@ -755,7 +755,7 @@ The practical consequence is that public pressure pushes in one direction only, 
               no: 3,
               ref: "a3",
               text: "Why did the officer act when she did?",
-              options: ["She was certain the river would rise", "Waiting would have removed the choice", "The forecast had reached ninety per cent"],
+              options: ["She was certain the river would rise", "Waiting would have removed the choice", "The forecast had reached ninety percent"],
               answer: 1,
               explain:
                 "Amir iki süreyi karşılaştırıyor: doksan dakikaya karşı kırk dakika, ve «Waiting … would have given me no decision».",
@@ -1022,7 +1022,7 @@ Cost of the service:         {{16}}`,
               situation: "Altıncı konuşmacı ham sayıların yayımlanmasını istiyor.",
               plays: 2,
               segments: [
-                { text: "Give me the forty per cent. I am perfectly capable of deciding what to do with it, and every time somebody rounds it up into a warning or down into silence, I am being protected from information that is mine." },
+                { text: "Give me the forty percent. I am perfectly capable of deciding what to do with it, and every time somebody rounds it up into a warning or down into silence, I am being protected from information that is mine." },
               ],
             },
           ],
@@ -1085,7 +1085,7 @@ Cost of the service:         {{16}}`,
               text: "Speaker 6",
               answer: "f",
               explain:
-                "Altıncı konuşmacı ham sayıyı istiyor: «Give me the forty per cent», ve yuvarlanmanın kendisini bilgiden yoksun bıraktığını söylüyor.",
+                "Altıncı konuşmacı ham sayıyı istiyor: «Give me the forty percent», ve yuvarlanmanın kendisini bilgiden yoksun bıraktığını söylüyor.",
             },
           ],
         },
@@ -1107,20 +1107,20 @@ Cost of the service:         {{16}}`,
               situation: "Bir sunucu, dokuz yıldır nöbetçi amirlik yapan Lenn ile konuşuyor.",
               plays: 2,
               segments: [
-                { text: "You have been making these decisions for nine years. What does a forty per cent forecast feel like?" },
+                { text: "You have been making these decisions for nine years. What does a forty percent forecast feel like?" },
                 { text: "Like the worst number in the job. Eighty is easy and five is easy. Forty is where you find out what your service actually believes, because nothing in the manual covers it." },
                 { text: "How do you decide?" },
                 { text: "Not on the probability, which surprises people. I ask how long an action takes and how long the warning will give me. If the action is longer than the warning, the probability has stopped mattering." },
-                { text: "That sounds like a way of avoiding the judgement." },
-                { text: "It is a way of making the judgement earlier, at a point where it can still be carried out. Waiting for certainty is not caution. It is choosing to be certain and helpless at the same time." },
-                { text: "You were criticised for the March closure." },
+                { text: "That sounds like a way of avoiding the judgment." },
+                { text: "It is a way of making the judgment earlier, at a point where it can still be carried out. Waiting for certainty is not caution. It is choosing to be certain and helpless at the same time." },
+                { text: "You were criticized for the March closure." },
                 { text: "I was, and the criticism had a real point in it. Eleven families spent a night in a hall for nothing, and one of them had a child of four months. I have never argued that the cost was zero." },
                 { text: "Did it change what you do?" },
                 { text: "It changed what I write down. I now record the two times, the action and the warning, in the log before I decide. Not to protect myself. So that whoever reviews it is arguing with the reasoning rather than with the outcome." },
                 { text: "Does the public understand any of this?" },
                 { text: "Individually, yes, every time. Collectively, no, and I have stopped expecting it to. The one thing I would change is the reporting: the closure that works is never a story, so people only ever read about the closures that look foolish." },
                 { text: "Would publishing the probabilities help?" },
-                { text: "It would help the people who already read carefully, which is not nothing. It would not touch the person who hears forty per cent and files it as no." },
+                { text: "It would help the people who already read carefully, which is not nothing. It would not touch the person who hears forty percent and files it as no." },
                 { text: "Last question. Would you take the job again?" },
                 { text: "Yes, and I would want somebody to tell the new person the thing nobody told me: you will be judged on outcomes and you can only control decisions, and those are different, and the gap between them is where this job is actually lived." },
               ],
@@ -1132,7 +1132,7 @@ Cost of the service:         {{16}}`,
               id: "en-b2-12-h4-23",
               no: 23,
               ref: "d1",
-              text: "Why is forty per cent difficult?",
+              text: "Why is forty percent difficult?",
               options: ["It is usually inaccurate", "No rule covers that case", "It occurs several times a week"],
               answer: 1,
               explain:
@@ -1154,11 +1154,11 @@ Cost of the service:         {{16}}`,
               id: "en-b2-12-h4-25",
               no: 25,
               ref: "d1",
-              text: "How does she answer the charge of avoiding judgement?",
-              options: ["She says the manual requires it", "She says nobody else will decide", "She says it moves the judgement earlier"],
+              text: "How does she answer the charge of avoiding judgment?",
+              options: ["She says the manual requires it", "She says nobody else will decide", "She says it moves the judgment earlier"],
               answer: 2,
               explain:
-                "Lenn kaçınmayı reddediyor: «It is a way of making the judgement earlier», çünkü kesinliği beklemek kişiyi çaresiz bırakıyor.",
+                "Lenn kaçınmayı reddediyor: «It is a way of making the judgment earlier», çünkü kesinliği beklemek kişiyi çaresiz bırakıyor.",
             },
             {
               kind: "mcq",
@@ -1202,7 +1202,7 @@ Cost of the service:         {{16}}`,
               options: ["It would remove the criticism", "It would help a limited group", "It would confuse most listeners"],
               answer: 1,
               explain:
-                "Lenn sınırı çiziyor: dikkatli okuyanlara yarar, «It would not touch the person who hears forty per cent and files it as no».",
+                "Lenn sınırı çiziyor: dikkatli okuyanlara yarar, «It would not touch the person who hears forty percent and files it as no».",
             },
             {
               kind: "mcq",
@@ -1269,7 +1269,7 @@ I would rather be warned too often, provided I am told each time how probable th
           format: "writing",
           goal: "interaction",
           prompt:
-            "Your neighbourhood association has asked you to report on the local warning service after a night when a street was closed and no flood came. Write a report for the committee. Describe what happened, assess the decision fairly, and recommend one change. Write 140 to 190 words.",
+            "Your neighborhood association has asked you to report on the local warning service after a night when a street was closed and no flood came. Write a report for the committee. Describe what happened, assess the decision fairly, and recommend one change. Write 140 to 190 words.",
           promptTr:
             "Mahalle derneği, bir sokağın kapatıldığı ve selin gelmediği bir geceden sonra yerel uyarı hizmeti üzerine rapor yazmanı istedi. Yönetim kuruluna bir rapor yaz. Olanları anlat, kararı adil biçimde değerlendir ve tek bir değişiklik öner. 140–190 kelime.",
           items: [],
@@ -1282,13 +1282,13 @@ I would rather be warned too often, provided I am told each time how probable th
             ],
             sample: `Report on the closure of Mill Street, 14 March
 
-At 20.35 the duty officer closed Mill Street and moved eleven households to the school. The road reopened at 06.00. The river rose to within thirty centimetres of the wall and the storm passed north of the town.
+At 20.35 the duty officer closed Mill Street and moved eleven households to the school. The road reopened at 06.00. The river rose to within thirty centimeters of the wall and the storm passed north of the town.
 
 The cost was not nothing, and this report should say so plainly. Eleven families lost a night, two shops lost a Saturday delivery, and three residents have told me they will ignore the next message.
 
 Nevertheless, the decision appears sound. Moving those households takes about ninety minutes and the warning would have given roughly forty, so waiting for certainty would have produced a decision that could no longer be carried out.
 
-What failed was not the judgement but the explanation. Residents were told to leave and were not told why, and the reasoning only became public a week later through a newspaper.
+What failed was not the judgment but the explanation. Residents were told to leave and were not told why, and the reasoning only became public a week later through a newspaper.
 
 I recommend one change: that the two timings behind any closure be published on the notice board within twenty-four hours.`,
             criteria: [
@@ -1323,7 +1323,7 @@ I recommend one change: that the two timings behind any closure be published on 
             { who: "you", hint: "Alışkanlığını anlat ve bir örnek ver.", expect: "bir alışkanlığı örnekle anlatmak", seconds: 45 },
             { who: "partner", de: "Thank you. Tell me about a time you ignored a warning, or followed one that turned out to be unnecessary.", tr: "Teşekkürler. Bir uyarıyı görmezden geldiğin ya da gereksiz çıkan bir uyarıya uyduğun bir zamanı anlat." },
             { who: "you", hint: "Tek bir olayı sonucuyla anlat.", expect: "bir olayı sonucuyla anlatmak", seconds: 45 },
-            { who: "partner", de: "And if you had been told there was a forty per cent chance of flooding last night, what would you have done?", tr: "Dün gece yüzde kırk sel olasılığı olduğu söylenseydi ne yapardın?" },
+            { who: "partner", de: "And if you had been told there was a forty percent chance of flooding last night, what would you have done?", tr: "Dün gece yüzde kırk sel olasılığı olduğu söylenseydi ne yapardın?" },
             { who: "you", hint: "Üçüncü tip koşulla cevapla ve gerekçelendir.", expect: "üçüncü tip koşul kurmak", seconds: 45 },
           ],
           items: [],
@@ -1335,7 +1335,7 @@ I recommend one change: that the two timings behind any closure be published on 
               { de: "use a third conditional", tr: "Üçüncü tip koşulu kullanmak" },
             ],
             sample:
-              "I look at the forecast every morning and I mostly use it to decide about a coat, which is not a serious use of a serious service. I did once ignore a wind warning and cycled anyway, and I spent forty minutes pushing the bicycle along a road covered in branches. If I had been told there was a forty per cent chance of flooding, I would have moved everything off the floor and stayed, because moving things is cheap and leaving the flat is not.",
+              "I look at the forecast every morning and I mostly use it to decide about a coat, which is not a serious use of a serious service. I did once ignore a wind warning and cycled anyway, and I spent forty minutes pushing the bicycle along a road covered in branches. If I had been told there was a forty percent chance of flooding, I would have moved everything off the floor and stayed, because moving things is cheap and leaving the flat is not.",
             criteria: [
               "İlk cevapta somut bir örnek verildi mi?",
               "Anlatı sonucuyla birlikte verildi mi?",
@@ -1364,7 +1364,7 @@ I recommend one change: that the two timings behind any closure be published on 
               { de: "mention one objection to your own choice", tr: "Kendi seçimine bir itirazı an" },
             ],
             sample:
-              "A number is honest and it is also, for most people, unusable at eleven o'clock at night, because forty per cent is filed either as certainty or as nothing. A single instruction is usable and it hides everything the service does not know, which is how trust gets spent without anybody noticing. I would give the instruction and publish the number alongside it. The objection to that is real: a message with two parts is a message people stop reading halfway through, and there is good evidence that the second half of any public warning is the part that gets ignored.",
+              "A number is honest and it is also, for most people, unusable at eleven o'clock at night, because forty percent is filed either as certainty or as nothing. A single instruction is usable and it hides everything the service does not know, which is how trust gets spent without anybody noticing. I would give the instruction and publish the number alongside it. The objection to that is real: a message with two parts is a message people stop reading halfway through, and there is good evidence that the second half of any public warning is the part that gets ignored.",
             criteria: [
               "İki yaklaşım da karşılaştırıldı mı?",
               "Tercih gerekçelendirildi mi?",
@@ -1383,7 +1383,7 @@ I recommend one change: that the two timings behind any closure be published on 
           promptTr: "Konuyu birlikte biraz daha tartışıyoruz.",
           prepSeconds: 20,
           exchange: [
-            { who: "partner", de: "Some people say an official who closes a road for a flood that never comes should apologise. Do you agree?", tr: "Kimileri, gelmeyen bir sel için yolu kapatan görevlinin özür dilemesi gerektiğini söylüyor. Katılır mısın?" },
+            { who: "partner", de: "Some people say an official who closes a road for a flood that never comes should apologize. Do you agree?", tr: "Kimileri, gelmeyen bir sel için yolu kapatan görevlinin özür dilemesi gerektiğini söylüyor. Katılır mısın?" },
             { who: "you", hint: "Görüşünü söyle ve bir örnekle destekle.", expect: "görüş bildirmek ve örnekle desteklemek", seconds: 45 },
             { who: "partner", de: "But people did lose a night and some lost money. Does that count for nothing?", tr: "Ama insanlar bir gecelerini, bazıları da para kaybetti. Bu hiç mi sayılmaz?" },
             { who: "you", hint: "İtiraza doğrudan karşılık ver, kaybı yok sayma.", expect: "bir itiraza kaybı kabul ederek karşılık vermek", seconds: 45 },

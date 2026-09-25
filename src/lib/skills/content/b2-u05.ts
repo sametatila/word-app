@@ -113,7 +113,7 @@ export const b2U05: SkillExercise[] = [
     genre: "ad",
     intro: "Bir belediyenin gürültü broşürü. Hangi adım hangi sırada geliyor?",
     gloss: [
-      { de: "die Nachbarschaft", tr: "komşuluk", en: "neighbourhood" },
+      { de: "die Nachbarschaft", tr: "komşuluk", en: "neighborhood" },
       { de: "die Lärmbelästigung", tr: "gürültü rahatsızlığı", en: "noise nuisance" },
       { de: "die Ruhestörung", tr: "huzur bozma", en: "disturbance of the peace" },
       { de: "die Hausverwaltung", tr: "bina yönetimi", en: "property management" },

@@ -378,10 +378,10 @@
   {
     "id": 1096,
     "tr": "cep telefonu",
-    "en": "mobile phone",
+    "en": "cell phone",
     "beispiel": "Haben Sie ein Mobiltelefon?",
     "beispielTr": "Cep telefonunuz var mı?",
-    "beispielEn": "Do you have a mobile phone?"
+    "beispielEn": "Do you have a cell phone?"
   },
   {
     "id": 1186,

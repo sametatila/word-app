@@ -265,7 +265,7 @@ export const enB2U11: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "How are the endings learnt?",
+        text: "How are the endings learned?",
         options: ["in pairs", "from a rule", "from the preposition"],
         answer: 0,
         explain: "„You learn them in pairs.“",

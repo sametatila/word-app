@@ -57,7 +57,7 @@ export const enC1U24: SkillExercise[] = [
       { de: "infinitive", tr: "mastar" },
       { de: "noun", tr: "isim" },
       { de: "a slot", tr: "yuva" },
-      { de: "a judgement", tr: "hüküm" },
+      { de: "a judgment", tr: "hüküm" },
       { de: "a description", tr: "betimleme" },
       { de: "clearly", tr: "açıkça" },
       { de: "rarely", tr: "seyrek" },
@@ -72,7 +72,7 @@ export const enC1U24: SkillExercise[] = [
       { de: "a charge", tr: "suçlama" },
       { de: "one position", tr: "tek konum" },
       { de: "miss it", tr: "kaçırmak" },
-      { de: "a defence", tr: "savunma" },
+      { de: "a defense", tr: "savunma" },
       { de: "anyway", tr: "zaten" },
       { de: "a gerund", tr: "eylemlik" },
       { de: "a word of warning", tr: "uyarı sözcüğü" },
@@ -83,19 +83,19 @@ export const enC1U24: SkillExercise[] = [
     minutes: 12,
     text:
       "One advocates the claim; another merely affirms it. Look at where „merely“ is standing: between the subject and the verb, with nothing else in that space.\n" +
-      "English keeps a slot there. It is small, it holds a word or two, and almost everything a writer puts in it is a judgement rather than a description: merely, probably, clearly, knowingly, rarely, always, hardly.\n" +
-      "A neighbouring language has no such slot. Its finite verb has to be the second element of the clause, so nothing can stand between the subject and the verb without pushing the verb out of the position the grammar reserves for it. The adverb goes after the verb instead, into the middle field, where it sits among the other things the sentence is carrying.\n" +
-      "That sounds like a small difference and it is not. In English the judgement arrives before the verb, so the reader has it before they know what happened. „Another merely affirms it“ tells you how to take the news and then gives you the news. In the other order the news comes first, and the judgement lands on a reader who has already begun to believe it.\n" +
+      "English keeps a slot there. It is small, it holds a word or two, and almost everything a writer puts in it is a judgment rather than a description: merely, probably, clearly, knowingly, rarely, always, hardly.\n" +
+      "A neighboring language has no such slot. Its finite verb has to be the second element of the clause, so nothing can stand between the subject and the verb without pushing the verb out of the position the grammar reserves for it. The adverb goes after the verb instead, into the middle field, where it sits among the other things the sentence is carrying.\n" +
+      "That sounds like a small difference and it is not. In English the judgment arrives before the verb, so the reader has it before they know what happened. „Another merely affirms it“ tells you how to take the news and then gives you the news. In the other order the news comes first, and the judgment lands on a reader who has already begun to believe it.\n" +
       "The same slot is where the strongest word in a legal sentence lives. „She knowingly misrepresented the study“ is a different charge from „She misrepresented the study“, and the whole difference is one word in one position, sitting in front of the verb where nobody can miss it.\n" +
-      "To misrepresent a study is a distortion, not a truism. Here is the infinitive shape again, and the second half denies the wrong defence rather than the fact: a paper that answers „everybody knows that anyway“ has not answered the charge at all.\n" +
+      "To misrepresent a study is a distortion, not a truism. Here is the infinitive shape again, and the second half denies the wrong defense rather than the fact: a paper that answers „everybody knows that anyway“ has not answered the charge at all.\n" +
       "Persuasiveness is not the same as being justifiable. And the closing line of the lesson: a noun on one side and a gerund on the other, which English allows without a word of warning.\n" +
       "The two sides are measured by two different people. One is measured by the reader, and the other has to survive somebody who does not want to agree.",
     questions: [
       {
         text: "What does English put in that slot?",
-        options: ["a judgement", "a description", "the verb"],
+        options: ["a judgment", "a description", "the verb"],
         answer: 0,
-        explain: "„almost everything a writer puts in it is a judgement rather than a description…“",
+        explain: "„almost everything a writer puts in it is a judgment rather than a description…“",
       },
       {
         text: "Why is there no such slot in the other language?",
@@ -126,7 +126,7 @@ export const enC1U24: SkillExercise[] = [
         items: [
           "One advocates the claim; another merely affirms it.",
           "English keeps a slot between the subject and the verb.",
-          "The judgement arrives before the verb.",
+          "The judgment arrives before the verb.",
           "She knowingly misrepresented the study.",
         ],
         explain: "Cümle, yuva, sıra; en sonda hukuk cümlesi.",
@@ -168,7 +168,7 @@ export const enC1U24: SkillExercise[] = [
       { de: "obeyed", tr: "uyulan" },
       { de: "a habit", tr: "alışkanlık" },
       { de: "a virtue", tr: "erdem" },
-      { de: "practised", tr: "uygulanan" },
+      { de: "practiced", tr: "uygulanan" },
       { de: "a duty", tr: "ödev" },
       { de: "chosen", tr: "seçilmiş" },
       { de: "a colleague", tr: "meslektaş" },
@@ -184,7 +184,7 @@ export const enC1U24: SkillExercise[] = [
       "„No maxim survives without doubt“ does not say that all maxims are equal. It says that a maxim which has never been doubted has never been tested, and a survivor of doubt is worth more than a rule nobody ever questioned.\n" +
       "That is the useful reading and it is the harder one, because the easy reading is available in the same words and a tired reader will take it.\n" +
       "A commandment, albeit ancient, is not a virtue. Age is not an argument, which this level has now said three times in three fields, and here it is at its sharpest: a rule that is obeyed out of habit has produced a habit and not a virtue.\n" +
-      "A virtue is a thing practised by somebody who could have done otherwise. That is why it cannot be legislated and why a list of rules is not a moral education, though it is a great deal easier to write.\n" +
+      "A virtue is a thing practiced by somebody who could have done otherwise. That is why it cannot be legislated and why a list of rules is not a moral education, though it is a great deal easier to write.\n" +
       "Albeit a form of integrity, altruism can be a duty too. And the concession at the front is doing real work: nobody is denying that it is a form of integrity.\n" +
       "What is denied is that it is always chosen. A colleague who takes the night rota every December is being good and is also being used, and the second half of that sentence is the one nobody says in the room.\n" +
       "So the honest version of the lesson is short. Unpaid goodness is still work and it should be counted, and counting it does not make it smaller. A person who is thanked in a speech and never in a rota has been paid in the wrong currency.",
@@ -197,9 +197,9 @@ export const enC1U24: SkillExercise[] = [
       },
       {
         text: "What is a virtue?",
-        options: ["practised by somebody who could have done otherwise", "a rule obeyed out of habit", "an ancient commandment"],
+        options: ["practiced by somebody who could have done otherwise", "a rule obeyed out of habit", "an ancient commandment"],
         answer: 0,
-        explain: "„A virtue is a thing practised by somebody who could have done otherwise.“",
+        explain: "„A virtue is a thing practiced by somebody who could have done otherwise.“",
       },
       {
         kind: "truefalse",
@@ -430,7 +430,7 @@ export const enC1U24: SkillExercise[] = [
     genre: "info",
     intro: "Orta konum belirteci ve kanıtın iki sayısı.",
     gloss: [
-      { de: "judgement", tr: "yargı" },
+      { de: "judgment", tr: "yargı" },
       { de: "to advocate", tr: "savunmak" },
       { de: "to affirm", tr: "doğrulamak" },
       { de: "to misrepresent", tr: "yanlış aktarmak" },
@@ -476,9 +476,9 @@ export const enC1U24: SkillExercise[] = [
         facts: "Yuva özne ile fiilin arasında; içine hüküm konuyor; Almancada yuva yok çünkü fiil ikinci öğe; İngilizcede hüküm haberden önce geliyor.",
         fields: [
           { label: "Where the slot is", answer: "between subject and verb", accept: ["before the verb"] },
-          { label: "What goes in it", answer: "a judgement", accept: ["judgement"] },
+          { label: "What goes in it", answer: "a judgment", accept: ["judgment"] },
           { label: "In German", answer: "no slot", accept: ["after the verb"] },
-          { label: "The reader gets", answer: "the judgement first", accept: ["judgement first"] },
+          { label: "The reader gets", answer: "the judgment first", accept: ["judgment first"] },
         ],
       },
     ],

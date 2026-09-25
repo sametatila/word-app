@@ -163,7 +163,7 @@ export const enB2U25: SkillExercise[] = [
       { de: "refunded", tr: "parayı iade etti" },
       { de: "corrected", tr: "düzeltti" },
       { de: "the complainant", tr: "şikâyet eden" },
-      { de: "a judgement", tr: "yargı" },
+      { de: "a judgment", tr: "yargı" },
       { de: "issued", tr: "düzenlenen" },
       { de: "a credit note", tr: "alacak dekontu" },
       { de: "a request", tr: "istek" },
@@ -179,7 +179,7 @@ export const enB2U25: SkillExercise[] = [
       "They can't have meant to deceive us. The negative, and note why the strong form is here: the evidence really is strong. The company corrected the page within a day and refunded without being asked.\n" +
       "We should have kept the proof of purchase. The third form, about us, and it is the only line in the letter anybody will remember, which is exactly why it goes in.\n" +
       "A complaint that contains no sentence about the complainant is answered by a form. A complaint that contains one is answered by a person, and that is worth more than any adjective in the first paragraph.\n" +
-      "The words that do not help are the ones that come easily: overpriced, chargeable, the whole list. Each of them is a judgement and none of them is a fact, and a credit note is issued on facts.\n" +
+      "The words that do not help are the ones that come easily: overpriced, chargeable, the whole list. Each of them is a judgment and none of them is a fact, and a credit note is issued on facts.\n" +
       "So the letter has three sentences of evidence, one sentence about us, and one request. The request is for a credit note and not for an apology, because an apology is free and a credit note is on a page somebody has to sign.",
     questions: [
       {
@@ -227,7 +227,7 @@ export const enB2U25: SkillExercise[] = [
         text: "What is a credit note issued on?",
         options: [],
         answer: 0,
-        accept: ["facts", "on facts", "not judgements"],
+        accept: ["facts", "on facts", "not judgments"],
         explain: "„a credit note is issued on facts.“",
       },
     ],

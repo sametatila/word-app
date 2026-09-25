@@ -70,7 +70,7 @@ export const enC1U09: SkillExercise[] = [
       { de: "allowed", tr: "izinli" },
       { de: "a fourth verb", tr: "dördüncü fiil" },
       { de: "the measurement", tr: "ölçüm" },
-      { de: "recognise", tr: "tanımak" },
+      { de: "recognize", tr: "tanımak" },
       { de: "immediately", tr: "hemen" },
       { de: "identical", tr: "birebir aynı" },
       { de: "the floor", tr: "zemin" },
@@ -93,7 +93,7 @@ export const enC1U09: SkillExercise[] = [
       "Were it not for metaphysics, epistemology would be simpler. Nine words and no „if“ anywhere in them.\n" +
       "The verb has moved to the front of its own clause and the conjunction has been thrown away, and the sentence still reads as a condition, because here the word order on its own is enough to say so.\n" +
       "Three verbs are allowed to do this and no others: „were“, „had“ and „should“. Were it not for the levy. Had the court known. Should you need the file. Try it with a fourth verb and the sentence stops being English altogether.\n" +
-      "Now the measurement, and this one does not go the way the others have gone. A reader coming from German will recognise the move immediately, and they will be right to. The same thing happens there: the verb goes first, the conjunction disappears, the meaning is the same. This is not a shape English has and its neighbour lacks. The mechanism is identical.\n" +
+      "Now the measurement, and this one does not go the way the others have gone. A reader coming from German will recognize the move immediately, and they will be right to. The same thing happens there: the verb goes first, the conjunction disappears, the meaning is the same. This is not a shape English has and its neighbor lacks. The mechanism is identical.\n" +
       "What differs is the floor it sits on. In German the move is ordinary. It turns up in a kitchen, in a complaint, in the middle of an argument about a parking space, and nobody hears anything unusual in it. In English the same move is marked. „Had I known“ belongs to a page rather than to a room, and a speaker who uses it in a kitchen has either made a joke or made a mistake.\n" +
       "So the two languages share a sentence and disagree about what it is worth. Here is the harder half of that. A speaker who carries their own everyday shape straight into English arrives in a register three floors above the one they were standing on. Nothing they have written is wrong, and everything they have written is louder than they meant it to be.\n" +
       "The other two lines of this lesson put the old mood on the same page. The Enlightenment demanded that reason be free. They ask that no claim be paradoxical. That is the subjunctive this level opened with, and it belongs here because a text about the Enlightenment is one of the last places in English where the mood is still doing daily work.\n" +
@@ -116,7 +116,7 @@ export const enC1U09: SkillExercise[] = [
         text: "Both languages have this shape.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„This is not a shape English has and its neighbour lacks.“",
+        explain: "„This is not a shape English has and its neighbor lacks.“",
       },
       {
         kind: "gapfill",
@@ -278,7 +278,7 @@ export const enC1U09: SkillExercise[] = [
       { de: "deletion", tr: "silme" },
       { de: "survive", tr: "sağ kalmak" },
       { de: "halves", tr: "yarılar" },
-      { de: "judgement", tr: "yargı" },
+      { de: "judgment", tr: "yargı" },
       { de: "whole", tr: "bütün" },
       { de: "century", tr: "yüzyıl" },
       { de: "a gap", tr: "boşluk" },
@@ -307,7 +307,7 @@ export const enC1U09: SkillExercise[] = [
       { speaker: "Ozan", text: "Why not say it twice?" },
       { speaker: "Yaprak", text: "Because the ear has already learned the pattern from the first half, and a reader who is told the same shape twice stops listening for the difference between the two halves." },
       { speaker: "Ozan", text: "And the last line is not a poem at all." },
-      { speaker: "Yaprak", text: "The zeitgeist felt epochal; the decade did not. A judgement about a whole period, and it fits in seven words because the second half borrows every one of the first half's." },
+      { speaker: "Yaprak", text: "The zeitgeist felt epochal; the decade did not. A judgment about a whole period, and it fits in seven words because the second half borrows every one of the first half's." },
       { speaker: "Ozan", text: "A witness who disagreed with their own century." },
       { speaker: "Yaprak", text: "Written afterwards, in an archive, by somebody who had been there. That is the only place a sentence this cold can come from, and it is why the line is worth more than the sermon next to it." },
     ],

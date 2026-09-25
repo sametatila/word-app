@@ -21,7 +21,7 @@ export const deB1P4: SkillExercise[] = [
     intro: "Yerel bir haber okuyacaksın: pazar neden taşınıyor, kim itiraz ediyor, şehir ne söz veriyor.",
     gloss: [
       { de: "der Stadtrat", tr: "belediye meclisi", en: "city council" },
-      { de: "das Pflaster", tr: "kaldırım taşı", en: "pavement" },
+      { de: "das Pflaster", tr: "kaldırım taşı", en: "sidewalk" },
       { de: "erneuern", tr: "yenilemek", en: "to renew" },
       { de: "die Kundschaft", tr: "müşteri kitlesi", en: "customers" },
       { de: "die Standgebühr", tr: "tezgâh ücreti", en: "stall fee" },

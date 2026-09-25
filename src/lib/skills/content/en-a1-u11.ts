@@ -38,7 +38,7 @@ export const enA1U11: SkillExercise[] = [
     minutes: 4,
     text:
       "Ela: Good morning. I'm looking for a shirt.\n" +
-      "Seller: What colour would you like?\n" +
+      "Seller: What color would you like?\n" +
       "Ela: Blue or white. Not black.\n" +
       "Seller: What size are you?\n" +
       "Ela: I don't know. A big size, I think.\n" +
@@ -104,9 +104,9 @@ export const enA1U11: SkillExercise[] = [
     ],
     minutes: 4,
     text:
-      "BIG SALE — ALL COLOURS\n\n" +
+      "BIG SALE — ALL COLORS\n\n" +
       "Shirts: red, blue, white and black. Only fifteen dollars.\n" +
-      "Sweaters: green, yellow and grey. Twenty dollars.\n" +
+      "Sweaters: green, yellow and gray. Twenty dollars.\n" +
       "Jackets: black or blue. Sixty dollars — not cheap, but very good.\n" +
       "Shoes: black, white and red. From thirty dollars.\n\n" +
       "How much are these shoes? Thirty dollars. And these? Forty.\n" +
@@ -121,7 +121,7 @@ export const enA1U11: SkillExercise[] = [
         explain: "„Shirts: red, blue, white and black. Only fifteen dollars.“",
       },
       {
-        text: "Which colours do the jackets have?",
+        text: "Which colors do the jackets have?",
         options: ["black or blue", "green and yellow", "red and white"],
         answer: 0,
         explain: "„Jackets: black or blue.“ — yeşil ve sarı kazakların rengi.",
@@ -177,7 +177,7 @@ export const enA1U11: SkillExercise[] = [
       { speaker: "Seller", text: "Of course. The fitting room is there." },
       { speaker: "Kaan", text: "It's too small. What size is it?" },
       { speaker: "Seller", text: "That is a small size. Try this one — it is big." },
-      { speaker: "Kaan", text: "Better. And the colour is nice. Is it black or gray?" },
+      { speaker: "Kaan", text: "Better. And the color is nice. Is it black or gray?" },
       { speaker: "Seller", text: "It's gray. Black is only in a small size now." },
       { speaker: "Kaan", text: "Good. I'm going to buy it. Can I pay by card?" },
       { speaker: "Seller", text: "Yes, of course." },
@@ -190,7 +190,7 @@ export const enA1U11: SkillExercise[] = [
         explain: "„This black jacket is forty dollars.“ — seksen ilk ceketin fiyatı.",
       },
       {
-        text: "What colour does Kaan buy?",
+        text: "What color does Kaan buy?",
         options: ["gray", "black", "blue"],
         answer: 0,
         explain: "„It's gray. Black is only in a small size now.“ — siyah olan küçük geldi.",
@@ -234,7 +234,7 @@ export const enA1U11: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 11,
-    title: "Colours",
+    title: "Colors",
     genre: "monologue",
     intro: "Nil renkleri anlatıyor. Hangi renk işe, hangisi hafta sonuna?",
     gloss: [
@@ -245,22 +245,22 @@ export const enA1U11: SkillExercise[] = [
     ],
     minutes: 3,
     segments: [
-      { speaker: "Nil", text: "I like colours. My favorite is blue, but I don't buy blue shirts." },
-      { speaker: "Nil", text: "Blue is a colour for the sea, I think. For work I wear white or gray." },
+      { speaker: "Nil", text: "I like colors. My favorite is blue, but I don't buy blue shirts." },
+      { speaker: "Nil", text: "Blue is a color for the sea, I think. For work I wear white or gray." },
       { speaker: "Nil", text: "My jacket is black. My shoes are black too. That is easy in the morning." },
-      { speaker: "Nil", text: "At the weekend I wear red or yellow. A red sweater is not for the office!" },
+      { speaker: "Nil", text: "On the weekend I wear red or yellow. A red sweater is not for the office!" },
       { speaker: "Nil", text: "My sister likes green. She has a green car and a green jacket." },
-      { speaker: "Nil", text: "Her shoes are white. She says: white is not a colour, it is a problem!" },
+      { speaker: "Nil", text: "Her shoes are white. She says: white is not a color, it is a problem!" },
     ],
     questions: [
       {
-        text: "What is Nil's favorite colour?",
+        text: "What is Nil's favorite color?",
         options: ["blue", "white", "green"],
         answer: 0,
         explain: "„My favorite is blue, but I don't buy blue shirts.“ — yeşil kız kardeşinin rengi.",
       },
       {
-        text: "What colour does Nil wear for work?",
+        text: "What color does Nil wear for work?",
         options: ["white or gray", "red or yellow", "green"],
         answer: 0,
         explain: "„For work I wear white or gray.“ — kırmızı ve sarı hafta sonu için.",
@@ -288,14 +288,14 @@ export const enA1U11: SkillExercise[] = [
         items: [
           "My favorite is blue.",
           "For work I wear white or gray.",
-          "At the weekend I wear red or yellow.",
+          "On the weekend I wear red or yellow.",
           "My sister likes green.",
         ],
         explain: "Önce kendi rengi, sonra iş, sonra hafta sonu, en son kız kardeşi.",
       },
       {
         kind: "short_answer",
-        text: "What colour are the sister's shoes?",
+        text: "What color are the sister's shoes?",
         options: [],
         answer: 0,
         accept: ["white", "they are white"],
@@ -353,7 +353,7 @@ export const enA1U11: SkillExercise[] = [
         facts: "Mavi gömlek; büyük beden; yirmi dolar; kartla ödeme.",
         fields: [
           { label: "Item", answer: "shirt", accept: ["a shirt"] },
-          { label: "Colour", answer: "blue" },
+          { label: "Color", answer: "blue" },
           { label: "Size", answer: "big" },
           { label: "Price", answer: "twenty dollars", accept: ["20 dollars", "twenty"] },
         ],
@@ -366,11 +366,11 @@ export const enA1U11: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 11,
-    title: "What colour is it?",
+    title: "What color is it?",
     genre: "personal",
     intro: "Renk ve fiyat yaz. Renk sıfatı isimden önce gelir ve hiç çekilmez.",
     gloss: [
-      { de: "What colour is it?", tr: "bu ne renk" },
+      { de: "What color is it?", tr: "bu ne renk" },
       { de: "How much are these?", tr: "bunlar ne kadar" },
       { de: "a red car", tr: "kırmızı bir araba" },
     ],
@@ -392,8 +392,8 @@ export const enA1U11: SkillExercise[] = [
       {
         kind: "build",
         tr: "Bu ne renk?",
-        answer: "What colour is it?",
-        hint: "„what colour“ birlikte soruyor; sonra „is it“ geliyor.",
+        answer: "What color is it?",
+        hint: "„what color“ birlikte soruyor; sonra „is it“ geliyor.",
       },
       {
         kind: "build",

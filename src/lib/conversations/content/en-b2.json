@@ -16043,9 +16043,9 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "The rumour can't have started here.",
+     "target": "The rumor can't have started here.",
      "accept": [
-      "The rumour can't have begun here.",
+      "The rumor can't have begun here.",
       "The story can't have started here."
      ],
      "hint": [
@@ -16063,7 +16063,7 @@
       },
       {
        "lang": "en",
-       "text": "The rumour can't have started here."
+       "text": "The rumor can't have started here."
       },
       {
        "lang": "tr",
@@ -20556,10 +20556,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "Being warm, the sample changed colour.",
+     "target": "Being warm, the sample changed color.",
      "accept": [
       "Being warm, the sample changed color.",
-      "Being warm, that sample changed colour."
+      "Being warm, that sample changed color."
      ],
      "hint": [
       {
@@ -20576,7 +20576,7 @@
       },
       {
        "lang": "en",
-       "text": "Being warm, the sample changed colour."
+       "text": "Being warm, the sample changed color."
       },
       {
        "lang": "tr",
@@ -29608,7 +29608,7 @@
   "level": "B2",
   "course": "en",
   "icon": "art",
-  "title": "The catalogue entry",
+  "title": "The catalog entry",
   "titleTr": "Katalog künyesi",
   "summary": "Bir müze künyesinin dilini öğretir; isimleştirme yapanı değil işin kendisini kayda geçirir.",
   "minutes": 11,
@@ -30526,7 +30526,7 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "The premiere is thought to have been cancelled.",
+     "target": "The premiere is thought to have been canceled.",
      "accept": [
       "The premiere is thought to have been called off.",
       "The premiere is thought to have been delayed."
@@ -30546,7 +30546,7 @@
       },
       {
        "lang": "en",
-       "text": "The premiere is thought to have been cancelled."
+       "text": "The premiere is thought to have been canceled."
       },
       {
        "lang": "tr",
@@ -30591,7 +30591,7 @@
   "chat": {
    "scene": "Bir tiyatro sezonuna dair duyduklarını arkadaşına aktarıyorsun ama hiçbirinin kaynağını bilmiyorsun. Bugünü, beklentiyi ve geçmişi aktarım kalıbıyla söyle.",
    "partner": "duyduğun her şeyi kesin bilgi sayıp hemen başkalarına anlatan bir arkadaş",
-   "opening": "So it's definitely cancelled?",
+   "opening": "So it's definitely canceled?",
    "openingTr": "Yani kesin iptal mi?",
    "goal": "Bugünü, beklentiyi ve geçmişi üç ayrı aktarım kalıbıyla söylediysen konuşma başarılı sayılır.",
    "minTurns": 7
@@ -38269,7 +38269,7 @@
      },
      {
       "lang": "en",
-      "text": "The cheque was uncovered."
+      "text": "The check was uncovered."
      },
      {
       "lang": "tr",
@@ -38278,7 +38278,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The cheque was uncovered."
+     "target": "The check was uncovered."
     }
    },
    {

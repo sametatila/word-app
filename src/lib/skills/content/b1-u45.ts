@@ -109,7 +109,7 @@ export const b1U45: SkillExercise[] = [
     intro: "Bir seviyenin sonu. Ne başarıldı, ne başarılmadı?",
     minutes: 6,
     gloss: [
-      { de: "erfüllen", tr: "yerine getirmek", en: "to fulfil" },
+      { de: "erfüllen", tr: "yerine getirmek", en: "to fulfill" },
       { de: "realistisch", tr: "gerçekçi", en: "realistic" },
       { de: "zurechtkommen", tr: "başa çıkmak", en: "to cope" },
       { de: "endgültig", tr: "kesin", en: "final" },
@@ -366,7 +366,7 @@ export const b1U45: SkillExercise[] = [
     minutes: 12,
     gloss: [
       { de: "zurechtkommen", tr: "başa çıkmak", en: "to cope" },
-      { de: "erfüllen", tr: "yerine getirmek", en: "to fulfil" },
+      { de: "erfüllen", tr: "yerine getirmek", en: "to fulfill" },
       { de: "optimistisch", tr: "iyimser", en: "optimistic" },
       { de: "endgültig", tr: "kesin", en: "final" },
       { de: "morgens", tr: "sabahları", en: "in the morning" },

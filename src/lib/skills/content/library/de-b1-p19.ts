@@ -113,7 +113,7 @@ export const deB1P19: SkillExercise[] = [
     genre: "meeting",
     intro: "Gençlik merkezinin ekibi ve bir genç konuşuyor: merkez cumartesi akşamları açılabilir mi, hangi koşullarla.",
     gloss: [
-      { de: "die Tankstelle", tr: "benzin istasyonu", en: "petrol station" },
+      { de: "die Tankstelle", tr: "benzin istasyonu", en: "gas station" },
       { de: "die Fachkraft", tr: "nitelikli eleman", en: "qualified member of staff" },
       { de: "aufschließen", tr: "kilidi açmak", en: "to unlock" },
       { de: "übernehmen", tr: "üstlenmek", en: "to take on" },

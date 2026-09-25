@@ -37,7 +37,7 @@
  {
   "tr": "Sonradan gelen lehçe konuşunca taklit gibi duyuluyor.",
   "kind": "explain",
-  "en": "A dialect learnt later sounds like an imitation when spoken."
+  "en": "A dialect learned later sounds like an imitation when spoken."
  },
  {
   "tr": "Suçlama içeriyor: hastalığı öne sürdüğü ima ediliyor.",
@@ -142,7 +142,7 @@
  {
   "tr": "Bir mahallenin geçmişi ve bugünü. Ne arttı, ne azaldı?",
   "kind": "intro",
-  "en": "The past and present of a neighbourhood. What has grown, what has shrunk?"
+  "en": "The past and present of a neighborhood. What has grown, what has shrunk?"
  },
  {
   "tr": "Bir randevuyu ertele. Dönüşlü fiillerde zamiri unutma.",
@@ -167,12 +167,12 @@
  {
   "tr": "Bütçe konuşması. Para deyimleri hangi yargıyı taşıyor?",
   "kind": "intro",
-  "en": "A conversation about the budget. What judgement do money idioms carry?"
+  "en": "A conversation about the budget. What judgment do money idioms carry?"
  },
  {
   "tr": "Deyim yargı taşıyor ve yargı odadaki kişilere düşüyor.",
   "kind": "explain",
-  "en": "The idiom carries a judgement, and the judgement lands on people in the room."
+  "en": "The idiom carries a judgment, and the judgment lands on people in the room."
  },
  {
   "tr": "Doğru, ilk cümle: „Füllen Sie bitte das Formular aus.“",
@@ -462,12 +462,12 @@
  {
   "tr": "Bir felaketten sonra yardım örgütleniyor. Ne gerekiyor?",
   "kind": "intro",
-  "en": "Help is organised after a disaster. What is needed?"
+  "en": "Help is organized after a disaster. What is needed?"
  },
  {
   "tr": "Bir liman gezisi planlanıyor. Feribot ne zaman, nereye?",
   "kind": "intro",
-  "en": "A trip to the harbour is planned. When does the ferry go, and where?"
+  "en": "A trip to the harbor is planned. When does the ferry go, and where?"
  },
  {
   "tr": "Bir saç kesimi. Müşteri ne istiyor, kuaför ne öneriyor?",
@@ -612,7 +612,7 @@
  {
   "tr": "Kursa kayıt yaz: hangi kurs, hangi indirim, hangi soru?",
   "kind": "intro",
-  "en": "Write an enrolment: which course, which discount, which question?"
+  "en": "Write an enrollment: which course, which discount, which question?"
  },
  {
   "tr": "Nasıl sorusunun cevabı → indem yan cümlesi, fiil sonda.",

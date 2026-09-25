@@ -283,7 +283,7 @@ export const enB1P13: SkillExercise[] = [
         "into a place you walk through, like a park. " +
         "The honest problem with free entry is money. Somebody pays for the heating and the guards, " +
         "and if it isn't the visitors, it is everybody through taxes, including people who never go. " +
-        "Some free museums are also so crowded at weekends that a visit becomes tiring rather than relaxing. " +
+        "Some free museums are also so crowded on weekends that a visit becomes tiring rather than relaxing. " +
         "One way round that would be to keep the collection free but to charge for special " +
         "exhibitions, and to ask tourists for a small donation at the door.",
       rubricHint:

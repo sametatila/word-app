@@ -144,7 +144,7 @@ It does not work like that. A rule enforced by suspicion produces one game and a
 
 Nowhere is this clearer {{9}} in the sports which introduced review and then found themselves rewriting the laws to fit what the cameras could see.
 
-Not only {{10}} the laws change; the incentives changed with them, because an offence that is always detected is worth committing only when the penalty is small.
+Not only {{10}} the laws change; the incentives changed with them, because an offense that is always detected is worth committing only when the penalty is small.
 
 {{11}} the reformers understood this at the time is doubtful, and it would be unfair to expect it of them.
 
@@ -221,7 +221,7 @@ The same shift can be observed in any amateur club {{12}} has installed a scoreb
             {
               kind: "text",
               id: "t3",
-              genre: "Encyclopaedia entry",
+              genre: "Encyclopedia entry",
               genreTr: "Ansiklopedi maddesi",
               title: "Cheating",
               body: `Cheating is conventionally defined as the deliberate breach of a {{13}} with the intention of gaining an advantage the rule exists to prevent.
@@ -230,7 +230,7 @@ The distinction between a rule and a habit lies in {{14}}: a provision that is n
 
 Because the definition turns on intention, {{15}} breaches are classed as errors and attract a different sanction.
 
-The philosophical literature emphasises that such an advantage is worthless unless the other {{16}} continue to observe the rule.
+The philosophical literature emphasizes that such an advantage is worthless unless the other {{16}} continue to observe the rule.
 
 Sanctions are justified in two ways which are frequently confused: as {{17}}, and as the restoration of a result that would otherwise stand.
 
@@ -457,12 +457,12 @@ None of this is an argument for removing the cameras, which would restore neithe
             {
               key: "b",
               label: "b — Writer B",
-              body: "Watch what happens to conduct when a penalty changes and nothing else does. The behaviour tracks the penalty within a single season, every time, and it does not track the wording of the rule at all. Whatever the players are responding to, it is not the law as written.",
+              body: "Watch what happens to conduct when a penalty changes and nothing else does. The behavior tracks the penalty within a single season, every time, and it does not track the wording of the rule at all. Whatever the players are responding to, it is not the law as written.",
             },
             {
               key: "c",
               label: "c — Writer C",
-              body: "The tone of this discussion suggests that something has lately gone wrong. Reports of paid substitutes, altered equipment and bribed officials fill the sporting press of the eighteen-nineties. What is new is the camera, and what the camera has changed is the volume of the complaint rather than the quantity of the offence.",
+              body: "The tone of this discussion suggests that something has lately gone wrong. Reports of paid substitutes, altered equipment and bribed officials fill the sporting press of the eighteen-nineties. What is new is the camera, and what the camera has changed is the volume of the complaint rather than the quantity of the offense.",
             },
             {
               key: "d",
@@ -472,7 +472,7 @@ None of this is an argument for removing the cameras, which would restore neithe
             {
               key: "e",
               label: "e — Writer E",
-              body: "Our survey of four hundred amateur players found that ninety per cent said cheating was wrong and sixty per cent admitted to it. I would not make much of that. It is the finding anybody would predict, and it has been reproduced so often that it now tells us chiefly that the questionnaire works.",
+              body: "Our survey of four hundred amateur players found that ninety percent said cheating was wrong and sixty percent admitted to it. I would not make much of that. It is the finding anybody would predict, and it has been reproduced so often that it now tells us chiefly that the questionnaire works.",
             },
           ],
           items: [
@@ -492,7 +492,7 @@ None of this is an argument for removing the cameras, which would restore neithe
               text: "Which writer says that conduct follows the penalty rather than the wording?",
               answer: "b",
               explain:
-                "Writer B gözlemi doğrudan veriyor: «The behaviour tracks the penalty within a single season, every time, and it does not track the wording of the rule at all».",
+                "Writer B gözlemi doğrudan veriyor: «The behavior tracks the penalty within a single season, every time, and it does not track the wording of the rule at all».",
             },
             {
               kind: "match",
@@ -611,7 +611,7 @@ The lesson generalises awkwardly, which is the honest reason it is not applied m
             {
               key: "b",
               label: "b — Statistician",
-              body: "I was asked to establish whether the new penalty had reduced the offence. It had, by about a third. What took another six months was the discovery that the recording form had changed in the same season, and that roughly half of the fall is officials writing it down differently. I published both numbers, and the second one has never been quoted.",
+              body: "I was asked to establish whether the new penalty had reduced the offense. It had, by about a third. What took another six months was the discovery that the recording form had changed in the same season, and that roughly half of the fall is officials writing it down differently. I published both numbers, and the second one has never been quoted.",
             },
             {
               key: "c",
@@ -621,7 +621,7 @@ The lesson generalises awkwardly, which is the honest reason it is not applied m
             {
               key: "d",
               label: "d — Rule-committee chair",
-              body: "Every year somebody proposes a rule to prevent something that happened once on television. We pass about one in ten. The test I apply is not whether the behaviour is bad; it is whether a referee can see it in real time. A rule that cannot be applied does not reduce the behaviour. It reduces respect for the rules that can be.",
+              body: "Every year somebody proposes a rule to prevent something that happened once on television. We pass about one in ten. The test I apply is not whether the behavior is bad; it is whether a referee can see it in real time. A rule that cannot be applied does not reduce the behavior. It reduces respect for the rules that can be.",
             },
           ],
           items: [
@@ -650,13 +650,13 @@ The lesson generalises awkwardly, which is the honest reason it is not applied m
               text: "applies a test of practicality rather than of seriousness",
               answer: "d",
               explain:
-                "Metin ölçütünü açıkça ayırıyor: «The test I apply is not whether the behaviour is bad; it is whether a referee can see it in real time».",
+                "Metin ölçütünü açıkça ayırıyor: «The test I apply is not whether the behavior is bad; it is whether a referee can see it in real time».",
             },
             {
               kind: "match",
               id: "en-c1-08-l8-38",
               no: 38,
-              text: "supplies details that work against their own defence",
+              text: "supplies details that work against their own defense",
               answer: "c",
               explain:
                 "Metin savunmasını yaptıktan sonra onu zayıflatan ayrıntıları kendisi veriyor: antrenmanda ve rahat önde olduğunda yapmıyormuş. «Make of that what you like. I have».",
@@ -668,7 +668,7 @@ The lesson generalises awkwardly, which is the honest reason it is not applied m
               text: "says that an unenforceable rule damages the other rules",
               answer: "d",
               explain:
-                "Metin sonucu iki cümlede veriyor: «A rule that cannot be applied does not reduce the behaviour. It reduces respect for the rules that can be».",
+                "Metin sonucu iki cümlede veriyor: «A rule that cannot be applied does not reduce the behavior. It reduces respect for the rules that can be».",
             },
             {
               kind: "match",
@@ -725,7 +725,7 @@ The lesson generalises awkwardly, which is the honest reason it is not applied m
               situation: "İki görevli bir ceza değişikliğinin sonuçlarını konuşuyor.",
               plays: 2,
               segments: [
-                { text: "The offence is down a third since we doubled the penalty." },
+                { text: "The offense is down a third since we doubled the penalty." },
                 { text: "Down a third in the returns." },
                 { text: "Meaning?" },
                 { text: "Meaning we changed the sanction and the reporting form in the same window, and I cannot separate them. I would rather say that I do not know than let somebody put a third on a slide." },
@@ -837,7 +837,7 @@ The lesson generalises awkwardly, which is the honest reason it is not applied m
               plays: 2,
               segments: [
                 {
-                  text: "Thank you. This is the three-year review of the rule change, and I will give you the awkward numbers along with the comfortable ones. The change was introduced in twelve competitions and we have complete data for seven of them. Recorded offences fell by thirty-one per cent in the first season and by a further four in the second. In the third season they rose slightly. The most striking figure is not about offences at all: the average length of a match increased by nine minutes, almost all of it in stoppages. We surveyed the officials, and eighty-two per cent said that the rule was easier to apply than the one it replaced. We surveyed the players as well, where the figure was fifty-five. And one caution: two of the seven competitions changed their recording form in the same season, so the first-year fall is not clean.",
+                  text: "Thank you. This is the three-year review of the rule change, and I will give you the awkward numbers along with the comfortable ones. The change was introduced in twelve competitions and we have complete data for seven of them. Recorded offenses fell by thirty-one percent in the first season and by a further four in the second. In the third season they rose slightly. The most striking figure is not about offenses at all: the average length of a match increased by nine minutes, almost all of it in stoppages. We surveyed the officials, and eighty-two percent said that the rule was easier to apply than the one it replaced. We surveyed the players as well, where the figure was fifty-five. And one caution: two of the seven competitions changed their recording form in the same season, so the first-year fall is not clean.",
                 },
               ],
             },
@@ -851,15 +851,15 @@ The lesson generalises awkwardly, which is the honest reason it is not applied m
 
 Complete data exists for {{8}} of them.
 
-Offences fell by {{9}} per cent in the first season.
+Offenses fell by {{9}} percent in the first season.
 
 In the third season the figure {{10}} slightly.
 
 The average match became {{11}} minutes longer.
 
-{{12}} per cent of officials found the rule easier to apply.
+{{12}} percent of officials found the rule easier to apply.
 
-Among the players the figure was {{13}} per cent.
+Among the players the figure was {{13}} percent.
 
 Two competitions changed their recording {{14}} in the same season.`,
             },
@@ -893,7 +893,7 @@ Two competitions changed their recording {{14}} in the same season.`,
               text: "Gap 9",
               accept: ["31", "thirty-one"],
               explain:
-                "«Recorded offences fell by thirty-one per cent in the first season» — ilk sezondaki düşüş. Dört ise ikinci sezonun ek düşüşü.",
+                "«Recorded offenses fell by thirty-one percent in the first season» — ilk sezondaki düşüş. Dört ise ikinci sezonun ek düşüşü.",
             },
             {
               kind: "gap",
@@ -923,7 +923,7 @@ Two competitions changed their recording {{14}} in the same season.`,
               text: "Gap 12",
               accept: ["82", "eighty-two"],
               explain:
-                "«eighty-two per cent said that the rule was easier to apply» — hakemlerin oranı. Elli beş oyuncuların oranı.",
+                "«eighty-two percent said that the rule was easier to apply» — hakemlerin oranı. Elli beş oyuncuların oranı.",
             },
             {
               kind: "gap",
@@ -972,11 +972,11 @@ Two competitions changed their recording {{14}} in the same season.`,
                 { text: "Aras, from the philosophical side?" },
                 { text: "I would say that both of them are right about different questions. Kiro is right that intention is inferable. Vesna is right that in this institution it is not being inferred; it is being asserted. Whether that is a reason to remove intention from the law depends on whether you believe the institution is improvable, and on that I have no view." },
                 { text: "Vesna, does the comparison with the courts move you?" },
-                { text: "It weakens my argument and it does not defeat it. A court has disclosure, evidence, a defence lawyer and months. A disciplinary panel has a video clip, twenty minutes and a chairman who watched the incident live on television. The analogy imports the conclusion and leaves the machinery behind." },
+                { text: "It weakens my argument and it does not defeat it. A court has disclosure, evidence, a defense lawyer and months. A disciplinary panel has a video clip, twenty minutes and a chairman who watched the incident live on television. The analogy imports the conclusion and leaves the machinery behind." },
                 { text: "Kiro, is that fair?" },
                 { text: "It is fair about the machinery, and it is an argument for building the machinery rather than for abandoning the distinction. If we take intention out, we punish the clumsy exactly as we punish the malicious, and the players will notice inside a season." },
                 { text: "Aras, is there a middle position?" },
-                { text: "There is one, and I distrust it. You keep intention as an aggravating factor rather than as an element, so that it raises the penalty without being required to establish the offence. It is what most codes already do, and it has the property of looking like a compromise while transferring the entire difficulty to the sentencing stage, where nobody is watching." },
+                { text: "There is one, and I distrust it. You keep intention as an aggravating factor rather than as an element, so that it raises the penalty without being required to establish the offense. It is what most codes already do, and it has the property of looking like a compromise while transferring the entire difficulty to the sentencing stage, where nobody is watching." },
                 { text: "So where does that leave us?" },
                 { text: "Where we started, but with the disagreement in the right place. It is not about whether intention matters." },
                 { text: "It is about whether this particular body can be trusted to find it. Kiro thinks that can be fixed and I think it cannot." },
@@ -1022,10 +1022,10 @@ Two competitions changed their recording {{14}} in the same season.`,
               id: "en-c1-08-h3-17",
               no: 17,
               ref: "c1",
-              text: "How does Aras characterise the disagreement?",
+              text: "How does Aras characterize the disagreement?",
               options: [
                 "As a confusion about the meaning of intention",
-                "As one in which the evidence favours Kiro",
+                "As one in which the evidence favors Kiro",
                 "As a dispute that philosophy is able to settle",
                 "As turning on whether the institution can improve",
               ],
@@ -1131,7 +1131,7 @@ Two competitions changed their recording {{14}} in the same season.`,
             { key: "d", label: "to say that a reform succeeded for the wrong reason" },
             { key: "e", label: "to decline to condemn a particular person" },
             { key: "f", label: "to describe a change of mind that took years" },
-            { key: "g", label: "to argue that the measurement changed and not the behaviour" },
+            { key: "g", label: "to argue that the measurement changed and not the behavior" },
             { key: "h", label: "to defend a rule that is widely disliked" },
             { key: "i", label: "to ask for a smaller claim to be made" },
             { key: "j", label: "to say that the argument is being had in the wrong place" },
@@ -1156,7 +1156,7 @@ Two competitions changed their recording {{14}} in the same season.`,
               situation: "İkinci konuşmacı kendisinden istenen açıklamayı anlatıyor.",
               plays: 2,
               segments: [
-                { text: "The offence is down a third and I have been asked to say so at the annual meeting. What actually happened is that we changed the sanction and the reporting form in the same season, and about half of that fall is officials writing it down differently. The behaviour may well have improved. I cannot tell you that it has." },
+                { text: "The offense is down a third and I have been asked to say so at the annual meeting. What actually happened is that we changed the sanction and the reporting form in the same season, and about half of that fall is officials writing it down differently. The behavior may well have improved. I cannot tell you that it has." },
               ],
             },
             {
@@ -1325,14 +1325,14 @@ Two competitions changed their recording {{14}} in the same season.`,
           format: "writing",
           goal: "production",
           prompt:
-            "You have attended a seminar on rules in sport. Write an essay for your tutor summarising which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. A deliberate offence should be punished more heavily than a careless one, because intention is what makes an act wrong.\n2. Both should be punished identically, because intention cannot be established reliably and a rule that cannot be applied is worse than a blunt one.\n\nWrite 220 to 260 words.",
+            "You have attended a seminar on rules in sport. Write an essay for your tutor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. A deliberate offense should be punished more heavily than a careless one, because intention is what makes an act wrong.\n2. Both should be punished identically, because intention cannot be established reliably and a rule that cannot be applied is worse than a blunt one.\n\nWrite 220 to 260 words.",
           promptTr:
             "Spordaki kurallar üzerine bir seminere katıldın. Danışmanın için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Kasıtlı ihlal, dikkatsizlikle yapılandan daha ağır cezalandırılmalı; bir eylemi kötü kılan kasıttır.\n2. İkisi de aynı cezalandırılmalı; kast güvenilir biçimde saptanamaz ve uygulanamayan bir kural, kaba bir kuraldan kötüdür.\n\n220–260 kelime yaz.",
           items: [],
           rubric: {
             minWords: 220,
             points: [
-              { de: "Summarise both points fairly.", tr: "İki noktayı da adil biçimde özetle." },
+              { de: "Summarize both points fairly.", tr: "İki noktayı da adil biçimde özetle." },
               { de: "Say which is more important and justify the choice.", tr: "Hangisinin daha önemli olduğunu söyle ve seçimi gerekçelendir." },
               { de: "Give your own view, distinct from the summary.", tr: "Özetten ayrı olarak kendi görüşünü ver." },
             ],
@@ -1344,7 +1344,7 @@ The second position does not deny any of this. It denies that the institution ca
 
 On balance the second point seems to me the more important, because it concerns what will actually happen rather than what ought to. A distinction that exists only on paper does not deliver justice; it launders prejudice through a document.
 
-My own view is that the choice is being posed too early. The real question is whether the tribunals are improvable, and neither side of the seminar addressed it. If they are, the first position wins on the merits. If they are not, keeping intention in the laws is a way of appearing to honour a principle while abandoning it in practice.`,
+My own view is that the choice is being posed too early. The real question is whether the tribunals are improvable, and neither side of the seminar addressed it. If they are, the first position wins on the merits. If they are not, keeping intention in the laws is a way of appearing to honor a principle while abandoning it in practice.`,
             criteria: [
               "İki nokta da adil ve tam özetlendi mi?",
               "Seçim gerekçelendirildi mi ve gerekçe özetten çıkıyor mu?",
@@ -1383,7 +1383,7 @@ What I do not propose
 I do not propose a ban on re-entry the following season, which has been suggested twice. It punishes the wrong people, since teams are rebuilt every year, and it would reduce the number of entrants, which is the underlying problem rather than the presenting one.
 
 How we would know it had failed
-Two findings would tell us. First, if withdrawals fall but total entries fall by a comparable number, we will simply have priced out the teams that were least certain of fielding a side. Second, if withdrawals move from after the draw to the week before it, the behaviour has been displaced and not reduced. I suggest we record both figures from the first season and publish them, whatever they show.`,
+Two findings would tell us. First, if withdrawals fall but total entries fall by a comparable number, we will simply have priced out the teams that were least certain of fielding a side. Second, if withdrawals move from after the draw to the week before it, the behavior has been displaced and not reduced. I suggest we record both figures from the first season and publish them, whatever they show.`,
             criteria: [
               "Sorun somut sayılarla ve kime düştüğüyle birlikte anlatıldı mı?",
               "Önerilen ve bilerek önerilmeyen ayrı ayrı verildi mi?",
@@ -1424,11 +1424,11 @@ Two findings would tell us. First, if withdrawals fall but total entries fall by
             minutes: 5,
             points: [
               { de: "move from an example to a general reason", tr: "Örnekten genel bir gerekçeye geçmek" },
-              { de: "analyse one's own reaction to an event", tr: "Bir olay karşısındaki kendi tepkisini çözümlemek" },
+              { de: "analyze one's own reaction to an event", tr: "Bir olay karşısındaki kendi tepkisini çözümlemek" },
               { de: "propose and justify a criterion", tr: "Bir ölçüt önerip gerekçelendirmek" },
             ],
             sample:
-              "I return the shopping trolley to the shelter even when the car park is empty at ten at night, and the reason is not virtue; it is that I would have to watch myself not do it. A neighbour of mine parks across the end of the road every Sunday and it blocks nobody, and I notice that my objection evaporates the moment the inconvenience does, which tells me my principle was never about the rule. If I were writing rules for anything, I would refuse to include any provision that requires somebody to establish what another person was thinking, because that finding will be made anyway and it will be made by impression.",
+              "I return the shopping trolley to the shelter even when the parking lot is empty at ten at night, and the reason is not virtue; it is that I would have to watch myself not do it. A neighbor of mine parks across the end of the road every Sunday and it blocks nobody, and I notice that my objection evaporates the moment the inconvenience does, which tells me my principle was never about the rule. If I were writing rules for anything, I would refuse to include any provision that requires somebody to establish what another person was thinking, because that finding will be made anyway and it will be made by impression.",
             criteria: [
               "İlk cevap örnekten gerekçeye geçebildi mi?",
               "İkinci cevapta kendi tepkisi çözümlendi mi, yoksa yalnız anlatıldı mı?",
@@ -1472,14 +1472,14 @@ Two findings would tell us. First, if withdrawals fall but total entries fall by
           format: "speaking",
           goal: "interaction",
           prompt:
-            "A competition wants to reduce a persistent offence and can trial one change next season. Talk with me about the options, then agree which to trial and what result would make us abandon it.",
+            "A competition wants to reduce a persistent offense and can trial one change next season. Talk with me about the options, then agree which to trial and what result would make us abandon it.",
           promptTr:
             "Bir yarışma süregelen bir ihlali azaltmak istiyor ve gelecek sezon tek bir değişikliği deneyebiliyor. Seçenekleri benimle konuş, sonra hangisini deneyeceğimize ve hangi sonucun onu bıraktıracağına karar ver.",
           prepSeconds: 30,
           exchange: [
-            { who: "partner", de: "The options are: double the penalty, add video review for that offence only, publish the offence counts by team, or train the officials to apply the existing rule consistently. Which would change behaviour?", tr: "Seçenekler: cezayı ikiye katlamak, yalnız o ihlal için video incelemesi eklemek, ihlal sayılarını takım takım yayımlamak ya da hakemleri mevcut kuralı tutarlı uygulamak üzere eğitmek. Hangisi davranışı değiştirir?" },
+            { who: "partner", de: "The options are: double the penalty, add video review for that offense only, publish the offense counts by team, or train the officials to apply the existing rule consistently. Which would change behavior?", tr: "Seçenekler: cezayı ikiye katlamak, yalnız o ihlal için video incelemesi eklemek, ihlal sayılarını takım takım yayımlamak ya da hakemleri mevcut kuralı tutarlı uygulamak üzere eğitmek. Hangisi davranışı değiştirir?" },
             { who: "you", hint: "Bir seçenek seç ve neden davranışı değiştireceğini açıkla.", expect: "seçenekleri değerlendirmek ve birini gerekçesiyle savunmak", seconds: 45 },
-            { who: "partner", de: "But whichever change we make, if the recorded offences fall, we will not know whether the behaviour changed or the officials simply started recording it differently. Does that not sink your choice?", tr: "Ama hangi değişikliği yaparsak yapalım, kayıtlı ihlaller düşerse, davranış mı değişti yoksa hakemler mi farklı kaydetmeye başladı, bilemeyiz. Bu, seçimini boşa çıkarmıyor mu?" },
+            { who: "partner", de: "But whichever change we make, if the recorded offenses fall, we will not know whether the behavior changed or the officials simply started recording it differently. Does that not sink your choice?", tr: "Ama hangi değişikliği yaparsak yapalım, kayıtlı ihlaller düşerse, davranış mı değişti yoksa hakemler mi farklı kaydetmeye başladı, bilemeyiz. Bu, seçimini boşa çıkarmıyor mu?" },
             { who: "you", hint: "İtirazın gücünü teslim et ve ölçme sorununu çözecek bir şey öner.", expect: "bir itirazı teslim edip ölçme sorununa çözüm önermek", seconds: 45 },
             { who: "partner", de: "Then tell me what result, at the end of the season, would make us stop.", tr: "Öyleyse sezon sonunda hangi sonuç bunu bıraktırırdı, söyle." },
             { who: "you", hint: "Sınanabilir bir başarısızlık ölçütü formüle et.", expect: "sınanabilir bir başarısızlık ölçütü formüle etmek", seconds: 45 },
@@ -1493,7 +1493,7 @@ Two findings would tell us. First, if withdrawals fall but total entries fall by
               { de: "formulate a testable failure condition", tr: "Sınanabilir bir başarısızlık ölçütü formüle etmek" },
             ],
             sample:
-              "I would take the training, on the grounds that the other three all assume the existing rule is being applied consistently, and every count we have suggests it is not. You are right about the measurement problem, and it applies to my choice more sharply than to the others, since training is precisely a change in how officials see things. What I would do is freeze the recording form for the season and have a second observer code twenty matches independently, which is cheap and is the only way to separate the two. As for abandoning it: if the independent coding shows the same rate of the offence while the official returns fall, we have trained the recording rather than the conduct, and I would stop and say so publicly rather than let the lower number stand.",
+              "I would take the training, on the grounds that the other three all assume the existing rule is being applied consistently, and every count we have suggests it is not. You are right about the measurement problem, and it applies to my choice more sharply than to the others, since training is precisely a change in how officials see things. What I would do is freeze the recording form for the season and have a second observer code twenty matches independently, which is cheap and is the only way to separate the two. As for abandoning it: if the independent coding shows the same rate of the offense while the official returns fall, we have trained the recording rather than the conduct, and I would stop and say so publicly rather than let the lower number stand.",
             criteria: [
               "Seçim seçeneklere karşı mı gerekçelendirildi?",
               "İtirazın gücü teslim edildi mi ve kendi seçimine de uygulandı mı?",

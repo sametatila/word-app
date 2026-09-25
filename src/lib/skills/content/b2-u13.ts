@@ -433,7 +433,7 @@ export const b2U13: SkillExercise[] = [
         ],
         minWords: 90,
         phrases: [
-          { de: "Wegen des Unwetters fällt … aus.", tr: "fırtına yüzünden … iptal", en: "due to the storm, … is cancelled" },
+          { de: "Wegen des Unwetters fällt … aus.", tr: "fırtına yüzünden … iptal", en: "due to the storm, … is canceled" },
           { de: "Aufgrund der Wetterlage wird … ausgesetzt.", tr: "hava durumu nedeniyle … askıya alınır", en: "owing to the weather, … is suspended" },
           { de: "Die Maßnahme gilt vorübergehend.", tr: "tedbir geçicidir", en: "the measure applies temporarily" },
         ],

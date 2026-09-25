@@ -59,7 +59,7 @@ export const EN_B2_W02: QuizWeek = {
       segments: [
         { speaker: "Host", text: "Welcome back. My guest today is Dr Amir Khan, who has been studying sleep-tracking apps for the last three years. Amir, do these apps actually work?" },
         { speaker: "Dr Khan", text: "It depends what you mean by 'work'. They're quite good at measuring how long you've been lying still. They're much less reliable when it comes to telling you how deeply you slept." },
-        { speaker: "Host", text: "So the colourful graphs I see in the morning aren't accurate?" },
+        { speaker: "Host", text: "So the colorful graphs I see in the morning aren't accurate?" },
         { speaker: "Dr Khan", text: "Not necessarily. They're estimates. Some of the cheaper apps are thought to be wrong about half the time when it comes to deep sleep." },
         { speaker: "Host", text: "That's surprising. I've been using one for months." },
         { speaker: "Dr Khan", text: "You're not alone. And to be fair, there's a positive side: people who track their sleep tend to go to bed at more regular times." },

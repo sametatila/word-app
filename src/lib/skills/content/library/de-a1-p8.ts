@@ -171,7 +171,7 @@ export const deA1P8: SkillExercise[] = [
     gloss: [
       { de: "die Bohrmaschine", tr: "matkap", en: "drill" },
       { de: "leihen", tr: "ödünç vermek", en: "to lend" },
-      { de: "der Nachbar", tr: "komşu", en: "neighbour" },
+      { de: "der Nachbar", tr: "komşu", en: "neighbor" },
       { de: "das Regal", tr: "raf", en: "shelf" },
       { de: "melden", tr: "haber vermek", en: "to get in touch" },
     ],
@@ -203,7 +203,7 @@ export const deA1P8: SkillExercise[] = [
         ],
         minWords: 30,
         phrases: [
-          { de: "Hallo liebe Nachbarn,", tr: "Merhaba sevgili komşular,", en: "Hello dear neighbours," },
+          { de: "Hallo liebe Nachbarn,", tr: "Merhaba sevgili komşular,", en: "Hello dear neighbors," },
           { de: "Ich wohne in der …", tr: "… sokağında oturuyorum", en: "I live on …" },
           { de: "Hat jemand …?", tr: "Kimsede … var mı?", en: "Does anyone have …?" },
           { de: "Ich brauche sie nur für …", tr: "Ona yalnız … için ihtiyacım var", en: "I only need it for …" },

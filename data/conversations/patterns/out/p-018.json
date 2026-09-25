@@ -11,7 +11,7 @@
  { "conversation": "de-b1-vor-gericht", "de": "Das Urteil wurde gestern gesprochen.", "en": "describes a decision taken in the past" },
  { "conversation": "de-b1-vor-gericht", "de": "Er wurde zu … verurteilt.", "en": "says what the sentence was" },
  { "conversation": "de-b1-verbrechen-melden", "de": "der Mann, den ich gesehen habe", "en": "the defined person is the object of the clause" },
- { "conversation": "de-b1-verbrechen-melden", "de": "Das ist strafbar.", "en": "says that a behaviour is a criminal offence" },
+ { "conversation": "de-b1-verbrechen-melden", "de": "Das ist strafbar.", "en": "says that a behavior is a criminal offense" },
  { "conversation": "de-b1-regeln-verstehen", "de": "Der Zugang wird beschränkt.", "en": "describes a restriction impersonally" },
  { "conversation": "de-b1-regeln-verstehen", "de": "Eine Begründung ist erforderlich.", "en": "says what is required" },
  { "conversation": "de-b1-religion-frieden", "de": "Obwohl wir verschieden sind, …", "en": "concedes a difference and still says something" },

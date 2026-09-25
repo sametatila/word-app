@@ -738,7 +738,7 @@
      "kind": "produce",
      "target": "I had learned English before I moved here.",
      "accept": [
-      "I had learnt English before I moved here.",
+      "I had learned English before I moved here.",
       "I had learned English before I came here."
      ],
      "hint": [
@@ -4568,7 +4568,7 @@
      "kind": "produce",
      "target": "Although the job was hard, I learned a lot.",
      "accept": [
-      "Although the job was hard, I learnt a lot.",
+      "Although the job was hard, I learned a lot.",
       "Although the work was hard, I learned a lot."
      ],
      "hint": [
@@ -9006,7 +9006,7 @@
   "level": "B1",
   "course": "en",
   "icon": "city",
-  "title": "The neighbourhood",
+  "title": "The neighborhood",
   "titleTr": "Mahalle",
   "summary": "Oturduğun yeri anlatmayı öğretir; fiilden sonra -ing mi to mu geldiğini seçtirir.",
   "minutes": 10,
@@ -10366,7 +10366,7 @@
   "chat": {
    "scene": "Tren istasyonundasın ve bir görevliye yolculuğunu soruyorsun. Trenin kaçta kalktığını, hangi perondan gideceğini öğren ve vardığında ne yapacağını anlat.",
    "partner": "tarifeyi ezbere bilen, yardımsever bir istasyon görevlisi",
-   "opening": "Hello, where are you travelling to today?",
+   "opening": "Hello, where are you traveling to today?",
    "openingTr": "Merhaba, bugün nereye seyahat ediyorsunuz?",
    "goal": "Kalkış saatini ve peronu öğrendiysen ve vardığında ne yapacağını zaman cümlesiyle anlattıysan konuşma başarılı sayılır.",
    "minTurns": 7
@@ -16349,7 +16349,7 @@
      "target": "The button was replaced two weeks ago.",
      "accept": [
       "The button was changed two weeks ago.",
-      "The button was replaced a fortnight ago."
+      "The button was replaced a two weeks ago."
      ],
      "hint": [
       {
@@ -16766,7 +16766,7 @@
      },
      {
       "lang": "en",
-      "text": "apologise"
+      "text": "apologize"
      },
      {
       "lang": "tr",
@@ -23799,7 +23799,7 @@
   "chat": {
    "scene": "Bir arkadaşınla çalışma planınızı konuşuyorsunuz. Hangi güne ne koyduğunu söyle, neye odaklanacağını anlat ve mola düzenini paylaş.",
    "partner": "planlı çalışmayı beceremeyen, senden fikir isteyen bir arkadaş",
-   "opening": "How do you organise your week?",
+   "opening": "How do you organize your week?",
    "openingTr": "Haftanı nasıl düzenliyorsun?",
    "goal": "Kararlaşmış bir işi, bir niyetini ve o anda verdiğin bir kararı doğru kalıplarla söylediysen konuşma başarılı sayılır.",
    "minTurns": 7
@@ -25128,7 +25128,7 @@
      "target": "How long have you worked on your pronunciation?",
      "accept": [
       "How long have you worked on pronunciation?",
-      "How long have you practised your pronunciation?"
+      "How long have you practiced your pronunciation?"
      ],
      "hint": [
       {
@@ -43112,7 +43112,7 @@
   "chat": {
    "scene": "Bir arkadaşınla geçmişte yaptığın bir şeyi konuşuyorsun. Sen fark etmeden önce ne olduğunu, ne zaman anladığını ve şimdi ne hissettiğini anlat.",
    "partner": "yargılamadan dinleyen, tek tek soran bir arkadaş",
-   "opening": "When did you realise it?",
+   "opening": "When did you realize it?",
    "openingTr": "Bunu ne zaman fark ettin?",
    "goal": "Fark etmeden önce olanı bir kat geriye çekip fark etmeyi olağan geçmişte anlattıysan konuşma başarılı sayılır.",
    "minTurns": 7
@@ -44420,10 +44420,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "The man who helped me was a neighbour.",
+     "target": "The man who helped me was a neighbor.",
      "accept": [
-      "The man who helped me was my neighbour.",
-      "The person who helped me was a neighbour."
+      "The man who helped me was my neighbor.",
+      "The person who helped me was a neighbor."
      ],
      "hint": [
       {
@@ -44440,7 +44440,7 @@
       },
       {
        "lang": "en",
-       "text": "The man who helped me was a neighbour."
+       "text": "The man who helped me was a neighbor."
       },
       {
        "lang": "tr",

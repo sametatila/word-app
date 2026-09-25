@@ -73,7 +73,7 @@ Doctor Pelin works in this house on those days. Her room is number 4.
 
 For a new appointment please call us. Do not write an email; we are slow with email.
 
-In the night and at the weekend, call 112.`,
+In the night and on the weekend, call 112.`,
               gloss: [
                 { de: "an appointment", tr: "randevu", en: "der Termin" },
                 { de: "slow", tr: "yavaş", en: "langsam" },
@@ -818,7 +818,7 @@ Clara Weiss`,
           format: "gap",
           goal: "detail",
           prompt:
-            "Your neighbour Janne Berg puts her son in the Saturday sport club. Her son is ten years old and his name is Rudi. They live at 12 Hill Road. Her phone number is 07700 900 631. The child cannot come in August. Five things are missing on the form. Write them in the gaps.",
+            "Your neighbor Janne Berg puts her son in the Saturday sport club. Her son is ten years old and his name is Rudi. They live at 12 Hill Road. Her phone number is 07700 900 631. The child cannot come in August. Five things are missing on the form. Write them in the gaps.",
           promptTr:
             "Komşun Janne Berg oğlunu cumartesi spor kulübüne yazdırıyor. Oğlu on yaşında ve adı Rudi. 12 Hill Road adresinde oturuyorlar. Telefonu 07700 900 631. Çocuk ağustosta gelemiyor. Formda beş bilgi eksik; boşluklara yaz.",
           texts: [
@@ -945,11 +945,11 @@ Meral`,
               { de: "one thing you do not like", tr: "Sevmediğin bir şey" },
             ],
             sample:
-              "On Monday morning I get up at six. I work in a shop from eight to four. On Wednesday I swim for one hour. On Friday evening I am free and I watch a good film. At the weekend I walk in the park with my sister. I do not like the bus in the morning.",
+              "On Monday morning I get up at six. I work in a shop from eight to four. On Wednesday I swim for one hour. On Friday evening I am free and I watch a good film. On the weekend I walk in the park with my sister. I do not like the bus in the morning.",
             criteria: [
               "Altı sözcüğün her birine değinildi mi?",
               "Gün ve saat adları doğru söylendi mi?",
-              "Sıklık ya da zaman ifadeleri kullanıldı mı? (on Monday, at the weekend)",
+              "Sıklık ya da zaman ifadeleri kullanıldı mı? (on Monday, on the weekend)",
               "Anlaşılır bir tempoda mı konuşuldu?",
             ],
           },

@@ -180,7 +180,7 @@ export const enA1U23: SkillExercise[] = [
     intro: "Telefonda kendini tanıtma. Dikkat: yüz yüze „I am“, telefonda „this is“.",
     gloss: [
       { de: "slowly", tr: "yavaşça" },
-      { de: "mobile phone", tr: "cep telefonu" },
+      { de: "cell phone", tr: "cep telefonu" },
       { de: "One moment", tr: "bir dakika" },
     ],
     minutes: 4,
@@ -191,7 +191,7 @@ export const enA1U23: SkillExercise[] = [
       { speaker: "Office", text: "Mr. Demir is not here today. He is at the dentist." },
       { speaker: "Ela", text: "I understand. Can he call me tomorrow?" },
       { speaker: "Office", text: "Of course. What is your number?" },
-      { speaker: "Ela", text: "My mobile phone is oh five three two, one two three, four five six." },
+      { speaker: "Ela", text: "My cell phone is oh five three two, one two three, four five six." },
       { speaker: "Office", text: "Oh five three two, one two three, four five six. Good." },
       { speaker: "Ela", text: "Thank you. Can you tell him it is quick?" },
       { speaker: "Office", text: "Yes, I tell him." },
@@ -209,7 +209,7 @@ export const enA1U23: SkillExercise[] = [
         text: "What does Ela give?",
         options: ["her number", "her address", "a message"],
         answer: 0,
-        explain: "„What is your number? — My mobile phone is oh five three two…“",
+        explain: "„What is your number? — My cell phone is oh five three two…“",
       },
       {
         kind: "truefalse",

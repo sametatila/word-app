@@ -138,7 +138,7 @@ None of this is about politeness. A firm that hires on eleven seconds is {{6}} o
 
 The results are consistent enough {{8}} be uncomfortable. The speaker with the regional accent is rated lower on competence and higher on warmth, whatever the words.
 
-This is not a matter {{9}} deliberate prejudice. Most listeners cannot say afterwards what they based the judgement on.
+This is not a matter {{9}} deliberate prejudice. Most listeners cannot say afterwards what they based the judgment on.
 
 Nor {{10}} the effect confined to one country. Similar findings have been reported wherever anybody has looked for them.
 
@@ -217,7 +217,7 @@ Despite the weight of that evidence, the standard reply from employers twenty ye
             {
               kind: "text",
               id: "t3",
-              genre: "Encyclopaedia entry",
+              genre: "Encyclopedia entry",
               genreTr: "Ansiklopedi maddesi",
               title: "Accent bias",
               body: `Accent bias is the tendency for a listener's {{13}} of a speaker to be affected by features of pronunciation rather than by content.
@@ -239,9 +239,9 @@ Reviews of the field conclude that the effect is real, modest in size, and large
               id: "en-b2-07-l3-13",
               no: 13,
               text: "JUDGE",
-              accept: ["judgement", "judgment"],
+              accept: ["judgment", "judgment"],
               explain:
-                "`a listener's ___ of a speaker` yapısında iyelikten sonra bir ad gerekiyor: `judgement`. Fiil biçimi bu konumda duramaz; `judge` bir kişiyi adlandırır ve `of a speaker` tümleciyle bu anlamı vermez.",
+                "`a listener's ___ of a speaker` yapısında iyelikten sonra bir ad gerekiyor: `judgment`. Fiil biçimi bu konumda duramaz; `judge` bir kişiyi adlandırır ve `of a speaker` tümleciyle bu anlamı vermez.",
             },
             {
               kind: "gap",
@@ -569,7 +569,7 @@ That is a longer argument and a slower one. Given how few firms have ever asked 
               kind: "match",
               id: "en-b2-07-l7-32",
               no: 32,
-              text: "describes a change that worked without making the organisation any better in itself",
+              text: "describes a change that worked without making the organization any better in itself",
               answer: "c",
               explain:
                 "Metin ayrımı kendisi kuruyor: «We did not become fairer people. We removed one opportunity to be unfair». Sonuç değişiyor ama kurumun ahlakı değişmiyor.",
@@ -834,7 +834,7 @@ That is a longer argument and a slower one. Given how few firms have ever asked 
               plays: 2,
               segments: [
                 {
-                  text: "Thank you. I will give you the headline numbers and then the part we did not expect. We sent the same written application to eight hundred employers, varying nothing except the recorded voice attached to it. The callback rate for the standard accent was twenty-two per cent; for the regional accents it was seventeen. That gap of five points held across every sector except construction, where it disappeared entirely. It was widest in law. We also asked the employers afterwards, and ninety-one per cent of them said that accent had played no part. Now the part we did not expect. When we repeated the study with the voice removed and the application sent as text alone, the callback rate rose to twenty-four per cent for everybody. The study took three years, and the finding people quote is the five points.",
+                  text: "Thank you. I will give you the headline numbers and then the part we did not expect. We sent the same written application to eight hundred employers, varying nothing except the recorded voice attached to it. The callback rate for the standard accent was twenty-two percent; for the regional accents it was seventeen. That gap of five points held across every sector except construction, where it disappeared entirely. It was widest in law. We also asked the employers afterwards, and ninety-one percent of them said that accent had played no part. Now the part we did not expect. When we repeated the study with the voice removed and the application sent as text alone, the callback rate rose to twenty-four percent for everybody. The study took three years, and the finding people quote is the five points.",
                 },
               ],
             },
@@ -846,7 +846,7 @@ That is a longer argument and a slower one. Given how few firms have ever asked 
               title: "Hiring study — results",
               body: `The same application was sent to {{9}} employers.
 
-The callback rate for the standard accent was {{10}} per cent.
+The callback rate for the standard accent was {{10}} percent.
 
 The gap between the two rates was {{11}} points.
 
@@ -854,9 +854,9 @@ The gap disappeared in the {{12}} sector.
 
 The gap was widest in {{13}}.
 
-{{14}} per cent of the employers said accent had played no part.
+{{14}} percent of the employers said accent had played no part.
 
-With the voice removed, the rate rose to {{15}} per cent.
+With the voice removed, the rate rose to {{15}} percent.
 
 The study took {{16}} years.`,
             },
@@ -880,7 +880,7 @@ The study took {{16}} years.`,
               text: "Gap 10",
               accept: ["22", "twenty-two"],
               explain:
-                "«The callback rate for the standard accent was twenty-two per cent» — ölçünlü aksanın oranı. On yedi bölgesel aksanların oranı.",
+                "«The callback rate for the standard accent was twenty-two percent» — ölçünlü aksanın oranı. On yedi bölgesel aksanların oranı.",
             },
             {
               kind: "gap",
@@ -920,7 +920,7 @@ The study took {{16}} years.`,
               text: "Gap 14",
               accept: ["91", "ninety-one"],
               explain:
-                "«ninety-one per cent of them said that accent had played no part» — işverenlerin kendi beyanı.",
+                "«ninety-one percent of them said that accent had played no part» — işverenlerin kendi beyanı.",
             },
             {
               kind: "gap",
@@ -930,7 +930,7 @@ The study took {{16}} years.`,
               text: "Gap 15",
               accept: ["24", "twenty-four"],
               explain:
-                "Beklenmeyen bulgu burada: «the callback rate rose to twenty-four per cent for everybody», yani sesli hâlin en yükseğinin de üstünde.",
+                "Beklenmeyen bulgu burada: «the callback rate rose to twenty-four percent for everybody», yani sesli hâlin en yükseğinin de üstünde.",
             },
             {
               kind: "gap",
@@ -1016,7 +1016,7 @@ The study took {{16}} years.`,
               situation: "Beşinci konuşmacı işverenlerin beyanını yorumluyor.",
               plays: 2,
               segments: [
-                { text: "I believe the employers when they say accent played no part. Ninety-one per cent of them said it and I think ninety-one per cent of them meant it. That is exactly what you would expect if the thing operates below the level where anybody notices." },
+                { text: "I believe the employers when they say accent played no part. Ninety-one percent of them said it and I think ninety-one percent of them meant it. That is exactly what you would expect if the thing operates below the level where anybody notices." },
               ],
             },
             {
@@ -1113,7 +1113,7 @@ The study took {{16}} years.`,
               plays: 2,
               segments: [
                 { text: "You spent two years arguing against this. What was the argument?" },
-                { text: "That it was theatre. I said, in a meeting I would like back, that we would spend a fortune in order to produce the same list with more paperwork attached to it." },
+                { text: "That it was theater. I said, in a meeting I would like back, that we would spend a fortune in order to produce the same list with more paperwork attached to it." },
                 { text: "And you were wrong." },
                 { text: "I was wrong about the list. I was right about the fortune, incidentally; it cost more than anybody had budgeted. The list changed shape in the first year and it has stayed changed." },
                 { text: "What changed your mind?" },
@@ -1125,7 +1125,7 @@ The study took {{16}} years.`,
                 { text: "Is the problem solved at your firm?" },
                 { text: "No. We fixed the first round. The second round is a conversation between people in a room, and I have no idea what happens in it. We have started recording who says what, and I expect that to be uncomfortable." },
                 { text: "Would you recommend it to a smaller firm?" },
-                { text: "With one condition: do not do it unless you are willing to look at the result afterwards. A firm that introduces this and never checks has bought the same theatre I was warning about, and I would rather they kept the money." },
+                { text: "With one condition: do not do it unless you are willing to look at the result afterwards. A firm that introduces this and never checks has bought the same theater I was warning about, and I would rather they kept the money." },
               ],
             },
           ],

@@ -42,16 +42,16 @@ export const enA1U09: SkillExercise[] = [
     ],
     minutes: 4,
     text:
-      "I always get up at seven, even at the weekend. First I wake up, then I put on my clothes and I turn on the radio.\n\n" +
+      "I always get up at seven, even on the weekend. First I wake up, then I put on my clothes and I turn on the radio.\n\n" +
       "On Monday and on Friday I work in the city. I usually walk to work. Sometimes I am late, but my teacher is never angry.\n\n" +
       "In the evening I turn off the radio and I sit down with a newspaper. I often sit there until midnight.\n\n" +
-      "At the weekend I look for a good game. After that I cook. Finally, before I sleep, I drink a cup of warm milk. That is my usual day.",
+      "On the weekend I look for a good game. After that I cook. Finally, before I sleep, I drink a cup of warm milk. That is my usual day.",
     questions: [
       {
         text: "When does the writer get up?",
-        options: ["at seven, every day", "at seven, but not at the weekend", "at midnight"],
+        options: ["at seven, every day", "at seven, but not on the weekend", "at midnight"],
         answer: 0,
-        explain: "„I always get up at seven, even at the weekend.“ — „also“ hafta sonunu da içine alıyor.",
+        explain: "„I always get up at seven, even on the weekend.“ — „also“ hafta sonunu da içine alıyor.",
       },
       {
         text: "Who is never angry?",
@@ -106,7 +106,7 @@ export const enA1U09: SkillExercise[] = [
       "Ali: I usually wake up at seven, but today my clock doesn't work.\n" +
       "Teacher: Turn on your phone at night, then.\n" +
       "Ali: I always turn it off before I sleep.\n" +
-      "Teacher: Then look for a new clock at the weekend!\n" +
+      "Teacher: Then look for a new clock on the weekend!\n" +
       "Ali: Yes. On Saturday I have time.\n" +
       "Teacher: Good. Now, first take off your bag and sit down.\n" +
       "Ali: Sorry again!\n" +
@@ -157,8 +157,8 @@ export const enA1U09: SkillExercise[] = [
         text: "When will Ali look for a new clock?",
         options: [],
         answer: 0,
-        accept: ["at the weekend", "on Saturday", "the weekend"],
-        explain: "„Then look for a new clock at the weekend!“ — Ali de „On Saturday I have time“ diyor.",
+        accept: ["on the weekend", "on Saturday", "the weekend"],
+        explain: "„Then look for a new clock on the weekend!“ — Ali de „On Saturday I have time“ diyor.",
       },
     ],
   },
@@ -240,7 +240,7 @@ export const enA1U09: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 9,
-    title: "At the weekend",
+    title: "On the weekend",
     genre: "dialogue",
     intro: "Hafta sonu ne yapılıyor? Sıklık zarflarını ve gün edatlarını yakala.",
     gloss: [
@@ -251,11 +251,11 @@ export const enA1U09: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Nil", text: "What do you do at the weekend, Kaan?" },
+      { speaker: "Nil", text: "What do you do on the weekend, Kaan?" },
       { speaker: "Kaan", text: "On Saturday I always sleep until ten. Then I have a big breakfast." },
       { speaker: "Nil", text: "And on Sunday?" },
       { speaker: "Kaan", text: "On Sunday I usually cook. Sometimes my friends come in and we eat together." },
-      { speaker: "Nil", text: "Do you work at the weekend?" },
+      { speaker: "Nil", text: "Do you work on the weekend?" },
       { speaker: "Kaan", text: "Never! I work from Monday to Friday, that is enough." },
       { speaker: "Nil", text: "I often work on Saturday morning. But in the evening I am free." },
       { speaker: "Kaan", text: "Then come to me next Saturday. We cook together." },
@@ -279,7 +279,7 @@ export const enA1U09: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Kaan works at the weekend.",
+        text: "Kaan works on the weekend.",
         options: ["True", "False"],
         answer: 1,
         explain: "„Never! I work from Monday to Friday.“ — hafta sonu çalışan Nil.",
@@ -322,12 +322,12 @@ export const enA1U09: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 9,
-    title: "on Monday, at the weekend",
+    title: "on Monday, on the weekend",
     genre: "personal",
     intro: "Zaman edatlarını yaz: günde „on“, hafta sonunda „at“, sabahta „in“. Üçü üç ayrı sözcük.",
     gloss: [
       { de: "on Monday", tr: "pazartesi günü" },
-      { de: "at the weekend", tr: "hafta sonunda" },
+      { de: "on the weekend", tr: "hafta sonunda" },
       { de: "in the morning", tr: "sabahları" },
       { de: "free", tr: "boş" },
     ],
@@ -342,9 +342,9 @@ export const enA1U09: SkillExercise[] = [
       {
         kind: "build",
         tr: "Hafta sonu çalışmıyorum.",
-        answer: "I don't work at the weekend.",
-        alternatives: ["I do not work at the weekend."],
-        hint: "Hafta sonunda „at“: at the weekend. Günde „on“, ayda „in“.",
+        answer: "I don't work on the weekend.",
+        alternatives: ["I do not work on the weekend."],
+        hint: "Hafta sonunda „at“: on the weekend. Günde „on“, ayda „in“.",
       },
       {
         kind: "build",

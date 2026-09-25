@@ -36,10 +36,10 @@
  },
  {
   "conversation": "de-a2-dativ-geben",
-  "sceneEn": "Your neighbour is at the door and wants to borrow something. Give it to them, say when they should bring it back and add one thing they should be careful about.",
-  "partnerEn": "a neighbour who has come to the door in a hurry",
+  "sceneEn": "Your neighbor is at the door and wants to borrow something. Give it to them, say when they should bring it back and add one thing they should be careful about.",
+  "partnerEn": "a neighbor who has come to the door in a hurry",
   "openingEn": "Sorry, could you lend me something for a moment?",
-  "goalEn": "An item has been lent, a time to return it has been agreed and the neighbour has said thank you."
+  "goalEn": "An item has been lent, a time to return it has been agreed and the neighbor has said thank you."
  },
  {
   "conversation": "de-a2-wem-gehoert",
@@ -71,31 +71,31 @@
  },
  {
   "conversation": "de-a2-nachbarschaft",
-  "sceneEn": "Someone who has just moved into the area is asking you about the neighbourhood. Say what is where, where the nearest stop is and where you do your shopping.",
-  "partnerEn": "a neighbour who has just moved into the area",
+  "sceneEn": "Someone who has just moved into the area is asking you about the neighborhood. Say what is where, where the nearest stop is and where you do your shopping.",
+  "partnerEn": "a neighbor who has just moved into the area",
   "openingEn": "I've just moved in. Where do you do your shopping around here?",
-  "goalEn": "At least three places have been described, the nearest stop has been named and the new neighbour knows where to go."
+  "goalEn": "At least three places have been described, the nearest stop has been named and the new neighbor knows where to go."
  },
  {
   "conversation": "de-a2-leihen",
-  "sceneEn": "You are putting something together at home but you have not got the tool. Knock on your neighbour's door, ask for help, borrow a tool and say when you will bring it back.",
-  "partnerEn": "a helpful but inquisitive neighbour",
+  "sceneEn": "You are putting something together at home but you have not got the tool. Knock on your neighbor's door, ask for help, borrow a tool and say when you will bring it back.",
+  "partnerEn": "a helpful but inquisitive neighbor",
   "openingEn": "Hello! Can I help you?",
   "goalEn": "Help has been asked for, a tool has been borrowed, a promise to return it has been made and thanks have been given."
  },
  {
   "conversation": "de-a2-paket",
-  "sceneEn": "A parcel for your neighbour has been left at your address. Knock on their door, say you took it in, say when it came and hand it over.",
-  "partnerEn": "a surprised neighbour who has been waiting for the parcel",
+  "sceneEn": "A parcel for your neighbor has been left at your address. Knock on their door, say you took it in, say when it came and hand it over.",
+  "partnerEn": "a surprised neighbor who has been waiting for the parcel",
   "openingEn": "Oh, hello! Do come in — has something happened?",
-  "goalEn": "Why you have the parcel has been explained, it has been handed over and the neighbour has said thank you and offered something in return."
+  "goalEn": "Why you have the parcel has been explained, it has been handed over and the neighbor has said thank you and offered something in return."
  },
  {
   "conversation": "de-a2-laerm",
-  "sceneEn": "Your upstairs neighbour makes a lot of noise at night and you have not slept all week. Knock on their door, start politely, explain the problem and find a solution together.",
-  "partnerEn": "an upstairs neighbour who has no idea they are making noise",
+  "sceneEn": "Your upstairs neighbor makes a lot of noise at night and you have not slept all week. Knock on their door, start politely, explain the problem and find a solution together.",
+  "partnerEn": "an upstairs neighbor who has no idea they are making noise",
   "openingEn": "Hello, what's the matter? Is something not right?",
-  "goalEn": "The problem has been raised politely, the neighbour has explained themselves and the two of you have agreed on something concrete."
+  "goalEn": "The problem has been raised politely, the neighbor has explained themselves and the two of you have agreed on something concrete."
  },
  {
   "conversation": "de-a2-hausmeister",

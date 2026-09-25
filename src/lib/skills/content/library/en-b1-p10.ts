@@ -23,7 +23,7 @@ export const enB1P10: SkillExercise[] = [
       { de: "bill", tr: "fatura" },
       { de: "meter", tr: "sayaç" },
       { de: "estimate", tr: "tahmini hesap" },
-      { de: "instalment", tr: "taksit" },
+      { de: "installment", tr: "taksit" },
       { de: "to owe", tr: "borçlu olmak" },
       { de: "account", tr: "hesap" },
       { de: "responsible", tr: "sorumlu" },
@@ -40,7 +40,7 @@ export const enB1P10: SkillExercise[] = [
       "This means you owe two hundred and forty pounds more than you expected. " +
       "We understand that this is a large amount to arrive at once, and it is not your fault.\n\n" +
       "You have three options. You can pay the full amount by 30 April. You can pay in six " +
-      "monthly instalments at no extra cost — just reply to this letter or call us. " +
+      "monthly installments at no extra cost — just reply to this letter or call us. " +
       "Or, if you send us a photo of your meter every three months, we will move you to " +
       "a lower monthly payment from May.\n\n" +
       "Please do not ignore this letter. If we hear nothing by 30 April, the full amount " +
@@ -70,10 +70,10 @@ export const enB1P10: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Paying in instalments costs extra.",
+        text: "Paying in installments costs extra.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„in six monthly instalments at no extra cost“.",
+        explain: "„in six monthly installments at no extra cost“.",
       },
       {
         kind: "gapfill",

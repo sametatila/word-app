@@ -36,7 +36,7 @@ export const enC1P19: SkillExercise[] = [
       { de: "shade", tr: "gölge" },
       { de: "isolated", tr: "yalnız kalmış" },
       { de: "recommendation", tr: "öneri" },
-      { de: "councillor", tr: "meclis üyesi" },
+      { de: "councilor", tr: "meclis üyesi" },
       { de: "elected", tr: "seçilmiş" },
     ],
     minutes: 10,
@@ -58,7 +58,7 @@ export const enC1P19: SkillExercise[] = [
       "slower measures: shade trees on the ten hottest streets, a phone list of isolated residents to be called " +
       "during heat warnings, and later opening hours for the town's two swimming pools.\n\n" +
       "The council accepted seven of the nine recommendations, and the other two are still under review. Not " +
-      "everyone is convinced. A long-serving councillor argued that decisions of this kind belong to elected " +
+      "everyone is convinced. A long-serving councilor argued that decisions of this kind belong to elected " +
       "members, who can be removed at the next election, while forty volunteers answer to nobody. Supporters " +
       "reply that the assembly advised and the council decided.\n\n" +
       "The harder criticism concerns the six hundred. Fewer than one letter in ten was answered, and those who " +
@@ -111,7 +111,7 @@ export const enC1P19: SkillExercise[] = [
       {
         text: "What is the harder criticism mentioned at the end?",
         options: [
-          "The councillors ignored most of the results.",
+          "The councilors ignored most of the results.",
           "The experts were chosen by the council itself.",
           "Those who replied were not typical of the town.",
         ],
@@ -318,7 +318,7 @@ export const enC1P19: SkillExercise[] = [
       sampleDe:
         "I would give citizens chosen by lot a real role in public decisions, but a clearly limited one. " +
         "What a randomly chosen group can do that elected members cannot is ignore the next election. A " +
-        "councillor with a four-year term has every reason to avoid a slow, unpopular measure whose benefits " +
+        "councilor with a four-year term has every reason to avoid a slow, unpopular measure whose benefits " +
         "arrive after she has gone. Forty residents who will never stand for office can afford to think about " +
         "the town in twenty years. " +
         "They also bring people into the room who are usually missing from decision-making: shift workers, " +

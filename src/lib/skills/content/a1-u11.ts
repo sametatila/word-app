@@ -302,7 +302,7 @@ export const a1U11: SkillExercise[] = [
     intro: "Ne giymeyi sevdiğini yaz.",
     gloss: [
       { de: "die Kleidung", tr: "kıyafet", en: "clothes" },
-      { de: "die Farbe", tr: "renk", en: "colour" },
+      { de: "die Farbe", tr: "renk", en: "color" },
       { de: "teuer", tr: "pahalı", en: "expensive" },
     ],
     minutes: 7,

@@ -323,7 +323,7 @@ export const a1U09: SkillExercise[] = [
         phrases: [
           { de: "Am Montag …", tr: "Pazartesi …", en: "On Monday …" },
           { de: "Ich stehe um … auf.", tr: "Saat …'da kalkarım.", en: "I get up at …" },
-          { de: "Am Wochenende …", tr: "Hafta sonu …", en: "At the weekend …" },
+          { de: "Am Wochenende …", tr: "Hafta sonu …", en: "On the weekend …" },
         ],
         sample:
           "Am Montag stehe ich früh auf, um halb sieben. Dann dusche ich und frühstücke schnell.\n\nAm Dienstag lerne ich Deutsch. Mein Kurs geht von neun bis elf.\n\nAm Samstag kaufe ich ein. Ich gehe in den Supermarkt und kaufe Obst und Milch.\n\nAm Sonntag stehe ich nie früh auf. Ich schlafe lange und rufe meine Eltern an.\n\nAm Wochenende habe ich immer mehr Zeit.",

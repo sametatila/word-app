@@ -53,7 +53,7 @@ export const enC1U21: SkillExercise[] = [
     intro: "Üç sözcük tek rakamı değiştirmeden iddiayı değiştiriyor. Nerede duruyorlar?",
     gloss: [
       { de: "per", tr: "başına" },
-      { de: "cent", tr: "yüzde birim" },
+      { de: "percent", tr: "yüzde" },
       { de: "halves", tr: "yarılar" },
       { de: "builds", tr: "kuruyor" },
       { de: "adjective", tr: "sıfat" },
@@ -88,7 +88,7 @@ export const enC1U21: SkillExercise[] = [
     minutes: 12,
     text:
       "In the press release it is a downturn; in the model, stagnation. One number, two rooms, and the real subject of this lesson is a phrase that is not in that sentence yet.\n" +
-      "„In nominal terms.“ Three words that can be put in front of any claim about money, and they change what the claim says without changing a single figure in it. Wages rose four per cent in nominal terms and fell one per cent in real terms, and both halves are true of the same payslip.\n" +
+      "„In nominal terms.“ Three words that can be put in front of any claim about money, and they change what the claim says without changing a single figure in it. Wages rose four percent in nominal terms and fell one percent in real terms, and both halves are true of the same payslip.\n" +
       "This is a frame. English builds them freely: in terms of scale, in urban design terms, in real terms, in nominal terms, in legal terms. The dimension a claim is measured on gets named in a phrase, and the phrase can go wherever the writer wants it.\n" +
       "Where it goes is the whole of its usefulness. At the front it warns the reader before the claim arrives, so nothing has to be taken back. At the end it corrects a reader who has already believed something larger. The words are identical and the two sentences do different work.\n" +
       "German mostly does this another way. The dimension goes into an adjective built out of the noun, or into a compound, and the result is bound to one element of the sentence rather than floating in front of the whole clause. So a German reader usually meets the limitation attached to the word it limits, and an English reader meets it as a frame around everything.\n" +
@@ -259,7 +259,7 @@ export const enC1U21: SkillExercise[] = [
       { de: "halves", tr: "yarılar" },
       { de: "particular", tr: "belirli" },
       { de: "either", tr: "ikisinden biri" },
-      { de: "defence", tr: "savunma" },
+      { de: "defense", tr: "savunma" },
       { de: "spent", tr: "harcadı" },
       { de: "proposed", tr: "önerilen" },
       { de: "a rate", tr: "faiz oranı" },
@@ -284,7 +284,7 @@ export const enC1U21: SkillExercise[] = [
       { speaker: "Arda", text: "So the average hides two directions." },
       { speaker: "Melis", text: "It hides two directions and a deposit. The rate moves the monthly payment, and the deposit is the part that decides who gets in at all." },
       { speaker: "Arda", text: "An expansionary step, albeit restrictive later, buys time." },
-      { speaker: "Melis", text: "That is the honest defence of the whole policy and it is worth taking seriously. Time is a real thing to buy, and somebody has to decide what it is spent on." },
+      { speaker: "Melis", text: "That is the honest defense of the whole policy and it is worth taking seriously. Time is a real thing to buy, and somebody has to decide what it is spent on." },
       { speaker: "Arda", text: "Who usually decides?" },
       { speaker: "Melis", text: "Nobody, in my experience. The time is bought and then it passes, and the same committee meets again with the same question and a worse starting point." },
       { speaker: "Arda", text: "Albeit countercyclical, the fiscal policy arrives too late." },

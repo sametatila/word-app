@@ -46,7 +46,7 @@ export const enC1P18: SkillExercise[] = [
       "count towards reports, and teachers are due to receive new guidance on how to use it before the summer.\n\n" +
       "The decision follows a two-year trial in three year groups. According to the school's own figures, the " +
       "share of homework handed in on time fell slightly during the trial, from about eighty-two to seventy-eight " +
-      "per cent. What changed more was what was handed in. Teachers reported far fewer pieces that had clearly " +
+      "percent. What changed more was what was handed in. Teachers reported far fewer pieces that had clearly " +
       "been copied or completed by a parent, and the gap between pupils with and without help at home narrowed " +
       "in the end-of-year tests.\n\n" +
       "“Graded homework was measuring two things at once,” the head, Dr Anita Rao, said. “Partly what a child " +
@@ -146,7 +146,7 @@ export const enC1P18: SkillExercise[] = [
       { speaker: "Mr Nakamura", text: "We know some of you are worried that pupils will stop doing the work. We share that worry, and we are not going to hide from it." },
       { speaker: "Mr Nakamura", text: "In the trial year groups, completion fell by four points. That is small, but it is not nothing, and we will not describe it as nothing." },
       { speaker: "Mr Nakamura", text: "Completion rates for each year group are to be published on the website every term, starting in December." },
-      { speaker: "Mr Nakamura", text: "If rates in any year group fall below seventy per cent, the head and the governors are due to meet within a month to decide what to do." },
+      { speaker: "Mr Nakamura", text: "If rates in any year group fall below seventy percent, the head and the governors are due to meet within a month to decide what to do." },
       { speaker: "Mr Nakamura", text: "One last thing. A parents' evening on the changes is set for the fourteenth of May. We are about to send invitations." },
       { speaker: "Mr Nakamura", text: "We would much rather hear your doubts there than at the school gate." },
     ],
@@ -180,11 +180,11 @@ export const enC1P18: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "If rates fall below ___ per cent, the head and the governors will meet.",
+        text: "If rates fall below ___ percent, the head and the governors will meet.",
         options: [],
         answer: 0,
         accept: ["seventy", "70"],
-        explain: "„If rates in any year group fall below seventy per cent“ bir ay içinde toplanılacak.",
+        explain: "„If rates in any year group fall below seventy percent“ bir ay içinde toplanılacak.",
       },
       {
         kind: "short_answer",
@@ -271,7 +271,7 @@ export const enC1P18: SkillExercise[] = [
           "at first. But a mark was never the reason I learned anything from homework; the comment was, and the " +
           "mark usually stopped me reading it.\n\n" +
           "The number to watch is the completion rate. The first figures are due to appear in December, and if " +
-          "they fall below seventy per cent the governors are to meet within a month. If you have an opinion, " +
+          "they fall below seventy percent the governors are to meet within a month. If you have an opinion, " +
           "the parents' evening in May is open to students as well.",
       },
     ],

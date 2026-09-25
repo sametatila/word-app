@@ -167,7 +167,7 @@ export const a2U17: SkillExercise[] = [
       { de: "die Eintrittskarte", tr: "giriş bileti", en: "entrance ticket" },
       { de: "bummeln", tr: "gezinmek", en: "to stroll" },
       { de: "der Zoo", tr: "hayvanat bahçesi", en: "zoo" },
-      { de: "die Raststätte", tr: "dinlenme tesisi", en: "motorway services" },
+      { de: "die Raststätte", tr: "dinlenme tesisi", en: "highway services" },
       { de: "sehen", tr: "görmek", en: "to see" },
       { de: "Grad", tr: "derece", en: "degree" },
       { de: "der Ausweis", tr: "kimlik", en: "ID card" },

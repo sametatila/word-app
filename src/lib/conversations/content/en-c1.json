@@ -5556,7 +5556,7 @@
   "chat": {
    "scene": "Bir toplantıda savunduğun görüşe karşı çıkıyorsun ama karşındakiyle çalışmaya devam edeceksin. Teslimi, kusuru görmeyi ve ayrımı imtiyaz sözleriyle kur.",
    "partner": "karşı çıkışı kişisel alan, «demek bana güvenmiyorsun» diyen bir meslektaş",
-   "opening": "So you don't trust my judgement?",
+   "opening": "So you don't trust my judgment?",
    "openingTr": "Demek kararıma güvenmiyorsun?",
    "goal": "Teslimi, kusuru görmeyi ve ayrımı üç ayrı imtiyaz sözüyle kurduysan konuşma başarılı sayılır.",
    "minTurns": 8
@@ -28111,9 +28111,9 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "The programme was funded; the transition rate, less so.",
+     "target": "The program was funded; the transition rate, less so.",
      "accept": [
-      "The centre was funded; the transition rate, less so.",
+      "The center was funded; the transition rate, less so.",
       "The excellence initiative was funded; the transition rate, less so."
      ],
      "hint": [
@@ -28123,7 +28123,7 @@
       },
       {
        "lang": "en",
-       "text": "The programme was funded; the transition rate, less so."
+       "text": "The program was funded; the transition rate, less so."
       },
       {
        "lang": "tr",
@@ -31661,7 +31661,7 @@
   "titleTr": "Etiketi aktarmak",
   "summary": "Etiket iddialarını aktarırken hükmü fiile yüklemeyi öğretir; aktarma fiili iddiayı savunur ya da askıya alır.",
   "minutes": 12,
-  "focusId": "Reporting verbs in food labelling",
+  "focusId": "Reporting verbs in food labeling",
   "vocab": [
    {
     "de": "origin labeling",
@@ -33769,7 +33769,7 @@
      "kind": "produce",
      "target": "The seed replanting right survives as custom, the patent as law.",
      "accept": [
-      "The seed replanting right survives as custom, the licence as law.",
+      "The seed replanting right survives as custom, the license as law.",
       "The seed replanting right survives as custom, genetic engineering as a patent."
      ],
      "hint": [
@@ -36840,7 +36840,7 @@
   "titleTr": "Model ne kadar kesin",
   "summary": "Model sonucunu aktarırken kipin koyduğu mesafeyi öğretir; belirsizliği söylemek modeli zayıflatmaz, güvenilir kılar.",
   "minutes": 12,
-  "focusId": "Modal nuance in climate modelling",
+  "focusId": "Modal nuance in climate modeling",
   "vocab": [
    {
     "de": "feedback loop",
@@ -37700,7 +37700,7 @@
      "kind": "produce",
      "target": "Car-oriented, they said, and rather good for the shops.",
      "accept": [
-      "Car-oriented, they said, and rather good for the centre.",
+      "Car-oriented, they said, and rather good for the center.",
       "Car-oriented, they said, and rather good against the traffic gridlock."
      ],
      "hint": [
@@ -46761,7 +46761,7 @@
   "titleTr": "Ölçülü, tabii",
   "summary": "Alayın son dersi: söylenmeyenin söyleneni nasıl taşıdığını öğretir; alay bir üslup değil, sorumluluğu paylaşan bir araçtır.",
   "minutes": 12,
-  "focusId": "Irony and understatement in everyday judgement",
+  "focusId": "Irony and understatement in everyday judgment",
   "vocab": [
    {
     "de": "measured",

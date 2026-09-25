@@ -37,14 +37,14 @@ export const enB1P17: SkillExercise[] = [
       "later we couldn't see our own boots.\n\n" +
       "My friend Joe had a map, but the fog was so thick that the map was almost useless. We could " +
       "see about three meters in every direction. My phone had no signal, and the battery was at " +
-      "eleven per cent.\n\n" +
+      "eleven percent.\n\n" +
       "What saved us was something Joe had learned in the scouts thirty years earlier. We weren't " +
       "able to see the path, but we were able to see the small piles of stones that walkers leave " +
       "next to it. Joe walked from one pile to the next and waited, and I followed his voice.\n\n" +
       "It took us three hours to come down a path that normally takes one. Twice we lost the " +
       "stones completely. The second time, we managed to find them again only because Joe " +
       "remembered a stream that crossed the path, and we followed the sound of the water.\n\n" +
-      "We reached the car park just as it got dark. We could have called mountain rescue, and some " +
+      "We reached the parking lot just as it got dark. We could have called mountain rescue, and some " +
       "people say we should have. Next time I will. But I also learned why those little piles of " +
       "stones are there, and I have added a stone to every pile I have passed since.",
     questions: [
@@ -238,7 +238,7 @@ export const enB1P17: SkillExercise[] = [
           "group online, and I wanted to thank you properly. " +
           "I was in a difficult situation. I couldn't start the car, and I wasn't able to call anyone, " +
           "because my phone had no signal there. It was raining and completely dark. " +
-          "Thanks to you, I managed to get the car off the road and into the car park of the farm " +
+          "Thanks to you, I managed to get the car off the road and into the parking lot of the farm " +
           "shop, and you drove me to the village, where my phone worked again. In the end I managed " +
           "to reach my brother, and he came to get me an hour later. " +
           "You'll be glad to hear that the car is fine now: it was only the battery. " +

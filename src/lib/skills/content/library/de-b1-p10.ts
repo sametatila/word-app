@@ -116,7 +116,7 @@ export const deB1P10: SkillExercise[] = [
       { de: "sperren", tr: "kapatmak", en: "to close off" },
       { de: "der Anwohner", tr: "mahalle sakini", en: "resident" },
       { de: "die Lieferung", tr: "teslimat", en: "delivery" },
-      { de: "skeptisch", tr: "kuşkulu", en: "sceptical" },
+      { de: "skeptisch", tr: "kuşkulu", en: "skeptical" },
       { de: "wiederholen", tr: "tekrarlamak", en: "to repeat" },
     ],
     minutes: 6,

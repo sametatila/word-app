@@ -69,7 +69,7 @@ We do not charge more per kilo for loose vegetables, although most shops do.`,
             {
               kind: "text",
               id: "m4",
-              genre: "Notice at a community centre",
+              genre: "Notice at a community center",
               genreTr: "Toplum merkezi duyurusu",
               title: "EAT TOGETHER",
               body: `Thursday, 18.30.
@@ -156,11 +156,11 @@ This is not a charity meal and nobody asks you why you came.`,
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
             { key: "a", label: "Loose and Small", body: "A shop that sells by the piece: one carrot, half a loaf, two eggs. Nothing here comes in a bag." },
-            { key: "b", label: "Eat Together", body: "Thursday evenings at the community centre. Bring something or nothing. No membership and no questions." },
+            { key: "b", label: "Eat Together", body: "Thursday evenings at the community center. Bring something or nothing. No membership and no questions." },
             { key: "c", label: "Cook Ahead", body: "A two-hour class on Saturday mornings: six meals for the week, cooked once. Fifteen euros." },
             { key: "d", label: "Recipes for One", body: "A free page from the library every month. Everything is written for a single portion, with nothing left over." },
-            { key: "e", label: "Freezer Advice", body: "A free leaflet at the health centre. What freezes, what does not, and for how long." },
-            { key: "f", label: "Restaurant Card", body: "Twenty per cent off from Monday to Wednesday in fourteen restaurants. Thirty euros a year." },
+            { key: "e", label: "Freezer Advice", body: "A free leaflet at the health center. What freezes, what does not, and for how long." },
+            { key: "f", label: "Restaurant Card", body: "Twenty percent off from Monday to Wednesday in fourteen restaurants. Thirty euros a year." },
             { key: "g", label: "Kitchen Equipment", body: "Small pans, small dishes and one-portion boxes. Everything from four euros." },
             { key: "h", label: "Shopping Delivery", body: "Minimum order forty euros. Tuesday and Friday, between two and six." },
           ],
@@ -236,7 +236,7 @@ I want to be fair to the recipe writers. A book of single portions sells badly, 
 
 What changed things for me was not a recipe at all. It was a second small pan and a decision to cook the same thing on Mondays for a year. The repetition sounds bleak, and it removed the daily decision, which was the part that actually made the evening long.
 
-I still eat alone six nights a week. On the seventh I eat with four other people at the community centre, and nobody there asks anybody why they came.`,
+I still eat alone six nights a week. On the seventh I eat with four other people at the community center, and nobody there asks anybody why they came.`,
               gloss: [
                 { de: "sympathy", tr: "acıma, anlayış", en: "das Mitgefühl" },
                 { de: "a portion", tr: "porsiyon", en: "die Portion" },
@@ -641,7 +641,7 @@ If you are cooking it for one, do not divide it. Make all of it and give half {{
               situation: "Bir öğretmen kursunda ne öğrettiğini anlatıyor.",
               plays: 2,
               segments: [
-                { text: "People come to my class expecting to learn to cook. Most of them can already cook. What they cannot do is buy for one, and that is a shop problem and a maths problem, and I teach both of those instead." },
+                { text: "People come to my class expecting to learn to cook. Most of them can already cook. What they cannot do is buy for one, and that is a shop problem and a math problem, and I teach both of those instead." },
               ],
             },
             {
@@ -721,7 +721,7 @@ If you are cooking it for one, do not divide it. Make all of it and give half {{
               options: ["Cooking techniques", "Recipes for four people", "Shopping and amounts"],
               answer: 2,
               explain:
-                "Öğretmen dersin konusunu adlandırıyor: «that is a shop problem and a maths problem, and I teach both of those instead».",
+                "Öğretmen dersin konusunu adlandırıyor: «that is a shop problem and a math problem, and I teach both of those instead».",
             },
             {
               kind: "mcq",
@@ -740,7 +740,7 @@ If you are cooking it for one, do not divide it. Make all of it and give half {{
               no: 7,
               ref: "a7",
               text: "What is the speaker's point about eating together?",
-              options: ["It does not solve the ordinary evening", "It is impossible in a large city", "It should be organised by the council in every district"],
+              options: ["It does not solve the ordinary evening", "It is impossible in a large city", "It should be organized by the council in every district"],
               answer: 0,
               explain:
                 "Konuşmacı öneriye katılıp sınırını koyuyor: «it is not much help on a Tuesday … Tuesday is where the problem lives».",
@@ -1235,7 +1235,7 @@ They are wrong. The evening is an hour shorter and I eat properly.`,
           format: "speaking",
           goal: "production",
           prompt:
-            "Talk on your own for about one minute. Compare these two ways of eating well when you live alone: cooking something fresh every evening, or cooking once at the weekend for the whole week. Say which you would prefer and why.",
+            "Talk on your own for about one minute. Compare these two ways of eating well when you live alone: cooking something fresh every evening, or cooking once on the weekend for the whole week. Say which you would prefer and why.",
           promptTr:
             "Yaklaşık bir dakika tek başına konuş. Yalnız yaşarken iyi beslenmenin şu iki yolunu karşılaştır: her akşam taze bir şey pişirmek mi, hafta sonu bir kez pişirip bütün haftaya yaymak mı? Hangisini tercih edeceğini ve nedenini söyle.",
           prepSeconds: 60,
@@ -1249,7 +1249,7 @@ They are wrong. The evening is an hour shorter and I eat properly.`,
               { de: "mention one disadvantage of your choice", tr: "Seçtiğin yolun bir olumsuz yanını da söyle" },
             ],
             sample:
-              "Cooking fresh every evening sounds better, but it depends on a thing nobody counts, which is having a decision in you at seven o'clock after work. Cooking once at the weekend removes that decision entirely, and it also removes the shopping problem, because a recipe for six is exactly what the shop is selling. I would cook once at the weekend. The disadvantage is real and it is not about taste: by Thursday you are eating something you chose on Sunday, and the person who chose it was in a much better mood than the person eating it.",
+              "Cooking fresh every evening sounds better, but it depends on a thing nobody counts, which is having a decision in you at seven o'clock after work. Cooking once on the weekend removes that decision entirely, and it also removes the shopping problem, because a recipe for six is exactly what the shop is selling. I would cook once on the weekend. The disadvantage is real and it is not about taste: by Thursday you are eating something you chose on Sunday, and the person who chose it was in a much better mood than the person eating it.",
             criteria: [
               "İki yol da gerçekten karşılaştırıldı mı?",
               "Karşılaştırma yapıları kullanıldı mı? (it depends on, entirely, by Thursday)",
@@ -1265,7 +1265,7 @@ They are wrong. The evening is an hour shorter and I eat properly.`,
           format: "speaking",
           goal: "interaction",
           prompt:
-            "Our community centre can add one thing for people who live alone. Talk with me about the options and decide together.",
+            "Our community center can add one thing for people who live alone. Talk with me about the options and decide together.",
           promptTr:
             "Toplum merkezimiz yalnız yaşayanlar için tek bir şey ekleyebiliyor. Seçenekleri benimle konuş ve birlikte karar ver.",
           prepSeconds: 30,
@@ -1286,7 +1286,7 @@ They are wrong. The evening is an hour shorter and I eat properly.`,
               { de: "reach a decision together", tr: "Birlikte bir karara varmak" },
             ],
             sample:
-              "I would start with the second evening meal, because it is the only option that reaches somebody who is not going to organise anything for themselves. You are right that most people can cook, and I want to concede that, because it is the strongest argument against the class; what a class actually teaches is buying, and that could be one evening rather than eight. So let us put forward the second meal, and ask for one shopping evening in the autumn.",
+              "I would start with the second evening meal, because it is the only option that reaches somebody who is not going to organize anything for themselves. You are right that most people can cook, and I want to concede that, because it is the strongest argument against the class; what a class actually teaches is buying, and that could be one evening rather than eight. So let us put forward the second meal, and ask for one shopping evening in the autumn.",
             criteria: [
               "Görüş gerekçelendirildi mi?",
               "İtiraza doğrudan mı karşılık verildi?",

@@ -306,7 +306,7 @@ export const deB1P20: SkillExercise[] = [
       { de: "sparen", tr: "biriktirmek", en: "to save" },
       { de: "das Wörterbuch", tr: "sözlük", en: "dictionary" },
       { de: "verlassen", tr: "çıkmak", en: "to leave" },
-      { de: "üben", tr: "alıştırma yapmak", en: "to practise" },
+      { de: "üben", tr: "alıştırma yapmak", en: "to practice" },
       { de: "fragen", tr: "sormak", en: "to ask" },
     ],
     minutes: 9,

@@ -197,7 +197,7 @@ export const EN_A2_04: MockPaper = {
               kind: "match",
               id: "en-a2-04-l2-10",
               no: 10,
-              text: "Halide would like to meet other people at the weekend and learn something with a computer.",
+              text: "Halide would like to meet other people on the weekend and learn something with a computer.",
               answer: "b",
               explain:
                 "İlan üç ölçütü birden karşılıyor: hafta sonu («Every Saturday»), bilgisayar («Bring a laptop») ve insan («three helpers walk around the room»). Fotoğraf yürüyüşü (d) de hafta sonu ve toplu ama bilgisayarla değil.",
@@ -375,7 +375,7 @@ The teacher explained everything twice, and she answered all {{21}} questions.
 
 The room is on the fourth floor and there is no lift, {{22}} the stairs are not a problem for me.
 
-The course was cheaper {{23}} the one in the city centre, and the group was smaller.
+The course was cheaper {{23}} the one in the city center, and the group was smaller.
 
 I will do the second part {{24}} the spring.`,
             },
@@ -855,7 +855,7 @@ Do the level test:       {{10}}`,
               situation: "Beşinci konuşmacı kursun parasından söz ediyor.",
               plays: 2,
               segments: [
-                { text: "I worked in a shop at the weekend and the money went straight to the course. It was two hard years, but nobody paid it for me." },
+                { text: "I worked in a shop on the weekend and the money went straight to the course. It was two hard years, but nobody paid it for me." },
               ],
             },
           ],
@@ -975,7 +975,7 @@ Milos`,
               { de: "Say who or what helped you.", tr: "Sana kimin ya da neyin yardım ettiğini söyle." },
               { de: "Say why it was useful.", tr: "Neden işe yaradığını söyle." },
             ],
-            sample: `Two years ago I learned to repair bikes. My uncle had an old shop in our street and I went there every Saturday. First I only watched him, then he gave me the small jobs. Now I repair my own bike and the bikes of my friends. I save money, and I am never late for work because of a flat tyre.`,
+            sample: `Two years ago I learned to repair bikes. My uncle had an old shop in our street and I went there every Saturday. First I only watched him, then he gave me the small jobs. Now I repair my own bike and the bikes of my friends. I save money, and I am never late for work because of a flat tire.`,
             criteria: [
               "Üç içerik noktasının üçü de var mı?",
               "Geçmiş zaman doğru kullanıldı mı? Düzensiz fiiller (had, went, gave) doğru mu?",

@@ -348,7 +348,7 @@ export const enC1U10: SkillExercise[] = [
       { de: "hedge", tr: "çekince" },
       { de: "certainty", tr: "kesinlik" },
       { de: "fourth", tr: "dördüncü" },
-      { de: "defence", tr: "savunma" },
+      { de: "defense", tr: "savunma" },
       { de: "a scene", tr: "sahne" },
       { de: "an ordinary thing", tr: "sıradan şey" },
       { de: "a field", tr: "alan" },
@@ -369,7 +369,7 @@ export const enC1U10: SkillExercise[] = [
       { speaker: "Aylin", text: "The age of a reading is not evidence for it. That is the shortest rule in this seminar and the hardest one to keep." },
       { speaker: "Aylin", text: "A culture may hand down its exoticism and ostracize the doubter. The same two moves, one page higher, and now they are about people rather than papers." },
       { speaker: "Aylin", text: "What is handed down is cheap and what is asked of the doubter is expensive, and the difference in price is the whole of how a reading survives." },
-      { speaker: "Aylin", text: "So when you write, mark the ordinary thing as ordinary. It costs one word and it is the only defence a paper has against its own field." },
+      { speaker: "Aylin", text: "So when you write, mark the ordinary thing as ordinary. It costs one word and it is the only defense a paper has against its own field." },
       { speaker: "Aylin", text: "And when you read, find the first paper in the chain. It is usually shorter than you expect and it usually says less." },
     ],
     questions: [

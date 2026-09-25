@@ -274,7 +274,7 @@ export const enC1P3: SkillExercise[] = [
           "Anybody who works a standard shift can therefore reach it only by taking time off, which is to say " +
           "that the people least able to lose an hour's pay are the people asked to lose it most often.\n\n" +
           "The figures suggest, though they do not prove, that this is not marginal. In the last published " +
-          "report, thirty-one per cent of appointments were not kept, and the highest rate was for the earliest " +
+          "report, thirty-one percent of appointments were not kept, and the highest rate was for the earliest " +
           "slots. It may well be that some of those absences reflect forgetfulness rather than work; the report " +
           "does not distinguish the two, and it should.\n\n" +
           "The objection is a real one: staff are entitled to a normal working life, and a late evening for the " +

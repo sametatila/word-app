@@ -75,7 +75,7 @@ export const enC1U16: SkillExercise[] = [
       { de: "separate", tr: "ayrı" },
       { de: "a workshop", tr: "atölye" },
       { de: "fixed expressions", tr: "kalıplaşmış deyimler" },
-      { de: "memorised", tr: "ezberlenen" },
+      { de: "memorized", tr: "ezberlenen" },
       { de: "productive", tr: "üretken" },
       { de: "understood", tr: "anlaşılan" },
       { de: "a test", tr: "sınama" },
@@ -96,7 +96,7 @@ export const enC1U16: SkillExercise[] = [
     text:
       "The barren fields lie fallow; the dilapidated barns do not. Two words in the middle of that line are doing something English does constantly and never explains.\n" +
       "„Lie fallow.“ A verb and an adjective standing side by side with nothing between them. The verb is not „be“ and it has not lost its meaning: the fields are lying, in the sense of being low and spread out, and „fallow“ says what state they are in while they do it. Posture in the verb, state in the adjective, and the two are separate words.\n" +
-      "English keeps a whole workshop of these. Stand empty, run dry, fall silent, come loose, go hungry, lie idle. They are not fixed expressions to be memorised one at a time. The pattern is productive, and a writer can make a new one this afternoon — stand vacant, fall quiet — and be understood on the first reading.\n" +
+      "English keeps a whole workshop of these. Stand empty, run dry, fall silent, come loose, go hungry, lie idle. They are not fixed expressions to be memorized one at a time. The pattern is productive, and a writer can make a new one this afternoon — stand vacant, fall quiet — and be understood on the first reading.\n" +
       "Two small tests show that the two words really are two. An adverb can be pushed between them: the fields lie completely fallow. And a degree word can be put in front of the adjective: the barns stand almost empty. Neither of those would be possible inside a single word.\n" +
       "Now the measurement, and this one runs the opposite way from the one this course usually finds. German takes the same two ideas and fuses them into one verb: written together, conjugated together, and listed in a dictionary as a single entry. The same is true of standing empty and of running dry.\n" +
       "So here it is English that keeps the pieces apart and German that compounds, which is the reverse of what happens with nouns, where German builds one word out of four and English keeps the four. The habit is not a property of a language as a whole. It belongs to a class, and this class goes the other way.\n" +
@@ -117,10 +117,10 @@ export const enC1U16: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The pattern is productive rather than a list to memorise.",
+        text: "The pattern is productive rather than a list to memorize.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„They are not fixed expressions to be memorised one at a time.“",
+        explain: "„They are not fixed expressions to be memorized one at a time.“",
       },
       {
         kind: "gapfill",
@@ -176,7 +176,7 @@ export const enC1U16: SkillExercise[] = [
       { de: "a line on a map", tr: "haritadaki çizgi" },
       { de: "a crop", tr: "ekin" },
       { de: "a council", tr: "belediye meclisi" },
-      { de: "a neighbour", tr: "komşu" },
+      { de: "a neighbor", tr: "komşu" },
       { de: "a boundary", tr: "sınır" },
       { de: "redrawn", tr: "yeniden çizilen" },
       { de: "a machine", tr: "makine" },
@@ -197,7 +197,7 @@ export const enC1U16: SkillExercise[] = [
     text:
       "In the plan it is land consumption; in the village, an arable field. Two rooms, two words, one area of ground, and the second half of the line has lost its verb because the shape does not need it.\n" +
       "„Land consumption“ is a number in a column. It counts hectares and it counts them against a target, and nothing in the word says what is growing on them. „An arable field“ has a crop in it and usually a family, and it has a line on a map that somebody's grandfather can still point to.\n" +
-      "What the council calls land consolidation, the neighbour calls land speculation. Here the two names are in one sentence with their owners attached, which is the honest way to write a disagreement and the rarest.\n" +
+      "What the council calls land consolidation, the neighbor calls land speculation. Here the two names are in one sentence with their owners attached, which is the honest way to write a disagreement and the rarest.\n" +
       "Both words are about boundaries being redrawn. The first says the new boundaries fit the machines. The second says somebody knew the new price before the vote, and the two claims can both be true of the same afternoon.\n" +
       "A land use conflict is a dispute; soil sealing is a fact. And this is the line the whole lesson is built to reach, because it separates two things that a meeting will treat as one.\n" +
       "A dispute has sides and can be settled. Somebody wins, somebody is paid, and the file closes. Soil sealing is what happens to ground with concrete on it: the rain runs off instead of going down, and it will do that next year and the year after whatever the meeting decided.\n" +
@@ -238,7 +238,7 @@ export const enC1U16: SkillExercise[] = [
         answer: 0,
         items: [
           "In the plan it is land consumption; in the village, an arable field.",
-          "What the council calls land consolidation, the neighbour calls land speculation.",
+          "What the council calls land consolidation, the neighbor calls land speculation.",
           "A land use conflict is a dispute; soil sealing is a fact.",
           "Which numbers can a later decision reverse?",
         ],

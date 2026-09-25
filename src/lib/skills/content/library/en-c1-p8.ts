@@ -48,7 +48,7 @@ export const enC1P8: SkillExercise[] = [
       "accept today.” It is on the wall, in the same type size as everything else, " +
       "and it is not repeated anywhere afterwards.\n\n" +
       "That single decision carries the whole exhibition, and it is worth saying why it works. " +
-      "A museum that apologises in every label teaches visitors to stop reading labels. " +
+      "A museum that apologizes in every label teaches visitors to stop reading labels. " +
       "The Whitfield says it once, clearly, and then does something more demanding: " +
       "it tells you, object by object, what is actually known about how each piece arrived.\n\n" +
       "Roughly a fifth of the wall texts end with a sentence beginning “The record is " +
@@ -71,7 +71,7 @@ export const enC1P8: SkillExercise[] = [
         text: "What is unusual about the opening sentence of the display?",
         options: [
           "It admits the acquisitions would not be accepted today, once and plainly.",
-          "It apologises repeatedly throughout.",
+          "It apologizes repeatedly throughout.",
           "It is printed in much larger type.",
         ],
         answer: 0,

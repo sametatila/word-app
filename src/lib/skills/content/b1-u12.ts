@@ -172,7 +172,7 @@ export const b1U12: SkillExercise[] = [
     minutes: 4,
     gloss: [
       { de: "absagen", tr: "iptal etmek", en: "to cancel" },
-      { de: "ausfallen", tr: "iptal olmak", en: "to be cancelled" },
+      { de: "ausfallen", tr: "iptal olmak", en: "to be canceled" },
       { de: "bestätigen", tr: "teyit etmek", en: "to confirm" },
       { de: "der Feiertag", tr: "resmî tatil", en: "public holiday" },
       { de: "der Pass", tr: "pasaport", en: "passport" },

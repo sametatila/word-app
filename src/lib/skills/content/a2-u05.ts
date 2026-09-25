@@ -224,7 +224,7 @@ export const a2U05: SkillExercise[] = [
       { de: "weitermachen", tr: "devam etmek", en: "to carry on" },
       { de: "versuchen", tr: "denemek", en: "to try" },
       { de: "bewundern", tr: "hayran olmak", en: "to admire" },
-      { de: "geschickt", tr: "becerikli", en: "skilful" },
+      { de: "geschickt", tr: "becerikli", en: "skillful" },
       { de: "die Trainerin", tr: "kadın antrenör", en: "female coach" },
       { de: "besonders", tr: "özellikle", en: "especially" },
     ],

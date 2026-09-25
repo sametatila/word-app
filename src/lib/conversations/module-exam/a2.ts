@@ -70,7 +70,7 @@ export const A2_EXAMS: ModuleExamPlan[] = [
       ],
       minWords: 50,
       phrases: [
-        { de: "Letzten Sommer bin ich … gefahren.", tr: "Geçen yaz …'e gittim.", en: "Last summer I travelled to …" },
+        { de: "Letzten Sommer bin ich … gefahren.", tr: "Geçen yaz …'e gittim.", en: "Last summer I traveled to …" },
         { de: "Zuerst … Danach …", tr: "Önce … Ardından …", en: "First … After that …" },
         { de: "Es hat … gedauert.", tr: "… sürdü.", en: "It took …" },
         { de: "Das Wetter war …", tr: "Hava …'ydı.", en: "The weather was …" },
@@ -240,7 +240,7 @@ export const A2_EXAMS: ModuleExamPlan[] = [
     canDo: [
       { de: "Ich kann sagen, wem ich etwas gebe oder zeige.", tr: "Bir şeyi kime verdiğimi ya da gösterdiğimi söyleyebiliyorum.", en: "I can say who I give or show something to." },
       { de: "Ich kann sagen, wo etwas ist und wohin es kommt.", tr: "Bir şeyin nerede olduğunu ve nereye konacağını söyleyebiliyorum.", en: "I can say where something is and where it goes." },
-      { de: "Ich kann meine Nachbarschaft beschreiben.", tr: "Mahallemi tarif edebiliyorum.", en: "I can describe my neighbourhood." },
+      { de: "Ich kann meine Nachbarschaft beschreiben.", tr: "Mahallemi tarif edebiliyorum.", en: "I can describe my neighborhood." },
       { de: "Ich kann um Hilfe bitten und Hilfe anbieten.", tr: "Yardım isteyebiliyor ve teklif edebiliyorum.", en: "I can ask for and offer help." },
       { de: "Ich kann mich höflich über Lärm beschweren.", tr: "Gürültüden kibarca şikâyet edebiliyorum.", en: "I can complain politely about noise." },
     ],
@@ -289,7 +289,7 @@ export const A2_EXAMS: ModuleExamPlan[] = [
         { de: "Gegenüber von meinem Haus ist …", tr: "Evimin karşısında … var", en: "Opposite my house there is …" },
         { de: "Neben der Schule gibt es …", tr: "Okulun yanında … var", en: "Next to the school there is …" },
         { de: "Wenn ich … brauche, …", tr: "…'e ihtiyacım olunca …", en: "When I need …, …" },
-        { de: "Meine Nachbarn sind sehr …", tr: "Komşularım çok …", en: "My neighbours are very …" },
+        { de: "Meine Nachbarn sind sehr …", tr: "Komşularım çok …", en: "My neighbors are very …" },
         { de: "Das stört mich nicht.", tr: "Bu beni rahatsız etmiyor.", en: "That doesn't bother me." },
       ],
       sample:
@@ -530,7 +530,7 @@ export const A2_EXAMS: ModuleExamPlan[] = [
       { de: "Ich kann eine Feier planen und Aufgaben verteilen.", tr: "Bir kutlama planlayıp görev paylaşabiliyorum.", en: "I can plan a celebration and divide tasks." },
       { de: "Ich kann sagen, was ich jemandem schenke.", tr: "Kime ne hediye ettiğimi söyleyebiliyorum.", en: "I can say what I give someone as a present." },
       { de: "Ich kann eine Einladung absagen und einen Grund nennen.", tr: "Bir daveti sebep göstererek reddedebiliyorum.", en: "I can decline an invitation and give a reason." },
-      { de: "Ich kann mich entschuldigen und Komplimente machen.", tr: "Özür dileyebiliyor ve iltifat edebiliyorum.", en: "I can apologise and pay compliments." },
+      { de: "Ich kann mich entschuldigen und Komplimente machen.", tr: "Özür dileyebiliyor ve iltifat edebiliyorum.", en: "I can apologize and pay compliments." },
     ],
     listening: {
       title: "Wir planen eine Party",

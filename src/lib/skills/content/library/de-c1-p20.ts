@@ -208,7 +208,7 @@ export const deC1P20: SkillExercise[] = [
     intro: "Bir demiryolu şirketine şikâyet yazıyorsun: önce iki cümle kur, sonra öfkeyi değil olguları öne çıkaran ve talebini net söyleyen bir e-posta yaz.",
     gloss: [
       { de: "die Buchungsnummer", tr: "rezervasyon numarası", en: "booking number" },
-      { de: "ausfallen", tr: "iptal olmak", en: "to be cancelled" },
+      { de: "ausfallen", tr: "iptal olmak", en: "to be canceled" },
       { de: "die Übernachtung", tr: "konaklama", en: "overnight stay" },
       { de: "der Beleg", tr: "makbuz", en: "receipt" },
       { de: "die Erstattung", tr: "geri ödeme", en: "refund" },
@@ -242,7 +242,7 @@ export const deC1P20: SkillExercise[] = [
         minWords: 150,
         phrases: [
           { de: "Unter der Buchungsnummer … hatte ich … gebucht.", tr: "… numaralı rezervasyonla … ayırtmıştım.", en: "Under booking number … I had booked …" },
-          { de: "Der Zug fiel ersatzlos aus, sodass …", tr: "Tren yerine başka bir sefer konmadan iptal edildi, bu yüzden …", en: "The train was cancelled without replacement, so that …" },
+          { de: "Der Zug fiel ersatzlos aus, sodass …", tr: "Tren yerine başka bir sefer konmadan iptal edildi, bu yüzden …", en: "The train was canceled without replacement, so that …" },
           { de: "Dadurch sind mir folgende Kosten entstanden: …", tr: "Bu yüzden şu masraflarım oldu: …", en: "This caused me the following costs: …" },
           { de: "Gemäß den Fahrgastrechten steht mir … zu.", tr: "Yolcu haklarına göre … hakkım var.", en: "Under passenger rights I am entitled to …" },
           { de: "Ich bitte Sie, den Betrag bis zum … zu erstatten.", tr: "Tutarı … tarihine kadar geri ödemenizi rica ediyorum.", en: "I ask you to refund the amount by …" },

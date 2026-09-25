@@ -132,9 +132,9 @@ export const enB1U07: SkillExercise[] = [
     minutes: 7,
     text:
       "By the time I arrived, the shop had closed. That is the short version and it hides the interesting part.\n" +
-      "I had left my keys at home. I realised it at the bus stop, which is eight minutes from the door and eleven minutes back, so I ran.\n" +
+      "I had left my keys at home. I realized it at the bus stop, which is eight minutes from the door and eleven minutes back, so I ran.\n" +
       "The bag was on the table where I had put it the night before. Brown leather, one broken handle, a label with my name on it from a course in March. I took it and ran again.\n" +
-      "On the bus I suddenly realised the second problem: the bag was the wrong one. Same shape, same size, same material. My flatmate had bought hers in the same shop.\n" +
+      "On the bus I suddenly realized the second problem: the bag was the wrong one. Same shape, same size, same material. My flatmate had bought hers in the same shop.\n" +
       "Luckily the man who found my bag on the bus the week before had left his number inside the front pocket. I called him from the shop door at two minutes past six, and he laughed before I finished the sentence.\n" +
       "He had had the same morning in April. His keys had been in the bag he did not take.\n" +
       "Finally I got home at seven. The mess on the table was the same mess. I put both bags in different rows on the shelf, and I wrote on one of them: not yours.",
@@ -143,7 +143,7 @@ export const enB1U07: SkillExercise[] = [
         text: "Why did the writer go back home?",
         options: ["the keys were at home", "the shop had closed", "the bag was broken"],
         answer: 0,
-        explain: "„I had left my keys at home. I realised it at the bus stop…“",
+        explain: "„I had left my keys at home. I realized it at the bus stop…“",
       },
       {
         text: "What was wrong with the bag on the bus?",

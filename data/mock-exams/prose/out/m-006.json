@@ -95,7 +95,7 @@
  { "tr": "Bir beden büyüğünü iste.", "kind": "exchange.hint", "en": "Ask for the next size up." },
  { "tr": "«Brot» için bir soru kur.", "kind": "exchange.hint", "en": "Form a question about «Brot»." },
  { "tr": "«Zeit» için bir soru kur.", "kind": "exchange.hint", "en": "Form a question about «Zeit»." },
- { "tr": "Komşularını kısaca anlat.", "kind": "exchange.hint", "en": "Describe your neighbours briefly." },
+ { "tr": "Komşularını kısaca anlat.", "kind": "exchange.hint", "en": "Describe your neighbors briefly." },
  { "tr": "Somut bir durumla açıkla.", "kind": "exchange.hint", "en": "Explain with a concrete situation." },
  { "tr": "Taşımak için yardım iste.", "kind": "exchange.hint", "en": "Ask for help with carrying it." },
  { "tr": "Taşınma için yardım iste.", "kind": "exchange.hint", "en": "Ask for help with the move." },

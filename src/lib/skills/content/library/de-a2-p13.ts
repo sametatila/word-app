@@ -106,7 +106,7 @@ export const deA2P13: SkillExercise[] = [
     gloss: [
       { de: "die Fahrschule", tr: "sürücü kursu", en: "driving school" },
       { de: "die Prüfung", tr: "sınav", en: "exam" },
-      { de: "ausfallen", tr: "iptal olmak", en: "to be cancelled" },
+      { de: "ausfallen", tr: "iptal olmak", en: "to be canceled" },
       { de: "der Personalausweis", tr: "kimlik kartı", en: "ID card" },
       { de: "die Fahrstunde", tr: "direksiyon dersi", en: "driving lesson" },
       { de: "zurückrufen", tr: "geri aramak", en: "to call back" },

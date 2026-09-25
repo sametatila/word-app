@@ -7,7 +7,7 @@
  {
   "tr": "Mahalleni anlat ve tamirciye sor.",
   "kind": "intro",
-  "en": "Describe your neighbourhood and ask the mechanic."
+  "en": "Describe your neighborhood and ask the mechanic."
  },
  {
   "tr": "Bir iş ilanı. Ne zorunlu, ne değil?",
@@ -47,7 +47,7 @@
  {
   "tr": "Bir mahalle anlatılıyor. Nesi iyi, nesi eksik?",
   "kind": "intro",
-  "en": "A neighbourhood is described. What is good and what is missing?"
+  "en": "A neighborhood is described. What is good and what is missing?"
  },
  {
   "tr": "İzin mektubu. Üç rica, üç ayrı kibarlık basamağı.",
@@ -80,9 +80,9 @@
   "en": "The floor goes with „on the … floor“; with an ordinal „the“ is required."
  },
  {
-  "tr": "„It's quieter than the city centre, but it isn't boring.“",
+  "tr": "„It's quieter than the city center, but it isn't boring.“",
   "kind": "explain",
-  "en": "„It's quieter than the city centre, but it isn't boring.“"
+  "en": "„It's quieter than the city center, but it isn't boring.“"
  },
  {
   "tr": "Çöpü kutuya koymak sakine, dışarı çıkarmak görevliye ait.",

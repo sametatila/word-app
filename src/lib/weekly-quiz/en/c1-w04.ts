@@ -51,7 +51,7 @@ export const EN_C1_W04: QuizWeek = {
       genreTr: "Söyleşi programı",
       plays: 2,
       segments: [
-        { speaker: "Host", text: "Mr Novak, was this a technical failure or an organisational one?" },
+        { speaker: "Host", text: "Mr Novak, was this a technical failure or an organizational one?" },
         { speaker: "Novak", text: "Technically it was trivial. Organisationally it was the real problem." },
         { speaker: "Host", text: "You will have to explain that." },
         { speaker: "Novak", text: "The test was planned. What was not settled was who would carry it out." },

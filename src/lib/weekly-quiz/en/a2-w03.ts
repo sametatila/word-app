@@ -36,7 +36,7 @@ export const EN_A2_W03: QuizWeek = {
       genreTr: "Bilgi sayfası",
       title: "How to get to the Summer Concert",
       body:
-        "The concert is on Saturday and Sunday in Green Park, on the other side of the river from the city centre. " +
+        "The concert is on Saturday and Sunday in Green Park, on the other side of the river from the city center. " +
         "The easiest way to get there is by tram. Take tram number 3 from Central Station and get off at Park Road. It isn't far. " +
         "Please don't come by car. There are no parking spaces near the park, and the roads around it are closed on Saturday. " +
         "If you want to walk, go across the bridge, turn left and follow the river. It's a nice walk, but it takes almost an hour. " +
@@ -88,7 +88,7 @@ export const EN_A2_W03: QuizWeek = {
         "There is no parking, and the roads are closed.",
         "The tram is cheaper than the car.",
         "The concert is on the other side of the river.",
-        "It takes almost an hour from the city centre.",
+        "It takes almost an hour from the city center.",
       ],
       answer: 0,
       why: "Gerekçe `Please don't come by car` cümlesinin hemen arkasında. Öteki şıklar ya metinde yok (tramvay ile arabanın fiyatı karşılaştırılmıyor) ya da arabayla ilgisiz (yürüyüşün süresi); metinden tanıdık gelen bir parçayı soruya bağlamadan seçmek sık hata.",
@@ -239,7 +239,7 @@ export const EN_A2_W03: QuizWeek = {
     {
       id: "en-a2-w03-v2",
       block: "vocab",
-      stem: "My brother is a bus driver. He ___ a bus in the city centre.",
+      stem: "My brother is a bus driver. He ___ a bus in the city center.",
       options: ["rides", "drives", "goes", "takes"],
       answer: 1,
       why: "Aracı kullanan kişi `drive`, yolcu olarak binen `ride` ya da `take`. `ride` Türkçede 'at sürmek'teki gibi 'sürmek' diye anlaşıldığı için sürücü cümlesinde seçiliyor.",

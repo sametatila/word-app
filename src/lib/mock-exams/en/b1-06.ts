@@ -73,7 +73,7 @@ export const EN_B1_06: MockPaper = {
             {
               kind: "text",
               id: "m5",
-              genre: "Notice in a community centre",
+              genre: "Notice in a community center",
               genreTr: "Toplum merkezi duyurusu",
               title: "Rooms for groups",
               body: `Rooms are free for groups of four or more. One person books, and that person is responsible for the key. Music until nine only. If nobody comes twice in a row, the room goes to another group.`,
@@ -188,7 +188,7 @@ export const EN_B1_06: MockPaper = {
               kind: "match",
               id: "en-b1-06-l2-9",
               no: 9,
-              text: "Viggo works nights and can only practise at four in the morning.",
+              text: "Viggo works nights and can only practice at four in the morning.",
               answer: "d",
               explain:
                 "İlan erişimi saatten bağımsız kılıyor: «the door opens with a code, day or night». Öteki ilanların hepsi belirli bir güne ve saate bağlı.",
@@ -218,11 +218,11 @@ export const EN_B1_06: MockPaper = {
               genre: "Newspaper column",
               genreTr: "Gazete köşe yazısı",
               title: "I am still bad at the piano and I am not stopping",
-              body: `I started the piano at thirty-eight. I am now forty-three and I would describe my playing as poor, which is not modesty; it is a fair description that my teacher would recognise.
+              body: `I started the piano at thirty-eight. I am now forty-three and I would describe my playing as poor, which is not modesty; it is a fair description that my teacher would recognize.
 
 The first thing nobody tells you is how much of adult learning is about the story you tell yourself. A child who plays badly is a child learning the piano. An adult who plays badly is an adult who is bad at the piano, and the difference is entirely in the sentence.
 
-The second thing is the arithmetic of time. I practise twenty minutes a day, which is nothing next to a conservatory student and everything next to somebody who intends to start in the spring. In five years those twenty minutes have added up to about six hundred hours.
+The second thing is the arithmetic of time. I practice twenty minutes a day, which is nothing next to a conservatory student and everything next to somebody who intends to start in the spring. In five years those twenty minutes have added up to about six hundred hours.
 
 I should be honest about the limits. I will not play in public, I do not enjoy playing for other people, and the pieces I can manage are the ones written for children. If I had started at eighteen, I would probably be no better, because the problem was never the age.
 
@@ -260,7 +260,7 @@ However, I have started to hear things I could not hear before, and that has cha
               id: "en-b1-06-l3-13",
               no: 13,
               text: "What is her point about twenty minutes a day?",
-              options: ["It is small but it accumulates", "It is too little to be useful", "It is more than a student practises", "It is all she can find in a day"],
+              options: ["It is small but it accumulates", "It is too little to be useful", "It is more than a student practices", "It is all she can find in a day"],
               answer: 0,
               explain:
                 "Metin hesabı yapıyor: «In five years those twenty minutes have added up to about six hundred hours». Konservatuvar öğrencisinin yanında hiçbir şey, ama hiç başlamayanın yanında her şey.",
@@ -280,7 +280,7 @@ However, I have started to hear things I could not hear before, and that has cha
               id: "en-b1-06-l3-15",
               no: 15,
               text: "What has changed for her?",
-              options: ["She can play pieces for adults", "She hears more when she listens", "She practises longer than before", "She has stopped comparing herself to others"],
+              options: ["She can play pieces for adults", "She hears more when she listens", "She practices longer than before", "She has stopped comparing herself to others"],
               answer: 1,
               explain:
                 "Son paragraf: «I have started to hear things I could not hear before, and that has changed how I listen to everything else». Çalabildiği parçalar hâlâ çocuklar için yazılmış olanlar.",
@@ -601,7 +601,7 @@ It is the only piece of advice from that year {{30}} I still follow.`,
               situation: "Provanın başında duyuru yapılıyor.",
               plays: 2,
               segments: [
-                { text: "Before we start: the concert is on the fourteenth, not the seventh. The hall was double-booked. Everything else stays; same time, same programme. If you told your family the seventh, tell them again." },
+                { text: "Before we start: the concert is on the fourteenth, not the seventh. The hall was double-booked. Everything else stays; same time, same program. If you told your family the seventh, tell them again." },
               ],
             },
             {
@@ -623,7 +623,7 @@ It is the only piece of advice from that year {{30}} I still follow.`,
               situation: "Bir eğitmen yetişkinlere ders verenlere sesleniyor.",
               plays: 2,
               segments: [
-                { text: "The most common mistake I see in a first year of teaching adults is choosing pieces that are too easy. It sounds kind and it is not. An adult who plays a children's song correctly feels nothing; give them something slightly too hard and they will practise." },
+                { text: "The most common mistake I see in a first year of teaching adults is choosing pieces that are too easy. It sounds kind and it is not. An adult who plays a children's song correctly feels nothing; give them something slightly too hard and they will practice." },
               ],
             },
           ],
@@ -678,10 +678,10 @@ It is the only piece of advice from that year {{30}} I still follow.`,
               no: 5,
               ref: "a5",
               text: "What has changed?",
-              options: ["The programme", "The time", "The date"],
+              options: ["The program", "The time", "The date"],
               answer: 2,
               explain:
-                "Duyuru tarihi düzeltiyor: «the concert is on the fourteenth, not the seventh». Saat ve program için «same time, same programme» deniyor.",
+                "Duyuru tarihi düzeltiyor: «the concert is on the fourteenth, not the seventh». Saat ve program için «same time, same program» deniyor.",
             },
             {
               kind: "mcq",
@@ -689,7 +689,7 @@ It is the only piece of advice from that year {{30}} I still follow.`,
               no: 6,
               ref: "a6",
               text: "What is the speaker doing?",
-              options: ["Agreeing to help for part of the day", "Asking somebody else to take her place", "Cancelling the rehearsal"],
+              options: ["Agreeing to help for part of the day", "Asking somebody else to take her place", "Canceling the rehearsal"],
               answer: 0,
               explain:
                 "Konuşmacı geliyor ama sınır koyuyor: «I can bring the amplifier and set up the room, but I have to leave at three». Goran yerine geçmiyor, sona kadar KALIYOR.",
@@ -703,7 +703,7 @@ It is the only piece of advice from that year {{30}} I still follow.`,
               options: ["Choosing very easy pieces at the beginning", "Choosing pieces that stretch the learner", "Letting the learner choose"],
               answer: 1,
               explain:
-                "Öğüt son cümlede: «give them something slightly too hard and they will practise». Kolay parça seçmek tam olarak eleştirilen hata; seçimi öğrenciye bırakmak hiç geçmiyor.",
+                "Öğüt son cümlede: «give them something slightly too hard and they will practice». Kolay parça seçmek tam olarak eleştirilen hata; seçimi öğrenciye bırakmak hiç geçmiyor.",
             },
           ],
         },
@@ -764,7 +764,7 @@ It is the only piece of advice from that year {{30}} I still follow.`,
               situation: "İki meslektaş çalışma alışkanlığını konuşuyor.",
               plays: 2,
               segments: [
-                { speaker: "Viggo", text: "Do you practise every day?" },
+                { speaker: "Viggo", text: "Do you practice every day?" },
                 { speaker: "Hedda", text: "Twenty minutes, before work." },
                 { speaker: "Viggo", text: "That is not much." },
                 { speaker: "Hedda", text: "It is not. It is also five days a week more than I did for ten years." },
@@ -839,7 +839,7 @@ It is the only piece of advice from that year {{30}} I still follow.`,
               no: 11,
               ref: "b4",
               text: "What does Hedda mean?",
-              options: ["A small habit is better than none", "Twenty minutes is enough for anybody", "She wants to practise more"],
+              options: ["A small habit is better than none", "Twenty minutes is enough for anybody", "She wants to practice more"],
               answer: 0,
               explain:
                 "Hedda azlığı kabul edip karşılaştırmayı değiştiriyor: «It is also five days a week more than I did for ten years». Ölçü, ideal değil, önceki hâli.",
@@ -985,13 +985,13 @@ New players sit in the:     {{19}} row`,
               plays: 2,
               segments: [
                 { speaker: "Host", text: "Tuva, you started the cello at forty-one. People assume there was a moment." },
-                { speaker: "Tuva", text: "They do, and it makes a better story than the truth. There was no illness and no birthday. A neighbour moved out and left a cello in the hall with a note saying anybody could have it, and nobody else took it for a week." },
+                { speaker: "Tuva", text: "They do, and it makes a better story than the truth. There was no illness and no birthday. A neighbor moved out and left a cello in the hall with a note saying anybody could have it, and nobody else took it for a week." },
                 { speaker: "Host", text: "Was the money the hardest part?" },
-                { speaker: "Tuva", text: "No. The hardest part was the noise. I live in a flat with thin walls, and for the first year I practised with a towel under the strings, which teaches you nothing about sound. I told nobody I was learning, and that was the real cost." },
+                { speaker: "Tuva", text: "No. The hardest part was the noise. I live in a flat with thin walls, and for the first year I practiced with a towel under the strings, which teaches you nothing about sound. I told nobody I was learning, and that was the real cost." },
                 { speaker: "Host", text: "How long before you told anybody?" },
                 { speaker: "Tuva", text: "Fourteen months. I made a plan, which is what people like me do instead of starting. The plan said tell somebody at six months, and I ignored it twice." },
                 { speaker: "Host", text: "What changed?" },
-                { speaker: "Tuva", text: "A neighbour knocked. I assumed it was a complaint. She said she had heard the same eight bars for three weeks and wanted to know what the piece was. I have not practised with a towel since." },
+                { speaker: "Tuva", text: "A neighbor knocked. I assumed it was a complaint. She said she had heard the same eight bars for three weeks and wanted to know what the piece was. I have not practiced with a towel since." },
                 { speaker: "Host", text: "And now?" },
                 { speaker: "Tuva", text: "I play badly and I play in a group, which are not connected in the way I feared. The real change is that I now know what I cannot hear, and that is a stranger kind of progress than getting better." },
                 { speaker: "Host", text: "Would you recommend starting at forty?" },
@@ -1022,7 +1022,7 @@ New players sit in the:     {{19}} row`,
               no: 21,
               ref: "d1",
               text: "What was the hardest part?",
-              options: ["Practising without being heard", "The cost of the lessons in the first year", "Finding a teacher"],
+              options: ["Practicing without being heard", "The cost of the lessons in the first year", "Finding a teacher"],
               answer: 0,
               explain:
                 "Parayı açıkça dışarıda bırakıyor: «No. The hardest part was the noise», ve havlu altında çalışmanın sesle ilgili hiçbir şey öğretmediğini ekliyor.",
@@ -1043,7 +1043,7 @@ New players sit in the:     {{19}} row`,
               id: "en-b1-06-h4-23",
               no: 23,
               ref: "d1",
-              text: "What did the neighbour want?",
+              text: "What did the neighbor want?",
               options: ["To ask her to stop playing in the evening", "To borrow the cello", "To know what the music was"],
               answer: 2,
               explain:
@@ -1232,7 +1232,7 @@ What I get from it is not pictures. It is that I look at things for longer than 
           format: "speaking",
           goal: "interaction",
           prompt:
-            "Our community centre has money for one new activity this year. Talk with me about the options and decide together.",
+            "Our community center has money for one new activity this year. Talk with me about the options and decide together.",
           promptTr:
             "Toplum merkezimizin bu yıl tek bir yeni etkinlik için parası var. Seçenekleri benimle konuş ve birlikte karar ver.",
           prepSeconds: 30,

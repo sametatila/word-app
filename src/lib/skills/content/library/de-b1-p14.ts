@@ -294,7 +294,7 @@ export const deB1P14: SkillExercise[] = [
     gloss: [
       { de: "die Hitze", tr: "sıcak", en: "heat" },
       { de: "das Gewitter", tr: "gök gürültülü fırtına", en: "thunderstorm" },
-      { de: "ausfallen", tr: "iptal olmak", en: "to be cancelled" },
+      { de: "ausfallen", tr: "iptal olmak", en: "to be canceled" },
       { de: "der Schatten", tr: "gölge", en: "shade" },
       { de: "aufwachen", tr: "uyanmak", en: "to wake up" },
     ],

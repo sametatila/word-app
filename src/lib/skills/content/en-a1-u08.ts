@@ -123,7 +123,7 @@ export const enA1U08: SkillExercise[] = [
       },
       {
         text: "How do they pay?",
-        options: ["by card", "with cash", "with a cheque"],
+        options: ["by card", "with cash", "with a check"],
         answer: 0,
         explain: "„I'd like to pay by card… I only have a card too.“ Çek, Eda'nın işi için bir belge.",
       },
@@ -312,7 +312,7 @@ export const enA1U08: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["by card", "card", "with a card"],
-        explain: "„At the end I pay by card.“ — ödeme biçimi „by“ ile: by card, by cheque.",
+        explain: "„At the end I pay by card.“ — ödeme biçimi „by“ ile: by card, by check.",
       },
     ],
   },
@@ -394,7 +394,7 @@ export const enA1U08: SkillExercise[] = [
         kind: "build",
         tr: "Kartla ödeyebilir miyim?",
         answer: "Can I pay by card?",
-        hint: "Ödeme biçimi „by“ ile: by card, by cheque. „with“ değil.",
+        hint: "Ödeme biçimi „by“ ile: by card, by check. „with“ değil.",
       },
       {
         kind: "build",

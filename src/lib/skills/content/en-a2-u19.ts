@@ -265,7 +265,7 @@ export const enA2U19: SkillExercise[] = [
       { speaker: "Sena", text: "I saw it. I opened the new one from the folder." },
       { speaker: "Can", text: "You are too kind. I made two mistakes in one day." },
       { speaker: "Sena", text: "Three. You forgot the meeting on Tuesday." },
-      { speaker: "Can", text: "Unfortunately that is true. I apologise." },
+      { speaker: "Can", text: "Unfortunately that is true. I apologize." },
       { speaker: "Sena", text: "I forgive you. But write it in your calendar now, in front of me." },
       { speaker: "Can", text: "Done. Tuesday, ten o'clock, with a sound." },
       { speaker: "Sena", text: "Good. And everybody forgets. The problem is not the mistake." },

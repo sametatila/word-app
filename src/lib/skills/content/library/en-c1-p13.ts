@@ -128,7 +128,7 @@ export const enC1P13: SkillExercise[] = [
     intro: "Bir radyo programına iki dinleyici bağlanıyor: saatler artık değişmeyecekse hangi saat kalmalı, sabahlar mı akşamlar mı?",
     gloss: [
       { de: "caller", tr: "arayan dinleyici" },
-      { de: "pavement", tr: "kaldırım" },
+      { de: "sidewalk", tr: "kaldırım" },
       { de: "darkness", tr: "karanlık" },
       { de: "to coach", tr: "çalıştırmak" },
       { de: "weekday", tr: "hafta içi" },
@@ -143,7 +143,7 @@ export const enC1P13: SkillExercise[] = [
       { speaker: "Host", text: "This morning's question is simple: if the clocks stopped changing, which hour would you keep? Our first caller is Sarah, who lives right at the northern end of the country." },
       { speaker: "Sarah", text: "Morning. I'd keep winter time, and I'm not sure people further south understand why. In December our sun already comes up at nearly nine. Move the clocks forward for good and it's nearly ten." },
       { speaker: "Host", text: "So what would that mean in practice?" },
-      { speaker: "Sarah", text: "My two walk to school along a road with no pavement for the last mile. Even now they wear lights on their bags. With another hour of darkness, I simply wouldn't let them walk." },
+      { speaker: "Sarah", text: "My two walk to school along a road with no sidewalk for the last mile. Even now they wear lights on their bags. With another hour of darkness, I simply wouldn't let them walk." },
       { speaker: "Host", text: "Thank you, Sarah. Tom is on the line now. Tom, I gather you'd choose the other way." },
       { speaker: "Tom", text: "I would. I coach a youth football club, and from November we lose every weekday session because it's dark by half past four. Permanent summer time gives us that hour back." },
       { speaker: "Host", text: "What would you say to Sarah?" },

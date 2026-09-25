@@ -1072,7 +1072,7 @@ Esme`,
             "Kursundaki on kişi birlikte yemek yemek istiyor. Fikirleri benimle konuş ve birlikte birini seç.",
           prepSeconds: 30,
           exchange: [
-            { who: "partner", de: "Here are three ideas: a restaurant in the centre, a picnic in the park, or everybody cooks one dish and we eat at my flat. What do you think about the restaurant?", tr: "Üç fikir var: merkezde bir lokanta, parkta piknik ya da herkes bir yemek yapsın ve evimde yiyelim. Lokanta hakkında ne düşünüyorsun?" },
+            { who: "partner", de: "Here are three ideas: a restaurant in the center, a picnic in the park, or everybody cooks one dish and we eat at my flat. What do you think about the restaurant?", tr: "Üç fikir var: merkezde bir lokanta, parkta piknik ya da herkes bir yemek yapsın ve evimde yiyelim. Lokanta hakkında ne düşünüyorsun?" },
             { who: "you", hint: "Lokanta fikri hakkında görüşünü söyle ve bir gerekçe ver.", expect: "bir fikir hakkında görüş bildirmek ve gerekçelendirmek", seconds: 35 },
             { who: "partner", de: "I see your point. But a restaurant for ten people is expensive, and two people in the group do not eat meat. Is the picnic a better idea?", tr: "Anlıyorum. Ama on kişi için lokanta pahalı ve grupta iki kişi et yemiyor. Piknik daha mı iyi bir fikir?" },
             { who: "you", hint: "Karşı tarafın söylediğine gönderme yap ve katıl ya da karşı çık.", expect: "karşı tarafın söylediğine açıkça gönderme yaparak katılmak ya da karşı çıkmak", seconds: 35 },

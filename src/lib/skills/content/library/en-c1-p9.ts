@@ -29,8 +29,8 @@ export const enC1P9: SkillExercise[] = [
       { de: "judge", tr: "yargılamak, değerlendirmek" },
       { de: "broad", tr: "geniş" },
       { de: "reveal", tr: "açığa çıkarmak" },
-      { de: "favour", tr: "ayrıcalık, iyilik" },
-      { de: "recognise", tr: "tanımak" },
+      { de: "favor", tr: "ayrıcalık, iyilik" },
+      { de: "recognize", tr: "tanımak" },
       { de: "punish", tr: "cezalandırmak" },
       { de: "involve", tr: "işin içine katmak" },
       { de: "harmless", tr: "zararsız" },
@@ -46,16 +46,16 @@ export const enC1P9: SkillExercise[] = [
       "“what kind of exception is this?”, and there are broadly three.\n\n" +
       "The first is the case the rule was never meant to cover. " +
       "Here the exception does not weaken the rule; it reveals that the rule was drafted " +
-      "with a narrower situation in mind. The correct response is not to grant a favour " +
+      "with a narrower situation in mind. The correct response is not to grant a favor " +
       "but to amend the wording, and a request of this kind should make you reach for " +
-      "the document rather than for your judgement.\n\n" +
+      "the document rather than for your judgment.\n\n" +
       "The second is the case the rule covers correctly but harshly. " +
       "This is where most of the real decisions live. " +
       "Granting it is sometimes right, but it creates a precedent whether or not anyone " +
       "says so, and the only honest way through is to write down what made this case " +
       "different in terms that somebody else could apply.\n\n" +
       "The third is the case where the person asking has more influence than the people " +
-      "who did not ask. This one is easy to recognise and hard to refuse. " +
+      "who did not ask. This one is easy to recognize and hard to refuse. " +
       "The test is simple: would the same exception have been granted to somebody " +
       "with no standing at all? If the answer is no, the decision is arbitrary " +
       "however reasonable it feels.\n\n" +
@@ -68,7 +68,7 @@ export const enC1P9: SkillExercise[] = [
       {
         text: "What does the guide say about the first kind of exception?",
         options: [
-          "The rule should be amended rather than a favour granted.",
+          "The rule should be amended rather than a favor granted.",
           "It should always be refused.",
           "It is the most common kind.",
         ],
@@ -369,7 +369,7 @@ export const enC1P9: SkillExercise[] = [
     explanation: [
       {
         heading: "make ve do arasındaki sınır",
-        tr: "„make“ bir şeyi YARATMAYA yakındır: make a decision, make a mistake, make an exception, make progress, make an offer. „do“ ise bir işi YERİNE GETİRMEYE yakındır: do the work, do research, do a favour, do damage, do business. Sınır mantıklı ama kusursuz değildir, bu yüzden eşdizim listesi fiille birlikte öğrenilir.",
+        tr: "„make“ bir şeyi YARATMAYA yakındır: make a decision, make a mistake, make an exception, make progress, make an offer. „do“ ise bir işi YERİNE GETİRMEYE yakındır: do the work, do research, do a favor, do damage, do business. Sınır mantıklı ama kusursuz değildir, bu yüzden eşdizim listesi fiille birlikte öğrenilir.",
         examples: [
           { de: "We made an exception in that case.", tr: "O durumda bir istisna yaptık.", note: "make an exception" },
           { de: "They did the research themselves.", tr: "Araştırmayı kendileri yaptı.", note: "do research" },

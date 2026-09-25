@@ -43,7 +43,7 @@ export const EN_B2_W04: QuizWeek = {
         "The shops argue that generous return policies are necessary to compete. If they had not offered free returns, they say, many customers would never have started shopping online at all. " +
         "There is some truth in this. However, the report points out that the costs are eventually passed on to all customers through higher prices, including those who never return anything.\n\n" +
         "Some companies have started to act. One British fashion company recently introduced a small fee for returns, which led to angry reactions on social media at first. " +
-        "Six months later, though, its sales had hardly changed, while the number of returns had fallen by almost forty per cent.\n\n" +
+        "Six months later, though, its sales had hardly changed, while the number of returns had fallen by almost forty percent.\n\n" +
         "Consumers, too, could admittedly do more. Ordering the same jacket in three sizes and keeping only one may be easy, but it is not a decision without consequences. " +
         "Maybe the most useful question to ask before clicking 'buy' is a simple one: do I actually need this?",
     },

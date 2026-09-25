@@ -127,7 +127,7 @@ export const enB1U03: SkillExercise[] = [
       "Sena: It is brighter than the photos.\n" +
       "Agent: The photos were taken in November. The woman who lived here painted the corridor.\n" +
       "Sena: And the ceiling is high. What is the storage like?\n" +
-      "Agent: There is a basement, two metres by three, and the cupboard in the corridor.\n" +
+      "Agent: There is a basement, two meters by three, and the cupboard in the corridor.\n" +
       "Sena: Is the basement dry?\n" +
       "Agent: In this building, yes. I would not say that about the one next door.\n" +
       "Sena: That is an honest answer. The flat I saw yesterday was spacious but the landlord was not there.\n" +
@@ -171,7 +171,7 @@ export const enB1U03: SkillExercise[] = [
         text: "Which two questions does the agent suggest?",
         options: [],
         answer: 0,
-        accept: ["the heating and above", "heating and neighbours", "about the heating"],
+        accept: ["the heating and above", "heating and neighbors", "about the heating"],
         explain: "„when was the heating last checked, and who lives above.“",
       },
     ],

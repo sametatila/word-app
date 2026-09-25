@@ -352,7 +352,7 @@
  {
   "tr": "„however“ bağlaç değildir; virgül yerine nokta ya da noktalı virgül gerekir.",
   "kind": "explain",
-  "en": "„however“ is not a conjunction; a full stop or a semicolon is needed instead of a comma."
+  "en": "„however“ is not a conjunction; a period or a semicolon is needed instead of a comma."
  },
  {
   "tr": "„I want one paper with both numbers on it.“ — istek doğrudan ve tek cümlede.",
@@ -562,7 +562,7 @@
  {
   "tr": "Yeni taşınan birine mahalleni anlat: ne nerede, en yakın durak, bir tavsiye.",
   "kind": "intro",
-  "en": "Describe your neighbourhood to a newcomer: what is where, the nearest stop, one tip."
+  "en": "Describe your neighborhood to a newcomer: what is where, the nearest stop, one tip."
  },
  {
   "tr": "Zu'lu mastar öbeği cümlenin sonunda durur: Ich hoffe, bald mehr Zeit zu haben.",
@@ -687,7 +687,7 @@
  {
   "tr": "Bir sağlık merkezinin randevu kartını ve arkasındaki ilaç notunu okuyacaksın.",
   "kind": "intro",
-  "en": "You are going to read a health centre's appointment card and the note about medicine on the back."
+  "en": "You are going to read a health center's appointment card and the note about medicine on the back."
  },
  {
   "tr": "Bir toplumsal tartışmada tutum al — ama rakamı ve karşı tarafı da hesaba kat.",

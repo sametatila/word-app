@@ -52,7 +52,7 @@ export const enB1U06: SkillExercise[] = [
     ],
     minutes: 7,
     text:
-      "I enrolled to practise my English. That is the short answer and it is not the real one.\n" +
+      "I enrolled to practice my English. That is the short answer and it is not the real one.\n" +
       "The real one is that I had been in this country for four years and I could do everything except the thing I wanted most: say something at the end of a meeting and have it land.\n" +
       "I enrolled in order to get a certificate, too. That was the line I used at work, because a course with a certificate is a budget line and a course for confidence is not. Both reasons were true. Only one of them could be said out loud.\n" +
       "I sit in front so that I can hear better, which everybody thinks is about the teacher. It is not. It is so that I cannot see how many people are behind me.\n" +
@@ -92,7 +92,7 @@ export const enB1U06: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "I enrolled to practise my English.",
+          "I enrolled to practice my English.",
           "I enrolled in order to get a certificate.",
           "I sit in front so that I can hear better.",
           "When I finish this course, I will start the next one.",
@@ -120,7 +120,7 @@ export const enB1U06: SkillExercise[] = [
     intro: "Dört sözcük, tek fikir. Hangisi cümleye başlayabiliyor?",
     gloss: [
       { de: "introduces", tr: "getiriyor" },
-      { de: "cancelled", tr: "iptal edildi" },
+      { de: "canceled", tr: "iptal edildi" },
       { de: "either order", tr: "iki sırada da" },
       { de: "sentence", tr: "cümle" },
       { de: "correct", tr: "doğru" },
@@ -133,7 +133,7 @@ export const enB1U06: SkillExercise[] = [
       "I was late because the train stopped. „Because“ introduces the reason and it can also start the sentence: Because the train stopped, I was late. Both are correct; the second one is more formal.\n" +
       "The train stopped, so I was late. „So“ introduces the result and it cannot start a sentence. That is the difference and it is the mistake I see most often.\n" +
       "Since the train stopped, I was late. „Since“ works like „because“ but it usually comes first, and it carries a small extra meaning: we both already know this part.\n" +
-      "Therefore is the formal one. The train was cancelled. Therefore, the meeting was moved. In an email it is right. At a table it sounds like a machine.\n" +
+      "Therefore is the formal one. The train was canceled. Therefore, the meeting was moved. In an email it is right. At a table it sounds like a machine.\n" +
       "One way to check. If you can put the two parts in either order, you are using because or since. If the order is fixed, it is so.\n" +
       "And one more thing: since also means from that time. Since March I have worked here. The reader knows which one from the tense, not from the word.",
     questions: [
@@ -423,8 +423,8 @@ export const enB1U06: SkillExercise[] = [
       {
         kind: "build",
         tr: "İngilizcemi pratik etmek için kaydoldum.",
-        answer: "I enrolled to practise my English.",
-        hint: "Amaç sade mastarla kuruluyor; „for practise“ diye bir kuruluş yok.",
+        answer: "I enrolled to practice my English.",
+        hint: "Amaç sade mastarla kuruluyor; „for practice“ diye bir kuruluş yok.",
       },
       {
         kind: "build",

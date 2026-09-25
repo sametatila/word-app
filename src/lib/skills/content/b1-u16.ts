@@ -366,7 +366,7 @@ export const b1U16: SkillExercise[] = [
       { de: "abhängen", tr: "bağlı olmak", en: "to depend" },
       { de: "die Überzeugung", tr: "kanaat", en: "conviction" },
       { de: "bewusst", tr: "bilinçli", en: "conscious" },
-      { de: "kritisieren", tr: "eleştirmek", en: "to criticise" },
+      { de: "kritisieren", tr: "eleştirmek", en: "to criticize" },
       { de: "die Zahl", tr: "sayı", en: "number" },
       { de: "teilweise", tr: "kısmen", en: "partly" },
     ],

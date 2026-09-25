@@ -62,7 +62,7 @@
  {
   "tr": "„however“ iki cümleyi bağlayamaz; nokta ya da noktalı virgül gerekir.",
   "kind": "explain",
-  "en": "„however“ cannot join two sentences; a full stop or a semicolon is needed."
+  "en": "„however“ cannot join two sentences; a period or a semicolon is needed."
  },
  {
   "tr": "„Ich organisiere die Getränke und die Musik.“ Peçeteleri de o alıyor.",
@@ -437,7 +437,7 @@
  {
   "tr": "İki meslektaş arasında kesin olan, kuruma yazınca kullanılamaz oluyor.",
   "kind": "explain",
-  "en": "What is certain between two colleagues becomes unusable when written to an organisation."
+  "en": "What is certain between two colleagues becomes unusable when written to an organization."
  },
  {
   "tr": "İş değiştiren biri anlatıyor. Beklenene rağmen atılan adıma dikkat et.",
@@ -592,7 +592,7 @@
  {
   "tr": "„Pullover in Rot oder Schwarz“. Renk adı olarak BÜYÜK harfle yazılıyor.",
   "kind": "explain",
-  "en": "„Pullover in Rot oder Schwarz“. As the name of a colour it takes a CAPITAL."
+  "en": "„Pullover in Rot oder Schwarz“. As the name of a color it takes a CAPITAL."
  },
  {
   "tr": "„Schöne Folie, falscher Vortrag“ — tek başına iyi olması yeterli değil.",

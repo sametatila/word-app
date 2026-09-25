@@ -133,7 +133,7 @@ export const enB2U22: SkillExercise[] = [
       { de: "sentence", tr: "cümle" },
       { de: "phrase", tr: "öbek" },
       { de: "sentences", tr: "cümleler" },
-      { de: "theatre", tr: "tiyatro" },
+      { de: "theater", tr: "tiyatro" },
       { de: "plain", tr: "yalın" },
       { de: "inverted", tr: "devrik" },
       { de: "an auxiliary", tr: "yardımcı fiil" },
@@ -154,7 +154,7 @@ export const enB2U22: SkillExercise[] = [
       "Rarely does a trauma pass quietly. Present simple, nothing to move, so „does“ arrives to be the thing that moves, and „pass“ loses its ending.\n" +
       "Only after the talk does the coping begin. A time phrase with „only“, and the same „does“ doing the same job.\n" +
       "Three sentences, and the rule has not changed: negative or restrictive at the front, auxiliary before subject, and the change happens in what follows.\n" +
-      "What has changed is the reader. A page about a burden is read by somebody who is carrying one, and the shape that earns its place on a sports page can sound like theatre here.\n" +
+      "What has changed is the reader. A page about a burden is read by somebody who is carrying one, and the shape that earns its place on a sports page can sound like theater here.\n" +
       "So one, at the top, and then plain sentences. Repression, self-control and willpower are words that already carry a great deal, and a reader in trouble is not looking for a page that shouts.\n" +
       "The subconscious is the word I take out most often. It is loud in an ordinary sentence and louder in an inverted one, and a leaflet that uses both in the same paragraph has stopped talking to a person and started talking about a subject.",
     questions: [
@@ -175,7 +175,7 @@ export const enB2U22: SkillExercise[] = [
         text: "The shape works the same on every page.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„the shape that earns its place on a sports page can sound like theatre here.“",
+        explain: "„the shape that earns its place on a sports page can sound like theater here.“",
       },
       {
         kind: "gapfill",

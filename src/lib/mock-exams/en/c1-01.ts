@@ -331,11 +331,11 @@ Neither change is a guarantee, and it would be {{17}} to present them as one. Wh
               kind: "gap",
               id: "en-c1-01-l4-20",
               no: 20,
-              text: "I only realised the mistake when I read the text aloud.\nNot ______ aloud did I realise the mistake.",
+              text: "I only realized the mistake when I read the text aloud.\nNot ______ aloud did I realize the mistake.",
               cue: "UNTIL",
               accept: ["until I read it", "until I read the text"],
               explain:
-                "Devrik yapı isteniyor: `Not until …` cümle başına geldiğinde ana cümle devrilir ve zaten `did I realise` biçiminde verilmiş. Anahtar sözcük `until` bu yapının bağlayıcısı; boşluğa yalnız yan cümlenin öznesi ve fiili yazılıyor.",
+                "Devrik yapı isteniyor: `Not until …` cümle başına geldiğinde ana cümle devrilir ve zaten `did I realize` biçiminde verilmiş. Anahtar sözcük `until` bu yapının bağlayıcısı; boşluğa yalnız yan cümlenin öznesi ve fiili yazılıyor.",
             },
             {
               kind: "gap",
@@ -473,7 +473,7 @@ I am under no illusion that conventions arrive on request. They emerge slowly, u
             {
               key: "b",
               label: "b — Writer B",
-              body: "Colleagues argue that the harm here is overstated, and on the evidence available I have to concede that the population-level effects are small. My objection is different and I hold it firmly: the harm is concentrated on people who already have the least room to manoeuvre.",
+              body: "Colleagues argue that the harm here is overstated, and on the evidence available I have to concede that the population-level effects are small. My objection is different and I hold it firmly: the harm is concentrated on people who already have the least room to maneuver.",
             },
             {
               key: "c",
@@ -483,7 +483,7 @@ I am under no illusion that conventions arrive on request. They emerge slowly, u
             {
               key: "d",
               label: "d — Writer D",
-              body: "We should be candid that deletion mechanisms mostly serve institutions rather than individuals. In the cases I have studied, the successful applicants were overwhelmingly organisations with legal departments. The remedy has been captured by the parties it was not designed for.",
+              body: "We should be candid that deletion mechanisms mostly serve institutions rather than individuals. In the cases I have studied, the successful applicants were overwhelmingly organizations with legal departments. The remedy has been captured by the parties it was not designed for.",
             },
             {
               key: "e",
@@ -514,7 +514,7 @@ I am under no illusion that conventions arrive on request. They emerge slowly, u
               kind: "match",
               id: "en-c1-01-l6-29",
               no: 29,
-              text: "Which writer is most sceptical about the tone of the discussion rather than its subject?",
+              text: "Which writer is most skeptical about the tone of the discussion rather than its subject?",
               answer: "c",
               explain:
                 "Yazar C bir şeyin değişmediğini söylemiyor («I am not saying nothing has changed»); eleştirdiği şey tartışmanın kendinden emin tonu: «the confident tone of the current debate is the least reliable thing about it».",
@@ -554,7 +554,7 @@ The consequences are visible in the archive. Historians working on twentieth-cen
 
 {{32}}
 
-None of this implies bad faith. An interpreter who softens a threat is usually doing what a professional judgement tells them the speaker intended, and in the great majority of cases the judgement is sound.
+None of this implies bad faith. An interpreter who softens a threat is usually doing what a professional judgment tells them the speaker intended, and in the great majority of cases the judgment is sound.
 
 {{33}}
 
@@ -874,7 +874,7 @@ What is striking is how recent this discussion is. For most of the period in whi
               plays: 1,
               segments: [
                 {
-                  text: "Good afternoon. Ten years ago we set out to record two hundred interviews with people who had worked in the docks. We have completed three hundred and forty, which sounds like an achievement and was in fact a mistake, and I will come back to that. The average interview lasts two hours, and the longest ran to nine. Transcription is where the money goes: it costs us roughly eight times what the recording costs, and it is the item that funders least like to pay for. Now, the mistake. Because we prioritised numbers, we interviewed the people who volunteered, and the people who volunteer are not a cross-section. Our sample is heavily weighted towards men who stayed in the industry until retirement. The women who did the administrative work are barely represented, and those who left early are almost absent. If I were starting again, I would record half as many and choose them deliberately. One more thing worth saying: the most valuable material has come not from the interviews themselves but from the follow-up visits, when people bring out documents they did not think were interesting.",
+                  text: "Good afternoon. Ten years ago we set out to record two hundred interviews with people who had worked in the docks. We have completed three hundred and forty, which sounds like an achievement and was in fact a mistake, and I will come back to that. The average interview lasts two hours, and the longest ran to nine. Transcription is where the money goes: it costs us roughly eight times what the recording costs, and it is the item that funders least like to pay for. Now, the mistake. Because we prioritized numbers, we interviewed the people who volunteered, and the people who volunteer are not a cross-section. Our sample is heavily weighted towards men who stayed in the industry until retirement. The women who did the administrative work are barely represented, and those who left early are almost absent. If I were starting again, I would record half as many and choose them deliberately. One more thing worth saying: the most valuable material has come not from the interviews themselves but from the follow-up visits, when people bring out documents they did not think were interesting.",
                 },
               ],
             },
@@ -1002,8 +1002,8 @@ The most valuable material has come from the {{14}} visits.`,
               segments: [
                 { speaker: "Chair", text: "Nadia, you have argued that open access to archives is not the unmixed good it is presented as. Would you set out the case?" },
                 { speaker: "Nadia", text: "I would put it more narrowly than that. Open access is good; what I object to is the assumption that it is costless. Every collection I have worked with has material that identifies living people who never consented, and putting it online does not make that problem smaller. It makes it faster." },
-                { speaker: "Chair", text: "Tomas, you run a digitisation programme. Is that a fair description?" },
-                { speaker: "Tomas", text: "It is fair, and I would add that we brought it on ourselves. For fifteen years the profession sold digitisation to funders as though the only obstacle were money. We never priced the review that ought to precede publication, and now we are asked why the backlog is so large." },
+                { speaker: "Chair", text: "Tomas, you run a digitization program. Is that a fair description?" },
+                { speaker: "Tomas", text: "It is fair, and I would add that we brought it on ourselves. For fifteen years the profession sold digitization to funders as though the only obstacle were money. We never priced the review that ought to precede publication, and now we are asked why the backlog is so large." },
                 { speaker: "Chair", text: "So the delay is a consequence of the promise?" },
                 { speaker: "Tomas", text: "Partly. It is also a consequence of scale. Reviewing a box of letters takes a trained person a day; we have four hundred thousand boxes. No plausible amount of funding solves that by review alone." },
                 { speaker: "Chair", text: "Priya, you have suggested that the debate is framed wrongly." },
@@ -1058,7 +1058,7 @@ The most valuable material has come from the {{14}} visits.`,
               ref: "c1",
               text: "What responsibility does Tomas accept?",
               options: [
-                "That his programme digitised the wrong collections",
+                "That his program digitised the wrong collections",
                 "That the profession presented money as the only obstacle",
                 "That review standards were set too high",
                 "That funders were misled about the timescale",
@@ -1106,7 +1106,7 @@ The most valuable material has come from the {{14}} visits.`,
               ref: "c1",
               text: "What is Priya's main claim about the debate?",
               options: [
-                "It ignores the cost of digitisation entirely",
+                "It ignores the cost of digitization entirely",
                 "It treats a matter of degree as a matter of either-or",
                 "It is dominated by institutions rather than researchers",
                 "It relies on legal categories that are out of date",
@@ -1140,7 +1140,7 @@ The most valuable material has come from the {{14}} visits.`,
               options: [
                 "She names a change of vocabulary rather than of practice",
                 "She declines to name any priority at all",
-                "She sets aside both suggestions in favour of the people described in the records",
+                "She sets aside both suggestions in favor of the people described in the records",
                 "She repeats the point she made at the beginning",
               ],
               answer: 2,
@@ -1162,7 +1162,7 @@ The most valuable material has come from the {{14}} visits.`,
             { key: "a", label: "to correct a misunderstanding of their own work" },
             { key: "b", label: "to explain why a result has not been published" },
             { key: "c", label: "to withdraw a claim made earlier" },
-            { key: "d", label: "to defend a method that has been criticised" },
+            { key: "d", label: "to defend a method that has been criticized" },
             { key: "e", label: "to warn against a likely misuse of a finding" },
             { key: "f", label: "to acknowledge a rival's contribution" },
             { key: "g", label: "to ask for help with an unresolved problem" },
@@ -1343,20 +1343,20 @@ The most valuable material has come from the {{14}} visits.`,
           format: "writing",
           goal: "production",
           prompt:
-            "You have attended a discussion on public archives. Write an essay for your tutor summarising which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. Making records freely available online serves everyone equally.\n2. Records often contain information about people who never agreed to publication.\n\nWrite 220 to 260 words.",
+            "You have attended a discussion on public archives. Write an essay for your tutor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. Making records freely available online serves everyone equally.\n2. Records often contain information about people who never agreed to publication.\n\nWrite 220 to 260 words.",
           promptTr:
             "Kamu arşivleri üzerine bir tartışmaya katıldın. Danışmanın için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Kayıtları internette serbestçe erişilebilir kılmak herkese eşit hizmet eder.\n2. Kayıtlar çoğu zaman yayımlanmayı hiç kabul etmemiş insanlar hakkında bilgi taşır.\n\n220–260 kelime yaz.",
           items: [],
           rubric: {
             minWords: 220,
             points: [
-              { de: "Summarise both points fairly.", tr: "İki noktayı da adil biçimde özetle." },
+              { de: "Summarize both points fairly.", tr: "İki noktayı da adil biçimde özetle." },
               { de: "Say which is more important and justify the choice.", tr: "Hangisinin daha önemli olduğunu söyle ve seçimi gerekçelendir." },
               { de: "Give your own view, distinct from the summary.", tr: "Özetten ayrı olarak kendi görüşünü ver." },
             ],
             sample: `Both points made in the discussion are serious, and the disagreement between them is not easily settled by appealing to a principle.
 
-The first holds that free online access serves everyone equally. Its strength lies in what it replaces: a system in which the people able to consult an archive were those who could afford to travel to it and take a week away from work. Digitisation removes a barrier that was never intended but was very real, and it is worth saying plainly that this is a democratic gain rather than a convenience.
+The first holds that free online access serves everyone equally. Its strength lies in what it replaces: a system in which the people able to consult an archive were those who could afford to travel to it and take a week away from work. Digitization removes a barrier that was never intended but was very real, and it is worth saying plainly that this is a democratic gain rather than a convenience.
 
 The second point is that records frequently describe people who never agreed to publication, and often could not have. This is not a hypothetical concern. A hospital admission recorded in 1958 is a fact about someone who may still be living, and no consent form from that period anticipated a search engine.
 
@@ -1395,15 +1395,15 @@ My own view is that the choice is often false. What is missing is not a decision
 
 Current situation
 
-The collection holds approximately four thousand items, of which the catalogue lists fewer than half. In practice this means that a reader must know what they are looking for before they can find it, which reverses the purpose of a catalogue. Three enquiries in the last term were abandoned for this reason, according to the enquiry log.
+The collection holds approximately four thousand items, of which the catalog lists fewer than half. In practice this means that a reader must know what they are looking for before they can find it, which reverses the purpose of a catalog. Three enquiries in the last term were abandoned for this reason, according to the enquiry log.
 
 Recommendation
 
-I recommend that the whole sum be spent on cataloguing rather than on digitisation. Two part-time posts for one year would clear the backlog, and the resulting records would be usable immediately, at no further cost, by every reader and by other libraries through the shared catalogue.
+I recommend that the whole sum be spent on cataloguing rather than on digitization. Two part-time posts for one year would clear the backlog, and the resulting records would be usable immediately, at no further cost, by every reader and by other libraries through the shared catalog.
 
 Anticipated objection
 
-The committee may reasonably object that digitisation is more visible and photographs well, whereas a catalogue record is invisible to anyone not already searching. I accept the force of this. My answer is that digitising an uncatalogued collection produces images that nobody can locate, and the sequence therefore matters: cataloguing first makes any later digitisation cheaper, while digitising first does nothing to make cataloguing cheaper.
+The committee may reasonably object that digitization is more visible and photographs well, whereas a catalog record is invisible to anyone not already searching. I accept the force of this. My answer is that digitising an uncatalogued collection produces images that nobody can locate, and the sequence therefore matters: cataloguing first makes any later digitization cheaper, while digitising first does nothing to make cataloguing cheaper.
 
 Conclusion
 
@@ -1434,7 +1434,7 @@ I would add that cataloguing is divisible in a way that spending on equipment is
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about evidence, memory and how you form judgements.",
+          prompt: "I ask you some questions about evidence, memory and how you form judgments.",
           promptTr: "Sana kanıt, bellek ve yargıya nasıl vardığın hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [
@@ -1453,7 +1453,7 @@ I would add that cataloguing is divisible in a way that spending on equipment is
               { de: "qualify general claims rather than assert them flatly", tr: "Genel yargıları düz iddia yerine koşullandırarak vermek" },
             ],
             sample:
-              "For years I assumed that a longer training course must be better than a short one. What changed my mind was not an argument but a comparison: two colleagues, one with a fortnight of training and one with three months, made the same mistakes in the same order. On the general question, I would say people are quick to revise on matters where nothing follows from being wrong and extremely slow where something does, which is not really a fact about intelligence. What would make me distrust a source is not a single error but the way it handles one: if a correction appears without an explanation of how the error arose, I read everything else differently.",
+              "For years I assumed that a longer training course must be better than a short one. What changed my mind was not an argument but a comparison: two colleagues, one with a two weeks of training and one with three months, made the same mistakes in the same order. On the general question, I would say people are quick to revise on matters where nothing follows from being wrong and extremely slow where something does, which is not really a fact about intelligence. What would make me distrust a source is not a single error but the way it handles one: if a correction appears without an explanation of how the error arose, I read everything else differently.",
             criteria: [
               "Örnek somut mu ve fikir değişiminin sebebi adlandırıldı mı?",
               "Genel yargı koşullandırıldı mı? (I would say … where … and … where …)",

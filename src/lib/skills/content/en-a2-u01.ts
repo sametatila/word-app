@@ -188,7 +188,7 @@ export const enA2U01: SkillExercise[] = [
       { speaker: "Nil", text: "And?" },
       { speaker: "Can", text: "It was my brother. While we were talking, the water was very hot and the rice was black." },
       { speaker: "Nil", text: "Oh no." },
-      { speaker: "Can", text: "Then somebody was waving at the window — the neighbour. She was shouting: Fire!" },
+      { speaker: "Can", text: "Then somebody was waving at the window — the neighbor. She was shouting: Fire!" },
       { speaker: "Nil", text: "Fire!" },
       { speaker: "Can", text: "No fire, only smoke. But at the same time the sun was shining and the kitchen was very hot." },
       { speaker: "Nil", text: "And the rice?" },
@@ -205,9 +205,9 @@ export const enA2U01: SkillExercise[] = [
       },
       {
         text: "Who was shouting?",
-        options: ["the neighbour", "his brother", "Nil"],
+        options: ["the neighbor", "his brother", "Nil"],
         answer: 0,
-        explain: "„Then somebody was waving at the window — the neighbour. She was shouting: Fire!“",
+        explain: "„Then somebody was waving at the window — the neighbor. She was shouting: Fire!“",
       },
       {
         kind: "truefalse",

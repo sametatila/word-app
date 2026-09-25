@@ -235,7 +235,7 @@ export const deB2P2: SkillExercise[] = [
         ],
         minWords: 90,
         phrases: [
-          { de: "Ich fasse kurz zusammen, …", tr: "Kısaca özetliyorum, …", en: "To summarise briefly, …" },
+          { de: "Ich fasse kurz zusammen, …", tr: "Kısaca özetliyorum, …", en: "To summarize briefly, …" },
           { de: "Der Verwalter sagte, …", tr: "Yönetici … dedi", en: "The manager said …" },
           { de: "Auf die Frage nach … antwortete er, …", tr: "… sorusuna … diye yanıt verdi", en: "Asked about …, he replied …" },
           { de: "Mehrere Anwesende hatten Einwände.", tr: "Katılanlardan birkaçının itirazı vardı.", en: "Several of those present had objections." },

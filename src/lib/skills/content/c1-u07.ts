@@ -36,7 +36,7 @@ export const c1U07: SkillExercise[] = [
       { de: "improvisieren", tr: "doğaçlama yapmak", en: "to improvise" },
       { de: "die Denkpause", tr: "düşünme molası", en: "pause for thought" },
       { de: "gliedern", tr: "bölümlemek", en: "to structure" },
-      { de: "routiniert", tr: "alışkanlıkla / deneyimli", en: "practised" },
+      { de: "routiniert", tr: "alışkanlıkla / deneyimli", en: "practiced" },
       { de: "das Manuskript", tr: "yazılı metin", en: "manuscript" },
       { de: "die Rhetorik", tr: "retorik", en: "rhetoric" },
       { de: "einfallen", tr: "aklına gelmek", en: "to occur to someone" },
@@ -216,7 +216,7 @@ export const c1U07: SkillExercise[] = [
     gloss: [
       { de: "der Auftakt", tr: "açılış", en: "opening" },
       { de: "die Überleitung", tr: "geçiş", en: "transition" },
-      { de: "der Programmpunkt", tr: "program maddesi", en: "item on the programme" },
+      { de: "der Programmpunkt", tr: "program maddesi", en: "item on the program" },
       { de: "ankündigen", tr: "duyurmak", en: "to announce" },
       { de: "improvisieren", tr: "doğaçlama yapmak", en: "to improvise" },
       { de: "die Denkpause", tr: "düşünme molası", en: "pause for thought" },

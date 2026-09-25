@@ -240,7 +240,7 @@ Neither approach has been evaluated properly. If the funding {{12}} arrived with
             {
               kind: "text",
               id: "t3",
-              genre: "Encyclopaedia entry",
+              genre: "Encyclopedia entry",
               genreTr: "Ansiklopedi maddesi",
               title: "Noise maps",
               body: `A noise map shows how loud a city is, street by street. The first maps were drawn by hand and their {{13}} was limited, but modern maps are built from thousands of sensors.
@@ -335,7 +335,7 @@ There is broad {{17}} that the maps are useful, and equally broad frustration th
               kind: "gap",
               id: "en-b2-01-l4-20",
               no: 20,
-              text: "They cancelled the meeting because of the storm.\nThe meeting ______ because of the storm.",
+              text: "They canceled the meeting because of the storm.\nThe meeting ______ because of the storm.",
               cue: "CALLED",
               accept: ["was called off", "had been called off"],
               explain:
@@ -376,14 +376,14 @@ There is broad {{17}} that the maps are useful, and equally broad frustration th
               id: "t5",
               genre: "Opinion piece",
               genreTr: "Görüş yazısı",
-              title: "In defence of the boring meeting",
+              title: "In defense of the boring meeting",
               body: `Every few years a company announces that it has abolished meetings, and the announcement is reported as though it were an achievement. Given how much time meetings consume, the impulse is understandable. It is also, in my experience, usually wrong.
 
-I spent eleven years in an organisation that ran on written updates. Nobody sat in a room. Decisions were made in documents, and anyone could read them at any hour. It was efficient in the way that a locked filing cabinet is efficient: nothing was lost, and nothing moved.
+I spent eleven years in an organization that ran on written updates. Nobody sat in a room. Decisions were made in documents, and anyone could read them at any hour. It was efficient in the way that a locked filing cabinet is efficient: nothing was lost, and nothing moved.
 
 What we lost was not information. It was the moment when somebody says the quiet objection out loud. In writing, an objection has to be composed, and composing it takes courage that most people do not spend on a point they are only half sure about. In a room, the same objection escapes almost by accident, and it is frequently the most valuable thing said all week.
 
-Defenders of the written model reply that a good culture allows written objections too. In principle this is true. In practice I have watched three organisations try it, and in each of them the written channel filled up with agreement while the doubts moved to private messages, where they helped nobody. Nevertheless, the objection deserves a proper answer rather than a shrug.
+Defenders of the written model reply that a good culture allows written objections too. In principle this is true. In practice I have watched three organizations try it, and in each of them the written channel filled up with agreement while the doubts moved to private messages, where they helped nobody. Nevertheless, the objection deserves a proper answer rather than a shrug.
 
 None of this defends the meeting as it is usually run. A meeting with fourteen people and no decision is a waste, and the fact that it has always been held on Tuesday is not a reason. If we had kept one weekly meeting, we would have caught two expensive mistakes in October rather than in March. The reform I would argue for is smaller and duller than abolition: three people, twenty minutes, one question, and a written record afterwards.
 
@@ -695,7 +695,7 @@ The remaining difficulty is cultural rather than technical. In most teams, speed
               plays: 2,
               segments: [
                 { speaker: "Ana", text: "Have you seen the new version?" },
-                { speaker: "Ben", text: "I have, and I would rather they had fixed the search than added three new colours." },
+                { speaker: "Ben", text: "I have, and I would rather they had fixed the search than added three new colors." },
               ],
             },
             {
@@ -750,7 +750,7 @@ The remaining difficulty is cultural rather than technical. In most teams, speed
               id: "en-b2-01-h1-1",
               no: 1,
               ref: "a1",
-              text: "What does the speaker emphasise about the delay?",
+              text: "What does the speaker emphasize about the delay?",
               options: ["That responsibility lies elsewhere", "That the cost will be shared", "That production has now stopped"],
               answer: 0,
               explain:
@@ -784,10 +784,10 @@ The remaining difficulty is cultural rather than technical. In most teams, speed
               no: 4,
               ref: "a4",
               text: "What does Ben think about the new version?",
-              options: ["The wrong problem was solved", "The colours are an improvement", "He has not looked at it yet"],
+              options: ["The wrong problem was solved", "The colors are an improvement", "He has not looked at it yet"],
               answer: 0,
               explain:
-                "Ben yeni sürümü gördüğünü söyleyip önceliği eleştiriyor: «I would rather they had fixed the search than added three new colours». Renkleri övmüyor, aramanın düzeltilmemiş olmasından yakınıyor.",
+                "Ben yeni sürümü gördüğünü söyleyip önceliği eleştiriyor: «I would rather they had fixed the search than added three new colors». Renkleri övmüyor, aramanın düzeltilmemiş olmasından yakınıyor.",
             },
             {
               kind: "mcq",
@@ -854,7 +854,7 @@ The remaining difficulty is cultural rather than technical. In most teams, speed
               plays: 2,
               segments: [
                 {
-                  text: "Good evening. I want to give you the findings of our two-year study of the night-time economy, and I will try to avoid the usual slogans. First, the size: between eight in the evening and six in the morning, this city supports about eleven thousand jobs. That is more than construction. Second, and this is the number that changed our thinking, the largest single group is not bar staff but cleaners. Third, transport. Our surveys found that the biggest complaint is not safety, as everybody assumes, but simply the cost of getting home. A night bus was tried in 2019 and it failed, and it failed for a reason we now understand: it ran only at weekends, when the people who needed it worked mainly on weekdays. The new service runs every night. Fourth, a warning about noise. Complaints rose by forty per cent after the pedestrian zone opened, and almost all of them come from one street. Finally, what we are asking the council for is not money but a licence officer who works after midnight, because at the moment the rules are written for a city that closes at eleven.",
+                  text: "Good evening. I want to give you the findings of our two-year study of the night-time economy, and I will try to avoid the usual slogans. First, the size: between eight in the evening and six in the morning, this city supports about eleven thousand jobs. That is more than construction. Second, and this is the number that changed our thinking, the largest single group is not bar staff but cleaners. Third, transport. Our surveys found that the biggest complaint is not safety, as everybody assumes, but simply the cost of getting home. A night bus was tried in 2019 and it failed, and it failed for a reason we now understand: it ran only on weekends, when the people who needed it worked mainly on weekdays. The new service runs every night. Fourth, a warning about noise. Complaints rose by forty percent after the pedestrian zone opened, and almost all of them come from one street. Finally, what we are asking the council for is not money but a license officer who works after midnight, because at the moment the rules are written for a city that closes at eleven.",
                 },
               ],
             },
@@ -874,11 +874,11 @@ The biggest complaint from surveys is the {{12}} of getting home.
 
 The earlier night bus failed because it ran only at {{13}}.
 
-Noise complaints rose by {{14}} per cent after the pedestrian zone opened.
+Noise complaints rose by {{14}} percent after the pedestrian zone opened.
 
 Almost all noise complaints come from {{15}} street.
 
-The council is asked to provide a licence officer who works after {{16}}.`,
+The council is asked to provide a license officer who works after {{16}}.`,
             },
           ],
           items: [
@@ -930,7 +930,7 @@ The council is asked to provide a licence officer who works after {{16}}.`,
               text: "Gap 13",
               accept: ["weekends", "the weekend", "weekend"],
               explain:
-                "Başarısızlığın sebebi veriliyor: «it ran only at weekends, when the people who needed it worked mainly on weekdays». Yani hizmetin çalıştığı zaman ile ihtiyacın olduğu zaman örtüşmemiş.",
+                "Başarısızlığın sebebi veriliyor: «it ran only on weekends, when the people who needed it worked mainly on weekdays». Yani hizmetin çalıştığı zaman ile ihtiyacın olduğu zaman örtüşmemiş.",
             },
             {
               kind: "gap",
@@ -940,7 +940,7 @@ The council is asked to provide a licence officer who works after {{16}}.`,
               text: "Gap 14",
               accept: ["40", "forty"],
               explain:
-                "«Complaints rose by forty per cent after the pedestrian zone opened» — artış oranı yüzde kırk. Cümle tamamlamada `per cent` basılı olduğu için yalnız sayı yazılır.",
+                "«Complaints rose by forty percent after the pedestrian zone opened» — artış oranı yüzde kırk. Cümle tamamlamada `percent` basılı olduğu için yalnız sayı yazılır.",
             },
             {
               kind: "gap",
@@ -960,7 +960,7 @@ The council is asked to provide a licence officer who works after {{16}}.`,
               text: "Gap 16",
               accept: ["midnight"],
               explain:
-                "Talep tek ve somut: «a licence officer who works after midnight», çünkü mevcut kurallar gece on birde kapanan bir şehir için yazılmış. Para istenmediği de ayrıca vurgulanıyor.",
+                "Talep tek ve somut: «a license officer who works after midnight», çünkü mevcut kurallar gece on birde kapanan bir şehir için yazılmış. Para istenmediği de ayrıca vurgulanıyor.",
             },
           ],
         },
@@ -1014,7 +1014,7 @@ The council is asked to provide a licence officer who works after {{16}}.`,
               situation: "Üçüncü konuşmacı iş yerindeki bir değişiklikten söz ediyor.",
               plays: 2,
               segments: [
-                { text: "The idea was right. Announcing it on a Thursday and starting it on the Monday was not. We spent six weeks fixing things that a fortnight of preparation would have prevented." },
+                { text: "The idea was right. Announcing it on a Thursday and starting it on the Monday was not. We spent six weeks fixing things that a two weeks of preparation would have prevented." },
               ],
             },
             {
@@ -1131,7 +1131,7 @@ The council is asked to provide a licence officer who works after {{16}}.`,
               plays: 2,
               segments: [
                 { speaker: "Host", text: "Dr Halim, your book argues that we have misunderstood distraction. In what way?" },
-                { speaker: "Halim", text: "We treat it as a failure of the individual. Almost every popular book is addressed to the person: put your phone away, be disciplined. But if ninety per cent of people in an office are distracted, that is not ninety per cent of people failing. That is a description of the office." },
+                { speaker: "Halim", text: "We treat it as a failure of the individual. Almost every popular book is addressed to the person: put your phone away, be disciplined. But if ninety percent of people in an office are distracted, that is not ninety percent of people failing. That is a description of the office." },
                 { speaker: "Host", text: "So you would put the responsibility on employers." },
                 { speaker: "Halim", text: "Partly, and I want to be precise here, because this is where I am often misquoted. I am not saying individuals have no responsibility. I am saying that we have spent twenty years on the smaller half of the problem." },
                 { speaker: "Host", text: "What does the research actually show about open-plan offices?" },
@@ -1215,7 +1215,7 @@ The council is asked to provide a licence officer who works after {{16}}.`,
               no: 28,
               ref: "d1",
               text: "What is her view of checking messages twice a day?",
-              options: ["It is effective for one person but unfair as a rule", "It is the single best change a team can make", "It only works in small organisations"],
+              options: ["It is effective for one person but unfair as a rule", "It is the single best change a team can make", "It only works in small organizations"],
               answer: 0,
               explain:
                 "Halim ikisini ayırıyor: «It works for the individual and it fails as a policy», çünkü maliyet bekleyene geçiyor. Ekibin tamamı aynı ritmi kabul etmedikçe başkasının sırtından yavaşlık olur.",
@@ -1260,7 +1260,7 @@ The council is asked to provide a licence officer who works after {{16}}.`,
           format: "writing",
           goal: "production",
           prompt:
-            "In your English class you have discussed city centres. Now write an essay for your teacher, answering this question: \"Should city centres be closed to private cars?\" Use the two ideas below and add one idea of your own.\n\nIdeas: air quality — people who cannot use public transport",
+            "In your English class you have discussed city centers. Now write an essay for your teacher, answering this question: \"Should city centers be closed to private cars?\" Use the two ideas below and add one idea of your own.\n\nIdeas: air quality — people who cannot use public transport",
           promptTr:
             "İngilizce dersinde şehir merkezlerini tartıştınız. Öğretmenin için bir deneme yaz: \"Şehir merkezleri özel araçlara kapatılmalı mı?\" Aşağıdaki iki fikri kullan ve kendi fikrinden birini ekle.\n\nFikirler: hava kalitesi — toplu taşımayı kullanamayan insanlar",
           items: [],
@@ -1272,13 +1272,13 @@ The council is asked to provide a licence officer who works after {{16}}.`,
               { de: "Add a third idea of your own.", tr: "Kendi üçüncü fikrini ekle." },
               { de: "Reach a clear conclusion.", tr: "Açık bir sonuca var." },
             ],
-            sample: `Closing city centres to private cars is often presented as a simple choice between clean air and convenience. It is more complicated than that.
+            sample: `Closing city centers to private cars is often presented as a simple choice between clean air and convenience. It is more complicated than that.
 
 The strongest argument is air quality. Where central streets have been closed, measured pollution has fallen quickly, and the effect is largest exactly where children walk to school. This is not a small benefit, and it arrives within months rather than decades.
 
 However, the objection about access is serious and is too often dismissed. Some people cannot use a bus or a tram, and telling them to plan better is not an answer. A scheme that does not include permits for these residents is not a fair scheme, whatever its environmental record.
 
-My own concern is different: the shops. When traffic disappears, small businesses lose deliveries unless the plan includes them, and a centre of empty units helps nobody.
+My own concern is different: the shops. When traffic disappears, small businesses lose deliveries unless the plan includes them, and a center of empty units helps nobody.
 
 On balance I support closing central streets, but only where public transport is already good and exceptions are written into the rules from the beginning.`,
             criteria: [
@@ -1315,7 +1315,7 @@ This report describes the effects of the open-plan layout introduced in March an
 
 Positive effects
 
-New colleagues have settled in noticeably faster. Three people who joined in the spring said that they learned the names and the responsibilities of the team within a fortnight, which used to take much longer. Informal help is easier to ask for when the person is visible.
+New colleagues have settled in noticeably faster. Three people who joined in the spring said that they learned the names and the responsibilities of the team within a two weeks, which used to take much longer. Informal help is easier to ask for when the person is visible.
 
 Problems
 
@@ -1349,7 +1349,7 @@ I recommend converting the two unused storage rooms on the second floor into boo
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about your work or studies and about how you organise your time.",
+          prompt: "I ask you some questions about your work or studies and about how you organize your time.",
           promptTr: "Sana işin ya da öğrenimin ve zamanını nasıl düzenlediğin hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [
@@ -1383,7 +1383,7 @@ I recommend converting the two unused storage rooms on the second floor into boo
           format: "speaking",
           goal: "production",
           prompt:
-            "Talk on your own for about one and a half minutes. Compare these two ways of organising a workplace, say which you think works better, and explain one thing that could go wrong with your choice: an office where everybody is present three fixed days a week, or an office where everybody chooses their own days.",
+            "Talk on your own for about one and a half minutes. Compare these two ways of organizing a workplace, say which you think works better, and explain one thing that could go wrong with your choice: an office where everybody is present three fixed days a week, or an office where everybody chooses their own days.",
           promptTr:
             "Yaklaşık bir buçuk dakika tek başına konuş. Bir iş yerini düzenlemenin şu iki yolunu karşılaştır, hangisinin daha iyi işlediğini söyle ve seçtiğin yolda ters gidebilecek bir şeyi açıkla: herkesin haftada üç sabit gün ofiste olduğu düzen mi, herkesin kendi günlerini seçtiği düzen mi?",
           prepSeconds: 60,
@@ -1418,7 +1418,7 @@ I recommend converting the two unused storage rooms on the second floor into boo
             "Bir şirket kesintileri azaltmak istiyor. Bu fikirleri benimle konuş, sonra hangi ikisini önereceğimize ve hangisini reddedeceğimize karar ver.",
           prepSeconds: 30,
           exchange: [
-            { who: "partner", de: "The ideas are: a no-meeting day, a rule that messages are answered within four hours rather than immediately, bookable quiet rooms, and turning off all notifications by default. Which of these do you think would actually change behaviour?", tr: "Fikirler: toplantısız bir gün, iletilere hemen değil dört saat içinde cevap verme kuralı, ayırtılabilir sessiz odalar ve bütün bildirimlerin varsayılan olarak kapatılması. Sence bunlardan hangisi davranışı gerçekten değiştirir?" },
+            { who: "partner", de: "The ideas are: a no-meeting day, a rule that messages are answered within four hours rather than immediately, bookable quiet rooms, and turning off all notifications by default. Which of these do you think would actually change behavior?", tr: "Fikirler: toplantısız bir gün, iletilere hemen değil dört saat içinde cevap verme kuralı, ayırtılabilir sessiz odalar ve bütün bildirimlerin varsayılan olarak kapatılması. Sence bunlardan hangisi davranışı gerçekten değiştirir?" },
             { who: "you", hint: "Bir ya da iki fikri seç ve neden işe yarayacağını açıkla.", expect: "seçenekleri değerlendirmek ve birini gerekçesiyle savunmak", seconds: 45 },
             { who: "partner", de: "I would push back on the notifications idea. If it is a default, people simply turn them on again in the first week. Is that fair?", tr: "Bildirim fikrine itiraz ederim. Varsayılan olursa insanlar ilk hafta içinde tekrar açar. Haklı mıyım?" },
             { who: "you", hint: "İtirazı değerlendir: kabul et, sınırla ya da çürüt.", expect: "bir itirazı değerlendirmek ve kısmen kabul etmek ya da çürütmek", seconds: 45 },

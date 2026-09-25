@@ -217,7 +217,7 @@ The change has been resisted, and not {{12}} good reason: a gallery that explain
             {
               kind: "text",
               id: "t3",
-              genre: "Encyclopaedia entry",
+              genre: "Encyclopedia entry",
               genreTr: "Ansiklopedi maddesi",
               title: "Provenance research",
               body: `Provenance research is the process by which the history of an object's {{13}} is established, from the workshop that made it to the case it stands in today.
@@ -358,7 +358,7 @@ The most likely future is therefore an uneven one, with different countries acti
               title: "What I learned from writing one label",
               body: `Two years ago I was asked to rewrite a single label in the gallery where I work, and I want to describe what that took, because the answer surprised me and it explains a great deal about museums.
 
-The object is a carved wooden figure about sixty centimetres high. The old label gave a date, a region and the name of the man who brought it to Europe in 1897. It did not say how he obtained it, because the file does not say, and for eighty years nobody had asked the file.
+The object is a carved wooden figure about sixty centimeters high. The old label gave a date, a region and the name of the man who brought it to Europe in 1897. It did not say how he obtained it, because the file does not say, and for eighty years nobody had asked the file.
 
 My first draft named the expedition and described it accurately. It was rejected, and the reason given was not a political one. It was that the label had grown to a hundred and forty words, and a visitor reads about thirty.
 
@@ -449,7 +449,7 @@ Consider the casts of medieval doorways collected by nineteenth-century art scho
 
 The same reversal has happened with photographs. An image commissioned to advertise a department store is now the only evidence of a room that was demolished in 1954. {{30}}
 
-Some museums have begun to catalogue their copies with the same care as their originals. The change is slow and it is resisted, largely because it complicates a story that donors find easy to understand. {{31}}
+Some museums have begun to catalog their copies with the same care as their originals. The change is slow and it is resisted, largely because it complicates a story that donors find easy to understand. {{31}}
 
 None of this argues that a copy equals an original, which it plainly does not. It argues that the value of an object is not fixed at the moment it is made.`,
               gloss: [
@@ -762,7 +762,7 @@ None of this argues that a copy equals an original, which it plainly does not. I
               no: 6,
               ref: "a6",
               text: "What is the speaker doing?",
-              options: ["Asking somebody to replace her all day", "Agreeing to help for part of the day", "Cancelling the appointment"],
+              options: ["Asking somebody to replace her all day", "Agreeing to help for part of the day", "Canceling the appointment"],
               answer: 1,
               explain:
                 "Konuşmacı geliyor ama sınır koyuyor: «I can open the archive and sit with the researcher, but I have to leave at one». Beril yalnız öğleden sonrayı devralıyor, günün tamamını değil.",
@@ -810,7 +810,7 @@ None of this argues that a copy equals an original, which it plainly does not. I
               plays: 2,
               segments: [
                 {
-                  text: "Thank you. I will give you our three-year figures and I will not pretend that all of them are comfortable. We began the project with three researchers and we now have a team of eleven. In that time we have examined about twelve thousand acquisition files. Here is the first surprise: the decade that produces the most unanswered questions is not the 1890s, it is the 1950s, because that is when the private sales begin and the paperwork gets thinner. Second, the source matters more than we expected. A file that came to us with a dealer's name attached takes roughly four times as long to resolve as one from an excavation. Third, the format of the published summary. We tried a database, a printed catalogue and a one-page note for each object, and the one-page note was read far more than the other two, which disappointed the two of us who built the database. Fourth, a caution: our own survey shows that the communities we most want to hear from find our website almost unusable, and we have not solved that. And finally, money. Eighty per cent of our funding comes from a single foundation, and that is the risk that keeps me awake, not the criticism.",
+                  text: "Thank you. I will give you our three-year figures and I will not pretend that all of them are comfortable. We began the project with three researchers and we now have a team of eleven. In that time we have examined about twelve thousand acquisition files. Here is the first surprise: the decade that produces the most unanswered questions is not the 1890s, it is the 1950s, because that is when the private sales begin and the paperwork gets thinner. Second, the source matters more than we expected. A file that came to us with a dealer's name attached takes roughly four times as long to resolve as one from an excavation. Third, the format of the published summary. We tried a database, a printed catalog and a one-page note for each object, and the one-page note was read far more than the other two, which disappointed the two of us who built the database. Fourth, a caution: our own survey shows that the communities we most want to hear from find our website almost unusable, and we have not solved that. And finally, money. Eighty percent of our funding comes from a single foundation, and that is the risk that keeps me awake, not the criticism.",
                 },
               ],
             },
@@ -834,7 +834,7 @@ The format that was read most was the {{14}} note.
 
 The communities the project wants to hear from find the {{15}} almost unusable.
 
-{{16}} per cent of the funding comes from a single foundation.`,
+{{16}} percent of the funding comes from a single foundation.`,
             },
           ],
           items: [
@@ -916,7 +916,7 @@ The communities the project wants to hear from find the {{15}} almost unusable.
               text: "Gap 16",
               accept: ["80", "eighty"],
               explain:
-                "«Eighty per cent of our funding comes from a single foundation» — tek kaynağa bağlılık oranı. Konuşmacı asıl riskin eleştiri değil bu olduğunu ekliyor.",
+                "«Eighty percent of our funding comes from a single foundation» — tek kaynağa bağlılık oranı. Konuşmacı asıl riskin eleştiri değil bu olduğunu ekliyor.",
             },
           ],
         },
@@ -932,7 +932,7 @@ The communities the project wants to hear from find the {{15}} almost unusable.
           options: [
             { key: "a", label: "The public is blamed for a failure that belongs to institutions." },
             { key: "b", label: "A correct statement can still mislead." },
-            { key: "c", label: "The incentives reward the wrong behaviour." },
+            { key: "c", label: "The incentives reward the wrong behavior." },
             { key: "d", label: "The speaker has changed their own practice." },
             { key: "e", label: "Things are better than they used to be." },
             { key: "f", label: "The problem is the quantity, not the principle." },
@@ -1093,7 +1093,7 @@ The communities the project wants to hear from find the {{15}} almost unusable.
                 { speaker: "Host", text: "How long did the decision take?" },
                 { speaker: "Tarik", text: "Five years, which is embarrassing to say out loud. I commissioned three reports, which is what people like me do instead of deciding. All three said the same thing, and I read all three as though they had said something else." },
                 { speaker: "Host", text: "What finally moved you?" },
-                { speaker: "Tarik", text: "A leak. Water came through the store roof one November and I stood there with a torch looking at boxes I could not identify. I realised I was not a custodian of those objects; I was a landlord who had lost the tenancy agreement." },
+                { speaker: "Tarik", text: "A leak. Water came through the store roof one November and I stood there with a torch looking at boxes I could not identify. I realized I was not a custodian of those objects; I was a landlord who had lost the tenancy agreement." },
                 { speaker: "Host", text: "And the smaller museum in practice?" },
                 { speaker: "Tarik", text: "We show about the same number of objects and we know far more about each of them. Visitor numbers are almost unchanged, which is not the dramatic answer people want. The real change is that a researcher who writes to us now gets an answer in a week rather than a year." },
                 { speaker: "Host", text: "Do you miss anything?" },
@@ -1265,7 +1265,7 @@ Museums should return an object where the record is silent, and negotiate everyt
               { de: "Say what it does well, with an example.", tr: "Neyi iyi yaptığını bir örnekle söyle." },
               { de: "Say who would be disappointed, and why.", tr: "Kimin hayal kırıklığına uğrayacağını ve nedenini söyle." },
             ],
-            sample: `The Harbour Museum occupies two rooms above a working boatyard, and it is far better than that description suggests.
+            sample: `The Harbor Museum occupies two rooms above a working boatyard, and it is far better than that description suggests.
 
 It shows about eighty objects from a single street between 1890 and 1975: tools, letters, three photographs of the same doorway, and a ledger that somebody kept for thirty years. The strongest room is the second, which follows one family and does not tidy the story. One label simply says that the museum does not know what happened to the youngest son after 1943, and leaves it there.
 
@@ -1317,7 +1317,7 @@ For anybody interested in how an ordinary place remembers itself, however, it is
               { de: "reconsider something you were taught", tr: "Öğrendiğin bir şeyi yeniden değerlendirmek" },
             ],
             sample:
-              "I went to a small local museum in March, mainly because it was raining, which is not a very noble reason. At school we were taught that the harbour here was built to bring goods in; a panel in that museum pointed out that for forty years it mostly took people out, and nobody had ever put those two facts side by side for me. What makes me trust a museum now is whether it says what it does not know, although I have to admit I have only noticed that in two places.",
+              "I went to a small local museum in March, mainly because it was raining, which is not a very noble reason. At school we were taught that the harbor here was built to bring goods in; a panel in that museum pointed out that for forty years it mostly took people out, and nobody had ever put those two facts side by side for me. What makes me trust a museum now is whether it says what it does not know, although I have to admit I have only noticed that in two places.",
             criteria: [
               "Cevaplar geliştirildi mi ve gerekçelendirildi mi?",
               "Somut bir örnek verildi mi, yoksa genel mi konuşuldu?",
@@ -1346,7 +1346,7 @@ For anybody interested in how an ordinary place remembers itself, however, it is
               { de: "identify a problem with your own choice", tr: "Kendi seçiminde bir sorunu adlandır" },
             ],
             sample:
-              "Showing the object with a full explanation keeps the argument visible, and a visitor who reads it leaves knowing that there is a question at all. Removing it looks more responsible and is often the safer decision for the institution, but it also makes the problem disappear from public view, which is convenient for exactly the people who are being criticised. I would keep it on display. The problem with my own choice is that the explanation is written by the museum, in its own building, in its own language, and a community that disagrees with that account has no way of answering it in the same room. So the honest version of my position is that display is better only if somebody else is allowed to write part of the label.",
+              "Showing the object with a full explanation keeps the argument visible, and a visitor who reads it leaves knowing that there is a question at all. Removing it looks more responsible and is often the safer decision for the institution, but it also makes the problem disappear from public view, which is convenient for exactly the people who are being criticized. I would keep it on display. The problem with my own choice is that the explanation is written by the museum, in its own building, in its own language, and a community that disagrees with that account has no way of answering it in the same room. So the honest version of my position is that display is better only if somebody else is allowed to write part of the label.",
             criteria: [
               "İki yaklaşım da gerçekten karşılaştırıldı mı?",
               "Tercih gerekçelendirildi mi?",

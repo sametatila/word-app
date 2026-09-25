@@ -51,7 +51,7 @@ export const EN_B1_05: MockPaper = {
               genre: "Email to a guest",
               genreTr: "Misafire e-posta",
               title: "Your flat next week",
-              body: `Dear Mr Bakker, the flat is on the third floor and there is no lift. The key is in a box by the door; we send the code the day before. If you arrive after eleven at night, please tell us today so that a neighbour is awake.`,
+              body: `Dear Mr Bakker, the flat is on the third floor and there is no lift. The key is in a box by the door; we send the code the day before. If you arrive after eleven at night, please tell us today so that a neighbor is awake.`,
             },
             {
               kind: "text",
@@ -150,10 +150,10 @@ export const EN_B1_05: MockPaper = {
             { key: "b", label: "Flat Swap", body: "You stay in somebody's flat and they stay in yours, for the same week. No money changes hands. You register with two references." },
             { key: "c", label: "Left Luggage", body: "Open six to twenty-two, next to the tourist office. Four euros a bag a day. Bikes and skis are eight." },
             { key: "d", label: "Walking Tour", body: "Two hours, small groups, every morning at ten. Free, but the guide is paid by what you give at the end." },
-            { key: "e", label: "Room in a Family", body: "A room in a family home, breakfast included, minimum three nights. Quiet after ten. Good for people who want to practise the language." },
+            { key: "e", label: "Room in a Family", body: "A room in a family home, breakfast included, minimum three nights. Quiet after ten. Good for people who want to practice the language." },
             { key: "f", label: "Bike Hire", body: "From four hours to two weeks. Helmet and lock included. We deliver to your hotel for five euros." },
             { key: "g", label: "City Card", body: "Three days of buses and trams plus twelve museums. Sixty-five euros, or forty for students. Does not include the airport bus." },
-            { key: "h", label: "Storage Rooms", body: "From one square metre, by the month. Day and night entry. Not for furniture or for anything that smells." },
+            { key: "h", label: "Storage Rooms", body: "From one square meter, by the month. Day and night entry. Not for furniture or for anything that smells." },
           ],
           items: [
             {
@@ -181,7 +181,7 @@ export const EN_B1_05: MockPaper = {
               text: "Iker has two weeks in the city and wants to speak the language every day.",
               answer: "e",
               explain:
-                "İlan bunu amaç olarak yazıyor: «Good for people who want to practise the language», üstelik bir ailenin evinde ve kahvaltı dahil. Daire takası (b) böyle bir günlük temas vaat etmiyor.",
+                "İlan bunu amaç olarak yazıyor: «Good for people who want to practice the language», üstelik bir ailenin evinde ve kahvaltı dahil. Daire takası (b) böyle bir günlük temas vaat etmiyor.",
             },
             {
               kind: "match",
@@ -553,7 +553,7 @@ It is the second time this year {{30}} the date has moved.`,
               situation: "İstasyonda iptal edilen bir sefer duyuruluyor.",
               plays: 2,
               segments: [
-                { text: "The nine forty service to the coast is cancelled because of a fault at the depot. The next service is at ten fifty-five and it stops at every station. Tickets for the nine forty are valid on any train today." },
+                { text: "The nine forty service to the coast is canceled because of a fault at the depot. The next service is at ten fifty-five and it stops at every station. Tickets for the nine forty are valid on any train today." },
               ],
             },
             {
@@ -611,7 +611,7 @@ It is the second time this year {{30}} the date has moved.`,
               situation: "Bir rehber cumartesi turu için ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hi, about Saturday. I can do the tour with the group, but I have to be back by two for my daughter. If we start at nine we will finish the old town easily, and Dalia said she can take the harbour part." },
+                { text: "Hi, about Saturday. I can do the tour with the group, but I have to be back by two for my daughter. If we start at nine we will finish the old town easily, and Dalia said she can take the harbor part." },
               ],
             },
             {
@@ -688,7 +688,7 @@ It is the second time this year {{30}} the date has moved.`,
               no: 6,
               ref: "a6",
               text: "What is the speaker doing?",
-              options: ["Cancelling the tour for the whole group", "Agreeing to help within a time limit", "Asking somebody to replace her"],
+              options: ["Canceling the tour for the whole group", "Agreeing to help within a time limit", "Asking somebody to replace her"],
               answer: 1,
               explain:
                 "Konuşmacı geliyor ama sınır koyuyor: «I can do the tour with the group, but I have to be back by two». Dalia yalnız liman bölümünü alıyor, tur iptal edilmiyor.",
@@ -725,7 +725,7 @@ It is the second time this year {{30}} the date has moved.`,
                 { speaker: "Freja", text: "Are you renting the flat out this summer?" },
                 { speaker: "Anouk", text: "Not any more." },
                 { speaker: "Freja", text: "Really? It paid for your holiday." },
-                { speaker: "Anouk", text: "It paid for my holiday and it cost me my neighbours. That is not a good exchange." },
+                { speaker: "Anouk", text: "It paid for my holiday and it cost me my neighbors. That is not a good exchange." },
               ],
             },
             {
@@ -807,7 +807,7 @@ It is the second time this year {{30}} the date has moved.`,
               options: ["It was not profitable enough for her", "It damaged relationships nearby", "The rules changed"],
               answer: 1,
               explain:
-                "Anouk kazancı kabul edip bedeli veriyor: «It paid for my holiday and it cost me my neighbours». Kazanç var, yani kârsızlık değil; kural değişikliği hiç geçmiyor.",
+                "Anouk kazancı kabul edip bedeli veriyor: «It paid for my holiday and it cost me my neighbors». Kazanç var, yani kârsızlık değil; kural değişikliği hiç geçmiyor.",
             },
             {
               kind: "mcq",
@@ -1100,7 +1100,7 @@ New guides walk with an experienced guide for: {{19}} tours`,
             ],
             sample: `Dear Mr Roth,
 
-I booked your flat in Harbour Street for the week of 3 June and I arrived on Monday evening.
+I booked your flat in Harbor Street for the week of 3 June and I arrived on Monday evening.
 
 Two things are different from the advert. The advert says the flat is on the second floor; it is on the fourth, and there is no lift. It also promises a washing machine, and there is none in the flat or in the building.
 
@@ -1136,7 +1136,7 @@ Anouk Dekker`,
               { de: "Say why you like it.", tr: "Neden sevdiğini söyle." },
               { de: "Say whether you would really keep it secret, and why.", tr: "Gerçekten sır olarak tutup tutmayacağını ve nedenini söyle." },
             ],
-            sample: `There is a small beach twenty minutes north of the town, behind a car park that looks closed. There is no café and no sign, and in eight years I have never seen more than nine people there.
+            sample: `There is a small beach twenty minutes north of the town, behind a parking lot that looks closed. There is no café and no sign, and in eight years I have never seen more than nine people there.
 
 I like it because nothing happens. You can hear the water, and the only decision is whether to swim before or after you eat.
 
@@ -1235,7 +1235,7 @@ Would I keep it secret? Honestly, no. The people who live near it sell almost no
             "Şehrimizin, burada yaşayanların hayatını kolaylaştıracak tek bir iş için parası var. Seçenekleri benimle konuş ve birlikte karar ver.",
           prepSeconds: 30,
           exchange: [
-            { who: "partner", de: "The options are: a limit on short-term renting, more buses in the evening, a car park outside the old town, or lower rents for local shops. Which do you think we should choose?", tr: "Seçenekler: kısa süreli kiralamaya sınır, akşam daha çok otobüs, eski şehrin dışında bir otopark ya da yerel dükkânlara düşük kira. Sence hangisini seçmeliyiz?" },
+            { who: "partner", de: "The options are: a limit on short-term renting, more buses in the evening, a parking lot outside the old town, or lower rents for local shops. Which do you think we should choose?", tr: "Seçenekler: kısa süreli kiralamaya sınır, akşam daha çok otobüs, eski şehrin dışında bir otopark ya da yerel dükkânlara düşük kira. Sence hangisini seçmeliyiz?" },
             { who: "you", hint: "Bir seçenek seç ve gerekçelendir.", expect: "bir seçeneği seçmek ve gerekçelendirmek", seconds: 40 },
             { who: "partner", de: "I understand. But a limit on renting takes money away from families who need it, and it is very hard to check. Does that change your mind?", tr: "Anlıyorum. Ama kiralama sınırı ihtiyacı olan ailelerin gelirini kesiyor ve denetlemesi çok zor. Bu fikrini değiştirir mi?" },
             { who: "you", hint: "İtiraza doğrudan karşılık ver: kabul et ya da çürüt.", expect: "bir itiraza doğrudan karşılık vermek", seconds: 40 },

@@ -38,7 +38,7 @@ export const b2U12: SkillExercise[] = [
       { de: "der Datenschutz", tr: "veri koruma", en: "data protection" },
       { de: "die Datensicherheit", tr: "veri güvenliği", en: "data security" },
       { de: "der Datenmissbrauch", tr: "veri kötüye kullanımı", en: "data misuse" },
-      { de: "die Berechtigung", tr: "yetki", en: "authorisation" },
+      { de: "die Berechtigung", tr: "yetki", en: "authorization" },
       { de: "das Nutzerkonto", tr: "kullanıcı hesabı", en: "user account" },
       { de: "der Zugriff", tr: "erişim", en: "access" },
       { de: "verschlüsseln", tr: "şifrelemek", en: "to encrypt" },

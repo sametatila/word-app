@@ -32,7 +32,7 @@
   "sceneEn": "You are having a review with your teacher at the end of B2: how the road has gone, what was hardest, what you can really do now, what you are proud of and what comes next.",
   "partnerEn": "an honest and supportive teacher who has followed you from the start",
   "openingEn": "A hundred lessons done. Before we close: what can you do today that you couldn't at the start?",
-  "goalEn": "The road travelled, the hardest part and what you can now do have been described, and the next goal has been given."
+  "goalEn": "The road traveled, the hardest part and what you can now do have been described, and the next goal has been given."
  },
  {
   "conversation": "de-c1-fvg-treffen",
@@ -57,14 +57,14 @@
  },
  {
   "conversation": "de-c1-zwischen-zeilen",
-  "sceneEn": "A colleague has criticised you indirectly. Say what you have sensed, ask directly, put your own reservation without hiding it and clear the matter up between you.",
+  "sceneEn": "A colleague has criticized you indirectly. Say what you have sensed, ask directly, put your own reservation without hiding it and clear the matter up between you.",
   "partnerEn": "a colleague who avoids speaking plainly and talks in hints",
   "openingEn": "Well, in itself your draft is fine. Actually I'd only have … well, done it differently. Do you know what I mean?",
   "goalEn": "The criticism behind the hint has been said openly, both sides have put their reservations directly and the matter has been cleared up."
  },
  {
   "conversation": "de-c1-krisenkommunikation",
-  "sceneEn": "Something has gone wrong at your organisation and a journalist is talking to you. Express regret, describe what happened in corporate language, say which measures have been started and say when you will report back.",
+  "sceneEn": "Something has gone wrong at your organization and a journalist is talking to you. Express regret, describe what happened in corporate language, say which measures have been started and say when you will report back.",
   "partnerEn": "an insistent journalist looking for someone to blame and wanting a name",
   "openingEn": "Who bears the responsibility for this? And please don't tell me that measures have been initiated.",
   "goalEn": "Regret has been expressed, the incident and the measures have been described, the question of responsibility has been met rather than dodged and a date for the next update has been given."
@@ -170,7 +170,7 @@
  {
   "conversation": "de-c1-partikel-pruefung",
   "sceneEn": "You are talking to a friend about something that has upset your plans. Change your tone three times in the conversation: first inviting and softening, then mild reproach, and at the end comfort and acceptance.",
-  "partnerEn": "a friend who upset the plan, defensive at first but apologising in the end",
+  "partnerEn": "a friend who upset the plan, defensive at first but apologizing in the end",
   "openingEn": "Tell me, are you cross now? It really wasn't my fault.",
   "goalEn": "The reproach has been voiced, the other side's reasons have been heard and the conversation has closed with acceptance and a new plan."
  }

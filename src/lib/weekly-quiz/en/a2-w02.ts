@@ -41,7 +41,7 @@ export const EN_A2_W02: QuizWeek = {
         "If you have a fever or a bad cough, please call us before you come. Do not come into the waiting room. " +
         "If you can't come, you have to cancel your appointment at least one day before. If you don't, you will have to pay 20 pounds. " +
         "Dr Patel's room is on the second floor. The lift is next to the pharmacy on the ground floor.\n\n" +
-        "Best wishes,\nRiverside Health Centre",
+        "Best wishes,\nRiverside Health Center",
     },
     {
       kind: "audio",
@@ -50,7 +50,7 @@ export const EN_A2_W02: QuizWeek = {
       genreTr: "Telefon görüşmesi",
       plays: 2,
       segments: [
-        { speaker: "Receptionist", text: "Good morning, Riverside Health Centre. How can I help you?" },
+        { speaker: "Receptionist", text: "Good morning, Riverside Health Center. How can I help you?" },
         { speaker: "Mr Kaya", text: "Hello, I'd like to make an appointment, please. I've had a bad headache since Monday." },
         { speaker: "Receptionist", text: "I'm sorry to hear that. Have you got a temperature?" },
         { speaker: "Mr Kaya", text: "No, I haven't. But I can't sleep well." },

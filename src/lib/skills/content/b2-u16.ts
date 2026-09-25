@@ -202,7 +202,7 @@ export const b2U16: SkillExercise[] = [
       { de: "die Besetzung", tr: "oyuncu kadrosu", en: "cast" },
       { de: "das Theaterstück", tr: "tiyatro oyunu", en: "play" },
       { de: "die Tournee", tr: "turne", en: "tour" },
-      { de: "der Spielplan", tr: "oyun programı", en: "programme" },
+      { de: "der Spielplan", tr: "oyun programı", en: "program" },
       { de: "der Untertitel", tr: "altyazı", en: "subtitle" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
       { de: "komplett", tr: "eksiksiz", en: "complete" },

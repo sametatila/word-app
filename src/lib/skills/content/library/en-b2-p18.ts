@@ -103,7 +103,7 @@ export const enB2P18: SkillExercise[] = [
       },
       {
         text: "How do most people under forty pay?",
-        options: ["by cheque", "by card or phone", "in cash at the till"],
+        options: ["by check", "by card or phone", "in cash at the till"],
         answer: 1,
         explain: "„Most people under forty pay by card or phone“.",
       },

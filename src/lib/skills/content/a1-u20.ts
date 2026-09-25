@@ -96,7 +96,7 @@ export const a1U20: SkillExercise[] = [
     genre: "info",
     intro: "Televizyon programı. Hangi kanalda ne var?",
     gloss: [
-      { de: "die Sendung", tr: "program", en: "programme" },
+      { de: "die Sendung", tr: "program", en: "program" },
       { de: "die Nachrichten", tr: "haberler", en: "the news" },
       { de: "die Serie", tr: "dizi", en: "series" },
       { de: "der Kanal", tr: "kanal", en: "channel" },

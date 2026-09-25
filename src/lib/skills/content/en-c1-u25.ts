@@ -62,7 +62,7 @@ export const enC1U25: SkillExercise[] = [
       { de: "object", tr: "nesne" },
       { de: "comma", tr: "virgül" },
       { de: "exist", tr: "var olmak" },
-      { de: "judgement", tr: "yargı" },
+      { de: "judgment", tr: "yargı" },
       { de: "exists", tr: "var" },
       { de: "visible", tr: "görünür" },
       { de: "hole", tr: "delik" },
@@ -97,8 +97,8 @@ export const enC1U25: SkillExercise[] = [
       "Serenity we learn from others; sincerity, from ourselves. Eight words, and almost everything this level has measured is in them.\n" +
       "Count what is not there. No article in front of either noun, because both are abstract and general. No ending anywhere to say which word is the object, because English stopped marking that centuries ago. No verb in the second half, because the first half has already supplied it and a comma is holding its place. And no subject at the front of either clause, because the object has been moved there instead and the subject has been pushed behind it.\n" +
       "Four decisions, and not one of them is made by adding anything. Each of them is made by a position or by an absence.\n" +
-      "That is the closing measure of this level and it has been earned rather than asserted. Look back at what the units before this one found. The comparison that cannot say which role the compared noun had, because there is no case ending to say it. The class of a word changed by putting nothing in front of it. The gap a reader has to fill because the rule that would have marked it does not exist here. The slot before the verb where a judgement goes, which exists only because the verb is not required to stand in second place.\n" +
-      "A neighbouring language does the same work with endings: a case on the noun, a fixed position for the verb, a visible article, a derived form for every change of class. It writes its grammar down. English moves things and leaves holes, and asks the reader to know what a hole means.\n" +
+      "That is the closing measure of this level and it has been earned rather than asserted. Look back at what the units before this one found. The comparison that cannot say which role the compared noun had, because there is no case ending to say it. The class of a word changed by putting nothing in front of it. The gap a reader has to fill because the rule that would have marked it does not exist here. The slot before the verb where a judgment goes, which exists only because the verb is not required to stand in second place.\n" +
+      "A neighboring language does the same work with endings: a case on the noun, a fixed position for the verb, a visible article, a derived form for every change of class. It writes its grammar down. English moves things and leaves holes, and asks the reader to know what a hole means.\n" +
       "Neither is harder in general and each is harder in a particular place. Endings have to be learned and cannot be guessed. Holes cannot be learned at all, because there is nothing there to learn; they have to be met often enough for their shape to become familiar.\n" +
       "The pursuit survives as a habit, the end in itself as a memory. The transience stayed; the equanimity did not.\n" +
       "Two more lines of the same kind, and by now a reader of this level should be able to say of each of them exactly what is missing and what the missing thing was doing.",
@@ -110,7 +110,7 @@ export const enC1U25: SkillExercise[] = [
         explain: "„Each of them is made by a position or by an absence.“",
       },
       {
-        text: "What does the neighbouring language do?",
+        text: "What does the neighboring language do?",
         options: ["writes its grammar down", "moves things", "leaves holes"],
         answer: 0,
         explain: "„It writes its grammar down.“",
@@ -360,7 +360,7 @@ export const enC1U25: SkillExercise[] = [
     gloss: [
       { de: "hedge", tr: "çekince" },
       { de: "unpleasant", tr: "tatsız" },
-      { de: "behaviour", tr: "davranış" },
+      { de: "behavior", tr: "davranış" },
       { de: "underneath", tr: "altta" },
       { de: "ordinary", tr: "olağan" },
       { de: "deception", tr: "kandırma" },
@@ -383,7 +383,7 @@ export const enC1U25: SkillExercise[] = [
       { speaker: "Ceyda", text: "It is a photograph that nobody updated. Friends update theirs faster, which is why a friend's description can be so unpleasant and so useful at the same time." },
       { speaker: "Ceyda", text: "Self-deception might look like a defense mechanism. And the word „look“ is the careful one there." },
       { speaker: "Ceyda", text: "A mechanism is protection and it is doing a job. Deception is a mechanism that has kept running after the thing it protected against has gone." },
-      { speaker: "Ceyda", text: "That is the only difference and it is a difference in time rather than in kind, which is why the same behaviour can be harmless at thirty and expensive at fifty." },
+      { speaker: "Ceyda", text: "That is the only difference and it is a difference in time rather than in kind, which is why the same behavior can be harmless at thirty and expensive at fifty." },
       { speaker: "Ceyda", text: "A coping strategy may hide transference and stay latent. Three long words, and underneath them a small and ordinary thing." },
       { speaker: "Ceyda", text: "A person who was not listened to at home will hear a manager as a parent, and will answer the manager the way a child answers a parent." },
       { speaker: "Ceyda", text: "Nobody in the room knows this, including them, and the strategy that carried them through one house is now the thing costing them a job." },

@@ -362,7 +362,7 @@ export const b1U15: SkillExercise[] = [
       { de: "hinweisen", tr: "dikkat çekmek", en: "to point out" },
       { de: "die Rücksicht", tr: "anlayış", en: "consideration" },
       { de: "Ratschlag", tr: "öğüt", en: "piece of advice" },
-      { de: "der Humor", tr: "mizah", en: "humour" },
+      { de: "der Humor", tr: "mizah", en: "humor" },
       { de: "also", tr: "yani", en: "so" },
       { de: "sehen", tr: "görmek", en: "to see" },
     ],

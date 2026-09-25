@@ -51,7 +51,7 @@ export const EN_B1_02: MockPaper = {
               genre: "Email to residents",
               genreTr: "Sakinlere e-posta",
               title: "New rubbish collection",
-              body: `Paper will be collected on Tuesdays instead of Fridays from 1 May. Glass does not change. If your street has building work, the lorry may come a day late, and we will not send a message about this.`,
+              body: `Paper will be collected on Tuesdays instead of Fridays from 1 May. Glass does not change. If your street has building work, the truck may come a day late, and we will not send a message about this.`,
             },
             {
               kind: "text",
@@ -99,7 +99,7 @@ export const EN_B1_02: MockPaper = {
               options: ["A message from the council about the delay", "A collection that may happen one day later", "Paper and glass collected on the same day"],
               answer: 1,
               explain:
-                "E-posta hem gecikmeyi hem de haber verilmeyeceğini söylüyor: «the lorry may come a day late, and we will not send a message about this». Cam günü değişmiyor, dolayısıyla iki atığın aynı güne düşmesi diye bir bilgi yok.",
+                "E-posta hem gecikmeyi hem de haber verilmeyeceğini söylüyor: «the truck may come a day late, and we will not send a message about this». Cam günü değişmiyor, dolayısıyla iki atığın aynı güne düşmesi diye bir bilgi yok.",
             },
             {
               kind: "mcq",
@@ -152,7 +152,7 @@ export const EN_B1_02: MockPaper = {
             { key: "d", label: "Clothes Swap", body: "Bring up to five clean items and take up to five home. First Sunday of the month, in the community hall. No money changes hands." },
             { key: "e", label: "Garden Share", body: "People with a big garden and no time are matched with people who want to grow food and have no garden. You share the harvest. Free to join." },
             { key: "f", label: "Solar Advice Evening", body: "An independent engineer explains what a roof can and cannot do. No company is present and nothing is sold. Third Thursday, 7 p.m., online or in person." },
-            { key: "g", label: "Weekly Veg Box", body: "Vegetables from three farms within thirty kilometres, delivered on Thursday. You cannot choose what is in the box. From 14 pounds a week." },
+            { key: "g", label: "Weekly Veg Box", body: "Vegetables from three farms within thirty kilometers, delivered on Thursday. You cannot choose what is in the box. From 14 pounds a week." },
             { key: "h", label: "Furniture Rescue", body: "We collect sofas, tables and beds you no longer want, and pass them on to families setting up a home. Free collection, but the item must be in good condition." },
           ],
           items: [
@@ -301,7 +301,7 @@ So I have stopped feeling proud about my bin and I have started writing to the s
               text: "How does she describe writing to the supermarket?",
               options: [
                 "As something she does instead of feeling proud",
-                "As a campaign she has organised with her supermarket",
+                "As a campaign she has organized with her supermarket",
                 "As advice she gives but does not follow",
                 "As a step she is sure will succeed",
               ],
@@ -333,13 +333,13 @@ Part of the reason is a change in the law. In several countries a manufacturer m
 
 But the law alone does not explain the change. Repair cafés, which are run by volunteers, have taught a generation that a machine can be opened. {{18}}
 
-There is a limit, and it is worth naming. A repair is only cheap if the labour is cheap or free. {{19}}
+There is a limit, and it is worth naming. A repair is only cheap if the labor is cheap or free. {{19}}
 
 The most interesting effect may be a slower one. When people expect to repair a thing, they buy differently in the first place. {{20}}`,
               gloss: [
                 { de: "a manufacturer", tr: "üretici", en: "der Hersteller" },
                 { de: "spare parts", tr: "yedek parça", en: "die Ersatzteile" },
-                { de: "labour", tr: "işçilik", en: "die Arbeitskosten" },
+                { de: "labor", tr: "işçilik", en: "die Arbeitskosten" },
               ],
             },
           ],
@@ -576,7 +576,7 @@ So I have changed my mind, {{29}} not in the direction people expect. The materi
               situation: "Bir alışveriş merkezinde anons yapılıyor.",
               plays: 2,
               segments: [
-                { text: "The car park on level three is closed this weekend for cleaning. Levels one and two are open as usual, and the first hour is still free for everybody." },
+                { text: "The parking lot on level three is closed this weekend for cleaning. Levels one and two are open as usual, and the first hour is still free for everybody." },
               ],
             },
             {
@@ -588,7 +588,7 @@ So I have changed my mind, {{29}} not in the direction people expect. The materi
               plays: 2,
               segments: [
                 { speaker: "Nils", text: "How is the cookery course going?" },
-                { speaker: "Ayse", text: "The cooking is easy. What I did not expect is how much I have learnt about buying: what is in season, what freezes well." },
+                { speaker: "Ayse", text: "The cooking is easy. What I did not expect is how much I have learned about buying: what is in season, what freezes well." },
               ],
             },
             {
@@ -658,7 +658,7 @@ So I have changed my mind, {{29}} not in the direction people expect. The materi
               no: 1,
               ref: "a1",
               text: "What is still true this weekend?",
-              options: ["All three levels are open to drivers", "Cleaning work has closed the whole car park", "The first hour of parking costs nothing"],
+              options: ["All three levels are open to drivers", "Cleaning work has closed the whole parking lot", "The first hour of parking costs nothing"],
               answer: 2,
               explain:
                 "Anons kapanışı bildirdikten sonra değişmeyeni de söylüyor: «the first hour is still free for everybody». Yalnız üçüncü kat kapalı, dolayısıyla ne üç kat açık ne de tamamı kapalı.",
@@ -669,10 +669,10 @@ So I have changed my mind, {{29}} not in the direction people expect. The materi
               no: 2,
               ref: "a2",
               text: "What surprised Ayse about the course?",
-              options: ["How much she has learnt about shopping", "How difficult the recipes were", "How many people were in the group"],
+              options: ["How much she has learned about shopping", "How difficult the recipes were", "How many people were in the group"],
               answer: 0,
               explain:
-                "Ayse pişirmenin kolay olduğunu söyleyip sürprizi adlandırıyor: «how much I have learnt about buying». Tarif zorluğu tersine çevriliyor, grup büyüklüğü kayıtta hiç geçmiyor.",
+                "Ayse pişirmenin kolay olduğunu söyleyip sürprizi adlandırıyor: «how much I have learned about buying». Tarif zorluğu tersine çevriliyor, grup büyüklüğü kayıtta hiç geçmiyor.",
             },
             {
               kind: "mcq",
@@ -796,7 +796,7 @@ So I have changed my mind, {{29}} not in the direction people expect. The materi
               plays: 2,
               segments: [
                 { speaker: "Ravi", text: "Your presentation had far too many numbers." },
-                { speaker: "Mina", text: "You are right. When I practised it at home, I could not remember them either. Next time I will keep three." },
+                { speaker: "Mina", text: "You are right. When I practiced it at home, I could not remember them either. Next time I will keep three." },
               ],
             },
             {
@@ -1115,7 +1115,7 @@ Closed in the month of:  {{19}}`,
 
 I ordered a floor lamp from your website on 3 March and it arrived on 9 March.
 
-Unfortunately the lamp was damaged. The glass shade has a crack about ten centimetres long on one side, and the box itself was open at one corner when the driver handed it to me.
+Unfortunately the lamp was damaged. The glass shade has a crack about ten centimeters long on one side, and the box itself was open at one corner when the driver handed it to me.
 
 I would like a replacement rather than a refund, because I still want the lamp. Could you send it before the end of the month? If that is not possible, please tell me and I will ask for my money back.
 
@@ -1197,7 +1197,7 @@ The difference, I think, is that the bottle needed one decision and the phone ne
               { de: "use a second conditional", tr: "İkinci tip koşulu kullanmak" },
             ],
             sample:
-              "I get up at half past six and I leave the house at eight. I used to shop in the big supermarket on the way home, but since last year I have used the small shop near my flat, because the queue is shorter. If I had more time in the week, I would cook twice at the weekend and freeze half of it.",
+              "I get up at half past six and I leave the house at eight. I used to shop in the big supermarket on the way home, but since last year I have used the small shop near my flat, because the queue is shorter. If I had more time in the week, I would cook twice on the weekend and freeze half of it.",
             criteria: [
               "Gün sırayla mı anlatıldı? (first, then, after that)",
               "`used to` ya da present perfect ile değişim anlatıldı mı?",
@@ -1294,7 +1294,7 @@ The difference, I think, is that the bottle needed one decision and the phone ne
               { de: "agree or disagree in a nuanced way", tr: "Katılırken ya da karşı çıkarken ince ayrım yapmak" },
             ],
             sample:
-              "I think money changes behaviour faster, but information decides what people do with the money. When bags cost money here, everybody brought their own within a month. I partly agree about campaigns: alone they do very little, but they explain why the price changed, and without that people just get angry.",
+              "I think money changes behavior faster, but information decides what people do with the money. When bags cost money here, everybody brought their own within a month. I partly agree about campaigns: alone they do very little, but they explain why the price changed, and without that people just get angry.",
             criteria: [
               "Görüş açıkça bildirildi mi?",
               "Somut bir örnek verildi mi?",

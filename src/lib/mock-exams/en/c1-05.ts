@@ -217,7 +217,7 @@ None of this means that the benefits are imaginary. {{11}} follows is narrower: 
               title: "Task displacement",
               body: `Task displacement is the process by which parts of an occupation are taken over by machinery, usually with a gain in speed and a loss that is difficult to {{13}}.
 
-The gain is easy to record. A displaced task can be counted, timed and priced; without such counting, large organisations could not plan at all.
+The gain is easy to record. A displaced task can be counted, timed and priced; without such counting, large organizations could not plan at all.
 
 The loss is not a matter of principle but of {{14}}. In a small workshop the remaining tasks are redistributed by whoever is standing there; in a body of forty thousand they are redistributed by a document, and the two are not equivalent.
 
@@ -242,8 +242,8 @@ Whether that is a price worth paying is a political question rather than a techn
               kind: "gap",
               id: "en-c1-05-l3-14",
               no: 14,
-              text: "ORGANISE",
-              accept: ["organisation", "organization"],
+              text: "ORGANIZE",
+              accept: ["organization", "organization"],
               explain:
                 "`not a matter of principle but of ___` yapısı `of` edatının ardında bir ad ister ve karşıtlık ilkeyle kuruluyor: sorun düzenleme biçiminde. Britanya ve Amerika yazımı ikisi de kabul edilir.",
             },
@@ -351,13 +351,13 @@ Whether that is a price worth paying is a political question rather than a techn
               genre: "Essay",
               genreTr: "Deneme",
               title: "The interview that cannot be failed",
-              body: `Every organisation I have worked for has believed that it selects well, and every one of them has been unable to say what it selects for. This is not a complaint about incompetence. It is an observation about a task that looks straightforward and is not.
+              body: `Every organization I have worked for has believed that it selects well, and every one of them has been unable to say what it selects for. This is not a complaint about incompetence. It is an observation about a task that looks straightforward and is not.
 
 Consider what a selection process actually has to do. It must predict performance in a role that will change within two years, using evidence gathered in ninety minutes from a person who is performing, against criteria written by somebody who no longer does the job. Put like that, the surprise is not that the process is unreliable; it is that anybody expects otherwise.
 
-The research is unusually clear for a social science, and it has been clear for forty years. Structured interviews predict better than unstructured ones, work samples predict better than either, and the confidence an interviewer feels bears almost no relation to the accuracy of their judgement. Almost every organisation knows this. Almost none of them acts on it, and the reason is not ignorance.
+The research is unusually clear for a social science, and it has been clear for forty years. Structured interviews predict better than unstructured ones, work samples predict better than either, and the confidence an interviewer feels bears almost no relation to the accuracy of their judgment. Almost every organization knows this. Almost none of them acts on it, and the reason is not ignorance.
 
-What the panel is really doing is something else, and the something else is what the organisation wants. An unstructured conversation allows a panel to feel that the decision was theirs, it produces a story they can tell about why this candidate, and it distributes responsibility so thinly that no individual has to own the appointment. A work sample removes all three. Faced with a method that is more accurate and less comfortable, most institutions choose comfort and call it judgement.
+What the panel is really doing is something else, and the something else is what the organization wants. An unstructured conversation allows a panel to feel that the decision was theirs, it produces a story they can tell about why this candidate, and it distributes responsibility so thinly that no individual has to own the appointment. A work sample removes all three. Faced with a method that is more accurate and less comfortable, most institutions choose comfort and call it judgment.
 
 I am not going to pretend that I stand outside this. I have sat on panels where the structured questions were asked, scored and then set aside for a conversation about fit, and I did not object, because objecting would have meant saying that I did not trust the room. Rarely does a panel record why it set the scores aside, and the reluctance of employers to record it is not an accident. On balance I think the room was wrong. I also think that anybody who has never been in that position is describing a workplace I have not worked in.`,
               gloss: [
@@ -392,7 +392,7 @@ I am not going to pretend that I stand outside this. I have sat on panels where 
               kind: "mcq",
               id: "en-c1-05-l5-25",
               no: 25,
-              text: "Why do organisations keep the unstructured interview?",
+              text: "Why do organizations keep the unstructured interview?",
               options: ["It is cheaper to run", "It gives the panel what the better method removes", "The research is not yet widely known in the sector", "Candidates prefer it"],
               answer: 1,
               explain:
@@ -423,7 +423,7 @@ I am not going to pretend that I stand outside this. I have sat on panels where 
             {
               key: "a",
               label: "a — Writer A",
-              body: "Every proposal here assumes that the organisation wants a better prediction. It does not. It wants a decision that can be defended in a meeting, and those are different objects with different requirements. Until somebody writes that down, the reform literature is describing a country nobody lives in.",
+              body: "Every proposal here assumes that the organization wants a better prediction. It does not. It wants a decision that can be defended in a meeting, and those are different objects with different requirements. Until somebody writes that down, the reform literature is describing a country nobody lives in.",
             },
             {
               key: "b",
@@ -433,12 +433,12 @@ I am not going to pretend that I stand outside this. I have sat on panels where 
             {
               key: "c",
               label: "c — Writer C",
-              body: "The cost falls on people who are not in the room. A process that favours the confident does not merely misselect; it teaches a whole category of candidate that the door is not for them, and that lesson is learned once and kept for a working life.",
+              body: "The cost falls on people who are not in the room. A process that favors the confident does not merely misselect; it teaches a whole category of candidate that the door is not for them, and that lesson is learned once and kept for a working life.",
             },
             {
               key: "d",
               label: "d — Writer D",
-              body: "I would separate two claims that keep getting merged. That interviews predict badly is well established. That any particular alternative is better in a real organisation, with real managers and no budget, is not, and the second claim is the one being sold.",
+              body: "I would separate two claims that keep getting merged. That interviews predict badly is well established. That any particular alternative is better in a real organization, with real managers and no budget, is not, and the second claim is the one being sold.",
             },
             {
               key: "e",
@@ -478,7 +478,7 @@ I am not going to pretend that I stand outside this. I have sat on panels where 
               kind: "match",
               id: "en-c1-05-l6-30",
               no: 30,
-              text: "Which writer says the debate misdescribes what organisations actually want?",
+              text: "Which writer says the debate misdescribes what organizations actually want?",
               answer: "a",
               explain:
                 "Writer A varsayımı çürütüyor: kurum daha iyi kestirim değil, «a decision that can be defended in a meeting» istiyor. Reform yazını bu yüzden var olmayan bir ülkeyi tarif ediyor.",
@@ -500,12 +500,12 @@ I am not going to pretend that I stand outside this. I have sat on panels where 
               id: "t7",
               genre: "Long-form article",
               genreTr: "Uzun makale",
-              title: "The pilot that was cancelled twice",
+              title: "The pilot that was canceled twice",
               body: `Between 2016 and 2022 a national employer ran the same pilot three times: replace the unstructured interview with a work sample for one category of post, and compare the appointments two years later. The design was sound and the sample was large enough to see an effect.
 
 {{31}}
 
-The first cancellation is the least interesting. A minister changed, the programme was reorganised, and the work stopped in month seven with no result at all.
+The first cancellation is the least interesting. A minister changed, the program was reorganised, and the work stopped in month seven with no result at all.
 
 {{32}}
 
@@ -633,7 +633,7 @@ The third attempt was designed by people who had read the second report carefull
               kind: "match",
               id: "en-c1-05-l8-38",
               no: 38,
-              text: "Which text criticises a failure to record what changed?",
+              text: "Which text criticizes a failure to record what changed?",
               answer: "d",
               explain:
                 "Sendika temsilcisi düzenlemelerin kendisini değil kayıtsızlığı eleştiriyor: «we never recorded which tasks moved and to whom, so the next negotiation starts from nothing».",
@@ -651,7 +651,7 @@ The third attempt was designed by people who had read the second report carefull
               kind: "match",
               id: "en-c1-05-l8-40",
               no: 40,
-              text: "Which text defends the very decisions it also criticises?",
+              text: "Which text defends the very decisions it also criticizes?",
               answer: "d",
               explain:
                 "İki cümle yan yana duruyor: «I would defend most of them against anybody» ve «What I would not defend is …». Savunma düzenlemelere, eleştiri kayıt tutulmamasına.",
@@ -689,7 +689,7 @@ The third attempt was designed by people who had read the second report carefull
                 { speaker: "Eren", text: "The pilot worked, and I say that as somebody who spent two years arguing against it. What I still cannot defend is that we let managers keep a veto." },
                 { speaker: "Zsofia", text: "The veto is not ours, though. It was the condition for running the thing at all." },
                 { speaker: "Eren", text: "Which is precisely the objection, not an answer to it. If we accept a condition that removes the effect, we should say so in the report rather than publish the design as though it were intact." },
-                { speaker: "Zsofia", text: "I would go along with saying so. I would resist the next step, which is to make a recruitment pilot responsible for the whole distribution of authority in the organisation." },
+                { speaker: "Zsofia", text: "I would go along with saying so. I would resist the next step, which is to make a recruitment pilot responsible for the whole distribution of authority in the organization." },
               ],
             },
             {
@@ -700,8 +700,8 @@ The third attempt was designed by people who had read the second report carefull
               situation: "Bir yönetici görev tanımlarını yeniden yazma işini anlatıyor.",
               plays: 2,
               segments: [
-                { speaker: "Host", text: "You rewrote every job description in your organisation. Why?" },
-                { speaker: "Manager", text: "Because they described a set of tasks and we were hiring for a set of judgements, and nobody had noticed that the two documents were the same document. The rewrite took fourteen months and I would not do it again." },
+                { speaker: "Host", text: "You rewrote every job description in your organization. Why?" },
+                { speaker: "Manager", text: "Because they described a set of tasks and we were hiring for a set of judgments, and nobody had noticed that the two documents were the same document. The rewrite took fourteen months and I would not do it again." },
                 { speaker: "Host", text: "Why not?" },
                 { speaker: "Manager", text: "Because the descriptions are better and the appointments are the same. I improved the instrument and not the practice, which is the most common way to spend a year in this field." },
               ],
@@ -714,8 +714,8 @@ The third attempt was designed by people who had read the second report carefull
               situation: "Bir öğretim üyesi seçme yazınından bir bulgu aktarıyor.",
               plays: 2,
               segments: [
-                { speaker: "Lecturer", text: "There is a finding in this literature that nobody enjoys and everybody can replicate. Interviewers who are given ten minutes to discuss a candidate before the interview produce more consistent judgements and no more accurate ones." },
-                { speaker: "Lecturer", text: "Consistency and accuracy come apart, and when they come apart, organisations reliably choose consistency, because consistency is the thing they can be held to account for." },
+                { speaker: "Lecturer", text: "There is a finding in this literature that nobody enjoys and everybody can replicate. Interviewers who are given ten minutes to discuss a candidate before the interview produce more consistent judgments and no more accurate ones." },
+                { speaker: "Lecturer", text: "Consistency and accuracy come apart, and when they come apart, organizations reliably choose consistency, because consistency is the thing they can be held to account for." },
               ],
             },
           ],
@@ -748,10 +748,10 @@ The third attempt was designed by people who had read the second report carefull
               no: 3,
               ref: "a2",
               text: "Why did the manager rewrite the descriptions?",
-              options: ["They were badly out of date and inconsistent", "They described tasks rather than judgements", "The regulator required it"],
+              options: ["They were badly out of date and inconsistent", "They described tasks rather than judgments", "The regulator required it"],
               answer: 1,
               explain:
-                "Gerekçe doğrudan veriliyor: «they described a set of tasks and we were hiring for a set of judgements». Güncelliğini yitirmiş olma ya da denetleyici kayıtta hiç geçmiyor.",
+                "Gerekçe doğrudan veriliyor: «they described a set of tasks and we were hiring for a set of judgments». Güncelliğini yitirmiş olma ya da denetleyici kayıtta hiç geçmiyor.",
             },
             {
               kind: "mcq",
@@ -770,18 +770,18 @@ The third attempt was designed by people who had read the second report carefull
               no: 5,
               ref: "a3",
               text: "What does the lecturer say about the ten-minute discussion?",
-              options: ["It makes judgements more consistent but no better", "It improves accuracy considerably in most cases", "It is rarely used by experienced panels"],
+              options: ["It makes judgments more consistent but no better", "It improves accuracy considerably in most cases", "It is rarely used by experienced panels"],
               answer: 0,
               explain:
-                "Bulgu iki ölçüyü ayırıyor: «more consistent judgements and no more accurate ones». Tutarlılık artıyor, isabet artmıyor.",
+                "Bulgu iki ölçüyü ayırıyor: «more consistent judgments and no more accurate ones». Tutarlılık artıyor, isabet artmıyor.",
             },
             {
               kind: "mcq",
               id: "en-c1-05-h1-6",
               no: 6,
               ref: "a3",
-              text: "Why do organisations choose consistency?",
-              options: ["It is considerably cheaper to administer in practice", "It is what an organisation can be judged on", "It is more accurate over a long period"],
+              text: "Why do organizations choose consistency?",
+              options: ["It is considerably cheaper to administer in practice", "It is what an organization can be judged on", "It is more accurate over a long period"],
               answer: 1,
               explain:
                 "Gerekçe son cümlede: «because consistency is the thing they can be held to account for». Maliyet karşılaştırması yapılmıyor ve isabet açıkça artmıyor.",
@@ -807,7 +807,7 @@ The third attempt was designed by people who had read the second report carefull
               plays: 1,
               segments: [
                 {
-                  text: "Thank you. I will give you the headline findings and I will not pretend they are comfortable. We looked at four hundred and sixty appointments made between 2018 and 2023, and we were able to match three hundred and ninety of them to a performance review two years later. The correlation between the panel's ranking and the later assessment was zero point zero eight, which is not zero and is not much. Here is the first finding: the strongest predictor in our data is not the interview score, it is the work sample, which was used in only a fifth of the competitions. Second, the panel size matters more than we expected. A panel of three produces the same accuracy as a panel of five and takes about forty per cent less time. Third, the format of the feedback. We tried a letter, a telephone call and a scored grid, and the grid produced the fewest appeals, which surprised the two of us who had argued for the call. Fourth, a caution: candidates who were already internal did substantially better at interview and no better afterwards. And finally, the cost. Each competition costs about eleven thousand pounds in staff time, and nobody had ever added that up before.",
+                  text: "Thank you. I will give you the headline findings and I will not pretend they are comfortable. We looked at four hundred and sixty appointments made between 2018 and 2023, and we were able to match three hundred and ninety of them to a performance review two years later. The correlation between the panel's ranking and the later assessment was zero point zero eight, which is not zero and is not much. Here is the first finding: the strongest predictor in our data is not the interview score, it is the work sample, which was used in only a fifth of the competitions. Second, the panel size matters more than we expected. A panel of three produces the same accuracy as a panel of five and takes about forty percent less time. Third, the format of the feedback. We tried a letter, a telephone call and a scored grid, and the grid produced the fewest appeals, which surprised the two of us who had argued for the call. Fourth, a caution: candidates who were already internal did substantially better at interview and no better afterwards. And finally, the cost. Each competition costs about eleven thousand pounds in staff time, and nobody had ever added that up before.",
                 },
               ],
             },
@@ -876,7 +876,7 @@ Cost of each competition in staff time: {{14}} pounds`,
               text: "Gap 11",
               accept: ["3", "three"],
               explain:
-                "«A panel of three produces the same accuracy as a panel of five and takes about forty per cent less time». Beş, karşılaştırmanın öteki ucu.",
+                "«A panel of three produces the same accuracy as a panel of five and takes about forty percent less time». Beş, karşılaştırmanın öteki ucu.",
             },
             {
               kind: "gap",
@@ -931,9 +931,9 @@ Cost of each competition in staff time: {{14}} pounds`,
                 { speaker: "Chair", text: "Wren, is that fair?" },
                 { speaker: "Wren", text: "It is fair and it is incomplete. I have run three of these. The marking time is real. What killed two of mine was not time; it was that the panel could see the candidate's answers and could not see their face, and they did not trust a decision they could not feel." },
                 { speaker: "Chair", text: "Juno?" },
-                { speaker: "Juno", text: "I want to disagree with both of them, politely. You are describing the failure of pilots, and pilots fail for pilot reasons. The interesting question is what happens when a method is simply imposed and nobody is asked whether they are comfortable. That has been done twice, in large organisations, and it worked." },
+                { speaker: "Juno", text: "I want to disagree with both of them, politely. You are describing the failure of pilots, and pilots fail for pilot reasons. The interesting question is what happens when a method is simply imposed and nobody is asked whether they are comfortable. That has been done twice, in large organizations, and it worked." },
                 { speaker: "Chair", text: "Lenn, does that change your position?" },
-                { speaker: "Lenn", text: "Partly, and I should say so. Imposition works where an organisation can absorb a year of resentment. Mine cannot. That is not a reason to reject Juno's evidence; it is a reason to stop calling it general." },
+                { speaker: "Lenn", text: "Partly, and I should say so. Imposition works where an organization can absorb a year of resentment. Mine cannot. That is not a reason to reject Juno's evidence; it is a reason to stop calling it general." },
                 { speaker: "Chair", text: "Wren, what would you do tomorrow?" },
                 { speaker: "Wren", text: "Cost the marking properly and pay for it, and then stop reporting the thing as a pilot. Something everybody knows is temporary is evaluated as temporary. Half the effects we measure are measurements of impermanence." },
                 { speaker: "Chair", text: "Juno, a last word." },
@@ -964,7 +964,7 @@ Cost of each competition in staff time: {{14}} pounds`,
               no: 16,
               ref: "c1",
               text: "What does Wren add to Lenn's account?",
-              options: ["That the marking time turned out not to be a real problem at all", "That panels distrusted a judgement they could not feel", "That the candidates strongly preferred the old method", "That the pilots were too small"],
+              options: ["That the marking time turned out not to be a real problem at all", "That panels distrusted a judgment they could not feel", "That the candidates strongly preferred the old method", "That the pilots were too small"],
               answer: 1,
               explain:
                 "Wren süreyi doğruluyor ama Lenn'in açıklamasını eksik buluyor: «What killed two of mine was not time; it was that the panel could see the candidate's answers and could not see their face».",
@@ -975,7 +975,7 @@ Cost of each competition in staff time: {{14}} pounds`,
               no: 17,
               ref: "c1",
               text: "What is Juno's objection to both of them?",
-              options: ["They describe why pilots fail, not the method", "They have misread the data", "They are far too pessimistic about the candidates", "They rely on a single organisation"],
+              options: ["They describe why pilots fail, not the method", "They have misread the data", "They are far too pessimistic about the candidates", "They rely on a single organization"],
               answer: 0,
               explain:
                 "Juno ayrımı kuruyor: «You are describing the failure of pilots, and pilots fail for pilot reasons», ve asıl ilginç sorunun şu olduğunu söylüyor: Bir yöntem doğrudan dayatıldığında ne oluyor?",
@@ -1122,7 +1122,7 @@ Cost of each competition in staff time: {{14}} pounds`,
               situation: "Altıncı konuşmacı hiçbir bütçede görünmeyen bir maliyeti anlatıyor.",
               plays: 2,
               segments: [
-                { text: "The competition appears in our accounts as an advertising cost of nine hundred pounds. What appears nowhere is that five managers spent two days each on it, that two of them cancelled visits to do so, and that the work those visits would have covered simply moved to somebody else. Nobody has ever been asked to put a figure on that." },
+                { text: "The competition appears in our accounts as an advertising cost of nine hundred pounds. What appears nowhere is that five managers spent two days each on it, that two of them canceled visits to do so, and that the work those visits would have covered simply moved to somebody else. Nobody has ever been asked to put a figure on that." },
               ],
             },
             {
@@ -1133,7 +1133,7 @@ Cost of each competition in staff time: {{14}} pounds`,
               situation: "Yedinci konuşmacı eleştirilen bir meslektaşından söz ediyor.",
               plays: 2,
               segments: [
-                { text: "A great deal has been said this week about the officer who chaired that panel, most of it by people who have not read the file. She used the scored questions, she recorded her reasoning, and she was outvoted. If we want to criticise somebody, the papers make it perfectly clear who." },
+                { text: "A great deal has been said this week about the officer who chaired that panel, most of it by people who have not read the file. She used the scored questions, she recorded her reasoning, and she was outvoted. If we want to criticize somebody, the papers make it perfectly clear who." },
               ],
             },
             {
@@ -1144,7 +1144,7 @@ Cost of each competition in staff time: {{14}} pounds`,
               situation: "Sekizinci konuşmacı kanıtın yeterliğini tartışıyor.",
               plays: 2,
               segments: [
-                { text: "I am not opposed to the change and I want that understood. My point is narrower: we have two studies, both from the same organisation, and one of them was designed by the team proposing the reform. That is not enough to rewrite a national framework on, and saying so is not obstruction." },
+                { text: "I am not opposed to the change and I want that understood. My point is narrower: we have two studies, both from the same organization, and one of them was designed by the team proposing the reform. That is not enough to rewrite a national framework on, and saying so is not obstruction." },
               ],
             },
           ],
@@ -1217,7 +1217,7 @@ Cost of each competition in staff time: {{14}} pounds`,
               text: "Speaker 7",
               answer: "i",
               explain:
-                "Konuşmacı eleştirilen görevliyi koruyor: puanlı soruları kullanmış, gerekçesini kaydetmiş ve oylamada azınlıkta kalmış. «If we want to criticise somebody, the papers make it perfectly clear who».",
+                "Konuşmacı eleştirilen görevliyi koruyor: puanlı soruları kullanmış, gerekçesini kaydetmiş ve oylamada azınlıkta kalmış. «If we want to criticize somebody, the papers make it perfectly clear who».",
             },
             {
               kind: "match",
@@ -1247,22 +1247,22 @@ Cost of each competition in staff time: {{14}} pounds`,
           format: "writing",
           goal: "production",
           prompt:
-            "You have attended a seminar on hiring and automation. Write an essay for your tutor summarising which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. A more accurate selection method is worth adopting even if managers dislike it.\n2. A method that managers will not use as designed produces no improvement at all.\n\nWrite 220 to 260 words.",
+            "You have attended a seminar on hiring and automation. Write an essay for your tutor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. A more accurate selection method is worth adopting even if managers dislike it.\n2. A method that managers will not use as designed produces no improvement at all.\n\nWrite 220 to 260 words.",
           promptTr:
             "İşe alım ve otomasyon üzerine bir seminere katıldın. Danışmanın için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Daha isabetli bir seçme yöntemi, yöneticiler sevmese de benimsenmeye değer.\n2. Yöneticilerin tasarlandığı gibi kullanmayacağı bir yöntem hiçbir iyileşme sağlamaz.\n\n220–260 kelime yaz.",
           items: [],
           rubric: {
             minWords: 220,
             points: [
-              { de: "Summarise both points fairly.", tr: "İki noktayı da adil biçimde özetle." },
+              { de: "Summarize both points fairly.", tr: "İki noktayı da adil biçimde özetle." },
               { de: "Say which is more important and justify the choice.", tr: "Hangisinin daha önemli olduğunu söyle ve seçimi gerekçelendir." },
               { de: "Give your own view, distinct from the summary.", tr: "Özetten ayrı olarak kendi görüşünü ver." },
             ],
             sample: `The two points raised in the seminar are not opposed so much as sequential, and the difficulty lies in deciding which one a reform should be designed around.
 
-The case for accuracy is a case about the object of the exercise. If a method predicts performance better, then adopting it is simply what the organisation said it was trying to do, and the discomfort of the people running it is a cost rather than an objection. It is worth adding that discomfort is precisely what one would expect from a method that removes discretion, and that its presence is therefore weak evidence of anything.
+The case for accuracy is a case about the object of the exercise. If a method predicts performance better, then adopting it is simply what the organization said it was trying to do, and the discomfort of the people running it is a cost rather than an objection. It is worth adding that discomfort is precisely what one would expect from a method that removes discretion, and that its presence is therefore weak evidence of anything.
 
-The second point concerns what an organisation is capable of executing. The claim is not that managers are obstructive but that a method used at half strength is not the method that was evaluated: a scored exercise followed by an unrecorded conversation about fit is an unstructured interview with an expensive preliminary. On this account the accuracy figure belongs to a process nobody has actually run.
+The second point concerns what an organization is capable of executing. The claim is not that managers are obstructive but that a method used at half strength is not the method that was evaluated: a scored exercise followed by an unrecorded conversation about fit is an unstructured interview with an expensive preliminary. On this account the accuracy figure belongs to a process nobody has actually run.
 
 I regard the second as the more important, though for a narrower reason than is usually offered. Accuracy can be recovered later; a reform that fails visibly cannot, because the failure is remembered as evidence against the method rather than against the implementation.
 
@@ -1284,7 +1284,7 @@ My own view is that the framing conceals the real question, which is not which m
           format: "writing",
           goal: "interaction",
           prompt:
-            "An organisation you know is about to introduce a new selection method for one category of post. Write a report for its management. Describe how appointments are currently made, assess the likely effects of the change, and recommend a course of action. Write 220 to 260 words.",
+            "An organization you know is about to introduce a new selection method for one category of post. Write a report for its management. Describe how appointments are currently made, assess the likely effects of the change, and recommend a course of action. Write 220 to 260 words.",
           promptTr:
             "Tanıdığın bir kurum bir görev grubu için yeni bir seçme yöntemi getirmek üzere. Yönetime bir rapor yaz. Atamaların şu an nasıl yapıldığını anlat, değişikliğin olası etkilerini değerlendir ve bir yol öner. 220–260 kelime yaz.",
           items: [],
@@ -1330,11 +1330,11 @@ I recommend adopting the work sample for these posts, on two conditions: that th
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I ask you some questions about work, selection and how organisations decide.",
+          prompt: "I ask you some questions about work, selection and how organizations decide.",
           promptTr: "Sana iş, seçme süreçleri ve kurumların nasıl karar verdiği hakkında sorular soracağım.",
           prepSeconds: 20,
           exchange: [
-            { who: "partner", de: "Good morning. Can you describe a decision you have seen an organisation make that was defensible but probably wrong?", tr: "Günaydın. Bir kurumun verdiği, savunulabilir ama muhtemelen yanlış olan bir kararı anlatır mısın?" },
+            { who: "partner", de: "Good morning. Can you describe a decision you have seen an organization make that was defensible but probably wrong?", tr: "Günaydın. Bir kurumun verdiği, savunulabilir ama muhtemelen yanlış olan bir kararı anlatır mısın?" },
             { who: "you", hint: "Somut bir örnek seç ve savunulabilirlik ile doğruluk arasındaki farkı adlandır.", expect: "somut bir örnek vermek ve iki ölçütü ayırmak", seconds: 50 },
             { who: "partner", de: "Thank you. Do you think that gap between what is defensible and what is right can be closed, or is it a permanent feature?", tr: "Teşekkürler. Sence savunulabilir olanla doğru olan arasındaki bu aralık kapatılabilir mi, yoksa kalıcı bir özellik mi?" },
             { who: "you", hint: "Bir konum al ama karşı görüşe bir pay bırak.", expect: "bir konum almak ve karşı görüşe pay bırakmak", seconds: 50 },
@@ -1345,12 +1345,12 @@ I recommend adopting the work sample for these posts, on two conditions: that th
           rubric: {
             minutes: 5,
             points: [
-              { de: "describe a concrete case and analyse it", tr: "Somut bir durumu betimlemek ve çözümlemek" },
+              { de: "describe a concrete case and analyze it", tr: "Somut bir durumu betimlemek ve çözümlemek" },
               { de: "take a position while conceding something", tr: "Bir konum alırken bir şeyi kabul etmek" },
               { de: "propose and justify a criterion", tr: "Bir ölçüt önermek ve gerekçelendirmek" },
             ],
             sample:
-              "The clearest one I have seen was an appointment made from a shortlist of four where the strongest applicant had the weakest interview, and every step was documented. Nobody did anything improper; the process simply measured composure. I would say the gap is permanent rather than closable, although it can be narrowed, and I have to concede that people who say it can be closed are usually describing a smaller organisation than mine. As for telling a real change from a paper one, I would look at whether the reasons recorded before the decision predict the decision, and I would look across at least a dozen cases, because one is a story.",
+              "The clearest one I have seen was an appointment made from a shortlist of four where the strongest applicant had the weakest interview, and every step was documented. Nobody did anything improper; the process simply measured composure. I would say the gap is permanent rather than closable, although it can be narrowed, and I have to concede that people who say it can be closed are usually describing a smaller organization than mine. As for telling a real change from a paper one, I would look at whether the reasons recorded before the decision predict the decision, and I would look across at least a dozen cases, because one is a story.",
             criteria: [
               "Örnek somut mu ve çözümlendi mi?",
               "Konum alınırken karşı görüşe pay bırakıldı mı?",
@@ -1365,7 +1365,7 @@ I recommend adopting the work sample for these posts, on two conditions: that th
           format: "speaking",
           goal: "production",
           prompt:
-            "Talk on your own for about two minutes. An organisation can either adopt a more accurate selection method that its managers resent, or keep a less accurate one that they will run properly. Set out the case for each, say which you would choose, and identify the strongest argument against your own choice.",
+            "Talk on your own for about two minutes. An organization can either adopt a more accurate selection method that its managers resent, or keep a less accurate one that they will run properly. Set out the case for each, say which you would choose, and identify the strongest argument against your own choice.",
           promptTr:
             "Yaklaşık iki dakika tek başına konuş. Bir kurum ya yöneticilerinin hoşlanmadığı daha isabetli bir seçme yöntemini benimseyecek ya da onların düzgün uygulayacağı daha az isabetli bir yöntemi sürdürecek. Her ikisinin de savunmasını kur, hangisini seçeceğini söyle ve kendi seçimine karşı en güçlü savı adlandır.",
           prepSeconds: 60,
@@ -1379,7 +1379,7 @@ I recommend adopting the work sample for these posts, on two conditions: that th
               { de: "name the strongest argument against your own choice", tr: "Kendi seçimine karşı en güçlü savı adlandır" },
             ],
             sample:
-              "The case for the accurate method is that the organisation has already said what it is trying to do, and resentment from the people running a process is exactly what you would expect when discretion is removed; treating it as decisive would make reform impossible by definition. The case for the workable method is less noble and, I think, stronger than it sounds: a method delivered at half strength is not the method that was evaluated, so the accuracy figure describes something nobody has run. I would take the workable one and improve it slowly. The strongest argument against my own choice is that it makes the resentment self-justifying: every group that dislikes a method can defeat it simply by promising to implement it badly, and an organisation that concedes that has handed the design of its own procedures to whoever objects loudest. I do not think that defeats the case, but anybody arguing as I have should say what they would do the second time.",
+              "The case for the accurate method is that the organization has already said what it is trying to do, and resentment from the people running a process is exactly what you would expect when discretion is removed; treating it as decisive would make reform impossible by definition. The case for the workable method is less noble and, I think, stronger than it sounds: a method delivered at half strength is not the method that was evaluated, so the accuracy figure describes something nobody has run. I would take the workable one and improve it slowly. The strongest argument against my own choice is that it makes the resentment self-justifying: every group that dislikes a method can defeat it simply by promising to implement it badly, and an organization that concedes that has handed the design of its own procedures to whoever objects loudest. I do not think that defeats the case, but anybody arguing as I have should say what they would do the second time.",
             criteria: [
               "İki savunma da adil biçimde kuruldu mu?",
               "Seçim açıkça yapıldı ve gerekçelendirildi mi?",
@@ -1416,7 +1416,7 @@ I recommend adopting the work sample for these posts, on two conditions: that th
               { de: "settle a justified priority order", tr: "Gerekçeli bir öncelik sırası kurmak" },
             ],
             sample:
-              "I would defend paying for the marking time and the audit of last year's appointments, on the criterion of what fails first: methods die from unfunded labour long before they die from bad design, and nobody notices either without evidence. Your objection to the audit is fair and I want to concede most of it; what I would defend is a very small audit aimed at one question, namely whether the recorded scores predicted anything, which is cheap and produces a number rather than a report. So: fund the marking first, because nothing else survives without it; cut the panels to three second, since it releases the same hours we have just spent; and run the narrow audit third, because it tells us in a year whether any of this was worth doing. I would drop the training this year and say plainly why, rather than fund a course and let the room undo it before lunch.",
+              "I would defend paying for the marking time and the audit of last year's appointments, on the criterion of what fails first: methods die from unfunded labor long before they die from bad design, and nobody notices either without evidence. Your objection to the audit is fair and I want to concede most of it; what I would defend is a very small audit aimed at one question, namely whether the recorded scores predicted anything, which is cheap and produces a number rather than a report. So: fund the marking first, because nothing else survives without it; cut the panels to three second, since it releases the same hours we have just spent; and run the narrow audit third, because it tells us in a year whether any of this was worth doing. I would drop the training this year and say plainly why, rather than fund a course and let the room undo it before lunch.",
             criteria: [
               "Ölçüt açıkça adlandırıldı mı?",
               "İtirazın gücü kabul edildi mi ve konum ya revize edildi ya da gerekçelendirildi mi?",

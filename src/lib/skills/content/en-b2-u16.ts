@@ -131,7 +131,7 @@ export const enB2U16: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     unit: 16,
-    title: "The catalogue entry",
+    title: "The catalog entry",
     genre: "info",
     intro: "Üç isim, üç ek. Hangisinin eki hiç yok?",
     gloss: [
@@ -154,7 +154,7 @@ export const enB2U16: SkillExercise[] = [
       { de: "the restoration", tr: "restorasyon" },
       { de: "the acquisition", tr: "edinim" },
       { de: "predicts", tr: "önceden kestiriyor" },
-      { de: "a catalogue", tr: "katalog" },
+      { de: "a catalog", tr: "katalog" },
       { de: "an entry", tr: "künye" },
       { de: "retire", tr: "emekli olmak" },
       { de: "cultural heritage", tr: "kültürel miras" },
@@ -168,11 +168,11 @@ export const enB2U16: SkillExercise[] = [
     ],
     minutes: 9,
     text:
-      "The restoration of the canvas took two years. The acquisition of the artwork is documented. The display of the exhibit begins in May. Three nouns, three verbs underneath them, and a catalogue that is written in almost nothing else.\n" +
+      "The restoration of the canvas took two years. The acquisition of the artwork is documented. The display of the exhibit begins in May. Three nouns, three verbs underneath them, and a catalog that is written in almost nothing else.\n" +
       "All three take „of“, and by now that should not be a surprise and also should not be a rule. „Distinction“ takes „between“ and „parallel“ takes „with“, and a writer who has done three pages of „of“ will reach for it on the fourth and be wrong.\n" +
       "The endings are the usual list. Restore becomes restoration. Acquire becomes acquisition, which nobody predicts. Display becomes display, with no ending at all, and that is the third kind: an English verb that is already a noun and needs nothing done to it.\n" +
-      "Why does a catalogue want them? Because an entry has to sit under an object for fifty years and be true the whole time. „We restored the canvas in 1998“ has a „we“ in it, and the „we“ will retire.\n" +
-      "Cultural heritage is a phrase that exists for the same reason, and so is the habit of writing eras rather than decades. A fragment from the Renaissance is timeless in the catalogue and was extremely dated to the person who made it.\n" +
+      "Why does a catalog want them? Because an entry has to sit under an object for fifty years and be true the whole time. „We restored the canvas in 1998“ has a „we“ in it, and the „we“ will retire.\n" +
+      "Cultural heritage is a phrase that exists for the same reason, and so is the habit of writing eras rather than decades. A fragment from the Renaissance is timeless in the catalog and was extremely dated to the person who made it.\n" +
       "So the nouns stay. The card beside the frame gets one sentence with a verb in it, and that sentence is the only part of the entry anybody reads standing up.",
     questions: [
       {
@@ -182,7 +182,7 @@ export const enB2U16: SkillExercise[] = [
         explain: "„Display becomes display, with no ending at all…“",
       },
       {
-        text: "Why does a catalogue use nouns?",
+        text: "Why does a catalog use nouns?",
         options: ["an entry must stay true for fifty years", "nouns are shorter", "nouns are older"],
         answer: 0,
         explain: "„Because an entry has to sit under an object for fifty years and be true the whole time.“",
@@ -192,7 +192,7 @@ export const enB2U16: SkillExercise[] = [
         text: "The Renaissance fragment felt timeless to its maker.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„is timeless in the catalogue and was extremely dated to the person who made it.“",
+        explain: "„is timeless in the catalog and was extremely dated to the person who made it.“",
       },
       {
         kind: "gapfill",

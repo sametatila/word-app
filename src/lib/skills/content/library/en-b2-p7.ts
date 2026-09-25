@@ -63,7 +63,7 @@ export const enB2P7: SkillExercise[] = [
         text: "What did the teacher suggest?",
         options: [
           "recording the same explanation weekly and listening for structure",
-          "practising two difficult sounds daily",
+          "practicing two difficult sounds daily",
           "speaking more slowly",
         ],
         answer: 0,
@@ -134,7 +134,7 @@ export const enB2P7: SkillExercise[] = [
     segments: [
       { text: "A study on accent and credibility has been quoted everywhere this week, usually with the wrong number attached." },
       { text: "Participants heard short recordings of the same text read by eight speakers, and rated how believable each one sounded." },
-      { speaker: "Dr Whelan", text: "The gap was real but small. Speakers with an accent that was unfamiliar to the listener scored about seven per cent lower." },
+      { speaker: "Dr Whelan", text: "The gap was real but small. Speakers with an accent that was unfamiliar to the listener scored about seven percent lower." },
       { text: "Several headlines turned that into a claim that people with accents are not believed, which the study does not say." },
       { speaker: "Dr Whelan", text: "What interested us more was the second condition. When participants read a transcript at the same time, the difference disappeared completely." },
       { text: "The researchers argue that the effect is about processing effort rather than prejudice: an unfamiliar accent is harder work, and listeners read that effort as doubt." },
@@ -144,9 +144,9 @@ export const enB2P7: SkillExercise[] = [
     questions: [
       {
         text: "How large was the difference in ratings?",
-        options: ["about seven per cent", "about thirty per cent", "there was none"],
+        options: ["about seven percent", "about thirty percent", "there was none"],
         answer: 0,
-        explain: "„scored about seven per cent lower“ — gerçek ama küçük.",
+        explain: "„scored about seven percent lower“ — gerçek ama küçük.",
       },
       {
         text: "What happened when participants read a transcript?",
@@ -248,7 +248,7 @@ export const enB2P7: SkillExercise[] = [
         ],
         sample:
           "The study is usually reported as showing that people with accents are not believed. " +
-          "What it actually found was a gap of about seven per cent in how believable listeners " +
+          "What it actually found was a gap of about seven percent in how believable listeners " +
           "rated eight recordings of the same text, and only when the accent was unfamiliar " +
           "to that listener. " +
           "The difference between those two claims matters because the first invites despair " +
@@ -261,7 +261,7 @@ export const enB2P7: SkillExercise[] = [
           "a single city, and that nobody has repeated it. Any one of those could explain the " +
           "result on its own. " +
           "A cautious conclusion would be that captions cost nothing and may help more than " +
-          "years of pronunciation practice, and that a finding of seven per cent should not be " +
+          "years of pronunciation practice, and that a finding of seven percent should not be " +
           "used to tell anyone how they will be treated at work.",
       },
     ],
@@ -290,7 +290,7 @@ export const enB2P7: SkillExercise[] = [
       targets: [
         { de: "Yes, it does, though not in the way that is usually described.", tr: "Evet değiştiriyor, ama genelde anlatıldığı biçimde değil." },
         { de: "I noticed this most clearly when …", tr: "Bunu en açık … olduğunda fark ettim" },
-        { de: "The easy advice — just practise — ignores …", tr: "Kolay tavsiye — sadece çalış — şunu görmezden geliyor: …" },
+        { de: "The easy advice — just practice — ignores …", tr: "Kolay tavsiye — sadece çalış — şunu görmezden geliyor: …" },
         { de: "What actually helps, in my experience, is …", tr: "Deneyimime göre gerçekten işe yarayan şey …" },
       ],
       minSeconds: 50,
@@ -303,7 +303,7 @@ export const enB2P7: SkillExercise[] = [
         "I noticed this most clearly when I moved from phone calls to video meetings with " +
         "captions turned on. The same explanation that used to produce three clarifying " +
         "questions now produces none, and my pronunciation has not changed at all. " +
-        "The easy advice — just practise — ignores how long it takes and how little of it " +
+        "The easy advice — just practice — ignores how long it takes and how little of it " +
         "transfers. I spent two years on sounds and four months on structure, " +
         "and only the second one changed how people responded to me. " +
         "What actually helps, in my experience, is reducing the work for the listener in " +

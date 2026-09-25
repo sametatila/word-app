@@ -1,7 +1,7 @@
 [
  {
   "conversation": "de-b1-natur-erleben",
-  "sceneEn": "You went out into the countryside at the weekend. You are telling a friend about the day: where you went, what you did, whether it was worth it.",
+  "sceneEn": "You went out into the countryside on the weekend. You are telling a friend about the day: where you went, what you did, whether it was worth it.",
   "partnerEn": "a slightly envious friend who spent the weekend indoors",
   "openingEn": "You were outdoors? I sat inside all day — how was it?",
   "goalEn": "The course of the day has been told in order and whether it was worth it has been said."
@@ -102,7 +102,7 @@
   "sceneEn": "You are in the break at a specialist conference and you go up to one of the panel speakers. Introduce yourself and your field, ask about something they said on the panel and suggest a concrete step to keep in touch.",
   "partnerEn": "a speaker who has just presented and responds with interest",
   "openingEn": "You were in hall two just now, weren't you? What brought you to this subject?",
-  "goalEn": "You have introduced yourselves, learnt each other's fields and settled on a concrete step for keeping in touch."
+  "goalEn": "You have introduced yourselves, learned each other's fields and settled on a concrete step for keeping in touch."
  },
  {
   "conversation": "de-b2-verhandeln",
@@ -155,8 +155,8 @@
  },
  {
   "conversation": "de-b2-nachbarschaftsstreit",
-  "sceneEn": "Your upstairs neighbour makes noise almost every night until late. State the facts without blame, say what you want, suggest a time limit together and settle it without going to the management.",
-  "partnerEn": "a neighbour who is defensive at first and then reasonable",
+  "sceneEn": "Your upstairs neighbor makes noise almost every night until late. State the facts without blame, say what you want, suggest a time limit together and settle it without going to the management.",
+  "partnerEn": "a neighbor who is defensive at first and then reasonable",
   "openingEn": "You wanted to speak to me? If it's about the music — we're not having a party every evening, are we?",
   "goalEn": "The facts have been given without blame, a time limit has been suggested and a solution has been agreed without going to the building management."
  },

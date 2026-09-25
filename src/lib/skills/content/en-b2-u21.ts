@@ -63,14 +63,14 @@ export const enB2U21: SkillExercise[] = [
       { de: "underneath", tr: "altta" },
       { de: "an exception", tr: "istisna" },
       { de: "heavier", tr: "daha ağır" },
-      { de: "learnt", tr: "öğrenilen" },
+      { de: "learned", tr: "öğrenilen" },
     ],
     minutes: 9,
     text:
       "The measurement of perception takes an hour. The building of self-confidence is slow. The naming of a pattern helps. Three nouns made from three verbs, and the second and third are made in a way the first is not.\n" +
-      "„Measurement“ is on the list. Measure, measurement; the ending has to be learnt, and so do acquisition, dismissal, performance and the rest of them.\n" +
+      "„Measurement“ is on the list. Measure, measurement; the ending has to be learned, and so do acquisition, dismissal, performance and the rest of them.\n" +
       "„Building“ and „naming“ are not on any list. They are the verb with „-ing“ on the end, and that works for every verb in the language without exception. Build, building. Name, naming. Repress, repressing. Endure, enduring.\n" +
-      "So English has two routes and they are completely different in kind. One is a list with no rule in it, learnt pair by pair over years. The other is a rule with no list, available the moment you know the verb.\n" +
+      "So English has two routes and they are completely different in kind. One is a list with no rule in it, learned pair by pair over years. The other is a rule with no list, available the moment you know the verb.\n" +
       "The second one is the door out of the first. A writer who cannot remember whether „adapt“ gives „adaptation“ or something else can always write „the adapting of“, and it will be correct.\n" +
       "It will also be heavier, and that is the trade. „The measurement of perception“ sounds like a method section. „The measuring of perception“ sounds like somebody describing the method section. Both are grammatical and a reader hears the difference in the first second.\n" +
       "My own rule is to use the list where I am sure of it and the door where I am not, and never to guess at an ending. A wrong ending in the first line of an assessment is the only kind of mistake that makes a reader doubt the numbers underneath it.",

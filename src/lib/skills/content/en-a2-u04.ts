@@ -275,7 +275,7 @@ export const enA2U04: SkillExercise[] = [
     questions: [
       {
         text: "When is Deniz going to visit his sister?",
-        options: ["on Sunday", "at the weekend", "just now"],
+        options: ["on Sunday", "on the weekend", "just now"],
         answer: 0,
         explain: "„First, I'm going to visit my sister on Sunday.“ — karar geçen hafta verilmiş.",
       },

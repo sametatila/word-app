@@ -121,7 +121,7 @@ export const enB1U02: SkillExercise[] = [
     genre: "dialogue",
     intro: "Zam görüşmesi. Hangi koşul gerçek, hangisi değil?",
     gloss: [
-      { de: "per cent", tr: "yüzde" },
+      { de: "percent", tr: "yüzde" },
       { de: "role", tr: "görev" },
       { de: "the middle", tr: "orta" },
       { de: "clear", tr: "açık" },
@@ -135,7 +135,7 @@ export const enB1U02: SkillExercise[] = [
     text:
       "Ela: Do you have ten minutes? I would like to discuss the budget for my role.\n" +
       "Boss: Now is fine. Say what you want first.\n" +
-      "Ela: A raise of eight per cent from January.\n" +
+      "Ela: A raise of eight percent from January.\n" +
       "Boss: That is a clear number. Why eight?\n" +
       "Ela: Two reasons. The work changed in March — I took the second client and nobody was hired. And eight is the middle of what this role pays in this city.\n" +
       "Boss: The middle is a fair place to start. The problem is the budget: it was written in October and it is not opened again until April.\n" +
@@ -148,9 +148,9 @@ export const enB1U02: SkillExercise[] = [
     questions: [
       {
         text: "What does Ela ask for?",
-        options: ["eight per cent from January", "a bonus in July", "a new role"],
+        options: ["eight percent from January", "a bonus in July", "a new role"],
         answer: 0,
-        explain: "„A raise of eight per cent from January.“",
+        explain: "„A raise of eight percent from January.“",
       },
       {
         text: "Why is the budget a problem?",

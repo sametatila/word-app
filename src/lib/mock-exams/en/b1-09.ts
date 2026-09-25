@@ -151,13 +151,13 @@ export const EN_B1_09: MockPaper = {
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
             { key: "a", label: "Rooms Wanted and Offered", body: "A free noticeboard. One photograph, the rent and the deposit shown. We do not list rooms where the deposit is more than one month." },
-            { key: "b", label: "Short Lets", body: "One to six months, for people who are away or who need a room for a single term. We take five per cent of the rent." },
+            { key: "b", label: "Short Lets", body: "One to six months, for people who are away or who need a room for a single term. We take five percent of the rent." },
             { key: "c", label: "Housing Advice", body: "Free, Wednesday afternoons. Who repairs what, when a landlord may enter, how notice works. Bring your contract." },
             { key: "d", label: "Talking It Through", body: "Two evenings with somebody from outside the household. For bills, cleaning and noise. Twenty euros for the whole household." },
             { key: "e", label: "Building Breakfast", body: "First Saturday of the month in the courtyard. Bring something to eat. Everybody in the building is welcome, including new arrivals." },
             { key: "f", label: "Deposit Loans", body: "We lend you the deposit and you pay it back over ten months. Interest applies and we ask for proof of income." },
             { key: "g", label: "Removals", body: "A van and two people for four hours, ninety euros. Stairs cost extra above the third floor." },
-            { key: "h", label: "Cleaning Company", body: "Weekly or every two weeks. Shared flats a speciality. One price for the whole flat, not per room." },
+            { key: "h", label: "Cleaning Company", body: "Weekly or every two weeks. Shared flats a specialty. One price for the whole flat, not per room." },
           ],
           items: [
             {
@@ -735,7 +735,7 @@ If I could give the two people arriving next month one piece of advice, it would
               no: 7,
               ref: "a7",
               text: "What is the speaker doing?",
-              options: ["Cancelling the meeting", "Setting a limit before a decision", "Refusing to pay anything"],
+              options: ["Canceling the meeting", "Setting a limit before a decision", "Refusing to pay anything"],
               answer: 1,
               explain:
                 "İleti iki kalemi ayırıyor: «I will pay a share of the cleaner, and I will not pay a share of the new sofa», üstelik tutanağa geçirilmesini istiyor.",
@@ -872,7 +872,7 @@ If I could give the two people arriving next month one piece of advice, it would
               no: 11,
               ref: "b4",
               text: "What is the main point?",
-              options: ["Nobody is responsible at the weekend", "The flatmates are careless people", "The pan should simply be thrown away"],
+              options: ["Nobody is responsible on the weekend", "The flatmates are careless people", "The pan should simply be thrown away"],
               answer: 0,
               explain:
                 "Konuşmacı ilk açıklamayı kendisi eliyor: «It is not that people are lazy», sonra teşhisi veriyor: cuma ile pazar arasında kimse sorumlu değil.",
@@ -1215,7 +1215,7 @@ I did not ask it in my last flat. In November one of us moved out and the bill s
             minutes: 4,
             points: [
               { de: "describe a situation with an example", tr: "Bir durumu örnekle anlatmak" },
-              { de: "analyse the reason behind an event", tr: "Bir olayın arkasındaki nedeni çözümlemek" },
+              { de: "analyze the reason behind an event", tr: "Bir olayın arkasındaki nedeni çözümlemek" },
               { de: "use a second conditional", tr: "İkinci tip koşulu kullanmak" },
             ],
             sample:
@@ -1248,7 +1248,7 @@ I did not ask it in my last flat. In November one of us moved out and the bill s
               { de: "mention one disadvantage of your choice", tr: "Seçtiğin yolun bir olumsuz yanını da söyle" },
             ],
             sample:
-              "Writing the rules down feels cold in week one, when everybody is polite and nothing has gone wrong. That is exactly why it works: a rule written before there is a problem is a piece of paper, and the same rule written in March is a judgement about somebody. Sorting things out as they come up sounds friendlier, but it puts the whole job on whoever minds first. I would write them down. The disadvantage is real, though: a written list makes people think the difficult things have been covered, and the things that actually break a flat are the ones nobody can put on a fridge door.",
+              "Writing the rules down feels cold in week one, when everybody is polite and nothing has gone wrong. That is exactly why it works: a rule written before there is a problem is a piece of paper, and the same rule written in March is a judgment about somebody. Sorting things out as they come up sounds friendlier, but it puts the whole job on whoever minds first. I would write them down. The disadvantage is real, though: a written list makes people think the difficult things have been covered, and the things that actually break a flat are the ones nobody can put on a fridge door.",
             criteria: [
               "İki yol da gerçekten karşılaştırıldı mı?",
               "Karşılaştırma yapıları kullanıldı mı? (that is exactly why, on the other hand)",
@@ -1282,7 +1282,7 @@ I did not ask it in my last flat. In November one of us moved out and the bill s
             points: [
               { de: "respond to a proposal with a reason", tr: "Bir öneriye gerekçeyle karşılık vermek" },
               { de: "solve a problem with two constraints", tr: "İki kısıtı olan bir sorunu çözmek" },
-              { de: "summarise the arrangement", tr: "Varılan düzeni özetlemek" },
+              { de: "summarize the arrangement", tr: "Varılan düzeni özetlemek" },
             ],
             sample:
               "I would agree in principle, but not as charity, because he has said he does not want that. You are right that we do not all earn the same, so an equal extra share is not equal at all. What I would do is this: he pays his rent and nothing else for three months, and the three of us divide the bills by income rather than by head. On paper: rent unchanged for everybody, bills split sixty, twenty-five and fifteen, reviewed on 1 June, and he pays back nothing.",

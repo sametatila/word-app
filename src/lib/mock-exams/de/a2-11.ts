@@ -75,7 +75,7 @@ Ab dem 8. Januar trainieren wir wieder wie immer.
 
 Wer trotzdem üben möchte, kann in die Halle Nord gehen. Dort haben wir zwei Termine bekommen.`,
               gloss: [
-                { de: "ausfallen", tr: "iptal olmak", en: "to be cancelled" },
+                { de: "ausfallen", tr: "iptal olmak", en: "to be canceled" },
                 { de: "streichen", tr: "boyamak", en: "to paint" },
               ],
             },

@@ -54,7 +54,7 @@ export const enC1U08: SkillExercise[] = [
       { de: "whole", tr: "bütün" },
       { de: "seldom", tr: "nadiren" },
       { de: "barely", tr: "ancak" },
-      { de: "behaviour", tr: "davranış" },
+      { de: "behavior", tr: "davranış" },
       { de: "whatever", tr: "her ne" },
       { de: "belongs", tr: "ait" },
       { de: "appears", tr: "beliriyor" },
@@ -89,8 +89,8 @@ export const enC1U08: SkillExercise[] = [
       "The first move is the understatement: „not exactly lucrative“ in place of „poor“, which this level met a few units ago. The second is the tag, and the tag is the harder one, because English computes it fresh every time.\n" +
       "Look at what has to be settled before those two words can be written. Which auxiliary the sentence is using. Whether the sentence counts as positive or negative. Which pronoun the subject reduces to. Get any of the three wrong and the line stops sounding like English, even though nothing in it is a mistake a dictionary could find.\n" +
       "Now the sentence that shows why any of this matters. Hardly cyclical, is it? The tag is positive, and a reader who has learned „positive sentence, negative tag“ will want to correct it. They should not. „Hardly“ has already made the sentence negative, and the tag is the only visible proof that English counts it that way.\n" +
-      "That is the useful part of the whole shape. The tag is a test the language runs on its own sentence. Words such as „hardly“, „seldom“, „barely“ and „few“ carry no „not“ in them and behave as though they did, and the tag is where that behaviour becomes visible.\n" +
-      "A neighbouring language has no such test. It posts one small invariant word at the end, always the same word whatever the sentence did, and the question of whether the sentence was negative underneath is never asked out loud.\n" +
+      "That is the useful part of the whole shape. The tag is a test the language runs on its own sentence. Words such as „hardly“, „seldom“, „barely“ and „few“ carry no „not“ in them and behave as though they did, and the tag is where that behavior becomes visible.\n" +
+      "A neighboring language has no such test. It posts one small invariant word at the end, always the same word whatever the sentence did, and the question of whether the sentence was negative underneath is never asked out loud.\n" +
       "Which brings us to the third line. I wouldn't call that thrifty. No tag at all here, and that is not an accident: this one belongs to writing. A tag needs a room and a face and somebody in it to agree with.\n" +
       "So the shape has a floor. In speech it is everywhere; in a ruling or a report it never appears once, and a written text that reaches for it has changed what it is. The written language has to get the same work done another way — a clause added at the end, or an understatement left standing on its own, which is slower and asks nobody for anything.",
     questions: [

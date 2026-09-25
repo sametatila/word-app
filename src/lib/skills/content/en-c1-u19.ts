@@ -362,7 +362,7 @@ export const enC1U19: SkillExercise[] = [
     segments: [
       { speaker: "Eren", text: "The precautionary principle demands that the responsibility to protect be prior. One word in that sentence is doing all of the work and it is „prior“." },
       { speaker: "Eren", text: "Not stronger, not more important: earlier. The principle is about an order, and an order decides who has to prove what." },
-      { speaker: "Eren", text: "If protection comes first, the person building the road proves that the harm will not happen. If it comes second, the neighbours prove that it will." },
+      { speaker: "Eren", text: "If protection comes first, the person building the road proves that the harm will not happen. If it comes second, the neighbors prove that it will." },
       { speaker: "Eren", text: "That is the whole fight, and it is usually settled on page one of a permit procedure rather than at the hearing." },
       { speaker: "Eren", text: "Were it not for the natural capital, no commons would hold. A supposing, and a clean one: it names what the commons is made of." },
       { speaker: "Eren", text: "They ask that every ecosystem service be counted before the expropriation. „Be counted“, and again the interesting word is the last one." },

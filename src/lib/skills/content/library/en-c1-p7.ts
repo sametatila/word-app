@@ -51,7 +51,7 @@ export const enC1P7: SkillExercise[] = [
       "Those demands are made elsewhere and we think they weaken the case.\n\n" +
       "We are asking for three things. " +
       "First, that spare parts be sold to anyone at the price you charge your own service " +
-      "centres, provided the buyer has an account with a trade supplier. " +
+      "centers, provided the buyer has an account with a trade supplier. " +
       "Second, that the battery in the K40 be held with screws or clips rather than adhesive, " +
       "which adds, by your own published figure, forty cents to the unit cost. " +
       "Third, that schematics be released five years after a model leaves production, " +
@@ -82,7 +82,7 @@ export const enC1P7: SkillExercise[] = [
         text: "Which demand do they explicitly NOT make?",
         options: [
           "opening the designs",
-          "selling parts at service-centre prices",
+          "selling parts at service-center prices",
           "releasing schematics after five years",
         ],
         answer: 0,
@@ -156,7 +156,7 @@ export const enC1P7: SkillExercise[] = [
     segments: [
       { text: "We tracked eleven thousand repair attempts across four countries over eighteen months, and the pattern is not the one the debate assumes." },
       { text: "Cost is the stated reason in most surveys. In the data, cost decides only about a third of cases." },
-      { speaker: "Dr Ferreira", text: "The larger factor is uncertainty. People will pay sixty per cent of the replacement price if they are told what is wrong before they commit." },
+      { speaker: "Dr Ferreira", text: "The larger factor is uncertainty. People will pay sixty percent of the replacement price if they are told what is wrong before they commit." },
       { text: "Where a diagnostic fee is charged separately, abandonment rises sharply, even when the eventual repair is cheap." },
       { speaker: "Dr Ferreira", text: "That points at a fix nobody is campaigning for: fold the diagnosis into the quote. It costs the workshop almost nothing and moves more devices than any parts policy we modeled." },
       { text: "The second finding concerns calibration. Repairs that require proprietary software to complete fail at four times the rate of those that do not." },
@@ -273,7 +273,7 @@ export const enC1P7: SkillExercise[] = [
           "written in the first week, which is roughly when most of them appear. " +
           "On the two things that matter to me — battery behavior in the cold and the quality " +
           "of the screen at low brightness — it performs well, and better than the model it " +
-          "replaced. The battery has lost about nine per cent of its original capacity, " +
+          "replaced. The battery has lost about nine percent of its original capacity, " +
           "which is unremarkable and honestly reported by the manufacturer's own tool. " +
           "The caveat is not about performance but about what happens in year three. " +
           "The battery is held in with adhesive rather than clips, and the calibration step " +

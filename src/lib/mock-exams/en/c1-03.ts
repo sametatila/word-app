@@ -216,7 +216,7 @@ It is worth adding that none of this is {{12}} any means a new observation; engi
               title: "Deferred maintenance",
               body: `Deferred maintenance is the accumulated cost of work that was necessary and was not carried out, usually recorded, if at all, as a single figure of doubtful {{13}}.
 
-The concept is easy to define and notoriously hard to measure. An organisation that does not know the condition of its assets cannot produce the number at all, and one that does know is often {{14}} to publish it.
+The concept is easy to define and notoriously hard to measure. An organization that does not know the condition of its assets cannot produce the number at all, and one that does know is often {{14}} to publish it.
 
 The measurement problem is not merely technical. A survey that produces a large figure invites the question of who allowed the {{15}} to happen, which is a strong reason for not commissioning one.
 
@@ -278,7 +278,7 @@ The most likely future is therefore an uneven one, with different bodies reporti
               id: "en-c1-03-l3-18",
               no: 18,
               text: "JUDGE",
-              accept: ["judgements", "judgments"],
+              accept: ["judgments", "judgments"],
               explain:
                 "`according to their own ___` yapısında iyelik sıfatından sonra bir ad geliyor ve özne çoğul (`different bodies`), dolayısıyla ad da çoğul. Britanya ve Amerika yazımı (`judgements` / `judgments`) ikisi de kabul edilir.",
             },
@@ -298,11 +298,11 @@ The most likely future is therefore an uneven one, with different bodies reporti
               kind: "gap",
               id: "en-c1-03-l4-19",
               no: 19,
-              text: "Nobody realised how bad the roof was until the ceiling fell.\nNot until the ceiling fell ______ how bad the roof was.",
+              text: "Nobody realized how bad the roof was until the ceiling fell.\nNot until the ceiling fell ______ how bad the roof was.",
               cue: "ANYONE",
-              accept: ["did anyone realise", "did anyone realize"],
+              accept: ["did anyone realize", "did anyone realize"],
               explain:
-                "Olumsuz bir zaman öbeği cümle başına geçtiğinde özne ile yardımcı fiil devrilir: «Not until … did anyone realise». Anahtar sözcük `anyone` devrik yapının öznesi ve önüne `did` gerekiyor; İngiliz ve Amerikan yazımı ikisi de kabul edilir.",
+                "Olumsuz bir zaman öbeği cümle başına geçtiğinde özne ile yardımcı fiil devrilir: «Not until … did anyone realize». Anahtar sözcük `anyone` devrik yapının öznesi ve önüne `did` gerekiyor; İngiliz ve Amerikan yazımı ikisi de kabul edilir.",
             },
             {
               kind: "gap",
@@ -318,7 +318,7 @@ The most likely future is therefore an uneven one, with different bodies reporti
               kind: "gap",
               id: "en-c1-03-l4-21",
               no: 21,
-              text: "It is impossible to establish who authorised the delay.\nThere ______ of establishing who authorised the delay.",
+              text: "It is impossible to establish who authorized the delay.\nThere ______ of establishing who authorized the delay.",
               cue: "WAY",
               accept: ["is no way"],
               explain:
@@ -352,7 +352,7 @@ The most likely future is therefore an uneven one, with different bodies reporti
               title: "The work that leaves no trace",
               body: `There is a class of work whose success is indistinguishable from nothing having happened, and our public language has almost no way of describing it. The engineer who replaces a cable before it fails, the inspector who closes a stairwell in March, the officer who talks a crowd out of a corner: none of them produces an event, and events are what we are able to notice, fund and reward.
 
-What follows from this is not a sentimental point about unsung heroes. It is a structural one about measurement. An organisation that can only see events will systematically underinvest in the work that prevents them, not because anybody decides to, but because the accounting apparatus has no column for an absence. It is precisely this blindness that produces the familiar cycle of neglect and emergency, rather than any shortage of goodwill among the people involved.
+What follows from this is not a sentimental point about unsung heroes. It is a structural one about measurement. An organization that can only see events will systematically underinvest in the work that prevents them, not because anybody decides to, but because the accounting apparatus has no column for an absence. It is precisely this blindness that produces the familiar cycle of neglect and emergency, rather than any shortage of goodwill among the people involved.
 
 I should be careful here, because the counter-argument is strong and I have no wish to caricature it. Prevention is easy to claim and hard to verify; a department that spends thirty years asserting that its vigilance is the reason nothing has gone wrong is making a claim that cannot be tested, and the history of public administration is not short of such departments. On balance, the demand for evidence is right, and the people making it are not fools.
 
@@ -381,7 +381,7 @@ None of this will make the work visible in the way that a ribbon-cutting is visi
               kind: "mcq",
               id: "en-c1-03-l5-24",
               no: 24,
-              text: "Why, according to the writer, do organisations underinvest in prevention?",
+              text: "Why, according to the writer, do organizations underinvest in prevention?",
               options: ["Because managers deliberately prefer visible projects", "Because prevention is more expensive", "Because their accounting cannot record an absence", "Because the public demands emergency spending"],
               answer: 2,
               explain:
@@ -402,7 +402,7 @@ None of this will make the work visible in the way that a ribbon-cutting is visi
               id: "en-c1-03-l5-26",
               no: 26,
               text: "What does the writer propose?",
-              options: ["Publishing the names of the staff involved", "Measuring prevention directly", "Accepting that this kind of work will never be recognised", "Publishing figures that stand in for the invisible work"],
+              options: ["Publishing the names of the staff involved", "Measuring prevention directly", "Accepting that this kind of work will never be recognized", "Publishing figures that stand in for the invisible work"],
               answer: 3,
               explain:
                 "Öneri dördüncü paragrafta ve doğrudan ölçmeyi dışlıyor: «We cannot measure absences directly, but we can measure the conditions that produce them». Ardından üç vekil gösterge sayılıyor: varlıkların yaşı, birikmiş işin büyüklüğü, ertelenen denetim sayısı.",
@@ -422,7 +422,7 @@ None of this will make the work visible in the way that a ribbon-cutting is visi
             {
               key: "a",
               label: "a — Writer A",
-              body: "The defence of maintenance is almost always made by people who already hold a post within it. I do not say that makes it wrong, but it should make us ask who is absent from the conversation: the districts whose assets were never built in the first place, and who are now told that upkeep must come before anything new.",
+              body: "The defense of maintenance is almost always made by people who already hold a post within it. I do not say that makes it wrong, but it should make us ask who is absent from the conversation: the districts whose assets were never built in the first place, and who are now told that upkeep must come before anything new.",
             },
             {
               key: "b",
@@ -508,7 +508,7 @@ The difficulty was not one of access. Head teachers cooperated, the surveyors we
 
 {{32}}
 
-Later attempts made the picture more precise. When the same buildings were surveyed twice by different teams working to a common definition, the two totals differed by less than nine per cent, which suggests that the earlier variation was a matter of definition rather than of judgement.
+Later attempts made the picture more precise. When the same buildings were surveyed twice by different teams working to a common definition, the two totals differed by less than nine percent, which suggests that the earlier variation was a matter of definition rather than of judgment.
 
 {{33}}
 
@@ -592,7 +592,7 @@ This has an uncomfortable implication for policy. If the total depends on a defi
             {
               key: "c",
               label: "c — Building inspector",
-              body: "The guidance says that experience is what builds judgement, and I do not dispute it. My difficulty is practical: an inspector sees whatever is on the rota that month, and nobody is arranging for them to meet the failure modes that are rare. We call it experience and treat it as though it were a curriculum.",
+              body: "The guidance says that experience is what builds judgment, and I do not dispute it. My difficulty is practical: an inspector sees whatever is on the rota that month, and nobody is arranging for them to meet the failure modes that are rare. We call it experience and treat it as though it were a curriculum.",
             },
             {
               key: "d",
@@ -632,7 +632,7 @@ This has an uncomfortable implication for policy. If the total depends on a defi
               kind: "match",
               id: "en-c1-03-l8-38",
               no: 38,
-              text: "Which text criticises a failure to record reasoning?",
+              text: "Which text criticizes a failure to record reasoning?",
               answer: "d",
               explain:
                 "Meclis başkanı kararların kendisini değil, gerekçesizliğini eleştiriyor: «we never wrote down what we were deferring, or why». Halef bir kararı gerekçesiz devralıyor.",
@@ -650,7 +650,7 @@ This has an uncomfortable implication for policy. If the total depends on a defi
               kind: "match",
               id: "en-c1-03-l8-40",
               no: 40,
-              text: "Which text defends the very decisions it also criticises?",
+              text: "Which text defends the very decisions it also criticizes?",
               answer: "d",
               explain:
                 "İki cümle yan yana duruyor: «I would defend most of them against anybody» ve «What I would not defend is …». Savunma kararlara, eleştiri kayıt tutulmamasına.",
@@ -685,10 +685,10 @@ This has an uncomfortable implication for policy. If the total depends on a defi
               situation: "İki mühendis bir yol yenileme programını konuşuyor.",
               plays: 2,
               segments: [
-                { speaker: "Sunna", text: "The programme works, and I say that as somebody who spent three years arguing against it. What I still cannot defend is the order we do the streets in." },
+                { speaker: "Sunna", text: "The program works, and I say that as somebody who spent three years arguing against it. What I still cannot defend is the order we do the streets in." },
                 { speaker: "Bilal", text: "The order is not ours, though. We follow the complaint data." },
                 { speaker: "Sunna", text: "Which is precisely the objection, not an answer to it. Complaints come from the streets that complain, and we should at least say so in the annual report." },
-                { speaker: "Bilal", text: "I would go along with saying so. I would resist the next step, which is to make a resurfacing programme responsible for correcting who does and does not write to a council." },
+                { speaker: "Bilal", text: "I would go along with saying so. I would resist the next step, which is to make a resurfacing program responsible for correcting who does and does not write to a council." },
               ],
             },
             {
@@ -700,9 +700,9 @@ This has an uncomfortable implication for policy. If the total depends on a defi
               plays: 2,
               segments: [
                 { speaker: "Host", text: "You have said the housing debate is conducted at the wrong level of detail. What do you mean?" },
-                { speaker: "Planner", text: "People argue about whole cities. A city is not a unit; it is perhaps four hundred neighbourhoods, and policy reaches them one at a time. Once you look at neighbourhoods the argument becomes tractable and, I admit, a good deal less exciting." },
+                { speaker: "Planner", text: "People argue about whole cities. A city is not a unit; it is perhaps four hundred neighborhoods, and policy reaches them one at a time. Once you look at neighborhoods the argument becomes tractable and, I admit, a good deal less exciting." },
                 { speaker: "Host", text: "Does that make you optimistic?" },
-                { speaker: "Planner", text: "It makes me specific, which is not the same thing. The neighbourhood view tells you that some places will keep a name whose meaning has changed entirely, and nobody has a good word for that experience, let alone a policy for it." },
+                { speaker: "Planner", text: "It makes me specific, which is not the same thing. The neighborhood view tells you that some places will keep a name whose meaning has changed entirely, and nobody has a good word for that experience, let alone a policy for it." },
               ],
             },
             {
@@ -724,11 +724,11 @@ This has an uncomfortable implication for policy. If the total depends on a defi
               id: "en-c1-03-h1-1",
               no: 1,
               ref: "a1",
-              text: "What is Sunna's main criticism of the programme?",
-              options: ["The programme does not work", "The way the work is prioritised", "The cost of the programme to residents"],
+              text: "What is Sunna's main criticism of the program?",
+              options: ["The program does not work", "The way the work is prioritized", "The cost of the program to residents"],
               answer: 1,
               explain:
-                "Sunna programın işlediğini baştan kabul ediyor: «The programme works, and I say that as somebody who spent three years arguing against it». Eleştirisi tek bir noktada: «the order we do the streets in». Maliyet hiç anılmıyor.",
+                "Sunna programın işlediğini baştan kabul ediyor: «The program works, and I say that as somebody who spent three years arguing against it». Eleştirisi tek bir noktada: «the order we do the streets in». Maliyet hiç anılmıyor.",
             },
             {
               kind: "mcq",
@@ -739,7 +739,7 @@ This has an uncomfortable implication for policy. If the total depends on a defi
               options: ["He accepts the report change but not a wider duty", "He accepts the criticism but not the report change", "He refuses both parts of the argument"],
               answer: 0,
               explain:
-                "Bilal ayrımı kendisi yapıyor: «I would go along with saying so», ama «I would resist the next step, which is to make a resurfacing programme responsible for correcting who does and does not write to a council».",
+                "Bilal ayrımı kendisi yapıyor: «I would go along with saying so», ama «I would resist the next step, which is to make a resurfacing program responsible for correcting who does and does not write to a council».",
             },
             {
               kind: "mcq",
@@ -880,7 +880,7 @@ The council has eleven inspectors and needs {{14}}.`,
               no: 11,
               ref: "b1",
               text: "Gap 11",
-              accept: ["a quarter", "one quarter", "25 per cent"],
+              accept: ["a quarter", "one quarter", "25 percent"],
               explain:
                 "«About a quarter of the sum is urgent within two years» — acil pay. Geri kalanın on yıla yayılabildiği hemen ardından söyleniyor; oran ile toplamı karıştıran öğrenci yüz doksanı yazar.",
             },
@@ -939,7 +939,7 @@ The council has eleven inspectors and needs {{14}}.`,
                 { speaker: "Chair", text: "Fenna, does that resolve it?" },
                 { speaker: "Fenna", text: "It sharpens it. What both of them are describing is a trade-off between comparability and usefulness, and I would say plainly that we have never had a serious attempt to have both. Nobody has tried publishing the total alongside a fixed, audited breakdown, because the breakdown is where the political pain is." },
                 { speaker: "Chair", text: "Karin, is there evidence either way?" },
-                { speaker: "Karin", text: "Very little, and I would rather say so than pretend. Two authorities have published breakdowns and both stopped after three years. That is not enough to conclude anything, and I notice that everyone on this panel, including me, has a story that explains the failure in their own favour." },
+                { speaker: "Karin", text: "Very little, and I would rather say so than pretend. Two authorities have published breakdowns and both stopped after three years. That is not enough to conclude anything, and I notice that everyone on this panel, including me, has a story that explains the failure in their own favor." },
                 { speaker: "Chair", text: "Dmitri, what about the incentive question?" },
                 { speaker: "Dmitri", text: "That is the part that worries me most. Any figure attached to funding gets managed. If the urgent category attracts money, the urgent category grows, and it grows honestly: engineers reclassify in good faith because the definition has room in it. I would build the review into the rule from the first day, not add it after the drift appears." },
                 { speaker: "Chair", text: "Fenna, a last word." },
@@ -1002,7 +1002,7 @@ The council has eleven inspectors and needs {{14}}.`,
               id: "en-c1-03-h3-19",
               no: 19,
               ref: "c1",
-              text: "How does Fenna characterise the disagreement?",
+              text: "How does Fenna characterize the disagreement?",
               options: ["As a trade-off that has never been properly tested", "As a misunderstanding between the two speakers", "As a dispute about the quality of the data", "As a question that the evidence has already settled"],
               answer: 0,
               explain:
@@ -1061,7 +1061,7 @@ The council has eleven inspectors and needs {{14}}.`,
             { key: "f", label: "to reject a comparison being used in the debate" },
             { key: "g", label: "to describe a cost that appears in no account" },
             { key: "h", label: "to ask for a decision to be postponed" },
-            { key: "i", label: "to defend a colleague who has been criticised" },
+            { key: "i", label: "to defend a colleague who has been criticized" },
             { key: "j", label: "to argue that the evidence is too thin to act on" },
           ],
           texts: [
@@ -1095,7 +1095,7 @@ The council has eleven inspectors and needs {{14}}.`,
               situation: "Üçüncü konuşmacı bir hedefin yaratacağı davranıştan söz ediyor.",
               plays: 2,
               segments: [
-                { text: "If we publish a target of ninety per cent of assets in grade two or better, I can tell you now what will happen. Within two years the grading will loosen, not because anybody cheats, but because every borderline case will be argued upwards by somebody with a deadline. The number will improve and the buildings will not." },
+                { text: "If we publish a target of ninety percent of assets in grade two or better, I can tell you now what will happen. Within two years the grading will loosen, not because anybody cheats, but because every borderline case will be argued upwards by somebody with a deadline. The number will improve and the buildings will not." },
               ],
             },
             {
@@ -1128,7 +1128,7 @@ The council has eleven inspectors and needs {{14}}.`,
               situation: "Altıncı konuşmacı hiçbir hesapta görünmeyen bir maliyeti anlatıyor.",
               plays: 2,
               segments: [
-                { text: "The closure of the footbridge appears in our accounts as a saving of forty thousand a year. What does not appear anywhere is that six hundred people now walk an extra kilometre twice a day, and that the primary school has lost a third of its walking route. Nobody has ever been asked to put a figure on that, so there is none." },
+                { text: "The closure of the footbridge appears in our accounts as a saving of forty thousand a year. What does not appear anywhere is that six hundred people now walk an extra kilometer twice a day, and that the primary school has lost a third of its walking route. Nobody has ever been asked to put a figure on that, so there is none." },
               ],
             },
             {
@@ -1139,7 +1139,7 @@ The council has eleven inspectors and needs {{14}}.`,
               situation: "Yedinci konuşmacı eleştirilen bir meslektaşından söz ediyor.",
               plays: 2,
               segments: [
-                { text: "A good deal has been said this week about the officer who signed the deferral, most of it by people who have not read the file. She recorded her reasons in writing, she flagged the risk twice, and she was overruled. If we want to criticise somebody, the papers make it perfectly clear who." },
+                { text: "A good deal has been said this week about the officer who signed the deferral, most of it by people who have not read the file. She recorded her reasons in writing, she flagged the risk twice, and she was overruled. If we want to criticize somebody, the papers make it perfectly clear who." },
               ],
             },
             {
@@ -1213,7 +1213,7 @@ The council has eleven inspectors and needs {{14}}.`,
               text: "Speaker 6",
               answer: "g",
               explain:
-                "Kayıt görünen tasarrufla görünmeyen bedeli karşılaştırıyor: kırk bin tasarruf hesapta var, «What does not appear anywhere is that six hundred people now walk an extra kilometre twice a day».",
+                "Kayıt görünen tasarrufla görünmeyen bedeli karşılaştırıyor: kırk bin tasarruf hesapta var, «What does not appear anywhere is that six hundred people now walk an extra kilometer twice a day».",
             },
             {
               kind: "match",
@@ -1223,7 +1223,7 @@ The council has eleven inspectors and needs {{14}}.`,
               text: "Speaker 7",
               answer: "i",
               explain:
-                "Konuşmacı eleştirilen memuru koruyor: gerekçelerini yazmış, riski iki kez bildirmiş ve kararı ezilmiş. «If we want to criticise somebody, the papers make it perfectly clear who».",
+                "Konuşmacı eleştirilen memuru koruyor: gerekçelerini yazmış, riski iki kez bildirmiş ve kararı ezilmiş. «If we want to criticize somebody, the papers make it perfectly clear who».",
             },
             {
               kind: "match",
@@ -1253,24 +1253,24 @@ The council has eleven inspectors and needs {{14}}.`,
           format: "writing",
           goal: "production",
           prompt:
-            "You have attended a seminar on public spending. Write an essay for your tutor summarising which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. New projects attract funding because they are visible and can be opened.\n2. Maintenance is cheaper over time but produces nothing that can be shown.\n\nWrite 220 to 260 words.",
+            "You have attended a seminar on public spending. Write an essay for your tutor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. New projects attract funding because they are visible and can be opened.\n2. Maintenance is cheaper over time but produces nothing that can be shown.\n\nWrite 220 to 260 words.",
           promptTr:
             "Kamu harcamaları üzerine bir seminere katıldın. Danışmanın için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Yeni projeler görünür oldukları ve açılışı yapılabildiği için fon çeker.\n2. Bakım uzun vadede daha ucuzdur ama gösterilecek bir şey üretmez.\n\n220–260 kelime yaz.",
           items: [],
           rubric: {
             minWords: 220,
             points: [
-              { de: "Summarise both points fairly.", tr: "İki noktayı da adil biçimde özetle." },
+              { de: "Summarize both points fairly.", tr: "İki noktayı da adil biçimde özetle." },
               { de: "Say which is more important and justify the choice.", tr: "Hangisinin daha önemli olduğunu söyle ve seçimi gerekçelendir." },
               { de: "Give your own view, distinct from the summary.", tr: "Özetten ayrı olarak kendi görüşünü ver." },
             ],
             sample: `The two points raised in the seminar are not straightforwardly opposed, and the difficulty lies in deciding which of them a funding system should be designed around.
 
-The case about visibility is a case about political survival. A new library can be opened, photographed and attributed to the people who authorised it, whereas a replaced cable can be attributed to nobody. Against this, it is worth adding that visibility is not merely vanity: an opening is also the moment at which a public can see what its money bought, and there is no obvious substitute for that.
+The case about visibility is a case about political survival. A new library can be opened, photographed and attributed to the people who authorized it, whereas a replaced cable can be attributed to nobody. Against this, it is worth adding that visibility is not merely vanity: an opening is also the moment at which a public can see what its money bought, and there is no obvious substitute for that.
 
 The second point concerns the arithmetic of delay. The claim is not that maintenance is virtuous but that deferring it is expensive, since the cost of a repair rises with the square of the years it is postponed, or something close to it. On this account the preference for the new is not a moral failing but a predictable consequence of budgeting in single years.
 
-I regard the second as the more important of the two, though for a narrower reason than is usually offered. Visibility can be engineered: a maintenance programme can be published, mapped and reported on. What cannot be engineered away is a one-year settlement, and until that changes the arithmetic will keep producing the same answer.
+I regard the second as the more important of the two, though for a narrower reason than is usually offered. Visibility can be engineered: a maintenance program can be published, mapped and reported on. What cannot be engineered away is a one-year settlement, and until that changes the arithmetic will keep producing the same answer.
 
 My own view is that the framing invites a false choice. The interesting question is not new against old but which decisions should be removed from the annual cycle altogether, and nobody at the seminar asked it in that form.`,
             criteria: [
@@ -1290,7 +1290,7 @@ My own view is that the framing invites a false choice. The interesting question
           format: "writing",
           goal: "interaction",
           prompt:
-            "An organisation you know is about to close a facility rather than repair it. Write a report for its board. Describe the current situation, assess the likely effects of closing it, and recommend a course of action. Write 220 to 260 words.",
+            "An organization you know is about to close a facility rather than repair it. Write a report for its board. Describe the current situation, assess the likely effects of closing it, and recommend a course of action. Write 220 to 260 words.",
           promptTr:
             "Tanıdığın bir kurum bir tesisi onarmak yerine kapatmak üzere. Yönetim kuruluna bir rapor yaz. Mevcut durumu anlat, kapatmanın olası etkilerini değerlendir ve bir yol öner. 220–260 kelime yaz.",
           items: [],
@@ -1351,12 +1351,12 @@ I recommend a phased repair beginning with the three fenced bays, funded over th
           rubric: {
             minutes: 5,
             points: [
-              { de: "describe something concrete and analyse it", tr: "Somut bir şeyi betimlemek ve çözümlemek" },
+              { de: "describe something concrete and analyze it", tr: "Somut bir şeyi betimlemek ve çözümlemek" },
               { de: "take a position while conceding something", tr: "Bir konum alırken bir şeyi kabul etmek" },
               { de: "propose and justify a criterion", tr: "Bir ölçüt önermek ve gerekçelendirmek" },
             ],
             sample:
-              "The obvious one is the drainage on the hill road: roads like it flood in every other town near here, and this one has not flooded once in my lifetime; nobody notices because the evidence of success is an ordinary morning. I would say the invisibility is structural rather than a reporting failure, although reporting makes it worse: you can publish the maintenance schedule, but you cannot publish the flood that did not occur. As for telling improvement from better reporting, I would look at whichever measure the organisation did not choose for itself, and I would look at it over a period longer than one administration.",
+              "The obvious one is the drainage on the hill road: roads like it flood in every other town near here, and this one has not flooded once in my lifetime; nobody notices because the evidence of success is an ordinary morning. I would say the invisibility is structural rather than a reporting failure, although reporting makes it worse: you can publish the maintenance schedule, but you cannot publish the flood that did not occur. As for telling improvement from better reporting, I would look at whichever measure the organization did not choose for itself, and I would look at it over a period longer than one administration.",
             criteria: [
               "Örnek somut mu ve çözümlendi mi?",
               "Konum alınırken karşı görüşe pay bırakıldı mı?",
@@ -1385,7 +1385,7 @@ I recommend a phased repair beginning with the three fenced bays, funded over th
               { de: "name the strongest argument against your own choice", tr: "Kendi seçimine karşı en güçlü savı adlandır" },
             ],
             sample:
-              "The case for the new facility is not merely political, although it is partly that. A new building can be designed for what people need now rather than for what they needed in 1974, and it arrives without the accumulated compromises of a repaired one. The case for restoring three is arithmetical and, I think, stronger: three buildings already sit inside the neighbourhoods that use them, and reopening them serves roughly four times the population for the same sum. I would restore the three. The strongest argument against my own choice is that a repaired building of that generation is repaired repeatedly: the money buys a decade, not a lifetime, and in fifteen years the same council will be having this conversation with less money and older assets. I do not think that defeats the case, but anybody making my argument should be required to say what happens in year eleven.",
+              "The case for the new facility is not merely political, although it is partly that. A new building can be designed for what people need now rather than for what they needed in 1974, and it arrives without the accumulated compromises of a repaired one. The case for restoring three is arithmetical and, I think, stronger: three buildings already sit inside the neighborhoods that use them, and reopening them serves roughly four times the population for the same sum. I would restore the three. The strongest argument against my own choice is that a repaired building of that generation is repaired repeatedly: the money buys a decade, not a lifetime, and in fifteen years the same council will be having this conversation with less money and older assets. I do not think that defeats the case, but anybody making my argument should be required to say what happens in year eleven.",
             criteria: [
               "İki savunma da adil biçimde kuruldu mu?",
               "Seçim açıkça yapıldı ve gerekçelendirildi mi?",

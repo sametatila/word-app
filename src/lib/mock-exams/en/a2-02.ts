@@ -51,7 +51,7 @@ export const EN_A2_02: MockPaper = {
               genre: "Notice in a shop",
               genreTr: "Mağaza duyurusu",
               title: "Winter sale",
-              body: `Coats and boots are thirty per cent cheaper this week. Sale items cannot go back to the shop, but you can change the size once.`,
+              body: `Coats and boots are thirty percent cheaper this week. Sale items cannot go back to the shop, but you can change the size once.`,
             },
             {
               kind: "text",
@@ -67,7 +67,7 @@ export const EN_A2_02: MockPaper = {
               genre: "Note for a guest",
               genreTr: "Misafir için not",
               title: "Welcome!",
-              body: `The keys are with the neighbour in flat 12. She works until six, so come after that. Do not ring my bell: I am away until Sunday.`,
+              body: `The keys are with the neighbor in flat 12. She works until six, so come after that. Do not ring my bell: I am away until Sunday.`,
             },
             {
               kind: "text",
@@ -152,8 +152,8 @@ export const EN_A2_02: MockPaper = {
             { key: "d", label: "Second Hand Books", body: "Thousands of used books, all under three pounds. Open Tuesday to Saturday. We also buy your old books, but only in good condition." },
             { key: "e", label: "Airport Shuttle", body: "Every twenty minutes, day and night. Thirty-five minutes to the terminal. Big cases are free. Buy your ticket from the driver." },
             { key: "f", label: "Repair Café", body: "Bring a broken lamp, radio or bag on the first Sunday of the month. Our helpers repair it with you. Free, but please give what you can." },
-            { key: "g", label: "Museum Card", body: "One card, twelve museums, one year. 45 pounds for adults, free for children. The card also gives you ten per cent in the museum shops." },
-            { key: "h", label: "Late Supermarket", body: "Open until midnight every day, also on Sunday. Fresh bread arrives at eight in the evening. Small shop, low prices, no car park." },
+            { key: "g", label: "Museum Card", body: "One card, twelve museums, one year. 45 pounds for adults, free for children. The card also gives you ten percent in the museum shops." },
+            { key: "h", label: "Late Supermarket", body: "Open until midnight every day, also on Sunday. Fresh bread arrives at eight in the evening. Small shop, low prices, no parking lot." },
           ],
           items: [
             {
@@ -196,7 +196,7 @@ export const EN_A2_02: MockPaper = {
               kind: "match",
               id: "en-a2-02-l2-10",
               no: 10,
-              text: "Sofia makes short journeys in the city centre and does not want to pay for parking.",
+              text: "Sofia makes short journeys in the city center and does not want to pay for parking.",
               answer: "b",
               explain:
                 "İlan kısa yolculuk için kurulmuş: «The first thirty minutes are free» ve bisiklet başka istasyona bırakılabiliyor. Park sorunu bisikletle ortadan kalkıyor; geç açık market ilanında da park yok ama o bir ulaşım seçeneği değil.",
@@ -217,13 +217,13 @@ export const EN_A2_02: MockPaper = {
               genre: "Magazine article",
               genreTr: "Dergi yazısı",
               title: "One suitcase for three weeks",
-              body: `Last spring I travelled for three weeks with one small suitcase. My friends said it was impossible. They were wrong, and here is what I learned.
+              body: `Last spring I traveled for three weeks with one small suitcase. My friends said it was impossible. They were wrong, and here is what I learned.
 
 First, I took four shirts and two pairs of trousers. That sounds too little, but every hostel had a washing machine. I washed my clothes on Sunday evening and everything was dry on Monday morning.
 
 Second, I left my big camera at home. My phone took better pictures than my old camera, and it was much lighter in my bag.
 
-The only mistake was shoes. I took three pairs, and I wore one pair for nineteen days. Two pairs travelled for three weeks and never left the suitcase.
+The only mistake was shoes. I took three pairs, and I wore one pair for nineteen days. Two pairs traveled for three weeks and never left the suitcase.
 
 Now I have a rule for every journey. I put everything on the bed, and then I take half of it away again. It is hard the first time, but after that it becomes normal.`,
               gloss: [
@@ -292,7 +292,7 @@ Now I have a rule for every journey. I put everything on the bed, and then I tak
               title: "Before you fly",
               body: `Airports are busy places, so it is a good idea to {{15}} early.
 
-Check your bag at home. Liquids must be in small bottles, and the total {{16}} not be more than one litre.
+Check your bag at home. Liquids must be in small bottles, and the total {{16}} not be more than one liter.
 
 Put your passport in the same pocket every time. People {{17}} lose it in the queue, not at home.
 
@@ -469,8 +469,8 @@ We will come back next year {{24}} the weather is good.`,
               plays: 2,
               segments: [
                 { speaker: "Customer", text: "This jacket is nice, but it is a little short." },
-                { speaker: "Assistant", text: "We have a longer one in grey, but not in black." },
-                { speaker: "Customer", text: "Colour is not important. I will try the grey one." },
+                { speaker: "Assistant", text: "We have a longer one in gray, but not in black." },
+                { speaker: "Customer", text: "Color is not important. I will try the gray one." },
               ],
             },
             {
@@ -495,7 +495,7 @@ We will come back next year {{24}} the weather is good.`,
               plays: 2,
               segments: [
                 { speaker: "Customer", text: "I ordered a table two weeks ago and it is still not here." },
-                { speaker: "Staff", text: "I am very sorry. The lorry had a problem. It will come on Thursday." },
+                { speaker: "Staff", text: "I am very sorry. The truck had a problem. It will come on Thursday." },
                 { speaker: "Customer", text: "Thursday is fine, but please send me a message first." },
               ],
             },
@@ -531,10 +531,10 @@ We will come back next year {{24}} the weather is good.`,
               no: 2,
               ref: "a2",
               text: "Which jacket does the customer try?",
-              options: ["The grey one", "The black one", "A shorter one in another shop"],
+              options: ["The gray one", "The black one", "A shorter one in another shop"],
               answer: 0,
               explain:
-                "Daha uzun olanı yalnız gri renkte var ve müşteri «Colour is not important. I will try the grey one» diyor. Siyah kayıtta geçiyor ama mevcut olmayan seçenek olarak.",
+                "Daha uzun olanı yalnız gri renkte var ve müşteri «Color is not important. I will try the gray one» diyor. Siyah kayıtta geçiyor ama mevcut olmayan seçenek olarak.",
             },
             {
               kind: "mcq",
@@ -553,7 +553,7 @@ We will come back next year {{24}} the weather is good.`,
               no: 4,
               ref: "a4",
               text: "What does the customer ask for?",
-              options: ["A message before the delivery", "A different colour for the table", "The money back for the table"],
+              options: ["A message before the delivery", "A different color for the table", "The money back for the table"],
               answer: 0,
               explain:
                 "Müşteri perşembeyi kabul edip tek bir şey istiyor: «please send me a message first». Para iadesi ya da renk değişikliği kayıtta hiç geçmiyor; şikâyet var ama talep teslimat haberi.",
@@ -590,7 +590,7 @@ We will come back next year {{24}} the weather is good.`,
               plays: 2,
               segments: [
                 {
-                  text: "Hello everyone, here is the plan for tomorrow. The bus leaves from the hotel at nine, so please have breakfast before that. Our first stop is the castle. The tour inside takes ninety minutes and the guide speaks English. After that we drive to the harbour and you have free time until three. Lunch is not included, but the fish restaurant near the water is very good and it is not expensive. Then we come back through the old town. We arrive at the hotel at about half past five. One more thing: tomorrow will be cold and windy, so bring a warm jacket.",
+                  text: "Hello everyone, here is the plan for tomorrow. The bus leaves from the hotel at nine, so please have breakfast before that. Our first stop is the castle. The tour inside takes ninety minutes and the guide speaks English. After that we drive to the harbor and you have free time until three. Lunch is not included, but the fish restaurant near the water is very good and it is not expensive. Then we come back through the old town. We arrive at the hotel at about half past five. One more thing: tomorrow will be cold and windy, so bring a warm jacket.",
                 },
               ],
             },
@@ -797,7 +797,7 @@ Bring:                  a warm {{10}}`,
             { key: "c", label: "It broke after a short time." },
             { key: "d", label: "It was much more expensive than in another shop." },
             { key: "e", label: "It was too heavy to carry." },
-            { key: "f", label: "The colour was different from the picture." },
+            { key: "f", label: "The color was different from the picture." },
             { key: "g", label: "It was never used." },
             { key: "h", label: "There was a part missing in the box." },
           ],
@@ -974,7 +974,7 @@ Elif`,
               { de: "Say what went wrong.", tr: "Neyin ters gittiğini söyle." },
               { de: "Say what you did in the end.", tr: "Sonunda ne yaptığını söyle." },
             ],
-            sample: `Last August I travelled to the coast with my brother. We booked a small hotel near the beach. When we arrived at midnight, the hotel was closed and nobody answered the phone. We sat outside for an hour. Then a woman from the next house opened her door and gave us a room. In the morning the hotel said sorry, but we stayed with the woman.`,
+            sample: `Last August I traveled to the coast with my brother. We booked a small hotel near the beach. When we arrived at midnight, the hotel was closed and nobody answered the phone. We sat outside for an hour. Then a woman from the next house opened her door and gave us a room. In the morning the hotel said sorry, but we stayed with the woman.`,
             criteria: [
               "Üç içerik noktasının üçü de var mı?",
               "Geçmiş zaman doğru kullanıldı mı? Düzensiz fiiller (went, was, gave) doğru mu?",
@@ -999,7 +999,7 @@ Elif`,
           no: 1,
           format: "speaking",
           goal: "interaction",
-          prompt: "I am going to ask you some questions about travelling and shopping. Answer in full sentences.",
+          prompt: "I am going to ask you some questions about traveling and shopping. Answer in full sentences.",
           promptTr: "Sana yolculuk ve alışveriş hakkında sorular soracağım. Tam cümlelerle cevap ver.",
           prepSeconds: 20,
           exchange: [
@@ -1019,7 +1019,7 @@ Elif`,
               { de: "use the past simple in the last answer", tr: "Son cevapta geçmiş zamanı kullanmak" },
             ],
             sample:
-              "I usually go to work by bus. It takes about twenty-five minutes. I prefer shopping in a shop because I want to see the size and the colour first. Last year I went to Greece with my sister. We stayed for ten days and we swam every morning.",
+              "I usually go to work by bus. It takes about twenty-five minutes. I prefer shopping in a shop because I want to see the size and the color first. Last year I went to Greece with my sister. We stayed for ten days and we swam every morning.",
             criteria: [
               "Cevaplar tek sözcük değil, tam cümle mi?",
               "Tercih bir gerekçeyle mi verildi? (because …)",

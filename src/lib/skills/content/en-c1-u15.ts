@@ -64,7 +64,7 @@ export const enC1U15: SkillExercise[] = [
       { de: "least", tr: "en az" },
       { de: "ordinary", tr: "olağan" },
       { de: "itself", tr: "kendisi" },
-      { de: "judgement", tr: "yargı" },
+      { de: "judgment", tr: "yargı" },
       { de: "objects", tr: "nesneler" },
       { de: "disappear", tr: "yok olmak" },
       { de: "a clause", tr: "cümlecik" },
@@ -100,7 +100,7 @@ export const enC1U15: SkillExercise[] = [
       "That is the third and quietest way this level has met of writing a decision with nobody in it. The passive deletes an agent and leaves a hole a careful reader can find. An abstract subject puts a noun where a person was, and the noun is at least visible. This one leaves no trace at all, because nothing was removed: the sentence is complete, ordinary and short, and there is no place in it where a name is missing.\n" +
       "German marks the difference in the word itself. Where English uses one verb in two readings, German usually keeps two verbs — one for the thing that changes and one for the person who changes it — built from the same root with a different ending. So a German reader learns from the verb which of the two sentences they are in, before the subject has been considered at all.\n" +
       "That is the measurement of this unit. In English the agent disappears inside the verb; in German the verb says which reading is in hand.\n" +
-      "The labor force participation rate rose; the earmarked money, not at all. Here the gapped second half has kept an adverb where the verb would have been, which the shape allows, and that adverb is carrying the whole judgement of the sentence.\n" +
+      "The labor force participation rate rose; the earmarked money, not at all. Here the gapped second half has kept an adverb where the verb would have been, which the shape allows, and that adverb is carrying the whole judgment of the sentence.\n" +
       "The generational contract promises twilight years, the job self-fulfillment. One more, with a single verb doing double duty across two subjects and two objects.\n" +
       "And it is the right line to end on, because a promise is the one kind of sentence in this vocabulary that always has somebody in it. Something promised, and the sentence says what.",
     questions: [
@@ -146,11 +146,11 @@ export const enC1U15: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What is carrying the judgement?",
+        text: "What is carrying the judgment?",
         options: [],
         answer: 0,
         accept: ["the adverb", "an adverb", "that adverb"],
-        explain: "„that adverb is carrying the whole judgement of the sentence.“",
+        explain: "„that adverb is carrying the whole judgment of the sentence.“",
       },
     ],
   },
@@ -275,7 +275,7 @@ export const enC1U15: SkillExercise[] = [
       { de: "a colleague", tr: "meslektaş" },
       { de: "a piece", tr: "parça" },
       { de: "a rate", tr: "birim ücret" },
-      { de: "a favour", tr: "iyilik" },
+      { de: "a favor", tr: "iyilik" },
       { de: "counted", tr: "sayılan" },
     ],
     minutes: 8,
@@ -290,7 +290,7 @@ export const enC1U15: SkillExercise[] = [
       { speaker: "Tolga", text: "So the cheaper reading wins." },
       { speaker: "Ayça", text: "The cheaper reading always wins the first meeting. It loses the fourth one, a year later, when the same person is in the room with the same two jobs." },
       { speaker: "Tolga", text: "Piecework may weaken collegiality and strain the interpersonal side." },
-      { speaker: "Ayça", text: "That one I have watched happen. Once the rate is per piece, a question from a colleague costs money, and helping becomes a favour rather than the work." },
+      { speaker: "Ayça", text: "That one I have watched happen. Once the rate is per piece, a question from a colleague costs money, and helping becomes a favor rather than the work." },
       { speaker: "Tolga", text: "Nobody decides that." },
       { speaker: "Ayça", text: "Nobody decides it and everybody notices it, and it never appears in a report because the thing that was lost was never counted when it was there." },
     ],

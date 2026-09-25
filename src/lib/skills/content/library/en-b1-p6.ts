@@ -45,7 +45,7 @@ export const enB1P6: SkillExercise[] = [
       "The two times I did go in, the staff were patient with a question that must sound very " +
       "stupid by now. Nobody made me feel that I was wasting their time.\n\n" +
       "What I cannot judge is the part most people come for: the quiet room, the children's " +
-      "hour on Saturdays, the free computers. My neighbour, who has three children and no " +
+      "hour on Saturdays, the free computers. My neighbor, who has three children and no " +
       "printer at home, uses all of it and says the printer is the real service.\n\n" +
       "So why four stars and not five? The app. It logs me out every week, it looks like it " +
       "was built in 2011, and the search only works if you already know the title. " +
@@ -89,7 +89,7 @@ export const enB1P6: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What does the neighbour call the real service?",
+        text: "What does the neighbor call the real service?",
         options: [],
         answer: 0,
         accept: ["the printer", "printer", "the free printer"],

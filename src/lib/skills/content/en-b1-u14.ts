@@ -57,7 +57,7 @@ export const enB1U14: SkillExercise[] = [
     text:
       "Three things work for me and one of them surprised me.\n" +
       "I enjoy listening to podcasts. Twenty minutes on the bus, the same episode twice, and the second time I hear the words I missed. That is not study time; it is the time that was there anyway.\n" +
-      "I try to memorise ten words a day. Ten, not fifty. I tried fifty in the first month and remembered eleven of them a week later, which is the whole argument.\n" +
+      "I try to memorize ten words a day. Ten, not fifty. I tried fifty in the first month and remembered eleven of them a week later, which is the whole argument.\n" +
       "I am used to writing in a notebook. That sentence is not about the past — it says that writing by hand feels normal to me now. It did not in September. For three weeks it felt slow and childish.\n" +
       "I used to write on a screen. That is the other sentence and it means the opposite kind of thing: I did it then and I do not do it now.\n" +
       "The two sentences look almost the same and one small word decides. „I used to write“ is a habit that stopped. „I am used to writing“ is a habit that fits.\n" +
@@ -70,10 +70,10 @@ export const enB1U14: SkillExercise[] = [
         explain: "„it says that writing by hand feels normal to me now.“",
       },
       {
-        text: "How many words does the writer memorise a day?",
+        text: "How many words does the writer memorize a day?",
         options: ["ten", "fifty", "eleven"],
         answer: 0,
-        explain: "„I try to memorise ten words a day. Ten, not fifty.“",
+        explain: "„I try to memorize ten words a day. Ten, not fifty.“",
       },
       {
         kind: "truefalse",
@@ -97,7 +97,7 @@ export const enB1U14: SkillExercise[] = [
         answer: 0,
         items: [
           "I enjoy listening to podcasts.",
-          "I try to memorise ten words a day.",
+          "I try to memorize ten words a day.",
           "I am used to writing in a notebook.",
           "I used to write on a screen.",
         ],
@@ -354,7 +354,7 @@ export const enB1U14: SkillExercise[] = [
     gloss: [
       { de: "used to write", tr: "eskiden yazardım" },
       { de: "am used to writing", tr: "yazmaya alışkınım" },
-      { de: "memorise", tr: "ezberlemek" },
+      { de: "memorize", tr: "ezberlemek" },
     ],
     minutes: 8,
     tasks: [
@@ -367,7 +367,7 @@ export const enB1U14: SkillExercise[] = [
       {
         kind: "build",
         tr: "Günde on kelime ezberlemeye çalışıyorum.",
-        answer: "I try to memorise ten words a day.",
+        answer: "I try to memorize ten words a day.",
         hint: "„try“ burada MASTAR alıyor: denemek anlamında.",
       },
       {

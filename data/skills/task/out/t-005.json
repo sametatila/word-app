@@ -1,6 +1,6 @@
 [
  { "tr": "Zorunluluğun güçlü ve zayıf yanını söyle", "kind": "monologue.bulletsTr", "en": "Give the strong and the weak side of a legal duty" },
- { "tr": "Değiştirme lehine en güçlü argümanı söyle", "kind": "monologue.bulletsTr", "en": "Give the strongest argument in favour of changing them" },
+ { "tr": "Değiştirme lehine en güçlü argümanı söyle", "kind": "monologue.bulletsTr", "en": "Give the strongest argument in favor of changing them" },
  { "tr": "Kendi konumunu bir koşulla birlikte söyle", "kind": "monologue.bulletsTr", "en": "State your own position together with a condition" },
  { "tr": "Kendi ölçütünü ver: hangi durumda hangisi", "kind": "monologue.bulletsTr", "en": "Give your own criterion: which one in which case" },
  { "tr": "Ölçütünün ilk parçası: durum hâlâ açık mı", "kind": "monologue.bulletsTr", "en": "The first part of your criterion: is the situation still open" },
@@ -21,8 +21,8 @@
  { "tr": "Kimin itiraz edeceğini ve neden haklı olduğunu söyle", "kind": "monologue.bulletsTr", "en": "Say who would object and why they are right" },
  { "tr": "İkinci ölçütünü ver: sorumluluk hangi sırayla veriliyor", "kind": "monologue.bulletsTr", "en": "Give your second criterion: in what order responsibility is handed over" },
  { "tr": "Yaygın ölçütü adlandır ve neden yetersiz olduğunu söyle", "kind": "monologue.bulletsTr", "en": "Name the common criterion and say why it is not enough" },
- { "tr": "Yargının neden hem doğru hem işe yaramaz olduğunu göster", "kind": "monologue.bulletsTr", "en": "Show why the judgement is both true and useless" },
- { "tr": "Yargıyı tümden reddetmenin neden kolaycılık olduğunu söyle", "kind": "monologue.bulletsTr", "en": "Say why rejecting the judgement outright is the easy way out" },
+ { "tr": "Yargının neden hem doğru hem işe yaramaz olduğunu göster", "kind": "monologue.bulletsTr", "en": "Show why the judgment is both true and useless" },
+ { "tr": "Yargıyı tümden reddetmenin neden kolaycılık olduğunu söyle", "kind": "monologue.bulletsTr", "en": "Say why rejecting the judgment outright is the easy way out" },
  { "tr": "Alışıldık „daha çok mu az mı kural“ sorusunu bir kenara koy", "kind": "monologue.bulletsTr", "en": "Set aside the usual question of \"more rules or fewer\"" },
  { "tr": "Benim ölçütüm … olurdu", "kind": "monologue.targets.tr", "en": "My criterion would be …" },
  { "tr": "Bence …", "kind": "monologue.targets.tr", "en": "In my opinion …" },

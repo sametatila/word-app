@@ -85,8 +85,8 @@
  },
  {
   "conversation": "de-b1-in-pension",
-  "sceneEn": "You are chatting to a retired neighbour: what is not as it used to be, what they still do themselves, where they ask for help.",
-  "partnerEn": "a witty retired neighbour who values their independence",
+  "sceneEn": "You are chatting to a retired neighbor: what is not as it used to be, what they still do themselves, where they ask for help.",
+  "partnerEn": "a witty retired neighbor who values their independence",
   "openingEn": "Oh, you know — it all used to go much faster. How is it with you?",
   "goalEn": "At least three comparisons have been made, a preference has been given and an offer of help has been discussed."
  },
@@ -121,14 +121,14 @@
  {
   "conversation": "de-b1-netz-stoerung",
   "sceneEn": "The internet at home has been down for three days. You ring the provider and find out the cause, when it will be fixed and whether you get a refund, with indirect questions.",
-  "partnerEn": "a call centre agent who talks in set phrases but gives information when pressed",
+  "partnerEn": "a call center agent who talks in set phrases but gives information when pressed",
   "openingEn": "Thank you for your call. Which address is it about?",
   "goalEn": "The cause of the fault, how long it is expected to last and the question of a refund have all been found out."
  },
  {
   "conversation": "de-b1-werkzeug-leihen",
-  "sceneEn": "You want to put a shelf up on the wall but you have not got the tool. You knock on your neighbour's door, explain what you are doing and ask to borrow one.",
-  "partnerEn": "a neighbour ready to help but attached to their tools",
+  "sceneEn": "You want to put a shelf up on the wall but you have not got the tool. You knock on your neighbor's door, explain what you are doing and ask to borrow one.",
+  "partnerEn": "a neighbor ready to help but attached to their tools",
   "openingEn": "Oh, hello! You look as if you need something — what can I do?",
   "goalEn": "What you are doing has been described, the tool has been asked for politely and it has been said when it will come back."
  },

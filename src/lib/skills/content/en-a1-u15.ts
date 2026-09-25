@@ -191,7 +191,7 @@ export const enA1U15: SkillExercise[] = [
       { speaker: "Nil", text: "I go by train. The station is far from my house, so I ride a bike to the station." },
       { speaker: "Can", text: "That is a good idea. Do you go to the gym too?" },
       { speaker: "Nil", text: "Yes, on Monday and Friday. The gym is next to the park." },
-      { speaker: "Can", text: "I walk in the park at the weekend. Sometimes I take a boat on the river." },
+      { speaker: "Can", text: "I walk in the park on the weekend. Sometimes I take a boat on the river." },
       { speaker: "Nil", text: "A boat! How long does it take?" },
       { speaker: "Can", text: "One hour. You can see the old church and the museum from the river." },
       { speaker: "Nil", text: "Then I am going to take the boat next Sunday." },

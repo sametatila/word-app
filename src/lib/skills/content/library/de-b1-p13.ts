@@ -114,7 +114,7 @@ export const deB1P13: SkillExercise[] = [
       { de: "die Entscheidung", tr: "karar", en: "decision" },
       { de: "die Verwaltung", tr: "idari işler", en: "administration" },
       { de: "auffällig", tr: "dikkat çekici", en: "striking" },
-      { de: "die Sendung", tr: "program", en: "programme" },
+      { de: "die Sendung", tr: "program", en: "program" },
     ],
     minutes: 6,
     segments: [

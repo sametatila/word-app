@@ -63,7 +63,7 @@ Lina`,
               gloss: [
                 { de: "annehmen", tr: "teslim almak", en: "to accept, take in" },
                 { de: "klingeln", tr: "zil çalmak", en: "to ring the doorbell" },
-                { de: "der Stock", tr: "kat", en: "floor, storey" },
+                { de: "der Stock", tr: "kat", en: "floor, story" },
               ],
             },
             {

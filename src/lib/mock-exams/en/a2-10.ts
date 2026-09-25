@@ -952,13 +952,13 @@ Tell Bexi by:       {{10}}`,
           rubric: {
             minWords: 50,
             points: [
-              { de: "Describe the table (size, colour or age).", tr: "Masayı betimle (boyut, renk ya da yaş)." },
+              { de: "Describe the table (size, color or age).", tr: "Masayı betimle (boyut, renk ya da yaş)." },
               { de: "Say the price and whether it can change.", tr: "Fiyatı ve değişip değişmeyeceğini söyle." },
               { de: "Say when and where the buyer can come.", tr: "Alıcının ne zaman ve nereye gelebileceğini söyle." },
             ],
             sample: `Hello,
 
-Thank you for your message. The table is brown and it is 120 by 80 centimetres. It is about ten years old and there is one small mark on the left.
+Thank you for your message. The table is brown and it is 120 by 80 centimeters. It is about ten years old and there is one small mark on the left.
 
 The price is forty euros and I cannot go lower.
 

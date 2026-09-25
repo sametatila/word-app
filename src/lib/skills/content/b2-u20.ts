@@ -283,7 +283,7 @@ export const b2U20: SkillExercise[] = [
       { de: "die Leidenschaft", tr: "tutku", en: "passion" },
       { de: "die Mitgliedschaft", tr: "üyelik", en: "membership" },
       { de: "der Zeitvertreib", tr: "vakit geçirme", en: "pastime" },
-      { de: "die Ratenzahlung", tr: "taksitle ödeme", en: "instalment plan" },
+      { de: "die Ratenzahlung", tr: "taksitle ödeme", en: "installment plan" },
       { de: "der Haushaltsplan", tr: "bütçe planı", en: "household budget" },
       { de: "kostspielig", tr: "masraflı", en: "expensive" },
       { de: "maßvoll", tr: "ölçülü", en: "moderate" },

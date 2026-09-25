@@ -202,7 +202,7 @@ export const a1U14: SkillExercise[] = [
     genre: "dialogue",
     intro: "Takside bir yolculuk. Ne kadar sürüyor, ne kadar tutuyor?",
     gloss: [
-      { de: "die Autobahn", tr: "otoyol", en: "motorway" },
+      { de: "die Autobahn", tr: "otoyol", en: "highway" },
     ],
     minutes: 2,
     segments: [

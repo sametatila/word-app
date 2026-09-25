@@ -55,7 +55,7 @@ export const enB1U05: SkillExercise[] = [
       "Although I asked twice, the noise continued. The first time I went up and said it politely at the door. The second time I wrote a note, which was a mistake — a note is easy to ignore and nobody has to look at you.\n" +
       "The walls are thin. However, we can talk about it. That line came from the woman downstairs, who had lived in the building for nineteen years and had heard four families through the same wall.\n" +
       "Despite the noise, I stayed calm, and that turned out to be the whole method. The man upstairs was not disturbing anybody on purpose. He was working nights and doing the washing at eleven because that was the only hour he had.\n" +
-      "We moved the washing to seven in the evening and I moved my own calls to the kitchen, which is on the far side. Nobody apologised and nobody had to.\n" +
+      "We moved the washing to seven in the evening and I moved my own calls to the kitchen, which is on the far side. Nobody apologized and nobody had to.\n" +
       "The thing I learned is small and it is not about noise. A person who is asked at the door answers a person. A person who gets a note answers a piece of paper.",
     questions: [
       {
@@ -72,10 +72,10 @@ export const enB1U05: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Nobody apologised.",
+        text: "Nobody apologized.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„Nobody apologised and nobody had to.“",
+        explain: "„Nobody apologized and nobody had to.“",
       },
       {
         kind: "gapfill",
@@ -257,7 +257,7 @@ export const enB1U05: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 5,
-    title: "The neighbourhood",
+    title: "The neighborhood",
     genre: "dialogue",
     intro: "Bir yıl daha mı? Karar neye dayanıyor?",
     gloss: [
@@ -281,7 +281,7 @@ export const enB1U05: SkillExercise[] = [
       { speaker: "Can", text: "Is that good or strange?" },
       { speaker: "Sena", text: "Both. It is also why I feel safe here at eleven at night. There is no camera on that street. There is a man who would notice." },
       { speaker: "Can", text: "That is a community." },
-      { speaker: "Sena", text: "That is a community. Nobody calls it that and nobody organises it." },
+      { speaker: "Sena", text: "That is a community. Nobody calls it that and nobody organizes it." },
     ],
     questions: [
       {

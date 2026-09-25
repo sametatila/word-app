@@ -46,7 +46,7 @@ export const EN_B1_08: MockPaper = {
               genre: "Notice",
               genreTr: "Duyuru",
               title: "The quiet room",
-              body: `The quiet room is open from eight until midnight, every day. Phones must be on silent, and not face down on the table. If you need to take a call, the corridor is three metres away. We do not ask anybody to leave for a first phone call; we do ask for the second.`,
+              body: `The quiet room is open from eight until midnight, every day. Phones must be on silent, and not face down on the table. If you need to take a call, the corridor is three meters away. We do not ask anybody to leave for a first phone call; we do ask for the second.`,
             },
             {
               kind: "text",
@@ -608,7 +608,7 @@ And I tell one person what I am going to do, {{30}} that I have to say it out lo
               situation: "Kütüphanede sessiz oda için anons yapılıyor.",
               plays: 2,
               segments: [
-                { text: "A reminder about the quiet room: phones on silent, and not face down on the table. If you need to take a call, the corridor is three metres away and nobody minds. The room is open until midnight, as always." },
+                { text: "A reminder about the quiet room: phones on silent, and not face down on the table. If you need to take a call, the corridor is three meters away and nobody minds. The room is open until midnight, as always." },
               ],
             },
             {
@@ -694,7 +694,7 @@ And I tell one person what I am going to do, {{30}} that I have to say it out lo
               options: ["Leave their phones at the desk", "Take calls outside the room", "Leave the room before midnight"],
               answer: 1,
               explain:
-                "Anons yeri gösteriyor: «If you need to take a call, the corridor is three metres away». Oda gece yarısına kadar açık.",
+                "Anons yeri gösteriyor: «If you need to take a call, the corridor is three meters away». Oda gece yarısına kadar açık.",
             },
             {
               kind: "mcq",

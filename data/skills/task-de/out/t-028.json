@@ -270,9 +270,9 @@
   "de": "„however“ beginnt einen NEUEN Satz und bringt sein eigenes Komma mit, wie „jedoch“."
  },
  {
-  "tr": "Amaç sade mastarla kuruluyor; „for practise“ diye bir kuruluş yok.",
+  "tr": "Amaç sade mastarla kuruluyor; „for practice“ diye bir kuruluş yok.",
   "kind": "build.hint",
-  "de": "Der Zweck steht mit dem einfachen Infinitiv; „for practise“ gibt es nicht. Deutsch nimmt „um … zu“."
+  "de": "Der Zweck steht mit dem einfachen Infinitiv; „for practice“ gibt es nicht. Deutsch nimmt „um … zu“."
  },
  {
   "tr": "Amaçta bir kip varsa („can“) mastar yetmiyor, „so that“ gerekiyor.",

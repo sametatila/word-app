@@ -10,7 +10,7 @@
  { "conversation": "de-a2-superlativ", "de": "Gibt es eine Ermäßigung?", "en": "asks whether there is a discount" },
  { "conversation": "de-a2-zwei-jacken", "de": "Entweder der Rock oder der Anzug.", "en": "puts two options side by side" },
  { "conversation": "de-a2-zwei-jacken", "de": "Kann ich das anprobieren?", "en": "asks to try something on" },
- { "conversation": "de-a2-adjektiv-ein", "de": "Ich suche ein hellblaues Hemd.", "en": "describes what you want by colour" },
+ { "conversation": "de-a2-adjektiv-ein", "de": "Ich suche ein hellblaues Hemd.", "en": "describes what you want by color" },
  { "conversation": "de-a2-adjektiv-ein", "de": "Haben Sie das auch einfarbig?", "en": "asks about another pattern" },
  { "conversation": "de-a2-friseur", "de": "Bitte etwas kürzer.", "en": "says how much shorter it should be" },
  { "conversation": "de-a2-friseur", "de": "Können Sie mir die Haare föhnen?", "en": "asks for an extra service" },

@@ -232,7 +232,7 @@ export const c1U13: SkillExercise[] = [
       { de: "sich einbringen", tr: "katkı vermek", en: "to contribute" },
       { de: "abwägend", tr: "tartarak", en: "weighing up" },
       { de: "eingreifen", tr: "müdahale etmek", en: "to intervene" },
-      { de: "bevorzugen", tr: "tercih etmek", en: "to favour" },
+      { de: "bevorzugen", tr: "tercih etmek", en: "to favor" },
       { de: "messen", tr: "ölçmek", en: "to measure" },
       { de: "räumen", tr: "tahliye etmek", en: "to vacate" },
       { de: "die Zahl", tr: "sayı", en: "number" },

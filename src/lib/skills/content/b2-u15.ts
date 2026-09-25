@@ -130,7 +130,7 @@ export const b2U15: SkillExercise[] = [
       { de: "der Nahverkehr", tr: "toplu taşıma", en: "local transport" },
       { de: "die Stadtentwicklung", tr: "kentsel gelişim", en: "urban development" },
       { de: "das Stadtviertel", tr: "semt", en: "district" },
-      { de: "die Innenstadt", tr: "şehir merkezi", en: "city centre" },
+      { de: "die Innenstadt", tr: "şehir merkezi", en: "city center" },
       { de: "stoppen", tr: "durdurmak", en: "to stop" },
       { de: "pendeln", tr: "işe gidip gelmek", en: "to commute" },
       { de: "einheitlich", tr: "tek tip", en: "uniform" },

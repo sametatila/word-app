@@ -90,7 +90,7 @@ export const a2U01: SkillExercise[] = [
     genre: "blog",
     intro: "Kısa bir blog yazısı: dün akşam sırayla ne oldu?",
     gloss: [
-      { de: "das Programm", tr: "program", en: "programme" },
+      { de: "das Programm", tr: "program", en: "program" },
       { de: "ansehen", tr: "izlemek", en: "to watch" },
       { de: "spannend", tr: "sürükleyici", en: "exciting" },
       { de: "vorher", tr: "önceden", en: "beforehand" },
@@ -333,7 +333,7 @@ export const a2U01: SkillExercise[] = [
         ],
         minWords: 40,
         phrases: [
-          { de: "Ich bin nach … gefahren.", tr: "…-e gittim", en: "I travelled to …" },
+          { de: "Ich bin nach … gefahren.", tr: "…-e gittim", en: "I traveled to …" },
           { de: "Wir haben viel unternommen.", tr: "çok şey yaptık", en: "we did a lot" },
           { de: "Am … bin ich zurückgekommen.", tr: "…-de geri döndüm", en: "I came back on …" },
         ],

@@ -157,7 +157,7 @@ Im Sommer gibt es jeden Monat ein Gartenfest. Dann kocht jeder etwas mit Gemüse
                 { de: "das Beet", tr: "tarhçık, küçük bahçe parseli", en: "plot, bed" },
                 { de: "die Erzieherin", tr: "anaokulu öğretmeni", en: "preschool teacher" },
                 { de: "die Hecke", tr: "çit", en: "hedge" },
-                { de: "das Viertel", tr: "mahalle", en: "neighbourhood" },
+                { de: "das Viertel", tr: "mahalle", en: "neighborhood" },
               ],
             },
           ],

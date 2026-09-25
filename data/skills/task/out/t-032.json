@@ -47,7 +47,7 @@
   {
     "tr": "Apartman grubuna bir mesaj yaz: konuyu bir cümlede söyle, mevcut durumu kısaca anlat, somut öneriyi yaz, itirazı olabilecek komşuları düşün ve nasıl karar verileceğini söyle.",
     "kind": "free.prompt",
-    "en": "Write a message to the building's group: say the matter in one sentence, describe the present situation briefly, write the concrete proposal, think of the neighbours who might object and say how the decision will be made."
+    "en": "Write a message to the building's group: say the matter in one sentence, describe the present situation briefly, write the concrete proposal, think of the neighbors who might object and say how the decision will be made."
   },
   {
     "tr": "Apartman yönetimine bir metin yaz: kim olduğunu ve hangi dairede oturduğunu söyle, sorunun ne olduğunu ve ne zaman olduğunu anlat, şimdiye kadar ne yaptığını yaz ve bir çözüm öner.",
@@ -72,7 +72,7 @@
   {
     "tr": "Mahalle forumuna kısa bir ilan yaz: kim olduğunu ve nerede oturduğunu söyle, neye ihtiyacın olduğunu ve ne yapacağını yaz, ne zaman geri vereceğini belirt ve nasıl ulaşılacağını söyle.",
     "kind": "free.prompt",
-    "en": "Write a short notice for the neighbourhood forum: say who you are and where you live, write what you need and what you will do with it, say when you will give it back and how to get in touch."
+    "en": "Write a short notice for the neighborhood forum: say who you are and where you live, write what you need and what you will do with it, say when you will give it back and how to get in touch."
   },
   {
     "tr": "Bir hizmeti değerlendir: ne olduğunu ve nasıl çalıştığını kısaca anlat, beklentini ve gerçekleşeni karşılaştır, iki ölçütte somut ol, kime uygun olduğunu söyle ve puanını gerekçelendir.",
@@ -692,7 +692,7 @@
   {
     "tr": "Kurum tabloyu kamuoyuna açıyor.",
     "kind": "build.tr",
-    "en": "The organisation is publishing the table."
+    "en": "The organization is publishing the table."
   },
   {
     "tr": "Zaten iki kez onlarla konuştum.",

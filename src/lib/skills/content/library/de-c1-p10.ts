@@ -123,7 +123,7 @@ export const deC1P10: SkillExercise[] = [
       { de: "die Meldestelle", tr: "bildirim birimi", en: "reporting office" },
       { de: "die Vertraulichkeit", tr: "gizlilik", en: "confidentiality" },
       { de: "die Frist", tr: "süre", en: "deadline" },
-      { de: "die Rückmeldung", tr: "geri bildirim", en: "acknowledgement" },
+      { de: "die Rückmeldung", tr: "geri bildirim", en: "acknowledgment" },
       { de: "nachweislich", tr: "kanıtlanabilir biçimde", en: "demonstrably" },
     ],
     minutes: 10,
@@ -327,7 +327,7 @@ export const deC1P10: SkillExercise[] = [
     gloss: [
       { de: "die Angabe", tr: "veri", en: "detail" },
       { de: "die Frist", tr: "süre", en: "deadline" },
-      { de: "erkennbar", tr: "fark edilebilir", en: "recognisable" },
+      { de: "erkennbar", tr: "fark edilebilir", en: "recognizable" },
       { de: "die Prüfung", tr: "denetim", en: "check" },
       { de: "verlernen", tr: "unutmak", en: "to unlearn" },
     ],

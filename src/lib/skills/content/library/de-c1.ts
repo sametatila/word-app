@@ -212,7 +212,7 @@ export const deC1: SkillExercise[] = [
     intro: "Önce iki cümle kur, sonra bir ödül jürisi adına kararın gerekçesini yaz.",
     gloss: [
       { de: "die Begründung", tr: "gerekçe", en: "rationale" },
-      { de: "würdigen", tr: "takdir etmek", en: "to honour" },
+      { de: "würdigen", tr: "takdir etmek", en: "to honor" },
       { de: "der Maßstab", tr: "ölçüt", en: "criterion" },
       { de: "überzeugen", tr: "ikna etmek", en: "to convince" },
     ],

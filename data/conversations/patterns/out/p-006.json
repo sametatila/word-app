@@ -43,7 +43,7 @@
  { "conversation": "de-a1-jahreszeiten", "de": "im Sommer", "en": "says which season it was" },
  { "conversation": "de-a1-jahreszeiten", "de": "am ersten Mai", "en": "gives a date" },
  { "conversation": "de-a1-jahreszeiten", "de": "Mein Geburtstag ist am …", "en": "says when your birthday is" },
- { "conversation": "de-a1-a1-rueckblick", "de": "Ich habe … gelernt.", "en": "says what you learnt" },
+ { "conversation": "de-a1-a1-rueckblick", "de": "Ich habe … gelernt.", "en": "says what you learned" },
  { "conversation": "de-a1-a1-rueckblick", "de": "Ich kann jetzt …", "en": "says what you can do now" },
  { "conversation": "de-a1-a1-rueckblick", "de": "Als Nächstes möchte ich …", "en": "says what comes next" },
  { "conversation": "de-a2-urlaub", "de": "Ich bin … verreist.", "en": "used to say you went away in the past" },

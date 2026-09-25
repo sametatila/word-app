@@ -17,7 +17,7 @@
  { "conversation": "de-b2-pressefreiheit", "de": "Es dürfte klar sein, dass …", "en": "cautious certainty" },
  { "conversation": "de-b2-pressefreiheit", "de": "… sollen … behaupten", "en": "reports what has been heard" },
  { "conversation": "de-b2-influencer", "de": "die beworbenen Produkte", "en": "the products being advertised" },
- { "conversation": "de-b2-influencer", "de": "gekennzeichnet werden müssen", "en": "must be labelled" },
+ { "conversation": "de-b2-influencer", "de": "gekennzeichnet werden müssen", "en": "must be labeled" },
  { "conversation": "de-b2-falschmeldung", "de": "Es wurde behauptet, … sei …", "en": "reports the claim" },
  { "conversation": "de-b2-falschmeldung", "de": "Tatsächlich aber …", "en": "sets the facts against it" },
  { "conversation": "de-b2-partizip-1", "de": "die steigenden Preise", "en": "prices that are rising" },

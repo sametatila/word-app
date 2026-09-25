@@ -177,7 +177,7 @@ export const b1U41: SkillExercise[] = [
       { de: "das Konsulat", tr: "konsolosluk", en: "consulate" },
       { de: "die Personalien", tr: "kimlik bilgileri", en: "personal details" },
       { de: "der Zivilstand", tr: "medeni hâl", en: "marital status" },
-      { de: "anerkennen", tr: "tanımak", en: "to recognise" },
+      { de: "anerkennen", tr: "tanımak", en: "to recognize" },
       { de: "der Ausweis", tr: "kimlik", en: "ID card" },
       { de: "ledig", tr: "bekâr", en: "single" },
       { de: "geschieden", tr: "boşanmış", en: "divorced" },

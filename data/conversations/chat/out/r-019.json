@@ -29,7 +29,7 @@
  },
  {
   "conversation": "de-b2-work-life",
-  "sceneEn": "You are talking to your boss about your workload: messages after hours, availability at the weekend and how the load is shared. Say what you want in clauses of purpose, suggest a limit without blame and agree an arrangement.",
+  "sceneEn": "You are talking to your boss about your workload: messages after hours, availability on the weekend and how the load is shared. Say what you want in clauses of purpose, suggest a limit without blame and agree an arrangement.",
   "partnerEn": "a well-meaning boss who takes availability for granted",
   "openingEn": "You've seemed tense lately. Is it the amount, or is there something else?",
   "goalEn": "Where the load lies has been described without blame, a concrete limit has been suggested and agreed."
@@ -71,7 +71,7 @@
  },
  {
   "conversation": "de-b2-als-ob",
-  "sceneEn": "You and a friend are talking about the recent behaviour of someone you both know: how they are behaving, how it seems to you, what might really be going on and what you should do.",
+  "sceneEn": "You and a friend are talking about the recent behavior of someone you both know: how they are behaving, how it seems to you, what might really be going on and what you should do.",
   "partnerEn": "a worried friend who does not want to jump to conclusions",
   "openingEn": "He acts as if everything's fine — but something isn't right. Do you notice it too?",
   "goalEn": "The observations have been shared, hasty conclusions have been avoided and a concrete step has been settled."
@@ -92,7 +92,7 @@
  },
  {
   "conversation": "de-b2-missverstaendnis",
-  "sceneEn": "Something you said was misunderstood and the other person is hurt. Accept how it sounded, explain what you meant, apologise if you need to and suggest a step to put the relationship right.",
+  "sceneEn": "Something you said was misunderstood and the other person is hurt. Accept how it sounded, explain what you meant, apologize if you need to and suggest a step to put the relationship right.",
   "partnerEn": "a close friend who is hurt but willing to talk",
   "openingEn": "I thought for a long time about whether to bring it up. It sounded as if you wanted to show me up in front of everyone — was that what you meant?",
   "goalEn": "How it sounded has been accepted, what was meant has been explained and a concrete step to put things right has been settled."
@@ -116,7 +116,7 @@
   "sceneEn": "A friend is telling you about a disagreement with a third person. Listen first, then set out the other side's point of view as well, ask a question without judging and think together about what they could do.",
   "partnerEn": "a hurt friend who is sure they are in the right",
   "openingEn": "She just hung up. After everything I've done for her — am I really overreacting?",
-  "goalEn": "Your friend's story has been heard, the other side's view has been set out without judgement and a next step has been thought through together."
+  "goalEn": "Your friend's story has been heard, the other side's view has been set out without judgment and a next step has been thought through together."
  },
  {
   "conversation": "de-b2-streitkultur",

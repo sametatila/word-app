@@ -47,7 +47,7 @@ export const enB1P14: SkillExercise[] = [
       "Third, and this was the one I had never thought of: the other person is probably as " +
       "nervous as you are. Most people at a party are quietly waiting for someone else to " +
       "speak first.\n\n" +
-      "The man at my table, by the way, turned out to be the bride's old maths teacher. " +
+      "The man at my table, by the way, turned out to be the bride's old math teacher. " +
       "We talked for two hours. I still don't know his first name.",
     questions: [
       {
@@ -90,8 +90,8 @@ export const enB1P14: SkillExercise[] = [
         text: "Who was the man at the table?",
         options: [],
         answer: 0,
-        accept: ["the bride's old maths teacher", "the bride's maths teacher", "her old teacher", "her old maths teacher", "the bride's old teacher"],
-        explain: "„turned out to be the bride's old maths teacher“.",
+        accept: ["the bride's old math teacher", "the bride's math teacher", "her old teacher", "her old math teacher", "the bride's old teacher"],
+        explain: "„turned out to be the bride's old math teacher“.",
       },
       {
         text: "Which question does the writer recommend?",
@@ -216,8 +216,8 @@ export const enB1P14: SkillExercise[] = [
       {
         kind: "build",
         tr: "Hafta sonları buluşamazsın, değil mi?",
-        answer: "You can't meet at weekends, can you?",
-        alternatives: ["At weekends you can't meet, can you?"],
+        answer: "You can't meet on weekends, can you?",
+        alternatives: ["On weekends you can't meet, can you?"],
         hint: "Olumsuz cümleye olumlu soru eki gelir ve aynı yardımcı fiil tekrarlanır: can't → can you?",
       },
       {

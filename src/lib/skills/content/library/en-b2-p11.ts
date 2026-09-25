@@ -38,12 +38,12 @@ export const enB2P11: SkillExercise[] = [
       "Portwick has four thousand residents and, on a good day in August, around eighteen " +
       "thousand visitors, most of whom arrive after ten and have left by six. Last spring the " +
       "town became the first on this coast to charge them: six euros a day, collected at the two " +
-      "car parks and the railway station, with overnight guests exempt.\n\n" +
+      "parking lots and the railway station, with overnight guests exempt.\n\n" +
       "The decision did not come out of nowhere. Residents had been complaining for years about " +
       "the queues at the only pharmacy and the bins that overflowed by lunchtime, and the council " +
       "had already tried a parking ban and a leaflet campaign. Neither had changed very much.\n\n" +
       "Six months on, the figures are more modest than either side predicted. Visitor numbers " +
-      "fell by about eight per cent, mostly on weekdays, and the fee raised enough to pay for " +
+      "fell by about eight percent, mostly on weekdays, and the fee raised enough to pay for " +
       "extra cleaning and a second summer bus. Local businesses had warned that the charge would " +
       "empty the high street. So far, cafés report takings that are roughly unchanged, because " +
       "the visitors who stayed away were largely those who had been bringing their own food.\n\n" +
@@ -59,7 +59,7 @@ export const enB2P11: SkillExercise[] = [
         options: [
           "visitors who arrive by train",
           "guests who stay overnight",
-          "visitors who use the car parks",
+          "visitors who use the parking lots",
         ],
         answer: 1,
         explain: "„with overnight guests exempt“: geceyi kasabada geçirenler ücretten muaf.",
@@ -79,15 +79,15 @@ export const enB2P11: SkillExercise[] = [
         text: "Most of the fall in visitor numbers happened on weekdays.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„fell by about eight per cent, mostly on weekdays“.",
+        explain: "„fell by about eight percent, mostly on weekdays“.",
       },
       {
         kind: "gapfill",
-        text: "Visitor numbers fell by about ___ per cent.",
+        text: "Visitor numbers fell by about ___ percent.",
         options: [],
         answer: 0,
         accept: ["eight", "8"],
-        explain: "„Visitor numbers fell by about eight per cent“.",
+        explain: "„Visitor numbers fell by about eight percent“.",
       },
       {
         kind: "short_answer",
@@ -136,7 +136,7 @@ export const enB2P11: SkillExercise[] = [
       { speaker: "Ms Kendal", text: "The first thing we noticed was the verges. People had been parking on the grass along the lane for weeks before anyone told us, and by then the ditch had collapsed in two places." },
       { speaker: "Host", text: "And the path itself? Was it ever built for that kind of number?" },
       { speaker: "Ms Kendal", text: "Not remotely. It was designed for perhaps sixty walkers a day. On the worst Sunday we counted nine hundred, and plenty of them had come in trainers, expecting a short stroll." },
-      { speaker: "Host", text: "So you introduced a booking system for the car park. Wasn't that unpopular?" },
+      { speaker: "Host", text: "So you introduced a booking system for the parking lot. Wasn't that unpopular?" },
       { speaker: "Ms Kendal", text: "Less than we'd feared. Booking is free; what it removes is the uncertainty. People who had driven two hours to find no space were far angrier than people who simply couldn't book." },
       { speaker: "Host", text: "What about the people who don't plan ahead?" },
       { speaker: "Ms Kendal", text: "That's the honest weakness. Local families who used to decide on the morning now find the weekend full. We keep twenty places back for residents, but it isn't a perfect answer." },
@@ -147,7 +147,7 @@ export const enB2P11: SkillExercise[] = [
         text: "What caused the sudden rise in walkers?",
         options: [
           "a photograph shared online",
-          "a new car park by the lane",
+          "a new parking lot by the lane",
           "a program on television",
         ],
         answer: 0,

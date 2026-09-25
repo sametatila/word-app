@@ -42,7 +42,7 @@ export const enB2P12: SkillExercise[] = [
       "The usual explanation is forgetfulness, and reminders have been sent by text since 2019. " +
       "They help, but less than expected. When we phoned a sample of four hundred patients who " +
       "had missed an appointment, only a quarter said they had simply forgotten.\n\n" +
-      "The largest group, almost forty per cent, had tried to cancel. Most had rung during the " +
+      "The largest group, almost forty percent, had tried to cancel. Most had rung during the " +
       "morning, when the lines are busiest, and given up after several minutes on hold. " +
       "In other words, many of the appointments recorded as missed should have been recorded " +
       "as canceled, and could have been offered to another patient if canceling had been " +

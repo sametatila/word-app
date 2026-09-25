@@ -381,7 +381,7 @@ The caretaker is very good, {{22}} he cannot make the parts himself.
 
 Last winter we waited {{23}} three weeks for a small piece of metal.
 
-I live on the fourth floor and I still {{24}} not know how my neighbour on the sixth manages.`,
+I live on the fourth floor and I still {{24}} not know how my neighbor on the sixth manages.`,
             },
           ],
           items: [
@@ -804,7 +804,7 @@ If they cannot repair it, you pay: {{10}}`,
             { key: "c", label: "Wait for the part." },
             { key: "d", label: "Ask for their money back." },
             { key: "e", label: "Use a different shop next time." },
-            { key: "f", label: "Borrow one from a neighbour." },
+            { key: "f", label: "Borrow one from a neighbor." },
             { key: "g", label: "Take the machine to the shop." },
             { key: "h", label: "Do nothing for now." },
           ],
@@ -861,7 +861,7 @@ If they cannot repair it, you pay: {{10}}`,
               situation: "Beşinci konuşmacı komşusundan söz ediyor.",
               plays: 2,
               segments: [
-                { text: "My neighbour has two, because her mother left one. She says I can use it until Friday. It is one floor up and I feel silly carrying my clothes upstairs, but it is free." },
+                { text: "My neighbor has two, because her mother left one. She says I can use it until Friday. It is one floor up and I feel silly carrying my clothes upstairs, but it is free." },
               ],
             },
           ],
@@ -934,7 +934,7 @@ If they cannot repair it, you pay: {{10}}`,
           format: "writing",
           goal: "interaction",
           prompt:
-            "The repair man comes on Thursday between eight and twelve and you cannot be at home. Write a message to your English neighbour Selma. Write about 50 words. Answer all three points.",
+            "The repair man comes on Thursday between eight and twelve and you cannot be at home. Write a message to your English neighbor Selma. Write about 50 words. Answer all three points.",
           promptTr:
             "Tamirci perşembe günü sekizle on iki arası geliyor ve sen evde olamayacaksın. İngiliz komşun Selma'ya bir ileti yaz. Yaklaşık 50 kelime. Üç maddenin hepsine cevap ver.",
           items: [],
