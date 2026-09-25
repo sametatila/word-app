@@ -160,19 +160,6 @@
    "currentBeispielTr": "vs. (ve saire)"
   },
   {
-   "id": 492,
-   "de": "weh tun",
-   "typ": "Sonstiges",
-   "niveau": "A1",
-   "formen": "",
-   "currentTr": "acımak, ağrımak",
-   "currentBeispiel": "Mein Kopf tut so weh.",
-   "currentBeispielTr": "Başım çok ağrıyor.",
-   "overlapping": [
-    "wehtun (A2)"
-   ]
-  },
-  {
    "id": 495,
    "de": "welche",
    "typ": "Sonstiges",

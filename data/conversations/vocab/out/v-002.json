@@ -27,7 +27,7 @@
  { "conversation": "de-a1-absage", "de": "klappen", "en": "to work out" },
  { "conversation": "de-a1-koerper", "de": "der Kopf", "en": "head" },
  { "conversation": "de-a1-koerper", "de": "der Arm", "en": "arm" },
- { "conversation": "de-a1-weh-tun", "de": "weh tun", "en": "to hurt" },
+ { "conversation": "de-a1-weh-tun", "de": "wehtun", "en": "to hurt" },
  { "conversation": "de-a1-weh-tun", "de": "der Hals", "en": "throat" },
  { "conversation": "de-a1-apotheke", "de": "das Rezept", "en": "prescription" },
  { "conversation": "de-a1-imperativ-du", "de": "viel", "en": "a lot" },

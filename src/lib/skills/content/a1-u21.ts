@@ -7,7 +7,7 @@ import type { SkillExercise } from "../types";
  * Du musst zum Arzt! İçerik ünite 1-21'in kelimeleriyle sınırlı.
  *
  *   Ünite 21: der Körper, der Kopf, der Arm, das Bein, die Hand,
- *             das Gewicht, der Mensch, das Leben · weh tun, der Schmerz,
+ *             das Gewicht, der Mensch, das Leben · wehtun, der Schmerz,
  *             der Bauch, der Rücken, der Hals, fehlen, die Sache,
  *             passieren · der Termin, die Praxis, dringend, der Mittwoch,
  *             möglich, der Arzt, besuchen, die Stelle · müssen, krank,
@@ -20,7 +20,7 @@ import type { SkillExercise } from "../types";
  *    "nen var?" mantığı burada tersine çalışır: Almanca eksikliği sorar.
  *    Cevap da datif ile gelir: "Mir fehlt nichts" / "Mir tut der Kopf weh".
  *
- * 2) "weh tun" DATİF ister ve ayrılır: "Der Hals tut MIR weh." Ağrıyan yer
+ * 2) "wehtun" DATİF ister ve ayrılır: "Der Hals tut MIR weh." Ağrıyan yer
  *    ÖZNEDİR, kişi datiftedir — Türkçenin "boğazım ağrıyor"undaki iyelik
  *    yapısı yok. "Ich tue weh" cümlesi yanlıştır.
  *
@@ -100,7 +100,7 @@ export const a1U21: SkillExercise[] = [
     genre: "message",
     intro: "Ali hasta. Arkadaşına yazıyor.",
     gloss: [
-      { de: "weh tun", tr: "ağrımak", en: "to hurt" },
+      { de: "wehtun", tr: "ağrımak", en: "to hurt" },
       { de: "das Fieber", tr: "ateş", en: "fever" },
       { de: "der Hals", tr: "boğaz", en: "throat" },
       { de: "sich kümmern", tr: "ilgilenmek", en: "to take care" },
@@ -273,7 +273,7 @@ export const a1U21: SkillExercise[] = [
     genre: "grammar",
     intro: "Ağrı cümlesi Türkçeden ters kurulur. Üç deneme.",
     gloss: [
-      { de: "weh tun", tr: "ağrımak", en: "to hurt" },
+      { de: "wehtun", tr: "ağrımak", en: "to hurt" },
       { de: "fehlen", tr: "eksik olmak", en: "to be missing" },
       { de: "der Schmerz", tr: "ağrı", en: "pain" },
     ],
@@ -283,7 +283,7 @@ export const a1U21: SkillExercise[] = [
         kind: "build",
         tr: "Başım ağrıyor.",
         answer: "Mein Kopf tut weh",
-        hint: "Ağrıyan yer ÖZNEDİR: „Mein Kopf tut weh.“ — „Ich tue weh“ YANLIŞTIR. „weh tun“ ayrılır: tut … weh.",
+        hint: "Ağrıyan yer ÖZNEDİR: „Mein Kopf tut weh.“ — „Ich tue weh“ YANLIŞTIR. „wehtun“ ayrılır: tut … weh.",
       },
       {
         kind: "build",

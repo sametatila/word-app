@@ -251,7 +251,7 @@ export const deA1B09: Conversation[] = [
     minutes: 9,
     focusId: "Dativ-gefallen",
     vocab: [
-      { de: "weh tun", tr: "acımak" },
+      { de: "wehtun", tr: "acımak" },
       { de: "der Schmerz", tr: "ağrı" },
       { de: "der Bauch", tr: "karın" },
       { de: "der Rücken", tr: "sırt" },
@@ -284,12 +284,12 @@ export const deA1B09: Conversation[] = [
       {
         say: [
           tr("İlk kelimemiz iki parçadan oluşuyor:"),
-          de("weh tun"),
+          de("wehtun"),
           tr("Türkçesi 'acımak, ağrımak' demek. Lütfen"),
-          de("weh tun"),
+          de("wehtun"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "weh tun" },
+        expect: { kind: "repeat", target: "wehtun" },
       },
       {
         say: [
