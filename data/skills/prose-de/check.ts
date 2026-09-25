@@ -34,6 +34,7 @@
  */
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { proseWork, type ProseRow } from "./make.js";
+import { BUNDLED_EXERCISES } from "@/lib/skills";
 
 const DIR = new URL(".", import.meta.url).pathname;
 const ARG = (process.argv[2] || "all").toLowerCase();
@@ -163,6 +164,27 @@ if (existsSync(`${DIR}out`))
       written.set(key, de);
     }
   }
+
+/* BAŞ SÖZCÜKLÜ SÖZLÜKÇE (`heads.json`, çözücüde `fold`). Her kayıt İngilizce
+   kursta GERÇEKTEN var olan bir (baş sözcük, tr) çiftini düzeltmeli; yoksa
+   hiçbir yerde kullanılmayan ölü kayıt olur. Düz karşılıkla aynıysa gereksiz. */
+{
+  const pairs = new Set<string>();
+  for (const e of BUNDLED_EXERCISES as unknown as { course: string; gloss?: { de: string; tr: string }[]; tasks?: { phrases?: { de: string; tr: string }[] }[] }[])
+    if (e.course === "en")
+      for (const g of [...(e.gloss ?? []), ...(e.tasks ?? []).flatMap((t) => t.phrases ?? [])]) pairs.add(g.de + "|" + g.tr);
+  const seen = new Set<string>();
+  const heads = JSON.parse(readFileSync(`${DIR}heads.json`, "utf8")) as { head: string; tr: string; de: string }[];
+  for (const h of heads) {
+    const k = h.head + "|" + h.tr;
+    const H = (m: string) => errors.push(`  [heads] ${JSON.stringify(k)} — ${m}`);
+    if (seen.has(k)) H("iki kez");
+    seen.add(k);
+    if (!pairs.has(k)) H("İngilizce kursta böyle bir sözlükçe çifti yok");
+    if (!String(h.de ?? "").trim()) H("karşılık boş");
+    else if (written.get("gloss.tr|" + h.tr) === h.de) H("düz karşılıkla aynı, gereksiz");
+  }
+}
 
 let coverage: { rows: number; missing: number } | null = null;
 if (ARG === "all") {

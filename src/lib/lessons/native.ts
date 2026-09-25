@@ -694,9 +694,16 @@ export function resolveExercise<T extends ExerciseShape>(dict: NativeDict, ex: T
    *
    * İkisi de yoksa egzersiz DÜŞÜYOR — yarım katlanmış bir sözlükçe,
    * katlanmamışından kötü.
+   *
+   * BAŞ SÖZCÜKLÜ ANAHTAR ÖNCE (2026-09-25). Hat Türkçeyi baş sözcüğü görmeden
+   * çevirdiği için çok anlamlı Türkçede yanlış anlam seçilmişti: `en az`
+   * "least" için `mindestens`, `ek` "an annex" için `Endung`, `etken` "active"
+   * için `Faktor`. Düzeltme `data/skills/prose-de/heads.json`da yalnız o çift
+   * için duruyor (`baş sözcük + AYRAÇ + tr`); öteki kullanımlar düz anahtarla
+   * aynen çözülüyor. Kapı: `check:skills-prose-de`.
    */
   const fold = <G extends GlossShape>(g: G): G => {
-    const native = g.en?.trim() ? g.en : dict.prose[g.tr];
+    const native = g.en?.trim() ? g.en : ((g.de && dict.prose[g.de + SEP + g.tr]) ?? dict.prose[g.tr]);
     if (!native) failed = true;
     return { ...g, tr: native ?? g.tr, en: undefined, ...(g.note ? { note: t(g.note) } : {}) };
   };
@@ -798,8 +805,8 @@ export type ExerciseShape = {
   gloss?: GlossShape[];
 };
 
-/** `Gloss`un katlamayı ilgilendiren üç alanı. */
-export type GlossShape = { tr: string; en?: string; note?: string };
+/** `Gloss`un katlamayı ilgilendiren alanları (`de` baş sözcük: İngilizce kursta baş sözcüklü anahtar). */
+export type GlossShape = { tr: string; en?: string; note?: string; de?: string };
 
 /** `resolveExercise`in bir görev nesnesinde dokunduğu alanlar. */
 export type TaskShape = {

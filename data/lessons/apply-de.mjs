@@ -78,6 +78,9 @@ for (const r of read(`${DIR}prose-de/out/`)) lesson[r.kind + SEP + r.tr] = value
 
 const prose = {};
 for (const r of read(`${DIR}../skills/prose-de/out/`)) prose[r.tr] = value(r);
+/* Baş sözcüklü sözlükçe düzeltmeleri: `baş sözcük + AYRAÇ + tr`. Gerekçe çözücüde (`fold`). */
+const headsFile = `${DIR}../skills/prose-de/heads.json`;
+if (existsSync(headsFile)) for (const r of JSON.parse(readFileSync(headsFile, "utf8"))) prose[r.head + SEP + r.tr] = r.de;
 
 const task = {};
 for (const r of read(`${DIR}../skills/task-de/out/`)) task[r.kind + SEP + r.tr] = value(r);
