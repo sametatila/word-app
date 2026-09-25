@@ -706,6 +706,8 @@ function Cover({
       note={`${paper.themeTr}\n${part.instructionTr}`}
     >
       {guestAi ? <FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={t("guest.mock_ai_part")} /> : null}
+      {/* Bağımsızlık notu (denetim İ3): sonuç resmî sertifika izlenimi vermesin. */}
+      <Text variant="micro" color={colors.textMuted}>{t("exam.independent_note")}</Text>
     </CoverBody>
   );
 }

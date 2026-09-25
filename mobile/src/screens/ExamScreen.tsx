@@ -526,6 +526,8 @@ export function ExamScreen() {
               ))}
             </DetailCard>
           ) : null}
+          {/* Bağımsızlık notu (denetim İ3). */}
+          <Text variant="micro" color={colors.textMuted}>{t("exam.independent_note")}</Text>
         </CoverBody>
       </FlowScreen>
     );

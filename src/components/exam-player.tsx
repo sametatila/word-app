@@ -975,6 +975,8 @@ function Cover({ level, module, onStart }: { level: CefrLevel; module: number | 
             ))}
           </DetailCard>
         ) : null}
+        {/* Bağımsızlık notu (denetim İ3). */}
+        <p className="muted text-micro">{t("exam.independent_note")}</p>
       </CoverBody>
       <FlowActions primary={{ label: t("exam.start"), onClick: onStart }} tertiary={{ label: t("common.discard"), href: "/immersion" }} />
     </FlowColumn>

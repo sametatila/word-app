@@ -783,6 +783,7 @@ export const enBase: Record<string, string> = {
   "exam.module_exam": "{level} · Module {n} exam",
   "exam.could_not_load": "The exam could not be loaded.",
   "exam.trial_notice": "This is a trial: results don't count until 80% of the module's Speaking steps are passed.",
+  "exam.independent_note": "This exam was made by Lernomi; it is not affiliated with any exam provider and does not replace an official certificate.",
   "exam.passed": "You passed",
   "plan.weekly_exam": "This week's quiz",
   "exam.quit_title": "Leave the exam?",

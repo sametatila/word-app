@@ -440,6 +440,8 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
             <>
               <span className="block">{paper.themeTr}</span>
               <span className="block">{part.instructionTr}</span>
+              {/* Bağımsızlık notu (denetim İ3): sonuç resmî sertifika izlenimi vermesin. */}
+              <span className="mt-2 block text-micro">{t("exam.independent_note")}</span>
             </>
           }
         />
