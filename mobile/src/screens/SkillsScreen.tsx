@@ -12,7 +12,10 @@ import { AppHeader } from "../ui/AppHeader";
 import { Skeleton, SkeletonCard, SkeletonLine, textHeight } from "../ui/Skeleton";
 import { ReadIcon, ListenIcon, WriteIcon, MicIcon, GrammarIcon, ChevronRightIcon, CheckIcon, LockIcon } from "../ui/icons";
 import { FlowNote } from "../ui/flow";
-import { fetchSkillAccess, gatedMetaKind, gateNote, isSkillLocked, type SkillAccess } from "../lib/skillAccess";
+import { fetchSkillAccess, gatedMetaKind, gateNote, isSkillLocked, levelGate, type SkillAccess } from "../lib/skillAccess";
+import { refreshPremium, usePremiumStatus } from "../lib/premium";
+import { tieredCopy } from "../lib/unlock";
+import { UnlockProgress } from "../ui/UnlockProgress";
 import { useMe } from "../lib/useMe";
 import { ensureSkills, listOwnSkillMeta, type SkillMeta, type SkillKey } from "../data/skills";
 import { getDoneItems, getItemScores, syncItemProgress } from "../game/lessonProgress";
@@ -111,8 +114,10 @@ export function SkillsScreen() {
     });
     void oku().then(() => syncItemProgress()).then(oku);
     void fetchSkillAccess().then((a) => { if (alive) setAccess(a); });
+    void refreshPremium();
     return () => { alive = false; };
   }, []));
+  const { status: premiumStatus } = usePremiumStatus();
   const activeLevel = level ?? me?.level ?? guestLevel ?? "A1";
   // Seviye bilinmeden liste çizilmez: A1 listesini gösterip A2'ye atlamak
   // ekranı boyundan boyuna değiştiriyordu (kayan konteynerlerin kaynağı).
@@ -189,7 +194,7 @@ export function SkillsScreen() {
             <SkeletonLine variant="caption" width={54} />
           </View>
           <View style={{ flexDirection: "row", gap: spacing.sm, marginBottom: spacing.lg }}>
-            {LEVELS.map((l) => <Skeleton key={l} height={20 + textHeight("bodyStrong")} radius={radii.md} style={{ flex: 1 }} />)}
+            {LEVELS.map((l) => <Skeleton key={l} height={20 + 3 + textHeight("bodyStrong")} radius={radii.md} style={{ flex: 1 }} />)}
           </View>
         </>
       ) : (
@@ -212,10 +217,31 @@ export function SkillsScreen() {
       )}
 
       {!levelReady || !poolsReady ? (
-        /* İskelet yüklenmiş ekranın biçiminde: beş karo ve TEK liste. */
+        /* İskelet yüklenmiş ekranın SIRASIYLA ve KAPLARIYLA: öneri kartı, beş
+           karo, liste. Karonun yüksekliği elle hesaplanıyordu ve öneri
+           kartının yeri yoktu; içerik gelince her şey aşağı kayıyordu. Artık
+           kaplar gerçeğinkiyle aynı (dolgu, kenarlık, boşluk), yükseklik
+           içlerinden çıkıyor. Web `skills/loading.tsx` aynı sırayı çiziyor. */
         <>
-          <View style={{ flexDirection: "row", gap: spacing.sm, marginBottom: spacing.lg }}>
-            {SKILLS.map((s) => <Skeleton key={s.key} height={10 + 20 + textHeight("caption") + textHeight("micro") + 4 + 3 * 4 + spacing.sm + 3} radius={radii.md} style={{ flex: 1 }} />)}
+          <View style={{ marginBottom: spacing.lg }}>
+            <SkeletonCard padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
+              <Skeleton height={40} width={40} radius={radii.md} />
+              <View style={{ flex: 1 }}>
+                <SkeletonLine variant="micro" width="35%" />
+                <SkeletonLine variant="bodyStrong" width="60%" />
+                <SkeletonLine variant="caption" width="80%" />
+              </View>
+            </SkeletonCard>
+          </View>
+          <View style={{ flexDirection: "row", gap: 6, marginBottom: spacing.lg }}>
+            {SKILLS.map((s) => (
+              <View key={s.key} style={{ flex: 1, minWidth: 0, alignItems: "center", gap: 4, paddingTop: 10, paddingBottom: spacing.sm, paddingHorizontal: 2, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, backgroundColor: colors.surface }}>
+                <Skeleton height={20} width={20} radius={6} />
+                <SkeletonLine variant="caption" width="70%" />
+                <SkeletonLine variant="micro" width="40%" style={{ marginTop: "auto" }} />
+                <Skeleton height={4} width="80%" radius={2} />
+              </View>
+            ))}
           </View>
           <View style={{ marginBottom: spacing.xl }}>
             <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginBottom: spacing.sm, marginLeft: spacing.xs }}>
@@ -301,12 +327,14 @@ export function SkillsScreen() {
                       accessibilityRole="tab"
                       accessibilityState={{ selected: active }}
                       accessibilityLabel={`${t(s.label)}, ${s.finished}/${s.items.length}`}
-                      style={{ flex: 1, minWidth: 0, alignItems: "center", gap: 4, paddingTop: 10, paddingBottom: spacing.sm, paddingHorizontal: 2, borderRadius: radii.md, borderWidth: 1.5, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : colors.surface }}
+                      style={{ flex: 1, minWidth: 0, alignItems: "center", gap: spacing.xs, paddingTop: 10, paddingBottom: spacing.sm, paddingHorizontal: 2, borderRadius: radii.md, borderWidth: 1.5, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : colors.surface }}
                     >
                       <s.icon color={tint} size={20} />
-                      {/* İki satıra kadar: dar telefonda "Dil bilgisi" tek satıra
-                          sığmıyor. Sayaç `marginTop: auto` ile dibe yaslı. */}
-                      <Text variant="caption" numberOfLines={2} color={active ? colors.primaryText : colors.text} style={{ textAlign: "center" }}>{t(s.label)}</Text>
+                      {/* Tek satır ve SIĞMAZSA KÜÇÜL — sekme çubuğunun kalıbı
+                          (`TabBar`). İki satıra izin veriliyordu; büyük yazı
+                          ayarında tek sözcük sütuna sığmayınca harfinden
+                          bölünüyordu („Dinlem / e“). Sayaç dibe yaslı. */}
+                      <Text variant="caption" numberOfLines={1} adjustsFontSizeToFit color={active ? colors.primaryText : colors.text} style={{ textAlign: "center" }}>{t(s.label)}</Text>
                       <Text variant="micro" color={colors.textMuted} style={{ marginTop: "auto" }}>{s.finished}/{s.items.length}</Text>
                       <View style={{ width: "80%", height: 4, borderRadius: 2, backgroundColor: colors.surface2, overflow: "hidden" }}>
                         <View style={{ width: `${pct}%`, height: "100%", borderRadius: 2, backgroundColor: tint }} />
@@ -319,7 +347,12 @@ export function SkillsScreen() {
               {(() => {
                 const tint = colors[current.tint] as string;
                 const kind = current.items[0] ? gatedMetaKind(current.items[0]) : null;
-                const note = kind && access ? gateNote(access[kind]) : null;
+                /* HAK SEVİYE BAŞINA (2026-09-25): not ve ilerleme listenin
+                   seviyesinden. Kilit açma durumu varsa (kalan hak, bir sonraki
+                   hakkın koşulları) o çiziliyor; yoksa eski kapı notu. */
+                const lvUnlock = premiumStatus?.unlock?.levels[activeLevel];
+                const copy = kind && lvUnlock ? tieredCopy(kind === "writing" ? lvUnlock.skillWriting : lvUnlock.skillSpeaking, kind === "writing" ? "skill_write" : "skill_speak") : null;
+                const note = kind && access && !copy ? gateNote(levelGate(access, activeLevel, kind)) : null;
                 const rows = hideDone ? current.items.filter((e) => !done.has(e.id)) : current.items;
                 return (
                   <View style={{ marginBottom: spacing.xl }}>
@@ -336,6 +369,15 @@ export function SkillsScreen() {
                       ) : null}
                     </View>
                     {/* Kuralı kilide çarpmadan ÖNCE söyle (web aynı notu çiziyor). */}
+                    {copy ? (
+                      <View style={{ marginBottom: spacing.sm }}>
+                        {copy.spent ? (
+                          <UnlockProgress copy={copy} onPremium={() => nav.navigate("Paywall")} />
+                        ) : (
+                          <FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={t(copy.headline.key, copy.headline.params)} />
+                        )}
+                      </View>
+                    ) : null}
                     {note ? (
                       <View style={{ marginBottom: spacing.sm }}>
                         <FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={`${t("skills.ai_quota")} · ${t(note.key, { n: note.n })}`} />
