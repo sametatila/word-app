@@ -25,10 +25,10 @@
  },
  {
   "id": 3643,
-  "tr": "şifre",
+  "tr": "şifre sistemi",
   "en": "cipher",
   "beispiel": "Die Nachricht war in einer alten Chiffre geschrieben.",
-  "beispielTr": "Mesaj eski bir şifreyle yazılmıştı.",
+  "beispielTr": "Mesaj eski bir şifre sistemiyle yazılmıştı.",
   "beispielEn": "The message was written in an old cipher."
  },
  {
@@ -105,11 +105,11 @@
  },
  {
   "id": 3702,
-  "tr": "ağırlık",
-  "en": "significance",
+  "tr": "ciddiyet",
+  "en": "magnitude",
   "beispiel": "Die Tragweite seiner Entscheidung erkannte er zu spät.",
-  "beispielTr": "Kararının önemini çok geç fark etti.",
-  "beispielEn": "He realized the importance of his decision too late."
+  "beispielTr": "Kararının ciddiyetini çok geç fark etti.",
+  "beispielEn": "He realized the magnitude of his decision too late."
  },
  {
   "id": 3972,

@@ -31,5 +31,6 @@
  { "conversation": "de-a1-hallo", "de": "tschüss!", "en": "bye" },
  { "conversation": "de-b1-in-pension", "de": "Achtung!", "en": "watch out" },
  { "conversation": "de-b2-beschwerde-formell", "de": "der Ansprechpartner", "en": "contact person" },
- { "conversation": "de-b2-aufgrund-infolge", "de": "gegebenenfalls", "en": "if applicable" }
+ { "conversation": "de-b2-aufgrund-infolge", "de": "gegebenenfalls", "en": "if applicable" },
+ { "conversation": "de-b2-festival", "de": "durchhalten", "en": "to hold out" }
 ]
