@@ -6,6 +6,8 @@ import { Text } from "./Text";
 import { spacing, radii, useTheme } from "../theme";
 import { currentLang, t } from "../lib/i18n";
 import { fetchServerConfig, type AppControl } from "../lib/serverConfig";
+import { diagnoseNetwork } from "../lib/reachability";
+import { useAuth } from "../lib/AuthContext";
 import { syncContentPointer } from "../content/store";
 import { ensureNativeDict } from "../lib/nativeContent";
 import { APP_VERSION_CODE } from "../version";
@@ -36,6 +38,15 @@ export function AppGate() {
   const [control, setControl] = useState<AppControl | null>(null);
   const [dismissed, setDismissed] = useState(false);
   const [busy, setBusy] = useState(false);
+  /*
+    AĞ ENGELİ ŞERİDİ. Yapılandırma okunamadı ve teşhis "internet var, Lernomi'ye
+    ulaşılamıyor" diyor (bkz. lib/reachability): okul/iş ağı yeni alan adını
+    engelliyor olabilir. Yalnız oturum varken; giriş ekranı aynı notu kendisi
+    gösteriyor (AuthScreen), iki kez görünmesin.
+  */
+  const { user } = useAuth();
+  const [blocked, setBlocked] = useState(false);
+  const [blockedDismissed, setBlockedDismissed] = useState(false);
   const lastRead = useRef(0);
 
   const refresh = useCallback(async (force = false) => {
@@ -44,6 +55,8 @@ export function AppGate() {
     lastRead.current = now;
     const c = await fetchServerConfig(true).catch(() => null);
     if (c) setControl(c.app);
+    if (c?.offline) setBlocked((await diagnoseNetwork()) === "blocked");
+    else setBlocked(false);
     /* İÇERİK GÖSTERGESİ de burada tazeleniyor: uygulama zaten "bakım var mı,
        güncellemem gerekiyor mu" diye soruyor; "yeni içerik var mı, kapatılmış
        madde var mı" aynı anın sorusu. Ayrı bir uç, çünkü ömrü farklı
@@ -63,6 +76,45 @@ export function AppGate() {
     });
     return () => sub.remove();
   }, [refresh]);
+
+  if (blocked && !blockedDismissed && user) {
+    return (
+      <View
+        accessibilityLiveRegion="polite"
+        style={{
+          position: "absolute",
+          left: spacing.lg,
+          right: spacing.lg,
+          bottom: spacing.xl * 3,
+          borderRadius: radii.lg,
+          backgroundColor: colors.surface,
+          borderColor: colors.border,
+          borderWidth: 1,
+          padding: spacing.md,
+          gap: spacing.sm,
+        }}
+      >
+        <Text variant="body">{t("common.network_blocked")}</Text>
+        <View style={{ flexDirection: "row", justifyContent: "flex-end", gap: spacing.md }}>
+          <PressableScale accessibilityRole="button" onPress={() => setBlockedDismissed(true)} style={{ paddingVertical: spacing.sm, paddingHorizontal: spacing.md }}>
+            <Text variant="body" color={colors.textMuted}>{t("appgate.later")}</Text>
+          </PressableScale>
+          <PressableScale
+            accessibilityRole="button"
+            disabled={busy}
+            onPress={async () => {
+              setBusy(true);
+              await refresh(true);
+              setBusy(false);
+            }}
+            style={{ paddingVertical: spacing.sm, paddingHorizontal: spacing.md }}
+          >
+            <Text variant="h3" color={colors.primary}>{t("common.try_again")}</Text>
+          </PressableScale>
+        </View>
+      </View>
+    );
+  }
 
   if (!control) return null;
 

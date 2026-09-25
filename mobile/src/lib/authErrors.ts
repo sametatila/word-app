@@ -22,6 +22,8 @@ export function translateAuthError(code: string, message: string, status = 0): s
   const c = (code || "").toUpperCase();
   const m = (message || "").toLowerCase();
   if (c === "NETWORK") return t("autherror.could_not_connect_check_your");
+  // İnternet var ama Lernomi'ye bu ağdan ulaşılamıyor (bkz. lib/reachability).
+  if (c === "BLOCKED") return t("common.network_blocked");
   /*
     HIZ SINIRI. İki ayrı kaynaktan gelebiliyor ve ikisinin de gövdesi
     çevrilemez: Better Auth düz bir İngilizce cümle döndürüyor, nginx ise bir

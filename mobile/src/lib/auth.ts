@@ -1,5 +1,6 @@
 import { API_BASE, ApiError, fetchWithTimeout } from "../api/client";
 import { reportError } from "./errorReport";
+import { diagnoseNetwork } from "./reachability";
 import { t } from "./i18n";
 
 /**
@@ -65,8 +66,16 @@ export function isNetworkError(e: unknown): boolean {
   return e instanceof TypeError && /network request failed|failed to fetch|network/i.test(msg);
 }
 
-function failOutcome(e: unknown): AuthOutcome {
-  if (isNetworkError(e)) return { ok: false, code: "NETWORK", message: t("common.connection_failed") };
+/*
+  AĞ HATASINDA TEŞHİS (bkz. lib/reachability): internet varken yalnız Lernomi'ye
+  ulaşılamıyorsa (bazı okul/iş ağları yeni alan adını engelliyor) BLOCKED
+  dönüyor; kullanıcı sorunu kendi cihazında aramasın.
+*/
+async function failOutcome(e: unknown): Promise<AuthOutcome> {
+  if (isNetworkError(e)) {
+    if ((await diagnoseNetwork()) === "blocked") return { ok: false, code: "BLOCKED", message: t("common.network_blocked") };
+    return { ok: false, code: "NETWORK", message: t("common.connection_failed") };
+  }
   reportError(e, "auth");
   return { ok: false, code: "CLIENT", message: t("autherror.something_went_wrong") };
 }

@@ -3,6 +3,8 @@ import * as Keychain from "react-native-keychain";
 import { api, API_BASE, ApiError, fetchWithTimeout } from "../api/client";
 import { fetchServerConfig } from "./serverConfig";
 import { guestAttestation } from "./integrity";
+import { isNetworkError } from "./auth";
+import { diagnoseNetwork } from "./reachability";
 
 /**
  * MİSAFİR KİMLİĞİ — istemci tarafı (mağaza ön inceleme B24, App Store 5.1.1(v)).
@@ -157,8 +159,11 @@ export async function startGuest(): Promise<GuestStart> {
     const record: GuestRecord = { id, token, at: Date.now() };
     await saveGuestRecord(record);
     return { ok: true, record };
-  } catch {
-    return { ok: false, status: 0, code: "NETWORK" };
+  } catch (e) {
+    /* Ağ hatasında teşhis: internet varken yalnız Lernomi engelliyse BLOCKED
+       (bkz. lib/reachability); ekran ona göre "başka ağla dene" diyor. */
+    const blocked = isNetworkError(e) && (await diagnoseNetwork()) === "blocked";
+    return { ok: false, status: 0, code: blocked ? "BLOCKED" : "NETWORK" };
   }
 }
 

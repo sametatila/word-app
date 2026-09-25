@@ -13,6 +13,7 @@ import { FlowNote } from "../ui/flow";
 import { useAuth } from "../lib/AuthContext";
 import { requestPasswordReset, sendVerificationEmail } from "../lib/auth";
 import { fetchServerConfig } from "../lib/serverConfig";
+import { diagnoseNetwork, type NetworkDiagnosis } from "../lib/reachability";
 import { warmUpIntegrity } from "../lib/integrity";
 import { Turnstile } from "../ui/Turnstile";
 import { sendTwoFactorOtp, verifyTwoFactorOtp } from "../lib/auth";
@@ -168,6 +169,13 @@ export function AuthScreen() {
   const [captchaOn, setCaptchaOn] = useState(false);
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [captchaNonce, setCaptchaNonce] = useState(0);
+  /*
+    YAPILANDIRMA HİÇ OKUNAMADIYSA ağ teşhisi (bkz. lib/reachability): beş deneme
+    de düşünce ekranda neden ve "Tekrar dene". Okul/iş ağı Lernomi'yi
+    engelliyorsa kullanıcı bunu burada, giriş denemeden görüyor.
+  */
+  const [configDiag, setConfigDiag] = useState<NetworkDiagnosis | null>(null);
+  const [configNonce, setConfigNonce] = useState(0);
   useEffect(() => {
     let alive = true;
     let retry: ReturnType<typeof setTimeout> | null = null;
@@ -177,6 +185,8 @@ export function AuthScreen() {
     const load = (attempt: number) => void fetchServerConfig().then((c) => {
       if (!alive) return;
       if (c.offline && attempt < 5) retry = setTimeout(() => load(attempt + 1), 2000 * (attempt + 1));
+      else if (c.offline) void diagnoseNetwork().then((d) => { if (alive) setConfigDiag(d); });
+      else setConfigDiag(null);
       setProvidersOn({
         google: c.providers.google && googleSupported(),
         /*
@@ -193,9 +203,11 @@ export function AuthScreen() {
          (ilk hazırlık saniyeler sürebilir); kip kapalıysa ya da iOS'ta hiçbir şey olmaz. */
       warmUpIntegrity(c.guestAttestation?.cloudProjectNumber);
     });
-    load(0);
+    /* "Tekrar dene" (configNonce > 0) tek deneme yapıyor: kullanıcı cevabı
+       yarım dakika beklemesin. */
+    load(configNonce > 0 ? 5 : 0);
     return () => { alive = false; if (retry) clearTimeout(retry); };
-  }, []);
+  }, [configNonce]);
 
   /** Doğrulama bekleniyorsa gönderim düğmeleri kapalı. */
   const captchaBlocked = captchaOn && !captchaToken;
@@ -262,7 +274,9 @@ export function AuthScreen() {
       nav.reset({ index: 0, routes: [{ name: prime ? "NotifPrime" : "Tabs" }] });
       return;
     }
-    setError(r.status === 429 ? t("auth.guest_rate_limited") : r.status === 0 ? t("common.connection_failed") : t("auth.guest_failed"));
+    setError(r.status === 429 ? t("auth.guest_rate_limited")
+      : r.code === "BLOCKED" ? t("common.network_blocked")
+        : r.status === 0 ? t("common.connection_failed") : t("auth.guest_failed"));
   }
 
   async function submit() {
@@ -409,6 +423,16 @@ export function AuthScreen() {
 
         {view === "options" ? (
           <View style={{ gap: spacing.md }}>
+            {configDiag && (
+              <View accessibilityLiveRegion="polite" style={{ backgroundColor: colors.dangerSoft, borderRadius: radii.md, padding: spacing.md, gap: spacing.sm }}>
+                <Text variant="caption" color={colors.dangerText}>
+                  {configDiag === "blocked" ? t("common.network_blocked") : t("autherror.could_not_connect_check_your")}
+                </Text>
+                <PressableScale accessibilityRole="button" onPress={() => { setConfigDiag(null); setConfigNonce((n) => n + 1); }} style={{ alignSelf: "flex-start", paddingVertical: spacing.xs }}>
+                  <Text variant="bodyStrong" color={colors.primaryText}>{t("common.try_again")}</Text>
+                </PressableScale>
+              </View>
+            )}
             {PROVIDERS.filter((p) => providersOn[p.id]).map((p) => (
               <PressableScale key={p.id} onPress={() => startSocial(p.id)} accessibilityLabel={t("auth.continue_with", { provider: p.label })}
                 style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, backgroundColor: colors.surface, paddingVertical: spacing.lg, paddingHorizontal: spacing.lg }}>
