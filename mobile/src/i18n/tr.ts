@@ -51,6 +51,8 @@ export const tr: Record<string, string> = {
   "guest.merge_add": "Hesabıma ekle",
   "guest.merge_discard": "Ekleme, sil",
   "guest.session_gone": "Önceki misafir oturumun artık yok: hesapsız ilerleme 30 gün kullanılmayınca silinir. Yeniden başlayabilir ya da hesabınla girebilirsin.",
+  "auth.rebase_fallback": "Bu ağ Lernomi'nin ana adresini engelliyor; uygulama yedek bağlantıya geçti. Oturumun bu bağlantıda açık değil: devam etmek için yeniden giriş yap. İlerlemen hesabında duruyor.",
+  "auth.rebase_primary": "Lernomi'ye yeniden ana adresten ulaşılıyor. Oturumun bu bağlantıda açık değil: devam etmek için yeniden giriş yap. İlerlemen hesabında duruyor.",
   "guest.name": "Misafir",
   "guest.subline": "Hesapsız kullanıyorsun",
   "guest.create_account": "Hesap oluştur",

@@ -48,6 +48,8 @@ export const enBase: Record<string, string> = {
   "guest.merge_add": "Add to my account",
   "guest.merge_discard": "Don't add, delete",
   "guest.session_gone": "Your previous guest session is gone: progress without an account is deleted after 30 days of inactivity. Start again or sign in to your account.",
+  "auth.rebase_fallback": "This network blocks Lernomi's main address, so the app switched to a backup connection. You aren't signed in on it yet: sign in again to continue. Your progress is safe in your account.",
+  "auth.rebase_primary": "Lernomi is reachable at its main address again. You aren't signed in on it yet: sign in again to continue. Your progress is safe in your account.",
   "guest.name": "Guest",
   "guest.subline": "You're using Lernomi without an account",
   "guest.create_account": "Create account",

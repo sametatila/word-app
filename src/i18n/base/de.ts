@@ -48,6 +48,8 @@ export const deBase: Record<string, string> = {
   "guest.merge_add": "Zum Konto hinzufügen",
   "guest.merge_discard": "Nein, löschen",
   "guest.session_gone": "Deine frühere Gastsitzung gibt es nicht mehr: Fortschritt ohne Konto wird nach 30 Tagen ohne Nutzung gelöscht. Fang neu an oder melde dich mit deinem Konto an.",
+  "auth.rebase_fallback": "Dieses Netzwerk sperrt die Hauptadresse von Lernomi, deshalb nutzt die App eine Ersatzverbindung. Dort bist du noch nicht angemeldet: Melde dich erneut an, um weiterzumachen. Dein Fortschritt bleibt in deinem Konto.",
+  "auth.rebase_primary": "Lernomi ist wieder über die Hauptadresse erreichbar. Dort bist du noch nicht angemeldet: Melde dich erneut an, um weiterzumachen. Dein Fortschritt bleibt in deinem Konto.",
   "guest.name": "Gast",
   "guest.subline": "Du nutzt Lernomi ohne Konto",
   "guest.create_account": "Konto erstellen",

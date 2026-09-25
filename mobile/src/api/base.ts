@@ -122,7 +122,12 @@ export function rebaseUrl(url: string, to: Base): string {
 
 let current: Base = PRIMARY_BASE;
 let loaded: Promise<void> | null = null;
-type Listener = (next: Base, prev: Base) => void;
+/**
+ * `initial`: kayıtlı seçim açılışta okundu (kullanıcının gördüğü bir değişiklik
+ * değil). Native izinli host ve WebView'ler bunu da bilmeli; oturum akışı
+ * (AuthContext) ise yok sayıyor, açılış oturumu zaten o tabandan okunuyor.
+ */
+type Listener = (next: Base, prev: Base, initial: boolean) => void;
 const listeners = new Set<Listener>();
 let failoverInflight: Promise<Base | null> | null = null;
 let lastDeadEnd = 0;
@@ -145,13 +150,13 @@ async function persist(next: Base): Promise<void> {
   } catch { /* depolama kapalıysa yalnız bu süreç */ }
 }
 
-function setCurrent(next: Base, save: boolean): void {
+function setCurrent(next: Base, save: boolean, initial = false): void {
   if (next === current) return;
   const prev = current;
   current = next;
   if (save) void persist(next);
   for (const fn of [...listeners]) {
-    try { fn(next, prev); } catch { /* dinleyici hatası tabanı bozmasın */ }
+    try { fn(next, prev, initial); } catch { /* dinleyici hatası tabanı bozmasın */ }
   }
 }
 
@@ -164,7 +169,7 @@ export function baseReady(): Promise<void> {
     loaded = (async () => {
       try {
         const b = initialBase(parseSaved(await AsyncStorage.getItem(BASE_STORAGE_KEY)), Date.now());
-        setCurrent(b, false);
+        setCurrent(b, false, true);
       } catch { /* asıl adresle devam */ }
     })();
   }

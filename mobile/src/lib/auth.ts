@@ -191,8 +191,10 @@ export async function getSession(): Promise<AuthUser | null> {
   return (await getSessionState()).user;
 }
 
-export async function signOut(): Promise<void> {
+/** `everywhere` false: yalnız o anki tabandaki oturum (bkz. AuthContext onRebase). */
+export async function signOut(everywhere = true): Promise<void> {
   try { await post("sign-out", {}); } catch { /* yut */ }
+  if (!everywhere) return;
   /*
     ÖTEKİ TABANDAKİ OTURUM DA KAPANIYOR. Çerez taban başına ayrı (bkz.
     api/base): yedek adreste girip çıkan kullanıcının asıl adresteki eski

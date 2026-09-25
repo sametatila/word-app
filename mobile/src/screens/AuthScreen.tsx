@@ -82,7 +82,7 @@ export function AuthScreen() {
     const prime = await notifPrimeNeeded().catch(() => false);
     nav.reset({ index: 0, routes: [{ name: prime ? "NotifPrime" : "Tabs" }] });
   };
-  const { user, signIn, signUp, socialComplete, continueAsGuest, refresh, guestGone, clearGuestGone } = useAuth();
+  const { user, signIn, signUp, socialComplete, continueAsGuest, refresh, guestGone, clearGuestGone, rebaseNotice } = useAuth();
   /*
     MİSAFİR HESAP OLUŞTURMAYA GELDİ (Profil, kilitli bir özellik). Ekran
     kapatılabiliyor (misafir uygulamaya geri dönebilir), "Hesapsız devam et"
@@ -433,6 +433,11 @@ export function AuthScreen() {
                 </PressableScale>
               </View>
             )}
+            {/* API tabanı değişti ve oturum yeni tabanda yok (engelli ağ, bkz. api/base):
+                neden yeniden giriş istendiği söyleniyor, ilerlemenin durduğu da. */}
+            {rebaseNotice && !user ? (
+              <FlowNote icon={<ClockIcon color={colors.textMuted} size={16} />} text={t(rebaseNotice === "fallback" ? "auth.rebase_fallback" : "auth.rebase_primary")} />
+            ) : null}
             {PROVIDERS.filter((p) => providersOn[p.id]).map((p) => (
               <PressableScale key={p.id} onPress={() => startSocial(p.id)} accessibilityLabel={t("auth.continue_with", { provider: p.label })}
                 style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, backgroundColor: colors.surface, paddingVertical: spacing.lg, paddingHorizontal: spacing.lg }}>

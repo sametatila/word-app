@@ -7,6 +7,7 @@ import { spacing, radii, useTheme } from "../theme";
 import { currentLang, t } from "../lib/i18n";
 import { fetchServerConfig, type AppControl } from "../lib/serverConfig";
 import { diagnoseNetwork } from "../lib/reachability";
+import { recheckPrimary } from "../api/base";
 import { useAuth } from "../lib/AuthContext";
 import { syncContentPointer } from "../content/store";
 import { ensureNativeDict } from "../lib/nativeContent";
@@ -53,6 +54,9 @@ export function AppGate() {
     const now = Date.now();
     if (!force && now - lastRead.current < MIN_REFRESH_MS) return;
     lastRead.current = now;
+    /* Yedek adresteysek (engelli ağ, bkz. api/base) ana adres açıldı mı:
+       açıldıysa önce oraya dönülüyor, yapılandırma da oradan okunuyor. */
+    await recheckPrimary(force).catch(() => undefined);
     const c = await fetchServerConfig(true).catch(() => null);
     if (c) setControl(c.app);
     if (c?.offline) setBlocked((await diagnoseNetwork()) === "blocked");

@@ -1,7 +1,7 @@
 import React, { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
 import { AppState } from "react-native";
 import { forgetAccountScoped } from "./accountScope";
-import { api } from "../api/client";
+import { api, FALLBACK_BASE, onBaseChange } from "../api/client";
 import { track } from "./track";
 import { getSession, getSessionState, signIn as apiSignIn, signUp as apiSignUp, signOut as apiSignOut, type AuthUser, type AuthOutcome } from "./auth";
 import { claimGuest, clearGuestRecord, deleteGuestData, discardGuestClaim, loadGuestRecord, previewGuestClaim, resumeGuest, startGuest, type GuestRecord, type GuestStart } from "./guest";
@@ -16,6 +16,12 @@ import { clearPremium } from "./premium";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { ONBOARDED_KEY } from "./onboarding";
 
+/**
+ * API tabanı değişti ve gerçek hesabın oturumu yeni tabanda yok (çerez taban
+ * başına ayrı, bkz. api/base): giriş ekranı nedenini söylüyor.
+ * "fallback": engelli ağda yedek adrese geçildi; "primary": ana adrese dönüldü.
+ */
+export type RebaseNotice = "fallback" | "primary";
 /** Misafir hesaba geçtiğinde bir kez gösterilecek not (bkz. ui/GuestClaimNotice). */
 export type ClaimNotice = "moved" | "merged";
 /** "Bu cihazdaki ilerleme hesabına eklensin mi?" sorusunun cevabı; "later" = kapatıldı, sonra yeniden sorulur. */
@@ -42,6 +48,7 @@ type Ctx = {
    */
   guestGone: boolean;
   clearGuestGone: () => void;
+  rebaseNotice: RebaseNotice | null;
   /** Birleştirme sorusu açık mı (bkz. ui/GuestMergeDialog). */
   mergeAsk: boolean;
   answerMergeAsk: (choice: MergeChoice) => void;
@@ -62,6 +69,7 @@ const AuthContext = createContext<Ctx>({
   clearClaimNotice: () => {},
   guestGone: false,
   clearGuestGone: () => {},
+  rebaseNotice: null,
   mergeAsk: false,
   answerMergeAsk: () => {},
   signIn: async () => ({ ok: false, code: "", message: "" }),
@@ -129,6 +137,28 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
   /** Kullanıcı ağsız açılışta cihaz kaydından mı kuruldu (bkz. provisionalGuest). */
   const provisional = useRef(false);
+  const [rebaseNotice, setRebaseNotice] = useState<RebaseNotice | null>(null);
+  /** Taban değişince oturumu düşen hesabın kimliği: aynı kişi mi geri giriyor. */
+  const rebaseUserId = useRef<string | null>(null);
+
+  /**
+   * TABAN DEĞİŞİNCE GİRİŞ YAPAN KİM? Yeniden giriş normalde aynı kişi; cihaz
+   * verisi (kuyruklar, yarım konuşma, avatar) onundur ve korunuyor — taban
+   * değişti diye silinmesi ilerleme kaybı olurdu. Ama başka biri girerse
+   * `signOut`un temizliği burada yapılıyor: öncekinin bekleyen cevapları ve
+   * yetkisi yeni hesaba geçmesin.
+   */
+  const settleRebase = useCallback(async (u: AuthUser | null) => {
+    const prev = rebaseUserId.current;
+    if (!u) return;
+    rebaseUserId.current = null;
+    setRebaseNotice(null);
+    if (prev && prev !== u.id) {
+      await billingLogout();
+      clearPremium();
+      await forgetAccountScoped();
+    }
+  }, []);
 
   /**
    * MİSAFİR HESABA GEÇİYOR. Gerçek bir oturum açıldığında, hesabın başka bir
@@ -232,6 +262,40 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
     setUser(u);
   }, [claimPendingGuest, restoreGuest]);
+
+  /**
+   * API TABANI DEĞİŞTİ (engelli ağda yedek adres ya da ana adrese dönüş, bkz.
+   * api/base). Oturum çerezi host'a bağlı: yeni tabanda oturum olmayabilir.
+   *  - Aynı kullanıcının oturumu orada da varsa hiçbir şey olmuyor.
+   *  - Misafir jetonuyla kendini yeni tabanda sessizce geri kuruyor.
+   *  - Gerçek hesap oturumsuz kalıyor: kullanıcı giriş ekranına düşüyor ve
+   *    nedeni söyleniyor. Cihaz verisi SİLİNMİYOR (aynı kişi geri girecek);
+   *    başka biri girerse `settleRebase` temizliyor.
+   *  - Yeni tabanda BAŞKA bir hesabın eski oturumu duruyorsa o oturum
+   *    kapatılıyor: kimliği o an uygulamayı kullanan kişi belirliyor.
+   */
+  const onRebase = useCallback(async (next: string) => {
+    const s = await getSessionState();
+    if (!s.known) return;
+    const cur = userRef.current;
+    let u = s.user;
+    if (u && cur && u.id !== cur.id) { await apiSignOut(false); u = null; }
+    if (u) {
+      if (!cur) await refresh();
+      return;
+    }
+    if (!cur) return;
+    if (cur.guest) {
+      const rec = await loadGuestRecord();
+      if (rec && !rec.for) setUser(await restoreGuest(rec));
+      return;
+    }
+    rebaseUserId.current = cur.id;
+    setRebaseNotice(next === FALLBACK_BASE ? "fallback" : "primary");
+    setUser(null);
+  }, [refresh, restoreGuest]);
+
+  useEffect(() => onBaseChange((next, _prev, initial) => { if (!initial) void onRebase(next); }), [onRebase]);
 
   /**
    * Girişten sonra cihazı hesaba bağlar ve misafirken seçilen anadil/kurs/hedef/
@@ -344,12 +408,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     // Giriş = hesap zaten vardı: akışta seçilenler değil, hesabın kendi ayarları geçerli.
     if (r.ok) {
       const u = r.user ?? (await getSession());
+      await settleRebase(u);
       if (u) await claimPendingGuest(u, false);
       setUser(u);
       await adoptAccount(u, false);
     }
     return r;
-  }, [adoptAccount, claimPendingGuest]);
+  }, [adoptAccount, claimPendingGuest, settleRebase]);
 
   /**
    * Kayıt. OTURUM AÇILDIYSA kullanıcıyı yazar — açılmadıysa yazmaz.
@@ -368,12 +433,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const r = await apiSignUp(name, email, password, captchaToken, Boolean(userRef.current?.guest));
     if (r.ok && r.session) {
       const u = r.user ?? (await getSession());
+      await settleRebase(u);
       if (u) await claimPendingGuest(u, true);
       setUser(u);
       await adoptAccount(u, true);
     }
     return r;
-  }, [adoptAccount, claimPendingGuest]);
+  }, [adoptAccount, claimPendingGuest, settleRebase]);
 
   const signOut = useCallback(async () => {
     /* Bu hesaba sabitlenmiş, ağ yüzünden bekleyen bir misafir birleştirmesi
@@ -416,17 +482,20 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
      * hesaba, hangilerinin cihaza ait olduğu `lib/accountScope`ta yazılı.
      */
     await forgetAccountScoped();
+    rebaseUserId.current = null;
+    setRebaseNotice(null);
     setUser(null);
   }, []);
 
   const socialComplete = useCallback(async () => {
     const u = await getSession();
+    await settleRebase(u);
     if (u) await claimPendingGuest(u, yeniHesapMi(u));
     setUser(u);
     // Sosyal düğme hem kayıt hem giriş: hesabın yaşı ayırıyor (bkz. yeniHesapMi).
     if (u) await adoptAccount(u, yeniHesapMi(u));
     return !!u;
-  }, [adoptAccount, claimPendingGuest]);
+  }, [adoptAccount, claimPendingGuest, settleRebase]);
 
   /**
    * "Hesapsız devam et". Misafir de yeni bir hesap gibi onboarding seçimlerini
@@ -439,10 +508,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setGuestGone(false);
     track("guest_start");
     const u = (await getSession()) ?? provisionalGuest(r.record.id);
+    await settleRebase(u);
     setUser(u);
     await adoptAccount(u, true);
     return r;
-  }, [adoptAccount]);
+  }, [adoptAccount, settleRebase]);
 
   /**
    * Misafir verilerini sil. Misafirin çıkış yolu yok (bir daha dönemez); bu
@@ -465,7 +535,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const clearGuestGone = useCallback(() => setGuestGone(false), []);
 
   return (
-    <AuthContext.Provider value={{ user, loading, signIn, signUp, signOut, refresh, socialComplete, continueAsGuest, deleteGuest, claimNotice, clearClaimNotice, guestGone, clearGuestGone, mergeAsk, answerMergeAsk }}>
+    <AuthContext.Provider value={{ user, loading, signIn, signUp, signOut, refresh, socialComplete, continueAsGuest, deleteGuest, claimNotice, clearClaimNotice, guestGone, clearGuestGone, rebaseNotice, mergeAsk, answerMergeAsk }}>
       {children}
     </AuthContext.Provider>
   );
