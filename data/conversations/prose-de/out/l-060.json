@@ -111,7 +111,7 @@
  { "tr": "Küçük bir not: I will yerine neredeyse her zaman kısaltma kullanılır.", "kind": "say.tr", "de": "Eine kleine Anmerkung: statt I will nimmt man fast immer die Kurzform." },
  { "tr": "Küçük bir not: İngilizcede gün adları her zaman büyük harfle yazılır.", "kind": "say.tr", "de": "Eine kleine Anmerkung: englische Tagesnamen schreibt man immer groß." },
  { "tr": "Merhaba! Bugün hafta sonu planlarını İngilizce anlatmayı öğreneceğiz.", "kind": "say.tr", "de": "Hallo! Heute lernen wir, die Wochenendpläne auf Englisch zu erzählen." },
- { "tr": "Not: İngilizler favorite, Amerikalılar favorite yazar; okunuşu aynı.", "kind": "say.tr", "de": "Hinweis: die Briten schreiben favourite, die Amerikaner favorite; gleich gesprochen." },
+ { "tr": "Not: İngilizler favourite, Amerikalılar favorite yazar; okunuşu aynı.", "kind": "say.tr", "de": "Hinweis: die Briten schreiben favourite, die Amerikaner favorite; gleich gesprochen." },
  { "tr": "Özür dilerim. Raporda bir hata yaptım. Saat beşten önce düzelteceğim.", "kind": "say.tr", "de": "Entschuldigung. Im Bericht ist mir ein Fehler passiert. Ich richte es vor fünf." },
  { "tr": "Sıra sende. \"Henüz randevu almadım\" demek istiyorsun. Nasıl kurarsın?", "kind": "say.tr", "de": "Du bist dran. Du willst sagen \"Ich habe noch keinen Termin\". Wie geht das?" },
  { "tr": "Sıra sende. Biraz peynir yerim, İngilizce nasıl olur? Düşün ve söyle.", "kind": "say.tr", "de": "Du bist dran. Ich esse etwas Käse, wie geht das? Denk nach und sag es." },
