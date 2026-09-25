@@ -14,6 +14,7 @@ import { translate } from "@/lib/i18n/dict";
 import { localiseExercise, localiseLesson } from "@/lib/lessons/native-server";
 import { recordAiUsage } from "@/lib/ai-usage";
 import { takeUsage } from "@/lib/premium";
+import { claimTiered } from "@/lib/premium/access";
 import { aiConsentGate, aiConsentStateFor } from "@/lib/ai-consent";
 
 export const dynamic = "force-dynamic";
@@ -128,6 +129,28 @@ export async function POST(req: Request) {
 
   const messages = parseMessages(raw);
   if (!messages) return NextResponse.json({ error: "bad_request" }, { status: 400 });
+
+  /*
+    PATİKA KONUŞMA HAKKI (2026-09-25, `docs/premium/README.md` §2). Konuşma adımı
+    — anlatım + bu sohbet + isteğe bağlı puanlı kısım — ücretsizde seviye başına
+    2 + "bitir ve 7 günlük seri yap" dilimleri. Hak adımın İLK yapay zekâ turunda
+    düşüyor ve adım sahipleniliyor; sonraki turlar ve adımı yeniden açmak hak
+    yemiyor (`claimTiered`). Hak yoksa 403 premium_required: istemci adımı
+    kilitli gösterip paywall açıyor.
+
+    SENARYOLU YOL KAPIDA DEĞİL. Misafir (yukarıda 403 account_required) ve yapay
+    zekâ iznini REDDEDEN kullanıcı (403 consent) bu noktaya hiç gelmiyor;
+    istemci onlara maliyetsiz senaryolu konuşmayı açıyor ve adım kilitlenmiyor —
+    izin zorlanamaz (App Store 5.1.2(i)) ve senaryolu yolun maliyeti yok. Hakkı
+    bitmiş ama izin vermiş kullanıcı senaryoluya DÜŞMÜYOR, kilidi görüyor.
+    Premium'da tavan sohbet mesajı (aşağıda, günde `roleplayTurns`).
+  */
+  if (lessonRaw) {
+    const gate = await claimTiered(userId, "conversation", lessonRaw.level, lessonRaw.id);
+    if (!gate.allowed) {
+      return NextResponse.json({ error: "premium_required", reason: gate.reason, gate: gate.gate }, { status: 403 });
+    }
+  }
 
   // Paralel patlamaya karşı atomik sayaç — gerekçesi `/api/stt`'de aynı yerde.
   // Gövde doğrulandıktan SONRA: bozuk istek hak yakmasın.

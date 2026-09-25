@@ -13,7 +13,8 @@ import {
   type AssessLevel,
   type AssessRequest,
 } from "@/lib/assess-prompts";
-import { claimLessonAi } from "@/lib/premium/access";
+import { claimTiered, type Access } from "@/lib/premium/access";
+import { findLesson } from "@/lib/lessons";
 import { claimSkillAi } from "@/lib/premium/skill-access";
 import { getExercise } from "@/lib/skills";
 import { premiumConfig, takeUsage } from "@/lib/premium";
@@ -91,51 +92,46 @@ export async function POST(req: Request) {
   }
 
   /**
-   * PREMIUM KAPISI — yalnız AI değerlendirmesi taşıyan türlerde.
+   * PREMIUM KAPISI — yalnız yapay zekâ değerlendirmesi taşıyan türlerde; kural
+   * `docs/premium/README.md` §2 (2026-09-25). Hangi sayacın düştüğünü İSTEK
+   * değil MADDE belirliyor (`exerciseId` sunucudaki içerikten çözülüyor):
    *
-   * `sentence` bilerek DIŞARIDA: o, kelime turunun içindeki serbest cümle
-   * görevi ve kelime turları iki katmanda da sınırsız. Kilit, ücretsiz katmanda
-   * kotalı olan konuşma ve yazma alıştırmalarında.
+   *  - Patika Yazma adımı (ünite egzersizi)  → Patika Yazma, seviye başına
+   *  - Beceriler yazma / B1+ monolog         → Beceriler, seviye başına, AYRI sayaç
+   *  - `roleplay` (Konuşma adımının puanlı kısmı, "Sınav olarak dene")
+   *                                          → Patika Konuşma adımının KENDİ hakkı:
+   *    sohbet adımı zaten sahiplendi, puanlı kısım ayrı hak düşürmüyor. Sohbeti
+   *    atlayıp doğrudan puanlı kısma gelen istek adımı burada sahipleniyor.
+   *  - MODÜL / SEVİYE SINAVI yazma bölümü     → HAK DÜŞMEZ. Sınav Patika'nın
+   *    ölçme adımı; tablo onu kotaya bağlamıyor ve yazmasını kotaya saymak
+   *    sınavı hak bitince yarım bırakırdı. Web sınav maddesinin kimliğini
+   *    (`exerciseId`, imzalı skor jetonu için) gönderiyor, mobil göndermiyor;
+   *    kimlik bir Patika/Beceriler alıştırmasına çözülmediği için iki platform
+   *    da AYNI davranıyor: yalnız aşağıdaki kötüye kullanım tavanları.
    *
-   * `roleplay` konuşma sayılıyor: uygulamada "Konuşma" dersinin kendisi o.
+   * `sentence` bilerek DIŞARIDA: kelime turunun içindeki serbest cümle ve kelime
+   * çalışması iki katmanda da sınırsız.
    *
-   * KOTA BURADA ARTMIYOR. Bir alıştırma birden çok değerlendirme üretebiliyor
-   * (yaz, düzelt, yeniden gönder) ve her birini hak saymak kullanıcının iki
-   * hakkını tek alıştırmada yakardı. Tasarım şu: hak alıştırma BAŞINDA bir kez
-   * sayılıyor (`/api/premium/consume`), burası yalnız "hakkı var mı" diye
-   * bakıyor.
+   * Hak alıştırmanın İLK değerlendirmesinde düşüyor; aynı alıştırmayı yeniden
+   * puanlatmak yeni hak yakmıyor (gerekçe `claimTiered`de).
    *
-   * AMA O UCU BUGÜN HİÇBİR İSTEMCİ ÇAĞIRMIYOR (2026-09-12 ölçüldü): ne web ne
-   * mobil. Yani DERS turu/alıştırması başına hak HİÇ HARCANMIYOR (Beceriler
-   * kütüphanesi 2026-09-15'ten beri aşağıda, sunucuda sayılıyor); sayılan tek şey
-   * aşağıdaki `ai_assess_calls` emniyet tavanı. Kotayı gerçekten işletmek bir
-   * ÜRÜN kararı (bugün ücretsiz kullanılan bir yüzeyi kilitler) ve premium
-   * hâlâ pasif; kayıt `docs/plan/web-parity.md` §11.489'da.
+   * Misafir bu kapıya girmez: sınırı zaten ömürlük tek deneme hakkı
+   * (`GUEST_AI_TRIALS`, aşağıda atomik alınıyor ve başarısızlıkta geri
+   * veriliyor). Kapıya girseydi Patika/Beceriler sayacı da düşer, geri verilmez
+   * ve premium_required ile misafirin tek hakkını hiç kullanamamasına yol açardı.
    */
   const gated = parsed.req.kind === "writing" || parsed.req.kind === "speaking" || parsed.req.kind === "roleplay";
-  /*
-    BECERİLER KÜTÜPHANESİ kendi kotasıyla ve GERÇEKTEN sayılarak kapılanıyor
-    (bkz. lib/premium/skill-access): hak alıştırmanın ilk değerlendirmesinde
-    düşüyor, sonraki değerlendirmeler aynı hakla geçiyor. Sınav kâğıdının
-    yazma görevi (`examVerified`) bu kapıya girmez.
-  */
-  /* Misafir bu kapıya girmez: sınırı zaten ömürlük tek deneme hakkı
-     (`GUEST_AI_TRIALS`, aşağıda atomik alınıyor ve başarısızlıkta geri
-     veriliyor). Kapıya girseydi beceri kotası da düşer, geri verilmez ve
-     premium_required ile misafirin tek hakkını hiç kullanamamasına yol açardı. */
-  const skillExercise = gated && !examVerified && !who.guest && typeof parsed.req.exerciseId === "string" ? await getExercise(parsed.req.exerciseId) : undefined;
-  const skillGate = skillExercise ? await claimSkillAi(userId, skillExercise, parsed.req.level) : null;
-  if (skillGate && !skillGate.allowed) {
-    return NextResponse.json({ error: "premium_required", reason: skillGate.reason, gate: skillGate.gate }, { status: 403 });
-  }
-  if (gated && !skillGate) {
-    /* KONTROL ETMEKLE KALMIYOR, HARCIYOR (2026-09-17). Eskiden yalnız
-       `canAiPractice` çağrılıyordu ve sayaç hiç artmadığı için kontrol her
-       zaman geçiyordu — duyurulan hak fiilen sınırsızdı. Hak alıştırmanın ilk
-       değerlendirmesinde düşüyor; gerekçe `claimLessonAi`de. */
-    const kind = parsed.req.kind === "writing" ? "writing" : "speaking";
-    const gate = await claimLessonAi(userId, kind, parsed.req.level, parsed.req.exerciseId);
-    if (!gate.allowed) {
+  const exerciseId = typeof parsed.req.exerciseId === "string" ? parsed.req.exerciseId : null;
+  if (gated && !examVerified && !who.guest && exerciseId) {
+    let gate: Access | null = null;
+    if (parsed.req.kind === "roleplay") {
+      const lesson = await findLesson(exerciseId.replace(/:exam$/, ""));
+      if (lesson) gate = await claimTiered(userId, "conversation", lesson.level, lesson.id);
+    } else {
+      const exercise = await getExercise(exerciseId);
+      if (exercise) gate = await claimSkillAi(userId, exercise);
+    }
+    if (gate && !gate.allowed) {
       return NextResponse.json({ error: "premium_required", reason: gate.reason, gate: gate.gate }, { status: 403 });
     }
   }
