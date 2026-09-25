@@ -172,8 +172,9 @@ açıkça yazılmalı:
 
 Video eklemek yine en hızlı çözen yol. Bu üç madde + "ses sunucuda tanınır, saklanmaz,
 izin ekranı sağlayıcıları adıyla gösterir" İngilizce not metni olarak `connect.md` §1'in
-7. adımında hazır (2026-09-23); canlıdaki not hâlâ eski ve mikrofonu "yalnız telaffuz
-puanı için" diye anlatıyor (denetim LEG-6) — Connect'te güncellenmesi Samet'in işi.
+7. adımında hazır (2026-09-23). Canlı not (2026-09-25 okundu, 3.421 karakter) hâlâ arayüzde
+olmayan "lessons" ve "roleplay" adlarını kullanıyor (denetim 2026-09-25 M11): `connect.md` taslağıyla
+eşitlenip API'den girilecek (Claude, Samet onayıyla).
 
 
 ## Apple ile Giriş (Şerit A — 2026-09-04)

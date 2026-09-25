@@ -163,6 +163,11 @@ Değişmeyen kurallar:
 
 ## 3. Mağaza metinleri
 
+> **ESKİ TASLAK (2026-09-25).** Bu bölümdeki metinler mağazaya GİRİLEN metin değil. Mağazada olan
+> metnin tek kaynağı `docs/store/README.md` › "Vitrin kararları" (açıklama, altyazı, anahtar kelime,
+> tanıtım metni, kısa açıklama; 2026-09-25'te API ile girildi). Buradaki anahtar kelimeler eski
+> altyazıya göre ayıklanmıştı; kullanılmaz.
+
 Üç yerelleştirme: **tr, en, de**. Arayüz üç dilde (`mobile/src/i18n/`) ve `Info.plist`
 `CFBundleLocalizations` üçünü sayıyor; vitrinin bir dili eksik kalırsa uygulama o dili
 "desteklemiyor" gibi görünür.

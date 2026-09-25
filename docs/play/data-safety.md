@@ -61,8 +61,8 @@ Notlar:
 - **Play Integrity (hukuki sürüm 1.6, 2026-09-24; beyan kararı Samet, 2026-09-24).** Android'de "Hesapsız
   devam et"te uygulama Google Play Integrity'den imzalı bir belge alıyor, sunucu onu Google'a çözdürüp
   yalnız hükümleri ve sebebi `guest_attestations`a misafir kimliğine bağlı yazıyor (90 gün, günlük cron
-  siler; belgenin kendisi yazılmıyor). Kod canlıda KAPALI (`GUEST_ATTESTATION` boş); form satırı kip
-  `log`a alındığı sürümle birlikte girilir, önce girmek zararsız fazla beyan olur.
+  siler; belgenin kendisi yazılmıyor). 2026-09-24'ten beri canlıda `log` kipinde (sunucu `GUEST_ATTESTATION=log`, Android vc 6'dan
+  beri belge gönderiliyor): form satırı ARTIK ZORUNLU, Veri güvenliği girilirken eklenir (denetim 2026-09-25 G1).
   - *Kategori:* İKİ satır, Google kütüphanesinin topladıkları DAHİL (aşağıdaki karar).
     **Uygulama bilgisi ve performans › Diğer uygulama performans verileri**: bizim yazdığımız sonuç
     (uygulamanın ve çalıştığı ortamın durumu) ile kütüphanenin gönderdiği uygulama meta verisi (paket

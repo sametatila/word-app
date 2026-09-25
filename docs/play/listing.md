@@ -52,6 +52,11 @@ App Store derecesi, şartlar §3) artık aynı sayıyı söylüyor. Gerekçe:
 
 ## 3. Mağaza listesi
 
+> **ESKİ TASLAK (2026-09-25).** Bu bölümdeki metinler mağazaya GİRİLEN metin değil. Mağazada olan
+> metnin tek kaynağı `docs/store/README.md` › "Vitrin kararları" (açıklama, altyazı, anahtar kelime,
+> tanıtım metni, kısa açıklama; 2026-09-25'te API ile girildi). Buradaki anahtar kelimeler eski
+> altyazıya göre ayıklanmıştı; kullanılmaz.
+
 > **2026-09-14'te baştan yazıldı** (mağaza ön inceleme raporu B25, B26, B28). Eski metin
 > yalnız Türkçeydi, İngilizce kursunu "da mevcut" diye geçiştiriyordu, deneme sınavlarını
 > "Lesen ve Hören alıştırmaları" diye küçültüyordu, bir sınav markası taşıyordu ve
