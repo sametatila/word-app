@@ -16876,31 +16876,26 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     );
   }
 
-  /* ── 194. panelin varsayilani ile gecme notu ──────────────────────────
-   * `mock.unlockPct` (sonraki kagit paketini acan yuzde) ile `MOCK_PASS_PCT`
-   * (kagidin gecme notu) ayni olmak zorunda ve bunu SOYLEYEN bir yorum vardi
-   * (`gates.ts`, `unlockPct` alaninin aciklamasi: "Varsayilan MOCK_PASS_PCT
-   * ile ayni olmali"). Olcen bir sey yoktu - zorunlulugu yazan cumle, tam da
-   * bu turlarda tekrar tekrar cikan sinif.
+  /* ── 194. paket kapisi yalniz BITIRME ─────────────────────────────────
+   * Eskiden `mock.unlockPct` (sonraki paketi acan yuzde) ile `MOCK_PASS_PCT`
+   * (kagidin gecme notu) ayni olmak zorundaydi ve kapi bu esitligi olcuyordu.
    *
-   * Ayrismanin bedeli kullaniciya iki farkli "basari" tanimi gostermek olurdu:
-   * kagidi "gecti" diye isaretlenen biri sonraki paketi acamazdi. Varsayilan
-   * artik sabitin KENDISI; kapi hem esitligi hem de sayinin elle yazilmamis
-   * olmasini okuyor (esitlik tek basina yetmez - ikisi birlikte degistirilip
-   * ayni sayiya getirilebilir ve baglanti yine kopuk kalir). */
+   * KARAR DEGISTI (2026-09-25, docs/premium/README.md §2): yuzde kosulu iki
+   * katmanda da KALKTI; premium'da sonraki paket, paketteki kagitlarin HEPSI
+   * bitirilince aciliyor. Kapi artik iki seyi olcuyor: yapilandirmada yuzde
+   * alani geri gelmedi (panelden ayarlanabilir gorunup okunmayan bir alan
+   * olurdu) ve paket hesabinin kapisi bitirme sayisina bakiyor. */
   {
     const gates = sil(read("src/lib/premium/gates.ts"));
-    const pas = (read("src/lib/mock-exams/types.ts").match(/MOCK_PASS_PCT = (\d+)/) ?? [])[1] ?? "yok";
-    /* VARSAYILANLAR blogundan sonrasi. Ilk yazim dosyanin tamamina bakiyordu
-       ve TIP bildirimini (`unlockPct: number;`) okuyup "number;" buldu - yine
-       komsuyu olcmek. Varsayilan, tipin degil `DEFAULT_PREMIUM_CONFIG`in
-       icinde. */
+    const access = sil(read("src/lib/premium/access.ts"));
     const varsayilanlar = gates.slice(gates.indexOf("DEFAULT_PREMIUM_CONFIG"));
-    const acilis = (varsayilanlar.match(/unlockPct: ([^,\n]+)/) ?? [])[1]?.trim() ?? "yok";
     sameList(
-      "paket acilis yuzdesi gecme notundan",
-      ["varsayilan=" + acilis, "gecme notu okunabildi=" + (pas === "yok" ? "HAYIR" : "evet")],
-      ["varsayilan=MOCK_PASS_PCT", "gecme notu okunabildi=evet"],
+      "paket kapisi yalniz bitirme",
+      [
+        "yuzde alani=" + (/unlockPct|unlockOnComplete/.test(varsayilanlar) ? "VAR" : "yok"),
+        "paket kapisi=" + (/open = open && done >= ids\.length/.test(access) ? "bitirme" : "BASKA"),
+      ],
+      ["yuzde alani=yok", "paket kapisi=bitirme"],
       "bulunan",
       "beklenen",
     );
@@ -20295,10 +20290,15 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "profile goal kabulu=" + (/body\.goal/.test(silB(read("src/app/api/profile/route.ts"))) ? "VAR" : "yok"),
       "consume cagirani=" + cagiran,
       "consume kaydi=" + (/ÇAĞIRANI OLMAYAN UÇ/.test(consumeSrc) ? "yazili" : "YOK"),
-      "assess kaydi=" + (/HİÇBİR İSTEMCİ ÇAĞIRMIYOR/.test(read("src/app/api/assess/route.ts")) ? "yazili" : "YOK"),
-      "stt kaydi=" + (/HİÇBİR İSTEMCİ\s*\n?\s*\*?\s*ÇAĞIRMIYOR/.test(read("src/app/api/stt/route.ts")) ? "yazili" : "YOK"),
+      /* 2026-09-25: assess ve stt'deki "consume'u kimse cagirmiyor" kayitlari
+         kalkti - kotanin birimi artik ozellik ucunun ICINDE sayiliyor
+         (`claimTiered`, `openWalkSession`), consume'a dayanan bir tasarim
+         kalmadi. Yerine olculen: yuruyus oturumu sunucuda aciliyor ve consume
+         artik SAYMIYOR (eski bir istemci cagirirsa hak yakmasin). */
+      "yuruyus oturumu sunucuda=" + (/openWalkSession\(/.test(silB(read("src/app/api/session/route.ts"))) ? "evet" : "HAYIR"),
+      "consume sayiyor=" + (/bumpUsage|takeUsage/.test(silB(consumeSrc)) ? "EVET" : "hayir"),
     ],
-    ["profile goal kabulu=yok", "consume cagirani=0", "consume kaydi=yazili", "assess kaydi=yazili", "stt kaydi=yazili"],
+    ["profile goal kabulu=yok", "consume cagirani=0", "consume kaydi=yazili", "yuruyus oturumu sunucuda=evet", "consume sayiyor=hayir"],
     "bulunan",
     "beklenen",
   );
