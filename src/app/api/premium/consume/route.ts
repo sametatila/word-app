@@ -1,8 +1,7 @@
 import { NextResponse } from "next/server";
 import { requireAccount } from "@/lib/auth/guest";
 import { sameOrigin } from "@/lib/auth/origin";
-import { bumpUsage } from "@/lib/premium";
-import { canAiPractice, canPocketWalk } from "@/lib/premium/access";
+import { canPocketWalk, tieredState } from "@/lib/premium/access";
 
 export const dynamic = "force-dynamic";
 
@@ -10,40 +9,29 @@ export const dynamic = "force-dynamic";
   ÇAĞIRANI OLMAYAN UÇ — bilerek duruyor, kaydı burada.
 
   Tasarım: gated bir etkinliğin BAŞINDA istemci bu ucu çağırıp bir hak
-  harcıyor; özellik uçları (`/api/assess`, `/api/stt`, `/api/tts`) yalnız
-  "hakkı var mı" diye bakıyor ve kendi emniyet tavanlarını sayıyor.
+  harcıyordu; özellik uçları yalnız "hakkı var mı" diye bakıyordu.
 
   ÖLÇÜM (2026-09-12): ne web ne mobil bu ucu çağırıyor.
 
-  ARADAN GEÇEN KARAR (2026-09-17): konuşma/yazma hakkı artık SUNUCUDA, özellik
-  ucunun kendi içinde harcanıyor (`claimSkillAi`, `claimLessonAi`) — birim
-  çağrı değil alıştırma, yani istemcinin "başlıyorum" demesine gerek kalmadı.
-  Bu ucun karşılığı olan tek yer cepte yürüyüş turu kaldı; o da ücretsizde
-  kapalı (`pocketWalksPerDay: 0`), yani bugün sayacak bir şeyi yok.
+  ARADAN GEÇEN KARARLAR: konuşma/yazma hakkı 2026-09-17'den, yürüyüş oturumu
+  2026-09-25'ten beri SUNUCUDA, özellik ucunun kendi içinde harcanıyor
+  (`claimTiered` — `/api/assess`, `/api/roleplay`; `openWalkSession` —
+  `/api/session?walk=1`). İstemcinin "başlıyorum" demesine gerek kalmadı ve
+  istemcinin söylediği bir başlangıca dayanan sayaç sayaç değil.
 
-  SİLİNMEDİ: tur başına sayımın doğru yeri hâlâ burası. Yürüyüş ücretsize
-  açılırsa ya da "N tur" diye duyurulan başka bir şey gelirse çağıran taraf
-  burayı kullanacak; ucu silmek o tasarımı da silmek olurdu. Kapı bu durumu
-  ölçüyor (§346) ki kayıt sessizce bayatlamasın.
+  Uç artık SAYMIYOR, yalnız kararı söylüyor (eski bir istemci çağırırsa hak
+  yakmasın, çift saymasın). Silinmedi: kaldırmak ayrı bir karar ve kapı bu
+  durumu ölçüyor (`check:parity` §346) ki kayıt sessizce bayatlamasın.
 */
 /**
- * Kotalı bir eylemin BAŞLANGICI — kontrol eder ve sayar.
- *
- * Neden ayrı uç: kotanın birimi kullanıcıya söylenen şey olmalı. Cepte yürüyüş
- * "günde N TUR" diye duyuruluyor, "günde N kelime" diye değil; tur bir kez
- * burada sayılıyor, tur boyunca yapılan onlarca tanıma isteği sayılmıyor.
- * Aynı şey AI değerlendirmesi için de geçerli: bir yazma alıştırması tek hak,
- * içindeki her kaydetme değil.
- *
- * SAYMA KONTROLDEN SONRA. Hak yoksa sayaç artmıyor — yoksa kilide çarpan
- * kullanıcı kendi hakkını yakardı.
+ * Kotalı bir eylemin kararı — SAYMAZ.
  */
 const GATES = ["pocket_walk", "speaking", "writing"] as const;
 type Gate = (typeof GATES)[number];
 
 export async function POST(req: Request) {
   if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
-  /* HESAP İSTER: kota sayacı yapay zekâ ve Premium özellikleri için; misafire kapalı (bkz. lib/auth/guest). */
+  /* HESAP İSTER: kota kararı yapay zekâ ve Premium özellikleri için; misafire kapalı (bkz. lib/auth/guest). */
   const who = await requireAccount();
   if (who instanceof NextResponse) return who;
   const userId = who;
@@ -62,21 +50,17 @@ export async function POST(req: Request) {
   if (!gate) return NextResponse.json({ error: "unknown_gate" }, { status: 400 });
 
   try {
-    const access =
-      gate === "pocket_walk" ? await canPocketWalk(userId) : await canAiPractice(userId, gate, scope, level);
-
-    if (!access.allowed) return NextResponse.json({ ok: false, ...access }, { status: 403 });
-
-    // Hangi sayaç artacağını KARAR söylüyor (`access.counter`). Çağıran tarafta
-    // yeniden türetmek, aynı kuralı iki yerde yazmak olurdu: ücretsiz kullanıcı
-    // ömürlük hakkını mı yoksa haftalık yenilenen hakkını mı kullandı sorusu
-    // yalnız kararın verildiği yerde biliniyor.
-    if (access.counter) await bumpUsage(userId, access.counter.key, access.counter.period);
-    return NextResponse.json({ ok: true, ...access });
+    if (gate === "pocket_walk") {
+      const access = await canPocketWalk(userId);
+      return NextResponse.json({ ok: access.allowed, ...access }, { status: access.allowed ? 200 : 403 });
+    }
+    const surface = scope === "skill" ? (gate === "writing" ? "skill_writing" : "skill_speaking") : "path_writing";
+    const state = await tieredState(userId, surface, level);
+    const allowed = state.premium || state.remaining > 0;
+    return NextResponse.json({ ok: allowed, allowed, reason: state.premium ? "premium" : allowed ? "free_quota" : "quota_spent", gate }, { status: allowed ? 200 : 403 });
   } catch (err) {
     console.error("[premium/consume]", err);
-    // Sayaç yazılamadı: eylemi ENGELLEME. Kullanıcıyı altyapı hatası yüzünden
-    // kendi hakkından etmek, birkaç fazladan çağrıdan daha pahalı.
+    // Karar okunamadı: eylemi ENGELLEME (kapıyı özellik ucu tutuyor).
     return NextResponse.json({ ok: true, reason: "counter_failed" });
   }
 }

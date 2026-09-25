@@ -4,6 +4,7 @@ import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { buildWalk, clearSessionState, loadSession, saveSessionProgress } from "@/lib/session";
 import { parseProgress } from "@/lib/progress";
+import { openWalkSession } from "@/lib/premium/access";
 import { GAME_LABEL_KEYS, PLAYABLE_GAMES, type PlayableGame } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
@@ -61,6 +62,25 @@ export async function GET(req: Request) {
     .map((x) => x.trim())
     .filter((g) => g in GAME_LABEL_KEYS)
     .slice(0, 8);
+  /*
+    YÜRÜYÜŞ OTURUMU SUNUCUDA SAYILIYOR (2026-09-25, `docs/premium/README.md` §2):
+    ücretsizde günde 3 oturum, premium'da kötüye kullanım tavanı. Oturum bu
+    istekle BAŞLIYOR; aynı oturumun devamı (tur sonunda "devam", ekrana dönüp
+    yeniden yükleme) pencere içinde geldiği için hak yemiyor (`openWalkSession`).
+    İstemcinin "başladım" ya da "devam ediyorum" demesine bakılmıyor — ölçü
+    sunucunun saati. Hak yoksa 403 premium_required: istemci kilidi ve paywall'ı
+    gösteriyor.
+  */
+  if (walk) {
+    const gate = await openWalkSession(userId);
+    if (!gate.allowed) {
+      const status = gate.reason === "fair_use" ? 429 : 403;
+      return NextResponse.json(
+        { error: status === 429 ? "quota" : "premium_required", reason: gate.reason, gate: gate.gate },
+        { status },
+      );
+    }
+  }
   try {
     const payload = walk
       ? await buildWalk(userId, today, skip)
