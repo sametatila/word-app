@@ -1,7 +1,7 @@
 {
   "name": "lernomi",
   "version": "1.0.0",
-  "versionCode": 7,
+  "versionCode": 8,
   "private": true,
   "scripts": {
     "dev": "next dev",
