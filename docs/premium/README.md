@@ -114,7 +114,7 @@ olmadan (ALTER … RENAME, deploy'dan önce yedekli) yeniden adlandırılır —
 | Kelime çalışma, pratik, okuma, dinleme, dil bilgisi, quiz | sınırsız | sınırsız |
 | Haftalık quiz | haftada 1 | haftada 1 |
 | **Yürüyüş modu** | **günde 3 tur**, yalnız ekran açıkken (tur sonundaki "devam" da bir tur) | ekran kapalı dahil; kötüye kullanım tavanı günde 20 tur |
-| **Deneme sınavları** (Öğren) | her seviyede **1** kâğıt açık; o kâğıdı **bitirip 7 günlük seri** yapınca **+1**, sonra her 7 günlük seride +1 | **3'lü paketler**: paketteki 3 kâğıdı **tamamlayınca** sonraki 3 açılır |
+| **Deneme sınavları** (Öğren) | her seviyede **1** deneme sınavı açık; onu **bitirip 7 günlük seri** yapınca **+1**, sonra her 7 günlük seride +1 | **3'lü paketler**: paketteki 3 deneme sınavını **tamamlayınca** sonraki 3 açılır |
 | **Patika Konuşma** (anlatım + yapay zekâ sohbeti + puanlı kısım) | **seviye başına 2** açık; ikisini **tamamlayıp 7 günlük seri** yapınca **+2**, sonra her 7 günlük seride +2. Hak yoksa adım **kilitli, Premium ister** | yalnız kötüye kullanım tavanı |
 | **Patika Yazma** (yapay zekâ değerlendirmesi) | aynı: seviye başına 2 + (tamamla + 7 gün seri) → +2 | yalnız kötüye kullanım tavanı |
 | **Beceriler Konuşma / Yazma** (yapay zekâ değerlendirmesi) | **seviye başına** 2'şer + (tamamla + 7 gün seri) → +2'şer | yalnız kötüye kullanım tavanı |
@@ -153,7 +153,7 @@ kazanılan hak geri alınmaz. Kademe tavanı `maxTiers` (panel), varsayılan **0
 | Patika Yazma | `path_writing:<SEVİYE>` | `path_writing_owned:<egzersiz>` | ilk değerlendirme (sahiplenmek = değerlendirilmiş gönderim) |
 | Beceriler yazma | `skill_writing:<SEVİYE>` | `skill_owned:<egzersiz>` | ilk değerlendirme |
 | Beceriler konuşma (B1+ monolog) | `skill_speaking:<SEVİYE>` | `skill_owned:<egzersiz>` | ilk değerlendirme |
-| Deneme sınavı | — (açık kâğıt = sıradaki ilk N) | — | kâğıdın bitmesi (`mock_exam_attempts.finished_at`) |
+| Deneme sınavı | — (açık sınav = sıradaki ilk N) | — | deneme sınavının bitmesi (`mock_exam_attempts.finished_at`) |
 | Yürüyüş modu | `walk_rounds` (gün, UTC) | — | — |
 
 Hak maddenin İLK yapay zekâ kullanımında düşer ve madde sahiplenilir; sahiplenilmiş madde
@@ -306,8 +306,8 @@ kullanabiliyor, premium'un ne olduğunu her gün görüyor.
 
 **Deneme sınavı paketleri:** ilk paket her zaman açık. Sonraki paket iki yoldan
 açılıyor — pakette **%60** başarı (başarı hızlandırır) **ya da** paketteki tüm
-kâğıtların bitirilmesi (çaba da açar). İkincisi bir emniyet supabı: onsuz %60'ı
-tutturamayan bir **ödeme yapmış** kullanıcı hiçbir yeni kâğıt göremez ve bu,
+sınavların bitirilmesi (çaba da açar). İkincisi bir emniyet supabı: onsuz %60'ı
+tutturamayan bir **ödeme yapmış** kullanıcı hiçbir yeni sınav göremez ve bu,
 iadenin ve tek yıldızın en sık sebebidir. Panelden kapatılabilir; kapatılırsa
 paywall metnine "puan yetmezse paket açılmaz" cümlesi eklenmeli.
 
@@ -691,5 +691,5 @@ npm run test:entitlement           # 32 doğrulama
 - [ ] Ücretsiz hesapta cepte yürüyüş → 403 `premium_required`
 - [ ] Ücretsiz hesapta taban hak bitince → haftalık hakka düşüyor
 - [ ] 7 günlük seriden sonra hak sayısı artıyor (taban + kademe)
-- [ ] Kilitli deneme kâğıdının kimliğini doğrudan uca göndermek → 403
+- [ ] Kilitli deneme sınavının kimliğini doğrudan uca göndermek → 403
 - [ ] Abonelik bitince premium ekranlar kilitleniyor, **ilerleme silinmiyor**

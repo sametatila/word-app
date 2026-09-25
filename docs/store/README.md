@@ -30,7 +30,7 @@ de-DE: **"Sprechen, verstehen, bestehen"** (29).
 anlatımla." (iOS altyazısıyla aynı cümleyle başlar.)
 
 **Sayılar:** açıklamada somut ama YUVARLAK ve iki kursta da doğru kalacak biçimde (2026-09-25
-ölçümü: Almanca 580 konuşma / 995 alıştırma / 60 kâğıt, İngilizce 500 / 939 / 60): "Almanca'da
+ölçümü: Almanca 580 konuşma / 995 alıştırma / 60 deneme sınavı, İngilizce 500 / 939 / 60): "Almanca'da
 550'den fazla konuşma", "900'den fazla beceri alıştırması", "60 deneme sınavı"; İngilizce için
 "500 konuşma" (500'den fazla DENMEZ). İçerik azalırsa bu cümleler gözden geçirilir.
 
@@ -48,7 +48,7 @@ satırlık kanıt tablosu oturum çıktısında; kararlar:
   yeniden; kademe tavanı yok; haftalık yenilenen hak KALKTI). Panelde sayı değişirse metin de.
 - Düzeltilen yanlış/yanıltıcı iddialar: sohbet "daha doğal söyleyiş önermez" (yalnız dil
   bilgisi düzeltir + takılınca 3 öneri; `src/lib/conversations/chat.ts` üslup kuralı); Premium'da
-  da deneme kâğıtları üçerli paketlerle sırayla açılır (`computePacks`); deneme sınavında
+  da deneme sınavları üçerli paketlerle sırayla açılır (`computePacks`); deneme sınavında
   sonuç tek yüzde + hata→düzeltme (ölçüt çubukları yalnız beceri turu ve modül sınavında);
   aralıklı tekrar SM-2 türevi ("unutmadan önce", "tam unutmak üzereyken" DEĞİL); kulaklık
   zorunlu değil. Metinde Android/Google Play adı geçmez (App Store 2.3.10).
@@ -130,11 +130,11 @@ Kırpma değerleri 1080×2400 · 420 dpi içindir: üstteki 74 piksel durum çub
 - **Sınav markası geçmez** (hiçbir sınav kurumunun ya da sınavın adı; karar
   `docs/play/listing.md` §4.2). "Gerçek
   sınav görevi", "resmî sınav" gibi bir kurumla bağ ya da resmîlik ima eden ifade de yok:
-  deneme kâğıtları Lernomi'nin kendi kâğıtları.
+  deneme sınavlarını Lernomi kendisi yazdı.
 - **Premium gerektiren özellik anılıyorsa altyazıda "Premium" yazar** (App Store 2.3.2, Play
   yanıltıcı meta veri). Karedeki ekran premium hesapla çekildiği için kilitsiz görünüyor;
   ücretsiz kapsamı altyazı söylemek zorunda. Ücretsiz/Premium ayrımının kaynağı
-  `src/lib/premium/gates.ts`; "1'i ücretsiz" sayısı `free.mockPapersPerLevel` ve panelde
+  `src/lib/premium/gates.ts`; "1'i ücretsiz" sayısı `free.mockExamsPerLevel` ve panelde
   değişirse altyazı da değişir.
 - **Her yerelleştirme kendi dilinde** kare ister. Üç arayüz dilinin üçü de açık
   (`PAIR_READY`: tr, en, de — `mobile/src/lib/courses.ts`), ama bugün yalnız Türkçe kare seti
@@ -154,7 +154,7 @@ farkı yalnız altyazı bölgesinde; öteki on üç kare önceki üretimle bayt 
 
 | Set | Kare | Eski | Yeni | Sebep |
 |---|---|---|---|---|
-| a-walk 05, b-exam 01, c-native 05 | `mock-list.png` | Her seviyede 12 tam deneme kâğıdı | Her seviyede 12 deneme sınavı: 1'i ücretsiz, tümü Premium'da | Ücretsizde seviye başına 1 kâğıt açık; kare premium hesapla çekildi |
+| a-walk 05, b-exam 01, c-native 05 | `mock-list.png` | Her seviyede 12 tam deneme sınavı | Her seviyede 12 deneme sınavı: 1'i ücretsiz, tümü Premium'da | Ücretsizde seviye başına 1 deneme sınavı açık; kare premium hesapla çekildi |
 | b-exam 02 | `mock-task.png` | Gerçek sınav görevi, gerçek süre | Sınav düzeninde görev, süre tutarak | "Gerçek sınav" resmî sınav materyali iması taşıyordu |
 | c-native 06 | `walk.png` | Ekran kapalıyken bile çalışır | Ekran kapalıyken Cepte yürüyüş, Premium'da | Ekran kapalı çalışan yürüyüş (uygulamadaki adıyla Cepte yürüyüş) yalnız Premium'da |
 

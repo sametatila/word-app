@@ -75,13 +75,13 @@ kursu bu dile göre sunuyor ve kimseye kendi dilini öğretmiyor: `PAIR_READY` +
   `src/lib/conversations/content/`); beceri alıştırmaları `mobile/src/data/skills/exercises.json` ve
   `exercises-en.json` (okuma, dinleme, yazma Patika'ya bağlı; kütüphanede beş beceri: okuma,
   dinleme, yazma, konuşma, dil bilgisi); deneme sınavları `mobile/src/data/exams/papers.json`
-  ve `papers-en.json` (web: `src/lib/mock-exams/{de,en}/`). Her kâğıtta dört bölüm var: okuma,
+  ve `papers-en.json` (web: `src/lib/mock-exams/{de,en}/`). Her deneme sınavında dört bölüm var: okuma,
   dinleme, yazma, konuşma. Her iki kursun her Konuşma adımında bir sohbet sahnesi var.
 - **Anadil katmanı da ölçüldü.** İngilizce ve Almanca arayüzde içerik "hep-ya-hiç" kuralıyla
   çevriliyor: tek dize eksikse o konuşma Türkçe kalır (`mobile/src/lib/nativeContent.ts`).
   Paketteki sözlüklerle (`mobile/src/data/native/en.json`, `de.json`) çözücüler kayıt kayıt
-  koşuldu: İngilizce arayüzde Almanca kursun 580 konuşması, 995 alıştırması ve 60 kâğıdı;
-  Almanca arayüzde İngilizce kursun 500 konuşması, 939 alıştırması ve 60 kâğıdı eksiksiz
+  koşuldu: İngilizce arayüzde Almanca kursun 580 konuşması, 995 alıştırması ve 60 deneme sınavı;
+  Almanca arayüzde İngilizce kursun 500 konuşması, 939 alıştırması ve 60 deneme sınavı eksiksiz
   çevrildi. Yani en-US ve de-DE vitrinin anlattığı içerik o arayüzde gerçekten açılıyor.
 - **Zürih Almancası (`gsw-zh`) vitrinde yok, bilerek.** Kurs duraklatılmış: ilk açılışta
   sunulmuyor (`offeredToNewUsers: false`), yalnız Türkçe arayüzde Ayarlar'dan seçilebiliyor
@@ -93,7 +93,7 @@ kursu bu dile göre sunuyor ve kimseye kendi dilini öğretmiyor: `PAIR_READY` +
   quiz sınırsız; yürüyüş modu ekran açıkken günde 3 tur; seviye başına 1 deneme sınavı,
   Patika'da 2 Konuşma + 2 Yazma adımı, Beceriler'de 2 konuşma + 2 yazma değerlendirmesi;
   "bitir + 7 günlük seri" ile +2 (deneme sınavında +1). Premium'da ekran kapalı yürüyüş,
-  tüm kâğıtlar (üçerli paketler, paketi bitirince sonraki), seri beklemeden bütün Konuşma
+  tüm deneme sınavları (üçerli paketler, paketi bitirince sonraki), seri beklemeden bütün Konuşma
   ve Yazma; kötüye kullanımı önleyen günlük üst sınır. "Sınırsız" Premium için denmiyor
   (şartlar §7a). Metin sayı olarak 3 tur, 1 deneme sınavı, 2+2 hak, +2/+1 ve 7 gün
   diyor; panelde (`/admin/premium`) bu değerler değişirse üç dildeki "Ücretsiz ve Premium"
@@ -109,11 +109,11 @@ kursu bu dile göre sunuyor ve kimseye kendi dilini öğretmiyor: `PAIR_READY` +
 ```bash
 python3 - <<'PY'
 import json
-for c, kagit, alistirma in [("de", "papers.json", "exercises.json"), ("en", "papers-en.json", "exercises-en.json")]:
+for c, sinav, alistirma in [("de", "papers.json", "exercises.json"), ("en", "papers-en.json", "exercises-en.json")]:
     konusma = sum(len(json.load(open(f"mobile/src/data/conversations/{c}-{l}.json"))) for l in ["a1", "a2", "b1", "b2", "c1"])
     print(c, "konuşma", konusma,
           "alıştırma", len(json.load(open(f"mobile/src/data/skills/{alistirma}"))),
-          "kâğıt", len(json.load(open(f"mobile/src/data/exams/{kagit}"))))
+          "deneme sınavı", len(json.load(open(f"mobile/src/data/exams/{sinav}"))))
 PY
 ```
 
@@ -167,7 +167,7 @@ DENEME SINAVLARI
 Her seviyede 12 deneme sınavı; her birinde okuma, dinleme, yazma ve konuşma bölümleri ve bölüm başına süre var. Okuma ve dinleme otomatik puanlanır; yazma ve konuşma cevaplarını iznin varsa yapay zekâ değerlendirir, ölçütler ve örnek cevap da gösterilir. Haftalık quiz öğrendiklerini düzenli olarak ölçer: on soru, beş yetkinlik, her yanlıştan sonra açıklama. Ücretsizdir. Deneme sınavları Lernomi'nin hazırladığı alıştırmalardır; hiçbir sınav kurumuyla bağlantılı değildir ve resmî bir sertifika yerine geçmez.
 
 ÜCRETSİZ VE PREMIUM
-Kelime çalışma, pratik, okuma, dinleme, dil bilgisi ve quiz ücretsiz ve sınırsızdır; haftalık quiz haftada birdir. Yürüyüş modu ücretsizde ekran açıkken günde 3 turdur. Ücretsiz sürümde ayrıca her seviyede 1 deneme sınavı, Patika'da seviye başına 2 Konuşma ve 2 Yazma adımı, Beceriler'de seviye başına 2 konuşma ve 2 yazma değerlendirmesi var. Açık olanları bitirip 7 günlük seri yapınca yenileri açılır (Patika ve Beceriler'de +2, deneme sınavında +1), sonra her 7 günlük seride yeniden. Premium: ekran kapalıyken de çalışan Cepte yürüyüş ve günlük tur beklemeden yürüyüş modu, tüm deneme sınavları, Patika'daki tüm Konuşma ve Yazma adımları ve Beceriler'de konuşma ve yazma değerlendirmesi, seri ya da bitirme beklemeden. Deneme sınavları üçerli paketler hâlinde sırayla açılır: paketteki üç kâğıdı bitirince sonraki paket açılır. Premium'da da kötüye kullanımı önleyen günlük üst sınırlar vardır; güncel sınırlar uygulamadaki Premium ekranında yazar.
+Kelime çalışma, pratik, okuma, dinleme, dil bilgisi ve quiz ücretsiz ve sınırsızdır; haftalık quiz haftada birdir. Yürüyüş modu ücretsizde ekran açıkken günde 3 turdur. Ücretsiz sürümde ayrıca her seviyede 1 deneme sınavı, Patika'da seviye başına 2 Konuşma ve 2 Yazma adımı, Beceriler'de seviye başına 2 konuşma ve 2 yazma değerlendirmesi var. Açık olanları bitirip 7 günlük seri yapınca yenileri açılır (Patika ve Beceriler'de +2, deneme sınavında +1), sonra her 7 günlük seride yeniden. Premium: ekran kapalıyken de çalışan Cepte yürüyüş ve günlük tur beklemeden yürüyüş modu, tüm deneme sınavları, Patika'daki tüm Konuşma ve Yazma adımları ve Beceriler'de konuşma ve yazma değerlendirmesi, seri ya da bitirme beklemeden. Deneme sınavları üçerli paketler hâlinde sırayla açılır: paketteki üç deneme sınavını bitirince sonraki paket açılır. Premium'da da kötüye kullanımı önleyen günlük üst sınırlar vardır; güncel sınırlar uygulamadaki Premium ekranında yazar.
 Premium, aylık ya da yıllık olarak otomatik yenilenen bir aboneliktir. Fiyat ve varsa ücretsiz deneme süresi satın almadan önce uygulamada gösterilir. Aboneliğini Google Play hesabından yönetebilir ya da iptal edebilirsin.
 
 ARKADAŞLARINLA
@@ -236,7 +236,7 @@ MOCK EXAMS
 12 mock exams at every level, each with reading, listening, writing and speaking sections and a time limit for each section. Reading and listening are scored automatically; with your permission, AI assesses your writing and speaking answers, and you also see the criteria and a sample answer. A weekly quiz checks what you have learned: ten questions, five skills, an explanation after every mistake. It is free. The mock exams are practice material written by Lernomi; they are not affiliated with any exam provider and do not replace an official certificate.
 
 FREE AND PREMIUM
-Vocabulary, practice, reading, listening, grammar and quizzes are free and unlimited; the weekly quiz is once a week. On the free plan, walk mode runs with the screen on for 3 rounds a day. The free plan also includes 1 mock exam per level, 2 Speaking and 2 Writing steps per level in Path, and 2 speaking and 2 writing assessments per level in Skills. Finish what is open and reach a 7-day streak to unlock more (+2 in Path and Skills, +1 mock exam), then again with every further 7 days of streak. Premium: Pocket Walking, which also works with the screen off, walk mode without waiting for daily rounds, every mock exam, every Speaking and Writing step in Path and speaking and writing assessments in Skills, with no streak or finishing needed. Mock exams unlock in packs of three, one after another: finish all three papers in a pack to open the next one. Premium also has daily upper limits to prevent abuse; the current limits are shown on the Premium screen in the app.
+Vocabulary, practice, reading, listening, grammar and quizzes are free and unlimited; the weekly quiz is once a week. On the free plan, walk mode runs with the screen on for 3 rounds a day. The free plan also includes 1 mock exam per level, 2 Speaking and 2 Writing steps per level in Path, and 2 speaking and 2 writing assessments per level in Skills. Finish what is open and reach a 7-day streak to unlock more (+2 in Path and Skills, +1 mock exam), then again with every further 7 days of streak. Premium: Pocket Walking, which also works with the screen off, walk mode without waiting for daily rounds, every mock exam, every Speaking and Writing step in Path and speaking and writing assessments in Skills, with no streak or finishing needed. Mock exams unlock in packs of three, one after another: finish all three mock exams in a pack to open the next one. Premium also has daily upper limits to prevent abuse; the current limits are shown on the Premium screen in the app.
 Premium is an auto-renewing monthly or yearly subscription. The price and any free trial are shown in the app before you buy. You can manage or cancel your subscription in your Google Play account.
 
 WITH FRIENDS
@@ -450,7 +450,7 @@ paragraftaki örnek listesi ve App Store belgesindeki kapanmış karar kaydı d�
 
 **Gerekçe:**
 
-1. **Uygulamanın kendisinde marka yok.** Deneme sınavları Lernomi'nin yazdığı kâğıtlar ve
+1. **Uygulamanın kendisinde marka yok.** Deneme sınavlarını Lernomi kendisi yazdı ve
    içerik kapısı markayı zaten yasaklıyor (`scripts/check-mock-exams.ts`,
    `mobile/__tests__/mockExam.test.tsx`, `data/library/BRIEF.md`). Vitrinde markayı anmak
    uygulamada karşılığı olmayan bir bağ kurar (App Store 2.3.1) ve "yalnız sınav biçimini
