@@ -453,16 +453,6 @@
    "currentBeispielTr": "Bir ceket giyiyorum."
   },
   {
-   "id": 1339,
-   "de": "zurück-",
-   "typ": "Verb",
-   "niveau": "A2",
-   "formen": "geben, gehen, kommen, laufen)",
-   "currentTr": "geri (dönmek, vermek, gitmek)",
-   "currentBeispiel": "Fahrt ihr nach der Party zurück nach Hause? Wann muss ich das Buch zurückgeben? Wir gehen wieder zurück. Wann kommst du ",
-   "currentBeispielTr": "Partiden sonra eve mi dönüyorsunuz? Kitabı ne zaman geri vermem gerekiyor? Geri dönüyoruz."
-  },
-  {
    "id": 7430,
    "de": "winzig",
    "typ": "Sonstiges",

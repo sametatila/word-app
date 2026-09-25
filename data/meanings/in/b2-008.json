@@ -152,20 +152,6 @@
    ]
   },
   {
-   "id": 3788,
-   "de": "sich engagieren für",
-   "typ": "Verb",
-   "niveau": "B2",
-   "formen": "engagiert sich, hat sich engagiert",
-   "currentTr": "kendini adamak, faal çalışmak",
-   "currentBeispiel": "Sie engagiert sich seit Jahren für den Umweltschutz.",
-   "currentBeispielTr": "Yıllardır çevre koruması için aktif çalışıyor.",
-   "overlapping": [
-    "sich engagieren (B2)",
-    "sich widmen (B2)"
-   ]
-  },
-  {
    "id": 3789,
    "de": "sich orientieren an",
    "typ": "Verb",

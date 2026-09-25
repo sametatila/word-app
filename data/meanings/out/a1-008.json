@@ -88,20 +88,12 @@
     "beispielEn": "An older lady is sitting next to me."
   },
   {
-    "id": 459,
+    "id": 821,
     "tr": "hoşça kal",
     "en": "bye",
-    "beispiel": "Also dann bis morgen, tschüss!",
-    "beispielTr": "O zaman yarın görüşürüz, hoşça kal!",
-    "beispielEn": "See you tomorrow then, bye!"
-  },
-  {
-    "id": 821,
-    "tr": "güle güle",
-    "en": "bye-bye",
     "beispiel": "Tschüss, wir sehen uns morgen!",
-    "beispielTr": "Güle güle, yarın görüşürüz!",
-    "beispielEn": "Bye-bye, see you tomorrow!"
+    "beispielTr": "Hoşça kal, yarın görüşürüz!",
+    "beispielEn": "Bye, see you tomorrow!"
   },
   {
     "id": 763,

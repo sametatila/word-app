@@ -37,7 +37,7 @@
  {
   "packet": "a1-008",
   "niveau": "A1",
-  "items": 50
+  "items": 49
  },
  {
   "packet": "a1-009",
@@ -127,7 +127,7 @@
  {
   "packet": "a2-009",
   "niveau": "A2",
-  "items": 50
+  "items": 49
  },
  {
   "packet": "a2-010",
@@ -247,7 +247,7 @@
  {
   "packet": "b1-004",
   "niveau": "B1",
-  "items": 50
+  "items": 49
  },
  {
   "packet": "b1-005",
@@ -402,7 +402,7 @@
  {
   "packet": "b1-035",
   "niveau": "B1",
-  "items": 50
+  "items": 49
  },
  {
   "packet": "b1-036",
@@ -447,7 +447,7 @@
  {
   "packet": "b2-008",
   "niveau": "B2",
-  "items": 50
+  "items": 49
  },
  {
   "packet": "b2-009",
@@ -542,7 +542,7 @@
  {
   "packet": "b2-027",
   "niveau": "B2",
-  "items": 50
+  "items": 49
  },
  {
   "packet": "b2-028",

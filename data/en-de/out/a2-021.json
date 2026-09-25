@@ -25,7 +25,6 @@
  { "id": 209058, "beispielDe": "Morgen möchte ich früher aufwachen als heute." },
  { "id": 209059, "beispielDe": "Gestern haben wir die letzte Folge der Serie gesehen." },
  { "id": 209060, "beispielDe": "Bitte schicken Sie diesen Brief heute per Express." },
- { "id": 209061, "beispielDe": "Blau ist meine Lieblingsfarbe für Winterjacken." },
  { "id": 209062, "beispielDe": "Vor der langen Fahrt hielt der Lkw an, um Treibstoff zu tanken." },
  { "id": 209063, "beispielDe": "Meine Schwester arbeitet Vollzeit in einer kleinen Buchhandlung." },
  { "id": 209065, "beispielDe": "Unser Reiseleiter zeigte uns die alte Stadtmauer." },
@@ -48,5 +47,6 @@
  { "id": 209087, "beispielDe": "Das war der schlechteste Film des Jahres." },
  { "id": 209088, "beispielDe": "Kannst du dieses Geschenk für meine Schwester einpacken?" },
  { "id": 209089, "beispielDe": "Der Bus ist noch nicht an der Haltestelle angekommen." },
- { "id": 209129, "beispielDe": "Die Reise an die Küste dauert zwei Stunden." }
+ { "id": 209129, "beispielDe": "Die Reise an die Küste dauert zwei Stunden." },
+ { "id": 209130, "beispielDe": "Welche Farbe hat dein neues Fahrrad?" }
 ]

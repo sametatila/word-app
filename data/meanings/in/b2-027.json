@@ -254,20 +254,6 @@
    "currentBeispielTr": "Final kırktan fazla ülkeye canlı olarak aktarılıyor."
   },
   {
-   "id": 4968,
-   "de": "bekanntgeben",
-   "typ": "Verb",
-   "niveau": "B2",
-   "formen": "hat bekanntgegeben",
-   "currentTr": "duyurmak, açıklamak",
-   "currentBeispiel": "Das Unternehmen gab die Zahlen erst nach Börsenschluss bekannt.",
-   "currentBeispielTr": "Şirket rakamları ancak borsa kapandıktan sonra açıkladı.",
-   "overlapping": [
-    "bekannt geben (B1)",
-    "ansagen (A2)"
-   ]
-  },
-  {
    "id": 4969,
    "de": "enthüllen",
    "typ": "Verb",

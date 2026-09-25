@@ -506,16 +506,6 @@
    ]
   },
   {
-   "id": 1370,
-   "de": "Achtung!",
-   "typ": "Sonstiges",
-   "niveau": "B1",
-   "formen": "",
-   "currentTr": "Dikkat!",
-   "currentBeispiel": "Achtung, hier endet die Straße!",
-   "currentBeispielTr": "Dikkat, yol burada bitiyor!"
-  },
-  {
    "id": 2752,
    "de": "statt",
    "typ": "Sonstiges",
