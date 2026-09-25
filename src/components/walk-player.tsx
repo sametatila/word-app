@@ -1,6 +1,6 @@
 "use client";
 
-import { glossFor, type GlossWord } from "@/lib/option-label";
+import { glossFor, spokenGloss, type GlossWord } from "@/lib/option-label";
 import { glossVoice } from "@/lib/tts/voices";
 import { apiFetch } from "@/lib/api-fetch";
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -152,12 +152,13 @@ function encourage(t: T): string {
  * boş segment dönüyor — yanlış dilde okumaktansa okumamak.
  */
 function glossSegment(word: GlossWord, lang: NativeLang): SpeechSegment {
-  const g = glossFor(word, lang);
-  if (!g) return { lang: "tr", text: "", narration: false };
+  // Okunan metin `spokenGloss`: ekranla aynı karşılık, ayırt edici parantez virgülle ("o, erkek").
+  const text = spokenGloss(word, lang);
+  if (!text) return { lang: "tr", text: "", narration: false };
   /* Karşılık KELİME KATMANI: anlatım sesiyle (Emel) değil, seçilen karakterin anadil sesiyle ve yalnız
      önceden üretilmiş dosyadan (`word`). Anlatım bayrağı kalıyor ama ses açıkça verildiği için belirleyici
      değil; `word` parçası öncesindeki anlatımla BİRLEŞMİYOR (birleşen metin tabloda olmazdı). */
-  return { lang, text: g.text, narration: true, voice: glossVoice(lang, selectedVoice()), word: true };
+  return { lang, text, narration: true, voice: glossVoice(lang, selectedVoice()), word: true };
 }
 
 /**

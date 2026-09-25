@@ -21648,6 +21648,27 @@ console.log("\n" + C.b + "248. SESLENDIRME SADELESTIRMESI VE ISTEGE BAGLI ON EK"
   );
 }
 
+/* ── 249. anlamin sesli hali ───────────────────────────────────────────────
+ * Yuruyus anlami sesli okuyup hedef kelimeyi soruyor. Parantez ayirt edici
+ * ("o (erkek)" / "o (kadin)"); seslendirme parantezi siliyordu ve he ile she
+ * ayni "o" diye okunuyordu. Iki istemci ayni donusumu yapmali: biri parantezi
+ * virgule cevirir oteki silerse ayni kelime iki ayri ses adresi ister ve
+ * kelime katmaninda dusus olmadigi icin biri sessiz kalir. */
+console.log("\n" + C.b + "249. anlamin sesli hali" + C.off);
+{
+  const govde249 = (p) => {
+    const x = read(p).replace(/\/\*[\s\S]*?\*\//g, " ");
+    const i = x.indexOf("function speechOfGloss");
+    const j = x.indexOf("\n}", i);
+    return i < 0 ? "yok" : x.slice(i, j).replace(/\s+/g, " ").trim();
+  };
+  sameList("speechOfGloss govdesi", [govde249("mobile/src/game/gloss.ts")], [govde249("src/lib/option-label.ts")]);
+  const yurMobil = read("mobile/src/screens/WalkModeScreen.tsx");
+  sameList("mobil yuruyus anlami speechOfGloss ile okunuyor", [/speechOfGloss\(glossText\(/.test(yurMobil) ? "evet" : "hayir"], ["evet"]);
+  const yurWeb = read("src/components/walk-player.tsx");
+  sameList("web yuruyus anlami spokenGloss ile okunuyor", [/const text = spokenGloss\(word, lang\)/.test(yurWeb) ? "evet" : "hayir"], ["evet"]);
+}
+
 /* ── 400. YONLENDIRME GENEL ADRESE ─────────────────────────────────────────
  * Uygulama nginx'in arkasinda `localhost:30xx` uzerinde calisiyor; rota
  * isleyicisindeki `req.url` bu IC adresi tasiyor. `new URL(yol, req.url)` ile

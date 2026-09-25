@@ -21,6 +21,14 @@ export function glossOf(w: GlossWord): Gloss {
   return { text: w.tr, sub: w.en ?? null };
 }
 
+/**
+ * Karşılığın SESLİ hâli: parantez ayırt edicidir ("o (erkek)" / "o (kadın)"), seslendirme onu silerdi.
+ * Web `lib/option-label` `speechOfGloss` ile aynı gövde (parity).
+ */
+export function speechOfGloss(text: string): string {
+  return text.replace(/\s*\(([^()]*)\)/g, ", $1");
+}
+
 /** Turun taşıdığı cümle çevirilerinden anadildeki; yoksa null. */
 export function exampleOf(s: { sentenceTr?: string | null; sentenceEn?: string | null; sentenceDe?: string | null }): Gloss | null {
   const lang = currentLang();

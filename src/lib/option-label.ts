@@ -79,7 +79,17 @@ const GRAMMAR_NOTE = /(^|[\s;,/(])-\p{L}|\b(tanımlık|mastar|ön eki|son eki|(i
  */
 export function spokenGloss(w: GlossWord, native: NativeLang): string | null {
   const g = glossFor(w, native);
-  return g && !GRAMMAR_NOTE.test(g.text) ? g.text : null;
+  return g && !GRAMMAR_NOTE.test(g.text) ? speechOfGloss(g.text) : null;
+}
+
+/**
+ * Karşılıktaki parantez SESTE ayırt edicidir, süs değil: "o (erkek)" / "o (kadın)",
+ * "tarih (geçmiş)", "hasta (kişi)". Seslendirme parantezi siliyor (`cleanForSpeech`, orada parantez
+ * çoğunlukla Hochdeutsch notu) ve yürüyüş he ile she için aynı "o"yu okuyup ikisinden birini bekliyordu.
+ * Parantez virgüle dönüyor: "o, erkek". Mobil `game/gloss` `speechOfGloss` ile aynı gövde (parity).
+ */
+export function speechOfGloss(text: string): string {
+  return text.replace(/\s*\(([^()]*)\)/g, ", $1");
 }
 
 /**

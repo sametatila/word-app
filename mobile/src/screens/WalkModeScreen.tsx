@@ -10,6 +10,7 @@ import { FlowScreen, FlowTopBar, FlowActions, FlowNote, ResultHero, StatRow, Cov
 import { track } from "../lib/track";
 import { shareResult } from "../lib/share";
 import { fetchSession, submitAnswers, todayStr, type AnswerOut, type Round } from "../game/session";
+import { speechOfGloss } from "../game/gloss";
 import { useAuth } from "../lib/AuthContext";
 import { speakAndWaitVoiced, currentVoiceId } from "../lib/tts";
 import { bridgeStop } from "../lib/ttsBridge";
@@ -239,7 +240,7 @@ export function WalkModeScreen() {
     return fin(speakAndWaitVoiced(txt, currentVoiceId(), { native: screenOffRef.current, word: true })) as Promise<void>;
   };
   const sayGloss = (w: WalkWord) => {
-    const txt = glossText(w);
+    const txt = speechOfGloss(glossText(w));
     if (!txt) return Promise.resolve();
     const fin = probeSay("native", txt);
     return fin(speakAndWaitVoiced(txt, glossVoice(currentLang(), currentVoiceId()), { native: screenOffRef.current, word: true })) as Promise<void>;
