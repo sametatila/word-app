@@ -14,6 +14,8 @@ import { mockAccess } from "@/lib/premium/access";
 import { ChevronRightIcon, ExamIcon, LockIcon } from "@/components/icons";
 import { EmptyCard } from "@/components/empty-card";
 import { FlowNote } from "@/components/flow";
+import { UnlockProgress } from "@/components/unlock-progress";
+import { packCopy, tieredCopy } from "@/lib/premium/unlock-copy";
 import { getT, getLang } from "@/lib/i18n/server";
 import { formatPercent, isNativeLang } from "@/lib/i18n/dict";
 import { nativeMockText } from "@/lib/lessons/native-server";
@@ -91,6 +93,12 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
     return null;
   });
   const isLocked = (id: string) => (access ? !access.unlocked.includes(id) : false);
+  const freeCopy = access && !access.premium ? tieredCopy(access.unlock, "mock") : null;
+  const pack = access ? packCopy(access.unlock) : null;
+  /* Kilitli kâğıdın kartındaki tek cümle: "ne zaman ve nasıl açılır". */
+  const lockedWhen = freeCopy?.when
+    ? t(freeCopy.when.key, { ...freeCopy.when.params, gain: t(freeCopy.when.gain.key, freeCopy.when.gain.params) })
+    : null;
 
   const [running, done] = await Promise.all([
     db
@@ -199,17 +207,20 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
           çarptıktan sonra öğrenmek, kuralı hiç söylememekle aynı şey.
           Tek satırlık bilgi: akış şablonunun notu (`FlowNote`), kilit
           ikonuyla — mobil aynı satırı çiziyor. */}
+      {/* HAKKIN NASIL AÇILDIĞI (2026-09-25): ücretsizde "o kâğıdı bitir + 7
+          günlük seri" → +1; premium'da "paketi bitir" → sonraki paket. Kural
+          kilide çarptıktan SONRA değil, listeden ÖNCE söyleniyor; ilerleme
+          (✓ bitirdin · seri 3/7 · 4 gün sonra) aynı kartta. */}
       {access && !access.premium ? (
-        <FlowNote icon={<LockIcon size={16} className="muted shrink-0" />} text={t("mockpack.free_note", { n: access.freeLimit })} />
+        <UnlockProgress
+          copy={freeCopy}
+          celebrate={{ key: `mock:${course}:${level}`, open: access.unlock.open, gain: { key: "unlock.gain_mock", params: { n: 1 } } }}
+        />
       ) : null}
       {access && access.premium && papers.some((p) => isLocked(p.id)) ? (
         <FlowNote
           icon={<LockIcon size={16} className="muted shrink-0" />}
-          text={
-            access.unlockOnComplete
-              ? t("mockpack.unlock_hint_both", { pct: access.unlockPct })
-              : t("mockpack.unlock_hint_score", { pct: access.unlockPct })
-          }
+          text={pack ? t(pack.key, pack.params) : t("mockpack.unlock_hint", { n: access.packs[0]?.ids.length ?? 3 })}
         />
       ) : null}
 
@@ -319,9 +330,12 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
               })}
             </div>
             {locked && !access?.premium ? (
-              <Link href="/premium" prefetch={false} className="btn btn-primary mt-3 w-full px-4 py-2.5 text-body">
-                {t("gate.see_plans")}
-              </Link>
+              <>
+                {lockedWhen ? <p className="muted mt-3 text-caption">{lockedWhen}</p> : null}
+                <Link href="/premium" prefetch={false} className="btn btn-primary mt-3 w-full px-4 py-2.5 text-body">
+                  {t("unlock.premium_now")}
+                </Link>
+              </>
             ) : null}
           </section>
           );
