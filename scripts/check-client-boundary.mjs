@@ -31,6 +31,7 @@
  *    kullanılmıyorlar. Kullanılırlarsa bu kapı onları GÖRMEZ - bilerek dar.
  */
 import { readdirSync, readFileSync, existsSync } from "node:fs";
+import path from "node:path";
 
 const walk = (d, out = []) => {
   for (const e of readdirSync(d, { withFileTypes: true })) {
@@ -321,10 +322,17 @@ const PUBLIC_ROUTES = new Map([
 const GATES = /getUserId\(|getAccountUserId\(|getUserInfo\(|requireUser\(|requireAccount\(|auth\.api\.getSession|cronGate\(|adminGate\(|adminWriteGate\(|verifyAppleNotification\(|adapter\.parse\(/;
 const apiFiles = walk("src/app/api");
 const ungated = new Set();
+/* YENİDEN DIŞA AKTARAN UÇ (eski adresin geçici takma adı, ör. `api/lesson`)
+   kendi gövdesini taşımıyor: kapısı hedefin kapısı. Hedef ölçülüyor. */
+const REEXPORT = /export\s*\{[^}]*\}\s*from\s*"(\.\.?\/[^"]+\/route)"/;
+const gateSource = (file) => {
+  const src = read(file).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+  const re = REEXPORT.exec(src);
+  return re ? gateSource(path.join(path.dirname(file), `${re[1]}.ts`)) : src;
+};
 for (const file of apiFiles) {
   if (!/\/route\.ts$/.test(file) || PUBLIC_ROUTES.has(file)) continue;
-  const src = read(file).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
-  if (!GATES.test(src)) ungated.add(file);
+  if (!GATES.test(gateSource(file))) ungated.add(file);
 }
 for (const [file] of PUBLIC_ROUTES) {
   if (!apiFiles.includes(file)) { ungated.add(`${file} (kayıtlı ama dosya yok)`); continue; }
