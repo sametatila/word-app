@@ -29,10 +29,16 @@ de-DE: **"Sprechen, verstehen, bestehen"** (29).
 **Play kısa açıklaması (tr, 70):** "Konuş, anla, sınava hazırlan: A1'den C1'e Almanca, Türkçe
 anlatımla." (iOS altyazısıyla aynı cümleyle başlar.)
 
-**Sayılar:** açıklamada somut ama YUVARLAK ve iki kursta da doğru kalacak biçimde (2026-09-25
-ölçümü: Almanca 580 konuşma / 995 alıştırma / 60 deneme sınavı, İngilizce 500 / 939 / 60): "Almanca'da
-550'den fazla konuşma", "900'den fazla beceri alıştırması", "60 deneme sınavı"; İngilizce için
-"500 konuşma" (500'den fazla DENMEZ). İçerik azalırsa bu cümleler gözden geçirilir.
+**Sayılar (2026-09-25, Samet):** birim KELİME + ALIŞTIRMA + DENEME SINAVI; adım/ünite sayısı
+anılmaz. Yuvarlak ve doğru: Almanca "8.500'den fazla kelime, 900'den fazla alıştırma, 60 deneme
+sınavı" (ölçüm: 8.707 kelime, beceri alıştırması canlıda 1.120, repo sayımı 995; 60 deneme
+sınavı); İngilizce "7.000'den fazla kelime, 900'den fazla alıştırma, 60 deneme sınavı" (7.175 /
+1.034 canlı, 939 repo / 60). İçerik azalırsa bu cümleler gözden geçirilir.
+
+**Konuşma adımının vitrindeki anlatımı (Samet'in seçtiği metin):** "Doktorda, iş
+görüşmesinde, yol sorarken… Gerçek hayatta karşına çıkacak durumları yapay zekâ karakteriyle
+konuşarak çalışırsın. Hatanı hemen düzeltir, takıldığında ne diyebileceğini önerir." Ücretsizde
+seviye başına sınırlı olduğu için "ücretsiz ve sınırsız" denmez.
 
 **Açıklama metni kararları (2026-09-25):** her iddia koda, canlı ayara ve içeriğe göre
 doğrulanır, gerekirse metin değişir (Samet'in kuralı). Doğrulanmış tr taslağı ve 32
@@ -58,8 +64,8 @@ satırlık kanıt tablosu oturum çıktısında; kararlar:
   eder (maliyetsiz). Premium tavanı 300 mesaj/gün KALIYOR. Metin sohbeti "ücretsiz ve
   sınırsız" diye anmaz.
 
-**Beş sütun (öncelik sırası):** 1) A1'den C1'e tam müfredat, Türkçe anlatım · 2) konuşarak
-öğren: her konuşmada sohbet + konuşmaya geri bildirim · 3) dört becerili deneme sınavları,
+**Beş sütun (öncelik sırası):** 1) **A1'den C1'e adım adım**, Türkçe anlatım ("müfredat" ve "tam" kullanılmaz) · 2) konuşarak
+öğren: gerçek hayattan durumlarda yapay zekâ karakteriyle sohbet + konuşmaya geri bildirim · 3) dört becerili deneme sınavları,
 konuşma ve yazma da puanlanır · 4) Cepte yürüyüş (ekran kapalı, **Premium**; ekran açık
 yürüyüş ücretsizde günde 3 tur, `plan.free_walk`) · 5) günlük kelime turu ve seri.
 
@@ -67,11 +73,11 @@ yürüyüş ücretsizde günde 3 tur, `plan.free_walk`) · 5) günlük kelime tu
 
 | # | Sütun | Ekran | İçerik durumu (çekimde hazırlanacak) | Altyazı taslağı |
 |---|---|---|---|---|
-| 1 | Tam müfredat | Patika: A1→C1 ünite haritası | B1'de ilerleyen hesap; A1–A2 tamamlanmış görünür | A1'den C1'e, Türkçe anlatımla |
-| 2 | Konuşma | Konuşma içi sohbet | Gerçek bir sahne (ör. B1 doktor randevusu); kullanıcının cümlesi ve düzeltmesi görünür; yapay zekâ bildirimi görünür | Konuş, düzeltmeni anında gör |
-| 3 | Sınav | Deneme sınavı sonucu | B1 yazma ya da konuşma değerlendirmesi, ölçüt ölçüt puan | Konuşma ve yazma da puanlanır |
+| 1 | A1'den C1'e adım adım | Patika: A1→C1 ünite haritası (Okuma, Dinleme, Konuşma, Yazma, Dil bilgisi, Quiz, Sınav) | B1'de ilerleyen hesap; A1–A2 tamamlanmış görünür | A1'den C1'e adım adım, Türkçe anlatımla |
+| 2 | Konuşma | Patika › Konuşma adımı: sahne sohbeti | Gerçek bir sahne (ör. B1 doktor randevusu); kullanıcının cümlesi ve düzeltmesi görünür; yapay zekâ bildirimi görünür | Konuş, düzeltmeni anında gör |
+| 3 | Sınav | Deneme sınavı sonucu | B1 deneme sınavı: genel yüzde, bölüm sonuçları ve yazma/konuşma için hata→düzeltme listesi (ölçüt çubuğu YOK; deneme sınavında öyle bir ekran yok) | Konuşma ve yazma da puanlanır |
 | 4 | Fark | Cepte yürüyüş + kilit ekranı | Ekran kapalı akış; kilit ekranında "Yürüyüş modu açık" | Ekran kapalı, yolda çalış · Premium |
-| 5 | Alışkanlık | Günlük kelime turu | Sesli tur, kalan kelime sayısı | Her gün, tam unutmadan önce |
+| 5 | Alışkanlık | Günlük kelime turu | Sesli tur, kalan kelime sayısı | Her gün, unutmadan önce |
 | 6 | Beceriler | Beceri kütüphanesi | Beş beceri kartı | Okuma, dinleme, yazma, konuşma, dil bilgisi |
 
 **iPad 13" (yatay, 4 kare):** 1, 2, 3 ve 6 (tablet içerik kolonu en iyi bu ekranlarda).
