@@ -8344,7 +8344,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
        birakiyor - olcu ilk yazimda tam bunun yuzunden "YOK" dedi. Desenler
        kod bicimine cakili (`API_BASE = "https://..."`, `|| "https://..."`),
        o yuzden ham metin guvenli. */
-    const istemci = read("mobile/src/api/client.ts");
+    const istemci = read("mobile/src/api/base.ts");
     const site = read("src/lib/site.ts");
     const paylas = read("src/lib/share.ts");
     const gradle = read("mobile/android/app/build.gradle");
@@ -8353,7 +8353,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 
     const hostlar = [...new Set([...manifest.matchAll(/android:host="([^"]+)"/g)].map((m) => m[1]))];
     const alan = [...new Set([...yetki.matchAll(/applinks:([\w.]+)/g)].map((m) => m[1]))];
-    const apiHost = (istemci.match(/API_BASE = "https:\/\/([\w.]+)"/) ?? [])[1] ?? "YOK";
+    const apiHost = (istemci.match(/PRIMARY_BASE = "https:\/\/([\w.]+)"/) ?? [])[1] ?? "YOK";
     const siteHost = (site.match(/\|\| "https:\/\/([\w.]+)"/) ?? [])[1] ?? "YOK";
     const paylasHost = [...new Set([...paylas.matchAll(/"https:\/\/([\w.]+)"/g)].map((m) => m[1]))];
 
@@ -8376,14 +8376,22 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       [
         "android manifesto=" + (hostlar[0] ?? "YOK"),
         "ios yetkileri=" + (alan[0] ?? "YOK"),
-        "mobil API_BASE=" + apiHost,
+        "mobil PRIMARY_BASE=" + apiHost,
         "web site=" + siteHost,
         "web paylas=" + (paylasHost[0] ?? "YOK"),
       ],
-      ["android manifesto=" + apiHost, "ios yetkileri=" + apiHost, "mobil API_BASE=" + apiHost, "web site=" + apiHost, "web paylas=" + apiHost],
+      ["android manifesto=" + apiHost, "ios yetkileri=" + apiHost, "mobil PRIMARY_BASE=" + apiHost, "web site=" + apiHost, "web paylas=" + apiHost],
       "bulunan",
-      "beklenen (API_BASE)",
+      "beklenen (PRIMARY_BASE)",
     );
+
+    /* YEDEK ALAN ADI (2026-09-25): engelli aglarda mobilin gectigi ikinci
+       adres. Web `lib/site` FALLBACK_ORIGIN (trustedOrigins, yonlendirme
+       sabitlemesi, noindex) ile mobil `api/base` FALLBACK_BASE ayni olmali;
+       ayrisirsa mobil yedekte her yazma istegi Origin denetimine takilir. */
+    const webYedek = (site.match(/FALLBACK_ORIGIN = "https:\/\/([\w.]+)"/) ?? [])[1] ?? "YOK";
+    const mobilYedek = (istemci.match(/FALLBACK_BASE = "https:\/\/([\w.]+)"/) ?? [])[1] ?? "YOK";
+    sameList("yedek alan adi web ve mobilde ayni", ["yedek=" + mobilYedek], ["yedek=" + webYedek], "mobil", "web");
 
     const appId = (gradle.match(/applicationId\s+"([\w.]+)"/) ?? [])[1] ?? "YOK";
     const paket = (assetlinks.match(/PACKAGE\s*=\s*"([\w.]+)"/) ?? [])[1] ?? "YOK";
@@ -17143,6 +17151,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
          kaniti, kisa omurlu. Hesaba ait OLAMAZ - devir tamamlanana kadar hesap
          yok (bkz. lib/handoff). */
       "lernomi:handoff", //            giris devri nonce'u (15 dk)
+      /* API tabani secimi (asil / yedek adres, 24 saat): AGA ait, hesaba degil.
+         Cikista silinseydi engelli agdaki kullanici her giriste once asil
+         adresin dusmesini beklerdi (bkz. api/base). */
+      "lernomi:api-base", //           yedek adres secimi
       "lernomi:guest", //              misafir kimligi ve jetonu: hesaba birlestirmenin tek kaniti, birlesince siliniyor
       "lernomi-lang", //               arayuz dili
       "lernomi-conversation-handsfree", //   eller serbest tercihi
@@ -20602,17 +20614,26 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
      hicbir sey. Adlar dosya yolu degil ROL, cunku yollar zaten farkli. */
   const rol = (yol) =>
     /auth/.test(yol) ? "better-auth" : /track/.test(yol) ? "telemetri" : /mascot/.test(yol) ? "varlik" : /speak-button/.test(yol) ? "ses on indirme" : yol;
+  /* 2026-09-25: mobilde better-auth ve telemetri de ortak tasiyicidan
+     (`fetchWithTimeout`) geciyor - engelli agda yedek adrese gecis orada
+     (bkz. mobile/src/api/base). Mobilin tavansiz kumesi artik BOS olabiliyor;
+     olcu "mobil, webin ortak muafiyetlerinden FAZLASINI tasimiyor" oldu:
+     mobil daha siki olabilir, daha gevsek olamaz. */
+  const ortakRoller = new Set([...tavansiz.keys()].map(rol).filter((r) => r === "better-auth" || r === "telemetri"));
   sameList(
-    "tavansiz fetch: iki tarafin muaf kumesi",
-    [...mobilTavansiz.keys()].map(rol).sort(),
-    [...tavansiz.keys()].map(rol).filter((r) => r === "better-auth" || r === "telemetri").sort(),
+    "tavansiz fetch: mobil muafiyetleri webin ortak rolleri icinde",
+    ["fazla=" + ([...mobilTavansiz.keys()].map(rol).filter((r) => !ortakRoller.has(r)).sort().join(",") || "yok")],
+    ["fazla=yok"],
     "mobil",
-    "web (ortak roller)",
+    "beklenen",
   );
+  /* Olculen (2026-09-25): uc ham cagri, ucu de tavanli - ag teshisi yoklamasi,
+     taban yoklamasi (`api/base` probeBase) ve tek tasiyici (`api/client`
+     sendOnce). Esik uc. */
   sameList(
     "mobil fetch taramasi bos degil",
-    ["cagri>=4=" + (mobilCagri >= 4) + " sarmal>=2=" + (mobilCagri - [...mobilTavansiz.values()].reduce((a, b) => a + b, 0) >= 2)],
-    ["cagri>=4=true sarmal>=2=true"],
+    ["cagri>=3=" + (mobilCagri >= 3) + " sarmal>=2=" + (mobilCagri - [...mobilTavansiz.values()].reduce((a, b) => a + b, 0) >= 2)],
+    ["cagri>=3=true sarmal>=2=true"],
     "bulunan",
     "beklenen",
   );
