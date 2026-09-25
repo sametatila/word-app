@@ -197,21 +197,24 @@ export const DEFAULT_PREMIUM_CONFIG: PremiumConfig = {
  * `kind`'ı), kota anahtarı ön eki ve `PremiumGate` tipinin kendisi. Buraya
  * eklenen her yetenek üç platformda da aynı adla ölçülüyor.
  *
- * DEĞERLER ARAYÜZE GİTMİYOR ve gitmemeli. Türkçe yazılı duruyorlar ve hiçbir
+ * DEĞERLER ARAYÜZE GİTMİYOR ve gitmemeli. Eskiden Türkçe etiketlerdi ve hiçbir
  * bileşen onları okumuyor (ölçüldü: `PREMIUM_GATES` yalnız bu dosya, `index`
  * ve bir yorumda geçiyor) — paywall'ın söylediği her satır ANAHTAR + PARAMETRE
  * olarak dönüyor (hemen aşağıda, `premiumScopeLines`), çeviri katmanı istemcide
- * kalıyor. Buradaki metinler yalnız okuyan insana "bu kapı neydi" diyen
+ * kalıyor. Yanlarındaki yorumlar yalnız okuyan insana "bu kapı neydi" diyen
  * etiketler. Biri bunları ekrana basarsa arayüzü Almanca olan kullanıcı Türkçe
  * görür; o yüzden yeni bir kapı eklerken metni buraya değil sözlüğe yaz.
  */
 export const PREMIUM_GATES = {
-  mock_exam: "Deneme sınavları",
-  pocket_walk: "Cepte yürüyüş (ekran kapalı)",
-  walk: "Yürüyüş modu oturumu (günlük)",
-  conversation: "Patika Konuşma adımı",
-  speaking: "Konuşma değerlendirmesi (Beceriler)",
-  writing: "Yazma değerlendirmesi (Patika Yazma, Beceriler)",
+  /* Değerler anahtarın kendisi; ne oldukları yorumda. Ekrana giden metin
+     sözlükte (yukarıdaki not) — burada Türkçe dizge tutmak yalnız ham metin
+     kapısını (`i18n-hardcoded`) şişiriyordu. */
+  mock_exam: "mock_exam", // Deneme sınavları
+  pocket_walk: "pocket_walk", // Cepte yürüyüş (ekran kapalı)
+  walk: "walk", // Yürüyüş modu oturumu (günlük)
+  conversation: "conversation", // Patika Konuşma adımı
+  speaking: "speaking", // Konuşma değerlendirmesi (Beceriler)
+  writing: "writing", // Yazma değerlendirmesi (Patika Yazma, Beceriler)
 } as const;
 
 export type PremiumGate = keyof typeof PREMIUM_GATES;
