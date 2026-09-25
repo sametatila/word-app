@@ -51,8 +51,14 @@ const numbers = (t: string): string[] =>
  * çevrilmesine izin verirdi (`contains-checker-tradeoffs`in tersi yön,
  * çünkü burada yanlış kabulün bedeli daha yüksek).
  */
+/*
+  Sözcük sınırı Unicode bakışla (`task` kapısıyla aynı): `\b` ASCII harfe
+  göre çalışıyor ve „özne“, „üçüncü“ gibi ö/ü ile başlayan sözcüklerde hiç
+  eşleşmiyordu. Parti 11–20'de altı yanlış ret bundandı. `kim`, `izin` ve
+  soru eki `mi` biçimleri de o turda eklendi („Kiminle“, „… miyim?“).
+*/
 const TR_WORDS =
-  /\b(bir|ve|ile|için|değil|demek|var|yok|olur|olunur|olmak|gibi|daha|çok|ama|yani|kadar|sonra|önce)\b/i;
+  /(?<!\p{L})(?:bir|ve|ile|için|değil|demek|var|yok|olur|olunur|olmak|gibi|daha|çok|ama|yani|kadar|sonra|önce|kim|kiminle|izin|buna|mi|mı|mu|mü|miyim|mıyım|musun|misin)(?!\p{L})/iu;
 /*
   Dilbilgisi TERİMLERİ de Türkçe ve tırnak içinde geçiyor: „sein + zu +
   mastar“ gibi formüller yarısı Almanca yarısı Türkçe. Almanca yarısı
@@ -60,8 +66,9 @@ const TR_WORDS =
   terimler ayrıca listeleniyor. Özel harf taşıyanlar (sıfat, çoğul, hâl)
   zaten yakalanıyor; buraya yalnız düz harfli olanlar giriyor.
 */
-const TR_TERMS = /\b(mastar|ortaç|isim|fiil|zamir|özne|nesne|tekil|edat|kip|ek)\b/i;
-const turkish = (t: string): boolean => /[ışğİĞŞ]/.test(t) || TR_WORDS.test(t) || TR_TERMS.test(t);
+const TR_TERMS = /(?<!\p{L})(?:mastar|ortaç|isim|fiil|zamir|özne|nesne|tekil|edat|kip|ek|biçim|üçüncü)(?!\p{L})/iu;
+/* `ç` Almancada ve İngilizcede yok: „oldukça“ gibi düz harfli bir sözcüğü tek başına ele veriyor. */
+const turkish = (t: string): boolean => /[ışğçİĞŞÇ]/.test(t) || TR_WORDS.test(t) || TR_TERMS.test(t);
 
 /**
  * Açıklık ALMANCA ya da İNGİLİZCE görünüyor mu? Kural ancak öyleyse
