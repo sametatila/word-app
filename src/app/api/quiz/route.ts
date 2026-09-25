@@ -14,7 +14,8 @@ import { personalItem, selectItems, weekIndexOf, weekStartOf, type PersonalWord 
 import { disabledItemsOf } from "@/lib/content/read";
 import { quizPack, packCourseOf } from "@/lib/content/packs";
 import { resolveByIds, resolveItem, scoreQuiz, toClient } from "@/lib/weekly-quiz/scoring";
-import type { QuizCourse, QuizItem, QuizLevel, QuizNative } from "@/lib/weekly-quiz/types";
+import { localiseQuizWeek } from "@/lib/weekly-quiz/native-server";
+import type { QuizCourse, QuizItem, QuizLevel, QuizNative, QuizWeek } from "@/lib/weekly-quiz/types";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -74,9 +75,23 @@ async function personalPool(userId: string, course: string, native: QuizNative):
   }
 }
 
+/**
+ * Haftanın paketi, öğrencinin ANA DİLİNE çözülmüş.
+ *
+ * Kapak (tema, tür etiketleri) ve açıklamalar (`why`) Türkçe yazılı; anadili
+ * İngilizce ya da Almanca olan öğrenci onları kendi dilinde görüyor
+ * (`weekly-quiz/native`). Üç yol da — kapak, sonuç dökümü, puanlama — paketi
+ * BURADAN alıyor, yani kapak ile sonuç aynı dilde kalıyor. Çeviri hep-ya-hiç:
+ * haftanın tek dizesi eksikse hafta bütünüyle Türkçe.
+ */
+async function packFor(course: QuizCourse, level: QuizLevel, weekIx: number, native: QuizNative): Promise<QuizWeek | null> {
+  const pack = quizForWeek(course, level, weekIx);
+  return pack ? localiseQuizWeek(pack, native) : null;
+}
+
 /** Yazılı bloklar + (varsa) kişisel blok. */
 async function buildItems(userId: string, course: QuizCourse, level: QuizLevel, week: string, weekIx: number, native: QuizNative): Promise<{ quizId: string; items: QuizItem[] } | null> {
-  const pack = quizForWeek(course, level, weekIx);
+  const pack = await packFor(course, level, weekIx, native);
   if (!pack) return null;
   const seed = `${userId}:${week}`;
   /* KAPATILMIŞ MADDELER HAVUZDAN DÜŞÜYOR.
@@ -94,9 +109,14 @@ async function buildItems(userId: string, course: QuizCourse, level: QuizLevel, 
   return { quizId: pack.id, items };
 }
 
-/** Saklanan örneği koddan yeniden çözer — kişisel madde dahil. */
+/**
+ * Saklanan örneği koddan yeniden çözer — kişisel madde dahil.
+ *
+ * Dil denemenin AÇILDIĞI andaki anadil (`attempt.native`): şık varyantı da
+ * ona göre seçiliyor, açıklama da aynı okura yazılmış olmalı.
+ */
 async function rehydrate(attempt: Attempt, course: QuizCourse, level: QuizLevel, weekIx: number): Promise<QuizItem[]> {
-  const pack = quizForWeek(course, level, weekIx);
+  const pack = await packFor(course, level, weekIx, attempt.native as QuizNative);
   const ids = (attempt.itemIds as string[]) ?? [];
   const byId = new Map((pack?.items ?? []).map((i) => [i.id, i]));
   const out: QuizItem[] = [];
@@ -162,7 +182,8 @@ export async function GET() {
       );
     }
 
-    const pack = quizForWeek(course, level, weekIx);
+    const useNative = (existing?.native as QuizNative) ?? native;
+    const pack = await packFor(course, level, weekIx, useNative);
     if (!pack) {
       // O kurs/seviye için içerik yok: ekran bunu dürüstçe söylüyor.
       return NextResponse.json({ week, done: false, quiz: null, empty: true }, { headers: { "cache-control": "no-store" } });
@@ -187,7 +208,6 @@ export async function GET() {
       void track(userId, "exam_start", serverDay(), 0, `usage:${level}`);
     }
 
-    const useNative = (existing?.native as QuizNative) ?? native;
     return NextResponse.json(
       {
         week,

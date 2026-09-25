@@ -17,6 +17,8 @@ import { personalItem, selectItems, weekIndexOf, weekStartOf } from "../src/lib/
 import { resolveByIds, resolveItem, scoreQuiz, toClient, weakestBlock } from "../src/lib/weekly-quiz/scoring";
 import { QUIZ_PLAN, type QuizItem } from "../src/lib/weekly-quiz/types";
 import { quizForWeek, quizWeeksFor, QUIZ_WEEKS } from "../src/lib/weekly-quiz";
+import { quizKey, resolveQuizWeek, type QuizDict } from "../src/lib/weekly-quiz/native";
+import { readdirSync, readFileSync } from "node:fs";
 
 let failures = 0;
 let total = 0;
@@ -206,6 +208,53 @@ check(
   "kişisel madde ortak puanlayıcıdan geçiyor",
   scoreQuiz([resolveItem(pi as QuizItem, "tr")], { [pi.id]: pi.answer }).correct === 1,
 );
+
+/* ── 4. Ana dil: kapak ve sonuç dökümü ────────────────────────────────── */
+
+/*
+  DUMAN TESTİ, gerçek çevirilerle. Sözlük üretilen dosyadan değil DEPODAKİ
+  `out/` dizinlerinden kuruluyor (`apply.mjs` ile aynı anahtar), yani test
+  `conversations:apply` koşturulmadan da çalışıyor. İngilizce arayüz Almanca
+  kursun, Almanca arayüz İngilizce kursun quizini görüyor (`PAIR_READY`).
+  Sınanan yol `/api/quiz` ile aynı: hafta çözülüyor → madde seçiliyor →
+  istemci nesnesi → puanlama ve açıklama dökümü.
+*/
+console.log("\nAna dil");
+const quizDictOf = (dir: string, field: "en" | "de"): QuizDict => {
+  const out: QuizDict = {};
+  const root = `data/weekly-quiz/prose/${dir}/`;
+  for (const f of readdirSync(root).filter((x) => x.endsWith(".json")))
+    for (const r of JSON.parse(readFileSync(root + f, "utf8")) as { tr: string; kind: "themeTr" | "genreTr" | "why"; en?: string; de?: string }[])
+      out[quizKey(r.kind, r.tr)] = (r[field] ?? r.en) as string;
+  return out;
+};
+const TR_LETTERS = /[ışğİĞŞ]/;
+for (const [native, course, dir] of [
+  ["en", "de", "out"],
+  ["de", "en", "out-de"],
+] as const) {
+  const week = quizForWeek(course, "A1", 0)!;
+  const dict = quizDictOf(dir, native);
+  const local = resolveQuizWeek(dict, week, native);
+  check(`${native} arayüz · ${week.id} çözülüyor`, local !== null);
+  if (!local) continue;
+  check(`${native} kapak: tema Türkçe değil`, local.themeTr !== week.themeTr && !TR_LETTERS.test(local.themeTr), local.themeTr);
+  check(`${native} kapak: tür etiketleri çevrildi`, local.stimuli.every((x, i) => x.genreTr !== week.stimuli[i].genreTr));
+  check(`${native} öğrenilen dil dokunulmadı`, local.theme === week.theme && local.items.every((it, i) => it.stem === week.items[i].stem));
+  const picked = selectItems(local, { seed: "native" });
+  const wrong = Object.fromEntries(picked.map((it) => [it.id, (resolveItem(it, native).answer + 1) % it.options.length]));
+  const score = scoreQuiz(resolveByIds(local, picked.map((i) => i.id), native), wrong);
+  check(
+    `${native} sonuç: her açıklama ${native === "en" ? "İngilizce" : "Almanca"}`,
+    score.items.length > 0 && score.items.every((i) => !TR_LETTERS.test(i.why) && dict[quizKey("why", i.why)] === undefined),
+    score.items.map((i) => i.why.slice(0, 40)).join(" | "),
+  );
+  console.log(`      ${local.themeTr} · ${score.items[0]?.why.slice(0, 80)}…`);
+  const cut = { ...dict };
+  delete cut[quizKey("why", resolveItem(week.items[0], native).why)];
+  check(`${native} hep-ya-hiç: tek açıklama eksikse hafta Türkçe kalır`, resolveQuizWeek(cut, week, native) === null);
+}
+check("Türkçe okur çözücüden geçmiyor", quizForWeek("de", "A1", 0)!.themeTr === "Tanışma");
 
 console.log(`\n${failures === 0 ? "tamam" : "BAŞARISIZ"}: ${total - failures}/${total}`);
 process.exit(failures === 0 ? 0 : 1);

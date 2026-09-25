@@ -40,6 +40,8 @@ type ClientItem = {
 type Stimulus =
   | { kind: "text"; id: string; genre: string; genreTr: string; title?: string; body: string }
   | { kind: "audio"; id: string; genre: string; genreTr: string; segments: { speaker?: string; text: string }[]; plays: 1 | 2 };
+/* `themeTr`, `genreTr` ve sonuçtaki `why` öğrencinin ANADİLİNDE geliyor (adları
+   tarihsel): `/api/quiz` Türkçe yazılmış quizi `weekly-quiz/native` ile çözüyor. */
 type Quiz = { id: string; theme: string; themeTr: string; level: string; stimuli: Stimulus[]; items: ClientItem[] };
 type ScoredItem = { itemId: string; block: ClientItem["block"]; chosen: number | null; answer: number; correct: boolean; why: string; targets: string[] };
 type Score = { correct: number; total: number; pct: number; byBlock: { block: ClientItem["block"]; correct: number; total: number }[]; items: ScoredItem[]; band: string };
