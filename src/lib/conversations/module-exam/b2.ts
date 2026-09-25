@@ -30,9 +30,9 @@ export const B2_EXAMS: ModuleExamPlan[] = [
     canDo: [
       { de: "Ich kann eine Präsentation strukturiert eröffnen.", tr: "Bir sunumu planlı biçimde açabiliyorum.", en: "I can open a presentation in a structured way." },
       { de: "Ich kann Zahlen und Grafiken im Passiv beschreiben.", tr: "Sayıları ve grafikleri edilgen yapıyla anlatabiliyorum.", en: "I can describe figures and charts using the passive." },
-      { de: "Ich kann eine Besprechung moderieren und Ergebnisse festhalten.", tr: "Bir toplantıyı yönetip kararları kayda geçirebiliyorum.", en: "I can moderate a meeting and record its results." },
+      { de: "Ich kann eine Besprechung moderieren und Ergebnisse festhalten.", tr: "Bir toplantıyı yönetip sonuçları kayda geçirebiliyorum.", en: "I can moderate a meeting and record its results." },
       { de: "Ich kann Gesagtes in indirekter Rede protokollieren.", tr: "Söylenenleri dolaylı aktarımla tutanağa geçirebiliyorum.", en: "I can record what was said in reported speech." },
-      { de: "Ich kann auf kritische Rückfragen souverän reagieren.", tr: "Zorlayıcı sorulara sakin ve düzenli cevap verebiliyorum.", en: "I can respond confidently to critical questions." },
+      { de: "Ich kann auf kritische Rückfragen souverän reagieren.", tr: "Zorlayıcı sorulara kendinden emin biçimde cevap verebiliyorum.", en: "I can respond confidently to critical questions." },
     ],
     listening: {
       title: "Die Teambesprechung",
@@ -49,7 +49,7 @@ export const B2_EXAMS: ModuleExamPlan[] = [
       ],
       questions: [
         { de: "Was ist letzte Woche abgeschlossen worden?", tr: "Geçen hafta ne tamamlandı?", options: ["Die Testphase", "Der Vertrag", "Die Schulung", "Die Abrechnung"], answer: 0 },
-        { de: "Worin liegt laut Frau Renner die Ursache der Verzögerung?", tr: "Bayan Renner'a göre gecikmenin sebebi nerede?", options: ["In der Technik", "Im Budget", "In den späten Rückmeldungen", "Im Personalmangel"], answer: 2 },
+        { de: "Worin liegt laut Frau Renner die Ursache der Verzögerung?", tr: "Bayan Renner'a göre gecikme neden kaynaklanıyor?", options: ["In der Technik", "Im Budget", "In den späten Rückmeldungen", "Im Personalmangel"], answer: 2 },
         { de: "Was wird im Protokoll festgehalten?", tr: "Tutanağa ne geçiriliyor?", options: ["Der Kunde übernimmt die Tests", "Der Termin wird um zwei Wochen verschoben", "Das Projekt wird gestoppt", "Die Besprechung wird vertagt"], answer: 1 },
       ],
     },
@@ -116,7 +116,7 @@ export const B2_EXAMS: ModuleExamPlan[] = [
       situation: "Bir alıcı ile satış müdürü yıllık sözleşmeyi konuşuyor.",
       turns: [
         { speaker: "Vertrieb", de: "Unser Angebot liegt bei achtundvierzig Euro pro Einheit. Bei größeren Mengen ließe sich darüber reden.", tr: "Teklifimiz birim başına kırk sekiz euro. Büyük miktarlarda bunun üzerine konuşulabilir." },
-        { speaker: "Einkauf", de: "Wir könnten uns vierzig vorstellen. Kämen Sie uns bei der Menge entgegen, wären wir bei zweitausend Stück.", tr: "Kırkı düşünebiliriz. Miktarda bize yaklaşırsanız iki bin adette oluruz." },
+        { speaker: "Einkauf", de: "Wir könnten uns vierzig vorstellen. Kämen Sie uns beim Preis entgegen, würden wir zweitausend Stück abnehmen.", tr: "Kırkı düşünebiliriz. Fiyatta bize yaklaşırsanız iki bin adet alırız." },
         { speaker: "Vertrieb", de: "Vierzig ist zwar unter unserer Grenze, aber bei zweitausend Stück wird es interessant. Sagen wir vierundvierzig?", tr: "Kırk bizim sınırımızın altında, ama iki bin adette iş ilginçleşiyor. Kırk dört diyelim mi?" },
         { speaker: "Einkauf", de: "Beim Preis gebe ich nicht ganz nach, aber beim Termin bin ich flexibel. Zweiundvierzig, dafür Lieferung erst im Oktober.", tr: "Fiyatta tam geri adım atmıyorum ama tarihte esneğim. Kırk iki, karşılığında teslimat ekimde." },
         { speaker: "Vertrieb", de: "Das ließe sich machen. Sowohl Ihre als auch unsere Seite hätte damit etwas gewonnen.", tr: "Bu yapılabilir. Hem sizin hem bizim taraf böylece bir şey kazanmış olur." },
@@ -125,7 +125,7 @@ export const B2_EXAMS: ModuleExamPlan[] = [
       ],
       questions: [
         { de: "Welchen Preis nennt der Einkauf zuerst?", tr: "Satın alma önce hangi fiyatı söylüyor?", options: ["Vierundvierzig Euro", "Achtundvierzig Euro", "Vierzig Euro", "Zweiundvierzig Euro"], answer: 2 },
-        { de: "Was gibt der Einkauf im Gegenzug nach?", tr: "Satın alma karşılığında neden vazgeçiyor?", options: ["Bei der Menge", "Beim Liefertermin", "Bei der Qualität", "Bei der Zahlungsart"], answer: 1 },
+        { de: "Wobei ist der Einkauf nach eigener Aussage flexibel?", tr: "Satın alma, kendi sözüne göre hangi konuda esnek?", options: ["Bei der Menge", "Beim Liefertermin", "Bei der Qualität", "Bei der Zahlungsart"], answer: 1 },
         { de: "Worauf einigen sich beide Seiten?", tr: "İki taraf ne üzerinde anlaşıyor?", options: ["Auf vierzig Euro", "Auf achtundvierzig Euro", "Auf zweiundvierzig Euro", "Auf keinen Preis"], answer: 2 },
       ],
     },
@@ -157,7 +157,7 @@ export const B2_EXAMS: ModuleExamPlan[] = [
       minWords: 90,
       phrases: [
         { de: "Bezug nehmend auf Ihr Schreiben vom …", tr: "… tarihli yazınıza atıfla", en: "With reference to your letter of …" },
-        { de: "Das Gerät ist bereits … repariert worden.", tr: "Cihaz şimdiden … kez tamir edildi", en: "The device has already been repaired … times." },
+        { de: "Das Gerät ist bereits … repariert worden.", tr: "Cihaz şimdiye kadar … kez tamir edildi", en: "The device has already been repaired … times." },
         { de: "Ich sehe mich gezwungen, … zu …", tr: "…-mek zorunda kalıyorum", en: "I find myself compelled to …" },
         { de: "Ich bestehe auf …", tr: "… konusunda ısrar ediyorum", en: "I insist on …" },
         { de: "Ich bitte um eine Stellungnahme bis zum …", tr: "…-e kadar görüş bildirmenizi rica ediyorum", en: "I request a response by …" },
@@ -201,7 +201,7 @@ export const B2_EXAMS: ModuleExamPlan[] = [
       ],
       questions: [
         { de: "Was ist laut Meister dringend?", tr: "Ustaya göre acil olan ne?", options: ["Der Ölwechsel", "Die Bremsen", "Die Reifen", "Die Beleuchtung"], answer: 1 },
-        { de: "Warum muss das Öl nicht gewechselt werden?", tr: "Yağ neden değiştirilmek zorunda değil?", options: ["Weil es zu teuer ist", "Weil es im Frühjahr gemacht worden ist", "Weil der Wagen neu ist", "Weil die Kundin es selbst macht"], answer: 1 },
+        { de: "Warum muss das Öl nicht gewechselt werden?", tr: "Yağın neden değiştirilmesi gerekmiyor?", options: ["Weil es zu teuer ist", "Weil der Ölwechsel im Frühjahr gemacht worden ist", "Weil der Wagen neu ist", "Weil die Kundin es selbst macht"], answer: 1 },
         { de: "Was wird für Donnerstag vereinbart?", tr: "Perşembe için ne kararlaştırılıyor?", options: ["Nur eine Besichtigung", "Die Inspektion und der Ölwechsel", "Die Erneuerung der Bremsen", "Ein neues Fahrzeug"], answer: 2 },
       ],
     },
@@ -217,7 +217,7 @@ export const B2_EXAMS: ModuleExamPlan[] = [
       ],
     },
     speaking: [
-      { situation: "Serviste yapılması gerekeni bildiriyorsun.", de: "Die Bremsen sind zu erneuern, der Rest lässt sich noch fahren.", tr: "Frenlerin yenilenmesi gerekiyor, gerisi hâlâ sürülebilir." },
+      { situation: "Serviste yapılması gerekeni bildiriyorsun.", de: "Die Bremsen sind zu erneuern, der Wagen lässt sich aber noch fahren.", tr: "Frenlerin yenilenmesi gerekiyor, ama araç hâlâ sürülebilir." },
       { situation: "Bir işin tamamlandığını bildiriyorsun.", de: "Der Auftrag ist gestern bearbeitet worden, alles Weitere ist erledigt.", tr: "İş emri dün işleme alındı, gerisi halledildi." },
     ],
     writing: {
@@ -234,7 +234,7 @@ export const B2_EXAMS: ModuleExamPlan[] = [
         { de: "Zuerst wird … / Anschließend werden …", tr: "Önce … / Ardından …", en: "First … is / Then … are" },
         { de: "Das muss … werden.", tr: "Bunun …-mesi gerekiyor", en: "That has to be …" },
         { de: "Das lässt sich in … Schritten erledigen.", tr: "Bu … adımda halledilebilir", en: "That can be done in … steps." },
-        { de: "… ist bereits … worden.", tr: "… şimdiden … edildi", en: "… has already been …" },
+        { de: "… ist bereits … worden.", tr: "… çoktan … edildi", en: "… has already been …" },
         { de: "Zum Schluss wird …", tr: "En son …", en: "Finally, … is …" },
       ],
       sample:
@@ -258,7 +258,7 @@ export const B2_EXAMS: ModuleExamPlan[] = [
     canDo: [
       { de: "Ich kann wiedergeben, was jemand gesagt hat, ohne es zu bewerten.", tr: "Birinin söylediğini değerlendirmeden aktarabiliyorum.", en: "I can report what someone said without judging it." },
       { de: "Ich kann Gehörtes, Gewusstes und Vermutetes sprachlich trennen.", tr: "Duyduğumu, bildiğimi ve tahmin ettiğimi dilde ayırabiliyorum.", en: "I can linguistically separate hearsay, knowledge and assumption." },
-      { de: "Ich kann eine Schlagzeile entschlüsseln und einordnen.", tr: "Bir manşeti çözebiliyor ve yerine oturtabiliyorum.", en: "I can decode a headline and put it in context." },
+      { de: "Ich kann eine Schlagzeile entschlüsseln und einordnen.", tr: "Bir manşeti çözüp bağlamına oturtabiliyorum.", en: "I can decode a headline and put it in context." },
       { de: "Ich kann auf einen Zeitungsbeitrag argumentierend antworten.", tr: "Bir gazete yazısına gerekçeli karşılık verebiliyorum.", en: "I can respond to a newspaper article with arguments." },
       { de: "Ich kann eine Behauptung hinterfragen und widerlegen.", tr: "Bir iddiayı sorgulayıp çürütebiliyorum.", en: "I can question and refute a claim." },
     ],
@@ -294,7 +294,7 @@ export const B2_EXAMS: ModuleExamPlan[] = [
     },
     speaking: [
       { situation: "Duyduğun bir haberi aktarıyorsun.", de: "Der Sprecher sagte, die Entscheidung sei noch nicht gefallen.", tr: "Sözcü kararın henüz verilmediğini söyledi." },
-      { situation: "Bir iddiayı gerçeğiyle karşılaştırıyorsun.", de: "Es wurde behauptet, die Zahl sei doppelt so hoch — tatsächlich aber gilt das Gegenteil.", tr: "Rakamın iki katı olduğu iddia edildi — ama gerçekte tam tersi geçerli." },
+      { situation: "Bir iddiayı gerçeğiyle karşılaştırıyorsun.", de: "Es wurde behauptet, die Zahl sei gestiegen — tatsächlich aber gilt das Gegenteil.", tr: "Rakamın arttığı iddia edildi — ama gerçekte tam tersi geçerli." },
     ],
     writing: {
       prompt: "Bir gazete yazısına okur mektubu yaz.",
@@ -347,7 +347,7 @@ export const B2_EXAMS: ModuleExamPlan[] = [
         { speaker: "Dr. Weiß", de: "Man spart Energie, indem man den Stoff bei niedriger Temperatur verarbeitet. Das klingt einfach, ist aber lange nicht gelungen.", tr: "Maddeyi düşük sıcaklıkta işleyerek enerji tasarrufu sağlanıyor. Kulağa basit geliyor ama uzun süre başarılamadı." },
         { speaker: "Journalistin", de: "Und ist das schon erprobt worden?", tr: "Peki bu denendi mi?" },
         { speaker: "Dr. Weiß", de: "Im Labor ja, über zwei Jahre. Die getestete Methode funktioniert dort zuverlässig. Im großen Maßstab ist sie noch nicht erprobt worden.", tr: "Laboratuvarda evet, iki yıl boyunca. Test edilen yöntem orada güvenilir çalışıyor. Büyük ölçekte henüz denenmedi." },
-        { speaker: "Journalistin", de: "Wann dürfte die Serienreife erreicht werden?", tr: "Seri üretime hazırlık ne zaman sağlanır?" },
+        { speaker: "Journalistin", de: "Wann dürfte die Serienreife erreicht werden?", tr: "Yöntem muhtemelen ne zaman seri üretime hazır olur?" },
         { speaker: "Dr. Weiß", de: "Das bleibt abzuwarten. Ich wäre da eher vorsichtig — drei bis fünf Jahre dürften realistisch sein.", tr: "Bu görülecek. Ben burada daha temkinli olurdum — üç ila beş yıl gerçekçi olsa gerek." },
         { speaker: "Journalistin", de: "Die steigenden Energiekosten sprechen ja für Sie.", tr: "Artan enerji maliyetleri sizin lehinize." },
         { speaker: "Dr. Weiß", de: "Genau. Und die laufenden Kosten sinken deutlich, sobald die Anlage einmal steht.", tr: "Aynen. Tesis bir kez kurulduğunda süregelen maliyetler de belirgin biçimde düşüyor." },
@@ -364,14 +364,14 @@ export const B2_EXAMS: ModuleExamPlan[] = [
       genre: "Bilgi metni",
       text: "Schlaf und Konzentration — Ergebnisse einer Untersuchung\n\nDie im vergangenen Jahr durchgeführte Untersuchung ging der Frage nach, wie sich Schlafdauer auf die Konzentration auswirkt. Befragt wurden 480 Personen zwischen 20 und 60 Jahren; ausgewertet wurden die Angaben von 412 Teilnehmenden.\n\nIm Durchschnitt schliefen die Befragten sechs Stunden und zwanzig Minuten. Die Auswertung zeigt einen deutlichen Zusammenhang: Je länger die Teilnehmenden schliefen, desto besser fielen die Tests am Vormittag aus. Auffällig ist, dass der Effekt bei Personen über fünfzig geringer ausfiel.\n\nDie Autorinnen weisen jedoch auf eine Einschränkung hin: Die Schlafdauer wurde nicht gemessen, sondern von den Teilnehmenden selbst angegeben. Die Ergebnisse sind daher mit Vorsicht zu lesen. Eine Wiederholung mit gemessenen Daten ist geplant; sie dürfte im nächsten Jahr beginnen.",
       questions: [
-        { de: "Wie viele Angaben wurden ausgewertet?", tr: "Kaç kişinin verisi değerlendirildi?", options: ["480", "412", "60", "20"], answer: 1 },
+        { de: "Von wie vielen Teilnehmenden wurden die Angaben ausgewertet?", tr: "Kaç kişinin verisi değerlendirildi?", options: ["480", "412", "60", "20"], answer: 1 },
         { de: "Was ist die genannte Einschränkung der Studie?", tr: "Araştırmanın belirtilen sınırlılığı ne?", options: ["Zu wenige Teilnehmende", "Die Schlafdauer wurde nur selbst angegeben", "Die Tests waren zu leicht", "Die Studie dauerte zu kurz"], answer: 1 },
         { de: "Was sagt der Satz „Je länger …, desto besser …“ aus?", tr: "„Je länger …, desto besser …“ cümlesi ne söylüyor?", options: ["Zwei Dinge ändern sich gemeinsam", "Eine Sache ist verboten", "Etwas wird bezweifelt", "Etwas ist unmöglich"], answer: 0 },
       ],
     },
     speaking: [
       { situation: "Bir yöntemin nasıl işlediğini açıklıyorsun.", de: "Man spart Energie, indem man den Stoff bei niedriger Temperatur verarbeitet.", tr: "Maddeyi düşük sıcaklıkta işleyerek enerji tasarrufu sağlanıyor." },
-      { situation: "Veri hakkını savunuyorsun.", de: "Personenbezogene Daten dürfen ohne meine Einwilligung nicht weitergegeben werden.", tr: "Kişisel veriler benim rızam olmadan üçüncü taraflara verilemez." },
+      { situation: "Veri hakkını savunuyorsun.", de: "Personenbezogene Daten dürfen ohne meine Einwilligung nicht weitergegeben werden.", tr: "Kişisel veriler rızam olmadan başkalarına aktarılamaz." },
     ],
     writing: {
       prompt: "Okuduğun bir araştırmayı ya da bildiğin bir yöntemi kısaca anlatan bir bilgi metni yaz.",
@@ -440,17 +440,17 @@ export const B2_EXAMS: ModuleExamPlan[] = [
       genre: "Gazete yorumu",
       text: "Kommentar\n\nDer Anstieg der Mieten wird inzwischen in fast jeder Stadt spürbar. Aufgrund der hohen Nachfrage und des geringen Neubaus haben sich die Preise in zehn Jahren vielerorts verdoppelt. Trotz zahlreicher Programme ist wenig geschehen.\n\nDabei ist der Zusammenhang bekannt: Je weniger gebaut wird, desto stärker steigen die Preise. Wohnraum wird zum großen Teil privat finanziert; öffentliche Mittel fließen nur in einen kleinen Teil der Neubauten. Davon profitieren vor allem jene, die bereits eine Wohnung haben.\n\nInfolge dieser Entwicklung wandern junge Familien in das Umland ab. Dort allerdings fehlt oft die Infrastruktur — und ohne Bahnanbindung nützt die günstige Miete wenig.\n\nWeder Verbote noch bloße Appelle werden reichen. Sowohl die Kommunen als auch der Bund müssten dort ansetzen, wo es wirklich klemmt: beim Bauen selbst.",
       questions: [
-        { de: "Worauf führt der Kommentar die Preise zurück?", tr: "Yorum fiyatları neye bağlıyor?", options: ["Auf hohe Nachfrage und geringen Neubau", "Auf die Zinsen", "Auf zu viele Programme", "Auf das Wetter"], answer: 0 },
+        { de: "Worauf führt der Kommentar den Anstieg der Preise zurück?", tr: "Yorum fiyat artışını neye bağlıyor?", options: ["Auf hohe Nachfrage und geringen Neubau", "Auf die Zinsen", "Auf zu viele Programme", "Auf das Wetter"], answer: 0 },
         { de: "Wer profitiert laut Text vor allem?", tr: "Metne göre en çok kim yararlanıyor?", options: ["Junge Familien", "Wer schon eine Wohnung hat", "Die Kommunen", "Die Bauarbeiter"], answer: 1 },
         { de: "Was fordert der Kommentar am Ende?", tr: "Yorum sonunda ne talep ediyor?", options: ["Mehr Verbote", "Mehr Appelle", "Dass Kommunen und Bund beim Bauen ansetzen", "Dass alle in die Stadt ziehen"], answer: 2 },
       ],
     },
     speaking: [
       { situation: "Bir gelişmenin sebebini resmî dille bildiriyorsun.", de: "Aufgrund der hohen Nachfrage sind die Mieten deutlich gestiegen.", tr: "Yüksek talep sebebiyle kiralar belirgin biçimde arttı." },
-      { situation: "İki tarafı birlikte anıyorsun.", de: "Sowohl die Städte als auch die Dörfer müssten etwas ändern.", tr: "Hem şehirler hem köyler bir şeyi değiştirmeli." },
+      { situation: "İki tarafı birlikte anıyorsun.", de: "Sowohl die Städte als auch die Dörfer müssten etwas ändern.", tr: "Hem şehirlerin hem köylerin bir şeyleri değiştirmesi gerekir." },
     ],
     writing: {
-      prompt: "Toplumsal bir soruya kısa bir görüş yazısı yaz (konut, ulaşım, kuşaklar ya da kamu harcamaları).",
+      prompt: "Toplumsal bir konuda kısa bir görüş yazısı yaz (konut, ulaşım, kuşaklar ya da kamu harcamaları).",
       stimulus: "Wohnen wird zum Luxus — was muss sich ändern?",
       checklist: [
         "Konuyu ve neden önemli olduğunu baştan yaz",
@@ -498,11 +498,11 @@ export const B2_EXAMS: ModuleExamPlan[] = [
       turns: [
         { speaker: "Mira", de: "Und? Die gefeierte Inszenierung — hat sie dich überzeugt?", tr: "Ee? Övülen sahneleme — seni ikna etti mi?" },
         { speaker: "Ludwig", de: "Teilweise. Das neu gestaltete Bühnenbild fand ich stark, aber der zweite Akt war zäh.", tr: "Kısmen. Yeni tasarlanan dekoru güçlü buldum, ama ikinci perde ağırdı." },
-        { speaker: "Mira", de: "Der Schauspieler, dessen Rolle du meinst, hat übrigens erst letztes Jahr angefangen.", tr: "Bahsettiğin rolü oynayan oyuncu, bu arada, daha geçen yıl başlamış." },
+        { speaker: "Mira", de: "Der Schauspieler, dessen Szenen den zweiten Akt tragen, hat übrigens erst letztes Jahr angefangen.", tr: "İkinci perdeyi sırtlayan oyuncu, bu arada, daha geçen yıl başlamış." },
         { speaker: "Ludwig", de: "Das erklärt einiges. Trotzdem: Ein Stück, über das man danach streitet, hat schon etwas erreicht.", tr: "Bu bazı şeyleri açıklıyor. Yine de: Sonrasında tartışılan bir oyun bir şeyi başarmış demektir." },
         { speaker: "Mira", de: "Genau. Es wirkt, indem es unbequeme Fragen stellt — nicht indem es gefällt.", tr: "Kesinlikle. Rahatsız edici sorular sorarak etki ediyor — hoşa giderek değil." },
         { speaker: "Ludwig", de: "Nach der Premiere gab es ja auch langen Applaus. Aber ein paar Leute sind früher gegangen.", tr: "Prömiyerden sonra uzun bir alkış da vardı. Ama birkaç kişi erken çıktı." },
-        { speaker: "Mira", de: "Würdest du es weiterempfehlen? Ehrlich.", tr: "Tavsiye eder miydin? Dürüstçe." },
+        { speaker: "Mira", de: "Würdest du es weiterempfehlen? Ehrlich.", tr: "Başkalarına tavsiye eder misin? Dürüst ol." },
         { speaker: "Ludwig", de: "Ja — aber nur denen, die sich auf lange Abende einlassen.", tr: "Evet — ama sadece uzun akşamlara katlanabilenlere." },
       ],
       questions: [
@@ -518,7 +518,7 @@ export const B2_EXAMS: ModuleExamPlan[] = [
       text: "Kritik\n\nDie am Samstag gezeigte Inszenierung ist keine leichte Kost. Das Stück, dessen Vorlage über hundert Jahre alt ist, wurde vollständig in die Gegenwart verlegt — und gewinnt dadurch mehr, als es verliert.\n\nBesonders das neu gestaltete Bühnenbild überzeugt: eine leere Fläche, deren einzige Möbel drei Stühle sind. Es wirkt, indem es nichts erklärt. Die Schauspielerin, deren Rolle den Abend trägt, spielt leise und genau; ihr Gegenspieler bleibt dagegen blass.\n\nSchwächen gibt es auch. Der zweite Akt ist zwanzig Minuten zu lang, und die eingespielte Musik nimmt einigen Szenen die Ruhe. Je stiller der Abend wird, desto stärker wirkt er — genau das scheint die Regie an zwei Stellen zu vergessen.\n\nNach der Premiere gab es langen Applaus. Empfehlenswert ist der Abend allen, die sich auf ein langsames Stück einlassen wollen.",
       questions: [
         { de: "Was ist am Bühnenbild besonders?", tr: "Dekorun özelliği ne?", options: ["Es ist sehr aufwendig", "Es ist fast leer, nur drei Stühle", "Es zeigt eine alte Stadt", "Es wechselt ständig"], answer: 1 },
-        { de: "Was kritisiert die Rezension?", tr: "Eleştiri neyi eleştiriyor?", options: ["Die Hauptdarstellerin", "Die Länge des zweiten Akts und die Musik", "Das Publikum", "Die Textvorlage"], answer: 1 },
+        { de: "Was kritisiert die Rezension?", tr: "Eleştiri yazısı neyi kusurlu buluyor?", options: ["Die Hauptdarstellerin", "Die Länge des zweiten Akts und die Musik", "Das Publikum", "Die Textvorlage"], answer: 1 },
         { de: "Was bedeutet „Je stiller der Abend wird, desto stärker wirkt er“?", tr: "„Je stiller der Abend wird, desto stärker wirkt er“ ne demek?", options: ["Der Abend ist zu laut und deshalb schlecht", "Weniger Lautstärke verstärkt die Wirkung", "Die Musik fehlt ganz", "Das Publikum ist still"], answer: 1 },
       ],
     },
@@ -565,7 +565,7 @@ export const B2_EXAMS: ModuleExamPlan[] = [
       { de: "Ich kann eine Gehaltsforderung begründet vortragen.", tr: "Maaş talebimi gerekçelendirerek sunabiliyorum.", en: "I can present a salary request with reasons." },
       { de: "Ich kann über Risiko und Ertrag sprechen.", tr: "Risk ve getiri üzerine konuşabiliyorum.", en: "I can talk about risk and return." },
       { de: "Ich kann einen Plan an Bedingungen knüpfen.", tr: "Bir planı koşullara bağlayabiliyorum.", en: "I can make a plan conditional." },
-      { de: "Ich kann Behördenschritte erfragen und wiedergeben.", tr: "Kurum adımlarını sorabiliyor ve aktarabiliyorum.", en: "I can ask about and report official procedures." },
+      { de: "Ich kann Behördenschritte erfragen und wiedergeben.", tr: "Resmî işlemlerin adımlarını sorup aktarabiliyorum.", en: "I can ask about and report official procedures." },
       { de: "Ich kann meine Grenzen im Beruf sachlich benennen.", tr: "İş hayatındaki sınırlarımı nesnel biçimde söyleyebiliyorum.", en: "I can state my professional boundaries objectively." },
     ],
     listening: {
@@ -595,7 +595,7 @@ export const B2_EXAMS: ModuleExamPlan[] = [
       questions: [
         { de: "Woran scheitern die meisten Gründungen laut Text?", tr: "Metne göre çoğu girişim neden batıyor?", options: ["Am Produkt", "An den ersten achtzehn Monaten ohne Umsatz", "An der Konkurrenz", "An der Steuer"], answer: 1 },
         { de: "Ab wann darf man Rechnungen stellen?", tr: "Ne zamandan itibaren fatura kesilebilir?", options: ["Sofort", "Nach Erhalt der Bescheinigung", "Nach einem Jahr", "Nach der ersten Zahlung"], answer: 1 },
-        { de: "Was empfiehlt der Text zum Nebenbei-Anfangen?", tr: "Metin ek olarak başlamayı nasıl değerlendiriyor?", options: ["Es ist sinnlos", "Es kostet Tempo, senkt aber das Risiko", "Es ist verboten", "Es beschleunigt alles"], answer: 1 },
+        { de: "Wie bewertet der Text das Nebenbei-Anfangen?", tr: "Metin, işe asıl işin yanında başlamayı nasıl değerlendiriyor?", options: ["Es ist sinnlos", "Es kostet Tempo, senkt aber das Risiko", "Es ist verboten", "Es beschleunigt alles"], answer: 1 },
       ],
     },
     speaking: [
@@ -650,10 +650,10 @@ export const B2_EXAMS: ModuleExamPlan[] = [
       situation: "İki yakın arkadaş dünkü tartışmayı konuşuyor.",
       turns: [
         { speaker: "Nora", de: "Ich habe lange überlegt, ob ich es anspreche. Es klang gestern, als ob du mich vor allen bloßstellen wolltest.", tr: "Konuyu açıp açmamayı uzun düşündüm. Dün sanki beni herkesin önünde küçük düşürmek istemişsin gibi geldi." },
-        { speaker: "Kai", de: "Das war überhaupt nicht meine Absicht. Gemeint war etwas ganz anderes — ich wollte den Punkt klären, nicht dich.", tr: "Niyetim kesinlikle o değildi. Kastedilen bambaşka bir şeydi — konuyu netleştirmek istedim, seni değil." },
+        { speaker: "Kai", de: "Das war überhaupt nicht meine Absicht. Gemeint war etwas ganz anderes — ich wollte den Punkt klären, nicht dich angreifen.", tr: "Niyetim kesinlikle o değildi. Kastedilen bambaşka bir şeydi — konuyu netleştirmek istedim, sana saldırmak değil." },
         { speaker: "Nora", de: "Vielleicht habe ich das falsch aufgefasst. Aber in dem Moment fühlte es sich an, als wäre ich das Problem.", tr: "Belki de yanlış algıladım. Ama o anda sanki sorun benmişim gibi hissettim." },
         { speaker: "Kai", de: "An deiner Stelle hätte ich vermutlich genauso reagiert. Das tut mir leid.", tr: "Senin yerinde olsam muhtemelen ben de aynı tepkiyi verirdim. Özür dilerim." },
-        { speaker: "Nora", de: "Weder schreien noch schweigen hilft — das haben wir beide gemerkt.", tr: "Ne bağırmak ne susmak fayda ediyor — ikimiz de bunu fark ettik." },
+        { speaker: "Nora", de: "Weder Schreien noch Schweigen hilft — das haben wir beide gemerkt.", tr: "Ne bağırmak ne susmak fayda ediyor — ikimiz de bunu fark ettik." },
         { speaker: "Kai", de: "Einverstanden. Nächstes Mal sage ich vorher, worum es mir geht, indem ich mit einer Ich-Botschaft anfange.", tr: "Kabul. Bir dahaki sefere ben diliyle başlayarak neyi kastettiğimi önceden söyleyeceğim." },
         { speaker: "Nora", de: "Und ich unterbreche dich nicht mehr mittendrin. Abgemacht?", tr: "Ben de artık sözünü ortasında kesmeyeceğim. Anlaştık mı?" },
       ],
@@ -667,7 +667,7 @@ export const B2_EXAMS: ModuleExamPlan[] = [
       title: "Ratgeber: Kleine Schritte",
       titleTr: "Rehber: Küçük adımlar",
       genre: "Rehber yazısı",
-      text: "Warum gute Vorsätze scheitern\n\nFast jeder kennt das: Man nimmt sich etwas vor und tut nach zwei Wochen so, als ob es den Vorsatz nie gegeben hätte. Das liegt selten am Willen — meistens liegt es an der Größe des ersten Schritts.\n\nEine Gewohnheit entsteht, indem man sie täglich wiederholt, nicht indem man sie einmal perfekt macht. Wer mit einer Stunde anfängt, hört nach einer Woche auf. Wer mit fünf Minuten anfängt, bleibt dabei. Der innere Widerstand lässt sich so umgehen, statt ihn zu bekämpfen.\n\nWichtig ist außerdem der Auslöser: Eine neue Gewohnheit hält sich besser, wenn sie an etwas Bestehendes gekoppelt wird — nach dem Kaffee, vor dem Zähneputzen.\n\nUnd Rückschritte? Die dürften dazugehören. Ein ausgefallener Tag ist kein Ende, sondern ein ausgefallener Tag. Weder Strenge noch Ausreden helfen weiter; hilfreich ist allein, am nächsten Tag wieder anzufangen.",
+      text: "Warum gute Vorsätze scheitern\n\nFast jeder kennt das: Man nimmt sich etwas vor und tut nach zwei Wochen so, als ob es den Vorsatz nie gegeben hätte. Das liegt selten am Willen — meistens liegt es an der Größe des ersten Schritts.\n\nEine Gewohnheit entsteht, indem man sie täglich wiederholt, nicht indem man sie einmal perfekt macht. Wer mit einer Stunde anfängt, hört nach einer Woche auf. Wer mit fünf Minuten anfängt, bleibt dabei. So umgeht man den inneren Widerstand, statt ihn zu bekämpfen.\n\nWichtig ist außerdem der Auslöser: Eine neue Gewohnheit hält sich besser, wenn sie an etwas Bestehendes gekoppelt wird — nach dem Kaffee, vor dem Zähneputzen.\n\nUnd Rückschritte? Die dürften dazugehören. Ein ausgefallener Tag ist kein Ende, sondern ein ausgefallener Tag. Weder Strenge noch Ausreden helfen weiter; hilfreich ist allein, am nächsten Tag wieder anzufangen.",
       questions: [
         { de: "Woran liegt es laut Text, wenn Vorsätze scheitern?", tr: "Metne göre kararlar neden tutmuyor?", options: ["Am fehlenden Willen", "Meistens an der Größe des ersten Schritts", "An zu wenig Zeit", "Am falschen Ziel"], answer: 1 },
         { de: "Wie entsteht laut Text eine Gewohnheit?", tr: "Metne göre alışkanlık nasıl oluşuyor?", options: ["Indem man sie einmal perfekt macht", "Indem man sie täglich wiederholt", "Indem man sie aufschreibt", "Indem man sie mit anderen teilt"], answer: 1 },
@@ -689,7 +689,7 @@ export const B2_EXAMS: ModuleExamPlan[] = [
       ],
       minWords: 90,
       phrases: [
-        { de: "Es klang, als ob …", tr: "Sanki … gibi duyuldu", en: "It sounded as if …" },
+        { de: "Es klang, als ob …", tr: "Sanki … gibi geldi", en: "It sounded as if …" },
         { de: "Gemeint war aber …", tr: "Ama kastedilen …", en: "What I meant, though, was …" },
         { de: "An deiner Stelle hätte ich …", tr: "Senin yerinde olsam …", en: "In your position I would have …" },
         { de: "Weder … noch … hilft.", tr: "Ne … ne … fayda eder", en: "Neither … nor … helps." },
@@ -715,7 +715,7 @@ export const B2_EXAMS: ModuleExamPlan[] = [
     ],
     canDo: [
       { de: "Ich kann einen formellen Brief korrekt aufbauen.", tr: "Resmî bir mektubu doğru biçimde kurabiliyorum.", en: "I can structure a formal letter correctly." },
-      { de: "Ich kann eine höfliche Anfrage stellen und nachfassen.", tr: "Kibar bir bilgi talebi yazıp takibini yapabiliyorum.", en: "I can make a polite inquiry and follow it up." },
+      { de: "Ich kann eine höfliche Anfrage stellen und nachfassen.", tr: "Kibar bir bilgi talebi yazıp takibini yapabiliyorum.", en: "I can make a polite enquiry and follow it up." },
       { de: "Ich kann Angebote vergleichen und meine Wahl begründen.", tr: "Teklifleri kıyaslayıp seçimimi gerekçelendirebiliyorum.", en: "I can compare offers and justify my choice." },
       { de: "Ich kann im Vorstellungsgespräch eigene Fragen stellen.", tr: "İş görüşmesinde kendi sorularımı sorabiliyorum.", en: "I can ask my own questions in a job interview." },
       { de: "Ich kann einen Vortrag mit Fazit und Ausblick abschließen.", tr: "Bir sunumu sonuç ve ileriye bakışla kapatabiliyorum.", en: "I can close a presentation with a conclusion and outlook." },
@@ -730,7 +730,7 @@ export const B2_EXAMS: ModuleExamPlan[] = [
         { speaker: "Personalleiter", de: "Die ersten sechs Wochen begleitet Sie eine feste Ansprechperson. Die Probezeit beträgt sechs Monate, mit einem Gespräch nach acht Wochen.", tr: "İlk altı hafta size sabit bir sorumlu eşlik ediyor. Deneme süresi altı ay, sekizinci haftada bir görüşmeyle." },
         { speaker: "Frau Aydin", de: "Wenn ich Sie richtig verstehe, gibt es also eine Zwischenrückmeldung, bevor etwas entschieden wird.", tr: "Doğru anladıysam, bir karar verilmeden önce bir ara geri bildirim oluyor." },
         { speaker: "Personalleiter", de: "Genau so ist es. Noch etwas?", tr: "Tam olarak öyle. Başka bir şey?" },
-        { speaker: "Frau Aydin", de: "Ja — darf ich fragen, wie der Ablauf jetzt weitergeht? Und wann darf ich mit einer Zusage rechnen?", tr: "Evet — sürecin nasıl devam edeceğini sorabilir miyim? Ve ne zaman bir cevap bekleyebilirim?" },
+        { speaker: "Frau Aydin", de: "Ja — darf ich fragen, wie der Ablauf jetzt weitergeht? Und wann darf ich mit einer Entscheidung rechnen?", tr: "Evet — sürecin nasıl devam edeceğini sorabilir miyim? Ve ne zaman bir karar bekleyebilirim?" },
         { speaker: "Personalleiter", de: "Wir führen diese Woche noch zwei Gespräche. Bis Freitag der kommenden Woche melden wir uns auf jeden Fall.", tr: "Bu hafta iki görüşme daha yapıyoruz. Gelecek haftanın cuma gününe kadar mutlaka dönüş yapacağız." },
       ],
       questions: [
@@ -743,7 +743,7 @@ export const B2_EXAMS: ModuleExamPlan[] = [
       title: "Anfrage und Antwort",
       titleTr: "Talep ve cevap",
       genre: "Resmî e-posta",
-      text: "Betreff: Anfrage zu Lieferzeit und Konditionen (Kundennummer 48-2291)\n\nSehr geehrte Damen und Herren,\n\nBezug nehmend auf Ihr Angebot vom 3. Oktober hätten wir noch zwei Fragen. Könnten Sie uns mitteilen, ob die genannte Lieferzeit von vier Wochen auch bei einer Bestellmenge von 500 Stück gilt? Außerdem wäre uns wichtig zu wissen, welcher Leistungsumfang im Preis enthalten ist.\n\nAnbei erhalten Sie unsere aktuelle Bedarfsliste als Anlage. Über eine zeitnahe Auskunft wären wir Ihnen dankbar.\n\nMit freundlichen Grüßen\nT. Kraus\n\n———\n\nSehr geehrter Herr Kraus,\n\nvielen Dank für Ihre Anfrage. Die Lieferzeit von vier Wochen gilt bis 300 Stück; ab 300 Stück ist mit sechs Wochen zu rechnen. Im Preis enthalten sind Lieferung und Montage, nicht jedoch die jährliche Wartung.\n\nEin überarbeitetes Angebot geht Ihnen bis Freitag zu.\n\nMit freundlichen Grüßen\nS. Behrens",
+      text: "Betreff: Anfrage zu Lieferzeit und Konditionen (Kundennummer 48-2291)\n\nSehr geehrte Damen und Herren,\n\nBezug nehmend auf Ihr Angebot vom 3. Oktober hätten wir noch zwei Fragen. Könnten Sie uns mitteilen, ob die genannte Lieferzeit von vier Wochen auch bei einer Bestellmenge von 500 Stück gilt? Außerdem wäre uns wichtig zu wissen, welcher Leistungsumfang im Preis enthalten ist.\n\nAnbei erhalten Sie unsere aktuelle Bedarfsliste als Anlage. Für eine zeitnahe Auskunft wären wir Ihnen dankbar.\n\nMit freundlichen Grüßen\nT. Kraus\n\n———\n\nSehr geehrter Herr Kraus,\n\nvielen Dank für Ihre Anfrage. Die Lieferzeit von vier Wochen gilt bis 300 Stück; bei größeren Mengen ist mit sechs Wochen zu rechnen. Im Preis enthalten sind Lieferung und Montage, nicht jedoch die jährliche Wartung.\n\nEin überarbeitetes Angebot geht Ihnen bis Freitag zu.\n\nMit freundlichen Grüßen\nS. Behrens",
       questions: [
         { de: "Wie lange ist die Lieferzeit bei 500 Stück?", tr: "500 adette teslim süresi ne kadar?", options: ["Vier Wochen", "Sechs Wochen", "Drei Wochen", "Acht Wochen"], answer: 1 },
         { de: "Was ist NICHT im Preis enthalten?", tr: "Fiyata dâhil OLMAYAN ne?", options: ["Die Lieferung", "Die Montage", "Die jährliche Wartung", "Die Anlage"], answer: 2 },
@@ -768,12 +768,12 @@ export const B2_EXAMS: ModuleExamPlan[] = [
       phrases: [
         { de: "Bezug nehmend auf Ihr Angebot vom …", tr: "… tarihli teklifinize atıfla", en: "With reference to your offer of …" },
         { de: "Könnten Sie uns mitteilen, ob …?", tr: "…-ıp olmadığını bildirebilir misiniz?", en: "Could you let us know whether …?" },
-        { de: "Anbei erhalten Sie … als Anlage.", tr: "Ekte … bulacaksınız", en: "Please find … attached." },
-        { de: "Über eine zeitnahe Auskunft wären wir dankbar.", tr: "Kısa sürede bilgi verirseniz minnettar oluruz.", en: "We would be grateful for a prompt reply." },
+        { de: "Als Anlage erhalten Sie ….", tr: "Ekte … bulacaksınız", en: "Please find … attached." },
+        { de: "Für eine zeitnahe Auskunft wären wir dankbar.", tr: "Kısa sürede bilgi verirseniz minnettar oluruz.", en: "We would be grateful for a prompt reply." },
         { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Kind regards" },
       ],
       sample:
-        "Betreff: Anfrage zu Preis, Lieferzeit und Leistungsumfang\n\nSehr geehrte Damen und Herren,\n\nBezug nehmend auf Ihr Angebot vom 3. Oktober hätten wir noch einige Fragen.\n\nKönnten Sie uns mitteilen, ob die genannte Lieferzeit von vier Wochen auch bei einer größeren Bestellmenge gilt? Außerdem wäre uns wichtig zu wissen, welcher Leistungsumfang im Preis enthalten ist und ob die jährliche Wartung gesondert berechnet wird.\n\nAnbei erhalten Sie unsere aktuelle Bedarfsliste als Anlage. Nach Erhalt Ihrer Auskunft entscheiden wir kurzfristig.\n\nÜber eine zeitnahe Rückmeldung, möglichst bis Freitag, wären wir Ihnen dankbar.\n\nMit freundlichen Grüßen\nT. Kraus",
+        "Betreff: Anfrage zu Preis, Lieferzeit und Leistungsumfang\n\nSehr geehrte Damen und Herren,\n\nBezug nehmend auf Ihr Angebot vom 3. Oktober hätten wir noch einige Fragen.\n\nKönnten Sie uns mitteilen, ob die genannte Lieferzeit von vier Wochen auch bei einer größeren Bestellmenge gilt? Außerdem wäre uns wichtig zu wissen, welcher Leistungsumfang im Preis enthalten ist und ob die jährliche Wartung gesondert berechnet wird.\n\nAnbei erhalten Sie unsere aktuelle Bedarfsliste als Anlage. Nach Erhalt Ihrer Auskunft entscheiden wir kurzfristig.\n\nFür eine zeitnahe Rückmeldung, möglichst bis Freitag, wären wir Ihnen dankbar.\n\nMit freundlichen Grüßen\nT. Kraus",
     },
   },
 ];

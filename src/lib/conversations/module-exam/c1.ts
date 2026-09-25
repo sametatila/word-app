@@ -41,7 +41,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
       situation: "Bir yönetim toplantısında zor bir karar görüşülüyor.",
       turns: [
         { speaker: "Vorsitzende", de: "Wir müssen heute eine Entscheidung treffen. Welche Optionen kommen aus Ihrer Sicht noch in Frage?", tr: "Bugün bir karar vermek zorundayız. Sizce hangi seçenekler hâlâ söz konusu?" },
-        { speaker: "Herr Wolf", de: "Aus meiner Sicht nur zwei. Die dritte würde ich streichen — die Tragweite ist schlicht zu groß.", tr: "Bence sadece iki tane. Üçüncüsünü çıkarırdım — kapsamı basitçe fazla büyük." },
+        { speaker: "Herr Wolf", de: "Aus meiner Sicht nur zwei. Die dritte würde ich streichen — die Tragweite ist schlicht zu groß.", tr: "Bence sadece iki tane. Üçüncüsünü çıkarırdım — doğuracağı sonuçlar düpedüz fazla ağır." },
         { speaker: "Frau Neuhaus", de: "Bei allem Respekt, dem kann ich nicht zustimmen. Ich hätte da einen Einwand: Wir haben die Zahlen von März zugrunde gelegt, nicht die aktuellen.", tr: "Tüm saygımla, buna katılamıyorum. Bir itirazım var: Mart rakamlarını esas aldık, güncel olanları değil." },
         { speaker: "Herr Wolf", de: "Das ist ein berechtigter Punkt. Dann würde ich anregen, die Entscheidung um eine Woche zu vertagen.", tr: "Bu haklı bir nokta. O hâlde kararı bir hafta ertelemeyi önerirdim." },
         { speaker: "Vorsitzende", de: "Vertagen kommt nicht in Frage. Der Vertrag tritt am Ersten in Kraft — dieses Risiko nehmen wir nicht in Kauf.", tr: "Erteleme söz konusu değil. Sözleşme ayın birinde yürürlüğe giriyor — bu riski göze almıyoruz." },
@@ -61,7 +61,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
       text: "Stellungnahme zur Störung vom 14. März\n\nWir bedauern die Unterbrechung unseres Dienstes zutiefst. Nach derzeitigem Kenntnisstand handelt es sich um ein technisches Versäumnis in einem Teilsystem; personenbezogene Daten waren nach bisheriger Prüfung nicht betroffen.\n\nUnmittelbar nach Bekanntwerden wurden die erforderlichen Maßnahmen eingeleitet. Der betroffene Dienst steht seit dem Abend wieder zur Verfügung. Die Aufarbeitung des Vorfalls läuft; ein externes Prüfhaus wurde beauftragt.\n\nUnser Sprecher erklärte, man werde die Ergebnisse vollständig veröffentlichen. Kundinnen und Kunden, denen ein Schaden entstanden sei, könnten sich an die eingerichtete Hotline wenden.\n\nWir nehmen den Vorfall zum Anlass, unsere Prozesse zu überprüfen, und werden bis Monatsende erneut informieren.",
       questions: [
         { de: "Was sagt der Text über personenbezogene Daten?", tr: "Metin kişisel veriler hakkında ne diyor?", options: ["Sie wurden gestohlen", "Sie waren nach bisheriger Prüfung nicht betroffen", "Sie wurden gelöscht", "Dazu steht nichts"], answer: 1 },
-        { de: "Warum steht im Text „Maßnahmen wurden eingeleitet“ statt „wir haben gehandelt“?", tr: "Metinde neden „wir haben gehandelt“ yerine „Maßnahmen wurden eingeleitet“ yazıyor?", options: ["Weil niemand gehandelt hat", "Weil die Handlung wichtiger ist als der Handelnde", "Weil es kürzer ist", "Weil es ein Fehler ist"], answer: 1 },
+        { de: "Warum steht im Text „wurden die erforderlichen Maßnahmen eingeleitet“ statt „wir haben gehandelt“?", tr: "Metinde neden „wir haben gehandelt“ yerine „wurden die erforderlichen Maßnahmen eingeleitet“ yazıyor?", options: ["Weil niemand gehandelt hat", "Weil die Handlung wichtiger ist als der Handelnde", "Weil es kürzer ist", "Weil es ein Fehler ist"], answer: 1 },
         { de: "Was zeigt die Form „man werde veröffentlichen“?", tr: "„man werde veröffentlichen“ biçimi neyi gösteriyor?", options: ["Eine Bedingung", "Eine wiedergegebene Aussage des Sprechers", "Einen Befehl", "Eine Vermutung des Lesers"], answer: 1 },
       ],
     },
@@ -117,16 +117,16 @@ export const C1_EXAMS: ModuleExamPlan[] = [
       titleTr: "İptal olan akşam",
       situation: "İki arkadaş iptal olan bir planı konuşuyor.",
       turns: [
-        { speaker: "Deniz", de: "Sag mal, hast du es schon gehört? Der Abend fällt aus.", tr: "Söylesene, duydun mu? Akşamki iptal olmuş." },
+        { speaker: "Deniz", de: "Sag mal, hast du es schon gehört? Der Abend fällt aus.", tr: "Söylesene, duydun mu? Bu akşamki etkinlik iptal olmuş." },
         { speaker: "Mira", de: "Das ist ja ein Ding. Und ich hatte mir extra freigenommen.", tr: "Vay canına. Ben de özellikle izin almıştım." },
         { speaker: "Deniz", de: "Ärgerlich, ja. Aber die Halle ist gesperrt — da ist eben nichts zu machen.", tr: "Can sıkıcı, evet. Ama salon kapatılmış — yapılacak bir şey yok işte." },
         { speaker: "Mira", de: "Das hättest du mir doch früher sagen können. Ich stehe seit einer Stunde vor der Tür.", tr: "Bunu bana daha önce söyleyebilirdin. Bir saattir kapının önünde duruyorum." },
-        { speaker: "Deniz", de: "Tut mir leid, ich habe es selbst wohl erst vor zwanzig Minuten erfahren.", tr: "Üzgünüm, ben de herhâlde ancak yirmi dakika önce öğrendim." },
+        { speaker: "Deniz", de: "Tut mir leid, ich habe es selbst erst vor zwanzig Minuten erfahren — die Halle ist wohl wegen eines Wasserschadens gesperrt.", tr: "Üzgünüm, ben de ancak yirmi dakika önce öğrendim — salon galiba su hasarı yüzünden kapatılmış." },
         { speaker: "Mira", de: "Schon gut. Und jetzt? Willst du nicht wenigstens einen Kaffee trinken?", tr: "Tamam, boş ver. Peki şimdi? Hiç değilse bir kahve içmek istemez misin?" },
-        { speaker: "Deniz", de: "Doch, sehr gern. Komm, das wird schon — der Abend ist ja noch nicht vorbei.", tr: "İsterim tabii. Hadi, olacak o kadar — akşam daha bitmedi ki." },
+        { speaker: "Deniz", de: "Doch, sehr gern. Komm, das wird schon — der Abend ist ja noch nicht vorbei.", tr: "İsterim tabii. Hadi, her şey yoluna girer — akşam daha bitmedi ki." },
       ],
       questions: [
-        { de: "Warum fällt der Abend aus?", tr: "Akşamki neden iptal oldu?", options: ["Wegen Krankheit", "Weil die Halle gesperrt ist", "Wegen zu weniger Gäste", "Wegen des Wetters"], answer: 1 },
+        { de: "Warum fällt der Abend aus?", tr: "Akşamki etkinlik neden iptal oldu?", options: ["Wegen Krankheit", "Weil die Halle gesperrt ist", "Wegen zu weniger Gäste", "Wegen des Wetters"], answer: 1 },
         { de: "Was drückt Miras Satz „Das hättest du mir doch früher sagen können“ aus?", tr: "Mira'nın „Das hättest du mir doch früher sagen können“ cümlesi ne bildiriyor?", options: ["Eine Bitte", "Einen Vorwurf", "Ein Lob", "Eine Vermutung"], answer: 1 },
         { de: "Warum antwortet Deniz mit „Doch, sehr gern“?", tr: "Deniz neden „Doch, sehr gern“ diye cevap veriyor?", options: ["Weil die Frage verneint war", "Weil er ablehnt", "Weil er unsicher ist", "Weil er die Frage nicht verstanden hat"], answer: 0 },
       ],
@@ -143,8 +143,8 @@ export const C1_EXAMS: ModuleExamPlan[] = [
       ],
     },
     speaking: [
-      { situation: "Olumsuz bir soruya olumlu cevap veriyorsun.", de: "Doch, ich komme sehr gern mit.", tr: "Aksine, memnuniyetle gelirim." },
-      { situation: "Telefonda en kibar biçimde rica ediyorsun.", de: "Wären Sie so freundlich, mich mit Frau Berg durchzustellen?", tr: "Beni Bayan Berg'e bağlar mısınız lütfen?" },
+      { situation: "Olumsuz bir soruya olumlu cevap veriyorsun.", de: "Doch, ich komme sehr gern mit.", tr: "Gelirim tabii, hem de memnuniyetle." },
+      { situation: "Telefonda en kibar biçimde rica ediyorsun.", de: "Wären Sie so freundlich, mich zu Frau Berg durchzustellen?", tr: "Beni Bayan Berg'e bağlar mısınız lütfen?" },
     ],
     writing: {
       prompt: "Planı bozulan bir arkadaşına, tonu özenle ayarlanmış kişisel bir mesaj yaz.",
@@ -160,11 +160,11 @@ export const C1_EXAMS: ModuleExamPlan[] = [
         { de: "Sag mal, hast du es schon gehört?", tr: "Söylesene, duydun mu?", en: "Say, have you heard already?" },
         { de: "Das hättest du mir doch früher sagen können.", tr: "Bunu bana daha önce söyleyebilirdin.", en: "You could have told me earlier." },
         { de: "Da ist eben nichts zu machen.", tr: "Yapılacak bir şey yok işte.", en: "There is simply nothing to be done." },
-        { de: "Das wird schon.", tr: "Olacak o kadar, düzelir.", en: "It will be all right." },
+        { de: "Das wird schon.", tr: "Düzelir, yoluna girer.", en: "It will be all right." },
         { de: "Komm doch einfach mal vorbei.", tr: "Bir uğrasana.", en: "Why don't you just drop by?" },
       ],
       sample:
-        "Hallo Mira,\n\nsag mal, hast du es schon gehört? Der Abend fällt aus — die Halle ist kurzfristig gesperrt worden. Ich habe es selbst wohl erst vor zwanzig Minuten erfahren, sonst hätte ich mich früher gemeldet. Das hättest du von mir tatsächlich eher hören sollen, und das tut mir leid.\n\nÄrgerlich ist es allemal, vor allem, weil du dir extra freigenommen hast. Aber da ist eben nichts zu machen; gegen eine gesperrte Halle kommt keiner von uns an.\n\nJetzt der Vorschlag: Komm doch einfach mal zu mir, ich koche etwas, und wir schauen uns die Aufzeichnung vom letzten Mal an. Das wird schon — der Abend ist ja noch nicht vorbei.\n\nSag kurz Bescheid, ob es dir passt.\n\nLiebe Grüße\nDeniz",
+        "Hallo Mira,\n\nsag mal, hast du es schon gehört? Der Abend fällt aus — die Halle ist kurzfristig gesperrt worden. Ich habe es selbst erst vor zwanzig Minuten erfahren, sonst hätte ich mich früher gemeldet. Das hättest du von mir tatsächlich eher hören sollen, und das tut mir leid.\n\nÄrgerlich ist es allemal, vor allem, weil du dir extra freigenommen hast. Aber da ist eben nichts zu machen; gegen eine gesperrte Halle kommt keiner von uns an.\n\nJetzt der Vorschlag: Komm doch einfach mal zu mir, ich koche etwas, und wir schauen uns die Aufzeichnung vom letzten Mal an. Das wird schon — der Abend ist ja noch nicht vorbei.\n\nSag kurz Bescheid, ob es dir passt.\n\nLiebe Grüße\nDeniz",
     },
   },
   {
@@ -192,25 +192,25 @@ export const C1_EXAMS: ModuleExamPlan[] = [
       titleTr: "Sunumdan sonra",
       situation: "Bir sunum bitti ve soru turu başlıyor.",
       turns: [
-        { speaker: "Referentin", de: "Kurz, klar, überzeugend — so wollte ich es halten. Gestatten Sie mir noch einen Satz zum Schluss, dann übernehmen Sie.", tr: "Kısa, net, ikna edici — böyle tutmak istedim. Sona bir cümle daha için izin verin, sonra söz sizin." },
+        { speaker: "Referentin", de: "Kurz, klar, überzeugend — so wollte ich es halten. Gestatten Sie mir noch einen Satz zum Schluss, dann übernehmen Sie.", tr: "Kısa, net, ikna edici — böyle tutmak istedim. Kapanışta bir cümle daha söylememe izin verin, sonra söz sizde." },
         { speaker: "Zuhörer", de: "Ihre Zahlen kenne ich anders. Arbeiten Sie da mit einer geschönten Auswahl?", tr: "Sizin rakamlarınızı ben başka biliyorum. Süslenmiş bir seçkiyle mi çalışıyorsunuz?" },
         { speaker: "Referentin", de: "Gut, dass Sie das ansprechen. Ihre Frage greife ich gern auf — der Unterschied liegt im Zeitraum, nicht in der Auswahl.", tr: "Bunu dile getirmeniz iyi oldu. Sorunuzu memnuniyetle ele alıyorum — fark seçkide değil, dönemde." },
         { speaker: "Zuhörer", de: "Zugegeben, das erklärt einiges. Dennoch halte ich die Schlussfolgerung für zu weitreichend.", tr: "Kabul, bu bazı şeyleri açıklıyor. Yine de vardığınız sonucu fazla ileri buluyorum." },
-        { speaker: "Referentin", de: "So sehr ich den Einwand verstehe, so wenig teile ich ihn. Selten habe ich Daten gesehen, die so eindeutig in eine Richtung zeigen.", tr: "İtirazı ne kadar anlıyorsam o kadar az paylaşıyorum. Bu kadar tek yöne işaret eden veriyi nadiren gördüm." },
+        { speaker: "Referentin", de: "So sehr ich den Einwand verstehe, so wenig teile ich ihn. Selten habe ich Daten gesehen, die so eindeutig in eine Richtung zeigen.", tr: "İtirazınızı ne kadar anlasam da ona katılmıyorum. Bu kadar açıkça tek yöne işaret eden veriyi nadiren gördüm." },
         { speaker: "Zuhörer", de: "Unterm Strich bleiben wir dann wohl uneinig.", tr: "Nihayetinde galiba anlaşamıyoruz." },
         { speaker: "Referentin", de: "Das darf so bleiben. Lassen Sie mich nur einen roten Faden festhalten: Die Richtung stimmt, über das Tempo lässt sich streiten.", tr: "Öyle kalabilir. Yalnız bir ana hattı kayda geçireyim: Yön doğru, tempo tartışılabilir." },
       ],
       questions: [
         { de: "Wie erklärt die Referentin den Unterschied in den Zahlen?", tr: "Konuşmacı rakamlardaki farkı nasıl açıklıyor?", options: ["Mit einer anderen Auswahl", "Mit einem anderen Zeitraum", "Mit einem Rechenfehler", "Sie erklärt es nicht"], answer: 1 },
         { de: "Was drückt „Zugegeben …, dennoch …“ aus?", tr: "„Zugegeben …, dennoch …“ ne bildiriyor?", options: ["Volle Zustimmung", "Ein Zugeständnis bei gehaltener Position", "Eine Absage", "Eine Frage"], answer: 1 },
-        { de: "Worauf einigen sich beide am Ende?", tr: "İkisi sonunda ne üzerinde uzlaşıyor?", options: ["Auf gar nichts", "Die Richtung stimmt, das Tempo ist strittig", "Die Zahlen sind falsch", "Der Vortrag wird wiederholt"], answer: 1 },
+        { de: "Was hält die Referentin am Ende fest?", tr: "Konuşmacı sonunda neyi kayda geçiriyor?", options: ["Dass der Zuhörer recht hat", "Die Richtung stimmt, das Tempo ist strittig", "Die Zahlen sind falsch", "Der Vortrag wird wiederholt"], answer: 1 },
       ],
     },
     reading: {
       title: "Warum drei besser ist als vier",
-      titleTr: "Üç neden dörtten iyidir",
+      titleTr: "Neden üç, dörtten iyidir",
       genre: "Deneme yazısı",
-      text: "Warum drei besser ist als vier\n\nWer vor Publikum spricht, kennt die Versuchung: Man hat sieben gute Argumente und möchte alle sieben nennen. Selten geht das gut. Zwei Punkte wirken dünn, vier verlieren sich, drei bleiben hängen — dafür gibt es keine strenge Regel, aber eine bemerkenswert stabile Erfahrung.\n\nDie zweite Zutat ist die Pause. Wer sie aushält, wirkt sicher; wer sie füllt, wirkt nervös. Bewusste Pausen erhöhen die Wirkung mehr als jedes Adjektiv.\n\nUnd das dritte: das Bild. Ein roter Faden, eine Brücke, ein gemeinsamer Nenner — solche Metaphern tragen einen Gedanken weiter als eine Tabelle. Zugegeben, ein schlecht gewähltes Bild schadet mehr als es nützt; dennoch bleibt es das stärkste Werkzeug, das eine Rednerin hat.\n\nUnterm Strich: kurz, klar, überzeugend. Mehr braucht es nicht — und weniger reicht nicht.",
+      text: "Warum drei besser ist als vier\n\nWer vor Publikum spricht, kennt die Versuchung: Man hat sieben gute Argumente und möchte alle sieben nennen. Selten geht das gut. Zwei Punkte wirken dünn, vier verlieren sich, drei bleiben hängen — dafür gibt es keine strenge Regel, aber eine bemerkenswert stabile Erfahrung.\n\nDie zweite Zutat ist die Pause. Wer sie aushält, wirkt sicher; wer sie füllt, wirkt nervös. Bewusste Pausen erhöhen die Wirkung mehr als jedes Adjektiv.\n\nUnd das dritte: das Bild. Ein roter Faden, eine Brücke, ein gemeinsamer Nenner — solche Metaphern tragen einen Gedanken weiter als eine Tabelle. Zugegeben, ein schlecht gewähltes Bild schadet mehr, als es nützt; dennoch bleibt es das stärkste Werkzeug, das eine Rednerin hat.\n\nUnterm Strich: kurz, klar, überzeugend. Mehr braucht es nicht — und weniger reicht nicht.",
       questions: [
         { de: "Warum empfiehlt der Text drei Punkte?", tr: "Metin neden üç madde öneriyor?", options: ["Weil es eine strenge Regel gibt", "Weil zwei dünn und vier unübersichtlich wirken", "Weil drei kürzer ist", "Weil das Publikum es fordert"], answer: 1 },
         { de: "Was sagt der Text über Pausen?", tr: "Metin duraklamalar hakkında ne diyor?", options: ["Sie machen nervös", "Wer sie aushält, wirkt sicher", "Man sollte sie vermeiden", "Sie sind nur für Anfänger"], answer: 1 },
@@ -260,7 +260,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
       { de: "Ich kann gängige Redewendungen im Gespräch verstehen.", tr: "Konuşmada yaygın deyimleri anlayabiliyorum.", en: "I can understand common idioms in conversation." },
       { de: "Ich kann Redewendungen selbst richtig einsetzen.", tr: "Deyimleri kendim doğru kullanabiliyorum.", en: "I can use idioms correctly myself." },
       { de: "Ich kann erkennen, wenn eine wörtliche Übersetzung nicht trägt.", tr: "Kelimesi kelimesine çevirinin tutmadığını fark edebiliyorum.", en: "I can recognise when a literal translation does not work." },
-      { de: "Ich kann Stimmungen mit Bildern beschreiben.", tr: "Ortamları imgelerle anlatabiliyorum.", en: "I can describe moods with images." },
+      { de: "Ich kann Stimmungen mit Bildern beschreiben.", tr: "Ruh hâllerini ve ortamın havasını imgelerle anlatabiliyorum.", en: "I can describe moods with images." },
       { de: "Ich kann Redewendungen dosiert verwenden.", tr: "Deyimleri dozunda kullanabiliyorum.", en: "I can use idioms in moderation." },
     ],
     listening: {
@@ -271,7 +271,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Selin", de: "Ganz ehrlich: Ich bin diesen Monat knapp bei Kasse. Für das teure Modell müsste ich tief in die Tasche greifen.", tr: "Açıkçası: Bu ay param kıt. Pahalı model için cebimden epey para çıkarmam gerekir." },
         { speaker: "Jonas", de: "Verstehe. Aber billig kaufen heißt oft zweimal kaufen — das wäre Geld zum Fenster hinausgeworfen.", tr: "Anlıyorum. Ama ucuz almak çoğu zaman iki kez almak demek — o para çöpe atılmış olur." },
         { speaker: "Selin", de: "Da hast du nicht unrecht. Trotzdem ist mir die Farbe zum Beispiel völlig Wurst — da muss ich nichts extra zahlen.", tr: "Haksız değilsin. Yine de mesela renk benim hiç umurumda değil — onun için fazladan ödemem gerekmiyor." },
-        { speaker: "Jonas", de: "Dann nehmen wir das mittlere. Damit sind wir zwar nicht beim Gelben vom Ei, aber es hat Hand und Fuß.", tr: "O hâlde ortadakini alalım. Bununla işin en iyisinde olmayız ama eli ayağı tutar." },
+        { speaker: "Jonas", de: "Dann nehmen wir das mittlere. Das ist zwar nicht das Gelbe vom Ei, aber es hat Hand und Fuß.", tr: "O hâlde ortadakini alalım. Gerçi en iyisi değil ama sağlam bir seçim." },
         { speaker: "Selin", de: "Einverstanden. Und beim Termin gebe ich nach — ich will da kein Haar in der Suppe suchen.", tr: "Kabul. Tarihte de geri adım atıyorum — orada kusur aramak istemiyorum." },
         { speaker: "Jonas", de: "Gut. Dann bleiben wir am Ball und bestellen heute Abend.", tr: "Güzel. O hâlde peşini bırakmayalım ve bu akşam sipariş verelim." },
         { speaker: "Selin", de: "Abgemacht. Und wenn es doch schiefgeht, haben wir wenigstens Schwein gehabt, dass wir nicht das teuerste genommen haben.", tr: "Anlaştık. Ve yine de ters giderse, en azından en pahalısını almadığımız için şansımız varmış deriz." },
@@ -295,7 +295,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
     },
     speaking: [
       { situation: "Bütçenin dar olduğunu kibarca söylüyorsun.", de: "Ehrlich gesagt bin ich diesen Monat knapp bei Kasse.", tr: "Açıkçası bu ay param kıt." },
-      { situation: "Bir planın sağlam olduğunu söylüyorsun.", de: "Der Vorschlag ist nicht das Gelbe vom Ei, aber er hat Hand und Fuß.", tr: "Öneri işin en iyisi değil ama eli ayağı tutuyor." },
+      { situation: "Bir planın sağlam olduğunu söylüyorsun.", de: "Der Vorschlag ist nicht das Gelbe vom Ei, aber er hat Hand und Fuß.", tr: "Öneri kusursuz değil ama sağlam ve mantıklı." },
     ],
     writing: {
       prompt: "Yoğun geçen bir gününü ya da bir kararını anlatan kişisel bir metin yaz — deyimleri dozunda kullan.",
@@ -310,12 +310,12 @@ export const C1_EXAMS: ModuleExamPlan[] = [
       phrases: [
         { de: "Da habe ich Schwein gehabt.", tr: "Şansım varmış.", en: "I got lucky there." },
         { de: "Ich bin gerade knapp bei Kasse.", tr: "Şu sıra param kıt.", en: "I'm a bit short on money right now." },
-        { de: "Das hat Hand und Fuß.", tr: "Bunun eli ayağı tutuyor.", en: "That is sound and well thought out." },
+        { de: "Das hat Hand und Fuß.", tr: "Bu sağlam ve mantıklı.", en: "That is sound and well thought out." },
         { de: "Bei uns herrschte dicke Luft.", tr: "Bizde hava gergindi.", en: "There was tension in the air." },
         { de: "Wir sind am Ball geblieben.", tr: "Peşini bırakmadık.", en: "We stuck with it." },
       ],
       sample:
-        "Der Montag fing schlecht an. Die Bahn fiel aus, und im Büro herrschte schon vor neun dicke Luft: Ein Kunde hatte abgesagt, und alle suchten nach einem Schuldigen.\n\nIn der Besprechung habe ich dann vorgeschlagen, den Termin zu verschieben statt das Angebot zu kürzen. Mein Chef fand, der Plan habe Hand und Fuß — was bei ihm schon fast ein Lob ist. Rückblickend habe ich damit Schwein gehabt, denn eine Stunde später meldete sich der Kunde von selbst.\n\nDass ich mir das teure Programm gespart habe, war übrigens auch richtig; ich bin diesen Monat ohnehin knapp bei Kasse. Am Ende war das Ganze eher ein Sturm im Wasserglas.\n\nWir sind am Ball geblieben, und am Dienstag stand der neue Termin.",
+        "Der Montag fing schlecht an. Die Bahn fiel aus, und im Büro herrschte schon vor neun dicke Luft: Ein Kunde hatte abgesagt, und alle suchten nach einem Schuldigen.\n\nIn der Besprechung habe ich dann vorgeschlagen, den Termin zu verschieben, statt das Angebot zu kürzen. Mein Chef fand, der Plan habe Hand und Fuß, sei also gut durchdacht — was bei ihm schon fast ein Lob ist. Rückblickend habe ich damit Schwein gehabt, denn eine Stunde später meldete sich der Kunde von selbst.\n\nDass ich mir das teure Programm gespart habe, war übrigens auch richtig; ich bin diesen Monat ohnehin knapp bei Kasse. Am Ende war das Ganze eher ein Sturm im Wasserglas.\n\nWir sind am Ball geblieben, und am Dienstag stand der neue Termin.",
     },
   },
   {
@@ -332,7 +332,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
       { de: "konzessive Konnektoren", tr: "Dem ist entgegenzuhalten, dass …" },
     ],
     canDo: [
-      { de: "Ich kann Gesagtes vollständig in indirekter Rede wiedergeben.", tr: "Söylenenleri tam dolaylı aktarımla nakledebiliyorum.", en: "I can report speech fully in reported speech." },
+      { de: "Ich kann Gesagtes vollständig in indirekter Rede wiedergeben.", tr: "Söylenenleri tam dolaylı aktarımla nakledebiliyorum.", en: "I can render what was said entirely in reported speech." },
       { de: "Ich kann Behauptung und belegte Tatsache unterscheiden.", tr: "İddia ile kanıtlanmış olguyu ayırabiliyorum.", en: "I can distinguish a claim from a proven fact." },
       { de: "Ich kann Befunde im wissenschaftlichen Stil formulieren.", tr: "Bulguları akademik üslupla kurabiliyorum.", en: "I can formulate findings in academic style." },
       { de: "Ich kann verdichtete Fachsätze entschlüsseln.", tr: "Sıkıştırılmış uzman cümlelerini çözebiliyorum.", en: "I can decode dense specialist sentences." },
@@ -387,10 +387,10 @@ export const C1_EXAMS: ModuleExamPlan[] = [
         { de: "Dem Bericht zufolge …", tr: "Rapora göre …", en: "According to the report …" },
         { de: "Das bleibt zu belegen.", tr: "Bunun kanıtlanması gerekiyor.", en: "That remains to be proven." },
         { de: "Es lässt sich festhalten, dass …", tr: "…-diği söylenebilir", en: "It can be stated that …" },
-        { de: "Dem ist entgegenzuhalten, dass …", tr: "Buna şu karşı çıkılabilir: …", en: "Against this it must be said that …" },
+        { de: "Dem ist entgegenzuhalten, dass …", tr: "Buna karşı şunu belirtmek gerekir: …", en: "Against this it must be said that …" },
       ],
       sample:
-        "Zum Streit um die alte Halle\n\nLaut Angaben eines Mitarbeiters sei das Gebäude bereits verkauft worden. Dem Bericht zufolge stützt sich diese Aussage auf einen Beschluss aus dem Frühjahr. Eine Stellungnahme der Stadt lag zunächst nicht vor.\n\nDem ist allerdings entgegenzuhalten, dass in dem Beschluss lediglich die Prüfung eines Verkaufs festgehalten wurde. Zwischen einem Prüfauftrag und einem Vertrag liegt ein erheblicher Unterschied; das bleibt zu belegen.\n\nEs lässt sich festhalten, dass die Quellenlage derzeit dünn ist: eine einzige, nicht unabhängige Quelle. Daraus ergibt sich für die Berichterstattung eine einfache Regel — wiedergeben ja, behaupten nein. Bis eine zweite, unabhängige Quelle vorliegt, bleibt jede weitergehende Formulierung unzulässig.\n\nWer zitiert, übernimmt keine Verantwortung für den Inhalt, wohl aber für die Einordnung.",
+        "Zum Streit um die alte Halle\n\nLaut Angaben eines Mitarbeiters sei das Gebäude bereits verkauft worden. Dem Bericht zufolge stützt sich diese Aussage auf einen Beschluss aus dem Frühjahr. Eine Stellungnahme der Stadt lag zunächst nicht vor.\n\nDem ist allerdings entgegenzuhalten, dass in dem Beschluss lediglich die Prüfung eines Verkaufs festgehalten wurde. Zwischen einem Prüfauftrag und einem Vertrag liegt ein erheblicher Unterschied; dass tatsächlich verkauft wurde, bleibt zu belegen.\n\nEs lässt sich festhalten, dass die Quellenlage derzeit dünn ist: eine einzige, nicht unabhängige Quelle. Daraus ergibt sich für die Berichterstattung eine einfache Regel — wiedergeben ja, behaupten nein. Bis eine zweite, unabhängige Quelle vorliegt, bleibt jede weitergehende Formulierung unzulässig.\n\nWer zitiert, übernimmt keine Verantwortung für den Inhalt, wohl aber für die Einordnung.",
     },
   },
 
@@ -402,7 +402,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
     titleTr: "Hukuk ve sözleşme dili",
     focus: [
       { de: "Nominalstil im Vertrag", tr: "im Falle des Verzugs / vorbehaltlich" },
-      { de: "Passiv mit Modalverb", tr: "Es wird darauf hingewiesen, dass …" },
+      { de: "Passiv mit Modalverb", tr: "Es muss darauf hingewiesen werden, dass …" },
       { de: "Funktionsverbgefüge", tr: "Anspruch erheben / in Verzug geraten" },
       { de: "indirekte Rede", tr: "Der Anwalt sagte, man müsse …" },
       { de: "konzessive Konnektoren", tr: "Wenngleich …, gleichwohl …" },
@@ -429,7 +429,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
       ],
       questions: [
         { de: "Seit wann besteht der Mangel?", tr: "Arıza ne zamandan beri var?", options: ["Seit einer Woche", "Seit November", "Seit dem Fünfzehnten", "Seit einem Jahr"], answer: 1 },
-        { de: "Was kündigt die Mieterin für den Fall an, dass die Frist verstreicht?", tr: "Kiracı süre geçerse ne yapacağını bildiriyor?", options: ["Sie zieht aus", "Sie erhebt Anspruch auf eine Mietminderung", "Sie ruft die Polizei", "Sie repariert selbst"], answer: 1 },
+        { de: "Was kündigt die Mieterin für den Fall an, dass die Frist verstreicht?", tr: "Süre dolarsa kiracı ne yapacak?", options: ["Sie zieht aus", "Sie erhebt Anspruch auf eine Mietminderung", "Sie ruft die Polizei", "Sie repariert selbst"], answer: 1 },
         { de: "Was bedeutet „Der Anwalt sagte, das sei rechtens“?", tr: "„Der Anwalt sagte, das sei rechtens“ ne demek?", options: ["Die Mieterin behauptet es selbst", "Die Aussage des Anwalts wird wiedergegeben", "Das Gericht hat entschieden", "Der Vermieter stimmt zu"], answer: 1 },
       ],
     },
@@ -446,7 +446,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
     },
     speaking: [
       { situation: "Süre veriyorsun.", de: "Für die Beseitigung des Mangels setze ich eine Frist bis zum Fünfzehnten.", tr: "Arızanın giderilmesi için ayın on beşine kadar süre veriyorum." },
-      { situation: "Hak talebini ileri sürüyorsun.", de: "Ich erhebe Anspruch auf eine Mietminderung und werde diesen geltend machen.", tr: "Kira indirimi talebinde bulunuyor ve bunu ileri süreceğim." },
+      { situation: "Hak talebini ileri sürüyorsun.", de: "Ich erhebe Anspruch auf eine Mietminderung und werde diesen geltend machen.", tr: "Kira indirimi talebinde bulunuyorum ve bu talebi ileri süreceğim." },
     ],
     writing: {
       prompt: "Bir karara ya da faturaya karşı resmî bir itiraz yazısı yaz.",
@@ -454,7 +454,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
       checklist: [
         "Konu satırında dosya numarasını ve tarihi belirt",
         "İtirazın süreyi koruyacak biçimde sunulduğunu yaz (fristwahrend)",
-        "Kabul ettiğin noktayı bir imtiyaz bağlacıyla söyle (Wenngleich …)",
+        "Kabul ettiğin noktayı bir zıtlık bağlacıyla söyle (Wenngleich …)",
         "Talebini işlev fiili öbeğiyle kur (Anspruch erheben / geltend machen)",
         "Gerekçeyi ne zaman sunacağını ve beklediğin cevabı yaz",
       ],
@@ -498,7 +498,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Tuna", de: "Ich habe den Satz jetzt fünfmal gelesen. Was wollen die von mir?", tr: "Cümleyi beş kez okudum. Benden ne istiyorlar?" },
         { speaker: "Ines", de: "Such zuerst den Kern. Subjekt und finites Verb — der Rest ist Beiwerk.", tr: "Önce çekirdeği bul. Özne ve çekimli fiil — gerisi süs." },
         { speaker: "Tuna", de: "Also: „Die Frist verlängert sich.“ Und der ganze Rest davor?", tr: "Yani: „Süre uzar.“ Peki öndeki onca şey?" },
-        { speaker: "Ines", de: "Das ist ein vorangestelltes Attribut: die dem Antrag beizufügenden Unterlagen. Aufgelöst heißt das: die Unterlagen, die dem Antrag beigefügt werden müssen.", tr: "O öne konmuş bir niteleyici: başvuruya eklenmesi gereken belgeler. Açılınca şu demek: başvuruya eklenmesi gereken belgeler." },
+        { speaker: "Ines", de: "Das ist ein vorangestelltes Attribut: die dem Antrag beizufügenden Unterlagen. Aufgelöst heißt das: die Unterlagen, die dem Antrag beigefügt werden müssen.", tr: "O, öne konmuş bir niteleyici: „die dem Antrag beizufügenden Unterlagen“. Açılınca şu demek: başvuruya eklenmesi gereken belgeler." },
         { speaker: "Tuna", de: "Anscheinend fehlt bei mir genau eine davon.", tr: "Görünüşe göre bende tam olarak onlardan biri eksik." },
         { speaker: "Ines", de: "Anscheinend, ja — nicht scheinbar. Scheinbar hieße: es sieht so aus, ist aber nicht so.", tr: "Görünüşe göre, evet — 'görünüşte' değil. 'Görünüşte' şu demek olurdu: öyle görünüyor ama değil." },
         { speaker: "Tuna", de: "Verstanden. Diesbezüglich rufe ich morgen an, darauf komme ich dann zurück.", tr: "Anladım. Bu konuda yarın telefon ederim, sonra buna dönerim." },
@@ -506,7 +506,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
       questions: [
         { de: "Was rät Ines als ersten Schritt?", tr: "Ines ilk adım olarak ne öneriyor?", options: ["Den Satz laut lesen", "Zuerst Subjekt und finites Verb suchen", "Einen Anwalt fragen", "Den Text übersetzen"], answer: 1 },
         { de: "Was bedeutet „die dem Antrag beizufügenden Unterlagen“?", tr: "„die dem Antrag beizufügenden Unterlagen“ ne demek?", options: ["Unterlagen, die schon beigefügt sind", "Unterlagen, die beigefügt werden müssen", "Unterlagen, die fehlen dürfen", "Unterlagen des Amtes"], answer: 1 },
-        { de: "Warum korrigiert Ines das Wort „scheinbar“?", tr: "Ines neden „scheinbar“ kelimesini düzeltiyor?", options: ["Es ist zu formell", "Es hieße: es sieht so aus, ist aber nicht so", "Es ist veraltet", "Es passt nicht zum Amt"], answer: 1 },
+        { de: "Warum grenzt Ines „anscheinend“ von „scheinbar“ ab?", tr: "Ines neden „anscheinend“ ile „scheinbar“ arasındaki farkı vurguluyor?", options: ["„Scheinbar“ ist zu formell", "„Scheinbar“ hieße: es sieht so aus, ist aber nicht so", "„Scheinbar“ ist veraltet", "„Scheinbar“ passt nicht zum Amt"], answer: 1 },
       ],
     },
     reading: {
@@ -529,7 +529,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
       stimulus: "Die dem Antrag beizufügenden und bis zum Ablauf der Frist vollständig einzureichenden Unterlagen sind, sofern nicht anders vereinbart, in Kopie vorzulegen.",
       checklist: [
         "Önce cümlenin çekirdeğini kendi cümlenle yaz",
-        "En az bir katılım öbeğini ilgi cümlesine aç",
+        "En az bir ortaç öbeğini ilgi cümlesine aç",
         "Metni fiil üslubuna çevir, gereksiz isimleri at",
         "En az bir gönderme kullan (darauf / diesbezüglich / Letzteres)",
         "Sonunda kısalığın anlaşılırlığa zarar vermediğini bir cümleyle söyle",
@@ -543,7 +543,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
         { de: "Die Kürze darf der Verständlichkeit nicht schaden.", tr: "Kısalık anlaşılırlığa zarar vermemeli.", en: "Brevity must not harm clarity." },
       ],
       sample:
-        "Zuerst suche ich den Kern des Satzes. Er lautet schlicht: Die Unterlagen sind in Kopie vorzulegen. Alles andere sind Einschübe.\n\nAufgelöst heißt das: Sie müssen die Unterlagen einreichen, die zum Antrag gehören, und zwar vollständig und vor Ablauf der Frist. Kopien genügen, sofern nichts anderes vereinbart wurde.\n\nDen Text schreibe ich deshalb in den Verbalstil um: „Bitte reichen Sie alle Unterlagen zum Antrag bis zum Fristende ein. Kopien genügen. Gilt eine andere Absprache, teilen Sie uns das bitte mit.“ Drei kurze Sätze statt eines langen.\n\nAuf den Einwand, das klinge weniger amtlich, komme ich gern zurück: Die Kürze darf der Verständlichkeit nicht schaden — aber die Förmlichkeit darf sie ebenso wenig zerstören.",
+        "Zuerst suche ich den Kern des Satzes. Er lautet schlicht: Die Unterlagen sind in Kopie vorzulegen. Alles andere sind Einschübe.\n\nAufgelöst heißt das: Sie müssen die Unterlagen einreichen, die zum Antrag gehören, und zwar vollständig und vor Ablauf der Frist. Kopien genügen, sofern nichts anderes vereinbart wurde.\n\nDen Text schreibe ich deshalb in den Verbalstil um: „Bitte reichen Sie alle Unterlagen zum Antrag bis zum Fristende ein. Kopien genügen. Gilt eine andere Absprache, teilen Sie uns das bitte mit.“ Drei kurze Sätze statt eines langen.\n\nMan könnte einwenden, das klinge weniger amtlich. Darauf antworte ich gern: Die Kürze darf der Verständlichkeit nicht schaden — aber die Förmlichkeit darf sie ebenso wenig zerstören.",
     },
   },
 
@@ -582,7 +582,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
       ],
       questions: [
         { de: "Was wiegt laut Frau Kern schwerer?", tr: "Bayan Kern'e göre daha ağır basan ne?", options: ["Individuelle Beiträge", "Systemische Ursachen", "Politische Reden", "Technische Lösungen"], answer: 1 },
-        { de: "Was räumt Frau Kern Herrn Adam ein?", tr: "Bayan Kern, Bay Adam'a neyi kabul ediyor?", options: ["Dass das System egal ist", "Dass ohne Einzelne nichts passiert", "Dass sie sich geirrt hat", "Dass die Debatte sinnlos ist"], answer: 1 },
+        { de: "Was räumt Frau Kern Herrn Adam ein?", tr: "Bayan Kern hangi noktada Bay Adam'a hak veriyor?", options: ["Dass das System egal ist", "Dass ohne Einzelne nichts passiert", "Dass sie sich geirrt hat", "Dass die Debatte sinnlos ist"], answer: 1 },
         { de: "Was drückt „Hätte man vor zwanzig Jahren umgesteuert, stünden wir heute anders da“ aus?", tr: "„Hätte man vor zwanzig Jahren umgesteuert, stünden wir heute anders da“ ne bildiriyor?", options: ["Eine sichere Prognose", "Eine nicht eingetretene Möglichkeit in der Vergangenheit", "Einen Befehl", "Eine Bedingung für morgen"], answer: 1 },
       ],
     },
@@ -606,7 +606,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
       stimulus: "Wer trägt die Verantwortung — der Einzelne oder das System?",
       checklist: [
         "İki tarafın da haklı olduğu noktayı baştan söyle",
-        "Bir imtiyaz bağlacı kullan (ungeachtet / nichtsdestotrotz)",
+        "Bir zıtlık bağlacı kullan (ungeachtet / nichtsdestotrotz)",
         "Bir varsayım kurup sonucunu izle (Angenommen, …)",
         "Gerçekleşmemiş bir geçmişi irreal koşulla yaz (Hätte man …, stünde …)",
         "Bir ayrım kur (Davon zu unterscheiden ist …) ve somut bir sonuçla bitir",
@@ -640,7 +640,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
       { de: "Ich kann Ironie am Tonfall und an Partikeln erkennen.", tr: "İroniyi ses tonundan ve parçacıklardan tanıyabiliyorum.", en: "I can recognise irony from tone and particles." },
       { de: "Ich kann Untertreibung richtig deuten und selbst einsetzen.", tr: "Ölçülü ifadeyi doğru yorumlayabiliyor ve kullanabiliyorum.", en: "I can interpret and use understatement." },
       { de: "Ich kann einen missglückten Scherz zurücknehmen.", tr: "Tutmayan bir şakayı geri alabiliyorum.", en: "I can take back a joke that misfired." },
-      { de: "Ich kann ein Du-Angebot annehmen oder höflich ablehnen.", tr: "Sen teklifini kabul edebiliyor ya da kibarca reddedebiliyorum.", en: "I can accept or politely decline an offer to use 'du'." },
+      { de: "Ich kann ein Du-Angebot annehmen oder höflich ablehnen.", tr: "„Sen“ diye hitap etme teklifini kabul edebiliyor ya da kibarca reddedebiliyorum.", en: "I can accept or politely decline an offer to use 'du'." },
       { de: "Ich kann kulturelle Unterschiede benennen, ohne zu werten.", tr: "Kültürel farkları yargılamadan adlandırabiliyorum.", en: "I can name cultural differences without judging." },
     ],
     listening: {
@@ -651,10 +651,10 @@ export const C1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Jan", de: "Na, das lief ja super heute.", tr: "Ee, bugün her şey harika gitti." },
         { speaker: "Elif", de: "Das war jetzt ironisch, oder? Sag es ruhig direkt.", tr: "Bu ironikti, değil mi? Rahatça doğrudan söyle." },
         { speaker: "Jan", de: "Ehrlich? Der Anfang war nicht schlecht. Beim zweiten Teil ist noch Luft nach oben.", tr: "Dürüst mü? Giriş fena değildi. İkinci bölümde daha iyi olabilirdi." },
-        { speaker: "Elif", de: "„Nicht schlecht“ heißt bei dir also gut, und „Luft nach oben“ heißt: es reicht nicht.", tr: "Yani sende „fena değil“ iyi demek, „yukarıda hava var“ ise yetmiyor demek." },
+        { speaker: "Elif", de: "„Nicht schlecht“ heißt bei dir also gut, und „Luft nach oben“ heißt: es reicht nicht.", tr: "Yani sende „fena değil“ iyi demek, „Luft nach oben“ ise yetmiyor demek." },
         { speaker: "Jan", de: "Genau. Alle Achtung übrigens für die Ruhe bei den Zwischenrufen — das war souverän.", tr: "Aynen. Bu arada laf atmalar sırasındaki sakinliğine helal olsun — çok hâkimdin." },
         { speaker: "Elif", de: "Danke. Und der Spruch über meine Folien? Der ist nicht gut angekommen.", tr: "Teşekkürler. Peki slaytlarım hakkındaki laf? O iyi karşılanmadı." },
-        { speaker: "Jan", de: "Stimmt, das war auf deine Kosten. Ich nehme das zurück.", tr: "Doğru, o senin sırtından oldu. Sözümü geri alıyorum." },
+        { speaker: "Jan", de: "Stimmt, das war auf deine Kosten. Ich nehme das zurück.", tr: "Doğru, o espri senin üzerinden yapılmıştı. Sözümü geri alıyorum." },
       ],
       questions: [
         { de: "Was meint Jan mit „Na, das lief ja super“?", tr: "Jan „Na, das lief ja super“ ile ne demek istiyor?", options: ["Es lief wirklich gut", "Das Gegenteil — es lief schlecht", "Er war nicht dabei", "Er hat nichts gesehen"], answer: 1 },
@@ -663,19 +663,19 @@ export const C1_EXAMS: ModuleExamPlan[] = [
       ],
     },
     reading: {
-      title: "Bloß nicht zu viel loben",
-      titleTr: "Sakın fazla övme",
+      title: "Zwischen den Zeilen",
+      titleTr: "Satır aralarında",
       genre: "Deneme yazısı",
-      text: "Bloß nicht zu viel loben\n\nWer aus einer Kultur kommt, in der Lob großzügig fließt, erlebt in Deutschland zunächst eine Irritation. Man arbeitet wochenlang, legt etwas vor — und hört „Nicht schlecht“. Das klingt nach einer glatten Drei. Gemeint ist, je nach Tonfall, etwas zwischen gut und ausgezeichnet.\n\nUmgekehrt gilt dasselbe: „Da ist noch Luft nach oben“ ist kein netter Hinweis, sondern ein klares Urteil. Und „Alle Achtung“ ist, so knapp es klingt, ein echtes Kompliment.\n\nDie Regel dahinter lautet: Kritik wird direkt geäußert, Lob sparsam. Wer das als Kälte liest, missversteht es; es ist eine Frage der Dosierung, nicht der Zuneigung. Wer dagegen selbst zu dick aufträgt, wirkt schnell unglaubwürdig — übertriebenes Lob macht hier eher verlegen als froh.\n\nEin Rat zum Schluss, der nichts kostet: Hören Sie auf den Tonfall. Er trägt in dieser Sprache mehr Bedeutung, als das Wörterbuch verrät — und er entscheidet, ob ein Satz Lob, Ironie oder Spitze ist.",
+      text: "Zwischen den Zeilen\n\nWer neu im Team ist, lernt die Wörter schnell, die Zwischentöne langsamer. „Na, das lief ja super“ nach einer missglückten Sitzung ist kein Lob, sondern Ironie; wer es wörtlich nimmt, bedankt sich an der falschen Stelle. Umgekehrt ist „Alle Achtung“, so knapp es klingt, ein echtes Kompliment — mehr Begeisterung sollte man nicht erwarten.\n\nMit dem Humor ist es ähnlich. Ein Witz über sich selbst öffnet Türen; ein Witz auf Kosten anderer schließt sie, auch wenn alle höflich lachen. Und wer selbst zu dick aufträgt, wirkt schnell unglaubwürdig: Überschwängliches Lob macht hier eher misstrauisch als froh.\n\nBleibt die Frage nach Du und Sie. Das Du bietet in der Regel die ältere oder ranghöhere Person an, und es ist keine Unhöflichkeit, lieber beim Sie zu bleiben.\n\nAm Ende entscheidet der Tonfall, nicht das Wörterbuch, ob ein Satz Lob, Ironie oder eine Spitze ist.",
       questions: [
-        { de: "Wie ist „Nicht schlecht“ laut Text gemeint?", tr: "Metne göre „Nicht schlecht“ ne demek?", options: ["Mittelmäßig", "Zwischen gut und ausgezeichnet", "Unbrauchbar", "Noch nicht fertig"], answer: 1 },
+        { de: "Wie ist „Alle Achtung“ laut Text zu verstehen?", tr: "Metne göre „Alle Achtung“ nasıl anlaşılmalı?", options: ["Als Warnung", "Als echtes Kompliment", "Als Ironie", "Als versteckte Kritik"], answer: 1 },
         { de: "Was passiert laut Text, wenn man zu dick aufträgt?", tr: "Metne göre fazla abartılırsa ne olur?", options: ["Man wirkt freundlich", "Man wirkt schnell unglaubwürdig", "Man wird befördert", "Nichts"], answer: 1 },
         { de: "Was entscheidet laut Schluss über die Bedeutung eines Satzes?", tr: "Sonuca göre bir cümlenin anlamını ne belirliyor?", options: ["Die Wortwahl", "Der Tonfall", "Die Länge", "Die Höflichkeitsform"], answer: 1 },
       ],
     },
     speaking: [
-      { situation: "Ölçülü ama gerçek bir övgü veriyorsun.", de: "Alle Achtung — das war souverän gelöst.", tr: "Helal olsun — bu çok hâkim biçimde çözüldü." },
-      { situation: "Bir 'sen' teklifini kibarca reddediyorsun.", de: "Danke für das Angebot, aber ich bleibe lieber beim Sie.", tr: "Teklif için teşekkürler, ama ben siz'de kalmayı tercih ederim." },
+      { situation: "Ölçülü ama gerçek bir övgü veriyorsun.", de: "Alle Achtung — das war souverän gelöst.", tr: "Helal olsun — bunu çok ustaca çözdün." },
+      { situation: "Bir 'sen' teklifini kibarca reddediyorsun.", de: "Danke für das Angebot, aber ich bleibe lieber beim Sie.", tr: "Teklif için teşekkürler, ama ben „siz“ demeye devam etmeyi tercih ederim." },
     ],
     writing: {
       prompt: "Yeni gelen birine buradaki iletişim inceliklerini anlatan kişisel bir metin yaz.",
@@ -690,8 +690,8 @@ export const C1_EXAMS: ModuleExamPlan[] = [
       phrases: [
         { de: "„Nicht schlecht“ ist hier ein Lob.", tr: "„Fena değil“ burada bir övgüdür.", en: "\"Not bad\" is praise here." },
         { de: "Da ist noch Luft nach oben.", tr: "Daha iyi olabilirdi.", en: "There is still room for improvement." },
-        { de: "Kritik ist direkt, Lob ist sparsam.", tr: "Eleştiri doğrudan, övgü tutumludur.", en: "Criticism is direct, praise is sparing." },
-        { de: "Ich bleibe lieber beim Sie.", tr: "Ben siz'de kalmayı tercih ederim.", en: "I would rather stay with the formal form." },
+        { de: "Kritik ist direkt, Lob ist sparsam.", tr: "Eleştiri doğrudan yapılır, övgü az verilir.", en: "Criticism is direct, praise is sparing." },
+        { de: "Ich bleibe lieber beim Sie.", tr: "Ben „siz“ demeye devam etmeyi tercih ederim.", en: "I would rather stay with the formal form." },
         { de: "Anders, nicht falsch.", tr: "Farklı, yanlış değil.", en: "Different, not wrong." },
       ],
       sample:
@@ -724,17 +724,17 @@ export const C1_EXAMS: ModuleExamPlan[] = [
       titleTr: "Son tur",
       situation: "Uzun bir müzakerenin son turunda iki taraf anlaşmaya çalışıyor.",
       turns: [
-        { speaker: "Einkauf", de: "Eine Sache noch, dann unterschreibe ich: Kämen Sie mir bei der Laufzeit entgegen?", tr: "Bir şey daha, sonra imzalıyorum: Sürede bana biraz yaklaşır mısınız?" },
+        { speaker: "Einkauf", de: "Eine Sache noch, dann unterschreibe ich: Kämen Sie mir bei der Laufzeit entgegen?", tr: "Bir şey daha, sonra imzalıyorum: Süre konusunda bana biraz esneklik gösterebilir misiniz?" },
         { speaker: "Vertrieb", de: "Unser letztes Wort wäre vierundzwanzig Monate. Kürzer geht es nicht, ohne dass der Preis steigt.", tr: "Son sözümüz yirmi dört ay olurdu. Fiyat artmadan daha kısası olmuyor." },
         { speaker: "Einkauf", de: "Und wenn wir bei achtzehn blieben — womit könnten Sie leben?", tr: "Peki on sekizde kalsak — neyle yaşayabilirdiniz?" },
-        { speaker: "Vertrieb", de: "An einem Punkt können wir nachbessern: Wartung inklusive, dafür achtzehn Monate. Das wäre für uns tragbar.", tr: "Bir noktada iyileştirme yapabiliriz: Bakım dâhil, karşılığında on sekiz ay. Bu bizim için taşınabilir olurdu." },
+        { speaker: "Vertrieb", de: "An einem Punkt können wir nachbessern: Wartung inklusive, dafür achtzehn Monate. Das wäre für uns tragbar.", tr: "Bir noktada teklifimizi iyileştirebiliriz: Bakım dâhil, karşılığında on sekiz ay. Bu bizim için kabul edilebilir olurdu." },
         { speaker: "Einkauf", de: "Damit könnte ich in die Runde gehen. Ist der Vertrag dann unterschriftsreif?", tr: "Bununla kurula gidebilirim. Sözleşme o hâlde imzaya hazır mı?" },
         { speaker: "Vertrieb", de: "Bis morgen Mittag, ja. Ich lasse die neue Fassung umgehend aufsetzen.", tr: "Yarın öğlene kadar, evet. Yeni metni derhâl hazırlatıyorum." },
         { speaker: "Einkauf", de: "Dann bleibt nur noch der Handschlag. Danke für die Geduld.", tr: "O hâlde geriye bir el sıkışma kaldı. Sabrınız için teşekkürler." },
       ],
       questions: [
-        { de: "Was war zunächst das letzte Wort des Vertriebs?", tr: "Satışın ilk nihai sözü neydi?", options: ["Achtzehn Monate", "Vierundzwanzig Monate", "Zwölf Monate", "Sechs Monate"], answer: 1 },
-        { de: "Womit begründet der Vertrieb die kürzere Laufzeit?", tr: "Satış, kısalan süreyi neyle dengeliyor?", options: ["Mit einem höheren Preis", "Mit inkludierter Wartung", "Mit weniger Leistung", "Mit einer Anzahlung"], answer: 1 },
+        { de: "Was war zunächst das letzte Wort des Vertriebs?", tr: "Satış tarafının başta söylediği son söz neydi?", options: ["Achtzehn Monate", "Vierundzwanzig Monate", "Zwölf Monate", "Sechs Monate"], answer: 1 },
+        { de: "Was bietet der Vertrieb am Ende an?", tr: "Satış tarafı sonunda ne teklif ediyor?", options: ["Achtzehn Monate zu einem höheren Preis", "Achtzehn Monate mit Wartung inklusive", "Vierundzwanzig Monate mit Rabatt", "Zwölf Monate mit einer Anzahlung"], answer: 1 },
         { de: "Wann ist der Vertrag unterschriftsreif?", tr: "Sözleşme ne zaman imzaya hazır?", options: ["Sofort", "Bis morgen Mittag", "Nächste Woche", "Erst nach der Runde"], answer: 1 },
       ],
     },
@@ -759,7 +759,7 @@ export const C1_EXAMS: ModuleExamPlan[] = [
         "Bir dönüm noktası anını anlat",
         "Neyi artık yapabildiğini somut olarak yaz",
         "Neyin hâlâ zor olduğunu dürüstçe söyle",
-        "En az bir mecaz ve bir irreal kıyas kullan",
+        "En az bir mecaz ve bir gerçek dışı benzetme (als hätte …) kullan",
         "Bundan sonra ne yapacağını bir cümleyle bitir",
       ],
       minWords: 110,
@@ -767,11 +767,11 @@ export const C1_EXAMS: ModuleExamPlan[] = [
         { de: "Der Wendepunkt war für mich …", tr: "Benim için dönüm noktası …", en: "The turning point for me was …" },
         { de: "Ein langer Weg ist zurückgelegt worden.", tr: "Uzun bir yol kat edildi.", en: "A long road has been travelled." },
         { de: "Es ist, als hätte ich zwei Stimmen.", tr: "Sanki iki sesim varmış gibi.", en: "It is as if I had two voices." },
-        { de: "Schwer fällt mir nach wie vor …", tr: "Hâlâ zor geleni …", en: "What I still find difficult is …" },
+        { de: "Schwer fällt mir nach wie vor …", tr: "Bana hâlâ zor gelen …", en: "What I still find difficult is …" },
         { de: "Der Weg geht weiter.", tr: "Yol devam ediyor.", en: "The road goes on." },
       ],
       sample:
-        "Angekommen — und weiter\n\nDer Wendepunkt war für mich eine Sitzung im vergangenen Herbst. Ich hatte mich auf drei Sätze vorbereitet und am Ende eine halbe Stunde diskutiert, ohne einmal zu übersetzen. Erst auf dem Heimweg ist mir das aufgefallen.\n\nHeute kann ich in einer Verhandlung höflich widersprechen, einen Bescheid entziffern und einem Kollegen erklären, warum „nicht schlecht“ ein Lob ist. Ein langer Weg ist zurückgelegt worden, und die Mühe war nicht umsonst.\n\nSchwer fällt mir nach wie vor der Ton am Telefon: ohne Gesicht fehlt mir die halbe Information. Und Ironie erkenne ich meistens — aber manchmal eben erst zwei Sätze später.\n\nEs ist, als hätte ich zwei Stimmen; je nach Sprache bin ich ein wenig anders. Das ist ein Reichtum, kein Riss. Der Gipfel ist erreicht, aber der Weg geht weiter — und ab morgen lese ich täglich eine Seite ohne Wörterbuch.",
+        "Angekommen — und weiter\n\nDer Wendepunkt war für mich eine Sitzung im vergangenen Herbst. Ich hatte mich auf drei Sätze vorbereitet und am Ende eine halbe Stunde diskutiert, ohne einmal zu übersetzen. Erst auf dem Heimweg ist mir das aufgefallen.\n\nHeute kann ich in einer Verhandlung höflich widersprechen, einen Bescheid entziffern und einem Kollegen erklären, warum „nicht schlecht“ ein Lob ist. Ein langer Weg ist zurückgelegt worden, und die Mühe war nicht umsonst.\n\nSchwer fällt mir nach wie vor der Ton am Telefon: Ohne Gesicht fehlt mir die halbe Information. Und Ironie erkenne ich meistens — aber manchmal eben erst zwei Sätze später.\n\nEs ist, als hätte ich zwei Stimmen; je nach Sprache bin ich ein wenig anders. Das ist ein Reichtum, kein Riss. Der Gipfel ist erreicht, aber der Weg geht weiter — und ab morgen lese ich täglich eine Seite ohne Wörterbuch.",
     },
   },
 ];

@@ -24,8 +24,8 @@ export const A2_EXAMS: ModuleExamPlan[] = [
     canDo: [
       { de: "Ich kann von meinem letzten Urlaub erzählen.", tr: "Son tatilimi anlatabiliyorum.", en: "I can talk about my last holiday." },
       { de: "Ich kann unregelmäßige Partizipien richtig benutzen.", tr: "Kural dışı ortaçları doğru kullanabiliyorum.", en: "I can use irregular participles correctly." },
-      { de: "Ich kann erzählen, was an einem Tag schiefgegangen ist.", tr: "Bir günde neyin ters gittiğini anlatabiliyorum.", en: "I can tell what went wrong during a day." },
-      { de: "Ich kann mit „war“ und „hatte“ über früher sprechen.", tr: "„war“ ve „hatte“ ile eskiyi anlatabiliyorum.", en: "I can talk about the past with „war“ and „hatte“." },
+      { de: "Ich kann erzählen, was an einem Tag schiefgegangen ist.", tr: "Bir günde neyin ters gittiğini anlatabiliyorum.", en: "I can say what went wrong on a particular day." },
+      { de: "Ich kann mit „war“ und „hatte“ über früher sprechen.", tr: "„war“ ve „hatte“ ile geçmişten bahsedebiliyorum.", en: "I can talk about the past with „war“ and „hatte“." },
       { de: "Ich kann eine Neuigkeit erzählen.", tr: "Bir haberi aktarabiliyorum.", en: "I can share a piece of news." },
     ],
     listening: {
@@ -36,7 +36,7 @@ export const A2_EXAMS: ModuleExamPlan[] = [
         { speaker: "Nina", de: "Und, wie war dein Montag?", tr: "Ee, pazartesin nasıldı?" },
         { speaker: "Tarik", de: "Furchtbar! Ich habe verschlafen. Der Wecker hat nicht geklingelt.", tr: "Berbat! Uyuyakaldım. Çalar saat çalmadı." },
         { speaker: "Nina", de: "Oh nein. Und dann?", tr: "Olamaz. Sonra?" },
-        { speaker: "Tarik", de: "Ich bin ohne Frühstück losgefahren, aber der Bus ist weggefahren. Ich habe eine halbe Stunde gewartet.", tr: "Kahvaltı etmeden çıktım ama otobüs gitmişti. Yarım saat bekledim." },
+        { speaker: "Tarik", de: "Ich bin ohne Frühstück losgegangen, aber der Bus ist schon weggefahren. Ich habe eine halbe Stunde gewartet.", tr: "Kahvaltı etmeden çıktım ama otobüs gitmişti. Yarım saat bekledim." },
         { speaker: "Nina", de: "Und im Büro?", tr: "Peki ofiste?" },
         { speaker: "Tarik", de: "Im Büro habe ich meinen Schlüssel vergessen. Zum Glück war die Chefin nett.", tr: "Ofiste anahtarımı unuttum. İyi ki müdür anlayışlıydı." },
       ],
@@ -57,7 +57,7 @@ export const A2_EXAMS: ModuleExamPlan[] = [
       ],
     },
     speaking: [
-      { situation: "Tatilini anlatıyorsun.", de: "Letztes Jahr bin ich ans Meer gefahren und ich habe jeden Tag geschwommen.", tr: "Geçen yıl denize gittim ve her gün yüzdüm." },
+      { situation: "Tatilini anlatıyorsun.", de: "Letztes Jahr bin ich ans Meer gefahren und ich bin jeden Tag geschwommen.", tr: "Geçen yıl denize gittim ve her gün yüzdüm." },
       { situation: "Aksi giden bir günü anlatıyorsun.", de: "Ich habe verschlafen und deshalb bin ich zu spät gekommen.", tr: "Uyuyakaldım ve bu yüzden geç kaldım." },
     ],
     writing: {
@@ -77,7 +77,7 @@ export const A2_EXAMS: ModuleExamPlan[] = [
         { de: "Trotzdem war es schön.", tr: "Yine de güzeldi.", en: "Even so it was nice." },
       ],
       sample:
-        "Letzten Sommer bin ich mit meiner Familie nach Antalya gefahren. Wir sind mit dem Auto gefahren und die Fahrt hat acht Stunden gedauert. Das Hotel war klein, aber sehr gemütlich. Jeden Morgen habe ich im Meer geschwommen. Am zweiten Tag haben wir eine alte Stadt besucht. Abends haben wir Fisch gegessen. Leider hat es am letzten Tag geregnet. Trotzdem war der Urlaub super — wir hatten viel Zeit zusammen.",
+        "Letzten Sommer bin ich mit meiner Familie nach Antalya gefahren. Wir sind mit dem Auto gefahren und die Fahrt hat acht Stunden gedauert. Das Hotel war klein, aber sehr gemütlich. Jeden Morgen bin ich im Meer geschwommen. Am zweiten Tag haben wir eine alte Stadt besucht. Abends haben wir Fisch gegessen. Leider hat es am letzten Tag geregnet. Trotzdem war der Urlaub super — wir hatten viel Zeit zusammen.",
     },
   },
 
@@ -94,9 +94,9 @@ export const A2_EXAMS: ModuleExamPlan[] = [
       { de: "Perfekt", tr: "yaşananları anlatmak" },
     ],
     canDo: [
-      { de: "Ich kann erzählen, wie ich hierhergekommen bin.", tr: "Buraya nasıl geldiğimi anlatabiliyorum.", en: "I can tell how I came here." },
+      { de: "Ich kann erzählen, wie ich hierhergekommen bin.", tr: "Buraya nasıl geldiğimi anlatabiliyorum.", en: "I can explain how I came here." },
       { de: "Ich kann sagen, was ich als Kind wollte, konnte oder musste.", tr: "Çocukken ne istediğimi, neyi yapabildiğimi ya da zorunda olduğumu söyleyebiliyorum.", en: "I can say what I wanted, could or had to do as a child." },
-      { de: "Ich kann über Zeiträume sprechen: seit, vor, nach.", tr: "Süre ve zaman noktalarından bahsedebiliyorum.", en: "I can talk about periods of time." },
+      { de: "Ich kann über Zeiträume sprechen: seit, vor, nach.", tr: "seit, vor ve nach ile zaman dilimlerinden bahsedebiliyorum.", en: "I can talk about periods of time." },
       { de: "Ich kann Reflexivverben benutzen.", tr: "Dönüşlü fiilleri kullanabiliyorum.", en: "I can use reflexive verbs." },
       { de: "Ich kann sagen, was sich verändert hat.", tr: "Neyin değiştiğini anlatabiliyorum.", en: "I can say what has changed." },
     ],
@@ -238,7 +238,7 @@ export const A2_EXAMS: ModuleExamPlan[] = [
       { de: "Nebensatz mit wenn", tr: "koşul yan cümlesi" },
     ],
     canDo: [
-      { de: "Ich kann sagen, wem ich etwas gebe oder zeige.", tr: "Bir şeyi kime verdiğimi söyleyebiliyorum.", en: "I can say who I give or show something to." },
+      { de: "Ich kann sagen, wem ich etwas gebe oder zeige.", tr: "Bir şeyi kime verdiğimi ya da gösterdiğimi söyleyebiliyorum.", en: "I can say who I give or show something to." },
       { de: "Ich kann sagen, wo etwas ist und wohin es kommt.", tr: "Bir şeyin nerede olduğunu ve nereye konacağını söyleyebiliyorum.", en: "I can say where something is and where it goes." },
       { de: "Ich kann meine Nachbarschaft beschreiben.", tr: "Mahallemi tarif edebiliyorum.", en: "I can describe my neighbourhood." },
       { de: "Ich kann um Hilfe bitten und Hilfe anbieten.", tr: "Yardım isteyebiliyor ve teklif edebiliyorum.", en: "I can ask for and offer help." },
@@ -253,7 +253,7 @@ export const A2_EXAMS: ModuleExamPlan[] = [
         { speaker: "Herr Yildiz", de: "Natürlich, kommen Sie rein.", tr: "Tabii, buyurun." },
         { speaker: "Frau Klein", de: "Es geht um den Lärm. Wenn Ihre Kinder abends spielen, kann ich nicht schlafen.", tr: "Gürültü hakkında. Akşamları çocuklarınız oynayınca uyuyamıyorum." },
         { speaker: "Herr Yildiz", de: "Das tut mir wirklich leid. Ab wann stört es Sie?", tr: "Gerçekten özür dilerim. Saat kaçtan sonra rahatsız oluyorsunuz?" },
-        { speaker: "Frau Klein", de: "Ab zehn Uhr. Vorher ist es kein Problem.", tr: "Ondan sonra. Öncesinde sorun değil." },
+        { speaker: "Frau Klein", de: "Ab zehn Uhr. Vorher ist es kein Problem.", tr: "Saat ondan sonra. Öncesinde sorun değil." },
         { speaker: "Herr Yildiz", de: "Verstanden. Ich sage ihnen, dass sie ab neun leise sein sollen.", tr: "Anladım. Onlara dokuzdan sonra sessiz olmalarını söylerim." },
       ],
       questions: [
@@ -266,10 +266,10 @@ export const A2_EXAMS: ModuleExamPlan[] = [
       title: "Aushang im Treppenhaus",
       titleTr: "Merdiven boşluğundaki not",
       genre: "Duyuru",
-      text: "Liebe Nachbarn,\n\nam Samstag ziehe ich aus der Wohnung im zweiten Stock aus. Der Transporter steht von neun bis vierzehn Uhr vor dem Haus. Bitte parken Sie an diesem Tag nicht direkt vor der Tür.\n\nWenn jemand Kartons braucht: Ich stelle sie in den Keller, neben die Waschmaschine. Nehmen Sie gern etwas mit!\n\nViele Grüße\nFamilie Weber (2. Stock)",
+      text: "Liebe Nachbarn,\n\nam Samstag ziehen wir aus der Wohnung im zweiten Stock aus. Der Transporter steht von neun bis vierzehn Uhr vor dem Haus. Bitte parken Sie an diesem Tag nicht direkt vor der Tür.\n\nWenn jemand Kartons braucht: Wir stellen sie in den Keller, neben die Waschmaschine. Nehmen Sie gern etwas mit!\n\nViele Grüße\nFamilie Weber (2. Stock)",
       questions: [
         { de: "Was sollen die Nachbarn am Samstag nicht machen?", tr: "Komşular cumartesi ne yapmamalı?", options: ["Laut sein", "Vor der Tür parken", "In den Keller gehen", "Kartons nehmen"], answer: 1 },
-        { de: "Wo stehen die Kartons?", tr: "Kolileri nereye koyuyor?", options: ["Vor dem Haus", "Im Keller", "Im zweiten Stock", "Im Transporter"], answer: 1 },
+        { de: "Wo stehen die Kartons?", tr: "Koliler nerede duruyor?", options: ["Vor dem Haus", "Im Keller", "Im zweiten Stock", "Im Transporter"], answer: 1 },
       ],
     },
     speaking: [
@@ -397,7 +397,7 @@ export const A2_EXAMS: ModuleExamPlan[] = [
         { speaker: "Verkäuferin", de: "Haben Sie den Beleg dabei?", tr: "Fişiniz yanınızda mı?" },
         { speaker: "Kunde", de: "Ja, hier. Und die Garantie gilt zwei Jahre, oder?", tr: "Evet, buyurun. Garanti iki yıl, değil mi?" },
         { speaker: "Verkäuferin", de: "Richtig. Möchten Sie ein neues Gerät oder Ihr Geld zurück?", tr: "Doğru. Yeni bir cihaz mı yoksa paranızı geri mi istersiniz?" },
-        { speaker: "Kunde", de: "Am liebsten das Geld zurück. Das gleiche Modell ist mir zu teuer.", tr: "En iyisi para iadesi. Aynı model bana pahalı geliyor." },
+        { speaker: "Kunde", de: "Am liebsten das Geld zurück. Ich möchte ein anderes Modell kaufen.", tr: "En iyisi para iadesi. Başka bir model almak istiyorum." },
         { speaker: "Verkäuferin", de: "Kein Problem. Ich brauche nur kurz Ihre Kontonummer.", tr: "Sorun değil. Sadece hesap numaranıza ihtiyacım var." },
       ],
       questions: [
@@ -437,7 +437,7 @@ export const A2_EXAMS: ModuleExamPlan[] = [
         { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Kind regards" },
       ],
       sample:
-        "Sehr geehrte Damen und Herren,\n\nam 3. März habe ich bei Ihnen einen Wasserkocher bestellt (Bestellnummer 48219). Leider funktioniert das Gerät seit gestern nicht mehr: Es wird heiß, aber es schaltet nicht ab. Ich habe den Beleg noch und die Garantie gilt zwei Jahre. Ich möchte lieber mein Geld zurück als ein neues Gerät, denn das gleiche Modell ist mir zu teuer. Können Sie mir bitte sagen, wie ich den Wasserkocher zurückschicken soll?\n\nMit freundlichen Grüßen\nElif Yilmaz",
+        "Sehr geehrte Damen und Herren,\n\nam 3. März habe ich bei Ihnen einen Wasserkocher bestellt (Bestellnummer 48219). Leider funktioniert das Gerät seit gestern nicht mehr: Es wird heiß, aber es schaltet nicht ab. Ich habe den Beleg noch und die Garantie gilt zwei Jahre. Ich möchte lieber mein Geld zurück als ein neues Gerät, denn ich möchte ein anderes Modell kaufen. Können Sie mir bitte sagen, wie ich den Wasserkocher zurückschicken soll?\n\nMit freundlichen Grüßen\nElif Yilmaz",
     },
   },
 
@@ -457,7 +457,7 @@ export const A2_EXAMS: ModuleExamPlan[] = [
       { de: "Ich kann eine Reise planen und sagen, wohin ich fahre.", tr: "Bir seyahat planlayıp nereye gittiğimi söyleyebiliyorum.", en: "I can plan a trip and say where I'm going." },
       { de: "Ich kann im Hotel einchecken und Fragen stellen.", tr: "Otele giriş yapıp soru sorabiliyorum.", en: "I can check in at a hotel and ask questions." },
       { de: "Ich kann einen Wetterbericht verstehen.", tr: "Hava durumu bültenini anlayabiliyorum.", en: "I can understand a weather forecast." },
-      { de: "Ich kann sagen, was ich einpacken muss.", tr: "Ne toplamam gerektiğini söyleyebiliyorum.", en: "I can say what I have to pack." },
+      { de: "Ich kann sagen, was ich einpacken muss.", tr: "Bavuluma ne koymam gerektiğini söyleyebiliyorum.", en: "I can say what I have to pack." },
       { de: "Ich kann ein Reiseproblem melden.", tr: "Bir seyahat aksaklığını bildirebiliyorum.", en: "I can report a travel problem." },
     ],
     listening: {
@@ -562,7 +562,7 @@ export const A2_EXAMS: ModuleExamPlan[] = [
     },
     speaking: [
       { situation: "Doğum gününü kutluyorsun.", de: "Herzlichen Glückwunsch zum Geburtstag! Ich hoffe, dass du einen schönen Tag hast.", tr: "Doğum günün kutlu olsun! Umarım güzel bir gün geçirirsin." },
-      { situation: "Bir daveti iptal ediyorsun.", de: "Es tut mir leid, ich kann nicht kommen, weil ich arbeiten muss.", tr: "Üzgünüm, gelemiyorum çünkü çalışmam gerekiyor." },
+      { situation: "Bir daveti geri çeviriyorsun.", de: "Es tut mir leid, ich kann nicht kommen, weil ich arbeiten muss.", tr: "Üzgünüm, gelemiyorum çünkü çalışmam gerekiyor." },
     ],
     writing: {
       prompt: "Bir davete katılamıyorsun. Kısa bir iptal mesajı yaz ve telafi öner.",
@@ -672,7 +672,7 @@ export const A2_EXAMS: ModuleExamPlan[] = [
     canDo: [
       { de: "Ich kann mich auf dem Amt anmelden.", tr: "Nüfus dairesinde kayıt yaptırabiliyorum.", en: "I can register at the citizens' office." },
       { de: "Ich kann ein Formular verstehen und ausfüllen.", tr: "Bir formu anlayıp doldurabiliyorum.", en: "I can understand and fill in a form." },
-      { de: "Ich kann nach Unterlagen und Fristen fragen.", tr: "Belge ve süre sorabiliyorum.", en: "I can ask about documents and deadlines." },
+      { de: "Ich kann nach Unterlagen und Fristen fragen.", tr: "Gereken belgeleri ve son tarihleri sorabiliyorum.", en: "I can ask about documents and deadlines." },
       { de: "Ich kann über meine Pläne sprechen.", tr: "Planlarımdan bahsedebiliyorum.", en: "I can talk about my plans." },
       { de: "Ich kann sagen, was ich hier gelernt habe.", tr: "Burada ne öğrendiğimi söyleyebiliyorum.", en: "I can say what I have learned here." },
     ],
@@ -691,7 +691,7 @@ export const A2_EXAMS: ModuleExamPlan[] = [
       ],
       questions: [
         { de: "Was möchte die Bürgerin machen?", tr: "Vatandaş ne yapmak istiyor?", options: ["Einen Pass beantragen", "Sich anmelden", "Sich abmelden", "Ein Auto anmelden"], answer: 1 },
-        { de: "Was fehlt ihr?", tr: "Neyi eksik?", options: ["Der Ausweis", "Der Mietvertrag", "Die Wartenummer", "Das Geld"], answer: 1 },
+        { de: "Was fehlt ihr?", tr: "Nesi eksik?", options: ["Der Ausweis", "Der Mietvertrag", "Die Wartenummer", "Das Geld"], answer: 1 },
         { de: "Wann soll sie wiederkommen?", tr: "Ne zaman tekrar gelmeli?", options: ["Am Mittwoch um neun", "Am Donnerstag um neun", "Am Donnerstag um zehn", "Nächste Woche"], answer: 1 },
       ],
     },
@@ -706,7 +706,7 @@ export const A2_EXAMS: ModuleExamPlan[] = [
       ],
     },
     speaking: [
-      { situation: "Dairede işini anlatıyorsun.", de: "Guten Tag, ich möchte mich anmelden. Welche Unterlagen brauche ich?", tr: "İyi günler, kayıt yaptırmak istiyorum. Hangi belgeler gerekiyor?" },
+      { situation: "Resmî dairede ne için geldiğini söylüyorsun.", de: "Guten Tag, ich möchte mich anmelden. Welche Unterlagen brauche ich?", tr: "İyi günler, kayıt yaptırmak istiyorum. Hangi belgeler gerekiyor?" },
       { situation: "Geleceğe dair planını söylüyorsun.", de: "Nächstes Jahr werde ich einen B1-Kurs machen, weil ich hier arbeiten will.", tr: "Gelecek yıl B1 kursu yapacağım çünkü burada çalışmak istiyorum." },
     ],
     writing: {

@@ -78,7 +78,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
       minWords: 30,
       phrases: [
         { de: "Ich heiße …", tr: "Adım …", en: "My name is …" },
-        { de: "Ich komme aus …", tr: "… ülkesindenim", en: "I come from …" },
+        { de: "Ich komme aus …", tr: "…'denim", en: "I come from …" },
         { de: "Ich wohne in …", tr: "…'da oturuyorum", en: "I live in …" },
         { de: "Ich bin … Jahre alt.", tr: "… yaşındayım.", en: "I am … years old." },
         { de: "Ich bin … von Beruf.", tr: "Mesleğim …", en: "I am a … by profession." },
@@ -129,7 +129,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
       title: "Eine Einladung",
       titleTr: "Bir davet mesajı",
       genre: "Mesaj",
-      text: "Hallo Maria,\n\nam Samstag feiern wir ein Familienfest. Meine Oma wird achtzig! Meine Tante bringt einen Kuchen mit und mein Bruder kommt auch. Wir sind zwanzig Personen. Kommst du auch? Bring bitte deine Schwester mit!\n\nLiebe Grüße\nNuray",
+      text: "Hallo Maria,\n\nam Samstag feiern wir ein Familienfest. Meine Oma wird achtzig! Meine Tante bringt einen Kuchen mit und mein Bruder kommt auch. Wir sind zwanzig Personen. Kommst du auch? Kommt deine Schwester auch?\n\nLiebe Grüße\nNuray",
       questions: [
         { de: "Was feiert die Familie?", tr: "Aile ne kutluyor?", options: ["Den Geburtstag der Oma", "Eine Hochzeit", "Den Geburtstag der Tante", "Marias Geburtstag"], answer: 0 },
         { de: "Wer bringt den Kuchen mit?", tr: "Pastayı kim getiriyor?", options: ["Die Oma", "Der Bruder", "Die Tante", "Maria"], answer: 2 },
@@ -174,7 +174,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
     ],
     canDo: [
       { de: "Ich kann im Café und im Restaurant bestellen.", tr: "Kafede ve restoranda sipariş verebiliyorum.", en: "I can order in a café and a restaurant." },
-      { de: "Ich kann sagen, was ich gern esse und trinke.", tr: "Neyi sevdiğimi, ne yiyip içtiğimi söyleyebiliyorum.", en: "I can say what I like to eat and drink." },
+      { de: "Ich kann sagen, was ich gern esse und trinke.", tr: "Ne yiyip içmeyi sevdiğimi söyleyebiliyorum.", en: "I can say what I like to eat and drink." },
       { de: "Ich kann nach dem Preis fragen und bezahlen.", tr: "Fiyatı sorup hesabı ödeyebiliyorum.", en: "I can ask the price and pay." },
       { de: "Ich kann Mengen angeben: ein Kilo, eine Flasche, ein Stück.", tr: "Miktar söyleyebiliyorum: bir kilo, bir şişe, bir tane.", en: "I can state quantities: a kilo, a bottle, a piece." },
       { de: "Ich kann sagen, was ich nicht essen darf.", tr: "Neyi yiyemediğimi söyleyebiliyorum.", en: "I can say what I must not eat." },
@@ -194,7 +194,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
       questions: [
         { de: "Was trinkt die Person?", tr: "Kişi ne içiyor?", options: ["Einen Kaffee", "Ein Wasser", "Einen Tee", "Einen Wein"], answer: 1 },
         { de: "Was isst die Person als Vorspeise?", tr: "Kişi başlangıç olarak ne yiyor?", options: ["Einen Salat", "Eine Suppe", "Ein Brot", "Käse"], answer: 1 },
-        { de: "Warum möchte die Person keine Zwiebeln?", tr: "Kişi neden soğan istemiyor?", options: ["Sie schmecken nicht", "Er ist allergisch", "Sie kosten zu viel", "Es gibt keine mehr"], answer: 1 },
+        { de: "Warum möchte die Person keine Zwiebeln?", tr: "Kişi neden soğan istemiyor?", options: ["Sie schmecken nicht", "Die Person ist allergisch", "Sie kosten zu viel", "Es gibt keine mehr"], answer: 1 },
       ],
     },
     reading: {
@@ -204,7 +204,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
       text: "Café Sonne – Frühstück\n\nKleines Frühstück: Brot, Butter, Marmelade — 4,50 €\nGroßes Frühstück: Brot, Käse, Wurst, ein Ei — 7,90 €\n\nKaffee 2,80 € · Tee 2,50 € · Orangensaft 3,20 €\n\nFrühstück gibt es von 8 bis 11 Uhr.",
       questions: [
         { de: "Was kostet das große Frühstück?", tr: "Büyük kahvaltı kaç para?", options: ["4,50 €", "7,90 €", "2,80 €", "3,20 €"], answer: 1 },
-        { de: "Wann gibt es Frühstück?", tr: "Kahvaltı ne zaman var?", options: ["Von 8 bis 11 Uhr", "Von 11 bis 14 Uhr", "Immer", "Nur am Morgen"], answer: 0 },
+        { de: "Wann gibt es Frühstück?", tr: "Kahvaltı ne zaman var?", options: ["Von 8 bis 11 Uhr", "Von 11 bis 14 Uhr", "Immer", "Von 7 bis 10 Uhr"], answer: 0 },
       ],
     },
     speaking: [
@@ -217,7 +217,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
         "Davet cümlesi kur („Möchtest du …?“)",
         "Ne pişireceğini yaz",
         "Saati yaz",
-        "Ne yiyip içtiğini soran bir soru sor",
+        "Arkadaşına ne yiyip içtiğini sor",
       ],
       minWords: 30,
       phrases: [
@@ -228,7 +228,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
         { de: "Wir essen um … Uhr.", tr: "Saat …'de yiyoruz.", en: "We eat at … o'clock." },
       ],
       sample:
-        "Hallo Jonas, möchtest du am Samstag zu mir zum Essen kommen? Ich koche eine Suppe und Fisch mit Gemüse. Ich esse sehr gern Fisch. Wir essen um sieben Uhr. Bring bitte nur ein Getränk mit. Isst du Fleisch? Und trinkst du lieber Tee oder Wasser? Bis Samstag! Elif",
+        "Hallo Jonas, möchtest du am Samstag zu mir zum Essen kommen? Ich koche eine Suppe und Fisch mit Gemüse. Ich esse sehr gern Fisch. Wir essen um sieben Uhr. Es gibt auch Kuchen. Isst du Fleisch? Und trinkst du lieber Tee oder Wasser? Bis Samstag! Elif",
     },
   },
 
@@ -248,12 +248,12 @@ export const A1_EXAMS: ModuleExamPlan[] = [
       { de: "Ich kann meinen Tagesablauf beschreiben.", tr: "Günlük düzenimi anlatabiliyorum.", en: "I can describe my daily routine." },
       { de: "Ich kann die Uhrzeit sagen und danach fragen.", tr: "Saati söyleyebiliyor ve sorabiliyorum.", en: "I can tell and ask the time." },
       { de: "Ich kann trennbare Verben richtig benutzen.", tr: "Ayrılabilen fiilleri doğru kullanabiliyorum.", en: "I can use separable verbs correctly." },
-      { de: "Ich kann einen Termin ausmachen.", tr: "Birine vakti olup olmadığını sorup randevu ayarlayabiliyorum.", en: "I can arrange a meeting time." },
+      { de: "Ich kann einen Termin ausmachen.", tr: "Buluşmak için gün ve saat ayarlayabiliyorum.", en: "I can arrange a meeting time." },
       { de: "Ich kann Sätze mit einer Zeitangabe am Anfang bilden.", tr: "Cümleye zaman ifadesiyle başlayabiliyorum.", en: "I can start a sentence with a time expression." },
     ],
     listening: {
       title: "Ein Termin am Wochenende",
-      titleTr: "Hafta sonu için sözleşme",
+      titleTr: "Hafta sonu buluşması",
       situation: "Sara, Tom'u arıyor ve buluşmak istiyor.",
       turns: [
         { speaker: "Sara", de: "Hallo Tom, hast du am Samstag Zeit?", tr: "Merhaba Tom, cumartesi vaktin var mı?" },
@@ -281,7 +281,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
     },
     speaking: [
       { situation: "Günlük düzenini anlatıyorsun.", de: "Ich stehe um sieben Uhr auf und ich gehe um acht Uhr zur Arbeit.", tr: "Yedide kalkıyorum ve sekizde işe gidiyorum." },
-      { situation: "Arkadaşına vaktini soruyorsun.", de: "Hast du am Freitag Zeit? Um wie viel Uhr passt es dir?", tr: "Cuma vaktin var mı? Saat kaç sana uyar?" },
+      { situation: "Arkadaşına ne zaman müsait olduğunu soruyorsun.", de: "Hast du am Freitag Zeit? Um wie viel Uhr passt es dir?", tr: "Cuma vaktin var mı? Saat kaç sana uyar?" },
     ],
     writing: {
       prompt: "Sıradan bir gününü anlatan kısa bir metin yaz.",
@@ -331,23 +331,23 @@ export const A1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Verkäuferin", de: "Guten Tag, kann ich Ihnen helfen?", tr: "İyi günler, yardımcı olabilir miyim?" },
         { speaker: "Kunde", de: "Ja, ich suche eine Jacke in Blau.", tr: "Evet, mavi bir ceket arıyorum." },
         { speaker: "Verkäuferin", de: "Welche Größe haben Sie?", tr: "Bedeniniz kaç?" },
-        { speaker: "Kunde", de: "Größe achtunddreißig. Kann ich sie anprobieren?", tr: "Otuz sekiz beden. Deneyebilir miyim?" },
+        { speaker: "Kunde", de: "Größe achtundvierzig. Kann ich sie anprobieren?", tr: "Kırk sekiz beden. Deneyebilir miyim?" },
         { speaker: "Verkäuferin", de: "Ja, gern. Die Umkleide ist da rechts.", tr: "Tabii. Kabin şurada sağda." },
-        { speaker: "Kunde", de: "Die Jacke gefällt mir, aber sie ist zu eng. Haben Sie auch Größe vierzig?", tr: "Ceket hoşuma gitti ama dar geldi. Kırk beden de var mı?" },
+        { speaker: "Kunde", de: "Die Jacke gefällt mir, aber sie ist zu eng. Haben Sie auch Größe fünfzig?", tr: "Ceket hoşuma gitti ama dar geldi. Elli beden de var mı?" },
       ],
       questions: [
         { de: "Was sucht der Kunde?", tr: "Müşteri ne arıyor?", options: ["Eine Hose", "Eine Jacke", "Ein Hemd", "Einen Pullover"], answer: 1 },
         { de: "Welche Farbe möchte der Kunde?", tr: "Müşteri hangi rengi istiyor?", options: ["Rot", "Schwarz", "Blau", "Weiß"], answer: 2 },
-        { de: "Warum kauft der Kunde die Jacke nicht?", tr: "Müşteri ceketi neden almıyor?", options: ["Sie ist zu teuer", "Sie ist zu eng", "Sie gefällt ihm nicht", "Die Farbe ist falsch"], answer: 1 },
+        { de: "Was ist das Problem mit der Jacke?", tr: "Ceketin sorunu ne?", options: ["Sie ist zu teuer", "Sie ist zu eng", "Sie gefällt ihm nicht", "Die Farbe ist falsch"], answer: 1 },
       ],
     },
     reading: {
       title: "Angebot bei Klein",
       titleTr: "İndirim ilanı",
       genre: "İlan",
-      text: "Angebot bei Klein!\n\nAlle Jacken: 30 % günstiger.\nT-Shirts ab 9,90 €.\nSchuhe: zwei Paar kaufen, ein Paar bezahlen.\n\nDas Angebot ist von Montag bis Samstag.\nUmtausch nur mit Kassenbon.",
+      text: "Angebot bei Klein!\n\nAlle Jacken: 30 % günstiger.\nT-Shirts ab 9,90 €.\nSchuhe: zwei Paar kaufen, ein Paar bezahlen.\n\nDas Angebot gilt von Montag bis Samstag.\nUmtausch nur mit Kassenbon.",
       questions: [
-        { de: "Wie lange ist das Angebot?", tr: "Kampanya ne kadar sürüyor?", options: ["Nur am Montag", "Von Montag bis Samstag", "Immer", "Nur am Samstag"], answer: 1 },
+        { de: "Wie lange gilt das Angebot?", tr: "Kampanya ne kadar sürüyor?", options: ["Nur am Montag", "Von Montag bis Samstag", "Immer", "Nur am Samstag"], answer: 1 },
         { de: "Was braucht man für einen Umtausch?", tr: "Değişim için ne gerekiyor?", options: ["Eine Karte", "Den Kassenbon", "Geld", "Nichts"], answer: 1 },
       ],
     },
@@ -430,7 +430,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
     writing: {
       prompt: "Seni ziyaret edecek bir arkadaşına evine nasıl geleceğini yazan bir mesaj yaz.",
       checklist: [
-        "Hangi araçla geleceğini yaz",
+        "Arkadaşının hangi araçla geleceğini yaz",
         "Durağın adını yaz",
         "En az iki yön ver (geradeaus, links, rechts)",
         "Ne kadar sürdüğünü yaz",
@@ -444,7 +444,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
         { de: "Es sind … Minuten zu Fuß.", tr: "Yürüyerek … dakika.", en: "It is … minutes on foot." },
       ],
       sample:
-        "Hallo Mert, du kommst am Samstag, super! Du fährst mit der U-Bahn, Linie 2, bis zur Haltestelle Stadtpark. Dann gehst du geradeaus bis zur Ampel. An der Ampel gehst du rechts. Mein Haus ist gegenüber von der Bäckerei, Nummer 15. Vom Bahnhof sind es zwanzig Minuten. Ruf mich an!",
+        "Hallo Mert, du kommst am Samstag, super! Du fährst mit der U-Bahn, Linie 2, bis zur Haltestelle Stadtpark. Dann gehst du geradeaus bis zur Ampel. An der Ampel gehst du rechts. Mein Haus ist gegenüber von der Bäckerei, Nummer 15. Von der Haltestelle sind es nur fünf Minuten zu Fuß. Bis Samstag!",
     },
   },
 
@@ -492,7 +492,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
       text: "Wohnung zu vermieten\n\n2 Zimmer, Küche, Bad — 58 m²\n3. Stock, mit Balkon, sehr hell und ruhig\nMiete: 620 Euro kalt + 140 Euro Nebenkosten\nFrei ab 1.5.\n\nHaustiere sind leider nicht erlaubt.\nTelefon: 0176 22 33 44",
       questions: [
         { de: "Wie viele Zimmer hat die Wohnung?", tr: "Daire kaç odalı?", options: ["Ein Zimmer", "Zwei Zimmer", "Drei Zimmer", "Vier Zimmer"], answer: 1 },
-        { de: "Was ist in der Wohnung nicht erlaubt?", tr: "Dairede neye izin yok?", options: ["Tiere", "Haustiere", "Kinder", "Freunde"], answer: 1 },
+        { de: "Was ist in der Wohnung nicht erlaubt?", tr: "Dairede neye izin yok?", options: ["Musik", "Haustiere", "Kinder", "Freunde"], answer: 1 },
       ],
     },
     speaking: [
@@ -534,7 +534,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
     ],
     canDo: [
       { de: "Ich kann über meine Hobbys sprechen.", tr: "Hobilerimden bahsedebiliyorum.", en: "I can talk about my hobbies." },
-      { de: "Ich kann sagen, was ich gut kann und was nicht.", tr: "Neyi iyi yapabildiğimi söyleyebiliyorum.", en: "I can say what I can and cannot do well." },
+      { de: "Ich kann sagen, was ich gut kann und was nicht.", tr: "Neyi iyi yapabildiğimi, neyi yapamadığımı söyleyebiliyorum.", en: "I can say what I can and cannot do well." },
       { de: "Ich kann jemanden einladen.", tr: "Birini davet edebiliyorum.", en: "I can invite someone." },
       { de: "Ich kann eine Einladung höflich ablehnen.", tr: "Bir daveti nazikçe reddedebiliyorum.", en: "I can decline an invitation politely." },
       { de: "Ich kann über das Wetter sprechen.", tr: "Hava durumundan konuşabiliyorum.", en: "I can talk about the weather." },
@@ -554,7 +554,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
       questions: [
         { de: "Warum kann Ben am Freitag nicht?", tr: "Ben cuma neden gelemiyor?", options: ["Er arbeitet", "Er spielt Fußball", "Er ist krank", "Er mag keine Filme"], answer: 1 },
         { de: "Wann beginnt der Film?", tr: "Film ne zaman başlıyor?", options: ["Um halb acht", "Um acht", "Um neun", "Um halb neun"], answer: 1 },
-        { de: "Was macht Ben um halb acht?", tr: "Ben yedi buçukta ne yapıyor?", options: ["Er geht ins Kino", "Er holt Lea ab", "Er spielt Fußball", "Er ruft an"], answer: 1 },
+        { de: "Was macht Ben um halb acht?", tr: "Ben yedi buçukta ne yapıyor?", options: ["Er kauft ein", "Er holt Lea ab", "Er spielt Fußball", "Er ruft an"], answer: 1 },
       ],
     },
     reading: {
@@ -619,7 +619,7 @@ export const A1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Praxis", de: "Praxis Dr. Weber, guten Morgen.", tr: "Dr. Weber muayenehanesi, günaydın." },
         { speaker: "Patient", de: "Guten Morgen. Ich brauche einen Termin. Ich habe seit drei Tagen Halsschmerzen und Fieber.", tr: "Günaydın. Randevuya ihtiyacım var. Üç gündür boğazım ağrıyor ve ateşim var." },
         { speaker: "Praxis", de: "Das tut mir leid. Geht es am Mittwoch um zehn Uhr?", tr: "Geçmiş olsun. Çarşamba saat on uygun mu?" },
-        { speaker: "Patient", de: "Am Mittwoch muss ich arbeiten. Geht es auch am Nachmittag?", tr: "Çarşamba çalışmam gerekiyor. Öğleden sonra olur mu?" },
+        { speaker: "Patient", de: "Am Vormittag muss ich arbeiten. Geht es am Mittwochnachmittag?", tr: "Öğleden önce çalışmam gerekiyor. Çarşamba öğleden sonra olur mu?" },
         { speaker: "Praxis", de: "Ja, um sechzehn Uhr ist noch frei.", tr: "Evet, saat on altı boş." },
         { speaker: "Patient", de: "Sehr gut. Brauche ich die Versichertenkarte?", tr: "Çok iyi. Sigorta kartıma ihtiyacım var mı?" },
         { speaker: "Praxis", de: "Ja, bitte bringen Sie die Karte mit.", tr: "Evet, lütfen kartı getirin." },

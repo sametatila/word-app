@@ -78,7 +78,7 @@
  { "tr": "koşullu söz", "kind": "focus", "en": "a conditional promise" },
  { "tr": "Köşe yazısı", "kind": "reading.genre", "en": "Column" },
  { "tr": "Ne çalındı?", "kind": "question", "en": "What was stolen?" },
- { "tr": "Neyi eksik?", "kind": "question", "en": "What is she missing?" },
+ { "tr": "Nesi eksik?", "kind": "question", "en": "What is she missing?" },
  { "tr": "Parti planı", "kind": "listening.title", "en": "Planning a party" },
  { "tr": "Peki bugün?", "kind": "turn", "en": "And today?" },
  { "tr": "Peki hasat?", "kind": "turn", "en": "And the harvest?" },

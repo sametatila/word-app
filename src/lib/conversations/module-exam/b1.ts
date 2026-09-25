@@ -40,10 +40,10 @@ export const B1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Frau Kaya", de: "Ich bewerbe mich, um mehr Verantwortung zu übernehmen. Obwohl mir mein Team gefällt, gibt es dort kaum Entwicklungsmöglichkeiten.", tr: "Daha fazla sorumluluk almak için başvuruyorum. Ekibimi sevsem de orada gelişim imkânı neredeyse yok." },
         { speaker: "Personalerin", de: "Verstehe. Hätten Sie eine Frage an uns?", tr: "Anlıyorum. Bize bir sorunuz var mı?" },
         { speaker: "Frau Kaya", de: "Ja — könnten Sie mir sagen, wie die Einarbeitung abläuft?", tr: "Evet — işe alışma sürecinin nasıl işlediğini söyleyebilir misiniz?" },
-        { speaker: "Personalerin", de: "Natürlich. In den ersten vier Wochen begleitet Sie eine feste Ansprechpartnerin.", tr: "Tabii. İlk dört hafta size sabit bir sorumlu eşlik ediyor." },
+        { speaker: "Personalerin", de: "Natürlich. In den ersten vier Wochen begleitet Sie eine feste Ansprechpartnerin.", tr: "Tabii. İlk dört hafta size hep aynı irtibat kişisi eşlik ediyor." },
       ],
       questions: [
-        { de: "Wo hat Frau Kaya nach dem Studium gearbeitet?", tr: "Bayan Kaya okuldan sonra nerede çalıştı?", options: ["Im Kundenservice", "In einer Spedition", "An einer Universität", "Bei einer Bank"], answer: 1 },
+        { de: "Wo hat Frau Kaya direkt nach dem Studium gearbeitet?", tr: "Bayan Kaya üniversiteden hemen sonra nerede çalıştı?", options: ["Im Kundenservice", "In einer Spedition", "An einer Universität", "Bei einer Bank"], answer: 1 },
         { de: "Warum möchte sie wechseln?", tr: "Neden iş değiştirmek istiyor?", options: ["Das Gehalt ist zu niedrig", "Sie möchte mehr Verantwortung", "Ihr Team ist unfreundlich", "Der Weg ist zu weit"], answer: 1 },
         { de: "Wonach fragt Frau Kaya?", tr: "Bayan Kaya neyi soruyor?", options: ["Nach dem Gehalt", "Nach der Einarbeitung", "Nach den Überstunden", "Nach dem Urlaub"], answer: 1 },
       ],
@@ -52,7 +52,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
       title: "Eine Absage",
       titleTr: "Ret yazısı",
       genre: "Resmî e-posta",
-      text: "Sehr geehrte Frau Kaya,\n\nvielen Dank für Ihre Bewerbung und für das freundliche Gespräch am 12. April. Wir haben uns die Unterlagen aller Kandidatinnen und Kandidaten genau angesehen.\n\nLeider müssen wir Ihnen mitteilen, dass wir uns für eine andere Person entschieden haben. Der Grund liegt nicht an Ihrer Qualifikation: Die ausgewählte Bewerberin hatte bereits mehrere Jahre in derselben Branche gearbeitet.\n\nGern behalten wir Ihre Unterlagen sechs Monate, falls Sie einverstanden sind. Für Ihren weiteren Weg wünschen wir Ihnen alles Gute.\n\nMit freundlichen Grüßen\nPetra Lohmann, Personalabteilung",
+      text: "Sehr geehrte Frau Kaya,\n\nvielen Dank für Ihre Bewerbung und für das freundliche Gespräch am 12. April. Wir haben uns die Unterlagen aller Kandidatinnen und Kandidaten genau angesehen.\n\nLeider müssen wir Ihnen mitteilen, dass wir uns für eine andere Person entschieden haben. Das liegt nicht an Ihrer Qualifikation: Die ausgewählte Bewerberin hatte bereits mehrere Jahre in derselben Branche gearbeitet.\n\nGern behalten wir Ihre Unterlagen sechs Monate, falls Sie einverstanden sind. Für Ihren weiteren Weg wünschen wir Ihnen alles Gute.\n\nMit freundlichen Grüßen\nPetra Lohmann, Personalabteilung",
       questions: [
         { de: "Was ist das Ergebnis der Bewerbung?", tr: "Başvurunun sonucu ne?", options: ["Frau Kaya bekommt die Stelle", "Frau Kaya bekommt eine Absage", "Sie wird zu einem zweiten Gespräch eingeladen", "Die Stelle wurde gestrichen"], answer: 1 },
         { de: "Warum hat die andere Bewerberin die Stelle bekommen?", tr: "Diğer aday işi neden aldı?", options: ["Sie war günstiger", "Sie hatte schon Erfahrung in der Branche", "Sie wohnt näher", "Sie sprach besser Deutsch"], answer: 1 },
@@ -111,7 +111,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Interessent", de: "Guten Tag. Ich wüsste gern, ob die Wohnung schon renoviert ist.", tr: "İyi günler. Dairenin tadilatlı olup olmadığını öğrenmek isterim." },
         { speaker: "Vermieterin", de: "Das Bad wurde letztes Jahr komplett renoviert, die Küche ist älter.", tr: "Banyo geçen yıl tamamen yenilendi, mutfak daha eski." },
         { speaker: "Interessent", de: "Und wie hoch sind die Nebenkosten?", tr: "Peki aidat ne kadar?" },
-        { speaker: "Vermieterin", de: "180 Euro monatlich. Heizung und Wasser sind enthalten, Strom nicht.", tr: "Aylık 180 euro. Isıtma ve su dahil, elektrik değil." },
+        { speaker: "Vermieterin", de: "180 Euro monatlich. Heizung und Wasser sind enthalten, Strom nicht.", tr: "Aylık 180 euro. Isıtma ve su dâhil, elektrik değil." },
         { speaker: "Interessent", de: "Könnten Sie mir sagen, wann ich einziehen könnte?", tr: "Ne zaman taşınabileceğimi söyleyebilir misiniz?" },
         { speaker: "Vermieterin", de: "Ab dem ersten Oktober. Die Kaution wird bei der Vertragsunterschrift gezahlt — drei Kaltmieten.", tr: "1 Ekim'den itibaren. Depozito sözleşme imzasında ödeniyor — üç kira bedeli." },
         { speaker: "Interessent", de: "Wäre es möglich, die Kaution in drei Raten zu zahlen?", tr: "Depozitoyu üç taksitte ödemek mümkün olur mu?" },
@@ -119,7 +119,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
       ],
       questions: [
         { de: "Was wurde letztes Jahr renoviert?", tr: "Geçen yıl ne yenilendi?", options: ["Die Küche", "Das Bad", "Das Wohnzimmer", "Das ganze Haus"], answer: 1 },
-        { de: "Was ist in den Nebenkosten nicht enthalten?", tr: "Aidata dahil olmayan ne?", options: ["Heizung", "Wasser", "Strom", "Müll"], answer: 2 },
+        { de: "Was ist in den Nebenkosten nicht enthalten?", tr: "Aidata dâhil olmayan ne?", options: ["Heizung", "Wasser", "Strom", "Müll"], answer: 2 },
         { de: "Wie kann die Kaution gezahlt werden?", tr: "Depozito nasıl ödenebilir?", options: ["Nur auf einmal", "In drei Raten", "Erst nach dem Einzug", "Gar nicht"], answer: 1 },
       ],
     },
@@ -154,7 +154,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
         { de: "Könnten Sie mir mitteilen, wann …?", tr: "…'in ne zaman olacağını bildirebilir misiniz?", en: "Could you let me know when …?" },
       ],
       sample:
-        "Sehr geehrte Frau Kruse,\n\nich wohne seit zwei Jahren in der Lindenstraße 8, Wohnung 4. Seit dem vergangenen Wochenende tropft der Wasserhahn im Bad, und seit Montag wird die Heizung im Wohnzimmer nicht mehr richtig warm.\n\nBevor ich Ihnen geschrieben habe, hatte ich bereits den Hausmeister informiert; leider wurde der Schaden bisher nicht behoben. Obwohl es draußen kälter wird, kann ich das Zimmer im Moment kaum nutzen.\n\nIch bitte darum, dass die Reparatur bis spätestens Freitag, den 14. März, durchgeführt wird. Könnten Sie mir mitteilen, wann der Handwerker kommt? Am Nachmittag bin ich in der Regel zu Hause.\n\nMit freundlichen Grüßen\nAyse Demir",
+        "Sehr geehrte Frau Kruse,\n\nich wohne seit zwei Jahren in der Lindenstraße 8, Wohnung 4. Seit dem vergangenen Wochenende tropft der Wasserhahn im Bad, und seit Montag wird die Heizung im Wohnzimmer nicht mehr richtig warm.\n\nBevor ich mich an Sie wende, habe ich bereits den Hausmeister informiert; leider wurde der Schaden bisher nicht behoben. Obwohl ich die Heizung ganz aufdrehe, wird das Zimmer nicht warm, und ich kann es im Moment kaum nutzen.\n\nIch bitte darum, dass die Reparatur bis spätestens Freitag, den 14. März, durchgeführt wird. Könnten Sie mir mitteilen, wann der Handwerker kommt? Am Nachmittag bin ich in der Regel zu Hause.\n\nMit freundlichen Grüßen\nAyse Demir",
     },
   },
 
@@ -172,7 +172,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
       { de: "je … desto, entweder … oder", tr: "orantı ve ikili bağlaçlar" },
     ],
     canDo: [
-      { de: "Ich kann Absichten mit „damit“ und „um … zu“ ausdrücken.", tr: "Amaçlarımı iki farklı yapıyla anlatabiliyorum.", en: "I can express intentions with purpose clauses." },
+      { de: "Ich kann Absichten mit „damit“ und „um … zu“ ausdrücken.", tr: "Amaçlarımı „damit“ ve „um … zu“ ile anlatabiliyorum.", en: "I can express intentions with „damit“ and „um … zu“." },
       { de: "Ich kann Gegensätze mit „obwohl“ und „trotzdem“ formulieren.", tr: "Zıtlığı „obwohl“ ve „trotzdem“ ile kurabiliyorum.", en: "I can express contrast with „obwohl“ and „trotzdem“." },
       { de: "Ich kann „als“ und „wenn“ richtig unterscheiden.", tr: "„als“ ile „wenn“ arasındaki farkı doğru kullanabiliyorum.", en: "I can distinguish „als“ and „wenn“ correctly." },
       { de: "Ich kann Ereignisse zeitlich ordnen.", tr: "Olayları zaman sırasına dizebiliyorum.", en: "I can order events in time." },
@@ -184,7 +184,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
       situation: "İki arkadaş iş değiştirme kararını konuşuyor.",
       turns: [
         { speaker: "Mert", de: "Du siehst zufrieden aus. Wie läuft die neue Stelle?", tr: "Memnun görünüyorsun. Yeni iş nasıl gidiyor?" },
-        { speaker: "Lisa", de: "Sehr gut. Nachdem ich den alten Job gekündigt hatte, habe ich zwei Monate lang nichts gefunden.", tr: "Çok iyi. Eski işten ayrıldıktan sonra iki ay hiçbir şey bulamamıştım." },
+        { speaker: "Lisa", de: "Sehr gut. Nachdem ich den alten Job gekündigt hatte, habe ich zwei Monate lang nichts gefunden.", tr: "Çok iyi. Eski işten ayrıldıktan sonra iki ay hiçbir şey bulamadım." },
         { speaker: "Mert", de: "Das war sicher anstrengend.", tr: "Kesin yorucuydu." },
         { speaker: "Lisa", de: "Obwohl ich am Anfang nervös war, habe ich weitergesucht. Ich habe jeden Tag geübt, um im Gespräch sicherer zu sprechen.", tr: "Başta gergin olsam da aramaya devam ettim. Görüşmede daha rahat konuşmak için her gün çalıştım." },
         { speaker: "Mert", de: "Und jetzt?", tr: "Peki şimdi?" },
@@ -251,7 +251,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
       { de: "Ich kann etwas beschreiben, wenn ich den Namen nicht weiß.", tr: "Adını bilmediğim bir şeyi tarif edebiliyorum.", en: "I can describe something when I don't know its name." },
       { de: "Ich kann das Relativpronomen im Nominativ, Akkusativ und Dativ richtig wählen.", tr: "İlgi zamirini yalın, belirtme ve yönelme hâlinde doğru seçebiliyorum.", en: "I can choose the right relative pronoun in all three cases." },
       { de: "Ich kann eine Präposition vor das Relativpronomen stellen.", tr: "İlgi zamirinin önüne edat koyabiliyorum.", en: "I can put a preposition before the relative pronoun." },
-      { de: "Ich kann im Fundbüro einen verlorenen Gegenstand beschreiben.", tr: "Kayıp eşya bürosunda kaybettiğim eşyayı tarif edebiliyorum.", en: "I can describe a lost item at the lost-and-found office." },
+      { de: "Ich kann im Fundbüro einen verlorenen Gegenstand beschreiben.", tr: "Kayıp eşya bürosunda kaybettiğim eşyayı tarif edebiliyorum.", en: "I can describe a lost item at the lost property office." },
     ],
     listening: {
       title: "Im Fundbüro",
@@ -304,7 +304,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
         { de: "am besten abends", tr: "en iyisi akşamları", en: "preferably in the evening" },
       ],
       sample:
-        "Suche Rad-Begleitung\n\nIch suche jemanden, der zweimal pro Woche mit mir zur Arbeit fährt. Ich wohne im Bezirk Ehrenfeld, in dem es zum Glück viele ruhige Radwege gibt, und arbeite in der Innenstadt.\n\nIch habe ein altes Rad, das nicht besonders schnell ist — Tempo ist mir also nicht wichtig. Wichtiger ist mir jemand, dem man morgens auch mal in Ruhe zuhören kann.\n\nWer Interesse hat, meldet sich unter 0176 22 11 09, am besten abends. Ich freue mich!",
+        "Suche Rad-Begleitung\n\nIch suche jemanden, der zweimal pro Woche mit mir zur Arbeit fährt. Ich wohne im Bezirk Ehrenfeld, in dem es zum Glück viele ruhige Radwege gibt, und arbeite in der Innenstadt.\n\nIch habe ein altes Rad, das nicht besonders schnell ist — Tempo ist mir also nicht wichtig. Wichtiger ist mir jemand, dem ein ruhiges Tempo nichts ausmacht.\n\nWer Interesse hat, meldet sich unter 0176 22 11 09, am besten abends. Ich freue mich!",
     },
   },
 
@@ -338,7 +338,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Sachbearbeiter", de: "Dann werden drei Dinge benötigt: der Pass, der Mietvertrag und ein Nachweis über Ihr Einkommen.", tr: "O zaman üç şey gerekiyor: pasaport, kira sözleşmesi ve gelir belgesi." },
         { speaker: "Frau Nuri", de: "Den Mietvertrag habe ich dabei. Muss das Original vorgelegt werden?", tr: "Kira sözleşmesi yanımda. Asıl nüsha mı ibraz edilmeli?" },
         { speaker: "Sachbearbeiter", de: "Beim Pass ja, beim Mietvertrag reicht eine Kopie.", tr: "Pasaportta evet, kira sözleşmesinde fotokopi yeterli." },
-        { speaker: "Frau Nuri", de: "Und wie lange wird der Antrag bearbeitet?", tr: "Peki başvuru ne kadar sürede işleme alınıyor?" },
+        { speaker: "Frau Nuri", de: "Und wie lange wird der Antrag bearbeitet?", tr: "Peki başvurunun işlenmesi ne kadar sürüyor?" },
         { speaker: "Sachbearbeiter", de: "In der Regel vier bis sechs Wochen. Der Bescheid wird Ihnen zugeschickt.", tr: "Genelde dört ila altı hafta. Karar yazısı size gönderilir." },
         { speaker: "Frau Nuri", de: "Gut. Dann bringe ich den Einkommensnachweis morgen vorbei.", tr: "Peki. O zaman gelir belgesini yarın getiririm." },
       ],
@@ -352,14 +352,14 @@ export const B1_EXAMS: ModuleExamPlan[] = [
       title: "Bescheid des Straßenverkehrsamts",
       titleTr: "Trafik dairesinden karar yazısı",
       genre: "Resmî yazı",
-      text: "Stadt Bonn — Straßenverkehrsamt\n\nSehr geehrte Frau Aydin,\n\nIhr Antrag auf Umschreibung des Führerscheins wurde am 12. März bearbeitet. Leider konnte er nicht bewilligt werden, weil der Sehtest fehlt.\n\nDer Nachweis kann bis zum 30. April nachgereicht werden. Danach wird der Antrag ohne weitere Prüfung abgelehnt.\n\nDie Gebühr von 43 Euro wurde bereits gebucht und wird nicht erstattet.\n\nMit freundlichen Grüßen\nIm Auftrag\nR. Seidel",
+      text: "Stadt Bonn — Straßenverkehrsamt\n\nSehr geehrte Frau Aydin,\n\nIhr Antrag auf Umschreibung des Führerscheins wurde am 12. März bearbeitet. Leider konnte er nicht bewilligt werden, weil der Sehtest fehlt.\n\nDer Nachweis kann bis zum 30. April nachgereicht werden. Danach wird der Antrag ohne weitere Prüfung abgelehnt.\n\nDie Gebühr von 43 Euro wurde bereits bezahlt und wird nicht erstattet.\n\nMit freundlichen Grüßen\nIm Auftrag\nR. Seidel",
       questions: [
         { de: "Warum wurde der Antrag nicht bewilligt?", tr: "Başvuru neden onaylanmadı?", options: ["Die Gebühr fehlt", "Der Sehtest fehlt", "Der Pass ist abgelaufen", "Die Frist ist vorbei"], answer: 1 },
         { de: "Was passiert mit der Gebühr?", tr: "Ücrete ne oluyor?", options: ["Sie wird erstattet", "Sie wird nicht erstattet", "Sie muss noch gezahlt werden", "Sie wird halbiert"], answer: 1 },
       ],
     },
     speaking: [
-      { situation: "Dairede hangi belgelerin gerektiğini soruyorsun.", de: "Können Sie mir sagen, welche Unterlagen benötigt werden?", tr: "Hangi belgelerin gerektiğini söyleyebilir misiniz?" },
+      { situation: "Resmî dairede hangi belgelerin gerektiğini soruyorsun.", de: "Können Sie mir sagen, welche Unterlagen benötigt werden?", tr: "Hangi belgelerin gerektiğini söyleyebilir misiniz?" },
       { situation: "Randevunu kibarca ertelemek istiyorsun.", de: "Wäre es möglich, den Termin um eine Woche zu verschieben?", tr: "Randevuyu bir hafta ertelemek mümkün olur mu?" },
     ],
     writing: {
@@ -380,7 +380,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
         { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Yours sincerely" },
       ],
       sample:
-        "Sehr geehrte Damen und Herren,\n\nhiermit widerspreche ich Ihrem Bescheid vom 14. April, mit dem mein Antrag auf Verlängerung der Aufenthaltserlaubnis abgelehnt wurde.\n\nDer Einkommensnachweis wurde meiner Ansicht nach fristgerecht eingereicht: Ich habe ihn am 3. April persönlich abgegeben. Eine Kopie mit dem Eingangsstempel füge ich in der Anlage bei.\n\nIch bitte darum, dass der Antrag erneut geprüft wird. Über eine kurze Bestätigung, dass mein Widerspruch eingegangen ist, wäre ich dankbar.\n\nMit freundlichen Grüßen\nLeyla Aydin",
+        "Sehr geehrte Damen und Herren,\n\nhiermit widerspreche ich Ihrem Bescheid vom 14. April, mit dem mein Antrag auf Verlängerung der Aufenthaltserlaubnis abgelehnt wurde.\n\nDer Einkommensnachweis wurde meiner Ansicht nach fristgerecht eingereicht: Ich habe ihn am 3. April persönlich abgegeben. Eine Kopie mit dem Eingangsstempel füge ich in der Anlage bei.\n\nIch bitte darum, dass der Antrag erneut geprüft wird. Für eine kurze Bestätigung, dass mein Widerspruch eingegangen ist, wäre ich dankbar.\n\nMit freundlichen Grüßen\nLeyla Aydin",
     },
   },
 
@@ -411,7 +411,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
       turns: [
         { speaker: "Beraterin", de: "Sie haben A2 abgeschlossen. Wollen Sie den Intensivkurs oder den Abendkurs?", tr: "A2'yi bitirmişsiniz. Yoğun kursu mu akşam kursunu mu istersiniz?" },
         { speaker: "Herr Demir", de: "Ich arbeite Vollzeit. Wie oft findet der Abendkurs statt?", tr: "Tam zamanlı çalışıyorum. Akşam kursu ne sıklıkta?" },
-        { speaker: "Beraterin", de: "Zweimal pro Woche, jeweils von achtzehn bis halb neun. Der Intensivkurs läuft täglich am Vormittag.", tr: "Haftada iki kez, her seferinde altıdan sekiz buçuğa. Yoğun kurs her gün öğleden önce." },
+        { speaker: "Beraterin", de: "Zweimal pro Woche, jeweils von sechs bis halb neun abends. Der Intensivkurs läuft täglich am Vormittag.", tr: "Haftada iki kez, her seferinde altıdan sekiz buçuğa. Yoğun kurs her gün öğleden önce." },
         { speaker: "Herr Demir", de: "Und wie lange dauert es bis zur B1-Prüfung?", tr: "Peki B1 sınavına kadar ne kadar sürüyor?" },
         { speaker: "Beraterin", de: "Im Intensivkurs drei Monate, im Abendkurs etwa sechs.", tr: "Yoğun kursta üç ay, akşam kursunda yaklaşık altı." },
         { speaker: "Herr Demir", de: "Sechs Monate sind lang. Aber tagsüber kann ich nicht.", tr: "Altı ay uzun. Ama gündüz olmuyor." },
@@ -443,7 +443,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
       checklist: [
         "Hangi kursla ilgilendiğini yaz",
         "Hedefini bir mastar öbeğiyle yaz",
-        "Bir amacını 'um … zu' ile gerekçelendir",
+        "Bir amacını „um … zu“ ile gerekçelendir",
         "En az iki dolaylı soru sor",
       ],
       minWords: 70,
@@ -470,7 +470,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
       { de: "zweiteilige Konnektoren", tr: "einerseits … andererseits" },
       { de: "Konjunktiv II", tr: "kibar itiraz: Da wäre ich vorsichtig" },
       { de: "Verben mit Präposition", tr: "Es hängt davon ab, ob …" },
-      { de: "indirekte Frage", tr: "Ich bezweifle, dass …" },
+      { de: "Zweifel ausdrücken", tr: "Ich bezweifle, dass …" },
     ],
     canDo: [
       { de: "Ich kann meine Meinung sagen und begründen.", tr: "Görüşümü söyleyip gerekçelendirebiliyorum.", en: "I can state and justify my opinion." },
@@ -488,7 +488,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Meral", de: "Da wäre ich vorsichtig. Einerseits ist es praktisch, andererseits arbeitet dann jemand.", tr: "Burada temkinli olurdum. Bir yandan pratik, öte yandan biri çalışıyor demek." },
         { speaker: "Jonas", de: "Aber diese Leute werden bezahlt. Wer sonntags arbeitet, bekommt mehr Geld.", tr: "Ama o insanlara ödeme yapılıyor. Pazar çalışan daha çok para alıyor." },
         { speaker: "Meral", de: "Das stimmt. Trotzdem bezweifle ich, dass sie wirklich frei entscheiden können.", tr: "Doğru. Yine de gerçekten özgürce karar verebildiklerinden şüpheliyim." },
-        { speaker: "Jonas", de: "Kannst du das nachvollziehen, wenn Familien nur sonntags Zeit haben?", tr: "Ailelerin sadece pazar vakti olduğunu düşününce anlayabiliyor musun?" },
+        { speaker: "Jonas", de: "Kannst du nachvollziehen, dass manche Familien nur sonntags Zeit zum Einkaufen haben?", tr: "Bazı ailelerin alışverişe yalnızca pazar günü vakit bulabildiğini anlayabiliyor musun?" },
         { speaker: "Meral", de: "Teilweise. Ich hätte lieber längere Öffnungszeiten unter der Woche.", tr: "Kısmen. Ben hafta içi daha uzun açılış saatlerini tercih ederdim." },
         { speaker: "Jonas", de: "Das wäre ein Kompromiss, ja.", tr: "Bu bir uzlaşma olurdu, evet." },
         { speaker: "Meral", de: "Zusammenfassend: Ich bin dagegen, aber ich verstehe dein Argument.", tr: "Özetle: Karşıyım ama argümanını anlıyorum." },
@@ -506,7 +506,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
       text: "Leserbrief: Weniger Autos, mehr Platz\n\nSeit Januar ist unsere Hauptstraße für Autos gesperrt. Einerseits verstehe ich den Ärger der Geschäftsleute: Kundschaft, die früher kurz hielt, kommt heute seltener.\n\nAndererseits hat sich etwas verändert, das man kaum in Zahlen fassen kann. Kinder spielen wieder auf der Straße, und abends sitzen Nachbarn draußen, die sich vorher nie gegrüßt haben.\n\nZusammenfassend halte ich die Sperrung für richtig. Man sollte aber prüfen, ob die Lieferzeiten für die Läden ausreichen.\n\nB. Karaca, Nordstadt",
       questions: [
         { de: "Was kritisieren die Geschäftsleute?", tr: "Esnaf neyi eleştiriyor?", options: ["Den Lärm", "Weniger Kundschaft", "Die hohen Mieten", "Die neuen Bäume"], answer: 1 },
-        { de: "Wie steht der Autor zur Sperrung?", tr: "Yazar kapatma kararına nasıl bakıyor?", options: ["Er hält sie für falsch", "Er hält sie für richtig", "Er hat keine Meinung", "Er will die Straße ganz abreißen"], answer: 1 },
+        { de: "Wie steht der Autor zur Sperrung?", tr: "Yazar kapatma kararına nasıl bakıyor?", options: ["Er hält sie für falsch", "Er hält sie für richtig", "Er hat keine Meinung", "Er will die Straße wieder öffnen"], answer: 1 },
       ],
     },
     speaking: [
@@ -551,7 +551,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
       { de: "Ich kann eine länger andauernde Beschwerde beschreiben.", tr: "Uzun süredir devam eden bir şikâyeti anlatabiliyorum.", en: "I can describe a long-standing complaint." },
       { de: "Ich kann eine Überweisung und einen Termin organisieren.", tr: "Sevk ve randevu işini halledebiliyorum.", en: "I can arrange a referral and an appointment." },
       { de: "Ich kann in der Apotheke nach Wechselwirkungen fragen.", tr: "Eczanede ilaç etkileşimini sorabiliyorum.", en: "I can ask about drug interactions at the pharmacy." },
-      { de: "Ich kann erzählen, was in der Notaufnahme passiert ist.", tr: "Acilde ne olduğunu sırasıyla anlatabiliyorum.", en: "I can tell what happened at the emergency room." },
+      { de: "Ich kann erzählen, was in der Notaufnahme passiert ist.", tr: "Acil serviste ne olduğunu anlatabiliyorum.", en: "I can describe what happened in the emergency department." },
       { de: "Ich kann Ratschläge geben und Hilfe anbieten.", tr: "Tavsiye verip yardım teklif edebiliyorum.", en: "I can give advice and offer help." },
     ],
     listening: {
@@ -606,7 +606,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
         { de: "Mach dir keine Sorgen.", tr: "Merak etme.", en: "Don't worry." },
       ],
       sample:
-        "Hallo Aylin,\n\nkurze Nachricht, damit du dich nicht wunderst: Ich war gestern in der Notaufnahme.\n\nNachdem ich auf der Treppe gestürzt war, konnte ich den Arm kaum bewegen. Eine Nachbarin hat mich hergefahren. Zuerst wurde geröntgt, danach kam eine Ärztin. Zum Glück ist nichts gebrochen — es besteht nur der Verdacht auf eine Zerrung.\n\nIch muss den Arm zwei Wochen schonen und darf nichts Schweres heben. Nächste Woche wird noch einmal kontrolliert.\n\nMach dir keine Sorgen, mir geht es schon besser. Melde dich, wenn du Zeit hast!\n\nLeyla",
+        "Hallo Aylin,\n\nkurze Nachricht, damit du dich nicht wunderst: Ich war gestern in der Notaufnahme.\n\nNachdem ich auf der Treppe gestürzt war, konnte ich den Arm kaum bewegen. Eine Nachbarin hat mich ins Krankenhaus gefahren. Zuerst wurde geröntgt, danach kam eine Ärztin. Zum Glück ist nichts gebrochen — es besteht nur der Verdacht auf eine Zerrung.\n\nIch muss den Arm zwei Wochen schonen und darf nichts Schweres heben. Nächste Woche wird noch einmal kontrolliert.\n\nMach dir keine Sorgen, mir geht es schon besser. Melde dich, wenn du Zeit hast!\n\nLeyla",
     },
   },
 
@@ -657,7 +657,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
       text: "Stadt Köln — Information zur Mülltrennung\n\nAb dem 1. September werden die gelben Säcke nur noch alle zwei Wochen abgeholt, jeweils montags. Bitte stellen Sie die Säcke erst am Vorabend heraus.\n\nAltglas wird nach Farben sortiert und zu den Containern an der Ecke Lindenstraße gebracht. Der Einwurf ist täglich von sieben bis zwanzig Uhr erlaubt — nicht an Sonn- und Feiertagen.\n\nWer Sperrmüll hat, meldet ihn online an. Eine Abholung pro Jahr ist kostenlos.",
       questions: [
         { de: "Wie oft werden die gelben Säcke abgeholt?", tr: "Sarı torbalar ne sıklıkta toplanıyor?", options: ["Jede Woche", "Alle zwei Wochen", "Einmal im Monat", "Täglich"], answer: 1 },
-        { de: "Wann darf man kein Altglas einwerfen?", tr: "Cam ne zaman atılamaz?", options: ["Vormittags", "Am Samstag", "An Sonn- und Feiertagen", "Vor sieben Uhr und nach zwanzig Uhr sowie an Sonn- und Feiertagen"], answer: 3 },
+        { de: "Wann darf man Altglas einwerfen?", tr: "Cam ne zaman atılabilir?", options: ["Täglich rund um die Uhr", "Nur montags", "An Werktagen von sieben bis zwanzig Uhr", "Auch sonntags bis zwanzig Uhr"], answer: 2 },
       ],
     },
     speaking: [
@@ -737,14 +737,14 @@ export const B1_EXAMS: ModuleExamPlan[] = [
     },
     speaking: [
       { situation: "Gerçekleşmemiş bir dileği söylüyorsun.", de: "Ich wünschte, ich hätte früher damit angefangen.", tr: "Keşke buna daha erken başlasaydım." },
-      { situation: "Bir olasılığı anlatıyorsun.", de: "Ohne diesen Kurs würde ich immer noch schweigen.", tr: "Bu kurs olmasaydı hâlâ susuyor olurdum." },
+      { situation: "Gerçek dışı bir durumu anlatıyorsun.", de: "Ohne diesen Kurs würde ich immer noch schweigen.", tr: "Bu kurs olmasaydı hâlâ susuyor olurdum." },
     ],
     writing: {
       prompt: "B1'i bitirdin. Kendi öğrenme yolunu anlatan bir metin yaz.",
       checklist: [
         "Nasıl başladığını „als“ ile anlat",
         "En zorunun ne olduğunu yaz",
-        "Bir gerçekdışı cümle kur („Ohne … hätte ich …“)",
+        "Bir gerçek dışı cümle kur („Ohne … hätte ich …“)",
         "Sırada ne olduğunu yaz",
       ],
       minWords: 80,
@@ -753,7 +753,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
         { de: "Am schwersten war es, … zu …", tr: "En zoru … yapmaktı", en: "The hardest thing was to …" },
         { de: "Ohne … hätte ich …", tr: "… olmasaydı …", en: "Without … I would have …" },
         { de: "Ich bin stolz darauf, dass …", tr: "…-dığım için gurur duyuyorum", en: "I am proud that …" },
-        { de: "Als Nächstes möchte ich …", tr: "Sırada … var", en: "Next I would like to …" },
+        { de: "Als Nächstes möchte ich …", tr: "Bundan sonra … yapmak istiyorum", en: "Next I would like to …" },
       ],
       sample:
         "Als ich vor drei Jahren mit Deutsch anfing, konnte ich nur „Hallo“ und „Danke“ sagen. Im Supermarkt habe ich auf die Zahlen an der Kasse gestarrt, weil ich sie nicht verstanden habe.\n\nAm schwersten war es, den Mund aufzumachen. Grammatik kann man üben, aber Angst nicht. Nachdem ich das erste Mal mit einer Nachbarin geredet hatte, wurde es leichter — sie hat einfach gewartet, bis ich meinen Satz zu Ende gebracht habe.\n\nOhne Deutsch hätte ich meine jetzige Stelle nie bekommen. Ich bin stolz darauf, dass ich nicht aufgegeben habe, obwohl ich oft müde war.\n\nAls Nächstes möchte ich B2 machen und irgendwann eine Weiterbildung auf Deutsch.",
@@ -774,7 +774,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
     ],
     canDo: [
       { de: "Ich kann erklären, wie ein Gericht gemacht wird.", tr: "Bir yemeğin nasıl yapıldığını anlatabiliyorum.", en: "I can explain how a dish is made." },
-      { de: "Ich kann im Gasthaus höflich reklamieren.", tr: "Lokantada kibarca itiraz edebiliyorum.", en: "I can complain politely in a restaurant." },
+      { de: "Ich kann im Gasthaus höflich reklamieren.", tr: "Lokantada kibarca şikâyette bulunabiliyorum.", en: "I can complain politely in a restaurant." },
       { de: "Ich kann sagen, was ich mitbringe und warum.", tr: "Ne getirdiğimi ve nedenini söyleyebiliyorum.", en: "I can say what I am bringing and why." },
       { de: "Ich kann Tischsitten beschreiben.", tr: "Sofra âdetlerini anlatabiliyorum.", en: "I can describe table manners." },
       { de: "Ich kann mich am Ende eines Abends verabschieden.", tr: "Akşamın sonunda vedalaşabiliyorum.", en: "I can say goodbye at the end of an evening." },
@@ -805,7 +805,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
       genre: "Dergi yazısı",
       text: "Haltbar machen — wie früher\n\nFrüher wurde fast alles eingekocht, was im Sommer übrig blieb. Heute wird das wieder öfter gemacht, weil viele Leute weniger wegwerfen wollen.\n\nDas Prinzip ist einfach: Die Frucht wird gewaschen, in Scheiben geschnitten und mit Zucker in eine Schüssel gegeben. Bevor die Masse in die Gläser kommt, wird sie kurz gekocht. Während sie kocht, werden die Gläser heiß gespült.\n\nWichtig ist, sauber zu arbeiten. Ein Glas, das nicht richtig sauber ist, hält nicht lange. Sowohl Konfitüre als auch Gemüse kann man so über den Winter bringen.",
       questions: [
-        { de: "Warum wird heute wieder eingekocht?", tr: "Bugün neden yine konserve yapılıyor?", options: ["Weil es billiger schmeckt", "Weil viele weniger wegwerfen wollen", "Weil es keine Geschäfte gibt", "Weil es schneller geht"], answer: 1 },
+        { de: "Warum wird heute wieder eingekocht?", tr: "Bugün neden yine konserve yapılıyor?", options: ["Weil es billiger ist", "Weil viele weniger wegwerfen wollen", "Weil es keine Geschäfte gibt", "Weil es schneller geht"], answer: 1 },
         { de: "Was passiert, bevor die Masse in die Gläser kommt?", tr: "Karışım kavanoza girmeden önce ne oluyor?", options: ["Sie wird kalt gestellt", "Sie wird kurz gekocht", "Sie wird gewogen", "Sie wird weggeworfen"], answer: 1 },
       ],
     },
@@ -830,7 +830,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
         { de: "Sag mir bitte Bescheid, ob …", tr: "… olup olmadığını bana söyle", en: "Please let me know whether …" },
       ],
       sample:
-        "Liebe Marie,\n\nvielen Dank für die Einladung! Ich komme sehr gern am Samstag.\n\nIch bringe eine Nachspeise mit, die bei uns zu Hause oft gemacht wird. Sie ist einfach: Zuerst wird die Frucht gewaschen und in Scheiben geschnitten, dann wird sie mit Zucker und etwas Sahne in eine Schüssel gegeben. Während das Gebäck im Ofen ist, wird alles kalt gestellt.\n\nEine Frage noch: Isst jemand keine Nüsse? Sag mir bitte Bescheid, ob ich sie weglassen soll.\n\nBis Samstag!\nDein Emre",
+        "Liebe Marie,\n\nvielen Dank für die Einladung! Ich komme sehr gern am Samstag.\n\nIch bringe eine Nachspeise mit, die bei uns zu Hause oft gemacht wird. Sie ist einfach: Zuerst wird die Frucht gewaschen und in Scheiben geschnitten, dann wird sie mit Zucker, etwas Sahne und gehackten Nüssen in eine Schüssel gegeben. Bevor sie serviert wird, wird sie zwei Stunden kalt gestellt.\n\nEine Frage noch: Isst jemand keine Nüsse? Sag mir bitte Bescheid, ob ich sie weglassen soll.\n\nBis Samstag!\nDein Emre",
     },
   },
   {
@@ -865,10 +865,10 @@ export const B1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Kundin", de: "Kostet die neue Karte etwas?", tr: "Yeni kart ücretli mi?" },
         { speaker: "Berater", de: "Die erste ist kostenlos, die zweite im Jahr kostet zehn Euro.", tr: "İlki ücretsiz, yıl içinde ikincisi on euro." },
         { speaker: "Kundin", de: "Und die Zinsen auf dem Sparkonto — sind die höher als letztes Jahr?", tr: "Peki tasarruf hesabındaki faiz — geçen yıldan yüksek mi?" },
-        { speaker: "Berater", de: "Etwas höher, aber der Unterschied ist knapp.", tr: "Biraz yüksek ama fark az." },
+        { speaker: "Berater", de: "Etwas höher, aber der Unterschied ist gering.", tr: "Biraz yüksek ama fark az." },
       ],
       questions: [
-        { de: "Warum ruft die Kundin an?", tr: "Müşteri neden geldi?", options: ["Sie sucht einen Geldautomaten", "Ihre EC-Karte ist weg", "Sie will Zinsen ändern", "Sie sucht Arbeit"], answer: 1 },
+        { de: "Warum kommt die Kundin zur Bank?", tr: "Müşteri neden bankaya geldi?", options: ["Sie sucht einen Geldautomaten", "Ihre EC-Karte ist weg", "Sie will Zinsen ändern", "Sie sucht Arbeit"], answer: 1 },
         { de: "Was wurde gestern gemacht?", tr: "Dün ne yapıldı?", options: ["Es wurde Bargeld abgehoben", "Die Miete wurde überwiesen", "Eine Karte wurde bestellt", "Nichts"], answer: 1 },
         { de: "Was kostet die zweite Karte im Jahr?", tr: "Yıl içindeki ikinci kart ne kadar?", options: ["Nichts", "Fünf Euro", "Zehn Euro", "Zwanzig Euro"], answer: 2 },
       ],
@@ -921,11 +921,11 @@ export const B1_EXAMS: ModuleExamPlan[] = [
       { de: "Präteritum im Bericht", tr: "yazılı anlatının geçmişi" },
     ],
     canDo: [
-      { de: "Ich kann nach einer Verbindung fragen.", tr: "Bağlantı sorabiliyorum.", en: "I can ask about a connection." },
-      { de: "Ich kann eine Verspätung verstehen und reagieren.", tr: "Gecikmeyi anlayıp tepki verebiliyorum.", en: "I can understand a delay and react." },
+      { de: "Ich kann nach einer Verbindung fragen.", tr: "Bir tren ya da otobüs bağlantısını sorabiliyorum.", en: "I can ask about a connection." },
+      { de: "Ich kann eine Verspätung verstehen und darauf reagieren.", tr: "Gecikmeyi anlayıp tepki verebiliyorum.", en: "I can understand a delay and react to it." },
       { de: "Ich kann einen Unfall oder Notfall melden.", tr: "Kaza ya da acil durumu bildirebiliyorum.", en: "I can report an accident or emergency." },
       { de: "Ich kann eine Unterkunft beschreiben und vergleichen.", tr: "Konaklamayı anlatıp karşılaştırabiliyorum.", en: "I can describe and compare accommodation." },
-      { de: "Ich kann von einer Reise erzählen.", tr: "Bir yolculuğu anlatabiliyorum.", en: "I can tell about a trip." },
+      { de: "Ich kann von einer Reise erzählen.", tr: "Bir yolculuğu anlatabiliyorum.", en: "I can talk about a trip." },
     ],
     listening: {
       title: "Am Schalter im Hauptbahnhof",
@@ -934,12 +934,12 @@ export const B1_EXAMS: ModuleExamPlan[] = [
       turns: [
         { speaker: "Reisender", de: "Können Sie mir sagen, ob ich den Anschluss noch bekomme?", tr: "Aktarmaya yetişir miyim, söyleyebilir misiniz?" },
         { speaker: "Mitarbeiter", de: "Der Zug nach Hamburg hat vierzig Minuten Verspätung. Die Strecke wurde heute Morgen kurz gesperrt.", tr: "Hamburg treni kırk dakika gecikmeli. Hat bu sabah kısa süre kapatıldı." },
-        { speaker: "Reisender", de: "Und mein Anschluss um 14:20?", tr: "Peki 14:20'deki aktarmam?" },
-        { speaker: "Mitarbeiter", de: "Den erreichen Sie nicht mehr. Der nächste geht um 15:10 von Gleis 8.", tr: "Ona yetişemezsiniz. Sonraki 15:10'da, 8. perondan." },
-        { speaker: "Reisender", de: "Muss ich ein neues Billett kaufen?", tr: "Yeni bilet almam gerekiyor mu?" },
-        { speaker: "Mitarbeiter", de: "Nein, Ihr Ticket gilt weiter. Nachdem die Sperrung aufgehoben worden war, wurden alle Fahrkarten anerkannt.", tr: "Hayır, biletiniz geçerli. Kapatma kalktıktan sonra tüm biletler kabul edildi." },
+        { speaker: "Reisender", de: "Und mein Anschluss um 14:20?", tr: "Peki 14.20'deki aktarmam?" },
+        { speaker: "Mitarbeiter", de: "Den erreichen Sie nicht mehr. Der nächste geht um 15:10 von Gleis 8.", tr: "Ona yetişemezsiniz. Sonraki 15.10'da, 8. perondan." },
+        { speaker: "Reisender", de: "Muss ich eine neue Fahrkarte kaufen?", tr: "Yeni bilet almam gerekiyor mu?" },
+        { speaker: "Mitarbeiter", de: "Nein, Ihr Ticket gilt weiter. Nachdem die Strecke gesperrt worden war, wurden alle Fahrkarten für spätere Züge freigegeben.", tr: "Hayır, biletiniz geçerli. Hat kapatıldıktan sonra tüm biletler sonraki trenler için de geçerli sayıldı." },
         { speaker: "Reisender", de: "Gibt es im Zug einen Speisewagen?", tr: "Trende yemekli vagon var mı?" },
-        { speaker: "Mitarbeiter", de: "Ja, im Wagen 12. Und Sie bekommen die Verspätung teilweise zurück.", tr: "Evet, 12. vagonda. Ayrıca gecikmenin bir kısmı size geri ödenir." },
+        { speaker: "Mitarbeiter", de: "Ja, im Wagen 12. Und Sie bekommen einen Teil des Fahrpreises zurück.", tr: "Evet, 12. vagonda. Ayrıca bilet ücretinin bir kısmını geri alırsınız." },
       ],
       questions: [
         { de: "Warum hat der Zug Verspätung?", tr: "Tren neden gecikmeli?", options: ["Wegen des Wetters", "Die Strecke wurde gesperrt", "Es gab einen Unfall im Zug", "Der Lokführer fehlte"], answer: 1 },
@@ -951,14 +951,14 @@ export const B1_EXAMS: ModuleExamPlan[] = [
       title: "Zwei Nächte in der Hütte",
       titleTr: "Kulübede iki gece",
       genre: "Gezi yazısı",
-      text: "Zwei Nächte in der Hütte\n\nAls wir losfuhren, war es noch dunkel. Wir hatten die Hütte im Gebirge schon im Winter reserviert, weil sie in der Saison schnell voll ist.\n\nDie letzten zwei Kilometer mussten wir zu Fuß gehen: die Straße wurde im Frühling durch einen Sturm beschädigt und ist seitdem gesperrt. Nachdem wir oben angekommen waren, hat es sich sofort gelohnt — unter uns lag Nebel, über uns nur Himmel.\n\nEine Hütte ist einfacher als ein Hotel. Es gibt kein Internet, das Wasser ist kalt, und man wäscht selbst ab. Aber man schläft besser als in jedem Zimmer mit Klimaanlage.",
+      text: "Zwei Nächte in der Hütte\n\nAls wir losfuhren, war es noch dunkel. Wir hatten die Hütte im Gebirge schon im Winter reserviert, weil sie in der Saison schnell voll ist.\n\nDie letzten zwei Kilometer mussten wir zu Fuß gehen: Die Straße wurde im Frühling durch einen Sturm beschädigt und ist seitdem gesperrt. Nachdem wir oben angekommen waren, hat es sich sofort gelohnt — unter uns lag Nebel, über uns nur Himmel.\n\nEine Hütte ist einfacher als ein Hotel. Es gibt kein Internet, das Wasser ist kalt, und man wäscht selbst ab. Aber man schläft besser als in jedem Zimmer mit Klimaanlage.",
       questions: [
         { de: "Warum haben sie früh reserviert?", tr: "Neden erken rezervasyon yaptılar?", options: ["Weil es billiger ist", "Weil die Hütte in der Saison schnell voll ist", "Weil die Straße gesperrt war", "Weil sie im Winter fahren wollten"], answer: 1 },
         { de: "Warum mussten sie zu Fuß gehen?", tr: "Neden yürümek zorunda kaldılar?", options: ["Das Auto war kaputt", "Die Straße wurde beschädigt und ist gesperrt", "Es gab keinen Parkplatz", "Sie wollten wandern"], answer: 1 },
       ],
     },
     speaking: [
-      { situation: "Gişede aktarmayı soruyorsun.", de: "Können Sie mir sagen, ob ich den Anschluss um 14:20 noch bekomme?", tr: "14:20'deki aktarmaya yetişir miyim, söyleyebilir misiniz?" },
+      { situation: "Gişede aktarmayı soruyorsun.", de: "Können Sie mir sagen, ob ich den Anschluss um 14:20 noch bekomme?", tr: "14.20'deki aktarmaya yetişir miyim, söyleyebilir misiniz?" },
       { situation: "Yolda bir arıza bildiriyorsun.", de: "Mein Auto steht auf der Fahrbahn — die Bremse funktioniert nicht mehr.", tr: "Arabam yolda kaldı — fren tutmuyor." },
     ],
     writing: {
@@ -966,7 +966,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
       checklist: [
         "Nasıl yola çıktığını „als“ ile anlat",
         "Yolda ne olduğunu geçmiş zamanla yaz",
-        "Bir şeyin senden önce olduğunu „nachdem … hatte“ ile göster",
+        "Bir şeyin başka bir şeyden önce olduğunu „nachdem … hatte“ ile göster",
         "Konaklamayı bir başkasıyla karşılaştır",
       ],
       minWords: 80,
@@ -974,11 +974,11 @@ export const B1_EXAMS: ModuleExamPlan[] = [
         { de: "Als wir losfuhren, …", tr: "Yola çıktığımızda …", en: "When we set off, …" },
         { de: "Nachdem wir angekommen waren, …", tr: "Vardıktan sonra …", en: "After we had arrived, …" },
         { de: "Die Strecke wurde gesperrt.", tr: "Hat kapatıldı.", en: "The route was closed." },
-        { de: "Es war einfacher als …", tr: "… -den daha sadeydi", en: "It was simpler than …" },
+        { de: "Es war einfacher als …", tr: "…-den daha sadeydi", en: "It was simpler than …" },
         { de: "Beim nächsten Mal würde ich …", tr: "Bir dahakine … yapardım", en: "Next time I would …" },
       ],
       sample:
-        "Als wir im Juli losfuhren, regnete es noch. Wir hatten die Fähre schon im Mai gebucht, weil im Sommer alles voll ist.\n\nIn der Hafenstadt wurde gerade eine Straße repariert, deshalb gab es eine Umleitung und wir kamen zwei Stunden später an. Nachdem wir das Quartier gefunden hatten, gingen wir sofort ans Meer.\n\nDas Quartier war einfacher als ein Hotel, aber viel ruhiger. Beim nächsten Mal würde ich wieder mit der Bahn fahren — das Auto brauchten wir dort überhaupt nicht.",
+        "Als wir im Juli losfuhren, regnete es noch. Wir hatten die Fähre schon im Mai gebucht, weil im Sommer alles voll ist.\n\nIn der Hafenstadt wurde gerade eine Straße repariert, deshalb gab es eine Umleitung und wir kamen zwei Stunden später an. Nachdem wir das Quartier gefunden hatten, gingen wir sofort ans Meer.\n\nDas Quartier war einfacher als ein Hotel, aber viel ruhiger. Beim nächsten Mal würde ich lieber mit der Bahn fahren — das Auto brauchten wir dort überhaupt nicht.",
     },
   },
   {
@@ -1012,7 +1012,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Murat", de: "Ich kann montags und mittwochs. Und die Nachbarin, der wir vertrauen, kommt freitags.", tr: "Ben pazartesi ve çarşamba gelebilirim. Güvendiğimiz komşu da cuma geliyor." },
         { speaker: "Selin", de: "Dann brauchen wir noch einen Pfleger für die anderen Tage, damit sie nicht allein bleibt.", tr: "O zaman diğer günler için bir bakıcı lazım ki yalnız kalmasın." },
         { speaker: "Murat", de: "Kümmerst du dich um den Antrag? Ich rufe bei der Betreuung an.", tr: "Başvuruyla sen ilgilenir misin? Ben bakım hizmetini ararım." },
-        { speaker: "Selin", de: "Machen wir. Aber wir sagen es ihr zusammen — sonst denkt sie, wir entscheiden über ihren Kopf hinweg.", tr: "Tamam. Ama ona birlikte söyleyelim — yoksa başının üstünden karar verdiğimizi düşünür." },
+        { speaker: "Selin", de: "Machen wir. Aber wir sagen es ihr zusammen — sonst denkt sie, wir entscheiden über ihren Kopf hinweg.", tr: "Tamam. Ama ona birlikte söyleyelim — yoksa ona sormadan karar verdiğimizi düşünür." },
       ],
       questions: [
         { de: "Was will die Großmutter nicht?", tr: "Anneanne ne istemiyor?", options: ["Besuch bekommen", "Ins Altenheim gehen", "Zum Arzt gehen", "Allein bleiben"], answer: 1 },
@@ -1072,7 +1072,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
       { de: "Ich kann etwas reparieren lassen.", tr: "Bir şeyi tamir ettirebiliyorum.", en: "I can have something repaired." },
       { de: "Ich kann einen Einbruch melden.", tr: "Hırsızlığı bildirebiliyorum.", en: "I can report a break-in." },
       { de: "Ich kann eine Grafik in einfachen Worten erklären.", tr: "Bir grafiği sade sözcüklerle açıklayabiliyorum.", en: "I can explain a chart in simple words." },
-      { de: "Ich kann sagen, was sich seit früher verändert hat.", tr: "Eskiye göre neyin değiştiğini söyleyebiliyorum.", en: "I can say what has changed since earlier times." },
+      { de: "Ich kann sagen, was sich im Vergleich zu früher verändert hat.", tr: "Eskiye göre neyin değiştiğini söyleyebiliyorum.", en: "I can say what has changed compared with the past." },
     ],
     listening: {
       title: "Der Rechner streikt",
@@ -1080,7 +1080,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
       situation: "Bir kullanıcı teknik destekle konuşuyor.",
       turns: [
         { speaker: "Kundin", de: "Mein Rechner geht seit gestern nicht mehr an. Wissen Sie, weshalb das passieren kann?", tr: "Bilgisayarım dünden beri açılmıyor. Neden olabileceğini biliyor musunuz?" },
-        { speaker: "Techniker", de: "Geht eine Taste an, wenn Sie einschalten?", tr: "Açtığınızda bir tuş yanıyor mu?" },
+        { speaker: "Techniker", de: "Leuchtet ein Lämpchen, wenn Sie einschalten?", tr: "Açtığınızda bir ışık yanıyor mu?" },
         { speaker: "Kundin", de: "Nein, gar nichts. Der Stecker sitzt aber richtig in der Steckdose.", tr: "Hayır, hiçbir şey. Ama fiş prize düzgün oturuyor." },
         { speaker: "Techniker", de: "Dann klingt es nach dem Netzteil. Das kann man reparieren lassen, das lohnt sich meistens.", tr: "O zaman güç kaynağı gibi duruyor. Tamir ettirilebilir, çoğu zaman değer." },
         { speaker: "Kundin", de: "Und meine Daten? Da ist die ganze Arbeit von zwei Jahren.", tr: "Peki verilerim? İki yıllık işim orada." },
@@ -1089,16 +1089,16 @@ export const B1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Techniker", de: "Drei bis vier Tage. Bringen Sie das Gerät einfach vorbei.", tr: "Üç dört gün. Cihazı getirin yeter." },
       ],
       questions: [
-        { de: "Was funktioniert nicht?", tr: "Ne çalışmıyor?", options: ["Der Monitor", "Der Rechner geht nicht an", "Das Netzwerk", "Die Tastatur"], answer: 1 },
-        { de: "Was denkt der Techniker?", tr: "Teknisyen ne düşünüyor?", options: ["Die Festplatte", "Das Netzteil", "Den Stecker", "Ein Virus"], answer: 1 },
-        { de: "Warum werden die Daten zuerst gesichert?", tr: "Veriler neden önce yedekleniyor?", options: ["Weil sie sicher verloren gehen", "Damit nichts verloren geht", "Weil der Kunde es bezahlt", "Weil die Festplatte kaputt ist"], answer: 1 },
+        { de: "Was funktioniert nicht?", tr: "Ne çalışmıyor?", options: ["Der Monitor", "Der Rechner", "Das Netzwerk", "Die Tastatur"], answer: 1 },
+        { de: "Woran liegt es laut dem Techniker?", tr: "Teknisyene göre sorun neden kaynaklanıyor?", options: ["An der Festplatte", "Am Netzteil", "Am Stecker", "An einem Virus"], answer: 1 },
+        { de: "Warum werden die Daten zuerst gesichert?", tr: "Veriler neden önce yedekleniyor?", options: ["Weil sie sicher verloren gehen", "Damit nichts verloren geht", "Weil die Kundin es bezahlt", "Weil die Festplatte kaputt ist"], answer: 1 },
       ],
     },
     reading: {
       title: "Bei uns wurde eingebrochen",
       titleTr: "Bize hırsız girdi",
       genre: "Komşu yazısı",
-      text: "Liebe Nachbarinnen und Nachbarn,\n\nam Wochenende wurde bei uns im zweiten Stock eingebrochen. Die Tür wurde aufgebrochen, während wir bei Verwandten waren.\n\nGestohlen wurde nicht viel: ein Rechner und etwas Bargeld. Der Täter wurde nicht gesehen; die Polizei hat den Fall aufgenommen.\n\nDie Hausverwaltung lässt jetzt das Schloss unten austauschen. Bis das gemacht ist, schließen Sie die Haustür bitte auch tagsüber ab, damit niemand einfach hereinkommt.\n\nWenn Ihnen am Samstag etwas aufgefallen ist, sagen Sie mir bitte Bescheid.\n\nFamilie Yildiz, Wohnung 7",
+      text: "Liebe Nachbarinnen und Nachbarn,\n\nam Wochenende wurde bei uns im zweiten Stock eingebrochen. Die Tür wurde aufgebrochen, während wir bei Verwandten waren.\n\nGestohlen wurde nicht viel: ein Rechner und etwas Bargeld. Der Täter wurde nicht gesehen; die Polizei hat den Fall aufgenommen.\n\nDie Hausverwaltung lässt jetzt das Schloss unten austauschen. Bis das gemacht ist, schließen Sie die Haustür bitte auch tagsüber ab, damit niemand einfach hereinkommt.\n\nWenn Ihnen am Samstag etwas aufgefallen ist, sagen Sie uns bitte Bescheid.\n\nFamilie Yildiz, Wohnung 7",
       questions: [
         { de: "Was wurde gestohlen?", tr: "Ne çalındı?", options: ["Schmuck und ein Auto", "Ein Rechner und etwas Bargeld", "Nichts", "Werkzeug aus dem Keller"], answer: 1 },
         { de: "Was soll die Nachbarschaft jetzt tun?", tr: "Komşular şimdi ne yapmalı?", options: ["Die Polizei rufen", "Die Haustür auch tagsüber abschließen", "Das Schloss selbst tauschen", "Nichts"], answer: 1 },
@@ -1125,7 +1125,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
         { de: "Können Sie mir sagen, wie lange das dauert?", tr: "Ne kadar süreceğini söyleyebilir misiniz?", en: "Can you tell me how long it takes?" },
       ],
       sample:
-        "Sehr geehrte Frau Weber,\n\nseit gestern funktioniert der Kopierer im Büro nicht mehr. Er wurde am Freitag noch benutzt, danach ging er nicht mehr an. Eine Taste geht an, aber es passiert nichts.\n\nIch möchte ihn reparieren lassen. Vorher sichern wir die Daten, damit nichts verloren geht.\n\nVorher würde ich gern wissen, ob sich die Reparatur überhaupt lohnt oder ob ein neues Gerät günstiger wäre.\n\nKönnen Sie mir sagen, wie lange das dauert und ob wir in der Zeit ein anderes Gerät bekommen? Ohne Kopierer bleibt bei uns im Büro einiges liegen.\n\nMit freundlichen Grüßen\nMurat Kaya",
+        "Sehr geehrte Frau Weber,\n\nseit Freitag funktioniert der Kopierer im Büro nicht mehr. Er wurde am Freitagmorgen noch benutzt, danach ging er nicht mehr an. Ein Lämpchen leuchtet, aber sonst passiert nichts.\n\nIch möchte ihn reparieren lassen. Vorher sichern wir die Daten, damit nichts verloren geht.\n\nAußerdem würde ich gern wissen, ob sich die Reparatur überhaupt lohnt oder ob ein neues Gerät günstiger wäre.\n\nKönnen Sie mir sagen, wie lange das dauert und ob wir in der Zeit ein anderes Gerät bekommen? Ohne Kopierer bleibt bei uns im Büro einiges liegen.\n\nMit freundlichen Grüßen\nMurat Kaya",
     },
   },
   {
@@ -1155,9 +1155,9 @@ export const B1_EXAMS: ModuleExamPlan[] = [
       turns: [
         { speaker: "Angestellter", de: "Haben Sie kurz Zeit? Ich wollte fragen, ob ich freitags früher gehen kann.", tr: "Kısa vaktiniz var mı? Cuma günleri erken çıkabilir miyim diye soracaktım." },
         { speaker: "Chefin", de: "Erzählen Sie. Geht es um die Fortbildung?", tr: "Anlatın. Eğitimle mi ilgili?" },
-        { speaker: "Angestellter", de: "Genau. Der Kurs beginnt um 15 Uhr, und ich habe vor, das Zertifikat dieses Jahr zu machen.", tr: "Aynen. Kurs 15'te başlıyor, sertifikayı bu yıl almayı planlıyorum." },
+        { speaker: "Angestellter", de: "Genau. Der Kurs beginnt um 15 Uhr, und ich habe vor, das Zertifikat dieses Jahr zu machen.", tr: "Aynen. Kurs 15.00'te başlıyor, sertifikayı bu yıl almayı planlıyorum." },
         { speaker: "Chefin", de: "Wie viele Stunden fehlen dann pro Woche?", tr: "Haftada kaç saat eksik kalıyor?" },
-        { speaker: "Angestellter", de: "Zwei. Nachdem ich die Präsentation abgegeben hatte, ist ohnehin weniger zu tun. Ich könnte sie montags nachholen.", tr: "İki. Sunumu teslim ettikten sonra zaten iş azaldı. Pazartesi telafi edebilirim." },
+        { speaker: "Angestellter", de: "Zwei. Nachdem ich die Präsentation abgegeben hatte, gab es ohnehin weniger zu tun. Ich könnte die Stunden montags nachholen.", tr: "İki. Sunumu teslim ettikten sonra zaten iş azaldı. Pazartesi telafi edebilirim." },
         { speaker: "Chefin", de: "Das klingt gut. Ich muss es dem Betriebsrat mitteilen, aber von mir aus gern.", tr: "Mantıklı. İşçi temsilciliğine bildirmem gerek ama benim açımdan olur." },
         { speaker: "Angestellter", de: "Danke. Soll ich das schriftlich einreichen?", tr: "Teşekkürler. Yazılı vereyim mi?" },
         { speaker: "Chefin", de: "Ja, kurz per Mail — dann wird es sauber festgehalten.", tr: "Evet, kısa bir e-postayla — böylece düzgün kayda geçer." },
@@ -1175,7 +1175,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
       text: "Lehre oder Studium?\n\nViele Jugendliche fragen sich, ob eine Lehre oder ein Studium besser ist. Die Antwort hängt weniger vom Abschluss ab als von der Tätigkeit, die man am Ende machen möchte.\n\nIn der Lehre wird von Anfang an im Betrieb gearbeitet und Geld verdient. Wer eine Fortbildung anschließt, kann später Gruppen leiten. Beim Studium dauert es länger, dafür bekommt man manche Stellen nur so.\n\nEine Umfrage unter 500 Beschäftigten zeigt: Zufrieden sind vor allem die, deren Arbeit zu ihren Stärken passt — egal, welchen Weg sie gegangen sind. Der Abschluss öffnet die Tür; bleiben muss man selbst wollen.",
       questions: [
         { de: "Wovon hängt die Antwort laut Text ab?", tr: "Metne göre cevap neye bağlı?", options: ["Vom Abschluss", "Von der Tätigkeit, die man machen möchte", "Vom Gehalt", "Vom Alter"], answer: 1 },
-        { de: "Wer ist laut Umfrage zufrieden?", tr: "Ankete göre kim memnun?", options: ["Wer studiert hat", "Wer eine Lehre gemacht hat", "Wessen Arbeit zu den Stärken passt", "Wer am meisten verdient"], answer: 2 },
+        { de: "Wer ist laut Umfrage zufrieden?", tr: "Ankete göre kim memnun?", options: ["Wer studiert hat", "Wer eine Lehre gemacht hat", "Wer eine Arbeit hat, die zu den eigenen Stärken passt", "Wer am meisten verdient"], answer: 2 },
       ],
     },
     speaking: [
@@ -1195,11 +1195,11 @@ export const B1_EXAMS: ModuleExamPlan[] = [
         { de: "hiermit bewerbe ich mich um die Stelle als …", tr: "… pozisyonuna başvuruyorum", en: "I hereby apply for the position of …" },
         { de: "Nachdem ich … abgeschlossen hatte, …", tr: "… bitirdikten sonra …", en: "After I had completed …, …" },
         { de: "Zurzeit arbeite ich als …", tr: "Şu an … olarak çalışıyorum", en: "I currently work as …" },
-        { de: "An Ihrer Stelle reizt mich, dass …", tr: "İlanınızda beni çeken şey …", en: "What appeals to me about your position is that …" },
+        { de: "An der ausgeschriebenen Stelle reizt mich, dass …", tr: "İlandaki pozisyonda beni çeken şey …", en: "What appeals to me about the advertised position is that …" },
         { de: "Über eine Einladung zum Gespräch freue ich mich.", tr: "Görüşmeye çağrılmaktan memnun olurum.", en: "I would be glad to be invited for an interview." },
       ],
       sample:
-        "Sehr geehrte Frau Berger,\n\nhiermit bewerbe ich mich um die Stelle als Mitarbeiterin im Kundendienst, die Sie auf Ihrer Seite ausgeschrieben haben.\n\nNachdem ich die Lehre als Verkäuferin abgeschlossen hatte, habe ich drei Jahre in einem Geschäft mit viel Kundenkontakt gearbeitet. Zurzeit arbeite ich halbtags und mache nebenbei eine Fortbildung.\n\nAn Ihrer Stelle reizt mich, dass man selbst entscheiden kann, wie ein Problem gelöst wird. Genau das hat mir bisher gefehlt.\n\nÜber eine Einladung zum Gespräch freue ich mich.\n\nMit freundlichen Grüßen\nElif Yildiz",
+        "Sehr geehrte Frau Berger,\n\nhiermit bewerbe ich mich um die Stelle als Mitarbeiterin im Kundendienst, die Sie auf Ihrer Seite ausgeschrieben haben.\n\nNachdem ich die Lehre als Verkäuferin abgeschlossen hatte, habe ich drei Jahre in einem Geschäft mit viel Kundenkontakt gearbeitet. Zurzeit arbeite ich halbtags und mache nebenbei eine Fortbildung.\n\nAn der ausgeschriebenen Stelle reizt mich, dass man selbst entscheiden kann, wie ein Problem gelöst wird. Genau das hat mir bisher gefehlt.\n\nÜber eine Einladung zum Gespräch freue ich mich.\n\nMit freundlichen Grüßen\nElif Yildiz",
     },
   },
   {
@@ -1227,7 +1227,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
       titleTr: "Konsoloslukta",
       situation: "Bir başvuru sahibi belgelerini teslim ediyor.",
       turns: [
-        { speaker: "Beamter", de: "Guten Tag. Ihre Personalien bitte — und der Zivilstand.", tr: "İyi günler. Kimlik bilgileriniz lütfen — bir de medeni hâl." },
+        { speaker: "Beamter", de: "Guten Tag. Ihre Personalien bitte — und Ihr Familienstand.", tr: "İyi günler. Kimlik bilgileriniz lütfen — bir de medeni hâl." },
         { speaker: "Antragstellerin", de: "Nuray Aydin, geboren in Izmir, verheiratet. Hier ist der Pass.", tr: "Nuray Aydın, İzmir doğumlu, evli. Pasaport burada." },
         { speaker: "Beamter", de: "Danke. Ihr erster Antrag wurde im März abgelehnt. Wissen Sie, warum?", tr: "Teşekkürler. İlk başvurunuz mart ayında reddedildi. Nedenini biliyor musunuz?" },
         { speaker: "Antragstellerin", de: "Ja, es fehlte die Bestätigung vom Arbeitgeber. Die habe ich jetzt dabei.", tr: "Evet, işverenden gelen belge eksikti. Şimdi yanımda." },
@@ -1237,14 +1237,14 @@ export const B1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Antragstellerin", de: "Verstanden. Wie lange dauert die Prüfung?", tr: "Anladım. İnceleme ne kadar sürer?" },
       ],
       questions: [
-        { de: "Warum wurde der erste Antrag abgelehnt?", tr: "İlk başvuru neden reddedildi?", options: ["Der Pass fehlte", "Die Bestätigung vom Arbeitgeber fehlte", "Der Zivilstand war falsch", "Sie kam zu spät"], answer: 1 },
-        { de: "Was gilt für den Abschluss?", tr: "Diploma için ne geçerli?", options: ["Er wird automatisch anerkannt", "Er wird über eine eigene Stelle anerkannt", "Er zählt gar nicht", "Er muss neu gemacht werden"], answer: 1 },
+        { de: "Warum wurde der erste Antrag abgelehnt?", tr: "İlk başvuru neden reddedildi?", options: ["Der Pass fehlte", "Die Bestätigung vom Arbeitgeber fehlte", "Der Familienstand war falsch", "Sie kam zu spät"], answer: 1 },
+        { de: "Was gilt für den Abschluss?", tr: "Diploma için ne geçerli?", options: ["Er wird automatisch anerkannt", "Er muss bei einer eigenen Stelle anerkannt werden", "Er zählt gar nicht", "Er muss neu gemacht werden"], answer: 1 },
         { de: "Was zählt laut dem Beamten?", tr: "Memura göre ne sayılıyor?", options: ["Nur der Abschluss", "Nur die Stunden", "Abschluss und Stunden", "Nur die Sprache"], answer: 2 },
       ],
     },
     reading: {
       title: "Zwei Sprachen, ein Alltag",
-      titleTr: "İki dil, tek gündelik",
+      titleTr: "İki dil, tek gündelik hayat",
       genre: "Forum yazısı",
       text: "Zwei Sprachen, ein Alltag\n\nAls ich ankam, dachte ich, ich würde nach zwei Jahren wieder gehen. Heute leben meine Kinder hier und sprechen zu Hause die eine, in der Schule die andere Sprache.\n\nManche sagen, das verwirrt Kinder. Meine Erfahrung ist eine andere: Sie unterscheiden sehr genau, mit wem sie welche Sprache sprechen. Was ihnen fehlt, sind nicht Wörter, sondern Gelegenheiten.\n\nSchwieriger ist es für uns Eltern. Ich muss nicht nur Formulare verstehen, sondern auch merken, was zwischen den Zeilen steht. Obwohl ich fließend spreche, bleibt dieser Teil Arbeit.\n\nTrotzdem würde ich es wieder so machen.",
       questions: [
@@ -1285,7 +1285,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
     focus: [
       { de: "Relativsatz mit Präposition", tr: "„der Verein, in dem ich spiele“" },
       { de: "bevor / während", tr: "iki işin sırası ve aynı anda olması" },
-      { de: "Konjunktiv II", tr: "kibar öneri ve gerçekdışı" },
+      { de: "Konjunktiv II", tr: "kibar öneri ve gerçek dışı durum" },
       { de: "Passiv Präteritum", tr: "„das Spiel wurde abgesagt“" },
       { de: "Komparativ", tr: "karşılaştırıp seçmek" },
     ],
@@ -1293,7 +1293,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
       { de: "Ich kann einen Abend planen und vorschlagen.", tr: "Bir akşam planlayıp öneri sunabiliyorum.", en: "I can plan and suggest an evening." },
       { de: "Ich kann über ein Spiel oder Konzert berichten.", tr: "Bir maçı ya da konseri anlatabiliyorum.", en: "I can report on a match or concert." },
       { de: "Ich kann über ein Buch oder einen Film sprechen.", tr: "Bir kitabı ya da filmi konuşabiliyorum.", en: "I can talk about a book or a film." },
-      { de: "Ich kann eine Absage höflich formulieren.", tr: "Bir reddi kibarca kurabiliyorum.", en: "I can phrase a refusal politely." },
+      { de: "Ich kann eine Absage höflich formulieren.", tr: "Kibarca olumsuz cevap verebiliyorum.", en: "I can phrase a refusal politely." },
       { de: "Ich kann meinen B1-Weg zusammenfassen.", tr: "B1 yolumu özetleyebiliyorum.", en: "I can sum up my B1 journey." },
     ],
     listening: {
@@ -1305,7 +1305,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Elif", de: "Schade, ich hatte die Karten schon. Wird es nachgeholt?", tr: "Yazık, biletleri almıştım. Telafi edilecek mi?" },
         { speaker: "Jonas", de: "Nächsten Samstag, im Stadion, in dem sie letztes Jahr gespielt haben.", tr: "Gelecek cumartesi, geçen yıl oynadıkları statta." },
         { speaker: "Elif", de: "Und heute? Wir könnten ins Theater gehen, bevor es zu spät wird.", tr: "Peki bugün? Geç olmadan tiyatroya gidebiliriz." },
-        { speaker: "Jonas", de: "Gute Idee. Die Eröffnung ist um acht. Während wir warten, könnten wir etwas essen.", tr: "İyi fikir. Açılış sekizde. Beklerken bir şeyler yiyebiliriz." },
+        { speaker: "Jonas", de: "Gute Idee. Die Vorstellung beginnt um acht. Während wir warten, könnten wir etwas essen.", tr: "İyi fikir. Oyun sekizde başlıyor. Beklerken bir şeyler yiyebiliriz." },
         { speaker: "Elif", de: "Ich würde lieber vorher essen — im Saal ist es später zu voll.", tr: "Ben önce yemeyi tercih ederim — salon sonra çok kalabalık oluyor." },
         { speaker: "Jonas", de: "Einverstanden. Ich hole dich um sechs ab.", tr: "Anlaştık. Seni altıda alırım." },
       ],
@@ -1319,15 +1319,15 @@ export const B1_EXAMS: ModuleExamPlan[] = [
       title: "Raus ins Grüne — aber richtig",
       titleTr: "Doğaya çıkmak — ama doğru şekilde",
       genre: "Park duyurusu",
-      text: "Raus ins Grüne — aber richtig\n\nDer Park, in dem Sie gerade stehen, gehört allen. Damit das so bleibt, ein paar Hinweise.\n\nAuf der Wiese darf gespielt und gegrillt werden — aber nur an den Stellen mit dem grünen Symbol. Im letzten Sommer wurde das Gras an drei Stellen so beschädigt, dass es neu gesät werden musste.\n\nHunde sind willkommen, während der Brutzeit im Frühling aber bitte an der Leine. Tiere, die hier leben, sind schneller gestört, als man denkt.\n\nUnd das Wichtigste: Nehmen Sie Ihren Abfall wieder mit. Ein Park ist kein Hof — hier räumt niemand hinter Ihnen auf.",
+      text: "Raus ins Grüne — aber richtig\n\nDer Park, in dem Sie gerade stehen, gehört allen. Damit das so bleibt, ein paar Hinweise.\n\nAuf der Wiese darf gespielt und gegrillt werden — aber nur an den Stellen mit dem grünen Symbol. Im letzten Sommer wurde das Gras an drei Stellen so beschädigt, dass es neu gesät werden musste.\n\nHunde sind willkommen, während der Brutzeit im Frühling aber bitte an der Leine. Tiere, die hier leben, sind schneller gestört, als man denkt.\n\nUnd das Wichtigste: Nehmen Sie Ihren Abfall wieder mit. Ein Park ist kein Hotel — hier räumt niemand hinter Ihnen auf.",
       questions: [
         { de: "Wo darf gegrillt werden?", tr: "Nerede mangal yapılabilir?", options: ["Überall auf der Wiese", "Nur an Stellen mit dem grünen Symbol", "Gar nicht", "Nur im Sommer"], answer: 1 },
         { de: "Was gilt im Frühling für Hunde?", tr: "İlkbaharda köpekler için ne geçerli?", options: ["Sie dürfen nicht in den Park", "Sie müssen an die Leine", "Sie dürfen frei laufen", "Nur kleine Hunde sind erlaubt"], answer: 1 },
       ],
     },
     speaking: [
-      { situation: "Bir akşam için öneri yapıyorsun.", de: "Wir könnten ins Theater gehen, bevor es zu spät wird — die Eröffnung ist um acht.", tr: "Geç olmadan tiyatroya gidebiliriz — açılış sekizde." },
-      { situation: "Bir daveti kibarca çeviriyorsun.", de: "Ich würde gern kommen, aber am Samstag geht es leider nicht. Ginge auch der Sonntag?", tr: "Gelmek isterdim ama cumartesi maalesef olmuyor. Pazar olur mu?" },
+      { situation: "Bir akşam için öneri yapıyorsun.", de: "Wir könnten ins Theater gehen, bevor es zu spät wird — die Vorstellung beginnt um acht.", tr: "Geç olmadan tiyatroya gidebiliriz — oyun sekizde başlıyor." },
+      { situation: "Bir daveti kibarca geri çeviriyorsun.", de: "Ich würde gern kommen, aber am Samstag geht es leider nicht. Ginge auch der Sonntag?", tr: "Gelmek isterdim ama cumartesi maalesef olmuyor. Pazar olur mu?" },
     ],
     writing: {
       prompt: "B1'i bitiriyorsun. Bir arkadaşına hem bir hafta sonu önerisi yap hem de bu yılki gelişimini kısaca anlat.",
@@ -1343,7 +1343,7 @@ export const B1_EXAMS: ModuleExamPlan[] = [
         { de: "Ginge auch …?", tr: "… de olur mu?", en: "Would … work too?" },
         { de: "Im Verein, in dem ich spiele, …", tr: "Oynadığım kulüpte …", en: "In the club where I play, …" },
         { de: "Vor einem Jahr hätte ich das nicht gekonnt.", tr: "Bir yıl önce bunu yapamazdım.", en: "A year ago I couldn't have done that." },
-        { de: "Als Nächstes nehme ich mir vor, …", tr: "Sırada … var", en: "Next I intend to …" },
+        { de: "Als Nächstes nehme ich mir vor, …", tr: "Bundan sonra … yapmaya niyetliyim", en: "Next I intend to …" },
       ],
       sample:
         "Hallo Deniz,\n\nam Samstag wurde unser Spiel abgesagt, deshalb bin ich frei. Wir könnten ins Kino gehen, bevor es zu voll wird — der Film fängt um acht an. Ginge auch der Sonntag, falls du am Samstag arbeitest?\n\nSonst läuft es gut. Im Verein, in dem ich spiele, halte ich seit Herbst die kurzen Ansagen vor dem Training. Vor einem Jahr hätte ich das nicht gekonnt; ich hätte einfach jemand anderen gefragt.\n\nAls Nächstes nehme ich mir vor, mit B2 anzufangen. Erst mal aber: Kino.\n\nBis bald!\nMurat",
