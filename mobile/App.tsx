@@ -28,6 +28,7 @@ import { applyPendingReferral, attachReferral, savePendingReferral, type Referra
 import { t } from "./src/lib/i18n";
 import { Text } from "./src/ui/Text";
 import { AchievementUnlock } from "./src/ui/AchievementUnlock";
+import { UnlockCelebration } from "./src/ui/UnlockCelebration";
 import { GuestClaimNotice } from "./src/ui/GuestClaimNotice";
 import { TermsUpdateNotice } from "./src/ui/TermsUpdateNotice";
 import { GuestMergeDialog } from "./src/ui/GuestMergeDialog";
@@ -412,6 +413,9 @@ function Nav() {
           ve altısına ayrı kutlama koymak altı yerde unutulur (web de kabukta
           tek kart tutuyor). Kendisi akış ekranlarını kesmiyor. */}
       <AchievementUnlock />
+      {/* Yeni ücretsiz hak açıldı (bitir + 7 günlük seri) — aynı kök kuralı
+          (bkz. ui/UnlockCelebration). */}
+      <UnlockCelebration />
       {/* Misafir hesaba geçince ilerlemenin nereye gittiği — birleşme birden çok
           giriş yolundan geliyor, not bu yüzden kökte (bkz. ui/GuestClaimNotice). */}
       <GuestClaimNotice />
