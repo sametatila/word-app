@@ -102,7 +102,7 @@ export const EN_A1_W05: QuizWeek = {
       block: "listen",
       ref: "a1",
       stem: "Why does Nina not have much time?",
-      options: ["She is ill", "She learns and works", "She lives far from work", "She has no bus"],
+      options: ["She is sick", "She learns and works", "She lives far from work", "She has no bus"],
       answer: 1,
       why: "\"I learn English and I work.\" Sebep `why` sorusundan sonra geliyor ama `because` gibi bir bağlaçla işaretlenmiyor — iki cümleyi birleştirmek gerekiyor.",
       targets: ["listening.inference", "question.why"],

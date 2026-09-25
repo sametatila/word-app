@@ -39,7 +39,7 @@ export const EN_B1_W01: QuizWeek = {
       body:
         "I drove to work for almost 15 years. Last spring, my car stopped working, and for three weeks I had to take my bike. " +
         "I expected to hate it. Actually, I loved it.\n\n" +
-        "Since then, I have used the car only at weekends. I have saved a lot of money, and I feel healthier than I did five years ago. " +
+        "Since then, I have used the car only on weekends. I have saved a lot of money, and I feel healthier than I did five years ago. " +
         "My colleagues think I am crazy, especially in winter, but I don't agree with them.\n\n" +
         "I am not saying that everyone should sell their car. People who live far from the city or have small children often have no choice. " +
         "And I have to admit that the first cold morning in November was not much fun.\n\n" +
@@ -107,7 +107,7 @@ export const EN_B1_W01: QuizWeek = {
       stem: "What does the writer suggest to the readers?",
       options: [
         "to sell their car",
-        "to use the car only at weekends",
+        "to use the car only on weekends",
         "to try the bike for a week if they live near work",
         "to write about their car",
       ],
@@ -188,7 +188,7 @@ export const EN_B1_W01: QuizWeek = {
     {
       id: "en-b1-w01-g2",
       block: "grammar",
-      stem: "Since then, I ___ the car only at weekends.",
+      stem: "Since then, I ___ the car only on weekends.",
       options: ["use", "used", "have used", "am using"],
       answer: 2,
       why: "`Since then` geçmişte başlayıp BUGÜNE kadar süren bir dönemi ölçer ve present perfect ister. `used` dönemin bittiğini, `use` ve `am using` başlangıç noktası olmayan bir şimdiyi bildirir.",

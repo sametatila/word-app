@@ -38,7 +38,7 @@ export const EN_A1_W03: QuizWeek = {
         "I buy an egg and some cheese for breakfast. " +
         "The cheese is expensive, but I like it. " +
         "I have 20 euros. That is enough. " +
-        "Then I go to the book shop and buy a book.",
+        "Then I go to the bookstore and buy a book.",
     },
     {
       kind: "audio",
@@ -84,9 +84,9 @@ export const EN_A1_W03: QuizWeek = {
       block: "read",
       ref: "t1",
       stem: "Where does the person buy a book?",
-      options: ["In the supermarket", "At school", "In the city", "In the book shop"],
+      options: ["In the supermarket", "At school", "In the city", "In the bookstore"],
       answer: 3,
-      why: "Son cümle: \"Then I go to the book shop and buy a book.\" Süpermarket (`supermarket`) yiyecek içindi.",
+      why: "Son cümle: \"Then I go to the bookstore and buy a book.\" Süpermarket (`supermarket`) yiyecek içindi.",
       targets: ["reading.detail", "question.where"],
     },
 

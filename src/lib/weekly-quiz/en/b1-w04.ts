@@ -44,7 +44,7 @@ export const EN_B1_W04: QuizWeek = {
         "Bottles that are put in the yellow bin are collected every two weeks and taken to a recycling center outside the city. " +
         "There they are sorted by machines and cleaned. Clear plastic can be recycled several times, " +
         "but colored plastic is much harder to use again, so most of it is burned to produce energy.\n\n" +
-        "Although many people recycle correctly, about a third of all bottles still go into normal rubbish bins. " +
+        "Although many people recycle correctly, about a third of all bottles still go into normal trash bins. " +
         "This plastic is not recycled at all. The city says that if everyone used the yellow bin correctly, " +
         "it could save around 200,000 euros a year.\n\n" +
         "Since January, shops which sell drinks have had to take back empty bottles. " +

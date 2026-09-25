@@ -65,7 +65,7 @@ export const EN_B1_W03: QuizWeek = {
         { speaker: "Advisor", text: "That's a good start. If your German is good enough, you can take normal courses there." },
         { speaker: "Nora", text: "And if it isn't?" },
         { speaker: "Advisor", text: "Then you'll do a language course first. That costs extra, but the university pays part of it." },
-        { speaker: "Nora", text: "What about money for a flat and food? My parents can't help me much." },
+        { speaker: "Nora", text: "What about money for an apartment and food? My parents can't help me much." },
         { speaker: "Advisor", text: "You can apply for financial help. The form must be sent by the end of January." },
         { speaker: "Nora", text: "January? I thought I had until the summer." },
         { speaker: "Advisor", text: "No, the summer is when you'll hear if you got the money. So I'd start the form this week." },
