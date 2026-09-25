@@ -175,9 +175,9 @@
   "de": "„Tomatoes are cheap this week — it's a sale.“ — teuer ist das Fleisch."
  },
  {
-  "tr": "„Never! I work from Monday to Friday.“ — hafta sonu çalışan Nil.",
+  "tr": "„Never! I work Monday through Friday.“ — hafta sonu çalışan Nil.",
   "kind": "explain",
-  "de": "„Never! I work from Monday to Friday.“ — am Wochenende arbeitet Nil."
+  "de": "„Never! I work Monday through Friday.“ — am Wochenende arbeitet Nil."
  },
  {
   "tr": "„Two euros a kilo.“ — yarım euro muzun fiyatı, dokuz euro toplam.",
@@ -190,9 +190,9 @@
   "de": "„First, I wake up at six.“ — Aufstehen ist der zweite Schritt, das Frühstück der dritte."
  },
  {
-  "tr": "„Here is the bill. Twenty-four euros, please.“ — on, kapanış saati.",
+  "tr": "„Here is the check. Twenty-four euros, please.“ — on, kapanış saati.",
   "kind": "explain",
-  "de": "„Here is the bill. Twenty-four euros, please.“ — zehn ist die Schließzeit."
+  "de": "„Here is the check. Twenty-four euros, please.“ — zehn ist die Schließzeit."
  },
  {
   "tr": "„It's half past eight.“ — „half past“ dokuzun değil sekizin buçuğu.",

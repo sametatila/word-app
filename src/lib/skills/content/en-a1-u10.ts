@@ -174,7 +174,7 @@ export const enA1U10: SkillExercise[] = [
     genre: "dialogue",
     intro: "İki kişi hafta sonu planını konuşuyor. Gelecek kalıbının üç biçimi de geçiyor.",
     gloss: [
-      { de: "film", tr: "film" },
+      { de: "movie", tr: "film" },
       { de: "back", tr: "geri" },
       { de: "poor", tr: "zavallı" },
       { de: "car", tr: "araba" },
@@ -190,7 +190,7 @@ export const enA1U10: SkillExercise[] = [
       { speaker: "Sena", text: "He is not going to come. He has a meeting on Saturday." },
       { speaker: "Kaan", text: "On Saturday! Poor man." },
       { speaker: "Sena", text: "Yes. What is your plan?" },
-      { speaker: "Kaan", text: "Nothing special. I'm going to read, watch a film and walk in the city." },
+      { speaker: "Kaan", text: "Nothing special. I'm going to read, watch a movie and walk in the city." },
       { speaker: "Sena", text: "That is a good plan too." },
       { speaker: "Kaan", text: "Are you going to take the car?" },
       { speaker: "Sena", text: "No, I'm going to take the bus. It leaves at half past six." },
@@ -236,8 +236,8 @@ export const enA1U10: SkillExercise[] = [
         text: "What is Kaan's plan?",
         options: [],
         answer: 0,
-        accept: ["nothing special", "read and watch a film", "to walk in the city"],
-        explain: "„Nothing special. I'm going to read, watch a film and walk in the city.“",
+        accept: ["nothing special", "read and watch a movie", "to walk in the city"],
+        explain: "„Nothing special. I'm going to read, watch a movie and walk in the city.“",
       },
     ],
   },
@@ -328,7 +328,7 @@ export const enA1U10: SkillExercise[] = [
     genre: "personal",
     intro: "İş gününü ve sevdiklerini yaz. „like“ sonrası fiil yine „-ing“ alıyor.",
     gloss: [
-      { de: "film", tr: "film" },
+      { de: "movie", tr: "film" },
       { de: "I start work at …", tr: "saat …'de işe başlarım" },
       { de: "I have a meeting on …", tr: "… günü toplantım var" },
       { de: "I like reading.", tr: "okumayı seviyorum" },
@@ -356,8 +356,8 @@ export const enA1U10: SkillExercise[] = [
       {
         kind: "build",
         tr: "Film izlemeyi sever misin?",
-        answer: "Do you like watching films?",
-        hint: "Soru „do“ ile; genel bir şeyden söz edildiği için çoğul: films.",
+        answer: "Do you like watching movies?",
+        hint: "Soru „do“ ile; genel bir şeyden söz edildiği için çoğul: movies.",
       },
       {
         kind: "form",

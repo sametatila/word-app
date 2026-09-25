@@ -2,25 +2,25 @@ import type { SkillExercise } from "../types";
 
 /**
  * EN · C1 · Ünite 17 — "Çiftlik fiyatlarının sözcükleri, etiketi aktarmak,
- * toprak ne kadar dayanır, gerçekten türüne uygun".
+ * toprak ne kadar dayanır, insancıl, tabii".
  *
  * Dört ders: The vocabulary of farm prices · Reporting the label ·
  * How long does soil last · Humane indeed.
  *
  *   Kelime: world market price, producer price, price volatility, free
- *           trade agreement, trade liberalization, origin labeling,
+ *           trade agreement, trade liberalization, country-of-origin labeling,
  *           traceability, field research, knowledge transfer, agronomic,
  *           soil erosion, deplete, overfertilize, nitrate pollution,
  *           pollinate, lush, factory farming, humane, milk quota.
  *   Kalıp:  A world market price is not a producer price. ·
  *           Price volatility is measured; a free trade agreement is signed. ·
  *           Trade liberalization and market regulation pull apart. ·
- *           One defends the origin labeling; another doubts the traceability. ·
+ *           One defends the country-of-origin labeling; another doubts the traceability. ·
  *           The sustainability report claims what the field research assumes. ·
  *           To call it knowledge transfer is not to call it agronomic advice. ·
  *           Soil erosion may well deplete the field in one generation. ·
  *           To overfertilize might mean nitrate pollution downstream. ·
- *           Pesticide use may kill what should pollinate and let the plant protection product seep away. ·
+ *           Pesticide use may kill what should pollinate and let the crop protection product seep away. ·
  *           The pasture was lush; the barn, less so. ·
  *           We have no factory farming here; we have humane housing. ·
  *           The milk quota, they said, and rather good for the small farm.
@@ -92,7 +92,7 @@ export const enC1U17: SkillExercise[] = [
       "So the first version says there is no such thing on this farm as a kind. The second says that whatever is here, it is not that. The difference is small in the sentence and large in a room, because the second one cannot be answered by pointing at one shed and the first one can.\n" +
       "A neighboring language has only one of these. Its single negative determiner covers both jobs, stands in front of the noun in every case, and carries no choice with it at all. Which means a speaker coming from there reaches for „no“ every time, because that is the shape the reflex already has, and lands on the emphatic English version in the places where English would have used the quiet one.\n" +
       "That is the warning this unit is for, and it runs the other way from most of them. The error is not a missing word. It is a word that is present and one size too loud, and nobody corrects it because nothing in it is wrong.\n" +
-      "Now look at where this level has already used the loud version. „We have no deviance here.“ „We have no formation of elites here.“ Three times, and every time the sentence went on to grant the thing under another name. That is no accident: „no“ denies the category, which leaves the second half free to admit the instance, and the two halves do not contradict each other.\n" +
+      "Now look at where this level has already used the loud version. „We have no deviance here.“ „We have no elite formation here.“ Three times, and every time the sentence went on to grant the thing under another name. That is no accident: „no“ denies the category, which leaves the second half free to admit the instance, and the two halves do not contradict each other.\n" +
       "A world market price is not a producer price. And here is the other negator doing its own work — two noun phrases, one sentence, and what is denied is that these two are the same thing.\n" +
       "The milk quota, they said, and rather good for the small farm. One more inserted clause, one more compliment at the end, and by now the shape ought to be enough on its own to make a reader slow down.",
     questions: [
@@ -293,7 +293,7 @@ export const enC1U17: SkillExercise[] = [
       { speaker: "Doruk", text: "Might, and usually does, and the word that matters in that line is the last one. The cost does not appear on the field it came from." },
       { speaker: "Sıla", text: "It appears in a well in the next village." },
       { speaker: "Doruk", text: "In a well, two years later, in a village whose name is not in anybody's file. That is why the rule has to be written and cannot be left to the person paying for the fertiliser." },
-      { speaker: "Sıla", text: "Pesticide use may kill what should pollinate and let the plant protection product seep away." },
+      { speaker: "Sıla", text: "Pesticide use may kill what should pollinate and let the crop protection product seep away." },
       { speaker: "Doruk", text: "Two losses in one line and only one of them is on an invoice. The bees belong to the orchard four fields over and nobody sends a bill." },
       { speaker: "Sıla", text: "Would a rented field change the calculation?" },
       { speaker: "Doruk", text: "It changes everything. A tenant pays for this year and a landlord owns the century, and no lease I have read puts a number on the soil." },
@@ -378,7 +378,7 @@ export const enC1U17: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Berna", text: "One defends the origin labeling; another doubts the traceability. Two people at one table and they are not disagreeing about the same thing." },
+      { speaker: "Berna", text: "One defends the country-of-origin labeling; another doubts the traceability. Two people at one table and they are not disagreeing about the same thing." },
       { speaker: "Berna", text: "A label is a claim on a package. Traceability is whether a batch can be followed from a field to a mill to a shelf, and the second is a question about systems." },
       { speaker: "Berna", text: "You can have a perfectly honest label and no traceability at all, because the label says where the last step happened and nothing before it." },
       { speaker: "Berna", text: "The sustainability report claims what the field research assumes. The same shape this level met in a seminar and in a meeting, and here it is about two documents again." },
@@ -411,11 +411,11 @@ export const enC1U17: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "One defends the origin labeling; another ___ the traceability.",
+        text: "One defends the country-of-origin labeling; another ___ the traceability.",
         options: [],
         answer: 0,
         accept: ["doubts"],
-        explain: "„One defends the origin labeling; another doubts the traceability.“",
+        explain: "„One defends the country-of-origin labeling; another doubts the traceability.“",
       },
       {
         kind: "dictation",
@@ -449,7 +449,7 @@ export const enC1U17: SkillExercise[] = [
     gloss: [
       { de: "category", tr: "ulam" },
       { de: "factory farming", tr: "endüstriyel hayvancılık" },
-      { de: "humane", tr: "türüne uygun" },
+      { de: "humane", tr: "insancıl" },
       { de: "a milk quota", tr: "süt kotası" },
       { de: "a world market price", tr: "dünya piyasa fiyatı" },
       { de: "price volatility", tr: "fiyat oynaklığı" },
@@ -459,7 +459,7 @@ export const enC1U17: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Burada endüstriyel hayvancılık yok; türüne uygun barınak var.",
+        tr: "Burada endüstriyel hayvancılık yok, insancıl barındırma var.",
         answer: "We have no factory farming here; we have humane housing.",
         hint: "„No“ türü yadsıyor; ikinci yarı örneği başka adla kabul ediyor.",
       },
@@ -510,7 +510,7 @@ export const enC1U17: SkillExercise[] = [
     genre: "info",
     intro: "Etiketin iki katmanı ve toprağın süresi.",
     gloss: [
-      { de: "origin labeling", tr: "menşe etiketlemesi" },
+      { de: "country-of-origin labeling", tr: "menşe etiketlemesi" },
       { de: "traceability", tr: "izlenebilirlik" },
       { de: "knowledge transfer", tr: "bilgi aktarımı" },
       { de: "soil erosion", tr: "toprak erozyonu" },
@@ -524,7 +524,7 @@ export const enC1U17: SkillExercise[] = [
       {
         kind: "build",
         tr: "Biri menşe etiketlemesini savunuyor; bir başkası izlenebilirlikten kuşku duyuyor.",
-        answer: "One defends the origin labeling; another doubts the traceability.",
+        answer: "One defends the country-of-origin labeling; another doubts the traceability.",
         hint: "İki kişi aynı şey hakkında anlaşmazlığa düşmüyor.",
       },
       {

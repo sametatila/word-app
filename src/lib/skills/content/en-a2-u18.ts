@@ -116,7 +116,7 @@ export const enA2U18: SkillExercise[] = [
       "We arrived on Friday evening and the weather was terrible. Rain, wind, and the hotel was on the wrong side of the town. I said nothing for an hour.\n" +
       "Saturday was amazing. Sun from seven, the sea warm, and a boat trip for nine euros. Nine! At home a boat trip costs that much for ten minutes.\n" +
       "We stayed there for three days. On Sunday we had a picnic next to the water. Bread, cheese, tomatoes, and a wonderful view over the sea.\n" +
-      "The people there work in the summer and read in the winter. A man in the shop told me that. He said it like a plan, not like a problem.\n" +
+      "The people there work in the summer and read in the winter. A man in the store told me that. He said it like a plan, not like a problem.\n" +
       "I want to go there again. Not in August — in June, when the water is cold and the town is quiet.\n" +
       "My friend asked: Would you like to go next year? I said: I'd love to.",
     questions: [
@@ -273,7 +273,7 @@ export const enA2U18: SkillExercise[] = [
       { speaker: "Mert", text: "In May I asked again. She said: the same book. In June I bought it." },
       { speaker: "Mert", text: "And now, in September, I give it. Four candles on the cake, one for every month I waited." },
       { speaker: "Mert", text: "My sister opened it and laughed. Then she said: I haven't bought your present yet. Your birthday is in November." },
-      { speaker: "Mert", text: "That is our family. Sweets, jokes, a hug, and the presents come when they come." },
+      { speaker: "Mert", text: "That is our family. Candy, jokes, a hug, and the presents come when they come." },
       { speaker: "Mert", text: "We celebrate the day, not the paper. That is the surprise nobody buys." },
     ],
     questions: [

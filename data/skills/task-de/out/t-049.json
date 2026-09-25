@@ -30,9 +30,9 @@
   "de": "Der Rahmen benennt die Dimension, an der die Behauptung gemessen wird; am Anfang warnt er, am Ende korrigiert er; das Deutsche steckt die Dimension in ein Adjektiv oder ein Kompositum; ein Rahmen lässt sich verschieben, eine Endung nicht."
  },
  {
-  "tr": "Atık önleme bir madde döngüsü değildir.",
+  "tr": "Atık önleme, kapalı madde döngüsüyle aynı şey değildir.",
   "kind": "build.tr",
-  "de": "Abfallvermeidung ist kein Stoffkreislauf."
+  "de": "Abfallvermeidung ist nicht dasselbe wie ein geschlossener Stoffkreislauf."
  },
  {
   "tr": "Kopma, gerçek olsa da, yeterlilik sağlamıyor.",
@@ -105,9 +105,9 @@
   "de": "Wenn auch antizyklisch, kommt die Fiskalpolitik zu spät."
  },
  {
-  "tr": "Otomobil odaklı, dediler, ve trafik felcine karşı epeyce iyi.",
+  "tr": "Otomobil odaklı, dediler, üstelik trafik felcine karşı iyi geliyor.",
   "kind": "build.tr",
-  "de": "Autogerecht, sagten sie, und ziemlich gut gegen den Verkehrskollaps."
+  "de": "Autogerecht, sagten sie, und dazu gut gegen den Verkehrskollaps."
  },
  {
   "tr": "Burada soylulaştırma yok; yoğunlaştırıyor ve elden geçiriyoruz.",

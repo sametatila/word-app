@@ -20,7 +20,7 @@
   "de": "Der Frageanhang wird jedes Mal neu berechnet; Hilfsverb, Polarität und Subjekt werden bestimmt; „hardly“ macht den Satz negativ; der Anhang gehört der Rede, nicht dem Beschluss."
  },
  {
-  "tr": "Fiil başa geçiyor ve bağlaç atılıyor; yalnız üç fiil izinli; mekanizma Almancada da aynı; ayrım kayıtta, Almancada sıradan İngilizcede işaretli.",
+  "tr": "Fiil başa geçiyor ve bağlaç atılıyor; yalnız üç fiil izinli; mekanizma Almancada da aynı; ayrım dil düzeyinde, Almancada sıradan İngilizcede işaretli.",
   "kind": "form.facts",
   "de": "Das Verb rückt nach vorn und die Konjunktion fällt weg; nur drei Verben sind zugelassen; der Mechanismus ist im Deutschen derselbe; der Unterschied liegt in der Sprachebene: im Deutschen alltäglich, im Englischen markiert."
  },
@@ -105,9 +105,9 @@
   "de": "Das Gedicht ist bruchstückhaft; der Leser nachdenklich."
  },
  {
-  "tr": "Sendikanın elde ettiği şey bir çıkar temsili.",
+  "tr": "Sendikanın elde ettiği şey yönetimde çalışan temsili.",
   "kind": "build.tr",
-  "de": "Was die Gewerkschaft erreicht hat, ist eine Interessenvertretung."
+  "de": "Was die Gewerkschaft erreicht hat, ist eine Arbeitnehmervertretung im Vorstand."
  },
  {
   "tr": "Bir metne ideolojik demek onu okumak değildir.",
@@ -115,9 +115,9 @@
   "de": "Einen Text ideologisch zu nennen heißt nicht, ihn zu lesen."
  },
  {
-  "tr": "Dil sezgisi sana hangi kaydın uyduğunu söyler.",
+  "tr": "Hangi dil düzeyinin uyduğunu dil sezgisi söyler.",
   "kind": "build.tr",
-  "de": "Das Sprachgefühl sagt dir, welche Sprachebene passt."
+  "de": "Welche Sprachebene passt, sagt dir das Sprachgefühl."
  },
  {
   "tr": "Anlatı bakış açısının yaptığı şey esirgemektir.",
@@ -183,6 +183,11 @@
   "tr": "Dördüncü sözcük „is“: yarma cümle.",
   "kind": "build.hint",
   "de": "Das vierte Wort ist „is“: ein Spaltsatz."
+ },
+ {
+  "tr": "Beşinci sözcük „is“: yarma cümle.",
+  "kind": "build.hint",
+  "de": "Das fünfte Wort ist „is“: ein Spaltsatz."
  },
  {
   "tr": "Yer başta, özne sonda.",

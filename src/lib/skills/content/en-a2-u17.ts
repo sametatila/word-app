@@ -17,7 +17,7 @@ import type { SkillExercise } from "../types";
  *           I'd like to rent a car for three days. · Is the fuel included? ·
  *           I have to return the car at six. ·
  *           Could I see the menu, please? · I'm allergic to … ·
- *           Could we have the bill, please?
+ *           Could we have the check, please?
  *
  * Ünitenin tek öğretme noktası ÖNERİ VE DEĞER KALIPLARINDA „-ing“:
  * „How about taking a bus tour?“ ve „The museum is worth visiting.“ Bu iki
@@ -395,7 +395,7 @@ export const enA2U17: SkillExercise[] = [
     gloss: [
       { de: "is delayed", tr: "gecikti" },
       { de: "my connection", tr: "aktarmam" },
-      { de: "the bill", tr: "hesap" },
+      { de: "the check", tr: "hesap" },
     ],
     minutes: 7,
     tasks: [
@@ -427,7 +427,7 @@ export const enA2U17: SkillExercise[] = [
       {
         kind: "build",
         tr: "Hesabı alabilir miyiz, lütfen?",
-        answer: "Could we have the bill, please?",
+        answer: "Could we have the check, please?",
         hint: "Çoğul özneyle aynı kalıp; „bill“ burada hesap demek.",
       },
     ],

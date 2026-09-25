@@ -19,7 +19,7 @@ import type { SkillExercise } from "../types";
  *           I would like to make a complaint about … ·
  *           I have waited for three weeks. ·
  *           I expect an answer within a week. ·
- *           They collect the rubbish on Mondays. ·
+ *           They collect the trash on Mondays. ·
  *           You have to separate the paper. ·
  *           How often do they collect the rubbish?
  *
@@ -42,7 +42,7 @@ export const enA2U25: SkillExercise[] = [
     genre: "letter",
     intro: "Üç haftalık bir şikâyet. Ne istendi, ne bekleniyor?",
     gloss: [
-      { de: "rubbish", tr: "çöp" },
+      { de: "trash", tr: "çöp" },
       { de: "Dear Sir or Madam", tr: "sayın yetkili" },
       { de: "Sincerely", tr: "saygılarımla" },
       { de: "on the list", tr: "listede" },
@@ -51,8 +51,8 @@ export const enA2U25: SkillExercise[] = [
     minutes: 5,
     text:
       "Dear Sir or Madam,\n" +
-      "I would like to make a complaint about the rubbish in Garden Street.\n" +
-      "They collect the rubbish on Mondays. In our street they have not come since the twelfth of August. That is three weeks. I have waited for three weeks and I have called twice.\n" +
+      "I would like to make a complaint about the trash on Garden Street.\n" +
+      "They collect the trash on Mondays. On our street they have not come since the twelfth of August. That is three weeks. I have waited for three weeks and I have called twice.\n" +
       "The first time somebody said: we send a car on Thursday. No car came. The second time nobody answered.\n" +
       "I know the reason is not one person. But there is a list and our street is not on it.\n" +
       "Please put it on the list. I expect an answer within a week.\n" +
@@ -61,10 +61,10 @@ export const enA2U25: SkillExercise[] = [
       "Nil Aslan",
     questions: [
       {
-        text: "When do they collect the rubbish?",
+        text: "When do they collect the trash?",
         options: ["on Mondays", "on Thursdays", "on the twelfth"],
         answer: 0,
-        explain: "„They collect the rubbish on Mondays.“ — perşembe sözü verilen arabanın günü.",
+        explain: "„They collect the trash on Mondays.“ — perşembe sözü verilen arabanın günü.",
       },
       {
         text: "How long has Nil waited?",

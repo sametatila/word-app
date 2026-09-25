@@ -6,18 +6,18 @@ import type { SkillExercise } from "../types";
  * Dört ders: Balcony and garden · Reporting a problem · Hobbies · Sports.
  *
  *   Kelime: garden, tree, flower, sun, outside, plant, ground, field,
- *           broken, work, fix, call, wrong, tap, printer, telephone,
+ *           broken, work, fix, call, wrong, faucet, printer, telephone,
  *           hobby, free time, enjoy, paint, collect, draw, instrument,
- *           video, sport, football, swim, run, team, basketball, tennis,
+ *           video, sport, soccer, swim, run, team, basketball, tennis,
  *           win.
  *   Kalıp:  There is a … · There are two … · Is there a …? ·
  *           It's broken. · It doesn't work. · Can you fix it? ·
  *           I like reading. · I enjoy painting. ·
- *           Do you like collecting things? · I play football. ·
+ *           Do you like collecting things? · I play soccer. ·
  *           I go swimming. · Do you play tennis?
  *
  * Ünitenin görünmez kuralı EŞDİZİM: top oyunları „play“ ile („play
- * football“, „play tennis“), tek başına yapılanlar „go“ + „-ing“ ile
+ * soccer“, „play tennis“), tek başına yapılanlar „go“ + „-ing“ ile
  * („go swimming“, „go running“). Hiçbir anlam farkı yok, yalnız alışkanlık
  * — ve Türkçede ikisi de "yapmak/oynamak" olduğu için seçim görünmüyor.
  * İçerik ikisini aynı metinde art arda kullanıyor.
@@ -34,7 +34,7 @@ export const enA1U18: SkillExercise[] = [
     genre: "personal",
     intro: "Bahçe ve balkon anlatılıyor. Ne var, ne bozuk?",
     gloss: [
-      { de: "tap", tr: "musluk" },
+      { de: "faucet", tr: "musluk" },
       { de: "summer", tr: "yaz" },
       { de: "balcony", tr: "balkon" },
       { de: "ball", tr: "top" },
@@ -45,7 +45,7 @@ export const enA1U18: SkillExercise[] = [
       "We have a small garden behind the house. There is a tree and there are many flowers.\n\n" +
       "In the sun the flowers are beautiful, but the ground is dry. I water the plants every morning. My neighbor has a field outside the city — that is a big garden!\n\n" +
       "On the balcony there are two chairs and a table. In the summer we eat outside. My son plays soccer in the garden, and sometimes the ball goes over the wall.\n\n" +
-      "Is there a tap in the garden? Yes, next to the door. But the tap is broken — it doesn't work. I call a man on Monday.",
+      "Is there a faucet in the garden? Yes, next to the door. But the faucet is broken — it doesn't work. I call a man on Monday.",
     questions: [
       {
         text: "What is in the garden?",
@@ -55,9 +55,9 @@ export const enA1U18: SkillExercise[] = [
       },
       {
         text: "What is broken?",
-        options: ["the tap", "the wall", "the table"],
+        options: ["the faucet", "the wall", "the table"],
         answer: 0,
-        explain: "„But the tap is broken — it doesn't work.“",
+        explain: "„But the faucet is broken — it doesn't work.“",
       },
       {
         kind: "truefalse",
@@ -94,7 +94,7 @@ export const enA1U18: SkillExercise[] = [
     genre: "dialogue",
     intro: "Arıza bildiriliyor. Hangi arıza kimin işi?",
     gloss: [
-      { de: "tap", tr: "musluk" },
+      { de: "faucet", tr: "musluk" },
       { de: "hall", tr: "koridor" },
       { de: "What is wrong?", tr: "sorun ne" },
       { de: "of course", tr: "tabii ki" },
@@ -103,22 +103,22 @@ export const enA1U18: SkillExercise[] = [
     text:
       "Ela: Hello. I have a problem in my apartment.\n" +
       "Office: Good morning. What is wrong?\n" +
-      "Ela: The tap in the kitchen is broken. It doesn't work.\n" +
-      "Office: Only the tap? Is the water in the bathroom good?\n" +
+      "Ela: The faucet in the kitchen is broken. It doesn't work.\n" +
+      "Office: Only the faucet? Is the water in the bathroom good?\n" +
       "Ela: Yes, the bathroom is fine. But there is water on the floor.\n" +
       "Office: I understand. Can you call me this afternoon?\n" +
       "Ela: Of course. And one more thing: the printer in the basement doesn't work either.\n" +
       "Office: The printer is not our problem. Call the store.\n" +
       "Ela: And the telephone in the hall?\n" +
       "Office: Is it broken too? Then we come on Wednesday.\n" +
-      "Ela: Can you fix the tap today? The water is everywhere!\n" +
+      "Ela: Can you fix the faucet today? The water is everywhere!\n" +
       "Office: Yes, today. Somebody comes at four.",
     questions: [
       {
         text: "What is broken in the kitchen?",
-        options: ["the tap", "the printer", "the telephone"],
+        options: ["the faucet", "the printer", "the telephone"],
         answer: 0,
-        explain: "„The tap in the kitchen is broken. It doesn't work.“ — yazıcı kilerde, telefon koridorda.",
+        explain: "„The faucet in the kitchen is broken. It doesn't work.“ — yazıcı bodrum katında, telefon koridorda.",
       },
       {
         text: "Who fixes the printer?",
@@ -147,10 +147,10 @@ export const enA1U18: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "The tap in the kitchen is broken.",
+          "The faucet in the kitchen is broken.",
           "the printer in the basement doesn't work either",
           "And the telephone in the hall?",
-          "Can you fix the tap today?",
+          "Can you fix the faucet today?",
         ],
         explain: "Önce musluk, sonra yazıcı, sonra telefon; en son ilk arızaya dönülüyor.",
       },
@@ -251,14 +251,14 @@ export const enA1U18: SkillExercise[] = [
     genre: "monologue",
     intro: "Ali sporlarını anlatıyor. Hangi spor „play“ ile, hangisi „go“ ile geliyor?",
     gloss: [
-      { de: "football", tr: "futbol" },
+      { de: "soccer", tr: "futbol" },
       { de: "summer", tr: "yaz" },
       { de: "winter", tr: "kış" },
       { de: "go swimming", tr: "yüzmeye gitmek" },
     ],
     minutes: 3,
     segments: [
-      { speaker: "Ali", text: "I play football every Saturday. My team is not good, but we enjoy it." },
+      { speaker: "Ali", text: "I play soccer every Saturday. My team is not good, but we enjoy it." },
       { speaker: "Ali", text: "Sometimes we win, sometimes not. That is sport." },
       { speaker: "Ali", text: "On Monday and Thursday I go swimming. I swim for one hour." },
       { speaker: "Ali", text: "In the summer I run in the park. In the winter I run on the stairs!" },
@@ -267,14 +267,14 @@ export const enA1U18: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "When does Ali play football?",
+        text: "When does Ali play soccer?",
         options: ["every Saturday", "on Monday", "in the summer"],
         answer: 0,
-        explain: "„I play football every Saturday.“ — pazartesi yüzme günü.",
+        explain: "„I play soccer every Saturday.“ — pazartesi yüzme günü.",
       },
       {
         text: "What does Ali's sister play?",
-        options: ["tennis and basketball", "football", "nothing"],
+        options: ["tennis and basketball", "soccer", "nothing"],
         answer: 0,
         explain: "„My sister plays tennis and basketball.“ — futbol Ali'nin.",
       },
@@ -299,7 +299,7 @@ export const enA1U18: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "I play football every Saturday.",
+          "I play soccer every Saturday.",
           "On Monday and Thursday I go swimming.",
           "In the summer I run in the park.",
           "My sister plays tennis and basketball.",
@@ -378,13 +378,13 @@ export const enA1U18: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     unit: 18,
-    title: "I play football, I go swimming",
+    title: "I play soccer, I go swimming",
     genre: "personal",
     intro: "Hobi ve spor yaz. Top oyunları „play“ ile, tek başına yapılanlar „go“ + „-ing“ ile geliyor.",
     gloss: [
-      { de: "football", tr: "futbol" },
+      { de: "soccer", tr: "futbol" },
       { de: "I enjoy painting.", tr: "resim yapmaktan keyif alıyorum" },
-      { de: "I play football.", tr: "futbol oynuyorum" },
+      { de: "I play soccer.", tr: "futbol oynuyorum" },
       { de: "I go swimming.", tr: "yüzmeye gidiyorum" },
     ],
     minutes: 6,
@@ -404,8 +404,8 @@ export const enA1U18: SkillExercise[] = [
       {
         kind: "build",
         tr: "Futbol oynuyorum.",
-        answer: "I play football.",
-        hint: "Top oyunlarında „play“ ve sporun önünde artikel yok: play football, play tennis.",
+        answer: "I play soccer.",
+        hint: "Top oyunlarında „play“ ve sporun önünde artikel yok: play soccer, play tennis.",
       },
       {
         kind: "build",

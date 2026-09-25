@@ -16,7 +16,7 @@ import type { SkillExercise } from "../types";
  *           What's your address? · I live in … · This is my … ·
  *           His name is … / Her name is … · I have … ·
  *           I've got a brother. · She's got two children. ·
- *           Have you got a sister?
+ *           Do you have a sister?
  *
  * Ünite 1–2'nin kelimeleri de serbest (kümülatif).
  *
@@ -162,35 +162,35 @@ export const enA1U03: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     unit: 3,
-    title: "Have you got a big family?",
+    title: "Do you have a big family?",
     genre: "dialogue",
     intro: "Mia ile Tarik ailelerini konuşuyor. Kaç kardeş, kaç çocuk, kim kaç yaşında?",
     gloss: [
       { de: "big", tr: "büyük" },
-      { de: "Have you got …?", tr: "senin … var mı" },
-      { de: "I have got …", tr: "benim … var" },
+      { de: "Do you have …?", tr: "senin … var mı" },
+      { de: "I have …", tr: "benim … var" },
       { de: "children", tr: "çocuklar" },
     ],
     minutes: 4,
     segments: [
-      { speaker: "Mia", text: "Have you got a big family, Tarik?" },
-      { speaker: "Tarik", text: "Yes, I have. I have got two sisters and one brother." },
+      { speaker: "Mia", text: "Do you have a big family, Tarik?" },
+      { speaker: "Tarik", text: "Yes, I do. I have two sisters and one brother." },
       { speaker: "Mia", text: "How old are they?" },
       { speaker: "Tarik", text: "My sisters are twelve and nineteen. My brother is a baby — he is one year old." },
       { speaker: "Mia", text: "A baby! And your parents?" },
       { speaker: "Tarik", text: "My mother is forty-five and my father is fifty. They live in Izmir." },
-      { speaker: "Mia", text: "Have you got children?" },
-      { speaker: "Tarik", text: "No, I have not. And you?" },
-      { speaker: "Mia", text: "I have got one daughter. Her name is Ela. She is six." },
+      { speaker: "Mia", text: "Do you have children?" },
+      { speaker: "Tarik", text: "No, I don't. And you?" },
+      { speaker: "Mia", text: "I've got one daughter. Her name is Ela. She is six." },
       { speaker: "Tarik", text: "Six! Is she at school?" },
       { speaker: "Mia", text: "Yes, she is. She can write her first name and her last name." },
     ],
     questions: [
       {
-        text: "How many sisters has Tarik got?",
+        text: "How many sisters does Tarik have?",
         options: ["two", "one", "three"],
         answer: 0,
-        explain: "„I have got two sisters and one brother.“ — bir olan erkek kardeş.",
+        explain: "„I have two sisters and one brother.“ — bir olan erkek kardeş.",
       },
       {
         text: "How old is Mia's daughter?",
@@ -200,10 +200,10 @@ export const enA1U03: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Tarik has not got children.",
+        text: "Tarik doesn't have children.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„Have you got children? No, I have not.“ — kardeşi var, çocuğu yok.",
+        explain: "„Do you have children? No, I don't.“ — kardeşi var, çocuğu yok.",
       },
       {
         kind: "gapfill",
@@ -218,8 +218,8 @@ export const enA1U03: SkillExercise[] = [
         text: "Duyduğun cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["I have got one daughter.", "I have got one daughter", "I've got one daughter."],
-        explain: "„I have got one daughter.“ Konuşmada „I have“ çoğu zaman „I've“ diye büzülüyor.",
+        accept: ["I've got one daughter.", "I've got one daughter", "I have got one daughter.", "I have one daughter."],
+        explain: "„I've got one daughter.“ Amerikan konuşmasında „I have“ yerine çok sık „I've got“ duyulur.",
       },
       {
         kind: "short_answer",
@@ -384,8 +384,8 @@ export const enA1U03: SkillExercise[] = [
         kind: "build",
         tr: "Bir erkek kardeşim var.",
         answer: "I've got a brother.",
-        alternatives: ["I have got a brother."],
-        hint: "„have got“ sahip olmayı söyler; konuşmada „I've got“ diye büzülür.",
+        alternatives: ["I have a brother.", "I have got a brother."],
+        hint: "Düz cümlede „I have a brother.“; konuşmada çok sık „I've got“ duyulur.",
       },
       {
         kind: "build",
@@ -402,16 +402,16 @@ export const enA1U03: SkillExercise[] = [
       {
         kind: "rewrite",
         prompt: "Cümleyi soru yap.",
-        source: "You have got a sister.",
-        answer: "Have you got a sister?",
-        why: "„have got“ sorusunda „have“ öne geçer, tıpkı „be“ gibi: You have → Have you?",
+        source: "You have a sister.",
+        answer: "Do you have a sister?",
+        why: "Amerikan İngilizcesinde „have“ sorusu „do“ ile kurulur: You have → Do you have?",
       },
       {
         kind: "build",
         tr: "İki çocuğu var.",
         answer: "She's got two children.",
-        alternatives: ["She has got two children."],
-        hint: "Üçüncü tekil kişide „have“ → „has“: she has got, he has got.",
+        alternatives: ["She has two children.", "She has got two children."],
+        hint: "Üçüncü tekil kişide „have“ → „has“: she has, she's got.",
       },
     ],
   },

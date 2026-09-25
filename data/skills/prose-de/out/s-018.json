@@ -100,9 +100,9 @@
   "de": "„One hundred euros.“ Emre traut seinen Ohren nicht und fragt noch einmal nach."
  },
  {
-  "tr": "„I have got two sisters and one brother.“ — bir olan erkek kardeş.",
+  "tr": "„I have two sisters and one brother.“ — bir olan erkek kardeş.",
   "kind": "explain",
-  "de": "„I have got two sisters and one brother.“ — einer ist der Bruder."
+  "de": "„I have two sisters and one brother.“ — einer ist der Bruder."
  },
  {
   "tr": "„Do you live in Bremen? Yes, I do.“ — kısa cevap soruyu doğruluyor.",
@@ -110,9 +110,9 @@
   "de": "„Do you live in Bremen? Yes, I do.“ — die Kurzantwort bestätigt die Frage."
  },
  {
-  "tr": "„Have you got children? No, I have not.“ — kardeşi var, çocuğu yok.",
+  "tr": "„Do you have children? No, I don't.“ — kardeşi var, çocuğu yok.",
   "kind": "explain",
-  "de": "„Have you got children? No, I have not.“ — Geschwister hat er, Kinder nicht."
+  "de": "„Do you have children? No, I don't.“ — Geschwister hat er, Kinder nicht."
  },
  {
   "tr": "„They live in Izmir.“ — „they“ anne ile babayı birlikte gösteriyor.",
@@ -195,9 +195,9 @@
   "de": "Zuerst spricht Leyla (Ärztin), dann Ben (Sänger), zuletzt Meryem (Trainerin)."
  },
  {
-  "tr": "„I have got one daughter.“ Konuşmada „I have“ çoğu zaman „I've“ diye büzülüyor.",
+  "tr": "„I've got one daughter.“ Amerikan konuşmasında „I have“ yerine çok sık „I've got“ duyulur.",
   "kind": "explain",
-  "de": "„I have got one daughter.“ Beim Sprechen zieht sich „I have“ meistens zu „I've“ zusammen."
+  "de": "„I've got one daughter.“ Im amerikanischen Alltag hört man statt „I have“ sehr oft „I've got“."
  },
  {
   "tr": "„I am a doctor. I work in a big hospital.“ — şarkıcı ve müzik öğretmeni olan Ana.",

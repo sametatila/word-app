@@ -105,9 +105,9 @@
   "en": "„Tomatoes are cheap this week — it's a sale.“ — the expensive one is the meat."
  },
  {
-  "tr": "„Never! I work from Monday to Friday.“ — hafta sonu çalışan Nil.",
+  "tr": "„Never! I work Monday through Friday.“ — hafta sonu çalışan Nil.",
   "kind": "explain",
-  "en": "„Never! I work from Monday to Friday.“ — the one who works on the weekend is Nil."
+  "en": "„Never! I work Monday through Friday.“ — the one who works on the weekend is Nil."
  },
  {
   "tr": "Bir günün tamamı saatleriyle anlatılıyor. Hangi iş hangi saatte?",
@@ -140,9 +140,9 @@
   "en": "Two people cook together. Which step comes first, which comes after?"
  },
  {
-  "tr": "„Here is the bill. Twenty-four euros, please.“ — on, kapanış saati.",
+  "tr": "„Here is the check. Twenty-four euros, please.“ — on, kapanış saati.",
   "kind": "explain",
-  "en": "„Here is the bill. Twenty-four euros, please.“ — ten is the closing time."
+  "en": "„Here is the check. Twenty-four euros, please.“ — ten is the closing time."
  },
  {
   "tr": "„It's half past eight.“ — „half past“ dokuzun değil sekizin buçuğu.",

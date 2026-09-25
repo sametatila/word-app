@@ -95,12 +95,12 @@
   "de": "„I don't like the bathroom!“"
  },
  {
-  "tr": "„But the tap is broken — it doesn't work.“",
+  "tr": "„But the faucet is broken — it doesn't work.“",
   "kind": "explain",
-  "de": "„But the tap is broken — it doesn't work.“"
+  "de": "„But the faucet is broken — it doesn't work.“"
  },
  {
-  "tr": "„It is on the first floor.“ — kiler alt katta.",
+  "tr": "„It is on the first floor.“ — bodrum katı alt katta.",
   "kind": "explain",
   "de": "„It is on the first floor.“ — der Keller liegt unten."
  },
@@ -110,14 +110,14 @@
   "de": "„I can't draw. My hobby is music…“ — zeichnen tut Can."
  },
  {
-  "tr": "„In a fire: don't take the lift. Go down the stairs.“",
+  "tr": "„In a fire: don't take the elevator. Go down the stairs.“",
   "kind": "explain",
-  "de": "„In a fire: don't take the lift. Go down the stairs.“"
+  "de": "„In a fire: don't take the elevator. Go down the stairs.“"
  },
  {
-  "tr": "„it is on the fourth floor and the lift doesn't work“",
+  "tr": "„it is on the fourth floor and the elevator doesn't work“",
   "kind": "explain",
-  "de": "„it is on the fourth floor and the lift doesn't work“"
+  "de": "„it is on the fourth floor and the elevator doesn't work“"
  },
  {
   "tr": "Önce yardım, sonra taşıma, sonra uzaklık, en son kira.",
@@ -125,9 +125,9 @@
   "de": "Zuerst die Hilfe, dann das Tragen, dann die Entfernung, zuletzt die Miete."
  },
  {
-  "tr": "„I play football every Saturday.“ — pazartesi yüzme günü.",
+  "tr": "„I play soccer every Saturday.“ — pazartesi yüzme günü.",
   "kind": "explain",
-  "de": "„I play football every Saturday.“ — der Montag ist der Schwimmtag."
+  "de": "„I play soccer every Saturday.“ — der Montag ist der Schwimmtag."
  },
  {
   "tr": "Önce futbol, sonra yüzme, sonra koşu, en son kız kardeşi.",
@@ -135,9 +135,9 @@
   "de": "Zuerst Fußball, dann Schwimmen, dann Laufen, zuletzt seine Schwester."
  },
  {
-  "tr": "„But it is on the fourth floor and the lift doesn't work.“",
+  "tr": "„But it is on the fourth floor and the elevator doesn't work.“",
   "kind": "explain",
-  "de": "„But it is on the fourth floor and the lift doesn't work.“"
+  "de": "„But it is on the fourth floor and the elevator doesn't work.“"
  },
  {
   "tr": "„I water the plants every morning.“ — „water“ burada fiil.",
@@ -245,9 +245,9 @@
   "de": "„I hear something. It is in the living room!“ — Küche und Bad werden geprüft und übergangen."
  },
  {
-  "tr": "„First, tidy up your room. Then take out the rubbish.“ — ama başlarken çöpü seçiyor.",
+  "tr": "„First, tidy up your room. Then take out the trash.“ — ama başlarken çöpü seçiyor.",
   "kind": "explain",
-  "de": "„First, tidy up your room. Then take out the rubbish.“ — anfangen will er aber mit dem Müll."
+  "de": "„First, tidy up your room. Then take out the trash.“ — anfangen will er aber mit dem Müll."
  },
  {
   "tr": "„Yes, there is one next to the kitchen.“ — „one“ burada „a bathroom“ yerine geçiyor.",
@@ -265,9 +265,9 @@
   "de": "„The kitchen is small, but there is a fridge and a table…“ — groß ist das Wohnzimmer."
  },
  {
-  "tr": "„The tap in the kitchen is broken. It doesn't work.“ — yazıcı kilerde, telefon koridorda.",
+  "tr": "„The faucet in the kitchen is broken. It doesn't work.“ — yazıcı bodrum katında, telefon koridorda.",
   "kind": "explain",
-  "de": "„The tap in the kitchen is broken. It doesn't work.“ — der Drucker steht im Keller, das Telefon im Flur."
+  "de": "„The faucet in the kitchen is broken. It doesn't work.“ — der Drucker steht im Keller, das Telefon im Flur."
  },
  {
   "tr": "„she lives next door with her two children. She is very friendly.“ — yaşlı adam alt katta.",
@@ -315,7 +315,7 @@
   "de": "Wand"
  },
  {
-  "tr": "kiler",
+  "tr": "bodrum katı",
   "kind": "gloss.tr",
   "de": "Keller"
  },

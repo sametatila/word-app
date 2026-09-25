@@ -8,13 +8,13 @@ import type { SkillExercise } from "../types";
  * Demanding food sovereignty · Yield or variety.
  *
  *   Kelime: land consumption, arable field, land consolidation, land
- *           speculation, soil sealing, urban sprawl, land grabbing,
+ *           speculation, paving over land, urban sprawl, land grabbing,
  *           territorial claim, rural exodus, farm succession, barren,
  *           lie fallow, dilapidated, food sovereignty, agricultural reform,
  *           agroecology, monoculture, soil fertility, perennial.
  *   Kalıp:  In the plan it is land consumption; in the village, an arable field. ·
  *           What the council calls land consolidation, the neighbour calls land speculation. ·
- *           A land use conflict is a dispute; soil sealing is a fact. ·
+ *           A land use conflict is a dispute; paving over land is a fact. ·
  *           What land grabbing does is dress a territorial claim. ·
  *           Behind the rural exodus stands a failed farm succession. ·
  *           The barren fields lie fallow; the dilapidated barns do not. ·
@@ -199,8 +199,8 @@ export const enC1U16: SkillExercise[] = [
       "„Land consumption“ is a number in a column. It counts hectares and it counts them against a target, and nothing in the word says what is growing on them. „An arable field“ has a crop in it and usually a family, and it has a line on a map that somebody's grandfather can still point to.\n" +
       "What the council calls land consolidation, the neighbor calls land speculation. Here the two names are in one sentence with their owners attached, which is the honest way to write a disagreement and the rarest.\n" +
       "Both words are about boundaries being redrawn. The first says the new boundaries fit the machines. The second says somebody knew the new price before the vote, and the two claims can both be true of the same afternoon.\n" +
-      "A land use conflict is a dispute; soil sealing is a fact. And this is the line the whole lesson is built to reach, because it separates two things that a meeting will treat as one.\n" +
-      "A dispute has sides and can be settled. Somebody wins, somebody is paid, and the file closes. Soil sealing is what happens to ground with concrete on it: the rain runs off instead of going down, and it will do that next year and the year after whatever the meeting decided.\n" +
+      "A land use conflict is a dispute; paving over land is a fact. And this is the line the whole lesson is built to reach, because it separates two things that a meeting will treat as one.\n" +
+      "A dispute has sides and can be settled. Somebody wins, somebody is paid, and the file closes. Paving over land is what happens when concrete goes onto the ground: the rain runs off instead of going down, and it will do that next year and the year after whatever the meeting decided.\n" +
       "So the two halves of the sentence are not two opinions about a field. One of them can be voted on and the other one can only be measured, and a paragraph that puts them side by side is asking a reader to notice that a vote does not reach the second half.\n" +
       "The practical shape of this is a question for any plan of this kind. Which of the numbers in it can be reversed by a later decision, and which one cannot? The second list is always shorter and it is never the one on the first page.",
     questions: [
@@ -212,7 +212,7 @@ export const enC1U16: SkillExercise[] = [
       },
       {
         text: "What can only be measured?",
-        options: ["soil sealing", "a dispute", "a vote"],
+        options: ["paving over land", "a dispute", "a vote"],
         answer: 0,
         explain: "„One of them can be voted on and the other one can only be measured…“",
       },
@@ -225,11 +225,11 @@ export const enC1U16: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "A land use conflict is a dispute; soil sealing is a ___.",
+        text: "A land use conflict is a dispute; paving over land is a ___.",
         options: [],
         answer: 0,
         accept: ["fact"],
-        explain: "„A land use conflict is a dispute; soil sealing is a fact.“",
+        explain: "„A land use conflict is a dispute; paving over land is a fact.“",
       },
       {
         kind: "order",
@@ -239,7 +239,7 @@ export const enC1U16: SkillExercise[] = [
         items: [
           "In the plan it is land consumption; in the village, an arable field.",
           "What the council calls land consolidation, the neighbor calls land speculation.",
-          "A land use conflict is a dispute; soil sealing is a fact.",
+          "A land use conflict is a dispute; paving over land is a fact.",
           "Which numbers can a later decision reverse?",
         ],
         explain: "İki oda, iki sahip, oylama ile ölçüm; en sonda soru.",
@@ -482,7 +482,7 @@ export const enC1U16: SkillExercise[] = [
       {
         kind: "build",
         tr: "Arazi kullanım çatışması bir anlaşmazlıktır; toprağın betonlaşması bir olgudur.",
-        answer: "A land use conflict is a dispute; soil sealing is a fact.",
+        answer: "A land use conflict is a dispute; paving over land is a fact.",
         hint: "Biri oylanabilir, öteki yalnız ölçülebilir.",
       },
       {

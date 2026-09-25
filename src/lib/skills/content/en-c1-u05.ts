@@ -22,7 +22,7 @@ import type { SkillExercise } from "../types";
  *           Quoted in a ruling, the same words become opinion manipulation. ·
  *           This alone holds the chain of argument together. ·
  *           Such an explanatory approach is rare. ·
- *           The latter reflects the state of research.
+ *           The latter reflects the current state of research.
  *
  * Ünitenin tek öğretme noktası ORTA ÇATI. „A wave of outrage reads
  * differently“ — fiil etken biçimde ama özne eylemi YAPAN değil, eylemin
@@ -163,7 +163,7 @@ export const enC1U05: SkillExercise[] = [
       "„This“ is doing the work, and in a document of that length it is the most dangerous word available. It can point at the last noun, the last clause, the last paragraph or the whole of the last section, and the reader chooses.\n" +
       "The fix is the same one the last unit gave and it matters more here: follow it with a summary word. „This approach“, „this objection“, „this reading“. The writer then chooses what is carried forward, and a reader who disagrees can say which of the four things they are disagreeing with.\n" +
       "Such an explanatory approach is rare. „Such“ points backwards at a quality and cannot point at an argument, which is why it is safe over a long distance and why it is the one I use across a section break.\n" +
-      "The latter reflects the state of research. „The latter“ is the narrowest and the most fragile: it needs exactly two things, named recently, with nothing between them. In a paper about a paradigm and its rivals there are never exactly two, and a reader who counts three will stop and count again.\n" +
+      "The latter reflects the current state of research. „The latter“ is the narrowest and the most fragile: it needs exactly two things, named recently, with nothing between them. In a paper about a paradigm and its rivals there are never exactly two, and a reader who counts three will stop and count again.\n" +
       "So a long argument is held together by a small set of words, and the choice between them is a choice about how far back the reader has to look.\n" +
       "Near links for near things. „Such“ for a quality that has just been described. A full summary word for anything across a paragraph break. And „the latter“ almost never, because a chain of argument that has survived twenty pages should not be broken by a reader who has to go back and count.",
     questions: [
@@ -202,7 +202,7 @@ export const enC1U05: SkillExercise[] = [
         items: [
           "This alone holds the chain of argument together.",
           "Such an explanatory approach is rare.",
-          "The latter reflects the state of research.",
+          "The latter reflects the current state of research.",
           "The choice is about how far back the reader must look.",
         ],
         explain: "En gevşek, güvenli olan, en kırılgan; en sonda ölçüt.",

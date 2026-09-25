@@ -8,13 +8,13 @@ import type { SkillExercise } from "../types";
  * The vocabulary of evidence · Reporting a claim.
  *
  *   Kelime: freedom of conscience, academic freedom, artistic freedom,
- *           private autonomy, judicial review, relativism, maxim, commandment,
+ *           freedom of contract, judicial review, relativism, maxim, commandment,
  *           virtue, integrity, altruism, reference value, guideline value,
  *           significance level, outlier, repeatability, source of error,
  *           advocate, affirm, misrepresent, distortion, truism, knowingly.
  *   Kalıp:  Freedom of conscience demands that academic freedom be untouched. ·
  *           Were it not for artistic freedom, no freedom of information would hold. ·
- *           They ask that private autonomy be tested by judicial review. ·
+ *           They ask that freedom of contract be tested by judicial review. ·
  *           Much as relativism unsettles us, no maxim survives without doubt. ·
  *           A commandment, albeit ancient, is not a virtue. ·
  *           Albeit a form of integrity, altruism can be a duty too. ·
@@ -366,7 +366,7 @@ export const enC1U24: SkillExercise[] = [
       { speaker: "Aslı", text: "Were it not for artistic freedom, no freedom of information would hold. The same chain one link further, and this one surprises people." },
       { speaker: "Aslı", text: "The hardest cases are never about a journalist and a file. They are about a novel, a play or a picture, and they are decided first." },
       { speaker: "Aslı", text: "Whatever a court allows a painter, it will later allow a reporter, and whatever it refuses a painter it will refuse everybody quietly for thirty years." },
-      { speaker: "Aslı", text: "They ask that private autonomy be tested by judicial review. Now the other direction, and it is the half that gets forgotten." },
+      { speaker: "Aslı", text: "They ask that freedom of contract be tested by judicial review. Now the other direction, and it is the half that gets forgotten." },
       { speaker: "Aslı", text: "A contract is a private thing and two people are free to write what they like in it. The trouble is that they are almost never equally free." },
       { speaker: "Aslı", text: "A tenant signs a clause because there are four apartments and two hundred people, and calling that freedom is a description of the paper rather than of the room." },
       { speaker: "Aslı", text: "So the review is not an attack on autonomy. It is the only thing that keeps the word honest where the two sides are unequal." },
@@ -405,7 +405,7 @@ export const enC1U24: SkillExercise[] = [
         text: "Duyduğun cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["They ask that private autonomy be tested by judicial review.", "They ask that private autonomy be tested by judicial review"],
+        accept: ["They ask that freedom of contract be tested by judicial review.", "They ask that freedom of contract be tested by judicial review"],
         explain: "Eski kip: „be“, „is“ değil.",
       },
       {
@@ -495,7 +495,7 @@ export const enC1U24: SkillExercise[] = [
     gloss: [
       { de: "freedom of conscience", tr: "vicdan özgürlüğü" },
       { de: "artistic freedom", tr: "sanat özgürlüğü" },
-      { de: "private autonomy", tr: "irade serbestisi" },
+      { de: "freedom of contract", tr: "irade serbestisi" },
       { de: "relativism", tr: "görecelik" },
       { de: "a commandment", tr: "buyruk" },
       { de: "altruism", tr: "özgecilik" },
@@ -518,7 +518,7 @@ export const enC1U24: SkillExercise[] = [
       {
         kind: "build",
         tr: "İrade serbestisinin yargısal denetimle sınanmasını istiyorlar.",
-        answer: "They ask that private autonomy be tested by judicial review.",
+        answer: "They ask that freedom of contract be tested by judicial review.",
         hint: "Taraflar neredeyse hiçbir zaman eşit özgür değil.",
       },
       {

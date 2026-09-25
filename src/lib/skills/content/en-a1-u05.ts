@@ -10,8 +10,8 @@ import type { SkillExercise } from "../types";
  *           play, work, like, together, talk, game, club, aunt, uncle,
  *           cousin, grandmother, grandfather, grandparents, parent,
  *           husband, kind, funny, quiet, busy, nice, angry, strong, great.
- *   Kalıp:  He is tall. · She has got long hair. · What does he look like? ·
- *           He plays football. · She likes music. · We work together. ·
+ *   Kalıp:  He is tall. · She has long hair. · What does he look like? ·
+ *           He plays soccer. · She likes music. · We work together. ·
  *           This is my aunt. · Ali's cousin · Who is this? ·
  *           He is very kind. · She isn't quiet. · Is she nice?
  *
@@ -39,7 +39,7 @@ export const enA1U05: SkillExercise[] = [
     ],
     minutes: 4,
     text:
-      "My friend Kaan is nineteen. He is very tall and he has got short hair. His eyes are green.\n\n" +
+      "My friend Kaan is nineteen. He is very tall and he has short hair. His eyes are green.\n\n" +
       "Kaan is not quiet. He is funny, and he talks a lot. He is kind too — he never forgets a birthday.\n\n" +
       "We work together in a small school. After work we play a game or we talk about music. Kaan likes music very much.\n\n" +
       "Kaan's cousin Ada is in our club. She is quiet, but she is nice. Her hair is long and she looks like Kaan. They are a funny group!",
@@ -65,11 +65,11 @@ export const enA1U05: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Kaan has got ___ hair.",
+        text: "Kaan has ___ hair.",
         options: [],
         answer: 0,
         accept: ["short"],
-        explain: "„he has got short hair“ — Ada'nınki uzun.",
+        explain: "„he has short hair“ — Ada'nınki uzun.",
       },
       {
         kind: "short_answer",
@@ -104,10 +104,10 @@ export const enA1U05: SkillExercise[] = [
       "Mert: And the woman with him?\n" +
       "Sena: That is my grandmother. My grandparents live together in Izmir.\n" +
       "Mert: What does your aunt look like?\n" +
-      "Sena: She is short and she has got long hair. She is very funny.\n" +
+      "Sena: She is short and she has long hair. She is very funny.\n" +
       "Mert: Is she busy?\n" +
-      "Sena: Yes, she is always busy. She has got four children.\n" +
-      "Mert: Four! Ali's cousin has got four children too.\n" +
+      "Sena: Yes, she is always busy. She has four children.\n" +
+      "Mert: Four! Ali's cousin has four children too.\n" +
       "Sena: I know. Ada is my friend.",
     questions: [
       {
@@ -120,7 +120,7 @@ export const enA1U05: SkillExercise[] = [
         text: "What does Sena's aunt look like?",
         options: ["short, with long hair", "tall, with short hair", "strong and quiet"],
         answer: 0,
-        explain: "„She is short and she has got long hair.“ — „funny“ ve „busy“ görünüş değil, karakter.",
+        explain: "„She is short and she has long hair.“ — „funny“ ve „busy“ görünüş değil, karakter.",
       },
       {
         kind: "truefalse",
@@ -131,11 +131,11 @@ export const enA1U05: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Sena's aunt has got ___ children.",
+        text: "Sena's aunt has ___ children.",
         options: [],
         answer: 0,
         accept: ["four", "4"],
-        explain: "„She has got four children.“",
+        explain: "„She has four children.“",
       },
       {
         kind: "order",
@@ -146,7 +146,7 @@ export const enA1U05: SkillExercise[] = [
           "Who is that man?",
           "That is my grandfather.",
           "What does your aunt look like?",
-          "She is short and she has got long hair.",
+          "She is short and she has long hair.",
         ],
         explain: "Önce kim olduğu, sonra nasıl göründüğü. İki soru iki ayrı kalıpla geliyor.",
       },
@@ -179,9 +179,9 @@ export const enA1U05: SkillExercise[] = [
     minutes: 3,
     segments: [
       { speaker: "Eda", text: "Hello! I am Eda. This is our music club. We work together every week." },
-      { speaker: "Eda", text: "My friend Can is here. He is tall and he has got short, dark hair." },
+      { speaker: "Eda", text: "My friend Can is here. He is tall and he has short, dark hair." },
       { speaker: "Eda", text: "Can is very funny. He talks a lot and he is never quiet." },
-      { speaker: "Eda", text: "This is Nil. She is short and she has got great eyes. She is kind and nice." },
+      { speaker: "Eda", text: "This is Nil. She is short and she has great eyes. She is kind and nice." },
       { speaker: "Eda", text: "Nil's cousin Ali plays with us too. He is quiet, but he is very strong." },
       { speaker: "Eda", text: "We are a good group. We play, we talk, and we are never angry." },
     ],
@@ -190,7 +190,7 @@ export const enA1U05: SkillExercise[] = [
         text: "What does Can look like?",
         options: ["tall, with short hair", "short, with long hair", "strong and quiet"],
         answer: 0,
-        explain: "„He is tall and he has got short, dark hair.“ — „funny“ karakter, görünüş değil.",
+        explain: "„He is tall and he has short, dark hair.“ — „funny“ karakter, görünüş değil.",
       },
       {
         text: "Who is quiet?",
@@ -207,11 +207,11 @@ export const enA1U05: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Can has got short, ___ hair.",
+        text: "Can has short, ___ hair.",
         options: [],
         answer: 0,
         accept: ["dark"],
-        explain: "„he has got short, dark hair“ — iki sıfat virgülle art arda geliyor.",
+        explain: "„he has short, dark hair“ — iki sıfat virgülle art arda geliyor.",
       },
       {
         kind: "dictation",

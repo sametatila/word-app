@@ -90,9 +90,9 @@
   "de": "Wo der Bedeutungskontext fehlt, hält die wörtliche Bedeutung nicht."
  },
  {
-  "tr": "Toplumsal katman değişti; değerlerin dönüşümü değişmedi.",
+  "tr": "Toplumsal katman değişti, değerleri değişmedi.",
   "kind": "build.tr",
-  "de": "Die soziale Schicht änderte sich; der Wertewandel nicht."
+  "de": "Die soziale Schicht hat sich verändert, ihre Werte nicht."
  },
  {
   "tr": "Emekli aylığı düzeyi düştü; yasal emeklilik yaşı düşmedi.",
@@ -115,9 +115,9 @@
   "de": "Ein Fachkräftemangel wird ausgerufen; eine Arbeitskräftereserve wird gezählt."
  },
  {
-  "tr": "Sınır, geçirgen olsa da, statü güvencesizliğini kaldırmıyor.",
+  "tr": "Sınır, geçirgen olsa da, iş güvencesizliğini ortadan kaldırmıyor.",
   "kind": "build.tr",
-  "de": "Die Grenze beseitigt, wenn auch durchlässig, die Statusunsicherheit nicht."
+  "de": "Die Grenze, wenn auch durchlässig, beseitigt die Arbeitsplatzunsicherheit nicht."
  },
  {
   "tr": "Alan dışından geçiş ile yetkinlik odaklılık birlikte geliyor.",
@@ -155,9 +155,9 @@
   "de": "Unübersetzbarkeit überlebt als Spiritualität, eine Glaubenskrise als Frage."
  },
  {
-  "tr": "Toplu sözleşme özerkliği müzakere yönetiminin özgür olmasını talep eder.",
+  "tr": "Toplu sözleşme hakkı, müzakerelerin devlet müdahalesi olmadan yürütülmesini gerektirir.",
   "kind": "build.tr",
-  "de": "Die Tarifautonomie verlangt, dass die Verhandlungsführung frei sei."
+  "de": "Die Tarifautonomie verlangt, dass die Verhandlungen frei von staatlicher Einmischung geführt werden."
  },
  {
   "tr": "Kuşaklar arası sözleşme yaşlılık günleri, iş kendini gerçekleştirme vadediyor.",
@@ -165,9 +165,9 @@
   "de": "Der Generationenvertrag verspricht den Lebensabend, die Arbeit die Selbstverwirklichung."
  },
  {
-  "tr": "İşletme sorumluluğunun belirsiz olduğu yerde performans göstergesi işe yaramaz.",
+  "tr": "İşletme sorumluluğu belirsizse performans göstergesi işe yaramaz.",
   "kind": "build.tr",
-  "de": "Wo die Betriebsverantwortung unklar ist, hilft die Leistungskennzahl nicht."
+  "de": "Ist die Betriebsverantwortung unklar, hilft die Leistungskennzahl nicht."
  },
  {
   "tr": "Parça başı iş meslektaş dayanışmasını zayıflatıp kişiler arası tarafı zorlayabilir.",
@@ -175,9 +175,9 @@
   "de": "Akkordarbeit kann die Kollegialität schwächen und die zwischenmenschliche Seite belasten."
  },
  {
-  "tr": "Kadın işçi temsilcisi şirketin her çıraklık sözleşmesini kalıcı hale getirmesini istiyor.",
+  "tr": "Sendika temsilcisi, şirketin her çıraklık sözleşmesini kalıcı hâle getirmesini istiyor.",
   "kind": "build.tr",
-  "de": "Die Betriebsrätin verlangt, dass die Firma jeden Ausbildungsvertrag entfriste."
+  "de": "Die Gewerkschaftsvertreterin verlangt, dass die Firma jeden Ausbildungsvertrag entfriste."
  },
  {
   "tr": "Fiil başta, bağlaç yok.",

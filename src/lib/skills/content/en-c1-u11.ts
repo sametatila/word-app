@@ -8,13 +8,13 @@ import type { SkillExercise } from "../types";
  * Demanding equality · The integration debate.
  *
  *   Kelime: subculture, cultural policy, cultural scene, parallel society,
- *           high culture, guiding culture, marginalization, marginal group,
+ *           high culture, dominant culture, marginalization, marginal group,
  *           demarcation line, xenophobia, statelessness, foreign rule,
  *           principle of equality, human dignity, educational inequality,
  *           class society, acculturation, assimilation, hybridity, adaptability.
  *   Kalıp:  In the arts section it is a subculture; in the ministry, cultural policy. ·
  *           What one calls a cultural scene, another calls a parallel society. ·
- *           High culture is a register; guiding culture is a claim. ·
+ *           High culture is a register; dominant culture is a claim. ·
  *           What marginalization does is name a marginal group. ·
  *           Behind the demarcation line stands xenophobia. ·
  *           Statelessness we inherit; foreign rule we remember. ·
@@ -22,7 +22,7 @@ import type { SkillExercise } from "../types";
  *           Were it not for educational inequality, the class society would fade. ·
  *           They ask that every participation model show solidarity. ·
  *           Much as we call it acculturation, they mean assimilation. ·
- *           The integration course, albeit useful, is not a welcoming culture. ·
+ *           The integration course, albeit useful, is not a culture of welcome. ·
  *           Albeit a sign of hybridity, adaptability is asked of one side only.
  *
  * Ünitenin tek öğretme noktası GENEL ÖZNE. İngilizcede „hiç kimse“ demenin
@@ -101,7 +101,7 @@ export const enC1U11: SkillExercise[] = [
       "So English makes a writer choose, and there is no neutral option among the four. A neighboring language has one word for this and only one. It is short, it is unmarked, it is used in a kitchen and in a court, and it carries no position whatever. A writer there can say who calls what a parallel society without putting themselves anywhere on the page at all.\n" +
       "That is the measurement of this unit and it is not a small one. Where one language has a single unmarked word, the other has a set of four, and every use of one of them places the writer somewhere in relation to the people being described.\n" +
       "In the arts section it is a subculture; in the ministry, cultural policy. Two rooms, two words, one thing, and the sentence names neither speaker: the rooms are standing in for them.\n" +
-      "High culture is a register; guiding culture is a claim. And that is the line the unit is built to reach. Both terms describe a culture. Only the second says what everybody else ought to do about it, and a reader who cannot hear the difference between a description and an instruction will take the second sentence for information.\n" +
+      "High culture is a register; dominant culture is a claim. And that is the line the unit is built to reach. Both terms describe a culture. Only the second says what everybody else ought to do about it, and a reader who cannot hear the difference between a description and an instruction will take the second sentence for information.\n" +
       "Which brings back the first line. Choosing a word for a group is one decision; choosing a word for yourself while you do it is a second, and the second is the one that usually gets made without noticing.",
     questions: [
       {
@@ -125,11 +125,11 @@ export const enC1U11: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "High culture is a register; guiding culture is a ___.",
+        text: "High culture is a register; dominant culture is a ___.",
         options: [],
         answer: 0,
         accept: ["claim"],
-        explain: "„High culture is a register; guiding culture is a claim.“",
+        explain: "„High culture is a register; dominant culture is a claim.“",
       },
       {
         kind: "order",
@@ -140,7 +140,7 @@ export const enC1U11: SkillExercise[] = [
           "What one calls a cultural scene, another calls a parallel society.",
           "There is no neutral option among the four.",
           "In the arts section it is a subculture; in the ministry, cultural policy.",
-          "High culture is a register; guiding culture is a claim.",
+          "High culture is a register; dominant culture is a claim.",
         ],
         explain: "Dört seçenek, yansız yok, iki oda; en sonda betimleme ile yönerge.",
       },
@@ -285,10 +285,10 @@ export const enC1U11: SkillExercise[] = [
       { speaker: "Defne", text: "It is fair if the two words really are being used for the same program. If they are not, the line is a verdict with a translation put in front of it." },
       { speaker: "Onur", text: "„Acculturation“ does sound softer." },
       { speaker: "Defne", text: "It sounds softer because it is mutual in the dictionary. Whether it is mutual in the building is a question the word cannot answer, and the word is doing a great deal of work in that sentence." },
-      { speaker: "Onur", text: "The integration course, albeit useful, is not a welcoming culture." },
+      { speaker: "Onur", text: "The integration course, albeit useful, is not a culture of welcome." },
       { speaker: "Defne", text: "That is the sentence I would keep. The concession is real, it costs two words, and the main claim is still standing after it." },
       { speaker: "Onur", text: "A course has a schedule and a culture does not." },
-      { speaker: "Defne", text: "A course also has an end date, which is the part that matters. Nobody has ever finished a welcoming culture and been handed a certificate for it." },
+      { speaker: "Defne", text: "A course also has an end date, which is the part that matters. Nobody has ever finished a culture of welcome and been handed a certificate for it." },
       { speaker: "Onur", text: "And the last line?" },
       { speaker: "Defne", text: "Albeit a sign of hybridity, adaptability is asked of one side only. Read the second half slowly, because everything the sentence is about is in the last three words." },
       { speaker: "Onur", text: "„Of one side only.“" },
@@ -316,11 +316,11 @@ export const enC1U11: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The integration course, ___ useful, is not a welcoming culture.",
+        text: "The integration course, ___ useful, is not a culture of welcome.",
         options: [],
         answer: 0,
         accept: ["albeit"],
-        explain: "„The integration course, albeit useful, is not a welcoming culture.“",
+        explain: "„The integration course, albeit useful, is not a culture of welcome.“",
       },
       {
         kind: "dictation",
@@ -440,7 +440,7 @@ export const enC1U11: SkillExercise[] = [
       { de: "none", tr: "hiçbiri" },
       { de: "a cultural scene", tr: "kültür sahnesi" },
       { de: "a parallel society", tr: "paralel toplum" },
-      { de: "guiding culture", tr: "başat kültür" },
+      { de: "dominant culture", tr: "başat kültür" },
       { de: "marginalization", tr: "ötekileştirme" },
       { de: "a demarcation line", tr: "ayrım hattı" },
       { de: "statelessness", tr: "vatansızlık" },
@@ -461,8 +461,8 @@ export const enC1U11: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Yüksek kültür bir kayıt, başat kültür bir iddiadır.",
-        answer: "High culture is a register; guiding culture is a claim.",
+        tr: "Yüksek kültür bir üsluptur, başat kültür bir iddiadır.",
+        answer: "High culture is a register; dominant culture is a claim.",
         hint: "Biri betimleme, öteki yönerge.",
       },
       {

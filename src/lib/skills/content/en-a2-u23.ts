@@ -51,7 +51,7 @@ export const enA2U23: SkillExercise[] = [
       "Deniz: Could you tell me where the counter is?\n" +
       "Assistant: Counter four, on the left after the entrance. But first the form.\n" +
       "Deniz: Which form?\n" +
-      "Assistant: The green one, on the table by the window. Surname, address, date of birth.\n" +
+      "Assistant: The green one, on the table by the window. Last name, address, date of birth.\n" +
       "Deniz: And my ID card?\n" +
       "Assistant: At the counter, not before. And the form in black, not blue.\n" +
       "Deniz: Black. Why?\n" +

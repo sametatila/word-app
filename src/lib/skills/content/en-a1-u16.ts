@@ -36,7 +36,7 @@ export const enA1U16: SkillExercise[] = [
     gloss: [
       { de: "There is …", tr: "… var" },
       { de: "downstairs", tr: "alt katta" },
-      { de: "basement", tr: "kiler" },
+      { de: "basement", tr: "bodrum katı" },
     ],
     minutes: 4,
     text:
@@ -192,7 +192,7 @@ export const enA1U16: SkillExercise[] = [
         text: "On which floor is the apartment?",
         options: ["the first floor", "the second floor", "downstairs"],
         answer: 0,
-        explain: "„It is on the first floor.“ — kiler alt katta.",
+        explain: "„It is on the first floor.“ — bodrum katı alt katta.",
       },
       {
         text: "What is next to the living room?",
@@ -359,7 +359,7 @@ export const enA1U16: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Ev kartını doldur.",
-        facts: "Daire; birinci kat; üç oda; kiler var.",
+        facts: "Daire; birinci kat; üç oda; bodrum katı var.",
         fields: [
           { label: "Home", answer: "apartment", accept: ["an apartment"] },
           { label: "Floor", answer: "first", accept: ["first floor", "1"] },

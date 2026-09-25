@@ -11,7 +11,7 @@ import type { SkillExercise } from "../types";
  *           economy of scale, capital requirement, accounting fraud,
  *           embezzlement, gray area, pretext, feign, embezzle, investment
  *           cycle, savings rate, solvency, solvent, default risk, risk
- *           appetite, greenwashing, nepotism, false labeling, reputational risk.
+ *           appetite, greenwashing, nepotism, mislabeling, reputational risk.
  *   Kalıp:  A marginal cost is not an opportunity cost. ·
  *           Follow-on costs are estimated; a cost overrun is announced. ·
  *           An economy of scale lowers the capital requirement. ·
@@ -23,7 +23,7 @@ import type { SkillExercise } from "../types";
  *           A solvent firm may still carry a default risk and lose its risk appetite. ·
  *           The greenwashing was thorough; the audit, less so. ·
  *           We have no nepotism here; we have an old boys' network. ·
- *           False labeling, they said, and rather good against the reputational risk.
+ *           Creative labeling, they said, and rather good for our reputation.
  *
  * Ünitenin tek öğretme noktası SAYILABİLİRLİK. „Cost“ sayılabiliyor ama
  * „follow-on costs“ kimsenin tekilini kullanmadığı bir çoğul: raporda
@@ -283,7 +283,7 @@ export const enC1U22: SkillExercise[] = [
       { speaker: "Şule", text: "That line denies a category and admits an instance under a friendlier name, which is a shape we have both seen four times this year." },
       { speaker: "Toprak", text: "Is the difference real?" },
       { speaker: "Şule", text: "One is a rule being broken and the other is a rule that was never written down. Nobody has to break anything if the shortlist arrives already short." },
-      { speaker: "Toprak", text: "False labeling, they said, and rather good against the reputational risk." },
+      { speaker: "Toprak", text: "Creative labeling, they said, and rather good for our reputation." },
       { speaker: "Şule", text: "And there is the compliment at the end again. Read it slowly: a false label is being defended because it protects a reputation." },
       { speaker: "Toprak", text: "Which is the opposite of what a label is for." },
       { speaker: "Şule", text: "It is exactly the opposite, and nobody in that meeting heard it, because the sentence has the shape of an agreement and the room was tired." },
@@ -503,7 +503,7 @@ export const enC1U22: SkillExercise[] = [
       { de: "a default risk", tr: "temerrüt riski" },
       { de: "greenwashing", tr: "yeşil aklama" },
       { de: "nepotism", tr: "kayırmacılık" },
-      { de: "false labeling", tr: "yanıltıcı etiketleme" },
+      { de: "mislabeling", tr: "yanıltıcı etiketleme" },
     ],
     minutes: 10,
     tasks: [

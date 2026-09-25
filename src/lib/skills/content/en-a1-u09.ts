@@ -256,7 +256,7 @@ export const enA1U09: SkillExercise[] = [
       { speaker: "Nil", text: "And on Sunday?" },
       { speaker: "Kaan", text: "On Sunday I usually cook. Sometimes my friends come in and we eat together." },
       { speaker: "Nil", text: "Do you work on the weekend?" },
-      { speaker: "Kaan", text: "Never! I work from Monday to Friday, that is enough." },
+      { speaker: "Kaan", text: "Never! I work Monday through Friday, that is enough." },
       { speaker: "Nil", text: "I often work on Saturday morning. But in the evening I am free." },
       { speaker: "Kaan", text: "Then come to me next Saturday. We cook together." },
       { speaker: "Kaan", text: "First we buy the vegetables, after that we cook, and finally we eat." },
@@ -282,7 +282,7 @@ export const enA1U09: SkillExercise[] = [
         text: "Kaan works on the weekend.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„Never! I work from Monday to Friday.“ — hafta sonu çalışan Nil.",
+        explain: "„Never! I work Monday through Friday.“ — hafta sonu çalışan Nil.",
       },
       {
         kind: "gapfill",

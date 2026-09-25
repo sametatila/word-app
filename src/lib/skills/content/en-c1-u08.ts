@@ -7,14 +7,14 @@ import type { SkillExercise } from "../types";
  * Dört ders: Holding a contract together · No irony in a ruling ·
  * Spoken and written · Managing the conversation.
  *
- *   Kelime: affidavit of support, hardship case, federal office,
+ *   Kelime: affidavit of support, hardship case, federal agency,
  *           registry, lucrative, thrifty, cyclical, colloquial language,
  *           feel for language, emphatically, empty phrase, haltingly,
  *           accent-free, expressive power, streamline, circumvent,
  *           quick wit, fear of speaking, pay homage, become entrenched.
  *   Kalıp:  This alone binds the affidavit of support. ·
  *           Such a hardship case is rare. ·
- *           The latter falls to the federal office. ·
+ *           The latter falls to the federal agency. ·
  *           Not exactly lucrative, is it? ·
  *           I wouldn't call that thrifty. ·
  *           Hardly cyclical, is it? ·
@@ -196,7 +196,7 @@ export const enC1U08: SkillExercise[] = [
       "Now the written side, and three lines out of an office.\n" +
       "This alone binds the affidavit of support. „Alone“ has been put after the subject rather than in front of it, which is a written habit; in speech the stress would have done the same work with no extra word at all.\n" +
       "Such a hardship case is rare. „Such a“ points backwards at a description the reader has already been given, and a text that uses it has promised that the description was precise.\n" +
-      "The latter falls to the federal office. „The latter“ saves four words and costs the reader a glance back up the page, and it is only honest when the two items were named in the last two lines.\n" +
+      "The latter falls to the federal agency. „The latter“ saves four words and costs the reader a glance back up the page, and it is only honest when the two items were named in the last two lines.\n" +
       "None of the three could be said aloud without sounding like a document being read out, and that is the test. A written shape that survives speech is neutral; one that does not is carrying a register on its back, and a writer who has not noticed which of the two is in hand will be heard saying something about themselves rather than about the case.",
     questions: [
       {
@@ -220,11 +220,11 @@ export const enC1U08: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The ___ falls to the federal office.",
+        text: "The ___ falls to the federal agency.",
         options: [],
         answer: 0,
         accept: ["latter"],
-        explain: "„The latter falls to the federal office.“",
+        explain: "„The latter falls to the federal agency.“",
       },
       {
         kind: "order",
@@ -234,7 +234,7 @@ export const enC1U08: SkillExercise[] = [
         items: [
           "This alone binds the affidavit of support.",
           "Such a hardship case is rare.",
-          "The latter falls to the federal office.",
+          "The latter falls to the federal agency.",
           "A written shape that survives speech is neutral.",
         ],
         explain: "Özneden sonra „alone“, geriye işaret, kısaltma; en sonda test.",
@@ -370,7 +370,7 @@ export const enC1U08: SkillExercise[] = [
       { de: "an office habit", tr: "büro alışkanlığı" },
       { de: "rare", tr: "seyrek" },
       { de: "a promise", tr: "söz" },
-      { de: "upwards", tr: "yukarı" },
+      { de: "upward", tr: "yukarı" },
       { de: "named", tr: "adı anılmış" },
       { de: "a registry", tr: "sicil" },
       { de: "a copy", tr: "suret" },
@@ -386,7 +386,7 @@ export const enC1U08: SkillExercise[] = [
       { speaker: "Tuna", text: "Such a hardship case is rare. That line is doing two jobs and only one of them is visible." },
       { speaker: "Tuna", text: "It points backwards at the description above it, and by pointing backwards it promises that the description was exact enough to be pointed at." },
       { speaker: "Tuna", text: "If the paragraph above says only that the family had difficulties, the sentence is a promise the file cannot keep, and an audit will find it." },
-      { speaker: "Tuna", text: "The latter falls to the federal office. Four words saved, one glance upwards spent, and it is honest only when the two bodies were named in the last two lines." },
+      { speaker: "Tuna", text: "The latter falls to the federal agency. Four words saved, one glance upward spent, and it is honest only when the two bodies were named in the last two lines." },
       { speaker: "Tuna", text: "Three lines above it and the reader has to count. Three pages above it and the reader has to guess, which is where a file starts losing." },
       { speaker: "Tuna", text: "The registry keeps a copy of all of this and reads none of it until something goes wrong." },
       { speaker: "Tuna", text: "So write the document for that reader. Not the one who signs it today, but the one who opens it in four years looking for a signature and a date." },
@@ -424,7 +424,7 @@ export const enC1U08: SkillExercise[] = [
         text: "Duyduğun cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["The latter falls to the federal office.", "The latter falls to the federal office"],
+        accept: ["The latter falls to the federal agency.", "The latter falls to the federal agency"],
         explain: "Dört sözcük kazanılıyor, bir bakış harcanıyor.",
       },
       {
@@ -531,7 +531,7 @@ export const enC1U08: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Dil sezgisi sana hangi kaydın uyduğunu söyler.",
+        tr: "Hangi dil düzeyinin uyduğunu dil sezgisi söyler.",
         answer: "A feel for language tells you which register fits.",
         hint: "Kurala yazılamayan bilgi.",
       },

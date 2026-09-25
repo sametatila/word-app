@@ -59,7 +59,7 @@ export const enB1U01: SkillExercise[] = [
       "Time. Every job needs two dates and no gaps. If there is a gap, write one line: traveled, studied, cared for a parent. A gap with no line is a question; a gap with a line is a fact.\n" +
       "Proof. „Reliable and careful“ says nothing, because everybody writes it. „I had started my degree before I started there, so I worked and studied for two years“ says the same thing and can be checked.\n" +
       "One more thing about the previous employer. Ask for the reference before you leave, not six months later. People change jobs, and the person who knows your work today may be somewhere else in April.\n" +
-      "And the training courses: only the ones that touch this job. A CV is not a list of everything you have done. It is an answer to one question — why this person for this position?\n" +
+      "And the training courses: only the ones that touch this job. A résumé is not a list of everything you have done. It is an answer to one question — why this person for this position?\n" +
       "Two pages at most. One is better.",
     questions: [
       {
@@ -382,7 +382,7 @@ export const enB1U01: SkillExercise[] = [
       },
       {
         kind: "form",
-        prompt: "CV kartını doldur.",
+        prompt: "Özgeçmiş kartını doldur.",
         facts: "Altı yıl sektörde; diploma işten önce bitti; önceki işverenden referans var; iki eğitim kursu.",
         fields: [
           { label: "Experience", answer: "six years", accept: ["6 years"] },

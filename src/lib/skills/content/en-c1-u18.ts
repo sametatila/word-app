@@ -21,7 +21,7 @@ import type { SkillExercise } from "../types";
  *           The precipitation fell; the harvest did not. ·
  *           In the brochure it is emission reduction; in the study, decarbonization. ·
  *           Climate neutrality is a balance; climate-neutral is a label. ·
- *           What the ministry calls an energy transition, the district calls a mobility transition. ·
+ *           What the ministry calls an energy transition, the district calls a transportation shift. ·
  *           What overexploitation does is hide the pollutant load. ·
  *           Behind the resource consumption stands a lost carbon sink. ·
  *           Species extinction we count; the permafrost we do not.
@@ -199,7 +199,7 @@ export const enC1U18: SkillExercise[] = [
       "„Emission reduction“ is a percentage against a baseline year. It can be reached by burning a cleaner fuel and it says nothing about what happens after that. „Decarbonization“ names the end of a fuel, not a smaller amount of it, and the two words are therefore about different decades.\n" +
       "Climate neutrality is a balance; climate-neutral is a label. A balance has two sides and the second side is usually an offset bought somewhere else, which is a real thing and a different thing from not having emitted.\n" +
       "The label is a claim printed on a package. It may be audited and it may not, and the word itself carries no information about which.\n" +
-      "What the ministry calls an energy transition, the district calls a mobility transition. Here the two names are in one sentence with their owners attached, and that is the honest way to write a disagreement about money.\n" +
+      "What the ministry calls an energy transition, the district calls a transportation shift. Here the two names are in one sentence with their owners attached, and that is the honest way to write a disagreement about money.\n" +
       "Both are real and both cost the same money once. A grid and a cable, or a schedule and a bus route: the sum is spent once and the choice is not between two words but between two towns in ten years.\n" +
       "So the useful question for any paper of this kind is not which word is correct. It is which budget the word is attached to, and whether the two words in the room are competing for the same line.\n" +
       "They usually are, and it is rarely said out loud, because a meeting in which two good things are in competition is harder to chair than one in which a good thing faces a bad one.",
@@ -239,7 +239,7 @@ export const enC1U18: SkillExercise[] = [
         items: [
           "In the brochure it is emission reduction; in the study, decarbonization.",
           "Climate neutrality is a balance; climate-neutral is a label.",
-          "What the ministry calls an energy transition, the district calls a mobility transition.",
+          "What the ministry calls an energy transition, the district calls a transportation shift.",
           "Which budget is the word attached to?",
         ],
         explain: "İki oda, denge ile etiket, iki sahip; en sonda soru.",

@@ -45,9 +45,9 @@
   "en": "A principle that demands; „be“, not „is“."
  },
  {
-  "tr": "Yorum yetkisi ve iptal eden niteleyen.",
+  "tr": "Yorum yetkisi ve ihlalin yerine geçen ad.",
   "kind": "intro",
-  "en": "Interpretive authority and the modifier that cancels."
+  "en": "Interpretive authority and the name that stands in for a violation."
  },
  {
   "tr": "Talep eden bir metinde özne kim oluyor?",
@@ -95,6 +95,11 @@
   "en": "Two documents: one claims, the other assumes."
  },
  {
+  "tr": "Metin ile gelenek: biri açıkça iddia ediyor, öteki yalnızca varsayıyor.",
+  "kind": "explain",
+  "en": "A text and a tradition: one openly claims, the other merely assumes."
+ },
+ {
   "tr": "İki sözcük, ara söz, cümle başı; en sonda ölçü.",
   "kind": "explain",
   "en": "Two words, a parenthesis, a sentence opening; the measure last."
@@ -120,9 +125,9 @@
   "en": "„„rather good for“ is what you say about medicine.“"
  },
  {
-  "tr": "Bir sözcük ötekini iptal ediyor. Hangisi hangisini?",
+  "tr": "Bir ad ötekinin yerini alıyor. Hangisi hangisinin?",
   "kind": "intro",
-  "en": "One word cancels the other. Which one cancels which?"
+  "en": "One name takes the place of another. Which replaces which?"
  },
  {
   "tr": "Soyut isim, yer, adlandırılmış „we“; en sonda bedel.",
@@ -185,9 +190,9 @@
   "en": "A person and a number, the arithmetic, two passives; the picture the word brings last."
  },
  {
-  "tr": "„„Locally customary“ cancels the noun it is attached to without changing a single fact in it.“",
+  "tr": "„„Local custom“ renames the violation without changing a single fact in it.“",
   "kind": "explain",
-  "en": "„„Locally customary“ cancels the noun it is attached to without changing a single fact in it.“"
+  "en": "„„Local custom“ renames the violation without changing a single fact in it.“"
  },
  {
   "tr": "„„Marginalization“ is an abstract noun in the front slot… and it has been given a verb of its own.“",

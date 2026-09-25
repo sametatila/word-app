@@ -15,7 +15,7 @@
   "de": "Fülle das Schadensformular aus."
  },
  {
-  "tr": "Daire; birinci kat; üç oda; kiler var.",
+  "tr": "Daire; birinci kat; üç oda; bodrum katı var.",
   "kind": "form.facts",
   "de": "Wohnung; erster Stock; drei Zimmer; Keller vorhanden."
  },
@@ -250,9 +250,9 @@
   "de": "Im Singular „there is“; bei zwei Bäumen hieße es „there are two trees“. Das deutsche „es gibt“ ändert sich dabei nicht."
  },
  {
-  "tr": "„rubbish“ sayılamaz ve tekil: the rubbish, „the rubbishes“ olmaz.",
+  "tr": "„trash“ sayılamaz ve tekil: the trash, „the trashes“ olmaz.",
   "kind": "build.hint",
-  "de": "„rubbish“ ist nicht zählbar und steht im Singular: the rubbish, „the rubbishes“ gibt es nicht — wie der Müll."
+  "de": "„trash“ ist nicht zählbar und steht im Singular: the trash, „the trashes“ gibt es nicht — wie der Müll."
  },
  {
   "tr": "Çoğulda „there are“ ve isim „-s“ alır. Türkçede „var“ değişmezdi.",
@@ -285,9 +285,9 @@
   "de": "Weil ein einzelnes Ding gesucht wird, steht „is“; bei mehreren hieße es „where are“."
  },
  {
-  "tr": "Top oyunlarında „play“ ve sporun önünde artikel yok: play football, play tennis.",
+  "tr": "Top oyunlarında „play“ ve sporun önünde artikel yok: play soccer, play tennis.",
   "kind": "build.hint",
-  "de": "Bei Ballspielen „play“, und vor der Sportart steht kein Artikel: play football, play tennis — wie deutsch „Fußball spielen“."
+  "de": "Bei Ballspielen „play“, und vor der Sportart steht kein Artikel: play soccer, play tennis — wie deutsch „Fußball spielen“."
  },
  {
   "tr": "Nesne isim olduğu için sona gelebiliyor: tidy up my room. Zamir olsa araya girerdi.",

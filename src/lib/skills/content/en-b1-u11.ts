@@ -41,6 +41,7 @@ export const enB1U11: SkillExercise[] = [
     genre: "guide",
     intro: "Kayıt işleminin dili. Cümleler neden hep edilgen?",
     gloss: [
+      { de: "mail", tr: "posta" },
       { de: "in person", tr: "bizzat" },
       { de: "whoever", tr: "her kimse" },
       { de: "registration", tr: "kayıt" },
@@ -57,7 +58,7 @@ export const enB1U11: SkillExercise[] = [
       "When is the card issued? Ten working days after the stamp, and the question is asked in the passive because nobody in the room issues it. It comes from another office in another building.\n" +
       "What you need: proof of address, the passport, and the old card if you have one. Residents who have lived here for less than three months bring the lease instead.\n" +
       "What nobody tells you: the desk is quiet between two and three, because the numbers are given out in the morning and most people come back after lunch.\n" +
-      "And the part that is not in any guide: come in person on the first visit. Everything after that can be done by post, but the first stamp is given to a face.",
+      "And the part that is not in any guide: come in person on the first visit. Everything after that can be done by mail, but the first stamp is given to a face.",
     questions: [
       {
         text: "What does „The form is stamped at the desk“ tell you?",
@@ -119,6 +120,7 @@ export const enB1U11: SkillExercise[] = [
     genre: "info",
     intro: "Form doldurma kuralları. Hangisi zorunlu, hangisi değil?",
     gloss: [
+      { de: "mail", tr: "posta" },
       { de: "capital letters", tr: "büyük harf" },
       { de: "box", tr: "kutucuk" },
       { de: "scanner", tr: "tarayıcı" },
@@ -132,7 +134,7 @@ export const enB1U11: SkillExercise[] = [
     minutes: 7,
     text:
       "Six lines about a form that takes four minutes and is sent back twice a week.\n" +
-      "You must fill out every section. An empty section is not read as „nothing to say“; it is read as „not finished“, and the form goes back in the post.\n" +
+      "You must fill out every section. An empty section is not read as „nothing to say“; it is read as „not finished“, and the form goes back in the mail.\n" +
       "You should print your last name. Capital letters, one letter per box. The form is read by a scanner first and by a person second, and the scanner has no patience.\n" +
       "You don't have to give a phone number. That box has a small word next to it and the small word is „optional“. Three people in four fill it in anyway.\n" +
       "Tick one box in section four, not two. If both are true for you, tick the first and write the detail in section seven, which exists for exactly this.\n" +
@@ -141,9 +143,9 @@ export const enB1U11: SkillExercise[] = [
     questions: [
       {
         text: "What happens to a form with an empty section?",
-        options: ["it goes back in the post", "it is read by a person", "it is copied"],
+        options: ["it goes back in the mail", "it is read by a person", "it is copied"],
         answer: 0,
-        explain: "„it is read as „not finished“, and the form goes back in the post.“",
+        explain: "„it is read as „not finished“, and the form goes back in the mail.“",
       },
       {
         text: "Why should you print the last name?",

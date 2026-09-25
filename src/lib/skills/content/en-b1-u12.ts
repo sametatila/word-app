@@ -63,7 +63,7 @@ export const enB1U12: SkillExercise[] = [
       "A copy of the first letter is attached, with the date on it.\n" +
       "If the statement cannot be issued, I would be grateful for one line saying so. A short no is better than a long silence.\n" +
       "I look forward to your reply at your earliest convenience.\n" +
-      "Yours sincerely,\n" +
+      "Sincerely,\n" +
       "Deniz Kaya",
     questions: [
       {
@@ -350,7 +350,7 @@ export const enB1U12: SkillExercise[] = [
     gloss: [
       { de: "a request", tr: "talep" },
       { de: "no reply", tr: "cevap yok" },
-      { de: "Yours sincerely", tr: "saygılarımla" },
+      { de: "Sincerely", tr: "saygılarımla" },
     ],
     minutes: 8,
     tasks: [
@@ -369,8 +369,8 @@ export const enB1U12: SkillExercise[] = [
       {
         kind: "build",
         tr: "Cevabınızı bekliyorum. Saygılarımla.",
-        answer: "I look forward to your reply. Yours sincerely.",
-        hint: "„Yours sincerely“ adı bildiğinde; bilmediğinde „Yours faithfully“ olurdu.",
+        answer: "I look forward to your reply. Sincerely.",
+        hint: "Amerikan resmî mektubunda kapanış kısaca „Sincerely“; İngilizler „Yours sincerely“ der.",
       },
       {
         kind: "build",

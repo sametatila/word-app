@@ -8,23 +8,23 @@ import type { SkillExercise } from "../types";
  * Three registers of one claim · The order of the argument.
  *
  *   Kelime: market penetration, market saturation, competitiveness, monopoly
- *           position, undercut, price fixing, tender procedure, approval
- *           procedure, consortium, operating model, conflict of goals,
- *           cumbersome, rhetoric, pathos, stylistic device, stylistic break,
+ *           position, undercut, price fixing, bidding process, permitting
+ *           process, consortium, operating model, conflicting goals,
+ *           cumbersome, rhetoric, pathos, stylistic device, break in style,
  *           line of argument, flaw in reasoning, prevailing doctrine,
- *           school of thought, contentious issue, expert debate.
+ *           school of thought, contentious issue, debate among experts.
  *   Kalıp:  The market penetration above becomes market saturation below. ·
  *           That competitiveness, as noted, is the monopoly position of an earlier page. ·
  *           Where a rival can undercut us, no price fixing helps. ·
- *           The tender procedure survives as a form, the approval procedure as a delay. ·
+ *           The bidding process survives as a form, the permitting process as a delay. ·
  *           The consortium builds; the operating model, it does not name. ·
- *           The conflict of goals stayed; the cumbersome wording did not. ·
+ *           The conflicting goals stayed; the cumbersome wording did not. ·
  *           In the essay it is rhetoric; in the pamphlet, pathos. ·
- *           A stylistic device is a choice; a stylistic break is a mistake. ·
- *           What the critic calls a stylistic movement, the reader calls a stylistic level. ·
+ *           A stylistic device is a choice; a break in style is a mistake. ·
+ *           What the critic calls a literary movement, the reader calls a passing fashion. ·
  *           What the line of argument does is hide a flaw in reasoning. ·
  *           Behind the prevailing doctrine stands a school of thought. ·
- *           The contentious issue we name; the expert debate we do not.
+ *           The contentious issue we name; the debate among experts we do not.
  *
  * Ünitenin tek öğretme noktası TANIMLIKSIZ SOYUT İSİM. İngilizce soyut
  * ismi genel anlamda kullanırken önüne hiçbir şey koymuyor: rhetoric,
@@ -88,9 +88,9 @@ export const enC1U23: SkillExercise[] = [
       "A neighboring language puts an article in front of every one of them and keeps it there. So a speaker coming from that side supplies an article English does not want, and the result is a sentence nobody can point at as wrong which nevertheless reads as translated.\n" +
       "And now the part that makes this a lesson for this level rather than a rule for a first year. The article comes back the moment something narrows the noun. The rhetoric of the pamphlet. The doubt that stopped the project. The competitiveness we lost in one bad decade. A bare noun is the general thing; an article is a signal that a particular one is meant, and the narrowing usually sits in the words after the noun rather than before it.\n" +
       "So the rule is not that abstract nouns take no article. It is: no article until something narrows it. That is a rule about the whole phrase, and a writer who learns it as a rule about the noun alone will get it wrong in both directions.\n" +
-      "A stylistic device is a choice; a stylistic break is a mistake. Here both nouns have an article and they should: these are two countable things put side by side, and the sentence is not about devices in general.\n" +
-      "What the critic calls a stylistic movement, the reader calls a stylistic level. One more pair with the owners attached. A movement is a thing that happened to a hundred writers; a level is a thing a reader hears on one page.\n" +
-      "The two are not competing descriptions of the same object, and a paper that treats them as competing has lost the thread inside its own first paragraph.",
+      "A stylistic device is a choice; a break in style is a mistake. Here both nouns have an article and they should: these are two countable things put side by side, and the sentence is not about devices in general.\n" +
+      "What the critic calls a literary movement, the reader calls a passing fashion. One more pair with the owners attached. A movement is a thing that happened to a hundred writers; a fashion is a thing a reader forgets in one season.\n" +
+      "The two are competing descriptions of the same object, and a paper that quotes only one of them has taken a side and lost the thread inside its own first paragraph.",
     questions: [
       {
         text: "When is an abstract noun bare?",
@@ -113,11 +113,11 @@ export const enC1U23: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "A stylistic device is a choice; a stylistic break is a ___.",
+        text: "A stylistic device is a choice; a break in style is a ___.",
         options: [],
         answer: 0,
         accept: ["mistake"],
-        explain: "„A stylistic device is a choice; a stylistic break is a mistake.“",
+        explain: "„A stylistic device is a choice; a break in style is a mistake.“",
       },
       {
         kind: "order",
@@ -128,17 +128,17 @@ export const enC1U23: SkillExercise[] = [
           "In the essay it is rhetoric; in the pamphlet, pathos.",
           "The article comes back when something narrows the noun.",
           "No article until something narrows it.",
-          "A stylistic device is a choice; a stylistic break is a mistake.",
+          "A stylistic device is a choice; a break in style is a mistake.",
         ],
         explain: "Çıplak isim, daraltma, kural; en sonda tanımlıklı çift.",
       },
       {
         kind: "short_answer",
-        text: "What is a level?",
+        text: "What is a fashion?",
         options: [],
         answer: 0,
-        accept: ["what a reader hears", "heard on one page", "a thing on one page"],
-        explain: "„a level is a thing a reader hears on one page.“",
+        accept: ["what a reader forgets", "a thing a reader forgets", "forgotten in one season"],
+        explain: "„a fashion is a thing a reader forgets in one season.“",
       },
     ],
   },
@@ -186,12 +186,12 @@ export const enC1U23: SkillExercise[] = [
     ],
     minutes: 12,
     text:
-      "The tender procedure survives as a form, the approval procedure as a delay. Two procedures, two afterlives, and the second half of the line has no verb because it does not need one.\n" +
+      "The bidding process survives as a form, the permitting process as a delay. Two processes, two afterlives, and the second half of the line has no verb because it does not need one.\n" +
       "A form is a thing somebody fills in. A delay is a thing that happens to somebody, and the difference between those two is the difference between a week of work and a year of waiting at a desk that is not yours.\n" +
       "The consortium builds; the operating model, it does not name. Here the object has been fronted and the subject is a pronoun, and the shape puts the unnamed thing at the front of the sentence where a reader cannot walk past it.\n" +
       "That is the whole finding of this lesson. A tender says who builds and is quiet about who runs it afterwards, and running it is thirty years of the thirty-two.\n" +
       "The consequence is not a scandal. It is a repair that nobody budgeted: a decade in, somebody discovers that the contract names a builder and a payer and no operator, and the negotiation that follows happens with no competition in the room at all.\n" +
-      "The conflict of goals stayed; the cumbersome wording did not. And this is the sentence I would put on the front of any tender file.\n" +
+      "The conflicting goals stayed; the cumbersome wording did not. And this is the sentence I would put on the front of any tender file.\n" +
       "The wording was cut because a lawyer read it and found it heavy. The conflict it described was still there the next morning, and now it was not written down anywhere, which made the document shorter and the project longer.\n" +
       "A page that names a conflict is not a weak page. It is the only page that will be read in the year the conflict arrives, and a signature under a clear description of a problem is worth more than a signature under a smooth last line.",
     questions: [
@@ -216,11 +216,11 @@ export const enC1U23: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The conflict of goals stayed; the cumbersome wording did ___.",
+        text: "The conflicting goals stayed; the cumbersome wording did ___.",
         options: [],
         answer: 0,
         accept: ["not"],
-        explain: "„The conflict of goals stayed; the cumbersome wording did not.“",
+        explain: "„The conflicting goals stayed; the cumbersome wording did not.“",
       },
       {
         kind: "order",
@@ -228,9 +228,9 @@ export const enC1U23: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "The tender procedure survives as a form, the approval procedure as a delay.",
+          "The bidding process survives as a form, the permitting process as a delay.",
           "The consortium builds; the operating model, it does not name.",
-          "The conflict of goals stayed; the cumbersome wording did not.",
+          "The conflicting goals stayed; the cumbersome wording did not.",
           "A page that names a conflict is not a weak page.",
         ],
         explain: "İki usul, adlandırılmayan işletmeci, kesilen ifade; en sonda kural.",
@@ -284,7 +284,7 @@ export const enC1U23: SkillExercise[] = [
       { speaker: "Işıl", text: "And behind the school stands a founder, three students and one department that had money in a particular decade." },
       { speaker: "Efe", text: "That sounds unkind." },
       { speaker: "Işıl", text: "It is only unkind if you think ideas travel on their own. They travel in people, and people need a post and a room and somebody to publish them." },
-      { speaker: "Efe", text: "The contentious issue we name; the expert debate we do not." },
+      { speaker: "Efe", text: "The contentious issue we name; the debate among experts we do not." },
       { speaker: "Işıl", text: "That is the line I would want a student to understand before a conference. The issue is public and the debate is a set of names, and only one of the two is in the papers." },
       { speaker: "Efe", text: "Why does that matter?" },
       { speaker: "Işıl", text: "Because a colleague who reads your paper knows both, and a sentence that names the issue while carefully not naming the debate is read as a position on it." },
@@ -311,11 +311,11 @@ export const enC1U23: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The contentious issue we name; the expert debate we do ___.",
+        text: "The contentious issue we name; the debate among experts we do ___.",
         options: [],
         answer: 0,
         accept: ["not"],
-        explain: "„The contentious issue we name; the expert debate we do not.“",
+        explain: "„The contentious issue we name; the debate among experts we do not.“",
       },
       {
         kind: "dictation",
@@ -452,13 +452,13 @@ export const enC1U23: SkillExercise[] = [
       {
         kind: "build",
         tr: "Üslup aracı bir seçimdir; üslup kopukluğu bir hatadır.",
-        answer: "A stylistic device is a choice; a stylistic break is a mistake.",
+        answer: "A stylistic device is a choice; a break in style is a mistake.",
         hint: "Burada tanımlık var ve olmalı: iki sayılabilir şey.",
       },
       {
         kind: "build",
-        tr: "Eleştirmenin üslup akımı dediğine okur üslup düzeyi diyor.",
-        answer: "What the critic calls a stylistic movement, the reader calls a stylistic level.",
+        tr: "Eleştirmenin edebî akım dediğine okur gelip geçici bir moda diyor.",
+        answer: "What the critic calls a literary movement, the reader calls a passing fashion.",
         hint: "Biri yüz yazara olmuş, öteki tek sayfada duyuluyor.",
       },
       {
@@ -496,9 +496,9 @@ export const enC1U23: SkillExercise[] = [
     genre: "info",
     intro: "İhalenin sessiz kaldığı yer ve strateji belgesinin göndermeleri.",
     gloss: [
-      { de: "a tender procedure", tr: "ihale süreci" },
+      { de: "a bidding process", tr: "ihale süreci" },
       { de: "a consortium", tr: "konsorsiyum" },
-      { de: "a conflict of goals", tr: "hedef çatışması" },
+      { de: "conflicting goals", tr: "hedef çatışması" },
       { de: "market penetration", tr: "pazara nüfuz" },
       { de: "competitiveness", tr: "rekabet gücü" },
       { de: "to undercut", tr: "fiyatın altına inmek" },
@@ -508,7 +508,7 @@ export const enC1U23: SkillExercise[] = [
       {
         kind: "build",
         tr: "İhale süreci bir form olarak, onay süreci bir gecikme olarak sağ kalıyor.",
-        answer: "The tender procedure survives as a form, the approval procedure as a delay.",
+        answer: "The bidding process survives as a form, the permitting process as a delay.",
         hint: "İkinci yarıda fiil yok; iki usul iki ayrı biçimde sürüyor.",
       },
       {
@@ -520,7 +520,7 @@ export const enC1U23: SkillExercise[] = [
       {
         kind: "build",
         tr: "Hedef çatışması kaldı; külfetli ifade kalmadı.",
-        answer: "The conflict of goals stayed; the cumbersome wording did not.",
+        answer: "The conflicting goals stayed; the cumbersome wording did not.",
         hint: "İfade kesildi, çatışma ertesi sabah hâlâ oradaydı.",
       },
       {

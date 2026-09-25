@@ -12,7 +12,7 @@ import type { SkillExercise } from "../types";
  *           neighbour, toy, remember, memory, doll, yard, travel, beach,
  *           flight, hotel, enjoy, suitcase, island, hostel.
  *   Kalıp:  First I …, then I … · After that, … · I was tired, so I … ·
- *           I used to play football. · I didn't use to like coffee. ·
+ *           I used to play soccer. · I didn't use to like coffee. ·
  *           Did you use to play the guitar? · I used to … ·
  *           When I was a child, … · I grew up in … ·
  *           I went to Antalya last summer. ·
@@ -22,7 +22,7 @@ import type { SkillExercise } from "../types";
  * „used to“ geçmişte SÜRMÜŞ ama artık olmayan bir alışkanlık anlatıyor ve
  * İngilizcede başka hiçbir şey bu işi görmüyor. Türkçede „-ardı/-erdi“ eki
  * aynı işi görüyor ama geniş zamanla aynı köke bağlı, o yüzden öğrenci
- * „I played football“ diyip alışkanlık anlamını kaybediyor. İçerik ikisini
+ * „I played soccer“ diyip alışkanlık anlamını kaybediyor. İçerik ikisini
  * karşılaştırmıyor — yalnız „used to“yu üç biçimde de kuruyor.
  */
 export const enA2U02: SkillExercise[] = [
@@ -172,7 +172,7 @@ export const enA2U02: SkillExercise[] = [
     genre: "dialogue",
     intro: "Eski alışkanlıklar konuşuluyor. „used to“nun üç biçimi de geçiyor.",
     gloss: [
-      { de: "football", tr: "futbol" },
+      { de: "soccer", tr: "futbol" },
       { de: "used to", tr: "eskiden" },
       { de: "memory", tr: "hafıza" },
       { de: "coach", tr: "antrenör" },
@@ -183,34 +183,34 @@ export const enA2U02: SkillExercise[] = [
       { speaker: "Ela", text: "Yes, when I was a child. I used to play every day." },
       { speaker: "Mert", text: "And now?" },
       { speaker: "Ela", text: "Now I don't have time. But my son plays." },
-      { speaker: "Mert", text: "I used to play football, but I didn't use to like it." },
+      { speaker: "Mert", text: "I used to play soccer, but I didn't use to like it." },
       { speaker: "Ela", text: "Really? Why did you play?" },
       { speaker: "Mert", text: "Because my father was the coach! Every Saturday we went to the field." },
       { speaker: "Ela", text: "And your mother?" },
       { speaker: "Mert", text: "She used to make big dinners for the team. Twenty children in our yard!" },
       { speaker: "Ela", text: "That is a good memory." },
-      { speaker: "Mert", text: "Yes. I didn't use to like football, but I remember those days." },
+      { speaker: "Mert", text: "Yes. I didn't use to like soccer, but I remember those days." },
       { speaker: "Ela", text: "Then come with us on Sunday. My son has a game." },
     ],
     questions: [
       {
         text: "What did Ela use to do?",
-        options: ["play the guitar", "play football", "make dinners"],
+        options: ["play the guitar", "play soccer", "make dinners"],
         answer: 0,
         explain: "„Yes, when I was a child. I used to play every day.“ — futbol Mert'in.",
       },
       {
-        text: "Why did Mert play football?",
+        text: "Why did Mert play soccer?",
         options: ["his father was the coach", "he liked it", "his mother wanted it"],
         answer: 0,
         explain: "„Because my father was the coach!“ — sevmediğini iki kez söylüyor.",
       },
       {
         kind: "truefalse",
-        text: "Mert used to play football without liking it.",
+        text: "Mert used to play soccer without liking it.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„I used to play football, but I didn't use to like it.“",
+        explain: "„I used to play soccer, but I didn't use to like it.“",
       },
       {
         kind: "gapfill",
@@ -233,7 +233,7 @@ export const enA2U02: SkillExercise[] = [
         text: "What does Ela's son have on Sunday?",
         options: [],
         answer: 0,
-        accept: ["a game", "game", "a football game"],
+        accept: ["a game", "game", "a soccer game"],
         explain: "„Then come with us on Sunday. My son has a game.“",
       },
     ],

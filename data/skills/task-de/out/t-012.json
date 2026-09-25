@@ -195,9 +195,9 @@
   "de": "Es geht um eine bestimmte Zeitung: „the newspaper“."
  },
  {
-  "tr": "Hesap tektir ve bellidir: „the bill“, „a bill“ değil.",
+  "tr": "Hesap tektir ve bellidir: „the check“, „a check“ değil.",
   "kind": "build.hint",
-  "de": "Die Rechnung ist eine bestimmte: „the bill“, nicht „a bill“."
+  "de": "Die Rechnung ist eine bestimmte: „the check“, nicht „a check“."
  },
  {
   "tr": "Soruda „any“ ve tekil „is there“, çünkü süt sayılamaz.",

@@ -112,11 +112,11 @@ export const enB1U04: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 4,
-    title: "Living with flatmates",
+    title: "Living with roommates",
     genre: "dialogue",
     intro: "Üç kural değil, üç gerekçe. Hangisi neden var?",
     gloss: [
-      { de: "flat", tr: "daire" },
+      { de: "apartment", tr: "daire" },
       { de: "columns", tr: "sütun" },
       { de: "fridge", tr: "buzdolabı" },
       { de: "lasted", tr: "sürdü" },
@@ -130,7 +130,7 @@ export const enB1U04: SkillExercise[] = [
       "Can: That is fair. I am the person who cooks at eleven at night.\n" +
       "Sena: Then you are the person who tidies at half past eleven.\n" +
       "Can: And guests?\n" +
-      "Sena: You don't have to ask about guests. This is your flat too. Tell us if somebody stays three nights, because of the bathroom in the morning.\n" +
+      "Sena: You don't have to ask about guests. This is your apartment too. Tell us if somebody stays three nights, because of the bathroom in the morning.\n" +
       "Can: And the chores?\n" +
       "Sena: We should agree on a schedule. The last one lasted four months and then it lived on the fridge as a picture.\n" +
       "Can: Why did it stop working?\n" +
@@ -157,7 +157,7 @@ export const enB1U04: SkillExercise[] = [
         text: "You have to ask before a guest comes.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„You don't have to ask about guests. This is your flat too.“",
+        explain: "„You don't have to ask about guests. This is your apartment too.“",
       },
       {
         kind: "gapfill",

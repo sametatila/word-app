@@ -20,9 +20,9 @@
   "de": "Das nachgestellte Attribut und das verblose Zugeständnis."
  },
  {
-  "tr": "Yorum yetkisi ve iptal eden niteleyen.",
+  "tr": "Yorum yetkisi ve ihlalin yerine geçen ad.",
   "kind": "intro",
-  "de": "Die Deutungshoheit und das aufhebende Attribut."
+  "de": "Die Deutungshoheit und der Name, der an die Stelle des Verstoßes tritt."
  },
  {
   "tr": "Talep eden bir metinde özne kim oluyor?",
@@ -55,9 +55,9 @@
   "de": "Eine Zahl oder ein Dokument? Was messen die Wörter?"
  },
  {
-  "tr": "Bir sözcük ötekini iptal ediyor. Hangisi hangisini?",
+  "tr": "Bir ad ötekinin yerini alıyor. Hangisi hangisinin?",
   "kind": "intro",
-  "de": "Ein Wort hebt das andere auf. Welches welches?"
+  "de": "Ein Name tritt an die Stelle des anderen. Welcher an die Stelle welches?"
  },
  {
   "tr": "„Less so“ neyi kısaltıyor? Azı söylemek neyi büyütüyor?",
@@ -140,6 +140,11 @@
   "de": "Zwei Dokumente: das eine behauptet, das andere setzt voraus."
  },
  {
+  "tr": "Metin ile gelenek: biri açıkça iddia ediyor, öteki yalnızca varsayıyor.",
+  "kind": "explain",
+  "de": "Text und Tradition: Das eine behauptet offen, das andere setzt nur voraus."
+ },
+ {
   "tr": "İki sözcük, ara söz, cümle başı; en sonda ölçü.",
   "kind": "explain",
   "de": "Zwei Wörter, ein Einschub, ein Satzanfang; ganz am Ende das Maß."
@@ -185,9 +190,9 @@
   "de": "Person und Zahl, die Rechnung, zwei Passive; ganz am Ende das Bild, das das Wort mitbringt."
  },
  {
-  "tr": "„„Locally customary“ cancels the noun it is attached to without changing a single fact in it.“",
+  "tr": "„„Local custom“ renames the violation without changing a single fact in it.“",
   "kind": "explain",
-  "de": "„„Locally customary“ cancels the noun it is attached to without changing a single fact in it.“"
+  "de": "„„Local custom“ renames the violation without changing a single fact in it.“"
  },
  {
   "tr": "„„Marginalization“ is an abstract noun in the front slot… and it has been given a verb of its own.“",
@@ -743,11 +748,6 @@
   "tr": "fark etmeden",
   "kind": "gloss.tr",
   "de": "ohne es zu merken"
- },
- {
-  "tr": "iptal ediyor",
-  "kind": "gloss.tr",
-  "de": "hebt auf"
  },
  {
   "tr": "karıştırıyor",

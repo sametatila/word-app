@@ -17,9 +17,9 @@ import type { SkillExercise } from "../types";
  *           Much as the indebtedness grew, the client is not insolvent. ·
  *           The levy is irrevocable, whereas the fee is not. ·
  *           The deductible may well be raised. ·
- *           It might have been expected to cover occupational disability. ·
+ *           It might have been expected to cover long-term disability. ·
  *           Liquidity would tend to fall first. ·
- *           What the union secured is a representation of interests. ·
+ *           What the union secured is worker representation on the board. ·
  *           Into the dispute comes a warning strike. ·
  *           The reduced hours we accepted; the cut in sick pay we did not.
  *
@@ -197,7 +197,7 @@ export const enC1U07: SkillExercise[] = [
       "Much as the indebtedness grew, the client is not insolvent. The same move on a different hinge. „Much as“ admits the size of the growth and then refuses the conclusion the reader was assembling, and the refusal is the only claim in the sentence.\n" +
       "The levy is irrevocable, whereas the fee is not. „Whereas“ is the cold one. It does not concede at all; it separates, and a letter that separates two items is usually about to pay one of them.\n" +
       "Then comes the second half of this register, which is not concession but distance. The deductible may well be raised. A modal, an adverb and a passive, stacked three deep, and at the end of it nobody has raised anything and nobody has promised that anybody will.\n" +
-      "It might have been expected to cover occupational disability. Four words of machinery in front of the only word in the line that carries content. Liquidity would tend to fall first. „Would“, then „tend“, and the fall has become a habit that belongs to nobody.\n" +
+      "It might have been expected to cover long-term disability. Four words of machinery in front of the only word in the line that carries content. Liquidity would tend to fall first. „Would“, then „tend“, and the fall has become a habit that belongs to nobody.\n" +
       "This is the place where a reader from another language should stop and count. English hedges by lengthening. Each small word takes a little more weight off the claim, and the chain can run to four or five before the verb arrives.\n" +
       "Its neighbors do it in one piece. A single unstressed particle dropped into the middle of the sentence does the work of the whole English chain, and there is no second word to add because the first one has already said how sure the writer is.\n" +
       "So the same caution comes out long in one language and short in the other. A writer who carries the chain across word for word produces a sentence that sounds evasive rather than careful, and in a letter about creditworthiness that difference is the letter.",
@@ -287,7 +287,7 @@ export const enC1U07: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Nilay", text: "What the union secured is a representation of interests. That opening tells you the sentence is about to name one thing and only one." },
+      { speaker: "Nilay", text: "What the union secured is worker representation on the board. That opening tells you the sentence is about to name one thing and only one." },
       { speaker: "Emre", text: "The fourth word again." },
       { speaker: "Nilay", text: "The fourth word again. „Is“ arrives and the shape is closed. If it were „secured“ you would be in a different sentence with the object fronted instead." },
       { speaker: "Emre", text: "And the bulletin opens differently." },
@@ -385,7 +385,7 @@ export const enC1U07: SkillExercise[] = [
       { speaker: "Gökçe", text: "„Be raised“ is the third, and it is the one that matters: the passive has taken the insurance company out of its own sentence." },
       { speaker: "Gökçe", text: "Three layers, and at the end of them nothing is binding. That is the point of the line, not a failure of it." },
       { speaker: "Gökçe", text: "In this register hedging is not politeness. It is liability. A sentence that can be quoted in a court as a promise has cost somebody a great deal of money." },
-      { speaker: "Gökçe", text: "It might have been expected to cover occupational disability. Four layers this time, and an expectation that belongs to nobody has been put on the page." },
+      { speaker: "Gökçe", text: "It might have been expected to cover long-term disability. Four layers this time, and an expectation that belongs to nobody has been put on the page." },
       { speaker: "Gökçe", text: "Ask who expected it. The sentence will not tell you, and it was written so that it would not have to." },
       { speaker: "Gökçe", text: "Liquidity would tend to fall first. A fall has been turned into a habit, and a habit has no date on it." },
       { speaker: "Gökçe", text: "What survives all of this is one fact: a number will change. Everything else in the letter is machinery around that number." },
@@ -480,9 +480,9 @@ export const enC1U07: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Sendikanın elde ettiği şey bir çıkar temsili.",
-        answer: "What the union secured is a representation of interests.",
-        hint: "Dördüncü sözcük „is“: yarma cümle.",
+        tr: "Sendikanın elde ettiği şey yönetimde çalışan temsili.",
+        answer: "What the union secured is worker representation on the board.",
+        hint: "Beşinci sözcük „is“: yarma cümle.",
       },
       {
         kind: "build",

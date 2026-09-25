@@ -7,12 +7,12 @@ import type { SkillExercise } from "../types";
  *
  *   Kelime: rule, noise, quiet, clean, allow, have to, bin, fire, rent,
  *           bill, water, electricity, expensive, bank, paper, each, wash,
- *           help, tidy up, rubbish, put, dry, wet, box, carry, heavy, new,
+ *           help, tidy up, trash, put, dry, wet, box, carry, heavy, new,
  *           hard, push, down.
  *   Kalıp:  You must be quiet. · You must not make noise. · Is it allowed? ·
  *           How much is the rent? · I pay the rent every month. ·
  *           Is water included? · I tidy up my room. ·
- *           I take out the rubbish. · Do you help at home? ·
+ *           I take out the trash. · Do you help at home? ·
  *           Can you help me? · I can carry it. · This box is very heavy.
  *
  * Ünitenin yeni yapısı ZORUNLULUK ve tuzağı OLUMSUZDA: „You must not make
@@ -34,6 +34,7 @@ export const enA1U17: SkillExercise[] = [
     genre: "formal",
     intro: "Apartman kuralları. Ne yasak, ne serbest, ne zaman?",
     gloss: [
+      { de: "elevator", tr: "asansör" },
       { de: "party", tr: "parti" },
       { de: "end", tr: "bitmek" },
       { de: "included", tr: "dâhil" },
@@ -46,7 +47,7 @@ export const enA1U17: SkillExercise[] = [
       "The stairs must be clean. Please put the trash in the trash can downstairs, not in front of your door.\n\n" +
       "Is it allowed to have a party? Yes, but you have to ask your neighbors. A party has to end at eleven.\n\n" +
       "Water and electricity are not included in the rent. Each apartment pays the bill every month.\n\n" +
-      "In a fire: don't take the lift. Go down the stairs.\n\n" +
+      "In a fire: don't take the elevator. Go down the stairs.\n\n" +
       "Thank you!",
     questions: [
       {
@@ -81,8 +82,8 @@ export const enA1U17: SkillExercise[] = [
         text: "What can't you take in a fire?",
         options: [],
         answer: 0,
-        accept: ["the lift", "lift", "you can't take the lift", "you mustn't take the lift", "you must not take the lift"],
-        explain: "„In a fire: don't take the lift. Go down the stairs.“",
+        accept: ["the elevator", "elevator", "you can't take the elevator", "you mustn't take the elevator", "you must not take the elevator"],
+        explain: "„In a fire: don't take the elevator. Go down the stairs.“",
       },
     ],
   },
@@ -96,6 +97,7 @@ export const enA1U17: SkillExercise[] = [
     genre: "dialogue",
     intro: "Taşınma günü. Kutu ağır, asansör çalışmıyor — kim ne yapıyor?",
     gloss: [
+      { de: "elevator", tr: "asansör" },
       { de: "soft", tr: "yumuşak" },
       { de: "fourth", tr: "dördüncü" },
       { de: "a month", tr: "ayda" },
@@ -109,7 +111,7 @@ export const enA1U17: SkillExercise[] = [
       "Ela: I can carry it with you. One, two, three, up!\n" +
       "Kaan: Thank you. Please put it down here, next to the door.\n" +
       "Ela: Is the new apartment far?\n" +
-      "Kaan: No, it is in this street. But it is on the fourth floor and the lift doesn't work.\n" +
+      "Kaan: No, it is on this street. But it is on the fourth floor and the elevator doesn't work.\n" +
       "Ela: The stairs then! Is the box hard or soft?\n" +
       "Kaan: Hard. Don't push it — carry it.\n" +
       "Ela: I understand. How much is the rent there?\n" +
@@ -124,9 +126,9 @@ export const enA1U17: SkillExercise[] = [
       },
       {
         text: "Why do they take the stairs?",
-        options: ["the lift doesn't work", "the box is soft", "the apartment is on the first floor"],
+        options: ["the elevator doesn't work", "the box is soft", "the apartment is on the first floor"],
         answer: 0,
-        explain: "„it is on the fourth floor and the lift doesn't work“",
+        explain: "„it is on the fourth floor and the elevator doesn't work“",
       },
       {
         kind: "truefalse",
@@ -141,7 +143,7 @@ export const enA1U17: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["fourth"],
-        explain: "„But it is on the fourth floor and the lift doesn't work.“",
+        explain: "„But it is on the fourth floor and the elevator doesn't work.“",
       },
       {
         kind: "order",
@@ -178,7 +180,7 @@ export const enA1U17: SkillExercise[] = [
     genre: "dialogue",
     intro: "Ev işleri paylaşılıyor. Hangi iş önce, hangisi sonra?",
     gloss: [
-      { de: "rubbish", tr: "çöp" },
+      { de: "trash", tr: "çöp" },
       { de: "full", tr: "dolu" },
       { de: "fast", tr: "hızlı" },
       { de: "know", tr: "bilmek" },
@@ -187,7 +189,7 @@ export const enA1U17: SkillExercise[] = [
     segments: [
       { speaker: "Mother", text: "Can you help me at home today?" },
       { speaker: "Son", text: "Yes. What do I have to do?" },
-      { speaker: "Mother", text: "First, tidy up your room. Then take out the rubbish." },
+      { speaker: "Mother", text: "First, tidy up your room. Then take out the trash." },
       { speaker: "Son", text: "The trash can is full again!" },
       { speaker: "Mother", text: "Yes, and after that you have to wash the plates." },
       { speaker: "Son", text: "Wet plates or dry plates?" },
@@ -196,14 +198,14 @@ export const enA1U17: SkillExercise[] = [
       { speaker: "Mother", text: "The floor is clean. But the bathroom is not." },
       { speaker: "Son", text: "I don't like the bathroom!" },
       { speaker: "Mother", text: "I know. But you must help — we all live here." },
-      { speaker: "Son", text: "Good. Then I start with the rubbish. It is the fast work." },
+      { speaker: "Son", text: "Good. Then I start with the trash. It is the fast work." },
     ],
     questions: [
       {
         text: "What does the son have to do first?",
-        options: ["tidy up his room", "take out the rubbish", "wash the plates"],
+        options: ["tidy up his room", "take out the trash", "wash the plates"],
         answer: 0,
-        explain: "„First, tidy up your room. Then take out the rubbish.“ — ama başlarken çöpü seçiyor.",
+        explain: "„First, tidy up your room. Then take out the trash.“ — ama başlarken çöpü seçiyor.",
       },
       {
         text: "What is not clean?",
@@ -239,8 +241,8 @@ export const enA1U17: SkillExercise[] = [
         text: "What does the son start with?",
         options: [],
         answer: 0,
-        accept: ["the rubbish", "rubbish", "taking out the rubbish"],
-        explain: "„Then I start with the rubbish. It is the fast work.“",
+        accept: ["the trash", "trash", "taking out the trash"],
+        explain: "„Then I start with the trash. It is the fast work.“",
       },
     ],
   },
@@ -384,10 +386,10 @@ export const enA1U17: SkillExercise[] = [
     genre: "personal",
     intro: "Yardım ve ev işi cümlelerini yaz. İki parçalı fiillerde nesnenin yeri önemli.",
     gloss: [
-      { de: "rubbish", tr: "çöp" },
+      { de: "trash", tr: "çöp" },
       { de: "Can you help me?", tr: "bana yardım edebilir misin" },
       { de: "I tidy up my room.", tr: "odamı topluyorum" },
-      { de: "I take out the rubbish.", tr: "çöpü çıkarıyorum" },
+      { de: "I take out the trash.", tr: "çöpü çıkarıyorum" },
     ],
     minutes: 6,
     tasks: [
@@ -418,8 +420,8 @@ export const enA1U17: SkillExercise[] = [
       {
         kind: "build",
         tr: "Çöpü çıkarıyorum.",
-        answer: "I take out the rubbish.",
-        hint: "„rubbish“ sayılamaz ve tekil: the rubbish, „the rubbishes“ olmaz.",
+        answer: "I take out the trash.",
+        hint: "„trash“ sayılamaz ve tekil: the trash, „the trashes“ olmaz.",
       },
     ],
   },

@@ -105,7 +105,7 @@ export const enA2U08: SkillExercise[] = [
     genre: "story",
     intro: "Dört daire, dört kusur. Sonunda seçilen en güzeli değil.",
     gloss: [
-      { de: "advert", tr: "ilan" },
+      { de: "ad", tr: "ilan" },
       { de: "dark", tr: "karanlık" },
       { de: "high", tr: "yüksek" },
       { de: "neighbors", tr: "komşular" },
@@ -116,7 +116,7 @@ export const enA2U08: SkillExercise[] = [
       "We looked at four apartments in two weeks. The first one was cheap, but it was on the first floor and very dark.\n" +
       "The second had a beautiful balcony, but the rent was eight hundred euros. Too much for us.\n" +
       "The third one was in an old building. The rooms were spacious and bright, the ceiling was high.\n" +
-      "But the advert said \"furnished\" and there was only a bed and a table.\n" +
+      "But the ad said \"furnished\" and there was only a bed and a table.\n" +
       "The fourth apartment was small. The rooms were normal and the kitchen was old.\n" +
       "But it was quiet, the neighbors were friendly and the deposit was only one month.\n" +
       "We took the fourth. My sister asked: Why the small one?\n" +
@@ -133,7 +133,7 @@ export const enA2U08: SkillExercise[] = [
         text: "What was the problem with the third apartment?",
         options: ["it was not really furnished", "the ceiling was low", "it was on the first floor"],
         answer: 0,
-        explain: "„…the advert said \"furnished\" and there was only a bed and a table.“",
+        explain: "„…the ad said \"furnished\" and there was only a bed and a table.“",
       },
       {
         kind: "truefalse",

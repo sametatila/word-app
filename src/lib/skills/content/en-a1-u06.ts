@@ -13,7 +13,7 @@ import type { SkillExercise } from "../types";
  *           Anything else? — No, thank you. · I eat some bread. ·
  *           Is there any milk? · Do you eat eggs? ·
  *           Can I have a coffee, please? · How much is it? · I'll take it. ·
- *           A table for two, please. · Can I have the bill, please?
+ *           A table for two, please. · Can I have the check, please?
  *
  * Ünitenin zorluğu SAYILABİLİRLİK: „a coffee“ bir fincan kahve, „coffee“
  * ise kahve maddesi; „some“ olumluda, „any“ soruda ve olumsuzda duruyor.
@@ -335,7 +335,7 @@ export const enA1U06: SkillExercise[] = [
     gloss: [
       { de: "Can I have …?", tr: "… alabilir miyim" },
       { de: "I'd like …", tr: "… istiyorum" },
-      { de: "the bill", tr: "hesap" },
+      { de: "the check", tr: "hesap" },
     ],
     minutes: 6,
     tasks: [
@@ -355,8 +355,8 @@ export const enA1U06: SkillExercise[] = [
       {
         kind: "build",
         tr: "Hesabı alabilir miyim, lütfen?",
-        answer: "Can I have the bill, please?",
-        hint: "Hesap tektir ve bellidir: „the bill“, „a bill“ değil.",
+        answer: "Can I have the check, please?",
+        hint: "Hesap tektir ve bellidir: „the check“, „a check“ değil.",
       },
       {
         kind: "build",

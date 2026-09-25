@@ -97,7 +97,7 @@ export const enA2U05: SkillExercise[] = [
     intro: "Hayatın en güzel günü anlatılıyor. Üstünlük biçimlerini yakala.",
     gloss: [
       { de: "company", tr: "şirket" },
-      { de: "flat", tr: "daire" },
+      { de: "apartment", tr: "daire" },
       { de: "practical", tr: "pratik" },
       { de: "opportunity", tr: "fırsat" },
     ],
@@ -106,27 +106,27 @@ export const enA2U05: SkillExercise[] = [
       "The best day of my life was in June two years ago. It was not a big day for other people, but for me it was excellent.\n\n" +
       "I had an opportunity: a company abroad wanted me for a new job. The letter came in the morning. I read it three times.\n\n" +
       "The job was more important than my old one, and the money was better too. But the best thing was not the money. The best thing was this: somebody read my work and said yes.\n\n" +
-      "I called my mother and she cried. Then I called my sister — she is the most practical person in our family — and she asked: \"Is the flat cheaper there or more expensive?\"\n\n" +
-      "It's the best memory I have ever had. And yes, the flat was more expensive.",
+      "I called my mother and she cried. Then I called my sister — she is the most practical person in our family — and she asked: \"Is the apartment cheaper there or more expensive?\"\n\n" +
+      "It's the best memory I have ever had. And yes, the apartment was more expensive.",
     questions: [
       {
         text: "What was the opportunity?",
-        options: ["a new job abroad", "a letter from his mother", "a cheaper flat"],
+        options: ["a new job abroad", "a letter from his mother", "a cheaper apartment"],
         answer: 0,
         explain: "„a company abroad wanted me for a new job“ — mektup o haberi getiriyor.",
       },
       {
         text: "What was the best thing for the writer?",
-        options: ["somebody said yes to his work", "the money", "the flat"],
+        options: ["somebody said yes to his work", "the money", "the apartment"],
         answer: 0,
         explain: "„But the best thing was not the money… somebody read my work and said yes.“",
       },
       {
         kind: "truefalse",
-        text: "The flat abroad was cheaper.",
+        text: "The apartment abroad was cheaper.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„And yes, the flat was more expensive.“ — kız kardeşin sorusu son cümlede cevaplanıyor.",
+        explain: "„And yes, the apartment was more expensive.“ — kız kardeşin sorusu son cümlede cevaplanıyor.",
       },
       {
         kind: "gapfill",

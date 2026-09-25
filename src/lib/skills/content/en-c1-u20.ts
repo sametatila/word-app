@@ -17,7 +17,7 @@ import type { SkillExercise } from "../types";
  *           Warm soil may secrete more gas and lose its thermal balance. ·
  *           The square was revitalized; the neighbours, less so. ·
  *           We have no gentrification here; we densify and refurbish. ·
- *           Car-oriented, they said, and rather good against the traffic gridlock. ·
+ *           Car-friendly, they said, and rather good against traffic gridlock. ·
  *           The spatial planning above becomes a zoning plan below. ·
  *           That change of use, as noted, works in urban design terms only. ·
  *           In terms of scale, a fine-grained quarter serves accessibility better. ·
@@ -291,7 +291,7 @@ export const enC1U20: SkillExercise[] = [
       { speaker: "Bilge", text: "It can be answered, but only with a definition, and a meeting will not spend forty minutes on one. That is why the shape works." },
       { speaker: "Kaya", text: "Is there a number that settles it?" },
       { speaker: "Bilge", text: "The share of leases that changed hands in three years, by street. It exists, it is dull, and nobody has ever put it on a slide." },
-      { speaker: "Kaya", text: "Car-oriented, they said, and rather good against the traffic gridlock." },
+      { speaker: "Kaya", text: "Car-friendly, they said, and rather good against traffic gridlock." },
       { speaker: "Bilge", text: "The inserted clause again and the compliment at the end, and this time the compliment is a claim a whole century has tested." },
       { speaker: "Kaya", text: "What did the century find?" },
       { speaker: "Bilge", text: "That a new lane fills in about four years and the junction moves one street along. Nobody disputes it any more and it is still being proposed every spring." },
@@ -528,8 +528,8 @@ export const enC1U20: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Otomobil odaklı, dediler, ve trafik felcine karşı epeyce iyi.",
-        answer: "Car-oriented, they said, and rather good against the traffic gridlock.",
+        tr: "Otomobil odaklı, dediler, üstelik trafik felcine karşı iyi geliyor.",
+        answer: "Car-friendly, they said, and rather good against traffic gridlock.",
         hint: "Sondaki iltifatı bir yüzyıl sınadı.",
       },
       {

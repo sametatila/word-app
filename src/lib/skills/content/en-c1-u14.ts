@@ -7,17 +7,17 @@ import type { SkillExercise } from "../types";
  * Dört ders: At the bargaining table · The flexibility bargain ·
  * The vocabulary of qualification · Reporting the meeting.
  *
- *   Kelime: collective bargaining autonomy, conduct of negotiations,
+ *   Kelime: collective bargaining rights, conduct of negotiations,
  *           consensus building, code of conduct, apprenticeship contract,
- *           spin off, permeable, status insecurity, deskilling,
+ *           spin off, permeable, job insecurity, deskilling,
  *           professionalization, labor reserve, lateral hiring, competency-based approach
  *           orientation, obscure, segmentation, undermine, professional
  *           ethic, action pattern, everyday practice, platitude.
- *   Kalıp:  The collective bargaining autonomy demands that the conduct of negotiations be free. ·
+ *   Kalıp:  Collective bargaining rights demand that the conduct of negotiations be free from state interference. ·
  *           Were it not for consensus building, no code of conduct would hold. ·
  *           The union representative asks that the firm make permanent every apprenticeship contract. ·
  *           Much as they spin off the unit, the work stays in-house. ·
- *           The border, albeit permeable, does not remove the status insecurity. ·
+ *           The border, albeit permeable, does not remove the job insecurity. ·
  *           Albeit gainfully employed, many still work on the side. ·
  *           Deskilling is not the opposite of professionalization. ·
  *           A skilled labor shortage is announced; a labor reserve is counted. ·
@@ -94,7 +94,7 @@ export const enC1U14: SkillExercise[] = [
       "German cannot do this and has no need to. Its verb comes apart and the second half of it sits at the end of the clause, so the end is already occupied. The object stays in front of the verb however long it is, and a German sentence that runs long moves nothing: it simply makes the reader wait longer for the piece that closes the bracket.\n" +
       "Which gives the measurement of this unit. Both languages have an order rule for the end of a sentence, and the two rules are looking at different things. English orders by weight. German's order is settled in advance by the verb, so what a German writer varies instead is what goes first and what counts as known already.\n" +
       "This is the other half of something met a few units ago. A noun phrase in English grows from the back; here the sentence makes room at the back for it to grow into.\n" +
-      "The collective bargaining autonomy demands that the conduct of negotiations be free. And at the end of the lesson the old mood is back, many units after it was taught, on a subject it had never touched. That is the test: a shape you can use only on the paragraph you learned it in has not been learned.",
+      "Collective bargaining rights demand that the conduct of negotiations be free from state interference. And at the end of the lesson the old mood is back, many units after it was taught, on a subject it had never touched. That is the test: a shape you can use only on the paragraph you learned it in has not been learned.",
     questions: [
       {
         text: "Why did the object jump?",
@@ -277,7 +277,7 @@ export const enC1U14: SkillExercise[] = [
       { speaker: "Cem", text: "Much as they spin off the unit, the work stays in-house. Read that sentence to anybody who has been through one and watch their face." },
       { speaker: "Pelin", text: "The same desk, a new badge." },
       { speaker: "Cem", text: "The same desk, the same corridor, the same two people to ask, and a new contract with a different notice period at the bottom of page four." },
-      { speaker: "Pelin", text: "The border, albeit permeable, does not remove the status insecurity." },
+      { speaker: "Pelin", text: "The border, albeit permeable, does not remove the job insecurity." },
       { speaker: "Cem", text: "That is the line I would keep out of the whole debate. The border can be crossed both ways and it is still a border, and everybody knows which side of it they are standing on." },
       { speaker: "Pelin", text: "So permeable is not the same as gone." },
       { speaker: "Cem", text: "Permeable is what a border is called by the people who never have to cross it. Ask somebody who crosses it twice a week and you will get a different adjective." },
@@ -321,7 +321,7 @@ export const enC1U14: SkillExercise[] = [
         text: "Duyduğun cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["The border, albeit permeable, does not remove the status insecurity.", "The border, albeit permeable, does not remove the status insecurity"],
+        accept: ["The border, albeit permeable, does not remove the job insecurity.", "The border, albeit permeable, does not remove the job insecurity"],
         explain: "Fiilsiz taviz ortada; ana iddia ayakta.",
       },
       {
@@ -436,20 +436,20 @@ export const enC1U14: SkillExercise[] = [
       { de: "a code of conduct", tr: "davranış kuralları" },
       { de: "to spin off", tr: "bünyeden ayırmak" },
       { de: "permeable", tr: "geçirgen" },
-      { de: "status insecurity", tr: "statü güvencesizliği" },
+      { de: "job insecurity", tr: "iş güvencesizliği" },
     ],
     minutes: 10,
     tasks: [
       {
         kind: "build",
-        tr: "Kadın işçi temsilcisi şirketin her çıraklık sözleşmesini kalıcı hale getirmesini istiyor.",
+        tr: "Sendika temsilcisi, şirketin her çıraklık sözleşmesini kalıcı hâle getirmesini istiyor.",
         answer: "The union representative asks that the firm make permanent every apprenticeship contract.",
         hint: "Ağır nesne sona kaymış; „make something permanent“ değil.",
       },
       {
         kind: "build",
-        tr: "Toplu sözleşme özerkliği müzakere yönetiminin özgür olmasını talep eder.",
-        answer: "The collective bargaining autonomy demands that the conduct of negotiations be free.",
+        tr: "Toplu sözleşme hakkı, müzakerelerin devlet müdahalesi olmadan yürütülmesini gerektirir.",
+        answer: "Collective bargaining rights demand that the conduct of negotiations be free from state interference.",
         hint: "Eski kip yeni bir konuda: „be“, „is“ değil.",
       },
       {
@@ -466,8 +466,8 @@ export const enC1U14: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Sınır, geçirgen olsa da, statü güvencesizliğini kaldırmıyor.",
-        answer: "The border, albeit permeable, does not remove the status insecurity.",
+        tr: "Sınır, geçirgen olsa da, iş güvencesizliğini ortadan kaldırmıyor.",
+        answer: "The border, albeit permeable, does not remove the job insecurity.",
         hint: "Ara sözdeki taviz ana iddiayı düşürmüyor.",
       },
       {

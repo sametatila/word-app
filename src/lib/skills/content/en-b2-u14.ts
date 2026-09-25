@@ -166,7 +166,7 @@ export const enB2U14: SkillExercise[] = [
       "What drives the price is inflation. Not the exchange rate, not the minimum wage, not the recession that everybody is waiting for: inflation.\n" +
       "The plain version says less. „Inflation drives the price“ is a sentence about inflation and the reader can accept it and move on. The cleft makes the sentence a claim about the whole list of candidates, and a reader who disagrees now has to name a different one.\n" +
       "It was the interest rate that changed first. The second shape, with the light on a noun, and it is answering a question about order: something moved first, and this says which.\n" +
-      "What a consumer feels is not the average. Now look at this one. Both halves are pulling against each other, and the sentence is admitting that the number in the table and the experience in the shop are different objects.\n" +
+      "What a consumer feels is not the average. Now look at this one. Both halves are pulling against each other, and the sentence is admitting that the number in the table and the experience in the store are different objects.\n" +
       "That is a hard thing to say plainly without sounding like an attack on the table. „The average is misleading“ is a claim about the statistic. „What a consumer feels is not the average“ is a claim about two things that are both true, and a market economy generates that gap every day without anybody lying.\n" +
       "One of these per section. A page of clefts is a page insisting, and a recession is already loud enough without help from the grammar.",
     questions: [
@@ -180,7 +180,7 @@ export const enB2U14: SkillExercise[] = [
         text: "What does the third one admit?",
         options: ["two different objects", "one mistake", "a lie"],
         answer: 0,
-        explain: "„the number in the table and the experience in the shop are different objects.“",
+        explain: "„the number in the table and the experience in the store are different objects.“",
       },
       {
         kind: "truefalse",

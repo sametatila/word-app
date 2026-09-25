@@ -97,7 +97,7 @@ export const enA2U12: SkillExercise[] = [
     genre: "email",
     intro: "İzin mektubu. Üç rica, üç ayrı kibarlık basamağı.",
     gloss: [
-      { de: "holiday", tr: "tatil" },
+      { de: "vacation", tr: "tatil" },
       { de: "a day off", tr: "izin günü" },
       { de: "arrives", tr: "geliyor" },
       { de: "that day", tr: "o gün" },
@@ -109,7 +109,7 @@ export const enA2U12: SkillExercise[] = [
       "Could I take a day off on Friday? My sister arrives from Ankara in the morning and I would like to meet her at the station.\n" +
       "I have already talked to Mert and he can do my tasks that day. The reports for the week are finished and the meeting on Friday is not mine.\n" +
       "If Friday is not possible, would it be possible to leave early, at two? Then I can work in the morning and still meet her.\n" +
-      "I have one more question. I have five days of holiday this year. Can I take three of them in August? I ask now because my brother arranges his holiday in May.\n" +
+      "I have one more question. I have five days of vacation this year. Can I take three of them in August? I ask now because my brother arranges his vacation in May.\n" +
       "Thank you very much. If you need anything from me before Friday, tell me today or tomorrow.\n" +
       "Best wishes,\n" +
       "Nil",
@@ -139,7 +139,7 @@ export const enA2U12: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["five", "5"],
-        explain: "„I have five days of holiday this year.“ — üçü ağustos için isteniyor.",
+        explain: "„I have five days of vacation this year.“ — üçü ağustos için isteniyor.",
       },
       {
         kind: "order",
@@ -156,11 +156,11 @@ export const enA2U12: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "When does the brother arrange his holiday?",
+        text: "When does the brother arrange his vacation?",
         options: [],
         answer: 0,
         accept: ["in May", "May"],
-        explain: "„…because my brother arranges his holiday in May.“",
+        explain: "„…because my brother arranges his vacation in May.“",
       },
     ],
   },

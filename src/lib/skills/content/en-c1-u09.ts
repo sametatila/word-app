@@ -8,7 +8,7 @@ import type { SkillExercise } from "../types";
  * The language of the classic · What the poem leaves out.
  *
  *   Kelime: narrative perspective, novella, topos, canon, contextualize,
- *           decipher, dissect, interpretive pattern, ideological,
+ *           decipher, dissect, interpretive framework, ideological,
  *           Enlightenment, metaphysics, epistemology, paradoxical,
  *           fragmentary, contemplative, reminiscence, lore, relic,
  *           cipher, zeitgeist, epochal.
@@ -16,7 +16,7 @@ import type { SkillExercise } from "../types";
  *           Into the novella creeps a monologue. ·
  *           The topos we know; the canon we argue about. ·
  *           She contextualizes it; he deciphers it; they dissect it. ·
- *           The interpretive pattern claims what the reading assumes. ·
+ *           The interpretive framework openly claims what the reading merely assumes. ·
  *           To call a text ideological is not to read it. ·
  *           The Enlightenment demanded that reason be free. ·
  *           Were it not for metaphysics, epistemology would be simpler. ·
@@ -206,7 +206,7 @@ export const enC1U09: SkillExercise[] = [
       "Into the novella creeps a monologue. The place first, the subject last, and something has entered a text that was not built for it. Written the ordinary way round, a monologue creeps into the novella, the sentence reports an event. Written this way it stages one, and that is the whole difference between a summary and a scene.\n" +
       "The topos we know; the canon we argue about. Two objects at the front, and the second half repeats the shape rather than deleting the verb, because a deletion here would have made the two halves sound equal, and they are not.\n" +
       "Then the second lesson, which is about what a reader does to a text rather than what a text does to a reader. She contextualizes it; he deciphers it; they dissect it. Three verbs, three theories, and not one of them neutral: the first puts the text in a period, the second assumes a code, the third assumes a body on a table.\n" +
-      "The interpretive pattern claims what the reading assumes. That is a sentence a student ought to be able to write about their own paragraph, and most cannot, because the assumption is the part of a reading that never gets written down.\n" +
+      "The interpretive framework openly claims what the reading merely assumes. That is a sentence a student ought to be able to write about their own paragraph, and most cannot, because the assumption is the part of a reading that never gets written down.\n" +
       "To call a text ideological is not to read it. The infinitive shape again, denying an inference and leaving every fact standing. The text may well be ideological. Saying so is simply not the same act as reading it, and a paper that stops there has described its author rather than its subject.\n" +
       "The lesson underneath all four of these lines is one sentence long. Every choice about form is a choice about what the reader will be allowed to notice.",
     questions: [
@@ -392,7 +392,7 @@ export const enC1U09: SkillExercise[] = [
       { speaker: "Merve", text: "She contextualizes it; he deciphers it; they dissect it. I write those three verbs on the board in the first seminar of every year." },
       { speaker: "Merve", text: "Nobody in the room has chosen a theory yet, and all three of them have already chosen one without noticing." },
       { speaker: "Merve", text: "The first verb puts the text back into its period. The second assumes there is a code in it. The third assumes a body on a table." },
-      { speaker: "Merve", text: "The interpretive pattern claims what the reading assumes. That is the sentence I want in every essay, and I get it about twice a term." },
+      { speaker: "Merve", text: "The interpretive framework openly claims what the reading merely assumes. That is the sentence I want in every essay, and I get it about twice a term." },
       { speaker: "Merve", text: "The assumption is the part that never reaches the page. It goes into the margin of the book in the first week and stays there, unexamined, until an exam asks for it." },
       { speaker: "Merve", text: "A prevailing reading is not a true one. It is the reading that was written by the people who were given the room to write it." },
       { speaker: "Merve", text: "And a normative claim is not a wrong one either. It is a claim about what should happen, wearing the clothes of a claim about what does." },
@@ -433,7 +433,7 @@ export const enC1U09: SkillExercise[] = [
         text: "Duyduğun cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["The interpretive pattern claims what the reading assumes.", "The interpretive pattern claims what the reading assumes"],
+        accept: ["The interpretive framework openly claims what the reading merely assumes.", "The interpretive framework openly claims what the reading merely assumes"],
         explain: "İki belge, iki katman: iddia ile varsayım.",
       },
       {
@@ -504,7 +504,7 @@ export const enC1U09: SkillExercise[] = [
       {
         kind: "form",
         prompt: "Bağlaçsız koşul kartını doldur.",
-        facts: "Fiil başa geçiyor ve bağlaç atılıyor; yalnız üç fiil izinli; mekanizma Almancada da aynı; ayrım kayıtta, Almancada sıradan İngilizcede işaretli.",
+        facts: "Fiil başa geçiyor ve bağlaç atılıyor; yalnız üç fiil izinli; mekanizma Almancada da aynı; ayrım dil düzeyinde, Almancada sıradan İngilizcede işaretli.",
         fields: [
           { label: "The three verbs", answer: "were, had, should", accept: ["were had should"] },
           { label: "What is dropped", answer: "the conjunction", accept: ["if"] },

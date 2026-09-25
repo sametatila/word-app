@@ -13,7 +13,7 @@ import type { SkillExercise } from "../types";
  *           Were it not for the limitation period, the claim would stand. ·
  *           They ask that no document be inadmissible. ·
  *           A misdemeanor in one register is a civil infraction in another. ·
- *           Written as an administrative act, the same step reads colder. ·
+ *           Written as an administrative decision, the same step reads colder. ·
  *           The acquittal becomes a sentence in the spoken register. ·
  *           She stated it; he conceded it; they alleged it. ·
  *           The expert report claims what the file assumes. ·
@@ -166,7 +166,7 @@ export const enC1U06: SkillExercise[] = [
     text:
       "A misdemeanor in one register is a civil infraction in another. The same act, the same file, two words, and the second one has taken the person out of it.\n" +
       "That is the whole of this lesson and it is worth being slow about. „Misdemeanor“ has somebody in it: a person did a thing that has a name in the code. „Civil infraction“ has a procedure in it, and the person has become an item in one.\n" +
-      "Written as an administrative act, the same step reads colder. Note the verb again: „reads“, middle voice, no reader named, and this unit has now used it twice because it is the only way to talk about how a text behaves.\n" +
+      "Written as an administrative decision, the same step reads colder. Note the verb again: „reads“, middle voice, no reader named, and this unit has now used it twice because it is the only way to talk about how a text behaves.\n" +
       "The acquittal becomes a sentence in the spoken register. That one goes the other way. A word that is precise in a court becomes a word with a verdict attached in a corridor, and the man who was acquitted spends ten years explaining a term that had been in his favor.\n" +
       "So register here is not politeness and it is not style. It is which facts survive the move from one document to another, and the answer is never all of them.\n" +
       "What survives a move into the administrative register is the procedure. What survives a move into the spoken register is the outcome. Neither keeps the reasoning, and the reasoning was the part that took the court four days.\n" +
@@ -193,11 +193,11 @@ export const enC1U06: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Written as an administrative act, the same step reads ___.",
+        text: "Written as an administrative decision, the same step reads ___.",
         options: [],
         answer: 0,
         accept: ["colder"],
-        explain: "„Written as an administrative act, the same step reads colder.“",
+        explain: "„Written as an administrative decision, the same step reads colder.“",
       },
       {
         kind: "order",
@@ -206,7 +206,7 @@ export const enC1U06: SkillExercise[] = [
         answer: 0,
         items: [
           "A misdemeanor in one register is a civil infraction in another.",
-          "Written as an administrative act, the same step reads colder.",
+          "Written as an administrative decision, the same step reads colder.",
           "The acquittal becomes a sentence in the spoken register.",
           "A fact has to be rewritten in each register.",
         ],
@@ -468,7 +468,7 @@ export const enC1U06: SkillExercise[] = [
       { de: "lodge", tr: "sunmak" },
       { de: "inadmissible", tr: "kabul edilemez" },
       { de: "a misdemeanor", tr: "hafif suç" },
-      { de: "an administrative act", tr: "idari işlem" },
+      { de: "an administrative decision", tr: "idari işlem" },
     ],
     minutes: 10,
     tasks: [
@@ -492,14 +492,14 @@ export const enC1U06: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Bir kayıtta hafif suç olan, başka bir kayıtta kabahat.",
+        tr: "Bir dil düzeyinde hafif suç olan şey, başka birinde kabahattir.",
         answer: "A misdemeanor in one register is a civil infraction in another.",
         hint: "Aynı olay, iki sözcük, iki ayrı dünya.",
       },
       {
         kind: "build",
         tr: "İdari işlem olarak yazılınca aynı adım daha soğuk okunuyor.",
-        answer: "Written as an administrative act, the same step reads colder.",
+        answer: "Written as an administrative decision, the same step reads colder.",
         hint: "Orta çatı: okuyan kimse adlandırılmıyor.",
       },
     ],

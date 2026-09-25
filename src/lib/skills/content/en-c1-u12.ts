@@ -7,22 +7,22 @@ import type { SkillExercise } from "../types";
  * Dört ders: The vocabulary of migration · Who reports the past ·
  * How close is close · A warm welcome indeed.
  *
- *   Kelime: migration background, migration flow, net migration, influx,
- *           refugee convention, reinterpret, memory culture, interpretive
- *           authority, exegesis, heritage protection, customary law,
+ *   Kelime: immigrant background, migration flow, net migration, influx,
+ *           refugee convention, reinterpret, culture of remembrance, interpretive
+ *           authority, exegesis, historic preservation, customary law,
  *           venerable, kinship, lifeworld, reciprocity, socialization,
  *           pecking order, opulent, faceless, deviance, dissonance.
- *   Kalıp:  A migration background is not a migration flow. ·
+ *   Kalıp:  An immigrant background is not a migration flow. ·
  *           Out-migration and internal migration produce net migration. ·
  *           An influx is counted; a refugee convention is signed. ·
- *           One reinterprets the memory culture; another guards the interpretive authority. ·
- *           The exegesis claims what heritage protection assumes. ·
+ *           One reinterprets the culture of remembrance; another guards the interpretive authority. ·
+ *           The exegesis openly claims what the tradition merely assumes. ·
  *           To call customary law venerable is not to obey it. ·
  *           Kinship may well shape the lifeworld more than the law. ·
  *           Reciprocity might be reciprocal only in name. ·
  *           Socialization may set the pecking order before the initiation. ·
  *           The banquet was opulent; the welcome, faceless. ·
- *           We have no deviance here; we have a locally customary norm violation. ·
+ *           We have no deviance here; we have a local custom. ·
  *           Taboo breaking, they said, and rather good for the dissonance.
  *
  * Ünitenin tek öğretme noktası KARŞILAŞTIRMADA EKSİLTME. „…more than the
@@ -184,8 +184,8 @@ export const enC1U12: SkillExercise[] = [
     ],
     minutes: 12,
     text:
-      "A migration background is not a migration flow. One of those two terms is about a person and the other is about a number, and a paragraph that confuses them has said something about people that only a table could have said.\n" +
-      "The confusion is easy to make and hard to see, because the two words share their first half and a headline has room for neither of them in full.\n" +
+      "An immigrant background is not a migration flow. One of those two terms is about a person and the other is about a number, and a paragraph that confuses them has said something about people that only a table could have said.\n" +
+      "The confusion is easy to make and hard to see, because the two terms sound similar and a headline has room for neither of them in full.\n" +
       "Out-migration and internal migration produce net migration. Here is the arithmetic, and it is worth writing out because the word „net“ does something to a reader. Two movements are subtracted from one another and what comes out is a total that nobody has ever lived. It hides both directions at once, and a country with a large number moving in and a large number moving out can show the same figure as a country where nothing has happened at all.\n" +
       "An influx is counted; a refugee convention is signed. Two passives in one line and they are not the same kind of passive.\n" +
       "The first has no agent anywhere near it, and it does not need one: counting is what a table does. The second has a very definite agent that has been left out on purpose. Conventions are signed by states, on a date, in a room, and the sentence has dropped all three.\n" +
@@ -194,7 +194,7 @@ export const enC1U12: SkillExercise[] = [
       "A dead metaphor is still a metaphor. The word „uproot“ has a root in it and a reader still feels the ground give way, which is exactly why it is the right word for what it names and the wrong word for a decision made at a desk.",
     questions: [
       {
-        text: "What is a migration background about?",
+        text: "What is an immigrant background about?",
         options: ["a person", "a number", "a table"],
         answer: 0,
         explain: "„One of those two terms is about a person and the other is about a number…“",
@@ -226,7 +226,7 @@ export const enC1U12: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "A migration background is not a migration flow.",
+          "An immigrant background is not a migration flow.",
           "Out-migration and internal migration produce net migration.",
           "An influx is counted; a refugee convention is signed.",
           "A dead metaphor is still a metaphor.",
@@ -253,7 +253,7 @@ export const enC1U12: SkillExercise[] = [
     unit: 12,
     title: "A warm welcome indeed",
     genre: "dialogue",
-    intro: "Bir sözcük ötekini iptal ediyor. Hangisi hangisini?",
+    intro: "Bir ad ötekinin yerini alıyor. Hangisi hangisinin?",
     gloss: [
       { de: "halves", tr: "yarılar" },
       { de: "noun", tr: "isim" },
@@ -268,7 +268,7 @@ export const enC1U12: SkillExercise[] = [
       { de: "admitted", tr: "kabul edilmiş" },
       { de: "a rule", tr: "kural" },
       { de: "elsewhere", tr: "başka yerde" },
-      { de: "cancels", tr: "iptal ediyor" },
+      { de: "renames", tr: "yeniden adlandırıyor" },
       { de: "a modifier", tr: "niteleyen" },
       { de: "good for", tr: "iyi gelen" },
       { de: "a compliment", tr: "iltifat" },
@@ -279,10 +279,10 @@ export const enC1U12: SkillExercise[] = [
       { speaker: "İpek", text: "The banquet was opulent; the welcome, faceless. Everything spent on the table and nothing spent on the guest." },
       { speaker: "Mert", text: "The verb has gone again in the second half." },
       { speaker: "İpek", text: "It has, and the shape is now doing its third job in this level: here it holds the two halves close enough that the reader cannot read one without the other." },
-      { speaker: "Mert", text: "We have no deviance here; we have a locally customary norm violation." },
+      { speaker: "Mert", text: "We have no deviance here; we have a local custom." },
       { speaker: "İpek", text: "That is the line I would put on the wall. Something is denied and admitted in the same breath, and the second half does the admitting with a word that sounds like a rule." },
       { speaker: "Mert", text: "So the violation is real." },
-      { speaker: "İpek", text: "The violation is real and it is a violation of a rule that holds elsewhere. „Locally customary“ cancels the noun it is attached to without changing a single fact in it." },
+      { speaker: "İpek", text: "The violation is real and it breaks a rule that holds elsewhere. „Local custom“ renames the violation without changing a single fact in it." },
       { speaker: "Mert", text: "Are there many modifiers like that?" },
       { speaker: "İpek", text: "A small family and every one of them is worth knowing: alleged, nominal, former, supposed. Each of them takes back the noun it is standing in front of." },
       { speaker: "Mert", text: "And the last line?" },
@@ -298,10 +298,10 @@ export const enC1U12: SkillExercise[] = [
         explain: "„Everything spent on the table and nothing spent on the guest.“",
       },
       {
-        text: "What does „locally customary“ do?",
-        options: ["cancels the noun", "changes the facts", "names a rule"],
+        text: "What does „local custom“ do?",
+        options: ["renames the violation", "changes the facts", "names a rule"],
         answer: 0,
-        explain: "„„Locally customary“ cancels the noun it is attached to without changing a single fact in it.“",
+        explain: "„„Local custom“ renames the violation without changing a single fact in it.“",
       },
       {
         kind: "truefalse",
@@ -368,10 +368,10 @@ export const enC1U12: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Kerem", text: "One reinterprets the memory culture; another guards the interpretive authority. Two people, two verbs, and only one of them is about the past." },
+      { speaker: "Kerem", text: "One reinterprets the culture of remembrance; another guards the interpretive authority. Two people, two verbs, and only one of them is about the past." },
       { speaker: "Kerem", text: "The first is reading. The second is keeping a key, and a key is not an argument. You cannot answer it; you can only be given it or not." },
       { speaker: "Kerem", text: "That is why a new plaque in a museum takes four years and a committee. Nobody is arguing about the dates on it." },
-      { speaker: "Kerem", text: "The exegesis claims what heritage protection assumes. Two documents again, and the second one is doing its work quietly." },
+      { speaker: "Kerem", text: "The exegesis openly claims what the tradition merely assumes. A text and a tradition, and the second one is doing its work quietly." },
       { speaker: "Kerem", text: "An assumption never has to be defended, because nobody has written it down where it can be answered. Find it in a footnote or find it nowhere." },
       { speaker: "Kerem", text: "To call customary law venerable is not to obey it. The infinitive shape from earlier in this level, and here it is the whole of a generational conflict in eight words." },
       { speaker: "Kerem", text: "The age of a rule is not a reason to keep it. It is a reason to ask who wrote it and what they were afraid of at the time." },
@@ -412,8 +412,8 @@ export const enC1U12: SkillExercise[] = [
         text: "Duyduğun cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["The exegesis claims what heritage protection assumes.", "The exegesis claims what heritage protection assumes"],
-        explain: "İki belge: biri iddia ediyor, öteki varsayıyor.",
+        accept: ["The exegesis openly claims what the tradition merely assumes.", "The exegesis openly claims what the tradition merely assumes"],
+        explain: "Metin ile gelenek: biri açıkça iddia ediyor, öteki yalnızca varsayıyor.",
       },
       {
         kind: "short_answer",
@@ -468,7 +468,7 @@ export const enC1U12: SkillExercise[] = [
       {
         kind: "build",
         tr: "Göçmen kökeni bir göç akışı değildir.",
-        answer: "A migration background is not a migration flow.",
+        answer: "An immigrant background is not a migration flow.",
         hint: "Biri kişi hakkında, öteki sayı hakkında.",
       },
       {
@@ -496,11 +496,11 @@ export const enC1U12: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 12,
-    title: "The exegesis claims what heritage protection assumes",
+    title: "The exegesis openly claims what the tradition merely assumes",
     genre: "info",
-    intro: "Yorum yetkisi ve iptal eden niteleyen.",
+    intro: "Yorum yetkisi ve ihlalin yerine geçen ad.",
     gloss: [
-      { de: "memory culture", tr: "hatırlama kültürü" },
+      { de: "culture of remembrance", tr: "hatırlama kültürü" },
       { de: "an exegesis", tr: "metin yorumu" },
       { de: "customary law", tr: "örf ve âdet hukuku" },
       { de: "venerable", tr: "saygıdeğer" },
@@ -513,13 +513,13 @@ export const enC1U12: SkillExercise[] = [
       {
         kind: "build",
         tr: "Biri hatırlama kültürünü yeniden yorumluyor; bir başkası yorum yetkisini koruyor.",
-        answer: "One reinterprets the memory culture; another guards the interpretive authority.",
+        answer: "One reinterprets the culture of remembrance; another guards the interpretive authority.",
         hint: "İki fiilden yalnız biri geçmiş hakkında.",
       },
       {
         kind: "build",
-        tr: "Metin yorumu, kültürel miras korumasının varsaydığını iddia ediyor.",
-        answer: "The exegesis claims what heritage protection assumes.",
+        tr: "Metin yorumu, geleneğin yalnızca varsaydığını açıkça iddia ediyor.",
+        answer: "The exegesis openly claims what the tradition merely assumes.",
         hint: "Varsayımın savunulması gerekmiyor, çünkü yazılmamış.",
       },
       {
@@ -536,8 +536,8 @@ export const enC1U12: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Burada normdan sapma yok; yörede alışılmış bir norm ihlali var.",
-        answer: "We have no deviance here; we have a locally customary norm violation.",
+        tr: "Burada normdan sapma yok, yerel bir âdet var.",
+        answer: "We have no deviance here; we have a local custom.",
         hint: "Aynı nefeste yadsıma ve kabul.",
       },
     ],

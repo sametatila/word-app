@@ -18,7 +18,7 @@ import type { SkillExercise } from "../types";
  *           Where the semantic context is missing, the literal meaning does not hold. ·
  *           The diaspora keeps the heritage language; the enclave, the silence. ·
  *           Untranslatability survives as spirituality, a crisis of faith as a question. ·
- *           The social stratum changed; the change in values did not. ·
+ *           The social stratum changed; its values did not. ·
  *           In the report it is an efficiency gain; on the floor, work intensification. ·
  *           What management calls flexibilization, the union calls precarization. ·
  *           Standardization is a method; rationalization is a programme. ·
@@ -389,7 +389,7 @@ export const enC1U13: SkillExercise[] = [
       { speaker: "Nesrin", text: "A silence is kept in the same kitchen and nothing shows, because a silence has no speakers and leaves no trace on any form." },
       { speaker: "Nesrin", text: "Untranslatability survives as spirituality, a crisis of faith as a question. Two more, gapped the same way, and both of them are about what happens to a thing that cannot be carried across." },
       { speaker: "Nesrin", text: "What cannot be said in the second language does not disappear. It moves into whatever category the second language does have room for, and that category is usually a large and vague one." },
-      { speaker: "Nesrin", text: "The social stratum changed; the change in values did not. This is the line the whole lesson exists for, and it is a finding rather than an opinion." },
+      { speaker: "Nesrin", text: "The social stratum changed; its values did not. This is the line the whole lesson exists for, and it is a finding rather than an opinion." },
       { speaker: "Nesrin", text: "A family can move two strata in one generation. The wage changes in a year, the apartment in three, and what is said at the table changes over a much longer period." },
       { speaker: "Nesrin", text: "So a census that has recorded the income has recorded the fast half of the story and has nothing at all about the slow half." },
       { speaker: "Nesrin", text: "And a paragraph that reports the income as though it were the whole change is not wrong about any number in it." },
@@ -416,18 +416,18 @@ export const enC1U13: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The social stratum changed; the change in values did ___.",
+        text: "The social stratum changed; its values did ___.",
         options: [],
         answer: 0,
         accept: ["not"],
-        explain: "„The social stratum changed; the change in values did not.“",
+        explain: "„The social stratum changed; its values did not.“",
       },
       {
         kind: "dictation",
         text: "Duyduğun cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["The social stratum changed; the change in values did not.", "The social stratum changed; the change in values did not"],
+        accept: ["The social stratum changed; its values did not.", "The social stratum changed; its values did not"],
         explain: "Hızlı yarı ile yavaş yarı aynı cümlede.",
       },
       {
@@ -539,8 +539,8 @@ export const enC1U13: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Toplumsal katman değişti; değerlerin dönüşümü değişmedi.",
-        answer: "The social stratum changed; the change in values did not.",
+        tr: "Toplumsal katman değişti, değerleri değişmedi.",
+        answer: "The social stratum changed; its values did not.",
         hint: "Hızlı yarı ile yavaş yarı.",
       },
       {

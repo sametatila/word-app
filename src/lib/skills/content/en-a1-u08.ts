@@ -3,7 +3,7 @@ import type { SkillExercise } from "../types";
 /**
  * EN · A1 · Ünite 8 — "Meyve sebze, ödeme, günlük akış, saat".
  *
- * Dört ders: Fruit and vegetables · Paying the bill · Daily routine ·
+ * Dört ders: Fruit and vegetables · Paying the check · Daily routine ·
  * Telling the time.
  *
  *   Kelime: apple, tomato, potato, fresh, kilo, banana, carrot, vegetable,
@@ -12,7 +12,7 @@ import type { SkillExercise } from "../types";
  *           in the morning, time, hour, clock, half, quarter, midnight,
  *           at night, lunchtime.
  *   Kalıp:  I'd like a kilo of apples. · Are the tomatoes fresh? ·
- *           How much are the apples? · Can I have the bill, please? ·
+ *           How much are the apples? · Can I have the check, please? ·
  *           Can I pay by card? · Can we pay together? ·
  *           I get up at seven. · He works every day. ·
  *           Do you work on Sunday? · What time is it? ·
@@ -89,7 +89,7 @@ export const enA1U08: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 8,
-    title: "Paying the bill",
+    title: "Paying the check",
     genre: "dialogue",
     intro: "Hesap ödeniyor. Nakit mi, kart mı, birlikte mi?",
     gloss: [
@@ -101,7 +101,7 @@ export const enA1U08: SkillExercise[] = [
     ],
     minutes: 4,
     text:
-      "Waiter: Here is the bill. Twenty-four euros, please.\n" +
+      "Waiter: Here is the check. Twenty-four euros, please.\n" +
       "Ali: Can we pay together?\n" +
       "Waiter: Of course.\n" +
       "Eda: I'd like to pay by card.\n" +
@@ -116,10 +116,10 @@ export const enA1U08: SkillExercise[] = [
       "Waiter: Here. Have a good evening!",
     questions: [
       {
-        text: "How much is the bill?",
+        text: "How much is the check?",
         options: ["twenty-four euros", "twenty euros", "ten euros"],
         answer: 0,
-        explain: "„Here is the bill. Twenty-four euros, please.“ — on, kapanış saati.",
+        explain: "„Here is the check. Twenty-four euros, please.“ — on, kapanış saati.",
       },
       {
         text: "How do they pay?",
@@ -148,7 +148,7 @@ export const enA1U08: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "Here is the bill.",
+          "Here is the check.",
           "Can we pay together?",
           "I'd like to pay by card.",
           "What time is it now?",

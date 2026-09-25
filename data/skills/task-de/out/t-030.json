@@ -290,8 +290,8 @@
   "de": "Wiedergegeben rückt „has expired“ eine Stufe zurück zu „had expired“."
  },
  {
-  "tr": "„Yours sincerely“ adı bildiğinde; bilmediğinde „Yours faithfully“ olurdu.",
+  "tr": "Amerikan resmî mektubunda kapanış kısaca „Sincerely“; İngilizler „Yours sincerely“ der.",
   "kind": "build.hint",
-  "de": "„Yours sincerely“ steht, wenn man den Namen kennt; sonst „Yours faithfully“. Deutsch trennt das nicht."
+  "de": "Im amerikanischen Geschäftsbrief lautet der Schluss kurz „Sincerely“; in Großbritannien sagt man „Yours sincerely“."
  }
 ]

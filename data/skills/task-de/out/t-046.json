@@ -75,9 +75,9 @@
   "de": "Wäre da nicht die Bildungsungleichheit, würde die Klassengesellschaft verblassen."
  },
  {
-  "tr": "Yüksek kültür bir kayıt, başat kültür bir iddiadır.",
+  "tr": "Yüksek kültür bir üsluptur, başat kültür bir iddiadır.",
   "kind": "build.tr",
-  "de": "Hochkultur ist eine Sprachebene, Leitkultur ist ein Anspruch."
+  "de": "Hochkultur ist ein Stil, Leitkultur ist ein Anspruch."
  },
  {
   "tr": "Ayrım hattının arkasında yabancı düşmanlığı duruyor.",
@@ -140,9 +140,9 @@
   "de": "Jener Zorn ist, wie erwähnt, der Groll einer früheren Seite."
  },
  {
-  "tr": "Burada normdan sapma yok; yörede alışılmış bir norm ihlali var.",
+  "tr": "Burada normdan sapma yok, yerel bir âdet var.",
   "kind": "build.tr",
-  "de": "Wir haben hier keine Abweichung; wir haben einen ortsüblichen Normverstoß."
+  "de": "Hier gibt es keine Abweichung, hier gibt es einen örtlichen Brauch."
  },
  {
   "tr": "Ötekileştirmenin yaptığı şey bir marjinal grubu adlandırmaktır.",
@@ -155,9 +155,9 @@
   "de": "Was der eine eine Kulturszene nennt, nennt der andere eine Parallelgesellschaft."
  },
  {
-  "tr": "Metin yorumu, kültürel miras korumasının varsaydığını iddia ediyor.",
+  "tr": "Metin yorumu, geleneğin yalnızca varsaydığını açıkça iddia ediyor.",
   "kind": "build.tr",
-  "de": "Die Exegese behauptet, was der Denkmalschutz voraussetzt."
+  "de": "Die Exegese behauptet offen, was die Überlieferung bloß voraussetzt."
  },
  {
   "tr": "Melezlik işareti olsa da uyum yeteneği yalnız tek taraftan isteniyor.",

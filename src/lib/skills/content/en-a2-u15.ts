@@ -262,7 +262,7 @@ export const enA2U15: SkillExercise[] = [
     genre: "dialogue",
     intro: "Kırık ekran. Tamir mi, yenisi mi?",
     gloss: [
-      { de: "guarantee", tr: "garanti" },
+      { de: "warranty", tr: "garanti" },
       { de: "battery", tr: "pil" },
       { de: "model", tr: "model" },
       { de: "under water", tr: "suyun altında" },
@@ -272,7 +272,7 @@ export const enA2U15: SkillExercise[] = [
       { speaker: "Ela", text: "Hello. My screen is broken." },
       { speaker: "Deniz", text: "Let me see. Was it under water?" },
       { speaker: "Ela", text: "No. It fell from the table on Sunday." },
-      { speaker: "Deniz", text: "Then a new screen. It's still under guarantee, but the guarantee does not pay for that." },
+      { speaker: "Deniz", text: "Then a new screen. It's still under warranty, but the warranty does not pay for that." },
       { speaker: "Ela", text: "How much is it?" },
       { speaker: "Deniz", text: "A hundred and twenty with the spare part. Or a hundred and sixty for a new one — the small model." },
       { speaker: "Ela", text: "That is a hard choice." },
@@ -299,10 +299,10 @@ export const enA2U15: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The guarantee pays for the screen.",
+        text: "The warranty pays for the screen.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„It's still under guarantee, but the guarantee does not pay for that.“",
+        explain: "„It's still under warranty, but the warranty does not pay for that.“",
       },
       {
         kind: "gapfill",

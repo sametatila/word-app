@@ -5,9 +5,9 @@
   "en": "„I don't like the bathroom!“"
  },
  {
-  "tr": "„But the tap is broken — it doesn't work.“",
+  "tr": "„But the faucet is broken — it doesn't work.“",
   "kind": "explain",
-  "en": "„But the tap is broken — it doesn't work.“"
+  "en": "„But the faucet is broken — it doesn't work.“"
  },
  {
   "tr": "Arıza bildiriliyor. Hangi arıza kimin işi?",
@@ -15,9 +15,9 @@
   "en": "A fault is being reported. Which fault belongs to whom?"
  },
  {
-  "tr": "„It is on the first floor.“ — kiler alt katta.",
+  "tr": "„It is on the first floor.“ — bodrum katı alt katta.",
   "kind": "explain",
-  "en": "„It is on the first floor.“ — the cellar is downstairs."
+  "en": "„It is on the first floor.“ — the basement is downstairs."
  },
  {
   "tr": "Bahçe ve balkon anlatılıyor. Ne var, ne bozuk?",
@@ -40,14 +40,14 @@
   "en": "Write the sentences for a fault. At the end, fill in the fault form."
  },
  {
-  "tr": "„In a fire: don't take the lift. Go down the stairs.“",
+  "tr": "„In a fire: don't take the elevator. Go down the stairs.“",
   "kind": "explain",
-  "en": "„In a fire: don't take the lift. Go down the stairs.“"
+  "en": "„In a fire: don't take the elevator. Go down the stairs.“"
  },
  {
-  "tr": "„it is on the fourth floor and the lift doesn't work“",
+  "tr": "„it is on the fourth floor and the elevator doesn't work“",
   "kind": "explain",
-  "en": "„it is on the fourth floor and the lift doesn't work“"
+  "en": "„it is on the fourth floor and the elevator doesn't work“"
  },
  {
   "tr": "Ev işleri paylaşılıyor. Hangi iş önce, hangisi sonra?",
@@ -70,9 +70,9 @@
   "en": "A flat is shown. Which room is where, and what is in it?"
  },
  {
-  "tr": "„I play football every Saturday.“ — pazartesi yüzme günü.",
+  "tr": "„I play soccer every Saturday.“ — pazartesi yüzme günü.",
   "kind": "explain",
-  "en": "„I play football every Saturday.“ — Monday is the swimming day."
+  "en": "„I play soccer every Saturday.“ — Monday is the swimming day."
  },
  {
   "tr": "Önce futbol, sonra yüzme, sonra koşu, en son kız kardeşi.",
@@ -80,9 +80,9 @@
   "en": "First football, then swimming, then running, last his sister."
  },
  {
-  "tr": "„But it is on the fourth floor and the lift doesn't work.“",
+  "tr": "„But it is on the fourth floor and the elevator doesn't work.“",
   "kind": "explain",
-  "en": "„But it is on the fourth floor and the lift doesn't work.“"
+  "en": "„But it is on the fourth floor and the elevator doesn't work.“"
  },
  {
   "tr": "„I water the plants every morning.“ — „water“ burada fiil.",
@@ -240,9 +240,9 @@
   "en": "Write the existence sentence. The structure has two parts and follows the noun behind it."
  },
  {
-  "tr": "„First, tidy up your room. Then take out the rubbish.“ — ama başlarken çöpü seçiyor.",
+  "tr": "„First, tidy up your room. Then take out the trash.“ — ama başlarken çöpü seçiyor.",
   "kind": "explain",
-  "en": "„First, tidy up your room. Then take out the rubbish.“ — but he starts with the rubbish."
+  "en": "„First, tidy up your room. Then take out the trash.“ — but he starts with the rubbish."
  },
  {
   "tr": "„Yes, there is one next to the kitchen.“ — „one“ burada „a bathroom“ yerine geçiyor.",
@@ -260,9 +260,9 @@
   "en": "„The kitchen is small, but there is a fridge and a table…“ — the big one is the living room."
  },
  {
-  "tr": "„The tap in the kitchen is broken. It doesn't work.“ — yazıcı kilerde, telefon koridorda.",
+  "tr": "„The faucet in the kitchen is broken. It doesn't work.“ — yazıcı bodrum katında, telefon koridorda.",
   "kind": "explain",
-  "en": "„The tap in the kitchen is broken. It doesn't work.“ — the printer is in the cellar, the telephone in the hall."
+  "en": "„The faucet in the kitchen is broken. It doesn't work.“ — the printer is in the basement, the telephone in the hall."
  },
  {
   "tr": "„she lives next door with her two children. She is very friendly.“ — yaşlı adam alt katta.",

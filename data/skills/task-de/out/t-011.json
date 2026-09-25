@@ -35,9 +35,9 @@
   "de": "In der verneinten Kurzantwort klebt „not“ am Hilfsverb: do + not → don't."
  },
  {
-  "tr": "„have got“ sorusunda „have“ öne geçer, tıpkı „be“ gibi: You have → Have you?",
+  "tr": "Amerikan İngilizcesinde „have“ sorusu „do“ ile kurulur: You have → Do you have?",
   "kind": "rewrite.why",
-  "de": "In der Frage mit „have got“ rückt „have“ nach vorn, genau wie bei „be“: You have → Have you? Deutsch macht es ebenso: Du hast → Hast du?"
+  "de": "Im amerikanischen Englisch wird die Frage mit „have“ mit „do“ gebildet: You have → Do you have? Deutsch stellt einfach um: Du hast → Hast du?"
  },
  {
   "tr": "Kısa cevap sorunun yardımcı fiilini tekrarlar: soru „do“ ile kurulduysa cevap da „do“ taşır.",
@@ -145,9 +145,9 @@
   "de": "Vor dem Monatsnamen steht „in“, wo das Deutsche „im“ sagt: in May, in June."
  },
  {
-  "tr": "Üçüncü tekil kişide „have“ → „has“: she has got, he has got.",
+  "tr": "Üçüncü tekil kişide „have“ → „has“: she has, she's got.",
   "kind": "build.hint",
-  "de": "In der dritten Person Singular wird „have“ zu „has“: she has got, he has got."
+  "de": "In der dritten Person Singular wird „have“ zu „has“: she has, she's got."
  },
  {
   "tr": "Soru „do“ ile kuruluyor, çünkü fiil „be“ değil: How do you …?",
@@ -155,9 +155,9 @@
   "de": "Die Frage wird mit „do“ gebildet, weil das Verb nicht „be“ ist: How do you …?"
  },
  {
-  "tr": "„have got“ sahip olmayı söyler; konuşmada „I've got“ diye büzülür.",
+  "tr": "Düz cümlede „I have a brother.“; konuşmada çok sık „I've got“ duyulur.",
   "kind": "build.hint",
-  "de": "„have got“ drückt Besitz aus; beim Sprechen zieht es sich zu „I've got“ zusammen."
+  "de": "Im einfachen Satz „I have a brother.“; beim Sprechen hört man sehr oft „I've got“."
  },
  {
   "tr": "İki „do“ var: ilki soruyu kuran yardımcı, ikincisi „yapmak“ fiili.",
