@@ -12,8 +12,8 @@ import type { SkillExercise } from "../types";
  *           berufen, stützen · die Redewendung, wörtlich, unter vier Augen,
  *           Hand und Fuß haben, die Daumen drücken, jemandem unter die Arme
  *           greifen, aus einer Mücke einen Elefanten machen, der Wolf im
- *           Schafspelz · Tomaten auf den Augen, Das ist mir Wurst, in den
- *           sauren Apfel beißen, die Extrawurst, das Haar in der Suppe, eine
+ *           Schafspelz · Tomaten auf den Augen haben, Das ist mir Wurst, in den
+ *           sauren Apfel beißen, die Extrawurst, das Haar in der Suppe suchen, eine
  *           Extrawurst braten, die Hände in den Schoß legen, jemandem auf den
  *           Zahn fühlen
  *
@@ -303,11 +303,11 @@ export const c1U08: SkillExercise[] = [
     genre: "dialogue",
     intro: "Yiyecek deyimleri iş ortamında. Hangisi toplantıda durur?",
     gloss: [
-      { de: "Tomaten auf den Augen", tr: "göz göre göre görmemek", en: "blind to the obvious" },
+      { de: "Tomaten auf den Augen haben", tr: "göz göre göre görmemek", en: "to be blind to the obvious" },
       { de: "Das ist mir Wurst", tr: "umurumda değil", en: "I could not care less" },
       { de: "in den sauren Apfel beißen", tr: "acı lokmayı yutmak", en: "to bite the bullet" },
       { de: "die Extrawurst", tr: "ayrıcalık", en: "special treatment" },
-      { de: "das Haar in der Suppe", tr: "kusur arama", en: "nitpicking" },
+      { de: "das Haar in der Suppe suchen", tr: "kusur aramak", en: "to nitpick" },
       { de: "jemandem auf den Zahn fühlen", tr: "ağzını aramak", en: "to sound someone out" },
       { de: "die Hände in den Schoß legen", tr: "eli böğründe oturmak", en: "to sit back and do nothing" },
       { de: "die Sitzung", tr: "oturum", en: "session" },

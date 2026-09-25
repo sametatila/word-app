@@ -6,13 +6,13 @@ import type { SkillExercise } from "../types";
  * Dört ders: Schwein gehabt! · Ein Gewitter zieht auf · Blau machen ·
  * Am Ball bleiben.
  *
- *   Kelime: Schwein gehabt, die Katze im Sack kaufen, Pferde stehlen können,
+ *   Kelime: Schwein gehabt, die Katze im Sack kaufen, mit jemandem Pferde stehlen können,
  *           auf den Hund kommen, einen Bären aufbinden, den Stier bei den
  *           Hörnern packen, in den Wind reden, schwarzmalen · dicke Luft, der
  *           Lichtblick, im Trüben fischen, der Sturm im Wasserglas, eiskalt,
  *           auf Wolke sieben schweben, bei Wind und Wetter, das Eis brechen ·
  *           blaumachen, schwarzfahren, das Gelbe vom Ei, grünes Licht geben,
- *           rotsehen, die weiße Weste, blauäugig, das Salz in der Suppe ·
+ *           rotsehen, eine weiße Weste haben, blauäugig, das Salz in der Suppe ·
  *           am Ball bleiben, die Latte hoch legen, ein Eigentor schießen, das
  *           Handtuch werfen, in Führung gehen, die Spielregeln kennen, aus dem
  *           Rennen sein, aus dem gleichen Holz geschnitzt
@@ -42,7 +42,7 @@ export const c1U09: SkillExercise[] = [
       { de: "einen Bären aufbinden", tr: "birini işletmek", en: "to pull someone's leg" },
       { de: "auf den Hund kommen", tr: "batmak", en: "to go to the dogs" },
       { de: "den Stier bei den Hörnern packen", tr: "boğayı boynuzundan tutmak", en: "to take the bull by the horns" },
-      { de: "Pferde stehlen können", tr: "her işe girişilecek kadar güvenmek", en: "to be up for anything" },
+      { de: "mit jemandem Pferde stehlen können", tr: "birine sonuna kadar güvenebilmek", en: "to be able to count on someone for anything" },
       { de: "in den Wind reden", tr: "boşa konuşmak", en: "to talk to a brick wall" },
       { de: "meiste", tr: "çoğu", en: "most" },
       { de: "zuweisen", tr: "tahsis etmek", en: "to allocate" },
@@ -139,7 +139,7 @@ export const c1U09: SkillExercise[] = [
       { de: "grünes Licht geben", tr: "yeşil ışık yakmak", en: "to give the green light" },
       { de: "schwarzfahren", tr: "kaçak binmek", en: "to travel without a ticket" },
       { de: "blaumachen", tr: "işi asmak", en: "to skive off" },
-      { de: "die weiße Weste", tr: "sicili temiz", en: "a clean record" },
+      { de: "eine weiße Weste haben", tr: "sicili temiz olmak", en: "to have a clean record" },
       { de: "das Gelbe vom Ei", tr: "işin en iyisi", en: "the best of the bunch" },
       { de: "die Sitzung", tr: "oturum", en: "session" },
       { de: "mild", tr: "yumuşak", en: "mild" },
