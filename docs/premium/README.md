@@ -123,6 +123,14 @@ olmadan (ALTER … RENAME, deploy'dan önce yedekli) yeniden adlandırılır —
 ortak hak; "Patika ve Beceriler ortak / tek havuz" anlatımı; kotasız Patika sohbeti; Cepte
 yürüyüşteki sayılmayan "günde 20 tur".
 
+**Yönlendirme ilkesi (Samet, zorunlu):** arayüz kullanıcıyı doğru bilgilendirir ve YÖNLENDİRİR;
+hiçbir kilitte kullanıcı "ne yapacağım" diye kalmaz, kendi kendine ilerler ve takip eder. Her
+kotalı yüzeyde (deneme sınavı, Patika Konuşma/Yazma, Beceriler Konuşma/Yazma, yürüyüş modu,
+paywall) bir sonraki hakkın koşulları ve durumu görünür — ör. "Deneme sınavını tamamladın ✓ ·
+7 günlük seri 3/7 · 4 gün sonra ikinci deneme sınavı ücretsiz açılır" — yanında "Premium'la hemen
+aç". Hak açılınca kısa bir kutlama efekti (reduceMotion'a saygılı). Durum sunucuda tek bir saf
+fonksiyonla hesaplanır, web ve mobil aynı bilgiyi gösterir.
+
 **Paywall (web, iOS, Android):** her satır bu tabloyla birebir; hakların **nasıl kazanıldığı**
 (tamamla + 7 günlük seri) açıkça yazılır. Premium'daki sınırlar "sınırsız" denmeden "kötüye
 kullanımı önleyen günlük üst sınır" diye anılır (App Store 3.1.2), sayıları Premium ekranında.
