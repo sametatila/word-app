@@ -1,5 +1,4 @@
 [
- { "id": 209132, "beispielDe": "Ich habe die Wohnung über eine Anzeige gefunden." },
  { "id": 209133, "beispielDe": "Essensreste kommen in die braune Tonne." },
  { "id": 209134, "beispielDe": "Der Verkäufer zeigte mir die kleinere Größe." },
  { "id": 209135, "beispielDe": "Ihr Paket ist in der Wohnung des Nachbarn." },
@@ -12,14 +11,11 @@
  { "id": 209142, "beispielDe": "Samstagabends ist die Straße laut." },
  { "id": 209143, "beispielDe": "Nimm eine dicke Jacke mit, draußen ist es kalt." },
  { "id": 209144, "beispielDe": "Ein halber Laib reicht für eine Person." },
- { "id": 209145, "beispielDe": "Ich übe täglich zwanzig Minuten Gitarre." },
  { "id": 209146, "beispielDe": "Es war das Kabel, nicht der Motor." },
  { "id": 209147, "beispielDe": "Der Bus fährt vom alten Terminal ab." },
  { "id": 209148, "beispielDe": "Diese Hose ist mir zu lang." },
  { "id": 209149, "beispielDe": "Der Gesamtbetrag für die zwei Nächte beträgt 180 Euro." },
- { "id": 209150, "beispielDe": "Wir brauchen zwei Liter Milch." },
  { "id": 209151, "beispielDe": "Ein Lastwagen blockierte die schmale Straße." },
- { "id": 209152, "beispielDe": "Nach dem Mittagessen gehen wir zum Hafen." },
  { "id": 209153, "beispielDe": "Füge der Suppe etwas Salz hinzu." },
  { "id": 209154, "beispielDe": "Die Tonnen stehen im Hinterhof hinter dem Haus." },
  { "id": 209155, "beispielDe": "An der Decke ist schon wieder Wasser." },
@@ -45,8 +41,12 @@
  { "id": 209175, "beispielDe": "Die rechte Fahrspur ist bis Freitag gesperrt." },
  { "id": 209176, "beispielDe": "Das Rohr unter der Spüle ist kaputt." },
  { "id": 209177, "beispielDe": "Der Käfig wird zweimal pro Woche gereinigt." },
- { "id": 209178, "beispielDe": "Wer organisiert die Reise im September?" },
  { "id": 209179, "beispielDe": "Sie ist fähig, in drei Sprachen zu arbeiten." },
  { "id": 209180, "beispielDe": "Die Geschichte der Stadt steht in diesem Buch." },
- { "id": 209209, "beispielDe": "Für Ihr Paket brauchen Sie einen Karton." }
+ { "id": 209209, "beispielDe": "Für Ihr Paket brauchen Sie einen Karton." },
+ { "id": 209214, "beispielDe": "Allein ergab es keinen Sinn." },
+ { "id": 209215, "beispielDe": "Ich brauche eine kleine Schraube für meine Brille." },
+ { "id": 209216, "beispielDe": "Mein Nachbar hat mir gestern seine Bohrmaschine geliehen." },
+ { "id": 209217, "beispielDe": "Schicken Sie ein Foto von dem Fahrrad." },
+ { "id": 209219, "beispielDe": "Ich kann nur in kurzen Blöcken lernen." }
 ]
