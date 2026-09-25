@@ -55,7 +55,7 @@ değiştirilemez.** Yeni dosyaları listede önlerine ekle: eskiler 50. yuvanın
 zamanlanmazlar. A2'de tam olarak böyle yapıldı ve ölçümle doğrulandı.
 
 **(c) Birikimli tekrar zaten var, yazman gerekmiyor.** `deriveQuiz` (e6885d3)
-quiz ve checkpoint sorularının üçte birini geçmiş ünitelerden alıyor. Seviyeden
+quiz ve ünite quizi sorularının üçte birini geçmiş ünitelerden alıyor. Seviyeden
 bağımsız çalışır.
 
 **(d) Seviye sınavı okuma/dinlemeyi beceri bankasından çeker.** Modül sınavı

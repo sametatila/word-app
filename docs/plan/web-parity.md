@@ -9674,9 +9674,9 @@ hiç yoksa karşılaştırılacak sayı da yok.
 Seçim mantığı birebir taşındı: asal çarpan 37, `take` çarpanı 13, adım ve
 guard dahil. İkisi de aynı gerekçeyi taşıyor — düz `index % pool` her ünitede
 tek kayma verir ve yirmi beş ünite havuzun aynı dar bandına düşer; `take`
-başlangıca girmezse aynı ünitenin quiz'i (2 tekrar) ile checkpoint'i (4
+başlangıca girmezse aynı ünitenin quiz'i (2 tekrar) ile ünite quizi (4
 tekrar) aynı yerden başlar. Örneklerle doğruladım: ünite 1 quiz `rw23,rw3`,
-checkpoint `rw9,rw19,rw29,rw39` — ayrı setler.
+ünite quizi `rw9,rw19,rw29,rw39` — ayrı setler.
 
 Açıklamanın "(önceki ünitelerden tekrar)" satırı webde `quizw.` önekliydi,
 yani **web-only sözlükte**. Ortak sözlüğe `quiz.from_earlier` olarak taşındı

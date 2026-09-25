@@ -1,8 +1,8 @@
 # Immersion — ikinci mod (skills → konuşmalara harmanlanmış)
 
-Durum: KOD TAMAM (Faz 1/2/3/4 + gating + quiz/checkpoint türetme). 2026-08-28.
+Durum: KOD TAMAM (Faz 1/2/3/4 + gating + quiz/ünite quizi türetme). 2026-08-28.
 `/immersion` gezilebilir: konuşmalar (iskelet, gating) + beceriler (köprü/placeholder)
-+ quiz/checkpoint (ünitenin kendi kelime/kalıbından TÜRETİLEN oynanabilir pratik).
++ quiz/ünite quizi (ünitenin kendi kelime/kalıbından TÜRETİLEN oynanabilir pratik).
 Kalan: içerik authoring (temalı read/listen/write + gramer) + quiz tamamlanma
 sunucu kaydı (follow-up) + opsiyonel `user_skills` DELETE (senin elinle).
 
@@ -27,17 +27,17 @@ kurmasına yardım.** İki mod:
 
 ## Yeni model
 - **Track** (kurs+seviye başına) = sıralı **Unit**'ler.
-- **Unit** (≈ mevcut modül, temalı) = sıralı **Item**'lar + sonda **checkpoint**.
+- **Unit** (≈ mevcut modül, temalı) = sıralı **Item**'lar + sonda **ünite quizi**.
 - **Item tipleri** (harman — Duolingo'daki farklı düğümler gibi):
   - `conversation`  → mevcut konuşma (üretim/chat omurgası)
   - `read` / `listen` / `write` → mevcut beceri egzersizleri (oynatıcılar yeniden kullanılır)
   - `grammar` → odaklı dilbilgisi mini-drill (cheatsheet/drill'den; içerik sonra)
   - `quiz`   → kısa karışık hatırlama (ünitenin kelime+kalıpları)
-  - `checkpoint` → ünite/grup bitirme sınavı → sonraki grubu açar
+  - `unitQuiz` → ünite/grup bitirme sınavı → sonraki grubu açar
 - İçerik ince; plan **slotları** tanımlar, içerik zamanla dolar (A1 100 başlık gibi).
 
 **Serpiştirme deseni (sahibin kararı):** ünite = **4 `conversation` + 2 `read` + 2 `listen`
-+ 2 `write`** (+ ara sıra `grammar`/`quiz`), sonda `checkpoint`. Beceriye ağırlık verilmiş
++ 2 `write`** (+ ara sıra `grammar`/`quiz`), sonda `unitQuiz`. Beceriye ağırlık verilmiş
 (4/2/2/2), tek yönlü değil dört yönlü.
 
 ## İçerik stratejisi (sahibin kararı)
@@ -46,21 +46,21 @@ kurmasına yardım.** İki mod:
 - **SİLİNİR + sıfırdan kurulur:** `read`/`listen`/`write` (120/120/80), **`grammar`**, `exam`, `quiz`
   içeriğinin TAMAMI. Hepsi yetersiz; grammar↔conversation bağlanma noktaları sınırlı olduğu için grammar
   da dâhil. **Motor/oynatıcılar korunur, yalnız İÇERİK silinir.**
-- Yeni read/listen/write/grammar/quiz/checkpoint içeriği **ünitenin conversation içeriğine göre başlık
+- Yeni read/listen/write/grammar/quiz/unitQuiz içeriği **ünitenin conversation içeriğine göre başlık
   belirlenip** ona göre şekillenir — bir sonraki (içerik) adımda, zamanla.
   - **ARAÇ HAZIR:** `lib/immersion/brief.ts` (`unitBriefs`/`buildUnitBriefs`) her üniteyi kendi
     4 konuşmasından **tema + hedef kelime + kalıp + cando**'ya indirger — temalı içeriğin ŞARTNAMESİ.
     `npm run briefs -- A1 de` insan-okur döküm verir. Yeni içerik bu havuzu kullanmalı ki
     ünite konuşmalarıyla aynı dünyada olsun. ("conversation'a göre türetilir" bunun somut hâli.)
 - Göç sonrası track: ünitelerde 4 conversation + boş/placeholder (read/listen/write/grammar/quiz) slotları
-  + checkpoint; slotlar yeni içerikle dolar.
+  + ünite quizi; slotlar yeni içerikle dolar.
 
 ## Gating / ilerleme (Duolingo mantığı)
 - Kullanıcının CEFR'i (`profiles.level`) → **başlangıç ünitesi**.
 - Altındaki üniteler açık (tekrar/serbest); seviyesinden itibaren **kilitli**:
   bir üniteyi bitirince sonraki açılır.
 - Ekranda ilk N ünite; gerisi kilitli + **sayfalı** ("ilk 10, sonra 11–25…").
-- Checkpoint geçme eşiği (örn. ≥%70) grup→grup geçişi kapısı.
+- Ünite quizi geçme eşiği (örn. ≥%70) grup→grup geçişi kapısı.
 
 **Gating ölçütü — AŞAMALI (uygulama kararı, `state.ts`):**
 - **Şimdi (interim): İSKELETE bağlı** — ünite, KONUŞMALARI bitince tamamlanır ve
@@ -69,7 +69,7 @@ kurmasına yardım.** İki mod:
   rastgele/eksik içeriği kapı yapmak yanlış olurdu. "conversation = iskelet" kararıyla
   birebir. Placeholder (ref=null) item'lar zaten hiç saymıyor.
 - **Sonra (temalı içerik oturunca): "tüm item'lar"a sıkılaştırılır** — o zaman her
-  ünitede tekdüze temalı beceri+checkpoint olacağı için kapı adil olur.
+  ünitede tekdüze temalı beceri+ünite quizi olacağı için kapı adil olur.
 
 ## Nereye ne gidiyor
 | Eski | Yeni |
@@ -77,8 +77,8 @@ kurmasına yardım.** İki mod:
 | Konuşmalar `de-a1-b01`… | `conversation` item'ları — track omurgası |
 | Beceri okuma/dinleme/yazma **içeriği** (`skill_exercises`) | **SİLİNİR**; `read`/`listen`/`write` item slotları ünite içeriğine göre sıfırdan kurulur (oynatıcılar korunur) |
 | Dilbilgisi içeriği (cheatsheet/drill) | **SİLİNİR**; `grammar` item'ları conversationlara göre sıfırdan (bağlama noktaları sınırlıydı) |
-| Sınav + quiz **içeriği** | **SİLİNİR**; `checkpoint`/`quiz` ünite içeriğine göre yeniden (motor korunur) |
-| Modül sınavı düzeni + seviye | `checkpoint` (motor yeniden kullanılır) |
+| Sınav + quiz **içeriği** | **SİLİNİR**; `unitQuiz`/`quiz` ünite içeriğine göre yeniden (motor korunur) |
+| Modül sınavı düzeni + seviye | `unitQuiz` (motor yeniden kullanılır) |
 | **Skills bölümü / `/skills` slug / hub / meta / `SkillId` kavramı** | **tamamen kaldırılır** |
 | reading/listening/writing **oynatıcıları** | KORUNUR, immersion item renderer olur |
 
@@ -89,23 +89,23 @@ kurmasına yardım.** İki mod:
   immersion beceri-item ilerlemesi için **yeniden kullanılır** (ileride `user_items`'a
   yeniden adlandırma opsiyonel bir temizlik; şart değil).
 - **Karmaşık birleşik-göç YOK.** Sadece: userSkills DELETE + userConversations'a dokunma.
-- Gating: `moduleClears` checkpoint kaynağı olarak kalır (ya da checkpoint item'ına devrolur).
+- Gating: `moduleClears` ünite quizinin kaynağı olarak kalır (ya da `unitQuiz` item'ına devrolur).
 
 ## Fazlar (her biri tsc+build doğrulanıp commit'lenir)
 1. **Model + builder:** ✅ TAMAM (commit sonrası). `src/lib/immersion/{types,build}.ts` —
    `ImmersionItem`/`Unit`/`Track` + saf `buildTrack(input)` (4/2/2/2 + ara sıra grammar/quiz +
-   checkpoint, grup=10) ve DB sarmalayıcı `loadTrack(course, level)`. `test:track` 16 kontrol.
+   unitQuiz, grup=10) ve DB sarmalayıcı `loadTrack(course, level)`. `test:track` 16 kontrol.
    DB değişmedi. Bugün: de her seviye 25 ünite.
 2. **UI:** ✅ TAMAM. `/immersion` sayfası (`app/(app)/immersion/{page,loading}.tsx`) +
    `components/immersion/immersion-hub.tsx` (sunucu bileşeni, JS yok): seviye çipleri →
    gruplar (10 ünite, pagination kapısı) → ünite kartları → item satırları. Item'lar
    MEVCUT oynatıcılara köprüyle bağlanır (konuşma→`/conversations/[id]`, beceri→`/skills/[id]`);
-   yer tutucular (grammar/quiz/checkpoint + boş beceri slotları) "yakında", tıklanmaz,
+   yer tutucular (grammar/quiz/unitQuiz + boş beceri slotları) "yakında", tıklanmaz,
    gating'i bloklamaz. Nav 2 moda indi: **Öğren + Immersion** ("Konuşmalar" ve "Beceriler"
-   sekmeleri kalktı; rotalar Faz 4'e kadar köprü hedefi olarak duruyor). Checkpoint motoru
+   sekmeleri kalktı; rotalar Faz 4'e kadar köprü hedefi olarak duruyor). Ünite quizi motoru
    (module-exam/boss) içerik gelince Faz 3'te bağlanır.
 3. **Progress bağlama:** conversation item → userConversations; read/listen/write/grammar/quiz item →
-   userSkills (eski veri silinmiş). Checkpoint geçme → gating.
+   userSkills (eski veri silinmiş). Ünite quizini geçmek → gating.
 4. **Kaldırma:** ✅ TAMAM (kod). `/skills` UI rotaları (page/[id]/loading) + `skills-hub`
    silindi; skill oynatıcıları `app/(app)/immersion/skill/[id]` altına taşındı (aynı oynatıcı
    bileşenleri). Tüm `/skills` bağlantıları `/immersion`e, tüm `/skills/[id]` üretimleri
@@ -119,18 +119,18 @@ kurmasına yardım.** İki mod:
 
 ## Kararlar (SONUÇLANDIRILDI — 2026-08-28)
 - **Slot deseni:** 4 conversation + 2 read + 2 listen + 2 write; grammar `index%3==0`,
-  quiz `index%2==0`; sonda checkpoint. (UYGULANDI — `build.ts`.)
+  quiz `index%2==0`; sonda ünite quizi. (UYGULANDI — `build.ts`.)
 - **Grup boyutu:** 10 ünite/grup. Seviye(25) → gruplar 1–10, 11–20, 21–25. (UYGULANDI.)
 - **Unlock eşiği (AŞAMALI):**
   - Ünite geçildi = konuşmaları bitti (iskelet). (UYGULANDI — interim.)
   - Grup→grup = önceki grubun tüm üniteleri complete → sonraki grup görünür. (UYGULANDI — hub.)
-  - İleride (checkpoint gelince): checkpoint ≥%70 → ünite geçildi (kural sıkılaştırılır).
+  - İleride (ünite quizi gelince): ünite quizi ≥%70 → ünite geçildi (kural sıkılaştırılır).
 - **Quiz biçimi:** ünite brief'inden **OTOMATİK TÜRETİLİR** — 6–8 karışık hatırlama
   (de↔tr kelime, kalıp eşleştirme), mevcut `SkillQuestion` + `quiz.tsx` UI'siyle.
   İÇERİK YAZIMI GEREKMEZ, hep tema-hizalı. Distraktörler diğer ünitelerin havuzundan.
-- **Checkpoint biçimi:** ünite-sonu hatırlama sınavı — aynı brief-türetme, daha uzun
+- **Ünite quizi biçimi:** ünite-sonu hatırlama sınavı — aynı brief-türetme, daha uzun
   (~10–12), geçme ≥%70 → ünite cleared. quiz UI yeniden kullanılır; 10-konuşmalık
-  modül-sınavı DEĞİL (ünite≠modül). Geçiş `userSkills`e checkpoint item id'siyle yazılır.
+  modül-sınavı DEĞİL (ünite≠modül). Geçiş `userSkills`e `unitQuiz` item id'siyle yazılır.
 - **Grammar biçimi:** ünitenin baskın kalıbına (brief.patterns) odaklı kısa mini-drill —
   ünite başına hafif elle ya da türetme. En düşük öncelik (gramer en zayıf halkaydı).
 - **Çok dillilik:** motor dil-parametrik (`course` zemini var), içerik tek çifte odaklı;
@@ -142,16 +142,16 @@ kurmasına yardım.** İki mod:
   12 kalıbı; A1 başlangıç için çoğu MCQ + boşluk-doldurma/sıralama (dikte/serbest yok).
   Dizinin başında → builder ünite 1'e yerleştirir (konum). Eski genel A1 sonraki ünitelere kaydı.
 - **grammar + quiz + bitiş sınavı** (`lib/immersion/content/de-a1-u01.ts`, 8+8+10 soru) — elle
-  yazılmış; gramer artık gerçek-oynanabilir (`/immersion/grammar/[unit]`), quiz/checkpoint
+  yazılmış; gramer artık gerçek-oynanabilir (`/immersion/grammar/[unit]`), quiz/ünite quizi
   elle-yazılmış öncelikli yoksa deriveQuiz.
-- **Slot deseni değişti:** her ünite TAM TAKIM (grammar+quiz+checkpoint her ünitede). `unit`
+- **Slot deseni değişti:** her ünite TAM TAKIM (grammar+quiz+unitQuiz her ünitede). `unit`
   alanı egzersizlere eklendi (belgeleme; ileride konum-bağımsız yerleşim).
 - test:content: benim içeriğim bütçeye SIFIR yeni borç ekledi (kalan aşımlar eski conversations borcu).
 
 Sıradaki ünitelerin şablonu bu. İçerik-yerleşim ileride `unit` tag'iyle konum-bağımsız olabilir.
 
 ## Kalan iş
-- **Kod:** ✅ quiz/checkpoint OTOMATİK TÜRETME (generator + oynatıcı rota) TAMAM — item'lar
+- **Kod:** ✅ quiz/ünite quizi OTOMATİK TÜRETME (generator + oynatıcı rota) TAMAM — item'lar
   "yakında"dan gerçek-oynanabilire döndü (`/immersion/quiz/[unit]`, brief'ten türetilen pratik).
   - Follow-up (opsiyonel): quiz tamamlanma SUNUCU kaydı — hafif yeni uç nokta gerekir
     (`/api/skills` gerçek exercise ister, türetilene uymaz); şimdilik pratik gating yapmıyor.
