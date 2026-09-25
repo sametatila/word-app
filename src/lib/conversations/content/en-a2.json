@@ -17919,30 +17919,6 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir kelime daha:"
-     },
-     {
-      "lang": "en",
-      "text": "fill out"
-     },
-     {
-      "lang": "tr",
-      "text": "Türkçesi: form doldurmak. Lütfen tekrar et:"
-     },
-     {
-      "lang": "en",
-      "text": "fill out"
-     }
-    ],
-    "expect": {
-     "kind": "repeat",
-     "target": "fill out"
-    }
-   },
-   {
-    "say": [
-     {
-      "lang": "tr",
       "text": "Bir de tam tersi var. İş henüz olmadıysa cümlenin sonuna"
      },
      {
@@ -18014,7 +17990,7 @@
      },
      {
       "lang": "en",
-      "text": "I have already fill out the form."
+      "text": "I have already filled out the form."
      }
     ],
     "expect": {

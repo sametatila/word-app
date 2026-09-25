@@ -1030,9 +1030,9 @@
   "de": "Einem Gebäude eine neue Aufgabe zu geben heißt"
  },
  {
-  "tr": "Boş salonlar harabeye dönüyor.",
+  "tr": "Boş salonlar, biri onları yeniden işlevlendirmezse harabeye döner.",
   "kind": "say.tr",
-  "de": "Leere Hallen verfallen."
+  "de": "Leere Hallen verfallen, wenn niemand sie umnutzt."
  },
  {
   "tr": "Söz hakkını ödün satın alıyor.",
@@ -1345,9 +1345,9 @@
   "de": "Einen Befund zu verdünnen heißt nicht, ihn schwankend zu nennen."
  },
  {
-  "tr": "Sökme başladı, yeniden işlevlendirmek başlamadı.",
+  "tr": "Sökme başladı, yeniden işlevlendirme başlamadı.",
   "kind": "say.tr",
-  "de": "Der Rückbau begann, das Umnutzen nicht."
+  "de": "Der Rückbau begann, die Umnutzung nicht."
  },
  {
   "tr": "Şimdi dersin kuralı. İklimde ad KAPSAM demektir:",
@@ -1540,9 +1540,9 @@
   "de": "Unsere zweite Wendung baut das Wäre-nicht in der Umweltthese. Sprich nach:"
  },
  {
-  "tr": "Kaynak eleştirisi raporu kanıtlanabilir biçimde iyileştiriyor.",
+  "tr": "Kaynak eleştirisi raporu kanıtlanabilir biçimde iyileştiriyor; işe dış kaynaklı fondan başlıyor.",
   "kind": "say.tr",
-  "de": "Die Quellenkritik verbessert den Bericht nachweislich."
+  "de": "Die Quellenkritik verbessert den Bericht nachweislich; sie beginnt bei den Drittmitteln."
  },
  {
   "tr": "Alay burada kimseyi suçlamıyor; yalnız eksik yarıyı gösteriyor.",

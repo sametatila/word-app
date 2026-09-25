@@ -49201,16 +49201,16 @@
      },
      {
       "lang": "en",
-      "text": "One suggestion for improvement remains."
+      "text": "Let me make clear that one suggestion for improvement remains."
      },
      {
       "lang": "tr",
-      "text": "Bir iyileştirme önerisi duruyor."
+      "text": "Bir iyileştirme önerisinin hâlâ durduğunu açıkça belirteyim."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "One suggestion for improvement remains."
+     "target": "Let me make clear that one suggestion for improvement remains."
     }
    },
    {

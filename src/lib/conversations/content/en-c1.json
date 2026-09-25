@@ -2937,16 +2937,16 @@
      },
      {
       "lang": "en",
-      "text": "Usage teaches what the dictionary cannot."
+      "text": "A dictionary is useful to have at one's disposal; usage teaches the rest."
      },
      {
       "lang": "tr",
-      "text": "Kullanım, sözlüğün öğretemediğini öğretir."
+      "text": "Sözlüğü elinde bulundurmak yararlıdır; gerisini kullanım öğretir."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Usage teaches what the dictionary cannot."
+     "target": "A dictionary is useful to have at one's disposal; usage teaches the rest."
     }
    },
    {
@@ -11875,16 +11875,16 @@
      },
      {
       "lang": "en",
-      "text": "A breach of trust ends it."
+      "text": "They swear in a minister; a breach of trust can remove her."
      },
      {
       "lang": "tr",
-      "text": "Bir güven ihlali onu bitirir."
+      "text": "Bir bakana yemin ettiriyorlar; bir güven ihlali onu görevden alabilir."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "A breach of trust ends it."
+     "target": "They swear in a minister; a breach of trust can remove her."
     }
    },
    {
@@ -22526,16 +22526,16 @@
      },
      {
       "lang": "en",
-      "text": "The generational conflict is about who reports."
+      "text": "In historic preservation, the generational conflict is about who reports."
      },
      {
       "lang": "tr",
-      "text": "Kuşak çatışması kimin aktardığıyla ilgili."
+      "text": "Kültürel miras korumasında kuşak çatışması kimin aktardığıyla ilgili."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The generational conflict is about who reports."
+     "target": "In historic preservation, the generational conflict is about who reports."
     }
    },
    {
@@ -23472,16 +23472,16 @@
      },
      {
       "lang": "en",
-      "text": "They call the alienation a phase."
+      "text": "They call the alienation a phase and the dissonance a misunderstanding."
      },
      {
       "lang": "tr",
-      "text": "Yabancılaşmaya bir evre diyorlar."
+      "text": "Yabancılaşmaya bir evre, uyumsuzluğa da bir yanlış anlama diyorlar."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "They call the alienation a phase."
+     "target": "They call the alienation a phase and the dissonance a misunderstanding."
     }
    },
    {
@@ -23554,16 +23554,16 @@
      },
      {
       "lang": "en",
-      "text": "The name was never neutral."
+      "text": "Call it a norm violation or a local custom; the name was never neutral."
      },
      {
       "lang": "tr",
-      "text": "Ad hiçbir zaman tarafsız değildi."
+      "text": "İster norm ihlali de ister yerel âdet; ad hiçbir zaman tarafsız değildi."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The name was never neutral."
+     "target": "Call it a norm violation or a local custom; the name was never neutral."
     }
    },
    {
@@ -24508,16 +24508,16 @@
      },
      {
       "lang": "en",
-      "text": "The gap knows who belongs."
+      "text": "Untranslatability, like the gap, knows who belongs."
      },
      {
       "lang": "tr",
-      "text": "Boşluk kimin ait olduğunu biliyor."
+      "text": "Çevrilemezlik de boşluk gibi kimin ait olduğunu bilir."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The gap knows who belongs."
+     "target": "Untranslatability, like the gap, knows who belongs."
     }
    },
    {
@@ -25833,16 +25833,16 @@
      },
      {
       "lang": "en",
-      "text": "The legitimization comes after the fact."
+      "text": "They make permanent what was agreed; the legitimization comes after the fact."
      },
      {
       "lang": "tr",
-      "text": "Meşrulaştırma olup bittikten sonra geliyor."
+      "text": "Kararlaştırılanı kalıcı hâle getiriyorlar; meşrulaştırma olup bittikten sonra geliyor."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The legitimization comes after the fact."
+     "target": "They make permanent what was agreed; the legitimization comes after the fact."
     }
    },
    {
@@ -27247,16 +27247,16 @@
      },
      {
       "lang": "en",
-      "text": "The platitude survived the meeting."
+      "text": "The platitude survived the meeting, and so did the action pattern."
      },
      {
       "lang": "tr",
-      "text": "Klişe toplantıdan sağ çıktı."
+      "text": "Klişe toplantıdan sağ çıktı, eylem kalıbı da."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The platitude survived the meeting."
+     "target": "The platitude survived the meeting, and so did the action pattern."
     }
    },
    {
@@ -28185,16 +28185,16 @@
      },
      {
       "lang": "en",
-      "text": "Bureaucratization cures itself, by circular reasoning."
+      "text": "Plagiarism gets a new form; bureaucratization cures itself, by circular reasoning."
      },
      {
       "lang": "tr",
-      "text": "Bürokratikleşme kendini iyileştiriyor, döngüsel akıl yürütmeyle."
+      "text": "İntihale yeni bir formla karşılık veriliyor; bürokratikleşme kendini iyileştiriyor, döngüsel akıl yürütmeyle."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Bureaucratization cures itself, by circular reasoning."
+     "target": "Plagiarism gets a new form; bureaucratization cures itself, by circular reasoning."
     }
    },
    {
@@ -30538,16 +30538,16 @@
      },
      {
       "lang": "en",
-      "text": "The regulation names security of supply first."
+      "text": "The regulation names security of supply first and the sustainability goal second."
      },
      {
       "lang": "tr",
-      "text": "Düzenleyici hukuk önce arz güvenliğini anıyor."
+      "text": "Düzenleyici hukuk önce arz güvenliğini, sonra sürdürülebilirlik hedefini anıyor."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The regulation names security of supply first."
+     "target": "The regulation names security of supply first and the sustainability goal second."
     }
    },
    {
@@ -33748,7 +33748,7 @@
      },
      {
       "lang": "en",
-      "text": "genetic engineering as a patent"
+      "text": "the seed company's claim as a patent"
      },
      {
       "lang": "tr",
@@ -33849,16 +33849,16 @@
      },
      {
       "lang": "en",
-      "text": "A patent can make scarce what the field gives freely."
+      "text": "With genetic engineering, a patent can make scarce what the field gives freely."
      },
      {
       "lang": "tr",
-      "text": "Patent, tarlanın bedavaya verdiğini kıt hale getirebiliyor."
+      "text": "Genetik mühendisliğiyle bir patent, tarlanın bedavaya verdiğini kıt hâle getirebiliyor."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "A patent can make scarce what the field gives freely."
+     "target": "With genetic engineering, a patent can make scarce what the field gives freely."
     }
    },
    {
@@ -33981,7 +33981,7 @@
      },
      {
       "lang": "en",
-      "text": "genetic engineering as a patent"
+      "text": "the seed company's claim as a patent"
      },
      {
       "lang": "tr",
@@ -36655,16 +36655,16 @@
      },
      {
       "lang": "en",
-      "text": "Source criticism demonstrably improves the report."
+      "text": "Source criticism demonstrably improves the report; it starts with the external funding."
      },
      {
       "lang": "tr",
-      "text": "Kaynak eleştirisi raporu kanıtlanabilir biçimde iyileştiriyor."
+      "text": "Kaynak eleştirisi raporu kanıtlanabilir biçimde iyileştiriyor; işe dış kaynaklı fondan başlıyor."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Source criticism demonstrably improves the report."
+     "target": "Source criticism demonstrably improves the report; it starts with the external funding."
     }
    },
    {
@@ -38438,7 +38438,7 @@
      },
      {
       "lang": "tr",
-      "text": "Sökme başladı, yeniden işlevlendirmek başlamadı."
+      "text": "Sökme başladı, yeniden işlevlendirme başlamadı."
      }
     ],
     "expect": {
@@ -38531,16 +38531,16 @@
      },
      {
       "lang": "en",
-      "text": "Empty halls fall into ruin."
+      "text": "Empty halls fall into ruin unless someone repurposes them."
      },
      {
       "lang": "tr",
-      "text": "Boş salonlar harabeye dönüyor."
+      "text": "Boş salonlar, biri onları yeniden işlevlendirmezse harabeye döner."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Empty halls fall into ruin."
+     "target": "Empty halls fall into ruin unless someone repurposes them."
     }
    },
    {
@@ -41377,16 +41377,16 @@
      },
      {
       "lang": "en",
-      "text": "Insider trading is not money laundering."
+      "text": "Insider trading is not money laundering, and a gray area is no pretext."
      },
      {
       "lang": "tr",
-      "text": "İçeriden ticaret kara para aklama değildir."
+      "text": "İçeriden ticaret kara para aklama değildir, gri alan da bir kılıf değildir."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Insider trading is not money laundering."
+     "target": "Insider trading is not money laundering, and a gray area is no pretext."
     }
    },
    {
@@ -42307,16 +42307,16 @@
      },
      {
       "lang": "en",
-      "text": "A double standard is only visible from below."
+      "text": "A double standard is only visible from below, until it becomes a reputational risk."
      },
      {
       "lang": "tr",
-      "text": "Çifte standart yalnız aşağıdan görünüyor."
+      "text": "Çifte standart yalnız aşağıdan görünür, ta ki bir itibar riskine dönüşene dek."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "A double standard is only visible from below."
+     "target": "A double standard is only visible from below, until it becomes a reputational risk."
     }
    },
    {
@@ -42351,16 +42351,16 @@
      },
      {
       "lang": "en",
-      "text": "Nobody wanted to enrich themselves; they were just accepting favors."
+      "text": "One would never enrich oneself; one is merely accepting favors."
      },
      {
       "lang": "tr",
-      "text": "Kimse haksız kazanç sağlamak istemedi, yalnızca menfaat kabul ediyorlardı."
+      "text": "İnsan asla haksız kazanç sağlamaz, olsa olsa menfaat kabul ediyordur."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Nobody wanted to enrich themselves; they were just accepting favors."
+     "target": "One would never enrich oneself; one is merely accepting favors."
     }
    },
    {
@@ -42417,16 +42417,16 @@
      },
      {
       "lang": "en",
-      "text": "The word came back to them."
+      "text": "They called the mislabeling creative; the word came back to them."
      },
      {
       "lang": "tr",
-      "text": "Sözcük onlara geri döndü."
+      "text": "Yanıltıcı etiketlemeye yaratıcı dediler; sözcük onlara geri döndü."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The word came back to them."
+     "target": "They called the mislabeling creative; the word came back to them."
     }
    },
    {
@@ -43754,16 +43754,16 @@
      },
      {
       "lang": "en",
-      "text": "Linguistically, the emotionalization is easy to see."
+      "text": "Linguistically, the emotionalization is easy to see: the register drops."
      },
      {
       "lang": "tr",
-      "text": "Dil açısından duygusallaştırmayı görmek kolay."
+      "text": "Dil açısından duygusallaştırmayı görmek kolay: dil düzeyi düşüyor."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Linguistically, the emotionalization is easy to see."
+     "target": "Linguistically, the emotionalization is easy to see: the register drops."
     }
    },
    {
@@ -44766,16 +44766,16 @@
      },
      {
       "lang": "en",
-      "text": "A right belongs to everyone."
+      "text": "They demand that academic freedom and artistic freedom be protected alike."
      },
      {
       "lang": "tr",
-      "text": "Bir hak herkesindir."
+      "text": "Akademik özgürlüğün ve sanat özgürlüğünün aynı biçimde korunmasını talep ediyorlar."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "A right belongs to everyone."
+     "target": "They demand that academic freedom and artistic freedom be protected alike."
     }
    },
    {
@@ -47095,16 +47095,16 @@
      },
      {
       "lang": "en",
-      "text": "Indifference, they call it patience."
+      "text": "Indifference, they call it patience; vehemence, honesty."
      },
      {
       "lang": "tr",
-      "text": "Kayıtsızlığa sabır diyorlar."
+      "text": "Kayıtsızlığa sabır, hiddete dürüstlük diyorlar."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Indifference, they call it patience."
+     "target": "Indifference, they call it patience; vehemence, honesty."
     }
    },
    {
