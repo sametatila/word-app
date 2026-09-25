@@ -181,7 +181,10 @@ export const DEFAULT_PREMIUM_CONFIG: PremiumConfig = {
       // öne çeker hem iptal oranını düşürür, indirim bu yüzden agresif.
       { region: "TR", currency: "TRY", monthly: "199,99 ₺", yearly: "1.199,99 ₺", yearlySavePct: 50 },
       { region: "EU", currency: "EUR", monthly: "4,99 €", yearly: "29,99 €", yearlySavePct: 50 },
-      // GLOBAL = TR ve AB dışındaki HER yer. Mağazalar ülke başına fiyat
+      // Mağazadaki elle konmuş fiyatlarla aynı (ASC ve Play, AGENTS.md › Abonelik ürünleri).
+      { region: "GB", currency: "GBP", monthly: "4,99 £", yearly: "29,99 £", yearlySavePct: 50 },
+      { region: "CH", currency: "CHF", monthly: "4 CHF", yearly: "25 CHF", yearlySavePct: 48 },
+      // GLOBAL = TR, AB, İngiltere ve İsviçre dışındaki HER yer. Mağazalar ülke başına fiyat
       // istiyor ve listede olmayan bir ülke için taban fiyattan kendileri
       // dönüştürüyor; o taban bu satır. Olmasaydı üçüncü bir bölgeden gelen
       // kullanıcı mağazanın kur dönüşümüne kalırdı ve web vitrini ona hiçbir

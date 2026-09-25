@@ -19,7 +19,7 @@ import type { PlanPrice } from "./gates";
  * SONUÇ TEK BÖLGE. Çağıran yalnız bunun fiyatını gösteriyor; bölge listesi
  * hiçbir yüzeyde açılmıyor.
  */
-export type PriceRegion = "TR" | "EU" | "GLOBAL";
+export type PriceRegion = "TR" | "EU" | "GB" | "CH" | "GLOBAL";
 
 /**
  * EURO ile ödenen yerlerin saat dilimleri (bölgenin adı "EU" ama ölçüt para
@@ -30,6 +30,10 @@ export type PriceRegion = "TR" | "EU" | "GLOBAL";
  * Bükreş, Saraybosna, Üsküp. Onlar eskiden listedeydi ve mağazanın yerel para
  * birimindeki fiyatıyla çelişen bir euro fiyatı görüyorlardı (denetim X-9).
  * Sofya euroya 2026-01-01'de geçti, listede.
+ *
+ * İngiltere (GBP) ve İsviçre (CHF) 2026-09-25'ten beri kendi satırında (denetim
+ * S12): mağazada iki ülkenin elle konmuş fiyatı var (£4,99 / 4 CHF), web vitrini
+ * onlara dolar gösteriyordu. Vaduz (Lihtenştayn) ve öteki yerler GLOBAL kalıyor.
  */
 const EU_ZONES = new Set([
   "Europe/Amsterdam", "Europe/Andorra", "Europe/Athens", "Europe/Berlin", "Europe/Bratislava",
@@ -48,10 +52,15 @@ const EU_ZONES = new Set([
  * sinyalin zayıf olana yenilmemesi gerekiyor; `null` yalnız saat dilimi HİÇ
  * yokken dönüyor.
  */
+const GB_ZONES = new Set(["Europe/London", "Europe/Belfast", "Europe/Guernsey", "Europe/Jersey", "Europe/Isle_of_Man"]);
+const CH_ZONES = new Set(["Europe/Zurich"]);
+
 function fromTimezone(tz: string | null | undefined): PriceRegion | null {
   if (!tz) return null;
   if (tz === "Europe/Istanbul") return "TR";
   if (EU_ZONES.has(tz)) return "EU";
+  if (GB_ZONES.has(tz)) return "GB";
+  if (CH_ZONES.has(tz)) return "CH";
   return "GLOBAL";
 }
 

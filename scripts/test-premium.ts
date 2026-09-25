@@ -131,6 +131,9 @@ console.log("\nYapılandırma doğrulaması");
   const prices = parsePremiumConfig({ plans: { prices: [{ region: "X", monthly: "", yearly: "1" }] } });
   check("eksik fiyat satırı varsayılana düşüyor", prices.plans.prices.length === d.plans.prices.length);
   check("global (USD) fiyat satırı var", d.plans.prices.some((p) => p.region === "GLOBAL" && p.currency === "USD"));
+  /* Web vitrini İngiltere ve İsviçre'ye mağazadaki elle konmuş fiyatı gösteriyor (denetim S12). */
+  check("İngiltere (GBP) fiyat satırı var", d.plans.prices.some((p) => p.region === "GB" && p.currency === "GBP"));
+  check("İsviçre (CHF) fiyat satırı var", d.plans.prices.some((p) => p.region === "CH" && p.currency === "CHF"));
 }
 
 console.log("\nPaywall metinleri üç sözlükte de var");
