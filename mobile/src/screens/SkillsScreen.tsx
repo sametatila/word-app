@@ -235,7 +235,7 @@ export function SkillsScreen() {
           </View>
           <View style={{ flexDirection: "row", gap: 6, marginBottom: spacing.lg }}>
             {SKILLS.map((s) => (
-              <View key={s.key} style={{ flex: 1, minWidth: 0, alignItems: "center", gap: 4, paddingTop: 10, paddingBottom: spacing.sm, paddingHorizontal: 2, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, backgroundColor: colors.surface }}>
+              <View key={s.key} style={{ flex: 1, minWidth: 0, alignItems: "center", gap: spacing.xs, paddingTop: 10, paddingBottom: spacing.sm, paddingHorizontal: 2, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, backgroundColor: colors.surface }}>
                 <Skeleton height={20} width={20} radius={6} />
                 <SkeletonLine variant="caption" width="70%" />
                 <SkeletonLine variant="micro" width="40%" style={{ marginTop: "auto" }} />
