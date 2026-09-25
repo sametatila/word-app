@@ -11,6 +11,8 @@ import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, ChevronRightIcon, ExamIcon, LockIcon } from "../ui/icons";
 import { EmptyCard } from "../social/common";
 import { FlowNote } from "../ui/flow";
+import { UnlockProgress } from "../ui/UnlockProgress";
+import { mockCopy, whenText } from "../lib/unlock";
 import { SkeletonLine } from "../ui/Skeleton";
 import { useMe } from "../lib/useMe";
 import { currentCourseId } from "../lib/courses";
@@ -104,13 +106,21 @@ export function MockExamsScreen() {
    * kilitli çizilmiyor: uydurma bir kilit, gerçek bir kilitten daha kötü.
    */
   const [access, setAccess] = useState<MockAccess | null>(null);
-  useEffect(() => {
+  /* ODAKLANINCA yeniden soruluyor: kâğıt bitirilip dönülünce "bitir" koşulu
+     işaretlenmiş ve belki yeni kâğıt açılmış olmalı. */
+  useFocusEffect(useCallback(() => {
     if (!me) { setAccess(null); return; }
     let dead = false;
     void fetchMockAccess(level).then((a) => { if (!dead) setAccess(a); }).catch(() => { if (!dead) setAccess(null); });
     return () => { dead = true; };
-  }, [me, level]);
+  }, [me, level]));
   const isLocked = (id: string) => (access ? !access.unlocked.includes(id) : false);
+  const copy = mockCopy(access?.unlock);
+  const freeCopy = access && !access.premium ? copy : null;
+  const proCopy = access?.premium ? copy : null;
+  /* Kilitli kâğıt kartındaki "ne zaman açılır" cümlesi — listenin üstündeki
+     kartla aynı cümle, kâğıdın yanında da. */
+  const lockedHint = freeCopy ? whenText(freeCopy, t) : null;
 
   const [states, setStates] = useState<Record<string, Record<string, PartState>>>({});
   const readStates = useCallback(() => {
@@ -206,22 +216,22 @@ export function MockExamsScreen() {
             <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.md }}>
               {t("mockexams.intro")}
             </Text>
-            {/* Kaç kâğıdın açık olduğu LİSTEDEN ÖNCE söyleniyor: kuralı kilide
-                çarptıktan sonra öğrenmek, kuralı hiç söylememekle aynı şey.
-                Tek satırlık bilgi olduğu için akış şablonunun notu (`FlowNote`),
-                kilit ikonuyla — web aynı satırı çiziyor. */}
+            {/* Kaç kâğıdın açık olduğu ve SONRAKİNİN NASIL açılacağı LİSTEDEN
+                ÖNCE söyleniyor: kuralı kilide çarptıktan sonra öğrenmek, kuralı
+                hiç söylememekle aynı şey. Ücretsizde bitir + 7 günlük seri
+                ilerlemesi (`UnlockProgress`), premium'da paket kuralı — web aynı
+                kartı aynı kuralla çiziyor (`lib/unlock`). */}
             {access && !access.premium ? (
-              <View style={{ marginBottom: spacing.md }}>
+              <View style={{ marginBottom: spacing.md, gap: spacing.sm }}>
                 <FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={t("mockpack.free_note", { n: access.freeLimit })} />
+                {freeCopy ? <UnlockProgress copy={freeCopy} onPremium={papers.some((p) => isLocked(p.id)) ? () => nav.navigate("Paywall") : null} /> : null}
               </View>
             ) : null}
             {access?.premium && papers.some((p) => isLocked(p.id)) ? (
-              <View style={{ marginBottom: spacing.md }}>
+              <View style={{ marginBottom: spacing.md, gap: spacing.sm }}>
                 <FlowNote
                   icon={<LockIcon color={colors.textMuted} size={16} />}
-                  text={access.unlockOnComplete
-                    ? t("mockpack.unlock_hint_both", { pct: access.unlockPct })
-                    : t("mockpack.unlock_hint_score", { pct: access.unlockPct })}
+                  text={proCopy ? t(proCopy.headline.key, proCopy.headline.params) : t("mockpack.unlock_hint", { n: access.unlock && access.unlock.premium ? access.unlock.packSize : 3 })}
                 />
               </View>
             ) : null}
@@ -231,6 +241,7 @@ export function MockExamsScreen() {
                 paper={p}
                 states={states[p.id] ?? {}}
                 locked={isLocked(p.id)}
+                hint={lockedHint}
                 showPlans={!access?.premium}
                 onOpen={(skill) => nav.navigate("MockExam", { paperId: p.id, skill })}
                 onPlans={() => nav.navigate("Paywall")}
@@ -254,7 +265,7 @@ export function MockExamsScreen() {
   );
 }
 
-function PaperCard({ paper, states, locked, showPlans, onOpen, onPlans }: { paper: MockCatalogEntry; states: Record<string, PartState>; locked: boolean; showPlans: boolean; onOpen: (skill: MockSkill) => void; onPlans: () => void }) {
+function PaperCard({ paper, states, locked, hint, showPlans, onOpen, onPlans }: { paper: MockCatalogEntry; states: Record<string, PartState>; locked: boolean; hint?: string | null; showPlans: boolean; onOpen: (skill: MockSkill) => void; onPlans: () => void }) {
   const { colors } = useTheme();
   return (
     <Card padded style={{ marginBottom: spacing.md }}>
@@ -307,9 +318,12 @@ function PaperCard({ paper, states, locked, showPlans, onOpen, onPlans }: { pape
           );
         })}
       </View>
+      {locked && hint ? (
+        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>{hint}</Text>
+      ) : null}
       {locked && showPlans ? (
         <PressableScale onPress={onPlans} style={{ marginTop: spacing.md, borderRadius: radii.md, backgroundColor: colors.primary, paddingVertical: spacing.md, alignItems: "center" }}>
-          <Text variant="bodyStrong" color={colors.onPrimary}>{t("gate.see_plans")}</Text>
+          <Text variant="bodyStrong" color={colors.onPrimary}>{t("unlock.premium_now")}</Text>
         </PressableScale>
       ) : null}
     </Card>

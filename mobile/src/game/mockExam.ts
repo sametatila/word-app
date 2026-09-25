@@ -1,3 +1,4 @@
+import type { MockUnlock } from "../lib/premium";
 import { api, ApiError } from "../api/client";
 import { todayStr } from "./session";
 import { isOpenTask, type MockPart, type MockSkill } from "../data/exams";
@@ -196,12 +197,16 @@ export type MockAccess = {
   premium: boolean;
   /** Açık kâğıt kimlikleri. */
   unlocked: string[];
-  /** Sonraki paketi açan yüzde (premium). */
-  unlockPct: number;
-  /** Paketi bitirmenin de açtığı emniyet supabı (premium). */
-  unlockOnComplete: boolean;
-  /** Ücretsiz hesapta seviye başına açık kâğıt sayısı. */
+  /** Ücretsiz hesapta seviye başına taban kâğıt sayısı. */
   freeLimit: number;
+  /** Bitirilmiş kâğıtlar (sunucu; eski sunucuda yok). */
+  finished?: string[];
+  /**
+   * Sonraki kâğıdın/paketin nasıl açılacağı (sunucu `lib/premium/unlock`).
+   * Ücretsiz: bitir + 7 günlük seri → +1. Premium: paketteki kâğıtların hepsi
+   * bitince sonraki paket. Eski sunucuda yok. (%60 koşulu 2026-09-25'te kalktı.)
+   */
+  unlock?: MockUnlock;
 };
 
 export function fetchMockAccess(level: string): Promise<MockAccess> {
