@@ -151,17 +151,6 @@ const nextConfig: NextConfig = {
       // ve yer imleri kırılmasın.
       { source: "/beceriler", destination: "/skills", permanent: true },
       { source: "/learn/haftalik", destination: "/learn/weekly", permanent: true },
-      { source: "/lessons/sinav/:level/:module", destination: "/boss/:level/:module", permanent: true },
-      /*
-        "Konuşma" adı kalktı (2026-09-25): Patika'nın Konuşma adımı artık
-        `/conversations/<id>`, puanlı kısmı `/conversations/<id>/scored`, modül hız
-        turu `/boss/<seviye>/<modül>`. Eski adresler (paylaşılan bağlantı, yer imi,
-        eski bildirim) 308 ile yeni yere gidiyor; bu satırlar KALICI.
-      */
-      { source: "/lessons", destination: "/immersion", permanent: true },
-      { source: "/lessons/boss/:level/:module", destination: "/boss/:level/:module", permanent: true },
-      { source: "/lessons/:id/exam", destination: "/conversations/:id/scored", permanent: true },
-      { source: "/lessons/:id", destination: "/conversations/:id", permanent: true },
       { source: "/profile/ayarlar", destination: "/profile/settings", permanent: true },
       { source: "/profile/yazilarim", destination: "/profile/writings", permanent: true },
       { source: "/ilk-kelimeler", destination: "/first-words", permanent: true },
