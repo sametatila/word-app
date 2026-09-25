@@ -1,5 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { API_BASE, fetchWithTimeout } from "../api/client";
+import { apiBase, fetchWithTimeout } from "../api/client";
 
 /**
  * İÇERİK İSTEMCİSİ — sunucudan inen içeriğin cihazdaki hâli.
@@ -37,9 +37,10 @@ import { API_BASE, fetchWithTimeout } from "../api/client";
    ucun bir çağıranı olduğunu kaynakta yolu ARAYARAK doğruluyor ve
    `${BASE}/pointer` gibi bir kuruluş o gözden kaçar — uç çağrılıyor olsa bile
    "çağıransız" görünür. */
-const URL_POINTER = `${API_BASE}/api/content/pointer`;
-const URL_MANIFEST = `${API_BASE}/api/content/manifest`;
-const urlBody = (hash: string) => `${API_BASE}/api/content/i/${hash}`;
+/* Adresler İSTEK ANINDA kuruluyor: taban engelli ağda yedeğe geçebiliyor (bkz. api/base). */
+const urlPointer = () => `${apiBase()}/api/content/pointer`;
+const urlManifest = () => `${apiBase()}/api/content/manifest`;
+const urlBody = (hash: string) => `${apiBase()}/api/content/i/${hash}`;
 
 /** Gösterge: son görülen yayın sürümü ve kapatılan maddeler. */
 const K_POINTER = "content:pointer";
@@ -158,7 +159,7 @@ export async function syncContentPointer(): Promise<Pointer> {
     pointerLoaded = true;
   }
   try {
-    const res = await fetchWithTimeout(URL_POINTER, { timeoutMs: 8000 });
+    const res = await fetchWithTimeout(urlPointer(), { timeoutMs: 8000 });
     if (!res.ok) return pointerCache;
     const next = (await res.json()) as Partial<Pointer>;
     if (typeof next.r !== "number") return pointerCache;
@@ -195,7 +196,7 @@ export async function ensurePack(pack: string): Promise<boolean> {
   if (pointerCache.r > 0 && local.r === pointerCache.r) return true;
 
   try {
-    const res = await fetchWithTimeout(`${URL_MANIFEST}?pack=${encodeURIComponent(pack)}&since=${local.r}`, {
+    const res = await fetchWithTimeout(`${urlManifest()}?pack=${encodeURIComponent(pack)}&since=${local.r}`, {
       timeoutMs: 15_000,
     });
     if (!res.ok) return Object.keys(local.items).length > 0;

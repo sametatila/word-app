@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as Keychain from "react-native-keychain";
-import { api, API_BASE, ApiError, fetchWithTimeout } from "../api/client";
+import { api, apiBase, ApiError, fetchWithTimeout } from "../api/client";
 import { fetchServerConfig } from "./serverConfig";
 import { guestAttestation } from "./integrity";
 import { isNetworkError } from "./auth";
@@ -146,10 +146,10 @@ export async function startGuest(): Promise<GuestStart> {
     try {
       attestation = await guestAttestation((await fetchServerConfig()).guestAttestation?.cloudProjectNumber);
     } catch { /* doğrulama açılışı hiçbir zaman durdurmaz */ }
-    const res = await fetchWithTimeout(`${API_BASE}/api/auth/sign-in/anonymous`, {
+    const res = await fetchWithTimeout(`${apiBase()}/api/auth/sign-in/anonymous`, {
       method: "POST",
       // `origin` elle: RN koymuyor, Better Auth çerez taşıyan POST'ta şart koşuyor.
-      headers: { "content-type": "application/json", accept: "application/json", origin: API_BASE },
+      headers: { "content-type": "application/json", accept: "application/json", origin: apiBase() },
       body: attestation ? JSON.stringify({ attestation }) : "{}",
     });
     const json = (await res.json().catch(() => null)) as { token?: unknown; user?: { id?: unknown }; code?: unknown } | null;
@@ -188,9 +188,9 @@ export type ResumeOutcome =
 export async function resumeGuest(record: GuestRecord): Promise<ResumeOutcome> {
   if (record.for) return "gone";
   try {
-    const res = await fetchWithTimeout(`${API_BASE}/api/auth/guest/resume`, {
+    const res = await fetchWithTimeout(`${apiBase()}/api/auth/guest/resume`, {
       method: "POST",
-      headers: { "content-type": "application/json", accept: "application/json", origin: API_BASE },
+      headers: { "content-type": "application/json", accept: "application/json", origin: apiBase() },
       body: JSON.stringify({ guestId: record.id, token: record.token }),
     });
     const json = (await res.json().catch(() => null)) as { token?: unknown; code?: unknown } | null;

@@ -1,4 +1,4 @@
-import { api, API_BASE, ApiError, fetchWithTimeout, CHAT_TIMEOUT_MS } from "../api/client";
+import { api, apiBase, ApiError, fetchWithTimeout, CHAT_TIMEOUT_MS } from "../api/client";
 import { isAccountRequired } from "../lib/guest";
 
 /**
@@ -37,7 +37,7 @@ export async function sendChat(conversationId: string, messages: ChatMsg[], mode
   /* Yapay zekâ üretimi: varsayılandan uzun. Yanıt METİN olduğu için `api()`
      kullanılamıyor (o JSON çözüyor), ama zaman aşımı ortak yardımcıdan.
      Tavanın adı var: web aynı sayıyı aynı adla taşıyor. */
-  const res = await fetchWithTimeout(`${API_BASE}/api/chat`, {
+  const res = await fetchWithTimeout(`${apiBase()}/api/chat`, {
     timeoutMs: CHAT_TIMEOUT_MS,
     method: "POST",
     headers: { "content-type": "application/json" },

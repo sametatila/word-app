@@ -1,5 +1,5 @@
 import { Platform } from "react-native";
-import { API_BASE } from "../api/client";
+import { apiBase } from "../api/client";
 
 /**
  * Gelen bağlantıyı uygulamanın anladığı bir eyleme çevirir.
@@ -185,7 +185,7 @@ export function parseDeepLink(raw: string | null | undefined): DeepLinkAction {
       kurmaya çalışmak, kütüphanenin sözleşmesini burada ikinci kez yazmak
       olurdu. Yalnız köken kendi adresimize sabitleniyor.
       */
-    const safe = new URL(url.pathname + url.search, API_BASE);
+    const safe = new URL(url.pathname + url.search, apiBase());
     return { kind: "verify-email", url: safe.toString() };
   }
 

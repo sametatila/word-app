@@ -25,8 +25,6 @@ import { apiBase, baseReady, failover, ownBaseOf, rebaseUrl } from "./base";
  * kurulmuş bir adres de doğru yere gidiyor.
  */
 export { apiBase, onBaseChange, PRIMARY_BASE, FALLBACK_BASE } from "./base";
-/** Geçiş: çağrı yerleri `apiBase()`e taşınana kadar. */
-export { PRIMARY_BASE as API_BASE } from "./base";
 
 /**
  * İSTEMCİ SÜRÜMÜ her istekte: `x-lernomi-client: android/1.0.3/14`.

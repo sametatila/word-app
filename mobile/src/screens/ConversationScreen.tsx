@@ -31,7 +31,7 @@ import { ensureMicPermission, listenOnce, sttAvailable, stopListening } from "..
 import { spokenMatches } from "../lib/voiceMatch";
 import { currentTargetLang, currentTargetLocale } from "../lib/courses";
 import { haptic } from "../lib/haptics";
-import { API_BASE, fetchWithTimeout } from "../api/client";
+import { apiBase, fetchWithTimeout } from "../api/client";
 import { bumpStats } from "../lib/statsSignal";
 import { todayStr } from "../game/session";
 import { candoIdsForConversation } from "../game/candoMap";
@@ -781,7 +781,7 @@ export function ConversationScreen() {
     const seconds = Math.round((Date.now() - startedAt.current) / 1000);
     const payload = { conversationId: conversation.id, correct, chatDone: roleDone, day: todayStr(), seconds };
     try {
-      const res = await fetchWithTimeout(`${API_BASE}/api/conversation`, {
+      const res = await fetchWithTimeout(`${apiBase()}/api/conversation`, {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(payload),

@@ -1,5 +1,5 @@
 import { Linking } from "react-native";
-import { API_BASE } from "../api/client";
+import { apiBase } from "../api/client";
 import { currentLang } from "./i18n";
 
 /**
@@ -37,7 +37,7 @@ const UNTRANSLATED: ReadonlySet<LegalDoc> = new Set<LegalDoc>(["deleteAccount", 
 export function legalUrl(doc: LegalDoc): string {
   const lang = currentLang();
   const suffix = lang !== "tr" && !UNTRANSLATED.has(doc) ? `/${lang}` : "";
-  return `${API_BASE}${PATHS[doc]}${suffix}`;
+  return `${apiBase()}${PATHS[doc]}${suffix}`;
 }
 
 export function openLegal(doc: LegalDoc): void {

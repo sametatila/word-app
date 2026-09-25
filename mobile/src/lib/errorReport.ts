@@ -1,4 +1,4 @@
-import { API_BASE, fetchWithTimeout } from "../api/client";
+import { apiBase, fetchWithTimeout } from "../api/client";
 
 /**
  * İstemci hata raporu (mobil JS) — web `lib/error-report` ile aynı uç ve kural.
@@ -27,9 +27,9 @@ export function reportError(err: unknown, screen?: string): void {
     if ((seen.get(message) ?? 0) > now - SAME_MS) return;
     seen.set(message, now);
     sent++;
-    void fetchWithTimeout(`${API_BASE}/api/client-errors`, {
+    void fetchWithTimeout(`${apiBase()}/api/client-errors`, {
       method: "POST",
-      headers: { "content-type": "application/json", origin: API_BASE },
+      headers: { "content-type": "application/json", origin: apiBase() },
       body: JSON.stringify({ name: e.name, message: message.slice(0, 500), stack: e.stack?.slice(0, 4000), screen }),
       timeoutMs: 10_000,
     }).catch(() => undefined);

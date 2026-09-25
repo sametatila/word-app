@@ -8,7 +8,7 @@ import { PressableScale } from "./PressableScale";
 import { LockIcon, XIcon } from "./icons";
 import { FlowNote } from "./flow";
 import { useAuth } from "../lib/AuthContext";
-import { API_BASE, fetchWithTimeout } from "../api/client";
+import { apiBase, fetchWithTimeout } from "../api/client";
 import { useTheme, spacing, radii } from "../theme";
 import { ContentColumn } from "./ContentColumn";
 
@@ -39,7 +39,7 @@ export function CertificateSheet({ examId, visible, onClose }: { examId: number;
     let alive = true;
     setSvg(null);
     setFailed(false);
-    fetchWithTimeout(`${API_BASE}/api/certificate/${examId}`)
+    fetchWithTimeout(`${apiBase()}/api/certificate/${examId}`)
       .then(async (r) => {
         if (!r.ok) throw new Error(String(r.status));
         const text = await r.text();

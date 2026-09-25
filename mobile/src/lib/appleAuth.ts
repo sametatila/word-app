@@ -1,7 +1,7 @@
 import { Linking, Platform } from "react-native";
 import appleAuth from "@invertase/react-native-apple-authentication";
 import { signInAppleNative, updateUserName, sendAppleAuthorizationCode, signInSocial } from "./auth";
-import { API_BASE } from "../api/client";
+import { PRIMARY_BASE } from "../api/client";
 import { sameEmail, tokenEmail } from "./accountLinks";
 import { t } from "./i18n";
 import { beginHandoff } from "./handoff";
@@ -156,7 +156,12 @@ export async function appleWebSignIn(): Promise<AuthOutcome> {
        başlatılmıyor, çünkü dönüşte uygulama bağlamasız devri kabul etmiyor. */
     const nonce = await beginHandoff();
     if (!nonce) return { ok: false, code: "APPLE", message: t("autherror.apple_failed") };
-    const url = await signInSocial("apple", `${API_BASE}/auth/handoff?n=${encodeURIComponent(nonce)}`);
+    /* ASIL ADRESTE KALIYOR (yedek tabana taşınmıyor): akış sistem tarayıcısında
+       sürüyor, Apple'ın geri dönüş adresi ve devir sayfası asıl alan adına
+       kayıtlı. Asıl adresi engelleyen bir ağda bu yol çalışmaz; kullanıcı
+       e-posta ya da Google ile girer (native Google/Apple idToken yolları
+       yedekte de çalışıyor). */
+    const url = await signInSocial("apple", `${PRIMARY_BASE}/auth/handoff?n=${encodeURIComponent(nonce)}`, true);
     if (!url) return { ok: false, code: "APPLE", message: t("autherror.apple_failed") };
     const can = await Linking.canOpenURL(url);
     if (!can) return { ok: false, code: "APPLE", message: t("autherror.apple_failed") };

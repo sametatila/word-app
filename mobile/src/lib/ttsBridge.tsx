@@ -1,7 +1,7 @@
 import React, { useSyncExternalStore } from "react";
 import { View } from "react-native";
 import { WebView } from "react-native-webview";
-import { API_BASE } from "../api/client";
+import { apiBase, onBaseChange } from "../api/client";
 import { PACE_PARAM, PITCH_PARAM, paceOf, type Pace, type Pitch, type VoiceId } from "./voices";
 import { SFX_MASTER, SFX_NOTES, type SfxKind } from "./sfxNotes";
 import { nativeDelay } from "./stt";
@@ -32,7 +32,8 @@ let errors = 0;
  * `www.lernomi.app` okuyor. Sondaki "/" ile kesin önek bu tuzağa düşmüyor.
  */
 function sameOriginAsApi(raw: string): boolean {
-  return raw === API_BASE || raw.startsWith(`${API_BASE}/`);
+  const base = apiBase();
+  return raw === base || raw.startsWith(`${base}/`);
 }
 
 export function bridgeReady(): boolean {
@@ -140,6 +141,11 @@ function subscribeGeneration(fn: () => void) {
   listeners.add(fn);
   return () => { listeners.delete(fn); };
 }
+
+/* Taban değişti (engelli ağda yedek adres, bkz. api/base): köprü sayfası yeni
+   adresten yeniden kuruluyor; eski adresteki sayfa artık ulaşılamayan bir
+   kökene `/api/tts` isteği atıyordu. Oturum çerezi de taban başına ayrı. */
+onBaseChange(() => bridgeRefresh(true));
 
 /**
  * Ses efektini WebView'de WebAudio ile SENTEZLER ve çalar. Nota tablosu ve sentez modeli
@@ -264,7 +270,7 @@ export function TtsBridge() {
       <WebView
         key={gen}
         ref={(r) => { viewRef = r; }}
-        source={{ uri: `${API_BASE}/tts-bridge` }}
+        source={{ uri: `${apiBase()}/tts-bridge` }}
         sharedCookiesEnabled
         // Navigasyon kilidi (güvenlik denetimi): bu görünmez köprü canlı oturum
         // çerezini taşıyor; /tts-bridge'te olası bir XSS/açık-yönlendirme WebView'i
@@ -272,7 +278,7 @@ export function TtsBridge() {
         // (fetch/ses gibi alt-kaynaklar etkilenmez). thirdPartyCookies de kaldırıldı:
         // birinci-taraf sayfa için gereksiz.
         //
-        // KÖKEN KARŞILAŞTIRILIYOR, ÖNEK DEĞİL. `startsWith(API_BASE)` sonuna "/"
+        // KÖKEN KARŞILAŞTIRILIYOR, ÖNEK DEĞİL. `startsWith(apiBase())` sonuna "/"
         // konmamış bir adresi kıyaslıyordu: `https://www.lernomi.app.saldirgan.com`
         // de `https://www.lernomi.app` ile başlıyor ve kilitten geçiyordu.
         onShouldStartLoadWithRequest={(req) => req.url.startsWith("about:") || sameOriginAsApi(req.url)}

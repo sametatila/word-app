@@ -12,7 +12,7 @@ import { parseDeepLink } from "../src/lib/deepLink";
  *  - eşleşmeyen bir bağlantı gerçek dönüşü bozmaz,
  *  - yabancı ana makineli adres (RN `URL` tuzağı dahil) hiç ayrıştırılmaz.
  */
-jest.mock("../src/api/client", () => ({ fetchWithTimeout: jest.fn(), API_BASE: "https://example.test" }));
+jest.mock("../src/api/client", () => ({ fetchWithTimeout: jest.fn(), apiBase: () => "https://example.test", onBaseChange: () => () => {}, PRIMARY_BASE: "https://www.lernomi.app", FALLBACK_BASE: "https://lernomi.rumpuskit.com" }));
 
 const { fetchWithTimeout } = require("../src/api/client") as { fetchWithTimeout: jest.Mock };
 const NONCE = "n".repeat(32);

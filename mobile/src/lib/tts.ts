@@ -8,7 +8,7 @@ import { dialogueCast } from "./speakers";
 import { speechLocaleOf, setCurrentCourse } from "./courses";
 import { bridgePrefetch, bridgeReady, bridgeSpeak, bridgeSpeakAndWait, bridgeStop } from "./ttsBridge";
 import { nativeDelay, speakServerTts, stopServerTts } from "./stt";
-import { API_BASE, fetchWithTimeout } from "../api/client";
+import { apiBase, fetchWithTimeout } from "../api/client";
 
 /**
  * Almanca sesli okuma (TTS) — cihazın TextToSpeech motoru.
@@ -187,7 +187,7 @@ async function serverUnreachable(): Promise<boolean> {
   if (Date.now() - probe.at < 30_000) return !probe.online;
   let online = true;
   try {
-    await fetchWithTimeout(`${API_BASE}/api/config`, { timeoutMs: 2500 });
+    await fetchWithTimeout(`${apiBase()}/api/config`, { timeoutMs: 2500 });
   } catch {
     online = false;
   }

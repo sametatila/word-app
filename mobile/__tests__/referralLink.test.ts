@@ -22,7 +22,7 @@ import { PART_UNLOCKS, isLockedPart, stripLockedParts } from "../src/lib/avatarU
  *  3. KAZANILAN AKSESUAR. Kilit listesi web ile aynı olmalı; ayrışırsa bir
  *     platformda kilitli olan ötekinde açık görünür.
  */
-jest.mock("../src/api/client", () => ({ api: jest.fn(), fetchWithTimeout: jest.fn(), API_BASE: "https://www.lernomi.app" }));
+jest.mock("../src/api/client", () => ({ api: jest.fn(), fetchWithTimeout: jest.fn(), apiBase: () => "https://www.lernomi.app", onBaseChange: () => () => {}, PRIMARY_BASE: "https://www.lernomi.app", FALLBACK_BASE: "https://lernomi.rumpuskit.com" }));
 
 beforeEach(async () => {
   await AsyncStorage.clear();

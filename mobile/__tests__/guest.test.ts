@@ -17,7 +17,7 @@ jest.mock("../src/api/client", () => {
     status: number;
     constructor(status: number, message = "") { super(message); this.status = status; }
   }
-  return { api: jest.fn(), fetchWithTimeout: jest.fn(), API_BASE: "https://example.test", ApiError: Err };
+  return { api: jest.fn(), fetchWithTimeout: jest.fn(), apiBase: () => "https://example.test", onBaseChange: () => () => {}, PRIMARY_BASE: "https://www.lernomi.app", FALLBACK_BASE: "https://lernomi.rumpuskit.com", ApiError: Err };
 });
 
 jest.mock("../src/lib/integrity", () => ({ guestAttestation: jest.fn(async () => null) }));

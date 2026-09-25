@@ -1,4 +1,4 @@
-import { API_BASE, ApiError, fetchWithTimeout } from "../api/client";
+import { apiBase, ApiError, FALLBACK_BASE, fetchWithTimeout, PRIMARY_BASE } from "../api/client";
 import { reportError } from "./errorReport";
 import { diagnoseNetwork } from "./reachability";
 import { t } from "./i18n";
@@ -86,18 +86,22 @@ async function failOutcome(e: unknown): Promise<AuthOutcome> {
  * okunmuyor. Açık mı kapalı mı sorusunun cevabı `/api/config` (bkz.
  * lib/serverConfig `turnstileSiteKey`).
  */
-async function post(path: string, body: Record<string, unknown>, captchaToken?: string | null): Promise<Response> {
-  return fetch(`${API_BASE}/api/auth/${path}`, {
+/*
+  Ortak taşıyıcıdan gidiyor (api/client `send`): `origin` başlığını o anki
+  tabanla o koyuyor (RN bu başlığı koymuyor, Better Auth'un CSRF kontrolü ise
+  çerez taşıyan POST'ta onu şart koşuyor) ve asıl adres engelliyse yedeğe
+  geçip isteği bir kez yeniden deniyor. `pinned`: adres asıl tabanda kalır.
+*/
+async function post(path: string, body: Record<string, unknown>, captchaToken?: string | null, pinned = false): Promise<Response> {
+  return fetchWithTimeout(`${pinned ? PRIMARY_BASE : apiBase()}/api/auth/${path}`, {
     method: "POST",
-    // `origin` elle: RN bu başlığı koymuyor, Better Auth'un CSRF kontrolü ise
-    // çerez taşıyan POST'ta onu şart koşuyor (bkz. api/client.ts'teki uzun not).
     headers: {
       "content-type": "application/json",
       accept: "application/json",
-      origin: API_BASE,
       ...(captchaToken ? { "x-captcha-response": captchaToken } : {}),
     },
     body: JSON.stringify(body),
+    pinned,
   });
 }
 
@@ -171,7 +175,7 @@ export async function signUp(name: string, email: string, password: string, capt
  */
 export async function getSessionState(): Promise<{ user: AuthUser | null; known: boolean }> {
   try {
-    const res = await fetchWithTimeout(`${API_BASE}/api/auth/get-session`, { headers: { accept: "application/json" } });
+    const res = await fetchWithTimeout(`${apiBase()}/api/auth/get-session`, { headers: { accept: "application/json" } });
     if (res.status === 401) return { user: null, known: true };
     if (!res.ok) return { user: null, known: false };
     const text = await res.text().catch(() => "");
@@ -189,6 +193,20 @@ export async function getSession(): Promise<AuthUser | null> {
 
 export async function signOut(): Promise<void> {
   try { await post("sign-out", {}); } catch { /* yut */ }
+  /*
+    ÖTEKİ TABANDAKİ OTURUM DA KAPANIYOR. Çerez taban başına ayrı (bkz.
+    api/base): yedek adreste girip çıkan kullanıcının asıl adresteki eski
+    oturumu, ağ değişip asıl adrese dönüldüğünde onu sessizce geri
+    getirirdi. Beklenmiyor: öteki taban engelliyse çıkış dört saniye durmasın.
+  */
+  const other = apiBase() === PRIMARY_BASE ? FALLBACK_BASE : PRIMARY_BASE;
+  void fetchWithTimeout(`${other}/api/auth/sign-out`, {
+    method: "POST",
+    headers: { "content-type": "application/json", accept: "application/json" },
+    body: "{}",
+    pinned: true,
+    timeoutMs: 4000,
+  }).catch(() => undefined);
 }
 
 /**
@@ -198,9 +216,9 @@ export async function signOut(): Promise<void> {
  * oturum çerezi yazılınca uygulamanın istekleri de oturumlu olur. `callbackURL`
  * bitişte gidilecek sayfa; WebView bu adrese ulaşınca akış tamamdır.
  */
-export async function signInSocial(provider: string, callbackURL: string): Promise<string | null> {
+export async function signInSocial(provider: string, callbackURL: string, pinned = false): Promise<string | null> {
   try {
-    const res = await post("sign-in/social", { provider, callbackURL });
+    const res = await post("sign-in/social", { provider, callbackURL }, null, pinned);
     if (!res.ok) return null;
     const j = JSON.parse(await res.text()) as { url?: string };
     return j.url ?? null;
@@ -286,7 +304,7 @@ export async function updateUserName(name: string): Promise<boolean> {
  */
 export async function sendAppleAuthorizationCode(code: string): Promise<boolean> {
   try {
-    const res = await fetchWithTimeout(`${API_BASE}/api/account/apple-code`, {
+    const res = await fetchWithTimeout(`${apiBase()}/api/account/apple-code`, {
       method: "POST",
       headers: { "content-type": "application/json", accept: "application/json" },
       body: JSON.stringify({ code }),
@@ -305,7 +323,8 @@ export async function sendAppleAuthorizationCode(code: string): Promise<boolean>
  */
 export async function requestPasswordReset(email: string, captchaToken?: string | null): Promise<boolean> {
   try {
-    const res = await post("request-password-reset", { email, redirectTo: "https://www.lernomi.app/reset-password" }, captchaToken);
+    // Bağlantı e-postaya gidiyor: her zaman asıl adres (sunucu yedeği de oraya sabitliyor).
+    const res = await post("request-password-reset", { email, redirectTo: `${PRIMARY_BASE}/reset-password` }, captchaToken);
     return res.ok;
   } catch {
     return false;
@@ -327,7 +346,7 @@ export async function requestPasswordReset(email: string, captchaToken?: string 
  */
 export async function sendVerificationEmail(email: string): Promise<AuthOutcome> {
   try {
-    return await parse(await post("send-verification-email", { email, callbackURL: `${API_BASE}/learn` }));
+    return await parse(await post("send-verification-email", { email, callbackURL: `${PRIMARY_BASE}/learn` }));
   } catch (e) {
     return failOutcome(e);
   }
@@ -382,7 +401,14 @@ export async function completeEmailVerification(url: string): Promise<boolean> {
   try {
     const res = await fetchWithTimeout(url, { headers: { accept: "application/json" } });
     return res.ok;
-  } catch {
+  } catch (e) {
+    /*
+      YEDEK TABANDA doğrulama sunucuda BİTİYOR ama cevap asıl adrese
+      (`callbackURL`) yönlendiriyor ve engelli ağda o son adım ağ hatası
+      veriyor. Oturum çerezi yönlendirmeden önce yazıldı; oturum varsa
+      doğrulama olmuştur.
+    */
+    if (isNetworkError(e)) return (await getSessionState()).user !== null;
     return false;
   }
 }
@@ -390,7 +416,7 @@ export async function completeEmailVerification(url: string): Promise<boolean> {
 /** Hesaba bağlı sağlayıcılar (credential = e-posta/parola, google …). */
 export async function listAccounts(): Promise<{ providerId: string }[]> {
   try {
-    const res = await fetchWithTimeout(`${API_BASE}/api/auth/list-accounts`, { headers: { accept: "application/json" } });
+    const res = await fetchWithTimeout(`${apiBase()}/api/auth/list-accounts`, { headers: { accept: "application/json" } });
     if (!res.ok) return [];
     const j = JSON.parse(await res.text()) as { providerId?: string }[];
     return Array.isArray(j) ? j.filter((a) => typeof a.providerId === "string").map((a) => ({ providerId: a.providerId! })) : [];
@@ -488,7 +514,7 @@ export async function disableTwoFactor(password: string): Promise<AuthOutcome> {
  */
 export async function getTwoFactorEnabled(): Promise<boolean | null> {
   try {
-    const res = await fetchWithTimeout(`${API_BASE}/api/auth/get-session`, { headers: { accept: "application/json" } });
+    const res = await fetchWithTimeout(`${apiBase()}/api/auth/get-session`, { headers: { accept: "application/json" } });
     if (!res.ok) return null;
     const text = await res.text().catch(() => "");
     if (!text || text === "null") return null;

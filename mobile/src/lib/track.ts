@@ -1,5 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { API_BASE, api } from "../api/client";
+import { apiBase, api, fetchWithTimeout } from "../api/client";
 
 /**
  * Mobil olay göndericisi (§4 funnel ölçümü) — web'deki lib/track ile aynı
@@ -197,7 +197,7 @@ export function track(name: EventName, value = 0, kind?: string): void {
   const d = new Date();
   const day = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
   try {
-    void fetch(`${API_BASE}/api/events`, {
+    void fetchWithTimeout(`${apiBase()}/api/events`, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ name, day, value, kind }),

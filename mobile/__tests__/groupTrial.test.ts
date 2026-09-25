@@ -15,7 +15,7 @@ import { groupTrialOption, purchaseOutcomeOf } from "../src/lib/billing";
  *  4. Play teklifi ETİKETLE bulunuyor; bulunamazsa normal fiyata SESSİZCE
  *     düşülmüyor (null → "teklif görünmüyor").
  */
-jest.mock("../src/api/client", () => ({ api: jest.fn(), fetchWithTimeout: jest.fn(), API_BASE: "https://www.lernomi.app" }));
+jest.mock("../src/api/client", () => ({ api: jest.fn(), fetchWithTimeout: jest.fn(), apiBase: () => "https://www.lernomi.app", onBaseChange: () => () => {}, PRIMARY_BASE: "https://www.lernomi.app", FALLBACK_BASE: "https://lernomi.rumpuskit.com" }));
 
 function onPlatform(os: "ios" | "android", fn: () => void) {
   const restore = jest.replaceProperty(Platform, "OS", os);

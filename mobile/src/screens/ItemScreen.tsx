@@ -23,7 +23,7 @@ import { isSkillDone, scoreBand, scoreOf, RUBRIC_PASS_PCT, SKILL_DONE_PCT } from
 import { speakTarget, speakAndWaitVoiced, prefetchDialogue, speakPassage, stopSpeaking } from "../lib/tts";
 import { dialogueCast } from "../lib/speakers";
 import { currentCourseId } from "../lib/courses";
-import { API_BASE, fetchWithTimeout } from "../api/client";
+import { apiBase, fetchWithTimeout } from "../api/client";
 import { bumpStats } from "../lib/statsSignal";
 import { AiNotice } from "../ui/AiNotice";
 import { todayStr } from "../game/session";
@@ -316,7 +316,7 @@ export function ItemScreen() {
        gelince `lastScore` ile bir daha uzlastiriliyor. */
     if (isSkillDone(scoreOf(c, total, score))) void markItemDone(exercise.id);
     try {
-      const res = await fetchWithTimeout(`${API_BASE}/api/skills`, {
+      const res = await fetchWithTimeout(`${apiBase()}/api/skills`, {
         method: "POST", headers: { "content-type": "application/json" },
         body: JSON.stringify({ id: exercise.id, correct: c, score, day: todayStr(), seconds: Math.round((Date.now() - startedAt.current) / 1000) }),
       });

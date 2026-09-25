@@ -9,7 +9,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import type { RootStackParams } from "../navigation/RootStack";
 import type { RootTabParams } from "../navigation/RootTabs";
 import { social, errorText, type FriendsView, type SocialMe } from "../api/social";
-import { API_BASE } from "../api/client";
+import { PRIMARY_BASE } from "../api/client";
 import { useAuth } from "../lib/AuthContext";
 import { track } from "../lib/track";
 import { Text } from "../ui/Text";
@@ -88,7 +88,7 @@ export function FriendsScreen() {
   async function share() {
     if (!me) return;
     track("share", 0, "profile");
-    try { await Share.share({ message: tx("friends.share_text", { lang: courseOrDefault(currentCourseId()).label[currentLang()], link: `${API_BASE}/u/${me.username}?src=invite` }) }); } catch { /* kapatıldı */ }
+    try { await Share.share({ message: tx("friends.share_text", { lang: courseOrDefault(currentCourseId()).label[currentLang()], link: `${PRIMARY_BASE}/u/${me.username}?src=invite` }) }); } catch { /* kapatıldı */ }
   }
 
   if (user?.guest) {

@@ -8,7 +8,7 @@ import { pruneConversationResumes } from "../src/game/pathProgress";
  *  - eski marka adındaki sahipsiz anahtar da göçten sonra gider,
  *  - süresi geçmiş (ya da bozuk) yarım konuşma silinir, taze olan kalır.
  */
-jest.mock("../src/api/client", () => ({ api: jest.fn(), fetchWithTimeout: jest.fn(), API_BASE: "https://example.test" }));
+jest.mock("../src/api/client", () => ({ api: jest.fn(), fetchWithTimeout: jest.fn(), apiBase: () => "https://example.test", onBaseChange: () => () => {}, PRIMARY_BASE: "https://www.lernomi.app", FALLBACK_BASE: "https://lernomi.rumpuskit.com" }));
 
 beforeEach(async () => {
   await AsyncStorage.clear();

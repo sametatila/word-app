@@ -13,7 +13,7 @@
 import { NativeEventEmitter, NativeModules, PermissionsAndroid, Platform } from "react-native";
 import { currentTargetLocale, currentTargetLang } from "./courses";
 import { t } from "./i18n";
-import { API_BASE } from "../api/client";
+import { apiBase, onBaseChange } from "../api/client";
 import { PACE_PARAM, paceOf, type Pace, PITCH_PARAM, type Pitch } from "./voices";
 
 type SpeechNative = {
@@ -45,7 +45,10 @@ type SpeechNative = {
 const Native = NativeModules.LernomiSpeech as SpeechNative | undefined;
 const emitter = Native ? new NativeEventEmitter(NativeModules.LernomiSpeech) : null;
 // Native HTTP allowlist: uploadStt/httpGet/playTtsUrl yalnız API sunucusuna (https) çıkar.
-try { Native?.setApiBase?.(API_BASE); } catch { /* yut */ }
+try { Native?.setApiBase?.(apiBase()); } catch { /* yut */ }
+/* Taban değişince (engelli ağda yedek adres, bkz. api/base) izinli host da değişiyor:
+   native taraf her an TEK host'a çıkabiliyor, o da o anki taban. */
+onBaseChange((next) => { try { Native?.setApiBase?.(next); } catch { /* yut */ } });
 
 /**
  * Mikrofon izni — konuşan her ekranın kapısı (konuşma, konuşma alıştırması, deneme
@@ -201,7 +204,7 @@ export async function speakServerTts(voice: string, text: string, slow: Pace | b
      ayni kalmali, yoksa isinmis butun onbellek girdileri iskalanir. */
   // `k=w`: kelime katmanı — sunucu yalnız Defne/Aras dosyasından çalıyor, tabloda yoksa 404 (bkz. web app/api/tts).
   // `k=n`: karakter anlatımı — dosya varsa karakterin sesi, yoksa aynı karakterin Edge karşılığı.
-  const url = `${API_BASE}/api/tts?v=${encodeURIComponent(voice)}&t=${encodeURIComponent(text)}${pace === "normal" ? "" : `&r=${PACE_PARAM[pace]}`}${pitch === "mid" ? "" : `&p=${PITCH_PARAM[pitch]}`}${word === true ? "&k=w" : word === "n" ? "&k=n" : ""}`;
+  const url = `${apiBase()}/api/tts?v=${encodeURIComponent(voice)}&t=${encodeURIComponent(text)}${pace === "normal" ? "" : `&r=${PACE_PARAM[pace]}`}${pitch === "mid" ? "" : `&p=${PITCH_PARAM[pitch]}`}${word === true ? "&k=w" : word === "n" ? "&k=n" : ""}`;
   try { return await Native.playTtsUrl(url); } catch { return false; }
 }
 export function stopServerTts(): void { try { Native?.stopTts(); } catch { /* yut */ } }
@@ -274,7 +277,7 @@ export async function azureListenOnce(target: string, windowMs = 3000, lang: str
     const path = await Native.stopRecording().catch(() => null);
     if (!path) return null;
     // POST'u NATIVE yap — RN fetch ekran-kapalı (arka plan) takılıyor; native thread çalışır.
-    const text = await Native.uploadStt(`${API_BASE}/api/stt`, path, lang, target ?? "").catch(() => null);
+    const text = await Native.uploadStt(`${apiBase()}/api/stt`, path, lang, target ?? "").catch(() => null);
     return text ? [text.trim()] : null;
   } catch {
     return null;

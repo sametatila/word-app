@@ -20,7 +20,7 @@ import { glossVoice } from "../lib/voices";
 import { currentLang, nativeLangName, targetLangName, formatPercent } from "../lib/i18n";
 import { ensureMicPermission, ensureWalkNotificationPermission, listenOnce, stopListening, setKeepAwake, azureListenOnce, startWalkService, stopWalkService, onScreenState, onWalkStop, onWalkServiceFailed, stopServerTts, nativeDelay, nativeHttpGet } from "../lib/stt";
 import { currentTargetLocale } from "../lib/courses";
-import { API_BASE } from "../api/client";
+import { apiBase } from "../api/client";
 import { spokenMatches, parseSkip, skipWord, encourage, parseConfirm } from "../lib/voiceMatch";
 import { sfx, setSfxScreenOff, sfxDurationMs } from "../lib/sfx";
 import { bumpStats } from "../lib/statsSignal";
@@ -799,7 +799,7 @@ export function WalkModeScreen() {
       if (screenOffRef.current) {
         // ekran-kapalı: native GET (RN fetch arka planda takılıyor)
         const skip = Array.from(askedIds.current).slice(-200).join(",");
-        const url = `${API_BASE}/api/session?day=${day.current}&walk=1${skip ? `&skip=${skip}` : ""}`;
+        const url = `${apiBase()}/api/session?day=${day.current}&walk=1${skip ? `&skip=${skip}` : ""}`;
         const body = await nativeHttpGet(url);
         payload = body ? (JSON.parse(body) as { rounds?: Round[]; error?: string }) : null;
       } else {

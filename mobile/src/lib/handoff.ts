@@ -1,5 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { API_BASE, fetchWithTimeout } from "../api/client";
+import { apiBase, fetchWithTimeout } from "../api/client";
 
 /**
  * TARAYICIDAN DEVİR — cihaza bağlama.
@@ -32,7 +32,7 @@ type Pending = { n: string; at: number };
 /** Tarayıcı girişini başlatmadan önce çağrılır; dönüş adresine konacak değeri verir. */
 export async function beginHandoff(): Promise<string | null> {
   try {
-    const res = await fetchWithTimeout(`${API_BASE}/api/handoff-nonce`, { headers: { accept: "application/json" } });
+    const res = await fetchWithTimeout(`${apiBase()}/api/handoff-nonce`, { headers: { accept: "application/json" } });
     if (!res.ok) return null;
     const { nonce } = (await res.json()) as { nonce?: unknown };
     if (typeof nonce !== "string" || !/^[A-Za-z0-9_-]{16,128}$/.test(nonce)) return null;

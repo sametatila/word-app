@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Linking, View } from "react-native";
 import { WebView } from "react-native-webview";
-import { API_BASE } from "../api/client";
+import { useApiBase } from "../api/useApiBase";
 import { t } from "../lib/i18n";
 import { useTheme, spacing } from "../theme";
 import { Text } from "./Text";
@@ -61,6 +61,9 @@ export function Turnstile({
   onToken: (token: string | null) => void;
 }) {
   const { isDark, colors } = useTheme();
+  /* Taban yedeğe geçerse (engelli ağ, bkz. api/base) widget yeni adresten açılsın;
+     Turnstile jetonu sayfanın alan adına bağlı ve iki alan adı da panelde kayıtlı. */
+  const base = useApiBase();
   const view = useRef<Injectable | null>(null);
   const cb = useRef(onToken);
   cb.current = onToken;
@@ -97,9 +100,9 @@ export function Turnstile({
     <>
     <View style={{ height: 74, overflow: "hidden" }}>
       <WebView
-        key={mount}
+        key={`${mount}:${base}`}
         ref={(r) => { view.current = r; }}
-        source={{ uri: `${API_BASE}/api/turnstile?theme=${isDark ? "dark" : "light"}` }}
+        source={{ uri: `${base}/api/turnstile?theme=${isDark ? "dark" : "light"}` }}
         javaScriptEnabled
         domStorageEnabled
         scrollEnabled={false}
@@ -114,7 +117,7 @@ export function Turnstile({
         // 74 pt'lik kutunun içinde değil tarayıcıda açılsın.
         onShouldStartLoadWithRequest={(req) => {
           if (req.isTopFrame === false || req.url.startsWith("about:")) return true;
-          if (req.url.startsWith(`${API_BASE}/api/turnstile`)) return true;
+          if (req.url.startsWith(`${base}/api/turnstile`)) return true;
           Linking.openURL(req.url).catch(() => {});
           return false;
         }}
