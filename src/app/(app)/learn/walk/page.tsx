@@ -8,8 +8,8 @@ export const dynamic = "force-dynamic";
 /**
  * Yürüyüş modu — dinle ve söyle, ekrana bakmadan (bkz. docs/plan/walk-stt.md).
  *
- * Bugünkü oturum hakkı (2026-09-25: ücretsizde günde 3, ekran açık) sunucuda
- * okunup kapağa iniyor: kullanıcı başlamadan kaç oturumu kaldığını görüyor.
+ * Bugünkü tur hakkı (2026-09-25: ücretsizde günde 3, ekran açık) sunucuda
+ * okunup kapağa iniyor: kullanıcı başlamadan kaç turu kaldığını görüyor.
  * Kapıyı yine `/api/session?walk=1` tutuyor.
  */
 export default async function WalkPage() {

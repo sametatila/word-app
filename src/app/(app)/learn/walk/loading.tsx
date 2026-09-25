@@ -2,7 +2,7 @@ import { LoadingRegion } from "@/components/loading-region";
 import { SkeletonLine } from "@/components/skeleton";
 
 /**
- * Yürüyüş modu gelene kadar iskelet. Sayfa artık bugünkü oturum hakkını
+ * Yürüyüş modu gelene kadar iskelet. Sayfa artık bugünkü tur hakkını
  * sunucuda okuyor (`walkQuota`); oynatıcının kendi ilk karesi de tek satırlık
  * "hazırlanıyor" notu, iskelet onun yerini tutuyor.
  */

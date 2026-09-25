@@ -91,7 +91,7 @@ export async function skillQuota(
   return { writing: view(lv.skillWriting, "skill_write"), speaking: view(lv.skillSpeaking, "skill_speak") };
 }
 
-/** Yürüyüş modunun bugünkü oturum durumu (misafir de sayılıyor). Okunamazsa null. */
+/** Yürüyüş modunun bugünkü tur durumu (misafir de sayılıyor). Okunamazsa null. */
 export async function walkQuota(user: { id: string } | null): Promise<WalkUnlock | null> {
   if (!user) return null;
   return walkState(user.id).catch(() => null);

@@ -14,7 +14,7 @@ import { PremiumStoreCta } from "@/components/premium-store-cta";
 import type { StoreLinks, WebPlatform } from "@/lib/store-link";
 
 type Plans = { productMonthly: string; productYearly: string; trialDays: number };
-type FairUse = { walkSessionsPerDay: number; aiPracticePerDay: number; chatTurnsPerDay: number };
+type FairUse = { walkRoundsPerDay: number; aiPracticePerDay: number; chatTurnsPerDay: number };
 type Status = {
   premium: boolean;
   until: string | null;
@@ -244,9 +244,9 @@ export function PremiumPaywall({
             kuralına aykırı.
           */}
           <div className="muted mt-4 space-y-1 text-caption leading-relaxed">
-            {/* Üç tavan tek cümlede ve "sınırsız" denmeden: yürüyüş oturumu ve
+            {/* Üç tavan tek cümlede ve "sınırsız" denmeden: yürüyüş turu ve
                 değerlendirme panelden, sohbet mesajı sabit tavandan (lib/quotas). */}
-            <p>{t("plan.pro_fair_use", { w: fairUse.walkSessionsPerDay, a: fairUse.aiPracticePerDay, c: fairUse.chatTurnsPerDay })}</p>
+            <p>{t("plan.pro_fair_use", { w: fairUse.walkRoundsPerDay, a: fairUse.aiPracticePerDay, c: fairUse.chatTurnsPerDay })}</p>
             {/* İçerik vaadi AYRI satır: adil kullanım tavanlarıyla aynı cümlede
                 birleşince iki ayrı konu tek bir cümle gibi okunuyordu. */}
             <p>{t(supportsMockExams(course) ? "paywall.content_is_built_around_cefr_a1" : "paywall.content_is_built_around_cefr")}</p>

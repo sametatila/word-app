@@ -107,10 +107,9 @@ export function packCopy(state: MockUnlock | null | undefined): Line | null {
     : { key: "unlock.pack_all" };
 }
 
-/** Yürüyüş modunun günlük oturum satırı. Premium'da null (tavan ayrı notta). */
+/** Yürüyüş modunun günlük tur satırı. Premium'da null (tavan ayrı notta). */
 export function walkCopy(state: WalkUnlock | null | undefined): Line | null {
   if (!state || state.premium) return null;
-  if (state.sessionOpen) return { key: "unlock.walk_open" };
   if (state.remaining > 0) return { key: "unlock.walk_left", params: { n: state.remaining } };
   return { key: "unlock.walk_spent" };
 }

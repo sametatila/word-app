@@ -116,7 +116,7 @@ type Status =
   | "error"
   | "unsupported"
   | "denied"
-  /* Bugünkü ücretsiz oturumlar bitti (403 premium_required) — 2026-09-25. */
+  /* Bugünkü ücretsiz turlar bitti (403 premium_required) — 2026-09-25. */
   | "locked"
   /* Premium'un günlük kötüye kullanım tavanı doldu (429). */
   | "fair_use";
@@ -287,13 +287,17 @@ function wordsOf(round: Round): RoundWord[] {
   return round.game === "match" ? round.words : [round.word];
 }
 
+/** Gelen her kuyruk bir tur: ücretsizde kalan hak bir azalıyor (premium'da gösterilmiyor). */
+const spendRound = (w: WalkUnlock | null): WalkUnlock | null =>
+  w && !w.premium ? { ...w, used: w.used + 1, remaining: Math.max(0, w.remaining - 1) } : w;
+
 export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?: WalkUnlock | null }) {
   const t = useT();
   /*
-    GÜNLÜK OTURUM (2026-09-25). Ücretsizde günde 3 oturum, ekran açık; oturum
-    sunucuda `/api/session?walk=1` ile açılıyor ve 30 dakikalık pencere içindeki
-    devam isteği aynı oturum sayılıyor. Sayfa durumu yüklemeden ÖNCE okudu;
-    kuyruk yüklenince oturum açılmış oluyor, kapakta söylenen buna göre.
+    GÜNLÜK TUR (2026-09-25). Ücretsizde günde 3 tur, ekran açık; her
+    `/api/session?walk=1` isteği (tur sonundaki "devam" dahil) sunucuda bir tur
+    sayılıyor. Sayfa durumu yüklemeden ÖNCE okudu; her gelen kuyrukta kalan
+    tur burada bir azaltılıyor, kapakta söylenen buna göre.
   */
   const [walkNow, setWalkNow] = useState<WalkUnlock | null>(walk);
   const router = useRouter();
@@ -477,8 +481,8 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
         return setStatus(gate);
       }
       if (!res.ok) return setStatus("error");
-      /* Kuyruk geldi = oturum açık. Pencere dışındaysa bir hak düştü. */
-      setWalkNow((w) => (w && !w.premium && !w.sessionOpen ? { ...w, sessionOpen: true, used: w.used + 1, remaining: Math.max(0, w.remaining - 1) } : w));
+      /* Kuyruk geldi = bir tur sayıldı. */
+      setWalkNow(spendRound);
       const data = (await res.json()) as SessionPayload & { resume?: SessionProgress | null };
       if (!data.rounds.length) return setStatus("empty");
       setSession(data);
@@ -946,11 +950,11 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
         cache: "no-store",
         signal: AbortSignal.timeout(NET_TIMEOUT_MS),
       });
-      /* Devam isteği oturum penceresinin dışına düştüyse yeni oturum sayılıyor
-         ve hak yoksa kapı burada kapanıyor — "kelime kalmadı" DEĞİL. */
+      /* Devam da bir tur: hak yoksa kapı burada kapanıyor — "kelime kalmadı" DEĞİL. */
       const gate = await walkGate(res);
       if (gate) return gate;
       if (!res.ok) return null;
+      setWalkNow(spendRound);
       return (await res.json()) as SessionPayload;
     } catch {
       return null;
@@ -1609,9 +1613,9 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
       </FlowColumn>
     );
 
-  /* OTURUM HAKKI BİTTİ (2026-09-25): ücretsizde günde 3 oturum. Kilit,
-     yarın yenileneceği ve Premium'la ekran kapalıyken de, günlük oturum
-     beklemeden yürüneceği söyleniyor. */
+  /* TUR HAKKI BİTTİ (2026-09-25): ücretsizde günde 3 tur. Kilit, yarın
+     yenileneceği ve Premium'la ekran kapalıyken de, günlük tur beklemeden
+     yürüneceği söyleniyor. */
   if (status === "locked" || status === "fair_use")
     return (
       <FlowColumn>
@@ -1659,13 +1663,8 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
     );
 
   if (status === "ready" || status === "paused") {
-    /* Bugünkü oturum hakkı — oturum açıkken kalan oturum sayısı, yoksa açık. */
-    const walkLine =
-      walkNow && !walkNow.premium
-        ? walkNow.remaining > 0
-          ? t("unlock.walk_left", { n: walkNow.remaining })
-          : t("unlock.walk_open")
-        : null;
+    /* Bugün kalan tur — bu tur sayıldıktan SONRAKİ sayı; son turdaysa satır yok. */
+    const walkLine = walkNow && !walkNow.premium && walkNow.remaining > 0 ? t("unlock.walk_left", { n: walkNow.remaining }) : null;
     /* Kaldığın yer: kapakta da duraklamada da aynı satır. */
     const where = (
       <FlowNote
