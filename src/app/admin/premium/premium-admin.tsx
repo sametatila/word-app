@@ -151,7 +151,7 @@ export function PremiumAdmin({
               <Num label="Dilim başına ek hak (Patika, Beceriler)" v={cfg.free.streakBonus} on={(n) => num(["free", "streakBonus"], n)} />
               <Num label="Kademe tavanı (0 = sınırsız)" v={cfg.free.maxTiers} on={(n) => num(["free", "maxTiers"], n)} />
               <Num label="Deneme sınavı (seviye başına)" v={cfg.free.mockExamsPerLevel} on={(n) => num(["free", "mockExamsPerLevel"], n)} />
-              <Num label="Deneme sınavı, dilim başına ek kâğıt" v={cfg.free.mockStreakBonus} on={(n) => num(["free", "mockStreakBonus"], n)} />
+              <Num label="Deneme sınavı, dilim başına ek sınav" v={cfg.free.mockStreakBonus} on={(n) => num(["free", "mockStreakBonus"], n)} />
               <Num label="Günde yürüyüş turu (ekran açık)" v={cfg.free.walkRoundsPerDay} on={(n) => num(["free", "walkRoundsPerDay"], n)} />
             </Grid>
           </Panel>
@@ -163,9 +163,9 @@ export function PremiumAdmin({
             </Grid>
           </Panel>
 
-          <Panel title="Deneme sınavı paketleri" hint="Premium: paketteki kâğıtların hepsi bitirilince sonraki paket açılır. Başarı yüzdesi koşulu 2026-09-25’te kalktı.">
+          <Panel title="Deneme sınavı paketleri" hint="Premium: paketteki deneme sınavlarının hepsi bitirilince sonraki paket açılır. Başarı yüzdesi koşulu 2026-09-25’te kalktı.">
             <Grid>
-              <Num label="Paket boyu (kâğıt)" v={cfg.mock.packSize} on={(n) => num(["mock", "packSize"], n)} />
+              <Num label="Paket boyu (deneme sınavı)" v={cfg.mock.packSize} on={(n) => num(["mock", "packSize"], n)} />
             </Grid>
           </Panel>
 

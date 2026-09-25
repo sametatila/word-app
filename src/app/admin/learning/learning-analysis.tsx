@@ -16,8 +16,8 @@ import { TwoStep } from "../_ui/two-step";
  * yarım dakikada düşüyor (lib/content `disableItem`); düzeltmenin kendisi
  * git'te yapılıp yayınlanıyor.
  *
- * Deneme sınavında kapatılabilen birim KÂĞIT (`papers/<kurs>` paketinin
- * maddesi kâğıt kimliği): tek soru kapatılamıyor, kâğıt kapatılıyor.
+ * Deneme sınavında kapatılabilen birim SINAVIN TAMAMI (`papers/<kurs>` paketinin
+ * maddesi deneme sınavının kimliği): tek soru kapatılamıyor, sınav kapatılıyor.
  */
 const tone = (pct: number): Tone => (pct < 35 ? "bad" : pct < 60 ? "warn" : "ok");
 const TABS = ["Konuşmalar", "Beceri egzersizleri", "Deneme sınavı soruları", "Patika adımları"] as const;
@@ -113,10 +113,10 @@ export function LearningAnalysis({ conversations, skills, path, mockItems, mockS
       {tab === "Deneme sınavı soruları" ? (
         <>
           <p className="muted mb-2 text-caption">
-            {mockScanned} bitmiş okuma/dinleme bölümü okundu. Kapatma birimi <b>kâğıt</b>: bir soru için kâğıdın tamamı yayından kalkıyor.
+            {mockScanned} bitmiş okuma/dinleme bölümü okundu. Kapatma birimi <b>deneme sınavı</b>: bir soru için sınavın tamamı yayından kalkıyor.
           </p>
           {/* Sıralamanın ölçütü doğruluk oranı DEĞİL — %30'da kalan bir madde zor
-              olabilir. "Ayırt", maddeyi doğru cevaplayanların kâğıt puanı
+              olabilir. "Ayırt", maddeyi doğru cevaplayanların sınav puanı
               ortalaması eksi yanlış cevaplayanların ortalaması: negatifse
               sınavın geri kalanında iyi olanlar burada yanılıyor, yani sorun
               öğrencide değil maddede (bkz. lib/content/analytics). */}
@@ -126,12 +126,12 @@ export function LearningAnalysis({ conversations, skills, path, mockItems, mockS
           </p>
           <DataTable
             empty="Analiz için yeterli deneme cevabı yok."
-            head={["Kâğıt · bölüm", "Soru", { label: "Doğru", align: "right" }, { label: "Ayırt", align: "right" }, ""]}
+            head={["Deneme sınavı · bölüm", "Soru", { label: "Doğru", align: "right" }, { label: "Ayırt", align: "right" }, ""]}
             rows={mockItems.map((m) => [
               <div key="p" className="whitespace-nowrap">
                 <div className="font-mono">{m.paperId}</div>
                 <div className="muted">{SKILL_TR[m.skill] ?? m.skill} · {m.itemId}</div>
-                {off.has(`${m.pack}:${m.paperId}`) ? <span style={{ color: TONE.bad }}>kâğıt kapalı</span> : null}
+                {off.has(`${m.pack}:${m.paperId}`) ? <span style={{ color: TONE.bad }}>sınav kapalı</span> : null}
               </div>,
               <span key="l" className="line-clamp-2">{m.label || "—"}</span>,
               <span key="c">{pctCell(m.pct)}<span className="muted"> · {m.correct}/{m.asked}</span></span>,
