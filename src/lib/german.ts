@@ -14,20 +14,21 @@
  * Arzte" gibi var olmayan bir çoğul üretilir.
  */
 export function umlautStem(stem: string): string {
-  // "au" ikili ünlüsü tek parça umlautlanır: Haus → Häuser, Baum → Bäume.
-  const au = stem.toLowerCase().lastIndexOf("au");
-  if (au >= 0) {
-    const upper = stem[au] === stem[au].toUpperCase();
-    return `${stem.slice(0, au)}${upper ? "Äu" : "äu"}${stem.slice(au + 2)}`;
-  }
+  // Umlaut SON ünlüye gelir; o ünlü "au" ikilisiyse ikili tek parça umlautlanır:
+  // Haus → Häuser, Baum → Bäume. Önceki bir "au" hesaba katılmaz: Ausflug → Ausflüge,
+  // Hauptstadt → Hauptstädte (ilk "au"yu umlautlamak "Äusfluge" üretiyordu).
   const matches = [...stem.matchAll(/[aouAOU]/g)];
   const last = matches[matches.length - 1];
   if (!last || last.index === undefined) return stem;
+  const i = last.index;
+  if ((last[0] === "u" || last[0] === "U") && i > 0 && (stem[i - 1] === "a" || stem[i - 1] === "A")) {
+    return `${stem.slice(0, i - 1)}${stem[i - 1] === "A" ? "Äu" : "äu"}${stem.slice(i + 1)}`;
+  }
   const map: Record<string, string> = {
     a: "ä", o: "ö", u: "ü",
     A: "Ä", O: "Ö", U: "Ü",
   };
-  return stem.slice(0, last.index) + map[last[0]] + stem.slice(last.index + 1);
+  return stem.slice(0, i) + map[last[0]] + stem.slice(i + 1);
 }
 
 /**

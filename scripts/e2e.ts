@@ -1244,6 +1244,9 @@ async function main() {
   check("küçük harfli kök bozulmadı", umlautStem("Anfang") === "Anfäng", `(${umlautStem("Anfang")})`);
   check("au ikilisi tek parça", umlautStem("Haus") === "Häus", `(${umlautStem("Haus")})`);
   check("baştaki Au ikilisi", umlautStem("Auge") === "Äuge", `(${umlautStem("Auge")})`);
+  // Umlaut son ünlüye gelir; önceki bir "au" ("Aus-", "Haupt-") umlautlanmaz.
+  check("Ausflug → Ausflüg kökü", umlautStem("Ausflug") === "Ausflüg", `(${umlautStem("Ausflug")})`);
+  check("Hauptstadt → Hauptstädt kökü", umlautStem("Hauptstadt") === "Hauptstädt", `(${umlautStem("Hauptstadt")})`);
   check("umlautlanacak ünlü yoksa değişmiyor", umlautStem("Bett") === "Bett");
 
   console.log("\n12) SRS saf fonksiyon davranışı");
