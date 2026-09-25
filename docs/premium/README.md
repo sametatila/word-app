@@ -87,7 +87,47 @@ yer tam burasıdır, o yüzden garanti kısıtta duruyor.
 
 ---
 
-## 2. Ürün kararları (2026-09-08'de verildi)
+## 2. Ürün yapısı ve kota kararları — 2026-09-25 (GEÇERLİ)
+
+Samet'le soru-cevapla verildi. Aşağıdaki 2026-09-08 bölümünü ve "tek havuz" anlatımını
+**geçersiz kılar**; o bölüm tarihçe olarak duruyor. Uygulama bu kararlara göre değiştiriliyor
+(2026-09-25'ten itibaren); iş bitene kadar kod ile bu tablo ayrışabilir, kesin kaynak burası.
+
+**Sözlük (ürünün dili — kodda, arayüzde, paywall'da, mağazada aynı):**
+
+| Yer | Parçalar | Not |
+|---|---|---|
+| **Öğren** | Kelime çalışma (günlük tur) · Pratik (aynı oyun türüyle kelime tekrarı) · Haftalık quiz (her hafta farklı; şu an 5, artacak) · Deneme sınavları · Yürüyüş modu | Deneme sınavları YALNIZ burada, Patika'dan bağımsız |
+| **Patika** | Okuma · Dinleme · **Konuşma** · Yazma · Dil bilgisi · **Quiz** · **Sınav** | İçerik yalnız Patika'ya ait. "Ders" ve "rol yapma" kavramı YOK: bugünkü ders (Türkçe anlatım + yapay zekâ sohbeti) Patika'nın **Konuşma** adımıdır; içerik değişmedi, adı değişti. Sohbet sonundaki puanlı 5 tur ("Sınav olarak dene") Konuşma adımının isteğe bağlı **puanlı kısmıdır**, ayrı bir "sınav" adı taşımaz. Tekrar + Kontrol → **Quiz**. Modül sınavı + seviye sınavı → **Sınav** (seviye sınavı Öğren'den Patika'ya taşınır) |
+| **Beceriler** | Okuma · Dinleme · Konuşma · Yazma · Dil bilgisi | Dili bir miktar bilen kullanıcı için; CEFR seviyesi serbestçe değişir |
+
+"Ders", "lesson", "rol yapma", "roleplay" adları **her yerden** kalkar: dosya adları, fonksiyon
+ve değişken adları, yorumlar, i18n anahtarları, içerik kimlikleri. API adresleri yeni adla açılır,
+eski adres testteki eski build'ler için geçici yönlendirilir; veritabanı tabloları veri kaybı
+olmadan (ALTER … RENAME, deploy'dan önce yedekli) yeniden adlandırılır — `deploy.sh`'taki
+`drizzle-kit push --force` şemada olmayan tabloyu SİLER, sıra buna göre kurulur.
+
+**Kotalar:**
+
+| | Ücretsiz | Premium |
+|---|---|---|
+| Kelime çalışma, pratik, okuma, dinleme, dil bilgisi, quiz | sınırsız | sınırsız |
+| Haftalık quiz | haftada 1 | haftada 1 |
+| **Yürüyüş modu** | **günde 3 oturum** (~20 kelime/oturum), yalnız ekran açıkken | ekran kapalı dahil; yalnız kötüye kullanım tavanı |
+| **Deneme sınavları** (Öğren) | her seviyede **1** kâğıt açık; o kâğıdı **bitirip 7 günlük seri** yapınca **+1**, sonra her 7 günlük seride +1 | **3'lü paketler**: paketteki 3 kâğıdı **tamamlayınca** sonraki 3 açılır |
+| **Patika Konuşma** (anlatım + yapay zekâ sohbeti + puanlı kısım) | **seviye başına 2** açık; ikisini **tamamlayıp 7 günlük seri** yapınca **+2**, sonra her 7 günlük seride +2. Hak yoksa adım **kilitli, Premium ister** | yalnız kötüye kullanım tavanı |
+| **Patika Yazma** (yapay zekâ değerlendirmesi) | aynı: seviye başına 2 + (tamamla + 7 gün seri) → +2 | yalnız kötüye kullanım tavanı |
+| **Beceriler Konuşma / Yazma** (yapay zekâ değerlendirmesi) | **seviye başına** 2'şer + (tamamla + 7 gün seri) → +2'şer | yalnız kötüye kullanım tavanı |
+
+**Kalkanlar:** deneme sınavındaki %60 başarı koşulu (iki katmanda); haftada 2 yenilenen
+ortak hak; "Patika ve Beceriler ortak / tek havuz" anlatımı; kotasız Patika sohbeti; Cepte
+yürüyüşteki sayılmayan "günde 20 tur".
+
+**Paywall (web, iOS, Android):** her satır bu tabloyla birebir; hakların **nasıl kazanıldığı**
+(tamamla + 7 günlük seri) açıkça yazılır. Premium'daki sınırlar "sınırsız" denmeden "kötüye
+kullanımı önleyen günlük üst sınır" diye anılır (App Store 3.1.2), sayıları Premium ekranında.
+
+## 2a. Ürün kararları (2026-09-08'de verildi) — TARİHÇE, yerini §2 aldı
 
 | | Ücretsiz | Premium |
 |---|---|---|
