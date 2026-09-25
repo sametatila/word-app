@@ -79,6 +79,53 @@ function joinPlural(stem: string, suffix: string): string | null {
   return stem + suffix;
 }
 
+/** Tam biçimden kural çıkarırken denenen kurallar — yaygından seyreğe. */
+const RULE_CANDIDATES: { umlaut: boolean; suffix: string }[] = [
+  { umlaut: false, suffix: "" },
+  { umlaut: false, suffix: "e" },
+  { umlaut: false, suffix: "en" },
+  { umlaut: false, suffix: "n" },
+  { umlaut: false, suffix: "er" },
+  { umlaut: false, suffix: "s" },
+  { umlaut: false, suffix: "nen" },
+  { umlaut: true, suffix: "" },
+  { umlaut: true, suffix: "e" },
+  { umlaut: true, suffix: "er" },
+];
+
+/** `formen` bir kural değil çoğulun kendisiyse o sözcük ("Museen", "die Arbeitsverträge"). */
+function fullPluralOf(formen: string | null): string | null {
+  return (formen ?? "").trim().match(/^(?:die\s+)?(\p{Lu}[\p{L}-]*)$/u)?.[1] ?? null;
+}
+
+/**
+ * Maddenin çoğul KURALI — yazılı kural ya da yazılı tam biçimi üreten kural.
+ *
+ * Veride çoğul iki biçimde duruyor: kural ("¨-e") ve çoğulun kendisi
+ * ("Arbeitsverträge", sonu değişenlerde zorunlu: "Museen"). Yalnız kural
+ * okunuyordu; tam biçimle yazılmış 1.847 ismin 1.754'ü aslında kurallı olduğu
+ * hâlde çoğul turu hiç kurulmuyordu ve kart notu ham metni basıyordu. Tam biçimi
+ * bir kural birebir üretiyorsa o kural kullanılıyor; üretmiyorsa (Museen,
+ * Pizzen, Themen) null — o isimlerde çeldirici üretmek uydurma biçim demek.
+ */
+export function pluralRuleOf(de: string, formen: string | null): { umlaut: boolean; suffix: string } | null {
+  const rule = parsePluralRule(formen ?? "");
+  if (rule) return rule;
+  const full = fullPluralOf(formen);
+  if (!full || !de || /\s/.test(de)) return null;
+  for (const c of RULE_CANDIDATES) {
+    if (joinPlural(c.umlaut ? umlautStem(de) : de, c.suffix) === full) return c;
+  }
+  return null;
+}
+
+/** Kartta gösterilecek çoğul: kuralın ürettiği biçim, yoksa yazılı tam biçim. */
+export function pluralFormOf(de: string, formen: string | null): string | null {
+  const rule = pluralRuleOf(de, formen);
+  if (rule && de && !/\s/.test(de)) return joinPlural(rule.umlaut ? umlautStem(de) : de, rule.suffix);
+  return fullPluralOf(formen);
+}
+
 /** Öğrencinin gerçekten karıştırdığı ekler. */
 const PLURAL_SUFFIXES = ["", "e", "en", "n", "er", "s"];
 
@@ -112,7 +159,7 @@ export function pluralChoices(
   rand: () => number = Math.random,
 ): { answer: string; distractors: string[] } | null {
   if (!de || /\s/.test(de)) return null; // çok kelimeli başlıklar bu turun dışında
-  const rule = parsePluralRule(formen ?? "");
+  const rule = pluralRuleOf(de, formen);
   if (!rule) return null;
 
   const plain = de;
@@ -154,7 +201,7 @@ export function pluralChoices(
 /** Maddenin doğru çoğulu; kural okunamıyorsa ya da çoğulu yoksa null. */
 export function pluralOf(de: string, formen: string | null): string | null {
   if (!de || /\s/.test(de)) return null;
-  const rule = parsePluralRule(formen ?? "");
+  const rule = pluralRuleOf(de, formen);
   if (!rule) return null;
   return joinPlural(rule.umlaut ? umlautStem(de) : de, rule.suffix);
 }

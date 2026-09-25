@@ -1,5 +1,5 @@
 import { t } from "../lib/i18n";
-import { umlautStem } from "../lib/german";
+import { pluralFormOf } from "../lib/german";
 
 /**
  * Notun okuduğu ALANLAR kadarı — `RoundWord` da `WordRow` da bunu karşılıyor.
@@ -41,14 +41,10 @@ export function grammarNote(word: GrammarWord): string | null {
   if (/^\(?Pl\.?\)?$/i.test(raw)) return t("words.plural_only");
 
   if (word.artikel) {
-    const m = raw.match(/^(¨)?-?\s*(\w*)$/);
-    if (m) {
-      const stem = m[1] ? umlautStem(word.de) : word.de;
-      const suffix = m[2] ?? "";
-      // Çoğul biçimin kendisi Almanca kalıyor; çevrilen yalnız etiket.
-      return t("words.plural_is", { form: `die ${stem}${suffix}` });
-    }
-    return t("words.plural_is", { form: raw });
+    // Çoğul TEK hesaptan (`pluralFormOf`) — web `grammarNote` ile aynı.
+    const form = pluralFormOf(word.de, raw);
+    // Çoğul biçimin kendisi Almanca kalıyor; çevrilen yalnız etiket.
+    return t("words.plural_is", { form: form ? `die ${form}` : raw });
   }
   return raw; // fiil çekimleri olduğu gibi
 }

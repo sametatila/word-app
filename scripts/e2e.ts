@@ -1226,6 +1226,9 @@ async function main() {
   check("Fenster → Fenster (değişmez)", pluralChoices("Fenster", "-", 3)?.answer === "Fenster");
   check("çoğulu olmayan madde tur üretmiyor", pluralChoices("Milch", "(Sg.)", 3) === null);
   check("fiil çekimi tur üretmiyor", pluralChoices("gehen", "ist gegangen", 3) === null);
+  // Tam biçimle yazılmış kurallı çoğul da tura giriyor; kuralla üretilemeyen giremiyor.
+  check("die Arbeitsverträge → tur kuruluyor", pluralChoices("Arbeitsvertrag", "die Arbeitsverträge", 3)?.answer === "Arbeitsverträge");
+  check("Museen (düzensiz) → tur yok", pluralChoices("Museum", "Museen", 3) === null);
   // "-e" ile biten isimde iki gerçekçi çeldirici var; tur üç şıkla kuruluyor.
   const idee = pluralChoices("Idee", "-n", 3);
   check("Idee → Ideen, üç şıklı tur", idee?.answer === "Ideen" && idee.distractors.length === 2, `(${idee?.distractors.join(", ")})`);

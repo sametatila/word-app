@@ -16,7 +16,7 @@
  */
 import { t as tx, currentLang } from "../lib/i18n";
 import { ERROR_LABEL_KEYS, type ErrorType } from "../lib/errors";
-import { parsePluralRule, pluralOf, umlautStem } from "../lib/german";
+import { pluralRuleOf, pluralOf, umlautStem } from "../lib/german";
 import { ruleFor } from "./whyRules";
 import { confusableHint } from "../lib/confusables";
 
@@ -153,7 +153,7 @@ const PLURAL_PATTERN: Record<string, string> = {
  */
 function whyPlural(word: WhyWord, picked?: string | null, correct?: string | null): Why {
   const href = null;
-  const rule = parsePluralRule(word.formen ?? "");
+  const rule = pluralRuleOf(word.de, word.formen ?? null);
   const plural = correct?.replace(/^die\s+/i, "") || pluralOf(word.de, word.formen ?? null);
   if (!plural) {
     return { type: "plural", text: tx("why.plural_irregular", { word: word.de }), href };

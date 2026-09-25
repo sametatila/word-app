@@ -3,7 +3,7 @@ import { courseName, courseOrDefault, type TargetLang } from "@/lib/courses";
 import { COURSE_KEY, readLocal } from "@/components/speak-button";
 import { glossFor, type GlossWord } from "@/lib/option-label";
 import type { ErrorType } from "@/lib/errors";
-import { umlautStem } from "@/lib/german";
+import { pluralFormOf } from "@/lib/german";
 import { foldNumbers } from "@/lib/numbers";
 import { foldEnglishSpelling } from "@/lib/en-spelling";
 import { translate, type NativeLang } from "@/lib/i18n/dict";
@@ -82,14 +82,13 @@ export function grammarNote(word: RoundWord, lang: NativeLang): string | null {
   if (/^\(?Pl\.?\)?$/i.test(raw)) return translate(lang, "words.plural_only");
 
   if (word.artikel) {
-    const m = raw.match(/^(¨)?-?\s*(\w*)$/);
-    if (m) {
-      const stem = m[1] ? umlautStem(word.de) : word.de;
-      const suffix = m[2] ?? "";
-      // Çoğul biçimin kendisi Almanca kalıyor; çevrilen yalnız etiket.
-      return translate(lang, "words.plural_is", { form: `die ${stem}${suffix}` });
-    }
-    return translate(lang, "words.plural_is", { form: raw });
+    // Çoğul TEK hesaptan (`pluralFormOf`): çoğul turu ve kart aynı biçimi
+    // gösteriyor. Buradaki ayrı regex "ä, -e"yi tanımıyor (kartta ham "ä, -e"
+    // çıkıyordu), ek birleşimini uygulamıyordu ("die Straßeen") ve tam
+    // biçimle yazılmış çoğulu artikelsiz basıyordu.
+    const form = pluralFormOf(word.de, raw);
+    // Çoğul biçimin kendisi Almanca kalıyor; çevrilen yalnız etiket.
+    return translate(lang, "words.plural_is", { form: form ? `die ${form}` : raw });
   }
   return raw; // fiil çekimleri olduğu gibi
 }

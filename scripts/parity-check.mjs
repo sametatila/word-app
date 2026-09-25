@@ -1771,6 +1771,18 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       .trim();
   };
   sameList("umlaut govdesi", [um("mobile/src/lib/german.ts")], [um("src/lib/german.ts")]);
+  /* Çoğul kuralı TEK hesaptan (tam biçimden kural çıkarımı dahil): çoğul
+     turu sunucuda, kart notu ve hata açıklaması iki istemcide ayrı ayrı
+     çiziliyor; gövdeler ayrışırsa kart başka, tur başka çoğul söyler. */
+  const govdeOf = (p, ad) => {
+    const x = strip(read(p));
+    const i = x.indexOf(ad);
+    const j = x.indexOf("\n}", i);
+    return x.slice(i, j).replace(/\s+/g, " ").replace(/^export /, "").trim();
+  };
+  for (const ad of ["const RULE_CANDIDATES", "function fullPluralOf", "function pluralRuleOf", "function pluralFormOf", "function joinPlural"]) {
+    sameList("cogul hesabi: " + ad, [govdeOf("mobile/src/lib/german.ts", ad)], [govdeOf("src/lib/german.ts", ad)]);
+  }
 }
 
 /* ── 34. deneme sinavi hedef etiketleri ────────────────────────────────────
