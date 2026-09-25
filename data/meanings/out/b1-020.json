@@ -41,10 +41,10 @@
  },
  {
   "id": 2113,
-  "tr": "dahil",
+  "tr": "dâhil",
   "en": "including",
   "beispiel": "Der Zimmerpreis ist inklusive Frühstück.",
-  "beispielTr": "Oda fiyatına kahvaltı dahil.",
+  "beispielTr": "Oda fiyatına kahvaltı dâhil.",
   "beispielEn": "The room price includes breakfast."
  },
  {
@@ -220,7 +220,7 @@
   "tr": "aidat",
   "en": "membership fee",
   "beispiel": "Der Beitrag für den Sportverein beträgt 34 Euro.",
-  "beispielTr": "Spor kulübünün aidatı 34 euro.",
+  "beispielTr": "Spor kulübünün aidatı 34 avro.",
   "beispielEn": "The membership fee for the sports club is 34 euros."
  },
  {

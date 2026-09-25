@@ -84,7 +84,7 @@
   "tr": "ipotek",
   "en": "mortgage",
   "beispiel": "Auf dem Haus liegt noch eine Hypothek von 200.000 Euro.",
-  "beispielTr": "Evin üzerinde hâlâ 200.000 euroluk bir ipotek var.",
+  "beispielTr": "Evin üzerinde hâlâ 200.000 avroluk bir ipotek var.",
   "beispielEn": "There is still a mortgage of 200,000 euros on the house."
  },
  {
@@ -180,7 +180,7 @@
   "tr": "katılım payı",
   "en": "deductible",
   "beispiel": "Bei diesem Tarif liegt die Selbstbeteiligung bei 300 Euro pro Schaden.",
-  "beispielTr": "Bu tarifede hasar başına katılım payı 300 euro.",
+  "beispielTr": "Bu tarifede hasar başına katılım payı 300 avro.",
   "beispielEn": "With this plan the deductible is 300 euros per claim."
  },
  {

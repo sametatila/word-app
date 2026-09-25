@@ -108,7 +108,7 @@
     "tr": "fiyat karşılaştırması",
     "en": "price comparison",
     "beispiel": "Ein kurzer Preisvergleich im Netz spart oft hundert Euro.",
-    "beispielTr": "İnternette kısa bir fiyat karşılaştırması çoğu zaman yüz euro kazandırır.",
+    "beispielTr": "İnternette kısa bir fiyat karşılaştırması çoğu zaman yüz avro kazandırır.",
     "beispielEn": "A quick price comparison online often saves a hundred euros."
   },
   {
@@ -116,7 +116,7 @@
     "tr": "kargo ücreti",
     "en": "shipping costs",
     "beispiel": "Ab einem Bestellwert von fünfzig Euro entfallen die Versandkosten.",
-    "beispielTr": "Elli euroluk sipariş tutarından itibaren kargo ücreti alınmıyor.",
+    "beispielTr": "Elli avroluk sipariş tutarından itibaren kargo ücreti alınmıyor.",
     "beispielEn": "From an order value of fifty euros the shipping costs are waived."
   },
   {
@@ -124,7 +124,7 @@
     "tr": "alacak kaydı",
     "en": "credit note",
     "beispiel": "Statt Bargeld erhielt sie eine Gutschrift über achtzig Euro.",
-    "beispielTr": "Nakit yerine seksen euroluk bir alacak kaydı aldı.",
+    "beispielTr": "Nakit yerine seksen avroluk bir alacak kaydı aldı.",
     "beispielEn": "Instead of cash she got a credit note for eighty euros."
   },
   {
