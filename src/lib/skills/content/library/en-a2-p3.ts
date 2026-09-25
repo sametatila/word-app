@@ -330,7 +330,7 @@ export const enA2P3: SkillExercise[] = [
     explanation: [
       {
         heading: "Kısa sıfatlar: -er ve the -est",
-        tr: "Türkçede „daha büyük“ ve „en büyük“ ayrı kelimelerdir. İngilizcede tek ya da iki heceli sıfatlarda ek gelir: big → bigger → the biggest. Kısa ünlüden sonra son sessiz ikilenir (big → bigger), sonu -y olanlarda y düşer (happy → happier).",
+        tr: "Türkçede „daha büyük“ ve „en büyük“ ayrı kelimelerdir. İngilizcede tek heceli sıfatlarda ve sonu -y olan iki heceli sıfatlarda ek gelir: big → bigger → the biggest. Kısa ünlüden sonra son sessiz ikilenir (big → bigger), sonu -y olanlarda y düşer (happy → happier).",
         examples: [
           { de: "This bag is bigger than mine.", tr: "Bu çanta benimkinden büyük.", note: "big → bigger" },
           { de: "Today is hotter than yesterday.", tr: "Bugün dünden sıcak.", note: "sessiz ikileniyor" },
@@ -339,7 +339,7 @@ export const enA2P3: SkillExercise[] = [
       },
       {
         heading: "Uzun sıfatlar: more ve the most",
-        tr: "Üç ve daha çok heceli sıfatlarda ek gelmez, önüne kelime gelir: expensive → more expensive → the most expensive. Ekle kelimeyi birlikte kullanmak („more bigger“) yaygın bir hatadır.",
+        tr: "Öteki iki heceli sıfatlarda ve üç ya da daha çok heceli sıfatlarda ek gelmez, önüne kelime gelir: expensive → more expensive → the most expensive. Ekle kelimeyi birlikte kullanmak („more bigger“) yaygın bir hatadır.",
         examples: [
           { de: "This phone is more expensive.", tr: "Bu telefon daha pahalı." },
           { de: "It is the most interesting book in the series.", tr: "Serideki en ilginç kitap bu." },
@@ -348,7 +348,7 @@ export const enA2P3: SkillExercise[] = [
       },
       {
         heading: "Düzensizler ve eşitlik",
-        tr: "Dört sıfat kuralın dışındadır: good → better → the best, bad → worse → the worst, far → further, much/many → more → the most. Eşitlik için „as … as“ kullanılır: as tall as.",
+        tr: "Dört sıfat kuralın dışındadır: good → better → the best, bad → worse → the worst, far → farther → the farthest, much/many → more → the most. Eşitlik için „as … as“ kullanılır: as tall as.",
         examples: [
           { de: "This is the best day of the year.", tr: "Yılın en güzel günü bu." },
           { de: "The weather is worse than yesterday.", tr: "Hava dünden kötü." },

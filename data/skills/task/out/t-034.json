@@ -38,7 +38,7 @@
  { "tr": "Cümle değerinde ortaç öbekleri (Partizipialsätze): niteleyici değil, yan cümle yerine", "kind": "focus", "en": "Participle phrases with the value of a clause (Partizipialsätze): not describing a noun but replacing a subordinate clause" },
  { "tr": "Konjunktiv I dolaylı aktarım dışında: es lebe, man nehme, es sei darauf hingewiesen, gelte", "kind": "focus", "en": "Konjunktiv I outside reported speech: es lebe, man nehme, es sei darauf hingewiesen, gelte" },
  { "tr": "İkili bağlaçlar: entweder … oder, sowohl … als auch, weder … noch, nicht nur … sondern auch", "kind": "focus", "en": "Two-part conjunctions: entweder … oder, sowohl … als auch, weder … noch, nicht nur … sondern auch" },
- { "tr": "Nachfeld ve Ausklammerung: fiil çerçevesinin arkasında ne durabilir (g5'teki Vorfeld'in karşı ucu)", "kind": "focus", "en": "Nachfeld and Ausklammerung: what can stand behind the verb bracket (the opposite end from the Vorfeld in g5)" },
+ { "tr": "Nachfeld ve Ausklammerung: fiil çerçevesinin arkasında ne durabilir (Vorfeld'in karşı ucu)", "kind": "focus", "en": "Nachfeld and Ausklammerung: what can stand behind the verb bracket (the opposite end from the Vorfeld)" },
  { "tr": "Resmî Genitiv edatları: angesichts, infolge, mangels, ungeachtet, zugunsten (wegen/trotz'un ötesi)", "kind": "focus", "en": "Formal Genitiv prepositions: angesichts, infolge, mangels, ungeachtet, zugunsten (beyond wegen/trotz)" },
  { "tr": "wie-soruları: wie viel, wie viele, wie oft, wie lange — sayılan mı, sayılmayan mı, sıklık mı, süre mi", "kind": "focus", "en": "wie questions: wie viel, wie viele, wie oft, wie lange — countable or uncountable, how often or how long" },
  { "tr": "Çift mastar (Ersatzinfinitiv) ve yan cümlede yardımcı fiilin öne geçmesi: dass wir haben warten müssen", "kind": "focus", "en": "Double infinitive (Ersatzinfinitiv) and the auxiliary moving forward in a subordinate clause: dass wir haben warten müssen" },
@@ -145,7 +145,7 @@
  { "tr": "Türkçeyle örtüşmeyen edatlar", "kind": "explanation.heading", "en": "Prepositions that differ from English" },
  { "tr": "am: günler ve günün bölümleri", "kind": "explanation.heading", "en": "am: days and parts of the day" },
  { "tr": "dagegen ve jedoch: zarflar", "kind": "explanation.heading", "en": "dagegen and jedoch: adverbs" },
- { "tr": "Dativ isteyenler ve bir tuzak", "kind": "explanation.heading", "en": "Verbs with the Dativ, and a trap" },
+ { "tr": "Dativ isteyenler ve bir tuzak", "kind": "explanation.heading", "en": "Adjectives that take the Dativ, and a trap" },
  { "tr": "Hep Dativ'le gelenler ve sıra", "kind": "explanation.heading", "en": "Always with the Dativ, and word order" },
  { "tr": "Ne olunur? Sıfat, meslek, yaş", "kind": "explanation.heading", "en": "What can you be? Adjective, job, age" },
  { "tr": "Olumsuz soru: doch ya da nein", "kind": "explanation.heading", "en": "Negative question: doch or nein" }

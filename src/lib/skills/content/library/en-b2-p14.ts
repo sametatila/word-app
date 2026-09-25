@@ -335,7 +335,7 @@ export const enB2P14: SkillExercise[] = [
     focus: "Neden-sonuç bağlaçları: because of/due to/owing to, since/as, as a result/therefore, so … that",
     gloss: [
       { de: "delay", tr: "gecikme" },
-      { de: "pavement", tr: "kaldırım" },
+      { de: "sidewalk", tr: "kaldırım" },
       { de: "to cancel", tr: "iptal etmek" },
       { de: "narrow", tr: "dar" },
     ],
@@ -356,7 +356,7 @@ export const enB2P14: SkillExercise[] = [
         examples: [
           { de: "The delay was due to a technical fault.", tr: "Gecikme teknik bir arızadan kaynaklanıyordu.", note: "be + due to" },
           { de: "Owing to the delay, the meeting started late.", tr: "Gecikme nedeniyle toplantı geç başladı.", note: "cümle başı" },
-          { de: "Complaints fell due to the new parking bays.", tr: "Yeni park alanları sayesinde şikâyetler azaldı.", note: "cümle sonu" },
+          { de: "Complaints fell due to the new parking spaces.", tr: "Yeni park alanları sayesinde şikâyetler azaldı.", note: "cümle sonu" },
         ],
       },
       {
@@ -364,7 +364,7 @@ export const enB2P14: SkillExercise[] = [
         tr: "„as a result“, „therefore“ ve „consequently“ sonucu YENİ bir cümlede verir; önceki cümleye virgülle eklenemez. „so + sıfat + that“ ve „such (a) + isim öbeği + that“ ise tek cümlede bir derecenin sonucunu anlatır.",
         examples: [
           { de: "Most trips replaced walking. As a result, the benefit was small.", tr: "Çoğu yolculuk yürümenin yerini aldı. Sonuç olarak fayda küçüktü.", note: "yeni cümle" },
-          { de: "The pavement was so narrow that we had to use the road.", tr: "Kaldırım o kadar dardı ki yola inmek zorunda kaldık.", note: "so + sıfat" },
+          { de: "The sidewalk was so narrow that we had to walk in the street.", tr: "Kaldırım o kadar dardı ki yola inmek zorunda kaldık.", note: "so + sıfat" },
           { de: "It was such a short trip that I walked.", tr: "O kadar kısa bir yoldu ki yürüdüm.", note: "such a + isim" },
         ],
       },
@@ -402,7 +402,7 @@ export const enB2P14: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The pavement was ___ narrow that we had to use the road.",
+        text: "The sidewalk was ___ narrow that we had to walk in the street.",
         options: [],
         answer: 0,
         accept: ["so"],
@@ -418,18 +418,18 @@ export const enB2P14: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The meeting started late ___ to the delay. (owing)",
+        text: "The meeting started late ___ to the delay.",
         options: [],
         answer: 0,
-        accept: ["owing"],
-        explain: "„owing to“ arkasından isim öbeği alır.",
+        accept: ["owing", "due"],
+        explain: "„owing to“ ve „due to“ arkasından isim öbeği alır.",
       },
       {
         kind: "order",
         text: "Cümleyi doğru sıraya diz.",
         options: [],
         answer: 0,
-        items: ["Complaints", "fell", "due to", "the new", "parking bays"],
+        items: ["Complaints", "fell", "due to", "the new", "parking spaces"],
         explain: "Sonuç cümlesi, ardından due to + isim öbeği.",
       },
       {

@@ -138,7 +138,7 @@
  { "tr": "Konuşmacının tartışmayı hangi konuya çektiğini söylediği cümleyi yaz.", "kind": "question.text", "en": "Write the sentence in which the speaker says which topic they steer the debate to." },
  { "tr": "Satıcının neyi kabul ettiklerini söylediği cümleyi duyduğun gibi yaz.", "kind": "question.text", "en": "Write the sentence in which the seller says what they accept exactly as you hear it." },
  { "tr": "„Das Projekt ist letzte Woche gestartet geworden.“ — Bu cümle doğru mu?", "kind": "question.text", "en": "„Das Projekt ist letzte Woche gestartet geworden.“ — Is this sentence correct?" },
- { "tr": "„In der Kantine wird nur noch Mehrweg ausgegeben.“ — Bu cümle doğru mu?", "kind": "question.text", "en": "„In der Kantine wird nur noch Mehrweg ausgegeben.“ — Is this sentence correct?" },
+ { "tr": "„In der Kantine wird seit Januar nicht mehr geraucht.“ — Bu cümle doğru mu?", "kind": "question.text", "en": "„In der Kantine wird seit Januar nicht mehr geraucht.“ — Is this sentence correct?" },
  { "tr": "„Obwohl es spät war, trotzdem sind wir geblieben.“ — Bu cümle doğru mu?", "kind": "question.text", "en": "„Obwohl es spät war, trotzdem sind wir geblieben.“ — Is this sentence correct?" },
  { "tr": "Eczacının etken maddenin kaç hastada denendiğini söylediği cümleyi yaz.", "kind": "question.text", "en": "Write the sentence in which the pharmacist says in how many patients the substance was tested." },
  { "tr": "Frau Weber'in tespitini Yannis'in tutanağa yazması gereken hâliyle yaz.", "kind": "question.text", "en": "Write Frau Weber's finding in the form in which Yannis has to put it in the record." },

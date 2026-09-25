@@ -172,7 +172,7 @@ export const enA2P15: SkillExercise[] = [
         heading: "Yukarı, aşağı ve içinden",
         tr: "„up“ ve „down“ yükselip alçalmayı (merdiven, tepe, sokak), „through“ bir şeyin bir ucundan girip öbüründen çıkmayı (park, tünel, kapı) anlatır.",
         examples: [
-          { de: "Go up the stairs to the second floor.", tr: "Merdivenden ikinci kata çık." },
+          { de: "Go up the stairs to the top floor.", tr: "Merdivenden en üst kata çık." },
           { de: "We walked down the hill to the lake.", tr: "Tepeden göle yürüyerek indik." },
           { de: "We walked through the park.", tr: "Parkın içinden yürüdük." },
         ],
@@ -181,8 +181,8 @@ export const enA2P15: SkillExercise[] = [
         heading: "Karşıya, boyunca, önünden",
         tr: "„across“ bir yandan öbür yana geçmek (yol, köprü, meydan), „along“ bir çizgiyi izlemek (nehir, sokak, sahil), „past“ bir şeyin önünden geçip devam etmektir. Yol tariflerinin çoğu bu üçüyle kurulur.",
         examples: [
-          { de: "Go across the road at the lights.", tr: "Işıklardan karşıya geç." },
-          { de: "Drive along the river for two kilometers.", tr: "Nehir boyunca iki kilometer sür." },
+          { de: "Go across the street at the light.", tr: "Işıklardan karşıya geç." },
+          { de: "Drive along the river for two kilometers.", tr: "Nehir boyunca iki kilometre sür." },
           { de: "Walk past the church and turn left.", tr: "Kilisenin önünden geç ve sola dön." },
         ],
       },

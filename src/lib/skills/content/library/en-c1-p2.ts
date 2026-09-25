@@ -378,7 +378,7 @@ export const enC1P2: SkillExercise[] = [
       },
       {
         heading: "Kaydın öteki işaretleri",
-        tr: "Akademik kayıtta kısaltma kullanılmaz (didn't → did not), öbek fiiller yerine tek kelimeli karşılıkları tercih edilir (find out → determine, go up → increase) ve iddia kalıplarla yumuşatılır: it is argued that, the present study.",
+        tr: "Akademik kayıtta kısaltma kullanılmaz (didn't → did not), öbek fiiller yerine tek kelimeli karşılıkları tercih edilir (find out → determine, go up → increase) ve kişisel olmayan kalıplar kullanılır: it is argued that, the present study.",
         examples: [
           { de: "The study did not find any effect.", tr: "Çalışma herhangi bir etki bulmadı.", note: "kısaltma yok" },
           { de: "It was determined that the effect was small.", tr: "Etkinin küçük olduğu saptandı." },

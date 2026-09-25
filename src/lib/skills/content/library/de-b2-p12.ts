@@ -331,13 +331,13 @@ export const deB2P12: SkillExercise[] = [
         tr: "Etken cümledeki „Man muss das Kabel ersetzen“ edilgende „Das Kabel muss ersetzt werden“ olur. Modal fiil çekimlenir ve ikinci sırada durur; cümlenin sonuna asıl fiilin Partizip II'si ve mastar hâlinde „werden“ gelir. Yapanı söylemek gerekirse „von“ + Dativ eklenir.",
         examples: [
           { de: "Das Kabel muss ersetzt werden.", tr: "Kablonun değiştirilmesi gerekiyor.", note: "müssen: zorunluluk" },
-          { de: "Gasgeräte dürfen hier nicht repariert werden.", tr: "Gazlı cihazlar burada onarılamaz.", note: "nicht dürfen: yasak" },
+          { de: "Gasgeräte dürfen hier nicht repariert werden.", tr: "Gazlı cihazların burada onarılması yasak.", note: "nicht dürfen: yasak" },
           { de: "Das Gerät kann von jedem geöffnet werden.", tr: "Cihazı herkes açabilir.", note: "von + Dativ: yapan" },
         ],
       },
       {
         heading: "Yan cümlede üç fiil",
-        tr: "Yan cümlede çekimli modal fiil en sona geçer ve üç parçalı öbek oluşur: Partizip + werden + modal fiil. Türkçede sıra tersine döndüğü için en sık yapılan hata modal fiili ortada bırakmaktır.",
+        tr: "Yan cümlede çekimli modal fiil en sona geçer ve üç parçalı öbek oluşur: Partizip + werden + modal fiil. En sık yapılan hata, ana cümledeki gibi modal fiili ortada bırakmaktır.",
         examples: [
           { de: "Ich weiß nicht, ob das Fenster ersetzt werden muss.", tr: "Pencerenin değiştirilmesi gerekip gerekmediğini bilmiyorum.", note: "muss en sonda" },
           { de: "Er sagt, dass der Rahmen geflickt werden kann.", tr: "Çerçevenin yamanabileceğini söylüyor.", note: "kann en sonda" },

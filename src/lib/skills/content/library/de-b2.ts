@@ -356,17 +356,17 @@ export const deB2: SkillExercise[] = [
       },
       {
         heading: "von mı durch mu, modal nereye",
-        tr: "Eylemi yapan gerçekten söylenecekse kişi ve kurum „von“ ile, aracı ve sebep „durch“ ile gelir. Modal fiilli edilgende sıra sabittir: Partizip II + werden + çekimli modal.",
+        tr: "Eylemi yapan gerçekten söylenecekse kişi ve kurum „von“ ile, aracı ve sebep „durch“ ile gelir. Modal fiilli edilgende cümle sonu sabittir: Partizip II + werden. Çekimli modal ana cümlede ikinci yerde, yan cümlede en sonda durur.",
         examples: [
           { de: "Der Brief wurde von der Leiterin beantwortet.", tr: "Mektup müdür tarafından cevaplandı.", note: "kişi → von" },
           { de: "Die Halle wurde durch ein Feuer zerstört.", tr: "Salon bir yangınla yıkıldı.", note: "sebep → durch" },
-          { de: "Die Becher müssen gespült werden.", tr: "Bardakların yıkanması gerekiyor.", note: "gespült werden müssen" },
+          { de: "Die Becher müssen gespült werden.", tr: "Bardakların yıkanması gerekiyor.", note: "müssen … gespült werden" },
         ],
       },
     ],
     questions: [
       {
-        text: "Die Ergebnisse ___ morgen veröffentlicht.",
+        text: "Die Ergebnisse ___ morgen von der Schulleitung veröffentlicht.",
         options: ["werden", "sind", "haben"],
         answer: 0,
         explain: "Yarın yapılacak bir İŞ söz konusu: Vorgangspassiv, werden + Partizip II.",
@@ -409,7 +409,7 @@ export const deB2: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["abgegeben werden"],
-        explain: "Modal fiilli edilgen: Partizip II + werden, modal çekimli ve sonda: abgegeben werden müssen.",
+        explain: "Modal fiilli edilgen: çekimli modal ikinci yerde, sonda Partizip II + werden: müssen … abgegeben werden.",
       },
       {
         kind: "order",
@@ -428,20 +428,20 @@ export const deB2: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„In der Kantine wird nur noch Mehrweg ausgegeben.“ — Bu cümle doğru mu?",
+        text: "„In der Kantine wird seit Januar nicht mehr geraucht.“ — Bu cümle doğru mu?",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Öznesiz edilgen: „es“ olmadan da kurulabilir, çünkü yer tümleci birinci öğe. Vorgangspassiv doğru kurulmuş.",
+        explain: "Öznesiz edilgen: nesnesiz kullanılan „rauchen“ da edilgen olabilir; yer tümleci birinci öğe olduğu için „es“ gerekmez. Vorgangspassiv doğru kurulmuş.",
       },
       {
         text: "Kurumsal metinlerde edilgen neden bu kadar sık kullanılır?",
         options: [
           "Çünkü işi kimin yaptığı ya belli değildir ya da önemli değildir.",
           "Çünkü edilgen cümleler daha kısadır.",
-          "Çünkü etken cümle resmî yazıda dilbilgisel olarak yanlıştır.",
+          "Çünkü etken cümle resmî yazıda dil bilgisi bakımından yanlıştır.",
         ],
         answer: 0,
-        explain: "Edilgen özneyi arkaya atar; kurum kendini değil işlemi anlatır. Uzunluk ya da yasak söz konusu değil.",
+        explain: "Edilgen, eylemi yapanı geri plana atar ya da hiç söylemez; kurum kendini değil işlemi anlatır. Uzunluk ya da yasak söz konusu değil.",
       },
     ],
   },

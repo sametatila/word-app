@@ -1,8 +1,8 @@
 [
  {
-  "tr": "Öznesiz edilgen: „es“ olmadan da kurulabilir, çünkü yer tümleci birinci öğe. Vorgangspassiv doğru kurulmuş.",
+  "tr": "Öznesiz edilgen: nesnesiz kullanılan „rauchen“ da edilgen olabilir; yer tümleci birinci öğe olduğu için „es“ gerekmez. Vorgangspassiv doğru kurulmuş.",
   "kind": "explain",
-  "en": "A subjectless passive: it can be built without „es“ too, because the phrase of place is the first element. The Vorgangspassiv is right."
+  "en": "A subjectless passive: „rauchen“ used without an object can be passive too; since the phrase of place is the first element, no „es“ is needed. The Vorgangspassiv is right."
  },
  {
   "tr": "Yanlış. Ankara'ya \"to study engineering\" yani mühendislik okumak için gitti; tasarımı ona öğretmeni önerdi.",
@@ -185,9 +185,9 @@
   "en": "The advert says 'The flat is on Green Street, near the train station.' So the flat is near the train station."
  },
  {
-  "tr": "İyelik kelimesi sahibine değil, sahip olunan ismin cinsine göre biçim alır; aynı kutu sıfat ekini de belirler.",
+  "tr": "İyelik kelimesinin kökü sahibini, eki ise sahip olunan ismin cinsini gösterir; aynı kutu sıfat ekini de belirler.",
   "kind": "intro",
-  "en": "A possessive takes its form not from the owner but from the gender of the noun owned; the same box also decides the adjective ending."
+  "en": "The stem of a possessive shows the owner, its ending shows the gender of the noun owned; the same box also decides the adjective ending."
  },
  {
   "tr": "Metin \"We exchange them, but we never give money back for them\" diyor. İndirimli ürünlerde sadece değişim var.",

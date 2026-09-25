@@ -329,7 +329,7 @@ export const enB2P6: SkillExercise[] = [
     skill: "grammar",
     title: "although, despite, however",
     genre: "grammar",
-    intro: "Üçü de karşıtlık kurar ama dilbilgisel davranışları ayrıdır; hangisinin arkasına ne geldiği kuralın kendisidir.",
+    intro: "Üçü de karşıtlık kurar ama dil bilgisel davranışları ayrıdır; hangisinin arkasına ne geldiği kuralın kendisidir.",
     focus: "Karşıtlık bağlaçları: although, despite, however, whereas",
     gloss: [
       { de: "to accept", tr: "kabul etmek" },
@@ -403,12 +403,12 @@ export const enB2P6: SkillExercise[] = [
         text: "He works in sales, ___ she works in design. (a comparison)",
         options: [],
         answer: 0,
-        accept: ["whereas"],
+        accept: ["whereas", "while"],
         explain: "Beklenti bozulmuyor, yalnız iki durum karşılaştırılıyor.",
       },
       {
         kind: "gapfill",
-        text: "Despite the ___ that he was late, they let him in. (fact)",
+        text: "Despite the ___ that he was late, they let him in. (one noun)",
         options: [],
         answer: 0,
         accept: ["fact"],
@@ -419,7 +419,7 @@ export const enB2P6: SkillExercise[] = [
         text: "The deadline was tight; ___, the team finished on time.",
         options: [],
         answer: 0,
-        accept: ["however"],
+        accept: ["however", "nevertheless", "nonetheless"],
         explain: "Noktalı virgülden sonra „however“ ve arkasından virgül gelir.",
       },
       {

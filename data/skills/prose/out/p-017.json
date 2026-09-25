@@ -20,9 +20,9 @@
   "en": "An article about perfectionism. Watch the assumptions people make about themselves."
  },
  {
-  "tr": "Nesne bir şey olduğunda edat zamirle birleşmez; doğrusu „Ich freue mich darauf.“",
+  "tr": "Nesne bir şey olduğunda edat „es“ zamiriyle kullanılmaz, „da-“ ile birleşir; doğrusu „Ich freue mich darauf.“",
   "kind": "explain",
-  "en": "When the object is a thing the preposition does not join a pronoun; it is „Ich freue mich darauf.“"
+  "en": "When the object is a thing, the preposition is not used with the pronoun „es“ but merges with „da-“; it is „Ich freue mich darauf.“"
  },
  {
   "tr": "Ödül almış bir romanın eleştirisi. İlgi cümlelerinin taşıdığı bilgiye dikkat et.",
@@ -295,11 +295,6 @@
   "en": "The moves that follow make it clear: „ja“ here is not approval but a problem being pointed at."
  },
  {
-  "tr": "Soruda „can“ başa geçer, sonra özne ve yalın fiil gelir: Can you help me, please?",
-  "kind": "explain",
-  "en": "In a question „can“ comes first, then the subject and the bare verb: Can you help me, please?"
- },
- {
   "tr": "Söylentilerin nasıl yayıldığını anlatan bir yazı. Kimin iddia ettiğine dikkat et.",
   "kind": "intro",
   "en": "An article about how rumours spread. Watch who is doing the claiming."
@@ -378,11 +373,6 @@
   "tr": "„sein + zu + mastar“ yapısında ayrılabilen fiilde „zu“ ortaya girer: einzureichen.",
   "kind": "explain",
   "en": "In the „sein + zu + infinitive“ structure „zu“ goes into the middle of a separable verb: einzureichen."
- },
- {
-  "tr": "„should“ arkasından yalın fiil alır; ayrılabilen fiilin ikinci parçası sona gider.",
-  "kind": "explain",
-  "en": "„should“ takes a bare verb after it; the second part of a separable verb goes to the end."
  },
  {
   "tr": "Aynı şeyi başka hâle getirmek mi, bırakıp yenisini almak mı? Bir de duygunun hâli.",
@@ -488,11 +478,6 @@
   "tr": "Sorun ret değil, belirsizlik — bu ayrım tesellinin nereye yapılacağını belirliyor.",
   "kind": "explain",
   "en": "The problem is not the refusal but the uncertainty — that distinction decides where the comfort goes."
- },
- {
-  "tr": "Virgüllü açıklayıcı cümlede nesne olmayan şeyler için „which“ gelir; „that“ olmaz.",
-  "kind": "explain",
-  "en": "In a non-defining clause with commas „which“ is used for things; „that“ will not do."
  },
  {
   "tr": "Yan cümle başta olduğu için ana cümlede önce fiil gelir: Wenn …, besuche ich dich.",
@@ -710,9 +695,9 @@
   "en": "„Ich habe keine Zeit und kein Geld.“ It has nothing to do with disliking animals — she loves Luna."
  },
  {
-  "tr": "„lesen“ du biçiminde e → ie olur ve kök zaten s ile bittiği için tek t kalır: liest.",
+  "tr": "„lesen“ du biçiminde e → ie olur; kök s ile bittiği için -st'nin s'si düşer, yalnız -t eklenir: liest.",
   "kind": "explain",
-  "en": "„lesen“ takes e → ie in the du form and the stem already ends in s, so only one t: liest."
+  "en": "„lesen“ takes e → ie in the du form; since the stem ends in s, the s of -st drops and only -t is added: liest."
  },
  {
   "tr": "„Mein Tag beginnt um halb sieben.“ Yani 6:30 — „halb sieben“ SONRAKİ saati gösterir.",

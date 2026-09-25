@@ -35,9 +35,9 @@
   "en": "„Ich höre um fünf Uhr auf.“ — aufhören is a separable verb."
  },
  {
-  "tr": "„ja“ karşındakinin zaten bildiği bilgiye gönderme yapar.",
+  "tr": "„ja“ (ya da „doch“) karşındakinin zaten bildiği bilgiye gönderme yapar.",
   "kind": "explain",
-  "en": "„ja“ points to something the listener already knows."
+  "en": "„ja“ (or „doch“) points to something the listener already knows."
  },
  {
   "tr": "„kommen“ Perfekt'te sein ile çekilir: sie wäre gekommen.",
@@ -130,9 +130,9 @@
   "en": "The correct form is „two children“; this word has an irregular plural."
  },
  {
-  "tr": "Dolaylı aktarımın temel biçimi Konjunktiv I'dir: er sei.",
+  "tr": "Yazılı aktarımın temel biçimi Konjunktiv I'dir: er sei. „wäre“ ancak Konjunktiv I ayırt edilemediğinde ya da konuşma dilinde gelir; „ist“ aktarım işaretini kaybeder.",
   "kind": "explain",
-  "en": "The basic form of reported speech is Konjunktiv I: er sei."
+  "en": "The basic form of reported speech in writing is Konjunktiv I: er sei. „wäre“ only comes in when Konjunktiv I is not distinctive, or in speech; „ist“ loses the marker of reported speech."
  },
  {
   "tr": "dosiert: dozunda. Ayrılabilen fiil ön eki cümle sonunda.",
@@ -575,9 +575,9 @@
   "en": "It has to be unpacked into a relative clause or into two sentences."
  },
  {
-  "tr": "Yabancı kökenli kısa kelimeler -s çoğulu alır: die Autos.",
+  "tr": "-o gibi ünlüyle biten yabancı kökenli kelimeler çoğulda -s alır: die Autos.",
   "kind": "explain",
-  "en": "Short words of foreign origin take an -s plural: die Autos."
+  "en": "Words of foreign origin ending in a vowel such as -o take an -s plural: die Autos."
  },
  {
   "tr": "Yan cümlede kipli fiil EN SONA gider: einschlafen kannst.",

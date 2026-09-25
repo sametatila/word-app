@@ -319,7 +319,7 @@ export const enA1P3: SkillExercise[] = [
       },
       {
         heading: "Biçim ve yazım",
-        tr: "Continuous iki parçadır: be + fiil-ing. Yazımda üç kural: sondaki sessiz e düşer (make → making), kısa ünlüden sonra son sessiz iki olur (sit → sitting), -y düşmez (study → studying).",
+        tr: "Continuous iki parçadır: be + fiil-ing. Yazımda üç kural: sondaki sessiz e düşer (make → making), tek ünlü + tek sessizle biten kısa fiillerde son sessiz ikilenir (sit → sitting), -y düşmez (study → studying).",
         examples: [
           { de: "She is making tea.", tr: "Çay yapıyor.", note: "make → making" },
           { de: "They are sitting outside.", tr: "Dışarıda oturuyorlar.", note: "sit → sitting" },

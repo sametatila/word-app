@@ -397,11 +397,11 @@ export const enB2P4: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The parcel ___ (must / stay) in the warehouse.",
+        text: "The parcel didn't arrive yesterday. It ___ (must / stay) in the warehouse.",
         options: [],
         answer: 0,
         accept: ["must have stayed"],
-        explain: "Geçmişte olmuş bir şey hakkında güçlü çıkarım.",
+        explain: "Dünkü bir durum hakkında güçlü çıkarım: must have + üçüncü hâl.",
       },
       {
         kind: "gapfill",
@@ -416,8 +416,8 @@ export const enB2P4: SkillExercise[] = [
         text: "Cümleyi doğru sıraya diz.",
         options: [],
         answer: 0,
-        items: ["He", "must", "have", "left", "already"],
-        explain: "Kip + have + üçüncü hâl + zarf: He must have left already.",
+        items: ["He", "must", "have", "left", "early"],
+        explain: "Kip + have + üçüncü hâl + zarf: He must have left early.",
       },
       {
         kind: "truefalse",

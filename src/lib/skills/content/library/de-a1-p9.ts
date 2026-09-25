@@ -336,7 +336,7 @@ export const deA1P9: SkillExercise[] = [
       },
       {
         heading: "Tam liste",
-        tr: "Yalın hâlden belirtme hâline yalnız üç biçim değişir: ich → mich, du → dich, er → ihn. „wir“ → uns ve „ihr“ → euch de değişir; „sie“ ve „es“ aynı kalır. Kibar „Sie“ her iki hâlde de Sie'dir.",
+        tr: "Yalın hâlden belirtme hâline beş biçim değişir: ich → mich, du → dich, er → ihn, wir → uns, ihr → euch. „sie“ ve „es“ aynı kalır; kibar „Sie“ de her iki hâlde Sie'dir.",
         examples: [
           { de: "Verstehst du mich?", tr: "Beni anlıyor musun?", note: "ich → mich" },
           { de: "Ich rufe dich später an.", tr: "Seni sonra ararım.", note: "du → dich" },

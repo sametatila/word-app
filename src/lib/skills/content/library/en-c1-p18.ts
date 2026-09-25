@@ -354,11 +354,11 @@ export const enC1P18: SkillExercise[] = [
       },
       {
         heading: "be due to ve be set to",
-        tr: "„be due to“ takvime bağlı, beklenen bir olayı bildirir: „Teachers are due to receive guidance before the summer.“ „be set to“ ise gazetecilikte bir şeyin olmak üzere olduğunu ya da büyük olasılıkla olacağını söyler: „Parents are set to present a petition.“ „set for“ bir tarihe bağlanmış etkinlik için kullanılır: „The meeting is set for 14 May.“",
+        tr: "„be due to“ takvime bağlı, beklenen bir olayı bildirir: „Teachers are due to receive guidance before the summer.“ „be set to“ ise gazetecilikte bir şeyin olmak üzere olduğunu ya da büyük olasılıkla olacağını söyler: „Parents are set to present a petition.“ „set for“ bir tarihe bağlanmış etkinlik için kullanılır: „The meeting is set for May 14.“",
         examples: [
           { de: "Teachers are due to receive new guidance in June.", tr: "Öğretmenlerin haziranda yeni yönerge alması bekleniyor.", note: "takvim" },
           { de: "Parents are set to present a petition next week.", tr: "Velilerin gelecek hafta bir dilekçe sunması bekleniyor.", note: "haber dili" },
-          { de: "The parents' evening is set for 14 May.", tr: "Veli toplantısı 14 Mayıs'a konuldu.", note: "set for + tarih" },
+          { de: "The parent-teacher conference is set for May 14.", tr: "Veli toplantısı 14 Mayıs'a ayarlandı.", note: "set for + tarih" },
         ],
       },
       {
@@ -412,7 +412,7 @@ export const enC1P18: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The parents' evening is set ___ 14 May.",
+        text: "The parent-teacher conference is set ___ May 14.",
         options: [],
         answer: 0,
         accept: ["for"],

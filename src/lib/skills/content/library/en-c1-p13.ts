@@ -394,7 +394,7 @@ export const enC1P13: SkillExercise[] = [
         explain: "Present perfect ile „just“ az önce olmuş bir şeyi bildirir.",
       },
       {
-        text: "They didn't ___ ask us.",
+        text: "They didn't ___ ask us — they just went ahead.",
         options: ["even", "also", "only"],
         answer: 0,
         explain: "Beklenmedik bir eksiklik: „didn't even“.",

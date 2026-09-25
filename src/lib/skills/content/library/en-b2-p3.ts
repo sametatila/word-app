@@ -327,7 +327,7 @@ export const enB2P3: SkillExercise[] = [
     intro: "Bir işi kendin yapmadığında ve bir bilginin kaynağını söylemek istemediğinde kullanılan iki yapı.",
     focus: "have something done ve reporting passives",
     gloss: [
-      { de: "hairdresser", tr: "kuaför" },
+      { de: "flight", tr: "uçuş" },
       { de: "printer", tr: "yazıcı" },
       { de: "kitchen", tr: "mutfak" },
       { de: "repair", tr: "tamir" },
@@ -373,7 +373,7 @@ export const enB2P3: SkillExercise[] = [
         text: "We are ___ the kitchen painted next week.",
         options: ["having", "doing", "making"],
         answer: 0,
-        explain: "Yaptırma yapısında yalnız „have“ kullanılır; „do“ ya da „make“ değil.",
+        explain: "Yaptırma yapısı „have“ ile (gündelik dilde „get“ ile de) kurulur; „do“ ya da „make“ ile kurulmaz.",
       },
       {
         text: "It is ___ that the company will close.",
@@ -423,10 +423,10 @@ export const enB2P3: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„I cut my hair at the hairdresser's.“ — Bu cümle saçını kuaförde KESTİRDİĞİNİ söyler mi?",
+        text: "„I cut my hair last night.“ — Bu cümle saçını kuaföre KESTİRDİĞİNİ söyler mi?",
         options: ["True", "False"],
         answer: 1,
-        explain: "Bu cümle saçını kendin kestiğini söyler; kestirmek için „I had my hair cut“ gerekir.",
+        explain: "„I cut my hair“ işi kendin yaptığını söyler; kuaföre kestirdiğini söylemek için „I had my hair cut“ gerekir.",
       },
       {
         kind: "truefalse",

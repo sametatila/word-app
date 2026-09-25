@@ -403,7 +403,7 @@ export const deC1: SkillExercise[] = [
         text: "Nominal yaz: „Weil die Kosten gestiegen sind, wurde das Projekt gestoppt.“ → „___ der Kosten wurde das Projekt gestoppt.“",
         options: [],
         answer: 0,
-        accept: ["Wegen des Anstiegs", "Aufgrund des Anstiegs", "Wegen des Anstieges", "Aufgrund des Anstieges"],
+        accept: ["Wegen des Anstiegs", "Aufgrund des Anstiegs", "Wegen des Anstieges", "Aufgrund des Anstieges", "Infolge des Anstiegs", "Infolge des Anstieges"],
         explain: "Sebep yan cümlesi isimleşince edat gerekir: „wegen/aufgrund + Genitiv“ ve fiil isme döner (steigen → der Anstieg).",
       },
       {
@@ -448,7 +448,7 @@ export const deC1: SkillExercise[] = [
         text: "Nominal üslubun asıl riski nedir?",
         options: [
           "Faili ve zamanı silmeye elverişli olması.",
-          "Dilbilgisel olarak yanlış sayılması.",
+          "Dil bilgisi açısından yanlış sayılması.",
           "Yalnız konuşma dilinde kullanılabilmesi.",
         ],
         answer: 0,

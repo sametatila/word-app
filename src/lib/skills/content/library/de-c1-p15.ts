@@ -345,7 +345,7 @@ export const deC1P15: SkillExercise[] = [
         tr: "„wer auch immer“, „was auch immer“, „wo auch immer“ belirsiz bir kişiyi, şeyi ya da yeri bütünüyle kapsar: kim olursa olsun, ne olursa olsun, nerede olursa olsun. „immer“ vurguyu güçlendirir; „was immer“ biçiminde „auch“ düşebilir.",
         examples: [
           { de: "Was immer man mit dem Geld tut, es muss sich rechtfertigen lassen.", tr: "Parayla ne yapılırsa yapılsın, gerekçesi olmalı.", note: "was immer" },
-          { de: "Wer auch immer kommt, muss vorher buchen.", tr: "Kim gelirse gelsin önceden yer ayırtmalı.", note: "wer auch immer" },
+          { de: "Wer auch immer kommt, muss vorher buchen.", tr: "Kim gelirse gelsin önceden yer ayırtmalı.", note: "wer-cümlesi burada özne: fiil hemen arkada" },
           { de: "Wo auch immer man parkt, es kostet eine Gebühr.", tr: "Nereye park edilirse edilsin bir ücreti var.", note: "wo auch immer" },
         ],
       },

@@ -340,7 +340,7 @@ export const deB1P9: SkillExercise[] = [
       },
       {
         heading: "Özel adlar ve konuşma dili",
-        tr: "Özel adlarda Genitiv adın SONUNA gelir: „Annas Bruder“, „Berlins Museen“. Konuşmada ise Genitiv'in yerini çoğu zaman „von + Dativ“ alır: „das Auto von meinem Chef“. İkisi de doğrudur ama yazıda Genitiv daha uygundur.",
+        tr: "Özel adlarda Genitiv -s'si adın SONUNA eklenir, artikel kullanılmaz ve ad, Türkçedeki gibi ismin önünde durur: „Annas Bruder“, „Berlins Museen“. Konuşmada ise Genitiv'in yerini çoğu zaman „von + Dativ“ alır: „das Auto von meinem Chef“. İkisi de doğrudur ama yazıda Genitiv daha uygundur.",
         examples: [
           { de: "Annas Entscheidung war richtig.", tr: "Anna'nın kararı doğruydu.", note: "özel ad + s, artikel yok" },
           { de: "Das ist das Fahrrad von meiner Schwester.", tr: "Bu, kız kardeşimin bisikleti.", note: "konuşma dili" },

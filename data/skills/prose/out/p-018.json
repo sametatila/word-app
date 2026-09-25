@@ -35,11 +35,6 @@
   "en": "A service workshop's pre-winter checklist. Written short: the agent never appears."
  },
  {
-  "tr": "Bu cümle saçını kendin kestiğini söyler; kestirmek için „I had my hair cut“ gerekir.",
-  "kind": "explain",
-  "en": "This sentence says you cut your own hair; for having it cut you need „I had my hair cut“."
- },
- {
   "tr": "Cleft cümlesi vurguyu „the silence“ öğesine taşır; bilgi aynı kalır, dikkat değişir.",
   "kind": "explain",
   "en": "A cleft sentence moves the stress onto „the silence“; the information stays, the attention shifts."
@@ -470,9 +465,9 @@
   "en": "Nadia has left her bag on the bus; listen to her conversation with the clerk at the lost property office."
  },
  {
-  "tr": "Rapor dilinde gösterge kipi aktaranın onayı gibi okunur; doğrusu „er habe keine Zeit“.",
+  "tr": "Rapor dilinde aktarımın standart biçimi Konjunktiv I'dir; gösterge kipi, aktaran sözü doğru kabul ediyormuş gibi okunabilir. Doğrusu „er habe keine Zeit“.",
   "kind": "explain",
-  "en": "In a report the indicative reads as the reporter's endorsement; the correct form is „er habe keine Zeit“."
+  "en": "In a report the standard form for reported speech is Konjunktiv I; the indicative can read as if the reporter accepts the statement as true. The correct form is „er habe keine Zeit“."
  },
  {
   "tr": "Resmî emirde fiil başta durur ve Sie hemen arkasından gelir — metindeki uyarı cümlesi.",
@@ -607,7 +602,7 @@
  {
   "tr": "Bu yapı bağlama göre zorunluluk da bildirir; resmî bir metinde „ertelenmelidir“ okunur.",
   "kind": "explain",
-  "en": "Depending on the context this structure also marks an obligation; in a formal text it reads as 'must be put back'."
+  "en": "Depending on the context this structure also marks an obligation; in a formal text it reads as 'must be postponed'."
  },
  {
   "tr": "Dan \"I am cooking pasta for dinner. You don't need to cook!\" diyor. Yemeği Dan yapıyor.",
@@ -715,9 +710,9 @@
   "en": "It says \"Your ticket is still fine; you don't need a new one.\", so the old ticket is valid."
  },
  {
-  "tr": "Anahtar kişi değil araçtır; doğrusu „mit einem Schlüssel“ ya da „durch einen Schlüssel“.",
+  "tr": "Anahtar kişi değil, elle kullanılan bir alettir; alet „mit“ + Dativ alır: „mit einem Schlüssel“.",
   "kind": "explain",
-  "en": "A key is not a person but a means; the correct form is „mit einem Schlüssel“ or „durch einen Schlüssel“."
+  "en": "A key is not a person but a tool you use by hand; a tool takes „mit“ + Dativ: „mit einem Schlüssel“."
  },
  {
   "tr": "Aynı cihaz üçüncü kez bozuldu. Edilgen geçmişin listeyi nasıl güçlendirdiğine dikkat et.",

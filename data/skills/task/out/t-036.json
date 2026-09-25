@@ -80,9 +80,9 @@
     "en": "You already know verbs with a fixed preposition (warten auf, denken an). Some ADJECTIVES also go with a fixed preposition, and that preposition decides the case: „stolz auf“ and „bekannt für“ take the Akkusativ, „zufrieden mit“ the Dativ. The preposition cannot be guessed from English („proud of“, „happy with“); it is learnt together with the adjective."
   },
   {
-    "tr": "wissen, brauchen, bringen gibi karma fiiller de kendi biçimini alır: wusste → wüsste, brauchte → bräuchte, brachte → brächte. „bräuchte“ konuşmada çok yaygındır. „tun“ → „täte“ ise daha çok kalıplarda yaşar: „Das täte mir leid.“, „Du tätest gut daran, …“",
+    "tr": "wissen, bringen gibi karma fiiller de kendi biçimini alır: wusste → wüsste, brachte → brächte. Düzenli bir fiil olan „brauchen“ da konuşmada umlautlu „bräuchte“ biçimini alır; bu biçim çok yaygındır ve artık yazıda da kabul görür. „tun“ → „täte“ ise daha çok kalıplarda yaşar: „Das täte mir leid.“, „Du tätest gut daran, …“",
     "kind": "explanation.tr",
-    "en": "Mixed verbs like wissen, brauchen, bringen also have their own forms: wusste → wüsste, brauchte → bräuchte, brachte → brächte. „bräuchte“ is very common in speech. „tun“ → „täte“ lives on mostly in set phrases: „Das täte mir leid.“, „Du tätest gut daran, …“"
+    "en": "Mixed verbs like wissen and bringen also have their own forms: wusste → wüsste, brachte → brächte. The regular verb „brauchen“ also takes the umlauted form „bräuchte“ in speech; it is very common and is now accepted in writing too. „tun“ → „täte“ lives on mostly in set phrases: „Das täte mir leid.“, „Du tätest gut daran, …“"
   },
   {
     "tr": "„scheinen + zu“ konuşanın izlenimini bildirir: öyle görünüyor ama emin değilim. Geçmişe dönük izlenimde mastar geçmişe konur: „Er scheint es gewusst zu haben.“ Tek başına „scheinen“ (ışımak) başka bir fiildir; yarı modal kullanımda hep „zu“lu mastar gelir.",
@@ -170,7 +170,7 @@
     "en": "Weather verbs and some set phrases (es gibt, es geht um, es handelt sich um) have no subject in terms of meaning, but a German sentence needs a subject. This „es“ never drops, in any position; if another element moves to the front, it goes behind the verb. English does the same with „it“ and „there“: „it is raining“, „there is“."
   },
   {
-    "tr": "Edilgenin Perfekt'i her zaman „sein“ ile kurulur, çünkü yardımcı fiil „werden“dir ve „werden“ Perfekt'te „sein“ alır. Cümlenin sonuna iki öge gelir: asıl fiilin Partizip II'si ve „worden“. Konuşmada geçmişteki edilgen çoğunlukla bu biçimle anlatılır; „wurde gebaut“ ise yazıda ve haberde daha sık görülür.",
+    "tr": "Edilgenin Perfekt'i her zaman „sein“ ile kurulur, çünkü yardımcı fiil „werden“dir ve „werden“ Perfekt'te „sein“ alır. Cümlenin sonuna iki öğe gelir: asıl fiilin Partizip II'si ve „worden“. Konuşmada geçmişteki edilgen çoğunlukla bu biçimle anlatılır; „wurde gebaut“ ise yazıda ve haberde daha sık görülür.",
     "kind": "explanation.tr",
     "en": "The Perfekt of the passive is always built with „sein“, because the auxiliary is „werden“, and „werden“ takes „sein“ in the Perfekt. Two elements come at the end of the sentence: the Partizip II of the main verb and „worden“. In speech a passive in the past is usually expressed with this form; „wurde gebaut“, on the other hand, is more common in writing and in the news."
   },
@@ -252,7 +252,7 @@
   {
     "tr": "Evde kalıyorum, çünkü hastayım.",
     "kind": "explanation.examples.tr",
-    "en": "I'm staying at home, because I'm ill."
+    "en": "I'm staying at home because I'm sick."
   },
   {
     "tr": "Sorunun açık kaldığının farkındayız.",
@@ -285,7 +285,7 @@
     "en": "weekend"
   },
   {
-    "tr": "bir mayısta",
+    "tr": "bir Mayıs'ta",
     "kind": "explanation.examples.tr",
     "en": "on the first of May"
   },
@@ -320,7 +320,7 @@
     "en": "on the third floor"
   },
   {
-    "tr": "yedi mayısta",
+    "tr": "yedi Mayıs'ta",
     "kind": "explanation.examples.tr",
     "en": "on the seventh of May"
   },
@@ -380,7 +380,7 @@
     "en": "How much is the ticket?"
   },
   {
-    "tr": "Bugün iki ekim.",
+    "tr": "Bugün iki Ekim.",
     "kind": "explanation.examples.tr",
     "en": "Today is the second of October."
   },
@@ -535,7 +535,7 @@
     "en": "Do you have time today?"
   },
   {
-    "tr": "Bugün yirmi haziran.",
+    "tr": "Bugün yirmi Haziran.",
     "kind": "explanation.examples.tr",
     "en": "Today is the twentieth of June."
   },
@@ -702,7 +702,7 @@
   {
     "tr": "Yetişkin on euro öder.",
     "kind": "explanation.examples.tr",
-    "en": "An adult pays ten euros."
+    "en": "The adult pays ten euros."
   },
   {
     "tr": "Adın yazılışı yanlıştı.",

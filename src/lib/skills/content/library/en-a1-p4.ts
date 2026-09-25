@@ -360,7 +360,7 @@ export const enA1P4: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "I ___ (not / drive) a car.",
+        text: "I ___ (can / not / drive) a car.",
         options: [],
         answer: 0,
         accept: ["can't drive", "cannot drive"],
@@ -395,8 +395,8 @@ export const enA1P4: SkillExercise[] = [
         text: "Soruyu doğru sıraya diz.",
         options: [],
         answer: 0,
-        items: ["Can", "you", "help", "me", "please"],
-        explain: "Soruda „can“ başa geçer, sonra özne ve yalın fiil gelir: Can you help me, please?",
+        items: ["Can", "you", "help", "me?"],
+        explain: "Soruda „can“ başa geçer, sonra özne ve yalın fiil gelir: Can you help me?",
       },
       {
         kind: "truefalse",

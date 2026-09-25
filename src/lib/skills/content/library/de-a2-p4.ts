@@ -321,19 +321,19 @@ export const deA2P4: SkillExercise[] = [
     skill: "grammar",
     title: "war, hatte, musste",
     genre: "grammar",
-    intro: "Konuşurken çoğu fiil için Perfekt kullanılır, ama üç grup fiil geçmişte hep kısa biçimiyle söylenir.",
+    intro: "Konuşurken çoğu fiil için Perfekt kullanılır, ama üç grup fiil geçmişte çoğunlukla kısa biçimiyle söylenir.",
     focus: "Präteritum: sein, haben ve modal fiiller",
     gloss: [
       { de: "müde", tr: "yorgun", en: "tired" },
       { de: "eigentlich", tr: "aslında", en: "actually" },
-      { de: "krank", tr: "hasta", en: "ill" },
+      { de: "krank", tr: "hasta", en: "sick" },
       { de: "dabei", tr: "yanında", en: "with one" },
     ],
     minutes: 7,
     explanation: [
       {
         heading: "Hangi fiil hangi geçmiş?",
-        tr: "Türkçede tek bir geçmiş zaman var. Almancada konuşma dilinde çoğu fiil Perfekt ile anlatılır, ama sein, haben ve modal fiiller neredeyse hep Präteritum ile gelir. „Ich bin müde gewesen“ değil, „Ich war müde“.",
+        tr: "Türkçede geçmiş eki her fiile aynı biçimde gelir: yorgundum, bekledim. Almancada konuşma dilinde çoğu fiil Perfekt ile anlatılır, ama sein, haben ve modal fiiller neredeyse hep Präteritum ile gelir. „Ich bin müde gewesen“ değil, „Ich war müde“.",
         examples: [
           { de: "Gestern war ich sehr müde.", tr: "Dün çok yorgundum." },
           { de: "Wir hatten keinen Schlüssel dabei.", tr: "Yanımızda anahtar yoktu." },
@@ -351,7 +351,7 @@ export const deA2P4: SkillExercise[] = [
       },
       {
         heading: "Modal fiillerde nokta düşer",
-        tr: "Modal fiiller Präteritum'da ünlüsündeki noktayı kaybeder ve hatte gibi çekilir: können → konnte, müssen → musste, dürfen → durfte, wollen → wollte, sollen → sollte, mögen → mochte.",
+        tr: "Modal fiiller Präteritum'da hatte gibi çekilir; noktalı olanlar noktasını kaybeder: können → konnte, müssen → musste, dürfen → durfte, mögen → mochte. wollen → wollte, sollen → sollte zaten noktasızdır.",
         examples: [
           { de: "Als Kind konnte ich nicht schwimmen.", tr: "Çocukken yüzemezdim.", note: "können → konnte" },
           { de: "Wir durften nicht mitkommen.", tr: "Bizim gelmemize izin yoktu." },
@@ -367,10 +367,10 @@ export const deA2P4: SkillExercise[] = [
         explain: "„sein“ geçmişte konuşma dilinde de Präteritum ile gelir: ich war.",
       },
       {
-        text: "Wir ___ kein Geld dabei.",
+        text: "Wir ___ gestern kein Geld dabei.",
         options: ["hatten", "haben", "hatte"],
         answer: 0,
-        explain: "„wir“ biçiminde ek -en'dir: wir hatten.",
+        explain: "„gestern“ geçmişi gösterir; „wir“ biçiminde ek -en'dir: wir hatten.",
       },
       {
         text: "Als Kind ___ ich nicht schwimmen.",

@@ -364,7 +364,7 @@ export const deA1P2: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["liest"],
-        explain: "„lesen“ du biçiminde e → ie olur ve kök zaten s ile bittiği için tek t kalır: liest.",
+        explain: "„lesen“ du biçiminde e → ie olur; kök s ile bittiği için -st'nin s'si düşer, yalnız -t eklenir: liest.",
       },
       {
         kind: "gapfill",

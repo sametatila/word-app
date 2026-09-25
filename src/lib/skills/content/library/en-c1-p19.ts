@@ -350,7 +350,7 @@ export const enC1P19: SkillExercise[] = [
       { de: "measure", tr: "önlem" },
       { de: "to reject", tr: "reddetmek" },
       { de: "to await", tr: "beklemek" },
-      { de: "heat", tr: "sıcak" },
+      { de: "heat", tr: "sıcak hava" },
     ],
     minutes: 12,
     explanation: [

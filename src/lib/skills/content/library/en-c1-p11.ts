@@ -335,7 +335,7 @@ export const enC1P11: SkillExercise[] = [
     title: "it is worth noting that",
     genre: "grammar",
     intro: "Uzun bir özne ya da nesne cümlenin başına sığmayınca yerini „it“ tutar, asıl bilgi sona gider.",
-    focus: "Öncül it (extraposition): It is worth …, I find it odd that, I'd appreciate it if — cleft değil",
+    focus: "Yer tutucu it (extraposition): It is worth …, I find it odd that, I'd appreciate it if — cleft değil",
     gloss: [
       { de: "to appreciate", tr: "takdir etmek" },
       { de: "odd", tr: "tuhaf" },

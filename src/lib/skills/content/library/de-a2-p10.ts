@@ -345,7 +345,7 @@ export const deA2P10: SkillExercise[] = [
     focus: "Zaman yan cümleleri: wenn, als ve tekrar eden olaylar",
     gloss: [
       { de: "das Kind", tr: "çocuk", en: "child" },
-      { de: "umziehen", tr: "taşınmak", en: "to move house" },
+      { de: "umziehen", tr: "taşınmak", en: "to move" },
       { de: "schwimmen", tr: "yüzmek", en: "to swim" },
       { de: "immer", tr: "her zaman", en: "always" },
       { de: "müde", tr: "yorgun", en: "tired" },
@@ -354,7 +354,7 @@ export const deA2P10: SkillExercise[] = [
     explanation: [
       {
         heading: "als: geçmişte BİR kez",
-        tr: "Geçmişte bir kez olmuş, tek seferlik bir olay anlatılıyorsa „als“ kullanılır. Bu, Türkçede „…dığında“ ile çevrilir ama Almancada seçim zorunludur. Yan cümle olduğu için fiil sona gider.",
+        tr: "Geçmişte bir kez olmuş, tek seferlik bir olay ya da geçmişteki tek bir dönem (altı yaşındayken, çocukken) anlatılıyorsa „als“ kullanılır. Bu, Türkçede „…dığında“ ile çevrilir ama Almancada seçim zorunludur. Yan cümle olduğu için fiil sona gider.",
         examples: [
           { de: "Als ich sechs war, bin ich in die Schule gekommen.", tr: "Altı yaşındayken okula başladım.", note: "bir kez oldu" },
           { de: "Als wir umgezogen sind, hat es geregnet.", tr: "Taşındığımızda yağmur yağıyordu.", note: "tek bir gün" },

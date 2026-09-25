@@ -327,8 +327,8 @@ export const deB2P10: SkillExercise[] = [
         heading: "Aynı fiil, iki iş",
         tr: "„Er muss arbeiten“ iki şey söyleyebilir: bir zorunluluk (çalışmak zorunda) ya da bir çıkarım (çalışıyor olmalı). Hangisi olduğunu bağlam belirler. Bu ikinci kullanıma ÖZNEL modal fiil denir ve konuşanın ne kadar emin olduğunu ölçer.",
         examples: [
-          { de: "Er muss krank sein, er ist sonst nie zu Hause.", tr: "Hasta olmalı, yoksa asla evde olmaz.", note: "güçlü çıkarım" },
-          { de: "Sie dürfte schon unterwegs sein.", tr: "Yola çıkmış olmalı.", note: "ihtiyatlı tahmin" },
+          { de: "Er muss krank sein, er ist sonst nie zu Hause.", tr: "Hasta olmalı, başka zaman hiç evde olmaz.", note: "güçlü çıkarım" },
+          { de: "Sie dürfte schon unterwegs sein.", tr: "Muhtemelen yola çıkmıştır.", note: "ihtiyatlı tahmin" },
           { de: "Das kann nicht stimmen.", tr: "Bu doğru olamaz.", note: "güçlü ret" },
         ],
       },
@@ -342,11 +342,11 @@ export const deB2P10: SkillExercise[] = [
         ],
       },
       {
-        heading: "Geçmiş için: mastar + haben/sein",
-        tr: "Tahmin geçmişe bakıyorsa modal fiil ŞİMDİKİ zamanda kalır ve arkasına Partizip + „haben“ ya da „sein“ gelir: „muss gewusst haben“, „dürfte abgefahren sein“. Modal fiilin kendisi geçmişe çekilmez — „musste gewusst haben“ yanlıştır.",
+        heading: "Geçmiş için: Partizip II + haben/sein",
+        tr: "Tahmin geçmişe bakıyorsa modal fiil ŞİMDİKİ zamanda kalır ve arkasına Partizip + „haben“ ya da „sein“ gelir: „muss gewusst haben“, „dürfte abgefahren sein“. Modal fiilin kendisi geçmişe çekilmez — bugün yapılan bir tahmin için „musste gewusst haben“ yanlıştır.",
         examples: [
-          { de: "Er muss es gewusst haben.", tr: "Bunu biliyor olmalı.", note: "geçmiş çıkarım" },
-          { de: "Der Zug dürfte schon abgefahren sein.", tr: "Tren çoktan kalkmış olmalı.", note: "sein ile" },
+          { de: "Er muss es gewusst haben.", tr: "Bunu mutlaka biliyordu.", note: "geçmiş çıkarım" },
+          { de: "Der Zug dürfte schon abgefahren sein.", tr: "Tren muhtemelen çoktan kalkmıştır.", note: "sein ile" },
           { de: "Sie kann das nicht gesagt haben.", tr: "Bunu söylemiş olamaz.", note: "olumsuz çıkarım" },
         ],
       },
@@ -416,10 +416,10 @@ export const deB2P10: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„Er musste es gewusst haben.“ — Bu tahmin bildiren doğru bir biçim mi?",
+        text: "„Er musste es gewusst haben.“ — Konuşanın şimdiki tahmini için bu doğru bir biçim mi?",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Öznel kullanımda modal fiil şimdiki zamanda kalır: „Er muss es gewusst haben.“",
+        explain: "Şimdiki bir tahminde modal fiil şimdiki zamanda kalır: „Er muss es gewusst haben.“",
       },
       {
         kind: "truefalse",

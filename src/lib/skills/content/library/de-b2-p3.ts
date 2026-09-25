@@ -316,9 +316,9 @@ export const deB2P3: SkillExercise[] = [
         heading: "Türkçedeki iki ortaç",
         tr: "Türkçede iki ayrı ortaç vardır: „bekleyen misafirler“ (eylemi yapan) ve „kurulmuş masa“ (eylemin yapıldığı). Almancada da iki biçim var: Partizip I süren eylemi, Partizip II tamamlanmış olanı anlatır. İkisi de isimden önce gelir ve sıfat gibi çekilir.",
         examples: [
-          { de: "die wartenden Gäste", tr: "bekleyen misafirler", note: "Partizip I, etkin" },
-          { de: "der gedeckte Tisch", tr: "kurulmuş masa", note: "Partizip II, edilgin" },
-          { de: "das lesende Kind und das gelesene Buch", tr: "okuyan çocuk ve okunan kitap" },
+          { de: "die wartenden Gäste", tr: "bekleyen misafirler", note: "Partizip I, etken" },
+          { de: "der gedeckte Tisch", tr: "kurulmuş masa", note: "Partizip II, edilgen" },
+          { de: "das lesende Kind und das gelesene Buch", tr: "okuyan çocuk ve okunmuş kitap" },
         ],
       },
       {
@@ -332,10 +332,10 @@ export const deB2P3: SkillExercise[] = [
       },
       {
         heading: "Bir istisna",
-        tr: "Hareket bildiren ve „sein“ ile çekilen fiillerde Partizip II edilgin değil, TAMAMLANMIŞ etkin anlam taşır: „der angekommene Zug“ trenin geldiğini söyler, birinin treni getirdiğini değil.",
+        tr: "Hareket ya da durum değişikliği bildiren ve „sein“ ile çekilen fiillerde Partizip II edilgen değil, TAMAMLANMIŞ etken anlam taşır: „der angekommene Zug“ trenin geldiğini söyler, birinin treni getirdiğini değil.",
         examples: [
-          { de: "der angekommene Zug", tr: "gelmiş olan tren", note: "etkin, tamamlanmış" },
-          { de: "die eingeschlafenen Kinder", tr: "uyuyakalmış çocuklar" },
+          { de: "der angekommene Zug", tr: "gelmiş olan tren", note: "etken, tamamlanmış" },
+          { de: "die eingeschlafenen Kinder", tr: "uykuya dalmış çocuklar" },
           { de: "der ankommende Zug", tr: "gelmekte olan tren", note: "Partizip I, süren" },
         ],
       },
@@ -351,7 +351,7 @@ export const deB2P3: SkillExercise[] = [
         text: "Der ___ Tisch sieht festlich aus. (decken)",
         options: ["gedeckte", "deckende", "gedeckt"],
         answer: 0,
-        explain: "Masayı biri kurmuştur; tamamlanmış ve edilgin anlam Partizip II ister.",
+        explain: "Masayı biri kurmuştur; tamamlanmış ve edilgen anlam Partizip II ister.",
       },
       {
         text: "Das ___ Kind sitzt am Fenster. (lesen)",
@@ -377,11 +377,11 @@ export const deB2P3: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Der gerade ___ (ankommen) Zug hat Verspätung.",
+        text: "Der vor zehn Minuten ___ (ankommen) Zug steht noch an Gleis 3.",
         options: [],
         answer: 0,
         accept: ["angekommene"],
-        explain: "Hareket fiilinde Partizip II tamamlanmış etkin anlam taşır: der angekommene Zug.",
+        explain: "Tren on dakika önce gelmiş, eylem bitmiş. Hareket fiilinde Partizip II tamamlanmış etken anlam taşır: der angekommene Zug.",
       },
       {
         kind: "gapfill",
@@ -411,7 +411,7 @@ export const deB2P3: SkillExercise[] = [
         text: "„der angekommene Zug“ — Bu ifade doğru mu?",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "„ankommen“ sein ile çekilir; Partizip II burada tamamlanmış etkin anlam taşır, ifade doğrudur.",
+        explain: "„ankommen“ sein ile çekilir; Partizip II burada tamamlanmış etken anlam taşır, ifade doğrudur.",
       },
     ],
   },

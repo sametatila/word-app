@@ -362,7 +362,7 @@ export const deC1P9: SkillExercise[] = [
       },
       {
         heading: "Olumsuzlamanın kapsamı ve güçlü biçimler",
-        tr: "„nicht“ neyi olumsuzladığını YERİYLE söyler: „Ich habe das nicht gesagt“ eylemi, „Nicht ich habe das gesagt“ özneyi olumsuzlar. Güçlü olumsuzlamalar bir derece ekler: „keineswegs“ (hiçbir şekilde), „keinesfalls“ (kesinlikle olmaz), „alles andere als“ (… olmaktan çok uzak). „ohnehin“ ve „allenfalls“ ise sınırlama getirir.",
+        tr: "„nicht“ neyi olumsuzladığını YERİYLE söyler: „Ich habe das nicht gesagt“ eylemi, „Nicht ich habe das gesagt“ özneyi olumsuzlar. Güçlü olumsuzlamalar bir derece ekler: „keineswegs“ (hiçbir şekilde), „keinesfalls“ (kesinlikle olmaz), „alles andere als“ (… olmaktan çok uzak). „allenfalls“ (olsa olsa) ise bir üst sınır koyar.",
         examples: [
           { de: "Das gilt keineswegs für alle.", tr: "Bu hiçbir şekilde herkes için geçerli değil.", note: "güçlü olumsuzlama" },
           { de: "Nicht ich habe das verlangt.", tr: "Bunu ben talep etmedim.", note: "özne olumsuzlanıyor" },
@@ -402,7 +402,7 @@ export const deC1P9: SkillExercise[] = [
         text: "Das gilt ___ für alle. (starke Verneinung)",
         options: [],
         answer: 0,
-        accept: ["keineswegs"],
+        accept: ["keineswegs", "keinesfalls"],
         explain: "„keineswegs“ „nicht“ten daha kesin bir olumsuzlamadır.",
       },
       {
@@ -411,15 +411,15 @@ export const deC1P9: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["sondern"],
-        explain: "„nicht nur“ her zaman „sondern auch“ ile tamamlanır.",
+        explain: "„nicht nur“un olağan tamamlayıcısı „sondern auch“tur.",
       },
       {
         kind: "gapfill",
-        text: "___ er hat zugestimmt — damit hatte niemand gerechnet.",
+        text: "___ heute, wo ich es eilig habe, fällt der Zug aus.",
         options: [],
         answer: 0,
-        accept: ["Ausgerechnet", "ausgerechnet"],
-        explain: "Beklenmedik olanı öne çıkarmak için „ausgerechnet“ kullanılır.",
+        accept: ["Ausgerechnet", "ausgerechnet", "Gerade", "gerade"],
+        explain: "Beklenmedik ve talihsiz bir denk gelişi öne çıkarmak için „ausgerechnet“ (ya da „gerade“) kullanılır.",
       },
       {
         kind: "gapfill",

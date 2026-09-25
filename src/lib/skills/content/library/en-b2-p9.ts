@@ -398,7 +398,7 @@ export const enB2P9: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "I won't decide until I ___ read it. (have)",
+        text: "I won't decide until I ___ read it. (present perfect)",
         options: [],
         answer: 0,
         accept: ["'ve", "have"],

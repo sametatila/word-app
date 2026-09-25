@@ -175,7 +175,7 @@ export const enA1P14: SkillExercise[] = [
       },
       {
         heading: "have got, there is ve does",
-        tr: "Aynı kural öteki yardımcılarda da geçerlidir: „Have you got …?“ sorusuna „Yes, I have“, „Is there …?“ sorusuna „Yes, there is“ denir. „got“ ve asıl fiil kısa cevapta tekrar edilmez.",
+        tr: "Aynı kural öteki yardımcılarda da geçerlidir: „Have you got …?“ sorusuna „Yes, I have“, „Is there …?“ sorusuna „Yes, there is“ denir. „got“ ve asıl fiil kısa cevapta tekrar edilmez. Amerikan İngilizcesinde daha sık duyulan: „Do you have a car?“ — „No, I don't.“",
         examples: [
           { de: "Have you got a car? — No, I haven't.", tr: "Araban var mı? — Hayır, yok." },
           { de: "Is there a bank near here? — Yes, there is.", tr: "Yakında banka var mı? — Evet, var." },

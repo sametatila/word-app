@@ -326,14 +326,14 @@ export const enB2P11: SkillExercise[] = [
     gloss: [
       { de: "to arrive", tr: "varmak" },
       { de: "exhausted", tr: "bitkin" },
-      { de: "to queue", tr: "sıraya girmek" },
+      { de: "to wait in line", tr: "sırada beklemek" },
       { de: "ferry", tr: "feribot" },
     ],
     minutes: 9,
     explanation: [
       {
         heading: "had done: geçmişten önceki geçmiş",
-        tr: "„had + üçüncü biçim“ geçmişteki bir andan ÖNCE tamamlanmış eylemi anlatır. İki olayın sırası önemliyse fark büyüktür: „When we arrived, the ferry had left“ vapurun biz gelmeden gittiğini söyler; „When we arrived, the ferry left“ ise ikisinin art arda olduğunu.",
+        tr: "„had + üçüncü hâl“ geçmişteki bir andan ÖNCE tamamlanmış eylemi anlatır. İki olayın sırası önemliyse fark büyüktür: „When we arrived, the ferry had left“ vapurun biz gelmeden gittiğini söyler; „When we arrived, the ferry left“ ise ikisinin art arda olduğunu.",
         examples: [
           { de: "When we arrived, the ferry had already left.", tr: "Vardığımızda vapur çoktan gitmişti.", note: "önce gitti" },
           { de: "When we arrived, the ferry left.", tr: "Biz varınca vapur kalktı.", note: "art arda" },
@@ -345,7 +345,7 @@ export const enB2P11: SkillExercise[] = [
         tr: "„had been + -ing“ geçmişteki bir ana kadar SÜREN eylemi anlatır; çoğu zaman bir süreyle („for three hours“) ya da görünen bir sonuçla gelir: yorgunluk, ıslak ayakkabı, uzun bir kuyruk. Vurgu sonuçta değil süreçtedir.",
         examples: [
           { de: "We had been walking for three hours when it started to rain.", tr: "Yağmur başladığında üç saattir yürüyorduk.", note: "süre" },
-          { de: "They were exhausted because they had been queuing all morning.", tr: "Bütün sabah kuyrukta bekledikleri için bitkindiler.", note: "görünen sonuç" },
+          { de: "They were exhausted because they had been waiting in line all morning.", tr: "Bütün sabah kuyrukta bekledikleri için bitkindiler.", note: "görünen sonuç" },
           { de: "Residents had been complaining for years before the council acted.", tr: "Belediye harekete geçmeden önce sakinler yıllardır şikâyet ediyordu.", note: "süre + before" },
         ],
       },
@@ -367,8 +367,8 @@ export const enB2P11: SkillExercise[] = [
         explain: "Vapur biz varmadan önce gitmiş; önceki olay past perfect ile verilir.",
       },
       {
-        text: "They were exhausted because they ___ all morning.",
-        options: ["had been queuing", "have queued", "are queuing"],
+        text: "They were exhausted because they ___ in line all morning.",
+        options: ["had been waiting", "have waited", "are waiting"],
         answer: 0,
         explain: "Geçmişteki bir ana kadar süren ve sonucu görünen eylem: had been + -ing.",
       },
@@ -420,7 +420,7 @@ export const enB2P11: SkillExercise[] = [
         options: [],
         answer: 0,
         items: ["When we arrived,", "the ferry", "had", "already left"],
-        explain: "Yan cümle, ardından özne + had + already + üçüncü biçim.",
+        explain: "Yan cümle, ardından özne + had + already + üçüncü hâl.",
       },
       {
         kind: "truefalse",

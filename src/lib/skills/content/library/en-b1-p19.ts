@@ -307,7 +307,7 @@ export const enB1P19: SkillExercise[] = [
     focus: "be allowed to ve be supposed to: izin ve beklenen davranış",
     gloss: [
       { de: "to feed", tr: "beslemek" },
-      { de: "parcel", tr: "koli" },
+      { de: "package", tr: "koli" },
       { de: "gate", tr: "bahçe kapısı" },
       { de: "to smoke", tr: "sigara içmek" },
     ],
@@ -336,7 +336,7 @@ export const enB1P19: SkillExercise[] = [
         tr: "„not allowed to“ açık bir yasaktır. „not supposed to“ ise bir şeyin yapılmaması gerektiğini söyler ama çoğu zaman yine de yapıldığını ima eder.",
         examples: [
           { de: "You're not allowed to smoke in the building.", tr: "Binada sigara içmek yasak.", note: "yasak" },
-          { de: "We're not supposed to eat at our desks, but everyone does.", tr: "Masamızda yemek yememiz beklenmiyor ama herkes yiyor.", note: "kural çiğneniyor" },
+          { de: "We're not supposed to eat at our desks, but everyone does.", tr: "Aslında masamızda yemek yemememiz gerekiyor ama herkes yiyor.", note: "kural çiğneniyor" },
           { de: "She wasn't supposed to tell anyone.", tr: "Kimseye söylememesi gerekiyordu.", note: "ama söyledi" },
         ],
       },
@@ -390,7 +390,7 @@ export const enB1P19: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The parcel ___ supposed to arrive yesterday, but it didn't. (be)",
+        text: "The package ___ supposed to arrive yesterday, but it didn't. (be)",
         options: [],
         answer: 0,
         accept: ["was"],
@@ -406,7 +406,7 @@ export const enB1P19: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„I'm supposed to be at work now, but I'm ill.“ — Bu cümle doğru mu?",
+        text: "„I'm supposed to be at work now, but I'm sick.“ — Bu cümle doğru mu?",
         options: ["True", "False"],
         answer: 0,
         explain: "Beklenenle gerçek çelişiyor: „supposed to“ tam bu iş içindir.",

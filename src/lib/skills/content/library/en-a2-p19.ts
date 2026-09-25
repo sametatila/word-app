@@ -101,9 +101,9 @@ export const enA2P19: SkillExercise[] = [
     explanation: [
       {
         heading: "Neden? — to + yalın fiil",
-        tr: "Bir şeyi neden yaptığını söylerken fiilin önüne „to“ gelir: „I went to the shop to buy bread.“ Türkçedeki „almak için“ burada tek bir „to“ ile karşılanır; ayrıca „for“ eklenmez.",
+        tr: "Bir şeyi neden yaptığını söylerken fiilin önüne „to“ gelir: „I went to the store to buy bread.“ Türkçedeki „almak için“ burada tek bir „to“ ile karşılanır; ayrıca „for“ eklenmez.",
         examples: [
-          { de: "I went to the shop to buy bread.", tr: "Ekmek almak için dükkâna gittim." },
+          { de: "I went to the store to buy bread.", tr: "Ekmek almak için dükkâna gittim." },
           { de: "She called to ask about the time.", tr: "Saati sormak için aradı." },
           { de: "We are saving money to buy a car.", tr: "Araba almak için para biriktiriyoruz." },
         ],
@@ -112,7 +112,7 @@ export const enA2P19: SkillExercise[] = [
         heading: "for + isim",
         tr: "„for“ amaç bildirirken arkasından İSİM gelir: for bread, for a coffee, for work. Arkasına yalın fiil koymak („for buy“, „for learn“) Türkçe konuşanların en sık hatasıdır.",
         examples: [
-          { de: "I went to the shop for some bread.", tr: "Biraz ekmek için dükkâna gittim.", note: "for + isim" },
+          { de: "I went to the store for some bread.", tr: "Biraz ekmek için dükkâna gittim.", note: "for + isim" },
           { de: "Let's meet for a coffee.", tr: "Bir kahve için buluşalım." },
           { de: "He came here for work.", tr: "Buraya iş için geldi." },
         ],

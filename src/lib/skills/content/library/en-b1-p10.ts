@@ -323,7 +323,7 @@ export const enB1P10: SkillExercise[] = [
       { de: "advice", tr: "tavsiye" },
       { de: "nurse", tr: "hemşire" },
       { de: "manager", tr: "yönetici" },
-      { de: "cinema", tr: "sinema" },
+      { de: "movies", tr: "sinema" },
     ],
     minutes: 7,
     explanation: [
@@ -347,11 +347,11 @@ export const enB1P10: SkillExercise[] = [
       },
       {
         heading: "Sıfır artikel: genel ve sayılamayan",
-        tr: "GENEL olarak konuşurken çoğul ve sayılamayan isimler artikel almaz: „Children learn fast“, „Money isn't everything“. „advice, information, news, furniture, work“ sayılamazdır ve „an advice“ denmez — „a piece of advice“ denir. Ayrıca bazı yer kalıplarında artikel düşer: „go to school“, „at work“, „in hospital“ (amaç için); ama „go to the cinema“ artikel alır.",
+        tr: "GENEL olarak konuşurken çoğul ve sayılamayan isimler artikel almaz: „Children learn fast“, „Money isn't everything“. „advice, information, news, furniture, work“ sayılamazdır ve „an advice“ denmez — „a piece of advice“ denir. Ayrıca bazı yer kalıplarında artikel düşer: „go to school“, „at work“, „go to bed“ (yerin asıl amacı için); ama „go to the movies“ artikel alır.",
         examples: [
           { de: "Children learn languages fast.", tr: "Çocuklar dilleri hızlı öğrenir.", note: "genel → artikelsiz" },
           { de: "She gave me some good advice.", tr: "Bana iyi bir tavsiye verdi.", note: "sayılamaz" },
-          { de: "We went to the cinema after work.", tr: "İşten sonra sinemaya gittik.", note: "cinema → the, work → artikelsiz" },
+          { de: "We went to the movies after work.", tr: "İşten sonra sinemaya gittik.", note: "movies → the, work → artikelsiz" },
         ],
       },
     ],
@@ -392,11 +392,11 @@ export const enB1P10: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "We went to ___ cinema after work.",
+        text: "We went to ___ movies after work.",
         options: [],
         answer: 0,
         accept: ["the"],
-        explain: "„go to the cinema“ kalıbı artikel alır.",
+        explain: "„go to the movies“ kalıbı artikel alır.",
       },
       {
         kind: "gapfill",

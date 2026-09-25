@@ -401,7 +401,7 @@ export const enB2P2: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["which"],
-        explain: "Virgüllü açıklayıcı cümlede nesne olmayan şeyler için „which“ gelir; „that“ olmaz.",
+        explain: "Virgüllü açıklayıcı cümlede kişi olmayan şeyler için „which“ gelir; „that“ olmaz.",
       },
       {
         kind: "gapfill",

@@ -40,5 +40,6 @@
  { "tr": "„No, the water is not made softer here. That is done in your house, or not at all.“ Klor kurak yazlarda ekleniyor, test her gün yapılıyor.", "kind": "explain", "de": "„No, the water is not made softer here. That is done in your house, or not at all.“ Chlor kommt in trockenen Sommern dazu, getestet wird jeden Tag." },
  { "tr": "„We'll call you when we find the bag.“", "kind": "explain", "de": "„We'll call you when we find the bag.“" },
  { "tr": "„It's coming in forty minutes.“", "kind": "explain", "de": "„It's coming in forty minutes.“" },
- { "tr": "\"Don't forget your ID card. We can't help you without it.\"", "kind": "explain", "de": "\"Don't forget your ID card. We can't help you without it.\"" }
+ { "tr": "\"Don't forget your ID card. We can't help you without it.\"", "kind": "explain", "de": "\"Don't forget your ID card. We can't help you without it.\"" },
+ { "tr": "sıcak hava", "kind": "gloss.tr", "de": "die Hitze" }
 ]

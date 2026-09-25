@@ -122,7 +122,7 @@
  { "tr": "„Entweder kommst du mit, oder bleibst du hier.“ — Bu cümle doğru mu?", "kind": "question.text", "en": "„Entweder kommst du mit, oder bleibst du hier.“ — Is this sentence correct?" },
  { "tr": "„Sie brauchen das Formular nicht auszudrucken.“ — Bu cümle doğru mu?", "kind": "question.text", "en": "„Sie brauchen das Formular nicht auszudrucken.“ — Is this sentence correct?" },
  { "tr": "„Soll ich das Fenster zumachen?“ bir teklif olabilir. — Bu doğru mu?", "kind": "question.text", "en": "„Soll ich das Fenster zumachen?“ can be an offer. — Is this correct?" },
- { "tr": "Der Kauf kostet nichts, ___ man pünktlich bezahlt. (… olduğu sürece)", "kind": "question.text", "en": "Der Kauf kostet nichts, ___ man pünktlich bezahlt. (as long as …)" },
+ { "tr": "Es entstehen keine Zusatzkosten, ___ man pünktlich bezahlt. (… olduğu sürece)", "kind": "question.text", "en": "Es entstehen keine Zusatzkosten, ___ man pünktlich bezahlt. (as long as …)" },
  { "tr": "„Das ist alles, wofür wir im Moment Zeit haben.“ — Bu cümle doğru mu?", "kind": "question.text", "en": "„Das ist alles, wofür wir im Moment Zeit haben.“ — Is this sentence correct?" },
  { "tr": "„Er lässt sich jeden Monat die Haare schneiden.“ — Bu cümle doğru mu?", "kind": "question.text", "en": "„Er lässt sich jeden Monat die Haare schneiden.“ — Is this sentence correct?" },
  { "tr": "„Brauchst du ein Messer? — Ja, ich brauche eins.“ — Bu cevap doğru mu?", "kind": "question.text", "en": "„Brauchst du ein Messer? — Ja, ich brauche eins.“ — Is this answer correct?" },

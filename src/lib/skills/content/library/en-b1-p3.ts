@@ -335,7 +335,7 @@ export const enB1P3: SkillExercise[] = [
         tr: "Fail genelde hiç söylenmez; gerekirse „by“ ile eklenir. Ayrıca İngilizcede kişi de edilgen öznesi olabilir: „I was told …“ Türkçede bu yapı yoktur ve bu yüzden zor gelir.",
         examples: [
           { de: "The letter was written by my sister.", tr: "Mektubu kız kardeşim yazdı." },
-          { de: "I was told about the meeting.", tr: "Toplantı bana söylendi.", note: "kişi özne olabiliyor" },
+          { de: "I was told about the meeting.", tr: "Bana toplantıdan bahsedildi.", note: "kişi özne olabiliyor" },
           { de: "We were given two weeks.", tr: "Bize iki hafta verildi." },
         ],
       },

@@ -370,8 +370,8 @@ export const enC1P20: SkillExercise[] = [
         heading: "Kayıt: resmî ve gündelik karşılıklar",
         tr: "Bu öbekler resmî kayda aittir ve gündelik konuşmada ağır durur. „with regard to“ yerine „about“, „in view of“ yerine „because of“, „in the event of“ yerine „if“ söylenir. „in accordance with“ ise neredeyse yalnız kurallar ve sözleşmeler için kullanılır: „in accordance with our terms“.",
         examples: [
-          { de: "I'm calling with regard to the grants round.", tr: "Hibe turu ile ilgili olarak arıyorum.", note: "resmî: with regard to" },
-          { de: "I'm calling about the grants round.", tr: "Hibe turu hakkında arıyorum.", note: "gündelik: about" },
+          { de: "I'm calling with regard to the grant application.", tr: "Hibe başvurusuyla ilgili olarak arıyorum.", note: "resmî: with regard to" },
+          { de: "I'm calling about the grant application.", tr: "Hibe başvurusu hakkında arıyorum.", note: "gündelik: about" },
           { de: "In accordance with our terms, the money can be carried over.", tr: "Koşullarımıza göre para bir sonraki yıla aktarılabilir.", note: "kurallar için" },
         ],
       },
@@ -432,7 +432,7 @@ export const enC1P20: SkillExercise[] = [
         text: "Cümleyi doğru sıraya diz.",
         options: [],
         answer: 0,
-        items: ["I'm calling", "with regard to", "the grants round"],
+        items: ["I'm calling", "with regard to", "the grant application"],
         explain: "Edat öbeği + isim öbeği.",
       },
       {

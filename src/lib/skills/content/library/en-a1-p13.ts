@@ -310,7 +310,7 @@ export const enA1P13: SkillExercise[] = [
         tr: "Şimdiki „am“ ve „is“ geçmişte „was“, „are“ ise „were“ olur: I / he / she / it was; you / we / they were. Türkçedeki -di / -ydi ekinin karşılığıdır: evdeydim = I was at home.",
         examples: [
           { de: "I was at home yesterday.", tr: "Dün evdeydim.", note: "I → was" },
-          { de: "The film was very good.", tr: "Film çok iyiydi.", note: "it → was" },
+          { de: "The movie was very good.", tr: "Film çok iyiydi.", note: "it → was" },
           { de: "We were tired last night.", tr: "Dün akşam yorgunduk.", note: "we → were" },
         ],
       },
@@ -320,14 +320,14 @@ export const enA1P13: SkillExercise[] = [
         examples: [
           { de: "She wasn't at work on Monday.", tr: "Pazartesi işte değildi.", note: "was + not" },
           { de: "Were you busy last week?", tr: "Geçen hafta meşgul müydün?", note: "were başa geçer" },
-          { de: "Was the shop open?", tr: "Dükkân açık mıydı?" },
+          { de: "Was the store open?", tr: "Dükkân açık mıydı?" },
         ],
       },
       {
         heading: "there was / there were ve born",
         tr: "„vardı“ demek için tekilde „there was“, çoğulda „there were“ kullanılır. Doğum da was / were ile söylenir: I was born in May. Türkçedeki „doğdum“ gibi tek bir fiil yoktur.",
         examples: [
-          { de: "There was a party at Ela's flat.", tr: "Ela'nın evinde bir parti vardı.", note: "tekil → was" },
+          { de: "There was a party at Ela's apartment.", tr: "Ela'nın evinde bir parti vardı.", note: "tekil → was" },
           { de: "There were twenty people at the party.", tr: "Partide yirmi kişi vardı.", note: "çoğul → were" },
           { de: "I was born in May.", tr: "Mayısta doğdum.", note: "born: was ile" },
         ],
@@ -347,7 +347,7 @@ export const enA1P13: SkillExercise[] = [
         explain: "„you“ ile were kullanılır ve soruda başa geçer; did gerekmez.",
       },
       {
-        text: "There ___ a party at Ela's flat on Friday.",
+        text: "There ___ a party at Ela's apartment on Friday.",
         options: ["was", "were", "are"],
         answer: 0,
         explain: "„a party“ tekil ve geçmişte, bu yüzden there was.",
@@ -378,11 +378,11 @@ export const enA1P13: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "___ the shop open yesterday?",
+        text: "___ the store open yesterday?",
         options: [],
         answer: 0,
         accept: ["Was", "was"],
-        explain: "„the shop“ tekil; soruda was başa geçer.",
+        explain: "„the store“ tekil; soruda was başa geçer.",
       },
       {
         kind: "order",
@@ -401,10 +401,10 @@ export const enA1P13: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„The film was very good.“ — Bu cümle doğru mu?",
+        text: "„The movie was very good.“ — Bu cümle doğru mu?",
         options: ["True", "False"],
         answer: 0,
-        explain: "„the film“ tekil (it), bu yüzden was doğru.",
+        explain: "„the movie“ tekil (it), bu yüzden was doğru.",
       },
     ],
   },

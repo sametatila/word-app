@@ -340,14 +340,14 @@ export const enB2P7: SkillExercise[] = [
         examples: [
           { de: "She admitted that the effect was small.", tr: "Etkinin küçük olduğunu kabul etti.", note: "admit + that" },
           { de: "He refused to answer.", tr: "Cevap vermeyi reddetti.", note: "refuse + to" },
-          { de: "She warned me not to quote it.", tr: "Onu alıntılamamam için beni uyardı.", note: "warn + kişi + to" },
+          { de: "She warned me not to quote it.", tr: "Onu alıntılamamam konusunda beni uyardı.", note: "warn + kişi + to" },
         ],
       },
       {
         heading: "suggest ve recommend tuzağı",
         tr: "„suggest“ ve „recommend“ İNGİLİZCEDE „to + mastar“ ALMAZ. Doğru biçimler: „suggest doing“, „suggest that we do“. „She suggested me to record“ yanlıştır. Ayrıca bu iki fiil doğrudan bir kişi nesnesi de almaz: „suggest me something“ değil, „suggest something to me“.",
         examples: [
-          { de: "She suggested recording myself.", tr: "Kendimi kaydetmemi önerdi.", note: "suggest + -ing" },
+          { de: "She suggested recording the interview.", tr: "Görüşmeyi kaydetmeyi önerdi.", note: "suggest + -ing" },
           { de: "She suggested that I record myself.", tr: "Kendimi kaydetmemi önerdi.", note: "suggest + that" },
           { de: "He recommended a shorter version to us.", tr: "Bize daha kısa bir biçim önerdi.", note: "recommend + nesne + to" },
         ],
@@ -364,7 +364,7 @@ export const enB2P7: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "She ___ recording myself every week.",
+        text: "She ___ the interview.",
         options: ["suggested me to record", "suggested recording", "suggested me recording"],
         answer: 1,
         explain: "„suggest“ -ing ya da „that“ alır, „to“ almaz.",
@@ -390,12 +390,12 @@ export const enB2P7: SkillExercise[] = [
         text: "She ___ that the effect was small. (admit)",
         options: [],
         answer: 0,
-        accept: ["admitted"],
+        accept: ["admitted", "admits"],
         explain: "„admit“ „that“ cümlesi alabilir.",
       },
       {
         kind: "gapfill",
-        text: "She warned me ___ to quote the headline. (not + to + verb)",
+        text: "She warned me ___ to quote the headline. (negative)",
         options: [],
         answer: 0,
         accept: ["not"],
@@ -414,7 +414,7 @@ export const enB2P7: SkillExercise[] = [
         text: "The newspapers ___ that the result was much stronger. (claim)",
         options: [],
         answer: 0,
-        accept: ["claimed"],
+        accept: ["claimed", "claim"],
         explain: "„claim“ „that“ cümlesi alır.",
       },
       {

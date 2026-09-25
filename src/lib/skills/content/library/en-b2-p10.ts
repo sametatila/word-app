@@ -340,7 +340,7 @@ export const enB2P10: SkillExercise[] = [
     explanation: [
       {
         heading: "will have done: gelecekte bitmiş olacak",
-        tr: "„will have + üçüncü biçim“ gelecekteki bir ANA KADAR tamamlanmış olacak bir eylemi anlatır ve neredeyse her zaman bir zaman işaretiyle gelir: „by Friday“, „by the end of the year“, „by the time you arrive“.",
+        tr: "„will have + üçüncü hâl“ gelecekteki bir ANA KADAR tamamlanmış olacak bir eylemi anlatır ve neredeyse her zaman bir zaman işaretiyle gelir: „by Friday“, „by the end of the year“, „by the time you arrive“.",
         examples: [
           { de: "By Friday we will have finished the report.", tr: "Cumaya kadar raporu bitirmiş olacağız.", note: "by + zaman" },
           { de: "By the time you arrive, they will have left.", tr: "Sen varana kadar gitmiş olacaklar.", note: "by the time + present" },
@@ -371,7 +371,7 @@ export const enB2P10: SkillExercise[] = [
         text: "By Friday we ___ the report.",
         options: ["will finish", "will have finished", "will be finishing"],
         answer: 1,
-        explain: "Gelecekteki bir ana kadar tamamlanma: will have + üçüncü biçim.",
+        explain: "Gelecekteki bir ana kadar tamamlanma: will have + üçüncü hâl.",
       },
       {
         text: "This time tomorrow I ___ on a train.",
@@ -391,7 +391,7 @@ export const enB2P10: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "By the time you arrive, they ___ left. (will have)",
+        text: "By the time you arrive, they ___ left. (future perfect)",
         options: [],
         answer: 0,
         accept: ["will have", "'ll have"],
@@ -399,7 +399,7 @@ export const enB2P10: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "We were ___ to publish it when the figures changed. (about)",
+        text: "We were ___ to publish it when the figures changed. (on the point of)",
         options: [],
         answer: 0,
         accept: ["about"],
@@ -427,14 +427,14 @@ export const enB2P10: SkillExercise[] = [
         options: [],
         answer: 0,
         items: ["We", "will have", "changed", "the rule", "twice this year"],
-        explain: "will have + üçüncü biçim + nesne + zaman.",
+        explain: "will have + üçüncü hâl + nesne + zaman.",
       },
       {
         kind: "truefalse",
-        text: "„By Friday we will finish the report.“ — Bu en doğal biçim mi?",
+        text: "„By Friday we will be finishing the report.“ — Bu cümle raporun cumaya kadar BİTMİŞ olacağını söyler mi?",
         options: ["True", "False"],
         answer: 1,
-        explain: "„by“ ile bir ana kadar tamamlanma anlatılır: „will have finished“.",
+        explain: "„will be finishing“ o sırada sürmekte olacak bir işi anlatır; cumaya kadar tamamlanmayı „will have finished“ söyler.",
       },
       {
         kind: "truefalse",

@@ -86,7 +86,7 @@ export const enA1P8: SkillExercise[] = [
     intro: "Soru sözcüğüyle kurulan sorularda kelime sırası sabittir; bu sıra öğrenilince bütün sorular açılır.",
     focus: "Soru sözcükleri ve soru cümlesinin sırası",
     gloss: [
-      { de: "to cost", tr: "tutmak" },
+      { de: "to cost", tr: "mal olmak" },
       { de: "address", tr: "adres" },
       { de: "to start", tr: "başlamak" },
       { de: "ticket", tr: "bilet" },
@@ -99,7 +99,7 @@ export const enA1P8: SkillExercise[] = [
         examples: [
           { de: "Where do you live?", tr: "Nerede oturuyorsun?", note: "do + özne + fiil" },
           { de: "What does she want?", tr: "Ne istiyor?", note: "does + özne + yalın fiil" },
-          { de: "When does the film start?", tr: "Film ne zaman başlıyor?", note: "üçüncü tekil: does" },
+          { de: "When does the movie start?", tr: "Film ne zaman başlıyor?", note: "üçüncü tekil: does" },
         ],
       },
       {
@@ -177,7 +177,7 @@ export const enA1P8: SkillExercise[] = [
         text: "Soruyu doğru sıraya diz.",
         options: [],
         answer: 0,
-        items: ["When", "does", "the film", "start"],
+        items: ["When", "does", "the movie", "start"],
         explain: "Soru sözcüğü + yardımcı + özne + yalın fiil.",
       },
       {

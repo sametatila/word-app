@@ -92,7 +92,7 @@ export const enA2P6: SkillExercise[] = [
       { de: "abroad", tr: "yurt dışı" },
       { de: "to finish", tr: "bitirmek" },
       { de: "yet", tr: "henüz" },
-      { de: "already", tr: "çoktan" },
+      { de: "ever", tr: "hiç" },
     ],
     minutes: 7,
     explanation: [
@@ -143,7 +143,7 @@ export const enA2P6: SkillExercise[] = [
       },
       {
         text: "Has the bus arrived ___?",
-        options: ["already", "yet", "just"],
+        options: ["ever", "yet", "just"],
         answer: 1,
         explain: "Soru ve olumsuzda „yet“ kullanılır ve cümle sonunda durur.",
       },
@@ -165,7 +165,7 @@ export const enA2P6: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "I have ___ finished — one minute ago. (az önce)",
+        text: "I have ___ finished my homework. (az önce)",
         options: [],
         answer: 0,
         accept: ["just"],

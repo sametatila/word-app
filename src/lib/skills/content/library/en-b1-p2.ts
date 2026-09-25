@@ -308,7 +308,7 @@ export const enB1P2: SkillExercise[] = [
     gloss: [
       { de: "catch", tr: "yetişmek" },
       { de: "answer", tr: "cevap" },
-      { de: "flat", tr: "daire" },
+      { de: "apartment", tr: "daire" },
       { de: "problem", tr: "sorun" },
     ],
     minutes: 8,
@@ -324,9 +324,9 @@ export const enB1P2: SkillExercise[] = [
       },
       {
         heading: "Hayal olan: ikinci tip",
-        tr: "Gerçekleşmesi uzak ya da imkânsız bir durumda „if“ yarısında geçmiş biçim, ana yarıda „would“ kullanılır. Geçmiş biçim burada zaman değil, uzaklık gösterir — Türkçedeki „-seydi“ gibi.",
+        tr: "Gerçekleşmesi uzak ya da imkânsız bir durumda „if“ yarısında geçmiş biçim, ana yarıda „would“ kullanılır. Geçmiş biçim burada zaman değil, uzaklık gösterir — Türkçedeki „param olsa“, „bilse“ gibi.",
         examples: [
-          { de: "If I had more money, I would buy a bigger flat.", tr: "Daha çok param olsa daha büyük bir daire alırdım." },
+          { de: "If I had more money, I would buy a bigger apartment.", tr: "Daha çok param olsa daha büyük bir daire alırdım." },
           { de: "If she knew the answer, she would tell us.", tr: "Cevabı bilse bize söylerdi." },
           { de: "If I were you, I would ask her.", tr: "Yerinde olsam ona sorardım.", note: "kalıp: If I were you" },
         ],
@@ -349,7 +349,7 @@ export const enB1P2: SkillExercise[] = [
         explain: "Birinci tipte „if“ yarısı geniş zamandır; „will“ oraya girmez.",
       },
       {
-        text: "If I ___ more money, I would buy a bigger flat.",
+        text: "If I ___ more money, I would buy a bigger apartment.",
         options: ["had", "have", "will have"],
         answer: 0,
         explain: "Ana yarıda „would“ var, yani ikinci tip: „if“ yarısı geçmiş biçim alır.",
@@ -397,8 +397,8 @@ export const enB1P2: SkillExercise[] = [
         text: "Cümleyi doğru sıraya diz.",
         options: [],
         answer: 0,
-        items: ["If", "it", "rains", "we", "will", "stay"],
-        explain: "„if“ yarısı önce, ana yarı sonra: If it rains, we will stay.",
+        items: ["If", "it", "rains,", "we", "will", "stay."],
+        explain: "Büyük harfli „If“ ve virgül, „if“ yarısının önce geldiğini gösterir: If it rains, we will stay.",
       },
       {
         kind: "truefalse",

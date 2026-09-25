@@ -332,7 +332,7 @@ export const deA1P19: SkillExercise[] = [
         tr: "1'den 19'a kadar sayıya -te eklenir: zwei → zweite, vier → vierte. 20 ve sonrasına -ste eklenir: zwanzig → zwanzigste. Üç sayı düzensizdir: erste, dritte, siebte; „acht“ da tek t ile achte olur.",
         examples: [
           { de: "Wir wohnen im vierten Stock.", tr: "Dördüncü katta oturuyoruz.", note: "vier + te" },
-          { de: "Heute ist der zwanzigste Juni.", tr: "Bugün yirmi haziran.", note: "zwanzig + ste" },
+          { de: "Heute ist der zwanzigste Juni.", tr: "Bugün yirmi Haziran.", note: "zwanzig + ste" },
           { de: "der erste, der dritte, der siebte Tag", tr: "birinci, üçüncü, yedinci gün", note: "düzensiz üçlü" },
         ],
       },
@@ -340,18 +340,18 @@ export const deA1P19: SkillExercise[] = [
         heading: "der … ya da am …",
         tr: "„Bugün ayın kaçı?“ sorusuna „der“ ile cevap verilir: Heute ist der dritte Mai. „Ne zaman?“ sorusuna ise „am“ ile cevap verilir ve sıra sayısı -en alır: am dritten Mai.",
         examples: [
-          { de: "Heute ist der zweite Oktober.", tr: "Bugün iki ekim.", note: "der … -te" },
-          { de: "Mein Geburtstag ist am zwölften März.", tr: "Doğum günüm on iki mart'ta.", note: "am … -ten" },
-          { de: "Wann kommst du? — Am ersten Juni.", tr: "Ne zaman geliyorsun? — Bir haziranda.", note: "am ersten" },
+          { de: "Heute ist der zweite Oktober.", tr: "Bugün iki Ekim.", note: "der … -te" },
+          { de: "Mein Geburtstag ist am zwölften März.", tr: "Doğum günüm on iki Mart'ta.", note: "am … -ten" },
+          { de: "Wann kommst du? — Am ersten Juni.", tr: "Ne zaman geliyorsun? — Bir Haziran'da.", note: "am ersten" },
         ],
       },
       {
         heading: "Yazıda nokta",
         tr: "Yazıda sıra sayısı rakamdan sonra bir nokta ile gösterilir, tıpkı Türkçedeki „3. kat“ gibi. Okurken nokta sıra sayısına dönüşür: „am 1. Mai“ = am ersten Mai.",
         examples: [
-          { de: "am 1. Mai — am ersten Mai", tr: "bir mayısta", note: "1. = ersten" },
+          { de: "am 1. Mai — am ersten Mai", tr: "bir Mayıs'ta", note: "1. = ersten" },
           { de: "im 3. Stock — im dritten Stock", tr: "üçüncü katta", note: "3. = dritten" },
-          { de: "am 7. Mai — am siebten Mai", tr: "yedi mayısta", note: "7. = siebten" },
+          { de: "am 7. Mai — am siebten Mai", tr: "yedi Mayıs'ta", note: "7. = siebten" },
         ],
       },
     ],

@@ -344,7 +344,7 @@ export const deC1P10: SkillExercise[] = [
       },
       {
         heading: "Ön ekler anlamı çevirir",
-        tr: "„un-“ karşıtlık kurar (klar → unklar) ama her sıfatta işlemez. „ver-“ çoğu zaman yanlışlık, kayıp ya da tamamlanma katar: laufen → verlaufen, lernen → verlernen, kaufen → verkaufen. „ent-“ ayırma ve geri alma bildirir: laden → entladen, schuldigen → entschuldigen. Bu ekler kalıp değil eğilimdir: yön verir, garanti etmez.",
+        tr: "„un-“ karşıtlık kurar (klar → unklar) ama her sıfatta işlemez. „ver-“ çoğu zaman yanlışlık, kayıp ya da tamamlanma katar: laufen → verlaufen, lernen → verlernen, kaufen → verkaufen. „ent-“ ayırma ve geri alma bildirir: laden → entladen, schärfen → entschärfen. Bu ekler kalıp değil eğilimdir: yön verir, garanti etmez.",
         examples: [
           { de: "Die Angaben blieben unklar.", tr: "Veriler belirsiz kaldı.", note: "un-: karşıtlık" },
           { de: "Ich habe das Kopfrechnen verlernt.", tr: "Zihinden hesabı unuttum.", note: "ver-: kayıp" },
@@ -353,11 +353,11 @@ export const deC1P10: SkillExercise[] = [
       },
       {
         heading: "Aynı kök, ayrılan anlamlar",
-        tr: "Aynı kökten türeyen sözcükler bazen beklenmedik biçimde ayrışır ve bunu sezgiyle değil sözlükle öğrenmek gerekir: „achten“ (saymak) ile „beachten“ (uymak) ile „ächten“ (dışlamak). Aynı şekilde „die Sicht“ (görüş), „die Absicht“ (niyet), „die Rücksicht“ (gözetme) tek bir kökten gelir ama biri ötekinden çıkarılamaz.",
+        tr: "Aynı kökten türeyen sözcükler bazen beklenmedik biçimde ayrışır ve bunu sezgiyle değil sözlükle öğrenmek gerekir: „achten“ (saymak), „beachten“ (uymak) ve „verachten“ (hor görmek). Aynı şekilde „die Sicht“ (görüş), „die Absicht“ (niyet), „die Rücksicht“ (başkasını düşünme) tek bir kökten gelir ama biri ötekinden çıkarılamaz.",
         examples: [
           { de: "Bitte beachten Sie die Frist.", tr: "Lütfen süreye uyun.", note: "beachten: uymak" },
           { de: "Das war nicht meine Absicht.", tr: "Niyetim bu değildi.", note: "Sicht kökünden" },
-          { de: "Aus Rücksicht hat sie geschwiegen.", tr: "Gözetme yüzünden sustu.", note: "aynı kök, ayrı anlam" },
+          { de: "Aus Rücksicht hat sie geschwiegen.", tr: "Karşısındakini düşündüğü için sustu.", note: "aynı kök, ayrı anlam" },
         ],
       },
     ],
@@ -421,15 +421,15 @@ export const deC1P10: SkillExercise[] = [
         text: "Öbeği doğru sıraya diz.",
         options: [],
         answer: 0,
-        items: ["die", "Genauigkeit", "der", "Angabe"],
+        items: ["die", "Genauigkeit", "der Angabe"],
         explain: "„-keit“ dişil bir isim yapar; arkasından Genitiv gelir.",
       },
       {
         kind: "truefalse",
-        text: "Jedes Wort mit „-ung“ ist feminin.",
+        text: "Jedes Nomen, das mit dem Suffix „-ung“ aus einem Verb gebildet ist, ist feminin.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "„-ung“ eki istisnasız dişil isim üretir.",
+        explain: "„-ung“ son eki fiilden istisnasız dişil isim üretir; „der Sprung“ gibi sözcüklerde „-ung“ bir ek değildir.",
       },
       {
         kind: "truefalse",

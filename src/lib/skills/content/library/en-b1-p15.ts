@@ -313,7 +313,7 @@ export const enB1P15: SkillExercise[] = [
         examples: [
           { de: "She gave her son the keys.", tr: "Oğluna anahtarları verdi.", note: "kişi + şey" },
           { de: "Can you send me the photos?", tr: "Bana fotoğrafları gönderebilir misin?", note: "zamir kişi" },
-          { de: "He showed us his new flat.", tr: "Bize yeni dairesini gösterdi.", note: "show + kişi + şey" },
+          { de: "He showed us his new apartment.", tr: "Bize yeni dairesini gösterdi.", note: "show + kişi + şey" },
         ],
       },
       {

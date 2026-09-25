@@ -346,7 +346,7 @@ export const enB1P11: SkillExercise[] = [
         explain: "Duş sürüyordu, ışıkların sönmesi onu kesen kısa olay.",
       },
       {
-        text: "While they ___ the film, someone knocked on the door.",
+        text: "While they ___ the movie, someone knocked on the door.",
         options: ["watched", "have watched", "were watching"],
         answer: 2,
         explain: "„while“ arkasında süren eylem past continuous olur.",
@@ -398,7 +398,7 @@ export const enB1P11: SkillExercise[] = [
         text: "Cümleyi doğru sıraya diz.",
         options: [],
         answer: 0,
-        items: ["While I was waiting", "for the lift,", "the lights", "went off"],
+        items: ["While I was waiting", "for the elevator,", "the lights", "went off"],
         explain: "while + süren eylem, ardından kesen olay past simple ile.",
       },
       {

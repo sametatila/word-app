@@ -376,7 +376,7 @@ export const deC1P17: SkillExercise[] = [
         text: "___ eines Testaments gilt die gesetzliche Erbfolge. (weil es fehlt)",
         options: [],
         answer: 0,
-        accept: ["Mangels"],
+        accept: ["Mangels", "mangels"],
         explain: "Bir eksikliği gerekçe yapan edat „mangels“tir ve Genitiv alır.",
       },
       {

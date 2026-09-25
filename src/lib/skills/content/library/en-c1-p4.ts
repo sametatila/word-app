@@ -379,7 +379,7 @@ export const enC1P4: SkillExercise[] = [
         tr: "Ortacın öznesi ana cümlenin öznesiyle aynı olmak zorundadır. „Walking to the station, the rain started“ cümlesinde yürüyen yağmur olur. Bu hata İngilizcede o kadar yaygındır ki adı bile vardır: dangling participle.",
         examples: [
           { de: "Walking to the station, I saw the rain start.", tr: "İstasyona yürürken yağmurun başladığını gördüm.", note: "özne uyuyor" },
-          { de: "Having been tuned that morning, the piano sounded fine.", tr: "O sabah akort edildiği için piyano iyi geliyordu." },
+          { de: "Having been tuned that morning, the piano sounded fine.", tr: "O sabah akort edildiği için piyanonun sesi iyiydi." },
           { de: "Having read the report, I agree with the conclusion.", tr: "Raporu okuduktan sonra sonuca katılıyorum." },
         ],
       },

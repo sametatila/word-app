@@ -296,7 +296,7 @@ export const deB1P3: SkillExercise[] = [
     focus: "Konjunktiv II: nezaket, dilek ve gerçekdışı koşul",
     gloss: [
       { de: "stören", tr: "rahatsız etmek", en: "to disturb" },
-      { de: "an deiner Stelle", tr: "senin yerinde olsam", en: "in your place" },
+      { de: "an deiner Stelle", tr: "senin yerinde olsam", en: "if I were you" },
       { de: "das Klavier", tr: "piyano", en: "piano" },
       { de: "der Termin", tr: "randevu", en: "appointment" },
     ],

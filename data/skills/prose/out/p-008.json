@@ -50,11 +50,6 @@
   "en": "Brevity also says how much of the other person's time you think it is worth."
  },
  {
-  "tr": "Kip + have + üçüncü hâl + zarf: He must have left already.",
-  "kind": "explain",
-  "en": "Modal + have + past participle + adverb: He must have left already."
- },
- {
   "tr": "KİŞİ için „kennen“. „wissen“ olgu ve yan cümle için gelir.",
   "kind": "explain",
   "en": "„kennen“ is for a PERSON. „wissen“ is for facts and clauses."
@@ -505,14 +500,9 @@
   "en": "„Ich spiele auch Gitarre, aber nicht so gut.“ — NO article."
  },
  {
-  "tr": "„if“ yarısı önce, ana yarı sonra: If it rains, we will stay.",
+  "tr": "„ihr“ biçiminde kök ünlüsü değişmez (ü kalır), yalnız -t gelir: ihr müsst.",
   "kind": "explain",
-  "en": "The „if“ half first, the main half after: If it rains, we will stay."
- },
- {
-  "tr": "„ihr“ biçiminde kökün ünlüsü değişir ve -t gelir: ihr müsst.",
-  "kind": "explain",
-  "en": "In the „ihr“ form the stem vowel changes and -t follows: ihr müsst."
+  "en": "In the „ihr“ form the stem vowel does not change (the ü stays); only -t is added: ihr müsst."
  },
  {
   "tr": "„now“ tam şu anı gösteriyor ve biçim be + -ing; cümle doğru.",

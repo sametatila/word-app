@@ -93,16 +93,16 @@ export const enA1P6: SkillExercise[] = [
       { de: "brother", tr: "erkek kardeş" },
       { de: "car", tr: "araba" },
       { de: "keys", tr: "anahtarlar" },
-      { de: "flat", tr: "daire" },
+      { de: "apartment", tr: "daire" },
     ],
     minutes: 6,
     explanation: [
       {
         heading: "have got: sahip olmak",
-        tr: "İngilizcede „var“ demenin iki yolu vardır: „I have a car“ ve „I have got a car“. İkisi de doğrudur; „have got“ konuşmada daha sık ve genellikle kısaltılır: I've got, he's got. Üçüncü tekil kişide „has got“ olur.",
+        tr: "İngilizcede sahip olmayı söylemenin iki yolu vardır: „I have a car“ ve „I have got a car“. İkisi de doğrudur; Amerikan İngilizcesinde en yaygını düz „have“dir, „have got“ ise daha çok günlük konuşmada ve kısaltılarak kullanılır: I've got, she's got. Üçüncü tekil kişide „has got“ olur.",
         examples: [
           { de: "I've got two brothers.", tr: "İki erkek kardeşim var.", note: "I have got → I've got" },
-          { de: "She's got a new flat.", tr: "Yeni bir dairesi var.", note: "she has got → she's got" },
+          { de: "She's got a new apartment.", tr: "Yeni bir dairesi var.", note: "she has got → she's got" },
           { de: "Have you got a car?", tr: "Araban var mı?", note: "soruda have başa geçer" },
         ],
       },
@@ -117,11 +117,11 @@ export const enA1P6: SkillExercise[] = [
       },
       {
         heading: "my, your ve Ali's",
-        tr: "Kişi zamiri iyelik sıfatına dönüşür: I → my, you → your, he → his, she → her, we → our, they → their. Bir İSİM sahip oluyorsa sonuna 's eklenir: „Ali's car“, „my brother's flat“. Çoğul isimlerde yalnız kesme işareti kalır: „my parents' house“.",
+        tr: "Kişi zamiri iyelik sıfatına dönüşür: I → my, you → your, he → his, she → her, we → our, they → their. Bir İSİM sahip oluyorsa sonuna 's eklenir: „Ali's car“, „my brother's apartment“. -s ile biten çoğul isimlerde yalnız kesme işareti eklenir: „my parents' house“.",
         examples: [
           { de: "This is my brother's car.", tr: "Bu, erkek kardeşimin arabası.", note: "isim + 's" },
           { de: "Their keys are on the table.", tr: "Anahtarları masanın üstünde.", note: "they → their" },
-          { de: "Is this your flat?", tr: "Bu senin dairen mi?", note: "you → your" },
+          { de: "Is this your apartment?", tr: "Bu senin dairen mi?", note: "you → your" },
         ],
       },
     ],
@@ -133,7 +133,7 @@ export const enA1P6: SkillExercise[] = [
         explain: "„have got“ yapısında yardımcı fiil have'dir; do kullanılmaz.",
       },
       {
-        text: "She ___ got a new flat.",
+        text: "She ___ got a new apartment.",
         options: ["have", "has", "is"],
         answer: 1,
         explain: "Üçüncü tekil kişide „has got“ gelir.",

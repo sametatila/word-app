@@ -357,7 +357,7 @@ export const enC1P9: SkillExercise[] = [
     skill: "grammar",
     title: "make a decision, take action, draw a conclusion",
     genre: "grammar",
-    intro: "C1'de hata çoğu zaman dilbilgisinde değil eşdizimde olur: doğru kurulmuş bir cümle yine de yanlış duyulabilir.",
+    intro: "C1'de hata çoğu zaman dil bilgisinde değil eşdizimde olur: doğru kurulmuş bir cümle yine de yanlış duyulabilir.",
     focus: "İçi boşalmış fiiller ve eşdizim: make/do/take/give/draw",
     gloss: [
       { de: "decision", tr: "karar" },
@@ -386,8 +386,8 @@ export const enC1P9: SkillExercise[] = [
         ],
       },
       {
-        heading: "Eşdizim neden dilbilgisi sayılır",
-        tr: "Bu kalıplar isteğe bağlı süsler değildir: yanlış fiil seçmek cümleyi dilbilgisel olarak bozmaz ama okuru durdurur — „do a decision“, „make research“, „take a conclusion“ hepsi anlaşılır ve hepsi yanlıştır. C1 düzeyinde yazının akıcı sayılması, tam olarak bu seçimlerin doğru yapılmasına bağlıdır.",
+        heading: "Eşdizim neden dil bilgisi sayılır",
+        tr: "Bu kalıplar isteğe bağlı süsler değildir: yanlış fiil seçmek cümleyi dil bilgisi açısından bozmaz ama okuru durdurur — „do a decision“, „make research“, „take a conclusion“ hepsi anlaşılır ve hepsi yanlıştır. C1 düzeyinde yazının akıcı sayılması, tam olarak bu seçimlerin doğru yapılmasına bağlıdır.",
         examples: [
           { de: "She drew attention to the missing figures.", tr: "Eksik rakamlara dikkat çekti.", note: "draw attention to" },
           { de: "They made every effort to comply.", tr: "Uymak için her türlü çabayı gösterdiler.", note: "make an effort" },
@@ -398,9 +398,9 @@ export const enC1P9: SkillExercise[] = [
     questions: [
       {
         text: "We need to ___ a decision on this.",
-        options: ["do", "take", "draw"],
+        options: ["do", "make", "draw"],
         answer: 1,
-        explain: "„take a decision“ ve „make a decision“ ikisi de doğrudur; „do“ değildir.",
+        explain: "Amerikan İngilizcesinde „make a decision“ denir (İngiliz İngilizcesinde „take a decision“ da kullanılır); „do“ ve „draw“ bu isimle kullanılmaz.",
       },
       {
         text: "They ___ the research themselves.",
@@ -416,7 +416,7 @@ export const enC1P9: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "We ___ an exception in that case. (make)",
+        text: "We ___ an exception in that case. (make / do / take / give / draw)",
         options: [],
         answer: 0,
         accept: ["made"],
@@ -424,7 +424,7 @@ export const enC1P9: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The board ___ no action for six months. (take)",
+        text: "The board ___ no action for six months. (make / do / take / give / draw)",
         options: [],
         answer: 0,
         accept: ["took"],
@@ -432,7 +432,7 @@ export const enC1P9: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "She ___ attention to the missing figures. (draw)",
+        text: "She ___ attention to the missing figures. (make / do / take / give / draw)",
         options: [],
         answer: 0,
         accept: ["drew"],
@@ -440,7 +440,7 @@ export const enC1P9: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "We should ___ priority to the oldest cases. (give)",
+        text: "We should ___ priority to the oldest cases. (make / do / take / give / draw)",
         options: [],
         answer: 0,
         accept: ["give"],

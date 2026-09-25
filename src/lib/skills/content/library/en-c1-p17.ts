@@ -358,14 +358,14 @@ export const enC1P17: SkillExercise[] = [
         examples: [
           { de: "When it comes to supervising a tree, no qualification is needed.", tr: "Bir ağacı gözetmeye gelince hiçbir nitelik gerekmez.", note: "when it comes to" },
           { de: "In addition to signing the form, parents visit the site.", tr: "Formu imzalamanın yanı sıra veliler alanı ziyaret ediyor.", note: "in addition to" },
-          { de: "The key to learning risk is practice.", tr: "Riski öğrenmenin anahtarı pratik.", note: "the key to" },
+          { de: "The key to managing risk is practice.", tr: "Riski yönetmenin anahtarı pratiktir.", note: "the key to" },
         ],
       },
       {
         heading: "Karıştırılanlar: agree to do, prefer X to Y",
         tr: "Her „to“ edat değildir: „agree to do“, „refuse to do“, „want to do“ kalıplarında „to“ mastar işaretidir, çünkü arkasına isim gelmez („agree to the plan“ ayrı bir yapıdır). „prefer X to Y“ kalıbında ise ikinci „to“ edattır: „I prefer climbing to watching.“ Ama „would prefer to“ mastar alır: „I'd prefer to wait.“",
         examples: [
-          { de: "The head agreed to review the ban.", tr: "Müdür yasağı gözden geçirmeyi kabul etti.", note: "mastar: agree to do" },
+          { de: "The principal agreed to review the ban.", tr: "Müdür yasağı gözden geçirmeyi kabul etti.", note: "mastar: agree to do" },
           { de: "Most children prefer climbing to watching.", tr: "Çoğu çocuk izlemektense tırmanmayı tercih eder.", note: "prefer X to Y" },
           { de: "I'd prefer to wait until March.", tr: "Marta kadar beklemeyi tercih ederim.", note: "would prefer to + yalın" },
         ],
@@ -379,7 +379,7 @@ export const enC1P17: SkillExercise[] = [
         explain: "„look forward to“daki „to“ edattır; -ing gelir.",
       },
       {
-        text: "The head agreed ___ the ban.",
+        text: "The principal agreed ___ the ban.",
         options: ["to review", "to reviewing", "reviewing"],
         answer: 0,
         explain: "„agree to do“: burada „to“ mastar işaretidir.",
@@ -428,7 +428,7 @@ export const enC1P17: SkillExercise[] = [
         options: [],
         answer: 0,
         items: ["Some parents", "objected to", "the children", "climbing the tree"],
-        explain: "„object to“ + nesne + -ing.",
+        explain: "„object to“ + (-ing'in öznesi) + -ing.",
       },
       {
         kind: "truefalse",
@@ -439,7 +439,7 @@ export const enC1P17: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "“The key to learning risk is practice.” — Bu cümle doğru mu?",
+        text: "“The key to managing risk is practice.” — Bu cümle doğru mu?",
         options: ["True", "False"],
         answer: 0,
         explain: "„the key to“ + -ing doğru kalıptır.",

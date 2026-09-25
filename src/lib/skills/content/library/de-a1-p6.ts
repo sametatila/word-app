@@ -351,7 +351,7 @@ export const deA1P6: SkillExercise[] = [
       },
       {
         heading: "haben mi, sein mi?",
-        tr: "Fiillerin çoğu „haben“ ister. „sein“ yalnız iki grupta gelir: yer değiştiren fiiller (gehen, fahren, kommen, fliegen) ve durum değiştirenler (aufstehen, einschlafen, werden). „sein“ ve „bleiben“ de kendileri bu gruba girer.",
+        tr: "Fiillerin çoğu „haben“ ister. „sein“ başlıca iki grupta gelir: yer değiştiren fiiller (gehen, fahren, kommen, fliegen) ve durum değiştirenler (aufstehen, einschlafen, werden). Ayrıca „sein“ ve „bleiben“ hareket bildirmedikleri hâlde sein ile kurulur: ich bin gewesen, ich bin geblieben.",
         examples: [
           { de: "Ich bin um sechs Uhr aufgestanden.", tr: "Saat altıda kalktım.", note: "durum değişiyor → sein" },
           { de: "Sie ist nach Berlin gefahren.", tr: "Berlin'e gitti.", note: "yer değişiyor → sein" },

@@ -347,7 +347,7 @@ export const deB2P16: SkillExercise[] = [
         heading: "es sei denn: istisna",
         tr: "„es sei denn“ bir istisna bildirir (… olmadıkça). Anlamı „wenn … nicht“e yakındır ama arkasından gelen cümle genellikle DÜZ sıradadır. Cümle başına geçemez; hep ana cümleden sonra ve virgülle gelir.",
         examples: [
-          { de: "Die Kaution wird ausgezahlt, es sei denn, es gibt Schäden.", tr: "Hasar olmadıkça depozito ödenir.", note: "düz sıra" },
+          { de: "Die Kaution wird ausgezahlt, es sei denn, es gibt Schäden.", tr: "Hasar olmadıkça depozito iade edilir.", note: "düz sıra" },
           { de: "Wir kommen morgen, es sei denn, es regnet.", tr: "Yağmur yağmazsa yarın geliyoruz.", note: "= wenn es nicht regnet" },
           { de: "Ich würde warten, es sei denn, dein Handy ist wirklich kaputt.", tr: "Telefonun gerçekten bozuk değilse beklerdim.", note: "istisna" },
         ],
@@ -385,12 +385,12 @@ export const deB2P16: SkillExercise[] = [
         text: "___ du eine Rate verpasst, zahlst du eine Gebühr. (olasılık)",
         options: [],
         answer: 0,
-        accept: ["Falls", "falls", "Wenn"],
+        accept: ["Falls", "falls", "Wenn", "wenn"],
         explain: "Olasılık bildiren koşul: „Falls du … verpasst“.",
       },
       {
         kind: "gapfill",
-        text: "Der Kauf kostet nichts, ___ man pünktlich bezahlt. (… olduğu sürece)",
+        text: "Es entstehen keine Zusatzkosten, ___ man pünktlich bezahlt. (… olduğu sürece)",
         options: [],
         answer: 0,
         accept: ["sofern", "solange"],

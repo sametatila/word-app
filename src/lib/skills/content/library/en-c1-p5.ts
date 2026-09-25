@@ -358,7 +358,7 @@ export const enC1P5: SkillExercise[] = [
         examples: [
           { de: "The result was small; nevertheless, it was consistent.", tr: "Sonuç küçüktü; yine de tutarlıydı." },
           { de: "Prices rose. In other words, the plan became more expensive.", tr: "Fiyatlar arttı. Yani plan pahalılaştı." },
-          { de: "The class had no comparison group. We therefore cannot say how much.", tr: "Sınıfın karşılaştırma grubu yoktu. Bu yüzden ne kadar olduğunu söyleyemeyiz." },
+          { de: "The class had no comparison group. We therefore cannot say how large the effect was.", tr: "Sınıfın karşılaştırma grubu yoktu. Bu yüzden etkinin ne kadar büyük olduğunu söyleyemeyiz." },
         ],
       },
       {
@@ -375,7 +375,7 @@ export const enC1P5: SkillExercise[] = [
         tr: "Metni tutan asıl şey sıradır: bilinen bilgi önce, yeni bilgi sonra. Buna ismi tekrar etmek ve zamiri fazla kullanmamak eklenir. Sıra zaten iş görüyorsa bağlayıcı eklemek metni ağırlaştırır, düzenli göstermez.",
         examples: [
           { de: "The report has two parts. The first sets out the figures; the second draws conclusions from them.", tr: "Raporun iki bölümü var. İlki rakamları veriyor, ikincisi onlardan sonuç çıkarıyor.", note: "bilinen önce" },
-          { de: "Repeat the name of the department rather than writing it a third time.", tr: "Zamir yerine birimin adını tekrar et, üçüncü kez yazmaktansa." },
+          { de: "Repeat the name of the department rather than using “it” a third time.", tr: "Üçüncü kez „it“ yazmaktansa birimin adını tekrar et." },
           { de: "Remove the linking words and see what still holds.", tr: "Bağlayıcı kelimeleri çıkar ve neyin ayakta kaldığına bak." },
         ],
       },
@@ -432,7 +432,7 @@ export const enC1P5: SkillExercise[] = [
         text: "The tests were free. ___, uptake was low.",
         options: [],
         answer: 0,
-        accept: ["Nevertheless", "Even so", "Still"],
+        accept: ["Nevertheless", "Even so", "Still", "Nonetheless", "However", "That said", "Yet", "Despite this"],
         explain: "Beklenenin tersi bir sonuç geliyor; karşıtlık belirteci gerekir.",
       },
       {

@@ -361,7 +361,7 @@ export const deC1P2: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "Wir ___ das früher bemerken können.",
+        text: "Wir ___ das früher bemerken können, wenn jemand hingeschaut hätte.",
         options: ["hätten", "haben", "würden"],
         answer: 0,
         explain: "Geçmişte gerçekleşmemiş olanak „hätte“ + çift mastar ile kurulur.",

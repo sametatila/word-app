@@ -348,7 +348,7 @@ export const deA1P17: SkillExercise[] = [
       },
       {
         heading: "Üç ayrı ihr",
-        tr: "„ihr“ üç şey olabilir: kadının iyeliği, çoğulun iyeliği ve „siz“ zamiri. Önünde ya da arkasında bir isim duruyorsa iyeliktir; fiilin öznesiyse zamirdir.",
+        tr: "„ihr“ üç şey olabilir: kadının iyeliği, çoğulun iyeliği ve „siz“ zamiri. Hemen arkasından bir isim geliyorsa iyeliktir; kendisi fiilin öznesiyse zamirdir.",
         examples: [
           { de: "Frau Berg sucht ihren Schlüssel.", tr: "Bayan Berg anahtarını arıyor.", note: "kadının iyeliği" },
           { de: "Unsere Nachbarn verkaufen ihr Auto.", tr: "Komşularımız arabalarını satıyor.", note: "çoğulun iyeliği" },
@@ -404,7 +404,7 @@ export const deA1P17: SkillExercise[] = [
         text: "Unsere Nachbarn haben einen Hund. ___ Hund heißt Rex.",
         options: [],
         answer: 0,
-        accept: ["Ihr"],
+        accept: ["Ihr", "ihr"],
         explain: "Sahip çoğul (komşular) → ihr; „der Hund“ özne olduğu için ek yok: Ihr Hund.",
       },
       {

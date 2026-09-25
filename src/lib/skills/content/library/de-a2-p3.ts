@@ -332,7 +332,7 @@ export const deA2P3: SkillExercise[] = [
     explanation: [
       {
         heading: "Ek mi, ayrı kelime mi?",
-        tr: "Türkçede „daha büyük“ ve „en büyük“ iki kelimedir. Almancada ek gelir: groß → größer → am größten. Kısa sıfatların çoğunda ünlü de nokta alır: alt → älter, jung → jünger, lang → länger.",
+        tr: "Türkçede „daha büyük“ ve „en büyük“ iki kelimedir. Almancada ek gelir: groß → größer → am größten. Bazı kısa sıfatlarda ünlü de nokta alır: alt → älter, jung → jünger, lang → länger.",
         examples: [
           { de: "Mein Zimmer ist klein.", tr: "Odam küçük." },
           { de: "Dein Zimmer ist kleiner.", tr: "Senin odan daha küçük.", note: "-er eki" },
@@ -341,7 +341,7 @@ export const deA2P3: SkillExercise[] = [
       },
       {
         heading: "als mi, wie mi?",
-        tr: "Fark varsa „als“ kullanılır, eşitlik varsa „so … wie“. Türkçe konuşanların en sık hatası „größer wie“ demektir; doğrusu „größer als“.",
+        tr: "Fark varsa „als“ kullanılır, eşitlik varsa „so … wie“. Sık yapılan bir hata „größer wie“ demektir; doğrusu „größer als“.",
         examples: [
           { de: "Berlin ist größer als Hamburg.", tr: "Berlin Hamburg'dan büyük.", note: "fark → als" },
           { de: "Ich bin so alt wie du.", tr: "Seninle aynı yaştayım.", note: "eşitlik → so … wie" },
@@ -383,7 +383,7 @@ export const deA2P3: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["wärmer"],
-        explain: "Kısa sıfat -er alır ve ünlü nokta alır: wärmer.",
+        explain: "„warm“ -er alır ve ünlüsü de nokta alır: wärmer.",
       },
       {
         kind: "gapfill",

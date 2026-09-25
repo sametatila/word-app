@@ -332,7 +332,7 @@ export const deB2P5: SkillExercise[] = [
       },
       {
         heading: "Şey ise da-, soru ise wo-",
-        tr: "Nesne bir NESNE ise „auf es“ denmez, edat „da-“ ile birleşir: darauf, darüber, daran, damit, davon. Soruda ise „auf was“ yerine „worauf“ kullanılır. Edat ünlüyle başlıyorsa araya bir -r- girer.",
+        tr: "Nesne bir ŞEY ise „auf es“ denmez, edat „da-“ ile birleşir: darauf, darüber, daran, damit, davon. Soruda ise „auf was“ yerine „worauf“ kullanılır. Edat ünlüyle başlıyorsa araya bir -r- girer.",
         examples: [
           { de: "Worauf wartest du? — Auf den Bus. Darauf warte ich seit zehn Minuten.", tr: "Neyi bekliyorsun? Otobüsü. On dakikadır onu bekliyorum." },
           { de: "Woran denkst du?", tr: "Ne düşünüyorsun?", note: "an → woran" },
@@ -413,7 +413,7 @@ export const deB2P5: SkillExercise[] = [
         text: "„Ich freue mich auf es.“ — Bu cümle doğru mu?",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Nesne bir şey olduğunda edat zamirle birleşmez; doğrusu „Ich freue mich darauf.“",
+        explain: "Nesne bir şey olduğunda edat „es“ zamiriyle kullanılmaz, „da-“ ile birleşir; doğrusu „Ich freue mich darauf.“",
       },
       {
         kind: "truefalse",

@@ -95,7 +95,7 @@ export const enA2P10: SkillExercise[] = [
     explanation: [
       {
         heading: "Koşul şimdiki, sonuç gelecek",
-        tr: "Gerçekçi bir koşulda „if“ cümlesi PRESENT SIMPLE, sonuç cümlesi „will“ alır: „If it rains, we'll stay at home.“ İki yanda da „will“ kullanmak („If it will rain“) en sık hatadır. Türkçede iki yan da gelecek gibi kurulduğu için bu asimetri alışkanlık ister.",
+        tr: "Gerçekçi bir koşulda „if“ cümlesi PRESENT SIMPLE, sonuç cümlesi „will“ alır: „If it rains, we'll stay at home.“ İki yanda da „will“ kullanmak („If it will rain“) en sık hatadır. Anlam gelecekte olsa bile „if“ yanı gelecek zaman almaz; bu asimetri alışkanlık ister.",
         examples: [
           { de: "If it rains, we'll stay at home.", tr: "Yağmur yağarsa evde kalırız.", note: "present + will" },
           { de: "If you hurry, you'll catch the bus.", tr: "Acele edersen otobüse yetişirsin.", note: "aynı kalıp" },

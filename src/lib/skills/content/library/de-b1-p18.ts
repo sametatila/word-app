@@ -296,7 +296,7 @@ export const deB1P18: SkillExercise[] = [
       { de: "wahrscheinlich", tr: "muhtemelen", en: "probably" },
       { de: "pünktlich", tr: "dakik", en: "punctual" },
       { de: "anrufen", tr: "telefon etmek", en: "to call" },
-      { de: "krank", tr: "hasta", en: "ill" },
+      { de: "krank", tr: "hasta", en: "sick" },
     ],
     minutes: 9,
     explanation: [

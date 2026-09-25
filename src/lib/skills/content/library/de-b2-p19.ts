@@ -331,7 +331,7 @@ export const deB2P19: SkillExercise[] = [
         heading: "Futur II: werden + Partizip + haben/sein",
         tr: "Futur II, gelecekteki bir noktada TAMAMLANMIŞ olacak bir eylemi anlatır. Kuruluş: „werden“ + Partizip II + „haben“ ya da „sein“ (Perfekt'te hangisi alınıyorsa). Zaman noktası çoğunlukla „bis“ ile verilir.",
         examples: [
-          { de: "Bis Juni wird das Team die Regeln getestet haben.", tr: "Haziran'a kadar ekip kuralları denemiş olacak.", note: "testen → haben" },
+          { de: "Bis Juni wird das Team die Regeln getestet haben.", tr: "Hazirana kadar ekip kuralları denemiş olacak.", note: "testen → haben" },
           { de: "Bis Mitternacht werden alle Gäste gegangen sein.", tr: "Gece yarısına kadar bütün konuklar gitmiş olacak.", note: "gehen → sein" },
           { de: "In zehn Jahren wird man sich an den Namen gewöhnt haben.", tr: "On yıl sonra bu isme alışılmış olacak.", note: "dönüşlü fiil" },
         ],
@@ -349,7 +349,7 @@ export const deB2P19: SkillExercise[] = [
     questions: [
       {
         text: "Bis Juni ___ das Team die Regeln getestet haben.",
-        options: ["hat", "wird", "würde"],
+        options: ["hat", "wird", "ist"],
         answer: 1,
         explain: "Futur II: wird + Partizip II + haben.",
       },

@@ -350,7 +350,7 @@ export const deC1P8: SkillExercise[] = [
       },
       {
         heading: "Partizip I ile Partizip II arasındaki fark",
-        tr: "Partizip II (verschickt, beschlossen) EDİLGEN ve tamamlanmış bir eylem bildirir. Partizip I (mastar + d: wachsend, steigend) ETKEN ve sürmekte olan bir eylem bildirir. Yanlış seçim anlamı tersine çevirir: „die wachsende Zahl“ artan sayı, „die gewachsene Zahl“ artmış olan sayı demektir.",
+        tr: "Partizip II geçişli fiillerde (verschickt, beschlossen) EDİLGEN ve tamamlanmış, „sein“ ile çekilen geçişsiz fiillerde (gewachsen, gestiegen) etken ama tamamlanmış bir eylem bildirir. Partizip I (mastar + d: wachsend, steigend) ETKEN ve sürmekte olan bir eylem bildirir. Yanlış seçim anlamı tersine çevirir: „die wachsende Zahl“ artan sayı, „die gewachsene Zahl“ artmış olan sayı demektir.",
         examples: [
           { de: "die wachsende Zahl der Anträge", tr: "başvuruların artan sayısı", note: "Partizip I: sürüyor" },
           { de: "die gewachsene Zahl der Anträge", tr: "artmış olan başvuru sayısı", note: "Partizip II: olmuş bitmiş" },
@@ -400,7 +400,7 @@ export const deC1P8: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["diskutierte"],
-        explain: "Edilgen ve süregelen bir tartışma; dişil yalın hâlde -e alır.",
+        explain: "Soru tartışılan taraftır, yani edilgen: Partizip II gelir („seit Jahren“ süreyi taşır); dişil yalın hâlde belirli artikelden sonra -e alır.",
       },
       {
         kind: "gapfill",

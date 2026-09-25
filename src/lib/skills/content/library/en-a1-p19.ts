@@ -93,7 +93,7 @@ export const enA1P19: SkillExercise[] = [
     focus: "Cümlede kelime sırası: özne + fiil + nesne, sonra yer ve zaman",
     gloss: [
       { de: "newspaper", tr: "gazete" },
-      { de: "football", tr: "futbol" },
+      { de: "soccer", tr: "futbol" },
       { de: "lunch", tr: "öğle yemeği" },
       { de: "arrive", tr: "varmak" },
     ],
@@ -105,7 +105,7 @@ export const enA1P19: SkillExercise[] = [
         examples: [
           { de: "I drink tea.", tr: "Çay içerim.", note: "özne + fiil + nesne" },
           { de: "My brother reads the newspaper.", tr: "Erkek kardeşim gazeteyi okur." },
-          { de: "They play football.", tr: "Futbol oynarlar." },
+          { de: "They play soccer.", tr: "Futbol oynarlar." },
         ],
       },
       {
@@ -113,15 +113,15 @@ export const enA1P19: SkillExercise[] = [
         tr: "Cümlenin sonunda hem yer hem zaman varsa önce yer, sonra zaman söylenir: I go to school at eight. Türkçede sıra çoğu zaman terstir: sekizde okula giderim.",
         examples: [
           { de: "I go to school at eight.", tr: "Sekizde okula giderim.", note: "yer + zaman" },
-          { de: "We have lunch at home on Sunday.", tr: "Pazar günü evde öğle yemeği yeriz.", note: "yer + zaman" },
+          { de: "We have lunch at home on Sundays.", tr: "Pazar günleri evde öğle yemeği yeriz.", note: "yer + zaman" },
           { de: "He arrives in London tomorrow.", tr: "Yarın Londra'ya varıyor." },
         ],
       },
       {
         heading: "Zaman başa geçebilir, fiil ile nesne ayrılmaz",
-        tr: "Zaman ifadesi cümlenin başına alınabilir: On Sunday we visit Grandma. Ama fiil ile nesnenin arasına hiçbir şey girmez: „I drink every morning tea“ yanlış, „I drink tea every morning“ doğrudur.",
+        tr: "Zaman ifadesi cümlenin başına alınabilir: On Sundays we visit Grandma. Ama fiil ile nesnenin arasına hiçbir şey girmez: „I drink every morning tea“ yanlış, „I drink tea every morning“ doğrudur.",
         examples: [
-          { de: "On Sunday we visit Grandma.", tr: "Pazar günü nineyi ziyaret ederiz.", note: "zaman başta" },
+          { de: "On Sundays we visit Grandma.", tr: "Pazar günleri ninemizi ziyaret ederiz.", note: "zaman başta" },
           { de: "I drink tea every morning.", tr: "Her sabah çay içerim.", note: "fiil + nesne yan yana" },
           { de: "She reads a book every evening.", tr: "Her akşam kitap okur.", note: "nesne fiilin hemen arkasında" },
         ],
@@ -148,11 +148,11 @@ export const enA1P19: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "We have lunch ___ on Sunday. (at home)",
+        text: "We have lunch ___ on Sundays. (at home)",
         options: [],
         answer: 0,
         accept: ["at home"],
-        explain: "Yer, zamandan önce gelir: at home on Sunday.",
+        explain: "Yer, zamandan önce gelir: at home on Sundays.",
       },
       {
         kind: "gapfill",
@@ -164,10 +164,10 @@ export const enA1P19: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "___ we visit Grandma. (on Sunday)",
+        text: "___ we visit Grandma. (on Sundays)",
         options: [],
         answer: 0,
-        accept: ["On Sunday", "on Sunday"],
+        accept: ["On Sundays", "on Sundays"],
         explain: "Zaman ifadesi cümlenin başına alınabilir.",
       },
       {
@@ -183,7 +183,7 @@ export const enA1P19: SkillExercise[] = [
         text: "Cümleyi doğru sıraya diz.",
         options: [],
         answer: 0,
-        items: ["They", "play", "football", "in the park", "on Saturday"],
+        items: ["They", "play", "soccer", "in the park", "on Saturdays"],
         explain: "Özne + fiil + nesne + yer + zaman.",
       },
       {
@@ -195,7 +195,7 @@ export const enA1P19: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„On Sunday we visit Grandma.“ — Bu cümle doğru mu?",
+        text: "„On Sundays we visit Grandma.“ — Bu cümle doğru mu?",
         options: ["True", "False"],
         answer: 0,
         explain: "Zaman başa alınmış; özne + fiil + nesne sırası bozulmamış.",

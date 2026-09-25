@@ -320,7 +320,7 @@ export const enA1P5: SkillExercise[] = [
       },
       {
         heading: "a, an, the",
-        tr: "Tekil sayılabilir bir şeyden ilk kez söz ederken „a“ gelir; kelime ünlü SESİYLE başlıyorsa „an“ olur. Karşındaki hangisi olduğunu biliyorsa „the“ kullanılır. Genel bir şey söylerken çoğulda artikel hiç konmaz.",
+        tr: "Tekil sayılabilir bir şeyden ilk kez söz ederken „a“ gelir; kelime ünlü SESİYLE başlıyorsa „an“ olur. Karşındaki hangisi olduğunu biliyorsa „the“ kullanılır. Genel bir şey söylerken çoğul ve sayılamayan isimlerde artikel hiç konmaz.",
         examples: [
           { de: "She is an engineer.", tr: "O bir mühendis.", note: "ünlü sesi → an" },
           { de: "I need an umbrella.", tr: "Bir şemsiyeye ihtiyacım var." },

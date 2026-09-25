@@ -401,7 +401,7 @@ export const deA1P16: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Ich komme ___ acht Uhr, vielleicht ein bisschen später.",
+        text: "Ich komme ___ acht Uhr. (ungefähr, nicht genau)",
         options: [],
         answer: 0,
         accept: ["gegen"],

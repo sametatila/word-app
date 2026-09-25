@@ -340,7 +340,7 @@ export const deB2P6: SkillExercise[] = [
         ],
       },
       {
-        heading: "man ve Alternativen",
+        heading: "man ve öteki seçenekler",
         tr: "En basit karşılık „man“dır ve konuşma diline en yakın olanıdır. Ayrıca „-bar“ sıfatları da aynı işi yapar: „lösbar“, „machbar“, „vergleichbar“. Seçim üsluptur: „man“ konuşmada, „sich lassen“ tarafsız yazıda, „sein + zu“ resmî metinde.",
         examples: [
           { de: "Man kann das Problem nicht mit Geld lösen.", tr: "Sorunu parayla çözemezsin.", note: "konuşma dili" },

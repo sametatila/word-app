@@ -327,23 +327,23 @@ export const deB2P8: SkillExercise[] = [
         heading: "Yan cümle ↔ isim öbeği",
         tr: "Resmî metinlerde yan cümleler sık sık isim öbeğine dönüşür. Bağlaç bir edata, fiil bir isme dönüşür: „nachdem er angekommen ist“ → „nach seiner Ankunft“. İçerik aynı kalır, üslup değişir ve cümle kısalır.",
         examples: [
-          { de: "Nach der Prüfung der Unterlagen entscheiden wir.", tr: "Belgeleri inceledikten sonra karar veriyoruz.", note: "nachdem … geprüft wurde" },
+          { de: "Nach der Prüfung der Unterlagen entscheiden wir.", tr: "Belgeleri inceledikten sonra karar veriyoruz.", note: "nachdem … geprüft worden sind" },
           { de: "Vor seiner Abreise hat er alles geregelt.", tr: "Gitmeden önce her şeyi halletti.", note: "bevor er abgereist ist" },
           { de: "Wegen der Verzögerung fällt der Termin aus.", tr: "Gecikme yüzünden randevu iptal.", note: "weil es sich verzögert hat" },
         ],
       },
       {
         heading: "Hangi bağlaç hangi edata gider",
-        tr: "Eşleşmeler kapalı bir listedir: „weil“ → „wegen“, „obwohl“ → „trotz“, „wenn/falls“ → „bei“, „nachdem“ → „nach“, „bevor“ → „vor“, „während“ → „während“ (bu ikisinde biçim aynı, hâl değişir). Edatların çoğu Genitiv ister.",
+        tr: "Başlıca eşleşmeler şunlardır: „weil“ → „wegen“, „obwohl“ → „trotz“, „wenn/falls“ → „bei“, „nachdem“ → „nach“, „bevor“ → „vor“, „während“ → „während“ (bu ikisinde biçim aynı, hâl değişir). „wegen“, „trotz“ ve „während“ Genitiv, „bei“, „nach“ ve „vor“ Dativ ister.",
         examples: [
           { de: "Bei Regen fällt das Training aus.", tr: "Yağmur olursa antrenman iptal.", note: "wenn es regnet" },
-          { de: "Trotz der Kritik blieb der Plan gleich.", tr: "Eleştiriye rağmen plan aynı kaldı.", note: "obwohl kritisiert wurde" },
+          { de: "Trotz der Kritik blieb der Plan gleich.", tr: "Eleştiriye rağmen plan aynı kaldı.", note: "obwohl er kritisiert wurde" },
           { de: "Während der Sitzung wurde nichts entschieden.", tr: "Toplantı sırasında hiçbir şeye karar verilmedi.", note: "während die Sitzung lief" },
         ],
       },
       {
         heading: "Hangisini ne zaman?",
-        tr: "İsim üslubu kısa ve resmîdir ama okuması yorucudur ve ÖZNEYİ gizler: „nach der Prüfung“ kimin incelediğini söylemez. Fiil üslubu daha açıktır. İyi bir metin ikisini karıştırır; sınav görevlerinde çoğu zaman senden fiil üslubuna ÇEVİRMEN istenir.",
+        tr: "İsim üslubu kısa ve resmîdir ama okuması yorucudur ve eylemi YAPANI gizler: „nach der Prüfung“ kimin incelediğini söylemez. Fiil üslubu daha açıktır. İyi bir metin ikisini karıştırır; sınav görevlerinde iki yönde de DÖNÜŞTÜRME istenebilir.",
         examples: [
           { de: "Die Entscheidung erfolgt nach Eingang aller Unterlagen.", tr: "Karar, bütün belgeler ulaştıktan sonra veriliyor.", note: "isim üslubu: özne yok" },
           { de: "Wir entscheiden, sobald alle Unterlagen eingegangen sind.", tr: "Bütün belgeler ulaşır ulaşmaz karar veriyoruz.", note: "fiil üslubu: özne açık" },
@@ -363,7 +363,7 @@ export const deB2P8: SkillExercise[] = [
         explain: "„nachdem“ bağlacı „nach“ edatına karşılık gelir.",
       },
       {
-        text: "„Weil es sich verzögert hat, fällt der Termin aus.“ — Welche Fassung ist der Nominalstil?",
+        text: "„Weil es sich verzögert hat, fällt der Termin aus.“ — Welche Fassung ist im Nominalstil?",
         options: [
           "Trotz der Verzögerung fällt der Termin aus.",
           "Wegen der Verzögerung fällt der Termin aus.",
@@ -373,7 +373,7 @@ export const deB2P8: SkillExercise[] = [
         explain: "Sebep bildiren „weil“ → „wegen“.",
       },
       {
-        text: "Welcher Nachteil hat der Nominalstil?",
+        text: "Welchen Nachteil hat der Nominalstil?",
         options: [
           "Er ist länger.",
           "Er verbirgt oft, wer handelt.",
@@ -392,7 +392,7 @@ export const deB2P8: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "___ der Kritik blieb der Plan gleich. (obwohl kritisiert wurde)",
+        text: "___ der Kritik blieb der Plan gleich. (obwohl er kritisiert wurde)",
         options: [],
         answer: 0,
         accept: ["Trotz", "trotz"],
@@ -420,7 +420,7 @@ export const deB2P8: SkillExercise[] = [
         options: [],
         answer: 0,
         items: ["Nach", "der Prüfung", "der Unterlagen", "entscheiden", "wir"],
-        explain: "Edat öbeği birinci öge; fiil ikinci sırada, özne arkasında.",
+        explain: "Edat öbeği birinci öğe; fiil ikinci sırada, özne arkasında.",
       },
       {
         kind: "truefalse",

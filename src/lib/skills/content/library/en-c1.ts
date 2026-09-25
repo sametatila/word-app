@@ -382,7 +382,7 @@ export const enC1: SkillExercise[] = [
         heading: "Olumsuz bir öğe başa gelirse özne geri çekilir",
         tr: "Türkçede vurgu sözcüğü yüklemin önüne çekerek yapılır. İngilizcede sıra sabit olduğu için başka bir yol gerekir: olumsuz ya da sınırlayıcı bir öğe cümle başına alınırsa, yardımcı fiil özneden ÖNCE gelir. Bu yapı resmîdir ve az kullanıldığında güçlüdür.",
         examples: [
-          { de: "Not only did the report arrive late, it was incomplete.", tr: "Rapor yalnız geç gelmedi, eksikti de.", note: "did + özne" },
+          { de: "Not only did the report arrive late, it was also incomplete.", tr: "Rapor yalnız geç gelmedi, eksikti de.", note: "did + özne" },
           { de: "Rarely does a city announce such a decision.", tr: "Bir şehir böyle bir kararı nadiren duyurur." },
           { de: "Hardly had we started when the system crashed.", tr: "Daha başlamıştık ki sistem çöktü.", note: "Hardly + past perfect + when" },
         ],

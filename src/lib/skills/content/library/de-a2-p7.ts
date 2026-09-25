@@ -364,7 +364,7 @@ export const deA2P7: SkillExercise[] = [
       },
       {
         heading: "Hangi edat ne söyler?",
-        tr: "„mit“ araç ve birliktelik, „bei“ bir kişinin yanında ya da bir yerde çalışma, „nach“ şehir ve ülke adlarına yön (artikelsiz olanlar), „von“ kaynak ve sahiplik, „seit“ bir zamandan beri, „zu“ bir kişiye ya da kuruma yön, „aus“ içinden çıkış ve memleket.",
+        tr: "„mit“ araç ve birliktelik, „bei“ bir kişinin yanında ya da bir yerde çalışma, „nach“ şehir ve ülke adlarına yön (artikelsiz olanlar) ve zamanda „-den sonra“ (nach dem Kurs), „von“ kaynak ve sahiplik, „seit“ bir zamandan beri, „zu“ bir kişiye ya da kuruma yön, „aus“ içinden çıkış ve memleket.",
         examples: [
           { de: "Seit einem Jahr lerne ich Deutsch.", tr: "Bir yıldır Almanca öğreniyorum.", note: "seit + Dativ" },
           { de: "Wir fahren nach Italien.", tr: "İtalya'ya gidiyoruz.", note: "artikelsiz ülke → nach" },
@@ -387,7 +387,7 @@ export const deA2P7: SkillExercise[] = [
       },
       {
         text: "Welcher Satz ist richtig?",
-        options: ["Ich gehe nach dem Arzt.", "Ich gehe zum Arzt.", "Ich gehe zu dem Arzt hin."],
+        options: ["Ich gehe nach dem Arzt.", "Ich gehe zum Arzt.", "Ich gehe zu den Arzt."],
         answer: 1,
         explain: "Kişiye ya da kuruma yönde „zu“ kullanılır ve „zu dem“ → zum olur.",
       },

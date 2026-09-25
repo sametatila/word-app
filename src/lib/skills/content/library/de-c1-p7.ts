@@ -391,7 +391,7 @@ export const deC1P7: SkillExercise[] = [
         text: "Der Vergleich ist ___ falsch, als die Fälle nicht vergleichbar sind.",
         options: [],
         answer: 0,
-        accept: ["insofern"],
+        accept: ["insofern", "insoweit"],
         explain: "„insofern … als“ bir sınırlama kurar.",
       },
       {

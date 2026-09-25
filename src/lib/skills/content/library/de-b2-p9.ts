@@ -338,9 +338,9 @@ export const deB2P9: SkillExercise[] = [
       },
       {
         heading: "wo ve edatlı biçimler",
-        tr: "Yer bildiren isimlerden sonra „in dem / an dem“ yerine „wo“ kullanılabilir ve daha doğaldır. Edat gerekiyorsa eşyalarda „wo(r)- + edat“ biçimi de vardır: „worüber“, „womit“. Kişilerde bu yapılmaz; orada edat + ilgi zamiri gelir.",
+        tr: "Yer bildiren isimlerden sonra „in dem / an dem“ yerine „wo“ kullanılabilir ve daha doğaldır. Öncül „etwas“, „alles“, „das“ ya da bütün bir cümleyse edat „wo(r)-“ ile birleşir: „worüber“, „womit“. Somut bir isimde ve kişilerde edat + ilgi zamiri gelir: „das Buch, über das …“, „die Kollegin, mit der …“.",
         examples: [
-          { de: "Der Ort, wo wir uns getroffen haben, gibt es nicht mehr.", tr: "Buluştuğumuz yer artık yok.", note: "= an dem" },
+          { de: "Den Ort, wo wir uns getroffen haben, gibt es nicht mehr.", tr: "Buluştuğumuz yer artık yok.", note: "= an dem" },
           { de: "Das ist etwas, worüber wir reden müssen.", tr: "Bu, konuşmamız gereken bir şey.", note: "etwas → worüber" },
           { de: "Die Kollegin, mit der ich gesprochen habe, ist im Urlaub.", tr: "Konuştuğum iş arkadaşı tatilde.", note: "kişi → mit der" },
         ],
@@ -383,7 +383,7 @@ export const deB2P9: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Der Ort, ___ wir uns getroffen haben, gibt es nicht mehr.",
+        text: "Den Ort, ___ wir uns getroffen haben, gibt es nicht mehr.",
         options: [],
         answer: 0,
         accept: ["wo", "an dem"],
@@ -395,7 +395,7 @@ export const deB2P9: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["worüber"],
-        explain: "„etwas“ eşya sınıfında; edat wo + r + über biçimine girer.",
+        explain: "„etwas“tan sonra edat „wo(r)-“ ile birleşir: wo + r + über.",
       },
       {
         kind: "order",

@@ -358,7 +358,7 @@ export const enC1P8: SkillExercise[] = [
     course: "en",
     level: "C1",
     skill: "grammar",
-    title: "we decided or a decision was taken",
+    title: "we decided or a decision was made",
     genre: "grammar",
     intro: "Aynı içerik iki ayrı kayıtta yazılabilir; seçim üslup değil, kimin görünüp kimin gizlendiğidir.",
     focus: "Kayıt kaydırma: edilgen, adlaştırma, kısaltmalar ve öbek fiiller",
@@ -376,14 +376,14 @@ export const enC1P8: SkillExercise[] = [
         examples: [
           { de: "We put the meeting off until June.", tr: "Toplantıyı hazirana erteledik.", note: "gündelik" },
           { de: "The meeting was postponed until June.", tr: "Toplantı hazirana ertelendi.", note: "resmî" },
-          { de: "We'll look into it and let you know.", tr: "Bakıp size haber veririz.", note: "gündelik ikili" },
+          { de: "We'll look into it and let you know.", tr: "Bakıp size haber veririz.", note: "gündelik: look into" },
         ],
       },
       {
         heading: "Edilgen ve adlaştırma: eyleyeni gizlemek",
-        tr: "Resmî kayıt üç araçla eyleyeni siler: edilgen („a decision was taken“), adlaştırma („after consideration of the request“) ve „it“ ile başlayan yapılar („it was felt that“). Bunlar dilbilgisel olarak kusursuzdur ve tam da bu yüzden tehlikelidir: kimin karar verdiğini yazmadan bir kararı bildirirler.",
+        tr: "Resmî kayıt üç araçla eyleyeni siler: edilgen („a decision was made“), adlaştırma („after consideration of the request“) ve „it“ ile başlayan yapılar („it was felt that“). Bunlar dil bilgisi açısından kusursuzdur ve tam da bu yüzden tehlikelidir: kimin karar verdiğini yazmadan bir kararı bildirirler.",
         examples: [
-          { de: "A decision was taken to postpone the project.", tr: "Projenin ertelenmesine karar verildi.", note: "eyleyen yok" },
+          { de: "A decision was made to postpone the project.", tr: "Projenin ertelenmesine karar verildi.", note: "eyleyen yok" },
           { de: "We decided to postpone the project.", tr: "Projeyi ertelemeye karar verdik.", note: "eyleyen var" },
           { de: "It was felt that further consultation was needed.", tr: "Daha fazla görüşmeye ihtiyaç duyulduğu düşünüldü.", note: "kim hissetti?" },
         ],
@@ -409,7 +409,7 @@ export const enC1P8: SkillExercise[] = [
         text: "Which sentence hides the agent?",
         options: [
           "We decided to postpone the project.",
-          "A decision was taken to postpone the project.",
+          "A decision was made to postpone the project.",
           "The board decided to postpone the project.",
         ],
         answer: 1,
@@ -463,7 +463,7 @@ export const enC1P8: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "“A decision was taken” ile “We decided” aynı bilgiyi verir.",
+        text: "“A decision was made” ile “We decided” aynı bilgiyi verir.",
         options: ["True", "False"],
         answer: 1,
         explain: "İkincisi kararı verenin kim olduğunu da söyler.",
@@ -473,7 +473,7 @@ export const enC1P8: SkillExercise[] = [
         text: "“We'll inform you as soon as we know.” — Bu cümle gündelik kayıttadır.",
         options: ["True", "False"],
         answer: 0,
-        explain: "Kısaltma ve „as soon as“ ile gündelik bir tondadır.",
+        explain: "Kısaltma (we'll) ve doğrudan „we … you“ hitabıyla gündelik bir tondadır.",
       },
     ],
   },

@@ -359,7 +359,7 @@ export const deA1P3: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["Autos"],
-        explain: "Yabancı kökenli kısa kelimeler -s çoğulu alır: die Autos.",
+        explain: "-o gibi ünlüyle biten yabancı kökenli kelimeler çoğulda -s alır: die Autos.",
       },
       {
         kind: "gapfill",

@@ -180,7 +180,7 @@
     "en": "Which one when?"
   },
   {
-    "tr": "man ve Alternativen",
+    "tr": "man ve öteki seçenekler",
     "kind": "explanation.heading",
     "en": "man and the alternatives"
   },
@@ -410,9 +410,9 @@
     "en": "A yes-no question comes in with „ob“"
   },
   {
-    "tr": "Geçmiş için: mastar + haben/sein",
+    "tr": "Geçmiş için: Partizip II + haben/sein",
     "kind": "explanation.heading",
-    "en": "For the past: infinitive + haben/sein"
+    "en": "For the past: Partizip II + haben/sein"
   },
   {
     "tr": "İkinci sıra, ikinci kelime değil",
@@ -540,9 +540,9 @@
     "en": "In speech some prepositions merge with the article: bei dem → beim, von dem → vom, zu dem → zum, zu der → zur. These are not abbreviations but the normal forms; they are used in writing too."
   },
   {
-    "tr": "„der/die/das“ ismin cinsini ve hâlini zaten söyler. O yüzden sıfat yalnız iki ek alır: yalın tekilde -e, geri kalan her yerde -en. Buna zayıf çekim denir ve en kolay tablodur.",
+    "tr": "„der/die/das“ ismin cinsini ve hâlini zaten söyler. O yüzden sıfat yalnız iki ek alır: yalın tekilde ve dişil/nötr belirtme hâlinde -e (die neue Lösung, das neue Haus), geri kalan her yerde -en. Buna zayıf çekim denir ve en kolay tablodur.",
     "kind": "explanation.tr",
-    "en": "„der/die/das“ already tells you the gender and the case of the noun. That is why the adjective takes only two endings: -e in the nominative singular and -en everywhere else. This is called the weak declension and it is the easiest table."
+    "en": "„der/die/das“ already tells you the gender and the case of the noun. That is why the adjective takes only two endings: -e in the nominative singular and in the feminine and neuter accusative (die neue Lösung, das neue Haus), and -en everywhere else. This is called the weak declension and it is the easiest table."
   },
   {
     "tr": "„du“ için emir biçimi, fiilin „du“ çekiminden -st ekinin atılmasıyla kurulur ve özne söylenmez. Kök ünlüsü e → i değişen fiillerde bu değişim KALIR, ama a → ä değişimi KALKAR.",
@@ -557,7 +557,7 @@
   {
     "tr": "„dass“ bir cümleyi başka bir cümlenin nesnesi yapar: „Biliyorum ki …“, „Sanıyorum ki …“. Kural aynı: „dass“tan sonra fiil sona gider. Türkçedeki „-diğini“ yapısının karşılığıdır.",
     "kind": "explanation.tr",
-    "en": "„dass“ makes one clause the object of another — Turkish says „Biliyorum ki …“, „Sanıyorum ki …“ and English „I know that …“. The rule is the same: after „dass“ the verb goes to the end. English may leave its „that“ out; German never may."
+    "en": "„dass“ makes one clause the object of another, like Turkish „Biliyorum ki …“ (English „I know that …“, „I think that …“). The rule is the same: after „dass“ the verb goes to the end."
   },
   {
     "tr": "Yan cümlede ÇEKİMLİ fiil sona gider — Perfekt'te bu yardımcı fiildir, modal yapıda modal fiildir. Yani Partizip ya da mastar ondan ÖNCE durur: „… gearbeitet hat“, „… kommen kann“.",
@@ -570,9 +570,9 @@
     "en": "„kein“ is declined exactly like „ein“ and negates nouns: if a noun stands with „ein/eine“ or without an article, its negation is „kein/keine“. There is no „ein“ in the plural, but there is „keine“."
   },
   {
-    "tr": "„ihr“ biçimi normal çekimle aynıdır, yalnız özne düşer. „Sie“ biçiminde ise özne KALIR ve fiilden sonra gelir; bu, kibar biçimi soru cümlesinden ayıran tek şeydir — sondaki noktalama.",
+    "tr": "„ihr“ biçimi normal çekimle aynıdır, yalnız özne düşer. „Sie“ biçiminde ise özne KALIR ve fiilden sonra gelir; yazıda bu kibar emri soru cümlesinden ayıran tek şey sondaki noktalama işaretidir.",
     "kind": "explanation.tr",
-    "en": "The „ihr“ form is the same as the normal conjugation, only the subject drops. In the „Sie“ form the subject STAYS and comes after the verb; the only thing that separates the polite form from a question is the punctuation at the end."
+    "en": "The „ihr“ form is the same as the normal conjugation, only the subject drops. In the „Sie“ form the subject STAYS and comes after the verb; in writing, the only thing that tells this polite command apart from a question is the punctuation mark at the end."
   },
   {
     "tr": "„sein + zu + mastar“ da edilgen anlam verir ve bağlama göre „können“ ya da „müssen“ taşır. Resmî yazıda çok sık geçer: „Der Antrag ist bis Juni einzureichen“ — yani verilmesi GEREKİR.",
@@ -580,14 +580,14 @@
     "en": "„sein + zu + infinitive“ also carries a passive meaning and, depending on the context, „können“ or „müssen“. It is very common in official writing: „Der Antrag ist bis Juni einzureichen“ — that is, it MUST be submitted."
   },
   {
-    "tr": "Geçmişte bir kez olmuş, tek seferlik bir olay anlatılıyorsa „als“ kullanılır. Bu, Türkçede „…dığında“ ile çevrilir ama Almancada seçim zorunludur. Yan cümle olduğu için fiil sona gider.",
+    "tr": "Geçmişte bir kez olmuş, tek seferlik bir olay ya da geçmişteki tek bir dönem (altı yaşındayken, çocukken) anlatılıyorsa „als“ kullanılır. Bu, Türkçede „…dığında“ ile çevrilir ama Almancada seçim zorunludur. Yan cümle olduğu için fiil sona gider.",
     "kind": "explanation.tr",
-    "en": "„als“ is used when a single, one-off event in the past is being told. English uses „when“ for both cases, but in German the choice is compulsory. Because it is a subordinate clause, the verb goes to the end."
+    "en": "„als“ is used when a single, one-off event or a single period in the past (when I was six, when I was a child) is being told. English uses „when“ for both cases, but in German the choice is compulsory. Because it is a subordinate clause, the verb goes to the end."
   },
   {
-    "tr": "Türkçede iyelik ek olarak kelimenin sonuna gelir. Almancada ise ismin ÖNÜNE gelir ve o ismin cinsine göre biçim alır: eril ve nötr isimlerde ek yok, dişil ve çoğul isimlerde -e eklenir.",
+    "tr": "Türkçede iyelik ek olarak kelimenin sonuna gelir. Almancada ise ismin ÖNÜNE gelir ve o ismin cinsine göre biçim alır. İsim özneyse eril ve nötrde ek yok, dişil ve çoğulda -e eklenir; eril isim nesne olunca -en alır: meinen, keinen.",
     "kind": "explanation.tr",
-    "en": "In English the possessive word also stands in front of the noun, but it never changes: „my book“, „my books“. In German it takes an ending according to the gender of the noun: no ending with masculine and neuter nouns, -e with feminine and plural ones."
+    "en": "In English the possessive word also stands in front of the noun, but it never changes: „my book“, „my books“. In German it takes an ending according to the gender of the noun. When the noun is the subject: no ending with masculine and neuter, -e with feminine and plural; a masculine noun that is the object takes -en: meinen, keinen."
   },
   {
     "tr": "Cümleye zaman, yer ya da bir nesne ile başlarsan özne fiilin ARKASINA geçer. Bu bir seçim değil zorunluluk: fiilin ikinci sırası korunmak zorundadır. „Heute ich arbeite“ bu yüzden yanlıştır.",
@@ -600,9 +600,9 @@
     "en": "If you are negating a noun you use „kein“; for everything else you use „nicht“. A noun with a definite article („der/die/das“) or with a possessive also takes „nicht“, because there the noun is already definite."
   },
   {
-    "tr": "Yalın hâlden belirtme hâline yalnız üç biçim değişir: ich → mich, du → dich, er → ihn. „wir“ → uns ve „ihr“ → euch de değişir; „sie“ ve „es“ aynı kalır. Kibar „Sie“ her iki hâlde de Sie'dir.",
+    "tr": "Yalın hâlden belirtme hâline beş biçim değişir: ich → mich, du → dich, er → ihn, wir → uns, ihr → euch. „sie“ ve „es“ aynı kalır; kibar „Sie“ de her iki hâlde Sie'dir.",
     "kind": "explanation.tr",
-    "en": "Only three forms change from the nominative to the accusative: ich → mich, du → dich, er → ihn. „wir“ → uns and „ihr“ → euch change too; „sie“ and „es“ stay the same. The polite „Sie“ is Sie in both cases."
+    "en": "Five forms change from the nominative to the accusative: ich → mich, du → dich, er → ihn, wir → uns, ihr → euch. „sie“ and „es“ stay the same, and the polite „Sie“ is Sie in both cases."
   },
   {
     "tr": "Yan cümlede ayrılabilen fiil BİRLEŞİR: „Wann fährt der Zug ab?“ → „… wann der Zug abfährt.“ Modal yapıda ve Perfekt'te ise çekimli fiil en sona gider, mastar ya da Partizip onun önünde durur.",
@@ -680,9 +680,9 @@
     "en": "English can put the owner first: „the boss's car“. In the German Genitiv the order is the other way round: „das Auto des Chefs“. Masculine and neuter nouns take -s or -es; feminine and plural nouns take no ending, only the article changes (der)."
   },
   {
-    "tr": "Özel adlarda Genitiv adın SONUNA gelir: „Annas Bruder“, „Berlins Museen“. Konuşmada ise Genitiv'in yerini çoğu zaman „von + Dativ“ alır: „das Auto von meinem Chef“. İkisi de doğrudur ama yazıda Genitiv daha uygundur.",
+    "tr": "Özel adlarda Genitiv -s'si adın SONUNA eklenir, artikel kullanılmaz ve ad, Türkçedeki gibi ismin önünde durur: „Annas Bruder“, „Berlins Museen“. Konuşmada ise Genitiv'in yerini çoğu zaman „von + Dativ“ alır: „das Auto von meinem Chef“. İkisi de doğrudur ama yazıda Genitiv daha uygundur.",
     "kind": "explanation.tr",
-    "en": "With proper names the Genitiv goes on the END of the name: „Annas Bruder“, „Berlins Museen“. In speech the Genitiv is mostly replaced by „von + Dativ“: „das Auto von meinem Chef“. Both are correct, but in writing the Genitiv fits better."
+    "en": "With proper names the Genitiv -s goes on the END of the name, no article is used, and the name comes before the noun, as in English: „Annas Bruder“, „Berlins Museen“ (no apostrophe). In speech the Genitiv is mostly replaced by „von + Dativ“: „das Auto von meinem Chef“. Both are correct, but in writing the Genitiv fits better."
   },
   {
     "tr": "Türkçede nesne zamiri tektir: „onu“. Almancada ise zamir, yerini tuttuğu ismin cinsini korur. Eril isim → ihn, dişil isim → sie, nötr isim → es, çoğul → sie. Yani „onu“ demek için önce ismin artikelini bilmek gerekir.",
@@ -690,9 +690,9 @@
     "en": "In English the object pronoun follows natural gender: „him“ and „her“ for people, „it“ for things. In German the pronoun keeps the GRAMMATICAL gender of the noun it replaces. Masculine noun → ihn, feminine → sie, neuter → es, plural → sie. So you have to know the article before you can say „it“."
   },
   {
-    "tr": "Eşleşmeler kapalı bir listedir: „weil“ → „wegen“, „obwohl“ → „trotz“, „wenn/falls“ → „bei“, „nachdem“ → „nach“, „bevor“ → „vor“, „während“ → „während“ (bu ikisinde biçim aynı, hâl değişir). Edatların çoğu Genitiv ister.",
+    "tr": "Başlıca eşleşmeler şunlardır: „weil“ → „wegen“, „obwohl“ → „trotz“, „wenn/falls“ → „bei“, „nachdem“ → „nach“, „bevor“ → „vor“, „während“ → „während“ (bu ikisinde biçim aynı, hâl değişir). „wegen“, „trotz“ ve „während“ Genitiv, „bei“, „nach“ ve „vor“ Dativ ister.",
     "kind": "explanation.tr",
-    "en": "The pairs are a closed list: „weil“ → „wegen“, „obwohl“ → „trotz“, „wenn/falls“ → „bei“, „nachdem“ → „nach“, „bevor“ → „vor“, „während“ → „während“ (in this last pair the form stays and the case changes). Most of these prepositions take the Genitiv."
+    "en": "The main pairs are: „weil“ → „wegen“, „obwohl“ → „trotz“, „wenn/falls“ → „bei“, „nachdem“ → „nach“, „bevor“ → „vor“, „während“ → „während“ (in this last pair the form stays and the case changes). „wegen“, „trotz“ and „während“ take the Genitiv; „bei“, „nach“ and „vor“ take the Dativ."
   },
   {
     "tr": "Yazılı dilde sık geçen dört edat Genitiv ister: „wegen“ (yüzünden), „trotz“ (rağmen), „während“ (sırasında), „statt“ (yerine). Konuşmada bunların Dativ ile kullanıldığını da duyarsın; sınavda ve yazıda Genitiv beklenir.",
@@ -710,9 +710,9 @@
     "en": "Verbs like „sich freuen“ and „sich beeilen“ are written with „sich“ in the dictionary, and in the sentence this pronoun changes with the subject: mich, dich, sich, uns, euch, sich. English mostly has nothing in this place, but in German leaving it out breaks the sentence."
   },
   {
-    "tr": "Fiillerin çoğu „haben“ ister. „sein“ yalnız iki grupta gelir: yer değiştiren fiiller (gehen, fahren, kommen, fliegen) ve durum değiştirenler (aufstehen, einschlafen, werden). „sein“ ve „bleiben“ de kendileri bu gruba girer.",
+    "tr": "Fiillerin çoğu „haben“ ister. „sein“ başlıca iki grupta gelir: yer değiştiren fiiller (gehen, fahren, kommen, fliegen) ve durum değiştirenler (aufstehen, einschlafen, werden). Ayrıca „sein“ ve „bleiben“ hareket bildirmedikleri hâlde sein ile kurulur: ich bin gewesen, ich bin geblieben.",
     "kind": "explanation.tr",
-    "en": "Most verbs take „haben“. „sein“ appears with only two groups: verbs of moving from place to place (gehen, fahren, kommen, fliegen) and verbs of changing state (aufstehen, einschlafen, werden). „sein“ and „bleiben“ belong to this group themselves."
+    "en": "Most verbs take „haben“. „sein“ comes mainly with two groups: verbs of moving from place to place (gehen, fahren, kommen, fliegen) and verbs of changing state (aufstehen, einschlafen, werden). On top of that, „sein“ and „bleiben“ take sein even though they express no movement: ich bin gewesen, ich bin geblieben."
   },
   {
     "tr": "„nicht nur … sondern auch“ iki öğeyi ekler ve ağırlığı İKİNCİSİNE verir. „sondern“ burada düzeltme değil ekleme bildirir, bu yüzden arkasından „auch“ gelir. „nicht … sondern“ (auch'suz) ise düzeltmedir: birincisi reddedilir.",
@@ -730,14 +730,14 @@
     "en": "The condition can be in the past and the result TODAY: „Hätte ich damals zugesagt, wäre ich heute in Berlin.“ In the past with a modal verb an INFINITIVE comes instead of the Partizip and two infinitives stand side by side: „hätte fragen müssen“, „hätte kommen können“."
   },
   {
-    "tr": "Yer bildiren isimlerden sonra „in dem / an dem“ yerine „wo“ kullanılabilir ve daha doğaldır. Edat gerekiyorsa eşyalarda „wo(r)- + edat“ biçimi de vardır: „worüber“, „womit“. Kişilerde bu yapılmaz; orada edat + ilgi zamiri gelir.",
+    "tr": "Yer bildiren isimlerden sonra „in dem / an dem“ yerine „wo“ kullanılabilir ve daha doğaldır. Öncül „etwas“, „alles“, „das“ ya da bütün bir cümleyse edat „wo(r)-“ ile birleşir: „worüber“, „womit“. Somut bir isimde ve kişilerde edat + ilgi zamiri gelir: „das Buch, über das …“, „die Kollegin, mit der …“.",
     "kind": "explanation.tr",
-    "en": "After nouns of place „wo“ can be used instead of „in dem / an dem“, and it sounds more natural. If a preposition is needed, things also have the form „wo(r)- + preposition“: „worüber“, „womit“. This is not done with people; there a preposition + relative pronoun comes."
+    "en": "After nouns of place „wo“ can be used instead of „in dem / an dem“, and it sounds more natural. If the antecedent is „etwas“, „alles“, „das“ or a whole clause, the preposition merges with „wo(r)-“: „worüber“, „womit“. With a concrete noun and with people, a preposition + relative pronoun comes: „das Buch, über das …“, „die Kollegin, mit der …“."
   },
   {
-    "tr": "Tahmin geçmişe bakıyorsa modal fiil ŞİMDİKİ zamanda kalır ve arkasına Partizip + „haben“ ya da „sein“ gelir: „muss gewusst haben“, „dürfte abgefahren sein“. Modal fiilin kendisi geçmişe çekilmez — „musste gewusst haben“ yanlıştır.",
+    "tr": "Tahmin geçmişe bakıyorsa modal fiil ŞİMDİKİ zamanda kalır ve arkasına Partizip + „haben“ ya da „sein“ gelir: „muss gewusst haben“, „dürfte abgefahren sein“. Modal fiilin kendisi geçmişe çekilmez — bugün yapılan bir tahmin için „musste gewusst haben“ yanlıştır.",
     "kind": "explanation.tr",
-    "en": "If the guess looks back at the past, the modal verb stays in the PRESENT and a Partizip + „haben“ or „sein“ follows it: „muss gewusst haben“, „dürfte abgefahren sein“. The modal verb itself is not put into the past — „musste gewusst haben“ is wrong."
+    "en": "If the guess looks back at the past, the modal verb stays in the PRESENT and a Partizip + „haben“ or „sein“ follows it: „muss gewusst haben“, „dürfte abgefahren sein“. The modal verb itself is not put into the past — for a guess made now, „musste gewusst haben“ is wrong."
   },
   {
     "tr": "„ein“ eril yalın ve nötr yalın/belirtme hâlinde ek almaz, yani cinsi söylemez. Orada bilgiyi sıfat taşır: eril -er, nötr -es. Geri kalan yerlerde tablo yine zayıf çekimle aynıdır. Aynısı „kein“ ve iyelik sözcükleri için de geçerli.",

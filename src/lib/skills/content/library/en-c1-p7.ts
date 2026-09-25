@@ -373,7 +373,7 @@ export const enC1P7: SkillExercise[] = [
       },
       {
         heading: "unless: tek istisna",
-        tr: "„unless“ „if not“ demek gibi görünür ama tam olarak öyle değildir: TEK bir istisnayı işaret eder, yani „bu durum dışında“. Bu yüzden duygusal ya da varsayımsal olumsuzlarda kullanılmaz: „I'd be surprised if he didn't come“ doğrudur, „unless he came“ değildir. Kendisi olumsuzdur ve ikinci bir olumsuzluk almaz.",
+        tr: "„unless“ „if not“ demek gibi görünür ama tam olarak öyle değildir: TEK bir istisnayı işaret eder, yani „bu durum dışında“. Bu yüzden ana cümle olumsuz koşulun kendisine bir tepki ya da duygu bildiriyorsa kullanılmaz: „I'd be surprised if she didn't object“ doğrudur, „… unless she objected“ değildir. Kendisi olumsuzdur ve ikinci bir olumsuzluk almaz.",
         examples: [
           { de: "Unless a design serves the user, it is a commercial decision.", tr: "Bir tasarım kullanıcıya hizmet etmiyorsa ticari bir karardır.", note: "tek istisna" },
           { de: "We won't act unless we are asked.", tr: "İstenmedikçe işlem yapmayız.", note: "olumsuz + unless" },
@@ -386,7 +386,7 @@ export const enC1P7: SkillExercise[] = [
         examples: [
           { de: "Whatever the manufacturer says, the choice was commercial.", tr: "Üretici ne derse desin, seçim ticariydi.", note: "sonuç değişmiyor" },
           { de: "However strong the evidence is, some will not accept it.", tr: "Kanıt ne kadar güçlü olursa olsun bazıları kabul etmez.", note: "however + sıfat" },
-          { de: "No matter who asks, the data is not released.", tr: "Kim sorarsa sorsun veri açılmıyor.", note: "no matter who" },
+          { de: "No matter who asks, the data is not released.", tr: "Kim sorarsa sorsun veriler paylaşılmıyor.", note: "no matter who" },
         ],
       },
     ],
@@ -427,11 +427,11 @@ export const enC1P7: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Parts will be sold to anyone, provided ___ hold a trade account. (they)",
+        text: "Parts will be sold to anyone, ___ they hold a trade account. (a necessary condition)",
         options: [],
         answer: 0,
-        accept: ["they"],
-        explain: "„that“ düşebilir ama özne kalır.",
+        accept: ["provided", "providing", "provided that", "providing that", "as long as", "so long as"],
+        explain: "Zorunlu koşul: „provided (that)“; „that“ düşebilir.",
       },
       {
         kind: "gapfill",

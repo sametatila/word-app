@@ -333,12 +333,12 @@ export const enB1P5: SkillExercise[] = [
         examples: [
           { de: "She has to work on Saturdays.", tr: "Cumartesileri çalışmak zorunda.", note: "üçüncü tekilde has" },
           { de: "He had to leave early yesterday.", tr: "Dün erken çıkmak zorunda kaldı.", note: "geçmiş biçim" },
-          { de: "Do you have to work at the weekend?", tr: "Hafta sonu çalışmak zorunda mısın?" },
+          { de: "Do you have to work on the weekend?", tr: "Hafta sonu çalışmak zorunda mısın?" },
         ],
       },
       {
         heading: "En önemli tuzak: olumsuzlar",
-        tr: "„mustn't“ ve „don't have to“ birbirinin karşıtıdır. „mustn't“ yasak demektir, „don't have to“ ise gerek yok demektir. Türkçede ikisi de „-me“ ile başlar, bu yüzden sık karışır.",
+        tr: "„mustn't“ ve „don't have to“ birbirinin karşıtıdır. „mustn't“ yasak demektir, „don't have to“ ise gerek yok demektir. Olumsuzluk „must“a eklenince anlam „gerek yok“ olmaz, „yasak“ olur; bu yüzden sık karışır.",
         examples: [
           { de: "You mustn't smoke here.", tr: "Burada sigara içmek yasak.", note: "yasak" },
           { de: "You don't have to come.", tr: "Gelmek zorunda değilsin.", note: "gerek yok" },
@@ -383,18 +383,18 @@ export const enB1P5: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Do you ___ work on Saturdays?",
+        text: "___ she have to work on Saturdays?",
         options: [],
         answer: 0,
-        accept: ["have to"],
-        explain: "Soruda „do“ yardımcı fiil olarak gelir ve „have to“ değişmez.",
+        accept: ["Does"],
+        explain: "„have to“ soruda „do/does“ ister ve kendisi değişmez; özne üçüncü tekil: Does she have to …?",
       },
       {
         kind: "gapfill",
-        text: "I think you ___ talk to him before you decide.",
+        text: "I think you ___ talk to him before you decide. (advice)",
         options: [],
         answer: 0,
-        accept: ["should"],
+        accept: ["should", "ought to"],
         explain: "„I think“ ile başlayan bir tavsiye: should.",
       },
       {
@@ -402,8 +402,8 @@ export const enB1P5: SkillExercise[] = [
         text: "Cümleyi doğru sıraya diz.",
         options: [],
         answer: 0,
-        items: ["You", "should", "write", "the", "address", "down"],
-        explain: "„should“ arkasından yalın fiil alır; ayrılabilen fiilin ikinci parçası sona gider.",
+        items: ["You", "should", "write", "it", "down"],
+        explain: "„should“ arkasından yalın fiil alır; nesne zamir olunca iki parçanın arasına girer: You should write it down.",
       },
       {
         kind: "truefalse",

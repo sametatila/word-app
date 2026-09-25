@@ -346,8 +346,8 @@ export const enA2P2: SkillExercise[] = [
         tr: "„be going to“ üç parçadır: am / is / are + going to + yalın fiil. „will“ hiç değişmez ve arkasından yalın fiil gelir; kısa biçimi 'll, olumsuzu won't'tur. Söz verme ve teklif her zaman „will“ ile yapılır.",
         examples: [
           { de: "She is going to start a new job.", tr: "Yeni bir işe başlayacak." },
-          { de: "I'll help you with that bag.", tr: "Sana o çantada yardım ederim.", note: "teklif" },
-          { de: "They won't come tomorrow.", tr: "Yarın gelmeyecekler." },
+          { de: "I'll help you with that bag.", tr: "O çantayı taşımana yardım edeyim.", note: "teklif" },
+          { de: "She won't be late.", tr: "Geç kalmayacak." },
         ],
       },
     ],
@@ -399,7 +399,7 @@ export const enA2P2: SkillExercise[] = [
         text: "They ___ (not / come) tomorrow. They told us last week.",
         options: [],
         answer: 0,
-        accept: ["are not going to come", "aren't going to come"],
+        accept: ["are not going to come", "aren't going to come", "'re not going to come"],
         explain: "Plan önceden bellidir, bu yüzden olumsuz biçim de „going to“ ile kurulur.",
       },
       {

@@ -374,7 +374,7 @@ export const deB2P17: SkillExercise[] = [
           "Du brauchst nur auf das Feld zu tippen.",
         ],
         answer: 2,
-        explain: "Olumlu cümlede „brauchen … zu“ yalnız „nur“ ile gelir ve yazıda zu atlanmaz.",
+        explain: "Olumlu cümlede „brauchen … zu“ yalnız „nur“ ya da „erst“ ile gelir ve yazıda zu atlanmaz.",
       },
       {
         kind: "gapfill",

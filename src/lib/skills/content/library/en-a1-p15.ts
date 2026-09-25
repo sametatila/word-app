@@ -176,7 +176,7 @@ export const enA1P15: SkillExercise[] = [
       },
       {
         heading: "İki sıfat yan yana",
-        tr: "İki sıfat varsa aralarına „and“ girmez ve sıraları sabittir: önce fikir (nice), sonra boyut (big, small), sonra yaş (old, new), en son renk. Renk her zaman isme en yakın sıfattır: a big black dog.",
+        tr: "İki sıfat varsa aralarına „and“ girmez ve sıraları sabittir: önce fikir (nice), sonra boyut (big, small), sonra yaş (old, new), en son renk. Bu dördü arasında renk her zaman isme en yakın durur: a big black dog.",
         examples: [
           { de: "We have a big black dog.", tr: "Büyük siyah bir köpeğimiz var.", note: "boyut → renk" },
           { de: "It's a nice old house.", tr: "Güzel, eski bir ev.", note: "fikir → yaş" },
@@ -213,7 +213,7 @@ export const enA1P15: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "He's got ___ orange bike. (a / an)",
+        text: "He has ___ orange bike. (a / an)",
         options: [],
         answer: 0,
         accept: ["an"],

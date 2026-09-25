@@ -332,8 +332,8 @@ export const enB2P18: SkillExercise[] = [
         heading: "Emphatic do: itiraz, zıtlık, ısrar",
         tr: "Olumlu cümleye do/does/did eklemek karşı tarafın şüphesine itiraz eder, bir beklentinin tersini vurgular ya da kibar bir ısrar katar. Ardından fiil yalın hâle döner ve konuşmada vurgu yardımcı fiile düşer: „I did pay“, „I did paid“ değil.",
         examples: [
-          { de: "I did pay — here's the receipt.", tr: "Ödedim ama, bakın makbuzu burada.", note: "itiraz: did + yalın fiil" },
-          { de: "The bank closed, but it does still have a cash machine.", tr: "Banka kapandı ama bir para çekme makinesi hâlâ var.", note: "zıtlık: yine de" },
+          { de: "I did pay — here's the receipt.", tr: "Ödedim ya, bakın, makbuz burada.", note: "itiraz: did + yalın fiil" },
+          { de: "The bank closed, but it does still have an ATM.", tr: "Banka kapandı ama bir para çekme makinesi hâlâ var.", note: "zıtlık: yine de" },
           { de: "Do sit down, please.", tr: "Lütfen, buyurun oturun.", note: "emirde kibar ısrar" },
         ],
       },

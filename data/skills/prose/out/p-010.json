@@ -80,9 +80,9 @@
   "en": "„Es ist sehr dringend.“ — that word opens up an earlier slot."
  },
  {
-  "tr": "„herkommen“ kaynağı sorar; kaynak için soru kelimesi woher'dir.",
+  "tr": "Cevap bir kaynak (aus …); nereden geldiğini soran kelime woher'dir.",
   "kind": "explain",
-  "en": "„herkommen“ asks about the origin, and the question word for origin is woher."
+  "en": "The answer gives an origin (aus …); the word that asks where someone comes from is woher."
  },
  {
   "tr": "„I need somebody for one walk every day, at about one o'clock.“",
@@ -710,9 +710,9 @@
   "en": "There is no ending in the third person; the correct form is „Er hatte gestern keine Zeit.“"
  },
  {
-  "tr": "Üçüncü tekilde Konjunktiv I gösterge kipinden ayrılır: sie habe.",
+  "tr": "Üçüncü tekilde Konjunktiv I gösterge kipinden ayrılır: sie habe. Biçim ayırt edilebildiği için Konjunktiv II'ye (hätte) gerek yok.",
   "kind": "explain",
-  "en": "In the third person Konjunktiv I differs from the indicative: sie habe."
+  "en": "In the third person Konjunktiv I differs from the indicative: sie habe. Since the form is distinctive, there is no need for Konjunktiv II (hätte)."
  },
  {
   "tr": "Vorfeld'de yalnız bir öğe durabilir; özne fiilden sonraya geçer.",

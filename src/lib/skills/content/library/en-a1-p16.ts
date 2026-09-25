@@ -148,7 +148,7 @@ export const enA1P16: SkillExercise[] = [
     intro: "Kısa cümleleri beş küçük kelime birleştirir: and, but, or, because ve so. En çok son ikisi karıştırılır: biri nedeni, öteki sonucu söyler.",
     focus: "Bağlaçlar: and, but, or, because ve so (neden mi, sonuç mu; because of / due to B2'de)",
     gloss: [
-      { de: "ill", tr: "hasta" },
+      { de: "sick", tr: "hasta" },
       { de: "tired", tr: "yorgun" },
       { de: "cheap", tr: "ucuz" },
       { de: "closed", tr: "kapalı" },
@@ -160,32 +160,32 @@ export const enA1P16: SkillExercise[] = [
         tr: "„and“ ekler (ve), „but“ karşıtlık kurar (ama), „or“ seçenek sunar (ya da). Soru sorarken „or“ iki seçeneği yan yana koyar ve cevap da bunlardan biri olur.",
         examples: [
           { de: "I have a cat and a dog.", tr: "Bir kedim ve bir köpeğim var." },
-          { de: "The flat is small but cheap.", tr: "Daire küçük ama ucuz.", note: "karşıtlık" },
+          { de: "The apartment is small but cheap.", tr: "Daire küçük ama ucuz.", note: "karşıtlık" },
           { de: "Do you want tea or coffee?", tr: "Çay mı istersin, kahve mi?", note: "seçenek" },
         ],
       },
       {
         heading: "because: neden",
-        tr: "„because“ nedeni söyler ve arkasından tam bir cümle gelir: because I am ill. Türkçede neden cümlenin önünde durur (hasta olduğum için evdeyim); İngilizcede ana cümle önce, „because“ ile neden sonra gelir.",
+        tr: "„because“ nedeni söyler ve arkasından tam bir cümle gelir: because I am sick. Türkçede neden cümlenin önünde durur (hasta olduğum için evdeyim); İngilizcede çoğunlukla ana cümle önce, „because“ ile neden sonra gelir.",
         examples: [
-          { de: "I'm at home because I'm ill.", tr: "Hasta olduğum için evdeyim." },
+          { de: "I'm at home because I'm sick.", tr: "Hasta olduğum için evdeyim." },
           { de: "She's happy because it's her birthday.", tr: "Doğum günü olduğu için mutlu." },
           { de: "Why are you tired? — Because I work a lot.", tr: "Neden yorgunsun? — Çünkü çok çalışıyorum.", note: "why sorusunun cevabı" },
         ],
       },
       {
         heading: "so: sonuç",
-        tr: "„so“ sonucu söyler: önce neden, sonra so ile sonuç. Aynı olay iki yoldan anlatılabilir: I'm ill, so I stay at home = I stay at home because I'm ill. „so“dan önce çoğunlukla virgül konur.",
+        tr: "„so“ sonucu söyler: önce neden, sonra so ile sonuç. Aynı olay iki yoldan anlatılabilir: I'm sick, so I stay at home = I stay at home because I'm sick. „so“dan önce çoğunlukla virgül konur.",
         examples: [
-          { de: "I'm ill, so I stay at home.", tr: "Hastayım, bu yüzden evde kalıyorum." },
+          { de: "I'm sick, so I stay at home.", tr: "Hastayım, bu yüzden evde kalıyorum." },
           { de: "It's raining, so we take the bus.", tr: "Yağmur yağıyor, bu yüzden otobüse biniyoruz." },
-          { de: "The shop is closed, so we go home.", tr: "Dükkân kapalı, o yüzden eve gidiyoruz." },
+          { de: "The store is closed, so we go home.", tr: "Dükkân kapalı, o yüzden eve gidiyoruz." },
         ],
       },
     ],
     questions: [
       {
-        text: "The flat is small ___ cheap.",
+        text: "The apartment is small ___ cheap.",
         options: ["because", "but", "or"],
         answer: 1,
         explain: "„küçük“ bir eksi, „ucuz“ bir artı; karşıtlık but ile kurulur.",
@@ -197,7 +197,7 @@ export const enA1P16: SkillExercise[] = [
         explain: "Önce neden (yağmur), sonra sonuç (otobüs) geliyor; sonuç so ile bağlanır.",
       },
       {
-        text: "I'm at home ___ I'm ill.",
+        text: "I'm at home ___ I'm sick.",
         options: ["because", "so", "but"],
         answer: 0,
         explain: "İkinci cümle evde olmanın nedenini söylüyor; neden because ile gelir.",
@@ -228,7 +228,7 @@ export const enA1P16: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The shop is closed, ___ we go home.",
+        text: "The store is closed, ___ we go home.",
         options: [],
         answer: 0,
         accept: ["so"],
@@ -244,14 +244,14 @@ export const enA1P16: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„I'm ill, because I stay at home.“ — Bu cümle doğru mu?",
+        text: "„I'm sick, because I stay at home.“ — Bu cümle doğru mu?",
         options: ["True", "False"],
         answer: 1,
-        explain: "Evde kalmak sonuç, bu yüzden so gerekir: „I'm ill, so I stay at home.“",
+        explain: "Evde kalmak sonuç, bu yüzden so gerekir: „I'm sick, so I stay at home.“",
       },
       {
         kind: "truefalse",
-        text: "„I stay at home because I'm ill.“ — Bu cümle doğru mu?",
+        text: "„I stay at home because I'm sick.“ — Bu cümle doğru mu?",
         options: ["True", "False"],
         answer: 0,
         explain: "Hastalık evde kalmanın nedeni; neden because ile doğru bağlanmış.",

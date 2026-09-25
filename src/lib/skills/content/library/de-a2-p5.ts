@@ -314,7 +314,7 @@ export const deA2P5: SkillExercise[] = [
     skill: "grammar",
     title: "mein, meine und ein kleines Haus",
     genre: "grammar",
-    intro: "İyelik kelimesi sahibine değil, sahip olunan ismin cinsine göre biçim alır; aynı kutu sıfat ekini de belirler.",
+    intro: "İyelik kelimesinin kökü sahibini, eki ise sahip olunan ismin cinsini gösterir; aynı kutu sıfat ekini de belirler.",
     focus: "Possessivartikel ve sıfat çekimine giriş",
     gloss: [
       { de: "vergessen", tr: "unutmak", en: "to forget" },
@@ -326,7 +326,7 @@ export const deA2P5: SkillExercise[] = [
     explanation: [
       {
         heading: "Ek değil, ayrı kelime",
-        tr: "Türkçede iyelik isme ek olarak gelir: kardeş-im, kız kardeş-im. Almancada ayrı bir kelime olur ve SAHİBİNE değil, sahip olunan ismin cinsine bakar: mein Bruder (eril), meine Schwester (dişil), mein Kind (nötr), meine Eltern (çoğul).",
+        tr: "Türkçede iyelik isme ek olarak gelir: kardeş-im, kız kardeş-im. Almancada ayrı bir kelime olur: kökü sahibini gösterir (mein, dein, sein, ihr), EKİ ise sahibe değil, sahip olunan ismin cinsine bakar: mein Bruder (eril), meine Schwester (dişil), mein Kind (nötr), meine Eltern (çoğul).",
         examples: [
           { de: "Das ist mein Bruder.", tr: "Bu benim erkek kardeşim.", note: "der Bruder → mein" },
           { de: "Das ist meine Schwester.", tr: "Bu benim kız kardeşim.", note: "die Schwester → meine" },
@@ -399,7 +399,7 @@ export const deA2P5: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["ihre"],
-        explain: "Sahip dişil olsa da biçimi belirleyen „die Tasche“dır: ihre Tasche.",
+        explain: "Kök sahibinden gelir (sie → ihr-), eki ise „die Tasche“ belirler: ihre Tasche.",
       },
       {
         kind: "order",

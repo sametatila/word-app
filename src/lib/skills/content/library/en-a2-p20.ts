@@ -112,7 +112,7 @@ export const enA2P20: SkillExercise[] = [
         heading: "Ne kadar eminsin?",
         tr: "Kesin bildiğin şey için „will“, büyük olasılıkla olacak şey için „will probably“, yarı yarıya olan için „might“ gelir. „probably“ olumluda will'den SONRA, olumsuzda won't'tan ÖNCE durur.",
         examples: [
-          { de: "The shop will be open on Sunday.", tr: "Dükkân pazar günü açık olacak.", note: "kesin" },
+          { de: "The store will be open on Sunday.", tr: "Dükkân pazar günü açık olacak.", note: "kesin" },
           { de: "The train will probably be late.", tr: "Tren büyük ihtimalle gecikecek.", note: "will + probably" },
           { de: "He probably won't come.", tr: "Büyük ihtimalle gelmeyecek.", note: "probably + won't" },
         ],

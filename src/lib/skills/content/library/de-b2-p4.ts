@@ -344,9 +344,9 @@ export const deB2P4: SkillExercise[] = [
       },
       {
         heading: "İki sık hata",
-        tr: "Birincisi: „obwohl“ ve „trotzdem“ aynı cümlede birlikte kullanılmaz; ikisi de zıtlığı kurar, biri yeter. İkincisi: „je … desto“ yapısında iki tarafta da karşılaştırma derecesi olmalı — „je klar“ değil „je klarer“.",
+        tr: "Birincisi: „obwohl“ yan cümlesi ana cümlenin birinci öğesidir, ardından doğrudan çekimli fiil gelir; „trotzdem“ oraya, fiilin önüne konmaz. Pekiştirmek istersen fiilden sonra durabilir: „…, sind wir trotzdem geblieben“. İkincisi: „je … desto“ yapısında iki tarafta da karşılaştırma derecesi olmalı — „je klar“ değil „je klarer“.",
         examples: [
-          { de: "Obwohl es spät war, sind wir geblieben.", tr: "Geç olmasına rağmen kaldık.", note: "trotzdem eklenmez" },
+          { de: "Obwohl es spät war, sind wir geblieben.", tr: "Geç olmasına rağmen kaldık.", note: "ana cümle fiille başlar" },
           { de: "Es war spät. Trotzdem sind wir geblieben.", tr: "Geç olmuştu. Yine de kaldık." },
           { de: "Je genauer, desto besser.", tr: "Ne kadar kesinse o kadar iyi.", note: "iki taraf da derece" },
         ],
@@ -376,7 +376,7 @@ export const deB2P4: SkillExercise[] = [
         text: "___ der Preis hoch ist, kaufen viele das Gerät.",
         options: [],
         answer: 0,
-        accept: ["Obwohl", "obwohl"],
+        accept: ["Obwohl", "obwohl", "Obgleich", "obgleich", "Auch wenn", "auch wenn"],
         explain: "Yan cümlenin fiili sonda („ist“), bu yüzden bağlaç obwohl olmalı.",
       },
       {
@@ -384,7 +384,7 @@ export const deB2P4: SkillExercise[] = [
         text: "Der Preis ist hoch. ___ kaufen viele das Gerät.",
         options: [],
         answer: 0,
-        accept: ["Trotzdem", "trotzdem"],
+        accept: ["Trotzdem", "trotzdem", "Dennoch", "dennoch"],
         explain: "İkinci cümle ana cümle ve fiil ikinci sırada; başa gelen öğe trotzdem'dir.",
       },
       {
@@ -416,7 +416,7 @@ export const deB2P4: SkillExercise[] = [
         text: "„Obwohl es spät war, trotzdem sind wir geblieben.“ — Bu cümle doğru mu?",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "İki zıtlık kelimesi birlikte kullanılmaz; biri seçilir.",
+        explain: "„obwohl“ yan cümlesi birinci öğedir; ardından doğrudan fiil gelmeli. „trotzdem“ başa konunca fiil üçüncü sıraya düşer. Doğrusu: „…, sind wir geblieben“ ya da „…, sind wir trotzdem geblieben“.",
       },
       {
         kind: "truefalse",

@@ -318,7 +318,7 @@ export const enA1P12: SkillExercise[] = [
       },
       {
         heading: "next to, between, opposite",
-        tr: "Yan yana olanlar için „next to“, iki şeyin arası için „between … and …“, karşısında için „opposite“ kullanılır. „between“ iki isim ister ve araya „and“ girer; „opposite“ arkasına ikinci bir edat almaz.",
+        tr: "Yan yana olanlar için „next to“, iki şeyin arası için „between … and …“, karşısında için „opposite“ kullanılır. „between“ iki isim ister ve araya „and“ girer; „opposite“ arkasına ikinci bir edat almaz. Amerikan İngilizcesinde aynı anlamda „across from“ da çok yaygındır.",
         examples: [
           { de: "The bank is next to the station.", tr: "Banka istasyonun yanında." },
           { de: "The bakery is between the school and the park.", tr: "Fırın okulla parkın arasında.", note: "between … and" },
@@ -331,7 +331,7 @@ export const enA1P12: SkillExercise[] = [
         examples: [
           { de: "Where is the bank? — It's next to the station.", tr: "Banka nerede? — İstasyonun yanında." },
           { de: "There is a park behind our school.", tr: "Okulumuzun arkasında bir park var." },
-          { de: "There are two shops opposite my flat.", tr: "Dairemin karşısında iki dükkân var." },
+          { de: "There are two stores opposite my apartment.", tr: "Dairemin karşısında iki dükkân var." },
         ],
       },
     ],
@@ -356,7 +356,7 @@ export const enA1P12: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "My shoes are ___ the bed. (not on the bed)",
+        text: "My shoes are ___ the bed. (the bed is on top of them)",
         options: [],
         answer: 0,
         accept: ["under"],

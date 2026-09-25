@@ -347,7 +347,7 @@ export const enB2P16: SkillExercise[] = [
       },
       {
         heading: "would rather: iki kalıp",
-        tr: "Öznenin kendi tercihi için „would rather + yalın fiil“ kullanılır: „I'd rather stay.“ Başka birinin eylemi için „would rather + özne + geçmiş zaman“ gelir: „I'd rather you stayed.“ Geçmişe dönük tercihte „had + üçüncü biçim“ kullanılır.",
+        tr: "Öznenin kendi tercihi için „would rather + yalın fiil“ kullanılır: „I'd rather stay.“ Başka birinin eylemi için „would rather + özne + geçmiş zaman“ gelir: „I'd rather you stayed.“ Geçmişe dönük tercihte „had + üçüncü hâl“ kullanılır.",
         examples: [
           { de: "I'd rather stay at home tonight.", tr: "Bu akşam evde kalmayı tercih ederim.", note: "kendi tercihi" },
           { de: "I'd rather you didn't tell the owner yet.", tr: "Sahibine henüz söylememeni tercih ederim.", note: "başkası: geçmiş biçim" },
@@ -413,7 +413,7 @@ export const enB2P16: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["had", "'d"],
-        explain: "Geçmişe dönük tercihte „would rather + özne + had + üçüncü biçim“.",
+        explain: "Geçmişe dönük tercihte „would rather + özne + had + üçüncü hâl“.",
       },
       {
         kind: "order",

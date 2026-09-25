@@ -13,5 +13,7 @@
  { "tr": "“Such was the demand that the list closed.” ile “The demand was so great that the list closed.” aynı anlamdadır.", "kind": "question.text", "de": "“Such was the demand that the list closed.” und “The demand was so great that the list closed.” bedeuten dasselbe." },
  { "tr": "Yes, please.", "kind": "question.option", "de": "Yes, please." },
  { "tr": "Yes, I would.", "kind": "question.option", "de": "Yes, I would." },
- { "tr": "No, not at all.", "kind": "question.option", "de": "No, not at all." }
+ { "tr": "No, not at all.", "kind": "question.option", "de": "No, not at all." },
+ { "tr": "gündelik: look into", "kind": "explanation.examples.note", "de": "umgangssprachlich: look into" },
+ { "tr": "bekledin", "kind": "explanation.examples.note", "de": "du hast gewartet" }
 ]

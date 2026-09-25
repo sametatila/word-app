@@ -318,7 +318,7 @@ export const deB1P2: SkillExercise[] = [
       },
       {
         heading: "Cins isimden, hâl yan cümleden",
-        tr: "İlgi zamiri cinsini ve tekil-çoğulluğunu ANLATTIĞI isimden alır, ama hâlini yan cümledeki görevinden alır. Özneyse der, nesneyse den, yönelme hâliyse dem olur.",
+        tr: "İlgi zamiri cinsini ve tekil-çoğulluğunu ANLATTIĞI isimden alır, ama hâlini yan cümledeki görevinden alır. Eril bir isimde özneyse der, nesneyse den, yönelme hâliyse dem olur.",
         examples: [
           { de: "der Mann, der wartet", tr: "bekleyen adam", note: "özne → der" },
           { de: "der Mann, den ich kenne", tr: "tanıdığım adam", note: "nesne → den" },

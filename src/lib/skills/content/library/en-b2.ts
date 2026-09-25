@@ -337,7 +337,7 @@ export const enB2: SkillExercise[] = [
     skill: "grammar",
     title: "if only we had known",
     genre: "grammar",
-    intro: "Olmayanı konuşmanın dilbilgisi: şimdiki gerçek dışı, geçmişteki gerçek dışı ve ikisinin karışımı.",
+    intro: "Olmayanı konuşmanın dil bilgisi: şimdiki gerçek dışı, geçmişteki gerçek dışı ve ikisinin karışımı.",
     focus: "Conditionals 2-3, mixed conditionals ve wish / if only",
     gloss: [
       { de: "deadline", tr: "son tarih" },
@@ -358,7 +358,7 @@ export const enB2: SkillExercise[] = [
       },
       {
         heading: "Geçmiş için gerçek dışı: third conditional",
-        tr: "Olmuş bitmiş bir şeyi tersine çevirir. Yapı: if + past perfect, ana cümlede would have + üçüncü hâl. Bu cümle her zaman bir pişmanlık ya da suçlama taşır, o yüzden iş yazışmasında dikkatli kullanılır.",
+        tr: "Olmuş bitmiş bir şeyi tersine çevirir. Yapı: if + past perfect, ana cümlede would have + üçüncü hâl. Bu yapı çoğu zaman bir pişmanlık ya da suçlama taşır, o yüzden iş yazışmasında dikkatli kullanılır.",
         examples: [
           { de: "If they had warned us, we would have changed the date.", tr: "Bizi uyarsalardı tarihi değiştirirdik." },
           { de: "I would have applied if I had seen the advertisement.", tr: "İlanı görseydim başvururdum.", note: "if yan cümlesi sonra da gelebilir" },
@@ -376,7 +376,7 @@ export const enB2: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "If I ___ more money, I would move to a bigger flat.",
+        text: "If I ___ more money, I would move to a bigger apartment.",
         options: ["had", "have", "would have"],
         answer: 0,
         explain: "Second conditional: if yan cümlesinde past simple, ana cümlede would. „would“ if'ten sonra gelmez.",

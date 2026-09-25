@@ -301,7 +301,7 @@ export const deB1P4: SkillExercise[] = [
     gloss: [
       { de: "abgeben", tr: "teslim etmek", en: "to hand in" },
       { de: "unterschreiben", tr: "imzalamak", en: "to sign" },
-      { de: "annehmen", tr: "teslim almak", en: "to accept" },
+      { de: "annehmen", tr: "teslim almak", en: "to accept (a delivery)" },
       { de: "die Heizung", tr: "kalorifer", en: "heating" },
     ],
     minutes: 8,
@@ -317,11 +317,11 @@ export const deB1P4: SkillExercise[] = [
       },
       {
         heading: "Faili söylemek gerekirse",
-        tr: "Genelde fail hiç söylenmez; söylemek gerekirse kişi için „von“ + Dativ, araç ya da sebep için „durch“ + Akkusativ kullanılır.",
+        tr: "Genelde fail hiç söylenmez; söylemek gerekirse kişi için „von“ + Dativ, sebep ya da aracı için „durch“ + Akkusativ kullanılır; elle kullanılan alet ise „mit“ + Dativ alır.",
         examples: [
           { de: "Der Brief wird von der Chefin unterschrieben.", tr: "Mektup müdür tarafından imzalanıyor.", note: "kişi → von" },
           { de: "Das Paket wird von dem Nachbarn angenommen.", tr: "Paketi komşu teslim alıyor." },
-          { de: "Die Tür wird durch den Wind geschlossen.", tr: "Kapı rüzgârla kapanıyor.", note: "araç → durch" },
+          { de: "Die Tür wird durch den Wind geschlossen.", tr: "Kapı rüzgârla kapanıyor.", note: "sebep → durch" },
         ],
       },
       {
@@ -336,10 +336,10 @@ export const deB1P4: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "Das Formular ___ am Schalter abgegeben.",
+        text: "Das Formular ___ gerade am Schalter abgegeben.",
         options: ["wird", "ist", "hat"],
         answer: 0,
-        explain: "Süren bir işlem anlatılıyor: werden + Partizip II.",
+        explain: "„gerade“ süren bir işlemi gösterir; işlem edilgeni werden + Partizip II ile kurulur. „ist … abgegeben“ sonucu anlatır.",
       },
       {
         text: "Die Fenster ___ jeden Monat geputzt.",
@@ -405,7 +405,7 @@ export const deB1P4: SkillExercise[] = [
         text: "„Die Tür wird von einem Schlüssel geöffnet.“ — Bu cümle doğru mu?",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Anahtar kişi değil araçtır; doğrusu „mit einem Schlüssel“ ya da „durch einen Schlüssel“.",
+        explain: "Anahtar kişi değil, elle kullanılan bir alettir; alet „mit“ + Dativ alır: „mit einem Schlüssel“.",
       },
     ],
   },

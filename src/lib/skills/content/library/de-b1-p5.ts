@@ -386,8 +386,8 @@ export const deB1P5: SkillExercise[] = [
         text: "Cümleyi doğru sıraya diz.",
         options: [],
         answer: 0,
-        items: ["Ich", "hoffe", "bald", "wieder", "zu", "kommen"],
-        explain: "Zu'lu mastar öbeği cümlenin sonunda durur: Ich hoffe, bald wieder zu kommen.",
+        items: ["Ich", "hoffe", "bald", "mehr Zeit", "zu", "haben"],
+        explain: "Zu'lu mastar öbeği cümlenin sonunda durur: Ich hoffe, bald mehr Zeit zu haben.",
       },
       {
         kind: "truefalse",

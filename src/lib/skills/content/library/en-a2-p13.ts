@@ -391,7 +391,7 @@ export const enA2P13: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "He doesn't have a flatmate. He lives by ___.",
+        text: "He doesn't have a roommate. He lives by ___.",
         options: [],
         answer: 0,
         accept: ["himself"],

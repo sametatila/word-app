@@ -354,11 +354,11 @@ export const deC1P6: SkillExercise[] = [
       },
       {
         heading: "Edat ve artikel donmuştur",
-        tr: "Bu kalıplarda edat ve artikel sabittir ve değiştirilemez: „in Frage“ artikelsiz, „zur Verfügung“ kaynaşmış, „in Kauf nehmen“ artikelsiz. „eine Frage stellen“ ise kalıp değil, düz bir cümledir — aradaki fark artikeldedir. Bu yüzden bu öbekler bir bütün olarak ezberlenir.",
+        tr: "Bu kalıplarda edat ve artikel sabittir ve değiştirilemez: „in Frage“ artikelsiz, „zur Verfügung“ kaynaşmış, „in Kauf nehmen“ artikelsiz. Buna karşılık „die Vase auf den Tisch stellen“ kalıp değildir: orada „stellen“ gerçek anlamıyla „koymak“ demektir. Bu yüzden bu öbekler bir bütün olarak ezberlenir.",
         examples: [
           { de: "Wir nehmen den Aufwand in Kauf.", tr: "Zahmeti göze alıyoruz.", note: "artikelsiz, donmuş" },
           { de: "Die Regel findet hier keine Anwendung.", tr: "Kural burada uygulanmıyor.", note: "= wird nicht angewendet" },
-          { de: "Sie stellt eine Frage.", tr: "Bir soru soruyor.", note: "kalıp DEĞİL: normal nesne" },
+          { de: "Sie stellt die Vase auf den Tisch.", tr: "Vazoyu masaya koyuyor.", note: "kalıp DEĞİL: fiil gerçek anlamında" },
         ],
       },
     ],
@@ -426,8 +426,8 @@ export const deC1P6: SkillExercise[] = [
         text: "Cümleyi doğru sıraya diz.",
         options: [],
         answer: 0,
-        items: ["Das Institut", "stellt", "die Tabelle", "der Öffentlichkeit", "zur Verfügung"],
-        explain: "İşlev fiili ikinci sırada, donmuş öbek cümlenin sonunda durur.",
+        items: ["Das Institut", "stellt", "uns", "die Tabelle", "zur Verfügung"],
+        explain: "İşlev fiili ikinci sırada, zamir („uns“) isimden önce, donmuş öbek cümlenin sonunda durur.",
       },
       {
         kind: "truefalse",
@@ -438,10 +438,10 @@ export const deC1P6: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„Sie stellt eine Frage.“ — Bu bir işlev fiili öbeği mi?",
+        text: "„Sie stellt die Vase auf den Tisch.“ — Bu bir işlev fiili öbeği mi?",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Burada artikel var ve „Frage“ gerçek bir nesnedir; kalıp „in Frage stellen“dir.",
+        explain: "Burada „stellen“ kendi anlamını (koymak) taşır; işlev fiili öbeğinde fiil anlamını yitirir, örneğin „in Frage stellen“.",
       },
     ],
   },

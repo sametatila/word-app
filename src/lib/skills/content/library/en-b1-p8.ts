@@ -413,7 +413,7 @@ export const enB1P8: SkillExercise[] = [
         text: "Cümleyi doğru sıraya diz.",
         options: [],
         answer: 0,
-        items: ["I've", "been", "going", "to this shop", "for three weeks"],
+        items: ["I've", "been", "learning", "Spanish", "for three weeks"],
         explain: "have been + -ing + for + süre.",
       },
       {

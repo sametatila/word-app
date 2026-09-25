@@ -416,7 +416,7 @@ export const deA2P20: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Er kommt nicht heute, er kommt ___ morgen. (erst / schon)",
+        text: "Er kommt heute nicht. Er kommt ___ morgen. (erst / schon)",
         options: [],
         answer: 0,
         accept: ["erst"],

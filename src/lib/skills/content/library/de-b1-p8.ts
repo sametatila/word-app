@@ -303,7 +303,7 @@ export const deB1P8: SkillExercise[] = [
     focus: "Edatlı fiiller ve wo(r)- / da(r)- biçimleri",
     gloss: [
       { de: "warten", tr: "beklemek", en: "to wait" },
-      { de: "sich kümmern", tr: "ilgilenmek", en: "to take care" },
+      { de: "sich kümmern", tr: "ilgilenmek", en: "to take care (of)" },
       { de: "denken", tr: "düşünmek", en: "to think" },
       { de: "der Urlaub", tr: "tatil", en: "vacation" },
       { de: "der Bus", tr: "otobüs", en: "bus" },
@@ -353,7 +353,7 @@ export const deB1P8: SkillExercise[] = [
       },
       {
         text: "Der Zug kommt gleich, ___ warte ich.",
-        options: ["auf ihn", "darauf", "worauf"],
+        options: ["dafür", "darauf", "worauf"],
         answer: 1,
         explain: "Eşyaya işaret: da + r + auf = darauf.",
       },
@@ -409,7 +409,7 @@ export const deB1P8: SkillExercise[] = [
         text: "„Wofür interessierst du dich?“ — Bu soru doğru mu?",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Konu bir alan, yani eşya sınıfında; wofür doğru biçimdir.",
+        explain: "Kişi değil bir konu soruluyor (ilgi alanı); bu yüzden wofür doğru biçimdir.",
       },
     ],
   },

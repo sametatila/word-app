@@ -361,7 +361,7 @@ export const deC1P4: SkillExercise[] = [
     questions: [
       {
         text: "Komm ___ mit, es dauert wirklich nicht lange.",
-        options: ["doch", "ja", "eben"],
+        options: ["doch", "ja", "etwa"],
         answer: 0,
         explain: "„doch“ emri yumuşatır ve karşıdakinin tereddüdüne cevap verir; „ja“ burada tehdit tonu getirirdi.",
       },
@@ -373,7 +373,7 @@ export const deC1P4: SkillExercise[] = [
       },
       {
         text: "Kannst du mir ___ kurz helfen?",
-        options: ["mal", "ja", "eben"],
+        options: ["mal", "ja", "halt"],
         answer: 0,
         explain: "„mal“ ricayı küçültür ve gündelikleştirir: büyük bir şey istemiyorum demektir.",
       },
@@ -390,23 +390,23 @@ export const deC1P4: SkillExercise[] = [
         text: "Du weißt ___ selbst, wie das läuft.",
         options: [],
         answer: 0,
-        accept: ["ja"],
-        explain: "„ja“ karşındakinin zaten bildiği bilgiye gönderme yapar.",
+        accept: ["ja", "doch"],
+        explain: "„ja“ (ya da „doch“) karşındakinin zaten bildiği bilgiye gönderme yapar.",
       },
       {
         kind: "gapfill",
         text: "Ruf mich ___ an, wenn du Zeit hast.",
         options: [],
         answer: 0,
-        accept: ["mal"],
-        explain: "Rica gündelikleşiyor ve zorunluluk hissi kayboluyor: ruf mich mal an.",
+        accept: ["mal", "doch", "doch mal"],
+        explain: "Rica gündelikleşiyor ve zorunluluk hissi kayboluyor: ruf mich mal an. „doch“ da olur: çağrıyı yumuşatır.",
       },
       {
         kind: "gapfill",
         text: "Ich habe es dir ___ gesagt!",
         options: [],
         answer: 0,
-        accept: ["doch"],
+        accept: ["doch", "ja"],
         explain: "„doch“ burada karşıdakinin unuttuğu bir şeyi hatırlatır ve sitem tonu taşır.",
       },
       {

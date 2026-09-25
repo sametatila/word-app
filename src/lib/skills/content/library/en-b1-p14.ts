@@ -360,7 +360,7 @@ export const enB1P14: SkillExercise[] = [
         explain: "Olumsuz cümleye olumlu ek: „does she?“",
       },
       {
-        text: "I'm next in the queue, ___?",
+        text: "I'm next in line, ___?",
         options: ["aren't I", "isn't I", "don't I"],
         answer: 0,
         explain: "„I am“ cümlesinin eki istisnadır: „aren't I?“",

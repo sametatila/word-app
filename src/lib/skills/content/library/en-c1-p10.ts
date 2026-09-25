@@ -365,7 +365,7 @@ export const enC1P10: SkillExercise[] = [
         examples: [
           { de: "I needn't have been so confident.", tr: "O kadar emin olmama gerek yokmuş.", note: "oldu ve gereksizdi" },
           { de: "I didn't need to check it again.", tr: "Tekrar kontrol etmem gerekmiyordu.", note: "gerekmiyordu, muhtemelen yapmadı" },
-          { de: "You needn't have waited.", tr: "Beklemene gerek yokmuş.", note: "bekledi" },
+          { de: "You needn't have waited.", tr: "Beklemene gerek yokmuş.", note: "bekledin" },
         ],
       },
       {
@@ -379,7 +379,7 @@ export const enC1P10: SkillExercise[] = [
       },
       {
         heading: "was to have: gerçekleşmemiş düzenleme",
-        tr: "„was/were to have done“ planlanmış ama gerçekleşmemiş bir şeyi bildirir ve resmî anlatıda kullanılır: „The report was to have been published in March.“ „was to do“ ise planın gerçekleştiğini ima eder. Ayrıca „might have“ ve „could have“ gerçekleşmemiş bir olasılığı taşır: „It could have been much worse.“",
+        tr: "„was/were to have done“ planlanmış ama gerçekleşmemiş bir şeyi bildirir ve resmî anlatıda kullanılır: „The report was to have been published in March.“ „was to do“ ise yalnız planı bildirir; anlatıda çoğu zaman gerçekleştiğini ima eder. Ayrıca „might have“ ve „could have“ gerçekleşmemiş bir olasılığı taşır: „It could have been much worse.“",
         examples: [
           { de: "The report was to have been published in March.", tr: "Rapor mart ayında yayımlanacaktı.", note: "yayımlanmadı" },
           { de: "It could have been much worse.", tr: "Çok daha kötü olabilirdi.", note: "olmadı" },
@@ -399,7 +399,7 @@ export const enC1P10: SkillExercise[] = [
         explain: "„needn't have“ eylemin yapıldığını ve gereksiz olduğunu bildirir.",
       },
       {
-        text: "They ___ published it so quickly.",
+        text: "They ___ published it so quickly — it was full of errors.",
         options: ["needn't have", "shouldn't have", "didn't need to"],
         answer: 1,
         explain: "Yayımlandı ve yayımlanmamalıydı: shouldn't have.",
@@ -416,10 +416,10 @@ export const enC1P10: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "I ___ have checked the figure before publishing it. (should)",
+        text: "I ___ have checked the figure before publishing it. (I didn't, and that was a mistake)",
         options: [],
         answer: 0,
-        accept: ["should"],
+        accept: ["should", "ought to"],
         explain: "Yapılmayan ama yapılması gereken: should have.",
       },
       {
@@ -428,19 +428,19 @@ export const enC1P10: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["needn't", "need not"],
-        explain: "Bekledi ve gereksizdi: needn't have.",
+        explain: "Bekledin ama gerek yoktu: needn't have.",
       },
       {
         kind: "gapfill",
-        text: "It ___ have been much worse. (could)",
+        text: "It ___ have been much worse. (a possibility that did not happen)",
         options: [],
         answer: 0,
-        accept: ["could"],
+        accept: ["could", "might"],
         explain: "Gerçekleşmemiş bir olasılık.",
       },
       {
         kind: "gapfill",
-        text: "He ___ to have warned us. (ought)",
+        text: "He ___ to have warned us. (= he should have warned us)",
         options: [],
         answer: 0,
         accept: ["ought"],
@@ -452,7 +452,7 @@ export const enC1P10: SkillExercise[] = [
         options: [],
         answer: 0,
         items: ["She", "might", "have", "told us", "earlier"],
-        explain: "might have + üçüncü biçim + nesne + zaman.",
+        explain: "might have + üçüncü hâl + nesne + zaman.",
       },
       {
         kind: "truefalse",

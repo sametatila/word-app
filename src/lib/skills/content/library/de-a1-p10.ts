@@ -339,7 +339,7 @@ export const deA1P10: SkillExercise[] = [
         tr: "Cümleye zaman, yer ya da bir nesne ile başlarsan özne fiilin ARKASINA geçer. Bu bir seçim değil zorunluluk: fiilin ikinci sırası korunmak zorundadır. „Heute ich arbeite“ bu yüzden yanlıştır.",
         examples: [
           { de: "Manchmal koche ich abends.", tr: "Bazen akşamları yemek pişiririm.", note: "özne fiilin arkasında" },
-          { de: "Das Frühstück macht mein Mann.", tr: "Kahvaltıyı eşim hazırlar.", note: "nesne başta, özne arkada" },
+          { de: "Das Frühstück macht mein Mann.", tr: "Kahvaltıyı kocam hazırlar.", note: "nesne başta, özne arkada" },
           { de: "In Hamburg wohnt meine Schwester.", tr: "Hamburg'da kız kardeşim oturuyor.", note: "yer başta" },
         ],
       },

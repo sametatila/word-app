@@ -306,7 +306,7 @@ export const deB1P10: SkillExercise[] = [
       { de: "abfahren", tr: "kalkmak", en: "to depart" },
       { de: "geöffnet", tr: "açık", en: "open" },
       { de: "das Büro", tr: "büro", en: "office" },
-      { de: "nachfragen", tr: "sormak", en: "to enquire" },
+      { de: "nachfragen", tr: "sormak", en: "to inquire" },
     ],
     minutes: 9,
     explanation: [

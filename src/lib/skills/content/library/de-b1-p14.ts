@@ -324,7 +324,7 @@ export const deB1P14: SkillExercise[] = [
         examples: [
           { de: "Es war heiß, deshalb blieben wir im Schatten.", tr: "Hava sıcaktı, bu yüzden gölgede kaldık.", note: "deshalb + fiil" },
           { de: "Es war heiß, sodass wir im Schatten blieben.", tr: "Hava sıcaktı, öyle ki gölgede kaldık.", note: "sodass: fiil sonda" },
-          { de: "Die Hitze war so groß, dass die Schule früher endete.", tr: "Sıcak o kadar büyüktü ki okul erken bitti.", note: "so groß, dass" },
+          { de: "Die Hitze war so groß, dass die Schule früher endete.", tr: "Sıcak o kadar şiddetliydi ki okul erken bitti.", note: "so groß, dass" },
         ],
       },
     ],

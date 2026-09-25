@@ -335,7 +335,7 @@ export const enB2P12: SkillExercise[] = [
     explanation: [
       {
         heading: "Süren ve bugüne uzanan edilgen",
-        tr: "Edilgenin zamanı „be“ fiilinden okunur. Şu anda süren iş için „is/are being + üçüncü biçim“, sonucu bugün görünen iş için „has/have been + üçüncü biçim“ kullanılır. Geçmişte o anda sürüyorsa „was/were being“ olur.",
+        tr: "Edilgenin zamanı „be“ fiilinden okunur. Şu anda süren iş için „is/are being + üçüncü hâl“, sonucu bugün görünen iş için „has/have been + üçüncü hâl“ kullanılır. Geçmişte o anda sürüyorsa „was/were being“ olur.",
         examples: [
           { de: "The system is being updated this week.", tr: "Sistem bu hafta güncelleniyor.", note: "şu anda süren" },
           { de: "Your appointment has been moved to Tuesday.", tr: "Randevunuz salıya alındı.", note: "sonuç bugün" },
@@ -344,7 +344,7 @@ export const enB2P12: SkillExercise[] = [
       },
       {
         heading: "Kipli edilgen",
-        tr: "Kip fiilinden sonra „be + üçüncü biçim“ gelir: „must be confirmed“, „can be canceled“. Geçmişe dönük yargıda „should/could/must have been + üçüncü biçim“ kullanılır; „should have been“ çoğu zaman yapılmamış bir işi eleştirir.",
+        tr: "Kip fiilinden sonra „be + üçüncü hâl“ gelir: „must be confirmed“, „can be canceled“. Geçmişe dönük yargıda „should/could/must have been + üçüncü hâl“ kullanılır; „should have been“ çoğu zaman yapılmamış bir işi eleştirir.",
         examples: [
           { de: "Changes must be confirmed by the patient.", tr: "Değişiklikler hasta tarafından onaylanmalı.", note: "must be" },
           { de: "Appointments can be canceled by text.", tr: "Randevular mesajla iptal edilebilir.", note: "can be" },
@@ -366,19 +366,19 @@ export const enB2P12: SkillExercise[] = [
         text: "Your prescription ___ by the doctor, so you can collect it now.",
         options: ["has been signed", "has signed", "is signing"],
         answer: 0,
-        explain: "Reçete imzalayan değil imzalanan; sonucu bugün görünüyor: has been + üçüncü biçim.",
+        explain: "Reçete imzalayan değil imzalanan; sonucu bugün görünüyor: has been + üçüncü hâl.",
       },
       {
         text: "The system ___ at the moment, so the lines are busy.",
         options: ["is updated", "is being updated", "has updated"],
         answer: 1,
-        explain: "„at the moment“ şu anda süren edilgen ister: is being + üçüncü biçim.",
+        explain: "„at the moment“ şu anda süren edilgen ister: is being + üçüncü hâl.",
       },
       {
         text: "Nobody told her. She ___ about the change.",
         options: ["should inform", "should be informing", "should have been informed"],
         answer: 2,
-        explain: "Geçmişte yapılması gerekip yapılmamış edilgen iş: should have been + üçüncü biçim.",
+        explain: "Geçmişte yapılması gerekip yapılmamış edilgen iş: should have been + üçüncü hâl.",
       },
       {
         kind: "gapfill",
@@ -386,7 +386,7 @@ export const enB2P12: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["be"],
-        explain: "Kip fiilinden sonra edilgen „be + üçüncü biçim“ ile kurulur.",
+        explain: "Kip fiilinden sonra edilgen „be + üçüncü hâl“ ile kurulur.",
       },
       {
         kind: "gapfill",
@@ -394,15 +394,15 @@ export const enB2P12: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["being"],
-        explain: "Geçmişte o anda süren edilgen: was being + üçüncü biçim.",
+        explain: "Geçmişte o anda süren edilgen: was being + üçüncü hâl.",
       },
       {
         kind: "gapfill",
         text: "Appointments can be ___ by text. (cancel)",
         options: [],
         answer: 0,
-        accept: ["canceled", "canceled"],
-        explain: "„can be“ ardından üçüncü biçim gelir.",
+        accept: ["canceled"],
+        explain: "„can be“ ardından üçüncü hâl gelir.",
       },
       {
         kind: "gapfill",
@@ -410,7 +410,7 @@ export const enB2P12: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["has"],
-        explain: "Sonucu bugün görünen edilgen: has been + üçüncü biçim.",
+        explain: "Sonucu bugün görünen edilgen: has been + üçüncü hâl.",
       },
       {
         kind: "order",
@@ -418,14 +418,14 @@ export const enB2P12: SkillExercise[] = [
         options: [],
         answer: 0,
         items: ["She", "should have been", "informed", "about the change"],
-        explain: "Özne + should have been + üçüncü biçim + tümleç.",
+        explain: "Özne + should have been + üçüncü hâl + tümleç.",
       },
       {
         kind: "truefalse",
         text: "„The system is being updated.“ — Güncelleme şu anda sürüyor mu?",
         options: ["True", "False"],
         answer: 0,
-        explain: "„is being + üçüncü biçim“ şu anda süren edilgen işi anlatır.",
+        explain: "„is being + üçüncü hâl“ şu anda süren edilgen işi anlatır.",
       },
       {
         kind: "truefalse",

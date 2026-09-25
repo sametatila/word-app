@@ -303,7 +303,7 @@ export const enB1P16: SkillExercise[] = [
     intro: "Türkçedeki „de/da“ İngilizcede dört sözcüğe dağılır; her birinin cümlede kendi yeri vardır ve olumsuz cümle ayrı bir sözcük ister.",
     focus: "Ekleme sözcükleri: also, too, as well ve olumsuzda either — cümledeki yerleri",
     gloss: [
-      { de: "horror film", tr: "korku filmi" },
+      { de: "horror movie", tr: "korku filmi" },
       { de: "meat", tr: "et" },
       { de: "old town", tr: "eski şehir" },
       { de: "hungry", tr: "aç" },
@@ -340,7 +340,7 @@ export const enB1P16: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "I don't like horror films ___.",
+        text: "I don't like horror movies ___.",
         options: ["either", "too", "also"],
         answer: 0,
         explain: "Olumsuz cümlede „de/da“ „either“ ile söylenir.",

@@ -335,7 +335,7 @@ export const deC1P3: SkillExercise[] = [
     explanation: [
       {
         heading: "Üç yol, bir anlam",
-        tr: "Türkçede „yapılabilir“ tek bir ekle kurulur. Almancada „kann gemacht werden“ yerine üç hafif biçim vardır: „lässt sich machen“, „ist zu machen“ ve „ist machbar“. Üçü de faili söylemez ve resmî metinlerde werden-edilgeninden daha akıcı durur.",
+        tr: "Türkçede „yapılabilir“ tek bir fiil çekimiyle kurulur. Almancada „kann gemacht werden“ yerine üç hafif biçim vardır: „lässt sich machen“, „ist zu machen“ ve „ist machbar“. Üçü de faili söylemez ve resmî metinlerde werden-edilgeninden daha akıcı durur.",
         examples: [
           { de: "Das Problem lässt sich lösen.", tr: "Sorun çözülebilir.", note: "= kann gelöst werden" },
           { de: "Das Problem ist zu lösen.", tr: "Sorunun çözülmesi gerekir.", note: "bağlama göre zorunluluk" },
@@ -370,7 +370,7 @@ export const deC1P3: SkillExercise[] = [
       },
       {
         text: "Der Antrag ist bis Freitag ___.",
-        options: ["einzureichen", "eingereicht", "einreichen"],
+        options: ["einzureichen", "zu einreichen", "einreichen"],
         answer: 0,
         explain: "„sein + zu + mastar“ yapısında ayrılabilen fiilde „zu“ ortaya girer: einzureichen.",
       },

@@ -149,7 +149,7 @@ export const enA1P17: SkillExercise[] = [
     intro: "Türkçede sporların çoğu „oynamak“ ya da „yapmak“ ile söylenir; İngilizcede üç ayrı fiil var ve hangisinin geleceğini etkinliğin türü belirler.",
     focus: "Spor ve etkinlik fiilleri: play, go + -ing ve do",
     gloss: [
-      { de: "football", tr: "futbol" },
+      { de: "soccer", tr: "futbol" },
       { de: "karate", tr: "karate" },
       { de: "yoga", tr: "yoga" },
       { de: "homework", tr: "ev ödevi" },
@@ -158,9 +158,9 @@ export const enA1P17: SkillExercise[] = [
     explanation: [
       {
         heading: "play: topla ve karşılıklı oynanan oyunlar",
-        tr: "Topla ya da raketle, karşılıklı oynanan oyunlar „play“ ile söylenir: play football, play tennis. Oyunun adından önce „the“ konmaz: „play the football“ yanlıştır.",
+        tr: "Topla ya da raketle, karşılıklı oynanan oyunlar „play“ ile söylenir: play soccer, play tennis. Oyunun adından önce „the“ konmaz: „play the tennis“ yanlıştır.",
         examples: [
-          { de: "We play football on Sundays.", tr: "Pazar günleri futbol oynarız." },
+          { de: "We play soccer on Sundays.", tr: "Pazar günleri futbol oynarız." },
           { de: "Do you play tennis?", tr: "Tenis oynar mısın?" },
           { de: "My grandpa plays cards every evening.", tr: "Dedem her akşam kâğıt oynar.", note: "play → plays" },
         ],
@@ -171,7 +171,7 @@ export const enA1P17: SkillExercise[] = [
         examples: [
           { de: "I go swimming on Mondays.", tr: "Pazartesileri yüzmeye giderim." },
           { de: "They go running in the park.", tr: "Parkta koşuya giderler." },
-          { de: "She goes shopping on Saturday.", tr: "Cumartesi alışverişe gider.", note: "go → goes" },
+          { de: "She goes shopping on Saturdays.", tr: "Cumartesileri alışverişe gider.", note: "go → goes" },
         ],
       },
       {
@@ -186,7 +186,7 @@ export const enA1P17: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "We ___ football on Sundays.",
+        text: "We ___ soccer on Sundays.",
         options: ["go", "play", "do"],
         answer: 1,
         explain: "Futbol topla ve karşılıklı oynanır, bu yüzden play.",
@@ -205,7 +205,7 @@ export const enA1P17: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "She ___ shopping on Saturday. (go)",
+        text: "She ___ shopping on Saturdays. (go)",
         options: [],
         answer: 0,
         accept: ["goes"],

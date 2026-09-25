@@ -350,13 +350,13 @@ export const deB2P2: SkillExercise[] = [
         text: "Er sagt, er ___ krank.",
         options: ["sei", "ist", "wäre"],
         answer: 0,
-        explain: "Dolaylı aktarımın temel biçimi Konjunktiv I'dir: er sei.",
+        explain: "Yazılı aktarımın temel biçimi Konjunktiv I'dir: er sei. „wäre“ ancak Konjunktiv I ayırt edilemediğinde ya da konuşma dilinde gelir; „ist“ aktarım işaretini kaybeder.",
       },
       {
         text: "Sie erklärte, sie ___ keine Zeit.",
         options: ["habe", "hat", "hätte"],
         answer: 0,
-        explain: "Üçüncü tekilde Konjunktiv I gösterge kipinden ayrılır: sie habe.",
+        explain: "Üçüncü tekilde Konjunktiv I gösterge kipinden ayrılır: sie habe. Biçim ayırt edilebildiği için Konjunktiv II'ye (hätte) gerek yok.",
       },
       {
         text: "Die Sprecherin sagte, die Arbeiten ___ im April.",
@@ -409,7 +409,7 @@ export const deB2P2: SkillExercise[] = [
         text: "„In einem Bericht schreibt man: Er sagt, er hat keine Zeit.“ — Bu doğru mu?",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Rapor dilinde gösterge kipi aktaranın onayı gibi okunur; doğrusu „er habe keine Zeit“.",
+        explain: "Rapor dilinde aktarımın standart biçimi Konjunktiv I'dir; gösterge kipi, aktaran sözü doğru kabul ediyormuş gibi okunabilir. Doğrusu „er habe keine Zeit“.",
       },
       {
         kind: "truefalse",

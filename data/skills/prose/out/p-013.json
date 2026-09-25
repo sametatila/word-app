@@ -215,14 +215,14 @@
   "en": "The particle of acceptance „eben“ („halt“ in the south) fits here."
  },
  {
-  "tr": "Rica gündelikleşiyor ve zorunluluk hissi kayboluyor: ruf mich mal an.",
+  "tr": "Rica gündelikleşiyor ve zorunluluk hissi kayboluyor: ruf mich mal an. „doch“ da olur: çağrıyı yumuşatır.",
   "kind": "explain",
-  "en": "The request becomes everyday and the sense of obligation drops away: ruf mich mal an."
+  "en": "The request becomes everyday and the sense of obligation drops away: ruf mich mal an. „doch“ also works: it softens the invitation."
  },
  {
-  "tr": "Saat soruluyorsa soru kelimesi wann'dır; fiil hemen arkasından gelir.",
+  "tr": "Cevap bir saat (um acht Uhr); saat sorarken soru kelimesi wann'dır, fiil hemen arkasından gelir.",
   "kind": "explain",
-  "en": "If the time is asked the question word is wann; the verb comes straight after it."
+  "en": "The answer is a clock time (um acht Uhr); to ask about the time the question word is wann, and the verb comes straight after it."
  },
  {
   "tr": "Sıra: özne + be + going to + yalın fiil: I am going to study tonight.",
@@ -273,11 +273,6 @@
   "tr": "Yanlış: „Sie sind schwer zu gewichten“ — sorun okumak değil, tartmak.",
   "kind": "explain",
   "en": "False: „Sie sind schwer zu gewichten“ — the trouble is not reading them but weighing them."
- },
- {
-  "tr": "Yaptırma yapısında yalnız „have“ kullanılır; „do“ ya da „make“ değil.",
-  "kind": "explain",
-  "en": "Only „have“ is used in the causative structure; not „do“ or „make“."
  },
  {
   "tr": "Yer soruluyor, dişil kelimenin Dativ artikeli der'dir: in der Tasche.",
@@ -470,7 +465,7 @@
   "en": "A corporate crisis statement. What is admitted, and what is passed over in silence?"
  },
  {
-  "tr": "Masayı biri kurmuştur; tamamlanmış ve edilgin anlam Partizip II ister.",
+  "tr": "Masayı biri kurmuştur; tamamlanmış ve edilgen anlam Partizip II ister.",
   "kind": "explain",
   "en": "Somebody has laid the table; a completed, passive sense needs the Partizip II."
  },

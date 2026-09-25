@@ -88,11 +88,11 @@ export const enA1P18: SkillExercise[] = [
     skill: "grammar",
     title: "a pair of jeans",
     genre: "grammar",
-    intro: "İki parçalı bazı eşyalar İngilizcede hep çoğuldur: jeans, trousers, glasses. Türkçede „bir pantolon“ tekildir; İngilizcede bu farkı „a pair of“ kapatır.",
-    focus: "Hep çoğul isimler: jeans, trousers, glasses, shorts ve a pair of",
+    intro: "İki parçalı bazı eşyalar İngilizcede hep çoğuldur: jeans, pants, glasses. Türkçede „bir pantolon“ tekildir; İngilizcede bu farkı „a pair of“ kapatır.",
+    focus: "Hep çoğul isimler: jeans, pants, glasses, shorts ve a pair of",
     gloss: [
       { de: "jeans", tr: "kot pantolon" },
-      { de: "trousers", tr: "pantolon" },
+      { de: "pants", tr: "pantolon" },
       { de: "glasses", tr: "gözlük" },
       { de: "pair", tr: "çift" },
     ],
@@ -100,20 +100,20 @@ export const enA1P18: SkillExercise[] = [
     explanation: [
       {
         heading: "İki parçalı eşyalar hep çoğul",
-        tr: "İki bacaklı ya da iki camlı eşyalar tek bir eşya olsa da İngilizcede çoğul isimdir: jeans, trousers, shorts, glasses. Bu yüzden fiil „are“ olur ve isimden önce „a“ gelmez.",
+        tr: "İki bacaklı ya da iki camlı eşyalar tek bir eşya olsa da İngilizcede çoğul isimdir: jeans, pants, shorts, glasses. Bu yüzden fiil „are“ olur ve isimden önce „a“ gelmez.",
         examples: [
           { de: "My jeans are blue.", tr: "Kot pantolonum mavi.", note: "tek pantolon, fiil are" },
           { de: "Where are my glasses?", tr: "Gözlüğüm nerede?" },
-          { de: "These trousers are new.", tr: "Bu pantolon yeni.", note: "these + are" },
+          { de: "These pants are new.", tr: "Bu pantolon yeni.", note: "these + are" },
         ],
       },
       {
         heading: "Saymak için: a pair of",
-        tr: "Kaç tane olduğunu söylemek için „a pair of“ (bir çift) kullanılır: a pair of jeans, two pairs of trousers. Bu kalıpla fiil „pair“e uyar ve tekil olur: This pair of glasses is new.",
+        tr: "Kaç tane olduğunu söylemek için „a pair of“ (bir çift) kullanılır: a pair of jeans, two pairs of pants. Bu kalıpla fiil „pair“e uyar ve tekil olur: This pair of glasses is new.",
         examples: [
           { de: "I need a pair of jeans.", tr: "Bir kot pantolona ihtiyacım var." },
           { de: "She has three pairs of shorts.", tr: "Üç şortu var.", note: "çoğul: pairs" },
-          { de: "This pair of glasses is ninety euros.", tr: "Bu gözlük doksan euro.", note: "pair → is" },
+          { de: "This pair of glasses is ninety dollars.", tr: "Bu gözlük doksan dolar.", note: "pair → is" },
         ],
       },
       {
@@ -122,7 +122,7 @@ export const enA1P18: SkillExercise[] = [
         examples: [
           { de: "I love your jeans! Are they new?", tr: "Kot pantolonuna bayıldım! Yeni mi?", note: "it değil they" },
           { de: "Where are my glasses? I can't find them.", tr: "Gözlüğüm nerede? Bulamıyorum.", note: "it değil them" },
-          { de: "How much are these trousers? — They're thirty euros.", tr: "Bu pantolon ne kadar? — Otuz euro." },
+          { de: "How much are these pants? — They're thirty dollars.", tr: "Bu pantolon ne kadar? — Otuz dolar." },
         ],
       },
     ],
@@ -163,7 +163,7 @@ export const enA1P18: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "This pair of glasses ___ ninety euros. (be)",
+        text: "This pair of glasses ___ ninety dollars. (be)",
         options: [],
         answer: 0,
         accept: ["is"],
@@ -171,26 +171,26 @@ export const enA1P18: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "I can't find my trousers. Where are ___?",
+        text: "I can't find my pants. Where are ___?",
         options: [],
         answer: 0,
         accept: ["they"],
-        explain: "trousers çoğul; soruda zamiri de they olur.",
+        explain: "pants çoğul; soruda zamiri de they olur.",
       },
       {
         kind: "order",
         text: "Cümleyi doğru sıraya diz.",
         options: [],
         answer: 0,
-        items: ["I", "need", "a pair of", "trousers"],
-        explain: "Özne + fiil + a pair of + isim: I need a pair of trousers.",
+        items: ["I", "need", "a pair of", "pants"],
+        explain: "Özne + fiil + a pair of + isim: I need a pair of pants.",
       },
       {
         kind: "truefalse",
-        text: "„My trousers is black.“ — Bu cümle doğru mu?",
+        text: "„My pants is black.“ — Bu cümle doğru mu?",
         options: ["True", "False"],
         answer: 1,
-        explain: "trousers çoğul bir isimdir: „My trousers are black.“",
+        explain: "pants çoğul bir isimdir: „My pants are black.“",
       },
       {
         kind: "truefalse",

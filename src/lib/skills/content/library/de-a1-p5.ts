@@ -354,10 +354,10 @@ export const deA1P5: SkillExercise[] = [
         explain: "„anfangen“ ayrılır ve kök a → ä olur: fängt … an.",
       },
       {
-        text: "___ kommst du her?",
+        text: "___ kommst du? — Aus der Türkei.",
         options: ["Woher", "Wohin", "Wo"],
         answer: 0,
-        explain: "„herkommen“ kaynağı sorar; kaynak için soru kelimesi woher'dir.",
+        explain: "Cevap bir kaynak (aus …); nereden geldiğini soran kelime woher'dir.",
       },
       {
         kind: "gapfill",
@@ -377,11 +377,11 @@ export const deA1P5: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "___ fährt der Bus ab? (Wann / Wo / Wer)",
+        text: "___ fährt der Bus ab? — Um acht Uhr. (Wann / Wo / Wer)",
         options: [],
         answer: 0,
         accept: ["Wann", "wann"],
-        explain: "Saat soruluyorsa soru kelimesi wann'dır; fiil hemen arkasından gelir.",
+        explain: "Cevap bir saat (um acht Uhr); saat sorarken soru kelimesi wann'dır, fiil hemen arkasından gelir.",
       },
       {
         kind: "gapfill",

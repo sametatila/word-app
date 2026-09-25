@@ -334,7 +334,7 @@ export const deA2P6: SkillExercise[] = [
       { de: "glauben", tr: "inanmak", en: "to believe" },
       { de: "wissen", tr: "bilmek", en: "to know" },
       { de: "absagen", tr: "iptal etmek", en: "to cancel" },
-      { de: "krank", tr: "hasta", en: "ill" },
+      { de: "krank", tr: "hasta", en: "sick" },
     ],
     minutes: 8,
     explanation: [
@@ -352,7 +352,7 @@ export const deA2P6: SkillExercise[] = [
         tr: "„dass“ bir cümleyi başka bir cümlenin nesnesi yapar: „Biliyorum ki …“, „Sanıyorum ki …“. Kural aynı: „dass“tan sonra fiil sona gider. Türkçedeki „-diğini“ yapısının karşılığıdır.",
         examples: [
           { de: "Ich weiß, dass du morgen arbeitest.", tr: "Yarın çalıştığını biliyorum.", note: "arbeitest → sonda" },
-          { de: "Sie glaubt, dass der Zug Verspätung hat.", tr: "Trenin gecikeceğini düşünüyor.", note: "hat → sonda" },
+          { de: "Sie glaubt, dass der Zug Verspätung hat.", tr: "Trenin rötarlı olduğunu düşünüyor.", note: "hat → sonda" },
           { de: "Es ist gut, dass du angerufen hast.", tr: "Araman iyi oldu.", note: "Perfekt'te yardımcı fiil en sonda" },
         ],
       },

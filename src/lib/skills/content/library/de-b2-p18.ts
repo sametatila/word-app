@@ -340,7 +340,7 @@ export const deB2P18: SkillExercise[] = [
       },
       {
         heading: "Karma fiiller ve tun",
-        tr: "wissen, brauchen, bringen gibi karma fiiller de kendi biçimini alır: wusste → wüsste, brauchte → bräuchte, brachte → brächte. „bräuchte“ konuşmada çok yaygındır. „tun“ → „täte“ ise daha çok kalıplarda yaşar: „Das täte mir leid.“, „Du tätest gut daran, …“",
+        tr: "wissen, bringen gibi karma fiiller de kendi biçimini alır: wusste → wüsste, brachte → brächte. Düzenli bir fiil olan „brauchen“ da konuşmada umlautlu „bräuchte“ biçimini alır; bu biçim çok yaygındır ve artık yazıda da kabul görür. „tun“ → „täte“ ise daha çok kalıplarda yaşar: „Das täte mir leid.“, „Du tätest gut daran, …“",
         examples: [
           { de: "Wenn ich wüsste, wo der Igel schläft, würde ich dort nicht mähen.", tr: "Kirpinin nerede uyuduğunu bilsem orayı biçmezdim.", note: "wusste → wüsste" },
           { de: "Bräuchten wir dafür eine Genehmigung?", tr: "Bunun için bir izne ihtiyacımız olur muydu?", note: "brauchte → bräuchte" },

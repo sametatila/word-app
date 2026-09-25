@@ -348,7 +348,7 @@ export const enB2P20: SkillExercise[] = [
       },
       {
         heading: "quite: iki anlam",
-        tr: "„quite“ derecelenen sıfatla „oldukça, epey“ anlamına gelir ve etkiyi yumuşatır: quite good. Derecelenemeyen sıfatla ise „tamamen“ anlamına gelir: quite right, quite impossible. Aynı sözcük sıfata göre ters yönde çalışır.",
+        tr: "„quite“ derecelenen sıfatla „oldukça, epey“ anlamına gelir: quite good. Derecelenemeyen sıfatla ise „tamamen“ anlamına gelir: quite right, quite impossible. Aynı sözcüğün gücü sıfata göre değişir.",
         examples: [
           { de: "The information is quite valuable.", tr: "Bilgi epey değerli.", note: "oldukça" },
           { de: "You're quite right about the data.", tr: "Veri konusunda tamamen haklısın.", note: "tamamen" },

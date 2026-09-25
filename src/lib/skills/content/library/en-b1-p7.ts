@@ -345,7 +345,7 @@ export const enB1P7: SkillExercise[] = [
       },
       {
         heading: "present continuous ve present simple",
-        tr: "Present continuous kesinleşmiş bir RANDEVU için kullanılır: „I'm meeting her at six“ — saat belli, karşı taraf biliyor. Present simple ise TARİFELER için: „The train leaves at 7.40“, „The course starts on Monday“. Kişisel plan değil, sabit bir program anlatır.",
+        tr: "Present continuous kesinleşmiş bir RANDEVU için kullanılır: „I'm meeting her at six“ — saat belli, karşı taraf biliyor. Present simple ise TARİFELER için: „The train leaves at 7:40“, „The course starts on Monday“. Kişisel plan değil, sabit bir program anlatır.",
         examples: [
           { de: "I'm meeting my supervisor at six.", tr: "Altıda sorumlumla buluşuyorum.", note: "randevu" },
           { de: "The train leaves at seven forty.", tr: "Tren yedi kırkta kalkıyor.", note: "tarife" },
@@ -367,8 +367,8 @@ export const enB1P7: SkillExercise[] = [
         explain: "Şu anda görünen bir kanıt var: going to.",
       },
       {
-        text: "The train ___ at seven forty.",
-        options: ["leaves", "is leaving", "will leave"],
+        text: "According to the schedule, the train ___ at seven forty.",
+        options: ["leaves", "leave", "leaving"],
         answer: 0,
         explain: "Tarife bildiriliyor: present simple.",
       },
@@ -382,7 +382,7 @@ export const enB1P7: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "I ___ my supervisor at six — it's in the calendar. (meet)",
+        text: "I ___ my supervisor at six — it's on my calendar. (meet)",
         options: [],
         answer: 0,
         accept: ["'m meeting", "am meeting"],

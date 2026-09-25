@@ -315,7 +315,7 @@ export const deB1: SkillExercise[] = [
     focus: "Nebensatz: weil / dass / wenn — çekimli fiil sona",
     gloss: [
       { de: "abholen", tr: "almaya gitmek", en: "to pick up" },
-      { de: "umziehen", tr: "taşınmak", en: "to move house" },
+      { de: "umziehen", tr: "taşınmak", en: "to move (to a new home)" },
       { de: "regnen", tr: "yağmur yağmak", en: "to rain" },
       { de: "die Adresse", tr: "adres", en: "address" },
     ],
@@ -323,7 +323,7 @@ export const deB1: SkillExercise[] = [
     explanation: [
       {
         heading: "Tek kural, üç bağlaç",
-        tr: "Türkçede yan cümle ekle kurulur ve fiil zaten sondadır: „vaktim olmadığı için“. Almancada ana cümlede fiil ikinci sıradadır, ama bir bağlaç geldiği anda çekimli fiil cümlenin en sonuna gider. Virgül zorunludur.",
+        tr: "Türkçede yan cümle ekle kurulur ve fiil zaten sondadır: „vaktim olmadığı için“. Almancada ana cümlede fiil ikinci sıradadır, ama weil, dass, wenn gibi bir yan cümle bağlacı geldiği anda çekimli fiil cümlenin en sonuna gider. Virgül zorunludur.",
         examples: [
           { de: "Ich komme nicht, weil ich keine Zeit habe.", tr: "Gelmiyorum, çünkü vaktim yok.", note: "habe sonda" },
           { de: "Ich hoffe, dass du bald kommst.", tr: "Umarım yakında gelirsin.", note: "kommst sonda" },

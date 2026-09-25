@@ -345,7 +345,7 @@ export const enB1P9: SkillExercise[] = [
         examples: [
           { de: "Don't give up now.", tr: "Şimdi vazgeçme.", note: "give up = vazgeçmek" },
           { de: "They put the meeting off.", tr: "Toplantıyı ertelediler.", note: "put off = ertelemek" },
-          { de: "I looked the word up.", tr: "Kelimeye baktım.", note: "look up = bakmak" },
+          { de: "I looked the word up.", tr: "Kelimeye sözlükten baktım.", note: "look up = bakmak" },
         ],
       },
     ],
@@ -382,11 +382,11 @@ export const enB1P9: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Could you fill ___ this form, please? (in)",
+        text: "Could you fill ___ this form, please?",
         options: [],
         answer: 0,
-        accept: ["in"],
-        explain: "„fill in“ ayrılabilir; isim nesne sonda da durabilir.",
+        accept: ["out", "in"],
+        explain: "„fill out“ (form doldurmak) ayrılabilir; isim nesne sonda da durabilir.",
       },
       {
         kind: "gapfill",
@@ -409,8 +409,8 @@ export const enB1P9: SkillExercise[] = [
         text: "Cümleyi doğru sıraya diz.",
         options: [],
         answer: 0,
-        items: ["Please", "turn", "the light", "off"],
-        explain: "İsim nesne arada ya da sonda durabilir; burada sonda.",
+        items: ["Please", "look", "after", "the children"],
+        explain: "„look after“ ayrılmaz; nesne iki parçanın arkasına gelir: Please look after the children.",
       },
       {
         kind: "truefalse",

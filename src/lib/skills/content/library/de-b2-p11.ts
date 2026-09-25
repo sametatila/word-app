@@ -330,7 +330,7 @@ export const deB2P11: SkillExercise[] = [
     explanation: [
       {
         heading: "Perfekt: ist + Partizip + worden",
-        tr: "Edilgenin Perfekt'i her zaman „sein“ ile kurulur, çünkü yardımcı fiil „werden“dir ve „werden“ Perfekt'te „sein“ alır. Cümlenin sonuna iki öge gelir: asıl fiilin Partizip II'si ve „worden“. Konuşmada geçmişteki edilgen çoğunlukla bu biçimle anlatılır; „wurde gebaut“ ise yazıda ve haberde daha sık görülür.",
+        tr: "Edilgenin Perfekt'i her zaman „sein“ ile kurulur, çünkü yardımcı fiil „werden“dir ve „werden“ Perfekt'te „sein“ alır. Cümlenin sonuna iki öğe gelir: asıl fiilin Partizip II'si ve „worden“. Konuşmada geçmişteki edilgen çoğunlukla bu biçimle anlatılır; „wurde gebaut“ ise yazıda ve haberde daha sık görülür.",
         examples: [
           { de: "Der Parkplatz ist im Frühjahr gebaut worden.", tr: "Otopark ilkbaharda yapıldı.", note: "Perfekt edilgen" },
           { de: "Die Straße ist für Busse gesperrt worden.", tr: "Yol otobüslere kapatıldı.", note: "ist … gesperrt worden" },

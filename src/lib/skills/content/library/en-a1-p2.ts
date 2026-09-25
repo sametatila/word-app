@@ -376,7 +376,7 @@ export const enA1P2: SkillExercise[] = [
         text: "My brother ___ not at home.",
         options: [],
         answer: 0,
-        accept: ["is", "isn't", "is not"],
+        accept: ["is", "'s"],
         explain: "„my brother“ = he, yani „is“; olumsuzda „not“ arkasından gelir.",
       },
       {

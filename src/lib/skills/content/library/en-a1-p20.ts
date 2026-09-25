@@ -115,7 +115,7 @@ export const enA1P20: SkillExercise[] = [
         heading: "Saat, gün ve tarih",
         tr: "Saat, gün ve tarih de „it“ ile söylenir: It's five o'clock. It's Monday. Soruda da „it“ öznedir: What time is it? What day is it today?",
         examples: [
-          { de: "It's half past five.", tr: "Saat beş buçuk." },
+          { de: "It's five thirty.", tr: "Saat beş buçuk." },
           { de: "What day is it today? — It's Friday.", tr: "Bugün günlerden ne? — Cuma." },
           { de: "It's my birthday tomorrow.", tr: "Yarın doğum günüm." },
         ],
@@ -126,7 +126,7 @@ export const enA1P20: SkillExercise[] = [
         examples: [
           { de: "Is it far? — No, it's near.", tr: "Uzak mı? — Hayır, yakın." },
           { de: "It's ten minutes to the station.", tr: "İstasyona on dakika." },
-          { de: "How far is it to the park? — It's two kilometers.", tr: "Parka ne kadar uzak? — İki kilometer.", note: "soruda da it" },
+          { de: "How far is it to the park? — It's two kilometers.", tr: "Parka ne kadar uzak? — İki kilometre.", note: "soruda da it" },
         ],
       },
     ],

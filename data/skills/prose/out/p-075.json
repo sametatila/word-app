@@ -285,11 +285,6 @@
     "en": "In nine cases out of ten; Friday afternoon and Sunday evening are the problem."
   },
   {
-    "tr": "„take a decision“ ve „make a decision“ ikisi de doğrudur; „do“ değildir.",
-    "kind": "explain",
-    "en": "Both „take a decision“ and „make a decision“ are correct; „do“ is not."
-  },
-  {
     "tr": "„unless“ zaten olumsuzdur; ikinci bir olumsuzluk anlamı tersine çevirir.",
     "kind": "explain",
     "en": "„unless“ is already negative; a second negation turns the meaning around."
@@ -405,9 +400,9 @@
     "en": "„Wer mitlaufen möchte, muss sich nicht anmelden“ — turning up is enough."
   },
   {
-    "tr": "Ayrılabilen fiilde kök öne, ön ek cümle sonuna gider: Rufen Sie mich … an!",
+    "tr": "Kibar emirde çekimli kök başa, „Sie“ arkasına, ayrılan ön ek „an“ cümle sonuna gider: Rufen Sie mich heute Abend an!",
     "kind": "explain",
-    "en": "With a separable verb the stem goes first and the prefix to the end: Rufen Sie mich … an!"
+    "en": "In the polite imperative the verb stem goes first, „Sie“ right after it and the separated prefix „an“ to the end: Rufen Sie mich heute Abend an!"
   },
   {
     "tr": "Gelecek ve tekrar eden durum wenn ister; ana cümlede fiil virgülden sonra.",

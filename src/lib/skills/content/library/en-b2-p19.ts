@@ -363,13 +363,13 @@ export const enB2P19: SkillExercise[] = [
         examples: [
           { de: "An adult cat is usually manageable.", tr: "Yetişkin bir kedi genelde idare edilebilir.", note: "-able" },
           { de: "Kittens can be quite destructive.", tr: "Yavru kediler epey yıkıcı olabilir.", note: "kök değişir" },
-          { de: "The request was careful and specific.", tr: "İstek özenli ve net yazılmıştı.", note: "-ful" },
+          { de: "The tenant was careful with the furniture.", tr: "Kiracı eşyalara özen gösterdi.", note: "-ful" },
         ],
       },
     ],
     questions: [
       {
-        text: "Keeping a large dog in that flat would be ___.",
+        text: "Keeping a large dog in that apartment would be ___.",
         options: ["unpossible", "inpossible", "impossible"],
         answer: 2,
         explain: "„p“ önünde olumsuz ön ek „im-“ olur.",

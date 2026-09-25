@@ -328,7 +328,7 @@ export const deC1P16: SkillExercise[] = [
     title: "länger gedauert als geplant",
     genre: "grammar",
     intro: "Almanca cümle iki fiil parçası arasında bir çerçeve kurar; bazı ögeler bu çerçevenin arkasına, Nachfeld'e çıkar ve uzun cümleyi okunur kılar.",
-    focus: "Nachfeld ve Ausklammerung: fiil çerçevesinin arkasında ne durabilir (g5'teki Vorfeld'in karşı ucu)",
+    focus: "Nachfeld ve Ausklammerung: fiil çerçevesinin arkasında ne durabilir (Vorfeld'in karşı ucu)",
     gloss: [
       { de: "der Termin", tr: "randevu", en: "appointment" },
       { de: "raten", tr: "tavsiye etmek", en: "to advise" },
@@ -375,7 +375,7 @@ export const deC1P16: SkillExercise[] = [
           "Ich habe gelesen, was im Merkblatt steht.",
         ],
         answer: 0,
-        explain: "Akkusativ nesne çerçevenin içinde kalır; yalnız yan cümle Nachfeld'e çıkar.",
+        explain: "Akkusativ nesne çerçevenin içinde kalır; üçüncü şıktaki gibi bir yan cümle ise Nachfeld'e çıkabilir.",
       },
       {
         text: "Wo steht „eine Nacht darüber zu schlafen“ in „Die Ärztin hat mir geraten, eine Nacht darüber zu schlafen“?",

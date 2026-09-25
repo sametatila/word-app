@@ -303,9 +303,9 @@ export const enA1: SkillExercise[] = [
       },
       {
         heading: "Üçüncü tekilde -s",
-        tr: "he / she / it ile fiil -s alır: work → works, live → lives. Sonu -o, -sh, -ch ile bitenlerde -es: goes, watches. „have“ düzensiz: has.",
+        tr: "he / she / it ile fiil -s alır: work → works, live → lives. Sonu -o, -s, -sh, -ch, -x ile bitenlerde -es: goes, watches; sessizden sonra gelen -y ise -ies olur: study → studies. „have“ düzensiz: has.",
         examples: [
-          { de: "He works in a shop.", tr: "Bir dükkânda çalışır.", note: "work → works" },
+          { de: "He works in a store.", tr: "Bir dükkânda çalışır.", note: "work → works" },
           { de: "She watches TV in the evening.", tr: "Akşamları televizyon izler.", note: "watch → watches" },
           { de: "My brother has a dog.", tr: "Erkek kardeşimin bir köpeği var.", note: "have → has" },
         ],
@@ -334,7 +334,7 @@ export const enA1: SkillExercise[] = [
         explain: "„you“ ile yardımcı fiil „do“; „does“ yalnız he/she/it ile.",
       },
       {
-        text: "He ___ tennis on Saturday.",
+        text: "He ___ tennis on Saturdays.",
         options: ["plays", "play", "playing"],
         answer: 0,
         explain: "„he“ ile -s: plays. Rutin için -ing biçimi kullanılmaz.",

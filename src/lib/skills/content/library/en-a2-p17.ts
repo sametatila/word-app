@@ -175,8 +175,8 @@ export const enA2P17: SkillExercise[] = [
         tr: "Cevap cümlenin ÖZNESİ ise soru sözcüğü öznenin yerine geçer ve did/do kullanılmaz; fiil olumlu cümledeki gibi çekilir. Şimdiki zamanda üçüncü tekil -s alır: „Who lives here?“",
         examples: [
           { de: "Who called you last night?", tr: "Dün akşam seni kim aradı?", note: "cevap: özne" },
-          { de: "What happened after the match?", tr: "Maçtan sonra ne oldu?" },
-          { de: "Who lives in the flat upstairs?", tr: "Üst kattaki dairede kim oturuyor?", note: "lives: -s" },
+          { de: "What happened after the game?", tr: "Maçtan sonra ne oldu?" },
+          { de: "Who lives in the apartment upstairs?", tr: "Üst kattaki dairede kim oturuyor?", note: "lives: -s" },
         ],
       },
       {
@@ -210,7 +210,7 @@ export const enA2P17: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Who ___ (live) in the flat upstairs?",
+        text: "Who ___ (live) in the apartment upstairs?",
         options: [],
         answer: 0,
         accept: ["lives"],

@@ -383,13 +383,13 @@ export const enC1P3: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "The figures ___ that the effect is small.",
+        text: "Hedged: The figures ___ that the effect is small.",
         options: ["suggest", "prove", "decide"],
         answer: 0,
         explain: "„suggest“ iddiayı destekler ama kesinlik iddia etmez.",
       },
       {
-        text: "It ___ be that the categories are the problem.",
+        text: "Hedged: It ___ be that the categories are the problem.",
         options: ["may well", "will surely", "must certainly"],
         answer: 0,
         explain: "„may well“ güçlü bir olasılık bildirir ve akademik kayıtta yerleşiktir.",
@@ -406,7 +406,7 @@ export const enC1P3: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Costs ___ (tend) to be underestimated in the first year.",
+        text: "Costs ___ to be underestimated in the first year. (= usually are; a general pattern)",
         options: [],
         answer: 0,
         accept: ["tend"],
@@ -417,7 +417,7 @@ export const enC1P3: SkillExercise[] = [
         text: "It is often ___ that the law is the main factor.",
         options: [],
         answer: 0,
-        accept: ["argued", "said", "claimed"],
+        accept: ["argued", "said", "claimed", "suggested", "assumed", "believed", "thought", "maintained", "held"],
         explain: "Bu kalıp iddiayı aktarır ve yazarın onu benimsediğini söylemez.",
       },
       {
@@ -430,10 +430,10 @@ export const enC1P3: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "A ___ share of the comments were posted under real names.",
+        text: "A ___ share of the comments were posted under real names. (= a big one, without an exact figure)",
         options: [],
         answer: 0,
-        accept: ["substantial", "significant", "large"],
+        accept: ["substantial", "significant", "large", "considerable", "sizable", "sizeable"],
         explain: "Kesin bir yüzde vermeden büyüklük bildiren niceleyici.",
       },
       {

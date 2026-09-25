@@ -331,7 +331,7 @@ export const enB1: SkillExercise[] = [
         explain: "„then we moved“ — Ankara dönemi bitti. for + süre olsa da bitmiş durum past simple ister: lived.",
       },
       {
-        text: "She ___ in this flat since 2020.",
+        text: "She ___ in this apartment since 2020.",
         options: ["has lived", "lived", "lives"],
         answer: 0,
         explain: "since + başlangıç noktası, durum sürüyor → present perfect: has lived. Türkçedeki „yaşıyor“ seni „lives“e çekmesin.",

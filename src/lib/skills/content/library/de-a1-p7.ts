@@ -325,7 +325,7 @@ export const deA1P7: SkillExercise[] = [
     explanation: [
       {
         heading: "İyelik sözcüğü ismin cinsine bakar",
-        tr: "Türkçede iyelik ek olarak kelimenin sonuna gelir. Almancada ise ismin ÖNÜNE gelir ve o ismin cinsine göre biçim alır: eril ve nötr isimlerde ek yok, dişil ve çoğul isimlerde -e eklenir.",
+        tr: "Türkçede iyelik ek olarak kelimenin sonuna gelir. Almancada ise ismin ÖNÜNE gelir ve o ismin cinsine göre biçim alır. İsim özneyse eril ve nötrde ek yok, dişil ve çoğulda -e eklenir; eril isim nesne olunca -en alır: meinen, keinen.",
         examples: [
           { de: "Das ist mein Bruder.", tr: "Bu benim erkek kardeşim.", note: "eril → mein" },
           { de: "Das ist meine Schwester.", tr: "Bu benim kız kardeşim.", note: "dişil → meine" },

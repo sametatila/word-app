@@ -318,7 +318,7 @@ export const deB2P7: SkillExercise[] = [
     explanation: [
       {
         heading: "Tek bir geçmiş biçimi var",
-        tr: "Konjunktiv II'nin geçmişi her zaman „hätte“ ya da „wäre“ + Partizip II ile kurulur. Perfekt'te hangisini kullanıyorsan onu alırsın: „gemacht“ → hätte gemacht, „gefahren“ → wäre gefahren. Präteritum'un ayrı bir Konjunktiv biçimi YOKTUR.",
+        tr: "Konjunktiv II'nin geçmişi her zaman „hätte“ ya da „wäre“ + Partizip II ile kurulur. Perfekt'te hangisini kullanıyorsan onu alırsın: „gemacht“ → hätte gemacht, „gefahren“ → wäre gefahren. Geçmiş için başka bir biçim YOKTUR: „wüsste“, „käme“ gibi biçimler Präteritum kökünden gelse de şimdiki zamanı anlatır.",
         examples: [
           { de: "Ich hätte früher gefragt.", tr: "Daha erken sorardım.", note: "fragen → haben" },
           { de: "Wir wären fast zu spät gekommen.", tr: "Neredeyse geç kalıyorduk.", note: "kommen → sein" },
@@ -412,7 +412,7 @@ export const deB2P7: SkillExercise[] = [
         text: "„Wenn ich das wusste, hätte ich abgesagt.“ — Bu cümle doğru mu?",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Präteritum'un Konjunktiv'i yoktur; doğrusu „gewusst hätte“.",
+        explain: "Gösterge kipindeki „wusste“ gerçekdışı koşul kuramaz; geçmişte olmamış bir koşul için tek biçim „gewusst hätte“dir.",
       },
       {
         kind: "truefalse",

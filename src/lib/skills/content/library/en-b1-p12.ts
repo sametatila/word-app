@@ -343,7 +343,7 @@ export const enB1P12: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "When we got to the cinema, the film ___.",
+        text: "When we got to the theater, the movie ___.",
         options: ["already starts", "has already started", "had already started"],
         answer: 2,
         explain: "Film bizim varışımızdan ÖNCE başlamıştı: had + üçüncü hâl.",

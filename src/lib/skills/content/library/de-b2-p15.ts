@@ -333,13 +333,13 @@ export const deB2P15: SkillExercise[] = [
         heading: "dagegen ve jedoch: zarflar",
         tr: "„dagegen“ ve „jedoch“ zarftır, yan cümle kurmaz. Birinci konuma geçerlerse arkalarından doğrudan çekimli fiil gelir; orta alanda da, vurgulanan öğeden hemen sonra da durabilirler. „aber“den farkı: „aber“ sıfır konumdadır ve sırayı değiştirmez („…, aber die Nebenstraßen sind dunkel“).",
         examples: [
-          { de: "Im Zentrum brennt das Licht. Dagegen sind die Wohnstraßen dunkel.", tr: "Merkezde ışık yanıyor. Buna karşılık oturma sokakları karanlık.", note: "birinci konumda: fiil hemen arkada" },
-          { de: "Die Wohnstraßen dagegen sind ab eins dunkel.", tr: "Oturma sokakları ise saat birden itibaren karanlık.", note: "öğeden sonra: vurgu" },
+          { de: "Im Zentrum brennt das Licht. Dagegen sind die Wohnstraßen dunkel.", tr: "Merkezde ışık yanıyor. Buna karşılık mahalle sokakları karanlık.", note: "birinci konumda: fiil hemen arkada" },
+          { de: "Die Wohnstraßen dagegen sind ab eins dunkel.", tr: "Mahalle sokakları ise saat birden itibaren karanlık.", note: "öğeden sonra: vurgu" },
           { de: "Der Plan klang gut, jedoch fehlte das Geld.", tr: "Plan iyi görünüyordu, ancak para yoktu.", note: "jedoch birinci konumda" },
         ],
       },
       {
-        heading: "stattdessen ve obwohl/trotzdem neden ödün bildirir",
+        heading: "stattdessen; obwohl/trotzdem ise ödün",
         tr: "„stattdessen“ bir şeyin YERİNE başka bir şeyin geldiğini söyler; zarftır ve birinci konumda fiili hemen arkasına çeker. Buraya kadarki araçların hepsi iki durumu karşılaştırır. „obwohl“ ve „trotzdem“ ise bir beklentinin boşa çıktığını söyler: karanlığa rağmen yalnız yürümek bir ödündür, karşıtlık değil.",
         examples: [
           { de: "Die Stadt schaltet die Laternen nicht ab. Stattdessen dimmt sie sie.", tr: "Şehir lambaları söndürmüyor. Bunun yerine ışıklarını kısıyor.", note: "yerine geçen çözüm" },

@@ -382,9 +382,9 @@ export const deA2P8: SkillExercise[] = [
       },
       {
         text: "Welcher Satz ist richtig?",
-        options: ["Ich gebe den Ball dem Kind.", "Ich gebe dem Kind den Ball.", "Ich gebe dem Ball das Kind."],
+        options: ["Ich gebe den Ball das Kind.", "Ich gebe dem Kind den Ball.", "Ich gebe dem Ball das Kind."],
         answer: 1,
-        explain: "İki nesne de isimse kişi (Dativ) önce gelir.",
+        explain: "Kişi Dativ'de (dem Kind), eşya Akkusativ'de (den Ball); iki nesne de isimse kişi önce gelir.",
       },
       {
         text: "Zeigst du ___ das Foto?",
@@ -414,7 +414,7 @@ export const deA2P8: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["ihrer"],
-        explain: "Dişil isim Dativ'de -r alır: ihrer Freundin.",
+        explain: "Dişil isimde iyelik kelimesi Dativ'de -er alır: ihre → ihrer Freundin.",
       },
       {
         kind: "gapfill",

@@ -108,7 +108,7 @@ export const enA2P8: SkillExercise[] = [
         examples: [
           { de: "That sounds good.", tr: "Kulağa iyi geliyor.", note: "sound + sıfat" },
           { de: "You look tired.", tr: "Yorgun görünüyorsun.", note: "look + sıfat" },
-          { de: "The soup tastes strange.", tr: "Çorba tuhaf tadıyor.", note: "taste + sıfat" },
+          { de: "The soup tastes strange.", tr: "Çorbanın tadı tuhaf.", note: "taste + sıfat" },
         ],
       },
       {
@@ -189,7 +189,7 @@ export const enA2P8: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„I hardly know him.“ — Bu cümle „onu sıkı tanıyorum“ demek mi?",
+        text: "„I hardly know him.“ — Bu cümle „onu çok iyi tanıyorum“ demek mi?",
         options: ["True", "False"],
         answer: 1,
         explain: "„hardly“ neredeyse hiç demektir; „hard“ ile karıştırılmamalı.",

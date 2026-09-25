@@ -311,7 +311,7 @@ export const deB1P6: SkillExercise[] = [
     explanation: [
       {
         heading: "Artikel bilgiyi taşıyorsa sıfat dinlenir",
-        tr: "„der/die/das“ ismin cinsini ve hâlini zaten söyler. O yüzden sıfat yalnız iki ek alır: yalın tekilde -e, geri kalan her yerde -en. Buna zayıf çekim denir ve en kolay tablodur.",
+        tr: "„der/die/das“ ismin cinsini ve hâlini zaten söyler. O yüzden sıfat yalnız iki ek alır: yalın tekilde ve dişil/nötr belirtme hâlinde -e (die neue Lösung, das neue Haus), geri kalan her yerde -en. Buna zayıf çekim denir ve en kolay tablodur.",
         examples: [
           { de: "Der gute Plan hat gefehlt.", tr: "İyi plan eksikti.", note: "yalın eril → -e" },
           { de: "Wir haben den guten Plan verworfen.", tr: "İyi planı reddettik.", note: "belirtme → -en" },
@@ -323,7 +323,7 @@ export const deB1P6: SkillExercise[] = [
         tr: "„ein“ eril yalın ve nötr yalın/belirtme hâlinde ek almaz, yani cinsi söylemez. Orada bilgiyi sıfat taşır: eril -er, nötr -es. Geri kalan yerlerde tablo yine zayıf çekimle aynıdır. Aynısı „kein“ ve iyelik sözcükleri için de geçerli.",
         examples: [
           { de: "Das ist ein guter Plan.", tr: "Bu iyi bir plan.", note: "ein susuyor → -er" },
-          { de: "Wir brauchen ein frisches Ergebnis.", tr: "Taze bir sonuca ihtiyacımız var.", note: "nötr → -es" },
+          { de: "Ich kaufe ein frisches Brot.", tr: "Taze bir ekmek alıyorum.", note: "nötr → -es" },
           { de: "Ich habe einen neuen Kollegen.", tr: "Yeni bir iş arkadaşım var.", note: "eril belirtme → -en" },
         ],
       },
@@ -366,7 +366,7 @@ export const deB1P6: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Wir brauchen ein ___ Ergebnis. (frisch)",
+        text: "Ich kaufe ein ___ Brot. (frisch)",
         options: [],
         answer: 0,
         accept: ["frisches"],
@@ -378,7 +378,7 @@ export const deB1P6: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["neuen"],
-        explain: "Belirli artikelden sonra yalın tekil dışında her yerde -en gelir.",
+        explain: "Belirli artikelden sonra Dativ'de sıfat her cinste -en alır.",
       },
       {
         kind: "gapfill",

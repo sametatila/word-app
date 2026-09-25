@@ -358,11 +358,11 @@ export const enC1P15: SkillExercise[] = [
       },
       {
         heading: "Ödünü öne almak: Much as, Try as they might",
-        tr: "„Much as I admire the project, …“ „projeye çok hayran olsam da“ demektir; ödünü başa koyar, asıl savı ikinci yarıya bırakır. „Try as they might, …“ „ne kadar uğraşsalar da“ anlamındadır ve kalıplaşmıştır. Bir sıfat da „as“ ya da „though“ ile başa alınabilir: „Small as the flats are, …“ = „Although the flats are small, …“.",
+        tr: "„Much as I admire the project, …“ „projeye çok hayran olsam da“ demektir; ödünü başa koyar, asıl savı ikinci yarıya bırakır. „Try as they might, …“ „ne kadar uğraşsalar da“ anlamındadır ve kalıplaşmıştır. Bir sıfat da „as“ ya da „though“ ile başa alınabilir: „Small as the apartments are, …“ = „Although the apartments are small, …“.",
         examples: [
           { de: "Much as I admire the project, I could not live there.", tr: "Projeye ne kadar hayran olsam da orada yaşayamazdım.", note: "much as = although … very much" },
           { de: "Try as they might, they could not shorten the meetings.", tr: "Ne kadar uğraştılarsa da toplantıları kısaltamadılar.", note: "kalıp" },
-          { de: "Small as the flats are, nobody has moved out.", tr: "Daireler küçük olsa da kimse taşınmadı.", note: "sıfat + as + özne + fiil" },
+          { de: "Small as the apartments are, nobody has moved out.", tr: "Daireler küçük olsa da kimse taşınmadı.", note: "sıfat + as + özne + fiil" },
         ],
       },
       {
@@ -377,7 +377,7 @@ export const enC1P15: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "___ are the days when every flat came with a garden.",
+        text: "___ are the days when every apartment came with a garden.",
         options: ["Gone", "Went", "Going"],
         answer: 0,
         explain: "Başa alınan yüklem üçüncü hâldir: „Gone are the days“.",
@@ -391,9 +391,9 @@ export const enC1P15: SkillExercise[] = [
       {
         text: "Which sentence is correct?",
         options: [
-          "Small as are the flats, nobody has left.",
-          "Small as the flats are, nobody has left.",
-          "As small the flats are, nobody has left.",
+          "Small as are the apartments, nobody has left.",
+          "Small as the apartments are, nobody has left.",
+          "As small the apartments are, nobody has left.",
         ],
         answer: 1,
         explain: "Sıfat + as + özne + fiil; ödün yapısında yardımcı fiil öne geçmez.",
@@ -440,10 +440,10 @@ export const enC1P15: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "“Small as are the flats, nobody has left.” — Bu cümle doğru mu?",
+        text: "“Small as are the apartments, nobody has left.” — Bu cümle doğru mu?",
         options: ["True", "False"],
         answer: 1,
-        explain: "Ödün yapısında sıra değişmez: „Small as the flats are“.",
+        explain: "Ödün yapısında sıra değişmez: „Small as the apartments are“.",
       },
       {
         kind: "truefalse",

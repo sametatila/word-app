@@ -10,9 +10,9 @@
     "en": "I'm putting the date up for discussion."
   },
   {
-    "tr": "Tren çoktan kalkmış olmalı.",
+    "tr": "Tren muhtemelen çoktan kalkmıştır.",
     "kind": "explanation.examples.tr",
-    "en": "The train must have left long ago."
+    "en": "The train has probably left already."
   },
   {
     "tr": "Neyi bekliyorsun? — Otobüsü.",
@@ -82,7 +82,7 @@
   {
     "tr": "Tatili dört gözle bekliyorum.",
     "kind": "explanation.examples.tr",
-    "en": "I'm looking forward to the holiday."
+    "en": "I'm looking forward to the vacation."
   },
   {
     "tr": "Çalışırken telefonla konuşmam.",
@@ -102,7 +102,7 @@
   {
     "tr": "Her akşam bir masal anlatırdı.",
     "kind": "explanation.examples.tr",
-    "en": "She used to tell a story every evening."
+    "en": "She used to tell a fairy tale every evening."
   },
   {
     "tr": "İfade olsa olsa bir tahmindir.",
@@ -120,9 +120,9 @@
     "en": "I'm coming to pick you up at eight."
   },
   {
-    "tr": "Trenin gecikeceğini düşünüyor.",
+    "tr": "Trenin rötarlı olduğunu düşünüyor.",
     "kind": "explanation.examples.tr",
-    "en": "He thinks the train will be late."
+    "en": "She thinks the train is late."
   },
   {
     "tr": "Yağmur olursa antrenman iptal.",
@@ -207,7 +207,7 @@
   {
     "tr": "Sık sık kız kardeşini düşünüyor.",
     "kind": "explanation.examples.tr",
-    "en": "He often thinks about his sister."
+    "en": "She often thinks about her sister."
   },
   {
     "tr": "Tablo herkesin kullanımına açık.",
@@ -220,9 +220,9 @@
     "en": "It was raining when we moved."
   },
   {
-    "tr": "Taze bir sonuca ihtiyacımız var.",
+    "tr": "Taze bir ekmek alıyorum.",
     "kind": "explanation.examples.tr",
-    "en": "We need a fresh result."
+    "en": "I am buying a fresh loaf of bread."
   },
   {
     "tr": "Anneme bir kitap hediye ediyorum.",
@@ -237,7 +237,7 @@
   {
     "tr": "O zamanlar iki kişi çalışıyorduk.",
     "kind": "explanation.examples.tr",
-    "en": "In those days two of us worked here."
+    "en": "Back then there were two of us doing the work."
   },
   {
     "tr": "Pazar günü sizi ziyaret ediyoruz.",
@@ -252,7 +252,7 @@
   {
     "tr": "Yarın gelip gelemeyeceğini söyle.",
     "kind": "explanation.examples.tr",
-    "en": "Say whether you can come tomorrow."
+    "en": "Please tell me whether you can come tomorrow."
   },
   {
     "tr": "Eleştiriye rağmen plan aynı kaldı.",
@@ -280,14 +280,14 @@
     "en": "We're staying at home because it's raining."
   },
   {
-    "tr": "Hasta olmalı, yoksa asla evde olmaz.",
+    "tr": "Hasta olmalı, başka zaman hiç evde olmaz.",
     "kind": "explanation.examples.tr",
-    "en": "He must be ill, otherwise he'd never be at home."
+    "en": "He must be ill; he is never at home otherwise."
   },
   {
     "tr": "Hiçbir şey bilmediğini iddia ediyor.",
     "kind": "explanation.examples.tr",
-    "en": "He claims he knows nothing."
+    "en": "He claims he knew nothing."
   },
   {
     "tr": "Maalesef iptal etmek zorunda kaldık.",
@@ -417,7 +417,7 @@
   {
     "tr": "Trenin ne zaman kalktığını söyleyebilir misiniz?",
     "kind": "explanation.examples.tr",
-    "en": "Could you tell me when the train left?"
+    "en": "Could you tell me when the train leaves?"
   },
   {
     "tr": "İtiraz haklı, üstelik belgeler bu konuda susuyor.",

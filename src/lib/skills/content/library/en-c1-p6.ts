@@ -384,7 +384,7 @@ export const enC1P6: SkillExercise[] = [
         ],
       },
       {
-        heading: "one/ones ve sıfırlanan isim",
+        heading: "one/ones ve düşen isim",
         tr: "Tekrar eden sayılabilir bir ismin yerine „one“ (tekil) ve „ones“ (çoğul) gelir: „the narrow version“ → „the narrow one“. Sayılamayan isimlerde bu yapılmaz; isim düşer ve yalnız sıfat kalır: „I prefer strong coffee to weak.“ Belirleyiciden sonra isim de düşebilir: „both“, „neither“, „the former“.",
         examples: [
           { de: "The new proposal is better than the old one.", tr: "Yeni öneri eskisinden iyi.", note: "one: tekil isim" },
@@ -454,7 +454,7 @@ export const enC1P6: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "“I don't like it, and neither do I.” — Bu cevap doğru mu?",
+        text: "“I don't like it, and neither do I.” — Bu cümle doğru mu?",
         options: ["True", "False"],
         answer: 1,
         explain: "Aynı özne iki kez geçemez; ikinci özne farklı olmalı: „neither does he“.",

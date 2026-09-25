@@ -365,11 +365,11 @@ export const enC1P12: SkillExercise[] = [
         ],
       },
       {
-        heading: "no longer, not any more, hardly any",
-        tr: "„no longer“ bir durumun sona erdiğini bildirir ve yardımcı fiilden sonra, ana fiilden önce durur; „not … any more“ aynı anlamın gündelik biçimidir ve cümle sonuna gider. „hardly any“ ise miktarı neredeyse sıfıra indirir: „Hardly any of it can be cut.“ Bu kullanım cümle başında bile devrik yapı gerektirmez, çünkü „hardly“ burada cümleyi değil öznenin içindeki „any“yi niteler.",
+        heading: "no longer, not anymore, hardly any",
+        tr: "„no longer“ bir durumun sona erdiğini bildirir ve yardımcı fiilden sonra, ana fiilden önce durur; „not … anymore“ aynı anlamın gündelik biçimidir ve cümle sonuna gider. „hardly any“ ise miktarı neredeyse sıfıra indirir: „Hardly any of it can be cut.“ Bu kullanım cümle başında bile devrik yapı gerektirmez, çünkü „hardly“ burada cümleyi değil öznenin içindeki „any“yi niteler.",
         examples: [
-          { de: "Six of them are no longer on the rota.", tr: "Altısı artık çizelgede değil.", note: "resmî" },
-          { de: "They don't come to meetings any more.", tr: "Artık toplantılara gelmiyorlar.", note: "gündelik" },
+          { de: "Six of them are no longer on the schedule.", tr: "Altısı artık çizelgede değil.", note: "resmî" },
+          { de: "They don't come to meetings anymore.", tr: "Artık toplantılara gelmiyorlar.", note: "gündelik" },
           { de: "Hardly any of the training can be cut.", tr: "Eğitimin neredeyse hiçbir kısmı kısaltılamaz.", note: "miktar" },
         ],
       },
@@ -396,7 +396,7 @@ export const enC1P12: SkillExercise[] = [
         explain: "İngilizcede olumsuzluk genellikle „think“e taşınır.",
       },
       {
-        text: "Six of them are ___ on the rota.",
+        text: "Six of them are ___ on the schedule.",
         options: ["no longer", "not longer", "no more longer"],
         answer: 0,
         explain: "Sona eren durum „no longer“ ile anlatılır.",
@@ -427,11 +427,11 @@ export const enC1P12: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "They don't come to meetings any ___.",
+        text: "They don't come to meetings ___. (= no longer, informal)",
         options: [],
         answer: 0,
-        accept: ["more"],
-        explain: "„not … any more“ gündelik biçimdir ve sona gider.",
+        accept: ["anymore", "any more"],
+        explain: "„not … anymore“ gündelik biçimdir ve sona gider.",
       },
       {
         kind: "order",

@@ -410,7 +410,7 @@ export const deC1P18: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["erklärt"],
-        explain: "Asıl fiil Partizip II olur; -ieren ve ön ekli fiillerde ge- gelmez.",
+        explain: "Asıl fiil Partizip II olur; -ieren ile biten ve ayrılmayan ön ekli (er-, be-, ver- …) fiillerde ge- gelmez.",
       },
       {
         kind: "gapfill",
@@ -425,7 +425,7 @@ export const deC1P18: SkillExercise[] = [
         text: "Cümleyi doğru sıraya diz.",
         options: [],
         answer: 0,
-        items: ["Neue Mitglieder", "bekommen", "die Regeln", "kurz", "vorgestellt"],
+        items: ["Neue Mitglieder", "bekommen", "die Regeln", "kurz vorgestellt"],
         explain: "Alıcı özne başta, „bekommen“ ikinci sırada, Partizip II en sonda.",
       },
       {

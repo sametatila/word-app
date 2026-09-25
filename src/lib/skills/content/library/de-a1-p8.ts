@@ -340,7 +340,7 @@ export const deA1P8: SkillExercise[] = [
       },
       {
         heading: "ihr ve Sie biçimleri",
-        tr: "„ihr“ biçimi normal çekimle aynıdır, yalnız özne düşer. „Sie“ biçiminde ise özne KALIR ve fiilden sonra gelir; bu, kibar biçimi soru cümlesinden ayıran tek şeydir — sondaki noktalama.",
+        tr: "„ihr“ biçimi normal çekimle aynıdır, yalnız özne düşer. „Sie“ biçiminde ise özne KALIR ve fiilden sonra gelir; yazıda bu kibar emri soru cümlesinden ayıran tek şey sondaki noktalama işaretidir.",
         examples: [
           { de: "Kommt bitte pünktlich!", tr: "Lütfen tam vaktinde gelin!", note: "ihr kommt → Kommt" },
           { de: "Kommen Sie bitte herein!", tr: "Lütfen içeri buyurun!", note: "Sie kalır, arkaya geçer" },
@@ -394,11 +394,11 @@ export const deA1P8: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "___ mich heute Abend ___! (Sie, anrufen)",
+        text: "___ Sie mich heute Abend an! (anrufen)",
         options: [],
         answer: 0,
-        accept: ["Rufen … an", "Rufen an", "Rufen"],
-        explain: "Ayrılabilen fiilde kök öne, ön ek cümle sonuna gider: Rufen Sie mich … an!",
+        accept: ["Rufen", "rufen"],
+        explain: "Kibar emirde çekimli kök başa, „Sie“ arkasına, ayrılan ön ek „an“ cümle sonuna gider: Rufen Sie mich heute Abend an!",
       },
       {
         kind: "gapfill",

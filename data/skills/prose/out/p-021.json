@@ -135,9 +135,9 @@
   "en": "At the end of the conversation it says \"See you on Friday at half past ten\". Twelve is when Ayse finishes work."
  },
  {
-  "tr": "Konuşurken çoğu fiil için Perfekt kullanılır, ama üç grup fiil geçmişte hep kısa biçimiyle söylenir.",
+  "tr": "Konuşurken çoğu fiil için Perfekt kullanılır, ama üç grup fiil geçmişte çoğunlukla kısa biçimiyle söylenir.",
   "kind": "intro",
-  "en": "In speech most verbs take the Perfekt, but three groups of verbs always use their short past form."
+  "en": "In speech most verbs take the Perfekt, but three groups of verbs usually use their short past form."
  },
  {
   "tr": "Mahalle merkezinin panosundaki duyuruyu okuyacaksın: kim ne tamir ediyor, ne zaman ve hangi kuralla.",
@@ -195,9 +195,9 @@
   "en": "At the bottom of the invitation it says \"Please answer before 20 August\"; 12 September is the date of the wedding itself."
  },
  {
-  "tr": "Edilgen özneyi arkaya atar; kurum kendini değil işlemi anlatır. Uzunluk ya da yasak söz konusu değil.",
+  "tr": "Edilgen, eylemi yapanı geri plana atar ya da hiç söylemez; kurum kendini değil işlemi anlatır. Uzunluk ya da yasak söz konusu değil.",
   "kind": "explain",
-  "en": "The passive pushes the subject to the back; the organisation describes the process, not itself. Length and prohibition do not come into it."
+  "en": "The passive pushes the doer into the background or leaves it out; the organization describes the process, not itself. Length and prohibition do not come into it."
  },
  {
   "tr": "Görevli \"It's forty dollars. The green one is thirty dollars.\" diyor; kırk dolar siyah olanın fiyatı.",

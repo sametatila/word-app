@@ -99,12 +99,12 @@ export const enA1P7: SkillExercise[] = [
         examples: [
           { de: "I always have breakfast at seven.", tr: "Her zaman yedide kahvaltı ederim.", note: "özne + zarf + fiil" },
           { de: "She never drinks coffee.", tr: "Asla kahve içmez.", note: "fiilden önce" },
-          { de: "We often go to the cinema.", tr: "Sık sık sinemaya gideriz.", note: "aynı yer" },
+          { de: "We often go to the movies.", tr: "Sık sık sinemaya gideriz.", note: "aynı yer" },
         ],
       },
       {
         heading: "„be“ fiilinden SONRA",
-        tr: "Tek istisna „to be“ fiilidir: orada sıklık zarfı fiilden SONRA gelir. „He is always late“ — „He always is late“ değil. Yardımcı fiil varsa zarf yardımcı ile asıl fiilin arasına girer: „I have never been to London.“",
+        tr: "İlk istisna „to be“ fiilidir: orada sıklık zarfı fiilden SONRA gelir. „He is always late“ — „He always is late“ değil. Yardımcı fiil varsa da zarf yardımcı ile asıl fiilin arasına girer: „I have never been to London.“",
         examples: [
           { de: "He is always late.", tr: "Her zaman geç kalır.", note: "be → sonra" },
           { de: "They are usually at home.", tr: "Genellikle evdedirler.", note: "be → sonra" },
@@ -123,7 +123,7 @@ export const enA1P7: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "I ___ have breakfast at seven.",
+        text: "I ___ breakfast at seven.",
         options: ["have always", "always", "always have"],
         answer: 2,
         explain: "Normal fiilden önce: özne + zarf + fiil.",
@@ -181,7 +181,7 @@ export const enA1P7: SkillExercise[] = [
         text: "Cümleyi doğru sıraya diz.",
         options: [],
         answer: 0,
-        items: ["We", "often", "go", "to the cinema"],
+        items: ["We", "often", "go", "to the movies"],
         explain: "Özne + sıklık zarfı + fiil + yer.",
       },
       {

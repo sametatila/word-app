@@ -95,7 +95,7 @@ export const enA1P10: SkillExercise[] = [
     explanation: [
       {
         heading: "like + -ing: genel sevgi",
-        tr: "„like, love, hate, enjoy, don't mind“ fiillerinden sonra ikinci fiil -ing alır: „I like swimming.“ Bu, genel bir tercihi anlatır — her zaman geçerli olan bir şeyi. Türkçedeki „-mayı severim“ yapısının karşılığıdır.",
+        tr: "„like, love, hate, enjoy, don't mind“ fiillerinden sonra ikinci fiil çoğunlukla -ing alır: „I like swimming.“ „like, love, hate“ ile „to + fiil“ de doğrudur ve Amerikan İngilizcesinde çok yaygındır (I like to swim); „enjoy“ ve „don't mind“ ise yalnız -ing alır. Bu yapı genel bir tercihi anlatır — her zaman geçerli olan bir şeyi. Türkçedeki „-mayı severim“ yapısının karşılığıdır.",
         examples: [
           { de: "I like swimming in the sea.", tr: "Denizde yüzmeyi severim.", note: "like + -ing" },
           { de: "She loves cooking for friends.", tr: "Arkadaşlarına yemek yapmayı çok sever.", note: "love + -ing" },
@@ -104,7 +104,7 @@ export const enA1P10: SkillExercise[] = [
       },
       {
         heading: "would like: şu andaki istek",
-        tr: "„would like“ genel bir sevgiyi değil, ŞU ANDAKİ bir isteği anlatır ve kibar bir tekliftir: „I'd like a coffee.“ Arkasından isim ya da „to + fiil“ gelir, ASLA -ing gelmez. Kısaltması I'd, he'd, we'd biçimindedir.",
+        tr: "„would like“ genel bir sevgiyi değil, ŞU ANDAKİ bir isteği anlatır; kibar bir istek ya da teklif bildirir: „I'd like a coffee.“ Arkasından isim ya da „to + fiil“ gelir, ASLA -ing gelmez. Kısaltması I'd, he'd, we'd biçimindedir.",
         examples: [
           { de: "I'd like a cup of tea, please.", tr: "Bir bardak çay istiyorum lütfen.", note: "would like + isim" },
           { de: "Would you like to sit down?", tr: "Oturmak ister misiniz?", note: "would like + to + fiil" },
@@ -126,7 +126,7 @@ export const enA1P10: SkillExercise[] = [
         text: "I like ___ in the sea.",
         options: ["swim", "to swimming", "swimming"],
         answer: 2,
-        explain: "„like“ fiilinden sonra ikinci fiil -ing alır.",
+        explain: "„like“ fiilinden sonra -ing gelir (ya da to + yalın fiil: to swim); yalın „swim“ ve „to swimming“ olmaz.",
       },
       {
         text: "I'd like ___ a table, please.",
@@ -145,16 +145,16 @@ export const enA1P10: SkillExercise[] = [
         text: "She loves ___ for friends. (cook)",
         options: [],
         answer: 0,
-        accept: ["cooking"],
-        explain: "„love“ fiilinden sonra -ing biçimi gelir.",
+        accept: ["cooking", "to cook"],
+        explain: "„love“ fiilinden sonra -ing biçimi gelir (to cook da doğrudur).",
       },
       {
         kind: "gapfill",
         text: "They hate ___ up early. (get)",
         options: [],
         answer: 0,
-        accept: ["getting"],
-        explain: "Kısa ünlüden sonra son ünsüz ikizleşir: getting.",
+        accept: ["getting", "to get"],
+        explain: "Kısa ünlüden sonra son ünsüz ikizleşir: getting (to get da doğrudur).",
       },
       {
         kind: "gapfill",
@@ -166,7 +166,7 @@ export const enA1P10: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "I ___ like a cup of tea, please. (kısaltma açık biçim)",
+        text: "I ___ like a cup of tea, please. (kısaltmanın açık biçimi)",
         options: [],
         answer: 0,
         accept: ["would"],

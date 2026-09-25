@@ -329,7 +329,7 @@ export const enA1P11: SkillExercise[] = [
       },
       {
         heading: "Tanıştırma, telefon ve zaman",
-        tr: "Birini tanıştırırken ve telefonda kendini söylerken „this“ kullanılır: „This is Ela.“ Zaman ifadesinde de „this“ içinde bulunduğumuz dönemi anlatır: „this week“ bu hafta demektir. Tek başına da durabilir: „What is that?“",
+        tr: "Birini tanıştırırken ve telefonda kendini tanıtırken „this“ kullanılır: „This is Ela.“ Zaman ifadesinde de „this“ içinde bulunduğumuz dönemi anlatır: „this week“ bu hafta demektir. Tek başına da durabilir: „What is that?“",
         examples: [
           { de: "This is my friend Ali.", tr: "Bu arkadaşım Ali.", note: "tanıştırma" },
           { de: "Hello, this is Ela.", tr: "Merhaba, ben Ela.", note: "telefonda" },
@@ -386,7 +386,7 @@ export const enA1P11: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["this"],
-        explain: "Telefonda kendini söylerken „I am“ değil, „this is“ kullanılır.",
+        explain: "Telefonda kendini tanıtırken „I am“ değil, „this is“ kullanılır.",
       },
       {
         kind: "order",

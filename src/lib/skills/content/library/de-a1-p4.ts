@@ -319,7 +319,7 @@ export const deA1P4: SkillExercise[] = [
       },
       {
         heading: "Çekimde iki sürpriz",
-        tr: "Tekil biçimlerde kökün ünlüsü değişir ve üçüncü tekil -t EKİ ALMAZ: ich kann, du kannst, er kann. Aynısı müssen için de geçerli: ich muss, du musst, er muss. „möchten“ ise düzenli gibi çekilir: ich möchte, du möchtest, er möchte.",
+        tr: "Tekil biçimlerde kökün ünlüsü değişir ve üçüncü tekil -t EKİ ALMAZ: ich kann, du kannst, er kann. Aynısı müssen için de geçerli: ich muss, du musst, er muss. „möchten“ kökünü değiştirmez ama o da üçüncü tekilde -t almaz: ich möchte, du möchtest, er möchte.",
         examples: [
           { de: "Ich kann, du kannst, er kann", tr: "yapabilirim, yapabilirsin, yapabilir", note: "er biçiminde -t yok" },
           { de: "Ich muss, du musst, er muss", tr: "zorundayım, zorundasın, zorunda" },
@@ -375,7 +375,7 @@ export const deA1P4: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["Müsst", "müsst"],
-        explain: "„ihr“ biçiminde kökün ünlüsü değişir ve -t gelir: ihr müsst.",
+        explain: "„ihr“ biçiminde kök ünlüsü değişmez (ü kalır), yalnız -t gelir: ihr müsst.",
       },
       {
         kind: "gapfill",

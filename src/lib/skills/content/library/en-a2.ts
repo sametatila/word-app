@@ -390,7 +390,7 @@ export const enA2: SkillExercise[] = [
         explain: "Soruda zamanı „did“ taşır, asıl fiil yalın kalır: Did you finish …?",
       },
       {
-        text: "She ___ to the party because she was ill.",
+        text: "She ___ to the party because she was sick.",
         options: ["didn't come", "didn't came", "not came"],
         answer: 0,
         explain: "Olumsuzda da fiil yalın: didn't come. „not came“ diye bir biçim yok.",
