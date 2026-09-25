@@ -32,7 +32,7 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
       { de: "I can say what I was doing when something happened.", tr: "Bir şey olduğunda ne yaptığımı söyleyebiliyorum.", en: "I can say what I was doing when something happened." },
       { de: "I can use when and while in one sentence.", tr: "„when“ ve „while“ ile iki işi bağlayabiliyorum.", en: "I can use when and while in one sentence." },
       { de: "I can talk about my childhood with used to.", tr: "„used to“ ile çocukluğumu anlatabiliyorum.", en: "I can talk about my childhood with used to." },
-      { de: "I can ask about the past: where, who, how long.", tr: "Geçmişi sorabiliyorum: nerede, kiminle, ne kadar.", en: "I can ask about the past: where, who, how long." },
+      { de: "I can ask about the past: where, who with, how long.", tr: "Geçmişi sorabiliyorum: nerede, kiminle, ne kadar.", en: "I can ask about the past: where, who with, how long." },
     ],
     listening: {
       title: "A bad day",
@@ -44,8 +44,8 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
         { speaker: "Ela", de: "Did you wait a long time?", tr: "Uzun mu bekledin?" },
         { speaker: "Onur", de: "Twenty minutes. Then I fell down on the street and I hurt my arm.", tr: "Yirmi dakika. Sonra sokakta düştüm ve kolumu incittim." },
         { speaker: "Ela", de: "Oh no! Was it serious? How long did you stay at the doctor?", tr: "Aman! Ciddi miydi? Doktorda ne kadar kaldın?" },
-        { speaker: "Onur", de: "Luckily, it wasn't serious. I stayed there for one hour, and a neighbour helped me at home.", tr: "Şükür, ciddi değildi. Bir saat kaldım, evde de bir komşu yardım etti." },
-        { speaker: "Ela", de: "I'm happy your arm is better today.", tr: "Bugün kolun daha iyi olmasına sevindim." },
+        { speaker: "Onur", de: "Luckily, it wasn't serious. I stayed there for one hour, and a neighbor helped me at home.", tr: "Şükür, ciddi değildi. Bir saat kaldım, evde de bir komşu yardım etti." },
+        { speaker: "Ela", de: "I'm happy your arm is better today.", tr: "Kolunun bugün daha iyi olmasına sevindim." },
       ],
       questions: [
         { de: "What was Onur doing when it started to rain?", tr: "Yağmur başladığında Onur ne yapıyordu?", options: ["He was cooking", "He was waiting for the bus", "He was sleeping", "He was playing football"], answer: 1 },
@@ -57,14 +57,14 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
       title: "A day I remember",
       titleTr: "Hatırladığım bir gün",
       genre: "Kişisel yazı",
-      text: "A day I remember\n\nLast summer I travelled to a small island with my sister. We stayed at a hostel for five days. The weather was hot and the beach was beautiful.\n\nOne morning, while we were swimming, my sister lost her bag in the water. We looked for it for two hours! Luckily, a boy from the hostel found it in the evening.\n\nAt first I was angry, but now I remember that day and I laugh.",
+      text: "A day I remember\n\nLast summer I traveled to a small island with my sister. We stayed at a hostel for five days. The weather was hot and the beach was beautiful.\n\nOne morning, while we were swimming, my sister lost her bag in the water. We looked for it for two hours! Luckily, a boy from the hostel found it in the evening.\n\nAt first I was angry, but now I remember that day and I laugh.",
       questions: [
         { de: "Where did they stay?", tr: "Nerede kaldılar?", options: ["At a hotel", "At a hostel", "With friends", "At home"], answer: 1 },
-        { de: "What happened while they were swimming?", tr: "Yüzerken ne oldu?", options: ["Her sister lost her key", "It started to rain", "They missed the bus", "Her sister hurt her arm"], answer: 0 },
+        { de: "What happened while they were swimming?", tr: "Yüzerken ne oldu?", options: ["Her sister lost her bag", "It started to rain", "They missed the bus", "Her sister hurt her arm"], answer: 0 },
       ],
     },
     speaking: [
-      { situation: "Arkadaşına başından geçen bir aksiliği anlatıyorsun.", de: "First I lost my bag, then I fell down on the stairs.", tr: "Önce anahtarımı kaybettim, sonra merdivende düştüm." },
+      { situation: "Arkadaşına başından geçen bir aksiliği anlatıyorsun.", de: "First I lost my bag, then I fell down on the stairs.", tr: "Önce çantamı kaybettim, sonra merdivende düştüm." },
       { situation: "Birinin geçmişini soruyorsun.", de: "Where did you go last summer and how long did you stay?", tr: "Geçen yaz nereye gittin ve ne kadar kaldın?" },
     ],
     writing: {
@@ -84,7 +84,7 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
         { de: "Luckily, it wasn't serious.", tr: "Şükür, ciddi değildi.", en: "Luckily, it wasn't serious." },
       ],
       sample:
-        "Two days ago I had a bad day. In the morning I was looking for my bag when my sister called. While we were talking, I didn't look at the clock. Then I walked to the bus stop, but the bus left just now. I waited twenty minutes and I came late to school. After that my teacher asked me why I was late. I explained everything. Luckily, it wasn't serious.",
+        "Two days ago I had a bad day. In the morning I was looking for my bag when my sister called. While we were talking, I didn't look at the clock. Then I walked to the bus stop, but I missed the bus. I waited twenty minutes for the next one and I was late for school. After that my teacher asked me why I was late. I explained everything. Luckily, it wasn't serious.",
     },
   },
 
@@ -102,7 +102,7 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
     ],
     canDo: [
       { de: "I can say what I have done in my life.", tr: "Hayatımda neler yaptığımı anlatabiliyorum.", en: "I can say what I have done in my life." },
-      { de: "I can say how long I have lived or worked somewhere.", tr: "Bir yerde ne zamandan beri oturduğumu söyleyebiliyorum.", en: "I can say how long I have lived or worked somewhere." },
+      { de: "I can say how long I have lived or worked somewhere.", tr: "Bir yerde ne zamandan beri oturduğumu ya da çalıştığımı söyleyebiliyorum.", en: "I can say how long I have lived or worked somewhere." },
       { de: "I can say what I have already finished and what I haven't done yet.", tr: "Neyi bitirdiğimi, neyi henüz bitirmediğimi söyleyebiliyorum.", en: "I can say what I have already finished and what I haven't done yet." },
       { de: "I can compare my life before and now.", tr: "Eski hâlimle bugünü karşılaştırabiliyorum.", en: "I can compare my life before and now." },
       { de: "I can talk about my hopes and plans.", tr: "Umutlarımdan ve planlarımdan bahsedebiliyorum.", en: "I can talk about my hopes and plans." },
@@ -121,7 +121,7 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
         { speaker: "Merve", de: "My life has changed a lot since then, too. This year is better than the last one.", tr: "Benim hayatım da o zamandan beri çok değişti. Bu yıl geçen yıldan daha iyi." },
       ],
       questions: [
-        { de: "How long has Kerem lived in the city?", tr: "Kerem şehirde ne zamandan beri oturuyor?", options: ["For three months", "For three years", "Since university", "For two years"], answer: 1 },
+        { de: "How long has Kerem lived in the city?", tr: "Kerem şehirde ne zamandan beri oturuyor?", options: ["For three months", "For three years", "For one year", "For two years"], answer: 1 },
         { de: "Where has Kerem worked abroad?", tr: "Kerem yurt dışında nerede çalıştı?", options: ["In Italy", "In France", "He has never worked abroad", "In two countries"], answer: 0 },
         { de: "What has Kerem already finished?", tr: "Kerem neyi bitirdi?", options: ["The course", "The first year", "The second year", "Nothing"], answer: 1 },
       ],
@@ -189,7 +189,7 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
         { speaker: "Patient", de: "Good morning. I'd like to change my appointment on Friday.", tr: "Günaydın. Cumadaki randevumu değiştirmek istiyorum." },
         { speaker: "Assistant", de: "Of course. Do you want something earlier or later?", tr: "Tabii. Daha erken mi yoksa daha sonra mı istiyorsunuz?" },
         { speaker: "Patient", de: "Earlier, please. I have had a cough for five days and it is getting worse.", tr: "Daha erken lütfen. Beş gündür öksürüyorum ve kötüleşiyor." },
-        { speaker: "Assistant", de: "Then come tomorrow at nine. Is that urgent enough?", tr: "O hâlde yarın dokuzda gelin. Bu kadar acil mi?" },
+        { speaker: "Assistant", de: "Then come tomorrow at nine. Is that early enough?", tr: "O hâlde yarın dokuzda gelin. Bu yeterince erken mi?" },
         { speaker: "Patient", de: "Yes, thank you. Should I bring my insurance card?", tr: "Evet, teşekkürler. Sigorta kartımı getirmeli miyim?" },
         { speaker: "Assistant", de: "Yes, and please fill out this form before you come in.", tr: "Evet, bir de gelmeden önce bu formu doldurun." },
       ],
@@ -203,7 +203,7 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
       title: "Reading the label",
       titleTr: "Prospektüs",
       genre: "Bilgi metni",
-      text: "COUGH SYRUP — please read before use\n\nDose for adults: one spoon twice a day, after meals.\nChildren from six years: one spoon a day.\n\nDo not take the syrup for more than seven days. If you feel dizzy, stop and call your doctor.\n\nSide effects: some people feel tired after the first dose.\n\nYou should keep the bottle in a cold and dark place. Do not use it if the bottle is open for more than four weeks.",
+      text: "COUGH SYRUP — please read before use\n\nDose for adults: one spoon twice a day, after meals.\nChildren over six: one spoon a day.\n\nDo not take the syrup for more than seven days. If you feel dizzy, stop and call your doctor.\n\nSide effects: some people feel tired after the first dose.\n\nYou should keep the bottle in a cool, dark place. Do not use it if the bottle has been open for more than four weeks.",
       questions: [
         { de: "How often should an adult take the syrup?", tr: "Bir yetişkin şurubu ne sıklıkta almalı?", options: ["Once a day", "Twice a day", "Three times a day", "After every meal"], answer: 1 },
         { de: "What should you do if you feel dizzy?", tr: "Baş dönmesi olursa ne yapmalı?", options: ["Take a bigger dose", "Stop and call the doctor", "Wait seven days", "Drink more water"], answer: 1 },
@@ -226,7 +226,7 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
         { de: "I'd like to change my appointment on …", tr: "…-deki randevumu değiştirmek istiyorum", en: "I'd like to change my appointment on …" },
         { de: "I have had … for three days.", tr: "Üç gündür …", en: "I have had … for three days." },
         { de: "Do you have anything earlier?", tr: "Daha erken bir şey var mı?", en: "Do you have anything earlier?" },
-        { de: "Could you call me back, please?", tr: "Beni arayabilir misiniz lütfen?", en: "Could you call me back, please?" },
+        { de: "Could you call me back, please?", tr: "Beni geri arayabilir misiniz lütfen?", en: "Could you call me back, please?" },
         { de: "What should I bring with me?", tr: "Yanımda ne getirmeliyim?", en: "What should I bring with me?" },
       ],
       sample:
@@ -238,7 +238,7 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
     level: "A2",
     index: 3,
     code: "A2.4",
-    titleDe: "Home and neighbourhood",
+    titleDe: "Home and neighborhood",
     titleTr: "Ev ve mahalle",
     focus: [
       { de: "Present perfect for a problem", tr: "„pazartesiden beri çalışmıyor“" },
@@ -259,24 +259,24 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
       situation: "Bir kiracı apartman görevlisini arıyor.",
       turns: [
         { speaker: "Resident", de: "Sorry to bother you, but there's a leak in the bathroom.", tr: "Rahatsız ettim ama banyoda su sızıyor." },
-        { speaker: "Manager", de: "Since when is there a leak?", tr: "Ne zamandan beri sızıyor?" },
+        { speaker: "Manager", de: "How long has there been a leak?", tr: "Ne zamandan beri sızıyor?" },
         { speaker: "Resident", de: "Since Monday. And the heating hasn't worked for three days.", tr: "Pazartesiden beri. Bir de kalorifer üç gündür çalışmıyor." },
         { speaker: "Manager", de: "That's not good. Could you send me a photo of the pipe?", tr: "Bu hiç iyi değil. Bana borunun fotoğrafını gönderebilir misiniz?" },
         { speaker: "Resident", de: "Of course. Could you send someone today? The damage is getting worse.", tr: "Tabii. Bugün birini gönderebilir misiniz? Hasar büyüyor." },
-        { speaker: "Manager", de: "The mechanic can come tomorrow morning at eight. Is that OK for you?", tr: "Tamirci yarın sabah sekizde gelebilir. Size uygun mu?" },
+        { speaker: "Manager", de: "The repairman can come tomorrow morning at eight. Is that OK for you?", tr: "Tamirci yarın sabah sekizde gelebilir. Size uygun mu?" },
         { speaker: "Resident", de: "Yes, I am at home until ten. Thank you very much.", tr: "Evet, ona kadar evdeyim. Çok teşekkürler." },
       ],
       questions: [
         { de: "What is the problem in the bathroom?", tr: "Banyodaki sorun ne?", options: ["There is a leak", "The heating is broken", "The window is broken", "The light doesn't work"], answer: 0 },
-        { de: "How long hasn't the heating worked?", tr: "Kalorifer ne zamandan beri çalışmıyor?", options: ["Since Monday", "For three days", "For a week", "Since the morning"], answer: 1 },
-        { de: "When does the mechanic come?", tr: "Tamirci ne zaman geliyor?", options: ["Today at eight", "Tomorrow morning", "Tomorrow at ten", "Next week"], answer: 1 },
+        { de: "How long has the heating been broken?", tr: "Kalorifer ne zamandan beri çalışmıyor?", options: ["Since Monday", "For three days", "For a week", "Since the morning"], answer: 1 },
+        { de: "When does the repairman come?", tr: "Tamirci ne zaman geliyor?", options: ["Today at eight", "Tomorrow morning", "Tomorrow at ten", "Next week"], answer: 1 },
       ],
     },
     reading: {
       title: "Rules for the building",
       titleTr: "Bina kuralları",
       genre: "Duyuru",
-      text: "RULES FOR THE BUILDING\n\nDear residents,\n\nplease read these rules carefully.\n\n1. After ten o'clock you mustn't make noise.\n2. You have to put the paper in the blue garbage can.\n3. Bikes are forbidden in the hallway. There is a place for them in the attic.\n4. You don't have to clean the stairs — the caretaker does it every Friday.\n\nIf something is broken, please call the caretaker immediately.",
+      text: "RULES FOR THE BUILDING\n\nDear residents,\n\nPlease read these rules carefully.\n\n1. After ten o'clock you mustn't make noise.\n2. You have to put the paper in the blue garbage can.\n3. Bikes are forbidden in the hallway. There is a place for them in the basement.\n4. You don't have to clean the stairs — the caretaker does it every Friday.\n\nIf something is broken, please call the caretaker immediately.",
       questions: [
         { de: "What mustn't the residents do after ten o'clock?", tr: "Kiracılar saat ondan sonra ne yapmamalı?", options: ["Make noise", "Use the lift", "Clean the stairs", "Park a bike"], answer: 0 },
         { de: "Who cleans the stairs?", tr: "Merdivenleri kim temizliyor?", options: ["The residents", "The caretaker", "Nobody", "A mechanic"], answer: 1 },
@@ -284,7 +284,7 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
     },
     speaking: [
       { situation: "Ev sahibine arıza bildiriyorsun.", de: "The heating hasn't worked since Monday. Could you send someone today?", tr: "Kalorifer pazartesiden beri çalışmıyor. Bugün birini gönderebilir misiniz?" },
-      { situation: "Gürültücü komşuyla nazikçe konuşuyorsun.", de: "Sorry to bother you, but the music is very loud after ten.", tr: "Rahatsız ettim ama ondan sonra müzik çok yüksek oluyor." },
+      { situation: "Gürültücü komşuyla nazikçe konuşuyorsun.", de: "Sorry to bother you, but the music is very loud after ten.", tr: "Rahatsız ettim ama saat ondan sonra müzik çok yüksek oluyor." },
     ],
     writing: {
       prompt: "Ev sahibine bir arızayı bildiren nazik bir mesaj yaz.",
@@ -303,7 +303,7 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
         { de: "I am at home until …", tr: "…-e kadar evdeyim", en: "I am at home until …" },
       ],
       sample:
-        "Dear Mr. Vogt,\n\nsorry to bother you, but there's a leak in the kitchen. The water comes from the pipe under the cupboard and the damage is getting worse. The heating hasn't worked since Monday, either.\n\nCould you send someone today or tomorrow, please? I am at home until two o'clock, and after five I am at home again.\n\nThank you very much\nA. Demir, second floor",
+        "Dear Mr. Vogt,\n\nSorry to bother you, but there's a leak in the kitchen. The water comes from the pipe under the cupboard and the damage is getting worse. The heating hasn't worked since Monday, either.\n\nCould you send someone today or tomorrow, please? I am at home until two o'clock, and after five I am at home again.\n\nThank you very much\nA. Demir, second floor",
     },
   },
 
@@ -334,15 +334,15 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
         { speaker: "Manager", de: "Good morning. Please introduce yourself.", tr: "Günaydın. Lütfen kendinizi tanıtın." },
         { speaker: "Selin", de: "My name is Selin Kaya. I have worked in a big company for four years.", tr: "Adım Selin Kaya. Dört yıldır büyük bir şirkette çalışıyorum." },
         { speaker: "Manager", de: "What was your position there?", tr: "Oradaki göreviniz neydi?" },
-        { speaker: "Selin", de: "I organised projects and I worked with a team of ten people.", tr: "Projeleri organize ettim ve on kişilik bir ekiple çalıştım." },
+        { speaker: "Selin", de: "I organized projects and I worked with a team of ten people.", tr: "Projeleri organize ettim ve on kişilik bir ekiple çalıştım." },
         { speaker: "Manager", de: "And what is your greatest strength?", tr: "En güçlü yanınız ne?" },
-        { speaker: "Selin", de: "My greatest strength is working with customers. I am also interested in new skills.", tr: "En güçlü yanım müşterilerle çalışmak. Yeni beceriler de ilgimi çekiyor." },
+        { speaker: "Selin", de: "My greatest strength is working with customers. I am also interested in learning new skills.", tr: "En güçlü yanım müşterilerle çalışmak. Yeni beceriler öğrenmek de ilgimi çekiyor." },
         { speaker: "Manager", de: "Good. When can you start?", tr: "Güzel. Ne zaman başlayabilirsiniz?" },
         { speaker: "Selin", de: "I can start on the first of April.", tr: "Nisanın birinde başlayabilirim." },
       ],
       questions: [
         { de: "How long has Selin worked in a big company?", tr: "Selin büyük bir şirkette ne zamandan beri çalışıyor?", options: ["For two years", "For four years", "Since April", "For ten years"], answer: 1 },
-        { de: "What did Selin do in her job?", tr: "Selin işinde ne yaptı?", options: ["She organised projects", "She answered the phone", "She was a teacher", "She worked alone"], answer: 0 },
+        { de: "What did Selin do in her job?", tr: "Selin işinde ne yaptı?", options: ["She organized projects", "She answered the phone", "She was a teacher", "She worked alone"], answer: 0 },
         { de: "When can Selin start?", tr: "Selin ne zaman başlayabilir?", options: ["Tomorrow", "On the first of April", "Next year", "After four years"], answer: 1 },
       ],
     },
@@ -350,15 +350,15 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
       title: "We are looking for a colleague",
       titleTr: "İş ilanı",
       genre: "İlan",
-      text: "WE ARE LOOKING FOR A COLLEAGUE\n\nPosition: office worker, full-time\nStart: 1 April\n\nYour tasks:\n· answer emails and check reports\n· organise meetings for the team\n· help our customers on the phone\n\nRequired: two years of experience in an office. English is important, and you should be able to work in a team.\n\nWe offer a good salary and a coffee break with nice colleagues.\n\nPlease apply before 15 March.",
+      text: "WE ARE LOOKING FOR A COLLEAGUE\n\nPosition: office worker, full-time\nStart: 1 April\n\nYour tasks:\n· answer emails and check reports\n· organize meetings for the team\n· help our customers on the phone\n\nRequired: two years of experience in an office. English is important, and you should be able to work in a team.\n\nWe offer a good salary and a coffee break with nice colleagues.\n\nPlease apply before 15 March.",
       questions: [
         { de: "What experience is required?", tr: "Hangi deneyim isteniyor?", options: ["Two years in an office", "Four years in a team", "No experience", "Experience abroad"], answer: 0 },
         { de: "When does the job start?", tr: "İş ne zaman başlıyor?", options: ["On 15 March", "On 1 April", "Next year", "Immediately"], answer: 1 },
       ],
     },
     speaking: [
-      { situation: "Mülakatta deneyimini anlatıyorsun.", de: "I have worked in a team for three years and I organised projects.", tr: "Üç yıldır bir ekiple çalışıyorum ve projeleri organize ettim." },
-      { situation: "Şefinden izin istiyorsun.", de: "Could I take a day off on Friday? I have an appointment.", tr: "Cuma bir gün izin alabilir miyim? Randevum var." },
+      { situation: "Mülakatta deneyimini anlatıyorsun.", de: "I have worked in a team for three years and I organized projects.", tr: "Üç yıldır bir ekiple çalışıyorum ve projeleri organize ettim." },
+      { situation: "Şefinden izin istiyorsun.", de: "Could I take a day off on Friday? I have an appointment.", tr: "Cuma günü izin alabilir miyim? Randevum var." },
     ],
     writing: {
       prompt: "Bir iş ilanına kısa bir başvuru e-postası yaz.",
@@ -377,7 +377,7 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
         { de: "Best regards,", tr: "Saygılarımla,", en: "Best regards," },
       ],
       sample:
-        "Dear Mrs. Renner,\n\nI want to apply for the position of office worker. I read your ad yesterday and the tasks are very interesting for me.\n\nI have worked at a big company for four years. I organised meetings, I checked reports and I helped customers on the phone every day. My greatest strength is working in a team.\n\nI can start on the first of April. I have attached my documents. Could you tell me when the interview is?\n\nBest regards,\nSelin Kaya",
+        "Dear Mrs. Renner,\n\nI want to apply for the position of office worker. I read your ad yesterday and the tasks are very interesting for me.\n\nI have worked at a big company for four years. I organized meetings, I checked reports and I helped customers on the phone every day. My greatest strength is working in a team.\n\nI can start on the first of April. I have attached my documents. Could you tell me when the interview is?\n\nBest regards,\nSelin Kaya",
     },
   },
 
@@ -406,7 +406,7 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
       situation: "Bir müşteri bozuk bir telefonu mağazaya getiriyor.",
       turns: [
         { speaker: "Customer", de: "Good afternoon. There's a problem with this smartphone.", tr: "İyi günler. Bu telefonda bir sorun var." },
-        { speaker: "Clerk", de: "What is the problem with it?", tr: "Onda sorun ne?" },
+        { speaker: "Clerk", de: "What is the problem with it?", tr: "Nesi var?" },
         { speaker: "Customer", de: "The screen is damaged and it doesn't charge. I bought it three weeks ago.", tr: "Ekran hasarlı ve şarj olmuyor. Üç hafta önce almıştım." },
         { speaker: "Clerk", de: "Do you have the receipt with you?", tr: "Fişiniz var mı?" },
         { speaker: "Customer", de: "Yes, here it is. Could you replace it, please? It's still under warranty.", tr: "Evet, buyurun. Değiştirebilir misiniz? Hâlâ garantisi var." },
@@ -423,7 +423,7 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
       title: "Two offers for your phone",
       titleTr: "İki telefon teklifi",
       genre: "Karşılaştırma tablosu",
-      text: "TWO OFFERS — WHICH ONE IS BETTER FOR YOU?\n\nOFFER A\nMonthly payment: 15\nData: 5 GB\nContract: 24 months\nYou can cancel after 24 months.\n\nOFFER B\nMonthly payment: 22\nData: 20 GB\nContract: 12 months\nYou can cancel every month.\n\nOffer A is cheaper than Offer B, but you get more data with Offer B. Offer B is also more expensive.\n\nIs there a discount? Yes: students pay only ten every month with both offers.",
+      text: "TWO OFFERS — WHICH ONE IS BETTER FOR YOU?\n\nOFFER A\nMonthly payment: 15\nData: 5 GB\nContract: 24 months\nYou can cancel after 24 months.\n\nOFFER B\nMonthly payment: 22\nData: 20 GB\nContract: 12 months\nYou can cancel every month.\n\nOffer A is cheaper than Offer B, but you get more data with Offer B.\n\nIs there a discount? Yes: students pay only ten every month with both offers.",
       questions: [
         { de: "Which offer is cheaper?", tr: "Hangi teklif daha ucuz?", options: ["Offer A", "Offer B", "Both are the same", "The text doesn't say"], answer: 0 },
         { de: "What is the advantage of Offer B?", tr: "B teklifinin avantajı ne?", options: ["More data", "A longer contract", "A free phone", "No payment"], answer: 0 },
@@ -431,7 +431,7 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
     },
     speaking: [
       { situation: "Mağazada bir ürünü iade ediyorsun.", de: "I'd like to return this item. Can I get a refund, please?", tr: "Bu ürünü iade etmek istiyorum. Para iadesi alabilir miyim?" },
-      { situation: "Siparişini takip ediyorsun.", de: "I ordered a package last week. Has it arrived yet?", tr: "Geçen hafta bir kargo sipariş ettim. Geldi mi?" },
+      { situation: "Siparişini takip ediyorsun.", de: "I ordered a book last week. Has it arrived yet?", tr: "Geçen hafta bir kitap sipariş ettim. Geldi mi?" },
     ],
     writing: {
       prompt: "Hasarlı gelen bir sipariş için müşteri hizmetlerine kısa bir e-posta yaz.",
@@ -458,12 +458,12 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
     level: "A2",
     index: 6,
     code: "A2.7",
-    titleDe: "Travelling",
+    titleDe: "Traveling",
     titleTr: "Seyahat",
     focus: [
       { de: "I'd like to book …", tr: "rezervasyon dili" },
       { de: "Could I have …, please?", tr: "resmî nazik rica" },
-      { de: "Does the price include …?", tr: "neyin dahil olduğunu sormak" },
+      { de: "Does the price include …?", tr: "neyin dâhil olduğunu sormak" },
       { de: "How about …-ing?", tr: "öneri sunmak" },
     ],
     canDo: [
@@ -480,7 +480,7 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
       turns: [
         { speaker: "Guest", de: "Good evening. I have a reservation under the name Aydin.", tr: "İyi akşamlar. Aydın adına rezervasyonum var." },
         { speaker: "Receptionist", de: "Good evening. A double room for three nights, is that right?", tr: "İyi akşamlar. Üç gece iki kişilik oda, doğru mu?" },
-        { speaker: "Guest", de: "Yes. Does the price include breakfast?", tr: "Evet. Fiyata kahvaltı dahil mi?" },
+        { speaker: "Guest", de: "Yes. Does the price include breakfast?", tr: "Evet. Fiyata kahvaltı dâhil mi?" },
         { speaker: "Receptionist", de: "Yes, breakfast is from seven to ten. Here is your room key — room 204.", tr: "Evet, kahvaltı yediden ona kadar. Oda anahtarınız — 204." },
         { speaker: "Guest", de: "Thank you. There aren't any towels in the bathroom.", tr: "Teşekkürler. Banyoda havlu yok." },
         { speaker: "Receptionist", de: "I'm sorry. I'll send some towels immediately.", tr: "Özür dilerim. Hemen havlu göndereceğim." },
@@ -488,8 +488,8 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
       ],
       questions: [
         { de: "How many nights is the reservation for?", tr: "Rezervasyon kaç gece için?", options: ["Two nights", "Three nights", "Seven nights", "One night"], answer: 1 },
-        { de: "What is not in the room?", tr: "Odada ne yok?", options: ["Towels", "A key", "Breakfast", "A bathroom"], answer: 0 },
-        { de: "Is breakfast included in the price?", tr: "Kahvaltı fiyata dahil mi?", options: ["Yes, it is", "No, it isn't", "Only for two people", "Only after ten"], answer: 0 },
+        { de: "What problem does the guest report?", tr: "Konuk hangi sorunu bildiriyor?", options: ["There aren't any towels", "The key doesn't work", "Breakfast isn't included", "The room is too small"], answer: 0 },
+        { de: "Is breakfast included in the price?", tr: "Kahvaltı fiyata dâhil mi?", options: ["Yes, it is", "No, it isn't", "Only for two people", "Only after ten"], answer: 0 },
       ],
     },
     reading: {
@@ -511,14 +511,14 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
       checklist: [
         "Hangi oda ve kaç gece olduğunu yaz",
         "Hangi tarihte geleceğini yaz",
-        "Fiyata neyin dahil olduğunu sor",
+        "Fiyata neyin dâhil olduğunu sor",
         "Otelin nerede olduğunu sor",
       ],
       minWords: 45,
       phrases: [
         { de: "I'd like to book a room for … nights.", tr: "… gece için oda ayırtmak istiyorum", en: "I'd like to book a room for … nights." },
         { de: "Could I have a room with …, please?", tr: "…-li bir oda alabilir miyim?", en: "Could I have a room with …, please?" },
-        { de: "Does the price include breakfast?", tr: "Fiyata kahvaltı dahil mi?", en: "Does the price include breakfast?" },
+        { de: "Does the price include breakfast?", tr: "Fiyata kahvaltı dâhil mi?", en: "Does the price include breakfast?" },
         { de: "How do I get to the hotel?", tr: "Otele nasıl gelirim?", en: "How do I get to the hotel?" },
         { de: "Could you confirm the reservation?", tr: "Rezervasyonu teyit edebilir misiniz?", en: "Could you confirm the reservation?" },
       ],
@@ -553,11 +553,11 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
       turns: [
         { speaker: "Nuray", de: "My sister is getting married on Saturday. Would you like to come?", tr: "Kız kardeşim cumartesi evleniyor. Gelmek ister misin?" },
         { speaker: "Jonas", de: "Congratulations! I'd love to, but I can't — I am away this week.", tr: "Tebrikler! Çok isterdim ama gelemem, bu hafta şehir dışındayım." },
-        { speaker: "Nuray", de: "Unfortunately! The wedding is in a garden and there is music and dancing.", tr: "Ne yazık! Düğün bahçede, müzik ve dans da var." },
+        { speaker: "Nuray", de: "What a pity! The wedding is in a garden and there is music and dancing.", tr: "Ne yazık! Düğün bahçede, müzik ve dans da var." },
         { speaker: "Jonas", de: "I am sorry about that. Have you bought a present yet?", tr: "Üzüldüm. Hediye aldın mı?" },
-        { speaker: "Nuray", de: "I haven't bought a present yet. I have no idea!", tr: "Henüz almadım. Hiç fikrim yok!" },
-        { speaker: "Jonas", de: "How about a photograph of the family? My cousin was very proud of hers.", tr: "Ailenin bir fotoğrafı nasıl olur? Kuzenim kendisininkiyle çok gururlandı." },
-        { speaker: "Nuray", de: "That is a kind idea. Thank you for your help!", tr: "Çok nazik bir fikir. Yardımın için teşekkürler!" },
+        { speaker: "Nuray", de: "I haven't bought a present yet. I have no idea what to buy!", tr: "Henüz almadım. Ne alacağımı hiç bilmiyorum!" },
+        { speaker: "Jonas", de: "How about a photograph of the family? My cousin got one for her wedding and she loved it.", tr: "Ailenin bir fotoğrafı nasıl olur? Kuzenime düğününde bir tane verdiler, çok sevdi." },
+        { speaker: "Nuray", de: "That's a lovely idea. Thank you for your help!", tr: "Çok güzel bir fikir. Yardımın için teşekkürler!" },
       ],
       questions: [
         { de: "Why can't Jonas come?", tr: "Jonas neden gelemiyor?", options: ["He is ill", "He is away this week", "He doesn't like weddings", "He has no present"], answer: 1 },
@@ -596,7 +596,7 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
         { de: "Let's meet again soon.", tr: "Yakında yine buluşalım.", en: "Let's meet again soon." },
       ],
       sample:
-        "Hi Ayse,\n\nthank you for the invitation! The wedding was wonderful and I had a lot of fun. The garden was beautiful and the music was excellent. Congratulations on your marriage — I am so proud of you both.\n\nI am sorry I was late. The bus left without me and I waited twenty minutes for the next one.\n\nThanks for helping me with the photographs. Let's meet again soon — are you free next Saturday?\n\nSee you\nNuray",
+        "Hi Ayse,\n\nThank you for the invitation! The wedding was wonderful and I had a lot of fun. The garden was beautiful and the music was excellent. Congratulations on your marriage — I am so proud of you both.\n\nI am sorry I was late. The bus left without me and I waited twenty minutes for the next one.\n\nThanks for helping me with the photographs. Let's meet again soon — are you free next Saturday?\n\nSee you\nNuray",
     },
   },
 
@@ -613,7 +613,7 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
       { de: "should / shouldn't for safety", tr: "güvenlik öğüdü" },
     ],
     canDo: [
-      { de: "I can explain how to use an app step by step.", tr: "Bir uygulamayı adım adım anlatabiliyorum.", en: "I can explain how to use an app step by step." },
+      { de: "I can explain how to use an app step by step.", tr: "Bir uygulamanın nasıl kullanıldığını adım adım anlatabiliyorum.", en: "I can explain how to use an app step by step." },
       { de: "I can describe a problem with my computer or phone.", tr: "Bilgisayar ya da telefon sorunumu anlatabiliyorum.", en: "I can describe a problem with my computer or phone." },
       { de: "I can recommend a series or a film.", tr: "Bir dizi ya da film önerebiliyorum.", en: "I can recommend a series or a film." },
       { de: "I can say what I think about technology.", tr: "Teknoloji hakkında ne düşündüğümü söyleyebiliyorum.", en: "I can say what I think about technology." },
@@ -634,7 +634,7 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
       ],
       questions: [
         { de: "What is the problem?", tr: "Sorun ne?", options: ["The camera doesn't work", "The battery is low", "The headphones are broken", "There is no connection"], answer: 0 },
-        { de: "What has Sara already done?", tr: "Sara neyi zaten yaptı?", options: ["She has updated the program", "She has restarted the computer", "She has called the shop", "She has bought a new camera"], answer: 1 },
+        { de: "What has Sara already done?", tr: "Sara daha önce neyi denemiş?", options: ["She has updated the program", "She has restarted the computer", "She has called the shop", "She has bought a new camera"], answer: 1 },
         { de: "What should Sara do now?", tr: "Sara şimdi ne yapmalı?", options: ["Update the program", "Press the button again", "Use the phone", "Wait for one hour"], answer: 0 },
       ],
     },
@@ -642,7 +642,7 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
       title: "A useful app for the bus",
       titleTr: "Uygulama tanıtımı",
       genre: "Tanıtım yazısı",
-      text: "CITY BUS — a free app for your phone\n\nWhat is it for? You can see when your bus arrives and you can buy a ticket on your phone.\n\nHow does it work? First download the app, then create an account with your email address. After that choose your city.\n\nSome people say the app is very useful, but others think the map is too slow.\n\nSafety: you should use a long password. You shouldn't share it with other people.",
+      text: "CITY BUS — a free app for your phone\n\nWhat is it for? You can see when your bus arrives and you can buy a ticket on your phone.\n\nHow does it work? First download the app, then create an account with your email address. After that choose your city.\n\nMany people say the app is very useful, but some people think the map is too slow.\n\nSafety: you should use a long password. You shouldn't share it with other people.",
       questions: [
         { de: "What can you do with the app?", tr: "Uygulamayla ne yapabilirsin?", options: ["Buy a ticket on your phone", "Call the bus driver", "Watch a series", "Download a map of the city"], answer: 0 },
         { de: "What do some people think?", tr: "Bazı kullanıcılar ne düşünüyor?", options: ["The app is not free", "The map is too slow", "The account is not safe", "The app is boring"], answer: 1 },
@@ -653,7 +653,7 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
       { situation: "Teknoloji hakkındaki görüşünü söylüyorsun.", de: "I think phones are useful, but it depends on the app.", tr: "Bence telefonlar faydalı ama uygulamaya bağlı." },
     ],
     writing: {
-      prompt: "Bir arkadaşına bir uygulamayı ya da bir işi nasıl yapacağını adım adım yazan bir mesaj yaz.",
+      prompt: "Bir arkadaşına bir uygulamanın nasıl kullanıldığını adım adım anlatan bir mesaj yaz.",
       checklist: [
         "Uygulamanın ne işe yaradığını yaz",
         "Adımları sırala (First …, then …, after that …)",
@@ -686,7 +686,7 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
       { de: "I expect an answer within a week", tr: "süre tanımak" },
     ],
     canDo: [
-      { de: "I can register at an office and take a number.", tr: "Bir kurumda kayıt yapıp sıra numarası alabiliyorum.", en: "I can register at an office and take a number." },
+      { de: "I can register at an office and take a number.", tr: "Bir kurumda kayıt yaptırıp sıra numarası alabiliyorum.", en: "I can register at an office and take a number." },
       { de: "I can fill in a form and spell my name.", tr: "Bir formu doldurup adımı harf harf söyleyebiliyorum.", en: "I can fill in a form and spell my name." },
       { de: "I can report a lost wallet to the police.", tr: "Polise kayıp cüzdan bildirebiliyorum.", en: "I can report a lost wallet to the police." },
       { de: "I can book an official appointment.", tr: "Resmî bir randevu alabiliyorum.", en: "I can book an official appointment." },
@@ -708,7 +708,7 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
       ],
       questions: [
         { de: "What does the visitor want?", tr: "Kişi ne istiyor?", options: ["A residence permit", "A transport card", "A library card", "A new passport"], answer: 0 },
-        { de: "What has the visitor already done?", tr: "Kişi neyi zaten yaptı?", options: ["Made a copy", "Filled in the form", "Paid the fine", "Called the office"], answer: 1 },
+        { de: "What has the visitor already done?", tr: "Kişi neyi önceden halletmiş?", options: ["Made a copy", "Filled in the form", "Paid the fine", "Called the office"], answer: 1 },
         { de: "Where can the visitor make a copy?", tr: "Kişi nerede fotokopi çekebilir?", options: ["At counter four", "On the ground floor", "In the library", "At the police station"], answer: 1 },
       ],
     },
@@ -723,8 +723,8 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
       ],
     },
     speaking: [
-      { situation: "Kurumda ne istediğini söylüyorsun.", de: "I'd like to register, please. I have already taken a number.", tr: "Kayıt yapmak istiyorum. Sıra numarası aldım." },
-      { situation: "Kayıp bildiriyorsun.", de: "Someone stole my wallet. It happened at about six o'clock.", tr: "Cüzdanımı çaldılar. Saat altı civarında oldu." },
+      { situation: "Kurumda ne istediğini söylüyorsun.", de: "I'd like to register, please. I have already taken a number.", tr: "Kayıt yaptırmak istiyorum. Sıra numarası aldım." },
+      { situation: "Kayıp bildiriyorsun.", de: "I have lost my wallet. I think it happened at about six o'clock.", tr: "Cüzdanımı kaybettim. Sanırım saat altı civarında oldu." },
     ],
     writing: {
       prompt: "Bir kuruma resmî bir şikâyet e-postası yaz.",
