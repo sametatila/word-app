@@ -137,7 +137,7 @@ export async function localiseLesson(lesson: Lesson, lang: NativeLang | null | u
  * başlık, yarım çevirinin en görünür hâli.
  */
 export async function nativeTitle(
-  lessonId: string,
+  conversationId: string,
   lang: NativeLang | null | undefined,
 ): Promise<string | null> {
   if (!lang || lang === DEFAULT_NATIVE) return null;
@@ -150,12 +150,12 @@ export async function nativeTitle(
     const de = await deDict();
     if (!de) return null;
     const { findLesson } = await import("./index");
-    const titleTr = (await findLesson(lessonId))?.titleTr;
+    const titleTr = (await findLesson(conversationId))?.titleTr;
     if (!titleTr) return null;
     return de.lesson[deKey("titleTr", titleTr)] ?? null;
   }
   const dict = await nativeDict();
-  return dict?.meta[lessonId]?.title ?? null;
+  return dict?.meta[conversationId]?.title ?? null;
 }
 
 /**

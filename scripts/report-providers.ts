@@ -10,7 +10,7 @@ import { Pool } from "pg";
  * görününce sorunun anahtarda mı, panelin gecikmesinde mi, yoksa zincirin
  * başka bir sağlayıcıya düşmesinde mi olduğu ayırt edilemiyordu.
  *
- * Cevap `roleplay_logs` içinde: her tur hangi sağlayıcı ve model tarafından
+ * Cevap `chat_logs` içinde: her tur hangi sağlayıcı ve model tarafından
  * verildiyse oraya yazılıyor, sağlayıcının bildirdiği kalan hakla birlikte.
  *
  *   npm run report:providers
@@ -120,11 +120,11 @@ async function main() {
     console.log("\nai_usage boş — henüz kaydedilmiş AI çağrısı yok.");
   }
 
-  const total = (await q`select count(*)::int as n from roleplay_logs`) as Row[];
+  const total = (await q`select count(*)::int as n from chat_logs`) as Row[];
   const n = Number(total[0]?.n ?? 0);
   if (!n) {
     console.log(
-      "roleplay_logs boş. Ya hiç ders konuşması yapılmadı ya da kayıtların süresi doldu\n" +
+      "chat_logs boş. Ya hiç ders konuşması yapılmadı ya da kayıtların süresi doldu\n" +
         "(kayıt kalıcı bir birikim değil, süreli bir teşhis penceresi).",
     );
     return;
@@ -137,7 +137,7 @@ async function main() {
       count(*)::int as n,
       min(created_at)::text as ilk,
       max(created_at)::text as last_at
-    from roleplay_logs
+    from chat_logs
     group by 1, 2
     order by n desc
   `) as Row[];
@@ -154,7 +154,7 @@ async function main() {
   // buradan görülüyor — 429 gelene kadar her şey normal görünüyor.
   const last = (await q`
     select provider, model, limits, created_at::text as at
-    from roleplay_logs
+    from chat_logs
     where limits is not null
     order by created_at desc
     limit 1

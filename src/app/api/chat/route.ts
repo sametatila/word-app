@@ -13,6 +13,7 @@ import { langOf } from "@/lib/social/notify";
 import { translate } from "@/lib/i18n/dict";
 import { localiseExercise, localiseLesson } from "@/lib/lessons/native-server";
 import { recordAiUsage } from "@/lib/ai-usage";
+import { legacyBody } from "@/lib/legacy-names";
 import { takeUsage } from "@/lib/premium";
 import { claimTiered } from "@/lib/premium/access";
 import { aiConsentGate, aiConsentStateFor } from "@/lib/ai-consent";
@@ -97,13 +98,14 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "bad_request" }, { status: 400 });
   }
 
-  const { lessonId, exerciseId, messages: raw, mode: rawMode } = body as { lessonId?: unknown; exerciseId?: unknown; messages?: unknown; mode?: unknown };
+  // Build 6 `lessonId` gönderiyor (geçici, lib/legacy-names).
+  const { conversationId, exerciseId, messages: raw, mode: rawMode } = legacyBody(body as Record<string, unknown>) as { conversationId?: unknown; exerciseId?: unknown; messages?: unknown; mode?: unknown };
   // Mod (WP-22): sınavda yardım/düzeltme yok; kayıtta da işaretlenir.
   const mode: RoleplayMode = rawMode === "exam" ? "exam" : "practice";
   // Beceri diyaloğu (WP-23): ders yerine temalı egzersiz; senaryo istemcide yedek.
   const dialogue = typeof exerciseId === "string" ? await getExercise(exerciseId) : undefined;
   const dialogueRaw = dialogue && dialogue.skill === "speaking" && "dialogue" in dialogue && dialogue.theme ? dialogue : undefined;
-  const lessonRaw = typeof lessonId === "string" ? await findLesson(lessonId) : undefined;
+  const lessonRaw = typeof conversationId === "string" ? await findLesson(conversationId) : undefined;
   /* Kapatılmış dersin rol yapması da kapalı — içerik aynı yerden geliyor. */
   if (lessonRaw && (await lessonDisabled(lessonRaw.id))) {
     return NextResponse.json({ error: "unknown_lesson" }, { status: 400 });
@@ -177,8 +179,8 @@ export async function POST(req: Request) {
           // onu sessizce atladığı için, kaydedilmeyen bir hata hiç olmamış
           // gibi duruyordu.
           const gen = lesson
-            ? streamRoleplay(lesson, messages, (m) => (meta = m), (r) => recordAiUsage(userId, { kind: "roleplay", ...r }), mode, native)
-            : streamDialogue(dialogueEx!, messages, (m) => (meta = m), (r) => recordAiUsage(userId, { kind: "roleplay", ...r }), native);
+            ? streamRoleplay(lesson, messages, (m) => (meta = m), (r) => recordAiUsage(userId, { kind: "chat", ...r }), mode, native)
+            : streamDialogue(dialogueEx!, messages, (m) => (meta = m), (r) => recordAiUsage(userId, { kind: "chat", ...r }), native);
           for await (const delta of gen) {
             full += delta;
             controller.enqueue(encoder.encode(delta));
@@ -232,7 +234,7 @@ async function underDailyLimit(userId: string): Promise<boolean> {
     const [row] = await db
       .select({ n: sql<number>`count(*)::int` })
       .from(aiUsage)
-      .where(and(eq(aiUsage.userId, userId), eq(aiUsage.kind, "roleplay"), gte(aiUsage.createdAt, sql`now() - interval '1 day'`)));
+      .where(and(eq(aiUsage.userId, userId), eq(aiUsage.kind, "chat"), gte(aiUsage.createdAt, sql`now() - interval '1 day'`)));
     return (row?.n ?? 0) < ROLEPLAY_DAILY_LIMIT;
   } catch {
     return true;

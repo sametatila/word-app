@@ -805,7 +805,7 @@ function LessonPlayerBody({
           return;
         }
         const ok = judgment === e.answer;
-        track("lesson_step", ok ? (isFirstTry ? 2 : 1) : 0, `truefalse:${via}`);
+        track("conversation_step", ok ? (isFirstTry ? 2 : 1) : 0, `truefalse:${via}`);
         if (ok && isFirstTry) setCorrectCount((n) => n + 1);
         vibrate(ok ? "correct" : "wrong");
         interject(
@@ -826,7 +826,7 @@ function LessonPlayerBody({
       const best = verdicts.find((v) => v.kind === "correct") ?? verdicts[0];
 
       if (best.kind === "correct") {
-        track("lesson_step", isFirstTry ? 2 : 1, `${e.kind}:${via}`);
+        track("conversation_step", isFirstTry ? 2 : 1, `${e.kind}:${via}`);
         if (e.kind === "produce" && isFirstTry) setCorrectCount((n) => n + 1);
         vibrate("correct");
         next();
@@ -858,7 +858,7 @@ function LessonPlayerBody({
         elle `3` yaziliydi.
       */
       if (attempts.current >= LESSON_TRY_CEILING) {
-        track("lesson_step", 0, `${e.kind}:${via}`);
+        track("conversation_step", 0, `${e.kind}:${via}`);
         interject(
           [nar("common.answer_is"), { lang: "de", text: e.target }],
           () => runStepRef.current(stepIndexRef.current + 1),
@@ -897,7 +897,7 @@ function LessonPlayerBody({
   useEffect(() => {
     if (!ready || started || phase !== "lecture") return;
     setStarted(true);
-    track("lesson_start", resumed ? 1 : 0, lesson.id);
+    track("conversation_start", resumed ? 1 : 0, lesson.id);
     runStepRef.current(stepIndexRef.current);
     // İlk adım yalnızca bir kez oynatılmalı.
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -906,7 +906,7 @@ function LessonPlayerBody({
   /** Adımı atla — takılan öğrencinin çıkışı; puan almadan ilerler. */
   function skipStep() {
     const k = lesson.lecture[stepIndex]?.expect?.kind;
-    if (k && k !== "confirm") track("lesson_step", 0, `${k}:skip`);
+    if (k && k !== "confirm") track("conversation_step", 0, `${k}:skip`);
     recognition.current?.abort();
     attempts.current = 0;
     setTryCount(0);
@@ -1004,7 +1004,7 @@ function LessonPlayerBody({
         const res = await apiFetch("/api/chat", {
           method: "POST",
           headers: { "content-type": "application/json" },
-          body: JSON.stringify({ lessonId: lesson.id, messages: next }),
+          body: JSON.stringify({ conversationId: lesson.id, messages: next }),
           /* Üretim uzun: genel tavan (25 sn) bu çağrıyı kesiyordu. Android
              kırk beş saniye bekliyor, aynı sabit adıyla. */
           timeoutMs: ROLEPLAY_TIMEOUT_MS,
@@ -1123,7 +1123,7 @@ function LessonPlayerBody({
   }
 
   const userTurns = turns.filter((t) => t.role === "user").length;
-  const roleplayDone = userTurns >= lesson.roleplay.minTurns;
+  const chatDone = userTurns >= lesson.roleplay.minTurns;
 
   /**
    * `finish` her çizimde tazelenen bir ref üzerinden çağrılıyor: kapanış
@@ -1145,21 +1145,21 @@ function LessonPlayerBody({
     setSpeakingTurn(null);
     setPhase("summary");
     {
-      // Ders sonucu olay olarak da düşüyor (WP-80): user_lessons en iyi denemeyi
+      // Ders sonucu olay olarak da düşüyor (WP-80): user_conversations en iyi denemeyi
       // tutar, buradaki satır BU denemeyi — trend ancak böyle çizilir.
       const scored = lesson.lecture.filter((s) => s.expect?.kind === "produce" || s.expect?.kind === "truefalse").length;
-      track("lesson_finish", scored ? Math.round((100 * Math.min(correctCount, scored)) / scored) : 0, lesson.id);
+      track("conversation_finish", scored ? Math.round((100 * Math.min(correctCount, scored)) / scored) : 0, lesson.id);
     }
     // Senaryolu konuşmanın puanı: kalıpların kaçı kullanıldı (KPI 2/6).
     // Modelli konuşmanın puanı WP-22 ile gelir.
     if (offlineRef.current) {
-      track("production_attempt", offlineSummary(lesson, offlineRef.current).score, "roleplay");
+      track("production_attempt", offlineSummary(lesson, offlineRef.current).score, "chat");
     }
     try {
       const payload = {
-        lessonId: lesson.id,
+        conversationId: lesson.id,
         correct: correctCount,
-        roleplayDone,
+        chatDone,
         day: localDay(),
         seconds: Math.round((Date.now() - startedAt.current) / 1000),
       };
@@ -1191,9 +1191,9 @@ function LessonPlayerBody({
       /* ÇEVRİMDIŞI: özet yine gösteriliyor ama sonuç artık kaybolmuyor -
          kendi günüyle kuyruğa alınıyor ve sonraki açılışta gidiyor. */
       queueLessonResult({
-        lessonId: lesson.id,
+        conversationId: lesson.id,
         correct: correctCount,
-        roleplayDone,
+        chatDone,
         day: localDay(),
         seconds: Math.round((Date.now() - startedAt.current) / 1000),
       });
@@ -1217,7 +1217,7 @@ function LessonPlayerBody({
   const pct = scoredTotal ? Math.round((correctCount / scoredTotal) * 100) : 100;
   /* Konuşma YARIM: sunucu açıkça "sayılmadı" dediyse ya da asgari tur dolmadıysa
      (mobil `Summary` `unfinished` ile aynı iki koşul). */
-  const unfinished = saved?.passed === false || !roleplayDone;
+  const unfinished = saved?.passed === false || !chatDone;
 
   // ─────────────────────────── görünüm ───────────────────────────
 
@@ -1763,7 +1763,7 @@ function LessonPlayerBody({
                 onClick={() => void finish()}
                 className="btn btn-ghost w-full py-2.5 text-body"
               >
-                {t(roleplayDone ? "conversationp.end_conversation" : "conversationp.leave_for_now")}
+                {t(chatDone ? "conversationp.end_conversation" : "conversationp.leave_for_now")}
               </button>
             </div>
           </motion.section>
@@ -1887,7 +1887,7 @@ function LessonPlayerBody({
 
       <ReportDialog
         open={reported !== null}
-        kind="roleplay"
+        kind="chat"
         refId={reported?.ref ?? ""}
         content={reported?.text ?? ""}
         onClose={() => setReported(null)}

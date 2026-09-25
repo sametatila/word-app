@@ -145,7 +145,7 @@ export function flatten(segments: Segment[]): string {
 
 export type ProduceItem = {
   id: string;
-  lessonId: string;
+  conversationId: string;
   lessonTitle: string;
   focusId: string;
   /** Türkçe yönerge — çevrilecek cümle ve varsa onu sabitleyen bağlam. */
@@ -158,7 +158,7 @@ export type ProduceItem = {
 
 export type JudgeItem = {
   id: string;
-  lessonId: string;
+  conversationId: string;
   focusId: string;
   /** Hakkında hüküm verilecek Almanca cümle. */
   statement: string;
@@ -169,14 +169,14 @@ export type JudgeItem = {
 
 export type PatternItem = {
   id: string;
-  lessonId: string;
+  conversationId: string;
   lessonTitle: string;
   focusId: string;
   de: string;
   tr: string;
 };
 
-export type WordItem = { de: string; tr: string; head: string; lessonId: string };
+export type WordItem = { de: string; tr: string; head: string; conversationId: string };
 
 export type ModuleContent = {
   course: string;
@@ -191,7 +191,7 @@ export type ModuleContent = {
   patterns: PatternItem[];
   words: WordItem[];
   /** Derslerin rol yapma sahneleri — durum maddelerinin kaynağı. */
-  scenes: { lessonId: string; scene: string; partner: string; opening: string; openingTr: string }[];
+  scenes: { conversationId: string; scene: string; partner: string; opening: string; openingTr: string }[];
 };
 
 /** Modülün dersleri — katalog sırasıyla on ders. */
@@ -261,7 +261,7 @@ export function buildModuleContent(course: string, level: string, index: number,
       if (step.expect?.kind === "produce") {
         produce.push({
           id: `${lesson.id}#p${p++}`,
-          lessonId: lesson.id,
+          conversationId: lesson.id,
           lessonTitle: lesson.title,
           focusId: lesson.focusId,
           prompt: examStem(step.say),
@@ -271,7 +271,7 @@ export function buildModuleContent(course: string, level: string, index: number,
       } else if (step.expect?.kind === "truefalse") {
         judge.push({
           id: `${lesson.id}#j${j++}`,
-          lessonId: lesson.id,
+          conversationId: lesson.id,
           focusId: lesson.focusId,
           statement: step.expect.statement,
           answer: step.expect.answer,
@@ -285,7 +285,7 @@ export function buildModuleContent(course: string, level: string, index: number,
       seenPattern.add(dedup);
       patterns.push({
         id: `${lesson.id}#k${patterns.length}`,
-        lessonId: lesson.id,
+        conversationId: lesson.id,
         lessonTitle: lesson.title,
         focusId: lesson.focusId,
         de: pattern.de,
@@ -296,10 +296,10 @@ export function buildModuleContent(course: string, level: string, index: number,
       const head = headword(v.de);
       if (!head || seenWord.has(head)) continue;
       seenWord.add(head);
-      words.push({ de: v.de, tr: v.tr, head, lessonId: lesson.id });
+      words.push({ de: v.de, tr: v.tr, head, conversationId: lesson.id });
     }
     scenes.push({
-      lessonId: lesson.id,
+      conversationId: lesson.id,
       scene: lesson.roleplay.scene,
       partner: lesson.roleplay.partner,
       opening: lesson.roleplay.opening,

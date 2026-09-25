@@ -2,7 +2,7 @@
  * Konuşma tanıma kota ölçümü (WP-20): npm run report:stt
  *
  * Gerçek kullanım (ai_usage.kind = "stt": her klibin saniyesi kayıtlı;
- * roleplay_logs; user_skills; events DAU) üstünden günlük/saatlik ses
+ * chat_logs; user_skills; events DAU) üstünden günlük/saatlik ses
  * saniyesi ve istek sayısını çıkarır, üç ücretsiz sağlayıcının kotasıyla
  * karşılaştırır ve her birinin kaç günlük aktif kullanıcıya (DAU) yettiğini
  * söyler. İki model:
@@ -59,7 +59,7 @@ async function main() {
   const [peakHour] = await q`select date_trunc('hour', created_at) as h, count(*)::int as n, coalesce(sum(audio_seconds),0)::int as sec from ai_usage where kind = 'stt' and created_at > now() - interval '30 days' group by 1 order by sec desc limit 1`;
   const [peakMin] = await q`select date_trunc('minute', created_at) as m, count(*)::int as n from ai_usage where kind = 'stt' and created_at > now() - interval '30 days' group by 1 order by n desc limit 1`;
   const dau = await q`select date(created_at) as d, count(distinct user_id)::int as u from events where created_at > now() - interval '30 days' group by 1`;
-  const [rp] = await q`select count(*)::int as turns from roleplay_logs where created_at > now() - interval '30 days'`;
+  const [rp] = await q`select count(*)::int as turns from chat_logs where created_at > now() - interval '30 days'`;
   const [sp] = await q`select coalesce(sum(attempts),0)::int as attempts from user_skills where skill = 'speaking' and last_at > now() - interval '30 days'`;
   const [mau] = await q`select count(distinct user_id)::int as n from events where created_at > now() - interval '30 days'`;
 

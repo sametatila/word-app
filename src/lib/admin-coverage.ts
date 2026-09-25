@@ -62,7 +62,7 @@ export type Coverage = {
     webFunnel: { webViews: number; taps: number; redirects: number; appViews: number; purchases: number };
   };
   learning: {
-    lessons: { started: number; finished: number; users: number; rulesTracked: number; rulesDue: number; roleplayDone: number };
+    lessons: { started: number; finished: number; users: number; rulesTracked: number; rulesDue: number; chatDone: number };
     topLessons: { lesson: string; users: number; avgPct: number }[];
     path: { items: number; users: number; attempts: number; passed: number; avgBest: number };
     pathWeakest: { item: string; users: number; avgBest: number; passRate: number }[];
@@ -151,18 +151,18 @@ export async function getCoverage(days = 30): Promise<Coverage> {
         (select count(distinct e.user_id) from events e join w on w.user_id = e.user_id
           where e.name = 'purchase_done' and e.created_at >= w.first_view)::int purchases`),
     rows(sql`
-      select count(*) filter (where name = 'lesson_start')::int started,
-        count(*) filter (where name = 'lesson_finish')::int finished,
-        count(distinct user_id) filter (where name in ('lesson_start', 'lesson_finish'))::int users
-      from events where day >= current_date - ${days - 1}::int and name in ('lesson_start', 'lesson_finish')`),
+      select count(*) filter (where name = 'conversation_start')::int started,
+        count(*) filter (where name = 'conversation_finish')::int finished,
+        count(distinct user_id) filter (where name in ('conversation_start', 'conversation_finish'))::int users
+      from events where day >= current_date - ${days - 1}::int and name in ('conversation_start', 'conversation_finish')`),
     rows(sql`
       select count(*)::int rules, count(*) filter (where due_at <= now())::int due,
-        count(*) filter (where roleplay_done)::int rp
-      from user_lessons`),
+        count(*) filter (where chat_done)::int rp
+      from user_conversations`),
     rows(sql`
-      select lesson_id k, count(distinct user_id)::int u,
+      select conversation_id k, count(distinct user_id)::int u,
         coalesce(avg(case when total > 0 then correct * 100.0 / total end), 0)::int a
-      from user_lessons group by 1 order by u desc, a asc limit 12`),
+      from user_conversations group by 1 order by u desc, a asc limit 12`),
     rows(sql`
       select count(distinct item_id)::int items, count(distinct user_id)::int users,
         coalesce(sum(attempts), 0)::int attempts, count(*) filter (where passed_at is not null)::int passed,
@@ -191,8 +191,8 @@ export async function getCoverage(days = 30): Promise<Coverage> {
       from placements group by 1 order by 1`),
     rows(sql`
       select count(*)::int turns, count(distinct user_id)::int users
-      from roleplay_logs where created_at >= now() - make_interval(days => ${days}::int)`),
-    rows(sql`select coalesce(mode, 'lesson') k, count(*)::int c from roleplay_logs where created_at >= now() - make_interval(days => ${days}::int) group by 1 order by 2 desc`),
+      from chat_logs where created_at >= now() - make_interval(days => ${days}::int)`),
+    rows(sql`select coalesce(mode, 'lesson') k, count(*)::int c from chat_logs where created_at >= now() - make_interval(days => ${days}::int) group by 1 order by 2 desc`),
     rows(sql`
       select kind, coalesce(provider, '—') provider, count(*)::int c
       from assessments where created_at >= now() - make_interval(days => ${days}::int) group by 1, 2 order by 3 desc limit 16`),
@@ -345,7 +345,7 @@ export async function getCoverage(days = 30): Promise<Coverage> {
     learning: {
       lessons: {
         started: num(le.started), finished: num(le.finished), users: num(le.users),
-        rulesTracked: num(lr.rules), rulesDue: num(lr.due), roleplayDone: num(lr.rp),
+        rulesTracked: num(lr.rules), rulesDue: num(lr.due), chatDone: num(lr.rp),
       },
       topLessons: topLessons.map((r) => ({ lesson: str(r.k), users: num(r.u), avgPct: num(r.a) })),
       path: { items: num(pt.items), users: num(pt.users), attempts: num(pt.attempts), passed: num(pt.passed), avgBest: num(pt.avg_best) },

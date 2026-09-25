@@ -66,9 +66,9 @@ type Row = { titleKey: string; descKey: string };
  *   öğrenme verisi       `user_words`, `reviews`, `daily_stats`, `user_skills`,
  *                        `user_path_items`, `session_state`,
  *                        `quest_claims`, `achievements`, `module_clears`,
- *                        `user_lessons`, `placements`, `exams`,
+ *                        `user_conversations`, `placements`, `exams`,
  *                        `mock_exam_attempts`, `league_members`
- *   yazılanlar           `assessments`, `roleplay_logs`
+ *   yazılanlar           `assessments`, `chat_logs`
  *   kullanım kayıtları   `events`, `ai_usage`, `usage_counters`, `rate_limits`
  *   sosyal izler         `friendships`, `user_blocks`, `user_reports`,
  *                        `event_reactions`, `activity_events`, `nudges`,

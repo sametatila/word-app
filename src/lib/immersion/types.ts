@@ -15,7 +15,7 @@ import type { LessonIcon } from "@/lib/lessons/types";
  */
 
 export type ImmersionItemKind =
-  | "lesson" // mevcut ders — üretim/roleplay omurgası (userLessons ilerlemesi)
+  | "lesson" // mevcut ders — üretim/roleplay omurgası (userConversations ilerlemesi)
   | "read" // okuma egzersizi (skill_exercises → reading)
   | "listen" // dinleme egzersizi
   | "write" // yazma egzersizi

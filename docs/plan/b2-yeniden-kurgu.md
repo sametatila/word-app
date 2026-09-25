@@ -48,7 +48,7 @@ yuvalarını listedeki 2N-1 ve 2N. okuma doldurur. Bu yüzden yeni ünite dosyal
 `src/lib/skills/content/b2.ts` içinde **en başta** durmalı.
 
 **(b) Beceri egzersizi kimlikleri canlı ilerleme taşır.** `user_skills` birincil
-anahtarı `(user_id, exercise_id)` (`src/lib/db/schema.ts:366`) — `user_lessons`
+anahtarı `(user_id, exercise_id)` (`src/lib/db/schema.ts:366`) — `user_conversations`
 ile aynı kural. **Mevcut 32 egzersizin hiçbiri silinemez, kimliği
 değiştirilemez.** Yeni dosyaları listede önlerine ekle: eskiler 50. yuvanın
 ötesine düşer, kimlikleri durur, ilerleme çözülmeye devam eder, yalnız patikada
@@ -143,8 +143,8 @@ Adım-6 ölçütleri (A1'de kalibre edildi, hepsi sıfır olmalı):
 
 ## 8. Kurallar
 
-1. **Ders kimlikleri ve ders sayısı SABİT.** `user_lessons` birincil anahtarı
-   `(user_id, lesson_id)`; kimlik değişirse canlı ilerleme silinir.
+1. **Ders kimlikleri ve ders sayısı SABİT.** `user_conversations` birincil anahtarı
+   `(user_id, conversation_id)`; kimlik değişirse canlı ilerleme silinir.
 2. **Beceri egzersizi kimlikleri SABİT** (§3b).
 3. **Web canlı** (lernomi.app). Ders kaynağı mobille paylaşımlı: iyileştir,
    bozma, kopyasını çıkarma.

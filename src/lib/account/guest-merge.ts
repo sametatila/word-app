@@ -221,23 +221,23 @@ function mergeSteps(G: string, T: string): { table: string; statements: SQL[] }[
     { table: "ai_usage", statements: [sql`update ai_usage set user_id = ${T} where user_id = ${G}`] },
     {
       /* Ders: en iyi doğru, konuşma biri bitirdiyse bitti, deneme toplamı; tekrar planı en son çalışılandan. */
-      table: "user_lessons",
+      table: "user_conversations",
       statements: [
-        sql`update user_lessons t set
+        sql`update user_conversations t set
               correct = greatest(t.correct, g.correct),
               total = greatest(t.total, g.total),
-              roleplay_done = t.roleplay_done or g.roleplay_done,
+              chat_done = t.chat_done or g.chat_done,
               attempts = t.attempts + g.attempts,
               rule_id = case when g.last_at > t.last_at then g.rule_id else t.rule_id end,
               due_at = case when g.last_at > t.last_at then g.due_at else t.due_at end,
               interval_days = case when g.last_at > t.last_at then g.interval_days else t.interval_days end,
               last_at = greatest(t.last_at, g.last_at)
-            from user_lessons g where t.user_id = ${T} and g.user_id = ${G} and g.lesson_id = t.lesson_id`,
-        sql`delete from user_lessons g using user_lessons t where g.user_id = ${G} and t.user_id = ${T} and t.lesson_id = g.lesson_id`,
-        sql`update user_lessons set user_id = ${T} where user_id = ${G}`,
+            from user_conversations g where t.user_id = ${T} and g.user_id = ${G} and g.conversation_id = t.conversation_id`,
+        sql`delete from user_conversations g using user_conversations t where g.user_id = ${G} and t.user_id = ${T} and t.conversation_id = g.conversation_id`,
+        sql`update user_conversations set user_id = ${T} where user_id = ${G}`,
       ],
     },
-    { table: "roleplay_logs", statements: [sql`update roleplay_logs set user_id = ${T} where user_id = ${G}`] },
+    { table: "chat_logs", statements: [sql`update chat_logs set user_id = ${T} where user_id = ${G}`] },
     { table: "assessments", statements: [sql`update assessments set user_id = ${T} where user_id = ${G}`] },
     { table: "placements", statements: [sql`update placements set user_id = ${T} where user_id = ${G}`] },
     {
@@ -370,7 +370,7 @@ export async function hasProgress(exec: { execute: typeof db.execute }, userId: 
     select (
       exists (select 1 from user_words where user_id = ${userId})
       or exists (select 1 from daily_stats where user_id = ${userId})
-      or exists (select 1 from user_lessons where user_id = ${userId})
+      or exists (select 1 from user_conversations where user_id = ${userId})
       or exists (select 1 from user_skills where user_id = ${userId})
       or exists (select 1 from mock_exam_attempts where user_id = ${userId})
       or exists (select 1 from placements where user_id = ${userId})

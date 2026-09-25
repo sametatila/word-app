@@ -1,7 +1,7 @@
 import "server-only";
 import { and, desc, eq, gte, isNotNull, lte, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
-import { events, reviews, userLessons, userSkills, userWords } from "@/lib/db/schema";
+import { events, reviews, userConversations, userSkills, userWords } from "@/lib/db/schema";
 import { errorLabel, ERROR_TARGET_GAME, isErrorType } from "@/lib/errors";
 import { GAME_LABEL_KEYS, type GameId } from "@/lib/types";
 import { translate, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
@@ -96,9 +96,9 @@ export async function buildPlan(
     const next = await nextLesson(userId, course, level);
     if (next) {
       const [row] = await db
-        .select({ lastAt: userLessons.lastAt })
-        .from(userLessons)
-        .where(and(eq(userLessons.userId, userId), eq(userLessons.lessonId, next.lesson.id)));
+        .select({ lastAt: userConversations.lastAt })
+        .from(userConversations)
+        .where(and(eq(userConversations.userId, userId), eq(userConversations.conversationId, next.lesson.id)));
       const doneT = row ? row.lastAt.toISOString().slice(0, 10) >= today : false;
       items.push({
         id: "lesson",

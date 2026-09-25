@@ -84,7 +84,7 @@ async function main() {
 
   console.log("\nCNT-7 — şikâyet kapanınca bildirene haber");
   await ensureProfile(R, null);
-  const [cr] = await db.insert(contentReports).values({ userId: R, kind: "roleplay", ref: "x:1", reason: "offensive", content: "t" }).returning({ id: contentReports.id });
+  const [cr] = await db.insert(contentReports).values({ userId: R, kind: "chat", ref: "x:1", reason: "offensive", content: "t" }).returning({ id: contentReports.id });
   await closeReport("content_report", cr.id, "resolved", "admin@test", null);
   await closeReport("content_report", cr.id, "dismissed", "admin@test", null);
   const notes = await db.select().from(socialNotifications).where(and(eq(socialNotifications.userId, R), eq(socialNotifications.type, "report_closed")));
@@ -96,7 +96,7 @@ async function main() {
   check("kullanıcı şikâyeti de bildiriliyor", notes2.length === 2, String(notes2.length));
 
   console.log("\nLEG-17 — kapanıştan 1 yıl sonra silme");
-  const [open] = await db.insert(contentReports).values({ userId: R, kind: "roleplay", ref: "x:2", reason: "other", createdAt: new Date("2024-01-01") }).returning({ id: contentReports.id });
+  const [open] = await db.insert(contentReports).values({ userId: R, kind: "chat", ref: "x:2", reason: "other", createdAt: new Date("2024-01-01") }).returning({ id: contentReports.id });
   await db.update(moderationActions).set({ createdAt: new Date("2024-06-01") })
     .where(and(eq(moderationActions.target, "content_report"), eq(moderationActions.refId, cr.id)));
   await db.update(moderationActions).set({ createdAt: new Date(Date.now() - 30 * 86400_000) })

@@ -5,6 +5,7 @@ import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { db } from "@/lib/db";
 import { contentReports } from "@/lib/db/schema";
+import { legacyKind } from "@/lib/legacy-names";
 
 export const dynamic = "force-dynamic";
 
@@ -13,18 +14,18 @@ export const dynamic = "force-dynamic";
  * uygulamadan çıkmadan rahatsız edici bir yapay zekâ yanıtını bildirebilmeli.
  *
  *   POST { kind, ref, reason, content }
- *     kind    "roleplay" | "assessment" | "user" (lider tablosu adı)
- *     ref     roleplay: "<lessonId>:<turn>" · rol yapma sınavı "<lessonId>:exam:<turn>"
+ *     kind    "chat" | "assessment" | "user" (lider tablosu adı)
+ *     ref     chat: "<conversationId>:<turn>" · rol yapma sınavı "<conversationId>:exam:<turn>"
  *             assessment: kayıt kimliği ("Yazdıklarım") · anlık sonuç "<yüzey>:<kimlik>"
  *             ("writing:…", "speaking:…", "exam:…", "word:…"; web ve mobil aynı)
  *     reason  "inappropriate" | "offensive" | "wrong" | "impersonation" | "other"
- *     content bildirilen metin (≤ 4000 karakter) — roleplay_logs 30 günde silindiği
+ *     content bildirilen metin (≤ 4000 karakter) — chat_logs 30 günde silindiği
  *             için metin burada da saklanır; inceleme kaydın süresine bağlı kalmaz.
  *
  * Yaptırım otomatik değil: kayıt yönetim panosunda (lernomi.app/admin › Loglar) insan
  * okur. Günde kullanıcı başına 20 bildirim (kötüye kullanım sınırı).
  */
-const KINDS = new Set(["roleplay", "assessment", "user"]);
+const KINDS = new Set(["chat", "assessment", "user"]);
 const REASONS = new Set(["inappropriate", "offensive", "wrong", "impersonation", "other"]);
 const DAILY_LIMIT = DAILY_QUOTAS.reports;
 const MAX_CONTENT = 4000;
@@ -40,7 +41,8 @@ export async function POST(req: Request) {
   } catch {
     return NextResponse.json({ error: "bad_json" }, { status: 400 });
   }
-  const kind = typeof body.kind === "string" && KINDS.has(body.kind) ? body.kind : null;
+  const rawKind = legacyKind(body.kind); // build 6 `roleplay` gönderiyor (geçici, lib/legacy-names)
+  const kind = typeof rawKind === "string" && KINDS.has(rawKind) ? rawKind : null;
   const reason = typeof body.reason === "string" && REASONS.has(body.reason) ? body.reason : null;
   const ref = typeof body.ref === "string" ? body.ref.trim().slice(0, 120) : "";
   const content = typeof body.content === "string" ? body.content.trim().slice(0, MAX_CONTENT) : "";

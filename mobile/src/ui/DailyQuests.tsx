@@ -35,7 +35,7 @@ import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
  */
 const QUEST_TAB: Record<string, keyof RootTabParams> = {
   skill1: "Skills",
-  lesson1: "Path",
+  conversation1: "Path",
 };
 
 /**

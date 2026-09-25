@@ -12,7 +12,7 @@
  */
 import { desc, eq, sql } from "drizzle-orm";
 import { db, pool } from "./test-db";
-import { profiles, roleplayLogs } from "../src/lib/db/schema";
+import { profiles, chatLogs } from "../src/lib/db/schema";
 import { parseReply } from "../src/lib/chat-format";
 
 const args = process.argv.slice(2);
@@ -44,7 +44,7 @@ function similar(a: string, b: string): boolean {
 
 async function main() {
   if (flag("purge")) {
-    const r = await db.delete(roleplayLogs);
+    const r = await db.delete(chatLogs);
     console.log(`Kayıt silindi (${r.rowCount ?? 0} satır).`);
     await pool.end();
     return;
@@ -57,13 +57,13 @@ async function main() {
   if (flag("providers")) {
     const rows = await db
       .select({
-        provider: roleplayLogs.provider,
-        model: roleplayLogs.model,
+        provider: chatLogs.provider,
+        model: chatLogs.model,
         n: sql<number>`count(*)::int`,
-        last: sql<Date>`max(${roleplayLogs.createdAt})`,
+        last: sql<Date>`max(${chatLogs.createdAt})`,
       })
-      .from(roleplayLogs)
-      .groupBy(roleplayLogs.provider, roleplayLogs.model)
+      .from(chatLogs)
+      .groupBy(chatLogs.provider, chatLogs.model)
       .orderBy(sql`count(*) desc`);
     if (!rows.length) {
       console.log("Kayıt yok.");
@@ -75,10 +75,10 @@ async function main() {
       // Sağlayıcının bildirdiği kalan hak: limite ne kadar yaklaşıldığı ancak
       // buradan görülüyor, 429 gelene kadar her şey normal görünüyor.
       const [last] = await db
-        .select({ limits: roleplayLogs.limits, provider: roleplayLogs.provider, at: roleplayLogs.createdAt })
-        .from(roleplayLogs)
-        .where(sql`${roleplayLogs.limits} is not null`)
-        .orderBy(desc(roleplayLogs.createdAt))
+        .select({ limits: chatLogs.limits, provider: chatLogs.provider, at: chatLogs.createdAt })
+        .from(chatLogs)
+        .where(sql`${chatLogs.limits} is not null`)
+        .orderBy(desc(chatLogs.createdAt))
         .limit(1);
       if (last?.limits) {
         console.log(`\nSon cevapta ${last.provider} şunu bildirdi (${new Date(last.at).toISOString().slice(0, 16)}):`);
@@ -107,18 +107,18 @@ async function main() {
 
   const rows = await db
     .select({
-      userId: roleplayLogs.userId,
+      userId: chatLogs.userId,
       name: profiles.displayName,
-      lessonId: roleplayLogs.lessonId,
-      turn: roleplayLogs.turn,
-      said: roleplayLogs.said,
-      reply: roleplayLogs.reply,
-      at: roleplayLogs.createdAt,
+      conversationId: chatLogs.conversationId,
+      turn: chatLogs.turn,
+      said: chatLogs.said,
+      reply: chatLogs.reply,
+      at: chatLogs.createdAt,
     })
-    .from(roleplayLogs)
-    .leftJoin(profiles, eq(profiles.userId, roleplayLogs.userId))
-    .where(userId ? eq(roleplayLogs.userId, userId) : sql`true`)
-    .orderBy(desc(roleplayLogs.createdAt))
+    .from(chatLogs)
+    .leftJoin(profiles, eq(profiles.userId, chatLogs.userId))
+    .where(userId ? eq(chatLogs.userId, userId) : sql`true`)
+    .orderBy(desc(chatLogs.createdAt))
     .limit(200);
 
   if (!rows.length) {
@@ -130,7 +130,7 @@ async function main() {
   // Konuşma bazında grupla: kullanıcı + ders + gün.
   const groups = new Map<string, typeof rows>();
   for (const r of rows) {
-    const key = `${r.userId}|${r.lessonId}|${r.at.toISOString().slice(0, 13)}`;
+    const key = `${r.userId}|${r.conversationId}|${r.at.toISOString().slice(0, 13)}`;
     (groups.get(key) ?? groups.set(key, []).get(key)!).push(r);
   }
 
@@ -149,7 +149,7 @@ async function main() {
 
     const head = turns[0];
     console.log(
-      `\n${"─".repeat(76)}\n${head.name ?? head.userId} · ${head.lessonId} · ` +
+      `\n${"─".repeat(76)}\n${head.name ?? head.userId} · ${head.conversationId} · ` +
         `${head.at.toISOString().slice(0, 16).replace("T", " ")} · ${turns.length} tur` +
         (repeats.length ? `  ! TEKRAR: ${repeats.join(", ")}. turda` : ""),
     );

@@ -77,4 +77,4 @@ npm run test:content -- --verbose    # her uyarıyı tek tek bas
 4. **Gözden geçirme:** `data/content/review/<paket>.md` — her 5 maddede 1 örneklem, insan onayı; sapmalar listelenir.
 5. **Uygulama:** `scripts/apply-*.ts` ile TS içerik dosyasına yazılır; `npm run test:content` yeşil; commit.
 
-Kimlikler asla yeniden kullanılmaz ya da yeniden numaralanmaz: ilerleme kayıtları (`user_skills`, `user_lessons`, `cheat_progress`) kimliğe bağlıdır.
+Kimlikler asla yeniden kullanılmaz ya da yeniden numaralanmaz: ilerleme kayıtları (`user_skills`, `user_conversations`, `cheat_progress`) kimliğe bağlıdır.

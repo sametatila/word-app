@@ -467,7 +467,7 @@ jobs:
       # migration'lar uygulanıp şema kodla karşılaştırılıyor: migration yazmayı
       # unutmak da burada düşüyor.
       # `test:quota` 2026-09-25 kota kuralları: sahiplenme işareti, izin verilen
-      # sayıyla atomik sayım, bitirmenin `user_lessons`ten okunması ve yürüyüş
+      # sayıyla atomik sayım, bitirmenin `user_conversations`ten okunması ve yürüyüş
       # turunun çift istek koruması — hepsi koşullu SQL, eşzamanlı isteklerle.
       # `test:store-trial` grup kodu (2 ay ücretsiz mağaza denemesi): talebin hak
       # sayacı yarışı, hesap başına tek deneme, iOS'un reddi (3.1.1) ve webhook

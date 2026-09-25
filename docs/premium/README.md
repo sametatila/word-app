@@ -149,7 +149,7 @@ kazanılan hak geri alınmaz. Kademe tavanı `maxTiers` (panel), varsayılan **0
 
 | Yüzey | Kullanılan hak (ömürlük) | Sahiplenme işareti | "Bitirmek" |
 |---|---|---|---|
-| Patika Konuşma | `conversation:<SEVİYE>` | `conversation_owned:<SEVİYE>:<ders>` | dersin bitmesi (`user_lessons` satırı, `/api/conversation`) |
+| Patika Konuşma | `conversation:<SEVİYE>` | `conversation_owned:<SEVİYE>:<ders>` | dersin bitmesi (`user_conversations` satırı, `/api/conversation`) |
 | Patika Yazma | `writing_lesson:<SEVİYE>` | `owned_lesson:<egzersiz>` | ilk değerlendirme (sahiplenmek = değerlendirilmiş gönderim) |
 | Beceriler yazma | `writing_skill:<SEVİYE>` | `skill_ai:<egzersiz>` | ilk değerlendirme |
 | Beceriler konuşma (B1+ monolog) | `speaking_skill:<SEVİYE>` | `skill_ai:<egzersiz>` | ilk değerlendirme |

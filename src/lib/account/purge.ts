@@ -22,11 +22,11 @@ import {
   questClaims,
   rateLimits,
   reviews,
-  roleplayLogs,
+  chatLogs,
   sessionState,
   socialNotifications,
   userBlocks,
-  userLessons,
+  userConversations,
   userReports,
   userSkills,
   userPathItems,
@@ -92,8 +92,8 @@ export async function purgeUserData(userId: string): Promise<void> {
     await tx.delete(events).where(eq(events.userId, userId));
     await tx.delete(moduleClears).where(eq(moduleClears.userId, userId));
     await tx.delete(aiUsage).where(eq(aiUsage.userId, userId));
-    await tx.delete(userLessons).where(eq(userLessons.userId, userId));
-    await tx.delete(roleplayLogs).where(eq(roleplayLogs.userId, userId));
+    await tx.delete(userConversations).where(eq(userConversations.userId, userId));
+    await tx.delete(chatLogs).where(eq(chatLogs.userId, userId));
     await tx.delete(assessments).where(eq(assessments.userId, userId));
     await tx.delete(placements).where(eq(placements.userId, userId));
     await tx.delete(exams).where(eq(exams.userId, userId));

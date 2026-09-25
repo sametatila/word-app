@@ -4,7 +4,7 @@ import type { ImmersionItem, ImmersionTrack, ImmersionUnit } from "./types";
  * Gating / ilerleme durumu — SAF katman (bkz. docs/plan/immersion.md §Gating).
  *
  * Depolamadan bağımsız: tamamlanma bilgisini yüklem (predicate) olarak alır,
- * böylece Faz 3 adaptörü userLessons/userSkills satırlarını buraya çevirir ve
+ * böylece Faz 3 adaptörü userConversations/userSkills satırlarını buraya çevirir ve
  * bu dosya DB'yi hiç tanımaz — test edilebilir kalır.
  *
  * Kural: yer tutucu (ref=null) item'lar OYNANAMAZ ve gating'i BLOKLAMAZ
@@ -64,7 +64,7 @@ export type TrackState = {
   currentIndex: number;
 };
 
-/** Tamamlanma yüklemi — Faz 3 userLessons/userSkills'ten türetir. */
+/** Tamamlanma yüklemi — Faz 3 userConversations/userSkills'ten türetir. */
 export type Completion = {
   lessonDone: (ref: string) => boolean;
   skillDone: (ref: string) => boolean;

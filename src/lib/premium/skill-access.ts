@@ -18,8 +18,8 @@ import type { TieredUnlock } from "./unlock";
  *   - Bir alıştırma birden çok değerlendirme üretir (yaz, düzelt, yeniden
  *     gönder). Hakkı her çağrıda saymak iki hakkı tek alıştırmada bitirirdi.
  *   - İstemciye bırakılan sayaç sayaç değildir.
- * Hakkı düşmüş alıştırma "sahiplenilmiş" sayılıyor (`skill_ai:<id>`,
- * `owned_lesson:<id>`, ömürlük) ve sonra kota bitse bile açık kalıyor —
+ * Hakkı düşmüş alıştırma "sahiplenilmiş" sayılıyor (`skill_owned:<id>`,
+ * `path_writing_owned:<id>`, ömürlük) ve sonra kota bitse bile açık kalıyor —
  * başladığın yazıyı bitirebilmelisin.
  */
 

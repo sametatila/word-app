@@ -61,7 +61,7 @@ Rapor: 24 egzersiz; ASR metin eşleştirmesi, telaffuz puanı yok; öz-değerlen
 
 **Amaç.** Rol yapma alıştırma olarak var; sınav olarak da kullanılsın: puanlı, sınırlı turlu, can-do bağlı, hata raporlu.
 
-**Mevcut kod.** `src/lib/lessons/roleplay.ts`, `/api/chat`, `roleplayLogs` tablosu, `lesson-player.tsx` rol yapma fazı, `coachDialogue`.
+**Mevcut kod.** `src/lib/lessons/roleplay.ts`, `/api/chat`, `chatLogs` tablosu, `lesson-player.tsx` rol yapma fazı, `coachDialogue`.
 
 **Tasarım.**
 - Mod parametresi `mode: "practice"|"exam"`: sınavda sistem istemi "yardım etme, yönlendirme, hata düzeltme; doğal muhatap ol"; 5 tur; süre 3 dk; konuşma bitince tüm kullanıcı turları WP-03 `assess(kind:"roleplay")` ile puanlanır (görev, dilbilgisi, kelime, uygunluk) + WP-20 telaffuz ortalaması.
@@ -69,7 +69,7 @@ Rapor: 24 egzersiz; ASR metin eşleştirmesi, telaffuz puanı yok; öz-değerlen
 - Kullanım: WP-41 seviye sınavının konuşma bölümü; ders sonunda isteğe bağlı "sınav olarak dene".
 
 **Adımlar.**
-1. Route + istem varyantı; `roleplayLogs.mode`.
+1. Route + istem varyantı; `chatLogs.mode`.
 2. Sınav akışı bileşeni (zamanlayıcı, tur sayacı).
 3. Toplu değerlendirme + sonuç kartı.
 
@@ -77,7 +77,7 @@ Rapor: 24 egzersiz; ASR metin eşleştirmesi, telaffuz puanı yok; öz-değerlen
 
 **Süre.** 4 gün. **Bağımlılık.** WP-03, WP-20, WP-43.
 
-**Durum (2026-08-26).** Adım 1–3 bitti (telaffuz ortalaması WP-20'ye bağlı, yok). `lib/lessons/roleplay.ts`: `RoleplayMode`, `examPrompt` (doğal muhatap, yardım/düzeltme/Türkçe/işaret yok, 2 cümle + soru, `EXAM_TURNS`=5'te kapanış); `streamRoleplay(..., mode)`; `/api/chat` `mode` alır ve `roleplay_logs.mode`'a yazar (migrasyon 0034, üretime uygulandı). `components/lessons/roleplay-exam.tsx` + `/lessons/[id]/exam`: giriş kartı (sahne, kurallar, kalıplar) → konuşma (tur sayacı, 3 dk sayaç, tek atış mikrofon ya da yazı, TTS) → puanlama (`askAssess` kind `roleplay`, `exerciseId` `<ders>:exam`, `answer.transcript` turlar) → sonuç (`AssessmentCard`, hatasız en uzun 2 cümle, en sık 2 hata tipi, can-do etiketi, Erdi koç). Ders özetinde "Sınav olarak dene". Kanıt: `reports/shots/wp22-exam-{intro,talk,result}.png`; üretimde `assessments` satırı (%88) ve 5 `mode=exam` log satırı doğrulandı.
+**Durum (2026-08-26).** Adım 1–3 bitti (telaffuz ortalaması WP-20'ye bağlı, yok). `lib/lessons/roleplay.ts`: `RoleplayMode`, `examPrompt` (doğal muhatap, yardım/düzeltme/Türkçe/işaret yok, 2 cümle + soru, `EXAM_TURNS`=5'te kapanış); `streamRoleplay(..., mode)`; `/api/chat` `mode` alır ve `chat_logs.mode`'a yazar (migrasyon 0034, üretime uygulandı). `components/lessons/roleplay-exam.tsx` + `/lessons/[id]/exam`: giriş kartı (sahne, kurallar, kalıplar) → konuşma (tur sayacı, 3 dk sayaç, tek atış mikrofon ya da yazı, TTS) → puanlama (`askAssess` kind `roleplay`, `exerciseId` `<ders>:exam`, `answer.transcript` turlar) → sonuç (`AssessmentCard`, hatasız en uzun 2 cümle, en sık 2 hata tipi, can-do etiketi, Erdi koç). Ders özetinde "Sınav olarak dene". Kanıt: `reports/shots/wp22-exam-{intro,talk,result}.png`; üretimde `assessments` satırı (%88) ve 5 `mode=exam` log satırı doğrulandı.
 
 ---
 

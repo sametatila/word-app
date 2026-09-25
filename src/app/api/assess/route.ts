@@ -4,6 +4,7 @@ import { getUserInfo } from "@/lib/auth/server";
 import { getUsage, refundUsage } from "@/lib/premium/quota";
 import { sameOrigin } from "@/lib/auth/origin";
 import { recordAiUsage } from "@/lib/ai-usage";
+import { legacyKind } from "@/lib/legacy-names";
 import { assess } from "@/lib/assess";
 import {
   ASSESS_KINDS,
@@ -98,7 +99,7 @@ export async function POST(req: Request) {
    *
    *  - Patika Yazma adımı (ünite egzersizi)  → Patika Yazma, seviye başına
    *  - Beceriler yazma / B1+ monolog         → Beceriler, seviye başına, AYRI sayaç
-   *  - `roleplay` (Konuşma adımının puanlı kısmı, "Sınav olarak dene")
+   *  - `chat` (Konuşma adımının puanlı kısmı, "Sınav olarak dene")
    *                                          → Patika Konuşma adımının KENDİ hakkı:
    *    sohbet adımı zaten sahiplendi, puanlı kısım ayrı hak düşürmüyor. Sohbeti
    *    atlayıp doğrudan puanlı kısma gelen istek adımı burada sahipleniyor.
@@ -120,11 +121,11 @@ export async function POST(req: Request) {
    * veriliyor). Kapıya girseydi Patika/Beceriler sayacı da düşer, geri verilmez
    * ve premium_required ile misafirin tek hakkını hiç kullanamamasına yol açardı.
    */
-  const gated = parsed.req.kind === "writing" || parsed.req.kind === "speaking" || parsed.req.kind === "roleplay";
+  const gated = parsed.req.kind === "writing" || parsed.req.kind === "speaking" || parsed.req.kind === "chat";
   const exerciseId = typeof parsed.req.exerciseId === "string" ? parsed.req.exerciseId : null;
   if (gated && !examVerified && !who.guest && exerciseId) {
     let gate: Access | null = null;
-    if (parsed.req.kind === "roleplay") {
+    if (parsed.req.kind === "chat") {
       const lesson = await findLesson(exerciseId.replace(/:exam$/, ""));
       if (lesson) gate = await claimTiered(userId, "conversation", lesson.level, lesson.id);
     } else {
@@ -216,7 +217,8 @@ function list(v: unknown): string[] | undefined {
 
 function parseBody(body: unknown): { req: AssessRequest; day: string; tooLong: boolean } | null {
   if (typeof body !== "object" || body === null) return null;
-  const b = body as Record<string, unknown>;
+  const b = { ...(body as Record<string, unknown>) };
+  b.kind = legacyKind(b.kind); // build 6 `roleplay` gönderiyor (geçici, lib/legacy-names)
   if (!ASSESS_KINDS.includes(b.kind as AssessKind)) return null;
   if (!ASSESS_LEVELS.includes(b.level as AssessLevel)) return null;
   const task = (b.task ?? {}) as Record<string, unknown>;

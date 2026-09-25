@@ -108,7 +108,7 @@ async function main() {
   const navs = (await q`
     select coalesce(kind, 'legacy:' || value::text) as tab, count(*)::int as n, count(distinct user_id)::int as people
     from events
-    where name = 'nav' and day >= current_date - ${days}::int and (kind is null or kind not like 'onboarding:%' and kind not like 'roleplay_exam:%')
+    where name = 'nav' and day >= current_date - ${days}::int and (kind is null or kind not like 'onboarding:%' and kind not like 'conversation_scored:%')
     group by 1 order by n desc
   `) as Row[];
   if (navs.length) {

@@ -116,13 +116,13 @@ Bu fazdaki paketler diğer her şeyin üstüne oturduğu zemin: ölçüm, sunucu
 
 ## WP-04 · Çevrimdışı rol yapma yedeği
 
-**Amaç.** Ders geçme koşulu `passed = roleplayDone && oran ≥ 0.7` (`src/lib/lessons/progress.ts:129`); sağlayıcı erişilemezse rol yapma bitmez, ders geçilemez. Yedek: senaryolu, niyet eşleştirmeli yerel diyalog.
+**Amaç.** Ders geçme koşulu `passed = chatDone && oran ≥ 0.7` (`src/lib/lessons/progress.ts:129`); sağlayıcı erişilemezse rol yapma bitmez, ders geçilemez. Yedek: senaryolu, niyet eşleştirmeli yerel diyalog.
 
 **Mevcut kod.** `src/lib/dialogue.ts` (`matchReply`, `usedTargets` — beceri diyaloglarının motoru), `src/lib/lessons/roleplay.ts` (`streamRoleplay`), `src/components/lessons/lesson-player.tsx` (satır ~690: 503 dalı), ders içeriği `roleplay: { opening, minTurns, … }`.
 
 **Tasarım.**
 - Ders içeriğine isteğe bağlı `roleplay.script: DialogueTurn[]` (WP-70 şeması) — kapalı temalı, 3–5 turluk, `minTurns` kadar dal.
-- `lesson-player`: `/api/chat` 503 dönerse (ya da `chatConfigured()` yanlışsa, sunucu `GET /api/chat/status` ile bildirir) `script` ile yerel akışa geç; UI'da "Konuşma servisi kapalı — senaryolu konuşma" rozeti; `roleplayDone` yerel akışta da sayılır.
+- `lesson-player`: `/api/chat` 503 dönerse (ya da `chatConfigured()` yanlışsa, sunucu `GET /api/chat/status` ile bildirir) `script` ile yerel akışa geç; UI'da "Konuşma servisi kapalı — senaryolu konuşma" rozeti; `chatDone` yerel akışta da sayılır.
 - Senaryo yoksa: `usedTargets` mantığıyla "hedef kalıpları kullan" görevine düşülür (kullanıcı 3 hedef kalıbı sesli/yazılı söyler → tamamlandı).
 - İçerik: 220 dersin senaryosu WP-71/72 içinde üretilir; bu WP motor + 10 örnek ders.
 
@@ -132,7 +132,7 @@ Bu fazdaki paketler diğer her şeyin üstüne oturduğu zemin: ölçüm, sunucu
 3. 10 A1 dersine senaryo (içerik).
 4. e2e: sağlayıcısız ortamda ders geçilebilir.
 
-**Kabul.** `CHAT_PROVIDER`/anahtarlar yokken A1 dersi baştan sona geçilir, `userLessons.passed = true`.
+**Kabul.** `CHAT_PROVIDER`/anahtarlar yokken A1 dersi baştan sona geçilir, `userConversations.passed = true`.
 
 **Süre.** 3 gün. **Bağımlılık.** Yok (WP-70 şemasıyla uyumlu olmalı).
 

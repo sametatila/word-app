@@ -1,7 +1,7 @@
 import "server-only";
 import { lt, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
-import { roleplayLogs } from "@/lib/db/schema";
+import { chatLogs } from "@/lib/db/schema";
 
 /**
  * Rol yapma turlarının geçici metin kaydı.
@@ -32,7 +32,7 @@ const MAX_CHARS = 4000;
 
 export async function logRoleplayTurn(
   userId: string,
-  lessonId: string,
+  conversationId: string,
   turn: number,
   said: string,
   reply: string,
@@ -41,9 +41,9 @@ export async function logRoleplayTurn(
   mode: "practice" | "exam" = "practice",
 ): Promise<void> {
   try {
-    await db.insert(roleplayLogs).values({
+    await db.insert(chatLogs).values({
       userId,
-      lessonId,
+      conversationId,
       mode,
       turn,
       said: said.slice(0, MAX_CHARS),
@@ -68,7 +68,7 @@ export async function logRoleplayTurn(
  */
 export async function purgeExpiredRoleplayLogs(): Promise<number> {
   try {
-    const gone = await db.delete(roleplayLogs).where(lt(roleplayLogs.expiresAt, new Date()));
+    const gone = await db.delete(chatLogs).where(lt(chatLogs.expiresAt, new Date()));
     return (gone as unknown as { rowCount?: number }).rowCount ?? 0;
   } catch (err) {
     console.error("[roleplay-log] temizlik başarısız", err);

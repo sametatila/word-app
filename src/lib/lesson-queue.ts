@@ -17,9 +17,9 @@
 import { apiFetch } from "@/lib/api-fetch";
 
 export type PendingLesson = {
-  lessonId: string;
+  conversationId: string;
   correct: number;
-  roleplayDone: boolean;
+  chatDone: boolean;
   day: string;
   seconds: number;
 };
@@ -37,7 +37,7 @@ function read(): PendingLesson[] {
 
 export function queueLessonResult(item: PendingLesson): void {
   try {
-    const rest = read().filter((x) => x.lessonId !== item.lessonId);
+    const rest = read().filter((x) => x.conversationId !== item.conversationId);
     rest.push(item);
     localStorage.setItem(KEY, JSON.stringify(rest.slice(-20)));
   } catch {

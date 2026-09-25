@@ -2,7 +2,7 @@ import "server-only";
 import { and, asc, desc, eq, inArray, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { practiceWordsOf } from "@/lib/practice-words";
-import { exams, userLessons, userSkills, words } from "@/lib/db/schema";
+import { exams, userConversations, userSkills, words } from "@/lib/db/schema";
 import { chatConfigured, sttProviders } from "@/lib/chat-providers";
 import { track } from "@/lib/events";
 import { lessonsForLevel } from "@/lib/lessons";
@@ -122,10 +122,10 @@ export async function modulePrereq(userId: string, course: string, level: CefrLe
   const chunk = (await lessonsForLevel(course, level)).filter((l) => l.course === course).slice(module * MODULE_SIZE, (module + 1) * MODULE_SIZE);
   if (!chunk.length) return false;
   const rows = await db
-    .select({ lessonId: userLessons.lessonId, correct: userLessons.correct, total: userLessons.total, roleplayDone: userLessons.roleplayDone })
-    .from(userLessons)
-    .where(and(eq(userLessons.userId, userId), inArray(userLessons.lessonId, chunk.map((l) => l.id))));
-  const passed = rows.filter((r) => r.roleplayDone && r.total > 0 && r.correct / r.total >= 0.7).length;
+    .select({ conversationId: userConversations.conversationId, correct: userConversations.correct, total: userConversations.total, chatDone: userConversations.chatDone })
+    .from(userConversations)
+    .where(and(eq(userConversations.userId, userId), inArray(userConversations.conversationId, chunk.map((l) => l.id))));
+  const passed = rows.filter((r) => r.chatDone && r.total > 0 && r.correct / r.total >= 0.7).length;
   return passed / chunk.length >= MODULE_PREREQ;
 }
 

@@ -7,7 +7,7 @@
  * kendisini yerel Postgres olmadan denemek için sorgu zinciri burada taklit
  * ediliyor; `scripts/exam-dryrun.ts` bunu kullanıyor.
  */
-import { userLessons, userSkills, words } from "../src/lib/db/schema";
+import { userConversations, userSkills, words } from "../src/lib/db/schema";
 
 type Row = Record<string, unknown>;
 
@@ -24,7 +24,7 @@ function chain(rows: () => Row[]) {
   };
   self.then = (res: (v: Row[]) => unknown, rej?: (e: unknown) => unknown) => {
     const table = self.__table;
-    const out = table === words ? rows() : table === userSkills || table === userLessons ? [] : [];
+    const out = table === words ? rows() : table === userSkills || table === userConversations ? [] : [];
     return Promise.resolve(out).then(res, rej);
   };
   return self;

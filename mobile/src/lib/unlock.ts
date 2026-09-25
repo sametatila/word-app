@@ -138,14 +138,14 @@ export function newlyOpened(prev: Record<string, number> | null, next: Record<st
  */
 export function conversationLocked(
   u: UnlockOverview | null | undefined,
-  lessonId: string,
+  conversationId: string,
   level: string,
   who: { guest: boolean; aiDeclined: boolean },
 ): boolean {
   if (!u || who.guest || who.aiDeclined) return false;
   const c = u.levels[level]?.conversation;
   if (!c || c.premium) return false;
-  if (u.owned.conversation.includes(lessonId)) return false;
+  if (u.owned.conversation.includes(conversationId)) return false;
   return c.remaining <= 0;
 }
 

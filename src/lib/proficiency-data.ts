@@ -1,7 +1,7 @@
 import "server-only";
 import { and, eq, gte, isNotNull, lte, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
-import { assessments, exams, reviews, userLessons, userSkills, words } from "@/lib/db/schema";
+import { assessments, exams, reviews, userConversations, userSkills, words } from "@/lib/db/schema";
 import { findLesson } from "@/lib/lessons";
 import { type GameId } from "@/lib/types";
 import { listExerciseMeta } from "@/lib/skills";
@@ -25,7 +25,7 @@ import type { Assessment } from "@/lib/assess-prompts";
  *   exam       — `exams` (weekly → kelime, diğerleri → dilbilgisi)
  *   assessment — `assessments.result.score.overall` (writing → yazma,
  *                sentence → dilbilgisi, speaking/roleplay → konuşma)
- *   lesson     — `user_lessons` doğru/toplam (dersin seviyesi, dilbilgisi)
+ *   lesson     — `user_conversations` doğru/toplam (dersin seviyesi, dilbilgisi)
  *   exercise   — `user_skills.last_score` (beceri, seviye, son deneme)
  *   drill      — `cheat_progress` (dilbilgisi çalışması, sayfanın seviyesi)
  *   game       — `reviews` × `words.niveau` (oyun türüne göre beceri)
@@ -125,13 +125,13 @@ export async function gatherEvidence(userId: string, now = new Date()): Promise<
  */
 async function lessonEvidence(userId: string, since: Date, until: Date): Promise<Evidence[]> {
   const rows = await db
-    .select({ lessonId: userLessons.lessonId, correct: userLessons.correct, total: userLessons.total, lastAt: userLessons.lastAt })
-    .from(userLessons)
-    .where(and(eq(userLessons.userId, userId), gte(userLessons.lastAt, since), lte(userLessons.lastAt, until)));
+    .select({ conversationId: userConversations.conversationId, correct: userConversations.correct, total: userConversations.total, lastAt: userConversations.lastAt })
+    .from(userConversations)
+    .where(and(eq(userConversations.userId, userId), gte(userConversations.lastAt, since), lte(userConversations.lastAt, until)));
   const out: Evidence[] = [];
   for (const r of rows) {
     if (!r.total) continue;
-    const level = (await findLesson(r.lessonId))?.level;
+    const level = (await findLesson(r.conversationId))?.level;
     if (!level || !LEVELS.has(level)) continue;
     out.push({
       skill: "grammar",

@@ -89,10 +89,10 @@ export function xpForLesson(
   minutes: number,
   correct: number,
   total: number,
-  roleplayDone: boolean,
+  chatDone: boolean,
 ): number {
   const ratio = successRatio(correct, total);
-  const combined = 0.6 * ratio + 0.4 * (roleplayDone ? 1 : 0);
+  const combined = 0.6 * ratio + 0.4 * (chatDone ? 1 : 0);
   return timedXp(minutes, combined, 0.35);
 }
 

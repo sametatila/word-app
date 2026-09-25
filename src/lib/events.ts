@@ -82,7 +82,7 @@ export const EVENT_NAMES = [
     Üretim görevi puanlandı; `value` = 0–100.
 
     `kind` YALNIZ DÖRT DEĞER ALIYOR ve bunu yazmak gerekiyor: bu satır uzun
-    süre `translate|transform|free_sentence|writing_free|speaking_drill|roleplay`
+    süre `translate|transform|free_sentence|writing_free|speaking_drill|chat`
     diye altı değer sayıyordu, oysa `translate` ve `transform` hiçbir yerde
     ÜRETİLMİYOR. Dört değerin tamamı tek yerden geliyor (`lib/assess`
     `productionKind`): serbest cümle, serbest yazma, konuşma alıştırması, rol
@@ -134,14 +134,14 @@ export const EVENT_NAMES = [
   "app_open",
   "client_error", // yakalanmamış istemci hatası (kind = ekran anahtarı, value = 1 hata sınırı / 0 pencere olayı; dakikada en çok bir)
   "panel_open", // katlı bölüm açıldı/kapandı (kind = bölüm: weak_detail | sheet:<tablo> | words_progress | single_game, value = 1 açık / 0 kapalı)
-  "lesson_start", // ders başladı (kind = ders kimliği, value = 1 kaldığı yerden / 0 baştan)
+  "conversation_start", // ders başladı (kind = ders kimliği, value = 1 kaldığı yerden / 0 baştan)
   /* Ders adımı sonuçlandı. kind = adım:yol → repeat|produce|truefalse :
      mic|typed|tap|skip. value = 2 ilk denemede doğru / 1 sonraki denemede doğru
      / 0 geçilemedi ya da atlandı. `tap` doğru/yanlış adımının düğme yolu:
      eskiden o yol `inputMode`u değiştirmediği için "mic" diye sayılıyordu.
      `skip` yalnız webde var - Android'de adım atlama düğmesi yok. */
-  "lesson_step",
-  "lesson_finish", // ders bitti (kind = ders kimliği, value = puanlı adımlarda doğru yüzdesi; geçme user_lessons'ta)
+  "conversation_step",
+  "conversation_finish", // ders bitti (kind = ders kimliği, value = puanlı adımlarda doğru yüzdesi; geçme user_conversations'ta)
   /* Onboarding adımı görüldü. value = adım sırası (platforma göre değişir), kind
      = adımın adı. Android: welcome | lang | course | level | goal. Web:
      welcome | motivation | level | goal | ready. Ortak kelimeler aynı soruyu
@@ -250,7 +250,7 @@ export const EVENT_NAMES = [
   "league_up", // bir üst lige yükseldi (value = yeni lig, kind = lig slug'ı)
   /*
     Misafirden hesaba huni (yalnız mobil): misafir açıldı → kilometre taşında
-    hesap çağrısı gösterildi (kind = first_lesson|streak_3|exam_passed) →
+    hesap çağrısı gösterildi (kind = first_conversation|streak_3|exam_passed) →
     misafir hesaba geçti (kind = moved: yeni hesaba taşındı | merged: var olan
     hesapla birleşti). "Misafirlerin kaçı hesap açıyor, hangi taştan sonra"
     sorusu ancak buradan cevaplanır.

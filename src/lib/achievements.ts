@@ -13,7 +13,7 @@ import {
   dailyStats,
   profiles,
   reviews,
-  userLessons,
+  userConversations,
   moduleClears,
   referrals,
   userSkills,
@@ -168,10 +168,10 @@ export const ACHIEVEMENTS: AchievementDef[] = [
   { id: "grammar25", titleKey: "ach.grammar25.title", hintKey: "ach.grammar25.hint", icon: "MountainIcon", tier: "gold", group: "grammar", metric: "grammarDone", target: 25 },
 
   // ——— Ders ——————————————————————————————————————————————————————
-  { id: "lesson1", titleKey: "ach.conversation1.title", hintKey: "ach.conversation1.hint", icon: "ChatIcon", tier: "bronze", group: "lessons", metric: "lessons", target: 1 },
-  { id: "lesson10", titleKey: "ach.conversation10.title", hintKey: "ach.conversation10.hint", icon: "SchoolIcon", tier: "bronze", group: "lessons", metric: "lessons", target: 10 },
-  { id: "lesson50", titleKey: "ach.conversation50.title", hintKey: "ach.conversation50.hint", icon: "SchoolIcon", tier: "gold", group: "lessons", metric: "lessons", target: 50 },
-  { id: "lesson100", titleKey: "ach.conversation100.title", hintKey: "ach.conversation100.hint", icon: "MountainIcon", tier: "legend", group: "lessons", metric: "lessons", target: 100 },
+  { id: "conversation1", titleKey: "ach.conversation1.title", hintKey: "ach.conversation1.hint", icon: "ChatIcon", tier: "bronze", group: "lessons", metric: "lessons", target: 1 },
+  { id: "conversation10", titleKey: "ach.conversation10.title", hintKey: "ach.conversation10.hint", icon: "SchoolIcon", tier: "bronze", group: "lessons", metric: "lessons", target: 10 },
+  { id: "conversation50", titleKey: "ach.conversation50.title", hintKey: "ach.conversation50.hint", icon: "SchoolIcon", tier: "gold", group: "lessons", metric: "lessons", target: 50 },
+  { id: "conversation100", titleKey: "ach.conversation100.title", hintKey: "ach.conversation100.hint", icon: "MountainIcon", tier: "legend", group: "lessons", metric: "lessons", target: 100 },
   { id: "boss1", titleKey: "ach.boss1.title", hintKey: "ach.boss1.hint", icon: "FlagIcon", tier: "silver", group: "lessons", metric: "bossClears", target: 1 },
   { id: "boss10", titleKey: "ach.boss10.title", hintKey: "ach.boss10.hint", icon: "FlagIcon", tier: "gold", group: "lessons", metric: "bossClears", target: 10 },
 
@@ -283,8 +283,8 @@ async function collectMetrics(userId: string): Promise<Metrics> {
 
     db
       .select({ n: sql<number>`count(*)::int` })
-      .from(userLessons)
-      .where(and(eq(userLessons.userId, userId), eq(userLessons.roleplayDone, true))),
+      .from(userConversations)
+      .where(and(eq(userConversations.userId, userId), eq(userConversations.chatDone, true))),
 
     db.select({ n: sql<number>`count(*)::int` }).from(userSkills).where(eq(userSkills.userId, userId)),
 
@@ -364,7 +364,7 @@ async function collectMetrics(userId: string): Promise<Metrics> {
       .select({
         writings: sql<number>`count(*) filter (where ${assessments.kind} = 'writing')::int`,
         bestWriting: sql<number>`coalesce(max((${assessments.result}->'score'->>'overall')::int) filter (where ${assessments.kind} = 'writing'), 0)::int`,
-        speakings: sql<number>`count(*) filter (where ${assessments.kind} in ('speaking', 'roleplay'))::int`,
+        speakings: sql<number>`count(*) filter (where ${assessments.kind} in ('speaking', 'chat'))::int`,
       })
       .from(assessments)
       .where(and(eq(assessments.userId, userId), isNotNull(assessments.result))),

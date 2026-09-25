@@ -490,7 +490,7 @@ export function LearningSection({ days, data: d, coverage: c }: Base) {
   return (
     <PanelGrid>
         {/* ── 31 Ağustos sonrası gelen öğrenme yüzeyleri ── */}
-        <Panel title="Dersler (Patika)" hint={`${days}g: ${fmt(c.learning.lessons.started)} başladı · ${fmt(c.learning.lessons.finished)} bitti · ${fmt(c.learning.lessons.users)} kişi. Kural tekrarı: ${fmt(c.learning.lessons.rulesTracked)} izleniyor, ${fmt(c.learning.lessons.rulesDue)} vadesi geldi · ${fmt(c.learning.lessons.roleplayDone)} konuşma fazı bitti.`}>
+        <Panel title="Dersler (Patika)" hint={`${days}g: ${fmt(c.learning.lessons.started)} başladı · ${fmt(c.learning.lessons.finished)} bitti · ${fmt(c.learning.lessons.users)} kişi. Kural tekrarı: ${fmt(c.learning.lessons.rulesTracked)} izleniyor, ${fmt(c.learning.lessons.rulesDue)} vadesi geldi · ${fmt(c.learning.lessons.chatDone)} konuşma fazı bitti.`}>
           <BarList max={100} items={c.learning.topLessons.map((l) => ({ label: l.lesson, value: l.avgPct, right: `%${l.avgPct} · ${fmt(l.users)} kişi`, tone: l.avgPct < 60 ? "warn" : "ok" }))} />
         </Panel>
 

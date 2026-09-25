@@ -156,5 +156,5 @@ export async function refundUsage(userId: string, key: string, period: Period, n
   }
 }
 
-/** Ömürlük kotalarda seviyeye bağlı anahtar: "speaking_lesson:A1". */
+/** Ömürlük kotalarda seviyeye bağlı anahtar: "conversation:A1". */
 export const levelKey = (base: string, level: string): string => `${base}:${level}`;

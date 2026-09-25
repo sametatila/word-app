@@ -1919,7 +1919,7 @@ Kalan üçü de sebepleriyle `PLANNED`ta:
 
   - `start_card` — başlangıç kartı görüntülenmesi. İKİ platformda da
     ölçülmüyor; ekran görünümü diye bir olay hiç yok. Eşit biçimde eksik.
-  - `speak_self` — söyleyişte asr/self ayrımı. `lesson_step` aynı kararı
+  - `speak_self` — söyleyişte asr/self ayrımı. `conversation_step` aynı kararı
     `kind` ile zaten yazıyor; ikisinin sınırı karar istiyor.
   - `premium_gate` — premium kilidine çarpma. Mobil birleşiminde de tanımlı,
     çağıran yok; premium pasif olduğu için bugün ölçülecek bir olay da yok.
@@ -2159,8 +2159,8 @@ adım tek yerde.
 **Ölçülüp kaydedilen, düzeltilmeyen: webde `nav` aşırı yüklü.** Sözlükte
 `nav` = "sekme açıldı, value = sekme sırası". Android tam olarak bunu yazıyor.
 Web ise dört çağrıda başka şeyler için de kullanıyor: `onboarding:placement`,
-`onboarding:level` (onboarding çıkış yolu) ve `roleplay_exam:start` /
-`roleplay_exam:done` - son ikisinde `value` konuşulan replik sayısı, yani sekme
+`onboarding:level` (onboarding çıkış yolu) ve `conversation_scored:start` /
+`conversation_scored:done` - son ikisinde `value` konuşulan replik sayısı, yani sekme
 sırası değil. Tek kovada üç ayrı olay ve üç ayrı `value` anlamı var. (Altı
 çağrıydı: `onboarding:level_pick` ve `onboarding:level_measure` akış mobile
 eşlenirken düştü, seviye adımı artık ayrı bir ara adıma geçmiyor.)
@@ -2177,7 +2177,7 @@ kararı. Şu an bir raporu bozmuyor - `nav` kovasını okuyan sorgu yok.
 
 Ölçüm:
 
-    web    lesson_start 1 · lesson_step 4 çağrı · lesson_finish 1
+    web    conversation_start 1 · conversation_step 4 çağrı · conversation_finish 1
     mobil  0 · 0 · 0     (LessonScreen'de tek bir track çağrısı yok)
 
 `LessonScreen` 750 satır ve mobilin patika yüzeyi: anlatım, konuşma, özet.
@@ -2188,9 +2188,9 @@ ekran var, bu on dördüncüsü değildi.
 
 Web'in dilbilgisi aynen alındı:
 
-    lesson_start   value 1 kaldığı yerden · 0 baştan   kind ders kimliği
-    lesson_step    kind "adım:yol"                     value 2 / 1 / 0
-    lesson_finish  value puanlı adımlarda doğru %      kind ders kimliği
+    conversation_start   value 1 kaldığı yerden · 0 baştan   kind ders kimliği
+    conversation_step    kind "adım:yol"                     value 2 / 1 / 0
+    conversation_finish  value puanlı adımlarda doğru %      kind ders kimliği
 
 Üç ayrıntı ölçülerek yerleştirildi:
 
@@ -4458,12 +4458,12 @@ Web iki adım türünde de `ok && isFirstTry` istiyor. Mobil `gradeProduce` ise
 üçüncü denemede bilen öğrenci ilk denemede bilenle aynı yüzdeyi alıyordu.
 
 Asıl çarpıcı yanı, ekranın **kendi ölçümünün ayrımı zaten bilmesi**:
-`lesson_step` olayı değeri 2 (ilk denemede) ya da 1 (sonraki denemede) diye
+`conversation_step` olayı değeri 2 (ilk denemede) ya da 1 (sonraki denemede) diye
 yazıyor — puan onu görmezden geliyordu. Yani parite farkından önce mobil kendi
 içinde tutarsızdı. Doğru/yanlış adımında fark yok: orada tek deneme var
 (`answered` kilidi).
 
-Sonuç: ders bitiş yüzdesi ve `lesson_finish` ölçümü artık iki uygulamada aynı
+Sonuç: ders bitiş yüzdesi ve `conversation_finish` ölçümü artık iki uygulamada aynı
 şeyi anlatıyor.
 
 **Kapı üç kuralı birden ölçüyor** — hangi adımlar puanlanıyor, isabet ne zaman
@@ -4560,7 +4560,7 @@ ve bu §11.11'deki oynatıcı sınırının parçası.
 bölümün kendi içinde yapılmıştı; kalan iş yapmaktı.
 
 **Neden önemliydi:** ders geçme koşulu konuşmanın **yapılmasını** istiyor
-(`roleplayDone`). Sağlayıcı kapalıyken web derse ait senaryoya düşüp devam
+(`chatDone`). Sağlayıcı kapalıyken web derse ait senaryoya düşüp devam
 ediyordu; mobil yalnız "yapay zekâ kapalı" deyip bırakıyordu — yani Android'de
 **hiçbir konuşma dersi tamamlanamıyordu**.
 

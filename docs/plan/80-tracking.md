@@ -7,8 +7,8 @@
 ## 1. İlke
 
 - **Kapalı sözlük.** Olay adı `src/lib/events.ts`'teki listeden, `kind` etiketi `[a-z0-9_:-]{1,32}`; serbest metin (öğrenci cümlesi, döküm) olaylara asla yazılmaz — içerik `assessments`'ta durur, olayda yalnız puanı vardır.
-- **Ekran anahtarı.** Yol değil kapalı anahtar (`src/lib/screens.ts`): `learn, weekly, lessons, lesson, roleplay_exam, skills, skill, cheatsheet, drill, words, profile, settings, badges, writings, exam, placement, home, other`. Alt gezinme yeniden düzenlense de tarihsel veri kırılmaz.
-- **Silinmez.** `events`, `reviews`, `daily_stats`, `user_lessons`, `user_skills`, `exams`, `placements`, `assessments`, `cheat_progress`, `ai_usage` için silme yolu yok. Süresi dolan yalnız `roleplay_logs` (konuşma dökümü, gizlilik) ve geçersiz `push_subscriptions`.
+- **Ekran anahtarı.** Yol değil kapalı anahtar (`src/lib/screens.ts`): `learn, weekly, lessons, lesson, conversation_scored, skills, skill, cheatsheet, drill, words, profile, settings, badges, writings, exam, placement, home, other`. Alt gezinme yeniden düzenlense de tarihsel veri kırılmaz.
+- **Silinmez.** `events`, `reviews`, `daily_stats`, `user_conversations`, `user_skills`, `exams`, `placements`, `assessments`, `cheat_progress`, `ai_usage` için silme yolu yok. Süresi dolan yalnız `chat_logs` (konuşma dökümü, gizlilik) ve geçersiz `push_subscriptions`.
 - **Ölçüm ölçtüğünü bozmaz.** İstemci `track()` beklemez, `keepalive` ile atar; sunucu 204 döner, hata fırlatmaz.
 - **Yazılmayan olay hata.** `npm run test:events` kaynağı tarar: sözlükte olmayan ad, bozuk `kind`, yazan yeri olmayan olay → test düşer.
 
@@ -19,15 +19,15 @@
 | Sinyal | Kaynak | Ne cevaplar |
 |---|---|---|
 | Her kelime cevabı: oyun, doğru/yanlış, gecikme, kalite, **hata tipi** | `reviews` (+ `error_recorded`, `srs_weight` olayları) | tanıma/üretim oranı, hata taksonomisi, SRS ağırlığı |
-| Ders: en iyi doğru, rol yapma bitti mi, deneme sayısı | `user_lessons` | ders geçme |
-| **Ders başlangıcı / adım / bitiş** (yeni) | `lesson_start`, `lesson_step` (repeat·produce·truefalse × mic·typed·skip; 2 ilk denemede / 1 sonra / 0 geçilemedi), `lesson_finish` (bu denemenin yüzdesi) | adımlar sesle mi yazıyla mı geçiliyor, atlanıyor mu, ders başına gelişim trendi |
+| Ders: en iyi doğru, rol yapma bitti mi, deneme sayısı | `user_conversations` | ders geçme |
+| **Ders başlangıcı / adım / bitiş** (yeni) | `conversation_start`, `conversation_step` (repeat·produce·truefalse × mic·typed·skip; 2 ilk denemede / 1 sonra / 0 geçilemedi), `conversation_finish` (bu denemenin yüzdesi) | adımlar sesle mi yazıyla mı geçiliyor, atlanıyor mu, ders başına gelişim trendi |
 | Beceri egzersizi: en iyi doğru, son puan, deneme | `user_skills` + `skill_finish` | beceri yetkinliği (WP-50) |
 | **Söyleyiş kararı** (yeni) | `speak_self` (asr / self, doğru/zorlandı) | drill sınıyor mu, öz-değerlendirmeye mi kaçılıyor |
 | Telaffuz puanı | `pronounce` (egzersiz, 0–100) | telaffuz gelişimi |
 | Üretim görevi puanı | `production_attempt` (translate·transform·free_sentence·writing_free·speaking_drill·roleplay) + `assessments` (rubrik, düzeltme) | üretim kalitesi trendi |
 | Dilbilgisi drill cevabı ve **set bitişi** (yeni) | `drill` (hata tipi) + `drill_finish` (tablo, yüzde) + `cheat_progress` | hangi tablo çalışılıyor, ne kadar doğru |
 | Sınav, yerleştirme, haftalık | `exams`, `placements`, `exam_start/finish`, `placement_finish` | ölçme katmanı |
-| Rol yapma sınavı | `nav kind=roleplay_exam:*`, `assessments kind=roleplay` | konuşma sınavı |
+| Rol yapma sınavı | `nav kind=conversation_scored:*`, `assessments kind=roleplay` | konuşma sınavı |
 | Can-do ilerlemesi | `lib/cando-progress.ts` (üstteki tablolardan türetilir) | "yapabildiklerim" |
 | Günlük çaba | `daily_stats` (cevap, doğru, yeni, XP, saniye) | WAU, tutunma |
 

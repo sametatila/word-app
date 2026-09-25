@@ -15,7 +15,7 @@ import { aiUsage } from "@/lib/db/schema";
  * tutulan işi bekletmemeli.
  */
 
-export type AiKind = "roleplay" | "coach" | "stt" | "assess" | "tts";
+export type AiKind = "chat" | "coach" | "stt" | "assess" | "tts";
 
 export type AiCallRecord = {
   kind: AiKind;

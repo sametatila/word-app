@@ -6,7 +6,7 @@ import { t } from "./i18n";
  * politikası: kullanıcı rahatsız edici bir yapay zekâ yanıtını uygulamadan çıkmadan
  * bildirebilmeli. Kayıt yönetim panosunda insan tarafından okunur.
  */
-export type ReportKind = "roleplay" | "assessment" | "user";
+export type ReportKind = "chat" | "assessment" | "user";
 export type ReportReason = "inappropriate" | "offensive" | "wrong" | "impersonation" | "other";
 
 export type Reason = { key: ReportReason; label: string; sub: string };

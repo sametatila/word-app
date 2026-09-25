@@ -28,7 +28,7 @@ const CONTENT_REASON: Record<string, string> = {
   wrong: "Yanlış",
   other: "Diğer",
 };
-const KIND: Record<string, string> = { roleplay: "Rol yapma yanıtı", assessment: "Değerlendirme", user: "Kullanıcı" };
+const KIND: Record<string, string> = { chat: "Rol yapma yanıtı", assessment: "Değerlendirme", user: "Kullanıcı" };
 const ERROR_TR: Record<string, string> = {
   not_found: "Şikâyet bulunamadı.",
   not_ready: "Karar tablosu canlıda yok: önce drizzle/0059_moderation_actions.sql uygulanmalı.",

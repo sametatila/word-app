@@ -35,7 +35,7 @@ type Phase = "intro" | "talk" | "scoring" | "result" | "error";
  *
  * Alıştırmadan farkı ölçüm: muhatap düzeltmez, öneri vermez, Türkçe
  * konuşmaz (bkz. `examPrompt`); konuşma bitince öğrencinin bütün turları tek
- * seferde rubrikle puanlanır (`kind: "roleplay"`) ve `assessments`'a yazılır.
+ * seferde rubrikle puanlanır (`kind: "chat"`) ve `assessments`'a yazılır.
  * Sonuç: rubrik kartı, en iyi iki cümle (hatasız ve en uzun), en sık iki
  * hata tipi, dersin can-do etiketi.
  *
@@ -117,7 +117,7 @@ export function RoleplayExam({
   }, [turns]);
 
   function start() {
-    track("nav", 0, "roleplay_exam:start");
+    track("nav", 0, "conversation_scored:start");
     const opening: Turn = { role: "assistant", content: lesson.roleplay.opening };
     setTurns([opening]);
     setPhase("talk");
@@ -136,7 +136,7 @@ export function RoleplayExam({
       const res = await apiFetch("/api/chat", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ lessonId: lesson.id, messages: next, mode: "exam" }),
+        body: JSON.stringify({ conversationId: lesson.id, messages: next, mode: "exam" }),
         /* Üretim uzun: genel tavan (25 sn) bu çağrıyı kesiyordu. Android
            kırk beş saniye bekliyor, aynı sabit adıyla. */
         timeoutMs: ROLEPLAY_TIMEOUT_MS,
@@ -209,7 +209,7 @@ export function RoleplayExam({
     setPhase("scoring");
     const said = all.filter((t) => t.role === "user").map((t) => t.content);
     const req: AssessRequest = {
-      kind: "roleplay",
+      kind: "chat",
       level: lesson.level as AssessLevel,
       task: {
         prompt: `${lesson.roleplay.scene} (Sınav: ${lesson.roleplay.partner} ile konuşma)`,
@@ -231,7 +231,7 @@ export function RoleplayExam({
       setResult(fallbackAssessment(req, t));
       setFailure(ai.reason);
     }
-    track("nav", said.length, "roleplay_exam:done");
+    track("nav", said.length, "conversation_scored:done");
     setPhase("result");
   }
 
@@ -521,7 +521,7 @@ export function RoleplayExam({
       </div>
       <ReportDialog
         open={reported !== null}
-        kind="roleplay"
+        kind="chat"
         refId={reported?.ref ?? ""}
         content={reported?.text ?? ""}
         onClose={() => setReported(null)}

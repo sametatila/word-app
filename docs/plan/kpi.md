@@ -13,7 +13,7 @@ Tam envanter ve davranış olayları (ekran, süre, ders adımı, bildirim hunis
 | `events` | ürün ve öğrenme olayları; `name` kapalı liste, `kind` kısa etiket, `value` sayı | serbest metin yok (bkz. `src/lib/events.ts`) |
 | `reviews` | her kelime cevabı: oyun, doğru/yanlış, gecikme, kalite, **hata tipi** (WP-02: `error_type`) | tur turu ölçüm buradan; `session_round` olayı bu yüzden yazılmıyor — aynı satırı iki tabloya yazmak sorguyu değil yalnız hacmi büyütürdü |
 | `daily_stats` | gün başına cevap, doğru, yeni kelime, XP, saniye | aktiflik ve tutunma |
-| `user_lessons` | ders başına en iyi doğru, toplam, rol yapma bitti mi, deneme | ders geçme, rol yapma |
+| `user_conversations` | ders başına en iyi doğru, toplam, rol yapma bitti mi, deneme | ders geçme, rol yapma |
 | `user_skills` | egzersiz başına en iyi doğru/toplam, son puan (WP-01) | beceri yetkinlik hammaddesi |
 | `assessments` | AI değerlendirme sonuçları (WP-03) | yazma/konuşma puan trendi |
 
@@ -74,25 +74,25 @@ from events where name = 'skill_finish' group by 1, 2 order by 1, 2;
 
 ### 5. Ders geçme oranı
 **Tanım.** O hafta çalışılan derslerden geçilenlerin oranı. Geçme = rol yapma bitti **ve** doğru/toplam ≥ 0,7 (`src/lib/lessons/progress.ts`).
-**Kaynak.** `user_lessons` (`last_at` haftası).
+**Kaynak.** `user_conversations` (`last_at` haftası).
 ```sql
 select date_trunc('week', last_at)::date as week,
        count(*) as lessons,
-       count(*) filter (where roleplay_done and correct::float / nullif(total,0) >= 0.7) as passed,
-       round(100.0 * count(*) filter (where roleplay_done and correct::float / nullif(total,0) >= 0.7) / count(*)) as pass_pct,
+       count(*) filter (where chat_done and correct::float / nullif(total,0) >= 0.7) as passed,
+       round(100.0 * count(*) filter (where chat_done and correct::float / nullif(total,0) >= 0.7) / count(*)) as pass_pct,
        count(distinct user_id) as people
-from user_lessons group by 1 order by 1;
+from user_conversations group by 1 order by 1;
 ```
 **Hedef.** %60–80 (çok yüksekse ders kolay, çok düşükse akış kırık).
 
 ### 6. Rol yapma tamamlama oranı
 **Tanım.** Çalışılan derslerde rol yapmanın bitirilme oranı; AI ve senaryolu (WP-04) ayrımı `events.production_attempt kind='roleplay'` ile.
-**Kaynak.** `user_lessons.roleplay_done`.
+**Kaynak.** `user_conversations.chat_done`.
 ```sql
 select date_trunc('week', last_at)::date as week,
-       count(*) as lessons, count(*) filter (where roleplay_done) as roleplay_done,
-       round(100.0 * count(*) filter (where roleplay_done) / count(*)) as done_pct
-from user_lessons group by 1 order by 1;
+       count(*) as lessons, count(*) filter (where chat_done) as chat_done,
+       round(100.0 * count(*) filter (where chat_done) / count(*)) as done_pct
+from user_conversations group by 1 order by 1;
 ```
 **Hedef.** ≥ %85 (sağlayıcı kapalıyken de — WP-04).
 

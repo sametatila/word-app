@@ -7,7 +7,7 @@ import type { Lesson } from "./types";
 /**
  * Çevrimdışı rol yapma (plan WP-04).
  *
- * Ders geçme koşulu `roleplayDone && oran ≥ 0.7` (progress.ts). Konuşma
+ * Ders geçme koşulu `chatDone && oran ≥ 0.7` (progress.ts). Konuşma
  * bölümü yalnız modelle çalışsaydı sağlayıcı kapalıyken hiçbir ders
  * geçilemezdi — ve sağlayıcılar ücretsiz katmanda, yani kapanmaları olağan.
  * Burada aynı sahne modelsiz oynanıyor:
@@ -208,7 +208,7 @@ export function offlineReply(lesson: Lesson, state: OfflineState, said: string):
   };
 }
 
-/** Özet: hangi kalıplar kullanıldı, puan 0–100 (KPI `production_attempt` roleplay). */
+/** Özet: hangi kalıplar kullanıldı, puan 0–100 (KPI `production_attempt` chat). */
 export function offlineSummary(lesson: Lesson, state: OfflineState): { used: string[]; missing: string[]; score: number } {
   const all = lesson.patterns.map((p) => p.de);
   const used = state.turnId !== null || state.path.length ? usedTargets(state.path) : state.usedPatterns;

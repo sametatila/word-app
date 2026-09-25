@@ -1,7 +1,7 @@
 import "server-only";
 import { and, asc, eq, gte, isNotNull, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
-import { assessments, dailyStats, events, exams, reviews, userLessons, userSkills } from "@/lib/db/schema";
+import { assessments, dailyStats, events, exams, reviews, userConversations, userSkills } from "@/lib/db/schema";
 import { errorLabel, isErrorType } from "@/lib/errors";
 import { computeProficiency, PROFICIENCY_LABEL_KEYS, PROFICIENCY_SKILLS, type Band, type ProficiencySkill } from "@/lib/proficiency";
 import { translate, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
@@ -121,7 +121,7 @@ export async function growthReport(
 
   const series = {
     writing: bucket(weeks, agg(["writing", "sentence"])),
-    speaking: bucket(weeks, agg(["speaking", "roleplay"])),
+    speaking: bucket(weeks, agg(["speaking", "chat"])),
     usage: bucket(weeks, usageRows.map((r) => ({ week: String(r.week), value: r.score, n: 1 }))),
     answers: bucket(weeks, answerRows.map((r) => ({ week: r.week, value: r.n, n: r.n }))),
   };
@@ -152,7 +152,7 @@ export async function growthReport(
     .orderBy(asc(assessments.createdAt))
     .limit(1);
   if (firstGoodWriting) milestones.push({ at: firstGoodWriting.at.toISOString().slice(0, 10), text: translate(lang, "growth.first_good_writing") });
-  const [firstLesson] = await db.select({ at: userLessons.lastAt }).from(userLessons).where(and(eq(userLessons.userId, userId), eq(userLessons.roleplayDone, true))).orderBy(asc(userLessons.lastAt)).limit(1);
+  const [firstLesson] = await db.select({ at: userConversations.lastAt }).from(userConversations).where(and(eq(userConversations.userId, userId), eq(userConversations.chatDone, true))).orderBy(asc(userConversations.lastAt)).limit(1);
   if (firstLesson) milestones.push({ at: firstLesson.at.toISOString().slice(0, 10), text: translate(lang, "growth.first_conversation") });
   const [firstPlacement] = await db.select({ day: events.day, kind: events.kind }).from(events).where(and(eq(events.userId, userId), eq(events.name, "placement_finish"))).orderBy(asc(events.createdAt)).limit(1);
   if (firstPlacement) milestones.push({ at: String(firstPlacement.day), text: translate(lang, "growth.first_placement", { level: firstPlacement.kind ?? "?" }) });
@@ -183,9 +183,9 @@ export async function weeklySummary(
     .from(userSkills)
     .where(and(eq(userSkills.userId, userId), gte(userSkills.lastAt, from), sql`${userSkills.lastAt} < ${to}`));
   const [{ lessonsPassed }] = await db
-    .select({ lessonsPassed: sql<number>`count(*) filter (where ${userLessons.roleplayDone} and ${userLessons.correct}::float / nullif(${userLessons.total}, 0) >= 0.7)::int` })
-    .from(userLessons)
-    .where(and(eq(userLessons.userId, userId), gte(userLessons.lastAt, from), sql`${userLessons.lastAt} < ${to}`));
+    .select({ lessonsPassed: sql<number>`count(*) filter (where ${userConversations.chatDone} and ${userConversations.correct}::float / nullif(${userConversations.total}, 0) >= 0.7)::int` })
+    .from(userConversations)
+    .where(and(eq(userConversations.userId, userId), gte(userConversations.lastAt, from), sql`${userConversations.lastAt} < ${to}`));
   const [top] = await db
     .select({ type: reviews.errorType, n: sql<number>`count(*)::int` })
     .from(reviews)

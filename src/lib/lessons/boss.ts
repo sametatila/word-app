@@ -100,7 +100,7 @@ export async function buildModuleBoss(
   // hazır olmadan girene ne beklediğini söylemek için.
   const board = await lessonBoard(userId, course);
   const done = new Set(
-    board.filter((c) => c.state?.roleplayDone).map((c) => c.lesson.id),
+    board.filter((c) => c.state?.chatDone).map((c) => c.lesson.id),
   );
 
   const meta: BossMeta = {

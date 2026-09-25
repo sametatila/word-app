@@ -198,7 +198,7 @@ const MIN_WORDS: Record<AssessRequest["kind"], number> = {
   sentence: 3,
   writing: 30,
   speaking: 3,
-  roleplay: 6,
+  chat: 6,
 };
 
 function fold(s: string): string {

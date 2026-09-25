@@ -1,7 +1,7 @@
 import "server-only";
 import { and, eq, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
-import { userLessons } from "@/lib/db/schema";
+import { userConversations } from "@/lib/db/schema";
 import { allLessons, lessonsFor, levelIndex } from "./index";
 import { scoredSteps, type Lesson } from "./types";
 import { awardActivity } from "@/lib/award";
@@ -28,10 +28,10 @@ const LADDER = [1, 3, 7, 16, 35];
 const PASS_RATIO = 0.7;
 
 export type LessonState = {
-  lessonId: string;
+  conversationId: string;
   correct: number;
   total: number;
-  roleplayDone: boolean;
+  chatDone: boolean;
   attempts: number;
   dueAt: Date;
   intervalDays: number;
@@ -49,19 +49,19 @@ export type LessonCard = {
 export async function lessonBoard(userId: string, course: string): Promise<LessonCard[]> {
   const rows = await db
     .select()
-    .from(userLessons)
-    .where(eq(userLessons.userId, userId));
-  const byId = new Map(rows.map((r) => [r.lessonId, r]));
+    .from(userConversations)
+    .where(eq(userConversations.userId, userId));
+  const byId = new Map(rows.map((r) => [r.conversationId, r]));
   const now = Date.now();
 
   return (await lessonsFor(course)).map((lesson) => {
     const row = byId.get(lesson.id);
     if (!row) return { lesson, state: null, due: false, fresh: true };
     const state: LessonState = {
-      lessonId: row.lessonId,
+      conversationId: row.conversationId,
       correct: row.correct,
       total: row.total,
-      roleplayDone: row.roleplayDone,
+      chatDone: row.chatDone,
       attempts: row.attempts,
       dueAt: row.dueAt,
       intervalDays: row.intervalDays,
@@ -114,7 +114,7 @@ export async function recordLesson(
   userId: string,
   lesson: Lesson,
   correct: number,
-  roleplayDone: boolean,
+  chatDone: boolean,
   /** Kullanıcının yerel günü — XP ve seri buna işlenir. */
   today: string,
   seconds = 0,
@@ -126,12 +126,12 @@ export async function recordLesson(
   totalXp: number;
 }> {
   const total = scoredSteps(lesson);
-  const passed = roleplayDone && total > 0 && correct / total >= PASS_RATIO;
+  const passed = chatDone && total > 0 && correct / total >= PASS_RATIO;
 
   const [existing] = await db
     .select()
-    .from(userLessons)
-    .where(and(eq(userLessons.userId, userId), eq(userLessons.lessonId, lesson.id)));
+    .from(userConversations)
+    .where(and(eq(userConversations.userId, userId), eq(userConversations.conversationId, lesson.id)));
 
   const step = passed
     ? Math.min((existing?.intervalDays ?? 0) === 0 ? 0 : LADDER.indexOf(existing!.intervalDays) + 1, LADDER.length - 1)
@@ -139,28 +139,28 @@ export async function recordLesson(
   const nextDays = LADDER[Math.max(0, step)];
 
   await db
-    .insert(userLessons)
+    .insert(userConversations)
     .values({
       userId,
-      lessonId: lesson.id,
+      conversationId: lesson.id,
       ruleId: lesson.focusId,
       correct,
       total,
-      roleplayDone,
+      chatDone,
       attempts: 1,
       intervalDays: nextDays,
       dueAt: sql`now() + (${nextDays} || ' days')::interval`,
       lastAt: new Date(),
     })
     .onConflictDoUpdate({
-      target: [userLessons.userId, userLessons.lessonId],
+      target: [userConversations.userId, userConversations.conversationId],
       set: {
         // En iyi skor korunuyor: bir kez doğru yapılanı sonraki denemede
         // kaybetmek ilerlemeyi geri almamalı.
-        correct: sql`greatest(${userLessons.correct}, ${correct})`,
+        correct: sql`greatest(${userConversations.correct}, ${correct})`,
         total,
-        roleplayDone: sql`${userLessons.roleplayDone} or ${roleplayDone}`,
-        attempts: sql`${userLessons.attempts} + 1`,
+        chatDone: sql`${userConversations.chatDone} or ${chatDone}`,
+        attempts: sql`${userConversations.attempts} + 1`,
         intervalDays: nextDays,
         dueAt: sql`now() + (${nextDays} || ' days')::interval`,
         lastAt: new Date(),
@@ -172,9 +172,9 @@ export async function recordLesson(
   // ve sekiz rol yapma turu hesaba hiç yazılmamıştı, o gün çalışan öğrencinin
   // serisi bile kırılıyordu.
   const bestCorrect = Math.max(existing?.correct ?? 0, correct);
-  const bestRoleplay = (existing?.roleplayDone ?? false) || roleplayDone;
+  const bestRoleplay = (existing?.chatDone ?? false) || chatDone;
   const previousXp = existing
-    ? xpForLesson(lesson.minutes, existing.correct, existing.total, existing.roleplayDone)
+    ? xpForLesson(lesson.minutes, existing.correct, existing.total, existing.chatDone)
     : null;
   const gained = xpDelta(
     xpForLesson(lesson.minutes, bestCorrect, total, bestRoleplay),
@@ -216,18 +216,18 @@ export async function recordLesson(
 export async function weakRules(userId: string, limit = 3): Promise<string[]> {
   const rows = await db
     .select({
-      lessonId: userLessons.lessonId,
-      ruleId: userLessons.ruleId,
-      intervalDays: userLessons.intervalDays,
-      attempts: userLessons.attempts,
+      conversationId: userConversations.conversationId,
+      ruleId: userConversations.ruleId,
+      intervalDays: userConversations.intervalDays,
+      attempts: userConversations.attempts,
     })
-    .from(userLessons)
-    .where(eq(userLessons.userId, userId));
+    .from(userConversations)
+    .where(eq(userConversations.userId, userId));
   // Katalogdan çıkmış derslerin kayıtları sayılmıyor: kullanıcı o kurala artık
   // hiçbir dersten ulaşamaz, "oturmamış" diye göstermek çıkışsız bir uyarı olur.
   const known = new Set((await allLessons()).map((l) => l.id));
   const weak = rows
-    .filter((r) => known.has(r.lessonId) && r.attempts >= 2 && r.intervalDays <= LADDER[0])
+    .filter((r) => known.has(r.conversationId) && r.attempts >= 2 && r.intervalDays <= LADDER[0])
     .map((r) => r.ruleId);
   return [...new Set(weak)].slice(0, limit);
 }

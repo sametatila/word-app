@@ -61,7 +61,7 @@ type Result = { score: Score; errors: AssessError[]; corrected?: string | null; 
  *
  * Alıştırmadan farkı ölçüm: muhatap düzeltmez, öneri vermez, anadile geçmez
  * (`mode: "exam"` istemi); konuşma bitince öğrencinin BÜTÜN turları tek seferde
- * rubrikle puanlanıyor (`kind: "roleplay"`) ve `assessments`'a yazılıyor.
+ * rubrikle puanlanıyor (`kind: "chat"`) ve `assessments`'a yazılıyor.
  *
  * Webden tek yapısal fark: sağlayıcı kapalıyken web kural tabanlı bir yedek
  * puan gösteriyor (`fallbackAssessment`), mobil hiç puan vermiyor - bu ayrım
@@ -152,7 +152,7 @@ export function RoleplayExamScreen() {
         method: "POST",
         timeoutMs: ASSESS_ROLEPLAY_TIMEOUT_MS,
         body: JSON.stringify({
-          kind: "roleplay",
+          kind: "chat",
           level: lesson.level,
           /* ÜRETİMİN DİLİ — zorunlu. İstemci vermezse sunucu "de"ye düşüyor
              (`api/assess` `parseBody`), yani İngilizce kursta yapılan rol
@@ -187,7 +187,7 @@ export function RoleplayExamScreen() {
       }
       setGateNote(tx(assessFailKey(e)));
     }
-    track("nav", said.length, "roleplay_exam:done");
+    track("nav", said.length, "conversation_scored:done");
     if (mounted.current) setPhase("result");
   }, [lesson]);
 
@@ -255,7 +255,7 @@ export function RoleplayExamScreen() {
   }
 
   function start() {
-    track("nav", 0, "roleplay_exam:start");
+    track("nav", 0, "conversation_scored:start");
     const opening: Turn = { role: "assistant", content: lesson!.roleplay.opening };
     setTurns([opening]);
     setPhase("talk");
@@ -527,7 +527,7 @@ export function RoleplayExamScreen() {
                 İlk balon (i = 0) dersin yazılı açılış cümlesi, model çıktısı
                 değil: orada yok. */}
             {turn.role === "assistant" && i > 0 ? (
-              <ReportLink kind="roleplay" refId={`${lesson.id}:exam:${i}`} content={turn.content} style={{ alignSelf: "flex-end", marginTop: spacing.xs }} />
+              <ReportLink kind="chat" refId={`${lesson.id}:exam:${i}`} content={turn.content} style={{ alignSelf: "flex-end", marginTop: spacing.xs }} />
             ) : null}
           </View>
         ))}

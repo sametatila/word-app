@@ -83,12 +83,12 @@ kurmasına yardım.** İki mod:
 | reading/listening/writing **oynatıcıları** | KORUNUR, immersion item renderer olur |
 
 ## Progress (BASİTLEŞTİRİLDİ — sahibin kararı)
-- **`userLessons` KALIR** — ders (lesson item) ilerlemesi + SRS `dueAt` dokunulmaz.
+- **`userConversations` KALIR** — ders (lesson item) ilerlemesi + SRS `dueAt` dokunulmaz.
 - **`userSkills` eski verisi (opsiyonel) SİLİNEBİLİR** (yalnız Samet'in testi). ZORUNLU değil:
   aynı exercise id'leriyle tablo yeniden kullanıldığından eski ilerleme immersion'da geçerli kalır. Tablo,
   immersion beceri-item ilerlemesi için **yeniden kullanılır** (ileride `user_items`'a
   yeniden adlandırma opsiyonel bir temizlik; şart değil).
-- **Karmaşık birleşik-göç YOK.** Sadece: userSkills DELETE + userLessons'a dokunma.
+- **Karmaşık birleşik-göç YOK.** Sadece: userSkills DELETE + userConversations'a dokunma.
 - Gating: `moduleClears` checkpoint kaynağı olarak kalır (ya da checkpoint item'ına devrolur).
 
 ## Fazlar (her biri tsc+build doğrulanıp commit'lenir)
@@ -104,7 +104,7 @@ kurmasına yardım.** İki mod:
    gating'i bloklamaz. Nav 2 moda indi: **Öğren + Immersion** ("Dersler" ve "Beceriler"
    sekmeleri kalktı; rotalar Faz 4'e kadar köprü hedefi olarak duruyor). Checkpoint motoru
    (module-exam/boss) içerik gelince Faz 3'te bağlanır.
-3. **Progress bağlama:** lesson item → userLessons; read/listen/write/grammar/quiz item →
+3. **Progress bağlama:** lesson item → userConversations; read/listen/write/grammar/quiz item →
    userSkills (eski veri silinmiş). Checkpoint geçme → gating.
 4. **Kaldırma:** ✅ TAMAM (kod). `/skills` UI rotaları (page/[id]/loading) + `skills-hub`
    silindi; skill oynatıcıları `app/(app)/immersion/skill/[id]` altına taşındı (aynı oynatıcı

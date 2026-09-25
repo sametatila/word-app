@@ -10,7 +10,7 @@ import { flushPendingLessons, queueLessonResult, type PendingLesson } from "../s
  * gönderilemeyen kayıt kuyrukta duruyor.
  */
 const KEY = "lernomi-lessons-pending";
-const item: PendingLesson = { lessonId: "a1-01", correct: 7, roleplayDone: true, day: "2026-09-01", seconds: 300 };
+const item: PendingLesson = { conversationId: "a1-01", correct: 7, chatDone: true, day: "2026-09-01", seconds: 300 };
 
 jest.mock("../src/api/client", () => ({ api: jest.fn(), ApiError: class extends Error { status = 0; } }));
 const { api } = require("../src/api/client") as { api: jest.Mock };

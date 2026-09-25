@@ -30,7 +30,7 @@ const KIND_LABEL_KEYS: Record<string, string> = {
   writing: "exam.sec_writing",
   sentence: "writ.kind_sentence",
   speaking: "exam.sec_speaking",
-  roleplay: "writ.kind_chat",
+  chat: "writ.kind_chat",
 };
 
 /**

@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { clampDay } from "@/lib/award";
+import { legacyBody } from "@/lib/legacy-names";
 import { findLesson } from "@/lib/lessons";
 import { scoredSteps } from "@/lib/lessons/types";
 import { recordLesson } from "@/lib/lessons/progress";
@@ -30,9 +31,10 @@ export async function POST(req: Request) {
   if (typeof body !== "object" || body === null) {
     return NextResponse.json({ error: "bad_request" }, { status: 400 });
   }
-  const { lessonId, correct, roleplayDone, day, seconds } = body as Record<string, unknown>;
+  // Build 6 `lessonId`/`roleplayDone` gönderiyor (geçici, lib/legacy-names).
+  const { conversationId, correct, chatDone, day, seconds } = legacyBody(body as Record<string, unknown>);
 
-  const lesson = typeof lessonId === "string" ? await findLesson(lessonId) : undefined;
+  const lesson = typeof conversationId === "string" ? await findLesson(conversationId) : undefined;
   if (!lesson) return NextResponse.json({ error: "bad_lesson" }, { status: 400 });
   if (typeof correct !== "number" || correct < 0 || correct > scoredSteps(lesson)) {
     return NextResponse.json({ error: "bad_score" }, { status: 400 });
@@ -51,7 +53,7 @@ export async function POST(req: Request) {
       userId,
       lesson,
       Math.floor(correct),
-      roleplayDone === true,
+      chatDone === true,
       today,
       secs,
     );

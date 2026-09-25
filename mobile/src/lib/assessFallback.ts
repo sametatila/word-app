@@ -14,7 +14,7 @@ import { t } from "./i18n";
  * Dilbilgisi/kelime puanı bu yüzden nötr 2 kalıyor ve sonuç HİÇBİR ZAMAN
  * gerçek değerlendirme gibi sunulmuyor (`offline: true`).
  */
-export type AssessKind = "sentence" | "writing" | "speaking" | "roleplay";
+export type AssessKind = "sentence" | "writing" | "speaking" | "chat";
 
 export type FallbackCheck = {
   kind: "min_words" | "target" | "capital" | "punctuation" | "target_lang";
@@ -44,7 +44,7 @@ const MIN_WORDS: Record<AssessKind, number> = {
   sentence: 3,
   writing: 30,
   speaking: 3,
-  roleplay: 6,
+  chat: 6,
 };
 
 /** Web `overallScore` ile AYNI ağırlıklar: iki platform aynı metne aynı puanı vermeli. */

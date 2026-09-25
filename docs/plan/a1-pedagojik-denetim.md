@@ -20,7 +20,7 @@ yuvalarını listedeki 2N-1 ve 2N. okuma doldurur. Etiketi doğru olan ama liste
 yanlış yerde duran egzersiz yanlış üniteye düşer.
 
 **(c) Beceri egzersizi kimlikleri canlı ilerleme taşır.** `user_skills` birincil
-anahtarı `(user_id, exercise_id)` (`src/lib/db/schema.ts:366`) — `user_lessons`
+anahtarı `(user_id, exercise_id)` (`src/lib/db/schema.ts:366`) — `user_conversations`
 ile aynı kural. **Hiçbir egzersizin kimliği değiştirilemez, hiçbiri silinemez.**
 Eskisini devre dışı bırakmak gerekiyorsa yenisini listede önüne ekle; eski
 kimlik durur, ilerleme çözülür, sadece yuva dışına düşer.
@@ -76,8 +76,8 @@ Havuza ekleme kuralları (A2 briefinden, aynen geçerli):
 
 ## 4. Kurallar (A2 briefinden devam)
 
-1. **Ders kimlikleri sabit.** `user_lessons` birincil anahtarı
-   `(user_id, lesson_id)`; kimlik değişirse canlı ilerleme silinir. Ders sayısı
+1. **Ders kimlikleri sabit.** `user_conversations` birincil anahtarı
+   `(user_id, conversation_id)`; kimlik değişirse canlı ilerleme silinir. Ders sayısı
    da sabit.
 2. **Web canlı.** Ders kaynağı mobille paylaşımlı; iyileştir, bozma, kopyasını
    çıkarma.

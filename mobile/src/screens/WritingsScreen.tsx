@@ -23,7 +23,7 @@ import { scoreBand } from "../lib/learningRules";
 /** Tür -> sözlük anahtarı. */
 /*
  * DÖRT TÜR. Liste yalnız `writing` ve `speaking` biliyordu; `sentence`
- * (cümle kurma turunun değerlendirmesi) ve `roleplay` (rol yapma) satırları
+ * (cümle kurma turunun değerlendirmesi) ve `chat` (rol yapma) satırları
  * ham anahtarlarıyla ("sentence") çiziliyordu - kullanıcı ne olduğunu
  * anlamıyordu. Web dördünü de adlandırıyor (`writings-card`).
  */
@@ -31,7 +31,7 @@ const KIND_KEY: Record<string, string> = {
   writing: "exam.sec_writing",
   sentence: "writ.kind_sentence",
   speaking: "exam.sec_speaking",
-  roleplay: "writ.kind_chat",
+  chat: "writ.kind_chat",
 };
 
 /**

@@ -5,7 +5,7 @@
  * ve Beceriler seviye başına 2 + "bitir ve 7 günlük seri yap" dilimleri, her biri
  * ayrı sayaç; yürüyüş modu günde 3 tur. Saf formül `test:premium`de; burası
  * sayaçların SQL'ini sınıyor: sahiplenme işareti, izin verilen sayıyla atomik
- * sayım, eşzamanlı istekler, bitirmenin `user_lessons`ten okunması ve yürüyüş
+ * sayım, eşzamanlı istekler, bitirmenin `user_conversations`ten okunması ve yürüyüş
  * turunun çift istek koruması. Bunlar tek süreçte görünmüyor.
  *
  * Kurulum `scripts/test-entitlement.ts`in başındaki notla aynı (TEST_DATABASE_URL,
@@ -16,7 +16,7 @@ import { and, eq, sql } from "drizzle-orm";
 // `@/lib/db` — göreli değil: e2e tsconfig'i takma adı test ikizine yönlendiriyor
 // (bkz. test-entitlement). Premium modülleri de aynı havuzu kullanmalı.
 import { db } from "@/lib/db";
-import { profiles, usageCounters, userLessons } from "../src/lib/db/schema";
+import { profiles, usageCounters, userConversations } from "../src/lib/db/schema";
 import { claimTiered, isOwned, openWalkRound, refundWalkRound, tieredState, unlockOverview, walkState } from "../src/lib/premium/access";
 import { getUsage } from "../src/lib/premium/quota";
 
@@ -63,14 +63,14 @@ async function setStreak(id: string, longest: number, current = longest) {
 }
 
 /** Konuşma adımının dersi bitirildi (`/api/conversation`in yazdığı satır). */
-async function finishLesson(id: string, lessonId: string) {
-  await db.insert(userLessons).values({ userId: id, lessonId, ruleId: "r", total: 1 }).onConflictDoNothing();
+async function finishLesson(id: string, conversationId: string) {
+  await db.insert(userConversations).values({ userId: id, conversationId, ruleId: "r", total: 1 }).onConflictDoNothing();
 }
 
 async function cleanup() {
   for (const id of created) {
     await db.delete(usageCounters).where(eq(usageCounters.userId, id));
-    await db.delete(userLessons).where(eq(userLessons.userId, id));
+    await db.delete(userConversations).where(eq(userConversations.userId, id));
     await db.delete(profiles).where(eq(profiles.userId, id));
   }
 }
@@ -116,7 +116,7 @@ async function main() {
     check("12 farklı adımdan TAM 2'si açıldı", out.filter((a) => a.allowed).length === 2, out.filter((a) => a.allowed).length);
     check("sayaç 2", (await getUsage(u, "conversation:B1", "all")) === 2, await getUsage(u, "conversation:B1", "all"));
     const same = await Promise.all(Array.from({ length: 10 }, () => claimTiered(u, "path_writing", "B1", "W1")));
-    check("aynı göreve 10 eşzamanlı istek tek hak yaktı", same.every((a) => a.allowed) && (await getUsage(u, "writing_lesson:B1", "all")) === 1, await getUsage(u, "writing_lesson:B1", "all"));
+    check("aynı göreve 10 eşzamanlı istek tek hak yaktı", same.every((a) => a.allowed) && (await getUsage(u, "path_writing:B1", "all")) === 1, await getUsage(u, "path_writing:B1", "all"));
   }
 
   console.log("\nPatika Yazma ve Beceriler ayrı sayaçlar, seviye başına");

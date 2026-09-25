@@ -17,7 +17,7 @@ import {
   sessionState,
   usageCounters,
   userConsents,
-  userLessons,
+  userConversations,
   userPathItems,
   userSkills,
   userWords,
@@ -180,10 +180,10 @@ async function seedExisting() {
     { userId: T, course: "de", level: "A1", moduleIndex: 0, bestLeft: 10, attempts: 2, clearedAt: at(500) },
     { userId: G, course: "de", level: "A1", moduleIndex: 0, bestLeft: 25, attempts: 1, clearedAt: at(900) },
   ]);
-  await db.insert(userLessons).values([
-    { userId: T, lessonId: "gm-l1", ruleId: "r-old", correct: 8, total: 10, roleplayDone: true, attempts: 1, intervalDays: 7, lastAt: at(2000) },
-    { userId: G, lessonId: "gm-l1", ruleId: "r-new", correct: 5, total: 10, roleplayDone: false, attempts: 2, intervalDays: 1, lastAt: at(15) },
-    { userId: G, lessonId: "gm-l2", ruleId: "r2", correct: 3, total: 6, attempts: 1 },
+  await db.insert(userConversations).values([
+    { userId: T, conversationId: "gm-l1", ruleId: "r-old", correct: 8, total: 10, chatDone: true, attempts: 1, intervalDays: 7, lastAt: at(2000) },
+    { userId: G, conversationId: "gm-l1", ruleId: "r-new", correct: 5, total: 10, chatDone: false, attempts: 2, intervalDays: 1, lastAt: at(15) },
+    { userId: G, conversationId: "gm-l2", ruleId: "r2", correct: 3, total: 6, attempts: 1 },
   ]);
   await db.insert(placements).values({ userId: G, suggested: "A2", perSkill: {}, answers: [], score: 50 });
   await db.insert(exams).values([
@@ -261,11 +261,11 @@ async function mergeIntoExisting() {
   const [mc] = await db.select().from(moduleClears).where(eq(moduleClears.userId, T));
   check("modül patronu: en iyi süre 25, deneme 3", mc?.bestLeft === 25 && mc?.attempts === 3, mc);
 
-  const lessons = await db.select().from(userLessons).where(eq(userLessons.userId, T));
-  const l1 = lessons.find((l) => l.lessonId === "gm-l1");
-  check("ders: en iyi doğru 8, konuşma bitti, deneme 3", l1?.correct === 8 && l1?.roleplayDone === true && l1?.attempts === 3, l1);
+  const lessons = await db.select().from(userConversations).where(eq(userConversations.userId, T));
+  const l1 = lessons.find((l) => l.conversationId === "gm-l1");
+  check("ders: en iyi doğru 8, konuşma bitti, deneme 3", l1?.correct === 8 && l1?.chatDone === true && l1?.attempts === 3, l1);
   check("ders: tekrar planı en son çalışılandan (misafir, aralık 1)", l1?.intervalDays === 1 && l1?.ruleId === "r-new", l1);
-  check("misafirin öteki dersi taşındı", lessons.some((l) => l.lessonId === "gm-l2"));
+  check("misafirin öteki dersi taşındı", lessons.some((l) => l.conversationId === "gm-l2"));
 
   check("seviye testi taşındı", (await db.select().from(placements).where(eq(placements.userId, T))).length === 1);
   const ex = await db.select().from(exams).where(inArray(exams.userId, [G, T]));

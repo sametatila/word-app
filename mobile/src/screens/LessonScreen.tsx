@@ -67,11 +67,11 @@ const HANDSFREE_KEY = "lernomi-lesson-handsfree";
 
 type Phase = "lecture" | "roleplay" | "summary";
 
-/** Cevabın hangi yoldan geldiği — `lesson_step` kind'ının ikinci parçası. */
+/** Cevabın hangi yoldan geldiği — `conversation_step` kind'ının ikinci parçası. */
 type Via = "mic" | "typed";
 
 /** Anlatım/konuşma akışındaki baloncuk. */
-/** Yapay zekâ yanıtı için bildirme bilgisi: ref = "<lessonId>:<tur>", text = gösterilen metin. */
+/** Yapay zekâ yanıtı için bildirme bilgisi: ref = "<conversationId>:<tur>", text = gösterilen metin. */
 type ReportRef = { ref: string; text: string };
 type BubbleData =
   | { role: "teacher"; segments: Segment[]; tone?: "hint" | "why"; fix?: string[]; report?: ReportRef }
@@ -413,7 +413,7 @@ export function LessonScreen() {
   function beginLecture(from: number, resumed: boolean) {
     if (lesson && !lectureStarted.current) {
       lectureStarted.current = true;
-      track("lesson_start", resumed ? 1 : 0, lesson.id);
+      track("conversation_start", resumed ? 1 : 0, lesson.id);
     }
     presentFrom(from);
   }
@@ -466,7 +466,7 @@ export function LessonScreen() {
    */
   function skipStep() {
     const k = expect?.kind;
-    if (k && k !== "confirm") track("lesson_step", 0, `${k}:skip`);
+    if (k && k !== "confirm") track("conversation_step", 0, `${k}:skip`);
     stopListening();
     setTries(0);
     advance();
@@ -504,7 +504,7 @@ export function LessonScreen() {
     push({ role: "student", text: shown, ok });
     haptic(ok ? "correct" : "wrong");
     if (ok) {
-      track("lesson_step", tries === 0 ? 2 : 1, `repeat:${via}`);
+      track("conversation_step", tries === 0 ? 2 : 1, `repeat:${via}`);
       speakTarget(expect.target);
       setTimeout(advance, 500);
       scrollDown();
@@ -516,7 +516,7 @@ export function LessonScreen() {
       /* Adım geçilemedi. Web de sıfırı YALNIZ burada yazıyor: her yanlış
          denemeye ayrı bir sıfır yazmak, bir adımı üç başarısız adım gibi
          gösterirdi. */
-      track("lesson_step", 0, `repeat:${via}`);
+      track("conversation_step", 0, `repeat:${via}`);
       push({ role: "teacher", segments: [{ lang: "tr", text: tx("common.answer_is") }, { lang: currentTargetLang() as Segment["lang"], text: expect.target }], tone: "hint" });
       speakTarget(expect.target);
       setTimeout(advance, 900);
@@ -568,7 +568,7 @@ export function LessonScreen() {
     if (expect?.kind !== "produce") return;
     push({ role: "student", text, ok });
     if (ok) {
-      track("lesson_step", tries === 0 ? 2 : 1, `produce:${via}`);
+      track("conversation_step", tries === 0 ? 2 : 1, `produce:${via}`);
       haptic("correct");
       /*
        * İSABET YALNIZ İLK DENEMEDE SAYILIYOR.
@@ -576,7 +576,7 @@ export function LessonScreen() {
        * Sayaç her doğruda artıyordu, kaçıncı denemede olduğuna bakmadan: aynı
        * adımı üçüncü denemede bilen öğrenci de ilk denemede bilenle aynı
        * yüzdeyi alıyordu. Ekranın kendi ölçümü zaten ayrımı biliyor
-       * (`lesson_step` değeri 2 ilk denemede, 1 sonrakinde) - puan onu
+       * (`conversation_step` değeri 2 ilk denemede, 1 sonrakinde) - puan onu
        * görmezden geliyordu. Web `lesson-player` iki adım türünde de
        * `ok && isFirstTry` istiyor.
        *
@@ -592,7 +592,7 @@ export function LessonScreen() {
       const t = tries + 1;
       setTries(t);
       if (t >= LESSON_TRY_CEILING) {
-        track("lesson_step", 0, `produce:${via}`);
+        track("conversation_step", 0, `produce:${via}`);
         // Doğru cevap balonu: dil etiketi KURSTAN gelir. Sabit "de" yazıyordu;
         // çizim `lang !== "tr"` diye baktığı için görünürde bir şey bozulmuyordu
         // ama İngilizce hedefi "Almanca" diye etiketlemek, dile göre dallanan
@@ -613,7 +613,7 @@ export function LessonScreen() {
     const ok = pick === expect.answer;
     /* Yol "tap": bu adım iki düğmeyle cevaplanıyor, tek deneme var (`answered`
        kilidi) ve o yüzden doğru cevap her zaman ilk denemede geliyor. */
-    track("lesson_step", ok ? 2 : 0, "truefalse:tap");
+    track("conversation_step", ok ? 2 : 0, "truefalse:tap");
     push({ role: "student", text: tx(pick ? "common.correct" : "common.wrong"), ok });
     haptic(ok ? "correct" : "wrong");
     if (ok) setCorrect((c) => c + 1);
@@ -650,7 +650,7 @@ export function LessonScreen() {
   /** Yarım kalan konuşmayı geri kurar: sahne, sohbet, tur sayısı, senaryo yolu. */
   function resumeRoleplay(r: LessonResume) {
     if (!lesson) return;
-    track("lesson_start", 1, lesson.id);
+    track("conversation_start", 1, lesson.id);
     setCorrect(r.correct);
     setCursor(lesson.lecture.length);
     setPhase("roleplay");
@@ -765,11 +765,11 @@ export function LessonScreen() {
     /* Puan yüzdesi web ile aynı formül: puanlanan adımlar içinde doğru oranı
        (`correct` üstten kırpılıyor - konuşma fazı `correct`i artırmıyor ama
        formül yine de tavanı aşmasın). Geçme kaydı sunucuda. */
-    track("lesson_finish", scoreTotal ? Math.round((100 * Math.min(correct, scoreTotal)) / scoreTotal) : 0, lesson.id);
+    track("conversation_finish", scoreTotal ? Math.round((100 * Math.min(correct, scoreTotal)) / scoreTotal) : 0, lesson.id);
     /* Senaryolu konuşmanın puanı: kalıpların kaçı kullanıldı. Web
        `lesson-player` aynı adı aynı değerle yazıyor; mobilde çevrimdışı yol
        yeni geldiği için ölçüm de şimdi geliyor. */
-    if (offline) track("production_attempt", offlineSummary(lesson, offline).score, "roleplay");
+    if (offline) track("production_attempt", offlineSummary(lesson, offline).score, "chat");
     bumpStats(); // ders bitti: XP/seri değişti
     /* "Şimdilik bırak" dersi BİTMİŞ işaretlemiyor ve kaldığı yeri silmiyor:
        bir sonraki açılışta konuşmaya dönülüyor. Sunucuya yine yazılıyor ki
@@ -779,7 +779,7 @@ export function LessonScreen() {
       void clearLessonResume(lesson.id);
     }
     const seconds = Math.round((Date.now() - startedAt.current) / 1000);
-    const payload = { lessonId: lesson.id, correct, roleplayDone: roleDone, day: todayStr(), seconds };
+    const payload = { conversationId: lesson.id, correct, chatDone: roleDone, day: todayStr(), seconds };
     try {
       const res = await fetchWithTimeout(`${API_BASE}/api/conversation`, {
         method: "POST",
@@ -974,7 +974,7 @@ export function LessonScreen() {
           </View>
         </>
       )}
-      <ReportSheet visible={!!report} kind="roleplay" refId={report?.ref ?? ""} content={report?.text ?? ""} onClose={() => setReport(null)} />
+      <ReportSheet visible={!!report} kind="chat" refId={report?.ref ?? ""} content={report?.text ?? ""} onClose={() => setReport(null)} />
     </View>
   );
 }
@@ -1313,7 +1313,7 @@ function Summary({ lesson, correct, total, next, roleMsgs, nextDays, passed, tur
         {unfinished ? <FlowNote tone="warn" icon={<AlertIcon color={colors.streakText} size={16} />} text={tx("conversationp.min_turns_note", { n: lesson.roleplay.minTurns })} /> : null}
         {cando.length ? <FlowNote tone="ok" icon={<CheckIcon color={colors.successText} size={16} />} text={`${tx("conversationp.i_can")} ${cando.join(" · ")}`} /> : null}
         {/* Misafirin ilk tamamlanan dersi: kaybedecek bir şeyi olduğu ilk an. */}
-        <GuestMilestoneCard milestone="first_lesson" when={!unfinished} />
+        <GuestMilestoneCard milestone="first_conversation" when={!unfinished} />
         {!corrections.length && talked ? <FlowNote tone="ok" icon={<CheckIcon color={colors.successText} size={16} />} text={tx("conversationp.no_corrections")} /> : null}
 
         {lesson.patterns?.length ? (

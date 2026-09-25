@@ -61,7 +61,7 @@ kötü durumda.**
 
 ## 4. İhlal edilemez kurallar
 
-1. **Ders id'leri SABİT.** `user_lessons` birincil anahtarı `(user_id, lesson_id)`;
+1. **Ders id'leri SABİT.** `user_conversations` birincil anahtarı `(user_id, conversation_id)`;
    id değişirse canlı kullanıcıların ilerlemesi silinir. Konuyu ve içeriği
    değiştir, id'ye dokunma. Ders sayısını da değiştirme (100).
 2. **Web canlı.** Ders kaynağı web ve mobil tarafından paylaşılıyor. İçeriği
@@ -309,7 +309,7 @@ ama o ünitelerin derslerini ölçmüyorlar. 57 yetim kelimenin **39'u tam bu al
 ### Bu işi yapacak oturum için — veri güvenliği uyarısı
 
 `user_skills` birincil anahtarı **`(user_id, exercise_id)`** (`schema.ts:366`),
-yani `user_lessons` ile aynı kural. **Eski 32 egzersiz silinemez, kimliği
+yani `user_conversations` ile aynı kural. **Eski 32 egzersiz silinemez, kimliği
 değiştirilemez** — canlı ilerleme gider.
 
 Doğru yöntem: yeni ünite dosyalarını `a2.ts` listesinde eskilerin **ÖNÜNE**

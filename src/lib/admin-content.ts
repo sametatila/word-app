@@ -240,9 +240,9 @@ export async function learningAnalysis(): Promise<LearningAnalysis> {
   };  const [ptr, lessonRows, skillRows, pathRows, mockRows] = await Promise.all([
     pointer().catch(() => ({ r: 0, d: [] as string[] })),
     rows(sql`
-      select lesson_id id, count(*)::int users, coalesce(sum(attempts), 0)::int attempts,
+      select conversation_id id, count(*)::int users, coalesce(sum(attempts), 0)::int attempts,
         round(avg(case when total > 0 then correct * 100.0 / total end))::int pct
-      from user_lessons group by 1 having count(*) >= ${MIN_ANSWERS} order by pct asc nulls last limit 60`),
+      from user_conversations group by 1 having count(*) >= ${MIN_ANSWERS} order by pct asc nulls last limit 60`),
     rows(sql`
       select s.exercise_id id, coalesce(e.title, '') title, coalesce(e.level, '') level, count(*)::int users,
         coalesce(sum(s.attempts), 0)::int attempts,

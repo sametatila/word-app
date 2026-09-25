@@ -115,10 +115,10 @@ async function main() {
   // 5 + 6. Ders geçme ve rol yapma
   const lessons = (await q`
     select date_trunc('week', last_at)::date::text as week, count(*)::int as lessons,
-           count(*) filter (where roleplay_done and correct::float / nullif(total,0) >= 0.7)::int as passed,
-           count(*) filter (where roleplay_done)::int as roleplay_done,
+           count(*) filter (where chat_done and correct::float / nullif(total,0) >= 0.7)::int as passed,
+           count(*) filter (where chat_done)::int as chat_done,
            count(distinct user_id)::int as people
-    from user_lessons where last_at >= current_date - ${days}::int group by 1 order by 1
+    from user_conversations where last_at >= current_date - ${days}::int group by 1 order by 1
   `) as Row[];
   head("5. Ders geçme oranı", "geçme = rol yapma bitti ve doğru ≥ %70 · hedef %60–80");
   for (const r of lessons)
@@ -126,10 +126,10 @@ async function main() {
   if (!lessons.length) console.log("  (kayıt yok)");
   head("6. Rol yapma tamamlama", "hedef ≥ %85 (sağlayıcı kapalıyken de)");
   for (const r of lessons)
-    console.log(`  ${r.week}  ${pad(r.roleplay_done, 4)} / ${pad(r.lessons, 4)}  → ${pct(n(r.roleplay_done), n(r.lessons))}`);
+    console.log(`  ${r.week}  ${pad(r.chat_done, 4)} / ${pad(r.lessons, 4)}  → ${pct(n(r.chat_done), n(r.lessons))}`);
   const rp = (await q`
     select date_trunc('week', day)::date::text as week, count(*)::int as n, round(avg(value))::int as avg_score
-    from events where name = 'production_attempt' and kind = 'roleplay' and day >= current_date - ${days}::int
+    from events where name = 'production_attempt' and kind = 'chat' and day >= current_date - ${days}::int
     group by 1 order by 1
   `) as Row[];
   for (const r of rp) console.log(`    ${r.week}  rol yapma puanı ort ${r.avg_score} (${r.n} konuşma)`);
@@ -191,7 +191,7 @@ async function main() {
            count(*) filter (where value = 2)::int as first_try,
            count(*) filter (where value = 1)::int as later,
            count(*) filter (where value = 0)::int as failed
-    from events where name = 'lesson_step' and day >= current_date - ${days}::int group by 1, 2 order by 1, 2
+    from events where name = 'conversation_step' and day >= current_date - ${days}::int group by 1, 2 order by 1, 2
   `) as Row[];
   head("9. Ders adımları", "adım türü · yol (mikrofon / yazı / atla) · ilk denemede / sonraki / geçilemedi");
   for (const r of steps)
@@ -200,11 +200,11 @@ async function main() {
   const lf = (await q`
     select date_trunc('week', day)::date::text as week, count(*)::int as n, round(avg(value))::int as avg_pct,
            count(*) filter (where kind is not null)::int as with_id, count(distinct user_id)::int as people
-    from events where name = 'lesson_finish' and day >= current_date - ${days}::int group by 1 order by 1
+    from events where name = 'conversation_finish' and day >= current_date - ${days}::int group by 1 order by 1
   `) as Row[];
   for (const r of lf) console.log(`    ${r.week}  ${pad(r.n, 4)} ders bitişi · ort doğru %${r.avg_pct} · ${r.people} kişi`);
   const ls = (await q`
-    select count(*) filter (where value = 1)::int as resumed, count(*)::int as n from events where name = 'lesson_start' and day >= current_date - ${days}::int
+    select count(*) filter (where value = 1)::int as resumed, count(*)::int as n from events where name = 'conversation_start' and day >= current_date - ${days}::int
   `) as Row[];
   if (n(ls[0]?.n)) console.log(`    ders başlangıcı ${ls[0].n} · kaldığı yerden ${ls[0].resumed} (${pct(n(ls[0].resumed), n(ls[0].n))})`);
 
@@ -253,7 +253,7 @@ async function main() {
   const ts = (await q`
     select kind as screen, sum(value)::int as seconds, count(*)::int as visits, count(distinct user_id)::int as people
     from events where name = 'time_spent' and day >= current_date - ${days}::int
-      and kind in ('learn','lesson','skill','drill','cheatsheet','exam','placement','weekly','roleplay_exam')
+      and kind in ('learn','lesson','skill','drill','cheatsheet','exam','placement','weekly','conversation_scored')
     group by 1 order by seconds desc
   `) as Row[];
   head("13. Öğrenme yüzeylerinde geçen süre", "ekran · toplam dakika · kalış · ortalama kalış · kişi");

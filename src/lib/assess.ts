@@ -164,8 +164,8 @@ function productionKind(kind: AssessRequest["kind"]): string {
       return "writing_free";
     case "speaking":
       return "speaking_drill";
-    case "roleplay":
-      return "roleplay";
+    case "chat":
+      return "chat";
   }
 }
 
@@ -233,7 +233,7 @@ export async function runAssessQueue(limit = 20): Promise<{ pending: number; don
   let done = 0;
   let failed = 0;
   for (const row of rows) {
-    const kind = (["sentence", "writing", "speaking", "roleplay"] as const).includes(row.kind as "writing") ? (row.kind as AssessRequest["kind"]) : "writing";
+    const kind = (["sentence", "writing", "speaking", "chat"] as const).includes(row.kind as "writing") ? (row.kind as AssessRequest["kind"]) : "writing";
     const level = (["A1", "A2", "B1", "B2", "C1"] as const).includes(row.level as "A1") ? (row.level as AssessRequest["level"]) : "A1";
     /*
       HEDEF DİL KUYRUKTA SAKLANMIYOR, o yüzden kullanıcının kursundan

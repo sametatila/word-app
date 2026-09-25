@@ -2060,7 +2060,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  * Ikincisi ayrismisti: mobil her dogruda sayiyordu, kacinci denemede
  * oldugundan bagimsiz - ucuncu denemede bilen ogrenci ilk denemede bilenle
  * ayni yuzdeyi aliyordu. Ekranin kendi olcumu ayrimi zaten biliyor
- * (`lesson_step` degeri 2/1), puan gormezden geliyordu. */
+ * (`conversation_step` degeri 2/1), puan gormezden geliyordu. */
 {
   /* `p` ekran/oynatici, `tanim` puanlanan adim yuklemi (mobilde ayri dosyada:
      `scoredSteps`; webde oynaticinin icinde iki kez yaziliyor). */
@@ -2878,7 +2878,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     return [
       "anahtar=" + ((src.match(/"(lernomi-lessons-pending)"/) ?? [])[1] ?? "yok"),
       "gun=" + (/day:/.test(src) ? "var" : "yok"),
-      "ders basina tek=" + (/filter\(\(x\) => x\.lessonId !== item\.lessonId\)/.test(src) ? "var" : "yok"),
+      "ders basina tek=" + (/filter\(\(x\) => x\.conversationId !== item\.conversationId\)/.test(src) ? "var" : "yok"),
       "sinir=" + ((src.match(/slice\(-(\d+)\)/) ?? [])[1] ?? "yok"),
       "kalani birak=" + (/slice\(i\)/.test(src) ? "var" : "yok"),
     ];
@@ -2895,7 +2895,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const govde = src.slice(i, src.indexOf("}", i) + 1);
     /* Kisayol yazim da sayiliyor (`seconds` ile `seconds: secs` ayni alan);
        yalnizca iki nokta arayan bir desen yanlis ayrisma gosterirdi. */
-    return ["lessonId", "correct", "roleplayDone", "day", "seconds"].filter((k) => new RegExp("\\b" + k + "\\s*[:,}]").test(govde)).sort();
+    return ["conversationId", "correct", "chatDone", "day", "seconds"].filter((k) => new RegExp("\\b" + k + "\\s*[:,}]").test(govde)).sort();
   };
   sameSet("ders kayit govdesi", govde("mobile/src/screens/LessonScreen.tsx"), govde("src/components/lessons/lesson-player.tsx"), "mobil", "web");
 }
@@ -3763,7 +3763,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "tur=" + sabit("EXAM_TURNS"),
       "saniye=" + sabit("EXAM_SECONDS"),
       "istem modu=" + (/mode: "exam"|mode\b[^\n]*"exam"/.test(src) ? "var" : "yok"),
-      "rubrik turu=" + (/kind: "roleplay"/.test(src) ? "var" : "yok"),
+      "rubrik turu=" + (/kind: "chat"/.test(src) ? "var" : "yok"),
       "hedef kaliplar=" + (/targets: lesson\.patterns/.test(src) ? "var" : "yok"),
       "kisitlar=" + (/constraints: \[`\$\{EXAM_TURNS\} tur`/.test(src) ? "var" : "yok"),
       "gun=" + (/day:/.test(solo) ? "var" : "yok"),
@@ -4229,14 +4229,14 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  * Tikanan ogrencinin ilerleme yolu mobilde yalniz "yazarak cevapla"ydi ve o
  * da dogru cevabi BILMEYI gerektiriyor: bilmeyen ogrencinin dersi bitirme
  * yolu yoktu. Web her beklentili adimda bir atlama baglantisi veriyor ve
- * atlanan adimi olcumde SIFIR sayiyor (`lesson_step` degeri 0, kind
+ * atlanan adimi olcumde SIFIR sayiyor (`conversation_step` degeri 0, kind
  * "<tur>:skip") - yani atlama sessizce "dogru" sayilmiyor. */
 {
   const atla = (p) => {
     const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
     return [
       "atlama yolu=" + (/conversationp\.skip_step/.test(src) ? "var" : "yok"),
-      "olcumde sifir=" + (/track\("lesson_step", 0, `\$\{k\}:skip`\)/.test(src) ? "var" : "yok"),
+      "olcumde sifir=" + (/track\("conversation_step", 0, `\$\{k\}:skip`\)/.test(src) ? "var" : "yok"),
     ];
   };
   sameList("ders adiminda atlama", atla("mobile/src/screens/LessonScreen.tsx"), atla("src/components/lessons/lesson-player.tsx"));

@@ -78,8 +78,8 @@ export async function getAdminUser(userId: string): Promise<AdminUser> {
     rows(sql`select count(*)::int days, coalesce(sum(reviews), 0)::int reviews, coalesce(sum(xp), 0)::int xp, coalesce(sum(seconds), 0)::int seconds
       from daily_stats where user_id = ${id} and day >= current_date - 29`),
     rows(sql`select state, count(*)::int c from user_words where user_id = ${id} group by 1 order by 1`),
-    rows(sql`select lesson_id, rule_id, correct || '/' || total score, attempts, roleplay_done,
-      to_char(due_at, 'YYYY-MM-DD') due, to_char(last_at, 'YYYY-MM-DD') last from user_lessons where user_id = ${id} order by last_at desc limit 40`),
+    rows(sql`select conversation_id, rule_id, correct || '/' || total score, attempts, chat_done,
+      to_char(due_at, 'YYYY-MM-DD') due, to_char(last_at, 'YYYY-MM-DD') last from user_conversations where user_id = ${id} order by last_at desc limit 40`),
     rows(sql`select item_id, last_pct, best_pct, attempts, to_char(passed_at, 'YYYY-MM-DD') passed, to_char(last_at, 'YYYY-MM-DD') last
       from user_path_items where user_id = ${id} order by last_at desc limit 40`),
     rows(sql`select exercise_id, skill, level, correct || '/' || total score, last_score, attempts, to_char(last_at, 'YYYY-MM-DD') last
@@ -146,7 +146,7 @@ export async function getAdminUser(userId: string): Promise<AdminUser> {
       wordsByState: wordStates.map((r) => ({ state: num(r.state), count: num(r.c) })),
     },
     learning: {
-      lessons: table(lessons, ["lesson_id", "rule_id", "score", "attempts", "roleplay_done", "due", "last"]),
+      lessons: table(lessons, ["conversation_id", "rule_id", "score", "attempts", "chat_done", "due", "last"]),
       path: table(path, ["item_id", "last_pct", "best_pct", "attempts", "passed", "last"]),
       skills: table(skills, ["exercise_id", "skill", "level", "score", "last_score", "attempts", "last"]),
       exams: table(exams, ["kind", "level", "score", "score_raw", "week", "at"]),

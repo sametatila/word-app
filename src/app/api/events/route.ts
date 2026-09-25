@@ -3,6 +3,7 @@ import { clampDay } from "@/lib/award";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { isEventName, track } from "@/lib/events";
+import { legacyEventKind, legacyEventName } from "@/lib/legacy-names";
 
 export const dynamic = "force-dynamic";
 
@@ -24,8 +25,10 @@ export async function POST(req: Request) {
     if (!userId) return new NextResponse(null, { status: 204 });
     const body = (await req.json()) as { name?: string; day?: string; value?: number; kind?: string };
     const day = clampDay(body.day);
-    if (!body.name || !isEventName(body.name)) return new NextResponse(null, { status: 204 });
-    await track(userId, body.name, day, Number(body.value) || 0, body.kind);
+    /* Eski build'in adları yeni adla yazılıyor (geçici, bkz. lib/legacy-names). */
+    const name = body.name ? legacyEventName(body.name) : body.name;
+    if (!name || !isEventName(name)) return new NextResponse(null, { status: 204 });
+    await track(userId, name, day, Number(body.value) || 0, legacyEventKind(body.kind));
   } catch {
     /* ölçüm sessizce düşer */
   }

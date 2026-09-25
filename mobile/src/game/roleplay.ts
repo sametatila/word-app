@@ -3,7 +3,7 @@ import { isAccountRequired } from "../lib/guest";
 
 /**
  * Sohbet (roleplay) — web /api/chat (DEPLOY'LU). Senaryo metnini SUNUCU
- * tutuyor; mobil yalnız lessonId + mesaj geçmişini yolluyor, asistanın Almanca
+ * tutuyor; mobil yalnız conversationId + mesaj geçmişini yolluyor, asistanın Almanca
  * cevabı DÜZ METİN olarak akıyor (RN akışı parça parça okuyamadığı için tam
  * metni bekliyoruz). LLM yapılandırılmamışsa configured=false döner.
  */
@@ -33,7 +33,7 @@ export async function roleplayAvailability(): Promise<RoleplayRoute> {
   }
 }
 
-export async function sendRoleplay(lessonId: string, messages: ChatMsg[], mode: "practice" | "exam" = "practice"): Promise<string> {
+export async function sendRoleplay(conversationId: string, messages: ChatMsg[], mode: "practice" | "exam" = "practice"): Promise<string> {
   /* Yapay zekâ üretimi: varsayılandan uzun. Yanıt METİN olduğu için `api()`
      kullanılamıyor (o JSON çözüyor), ama zaman aşımı ortak yardımcıdan.
      Tavanın adı var: web aynı sayıyı aynı adla taşıyor. */
@@ -41,7 +41,7 @@ export async function sendRoleplay(lessonId: string, messages: ChatMsg[], mode: 
     timeoutMs: ROLEPLAY_TIMEOUT_MS,
     method: "POST",
     headers: { "content-type": "application/json" },
-    body: JSON.stringify({ lessonId, messages, mode }),
+    body: JSON.stringify({ conversationId, messages, mode }),
   });
   /* HATA KODU TAŞINIYOR: 403 `premium_required` (Konuşma hakkı yok) ve 429
      `quota` (günlük sohbet mesajı tavanı) bir KAPI, ağ hatası değil — ekran

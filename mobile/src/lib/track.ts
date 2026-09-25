@@ -69,13 +69,13 @@ export type EventName =
      değer, anahtarlarda 1 açık / 0 kapalı, temada 0 açık / 1 koyu / 2 sistem. */
   | "setting_change"
   /* Ders (patika konuşması) - web `lib/events` ile aynı dilbilgisi:
-     `lesson_start` value 1 kaldığı yerden / 0 baştan, kind ders kimliği;
-     `lesson_step` kind "adım:yol" (repeat|produce|truefalse : mic|typed|tap),
+     `conversation_start` value 1 kaldığı yerden / 0 baştan, kind ders kimliği;
+     `conversation_step` kind "adım:yol" (repeat|produce|truefalse : mic|typed|tap),
      value 2 ilk denemede doğru / 1 sonraki denemede doğru / 0 geçilemedi;
-     `lesson_finish` value puanlanan adımlarda doğru yüzdesi, kind ders kimliği. */
-  | "lesson_start"
-  | "lesson_step"
-  | "lesson_finish"
+     `conversation_finish` value puanlanan adımlarda doğru yüzdesi, kind ders kimliği. */
+  | "conversation_start"
+  | "conversation_step"
+  | "conversation_finish"
   | "boss_play"
   | "boss_clear"
   /* Görev ödülü alındı (value = kazanılan XP) — web `lib/events` ile aynı ad.
@@ -94,7 +94,7 @@ export type EventName =
   | "first_practice_done"
   /* Yerlestirme sonucu uygulandi (value = yuzde, kind = "demo:a1" gibi). */
   | "placement_finish"
-  /* Rol yapma denemesi (value = ozet puani, kind = "roleplay"). */
+  /* Rol yapma denemesi (value = ozet puani, kind = "chat"). */
   | "production_attempt"
   /* Tur YARIDA birakildi (value = kacinci turda) - web `session-player` ile
      ayni ad. "Kac kisi turu bitirmeden cikiyor ve nerede cikiyor" sorusu

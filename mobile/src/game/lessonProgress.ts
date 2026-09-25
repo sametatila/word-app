@@ -148,7 +148,7 @@ export async function syncItemProgress(level?: string): Promise<void> {
  * gün gönderilen dersi bugüne yazmak seriyi yanlış hesaplardı.
  */
 const LESSON_KEY = "lernomi-lessons-pending";
-export type PendingLesson = { lessonId: string; correct: number; roleplayDone: boolean; day: string; seconds: number };
+export type PendingLesson = { conversationId: string; correct: number; chatDone: boolean; day: string; seconds: number };
 
 export async function queueLessonResult(item: PendingLesson): Promise<void> {
   try {
@@ -156,7 +156,7 @@ export async function queueLessonResult(item: PendingLesson): Promise<void> {
     const list = raw ? (JSON.parse(raw) as PendingLesson[]) : [];
     /* Aynı ders iki kez bitirilmişse sonuncusu kalıyor: uç en iyi denemeyi
        tutuyor ama iki kayıt göndermenin de bir faydası yok. */
-    const kalan = list.filter((x) => x.lessonId !== item.lessonId);
+    const kalan = list.filter((x) => x.conversationId !== item.conversationId);
     kalan.push(item);
     await AsyncStorage.setItem(LESSON_KEY, JSON.stringify(kalan.slice(-20)));
   } catch { /* depolama yoksa yapacak bir şey yok */ }

@@ -67,7 +67,7 @@ gerçek B1 maddesi (havuza eklenmeli), bir kısmı B2'ye ait.
 
 ## 4. İhlal edilemez kurallar
 
-1. **Ders id'leri SABİT.** `user_lessons` PK'si `(user_id, lesson_id)`; id
+1. **Ders id'leri SABİT.** `user_conversations` PK'si `(user_id, conversation_id)`; id
    değişirse canlı ilerleme silinir. Mevcut 100 dersin id'i de katalog sırası
    da dokunulmaz.
    **Ders SAYISI dondurulmuş değil (2026-09-04 kararı).** Bu maddenin ilk hâli

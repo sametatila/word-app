@@ -14,13 +14,13 @@ import { apiFetch } from "@/lib/api-fetch";
 /**
  * Türler — sunucu listesi `api/reports` KINDS ile aynı, mobil aynı dizgeleri
  * kullanıyor. Yeni yüzeyler yeni tür açmıyor, `ref` önekiyle ayrılıyor:
- *   roleplay    ders sohbeti "<lessonId>:<turn>" · rol yapma SINAVI "<lessonId>:exam:<turn>"
+ *   chat    ders sohbeti "<conversationId>:<turn>" · rol yapma SINAVI "<conversationId>:exam:<turn>"
  *   assessment  kayıtlı değerlendirme (Yazdıklarım) kayıt kimliği · anlık
  *               değerlendirme "<yüzey>:<kimlik>" (ör. "writing:<alıştırma>",
  *               "speaking:<alıştırma>", "exam:<ders>", "word:<kelime>")
  *   user        kullanıcı adı (sıralama) kullanıcı kimliği
  */
-export type ReportKind = "roleplay" | "assessment" | "user";
+export type ReportKind = "chat" | "assessment" | "user";
 export type ReportReason = "inappropriate" | "offensive" | "wrong" | "impersonation" | "other";
 export type Reason = { key: ReportReason; label: string; sub: string };
 

@@ -10,7 +10,7 @@ import type { Completion } from "./state";
 /**
  * Faz 3 tamamlanma adaptörü — mevcut ilerleme kaynaklarını immersion'ın saf
  * gating katmanına (state.ts `Completion`) çevirir. Yeni tablo yok:
- * - ders "bitti" = userLessons.roleplayDone (lessonBoard üzerinden)
+ * - ders "bitti" = userConversations.chatDone (lessonBoard üzerinden)
  * - beceri "bitti" = userSkills.lastScore ≥ SKILL_DONE_PCT (lib/score-bands.ts)
  *
  * Her kaynak ayrı denenir; biri okunamazsa o küme boş kalır, sayfa yine açılır.
@@ -26,7 +26,7 @@ export async function immersionCompletion(userId: string, course: string): Promi
   try {
     const cards = await lessonBoard(userId, course);
     for (const c of cards) {
-      if (c.state?.roleplayDone) doneLessons.add(c.lesson.id);
+      if (c.state?.chatDone) doneLessons.add(c.lesson.id);
       // Kayıt varsa ders en az bir kez açılıp cevaplanmıştır.
       if (c.state) triedLessons.add(c.lesson.id);
     }

@@ -513,7 +513,7 @@ export const sessionState = pgTable("session_state", {
  *
  * Yalnızca ödülü ALINMIŞ görevler yazılıyor; ilerlemenin kendisi burada
  * tutulmuyor. Sebebi, ilerlemenin zaten başka tablolarda olması: "10 kelime
- * tekrar et" `daily_stats`'ta, "bir ders bitir" `user_lessons`'ta duruyor.
+ * tekrar et" `daily_stats`'ta, "bir ders bitir" `user_conversations`'ta duruyor.
  * Aynı sayıyı ikinci bir yerde biriktirmek, iki sayacın ayrışması demekti —
  * ve ayrıştığında hangisinin doğru olduğu belli olmazdı.
  */
@@ -535,7 +535,7 @@ export const questClaims = pgTable(
  *
  * Yalnızca AÇILMA ANI yazılıyor; ilerlemenin kendisi burada tutulmuyor.
  * Sebebi görev tablosundakiyle aynı: "1.000 kelime pekiştir" ilerlemesi zaten
- * `user_words`'te, "100 ders bitir" `user_lessons`'ta duruyor. Aynı sayıyı
+ * `user_words`'te, "100 ders bitir" `user_conversations`'ta duruyor. Aynı sayıyı
  * ikinci bir yerde biriktirmek, er geç ayrışan iki sayı demek.
  *
  * Bu tasarımın bir yan faydası var: rozetler geriye dönük hesaplanabiliyor.
@@ -815,7 +815,7 @@ export const events = pgTable(
  * (süre biterse kaybedilir) ve yol haritasında bir kez geçilmiş modül taç
  * takıyor. En iyi kalan süre de saklanıyor — tekrar girmek için bir sebep.
  *
- * Ayrı tablo, çünkü ölçüsü derslerinkinden farklı: `user_lessons` "bu dersi
+ * Ayrı tablo, çünkü ölçüsü derslerinkinden farklı: `user_conversations` "bu dersi
  * çalıştın mı" diyor, burası "modülün tamamını süreye karşı kullanabildin mi".
  */
 export const moduleClears = pgTable(
@@ -837,7 +837,7 @@ export const moduleClears = pgTable(
 /**
  * AI çağrılarının kaydı.
  *
- * `roleplay_logs` yalnızca BAŞARILI bir rol yapma turunun sağlayıcısını
+ * `chat_logs` yalnızca BAŞARILI bir rol yapma turunun sağlayıcısını
  * tutuyordu ve süreli bir teşhis penceresiydi. Üç şey görünmüyordu:
  *
  *   1. **Hatalar.** Zincir sırayla deniyor ve düşen sağlayıcı sessizce
@@ -851,7 +851,7 @@ export const moduleClears = pgTable(
  *      cevaplanamıyordu.
  *
  * Bu tablo kalıcı ve dar: analiz için gereken sayılar var, konuşmanın
- * kendisi yok. Metin `roleplay_logs`ta duruyor ve orada süreli kalmaya devam
+ * kendisi yok. Metin `chat_logs`ta duruyor ve orada süreli kalmaya devam
  * ediyor — ikisi farklı işler, biri teşhis biri muhasebe.
  */
 export const aiUsage = pgTable(
@@ -933,25 +933,25 @@ export type Profile = typeof profiles.$inferSelect;
  * kural "kurabildin mi". İkisini aynı tabloya sıkıştırmak ikisinin de
  * zamanlamasını bozardı.
  */
-export const userLessons = pgTable(
-  "user_lessons",
+export const userConversations = pgTable(
+  "user_conversations",
   {
     userId: text("user_id").notNull(),
-    lessonId: text("lesson_id").notNull(),
+    conversationId: text("conversation_id").notNull(),
     /** Kuralın kimliği — aynı kural birden çok derste geçebilir. */
     ruleId: text("rule_id").notNull(),
     /** Alıştırmalarda doğru sayısı (en iyi deneme). */
     correct: integer("correct").notNull().default(0),
     total: integer("total").notNull(),
     /** Rol yapma tamamlandı mı — dersin asıl parçası o. */
-    roleplayDone: boolean("roleplay_done").notNull().default(false),
+    chatDone: boolean("chat_done").notNull().default(false),
     attempts: integer("attempts").notNull().default(1),
     /** Bir sonraki tekrar; kelimelerdeki gibi artan aralıklarla uzuyor. */
     dueAt: timestamp("due_at", { withTimezone: true }).notNull().defaultNow(),
     intervalDays: integer("interval_days").notNull().default(0),
     lastAt: timestamp("last_at", { withTimezone: true }).notNull().defaultNow(),
   },
-  (t) => [primaryKey({ columns: [t.userId, t.lessonId] })],
+  (t) => [primaryKey({ columns: [t.userId, t.conversationId] })],
 );
 
 /**
@@ -972,12 +972,12 @@ export const userLessons = pgTable(
  * birikim değil, geçici bir teşhis penceresi. Süresi geçenler her yazmada
  * temizleniyor, yani ayrı bir zamanlanmış işe gerek yok.
  */
-export const roleplayLogs = pgTable(
-  "roleplay_logs",
+export const chatLogs = pgTable(
+  "chat_logs",
   {
     id: serial("id").primaryKey(),
     userId: text("user_id").notNull(),
-    lessonId: text("lesson_id").notNull(),
+    conversationId: text("conversation_id").notNull(),
     /** Konuşmanın kaçıncı turu — döngü aramak için sıra gerekiyor. */
     turn: integer("turn").notNull(),
     /** Öğrencinin söylediği (metne dökülmüş hâli). */
@@ -1013,7 +1013,7 @@ export const roleplayLogs = pgTable(
     /** Bu tarihten sonra silinir. */
     expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
   },
-  (t) => [index("roleplay_logs_user_idx").on(t.userId, t.createdAt)],
+  (t) => [index("chat_logs_user_idx").on(t.userId, t.createdAt)],
 );
 
 /**
@@ -1393,7 +1393,7 @@ export const socialNotifications = pgTable(
 /**
  * İçerik bildirimleri — yapay zekâ yanıtı (rol yapma) ya da değerlendirme çıktısı
  * için "bildir" (Play üretken yapay zekâ politikası: uygulama içi bildirme yolu).
- * Bildirilen metin burada da saklanır: roleplay_logs 30 günde silinir, inceleme
+ * Bildirilen metin burada da saklanır: chat_logs 30 günde silinir, inceleme
  * ona bağlı kalmasın. Yaptırım yok; yönetim panosunda insan okur, `status` ile kapatır.
  */
 export const contentReports = pgTable(
@@ -1403,7 +1403,7 @@ export const contentReports = pgTable(
     userId: text("user_id").notNull(),
     /** roleplay | assessment | user */
     kind: text("kind").notNull(),
-    /** roleplay: "<lessonId>:<turn>" · assessment: kayıt kimliği · user: kullanıcı kimliği */
+    /** roleplay: "<conversationId>:<turn>" · assessment: kayıt kimliği · user: kullanıcı kimliği */
     ref: text("ref").notNull(),
     /** inappropriate | offensive | wrong | other */
     reason: text("reason").notNull(),
@@ -1716,7 +1716,7 @@ export const referrals = pgTable(
  * Tek tablo üç ayrı pencereyi taşıyor ve ayrım `period` sütununda:
  *   "2026-09-08"  günlük     (ör. cepte yürüyüş turu)
  *   "2026-W37"    haftalık   (ör. yenilenen konuşma dersi hakkı)
- *   "all"         ömürlük    (ör. seviye başına 2 ders — key "speak_lesson:A1")
+ *   "all"         ömürlük    (ör. seviye başına 2 ders — key "conversation:A1")
  *
  * Sayaç neden olayları (events) saymıyor: telemetri kaybolabilir, örneklenebilir
  * ve geriye dönük düzeltilebilir. Kota bir FATURA kapısı, tahmin değil.

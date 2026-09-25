@@ -1,7 +1,7 @@
 import "server-only";
 import { and, eq, inArray, isNotNull, like, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
-import { mockExamAttempts, profiles, usageCounters, userLessons } from "@/lib/db/schema";
+import { mockExamAttempts, profiles, usageCounters, userConversations } from "@/lib/db/schema";
 import { mockCourseOf } from "@/lib/courses";
 import { mockCatalogFor, mockPapersFor } from "@/lib/mock-exams/serve";
 import type { MockLevel } from "@/lib/mock-exams/types";
@@ -64,17 +64,20 @@ export type Access = {
  *  - `skill_speaking` Beceriler konuşma, B1+ monolog (A1–A2 drili yapay zekâsız)
  *  - `skill_writing`  Beceriler yazma
  *
- * Sayaç adları: kullanılmış hak `<ad>:<SEVİYE>` (ömürlük), sahiplenilmiş madde
- * işareti ayrı bir anahtar. Patika Yazma ve Beceriler anahtarları eskisini
- * sürdürüyor (`owned_lesson:`, `skill_ai:`); adlandırma işi ayrı bir aşamada.
+ * Sayaç adları: kullanılmış hak `<yüzey>:<SEVİYE>` (ömürlük), sahiplenilmiş madde
+ * işareti `<yüzey>_owned:` önekli ayrı bir anahtar. Beceriler'in iki yüzeyi TEK
+ * sahiplik işaretini paylaşıyor (`skill_owned:<egzersiz>`): egzersiz ya konuşma
+ * ya yazma, ikisi birden değil. Eski adlar (`writing_lesson:`, `owned_lesson:`,
+ * `speaking_skill:`, `writing_skill:`, `skill_ai:`) 2026-09-25'te
+ * `drizzle/0069_rename_conversation.sql` ile taşındı.
  */
 export type TieredSurface = "conversation" | "path_writing" | "skill_speaking" | "skill_writing";
 
 const SURFACES: Record<TieredSurface, { used: (level: string) => string; owned: (level: string, id: string) => string; gate: PremiumGate }> = {
   conversation: { used: (l) => levelKey("conversation", l), owned: (l, id) => `conversation_owned:${l}:${id}`, gate: "conversation" },
-  path_writing: { used: (l) => levelKey("writing_lesson", l), owned: (_l, id) => `owned_lesson:${id}`, gate: "writing" },
-  skill_speaking: { used: (l) => levelKey("speaking_skill", l), owned: (_l, id) => `skill_ai:${id}`, gate: "speaking" },
-  skill_writing: { used: (l) => levelKey("writing_skill", l), owned: (_l, id) => `skill_ai:${id}`, gate: "writing" },
+  path_writing: { used: (l) => levelKey("path_writing", l), owned: (_l, id) => `path_writing_owned:${id}`, gate: "writing" },
+  skill_speaking: { used: (l) => levelKey("skill_speaking", l), owned: (_l, id) => `skill_owned:${id}`, gate: "speaking" },
+  skill_writing: { used: (l) => levelKey("skill_writing", l), owned: (_l, id) => `skill_owned:${id}`, gate: "writing" },
 };
 
 /** Yüzeyin kuralı — hepsi aynı seri adımı ve tavanı, taban ve bonus yüzeye göre. */
@@ -133,14 +136,14 @@ async function ownedWithPrefix(userId: string, prefix: string): Promise<string[]
   }
 }
 
-/** Bitirilmiş dersler — Konuşma adımının "bitirildi" ölçüsü (`user_lessons`). */
+/** Bitirilmiş dersler — Konuşma adımının "bitirildi" ölçüsü (`user_conversations`). */
 async function finishedLessons(userId: string, ids: string[]): Promise<number> {
   if (!ids.length) return 0;
   try {
     const [row] = await db
       .select({ n: sql<number>`count(*)::int` })
-      .from(userLessons)
-      .where(and(eq(userLessons.userId, userId), inArray(userLessons.lessonId, ids)));
+      .from(userConversations)
+      .where(and(eq(userConversations.userId, userId), inArray(userConversations.conversationId, ids)));
     return row?.n ?? 0;
   } catch {
     return 0;
@@ -151,7 +154,7 @@ async function finishedLessons(userId: string, ids: string[]): Promise<number> {
  * Bir yüzeyin o seviyedeki "kullanıldı" ve "bitirildi" sayıları.
  *
  * BİTİRMEK yüzeye göre:
- *  - Konuşma: sahiplenilmiş adımın dersi bitirilmiş (`user_lessons` satırı —
+ *  - Konuşma: sahiplenilmiş adımın dersi bitirilmiş (`user_conversations` satırı —
  *    dersin sonunda `/api/conversation` yazıyor). Sahiplenip bitirmemek dilimi
  *    tamamlamıyor.
  *  - Yazma ve Beceriler: hak ilk değerlendirmede düşüyor, yani sahiplenmek
@@ -539,8 +542,8 @@ export async function unlockOverview(userId: string): Promise<UnlockOverview> {
     if (key.startsWith("conversation_owned:")) {
       const [, lvl, ...rest] = key.split(":");
       convOwned.get(lvl as Level)?.push(rest.join(":"));
-    } else if (key.startsWith("owned_lesson:")) pathOwned.push(key.slice("owned_lesson:".length));
-    else if (key.startsWith("skill_ai:")) skillOwned.push(key.slice("skill_ai:".length));
+    } else if (key.startsWith("path_writing_owned:")) pathOwned.push(key.slice("path_writing_owned:".length));
+    else if (key.startsWith("skill_owned:")) skillOwned.push(key.slice("skill_owned:".length));
   }
   const allConv = [...convOwned.values()].flat();
   const doneLessons = await finishedLessonSet(userId, allConv);
@@ -604,9 +607,9 @@ async function finishedLessonSet(userId: string, ids: string[]): Promise<Set<str
   if (!ids.length) return new Set();
   try {
     const rows = await db
-      .select({ id: userLessons.lessonId })
-      .from(userLessons)
-      .where(and(eq(userLessons.userId, userId), inArray(userLessons.lessonId, ids)));
+      .select({ id: userConversations.conversationId })
+      .from(userConversations)
+      .where(and(eq(userConversations.userId, userId), inArray(userConversations.conversationId, ids)));
     return new Set(rows.map((r) => r.id));
   } catch {
     return new Set();

@@ -7,7 +7,7 @@ import {
   dailyStats,
   questClaims,
   reviews,
-  userLessons,
+  userConversations,
   userSkills,
 } from "@/lib/db/schema";
 
@@ -32,7 +32,7 @@ export type QuestId =
   | "artikel5"
   | "listen5"
   | "skill1"
-  | "lesson1";
+  | "conversation1";
 
 type QuestDef = {
   id: QuestId;
@@ -67,7 +67,7 @@ const QUESTS: QuestDef[] = [
   { id: "artikel5", labelKey: "quest.artikel5", href: "/learn", target: 5, xp: 150 },
   { id: "listen5", labelKey: "quest.listen5", href: "/learn", target: 5, xp: 150 },
   { id: "skill1", labelKey: "quest.skill1", href: "/immersion", target: 1, xp: 200, discovery: true },
-  { id: "lesson1", labelKey: "quest.conversation1", href: "/immersion", target: 1, xp: 200, discovery: true },
+  { id: "conversation1", labelKey: "quest.conversation1", href: "/immersion", target: 1, xp: 200, discovery: true },
 ];
 
 /* Üçünü birden bitirmenin ödülü ve kimliği: kart da (istemci) okuduğu için
@@ -201,18 +201,18 @@ export async function questBoard(
     counts.set("skill1", Number(row?.n ?? 0));
   }
 
-  if (ids.includes("lesson1")) {
+  if (ids.includes("conversation1")) {
     const [row] = await db
       .select({ n: sql<number>`count(*)::int` })
-      .from(userLessons)
+      .from(userConversations)
       .where(
         and(
-          eq(userLessons.userId, userId),
-          gte(userLessons.lastAt, sql`${day}::date`),
-          sql`${userLessons.lastAt} < ${day}::date + 1`,
+          eq(userConversations.userId, userId),
+          gte(userConversations.lastAt, sql`${day}::date`),
+          sql`${userConversations.lastAt} < ${day}::date + 1`,
         ),
       );
-    counts.set("lesson1", Number(row?.n ?? 0));
+    counts.set("conversation1", Number(row?.n ?? 0));
   }
 
   const quests: QuestProgress[] = chosen.map((q) => ({

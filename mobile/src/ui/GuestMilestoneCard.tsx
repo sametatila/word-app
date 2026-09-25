@@ -18,13 +18,13 @@ import { FlameIcon, SparkIcon, TrophyIcon } from "./icons";
  * Gösterildiği an ölçülüyor (`guest_nudge`, kind = taş); hesaba geçiş
  * `guest_upgrade` ile yazılıyor, huni ikisinden okunuyor.
  */
-export type GuestMilestone = "first_lesson" | "streak_3" | "exam_passed";
+export type GuestMilestone = "first_conversation" | "streak_3" | "exam_passed";
 
 /** Misafire özgü cihaz anahtarı; misafir silinince tüm depo zaten temizleniyor. */
 const GUEST_MILESTONES_KEY = "lernomi:guest-milestones";
 
 const COPY: Record<GuestMilestone, { title: string; body: string; icon: typeof SparkIcon }> = {
-  first_lesson: { title: "guest.ms_first_conversation_title", body: "guest.ms_first_conversation_body", icon: SparkIcon },
+  first_conversation: { title: "guest.ms_first_conversation_title", body: "guest.ms_first_conversation_body", icon: SparkIcon },
   streak_3: { title: "guest.ms_streak_title", body: "guest.ms_streak_body", icon: FlameIcon },
   exam_passed: { title: "guest.ms_exam_title", body: "guest.ms_exam_body", icon: TrophyIcon },
 };

@@ -3,7 +3,7 @@
  *
  * Yol → kısa, kapalı bir etiket. Olaylara ham yol yazılmıyor: `/lessons/de-a1-hallo`
  * ile `/lessons/de-a1-tschuess` aynı EKRAN, ayrı içerik; içerik kimliği
- * ilgili olayın kendi `kind`ında (lesson_start, skill_finish…) zaten var.
+ * ilgili olayın kendi `kind`ında (conversation_start, skill_finish…) zaten var.
  * Anahtar kapalı olunca "hangi ekranda ne kadar kalınıyor" sorgusu on satırla
  * cevaplanıyor ve alt gezinme yeniden düzenlense de tarihsel veri kırılmıyor
  * (sekme SIRASI değişti, ekran adı değişmedi).
@@ -18,7 +18,7 @@ export const SCREEN_KEYS = [
   "premium",
   "lessons",
   "lesson",
-  "roleplay_exam",
+  "conversation_scored",
   "skills",
   "skill",
   "words",
@@ -46,7 +46,7 @@ export function screenKey(pathname: string): ScreenKey {
       return "premium";
     case "lessons":
       if (!b) return "lessons";
-      return c === "exam" ? "roleplay_exam" : "lesson";
+      return c === "exam" ? "conversation_scored" : "lesson";
     case "skills":
       return b ? "skill" : "skills";
     case "words":

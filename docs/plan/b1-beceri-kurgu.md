@@ -87,8 +87,8 @@ eski kelime açığa çıkıyor. Bunu tekrar kurma.
 
 ## 5. Kurallar
 
-1. **Ders kimlikleri ve ders sayısı sabit.** `user_lessons` birincil anahtarı
-   `(user_id, lesson_id)`.
+1. **Ders kimlikleri ve ders sayısı sabit.** `user_conversations` birincil anahtarı
+   `(user_id, conversation_id)`.
 2. **Web canlı.** Ders kaynağı mobille paylaşımlı; iyileştir, bozma, forklama.
 3. **`mobile/src/data/lessons/de-b1.json` TEK SATIR.** Üreteci
    `JSON.stringify(lessons)`; elle biçimlendirme sahte diff üretir. Ders

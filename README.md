@@ -167,7 +167,7 @@ Hangi sağlayıcının gerçekten cevapladığı `npm run report:providers` ile 
 zincirin sessiz çalışmasından doğdu: anahtarı olmayan sağlayıcı atlanıyor, uygulama sorunsuz
 çalışıyor ve birincil sağlayıcı hiç çağrılmamış olabiliyor — sağlayıcının kendi panelinde
 kullanım sıfır görününce sorunun anahtarda mı yoksa zincirin başka bir sağlayıcıya
-düşmesinde mi olduğu ayırt edilemiyordu. Cevap `roleplay_logs` tablosunda: her tur hangi
+düşmesinde mi olduğu ayırt edilemiyordu. Cevap `chat_logs` tablosunda: her tur hangi
 sağlayıcı ve modelle verildiyse oraya, bildirilen kalan hakla birlikte yazılıyor.
 
 Rol yapma üçünü de destekler ve **anahtarı olan ilk sağlayıcıyı** kullanır (sıra:
@@ -281,7 +281,7 @@ src/
     skills/                 beceri içeriği: types · meta · content/{a1..c1, zh-a1..zh-c1}
     db/schema.ts            words · profiles · user_words · reviews · daily_stats ·
                             skill_exercises · user_skills · session_state · daily_scores ·
-                            quest_claims · user_lessons · achievements · events
+                            quest_claims · user_conversations · achievements · events
   components/
     session-player.tsx      oyun akışını yöneten oynatıcı (etaplar, bahis, arena)
     games/*.tsx             on oyun + ortak çerçeve

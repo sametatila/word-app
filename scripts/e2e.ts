@@ -5,7 +5,7 @@
  */
 import { and, desc, eq, inArray, isNotNull, sql } from "drizzle-orm";
 import { db, pool } from "./test-db";
-import { dailyStats, leagueMembers, profiles, reviews, sessionState, userLessons, userSkills, userWords, words } from "../src/lib/db/schema";
+import { dailyStats, leagueMembers, profiles, reviews, sessionState, userConversations, userSkills, userWords, words } from "../src/lib/db/schema";
 import { joinLeague, leagueBoard } from "../src/lib/social/leagues";
 import {
   buildChallenge,
@@ -136,7 +136,7 @@ async function reset() {
   await db.delete(leagueMembers).where(eq(leagueMembers.userId, USER));
   await db.delete(sessionState).where(eq(sessionState.userId, USER));
   await db.delete(userSkills).where(eq(userSkills.userId, USER));
-  await db.delete(userLessons).where(eq(userLessons.userId, USER));
+  await db.delete(userConversations).where(eq(userConversations.userId, USER));
   await db.delete(profiles).where(eq(profiles.userId, USER));
 }
 
@@ -808,7 +808,7 @@ async function main() {
     const board = await lessonBoard(USER, lesson.course);
     const card = board.find((c) => c.lesson.id === lesson.id)!;
     check("en iyi skor korunuyor", card.state?.correct === full, `(${card.state?.correct})`);
-    check("rol yapma bayrağı kalıcı", card.state?.roleplayDone === true);
+    check("rol yapma bayrağı kalıcı", card.state?.chatDone === true);
     check("deneme sayısı artıyor", (card.state?.attempts ?? 0) >= 4);
 
     // Sıradaki ders: yarına planlanan ders bugün "tekrarı gelmiş" değil, o
@@ -820,9 +820,9 @@ async function main() {
     // Zamanı geldiğinde ise yeni dersin önüne geçiyor: tekrar borcu varken
     // yeni konu açmak öğrenciyi ilerliyormuş gibi hissettirip geride bırakır.
     await db
-      .update(userLessons)
+      .update(userConversations)
       .set({ dueAt: sql`now() - interval '1 day'` })
-      .where(and(eq(userLessons.userId, USER), eq(userLessons.lessonId, lesson.id)));
+      .where(and(eq(userConversations.userId, USER), eq(userConversations.conversationId, lesson.id)));
     const due = await nextLesson(USER, lesson.course);
     check("tekrarı gelen ders yeni dersin önüne geçiyor", due?.lesson.id === lesson.id,
       `(${due?.lesson.id})`);
@@ -1638,7 +1638,7 @@ async function main() {
   await db.delete(aiUsage).where(eq(aiUsage.userId, USER));
 
   recordAiUsage(USER, {
-    kind: "roleplay", provider: "mistral", model: "mistral-medium-latest",
+    kind: "chat", provider: "mistral", model: "mistral-medium-latest",
     ok: true, status: 200, ms: 840, promptTokens: 420, completionTokens: 180,
     limits: { "x-ratelimit-remaining-requests": "48" },
   });
@@ -1884,8 +1884,8 @@ async function main() {
   for (const p of noScript.patterns.slice(1)) stAll = offlineReply(noScript, stAll, p.de.replace(/…/g, "x")).state;
   check("bütün kalıplar → bitti, puan 100", stAll.ended && offlineSummary(noScript, stAll).score === 100);
   check("patternUsed: kısa kalıp tam kelime ister", patternUsed("Und dir?", "gut und dir") && !patternUsed("Und dir?", "gut, dirigent"));
-  // Sağlayıcısız ortamda ders geçilebiliyor: senaryo bitti → roleplayDone → recordLesson.passed
-  await db.delete(userLessons).where(eq(userLessons.userId, USER));
+  // Sağlayıcısız ortamda ders geçilebiliyor: senaryo bitti → chatDone → recordLesson.passed
+  await db.delete(userConversations).where(eq(userConversations.userId, USER));
   const offlineRec = await recordLesson(USER, hallo, scoredSteps(hallo), ost.userTurns >= hallo.roleplay.minTurns, monday);
   check("senaryolu konuşmayla ders geçildi", offlineRec.passed === true);
 

@@ -120,7 +120,7 @@ for (const fam of FAMILIES) {
  */
 const eventsSrc = read("src/lib/events.ts");
 const assessSrc = read("src/lib/assess.ts");
-const PRODUCTION_EXPECTED = ["free_sentence", "writing_free", "speaking_drill", "roleplay"];
+const PRODUCTION_EXPECTED = ["free_sentence", "writing_free", "speaking_drill", "chat"];
 const kindFn = assessSrc.slice(assessSrc.indexOf("function productionKind"));
 const producedKinds = [...kindFn.slice(0, kindFn.indexOf("\n}")).matchAll(/return "([a-z_]+)"/g)].map((m) => m[1]);
 if (!producedKinds.length) {
