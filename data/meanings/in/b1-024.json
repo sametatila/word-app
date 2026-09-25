@@ -279,19 +279,6 @@
    ]
   },
   {
-   "id": 2050,
-   "de": "die Hausfrau/Hausmann",
-   "typ": "Nomen",
-   "niveau": "B1",
-   "formen": "",
-   "currentTr": "ev hanımı, ev erkeği",
-   "currentBeispiel": "Meine Frau ist Hausfrau und kümmert sich um die Kinder./Mein Mann ist Hausmann und kümmert sich um die Kinder.",
-   "currentBeispielTr": "Eşim ev hanımı, çocuklara bakıyor. / Eşim ev erkeği, çocuklara bakıyor.",
-   "overlapping": [
-    "die Hausfrau (A1)"
-   ]
-  },
-  {
    "id": 2647,
    "de": "der Schreck",
    "typ": "Nomen",
