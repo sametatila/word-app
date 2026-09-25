@@ -80,14 +80,6 @@
     "beispielEn": "The team consists of ten members."
   },
   {
-    "id": 3783,
-    "tr": "başvurmak",
-    "en": "to apply",
-    "beispiel": "Sie hat sich um ein Stipendium im Ausland beworben.",
-    "beispielTr": "Yurt dışında bir burs için başvurdu.",
-    "beispielEn": "She applied for a scholarship abroad."
-  },
-  {
     "id": 3786,
     "tr": "güvenmek",
     "en": "to rely on",
@@ -118,14 +110,6 @@
     "beispiel": "Wir richten uns ganz nach euren Wünschen.",
     "beispielTr": "Tamamen sizin isteklerinize göre hareket ediyoruz.",
     "beispielEn": "We will go entirely by your wishes."
-  },
-  {
-    "id": 3792,
-    "tr": "dikkat çekmek",
-    "en": "to point out",
-    "beispiel": "Der Arzt weist auf die Risiken der Behandlung hin.",
-    "beispielTr": "Doktor tedavinin risklerine dikkat çekiyor.",
-    "beispielEn": "The doctor points out the risks of the treatment."
   },
   {
     "id": 3793,
@@ -160,14 +144,6 @@
     "beispielEn": "She has suffered from a rare disease for years."
   },
   {
-    "id": 3800,
-    "tr": "hatırlamak",
-    "en": "to remember",
-    "beispiel": "Ich erinnere mich kaum an meine frühe Kindheit.",
-    "beispielTr": "Erken çocukluğumu neredeyse hiç hatırlamıyorum.",
-    "beispielEn": "I barely remember my early childhood."
-  },
-  {
     "id": 3802,
     "tr": "karar vermek",
     "en": "to decide on",
@@ -176,28 +152,12 @@
     "beispielEn": "We decided on the cheaper option."
   },
   {
-    "id": 3804,
-    "tr": "mücadele etmek",
-    "en": "to stand up for",
-    "beispiel": "Die Organisation setzt sich für Menschenrechte ein.",
-    "beispielTr": "Örgüt insan hakları için mücadele ediyor.",
-    "beispielEn": "The organization stands up for human rights."
-  },
-  {
     "id": 3805,
     "tr": "odaklanmak",
     "en": "to focus on",
     "beispiel": "Er muss sich besser auf die Prüfung konzentrieren.",
     "beispielTr": "Sınava daha iyi odaklanması gerekiyor.",
     "beispielEn": "He needs to focus better on the exam."
-  },
-  {
-    "id": 3815,
-    "tr": "başarısız olmak",
-    "en": "to fail",
-    "beispiel": "Das Projekt ist letztendlich an fehlendem Geld gescheitert.",
-    "beispielTr": "Proje sonunda paranın yetmemesi yüzünden başarısız oldu.",
-    "beispielEn": "The project ultimately failed because of missing funds."
   },
   {
     "id": 3816,

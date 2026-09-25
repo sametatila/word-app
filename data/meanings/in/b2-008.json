@@ -115,20 +115,6 @@
    ]
   },
   {
-   "id": 3783,
-   "de": "sich bewerben um",
-   "typ": "Verb",
-   "niveau": "B2",
-   "formen": "bewirbt sich, hat sich beworben",
-   "currentTr": "başvurmak",
-   "currentBeispiel": "Sie bewirbt sich um ein Stipendium im Ausland.",
-   "currentBeispielTr": "Yurt dışında bir burs için başvuruyor.",
-   "overlapping": [
-    "beantragen (B1)",
-    "heranziehen (C1)"
-   ]
-  },
-  {
    "id": 3786,
    "de": "sich verlassen auf",
    "typ": "Verb",
@@ -173,20 +159,6 @@
    "overlapping": [
     "passen (A2)",
     "einhalten (B2)"
-   ]
-  },
-  {
-   "id": 3792,
-   "de": "hinweisen auf",
-   "typ": "Verb",
-   "niveau": "B2",
-   "formen": "weist hin, hat hingewiesen",
-   "currentTr": "dikkat çekmek, işaret etmek",
-   "currentBeispiel": "Der Arzt weist auf die Risiken der Behandlung hin.",
-   "currentBeispielTr": "Doktor, tedavinin risklerine dikkat çekiyor.",
-   "overlapping": [
-    "auffallen (B1)",
-    "hinweisen (B1)"
    ]
   },
   {
@@ -236,19 +208,6 @@
    "currentBeispielTr": "Yıllardır nadir bir hastalıktan muzdarip."
   },
   {
-   "id": 3800,
-   "de": "sich erinnern an",
-   "typ": "Verb",
-   "niveau": "B2",
-   "formen": "erinnert sich, hat sich erinnert",
-   "currentTr": "hatırlamak, anımsamak",
-   "currentBeispiel": "Ich erinnere mich kaum an meine frühe Kindheit.",
-   "currentBeispielTr": "Erken çocukluğumu neredeyse hiç hatırlamıyorum.",
-   "overlapping": [
-    "sich erinnern (A2)"
-   ]
-  },
-  {
    "id": 3802,
    "de": "sich entscheiden für",
    "typ": "Verb",
@@ -264,19 +223,6 @@
    ]
   },
   {
-   "id": 3804,
-   "de": "sich einsetzen für",
-   "typ": "Verb",
-   "niveau": "B2",
-   "formen": "setzt sich ein, hat sich eingesetzt",
-   "currentTr": "savunmak, mücadele etmek (bir amaç için)",
-   "currentBeispiel": "Die Organisation setzt sich für Menschenrechte ein.",
-   "currentBeispielTr": "Örgüt, insan hakları için mücadele ediyor.",
-   "overlapping": [
-    "plädieren (C1)"
-   ]
-  },
-  {
    "id": 3805,
    "de": "sich konzentrieren auf",
    "typ": "Verb",
@@ -285,20 +231,6 @@
    "currentTr": "odaklanmak, yoğunlaşmak",
    "currentBeispiel": "Er muss sich besser auf die Prüfung konzentrieren.",
    "currentBeispielTr": "Sınava daha iyi odaklanması gerekiyor."
-  },
-  {
-   "id": 3815,
-   "de": "scheitern an",
-   "typ": "Verb",
-   "niveau": "B2",
-   "formen": "scheitert, ist gescheitert",
-   "currentTr": "başarısız olmak, takılıp kalmak",
-   "currentBeispiel": "Das Projekt ist letztendlich an fehlendem Geld gescheitert.",
-   "currentBeispielTr": "Proje en sonunda para yokluğundan başarısız oldu.",
-   "overlapping": [
-    "durchfallen (B2)",
-    "scheitern (B2)"
-   ]
   },
   {
    "id": 3816,
