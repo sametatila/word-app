@@ -15,6 +15,7 @@
  *     görür ("plan.pro_mock") ve bunu ancak üç dilde tek tek bakan biri fark eder.
  */
 import { computePacks, type PaperStat } from "../src/lib/premium/access";
+import { packCopy, tieredCopy, walkCopy } from "../src/lib/premium/unlock-copy";
 import { allowedCount, completedSlices, freeUnlock, liveStreak, premiumMockUnlock, streakTier, unlockedTier } from "../src/lib/premium/unlock";
 import { parsePremiumConfig } from "../src/lib/premium/config";
 import { DEFAULT_PREMIUM_CONFIG, describeLimits } from "../src/lib/premium/gates";
@@ -200,6 +201,49 @@ console.log("\nKilit açma durumu (arayüzün gösterdiği)");
   check("seri: dün çalıştıysa yaşıyor", liveStreak(5, "2026-09-24", "2026-09-25") === 5);
   check("seri: bugün çalıştıysa yaşıyor", liveStreak(5, "2026-09-25", "2026-09-25") === 5);
   check("seri: iki gün önce ise kopmuş", liveStreak(5, "2026-09-23", "2026-09-25") === 0);
+}
+
+console.log("\nKilit açma cümleleri (web ve mobil aynı kural)");
+{
+  /* Örnek (Samet): deneme sınavını bitirdin ✓ · seri 3/7 · 4 gün sonra +1. */
+  const r = { base: 1, bonus: 1, step: 7, maxTiers: 0 };
+  const c = tieredCopy(freeUnlock(r, { used: 1, done: 1, longestStreak: 3, currentStreak: 3 }), "mock");
+  check("hak bitti → spent başlığı", c?.headline?.key === "unlock.spent_mock" && c.spent === true);
+  check("bitirme ✓", c?.conditions[0]?.ok === true && c.conditions[0].line.key === "unlock.cond_complete_ok");
+  check("seri 3/7 çubuklu", c?.conditions[1]?.ok === false && c.conditions[1].bar?.cur === 3 && c.conditions[1].bar?.need === 7);
+  check("4 gün sonra +1", c?.when?.key === "unlock.when_days" && c.when.params.n === 4 && c.when.gain.key === "unlock.gain_mock" && c.when.gain.params?.n === 1);
+
+  const conv = { base: 2, bonus: 2, step: 7, maxTiers: 0 };
+  const left = tieredCopy(freeUnlock(conv, { used: 1, done: 0, longestStreak: 0, currentStreak: 0 }), "conv");
+  check("kalan hak başlığı", left?.headline?.key === "unlock.left_conv" && left.headline.params?.n === 1 && !left.spent);
+  check("ikisi eksik → when_both", left?.when?.key === "unlock.when_both" && left.when.params.n === 7);
+  const onlyDone = tieredCopy(freeUnlock(conv, { used: 2, done: 1, longestStreak: 9, currentStreak: 0 }), "write");
+  check("seri tamam, bitirme eksik → when_complete", onlyDone?.when?.key === "unlock.when_complete" && onlyDone.conditions[1]?.line.key === "unlock.cond_streak_ok");
+  const capped = tieredCopy(freeUnlock({ ...conv, maxTiers: 1 }, { used: 4, done: 4, longestStreak: 30, currentStreak: 30 }), "skill_write");
+  check("tavan → max, koşul yok", capped?.max === true && capped.conditions.length === 0 && capped.when === null);
+  check("premium → cümle yok", tieredCopy({ premium: true }, "conv") === null);
+
+  check("premium paket: sıradaki", packCopy(premiumMockUnlock([true, false, false, false], 3))?.key === "unlock.pack_next");
+  check("premium paket: hepsi açık", packCopy(premiumMockUnlock([true, true, true], 3))?.key === "unlock.pack_all");
+
+  const w = { premium: false, perDay: 3, used: 1, remaining: 2, sessionOpen: false, pocket: false };
+  check("yürüyüş: kalan", walkCopy(w)?.key === "unlock.walk_left" && walkCopy(w)?.params?.n === 2);
+  check("yürüyüş: açık oturum", walkCopy({ ...w, sessionOpen: true })?.key === "unlock.walk_open");
+  check("yürüyüş: bitti", walkCopy({ ...w, used: 3, remaining: 0 })?.key === "unlock.walk_spent");
+
+  // Seçilen her anahtar üç sözlükte var.
+  const all = [c, left, onlyDone, capped].flatMap((x) => [
+    x?.headline?.key,
+    ...(x?.conditions.map((k) => k.line.key) ?? []),
+    x?.when?.key,
+    x?.when?.gain.key,
+  ]).filter((k): k is string => Boolean(k));
+  for (const s of ["conv", "write", "skill_speak", "skill_write", "mock"]) all.push(`unlock.left_${s}`, `unlock.spent_${s}`, `unlock.gain_${s}`);
+  all.push("unlock.walk_left", "unlock.walk_open", "unlock.walk_spent", "unlock.pack_next", "unlock.pack_all", "unlock.max", "unlock.premium_now", "unlock.celebrate", "unlock.title", "unlock.locked_conv");
+  for (const [lang, dict] of [["tr", trBase], ["en", enBase], ["de", deBase]] as const) {
+    const missing = [...new Set(all)].filter((k) => !dict[k]);
+    check(`${lang}: kilit açma anahtarlarının karşılığı var`, missing.length === 0, missing.join(", "));
+  }
 }
 
 console.log(failures === 0 ? `\ntamam: ${total}/${total}` : `\nKALDI: ${failures}/${total} test`);
