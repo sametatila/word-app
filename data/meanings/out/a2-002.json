@@ -123,9 +123,9 @@
     "id": 1023,
     "tr": "dışarı",
     "en": "out",
-    "beispiel": "Der Hund ist aus dem Haus herausgekommen.",
-    "beispielTr": "Köpek evden dışarı çıktı.",
-    "beispielEn": "The dog came out of the house."
+    "beispiel": "Der Hund kommt aus dem Haus heraus.",
+    "beispielTr": "Köpek evden dışarı çıkıyor.",
+    "beispielEn": "The dog is coming out of the house."
   },
   {
     "id": 1105,

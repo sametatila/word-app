@@ -267,9 +267,9 @@
   "id": 1377,
   "tr": "hepsinden",
   "en": "of all",
-  "beispiel": "Am allerbesten schmeckt der Kuchen von meiner Oma.",
-  "beispielTr": "Hepsinden lezzetlisi babaannemin yaptığı kek.",
-  "beispielEn": "My grandma's cake tastes the best of all."
+  "beispiel": "Mein Opa ist der älteste aller Gäste.",
+  "beispielTr": "Dedem misafirlerin hepsinden yaşlı.",
+  "beispielEn": "My grandpa is the oldest of all the guests."
  },
  {
   "id": 1383,
@@ -395,8 +395,8 @@
   "id": 1587,
   "tr": "organik",
   "en": "organic",
-  "beispiel": "Bioprodukte sind meistens teurer als normale Lebensmittel.",
-  "beispielTr": "Organik ürünler genelde normal gıdalardan daha pahalı.",
-  "beispielEn": "Organic products are usually more expensive than regular food."
+  "beispiel": "Beim Gemüse kaufe ich fast nur noch Bio.",
+  "beispielTr": "Sebzede artık neredeyse yalnızca organik alıyorum.",
+  "beispielEn": "When it comes to vegetables, I buy almost nothing but organic now."
  }
 ]

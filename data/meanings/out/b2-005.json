@@ -123,9 +123,9 @@
   "id": 3387,
   "tr": "bastırma",
   "en": "repression",
-  "beispiel": "Ihre ständige Verdrängung der Krankheit machte alles schlimmer.",
-  "beispielTr": "Hastalığı sürekli bastırması her şeyi daha da kötüleştirdi.",
-  "beispielEn": "Her constant repression of the illness made everything worse."
+  "beispiel": "Die Verdrängung schlimmer Erinnerungen hilft nur kurzfristig.",
+  "beispielTr": "Kötü anıları bastırmak yalnızca kısa vadede işe yarar.",
+  "beispielEn": "Repressing bad memories only helps in the short term."
  },
  {
   "id": 3236,
@@ -155,7 +155,7 @@
   "id": 3242,
   "tr": "birleşmek",
   "en": "to merge",
-  "beispiel": "Die beiden Banken sind letztes Jahr zu einem großen Institut fusioniert.",
+  "beispiel": "Die beiden Banken haben letztes Jahr zu einem großen Institut fusioniert.",
   "beispielTr": "İki banka geçen yıl birleşerek büyük bir kurum oldu.",
   "beispielEn": "The two banks merged into one large institution last year."
  },

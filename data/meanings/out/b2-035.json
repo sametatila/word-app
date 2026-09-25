@@ -379,9 +379,9 @@
     "id": 5393,
     "tr": "ara soru",
     "en": "interrupting question",
-    "beispiel": "Zwischenfragen sind erlaubt, aber bitte erst nach dem Vortrag.",
-    "beispielTr": "Ara sorular serbest ama lütfen sunumdan sonra.",
-    "beispielEn": "Interrupting questions are allowed but please only after the talk."
+    "beispiel": "Darf ich an dieser Stelle eine kurze Zwischenfrage stellen?",
+    "beispielTr": "Bu noktada kısa bir ara soru sorabilir miyim?",
+    "beispielEn": "May I interrupt with a quick question at this point?"
   },
   {
     "id": 5394,
