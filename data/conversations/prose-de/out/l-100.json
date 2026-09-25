@@ -147,7 +147,7 @@
  {
   "tr": "girdi",
   "kind": "vocab.tr",
-  "de": "Zufuhr"
+  "de": "Input / Einsatz"
  },
  {
   "tr": "hücre",
@@ -660,9 +660,9 @@
   "de": "Man hält die Genauigkeit für hoch."
  },
  {
-  "tr": "El kitabı, ki bu yüzden durduk, eski.",
+  "tr": "El kitabı eski, bu yüzden durduk.",
   "kind": "say.tr",
-  "de": "Das Handbuch, weshalb wir aufgehört haben, ist alt."
+  "de": "Das Handbuch ist alt, deshalb haben wir aufgehört."
  },
  {
   "tr": "Bir bilginin doğru olduğunu kanıtlamaya",
@@ -780,9 +780,9 @@
   "de": "Noch eins: Das Erfordernis eines dritten Versuchs ist klar."
  },
  {
-  "tr": "Şimdi sen kur: Dosya, ki bu yüzden bekledik, uzun.",
+  "tr": "Şimdi sen kur: Dosya uzun, bu yüzden bekledik.",
   "kind": "say.tr",
-  "de": "Jetzt du: Die Akte, weshalb wir gewartet haben, ist lang."
+  "de": "Jetzt du: Die Akte ist lang, deshalb haben wir gewartet."
  },
  {
   "tr": "İkinci kalıbımız süren işlemi anlatıyor. Tekrar et:",

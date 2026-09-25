@@ -245,6 +245,11 @@
   "de": "überweisen"
  },
  {
+  "tr": "sevk etmek / göndermek",
+  "kind": "vocab.tr",
+  "de": "versenden / abschicken"
+ },
+ {
   "tr": "devamsızlık",
   "kind": "vocab.tr",
   "de": "Fehlzeit"
@@ -305,9 +310,9 @@
   "de": "eröffnet den Satz mit etwas Zusätzlichem"
  },
  {
-  "tr": "kararı olduğu gibi söyler",
+  "tr": "kesinleşmiş bir gelecek bilgisini verir",
   "kind": "pattern.tr",
-  "de": "nennt die Entscheidung, wie sie ist"
+  "de": "nennt eine feststehende Information über die Zukunft"
  },
  {
   "tr": "yapılmazsa olacağı söyler",

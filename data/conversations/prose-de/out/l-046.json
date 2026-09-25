@@ -86,7 +86,7 @@
  { "tr": "Kartı yüklemek zorundasın. Geçmiş için ise", "kind": "say.tr", "de": "Du musst die Karte aufladen. Für die Vergangenheit dagegen" },
  { "tr": "Kısa bir özet yapalım. Kendini anlatırken:", "kind": "say.tr", "de": "Fassen wir kurz zusammen. Wenn du über dich sprichst:" },
  { "tr": "Kiralık daire olduysa in: in an apartment.", "kind": "say.tr", "de": "Bei einer Mietwohnung in: in an apartment." },
- { "tr": "Komşu demek. Çoğulu neighbours. Tekrar et:", "kind": "say.tr", "de": "Heißt Nachbar. Mehrzahl neighbours. Wiederhole:" },
+ { "tr": "Komşu demek. Çoğulu neighbors. Tekrar et:", "kind": "say.tr", "de": "Heißt Nachbar. Mehrzahl neighbors. Wiederhole:" },
  { "tr": "Kural aynı: -ing eki yine yerinde duruyor.", "kind": "say.tr", "de": "Die Regel bleibt: das -ing steht weiter da." },
  { "tr": "O zaman \"Pizza yemeyi severim\" şöyle olur:", "kind": "say.tr", "de": "Dann wird \"Ich esse gern Pizza\" so:" },
  { "tr": "olur. Anlam değişmez, sadece hızı değişir.", "kind": "say.tr", "de": "wird es. Die Bedeutung bleibt, nur das Tempo ändert sich." },

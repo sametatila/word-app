@@ -152,7 +152,12 @@
  {
   "tr": "-e rağmen",
   "kind": "vocab.tr",
-  "de": "obwohl / trotz"
+  "de": "trotz"
+ },
+ {
+  "tr": "-mesine rağmen",
+  "kind": "vocab.tr",
+  "de": "obwohl"
  },
  {
   "tr": "zam",

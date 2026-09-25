@@ -40,7 +40,7 @@
    },
    {
     "de": "convey",
-    "tr": "ulaştırmak"
+    "tr": "aktarmak / iletmek"
    }
   ],
   "patterns": [
@@ -2032,7 +2032,7 @@
    },
    {
     "de": "concede",
-    "tr": "kabul etmek"
+    "tr": "kabul etmek / hak vermek"
    },
    {
     "de": "gloss over",
@@ -2066,7 +2066,7 @@
    },
    {
     "de": "Much as I weigh up both sides, one is stronger.",
-    "tr": "ne kadar tartsam da der"
+    "tr": "ödün verip bir yanı üstün tutar"
    },
    {
     "de": "She would concede the point, whereas he would gloss over it.",
@@ -2129,7 +2129,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kalıbımız ne kadar tartsam da diyor. Tekrar et:"
+      "text": "İkinci kalıbımız ödün verip bir yanı üstün tutuyor. Tekrar et:"
      },
      {
       "lang": "en",
@@ -2351,7 +2351,7 @@
      "hint": [
       {
        "lang": "tr",
-       "text": "Ne kadar tartsam da demek için"
+       "text": "Ödün verip bir yanı üstün tutmak için"
       },
       {
        "lang": "en",
@@ -10008,11 +10008,11 @@
    },
    {
     "de": "inadmissible",
-    "tr": "kabul edilemez"
+    "tr": "usulen kabul edilemez"
    },
    {
     "de": "power of attorney",
-    "tr": "vekaletname"
+    "tr": "vekâletname"
    },
    {
     "de": "decree",
@@ -12045,8 +12045,8 @@
     "tr": "ikinci fiili düşürür"
    },
    {
-    "de": "The police would apprehend if they could.",
-    "tr": "koşulun sonucunu düşürür"
+    "de": "The police would apprehend him if they could.",
+    "tr": "koşulda tekrar eden fiili düşürür"
    },
    {
     "de": "One road is impassable; the other is not.",
@@ -12113,11 +12113,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kalıbımız koşulun sonucunu düşürüyor. Tekrar et:"
+      "text": "İkinci kalıbımız koşulda tekrar eden fiili düşürüyor. Tekrar et:"
      },
      {
       "lang": "en",
-      "text": "The police would apprehend if they could."
+      "text": "The police would apprehend him if they could."
      },
      {
       "lang": "tr",
@@ -12126,7 +12126,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The police would apprehend if they could."
+     "target": "The police would apprehend him if they could."
     }
    },
    {
@@ -12311,15 +12311,15 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "The court would apprehend if it could.",
+     "target": "The court would apprehend him if it could.",
      "accept": [
-      "The office would apprehend if it could.",
-      "The police would apprehend if they could."
+      "The office would apprehend him if it could.",
+      "The police would apprehend him if they could."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Koşulun sonucunu düşürmek için"
+       "text": "Koşulda tekrar eden fiili düşürmek için"
       },
       {
        "lang": "en",
@@ -12331,7 +12331,7 @@
       },
       {
        "lang": "en",
-       "text": "The court would apprehend if it could."
+       "text": "The court would apprehend him if it could."
       },
       {
        "lang": "tr",
@@ -16036,7 +16036,7 @@
    },
    {
     "de": "topos",
-    "tr": "edebi motif"
+    "tr": "edebî motif"
    },
    {
     "de": "canon",
@@ -24655,7 +24655,7 @@
     "tr": "iki adı karşı karşıya koyar"
    },
    {
-    "de": "Standardization is a method; rationalization is a programme.",
+    "de": "Standardization is a method; rationalization is a program.",
     "tr": "yöntemi programdan ayırır"
    }
   ],
@@ -24775,7 +24775,7 @@
      },
      {
       "lang": "en",
-      "text": "Standardization is a method; rationalization is a programme."
+      "text": "Standardization is a method; rationalization is a program."
      },
      {
       "lang": "tr",
@@ -24784,7 +24784,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Standardization is a method; rationalization is a programme."
+     "target": "Standardization is a method; rationalization is a program."
     }
    },
    {
@@ -24849,12 +24849,12 @@
      },
      {
       "lang": "en",
-      "text": "Standardization is a method; rationalization is a programme."
+      "text": "Standardization is a method; rationalization is a program."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Standardization is a method; rationalization is a programme.",
+     "statement": "Standardization is a method; rationalization is a program.",
      "answer": true,
      "why": [
       {
@@ -24999,10 +24999,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "Standardization is a method; the merger is a programme.",
+     "target": "Standardization is a method; the merger is a program.",
      "accept": [
-      "Standardization is a method; the plan is a programme.",
-      "Standardization is a method; rationalization is a programme."
+      "Standardization is a method; the plan is a program.",
+      "Standardization is a method; rationalization is a program."
      ],
      "hint": [
       {
@@ -25011,7 +25011,7 @@
       },
       {
        "lang": "en",
-       "text": "Standardization is a method; the merger is a programme."
+       "text": "Standardization is a method; the merger is a program."
       },
       {
        "lang": "tr",
@@ -25572,7 +25572,7 @@
    },
    {
     "de": "make permanent",
-    "tr": "kalıcı hale getirmek"
+    "tr": "kalıcı hâle getirmek"
    },
    {
     "de": "apprenticeship contract",
@@ -29365,7 +29365,7 @@
     "tr": "aynı toprağı iki kayıtta söyler"
    },
    {
-    "de": "What the council calls land consolidation, the neighbour calls land speculation.",
+    "de": "What the council calls land consolidation, the neighbor calls land speculation.",
     "tr": "iki adı karşı karşıya koyar"
    },
    {
@@ -29445,7 +29445,7 @@
      },
      {
       "lang": "en",
-      "text": "What the council calls land consolidation, the neighbour calls land speculation."
+      "text": "What the council calls land consolidation, the neighbor calls land speculation."
      },
      {
       "lang": "tr",
@@ -29454,7 +29454,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "What the council calls land consolidation, the neighbour calls land speculation."
+     "target": "What the council calls land consolidation, the neighbor calls land speculation."
     }
    },
    {
@@ -29650,7 +29650,7 @@
      "target": "What the office calls land consolidation, the farmer calls land speculation.",
      "accept": [
       "What the state calls land consolidation, the farmer calls land speculation.",
-      "What the council calls land consolidation, the neighbour calls land speculation."
+      "What the council calls land consolidation, the neighbor calls land speculation."
      ],
      "hint": [
       {
@@ -33589,7 +33589,7 @@
    },
    {
     "de": "make scarce",
-    "tr": "kıt hale getirmek"
+    "tr": "kıt hâle getirmek"
    },
    {
     "de": "dig over",
@@ -37354,7 +37354,7 @@
   ],
   "patterns": [
    {
-    "de": "The square was revitalized; the neighbours, less so.",
+    "de": "The square was revitalized; the neighbors, less so.",
     "tr": "eksik söyleyip çok kasteder"
    },
    {
@@ -37398,12 +37398,12 @@
      },
      {
       "lang": "en",
-      "text": "The square was revitalized; the neighbours, less so."
+      "text": "The square was revitalized; the neighbors, less so."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The square was revitalized; the neighbours, less so."
+     "target": "The square was revitalized; the neighbors, less so."
     }
    },
    {
@@ -37502,7 +37502,7 @@
      },
      {
       "lang": "en",
-      "text": "the neighbours, less so"
+      "text": "the neighbors, less so"
      },
      {
       "lang": "tr",
@@ -37519,10 +37519,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "The street was revitalized; the neighbours, less so.",
+     "target": "The street was revitalized; the neighbors, less so.",
      "accept": [
-      "The park was revitalized; the neighbours, less so.",
-      "The square was revitalized; the neighbours, less so."
+      "The park was revitalized; the neighbors, less so.",
+      "The square was revitalized; the neighbors, less so."
      ],
      "hint": [
       {
@@ -37531,7 +37531,7 @@
       },
       {
        "lang": "en",
-       "text": "The street was revitalized; the neighbours, less so."
+       "text": "The street was revitalized; the neighbors, less so."
       },
       {
        "lang": "tr",
@@ -37735,7 +37735,7 @@
      },
      {
       "lang": "en",
-      "text": "the neighbours, less so"
+      "text": "the neighbors, less so"
      },
      {
       "lang": "tr",

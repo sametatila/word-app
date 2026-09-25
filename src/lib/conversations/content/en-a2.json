@@ -3880,7 +3880,7 @@
     "tr": "köy"
    },
    {
-    "de": "neighbour",
+    "de": "neighbor",
     "tr": "komşu"
    },
    {
@@ -4120,15 +4120,15 @@
      },
      {
       "lang": "en",
-      "text": "neighbour"
+      "text": "neighbor"
      },
      {
       "lang": "tr",
-      "text": "Komşu demek. Çoğulu neighbours. Tekrar et:"
+      "text": "Komşu demek. Çoğulu neighbors. Tekrar et:"
      },
      {
       "lang": "en",
-      "text": "Our neighbours were very kind."
+      "text": "Our neighbors were very kind."
      },
      {
       "lang": "tr",
@@ -4137,7 +4137,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Our neighbours were very kind."
+     "target": "Our neighbors were very kind."
     }
    },
    {
@@ -4371,20 +4371,20 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "I remember our neighbours.",
+     "target": "I remember our neighbors.",
      "accept": [
       "I remember our neighbors.",
-      "I remember our neighbours",
-      "I remember my neighbours."
+      "I remember our neighbors",
+      "I remember my neighbors."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Hatırlamak remember, bizim our, komşular neighbours."
+       "text": "Hatırlamak remember, bizim our, komşular neighbors."
       },
       {
        "lang": "en",
-       "text": "I remember our neighbours."
+       "text": "I remember our neighbors."
       },
       {
        "lang": "tr",
@@ -4401,7 +4401,7 @@
      },
      {
       "lang": "en",
-      "text": "I grew up in a small village. We didn't have many toys, but we used to play outside all day. I still remember our neighbours."
+      "text": "I grew up in a small village. We didn't have many toys, but we used to play outside all day. I still remember our neighbors."
      },
      {
       "lang": "tr",
@@ -4437,7 +4437,7 @@
      },
      {
       "lang": "tr",
-      "text": "village, neighbour, toy, remember. Şimdi kısa bir sohbet yapalım."
+      "text": "village, neighbor, toy, remember. Şimdi kısa bir sohbet yapalım."
      }
     ]
    }
@@ -5048,7 +5048,7 @@
    },
    {
     "de": "hurt",
-    "tr": "ağrımak"
+    "tr": "incitmek / acımak"
    },
    {
     "de": "luckily",
@@ -6509,7 +6509,7 @@
    },
    {
     "de": "Yes, I have. / No, I haven't.",
-    "tr": "bu soruya kısa cevap verir"
+    "tr": "Have you ever …? sorusuna kısa cevap verir"
    }
   ],
   "lecture": [
@@ -11478,7 +11478,7 @@
     "tr": "en (çok)"
    },
    {
-    "de": "favourite",
+    "de": "favorite",
     "tr": "favori / en sevdiğim"
    },
    {
@@ -11795,11 +11795,11 @@
      },
      {
       "lang": "en",
-      "text": "favourite"
+      "text": "favorite"
      },
      {
       "lang": "tr",
-      "text": "\"En sevdiğim\" demenin kısa yolu. Dikkat: favourite kelimesinin başına the most koymayız, kendi başına zaten \"en sevdiğim\" demek."
+      "text": "\"En sevdiğim\" demenin kısa yolu. Dikkat: favorite kelimesinin başına the most koymayız, kendi başına zaten \"en sevdiğim\" demek."
      },
      {
       "lang": "tr",
@@ -11815,7 +11815,7 @@
      },
      {
       "lang": "en",
-      "text": "my favourite film"
+      "text": "my favorite film"
      },
      {
       "lang": "tr",
@@ -11824,7 +11824,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "my favourite film"
+     "target": "my favorite film"
     }
    },
    {
@@ -12090,7 +12090,7 @@
    "partner": "Emma, İngiliz arkadaşın",
    "opening": "So, what was the best day of your holiday?",
    "openingTr": "Peki, tatilinin en güzel günü hangisiydi?",
-   "goal": "Öğrenci en az iki üstünlük derecesi (the best, the worst, the most ... ya da favourite) kullanarak tatilinin en güzel ve en kötü yanını anlatınca konuşma başarılı sayılır.",
+   "goal": "Öğrenci en az iki üstünlük derecesi (the best, the worst, the most ... ya da favorite) kullanarak tatilinin en güzel ve en kötü yanını anlatınca konuşma başarılı sayılır.",
    "minTurns": 7
   }
  },
@@ -20997,7 +20997,7 @@
   "vocab": [
    {
     "de": "couch",
-    "tr": "divan"
+    "tr": "kanepe"
    },
    {
     "de": "shelf",
@@ -21590,7 +21590,7 @@
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: divan. Lütfen tekrar et:"
+      "text": "Türkçesi: kanepe. Lütfen tekrar et:"
      },
      {
       "lang": "en",
@@ -24915,7 +24915,7 @@
    },
    {
     "de": "nearby",
-    "tr": "yakında"
+    "tr": "yakınlarda"
    },
    {
     "de": "crowded",
@@ -24952,7 +24952,7 @@
     "tr": "bir yerin ne kadar uzakta olduğunu süreyle söylerken kullanılır"
    },
    {
-    "de": "It's quieter than the city centre.",
+    "de": "It's quieter than the city center.",
     "tr": "iki yeri karşılaştırırken kullanılır"
    }
   ],
@@ -28701,7 +28701,7 @@
     "tr": "düzenli"
    },
    {
-    "de": "organise",
+    "de": "organize",
     "tr": "örgütlemek"
    }
   ],
@@ -28959,7 +28959,7 @@
      },
      {
       "lang": "en",
-      "text": "organise"
+      "text": "organize"
      },
      {
       "lang": "tr",
@@ -28967,12 +28967,12 @@
      },
      {
       "lang": "en",
-      "text": "organise"
+      "text": "organize"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "organise"
+     "target": "organize"
     }
    },
    {
@@ -29912,7 +29912,7 @@
    },
    {
     "de": "Would it be possible to …?",
-    "tr": "daha resmi, çekingen bir rica için kullanılır"
+    "tr": "daha resmî, çekingen bir rica için kullanılır"
    }
   ],
   "lecture": [
@@ -31230,11 +31230,11 @@
    },
    {
     "de": "Could you confirm the time?",
-    "tr": "bir bilgiyi kibarca teyit ederken kullanılır"
+    "tr": "karşındakinden bir bilgiyi kibarca teyit etmesini isterken kullanılır"
    },
    {
     "de": "Best regards,",
-    "tr": "iş e-postasını kapatırken kullanılan resmi bitiş"
+    "tr": "iş e-postasını kapatırken kullanılan resmî bitiş"
    }
   ],
   "lecture": [
@@ -39359,7 +39359,7 @@
    },
    {
     "de": "include",
-    "tr": "içermek / dahil olmak"
+    "tr": "içermek / dâhil olmak"
    },
    {
     "de": "confirm",
@@ -39389,7 +39389,7 @@
    },
    {
     "de": "Does the price include …?",
-    "tr": "fiyata neyin dahil olduğunu sorarken kullanılır"
+    "tr": "fiyata neyin dâhil olduğunu sorarken kullanılır"
    }
   ],
   "lecture": [
@@ -40073,7 +40073,7 @@
   "vocab": [
    {
     "de": "gate",
-    "tr": "kapı"
+    "tr": "biniş kapısı"
    },
    {
     "de": "boarding",
@@ -43126,7 +43126,7 @@
    },
    {
     "de": "Is the fuel included?",
-    "tr": "bir şeyin fiyata dahil olup olmadığını sormak için kullanılır"
+    "tr": "bir şeyin fiyata dâhil olup olmadığını sormak için kullanılır"
    },
    {
     "de": "I have to return the car at six.",
@@ -49154,12 +49154,12 @@
   "icon": "handshake",
   "title": "Saying sorry",
   "titleTr": "Özür dilemek",
-  "summary": "Özür dilemeyi ve bir özrü kabul etmeyi öğretir: I'm sorry about, I apologise, It was my fault ve That's OK gibi kalıplar.",
+  "summary": "Özür dilemeyi ve bir özrü kabul etmeyi öğretir: I'm sorry about, I apologize, It was my fault ve That's OK gibi kalıplar.",
   "minutes": 9,
   "focusId": "Apologising",
   "vocab": [
    {
-    "de": "apologise",
+    "de": "apologize",
     "tr": "özür dilemek"
    },
    {
@@ -49583,7 +49583,7 @@
      },
      {
       "lang": "en",
-      "text": "apologise"
+      "text": "apologize"
      },
      {
       "lang": "tr",
@@ -49591,12 +49591,12 @@
      },
      {
       "lang": "en",
-      "text": "I apologise for the delay."
+      "text": "I apologize for the delay."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I apologise for the delay."
+     "target": "I apologize for the delay."
     }
    },
    {
@@ -49607,7 +49607,7 @@
      },
      {
       "lang": "en",
-      "text": "apologise"
+      "text": "apologize"
      },
      {
       "lang": "tr",
@@ -49632,10 +49632,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "I apologise for the delay.",
+     "target": "I apologize for the delay.",
      "accept": [
       "I apologize for the delay.",
-      "I apologise for the delay",
+      "I apologize for the delay",
       "I apologize for the delay",
       "I'm sorry for the delay.",
       "I am sorry for the delay."
@@ -49647,7 +49647,7 @@
       },
       {
        "lang": "en",
-       "text": "I apologise"
+       "text": "I apologize"
       },
       {
        "lang": "tr",
@@ -49667,7 +49667,7 @@
       },
       {
        "lang": "en",
-       "text": "I apologise for the delay."
+       "text": "I apologize for the delay."
       },
       {
        "lang": "tr",
@@ -49955,7 +49955,7 @@
      },
      {
       "lang": "en",
-      "text": "I apologise for …"
+      "text": "I apologize for …"
      },
      {
       "lang": "tr",
@@ -50002,7 +50002,7 @@
   "vocab": [
    {
     "de": "close",
-    "tr": "yakın"
+    "tr": "yakın / samimi"
    },
    {
     "de": "together",
@@ -57939,7 +57939,7 @@
    },
    {
     "de": "waste",
-    "tr": "atık / kayıp"
+    "tr": "israf / kayıp"
    },
    {
     "de": "depend",
@@ -59432,7 +59432,7 @@
   "patterns": [
    {
     "de": "I'd like to register, please.",
-    "tr": "resmi bir dairede işlem talebini kibarca söylerken kullanılır"
+    "tr": "resmî bir dairede işlem talebini kibarca söylerken kullanılır"
    },
    {
     "de": "Could you tell me where the counter is?",
@@ -63452,7 +63452,7 @@
   "patterns": [
    {
     "de": "Could I book an appointment for Monday?",
-    "tr": "resmi bir yerden kibarca randevu istemek için kullanılır"
+    "tr": "resmî bir yerden kibarca randevu istemek için kullanılır"
    },
    {
     "de": "Do you have anything available on Tuesday?",
@@ -64058,7 +64058,7 @@
    },
    {
     "de": "official",
-    "tr": "resmi"
+    "tr": "resmî / onaylı"
    },
    {
     "de": "need",
@@ -64856,7 +64856,7 @@
   "patterns": [
    {
     "de": "I would like to make a complaint about …",
-    "tr": "resmi dille şikâyetini açarken kullanılır"
+    "tr": "resmî dille şikâyetini açarken kullanılır"
    },
    {
     "de": "I have waited for three weeks.",

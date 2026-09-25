@@ -93,5 +93,6 @@
  { "tr": "oynadım / oynadı", "kind": "vocab.tr", "de": "ich spielte / er spielte" },
  { "tr": "telefon numarası", "kind": "vocab.tr", "de": "Telefonnummer" },
  { "tr": "iade etmek / iade", "kind": "vocab.tr", "de": "zurückgeben / Rückgabe" },
- { "tr": "yeniden başlatmak", "kind": "vocab.tr", "de": "neu starten" }
+ { "tr": "yeniden başlatmak", "kind": "vocab.tr", "de": "neu starten" },
+ { "tr": "sürdürmek / yeniden başlatmak", "kind": "vocab.tr", "de": "fortsetzen / wieder aufnehmen" }
 ]

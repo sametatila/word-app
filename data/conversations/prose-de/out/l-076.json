@@ -160,6 +160,11 @@
   "de": "formell"
  },
  {
+  "tr": "resmî / yetkili",
+  "kind": "vocab.tr",
+  "de": "offiziell / amtlich"
+ },
+ {
   "tr": "eğitim",
   "kind": "vocab.tr",
   "de": "Schulung"

@@ -28,7 +28,7 @@
    },
    {
     "de": "meet",
-    "tr": "buluşmak"
+    "tr": "tanışmak / buluşmak"
    },
    {
     "de": "goodbye",
@@ -4703,7 +4703,7 @@
    },
    {
     "de": "become",
-    "tr": "haline gelmek"
+    "tr": "hâline gelmek"
    },
    {
     "de": "teacher",
@@ -5162,7 +5162,7 @@
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: haline gelmek. Lütfen tekrar et:"
+      "text": "Türkçesi: hâline gelmek. Lütfen tekrar et:"
      },
      {
       "lang": "en",
@@ -5347,7 +5347,7 @@
    },
    {
     "de": "cake",
-    "tr": "kek"
+    "tr": "pasta / kek"
    },
    {
     "de": "adult",
@@ -5761,7 +5761,7 @@
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: kek. Lütfen tekrar et:"
+      "text": "Türkçesi: pasta / kek. Lütfen tekrar et:"
      },
      {
       "lang": "en",
@@ -10452,7 +10452,7 @@
     "tr": "saç"
    },
    {
-    "de": "grey",
+    "de": "gray",
     "tr": "gri"
    },
    {
@@ -10856,7 +10856,7 @@
      },
      {
       "lang": "en",
-      "text": "grey"
+      "text": "gray"
      },
      {
       "lang": "tr",
@@ -10864,12 +10864,12 @@
      },
      {
       "lang": "en",
-      "text": "grey"
+      "text": "gray"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "grey"
+     "target": "gray"
     }
    },
    {
@@ -15428,7 +15428,7 @@
    },
    {
     "de": "sweet",
-    "tr": "şekerli"
+    "tr": "tatlı / şekerli"
    },
    {
     "de": "meat",
@@ -15794,7 +15794,7 @@
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: şekerli. Lütfen tekrar et:"
+      "text": "Türkçesi: tatlı / şekerli. Lütfen tekrar et:"
      },
      {
       "lang": "en",
@@ -23225,7 +23225,7 @@
     "tr": "-de/-da; saat …-de"
    },
    {
-    "de": "programme",
+    "de": "program",
     "tr": "program"
    }
   ],
@@ -23595,7 +23595,7 @@
      },
      {
       "lang": "en",
-      "text": "programme"
+      "text": "program"
      },
      {
       "lang": "tr",
@@ -23603,12 +23603,12 @@
      },
      {
       "lang": "en",
-      "text": "programme"
+      "text": "program"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "programme"
+     "target": "program"
     }
    },
    {
@@ -26898,14 +26898,14 @@
   "level": "A1",
   "course": "en",
   "icon": "shirt",
-  "title": "Colours",
+  "title": "Colors",
   "titleTr": "Renkler",
   "summary": "Renk sıfatlarını öğrenir, bir şeyin rengini söyler ve sıfatın isimden önce geldiğini kullanırsın.",
   "minutes": 8,
   "focusId": "Adjectives",
   "vocab": [
    {
-    "de": "colour",
+    "de": "color",
     "tr": "renk"
    },
    {
@@ -26947,7 +26947,7 @@
     "tr": "renk sıfatı isimden ÖNCE gelir: sıfat + isim"
    },
    {
-    "de": "What colour is it?",
+    "de": "What color is it?",
     "tr": "bir şeyin rengini sorarken kullanılır"
    }
   ],
@@ -26975,7 +26975,7 @@
      },
      {
       "lang": "en",
-      "text": "colour"
+      "text": "color"
      },
      {
       "lang": "tr",
@@ -26983,12 +26983,12 @@
      },
      {
       "lang": "en",
-      "text": "colour"
+      "text": "color"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "colour"
+     "target": "color"
     }
    },
    {
@@ -26999,7 +26999,7 @@
      },
      {
       "lang": "en",
-      "text": "colour"
+      "text": "color"
      },
      {
       "lang": "tr",
@@ -27300,7 +27300,7 @@
      },
      {
       "lang": "en",
-      "text": "What colour is it?"
+      "text": "What color is it?"
      },
      {
       "lang": "tr",
@@ -27308,12 +27308,12 @@
      },
      {
       "lang": "en",
-      "text": "What colour is it?"
+      "text": "What color is it?"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "What colour is it?"
+     "target": "What color is it?"
     }
    },
    {
@@ -27396,7 +27396,7 @@
      },
      {
       "lang": "en",
-      "text": "What colour is it?"
+      "text": "What color is it?"
      },
      {
       "lang": "tr",
@@ -27546,7 +27546,7 @@
      },
      {
       "lang": "en",
-      "text": "colour, red, blue, black, white"
+      "text": "color, red, blue, black, white"
      },
      {
       "lang": "tr",
@@ -27574,7 +27574,7 @@
   "chat": {
    "scene": "Bir mağazadasın, çanta bakıyorsun. Satıcı sana renk soruyor.",
    "partner": "Mağaza görevlisi",
-   "opening": "Hello! Can I help you? What colour do you want?",
+   "opening": "Hello! Can I help you? What color do you want?",
    "openingTr": "Merhaba! Yardımcı olabilir miyim? Hangi rengi istiyorsun?",
    "goal": "En az bir renk söylemen, bir renk sorusu sorman ve bir çantayı renkle birlikte tarif etmen (örneğin \"a black bag\") başarılı sayılır.",
    "minTurns": 7
@@ -38731,7 +38731,7 @@
    },
    {
     "de": "home",
-    "tr": "yuva"
+    "tr": "ev / yuva"
    },
    {
     "de": "room",
@@ -39032,7 +39032,7 @@
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: yuva. Lütfen tekrar et:"
+      "text": "Türkçesi: ev / yuva. Lütfen tekrar et:"
      },
      {
       "lang": "en",
@@ -40605,14 +40605,14 @@
   "level": "A1",
   "course": "en",
   "icon": "home",
-  "title": "Neighbours",
+  "title": "Neighbors",
   "titleTr": "Komşular",
   "summary": "Komşularını tanıtmayı; live/lives ile kimin nerede oturduğunu ve is ile nasıl biri olduğunu anlatmayı öğretir.",
   "minutes": 8,
   "focusId": "Present-simple",
   "vocab": [
    {
-    "de": "neighbour",
+    "de": "neighbor",
     "tr": "komşu"
    },
    {
@@ -40650,7 +40650,7 @@
     "tr": "birinin yanında, bitişikte oturduğunu söylerken kullanılır"
    },
    {
-    "de": "My neighbour is very friendly.",
+    "de": "My neighbor is very friendly.",
     "tr": "komşunun nasıl biri olduğunu anlatırken kullanılır"
    },
    {
@@ -40686,7 +40686,7 @@
      },
      {
       "lang": "en",
-      "text": "neighbour"
+      "text": "neighbor"
      },
      {
       "lang": "tr",
@@ -40698,12 +40698,12 @@
      },
      {
       "lang": "en",
-      "text": "neighbour"
+      "text": "neighbor"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "neighbour"
+     "target": "neighbor"
     }
    },
    {
@@ -40714,7 +40714,7 @@
      },
      {
       "lang": "en",
-      "text": "my neighbour"
+      "text": "my neighbor"
      },
      {
       "lang": "tr",
@@ -40723,7 +40723,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "my neighbour"
+     "target": "my neighbor"
     }
    },
    {
@@ -40818,7 +40818,7 @@
      "target": "He lives next door.",
      "accept": [
       "He lives next door",
-      "My neighbour lives next door."
+      "My neighbor lives next door."
      ],
      "hint": [
       {
@@ -40888,7 +40888,7 @@
      },
      {
       "lang": "en",
-      "text": "My neighbour is very friendly."
+      "text": "My neighbor is very friendly."
      },
      {
       "lang": "tr",
@@ -40897,7 +40897,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "My neighbour is very friendly."
+     "target": "My neighbor is very friendly."
     }
    },
    {
@@ -41001,19 +41001,19 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "My neighbour is quiet.",
+     "target": "My neighbor is quiet.",
      "accept": [
-      "My neighbour is quiet",
+      "My neighbor is quiet",
       "My neighbor is quiet."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Komşum için my neighbour, sonra is, sonra quiet."
+       "text": "Komşum için my neighbor, sonra is, sonra quiet."
       },
       {
        "lang": "en",
-       "text": "My neighbour is quiet."
+       "text": "My neighbor is quiet."
       },
       {
        "lang": "tr",
@@ -41030,17 +41030,17 @@
      },
      {
       "lang": "en",
-      "text": "My neighbour live next door."
+      "text": "My neighbor live next door."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "My neighbour live next door.",
+     "statement": "My neighbor live next door.",
      "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. My neighbour, o demek yani he ya da she gibi. O yüzden fiilin sonunda s olmalı: My neighbour lives next door."
+       "text": "Yanlış. My neighbor, o demek yani he ya da she gibi. O yüzden fiilin sonunda s olmalı: My neighbor lives next door."
       }
      ]
     }
@@ -41126,7 +41126,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Özetleyelim. Komşu neighbour, oturmak live, ama he ve she ile lives."
+      "text": "Özetleyelim. Komşu neighbor, oturmak live, ama he ve she ile lives."
      },
      {
       "lang": "tr",
@@ -41772,7 +41772,7 @@
    },
    {
     "de": "Is water included?",
-    "tr": "bir şeyin fiyata dahil olup olmadığını sormak için kullanılır"
+    "tr": "bir şeyin fiyata dâhil olup olmadığını sormak için kullanılır"
    }
   ],
   "lecture": [
@@ -45628,7 +45628,7 @@
    },
    {
     "de": "bat",
-    "tr": "raket"
+    "tr": "sopa"
    },
    {
     "de": "team",
@@ -46088,7 +46088,7 @@
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: raket. Lütfen tekrar et:"
+      "text": "Türkçesi: sopa. Lütfen tekrar et:"
      },
      {
       "lang": "en",
@@ -60955,7 +60955,7 @@
    },
    {
     "de": "home",
-    "tr": "ev"
+    "tr": "ev / yuva"
    },
    {
     "de": "tired",

@@ -295,7 +295,7 @@
   "de": "Verschlüsselung"
  },
  {
-  "tr": "yerçekimi",
+  "tr": "yer çekimi",
   "kind": "vocab.tr",
   "de": "Schwerkraft"
  },
@@ -580,9 +580,9 @@
   "de": "Die Abschlussarbeit beschreibt einen funktionierenden Roboter."
  },
  {
-  "tr": "Arayüz, ki bu yüzden durduk, eski.",
+  "tr": "Arayüz eski, bu yüzden durduk.",
   "kind": "say.tr",
-  "de": "Die Oberfläche, weshalb wir aufgehört haben, ist alt."
+  "de": "Die Oberfläche ist alt, deshalb haben wir aufgehört."
  },
  {
   "tr": "Birlikte izlenen katılımcı grubuna",
@@ -745,9 +745,9 @@
   "de": "Unsere letzte Wendung nennt die Einführung. Wiederhole:"
  },
  {
-  "tr": "Şimdi sen kur: Araç, ki bu yüzden bekledik, yavaş.",
+  "tr": "Şimdi sen kur: Araç yavaş, bu yüzden bekledik.",
   "kind": "say.tr",
-  "de": "Jetzt du: Das Werkzeug, weshalb wir gewartet haben, ist langsam."
+  "de": "Jetzt du: Das Werkzeug ist langsam, deshalb haben wir gewartet."
  },
  {
   "tr": "Akan madde demek. Tepkimeyi hızlandıran maddeye ise",

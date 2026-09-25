@@ -240,7 +240,7 @@
   "de": "informell"
  },
  {
-  "tr": "hak vermek",
+  "tr": "hak tanımak",
   "kind": "vocab.tr",
   "de": "berechtigen"
  },
@@ -263,6 +263,11 @@
   "tr": "güvenilirlik",
   "kind": "vocab.tr",
   "de": "Glaubwürdigkeit"
+ },
+ {
+  "tr": "güvenilirlik / sağlamlık",
+  "kind": "vocab.tr",
+  "de": "Zuverlässigkeit"
  },
  {
   "tr": "kabul beyanı",
@@ -560,9 +565,9 @@
   "de": "Die Führungskraft, an die wir berichten, ist neu."
  },
  {
-  "tr": "Usul, ki bu yüzden bekledik, yavaş.",
+  "tr": "Usul yavaş, bu yüzden bekledik.",
   "kind": "say.tr",
-  "de": "Das Verfahren, weshalb wir gewartet haben, ist langsam."
+  "de": "Das Verfahren ist langsam, deshalb haben wir gewartet."
  },
  {
   "tr": "bir sözleşmeyi tamamen bitirmeye ise",
@@ -700,9 +705,9 @@
   "de": "Noch eins: Erst dann wird der Absender haftbar."
  },
  {
-  "tr": "Şimdi sen kur: Madde, ki bu yüzden imzaladık, kısa.",
+  "tr": "Şimdi sen kur: Madde kısa, bu yüzden imzaladık.",
   "kind": "say.tr",
-  "de": "Jetzt du: Die Klausel, weshalb wir unterschrieben haben, ist kurz."
+  "de": "Jetzt du: Die Klausel ist kurz, deshalb haben wir unterschrieben."
  },
  {
   "tr": "Ancak konu üst kademeye taşındığında cevap verdiler.",

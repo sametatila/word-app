@@ -295,6 +295,11 @@
   "de": "inakzeptabel"
  },
  {
+  "tr": "usulen kabul edilemez",
+  "kind": "vocab.tr",
+  "de": "unzulässig"
+ },
+ {
   "tr": "çözüme bağlamak",
   "kind": "vocab.tr",
   "de": "beilegen"

@@ -1019,7 +1019,7 @@
    },
    {
     "de": "suitable",
-    "tr": "uygun"
+    "tr": "uygun / elverişli"
    },
    {
     "de": "opportunity",
@@ -4388,7 +4388,7 @@
    },
    {
     "de": "although",
-    "tr": "-e rağmen"
+    "tr": "-mesine rağmen"
    },
    {
     "de": "however",
@@ -6689,7 +6689,7 @@
    },
    {
     "de": "argue",
-    "tr": "tartışmak"
+    "tr": "tartışmak / çekişmek"
    }
   ],
   "patterns": [
@@ -8083,7 +8083,7 @@
   "focusId": "Linking words",
   "vocab": [
    {
-    "de": "neighbour",
+    "de": "neighbor",
     "tr": "komşu"
    },
    {
@@ -8103,7 +8103,7 @@
     "tr": "rahatsız etmek"
    },
    {
-    "de": "apologise",
+    "de": "apologize",
     "tr": "özür dilemek"
    },
    {
@@ -8153,7 +8153,7 @@
      },
      {
       "lang": "en",
-      "text": "neighbour"
+      "text": "neighbor"
      },
      {
       "lang": "tr",
@@ -8161,12 +8161,12 @@
      },
      {
       "lang": "en",
-      "text": "My neighbour plays music at night."
+      "text": "My neighbor plays music at night."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "My neighbour plays music at night."
+     "target": "My neighbor plays music at night."
     }
    },
    {
@@ -8342,7 +8342,7 @@
      },
      {
       "lang": "en",
-      "text": "apologise"
+      "text": "apologize"
      },
      {
       "lang": "tr",
@@ -8358,7 +8358,7 @@
      },
      {
       "lang": "en",
-      "text": "He apologised for disturbing us so late."
+      "text": "He apologized for disturbing us so late."
      },
      {
       "lang": "tr",
@@ -8367,7 +8367,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "He apologised for disturbing us so late."
+     "target": "He apologized for disturbing us so late."
     }
    },
    {
@@ -8395,10 +8395,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "The flat is noisy. However, the neighbours are kind.",
+     "target": "The flat is noisy. However, the neighbors are kind.",
      "accept": [
-      "The flat is noisy. However, the neighbours are nice.",
-      "The flat is noisy. However, my neighbours are kind."
+      "The flat is noisy. However, the neighbors are nice.",
+      "The flat is noisy. However, my neighbors are kind."
      ],
      "hint": [
       {
@@ -8407,7 +8407,7 @@
       },
       {
        "lang": "en",
-       "text": "The flat is noisy. However, the neighbours are kind."
+       "text": "The flat is noisy. However, the neighbors are kind."
       },
       {
        "lang": "tr",
@@ -8577,7 +8577,7 @@
    },
    {
     "de": "final",
-    "tr": "son"
+    "tr": "son / nihai"
    },
    {
     "de": "key",
@@ -9940,7 +9940,7 @@
    },
    {
     "de": "meanwhile",
-    "tr": "bu arada"
+    "tr": "bu arada / bu sırada"
    },
    {
     "de": "arrive",
@@ -10396,11 +10396,11 @@
     "tr": "kurs"
    },
    {
-    "de": "enrol",
+    "de": "enroll",
     "tr": "kaydolmak"
    },
    {
-    "de": "practise",
+    "de": "practice",
     "tr": "pratik yapmak"
    },
    {
@@ -10418,7 +10418,7 @@
   ],
   "patterns": [
    {
-    "de": "I enrolled to practise my English.",
+    "de": "I enrolled to practice my English.",
     "tr": "amacı kısa biçimde söyler"
    },
    {
@@ -10454,7 +10454,7 @@
      },
      {
       "lang": "en",
-      "text": "enrol"
+      "text": "enroll"
      },
      {
       "lang": "tr",
@@ -10538,7 +10538,7 @@
      },
      {
       "lang": "en",
-      "text": "to practise"
+      "text": "to practice"
      },
      {
       "lang": "tr",
@@ -10570,7 +10570,7 @@
      },
      {
       "lang": "en",
-      "text": "practise"
+      "text": "practice"
      },
      {
       "lang": "tr",
@@ -10578,12 +10578,12 @@
      },
      {
       "lang": "en",
-      "text": "I enrolled to practise my English."
+      "text": "I enrolled to practice my English."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I enrolled to practise my English."
+     "target": "I enrolled to practice my English."
     }
    },
    {
@@ -10624,12 +10624,12 @@
      },
      {
       "lang": "en",
-      "text": "I enrolled for practise my English."
+      "text": "I enrolled for practice my English."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "I enrolled for practise my English.",
+     "statement": "I enrolled for practice my English.",
      "answer": false,
      "why": [
       {
@@ -10638,7 +10638,7 @@
       },
       {
        "lang": "en",
-       "text": "I enrolled to practise my English."
+       "text": "I enrolled to practice my English."
       }
      ]
     }
@@ -11771,7 +11771,7 @@
     "tr": "aniden"
    },
    {
-    "de": "realise",
+    "de": "realize",
     "tr": "fark etmek"
    },
    {
@@ -11801,7 +11801,7 @@
     "tr": "önce olan olayı geriye alır"
    },
    {
-    "de": "Then I realised the problem.",
+    "de": "Then I realized the problem.",
     "tr": "sonra olan olayı normal geçmişte anlatır"
    },
    {
@@ -11865,7 +11865,7 @@
      },
      {
       "lang": "en",
-      "text": "realise"
+      "text": "realize"
      },
      {
       "lang": "tr",
@@ -11889,7 +11889,7 @@
      },
      {
       "lang": "en",
-      "text": "I did not realise the mess until later."
+      "text": "I did not realize the mess until later."
      },
      {
       "lang": "tr",
@@ -11898,7 +11898,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I did not realise the mess until later."
+     "target": "I did not realize the mess until later."
     }
    },
    {
@@ -11975,12 +11975,12 @@
      },
      {
       "lang": "en",
-      "text": "I had left my keys and then I had realised it."
+      "text": "I had left my keys and then I had realized it."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "I had left my keys and then I had realised it.",
+     "statement": "I had left my keys and then I had realized it.",
      "answer": false,
      "why": [
       {
@@ -11989,7 +11989,7 @@
       },
       {
        "lang": "en",
-       "text": "I had left my keys and then I realised it."
+       "text": "I had left my keys and then I realized it."
       }
      ]
     }
@@ -12002,7 +12002,7 @@
      },
      {
       "lang": "en",
-      "text": "Then I realised the problem."
+      "text": "Then I realized the problem."
      },
      {
       "lang": "tr",
@@ -12011,7 +12011,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Then I realised the problem."
+     "target": "Then I realized the problem."
     }
    },
    {
@@ -12214,7 +12214,7 @@
      },
      {
       "lang": "en",
-      "text": "I realised"
+      "text": "I realized"
      },
      {
       "lang": "tr",
@@ -12738,7 +12738,7 @@
    },
    {
     "de": "official",
-    "tr": "resmî"
+    "tr": "resmî / yetkili"
    },
    {
     "de": "recent",
@@ -13195,7 +13195,7 @@
    },
    {
     "de": "allowed",
-    "tr": "izinli"
+    "tr": "izin verilen / serbest"
    },
    {
     "de": "forbidden",
@@ -15067,7 +15067,7 @@
    },
    {
     "de": "worth",
-    "tr": "değer"
+    "tr": "-e değer"
    },
    {
     "de": "boring",
@@ -16430,7 +16430,7 @@
    },
    {
     "de": "replace",
-    "tr": "değiştirmek"
+    "tr": "değiştirmek / yerine koymak"
    },
    {
     "de": "apology",
@@ -18326,7 +18326,7 @@
    },
    {
     "de": "conclusion",
-    "tr": "sonuç"
+    "tr": "sonuç / yargı"
    },
    {
     "de": "convince",
@@ -19256,7 +19256,7 @@
    },
    {
     "de": "section",
-    "tr": "bölüm"
+    "tr": "kısım / bölüm"
    },
    {
     "de": "detail",
@@ -22483,7 +22483,7 @@
    },
    {
     "de": "folder",
-    "tr": "dosya"
+    "tr": "dosya / klasör"
    },
    {
     "de": "missing",
@@ -23369,7 +23369,7 @@
    },
    {
     "de": "chapter",
-    "tr": "bölüm"
+    "tr": "bölüm (kitapta)"
    },
    {
     "de": "topic",
@@ -24282,7 +24282,7 @@
   "focusId": "Gerund or infinitive",
   "vocab": [
    {
-    "de": "memorise",
+    "de": "memorize",
     "tr": "ezberlemek"
    },
    {
@@ -24320,7 +24320,7 @@
     "tr": "hoşlanılan yöntemi -ing ile söyler"
    },
    {
-    "de": "I try to memorise ten words a day.",
+    "de": "I try to memorize ten words a day.",
     "tr": "çabayı to ile söyler"
    },
    {
@@ -24384,7 +24384,7 @@
      },
      {
       "lang": "en",
-      "text": "memorise"
+      "text": "memorize"
      },
      {
       "lang": "tr",
@@ -24408,7 +24408,7 @@
      },
      {
       "lang": "en",
-      "text": "I repeat the words until I memorise them."
+      "text": "I repeat the words until I memorize them."
      },
      {
       "lang": "tr",
@@ -24417,7 +24417,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I repeat the words until I memorise them."
+     "target": "I repeat the words until I memorize them."
     }
    },
    {
@@ -24436,7 +24436,7 @@
      },
      {
       "lang": "en",
-      "text": "try to memorise"
+      "text": "try to memorize"
      },
      {
       "lang": "tr",
@@ -24490,7 +24490,7 @@
      },
      {
       "lang": "en",
-      "text": "I try to memorise ten words a day."
+      "text": "I try to memorize ten words a day."
      },
      {
       "lang": "tr",
@@ -24499,7 +24499,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I try to memorise ten words a day."
+     "target": "I try to memorize ten words a day."
     }
    },
    {
@@ -24510,12 +24510,12 @@
      },
      {
       "lang": "en",
-      "text": "I try memorising ten words a day, it is my goal."
+      "text": "I try memorizing ten words a day, it is my goal."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "I try memorising ten words a day, it is my goal.",
+     "statement": "I try memorizing ten words a day, it is my goal.",
      "answer": false,
      "why": [
       {
@@ -24524,7 +24524,7 @@
       },
       {
        "lang": "en",
-       "text": "I try to memorise ten words a day."
+       "text": "I try to memorize ten words a day."
       }
      ]
     }
@@ -25217,7 +25217,7 @@
    },
    {
     "de": "admit",
-    "tr": "kabul etmek"
+    "tr": "kabul etmek / itiraf etmek"
    },
    {
     "de": "check",
@@ -25678,7 +25678,7 @@
    },
    {
     "de": "session",
-    "tr": "oturum"
+    "tr": "oturum / seans"
    },
    {
     "de": "clear",
@@ -26118,8 +26118,8 @@
     "tr": "görev"
    },
    {
-    "de": "organise",
-    "tr": "düzenlemek"
+    "de": "organize",
+    "tr": "organize etmek / düzenlemek"
    },
    {
     "de": "leader",
@@ -26318,7 +26318,7 @@
      },
      {
       "lang": "en",
-      "text": "organise"
+      "text": "organize"
      },
      {
       "lang": "tr",
@@ -26334,12 +26334,12 @@
      },
      {
       "lang": "en",
-      "text": "The leader who organises the project keeps notes."
+      "text": "The leader who organizes the project keeps notes."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The leader who organises the project keeps notes."
+     "target": "The leader who organizes the project keeps notes."
     }
    },
    {
@@ -35497,7 +35497,7 @@
   "patterns": [
    {
     "de": "They will operate tomorrow morning.",
-    "tr": "kararı olduğu gibi söyler"
+    "tr": "kesinleşmiş bir gelecek bilgisini verir"
    },
    {
     "de": "I am going to stay for one night.",
@@ -46630,7 +46630,7 @@
    },
    {
     "de": "follow",
-    "tr": "izlemek"
+    "tr": "izlemek / takip etmek"
    },
    {
     "de": "guide",

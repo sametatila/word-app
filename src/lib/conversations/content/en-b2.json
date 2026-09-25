@@ -36,7 +36,7 @@
    },
    {
     "de": "monitor",
-    "tr": "izlemek"
+    "tr": "izlemek / denetlemek"
    },
    {
     "de": "remote",
@@ -1007,7 +1007,7 @@
     "tr": "kişiye ek bilgi ekler"
    },
    {
-    "de": "The objective, which is why we met, is clear.",
+    "de": "The objective is clear, which is why we met.",
     "tr": "cümlenin tamamına ek bilgi ekler"
    },
    {
@@ -1079,16 +1079,16 @@
      },
      {
       "lang": "en",
-      "text": "The objective, which is why we met, is clear."
+      "text": "The objective is clear, which is why we met."
      },
      {
       "lang": "tr",
-      "text": "Hedef, ki bu yüzden toplandık, açık."
+      "text": "Hedef açık, bu yüzden toplandık."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The objective, which is why we met, is clear."
+     "target": "The objective is clear, which is why we met."
     }
    },
    {
@@ -1205,17 +1205,17 @@
      },
      {
       "lang": "en",
-      "text": "The objective, which is why we met, is clear."
+      "text": "The objective is clear, which is why we met."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The objective, which is why we met, is clear.",
+     "statement": "The objective is clear, which is why we met.",
      "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Ek bilgi virgüller arasında duruyor ve çıkarılsa cümle yine tam kalıyor."
+       "text": "Doğru. which is why cümlenin sonunda duruyor ve cümlenin tamamına bağlanıyor."
       }
      ]
     }
@@ -1268,15 +1268,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sen kur: Plan, ki bu yüzden kaldık, hazır."
+      "text": "Şimdi sen kur: Plan hazır, bu yüzden kaldık."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "The plan, which is why we stayed, is ready.",
+     "target": "The plan is ready, which is why we stayed.",
      "accept": [
-      "The plan, which is why we stayed, is now ready.",
-      "The plan, which is why we remained, is ready."
+      "The plan is now ready, which is why we stayed.",
+      "The plan is ready, which is why we remained."
      ],
      "hint": [
       {
@@ -1293,7 +1293,7 @@
       },
       {
        "lang": "en",
-       "text": "The plan, which is why we stayed, is ready."
+       "text": "The plan is ready, which is why we stayed."
       },
       {
        "lang": "tr",
@@ -1992,7 +1992,7 @@
    },
    {
     "de": "consequence",
-    "tr": "sonuç"
+    "tr": "sonuç / etki"
    },
    {
     "de": "compromise",
@@ -2918,7 +2918,7 @@
    },
    {
     "de": "expense",
-    "tr": "masraf"
+    "tr": "masraf / gider"
    },
    {
     "de": "expectation",
@@ -3932,7 +3932,7 @@
    },
    {
     "de": "participate",
-    "tr": "katılmak"
+    "tr": "katılmak / yer almak"
    }
   ],
   "patterns": [
@@ -7916,7 +7916,7 @@
    },
    {
     "de": "mild",
-    "tr": "yumuşak"
+    "tr": "ılımlı / yumuşak"
    },
    {
     "de": "sender",
@@ -8385,11 +8385,11 @@
    },
    {
     "de": "dispatch",
-    "tr": "sevk etmek"
+    "tr": "sevk etmek / göndermek"
    },
    {
     "de": "resume",
-    "tr": "yeniden başlatmak"
+    "tr": "sürdürmek / yeniden başlatmak"
    },
    {
     "de": "freeze",
@@ -8886,7 +8886,7 @@
    },
    {
     "de": "entitle",
-    "tr": "hak vermek"
+    "tr": "hak tanımak"
    },
    {
     "de": "criterion",
@@ -8903,7 +8903,7 @@
     "tr": "kişiye ek bilgi ekler"
    },
    {
-    "de": "The procedure, which is why we waited, is slow.",
+    "de": "The procedure is slow, which is why we waited.",
     "tr": "cümlenin tamamına ek bilgi ekler"
    },
    {
@@ -8983,16 +8983,16 @@
      },
      {
       "lang": "en",
-      "text": "The procedure, which is why we waited, is slow."
+      "text": "The procedure is slow, which is why we waited."
      },
      {
       "lang": "tr",
-      "text": "Usul, ki bu yüzden bekledik, yavaş."
+      "text": "Usul yavaş, bu yüzden bekledik."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The procedure, which is why we waited, is slow."
+     "target": "The procedure is slow, which is why we waited."
     }
    },
    {
@@ -9109,17 +9109,17 @@
      },
      {
       "lang": "en",
-      "text": "The procedure, which is why we waited, is slow."
+      "text": "The procedure is slow, which is why we waited."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The procedure, which is why we waited, is slow.",
+     "statement": "The procedure is slow, which is why we waited.",
      "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Ek bilgi virgüller arasında duruyor ve çıkarılsa cümle yine tam kalıyor."
+       "text": "Doğru. which is why cümlenin sonunda duruyor ve cümlenin tamamına bağlanıyor."
       }
      ]
     }
@@ -9172,15 +9172,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sen kur: Madde, ki bu yüzden imzaladık, kısa."
+      "text": "Şimdi sen kur: Madde kısa, bu yüzden imzaladık."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "The clause, which is why we signed, is short.",
+     "target": "The clause is short, which is why we signed.",
      "accept": [
-      "The clause, which is why we signed, is quite short.",
-      "The term, which is why we signed, is short."
+      "The clause is quite short, which is why we signed.",
+      "The term is short, which is why we signed."
      ],
      "hint": [
       {
@@ -9197,7 +9197,7 @@
       },
       {
        "lang": "en",
-       "text": "The clause, which is why we signed, is short."
+       "text": "The clause is short, which is why we signed."
       },
       {
        "lang": "tr",
@@ -9852,7 +9852,7 @@
    },
    {
     "de": "disclose",
-    "tr": "açıklamak"
+    "tr": "açıklamak / ifşa etmek"
    },
    {
     "de": "conceal",
@@ -11816,7 +11816,7 @@
    },
    {
     "de": "govern",
-    "tr": "düzenlemek"
+    "tr": "düzenlemek / yönetmek"
    },
    {
     "de": "trial",
@@ -11845,7 +11845,7 @@
     "tr": "edilgen bir ek bilgiyi kişiye değil şeye bağlar"
    },
    {
-    "de": "The manual, which is why we stopped, is old.",
+    "de": "The manual is old, which is why we stopped.",
     "tr": "cümlenin tamamına ek bilgi ekler"
    },
    {
@@ -11917,16 +11917,16 @@
      },
      {
       "lang": "en",
-      "text": "The manual, which is why we stopped, is old."
+      "text": "The manual is old, which is why we stopped."
      },
      {
       "lang": "tr",
-      "text": "El kitabı, ki bu yüzden durduk, eski."
+      "text": "El kitabı eski, bu yüzden durduk."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The manual, which is why we stopped, is old."
+     "target": "The manual is old, which is why we stopped."
     }
    },
    {
@@ -12043,17 +12043,17 @@
      },
      {
       "lang": "en",
-      "text": "The manual, which is why we stopped, is old."
+      "text": "The manual is old, which is why we stopped."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The manual, which is why we stopped, is old.",
+     "statement": "The manual is old, which is why we stopped.",
      "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Ek bilgi virgüller arasında duruyor ve çıkarılsa cümle yine tam kalıyor."
+       "text": "Doğru. which is why cümlenin sonunda duruyor ve cümlenin tamamına bağlanıyor."
       }
      ]
     }
@@ -12106,15 +12106,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sen kur: Dosya, ki bu yüzden bekledik, uzun."
+      "text": "Şimdi sen kur: Dosya uzun, bu yüzden bekledik."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "The file, which is why we waited, is long.",
+     "target": "The file is long, which is why we waited.",
      "accept": [
-      "The file, which is why we waited, is very long.",
-      "The document, which is why we waited, is long."
+      "The file is very long, which is why we waited.",
+      "The document is long, which is why we waited."
      ],
      "hint": [
       {
@@ -12131,7 +12131,7 @@
       },
       {
        "lang": "en",
-       "text": "The file, which is why we waited, is long."
+       "text": "The file is long, which is why we waited."
       },
       {
        "lang": "tr",
@@ -13800,7 +13800,7 @@
    },
    {
     "de": "parameter",
-    "tr": "değiştirge"
+    "tr": "parametre"
    },
    {
     "de": "correlation",
@@ -15300,7 +15300,7 @@
     "tr": "kişiye ek bilgi ekler"
    },
    {
-    "de": "The attribution, which is why we waited, was unclear.",
+    "de": "The attribution was unclear, which is why we waited.",
     "tr": "cümlenin tamamına ek bilgi ekler"
    },
    {
@@ -15380,16 +15380,16 @@
      },
      {
       "lang": "en",
-      "text": "The attribution, which is why we waited, was unclear."
+      "text": "The attribution was unclear, which is why we waited."
      },
      {
       "lang": "tr",
-      "text": "Kaynak gösterme, ki bu yüzden bekledik, belirsizdi."
+      "text": "Kaynak gösterme belirsizdi, bu yüzden bekledik."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The attribution, which is why we waited, was unclear."
+     "target": "The attribution was unclear, which is why we waited."
     }
    },
    {
@@ -15506,17 +15506,17 @@
      },
      {
       "lang": "en",
-      "text": "The attribution, which is why we waited, was unclear."
+      "text": "The attribution was unclear, which is why we waited."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The attribution, which is why we waited, was unclear.",
+     "statement": "The attribution was unclear, which is why we waited.",
      "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Ek bilgi virgüller arasında duruyor ve çıkarılsa cümle yine tam kalıyor."
+       "text": "Doğru. which is why cümlenin sonunda duruyor ve cümlenin tamamına bağlanıyor."
       }
      ]
     }
@@ -15569,15 +15569,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sen kur: Kaynak, ki bu yüzden kontrol ettik, yeniydi."
+      "text": "Şimdi sen kur: Kaynak yeniydi, bu yüzden kontrol ettik."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "The source, which is why we checked, was new.",
+     "target": "The source was new, which is why we checked.",
      "accept": [
-      "The source, which is why we checked, was fresh.",
-      "That source, which is why we checked, was new."
+      "The source was fresh, which is why we checked.",
+      "That source was new, which is why we checked."
      ],
      "hint": [
       {
@@ -15594,7 +15594,7 @@
       },
       {
        "lang": "en",
-       "text": "The source, which is why we checked, was new."
+       "text": "The source was new, which is why we checked."
       },
       {
        "lang": "tr",
@@ -18245,7 +18245,7 @@
    },
    {
     "de": "collection",
-    "tr": "derlem"
+    "tr": "derleme / koleksiyon"
    },
    {
     "de": "imprint",
@@ -21203,7 +21203,7 @@
    },
    {
     "de": "gravity",
-    "tr": "yerçekimi"
+    "tr": "yer çekimi"
    },
    {
     "de": "acceleration",
@@ -21725,7 +21725,7 @@
     "tr": "edilgen bir ek bilgiyi şeye bağlar"
    },
    {
-    "de": "The interface, which is why we stopped, is old.",
+    "de": "The interface is old, which is why we stopped.",
     "tr": "cümlenin tamamına ek bilgi ekler"
    },
    {
@@ -21797,16 +21797,16 @@
      },
      {
       "lang": "en",
-      "text": "The interface, which is why we stopped, is old."
+      "text": "The interface is old, which is why we stopped."
      },
      {
       "lang": "tr",
-      "text": "Arayüz, ki bu yüzden durduk, eski."
+      "text": "Arayüz eski, bu yüzden durduk."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The interface, which is why we stopped, is old."
+     "target": "The interface is old, which is why we stopped."
     }
    },
    {
@@ -21915,17 +21915,17 @@
      },
      {
       "lang": "en",
-      "text": "The interface, which is why we stopped, is old."
+      "text": "The interface is old, which is why we stopped."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The interface, which is why we stopped, is old.",
+     "statement": "The interface is old, which is why we stopped.",
      "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Doğru. Ek bilgi virgüller arasında duruyor ve çıkarılsa cümle yine tam kalıyor."
+       "text": "Doğru. which is why cümlenin sonunda duruyor ve cümlenin tamamına bağlanıyor."
       }
      ]
     }
@@ -21978,15 +21978,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sen kur: Araç, ki bu yüzden bekledik, yavaş."
+      "text": "Şimdi sen kur: Araç yavaş, bu yüzden bekledik."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "The tool, which is why we waited, is slow.",
+     "target": "The tool is slow, which is why we waited.",
      "accept": [
-      "The tool, which is why we waited, is very slow.",
-      "The program, which is why we waited, is slow."
+      "The tool is very slow, which is why we waited.",
+      "The program is slow, which is why we waited."
      ],
      "hint": [
       {
@@ -22003,7 +22003,7 @@
       },
       {
        "lang": "en",
-       "text": "The tool, which is why we waited, is slow."
+       "text": "The tool is slow, which is why we waited."
       },
       {
        "lang": "tr",
@@ -26675,7 +26675,7 @@
     "tr": "kanuna bilgi ekler"
    },
    {
-    "de": "My neighbour, whose citizenship is recent, votes today.",
+    "de": "My neighbor, whose citizenship is recent, votes today.",
     "tr": "kişiye ait bir bilgi ekler"
    }
   ],
@@ -26779,7 +26779,7 @@
      },
      {
       "lang": "en",
-      "text": "My neighbour, whose citizenship is recent, votes today."
+      "text": "My neighbor, whose citizenship is recent, votes today."
      },
      {
       "lang": "tr",
@@ -26788,7 +26788,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "My neighbour, whose citizenship is recent, votes today."
+     "target": "My neighbor, whose citizenship is recent, votes today."
     }
    },
    {
@@ -26929,10 +26929,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "My neighbour, whose passport is recent, votes today.",
+     "target": "My neighbor, whose passport is recent, votes today.",
      "accept": [
-      "My neighbour, whose passport is new, votes today.",
-      "My neighbour, whose citizenship is recent, votes today."
+      "My neighbor, whose passport is new, votes today.",
+      "My neighbor, whose citizenship is recent, votes today."
      ],
      "hint": [
       {
@@ -26949,7 +26949,7 @@
       },
       {
        "lang": "en",
-       "text": "My neighbour, whose passport is recent, votes today."
+       "text": "My neighbor, whose passport is recent, votes today."
       },
       {
        "lang": "tr",
@@ -31606,7 +31606,7 @@
    },
    {
     "de": "The dress, which is a traditional costume, is new.",
-    "tr": "nesneye bilgi ekler"
+    "tr": "bir eşyaya bilgi ekler"
    },
    {
     "de": "My aunt, whose interpretation is varied, dances first.",
@@ -31673,7 +31673,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kalıbımız nesneye bilgi ekliyor. Tekrar et:"
+      "text": "İkinci kalıbımız bir eşyaya bilgi ekliyor. Tekrar et:"
      },
      {
       "lang": "en",
@@ -37392,7 +37392,7 @@
    },
    {
     "de": "use up",
-    "tr": "bitirmek"
+    "tr": "tüketmek / bitirmek"
    },
    {
     "de": "set aside",
@@ -41382,7 +41382,7 @@
    },
    {
     "de": "My sister, who is ambitious, stayed calm.",
-    "tr": "ikinci kişiye bilgi ekler"
+    "tr": "başka bir kişiye bilgi ekler"
    },
    {
     "de": "My colleague, whose manner is composed, asked once.",
@@ -41449,7 +41449,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kalıbımız ikinci kişiye bilgi ekliyor. Tekrar et:"
+      "text": "İkinci kalıbımız başka bir kişiye bilgi ekliyor. Tekrar et:"
      },
      {
       "lang": "en",
@@ -43348,7 +43348,7 @@
    },
    {
     "de": "reliability",
-    "tr": "güvenilirlik"
+    "tr": "güvenilirlik / sağlamlık"
    },
    {
     "de": "birth rate",

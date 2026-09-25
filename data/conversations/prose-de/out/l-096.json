@@ -405,9 +405,9 @@
   "de": "nennt im Passiv, was bis dahin fertig ist"
  },
  {
-  "tr": "Doğru. Ek bilgi virgüller arasında duruyor ve çıkarılsa cümle yine tam kalıyor.",
+  "tr": "Doğru. which is why cümlenin sonunda duruyor ve cümlenin tamamına bağlanıyor.",
   "kind": "why.tr",
-  "de": "Richtig. Die Zusatzinformation steht zwischen Kommas, und ohne sie bleibt der Satz vollständig."
+  "de": "Richtig. which is why steht am Satzende und bezieht sich auf den ganzen Satz."
  },
  {
   "tr": "Doğru. Her iki yarının öznesi de aynı kişi; özne değişseydi bu öbek kurulamazdı.",
@@ -795,9 +795,9 @@
   "de": "Es wird berichtet, dass die Befunde klar sind."
  },
  {
-  "tr": "Hedef, ki bu yüzden toplandık, açık.",
+  "tr": "Hedef açık, bu yüzden toplandık.",
   "kind": "say.tr",
-  "de": "Das Ziel, weshalb wir uns getroffen haben, ist klar."
+  "de": "Das Ziel ist klar, deshalb haben wir uns getroffen."
  },
  {
   "tr": "ile cümle kurulur ve özne boş kalır;",
@@ -935,9 +935,9 @@
   "de": "Unsere zweite Wendung sagt das Geschehene kurz. Wiederhole:"
  },
  {
-  "tr": "Şimdi sen kur: Plan, ki bu yüzden kaldık, hazır.",
+  "tr": "Şimdi sen kur: Plan hazır, bu yüzden kaldık.",
   "kind": "say.tr",
-  "de": "Jetzt du: Der Plan, weshalb wir geblieben sind, ist fertig."
+  "de": "Jetzt du: Der Plan ist fertig, deshalb sind wir geblieben."
  },
  {
   "tr": "Bir işi birine vermek demek. Toplantı kaydına ise",

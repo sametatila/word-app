@@ -185,9 +185,19 @@
   "de": "Gebühr"
  },
  {
+  "tr": "masraf / gider",
+  "kind": "vocab.tr",
+  "de": "Ausgabe / Kosten"
+ },
+ {
   "tr": "oturum",
   "kind": "vocab.tr",
   "de": "Aufenthalt"
+ },
+ {
+  "tr": "oturum / seans",
+  "kind": "vocab.tr",
+  "de": "Sitzung"
  },
  {
   "tr": "poliçe",
@@ -238,6 +248,16 @@
   "tr": "düzenlemek",
   "kind": "vocab.tr",
   "de": "ausstellen"
+ },
+ {
+  "tr": "düzenlemek / yönetmek",
+  "kind": "vocab.tr",
+  "de": "regeln / bestimmen"
+ },
+ {
+  "tr": "organize etmek / düzenlemek",
+  "kind": "vocab.tr",
+  "de": "organisieren"
  },
  {
   "tr": "işaretlemek",

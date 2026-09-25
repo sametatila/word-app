@@ -720,9 +720,9 @@
   "de": "Noch eins: Die Redakteurin, an die wir geschrieben haben, hat schnell geantwortet."
  },
  {
-  "tr": "Kaynak gösterme, ki bu yüzden bekledik, belirsizdi.",
+  "tr": "Kaynak gösterme belirsizdi, bu yüzden bekledik.",
   "kind": "say.tr",
-  "de": "Die Quellenangabe, weshalb wir gewartet haben, war unklar."
+  "de": "Die Quellenangabe war unklar, deshalb haben wir gewartet."
  },
  {
   "tr": "Rakamların tirajda bir düşüş gösterdiği söyleniyor.",
@@ -800,9 +800,9 @@
   "de": "und kann nicht wegfallen. In der Nachrichtensprache wird die Quelle so eingeführt."
  },
  {
-  "tr": "Şimdi sen kur: Kaynak, ki bu yüzden kontrol ettik, yeniydi.",
+  "tr": "Şimdi sen kur: Kaynak yeniydi, bu yüzden kontrol ettik.",
   "kind": "say.tr",
-  "de": "Jetzt du: Die Quelle, weshalb wir geprüft haben, war neu."
+  "de": "Jetzt du: Die Quelle war neu, deshalb haben wir geprüft."
  },
  {
   "tr": "Haber yayımlayan kuruluş demek. İlk kalıbımız da bu. Tekrar et:",
