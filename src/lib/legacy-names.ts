@@ -215,3 +215,25 @@ export function legacyAchievementGroup(group: string): string {
  * taşınmamış bir panel kaydı da okunsun diye eski ad burada.
  */
 export const LEGACY_FAIR_USE_CHAT_KEY = "roleplayTurnsPerDay";
+
+/*
+ * DEPLOY PENCERESİ: yeni kod canlıya geçtiğinde canlı içerik sürümü henüz
+ * yeni adlı paketleri taşımıyor olabilir (`deploy.sh` yayını en sonda
+ * yapıyor). O birkaç dakika boyunca web, yeni paket yoksa eski adlı paketi
+ * okuyup maddeyi yeni biçime çeviriyor; anadil sözlüğünde de eski madde adı
+ * yeni adın yerine geçiyor. Yayın bitince bu dal hiç çalışmıyor.
+ */
+
+/** Eski projeksiyondaki Konuşma maddesi (`roleplay` alanı) → yeni (`chat`). */
+export function fromLegacyConversationItem(item: unknown): unknown {
+  if (!item || typeof item !== "object" || !("roleplay" in item) || "chat" in item) return item;
+  const { roleplay, ...rest } = item as Record<string, unknown>;
+  return { ...rest, chat: roleplay };
+}
+
+/** Yeni pakette madde yoksa eski adlısı: `roleplay` → `chat`, `lesson` → `conversation`. */
+export function withLegacyNativeItems(dict: Record<string, unknown>): Record<string, unknown> {
+  const out = { ...dict };
+  for (const [now, old] of LEGACY_NATIVE_ITEMS) if (out[now] === undefined && out[old] !== undefined) out[now] = out[old];
+  return out;
+}

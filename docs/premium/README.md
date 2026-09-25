@@ -265,6 +265,8 @@ adlarla konuşuyor; aşağıdakiler yalnız onun için duruyor (hepsi yorumla i�
   anadil manifestinde eski madde adları (aynı hash); göstergede eski paket adıyla kapatma;
   tarayıcı deposu taşıması; hukuki yapılandırmada eski `roleplayTurnsPerDay` anahtarı
 - `scripts/content-publish.ts`: eski adlı `lessons/<kurs>-<sv>` paketleri (eski projeksiyon)
+- `src/lib/content/serve.ts`: deploy penceresi — canlı sürümde yeni adlı paket yoksa eski
+  adlısı okunup yeni biçime çevriliyor (`deploy.sh` yayını en sonda yaptığı için)
 - `mobile/src/lib/legacyNames.ts` (+ `accountScope`taki iki eski anahtar): cihazdaki eski
   kayıtların bir kez taşınması, eski paket dizininin silinmesi
 

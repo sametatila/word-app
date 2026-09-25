@@ -4,6 +4,7 @@ import { db } from "@/lib/db";
 import { contentItems, contentReleaseItems } from "@/lib/db/schema";
 import { FULL_PACK, ORDER_ITEM } from "./ids";
 import { body, pointer } from "./read";
+import { fromLegacyConversationItem, legacyPackName, withLegacyNativeItems } from "@/lib/legacy-names";
 
 /**
  * WEBİN İÇERİK KAPISI — paket paket okuma, ayrıştırılmış ve sıcak.
@@ -68,7 +69,8 @@ async function loadPackObject(release: number, pack: string): Promise<Record<str
       return null;
     }
   }
-  return Object.keys(out).length ? out : null;
+  /* Deploy penceresi: eski sürümdeki eski madde adları (geçici, lib/legacy-names). */
+  return Object.keys(out).length ? withLegacyNativeItems(out) : null;
 }
 
 async function loadPack(release: number, pack: string): Promise<unknown[]> {
@@ -77,7 +79,12 @@ async function loadPack(release: number, pack: string): Promise<unknown[]> {
     .from(contentReleaseItems)
     .innerJoin(contentItems, eq(contentItems.hash, contentReleaseItems.hash))
     .where(and(eq(contentReleaseItems.release, release), eq(contentReleaseItems.pack, pack)));
-  if (rows.length === 0) return [];
+  if (rows.length === 0) {
+    /* Deploy penceresi: canlı sürüm yeni adlı paketi henüz taşımıyorsa eski
+       adlısı okunup madde yeni biçime çevriliyor (geçici, lib/legacy-names). */
+    const old = legacyPackName(pack);
+    return old ? (await loadPack(release, old)).map(fromLegacyConversationItem) : [];
+  }
 
   const { gunzipSync } = await import("node:zlib");
   const parse = async (hash: string): Promise<unknown | null> => {

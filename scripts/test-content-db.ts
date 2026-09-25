@@ -17,6 +17,7 @@ import {
 } from "@/lib/content/read";
 import { legacyNativeManifest } from "@/lib/legacy-names";
 import { FULL_PACK } from "@/lib/content/ids";
+import { packItemsAt } from "@/lib/content/serve";
 
 /**
  * İÇERİK TESLİM HATTININ VERİTABANI TESTİ.
@@ -246,6 +247,19 @@ async function main() {
     invalidatePointer();
     check("gösterge yeni sürümü işaret ediyor", (await pointer()).r === future.version);
     check("alınacak taslak kalmadı", (await promoteDueDrafts(by)).promoted === null);
+
+    /* 13. DEPLOY PENCERESİ — canlı sürümde yalnız eski adlı Konuşma paketi varken
+       yeni kod yeni adla okuyabiliyor mu (geçici, lib/legacy-names). */
+    const oldOnly = await publish(
+      new Map([["lessons/tests-a1", pack({ "tests-a1-x": { id: "tests-a1-x", roleplay: { scene: "s" } } })]]),
+      { by, note: "eski adlı paket", live: false },
+    );
+    const viaNew = await packItemsAt<Record<string, unknown>>(oldOnly.version, "conversations/tests-a1");
+    check(
+      "yeni ad eski adlı paketi okuyor, sohbet alanı yeni adla",
+      viaNew.length === 1 && !!viaNew[0].chat && !("roleplay" in viaNew[0]),
+      JSON.stringify(viaNew),
+    );
   } finally {
     await restore(previousLive);
   }
