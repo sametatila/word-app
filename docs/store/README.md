@@ -227,6 +227,19 @@ Nutzungsbedingungen: https://www.lernomi.app/terms/de
 Datenschutzerklärung: https://www.lernomi.app/privacy/de
 ```
 
+**Kısa metinler (Samet onayladı, 2026-09-25):**
+
+| Alan | tr | en-US | de-DE |
+|---|---|---|---|
+| Play kısa açıklama (80) | yukarıda (70) | `Speak, understand, ace exams: German from A1 to C1, explained in English.` (73) | `Sprechen, verstehen, bestehen: Englisch von A1 bis C1, auf Deutsch erklärt.` (75) |
+| iOS tanıtım metni (170, incelemesiz değişir) | `Almancayı A1'den C1'e adım adım öğren: gerçek hayattan durumlarda konuş, her gün kelime turunu yap, 50'den fazla deneme sınavıyla nerede olduğunu gör.` (150) | `Learn German step by step from A1 to C1: talk through real-life situations, do a daily word round and see where you stand with 50+ mock exams.` (142) | `Englisch Schritt für Schritt von A1 bis C1: sprich in echten Alltagssituationen, übe täglich Wörter und sieh mit über 50 Probeprüfungen, wo du stehst.` (150) |
+| iOS anahtar kelimeler (100 bayt) | `ingilizce,kelime,sınav,deneme,dil,gramer,dinleme,okuma,yazma,konuşma,kurs,seviye,alman,a2,b1,b2` (97 bayt) | `vocabulary,words,grammar,listening,reading,writing,speaking,course,deutsch,mock,test,a2,b1,b2` (93) | `vokabeln,wortschatz,grammatik,hören,lesen,schreiben,prüfung,probeprüfung,test,kurs,a2,b1,b2` (94 bayt) |
+
+Anahtar kelime kuralları: ad ve altyazıdaki kelimeler tekrar yazılmaz (Apple onları zaten
+indeksliyor); sınav markası, "ders", "sertifika" yok (başarı belgesi resmî sertifika değil).
+`docs/appstore/listing.md` ve `docs/play/listing.md` içindeki eski taslaklar bunlarla
+değiştirildi sayılır; çelişirse bu tablo geçerli. Mağazaya giriş Samet açıkça isteyince.
+
 **Açık:** ekran görüntüleri ve öne çıkan grafik tasarımdan sonra. (Haftalık quizin en/de çevirisi 2026-09-25'te canlıya çıktı, içerik sürümü 24, kilitli `quiznative/*` paketleri; en/de metinlerindeki "explained in English / Erklärungen auf Deutsch" iddiası artık haftalık quiz için de doğru.)
 
 ## Yeniden üretmek
