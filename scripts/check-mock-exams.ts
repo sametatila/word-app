@@ -250,7 +250,9 @@ function checkItem(where: string, item: MockItem, task: MockTask) {
       else {
         const cue = item.cue.trim().toLowerCase();
         for (const a of item.accept) {
-          if (!new RegExp(`(^|\\s)${cue.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}($|\\s)`).test(a.toLowerCase())) {
+          /* Olumsuz kısaltma ("wouldn't", "couldn't") anahtar sözcüğü DEĞİŞTİRMEZ:
+             sözcük aynen duruyor, yalnız `not` kısalmış. Cambridge de böyle sayıyor. */
+          if (!new RegExp(`(^|\\s)${cue.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(n['’]t)?($|\\s)`).test(a.toLowerCase())) {
             fail(where, `kabul edilen cevap anahtar sözcüğü aynen taşımıyor: "${a}" içinde "${item.cue}" yok`);
           }
           const n = a.trim().split(/\s+/).filter(Boolean).length;
