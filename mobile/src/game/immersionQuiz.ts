@@ -16,7 +16,7 @@ import type { SkillQuestion } from "../data/skills";
 const UNIT_CONVERSATIONS = 4;
 const MODULE_SIZE = 10;
 type VocabItem = { de: string; tr: string };
-type PatternItem = { de: string; tr: string };
+type PatternItem = { de: string; tr: string; focus?: string };
 
 
 function dedupeBy<T>(xs: T[], key: (x: T) => string): T[] {
@@ -49,7 +49,7 @@ export function buildUnitBrief(level: string, unitIndex: number): UnitBrief {
     unitId: `${currentCourseId()}-${String(level).toLowerCase()}-u${String(unitIndex).padStart(2, "0")}`,
     index: unitIndex,
     vocab: dedupeBy(unitConversations.flatMap((l) => l.vocab), (v) => v.de),
-    patterns: dedupeBy(unitConversations.flatMap((l) => l.patterns), (p) => p.de),
+    patterns: dedupeBy(unitConversations.flatMap((l) => l.patterns.map((p: PatternItem) => ({ ...p, focus: l.focusId }))), (p) => p.de),
     theme,
     conversationTitles: unitConversations.map((l) => l.title),
   };
@@ -64,12 +64,12 @@ export function buildUnitBrief(level: string, unitIndex: number): UnitBrief {
  */
 export function earlierPool(level: string, unitIndex: number): QuizPool {
   const conversations = conversationsForLevel(level).slice(0, Math.max(0, unitIndex - 1) * UNIT_CONVERSATIONS);
-  return { vocab: conversations.flatMap((l) => l.vocab), patterns: conversations.flatMap((l) => l.patterns) };
+  return { vocab: conversations.flatMap((l) => l.vocab), patterns: conversations.flatMap((l) => l.patterns.map((p: PatternItem) => ({ ...p, focus: l.focusId }))) };
 }
 
 export function levelPool(level: string): QuizPool {
   const conversations = conversationsForLevel(level);
-  return { vocab: conversations.flatMap((l) => l.vocab), patterns: conversations.flatMap((l) => l.patterns) };
+  return { vocab: conversations.flatMap((l) => l.vocab), patterns: conversations.flatMap((l) => l.patterns.map((p: PatternItem) => ({ ...p, focus: l.focusId }))) };
 }
 
 /**
@@ -84,25 +84,75 @@ export function levelPool(level: string): QuizPool {
  * çeldiriciler birbirine karşı da aynı kuraldan geçer. Seçim yine
  * deterministik (aynı ünite hep aynı quiz'i verir).
  */
-type QuizCand = { text: string; mean: string; head: string };
+type QuizCand = { text: string; mean: string; head: string; focus?: string };
 
+/* YAKINLIK BAŞI — web `lib/immersion/quiz` ile BİREBİR aynı (`check:parity`). */
 const quizNorm = (x: string) =>
   x.toLowerCase().replace(/i̇/g, "i").replace(/[…«»"“”„]/g, "").replace(/\s+/g, " ").trim();
-const quizHead = (x: string) => quizNorm(x).replace(/^(der|die|das|the|to)\s+/, "");
+const quizHead = (x: string) => quizNorm(x).replace(/^(der|die|das|the|to|sich)\s+/, "");
 const quizParts = (x: string) => new Set(x.split(/[,;/]/).map(quizNorm).filter(Boolean));
 
-function quizClash(a: QuizCand, b: QuizCand): boolean {
-  if (quizNorm(a.text) === quizNorm(b.text) || quizHead(a.head) === quizHead(b.head)) return true;
-  const own = quizParts(a.mean);
-  for (const m of quizParts(b.mean)) if (own.has(m)) return true;
-  return false;
+/* Anlam sözcüğü sayılmayan çerçeve sözcükleri: kalıp notlarının çoğu "…
+   söylerken kullanılır" diye bitiyor; bunlar ortak diye iki not aynı şeyi
+   söylemiş olmaz. */
+const QUIZ_FRAME = new Set([
+  "kullanılır", "söylerken", "söyler", "sorarken", "sorar", "anlatırken", "anlatır", "bildirir", "bildirirken",
+  "için", "olan", "olarak", "gibi", "daha", "birine", "birini", "şeyi", "şeyin", "etmek", "olmak", "yapmak", "eder",
+  "eine", "einen", "einem", "einer", "wird", "werden", "oder", "auch", "nicht", "sagt", "wenn", "dass", "sich", "etwas", "benutzt",
+  "with", "that", "this", "from", "when", "used", "says", "something", "someone", "your", "about",
+]);
+const quizStems = (x: string) =>
+  new Set(quizNorm(x).split(/[^\p{L}]+/u).filter((w) => w.length >= 4 && !QUIZ_FRAME.has(w)).map((w) => w.slice(0, 5)));
+const quizVerb = (w: string) => w.replace(/(mak|mek)$/, "");
+/** Tek sözcüklü iki biçim aynı kökten mi: abwägen / Abwägung, hedef / hedeflemek. */
+function quizRoot(a: string, b: string): boolean {
+  if (a.includes(" ") || b.includes(" ")) return false;
+  if (quizVerb(a) === quizVerb(b)) return true;
+  let n = 0;
+  while (n < a.length && n < b.length && a[n] === b[n]) n++;
+  return n >= 5 && n >= 0.6 * Math.min(a.length, b.length);
 }
 
-/* TOHUM ÜNİTEDEN — web `lib/immersion/quiz` ile BİREBİR aynı kural (gerekçe
-   orada): çeldiriciler ve cevabın yeri `ünite | soru sayısı | soru` tohumuyla
-   `seededShuffle`dan. Eskiden yalnız soru sırasından geliyordu ve aynı sıradaki
-   soru her ünitede aynı çeldiricilerle, aynı konumda çıkıyordu. */
+/* Makinenin ayıramadığı eş anlamlı başlıklar (2026-09-25 quiz incelemesi):
+   biri sorulurken öteki çeldirici olmaz. Başlık `quizHead` biçiminde. */
+const QUIZ_NEAR: [string, string][] = [
+  ["überblick", "gliederung"],
+  ["erwägung", "in betracht ziehen"],
+  ["hinnehmen", "in kauf nehmen"],
+];
+
+/**
+ * İKİNCİ DOĞRU ŞIK. Aday şu durumlarda elenir:
+ *  - metni ya da başlığı aynı; anlam parçaları (virgül, noktalı virgül, eğik
+ *    çizgiyle ayrılmış) kesişiyor;
+ *  - başlıklar ya da tek sözcüklü karşılıklar aynı kökten (abwägen /
+ *    Abwägung, aç / açmak);
+ *  - iki kalıp aynı dilbilgisi odağından: "yazı dilinde geçmiş: Präteritum"
+ *    sorusunda başka bir Präteritum kalıbı da doğru okunuyordu;
+ *  - anlamlar çerçeve dışı iki sözcük paylaşıyor ("kaynağı söylemeden bir
+ *    iddiayı aktarır" / "aktarır ve kaynağı açık bırakır"), tek sözcüklüyse bir;
+ *  - başlıklar `QUIZ_NEAR` eş anlamlı listesinde.
+ */
+function quizClash(a: QuizCand, b: QuizCand): boolean {
+  const ha = quizHead(a.head), hb = quizHead(b.head);
+  if (quizNorm(a.text) === quizNorm(b.text) || ha === hb || quizRoot(ha, hb)) return true;
+  if (a.focus && a.focus === b.focus) return true;
+  if (QUIZ_NEAR.some(([x, y]) => (x === ha && y === hb) || (x === hb && y === ha))) return true;
+  const own = quizParts(a.mean), other = quizParts(b.mean);
+  for (const m of other) if (own.has(m)) return true;
+  for (const x of own) for (const y of other) if (quizRoot(x, y)) return true;
+  const sa = quizStems(a.mean), sb = quizStems(b.mean);
+  let shared = 0;
+  for (const w of sb) if (sa.has(w)) shared++;
+  return shared >= 2 || (shared >= 1 && Math.min(sa.size, sb.size) <= 1);
+}
+/* YAKINLIK SONU */
+
 function pickDistractors(correct: QuizCand, pool: QuizCand[], seed: string, n = 3): string[] {
+  /* Aynı başlığın BÜTÜN karşılıkları (web ile aynı kural). */
+  const head = quizHead(correct.head);
+  const means = pool.filter((c) => quizHead(c.head) === head).map((c) => c.mean);
+  correct = { ...correct, mean: [correct.mean, ...means].join("; ") };
   const uniqPool: QuizCand[] = [];
   for (const c of pool) {
     if (!c.text || quizClash(correct, c)) continue;
@@ -179,7 +229,7 @@ export function deriveQuiz(
 ): SkillQuestion[] {
   const qs: SkillQuestion[] = [];
   const vocabCands = pool.vocab.map((v) => ({ text: v.tr, mean: v.tr, head: v.de }));
-  const dePatternCands = pool.patterns.map((p) => ({ text: p.de, mean: p.tr, head: p.de }));
+  const dePatternCands = pool.patterns.map((p) => ({ text: p.de, mean: p.tr, head: p.de, focus: p.focus }));
   const patTarget = brief.patterns.length ? Math.min(2, brief.patterns.length) : 0;
   const reviewWords = pickReview(brief, review, Math.floor(count / 3));
   const vocabTarget = Math.min(brief.vocab.length, count - patTarget - reviewWords.length);
@@ -220,15 +270,15 @@ export function deriveQuiz(
      denir?" diye okunuyordu. Orada soru tersine dönüyor; web tarafı da öyle
      (bkz. `src/lib/immersion/quiz.ts` `PatternAsk`). */
   const meaning = currentCourseId() === "en";
-  const trPatternCands = pool.patterns.map((p) => ({ text: p.tr, mean: p.tr, head: p.de }));
+  const trPatternCands = pool.patterns.map((p) => ({ text: p.tr, mean: p.tr, head: p.de, focus: p.focus }));
   for (let j = 0; j < patTarget && qs.length < count; j++) {
     const p = brief.patterns[j];
     if (meaning) {
-      const { options, answer } = placeAnswer(p.tr, pickDistractors({ text: p.tr, mean: p.tr, head: p.de }, trPatternCands, `${seed}|m${j}`), `${seed}|m${j}`);
+      const { options, answer } = placeAnswer(p.tr, pickDistractors({ text: p.tr, mean: p.tr, head: p.de, focus: p.focus }, trPatternCands, `${seed}|m${j}`), `${seed}|m${j}`);
       qs.push({ kind: "mcq", text: t("quiz.what_means", { word: p.de }), options, answer, explain: `${p.de} = ${p.tr}` });
       continue;
     }
-    const { options, answer } = placeAnswer(p.de, pickDistractors({ text: p.de, mean: p.tr, head: p.de }, dePatternCands, `${seed}|m${j}`), `${seed}|m${j}`);
+    const { options, answer } = placeAnswer(p.de, pickDistractors({ text: p.de, mean: p.tr, head: p.de, focus: p.focus }, dePatternCands, `${seed}|m${j}`), `${seed}|m${j}`);
     qs.push({ kind: "mcq", text: t("quiz.how_to_say", { pattern: p.tr, target: targetLangName() }), options, answer, explain: `${p.tr} → ${p.de}` });
   }
   return qs.slice(0, count);

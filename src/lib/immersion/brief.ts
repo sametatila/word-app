@@ -29,7 +29,7 @@ export type UnitBrief = {
   /** Birleşik kelime havuzu (de'ye göre tekilleştirilmiş). */
   vocab: VocabItem[];
   /** Birleşik kalıp havuzu (de'ye göre tekilleştirilmiş). */
-  patterns: PatternItem[];
+  patterns: (PatternItem & { focus?: string })[];
   /** Bu üniteye desenden beklenen yeni içerik slotları. */
   needs: { read: number; listen: number; write: number };
 };
@@ -81,7 +81,8 @@ export function buildUnitBriefs(
       conversationTitles: unitConversations.map((l) => l.title),
       cando: uniq(unitConversations.flatMap((l) => l.cando ?? [])),
       vocab: dedupeBy(unitConversations.flatMap((l) => l.vocab), (v) => v.de),
-      patterns: dedupeBy(unitConversations.flatMap((l) => l.patterns), (p) => p.de),
+      // Kalıp konuşmanın odağıyla: quiz aynı odaktan çeldirici seçmiyor.
+      patterns: dedupeBy(unitConversations.flatMap((l) => l.patterns.map((p) => ({ ...p, focus: l.focusId }))), (p) => p.de),
       needs: { read: 2, listen: 2, write: 2 },
     });
   }

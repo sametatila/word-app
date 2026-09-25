@@ -21753,6 +21753,22 @@ console.log("\n" + C.b + "ELLE YAZILMIS UNITE SORULARI" + C.off);
   sameList("de-a1-u01 verisi", [m && m === w ? "ayni" : "farkli"], ["ayni"]);
 }
 
+/* ── QUIZ YAKINLIK KURALI ───────────────────────────────────────────────────
+ * Ünite quizinin "ikinci doğru şık" kuralı (kök, odak, örtüşen anlam, eş
+ * anlamlı listesi) web `lib/immersion/quiz` ve mobil `game/immersionQuiz`te iki
+ * kopya. Biri değişip öteki kalırsa aynı ünitede iki platform farklı çeldirici
+ * seçer. "YAKINLIK BAŞI" ile "YAKINLIK SONU" arası, ilk satırdaki yön yorumu
+ * dışında birebir aynı olmalı. */
+{
+  const yakin = (f) => {
+    const m = read(f).match(/\/\* YAKINLIK BAŞI[^\n]*\n([\s\S]*?)\/\* YAKINLIK SONU \*\//);
+    return m ? m[1] : "";
+  };
+  const w = yakin("src/lib/immersion/quiz.ts");
+  const m = yakin("mobile/src/game/immersionQuiz.ts");
+  sameList("quiz yakinlik kurali", [m && m === w ? "ayni" : "farkli"], ["ayni"]);
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
