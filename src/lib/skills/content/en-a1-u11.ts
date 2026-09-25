@@ -171,7 +171,7 @@ export const enA1U11: SkillExercise[] = [
     segments: [
       { speaker: "Kaan", text: "Excuse me, how much is this jacket?" },
       { speaker: "Seller", text: "It's eighty dollars. It's a very good jacket." },
-      { speaker: "Kaan", text: "Eighty! That's expensive. Have you got a cheap one?" },
+      { speaker: "Kaan", text: "Eighty! That's expensive. Do you have a cheap one?" },
       { speaker: "Seller", text: "This black jacket is forty dollars." },
       { speaker: "Kaan", text: "Can I try it on?" },
       { speaker: "Seller", text: "Of course. The fitting room is there." },

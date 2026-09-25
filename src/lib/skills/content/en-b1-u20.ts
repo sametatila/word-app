@@ -39,7 +39,7 @@ export const enB1U20: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 20,
-    title: "The sick note",
+    title: "The doctor's note",
     genre: "guide",
     intro: "Dört bağlaç, dört iş. Hangisi ekliyor, hangisi uyarıyor?",
     gloss: [
@@ -55,13 +55,13 @@ export const enB1U20: SkillExercise[] = [
     ],
     minutes: 7,
     text:
-      "Four small words that do four different jobs, and a sick note is where you need all of them in one afternoon.\n" +
+      "Four small words that do four different jobs, and a doctor's note is where you need all of them in one afternoon.\n" +
       "I sent the note; moreover I called the office. „Moreover“ adds a second thing of the same kind and it makes the first one heavier. It belongs in writing and almost never in speech.\n" +
       "Besides the note, they want a date. „Besides“ also adds, but it starts from what you already have: apart from this, there is that. Different shape, same direction.\n" +
       "Take the leave now; otherwise you lose it. „Otherwise“ is the only one of the four that carries a warning. It means: if you do not, this follows. Learners use it half as often as they should.\n" +
       "I did not send an email; instead I went to reception. „Instead“ replaces. Nothing is added — one thing is exchanged for another.\n" +
       "For the note itself: three working days. The practice will not backdate it, so an absence on Monday needs a note by Thursday and not a call on Friday.\n" +
-      "And the line nobody reads: the note says you were ill, not what you had. The office is not allowed to ask, and you are not required to say.",
+      "And the line nobody reads: the note says you were sick, not what you had. The office is not allowed to ask, and you are not required to say.",
     questions: [
       {
         text: "Which word carries a warning?",
@@ -108,8 +108,8 @@ export const enB1U20: SkillExercise[] = [
         text: "What does the note say?",
         options: [],
         answer: 0,
-        accept: ["that you were ill", "you were ill", "only that"],
-        explain: "„the note says you were ill, not what you had.“",
+        accept: ["that you were sick", "you were sick", "only that"],
+        explain: "„the note says you were sick, not what you had.“",
       },
     ],
   },
@@ -265,7 +265,7 @@ export const enB1U20: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 20,
-    title: "A night in hospital",
+    title: "A night in the hospital",
     genre: "monologue",
     intro: "Bir gecelik yatış. Hangi cümle plan, hangisi ayarlanmış?",
     gloss: [
@@ -278,7 +278,7 @@ export const enB1U20: SkillExercise[] = [
     segments: [
       { speaker: "Ela", text: "They will operate tomorrow morning. Eight o'clock, and I am the first on the list, which everybody tells me is the good slot." },
       { speaker: "Ela", text: "I am going to stay for one night. That was my decision three weeks ago and the ward agreed with it today." },
-      { speaker: "Ela", text: "My sister is visiting at eight this evening. Arranged, in the diary, and she will bring the one thing the list does not mention: a phone charger with a long cable." },
+      { speaker: "Ela", text: "My sister is visiting at eight this evening. Arranged, in the calendar, and she will bring the one thing the list does not mention: a phone charger with a long cable." },
       { speaker: "Ela", text: "The bed by the window was free and I took it. Six hours later I understand why it was free: the door and the window are the two noisy places." },
       { speaker: "Ela", text: "The care here is calm in a way I did not expect. Nobody hurries and nobody is late, and those two things are apparently possible together." },
       { speaker: "Ela", text: "What I brought and did not need: three books. What I needed and did not bring: a pen." },
@@ -381,7 +381,7 @@ export const enB1U20: SkillExercise[] = [
           { label: "Time", answer: "three working days", accept: ["3 days"] },
           { label: "Backdate", answer: "no", accept: ["not possible"] },
           { label: "Monday absence", answer: "by Thursday", accept: ["Thursday"] },
-          { label: "The note says", answer: "you were ill", accept: ["only that you were ill"] },
+          { label: "The note says", answer: "you were sick", accept: ["only that you were sick"] },
         ],
       },
     ],

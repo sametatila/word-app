@@ -323,7 +323,7 @@ export const enA1U05: SkillExercise[] = [
     intro: "Görünüş yaz. Sonunda kişi kartını doldur.",
     gloss: [
       { de: "He is tall.", tr: "o uzun boylu" },
-      { de: "She has got long hair.", tr: "uzun saçları var" },
+      { de: "She has long hair.", tr: "uzun saçları var" },
       { de: "What does he look like?", tr: "o neye benziyor" },
     ],
     minutes: 6,
@@ -337,7 +337,7 @@ export const enA1U05: SkillExercise[] = [
       {
         kind: "build",
         tr: "Uzun saçları var.",
-        answer: "She has got long hair.",
+        answer: "She has long hair.",
         alternatives: ["She has long hair."],
         hint: "„hair“ tekildir ve „-s“ almaz: long hair, „hairs“ değil.",
       },

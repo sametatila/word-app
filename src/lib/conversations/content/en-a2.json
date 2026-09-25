@@ -1172,12 +1172,12 @@
      },
      {
       "lang": "en",
-      "text": "They were playing football."
+      "text": "They were playing soccer."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "They were playing football.",
+     "statement": "They were playing soccer.",
      "answer": true,
      "why": [
       {
@@ -2927,10 +2927,8 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "After that, we watched a film.",
+     "target": "After that, we watched a movie.",
      "accept": [
-      "After that we watched a film.",
-      "After that, we watched a movie.",
       "After that we watched a movie."
      ],
      "hint": [
@@ -2940,11 +2938,11 @@
       },
       {
        "lang": "tr",
-       "text": "izlemek: watch → watched · film: film ya da movie"
+       "text": "izlemek: watch → watched · film: movie"
       },
       {
        "lang": "en",
-       "text": "After that, we watched a film."
+       "text": "After that, we watched a movie."
       },
       {
        "lang": "tr",
@@ -3195,12 +3193,12 @@
      },
      {
       "lang": "en",
-      "text": "Yesterday I go to the cinema."
+      "text": "Yesterday I go to the movies."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Yesterday I went to the cinema.",
+     "statement": "Yesterday I went to the movies.",
      "answer": true,
      "why": [
       {
@@ -3218,7 +3216,7 @@
      },
      {
       "lang": "en",
-      "text": "Yesterday was a busy day. First I went to work. Then I met my sister for lunch. After that, we walked in the park because the weather was nice. I was tired, so I took the bus home. Finally, I watched a film and went to bed."
+      "text": "Yesterday was a busy day. First I went to work. Then I met my sister for lunch. After that, we walked in the park because the weather was nice. I was tired, so I took the bus home. Finally, I watched a movie and went to bed."
      },
      {
       "lang": "tr",
@@ -3296,7 +3294,7 @@
     "tr": "yaşamak"
    },
    {
-    "de": "primary school",
+    "de": "elementary school",
     "tr": "ilkokul"
    },
    {
@@ -3310,7 +3308,7 @@
   ],
   "patterns": [
    {
-    "de": "I used to play football.",
+    "de": "I used to play soccer.",
     "tr": "eskiden düzenli yaptığın ama artık yapmadığın bir şeyi anlatırken kullanılır"
    },
    {
@@ -3362,7 +3360,7 @@
      },
      {
       "lang": "en",
-      "text": "I used to play football."
+      "text": "I used to play soccer."
      },
      {
       "lang": "tr",
@@ -3371,7 +3369,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I used to play football."
+     "target": "I used to play soccer."
     }
    },
    {
@@ -3657,10 +3655,8 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "Did you use to play football?",
+     "target": "Did you use to play soccer?",
      "accept": [
-      "Did you use to play football",
-      "Did you use to play soccer?",
       "Did you use to play soccer"
      ],
      "hint": [
@@ -3674,7 +3670,7 @@
       },
       {
        "lang": "en",
-       "text": "Did you use to play football?"
+       "text": "Did you use to play soccer?"
       },
       {
        "lang": "tr",
@@ -3762,7 +3758,7 @@
      },
      {
       "lang": "en",
-      "text": "primary school"
+      "text": "elementary school"
      },
      {
       "lang": "tr",
@@ -3770,12 +3766,12 @@
      },
      {
       "lang": "en",
-      "text": "primary school"
+      "text": "elementary school"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "primary school"
+     "target": "elementary school"
     }
    },
    {
@@ -4173,11 +4169,11 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "When I was a child, I used to play football every day.",
+     "target": "When I was a child, I used to play soccer every day.",
      "accept": [
-      "I used to play football every day.",
-      "When I was a child, I played football every day.",
-      "When I was a kid, I used to play football every day."
+      "I used to play soccer every day.",
+      "When I was a child, I played soccer every day.",
+      "When I was a kid, I used to play soccer every day."
      ],
      "hint": [
       {
@@ -4186,7 +4182,7 @@
       },
       {
        "lang": "en",
-       "text": "When I was a child, I used to play football every day."
+       "text": "When I was a child, I used to play soccer every day."
       },
       {
        "lang": "tr",
@@ -4373,7 +4369,6 @@
      "kind": "produce",
      "target": "I remember our neighbors.",
      "accept": [
-      "I remember our neighbors.",
       "I remember our neighbors",
       "I remember my neighbors."
      ],
@@ -4456,7 +4451,7 @@
   "level": "A2",
   "course": "en",
   "icon": "book",
-  "title": "A holiday I remember",
+  "title": "A vacation I remember",
   "titleTr": "Unutmadığım tatil",
   "summary": "Geçmişte yaşadığın bir tatili past simple ile, gittiğin yeri, kaldığın oteli ve nasıl geçtiğini anlatarak İngilizce anlatmayı öğretir.",
   "minutes": 9,
@@ -4693,7 +4688,7 @@
      },
      {
       "lang": "en",
-      "text": "I enjoyed the holiday."
+      "text": "I enjoyed the vacation."
      },
      {
       "lang": "tr",
@@ -4963,11 +4958,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "The flight was long, but I enjoyed the holiday.",
+     "target": "The flight was long, but I enjoyed the vacation.",
      "accept": [
-      "The flight was long but I enjoyed the holiday.",
-      "The flight was long, but I enjoyed the vacation.",
-      "The flight was long, but I enjoyed my holiday."
+      "The flight was long but I enjoyed the vacation.",
+      "The flight was long, but I enjoyed my vacation."
      ],
      "hint": [
       {
@@ -4980,7 +4974,7 @@
       },
       {
        "lang": "en",
-       "text": "The flight was long, but I enjoyed the holiday."
+       "text": "The flight was long, but I enjoyed the vacation."
       },
       {
        "lang": "tr",
@@ -5021,7 +5015,7 @@
   "chat": {
    "scene": "İş yerinde kahve molası; arkadaşın tatilden döndüğünü öğrenmiş ve merak ediyor.",
    "partner": "Emma, senin İngiliz iş arkadaşın",
-   "opening": "Hi! You look great. Where did you go on holiday?",
+   "opening": "Hi! You look great. Where did you go on vacation?",
    "openingTr": "Selam! Harika görünüyorsun. Tatilde nereye gittin?",
    "goal": "Nereye gittiğini, nerede ve kaç gün kaldığını ve tatilin nasıl geçtiğini geçmiş zaman cümleleriyle anlatınca konuşma başarılı sayılır.",
    "minTurns": 7
@@ -7378,11 +7372,11 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "My mother has gone to the shop.",
+     "target": "My mother has gone to the store.",
      "accept": [
-      "My mum has gone to the shop.",
+      "My mom has gone to the store.",
       "My mother has gone to the supermarket.",
-      "My mum has gone to the market."
+      "My mom has gone to the market."
      ],
      "hint": [
       {
@@ -7391,11 +7385,11 @@
       },
       {
        "lang": "en",
-       "text": "My mother has ... to the shop."
+       "text": "My mother has ... to the store."
       },
       {
        "lang": "en",
-       "text": "My mother has gone to the shop."
+       "text": "My mother has gone to the store."
       },
       {
        "lang": "tr",
@@ -8857,7 +8851,7 @@
       "I have just arrived",
       "I've just arrived",
       "I've just got here.",
-      "I have just got here."
+      "I have just gotten here."
      ],
      "hint": [
       {
@@ -9239,7 +9233,7 @@
      },
      {
       "lang": "en",
-      "text": "I studied engineering at university."
+      "text": "I studied engineering in college."
      }
     ]
    },
@@ -9841,7 +9835,7 @@
      },
      {
       "lang": "en",
-      "text": "I'm sure you'll like this film."
+      "text": "I'm sure you'll like this movie."
      },
      {
       "lang": "tr",
@@ -10446,7 +10440,7 @@
      },
      {
       "lang": "tr",
-      "text": "İstiyorum demek ama I want to kalıbından çok daha nazik. İngilizler bunu tercih eder."
+      "text": "İstiyorum demek ama I want to kalıbından çok daha nazik. Anadili İngilizce olanlar bunu tercih eder."
      }
     ]
    },
@@ -11508,7 +11502,7 @@
     "tr": "uzun sıfatlarla \"en ...\" demek için the most kullanılır"
    },
    {
-    "de": "It's the best film I've ever seen.",
+    "de": "It's the best movie I've ever seen.",
     "tr": "\"şimdiye kadar gördüğüm en ...\" demek için ever ile kurulur"
    }
   ],
@@ -11815,7 +11809,7 @@
      },
      {
       "lang": "en",
-      "text": "my favorite film"
+      "text": "my favorite movie"
      },
      {
       "lang": "tr",
@@ -11824,7 +11818,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "my favorite film"
+     "target": "my favorite movie"
     }
    },
    {
@@ -11948,21 +11942,19 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "This is the worst film I've ever seen.",
+     "target": "This is the worst movie I've ever seen.",
      "accept": [
-      "It's the worst film I've ever seen.",
-      "It is the worst film I have ever seen.",
-      "This is the worst movie I've ever seen.",
-      "This is the worst film I have ever seen.",
-      "it is the worst film I've ever seen.",
-      "It's the worst film I have ever seen.",
-      "it's the worst film I have ever seen.",
-      "This is the worst movie I have ever seen."
+      "It's the worst movie I've ever seen.",
+      "It is the worst movie I have ever seen.",
+      "This is the worst movie I have ever seen.",
+      "it is the worst movie I've ever seen.",
+      "It's the worst movie I have ever seen.",
+      "it's the worst movie I have ever seen."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "This is the worst film ile başla."
+       "text": "This is the worst movie ile başla."
       },
       {
        "lang": "tr",
@@ -11970,7 +11962,7 @@
       },
       {
        "lang": "en",
-       "text": "This is the worst film I've ever seen."
+       "text": "This is the worst movie I've ever seen."
       },
       {
        "lang": "tr",
@@ -12088,7 +12080,7 @@
   "chat": {
    "scene": "Tatil dönüşü bir kafede İngiliz arkadaşın Emma ile fotoğraflarına bakıyorsunuz; sana tatilini soruyor.",
    "partner": "Emma, İngiliz arkadaşın",
-   "opening": "So, what was the best day of your holiday?",
+   "opening": "So, what was the best day of your vacation?",
    "openingTr": "Peki, tatilinin en güzel günü hangisiydi?",
    "goal": "Öğrenci en az iki üstünlük derecesi (the best, the worst, the most ... ya da favorite) kullanarak tatilinin en güzel ve en kötü yanını anlatınca konuşma başarılı sayılır.",
    "minTurns": 7
@@ -13693,7 +13685,6 @@
      "kind": "produce",
      "target": "Do you have anything later?",
      "accept": [
-      "Have you got anything later?",
       "Do you have anything later, please?",
       "Do you have something later?"
      ],
@@ -17550,7 +17541,7 @@
     "tr": "sigortanın bir şeyi karşılayıp karşılamadığını sorarken kullanılır"
    },
    {
-    "de": "I have already filled in the form.",
+    "de": "I have already filled out the form.",
     "tr": "bir işi çoktan bitirdiğini söylerken kullanılır"
    },
    {
@@ -17654,7 +17645,7 @@
      },
      {
       "lang": "en",
-      "text": "fill in"
+      "text": "fill out"
      },
      {
       "lang": "tr",
@@ -17662,12 +17653,12 @@
      },
      {
       "lang": "en",
-      "text": "Please fill in this form."
+      "text": "Please fill out this form."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Please fill in this form."
+     "target": "Please fill out this form."
     }
    },
    {
@@ -17840,7 +17831,7 @@
      },
      {
       "lang": "en",
-      "text": "I have already filled in the form."
+      "text": "I have already filled out the form."
      },
      {
       "lang": "tr",
@@ -17868,12 +17859,12 @@
      },
      {
       "lang": "en",
-      "text": "I have already filled in the form."
+      "text": "I have already filled out the form."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I have already filled in the form."
+     "target": "I have already filled out the form."
     }
    },
    {
@@ -17981,9 +17972,9 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "I haven't filled in the form yet.",
+     "target": "I haven't filled out the form yet.",
      "accept": [
-      "I have not filled in the form yet.",
+      "I have not filled out the form yet.",
       "I haven't filled the form in yet.",
       "I have not filled the form in yet."
      ],
@@ -18006,7 +17997,7 @@
       },
       {
        "lang": "en",
-       "text": "I haven't filled in the form yet."
+       "text": "I haven't filled out the form yet."
       },
       {
        "lang": "tr",
@@ -18023,12 +18014,12 @@
      },
      {
       "lang": "en",
-      "text": "I have already fill in the form."
+      "text": "I have already fill out the form."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "I have already filled in the form.",
+     "statement": "I have already filled out the form.",
      "answer": true,
      "why": [
       {
@@ -18122,7 +18113,7 @@
      },
      {
       "lang": "en",
-      "text": "Yes, here it is. Do I have to fill in a form?"
+      "text": "Yes, here it is. Do I have to fill out a form?"
      },
      {
       "lang": "en",
@@ -18170,7 +18161,7 @@
      },
      {
       "lang": "en",
-      "text": "I have already filled in the form."
+      "text": "I have already filled out the form."
      },
      {
       "lang": "tr",
@@ -19515,14 +19506,14 @@
   "level": "A2",
   "course": "en",
   "icon": "home",
-  "title": "Looking for a flat",
+  "title": "Looking for an apartment",
   "titleTr": "Ev ararken",
   "summary": "İlanda gördüğün bir daire için kira, depozito, mobilya, kat ve faturaları İngilizce sormayı öğretir.",
   "minutes": 9,
   "focusId": "Questions",
   "vocab": [
    {
-    "de": "flat",
+    "de": "apartment",
     "tr": "daire"
    },
    {
@@ -19542,11 +19533,11 @@
     "tr": "kat"
    },
    {
-    "de": "ground floor",
+    "de": "first floor",
     "tr": "zemin kat"
    },
    {
-    "de": "advert",
+    "de": "ad",
     "tr": "ilan"
    },
    {
@@ -19560,7 +19551,7 @@
     "tr": "kiranın ne kadar olduğunu sormak için"
    },
    {
-    "de": "Is the flat furnished?",
+    "de": "Is the apartment furnished?",
     "tr": "dairenin mobilyalı olup olmadığını sormak için"
    },
    {
@@ -19592,7 +19583,7 @@
      },
      {
       "lang": "en",
-      "text": "flat"
+      "text": "apartment"
      },
      {
       "lang": "tr",
@@ -19600,27 +19591,19 @@
      },
      {
       "lang": "en",
-      "text": "flat"
+      "text": "apartment"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "flat"
+     "target": "apartment"
     }
    },
    {
     "say": [
      {
       "lang": "tr",
-      "text": "İngilizler daireye"
-     },
-     {
-      "lang": "en",
-      "text": "flat"
-     },
-     {
-      "lang": "tr",
-      "text": "der, Amerikalılar"
+      "text": "Amerikalılar daireye"
      },
      {
       "lang": "en",
@@ -19628,11 +19611,19 @@
      },
      {
       "lang": "tr",
-      "text": "der. İkisi de doğru. Bir tane derken önüne bir küçük kelime koyuyoruz:"
+      "text": "der, İngilizler ise"
      },
      {
       "lang": "en",
-      "text": "a flat"
+      "text": "flat"
+     },
+     {
+      "lang": "tr",
+      "text": "der. Biz Amerikan kullanımıyla ilerliyoruz. Bir tane derken önüne küçük bir kelime koyuyoruz; apartment sesli harfle başladığı için a değil an gelir:"
+     },
+     {
+      "lang": "en",
+      "text": "an apartment"
      },
      {
       "lang": "tr",
@@ -19696,7 +19687,7 @@
      },
      {
       "lang": "en",
-      "text": "It's six hundred pounds a month."
+      "text": "It's six hundred dollars a month."
      },
      {
       "lang": "tr",
@@ -19807,7 +19798,7 @@
      },
      {
       "lang": "en",
-      "text": "Is the flat furnished?"
+      "text": "Is the apartment furnished?"
      },
      {
       "lang": "tr",
@@ -19815,12 +19806,12 @@
      },
      {
       "lang": "en",
-      "text": "Is the flat furnished?"
+      "text": "Is the apartment furnished?"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Is the flat furnished?"
+     "target": "Is the apartment furnished?"
     }
    },
    {
@@ -19831,20 +19822,20 @@
      },
      {
       "lang": "en",
-      "text": "ground floor"
+      "text": "first floor"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: zemin kat. Lütfen tekrar et:"
+      "text": "Amerika'da bu zemin kat demek; kat sayımı yerden başlar. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "ground floor"
+      "text": "first floor"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "ground floor"
+     "target": "first floor"
     }
    },
    {
@@ -19855,7 +19846,7 @@
      },
      {
       "lang": "en",
-      "text": "advert"
+      "text": "ad"
      },
      {
       "lang": "tr",
@@ -19863,12 +19854,12 @@
      },
      {
       "lang": "en",
-      "text": "advert"
+      "text": "ad"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "advert"
+     "target": "ad"
     }
    },
    {
@@ -19943,15 +19934,7 @@
      },
      {
       "lang": "tr",
-      "text": "— üçüncü katta. Dikkat: İngiltere'de"
-     },
-     {
-      "lang": "en",
-      "text": "the ground floor"
-     },
-     {
-      "lang": "tr",
-      "text": "zemin kattır,"
+      "text": "— Amerikan sayımıyla bu bizim ikinci katımız. Dikkat: Amerika'da"
      },
      {
       "lang": "en",
@@ -19959,7 +19942,15 @@
      },
      {
       "lang": "tr",
-      "text": "ise bizim birinci katımız."
+      "text": "zemin kattır,"
+     },
+     {
+      "lang": "en",
+      "text": "the second floor"
+     },
+     {
+      "lang": "tr",
+      "text": "ise bizim birinci katımız. İngiltere'de zemin kata ground floor denir."
      }
     ]
    },
@@ -19976,8 +19967,8 @@
      "accept": [
       "What floor is it on",
       "Which floor is it on",
-      "What floor is the flat on",
-      "Which floor is the flat on"
+      "What floor is the apartment on",
+      "Which floor is the apartment on"
      ],
      "hint": [
       {
@@ -20043,12 +20034,12 @@
      },
      {
       "lang": "en",
-      "text": "If a flat is furnished, there is no furniture in it."
+      "text": "If an apartment is furnished, there is no furniture in it."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "If a flat is furnished, there is no furniture in it.",
+     "statement": "If an apartment is furnished, there is no furniture in it.",
      "answer": false,
      "why": [
       {
@@ -20090,7 +20081,7 @@
      },
      {
       "lang": "en",
-      "text": "I've already seen two flats this week."
+      "text": "I've already seen two apartments this week."
      },
      {
       "lang": "tr",
@@ -20107,12 +20098,12 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "Can I see the flat on Saturday?",
+     "target": "Can I see the apartment on Saturday?",
      "accept": [
       "Can I see it on Saturday",
-      "Can I see the flat on Saturday",
-      "Could I see the flat on Saturday",
-      "Can I visit the flat on Saturday"
+      "Can I see the apartment on Saturday",
+      "Could I see the apartment on Saturday",
+      "Can I visit the apartment on Saturday"
      ],
      "hint": [
       {
@@ -20129,7 +20120,7 @@
       },
       {
        "lang": "en",
-       "text": "Can I see the flat on Saturday?"
+       "text": "Can I see the apartment on Saturday?"
       },
       {
        "lang": "tr",
@@ -20182,7 +20173,7 @@
      },
      {
       "lang": "en",
-      "text": "Is the flat furnished?"
+      "text": "Is the apartment furnished?"
      },
      {
       "lang": "tr",
@@ -20210,7 +20201,7 @@
   "chat": {
    "scene": "Bir daire ilanı gördün ve ilandaki numarayı aradın. Kira, depozito, mobilya ve kat hakkında soru sorup görmek için randevu alıyorsun.",
    "partner": "ilanı veren ev sahibi",
-   "opening": "Hello, you're calling about the flat in Green Street, right?",
+   "opening": "Hello, you're calling about the apartment on Green Street, right?",
    "openingTr": "Merhaba, Green Street'teki daire için arıyorsunuz, değil mi?",
    "goal": "Kira, depozito ve mobilya durumunu öğrenip cumartesi için görme randevusu aldıysan konuşma başarılıdır.",
    "minTurns": 7
@@ -20262,7 +20253,7 @@
   ],
   "patterns": [
    {
-    "de": "I live in a bright flat.",
+    "de": "I live in a bright apartment.",
     "tr": "nasıl bir evde oturduğunu tek cümleyle anlatırken kullanılır"
    },
    {
@@ -20366,19 +20357,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Küçük bir not: İngilizler apartman dairesine"
-     },
-     {
-      "lang": "en",
-      "text": "flat"
-     },
-     {
-      "lang": "tr",
-      "text": "der, Amerikalılar ise"
+      "text": "Küçük bir not: Amerikalılar apartman dairesine"
      },
      {
       "lang": "en",
       "text": "apartment"
+     },
+     {
+      "lang": "tr",
+      "text": "der, İngilizler ise"
+     },
+     {
+      "lang": "en",
+      "text": "flat"
      },
      {
       "lang": "tr",
@@ -20450,7 +20441,7 @@
      },
      {
       "lang": "en",
-      "text": "I live in a bright flat."
+      "text": "I live in a bright apartment."
      },
      {
       "lang": "tr",
@@ -20458,12 +20449,12 @@
      },
      {
       "lang": "en",
-      "text": "I live in a bright flat."
+      "text": "I live in a bright apartment."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I live in a bright flat."
+     "target": "I live in a bright apartment."
     }
    },
    {
@@ -20546,7 +20537,7 @@
      },
      {
       "lang": "en",
-      "text": "a bright flat"
+      "text": "a bright apartment"
      },
      {
       "lang": "tr",
@@ -20566,7 +20557,7 @@
      },
      {
       "lang": "en",
-      "text": "My flat is bright."
+      "text": "My apartment is bright."
      },
      {
       "lang": "tr",
@@ -20586,7 +20577,6 @@
      "target": "My home is quiet.",
      "accept": [
       "My house is quiet.",
-      "My flat is quiet.",
       "My apartment is quiet."
      ],
      "hint": [
@@ -20657,7 +20647,6 @@
      "target": "We have a balcony.",
      "accept": [
       "We've got a balcony.",
-      "We have got a balcony.",
       "There is a balcony.",
       "There's a balcony."
      ],
@@ -20922,7 +20911,7 @@
      },
      {
       "lang": "en",
-      "text": "It's a nice flat, but it's a bit small."
+      "text": "It's a nice apartment, but it's a bit small."
      },
      {
       "lang": "tr",
@@ -20946,7 +20935,7 @@
      },
      {
       "lang": "en",
-      "text": "I live in a bright flat"
+      "text": "I live in a bright apartment"
      },
      {
       "lang": "tr",
@@ -22409,7 +22398,7 @@
   "chat": {
    "scene": "Evinde kalorifer üç gündür çalışmıyor ve banyoda küçük bir sızıntı var. Ev sahibini arayıp durumu anlatıyorsun.",
    "partner": "ev sahibin Mr. Wilson",
-   "opening": "Hello, this is Mr. Wilson. Is everything all right at the flat?",
+   "opening": "Hello, this is Mr. Wilson. Is everything all right at the apartment?",
    "openingTr": "Merhaba, ben Mr. Wilson. Dairede her şey yolunda mı?",
    "goal": "Sorunu söyleyip ne zamandır sürdüğünü anlattığında ve kibarca tamirci istediğinde konuşma başarılı sayılır.",
    "minTurns": 7
@@ -23289,7 +23278,7 @@
      },
      {
       "lang": "en",
-      "text": "First, we looked at the flat."
+      "text": "First, we looked at the apartment."
      },
      {
       "lang": "tr",
@@ -23306,12 +23295,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "First, we looked at the flat.",
+     "target": "First, we looked at the apartment.",
      "accept": [
-      "First we looked at the flat.",
-      "First, we looked at the apartment.",
       "First we looked at the apartment.",
-      "We looked at the flat first."
+      "We looked at the apartment first."
      ],
      "hint": [
       {
@@ -23324,11 +23311,11 @@
       },
       {
        "lang": "tr",
-       "text": "Bakmak look at, geçmişi looked. Daire flat."
+       "text": "Bakmak look at, geçmişi looked. Daire apartment."
       },
       {
        "lang": "en",
-       "text": "First, we looked at the flat."
+       "text": "First, we looked at the apartment."
       },
       {
        "lang": "tr",
@@ -23470,12 +23457,12 @@
      },
      {
       "lang": "en",
-      "text": "Finally, we looked at the flat. Then we signed the contract."
+      "text": "Finally, we looked at the apartment. Then we signed the contract."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Finally, we looked at the flat. Then we signed the contract.",
+     "statement": "Finally, we looked at the apartment. Then we signed the contract.",
      "answer": false,
      "why": [
       {
@@ -23488,7 +23475,7 @@
       },
       {
        "lang": "en",
-       "text": "First, we looked at the flat. Then we signed the contract."
+       "text": "First, we looked at the apartment. Then we signed the contract."
       }
      ]
     }
@@ -23645,7 +23632,7 @@
      },
      {
       "lang": "en",
-      "text": "First, we looked at the flat. Then we signed the contract. After that, we got the keys. Finally, we moved in last Saturday."
+      "text": "First, we looked at the apartment. Then we signed the contract. After that, we got the keys. Finally, we moved in last Saturday."
      },
      {
       "lang": "tr",
@@ -24325,7 +24312,7 @@
     "tr": "yasak"
    },
    {
-    "de": "rubbish",
+    "de": "trash",
     "tr": "çöp"
    },
    {
@@ -24471,15 +24458,15 @@
      },
      {
       "lang": "en",
-      "text": "rubbish"
+      "text": "trash"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi 'çöp' demek. Bu kelime İngiltere'de kullanılır; Amerika'da aynı şeye garbage veya trash denir. Lütfen"
+      "text": "Türkçesi 'çöp' demek. Amerika'da aynı şeye garbage de denir; İngiltere'de ise rubbish. Lütfen"
      },
      {
       "lang": "en",
-      "text": "rubbish"
+      "text": "trash"
      },
      {
       "lang": "tr",
@@ -24488,7 +24475,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "rubbish"
+     "target": "trash"
     }
    },
    {
@@ -24580,11 +24567,11 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "We have to take the rubbish out on Monday",
+     "target": "We have to take the trash out on Monday",
      "accept": [
-      "We must take the rubbish out on Monday",
-      "We have to take out the rubbish on Monday",
-      "We have to take the rubbish out on Mondays"
+      "We must take the trash out on Monday",
+      "We have to take out the trash on Monday",
+      "We have to take the trash out on Mondays"
      ],
      "hint": [
       {
@@ -24593,7 +24580,7 @@
       },
       {
        "lang": "en",
-       "text": "We have to take the rubbish out on Monday."
+       "text": "We have to take the trash out on Monday."
       },
       {
        "lang": "tr",
@@ -24835,7 +24822,7 @@
      },
      {
       "lang": "en",
-      "text": "Do I have to sort the rubbish?"
+      "text": "Do I have to sort the trash?"
      },
      {
       "lang": "tr",
@@ -24894,7 +24881,7 @@
   "chat": {
    "scene": "Yeni taşındığın binanın girişinde görevliyle konuşuyorsun. Çöpün ne zaman çıkarıldığını, sessizlik saatini ve neyin yasak olduğunu öğren; bir de kendin bir soru sor.",
    "partner": "kuralları anlatmayı seven, güler yüzlü bir apartman görevlisi",
-   "opening": "Welcome to the building! Shall I tell you the rules?",
+   "opening": "Welcome to the building! Do you want me to tell you the rules?",
    "openingTr": "Binaya hoş geldin! Sana kuralları anlatayım mı?",
    "goal": "Çöp günü ve sessizlik saati öğrenilmiş, en az bir yasak (can't ya da not allowed) duyulmuş ve öğrenci kendisi bir kural sorusu sormuş olur.",
    "minTurns": 7
@@ -25398,7 +25385,7 @@
      },
      {
       "lang": "tr",
-      "text": "Cevap olarak da: It's quiet and safe. There are a lot of shops nearby. diyebilirsin."
+      "text": "Cevap olarak da: It's quiet and safe. There are a lot of stores nearby. diyebilirsin."
      }
     ]
    },
@@ -25425,7 +25412,7 @@
   "level": "A2",
   "course": "en",
   "icon": "shopping",
-  "title": "Local shops",
+  "title": "Local stores",
   "titleTr": "Mahalle esnafı",
   "summary": "Semtindeki dükkânların adlarını söylemeyi, açılış ve kapanış saatlerini sormayı ve bir işi hâlledip halletmediğini anlatmayı öğretir.",
   "minutes": 9,
@@ -25436,7 +25423,7 @@
     "tr": "ekmek fırını"
    },
    {
-    "de": "corner shop",
+    "de": "corner store",
     "tr": "bakkal"
    },
    {
@@ -25522,11 +25509,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bakkal için İngilizler iki kelime kullanır."
+      "text": "Bakkal için Amerikalılar iki kelime kullanır."
      },
      {
       "lang": "en",
-      "text": "a corner shop"
+      "text": "a corner store"
      },
      {
       "lang": "tr",
@@ -25534,12 +25521,12 @@
      },
      {
       "lang": "en",
-      "text": "a corner shop"
+      "text": "a corner store"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "a corner shop"
+     "target": "a corner store"
     }
    },
    {
@@ -25627,11 +25614,11 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "The corner shop opens at eight.",
+     "target": "The corner store opens at eight.",
      "accept": [
-      "The corner shop opens at 8.",
-      "The corner shop opens at eight o'clock.",
-      "The corner shop opens at eight am."
+      "The corner store opens at 8.",
+      "The corner store opens at eight o'clock.",
+      "The corner store opens at eight am."
      ],
      "hint": [
       {
@@ -25640,7 +25627,7 @@
       },
       {
        "lang": "en",
-       "text": "the corner shop"
+       "text": "the corner store"
       },
       {
        "lang": "tr",
@@ -25660,7 +25647,7 @@
       },
       {
        "lang": "en",
-       "text": "The corner shop opens at eight."
+       "text": "The corner store opens at eight."
       },
       {
        "lang": "tr",
@@ -25924,7 +25911,7 @@
      },
      {
       "lang": "en",
-      "text": "I'll go to the corner shop later."
+      "text": "I'll go to the corner store later."
      }
     ]
    },
@@ -25957,11 +25944,11 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "The corner shop is cheaper than the supermarket.",
+     "target": "The corner store is cheaper than the supermarket.",
      "accept": [
-      "The corner shop is cheaper than the supermarket",
-      "A corner shop is cheaper than a supermarket.",
-      "The corner shop is cheaper than the supermarket ."
+      "The corner store is cheaper than the supermarket",
+      "A corner store is cheaper than a supermarket.",
+      "The corner store is cheaper than the supermarket ."
      ],
      "hint": [
       {
@@ -25970,7 +25957,7 @@
       },
       {
        "lang": "en",
-       "text": "the corner shop"
+       "text": "the corner store"
       },
       {
        "lang": "tr",
@@ -25990,7 +25977,7 @@
       },
       {
        "lang": "en",
-       "text": "The corner shop is cheaper than the supermarket."
+       "text": "The corner store is cheaper than the supermarket."
       },
       {
        "lang": "tr",
@@ -26035,7 +26022,7 @@
      },
      {
       "lang": "en",
-      "text": "corner shop,"
+      "text": "corner store,"
      },
      {
       "lang": "tr",
@@ -26609,7 +26596,7 @@
      },
      {
       "lang": "en",
-      "text": "Send your CV."
+      "text": "Send your résumé."
      },
      {
       "lang": "en",
@@ -27074,8 +27061,6 @@
      "target": "I learned new skills last year.",
      "accept": [
       "Last year I learned new skills.",
-      "I learned new skills last year.",
-      "Last year I learned new skills.",
       "I learned new skills last year"
      ],
      "hint": [
@@ -27106,7 +27091,7 @@
      },
      {
       "lang": "en",
-      "text": "Have you worked in a shop?"
+      "text": "Have you worked in a store?"
      },
      {
       "lang": "tr",
@@ -27519,11 +27504,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "I have worked in a shop for two years.",
+     "target": "I have worked in a store for two years.",
      "accept": [
-      "I have worked in a store for two years.",
-      "I've worked in a shop for two years.",
-      "I have worked at a shop for two years."
+      "I've worked in a store for two years.",
+      "I have worked at a store for two years."
      ],
      "hint": [
       {
@@ -27536,7 +27520,7 @@
       },
       {
        "lang": "en",
-       "text": "I have worked in a shop for two years."
+       "text": "I have worked in a store for two years."
       },
       {
        "lang": "tr",
@@ -29871,7 +29855,7 @@
   "focusId": "Polite requests",
   "vocab": [
    {
-    "de": "holiday",
+    "de": "vacation",
     "tr": "tatil"
    },
    {
@@ -29937,20 +29921,20 @@
      },
      {
       "lang": "en",
-      "text": "holiday"
+      "text": "vacation"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi tatil demek. Uzun tatile İngilizler holiday der. Lütfen söyle:"
+      "text": "Türkçesi tatil demek. Uzun tatile Amerikalılar vacation der; İngilizler holiday der. Lütfen söyle:"
      },
      {
       "lang": "en",
-      "text": "holiday"
+      "text": "vacation"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "holiday"
+     "target": "vacation"
     }
    },
    {
@@ -30189,8 +30173,7 @@
      "accept": [
       "I have to leave early because I have a doctor's appointment.",
       "I need to leave early because I have an appointment with the doctor.",
-      "I need to leave early because I've got a doctor's appointment.",
-      "I need to leave early because I have got a doctor's appointment."
+      "I need to leave early because I've got a doctor's appointment."
      ],
      "hint": [
       {
@@ -31371,7 +31354,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Dosya eklediğini söylerken İngilizler present perfect kullanır, çünkü iş şimdi bitti ve sonucu e-postanın içinde duruyor:"
+      "text": "Dosya eklediğini söylerken anadili İngilizce olanlar present perfect kullanır, çünkü iş şimdi bitti ve sonucu e-postanın içinde duruyor:"
      },
      {
       "lang": "en",
@@ -32767,11 +32750,9 @@
      "accept": [
       "Sorry, I don't have the receipt.",
       "I don't have a receipt.",
-      "I haven't got the receipt.",
       "I do not have the receipt.",
       "Sorry, I do not have the receipt.",
-      "I do not have a receipt.",
-      "I have not got the receipt."
+      "I do not have a receipt."
      ],
      "hint": [
       {
@@ -33163,7 +33144,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir de çok işine yarayacak bir nokta var. İngilizler iade ederken ürünü kullanıp kullanmadığını söyler."
+      "text": "Bir de çok işine yarayacak bir nokta var. Anadili İngilizce olanlar iade ederken ürünü kullanıp kullanmadığını söyler."
      },
      {
       "lang": "en",
@@ -33722,7 +33703,7 @@
      "target": "I expected better quality.",
      "accept": [
       "I expected a better quality.",
-      "I expected better quality from this shop."
+      "I expected better quality from this store."
      ],
      "hint": [
       {
@@ -33880,7 +33861,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Küçük bir kibarlık notu: cümleye Excuse me diye başla ve sonuna please ekle. İngilizler şikâyet ederken sesini yükseltmez, kelimeleri yumuşatır. Görevli üzüldüğünü belirtmek için sana şöyle diyebilir:"
+      "text": "Küçük bir kibarlık notu: cümleye Excuse me diye başla ve sonuna please ekle. Anadili İngilizce olanlar şikâyet ederken sesini yükseltmez, kelimeleri yumuşatır. Görevli üzüldüğünü belirtmek için sana şöyle diyebilir:"
      },
      {
       "lang": "en",
@@ -35128,7 +35109,7 @@
   "level": "A2",
   "course": "en",
   "icon": "mail",
-  "title": "Sending a parcel",
+  "title": "Sending a package",
   "titleTr": "Kargo göndermek",
   "summary": "Postanede kargo seçeneklerini karşılaştırmayı, ücreti ve süreyi sormayı öğreniyorsun.",
   "minutes": 9,
@@ -35225,7 +35206,7 @@
      },
      {
       "lang": "en",
-      "text": "parcel"
+      "text": "package"
      },
      {
       "lang": "tr",
@@ -35233,7 +35214,7 @@
      },
      {
       "lang": "en",
-      "text": "Can you weigh this parcel, please?"
+      "text": "Can you weigh this package, please?"
      },
      {
       "lang": "tr",
@@ -35602,8 +35583,8 @@
      "accept": [
       "I would like to insure it.",
       "I want to insure it.",
-      "I'd like to insure this parcel.",
-      "I would like to insure this parcel."
+      "I'd like to insure this package.",
+      "I would like to insure this package."
      ],
      "hint": [
       {
@@ -35637,11 +35618,11 @@
      },
      {
       "lang": "en",
-      "text": "Please fill in this form and sign here."
+      "text": "Please fill out this form and sign here."
      },
      {
       "lang": "tr",
-      "text": "Lütfen bu formu doldurun ve burayı imzalayın. 'Fill in' doldurmak demek."
+      "text": "Lütfen bu formu doldurun ve burayı imzalayın. 'Fill out' doldurmak demek."
      }
     ]
    },
@@ -35653,7 +35634,7 @@
      },
      {
       "lang": "en",
-      "text": "I've already filled in the form."
+      "text": "I've already filled out the form."
      },
      {
       "lang": "tr",
@@ -35693,20 +35674,20 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "Can you weigh this parcel?",
+     "target": "Can you weigh this package?",
      "accept": [
-      "Can you weigh this parcel, please?",
-      "Could you weigh this parcel, please?",
-      "Could you weigh this parcel?"
+      "Can you weigh this package, please?",
+      "Could you weigh this package, please?",
+      "Could you weigh this package?"
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "'Can you' ile başla, tartmak fiilini ekle, sonra 'this parcel'."
+       "text": "'Can you' ile başla, tartmak fiilini ekle, sonra 'this package'."
       },
       {
        "lang": "en",
-       "text": "Can you weigh this parcel?"
+       "text": "Can you weigh this package?"
       },
       {
        "lang": "tr",
@@ -35723,7 +35704,7 @@
      },
      {
       "lang": "en",
-      "text": "Can you weigh this parcel?"
+      "text": "Can you weigh this package?"
      },
      {
       "lang": "tr",
@@ -35759,7 +35740,7 @@
   "chat": {
    "scene": "Yurt dışına bir paket göndermek için postanedesin. Paketin tartılması, ücreti ve kaç gün süreceği seni ilgilendiriyor.",
    "partner": "postane görevlisi",
-   "opening": "Good morning. Is that parcel going abroad?",
+   "opening": "Good morning. Is that package going abroad?",
    "openingTr": "Günaydın. Bu paket yurt dışına mı gidiyor?",
    "goal": "Paketi tarttırıp yurt dışı ücretini ve süresini öğrendiysen, hızlı ile normal gönderi arasında seçim yapıp sigorta veya form konusunu hallettiysen konuşma başarılıdır.",
    "minTurns": 7
@@ -37345,7 +37326,7 @@
     "tr": "ekran"
    },
    {
-    "de": "guarantee",
+    "de": "warranty",
     "tr": "garanti"
    },
    {
@@ -37383,7 +37364,7 @@
     "tr": "işin ne kadar süreceğini sorarken kullanılır"
    },
    {
-    "de": "It's still under guarantee.",
+    "de": "It's still under warranty.",
     "tr": "cihazın garantisinin devam ettiğini söylerken kullanılır"
    }
   ],
@@ -37578,7 +37559,7 @@
      },
      {
       "lang": "en",
-      "text": "guarantee"
+      "text": "warranty"
      },
      {
       "lang": "tr",
@@ -37586,7 +37567,7 @@
      },
      {
       "lang": "en",
-      "text": "It's still under guarantee."
+      "text": "It's still under warranty."
      },
      {
       "lang": "tr",
@@ -37594,27 +37575,19 @@
      },
      {
       "lang": "en",
-      "text": "It's still under guarantee."
+      "text": "It's still under warranty."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "It's still under guarantee."
+     "target": "It's still under warranty."
     }
    },
    {
     "say": [
      {
       "lang": "tr",
-      "text": "Küçük bir not: İngilizler çoğunlukla"
-     },
-     {
-      "lang": "en",
-      "text": "guarantee"
-     },
-     {
-      "lang": "tr",
-      "text": "der, Amerikalılar aynı şey için"
+      "text": "Küçük bir not: Amerikalılar çoğunlukla"
      },
      {
       "lang": "en",
@@ -37622,11 +37595,19 @@
      },
      {
       "lang": "tr",
-      "text": "kelimesini kullanır. İkisini de duyarsan şaşırma. Garanti bittiyse:"
+      "text": "der, İngilizler aynı şey için"
      },
      {
       "lang": "en",
-      "text": "The guarantee has expired."
+      "text": "guarantee"
+     },
+     {
+      "lang": "tr",
+      "text": "kelimesini de kullanır. İkisini de duyarsan şaşırma. Garanti bittiyse:"
+     },
+     {
+      "lang": "en",
+      "text": "The warranty has expired."
      }
     ]
    },
@@ -37940,7 +37921,7 @@
      },
      {
       "lang": "en",
-      "text": "It's free. It's under guarantee."
+      "text": "It's free. It's under warranty."
      },
      {
       "lang": "tr",
@@ -37957,21 +37938,20 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "It's still under guarantee.",
+     "target": "It's still under warranty.",
      "accept": [
-      "It is still under guarantee.",
-      "My phone is still under guarantee.",
-      "It's still under warranty.",
+      "It is still under warranty.",
+      "My phone is still under warranty.",
       "it is still under warranty."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "'Hâlâ' için still, 'garanti kapsamında' için under guarantee."
+       "text": "'Hâlâ' için still, 'garanti kapsamında' için under warranty."
       },
       {
        "lang": "en",
-       "text": "It's still under guarantee."
+       "text": "It's still under warranty."
       },
       {
        "lang": "tr",
@@ -38036,7 +38016,7 @@
      },
      {
       "lang": "en",
-      "text": "It's still under guarantee."
+      "text": "It's still under warranty."
      },
      {
       "lang": "tr",
@@ -38394,7 +38374,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir de İngilizlerin çok kullandığı bir söz var: value, yani değer."
+      "text": "Bir de anadili İngilizce olanların çok kullandığı bir söz var: value, yani değer."
      },
      {
       "lang": "en",
@@ -38819,7 +38799,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir ürünün garantisi devam ediyorsa İngilizler şöyle der:"
+      "text": "Bir ürünün garantisi devam ediyorsa anadili İngilizce olanlar şöyle der:"
      },
      {
       "lang": "en",
@@ -39925,11 +39905,11 @@
      },
      {
       "lang": "en",
-      "text": "Could you confirm my booking?"
+      "text": "Could you confirm my reservation?"
      },
      {
       "lang": "tr",
-      "text": "Dikkat:"
+      "text": "Dikkat: İngiltere'de rezervasyona"
      },
      {
       "lang": "en",
@@ -39937,7 +39917,7 @@
      },
      {
       "lang": "tr",
-      "text": "burada rezervasyon demek."
+      "text": "da denir."
      }
     ]
    },
@@ -39950,11 +39930,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "Could you confirm my booking?",
+     "target": "Could you confirm my reservation?",
      "accept": [
-      "Can you confirm my booking?",
-      "Could you confirm my reservation, please?",
-      "Could you confirm my booking, please?"
+      "Can you confirm my reservation?",
+      "Could you confirm my reservation, please?"
      ],
      "hint": [
       {
@@ -39979,7 +39958,7 @@
       },
       {
        "lang": "en",
-       "text": "my booking"
+       "text": "my reservation"
       },
       {
        "lang": "tr",
@@ -39987,7 +39966,7 @@
       },
       {
        "lang": "en",
-       "text": "Could you confirm my booking?"
+       "text": "Could you confirm my reservation?"
       },
       {
        "lang": "tr",
@@ -40374,7 +40353,6 @@
      "kind": "produce",
      "target": "I have one suitcase.",
      "accept": [
-      "I have got one suitcase.",
       "I've got one suitcase.",
       "I have one bag.",
       "I have one suitcase"
@@ -40974,7 +40952,6 @@
      "target": "I have a reservation.",
      "accept": [
       "I've got a reservation.",
-      "I have got a reservation.",
       "I have a booking.",
       "I have a reservation for two nights."
      ],
@@ -41042,7 +41019,7 @@
      },
      {
       "lang": "en",
-      "text": "I haven't got my key yet."
+      "text": "I don't have my key yet."
      },
      {
       "lang": "tr",
@@ -41085,7 +41062,7 @@
      },
      {
       "lang": "en",
-      "text": "Breakfast is from seven to ten, on the ground floor."
+      "text": "Breakfast is from seven to ten, on the first floor."
      },
      {
       "lang": "tr",
@@ -41249,12 +41226,12 @@
      },
      {
       "lang": "en",
-      "text": "I haven't got my key yet."
+      "text": "I don't have my key yet."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "I haven't got my key yet.",
+     "statement": "I don't have my key yet.",
      "answer": true,
      "why": [
       {
@@ -42549,7 +42526,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir uçuş geciktiğinde İngilizler tek kelime kullanır:"
+      "text": "Bir uçuş geciktiğinde anadili İngilizce olanlar tek kelime kullanır:"
      },
      {
       "lang": "en",
@@ -42637,7 +42614,7 @@
      },
      {
       "lang": "tr",
-      "text": "Buradaki I've, I have demek. İngilizler biraz önce olmuş ve şu an seni etkileyen bir şeyi böyle anlatır. Söyle:"
+      "text": "Buradaki I've, I have demek. Anadili İngilizce olanlar biraz önce olmuş ve şu an seni etkileyen bir şeyi böyle anlatır. Söyle:"
      },
      {
       "lang": "en",
@@ -42988,7 +42965,6 @@
      "target": "I have travel insurance.",
      "accept": [
       "I've got travel insurance.",
-      "I have got travel insurance.",
       "I have travel insurance, too."
      ],
      "hint": [
@@ -43243,7 +43219,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İkinci kelimemiz: license. Türkçesi ehliyet demek. Tam hali driving license, yani sürücü belgesi."
+      "text": "İkinci kelimemiz: license. Türkçesi ehliyet demek. Tam hali driver's license, yani sürücü belgesi."
      },
      {
       "lang": "tr",
@@ -43251,7 +43227,7 @@
      },
      {
       "lang": "en",
-      "text": "Can I see your driving license, please?"
+      "text": "Can I see your driver's license, please?"
      },
      {
       "lang": "tr",
@@ -43259,12 +43235,12 @@
      },
      {
       "lang": "en",
-      "text": "Here is my driving license."
+      "text": "Here is my driver's license."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Here is my driving license."
+     "target": "Here is my driver's license."
     }
    },
    {
@@ -43746,8 +43722,8 @@
     "tr": "tavsiye etmek"
    },
    {
-    "de": "bill",
-    "tr": "hesap / fatura"
+    "de": "check",
+    "tr": "hesap (restoranda)"
    },
    {
     "de": "tip",
@@ -43776,7 +43752,7 @@
     "tr": "neye alerjin olduğunu söylerken kullanılır"
    },
    {
-    "de": "Could we have the bill, please?",
+    "de": "Could we have the check, please?",
     "tr": "masada hesabı isterken kullanılır"
    }
   ],
@@ -44156,19 +44132,19 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Yemek bitti, sıra ödemeye geldi. Britanya İngilizcesinde hesap"
-     },
-     {
-      "lang": "en",
-      "text": "bill"
-     },
-     {
-      "lang": "tr",
-      "text": "Amerika'da ise aynı şeye"
+      "text": "Yemek bitti, sıra ödemeye geldi. Amerikan İngilizcesinde hesap"
      },
      {
       "lang": "en",
       "text": "check"
+     },
+     {
+      "lang": "tr",
+      "text": "Britanya'da ise aynı şeye"
+     },
+     {
+      "lang": "en",
+      "text": "bill"
      },
      {
       "lang": "tr",
@@ -44184,12 +44160,12 @@
      },
      {
       "lang": "en",
-      "text": "bill"
+      "text": "check"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "bill"
+     "target": "check"
     }
    },
    {
@@ -44297,11 +44273,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "Could we have the bill, please?",
+     "target": "Could we have the check, please?",
      "accept": [
-      "Can we have the bill, please?",
-      "Could we have the check, please?",
-      "Could I have the bill, please?"
+      "Can we have the check, please?",
+      "Could I have the check, please?"
      ],
      "hint": [
       {
@@ -44314,7 +44289,7 @@
       },
       {
        "lang": "en",
-       "text": "the bill"
+       "text": "the check"
       },
       {
        "lang": "tr",
@@ -44326,7 +44301,7 @@
       },
       {
        "lang": "en",
-       "text": "Could we have the bill, please?"
+       "text": "Could we have the check, please?"
       },
       {
        "lang": "tr",
@@ -44411,7 +44386,7 @@
      },
      {
       "lang": "en",
-      "text": "Could we have the bill, please?"
+      "text": "Could we have the check, please?"
      },
      {
       "lang": "tr",
@@ -44421,7 +44396,7 @@
    }
   ],
   "chat": {
-   "scene": "Londra'da küçük bir restorandasın. Yeni oturdun, garson masana geliyor. Menüyü iste, bir tavsiye sor, alerjini söyle, siparişini ver ve sonunda hesabı iste.",
+   "scene": "New York'ta küçük bir restorandasın. Yeni oturdun, garson masana geliyor. Menüyü iste, bir tavsiye sor, alerjini söyle, siparişini ver ve sonunda hesabı iste.",
    "partner": "restoranın garsonu",
    "opening": "Good evening! Welcome. Are you ready to order?",
    "openingTr": "İyi akşamlar! Hoş geldiniz. Sipariş vermeye hazır mısınız?",
@@ -45500,7 +45475,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir gezi harikaysa İngilizler çok sık şu kelimeyi söyler: amazing. Yani harika, muhteşem."
+      "text": "Bir gezi harikaysa anadili İngilizce olanlar çok sık şu kelimeyi söyler: amazing. Yani harika, muhteşem."
      },
      {
       "lang": "en",
@@ -46104,7 +46079,7 @@
      },
      {
       "lang": "tr",
-      "text": "kısaltmasıdır ve İngilizler bunu neredeyse her zaman kısaltarak söyler."
+      "text": "kısaltmasıdır ve anadili İngilizce olanlar bunu neredeyse her zaman kısaltarak söyler."
      }
     ]
    },
@@ -46415,7 +46390,7 @@
      },
      {
       "lang": "en",
-      "text": "Let's meet at seven in front of the cinema."
+      "text": "Let's meet at seven in front of the movie theater."
      }
     ]
    },
@@ -46543,7 +46518,7 @@
     "tr": "mum"
    },
    {
-    "de": "sweets",
+    "de": "candy",
     "tr": "şekerlemeler"
    },
    {
@@ -46912,7 +46887,7 @@
      },
      {
       "lang": "en",
-      "text": "sweets"
+      "text": "candy"
      },
      {
       "lang": "tr",
@@ -46920,12 +46895,12 @@
      },
      {
       "lang": "en",
-      "text": "sweets"
+      "text": "candy"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "sweets"
+     "target": "candy"
     }
    },
    {
@@ -46984,7 +46959,7 @@
      },
      {
       "lang": "en",
-      "text": "Thank you so much! It's lovely."
+      "text": "Thank you so much! It's beautiful."
      },
      {
       "lang": "tr",
@@ -47074,9 +47049,9 @@
       "I have not bought a present yet.",
       "I haven't bought a present yet",
       "I haven't bought a gift yet.",
-      "I haven't got a present yet.",
+      "I don't have a present yet.",
       "I have not bought a gift yet.",
-      "I have not got a present yet."
+      "I do not have a present yet."
      ],
      "hint": [
       {
@@ -48380,7 +48355,7 @@
      },
      {
       "lang": "en",
-      "text": "The children get money and sweets."
+      "text": "The children get money and candy."
      },
      {
       "lang": "tr",
@@ -49143,7 +49118,7 @@
   "chat": {
    "scene": "Arkadaşın seni arayıp ehliyet sınavını geçtiğini söylüyor. Onu tebrik ediyor ve iyi dileklerini iletiyorsun.",
    "partner": "ehliyet sınavını yeni geçmiş arkadaşın",
-   "opening": "Hey! I've got great news — I passed my driving test! Isn't that great?",
+   "opening": "Hey! I have great news — I passed my driving test! Isn't that great?",
    "openingTr": "Selam! Harika bir haberim var — ehliyet sınavımı geçtim! Harika değil mi?",
    "goal": "Arkadaşını tebrik edip haberin güzel olduğunu söylediğinde, onunla gurur duyduğunu belirttiğinde ve bundan sonrası için iyi dilekte bulunduğunda konuşma başarılı sayılır.",
    "minTurns": 7
@@ -49605,7 +49580,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Küçük bir yazım notu: İngiltere'de"
+      "text": "Küçük bir yazım notu: Amerika'da"
      },
      {
       "lang": "en",
@@ -49613,11 +49588,11 @@
      },
      {
       "lang": "tr",
-      "text": ", Amerika'da"
+      "text": ", İngiltere'de"
      },
      {
       "lang": "en",
-      "text": "apologize"
+      "text": "apologise"
      },
      {
       "lang": "tr",
@@ -50293,7 +50268,7 @@
      },
      {
       "lang": "en",
-      "text": "since primary school"
+      "text": "since elementary school"
      },
      {
       "lang": "tr",
@@ -50309,12 +50284,12 @@
      },
      {
       "lang": "en",
-      "text": "We have been friends since primary school."
+      "text": "We have been friends since elementary school."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "We have been friends since primary school."
+     "target": "We have been friends since elementary school."
     }
    },
    {
@@ -50611,10 +50586,9 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "We met at university.",
+     "target": "We met in college.",
      "accept": [
       "We met at the university.",
-      "We met in university.",
       "We met at college."
      ],
      "hint": [
@@ -50632,7 +50606,7 @@
       },
       {
        "lang": "en",
-       "text": "university"
+       "text": "college"
       },
       {
        "lang": "tr",
@@ -50640,7 +50614,7 @@
       },
       {
        "lang": "en",
-       "text": "We met at university."
+       "text": "We met in college."
       },
       {
        "lang": "tr",
@@ -51558,7 +51532,7 @@
      },
      {
       "lang": "tr",
-      "text": "Birisiyle ilk kez tanıştığında İngilizler şunu söyler:"
+      "text": "Birisiyle ilk kez tanıştığında anadili İngilizce olanlar şunu söyler:"
      },
      {
       "lang": "en",
@@ -52943,7 +52917,7 @@
      },
      {
       "lang": "tr",
-      "text": "Open aç, tap ekrana hafifçe dokun, press ise bir tuşa bas demek. Telefonda parmakla dokunmaya İngilizler tap der, click demezler."
+      "text": "Open aç, tap ekrana hafifçe dokun, press ise bir tuşa bas demek. Telefonda parmakla dokunmaya anadili İngilizce olanlar tap der, click demezler."
      }
     ]
    },
@@ -53917,7 +53891,7 @@
   "level": "A2",
   "course": "en",
   "icon": "film",
-  "title": "Series and films",
+  "title": "Series and movies",
   "titleTr": "Dizi ve film",
   "summary": "Bir diziyi anlatmayı, beğenip beğenmediğini söylemeyi ve \"Have you seen …?\" ile tavsiye alıp vermeyi öğretir.",
   "minutes": 9,
@@ -54229,10 +54203,9 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "Have you seen this film?",
+     "target": "Have you seen this movie?",
      "accept": [
-      "Have you seen this movie?",
-      "Have you seen the film?"
+      "Have you seen the movie?"
      ],
      "hint": [
       {
@@ -54241,11 +54214,11 @@
       },
       {
        "lang": "tr",
-       "text": "ile başla, sonuna 'this film' ekle."
+       "text": "ile başla, sonuna 'this movie' ekle."
       },
       {
        "lang": "en",
-       "text": "Have you seen this film?"
+       "text": "Have you seen this movie?"
       },
       {
        "lang": "tr",
@@ -54485,7 +54458,7 @@
      },
      {
       "lang": "en",
-      "text": "The second season is better than the first one. This series is more interesting than the film."
+      "text": "The second season is better than the first one. This series is more interesting than the movie."
      }
     ]
    },
@@ -54498,10 +54471,9 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "This series is better than the film.",
+     "target": "This series is better than the movie.",
      "accept": [
-      "The series is better than the film.",
-      "This series is better than the movie."
+      "The series is better than the movie."
      ],
      "hint": [
       {
@@ -54518,7 +54490,7 @@
       },
       {
        "lang": "en",
-       "text": "This series is better than the film."
+       "text": "This series is better than the movie."
       },
       {
        "lang": "tr",
@@ -55304,7 +55276,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir şey bozulduğunda İngilizler neredeyse hep şunu der:"
+      "text": "Bir şey bozulduğunda anadili İngilizce olanlar neredeyse hep şunu der:"
      },
      {
       "lang": "en",
@@ -55694,7 +55666,7 @@
      },
      {
       "lang": "en",
-      "text": "Can you have a look at it?"
+      "text": "Can you take a look at it?"
      },
      {
       "lang": "tr",
@@ -58204,7 +58176,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir şeyi boşuna, gereksiz buluyorsan İngilizler şu kalıbı sever:"
+      "text": "Bir şeyi boşuna, gereksiz buluyorsan anadili İngilizce olanlar şu kalıbı sever:"
      },
      {
       "lang": "en",
@@ -59407,7 +59379,7 @@
     "tr": "kayıt yaptırmak"
    },
    {
-    "de": "queue",
+    "de": "line",
     "tr": "sıra"
    },
    {
@@ -59529,24 +59501,24 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Beklediğin sıra için İngilizler şunu der:"
+      "text": "Beklediğin sıra için Amerikalılar şunu der:"
      },
      {
       "lang": "en",
-      "text": "queue"
+      "text": "line"
      },
      {
       "lang": "tr",
-      "text": "Amerikalılar aynı şeye line der. İkisi de sıra demek. Haydi:"
+      "text": "İngilizler aynı şeye queue der. İkisi de sıra demek. Haydi:"
      },
      {
       "lang": "en",
-      "text": "queue"
+      "text": "line"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "queue"
+     "target": "line"
     }
    },
    {
@@ -59743,7 +59715,7 @@
      },
      {
       "lang": "en",
-      "text": "I have already filled in the form."
+      "text": "I have already filled out the form."
      },
      {
       "lang": "tr",
@@ -59759,12 +59731,12 @@
      },
      {
       "lang": "en",
-      "text": "I haven't got an appointment yet."
+      "text": "I don't have an appointment yet."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I haven't got an appointment yet."
+     "target": "I don't have an appointment yet."
     }
    },
    {
@@ -59968,7 +59940,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Özet: Belediyede sıra queue, fiş number, memurun yeri counter. Kibar istek için"
+      "text": "Özet: Belediyede sıra line, fiş number, memurun yeri counter. Kibar istek için"
      },
      {
       "lang": "en",
@@ -60007,14 +59979,14 @@
   "level": "A2",
   "course": "en",
   "icon": "pen",
-  "title": "Filling in a form",
+  "title": "Filling out a form",
   "titleTr": "Form doldurmak",
   "summary": "Bir formdaki alanları anlamayı, İngilizce kişisel bilgilerini yazıp formu imzalamayı öğretir.",
   "minutes": 8,
   "focusId": "Form language",
   "vocab": [
    {
-    "de": "surname",
+    "de": "last name",
     "tr": "soyadı"
    },
    {
@@ -60048,7 +60020,7 @@
   ],
   "patterns": [
    {
-    "de": "My surname is …",
+    "de": "My last name is …",
     "tr": "soyadını söylerken kullanılır"
    },
    {
@@ -60092,7 +60064,7 @@
      },
      {
       "lang": "en",
-      "text": "surname"
+      "text": "last name"
      },
      {
       "lang": "tr",
@@ -60116,12 +60088,12 @@
      },
      {
       "lang": "en",
-      "text": "surname"
+      "text": "last name"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "surname"
+     "target": "last name"
     }
    },
    {
@@ -60140,7 +60112,7 @@
      },
      {
       "lang": "en",
-      "text": "My surname is Demir."
+      "text": "My last name is Demir."
      },
      {
       "lang": "tr",
@@ -60148,7 +60120,7 @@
      },
      {
       "lang": "en",
-      "text": "My surname is,"
+      "text": "My last name is,"
      },
      {
       "lang": "tr",
@@ -60261,20 +60233,19 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "My surname is Demir.",
+     "target": "My last name is Demir.",
      "accept": [
-      "My surname's Demir.",
-      "My last name is Demir.",
+      "My last name's Demir.",
       "My family name is Demir."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "My surname ile başla, sonra is, sonra soyadın."
+       "text": "My last name ile başla, sonra is, sonra soyadın."
       },
       {
        "lang": "en",
-       "text": "My surname is Demir."
+       "text": "My last name is Demir."
       },
       {
        "lang": "tr",
@@ -60291,15 +60262,15 @@
      },
      {
       "lang": "en",
-      "text": "fill in"
+      "text": "fill out"
      },
      {
       "lang": "tr",
-      "text": "yani doldurmak. Amerikan İngilizcesinde"
+      "text": "yani doldurmak. İngiltere'de"
      },
      {
       "lang": "en",
-      "text": "fill out"
+      "text": "fill in"
      },
      {
       "lang": "tr",
@@ -60307,7 +60278,7 @@
      },
      {
       "lang": "en",
-      "text": "fill in the form"
+      "text": "fill out the form"
      }
     ]
    },
@@ -60319,12 +60290,12 @@
      },
      {
       "lang": "en",
-      "text": "Please fill in this form."
+      "text": "Please fill out this form."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Please fill in this form."
+     "target": "Please fill out this form."
     }
    },
    {
@@ -60401,7 +60372,7 @@
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. Soyadın surname ya da last name kutusuna yazılır; first name kutusu senin adın içindir."
+       "text": "Yanlış. Soyadın last name kutusuna yazılır; first name kutusu senin adın içindir."
       }
      ]
     }
@@ -60414,12 +60385,12 @@
      },
      {
       "lang": "en",
-      "text": "I've already filled in the form."
+      "text": "I've already filled out the form."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I've already filled in the form."
+     "target": "I've already filled out the form."
     }
    },
    {
@@ -60502,7 +60473,7 @@
      },
      {
       "lang": "en",
-      "text": "I haven't filled in the form yet."
+      "text": "I haven't filled out the form yet."
      },
      {
       "lang": "tr",
@@ -60573,7 +60544,7 @@
      },
      {
       "lang": "tr",
-      "text": "surname, address,"
+      "text": "last name, address,"
      },
      {
       "lang": "en",
@@ -60585,7 +60556,7 @@
      },
      {
       "lang": "en",
-      "text": "My surname is …"
+      "text": "My last name is …"
      },
      {
       "lang": "tr",
@@ -60609,7 +60580,7 @@
      },
      {
       "lang": "en",
-      "text": "Please fill in this form"
+      "text": "Please fill out this form"
      },
      {
       "lang": "tr",
@@ -60629,7 +60600,7 @@
   "chat": {
    "scene": "Bir dil okuluna kayıt olmak için geldin. Masadaki görevli sana bir kayıt formu uzatıyor ve bilgilerini soruyor.",
    "partner": "kayıt masasındaki görevli",
-   "opening": "Hello! Welcome. Could you fill in this form, please? I just need a few details.",
+   "opening": "Hello! Welcome. Could you fill out this form, please? I just need a few details.",
    "openingTr": "Merhaba! Hoş geldiniz. Şu formu doldurabilir misiniz lütfen? Sadece birkaç bilgiye ihtiyacım var.",
    "goal": "Adını ve soyadını söyleyip adresini ve doğum tarihini verirsen, bir bilgiyi heceletip nereyi imzalayacağını sorarsan konuşma başarılı sayılır.",
    "minTurns": 7
@@ -60689,7 +60660,7 @@
     "tr": "bir belgenin ne zamana kadar geçerli olduğunu söyler"
    },
    {
-    "de": "I have already filled in the form.",
+    "de": "I have already filled out the form.",
     "tr": "bir işi çoktan bitirdiğini anlatır"
    }
   ],
@@ -60876,7 +60847,6 @@
      "kind": "produce",
      "target": "I have my passport with me.",
      "accept": [
-      "I have got my passport with me.",
       "I've got my passport with me.",
       "I have my passport here.",
       "My passport is with me.",
@@ -61097,7 +61067,7 @@
      },
      {
       "lang": "en",
-      "text": "Have you filled in the form?"
+      "text": "Have you filled out the form?"
      },
      {
       "lang": "tr",
@@ -61121,7 +61091,7 @@
      },
      {
       "lang": "en",
-      "text": "Yes, I have already filled in the form."
+      "text": "Yes, I have already filled out the form."
      },
      {
       "lang": "tr",
@@ -61130,7 +61100,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I have already filled in the form."
+     "target": "I have already filled out the form."
     }
    },
    {
@@ -61238,13 +61208,11 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "I haven't got an appointment yet.",
+     "target": "I don't have an appointment yet.",
      "accept": [
-      "I have not got an appointment yet.",
+      "I do not have an appointment yet.",
       "I haven't made an appointment yet.",
-      "I don't have an appointment yet.",
-      "I have not made an appointment yet.",
-      "I do not have an appointment yet."
+      "I have not made an appointment yet."
      ],
      "hint": [
       {
@@ -61269,7 +61237,7 @@
       },
       {
        "lang": "en",
-       "text": "I haven't got an appointment yet."
+       "text": "I don't have an appointment yet."
       },
       {
        "lang": "tr",
@@ -61353,7 +61321,7 @@
      },
      {
       "lang": "en",
-      "text": "I have already filled in the form."
+      "text": "I have already filled out the form."
      },
      {
       "lang": "tr",
@@ -61599,7 +61567,7 @@
      },
      {
       "lang": "tr",
-      "text": "Geçmiş hâli düzensizdir: stole. Türkçede çantam çalındı deriz; İngilizler daha çok biri çaldı der:"
+      "text": "Geçmiş hâli düzensizdir: stole. Türkçede çantam çalındı deriz; Anadili İngilizce olanlar daha çok biri çaldı der:"
      },
      {
       "lang": "en",
@@ -62675,7 +62643,7 @@
      },
      {
       "lang": "en",
-      "text": "No problem. Fill in this form. You can keep the book for three weeks."
+      "text": "No problem. Fill out this form. You can keep the book for three weeks."
      },
      {
       "lang": "en",
@@ -62777,7 +62745,7 @@
     "tr": "tramvay"
    },
    {
-    "de": "timetable",
+    "de": "schedule",
     "tr": "sefer tarifesi"
    }
   ],
@@ -63224,7 +63192,7 @@
      },
      {
       "lang": "en",
-      "text": "timetable"
+      "text": "schedule"
      },
      {
       "lang": "tr",
@@ -63232,12 +63200,12 @@
      },
      {
       "lang": "en",
-      "text": "timetable"
+      "text": "schedule"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "timetable"
+     "target": "schedule"
     }
    },
    {
@@ -65381,7 +65349,7 @@
      },
      {
       "lang": "en",
-      "text": "Yours sincerely"
+      "text": "Sincerely"
      },
      {
       "lang": "tr",
@@ -65565,7 +65533,7 @@
   "focusId": "Explaining systems",
   "vocab": [
    {
-    "de": "rubbish",
+    "de": "trash",
     "tr": "çöp"
    },
    {
@@ -65599,7 +65567,7 @@
   ],
   "patterns": [
    {
-    "de": "They collect the rubbish on Mondays.",
+    "de": "They collect the trash on Mondays.",
     "tr": "düzenli tekrar eden bir hizmeti anlatırken kullanılır"
    },
    {
@@ -65607,7 +65575,7 @@
     "tr": "bir kuralı, zorunluluğu anlatırken kullanılır"
    },
    {
-    "de": "How often do they collect the rubbish?",
+    "de": "How often do they collect the trash?",
     "tr": "bir şeyin ne sıklıkta olduğunu sorarken kullanılır"
    }
   ],
@@ -65635,43 +65603,35 @@
      },
      {
       "lang": "en",
-      "text": "rubbish"
+      "text": "trash"
      },
      {
       "lang": "tr",
-      "text": "Çöp demek. İngilizler çöp için en çok bu kelimeyi kullanır. Lütfen sen de de:"
+      "text": "Çöp demek. Amerikalılar çöp için en çok bu kelimeyi, bir de garbage kelimesini kullanır. Lütfen sen de de:"
      },
      {
       "lang": "en",
-      "text": "rubbish"
+      "text": "trash"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "rubbish"
+     "target": "trash"
     }
    },
    {
     "say": [
      {
       "lang": "tr",
-      "text": "Çöpü attığımız kutuya İngilizcede"
+      "text": "Çöpü attığımız kutuya Amerikan İngilizcesinde"
      },
      {
       "lang": "en",
-      "text": "bin"
+      "text": "trash can"
      },
      {
       "lang": "tr",
-      "text": "denir. Yani çöp kovası:"
-     },
-     {
-      "lang": "en",
-      "text": "the trash can"
-     },
-     {
-      "lang": "tr",
-      "text": "Geri dönüşüm kutuları da renklerle anılır:"
+      "text": "denir. Yani çöp kovası. Geri dönüşüm kutularına ise bin denir ve renkleriyle anılır:"
      },
      {
       "lang": "en",
@@ -65703,7 +65663,7 @@
      },
      {
       "lang": "en",
-      "text": "They collect the rubbish on Mondays."
+      "text": "They collect the trash on Mondays."
      },
      {
       "lang": "tr",
@@ -65712,7 +65672,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "They collect the rubbish on Mondays."
+     "target": "They collect the trash on Mondays."
     }
    },
    {
@@ -65748,12 +65708,12 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "They collect the rubbish on Tuesdays.",
+     "target": "They collect the trash on Tuesdays.",
      "accept": [
-      "They collect rubbish on Tuesdays.",
-      "They collect the rubbish on Tuesday.",
-      "They collect the rubbish every Tuesday.",
-      "They collect rubbish every Tuesday."
+      "They collect trash on Tuesdays.",
+      "They collect the trash on Tuesday.",
+      "They collect the trash every Tuesday.",
+      "They collect trash every Tuesday."
      ],
      "hint": [
       {
@@ -65762,7 +65722,7 @@
       },
       {
        "lang": "en",
-       "text": "They collect the rubbish on Tuesdays."
+       "text": "They collect the trash on Tuesdays."
       },
       {
        "lang": "tr",
@@ -65779,12 +65739,12 @@
      },
      {
       "lang": "en",
-      "text": "They collects the rubbish every Tuesday."
+      "text": "They collects the trash every Tuesday."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "They collects the rubbish every Tuesday.",
+     "statement": "They collects the trash every Tuesday.",
      "answer": false,
      "why": [
       {
@@ -66030,7 +65990,7 @@
      },
      {
       "lang": "en",
-      "text": "How often do they collect the rubbish?"
+      "text": "How often do they collect the trash?"
      },
      {
       "lang": "tr",
@@ -66039,7 +65999,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "How often do they collect the rubbish?"
+     "target": "How often do they collect the trash?"
     }
    },
    {
@@ -66146,7 +66106,7 @@
      },
      {
       "lang": "en",
-      "text": "rubbish"
+      "text": "trash"
      },
      {
       "lang": "tr",
@@ -66190,7 +66150,7 @@
   "chat": {
    "scene": "Apartmanına yeni taşınan bir komşun kapını çalıyor ve çöp ile geri dönüşümün nasıl işlediğini soruyor. Sen ona sistemi anlatıyorsun.",
    "partner": "yeni taşınmış komşun",
-   "opening": "Hi! Sorry to bother you. How often do they collect the rubbish here?",
+   "opening": "Hi! Sorry to bother you. How often do they collect the trash here?",
    "openingTr": "Merhaba! Rahatsız ettiğim için üzgünüm. Burada çöpü ne sıklıkta topluyorlar?",
    "goal": "Çöpün hangi günler toplandığını, neyin hangi kutuya atıldığını ve su faturasının ne zaman geldiğini anlatabildiysen konuşma başarılı sayılır.",
    "minTurns": 7

@@ -204,14 +204,14 @@ export const enA2U07: SkillExercise[] = [
       { speaker: "Ela", text: "One more question: do I have to show my card?" },
       { speaker: "Nurse", text: "No, only the patients show a card. But please write your name in the book." },
       { speaker: "Ela", text: "And where can I buy water?" },
-      { speaker: "Nurse", text: "In the shop next to the door. But not in the room, please." },
+      { speaker: "Nurse", text: "In the store next to the door. But not in the room, please." },
       { speaker: "Ela", text: "Thank you very much." },
       { speaker: "Nurse", text: "You're welcome. Get well soon — I mean your mother." },
     ],
     questions: [
       {
         text: "Where is ward two?",
-        options: ["through the green door, on the right", "in the shop", "next to the book"],
+        options: ["through the green door, on the right", "in the store", "next to the book"],
         answer: 0,
         explain: "„Go through the green door and then to the right.“",
       },
@@ -273,7 +273,7 @@ export const enA2U07: SkillExercise[] = [
     segments: [
       { speaker: "Ela", text: "People ask me how I stay healthy. The answer is boring: nothing special." },
       { speaker: "Ela", text: "I usually get up at seven and I walk to work. That is twenty minutes every morning." },
-      { speaker: "Ela", text: "I exercise three times a week. On Monday and Wednesday I swim, on Saturday I play football." },
+      { speaker: "Ela", text: "I exercise three times a week. On Monday and Wednesday I swim, on Saturday I play soccer." },
       { speaker: "Ela", text: "I hardly ever drink cola. Sugar is my only problem — I love cake." },
       { speaker: "Ela", text: "My diet is simple: vegetables, rice, fish. I eat meat twice a month, not more." },
       { speaker: "Ela", text: "Protein in the morning helps me. With bread and egg I am not hungry until two." },
@@ -393,7 +393,7 @@ export const enA2U07: SkillExercise[] = [
     intro: "Sigorta ve bekleme soruları. Sonuncusu ünitenin asıl işi: dolaylı soru.",
     gloss: [
       { de: "cover", tr: "karşılamak" },
-      { de: "filled in", tr: "doldurdum" },
+      { de: "filled out", tr: "doldurdum" },
       { de: "where the ward is", tr: "servisin nerede olduğunu" },
     ],
     minutes: 7,
@@ -407,8 +407,8 @@ export const enA2U07: SkillExercise[] = [
       {
         kind: "build",
         tr: "Formu çoktan doldurdum.",
-        answer: "I have already filled in the form.",
-        alternatives: ["I've already filled in the form."],
+        answer: "I have already filled out the form.",
+        alternatives: ["I've already filled out the form."],
         hint: "„already“ yardımcı fiil ile asıl fiilin arasına giriyor.",
       },
       {

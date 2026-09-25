@@ -258,7 +258,7 @@ export const enA2U04: SkillExercise[] = [
     intro: "İki gelecek biçimi yan yana. Hangi karar önceden verilmiş, hangisi şimdi?",
     gloss: [
       { de: "kind", tr: "tür" },
-      { de: "flat", tr: "daire" },
+      { de: "apartment", tr: "daire" },
       { de: "at this moment", tr: "şu anda" },
       { de: "difference", tr: "fark" },
       { de: "hopefully", tr: "umarım" },
@@ -267,7 +267,7 @@ export const enA2U04: SkillExercise[] = [
     segments: [
       { speaker: "Deniz", text: "I have two plans for the weekend and they are not the same kind." },
       { speaker: "Deniz", text: "First, I'm going to visit my sister on Sunday. We decided that last week." },
-      { speaker: "Deniz", text: "Second, my flat is dirty. I will clean it — I decided just now, while I was talking to you!" },
+      { speaker: "Deniz", text: "Second, my apartment is dirty. I will clean it — I decided just now, while I was talking to you!" },
       { speaker: "Deniz", text: "That is the difference: a plan from before takes going to, a decision at this moment takes will." },
       { speaker: "Deniz", text: "I promise I won't be late on Sunday. My sister is never happy when I come at two." },
       { speaker: "Deniz", text: "Hopefully the weather will be good. Then we will probably walk by the river." },
@@ -280,7 +280,7 @@ export const enA2U04: SkillExercise[] = [
         explain: "„First, I'm going to visit my sister on Sunday.“ — karar geçen hafta verilmiş.",
       },
       {
-        text: "When did Deniz decide to clean the flat?",
+        text: "When did Deniz decide to clean the apartment?",
         options: ["just now", "last week", "on Sunday"],
         answer: 0,
         explain: "„I will clean it — I decided just now, while I was talking to you!“",

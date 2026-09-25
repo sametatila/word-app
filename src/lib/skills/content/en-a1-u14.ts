@@ -42,8 +42,8 @@ export const enA1U14: SkillExercise[] = [
     minutes: 4,
     text:
       "Ali: Good morning. I'd like a ticket to London, please.\n" +
-      "Clerk: Single or return?\n" +
-      "Ali: Return, please. When does the next train leave?\n" +
+      "Clerk: One-way or round-trip?\n" +
+      "Ali: Round-trip, please. When does the next train leave?\n" +
       "Clerk: At ten past nine, from platform four.\n" +
       "Ali: How much is it?\n" +
       "Clerk: Forty euros. Do you want a seat near the window?\n" +
@@ -56,9 +56,9 @@ export const enA1U14: SkillExercise[] = [
     questions: [
       {
         text: "What ticket does Ali buy?",
-        options: ["a return ticket", "a single ticket", "a plane ticket"],
+        options: ["a round-trip ticket", "a one-way ticket", "a plane ticket"],
         answer: 0,
-        explain: "„Single or return? — Return, please.“",
+        explain: "„One-way or round-trip? — Round-trip, please.“",
       },
       {
         text: "From which platform does the train leave?",
@@ -194,7 +194,7 @@ export const enA1U14: SkillExercise[] = [
     segments: [
       { speaker: "Station", text: "Attention, please! The train to London is running late." },
       { speaker: "Station", text: "The delay is twenty minutes. The train leaves from platform four at ten past nine." },
-      { speaker: "Station", text: "Passengers with a return ticket can wait in the café next to platform three." },
+      { speaker: "Station", text: "Passengers with a round-trip ticket can wait in the café next to platform three." },
       { speaker: "Station", text: "We are sorry for the problem. Please listen for more information." },
       { speaker: "Station", text: "The bus to the airport leaves from the road behind the station." },
       { speaker: "Station", text: "The taxi place is in front of the station, on the square." },
@@ -210,7 +210,7 @@ export const enA1U14: SkillExercise[] = [
         text: "Where can passengers wait?",
         options: ["in the café", "on platform four", "on the square"],
         answer: 0,
-        explain: "„Passengers with a return ticket can wait in the café next to platform three.“",
+        explain: "„Passengers with a round-trip ticket can wait in the café next to platform three.“",
       },
       {
         kind: "truefalse",
@@ -336,7 +336,7 @@ export const enA1U14: SkillExercise[] = [
     genre: "formal",
     intro: "Bilet ve taksi cümlelerini yaz. Sonunda bilet formunu doldur.",
     gloss: [
-      { de: "Single or return?", tr: "gidiş mi gidiş-dönüş mü" },
+      { de: "One-way or round-trip?", tr: "gidiş mi gidiş-dönüş mü" },
       { de: "How long does it take?", tr: "ne kadar sürüyor" },
       { de: "Please stop here.", tr: "lütfen burada durun" },
     ],
@@ -352,7 +352,7 @@ export const enA1U14: SkillExercise[] = [
       {
         kind: "build",
         tr: "Gidiş mi gidiş-dönüş mü?",
-        answer: "Single or return?",
+        answer: "One-way or round-trip?",
         hint: "İki sözcük yeter; „ticket“ tekrarlanmıyor, çünkü zaten konuşuluyor.",
       },
       {

@@ -201,7 +201,7 @@ export const enA2U24: SkillExercise[] = [
       { speaker: "Office", text: "First time or renew?" },
       { speaker: "Can", text: "Renew. The old one is valid until November." },
       { speaker: "Office", text: "Good — you are early. Most people come in the last week." },
-      { speaker: "Can", text: "I have already filled in the form. Here." },
+      { speaker: "Can", text: "I have already filled out the form. Here." },
       { speaker: "Office", text: "Passport?" },
       { speaker: "Can", text: "Valid until 2030." },
       { speaker: "Office", text: "Work contract?" },

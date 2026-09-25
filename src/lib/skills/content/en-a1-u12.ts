@@ -104,7 +104,7 @@ export const enA1U12: SkillExercise[] = [
       "Ela: Good morning. Can I exchange this sweater?\n" +
       "Seller: Of course. Is there a problem?\n" +
       "Ela: Yes. There is a button here, and it is dirty. Look.\n" +
-      "Seller: I see. Have you got the receipt?\n" +
+      "Seller: I see. Do you have the receipt?\n" +
       "Ela: Yes, here it is. I keep all my receipts.\n" +
       "Seller: Good. Would you like the same sweater in another color?\n" +
       "Ela: I'd like to return this and get my money back.\n" +
@@ -149,7 +149,7 @@ export const enA1U12: SkillExercise[] = [
         answer: 0,
         items: [
           "Can I exchange this sweater?",
-          "Have you got the receipt?",
+          "Do you have the receipt?",
           "I'd like to return this.",
           "Here is your money.",
         ],

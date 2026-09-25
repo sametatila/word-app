@@ -3041,7 +3041,7 @@
   "focusId": "Reporting verbs and evaluation",
   "vocab": [
    {
-    "de": "counterstatement",
+    "de": "rebuttal",
     "tr": "karşı açıklama"
    },
    {
@@ -3079,7 +3079,7 @@
     "tr": "aynı içeriği üç hükümle aktarır"
    },
    {
-    "de": "The counterstatement itself said less than the verb used to report it.",
+    "de": "The rebuttal itself said less than the verb used to report it.",
     "tr": "hükmün fiilde olduğunu söyler"
    },
    {
@@ -3131,7 +3131,7 @@
      },
      {
       "lang": "en",
-      "text": "counterstatement"
+      "text": "rebuttal"
      },
      {
       "lang": "tr",
@@ -3147,7 +3147,7 @@
      },
      {
       "lang": "en",
-      "text": "The counterstatement itself said less than the verb used to report it."
+      "text": "The rebuttal itself said less than the verb used to report it."
      },
      {
       "lang": "tr",
@@ -3156,7 +3156,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The counterstatement itself said less than the verb used to report it."
+     "target": "The rebuttal itself said less than the verb used to report it."
     }
    },
    {
@@ -3281,12 +3281,12 @@
      },
      {
       "lang": "en",
-      "text": "The counterstatement itself said less than the verb used to report it."
+      "text": "The rebuttal itself said less than the verb used to report it."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The counterstatement itself said less than the verb used to report it.",
+     "statement": "The rebuttal itself said less than the verb used to report it.",
      "answer": true,
      "why": [
       {
@@ -8003,11 +8003,11 @@
   "focusId": "Subjunctive in formal motions",
   "vocab": [
    {
-    "de": "codetermination",
+    "de": "worker participation",
     "tr": "söz hakkı"
    },
    {
-    "de": "constitutional state",
+    "de": "rule of law",
     "tr": "hukuk devleti"
    },
    {
@@ -8037,11 +8037,11 @@
   ],
   "patterns": [
    {
-    "de": "We move that the board grant codetermination.",
+    "de": "We move that the board grant worker participation.",
     "tr": "önergeyi kalıplaşmış biçimle kurar"
    },
    {
-    "de": "Were it not for the constitutional state, cohesion would fail.",
+    "de": "Were it not for the rule of law, cohesion would fail.",
     "tr": "olmasaydıyı kurumsal metinde kurar"
    },
    {
@@ -8073,7 +8073,7 @@
      },
      {
       "lang": "en",
-      "text": "codetermination"
+      "text": "worker participation"
      },
      {
       "lang": "tr",
@@ -8081,12 +8081,12 @@
      },
      {
       "lang": "en",
-      "text": "We move that the board grant codetermination."
+      "text": "We move that the board grant worker participation."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "We move that the board grant codetermination."
+     "target": "We move that the board grant worker participation."
     }
    },
    {
@@ -8097,7 +8097,7 @@
      },
      {
       "lang": "en",
-      "text": "constitutional state"
+      "text": "rule of law"
      },
      {
       "lang": "tr",
@@ -8121,7 +8121,7 @@
      },
      {
       "lang": "en",
-      "text": "Were it not for the constitutional state, cohesion would fail."
+      "text": "Were it not for the rule of law, cohesion would fail."
      },
      {
       "lang": "tr",
@@ -8130,7 +8130,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Were it not for the constitutional state, cohesion would fail."
+     "target": "Were it not for the rule of law, cohesion would fail."
     }
    },
    {
@@ -8194,10 +8194,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "We move that the council grant codetermination.",
+     "target": "We move that the council grant worker participation.",
      "accept": [
-      "We move that the committee grant codetermination.",
-      "We move that the board grant codetermination."
+      "We move that the committee grant worker participation.",
+      "We move that the board grant worker participation."
      ],
      "hint": [
       {
@@ -8214,7 +8214,7 @@
       },
       {
        "lang": "en",
-       "text": "We move that the council grant codetermination."
+       "text": "We move that the council grant worker participation."
       },
       {
        "lang": "tr",
@@ -8302,7 +8302,7 @@
      "target": "Were it not for the law, cohesion would fail.",
      "accept": [
       "Were it not for the rule, cohesion would fail.",
-      "Were it not for the constitutional state, cohesion would fail."
+      "Were it not for the rule of law, cohesion would fail."
      ],
      "hint": [
       {
@@ -10019,7 +10019,7 @@
     "tr": "kararname"
    },
    {
-    "de": "cut-off period",
+    "de": "filing deadline",
     "tr": "son kabul süresi"
    },
    {
@@ -10332,7 +10332,7 @@
      },
      {
       "lang": "en",
-      "text": "cut-off period"
+      "text": "filing deadline"
      },
      {
       "lang": "tr",
@@ -10356,7 +10356,7 @@
      },
      {
       "lang": "en",
-      "text": "The cut-off period starts with the service of documents."
+      "text": "The filing deadline runs from the service of documents."
      },
      {
       "lang": "tr",
@@ -10365,7 +10365,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The cut-off period starts with the service of documents."
+     "target": "The filing deadline runs from the service of documents."
     }
    },
    {
@@ -10500,7 +10500,7 @@
     "tr": "hafif suç"
    },
    {
-    "de": "administrative offense",
+    "de": "civil infraction",
     "tr": "kabahat"
    },
    {
@@ -10530,7 +10530,7 @@
   ],
   "patterns": [
    {
-    "de": "A misdemeanor in one report is an administrative offense in another.",
+    "de": "A misdemeanor in one report is a civil infraction in another.",
     "tr": "aynı olayın adının metne göre değiştiğini söyler"
    },
    {
@@ -10574,12 +10574,12 @@
      },
      {
       "lang": "en",
-      "text": "A misdemeanor in one report is an administrative offense in another."
+      "text": "A misdemeanor in one report is a civil infraction in another."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "A misdemeanor in one report is an administrative offense in another."
+     "target": "A misdemeanor in one report is a civil infraction in another."
     }
    },
    {
@@ -10590,7 +10590,7 @@
      },
      {
       "lang": "en",
-      "text": "administrative offense"
+      "text": "civil infraction"
      },
      {
       "lang": "tr",
@@ -10678,7 +10678,7 @@
      },
      {
       "lang": "en",
-      "text": "an administrative offense"
+      "text": "a civil infraction"
      },
      {
       "lang": "tr",
@@ -10695,10 +10695,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "A misdemeanor in one text is an administrative offense in another.",
+     "target": "A misdemeanor in one text is a civil infraction in another.",
      "accept": [
-      "A misdemeanor in one law is an administrative offense in another.",
-      "A misdemeanor in one report is an administrative offense in another."
+      "A misdemeanor in one law is a civil infraction in another.",
+      "A misdemeanor in one report is a civil infraction in another."
      ],
      "hint": [
       {
@@ -10715,7 +10715,7 @@
       },
       {
        "lang": "en",
-       "text": "A misdemeanor in one text is an administrative offense in another."
+       "text": "A misdemeanor in one text is a civil infraction in another."
       },
       {
        "lang": "tr",
@@ -10955,7 +10955,7 @@
      },
      {
       "lang": "en",
-      "text": "an administrative offense"
+      "text": "a civil infraction"
      },
      {
       "lang": "tr",
@@ -13522,7 +13522,7 @@
     "tr": "uyarı grevi"
    },
    {
-    "de": "short-time work",
+    "de": "reduced hours",
     "tr": "kısa çalışma"
    },
    {
@@ -13534,7 +13534,7 @@
     "tr": "iş kazası sigorta kurumu"
    },
    {
-    "de": "residence title",
+    "de": "residence permit",
     "tr": "oturma statüsü"
    },
    {
@@ -13556,7 +13556,7 @@
     "tr": "olayı başa alır"
    },
    {
-    "de": "The short-time work we accepted; the cut in sick pay we did not.",
+    "de": "The reduced hours we accepted; the cut in sick pay we did not.",
     "tr": "iki kalemi başa alıp ayırır"
    }
   ],
@@ -13644,7 +13644,7 @@
      },
      {
       "lang": "en",
-      "text": "short-time work"
+      "text": "reduced hours"
      },
      {
       "lang": "tr",
@@ -13668,7 +13668,7 @@
      },
      {
       "lang": "en",
-      "text": "The short-time work we accepted; the cut in sick pay we did not."
+      "text": "The reduced hours we accepted; the cut in sick pay we did not."
      },
      {
       "lang": "tr",
@@ -13677,7 +13677,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The short-time work we accepted; the cut in sick pay we did not."
+     "target": "The reduced hours we accepted; the cut in sick pay we did not."
     }
    },
    {
@@ -13704,7 +13704,7 @@
      },
      {
       "lang": "en",
-      "text": "The short-time work we accepted"
+      "text": "The reduced hours we accepted"
      },
      {
       "lang": "tr",
@@ -13721,10 +13721,9 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "What the council secured is worker representation on the board.",
+     "target": "What the union secured is worker representation on the board.",
      "accept": [
-      "What the staff secured is worker representation on the board.",
-      "What the union secured is worker representation on the board."
+      "What the staff secured is worker representation on the board."
      ],
      "hint": [
       {
@@ -13741,7 +13740,7 @@
       },
       {
        "lang": "en",
-       "text": "What the council secured is worker representation on the board."
+       "text": "What the union secured is worker representation on the board."
       },
       {
        "lang": "tr",
@@ -13758,12 +13757,12 @@
      },
      {
       "lang": "en",
-      "text": "The short-time work we accepted; the cut in sick pay we did not."
+      "text": "The reduced hours we accepted; the cut in sick pay we did not."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The short-time work we accepted; the cut in sick pay we did not.",
+     "statement": "The reduced hours we accepted; the cut in sick pay we did not.",
      "answer": true,
      "why": [
       {
@@ -13855,7 +13854,7 @@
      },
      {
       "lang": "en",
-      "text": "residence title"
+      "text": "residence permit"
      },
      {
       "lang": "tr",
@@ -13879,7 +13878,7 @@
      },
      {
       "lang": "en",
-      "text": "The residence title allows family reunification."
+      "text": "The residence permit allows family reunification."
      },
      {
       "lang": "tr",
@@ -13888,7 +13887,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The residence title allows family reunification."
+     "target": "The residence permit allows family reunification."
     }
    },
    {
@@ -13939,7 +13938,7 @@
      "target": "The overtime we accepted; the cut in sick pay we did not.",
      "accept": [
       "The extra hours we accepted; the cut in sick pay we did not.",
-      "The short-time work we accepted; the cut in sick pay we did not."
+      "The reduced hours we accepted; the cut in sick pay we did not."
      ],
      "hint": [
       {
@@ -13989,7 +13988,7 @@
      },
      {
       "lang": "en",
-      "text": "The short-time work we accepted"
+      "text": "The reduced hours we accepted"
      },
      {
       "lang": "tr",
@@ -14019,7 +14018,7 @@
   "focusId": "Cohesion in contracts",
   "vocab": [
    {
-    "de": "declaration of commitment",
+    "de": "affidavit of support",
     "tr": "taahhütname"
    },
    {
@@ -14053,7 +14052,7 @@
   ],
   "patterns": [
    {
-    "de": "This clause alone binds the sponsor to the declaration of commitment.",
+    "de": "This clause alone binds the sponsor to the affidavit of support.",
     "tr": "önceki maddeye bağlar"
    },
    {
@@ -14089,7 +14088,7 @@
      },
      {
       "lang": "en",
-      "text": "declaration of commitment"
+      "text": "affidavit of support"
      },
      {
       "lang": "tr",
@@ -14097,12 +14096,12 @@
      },
      {
       "lang": "en",
-      "text": "This clause alone binds the sponsor to the declaration of commitment."
+      "text": "This clause alone binds the sponsor to the affidavit of support."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "This clause alone binds the sponsor to the declaration of commitment."
+     "target": "This clause alone binds the sponsor to the affidavit of support."
     }
    },
    {
@@ -14221,7 +14220,7 @@
      "target": "This clause alone binds both parties.",
      "accept": [
       "This clause alone binds the parties.",
-      "This clause alone binds the sponsor to the declaration of commitment."
+      "This clause alone binds the sponsor to the affidavit of support."
      ],
      "hint": [
       {
@@ -15538,7 +15537,7 @@
     "tr": "hazırcevaplık"
    },
    {
-    "de": "speaking inhibition",
+    "de": "fear of speaking",
     "tr": "konuşma çekingenliği"
    },
    {
@@ -15564,7 +15563,7 @@
     "tr": "iki eşdizimi karşı karşıya koyar"
    },
    {
-    "de": "A quick wit cannot cure a speaking inhibition.",
+    "de": "A quick wit cannot cure a fear of speaking.",
     "tr": "iki eşdizimi bir cümlede kurar"
    },
    {
@@ -15628,7 +15627,7 @@
      },
      {
       "lang": "en",
-      "text": "speaking inhibition"
+      "text": "fear of speaking"
      },
      {
       "lang": "tr",
@@ -15644,7 +15643,7 @@
      },
      {
       "lang": "en",
-      "text": "A quick wit cannot cure a speaking inhibition."
+      "text": "A quick wit cannot cure a fear of speaking."
      },
      {
       "lang": "tr",
@@ -15653,7 +15652,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "A quick wit cannot cure a speaking inhibition."
+     "target": "A quick wit cannot cure a fear of speaking."
     }
    },
    {
@@ -15841,7 +15840,7 @@
      "target": "A quick wit cannot cure a fear.",
      "accept": [
       "A quick wit cannot cure a worry.",
-      "A quick wit cannot cure a speaking inhibition."
+      "A quick wit cannot cure a fear of speaking."
      ],
      "hint": [
       {
@@ -21306,7 +21305,7 @@
     "tr": "asimilasyon"
    },
    {
-    "de": "adaptation course",
+    "de": "integration course",
     "tr": "uyum eğitimi"
    },
    {
@@ -21336,7 +21335,7 @@
     "tr": "ödünü başa alıp adı düzeltir"
    },
    {
-    "de": "The adaptation course, albeit useful, is not a culture of welcome.",
+    "de": "The integration course, albeit useful, is not a culture of welcome.",
     "tr": "ödünü araya sıkıştırır"
    },
    {
@@ -21400,7 +21399,7 @@
      },
      {
       "lang": "en",
-      "text": "adaptation course"
+      "text": "integration course"
      },
      {
       "lang": "tr",
@@ -21416,7 +21415,7 @@
      },
      {
       "lang": "en",
-      "text": "The adaptation course, albeit useful, is not a culture of welcome."
+      "text": "The integration course, albeit useful, is not a culture of welcome."
      },
      {
       "lang": "tr",
@@ -21425,7 +21424,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The adaptation course, albeit useful, is not a culture of welcome."
+     "target": "The integration course, albeit useful, is not a culture of welcome."
     }
    },
    {
@@ -21534,12 +21533,12 @@
      },
      {
       "lang": "en",
-      "text": "The adaptation course, albeit useful, is not a culture of welcome."
+      "text": "The integration course, albeit useful, is not a culture of welcome."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The adaptation course, albeit useful, is not a culture of welcome.",
+     "statement": "The integration course, albeit useful, is not a culture of welcome.",
      "answer": true,
      "why": [
       {
@@ -21621,7 +21620,7 @@
      "target": "The course, albeit free, is not a culture of welcome.",
      "accept": [
       "The course, albeit good, is not a culture of welcome.",
-      "The adaptation course, albeit useful, is not a culture of welcome."
+      "The integration course, albeit useful, is not a culture of welcome."
      ],
      "hint": [
       {
@@ -25567,8 +25566,8 @@
     "tr": "davranış kuralları"
    },
    {
-    "de": "female works council member",
-    "tr": "kadın işçi temsilcisi"
+    "de": "union representative",
+    "tr": "sendika temsilcisi"
    },
    {
     "de": "make permanent",
@@ -25593,7 +25592,7 @@
     "tr": "olmasaydıyı masada kurar"
    },
    {
-    "de": "The female works council member asks that the firm make every apprenticeship contract permanent.",
+    "de": "The union representative asks that the firm make every apprenticeship contract permanent.",
     "tr": "talebi kalıpla kurar"
    }
   ],
@@ -25693,11 +25692,11 @@
      },
      {
       "lang": "tr",
-      "text": "çalışanları kurulda temsil eden kadına ise"
+      "text": "çalışanları temsil eden sendika görevlisine ise"
      },
      {
       "lang": "en",
-      "text": "female works council member"
+      "text": "union representative"
      },
      {
       "lang": "tr",
@@ -25713,16 +25712,16 @@
      },
      {
       "lang": "en",
-      "text": "The female works council member asks that the firm make every apprenticeship contract permanent."
+      "text": "The union representative asks that the firm make every apprenticeship contract permanent."
      },
      {
       "lang": "tr",
-      "text": "Kadın işçi temsilcisi şirketin her çıraklık sözleşmesini kalıcı hâle getirmesini istiyor."
+      "text": "Sendika temsilcisi şirketin her çıraklık sözleşmesini kalıcı hâle getirmesini istiyor."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The female works council member asks that the firm make every apprenticeship contract permanent."
+     "target": "The union representative asks that the firm make every apprenticeship contract permanent."
     }
    },
    {
@@ -25932,15 +25931,14 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir tane daha: Kurul şirketin her sözleşmeyi kalıcı hâle getirmesini istiyor."
+      "text": "Bir tane daha: Sendika şirketin her sözleşmeyi kalıcı hâle getirmesini istiyor."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "The council asks that the firm make every contract permanent.",
+     "target": "The union asks that the firm make every contract permanent.",
      "accept": [
-      "The union asks that the firm make every contract permanent.",
-      "The female works council member asks that the firm make every apprenticeship contract permanent."
+      "The union representative asks that the firm make every apprenticeship contract permanent."
      ],
      "hint": [
       {
@@ -25957,7 +25955,7 @@
       },
       {
        "lang": "en",
-       "text": "The council asks that the firm make every contract permanent."
+       "text": "The union asks that the firm make every contract permanent."
       },
       {
        "lang": "tr",
@@ -26040,7 +26038,7 @@
     "tr": "iş sahibi"
    },
    {
-    "de": "as a sideline",
+    "de": "on the side",
     "tr": "yan iş olarak"
    },
    {
@@ -26062,7 +26060,7 @@
     "tr": "ödünü araya sıkıştırır"
    },
    {
-    "de": "Although gainfully employed, many still work as a sideline.",
+    "de": "Although gainfully employed, many still work on the side.",
     "tr": "ödünü başa çekip eksiği gösterir"
    }
   ],
@@ -26182,7 +26180,7 @@
      },
      {
       "lang": "en",
-      "text": "Although gainfully employed, many still work as a sideline."
+      "text": "Although gainfully employed, many still work on the side."
      },
      {
       "lang": "tr",
@@ -26191,7 +26189,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Although gainfully employed, many still work as a sideline."
+     "target": "Although gainfully employed, many still work on the side."
     }
    },
    {
@@ -26256,12 +26254,12 @@
      },
      {
       "lang": "en",
-      "text": "Although gainfully employed, many still work as a sideline."
+      "text": "Although gainfully employed, many still work on the side."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Although gainfully employed, many still work as a sideline.",
+     "statement": "Although gainfully employed, many still work on the side.",
      "answer": true,
      "why": [
       {
@@ -26279,7 +26277,7 @@
      },
      {
       "lang": "en",
-      "text": "as a sideline"
+      "text": "on the side"
      },
      {
       "lang": "tr",
@@ -26406,10 +26404,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "Although well paid, many still work as a sideline.",
+     "target": "Although well paid, many still work on the side.",
      "accept": [
-      "Although well placed, many still work as a sideline.",
-      "Although gainfully employed, many still work as a sideline."
+      "Although well placed, many still work on the side.",
+      "Although gainfully employed, many still work on the side."
      ],
      "hint": [
       {
@@ -26426,7 +26424,7 @@
       },
       {
        "lang": "en",
-       "text": "Although well paid, many still work as a sideline."
+       "text": "Although well paid, many still work on the side."
       },
       {
        "lang": "tr",
@@ -26509,7 +26507,7 @@
     "tr": "alan dışından geçiş"
    },
    {
-    "de": "competence orientation",
+    "de": "competency-based approach",
     "tr": "yetkinlik odaklılık"
    },
    {
@@ -26531,7 +26529,7 @@
     "tr": "duyuru ile sayımı ayırır"
    },
    {
-    "de": "Lateral hiring and competence orientation arrive together.",
+    "de": "Lateral hiring and a competency-based approach arrive together.",
     "tr": "iki eşdizimi birlikte getirir"
    }
   ],
@@ -26651,7 +26649,7 @@
      },
      {
       "lang": "en",
-      "text": "Lateral hiring and competence orientation arrive together."
+      "text": "Lateral hiring and a competency-based approach arrive together."
      },
      {
       "lang": "tr",
@@ -26660,7 +26658,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Lateral hiring and competence orientation arrive together."
+     "target": "Lateral hiring and a competency-based approach arrive together."
     }
    },
    {
@@ -26756,7 +26754,7 @@
      },
      {
       "lang": "en",
-      "text": "competence orientation"
+      "text": "competency-based approach"
      },
      {
       "lang": "tr",
@@ -26820,7 +26818,7 @@
      "target": "Lateral hiring and staff development arrive together.",
      "accept": [
       "Lateral hiring and training arrive together.",
-      "Lateral hiring and competence orientation arrive together."
+      "Lateral hiring and a competency-based approach arrive together."
      ],
      "hint": [
       {
@@ -31215,7 +31213,7 @@
     "tr": "ticaretin serbestleşmesi"
    },
    {
-    "de": "market organization",
+    "de": "market regulation",
     "tr": "piyasa düzeni"
    },
    {
@@ -31237,7 +31235,7 @@
     "tr": "ölçme ile imzayı ayırır"
    },
    {
-    "de": "Trade liberalization and market organization pull apart.",
+    "de": "Trade liberalization and market regulation pull apart.",
     "tr": "iki eşdizimi karşıt yönde bağlar"
    }
   ],
@@ -31357,7 +31355,7 @@
      },
      {
       "lang": "en",
-      "text": "Trade liberalization and market organization pull apart."
+      "text": "Trade liberalization and market regulation pull apart."
      },
      {
       "lang": "tr",
@@ -31366,7 +31364,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Trade liberalization and market organization pull apart."
+     "target": "Trade liberalization and market regulation pull apart."
     }
    },
    {
@@ -31462,7 +31460,7 @@
      },
      {
       "lang": "en",
-      "text": "market organization"
+      "text": "market regulation"
      },
      {
       "lang": "tr",
@@ -31526,7 +31524,7 @@
      "target": "Trade liberalization and security of supply pull apart.",
      "accept": [
       "Trade liberalization and the standard pull apart.",
-      "Trade liberalization and market organization pull apart."
+      "Trade liberalization and market regulation pull apart."
      ],
      "hint": [
       {
@@ -32611,8 +32609,8 @@
   "level": "C1",
   "course": "en",
   "icon": "dog",
-  "title": "Species-appropriate indeed",
-  "titleTr": "Türüne uygun, tabii",
+  "title": "Humane indeed",
+  "titleTr": "İnsancıl, tabii",
   "summary": "Hayvancılık tanıtım dilini alayla eleştirmeyi öğretir; kurumun kendi sözcüğü en sağlam eleştiri malzemesi olur.",
   "minutes": 12,
   "focusId": "Irony and understatement about animal farming",
@@ -32626,8 +32624,8 @@
     "tr": "endüstriyel hayvancılık"
    },
    {
-    "de": "species-appropriate",
-    "tr": "türüne uygun"
+    "de": "humane",
+    "tr": "insancıl (hayvancılıkta)"
    },
    {
     "de": "milk quota",
@@ -32656,7 +32654,7 @@
     "tr": "eksik söyleyip çok kasteder"
    },
    {
-    "de": "We have no factory farming here; we have species-appropriate housing.",
+    "de": "We have no factory farming here; we have humane housing.",
     "tr": "yalanlayıp aynı şeyi doğrular"
    },
    {
@@ -32716,11 +32714,11 @@
      },
      {
       "lang": "tr",
-      "text": "hayvanın kendi doğasına uygun tutulmasına ise"
+      "text": "hayvana insanca davranılmasına ise"
      },
      {
       "lang": "en",
-      "text": "species-appropriate"
+      "text": "humane"
      },
      {
       "lang": "tr",
@@ -32736,16 +32734,16 @@
      },
      {
       "lang": "en",
-      "text": "We have no factory farming here; we have species-appropriate housing."
+      "text": "We have no factory farming here; we have humane housing."
      },
      {
       "lang": "tr",
-      "text": "Burada endüstriyel hayvancılık yok, türüne uygun barındırma var."
+      "text": "Burada endüstriyel hayvancılık yok, insancıl barındırma var."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "We have no factory farming here; we have species-appropriate housing."
+     "target": "We have no factory farming here; we have humane housing."
     }
    },
    {
@@ -32800,7 +32798,7 @@
      },
      {
       "lang": "en",
-      "text": "species-appropriate"
+      "text": "humane"
      },
      {
       "lang": "tr",
@@ -32846,12 +32844,12 @@
      },
      {
       "lang": "en",
-      "text": "We have no factory farming here; we have species-appropriate housing."
+      "text": "We have no factory farming here; we have humane housing."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "We have no factory farming here; we have species-appropriate housing.",
+     "statement": "We have no factory farming here; we have humane housing.",
      "answer": true,
      "why": [
       {
@@ -32917,7 +32915,7 @@
      "target": "We have no factory farming here; we have modern housing.",
      "accept": [
       "We have no factory farming here; we have new housing.",
-      "We have no factory farming here; we have species-appropriate housing."
+      "We have no factory farming here; we have humane housing."
      ],
      "hint": [
       {
@@ -33568,7 +33566,7 @@
   "focusId": "Ellipsis in talk about seed rights",
   "vocab": [
    {
-    "de": "seed replanting right",
+    "de": "right to save seed",
     "tr": "tohumu yeniden ekme hakkı"
    },
    {
@@ -33602,7 +33600,7 @@
   ],
   "patterns": [
    {
-    "de": "The seed replanting right survives as custom, the seed company's claim as a patent.",
+    "de": "The right to save seed survives as custom, the seed company's claim as a patent.",
     "tr": "ikinci yarıda yüklemi düşürür"
    },
    {
@@ -33638,7 +33636,7 @@
      },
      {
       "lang": "en",
-      "text": "seed replanting right"
+      "text": "right to save seed"
      },
      {
       "lang": "tr",
@@ -33646,12 +33644,12 @@
      },
      {
       "lang": "en",
-      "text": "The seed replanting right survives as custom, the seed company's claim as a patent."
+      "text": "The right to save seed survives as custom, the seed company's claim as a patent."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The seed replanting right survives as custom, the seed company's claim as a patent."
+     "target": "The right to save seed survives as custom, the seed company's claim as a patent."
     }
    },
    {
@@ -33767,10 +33765,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "The seed replanting right survives as custom, the patent as law.",
+     "target": "The right to save seed survives as custom, the patent as law.",
      "accept": [
-      "The seed replanting right survives as custom, the license as law.",
-      "The seed replanting right survives as custom, the seed company's claim as a patent."
+      "The right to save seed survives as custom, the license as law.",
+      "The right to save seed survives as custom, the seed company's claim as a patent."
      ],
      "hint": [
       {
@@ -33787,7 +33785,7 @@
       },
       {
        "lang": "en",
-       "text": "The seed replanting right survives as custom, the patent as law."
+       "text": "The right to save seed survives as custom, the patent as law."
       },
       {
        "lang": "tr",
@@ -34518,7 +34516,7 @@
     "tr": "ısı adası"
    },
    {
-    "de": "renaturalize",
+    "de": "rewild",
     "tr": "doğal hâline döndürmek"
    }
   ],
@@ -34781,7 +34779,7 @@
      },
      {
       "lang": "en",
-      "text": "They renaturalize the stream and keep the heat island."
+      "text": "They rewild the stream and keep the heat island."
      },
      {
       "lang": "tr",
@@ -34790,7 +34788,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "They renaturalize the stream and keep the heat island."
+     "target": "They rewild the stream and keep the heat island."
     }
    },
    {
@@ -34801,7 +34799,7 @@
      },
      {
       "lang": "en",
-      "text": "renaturalize"
+      "text": "rewild"
      },
      {
       "lang": "tr",
@@ -35917,7 +35915,7 @@
     "tr": "geri kazanmak"
    },
    {
-    "de": "secondary raw material",
+    "de": "recycled raw material",
     "tr": "ikincil hammadde"
    },
    {
@@ -35939,7 +35937,7 @@
     "tr": "tasarımı bedelle ayırır"
    },
    {
-    "de": "They reclaim the metal and sell it as a secondary raw material.",
+    "de": "They reclaim the metal and sell it as a recycled raw material.",
     "tr": "iki eşdizimi tek cümlede bağlar"
    }
   ],
@@ -36059,7 +36057,7 @@
      },
      {
       "lang": "en",
-      "text": "They reclaim the metal and sell it as a secondary raw material."
+      "text": "They reclaim the metal and sell it as a recycled raw material."
      },
      {
       "lang": "tr",
@@ -36068,7 +36066,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "They reclaim the metal and sell it as a secondary raw material."
+     "target": "They reclaim the metal and sell it as a recycled raw material."
     }
    },
    {
@@ -36164,7 +36162,7 @@
      },
      {
       "lang": "en",
-      "text": "secondary raw material"
+      "text": "recycled raw material"
      },
      {
       "lang": "tr",
@@ -36225,10 +36223,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "They reclaim the glass and sell it as a secondary raw material.",
+     "target": "They reclaim the glass and sell it as a recycled raw material.",
      "accept": [
-      "They reclaim the paper and sell it as a secondary raw material.",
-      "They reclaim the metal and sell it as a secondary raw material."
+      "They reclaim the paper and sell it as a recycled raw material.",
+      "They reclaim the metal and sell it as a recycled raw material."
      ],
      "hint": [
       {
@@ -36245,7 +36243,7 @@
       },
       {
        "lang": "en",
-       "text": "They reclaim the glass and sell it as a secondary raw material."
+       "text": "They reclaim the glass and sell it as a recycled raw material."
       },
       {
        "lang": "tr",
@@ -36366,7 +36364,7 @@
   "focusId": "Reporting verbs in scientific claims",
   "vocab": [
    {
-    "de": "steering effect",
+    "de": "incentive effect",
     "tr": "yönlendirici etki"
    },
    {
@@ -36374,7 +36372,7 @@
     "tr": "dönüşüm süreci"
    },
    {
-    "de": "third-party funding",
+    "de": "external funding",
     "tr": "dış kaynaklı fon"
    },
    {
@@ -36400,7 +36398,7 @@
   ],
   "patterns": [
    {
-    "de": "One reports a steering effect; another doubts the transformation process.",
+    "de": "One reports an incentive effect; another doubts the transformation process.",
     "tr": "iki aktarmayı karşı karşıya koyar"
    },
    {
@@ -36436,7 +36434,7 @@
      },
      {
       "lang": "en",
-      "text": "steering effect"
+      "text": "incentive effect"
      },
      {
       "lang": "tr",
@@ -36444,12 +36442,12 @@
      },
      {
       "lang": "en",
-      "text": "One reports a steering effect; another doubts the transformation process."
+      "text": "One reports an incentive effect; another doubts the transformation process."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "One reports a steering effect; another doubts the transformation process."
+     "target": "One reports an incentive effect; another doubts the transformation process."
     }
    },
    {
@@ -36468,7 +36466,7 @@
      },
      {
       "lang": "en",
-      "text": "third-party funding"
+      "text": "external funding"
      },
      {
       "lang": "tr",
@@ -36573,10 +36571,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "One reports a steering effect; another doubts the result.",
+     "target": "One reports an incentive effect; another doubts the result.",
      "accept": [
-      "One reports a steering effect; another doubts the number.",
-      "One reports a steering effect; another doubts the transformation process."
+      "One reports an incentive effect; another doubts the number.",
+      "One reports an incentive effect; another doubts the transformation process."
      ],
      "hint": [
       {
@@ -36593,7 +36591,7 @@
       },
       {
        "lang": "en",
-       "text": "One reports a steering effect; another doubts the result."
+       "text": "One reports an incentive effect; another doubts the result."
       },
       {
        "lang": "tr",
@@ -37698,7 +37696,7 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "Car-friendly, they said, and rather good for the shops.",
+     "target": "Car-friendly, they said, and rather good for the stores.",
      "accept": [
       "Car-friendly, they said, and rather good for the center.",
       "Car-friendly, they said, and rather good against traffic gridlock."
@@ -37718,7 +37716,7 @@
       },
       {
        "lang": "en",
-       "text": "Car-friendly, they said, and rather good for the shops."
+       "text": "Car-friendly, they said, and rather good for the stores."
       },
       {
        "lang": "tr",
@@ -38278,7 +38276,7 @@
     "tr": "moratoryum"
    },
    {
-    "de": "construction halt",
+    "de": "construction freeze",
     "tr": "inşaatın durdurulması"
    },
    {
@@ -38308,7 +38306,7 @@
   ],
   "patterns": [
    {
-    "de": "The moratorium survives as a promise, the construction halt as a date.",
+    "de": "The moratorium survives as a promise, the construction freeze as a date.",
     "tr": "ikinci yarıda yüklemi düşürür"
    },
    {
@@ -38352,12 +38350,12 @@
      },
      {
       "lang": "en",
-      "text": "The moratorium survives as a promise, the construction halt as a date."
+      "text": "The moratorium survives as a promise, the construction freeze as a date."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The moratorium survives as a promise, the construction halt as a date."
+     "target": "The moratorium survives as a promise, the construction freeze as a date."
     }
    },
    {
@@ -38368,7 +38366,7 @@
      },
      {
       "lang": "en",
-      "text": "construction halt"
+      "text": "construction freeze"
      },
      {
       "lang": "tr",
@@ -38456,7 +38454,7 @@
      },
      {
       "lang": "en",
-      "text": "the construction halt as a date"
+      "text": "the construction freeze as a date"
      },
      {
       "lang": "tr",
@@ -38476,7 +38474,7 @@
      "target": "The moratorium survives as a promise, the permit as a date.",
      "accept": [
       "The moratorium survives as a promise, the decision as a date.",
-      "The moratorium survives as a promise, the construction halt as a date."
+      "The moratorium survives as a promise, the construction freeze as a date."
      ],
      "hint": [
       {
@@ -38620,7 +38618,7 @@
      "kind": "produce",
      "target": "The houses fall into neglect; the schools, into ruin.",
      "accept": [
-      "The houses fall into neglect; the shops, into ruin.",
+      "The houses fall into neglect; the stores, into ruin.",
       "The houses fall into neglect; the halls, into ruin."
      ],
      "hint": [
@@ -38705,7 +38703,7 @@
      },
      {
       "lang": "en",
-      "text": "the construction halt as a date"
+      "text": "the construction freeze as a date"
      },
      {
       "lang": "tr",
@@ -40627,7 +40625,7 @@
     "tr": "fırsat maliyeti"
    },
    {
-    "de": "follow-up costs",
+    "de": "follow-on costs",
     "tr": "sonradan çıkan maliyetler"
    },
    {
@@ -40657,7 +40655,7 @@
     "tr": "iki eşdizimi karşı karşıya koyar"
    },
    {
-    "de": "Follow-up costs are estimated; a cost overrun is announced.",
+    "de": "Follow-on costs are estimated; a cost overrun is announced.",
     "tr": "tahmini duyurudan ayırır"
    },
    {
@@ -40721,7 +40719,7 @@
      },
      {
       "lang": "en",
-      "text": "follow-up costs"
+      "text": "follow-on costs"
      },
      {
       "lang": "tr",
@@ -40737,7 +40735,7 @@
      },
      {
       "lang": "en",
-      "text": "Follow-up costs are estimated; a cost overrun is announced."
+      "text": "Follow-on costs are estimated; a cost overrun is announced."
      },
      {
       "lang": "tr",
@@ -40746,7 +40744,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Follow-up costs are estimated; a cost overrun is announced."
+     "target": "Follow-on costs are estimated; a cost overrun is announced."
     }
    },
    {
@@ -40863,12 +40861,12 @@
      },
      {
       "lang": "en",
-      "text": "Follow-up costs are estimated; a cost overrun is announced."
+      "text": "Follow-on costs are estimated; a cost overrun is announced."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Follow-up costs are estimated; a cost overrun is announced.",
+     "statement": "Follow-on costs are estimated; a cost overrun is announced.",
      "answer": true,
      "why": [
       {
@@ -41013,10 +41011,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "Follow-up costs are estimated; a delay is announced.",
+     "target": "Follow-on costs are estimated; a delay is announced.",
      "accept": [
-      "Follow-up costs are estimated; a change is announced.",
-      "Follow-up costs are estimated; a cost overrun is announced."
+      "Follow-on costs are estimated; a change is announced.",
+      "Follow-on costs are estimated; a cost overrun is announced."
      ],
      "hint": [
       {
@@ -41025,7 +41023,7 @@
       },
       {
        "lang": "en",
-       "text": "Follow-up costs are estimated; a delay is announced."
+       "text": "Follow-on costs are estimated; a delay is announced."
       },
       {
        "lang": "tr",
@@ -43028,7 +43026,7 @@
     "tr": "konsorsiyum"
    },
    {
-    "de": "operator model",
+    "de": "operating model",
     "tr": "işletme modeli"
    },
    {
@@ -43054,7 +43052,7 @@
     "tr": "ikinci yarıda yüklemi düşürür"
    },
    {
-    "de": "The consortium builds; the operator model, it does not name.",
+    "de": "The consortium builds; the operating model, it does not name.",
     "tr": "nesneyi başa alıp yüklemi sona atar"
    },
    {
@@ -43134,7 +43132,7 @@
      },
      {
       "lang": "en",
-      "text": "The consortium builds; the operator model, it does not name."
+      "text": "The consortium builds; the operating model, it does not name."
      },
      {
       "lang": "tr",
@@ -43143,7 +43141,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The consortium builds; the operator model, it does not name."
+     "target": "The consortium builds; the operating model, it does not name."
     }
    },
    {
@@ -43154,7 +43152,7 @@
      },
      {
       "lang": "en",
-      "text": "operator model"
+      "text": "operating model"
      },
      {
       "lang": "tr",
@@ -43198,7 +43196,7 @@
      },
      {
       "lang": "en",
-      "text": "the operator model, it does not name"
+      "text": "the operating model, it does not name"
      },
      {
       "lang": "tr",
@@ -43343,7 +43341,7 @@
      "target": "The consortium builds; the risk, it does not name.",
      "accept": [
       "The consortium builds; the cost, it does not name.",
-      "The consortium builds; the operator model, it does not name."
+      "The consortium builds; the operating model, it does not name."
      ],
      "hint": [
       {
@@ -43435,7 +43433,7 @@
      },
      {
       "lang": "en",
-      "text": "the operator model, it does not name"
+      "text": "the operating model, it does not name"
      },
      {
       "lang": "tr",
@@ -47229,7 +47227,7 @@
     "tr": "fayda değerlendirmesi"
    },
    {
-    "de": "course-setting decision",
+    "de": "pivotal decision",
     "tr": "yön belirleyici karar"
    },
    {
@@ -47259,7 +47257,7 @@
     "tr": "yukarıyı aşağıya bağlar"
    },
    {
-    "de": "That course-setting decision, as noted earlier, rested on a technology assessment.",
+    "de": "That pivotal decision, as noted earlier, rested on a technology assessment.",
     "tr": "geri göndermeyi araya koyar"
    },
    {
@@ -47323,7 +47321,7 @@
      },
      {
       "lang": "en",
-      "text": "course-setting decision"
+      "text": "pivotal decision"
      },
      {
       "lang": "tr",
@@ -47339,7 +47337,7 @@
      },
      {
       "lang": "en",
-      "text": "That course-setting decision, as noted earlier, rested on a technology assessment."
+      "text": "That pivotal decision, as noted earlier, rested on a technology assessment."
      },
      {
       "lang": "tr",
@@ -47348,7 +47346,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "That course-setting decision, as noted earlier, rested on a technology assessment."
+     "target": "That pivotal decision, as noted earlier, rested on a technology assessment."
     }
    },
    {
@@ -47560,7 +47558,7 @@
      "target": "That decision, as noted earlier, rested on a technology assessment.",
      "accept": [
       "That step, as noted earlier, rested on a technology assessment.",
-      "That course-setting decision, as noted earlier, rested on a technology assessment."
+      "That pivotal decision, as noted earlier, rested on a technology assessment."
      ],
      "hint": [
       {

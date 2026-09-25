@@ -46,7 +46,7 @@ export const enA1U03: SkillExercise[] = [
     text:
       "Hello! My name is Ayla. This is my family.\n\n" +
       "My mother is a doctor. Her name is Sevgi. She is fifty-two years old. My father is a teacher. His name is Kemal.\n\n" +
-      "I have got one sister and one brother. My sister is twenty and my brother is only nine. He is still a boy, but he grows very fast!\n\n" +
+      "I have one sister and one brother. My sister is twenty and my brother is only nine. He is still a boy, but he grows very fast!\n\n" +
       "My grandma and my grandpa live in a small town. Their house is old. We are there in May, for my grandma's birthday. We eat cake and we are all very happy.",
     questions: [
       {
@@ -111,7 +111,7 @@ export const enA1U03: SkillExercise[] = [
       "Code: 28195\n" +
       "Phone number: 0421 55 66 77\n" +
       "Email address: deniz.yalin@mail.com\n\n" +
-      "Have you got a card? No.\n" +
+      "Do you have a card? No.\n" +
       "Do you live in Bremen? Yes, I do.\n" +
       "How old are you? I am thirty-four years old.\n" +
       "When is your birthday? My birthday is in June.\n\n" +
@@ -252,7 +252,7 @@ export const enA1U03: SkillExercise[] = [
       { speaker: "Ela", text: "I am seven years old. My birthday is in June." },
       { speaker: "Ela", text: "My mother makes a big cake. My father writes my name on the cake." },
       { speaker: "Ela", text: "My grandma and my grandpa are here. My grandma is seventy-two." },
-      { speaker: "Ela", text: "I have got one brother. He is a baby, so he does not eat cake." },
+      { speaker: "Ela", text: "I've got one brother. He is a baby, so he does not eat cake." },
       { speaker: "Ela", text: "My family says: happy birthday, Ela! I am very happy." },
     ],
     questions: [

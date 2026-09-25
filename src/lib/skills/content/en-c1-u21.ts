@@ -266,7 +266,7 @@ export const enC1U21: SkillExercise[] = [
       { de: "the young", tr: "gençler" },
       { de: "a saver", tr: "tasarruf sahibi" },
       { de: "a borrower", tr: "borçlanan" },
-      { de: "a flat", tr: "daire" },
+      { de: "an apartment", tr: "daire" },
       { de: "a deposit", tr: "peşinat" },
       { de: "time", tr: "zaman" },
       { de: "bought", tr: "satın alınan" },
@@ -280,7 +280,7 @@ export const enC1U21: SkillExercise[] = [
     segments: [
       { speaker: "Melis", text: "Much as the monetary policy works, the key interest rate hurts the young. Both halves are true and the second one is almost never in the same paragraph as the first." },
       { speaker: "Arda", text: "Why the young in particular?" },
-      { speaker: "Melis", text: "Because they are the borrowers. A saver with a flat already bought is on the other side of every rate, and the average of the two says nothing about either." },
+      { speaker: "Melis", text: "Because they are the borrowers. A saver with an apartment already bought is on the other side of every rate, and the average of the two says nothing about either." },
       { speaker: "Arda", text: "So the average hides two directions." },
       { speaker: "Melis", text: "It hides two directions and a deposit. The rate moves the monthly payment, and the deposit is the part that decides who gets in at all." },
       { speaker: "Arda", text: "An expansionary step, albeit restrictive later, buys time." },
@@ -295,7 +295,7 @@ export const enC1U21: SkillExercise[] = [
     questions: [
       {
         text: "Why the young in particular?",
-        options: ["they are the borrowers", "they are the savers", "they own flats"],
+        options: ["they are the borrowers", "they are the savers", "they own apartments"],
         answer: 0,
         explain: "„Because they are the borrowers.“",
       },

@@ -6,7 +6,7 @@ import type { SkillExercise } from "../types";
  * Dört ders: Personal care items · Ordering online · Asking directions ·
  * Public transport.
  *
- *   Kelime: medicine, soap, need, use, sick, chemist, toothbrush, plaster,
+ *   Kelime: medicine, soap, need, use, sick, pharmacy, toothbrush, Band-Aid,
  *           order, address, wait, arrive, delivery, computer, wifi, list,
  *           street, left, right, corner, straight, on the left,
  *           on the right, straight ahead, bus, train, station, stop,
@@ -29,28 +29,28 @@ export const enA1U13: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 13,
-    title: "At the chemist",
+    title: "At the drugstore",
     genre: "dialogue",
     intro: "Eczanede alışveriş ve yol tarifi. Hangi ürün nerede duruyor?",
     gloss: [
       { de: "a cold", tr: "nezle" },
-      { de: "football", tr: "futbol" },
+      { de: "soccer", tr: "futbol" },
       { de: "of course", tr: "tabii ki" },
     ],
     minutes: 4,
     text:
       "Ela: Excuse me, do you have medicine for a cold?\n" +
-      "Chemist: Yes, of course. Are you sick?\n" +
+      "Pharmacist: Yes, of course. Are you sick?\n" +
       "Ela: A little. And I need soap and a toothbrush too.\n" +
-      "Chemist: The soap is here, on the left. The toothbrushes are on the right.\n" +
-      "Ela: Thank you. Do you have plasters?\n" +
-      "Chemist: Yes, in the corner. How many do you need?\n" +
-      "Ela: Ten, please. My son plays football every day!\n" +
-      "Chemist: I understand. That is nine euros for everything.\n" +
+      "Pharmacist: The soap is here, on the left. The toothbrushes are on the right.\n" +
+      "Ela: Thank you. Do you have Band-Aids?\n" +
+      "Pharmacist: Yes, in the corner. How many do you need?\n" +
+      "Ela: Ten, please. My son plays soccer every day!\n" +
+      "Pharmacist: I understand. That is nine euros for everything.\n" +
       "Ela: Can I pay by card?\n" +
-      "Chemist: Yes. Use this, please.\n" +
+      "Pharmacist: Yes. Use this, please.\n" +
       "Ela: Thank you. Where is the bus stop?\n" +
-      "Chemist: Go straight, then turn right. It is near the train station.",
+      "Pharmacist: Go straight, then turn right. It is near the train station.",
     questions: [
       {
         text: "What does Ela need?",
@@ -76,8 +76,8 @@ export const enA1U13: SkillExercise[] = [
         text: "Ela needs ten ___.",
         options: [],
         answer: 0,
-        accept: ["plasters"],
-        explain: "„Do you have plasters? … Ten, please.“",
+        accept: ["Band-Aids"],
+        explain: "„Do you have Band-Aids? … Ten, please.“",
       },
       {
         kind: "short_answer",
@@ -175,7 +175,7 @@ export const enA1U13: SkillExercise[] = [
       { speaker: "Ela", text: "Straight and then left. Is it far?" },
       { speaker: "Nil", text: "No, it is near. Five minutes on foot." },
       { speaker: "Ela", text: "And the bus stop?" },
-      { speaker: "Nil", text: "The bus stop is on the right, near the chemist." },
+      { speaker: "Nil", text: "The bus stop is on the right, near the pharmacy." },
       { speaker: "Ela", text: "Thank you. I go to work by bus every day, but I am new here." },
       { speaker: "Nil", text: "Then take the bus number four. Where do you get off?" },
       { speaker: "Ela", text: "At the market." },
@@ -209,7 +209,7 @@ export const enA1U13: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["right"],
-        explain: "„The bus stop is on the right, near the chemist.“",
+        explain: "„The bus stop is on the right, near the pharmacy.“",
       },
       {
         kind: "dictation",

@@ -41,17 +41,17 @@ export const enA1U22: SkillExercise[] = [
     minutes: 4,
     text:
       "Ela: Good morning. I have a headache. Can I have some medicine, please?\n" +
-      "Chemist: Of course. These tablets are good. Take one with a glass of water.\n" +
+      "Pharmacist: Of course. These tablets are good. Take one with a glass of water.\n" +
       "Ela: How many times a day?\n" +
-      "Chemist: Three times: morning, afternoon and evening. But not more!\n" +
+      "Pharmacist: Three times: morning, afternoon and evening. But not more!\n" +
       "Ela: And can I drink coffee?\n" +
-      "Chemist: A little, yes. But you should drink more water and sleep more.\n" +
+      "Pharmacist: A little, yes. But you should drink more water and sleep more.\n" +
       "Ela: I can't sleep. I work every day and I am tired.\n" +
-      "Chemist: Then you shouldn't work tomorrow. Call your office and tell them.\n" +
+      "Pharmacist: Then you shouldn't work tomorrow. Call your office and tell them.\n" +
       "Ela: Maybe. How much are the tablets?\n" +
-      "Chemist: Six euros. And be careful: this medicine is not for children.\n" +
+      "Pharmacist: Six euros. And be careful: this medicine is not for children.\n" +
       "Ela: I understand. Thank you.\n" +
-      "Chemist: Get better soon!",
+      "Pharmacist: Get better soon!",
     questions: [
       {
         text: "What does Ela need?",

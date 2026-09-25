@@ -19,7 +19,7 @@ import type { SkillExercise } from "../types";
  *           We have no curt replies here; we have telling silences. ·
  *           A penchant for detail, they said, and rather good against vehemence. ·
  *           The impact assessment above becomes a benefit assessment below. ·
- *           That course-setting decision, as noted, is the technology assessment of an earlier page. ·
+ *           That pivotal decision, as noted, is the technology assessment of an earlier page. ·
  *           Where irreversibility is real, a coherent plan is not enough. ·
  *           The pursuit survives as a habit, the end in itself as a memory. ·
  *           The transience stayed; the equanimity did not. ·
@@ -177,8 +177,6 @@ export const enC1U25: SkillExercise[] = [
       { de: "a pointer", tr: "gönderme" },
       { de: "a promise", tr: "söz" },
       { de: "a decision", tr: "karar" },
-      { de: "a course", tr: "yön" },
-      { de: "set", tr: "belirlenmiş" },
       { de: "coherent", tr: "tutarlı" },
       { de: "enough", tr: "yeterli" },
       { de: "a mistake", tr: "hata" },
@@ -197,7 +195,7 @@ export const enC1U25: SkillExercise[] = [
       "The impact assessment above becomes a benefit assessment below. The same project, two chapters apart, under two names that count two different things.\n" +
       "An impact assessment counts what will change. A benefit assessment counts what somebody will gain, and the two lists are never the same list, because a change that helps nobody still appears on the first one and never on the second.\n" +
       "The pointer is doing real work here, as it has in three other units of this level, and by now the habit should be automatic: when a term changes between chapters, say so in the line where it changes.\n" +
-      "That course-setting decision, as noted, is the technology assessment of an earlier page. „As noted“ is a promise, and it is worth checking every time, because a claim carried forward as a reminder has skipped the place where it could have been argued with.\n" +
+      "That pivotal decision, as noted, is the technology assessment of an earlier page. „As noted“ is a promise, and it is worth checking every time, because a claim carried forward as a reminder has skipped the place where it could have been argued with.\n" +
       "Where irreversibility is real, a coherent plan is not enough. And this is the line the whole unit exists to reach.\n" +
       "A coherent plan is a plan whose parts agree with each other. It can be coherent and wrong, and the question that matters is not whether the parts agree but what happens if they do not hold.\n" +
       "A mistake that can be corrected is a cost. A mistake that cannot is a different kind of thing, and it should be decided by a different rule: not the best expected outcome, but the one that keeps an option open.\n" +
@@ -237,7 +235,7 @@ export const enC1U25: SkillExercise[] = [
         answer: 0,
         items: [
           "The impact assessment above becomes a benefit assessment below.",
-          "That course-setting decision, as noted, is the technology assessment of an earlier page.",
+          "That pivotal decision, as noted, is the technology assessment of an earlier page.",
           "Where irreversibility is real, a coherent plan is not enough.",
           "Where a step cannot be taken back, buy the delay.",
         ],

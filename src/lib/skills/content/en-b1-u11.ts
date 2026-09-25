@@ -115,7 +115,7 @@ export const enB1U11: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 11,
-    title: "Filling in the form",
+    title: "Filling out the form",
     genre: "info",
     intro: "Form doldurma kuralları. Hangisi zorunlu, hangisi değil?",
     gloss: [
@@ -132,8 +132,8 @@ export const enB1U11: SkillExercise[] = [
     minutes: 7,
     text:
       "Six lines about a form that takes four minutes and is sent back twice a week.\n" +
-      "You must fill in every section. An empty section is not read as „nothing to say“; it is read as „not finished“, and the form goes back in the post.\n" +
-      "You should print your surname. Capital letters, one letter per box. The form is read by a scanner first and by a person second, and the scanner has no patience.\n" +
+      "You must fill out every section. An empty section is not read as „nothing to say“; it is read as „not finished“, and the form goes back in the post.\n" +
+      "You should print your last name. Capital letters, one letter per box. The form is read by a scanner first and by a person second, and the scanner has no patience.\n" +
       "You don't have to give a phone number. That box has a small word next to it and the small word is „optional“. Three people in four fill it in anyway.\n" +
       "Tick one box in section four, not two. If both are true for you, tick the first and write the detail in section seven, which exists for exactly this.\n" +
       "The signature goes under the date, not next to it. This is the only line where the order matters, and it is the line most often wrong.\n" +
@@ -146,7 +146,7 @@ export const enB1U11: SkillExercise[] = [
         explain: "„it is read as „not finished“, and the form goes back in the post.“",
       },
       {
-        text: "Why should you print the surname?",
+        text: "Why should you print the last name?",
         options: ["a scanner reads it first", "it looks better", "the office asks for it"],
         answer: 0,
         explain: "„The form is read by a scanner first and by a person second, and the scanner has no patience.“",
@@ -189,7 +189,7 @@ export const enB1U11: SkillExercise[] = [
     intro: "Vize görüşmesi. Aktarılan cümlelerde zaman nereye kayıyor?",
     gloss: [
       { de: "applicant", tr: "başvuran" },
-      { de: "the queue", tr: "kuyruk" },
+      { de: "the line", tr: "kuyruk" },
       { de: "in advance", tr: "önceden" },
       { de: "clear", tr: "anlaşılır" },
       { de: "unkind", tr: "kaba" },
@@ -206,7 +206,7 @@ export const enB1U11: SkillExercise[] = [
       { speaker: "Nil", text: "So you go back." },
       { speaker: "Can", text: "Thursday. And they asked if I had a permit, which I do, in a folder at home." },
       { speaker: "Nil", text: "Did you take a number?" },
-      { speaker: "Can", text: "There is no number. Every applicant books a slot in advance and the queue is what happens when three of them are late." },
+      { speaker: "Can", text: "There is no number. Every applicant books a slot in advance and the line is what happens when three of them are late." },
       { speaker: "Nil", text: "How long did you wait?" },
       { speaker: "Can", text: "Fifty minutes for four minutes at the desk. The four minutes were fine. She was fast, clear and not unkind." },
       { speaker: "Nil", text: "Can you extend it there?" },
@@ -380,7 +380,7 @@ export const enB1U11: SkillExercise[] = [
       {
         kind: "build",
         tr: "Her bölümü doldurmak zorundasın.",
-        answer: "You must fill in every section.",
+        answer: "You must fill out every section.",
         hint: "„must“ kuralın kendisinden; boş bölüm „bitmedi“ diye okunuyor.",
       },
       {

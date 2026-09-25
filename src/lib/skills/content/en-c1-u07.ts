@@ -9,7 +9,7 @@ import type { SkillExercise } from "../types";
  *
  *   Kelime: arson, bodily harm, apprehend, impassable, manhunt,
  *           deterrence, insolvency, indebtedness, levy, irrevocable,
- *           deductible, liquidity, warning strike, short-time work.
+ *           deductible, liquidity, warning strike, reduced hours.
  *   Kalıp:  Some articles name arson; others, bodily harm. ·
  *           The police would apprehend if they could. ·
  *           One road is impassable; the other is not. ·
@@ -21,7 +21,7 @@ import type { SkillExercise } from "../types";
  *           Liquidity would tend to fall first. ·
  *           What the union secured is a representation of interests. ·
  *           Into the dispute comes a warning strike. ·
- *           The short-time work we accepted; the continued pay we did not.
+ *           The reduced hours we accepted; the cut in sick pay we did not.
  *
  * Ünitenin tek öğretme noktası EKSİLTME. Bir derste üç ayrı büyüklükte
  * delik var: fiil siliniyor ve yerini virgül tutuyor; nesne siliniyor ve
@@ -295,7 +295,7 @@ export const enC1U07: SkillExercise[] = [
       { speaker: "Emre", text: "Could you write that in a minute of a meeting?" },
       { speaker: "Nilay", text: "You could, once. Twice and the minute has borrowed a voice from somewhere else, and a reader who wanted a neutral record will notice." },
       { speaker: "Emre", text: "The last one is the paired sentence." },
-      { speaker: "Nilay", text: "The short-time work we accepted; the continued pay we did not. Two objects fronted, and in the second half the verb has gone." },
+      { speaker: "Nilay", text: "The reduced hours we accepted; the cut in sick pay we did not. Two objects fronted, and in the second half the verb has gone." },
       { speaker: "Emre", text: "So it is the same deletion as in the crime report." },
       { speaker: "Nilay", text: "The same deletion, in a colder room. Here it is doing a job: the two items are being held side by side so that the difference between them cannot be missed." },
       { speaker: "Emre", text: "And the order of the two?" },
@@ -323,11 +323,11 @@ export const enC1U07: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The short-time work we accepted; the continued pay we ___ not.",
+        text: "The reduced hours we accepted; the cut in sick pay we ___ not.",
         options: [],
         answer: 0,
         accept: ["did"],
-        explain: "„The short-time work we accepted; the continued pay we did not.“",
+        explain: "„The reduced hours we accepted; the cut in sick pay we did not.“",
       },
       {
         kind: "dictation",
@@ -456,7 +456,7 @@ export const enC1U07: SkillExercise[] = [
       { de: "to apprehend", tr: "gözaltına almak" },
       { de: "impassable", tr: "geçilmez" },
       { de: "a warning strike", tr: "uyarı grevi" },
-      { de: "short-time work", tr: "kısa çalışma" },
+      { de: "reduced hours", tr: "kısa çalışma" },
     ],
     minutes: 10,
     tasks: [

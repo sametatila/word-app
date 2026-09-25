@@ -10,7 +10,7 @@ import type { SkillExercise } from "../types";
  *   Kelime: feedback loop, tipping point, regenerative capacity, decompose,
  *           secrete, mitigate, gentrification, revitalize, densify, refurbish,
  *           inhospitable, traffic gridlock, spatial planning, zoning plan,
- *           change of use, accessibility, moratorium, construction halt,
+ *           change of use, accessibility, moratorium, construction freeze,
  *           fall into neglect, fall into ruin, dismantling, repurpose, designate.
  *   Kalıp:  A feedback loop may well push the system past a tipping point. ·
  *           The regenerative capacity might hold if the litter can decompose. ·
@@ -21,7 +21,7 @@ import type { SkillExercise } from "../types";
  *           The spatial planning above becomes a zoning plan below. ·
  *           That change of use, as noted, works in urban design terms only. ·
  *           In terms of scale, a fine-grained quarter serves accessibility better. ·
- *           The moratorium survives as a promise, the construction halt as a date. ·
+ *           The moratorium survives as a promise, the construction freeze as a date. ·
  *           The houses fall into neglect; the halls, into ruin. ·
  *           The dismantling began; the repurpose did not.
  *
@@ -96,7 +96,7 @@ export const enC1U20: SkillExercise[] = [
       "German cannot do it. A verb turned into a noun there always leaves a mark: a capital letter at least, usually an article, and often an ending as well, so the result is visibly a different word from the verb it came from. The change of class is written down.\n" +
       "So here is the measurement, and it is the other end of something this level met one unit ago. There, English made a word by adding a prefix; here it makes one by adding nothing at all. Both machines are productive, and both are invisible to a reader who is not expecting them.\n" +
       "Both have the same cost too, and it is worth saying plainly. A new word built out of nothing looks like a term. „The repurpose“ in a planning document sounds like a stage in a procedure, and a reader who meets it in a heading will assume that somewhere there is a form for it.\n" +
-      "The moratorium survives as a promise, the construction halt as a date. And then the closing line, in a shape this level knows by now: the houses fall into neglect; the halls, into ruin. The verb has gone from the second half and what is left is a preposition, carrying the difference between a slow thing and a finished one.",
+      "The moratorium survives as a promise, the construction freeze as a date. And then the closing line, in a shape this level knows by now: the houses fall into neglect; the halls, into ruin. The verb has gone from the second half and what is left is a preposition, carrying the difference between a slow thing and a finished one.",
     questions: [
       {
         text: "What says „the repurpose“ is a noun?",
@@ -445,7 +445,7 @@ export const enC1U20: SkillExercise[] = [
       { de: "visible", tr: "görünür" },
       { de: "a dismantling", tr: "sökme" },
       { de: "a moratorium", tr: "moratoryum" },
-      { de: "a construction halt", tr: "inşaatın durdurulması" },
+      { de: "a construction freeze", tr: "inşaatın durdurulması" },
       { de: "spatial planning", tr: "mekânsal planlama" },
       { de: "a zoning plan", tr: "imar planı" },
       { de: "accessibility", tr: "erişilebilirlik" },
@@ -461,7 +461,7 @@ export const enC1U20: SkillExercise[] = [
       {
         kind: "build",
         tr: "Moratoryum bir söz olarak, inşaatın durdurulması bir tarih olarak sağ kalıyor.",
-        answer: "The moratorium survives as a promise, the construction halt as a date.",
+        answer: "The moratorium survives as a promise, the construction freeze as a date.",
         hint: "İkinci yarıda fiil yok; iki şey iki ayrı biçimde sürüyor.",
       },
       {

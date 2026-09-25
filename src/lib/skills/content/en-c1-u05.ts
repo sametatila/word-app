@@ -7,12 +7,12 @@ import type { SkillExercise } from "../types";
  * Dört ders: The language of motions · How strong is your claim ·
  * The same objection · Binding a long argument.
  *
- *   Kelime: codetermination, cohesion, incumbent, marginalize, exploit,
+ *   Kelime: worker participation, cohesion, incumbent, marginalize, exploit,
  *           problematize, dehumanize, instrumentalize, coarsen,
  *           scandalize, disparity, scandalization, disempowerment,
  *           paradigm, causality, empirical.
- *   Kalıp:  We move that the board grant codetermination. ·
- *           Were it not for the constitutional state, cohesion would fail. ·
+ *   Kalıp:  We move that the board grant worker participation. ·
+ *           Were it not for the rule of law, cohesion would fail. ·
  *           They ask that no member abstain. ·
  *           The wording may well marginalize. ·
  *           It might have been expected to exploit less. ·
@@ -248,7 +248,7 @@ export const enC1U05: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Melek", text: "We move that the board grant codetermination. „Grant“, not „grants“, and the sentence is a motion because of that one missing letter." },
+      { speaker: "Melek", text: "We move that the board grant worker participation. „Grant“, not „grants“, and the sentence is a motion because of that one missing letter." },
       { speaker: "Tunç", text: "„Move that“ is doing some of it." },
       { speaker: "Melek", text: "„Move that“ is the verb that puts the sentence on the agenda, and it takes the subjunctive the way „insist“ and „request“ do. The three of them are the whole vocabulary of a motion." },
       { speaker: "Tunç", text: "And the negative?" },
@@ -256,7 +256,7 @@ export const enC1U05: SkillExercise[] = [
       { speaker: "Tunç", text: "Is the other one wrong?" },
       { speaker: "Melek", text: "It is not wrong and it is rarer, and in a document that will be read by a supervisory board the rarer form is the one somebody queries." },
       { speaker: "Tunç", text: "The third line has no motion in it." },
-      { speaker: "Melek", text: "Were it not for the constitutional state, cohesion would fail. That is the other half of the same mood and it is doing the opposite job: not asking for something but supposing its absence." },
+      { speaker: "Melek", text: "Were it not for the rule of law, cohesion would fail. That is the other half of the same mood and it is doing the opposite job: not asking for something but supposing its absence." },
       { speaker: "Tunç", text: "Why keep both in one paragraph?" },
       { speaker: "Melek", text: "Because a motion that has a reason attached is harder to defer. The demand is in the first sentence and the ground is in the third, and between them there is nothing a chair can send back for redrafting." },
       { speaker: "Tunç", text: "And self-government?" },
@@ -295,7 +295,7 @@ export const enC1U05: SkillExercise[] = [
         text: "Duyduğun cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["We move that the board grant codetermination.", "We move that the board grant codetermination"],
+        accept: ["We move that the board grant worker participation.", "We move that the board grant worker participation"],
         explain: "İstek kipi: „grant“, „grants“ değil.",
       },
       {
@@ -462,7 +462,7 @@ export const enC1U05: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 5,
-    title: "We move that the board grant codetermination",
+    title: "We move that the board grant worker participation",
     genre: "info",
     intro: "Önergenin kipi ve iki kip katmanı.",
     gloss: [
@@ -476,7 +476,7 @@ export const enC1U05: SkillExercise[] = [
       {
         kind: "build",
         tr: "Kurulun söz hakkı tanımasını öneriyoruz.",
-        answer: "We move that the board grant codetermination.",
+        answer: "We move that the board grant worker participation.",
         hint: "İstek kipi: „grant“, „grants“ değil.",
       },
       {
@@ -488,7 +488,7 @@ export const enC1U05: SkillExercise[] = [
       {
         kind: "build",
         tr: "Hukuk devleti olmasa bütünlük çökerdi.",
-        answer: "Were it not for the constitutional state, cohesion would fail.",
+        answer: "Were it not for the rule of law, cohesion would fail.",
         hint: "Aynı kipin öteki yarısı: varsayım.",
       },
       {

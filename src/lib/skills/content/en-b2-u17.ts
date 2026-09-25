@@ -65,7 +65,7 @@ export const enB2U17: SkillExercise[] = [
       { de: "rhythm", tr: "tartım" },
       { de: "a gate", tr: "kapı" },
       { de: "a form", tr: "form" },
-      { de: "filled in", tr: "doldurulmuş" },
+      { de: "filled out", tr: "doldurulmuş" },
       { de: "deserves", tr: "hak ediyor" },
       { de: "choosing", tr: "seçen" },
     ],
@@ -77,7 +77,7 @@ export const enB2U17: SkillExercise[] = [
       "The folk festival, which keeps an old custom, is free. That one cannot lose its two words, because „keeps“ is not „is“. The deletion only reaches as far as the verb „be“.\n" +
       "My aunt, whose interpretation is varied, dances first. Nor this one: „whose“ is carrying possession and there is nothing to delete.\n" +
       "So a paragraph about a festival can hold three relative clauses and only one of them can be shortened, and a writer who shortens the wrong one produces a sentence that a reader has to read twice.\n" +
-      "When I do shorten it, the reason is rhythm rather than length. Two words is nothing. But a page in which every second sentence opens the same little gate — comma, which is, comma — sounds like a form being filled in, and a festival that is worth seeing deserves better than that.",
+      "When I do shorten it, the reason is rhythm rather than length. Two words is nothing. But a page in which every second sentence opens the same little gate — comma, which is, comma — sounds like a form being filled out, and a festival that is worth seeing deserves better than that.",
     questions: [
       {
         text: "When can „which is“ be deleted?",
@@ -145,7 +145,7 @@ export const enB2U17: SkillExercise[] = [
       { de: "sentence", tr: "cümle" },
       { de: "an instruction", tr: "yönerge" },
       { de: "resolve", tr: "çözüme bağlamak" },
-      { de: "building towards", tr: "hazırlanan" },
+      { de: "building toward", tr: "hazırlanan" },
       { de: "an explanation", tr: "açıklama" },
       { de: "survives", tr: "ayakta kalıyor" },
       { de: "a rehearsal", tr: "prova" },
@@ -159,7 +159,7 @@ export const enB2U17: SkillExercise[] = [
     minutes: 9,
     text:
       "The ending must have been hasty. Four words of verb, and the first is a conclusion rather than an instruction.\n" +
-      "The evidence is in the text: two characters who have not spoken for an hour resolve everything in a page, and a line that the second act had been building towards is given to the wrong person. Only one explanation survives that.\n" +
+      "The evidence is in the text: two characters who have not spoken for an hour resolve everything in a page, and a line that the second act had been building toward is given to the wrong person. Only one explanation survives that.\n" +
       "They can't have missed the shortcoming. The negative of the same conclusion, and it is „can't have“ and never „mustn't have“ — the second is a prohibition and a prohibition cannot be sent back to a rehearsal.\n" +
       "We should have noticed the revealing line. The third one, and it is the only sentence in the review that is about us. It is not about what happened on the stage; it is about what we did not see, and a reader remembers that sentence and forgets the other two.\n" +
       "Those three carry a review of this kind. What the evidence shows, what it rules out, what the reviewer missed.\n" +
@@ -340,7 +340,7 @@ export const enB2U17: SkillExercise[] = [
       { speaker: "Ferda", text: "By June we will have archived the letters. A point in time, a finished state, and the sentence says nothing about who does the archiving." },
       { speaker: "Ferda", text: "That is right for a plan and wrong for a promise, and the difference is who reads it." },
       { speaker: "Ferda", text: "Next month we will be waiting for approval. Inside the work rather than after it, and honest: waiting is what we will be doing, and it is not a thing we control." },
-      { speaker: "Ferda", text: "By autumn we will have decided to commission the work. Two verbs stacked — the future perfect of „decide“, which then takes an infinitive — and it is one of the longest true sentences in the plan." },
+      { speaker: "Ferda", text: "By fall we will have decided to commission the work. Two verbs stacked — the future perfect of „decide“, which then takes an infinitive — and it is one of the longest true sentences in the plan." },
       { speaker: "Ferda", text: "It is true because the deciding is ours. Everything in that plan that is ours goes in the perfect and everything that is somebody else's goes in the continuous." },
       { speaker: "Ferda", text: "The documentation is the exception. It is ours and it is continuous, because it does not finish; it is preserved and added to and never signed off." },
       { speaker: "Ferda", text: "Something always arrives at short notice and the plan has a line for it, and that line has no future perfect in it at all." },

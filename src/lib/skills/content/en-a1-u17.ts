@@ -37,13 +37,13 @@ export const enA1U17: SkillExercise[] = [
       { de: "party", tr: "parti" },
       { de: "end", tr: "bitmek" },
       { de: "included", tr: "dâhil" },
-      { de: "bin", tr: "çöp kutusu" },
+      { de: "trash can", tr: "çöp kutusu" },
     ],
     minutes: 4,
     text:
       "HOUSE RULES\n\n" +
       "You must be quiet from ten at night to seven in the morning. You must not make noise on Sunday.\n\n" +
-      "The stairs must be clean. Please put the rubbish in the bin downstairs, not in front of your door.\n\n" +
+      "The stairs must be clean. Please put the trash in the trash can downstairs, not in front of your door.\n\n" +
       "Is it allowed to have a party? Yes, but you have to ask your neighbors. A party has to end at eleven.\n\n" +
       "Water and electricity are not included in the rent. Each apartment pays the bill every month.\n\n" +
       "In a fire: don't take the lift. Go down the stairs.\n\n" +
@@ -56,10 +56,10 @@ export const enA1U17: SkillExercise[] = [
         explain: "„You must be quiet from ten at night to seven in the morning.“ Pazar ayrı bir kural.",
       },
       {
-        text: "Where does the rubbish go?",
-        options: ["in the bin downstairs", "in front of the door", "on the stairs"],
+        text: "Where does the trash go?",
+        options: ["in the trash can downstairs", "in front of the door", "on the stairs"],
         answer: 0,
-        explain: "„Please put the rubbish in the bin downstairs, not in front of your door.“",
+        explain: "„Please put the trash in the trash can downstairs, not in front of your door.“",
       },
       {
         kind: "truefalse",
@@ -178,6 +178,7 @@ export const enA1U17: SkillExercise[] = [
     genre: "dialogue",
     intro: "Ev işleri paylaşılıyor. Hangi iş önce, hangisi sonra?",
     gloss: [
+      { de: "rubbish", tr: "çöp" },
       { de: "full", tr: "dolu" },
       { de: "fast", tr: "hızlı" },
       { de: "know", tr: "bilmek" },
@@ -187,7 +188,7 @@ export const enA1U17: SkillExercise[] = [
       { speaker: "Mother", text: "Can you help me at home today?" },
       { speaker: "Son", text: "Yes. What do I have to do?" },
       { speaker: "Mother", text: "First, tidy up your room. Then take out the rubbish." },
-      { speaker: "Son", text: "The bin is full again!" },
+      { speaker: "Son", text: "The trash can is full again!" },
       { speaker: "Mother", text: "Yes, and after that you have to wash the plates." },
       { speaker: "Son", text: "Wet plates or dry plates?" },
       { speaker: "Mother", text: "Wash them and then dry them, please." },
@@ -383,6 +384,7 @@ export const enA1U17: SkillExercise[] = [
     genre: "personal",
     intro: "Yardım ve ev işi cümlelerini yaz. İki parçalı fiillerde nesnenin yeri önemli.",
     gloss: [
+      { de: "rubbish", tr: "çöp" },
       { de: "Can you help me?", tr: "bana yardım edebilir misin" },
       { de: "I tidy up my room.", tr: "odamı topluyorum" },
       { de: "I take out the rubbish.", tr: "çöpü çıkarıyorum" },

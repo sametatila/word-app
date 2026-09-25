@@ -5,16 +5,16 @@ import type { SkillExercise } from "../types";
  * toprak ne kadar dayanır, gerçekten türüne uygun".
  *
  * Dört ders: The vocabulary of farm prices · Reporting the label ·
- * How long does soil last · Species-appropriate indeed.
+ * How long does soil last · Humane indeed.
  *
  *   Kelime: world market price, producer price, price volatility, free
  *           trade agreement, trade liberalization, origin labeling,
  *           traceability, field research, knowledge transfer, agronomic,
  *           soil erosion, deplete, overfertilize, nitrate pollution,
- *           pollinate, lush, factory farming, species-appropriate, milk quota.
+ *           pollinate, lush, factory farming, humane, milk quota.
  *   Kalıp:  A world market price is not a producer price. ·
  *           Price volatility is measured; a free trade agreement is signed. ·
- *           Trade liberalization and market organization pull apart. ·
+ *           Trade liberalization and market regulation pull apart. ·
  *           One defends the origin labeling; another doubts the traceability. ·
  *           The sustainability report claims what the field research assumes. ·
  *           To call it knowledge transfer is not to call it agronomic advice. ·
@@ -22,7 +22,7 @@ import type { SkillExercise } from "../types";
  *           To overfertilize might mean nitrate pollution downstream. ·
  *           Pesticide use may kill what should pollinate and let the plant protection product seep away. ·
  *           The pasture was lush; the barn, less so. ·
- *           We have no factory farming here; we have species-appropriate housing. ·
+ *           We have no factory farming here; we have humane housing. ·
  *           The milk quota, they said, and rather good for the small farm.
  *
  * Ünitenin tek öğretme noktası „NO“ İLE „NOT A“ ARASINDAKİ SEÇİM. „No“
@@ -50,7 +50,7 @@ export const enC1U17: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     unit: 17,
-    title: "Species-appropriate indeed",
+    title: "Humane indeed",
     genre: "info",
     intro: "İki olumsuzlama var ve biri bir beden daha yüksek. Hangisi?",
     gloss: [
@@ -87,7 +87,7 @@ export const enC1U17: SkillExercise[] = [
     ],
     minutes: 12,
     text:
-      "We have no factory farming here; we have species-appropriate housing. Read the first half again and ask why it is not „we do not have factory farming here“.\n" +
+      "We have no factory farming here; we have humane housing. Read the first half again and ask why it is not „we do not have factory farming here“.\n" +
       "The two are not the same sentence, and English speakers choose between them without thinking about it. „No“ is a determiner: it stands in front of the noun and denies the whole category. „Not“ is a sentence negator, and with a verb like „have“ it needs the little helping verb; what it denies is that this is the case here.\n" +
       "So the first version says there is no such thing on this farm as a kind. The second says that whatever is here, it is not that. The difference is small in the sentence and large in a room, because the second one cannot be answered by pointing at one shed and the first one can.\n" +
       "A neighboring language has only one of these. Its single negative determiner covers both jobs, stands in front of the noun in every case, and carries no choice with it at all. Which means a speaker coming from there reaches for „no“ every time, because that is the shape the reflex already has, and lands on the emphatic English version in the places where English would have used the quiet one.\n" +
@@ -117,11 +117,11 @@ export const enC1U17: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "We have ___ factory farming here; we have species-appropriate housing.",
+        text: "We have ___ factory farming here; we have humane housing.",
         options: [],
         answer: 0,
         accept: ["no"],
-        explain: "„We have no factory farming here; we have species-appropriate housing.“",
+        explain: "„We have no factory farming here; we have humane housing.“",
       },
       {
         kind: "order",
@@ -129,7 +129,7 @@ export const enC1U17: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "We have no factory farming here; we have species-appropriate housing.",
+          "We have no factory farming here; we have humane housing.",
           "„No“ denies the whole category.",
           "The error is a word one size too loud.",
           "A world market price is not a producer price.",
@@ -194,7 +194,7 @@ export const enC1U17: SkillExercise[] = [
       "A world market price is a number in a column somewhere else. A producer price is what is paid at a farm gate on a Tuesday, and the gap between the two is a haulier, a buyer, a shelf and a month.\n" +
       "Price volatility is measured; a free trade agreement is signed. Two passives in one line, and by now this level has met enough of them to sort the pair without help.\n" +
       "The first has no agent and needs none: measuring is what a procedure does. The second has a very definite agent left out on purpose, because an agreement is signed by a delegation, on a date, and every one of those is in the file.\n" +
-      "Trade liberalization and market organization pull apart. Here is a verb that needs two things to be true at once, and both halves of the subject are in front of it.\n" +
+      "Trade liberalization and market regulation pull apart. Here is a verb that needs two things to be true at once, and both halves of the subject are in front of it.\n" +
       "They pull apart because they were built for opposite jobs. One removes a floor price and opens a border. The other puts a floor under a price and keeps a market inside a rule. A country that did both in the same decade has two files that each promise the other will not happen.\n" +
       "The practical part of this lesson is one number. A farmer does not live on an average; a farmer lives through a swing. Volatility is not a smaller version of a low price. It is a different problem, and the answer to it is not a higher average but a floor that survives a bad year.\n" +
       "So when a report offers an average as an answer to a swing, it has changed the question. Read the sentence twice, find which of the two numbers is missing, and you will usually find that the missing one is the one the reader needed.",
@@ -220,11 +220,11 @@ export const enC1U17: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Trade liberalization and market organization pull ___.",
+        text: "Trade liberalization and market regulation pull ___.",
         options: [],
         answer: 0,
         accept: ["apart"],
-        explain: "„Trade liberalization and market organization pull apart.“",
+        explain: "„Trade liberalization and market regulation pull apart.“",
       },
       {
         kind: "order",
@@ -234,7 +234,7 @@ export const enC1U17: SkillExercise[] = [
         items: [
           "A world market price is not a producer price.",
           "Price volatility is measured; a free trade agreement is signed.",
-          "Trade liberalization and market organization pull apart.",
+          "Trade liberalization and market regulation pull apart.",
           "A farmer lives through a swing.",
         ],
         explain: "İki fiyat, iki edilgen, iki yön; en sonda gerçek sorun.",
@@ -261,6 +261,8 @@ export const enC1U17: SkillExercise[] = [
     genre: "dialogue",
     intro: "Bir kuşakta tükenen şey nedir? Çekince neyi ayakta tutuyor?",
     gloss: [
+      { de: "autumn", tr: "sonbahar" },
+      { de: "flat", tr: "düz" },
       { de: "hedge", tr: "çekince" },
       { de: "build", tr: "kurmak" },
       { de: "appear", tr: "belirmek" },
@@ -447,7 +449,7 @@ export const enC1U17: SkillExercise[] = [
     gloss: [
       { de: "category", tr: "ulam" },
       { de: "factory farming", tr: "endüstriyel hayvancılık" },
-      { de: "species-appropriate", tr: "türüne uygun" },
+      { de: "humane", tr: "türüne uygun" },
       { de: "a milk quota", tr: "süt kotası" },
       { de: "a world market price", tr: "dünya piyasa fiyatı" },
       { de: "price volatility", tr: "fiyat oynaklığı" },
@@ -458,7 +460,7 @@ export const enC1U17: SkillExercise[] = [
       {
         kind: "build",
         tr: "Burada endüstriyel hayvancılık yok; türüne uygun barınak var.",
-        answer: "We have no factory farming here; we have species-appropriate housing.",
+        answer: "We have no factory farming here; we have humane housing.",
         hint: "„No“ türü yadsıyor; ikinci yarı örneği başka adla kabul ediyor.",
       },
       {

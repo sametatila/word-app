@@ -11,7 +11,7 @@ import type { SkillExercise } from "../types";
  *           capital, commons, ecosystem service, expropriation, account for,
  *           criticism of growth, growth imperative, decoupling, sufficiency,
  *           finiteness, circular economy, waste prevention, material cycle,
- *           obsolescence, longevity, reclaim, steering effect, dilute, volatile.
+ *           obsolescence, longevity, reclaim, incentive effect, dilute, volatile.
  *   Kalıp:  The precautionary principle demands that the responsibility to protect be prior. ·
  *           Were it not for the natural capital, no commons would hold. ·
  *           They ask that every ecosystem service be counted before the expropriation. ·
@@ -20,9 +20,9 @@ import type { SkillExercise } from "../types";
  *           Albeit aware of finiteness, the circular economy still needs growth. ·
  *           Waste prevention is not a material cycle. ·
  *           Obsolescence is designed; longevity is paid for. ·
- *           They reclaim the metal and sell it as a secondary raw material. ·
- *           One reports a steering effect; another doubts the transformation process. ·
- *           The third-party funding claims what the specialist journal assumes. ·
+ *           They reclaim the metal and sell it as a recycled raw material. ·
+ *           One reports an incentive effect; another doubts the transformation process. ·
+ *           The external funding claims what the academic journal assumes. ·
  *           To dilute a finding is not to call it volatile.
  *
  * Ünitenin tek öğretme noktası EDAT EDİLGENİ. „Longevity is paid for“ —
@@ -254,6 +254,7 @@ export const enC1U19: SkillExercise[] = [
     genre: "dialogue",
     intro: "Bir bulguyu seyreltmek ile oynak demek aynı şey değil.",
     gloss: [
+      { de: "declaration", tr: "açıklama" },
       { de: "verdict", tr: "hüküm" },
       { de: "design", tr: "tasarım" },
       { de: "widening", tr: "genişletme" },
@@ -275,10 +276,10 @@ export const enC1U19: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Ayşen", text: "One reports a steering effect; another doubts the transformation process. Two people reading the same table and only one of them is talking about the table." },
+      { speaker: "Ayşen", text: "One reports an incentive effect; another doubts the transformation process. Two people reading the same table and only one of them is talking about the table." },
       { speaker: "Kuzey", text: "Which one?" },
-      { speaker: "Ayşen", text: "The first. A steering effect is something you can see in a column. A transformation process is a story about what the column means over thirty years." },
-      { speaker: "Kuzey", text: "The third-party funding claims what the specialist journal assumes." },
+      { speaker: "Ayşen", text: "The first. An incentive effect is something you can see in a column. A transformation process is a story about what the column means over thirty years." },
+      { speaker: "Kuzey", text: "The external funding claims what the academic journal assumes." },
       { speaker: "Ayşen", text: "That line is a verdict on two documents and I would not write it without a footnote for each. But it is worth writing, because the assumption is almost never on the page." },
       { speaker: "Kuzey", text: "What assumption?" },
       { speaker: "Ayşen", text: "That an interest declared is an interest handled. Declaring it changes nothing about the design of the study, and the declaration is the only thing anybody checks." },
@@ -294,7 +295,7 @@ export const enC1U19: SkillExercise[] = [
         text: "Who is talking about the table?",
         options: ["the first", "the second", "both of them"],
         answer: 0,
-        explain: "„The first. A steering effect is something you can see in a column.“",
+        explain: "„The first. An incentive effect is something you can see in a column.“",
       },
       {
         text: "What is the assumption?",
@@ -322,7 +323,7 @@ export const enC1U19: SkillExercise[] = [
         text: "Duyduğun cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["One reports a steering effect; another doubts the transformation process.", "One reports a steering effect; another doubts the transformation process"],
+        accept: ["One reports an incentive effect; another doubts the transformation process.", "One reports an incentive effect; another doubts the transformation process"],
         explain: "Aynı tabloyu okuyan iki kişi, tek konu değil.",
       },
       {
@@ -458,7 +459,7 @@ export const enC1U19: SkillExercise[] = [
       {
         kind: "build",
         tr: "Metali geri kazanıp ikincil hammadde olarak satıyorlar.",
-        answer: "They reclaim the metal and sell it as a secondary raw material.",
+        answer: "They reclaim the metal and sell it as a recycled raw material.",
         hint: "İki fiil, tek özne; ikincisinde adıl nesne.",
       },
       {
@@ -500,7 +501,7 @@ export const enC1U19: SkillExercise[] = [
       { de: "decoupling", tr: "kopma" },
       { de: "sufficiency", tr: "yeterlilik" },
       { de: "finiteness", tr: "sonluluk" },
-      { de: "a steering effect", tr: "yönlendirici etki" },
+      { de: "an incentive effect", tr: "yönlendirici etki" },
       { de: "to dilute", tr: "seyreltmek" },
     ],
     minutes: 10,
@@ -526,7 +527,7 @@ export const enC1U19: SkillExercise[] = [
       {
         kind: "build",
         tr: "Biri yönlendirici etki bildiriyor; bir başkası dönüşüm sürecinden kuşku duyuyor.",
-        answer: "One reports a steering effect; another doubts the transformation process.",
+        answer: "One reports an incentive effect; another doubts the transformation process.",
         hint: "Biri sütunu, öteki otuz yılı konuşuyor.",
       },
       {

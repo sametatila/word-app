@@ -6,12 +6,12 @@ import type { SkillExercise } from "../types";
  * Dört ders: A work day · After work · Weekend plans · What time …?
  *
  *   Kelime: office, start, finish, lunch, meeting, building, programme,
- *           free, watch, read, music, walk, television, radio, film, plan,
+ *           free, watch, read, music, walk, television, radio, movie, plan,
  *           visit, stay, travel, tomorrow, trip, vacation, sea, when,
  *           open, close, late, early, be open, be closed, be ready.
  *   Kalıp:  I start work at eight. · in the afternoon ·
  *           I have a meeting on Friday. · I like reading. ·
- *           Do you like watching films? · I don't like listening to music. ·
+ *           Do you like watching movies? · I don't like listening to music. ·
  *           I'm going to … · Are you going to …? · I'm not going to … ·
  *           What time is it? · What time do you open? ·
  *           When does the bus leave?
@@ -44,7 +44,7 @@ export const enA1U10: SkillExercise[] = [
       "I work in a big office in the city. The building is old but it is very nice.\n\n" +
       "I start work at eight and I finish at five. At lunch I eat with my friends in the café near the office. In the afternoon I usually have a meeting.\n\n" +
       "I have a meeting on Friday with a new group. I am not going to be late!\n\n" +
-      "After work I am free. I like reading, and I don't like listening to the radio. In the evening I watch a film on television. Sometimes I walk by the sea.",
+      "After work I am free. I like reading, and I don't like listening to the radio. In the evening I watch a movie on television. Sometimes I walk by the sea.",
     questions: [
       {
         text: "What time does the writer finish work?",
@@ -100,26 +100,26 @@ export const enA1U10: SkillExercise[] = [
     minutes: 4,
     text:
       "Ela: Good morning. What time do you open?\n" +
-      "Shop: We open at nine and we close at seven.\n" +
+      "Clerk: We open at nine and we close at seven.\n" +
       "Ela: And on Sunday?\n" +
-      "Shop: On Sunday we are closed.\n" +
+      "Clerk: On Sunday we are closed.\n" +
       "Ela: Is the office in the same building?\n" +
-      "Shop: Yes, it is. The office opens early, at eight.\n" +
+      "Clerk: Yes, it is. The office opens early, at eight.\n" +
       "Ela: I'd like to come tomorrow. Is that a problem?\n" +
-      "Shop: No. Tomorrow is Friday, we are open all day.\n" +
+      "Clerk: No. Tomorrow is Friday, we are open all day.\n" +
       "Ela: When does the bus leave from the city?\n" +
-      "Shop: Every hour. The next bus leaves at ten.\n" +
+      "Clerk: Every hour. The next bus leaves at ten.\n" +
       "Ela: Then I am going to take the bus at ten. Is my card ready?\n" +
-      "Shop: Yes, your card is ready. Don't be late — we close at seven!",
+      "Clerk: Yes, your card is ready. Don't be late — we close at seven!",
     questions: [
       {
-        text: "What time does the shop open?",
+        text: "What time does the store open?",
         options: ["at nine", "at seven", "at eight"],
         answer: 0,
         explain: "„We open at nine and we close at seven.“ — sekiz ofisin açılışı.",
       },
       {
-        text: "When is the shop closed?",
+        text: "When is the store closed?",
         options: ["on Sunday", "on Friday", "at ten"],
         answer: 0,
         explain: "„On Sunday we are closed.“ — cuma açık, on otobüsün saati.",
@@ -174,6 +174,7 @@ export const enA1U10: SkillExercise[] = [
     genre: "dialogue",
     intro: "İki kişi hafta sonu planını konuşuyor. Gelecek kalıbının üç biçimi de geçiyor.",
     gloss: [
+      { de: "film", tr: "film" },
       { de: "back", tr: "geri" },
       { de: "poor", tr: "zavallı" },
       { de: "car", tr: "araba" },
@@ -203,7 +204,7 @@ export const enA1U10: SkillExercise[] = [
       },
       {
         text: "Why is Sena's brother not going to come?",
-        options: ["he has a meeting", "he is ill", "he is at the sea"],
+        options: ["he has a meeting", "he is sick", "he is at the sea"],
         answer: 0,
         explain: "„He is not going to come. He has a meeting on Saturday.“",
       },
@@ -261,7 +262,7 @@ export const enA1U10: SkillExercise[] = [
       { speaker: "Ali", text: "I don't like watching television. I prefer reading or walking." },
       { speaker: "Ali", text: "On Monday and Wednesday I walk in the park near my office." },
       { speaker: "Ali", text: "In the afternoon I sometimes listen to music on the radio." },
-      { speaker: "Ali", text: "On Friday I meet my friends. We watch a film together." },
+      { speaker: "Ali", text: "On Friday I meet my friends. We watch a movie together." },
       { speaker: "Ali", text: "On the weekend I am going to travel. I'm going to stay at the sea for two days." },
     ],
     questions: [
@@ -327,6 +328,7 @@ export const enA1U10: SkillExercise[] = [
     genre: "personal",
     intro: "İş gününü ve sevdiklerini yaz. „like“ sonrası fiil yine „-ing“ alıyor.",
     gloss: [
+      { de: "film", tr: "film" },
       { de: "I start work at …", tr: "saat …'de işe başlarım" },
       { de: "I have a meeting on …", tr: "… günü toplantım var" },
       { de: "I like reading.", tr: "okumayı seviyorum" },

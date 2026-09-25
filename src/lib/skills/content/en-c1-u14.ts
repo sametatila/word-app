@@ -10,18 +10,18 @@ import type { SkillExercise } from "../types";
  *   Kelime: collective bargaining autonomy, conduct of negotiations,
  *           consensus building, code of conduct, apprenticeship contract,
  *           spin off, permeable, status insecurity, deskilling,
- *           professionalization, labor reserve, lateral entry, competence
+ *           professionalization, labor reserve, lateral hiring, competency-based approach
  *           orientation, obscure, segmentation, undermine, professional
  *           ethic, action pattern, everyday practice, platitude.
  *   Kalıp:  The collective bargaining autonomy demands that the conduct of negotiations be free. ·
  *           Were it not for consensus building, no code of conduct would hold. ·
- *           The female works council member asks that the firm make permanent every apprenticeship contract. ·
+ *           The union representative asks that the firm make permanent every apprenticeship contract. ·
  *           Much as they spin off the unit, the work stays in-house. ·
  *           The border, albeit permeable, does not remove the status insecurity. ·
- *           Albeit gainfully employed, many still work as a sideline. ·
+ *           Albeit gainfully employed, many still work on the side. ·
  *           Deskilling is not the opposite of professionalization. ·
  *           A skilled labor shortage is announced; a labor reserve is counted. ·
- *           Lateral entry and competence orientation arrive together. ·
+ *           Lateral hiring and a competency-based approach arrive together. ·
  *           One obscures the segmentation; another undermines the professional ethic. ·
  *           The action pattern claims what the everyday practice assumes. ·
  *           To call it disciplining is not to call it a platitude.
@@ -86,7 +86,7 @@ export const enC1U14: SkillExercise[] = [
     ],
     minutes: 12,
     text:
-      "The female works council member asks that the firm make permanent every apprenticeship contract. Read the last six words, notice that they are in the wrong order, and then notice that they are not.\n" +
+      "The union representative asks that the firm make permanent every apprenticeship contract. Read the last six words, notice that they are in the wrong order, and then notice that they are not.\n" +
       "„Make permanent every apprenticeship contract.“ The ordinary pattern is „make something permanent“: the verb, then the object, then the word that says what the object becomes. Here the object has jumped over that word and landed at the end of the sentence.\n" +
       "It jumped because it is heavy. „Every apprenticeship contract“ is three words long and „it“ is one. English moves a long object to the end and leaves the short piece next to the verb, and the rule is not about meaning at all. It is about length.\n" +
       "You have already seen it twice in this level without a name for it. „Spin off the unit“ rather than „spin the unit off“: the object comes after the particle because it is not a single word. And with a pronoun the rule reverses and becomes absolute — „spin it off“ is the only order anybody writes, because one word is never heavy.\n" +
@@ -190,7 +190,7 @@ export const enC1U14: SkillExercise[] = [
       "They are not two ends of one line. They can happen in the same firm, in the same year, to two rooms on the same floor, and they usually do, because the second one is what a trade does when the first one is coming for it.\n" +
       "A skilled labor shortage is announced; a labor reserve is counted. Two passives with two different owners: the first belongs to a press release and the second to a statistician.\n" +
       "That difference is the whole of the lesson. A shortage is a claim about a price nobody wants to pay, and it is announced in the same sentence in which the wage is described as already high. A reserve is a number of people who are not in the work and could be, and it can be counted from a form. A country can have both at once and most of them do.\n" +
-      "Lateral entry and competence orientation arrive together. A pair that looks unrelated until you have watched it twice. One is a door that opens for people without the usual papers; the other is a measure that says papers were never the point.\n" +
+      "Lateral hiring and a competency-based approach arrive together. A pair that looks unrelated until you have watched it twice. One is a door that opens for people without the usual papers; the other is a measure that says papers were never the point.\n" +
       "Neither is a bad thing and both of them are also the cheaper thing, and a reader who cannot hold those two facts in one paragraph will end up defending whichever of them was said last to them.\n" +
       "So the practical rule for this vocabulary is short. Ask who says the word, ask what it costs, and ask what was in the same sentence. A word that arrives with a number attached is doing different work from the same word a year later with nothing attached.",
     questions: [
@@ -229,7 +229,7 @@ export const enC1U14: SkillExercise[] = [
         items: [
           "Deskilling is not the opposite of professionalization.",
           "A skilled labor shortage is announced; a labor reserve is counted.",
-          "Lateral entry and competence orientation arrive together.",
+          "Lateral hiring and a competency-based approach arrive together.",
           "Ask who says the word and what it costs.",
         ],
         explain: "Eksen, iki edilgen, çift; en sonda kural.",
@@ -281,7 +281,7 @@ export const enC1U14: SkillExercise[] = [
       { speaker: "Cem", text: "That is the line I would keep out of the whole debate. The border can be crossed both ways and it is still a border, and everybody knows which side of it they are standing on." },
       { speaker: "Pelin", text: "So permeable is not the same as gone." },
       { speaker: "Cem", text: "Permeable is what a border is called by the people who never have to cross it. Ask somebody who crosses it twice a week and you will get a different adjective." },
-      { speaker: "Pelin", text: "Albeit gainfully employed, many still work as a sideline." },
+      { speaker: "Pelin", text: "Albeit gainfully employed, many still work on the side." },
       { speaker: "Cem", text: "And this is where the numbers stop helping. A person with a job is counted as having one, and the evening hours are in nobody's figure at all." },
       { speaker: "Pelin", text: "Because the form has one box." },
       { speaker: "Cem", text: "The form has one box and the second job is not in it, so a country can report that almost everybody is employed and be telling the truth about a picture nobody lives in." },
@@ -443,7 +443,7 @@ export const enC1U14: SkillExercise[] = [
       {
         kind: "build",
         tr: "Kadın işçi temsilcisi şirketin her çıraklık sözleşmesini kalıcı hale getirmesini istiyor.",
-        answer: "The female works council member asks that the firm make permanent every apprenticeship contract.",
+        answer: "The union representative asks that the firm make permanent every apprenticeship contract.",
         hint: "Ağır nesne sona kaymış; „make something permanent“ değil.",
       },
       {
@@ -495,7 +495,7 @@ export const enC1U14: SkillExercise[] = [
     gloss: [
       { de: "deskilling", tr: "vasıfsızlaşma" },
       { de: "professionalization", tr: "profesyonelleşme" },
-      { de: "lateral entry", tr: "alan dışından geçiş" },
+      { de: "lateral hiring", tr: "alan dışından geçiş" },
       { de: "to obscure", tr: "perdelemek" },
       { de: "to undermine", tr: "baltalamak" },
       { de: "a platitude", tr: "klişe" },
@@ -517,7 +517,7 @@ export const enC1U14: SkillExercise[] = [
       {
         kind: "build",
         tr: "Alan dışından geçiş ile yetkinlik odaklılık birlikte geliyor.",
-        answer: "Lateral entry and competence orientation arrive together.",
+        answer: "Lateral hiring and a competency-based approach arrive together.",
         hint: "Biri kapı, öteki kâğıdın hiç önemli olmadığını söyleyen ölçüt.",
       },
       {

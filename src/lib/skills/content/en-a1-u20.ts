@@ -116,13 +116,13 @@ export const enA1U20: SkillExercise[] = [
     questions: [
       {
         text: "Why can't Nil come tomorrow?",
-        options: ["she is busy", "she is ill", "she watches a series"],
+        options: ["she is busy", "she is sick", "she watches a series"],
         answer: 0,
         explain: "„I'm afraid I can't. I'm busy.“ — ret üç parçalı: özür, gerekçe, sonraki sefer.",
       },
       {
         text: "Where does Nil watch the series?",
-        options: ["on the computer", "on TV", "at the cinema"],
+        options: ["on the computer", "on TV", "at the movies"],
         answer: 0,
         explain: "„It is not on a channel. I watch it on the computer.“",
       },
@@ -262,7 +262,7 @@ export const enA1U20: SkillExercise[] = [
       { speaker: "Deniz", text: "On Wednesday I'm going to watch the new series. Every evening, two hours!" },
       { speaker: "Deniz", text: "On Thursday I am busy at work. I'm not going to do something in the evening." },
       { speaker: "Deniz", text: "On Friday my sister comes. We are going to cook together." },
-      { speaker: "Deniz", text: "And on the weekend? Maybe the cinema, maybe the park. I decide later." },
+      { speaker: "Deniz", text: "And on the weekend? Maybe the movies, maybe the park. I decide later." },
     ],
     questions: [
       {
@@ -310,8 +310,8 @@ export const enA1U20: SkillExercise[] = [
         text: "What is Deniz going to decide later?",
         options: [],
         answer: 0,
-        accept: ["the weekend", "the weekend plan", "cinema or park"],
-        explain: "„And on the weekend? Maybe the cinema, maybe the park. I decide later.“",
+        accept: ["the weekend", "the weekend plan", "movies or park"],
+        explain: "„And on the weekend? Maybe the movies, maybe the park. I decide later.“",
       },
     ],
   },

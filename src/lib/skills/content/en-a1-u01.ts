@@ -125,7 +125,7 @@ export const enA1U01: SkillExercise[] = [
       },
       {
         text: "How is Mert today?",
-        options: ["fine, but hungry", "ill and sad", "tired and thirsty"],
+        options: ["fine, but hungry", "sick and sad", "tired and thirsty"],
         answer: 0,
         explain: "„I am fine, thanks. But I am very hungry!“ — yorgun ve susamış olan Lena.",
       },

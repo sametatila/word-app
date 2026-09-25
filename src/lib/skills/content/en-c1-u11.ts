@@ -22,7 +22,7 @@ import type { SkillExercise } from "../types";
  *           Were it not for educational inequality, the class society would fade. ·
  *           They ask that every participation model show solidarity. ·
  *           Much as we call it acculturation, they mean assimilation. ·
- *           The adaptation course, albeit useful, is not a welcoming culture. ·
+ *           The integration course, albeit useful, is not a welcoming culture. ·
  *           Albeit a sign of hybridity, adaptability is asked of one side only.
  *
  * Ünitenin tek öğretme noktası GENEL ÖZNE. İngilizcede „hiç kimse“ demenin
@@ -52,7 +52,7 @@ export const enC1U11: SkillExercise[] = [
     gloss: [
       { de: "exists", tr: "var" },
       { de: "builds", tr: "kuruyor" },
-      { de: "towards", tr: "doğru" },
+      { de: "toward", tr: "doğru" },
       { de: "least", tr: "en az" },
       { de: "passive", tr: "edilgen" },
       { de: "among", tr: "arasında" },
@@ -96,7 +96,7 @@ export const enC1U11: SkillExercise[] = [
       "Nobody. That is the whole job of the word, and English has four ways of saying nobody, which is three more than it needs and the reason this lesson exists.\n" +
       "„One“ is the oldest of them. It is formal, it is falling out of use, and it builds a wall between the writer and the claim: whoever calls a scene a parallel society, it is not me.\n" +
       "„We“ does the opposite. It puts the writer inside the group that is speaking, and the reader then has to decide who else was put inside without being asked.\n" +
-      "„You“ turns the sentence towards the reader. It is the friendliest of the four and the least safe, because it hands the reader an opinion and then leaves them holding it.\n" +
+      "„You“ turns the sentence toward the reader. It is the friendliest of the four and the least safe, because it hands the reader an opinion and then leaves them holding it.\n" +
       "And the passive names nobody at all. „A cultural scene is called a parallel society“ — by whom, in which ministry, since when: all of it gone inside one verb.\n" +
       "So English makes a writer choose, and there is no neutral option among the four. A neighboring language has one word for this and only one. It is short, it is unmarked, it is used in a kitchen and in a court, and it carries no position whatever. A writer there can say who calls what a parallel society without putting themselves anywhere on the page at all.\n" +
       "That is the measurement of this unit and it is not a small one. Where one language has a single unmarked word, the other has a set of four, and every use of one of them places the writer somewhere in relation to the people being described.\n" +
@@ -271,7 +271,7 @@ export const enC1U11: SkillExercise[] = [
       { de: "a course", tr: "kurs" },
       { de: "useful", tr: "yararlı" },
       { de: "a building", tr: "bina" },
-      { de: "a timetable", tr: "ders programı" },
+      { de: "a schedule", tr: "ders programı" },
       { de: "one side", tr: "tek taraf" },
       { de: "asked of", tr: "istenen" },
       { de: "a sign", tr: "işaret" },
@@ -285,9 +285,9 @@ export const enC1U11: SkillExercise[] = [
       { speaker: "Defne", text: "It is fair if the two words really are being used for the same program. If they are not, the line is a verdict with a translation put in front of it." },
       { speaker: "Onur", text: "„Acculturation“ does sound softer." },
       { speaker: "Defne", text: "It sounds softer because it is mutual in the dictionary. Whether it is mutual in the building is a question the word cannot answer, and the word is doing a great deal of work in that sentence." },
-      { speaker: "Onur", text: "The adaptation course, albeit useful, is not a welcoming culture." },
+      { speaker: "Onur", text: "The integration course, albeit useful, is not a welcoming culture." },
       { speaker: "Defne", text: "That is the sentence I would keep. The concession is real, it costs two words, and the main claim is still standing after it." },
-      { speaker: "Onur", text: "A course has a timetable and a culture does not." },
+      { speaker: "Onur", text: "A course has a schedule and a culture does not." },
       { speaker: "Defne", text: "A course also has an end date, which is the part that matters. Nobody has ever finished a welcoming culture and been handed a certificate for it." },
       { speaker: "Onur", text: "And the last line?" },
       { speaker: "Defne", text: "Albeit a sign of hybridity, adaptability is asked of one side only. Read the second half slowly, because everything the sentence is about is in the last three words." },
@@ -316,11 +316,11 @@ export const enC1U11: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The adaptation course, ___ useful, is not a welcoming culture.",
+        text: "The integration course, ___ useful, is not a welcoming culture.",
         options: [],
         answer: 0,
         accept: ["albeit"],
-        explain: "„The adaptation course, albeit useful, is not a welcoming culture.“",
+        explain: "„The integration course, albeit useful, is not a welcoming culture.“",
       },
       {
         kind: "dictation",

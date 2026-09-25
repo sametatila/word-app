@@ -61,7 +61,7 @@
  { "tr": "Etkinliği ve beklentiyi başa yaz", "kind": "writing.checklist", "de": "Nenne zu Beginn Veranstaltung und Erwartung" },
  { "tr": "Gişede eksik belgeyi soruyorsun.", "kind": "speaking.situation", "de": "Du fragst am Schalter nach dem fehlenden Dokument." },
  { "tr": "Görüşünü gerekçeyle söylüyorsun.", "kind": "speaking.situation", "de": "Du sagst deine Meinung mit Begründung." },
- { "tr": "Güzel. Londra'ya bilet kaç para?", "kind": "turn", "de": "Gut. Was kostet eine Fahrkarte nach London?" },
+ { "tr": "Güzel. New York'a bilet kaç para?", "kind": "turn", "de": "Gut. Was kostet eine Fahrkarte nach New York?" },
  { "tr": "Hangi belgeleri gönderdiğini yaz", "kind": "writing.checklist", "de": "Schreib, welche Unterlagen du geschickt hast" },
  { "tr": "If the sample had been larger, …", "kind": "focus", "de": "If the sample had been larger, …" },
  { "tr": "İki seçeneği karşılaştırıyorsun.", "kind": "speaking.situation", "de": "Du vergleichst zwei Möglichkeiten." },

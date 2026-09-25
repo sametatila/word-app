@@ -4,7 +4,7 @@ import type { SkillExercise } from "../types";
  * EN · A2 · Ünite 2 — "Hikâye, eskiden, çocukluk, tatil".
  *
  * Dört ders: Telling a story · I used to... · My childhood ·
- * A holiday I remember.
+ * A vacation I remember.
  *
  *   Kelime: first, then, after that, finally, because, at first,
  *           afterwards, that's why, use, school, child, play, live,
@@ -46,8 +46,8 @@ export const enA2U02: SkillExercise[] = [
     minutes: 5,
     text:
       "I grew up in a small village near the sea. When I was a child, we didn't have a computer and I didn't use to watch television.\n\n" +
-      "First I went to kindergarten in the village, then to the primary school in the next town. Every morning we walked twenty minutes, and in the winter it was very cold.\n\n" +
-      "I used to play football in the yard with the children of our neighbors. My sister used to play with her doll and she used to shout at us because we were loud.\n\n" +
+      "First I went to kindergarten in the village, then to the elementary school in the next town. Every morning we walked twenty minutes, and in the winter it was very cold.\n\n" +
+      "I used to play soccer in the yard with the children of our neighbors. My sister used to play with her doll and she used to shout at us because we were loud.\n\n" +
       "After that, when I was ten, we moved to the city. At first I didn't like it. The new school was big and I didn't know anybody.\n\n" +
       "But I remember one good thing: the city had a library. I used to read there every afternoon.",
     questions: [
@@ -59,7 +59,7 @@ export const enA2U02: SkillExercise[] = [
       },
       {
         text: "What did the writer's sister use to do?",
-        options: ["play with her doll", "play football", "read in the library"],
+        options: ["play with her doll", "play soccer", "read in the library"],
         answer: 0,
         explain: "„My sister used to play with her doll…“ — futbol ve kütüphane yazarın.",
       },
@@ -94,12 +94,12 @@ export const enA2U02: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 2,
-    title: "A holiday I remember",
+    title: "A vacation I remember",
     genre: "story",
     intro: "Bir tatil anlatısı. Sıralama sözcüklerini takip et: first, then, afterwards, after that.",
     gloss: [
       { de: "shade", tr: "gölge" },
-      { de: "holiday", tr: "tatil" },
+      { de: "vacation", tr: "tatil" },
       { de: "island", tr: "ada" },
     ],
     minutes: 5,
@@ -108,7 +108,7 @@ export const enA2U02: SkillExercise[] = [
       "First we took a taxi to the airport. Then we waited two hours because the plane was late. At first I was angry, but afterwards it was fine.\n\n" +
       "We stayed at a small hotel for five days. The weather was hot and the beach was beautiful. Every morning we swam in the sea, and after that we ate fruit in the shade.\n\n" +
       "One day we took a boat to an island. While we were on the boat, a big fish jumped out of the water. My friend was wearing a white shirt and the water made it wet. That's why we have a funny photo of that day.\n\n" +
-      "I enjoyed the holiday very much. Next year I want to go again.",
+      "I enjoyed the vacation very much. Next year I want to go again.",
     questions: [
       {
         text: "Why did they wait two hours?",
@@ -172,6 +172,7 @@ export const enA2U02: SkillExercise[] = [
     genre: "dialogue",
     intro: "Eski alışkanlıklar konuşuluyor. „used to“nun üç biçimi de geçiyor.",
     gloss: [
+      { de: "football", tr: "futbol" },
       { de: "used to", tr: "eskiden" },
       { de: "memory", tr: "hafıza" },
       { de: "coach", tr: "antrenör" },
@@ -247,7 +248,7 @@ export const enA2U02: SkillExercise[] = [
     genre: "monologue",
     intro: "Uzun bir günün anlatısı. Sıralama sözcükleri hikâyeyi taşıyor.",
     gloss: [
-      { de: "flat", tr: "daire" },
+      { de: "apartment", tr: "daire" },
       { de: "book", tr: "kitap" },
       { de: "suitcase", tr: "bavul" },
     ],
@@ -257,7 +258,7 @@ export const enA2U02: SkillExercise[] = [
       { speaker: "Kaan", text: "Then I took the bus to the airport. My sister was coming from Italy." },
       { speaker: "Kaan", text: "The flight was two hours late, so I waited in a café and I read a book." },
       { speaker: "Kaan", text: "After that she came out with two suitcases. One was very heavy!" },
-      { speaker: "Kaan", text: "We took a taxi to the hotel because her flat was not ready." },
+      { speaker: "Kaan", text: "We took a taxi to the hotel because her apartment was not ready." },
       { speaker: "Kaan", text: "Finally we ate in a small restaurant near the beach. I was tired, so I went home at nine." },
     ],
     questions: [
@@ -269,9 +270,9 @@ export const enA2U02: SkillExercise[] = [
       },
       {
         text: "Why did they go to the hotel?",
-        options: ["her flat was not ready", "the airport was closed", "the restaurant was full"],
+        options: ["her apartment was not ready", "the airport was closed", "the restaurant was full"],
         answer: 0,
-        explain: "„We took a taxi to the hotel because her flat was not ready.“",
+        explain: "„We took a taxi to the hotel because her apartment was not ready.“",
       },
       {
         kind: "truefalse",
@@ -332,7 +333,7 @@ export const enA2U02: SkillExercise[] = [
       {
         kind: "build",
         tr: "Eskiden futbol oynardım.",
-        answer: "I used to play football.",
+        answer: "I used to play soccer.",
         hint: "„used to“ artık olmayan bir alışkanlık söylüyor; sonrası eksiz fiil.",
       },
       {

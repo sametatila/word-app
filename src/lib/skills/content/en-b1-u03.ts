@@ -112,7 +112,7 @@ export const enB1U03: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 3,
-    title: "The viewing",
+    title: "The showing",
     genre: "dialogue",
     intro: "Daire geziliyor. Hangi iki soru her şeyi söylüyor?",
     gloss: [
@@ -123,48 +123,48 @@ export const enB1U03: SkillExercise[] = [
     ],
     minutes: 7,
     text:
-      "Agent: This is the flat that I mentioned on the phone.\n" +
+      "Agent: This is the apartment that I mentioned on the phone.\n" +
       "Sena: It is brighter than the photos.\n" +
       "Agent: The photos were taken in November. The woman who lived here painted the corridor.\n" +
       "Sena: And the ceiling is high. What is the storage like?\n" +
       "Agent: There is a basement, two meters by three, and the cupboard in the corridor.\n" +
       "Sena: Is the basement dry?\n" +
       "Agent: In this building, yes. I would not say that about the one next door.\n" +
-      "Sena: That is an honest answer. The flat I saw yesterday was spacious but the landlord was not there.\n" +
+      "Sena: That is an honest answer. The apartment I saw yesterday was spacious but the landlord was not there.\n" +
       "Agent: Who showed it?\n" +
-      "Sena: A man who had never been inside. He read the advert to me in the kitchen.\n" +
+      "Sena: A man who had never been inside. He read the ad to me in the kitchen.\n" +
       "Agent: That happens. Ask two questions and you know: when was the heating last checked, and who lives above.\n" +
       "Sena: Who lives above?\n" +
       "Agent: A teacher and a cat. The cat is loud on Sunday morning.\n" +
-      "Sena: I can live with that. Is the flat still available?\n" +
-      "Agent: Until Friday. Two viewings after you, and both of them asked about the basement.",
+      "Sena: I can live with that. Is the apartment still available?\n" +
+      "Agent: Until Friday. Two showings after you, and both of them asked about the basement.",
     questions: [
       {
-        text: "Why is the flat brighter than the photos?",
+        text: "Why is the apartment brighter than the photos?",
         options: ["the photos were taken in November", "the windows are new", "the ceiling is high"],
         answer: 0,
         explain: "„The photos were taken in November.“ — kasımda ışık az.",
       },
       {
-        text: "What was wrong at the flat Sena saw yesterday?",
+        text: "What was wrong at the apartment Sena saw yesterday?",
         options: ["the landlord was not there", "it was too small", "the basement was wet"],
         answer: 0,
-        explain: "„The flat I saw yesterday was spacious but the landlord was not there.“",
+        explain: "„The apartment I saw yesterday was spacious but the landlord was not there.“",
       },
       {
         kind: "truefalse",
-        text: "The man yesterday had seen the flat before.",
+        text: "The man yesterday had seen the apartment before.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„A man who had never been inside. He read the advert to me in the kitchen.“",
+        explain: "„A man who had never been inside. He read the ad to me in the kitchen.“",
       },
       {
         kind: "gapfill",
-        text: "The flat is available until ___.",
+        text: "The apartment is available until ___.",
         options: [],
         answer: 0,
         accept: ["Friday"],
-        explain: "„Until Friday. Two viewings after you…“",
+        explain: "„Until Friday. Two showings after you…“",
       },
       {
         kind: "short_answer",
@@ -257,7 +257,7 @@ export const enB1U03: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     unit: 3,
-    title: "Looking for a flat",
+    title: "Looking for an apartment",
     genre: "dialogue",
     intro: "Beş daire, hiç imza yok. Neden?",
     gloss: [
@@ -267,40 +267,40 @@ export const enB1U03: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Mert", text: "I have seen five flats this month and I have not signed anything." },
+      { speaker: "Mert", text: "I have seen five apartments this month and I have not signed anything." },
       { speaker: "Nil", text: "Five is a lot. What is wrong with them?" },
-      { speaker: "Mert", text: "Nothing is wrong. That is the problem. I saw that flat near the park last week — bright, furnished, fine." },
+      { speaker: "Mert", text: "Nothing is wrong. That is the problem. I saw that apartment near the park last week — bright, furnished, fine." },
       { speaker: "Nil", text: "And?" },
       { speaker: "Mert", text: "The deposit was three months. The landlord said that everybody pays three months here." },
       { speaker: "Nil", text: "Everybody does not. Two is normal in this city." },
-      { speaker: "Mert", text: "He also said that the advert was old and the rent had changed." },
-      { speaker: "Nil", text: "That is the moment to leave. An advert is a price." },
-      { speaker: "Mert", text: "The agency told me to send my last three payslips before the viewing." },
-      { speaker: "Nil", text: "Before? After a viewing, yes. Before, no." },
+      { speaker: "Mert", text: "He also said that the ad was old and the rent had changed." },
+      { speaker: "Nil", text: "That is the moment to leave. An ad is a price." },
+      { speaker: "Mert", text: "The agency told me to send my last three payslips before the showing." },
+      { speaker: "Nil", text: "Before? After a showing, yes. Before, no." },
       { speaker: "Mert", text: "I asked if that was normal. She said it was." },
       { speaker: "Nil", text: "She said it was. That is different from: it is." },
-      { speaker: "Mert", text: "So five flats and no flat." },
-      { speaker: "Nil", text: "Five flats and two rules you did not have in September. That is not nothing." },
+      { speaker: "Mert", text: "So five apartments and no apartment." },
+      { speaker: "Nil", text: "Five apartments and two rules you did not have in September. That is not nothing." },
     ],
     questions: [
       {
         text: "What did the landlord say about the deposit?",
-        options: ["everybody pays three months", "two months is normal", "it depends on the flat"],
+        options: ["everybody pays three months", "two months is normal", "it depends on the apartment"],
         answer: 0,
         explain: "„The landlord said that everybody pays three months here.“ — Nil bunun doğru olmadığını söylüyor.",
       },
       {
-        text: "What did the agency ask for before the viewing?",
+        text: "What did the agency ask for before the showing?",
         options: ["three payslips", "a deposit", "a signature"],
         answer: 0,
-        explain: "„The agency told me to send my last three payslips before the viewing.“",
+        explain: "„The agency told me to send my last three payslips before the showing.“",
       },
       {
         kind: "truefalse",
         text: "Mert has signed a contract.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„I have seen five flats this month and I have not signed anything.“",
+        explain: "„I have seen five apartments this month and I have not signed anything.“",
       },
       {
         kind: "gapfill",
@@ -320,11 +320,11 @@ export const enB1U03: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What has Mert got from the five viewings?",
+        text: "What has Mert got from the five showings?",
         options: [],
         answer: 0,
         accept: ["two rules", "two new rules", "rules"],
-        explain: "„Five flats and two rules you did not have in September.“",
+        explain: "„Five apartments and two rules you did not have in September.“",
       },
     ],
   },
@@ -390,7 +390,7 @@ export const enB1U03: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 3,
-    title: "The flat that I saw yesterday was bright",
+    title: "The apartment that I saw yesterday was bright",
     genre: "personal",
     intro: "Sıfat cümleleri. „that“ ne zaman düşebiliyor?",
     gloss: [
@@ -403,13 +403,13 @@ export const enB1U03: SkillExercise[] = [
       {
         kind: "build",
         tr: "Dün gördüğüm daire aydınlıktı.",
-        answer: "The flat that I saw yesterday was bright.",
+        answer: "The apartment that I saw yesterday was bright.",
         hint: "„that“ burada NESNE konumunda; ismi arkadan tamlayan bir cümle kuruyor.",
       },
       {
         kind: "build",
         tr: "Bana daireyi gösteren kadın nazikti.",
-        answer: "The woman who showed me the flat was kind.",
+        answer: "The woman who showed me the apartment was kind.",
         hint: "„who“ burada ÖZNE konumunda ve bu yüzden düşemez.",
       },
       {
@@ -421,14 +421,14 @@ export const enB1U03: SkillExercise[] = [
       {
         kind: "build",
         tr: "Bu ay beş daire gördüm.",
-        answer: "I have seen five flats this month.",
-        alternatives: ["I've seen five flats this month."],
+        answer: "I have seen five apartments this month.",
+        alternatives: ["I've seen five apartments this month."],
         hint: "Ay bitmedi, o yüzden present perfect; „last week“ olsaydı sade geçmiş olurdu.",
       },
       {
         kind: "build",
         tr: "Daire hâlâ müsait mi?",
-        answer: "Is the flat still available?",
+        answer: "Is the apartment still available?",
         hint: "„still“ „be“ fiilinden sonra geliyor.",
       },
     ],

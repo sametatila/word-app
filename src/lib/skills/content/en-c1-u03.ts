@@ -321,6 +321,7 @@ export const enC1U03: SkillExercise[] = [
     genre: "monologue",
     intro: "Karşı tarafı aktarmak. Fiil neyi ele veriyor?",
     gloss: [
+      { de: "flatly", tr: "düpedüz" },
       { de: "insult", tr: "hakaret" },
       { de: "either", tr: "ikisinden biri" },
       { de: "build", tr: "kurmak" },

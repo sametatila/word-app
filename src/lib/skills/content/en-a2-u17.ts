@@ -37,14 +37,14 @@ export const enA2U17: SkillExercise[] = [
     genre: "blog",
     intro: "İki günlük gezi yazısı. Neyi ne zaman görmeli?",
     gloss: [
-      { de: "queue", tr: "kuyruk" },
+      { de: "line", tr: "kuyruk" },
       { de: "the top", tr: "tepe" },
       { de: "the best part", tr: "en iyi yanı" },
       { de: "bridge", tr: "köprü" },
     ],
     minutes: 6,
     text:
-      "Two days in this city, and everybody says: see the castle. We saw it. It is worth visiting, but not on Saturday — the queue for the ticket is longer than the tour.\n" +
+      "Two days in this city, and everybody says: see the castle. We saw it. It is worth visiting, but not on Saturday — the line for the ticket is longer than the tour.\n" +
       "My advice: go on Monday morning. The guide starts at ten and there are six people, not sixty.\n" +
       "How about taking a bus tour first? Two hours, and after that you know where everything is. The tower, the museum, the old bridge. Then you choose.\n" +
       "The exhibition in the museum was the best part of the trip. Photos from nineteen twenty: the same streets, the same houses, different people. Worth seeing even if you don't like museums.\n" +
@@ -65,10 +65,10 @@ export const enA2U17: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The queue for the ticket is longer than the tour.",
+        text: "The line for the ticket is longer than the tour.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„…the queue for the ticket is longer than the tour.“",
+        explain: "„…the line for the ticket is longer than the tour.“",
       },
       {
         kind: "gapfill",
@@ -278,7 +278,7 @@ export const enA2U17: SkillExercise[] = [
       { speaker: "Waitress", text: "Apple cake. It is worth waiting for." },
       { speaker: "Can", text: "Then we wait." },
       { speaker: "Waitress", text: "Could I bring you bread now?" },
-      { speaker: "Can", text: "Yes, please. And later could we have the bill together, not separately?" },
+      { speaker: "Can", text: "Yes, please. And later could we have the check together, not separately?" },
       { speaker: "Waitress", text: "Of course." },
     ],
     questions: [
@@ -290,7 +290,7 @@ export const enA2U17: SkillExercise[] = [
       },
       {
         text: "When does the dessert come?",
-        options: ["with the main course", "after the bill", "before the soup"],
+        options: ["with the main course", "after the check", "before the soup"],
         answer: 0,
         explain: "„Dessert comes with the main course here. Is that fine?“",
       },
@@ -299,7 +299,7 @@ export const enA2U17: SkillExercise[] = [
         text: "They want two bills.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„…could we have the bill together, not separately?“",
+        explain: "„…could we have the check together, not separately?“",
       },
       {
         kind: "gapfill",

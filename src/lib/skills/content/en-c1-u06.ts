@@ -12,7 +12,7 @@ import type { SkillExercise } from "../types";
  *   Kalıp:  We request that the office lodge the appeal. ·
  *           Were it not for the limitation period, the claim would stand. ·
  *           They ask that no document be inadmissible. ·
- *           A misdemeanor in one register is an administrative offense in another. ·
+ *           A misdemeanor in one register is a civil infraction in another. ·
  *           Written as an administrative act, the same step reads colder. ·
  *           The acquittal becomes a sentence in the spoken register. ·
  *           She stated it; he conceded it; they alleged it. ·
@@ -164,8 +164,8 @@ export const enC1U06: SkillExercise[] = [
     ],
     minutes: 12,
     text:
-      "A misdemeanor in one register is an administrative offense in another. The same act, the same file, two words, and the second one has taken the person out of it.\n" +
-      "That is the whole of this lesson and it is worth being slow about. „Misdemeanor“ has somebody in it: a person did a thing that has a name in the code. „Administrative offense“ has a procedure in it, and the person has become an item in one.\n" +
+      "A misdemeanor in one register is a civil infraction in another. The same act, the same file, two words, and the second one has taken the person out of it.\n" +
+      "That is the whole of this lesson and it is worth being slow about. „Misdemeanor“ has somebody in it: a person did a thing that has a name in the code. „Civil infraction“ has a procedure in it, and the person has become an item in one.\n" +
       "Written as an administrative act, the same step reads colder. Note the verb again: „reads“, middle voice, no reader named, and this unit has now used it twice because it is the only way to talk about how a text behaves.\n" +
       "The acquittal becomes a sentence in the spoken register. That one goes the other way. A word that is precise in a court becomes a word with a verdict attached in a corridor, and the man who was acquitted spends ten years explaining a term that had been in his favor.\n" +
       "So register here is not politeness and it is not style. It is which facts survive the move from one document to another, and the answer is never all of them.\n" +
@@ -205,7 +205,7 @@ export const enC1U06: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "A misdemeanor in one register is an administrative offense in another.",
+          "A misdemeanor in one register is a civil infraction in another.",
           "Written as an administrative act, the same step reads colder.",
           "The acquittal becomes a sentence in the spoken register.",
           "A fact has to be rewritten in each register.",
@@ -348,7 +348,7 @@ export const enC1U06: SkillExercise[] = [
       { speaker: "Zümrüt", text: "Were it not for the limitation period, the claim would stand. The other half of the same mood, supposing rather than asking, and it is the sentence the whole petition is built to earn." },
       { speaker: "Zümrüt", text: "The order matters. Request first, ground last, and everything in between is dates." },
       { speaker: "Zümrüt", text: "A petition that puts the ground first reads as an argument, and an argument can be answered without the request ever being considered." },
-      { speaker: "Zümrüt", text: "The cut-off period is the only number in the document that is written twice: once in the first paragraph and once in the last line, in words." },
+      { speaker: "Zümrüt", text: "The filing deadline is the only number in the document that is written twice: once in the first paragraph and once in the last line, in words." },
       { speaker: "Zümrüt", text: "Everything else appears once. A document that repeats itself is a document somebody will read looking for the difference between the two versions." },
     ],
     questions: [
@@ -369,7 +369,7 @@ export const enC1U06: SkillExercise[] = [
         text: "Several numbers are written twice.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„The cut-off period is the only number in the document that is written twice…“",
+        explain: "„The filing deadline is the only number in the document that is written twice…“",
       },
       {
         kind: "gapfill",
@@ -493,7 +493,7 @@ export const enC1U06: SkillExercise[] = [
       {
         kind: "build",
         tr: "Bir kayıtta hafif suç olan, başka bir kayıtta kabahat.",
-        answer: "A misdemeanor in one register is an administrative offense in another.",
+        answer: "A misdemeanor in one register is a civil infraction in another.",
         hint: "Aynı olay, iki sözcük, iki ayrı dünya.",
       },
       {

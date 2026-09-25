@@ -54,7 +54,7 @@ export const enA2U06: SkillExercise[] = [
       "Ela: No, only the throat and the head.\n" +
       "Doctor: It is a cold, not a serious illness. You should rest for a week.\n" +
       "Ela: A week! I have a lot of work.\n" +
-      "Doctor: Then you will be ill for a month. You should drink enough water, avoid cold drinks and relax.\n" +
+      "Doctor: Then you will be sick for a month. You should drink enough water, avoid cold drinks and relax.\n" +
       "Ela: Should I take vitamins?\n" +
       "Doctor: They don't hurt. But rest is the best medicine.",
     questions: [
@@ -118,7 +118,7 @@ export const enA2U06: SkillExercise[] = [
       "Deniz: Do you have anything earlier? Friday is too late for me.\n" +
       "Office: Let me look. Wednesday at two is available. Or Thursday at half past eight.\n" +
       "Deniz: Thursday is better. Half past eight is fine.\n" +
-      "Office: Good. And Friday? Shall I cancel it?\n" +
+      "Office: Good. And Friday? Should I cancel it?\n" +
       "Deniz: Yes, please cancel it.\n" +
       "Office: Is the problem urgent?\n" +
       "Deniz: Not urgent, but I have had the pain for two weeks and it is getting worse.\n" +
@@ -135,7 +135,7 @@ export const enA2U06: SkillExercise[] = [
         text: "What happens to the Friday appointment?",
         options: ["it is canceled", "it stays", "it moves to two"],
         answer: 0,
-        explain: "„Shall I cancel it? — Yes, please cancel it.“",
+        explain: "„Should I cancel it? — Yes, please cancel it.“",
       },
       {
         kind: "truefalse",

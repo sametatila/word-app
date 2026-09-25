@@ -390,7 +390,7 @@ export const enC1U13: SkillExercise[] = [
       { speaker: "Nesrin", text: "Untranslatability survives as spirituality, a crisis of faith as a question. Two more, gapped the same way, and both of them are about what happens to a thing that cannot be carried across." },
       { speaker: "Nesrin", text: "What cannot be said in the second language does not disappear. It moves into whatever category the second language does have room for, and that category is usually a large and vague one." },
       { speaker: "Nesrin", text: "The social stratum changed; the change in values did not. This is the line the whole lesson exists for, and it is a finding rather than an opinion." },
-      { speaker: "Nesrin", text: "A family can move two strata in one generation. The wage changes in a year, the flat in three, and what is said at the table changes over a much longer period." },
+      { speaker: "Nesrin", text: "A family can move two strata in one generation. The wage changes in a year, the apartment in three, and what is said at the table changes over a much longer period." },
       { speaker: "Nesrin", text: "So a census that has recorded the income has recorded the fast half of the story and has nothing at all about the slow half." },
       { speaker: "Nesrin", text: "And a paragraph that reports the income as though it were the whole change is not wrong about any number in it." },
     ],

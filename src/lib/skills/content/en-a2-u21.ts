@@ -172,7 +172,7 @@ export const enA2U21: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 21,
-    title: "Series and films",
+    title: "Series and movies",
     genre: "dialogue",
     intro: "Yeni bir dizi. Kaç bölüm izlendi, konusu ne?",
     gloss: [
@@ -192,7 +192,7 @@ export const enA2U21: SkillExercise[] = [
       { speaker: "Ela", text: "Forty years in eight episodes?" },
       { speaker: "Deniz", text: "One episode, five years. Every actor plays the same person older." },
       { speaker: "Ela", text: "That I want to see. Who is in it?" },
-      { speaker: "Deniz", text: "The woman from the film we watched in June." },
+      { speaker: "Deniz", text: "The woman from the movie we watched in June." },
       { speaker: "Ela", text: "Then I watch it tonight. Two episodes, not more." },
       { speaker: "Deniz", text: "Everybody says two. Nobody stops at two." },
       { speaker: "Ela", text: "I don't believe you." },
@@ -207,7 +207,7 @@ export const enA2U21: SkillExercise[] = [
       },
       {
         text: "What is the series about?",
-        options: ["a family, a house and forty years", "an actor", "a film from June"],
+        options: ["a family, a house and forty years", "an actor", "a movie from June"],
         answer: 0,
         explain: "„What is it about? A family, a house, and forty years.“",
       },

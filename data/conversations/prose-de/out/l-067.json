@@ -1,6 +1,5 @@
 [
- { "tr": "Ama İngilizler konuşurken çoğu zaman tek başına have demez, have got der. Tam hâli şöyle:", "kind": "say.tr", "de": "Aber im Gespräch sagen die Engländer selten nur have, sondern have got. Die volle Form:" },
- { "tr": "Bir gezi harikaysa İngilizler çok sık şu kelimeyi söyler: amazing. Yani harika, muhteşem.", "kind": "say.tr", "de": "Ist eine Reise großartig, sagen die Engländer sehr oft dieses Wort: amazing. Also toll, großartig." },
+ { "tr": "Bir gezi harikaysa anadili İngilizce olanlar çok sık şu kelimeyi söyler: amazing. Yani harika, muhteşem.", "kind": "say.tr", "de": "Ist eine Reise großartig, sagen Muttersprachler sehr oft dieses Wort: amazing. Also toll, großartig." },
  { "tr": "Bir küçük not daha. Miktarı tam söylemeden bir şeyden bahsedeceksen some kullanabilirsin.", "kind": "say.tr", "de": "Noch eine kleine Anmerkung. Sprichst du von etwas ohne genaue Menge, nimm some." },
  { "tr": "Bir tane daha: kelime sessiz harf artı y ile bitiyorsa, y düşer, yerine -ies gelir. Şehir", "kind": "say.tr", "de": "Noch eine: endet das Wort auf Konsonant plus y, fällt das y weg und -ies kommt. Stadt" },
  { "tr": "Bugün damaged, quality, complain, manager ve expect kelimelerini; There's a problem with,", "kind": "say.tr", "de": "Heute hast du damaged, quality, complain, manager und expect gelernt; dazu There's a problem with," },
@@ -114,7 +113,7 @@
  { "tr": "Harika iş çıkardın. Bugün beş kelime öğrendin: weather, rain, cold, hot, sunny. Ve üç kalıp:", "kind": "say.tr", "de": "Das war großartig. Heute lerntest du fünf Wörter: weather, rain, cold, hot, sunny. Und drei Wendungen:" },
  { "tr": "Kelime sessiz harfle başladığı için 'a' diyoruz; sesli harfle başlasaydı 'an' olurdu, mesela", "kind": "say.tr", "de": "Weil das Wort mit einem Konsonanten beginnt, sagen wir 'a'; mit einem Vokal wäre es 'an', etwa" },
  { "tr": "kısa yazı, not demek. Bir hediye veya büyük bir yardım sonrası insanlar teşekkür notu yazar:", "kind": "say.tr", "de": "heißt kurze Zeile, Notiz. Nach einem Geschenk oder großer Hilfe schreibt man eine Dankeszeile:" },
- { "tr": "Küçük bir not: İngilizler ayrılırken çoğu zaman sadece 'Bye' demez. Yanına bir söz eklerler:", "kind": "say.tr", "de": "Eine kleine Anmerkung: die Engländer sagen beim Abschied selten nur 'Bye'. Sie hängen etwas an:" },
+ { "tr": "Küçük bir not: Anadili İngilizce olanlar ayrılırken çoğu zaman sadece 'Bye' demez. Yanına bir söz eklerler:", "kind": "say.tr", "de": "Eine kleine Anmerkung: Muttersprachler sagen beim Abschied selten nur 'Bye'. Sie hängen etwas an:" },
  { "tr": "Mahalle esnafını karşılaştırmak da çok doğal. Kısa sıfatların sonuna er ekleyip than dersin.", "kind": "say.tr", "de": "Die Läden im Viertel zu vergleichen ist auch ganz natürlich. An kurze Adjektive hängst du er und sagst than." },
  { "tr": "Ne zamandır sürdüğünü söylerken: hasn't worked since Monday, ya da süre için for three days.", "kind": "say.tr", "de": "Wie lange es schon dauert, sagst du so: hasn't worked since Monday, oder für die Dauer for three days." },
  { "tr": "O da genelde şöyle karşılık verir: You're welcome. Buradaki you're de you are'ın kısaltması.", "kind": "say.tr", "de": "Und er antwortet meist so: You're welcome. Dieses you're ist auch die Kurzform von you are." },

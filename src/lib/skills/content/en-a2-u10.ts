@@ -116,17 +116,17 @@ export const enA2U10: SkillExercise[] = [
     minutes: 6,
     text:
       "Rules for the residents\n" +
-      "You have to put the rubbish in the bin before eight in the evening. The caretaker takes it out on Monday and Thursday.\n" +
+      "You have to put the trash in the trash can before eight in the evening. The caretaker takes it out on Monday and Thursday.\n" +
       "You must not make noise between ten at night and seven in the morning. On Sunday the quiet time is all day.\n" +
-      "You don't have to clean the stairs. A company comes every week. But you have to clean the balcony in front of your flat.\n" +
+      "You don't have to clean the stairs. A company comes every week. But you have to clean the balcony in front of your apartment.\n" +
       "Bikes are forbidden in the hallway. There is a room for them next to the front door.\n" +
       "The attic is open from April to October. From November it is closed, because the roof is old.\n" +
       "If something is broken, tell the caretaker or write to the landlord. Please don't repair it.\n" +
       "Thank you — a quiet building is a good building.",
     questions: [
       {
-        text: "What do you have to do with the rubbish?",
-        options: ["put it in the bin before eight", "take it out on Monday", "leave it in the hallway"],
+        text: "What do you have to do with the trash?",
+        options: ["put it in the trash can before eight", "take it out on Monday", "leave it in the hallway"],
         answer: 0,
         explain: "Çöpü kutuya koymak sakine, dışarı çıkarmak görevliye ait.",
       },
@@ -173,7 +173,7 @@ export const enA2U10: SkillExercise[] = [
     genre: "monologue",
     intro: "Bir mahalle anlatılıyor. Nesi iyi, nesi eksik?",
     gloss: [
-      { de: "cinema", tr: "sinema" },
+      { de: "movie theater", tr: "sinema" },
       { de: "missing", tr: "eksik" },
       { de: "on foot", tr: "yürüyerek" },
     ],
@@ -184,7 +184,7 @@ export const enA2U10: SkillExercise[] = [
       { speaker: "Mert", text: "It's quieter than the city center, but it isn't boring. On Saturday the market is crowded." },
       { speaker: "Mert", text: "The bus stop is under my window. That was a problem in the first week and now I don't hear it." },
       { speaker: "Mert", text: "At night the streets are safe. There are always people, because the bakery opens at four." },
-      { speaker: "Mert", text: "What is missing? A cinema. For a film I have to take the bus for twenty minutes." },
+      { speaker: "Mert", text: "What is missing? A movie theater. For a movie I have to take the bus for twenty minutes." },
       { speaker: "Mert", text: "And the rents are going up. Two years ago this area was cheap." },
       { speaker: "Mert", text: "But I know one thing already: if the rent goes up again, I will stay and cook at home." },
     ],
@@ -197,9 +197,9 @@ export const enA2U10: SkillExercise[] = [
       },
       {
         text: "What is missing in the area?",
-        options: ["a cinema", "a park", "a bakery"],
+        options: ["a movie theater", "a park", "a bakery"],
         answer: 0,
-        explain: "„What is missing? A cinema.“",
+        explain: "„What is missing? A movie theater.“",
       },
       {
         kind: "truefalse",
@@ -240,7 +240,7 @@ export const enA2U10: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 10,
-    title: "Local shops",
+    title: "Local stores",
     genre: "dialogue",
     intro: "Fırında kısa bir alışveriş. Pazar günü ne açık, ne kapalı?",
     gloss: [
@@ -256,7 +256,7 @@ export const enA2U10: SkillExercise[] = [
       { speaker: "Baker", text: "Here you are. Anything else?" },
       { speaker: "Sena", text: "What time do you open on Sunday?" },
       { speaker: "Baker", text: "At seven, like every day. But we close at twelve." },
-      { speaker: "Sena", text: "Good to know. Is the corner shop open on Sunday too?" },
+      { speaker: "Sena", text: "Good to know. Is the corner store open on Sunday too?" },
       { speaker: "Baker", text: "No, only we and the laundry. The butcher shop and the bookstore are closed." },
       { speaker: "Sena", text: "And the shopping mall?" },
       { speaker: "Baker", text: "Open, but it takes half an hour by bus. For bread that is too far." },
@@ -271,7 +271,7 @@ export const enA2U10: SkillExercise[] = [
         explain: "„At seven, like every day. But we close at twelve.“ — yedi açılış saati.",
       },
       {
-        text: "Which shops are open on Sunday?",
+        text: "Which stores are open on Sunday?",
         options: ["the bakery and the laundry", "the butcher shop", "the bookstore"],
         answer: 0,
         explain: "„No, only we and the laundry.“",
@@ -331,7 +331,7 @@ export const enA2U10: SkillExercise[] = [
       {
         kind: "build",
         tr: "Çöpü akşam sekizden önce çöp kutusuna koymalısın.",
-        answer: "You have to put the rubbish in the garbage can before eight.",
+        answer: "You have to put the trash in the garbage can before eight.",
         hint: "„have to“ dışarıdan gelen zorunluluk: kural böyle diyor.",
       },
       {
@@ -360,7 +360,7 @@ export const enA2U10: SkillExercise[] = [
         prompt: "Bina kuralları kartını doldur.",
         facts: "Çöp sekizden önce; gürültü geceden sabaha yasak; merdivenler şirkete ait; tavan arası nisandan ekime açık.",
         fields: [
-          { label: "Rubbish", answer: "before eight", accept: ["before 8"] },
+          { label: "Trash", answer: "before eight", accept: ["before 8"] },
           { label: "Noise", answer: "forbidden at night", accept: ["forbidden", "not at night"] },
           { label: "Stairs", answer: "a company", accept: ["a company cleans them"] },
           { label: "Attic", answer: "April to October", accept: ["from April to October"] },

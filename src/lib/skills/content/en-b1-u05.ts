@@ -54,8 +54,8 @@ export const enB1U05: SkillExercise[] = [
       "The family above us moved in in March. By May I knew their washing machine better than mine.\n" +
       "Although I asked twice, the noise continued. The first time I went up and said it politely at the door. The second time I wrote a note, which was a mistake — a note is easy to ignore and nobody has to look at you.\n" +
       "The walls are thin. However, we can talk about it. That line came from the woman downstairs, who had lived in the building for nineteen years and had heard four families through the same wall.\n" +
-      "Despite the noise, I stayed calm, and that turned out to be the whole method. The man upstairs was not disturbing anybody on purpose. He was working nights and doing the washing at eleven because that was the only hour he had.\n" +
-      "We moved the washing to seven in the evening and I moved my own calls to the kitchen, which is on the far side. Nobody apologized and nobody had to.\n" +
+      "Despite the noise, I stayed calm, and that turned out to be the whole method. The man upstairs was not disturbing anybody on purpose. He was working nights and doing the laundry at eleven because that was the only hour he had.\n" +
+      "We moved the laundry to seven in the evening and I moved my own calls to the kitchen, which is on the far side. Nobody apologized and nobody had to.\n" +
       "The thing I learned is small and it is not about noise. A person who is asked at the door answers a person. A person who gets a note answers a piece of paper.",
     questions: [
       {
@@ -65,10 +65,10 @@ export const enB1U05: SkillExercise[] = [
         explain: "„a note is easy to ignore and nobody has to look at you.“",
       },
       {
-        text: "Why was the man doing the washing at eleven?",
+        text: "Why was the man doing the laundry at eleven?",
         options: ["he was working nights", "the machine was new", "he wanted to disturb them"],
         answer: 0,
-        explain: "„He was working nights and doing the washing at eleven because that was the only hour he had.“",
+        explain: "„He was working nights and doing the laundry at eleven because that was the only hour he had.“",
       },
       {
         kind: "truefalse",
@@ -83,7 +83,7 @@ export const enB1U05: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["seven", "7"],
-        explain: "„We moved the washing to seven in the evening…“",
+        explain: "„We moved the laundry to seven in the evening…“",
       },
       {
         kind: "order",
@@ -94,7 +94,7 @@ export const enB1U05: SkillExercise[] = [
           "I went up and said it at the door.",
           "I wrote a note.",
           "The woman downstairs said we can talk about it.",
-          "We moved the washing to seven.",
+          "We moved the laundry to seven.",
         ],
         explain: "Kapı, not, komşunun sözü, çözüm.",
       },
@@ -131,9 +131,9 @@ export const enB1U05: SkillExercise[] = [
       "Nil: So they guessed.\n" +
       "Mert: They guessed high. If we send the real reading today, the next bill is lower and the difference comes back.\n" +
       "Nil: And the heating?\n" +
-      "Mert: The heating is the other half. If we used less heating, the bill would be lower — but I am not cold in this flat and I am not going to be.\n" +
+      "Mert: The heating is the other half. If we used less heating, the bill would be lower — but I am not cold in this apartment and I am not going to be.\n" +
       "Nil: Nobody said cold. One degree is not cold.\n" +
-      "Mert: One degree is about six in a hundred. That is eight euros a month in this flat.\n" +
+      "Mert: One degree is about six in a hundred. That is eight euros a month in this apartment.\n" +
       "Nil: Then two degrees at night, when nobody is in the room.\n" +
       "Mert: That I can do. Waste is heating an empty room, not being warm in a full one.\n" +
       "Nil: Could we change the provider?\n" +
@@ -153,10 +153,10 @@ export const enB1U05: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Mert agrees to be cold in the flat.",
+        text: "Mert agrees to be cold in the apartment.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„but I am not cold in this flat and I am not going to be.“",
+        explain: "„but I am not cold in this apartment and I am not going to be.“",
       },
       {
         kind: "gapfill",
@@ -164,7 +164,7 @@ export const enB1U05: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["hundred", "100"],
-        explain: "„One degree is about six in a hundred. That is eight euros a month in this flat.“",
+        explain: "„One degree is about six in a hundred. That is eight euros a month in this apartment.“",
       },
       {
         kind: "short_answer",
@@ -202,7 +202,7 @@ export const enB1U05: SkillExercise[] = [
       { speaker: "Ela", text: "They returned the deposit in full. Eleven days, into the same account. That is not normal and I know it." },
       { speaker: "Ela", text: "What had you done before the inspection? A friend asked me that and I said: nothing special. Then I counted." },
       { speaker: "Ela", text: "I had cleaned the oven, which takes three hours and which nobody thanks you for. I had returned both keys and written down the date." },
-      { speaker: "Ela", text: "And I had left the flat empty. Really empty — not a shelf in the basement, not a box in the corridor." },
+      { speaker: "Ela", text: "And I had left the apartment empty. Really empty — not a shelf in the basement, not a box in the corridor." },
       { speaker: "Ela", text: "The final charge was zero. The cost was one evening in September two years earlier, taking nine photos nobody asked for." },
     ],
     questions: [
@@ -276,7 +276,7 @@ export const enB1U05: SkillExercise[] = [
       { speaker: "Sena", text: "Nothing changed. I started using it. The park is eight minutes away and it is worth walking there instead of taking the bus for two stops." },
       { speaker: "Can", text: "The bus takes four minutes." },
       { speaker: "Sena", text: "The bus takes four minutes and the walk takes eight and I arrive in a different mood. That is the whole calculation." },
-      { speaker: "Can", text: "And the shops?" },
+      { speaker: "Can", text: "And the stores?" },
       { speaker: "Sena", text: "Three local ones and a big one. I use the big one twice a month and the local ones four times a week." },
       { speaker: "Can", text: "Is that good or strange?" },
       { speaker: "Sena", text: "Both. It is also why I feel safe here at eleven at night. There is no camera on that street. There is a man who would notice." },
@@ -321,7 +321,7 @@ export const enB1U05: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "How often does Sena use the local shops?",
+        text: "How often does Sena use the local stores?",
         options: [],
         answer: 0,
         accept: ["four times a week", "4 times a week", "four times"],

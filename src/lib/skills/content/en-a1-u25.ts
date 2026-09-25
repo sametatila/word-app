@@ -48,12 +48,12 @@ export const enA1U25: SkillExercise[] = [
       "What did you do last weekend? I went to the mountains with two friends.\n\n" +
       "We went by train on Saturday morning. The weather was sunny. We walked four hours and we saw a river and a small farm.\n\n" +
       "In the evening we ate in a café near the lake. I had soup and bread, my friend had chicken.\n\n" +
-      "On Sunday I visited my grandmother. She was very happy. We watched a film and I finished my homework there.\n\n" +
+      "On Sunday I visited my grandmother. She was very happy. We watched a movie and I finished my homework there.\n\n" +
       "I didn't watch TV in the evening — I was too tired. I went to bed at nine!",
     questions: [
       {
         text: "Where did the writer go on Saturday?",
-        options: ["to the mountains", "to the grandmother", "to the cinema"],
+        options: ["to the mountains", "to the grandmother", "to the movies"],
         answer: 0,
         explain: "„I went to the mountains with two friends.“ — büyükanne pazar günü.",
       },
@@ -194,7 +194,7 @@ export const enA1U25: SkillExercise[] = [
       { speaker: "Kaan", text: "Yes, two days. I ate with the family in the evening." },
       { speaker: "Nil", text: "And the weather?" },
       { speaker: "Kaan", text: "On Saturday it was sunny, but on Sunday it rained all day." },
-      { speaker: "Nil", text: "I visited my parents. We watched an old film and I played with my brother." },
+      { speaker: "Nil", text: "I visited my parents. We watched an old movie and I played with my brother." },
       { speaker: "Kaan", text: "Did you finish your homework too?" },
       { speaker: "Nil", text: "No, I didn't finish it. I do it tonight." },
       { speaker: "Kaan", text: "Then work now! And call me later." },
@@ -202,7 +202,7 @@ export const enA1U25: SkillExercise[] = [
     questions: [
       {
         text: "Where did Kaan go?",
-        options: ["to a farm", "to his parents", "to the cinema"],
+        options: ["to a farm", "to his parents", "to the movies"],
         answer: 0,
         explain: "„I went to a farm near the mountains.“ — anne babayı ziyaret eden Nil.",
       },
@@ -210,7 +210,7 @@ export const enA1U25: SkillExercise[] = [
         text: "What did Nil do?",
         options: ["she visited her parents", "she went to a farm", "she finished her homework"],
         answer: 0,
-        explain: "„I visited my parents. We watched an old film…“",
+        explain: "„I visited my parents. We watched an old movie…“",
       },
       {
         kind: "truefalse",

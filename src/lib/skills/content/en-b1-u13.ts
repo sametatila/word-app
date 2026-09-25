@@ -124,7 +124,7 @@ export const enB1U13: SkillExercise[] = [
       { de: "tutor", tr: "özel öğretmen" },
       { de: "least", tr: "en az" },
       { de: "the fourth", tr: "dördüncü" },
-      { de: "revision", tr: "tekrar" },
+      { de: "studying", tr: "tekrar" },
       { de: "itself", tr: "kendi kendine" },
       { de: "session", tr: "oturum" },
       { de: "impossible", tr: "imkânsız" },
@@ -133,10 +133,10 @@ export const enB1U13: SkillExercise[] = [
     text:
       "Four weeks, one exam, and a plan that fits on half a page.\n" +
       "I am starting the new chapter on Monday. That is not a hope; the tutor and I agreed on it and she is expecting the questions on Thursday.\n" +
-      "I am going to revise every evening. Forty minutes, not two hours, because I have tried two hours four times in my life and finished it once.\n" +
+      "I am going to review every evening. Forty minutes, not two hours, because I have tried two hours four times in my life and finished it once.\n" +
       "I will take a break at nine. That one I decided while I was writing this, and it is the line I trust least.\n" +
       "The weekly routine is three topics, never four. The fourth topic is the one that eats the other three, and it is always the topic I like most.\n" +
-      "What is in the planner is not the revision. It is the time: which forty minutes, on which day, in which room. The revision takes care of itself once the time has a place to sit.\n" +
+      "What is in the planner is not the studying. It is the time: which forty minutes, on which day, in which room. The studying takes care of itself once the time has a place to sit.\n" +
       "And one rule from last year, which is the only reason I passed: if I cannot concentrate after ten minutes, I stop and move the session. A bad hour is worse than no hour, because a bad hour teaches you that the chapter is impossible.",
     questions: [
       {
@@ -172,7 +172,7 @@ export const enB1U13: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["the time", "which forty minutes", "the times"],
-        explain: "„What is in the planner is not the revision. It is the time…“",
+        explain: "„What is in the planner is not the studying. It is the time…“",
       },
     ],
   },
@@ -390,7 +390,7 @@ export const enB1U13: SkillExercise[] = [
         prompt: "İtiraz kartını doldur.",
         facts: "Başvuru dokuz nisanda reddedildi; sebep eksik belge; asıl nüsha yirmi birinde götürüldü; yeniden inceleme hakkı var.",
         fields: [
-          { label: "Rejected", answer: "the ninth of April", accept: ["9 April", "April"] },
+          { label: "Rejected", answer: "the ninth of April", accept: ["April 9", "April"] },
           { label: "Reason", answer: "a missing document", accept: ["missing document"] },
           { label: "Original brought", answer: "the twenty-first", accept: ["21"] },
           { label: "Right", answer: "a review", accept: ["to ask for a review"] },
@@ -404,11 +404,11 @@ export const enB1U13: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 13,
-    title: "I am going to revise every evening",
+    title: "I am going to review every evening",
     genre: "personal",
     intro: "Plan ve sınav cümleleri. Hangi gelecek, hangi kip?",
     gloss: [
-      { de: "revise", tr: "tekrar etmek" },
+      { de: "review", tr: "tekrar etmek" },
       { de: "a break", tr: "mola" },
       { de: "practice", tr: "alıştırma" },
     ],
@@ -423,7 +423,7 @@ export const enB1U13: SkillExercise[] = [
       {
         kind: "build",
         tr: "Her akşam tekrar edeceğim.",
-        answer: "I am going to revise every evening.",
+        answer: "I am going to review every evening.",
         hint: "Önceden kurulmuş plan: „going to“.",
       },
       {

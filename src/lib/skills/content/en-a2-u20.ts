@@ -46,7 +46,7 @@ export const enA2U20: SkillExercise[] = [
     text:
       "We have been friends for ten years. We met at school, in a corridor, both late for the same class.\n" +
       "At first we were not close. She was loud, I was quiet, and we shared nothing except the bus.\n" +
-      "Then in the second year my father was ill for four months. She came every Friday with bread from her mother and sat with me. We did not talk about it. We watched films and laughed at bad jokes.\n" +
+      "Then in the second year my father was sick for four months. She came every Friday with bread from her mother and sat with me. We did not talk about it. We watched movies and laughed at bad jokes.\n" +
       "That is when I learned what friendship is. Not the big words — the Friday.\n" +
       "Now we live in two cities. We call every week and we see each other four times a year. It is enough.\n" +
       "Thank you for those Fridays, I said last year. She said: Thanks for opening the door.",
@@ -59,7 +59,7 @@ export const enA2U20: SkillExercise[] = [
       },
       {
         text: "What did the friend bring every Friday?",
-        options: ["bread", "films", "jokes"],
+        options: ["bread", "movies", "jokes"],
         answer: 0,
         explain: "„She came every Friday with bread from her mother and sat with me.“",
       },
@@ -194,11 +194,11 @@ export const enA2U20: SkillExercise[] = [
       { speaker: "Sena", text: "We work together. Four years now. And you?" },
       { speaker: "Can", text: "School. We were in the same class and we still have the same jokes." },
       { speaker: "Sena", text: "Have you been here before?" },
-      { speaker: "Can", text: "To this flat, yes. To a party here, no. Nil doesn't like parties." },
+      { speaker: "Can", text: "To this apartment, yes. To a party here, no. Nil doesn't like parties." },
       { speaker: "Sena", text: "Nil told me. Nil said: eight people is a party, nine is a problem." },
       { speaker: "Can", text: "We are eleven." },
       { speaker: "Sena", text: "Then it is too many. Is the food from Nil's mother?" },
-      { speaker: "Can", text: "The bread, yes. The rest is from the shop and everybody knows." },
+      { speaker: "Can", text: "The bread, yes. The rest is from the store and everybody knows." },
       { speaker: "Sena", text: "Nobody says it." },
       { speaker: "Can", text: "That is the tradition. Thanks for not saying it." },
       { speaker: "Sena", text: "Thank you for telling me. Now I can't stop thinking about it." },
@@ -221,7 +221,7 @@ export const enA2U20: SkillExercise[] = [
         text: "Only the bread is from Nil's mother.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„The bread, yes. The rest is from the shop and everybody knows.“",
+        explain: "„The bread, yes. The rest is from the store and everybody knows.“",
       },
       {
         kind: "gapfill",
@@ -244,8 +244,8 @@ export const enA2U20: SkillExercise[] = [
         text: "Where is most of the food from?",
         options: [],
         answer: 0,
-        accept: ["from the shop", "the shop"],
-        explain: "„The rest is from the shop and everybody knows.“",
+        accept: ["from the store", "the store"],
+        explain: "„The rest is from the store and everybody knows.“",
       },
     ],
   },

@@ -37,7 +37,7 @@ export const enA2U03: SkillExercise[] = [
     intro: "Küçük bir kaza anlatılıyor. Ne oldu, ne kadar ciddi, sonrası ne?",
     gloss: [
       { de: "move", tr: "taşınmak" },
-      { de: "flat", tr: "daire" },
+      { de: "apartment", tr: "daire" },
       { de: "injury", tr: "yaralanma" },
     ],
     minutes: 5,
@@ -51,7 +51,7 @@ export const enA2U03: SkillExercise[] = [
       "Sena: Did you go to the doctor?\n" +
       "Ali: Yes. I waited two hours there. The doctor said: No break, only a bad injury.\n" +
       "Sena: How long do you have to wait?\n" +
-      "Ali: Two weeks with no heavy work. Bad luck — we are moving to a new flat next month!\n" +
+      "Ali: Two weeks with no heavy work. Bad luck — we are moving to a new apartment next month!\n" +
       "Sena: Then I'll help you. I have moved four times in my life.\n" +
       "Ali: Really? Thank you very much.",
     questions: [

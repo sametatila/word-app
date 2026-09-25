@@ -120,9 +120,9 @@
   "de": "Was das Saatgut verschweigt"
  },
  {
-  "tr": "Türüne uygun, tabii",
+  "tr": "İnsancıl, tabii",
   "kind": "titleTr",
-  "de": "Artgerecht, natürlich"
+  "de": "Human, natürlich"
  },
  {
   "tr": "Aynı tarlanın üç adı",
@@ -460,9 +460,9 @@
   "de": "bestäuben"
  },
  {
-  "tr": "türüne uygun",
+  "tr": "insancıl (hayvancılıkta)",
   "kind": "vocab.tr",
-  "de": "artgerecht"
+  "de": "human (in der Tierhaltung)"
  },
  {
   "tr": "arz güvenliği",
@@ -1290,9 +1290,9 @@
   "de": "Jetzt beschreibst du denselben Boden in zwei Registern."
  },
  {
-  "tr": "hayvanın kendi doğasına uygun tutulmasına ise",
+  "tr": "hayvana insanca davranılmasına ise",
   "kind": "say.tr",
-  "de": "und die Haltung nach der eigenen Natur des Tieres heißt"
+  "de": "und ein menschlicher Umgang mit dem Tier heißt"
  },
  {
   "tr": "Hayvanların sıkışık ve hızlı yetiştirilmesine",
@@ -1565,9 +1565,9 @@
   "de": "Noch eins: Die Milchquote, sagten sie, und dazu gut für die Region."
  },
  {
-  "tr": "Burada endüstriyel hayvancılık yok, türüne uygun barındırma var.",
+  "tr": "Burada endüstriyel hayvancılık yok, insancıl barındırma var.",
   "kind": "say.tr",
-  "de": "Hier gibt es keine Massentierhaltung, hier gibt es artgerechte Haltung."
+  "de": "Hier gibt es keine Massentierhaltung, hier gibt es humane Haltung."
  },
  {
   "tr": "Şimdi dersin kuralı. Tarım tartışmasında herkesin bir çıkarı var:",

@@ -7,7 +7,7 @@ import type { SkillExercise } from "../types";
  * Dört ders: The tone of concession · The settled pairing ·
  * The verb carries the verdict · The nuance of may well.
  *
- *   Kelime: concede, denounce, multilayered, ambivalent, counterstatement,
+ *   Kelime: concede, denounce, multilayered, ambivalent, rebuttal,
  *           unmask, mouthpiece, sensationalist, disinformation, staging,
  *           tout, presumed, precarious, incalculable, perceptible,
  *           erratic, sporadic, opaque, multifaceted.
@@ -18,7 +18,7 @@ import type { SkillExercise } from "../types";
  *           They grapple with a question that will not catch on. ·
  *           Let it play out before you call it damage control. ·
  *           He claimed it; she conceded it; they alleged it. ·
- *           The counterstatement said less than the verb that carried it. ·
+ *           The rebuttal said less than the verb that carried it. ·
  *           They unmask a mouthpiece without naming one. ·
  *           The figure may well be presumed. ·
  *           It might have been expected to stay precarious. ·
@@ -73,7 +73,7 @@ export const enC1U02: SkillExercise[] = [
       "„Claimed“ puts doubt on it. Whatever follows is what the speaker says, and the reader is told, quietly, that nobody has checked. „Conceded“ does the opposite for the speaker and the same for the fact: she did not want to say it, so it is probably true. „Alleged“ says the thing is unproven and may be disputed in a court, and no journalist uses it by accident.\n" +
       "None of those three is neutral, and that is the point of the unit. The neutral verb is „said“, and it is the only one, and a page that needs more variety than „said“ provides has to buy that variety with judgment.\n" +
       "So the choice is not stylistic. „Pointed out“ makes the following clause a fact. „Admitted“ makes it damaging. „Insisted“ makes it repeated and slightly desperate. „Noted“ makes it small. Each of them arrives without an adjective and without a source, and the reader receives the verdict before reaching the claim.\n" +
-      "The counterstatement said less than the verb that carried it. That sentence is the whole problem in one line: a reply can be quoted in full and still lose, because the reporting verb was chosen by somebody else.\n" +
+      "The rebuttal said less than the verb that carried it. That sentence is the whole problem in one line: a reply can be quoted in full and still lose, because the reporting verb was chosen by somebody else.\n" +
       "They unmask a mouthpiece without naming one. Here two of the same kind sit together, and „unmask“ is doing to the subject what „alleged“ does to the object.\n" +
       "What follows from this is uncomfortable. A writer cannot be invisible in reported speech. There is no way to report without choosing, and the only honest options are to use „said“ and be dull, or to choose the loaded verb and know that the choice has a byline on it whether or not the sentence carries one.",
     questions: [
@@ -112,7 +112,7 @@ export const enC1U02: SkillExercise[] = [
         items: [
           "He claimed it; she conceded it; they alleged it.",
           "The neutral verb is „said“.",
-          "The counterstatement said less than the verb that carried it.",
+          "The rebuttal said less than the verb that carried it.",
           "A writer cannot be invisible in reported speech.",
         ],
         explain: "Üç yargı, yansız olan, bedeli, en sonda sonuç.",
@@ -437,7 +437,7 @@ export const enC1U02: SkillExercise[] = [
       {
         kind: "build",
         tr: "Karşı açıklama, onu taşıyan fiilden daha azını söyledi.",
-        answer: "The counterstatement said less than the verb that carried it.",
+        answer: "The rebuttal said less than the verb that carried it.",
         hint: "Tam alıntılanan bir yanıt yine de kaybedebiliyor.",
       },
       {

@@ -346,6 +346,7 @@ export const enC1U12: SkillExercise[] = [
     genre: "monologue",
     intro: "Yorum yetkisini kim tutuyor? Bir fiil neyi ele veriyor?",
     gloss: [
+      { de: "title", tr: "başlık" },
       { de: "infinitive", tr: "mastar" },
       { de: "dishonest", tr: "dürüst olmayan" },
       { de: "actually", tr: "aslında" },

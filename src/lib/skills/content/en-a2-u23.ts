@@ -55,7 +55,7 @@ export const enA2U23: SkillExercise[] = [
       "Deniz: And my ID card?\n" +
       "Assistant: At the counter, not before. And the form in black, not blue.\n" +
       "Deniz: Black. Why?\n" +
-      "Assistant: Because the machine reads it. Blue is a form you fill in twice.\n" +
+      "Assistant: Because the machine reads it. Blue is a form you fill out twice.\n" +
       "Deniz: Then black. Thank you.\n" +
       "Assistant: And one more thing: don't sign it here. You sign at the counter, in front of us.",
     questions: [
@@ -69,7 +69,7 @@ export const enA2U23: SkillExercise[] = [
         text: "Why must the form be in black?",
         options: ["the machine reads it", "blue is for the ID card", "the counter says so"],
         answer: 0,
-        explain: "„Because the machine reads it. Blue is a form you fill in twice.“",
+        explain: "„Because the machine reads it. Blue is a form you fill out twice.“",
       },
       {
         kind: "truefalse",
@@ -115,7 +115,7 @@ export const enA2U23: SkillExercise[] = [
     text:
       "Somebody asked me: is technology good or bad? I think that is the wrong question.\n" +
       "I think phones are useful. My mother is eighty-one and she sees her grandchildren every week on a screen. Twenty years ago she saw them twice a year.\n" +
-      "But the same phone woke me at two in the morning last Tuesday for a message about a shop.\n" +
+      "But the same phone woke me at two in the morning last Tuesday for a message about a store.\n" +
       "So: it depends on the app. It depends on the hour. It depends on who decides — you or the thing in your hand.\n" +
       "A colleague says technology is a waste of time. I agree with you about the games, I said, and then I asked: how did you find this restaurant? On the phone. And the train? On the phone.\n" +
       "The colleague laughed. That is my point, I said. The question is not good or bad. The question is who is holding whom.",
@@ -128,9 +128,9 @@ export const enA2U23: SkillExercise[] = [
       },
       {
         text: "What woke the writer at two?",
-        options: ["a message about a shop", "a call from the mother", "a game"],
+        options: ["a message about a store", "a call from the mother", "a game"],
         answer: 0,
-        explain: "„…the same phone woke me at two in the morning last Tuesday for a message about a shop.“",
+        explain: "„…the same phone woke me at two in the morning last Tuesday for a message about a store.“",
       },
       {
         kind: "truefalse",
@@ -257,7 +257,7 @@ export const enA2U23: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 23,
-    title: "Filling in a form",
+    title: "Filling out a form",
     genre: "dialogue",
     intro: "Form doldurma. Hangi bilgi nereye yazılıyor?",
     gloss: [
@@ -267,7 +267,7 @@ export const enA2U23: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Assistant", text: "Your surname, please." },
+      { speaker: "Assistant", text: "Your last name, please." },
       { speaker: "Ela", text: "Yılmaz." },
       { speaker: "Assistant", text: "Could you spell that, please?" },
       { speaker: "Ela", text: "Y, I with no dot, L, M, A, Z." },
@@ -277,9 +277,9 @@ export const enA2U23: SkillExercise[] = [
       { speaker: "Ela", text: "Bursa." },
       { speaker: "Assistant", text: "Address?" },
       { speaker: "Ela", text: "Garden Street forty-one, second floor." },
-      { speaker: "Assistant", text: "With or without a flat number?" },
-      { speaker: "Ela", text: "There is no number. Two flats, one door." },
-      { speaker: "Assistant", text: "Then I write left. The post needs it." },
+      { speaker: "Assistant", text: "With or without an apartment number?" },
+      { speaker: "Ela", text: "There is no number. Two apartments, one door." },
+      { speaker: "Assistant", text: "Then I write left. The post office needs it." },
       { speaker: "Ela", text: "Good idea." },
       { speaker: "Assistant", text: "And where do I sign? — you will ask that next." },
       { speaker: "Ela", text: "Where do I sign?" },
@@ -294,16 +294,16 @@ export const enA2U23: SkillExercise[] = [
       },
       {
         text: "Why does the assistant write „left“?",
-        options: ["the post needs it", "there are two doors", "the flat has no floor"],
+        options: ["the post office needs it", "there are two doors", "the apartment has no floor"],
         answer: 0,
-        explain: "„There is no number. Two flats, one door. — Then I write left. The post needs it.“",
+        explain: "„There is no number. Two apartments, one door. — Then I write left. The post office needs it.“",
       },
       {
         kind: "truefalse",
-        text: "The flat has a number.",
+        text: "The apartment has a number.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„There is no number. Two flats, one door.“",
+        explain: "„There is no number. Two apartments, one door.“",
       },
       {
         kind: "gapfill",
@@ -323,11 +323,11 @@ export const enA2U23: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "How many flats are behind the door?",
+        text: "How many apartments are behind the door?",
         options: [],
         answer: 0,
         accept: ["two", "2"],
-        explain: "„There is no number. Two flats, one door.“",
+        explain: "„There is no number. Two apartments, one door.“",
       },
     ],
   },
@@ -381,8 +381,8 @@ export const enA2U23: SkillExercise[] = [
         prompt: "Kayıt formunu doldur.",
         facts: "Soyadı Yılmaz; doğum tarihi üç haziran; doğum yeri Bursa; adres Garden Street kırk bir.",
         fields: [
-          { label: "Surname", answer: "Yılmaz" },
-          { label: "Date of birth", answer: "the third of June", accept: ["3 June", "June"] },
+          { label: "Last name", answer: "Yılmaz" },
+          { label: "Date of birth", answer: "the third of June", accept: ["June 3", "June"] },
           { label: "Place of birth", answer: "Bursa" },
           { label: "Address", answer: "Garden Street forty-one", accept: ["Garden Street 41"] },
         ],

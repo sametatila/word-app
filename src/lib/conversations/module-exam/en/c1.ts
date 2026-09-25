@@ -67,7 +67,7 @@ export const EN_C1_EXAMS: ModuleExamPlan[] = [
       ],
     },
     reading: {
-      title: "Statement on the interruption of 14 March",
+      title: "Statement on the interruption of March 14",
       titleTr: "Şirket açıklaması",
       genre: "Basın açıklaması",
       text: "STATEMENT ON THE INTERRUPTION OF 14 MARCH\n\nThe interruption of our service is deeply regretted. According to present knowledge the cause was a technical omission in one subsystem; personal data, on the basis of the checks carried out so far, were not affected.\n\nImmediately after the matter became known, the necessary measures were initiated. The service in question has been available again since the evening of the same day. The review of the incident is ongoing; an external firm has been commissioned.\n\nOur spokesperson stated that the results would be published in full. Customers who have suffered a loss can turn to the hotline that has been set up.\n\nWe take the incident as an occasion to examine our processes, and we will inform you again before the end of the month. Not exactly a comfortable week, this one — but a useful one.",
@@ -147,7 +147,7 @@ export const EN_C1_EXAMS: ModuleExamPlan[] = [
       title: "On the pleasure of being refuted",
       titleTr: "Deneme yazısı",
       genre: "Deneme yazısı",
-      text: "ON THE PLEASURE OF BEING REFUTED\n\nA debate that nobody loses is not a debate. Granted, the claim sounds like a platitude, albeit one we ignore whenever a committee meets.\n\nWhat a manifesto assumes, an ideology rarely states. The doctrine is left in the room like furniture: everyone walks around it, nobody moves it. Much as I admire the dialectic of the class, the habit ends at the door of the supervisory board, where dissent is read as disloyalty.\n\nOne speaker postulates; another refutes; a third merely affirms and is thanked for the contribution. To resign oneself is to forfeit the argument, and to forfeit the argument is to keep the room quiet at the price of keeping it wrong.\n\nNot exactly a comfortable doctrine, this one. It asks that every claim be open to a counterstatement, including the claim I have just made. What holds the chain of argument together is not the strength of the first link but the willingness to test the last.",
+      text: "ON THE PLEASURE OF BEING REFUTED\n\nA debate that nobody loses is not a debate. Granted, the claim sounds like a platitude, albeit one we ignore whenever a committee meets.\n\nWhat a manifesto assumes, an ideology rarely states. The doctrine is left in the room like furniture: everyone walks around it, nobody moves it. Much as I admire the dialectic of the class, the habit ends at the door of the supervisory board, where dissent is read as disloyalty.\n\nOne speaker postulates; another refutes; a third merely affirms and is thanked for the contribution. To resign oneself is to forfeit the argument, and to forfeit the argument is to keep the room quiet at the price of keeping it wrong.\n\nNot exactly a comfortable doctrine, this one. It asks that every claim be open to a rebuttal, including the claim I have just made. What holds the chain of argument together is not the strength of the first link but the willingness to test the last.",
       questions: [
         { de: "What does the writer say happens to a doctrine in the room?", tr: "Yazara göre odadaki doktrine ne oluyor?", options: ["Everyone walks around it and nobody moves it", "It is refuted at once", "It is written into the minutes", "It is quoted by the board"], answer: 0 },
         { de: "What is the cost of resigning oneself, according to the text?", tr: "Metne göre boyun eğmenin bedeli ne?", options: ["The room stays quiet but wrong", "The debate becomes too long", "The speaker loses the vote", "The doctrine is forgotten"], answer: 0 },
@@ -176,7 +176,7 @@ export const EN_C1_EXAMS: ModuleExamPlan[] = [
         { de: "We move that the committee grant …", tr: "Komitenin … tanımasını öneriyoruz", en: "We move that the committee grant …" },
       ],
       sample:
-        "A CONTRIBUTION TO THE DEBATE ON THE NEW RULE\n\nThe chair postulates that the rule is irreversible; the substantiation, however, is missing from the paper. Granted, the timetable is tight, albeit not as tight as the third paragraph suggests.\n\nMuch as I share the aim, the instrument stays questionable. What the rule does is standardize a decision that two departments make differently for good reasons, and to call that difference a flaw is to refute a claim nobody has made.\n\nTo report an objection is not to obstruct a vote. I would therefore ask that the paper be read once more against the figures of March rather than those of last year.\n\nWe move that the committee grant a second hearing before the vote is taken. Not exactly a dramatic request — and, I hope, a modest one.",
+        "A CONTRIBUTION TO THE DEBATE ON THE NEW RULE\n\nThe chair postulates that the rule is irreversible; the substantiation, however, is missing from the paper. Granted, the schedule is tight, albeit not as tight as the third paragraph suggests.\n\nMuch as I share the aim, the instrument stays questionable. What the rule does is standardize a decision that two departments make differently for good reasons, and to call that difference a flaw is to refute a claim nobody has made.\n\nTo report an objection is not to obstruct a vote. I would therefore ask that the paper be read once more against the figures of March rather than those of last year.\n\nWe move that the committee grant a second hearing before the vote is taken. Not exactly a dramatic request — and, I hope, a modest one.",
     },
   },
 
@@ -205,7 +205,7 @@ export const EN_C1_EXAMS: ModuleExamPlan[] = [
       titleTr: "Zamanaşımı dolmadan",
       situation: "Bir başvuru sahibi ile bir görevli itiraz süresini konuşuyor.",
       turns: [
-        { speaker: "Officer", de: "The notice of right to appeal was served on 3 April. The cut-off period runs for one month.", tr: "İtiraz hakkı bildirimi 3 Nisanda tebliğ edildi. Kesin süre bir ay işliyor." },
+        { speaker: "Officer", de: "The notice of right to appeal was served on April 3. The filing deadline is one month.", tr: "İtiraz hakkı bildirimi 3 Nisanda tebliğ edildi. Kesin süre bir ay işliyor." },
         { speaker: "Visitor", de: "Then we request that the office register the appeal before the limitation period ends.", tr: "O hâlde zamanaşımı dolmadan idarenin itirazı kaydetmesini talep ediyoruz." },
         { speaker: "Officer", de: "It can be lodged, albeit only with a power of attorney. Without it the appeal is inadmissible.", tr: "Kaydedilebilir, ama yalnızca vekâletnameyle. Onsuz itiraz kabul edilemez." },
         { speaker: "Visitor", de: "The witness stated that the file had been complete; the office merely alleged the opposite.", tr: "Tanık dosyanın tam olduğunu ifade etti; idare ise tersini yalnızca iddia etti." },
@@ -223,7 +223,7 @@ export const EN_C1_EXAMS: ModuleExamPlan[] = [
       title: "Clause 7 — termination and its limits",
       titleTr: "Sözleşme metni",
       genre: "Sözleşme metni",
-      text: "CLAUSE 7 — TERMINATION AND ITS LIMITS\n\n7.1 The contracting party may terminate this agreement in writing, subject to a cut-off period of one month to the end of a calendar month. Service of documents by electronic means is deemed sufficient.\n\n7.2 The right of revocation under 7.1 shall remain unaffected by an administrative decision of the supervisory office. Where a decree is issued, the party concerned shall be heard beforehand.\n\n7.3 Enforcement proceedings are excluded until the limitation period has expired. A claim lodged after that date is inadmissible.\n\n7.4 Should a provision of this agreement be or become void, the remaining provisions shall remain binding.\n\nNote for the reader: 7.2 states who shall be heard; it does not state within what period. Nor is the arbitration board mentioned anywhere in this clause — a silence that the consumer protection office has criticized twice.",
+      text: "CLAUSE 7 — TERMINATION AND ITS LIMITS\n\n7.1 The contracting party may terminate this agreement in writing, subject to a notice period of one month to the end of a calendar month. Service of documents by electronic means is deemed sufficient.\n\n7.2 The right of revocation under 7.1 shall remain unaffected by an administrative decision of the supervisory office. Where a decree is issued, the party concerned shall be heard beforehand.\n\n7.3 Enforcement proceedings are excluded until the limitation period has expired. A claim lodged after that date is inadmissible.\n\n7.4 Should a provision of this agreement be or become void, the remaining provisions shall remain binding.\n\nNote for the reader: 7.2 states who shall be heard; it does not state within what period. Nor is the arbitration board mentioned anywhere in this clause — a silence that the consumer protection office has criticized twice.",
       questions: [
         { de: "What is the notice requirement under 7.1?", tr: "7.1'e göre bildirim koşulu ne?", options: ["Writing, with one month to the end of the month", "Writing, with no period", "Electronic service only", "A hearing before the office"], answer: 0 },
         { de: "What happens to the other provisions if one becomes void?", tr: "Bir hüküm geçersiz olursa öteki hükümlere ne olur?", options: ["They remain binding", "The whole agreement ends", "They must be renewed", "They are suspended for a month"], answer: 0 },
@@ -231,12 +231,12 @@ export const EN_C1_EXAMS: ModuleExamPlan[] = [
       ],
     },
     speaking: [
-      { situation: "Bir dilekçeyi resmî üslupta söylüyorsun.", de: "We request that the office register the appeal before the cut-off period expires.", tr: "Kesin süre dolmadan idarenin itirazı kaydetmesini talep ediyoruz." },
+      { situation: "Bir dilekçeyi resmî üslupta söylüyorsun.", de: "We request that the office register the appeal before the filing deadline passes.", tr: "Kesin süre dolmadan idarenin itirazı kaydetmesini talep ediyoruz." },
       { situation: "Bir maddenin sessiz kaldığı yeri gösteriyorsun.", de: "The clause states who shall be heard; it does not state within what period.", tr: "Madde kimin dinleneceğini söylüyor; hangi süre içinde olduğunu söylemiyor." },
     ],
     writing: {
       prompt: "Reddedilen bir talep için itiraz dilekçesi yaz.",
-      stimulus: "Your claim is rejected; the limitation period expired on 30 April.",
+      stimulus: "Your claim is rejected; the limitation period expired on April 30.",
       checklist: [
         "Dosya numarasıyla ve resmî hitapla başla",
         "Dilek kipiyle talebini koy („We request that …“)",
@@ -248,12 +248,12 @@ export const EN_C1_EXAMS: ModuleExamPlan[] = [
       phrases: [
         { de: "We request that the office …", tr: "İdarenin … yapmasını talep ediyoruz", en: "We request that the office …" },
         { de: "The witness stated that …, whereas the office alleged …", tr: "Tanık …-i ifade etti, idare ise …-i iddia etti", en: "The witness stated that …, whereas the office alleged …" },
-        { de: "The cut-off period runs from the service of documents.", tr: "Kesin süre tebligattan itibaren işler", en: "The cut-off period runs from the service of documents." },
+        { de: "The filing deadline runs from the service of documents.", tr: "Kesin süre tebligattan itibaren işler", en: "The filing deadline runs from the service of documents." },
         { de: "The clause does not state within what period.", tr: "Madde hangi süre içinde olduğunu söylemiyor", en: "The clause does not state within what period." },
         { de: "The right of revocation shall remain unaffected.", tr: "Geri alma hakkı etkilenmeden kalır", en: "The right of revocation shall remain unaffected." },
       ],
       sample:
-        "NOTICE OF APPEAL — FILE 2026/318\n\nDear Sir or Madam,\n\nWe request that the office reconsider the decision of 2 May, by which the claim was rejected for expiry of the limitation period.\n\nThe period runs from the service of documents. Service was effected on 3 April, not on 28 March: the electronic receipt in the file carries the later date. The witness stated that the folder had been complete on that day, whereas the office merely alleged the opposite; the expert report neither confirms nor contests it.\n\nClause 7.2 states who shall be heard before a decree is issued; it does not state within what period. Nor is the arbitration board mentioned at all.\n\nWe therefore request that the claim be heard on the merits. The right of revocation shall remain unaffected.\n\nYours sincerely,\nA. Demir",
+        "NOTICE OF APPEAL — FILE 2026/318\n\nDear Sir or Madam,\n\nWe request that the office reconsider the decision of May 2, by which the claim was rejected for expiry of the limitation period.\n\nThe period runs from the service of documents. Service was effected on April 3, not on March 28: the electronic receipt in the file carries the later date. The witness stated that the folder had been complete on that day, whereas the office merely alleged the opposite; the expert report neither confirms nor contests it.\n\nClause 7.2 states who shall be heard before a decree is issued; it does not state within what period. Nor is the arbitration board mentioned at all.\n\nWe therefore request that the claim be heard on the merits. The right of revocation shall remain unaffected.\n\nSincerely,\nA. Demir",
     },
   },
 
@@ -362,13 +362,13 @@ export const EN_C1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Researcher", de: "Both, and that is the problem. What one calls a cultural scene, another calls a parallel society.", tr: "İkisi de, sorun da bu. Birinin kültür sahnesi dediğine öteki paralel toplum diyor." },
         { speaker: "Officer", de: "High culture is a register; dominant culture is a claim. The street itself has neither.", tr: "Yüksek kültür bir üslup; başat kültür bir iddia. Sokağın kendisinde ikisi de yok." },
         { speaker: "Researcher", de: "Behind the demarcation line stands xenophobia, and behind the word “influx” stands a counted number.", tr: "Sınır çizgisinin ardında yabancı korkusu, „akın“ sözcüğünün ardında ise sayılmış bir sayı duruyor." },
-        { speaker: "Presenter", de: "Much as we like to call it acculturation, the course they attend is called an adaptation course.", tr: "Ona ne kadar kültürlenme demeyi sevsek de gittikleri kursun adı uyum kursu." },
+        { speaker: "Presenter", de: "Much as we like to call it acculturation, the course they attend is called an integration course.", tr: "Ona ne kadar kültürlenme demeyi sevsek de gittikleri kursun adı uyum kursu." },
         { speaker: "Officer", de: "Although a sign of hybridity, adaptability is asked of one side only. The principle of equality demands that human dignity be untouchable.", tr: "Melezliğin işareti olsa da uyum yeteneği tek taraftan isteniyor. Eşitlik ilkesi insan onurunun dokunulmaz olmasını gerektiriyor." },
         { speaker: "Researcher", de: "Then let us count what is missing: the diaspora keeps the heritage language; the enclave, the silence.", tr: "O hâlde eksiği sayalım: diaspora miras dilini koruyor, kapalı topluluk ise sessizliği." },
       ],
       questions: [
         { de: "What does the officer say about “dominant culture”?", tr: "Görevli „başat kültür“ hakkında ne diyor?", options: ["It is a claim, not a register", "It is the only correct term", "It describes the street exactly", "It replaces high culture"], answer: 0 },
-        { de: "What is asked of one side only?", tr: "Yalnızca bir taraftan istenen şey ne?", options: ["Adaptability", "The adaptation course", "The counted number", "The heritage language"], answer: 0 },
+        { de: "What is asked of one side only?", tr: "Yalnızca bir taraftan istenen şey ne?", options: ["Adaptability", "The integration course", "The counted number", "The heritage language"], answer: 0 },
         { de: "What is the point of the last line?", tr: "Son satırın vurgusu ne?", options: ["What a debate leaves unsaid is itself a finding", "The diaspora refuses to speak", "The enclave has no language", "Silence is a kind of dialect"], answer: 0 },
       ],
     },
@@ -376,10 +376,10 @@ export const EN_C1_EXAMS: ModuleExamPlan[] = [
       title: "The word before the number",
       titleTr: "Haber metni",
       genre: "Haber metni",
-      text: "THE WORD BEFORE THE NUMBER\n\nThe district was described yesterday, in the same hour, as a cultural scene and as a parallel society.\n\nWhat the ministry calls cultural policy, the arts section calls a subculture; both texts quote the same two streets. Behind the demarcation line stands the older word, and behind the newer word “influx” stands a figure that was counted last spring: out-migration and internal migration together produce what the report prints as net migration.\n\nThe participation model, albeit well-founded, is addressed to one side. Much as the committee likes to speak of acculturation, the course it funds is called an adaptation course; the culture of welcome appears only in the title. One official reinterprets the culture of remembrance, another guards the interpretive authority, and the customary law of the neighborhood is called venerable by people who have never obeyed it.\n\nWhat the debate leaves unsaid is simpler than the vocabulary: nobody in either text is quoted from the street itself.",
+      text: "THE WORD BEFORE THE NUMBER\n\nThe district was described yesterday, in the same hour, as a cultural scene and as a parallel society.\n\nWhat the ministry calls cultural policy, the arts section calls a subculture; both texts quote the same two streets. Behind the demarcation line stands the older word, and behind the newer word “influx” stands a figure that was counted last spring: out-migration and internal migration together produce what the report prints as net migration.\n\nThe participation model, albeit well-founded, is addressed to one side. Much as the committee likes to speak of acculturation, the course it funds is called an integration course; the culture of welcome appears only in the title. One official reinterprets the culture of remembrance, another guards the interpretive authority, and the customary law of the neighborhood is called venerable by people who have never obeyed it.\n\nWhat the debate leaves unsaid is simpler than the vocabulary: nobody in either text is quoted from the street itself.",
       questions: [
         { de: "What produces the figure printed as “net migration”?", tr: "„Net göç“ diye basılan rakamı ne üretiyor?", options: ["Out-migration and internal migration together", "The number of new arrivals only", "The participation model", "The census of last spring"], answer: 0 },
-        { de: "What does the writer note about the welcoming culture?", tr: "Yazar karşılama kültürü hakkında ne saptıyor?", options: ["It appears only in the title", "It was funded twice", "It replaced the adaptation course", "It is a legal term"], answer: 0 },
+        { de: "What does the writer note about the welcoming culture?", tr: "Yazar karşılama kültürü hakkında ne saptıyor?", options: ["It appears only in the title", "It was funded twice", "It replaced the integration course", "It is a legal term"], answer: 0 },
         { de: "What is the criticism in the last paragraph?", tr: "Son paragraftaki eleştiri ne?", options: ["Neither text quotes anyone from the district", "The vocabulary is too simple", "The committee never met", "The figures were invented"], answer: 0 },
       ],
     },
@@ -405,7 +405,7 @@ export const EN_C1_EXAMS: ModuleExamPlan[] = [
         { de: "What the debate leaves unsaid is …", tr: "Tartışmanın söylemediği şey …", en: "What the debate leaves unsaid is …" },
       ],
       sample:
-        "ON THE NAME WE GIVE THE DISTRICT\n\nWhat the ministry calls cultural policy, the arts section called a subculture on the same morning, and both quoted the same two streets.\n\nBehind the word “influx” stands a counted figure: out-migration and internal migration together produce the number the report prints as net migration. Read in that order, the sentence describes a district; read in reverse, it describes a threat.\n\nAlthough well-founded, the participation model is addressed to one side only, and the culture of welcome appears in the title rather than in the budget. Much as the committee likes to speak of acculturation, the course it funds is called an adaptation course.\n\nThe principle of equality demands that human dignity be untouchable, not conditional. What the debate leaves unsaid is simpler than its vocabulary: nobody from the street is quoted in either text.",
+        "ON THE NAME WE GIVE THE DISTRICT\n\nWhat the ministry calls cultural policy, the arts section called a subculture on the same morning, and both quoted the same two streets.\n\nBehind the word “influx” stands a counted figure: out-migration and internal migration together produce the number the report prints as net migration. Read in that order, the sentence describes a district; read in reverse, it describes a threat.\n\nAlthough well-founded, the participation model is addressed to one side only, and the culture of welcome appears in the title rather than in the budget. Much as the committee likes to speak of acculturation, the course it funds is called an integration course.\n\nThe principle of equality demands that human dignity be untouchable, not conditional. What the debate leaves unsaid is simpler than its vocabulary: nobody from the street is quoted in either text.",
     },
   },
 
@@ -497,7 +497,7 @@ export const EN_C1_EXAMS: ModuleExamPlan[] = [
       { de: "Fronting in talk about ownership", tr: "toprağı kimin aldığını öne almak" },
       { de: "Subjunctive in demands", tr: "demands that the reform be decided locally" },
       { de: "Concession in the farming debate", tr: "albeit / much as ile verim tartışması" },
-      { de: "Understatement about practice", tr: "„species-appropriate indeed“" },
+      { de: "Understatement about practice", tr: "„humane indeed“" },
     ],
     canDo: [
       { de: "I can hear which interest a land word serves.", tr: "Bir toprak sözcüğünün hangi çıkara hizmet ettiğini duyabiliyorum.", en: "I can hear which interest a land word serves." },
@@ -516,29 +516,29 @@ export const EN_C1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Researcher", de: "Behind the rural exodus stands a failed farm succession, not a shortage of land.", tr: "Kırdan göçün ardında başarısız bir devir duruyor, arazi kıtlığı değil." },
         { speaker: "Planner", de: "Much as we praise agroecology, the monoculture feeds the city. Food sovereignty demands that the reform be decided locally.", tr: "Tarımsal ekolojiyi övsek de tek ürün şehri besliyor. Gıda egemenliği reformun yerel olarak kararlaştırılmasını gerektiriyor." },
         { speaker: "Researcher", de: "The method, albeit soil-conserving, does not restore soil fertility in one generation.", tr: "Yöntem toprağı korusa da bir kuşakta verimliliği geri getirmiyor." },
-        { speaker: "Presenter", de: "And the label? The report says the housing is species-appropriate.", tr: "Etiket peki? Rapor barındırmanın türüne uygun olduğunu söylüyor." },
-        { speaker: "Researcher", de: "Species-appropriate indeed. Soil erosion may well deplete that field before the next quota is agreed.", tr: "Türüne uygun, tabii. Toprak erozyonu bir sonraki kota kararlaşmadan o tarlayı tüketebilir." },
+        { speaker: "Presenter", de: "And the label? The report says the housing is humane.", tr: "Etiket peki? Rapor barındırmanın insancıl olduğunu söylüyor." },
+        { speaker: "Researcher", de: "Humane indeed. Soil erosion may well deplete that field before the next quota is agreed.", tr: "İnsancıl, tabii. Toprak erozyonu bir sonraki kota kararlaşmadan o tarlayı tüketebilir." },
       ],
       questions: [
         { de: "What stands behind the rural exodus, according to the researcher?", tr: "Araştırmacıya göre kırdan göçün ardında ne duruyor?", options: ["A failed farm succession", "A shortage of land", "The monoculture", "The council's plan"], answer: 0 },
         { de: "What does the researcher say about the soil-conserving method?", tr: "Araştırmacı toprağı koruyan yöntem hakkında ne diyor?", options: ["It does not restore fertility in one generation", "It is the only option", "It lowers the yield to zero", "It was never tested"], answer: 0 },
-        { de: "What does “Species-appropriate indeed” express?", tr: "„Species-appropriate indeed“ neyi anlatıyor?", options: ["Doubt about the label, said with irony", "Agreement with the report", "A legal definition", "A question about the quota"], answer: 0 },
+        { de: "What does “Humane indeed” express?", tr: "„Humane indeed“ neyi anlatıyor?", options: ["Doubt about the label, said with irony", "Agreement with the report", "A legal definition", "A question about the quota"], answer: 0 },
       ],
     },
     reading: {
       title: "Sustainability report — the field and the label",
       titleTr: "Sürdürülebilirlik raporu",
       genre: "Sürdürülebilirlik raporu",
-      text: "SUSTAINABILITY REPORT — THE FIELD AND THE LABEL\n\nIn the plan the parcel appears as land consumption; in the register it is an arable field; in the sale document it is an interim use.\n\nWhat land grabbing does is dress a territorial claim in the language of investment. Behind the price stands neither the producer price nor the world market price but the expectation of a change of use. Much as we welcome the country-of-origin labeling, the traceability stops at the first buyer.\n\nThe method is described as soil-conserving and site-adapted. Although accurate, both words are compatible with a field that has been overfertilized for a decade: nitrate pollution seeps away where nobody measures it, and the crop protection product kills what should pollinate.\n\nSpecies-appropriate indeed, says the caption under the photograph of the barn. The report is thorough on the milk quota and silent on the seed replanting right — a silence that the farming association has now questioned twice.",
+      text: "SUSTAINABILITY REPORT — THE FIELD AND THE LABEL\n\nIn the plan the parcel appears as land consumption; in the register it is an arable field; in the sale document it is an interim use.\n\nWhat land grabbing does is dress a territorial claim in the language of investment. Behind the price stands neither the producer price nor the world market price but the expectation of a change of use. Much as we welcome the country-of-origin labeling, the traceability stops at the first buyer.\n\nThe method is described as soil-conserving and site-adapted. Although accurate, both words are compatible with a field that has been overfertilized for a decade: nitrate pollution seeps away where nobody measures it, and the crop protection product kills what should pollinate.\n\nHumane indeed, says the caption under the photograph of the barn. The report is thorough on the milk quota and silent on the right to save seed — a silence that the farming association has now questioned twice.",
       questions: [
         { de: "What stands behind the price of the parcel?", tr: "Parselin fiyatının ardında ne duruyor?", options: ["The expectation of a change of use", "The world market price", "The producer price", "The country-of-origin labeling"], answer: 0 },
         { de: "Where does the traceability stop?", tr: "İzlenebilirlik nerede bitiyor?", options: ["At the first buyer", "At the field", "At the label", "At the milk quota"], answer: 0 },
-        { de: "What is the effect of “Species-appropriate indeed” in this text?", tr: "„Species-appropriate indeed“ bu metinde ne etki yapıyor?", options: ["It casts doubt on the caption without an open charge", "It confirms the caption", "It quotes the association", "It states a legal standard"], answer: 0 },
+        { de: "What is the effect of “Humane indeed” in this text?", tr: "„Humane indeed“ bu metinde ne etki yapıyor?", options: ["It casts doubt on the caption without an open charge", "It confirms the caption", "It quotes the association", "It states a legal standard"], answer: 0 },
       ],
     },
     speaking: [
       { situation: "Bir adlandırmanın çıkarını gösteriyorsun.", de: "What the council calls land consolidation, the neighbor calls land speculation.", tr: "Belediyenin arazi toplulaştırması dediğine komşu arazi spekülasyonu diyor." },
-      { situation: "Ölçülü bir ifadeyle etikete kuşku düşürüyorsun.", de: "Species-appropriate indeed — and measured by whom, the report does not say.", tr: "Türüne uygun, tabii — kim ölçmüş, rapor söylemiyor." },
+      { situation: "Ölçülü bir ifadeyle etikete kuşku düşürüyorsun.", de: "Humane indeed — and measured by whom, the report does not say.", tr: "İnsancıl, tabii — kim ölçmüş, rapor söylemiyor." },
     ],
     writing: {
       prompt: "Tohum hakları ya da toprak kullanımı üzerine bir görüş yazısı yaz.",
@@ -558,7 +558,7 @@ export const EN_C1_EXAMS: ModuleExamPlan[] = [
         { de: "The report is thorough on … and silent on …", tr: "Rapor … konusunda ayrıntılı, … konusunda sessiz", en: "The report is thorough on … and silent on …" },
       ],
       sample:
-        "ON THE SEED AND THE SILENCE\n\nIn the plan the parcel is land consumption; in the register it is an arable field; in the sale document it becomes an interim use. Three names, one field, and only the third is priced.\n\nBehind the price stands the expectation of a change of use rather than any producer price. Much as we welcome the country-of-origin labeling, the traceability stops at the first buyer, and the sustainability standard is signed by the same firm that writes the report.\n\nAlthough accurate, the words “soil-conserving” and “site-adapted” are compatible with a field that has been overfertilized for a decade. Food sovereignty demands that the reform be decided locally, not merely labeled.\n\nThe report is thorough on the milk quota and silent on the seed replanting right. Not exactly an accident, that silence.",
+        "ON THE SEED AND THE SILENCE\n\nIn the plan the parcel is land consumption; in the register it is an arable field; in the sale document it becomes an interim use. Three names, one field, and only the third is priced.\n\nBehind the price stands the expectation of a change of use rather than any producer price. Much as we welcome the country-of-origin labeling, the traceability stops at the first buyer, and the sustainability standard is signed by the same firm that writes the report.\n\nAlthough accurate, the words “soil-conserving” and “site-adapted” are compatible with a field that has been overfertilized for a decade. Food sovereignty demands that the reform be decided locally, not merely labeled.\n\nThe report is thorough on the milk quota and silent on the right to save seed. Not exactly an accident, that silence.",
     },
   },
 
@@ -635,7 +635,7 @@ export const EN_C1_EXAMS: ModuleExamPlan[] = [
         { de: "What the plan leaves unsaid is …", tr: "Planın söylemediği şey …", en: "What the plan leaves unsaid is …" },
       ],
       sample:
-        "OBJECTION TO THE PLAN FOR THE EASTERN DISTRICT\n\nIn the brochure the quarter is being revitalized; in the zoning plan it is being densified; in the rent index it has become expensive. Three registers, one decision.\n\nClimate neutrality is a balance; climate-neutral is a label, and the plan uses the label in a sentence that measures nothing. Behind the resource consumption of the new blocks stands a carbon sink that was removed in March.\n\nThe precautionary principle demands that the responsibility to protect be given priority over the change of use. Although the growth imperative pays for the infrastructure, the decoupling has not yet delivered sufficiency, and a feedback loop may well push the district past a tipping point.\n\nWe therefore request a life cycle assessment before the construction halt is lifted. What the plan leaves unsaid is who will still live there.",
+        "OBJECTION TO THE PLAN FOR THE EASTERN DISTRICT\n\nIn the brochure the quarter is being revitalized; in the zoning plan it is being densified; in the rent index it has become expensive. Three registers, one decision.\n\nClimate neutrality is a balance; climate-neutral is a label, and the plan uses the label in a sentence that measures nothing. Behind the resource consumption of the new blocks stands a carbon sink that was removed in March.\n\nThe precautionary principle demands that the responsibility to protect be given priority over the change of use. Although the growth imperative pays for the infrastructure, the decoupling has not yet delivered sufficiency, and a feedback loop may well push the district past a tipping point.\n\nWe therefore request a life cycle assessment before the construction freeze is lifted. What the plan leaves unsaid is who will still live there.",
     },
   },
 
@@ -711,7 +711,7 @@ export const EN_C1_EXAMS: ModuleExamPlan[] = [
         { de: "Thoroughly green, that document.", tr: "Baştan aşağı yeşil o izahname", en: "Thoroughly green, that document." },
       ],
       sample:
-        "STRATEGY PAPER — SECTION 2: WHAT WE ARE PRICING\n\nIn the press release the quarter is a downturn; in our model it is a stagnation; in the seller's summary it is a healthy correction. The figure is the same in all three.\n\nThe regulator demands that the disclosure be complete, and on this file it is not: the follow-up costs appear once, without a date. One party alleges accounting fraud; another proves an embezzlement from a different year, and the gray area between the two is where the pretext lives.\n\nThe investment cycle may well turn before the savings rate falls, though the model is thin on the default risk and a single quarter would tend to prove little.\n\nThoroughly green, the document — and remarkably quiet on the capital requirement. We would ask the board to read section 4 first.",
+        "STRATEGY PAPER — SECTION 2: WHAT WE ARE PRICING\n\nIn the press release the quarter is a downturn; in our model it is a stagnation; in the seller's summary it is a healthy correction. The figure is the same in all three.\n\nThe regulator demands that the disclosure be complete, and on this file it is not: the follow-on costs appear once, without a date. One party alleges accounting fraud; another proves an embezzlement from a different year, and the gray area between the two is where the pretext lives.\n\nThe investment cycle may well turn before the savings rate falls, though the model is thin on the default risk and a single quarter would tend to prove little.\n\nThoroughly green, the document — and remarkably quiet on the capital requirement. We would ask the board to read section 4 first.",
     },
   },
 

@@ -9,7 +9,7 @@ import type { SkillExercise } from "../types";
  *
  *   Kelime: market penetration, market saturation, competitiveness, monopoly
  *           position, undercut, price fixing, tender procedure, approval
- *           procedure, consortium, operator model, conflict of goals,
+ *           procedure, consortium, operating model, conflict of goals,
  *           cumbersome, rhetoric, pathos, stylistic device, stylistic break,
  *           line of argument, flaw in reasoning, prevailing doctrine,
  *           school of thought, contentious issue, expert debate.
@@ -17,7 +17,7 @@ import type { SkillExercise } from "../types";
  *           That competitiveness, as noted, is the monopoly position of an earlier page. ·
  *           Where a rival can undercut us, no price fixing helps. ·
  *           The tender procedure survives as a form, the approval procedure as a delay. ·
- *           The consortium builds; the operator model, it does not name. ·
+ *           The consortium builds; the operating model, it does not name. ·
  *           The conflict of goals stayed; the cumbersome wording did not. ·
  *           In the essay it is rhetoric; in the pamphlet, pathos. ·
  *           A stylistic device is a choice; a stylistic break is a mistake. ·
@@ -188,7 +188,7 @@ export const enC1U23: SkillExercise[] = [
     text:
       "The tender procedure survives as a form, the approval procedure as a delay. Two procedures, two afterlives, and the second half of the line has no verb because it does not need one.\n" +
       "A form is a thing somebody fills in. A delay is a thing that happens to somebody, and the difference between those two is the difference between a week of work and a year of waiting at a desk that is not yours.\n" +
-      "The consortium builds; the operator model, it does not name. Here the object has been fronted and the subject is a pronoun, and the shape puts the unnamed thing at the front of the sentence where a reader cannot walk past it.\n" +
+      "The consortium builds; the operating model, it does not name. Here the object has been fronted and the subject is a pronoun, and the shape puts the unnamed thing at the front of the sentence where a reader cannot walk past it.\n" +
       "That is the whole finding of this lesson. A tender says who builds and is quiet about who runs it afterwards, and running it is thirty years of the thirty-two.\n" +
       "The consequence is not a scandal. It is a repair that nobody budgeted: a decade in, somebody discovers that the contract names a builder and a payer and no operator, and the negotiation that follows happens with no competition in the room at all.\n" +
       "The conflict of goals stayed; the cumbersome wording did not. And this is the sentence I would put on the front of any tender file.\n" +
@@ -229,7 +229,7 @@ export const enC1U23: SkillExercise[] = [
         answer: 0,
         items: [
           "The tender procedure survives as a form, the approval procedure as a delay.",
-          "The consortium builds; the operator model, it does not name.",
+          "The consortium builds; the operating model, it does not name.",
           "The conflict of goals stayed; the cumbersome wording did not.",
           "A page that names a conflict is not a weak page.",
         ],
@@ -492,7 +492,7 @@ export const enC1U23: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 23,
-    title: "The consortium builds; the operator model, it does not name",
+    title: "The consortium builds; the operating model, it does not name",
     genre: "info",
     intro: "İhalenin sessiz kaldığı yer ve strateji belgesinin göndermeleri.",
     gloss: [
@@ -514,7 +514,7 @@ export const enC1U23: SkillExercise[] = [
       {
         kind: "build",
         tr: "Konsorsiyum inşa ediyor; işletme modelini adlandırmıyor.",
-        answer: "The consortium builds; the operator model, it does not name.",
+        answer: "The consortium builds; the operating model, it does not name.",
         hint: "Nesne öne alınmış; adlandırılmayan şey başta duruyor.",
       },
       {

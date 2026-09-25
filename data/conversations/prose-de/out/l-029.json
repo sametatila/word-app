@@ -30,7 +30,6 @@
  { "tr": "Evet, severim.", "kind": "say.tr", "de": "Ja, ich mag es." },
  { "tr": "gelecek demek.", "kind": "say.tr", "de": "heißt Zukunft." },
  { "tr": "gelecek hafta.", "kind": "say.tr", "de": "nächste Woche." },
- { "tr": "giriyor. Yani:", "kind": "say.tr", "de": "kommt dazwischen. Also:" },
  { "tr": "Güneş kelimesi", "kind": "say.tr", "de": "Das Wort Sonne" },
  { "tr": "Hayır, sevmem.", "kind": "say.tr", "de": "Nein, ich mag es nicht." },
  { "tr": "iki günlüğüne.", "kind": "say.tr", "de": "für zwei Tage." },

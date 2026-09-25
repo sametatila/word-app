@@ -7,12 +7,12 @@ import type { SkillExercise } from "../types";
  * Dört ders: Holding a contract together · No irony in a ruling ·
  * Spoken and written · Managing the conversation.
  *
- *   Kelime: declaration of commitment, hardship case, federal office,
+ *   Kelime: affidavit of support, hardship case, federal office,
  *           registry, lucrative, thrifty, cyclical, colloquial language,
  *           feel for language, emphatically, empty phrase, haltingly,
  *           accent-free, expressive power, streamline, circumvent,
- *           quick wit, speaking inhibition, pay homage, become entrenched.
- *   Kalıp:  This alone binds the declaration of commitment. ·
+ *           quick wit, fear of speaking, pay homage, become entrenched.
+ *   Kalıp:  This alone binds the affidavit of support. ·
  *           Such a hardship case is rare. ·
  *           The latter falls to the federal office. ·
  *           Not exactly lucrative, is it? ·
@@ -22,7 +22,7 @@ import type { SkillExercise } from "../types";
  *           A feel for language tells you which register fits. ·
  *           Said emphatically, an empty phrase sounds like a claim. ·
  *           To streamline a talk is not to circumvent a question. ·
- *           A quick wit cannot cure a speaking inhibition. ·
+ *           A quick wit cannot cure a fear of speaking. ·
  *           What we pay homage to tends to become entrenched.
  *
  * Ünitenin tek öğretme noktası SORU EKİ. İngilizce onu her seferinde
@@ -194,7 +194,7 @@ export const enC1U08: SkillExercise[] = [
       "Said emphatically, an empty phrase sounds like a claim. Here is one of those choices, and it is worth holding still over. Nothing in the words has changed. The delivery has, and the delivery has moved the sentence out of one kind of act and into another: what was furniture a second ago is now something a listener can disagree with.\n" +
       "This is the point where a second language becomes dangerous rather than merely difficult. A learner who speaks haltingly is forgiven everything, and one who is accent-free is forgiven nothing, because the second one is assumed to have chosen every word on purpose. Expressive power arrives before the control of it does, and the gap between the two is where the damage happens.\n" +
       "Now the written side, and three lines out of an office.\n" +
-      "This alone binds the declaration of commitment. „Alone“ has been put after the subject rather than in front of it, which is a written habit; in speech the stress would have done the same work with no extra word at all.\n" +
+      "This alone binds the affidavit of support. „Alone“ has been put after the subject rather than in front of it, which is a written habit; in speech the stress would have done the same work with no extra word at all.\n" +
       "Such a hardship case is rare. „Such a“ points backwards at a description the reader has already been given, and a text that uses it has promised that the description was precise.\n" +
       "The latter falls to the federal office. „The latter“ saves four words and costs the reader a glance back up the page, and it is only honest when the two items were named in the last two lines.\n" +
       "None of the three could be said aloud without sounding like a document being read out, and that is the test. A written shape that survives speech is neutral; one that does not is carrying a register on its back, and a writer who has not noticed which of the two is in hand will be heard saying something about themselves rather than about the case.",
@@ -232,7 +232,7 @@ export const enC1U08: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "This alone binds the declaration of commitment.",
+          "This alone binds the affidavit of support.",
           "Such a hardship case is rare.",
           "The latter falls to the federal office.",
           "A written shape that survives speech is neutral.",
@@ -288,7 +288,7 @@ export const enC1U08: SkillExercise[] = [
       { speaker: "Deniz", text: "Afterwards it is. A shortened talk leaves the agenda finished and one question still unanswered, and everyone in the room can name which one." },
       { speaker: "Kaan", text: "Not exactly efficient, is it?" },
       { speaker: "Deniz", text: "Say that at the table and you will get an answer. Write it in the minutes and you will get a complaint about the minutes." },
-      { speaker: "Kaan", text: "A quick wit cannot cure a speaking inhibition." },
+      { speaker: "Kaan", text: "A quick wit cannot cure a fear of speaking." },
       { speaker: "Deniz", text: "It cannot, and it often makes it worse, because speed in the chair teaches the quiet half of the room that silence is cheaper than being cut off." },
       { speaker: "Kaan", text: "So what do you do instead?" },
       { speaker: "Deniz", text: "I ask the question twice and wait the second time. Nothing else has ever worked, and it costs about forty seconds." },
@@ -319,11 +319,11 @@ export const enC1U08: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "A quick wit cannot ___ a speaking inhibition.",
+        text: "A quick wit cannot ___ a fear of speaking.",
         options: [],
         answer: 0,
         accept: ["cure"],
-        explain: "„A quick wit cannot cure a speaking inhibition.“",
+        explain: "„A quick wit cannot cure a fear of speaking.“",
       },
       {
         kind: "dictation",
@@ -380,7 +380,7 @@ export const enC1U08: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Tuna", text: "This alone binds the declaration of commitment. One paragraph out of nine, and the other eight are dates and addresses." },
+      { speaker: "Tuna", text: "This alone binds the affidavit of support. One paragraph out of nine, and the other eight are dates and addresses." },
       { speaker: "Tuna", text: "Notice where „alone“ sits. After the subject, not in front of it, which is an office habit and not a spoken one." },
       { speaker: "Tuna", text: "Said aloud, you would put the stress on „this“ and drop the word entirely. The written page has no stress, so it spends a word." },
       { speaker: "Tuna", text: "Such a hardship case is rare. That line is doing two jobs and only one of them is visible." },
@@ -488,7 +488,7 @@ export const enC1U08: SkillExercise[] = [
       {
         kind: "build",
         tr: "Hazırcevaplık konuşma çekingenliğini iyileştiremez.",
-        answer: "A quick wit cannot cure a speaking inhibition.",
+        answer: "A quick wit cannot cure a fear of speaking.",
         hint: "Hız çekingenliği büyütüyor.",
       },
       {
@@ -518,7 +518,7 @@ export const enC1U08: SkillExercise[] = [
       { de: "a feel for language", tr: "dil sezgisi" },
       { de: "emphatically", tr: "kesin bir dille" },
       { de: "an empty phrase", tr: "içi boş söz" },
-      { de: "a declaration of commitment", tr: "taahhütname" },
+      { de: "an affidavit of support", tr: "taahhütname" },
       { de: "a hardship case", tr: "mağduriyet durumu" },
     ],
     minutes: 10,
@@ -544,7 +544,7 @@ export const enC1U08: SkillExercise[] = [
       {
         kind: "build",
         tr: "Taahhütnameyi bağlayan yalnızca bu.",
-        answer: "This alone binds the declaration of commitment.",
+        answer: "This alone binds the affidavit of support.",
         hint: "„Alone“ öznenin ardında: yazılı alışkanlık.",
       },
       {

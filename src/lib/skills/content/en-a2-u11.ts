@@ -49,7 +49,7 @@ export const enA2U11: SkillExercise[] = [
     text:
       "Kitchen helper — full-time\n" +
       "We are a small business in the city center. We are looking for a kitchen helper for our restaurant.\n" +
-      "The position: Monday to Friday, from ten to six. No work on the weekend.\n" +
+      "The position: Monday through Friday, from ten to six. No work on the weekend.\n" +
       "Salary: 2100 euros a month. After one year 2300.\n" +
       "Experience is required: at least one year in a kitchen.\n" +
       "German is not required, but you have to understand simple instructions.\n" +
@@ -59,9 +59,9 @@ export const enA2U11: SkillExercise[] = [
     questions: [
       {
         text: "When is the work?",
-        options: ["Monday to Friday, ten to six", "on the weekend", "every evening"],
+        options: ["Monday through Friday, ten to six", "on the weekend", "every evening"],
         answer: 0,
-        explain: "„The position: Monday to Friday, from ten to six. No work on the weekend.“",
+        explain: "„The position: Monday through Friday, from ten to six. No work on the weekend.“",
       },
       {
         text: "What is required?",
@@ -112,7 +112,7 @@ export const enA2U11: SkillExercise[] = [
     minutes: 6,
     text:
       "Dear Mr Arda,\n" +
-      "I am writing about the kitchen helper position in your advert.\n" +
+      "I am writing about the kitchen helper position in your ad.\n" +
       "I have worked in a kitchen for four years. From 2021 to 2023 I worked at a big company with a canteen for three hundred people. After that I worked for two years in a small restaurant near the station.\n" +
       "In the canteen I learned to work fast and in a team. In the small restaurant I learned everything else: the long evenings, the money and the noise.\n" +
       "I have also worked with a cook from Italy, so I know a little Italian, but my English is better.\n" +
@@ -286,7 +286,7 @@ export const enA2U11: SkillExercise[] = [
       },
       {
         text: "What is special about Nil's office?",
-        options: ["it has a real kitchen", "the coffee is free", "it is on the ground floor"],
+        options: ["it has a real kitchen", "the coffee is free", "it is on the first floor"],
         answer: 0,
         explain: "„…this is the only one with a real kitchen.“ Bedava kahve yan departmanda.",
       },
@@ -375,7 +375,7 @@ export const enA2U11: SkillExercise[] = [
           { label: "Experience", answer: "four years", accept: ["4 years"] },
           { label: "2021 to 2023", answer: "a big company", accept: ["a canteen", "a big company with a canteen"] },
           { label: "After that", answer: "a small restaurant", accept: ["a restaurant"] },
-          { label: "Start", answer: "the first of March", accept: ["1 March", "March"] },
+          { label: "Start", answer: "the first of March", accept: ["March 1", "March"] },
         ],
       },
     ],

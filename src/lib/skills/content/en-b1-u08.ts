@@ -279,7 +279,7 @@ export const enB1U08: SkillExercise[] = [
       { speaker: "Boss", text: "And before that?" },
       { speaker: "Nil", text: "An internship here, and I volunteered at a school last summer. Three weeks, thirty children, no phone." },
       { speaker: "Boss", text: "Have you ever led a team?" },
-      { speaker: "Nil", text: "Not with the title. I led one for five months when my manager was ill, and nobody called it that." },
+      { speaker: "Nil", text: "Not with the title. I led one for five months when my manager was sick, and nobody called it that." },
       { speaker: "Boss", text: "What did you gain from those five months?" },
       { speaker: "Nil", text: "One thing: I stopped answering questions that were not mine to answer." },
       { speaker: "Boss", text: "Give me an example." },

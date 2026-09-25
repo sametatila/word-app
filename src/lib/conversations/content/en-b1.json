@@ -546,7 +546,7 @@
   "level": "B1",
   "course": "en",
   "icon": "pen",
-  "title": "Writing a CV",
+  "title": "Writing a résumé",
   "titleTr": "Özgeçmiş yazmak",
   "summary": "Özgeçmişteki sırayı kurmayı öğretir: bir işe başlamadan önce neyi bitirmiştin sorusunun cevabı.",
   "minutes": 10,
@@ -738,7 +738,6 @@
      "kind": "produce",
      "target": "I had learned English before I moved here.",
      "accept": [
-      "I had learned English before I moved here.",
       "I had learned English before I came here."
      ],
      "hint": [
@@ -1305,12 +1304,15 @@
      },
      {
       "lang": "en",
-      "text": "I enclose my CV and attach two references."
+      "text": "I enclose my résumé and attach two references."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I enclose my CV and attach two references."
+     "target": "I enclose my résumé and attach two references.",
+     "accept": [
+      "I enclose my resume and attach two references."
+     ]
     }
    },
    {
@@ -4809,7 +4811,7 @@
   "level": "B1",
   "course": "en",
   "icon": "map",
-  "title": "Looking for a flat",
+  "title": "Looking for an apartment",
   "titleTr": "Daire aramak",
   "summary": "Ev ararken neyi kaç kez yaptığını anlatmayı öğretir: süren arayış ile biten bir randevu.",
   "minutes": 10,
@@ -4828,11 +4830,11 @@
     "tr": "depozito"
    },
    {
-    "de": "advert",
+    "de": "ad",
     "tr": "ilan"
    },
    {
-    "de": "viewing",
+    "de": "showing",
     "tr": "daire gezme randevusu"
    },
    {
@@ -4850,15 +4852,15 @@
   ],
   "patterns": [
    {
-    "de": "I have seen five flats this month.",
+    "de": "I have seen five apartments this month.",
     "tr": "süren bir arayışın sayısını verir"
    },
    {
-    "de": "I saw that flat last week.",
+    "de": "I saw that apartment last week.",
     "tr": "bitmiş tek bir olayı anlatır"
    },
    {
-    "de": "Is the flat still available?",
+    "de": "Is the apartment still available?",
     "tr": "bir şeyin hâlâ geçerli olup olmadığını sorar"
    }
   ],
@@ -4954,7 +4956,7 @@
      },
      {
       "lang": "en",
-      "text": "I have seen five flats."
+      "text": "I have seen five apartments."
      },
      {
       "lang": "tr",
@@ -4962,7 +4964,7 @@
      },
      {
       "lang": "en",
-      "text": "I saw that flat last week."
+      "text": "I saw that apartment last week."
      }
     ]
    },
@@ -4974,7 +4976,7 @@
      },
      {
       "lang": "en",
-      "text": "I have seen five flats this month."
+      "text": "I have seen five apartments this month."
      },
      {
       "lang": "tr",
@@ -4983,7 +4985,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I have seen five flats this month."
+     "target": "I have seen five apartments this month."
     }
    },
    {
@@ -5032,12 +5034,12 @@
      },
      {
       "lang": "en",
-      "text": "I have seen that flat last week."
+      "text": "I have seen that apartment last week."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "I have seen that flat last week.",
+     "statement": "I have seen that apartment last week.",
      "answer": false,
      "why": [
       {
@@ -5054,7 +5056,7 @@
       },
       {
        "lang": "en",
-       "text": "I saw that flat last week."
+       "text": "I saw that apartment last week."
       }
      ]
     }
@@ -5067,7 +5069,7 @@
      },
      {
       "lang": "en",
-      "text": "advert"
+      "text": "ad"
      },
      {
       "lang": "tr",
@@ -5075,11 +5077,11 @@
      },
      {
       "lang": "en",
-      "text": "viewing"
+      "text": "showing"
      },
      {
       "lang": "tr",
-      "text": "denir. İkincisi Britanya'da çok kullanılır ve tam olarak 'daireyi görmeye gitmek' demektir."
+      "text": "denir. İkincisi Amerikan emlak dilinde çok kullanılır ve tam olarak 'daireyi görmeye gitmek' demektir."
      }
     ]
    },
@@ -5091,12 +5093,12 @@
      },
      {
       "lang": "en",
-      "text": "I saw the advert and booked a viewing through the agency."
+      "text": "I saw the ad and scheduled a showing through the agency."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I saw the advert and booked a viewing through the agency."
+     "target": "I saw the ad and scheduled a showing through the agency."
     }
    },
    {
@@ -5161,7 +5163,7 @@
      },
      {
       "lang": "en",
-      "text": "The flat is furnished and quite big."
+      "text": "The apartment is furnished and quite big."
      },
      {
       "lang": "tr",
@@ -5170,7 +5172,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The flat is furnished and quite big."
+     "target": "The apartment is furnished and quite big."
     }
    },
    {
@@ -5189,12 +5191,12 @@
      },
      {
       "lang": "en",
-      "text": "Is the flat still available?"
+      "text": "Is the apartment still available?"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Is the flat still available?"
+     "target": "Is the apartment still available?"
     }
    },
    {
@@ -5266,7 +5268,7 @@
   "level": "B1",
   "course": "en",
   "icon": "key",
-  "title": "The viewing",
+  "title": "The showing",
   "titleTr": "Daire gezmek",
   "summary": "Gezdiğin daireleri birbirinden ayırmayı öğretir: hangisi hangisiydi sorusunun cevabı yan cümledir.",
   "minutes": 10,
@@ -5307,15 +5309,15 @@
   ],
   "patterns": [
    {
-    "de": "The flat that I saw yesterday was bright.",
+    "de": "The apartment that I saw yesterday was bright.",
     "tr": "hangi daire olduğunu yan cümleyle söyler"
    },
    {
-    "de": "The flat I saw yesterday was bright.",
+    "de": "The apartment I saw yesterday was bright.",
     "tr": "nesne durumunda ilgi zamirini düşürür"
    },
    {
-    "de": "The woman who showed me the flat was kind.",
+    "de": "The woman who showed me the apartment was kind.",
     "tr": "kişiyi yan cümleyle tanımlar"
    }
   ],
@@ -5328,7 +5330,7 @@
      },
      {
       "lang": "tr",
-      "text": "Beş daire gezdiysen hepsinin adı 'the flat'; onları ayıran şey arkalarına eklediğin yan cümle. Hazır mısın?"
+      "text": "Beş daire gezdiysen hepsinin adı 'the apartment'; onları ayıran şey arkalarına eklediğin yan cümle. Hazır mısın?"
      }
     ],
     "expect": {
@@ -5451,12 +5453,12 @@
      },
      {
       "lang": "en",
-      "text": "The flat that I saw yesterday was bright."
+      "text": "The apartment that I saw yesterday was bright."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The flat that I saw yesterday was bright."
+     "target": "The apartment that I saw yesterday was bright."
     }
    },
    {
@@ -5468,10 +5470,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "The flat that I liked had a balcony.",
+     "target": "The apartment that I liked had a balcony.",
      "accept": [
-      "The flat which I liked had a balcony.",
-      "The flat that I liked had a big balcony."
+      "The apartment which I liked had a balcony.",
+      "The apartment that I liked had a big balcony."
      ],
      "hint": [
       {
@@ -5480,7 +5482,7 @@
       },
       {
        "lang": "en",
-       "text": "The flat that I liked had a balcony."
+       "text": "The apartment that I liked had a balcony."
       },
       {
        "lang": "tr",
@@ -5497,12 +5499,12 @@
      },
      {
       "lang": "en",
-      "text": "The flat I saw yesterday was bright."
+      "text": "The apartment I saw yesterday was bright."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The flat I saw yesterday was bright.",
+     "statement": "The apartment I saw yesterday was bright.",
      "answer": true,
      "why": [
       {
@@ -5536,7 +5538,7 @@
      },
      {
       "lang": "en",
-      "text": "The flat I saw yesterday was bright."
+      "text": "The apartment I saw yesterday was bright."
      },
      {
       "lang": "tr",
@@ -5545,7 +5547,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The flat I saw yesterday was bright."
+     "target": "The apartment I saw yesterday was bright."
     }
    },
    {
@@ -5557,10 +5559,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "The flat I visited on Monday was spacious.",
+     "target": "The apartment I visited on Monday was spacious.",
      "accept": [
-      "The flat I saw on Monday was spacious.",
-      "The flat I visited on Monday was very spacious."
+      "The apartment I saw on Monday was spacious.",
+      "The apartment I visited on Monday was very spacious."
      ],
      "hint": [
       {
@@ -5569,7 +5571,7 @@
       },
       {
        "lang": "en",
-       "text": "The flat I visited on Monday was spacious."
+       "text": "The apartment I visited on Monday was spacious."
       },
       {
        "lang": "tr",
@@ -5646,12 +5648,12 @@
      },
      {
       "lang": "en",
-      "text": "The woman who showed me the flat was kind."
+      "text": "The woman who showed me the apartment was kind."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The woman who showed me the flat was kind."
+     "target": "The woman who showed me the apartment was kind."
     }
    },
    {
@@ -6181,7 +6183,7 @@
   "chat": {
    "scene": "Ev sahibiyle sözleşmeyi birlikte okuyorsunuz. Anlamadığın bir maddeyi sor, sürenin ne kadar olduğunu öğren ve depozitonun ne zaman geri verileceğini netleştir.",
    "partner": "sözleşmeyi ezbere bilen ama aceleci bir ev sahibi",
-   "opening": "Here is the lease. Shall we go through it?",
+   "opening": "Here is the lease. Do you want to go through it together?",
    "openingTr": "Sözleşme burada. Birlikte bakalım mı?",
    "goal": "Bir maddeyi sorduysan, süreyi öğrendiysen ve depozitonun geri verilme koşulunu netleştirdiysen konuşma başarılı sayılır.",
    "minTurns": 8
@@ -6223,8 +6225,8 @@
     "tr": "sayaç"
    },
    {
-    "de": "ground",
-    "tr": "zemin"
+    "de": "first floor",
+    "tr": "zemin kat"
    },
    {
     "de": "upstairs",
@@ -6524,7 +6526,7 @@
      },
      {
       "lang": "en",
-      "text": "ground"
+      "text": "first floor"
      },
      {
       "lang": "tr",
@@ -6536,7 +6538,7 @@
      },
      {
       "lang": "tr",
-      "text": "denir. Britanya'da giriş kat 'ground floor', bir üstü 'first floor' olur."
+      "text": "denir. Amerika'da kat sayımı giriş kattan başlar: giriş kat 'first floor', bir üstü 'second floor' olur. Britanya'da giriş kata 'ground floor' denir."
      }
     ]
    },
@@ -6548,7 +6550,7 @@
      },
      {
       "lang": "en",
-      "text": "The heavy boxes stay on the ground floor."
+      "text": "The heavy boxes stay on the first floor."
      },
      {
       "lang": "tr",
@@ -6557,7 +6559,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The heavy boxes stay on the ground floor."
+     "target": "The heavy boxes stay on the first floor."
     }
    },
    {
@@ -6653,7 +6655,7 @@
   "level": "B1",
   "course": "en",
   "icon": "home",
-  "title": "Living with flatmates",
+  "title": "Living with roommates",
   "titleTr": "Ev arkadaşları",
   "summary": "Ortak yaşam kurallarını konuşmayı öğretir: zorunluluk, serbestlik ve tavsiye.",
   "minutes": 10,
@@ -6668,7 +6670,7 @@
     "tr": "ev işi"
    },
    {
-    "de": "rota",
+    "de": "schedule",
     "tr": "iş bölümü çizelgesi"
    },
    {
@@ -6702,7 +6704,7 @@
     "tr": "zorunlu olmadığını söyler"
    },
    {
-    "de": "We should agree on a rota.",
+    "de": "We should agree on a schedule.",
     "tr": "ortak bir öneri yapar"
    }
   ],
@@ -6762,11 +6764,11 @@
      },
      {
       "lang": "en",
-      "text": "rota"
+      "text": "schedule"
      },
      {
       "lang": "tr",
-      "text": "denir. İkincisi Britanya'da çok kullanılır."
+      "text": "denir."
      }
     ]
    },
@@ -6778,7 +6780,7 @@
      },
      {
       "lang": "en",
-      "text": "The rota shows who does which chore."
+      "text": "The schedule shows who does which chore."
      },
      {
       "lang": "tr",
@@ -6787,7 +6789,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The rota shows who does which chore."
+     "target": "The schedule shows who does which chore."
     }
    },
    {
@@ -6855,10 +6857,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "You have to take the rubbish out on Tuesdays.",
+     "target": "You have to take the trash out on Tuesdays.",
      "accept": [
-      "You have to take the rubbish out on Tuesday.",
-      "You have to put the rubbish out on Tuesdays."
+      "You have to take the trash out on Tuesday.",
+      "You have to put the trash out on Tuesdays."
      ],
      "hint": [
       {
@@ -6867,7 +6869,7 @@
       },
       {
        "lang": "en",
-       "text": "You have to take the rubbish out on Tuesdays."
+       "text": "You have to take the trash out on Tuesdays."
       },
       {
        "lang": "tr",
@@ -7021,7 +7023,7 @@
      },
      {
       "lang": "en",
-      "text": "We should agree on a rota."
+      "text": "We should agree on a schedule."
      },
      {
       "lang": "tr",
@@ -7030,7 +7032,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "We should agree on a rota."
+     "target": "We should agree on a schedule."
     }
    },
    {
@@ -7223,7 +7225,7 @@
      },
      {
       "lang": "tr",
-      "text": "denir. İkincisi Britanya evlerinin en sık bozulan parçasıdır."
+      "text": "denir. İkincisi evlerin en sık bozulan parçalarından biridir."
      }
     ]
    },
@@ -8395,10 +8397,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "The flat is noisy. However, the neighbors are kind.",
+     "target": "The apartment is noisy. However, the neighbors are kind.",
      "accept": [
-      "The flat is noisy. However, the neighbors are nice.",
-      "The flat is noisy. However, my neighbors are kind."
+      "The apartment is noisy. However, the neighbors are nice.",
+      "The apartment is noisy. However, my neighbors are kind."
      ],
      "hint": [
       {
@@ -8407,7 +8409,7 @@
       },
       {
        "lang": "en",
-       "text": "The flat is noisy. However, the neighbors are kind."
+       "text": "The apartment is noisy. However, the neighbors are kind."
       },
       {
        "lang": "tr",
@@ -8743,10 +8745,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "I had emptied the flat before the inspection.",
+     "target": "I had emptied the apartment before the inspection.",
      "accept": [
-      "I had emptied the flat before the inspection started.",
-      "I had emptied the flat before they came."
+      "I had emptied the apartment before the inspection started.",
+      "I had emptied the apartment before they came."
      ],
      "hint": [
       {
@@ -8755,7 +8757,7 @@
       },
       {
        "lang": "en",
-       "text": "I had emptied the flat before the inspection."
+       "text": "I had emptied the apartment before the inspection."
       },
       {
        "lang": "tr",
@@ -8823,7 +8825,7 @@
      },
      {
       "lang": "en",
-      "text": "I left the flat empty and gave the final key back."
+      "text": "I left the apartment empty and gave the final key back."
      },
      {
       "lang": "tr",
@@ -8832,7 +8834,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I left the flat empty and gave the final key back."
+     "target": "I left the apartment empty and gave the final key back."
     }
    },
    {
@@ -9017,7 +9019,7 @@
     "tr": "bölge"
    },
    {
-    "de": "shop",
+    "de": "store",
     "tr": "dükkân"
    },
    {
@@ -9115,7 +9117,7 @@
      },
      {
       "lang": "en",
-      "text": "shop"
+      "text": "store"
      },
      {
       "lang": "tr",
@@ -9139,7 +9141,7 @@
      },
      {
       "lang": "en",
-      "text": "The shops are close and the streets are safe."
+      "text": "The stores are close and the streets are safe."
      },
      {
       "lang": "tr",
@@ -9148,7 +9150,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The shops are close and the streets are safe."
+     "target": "The stores are close and the streets are safe."
     }
    },
    {
@@ -9222,7 +9224,7 @@
      "kind": "produce",
      "target": "I enjoy walking to the market.",
      "accept": [
-      "I enjoy walking to the shops.",
+      "I enjoy walking to the stores.",
       "I like walking to the market."
      ],
      "hint": [
@@ -9341,10 +9343,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "I hope to find a bigger flat here.",
+     "target": "I hope to find a bigger apartment here.",
      "accept": [
       "I hope to find a bigger place here.",
-      "I hope to find a larger flat here."
+      "I hope to find a larger apartment here."
      ],
      "hint": [
       {
@@ -9353,7 +9355,7 @@
       },
       {
        "lang": "en",
-       "text": "I hope to find a bigger flat here."
+       "text": "I hope to find a bigger apartment here."
       },
       {
        "lang": "tr",
@@ -9722,10 +9724,9 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "Since the shop was closed, I came home.",
+     "target": "Since the store was closed, I came home.",
      "accept": [
-      "Since the shop was closed, I went home.",
-      "Since the shop was shut, I came home."
+      "Since the store was closed, I went home."
      ],
      "hint": [
       {
@@ -9734,7 +9735,7 @@
       },
       {
        "lang": "en",
-       "text": "Since the shop was closed, I came home."
+       "text": "Since the store was closed, I came home."
       },
       {
        "lang": "tr",
@@ -9955,7 +9956,7 @@
     "tr": "binmek"
    },
    {
-    "de": "timetable",
+    "de": "schedule",
     "tr": "tarife"
    },
    {
@@ -10045,7 +10046,7 @@
      },
      {
       "lang": "en",
-      "text": "timetable"
+      "text": "schedule"
      },
      {
       "lang": "tr",
@@ -10061,7 +10062,7 @@
      },
      {
       "lang": "en",
-      "text": "I will board the train after I check the timetable."
+      "text": "I will board the train after I check the schedule."
      },
      {
       "lang": "tr",
@@ -10070,7 +10071,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I will board the train after I check the timetable."
+     "target": "I will board the train after I check the schedule."
     }
    },
    {
@@ -11805,7 +11806,7 @@
     "tr": "sonra olan olayı normal geçmişte anlatır"
    },
    {
-    "de": "By the time I arrived, the shop had closed.",
+    "de": "By the time I arrived, the store had closed.",
     "tr": "iki olayın sırasını tek cümlede verir"
    }
   ],
@@ -12160,12 +12161,12 @@
      },
      {
       "lang": "en",
-      "text": "By the time I arrived, the shop had closed."
+      "text": "By the time I arrived, the store had closed."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "By the time I arrived, the shop had closed."
+     "target": "By the time I arrived, the store had closed."
     }
    },
    {
@@ -12763,7 +12764,7 @@
     "tr": "kim yaptığını söylemeden olayı anlatır"
    },
    {
-    "de": "A decision was announced by the council.",
+    "de": "A decision was announced by the city council.",
     "tr": "yapanı by ile söyler"
    },
    {
@@ -12907,7 +12908,7 @@
      },
      {
       "lang": "en",
-      "text": "A decision was announced by the council."
+      "text": "A decision was announced by the city council."
      },
      {
       "lang": "tr",
@@ -12916,7 +12917,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "A decision was announced by the council."
+     "target": "A decision was announced by the city council."
     }
    },
    {
@@ -15364,10 +15365,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "It is worth seeing it at the cinema.",
+     "target": "It is worth seeing it in the theater.",
      "accept": [
-      "It's worth seeing it at the cinema.",
-      "It is worth watching it at the cinema."
+      "It's worth seeing it in the theater.",
+      "It is worth watching it in the theater."
      ],
      "hint": [
       {
@@ -15376,7 +15377,7 @@
       },
       {
        "lang": "en",
-       "text": "It is worth seeing it at the cinema."
+       "text": "It is worth seeing it in the theater."
       },
       {
        "lang": "tr",
@@ -16912,7 +16913,7 @@
     "tr": "boş saat"
    },
    {
-    "de": "diary",
+    "de": "calendar",
     "tr": "ajanda"
    },
    {
@@ -16920,7 +16921,7 @@
     "tr": "klinik"
    },
    {
-    "de": "booking",
+    "de": "reservation",
     "tr": "rezervasyon"
    }
   ],
@@ -16930,7 +16931,7 @@
     "tr": "kararlaşmış randevuyu söyler"
    },
    {
-    "de": "I am going to cancel the booking.",
+    "de": "I am going to cancel the reservation.",
     "tr": "önceden kurulmuş niyeti söyler"
    },
    {
@@ -17002,7 +17003,7 @@
      },
      {
       "lang": "en",
-      "text": "booking"
+      "text": "reservation"
      },
      {
       "lang": "tr",
@@ -17018,7 +17019,7 @@
      },
      {
       "lang": "en",
-      "text": "Can I cancel the booking?"
+      "text": "Can I cancel the reservation?"
      },
      {
       "lang": "tr",
@@ -17027,7 +17028,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Can I cancel the booking?"
+     "target": "Can I cancel the reservation?"
     }
    },
    {
@@ -17120,12 +17121,12 @@
      },
      {
       "lang": "en",
-      "text": "I am going to cancel the booking."
+      "text": "I am going to cancel the reservation."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "I am going to cancel the booking.",
+     "statement": "I am going to cancel the reservation.",
      "answer": true,
      "why": [
       {
@@ -17151,7 +17152,7 @@
      },
      {
       "lang": "en",
-      "text": "diary"
+      "text": "calendar"
      },
      {
       "lang": "tr",
@@ -17175,12 +17176,12 @@
      },
      {
       "lang": "en",
-      "text": "Let me confirm the slot in my diary."
+      "text": "Let me confirm the slot in my calendar."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Let me confirm the slot in my diary."
+     "target": "Let me confirm the slot in my calendar."
     }
    },
    {
@@ -17191,12 +17192,12 @@
      },
      {
       "lang": "en",
-      "text": "I am going to cancel the booking."
+      "text": "I am going to cancel the reservation."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I am going to cancel the booking."
+     "target": "I am going to cancel the reservation."
     }
    },
    {
@@ -17292,8 +17293,7 @@
      "kind": "produce",
      "target": "I will call you back tomorrow.",
      "accept": [
-      "I'll call you back tomorrow.",
-      "I will ring you back tomorrow."
+      "I'll call you back tomorrow."
      ],
      "hint": [
       {
@@ -18802,7 +18802,7 @@
     "tr": "yerleşik kişi"
    },
    {
-    "de": "council",
+    "de": "city hall",
     "tr": "belediye"
    },
    {
@@ -18896,7 +18896,7 @@
      },
      {
       "lang": "en",
-      "text": "council"
+      "text": "city hall"
      },
      {
       "lang": "tr",
@@ -18920,7 +18920,7 @@
      },
      {
       "lang": "en",
-      "text": "The council asked for proof of my address."
+      "text": "City hall asked for proof of my address."
      },
      {
       "lang": "tr",
@@ -18929,7 +18929,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The council asked for proof of my address."
+     "target": "City hall asked for proof of my address."
     }
    },
    {
@@ -19127,7 +19127,7 @@
      },
      {
       "lang": "en",
-      "text": "The card is issued by the council."
+      "text": "The card is issued by city hall."
      },
      {
       "lang": "tr",
@@ -19136,7 +19136,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The card is issued by the council."
+     "target": "The card is issued by city hall."
     }
    },
    {
@@ -19236,7 +19236,7 @@
   "level": "B1",
   "course": "en",
   "icon": "pen",
-  "title": "Filling in the form",
+  "title": "Filling out the form",
   "titleTr": "Form doldurmak",
   "summary": "Form doldurmayı öğretir: neyi yazmak zorundasın, neyi yazmak zorunda değilsin.",
   "minutes": 10,
@@ -19271,13 +19271,13 @@
     "tr": "matbaa harfleriyle yazmak"
    },
    {
-    "de": "surname",
+    "de": "last name",
     "tr": "soyadı"
    }
   ],
   "patterns": [
    {
-    "de": "You must fill in every section.",
+    "de": "You must fill out every section.",
     "tr": "zorunluluğu söyler"
    },
    {
@@ -19285,7 +19285,7 @@
     "tr": "zorunlu olmadığını söyler"
    },
    {
-    "de": "You should print your surname.",
+    "de": "You should print your last name.",
     "tr": "tavsiye verir"
    }
   ],
@@ -19329,12 +19329,12 @@
      },
      {
       "lang": "en",
-      "text": "Please fill in the form in black."
+      "text": "Please fill out the form in black."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Please fill in the form in black."
+     "target": "Please fill out the form in black."
     }
    },
    {
@@ -19421,7 +19421,7 @@
      },
      {
       "lang": "en",
-      "text": "You must fill in every section."
+      "text": "You must fill out every section."
      },
      {
       "lang": "tr",
@@ -19430,7 +19430,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "You must fill in every section."
+     "target": "You must fill out every section."
     }
    },
    {
@@ -19442,10 +19442,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "You must write your surname in capitals.",
+     "target": "You must write your last name in capitals.",
      "accept": [
-      "You must write your surname in capital letters.",
-      "You must put your surname in capitals."
+      "You must write your last name in capital letters.",
+      "You must put your last name in capitals."
      ],
      "hint": [
       {
@@ -19454,7 +19454,7 @@
       },
       {
        "lang": "en",
-       "text": "surname"
+       "text": "last name"
       },
       {
        "lang": "tr",
@@ -19462,7 +19462,7 @@
       },
       {
        "lang": "en",
-       "text": "You must write your surname in capitals."
+       "text": "You must write your last name in capitals."
       },
       {
        "lang": "tr",
@@ -19559,9 +19559,9 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "You don't have to fill in the last part.",
+     "target": "You don't have to fill out the last part.",
      "accept": [
-      "You do not have to fill in the last part.",
+      "You do not have to fill out the last part.",
       "You don't have to complete the last part."
      ],
      "hint": [
@@ -19571,7 +19571,7 @@
       },
       {
        "lang": "en",
-       "text": "You don't have to fill in the last part."
+       "text": "You don't have to fill out the last part."
       },
       {
        "lang": "tr",
@@ -19632,7 +19632,7 @@
      },
      {
       "lang": "en",
-      "text": "You should print your surname."
+      "text": "You should print your last name."
      },
      {
       "lang": "tr",
@@ -19641,7 +19641,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "You should print your surname."
+     "target": "You should print your last name."
     }
    },
    {
@@ -19710,7 +19710,7 @@
   "chat": {
    "scene": "Bir görevliyle birlikte resmî bir formu dolduruyorsun. Hangi bölümün zorunlu olduğunu sor, anlamadığın bir ayrıntıyı sor ve imzayı nereye atacağını öğren.",
    "partner": "formu ezbere bilen, sabırlı bir görevli",
-   "opening": "Let's go through it together. Have you filled in the first part?",
+   "opening": "Let's go through it together. Have you filled out the first part?",
    "openingTr": "Birlikte bakalım. İlk bölümü doldurdunuz mu?",
    "goal": "Zorunlu ve zorunlu olmayan bölümleri ayırdıysan, bir ayrıntıyı sorduysan ve imza yerini öğrendiysen konuşma başarılı sayılır.",
    "minTurns": 7
@@ -20112,8 +20112,7 @@
      "kind": "produce",
      "target": "I will call the branch tomorrow.",
      "accept": [
-      "I'll call the branch tomorrow.",
-      "I will ring the branch tomorrow."
+      "I'll call the branch tomorrow."
      ],
      "hint": [
       {
@@ -21590,7 +21589,7 @@
     "tr": "çekinceyi cümleyle bağlar"
    },
    {
-    "de": "I look forward to your reply. Yours sincerely.",
+    "de": "I look forward to your reply. Sincerely.",
     "tr": "mektubu kapatır"
    }
   ],
@@ -21869,11 +21868,11 @@
      },
      {
       "lang": "en",
-      "text": "Yours sincerely"
+      "text": "Sincerely"
      },
      {
       "lang": "tr",
-      "text": "ise adını bildiğin kişiye yazılan resmî kapanıştır."
+      "text": "ise resmî kapanıştır."
      }
     ]
    },
@@ -21917,12 +21916,12 @@
      },
      {
       "lang": "en",
-      "text": "I look forward to your reply. Yours sincerely."
+      "text": "I look forward to your reply. Sincerely."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I look forward to your reply. Yours sincerely."
+     "target": "I look forward to your reply. Sincerely."
     }
    },
    {
@@ -21979,7 +21978,7 @@
      },
      {
       "lang": "en",
-      "text": "Yours sincerely"
+      "text": "Sincerely"
      },
      {
       "lang": "tr",
@@ -22009,7 +22008,7 @@
   "focusId": "Past perfect",
   "vocab": [
    {
-    "de": "queue",
+    "de": "line",
     "tr": "sıra / kuyruk"
    },
    {
@@ -22051,7 +22050,7 @@
     "tr": "sonra olanı normal geçmişte anlatır"
    },
    {
-    "de": "By the time I got there, the queue had grown.",
+    "de": "By the time I got there, the line had grown.",
     "tr": "iki olayın sırasını tek cümlede verir"
    }
   ],
@@ -22079,20 +22078,20 @@
      },
      {
       "lang": "en",
-      "text": "queue"
+      "text": "line"
      },
      {
       "lang": "tr",
-      "text": "Sıra demek ve Britanya'da çok kullanılır. Tekrar et:"
+      "text": "Sıra demek; Amerikalılar kuyruğa böyle der. Tekrar et:"
      },
      {
       "lang": "en",
-      "text": "I joined the queue at the door."
+      "text": "I got in line at the door."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I joined the queue at the door."
+     "target": "I got in line at the door."
     }
    },
    {
@@ -22188,10 +22187,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "I had filled in the form before they called me.",
+     "target": "I had filled out the form before they called me.",
      "accept": [
       "I had completed the form before they called me.",
-      "I had filled in the form before my turn."
+      "I had filled out the form before my turn."
      ],
      "hint": [
       {
@@ -22200,7 +22199,7 @@
       },
       {
        "lang": "en",
-       "text": "I had filled in the form before they called me."
+       "text": "I had filled out the form before they called me."
       },
       {
        "lang": "tr",
@@ -22382,12 +22381,12 @@
      },
      {
       "lang": "en",
-      "text": "By the time I got there, the queue had grown."
+      "text": "By the time I got there, the line had grown."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "By the time I got there, the queue had grown."
+     "target": "By the time I got there, the line had grown."
     }
    },
    {
@@ -23368,7 +23367,7 @@
   "focusId": "Future forms",
   "vocab": [
    {
-    "de": "revise",
+    "de": "review",
     "tr": "tekrar etmek"
    },
    {
@@ -23406,7 +23405,7 @@
     "tr": "kararlaşmış programı söyler"
    },
    {
-    "de": "I am going to revise every evening.",
+    "de": "I am going to review every evening.",
     "tr": "önceden kurulmuş niyeti söyler"
    },
    {
@@ -23538,7 +23537,7 @@
      },
      {
       "lang": "en",
-      "text": "revise"
+      "text": "review"
      },
      {
       "lang": "tr",
@@ -23546,12 +23545,12 @@
      },
      {
       "lang": "en",
-      "text": "I am going to revise every evening."
+      "text": "I am going to review every evening."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I am going to revise every evening."
+     "target": "I am going to review every evening."
     }
    },
    {
@@ -23746,10 +23745,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "I am revising the second chapter tonight.",
+     "target": "I am reviewing the second chapter tonight.",
      "accept": [
-      "I'm revising the second chapter tonight.",
-      "I am revising chapter two tonight."
+      "I'm reviewing the second chapter tonight.",
+      "I am reviewing chapter two tonight."
      ],
      "hint": [
       {
@@ -23758,7 +23757,7 @@
       },
       {
        "lang": "en",
-       "text": "I am revising the second chapter tonight."
+       "text": "I am reviewing the second chapter tonight."
       },
       {
        "lang": "tr",
@@ -24467,10 +24466,9 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "I enjoy watching films without subtitles.",
+     "target": "I enjoy watching movies without subtitles.",
      "accept": [
-      "I enjoy watching movies without subtitles.",
-      "I like watching films without subtitles."
+      "I like watching movies without subtitles."
      ],
      "hint": [
       {
@@ -24479,7 +24477,7 @@
       },
       {
        "lang": "en",
-       "text": "I enjoy watching films without subtitles."
+       "text": "I enjoy watching movies without subtitles."
       },
       {
        "lang": "tr",
@@ -24918,7 +24916,7 @@
      "kind": "produce",
      "target": "My pronunciation has improved this year.",
      "accept": [
-      "My pronunciation has got better this year.",
+      "My pronunciation has gotten better this year.",
       "My pronunciation has improved a lot this year."
      ],
      "hint": [
@@ -25861,7 +25859,7 @@
      "target": "He said that my writing had improved.",
      "accept": [
       "He said my writing had improved.",
-      "He said that my writing had got better."
+      "He said that my writing had gotten better."
      ],
      "hint": [
       {
@@ -26667,7 +26665,7 @@
      },
      {
       "lang": "en",
-      "text": "The online course is checked every term."
+      "text": "The online course is checked every semester."
      },
      {
       "lang": "tr",
@@ -26676,7 +26674,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The online course is checked every term."
+     "target": "The online course is checked every semester."
     }
    },
    {
@@ -32578,7 +32576,7 @@
     "tr": "kayıt masası"
    },
    {
-    "de": "surgery",
+    "de": "doctor's office",
     "tr": "muayenehane"
    },
    {
@@ -32668,7 +32666,7 @@
      },
      {
       "lang": "en",
-      "text": "surgery"
+      "text": "doctor's office"
      },
      {
       "lang": "tr",
@@ -32692,7 +32690,7 @@
      },
      {
       "lang": "en",
-      "text": "The surgery has a long list this month."
+      "text": "The doctor's office has a long list this month."
      },
      {
       "lang": "tr",
@@ -32701,7 +32699,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The surgery has a long list this month."
+     "target": "The doctor's office has a long list this month."
     }
    },
    {
@@ -32967,7 +32965,7 @@
      },
      {
       "lang": "en",
-      "text": "Call the surgery when you feel sick."
+      "text": "Call the doctor's office when you feel sick."
      },
      {
       "lang": "tr",
@@ -32976,7 +32974,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Call the surgery when you feel sick."
+     "target": "Call the doctor's office when you feel sick."
     }
    },
    {
@@ -35461,7 +35459,7 @@
   "level": "B1",
   "course": "en",
   "icon": "bed",
-  "title": "A night in hospital",
+  "title": "A night in the hospital",
   "titleTr": "Hastanede bir gece",
   "summary": "Hastanede geçecek bir geceyi planlamayı öğretir; karar, niyet ve ayarlanmış plan ayrı biçimlerle söylenir.",
   "minutes": 10,
@@ -36956,7 +36954,7 @@
   "level": "B1",
   "course": "en",
   "icon": "pen",
-  "title": "The sick note",
+  "title": "The doctor's note",
   "titleTr": "Rapor almak",
   "summary": "Rapor sürecini yazılı anlatmayı öğretir; bağlaçlar ekler, uyarır, açar ve yerine koyar.",
   "minutes": 10,
@@ -36987,7 +36985,7 @@
     "tr": "onun yerine"
    },
    {
-    "de": "ill",
+    "de": "sick",
     "tr": "rahatsız"
    },
    {
@@ -37316,7 +37314,7 @@
      },
      {
       "lang": "en",
-      "text": "ill"
+      "text": "sick"
      },
      {
       "lang": "tr",
@@ -37340,7 +37338,7 @@
      },
      {
       "lang": "en",
-      "text": "I was too ill to travel and the recovery took two weeks."
+      "text": "I was too sick to travel and the recovery took two weeks."
      },
      {
       "lang": "tr",
@@ -37349,7 +37347,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I was too ill to travel and the recovery took two weeks."
+     "target": "I was too sick to travel and the recovery took two weeks."
     }
    },
    {
@@ -37437,7 +37435,7 @@
   "level": "B1",
   "course": "en",
   "icon": "recycle",
-  "title": "Sorting the rubbish",
+  "title": "Sorting the trash",
   "titleTr": "Çöpü ayırmak",
   "summary": "Çöp düzenini anlatmayı öğretir; kuralı kimin koyduğu değil neyin yapıldığı söylenir.",
   "minutes": 10,
@@ -37889,7 +37887,7 @@
   "focusId": "Conditionals",
   "vocab": [
    {
-    "de": "tap",
+    "de": "faucet",
     "tr": "musluk"
    },
    {
@@ -37923,7 +37921,7 @@
   ],
   "patterns": [
    {
-    "de": "If you close the tap, you save water.",
+    "de": "If you turn off the faucet, you save water.",
     "tr": "gerçekleşmesi mümkün bir şartı anlatır"
    },
    {
@@ -37959,7 +37957,7 @@
      },
      {
       "lang": "en",
-      "text": "tap"
+      "text": "faucet"
      },
      {
       "lang": "tr",
@@ -37967,12 +37965,12 @@
      },
      {
       "lang": "en",
-      "text": "If you close the tap, you save water."
+      "text": "If you turn off the faucet, you save water."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "If you close the tap, you save water."
+     "target": "If you turn off the faucet, you save water."
     }
    },
    {
@@ -40366,7 +40364,7 @@
     "tr": "bırakma fiilinden sonra ulaç getirir"
    },
    {
-    "de": "The council suggested repairing the pipe.",
+    "de": "The city council suggested repairing the pipe.",
     "tr": "öneri fiilinden sonra ulaç getirir"
    }
   ],
@@ -40470,7 +40468,7 @@
      },
      {
       "lang": "en",
-      "text": "The council suggested repairing the pipe."
+      "text": "The city council suggested repairing the pipe."
      },
      {
       "lang": "tr",
@@ -40479,7 +40477,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The council suggested repairing the pipe."
+     "target": "The city council suggested repairing the pipe."
     }
    },
    {
@@ -40648,9 +40646,8 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "The council suggested closing the landfill.",
+     "target": "The city council suggested closing the landfill.",
      "accept": [
-      "The council suggested shutting the landfill.",
       "They suggested closing the landfill."
      ],
      "hint": [
@@ -40668,7 +40665,7 @@
       },
       {
        "lang": "en",
-       "text": "The council suggested closing the landfill."
+       "text": "The city council suggested closing the landfill."
       },
       {
        "lang": "tr",
@@ -41554,10 +41551,9 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "The shop had closed before we arrived.",
+     "target": "The store had closed before we arrived.",
      "accept": [
-      "The shop had shut before we arrived.",
-      "The shop had closed before we got there."
+      "The store had closed before we got there."
      ],
      "hint": [
       {
@@ -41566,7 +41562,7 @@
       },
       {
        "lang": "en",
-       "text": "The shop had closed before we arrived."
+       "text": "The store had closed before we arrived."
       },
       {
        "lang": "tr",
@@ -41643,7 +41639,7 @@
      },
      {
       "lang": "en",
-      "text": "The shop had moved far away."
+      "text": "The store had moved far away."
      },
      {
       "lang": "tr",
@@ -41652,7 +41648,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The shop had moved far away."
+     "target": "The store had moved far away."
     }
    },
    {
@@ -44158,7 +44154,7 @@
   ],
   "patterns": [
    {
-    "de": "The film that made me cry was old.",
+    "de": "The movie that made me cry was old.",
     "tr": "şeyi tarif ederek bağlar"
    },
    {
@@ -44202,12 +44198,12 @@
      },
      {
       "lang": "en",
-      "text": "The film that made me cry was old."
+      "text": "The movie that made me cry was old."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The film that made me cry was old."
+     "target": "The movie that made me cry was old."
     }
    },
    {

@@ -51,21 +51,21 @@ export const enA2U14: SkillExercise[] = [
       "Question: I ordered a chair two weeks ago and it hasn't arrived yet. What can I do?\n" +
       "Answer 1: First track the package. In your account there is a number. With that number you see where it is. Usually it sits in a city two hours away and comes on Monday.\n" +
       "Answer 2: I had the same problem in March. The package was at my neighbor's door for six days. Nobody wrote to me. Ask the people in your building first.\n" +
-      "Answer 3: Write to the shop, not to the driver. The shop has the contract with you. Keep it short: the order number, the date and one question — when will it arrive?\n" +
+      "Answer 3: Write to the store, not to the driver. The store has the contract with you. Keep it short: the order number, the date and one question — when will it arrive?\n" +
       "Answer 4: And put everything in one email. I sent four emails in two days and they answered the first one after a week.\n" +
       "Question: Thank you. It arrived this morning. It was in the wrong building for ten days. Nobody understands it.",
     questions: [
       {
         text: "What should you do first?",
-        options: ["track the package", "write to the driver", "go to the shop"],
+        options: ["track the package", "write to the driver", "go to the store"],
         answer: 0,
         explain: "„First track the package. In your account there is a number.“",
       },
       {
         text: "Who has the contract with you?",
-        options: ["the shop", "the driver", "the neighbor"],
+        options: ["the store", "the driver", "the neighbor"],
         answer: 0,
-        explain: "„Write to the shop, not to the driver. The shop has the contract with you.“",
+        explain: "„Write to the store, not to the driver. The store has the contract with you.“",
       },
       {
         kind: "truefalse",
@@ -98,28 +98,28 @@ export const enA2U14: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 14,
-    title: "Sending a parcel",
+    title: "Sending a package",
     genre: "dialogue",
     intro: "Postanede bir koli. Normal mi, hızlı mı, sigortalı mı?",
     gloss: [
-      { de: "parcel", tr: "koli" },
+      { de: "package", tr: "koli" },
       { de: "inside", tr: "içinde" },
       { de: "Where to", tr: "nereye" },
     ],
     minutes: 6,
     text:
-      "Ela: Good morning. I'd like to send this parcel abroad.\n" +
-      "Post: Put it here, please. I weigh it first. Two kilos. Where to?\n" +
+      "Ela: Good morning. I'd like to send this package abroad.\n" +
+      "Clerk: Put it here, please. I weigh it first. Two kilos. Where to?\n" +
       "Ela: To Italy.\n" +
-      "Post: Normal or express? Express is faster, but it's more expensive.\n" +
+      "Clerk: Normal or express? Express is faster, but it's more expensive.\n" +
       "Ela: How much more is express?\n" +
-      "Post: Normal is eleven euros and takes six days. Express is twenty-four and takes two days.\n" +
+      "Clerk: Normal is eleven euros and takes six days. Express is twenty-four and takes two days.\n" +
       "Ela: And is it safe? There are books inside and one of them is old.\n" +
-      "Post: Then insure it. For three euros more the post pays if something happens.\n" +
+      "Clerk: Then insure it. For three euros more the post office pays if something happens.\n" +
       "Ela: Good. Normal with insurance, please.\n" +
-      "Post: Fill in this form. Name, street, zip code and what is inside.\n" +
+      "Clerk: Fill out this form. Name, street, zip code and what is inside.\n" +
       "Ela: Do I write the price of the books?\n" +
-      "Post: Yes. Not the price in the shop — what they cost you.\n" +
+      "Clerk: Yes. Not the price in the store — what they cost you.\n" +
       "Ela: Fourteen euros for six days. Cheaper than I expected.",
     questions: [
       {
@@ -132,7 +132,7 @@ export const enA2U14: SkillExercise[] = [
         text: "What does the insurance cost?",
         options: ["three euros more", "eleven euros", "twenty-four euros"],
         answer: 0,
-        explain: "„Then insure it. For three euros more the post pays if something happens.“",
+        explain: "„Then insure it. For three euros more the post office pays if something happens.“",
       },
       {
         kind: "truefalse",
@@ -143,7 +143,7 @@ export const enA2U14: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The parcel weighs ___ kilos.",
+        text: "The package weighs ___ kilos.",
         options: [],
         answer: 0,
         accept: ["two", "2"],
@@ -158,7 +158,7 @@ export const enA2U14: SkillExercise[] = [
           "I weigh it first.",
           "Normal or express?",
           "Then insure it.",
-          "Fill in this form.",
+          "Fill out this form.",
         ],
         explain: "Önce tartı, sonra gönderi türü, sonra sigorta, en son form.",
       },

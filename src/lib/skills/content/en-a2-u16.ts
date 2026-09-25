@@ -193,7 +193,7 @@ export const enA2U16: SkillExercise[] = [
       { speaker: "Reception", text: "In the room? That is not possible." },
       { speaker: "Deniz", text: "I looked twice. The bathroom is empty." },
       { speaker: "Reception", text: "I am sorry. I send some up now. Anything else?" },
-      { speaker: "Deniz", text: "Is there a shop nearby? We have no water." },
+      { speaker: "Deniz", text: "Is there a store nearby? We have no water." },
       { speaker: "Reception", text: "Opposite the hotel, open until eleven." },
     ],
     questions: [
@@ -218,7 +218,7 @@ export const enA2U16: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The shop is ___ the hotel.",
+        text: "The store is ___ the hotel.",
         options: [],
         answer: 0,
         accept: ["opposite"],
@@ -371,7 +371,7 @@ export const enA2U16: SkillExercise[] = [
         fields: [
           { label: "Room", answer: "a double room", accept: ["double"] },
           { label: "Nights", answer: "two", accept: ["2"] },
-          { label: "From", answer: "the fourth of May", accept: ["4 May", "May"] },
+          { label: "From", answer: "the fourth of May", accept: ["May 4", "May"] },
           { label: "Price", answer: "a hundred and forty", accept: ["140"] },
         ],
       },

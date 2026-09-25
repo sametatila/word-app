@@ -72,7 +72,7 @@ export const enB1U21: SkillExercise[] = [
       },
       {
         text: "What does „going to“ rest on?",
-        options: ["something already visible", "a timetable", "a feeling"],
+        options: ["something already visible", "a schedule", "a feeling"],
         answer: 0,
         explain: "„„Going to“ rests on something already visible: the measurements from the last ten seasons…“",
       },
@@ -120,7 +120,7 @@ export const enB1U21: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 21,
-    title: "Sorting the rubbish",
+    title: "Sorting the trash",
     genre: "info",
     intro: "Ayırma kuralları. Yanlış kutu neye mal oluyor?",
     gloss: [
@@ -143,7 +143,7 @@ export const enB1U21: SkillExercise[] = [
       "What happens to the bins here, and why one mistake costs more than you would think.\n" +
       "The glass is collected on Tuesdays. Not weekly — every second Tuesday, and the calendar on the door of the building has the dates for the whole year on one page.\n" +
       "Plastic must be separated from paper. A modal and a passive together, and this is the line that is broken most often, usually by a box with tape on it.\n" +
-      "Nothing is thrown into the wrong bin without a cost. One bag of the wrong thing does not spoil one bag; it makes the whole truck contaminated, and a contaminated truck goes where the unsorted rubbish goes.\n" +
+      "Nothing is thrown into the wrong bin without a cost. One bag of the wrong thing does not spoil one bag; it makes the whole truck contaminated, and a contaminated truck goes where the unsorted trash goes.\n" +
       "That is the part that changes behavior. Not the fine, not the sign — the fact that your one bag decides what happens to the other four hundred.\n" +
       "Metal and glass go together in this city and separately in the next one. There is no rule you can carry from one place to another, which is why the calendar is on the door and not in a leaflet.\n" +
       "The one thing nobody does and everybody could: rinse the container. Ten seconds of water, and the paper next to it in the bin stays dry enough to be used.",
@@ -158,7 +158,7 @@ export const enB1U21: SkillExercise[] = [
         text: "What happens with one wrong bag?",
         options: ["the whole truck is contaminated", "only that bag is lost", "the fine is doubled"],
         answer: 0,
-        explain: "„it makes the whole truck contaminated, and a contaminated truck goes where the unsorted rubbish goes.“",
+        explain: "„it makes the whole truck contaminated, and a contaminated truck goes where the unsorted trash goes.“",
       },
       {
         kind: "truefalse",
@@ -197,7 +197,7 @@ export const enB1U21: SkillExercise[] = [
     genre: "dialogue",
     intro: "Faturayı düşüren şeyler. Hangi koşul gerçek?",
     gloss: [
-      { de: "the tap", tr: "musluk" },
+      { de: "the faucet", tr: "musluk" },
       { de: "bulb", tr: "ampul" },
       { de: "draught", tr: "cereyan" },
       { de: "sentence", tr: "cümle" },
@@ -208,12 +208,12 @@ export const enB1U21: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Mert", text: "The bill went up by a third and nothing in the flat changed." },
+      { speaker: "Mert", text: "The bill went up by a third and nothing in the apartment changed." },
       { speaker: "Nil", text: "Something changed. Start with the shower." },
       { speaker: "Mert", text: "Unless the shower is short, the bill goes up — I know the sentence, I do not believe the size of it." },
-      { speaker: "Nil", text: "Four minutes instead of nine is about eleven euros a month in a flat like yours. That is the biggest single line." },
-      { speaker: "Mert", text: "And the tap?" },
-      { speaker: "Nil", text: "If you close the tap while you brush your teeth, you save water and almost no money. Do it for the water." },
+      { speaker: "Nil", text: "Four minutes instead of nine is about eleven euros a month in an apartment like yours. That is the biggest single line." },
+      { speaker: "Mert", text: "And the faucet?" },
+      { speaker: "Nil", text: "If you turn off the faucet while you brush your teeth, you save water and almost no money. Do it for the water." },
       { speaker: "Mert", text: "So which one is for the money?" },
       { speaker: "Nil", text: "Heat. Warm rooms you do not sit in, and the draught under the door of the cold one." },
       { speaker: "Mert", text: "The lamps?" },
@@ -226,12 +226,12 @@ export const enB1U21: SkillExercise[] = [
     questions: [
       {
         text: "What is the biggest single saving?",
-        options: ["a shorter shower", "new bulbs", "the tap"],
+        options: ["a shorter shower", "new bulbs", "the faucet"],
         answer: 0,
         explain: "„Four minutes instead of nine is about eleven euros a month… That is the biggest single line.“",
       },
       {
-        text: "Why should you close the tap?",
+        text: "Why should you turn off the faucet?",
         options: ["for the water", "for the money", "for the heat"],
         answer: 0,
         explain: "„you save water and almost no money. Do it for the water.“",
@@ -249,7 +249,7 @@ export const enB1U21: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["eleven", "11"],
-        explain: "„Four minutes instead of nine is about eleven euros a month in a flat like yours.“",
+        explain: "„Four minutes instead of nine is about eleven euros a month in an apartment like yours.“",
       },
       {
         kind: "dictation",
@@ -286,7 +286,7 @@ export const enB1U21: SkillExercise[] = [
       { de: "winter", tr: "kış" },
       { de: "the space", tr: "boşluk" },
       { de: "stood", tr: "durduğu" },
-      { de: "towards", tr: "doğru" },
+      { de: "toward", tr: "doğru" },
     ],
     minutes: 6,
     segments: [
@@ -297,7 +297,7 @@ export const enB1U21: SkillExercise[] = [
       { speaker: "Sena", text: "The woman who planted the flowers along the path lives here, in the building with the green door, and she is seventy-nine." },
       { speaker: "Sena", text: "Nobody asked her to and nobody pays her. The city cuts the grass and she does the sixty meters along the path." },
       { speaker: "Sena", text: "The playground is at the far end, away from the road, which was not an accident: four people wrote letters in 2016." },
-      { speaker: "Sena", text: "What I like most is the bench near the fountain. It faces the wrong way — towards the path, not towards the water — and that is why you see people and not scenery." },
+      { speaker: "Sena", text: "What I like most is the bench near the fountain. It faces the wrong way — toward the path, not toward the water — and that is why you see people and not scenery." },
     ],
     questions: [
       {
@@ -411,7 +411,7 @@ export const enB1U21: SkillExercise[] = [
     intro: "Kipli edilgen ve koşullar. Hangi koşul gerçek, hangisi değil?",
     gloss: [
       { de: "must be separated", tr: "ayrılmalı" },
-      { de: "the tap", tr: "musluk" },
+      { de: "the faucet", tr: "musluk" },
       { de: "planted", tr: "dikti" },
     ],
     minutes: 8,
@@ -425,7 +425,7 @@ export const enB1U21: SkillExercise[] = [
       {
         kind: "build",
         tr: "Musluğu kapatırsan su tasarrufu yaparsın.",
-        answer: "If you close the tap, you save water.",
+        answer: "If you turn off the faucet, you save water.",
         hint: "Gerçek koşul: iki yarıda da geniş zaman.",
       },
       {

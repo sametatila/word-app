@@ -1,5 +1,5 @@
 [
- { "tr": "Konuşurken İngilizler bunu kısaltır:", "kind": "say.tr", "de": "Beim Sprechen kürzen die Engländer das ab:" },
+ { "tr": "Konuşurken anadili İngilizce olanlar bunu kısaltır:", "kind": "say.tr", "de": "Beim Sprechen kürzen Muttersprachler das ab:" },
  { "tr": "Şimdi bir kontrol. Şu cümle doğru mu?", "kind": "say.tr", "de": "Jetzt eine Kontrolle. Ist dieser Satz richtig?" },
  { "tr": "Şimdi çok işine yarayacak bir kelime:", "kind": "say.tr", "de": "Jetzt ein Wort, das dir sehr nützt:" },
  { "tr": "Harika iş çıkardın. Bugün öğrendiklerimiz:", "kind": "say.tr", "de": "Tolle Arbeit. Das haben wir heute gelernt:" },

@@ -61,10 +61,10 @@ export const EN_B1_EXAMS: ModuleExamPlan[] = [
       title: "About your application",
       titleTr: "İnsan kaynaklarından gelen yazı",
       genre: "Resmî e-posta",
-      text: "Your documents — next steps\n\nDear Ms. Kaya,\n\nThank you for applying for the position of project assistant. Your documents were received on 3 March and your references have already been checked.\n\nWe would like to invite you to an interview on Tuesday, 18 March, at ten o'clock. The interview is held in our office on the third floor and takes about an hour. Please bring the original of your degree; a copy is not enough.\n\nAlthough the position starts in May, the contract must be signed before the end of April.\n\nBest regards,\nR. Vogt, Human Resources",
+      text: "Your documents — next steps\n\nDear Ms. Kaya,\n\nThank you for applying for the position of project assistant. Your documents were received on March 3 and your references have already been checked.\n\nWe would like to invite you to an interview on Tuesday, March 18, at ten o'clock. The interview is held in our office on the third floor and takes about an hour. Please bring the original of your degree; a copy is not enough.\n\nAlthough the position starts in May, the contract must be signed before the end of April.\n\nBest regards,\nR. Vogt, Human Resources",
       questions: [
         { de: "What must Ms. Kaya bring to the interview?", tr: "Bayan Kaya mülakata ne getirmeli?", options: ["A copy of her degree", "The original of her degree", "Two references", "A new application"], answer: 1 },
-        { de: "When must the contract be signed?", tr: "Sözleşme ne zamana kadar imzalanmalı?", options: ["Before the end of April", "On 18 March", "In May", "On 3 March"], answer: 0 },
+        { de: "When must the contract be signed?", tr: "Sözleşme ne zamana kadar imzalanmalı?", options: ["Before the end of April", "On March 18", "In May", "On March 3"], answer: 0 },
       ],
     },
     speaking: [
@@ -106,18 +106,18 @@ export const EN_B1_EXAMS: ModuleExamPlan[] = [
       { de: "Past perfect", tr: "teslimden önce ne yapılmıştı" },
     ],
     canDo: [
-      { de: "I can ask about a flat, the rent and the deposit.", tr: "Daireyi, kirayı ve depozitoyu sorabiliyorum.", en: "I can ask about a flat, the rent and the deposit." },
+      { de: "I can ask about an apartment, the rent and the deposit.", tr: "Daireyi, kirayı ve depozitoyu sorabiliyorum.", en: "I can ask about an apartment, the rent and the deposit." },
       { de: "I can understand the main clauses of a lease.", tr: "Kira sözleşmesinin ana maddelerini anlayabiliyorum.", en: "I can understand the main clauses of a lease." },
       { de: "I can report a leak and ask for a plumber.", tr: "Su sızıntısını bildirip tamirci isteyebiliyorum.", en: "I can report a leak and ask for a plumber." },
-      { de: "I can agree on the chores with my flatmates.", tr: "Ev arkadaşlarımla ev işlerini paylaşabiliyorum.", en: "I can agree on the chores with my flatmates." },
+      { de: "I can agree on the chores with my roommates.", tr: "Ev arkadaşlarımla ev işlerini paylaşabiliyorum.", en: "I can agree on the chores with my roommates." },
       { de: "I can ask for my deposit back after the inspection.", tr: "Çıkış kontrolünden sonra depozitomu isteyebiliyorum.", en: "I can ask for my deposit back after the inspection." },
     ],
     listening: {
-      title: "The viewing",
+      title: "The showing",
       titleTr: "Daire gezmek",
       situation: "Bir kiracı adayı emlak görevlisiyle daireyi geziyor.",
       turns: [
-        { speaker: "Agent", de: "This is the flat that I mentioned on the phone. It has been empty since April.", tr: "Telefonda söylediğim daire bu. Nisandan beri boş." },
+        { speaker: "Agent", de: "This is the apartment that I mentioned on the phone. It has been empty since April.", tr: "Telefonda söylediğim daire bu. Nisandan beri boş." },
         { speaker: "Resident", de: "It is brighter than the last one I saw. Is the kitchen furnished?", tr: "Gördüğüm son daireden daha aydınlık. Mutfak eşyalı mı?" },
         { speaker: "Agent", de: "Yes, and the storage in the basement is included in the rent.", tr: "Evet, bodrumdaki depo da kiraya dâhil." },
         { speaker: "Resident", de: "How much is the deposit, and when is it paid?", tr: "Depozito ne kadar ve ne zaman ödeniyor?" },
@@ -127,7 +127,7 @@ export const EN_B1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Resident", de: "If the heating were newer, the bills would be lower. Could we discuss the rent again?", tr: "Kalorifer daha yeni olsaydı faturalar daha düşük olurdu. Kirayı yeniden konuşabilir miyiz?" },
       ],
       questions: [
-        { de: "How long has the flat been empty?", tr: "Daire ne zamandan beri boş?", options: ["Since April", "For two months", "Since the plumber came", "For a year"], answer: 0 },
+        { de: "How long has the apartment been empty?", tr: "Daire ne zamandan beri boş?", options: ["Since April", "For two months", "Since the plumber came", "For a year"], answer: 0 },
         { de: "When is the deposit paid?", tr: "Depozito ne zaman ödeniyor?", options: ["Before the tenant moves in", "After the inspection", "With the first bill", "When the lease is renewed"], answer: 0 },
         { de: "What had the plumber done before the last tenant left?", tr: "Tamirci önceki kiracı çıkmadan önce ne yapmıştı?", options: ["He had repaired the boiler", "He had painted the corridor", "He had changed the heating", "He had signed the lease"], answer: 0 },
       ],
@@ -136,14 +136,14 @@ export const EN_B1_EXAMS: ModuleExamPlan[] = [
       title: "Your lease — the main clauses",
       titleTr: "Kira sözleşmesinden maddeler",
       genre: "Resmî mektup",
-      text: "YOUR LEASE — THE MAIN CLAUSES\n\nDear tenant,\n\nPlease read these clauses before the lease is signed.\n\n1. The deposit (two months' rent) is paid before you move in. It is returned in full after the inspection, unless there is damage.\n2. The rent must be paid by the third day of the month.\n3. Small repairs are organized by the tenant. A plumber for a leak or the boiler is arranged by the landlord.\n4. The lease is renewed every year. If you want to move out, you have to write to us two months in advance.\n\nAlthough the storage in the basement is included, a parking space is not. Please keep the noise low after ten.\n\nYours sincerely,\nThe agency",
+      text: "YOUR LEASE — THE MAIN CLAUSES\n\nDear tenant,\n\nPlease read these clauses before the lease is signed.\n\n1. The deposit (two months' rent) is paid before you move in. It is returned in full after the inspection, unless there is damage.\n2. The rent must be paid by the third day of the month.\n3. Small repairs are organized by the tenant. A plumber for a leak or the boiler is arranged by the landlord.\n4. The lease is renewed every year. If you want to move out, you have to write to us two months in advance.\n\nAlthough the storage in the basement is included, a parking space is not. Please keep the noise low after ten.\n\nSincerely,\nThe agency",
       questions: [
         { de: "Who arranges a plumber for the boiler?", tr: "Kombi için tamirciyi kim ayarlıyor?", options: ["The tenant", "The landlord", "The agency", "Nobody"], answer: 1 },
         { de: "What does the tenant have to do before moving out?", tr: "Kiracı çıkmadan önce ne yapmalı?", options: ["Write two months in advance", "Pay a third month's rent", "Repair the boiler", "Renew the lease"], answer: 0 },
       ],
     },
     speaking: [
-      { situation: "Daire gezerken soru soruyorsun.", de: "Is the flat still available, and when is the deposit paid?", tr: "Daire hâlâ müsait mi ve depozito ne zaman ödeniyor?" },
+      { situation: "Daire gezerken soru soruyorsun.", de: "Is the apartment still available, and when is the deposit paid?", tr: "Daire hâlâ müsait mi ve depozito ne zaman ödeniyor?" },
       { situation: "Ev sahibine arıza bildiriyorsun.", de: "There is a leak in the bathroom, so could you send a plumber this week?", tr: "Banyoda su sızıntısı var, bu hafta bir tamirci gönderebilir misiniz?" },
     ],
     writing: {
@@ -156,14 +156,14 @@ export const EN_B1_EXAMS: ModuleExamPlan[] = [
       ],
       minWords: 70,
       phrases: [
-        { de: "I am writing about the flat on the second floor.", tr: "İkinci kattaki daire hakkında yazıyorum", en: "I am writing about the flat on the second floor." },
+        { de: "I am writing about the apartment on the second floor.", tr: "İkinci kattaki daire hakkında yazıyorum", en: "I am writing about the apartment on the second floor." },
         { de: "The boiler has not worked since …", tr: "Kombi …-den beri çalışmıyor", en: "The boiler has not worked since …" },
         { de: "The leak was repaired last year.", tr: "Sızıntı geçen yıl onarıldı", en: "The leak was repaired last year." },
         { de: "Could you arrange a plumber before …?", tr: "…-den önce tamirci ayarlayabilir misiniz?", en: "Could you arrange a plumber before …?" },
         { de: "I look forward to your reply.", tr: "Cevabınızı bekliyorum", en: "I look forward to your reply." },
       ],
       sample:
-        "Dear Mr. Vogt,\n\nI am writing about the flat on the second floor, which I have rented since last May.\n\nThe boiler has not worked since Monday and there is damp in the corridor again. The same leak was repaired last year, but the plumber who came then said that the pipe would have to be changed. By the time I called your office on Tuesday, the water had already damaged the wall.\n\nCould you arrange a plumber before Friday, please? If the damage grew, the repair would cost much more. Although I understand that you are busy, the situation is urgent.\n\nI look forward to your reply.\n\nBest regards,\nA. Demir",
+        "Dear Mr. Vogt,\n\nI am writing about the apartment on the second floor, which I have rented since last May.\n\nThe boiler has not worked since Monday and there is damp in the corridor again. The same leak was repaired last year, but the plumber who came then said that the pipe would have to be changed. By the time I called your office on Tuesday, the water had already damaged the wall.\n\nCould you arrange a plumber before Friday, please? If the damage grew, the repair would cost much more. Although I understand that you are busy, the situation is urgent.\n\nI look forward to your reply.\n\nBest regards,\nA. Demir",
     },
   },
 
@@ -193,16 +193,16 @@ export const EN_B1_EXAMS: ModuleExamPlan[] = [
       situation: "İki meslektaş bir gecikmenin sebebini ve sonucunu konuşuyor.",
       turns: [
         { speaker: "Colleague", de: "The client called again. Why was the delivery late?", tr: "Müşteri yine aradı. Teslim neden gecikti?" },
-        { speaker: "Deniz", de: "The train stopped for two hours, so the driver could not keep to the timetable.", tr: "Tren iki saat durdu, bu yüzden sürücü tarifeye uyamadı." },
+        { speaker: "Deniz", de: "The train stopped for two hours, so the driver could not keep to the schedule.", tr: "Tren iki saat durdu, bu yüzden sürücü tarifeye uyamadı." },
         { speaker: "Colleague", de: "Had you told the client before they phoned us?", tr: "Onlar bizi aramadan önce müşteriye haber vermiş miydin?" },
         { speaker: "Deniz", de: "By the time I called, they had already noticed the problem. I explained the reason.", tr: "Ben aradığımda sorunu çoktan görmüşlerdi. Sebebini anlattım." },
         { speaker: "Colleague", de: "Since this is the second delay, a new rule was announced by the manager.", tr: "Bu ikinci gecikme olduğu için şef yeni bir kural duyurdu." },
-        { speaker: "Deniz", de: "I read the summary. We take a copy of the timetable in case the train stops.", tr: "Özeti okudum. Tren durur diye tarifenin bir kopyasını alıyoruz." },
+        { speaker: "Deniz", de: "I read the summary. We take a copy of the schedule in case the train stops.", tr: "Özeti okudum. Tren durur diye tarifenin bir kopyasını alıyoruz." },
         { speaker: "Colleague", de: "And we will not promise a morning delivery unless the journey is short.", tr: "Ayrıca yolculuk kısa olmadıkça sabah teslimi sözü vermeyeceğiz." },
         { speaker: "Deniz", de: "That is fair. I will write to the client in order to explain the new rule.", tr: "Bu adil. Yeni kuralı anlatmak için müşteriye yazacağım." },
       ],
       questions: [
-        { de: "Why was the delivery late?", tr: "Teslim neden gecikti?", options: ["The train stopped for two hours", "The driver was ill", "The client changed the day", "The order was wrong"], answer: 0 },
+        { de: "Why was the delivery late?", tr: "Teslim neden gecikti?", options: ["The train stopped for two hours", "The driver was sick", "The client changed the day", "The order was wrong"], answer: 0 },
         { de: "What had the client done by the time Deniz called?", tr: "Deniz aradığında müşteri ne yapmıştı?", options: ["They had noticed the problem", "They had canceled the order", "They had paid the bill", "They had written a letter"], answer: 0 },
         { de: "When will they promise a morning delivery?", tr: "Sabah teslimi sözünü hangi durumda verecekler?", options: ["Only if the journey is short", "Only if the client pays more", "If the train stops again", "As long as the driver agrees"], answer: 0 },
       ],
@@ -258,7 +258,7 @@ export const EN_B1_EXAMS: ModuleExamPlan[] = [
     canDo: [
       { de: "I can describe a person so that others recognize them.", tr: "Birini başkası tanıyacak kadar tarif edebiliyorum.", en: "I can describe a person so that others recognize them." },
       { de: "I can describe the place where I grew up.", tr: "Büyüdüğüm yeri tarif edebiliyorum.", en: "I can describe the place where I grew up." },
-      { de: "I can recommend a film or a book and say why.", tr: "Bir filmi ya da kitabı gerekçesiyle önerebiliyorum.", en: "I can recommend a film or a book and say why." },
+      { de: "I can recommend a movie or a book and say why.", tr: "Bir filmi ya da kitabı gerekçesiyle önerebiliyorum.", en: "I can recommend a movie or a book and say why." },
       { de: "I can compare two options and choose one.", tr: "İki seçeneği karşılaştırıp birini seçebiliyorum.", en: "I can compare two options and choose one." },
       { de: "I can complain about a faulty order and ask for a replacement.", tr: "Bozuk bir siparişi şikâyet edip değişim isteyebiliyorum.", en: "I can complain about a faulty order and ask for a replacement." },
     ],
@@ -279,17 +279,17 @@ export const EN_B1_EXAMS: ModuleExamPlan[] = [
       questions: [
         { de: "Which device did the customer order?", tr: "Müşteri hangi cihazı sipariş etti?", options: ["The one with a screen", "The small one with two buttons", "The one with a plug", "Two devices"], answer: 0 },
         { de: "Why was the wrong box sent?", tr: "Yanlış kutu neden gönderildi?", options: ["The labels were swapped", "The customer wrote the wrong number", "The price had changed", "The delivery was late"], answer: 0 },
-        { de: "What happens on Friday?", tr: "Cuma ne oluyor?", options: ["The faulty box is collected", "The new device arrives", "The receipt is checked", "The shop calls again"], answer: 0 },
+        { de: "What happens on Friday?", tr: "Cuma ne oluyor?", options: ["The faulty box is collected", "The new device arrives", "The receipt is checked", "The store calls again"], answer: 0 },
       ],
     },
     reading: {
       title: "For sale: the desk that everyone asks about",
       titleTr: "İkinci el satış ilanı",
       genre: "İlan",
-      text: "FOR SALE — the desk that everyone asks about\n\nI am selling the desk which I bought two years ago. It is the one with three drawers, whereas the newer desks have only two.\n\nCondition: very good. The top was repaired last year, so there is one light spot on the left. Everything else works: the drawers open well and the lamp that you see in the photo is included.\n\nThe flat where I live is on the third floor and there is no lift, so please bring someone who can carry it.\n\nPrice: $80. Although I prefer cash, a transfer is also possible.",
+      text: "FOR SALE — the desk that everyone asks about\n\nI am selling the desk which I bought two years ago. It is the one with three drawers, whereas the newer desks have only two.\n\nCondition: very good. The top was repaired last year, so there is one light spot on the left. Everything else works: the drawers open well and the lamp that you see in the photo is included.\n\nThe apartment where I live is on the third floor and there is no elevator, so please bring someone who can carry it.\n\nPrice: $80. Although I prefer cash, a transfer is also possible.",
       questions: [
         { de: "What is different about the newer version?", tr: "Yeni modelin farkı ne?", options: ["It has only two drawers", "It has a bigger top", "It has a lamp", "It was repaired"], answer: 0 },
-        { de: "Why should the buyer bring someone?", tr: "Alıcı neden birini getirmeli?", options: ["There is no lift", "The desk is faulty", "The seller is away", "The drawers are heavy to open"], answer: 0 },
+        { de: "Why should the buyer bring someone?", tr: "Alıcı neden birini getirmeli?", options: ["There is no elevator", "The desk is faulty", "The seller is away", "The drawers are heavy to open"], answer: 0 },
       ],
     },
     speaking: [
@@ -332,7 +332,7 @@ export const EN_B1_EXAMS: ModuleExamPlan[] = [
     ],
     canDo: [
       { de: "I can register and follow an application.", tr: "Kayıt yapıp başvurumu takip edebiliyorum.", en: "I can register and follow an application." },
-      { de: "I can fill in a form and understand every section.", tr: "Formu doldurup her bölümü anlayabiliyorum.", en: "I can fill in a form and understand every section." },
+      { de: "I can fill out a form and understand every section.", tr: "Formu doldurup her bölümü anlayabiliyorum.", en: "I can fill out a form and understand every section." },
       { de: "I can understand what a policy covers.", tr: "Bir sigortanın neyi kapsadığını anlayabiliyorum.", en: "I can understand what a policy covers." },
       { de: "I can write a formal letter with a request.", tr: "Talep içeren resmî bir mektup yazabiliyorum.", en: "I can write a formal letter with a request." },
       { de: "I can appeal against a decision and give evidence.", tr: "Bir karara kanıtla itiraz edebiliyorum.", en: "I can appeal against a decision and give evidence." },
@@ -343,7 +343,7 @@ export const EN_B1_EXAMS: ModuleExamPlan[] = [
       situation: "Bir başvuru sahibi eksik belge yüzünden gişede bilgi alıyor.",
       turns: [
         { speaker: "Visitor", de: "Good morning. I received a letter which says a document is missing.", tr: "Günaydın. Bir belgenin eksik olduğunu yazan bir yazı aldım." },
-        { speaker: "Officer", de: "Let me check. Your application was processed on 14 April, but the proof of address is missing.", tr: "Bakayım. Başvurunuz 14 Nisan'da işleme alındı ama adres belgesi eksik." },
+        { speaker: "Officer", de: "Let me check. Your application was processed on April 14, but the proof of address is missing.", tr: "Bakayım. Başvurunuz 14 Nisan'da işleme alındı ama adres belgesi eksik." },
         { speaker: "Visitor", de: "I had sent a copy before the deadline. Isn't a copy enough?", tr: "Süre bitmeden bir kopya göndermiştim. Kopya yeterli değil mi?" },
         { speaker: "Officer", de: "No. The original must be shown here; a copy is not accepted.", tr: "Değil. Aslı burada gösterilmeli; kopya kabul edilmiyor." },
         { speaker: "Visitor", de: "Your colleague told me that the form would be enough, so I waited.", tr: "Meslektaşınız formun yeterli olacağını söylemişti, ben de bekledim." },
@@ -361,10 +361,10 @@ export const EN_B1_EXAMS: ModuleExamPlan[] = [
       title: "Decision about your application",
       titleTr: "Resmî bildirim",
       genre: "Resmî yazı",
-      text: "DECISION ABOUT YOUR APPLICATION\n\nReference 2026/4471\n\nDear Mr. Demir,\n\nYour application for a resident's card was received on 14 April and has been processed by this office.\n\nUnfortunately, the application is rejected, because the proof of address was not submitted in the original. A copy is not accepted for this section.\n\nIf the original is submitted within four weeks, the decision is reviewed and no fee is charged. You don't have to fill in a new form; the documents that were sent in April are kept in your folder.\n\nYou also have the right to appeal. An appeal must be written and signed.\n\nYours sincerely,\nThe council office",
+      text: "DECISION ABOUT YOUR APPLICATION\n\nReference 2026/4471\n\nDear Mr. Demir,\n\nYour application for a resident's card was received on April 14 and has been processed by this office.\n\nUnfortunately, the application is rejected, because the proof of address was not submitted in the original. A copy is not accepted for this section.\n\nIf the original is submitted within four weeks, the decision is reviewed and no fee is charged. You don't have to fill out a new form; the documents that were sent in April are kept in your folder.\n\nYou also have the right to appeal. An appeal must be written and signed.\n\nSincerely,\nThe city office",
       questions: [
         { de: "Why was the application rejected?", tr: "Başvuru neden reddedildi?", options: ["The proof of address was only a copy", "The form was not signed", "The fee was not paid", "The letter arrived late"], answer: 0 },
-        { de: "What does the letter say about the form?", tr: "Yazı form hakkında ne diyor?", options: ["A new form is not necessary", "A new form must be filled in", "The form was not received", "The form must be signed again"], answer: 0 },
+        { de: "What does the letter say about the form?", tr: "Yazı form hakkında ne diyor?", options: ["A new form is not necessary", "A new form must be filled out", "The form was not received", "The form must be signed again"], answer: 0 },
       ],
     },
     speaking: [
@@ -386,10 +386,10 @@ export const EN_B1_EXAMS: ModuleExamPlan[] = [
         { de: "The document was submitted on …", tr: "Belge …-de sunuldu", en: "The document was submitted on …" },
         { de: "I was told that a copy would be enough.", tr: "Bana kopyanın yeterli olacağı söylendi", en: "I was told that a copy would be enough." },
         { de: "I would therefore like to appeal against the decision.", tr: "Bu yüzden karara itiraz etmek istiyorum", en: "I would therefore like to appeal against the decision." },
-        { de: "I look forward to your response. Yours sincerely,", tr: "Cevabınızı bekliyorum. Saygılarımla,", en: "I look forward to your response. Yours sincerely," },
+        { de: "I look forward to your response. Sincerely,", tr: "Cevabınızı bekliyorum. Saygılarımla,", en: "I look forward to your response. Sincerely," },
       ],
       sample:
-        "Dear Sir or Madam,\n\nI am writing with reference to your letter of 2 May about application 2026/4471.\n\nThe proof of address was submitted on 14 April together with the form, and a stamped copy was accepted at the counter on that day. When I asked about the original, I was told that a copy would be enough for this section. That is why the original was not sent.\n\nI would therefore like to appeal against the decision. The original is enclosed with this letter, and the evidence from April is kept in my folder. If the document is now accepted, the card could be issued this month.\n\nI look forward to your response.\n\nYours sincerely,\nA. Demir",
+        "Dear Sir or Madam,\n\nI am writing with reference to your letter of May 2 about application 2026/4471.\n\nThe proof of address was submitted on April 14 together with the form, and a stamped copy was accepted at the counter on that day. When I asked about the original, I was told that a copy would be enough for this section. That is why the original was not sent.\n\nI would therefore like to appeal against the decision. The original is enclosed with this letter, and the evidence from April is kept in my folder. If the document is now accepted, the card could be issued this month.\n\nI look forward to your response.\n\nSincerely,\nA. Demir",
     },
   },
 
@@ -425,19 +425,19 @@ export const EN_B1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Tutor", de: "Then I advise checking the last paragraph twice before you submit it.", tr: "O hâlde teslim etmeden önce son paragrafı iki kez kontrol etmeni öneririm." },
         { speaker: "Student", de: "I enjoy listening to podcasts, but I forget to write the new words down.", tr: "Podcast dinlemeyi seviyorum ama yeni kelimeleri yazmayı unutuyorum." },
         { speaker: "Tutor", de: "Your speaking teacher told me that your pronunciation had improved. Despite the mistakes, the level is good.", tr: "Konuşma öğretmenin telaffuzunun düzeldiğini söyledi. Hatalara rağmen düzeyin iyi." },
-        { speaker: "Student", de: "Then I am going to revise every evening and take the exam in June.", tr: "O hâlde her akşam tekrar yapıp haziranda sınava gireceğim." },
+        { speaker: "Student", de: "Then I am going to review every evening and take the exam in June.", tr: "O hâlde her akşam tekrar yapıp haziranda sınava gireceğim." },
       ],
       questions: [
         { de: "How long has the student studied English there?", tr: "Kursiyer orada ne zamandan beri İngilizce çalışıyor?", options: ["For eight months", "For a year", "Since June", "For two years"], answer: 0 },
         { de: "What does the tutor advise?", tr: "Öğretmen ne öneriyor?", options: ["Checking the last paragraph twice", "Listening to more podcasts", "Taking the exam later", "Changing the level"], answer: 0 },
-        { de: "What is the student going to do?", tr: "Kursiyer ne yapacak?", options: ["Revise every evening", "Repeat the module", "Write a new plan with the tutor", "Stop the course"], answer: 0 },
+        { de: "What is the student going to do?", tr: "Kursiyer ne yapacak?", options: ["Review every evening", "Repeat the module", "Write a new plan with the tutor", "Stop the course"], answer: 0 },
       ],
     },
     reading: {
       title: "Evening course B1 — what to expect",
       titleTr: "Kurs tanıtımı",
       genre: "Kurs tanıtımı",
-      text: "EVENING COURSE B1 — WHAT TO EXPECT\n\nThe course has ten modules and every lesson is uploaded on Monday, so you can revise at home. One module takes three weeks.\n\nWho is it for? For students who have finished A2 and who want a confident level. A short test is taken in the first week in order to check the gap.\n\nYou must bring a notebook to every session, but you don't have to buy the book: the chapters are given as a file. Although the group is small, we will divide the tasks, so every partner presents once.\n\nDespite the weekly homework, most students enjoy the course. If you miss a session, the video can be downloaded for two weeks.",
+      text: "EVENING COURSE B1 — WHAT TO EXPECT\n\nThe course has ten modules and every lesson is uploaded on Monday, so you can review at home. One module takes three weeks.\n\nWho is it for? For students who have finished A2 and who want a confident level. A short test is taken in the first week in order to check the gap.\n\nYou must bring a notebook to every session, but you don't have to buy the book: the chapters are given as a file. Although the group is small, we will divide the tasks, so every partner presents once.\n\nDespite the weekly homework, most students enjoy the course. If you miss a session, the video can be downloaded for two weeks.",
       questions: [
         { de: "Why is a short test taken in the first week?", tr: "İlk hafta neden kısa bir test yapılıyor?", options: ["To check the gap between the levels", "To decide the price", "To choose the tutor", "To divide the group"], answer: 0 },
         { de: "What does a learner not have to do?", tr: "Kursiyerin yapması gerekmeyen şey ne?", options: ["Buy the book", "Bring a notebook", "Present a task", "Take the first test"], answer: 0 },
@@ -445,7 +445,7 @@ export const EN_B1_EXAMS: ModuleExamPlan[] = [
     },
     speaking: [
       { situation: "İlerlemeni anlatıyorsun.", de: "My vocabulary has grown a lot, although I still make the same mistake.", tr: "Kelime dağarcığım çok gelişti ama hâlâ aynı hatayı yapıyorum." },
-      { situation: "Çalışma planını söylüyorsun.", de: "I am going to revise one chapter every evening before the exam.", tr: "Sınavdan önce her akşam bir bölüm tekrar edeceğim." },
+      { situation: "Çalışma planını söylüyorsun.", de: "I am going to review one chapter every evening before the exam.", tr: "Sınavdan önce her akşam bir bölüm tekrar edeceğim." },
     ],
     writing: {
       prompt: "Bir kursa başvuran ve düzeyini anlatan bir e-posta yaz.",
@@ -464,7 +464,7 @@ export const EN_B1_EXAMS: ModuleExamPlan[] = [
         { de: "I am going to … before the exam.", tr: "Sınavdan önce … yapacağım", en: "I am going to … before the exam." },
       ],
       sample:
-        "Dear Sir or Madam,\n\nI am writing about the evening course in English at your school, because I would like a confident level before the summer.\n\nI have studied English for eight months in a small group and I finished the A2 module in March. My tutor said that my pronunciation had improved, although she advised me to check my grammar twice before I submit a task. I enjoy listening to podcasts, but I find formal writing difficult.\n\nI am going to revise every evening, so the weekly homework is not a problem. Could you tell me when the first test is taken and whether the video can be downloaded?\n\nYours sincerely,\nM. Aydin",
+        "Dear Sir or Madam,\n\nI am writing about the evening course in English at your school, because I would like a confident level before the summer.\n\nI have studied English for eight months in a small group and I finished the A2 module in March. My tutor said that my pronunciation had improved, although she advised me to check my grammar twice before I submit a task. I enjoy listening to podcasts, but I find formal writing difficult.\n\nI am going to review every evening, so the weekly homework is not a problem. Could you tell me when the first test is taken and whether the video can be downloaded?\n\nSincerely,\nM. Aydin",
     },
   },
 
@@ -539,7 +539,7 @@ export const EN_B1_EXAMS: ModuleExamPlan[] = [
         { de: "The reason might be …", tr: "Sebebi … olabilir", en: "The reason might be …" },
       ],
       sample:
-        "Dear Editor,\n\nI read your article about the new reading hour at school carefully, but in my view the headline was too strong, because the plan has not been tested yet.\n\nIt is true that the first week was difficult; the figures which were published on Monday show that half of the class read nothing. However, the same report says that the older students wrote longer texts, and nobody mentioned this in your piece.\n\nThe reason might be the time: the hour starts at eight, when the youngest group is still tired. It can't be the idea alone, because the same plan worked in another school.\n\nI would therefore ask for a second report in June.\n\nYours sincerely,\nK. Yilmaz",
+        "Dear Editor,\n\nI read your article about the new reading hour at school carefully, but in my view the headline was too strong, because the plan has not been tested yet.\n\nIt is true that the first week was difficult; the figures which were published on Monday show that half of the class read nothing. However, the same report says that the older students wrote longer texts, and nobody mentioned this in your piece.\n\nThe reason might be the time: the hour starts at eight, when the youngest group is still tired. It can't be the idea alone, because the same plan worked in another school.\n\nI would therefore ask for a second report in June.\n\nSincerely,\nK. Yilmaz",
     },
   },
 
@@ -561,7 +561,7 @@ export const EN_B1_EXAMS: ModuleExamPlan[] = [
       { de: "I can describe symptoms and say how long I have had them.", tr: "Belirtileri ve ne zamandan beri olduğunu anlatabiliyorum.", en: "I can describe symptoms and say how long I have had them." },
       { de: "I can understand a warning on a medicine pack.", tr: "İlaç kutusundaki uyarıyı anlayabiliyorum.", en: "I can understand a warning on a medicine pack." },
       { de: "I can ask to be referred to a specialist.", tr: "Uzmana sevk isteyebiliyorum.", en: "I can ask to be referred to a specialist." },
-      { de: "I can ask for a sick note and explain my absence.", tr: "Rapor isteyip devamsızlığımı açıklayabiliyorum.", en: "I can ask for a sick note and explain my absence." },
+      { de: "I can ask for a doctor's note and explain my absence.", tr: "Rapor isteyip devamsızlığımı açıklayabiliyorum.", en: "I can ask for a doctor's note and explain my absence." },
     ],
     listening: {
       title: "The results are in",
@@ -569,27 +569,27 @@ export const EN_B1_EXAMS: ModuleExamPlan[] = [
       situation: "Bir hasta tahlil sonuçları için doktorla konuşuyor.",
       turns: [
         { speaker: "Doctor", de: "Your blood test was checked. How long have you had the knee pain?", tr: "Kan tahliliniz incelendi. Diz ağrınız ne zamandan beri var?" },
-        { speaker: "Patient", de: "Since March. It got worse after the holiday, so I came on Monday.", tr: "Marttan beri. Tatilden sonra kötüleşti, bu yüzden pazartesi geldim." },
+        { speaker: "Patient", de: "Since March. It got worse after my vacation, so I came on Monday.", tr: "Marttan beri. Tatilden sonra kötüleşti, bu yüzden pazartesi geldim." },
         { speaker: "Doctor", de: "The sample shows no infection. However, the x-ray that was taken in April shows a problem in the joint.", tr: "Örnekte enfeksiyon yok. Ancak nisanda çekilen röntgen eklemde bir sorun gösteriyor." },
         { speaker: "Patient", de: "The nurse told me not to worry. Had she seen the result already?", tr: "Hemşire endişelenmememi söyledi. Sonucu görmüş müydü?" },
         { speaker: "Doctor", de: "By then the file had arrived. I will refer you to a specialist.", tr: "O sırada dosya gelmişti. Sizi bir uzmana sevk edeceğim." },
         { speaker: "Patient", de: "Do I have to bring anything to the clinic?", tr: "Kliniğe bir şey getirmem gerekiyor mu?" },
         { speaker: "Doctor", de: "Your ID and this letter. Moreover, take the painkiller twice a day, otherwise the night is hard.", tr: "Kimliğiniz ve bu yazı. Ayrıca ağrı kesiciyi günde iki kez alın, yoksa gece zor geçer." },
-        { speaker: "Patient", de: "Besides the letter, could I have a sick note for this week?", tr: "Yazının yanında bu hafta için rapor alabilir miyim?" },
+        { speaker: "Patient", de: "Besides the letter, could I have a doctor's note for this week?", tr: "Yazının yanında bu hafta için rapor alabilir miyim?" },
       ],
       questions: [
         { de: "How long has the patient had the pain?", tr: "Hastanın ağrısı ne zamandan beri var?", options: ["Since March", "Since Monday", "For a week", "Since April"], answer: 0 },
         { de: "What does the blood test show?", tr: "Kan tahlili ne gösteriyor?", options: ["No infection", "An allergy", "A virus", "A broken bone"], answer: 0 },
-        { de: "What must the patient bring to the clinic?", tr: "Hasta kliniğe ne getirmeli?", options: ["An ID and the letter", "The x-ray and a sample", "A sick note", "Only the painkiller"], answer: 0 },
+        { de: "What must the patient bring to the clinic?", tr: "Hasta kliniğe ne getirmeli?", options: ["An ID and the letter", "The x-ray and a sample", "A doctor's note", "Only the painkiller"], answer: 0 },
       ],
     },
     reading: {
       title: "Before your scan — please read",
       titleTr: "Hasta bilgilendirme notu",
       genre: "Bilgi notu",
-      text: "BEFORE YOUR SCAN — PLEASE READ\n\nYour appointment was arranged for Thursday at nine o'clock in ward 3.\n\nYou must not eat for six hours before the scan; water is allowed. If you take tablets every morning, the dose is taken as usual — the medicine was prescribed for you and must not be stopped.\n\nPlease arrive twenty minutes earlier, because a short form is filled in at reception. You have to bring your ID and the letter from your doctor; otherwise the scan is postponed.\n\nThe result is sent to the doctor who referred you. Moreover, a copy is kept in your file.\n\nIf you feel dizzy or weak on the day, please call the ward before eight.",
+      text: "BEFORE YOUR SCAN — PLEASE READ\n\nYour appointment was arranged for Thursday at nine o'clock in ward 3.\n\nYou must not eat for six hours before the scan; water is allowed. If you take tablets every morning, the dose is taken as usual — the medicine was prescribed for you and must not be stopped.\n\nPlease arrive twenty minutes earlier, because a short form is filled out at reception. You have to bring your ID and the letter from your doctor; otherwise the scan is postponed.\n\nThe result is sent to the doctor who referred you. Moreover, a copy is kept in your file.\n\nIf you feel dizzy or weak on the day, please call the ward before eight.",
       questions: [
-        { de: "What must the patient not do before the scan?", tr: "Hasta çekimden önce ne yapmamalı?", options: ["Eat for six hours", "Drink water", "Take the usual tablets", "Fill in the form"], answer: 0 },
+        { de: "What must the patient not do before the scan?", tr: "Hasta çekimden önce ne yapmamalı?", options: ["Eat for six hours", "Drink water", "Take the usual tablets", "Fill out the form"], answer: 0 },
         { de: "What happens if the patient forgets the letter?", tr: "Hasta yazıyı unutursa ne olur?", options: ["The scan is postponed", "The result is sent later", "A fee is charged", "The ward calls the doctor"], answer: 0 },
       ],
     },
@@ -611,10 +611,10 @@ export const EN_B1_EXAMS: ModuleExamPlan[] = [
         { de: "The test was taken on …", tr: "Tahlil …-de yapıldı", en: "The test was taken on …" },
         { de: "The medicine was prescribed by …", tr: "İlaç … tarafından yazıldı", en: "The medicine was prescribed by …" },
         { de: "Could you refer me to a specialist?", tr: "Beni uzmana sevk edebilir misiniz?", en: "Could you refer me to a specialist?" },
-        { de: "Moreover, I would need a sick note.", tr: "Ayrıca bir rapora ihtiyacım olacak", en: "Moreover, I would need a sick note." },
+        { de: "Moreover, I would need a doctor's note.", tr: "Ayrıca bir rapora ihtiyacım olacak", en: "Moreover, I would need a doctor's note." },
       ],
       sample:
-        "Dear Doctor Weber,\n\nI have had a pain in my knee since March and it has become worse in the last two weeks.\n\nThe blood test was taken on 3 May and the x-ray was checked at the clinic in April; no infection was found. The painkiller was prescribed by your colleague, but the pain returns every night. By the time I came to reception on Monday, I had already tried two weeks of rest.\n\nCould you refer me to a specialist, please? Moreover, I would need a sick note for this week, because I cannot stand for long at work.\n\nThank you very much.\n\nYours sincerely,\nS. Kaya",
+        "Dear Doctor Weber,\n\nI have had a pain in my knee since March and it has become worse in the last two weeks.\n\nThe blood test was taken on May 3 and the x-ray was checked at the clinic in April; no infection was found. The painkiller was prescribed by your colleague, but the pain returns every night. By the time I came to reception on Monday, I had already tried two weeks of rest.\n\nCould you refer me to a specialist, please? Moreover, I would need a doctor's note for this week, because I cannot stand for long at work.\n\nThank you very much.\n\nSincerely,\nS. Kaya",
     },
   },
 
@@ -632,7 +632,7 @@ export const EN_B1_EXAMS: ModuleExamPlan[] = [
       { de: "on the other hand / in contrast", tr: "iki tarafı karşılaştırmak" },
     ],
     canDo: [
-      { de: "I can understand how the rubbish is collected.", tr: "Çöpün nasıl toplandığını anlayabiliyorum.", en: "I can understand how the rubbish is collected." },
+      { de: "I can understand how the trash is collected.", tr: "Çöpün nasıl toplandığını anlayabiliyorum.", en: "I can understand how the trash is collected." },
       { de: "I can give advice about saving energy and water.", tr: "Enerji ve su tasarrufu için öğüt verebiliyorum.", en: "I can give advice about saving energy and water." },
       { de: "I can describe how my town has changed.", tr: "Şehrimin nasıl değiştiğini anlatabiliyorum.", en: "I can describe how my town has changed." },
       { de: "I can take part in a local project and sign a petition.", tr: "Mahalle projesine katılıp dilekçe imzalayabiliyorum.", en: "I can take part in a local project and sign a petition." },
@@ -649,7 +649,7 @@ export const EN_B1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Planner", de: "The trees would be planted in October, if the committee agreed today.", tr: "Komite bugün kabul etse ağaçlar ekimde dikilirdi." },
         { speaker: "Resident", de: "What about the traffic? The street is noisy; the bus stop, on the other hand, is useful.", tr: "Trafik ne olacak? Sokak gürültülü; otobüs durağı ise işe yarıyor." },
         { speaker: "Planner", de: "One lane is removed, so the route is quieter. The cycle lane is wider.", tr: "Bir şerit kaldırılıyor, yol daha sessiz oluyor. Bisiklet yolu genişliyor." },
-        { speaker: "Chair", de: "Unless the council votes against it, the poster will be printed.", tr: "Belediye aleyhte oy vermedikçe afiş basılacak." },
+        { speaker: "Chair", de: "Unless the city council votes against it, the poster will be printed.", tr: "Belediye aleyhte oy vermedikçe afiş basılacak." },
         { speaker: "Resident", de: "If we planted flowers as well, the playground would look better.", tr: "Çiçek de diksek oyun alanı daha iyi görünürdü." },
       ],
       questions: [
@@ -659,37 +659,37 @@ export const EN_B1_EXAMS: ModuleExamPlan[] = [
       ],
     },
     reading: {
-      title: "New rubbish plan from June",
+      title: "New trash plan from June",
       titleTr: "Belediye duyurusu",
       genre: "Duyuru",
-      text: "NEW RUBBISH PLAN FROM JUNE\n\nDear residents,\n\nFrom 1 June the rubbish is collected on new days: glass and metal on Tuesdays, paper on Thursdays. Plastic bottles must be separated from the rest; only garden waste is thrown into the green bin.\n\nThe bins which stand in the street are emptied before eight, so please bring them out the evening before. If a bin is not emptied, call the office.\n\nThe landfill outside the town was closed last year, and since then the waste has been recycled in the new plant. As a result, the cost has fallen.\n\nOn the other hand, a dirty bin is not emptied. In contrast to last year, the driver does not sort it.",
+      text: "NEW TRASH PLAN FROM JUNE\n\nDear residents,\n\nFrom June 1 the trash is collected on new days: glass and metal on Tuesdays, paper on Thursdays. Plastic bottles must be separated from the rest; only garden waste is thrown into the green bin.\n\nThe trash cans which stand on the street are emptied before eight, so please bring them out the evening before. If a trash can is not emptied, call the office.\n\nThe landfill outside the town was closed last year, and since then the waste has been recycled in the new plant. As a result, the cost has fallen.\n\nOn the other hand, a dirty trash can is not emptied. In contrast to last year, the driver does not sort it.",
       questions: [
         { de: "What is collected on Thursdays?", tr: "Perşembe ne toplanıyor?", options: ["Paper", "Glass and metal", "Garden waste", "Plastic bottles"], answer: 0 },
-        { de: "What has happened since the landfill was closed?", tr: "Çöp sahası kapandığından beri ne oldu?", options: ["The waste has been recycled in a new plant", "The cost has grown", "The bins are emptied later", "The paper day was moved"], answer: 0 },
+        { de: "What has happened since the landfill was closed?", tr: "Çöp sahası kapandığından beri ne oldu?", options: ["The waste has been recycled in a new plant", "The cost has grown", "The trash cans are emptied later", "The paper day was moved"], answer: 0 },
       ],
     },
     speaking: [
-      { situation: "Tasarruf için öğüt veriyorsun.", de: "If you closed the tap while washing, you would save a lot of water.", tr: "Yıkarken musluğu kapatsan çok su tasarruf edersin." },
+      { situation: "Tasarruf için öğüt veriyorsun.", de: "If you turned off the faucet while washing, you would save a lot of water.", tr: "Yıkarken musluğu kapatsan çok su tasarruf edersin." },
       { situation: "Şehrin nasıl değiştiğini anlatıyorsun.", de: "The town has changed a lot since they built the bridge in 2015.", tr: "2015'te köprüyü yaptıklarından beri şehir çok değişti." },
     ],
     writing: {
       prompt: "Belediyeye mahallen için bir öneri yazısı yaz.",
       checklist: [
         "Neyi önerdiğini ve nerede olduğunu yaz",
-        "Bugünkü durumu edilgen yapıyla anlat („the bins are emptied …“)",
+        "Bugünkü durumu edilgen yapıyla anlat („the trash cans are emptied …“)",
         "Bir koşul cümlesi kur („if …, would …“)",
         "Karşı tarafın görüşüne yer ver („on the other hand“)",
       ],
       minWords: 80,
       phrases: [
         { de: "I am writing on behalf of the residents of …", tr: "… sakinleri adına yazıyorum", en: "I am writing on behalf of the residents of …" },
-        { de: "At the moment the rubbish is collected …", tr: "Şu anda çöp … toplanıyor", en: "At the moment the rubbish is collected …" },
-        { de: "If the council planted trees, …", tr: "Belediye ağaç dikse, …", en: "If the council planted trees, …" },
+        { de: "At the moment the trash is collected …", tr: "Şu anda çöp … toplanıyor", en: "At the moment the trash is collected …" },
+        { de: "If the city planted trees, …", tr: "Belediye ağaç dikse, …", en: "If the city planted trees, …" },
         { de: "On the other hand, …", tr: "Öte yandan, …", en: "On the other hand, …" },
         { de: "We would be grateful for a reply.", tr: "Cevap verirseniz minnettar oluruz", en: "We would be grateful for a reply." },
       ],
       sample:
-        "Dear Sir or Madam,\n\nI am writing on behalf of the residents of Green Street about the empty space next to the playground.\n\nAt the moment the rubbish is collected there twice a week, but the corner which stands behind the bins is never cleaned. Before they built the parking lot, this was a field where the children played. Since then the only green space has been the small path by the river.\n\nIf the council planted ten trees and put two seats there, the area would be used every day. On the other hand, we understand that the budget is small; therefore we would help with the planting.\n\nWe would be grateful for a reply before the summer.\n\nYours sincerely,\nThe residents' committee",
+        "Dear Sir or Madam,\n\nI am writing on behalf of the residents of Green Street about the empty space next to the playground.\n\nAt the moment the trash is collected there twice a week, but the corner which stands behind the trash cans is never cleaned. Before they built the parking lot, this was a field where the children played. Since then the only green space has been the small path by the river.\n\nIf the council planted ten trees and put two seats there, the area would be used every day. On the other hand, we understand that the budget is small; therefore we would help with the planting.\n\nWe would be grateful for a reply before the summer.\n\nSincerely,\nThe residents' committee",
     },
   },
 
@@ -728,7 +728,7 @@ export const EN_B1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Bora", de: "Really? That is a relief. As a result, I might write to her next month.", tr: "Gerçekten mi? Bu bir rahatlama. O hâlde belki önümüzdeki ay ona yazarım." },
       ],
       questions: [
-        { de: "Why has Bora's mood been low?", tr: "Bora'nın morali neden bozuk?", options: ["He didn't get a job he had wanted", "He lost a friend", "He is ill", "He moved to another city"], answer: 0 },
+        { de: "Why has Bora's mood been low?", tr: "Bora'nın morali neden bozuk?", options: ["He didn't get a job he had wanted", "He lost a friend", "He is sick", "He moved to another city"], answer: 0 },
         { de: "What had happened by the time Bora understood the letter?", tr: "Bora yazıyı anladığında ne olmuştu?", options: ["Everyone had already asked him about it", "The job had been given to a colleague", "He had written to the team", "Ela had called him"], answer: 0 },
         { de: "What did the interviewer tell Ela's cousin?", tr: "Mülakatı yapan kişi Ela'nın kuzenine ne söyledi?", options: ["Bora's report was excellent", "Bora had been late", "The team wanted a second interview", "The letter was a mistake"], answer: 0 },
     ],

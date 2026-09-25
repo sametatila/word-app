@@ -172,7 +172,7 @@ export const enC1U24: SkillExercise[] = [
       { de: "a duty", tr: "ödev" },
       { de: "chosen", tr: "seçilmiş" },
       { de: "a colleague", tr: "meslektaş" },
-      { de: "a rota", tr: "nöbet çizelgesi" },
+      { de: "a schedule", tr: "nöbet çizelgesi" },
       { de: "unpaid", tr: "ödenmemiş" },
       { de: "counted", tr: "sayılan" },
       { de: "honest", tr: "dürüst" },
@@ -186,8 +186,8 @@ export const enC1U24: SkillExercise[] = [
       "A commandment, albeit ancient, is not a virtue. Age is not an argument, which this level has now said three times in three fields, and here it is at its sharpest: a rule that is obeyed out of habit has produced a habit and not a virtue.\n" +
       "A virtue is a thing practiced by somebody who could have done otherwise. That is why it cannot be legislated and why a list of rules is not a moral education, though it is a great deal easier to write.\n" +
       "Albeit a form of integrity, altruism can be a duty too. And the concession at the front is doing real work: nobody is denying that it is a form of integrity.\n" +
-      "What is denied is that it is always chosen. A colleague who takes the night rota every December is being good and is also being used, and the second half of that sentence is the one nobody says in the room.\n" +
-      "So the honest version of the lesson is short. Unpaid goodness is still work and it should be counted, and counting it does not make it smaller. A person who is thanked in a speech and never in a rota has been paid in the wrong currency.",
+      "What is denied is that it is always chosen. A colleague who takes the night shift every December is being good and is also being used, and the second half of that sentence is the one nobody says in the room.\n" +
+      "So the honest version of the lesson is short. Unpaid goodness is still work and it should be counted, and counting it does not make it smaller. A person who is thanked in a speech and never in a schedule has been paid in the wrong currency.",
     questions: [
       {
         text: "What does the second half say?",
@@ -234,7 +234,7 @@ export const enC1U24: SkillExercise[] = [
         text: "How has such a person been paid?",
         options: [],
         answer: 0,
-        accept: ["in the wrong currency", "wrongly", "not in the rota"],
+        accept: ["in the wrong currency", "wrongly", "not in the schedule"],
         explain: "„has been paid in the wrong currency.“",
       },
     ],
@@ -368,7 +368,7 @@ export const enC1U24: SkillExercise[] = [
       { speaker: "Aslı", text: "Whatever a court allows a painter, it will later allow a reporter, and whatever it refuses a painter it will refuse everybody quietly for thirty years." },
       { speaker: "Aslı", text: "They ask that private autonomy be tested by judicial review. Now the other direction, and it is the half that gets forgotten." },
       { speaker: "Aslı", text: "A contract is a private thing and two people are free to write what they like in it. The trouble is that they are almost never equally free." },
-      { speaker: "Aslı", text: "A tenant signs a clause because there are four flats and two hundred people, and calling that freedom is a description of the paper rather than of the room." },
+      { speaker: "Aslı", text: "A tenant signs a clause because there are four apartments and two hundred people, and calling that freedom is a description of the paper rather than of the room." },
       { speaker: "Aslı", text: "So the review is not an attack on autonomy. It is the only thing that keeps the word honest where the two sides are unequal." },
       { speaker: "Aslı", text: "And a judge who says that out loud will be told they are against freedom, by somebody who has never signed anything they could not change." },
     ],
@@ -413,8 +413,8 @@ export const enC1U24: SkillExercise[] = [
         text: "Why does a tenant sign the clause?",
         options: [],
         answer: 0,
-        accept: ["there are four flats", "too few flats", "no other choice"],
-        explain: "„because there are four flats and two hundred people…“",
+        accept: ["there are four apartments", "too few apartments", "no other choice"],
+        explain: "„because there are four apartments and two hundred people…“",
       },
     ],
   },

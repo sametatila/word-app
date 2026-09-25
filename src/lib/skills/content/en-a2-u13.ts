@@ -109,17 +109,17 @@ export const enA2U13: SkillExercise[] = [
     minutes: 5,
     text:
       "Deniz: Hello. I'd like to return this, please.\n" +
-      "Shop: Of course. Do you have the receipt?\n" +
+      "Clerk: Of course. Do you have the receipt?\n" +
       "Deniz: Here it is. I bought it two days ago.\n" +
-      "Shop: I see. Is there a problem with the item?\n" +
+      "Clerk: I see. Is there a problem with the item?\n" +
       "Deniz: No, the quality is fine. It is the wrong size. I need a bigger one.\n" +
-      "Shop: Can I exchange it for a bigger size, or would you like a refund?\n" +
+      "Clerk: Can I exchange it for a bigger size, or would you like a refund?\n" +
       "Deniz: Can I get a refund, please? I have already bought a second shirt.\n" +
-      "Shop: No problem. With the receipt it is easy. Without it I can only exchange.\n" +
+      "Clerk: No problem. With the receipt it is easy. Without it I can only exchange.\n" +
       "Deniz: Good to know. How long do I have for a return?\n" +
-      "Shop: Fourteen days. After that we give a card, not money.\n" +
+      "Clerk: Fourteen days. After that we give a card, not money.\n" +
       "Deniz: And if the item is damaged?\n" +
-      "Shop: Then there is no time. Damaged goods always go back.\n" +
+      "Clerk: Then there is no time. Damaged goods always go back.\n" +
       "Deniz: Thank you. That was easier than I expected.",
     questions: [
       {
@@ -190,7 +190,7 @@ export const enA2U13: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Nil", text: "I was very nervous on my first day. I came forty minutes early and drank two coffees in the street." },
+      { speaker: "Nil", text: "I was very nervous on my first day. I came forty minutes early and drank two coffees on the street." },
       { speaker: "Nil", text: "At nine my boss introduced me to the team. Ten names in two minutes. I remembered three." },
       { speaker: "Nil", text: "Then somebody showed me my desk. The computer was there, the password was not." },
       { speaker: "Nil", text: "I waited an hour for the password and I was too shy to ask." },
@@ -204,7 +204,7 @@ export const enA2U13: SkillExercise[] = [
         text: "How early did Nil come?",
         options: ["forty minutes", "an hour", "ten minutes"],
         answer: 0,
-        explain: "„I came forty minutes early and drank two coffees in the street.“",
+        explain: "„I came forty minutes early and drank two coffees on the street.“",
       },
       {
         text: "What turned the day?",
@@ -266,7 +266,7 @@ export const enA2U13: SkillExercise[] = [
       { speaker: "Can", text: "I bought it two days ago and the glass is damaged. Look, here." },
       { speaker: "Shop", text: "I see it. Was it in the box like this?" },
       { speaker: "Can", text: "Yes. I opened the box at home and it was already broken." },
-      { speaker: "Shop", text: "Then it happened before the shop. Do you have the receipt?" },
+      { speaker: "Shop", text: "Then it happened before the store. Do you have the receipt?" },
       { speaker: "Can", text: "Here. And a photo from Tuesday evening." },
       { speaker: "Shop", text: "Good. I'd like to give you a new one, but this lamp is the last one." },
       { speaker: "Can", text: "Then I'd like a refund, please." },
@@ -298,7 +298,7 @@ export const enA2U13: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "For a refund the shop needs the manager's ___.",
+        text: "For a refund the store needs the manager's ___.",
         options: [],
         answer: 0,
         accept: ["signature"],

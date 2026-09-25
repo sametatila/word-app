@@ -61,7 +61,7 @@ export const EN_B2_EXAMS: ModuleExamPlan[] = [
       title: "Minutes of the project meeting",
       titleTr: "Proje toplantısı tutanağı",
       genre: "Tutanak",
-      text: "MINUTES OF THE PROJECT MEETING\n14 May, 9:30, remote\n\n1 — Status of the findings\nMr Adler reported that the draft had been completed in the previous week. The late assignment of the second check is said to be the reason for the delay; accordingly, the team had to adjust the outline twice.\n\n2 — Scheduling\nIt was decided that the milestone will be moved by two weeks. Ms. Renner noted that the stakeholders are to be informed by Friday. The memo will be circulated by the project office.\n\n3 — Open points\nThe question of the capacity for June remains to be clarified. Provided that no reply arrives before the next meeting, the priority will be set by the project office.\n\nNext meeting: 28 May, 9:30. Minutes: L. Sander",
+      text: "MINUTES OF THE PROJECT MEETING\n14 May, 9:30, remote\n\n1 — Status of the findings\nMr Adler reported that the draft had been completed in the previous week. The late assignment of the second check is said to be the reason for the delay; accordingly, the team had to adjust the outline twice.\n\n2 — Scheduling\nIt was decided that the milestone will be moved by two weeks. Ms. Renner noted that the stakeholders are to be informed by Friday. The memo will be circulated by the project office.\n\n3 — Open points\nThe question of the capacity for June remains to be clarified. Provided that no reply arrives before the next meeting, the priority will be set by the project office.\n\nNext meeting: May 28, 9:30. Minutes: L. Sander",
       questions: [
         { de: "Why did the team have to adjust the outline twice?", tr: "Ekip taslağı neden iki kez düzeltmek zorunda kaldı?", options: ["Because the second check was assigned late", "Because the client canceled", "Because the draft was lost", "Because the office changed"], answer: 0 },
         { de: "What happens if no reply arrives before the next meeting?", tr: "Bir sonraki toplantıya kadar cevap gelmezse ne olur?", options: ["The project office sets the priority", "The point is closed", "The meeting is moved", "The stakeholders decide"], answer: 0 },
@@ -90,7 +90,7 @@ export const EN_B2_EXAMS: ModuleExamPlan[] = [
         { de: "Next meeting: …", tr: "Bir sonraki toplantı: …", en: "Next meeting: …" },
       ],
       sample:
-        "MINUTES OF THE TEAM MEETING\n3 June, 10:00\n\n1 — Status\nMs Yilmaz reported that the first part had been finished on time. The late delivery is said to be the reason why the second part has now been moved by one week.\n\n2 — Decisions\nIt was decided that the new date is 20 June. Mr. Brandt noted that the client is to be informed this week; the memo will be circulated by the office.\n\n3 — Open points\nThe question of the capacity for July remains to be clarified. Provided that nobody replies by Friday, the priority will be set by the project office.\n\nNext meeting: 17 June, 10:00.",
+        "MINUTES OF THE TEAM MEETING\n3 June, 10:00\n\n1 — Status\nMs Yilmaz reported that the first part had been finished on time. The late delivery is said to be the reason why the second part has now been moved by one week.\n\n2 — Decisions\nIt was decided that the new date is June 20. Mr. Brandt noted that the client is to be informed this week; the memo will be circulated by the office.\n\n3 — Open points\nThe question of the capacity for July remains to be clarified. Provided that nobody replies by Friday, the priority will be set by the project office.\n\nNext meeting: June 17, 10:00.",
     },
   },
 
@@ -119,7 +119,7 @@ export const EN_B2_EXAMS: ModuleExamPlan[] = [
       titleTr: "İtiraz edilen hesap",
       situation: "Bir müşteri temsilcisi ile tedarikçi bir talebi görüşüyor.",
       turns: [
-        { speaker: "Representative", de: "It is claimed that the goods were dispatched on 4 March. Our file says 10 March.", tr: "Malların 4 Martta gönderildiği iddia ediliyor. Bizim dosyamızda 10 Mart yazıyor." },
+        { speaker: "Representative", de: "It is claimed that the goods were dispatched on March 4. Our file says March 10.", tr: "Malların 4 Martta gönderildiği iddia ediliyor. Bizim dosyamızda 10 Mart yazıyor." },
         { speaker: "Supplier", de: "The delay is said to be minimal. Admittedly, our position was rather rigid last month.", tr: "Gecikmenin çok az olduğu söyleniyor. Doğrusu geçen ay tutumumuz biraz katıydı." },
         { speaker: "Representative", de: "What we contest is not the date but the liability for the damages.", tr: "İtiraz ettiğimiz şey tarih değil, zararın sorumluluğu." },
         { speaker: "Supplier", de: "You must have misread the clause; the threshold applies only above ten thousand.", tr: "Maddeyi yanlış okumuş olmalısınız; eşik yalnızca on binin üstünde geçerli." },
@@ -138,7 +138,7 @@ export const EN_B2_EXAMS: ModuleExamPlan[] = [
       title: "Formal complaint and final deadline",
       titleTr: "Şikâyet ve süre tanıma",
       genre: "Resmî mektup",
-      text: "Dear Sir or Madam,\n\nWith reference to my letter of 8 March and to your reply of 21 March, I am writing to you once again.\n\nThe device has now been repaired three times. The last repair was carried out on 2 April; four days later the same fault returned. The device therefore cannot be used for the purpose described in your own reply.\n\nAs a consequence of the repeated breakdowns, additional costs of $180 have arisen. It is claimed in your letter that a further repair is sufficient; what I contest is exactly that. I therefore decline it and demand the replacement of the device, together with the reimbursement of the costs named above.\n\nUnder no circumstances will I accept a further delay. I request a written reply by 30 April. Should no reply arrive by then, the matter will be passed to our legal adviser.\n\nYours sincerely,\nD. Kirmizi",
+      text: "Dear Sir or Madam,\n\nWith reference to my letter of March 8 and to your reply of March 21, I am writing to you once again.\n\nThe device has now been repaired three times. The last repair was carried out on April 2; four days later the same fault returned. The device therefore cannot be used for the purpose described in your own reply.\n\nAs a consequence of the repeated breakdowns, additional costs of $180 have arisen. It is claimed in your letter that a further repair is sufficient; what I contest is exactly that. I therefore decline it and demand the replacement of the device, together with the reimbursement of the costs named above.\n\nUnder no circumstances will I accept a further delay. I request a written reply by April 30. Should no reply arrive by then, the matter will be passed to our legal adviser.\n\nSincerely,\nD. Kirmizi",
       questions: [
         { de: "How many times has the device been repaired?", tr: "Cihaz kaç kez tamir edildi?", options: ["Three times", "Twice", "Four times", "Once"], answer: 0 },
         { de: "What does the writer demand?", tr: "Yazan kişi ne talep ediyor?", options: ["A replacement and the reimbursement of the costs", "One more repair", "A discount only", "An apology only"], answer: 0 },
@@ -168,7 +168,7 @@ export const EN_B2_EXAMS: ModuleExamPlan[] = [
         { de: "I request a written reply by …", tr: "…-e kadar yazılı cevap rica ediyorum", en: "I request a written reply by …" },
       ],
       sample:
-        "Dear Sir or Madam,\n\nWith reference to your letter of 21 March, I am writing to you once again. The device has been repaired three times, most recently on 2 April. Four days later the same fault returned, so the device cannot be used.\n\nAs a consequence of the repeated breakdowns, additional costs of $180 have arisen. It is claimed in your letter that a further repair is sufficient; what I contest is exactly that. I therefore decline one more repair and demand the replacement of the device and the reimbursement of these costs.\n\nI request a written reply by 30 April. Should no reply arrive by then, I will take legal advice.\n\nYours sincerely,\nD. Kirmizi",
+        "Dear Sir or Madam,\n\nWith reference to your letter of March 21, I am writing to you once again. The device has been repaired three times, most recently on April 2. Four days later the same fault returned, so the device cannot be used.\n\nAs a consequence of the repeated breakdowns, additional costs of $180 have arisen. It is claimed in your letter that a further repair is sufficient; what I contest is exactly that. I therefore decline one more repair and demand the replacement of the device and the reimbursement of these costs.\n\nI request a written reply by April 30. Should no reply arrive by then, I will take legal advice.\n\nSincerely,\nD. Kirmizi",
     },
   },
 
@@ -216,7 +216,7 @@ export const EN_B2_EXAMS: ModuleExamPlan[] = [
       title: "Maintenance notice — the new procedure",
       titleTr: "Süreç duyurusu",
       genre: "Duyuru",
-      text: "MAINTENANCE NOTICE — THE NEW PROCEDURE\n\nFrom 1 June the treatment of the surface is carried out in two steps.\n\nStep one: having filtered the liquid, the operator loads the component into the crate. Being easily damaged by heat, the glue is applied only after the gauge has been read.\n\nStep two: once the work is completed, the entry is made in the inventory. The quantity and the deviation from the guideline are recorded in the same row. Nowhere is it written that this row may be left empty.\n\nIt is reported that the last outage was caused by a missing entry. The maintenance is therefore checked twice: by the workshop and, at the end of the week, by the manager.\n\nBy the end of June the new procedure will have been tested on the pilot line. Should a fault appear, the trial is stopped and the parameter is verified before the work is resumed.",
+      text: "MAINTENANCE NOTICE — THE NEW PROCEDURE\n\nFrom June 1 the treatment of the surface is carried out in two steps.\n\nStep one: having filtered the liquid, the operator loads the component into the crate. Being easily damaged by heat, the glue is applied only after the gauge has been read.\n\nStep two: once the work is completed, the entry is made in the inventory. The quantity and the deviation from the guideline are recorded in the same row. Nowhere is it written that this row may be left empty.\n\nIt is reported that the last outage was caused by a missing entry. The maintenance is therefore checked twice: by the workshop and, at the end of the week, by the manager.\n\nBy the end of June the new procedure will have been tested on the pilot line. Should a fault appear, the trial is stopped and the parameter is verified before the work is resumed.",
       questions: [
         { de: "When is the glue applied?", tr: "Tutkal ne zaman uygulanıyor?", options: ["After the gauge has been read", "Before the liquid is filtered", "At the end of the week", "Only on the pilot line"], answer: 0 },
         { de: "What happens if a fault appears?", tr: "Bir arıza çıkarsa ne oluyor?", options: ["The trial is stopped and the parameter is verified", "The entry is deleted", "The manager repeats stage one", "The crate is unloaded"], answer: 0 },
@@ -245,7 +245,7 @@ export const EN_B2_EXAMS: ModuleExamPlan[] = [
         { de: "It is recommended that … be verified.", tr: "…-in doğrulanması öneriliyor", en: "It is recommended that … be verified." },
       ],
       sample:
-        "INCIDENT REPORT — PILOT LINE\n\nThe fault was noticed at 14:20 on 3 June and lasted roughly two hours.\n\nThe sensor was checked first and no deviation was found. The entry for the last maintenance was missing from the inventory, and the gauge had not been read before the glue was applied. The outage must have been caused by the update, because the parameter was changed on the same morning.\n\nThe treatment of the surface is now carried out in two steps, and the maintenance of the line is checked twice. It is recommended that every entry be verified by the workshop before the trial is resumed.",
+        "INCIDENT REPORT — PILOT LINE\n\nThe fault was noticed at 2:20 p.m. on June 3 and lasted roughly two hours.\n\nThe sensor was checked first and no deviation was found. The entry for the last maintenance was missing from the inventory, and the gauge had not been read before the glue was applied. The outage must have been caused by the update, because the parameter was changed on the same morning.\n\nThe treatment of the surface is now carried out in two steps, and the maintenance of the line is checked twice. It is recommended that every entry be verified by the workshop before the trial is resumed.",
     },
   },
 
@@ -293,9 +293,9 @@ export const EN_B2_EXAMS: ModuleExamPlan[] = [
       title: "Correction and a reader's reply",
       titleTr: "Düzeltme ve okur cevabı",
       genre: "Okur mektubu",
-      text: "CORRECTION\n\nIn our report of 12 May it was stated that the circulation of the magazine had fallen by a quarter. The figure was taken from a projection and not from a survey. The publisher, whose letter reached us on 14 May, is right on this point. We regret the mistake.\n\n*\n\nA reader writes:\n\nThank you for the correction, which, however, admits less than it appears to. What the paper argues is that a single figure was wrong; what is missing is the question of how it was chosen.\n\nHaving read both texts, I note that the quotation was paraphrased by an intern and that no consent was given for the name. Never before has an outlet of this size explained so little about its own methodology. Only in the last line is the database mentioned at all.\n\nThe mistake must have been noticed earlier. In that case a correction on page two is not sufficient.\n\nT. Aksoy",
+      text: "CORRECTION\n\nIn our report of May 12 it was stated that the circulation of the magazine had fallen by a quarter. The figure was taken from a projection and not from a survey. The publisher, whose letter reached us on May 14, is right on this point. We regret the mistake.\n\n*\n\nA reader writes:\n\nThank you for the correction, which, however, admits less than it appears to. What the paper argues is that a single figure was wrong; what is missing is the question of how it was chosen.\n\nHaving read both texts, I note that the quotation was paraphrased by an intern and that no consent was given for the name. Never before has an outlet of this size explained so little about its own methodology. Only in the last line is the database mentioned at all.\n\nThe mistake must have been noticed earlier. In that case a correction on page two is not sufficient.\n\nT. Aksoy",
       questions: [
-        { de: "What was wrong in the report of 12 May?", tr: "12 Mayıs haberinde yanlış olan ne?", options: ["The figure came from a projection", "The publisher's name", "The date of the letter", "The size of the outlet"], answer: 0 },
+        { de: "What was wrong in the report of May 12?", tr: "12 Mayıs haberinde yanlış olan ne?", options: ["The figure came from a projection", "The publisher's name", "The date of the letter", "The size of the outlet"], answer: 0 },
         { de: "What does the reader say is missing?", tr: "Okura göre eksik olan ne?", options: ["How the figure was chosen", "The name of the intern", "A second correction", "The letter of the publisher"], answer: 0 },
         { de: "What is the point of “which, however, admits less than it appears to”?", tr: "„which, however, admits less than it appears to“ ne demek istiyor?", options: ["The correction looks bigger than it is", "The correction is too long", "The correction repeats the claim", "The correction was published late"], answer: 0 },
       ],
@@ -478,7 +478,7 @@ export const EN_B2_EXAMS: ModuleExamPlan[] = [
         { de: "We should have funded … rather than …", tr: "…-i değil …-i fonlamamız gerekirdi", en: "We should have funded … rather than …" },
       ],
       sample:
-        "Dear Editor,\n\nIn your piece of 9 May it is claimed that rents are rising because everybody wants to live in the center. What drives the price, however, is the interest rate: it was the rate that changed first, and the shortage followed.\n\nThe measurement of inequality begins with the families who left the district, not with the national budget. Built quickly, the new area is overcrowded and the green space has not been funded.\n\nAdmittedly the market is part of the answer; nonetheless, the claim that it will solve the problem alone is by no means plausible. We should have funded enforcement rather than another campaign.\n\nSincerely,\nK. Demir",
+        "Dear Editor,\n\nIn your piece of May 9 it is claimed that rents are rising because everybody wants to live in the center. What drives the price, however, is the interest rate: it was the rate that changed first, and the shortage followed.\n\nThe measurement of inequality begins with the families who left the district, not with the national budget. Built quickly, the new area is overcrowded and the green space has not been funded.\n\nAdmittedly the market is part of the answer; nonetheless, the claim that it will solve the problem alone is by no means plausible. We should have funded enforcement rather than another campaign.\n\nSincerely,\nK. Demir",
     },
   },
 
@@ -591,11 +591,11 @@ export const EN_B2_EXAMS: ModuleExamPlan[] = [
         { speaker: "Manager", de: "They can't have signed that clause without a check. We should have asked for an interest-free plan.", tr: "O maddeyi kontrol etmeden imzalamış olamazlar. Faizsiz bir plan istememiz gerekirdi." },
         { speaker: "Colleague", de: "Then let us talk about flextime. A permanent position matters more to me than a bonus.", tr: "O hâlde esnek çalışmayı konuşalım. Kalıcı kadro benim için ikramiyeden önemli." },
         { speaker: "Manager", de: "By December we will have decided on the fixed-term contracts.", tr: "Aralığa kadar belirli süreli sözleşmelere karar vermiş olacağız." },
-        { speaker: "Colleague", de: "Then I will put the two conditions in writing, and we can comply with the works council rule.", tr: "O hâlde iki koşulu yazıya geçireceğim, böylece işçi temsilciliği kuralına da uyarız." },
+        { speaker: "Colleague", de: "Then I will put the two conditions in writing, and we can comply with the union rule.", tr: "O hâlde iki koşulu yazıya geçireceğim, böylece işçi temsilciliği kuralına da uyarız." },
       ],
       questions: [
         { de: "What decides a career, according to the colleague?", tr: "Meslektaşa göre kariyeri ne belirliyor?", options: ["The chance of promotion", "The hourly wage", "The bonus", "The notice period"], answer: 0 },
-        { de: "Why was the raise refused?", tr: "Zam neden reddedildi?", options: ["For operational reasons", "Because the file was missing", "Because of the works council", "Because the contract ended"], answer: 0 },
+        { de: "Why was the raise refused?", tr: "Zam neden reddedildi?", options: ["For operational reasons", "Because the file was missing", "Because of the union", "Because the contract ended"], answer: 0 },
         { de: "What does the colleague ask for instead of a bonus?", tr: "Meslektaş ikramiye yerine ne istiyor?", options: ["Flextime and a permanent position", "A longer notice period", "An interest-free loan", "A new personnel file"], answer: 0 },
       ],
     },
@@ -633,7 +633,7 @@ export const EN_B2_EXAMS: ModuleExamPlan[] = [
         { de: "By December we will have …", tr: "Aralığa kadar … yapmış olacağız", en: "By December we will have …" },
       ],
       sample:
-        "Dear Ms. Renner,\n\nThank you for your reply of 6 May. I understand that a raise is not possible this year for operational reasons, and I am not asking you to reopen the budget plan.\n\nWhat matters most to me is not the hourly wage but the chance of promotion and a reliable schedule. If the budget had allowed a raise, I would of course have accepted it; as it stands, two other conditions would be worth more to me: flextime from September and a permanent position at the end of the fixed term.\n\nThe preparation of the handover takes three weeks, so an early decision helps both sides. Could we agree on the two points before December?\n\nBest regards,\nS. Kaya",
+        "Dear Ms. Renner,\n\nThank you for your reply of May 6. I understand that a raise is not possible this year for operational reasons, and I am not asking you to reopen the budget plan.\n\nWhat matters most to me is not the hourly wage but the chance of promotion and a reliable schedule. If the budget had allowed a raise, I would of course have accepted it; as it stands, two other conditions would be worth more to me: flextime from September and a permanent position at the end of the fixed term.\n\nThe preparation of the handover takes three weeks, so an early decision helps both sides. Could we agree on the two points before December?\n\nBest regards,\nS. Kaya",
     },
   },
 
@@ -758,11 +758,11 @@ export const EN_B2_EXAMS: ModuleExamPlan[] = [
       title: "Answer to your complaint",
       titleTr: "Şikâyetinize cevap",
       genre: "Resmî e-posta",
-      text: "Subject: answer to your complaint — file 2026/118\n\nDear Mr. Aksoy,\n\nWith reference to your registered letter of 3 April, which we received on the fifth, I can now answer you in full.\n\nWhat caused the delay was a scheduling conflict in the workshop and not, as stated in your letter, a missing proof of purchase. The filing of your enclosure is recorded on 10 April. Having read the interim report, we accept that the first reply was neither prompt nor clear enough.\n\nThe remaining amount will therefore be credited to your account this week, and a voucher for the delivery cost is enclosed. In view of the terms of use, the right of return remains unchanged.\n\nNever has a case of this kind been closed without a written summary; it is attached. Provided that no further point arises, the file will be closed on 30 April.\n\nYours sincerely,\nL. Sander, customer office",
+      text: "Subject: answer to your complaint — file 2026/118\n\nDear Mr. Aksoy,\n\nWith reference to your registered letter of April 3, which we received on the fifth, I can now answer you in full.\n\nWhat caused the delay was a scheduling conflict in the workshop and not, as stated in your letter, a missing proof of purchase. The filing of your enclosure is recorded on April 10. Having read the interim report, we accept that the first reply was neither prompt nor clear enough.\n\nThe remaining amount will therefore be credited to your account this week, and a voucher for the delivery cost is enclosed. In view of the terms of use, the right of return remains unchanged.\n\nNever has a case of this kind been closed without a written summary; it is attached. Provided that no further point arises, the file will be closed on April 30.\n\nSincerely,\nL. Sander, customer office",
       questions: [
         { de: "What caused the delay, according to the office?", tr: "Kuruma göre gecikmeye ne yol açtı?", options: ["A scheduling conflict in the workshop", "A missing proof of purchase", "The registered letter", "The voucher"], answer: 0 },
         { de: "What does the office admit about the first reply?", tr: "Kurum ilk cevabı hakkında neyi kabul ediyor?", options: ["It was neither prompt nor clear enough", "It was never sent", "It was written by the workshop", "It contained a wrong amount"], answer: 0 },
-        { de: "Under what condition is the matter settled?", tr: "Konu hangi koşulda çözülmüş sayılıyor?", options: ["Provided that no further point arises", "Provided that the voucher is used", "Only after 30 April", "Only if the return is claimed"], answer: 0 },
+        { de: "Under what condition is the matter settled?", tr: "Konu hangi koşulda çözülmüş sayılıyor?", options: ["Provided that no further point arises", "Provided that the voucher is used", "Only after April 30", "Only if the return is claimed"], answer: 0 },
       ],
     },
     speaking: [
@@ -788,7 +788,7 @@ export const EN_B2_EXAMS: ModuleExamPlan[] = [
         { de: "Provided that no further point arises, …", tr: "Başka bir nokta çıkmazsa, …", en: "Provided that no further point arises, …" },
       ],
       sample:
-        "Subject: answer to your complaint — file 2026/204\n\nDear Ms. Yilmaz,\n\nWith reference to your letter of 3 April, which we received on the fifth, I can now answer you in full.\n\nWhat caused the delay was a scheduling conflict in our workshop and not a missing document: the filing of your enclosure is recorded on 10 April. Having read the interim report, we accept that our first reply was neither prompt nor clear enough.\n\nThe remaining amount will be credited to your account this week and a voucher for the delivery cost is enclosed. In view of the terms of use, your right of return remains unchanged.\n\nProvided that no further point arises, we consider the matter settled.\n\nYours sincerely,\nL. Sander",
+        "Subject: answer to your complaint — file 2026/204\n\nDear Ms. Yilmaz,\n\nWith reference to your letter of April 3, which we received on the fifth, I can now answer you in full.\n\nWhat caused the delay was a scheduling conflict in our workshop and not a missing document: the filing of your enclosure is recorded on April 10. Having read the interim report, we accept that our first reply was neither prompt nor clear enough.\n\nThe remaining amount will be credited to your account this week and a voucher for the delivery cost is enclosed. In view of the terms of use, your right of return remains unchanged.\n\nProvided that no further point arises, we consider the matter settled.\n\nSincerely,\nL. Sander",
     },
   },
 ];

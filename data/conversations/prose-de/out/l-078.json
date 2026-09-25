@@ -805,11 +805,6 @@
   "de": "Jetzt bist du dran: Das Maklerbüro ruft um zehn an."
  },
  {
-  "tr": "denir. İkincisi Britanya'da çok kullanılır.",
-  "kind": "say.tr",
-  "de": "genannt. Das zweite wird in Großbritannien viel benutzt."
- },
- {
   "tr": "denir; Amerika'da aynı yere 'hallway' denir.",
   "kind": "say.tr",
   "de": "genannt; in Amerika heißt derselbe Ort 'hallway'."
@@ -970,11 +965,6 @@
   "de": "Der Gang ist der Ort, der dem Gast die Tür öffnet; für eine geräumige Wohnung dagegen sagt man"
  },
  {
-  "tr": "denir. Britanya'da giriş kat 'ground floor', bir üstü 'first floor' olur.",
-  "kind": "say.tr",
-  "de": "genannt. In Großbritannien heißt das Erdgeschoss 'ground floor' und das darüber 'first floor'."
- },
- {
   "tr": "ile söylenir. İkincisi kavga etmek değil, farklı düşünmek anlamına da gelir.",
   "kind": "say.tr",
   "de": "gesagt. Das zweite heißt nicht streiten im Sinne von Krach, sondern auch anderer Meinung sein."
@@ -1005,9 +995,9 @@
   "de": "Hallo! Heute lernen wir die Sprache der Wohnungssuche: Anzeigen, Maklerbüros, Besichtigungen."
  },
  {
-  "tr": "denir. İkincisi Britanya'da çok kullanılır ve tam olarak 'daireyi görmeye gitmek' demektir.",
+  "tr": "denir. İkincisi Amerikan emlak dilinde çok kullanılır ve tam olarak 'daireyi görmeye gitmek' demektir.",
   "kind": "say.tr",
-  "de": "genannt. Das zweite wird in Großbritannien viel benutzt und heißt genau «die Wohnung ansehen gehen»."
+  "de": "genannt. Das zweite ist in der amerikanischen Immobiliensprache sehr gebräuchlich und heißt genau «die Wohnung ansehen gehen»."
  },
  {
   "tr": "Şimdi dersin kuralı. Sözleşmede kimin yaptığı önemli değildir, o yüzden edilgen çatı kurulur:",
@@ -1025,9 +1015,9 @@
   "de": "Hallo! Heute lernen wir, von den besichtigten Wohnungen zu erzählen: welche war hell, welche hatte einen Balkon."
  },
  {
-  "tr": "Beş daire gezdiysen hepsinin adı 'the flat'; onları ayıran şey arkalarına eklediğin yan cümle. Hazır mısın?",
+  "tr": "Beş daire gezdiysen hepsinin adı 'the apartment'; onları ayıran şey arkalarına eklediğin yan cümle. Hazır mısın?",
   "kind": "say.tr",
-  "de": "Hast du fünf Wohnungen gesehen, heißen alle 'the flat'; was sie unterscheidet, ist der Nebensatz dahinter. Bist du bereit?"
+  "de": "Hast du fünf Wohnungen gesehen, heißen alle 'the apartment'; was sie unterscheidet, ist der Nebensatz dahinter. Bist du bereit?"
  },
  {
   "tr": "Gün boyunca üç ayrı gelecek kullanacaksın ve hangisini seçtiğin işin ne kadar kesin olduğunu söylüyor. Hazır mısın?",

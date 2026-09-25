@@ -177,6 +177,7 @@ export const enA2U01: SkillExercise[] = [
     genre: "dialogue",
     intro: "Mutfakta bir gün. Aynı anda kaç iş sürüyor?",
     gloss: [
+      { de: "bin", tr: "çöp kutusu" },
       { de: "rang", tr: "çaldı" },
       { de: "smoke", tr: "duman" },
       { de: "Poor you", tr: "vah vah" },
@@ -260,7 +261,7 @@ export const enA2U01: SkillExercise[] = [
     segments: [
       { speaker: "Deniz", text: "I bought a new computer two days ago. The old one was ten years old." },
       { speaker: "Deniz", text: "Last week I lost all my work on it. Suddenly the screen was dark." },
-      { speaker: "Deniz", text: "I brought it to a shop. The man there was teaching a course, so I waited one hour." },
+      { speaker: "Deniz", text: "I brought it to a store. The man there was teaching a course, so I waited one hour." },
       { speaker: "Deniz", text: "Finally he looked at it and said: This computer is very old. Buy a new one." },
       { speaker: "Deniz", text: "Yesterday I went to the city and I looked at three computers. They were not cheap." },
       { speaker: "Deniz", text: "But recently I work at home every day, so I need a good computer." },
@@ -274,7 +275,7 @@ export const enA2U01: SkillExercise[] = [
       },
       {
         text: "Why did Deniz wait one hour?",
-        options: ["the man was teaching a course", "the shop was closed", "the computer was dark"],
+        options: ["the man was teaching a course", "the store was closed", "the computer was dark"],
         answer: 0,
         explain: "„The man there was teaching a course, so I waited one hour.“",
       },
@@ -300,7 +301,7 @@ export const enA2U01: SkillExercise[] = [
         answer: 0,
         items: [
           "Last week I lost all my work on it.",
-          "I brought it to a shop.",
+          "I brought it to a store.",
           "Yesterday I went to the city.",
           "I bought a new computer two days ago.",
         ],

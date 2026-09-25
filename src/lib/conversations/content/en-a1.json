@@ -177,7 +177,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Daha da kısa bir yol var. İngilizler çok sık"
+      "text": "Daha da kısa bir yol var. Anadili İngilizce olanlar çok sık"
      },
      {
       "lang": "en",
@@ -773,7 +773,7 @@
     "tr": "hüzünlü"
    },
    {
-    "de": "ill",
+    "de": "sick",
     "tr": "hasta"
    }
   ],
@@ -1066,7 +1066,7 @@
      },
      {
       "lang": "en",
-      "text": "ill"
+      "text": "sick"
      },
      {
       "lang": "tr",
@@ -1074,12 +1074,12 @@
      },
      {
       "lang": "en",
-      "text": "ill"
+      "text": "sick"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "ill"
+     "target": "sick"
     }
    },
    {
@@ -1524,7 +1524,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Ama günlük konuşmada İngilizler bunu neredeyse hiç böyle söylemez, kısaltırlar."
+      "text": "Ama günlük konuşmada anadili İngilizce olanlar bunu neredeyse hiç böyle söylemez, kısaltırlar."
      },
      {
       "lang": "en",
@@ -3690,7 +3690,7 @@
      },
      {
       "lang": "tr",
-      "text": "Ama yaş sorarken İngilizler farklı bir yol seçer. Eski, yaşlı demek olan old kelimesini kullanırlar:"
+      "text": "Ama yaş sorarken anadili İngilizce olanlar farklı bir yol seçer. Eski, yaşlı demek olan old kelimesini kullanırlar:"
      },
      {
       "lang": "en",
@@ -3793,7 +3793,7 @@
      },
      {
       "lang": "en",
-      "text": "It's twelve pounds."
+      "text": "It's twelve dollars."
      }
     ]
    },
@@ -4449,7 +4449,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Küçük bir püf noktası: aynı harf iki kez arka arkaya geliyorsa İngilizler her ikisini tek tek söylemek yerine"
+      "text": "Küçük bir püf noktası: aynı harf iki kez arka arkaya geliyorsa anadili İngilizce olanlar her ikisini tek tek söylemek yerine"
      },
      {
       "lang": "en",
@@ -4868,7 +4868,7 @@
      },
      {
       "lang": "tr",
-      "text": "Ama İngilizler konuşurken bunu kısaltır ve"
+      "text": "Ama anadili İngilizce olanlar konuşurken bunu kısaltır ve"
      },
      {
       "lang": "en",
@@ -5464,7 +5464,7 @@
      },
      {
       "lang": "tr",
-      "text": "Konuşurken İngilizler bunu kısaltır:"
+      "text": "Konuşurken anadili İngilizce olanlar bunu kısaltır:"
      },
      {
       "lang": "en",
@@ -7182,7 +7182,6 @@
      "kind": "produce",
      "target": "I have two brothers",
      "accept": [
-      "I have got two brothers",
       "I've got two brothers"
      ],
      "hint": [
@@ -7205,7 +7204,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Küçük bir konuşma inceliği: İngilizler hızlı konuşurken kısaltır."
+      "text": "Küçük bir konuşma inceliği: Anadili İngilizce olanlar hızlı konuşurken kısaltır."
      },
      {
       "lang": "en",
@@ -7372,7 +7371,7 @@
     "tr": "bir başkasının nesi olduğunu söylerken kullanılır (has got)"
    },
    {
-    "de": "Have you got a sister?",
+    "de": "Do you have a sister?",
     "tr": "karşındakine ailesini sorarken kullanılır"
    }
   ],
@@ -7385,7 +7384,7 @@
      },
      {
       "lang": "tr",
-      "text": "İngilizcede bir şeyin senin olduğunu söylemenin en günlük yolu have got. Dersin sonunda kaç kardeşin olduğunu söyleyebilecek, karşındakine de sorabileceksin. Hazır mısın?"
+      "text": "İngilizcede bir şeye sahip olduğunu söylemenin temel yolu have; Amerikalılar konuşurken bunun yerine çok sık I've got da der. Dersin sonunda kaç kardeşin olduğunu söyleyebilecek, karşındakine de sorabileceksin. Hazır mısın?"
      }
     ],
     "expect": {
@@ -7400,7 +7399,7 @@
      },
      {
       "lang": "tr",
-      "text": "Ama İngilizler konuşurken çoğu zaman tek başına have demez, have got der. Tam hâli şöyle:"
+      "text": "Amerikan İngilizcesinde düz cümlede I have denir; konuşurken ise çok sık have got de duyarsın. Tam hâli şöyle:"
      },
      {
       "lang": "en",
@@ -7622,7 +7621,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Sormaya geçelim. Soru sorarken have kelimesi cümlenin başına geçiyor."
+      "text": "Sormaya geçelim. Amerikalılar soruda got kullanmaz; cümlenin başına do gelir ve have yerinde kalır."
      },
      {
       "lang": "tr",
@@ -7630,7 +7629,7 @@
      },
      {
       "lang": "en",
-      "text": "Have you got a brother?"
+      "text": "Do you have a brother?"
      },
      {
       "lang": "tr",
@@ -7639,7 +7638,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Have you got a brother?"
+     "target": "Do you have a brother?"
     }
    },
    {
@@ -7770,7 +7769,7 @@
      },
      {
       "lang": "en",
-      "text": "Yes, I have."
+      "text": "Yes, I do."
      },
      {
       "lang": "tr",
@@ -7778,11 +7777,11 @@
      },
      {
       "lang": "en",
-      "text": "No, I haven't."
+      "text": "No, I don't."
      },
      {
       "lang": "tr",
-      "text": "Haven't, have not demek. Konuşmada hep kısa hâli kullanılır."
+      "text": "Don't, do not demek. Konuşmada hep kısa hâli kullanılır."
      }
     ]
    },
@@ -7795,19 +7794,19 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "Have you got a sister?",
+     "target": "Do you have a sister?",
      "accept": [
-      "Do you have a sister?",
-      "Have you got a sister"
+      "Do you have a sister",
+      "Have you got a sister?"
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Soruda Have kelimesi en başa geçiyor: Have you got ...?"
+       "text": "Soruda başa Do gelir: Do you have ...?"
       },
       {
        "lang": "en",
-       "text": "Have you got a sister?"
+       "text": "Do you have a sister?"
       },
       {
        "lang": "tr",
@@ -7909,7 +7908,7 @@
      },
      {
       "lang": "en",
-      "text": "Have you got a brother?"
+      "text": "Do you have a brother?"
      },
      {
       "lang": "tr",
@@ -7917,7 +7916,7 @@
      },
      {
       "lang": "en",
-      "text": "Yes, I have"
+      "text": "Yes, I do"
      },
      {
       "lang": "tr",
@@ -7925,7 +7924,7 @@
      },
      {
       "lang": "en",
-      "text": "No, I haven't."
+      "text": "No, I don't."
      }
     ]
    },
@@ -7949,7 +7948,7 @@
   "chat": {
    "scene": "Kursta yeni tanıştığın bir arkadaşınla arada aileden konuşuyorsunuz.",
    "partner": "Emma, kurstan yeni bir arkadaşın",
-   "opening": "Have you got any brothers or sisters?",
+   "opening": "Do you have any brothers or sisters?",
    "openingTr": "Erkek ya da kız kardeşin var mı?",
    "goal": "Kaç kardeşin olduğunu have got ile söylemen, Emma'ya aynı soruyu sorman ve onun ailesi hakkında en az bir şey daha öğrenmen.",
    "minTurns": 7
@@ -8041,7 +8040,7 @@
      },
      {
       "lang": "tr",
-      "text": "Türkçesi \"değil\" demek. İngilizler bunu çoğu zaman do ile birleştirip kısaltır:"
+      "text": "Türkçesi \"değil\" demek. Anadili İngilizce olanlar bunu çoğu zaman do ile birleştirip kısaltır:"
      },
      {
       "lang": "en",
@@ -8955,7 +8954,6 @@
      "kind": "produce",
      "target": "I have a cat",
      "accept": [
-      "I have got a cat",
       "I've got a cat"
      ],
      "hint": [
@@ -9079,8 +9077,7 @@
      "kind": "produce",
      "target": "Do you have a cat",
      "accept": [
-      "Do you have a cat?",
-      "Have you got a cat"
+      "Do you have a cat?"
      ],
      "hint": [
       {
@@ -9707,7 +9704,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Konuşurken İngilizler bazı kelimeleri birleştirir."
+      "text": "Konuşurken anadili İngilizce olanlar bazı kelimeleri birleştirir."
      },
      {
       "lang": "en",
@@ -10052,8 +10049,7 @@
      "accept": [
       "I have two friends",
       "I have 2 friends",
-      "I've got two friends",
-      "I have got two friends"
+      "I've got two friends"
      ],
      "hint": [
       {
@@ -10435,7 +10431,7 @@
   "icon": "family",
   "title": "What he looks like",
   "titleTr": "Dış görünüş",
-  "summary": "Birinin dış görünüşünü be + sıfat ve have got + isim kalıplarıyla anlatmayı öğreniyorsun.",
+  "summary": "Birinin dış görünüşünü be + sıfat ve have + isim kalıplarıyla anlatmayı öğreniyorsun.",
   "minutes": 9,
   "focusId": "To-be",
   "vocab": [
@@ -10478,7 +10474,7 @@
     "tr": "birinin boyunu ya da bir özelliğini söylerken kullanılır"
    },
    {
-    "de": "She has got long hair.",
+    "de": "She has long hair.",
     "tr": "birinde ne olduğunu, neye sahip olduğunu anlatırken kullanılır"
    },
    {
@@ -10642,7 +10638,7 @@
      },
      {
       "lang": "tr",
-      "text": "Konuşurken İngilizler bunu kısaltır:"
+      "text": "Konuşurken anadili İngilizce olanlar bunu kısaltır:"
      },
      {
       "lang": "en",
@@ -10739,12 +10735,8 @@
       "text": "Peki \"onun uzun saçı var\" nasıl denir? İngilizcede sahip olmak için have kullanılır. He, she, it için ise has olur."
      },
      {
-      "lang": "tr",
-      "text": "Günlük konuşmada arkasına got eklenir:"
-     },
-     {
       "lang": "en",
-      "text": "has got"
+      "text": "has"
      },
      {
       "lang": "tr",
@@ -10760,7 +10752,7 @@
      },
      {
       "lang": "en",
-      "text": "She has got long hair."
+      "text": "She has long hair."
      },
      {
       "lang": "tr",
@@ -10768,12 +10760,12 @@
      },
      {
       "lang": "en",
-      "text": "She has got long hair."
+      "text": "She has long hair."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "She has got long hair."
+     "target": "She has long hair."
     }
    },
    {
@@ -10905,21 +10897,19 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "He has got blue eyes.",
+     "target": "He has blue eyes.",
      "accept": [
       "He's got blue eyes.",
-      "He has blue eyes.",
-      "He has got blue eyes",
-      "he is got blue eyes."
+      "He has blue eyes"
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Önce he, sonra has got, sonra renk ve isim: mavi gözler."
+       "text": "Önce he, sonra has, sonra renk ve isim: mavi gözler."
       },
       {
        "lang": "en",
-       "text": "He has got blue eyes."
+       "text": "He has blue eyes."
       }
      ]
     }
@@ -10932,7 +10922,7 @@
      },
      {
       "lang": "en",
-      "text": "This is Tom. He is tall and he has got short hair."
+      "text": "This is Tom. He is tall and he has short hair."
      },
      {
       "lang": "tr",
@@ -11012,7 +11002,7 @@
      },
      {
       "lang": "en",
-      "text": "has got"
+      "text": "has"
      },
      {
       "lang": "tr",
@@ -11020,7 +11010,7 @@
      },
      {
       "lang": "en",
-      "text": "She has got long hair. He has got blue eyes."
+      "text": "She has long hair. He has blue eyes."
      },
      {
       "lang": "tr",
@@ -11046,7 +11036,7 @@
    "partner": "Seninle birlikte bekleyen bir arkadaş",
    "opening": "Hi! Who are we looking for? What does he look like?",
    "openingTr": "Selam! Kimi arıyoruz? O nasıl biri?",
-   "goal": "Arkadaşının boyunu, saçını ve gözlerini be ve has got kullanarak anlatabildiysen ve karşındakinin sorularına cevap verdiysen konuşma başarılıdır.",
+   "goal": "Arkadaşının boyunu, saçını ve gözlerini be ve has kullanarak anlatabildiysen ve karşındakinin sorularına cevap verdiysen konuşma başarılıdır.",
    "minTurns": 7
   }
  },
@@ -11096,7 +11086,7 @@
   ],
   "patterns": [
    {
-    "de": "He plays football.",
+    "de": "He plays soccer.",
     "tr": "he, she, it öznesiyle fiilin sonuna -s eklenir"
    },
    {
@@ -11260,7 +11250,7 @@
      },
      {
       "lang": "en",
-      "text": "He plays football."
+      "text": "He plays soccer."
      },
      {
       "lang": "tr",
@@ -11268,12 +11258,12 @@
      },
      {
       "lang": "en",
-      "text": "He plays football."
+      "text": "He plays soccer."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "He plays football."
+     "target": "He plays soccer."
     }
    },
    {
@@ -11329,10 +11319,9 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "My friend plays football.",
+     "target": "My friend plays soccer.",
      "accept": [
-      "My friend plays soccer.",
-      "My friend plays football"
+      "My friend plays soccer"
      ],
      "hint": [
       {
@@ -11345,7 +11334,7 @@
       },
       {
        "lang": "en",
-       "text": "My friend plays football."
+       "text": "My friend plays soccer."
       },
       {
        "lang": "tr",
@@ -14144,7 +14133,7 @@
     "tr": "gazete"
    },
    {
-    "de": "shop",
+    "de": "store",
     "tr": "dükkân"
    }
   ],
@@ -14459,7 +14448,7 @@
      },
      {
       "lang": "tr",
-      "text": "Buradaki I'll aslında I will'in kısaltması. İngilizler böyle kısaltarak konuşur; sen de öyle söyle, daha doğal olur."
+      "text": "Buradaki I'll aslında I will'in kısaltması. Anadili İngilizce olanlar böyle kısaltarak konuşur; sen de öyle söyle, daha doğal olur."
      }
     ]
    },
@@ -14535,7 +14524,7 @@
      },
      {
       "lang": "en",
-      "text": "shop"
+      "text": "store"
      },
      {
       "lang": "tr",
@@ -14543,12 +14532,12 @@
      },
      {
       "lang": "en",
-      "text": "shop"
+      "text": "store"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "shop"
+     "target": "store"
     }
    },
    {
@@ -14723,8 +14712,8 @@
     "tr": "garson"
    },
    {
-    "de": "bill",
-    "tr": "hesap / fatura"
+    "de": "check",
+    "tr": "hesap (restoranda)"
    },
    {
     "de": "soup",
@@ -14749,7 +14738,7 @@
     "tr": "kibarca sipariş verirken kullanılır"
    },
    {
-    "de": "Can I have the bill, please?",
+    "de": "Can I have the check, please?",
     "tr": "garsondan menüyü ya da hesabı isterken kullanılır"
    }
   ],
@@ -15134,20 +15123,20 @@
      },
      {
       "lang": "en",
-      "text": "waiter, bill"
+      "text": "waiter, check"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: waiter = garson · bill = hesap, fatura. Lütfen tekrar et:"
+      "text": "Türkçesi: waiter = garson · check = hesap. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "waiter, bill"
+      "text": "waiter, check"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "waiter, bill"
+     "target": "waiter, check"
     }
    },
    {
@@ -15226,11 +15215,11 @@
      },
      {
       "lang": "en",
-      "text": "bill"
+      "text": "check"
      },
      {
       "lang": "tr",
-      "text": "Hesap demek. İngiltere'de bill, Amerika'da çoğu zaman check derler. İkisi de doğru."
+      "text": "Hesap demek. Amerika'da check, İngiltere'de bill derler. İkisi de doğru."
      },
      {
       "lang": "tr",
@@ -15238,7 +15227,7 @@
      },
      {
       "lang": "en",
-      "text": "The bill, please."
+      "text": "The check, please."
      }
     ]
    },
@@ -15255,12 +15244,11 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "Can I have the bill, please?",
+     "target": "Can I have the check, please?",
      "accept": [
-      "Could I have the bill, please?",
-      "Can I have the check, please?",
-      "The bill, please.",
-      "Can we have the bill, please?"
+      "Could I have the check, please?",
+      "The check, please.",
+      "Can we have the check, please?"
      ],
      "hint": [
       {
@@ -15273,7 +15261,7 @@
       },
       {
        "lang": "en",
-       "text": "Can I have the bill, please?"
+       "text": "Can I have the check, please?"
       },
       {
        "lang": "tr",
@@ -15365,7 +15353,7 @@
      },
      {
       "lang": "en",
-      "text": "Can I have the bill, please?"
+      "text": "Can I have the check, please?"
      },
      {
       "lang": "tr",
@@ -18634,15 +18622,15 @@
   "level": "A1",
   "course": "en",
   "icon": "money",
-  "title": "Paying the bill",
+  "title": "Paying the check",
   "titleTr": "Hesabı ödemek",
   "summary": "Restoranda hesap istemeyi, nakit mi kartla mı ödeyeceğini söylemeyi ve birlikte ödemeyi öğretir.",
   "minutes": 8,
   "focusId": "Requests",
   "vocab": [
    {
-    "de": "bill",
-    "tr": "hesap / fatura"
+    "de": "check",
+    "tr": "hesap (restoranda)"
    },
    {
     "de": "pay",
@@ -18661,8 +18649,8 @@
     "tr": "birlikte"
    },
    {
-    "de": "check",
-    "tr": "çek"
+    "de": "bill",
+    "tr": "fatura"
    },
    {
     "de": "give",
@@ -18675,7 +18663,7 @@
   ],
   "patterns": [
    {
-    "de": "Can I have the bill, please?",
+    "de": "Can I have the check, please?",
     "tr": "garsondan hesabı isterken kullanılır"
    },
    {
@@ -18715,16 +18703,16 @@
      },
      {
       "lang": "en",
-      "text": "bill"
+      "text": "check"
      },
      {
       "lang": "tr",
-      "text": "'bill' hesap demek. Garsonun masaya getirdiği o küçük kâğıt. Lütfen 'bill' de."
+      "text": "'check' hesap demek. Garsonun masaya getirdiği o küçük kâğıt. Lütfen 'check' de."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "bill"
+     "target": "check"
     }
    },
    {
@@ -18735,7 +18723,7 @@
      },
      {
       "lang": "en",
-      "text": "The bill, please."
+      "text": "The check, please."
      },
      {
       "lang": "tr",
@@ -18744,7 +18732,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The bill, please."
+     "target": "The check, please."
     }
    },
    {
@@ -18755,7 +18743,7 @@
      },
      {
       "lang": "en",
-      "text": "Can I have the bill, please?"
+      "text": "Can I have the check, please?"
      },
      {
       "lang": "tr",
@@ -18764,7 +18752,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Can I have the bill, please?"
+     "target": "Can I have the check, please?"
     }
    },
    {
@@ -18946,20 +18934,20 @@
      },
      {
       "lang": "en",
-      "text": "check"
+      "text": "bill"
      },
      {
       "lang": "tr",
-      "text": "Türkçesi: çek. Lütfen tekrar et:"
+      "text": "Türkçesi: fatura. Amerika'da bill daha çok elektrik, su gibi faturalar için kullanılır. Lütfen tekrar et:"
      },
      {
       "lang": "en",
-      "text": "check"
+      "text": "bill"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "check"
+     "target": "bill"
     }
    },
    {
@@ -19129,21 +19117,20 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "Can I have the bill, please?",
+     "target": "Can I have the check, please?",
      "accept": [
-      "Can we have the bill, please?",
-      "The bill, please.",
-      "Could I have the bill, please?",
-      "Can I have the check, please?"
+      "Can we have the check, please?",
+      "The check, please.",
+      "Could I have the check, please?"
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "'Can I have' ile başla, ortada 'the bill', sonda 'please'."
+       "text": "'Can I have' ile başla, ortada 'the check', sonda 'please'."
       },
       {
        "lang": "en",
-       "text": "Can I have the bill, please?"
+       "text": "Can I have the check, please?"
       },
       {
        "lang": "tr",
@@ -19156,11 +19143,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir bilgi notu: Amerika'da 'bill' yerine çoğu zaman 'check' derler."
+      "text": "Bir bilgi notu: İngiltere'de 'check' yerine 'bill' derler."
      },
      {
       "lang": "en",
-      "text": "Can I have the check, please?"
+      "text": "Can I have the bill, please?"
      },
      {
       "lang": "tr",
@@ -19172,11 +19159,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Özetleyelim: hesap 'bill', ödemek 'pay', nakit 'cash', kart 'card', birlikte 'together'."
+      "text": "Özetleyelim: hesap 'check', ödemek 'pay', nakit 'cash', kart 'card', birlikte 'together'."
      },
      {
       "lang": "en",
-      "text": "Can I have the bill, please?"
+      "text": "Can I have the check, please?"
      },
      {
       "lang": "en",
@@ -20563,7 +20550,7 @@
      },
      {
       "lang": "en",
-      "text": "The film starts at eight in the evening."
+      "text": "The movie starts at eight in the evening."
      },
      {
       "lang": "tr",
@@ -20921,7 +20908,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Burada edat değişiyor, dikkat et."
+      "text": "Burada küçük bir fark var, dikkat et."
      },
      {
       "lang": "en",
@@ -20929,11 +20916,7 @@
      },
      {
       "lang": "tr",
-      "text": "Hafta sonu, yani hafta sonunda demek. On değil, at. Ve arada bir the var."
-     },
-     {
-      "lang": "tr",
-      "text": "Amerikalılar çoğu zaman 'on the weekend' der; ikisi de anlaşılır, ama biz"
+      "text": "Hafta sonu, yani hafta sonunda demek. Edat yine on, ama arada bir the var. İngiltere'de 'at the weekend' de denir; ikisi de anlaşılır, ama biz Amerikan kullanımıyla"
      },
      {
       "lang": "en",
@@ -20941,7 +20924,7 @@
      },
      {
       "lang": "tr",
-      "text": "ile ilerleyelim."
+      "text": "ile devam ediyoruz."
      }
     ]
    },
@@ -21159,7 +21142,7 @@
      },
      {
       "lang": "tr",
-      "text": "Gün varsa on. Hafta sonu için at. Günün bölümü için in."
+      "text": "Gün varsa on. Hafta sonu için de on the. Günün bölümü için in."
      }
     ]
    },
@@ -21260,7 +21243,7 @@
    "partner": "Sam, sınıftan bir arkadaşın",
    "opening": "Hi! Are you free on Saturday?",
    "openingTr": "Selam! Cumartesi müsait misin?",
-   "goal": "Öğrenci en az bir kez gün söylerken 'on' kullanır (on Saturday / on Sunday), bir kez 'at the weekend' ya da 'in the morning' gibi bir zaman kalıbı kurar ve buluşma için bir gün üzerinde anlaşır.",
+   "goal": "Öğrenci en az bir kez gün söylerken 'on' kullanır (on Saturday / on Sunday), bir kez 'on the weekend' ya da 'in the morning' gibi bir zaman kalıbı kurar ve buluşma için bir gün üzerinde anlaşır.",
    "minTurns": 7
   }
  },
@@ -23771,7 +23754,7 @@
     "tr": "radyo"
    },
    {
-    "de": "film",
+    "de": "movie",
     "tr": "film"
    }
   ],
@@ -23781,7 +23764,7 @@
     "tr": "bir şeyi yapmayı sevdiğini söylerken kullanılır"
    },
    {
-    "de": "Do you like watching films?",
+    "de": "Do you like watching movies?",
     "tr": "karşındakine bir şeyden hoşlanıp hoşlanmadığını sorarken kullanılır"
    },
    {
@@ -23889,7 +23872,7 @@
      },
      {
       "lang": "en",
-      "text": "I watch a film."
+      "text": "I watch a movie."
      }
     ]
    },
@@ -24093,7 +24076,7 @@
      },
      {
       "lang": "en",
-      "text": "film"
+      "text": "movie"
      },
      {
       "lang": "tr",
@@ -24101,12 +24084,12 @@
      },
      {
       "lang": "en",
-      "text": "film"
+      "text": "movie"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "film"
+     "target": "movie"
     }
    },
    {
@@ -24200,7 +24183,7 @@
      },
      {
       "lang": "en",
-      "text": "Do you like watching films?"
+      "text": "Do you like watching movies?"
      },
      {
       "lang": "tr",
@@ -24231,8 +24214,7 @@
      "kind": "produce",
      "target": "Do you like walking?",
      "accept": [
-      "Do you like going for a walk?",
-      "Do you like walking?"
+      "Do you like going for a walk?"
      ],
      "hint": [
       {
@@ -24266,12 +24248,12 @@
      },
      {
       "lang": "en",
-      "text": "I like playing football."
+      "text": "I like playing soccer."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "I like playing football.",
+     "statement": "I like playing soccer.",
      "answer": true,
      "why": [
       {
@@ -24524,7 +24506,7 @@
      },
      {
       "lang": "tr",
-      "text": "Buradaki I'm aslında I am'in kısaltması. İngilizler konuşurken neredeyse hep kısaltmayı kullanır."
+      "text": "Buradaki I'm aslında I am'in kısaltması. Anadili İngilizce olanlar konuşurken neredeyse hep kısaltmayı kullanır."
      }
     ]
    },
@@ -25042,7 +25024,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir de saat sormanın kendi kalıbı var. İngilizler saati sorarken \"ne zaman\" demez;"
+      "text": "Bir de saat sormanın kendi kalıbı var. Anadili İngilizce olanlar saati sorarken \"ne zaman\" demez;"
      },
      {
       "lang": "en",
@@ -25233,7 +25215,7 @@
      },
      {
       "lang": "en",
-      "text": "When does the shop close?"
+      "text": "When does the store close?"
      },
      {
       "lang": "tr",
@@ -25241,12 +25223,12 @@
      },
      {
       "lang": "en",
-      "text": "When does the shop close?"
+      "text": "When does the store close?"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "When does the shop close?"
+     "target": "When does the store close?"
     }
    },
    {
@@ -25623,7 +25605,7 @@
      },
      {
       "lang": "en",
-      "text": "When does the shop close?"
+      "text": "When does the store close?"
      },
      {
       "lang": "tr",
@@ -25783,7 +25765,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Buradaki I'm aslında I am'in kısaltması. İngilizler günlük konuşmada neredeyse hep kısasını kullanır. I am looking değil, I'm looking."
+      "text": "Buradaki I'm aslında I am'in kısaltması. Anadili İngilizce olanlar günlük konuşmada neredeyse hep kısasını kullanır. I am looking değil, I'm looking."
      }
     ]
    },
@@ -26995,7 +26977,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Küçük bir not: bu kelimenin iki yazılışı var. İngiltere'de"
+      "text": "Küçük bir not: bu kelimenin iki yazılışı var. Amerika'da"
      },
      {
       "lang": "en",
@@ -27003,15 +26985,15 @@
      },
      {
       "lang": "tr",
-      "text": ", Amerika'da"
+      "text": ", İngiltere'de"
      },
      {
       "lang": "en",
-      "text": "color"
+      "text": "colour"
      },
      {
       "lang": "tr",
-      "text": ". Okunuşu aynı, ikisi de doğru. Sen hangisini istersen yaz."
+      "text": ". Okunuşu aynı, ikisi de doğru; biz Amerikan yazımını kullanıyoruz."
      }
     ]
    },
@@ -27261,7 +27243,6 @@
      "target": "I have a black car.",
      "accept": [
       "I've got a black car.",
-      "I have got a black car.",
       "I have a black car"
      ],
      "hint": [
@@ -27814,7 +27795,7 @@
      },
      {
       "lang": "tr",
-      "text": "demek. İngilizler konuşurken hep kısaltır:"
+      "text": "demek. Anadili İngilizce olanlar konuşurken hep kısaltır:"
      },
      {
       "lang": "en",
@@ -29228,7 +29209,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Mağazada bir ürünü başkasıyla değiştirmek için İngilizler çoğu zaman"
+      "text": "Mağazada bir ürünü başkasıyla değiştirmek için anadili İngilizce olanlar çoğu zaman"
      },
      {
       "lang": "en",
@@ -30704,8 +30685,7 @@
      "target": "I have a little water.",
      "accept": [
       "I have some water.",
-      "I've got a little water.",
-      "I have got a little water."
+      "I've got a little water."
      ],
      "hint": [
       {
@@ -30898,9 +30878,7 @@
      "kind": "produce",
      "target": "I don't have enough time.",
      "accept": [
-      "I do not have enough time.",
-      "I haven't got enough time.",
-      "I have not got enough time."
+      "I do not have enough time."
      ],
      "hint": [
       {
@@ -31047,7 +31025,7 @@
     "tr": "hasta"
    },
    {
-    "de": "chemist",
+    "de": "pharmacy",
     "tr": "eczane"
    },
    {
@@ -31055,7 +31033,7 @@
     "tr": "diş fırçası"
    },
    {
-    "de": "plaster",
+    "de": "Band-Aid",
     "tr": "yara bandı"
    }
   ],
@@ -31389,7 +31367,7 @@
      },
      {
       "lang": "en",
-      "text": "chemist"
+      "text": "pharmacy"
      },
      {
       "lang": "tr",
@@ -31397,12 +31375,12 @@
      },
      {
       "lang": "en",
-      "text": "chemist"
+      "text": "pharmacy"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "chemist"
+     "target": "pharmacy"
     }
    },
    {
@@ -31437,7 +31415,7 @@
      },
      {
       "lang": "en",
-      "text": "plaster"
+      "text": "Band-Aid"
      },
      {
       "lang": "tr",
@@ -31445,12 +31423,12 @@
      },
      {
       "lang": "en",
-      "text": "plaster"
+      "text": "Band-Aid"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "plaster"
+     "target": "Band-Aid"
     }
    },
    {
@@ -33508,7 +33486,7 @@
   "icon": "transport",
   "title": "Buying a ticket",
   "titleTr": "Bilet almak",
-  "summary": "Bilet gişesinde \"I'd like\" ile kibarca bilet istemeyi, tek yön (single) ile gidiş-dönüş (return) arasındaki farkı ve fiyat sormayı öğretir.",
+  "summary": "Bilet gişesinde \"I'd like\" ile kibarca bilet istemeyi, tek yön (one-way) ile gidiş-dönüş (round-trip) arasındaki farkı ve fiyat sormayı öğretir.",
   "minutes": 9,
   "focusId": "Would-like",
   "vocab": [
@@ -33529,7 +33507,7 @@
     "tr": "oturacak yer / koltuk"
    },
    {
-    "de": "return",
+    "de": "round-trip",
     "tr": "gidiş-dönüş"
    },
    {
@@ -33547,11 +33525,11 @@
   ],
   "patterns": [
    {
-    "de": "I'd like a ticket to London, please.",
+    "de": "I'd like a ticket to New York, please.",
     "tr": "bilet isterken kullanılır"
    },
    {
-    "de": "Single or return?",
+    "de": "One-way or round-trip?",
     "tr": "tek yön mü gidiş-dönüş mü diye sorarken kullanılır"
    },
    {
@@ -33655,7 +33633,7 @@
      },
      {
       "lang": "tr",
-      "text": "Sonuna please eklersen çok daha kibar olur. İngilizler please kelimesini çok sever."
+      "text": "Sonuna please eklersen çok daha kibar olur. İngilizce konuşanlar please kelimesini çok sever."
      },
      {
       "lang": "en",
@@ -33667,11 +33645,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Peki nereye? Şehrin adından önce to koyuyoruz. Londra'ya:"
+      "text": "Peki nereye? Şehrin adından önce to koyuyoruz. New York'a:"
      },
      {
       "lang": "en",
-      "text": "to London"
+      "text": "to New York"
      },
      {
       "lang": "tr",
@@ -33687,12 +33665,12 @@
      },
      {
       "lang": "en",
-      "text": "I'd like a ticket to London, please."
+      "text": "I'd like a ticket to New York, please."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I'd like a ticket to London, please."
+     "target": "I'd like a ticket to New York, please."
     }
    },
    {
@@ -33703,11 +33681,11 @@
      },
      {
       "lang": "en",
-      "text": "single or return?"
+      "text": "one-way or round-trip?"
      },
      {
       "lang": "tr",
-      "text": "Single tek yön demek, sadece gidiş. Return ise gidiş-dönüş, geri de geliyorsun."
+      "text": "One-way tek yön demek, sadece gidiş. Round-trip ise gidiş-dönüş, geri de geliyorsun."
      }
     ]
    },
@@ -33715,7 +33693,7 @@
     "say": [
      {
       "lang": "en",
-      "text": "Single or return?"
+      "text": "One-way or round-trip?"
      },
      {
       "lang": "tr",
@@ -33723,12 +33701,12 @@
      },
      {
       "lang": "en",
-      "text": "Single or return?"
+      "text": "One-way or round-trip?"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Single or return?"
+     "target": "One-way or round-trip?"
     }
    },
    {
@@ -33740,22 +33718,20 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "I'd like a return ticket, please.",
+     "target": "I'd like a round-trip ticket, please.",
      "accept": [
-      "I'd like a return ticket",
-      "I would like a return ticket, please.",
-      "I would like a return ticket",
-      "I'd like a return, please.",
-      "I would like a return, please."
+      "I'd like a round-trip ticket",
+      "I would like a round-trip ticket, please.",
+      "I would like a round-trip ticket"
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "I'd like ile başla, sonra return ticket, sonunda please."
+       "text": "I'd like ile başla, sonra round-trip ticket, sonunda please."
       },
       {
        "lang": "en",
-       "text": "I'd like a return ticket, please."
+       "text": "I'd like a round-trip ticket, please."
       },
       {
        "lang": "tr",
@@ -33819,11 +33795,11 @@
      },
      {
       "lang": "en",
-      "text": "It's twenty pounds."
+      "text": "It's twenty dollars."
      },
      {
       "lang": "tr",
-      "text": "Yirmi pound. Buradaki it's de bir kısaltma: it is yerine geçiyor."
+      "text": "Yirmi dolar. Buradaki it's de bir kısaltma: it is yerine geçiyor."
      }
     ]
    },
@@ -33835,17 +33811,17 @@
      },
      {
       "lang": "en",
-      "text": "A single ticket is for going and coming back."
+      "text": "A one-way ticket is for going and coming back."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "A single ticket is for going and coming back.",
+     "statement": "A one-way ticket is for going and coming back.",
      "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. Single sadece gidiş, tek yön demek. Gidiş-dönüş olan return."
+       "text": "Yanlış. One-way sadece gidiş, tek yön demek. Gidiş-dönüş olan round-trip."
       }
      ]
     }
@@ -34034,26 +34010,26 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Son bir cümle kur. Manchester'a iki bilet istiyorsun, kibarca söyle."
+      "text": "Son bir cümle kur. Boston'a iki bilet istiyorsun, kibarca söyle."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "I'd like two tickets to Manchester, please.",
+     "target": "I'd like two tickets to Boston, please.",
      "accept": [
-      "I'd like two tickets to Manchester",
-      "I would like two tickets to Manchester, please.",
-      "I would like two tickets to Manchester",
-      "Two tickets to Manchester, please."
+      "I'd like two tickets to Boston",
+      "I would like two tickets to Boston, please.",
+      "I would like two tickets to Boston",
+      "Two tickets to Boston, please."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "I'd like, sonra two tickets, sonra to Manchester, sonunda please. Bilet iki tane olduğu için sonuna s gelecek."
+       "text": "I'd like, sonra two tickets, sonra to Boston, sonunda please. Bilet iki tane olduğu için sonuna s gelecek."
       },
       {
        "lang": "en",
-       "text": "I'd like two tickets to Manchester, please."
+       "text": "I'd like two tickets to Boston, please."
       },
       {
        "lang": "tr",
@@ -34074,7 +34050,7 @@
      },
      {
       "lang": "tr",
-      "text": "ile kibarca bir şey istemek, ticket ve tickets, tek yön için single, gidiş-dönüş için return, fiyat sormak için"
+      "text": "ile kibarca bir şey istemek, ticket ve tickets, tek yön için one-way, gidiş-dönüş için round-trip, fiyat sormak için"
      },
      {
       "lang": "en",
@@ -34096,7 +34072,7 @@
    }
   ],
   "chat": {
-   "scene": "Londra'da bir tren istasyonundasın. Gişeden Manchester'a bilet alacaksın.",
+   "scene": "New York'ta bir tren istasyonundasın. Gişeden Boston'a bilet alacaksın.",
    "partner": "Gişe görevlisi",
    "opening": "Hello! Where would you like to go?",
    "openingTr": "Merhaba! Nereye gitmek istersiniz?",
@@ -36795,7 +36771,7 @@
      },
      {
       "lang": "tr",
-      "text": "Ama İngilizler bunu kısaltarak söyler: I am yerine"
+      "text": "Ama anadili İngilizce olanlar bunu kısaltarak söyler: I am yerine"
      },
      {
       "lang": "en",
@@ -38406,19 +38382,18 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "When does the film start?",
+     "target": "When does the movie start?",
      "accept": [
-      "When does the movie start?",
-      "When does the film begin?"
+      "When does the movie begin?"
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "When does ile başla, sonra the film, en sonda start."
+       "text": "When does ile başla, sonra the movie, en sonda start."
       },
       {
        "lang": "en",
-       "text": "When does the film start?"
+       "text": "When does the movie start?"
       },
       {
        "lang": "tr",
@@ -38648,7 +38623,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir de kulağını alıştıralım. İngilizler konuşurken kısaltır:"
+      "text": "Bir de kulağını alıştıralım. Anadili İngilizce olanlar konuşurken kısaltır:"
      },
      {
       "lang": "en",
@@ -39139,7 +39114,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Konuşurken İngilizler genelde kısaltır."
+      "text": "Konuşurken anadili İngilizce olanlar genelde kısaltır."
      },
      {
       "lang": "en",
@@ -39360,8 +39335,8 @@
     "tr": "kat"
    },
    {
-    "de": "cellar",
-    "tr": "kiler"
+    "de": "basement",
+    "tr": "bodrum katı"
    },
    {
     "de": "toilet",
@@ -39675,7 +39650,7 @@
      },
      {
       "lang": "en",
-      "text": "cellar"
+      "text": "basement"
      },
      {
       "lang": "tr",
@@ -39683,12 +39658,12 @@
      },
      {
       "lang": "en",
-      "text": "cellar"
+      "text": "basement"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "cellar"
+     "target": "basement"
     }
    },
    {
@@ -41049,7 +41024,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Konuşurken İngilizler is'i kısaltmayı çok sever."
+      "text": "Konuşurken anadili İngilizce olanlar is'i kısaltmayı çok sever."
      },
      {
       "lang": "en",
@@ -41200,7 +41175,7 @@
     "tr": "zorunda olmak"
    },
    {
-    "de": "bin",
+    "de": "trash can",
     "tr": "çöp kutusu"
    },
    {
@@ -41613,7 +41588,7 @@
      },
      {
       "lang": "en",
-      "text": "bin"
+      "text": "trash can"
      },
      {
       "lang": "tr",
@@ -41621,12 +41596,12 @@
      },
      {
       "lang": "en",
-      "text": "bin"
+      "text": "trash can"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "bin"
+     "target": "trash can"
     }
    },
    {
@@ -41713,7 +41688,7 @@
   "chat": {
    "scene": "Yeni taşındığın apartmanın girişinde komşun Emma seni karşılıyor ve binanın kurallarını anlatıyor. Sen de merak ettiklerini soruyorsun: gürültü, çöp, köpek, sigara.",
    "partner": "Komşun Emma",
-   "opening": "Welcome to the building! Shall I tell you the house rules?",
+   "opening": "Welcome to the building! Do you want me to tell you the house rules?",
    "openingTr": "Binaya hoş geldin! Sana apartman kurallarını anlatayım mı?",
    "goal": "Konuşma, en az bir kuralı must ile tekrarladığında, bir yasağı can't ile söylediğinde ve izin sormak için Is it allowed? gibi bir soru sorduğunda başarılı sayılır.",
    "minTurns": 7
@@ -42326,7 +42301,7 @@
      },
      {
       "lang": "tr",
-      "text": "Buradaki that's aslında that is'in kısası. İngilizler konuşurken hep böyle kısaltır."
+      "text": "Buradaki that's aslında that is'in kısası. Anadili İngilizce olanlar konuşurken hep böyle kısaltır."
      }
     ]
    },
@@ -42370,7 +42345,7 @@
   "chat": {
    "scene": "Kiralık bir daireyi geziyorsun. Ev sahibi sana evi gösteriyor ve sorularını bekliyor.",
    "partner": "Ev sahibi",
-   "opening": "Hello! Welcome. This is the flat. Do you have any questions?",
+   "opening": "Hello! Welcome. This is the apartment. Do you have any questions?",
    "openingTr": "Merhaba! Hoş geldin. İşte daire burası. Sormak istediğin bir şey var mı?",
    "goal": "Kiranın ne kadar olduğunu sor, su ve elektriğin dahil olup olmadığını öğren ve ne zaman ödeyeceğini konuş.",
    "minTurns": 7
@@ -42383,7 +42358,7 @@
   "icon": "home",
   "title": "Housework",
   "titleTr": "Ev işleri",
-  "summary": "Evde yaptığın işleri tidy up, take out ve wash up kalıplarıyla İngilizce anlatmayı öğretir.",
+  "summary": "Evde yaptığın işleri tidy up, take out ve do the dishes kalıplarıyla İngilizce anlatmayı öğretir.",
   "minutes": 8,
   "focusId": "Phrasal-verbs",
   "vocab": [
@@ -42404,7 +42379,7 @@
     "tr": "toplamak / düzenlemek"
    },
    {
-    "de": "rubbish",
+    "de": "trash",
     "tr": "çöp"
    },
    {
@@ -42426,7 +42401,7 @@
     "tr": "evde hangi işi yaptığını anlatırken kullanılır"
    },
    {
-    "de": "I take out the rubbish.",
+    "de": "I take out the trash.",
     "tr": "çöpü çıkardığını söylerken kullanılır"
    },
    {
@@ -42450,7 +42425,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İngilizcede ev işlerinin çoğu iki kelimeyle söylenir: bir fiil ve peşine gelen küçük bir kelime. İkisi birlikte tek bir anlam taşır. Bunlara phrasal verb deniyor. Endişelenme, bugün sadece üç tanesini öğreneceğiz."
+      "text": "İngilizcede ev işlerinin çoğu iki kelimeyle söylenir: bir fiil ve peşine gelen küçük bir kelime. İkisi birlikte tek bir anlam taşır. Bunlara phrasal verb deniyor. Endişelenme, bugün sadece iki tanesini öğreneceğiz."
      }
     ]
    },
@@ -42546,7 +42521,7 @@
      },
      {
       "lang": "en",
-      "text": "rubbish"
+      "text": "trash"
      }
     ]
    },
@@ -42558,7 +42533,7 @@
      },
      {
       "lang": "en",
-      "text": "take out the rubbish"
+      "text": "take out the trash"
      },
      {
       "lang": "tr",
@@ -42567,18 +42542,18 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "take out the rubbish"
+     "target": "take out the trash"
     }
    },
    {
     "say": [
      {
       "lang": "tr",
-      "text": "Küçük bir not: rubbish daha çok İngiltere'de kullanılır. Amerika'da çöpe trash denir:"
+      "text": "Küçük bir not: İngiltere'de çöpe rubbish denir. Amerika'da trash ya da garbage denir:"
      },
      {
       "lang": "en",
-      "text": "take out the trash"
+      "text": "take out the garbage"
      },
      {
       "lang": "tr",
@@ -42595,11 +42570,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "I take out the rubbish.",
+     "target": "I take out the trash.",
      "accept": [
-      "I take out the trash.",
       "I take out the garbage.",
-      "I take the rubbish out."
+      "I take the trash out."
      ],
      "hint": [
       {
@@ -42624,7 +42598,7 @@
       },
       {
        "lang": "en",
-       "text": "I take out the rubbish."
+       "text": "I take out the trash."
       },
       {
        "lang": "tr",
@@ -42657,20 +42631,20 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Peşine up eklersek anlamı daralır:"
+      "text": "Bulaşık yıkamak için Amerikalılar en çok şunu der:"
      },
      {
       "lang": "en",
-      "text": "wash up"
+      "text": "do the dishes"
      },
      {
       "lang": "tr",
-      "text": "Bu, bulaşık yıkamak demek. Elini yüzünü değil, tabakları! Lütfen söyle."
+      "text": "Kelime kelime \"tabakları yapmak\", ama anlamı bulaşık yıkamak. Dikkat: Amerika'da wash up elini yüzünü yıkamak demek. Lütfen söyle."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "wash up"
+     "target": "do the dishes"
     }
    },
    {
@@ -42681,11 +42655,11 @@
      },
      {
       "lang": "en",
-      "text": "I wash up after dinner."
+      "text": "I do the dishes after dinner."
      },
      {
       "lang": "tr",
-      "text": "\"Akşam yemeğinden sonra bulaşık yıkarım.\" Aynı şeyi daha açık da söyleyebilirsin:"
+      "text": "\"Akşam yemeğinden sonra bulaşık yıkarım.\" Aynı şeyi wash ile de söyleyebilirsin:"
      },
      {
       "lang": "en",
@@ -42702,16 +42676,16 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "I wash up after dinner.",
+     "target": "I do the dishes after dinner.",
      "accept": [
       "I wash the dishes after dinner.",
-      "After dinner I wash up.",
+      "After dinner I do the dishes.",
       "After dinner, I wash the dishes."
      ],
      "hint": [
       {
        "lang": "en",
-       "text": "I wash up"
+       "text": "I do the dishes"
       },
       {
        "lang": "tr",
@@ -42723,7 +42697,7 @@
       },
       {
        "lang": "en",
-       "text": "I wash up after dinner."
+       "text": "I do the dishes after dinner."
       },
       {
        "lang": "tr",
@@ -42914,17 +42888,17 @@
      },
      {
       "lang": "en",
-      "text": "Wash up means to clean the windows."
+      "text": "Do the dishes means to clean the windows."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Wash up means to clean the windows.",
+     "statement": "Do the dishes means to clean the windows.",
      "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Hayır. wash up bulaşık yıkamak demek, cam silmek değil. Cam için"
+       "text": "Hayır. do the dishes bulaşık yıkamak demek, cam silmek değil. Cam için"
       },
       {
        "lang": "en",
@@ -42953,7 +42927,7 @@
      },
      {
       "lang": "en",
-      "text": "take out the rubbish"
+      "text": "take out the trash"
      },
      {
       "lang": "tr",
@@ -42961,7 +42935,7 @@
      },
      {
       "lang": "en",
-      "text": "wash up"
+      "text": "do the dishes"
      },
      {
       "lang": "tr",
@@ -42981,9 +42955,9 @@
   "chat": {
    "scene": "Ev arkadaşın Emma ile bugünkü ev işlerini paylaşıyorsunuz. Kimin ne yapacağını konuşun.",
    "partner": "Ev arkadaşın Emma",
-   "opening": "Hi! The flat is a mess. Can you help me today?",
+   "opening": "Hi! The apartment is a mess. Can you help me today?",
    "openingTr": "Selam! Ev çok dağınık. Bugün bana yardım edebilir misin?",
-   "goal": "Öğrenci en az iki ev işini İngilizce söyleyip (tidy up, take out the rubbish, wash up) kimin ne yapacağını netleştirdiğinde başarılı sayılır.",
+   "goal": "Öğrenci en az iki ev işini İngilizce söyleyip (tidy up, take out the trash, do the dishes) kimin ne yapacağını netleştirdiğinde başarılı sayılır.",
    "minTurns": 7
   }
  },
@@ -44326,7 +44300,7 @@
     "tr": "yanlış / ters"
    },
    {
-    "de": "tap",
+    "de": "faucet",
     "tr": "musluk"
    },
    {
@@ -44653,7 +44627,7 @@
      },
      {
       "lang": "en",
-      "text": "tap"
+      "text": "faucet"
      },
      {
       "lang": "tr",
@@ -44661,12 +44635,12 @@
      },
      {
       "lang": "en",
-      "text": "tap"
+      "text": "faucet"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "tap"
+     "target": "faucet"
     }
    },
    {
@@ -45621,7 +45595,7 @@
     "tr": "spor"
    },
    {
-    "de": "football",
+    "de": "soccer",
     "tr": "futbol"
    },
    {
@@ -45651,7 +45625,7 @@
   ],
   "patterns": [
    {
-    "de": "I play football.",
+    "de": "I play soccer.",
     "tr": "top ve takım sporlarını söylerken kullanılır"
    },
    {
@@ -45711,7 +45685,7 @@
      },
      {
       "lang": "tr",
-      "text": "Topu olan ve rakibin olduğu sporlarda play kullanırız: football, basketball, tennis, volleyball."
+      "text": "Topu olan ve rakibin olduğu sporlarda play kullanırız: soccer, basketball, tennis, volleyball."
      },
      {
       "lang": "tr",
@@ -45719,11 +45693,11 @@
      },
      {
       "lang": "en",
-      "text": "I play football"
+      "text": "I play soccer"
      },
      {
       "lang": "tr",
-      "text": "diyoruz, \"I play the football\" değil."
+      "text": "diyoruz, \"I play the soccer\" değil."
      }
     ]
    },
@@ -45735,7 +45709,7 @@
      },
      {
       "lang": "en",
-      "text": "I play football."
+      "text": "I play soccer."
      },
      {
       "lang": "tr",
@@ -45743,12 +45717,12 @@
      },
      {
       "lang": "en",
-      "text": "I play football."
+      "text": "I play soccer."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "I play football."
+     "target": "I play soccer."
     }
    },
    {
@@ -45931,17 +45905,17 @@
      },
      {
       "lang": "en",
-      "text": "I go football every weekend."
+      "text": "I go soccer every weekend."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "I go football every weekend.",
+     "statement": "I go soccer every weekend.",
      "answer": false,
      "why": [
       {
        "lang": "tr",
-       "text": "Futbol bir top sporu, o yüzden go değil play kullanırız. Doğrusu: I play football every weekend."
+       "text": "Futbol bir top sporu, o yüzden go değil play kullanırız. Doğrusu: I play soccer every weekend."
       }
      ]
     }
@@ -46135,19 +46109,19 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "Do you play football?",
+     "target": "Do you play soccer?",
      "accept": [
-      "Do you play football",
-      "do you play football?"
+      "Do you play soccer",
+      "do you play soccer?"
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "Başa Do, sonra you, sonra play football."
+       "text": "Başa Do, sonra you, sonra play soccer."
       },
       {
        "lang": "en",
-       "text": "Do you play football?"
+       "text": "Do you play soccer?"
       },
       {
        "lang": "tr",
@@ -46164,11 +46138,11 @@
      },
      {
       "lang": "en",
-      "text": "My favorite sport is football."
+      "text": "My favorite sport is soccer."
      },
      {
       "lang": "tr",
-      "text": "\"En sevdiğim spor futbol\" demek. Burada football yerine kendi sporunu koyabilirsin."
+      "text": "\"En sevdiğim spor futbol\" demek. Burada soccer yerine kendi sporunu koyabilirsin."
      }
     ]
    },
@@ -46180,7 +46154,7 @@
      },
      {
       "lang": "en",
-      "text": "I play football."
+      "text": "I play soccer."
      },
      {
       "lang": "tr",
@@ -46404,7 +46378,7 @@
      },
      {
       "lang": "tr",
-      "text": "Yani kelimesi kelimesine \"müziğe dinlerim\" gibi. Bu to'yu unutma, İngilizler onsuz garip bulur."
+      "text": "Yani kelimesi kelimesine \"müziğe dinlerim\" gibi. Bu to'yu unutma, anadili İngilizce olanlar onsuz garip bulur."
      }
     ]
    },
@@ -46829,14 +46803,14 @@
   "level": "A1",
   "course": "en",
   "icon": "film",
-  "title": "Cinema invitation",
+  "title": "Movie invitation",
   "titleTr": "Sinema daveti",
   "summary": "Birini \"Would you like to ...?\" kalıbıyla sinemaya davet etmeyi, daveti kabul etmeyi ve kibarca geri çevirmeyi öğretir.",
   "minutes": 9,
   "focusId": "Invitations",
   "vocab": [
    {
-    "de": "cinema",
+    "de": "movie theater",
     "tr": "sinema"
    },
    {
@@ -46870,7 +46844,7 @@
   ],
   "patterns": [
    {
-    "de": "Would you like to go to the cinema?",
+    "de": "Would you like to go to the movies?",
     "tr": "birini kibarca bir şeye davet ederken kullanılır"
    },
    {
@@ -46910,52 +46884,44 @@
      },
      {
       "lang": "en",
-      "text": "cinema"
+      "text": "movie theater"
      },
      {
       "lang": "tr",
-      "text": "Sinema demek. Lütfen sen de söyle:"
+      "text": "Sinema, yani filmlerin gösterildiği bina demek. Lütfen sen de söyle:"
      },
      {
       "lang": "en",
-      "text": "cinema"
+      "text": "movie theater"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "cinema"
+     "target": "movie theater"
     }
    },
    {
     "say": [
      {
       "lang": "tr",
-      "text": "İngilizcede \"sinemaya gitmek\" derken araya bir"
+      "text": "Ama \"sinemaya gitmek\" için Amerikalılar çoğu zaman binayı değil filmleri söyler:"
      },
      {
       "lang": "en",
-      "text": "the"
+      "text": "go to the movies"
      },
      {
       "lang": "tr",
-      "text": "giriyor. Yani:"
+      "text": "Kelime kelime: filmlere git. Şimdi sen söyle:"
      },
      {
       "lang": "en",
-      "text": "go to the cinema"
-     },
-     {
-      "lang": "tr",
-      "text": "Kelime kelime: git — ye — sinema. Şimdi sen söyle:"
-     },
-     {
-      "lang": "en",
-      "text": "go to the cinema"
+      "text": "go to the movies"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "go to the cinema"
+     "target": "go to the movies"
     }
    },
    {
@@ -47006,7 +46972,7 @@
      },
      {
       "lang": "en",
-      "text": "Would you like to go to the cinema?"
+      "text": "Would you like to go to the movies?"
      },
      {
       "lang": "tr",
@@ -47014,12 +46980,12 @@
      },
      {
       "lang": "en",
-      "text": "Would you like to go to the cinema?"
+      "text": "Would you like to go to the movies?"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Would you like to go to the cinema?"
+     "target": "Would you like to go to the movies?"
     }
    },
    {
@@ -47067,12 +47033,11 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "Would you like to go to the cinema tonight?",
+     "target": "Would you like to go to the movies tonight?",
      "accept": [
-      "Would you like to go to the cinema tonight",
-      "Would you like to go to the cinema tonight?",
-      "Do you want to go to the cinema tonight?",
-      "Would you like to go to the cinema this evening?"
+      "Would you like to go to the movies tonight",
+      "Do you want to go to the movies tonight?",
+      "Would you like to go to the movies this evening?"
      ],
      "hint": [
       {
@@ -47093,7 +47058,7 @@
       },
       {
        "lang": "en",
-       "text": "Would you like to go to the cinema tonight?"
+       "text": "Would you like to go to the movies tonight?"
       },
       {
        "lang": "tr",
@@ -47290,7 +47255,7 @@
      },
      {
       "lang": "en",
-      "text": "I want to invite you to the cinema."
+      "text": "I want to invite you to the movies."
      }
     ]
    },
@@ -47306,7 +47271,7 @@
      },
      {
       "lang": "tr",
-      "text": "aslında \"I would\" demek. İngilizler konuşurken bu kısaltmaları çok kullanır; \"I would love to\" desen de doğru olur ama kulağa daha resmi gelir."
+      "text": "aslında \"I would\" demek. Anadili İngilizce olanlar konuşurken bu kısaltmaları çok kullanır; \"I would love to\" desen de doğru olur ama kulağa daha resmi gelir."
      }
     ]
    },
@@ -47404,12 +47369,12 @@
      },
      {
       "lang": "en",
-      "text": "Would you like go to the cinema?"
+      "text": "Would you like go to the movies?"
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Would you like to go to the cinema?",
+     "statement": "Would you like to go to the movies?",
      "answer": true,
      "why": [
       {
@@ -47486,7 +47451,7 @@
      },
      {
       "lang": "en",
-      "text": "Would you like to go to the cinema tonight?"
+      "text": "Would you like to go to the movies tonight?"
      },
      {
       "lang": "tr",
@@ -47610,7 +47575,7 @@
      },
      {
       "lang": "tr",
-      "text": "Yazılışına aldanma, okunuşu \"vedır\" gibidir. İngilizler hava hakkında konuşmayı çok sever, bu yüzden bu kelimeyi çok duyacaksın."
+      "text": "Yazılışına aldanma, okunuşu \"vedır\" gibidir. Anadili İngilizce olanlar hava hakkında konuşmayı çok sever, bu yüzden bu kelimeyi çok duyacaksın."
      }
     ]
    },
@@ -48588,7 +48553,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Konuşurken İngilizler bunu kısaltır:"
+      "text": "Konuşurken anadili İngilizce olanlar bunu kısaltır:"
      },
      {
       "lang": "en",
@@ -50010,7 +49975,7 @@
      },
      {
       "lang": "tr",
-      "text": "deriz. It is yerine it's. Bu kısaltma çok doğal, İngilizler hep böyle konuşur."
+      "text": "deriz. It is yerine it's. Bu kısaltma çok doğal, anadili İngilizce olanlar hep böyle konuşur."
      }
     ]
    },
@@ -50651,7 +50616,7 @@
   "chat": {
    "scene": "Arkadaşın Emma seni bu akşam sinemaya çağırıyor ama senin işin var. Onu kırmadan reddet.",
    "partner": "Emma, sınıf arkadaşın",
-   "opening": "Hey! Do you want to come to the cinema tonight?",
+   "opening": "Hey! Do you want to come to the movies tonight?",
    "openingTr": "Selam! Bu akşam sinemaya gelmek ister misin?",
    "goal": "Öğrenci daveti kibarca reddederse başarılı sayılır: özür ya da teşekkür etmeli, I'm afraid I can't kalıbını ya da bir sebep cümlesini kullanmalı ve maybe next time ile kapıyı açık bırakmalı.",
    "minTurns": 7
@@ -50911,7 +50876,7 @@
      },
      {
       "lang": "tr",
-      "text": "demedim. İngilizler konuşurken hep kısaltır."
+      "text": "demedim. Anadili İngilizce olanlar konuşurken hep kısaltır."
      },
      {
       "lang": "en",
@@ -52307,8 +52272,7 @@
      "target": "I have a toothache.",
      "accept": [
       "I've got a toothache.",
-      "My tooth hurts.",
-      "I have got a toothache."
+      "My tooth hurts."
      ],
      "hint": [
       {
@@ -52730,7 +52694,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İngilizler günlük konuşmada bunu kısaltır."
+      "text": "Anadili İngilizce olanlar günlük konuşmada bunu kısaltır."
      },
      {
       "lang": "en",
@@ -54066,7 +54030,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi derdini söyleyelim. Türkçede başım ağrıyor deriz; İngilizler bunu sahip olmak fiiliyle kurar: bende bir baş ağrısı var."
+      "text": "Şimdi derdini söyleyelim. Türkçede başım ağrıyor deriz; Anadili İngilizce olanlar bunu sahip olmak fiiliyle kurar: bende bir baş ağrısı var."
      },
      {
       "lang": "en",
@@ -54142,8 +54106,7 @@
      "target": "I have a headache.",
      "accept": [
       "I have a headache",
-      "I've got a headache.",
-      "I have got a headache."
+      "I've got a headache."
      ],
      "hint": [
       {
@@ -56303,7 +56266,7 @@
      },
      {
       "lang": "tr",
-      "text": "Buradaki I'm, I am'in kısası. İngilizler konuşurken hep kısaltır."
+      "text": "Buradaki I'm, I am'in kısası. Anadili İngilizce olanlar konuşurken hep kısaltır."
      }
     ]
    },
@@ -57275,7 +57238,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi dersin kalbine geliyoruz: have. Biz Türkçede ağrım var deriz; İngiliz aynı yerde have kullanır, yani sahibim der. I have, you have, we have, they have."
+      "text": "Şimdi dersin kalbine geliyoruz: have. Biz Türkçede ağrım var deriz; İngilizce aynı yerde have kullanır, yani sahibim der. I have, you have, we have, they have."
      }
     ]
    },
@@ -57545,8 +57508,7 @@
       "I have a toothache",
       "I have toothache.",
       "I have a tooth ache.",
-      "I've got a toothache.",
-      "I have got a toothache."
+      "I've got a toothache."
      ],
      "hint": [
       {
@@ -58430,7 +58392,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Merhaba! Bugün telefonda bir arkadaşınla mesajlaşmayı öğreneceğiz: kısa mesaj yazmak, cevap vermek ve İngilizlerin mesajlarda çok kullandığı kısaltmalar. Hazır mısın?"
+      "text": "Merhaba! Bugün telefonda bir arkadaşınla mesajlaşmayı öğreneceğiz: kısa mesaj yazmak, cevap vermek ve anadili İngilizce olanların mesajlarda çok kullandığı kısaltmalar. Hazır mısın?"
      }
     ],
     "expect": {
@@ -60360,7 +60322,7 @@
     "tr": "adres"
    },
    {
-    "de": "parcel",
+    "de": "package",
     "tr": "paket"
    },
    {
@@ -60454,20 +60416,20 @@
      },
      {
       "lang": "en",
-      "text": "parcel"
+      "text": "package"
      },
      {
       "lang": "tr",
-      "text": "Paket demek. Amerika'da çoğu zaman package derler ama parcel her yerde anlaşılır. Söyle bakalım:"
+      "text": "Paket demek. Amerikalılar package der; İngiltere'de parcel de denir. Söyle bakalım:"
      },
      {
       "lang": "en",
-      "text": "parcel"
+      "text": "package"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "parcel"
+     "target": "package"
     }
    },
    {
@@ -60599,10 +60561,8 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "I'd like to send this parcel.",
+     "target": "I'd like to send this package.",
      "accept": [
-      "I would like to send this parcel.",
-      "I'd like to send this package.",
       "I would like to send this package."
      ],
      "hint": [
@@ -60612,11 +60572,11 @@
       },
       {
        "lang": "en",
-       "text": "parcel"
+       "text": "package"
       },
       {
        "lang": "en",
-       "text": "I'd like to send this parcel."
+       "text": "I'd like to send this package."
       },
       {
        "lang": "tr",
@@ -60723,7 +60683,7 @@
      },
      {
       "lang": "en",
-      "text": "two letters, two parcels"
+      "text": "two letters, two packages"
      }
     ]
    },
@@ -60906,7 +60866,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Toparlayalım. Beş kelime öğrendik: letter mektup, parcel paket, stamp pul, address adres, send göndermek. Üç kalıbın var:"
+      "text": "Toparlayalım. Beş kelime öğrendik: letter mektup, package paket, stamp pul, address adres, send göndermek. Üç kalıbın var:"
      },
      {
       "lang": "en",
@@ -61647,25 +61607,25 @@
      },
      {
       "lang": "tr",
-      "text": "Futbol İngilizcede football. Hazırsan söyle."
+      "text": "Futbol İngilizcede soccer. Hazırsan söyle."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "I played football yesterday.",
+     "target": "I played soccer yesterday.",
      "accept": [
-      "I played football yesterday",
-      "Yesterday I played football.",
-      "I played football."
+      "I played soccer yesterday",
+      "Yesterday I played soccer.",
+      "I played soccer."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "I ile başla, sonra played, sonra football, en sona yesterday."
+       "text": "I ile başla, sonra played, sonra soccer, en sona yesterday."
       },
       {
        "lang": "en",
-       "text": "I played football yesterday."
+       "text": "I played soccer yesterday."
       },
       {
        "lang": "tr",
@@ -61956,12 +61916,12 @@
      },
      {
       "lang": "en",
-      "text": "Yesterday I watch a film."
+      "text": "Yesterday I watch a movie."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Yesterday I watched a film.",
+     "statement": "Yesterday I watched a movie.",
      "answer": true,
      "why": [
       {
@@ -63065,20 +63025,19 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "I went to the cinema on Saturday.",
+     "target": "I went to the movies on Saturday.",
      "accept": [
-      "I went to the cinema on Saturday",
-      "On Saturday I went to the cinema.",
-      "I went to the movies on Saturday."
+      "I went to the movies on Saturday",
+      "On Saturday I went to the movies."
      ],
      "hint": [
       {
        "lang": "tr",
-       "text": "'gitmek' fiilinin geçmiş hali: went. 'sinema' için the cinema."
+       "text": "'gitmek' fiilinin geçmiş hali: went. 'sinema' için the movies."
       },
       {
        "lang": "en",
-       "text": "I went to the cinema on Saturday."
+       "text": "I went to the movies on Saturday."
       }
      ]
     }
@@ -63390,7 +63349,7 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Küçük bir not: İngilizler ayrılırken çoğu zaman sadece 'Bye' demez. Yanına bir söz eklerler:"
+      "text": "Küçük bir not: Anadili İngilizce olanlar ayrılırken çoğu zaman sadece 'Bye' demez. Yanına bir söz eklerler:"
      },
      {
       "lang": "en",
@@ -63879,7 +63838,7 @@
   "chat": {
    "scene": "Arkadaşın Emma'nın evinde güzel bir akşam geçirdin, şimdi ayrılma vakti. Kapıda vedalaşıyorsunuz.",
    "partner": "Emma, İngiliz arkadaşın",
-   "opening": "It was so nice to see you tonight! Shall we keep in touch?",
+   "opening": "It was so nice to see you tonight! Let's keep in touch, okay?",
    "openingTr": "Bu akşam seni görmek çok güzeldi! İrtibatta kalalım mı?",
    "goal": "Vedalaşmayı tamamla: yakında görüşmek istediğini söyle, onu arayacağını ya da tekrar buluşmayı teklif et ve 'take care' ile ayrıl.",
    "minTurns": 7

@@ -263,7 +263,7 @@ export const enA1U08: SkillExercise[] = [
       { speaker: "Ela", text: "Are the tomatoes fresh? Yes, they are very fresh and cheap today." },
       { speaker: "Ela", text: "How much are the apples? Two euros a kilo. That is not expensive." },
       { speaker: "Ela", text: "A banana costs half a euro. I take four bananas for my children." },
-      { speaker: "Ela", text: "At the end I pay by card. The bill is nine euros." },
+      { speaker: "Ela", text: "At the end I pay by card. The check is nine euros." },
     ],
     questions: [
       {

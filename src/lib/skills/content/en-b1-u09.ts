@@ -132,7 +132,7 @@ export const enB1U09: SkillExercise[] = [
       { de: "reached", tr: "ulaştı" },
       { de: "tape", tr: "bant" },
       { de: "instead", tr: "onun yerine" },
-      { de: "Yours faithfully", tr: "saygılarımla" },
+      { de: "Sincerely", tr: "saygılarımla" },
     ],
     minutes: 7,
     text:
@@ -144,7 +144,7 @@ export const enB1U09: SkillExercise[] = [
       "Could you replace it, please? I have the receipt, the reference number, and the photograph of the box.\n" +
       "I am not asking for an apology and I do not need goodwill. I need one working device, which is what I paid for on the last day of the month.\n" +
       "If a replacement is not possible, please say so in one line and I will ask for the money back instead.\n" +
-      "Yours faithfully,\n" +
+      "Sincerely,\n" +
       "Ela Demir",
     questions: [
       {
@@ -221,7 +221,7 @@ export const enB1U09: SkillExercise[] = [
       { speaker: "Can", text: "That sounds like work." },
       { speaker: "Sena", text: "It is. I decided to read the book again after the last episode and that took another week." },
       { speaker: "Can", text: "Who is in it?" },
-      { speaker: "Sena", text: "The actor from the film we saw in June, in a part that is nothing like that one." },
+      { speaker: "Sena", text: "The actor from the movie we saw in June, in a part that is nothing like that one." },
       { speaker: "Can", text: "Is it boring anywhere?" },
       { speaker: "Sena", text: "The third episode. Everybody says the third episode and everybody watches it anyway." },
       { speaker: "Can", text: "Tell me the end." },
@@ -268,8 +268,8 @@ export const enB1U09: SkillExercise[] = [
         text: "Where did Can and Sena see the actor before?",
         options: [],
         answer: 0,
-        accept: ["in a film in June", "the film in June", "a film"],
-        explain: "„The actor from the film we saw in June…“",
+        accept: ["in a movie in June", "the movie in June", "a movie"],
+        explain: "„The actor from the movie we saw in June…“",
       },
     ],
   },

@@ -220,7 +220,7 @@ export const enB1U12: SkillExercise[] = [
     questions: [
       {
         text: "What took most of the two hours?",
-        options: ["looking for one number", "filling in the form", "keeping the records"],
+        options: ["looking for one number", "filling out the form", "keeping the records"],
         answer: 0,
         explain: "„Two hours, and most of it was looking for one number.“",
       },
@@ -282,12 +282,12 @@ export const enB1U12: SkillExercise[] = [
     minutes: 6,
     segments: [
       { speaker: "Nil", text: "I had taken a ticket before I sat down. That is the only thing I did right all morning." },
-      { speaker: "Nil", text: "By the time I got there, the queue had grown to about forty people. It was twenty when the doors opened at eight." },
+      { speaker: "Nil", text: "By the time I got there, the line had grown to about forty people. It was twenty when the doors opened at eight." },
       { speaker: "Nil", text: "The ticket said B62. The screen was showing B31, which sounds bad and is not: A, B and C move at different speeds." },
       { speaker: "Nil", text: "B is the slow one. B is everything that needs a signature from somebody who is not at the counter." },
       { speaker: "Nil", text: "Then they called my number. Two hours and ten minutes, which is under the average for a Monday." },
       { speaker: "Nil", text: "The four minutes at the desk were the easy part. She stamped two pages, asked one question and said: next time take A." },
-      { speaker: "Nil", text: "That is the trick nobody writes down. The same task has two tickets, and A is for people who bring the form already filled in." },
+      { speaker: "Nil", text: "That is the trick nobody writes down. The same task has two tickets, and A is for people who bring the form already filled out." },
       { speaker: "Nil", text: "Patience is not the skill here. Reading the small sign next to the ticket machine is the skill." },
     ],
     questions: [
@@ -299,13 +299,13 @@ export const enB1U12: SkillExercise[] = [
       },
       {
         text: "What is the trick?",
-        options: ["bring the form filled in and take A", "come at eight", "take two tickets"],
+        options: ["bring the form filled out and take A", "come at eight", "take two tickets"],
         answer: 0,
-        explain: "„A is for people who bring the form already filled in.“",
+        explain: "„A is for people who bring the form already filled out.“",
       },
       {
         kind: "truefalse",
-        text: "The queue was forty people when the doors opened.",
+        text: "The line was forty people when the doors opened.",
         options: ["True", "False"],
         answer: 1,
         explain: "„It was twenty when the doors opened at eight.“",
@@ -435,7 +435,7 @@ export const enB1U12: SkillExercise[] = [
       {
         kind: "build",
         tr: "Ben oraya vardığımda kuyruk uzamıştı.",
-        answer: "By the time I got there, the queue had grown.",
+        answer: "By the time I got there, the line had grown.",
         hint: "„By the time“ iki geçmişi bağlıyor; uzama varıştan önce olmuş.",
       },
     ],

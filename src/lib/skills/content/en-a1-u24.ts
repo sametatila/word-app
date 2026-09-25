@@ -96,7 +96,7 @@ export const enA1U24: SkillExercise[] = [
     genre: "dialogue",
     intro: "Postanede mektup ve paket. Hangi fiyat neye ait?",
     gloss: [
-      { de: "parcel", tr: "paket" },
+      { de: "package", tr: "paket" },
       { de: "stamp", tr: "pul" },
       { de: "Here you are", tr: "buyurun" },
     ],
@@ -108,12 +108,12 @@ export const enA1U24: SkillExercise[] = [
       "Clerk: Then it is two euros.\n" +
       "Ela: And how much is a stamp for Germany?\n" +
       "Clerk: One euro.\n" +
-      "Ela: I have a parcel too. How much is that?\n" +
-      "Clerk: The parcel is heavy. Nine euros. Is it full?\n" +
+      "Ela: I have a package too. How much is that?\n" +
+      "Clerk: The package is heavy. Nine euros. Is it full?\n" +
       "Ela: Yes, full. Books and a plastic box.\n" +
       "Ela: Can I have two stamps, please? For two letters tomorrow.\n" +
       "Clerk: Here you are. And here is a pencil — you have to write the address.\n" +
-      "Ela: The address of the parcel is on the paper.\n" +
+      "Ela: The address of the package is on the paper.\n" +
       "Clerk: Good. Thirteen euros together, please.\n" +
       "Ela: Here is my card. Thank you!",
     questions: [
@@ -124,17 +124,17 @@ export const enA1U24: SkillExercise[] = [
         explain: "„Then it is two euros.“ — bir euro pul, dokuz euro paket.",
       },
       {
-        text: "What is in the parcel?",
+        text: "What is in the package?",
         options: ["books and a plastic box", "paper and a photo", "two stamps"],
         answer: 0,
         explain: "„Yes, full. Books and a plastic box.“ — kâğıt ve fotoğraf mektupta.",
       },
       {
         kind: "truefalse",
-        text: "The parcel is light.",
+        text: "The package is light.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„The parcel is heavy. Nine euros.“",
+        explain: "„The package is heavy. Nine euros.“",
       },
       {
         kind: "gapfill",
@@ -152,7 +152,7 @@ export const enA1U24: SkillExercise[] = [
         items: [
           "I'd like to send this letter to Ireland.",
           "How much is a stamp for Germany?",
-          "I have a parcel too.",
+          "I have a package too.",
           "Thirteen euros together, please.",
         ],
         explain: "Önce mektup, sonra pul, sonra paket, en son toplam.",

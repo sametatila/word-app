@@ -9,7 +9,7 @@ import type { SkillExercise } from "../types";
  *   Kelime: worried, stressed, relaxed, afraid, better, feeling,
  *           be afraid, disappointed, recover, almost, still, already,
  *           normal, health, step by step, breathe, flat, rent, deposit,
- *           furnished, floor, ground floor, advert, old building, bright,
+ *           furnished, floor, first floor, ad, old building, bright,
  *           quiet, spacious, balcony, view, ceiling, curtain, comfortable.
  *   Kalıp:  I feel … · I'm worried about … · Are you OK? ·
  *           I've already taken my medicine. · I'm still tired. ·
@@ -101,10 +101,11 @@ export const enA2U08: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 8,
-    title: "Four flats in two weeks",
+    title: "Four apartments in two weeks",
     genre: "story",
     intro: "Dört daire, dört kusur. Sonunda seçilen en güzeli değil.",
     gloss: [
+      { de: "advert", tr: "ilan" },
       { de: "dark", tr: "karanlık" },
       { de: "high", tr: "yüksek" },
       { de: "neighbors", tr: "komşular" },
@@ -112,38 +113,38 @@ export const enA2U08: SkillExercise[] = [
     ],
     minutes: 6,
     text:
-      "We looked at four flats in two weeks. The first one was cheap, but it was on the ground floor and very dark.\n" +
+      "We looked at four apartments in two weeks. The first one was cheap, but it was on the first floor and very dark.\n" +
       "The second had a beautiful balcony, but the rent was eight hundred euros. Too much for us.\n" +
       "The third one was in an old building. The rooms were spacious and bright, the ceiling was high.\n" +
       "But the advert said \"furnished\" and there was only a bed and a table.\n" +
-      "The fourth flat was small. The rooms were normal and the kitchen was old.\n" +
+      "The fourth apartment was small. The rooms were normal and the kitchen was old.\n" +
       "But it was quiet, the neighbors were friendly and the deposit was only one month.\n" +
       "We took the fourth. My sister asked: Why the small one?\n" +
       "I said: Because I sleep there. In the first one I would never sleep — the street is under the window.\n" +
-      "We have been here since March and I am happy. The flat is smaller than my old one, but my life is bigger.",
+      "We have been here since March and I am happy. The apartment is smaller than my old one, but my life is bigger.",
     questions: [
       {
-        text: "Why didn't they take the second flat?",
+        text: "Why didn't they take the second apartment?",
         options: ["the rent was too high", "it was dark", "it was small"],
         answer: 0,
         explain: "„…but the rent was eight hundred euros. Too much for us.“",
       },
       {
-        text: "What was the problem with the third flat?",
-        options: ["it was not really furnished", "the ceiling was low", "it was on the ground floor"],
+        text: "What was the problem with the third apartment?",
+        options: ["it was not really furnished", "the ceiling was low", "it was on the first floor"],
         answer: 0,
         explain: "„…the advert said \"furnished\" and there was only a bed and a table.“",
       },
       {
         kind: "truefalse",
-        text: "The third flat was in a new building.",
+        text: "The third apartment was in a new building.",
         options: ["True", "False"],
         answer: 1,
         explain: "„The third one was in an old building.“",
       },
       {
         kind: "gapfill",
-        text: "The deposit for the fourth flat was ___ month.",
+        text: "The deposit for the fourth apartment was ___ month.",
         options: [],
         answer: 0,
         accept: ["one", "1"],
@@ -155,7 +156,7 @@ export const enA2U08: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "cheap and dark, on the ground floor",
+          "cheap and dark, on the first floor",
           "a beautiful balcony, eight hundred euros",
           "spacious and bright, but not really furnished",
           "small and quiet, with friendly neighbors",
@@ -164,7 +165,7 @@ export const enA2U08: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Why did the writer take the small flat?",
+        text: "Why did the writer take the small apartment?",
         options: [],
         answer: 0,
         accept: ["because I sleep there", "she sleeps there", "to sleep"],
@@ -270,7 +271,7 @@ export const enA2U08: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Mert", text: "I live in a bright flat on the third floor of an old building." },
+      { speaker: "Mert", text: "I live in a bright apartment on the third floor of an old building." },
       { speaker: "Mert", text: "It is not big, but it is spacious — two rooms, a kitchen and a small room for my books." },
       { speaker: "Mert", text: "The best part is the balcony. It has a view of the park and in summer I eat there every evening." },
       { speaker: "Mert", text: "My kitchen is brighter than the living room. The window there is bigger." },
@@ -294,7 +295,7 @@ export const enA2U08: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Mert lives on the ground floor.",
+        text: "Mert lives on the first floor.",
         options: ["True", "False"],
         answer: 1,
         explain: "„…on the third floor of an old building.“",
@@ -389,7 +390,7 @@ export const enA2U08: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 8,
-    title: "I live in a bright flat",
+    title: "I live in a bright apartment",
     genre: "personal",
     intro: "Evi anlat ve daireyi sor. Karşılaştırma burada betimleme işinde.",
     gloss: [
@@ -402,7 +403,7 @@ export const enA2U08: SkillExercise[] = [
       {
         kind: "build",
         tr: "Aydınlık bir dairede oturuyorum.",
-        answer: "I live in a bright flat.",
+        answer: "I live in a bright apartment.",
         hint: "Sıfat isimden ÖNCE geliyor ve hiç çekilmiyor.",
       },
       {
@@ -426,7 +427,7 @@ export const enA2U08: SkillExercise[] = [
       {
         kind: "build",
         tr: "Daire mobilyalı mı?",
-        answer: "Is the flat furnished?",
+        answer: "Is the apartment furnished?",
         hint: "„be“ sorusu yardımcı istemiyor; fiilin kendisi başa geçiyor.",
       },
     ],

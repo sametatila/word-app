@@ -720,9 +720,9 @@
   "de": "Zirkelschluss"
  },
  {
-  "tr": "kadın işçi temsilcisi",
+  "tr": "sendika temsilcisi",
   "kind": "vocab.tr",
-  "de": "Betriebsrätin"
+  "de": "Gewerkschaftsvertreter"
  },
  {
   "tr": "meslektaş dayanışması",
@@ -1315,9 +1315,9 @@
   "de": "Jetzt führst du den Handel um Flexibilität weiter."
  },
  {
-  "tr": "çalışanları kurulda temsil eden kadına ise",
+  "tr": "çalışanları temsil eden sendika görevlisine ise",
   "kind": "say.tr",
-  "de": "und die Frau, die die Beschäftigten im Rat vertritt, heißt"
+  "de": "und wer die Beschäftigten für die Gewerkschaft vertritt, heißt"
  },
  {
   "tr": "İnsanın kendi kendini fazla çalıştırmasına",
@@ -1800,9 +1800,9 @@
   "de": "Jetzt bist du dran: Die Tarifautonomie verlangt, dass die Gespräche frei von Druck geführt werden."
  },
  {
-  "tr": "Bir tane daha: Kurul şirketin her sözleşmeyi kalıcı hâle getirmesini istiyor.",
+  "tr": "Bir tane daha: Sendika şirketin her sözleşmeyi kalıcı hâle getirmesini istiyor.",
   "kind": "say.tr",
-  "de": "Noch eins: Der Rat verlangt, dass die Firma jeden Vertrag entfriste."
+  "de": "Noch eins: Die Gewerkschaft verlangt, dass die Firma jeden Vertrag entfriste."
  },
  {
   "tr": "Merhaba! Bugün esneklik tartışmasında ödün vererek karşı çıkmayı öğreneceğiz.",
@@ -1940,9 +1940,9 @@
   "de": "dagegen stellt den Preis voran. Niemand lügt; es ändert sich nur, welche Hälfte gesagt wird."
  },
  {
-  "tr": "Kadın işçi temsilcisi şirketin her çıraklık sözleşmesini kalıcı hâle getirmesini istiyor.",
+  "tr": "Sendika temsilcisi şirketin her çıraklık sözleşmesini kalıcı hâle getirmesini istiyor.",
   "kind": "say.tr",
-  "de": "Die Betriebsrätin verlangt, dass die Firma jeden Ausbildungsvertrag entfriste."
+  "de": "Der Gewerkschaftsvertreter verlangt, dass die Firma jeden Ausbildungsvertrag entfriste."
  },
  {
   "tr": "Şimdi sen kur: Gecikme, daha önce belirtildiği gibi, fizibilite çalışmasında işaretlenmişti.",

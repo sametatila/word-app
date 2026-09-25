@@ -42,6 +42,7 @@ export const enB1U16: SkillExercise[] = [
     genre: "opinion",
     intro: "Bir başlık ve bir sabah. Neden bu kadar yayıldı?",
     gloss: [
+      { de: "flat", tr: "düz" },
       { de: "shocking", tr: "şaşırtıcı" },
       { de: "the wording", tr: "sözcük seçimi" },
       { de: "in fairness", tr: "hakkını vermek gerekirse" },

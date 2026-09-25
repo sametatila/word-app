@@ -41,7 +41,7 @@ export const enB1U07: SkillExercise[] = [
     genre: "report",
     intro: "Üç haber, üç edilgen biçim. Hangisi bitti, hangisi sürüyor?",
     gloss: [
-      { de: "council", tr: "belediye meclisi" },
+      { de: "city council", tr: "belediye meclisi" },
       { de: "figures", tr: "rakamlar" },
       { de: "so far", tr: "şimdiye kadar" },
       { de: "verbs", tr: "fiiller" },
@@ -55,10 +55,10 @@ export const enB1U07: SkillExercise[] = [
     text:
       "Three short items from this week, and three different things happening to three verbs.\n" +
       "The report on the bridge was published last week. It is finished, it is on the website, and the figures in it are from March. That is a closed event and the language shows it.\n" +
-      "A decision was announced by the council on Tuesday. Here the source is named, because a decision without a name behind it is not news. The council announced it; the sentence is turned over to put the decision first.\n" +
+      "A decision was announced by the city council on Tuesday. Here the source is named, because a decision without a name behind it is not news. The council announced it; the sentence is turned over to put the decision first.\n" +
       "The case is being investigated. Nothing is finished. Nobody has said who did what. This form says one thing only: the work is happening now and there is no result yet.\n" +
       "A witness has claimed that the second lane was closed on Monday morning. Claimed, not said — the paper is telling you it has one voice for this and no official source.\n" +
-      "So far the council has not answered our questions. That line appears in almost every report of this kind and it is the most honest one on the page.",
+      "So far the city council has not answered our questions. That line appears in almost every report of this kind and it is the most honest one on the page.",
     questions: [
       {
         text: "Which item is finished?",
@@ -74,10 +74,10 @@ export const enB1U07: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The council has not answered the questions.",
+        text: "The city council has not answered the questions.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„So far the council has not answered our questions.“",
+        explain: "„So far the city council has not answered our questions.“",
       },
       {
         kind: "gapfill",
@@ -85,7 +85,7 @@ export const enB1U07: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["council"],
-        explain: "„A decision was announced by the council on Tuesday.“",
+        explain: "„A decision was announced by the city council on Tuesday.“",
       },
       {
         kind: "order",
@@ -94,9 +94,9 @@ export const enB1U07: SkillExercise[] = [
         answer: 0,
         items: [
           "The report was published last week.",
-          "A decision was announced by the council.",
+          "A decision was announced by the city council.",
           "The case is being investigated.",
-          "The council has not answered our questions.",
+          "The city council has not answered our questions.",
         ],
         explain: "Bitmiş olay, duyurulan karar, süren soruşturma, cevapsız soru.",
       },
@@ -123,7 +123,7 @@ export const enB1U07: SkillExercise[] = [
       { de: "handle", tr: "sap" },
       { de: "row", tr: "sıra" },
       { de: "version", tr: "sürüm" },
-      { de: "flatmate", tr: "ev arkadaşı" },
+      { de: "roommate", tr: "ev arkadaşı" },
       { de: "inside", tr: "içinde" },
       { de: "pocket", tr: "cep" },
       { de: "sentence", tr: "cümle" },
@@ -131,23 +131,23 @@ export const enB1U07: SkillExercise[] = [
     ],
     minutes: 7,
     text:
-      "By the time I arrived, the shop had closed. That is the short version and it hides the interesting part.\n" +
+      "By the time I arrived, the store had closed. That is the short version and it hides the interesting part.\n" +
       "I had left my keys at home. I realized it at the bus stop, which is eight minutes from the door and eleven minutes back, so I ran.\n" +
       "The bag was on the table where I had put it the night before. Brown leather, one broken handle, a label with my name on it from a course in March. I took it and ran again.\n" +
-      "On the bus I suddenly realized the second problem: the bag was the wrong one. Same shape, same size, same material. My flatmate had bought hers in the same shop.\n" +
-      "Luckily the man who found my bag on the bus the week before had left his number inside the front pocket. I called him from the shop door at two minutes past six, and he laughed before I finished the sentence.\n" +
+      "On the bus I suddenly realized the second problem: the bag was the wrong one. Same shape, same size, same material. My roommate had bought hers in the same store.\n" +
+      "Luckily the man who found my bag on the bus the week before had left his number inside the front pocket. I called him from the store door at two minutes past six, and he laughed before I finished the sentence.\n" +
       "He had had the same morning in April. His keys had been in the bag he did not take.\n" +
       "Finally I got home at seven. The mess on the table was the same mess. I put both bags in different rows on the shelf, and I wrote on one of them: not yours.",
     questions: [
       {
         text: "Why did the writer go back home?",
-        options: ["the keys were at home", "the shop had closed", "the bag was broken"],
+        options: ["the keys were at home", "the store had closed", "the bag was broken"],
         answer: 0,
         explain: "„I had left my keys at home. I realized it at the bus stop…“",
       },
       {
         text: "What was wrong with the bag on the bus?",
-        options: ["it was the flatmate's bag", "the handle was broken", "there was no label"],
+        options: ["it was the roommate's bag", "the handle was broken", "there was no label"],
         answer: 0,
         explain: "„the bag was the wrong one. Same shape, same size, same material.“",
       },
@@ -364,7 +364,7 @@ export const enB1U07: SkillExercise[] = [
       {
         kind: "build",
         tr: "Belediye meclisi bir karar duyurdu.",
-        answer: "A decision was announced by the council.",
+        answer: "A decision was announced by the city council.",
         hint: "Fail önemli olduğu için „by“ ile söyleniyor ve karar öne alınıyor.",
       },
       {
@@ -387,7 +387,7 @@ export const enB1U07: SkillExercise[] = [
           { label: "Report", answer: "published last week", accept: ["last week"] },
           { label: "Decision", answer: "on Tuesday", accept: ["Tuesday"] },
           { label: "Case", answer: "being investigated", accept: ["not finished"] },
-          { label: "Council", answer: "no answer", accept: ["has not answered"] },
+          { label: "City council", answer: "no answer", accept: ["has not answered"] },
         ],
       },
     ],
@@ -398,7 +398,7 @@ export const enB1U07: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 7,
-    title: "By the time I arrived, the shop had closed",
+    title: "By the time I arrived, the store had closed",
     genre: "personal",
     intro: "Olayların sırası ve aktarılan sözler. Hangi biçim „daha önce“ diyor?",
     gloss: [
@@ -417,7 +417,7 @@ export const enB1U07: SkillExercise[] = [
       {
         kind: "build",
         tr: "Ben vardığımda dükkân kapanmıştı.",
-        answer: "By the time I arrived, the shop had closed.",
+        answer: "By the time I arrived, the store had closed.",
         hint: "„By the time“ iki geçmişi bağlıyor; önce kapanma, sonra varış.",
       },
       {

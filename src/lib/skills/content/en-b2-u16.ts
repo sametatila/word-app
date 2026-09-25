@@ -253,11 +253,11 @@ export const enB2U16: SkillExercise[] = [
       { de: "a ceremony", tr: "tören" },
       { de: "backwards", tr: "geriye" },
       { de: "weight", tr: "ağırlık" },
-      { de: "ill", tr: "hasta" },
+      { de: "sick", tr: "hasta" },
     ],
     minutes: 7,
     segments: [
-      { speaker: "Pelin", text: "The composer is said to be ill. That is all the announcement says and it is deliberate." },
+      { speaker: "Pelin", text: "The composer is said to be sick. That is all the announcement says and it is deliberate." },
       { speaker: "Arda", text: "Said by whom?" },
       { speaker: "Pelin", text: "Exactly the question, and the sentence does not answer it. „Is said to“ carries no weight of its own; somebody has said it and we are passing it on." },
       { speaker: "Arda", text: "The screenplay is expected to change." },
@@ -304,7 +304,7 @@ export const enB2U16: SkillExercise[] = [
         text: "Duyduğun cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["The composer is said to be ill.", "The composer is said to be ill"],
+        accept: ["The composer is said to be sick.", "The composer is said to be sick"],
         explain: "En zayıf aktarma: biri söyledi, o kadar.",
       },
       {
@@ -443,7 +443,7 @@ export const enB2U16: SkillExercise[] = [
       {
         kind: "build",
         tr: "Bestecinin hasta olduğu söyleniyor.",
-        answer: "The composer is said to be ill.",
+        answer: "The composer is said to be sick.",
         hint: "„is said to“: biri söyledi, o kadar.",
       },
       {

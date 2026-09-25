@@ -28633,8 +28633,8 @@
     "tr": "istihdam"
    },
    {
-    "de": "works council",
-    "tr": "işçi konseyi"
+    "de": "union",
+    "tr": "sendika"
    },
    {
     "de": "collective agreement",
@@ -28950,11 +28950,11 @@
     "say": [
      {
       "lang": "tr",
-      "text": "İşçilerin işyerindeki temsil organına"
+      "text": "İşçilerin temsil örgütüne"
      },
      {
       "lang": "en",
-      "text": "works council"
+      "text": "union"
      },
      {
       "lang": "tr",
@@ -28978,16 +28978,16 @@
      },
      {
       "lang": "en",
-      "text": "The works council signed a collective agreement."
+      "text": "The union signed a collective agreement."
      },
      {
       "lang": "tr",
-      "text": "İşçi konseyi bir toplu iş sözleşmesi imzaladı."
+      "text": "Sendika bir toplu iş sözleşmesi imzaladı."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The works council signed a collective agreement."
+     "target": "The union signed a collective agreement."
     }
    },
    {
@@ -30146,7 +30146,7 @@
   ],
   "patterns": [
    {
-    "de": "The composer is said to be ill.",
+    "de": "The composer is said to be sick.",
     "tr": "söylentiyi kaynak vermeden aktarır"
    },
    {
@@ -30190,12 +30190,12 @@
      },
      {
       "lang": "en",
-      "text": "The composer is said to be ill."
+      "text": "The composer is said to be sick."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The composer is said to be ill."
+     "target": "The composer is said to be sick."
     }
    },
    {
@@ -30306,7 +30306,7 @@
      "target": "The composer is said to be abroad.",
      "accept": [
       "The composer is said to be away.",
-      "The composer is said to be ill."
+      "The composer is said to be sick."
      ],
      "hint": [
       {
@@ -32547,7 +32547,7 @@
     "tr": "o sırada sürüyor olanı söyler"
    },
    {
-    "de": "By autumn we will have decided to commission the work.",
+    "de": "By fall we will have decided to commission the work.",
     "tr": "bir tarihe kadar verilmiş kararı söyler"
    }
   ],
@@ -32651,7 +32651,7 @@
      },
      {
       "lang": "en",
-      "text": "By autumn we will have decided to commission the work."
+      "text": "By fall we will have decided to commission the work."
      },
      {
       "lang": "tr",
@@ -32660,7 +32660,7 @@
     ],
     "expect": {
      "kind": "repeat",
-     "target": "By autumn we will have decided to commission the work."
+     "target": "By fall we will have decided to commission the work."
     }
    },
    {
@@ -32919,10 +32919,10 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "By autumn we will have decided to commission the film.",
+     "target": "By fall we will have decided to commission the film.",
      "accept": [
-      "By autumn we will have decided to commission a film.",
-      "By autumn we will have decided to commission the work."
+      "By fall we will have decided to commission a film.",
+      "By fall we will have decided to commission the work."
      ],
      "hint": [
       {
@@ -32939,7 +32939,7 @@
       },
       {
        "lang": "en",
-       "text": "By autumn we will have decided to commission the film."
+       "text": "By fall we will have decided to commission the film."
       },
       {
        "lang": "tr",
@@ -43540,7 +43540,7 @@
      "kind": "produce",
      "target": "If we had talked, the house would have been sold.",
      "accept": [
-      "If we had talked, the flat would have been sold.",
+      "If we had talked, the apartment would have been sold.",
       "If we had talked, the custody would have been shared."
      ],
      "hint": [
@@ -44639,7 +44639,6 @@
      "kind": "produce",
      "target": "The sorting of the mail starts at eight.",
      "accept": [
-      "The sorting of the post starts at eight.",
       "The sorting of the incoming mail starts at eight."
      ],
      "hint": [
@@ -47862,7 +47861,7 @@
   ],
   "patterns": [
    {
-    "de": "The advert must have been misleading.",
+    "de": "The ad must have been misleading.",
     "tr": "geçmişe dair emin bir çıkarımı söyler"
    },
    {
@@ -47906,12 +47905,12 @@
      },
      {
       "lang": "en",
-      "text": "The advert must have been misleading."
+      "text": "The ad must have been misleading."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "The advert must have been misleading."
+     "target": "The ad must have been misleading."
     }
    },
    {
@@ -48030,7 +48029,7 @@
      "target": "The label must have been misleading.",
      "accept": [
       "That label must have been misleading.",
-      "The advert must have been misleading."
+      "The ad must have been misleading."
      ],
      "hint": [
       {
@@ -48540,9 +48539,8 @@
     ],
     "expect": {
      "kind": "produce",
-     "target": "If the parcel had arrived, we would have ordered.",
+     "target": "If the package had arrived, we would have ordered.",
      "accept": [
-      "If the package had arrived, we would have ordered.",
       "If the voucher had arrived, we would have ordered."
      ],
      "hint": [
@@ -48560,7 +48558,7 @@
       },
       {
        "lang": "en",
-       "text": "If the parcel had arrived, we would have ordered."
+       "text": "If the package had arrived, we would have ordered."
       },
       {
        "lang": "tr",

@@ -64,12 +64,12 @@ export const enB1U24: SkillExercise[] = [
     ],
     minutes: 7,
     text:
-      "The film that made me cry was old. The woman who hugged me was a stranger. The place where I smiled was quiet. Three sentences, three small words, and the only question is which word goes where.\n" +
+      "The movie that made me cry was old. The woman who hugged me was a stranger. The place where I smiled was quiet. Three sentences, three small words, and the only question is which word goes where.\n" +
       "„That“ is for a thing. „Who“ is for a person. „Where“ is for a place. There is nothing else to decide, because none of the three changes shape afterwards: the same „who“ serves one woman and forty, a subject and an object, this year and last year.\n" +
-      "That is unusual and it is worth saying out loud, because the words in front of them do change. „The film“ takes „the“; „films“ takes nothing.\n" +
+      "That is unusual and it is worth saying out loud, because the words in front of them do change. „The movie“ takes „the“; „movies“ takes nothing.\n" +
       "The second thing to know is where the clause sits. It goes straight after the noun it belongs to and nowhere else. „The woman was a stranger who hugged me“ moves the hugging onto the wrong person, and the reader notices before you do.\n" +
-      "The last thing is the comma, and this unit keeps it simple: no comma, because each of these three sentences is choosing. Which film? The one that made me cry. The clause is doing work, not adding decoration.\n" +
-      "I have used the first sentence three times this year and every time somebody asks me which film. That is the test. A clause that chooses always makes somebody ask.",
+      "The last thing is the comma, and this unit keeps it simple: no comma, because each of these three sentences is choosing. Which movie? The one that made me cry. The clause is doing work, not adding decoration.\n" +
+      "I have used the first sentence three times this year and every time somebody asks me which movie. That is the test. A clause that chooses always makes somebody ask.",
     questions: [
       {
         text: "Which word is for a place?",
@@ -104,7 +104,7 @@ export const enB1U24: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "The film that made me cry was old.",
+          "The movie that made me cry was old.",
           "The woman who hugged me was a stranger.",
           "The place where I smiled was quiet.",
           "A clause that chooses always makes somebody ask.",
@@ -116,8 +116,8 @@ export const enB1U24: SkillExercise[] = [
         text: "What do people ask the writer?",
         options: [],
         answer: 0,
-        accept: ["which film", "which film it was", "the name of the film"],
-        explain: "„every time somebody asks me which film.“",
+        accept: ["which movie", "which movie it was", "the name of the movie"],
+        explain: "„every time somebody asks me which movie.“",
       },
     ],
   },
@@ -385,7 +385,7 @@ export const enB1U24: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 24,
-    title: "The film that made me cry was old",
+    title: "The movie that made me cry was old",
     genre: "opinion",
     intro: "Şey, kişi, yer. Hangi adıl hangi boşluğa giriyor?",
     gloss: [
@@ -400,7 +400,7 @@ export const enB1U24: SkillExercise[] = [
       {
         kind: "build",
         tr: "Beni ağlatan film eskiydi.",
-        answer: "The film that made me cry was old.",
+        answer: "The movie that made me cry was old.",
         hint: "Şey için „that“; özne konumunda düşmüyor.",
       },
       {

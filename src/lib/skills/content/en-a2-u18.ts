@@ -44,19 +44,19 @@ export const enA2U18: SkillExercise[] = [
     minutes: 5,
     text:
       "Nil: Excuse me, how much is this?\n" +
-      "Shop: The small one is nine euros, the big one fourteen.\n" +
+      "Clerk: The small one is nine euros, the big one fourteen.\n" +
       "Nil: Do you have anything cheaper? I need six gifts.\n" +
-      "Shop: Six! Then look here. These postcards are two euros and this jewelry is four.\n" +
+      "Clerk: Six! Then look here. These postcards are two euros and this jewelry is four.\n" +
       "Nil: The jewelry is nice. Is it from here?\n" +
-      "Shop: From this street, yes. A woman makes it in the house opposite.\n" +
+      "Clerk: From this street, yes. A woman makes it in the house opposite.\n" +
       "Nil: Then I take four of them. And two postcards for my parents.\n" +
-      "Shop: Your parents get postcards and your friends get jewelry?\n" +
+      "Clerk: Your parents get postcards and your friends get jewelry?\n" +
       "Nil: My parents want postcards. They put them on the door.\n" +
-      "Shop: Then they are right. Could I wrap them as a gift?\n" +
+      "Clerk: Then they are right. Could I wrap them as a gift?\n" +
       "Nil: Yes, please. The four small ones — not the postcards.\n" +
-      "Shop: Understood. Twenty euros for everything.\n" +
+      "Clerk: Understood. Twenty euros for everything.\n" +
       "Nil: Here you are. And thank you for the cheaper idea.\n" +
-      "Shop: Everybody asks. Not everybody listens.",
+      "Clerk: Everybody asks. Not everybody listens.",
     questions: [
       {
         text: "How many gifts does Nil need?",
@@ -87,7 +87,7 @@ export const enA2U18: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What does Nil want the shop to do?",
+        text: "What does Nil want the store to do?",
         options: [],
         answer: 0,
         accept: ["wrap them", "wrap the jewelry", "wrap them as a gift"],

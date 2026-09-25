@@ -221,7 +221,7 @@ export const enB1U22: SkillExercise[] = [
     gloss: [
       { de: "verb", tr: "fiil" },
       { de: "sentence", tr: "cümle" },
-      { de: "the council", tr: "belediye meclisi" },
+      { de: "the city council", tr: "belediye meclisi" },
       { de: "repairing", tr: "onarmak" },
       { de: "afterwards", tr: "sonrasında" },
       { de: "agree", tr: "anlaşmak" },
@@ -238,9 +238,9 @@ export const enB1U22: SkillExercise[] = [
     segments: [
       { speaker: "Ada", text: "They decided to clean the river last spring. The first thing they found was a pipe that nobody had on a map." },
       { speaker: "Kerem", text: "Who pays for that?" },
-      { speaker: "Ada", text: "The council. They suggested repairing the pipe first and cleaning the water afterwards, which is the right order and took two years to agree." },
+      { speaker: "Ada", text: "The city council. They suggested repairing the pipe first and cleaning the water afterwards, which is the right order and took two years to agree." },
       { speaker: "Kerem", text: "And the bottles?" },
-      { speaker: "Ada", text: "We gave up buying bottles at home in March. Six people, one tap, and the landfill is forty kilometers away, so it is a small thing that is easy to measure." },
+      { speaker: "Ada", text: "We gave up buying bottles at home in March. Six people, one faucet, and the landfill is forty kilometers away, so it is a small thing that is easy to measure." },
       { speaker: "Kerem", text: "Why does „decided“ take „to“ and „gave up“ take „-ing“?" },
       { speaker: "Ada", text: "There is no reason. The first verb chooses the shape of the second one, and the list has to be learned." },
       { speaker: "Kerem", text: "So „suggest me to repair it“ is wrong." },
@@ -258,7 +258,7 @@ export const enB1U22: SkillExercise[] = [
         explain: "„The first thing they found was a pipe that nobody had on a map.“",
       },
       {
-        text: "What did the council suggest doing first?",
+        text: "What did the city council suggest doing first?",
         options: ["repairing the pipe", "cleaning the water", "closing the plant"],
         answer: 0,
         explain: "„They suggested repairing the pipe first and cleaning the water afterwards…“",

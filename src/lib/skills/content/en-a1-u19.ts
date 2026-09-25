@@ -30,7 +30,7 @@ export const enA1U19: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 19,
-    title: "Would you like to go to the cinema?",
+    title: "Would you like to go to the movies?",
     genre: "dialogue",
     intro: "Sinema daveti. Davet, ret ve yeni bir gün — üçü de ayrı kalıpla.",
     gloss: [
@@ -40,7 +40,7 @@ export const enA1U19: SkillExercise[] = [
     ],
     minutes: 4,
     text:
-      "Can: Would you like to go to the cinema tonight?\n" +
+      "Can: Would you like to go to the movies tonight?\n" +
       "Ela: Tonight? Sorry, I can't tonight. I am busy.\n" +
       "Can: And tomorrow?\n" +
       "Ela: Tomorrow is good. What movie?\n" +
@@ -49,12 +49,12 @@ export const enA1U19: SkillExercise[] = [
       "Can: Yes, I buy two tickets. Let's go together at eight.\n" +
       "Ela: Good. How's the weather tomorrow?\n" +
       "Can: Cold and windy, I think. Maybe rain.\n" +
-      "Ela: Then the cinema is perfect. In the park it is too cold now.\n" +
+      "Ela: Then the movie theater is perfect. In the park it is too cold now.\n" +
       "Can: Yes. And the grass is wet from the snow.\n" +
       "Ela: See you tomorrow at eight!",
     questions: [
       {
-        text: "When do they go to the cinema?",
+        text: "When do they go to the movies?",
         options: ["tomorrow", "tonight", "on Sunday"],
         answer: 0,
         explain: "„Sorry, I can't tonight… Tomorrow is good.“ — davet bu akşamaydı, ret gelince yarına kayıyor.",
@@ -394,7 +394,7 @@ export const enA1U19: SkillExercise[] = [
       {
         kind: "build",
         tr: "Sinemaya gitmek ister misin?",
-        answer: "Would you like to go to the cinema?",
+        answer: "Would you like to go to the movies?",
         hint: "Davet „would you like“ ile; sonrası „to“ + fiil, „-ing“ değil.",
       },
       {

@@ -292,7 +292,7 @@ export const enB1U19: SkillExercise[] = [
       { speaker: "Ela", text: "Nobody told you." },
       { speaker: "Can", text: "Nobody was asked. That is the honest version." },
       { speaker: "Ela", text: "And the knee?" },
-      { speaker: "Can", text: "This is the x-ray that shows the bone. The line you can see is old — from 2018, from football." },
+      { speaker: "Can", text: "This is the x-ray that shows the bone. The line you can see is old — from 2018, from soccer." },
       { speaker: "Ela", text: "And the pain now?" },
       { speaker: "Can", text: "Not the bone. The joint above it, which does not show on an x-ray at all, and that is why the first two visits found nothing." },
       { speaker: "Ela", text: "Will they operate?" },

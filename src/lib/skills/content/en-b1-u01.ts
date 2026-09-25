@@ -43,7 +43,7 @@ export const enB1U01: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 1,
-    title: "Writing a CV",
+    title: "Writing a résumé",
     genre: "guide",
     intro: "Yirmi saniyede karar veren üç şey. Hangisi neden önemli?",
     gloss: [
@@ -54,8 +54,8 @@ export const enB1U01: SkillExercise[] = [
     ],
     minutes: 7,
     text:
-      "Three things that decide a CV in twenty seconds.\n" +
-      "Order. The reader starts at the top and stops when it gets boring. Put the last job first and the degree after it, not before. Nobody reads a CV from 2009 to today.\n" +
+      "Three things that decide a résumé in twenty seconds.\n" +
+      "Order. The reader starts at the top and stops when it gets boring. Put the last job first and the degree after it, not before. Nobody reads a résumé from 2009 to today.\n" +
       "Time. Every job needs two dates and no gaps. If there is a gap, write one line: traveled, studied, cared for a parent. A gap with no line is a question; a gap with a line is a fact.\n" +
       "Proof. „Reliable and careful“ says nothing, because everybody writes it. „I had started my degree before I started there, so I worked and studied for two years“ says the same thing and can be checked.\n" +
       "One more thing about the previous employer. Ask for the reference before you leave, not six months later. People change jobs, and the person who knows your work today may be somewhere else in April.\n" +
@@ -63,7 +63,7 @@ export const enB1U01: SkillExercise[] = [
       "Two pages at most. One is better.",
     questions: [
       {
-        text: "What should come first in a CV?",
+        text: "What should come first in a résumé?",
         options: ["the last job", "the degree", "the training courses"],
         answer: 0,
         explain: "„Put the last job first and the degree after it, not before.“",
@@ -83,7 +83,7 @@ export const enB1U01: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "A CV should be ___ pages at most.",
+        text: "A résumé should be ___ pages at most.",
         options: [],
         answer: 0,
         accept: ["two", "2"],
@@ -104,7 +104,7 @@ export const enB1U01: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Which training courses should be in a CV?",
+        text: "Which training courses should be in a résumé?",
         options: [],
         answer: 0,
         accept: ["only these ones", "the ones for this job", "the ones that touch it"],
@@ -139,7 +139,7 @@ export const enB1U01: SkillExercise[] = [
       "Deniz: Fair. What is your weakness?\n" +
       "Can: I say yes too fast. I once said yes to four projects in one week, and two of them were late. Now I ask for the deadline before I answer.\n" +
       "Deniz: That is a real answer. Salary?\n" +
-      "Can: I read the advert. The number there works for me.\n" +
+      "Can: I read the ad. The number there works for me.\n" +
       "Deniz: You have to give one month's notice, yes?\n" +
       "Can: One month, from the first of the month.\n" +
       "Deniz: Then March. You don't have to wear a suit here, by the way. Nobody does.\n" +
@@ -147,7 +147,7 @@ export const enB1U01: SkillExercise[] = [
     questions: [
       {
         text: "Where did Can work before the small company?",
-        options: ["in a bigger company", "in a team of three", "in a shop"],
+        options: ["in a bigger company", "in a team of three", "in a store"],
         answer: 0,
         explain: "„Before that I had worked in a bigger one for three years…“ — önceki geçmiş „had worked“ ile.",
       },
@@ -205,7 +205,7 @@ export const enB1U01: SkillExercise[] = [
     minutes: 6,
     segments: [
       { speaker: "Nil", text: "I have worked in this industry for six years. Three companies, two cities, one long lesson." },
-      { speaker: "Nil", text: "The first position was in a shop that sold machines. I had studied something else, so everything was new and slow." },
+      { speaker: "Nil", text: "The first position was in a store that sold machines. I had studied something else, so everything was new and slow." },
       { speaker: "Nil", text: "I worked there for two years and was promoted once. Then the company closed. Nobody asked me why I left; there was nothing to leave." },
       { speaker: "Nil", text: "The second job I took on purpose: less money, more responsibility. Before I applied, I had asked three people from that team what a bad week looks like." },
       { speaker: "Nil", text: "That question turned out to be the best one I have ever asked in an interview. Two of them said the same thing and I still believe them." },

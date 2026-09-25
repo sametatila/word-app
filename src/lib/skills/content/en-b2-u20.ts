@@ -149,7 +149,7 @@ export const enB2U20: SkillExercise[] = [
       { de: "reach", tr: "ulaşmak" },
       { de: "alike", tr: "birbirine benzer" },
       { de: "entirely", tr: "tümüyle" },
-      { de: "holiday entitlement", tr: "izin hakkı" },
+      { de: "paid vacation", tr: "izin hakkı" },
       { de: "a complaint", tr: "yakınma" },
       { de: "grown", tr: "büyümüş" },
       { de: "the test", tr: "sınama" },
@@ -162,7 +162,7 @@ export const enB2U20: SkillExercise[] = [
       "That is the mixed form, and in a conversation about money it is the only one that does any work. The first sentence is about a year nobody can reach. The second is about an amount somebody is living on.\n" +
       "If the retirement savings had grown, we would have stopped working. Closed again, and it is the sentence people say most often and act on least.\n" +
       "There is a reason these three sound alike and are not. All of them start the same way and all of them are about things that did not happen; the difference is entirely in the second half, and the second half is four words in.\n" +
-      "So the test is where the result lives, and it has not changed since it was first written. Occupational safety, parental leave, holiday entitlement: each of those either produced a number that is true today or it did not.\n" +
+      "So the test is where the result lives, and it has not changed since it was first written. Occupational safety, parental leave, paid vacation: each of those either produced a number that is true today or it did not.\n" +
       "Where it did, write the mixed form and let the sentence point at the number. Where it did not, write the closed one and let it stay closed, because a closed conditional about a finished year is honest and a mixed one about the same year is a complaint.",
     questions: [
       {

@@ -183,7 +183,7 @@ export const enB1U10: SkillExercise[] = [
     intro: "Randevu değişiyor. Hangi cümle ayarlanmış, hangisi plan?",
     gloss: [
       { de: "slot", tr: "boş saat" },
-      { de: "diary", tr: "ajanda" },
+      { de: "calendar", tr: "ajanda" },
       { de: "double", tr: "çift" },
       { de: "the fourteenth", tr: "on dördü" },
       { de: "neither", tr: "hiçbiri" },
@@ -201,7 +201,7 @@ export const enB1U10: SkillExercise[] = [
       { speaker: "Clinic", text: "Friday the twenty-second, half past five. I have put it in." },
       { speaker: "Nil", text: "I will confirm it this evening by email. Then we both have it in writing." },
       { speaker: "Clinic", text: "You do not have to, but it helps. Two people wrote last week and neither had a double booking." },
-      { speaker: "Nil", text: "And Thursday is gone from the diary?" },
+      { speaker: "Nil", text: "And Thursday is gone from the calendar?" },
       { speaker: "Clinic", text: "Gone. If you see it anywhere, tell me, because that means the system kept it." },
       { speaker: "Nil", text: "Is there anything I should bring?" },
       { speaker: "Clinic", text: "The card and the letter from March. Not the old results — we have those." },

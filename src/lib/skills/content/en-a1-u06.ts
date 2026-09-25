@@ -48,7 +48,7 @@ export const enA1U06: SkillExercise[] = [
       "Soup of the day: 5 euros\n\n" +
       "Breakfast: 8 euros. One egg, bread, butter, cheese and a cup of tea or coffee.\n\n" +
       "Do you eat eggs? Is there any milk in your coffee? Please talk to the waiter.\n" +
-      "Can I have the bill, please? — Yes, of course.",
+      "Can I have the check, please? — Yes, of course.",
     questions: [
       {
         text: "How much is a sandwich with cheese?",
@@ -113,7 +113,7 @@ export const enA1U06: SkillExercise[] = [
       "Waiter: Of course. One moment, please.\n" +
       "Ali: How much is the soup?\n" +
       "Waiter: Five euros. The sandwich is four euros.\n" +
-      "Eda: Can I have the bill, please?\n" +
+      "Eda: Can I have the check, please?\n" +
       "Waiter: Yes. It is nine euros.\n" +
       "Ali: Here is the money. Thank you!",
     questions: [
@@ -124,7 +124,7 @@ export const enA1U06: SkillExercise[] = [
         explain: "„I'd like a soup, please. And a water.“ — sandviçi Eda alıyor.",
       },
       {
-        text: "How much is the bill?",
+        text: "How much is the check?",
         options: ["nine euros", "five euros", "four euros"],
         answer: 0,
         explain: "„It is nine euros.“ — beş euro çorba, dört euro sandviç; toplamı dokuz.",
@@ -153,7 +153,7 @@ export const enA1U06: SkillExercise[] = [
           "A table for two?",
           "What would you like?",
           "I'd like a soup, please.",
-          "Can I have the bill, please?",
+          "Can I have the check, please?",
         ],
         explain: "Restoranda sıra hep aynı: masa, sipariş, yemek, hesap.",
       },

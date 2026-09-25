@@ -157,7 +157,7 @@ export const enB2U25: SkillExercise[] = [
       { de: "easily", tr: "kolayca" },
       { de: "whole", tr: "bütün" },
       { de: "sentences", tr: "cümleler" },
-      { de: "an advert", tr: "ilan" },
+      { de: "an ad", tr: "ilan" },
       { de: "an accusation", tr: "suçlama" },
       { de: "a customer", tr: "müşteri" },
       { de: "refunded", tr: "parayı iade etti" },
@@ -174,7 +174,7 @@ export const enB2U25: SkillExercise[] = [
     ],
     minutes: 9,
     text:
-      "The advert must have been misleading. Four words of verb, and none of them is an accusation.\n" +
+      "The ad must have been misleading. Four words of verb, and none of them is an accusation.\n" +
       "„Must have been“ reads the evidence. Three customers wrote the same sentence in the same week without knowing each other, and one explanation survives that.\n" +
       "They can't have meant to deceive us. The negative, and note why the strong form is here: the evidence really is strong. The company corrected the page within a day and refunded without being asked.\n" +
       "We should have kept the proof of purchase. The third form, about us, and it is the only line in the letter anybody will remember, which is exactly why it goes in.\n" +
@@ -215,7 +215,7 @@ export const enB2U25: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "The advert must have been misleading.",
+          "The ad must have been misleading.",
           "They can't have meant to deceive us.",
           "We should have kept the proof of purchase.",
           "The request is for a credit note.",
@@ -443,7 +443,7 @@ export const enB2U25: SkillExercise[] = [
       {
         kind: "build",
         tr: "İlan yanıltıcı olmuş olmalı.",
-        answer: "The advert must have been misleading.",
+        answer: "The ad must have been misleading.",
         hint: "Çıkarım: kanıt tek bir açıklama bırakıyor.",
       },
       {
@@ -465,7 +465,7 @@ export const enB2U25: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 25,
-    title: "The advert must have been misleading",
+    title: "The ad must have been misleading",
     genre: "info",
     intro: "İki kip, iki koşul ve bir takvim.",
     gloss: [

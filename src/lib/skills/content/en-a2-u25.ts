@@ -42,8 +42,9 @@ export const enA2U25: SkillExercise[] = [
     genre: "letter",
     intro: "Üç haftalık bir şikâyet. Ne istendi, ne bekleniyor?",
     gloss: [
+      { de: "rubbish", tr: "çöp" },
       { de: "Dear Sir or Madam", tr: "sayın yetkili" },
-      { de: "Yours faithfully", tr: "saygılarımla" },
+      { de: "Sincerely", tr: "saygılarımla" },
       { de: "on the list", tr: "listede" },
       { de: "the twelfth", tr: "on ikisi" },
     ],
@@ -56,7 +57,7 @@ export const enA2U25: SkillExercise[] = [
       "I know the reason is not one person. But there is a list and our street is not on it.\n" +
       "Please put it on the list. I expect an answer within a week.\n" +
       "If you need a photo, I have eleven.\n" +
-      "Yours faithfully,\n" +
+      "Sincerely,\n" +
       "Nil Aslan",
     questions: [
       {
@@ -113,20 +114,20 @@ export const enA2U25: SkillExercise[] = [
     minutes: 6,
     text:
       "What the city does and when\n" +
-      "They collect the rubbish on Mondays and Thursdays. Paper is Monday only. You have to separate the paper from everything else — a bag with both is not collected and stays there until the next week.\n" +
+      "They collect the trash on Mondays and Thursdays. Paper is Monday only. You have to separate the paper from everything else — a bag with both is not collected and stays there until the next week.\n" +
       "They recycle glass at three points in this area: at the market, behind the school and next to the bakery. Glass is not collected from the houses.\n" +
       "Water and energy bills come four times a year. If you pay by card, they come by email. If you pay at the bank, they come on paper and two weeks later.\n" +
       "The tax office is open on Tuesday and Thursday until four, and on the first Saturday of the month until twelve. That Saturday is the quiet one — everybody comes on Tuesday.\n" +
-      "One number for everything: it is on the bin.",
+      "One number for everything: it is on the trash can.",
     questions: [
       {
         text: "When do they collect paper?",
         options: ["on Monday only", "on Thursday", "every day"],
         answer: 0,
-        explain: "„They collect the rubbish on Mondays and Thursdays. Paper is Monday only.“",
+        explain: "„They collect the trash on Mondays and Thursdays. Paper is Monday only.“",
       },
       {
-        text: "What happens to a bag with paper and rubbish together?",
+        text: "What happens to a bag with paper and trash together?",
         options: ["it is not collected", "it costs more", "it goes to the school"],
         answer: 0,
         explain: "„…a bag with both is not collected and stays there until the next week.“",
@@ -152,7 +153,7 @@ export const enA2U25: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "They collect the rubbish on Mondays and Thursdays.",
+          "They collect the trash on Mondays and Thursdays.",
           "They recycle glass at three points.",
           "The bills come four times a year.",
           "The tax office is open on Tuesday and Thursday.",
@@ -198,7 +199,7 @@ export const enA2U25: SkillExercise[] = [
       { speaker: "Mert", text: "I have the water bill from August." },
       { speaker: "Office", text: "That works. Not older than three months." },
       { speaker: "Mert", text: "And if I am late?" },
-      { speaker: "Office", text: "Then you come again. Arrive early — the queue at the entrance takes ten minutes." },
+      { speaker: "Office", text: "Then you come again. Arrive early — the line at the entrance takes ten minutes." },
       { speaker: "Mert", text: "So nine fifty." },
       { speaker: "Office", text: "Nine forty. The entrance and then the second door on the left." },
       { speaker: "Mert", text: "Nine forty. It is in my calendar." },
@@ -241,11 +242,11 @@ export const enA2U25: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "How long does the queue take?",
+        text: "How long does the line take?",
         options: [],
         answer: 0,
         accept: ["ten minutes", "10 minutes"],
-        explain: "„Arrive early — the queue at the entrance takes ten minutes.“",
+        explain: "„Arrive early — the line at the entrance takes ten minutes.“",
       },
     ],
   },
@@ -335,7 +336,7 @@ export const enA2U25: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 25,
-    title: "They collect the rubbish on Mondays",
+    title: "They collect the trash on Mondays",
     genre: "info",
     intro: "Kim toplar? Adı geçmiyor ama İngilizce yine de bir özne koyuyor.",
     gloss: [
@@ -349,7 +350,7 @@ export const enA2U25: SkillExercise[] = [
       {
         kind: "build",
         tr: "Çöpü pazartesileri topluyorlar.",
-        answer: "They collect the rubbish on Mondays.",
+        answer: "They collect the trash on Mondays.",
         hint: "Buradaki „they“ belirsiz: belediye. Türkçe edilgen kurardı, İngilizce özneyi boş bırakmıyor.",
       },
       {
@@ -361,7 +362,7 @@ export const enA2U25: SkillExercise[] = [
       {
         kind: "build",
         tr: "Çöpü ne sıklıkta topluyorlar?",
-        answer: "How often do they collect the rubbish?",
+        answer: "How often do they collect the trash?",
         hint: "Sıklık sorusu „how often“; soruda „do“ zorunlu.",
       },
       {
@@ -376,9 +377,9 @@ export const enA2U25: SkillExercise[] = [
         prompt: "Şikâyet formunu doldur.",
         facts: "Çöp toplanmıyor; Garden Street; on iki ağustostan beri; iki kez arandı.",
         fields: [
-          { label: "Problem", answer: "the rubbish", accept: ["rubbish"] },
+          { label: "Problem", answer: "the trash", accept: ["trash"] },
           { label: "Street", answer: "Garden Street", accept: ["Garden"] },
-          { label: "Since", answer: "the twelfth of August", accept: ["12 August", "August"] },
+          { label: "Since", answer: "the twelfth of August", accept: ["August 12", "August"] },
           { label: "Calls", answer: "two", accept: ["twice", "2"] },
         ],
       },

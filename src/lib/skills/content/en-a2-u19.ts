@@ -370,7 +370,7 @@ export const enA2U19: SkillExercise[] = [
         facts: "Yeni iş için tebrik; başlangıç bir ekim; cuma sınav var; bol şans dileniyor.",
         fields: [
           { label: "Congratulations", answer: "on your new job", accept: ["the new job"] },
-          { label: "Start", answer: "the first of October", accept: ["1 October", "October"] },
+          { label: "Start", answer: "the first of October", accept: ["October 1", "October"] },
           { label: "Exam", answer: "on Friday", accept: ["Friday"] },
           { label: "Wish", answer: "good luck", accept: ["luck"] },
         ],

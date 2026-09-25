@@ -246,6 +246,7 @@ export const enA2U05: SkillExercise[] = [
     genre: "monologue",
     intro: "Üç hedef anlatılıyor. Hangisi umut, hangisi hayal?",
     gloss: [
+      { de: "shop", tr: "dükkân" },
       { de: "career", tr: "kariyer" },
       { de: "goal", tr: "hedef" },
       { de: "success", tr: "başarı" },
@@ -377,6 +378,7 @@ export const enA2U05: SkillExercise[] = [
     genre: "personal",
     intro: "Umutları ve değişimi yaz. „anymore“ değişeni, „still“ değişmeyeni söylüyor.",
     gloss: [
+      { de: "shop", tr: "dükkân" },
       { de: "I hope to …", tr: "umarım …" },
       { de: "anymore", tr: "artık" },
       { de: "still", tr: "hâlâ" },

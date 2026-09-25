@@ -7,13 +7,13 @@ import type { SkillExercise } from "../types";
  * Dört ders: The vocabulary of cost · Reporting the books ·
  * How certain is the forecast · Thoroughly green.
  *
- *   Kelime: marginal cost, opportunity cost, follow-up costs, cost overrun,
+ *   Kelime: marginal cost, opportunity cost, follow-on costs, cost overrun,
  *           economy of scale, capital requirement, accounting fraud,
  *           embezzlement, gray area, pretext, feign, embezzle, investment
  *           cycle, savings rate, solvency, solvent, default risk, risk
  *           appetite, greenwashing, nepotism, false labeling, reputational risk.
  *   Kalıp:  A marginal cost is not an opportunity cost. ·
- *           Follow-up costs are estimated; a cost overrun is announced. ·
+ *           Follow-on costs are estimated; a cost overrun is announced. ·
  *           An economy of scale lowers the capital requirement. ·
  *           One alleges accounting fraud; another proves embezzlement. ·
  *           The gray area claims what the pretext assumes. ·
@@ -26,8 +26,8 @@ import type { SkillExercise } from "../types";
  *           False labeling, they said, and rather good against the reputational risk.
  *
  * Ünitenin tek öğretme noktası SAYILABİLİRLİK. „Cost“ sayılabiliyor ama
- * „follow-up costs“ kimsenin tekilini kullanmadığı bir çoğul: raporda
- * „a follow-up cost“ yazılmıyor, çoğul şeyin ADI olmuş. Asıl kural daha
+ * „follow-on costs“ kimsenin tekilini kullanmadığı bir çoğul: raporda
+ * „a follow-on cost“ yazılmıyor, çoğul şeyin ADI olmuş. Asıl kural daha
  * geniş: advice, information, evidence, research, equipment, machinery,
  * capital İngilizcede ne çoğul ne „a“ alıyor; Almancadaki karşılıkları ise
  * sorunsuz çoğul yapan sıradan sayılabilir isimler, üstelik adlandırdıkları
@@ -86,14 +86,14 @@ export const enC1U22: SkillExercise[] = [
     ],
     minutes: 12,
     text:
-      "A marginal cost is not an opportunity cost. Two nouns with an article in front of each, and one line later the same word turns up with no article and an ending on it: follow-up costs are estimated.\n" +
-      "That is not carelessness. „Cost“ can be counted, and „costs“ in that phrase is a plural with a singular nobody uses: nobody writes „a follow-up cost“ in a report, and the plural has become the name of the thing.\n" +
+      "A marginal cost is not an opportunity cost. Two nouns with an article in front of each, and one line later the same word turns up with no article and an ending on it: follow-on costs are estimated.\n" +
+      "That is not carelessness. „Cost“ can be counted, and „costs“ in that phrase is a plural with a singular nobody uses: nobody writes „a follow-on cost“ in a report, and the plural has become the name of the thing.\n" +
       "This is the part of English that a reader from German gets wrong for years without being corrected, because nothing in the error is ungrammatical enough to stop anybody.\n" +
       "The rule is not about the world. Advice, information, evidence, research, equipment, machinery and capital take no plural and no article in English. Their equivalents in German are ordinary countable nouns that make plurals without any trouble at all, and the things they name are the same things.\n" +
       "So countability is a decision the language made rather than a fact about advice. Nothing in the world says that a warning comes in pieces and a piece of advice does not.\n" +
       "Where English has to count one, it borrows a counter: a piece of advice, an item of equipment, a body of evidence, a line of research. German adds an ending instead, and a writer who carries that habit across produces „an advice“ and „informations“, both of which are heard on the page as a foreign accent rather than as a mistake somebody made.\n" +
       "An economy of scale lowers the capital requirement. „Capital“ has no plural here and „requirement“ has one, and no principle joins the two: they were assigned separately and they have to be learned separately.\n" +
-      "Follow-up costs are estimated; a cost overrun is announced. And the two halves show the last part of the rule. „Costs“ is a plural naming a category; „a cost overrun“ is a single countable event with a date on it. The same root, two shapes, and the shape is doing the work of a whole definition.",
+      "Follow-on costs are estimated; a cost overrun is announced. And the two halves show the last part of the rule. „Costs“ is a plural naming a category; „a cost overrun“ is a single countable event with a date on it. The same root, two shapes, and the shape is doing the work of a whole definition.",
     questions: [
       {
         text: "What has the plural become?",
@@ -116,11 +116,11 @@ export const enC1U22: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Follow-up costs are estimated; a cost overrun is ___.",
+        text: "Follow-on costs are estimated; a cost overrun is ___.",
         options: [],
         answer: 0,
         accept: ["announced"],
-        explain: "„Follow-up costs are estimated; a cost overrun is announced.“",
+        explain: "„Follow-on costs are estimated; a cost overrun is announced.“",
       },
       {
         kind: "order",
@@ -454,7 +454,7 @@ export const enC1U22: SkillExercise[] = [
       {
         kind: "build",
         tr: "Sonradan çıkan maliyetler tahmin edilir; maliyet aşımı ilan edilir.",
-        answer: "Follow-up costs are estimated; a cost overrun is announced.",
+        answer: "Follow-on costs are estimated; a cost overrun is announced.",
         hint: "Çoğul şeyin adı; öteki tarihi olan tek bir olay.",
       },
       {

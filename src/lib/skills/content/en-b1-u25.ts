@@ -322,7 +322,7 @@ export const enB1U25: SkillExercise[] = [
       { de: "neither", tr: "ikisi de değil" },
       { de: "sentence", tr: "cümle" },
       { de: "one step back", tr: "bir basamak geriye" },
-      { de: "marks", tr: "puan" },
+      { de: "points", tr: "puan" },
       { de: "flat", tr: "düz" },
       { de: "the word order", tr: "sözcük sırası" },
       { de: "argue", tr: "tartışmak" },
@@ -335,7 +335,7 @@ export const enB1U25: SkillExercise[] = [
     minutes: 6,
     segments: [
       { speaker: "Cemre", text: "She said the friendship was over. In the room she said „it is over“, and by the time I told anyone it had become „was“." },
-      { speaker: "Cemre", text: "That one step back is the whole of reported speech, and it costs people more marks than any other rule in this level." },
+      { speaker: "Cemre", text: "That one step back is the whole of reported speech, and it costs people more points than any other rule in this level." },
       { speaker: "Cemre", text: "He told me not to whisper about it. „Told me not to whisper“ — the „not“ sits in front of the infinitive and nowhere else." },
       { speaker: "Cemre", text: "They asked whether I had heard his voice. Not „did I hear“: a reported question goes flat, and „whether“ carries what the word order used to carry." },
       { speaker: "Cemre", text: "Loyal is a word I have stopped using. It sounds like a rule, and a friendship is not a rule; it is a hundred small hours." },

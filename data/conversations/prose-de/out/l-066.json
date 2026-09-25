@@ -120,7 +120,7 @@
  { "tr": "Müze demek. Vurgu ortada: mü-ZİİI-ım. Belirli bir müzeden söz ederken önüne the koyarız:", "kind": "say.tr", "de": "Heißt Museum. Betonung in der Mitte: mju-SII-em. Für ein bestimmtes Museum kommt the davor:" },
  { "tr": "Müzeyi gezebilir miyim? Do ya da does eklemene gerek yok, can kendi başına soruyu kurar.", "kind": "say.tr", "de": "Darf ich das Museum besuchen? Kein do oder does nötig, can baut die Frage allein." },
  { "tr": "Nasıl biri olduğunu söylerken ise is kullanıyorsun: She is quiet. İkisi bir arada olmaz.", "kind": "say.tr", "de": "Wie jemand ist, sagst du mit is: She is quiet. Beides zusammen geht nicht." },
- { "tr": "Özetleyelim: hesap 'bill', ödemek 'pay', nakit 'cash', kart 'card', birlikte 'together'.", "kind": "say.tr", "de": "Fassen wir zusammen: Rechnung 'bill', zahlen 'pay', bar 'cash', Karte 'card', zusammen 'together'." },
+ { "tr": "Özetleyelim: hesap 'check', ödemek 'pay', nakit 'cash', kart 'card', birlikte 'together'.", "kind": "say.tr", "de": "Fassen wir zusammen: Rechnung 'check', zahlen 'pay', bar 'cash', Karte 'card', zusammen 'together'." },
  { "tr": "Peki bir yerin gezmeye değer olduğunu nasıl söylersin? Anahtar kelime worth, yani değer.", "kind": "say.tr", "de": "Und wie sagst du, dass ein Ort einen Besuch wert ist? Das Schlüsselwort ist worth, der Wert." },
  { "tr": "rent a car. Bu, I would like'ın kısaltılmışı; istiyorum yerine rica ediyorum gibi düşün.", "kind": "say.tr", "de": "rent a car. Das ist die Kurzform von I would like; nicht ich will, eher ich bitte darum." },
  { "tr": "Sen tamir istiyorsun. 'Could you' ile kibarca sor: 'Onu tamir edebilir misiniz, lütfen?'", "kind": "say.tr", "de": "Du willst die Reparatur. Frag höflich mit 'Could you': 'Könnten Sie es bitte reparieren?'" },

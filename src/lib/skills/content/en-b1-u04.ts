@@ -53,7 +53,7 @@ export const enB1U04: SkillExercise[] = [
       "I had packed everything except the kitchen. I am going to unpack the kitchen first, I said at eight, and I believed it. At four in the afternoon the kitchen was still four boxes in the corridor and I was looking for a knife.\n" +
       "Two men carried the cupboard upstairs and stopped. It did not go through the door. They took the doors off the cupboard, carried it in two parts, and put it back together in the bedroom. Twenty minutes. They had done it before.\n" +
       "The fragile box was the one I carried myself. Six glasses from my grandmother, one towel between each. I will carry that one, I said at every step, and nobody argued.\n" +
-      "The meter reading is the thing everybody forgets. I took a photo of both meters at ten past nine, before the first box came in. Three weeks later the gas company sent a bill for the previous flat and the photo closed the question in one email.\n" +
+      "The meter reading is the thing everybody forgets. I took a photo of both meters at ten past nine, before the first box came in. Three weeks later the gas company sent a bill for the previous apartment and the photo closed the question in one email.\n" +
       "The last thing that went wrong was the address. Two streets in this city have almost the same name. The van driver knew. I did not.",
     questions: [
       {
@@ -116,6 +116,7 @@ export const enB1U04: SkillExercise[] = [
     genre: "dialogue",
     intro: "Üç kural değil, üç gerekçe. Hangisi neden var?",
     gloss: [
+      { de: "flat", tr: "daire" },
       { de: "columns", tr: "sütun" },
       { de: "fridge", tr: "buzdolabı" },
       { de: "lasted", tr: "sürdü" },
@@ -131,11 +132,11 @@ export const enB1U04: SkillExercise[] = [
       "Can: And guests?\n" +
       "Sena: You don't have to ask about guests. This is your flat too. Tell us if somebody stays three nights, because of the bathroom in the morning.\n" +
       "Can: And the chores?\n" +
-      "Sena: We should agree on a rota. The last one lasted four months and then it lived on the fridge as a picture.\n" +
+      "Sena: We should agree on a schedule. The last one lasted four months and then it lived on the fridge as a picture.\n" +
       "Can: Why did it stop working?\n" +
       "Sena: Because it had nine lines and nobody reads nine lines. The new one has three.\n" +
       "Can: Three chores?\n" +
-      "Sena: Three columns. Kitchen, bathroom, rubbish. Everything else is: if you see it, you do it.\n" +
+      "Sena: Three columns. Kitchen, bathroom, trash. Everything else is: if you see it, you do it.\n" +
       "Can: And if somebody does not?\n" +
       "Sena: Then we argue once, quietly, and we split the work again. We have argued twice in two years. Both times about the same cupboard.",
     questions: [
@@ -146,7 +147,7 @@ export const enB1U04: SkillExercise[] = [
         explain: "„You have to tidy the kitchen after cooking. Not the next morning — after.“",
       },
       {
-        text: "Why did the old rota stop working?",
+        text: "Why did the old schedule stop working?",
         options: ["it had nine lines", "nobody cooked", "it was on the fridge"],
         answer: 0,
         explain: "„Because it had nine lines and nobody reads nine lines. The new one has three.“",
@@ -160,11 +161,11 @@ export const enB1U04: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The new rota has ___ columns.",
+        text: "The new schedule has ___ columns.",
         options: [],
         answer: 0,
         accept: ["three", "3"],
-        explain: "„Three columns. Kitchen, bathroom, rubbish.“",
+        explain: "„Three columns. Kitchen, bathroom, trash.“",
       },
       {
         kind: "short_answer",
@@ -203,7 +204,7 @@ export const enB1U04: SkillExercise[] = [
       { speaker: "Mert", text: "Write it down. Every call, the date and what was said." },
       { speaker: "Nil", text: "I have. Four lines so far." },
       { speaker: "Mert", text: "Good. That list is the only thing that works after two weeks." },
-      { speaker: "Nil", text: "He asked if the boiler was old. I said it was in the flat before me and before the person before me." },
+      { speaker: "Nil", text: "He asked if the boiler was old. I said it was in the apartment before me and before the person before me." },
       { speaker: "Mert", text: "Then it is old." },
       { speaker: "Nil", text: "There is also damp in the corner of the bathroom now. Probably not the boiler." },
       { speaker: "Mert", text: "Probably the same leak. Send both in one email and ask for a date, not a promise." },
@@ -395,7 +396,7 @@ export const enB1U04: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     unit: 4,
-    title: "We should agree on a rota",
+    title: "We should agree on a schedule",
     genre: "personal",
     intro: "Ev kuralları ve aktarılan sözler. Hangi fiil kişiyi doğrudan alıyor?",
     gloss: [
@@ -421,7 +422,7 @@ export const enB1U04: SkillExercise[] = [
       {
         kind: "build",
         tr: "Bir çizelgede anlaşmalıyız.",
-        answer: "We should agree on a rota.",
+        answer: "We should agree on a schedule.",
         hint: "„agree“ konuda „on“ alıyor; kişide „with“ alırdı.",
       },
       {

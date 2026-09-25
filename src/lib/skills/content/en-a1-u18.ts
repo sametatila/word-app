@@ -34,6 +34,7 @@ export const enA1U18: SkillExercise[] = [
     genre: "personal",
     intro: "Bahçe ve balkon anlatılıyor. Ne var, ne bozuk?",
     gloss: [
+      { de: "tap", tr: "musluk" },
       { de: "summer", tr: "yaz" },
       { de: "balcony", tr: "balkon" },
       { de: "ball", tr: "top" },
@@ -43,7 +44,7 @@ export const enA1U18: SkillExercise[] = [
     text:
       "We have a small garden behind the house. There is a tree and there are many flowers.\n\n" +
       "In the sun the flowers are beautiful, but the ground is dry. I water the plants every morning. My neighbor has a field outside the city — that is a big garden!\n\n" +
-      "On the balcony there are two chairs and a table. In the summer we eat outside. My son plays football in the garden, and sometimes the ball goes over the wall.\n\n" +
+      "On the balcony there are two chairs and a table. In the summer we eat outside. My son plays soccer in the garden, and sometimes the ball goes over the wall.\n\n" +
       "Is there a tap in the garden? Yes, next to the door. But the tap is broken — it doesn't work. I call a man on Monday.",
     questions: [
       {
@@ -93,6 +94,7 @@ export const enA1U18: SkillExercise[] = [
     genre: "dialogue",
     intro: "Arıza bildiriliyor. Hangi arıza kimin işi?",
     gloss: [
+      { de: "tap", tr: "musluk" },
       { de: "hall", tr: "koridor" },
       { de: "What is wrong?", tr: "sorun ne" },
       { de: "of course", tr: "tabii ki" },
@@ -105,8 +107,8 @@ export const enA1U18: SkillExercise[] = [
       "Office: Only the tap? Is the water in the bathroom good?\n" +
       "Ela: Yes, the bathroom is fine. But there is water on the floor.\n" +
       "Office: I understand. Can you call me this afternoon?\n" +
-      "Ela: Of course. And one more thing: the printer in the cellar doesn't work either.\n" +
-      "Office: The printer is not our problem. Call the shop.\n" +
+      "Ela: Of course. And one more thing: the printer in the basement doesn't work either.\n" +
+      "Office: The printer is not our problem. Call the store.\n" +
       "Ela: And the telephone in the hall?\n" +
       "Office: Is it broken too? Then we come on Wednesday.\n" +
       "Ela: Can you fix the tap today? The water is everywhere!\n" +
@@ -120,9 +122,9 @@ export const enA1U18: SkillExercise[] = [
       },
       {
         text: "Who fixes the printer?",
-        options: ["the shop", "the office", "nobody"],
+        options: ["the store", "the office", "nobody"],
         answer: 0,
-        explain: "„The printer is not our problem. Call the shop.“",
+        explain: "„The printer is not our problem. Call the store.“",
       },
       {
         kind: "truefalse",
@@ -146,7 +148,7 @@ export const enA1U18: SkillExercise[] = [
         answer: 0,
         items: [
           "The tap in the kitchen is broken.",
-          "the printer in the cellar doesn't work either",
+          "the printer in the basement doesn't work either",
           "And the telephone in the hall?",
           "Can you fix the tap today?",
         ],
@@ -190,7 +192,7 @@ export const enA1U18: SkillExercise[] = [
       { speaker: "Can", text: "Videos! Do you like collecting things?" },
       { speaker: "Nil", text: "Yes, very much. I have two hundred videos." },
       { speaker: "Can", text: "Two hundred! Where do you put them?" },
-      { speaker: "Nil", text: "In the cellar. My apartment is small." },
+      { speaker: "Nil", text: "In the basement. My apartment is small." },
       { speaker: "Can", text: "Then come to my garden. There is a lot of sun and you can draw there." },
     ],
     questions: [
@@ -234,8 +236,8 @@ export const enA1U18: SkillExercise[] = [
         text: "Where does Nil put the videos?",
         options: [],
         answer: 0,
-        accept: ["in the cellar", "the cellar", "cellar"],
-        explain: "„In the cellar. My apartment is small.“",
+        accept: ["in the basement", "the basement", "basement"],
+        explain: "„In the basement. My apartment is small.“",
       },
     ],
   },
@@ -249,6 +251,7 @@ export const enA1U18: SkillExercise[] = [
     genre: "monologue",
     intro: "Ali sporlarını anlatıyor. Hangi spor „play“ ile, hangisi „go“ ile geliyor?",
     gloss: [
+      { de: "football", tr: "futbol" },
       { de: "summer", tr: "yaz" },
       { de: "winter", tr: "kış" },
       { de: "go swimming", tr: "yüzmeye gitmek" },
@@ -362,7 +365,7 @@ export const enA1U18: SkillExercise[] = [
         facts: "Mutfak musluğu; bozuk; yerde su var; bugün tamir.",
         fields: [
           { label: "Room", answer: "kitchen", accept: ["the kitchen"] },
-          { label: "Problem", answer: "tap", accept: ["the tap", "broken tap"] },
+          { label: "Problem", answer: "faucet", accept: ["the faucet", "broken faucet"] },
           { label: "Water", answer: "on the floor", accept: ["floor"] },
           { label: "Fix", answer: "today" },
         ],
@@ -379,6 +382,7 @@ export const enA1U18: SkillExercise[] = [
     genre: "personal",
     intro: "Hobi ve spor yaz. Top oyunları „play“ ile, tek başına yapılanlar „go“ + „-ing“ ile geliyor.",
     gloss: [
+      { de: "football", tr: "futbol" },
       { de: "I enjoy painting.", tr: "resim yapmaktan keyif alıyorum" },
       { de: "I play football.", tr: "futbol oynuyorum" },
       { de: "I go swimming.", tr: "yüzmeye gidiyorum" },

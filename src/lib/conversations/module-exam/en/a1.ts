@@ -54,7 +54,7 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
       { de: "I can ask someone their name and where they are from.", tr: "Birine adını ve nereli olduğunu sorabiliyorum.", en: "I can ask someone their name and where they are from." },
       { de: "I can ask a yes-no question with am, is and are.", tr: "am, is, are ile evet-hayır sorusu sorabiliyorum.", en: "I can ask a yes-no question with am, is and are." },
       { de: "I can give my phone number and my age.", tr: "Telefon numaramı ve yaşımı söyleyebiliyorum.", en: "I can give my phone number and my age." },
-      { de: "I can spell my name and fill in a form.", tr: "Adımı harf harf söyleyip bir formu doldurabiliyorum.", en: "I can spell my name and fill in a form." },
+      { de: "I can spell my name and fill out a form.", tr: "Adımı harf harf söyleyip bir formu doldurabiliyorum.", en: "I can spell my name and fill out a form." },
     ],
     listening: {
       title: "The first day of class",
@@ -64,15 +64,15 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Marco", de: "Hello! I'm Marco. What's your name?", tr: "Merhaba! Ben Marco. Adın ne?" },
         { speaker: "Elif", de: "My name is Elif. I'm very happy to meet you!", tr: "Benim adım Elif. Tanıştığımıza çok sevindim!" },
         { speaker: "Marco", de: "Where are you from, Elif?", tr: "Nerelisin Elif?" },
-        { speaker: "Elif", de: "I'm from Turkey. Now I live in Manchester.", tr: "Türkiyeliyim. Şimdi Manchester'da oturuyorum." },
+        { speaker: "Elif", de: "I'm from Turkey. Now I live in Boston.", tr: "Türkiyeliyim. Şimdi Boston'da oturuyorum." },
         { speaker: "Marco", de: "Do you speak English?", tr: "İngilizce konuşuyor musun?" },
         { speaker: "Elif", de: "I speak a little English. I'm a teacher and I work in a school.", tr: "Biraz İngilizce konuşuyorum. Öğretmenim ve bir okulda çalışıyorum." },
         { speaker: "Marco", de: "How do you spell your name?", tr: "Adın nasıl yazılıyor?" },
         { speaker: "Elif", de: "E-L-I-F. And I'm twenty-eight years old.", tr: "E-L-I-F. Bir de yirmi sekiz yaşındayım." },
       ],
       questions: [
-        { de: "Where is Elif from?", tr: "Elif nereli?", options: ["From Italy", "From Turkey", "From England", "From Manchester"], answer: 1 },
-        { de: "Which city is Elif in now?", tr: "Elif şimdi hangi şehirde?", options: ["In Izmir", "In London", "In Manchester", "In Turkey"], answer: 2 },
+        { de: "Where is Elif from?", tr: "Elif nereli?", options: ["From Italy", "From Turkey", "From America", "From Boston"], answer: 1 },
+        { de: "Which city is Elif in now?", tr: "Elif şimdi hangi şehirde?", options: ["In Izmir", "In London", "In Boston", "In Turkey"], answer: 2 },
         { de: "How old is Elif?", tr: "Elif kaç yaşında?", options: ["Eighteen", "Twenty", "Twenty-five", "Twenty-eight"], answer: 3 },
       ],
     },
@@ -80,10 +80,10 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
       title: "Language school – new student",
       titleTr: "Kayıt formu",
       genre: "Form",
-      text: "Language school – new student\n\nFirst name: Elif\nLast name: Yilmaz\nAge: 28\nCountry: Turkey\nCity: Manchester\nAddress: 12 Green Road\nPostcode: M1 4BT\nPhone number: 0161 496 0311\nEmail address: elif.y@mail.com\nWork: teacher\nBirthday: in May",
+      text: "Language school – new student\n\nFirst name: Elif\nLast name: Yilmaz\nAge: 28\nCountry: Turkey\nCity: Boston\nAddress: 12 Green Street\nZIP code: 02108\nPhone number: 617 555 0143\nEmail address: elif.y@mail.com\nWork: teacher\nBirthday: in May",
       questions: [
-        { de: "What is the last name?", tr: "Soyadı ne?", options: ["Elif", "Yilmaz", "Manchester", "Teacher"], answer: 1 },
-        { de: "What is the zip code?", tr: "Posta kodu ne?", options: ["M1 4BT", "0161 496 0311", "12 Green Road", "28"], answer: 0 },
+        { de: "What is the last name?", tr: "Soyadı ne?", options: ["Elif", "Yilmaz", "Boston", "Teacher"], answer: 1 },
+        { de: "What is the zip code?", tr: "Posta kodu ne?", options: ["02108", "617 555 0143", "12 Green Street", "28"], answer: 0 },
       ],
     },
     speaking: [
@@ -107,7 +107,7 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
         { de: "I'm a … .", tr: "Mesleğim …", en: "I'm a … ." },
       ],
       sample:
-        "Hello! My name is Elif Yilmaz. I'm from Turkey, from Izmir. Now I live in Manchester. I'm twenty-eight years old. I'm a teacher and I work in a school. I speak a little English. My birthday is in May. How old are you?",
+        "Hello! My name is Elif Yilmaz. I'm from Turkey, from Izmir. Now I live in Boston. I'm twenty-eight years old. I'm a teacher and I work in a school. I speak a little English. My birthday is in May. How old are you?",
     },
   },
 
@@ -140,48 +140,48 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Lena", de: "And who is the girl here?", tr: "Peki buradaki kız kim?" },
         { speaker: "Ahmet", de: "That's my sister Ayse. She is twenty years old.", tr: "O benim kız kardeşim Ayşe. Yirmi yaşında." },
         { speaker: "Lena", de: "What does she look like?", tr: "Görünüşü nasıl?" },
-        { speaker: "Ahmet", de: "She is tall and she has got long hair.", tr: "Uzun boylu ve uzun saçlı." },
-        { speaker: "Lena", de: "Have you got a brother too?", tr: "Erkek kardeşin de var mı?" },
-        { speaker: "Ahmet", de: "No, I haven't got a brother. But we have a dog!", tr: "Hayır, erkek kardeşim yok. Ama bir köpeğimiz var!" },
+        { speaker: "Ahmet", de: "She is tall and she has long hair.", tr: "Uzun boylu ve uzun saçlı." },
+        { speaker: "Lena", de: "Do you have a brother too?", tr: "Erkek kardeşin de var mı?" },
+        { speaker: "Ahmet", de: "No, I don't have a brother. But we have a dog!", tr: "Hayır, erkek kardeşim yok. Ama bir köpeğimiz var!" },
       ],
       questions: [
         { de: "Who is in the photo?", tr: "Fotoğrafta kim var?", options: ["Ahmet's family", "Lena's parents", "Ahmet's friends", "Ahmet's club"], answer: 0 },
         { de: "How old is Ayse?", tr: "Ayşe kaç yaşında?", options: ["Ten", "Twelve", "Twenty", "Thirty"], answer: 2 },
-        { de: "Has Ahmet got a brother?", tr: "Ahmet'in erkek kardeşi var mı?", options: ["Yes, one", "Yes, two", "No, he hasn't", "No, but two sisters"], answer: 2 },
+        { de: "Does Ahmet have a brother?", tr: "Ahmet'in erkek kardeşi var mı?", options: ["Yes, one", "Yes, two", "No, he doesn't", "No, but two sisters"], answer: 2 },
       ],
     },
     reading: {
       title: "A message from Nuray",
       titleTr: "Bir davet mesajı",
       genre: "Mesaj",
-      text: "Hi Maria,\n\nOn Saturday my family is together. My grandma is eighty — it is her birthday! My aunt has a cake for her and my brother is here too. We are a big family — twenty people! Are you free on Saturday? My cousin is here too. She is very kind and she has got two children.\n\nSee you\nNuray",
+      text: "Hi Maria,\n\nOn Saturday my family is together. My grandma is eighty — it is her birthday! My aunt has a cake for her and my brother is here too. We are a big family — twenty people! Are you free on Saturday? My cousin is here too. She is very kind and she has two children.\n\nSee you\nNuray",
       questions: [
         { de: "How old is the grandma?", tr: "Büyükanne kaç yaşında?", options: ["Eighteen", "Twenty", "Eighty", "Two"], answer: 2 },
         { de: "Who has the cake?", tr: "Pasta kimde?", options: ["The mother", "The brother", "The aunt", "Maria"], answer: 2 },
       ],
     },
     speaking: [
-      { situation: "Arkadaşına kardeşlerinden bahsediyorsun.", de: "I have got a brother, but I haven't got a sister.", tr: "Bir erkek kardeşim var ama kız kardeşim yok." },
-      { situation: "Fotoğraftaki kişiyi tarif ediyorsun.", de: "This is my aunt. She is tall and she has got gray hair.", tr: "Bu benim teyzem. Uzun boylu ve saçları gri." },
+      { situation: "Arkadaşına kardeşlerinden bahsediyorsun.", de: "I have a brother, but I don't have a sister.", tr: "Bir erkek kardeşim var ama kız kardeşim yok." },
+      { situation: "Fotoğraftaki kişiyi tarif ediyorsun.", de: "This is my aunt. She is tall and she has gray hair.", tr: "Bu benim teyzem. Uzun boylu ve saçları gri." },
     ],
     writing: {
       prompt: "Ailenden bahseden kısa bir metin yaz.",
       checklist: [
         "En az üç aile üyesini yaz",
         "„my / his / her“ ile iyelik kullan",
-        "Bir olumsuz cümle kur („I haven't got …“)",
+        "Bir olumsuz cümle kur („I don't have …“)",
         "Bir kişiyi kısaca tarif et",
       ],
       minWords: 35,
       phrases: [
         { de: "This is my …", tr: "Bu benim …", en: "This is my …" },
-        { de: "I have got a …", tr: "Bir …'im var", en: "I have got a …" },
-        { de: "I haven't got a …", tr: "…'im yok", en: "I haven't got a …" },
+        { de: "I have a …", tr: "Bir …'im var", en: "I have a …" },
+        { de: "I don't have a …", tr: "…'im yok", en: "I don't have a …" },
         { de: "He / She is … years old.", tr: "O … yaşında.", en: "He / She is … years old." },
         { de: "She works at …", tr: "… şirketinde/yerinde çalışıyor", en: "She works at …" },
       ],
       sample:
-        "There are four people in my family. These are my parents: my father's name is Kemal and my mother's name is Sevgi. My father is a teacher and my mother works in a club. I've got a sister. Her name is Ayse and she is twenty years old. She is tall and she has got long hair. She is very kind. I haven't got a brother. But we have a dog too.",
+        "There are four people in my family. These are my parents: my father's name is Kemal and my mother's name is Sevgi. My father is a teacher and my mother works in a club. I have a sister. Her name is Ayse and she is twenty years old. She is tall and she has long hair. She is very kind. I don't have a brother. But we have a dog too.",
     },
   },
 
@@ -200,7 +200,7 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
     canDo: [
       { de: "I can order in a café and in a restaurant.", tr: "Kafede ve restoranda sipariş verebiliyorum.", en: "I can order in a café and in a restaurant." },
       { de: "I can say what I like to eat and drink.", tr: "Ne yiyip içmeyi sevdiğimi söyleyebiliyorum.", en: "I can say what I like to eat and drink." },
-      { de: "I can ask the price and pay the bill.", tr: "Fiyatı sorup hesabı ödeyebiliyorum.", en: "I can ask the price and pay the bill." },
+      { de: "I can ask the price and pay the check.", tr: "Fiyatı sorup hesabı ödeyebiliyorum.", en: "I can ask the price and pay the check." },
       { de: "I can ask for a kilo, a bottle or a piece of something.", tr: "Bir kilo, bir şişe, bir dilim isteyebiliyorum.", en: "I can ask for a kilo, a bottle or a piece of something." },
       { de: "I can say what I don't eat.", tr: "Neyi yemediğimi söyleyebiliyorum.", en: "I can say what I don't eat." },
     ],
@@ -216,7 +216,7 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Waiter", de: "Would you like some water or juice?", tr: "Su ya da meyve suyu ister misiniz?" },
         { speaker: "Customer", de: "A bottle of water, please. How much is it?", tr: "Bir şişe su lütfen. Ne kadar?" },
         { speaker: "Waiter", de: "The soup is four, the rice is eight and the water is two.", tr: "Çorba dört, pilav sekiz, su iki." },
-        { speaker: "Customer", de: "Good. Can I have the bill, please? Can I pay by card?", tr: "Güzel. Hesabı alabilir miyim? Kartla ödeyebilir miyim?" },
+        { speaker: "Customer", de: "Good. Can I have the check, please? Can I pay by card?", tr: "Güzel. Hesabı alabilir miyim? Kartla ödeyebilir miyim?" },
       ],
       questions: [
         { de: "What does the person eat first?", tr: "Kişi önce ne yiyor?", options: ["The rice", "The soup", "Bread", "Cheese"], answer: 1 },
@@ -352,17 +352,17 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
       { de: "I can choose a present.", tr: "Hediye seçebiliyorum.", en: "I can choose a present." },
     ],
     listening: {
-      title: "In the shop",
+      title: "At the store",
       titleTr: "Mağazada",
       situation: "Bir müşteri mağazada giysilere bakıyor.",
       turns: [
-        { speaker: "Shop assistant", de: "Good afternoon, can I help you?", tr: "İyi günler, yardımcı olabilir miyim?" },
+        { speaker: "Clerk", de: "Good afternoon, can I help you?", tr: "İyi günler, yardımcı olabilir miyim?" },
         { speaker: "Customer", de: "Yes, I'm looking for a blue jacket.", tr: "Evet, mavi bir ceket arıyorum." },
-        { speaker: "Shop assistant", de: "What size are you?", tr: "Bedeniniz kaç?" },
+        { speaker: "Clerk", de: "What size are you?", tr: "Bedeniniz kaç?" },
         { speaker: "Customer", de: "Size twelve. Can I try it on?", tr: "On iki beden. Deneyebilir miyim?" },
-        { speaker: "Shop assistant", de: "Yes, the fitting room is there.", tr: "Tabii, kabin şurada." },
+        { speaker: "Clerk", de: "Yes, the fitting room is there.", tr: "Tabii, kabin şurada." },
         { speaker: "Customer", de: "I like the jacket, but it is too small. Do you have it in size fourteen?", tr: "Ceket hoşuma gitti ama küçük geldi. On dört beden var mı?" },
-        { speaker: "Shop assistant", de: "Yes, and this jacket is cheap — only twenty.", tr: "Var, ayrıca bu ceket ucuz — yalnızca yirmi." },
+        { speaker: "Clerk", de: "Yes, and this jacket is cheap — only twenty.", tr: "Var, ayrıca bu ceket ucuz — yalnızca yirmi." },
       ],
       questions: [
         { de: "What is the person looking for?", tr: "Kişi ne arıyor?", options: ["A shirt", "A jacket", "A sweater", "Shoes"], answer: 1 },
@@ -429,19 +429,19 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
       titleTr: "Danışma gişesinde",
       situation: "Bir yolcu tren bilgisi soruyor.",
       turns: [
-        { speaker: "Passenger", de: "Excuse me, when does the train to London leave?", tr: "Affedersiniz, Londra treni ne zaman kalkıyor?" },
+        { speaker: "Passenger", de: "Excuse me, when does the train to New York leave?", tr: "Affedersiniz, New York treni ne zaman kalkıyor?" },
         { speaker: "Clerk", de: "At ten, from platform three.", tr: "Onda, üç numaralı perondan." },
         { speaker: "Passenger", de: "Is the train late today?", tr: "Tren bugün rötarlı mı?" },
         { speaker: "Clerk", de: "No, the train is not late. It is on time.", tr: "Hayır, tren rötarlı değil. Zamanında." },
-        { speaker: "Passenger", de: "Good. How much is a ticket to London?", tr: "Güzel. Londra'ya bilet kaç para?" },
-        { speaker: "Clerk", de: "Single or return?", tr: "Tek yön mü gidiş dönüş mü?" },
-        { speaker: "Passenger", de: "A return ticket, please. And where is the platform?", tr: "Gidiş dönüş lütfen. Peron nerede?" },
+        { speaker: "Passenger", de: "Good. How much is a ticket to New York?", tr: "Güzel. New York'a bilet kaç para?" },
+        { speaker: "Clerk", de: "One-way or round-trip?", tr: "Tek yön mü gidiş dönüş mü?" },
+        { speaker: "Passenger", de: "A round-trip ticket, please. And where is the platform?", tr: "Gidiş dönüş lütfen. Peron nerede?" },
         { speaker: "Clerk", de: "90. Go straight ahead, then turn left.", tr: "90. Dümdüz gidin, sonra sola dönün." },
       ],
       questions: [
         { de: "Which platform does the train leave from?", tr: "Tren hangi perondan kalkıyor?", options: ["Platform one", "Platform two", "Platform three", "Platform ten"], answer: 2 },
         { de: "Is the train late?", tr: "Tren rötarlı mı?", options: ["Yes, an hour", "Yes, a little", "No, it is not late", "The clerk does not say"], answer: 2 },
-        { de: "How much is a return ticket?", tr: "Gidiş dönüş bilet kaç para?", options: ["90", "48", "20", "10"], answer: 0 },
+        { de: "How much is a round-trip ticket?", tr: "Gidiş dönüş bilet kaç para?", options: ["90", "48", "20", "10"], answer: 0 },
       ],
     },
     reading: {
@@ -456,7 +456,7 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
     },
     speaking: [
       { situation: "Yoldan geçen birine yol soruyorsun.", de: "Excuse me, where is the train station? Is it far from here?", tr: "Affedersiniz, gar nerede? Buradan uzak mı?" },
-      { situation: "Gişede bilet alıyorsun.", de: "I'd like a ticket to London, please. A return ticket.", tr: "Londra'ya bir bilet istiyorum lütfen. Gidiş dönüş." },
+      { situation: "Gişede bilet alıyorsun.", de: "I'd like a ticket to New York, please. A round-trip ticket.", tr: "New York'a bir bilet istiyorum lütfen. Gidiş dönüş." },
     ],
     writing: {
       prompt: "Seni ziyaret edecek bir arkadaşına evine nasıl geleceğini yazan bir mesaj yaz.",
@@ -515,22 +515,22 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
       questions: [
         { de: "How many rooms are there in the apartment?", tr: "Dairede kaç oda var?", options: ["One room", "Two rooms", "Three rooms", "Four rooms"], answer: 1 },
         { de: "What is there in the garden?", tr: "Bahçede ne var?", options: ["Two trees", "A table and chairs", "A dog", "Flowers"], answer: 0 },
-        { de: "What is broken?", tr: "Ne bozuk?", options: ["The window", "The lamp in the kitchen", "The tap", "The lift"], answer: 1 },
+        { de: "What is broken?", tr: "Ne bozuk?", options: ["The window", "The lamp in the kitchen", "The faucet", "The elevator"], answer: 1 },
       ],
     },
     reading: {
       title: "Apartment for rent",
       titleTr: "Kiralık daire ilanı",
       genre: "İlan",
-      text: "Apartment for rent\n\n2 rooms, kitchen, bathroom\nFirst floor, with a garden, very quiet\nRent: 620 every month\nWater and electricity: 140\nFree from 1 May\n\nThe neighbors are friendly.\nNo animals, please.\nPhone number: 0176 22 33 44",
+      text: "Apartment for rent\n\n2 rooms, kitchen, bathroom\nFirst floor, with a garden, very quiet\nRent: 620 every month\nWater and electricity: 140\nFree from May 1\n\nThe neighbors are friendly.\nNo animals, please.\nPhone number: 0176 22 33 44",
       questions: [
-        { de: "How much is the rent every month?", tr: "Kira ayda ne kadar?", options: ["140", "620", "760", "1 May"], answer: 1 },
+        { de: "How much is the rent every month?", tr: "Kira ayda ne kadar?", options: ["140", "620", "760", "May 1"], answer: 1 },
         { de: "What is not allowed in the apartment?", tr: "Dairede neye izin yok?", options: ["Children", "Animals", "Friends", "Music"], answer: 1 },
       ],
     },
     speaking: [
       { situation: "Yeni komşuna kendini tanıtıyorsun.", de: "Good afternoon, we are new here. We live on the third floor.", tr: "İyi günler, buraya yeni taşındık. Üçüncü katta oturuyoruz." },
-      { situation: "Ev sahibine arıza bildiriyorsun.", de: "The tap in the bathroom is broken. Can you fix it?", tr: "Banyodaki musluk bozuk. Onarabilir misiniz?" },
+      { situation: "Ev sahibine arıza bildiriyorsun.", de: "The faucet in the bathroom is broken. Can you fix it?", tr: "Banyodaki musluk bozuk. Onarabilir misiniz?" },
     ],
     writing: {
       prompt: "Yeni evini bir arkadaşına anlatan kısa bir mesaj yaz.",
@@ -562,7 +562,7 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
     focus: [
       { de: "like / love + -ing", tr: "hobi anlatmak: I like swimming" },
       { de: "can / can't", tr: "yapabilmek ve yapamamak" },
-      { de: "Shall we …? / Would you like to …?", tr: "davet etmek" },
+      { de: "Do you want to …? / Would you like to …?", tr: "davet etmek" },
       { de: "Present continuous", tr: "şu an olan: it's raining" },
     ],
     canDo: [
@@ -573,12 +573,12 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
       { de: "I can talk about the weather.", tr: "Hava durumundan konuşabiliyorum.", en: "I can talk about the weather." },
     ],
     listening: {
-      title: "Shall we go to the cinema?",
+      title: "Do you want to go to the movies?",
       titleTr: "Sinemaya gidelim mi?",
       situation: "İki arkadaş hafta sonu için plan yapıyor.",
       turns: [
-        { speaker: "Lea", de: "Hi Ben! Would you like to go to the cinema on Friday?", tr: "Merhaba Ben! Cuma sinemaya gitmek ister misin?" },
-        { speaker: "Ben", de: "I'm afraid I can't on Friday. I play football with my team.", tr: "Cuma maalesef olmaz. Takımımla futbol oynuyorum." },
+        { speaker: "Lea", de: "Hi Ben! Would you like to go to the movies on Friday?", tr: "Merhaba Ben! Cuma sinemaya gitmek ister misin?" },
+        { speaker: "Ben", de: "I'm afraid I can't on Friday. I play soccer with my team.", tr: "Cuma maalesef olmaz. Takımımla futbol oynuyorum." },
         { speaker: "Lea", de: "Maybe next time? What about Saturday?", tr: "Belki başka zaman? Cumartesi nasıl?" },
         { speaker: "Ben", de: "On Saturday I'm free. What movie is it?", tr: "Cumartesi boşum. Hangi film?" },
         { speaker: "Lea", de: "A movie with a great story. It starts at eight.", tr: "Güzel hikâyesi olan bir film. Sekizde başlıyor." },
@@ -586,9 +586,9 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Lea", de: "Perfect. I'm going to buy the tickets.", tr: "Harika. Biletleri ben alacağım." },
       ],
       questions: [
-        { de: "Why can't Ben come on Friday?", tr: "Ben cuma neden gelemiyor?", options: ["He is busy at work", "He plays football", "He is ill", "He doesn't like movies"], answer: 1 },
+        { de: "Why can't Ben come on Friday?", tr: "Ben cuma neden gelemiyor?", options: ["He is busy at work", "He plays soccer", "He is sick", "He doesn't like movies"], answer: 1 },
         { de: "What time does the movie start?", tr: "Film saat kaçta başlıyor?", options: ["At seven", "At eight", "At nine", "At ten"], answer: 1 },
-        { de: "What is Lea going to do?", tr: "Lea ne yapacak?", options: ["Buy the tickets", "Play football", "Watch television", "Meet the team"], answer: 0 },
+        { de: "What is Lea going to do?", tr: "Lea ne yapacak?", options: ["Buy the tickets", "Play soccer", "Watch television", "Meet the team"], answer: 0 },
       ],
     },
     reading: {
@@ -598,7 +598,7 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
       text: "Park day on Sunday\n\n11 o'clock: music with a band on the grass\n1 o'clock: sport and games for the children\n3 o'clock: swim in the lake\n5 o'clock: a movie in the park\n\nThe tickets are free.\nWhen it rains, there is no park day.",
       questions: [
         { de: "How much are the tickets?", tr: "Biletler kaç para?", options: ["Five", "Ten", "They are free", "Only the children pay"], answer: 2 },
-        { de: "Is there a park day when it rains?", tr: "Yağmur yağarsa park günü oluyor mu?", options: ["Yes, in the cinema", "Yes, but later", "No, there is no park day", "Yes, at the pool"], answer: 2 },
+        { de: "Is there a park day when it rains?", tr: "Yağmur yağarsa park günü oluyor mu?", options: ["Yes, at the movies", "Yes, but later", "No, there is no park day", "Yes, at the pool"], answer: 2 },
       ],
     },
     speaking: [
@@ -641,8 +641,8 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
     canDo: [
       { de: "I can say what hurts.", tr: "Neremin ağrıdığını söyleyebiliyorum.", en: "I can say what hurts." },
       { de: "I can make an appointment at the doctor's.", tr: "Doktordan randevu alabiliyorum.", en: "I can make an appointment at the doctor's." },
-      { de: "I can ask for a medicine at the chemist's.", tr: "Eczanede ilaç sorabiliyorum.", en: "I can ask for a medicine at the chemist's." },
-      { de: "I can phone work and say that I am ill.", tr: "İşe telefon edip hasta olduğumu bildirebiliyorum.", en: "I can phone work and say that I am ill." },
+      { de: "I can ask for a medicine at the pharmacy.", tr: "Eczanede ilaç sorabiliyorum.", en: "I can ask for a medicine at the pharmacy." },
+      { de: "I can phone work and say that I am sick.", tr: "İşe telefon edip hasta olduğumu bildirebiliyorum.", en: "I can phone work and say that I am sick." },
       { de: "I can give someone advice.", tr: "Birine öğüt verebiliyorum.", en: "I can give someone advice." },
     ],
     listening: {
@@ -688,14 +688,14 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
       ],
       minWords: 30,
       phrases: [
-        { de: "I'm ill.", tr: "Hastayım.", en: "I'm ill." },
+        { de: "I'm sick.", tr: "Hastayım.", en: "I'm sick." },
         { de: "I can't come to work today.", tr: "Bugün işe gelemiyorum.", en: "I can't come to work today." },
         { de: "I have a headache.", tr: "Başım ağrıyor.", en: "I have a headache." },
         { de: "I must go to the doctor.", tr: "Doktora gitmem gerekiyor.", en: "I must go to the doctor." },
         { de: "I'll be better tomorrow.", tr: "Yarın daha iyi olacağım.", en: "I'll be better tomorrow." },
       ],
       sample:
-        "Dear Mrs. Clark,\n\nI am ill and I can't come to work today. I have a headache and my tooth hurts. I must go to the doctor at four o'clock — I have an appointment. Then I am going to sleep. I think I'll be better tomorrow. I'm going to call you in the evening.\n\nThank you very much\nAli Kaya",
+        "Dear Mrs. Clark,\n\nI am sick and I can't come to work today. I have a headache and my tooth hurts. I must go to the doctor at four o'clock — I have an appointment. Then I am going to sleep. I think I'll be better tomorrow. I'm going to call you in the evening.\n\nThank you very much\nAli Kaya",
     },
   },
 
@@ -731,7 +731,7 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
         { speaker: "Colleague", de: "Fine, I'll tell him.", tr: "Tamam, ona söyleyeceğim." },
       ],
       questions: [
-        { de: "Why does Mrs. Aydin call?", tr: "Bayan Aydın neden arıyor?", options: ["She is ill", "She has a question about the class", "She wants a ticket", "She is at home"], answer: 1 },
+        { de: "Why does Mrs. Aydin call?", tr: "Bayan Aydın neden arıyor?", options: ["She is sick", "She has a question about the class", "She wants a ticket", "She is at home"], answer: 1 },
         { de: "When does Mr. Berg come back?", tr: "Bay Berg ne zaman dönüyor?", options: ["At one o'clock", "At two o'clock", "At six o'clock", "Tomorrow"], answer: 1 },
         { de: "Until when can Mr. Berg call?", tr: "Bay Berg ne zamana kadar arayabilir?", options: ["Until two o'clock", "Until four o'clock", "Until six o'clock", "Until eight o'clock"], answer: 2 },
       ],
@@ -748,7 +748,7 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
     },
     speaking: [
       { situation: "Telefonda kendini tanıtıyorsun.", de: "Good afternoon, this is Ali Kaya. Can I speak to Mrs. Berg?", tr: "İyi günler, ben Ali Kaya. Bayan Berg ile görüşebilir miyim?" },
-      { situation: "Hafta sonunu anlatıyorsun.", de: "On Saturday I went to the cinema and on Sunday I slept a long time.", tr: "Cumartesi sinemaya gittim, pazar da uzun uyudum." },
+      { situation: "Hafta sonunu anlatıyorsun.", de: "On Saturday I went to the movies and on Sunday I slept a long time.", tr: "Cumartesi sinemaya gittim, pazar da uzun uyudum." },
     ],
     writing: {
       prompt: "Bir arkadaşına hafta sonunu anlatan kısa bir mesaj yaz.",

@@ -47,9 +47,9 @@ export const enA2U09: SkillExercise[] = [
     minutes: 5,
     text:
       "Dear Mr Yılmaz,\n" +
-      "I am writing about two problems in my flat.\n" +
+      "I am writing about two problems in my apartment.\n" +
       "There's a leak in the bathroom. The water comes from the pipe under the sink and it has been there since Saturday. There is already damage on the carpet.\n" +
-      "The second problem is the heating. The heating hasn't worked since Monday. In the morning the rooms are very cold and my daughter is ill.\n" +
+      "The second problem is the heating. The heating hasn't worked since Monday. In the morning the rooms are very cold and my daughter is sick.\n" +
       "I called the caretaker twice. He came on Tuesday, looked at the pipe and said: I can't fix it.\n" +
       "Could you send someone today or tomorrow? I am at home after four.\n" +
       "If it is easier for you, I can be at home on Saturday too.\n" +
@@ -112,7 +112,7 @@ export const enA2U09: SkillExercise[] = [
     minutes: 6,
     text:
       "We moved in on the first of March. First, we signed the contract in the office of the old building.\n" +
-      "After that, we got the keys — three for the front door and one for the flat.\n" +
+      "After that, we got the keys — three for the front door and one for the apartment.\n" +
       "The furniture came at eleven. Two men carried the cupboard up the stairs and it didn't go through the door.\n" +
       "In the end they took the drawers out and then it was fine.\n" +
       "The first night we slept on the carpet, because the bed was still in the hallway.\n" +
@@ -191,10 +191,10 @@ export const enA2U09: SkillExercise[] = [
     minutes: 5,
     segments: [
       { speaker: "Sena", text: "Come in! This is the living room." },
-      { speaker: "Mert", text: "It's bigger than the advert said. Is there a carpet under the table?" },
+      { speaker: "Mert", text: "It's bigger than the ad said. Is there a carpet under the table?" },
       { speaker: "Sena", text: "Yes, and there are two shelves on the wall. My father put them there." },
       { speaker: "Mert", text: "And the armchair in the corner — is it old?" },
-      { speaker: "Sena", text: "From my grandmother. It is the most comfortable chair in the flat." },
+      { speaker: "Sena", text: "From my grandmother. It is the most comfortable chair in the apartment." },
       { speaker: "Mert", text: "Where do you put your books?" },
       { speaker: "Sena", text: "In the cupboard next to the door. The drawers are for papers." },
       { speaker: "Mert", text: "Is there a mirror in the bathroom?" },
@@ -222,7 +222,7 @@ export const enA2U09: SkillExercise[] = [
         text: "The armchair is from the grandmother.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„From my grandmother. It is the most comfortable chair in the flat.“",
+        explain: "„From my grandmother. It is the most comfortable chair in the apartment.“",
       },
       {
         kind: "gapfill",

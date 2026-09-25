@@ -6,7 +6,7 @@ import type { SkillExercise } from "../types";
  * Dört ders: Showing your home · Rooms · Where things are · Neighbours.
  *
  *   Kelime: house, home, room, door, window, apartment, wall, stairs,
- *           kitchen, bedroom, bathroom, living room, floor, cellar,
+ *           kitchen, bedroom, bathroom, living room, floor, basement,
  *           toilet, lift, table, chair, bed, under, on, lamp, sofa,
  *           fridge, neighbour, live, next door, quiet, friendly,
  *           downstairs, bell, knock.
@@ -36,14 +36,14 @@ export const enA1U16: SkillExercise[] = [
     gloss: [
       { de: "There is …", tr: "… var" },
       { de: "downstairs", tr: "alt katta" },
-      { de: "cellar", tr: "kiler" },
+      { de: "basement", tr: "kiler" },
     ],
     minutes: 4,
     text:
       "This is my home. It is an apartment on the second floor, with three rooms.\n\n" +
       "There is a big living room with a sofa and a lamp. The kitchen is small, but there is a fridge and a table with four chairs. There are two bedrooms. In my bedroom there is a bed under the window.\n\n" +
       "Is there a bathroom? Yes, there is one next to the kitchen. The toilet is in the bathroom.\n\n" +
-      "We also have a cellar downstairs. The stairs are old, so please be quiet on them. My neighbor is very friendly, but she works at night.",
+      "We also have a basement downstairs. The stairs are old, so please be quiet on them. My neighbor is very friendly, but she works at night.",
     questions: [
       {
         text: "How many rooms are there?",
@@ -74,11 +74,11 @@ export const enA1U16: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Where is the cellar?",
+        text: "Where is the basement?",
         options: [],
         answer: 0,
         accept: ["downstairs", "in the house", "under the apartment"],
-        explain: "„We also have a cellar downstairs.“",
+        explain: "„We also have a basement downstairs.“",
       },
     ],
   },
@@ -185,7 +185,7 @@ export const enA1U16: SkillExercise[] = [
       { speaker: "Nil", text: "The kitchen is here, next to the living room. There is a big fridge." },
       { speaker: "Nil", text: "This door is the bathroom. The toilet is there too." },
       { speaker: "Nil", text: "My bedroom is behind this wall. There is a bed, a table and a lamp." },
-      { speaker: "Nil", text: "Come, we go downstairs. There is a cellar and the bell for the door." },
+      { speaker: "Nil", text: "Come, we go downstairs. There is a basement and the bell for the door." },
     ],
     questions: [
       {
@@ -228,8 +228,8 @@ export const enA1U16: SkillExercise[] = [
         text: "What is downstairs?",
         options: [],
         answer: 0,
-        accept: ["a cellar", "the cellar", "a cellar and the bell"],
-        explain: "„There is a cellar and the bell for the door.“",
+        accept: ["a basement", "the basement", "a basement and the bell"],
+        explain: "„There is a basement and the bell for the door.“",
       },
     ],
   },
@@ -364,7 +364,7 @@ export const enA1U16: SkillExercise[] = [
           { label: "Home", answer: "apartment", accept: ["an apartment"] },
           { label: "Floor", answer: "first", accept: ["first floor", "1"] },
           { label: "Rooms", answer: "three", accept: ["3"] },
-          { label: "Cellar", answer: "yes", accept: ["there is a cellar"] },
+          { label: "Basement", answer: "yes", accept: ["there is a basement"] },
         ],
       },
     ],

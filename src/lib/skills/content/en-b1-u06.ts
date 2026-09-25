@@ -194,7 +194,7 @@ export const enB1U06: SkillExercise[] = [
     minutes: 6,
     segments: [
       { speaker: "Nil", text: "What time does your train depart?" },
-      { speaker: "Can", text: "Ten past seven from platform four. The timetable says four, but it is always three." },
+      { speaker: "Can", text: "Ten past seven from platform four. The schedule says four, but it is always three." },
       { speaker: "Nil", text: "Then go to three and read the board again." },
       { speaker: "Can", text: "When I arrive, I will call you." },
       { speaker: "Nil", text: "Call when you are on the train, not when you arrive. I will be in bed at midnight." },
@@ -214,7 +214,7 @@ export const enB1U06: SkillExercise[] = [
         text: "Which platform will the train really leave from?",
         options: ["three", "four", "ten"],
         answer: 0,
-        explain: "„The timetable says four, but it is always three.“",
+        explain: "„The schedule says four, but it is always three.“",
       },
       {
         text: "Until when will Nil wait?",

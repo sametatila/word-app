@@ -97,6 +97,7 @@ export const enA2U12: SkillExercise[] = [
     genre: "email",
     intro: "İzin mektubu. Üç rica, üç ayrı kibarlık basamağı.",
     gloss: [
+      { de: "holiday", tr: "tatil" },
       { de: "a day off", tr: "izin günü" },
       { de: "arrives", tr: "geliyor" },
       { de: "that day", tr: "o gün" },

@@ -53,7 +53,7 @@ export const enA2U15: SkillExercise[] = [
       "Hairdresser: And the beard?\n" +
       "Deniz: A little shorter. My mother says I look like a bear.\n" +
       "Hairdresser: Mothers always say that. Which comb do you use at home?\n" +
-      "Deniz: The small one from the shop here. The big one broke in March.\n" +
+      "Deniz: The small one from the store here. The big one broke in March.\n" +
       "Hairdresser: Then take a new one today. They are two euros and they last two years.\n" +
       "Deniz: Fine. And the style — the same as last time?\n" +
       "Hairdresser: The same. Last time you were happy.\n" +
@@ -92,7 +92,7 @@ export const enA2U15: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["the big one", "the big comb", "big one"],
-        explain: "„The small one from the shop here. The big one broke in March.“",
+        explain: "„The small one from the store here. The big one broke in March.“",
       },
     ],
   },
@@ -115,19 +115,19 @@ export const enA2U15: SkillExercise[] = [
     minutes: 6,
     text:
       "Can: Hello. I bought this here two weeks ago and the screen is broken.\n" +
-      "Shop: Do you have the receipt?\n" +
+      "Clerk: Do you have the receipt?\n" +
       "Can: Yes, here. It's still under warranty.\n" +
-      "Shop: Two years, yes. But the warranty is not valid for every problem.\n" +
+      "Clerk: Two years, yes. But the warranty is not valid for every problem.\n" +
       "Can: What do you mean?\n" +
-      "Shop: If it fell down, it is not the warranty, it is you. If the screen just went dark, it is us.\n" +
+      "Clerk: If it fell down, it is not the warranty, it is you. If the screen just went dark, it is us.\n" +
       "Can: It just went dark. On Tuesday morning, on the table.\n" +
-      "Shop: Then the receipt is your proof and we replace it free.\n" +
+      "Clerk: Then the receipt is your proof and we replace it free.\n" +
       "Can: How long will it take?\n" +
-      "Shop: Ten days. The technical service is not here — it is two hours away.\n" +
+      "Clerk: Ten days. The technical service is not here — it is two hours away.\n" +
       "Can: Ten days without a phone.\n" +
-      "Shop: We have old ones here for that week. Not a good one, but it calls.\n" +
+      "Clerk: We have old ones here for that week. Not a good one, but it calls.\n" +
       "Can: I take it. The cheap one with the big buttons?\n" +
-      "Shop: That one. Everybody says the same thing after two days: it is the best phone in the shop.",
+      "Clerk: That one. Everybody says the same thing after two days: it is the best phone in the store.",
     questions: [
       {
         text: "When is the warranty not valid?",
@@ -175,7 +175,7 @@ export const enA2U15: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["it is the best phone", "the best phone", "it is the best"],
-        explain: "„Everybody says the same thing after two days: it is the best phone in the shop.“",
+        explain: "„Everybody says the same thing after two days: it is the best phone in the store.“",
       },
     ],
   },
@@ -197,34 +197,34 @@ export const enA2U15: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Nil", text: "Two shops, one machine, forty euros difference. I went to both." },
+      { speaker: "Nil", text: "Two stores, one machine, forty euros difference. I went to both." },
       { speaker: "Nil", text: "The first one is cheaper: two hundred and ten. The second one is two hundred and fifty." },
-      { speaker: "Nil", text: "But the cheap one has no guarantee after one year. The expensive one has three years." },
+      { speaker: "Nil", text: "But the cheap one has no warranty after one year. The expensive one has three years." },
       { speaker: "Nil", text: "So the question is not which one is cheaper. The question is which one is better value." },
-      { speaker: "Nil", text: "I asked for a discount in the second shop. They said no, but they gave me the cable free." },
+      { speaker: "Nil", text: "I asked for a discount in the second store. They said no, but they gave me the cable free." },
       { speaker: "Nil", text: "That is nine euros. The difference is now thirty-one." },
-      { speaker: "Nil", text: "The advantage of the second shop: they repair it here. The first one sends it away for four weeks." },
+      { speaker: "Nil", text: "The advantage of the second store: they repair it here. The first one sends it away for four weeks." },
       { speaker: "Nil", text: "I chose the expensive one. Not because I am rich, but because four weeks without a machine is not cheap either." },
     ],
     questions: [
       {
         text: "Why is the second machine better value?",
-        options: ["three years of guarantee", "it is two hundred and ten", "it is sent away for four weeks"],
+        options: ["three years of warranty", "it is two hundred and ten", "it is sent away for four weeks"],
         answer: 0,
-        explain: "„But the cheap one has no guarantee after one year. The expensive one has three years.“",
+        explain: "„But the cheap one has no warranty after one year. The expensive one has three years.“",
       },
       {
-        text: "What did the second shop give free?",
+        text: "What did the second store give free?",
         options: ["the cable", "a discount", "three years"],
         answer: 0,
         explain: "„They said no, but they gave me the cable free.“",
       },
       {
         kind: "truefalse",
-        text: "The second shop said no to a discount.",
+        text: "The second store said no to a discount.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„I asked for a discount in the second shop. They said no…“",
+        explain: "„I asked for a discount in the second store. They said no…“",
       },
       {
         kind: "gapfill",
@@ -247,7 +247,7 @@ export const enA2U15: SkillExercise[] = [
         text: "Why did Nil choose the expensive one?",
         options: [],
         answer: 0,
-        accept: ["four weeks without a machine", "the repair is here", "the guarantee"],
+        accept: ["four weeks without a machine", "the repair is here", "the warranty"],
         explain: "„…because four weeks without a machine is not cheap either.“",
       },
     ],
@@ -262,6 +262,7 @@ export const enA2U15: SkillExercise[] = [
     genre: "dialogue",
     intro: "Kırık ekran. Tamir mi, yenisi mi?",
     gloss: [
+      { de: "guarantee", tr: "garanti" },
       { de: "battery", tr: "pil" },
       { de: "model", tr: "model" },
       { de: "under water", tr: "suyun altında" },
@@ -377,8 +378,8 @@ export const enA2U15: SkillExercise[] = [
         prompt: "Karşılaştırma kartını doldur.",
         facts: "Birinci dükkân iki yüz on; ikinci iki yüz elli; ucuzda bir yıl garanti; pahalıda üç yıl.",
         fields: [
-          { label: "First shop", answer: "two hundred and ten", accept: ["210"] },
-          { label: "Second shop", answer: "two hundred and fifty", accept: ["250"] },
+          { label: "First store", answer: "two hundred and ten", accept: ["210"] },
+          { label: "Second store", answer: "two hundred and fifty", accept: ["250"] },
           { label: "Cheap one", answer: "one year", accept: ["1 year"] },
           { label: "Expensive one", answer: "three years", accept: ["3 years"] },
         ],

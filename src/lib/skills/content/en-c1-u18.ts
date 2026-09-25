@@ -8,15 +8,15 @@ import type { SkillExercise } from "../types";
  * Three names for one target · Who does the polluting.
  *
  *   Kelime: climate adaptation, climate justice, environmental compatibility,
- *           environmental ethics, decouple, diversify, seed replanting right,
+ *           environmental ethics, decouple, diversify, right to save seed,
  *           genetic engineering, reforest, deforest, precipitation, emission
  *           reduction, decarbonization, climate neutrality, energy transition,
  *           pollutant load, overexploitation, carbon sink, species extinction,
- *           permafrost, heat island, renaturalize.
+ *           permafrost, heat island, rewild.
  *   Kalıp:  The climate adaptation above becomes climate justice below. ·
  *           That environmental compatibility, as noted, is the environmental ethics of an earlier page. ·
  *           Where a region is import-dependent, no measure works across the board. ·
- *           The seed replanting right survives as custom, genetic engineering as a patent. ·
+ *           The right to save seed survives as custom, genetic engineering as a patent. ·
  *           They reforest the hillside; the plain, they deforest. ·
  *           The precipitation fell; the harvest did not. ·
  *           In the brochure it is emission reduction; in the study, decarbonization. ·
@@ -30,7 +30,7 @@ import type { SkillExercise } from "../types";
  * İngilizce önüne bir hece koyup ondan iki kez fiil yapmış ve iki hece
  * ters yönlere çekiyor — biri geri koyuyor, öteki alıp götürüyor, ve
  * sözcüğün başka hiçbir yeri değişmemiş. Bu dilin en üretken
- * makinelerinden biri: decouple, decarbonize, renaturalize, reinterpret,
+ * makinelerinden biri: decouple, decarbonize, reinterpret,
  * rewild — bir durum adlandıran her isim o duruma varmanın ya da ondan
  * çıkmanın fiiline çevrilebiliyor ve kalıbı bir kez görmüş okur hiç
  * görmediği bir sözcüğü okuyabiliyor. Almanca da isimden fiil yapıyor ve
@@ -96,7 +96,7 @@ export const enC1U18: SkillExercise[] = [
     text:
       "They reforest the hillside; the plain, they deforest. One stem, two prefixes, and a whole policy in eight words.\n" +
       "„Forest“ is a noun. English has made a verb out of it twice by putting a syllable in front, and the two syllables pull in opposite directions: one puts the thing back and the other takes it away. Nothing else in either word has changed.\n" +
-      "This is one of the most productive machines in the language, and it is the reason a whole field of vocabulary can be built in a decade. Decouple, decarbonize, renaturalize, reinterpret, rewild. Any noun that names a state can be turned into a verb for reaching that state or for leaving it, and a reader who has met the pattern once can read a word they have never seen before.\n" +
+      "This is one of the most productive machines in the language, and it is the reason a whole field of vocabulary can be built in a decade. Decouple, decarbonize, reinterpret, rewild. Any noun that names a state can be turned into a verb for reaching that state or for leaving it, and a reader who has met the pattern once can read a word they have never seen before.\n" +
       "German builds verbs out of nouns too, and it uses prefixes as well, but the pair does not survive. The words for putting a forest back and for taking one away usually come from different roots, so a German reader meets two ordinary verbs and nothing in either of them says that the two are opposites. The pair is in the world; it is not in the word.\n" +
       "That is the measurement of this unit. English puts the relationship inside the vocabulary, where it can be seen; German leaves it outside, where it has to be known.\n" +
       "The gain has a cost and this is the right place to name it. A word built this way looks like the name of an established process. „Decarbonization“ arrived as a coined noun in a paper and now appears in law, and nothing in its shape says whether anybody has ever done it. A reader who can take a word apart will always be tempted to believe that the thing has a method, because the word has a structure.\n" +
@@ -186,7 +186,7 @@ export const enC1U18: SkillExercise[] = [
       { de: "a grid", tr: "şebeke" },
       { de: "a bus route", tr: "otobüs hattı" },
       { de: "the same money", tr: "aynı para" },
-      { de: "a timetable", tr: "sefer tarifesi" },
+      { de: "a schedule", tr: "sefer tarifesi" },
       { de: "a cable", tr: "kablo" },
       { de: "spent once", tr: "bir kez harcanan" },
       { de: "a choice", tr: "seçim" },
@@ -200,7 +200,7 @@ export const enC1U18: SkillExercise[] = [
       "Climate neutrality is a balance; climate-neutral is a label. A balance has two sides and the second side is usually an offset bought somewhere else, which is a real thing and a different thing from not having emitted.\n" +
       "The label is a claim printed on a package. It may be audited and it may not, and the word itself carries no information about which.\n" +
       "What the ministry calls an energy transition, the district calls a mobility transition. Here the two names are in one sentence with their owners attached, and that is the honest way to write a disagreement about money.\n" +
-      "Both are real and both cost the same money once. A grid and a cable, or a timetable and a bus route: the sum is spent once and the choice is not between two words but between two towns in ten years.\n" +
+      "Both are real and both cost the same money once. A grid and a cable, or a schedule and a bus route: the sum is spent once and the choice is not between two words but between two towns in ten years.\n" +
       "So the useful question for any paper of this kind is not which word is correct. It is which budget the word is attached to, and whether the two words in the room are competing for the same line.\n" +
       "They usually are, and it is rarely said out loud, because a meeting in which two good things are in competition is harder to chair than one in which a good thing faces a bad one.",
     questions: [
@@ -464,7 +464,7 @@ export const enC1U18: SkillExercise[] = [
       {
         kind: "build",
         tr: "Tohumu yeniden ekme hakkı âdet olarak, genetik mühendisliği patent olarak sağ kalıyor.",
-        answer: "The seed replanting right survives as custom, genetic engineering as a patent.",
+        answer: "The right to save seed survives as custom, genetic engineering as a patent.",
         hint: "İkinci yarıda fiil yok; iki şey iki ayrı biçimde sürüyor.",
       },
       {
