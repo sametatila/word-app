@@ -56,7 +56,7 @@ const KIND_KEY: Record<ImmersionItemKind, string> = {
   write: "unitkind.write",
   grammar: "unitkind.grammar",
   quiz: "unitkind.quiz",
-  checkpoint: "unitkind.checkpoint",
+  unitQuiz: "unitkind.unit_quiz",
 };
 
 /** Tür → renk. Mobil `KIND_TINT` ile birebir. */
@@ -67,7 +67,7 @@ export const KIND_TINT: Record<ImmersionItemKind, string> = {
   write: "var(--color-mint-500)",
   grammar: "var(--color-flame-500)",
   quiz: "var(--color-brand-500)",
-  checkpoint: "var(--color-rose-500)",
+  unitQuiz: "var(--color-rose-500)",
 };
 
 /** Tür simgesi — Patika'nın "sıradaki adım" satırı da bunu kullanıyor. */
@@ -86,7 +86,7 @@ export function KindIconFor({ kind, size = 22 }: { kind: string; size?: number }
       return <GrammarIcon {...p} />;
     case "quiz":
       return <QuizIcon {...p} />;
-    case "checkpoint":
+    case "unitQuiz":
       return <CheckIcon {...p} />;
     /* Ders türü AÇIKÇA yazılı (varsayılana bırakılmıyor): harita böyle
        okununca Android'in `unitKind` tablosuyla satır satır karşılaştırılıyor

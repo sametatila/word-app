@@ -21,7 +21,7 @@ export type ImmersionItemKind =
   | "write" // yazma egzersizi
   | "grammar" // odaklı dilbilgisi mini-drill — içerik sonra (ara sıra)
   | "quiz" // ünitenin kelime+kalıplarından kısa karışık hatırlama (ara sıra)
-  | "checkpoint"; // ünite bitirme sınavı → sonraki üniteyi açar
+  | "unitQuiz"; // ünite bitirme sınavı → sonraki üniteyi açar
 
 /**
  * Ünitedeki tek düğüm. Alanlar tüm türler için ortak tutuldu (renderer ve
@@ -35,7 +35,7 @@ export type ImmersionItem = {
   /**
    * Altındaki içeriğin kimliği: `conversation` için ders id'si, read/listen/write için
    * skill_exercises id'si. `null` = boş slot (içerik henüz kurulmadı); grammar/
-   * quiz/checkpoint bugün daima null (motorları var, içerikleri sonra).
+   * quiz/unitQuiz bugün daima null (motorları var, içerikleri sonra).
    */
   ref: string | null;
   /** Almanca başlık — ders/egzersiz başlığı ya da tür etiketi ("Kontrol Noktası"). */
@@ -68,7 +68,7 @@ export type ImmersionUnit = {
   moduleIndex: number;
   /** Ünitenin derslerinin başlıkları (hedef dilde) — kartı ayırt eden ad. */
   topics: string[];
-  /** Sıralı item'lar; sonuncusu daima `checkpoint`. */
+  /** Sıralı item'lar; sonuncusu daima `unitQuiz`. */
   items: ImmersionItem[];
   /** Dolu (ref'li) ders item sayısı — ünitenin iskeleti buna dayanır. */
   conversationCount: number;

@@ -9,7 +9,7 @@ import { ensureConversations } from "../data/conversations";
 import { getDoneItems } from "../game/pathProgress";
 
 /** Pratik adım — içeriği ünitenin derslerinden türetilen, kaydı öğe kimliğiyle tutulan. */
-export const isPracticeKind = (kind: string): boolean => kind === "grammar" || kind === "quiz" || kind === "checkpoint";
+export const isPracticeKind = (kind: string): boolean => kind === "grammar" || kind === "quiz" || kind === "unitQuiz";
 
 /** Patika (immersion) hub'ı — gerçek track, kullanıcının ilerlemesiyle. */
 export type LearningPathItem = {

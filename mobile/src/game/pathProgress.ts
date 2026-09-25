@@ -14,6 +14,7 @@ let cache: Set<string> | null = null;
 
 export async function getDoneItems(): Promise<Set<string>> {
   if (cache) return cache;
+  await ensureLegacyMigrated(); // eski öğe kimlikleri (geçici, lib/legacyNames)
   try {
     const raw = await AsyncStorage.getItem(KEY);
     cache = new Set<string>(raw ? (JSON.parse(raw) as string[]) : []);
@@ -71,6 +72,7 @@ export async function queueItemRecord(id: string, correct: number, total: number
 
 export async function getItemScores(): Promise<Record<string, number>> {
   if (scoreCache) return scoreCache;
+  await ensureLegacyMigrated(); // eski öğe kimlikleri (geçici, lib/legacyNames)
   try {
     const raw = await AsyncStorage.getItem(SCORE_KEY);
     scoreCache = raw ? (JSON.parse(raw) as Record<string, number>) : {};
@@ -216,6 +218,7 @@ export async function recordPathItem(item: PendingPathItem): Promise<void> {
 
 /** Bekleyen pratik adım sonuçlarını gönderir; biri düşerse kalanı kuyrukta bırakır. */
 export async function flushPendingPathItems(): Promise<void> {
+  await ensureLegacyMigrated(); // eski öğe kimlikleri (geçici, lib/legacyNames)
   let list: PendingPathItem[] = [];
   try {
     const raw = await AsyncStorage.getItem(PATH_ITEM_KEY);

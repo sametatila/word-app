@@ -13,11 +13,11 @@ import * as deA1U01 from "./de-a1-u01";
 export type UnitQuestions = {
   grammar?: SkillQuestion[];
   quiz?: SkillQuestion[];
-  checkpoint?: SkillQuestion[];
+  unitQuiz?: SkillQuestion[];
 };
 
 const REGISTRY: Record<string, UnitQuestions> = {
-  "de-a1-u01": { grammar: deA1U01.grammar, quiz: deA1U01.quiz, checkpoint: deA1U01.checkpoint },
+  "de-a1-u01": { grammar: deA1U01.grammar, quiz: deA1U01.quiz, unitQuiz: deA1U01.unitQuiz },
 };
 
 export function unitQuestions(unitId: string): UnitQuestions | undefined {

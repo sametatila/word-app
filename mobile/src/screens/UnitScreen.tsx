@@ -96,7 +96,7 @@ export function UnitPane({ index, level, theme: gelenTheme, items: gelenItems, e
     // Gramer de ünite kimliğinden TÜRETİLİYOR (immersionQuiz.deriveGrammar),
     // yani egzersiz havuzunda karşılığı yok. Item ekranına gönderilirse
     // "açılamıyor" der; quiz oynatıcısı ise türetilmiş soruyu zaten çiziyor.
-    if (it.kind === "quiz" || it.kind === "checkpoint" || it.kind === "grammar") {
+    if (it.kind === "quiz" || it.kind === "unitQuiz" || it.kind === "grammar") {
       nav.navigate("Quiz", { itemId: it.id, level, unitIndex: index, kind: it.kind, theme });
       return;
     }

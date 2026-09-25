@@ -8,9 +8,9 @@ import type { ImmersionItem, ImmersionTrack, ImmersionUnit } from "./types";
  * bu dosya DB'yi hiç tanımaz — test edilebilir kalır.
  *
  * Kural: yer tutucu (ref=null) item'lar OYNANAMAZ ve gating'i BLOKLAMAZ
- * (grammar/quiz/checkpoint içeriği henüz yok; boş içerikle kapı açmak/kapamak
+ * (grammar/quiz/unitQuiz içeriği henüz yok; boş içerikle kapı açmak/kapamak
  * yanlış olurdu). Bir ünite, oynanabilir item'larının hepsi bitince tamamlanır;
- * sonraki ünite ancak o zaman açılır. İçerik dolup checkpoint gerçek olunca
+ * sonraki ünite ancak o zaman açılır. İçerik dolup unitQuiz gerçek olunca
  * aynı mantık onları da kapsar (o zaman ref taşıyacaklar).
  */
 
@@ -91,7 +91,7 @@ export type Completion = {
 
 /** Pratik adım: içeriği ünitenin derslerinden türetilen, kaydı öğe kimliğiyle tutulan. */
 export function isPracticeKind(kind: string): boolean {
-  return kind === "grammar" || kind === "quiz" || kind === "checkpoint";
+  return kind === "grammar" || kind === "quiz" || kind === "unitQuiz";
 }
 
 function itemDone(it: ImmersionItem, c: Completion): boolean {
@@ -158,7 +158,7 @@ export function buildTrackState(track: ImmersionTrack, c: Completion): TrackStat
       if (!siradakiVerildi) { s.open = true; siradakiVerildi = true; }
     }
     const playable = items.filter((i) => i.playable);
-    // total/done = TAMAMLANABİLİR item'lar (ders + beceri). quiz/checkpoint
+    // total/done = TAMAMLANABİLİR item'lar (ders + beceri). quiz/unitQuiz
     // ünite brief'inden türetilen PRATİK: oynanabilir ama done-takibi yok (v1),
     // sayıma girmez — yoksa asla-biten-olmayan bir item done===total'ı bozardı.
     const completable = playable.filter((i) => kayitTutarTur(i.item.kind));

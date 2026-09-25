@@ -11,7 +11,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import type { Conversation } from "@/lib/conversations/types";
 import { parseReply } from "@/lib/chat-format";
-import { EXAM_PASS_SCORE, EXAM_SECONDS, EXAM_TURNS } from "@/lib/conversations/chat-const";
+import { SCORED_PASS_SCORE, SCORED_SECONDS, SCORED_TURNS } from "@/lib/conversations/chat-const";
 import { askAssess, fallbackAssessment, ASSESS_CHAT_TIMEOUT_MS, type AssessFailure, type FallbackAssessment } from "@/lib/assess-client";
 import type { Assessment, AssessLevel, AssessRequest } from "@/lib/assess-prompts";
 import { AssessmentCard } from "@/components/feedback/assessment-card";
@@ -34,7 +34,7 @@ type Phase = "intro" | "talk" | "scoring" | "result" | "error";
  * Rol yapma sınavı (WP-22): aynı sahne, yardım yok, 5 tur, 3 dakika.
  *
  * Alıştırmadan farkı ölçüm: muhatap düzeltmez, öneri vermez, Türkçe
- * konuşmaz (bkz. `examPrompt`); konuşma bitince öğrencinin bütün turları tek
+ * konuşmaz (bkz. `scoredPrompt`); konuşma bitince öğrencinin bütün turları tek
  * seferde rubrikle puanlanır (`kind: "chat"`) ve `assessments`'a yazılır.
  * Sonuç: rubrik kartı, en iyi iki cümle (hatasız ve en uzun), en sık iki
  * hata tipi, dersin can-do etiketi.
@@ -70,7 +70,7 @@ export function ConversationScored({
   const [busy, setBusy] = useState(false);
   const [listening, setListening] = useState(false);
   const [asr, setAsr] = useState<boolean>(false);
-  const [left, setLeft] = useState(EXAM_SECONDS);
+  const [left, setLeft] = useState(SCORED_SECONDS);
   const [result, setResult] = useState<Assessment | FallbackAssessment | null>(null);
   const [failure, setFailure] = useState<AssessFailure | null>(null);
   /**
@@ -101,7 +101,7 @@ export function ConversationScored({
   const deadline = useRef(0);
   useEffect(() => {
     if (phase !== "talk") return;
-    if (!deadline.current) deadline.current = Date.now() + EXAM_SECONDS * 1000;
+    if (!deadline.current) deadline.current = Date.now() + SCORED_SECONDS * 1000;
     const tick = () => setLeft(Math.max(0, Math.ceil((deadline.current - Date.now()) / 1000)));
     tick();
     const t = setInterval(tick, 1000);
@@ -136,7 +136,7 @@ export function ConversationScored({
       const res = await apiFetch("/api/chat", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ conversationId: conversation.id, messages: next, mode: "exam" }),
+        body: JSON.stringify({ conversationId: conversation.id, messages: next, mode: "scored" }),
         /* Üretim uzun: genel tavan (25 sn) bu çağrıyı kesiyordu. Android
            kırk beş saniye bekliyor, aynı sabit adıyla. */
         timeoutMs: CHAT_TIMEOUT_MS,
@@ -164,7 +164,7 @@ export function ConversationScored({
       const all: Turn[] = [...next, { role: "assistant", content: body }];
       setTurns(all);
       setBusy(false);
-      if (n >= EXAM_TURNS) {
+      if (n >= SCORED_TURNS) {
         speakGerman(body, () => void score(all));
         setTimeout(() => void score(all), 6000);
       } else speakGerman(body);
@@ -183,7 +183,7 @@ export function ConversationScored({
    *
    * `deadline` REF'I DE SIFIRLANMALI. Sayac `left`ten degil `deadline.current`
    * tan okuyor (`if (!deadline.current)` bir kez kuruyor); yalnizca
-   * `setLeft(EXAM_SECONDS)` yazmak ilk tik'te ezilir ve sinav ANINDA biter.
+   * `setLeft(SCORED_SECONDS)` yazmak ilk tik'te ezilir ve sinav ANINDA biter.
    * Android sonuc ekranindaki "Tekrar dene" tam bu yuzden bozuktu: dokunan
    * kullanici sifir turluk, aninda bitmis bir sinav aliyordu. Web ayni yerde
    * `location.reload()` cagiriyordu - bozuk degil ama sayfanin tamamini
@@ -198,7 +198,7 @@ export function ConversationScored({
     setConsentOff(false);
     setTurns([]);
     setDraft("");
-    setLeft(EXAM_SECONDS);
+    setLeft(SCORED_SECONDS);
     setPhase("intro");
   }, []);
 
@@ -214,10 +214,10 @@ export function ConversationScored({
       task: {
         prompt: `${conversation.chat.scene} (Sınav: ${conversation.chat.partner} ile konuşma)`,
         targets: conversation.patterns.map((p) => p.de),
-        constraints: [`${EXAM_TURNS} tur`, "yardım yok"],
+        constraints: [`${SCORED_TURNS} tur`, "yardım yok"],
       },
       answer: { text: said.join("\n"), transcript: said },
-      exerciseId: `${conversation.id}:exam`,
+      exerciseId: `${conversation.id}:scored`,
       /* Hedef dil: verilmezse uç Almancaya düşüyor ve seviye beklentileri
          Almanca rubriğinden geliyor — İngilizce dersin rol yapma sınavı
          yanlış ölçütle puanlanırdı (bkz. `api/assess`). */
@@ -289,7 +289,7 @@ export function ConversationScored({
          kurallar · kalıplar kartı · Başla / Vazgeç. Kurallar "·" ile başlayan
          soluk satırlardı ve kalıplar o listenin dördüncü "kuralı" gibi okunuyordu. */
       <FlowColumn>
-        <CoachLine moment="exam_intro" />
+        <CoachLine moment="scored_intro" />
         <CoverBody
           icon={<ChatIcon size={28} />}
           tint="var(--color-brand-500)"
@@ -302,7 +302,7 @@ export function ConversationScored({
           title={t("scored.title")}
           pitch={conversation.chat.scene}
           rules={[
-            { icon: <ClockIcon size={16} />, text: t("scored.rule_time", { turns: EXAM_TURNS, minutes: EXAM_SECONDS / 60 }) },
+            { icon: <ClockIcon size={16} />, text: t("scored.rule_time", { turns: SCORED_TURNS, minutes: SCORED_SECONDS / 60 }) },
             { icon: <LockIcon size={16} />, text: t("scored.rule_partner") },
             { icon: <TargetIcon size={16} />, text: t("scored.rule_scoring") },
           ]}
@@ -315,7 +315,7 @@ export function ConversationScored({
             </DetailCard>
           ) : null}
         </CoverBody>
-        <FlowActions primary={{ label: t("exam.start"), onClick: start }} tertiary={{ label: t("common.discard"), href: `/conversations/${conversation.id}` }} />
+        <FlowActions primary={{ label: t("scored.start"), onClick: start }} tertiary={{ label: t("common.discard"), href: `/conversations/${conversation.id}` }} />
       </FlowColumn>
     );
   }
@@ -363,7 +363,7 @@ export function ConversationScored({
     const byType = new Map<ErrorType, number>();
     for (const e of result.errors) byType.set(e.type, (byType.get(e.type) ?? 0) + 1);
     const topErrors = [...byType].sort((a, b) => b[1] - a[1]).slice(0, 2);
-    const passed = result.score.overall >= EXAM_PASS_SCORE;
+    const passed = result.score.overall >= SCORED_PASS_SCORE;
     /* Eşiğin altındaysa birincil düğme "Tekrar dene". */
     const retry = { label: t("common.try_again"), onClick: restart };
     const leave = { label: t("conversationp.back_to_conversation"), href: `/conversations/${conversation.id}` };
@@ -385,10 +385,10 @@ export function ConversationScored({
             </>
           }
           /* Erdi bandın ALTINDA konuşuyor (koç balonu). */
-          pill={{ text: t("scored.below_threshold", { n: EXAM_PASS_SCORE }), tone: passed ? "ok" : "bad" }}
+          pill={{ text: t("scored.below_threshold", { n: SCORED_PASS_SCORE }), tone: passed ? "ok" : "bad" }}
           quiet={!passed}
         />
-        <CoachLine moment={passed ? "exam_pass" : "exam_fail"} vars={{ pct: result.score.overall, level: conversation.level }} />
+        <CoachLine moment={passed ? "scored_pass" : "scored_fail"} vars={{ pct: result.score.overall, level: conversation.level }} />
         <StatRow
           items={[
             { value: String(userTurns), label: t("scored.stat_turns") },
@@ -412,7 +412,7 @@ export function ConversationScored({
           />
         ) : null}
         <DetailCard title={t("scored.assessment_title")}>
-          <AssessmentCard answer={said.join("\n")} result={result} failure={failure} example={null} reportRef={`exam:${conversation.id}`} />
+          <AssessmentCard answer={said.join("\n")} result={result} failure={failure} example={null} reportRef={`scored:${conversation.id}`} />
         </DetailCard>
         {best.length ? (
           <DetailCard title={t("scored.best_sentences")}>
@@ -434,7 +434,7 @@ export function ConversationScored({
     <section className="card mx-auto flex w-full max-w-md flex-col p-4">
       <div className="flex items-center justify-between text-caption">
         <span className="muted">
-          {t("scored.turn_of", { n: Math.min(userTurns + 1, EXAM_TURNS), total: EXAM_TURNS })}
+          {t("scored.turn_of", { n: Math.min(userTurns + 1, SCORED_TURNS), total: SCORED_TURNS })}
         </span>
         <span className="tabular-nums" style={{ color: left <= 30 ? "var(--color-rose)" : "var(--text-muted)" }}>
           {mm}:{ss}
@@ -457,7 +457,7 @@ export function ConversationScored({
             {turn.role === "assistant" && i > 0 ? (
               <button
                 type="button"
-                onClick={() => setReported({ ref: `${conversation.id}:exam:${i}`, text: turn.content })}
+                onClick={() => setReported({ ref: `${conversation.id}:scored:${i}`, text: turn.content })}
                 className="muted mt-1 text-micro underline underline-offset-2 hit-8"
               >
                 {t("conversation.report_this_answer")}

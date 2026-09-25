@@ -677,7 +677,7 @@ function Cover({
   const { colors } = useTheme();
   /* MİSAFİR: yazma/konuşma görevlerini yapay zekâ puanlıyor ve uç misafire
      kapalı (bkz. `api/mock-exam` assess). Kapak bunu baştan söylüyor —
-     rol yapma sınavının kapak notuyla aynı kalıp (`guest.ai_exam`). */
+     Konuşma adımının puanlı kısmının kapak notuyla aynı kalıp (`guest.ai_scored`). */
   const guestAi = Boolean(useAuth().user?.guest) && part.tasks.some(isOpenTask);
   // Bölüm yönergesi ekrana gelir gelmez okunuyor — gerçek oturumda da
   // yönerge kayıttan gelir.

@@ -58,7 +58,7 @@ export function hrefFor(item: ImmersionItem): string | null {
   if (item.kind === "conversation") return `/conversations/${item.ref}`;
   if (item.kind === "read" || item.kind === "listen" || item.kind === "write") return `/immersion/skill/${item.ref}`;
   if (item.kind === "quiz") return `/immersion/quiz/${item.ref}`;
-  if (item.kind === "checkpoint") return `/immersion/quiz/${item.ref}?mode=checkpoint`;
+  if (item.kind === "unitQuiz") return `/immersion/quiz/${item.ref}?mode=unitQuiz`;
   if (item.kind === "grammar") return `/immersion/grammar/${item.ref}`;
   return null;
 }

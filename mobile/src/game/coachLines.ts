@@ -14,6 +14,9 @@ export type CoachMoment =
   | "exam_intro"
   | "exam_pass"
   | "exam_fail"
+  | "scored_intro"
+  | "scored_pass"
+  | "scored_fail"
   | "weak_done"
   | "weekly";
 
@@ -60,6 +63,27 @@ export const COACH_LINES: Record<CoachMoment, readonly string[]> = {
     "coach.exam_fail_3",
     "coach.exam_fail_4",
     "coach.exam_fail_5",
+  ],
+  scored_intro: [
+    "coach.scored_intro_1",
+    "coach.scored_intro_2",
+    "coach.scored_intro_3",
+    "coach.scored_intro_4",
+    "coach.scored_intro_5",
+  ],
+  scored_pass: [
+    "coach.scored_pass_1",
+    "coach.scored_pass_2",
+    "coach.scored_pass_3",
+    "coach.scored_pass_4",
+    "coach.scored_pass_5",
+  ],
+  scored_fail: [
+    "coach.scored_fail_1",
+    "coach.scored_fail_2",
+    "coach.scored_fail_3",
+    "coach.scored_fail_4",
+    "coach.scored_fail_5",
   ],
   weak_done: [
     "coach.weak_done_1",

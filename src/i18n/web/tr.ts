@@ -680,7 +680,7 @@ export const trWeb: Record<string, string> = {
   "writew.task_n": "Görev {n} / {total}",
   "writew.fields_ok": "{n} / {total} alan doğru",
   "writew.form_eyebrow": "Formu doldur",
-  "immw.checkpoint": "Kontrol Noktası",
+  "immw.unit_quiz": "Kontrol Noktası",
   "immw.review": "Tekrar",
   "immw.grammar_exercise": "Dil bilgisi alıştırması",
   "profw.load_failed": "Profil yüklenemedi",

@@ -51,10 +51,10 @@ const t: ImmersionTrack = buildTrack({ course: "de", level: "A1", conversations,
 // 1. unit sayısı = ceil(ders/4)
 check("unit sayısı ceil(10/4)=3", t.units.length === Math.ceil(10 / UNIT_CONVERSATIONS) && t.units.length === 3);
 
-// 2. her ünite checkpoint ile biter, tek checkpoint
+// 2. her ünite unitQuiz ile biter, tek unitQuiz
 check(
-  "her ünite tam bir checkpoint ile biter",
-  t.units.every((u) => u.items.at(-1)?.kind === "checkpoint" && u.items.filter((i) => i.kind === "checkpoint").length === 1),
+  "her ünite tam bir unitQuiz ile biter",
+  t.units.every((u) => u.items.at(-1)?.kind === "unitQuiz" && u.items.filter((i) => i.kind === "unitQuiz").length === 1),
 );
 
 // 3. dolu üniteler 4 ders + 2 read + 2 listen + 2 write taşır
@@ -85,10 +85,10 @@ check("reading ref sırası havuzu izler", JSON.stringify(readItems.slice(0, 3).
 const ids = t.units.flatMap((u) => u.items.map((i) => i.id));
 check("item id'leri benzersiz", new Set(ids).size === ids.length);
 
-// 8. her ünite TAM TAKIM: grammar + quiz + checkpoint
+// 8. her ünite TAM TAKIM: grammar + quiz + unitQuiz
 check("her ünite grammar taşır", t.units.every((u) => u.items.some((i) => i.kind === "grammar")));
 check("her ünite quiz taşır", t.units.every((u) => u.items.some((i) => i.kind === "quiz")));
-check("ünite 1 tam takım (grammar+quiz+checkpoint)", ["grammar", "quiz", "checkpoint"].every((k) => t.units[0].items.some((i) => i.kind === k)));
+check("ünite 1 tam takım (grammar+quiz+unitQuiz)", ["grammar", "quiz", "unitQuiz"].every((k) => t.units[0].items.some((i) => i.kind === k)));
 
 // 9. group = floor((index-1)/groupSize)
 check("group = floor((index-1)/GROUP_SIZE)", t.units.every((u) => u.group === Math.floor((u.index - 1) / GROUP_SIZE)));
@@ -112,9 +112,9 @@ check("boşken ünite1 kilitsiz, ünite2/3 kilitli", !s0.units[0].locked && s0.u
 check("boşken currentIndex=1", s0.currentIndex === 1);
 check("ünite1 oynanabilir toplam=10 (4+2+2+2), done=0", s0.units[0].total === 10 && s0.units[0].done === 0);
 check("ünite1 iskelet 4 ders, 0 bitti", s0.units[0].conversationsTotal === 4 && s0.units[0].conversationsDone === 0);
-check("checkpoint artık oynanabilir (türetilen pratik)", s0.units[0].items.find((i) => i.item.kind === "checkpoint")?.playable === true);
-check("checkpoint/quiz sayıma girmez (total=10, ders+beceri)", s0.units[0].total === 10);
-check("checkpoint/quiz ref = unitId (türetme rotası)", t.units[1].items.filter((i) => i.kind === "checkpoint" || i.kind === "quiz").every((i) => i.ref === t.units[1].id));
+check("unitQuiz artık oynanabilir (türetilen pratik)", s0.units[0].items.find((i) => i.item.kind === "unitQuiz")?.playable === true);
+check("unitQuiz/quiz sayıma girmez (total=10, ders+beceri)", s0.units[0].total === 10);
+check("unitQuiz/quiz ref = unitId (türetme rotası)", t.units[1].items.filter((i) => i.kind === "unitQuiz" || i.kind === "quiz").every((i) => i.ref === t.units[1].id));
 
 const doneSet = new Set(u1Refs);
 const s1 = buildTrackState(t, { conversationDone: (r) => doneSet.has(r), skillDone: (r) => doneSet.has(r) });
@@ -140,7 +140,7 @@ check("bitmemiş ünite 'şu an buradasın' kalır", s2.currentIndex === 1);
   noktasının "bitti" kaydı yokken ünite ekranı 13 adım gösterip 10 üzerinden
   sayıyordu; kayıt verilince ölçüt tek: oynanabilir her adım.
 */
-const u1Practice = u1.items.filter((i) => i.kind === "grammar" || i.kind === "quiz" || i.kind === "checkpoint");
+const u1Practice = u1.items.filter((i) => i.kind === "grammar" || i.kind === "quiz" || i.kind === "unitQuiz");
 const u1Oynanabilir = u1.items.filter((i) => i.ref !== null);
 const sP0 = buildTrackState(t, { conversationDone: () => false, skillDone: () => false, practiceDone: () => false, practiceAttempted: () => false });
 check("pratik kaydı verilince toplam = oynanabilir adım sayısı", sP0.units[0].total === u1Oynanabilir.length && u1Practice.length === 3);
@@ -198,7 +198,7 @@ const p2 = sTried2.units[0].items.filter((i) => i.playable);
 check("pencere ilerledikçe kayar", p2[0].open && p2[1].open && p2[2].open && p2[3].open === false);
 
 // Biten adım kendiliğinden denenmiş sayılır (eski çağıranlar bozulmasın)
-// quiz/checkpoint bugün done takibi taşımıyor; ölçüt ders + beceri.
+// quiz/unitQuiz bugün done takibi taşımıyor; ölçüt ders + beceri.
 const izlenen = (k: string) => k === "conversation" || k === "read" || k === "listen" || k === "write";
 check("bitmiş adım attempted sayılır", s1.units[0].items.filter((i) => i.playable && izlenen(i.item.kind)).every((i) => i.attempted));
 check("attempted yüklemi verilmezse eski davranış (yalnız bitenler + sıradaki)",
@@ -226,7 +226,7 @@ check("brief cando birleşik+tekil (introduce bir kez)", briefs[0].cando.length 
 check("brief 4 conversationId + needs 2/2/2", briefs[0].conversationIds.length === 4 && briefs[0].needs.read === 2 && briefs[0].needs.listen === 2 && briefs[0].needs.write === 2);
 
 
-// ---- quiz/checkpoint türetme (brief → SkillQuestion) ----
+// ---- quiz/unitQuiz türetme (brief → SkillQuestion) ----
 const qpool = {
   vocab: Array.from({ length: 8 }, (_, k) => ({ de: `w${k}`, tr: `t${k}` })),
   patterns: Array.from({ length: 5 }, (_, k) => ({ de: `De${k}`, tr: `Tr${k}` })),
@@ -252,7 +252,7 @@ check("kalıp sorusunda doğru cevap de kalıbı", quiz[4].options[quiz[4].answe
 check("hiçbir distraktör doğru cevaba eşit değil", quiz.every((q) => q.options.filter((_, idx) => idx !== q.answer).every((o) => o !== q.options[q.answer])));
 check("options benzersiz", quiz.every((q) => new Set(q.options).size === q.options.length));
 check("deterministik (aynı girdi → aynı quiz)", JSON.stringify(deriveQuiz(briefs[0], qpool, 6, undefined, say)) === JSON.stringify(quiz));
-check("checkpoint daha uzun (count=12 → 5 vocab + 2 kalıp = 7, brief küçük)", deriveQuiz(briefs[0], qpool, 12, undefined, say).length === Math.min(12, briefs[0].vocab.length + 2));
+check("unitQuiz daha uzun (count=12 → 5 vocab + 2 kalıp = 7, brief küçük)", deriveQuiz(briefs[0], qpool, 12, undefined, say).length === Math.min(12, briefs[0].vocab.length + 2));
 
 // ---- birikimli tekrar (önceki ünitelerin kelimeleri quiz'e karışır) ----
 // Ünite 3 gibi davranan sahte bir brief: kendi kelimeleri x0..x5, geçmişi r0..r19.
@@ -294,7 +294,7 @@ const sTam = buildTrackState(t, {
   skillAttempted: (r) => tumRef.has(r),
 });
 const tamItems = sTam.units[0].items;
-const kontrol = tamItems.find((i) => i.item.kind === "checkpoint");
+const kontrol = tamItems.find((i) => i.item.kind === "unitQuiz");
 const quizItem = tamItems.find((i) => i.item.kind === "quiz");
 check("ünite bitince KONTROL NOKTASI açılır", kontrol?.open === true);
 check("ünite bitince quiz açılır", quizItem?.open === true);
@@ -309,7 +309,7 @@ const sYarim = buildTrackState(t, {
   skillAttempted: (r) => eksikRef.has(r),
 });
 const yarimItems = sYarim.units[0].items;
-check("ünite yarımken kontrol noktası KAPALI", yarimItems.find((i) => i.item.kind === "checkpoint")?.open === false);
+check("ünite yarımken kontrol noktası KAPALI", yarimItems.find((i) => i.item.kind === "unitQuiz")?.open === false);
 check("ünite yarımken quiz KAPALI", yarimItems.find((i) => i.item.kind === "quiz")?.open === false);
 
 /*
@@ -339,4 +339,4 @@ if (fail.length) {
   for (const f of fail) console.error("  ✗ " + f);
   process.exit(1);
 }
-console.log(`\nTÜM TESTLER GEÇTİ — test:track (${pass} kontrol, buildTrack 4/2/2/2 + checkpoint + gating)`);
+console.log(`\nTÜM TESTLER GEÇTİ — test:track (${pass} kontrol, buildTrack 4/2/2/2 + unitQuiz + gating)`);

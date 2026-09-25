@@ -3,7 +3,7 @@ import type { PatternItem, VocabItem } from "@/lib/conversations/types";
 import type { UnitBrief } from "./brief";
 
 /**
- * Ünite brief'inden hatırlama sorusu üretir — `quiz` ve `checkpoint` item'ları için.
+ * Ünite brief'inden hatırlama sorusu üretir — `quiz` ve `unitQuiz` item'ları için.
  *
  * İÇERİK YAZIMI GEREKMEZ: sorular ünitenin KENDİ kelime/kalıplarından çıkar
  * (conversationların üzerine inşa), distraktörler diğer ünitelerin havuzundan. Böylece
@@ -13,9 +13,9 @@ import type { UnitBrief } from "./brief";
  *
  * Distraktörler havuzdan alınır ve doğru cevapla başlık ya da anlam
  * paylaşanlar elenir (`quizClash`): "der Name" = "isim" sorusunda başka bir
- * dersteki "ad" karşılığı artık şık olmuyor. Metni farklı ama anlamı aynı iki
+ * Konuşma adımındaki "ad" karşılığı artık şık olmuyor. Metni farklı ama anlamı aynı iki
  * Türkçe sözcüğü (ad / isim) başlık ortak değilse makine ayıramaz; auto-quiz
- * bu yüzden hâlâ gating YAPMAZ (gating derslere bağlı).
+ * bu yüzden hâlâ gating YAPMAZ (gating Konuşma adımlarına bağlı).
  */
 
 export type QuizPool = { vocab: VocabItem[]; patterns: PatternItem[] };
@@ -72,7 +72,7 @@ function placeAnswer(correct: string, distractors: string[], i: number): { optio
 }
 
 /**
- * @param count kaç soru (quiz ~6–8, checkpoint ~10–12).
+ * @param count kaç soru (quiz ~6–8, unitQuiz ~10–12).
  * @param review ÖNCEKİ ünitelerin kelimeleri — verilirse soruların üçte biri
  *   oradan gelir (aşağıdaki not).
  * Kelime hatırlama (de→tr) çoğunluk; kalıp varsa birkaç kalıp hatırlama (tr→de).
@@ -190,7 +190,7 @@ function pickReview(brief: UnitBrief, review: QuizPool | undefined, n: number): 
   // Başlangıç ünite sırasından, ASAL bir çarpanla: düz `index % pool` her ünitede
   // yalnız bir kayma verir ve 25 ünite havuzun hep aynı dar bandına düşer. Çarpan
   // adıma eşit olmamalı (index*5 + adım 5, ünite 3 ile 7'yi aynı sete düşürüyordu).
-  // `take` de başlangıca girer: aynı ünitenin quiz'i (2 tekrar) ile checkpoint'i
+  // `take` de başlangıca girer: aynı ünitenin quiz'i (2 tekrar) ile unitQuiz'i
   // (4 tekrar) yoksa aynı yerden başlar ve büyük ölçüde aynı kelimeleri sorar.
   let idx = (brief.index * 37 + take * 13) % pool.length;
   for (let guard = 0; out.length < take && guard < pool.length * 2; guard++) {

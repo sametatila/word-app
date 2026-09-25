@@ -23,7 +23,7 @@ import { useTheme, spacing, radii, softShadow, type Palette, ds } from "../theme
 
 const KIND_ICON: Record<string, (p: { color: string; size: number }) => React.ReactElement> = {
   conversation: (p) => <LearnIcon {...p} />, read: (p) => <ReadIcon {...p} />, listen: (p) => <ListenIcon {...p} />,
-  write: (p) => <WriteIcon {...p} />, grammar: (p) => <GrammarIcon {...p} />, quiz: (p) => <QuizIcon {...p} />, checkpoint: (p) => <CheckIcon {...p} />,
+  write: (p) => <WriteIcon {...p} />, grammar: (p) => <GrammarIcon {...p} />, quiz: (p) => <QuizIcon {...p} />, unitQuiz: (p) => <CheckIcon {...p} />,
 };
 
 function Featured({ unit, isCurrent, colors, onContinue }: { unit: LearningPathUnit; isCurrent: boolean; colors: Palette; onContinue: () => void }) {

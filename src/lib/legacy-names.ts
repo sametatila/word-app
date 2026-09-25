@@ -55,6 +55,24 @@ export function legacyEventKind(kind: string | undefined): string | undefined {
   return kind;
 }
 
+/**
+ * Konuşma adımının puanlı kısmı eskiden "sınav" (`exam`) adını taşıyordu:
+ * sohbet modu `exam`, değerlendirme kimliği `<id>:exam`, bildirim kaynağı
+ * `<id>:exam:<tur>`. Yeni ad `scored`.
+ */
+export function legacyChatMode(mode: unknown): unknown {
+  return mode === "exam" ? "scored" : mode;
+}
+
+export function legacyScoredRef(ref: unknown): unknown {
+  return typeof ref === "string" ? ref.replace(/:exam(?=:|$)/, ":scored") : ref;
+}
+
+/** Patika öğe kimliği: `<ünite>-checkpoint1` → `<ünite>-unitQuiz1` (Kontrol → Ünite quizi). */
+export function legacyPathItemId(id: unknown): unknown {
+  return typeof id === "string" ? id.replace(/-checkpoint(\d+)$/, "-unitQuiz$1") : id;
+}
+
 /** Konuşma adımı istek gövdesi: `lessonId` → `conversationId`, `roleplayDone` → `chatDone`. */
 export function legacyBody(body: Record<string, unknown>): Record<string, unknown> {
   const out = { ...body };
@@ -164,16 +182,20 @@ export function isLegacyClient(headers: Headers): boolean {
   return !!m && Number(m[2]) <= LEGACY_MAX_BUILD;
 }
 
-/** Patika öğe türü: `conversation` → `lesson`. */
-const ITEM_KIND: Record<string, string> = { conversation: "lesson" };
+/** Patika öğe türü: `conversation` → `lesson`, `unitQuiz` → `checkpoint`. */
+const ITEM_KIND: Record<string, string> = { conversation: "lesson", unitQuiz: "checkpoint" };
 
 /** `/api/immersion` ünitesi: tür değeri ve sayaç alanları eski adla. */
-export function legacyImmersionUnit<U extends { conversationsDone: number; conversationsTotal: number; items: { kind: string }[] }>(u: U) {
+export function legacyImmersionUnit<U extends { conversationsDone: number; conversationsTotal: number; items: { id: string; kind: string }[] }>(u: U) {
   return {
     ...u,
     lessonsDone: u.conversationsDone,
     lessonsTotal: u.conversationsTotal,
-    items: u.items.map((it) => ({ ...it, kind: ITEM_KIND[it.kind] ?? it.kind })),
+    items: u.items.map((it) => ({
+      ...it,
+      id: it.id.replace(/-unitQuiz(\d+)$/, "-checkpoint$1"),
+      kind: ITEM_KIND[it.kind] ?? it.kind,
+    })),
   };
 }
 

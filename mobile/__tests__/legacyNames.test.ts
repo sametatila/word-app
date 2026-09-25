@@ -23,11 +23,13 @@ test("eski kayıtlar yeni anahtarlara bir kez taşınıyor", async () => {
     "content:pack:lessons/de-a1": JSON.stringify({ r: 3, items: { "de-a1-hallo": "h1" } }),
     "content:body:h1": "{}",
     "lernomi-theme": "dark",
+    "lernomi-items-done": JSON.stringify(["de-a1-hallo", "de-a1-u01-checkpoint1", "de-a1-u01-quiz1"]),
   });
   await migrateLegacyStorage();
 
   const keys = [...(await AsyncStorage.getAllKeys())].sort();
-  expect(keys).toEqual(["lernomi-conversation-resume:de-a1-hallo", "lernomi-conversations-pending", "lernomi-theme"]);
+  expect(keys).toEqual(["lernomi-conversation-resume:de-a1-hallo", "lernomi-conversations-pending", "lernomi-items-done", "lernomi-theme"]);
+  expect(JSON.parse((await AsyncStorage.getItem("lernomi-items-done")) ?? "[]")).toEqual(["de-a1-hallo", "de-a1-u01-unitQuiz1", "de-a1-u01-quiz1"]);
   expect(JSON.parse((await AsyncStorage.getItem("lernomi-conversations-pending")) ?? "[]")).toEqual([
     { conversationId: "de-a1-hallo", correct: 3, chatDone: true, day: "2026-09-20", seconds: 60 },
   ]);

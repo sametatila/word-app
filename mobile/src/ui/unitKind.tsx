@@ -8,7 +8,7 @@ import { fillOf } from "../theme/colors";
  * Ünite öğesinin TÜRÜ → ikon ve renk.
  *
  * İki ekranda ayrı ayrı yazılıydı (Patika'nın ünite listesi ve egzersiz
- * oynatıcısı) ve ikinci kopya EKSİKTİ: `conversation`, `quiz` ve `checkpoint` yoktu,
+ * oynatıcısı) ve ikinci kopya EKSİKTİ: `conversation`, `quiz` ve `unitQuiz` yoktu,
  * yani oynatıcı bir kontrol noktası açtığında rengi kırmızı yerine turuncuya
  * düşüyordu. Bugün o yol kullanılmıyor ama iki liste sessizce ayrışmıştı ve
  * ayrışma büyümeye açıktı.
@@ -30,7 +30,7 @@ export const KIND_TINT: Record<ItemKind, keyof Palette> = {
   write: "success",
   grammar: "streak",
   quiz: "primary",
-  checkpoint: "danger",
+  unitQuiz: "danger",
 };
 
 const ICONS: Record<ItemKind, (p: { color: string; size: number }) => React.ReactElement> = {
@@ -40,7 +40,7 @@ const ICONS: Record<ItemKind, (p: { color: string; size: number }) => React.Reac
   write: (p) => <WriteIcon {...p} />,
   grammar: (p) => <GrammarIcon {...p} />,
   quiz: (p) => <QuizIcon {...p} />,
-  checkpoint: (p) => <CheckIcon {...p} />,
+  unitQuiz: (p) => <CheckIcon {...p} />,
 };
 
 /** Türün ikonu; tanınmayan tür için `null` (çizen yer boş bırakır). */

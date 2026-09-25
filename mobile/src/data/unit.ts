@@ -10,7 +10,7 @@
   anahtarı (`unitkind.speaking`) DURUYOR, çünkü onu Yapabildiklerim ve
   Yazılarım ekranları beceri adı olarak kullanıyor.
 */
-export type ItemKind = "conversation" | "read" | "listen" | "write" | "grammar" | "quiz" | "checkpoint";
+export type ItemKind = "conversation" | "read" | "listen" | "write" | "grammar" | "quiz" | "unitQuiz";
 export type ItemStatus = "done" | "current" | "locked";
 export type UnitItem = { id: string; kind: ItemKind; title: string; status: ItemStatus };
 
@@ -22,5 +22,5 @@ export const KIND_KEY: Record<ItemKind, string> = {
   write: "unitkind.write",
   grammar: "unitkind.grammar",
   quiz: "unitkind.quiz",
-  checkpoint: "unitkind.checkpoint",
+  unitQuiz: "unitkind.unit_quiz",
 };

@@ -9,7 +9,7 @@ import type { SkillQuestion } from "@/lib/skills/types";
  * oynatıcısında (QuestionList) render edilir.
  *
  * grammar → /immersion/grammar/[unit] · quiz → /immersion/quiz/[unit] ·
- * checkpoint → /immersion/quiz/[unit]?mode=checkpoint (elle yazılan öncelikli,
+ * unitQuiz → /immersion/quiz/[unit]?mode=unitQuiz (elle yazılan öncelikli,
  * yoksa deriveQuiz devreye girer).
  */
 
@@ -86,7 +86,7 @@ export const quiz: SkillQuestion[] = [
 ];
 
 /** Bitiş sınavı — ünitenin tamamı (kelime + gramer + kalıp + mini okuma). ≥%70 geç. */
-export const checkpoint: SkillQuestion[] = [
+export const unitQuiz: SkillQuestion[] = [
   {
     kind: "mcq",
     text: "Lisa sagt: „Ich komme aus Österreich.“ Woher kommt Lisa?",

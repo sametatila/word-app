@@ -94,7 +94,7 @@ const KIND_KEY: Record<ImmersionItemKind, string> = {
   write: "unitkind.write",
   grammar: "unitkind.grammar",
   quiz: "unitkind.quiz",
-  checkpoint: "unitkind.checkpoint",
+  unitQuiz: "unitkind.unit_quiz",
 };
 
 /**

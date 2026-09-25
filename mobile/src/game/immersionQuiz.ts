@@ -1,5 +1,5 @@
 /**
- * Ünite quiz/checkpoint sorularını CİHAZDA türetir — web'in brief.ts +
+ * Ünite quiz/unitQuiz sorularını CİHAZDA türetir — web'in brief.ts +
  * quiz.ts'inin mobil portu. İçerik yazımı gerekmez: sorular ünitenin kendi
  * kelime/kalıplarından (4 dersi), distraktörler seviyenin havuzundan. Tema
  * hizalı, deterministik (RNG yok → aynı ünite hep aynı quiz). SkillQuestion
@@ -127,7 +127,7 @@ function placeAnswer(correct: string, distractors: string[], i: number): { optio
  * görüyordu. Seçim başlangıcı ASAL bir çarpanla kayıyor: düz `index % pool`
  * her ünitede yalnız bir kayma verir ve yirmi beş ünite havuzun hep aynı dar
  * bandına düşer. `take` de başlangıca giriyor, yoksa aynı ünitenin quiz'i (2
- * tekrar) ile checkpoint'i (4 tekrar) aynı yerden başlar ve büyük ölçüde aynı
+ * tekrar) ile unitQuiz'i (4 tekrar) aynı yerden başlar ve büyük ölçüde aynı
  * kelimeleri sorardı.
  */
 function pickReview(brief: UnitBrief, review: QuizPool | undefined, n: number): VocabItem[] {
@@ -166,7 +166,7 @@ function interleave(own: SkillQuestion[], back: SkillQuestion[]): SkillQuestion[
   return out;
 }
 
-/** count: quiz ~8, checkpoint ~12. Kelime hatırlama çoğunluk + birkaç kalıp. */
+/** count: quiz ~8, unitQuiz ~12. Kelime hatırlama çoğunluk + birkaç kalıp. */
 export function deriveQuiz(
   brief: UnitBrief,
   pool: QuizPool,

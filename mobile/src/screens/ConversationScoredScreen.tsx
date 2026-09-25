@@ -37,10 +37,10 @@ import { useKeyboardLift } from "../lib/useKeyboardHeight";
 import { useAuth } from "../lib/AuthContext";
 
 /** Web `lib/conversations/chat-const` ile aynı üç sayı. */
-export const EXAM_TURNS = 5;
-export const EXAM_SECONDS = 180;
+export const SCORED_TURNS = 5;
+export const SCORED_SECONDS = 180;
 /** Geçme eşiği — bütünsel puan yüzdesi; eşiği SÖYLEYEN cümle de bundan besleniyor. */
-export const EXAM_PASS_SCORE = 60;
+export const SCORED_PASS_SCORE = 60;
 
 type Turn = { role: "user" | "assistant"; content: string };
 type Phase = "intro" | "talk" | "scoring" | "result" | "error" | "locked";
@@ -60,7 +60,7 @@ type Result = { score: Score; errors: AssessError[]; corrected?: string | null; 
  * biri ölçülebiliyordu.
  *
  * Alıştırmadan farkı ölçüm: muhatap düzeltmez, öneri vermez, anadile geçmez
- * (`mode: "exam"` istemi); konuşma bitince öğrencinin BÜTÜN turları tek seferde
+ * (`mode: "scored"` istemi); konuşma bitince öğrencinin BÜTÜN turları tek seferde
  * rubrikle puanlanıyor (`kind: "chat"`) ve `assessments`'a yazılıyor.
  *
  * Webden tek yapısal fark: sağlayıcı kapalıyken web kural tabanlı bir yedek
@@ -104,7 +104,7 @@ export function ConversationScoredScreen() {
   const [busy, setBusy] = useState(false);
   const [listening, setListening] = useState(false);
   const [asr, setAsr] = useState(false);
-  const [left, setLeft] = useState(EXAM_SECONDS);
+  const [left, setLeft] = useState(SCORED_SECONDS);
   const [result, setResult] = useState<Result | null>(null);
   /** Sunucudaki değerlendirme kaydının kimliği — "Bildir" ref'i. */
   const [resultId, setResultId] = useState<number | null>(null);
@@ -163,10 +163,10 @@ export function ConversationScoredScreen() {
           task: {
             prompt: `${conversation.chat.scene} (Sınav: ${conversation.chat.partner} ile konuşma)`,
             targets: conversation.patterns.map((p) => p.de),
-            constraints: [`${EXAM_TURNS} tur`, "yardım yok"],
+            constraints: [`${SCORED_TURNS} tur`, "yardım yok"],
           },
           answer: { text: said.join("\n"), transcript: said },
-          exerciseId: `${conversation.id}:exam`,
+          exerciseId: `${conversation.id}:scored`,
           /* `day` bir YAZMA anahtarı: değerlendirme satırı o güne yazılıyor ve
              günlük kota o günün satırları sayılarak bulunuyor. */
           day: todayStr(),
@@ -207,7 +207,7 @@ export function ConversationScoredScreen() {
    *
    * `deadline` REF'İ DE SIFIRLANMALI. Sayaç `left`ten değil
    * `deadline.current`tan okuyor (`if (!deadline.current)` bir kez kuruyor);
-   * yalnızca `setLeft(EXAM_SECONDS)` yazmak ilk tik'te eziliyor ve sınav
+   * yalnızca `setLeft(SCORED_SECONDS)` yazmak ilk tik'te eziliyor ve sınav
    * ANINDA bitiyordu — sonuç ekranındaki "Tekrar dene" tam bu yüzden
    * bozuktu: dokunan kullanıcı sıfır turluk, anında bitmiş bir sınav
    * alıyordu. Hata dalı ve sonuç ekranı artık aynı sıfırlamayı kullanıyor
@@ -222,12 +222,12 @@ export function ConversationScoredScreen() {
     setConsentOff(false);
     setTurns([]);
     setDraft("");
-    setLeft(EXAM_SECONDS);
+    setLeft(SCORED_SECONDS);
     setPhase("intro");
   }, []);
   useEffect(() => {
     if (phase !== "talk") return;
-    if (!deadline.current) deadline.current = Date.now() + EXAM_SECONDS * 1000;
+    if (!deadline.current) deadline.current = Date.now() + SCORED_SECONDS * 1000;
     const tick = () => setLeft(Math.max(0, Math.ceil((deadline.current - Date.now()) / 1000)));
     tick();
     const timer = setInterval(tick, 1000);
@@ -271,7 +271,7 @@ export function ConversationScoredScreen() {
     setTurns(next);
     const n = next.filter((x) => x.role === "user").length;
     try {
-      const raw = await sendChat(conversation!.id, next as ChatMsg[], "exam");
+      const raw = await sendChat(conversation!.id, next as ChatMsg[], "scored");
       // Sınav isteminde işaret satırı olmamalı; olursa yine de ayıklanır.
       const body = parseReply(raw).body.trim() || raw.trim();
       const all: Turn[] = [...next, { role: "assistant", content: body }];
@@ -279,7 +279,7 @@ export function ConversationScoredScreen() {
       setTurns(all);
       setBusy(false);
       speakTarget(body);
-      if (n >= EXAM_TURNS) setTimeout(() => void score(all), 6000);
+      if (n >= SCORED_TURNS) setTimeout(() => void score(all), 6000);
     } catch (e) {
       if (!mounted.current) return;
       setBusy(false);
@@ -329,11 +329,11 @@ export function ConversationScoredScreen() {
           /* MİSAFİR: sınavın muhatabı ve puanı yapay zekâ; ikisi de hesap istiyor
              (mağaza ön inceleme B24). Başla yerine hesap oluşturma. */
           ? <FlowActions primary={{ label: tx("guest.create_account"), onPress: () => nav.navigate("Auth") }} tertiary={{ label: tx("common.discard"), onPress: () => nav.goBack() }} />
-          : <FlowActions primary={{ label: tx("exam.start"), onPress: start }} tertiary={{ label: tx("common.discard"), onPress: () => nav.goBack() }} />}
+          : <FlowActions primary={{ label: tx("scored.start"), onPress: start }} tertiary={{ label: tx("common.discard"), onPress: () => nav.goBack() }} />}
       >
         {/* 48 — web ile ayni boy (`conversations/conversation-scored`) ve mobilin KENDI
             sinav girisiyle de ayni (`ExamScreen` 48). */}
-        <CoachLine moment="exam_intro" />
+        <CoachLine moment="scored_intro" />
         <CoverBody
           icon={ChatIcon}
           tint={colors.primary}
@@ -343,12 +343,12 @@ export function ConversationScoredScreen() {
           title={tx("scored.title")}
           pitch={conversation.chat.scene}
           rules={[
-            { icon: ClockIcon, text: tx("scored.rule_time", { turns: EXAM_TURNS, minutes: EXAM_SECONDS / 60 }) },
+            { icon: ClockIcon, text: tx("scored.rule_time", { turns: SCORED_TURNS, minutes: SCORED_SECONDS / 60 }) },
             { icon: LockIcon, text: tx("scored.rule_partner") },
             { icon: TargetIcon, text: tx("scored.rule_scoring") },
           ]}
         >
-          {guest ? <FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={tx("guest.ai_exam")} /> : null}
+          {guest ? <FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={tx("guest.ai_scored")} /> : null}
           {conversation.patterns.length ? (
             <DetailCard title={tx("scored.patterns_title")}>
               {conversation.patterns.map((p) => <DetailRow key={p.de} left={p.de} right={p.tr} />)}
@@ -416,7 +416,7 @@ export function ConversationScoredScreen() {
     for (const e of result?.errors ?? []) byType.set(e.type, (byType.get(e.type) ?? 0) + 1);
     const topErrors = [...byType].sort((a, b) => b[1] - a[1]).slice(0, 2);
     const overall = result?.score.overall ?? 0;
-    const passed = overall >= EXAM_PASS_SCORE;
+    const passed = overall >= SCORED_PASS_SCORE;
     /* Eşiğin altındaysa birincil düğme "Tekrar dene". Puanlanamadıysa
        (servis/kota) tekrar denemek aynı kapıya çarpar; orada birincil çıkış
        konuşmaya dönmek. */
@@ -440,10 +440,10 @@ export function ConversationScoredScreen() {
           figure={result ? formatPercent(overall) : null}
           sub={`${conversation.title} · ${tx("conversationp.n_turns", { n: userTurns })}`}
           /* Puanlandıysa Erdi bandın ALTINDA konuşuyor (koç balonu). */
-          pill={result ? { text: tx("scored.below_threshold", { n: EXAM_PASS_SCORE }), tone: passed ? "ok" : "bad" } : null}
+          pill={result ? { text: tx("scored.below_threshold", { n: SCORED_PASS_SCORE }), tone: passed ? "ok" : "bad" } : null}
           quiet={!passed}
         />
-        {result ? <CoachLine moment={passed ? "exam_pass" : "exam_fail"} vars={{ pct: overall, level: conversation.level }} /> : null}
+        {result ? <CoachLine moment={passed ? "scored_pass" : "scored_fail"} vars={{ pct: overall, level: conversation.level }} /> : null}
         {result ? (
           <StatRow items={[
             { value: String(userTurns), label: tx("scored.stat_turns") },
@@ -475,7 +475,7 @@ export function ConversationScoredScreen() {
              öğrenmiyordu. Kart hataların gerekçesini, düzeltilmiş cümleyi,
              övgüyü ve sıradaki ipucunu da yazıyor. */
           <DetailCard title={tx("scored.assessment_title")}>
-            <AssessmentCard answer={said.join("\n")} result={result} reportRef={assessmentRef(resultId, `${conversation.id}:exam`)} />
+            <AssessmentCard answer={said.join("\n")} result={result} reportRef={assessmentRef(resultId, `${conversation.id}:scored`)} />
           </DetailCard>
         ) : null}
 
@@ -495,7 +495,7 @@ export function ConversationScoredScreen() {
   return (
     <View ref={rootRef} collapsable={false} style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.md, paddingBottom: insets.bottom + spacing.md, paddingHorizontal: spacing.lg }}>
       <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
-        <Text variant="caption" color={colors.textMuted}>{tx("scored.turn_of", { n: Math.min(userTurns + 1, EXAM_TURNS), total: EXAM_TURNS })}</Text>
+        <Text variant="caption" color={colors.textMuted}>{tx("scored.turn_of", { n: Math.min(userTurns + 1, SCORED_TURNS), total: SCORED_TURNS })}</Text>
         <Text variant="bodyStrong" color={left <= 30 ? colors.dangerText : colors.textMuted}>{mm}:{ss}</Text>
       </View>
       <AiNotice variant="character" />
@@ -527,7 +527,7 @@ export function ConversationScoredScreen() {
                 İlk balon (i = 0) dersin yazılı açılış cümlesi, model çıktısı
                 değil: orada yok. */}
             {turn.role === "assistant" && i > 0 ? (
-              <ReportLink kind="chat" refId={`${conversation.id}:exam:${i}`} content={turn.content} style={{ alignSelf: "flex-end", marginTop: spacing.xs }} />
+              <ReportLink kind="chat" refId={`${conversation.id}:scored:${i}`} content={turn.content} style={{ alignSelf: "flex-end", marginTop: spacing.xs }} />
             ) : null}
           </View>
         ))}

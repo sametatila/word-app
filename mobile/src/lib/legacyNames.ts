@@ -16,6 +16,8 @@ import { dropPackIndex } from "../content/store";
  *                                    (faz `roleplay` → `chat`)
  *   content:pack:lessons/<kurs-sv> → silinir (içerik artık `conversations/`
  *                                    paketinde; eski paketin gövdeleri de gider)
+ *   Patika öğe kimlikleri          <ünite>-checkpoint1 → <ünite>-unitQuiz1
+ *                                    (Kontrol → Ünite quizi; bitenler, bekleyenler, puanlar)
  *
  * Taşıma idempotent ve sessiz; bir kez çalışması yeterli ama her açılışta
  * çalışması zararsız. BUILD 7 HERKESE ULAŞINCA BU DOSYA SİLİNECEK.
@@ -25,6 +27,10 @@ const NEW_PENDING = "lernomi-conversations-pending";
 const OLD_RESUME = "lernomi-lesson-resume:";
 const NEW_RESUME = "lernomi-conversation-resume:";
 const OLD_PACK_KEY = "content:pack:lessons/";
+
+/** Öğe kimliği taşıyan kayıtlar; kimlik JSON içinde dize olarak duruyor. */
+const ITEM_KEYS = ["lernomi-items-done", "lernomi-path-items-pending", "lernomi-item-scores"];
+const OLD_ITEM_ID = /-checkpoint(\d+)"/g;
 
 type Row = Record<string, unknown>;
 
@@ -61,6 +67,17 @@ export async function migrateLegacyStorage(): Promise<void> {
       }
       if (Object.keys(writes).length) await AsyncStorage.setMany(writes);
       await AsyncStorage.removeMany(resumes);
+    }
+
+    const itemKeys = ITEM_KEYS.filter((k) => all.includes(k));
+    if (itemKeys.length) {
+      const values = await AsyncStorage.getMany(itemKeys);
+      const writes: Record<string, string> = {};
+      for (const k of itemKeys) {
+        const raw = values[k];
+        if (raw?.includes("-checkpoint")) writes[k] = raw.replace(OLD_ITEM_ID, "-unitQuiz$1\"");
+      }
+      if (Object.keys(writes).length) await AsyncStorage.setMany(writes);
     }
 
     for (const k of all.filter((key) => key.startsWith(OLD_PACK_KEY))) {

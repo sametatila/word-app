@@ -4,7 +4,7 @@ import { CORRECTION_MARK, SUGGESTION_MARK } from "@/lib/chat-format";
 import type { Conversation } from "./types";
 import { conversationIndexInLevel } from "./index";
 import { characterFor } from "./characters";
-import { EXAM_TURNS } from "./chat-const";
+import { SCORED_TURNS } from "./chat-const";
 import type { SpeakingDialogueExercise } from "@/lib/skills/types";
 import { dialogueDone, targetsUsed } from "@/lib/dialogue";
 import { DEFAULT_NATIVE, type NativeLang } from "@/lib/courses";
@@ -33,7 +33,7 @@ export type ChatTurn = ChatMessage;
  * `exam` sınav — muhatap doğal, yardım yok, düzeltme yok, öneri yok; beş
  * turda kapanır ve sonra bütün konuşma rubrikle puanlanır.
  */
-export type ChatMode = "practice" | "exam";
+export type ChatMode = "practice" | "scored";
 
 /**
  * Konuşmanın hangi yayında olduğu.
@@ -49,7 +49,7 @@ export type ChatMode = "practice" | "exam";
  * kılan şey.
  */
 export type ChatPhase = "open" | "develop" | "wrapup" | "closing";
-export { EXAM_TURNS, EXAM_SECONDS } from "./chat-const";
+export { SCORED_TURNS, SCORED_SECONDS } from "./chat-const";
 
 /**
  * Dersin rol yapma istemi.
@@ -132,7 +132,7 @@ export function chatPrompt(
 ): string {
   const phase: ChatPhase = opts?.phase ?? "develop";
   const nat = nativeLang(opts?.native ?? DEFAULT_NATIVE);
-  if (opts?.mode === "exam") return examPrompt(conversation, phase, opts?.native ?? DEFAULT_NATIVE, opts?.conversationIndex ?? 0);
+  if (opts?.mode === "scored") return scoredPrompt(conversation, phase, opts?.native ?? DEFAULT_NATIVE, opts?.conversationIndex ?? 0);
   const tgt = targetLang(conversation.course);
   const dialect = tgt.dialect;
 
@@ -342,7 +342,7 @@ düzeltme satırını yine yaz.`;
  * görse de düzeltmez (puanlama sonra, bütün konuşma üstünde). Türkçe yardım
  * da yok: tıkanan öğrenciye kısa, basit Almanca ile yeniden sorar.
  */
-function examPrompt(conversation: Conversation, phase: ChatPhase, native: NativeLang, conversationIndex: number): string {
+function scoredPrompt(conversation: Conversation, phase: ChatPhase, native: NativeLang, conversationIndex: number): string {
   const tgt = targetLang(conversation.course);
   const nat = nativeLang(native);
   const dialect = conversation.course === "gsw-zh" ? "Züritüütsch (Zürih Almancası) konuşuyorsun." : tgt.dialect;
@@ -415,7 +415,7 @@ export async function* streamChat(
   // değil ve "yeterince konuşuldu"nun kararını öğrenciye bırakmak konuşmayı
   // 25 tura sürüklüyordu. Kapanış cevabından sonra istemci dersi bitiriyor.
   const userTurns = messages.filter((m) => m.role === "user").length;
-  const limit = mode === "exam" ? EXAM_TURNS : conversation.chat.minTurns;
+  const limit = mode === "scored" ? SCORED_TURNS : conversation.chat.minTurns;
   const phase: ChatPhase =
     userTurns >= limit ? "closing" : userTurns >= limit - 1 ? "wrapup" : userTurns <= 1 ? "open" : "develop";
   const system = chatPrompt(conversation, { phase, mode, native, conversationIndex: await conversationIndexInLevel(conversation) });

@@ -45,7 +45,7 @@ export async function GET(req: Request) {
         id: s.item.id,
         kind: s.item.kind,
         // Altındaki içeriğin kimliği: ders id'si / egzersiz id'si / ünite id'si
-        // (quiz+checkpoint). REST istemcisi (mobil) oynatıcıya bununla gider;
+        // (quiz+unitQuiz). REST istemcisi (mobil) oynatıcıya bununla gider;
         // web sunucu bileşeninde zaten ref'le köprü kuruyor.
         ref: s.item.ref,
         title: s.item.title,

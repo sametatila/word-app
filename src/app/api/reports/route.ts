@@ -5,7 +5,7 @@ import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { db } from "@/lib/db";
 import { contentReports } from "@/lib/db/schema";
-import { legacyKind } from "@/lib/legacy-names";
+import { legacyKind, legacyScoredRef } from "@/lib/legacy-names";
 
 export const dynamic = "force-dynamic";
 
@@ -15,7 +15,7 @@ export const dynamic = "force-dynamic";
  *
  *   POST { kind, ref, reason, content }
  *     kind    "chat" | "assessment" | "user" (lider tablosu adı)
- *     ref     chat: "<conversationId>:<turn>" · rol yapma sınavı "<conversationId>:exam:<turn>"
+ *     ref     chat: "<conversationId>:<turn>" · rol yapma sınavı "<conversationId>:scored:<turn>"
  *             assessment: kayıt kimliği ("Yazdıklarım") · anlık sonuç "<yüzey>:<kimlik>"
  *             ("writing:…", "speaking:…", "exam:…", "word:…"; web ve mobil aynı)
  *     reason  "inappropriate" | "offensive" | "wrong" | "impersonation" | "other"
@@ -44,7 +44,8 @@ export async function POST(req: Request) {
   const rawKind = legacyKind(body.kind); // build 6 eski türü gönderiyor (geçici, lib/legacy-names)
   const kind = typeof rawKind === "string" && KINDS.has(rawKind) ? rawKind : null;
   const reason = typeof body.reason === "string" && REASONS.has(body.reason) ? body.reason : null;
-  const ref = typeof body.ref === "string" ? body.ref.trim().slice(0, 120) : "";
+  const rawRef = kind === "chat" ? legacyScoredRef(body.ref) : body.ref; // puanlı kısmın eski kaynak adı
+  const ref = typeof rawRef === "string" ? rawRef.trim().slice(0, 120) : "";
   const content = typeof body.content === "string" ? body.content.trim().slice(0, MAX_CONTENT) : "";
   if (!kind || !reason || !ref) return NextResponse.json({ error: "bad_request" }, { status: 400 });
 

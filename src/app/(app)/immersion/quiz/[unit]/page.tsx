@@ -14,10 +14,10 @@ export const dynamic = "force-dynamic";
 const LEVELS = ["A1", "A2", "B1", "B2", "C1"];
 
 /**
- * Immersion quiz/checkpoint oynatıcı rotası.
+ * Immersion quiz/unitQuiz oynatıcı rotası.
  *
  * [unit] = ünite kimliği (ör. `de-a1-u02`). ELLE YAZILMIŞ içerik varsa (registry)
- * onu, yoksa ünitenin brief'inden TÜRETİLEN soruları render eder. mode=checkpoint
+ * onu, yoksa ünitenin brief'inden TÜRETİLEN soruları render eder. mode=unitQuiz
  * daha uzun/kapsamlı sınav (bitiş sınavı). Kurs tireli olabilir (gsw-zh).
  */
 export const generateMetadata = titleMeta("unitkind.quiz");
@@ -32,7 +32,7 @@ export default async function ImmersionQuizPage({
   const t = await getT();
   const lang = await getLang();
   const { unit } = await params;
-  const checkpoint = (await searchParams).mode === "checkpoint";
+  const unitQuiz = (await searchParams).mode === "unitQuiz";
 
   // `de-a1-u02` → course="de", level="A1", index=2. Kurs tireli olabilir (gsw-zh).
   const [left, num] = unit.split("-u");
@@ -50,9 +50,9 @@ export default async function ImmersionQuizPage({
   // Elle yazılmış içerik öncelikli; yoksa ünitenin brief'inden türet.
   const authored = unitQuestions(unit);
   let questions: SkillQuestion[];
-  if (checkpoint && authored?.checkpoint?.length) {
-    questions = authored.checkpoint;
-  } else if (!checkpoint && authored?.quiz?.length) {
+  if (unitQuiz && authored?.unitQuiz?.length) {
+    questions = authored.unitQuiz;
+  } else if (!unitQuiz && authored?.quiz?.length) {
     questions = authored.quiz;
   } else {
     const pool = {
@@ -66,7 +66,7 @@ export default async function ImmersionQuizPage({
       vocab: earlier.flatMap((b) => b.vocab),
       patterns: earlier.flatMap((b) => b.patterns),
     };
-    questions = deriveQuiz(brief, pool, checkpoint ? 12 : 8, review, {
+    questions = deriveQuiz(brief, pool, unitQuiz ? 12 : 8, review, {
       whatMeans: (word) => t("quiz.what_means", { word }),
       howToSay: (pattern) => t("quiz.how_to_say", { pattern, target: courseName(course, lang) }),
       fromEarlier: t("quiz.from_earlier"),
@@ -80,12 +80,12 @@ export default async function ImmersionQuizPage({
 
   return (
     <ImmersionQuizPlayer
-      title={t(checkpoint ? "immw.checkpoint" : "immw.review")}
+      title={t(unitQuiz ? "immw.unit_quiz" : "immw.review")}
       subtitle={`${t("common.unit")} ${brief.index} · ${brief.theme}`}
-      kind={checkpoint ? "checkpoint" : "quiz"}
-      itemId={`${unit}-${checkpoint ? "checkpoint" : "quiz"}1`}
+      kind={unitQuiz ? "unitQuiz" : "quiz"}
+      itemId={`${unit}-${unitQuiz ? "unitQuiz" : "quiz"}1`}
       unitNo={brief.index}
-      intro={t(checkpoint ? "quiz.intro_checkpoint" : "quiz.intro_review")}
+      intro={t(unitQuiz ? "quiz.intro_unit_quiz" : "quiz.intro_review")}
       questions={questions}
     />
   );

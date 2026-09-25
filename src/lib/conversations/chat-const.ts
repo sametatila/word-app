@@ -2,8 +2,8 @@
  * Rol yapma sınavının sabitleri (WP-22) — istemciye de iniyor, o yüzden
  * `server-only` olan chat.ts'den ayrı.
  */
-export const EXAM_TURNS = 5;
-export const EXAM_SECONDS = 180;
+export const SCORED_TURNS = 5;
+export const SCORED_SECONDS = 180;
 
 /**
  * Geçme eşiği — bütünsel puan yüzdesi.
@@ -13,7 +13,7 @@ export const EXAM_SECONDS = 180;
  * sözlük dizgesinde ayrıca yazılıydı. Sekiz yer; biri değişse ötekiler
  * sessizce eski kalır, kullanıcı geçtiğini sandığı bir sınavı geçemezdi.
  */
-export const EXAM_PASS_SCORE = 60;
+export const SCORED_PASS_SCORE = 60;
 
 /** Rol yapmada bir dersin isteyebileceği en çok tur (bkz. ConversationChat.minTurns). */
 export const MAX_MIN_TURNS = 9;

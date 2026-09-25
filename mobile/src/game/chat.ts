@@ -33,7 +33,7 @@ export async function chatAvailability(): Promise<ChatRoute> {
   }
 }
 
-export async function sendChat(conversationId: string, messages: ChatMsg[], mode: "practice" | "exam" = "practice"): Promise<string> {
+export async function sendChat(conversationId: string, messages: ChatMsg[], mode: "practice" | "scored" = "practice"): Promise<string> {
   /* Yapay zekâ üretimi: varsayılandan uzun. Yanıt METİN olduğu için `api()`
      kullanılamıyor (o JSON çözüyor), ama zaman aşımı ortak yardımcıdan.
      Tavanın adı var: web aynı sayıyı aynı adla taşıyor. */

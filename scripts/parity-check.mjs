@@ -3333,8 +3333,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
   sameSet(
     "patika turu simgeleri",
-    simge("mobile/src/ui/unitKind.tsx", /^  (read|listen|write|grammar|quiz|conversation|checkpoint): \(p\) => <([A-Za-z]+Icon)/gm),
-    simge("src/components/immersion/unit-pane.tsx", /case "(read|listen|write|grammar|quiz|conversation|checkpoint)":\s*\n?\s*return <([A-Za-z]+Icon)/g),
+    simge("mobile/src/ui/unitKind.tsx", /^  (read|listen|write|grammar|quiz|conversation|unitQuiz): \(p\) => <([A-Za-z]+Icon)/gm),
+    simge("src/components/immersion/unit-pane.tsx", /case "(read|listen|write|grammar|quiz|conversation|unitQuiz)":\s*\n?\s*return <([A-Za-z]+Icon)/g),
     "mobil", "web",
   );
 }
@@ -3743,7 +3743,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  * bitiren iki kullanicidan yalniz biri olculebiliyordu.
  *
  * Olculen sey sinavin SOZLESMESI: iki sabit (kac tur, kac saniye), modele
- * giden istegin anahtarlari (`mode: "exam"`, rubrik turu, hedef kaliplar,
+ * giden istegin anahtarlari (`mode: "scored"`, rubrik turu, hedef kaliplar,
  * kisitlar, gun) ve sonuc kartinin parcalari (rubrik, en iyi cumleler, en sik
  * hata, yapabilirlik). Yedek puan olcum disi: saglayici kapaliyken web kural
  * tabanli bir puan gosteriyor, mobil hic puan vermiyor - bu ayrim mobilde
@@ -3760,12 +3760,12 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const solo = kirp(read(tek));
     const sabit = (ad) => new RegExp(ad + " = (\\d+)").exec(src)?.[1] ?? "?";
     return [
-      "tur=" + sabit("EXAM_TURNS"),
-      "saniye=" + sabit("EXAM_SECONDS"),
-      "istem modu=" + (/mode: "exam"|mode\b[^\n]*"exam"/.test(src) ? "var" : "yok"),
+      "tur=" + sabit("SCORED_TURNS"),
+      "saniye=" + sabit("SCORED_SECONDS"),
+      "istem modu=" + (/mode: "scored"|mode\b[^\n]*"scored"/.test(src) ? "var" : "yok"),
       "rubrik turu=" + (/kind: "chat"/.test(src) ? "var" : "yok"),
       "hedef kaliplar=" + (/targets: conversation\.patterns/.test(src) ? "var" : "yok"),
-      "kisitlar=" + (/constraints: \[`\$\{EXAM_TURNS\} tur`/.test(src) ? "var" : "yok"),
+      "kisitlar=" + (/constraints: \[`\$\{SCORED_TURNS\} tur`/.test(src) ? "var" : "yok"),
       "gun=" + (/day:/.test(solo) ? "var" : "yok"),
       "en iyi cumleler=" + (/scored\.best_sentences/.test(src) ? "var" : "yok"),
       "en sik hata=" + (/scored\.most_common/.test(src) ? "var" : "yok"),
@@ -3774,8 +3774,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
          tarafta da "yok" uretecek ve karsilastirma yesil kalacakti - §144'un
          tuzagi. Artik hem sayinin KENDISI hem de ekranin sabiti kullanip
          kullanmadigi okunuyor; mutlak olcut §186-187'de. */
-      "esik=" + sabit("EXAM_PASS_SCORE"),
-      "esik kaynaktan=" + (/>= EXAM_PASS_SCORE/.test(src) ? "var" : "yok"),
+      "esik=" + sabit("SCORED_PASS_SCORE"),
+      "esik kaynaktan=" + (/>= SCORED_PASS_SCORE/.test(src) ? "var" : "yok"),
       "giris dugmesi=" + (/conversationp\.try_scored/.test(src) ? "var" : "yok"),
     ];
   };
@@ -7577,7 +7577,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  *         better-auth'un `trustDeviceMaxAge` VARSAYILANINA guveniyordu.
  *         Kutuphane varsayilani degisse ekran eski sureyi soylemeye devam
  *         ederdi. Artik eklentiye acikca geciliyor.
- *   187 - rol yapma sinavinin gecme esigi (`EXAM_PASS_SCORE`): iki platformun
+ *   187 - rol yapma sinavinin gecme esigi (`SCORED_PASS_SCORE`): iki platformun
  *         ekrani `overall >= 60` diye elle karsilastiriyordu ve esigi soyleyen
  *         cumle ("esigin altinda (60)") alti dizgede ayrica yaziliydi.
  *   188 - pekisme araligi (`MASTERED_DAYS`): "21+ gun aralik".
@@ -7645,7 +7645,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       ad: "rol yapma gecme esigi",
       yer: ["{n}"],
       anahtarlar: ["scored.below_threshold"],
-      gecis: /n:\s*EXAM_PASS_SCORE/,
+      gecis: /n:\s*SCORED_PASS_SCORE/,
       cagiranlar: ["src/components/conversations/conversation-scored.tsx", "mobile/src/screens/ConversationScoredScreen.tsx"],
     },
     {
@@ -9632,7 +9632,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    * `if (!deadline.current)` ile bir kez kuruyor, sonra her tik farki oradan
    * hesapliyor (bu kalip 271'in dersi: arka plana atilan sinav sureyi
    * uzatmasin diye duvar saati kullaniliyor). Android'in SONUC ekranindaki
-   * "Tekrar dene" `setLeft(EXAM_SECONDS)` yaziyor ama `deadline.current`i
+   * "Tekrar dene" `setLeft(SCORED_SECONDS)` yaziyor ama `deadline.current`i
    * SIFIRLAMIYORDU: ilk tik `left`i hemen 0 yapiyor, "sure bitti" efekti
    * kosuyor ve sinav ANINDA, sifir turla bitiyordu. Yani dugme calisiyor
    * gibi duruyor, sonuc ekrani yeniden geliyor - kullanici hicbir sey
@@ -9663,7 +9663,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         return [
           et + " var=" + (r ? "var" : "YOK"),
           et + " deadline=" + (/deadline\.current = 0/.test(r) ? "sifirlaniyor" : "SIFIRLANMIYOR"),
-          et + " sure=" + (/setLeft\(EXAM_SECONDS\)/.test(r) ? "var" : "YOK"),
+          et + " sure=" + (/setLeft\(SCORED_SECONDS\)/.test(r) ? "var" : "YOK"),
           et + " asama=" + (/setPhase\("intro"\)/.test(r) ? "intro" : "BASKA"),
         ].join(" | ");
       }),
@@ -9679,7 +9679,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "sureyi baska yerde sifirlayan yok",
       CIFT.map(([et, y]) => {
         const g = sil(read(y));
-        const disi = [...g.matchAll(/setLeft\(EXAM_SECONDS\)/g)].length - (/setLeft\(EXAM_SECONDS\)/.test(govde(g, "restart")) ? 1 : 0);
+        const disi = [...g.matchAll(/setLeft\(SCORED_SECONDS\)/g)].length - (/setLeft\(SCORED_SECONDS\)/.test(govde(g, "restart")) ? 1 : 0);
         return `${et}=${disi === 0 ? "yok" : disi}` + (et === "web" ? `+reload=${/location\.reload\(\)/.test(g) ? "VAR" : "yok"}` : "");
       }),
       CIFT.map(([et]) => `${et}=yok` + (et === "web" ? "+reload=yok" : "")),
@@ -16973,8 +16973,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList(
     "rol yapma esigi kararda da kaynaktan",
     [
-      "web=" + (/overall >= EXAM_PASS_SCORE/.test(sil(read("src/components/conversations/conversation-scored.tsx"))) ? "kaynaktan" : "elle yazili"),
-      "mobil=" + (/overall >= EXAM_PASS_SCORE/.test(sil(read("mobile/src/screens/ConversationScoredScreen.tsx"))) ? "kaynaktan" : "elle yazili"),
+      "web=" + (/overall >= SCORED_PASS_SCORE/.test(sil(read("src/components/conversations/conversation-scored.tsx"))) ? "kaynaktan" : "elle yazili"),
+      "mobil=" + (/overall >= SCORED_PASS_SCORE/.test(sil(read("mobile/src/screens/ConversationScoredScreen.tsx"))) ? "kaynaktan" : "elle yazili"),
     ],
     ["web=kaynaktan", "mobil=kaynaktan"],
     "bulunan",

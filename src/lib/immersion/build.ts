@@ -16,7 +16,7 @@ import type { ImmersionItem, ImmersionItemKind, ImmersionTrack, ImmersionUnit } 
  * Ders = TEK iskelet: ünite dersleri 4'erli tüketir, temasını onlardan alır.
  * Beceri egzersizleri havuzdan sırayla akar; biterse slot boş (`ref: null`)
  * kalır — içerik ünite temasına göre sonradan doldurulacak. grammar/quiz/
- * checkpoint bugün daima yer tutucu (motorları var, içerikleri sonra).
+ * unitQuiz bugün daima yer tutucu (motorları var, içerikleri sonra).
  */
 
 /** Ünite başına ders sayısı (sahibin kararı: 4 conversation + 2 read + 2 listen + 2 write). */
@@ -33,12 +33,12 @@ const BASE_PATTERN: ImmersionItemKind[] = [
 ];
 
 /**
- * Ünitenin item deseni — TAM TAKIM: temel + grammar + quiz + checkpoint.
+ * Ünitenin item deseni — TAM TAKIM: temel + grammar + quiz + unitQuiz.
  * Sahibin kararı: her ünite eksiksiz şablon taşır (ilk ünite dâhil). İçerik
- * zamanla dolar — grammar/quiz/checkpoint yer tutucudan türetilene/yazılana.
+ * zamanla dolar — grammar/quiz/unitQuiz yer tutucudan türetilene/yazılana.
  */
 function slotPlan(): ImmersionItemKind[] {
-  return [...BASE_PATTERN, "grammar", "quiz", "checkpoint"];
+  return [...BASE_PATTERN, "grammar", "quiz", "unitQuiz"];
 }
 
 /** İçeriği henüz olmayan beceri yuvasının adı — arayüz metni, çevrilir. */
@@ -138,11 +138,11 @@ export function buildTrack(input: BuildTrackInput): ImmersionTrack {
         const gRef = hasAuthoredGrammar(unitId) || unitConversations.length ? unitId : null;
         items.push({ id, kind, ref: gRef, title: t("unitkind.grammar"), titleTr: t("path.slot_grammar_sub") });
       } else if (kind === "quiz") {
-        // quiz/checkpoint ünitenin brief'inden TÜRETİLİR (deriveQuiz) → oynanabilir.
+        // quiz/unitQuiz ünitenin brief'inden TÜRETİLİR (deriveQuiz) → oynanabilir.
         // ref = unitId: oynatıcı rotası hangi üniteden soru üreteceğini bundan bilir.
         items.push({ id, kind, ref: unitId, title: t("unitkind.quiz"), titleTr: t("path.slot_quiz_sub") });
       } else {
-        items.push({ id, kind, ref: unitId, title: t("path.slot_checkpoint"), titleTr: t("path.slot_checkpoint_sub") });
+        items.push({ id, kind, ref: unitId, title: t("path.slot_unit_quiz"), titleTr: t("path.slot_unit_quiz_sub") });
       }
     }
 

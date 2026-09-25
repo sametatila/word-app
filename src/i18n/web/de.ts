@@ -623,7 +623,7 @@ export const deWeb: Record<string, string> = {
   "writew.task_n": "Aufgabe {n} / {total}",
   "writew.fields_ok": "{n} / {total} Felder richtig",
   "writew.form_eyebrow": "Formular ausfüllen",
-  "immw.checkpoint": "Kontrollpunkt",
+  "immw.unit_quiz": "Kontrollpunkt",
   "immw.review": "Wiederholung",
   "immw.grammar_exercise": "Grammatikübung",
   "profw.load_failed": "Profil konnte nicht geladen werden",

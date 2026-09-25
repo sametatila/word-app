@@ -21,14 +21,14 @@ const MODULE_SIZE = 10;
 
 /** Her ünitenin deseni: 4 ders + 2 okuma + 2 dinleme + 2 yazma + gramer + quiz + kontrol. */
 const BASE_PATTERN = ["conversation", "read", "conversation", "listen", "conversation", "write", "conversation", "read", "listen", "write"] as const;
-function slotPlan(): string[] { return [...BASE_PATTERN, "grammar", "quiz", "checkpoint"]; }
+function slotPlan(): string[] { return [...BASE_PATTERN, "grammar", "quiz", "unitQuiz"]; }
 
 /** Slot başlıkları çeviriden; `sub` Patika kartındaki ikinci satır. */
 const SKILL_KEY: Record<string, string> = { read: "unitkind.read", listen: "unitkind.listen", write: "unitkind.write" };
 const SLOT_KEY: Record<string, { title: string; sub: string }> = {
   grammar: { title: "unitkind.grammar", sub: "path.slot_grammar_sub" },
   quiz: { title: "unitkind.quiz", sub: "path.slot_quiz_sub" },
-  checkpoint: { title: "path.slot_checkpoint", sub: "path.slot_checkpoint_sub" },
+  unitQuiz: { title: "path.slot_unit_quiz", sub: "path.slot_unit_quiz_sub" },
 };
 
 
@@ -83,8 +83,8 @@ export function buildLocalLearningPath(level: string, done: Set<string>): Learni
           open: true,
           ref: meta?.id ?? null,
         });
-      } else if (kind === "quiz" || kind === "checkpoint") {
-        // Quiz/checkpoint ünitenin ders içeriğinden CİHAZDA türetilir. Ünitede
+      } else if (kind === "quiz" || kind === "unitQuiz") {
+        // Quiz/unitQuiz ünitenin ders içeriğinden CİHAZDA türetilir. Ünitede
         // hiç ders yoksa türetecek bir şey de yok: "oynanır" demek boş bir tur
         // açmak olurdu. Ders paketi olmayan kurslarda (ör. İngilizce, henüz
         // ders içeriği yazılmadı) tüm ünite bu durumda.

@@ -38,6 +38,9 @@
 --   quest_claims         lesson1 → conversation1
 --   ai_usage.kind, assessments.kind, content_reports.kind   roleplay → chat
 --   content_flags.pack   lessons/… → conversations/…
+--   puanlı kısım         chat_logs.mode exam → scored · assessments.exercise_id <id>:exam → <id>:scored
+--                        content_reports.ref <id>:exam:<tur> → <id>:scored:<tur>
+--   user_path_items      <ünite>-checkpoint1 → <ünite>-unitQuiz1
 --
 -- Tek transaction: migrate-all ve apply-migration dosyayı tek cümle olarak
 -- gönderiyor (statement-breakpoint yok), psql de BEGIN/COMMIT'e uyuyor.
@@ -180,5 +183,22 @@ WHERE starts_with(f.pack, 'lessons/')
   AND NOT EXISTS (SELECT 1 FROM content_flags g
                   WHERE g.pack = 'conversations/' || substr(f.pack, length('lessons/') + 1) AND g.item = f.item);
 DELETE FROM content_flags WHERE starts_with(pack, 'lessons/');
+
+-- ── 8. Konuşma adımının puanlı kısmı: `exam` → `scored` ─────────────────────
+-- Eskiden "sınav olarak dene" adıyla `exam` kipindeydi; artık adımın isteğe
+-- bağlı PUANLI kısmı. Sohbet kaydının kipi, değerlendirmenin madde kimliği
+-- (`<id>:exam`) ve bildirimin kaynağı (`<id>:exam:<tur>`) yeni adla.
+UPDATE chat_logs SET mode = 'scored' WHERE mode = 'exam';
+UPDATE assessments SET exercise_id = left(exercise_id, length(exercise_id) - length(':exam')) || ':scored'
+WHERE kind = 'chat' AND exercise_id LIKE '%:exam';
+UPDATE content_reports SET ref = regexp_replace(ref, ':exam(:|$)', ':scored\1')
+WHERE kind = 'chat' AND ref ~ ':exam(:|$)';
+
+-- ── 9. Patika: Kontrol noktası → Ünite quizi (`<ünite>-checkpoint1` → `<ünite>-unitQuiz1`) ─
+UPDATE user_path_items p SET item_id = regexp_replace(p.item_id, '-checkpoint(\d+)$', '-unitQuiz\1')
+WHERE p.item_id ~ '-checkpoint\d+$'
+  AND NOT EXISTS (SELECT 1 FROM user_path_items q
+                  WHERE q.user_id = p.user_id AND q.item_id = regexp_replace(p.item_id, '-checkpoint(\d+)$', '-unitQuiz\1'));
+DELETE FROM user_path_items WHERE item_id ~ '-checkpoint\d+$';
 
 COMMIT;

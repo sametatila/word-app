@@ -38,7 +38,7 @@ export async function logChatTurn(
   reply: string,
   /** Cevabı veren sağlayıcı ve bildirdiği kalan hak — bilinmiyorsa boş. */
   meta?: { provider: string; model: string; limits: Record<string, string> },
-  mode: "practice" | "exam" = "practice",
+  mode: "practice" | "scored" = "practice",
 ): Promise<void> {
   try {
     await db.insert(chatLogs).values({

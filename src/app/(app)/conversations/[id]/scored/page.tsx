@@ -16,7 +16,7 @@ export const dynamic = "force-dynamic";
 /** Dersin rol yapma sahnesi sınav olarak (WP-22): /conversations/[id]/scored. */
 export const generateMetadata = titleMeta("scored.title");
 
-export default async function ConversationExamPage({ params }: { params: Promise<{ id: string }> }) {
+export default async function ConversationScoredPage({ params }: { params: Promise<{ id: string }> }) {
   const who = await getUserInfo();
   if (!who) redirect("/login");
   const userId = who.id;
@@ -38,7 +38,7 @@ export default async function ConversationExamPage({ params }: { params: Promise
     const en = await nativeCando(candoForConversation(source), lang);
     if (en) cando = en;
   } catch (err) {
-    console.error("[rpexam]", err);
+    console.error("[scored]", err);
   }
   const quota = await conversationQuota(who, source).catch(() => null);
   return <ConversationScored conversation={conversation} cando={cando} quota={quota} />;

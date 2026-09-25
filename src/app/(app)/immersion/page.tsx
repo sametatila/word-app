@@ -23,7 +23,7 @@ const LEVELS: CefrLevel[] = ["A1", "A2", "B1", "B2", "C1"];
 
 /**
  * Immersion (2. mod) ana ekranı — eski "Dersler" + "Beceriler"in birleşimi.
- * Ders iskeletinin üzerine okuma/dinleme/yazma (+ ileride gramer/quiz/checkpoint)
+ * Ders iskeletinin üzerine okuma/dinleme/yazma (+ ileride gramer/quiz/unitQuiz)
  * item'ları örülür (bkz. docs/plan/immersion.md). Seçili seviyenin track'i
  * kurulur, kullanıcının ilerlemesiyle gating hesaplanır, sunucuda çizilir.
  */

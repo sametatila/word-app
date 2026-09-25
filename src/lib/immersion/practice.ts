@@ -15,9 +15,9 @@ import { PRACTICE_PASS_PCT } from "@/lib/score-bands";
  */
 
 /** `${kurs}-${seviye}-u${NN}-${tür}${n}` — `lib/immersion/build` ile aynı biçim. */
-const ITEM_ID = /^([a-z]{2,3}(?:-[a-z]{2})?)-(a1|a2|b1|b2|c1)-u(\d{2})-(grammar|quiz|checkpoint)1$/;
+const ITEM_ID = /^([a-z]{2,3}(?:-[a-z]{2})?)-(a1|a2|b1|b2|c1)-u(\d{2})-(grammar|quiz|unitQuiz)1$/;
 
-export type PracticeKind = "grammar" | "quiz" | "checkpoint";
+export type PracticeKind = "grammar" | "quiz" | "unitQuiz";
 
 export function parsePracticeItemId(id: string): { course: string; level: string; unit: number; kind: PracticeKind } | null {
   const m = ITEM_ID.exec(id);

@@ -13,7 +13,7 @@ import { apiFetch } from "@/lib/api-fetch";
 import { PRACTICE_PASS_PCT as PASS_PCT } from "@/lib/score-bands";
 
 /**
- * Immersion quiz/checkpoint oynatıcısı — ünitenin brief'inden TÜRETİLEN sorular
+ * Immersion quiz/unitQuiz oynatıcısı — ünitenin brief'inden TÜRETİLEN sorular
  * (deriveQuiz) için ince kabuk. Mevcut QuestionList UI'sini aynen kullanır.
  *
  * Bitince sonuç `POST /api/immersion/item` ile kaydediliyor: bu adımların
@@ -43,7 +43,7 @@ export function ImmersionQuizPlayer({
    * bilgisi turu da tekrar karosuyla açılıyordu; oysa Patika onu kendi
    * ikonuyla (bulmaca) ve kendi rengiyle gösteriyor.
    */
-  kind?: "quiz" | "checkpoint" | "grammar";
+  kind?: "quiz" | "unitQuiz" | "grammar";
   /** Patika öğesinin kimliği (`de-a1-u03-quiz1`) — sonucun kaydı buna yazılıyor. */
   itemId: string;
   /** Ünite numarası — sonuç bandının başlığı ("Ünite 3 · Tekrar"). */
@@ -134,7 +134,7 @@ export function ImmersionQuizPlayer({
         */
         <FlowColumn celebrate={passed} key={`sonuc-${round}`}>
           <ResultHero
-            eyebrow={`${unitNo != null ? `${t("common.unit")} ${unitNo} · ` : ""}${t(kind === "grammar" ? "unitkind.grammar" : kind === "checkpoint" ? "unitkind.checkpoint" : "unitkind.quiz")}`}
+            eyebrow={`${unitNo != null ? `${t("common.unit")} ${unitNo} · ` : ""}${t(kind === "grammar" ? "unitkind.grammar" : kind === "unitQuiz" ? "unitkind.unit_quiz" : "unitkind.quiz")}`}
             title={t(passed ? "quiz.result_passed" : "quiz.result_failed")}
             figure={`${score}/${questions.length}`}
             sub={passed ? t("quiz.result_sub_passed", { pct }) : t("quiz.result_sub_failed", { pct, need: PASS_PCT })}

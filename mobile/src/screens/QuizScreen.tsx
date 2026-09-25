@@ -21,7 +21,7 @@ import { sfx } from "../lib/sfx";
 const PASS_PCT = 60;
 
 /**
- * Ünite quiz (Tekrar) / checkpoint (Kontrol Noktası) oynatıcısı — sorular
+ * Ünite quiz (Tekrar) / unitQuiz (Kontrol Noktası) oynatıcısı — sorular
  * ünitenin kelime/kalıplarından CİHAZDA türetilir (immersionQuiz). QuestionList
  * aynen render eder; ilerleme cihaza yazılır (türetilen quiz için sunucu ucu yok).
  */
@@ -30,7 +30,7 @@ export function QuizScreen() {
   const insets = useSafeAreaInsets();
   const nav = useNavigation<{ goBack: () => void }>();
   const { params } = useRoute<RouteProp<RootStackParams, "Quiz">>();
-  const isCheckpoint = params.kind === "checkpoint";
+  const isUnitQuiz = params.kind === "unitQuiz";
   const saved = useRef(false);
   const [correct, setCorrect] = useState(0);
   const [finished, setFinished] = useState(false);
@@ -62,13 +62,13 @@ export function QuizScreen() {
             deriveQuiz(
               buildUnitBrief(params.level, params.unitIndex),
               levelPool(params.level),
-              isCheckpoint ? 12 : 8,
+              isUnitQuiz ? 12 : 8,
               earlierPool(params.level, params.unitIndex),
             ),
       );
     });
     return () => { dead = true; };
-  }, [params.level, params.unitIndex, isCheckpoint, isGrammar]);
+  }, [params.level, params.unitIndex, isUnitQuiz, isGrammar]);
 
   function recordAndFinish(c: number) {
     setCorrect(c);
@@ -94,11 +94,11 @@ export function QuizScreen() {
           <XIcon color={colors.textMuted} size={22} />
         </PressableScale>
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, flex: 1 }}>
-          <View style={{ width: 34, height: 34, borderRadius: radii.sm, backgroundColor: isCheckpoint ? colors.danger : colors.primary, alignItems: "center", justifyContent: "center" }}>
-            {isCheckpoint ? <CheckIcon color={colors.onPrimary} size={18} /> : <QuizIcon color={colors.onPrimary} size={18} />}
+          <View style={{ width: 34, height: 34, borderRadius: radii.sm, backgroundColor: isUnitQuiz ? colors.danger : colors.primary, alignItems: "center", justifyContent: "center" }}>
+            {isUnitQuiz ? <CheckIcon color={colors.onPrimary} size={18} /> : <QuizIcon color={colors.onPrimary} size={18} />}
           </View>
           <View style={{ flex: 1 }}>
-            <Text variant="micro" color={colors.textMuted}>{t("quiz.header", { kind: t(isGrammar ? "quiz.grammar" : isCheckpoint ? "quiz.checkpoint" : "quiz.review"), unit: t("common.unit"), n: params.unitIndex })}</Text>
+            <Text variant="micro" color={colors.textMuted}>{t("quiz.header", { kind: t(isGrammar ? "quiz.grammar" : isUnitQuiz ? "quiz.unit_quiz" : "quiz.review"), unit: t("common.unit"), n: params.unitIndex })}</Text>
             <Text accessibilityRole="header" variant="h3" numberOfLines={1}>{params.theme}</Text>
           </View>
         </View>
@@ -106,7 +106,7 @@ export function QuizScreen() {
 
       <KeyboardAwareScroll automaticallyAdjustKeyboardInsets contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
         <Text variant="body" color={colors.textMuted}>
-          {t(isGrammar ? "quiz.intro_grammar" : isCheckpoint ? "quiz.intro_checkpoint" : "quiz.intro_review")}
+          {t(isGrammar ? "quiz.intro_grammar" : isUnitQuiz ? "quiz.intro_unit_quiz" : "quiz.intro_review")}
         </Text>
 
         {total === 0 && !packReady ? (
@@ -133,7 +133,7 @@ export function QuizScreen() {
           <View style={{ marginTop: spacing.lg, gap: spacing.md }}>
             <Celebrate show={passed} />
             <ResultHero
-              eyebrow={`${t("common.unit")} ${params.unitIndex} · ${t(isGrammar ? "unitkind.grammar" : isCheckpoint ? "unitkind.checkpoint" : "unitkind.quiz")}`}
+              eyebrow={`${t("common.unit")} ${params.unitIndex} · ${t(isGrammar ? "unitkind.grammar" : isUnitQuiz ? "unitkind.unit_quiz" : "unitkind.quiz")}`}
               title={t(passed ? "quiz.result_passed" : "quiz.result_failed")}
               figure={`${correct}/${total}`}
               sub={passed ? t("quiz.result_sub_passed", { pct }) : t("quiz.result_sub_failed", { pct, need: PASS_PCT })}

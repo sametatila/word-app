@@ -4,7 +4,7 @@ import { getUserInfo } from "@/lib/auth/server";
 import { getUsage, refundUsage } from "@/lib/premium/quota";
 import { sameOrigin } from "@/lib/auth/origin";
 import { recordAiUsage } from "@/lib/ai-usage";
-import { legacyKind } from "@/lib/legacy-names";
+import { legacyKind, legacyScoredRef } from "@/lib/legacy-names";
 import { assess } from "@/lib/assess";
 import {
   ASSESS_KINDS,
@@ -126,7 +126,7 @@ export async function POST(req: Request) {
   if (gated && !examVerified && !who.guest && exerciseId) {
     let gate: Access | null = null;
     if (parsed.req.kind === "chat") {
-      const conversation = await findConversation(exerciseId.replace(/:exam$/, ""));
+      const conversation = await findConversation(exerciseId.replace(/:scored$/, ""));
       if (conversation) gate = await claimTiered(userId, "conversation", conversation.level, conversation.id);
     } else {
       const exercise = await getExercise(exerciseId);
@@ -219,6 +219,7 @@ function parseBody(body: unknown): { req: AssessRequest; day: string; tooLong: b
   if (typeof body !== "object" || body === null) return null;
   const b = { ...(body as Record<string, unknown>) };
   b.kind = legacyKind(b.kind); // build 6 eski türü gönderiyor (geçici, lib/legacy-names)
+  b.exerciseId = legacyScoredRef(b.exerciseId); // ve puanlı kısmın eski kimliğini
   if (!ASSESS_KINDS.includes(b.kind as AssessKind)) return null;
   if (!ASSESS_LEVELS.includes(b.level as AssessLevel)) return null;
   const task = (b.task ?? {}) as Record<string, unknown>;

@@ -623,7 +623,7 @@ export const enWeb: Record<string, string> = {
   "writew.task_n": "Task {n} / {total}",
   "writew.fields_ok": "{n} / {total} fields correct",
   "writew.form_eyebrow": "Fill in the form",
-  "immw.checkpoint": "Checkpoint",
+  "immw.unit_quiz": "Checkpoint",
   "immw.review": "Review",
   "immw.grammar_exercise": "Grammar exercise",
   "profw.load_failed": "Couldn't load the profile",

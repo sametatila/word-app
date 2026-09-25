@@ -14,7 +14,7 @@ import { apiFetch } from "@/lib/api-fetch";
 /**
  * Türler — sunucu listesi `api/reports` KINDS ile aynı, mobil aynı dizgeleri
  * kullanıyor. Yeni yüzeyler yeni tür açmıyor, `ref` önekiyle ayrılıyor:
- *   chat    ders sohbeti "<conversationId>:<turn>" · rol yapma SINAVI "<conversationId>:exam:<turn>"
+ *   chat    ders sohbeti "<conversationId>:<turn>" · rol yapma SINAVI "<conversationId>:scored:<turn>"
  *   assessment  kayıtlı değerlendirme (Yazdıklarım) kayıt kimliği · anlık
  *               değerlendirme "<yüzey>:<kimlik>" (ör. "writing:<alıştırma>",
  *               "speaking:<alıştırma>", "exam:<ders>", "word:<kelime>")
