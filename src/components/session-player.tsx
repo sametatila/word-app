@@ -699,7 +699,7 @@ function SessionRound() {
         setStatus("stage");
       }
     },
-    [combo, flush, index, session, tally],
+    [combo, flush, index, lang, session, tally],
   );
 
   // Sekme kapanırsa gönderilememiş cevapları kaydetmeyi dene. Her tur zaten
