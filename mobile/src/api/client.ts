@@ -1,5 +1,6 @@
 import { Platform } from "react-native";
 import { APP_VERSION, APP_VERSION_CODE } from "../version";
+import { apiBase, baseReady, failover, ownBaseOf, rebaseUrl } from "./base";
 
 /**
  * Mobil API istemcisi — canlı web API'sini çağırır (www.lernomi.app; veritabanı
@@ -12,12 +13,20 @@ import { APP_VERSION, APP_VERSION_CODE } from "../version";
  * ayırabilsin (giriş ekranına yönlendirme kararı buna bağlı).
  */
 /**
- * DİKKAT: bu adres APK'ye gömülür. Yayımlanmış eski sürümler ömür boyu
+ * DİKKAT: tabanlar APK'ye gömülür. Yayımlanmış eski sürümler ömür boyu
  * exfe.me'ye istek atmaya devam eder — o alan adı kapatılamaz, aynı sunucuda
  * ikinci bir server_name olarak yaşamalı (yönlendirme yetmez: çerez alan adı
- * ve POST gövdeleri yönlendirmede bozulur).
+ * ve POST gövdeleri yönlendirmede bozulur). Aynı kural yedek adres için de
+ * geçerli (bkz. ./base).
+ *
+ * Taban artık SABİT DEĞİL: `apiBase()` o an konuşulan adresi veriyor (asıl
+ * ya da engelli ağlarda yedek). Adres kuran her yer onu çağırıyor; istek
+ * gönderilirken de `send` adresi o anki tabana taşıyor, yani eski tabanla
+ * kurulmuş bir adres de doğru yere gidiyor.
  */
-export const API_BASE = "https://www.lernomi.app";
+export { apiBase, onBaseChange, PRIMARY_BASE, FALLBACK_BASE } from "./base";
+/** Geçiş: çağrı yerleri `apiBase()`e taşınana kadar. */
+export { PRIMARY_BASE as API_BASE } from "./base";
 
 /**
  * İSTEMCİ SÜRÜMÜ her istekte: `x-lernomi-client: android/1.0.3/14`.
@@ -87,6 +96,12 @@ export type ApiInit = RequestInit & {
   timeoutMs?: number;
   /** İç bayrak: rıza onayından sonraki TEK yeniden deneme (döngü olmasın). */
   consentRetry?: boolean;
+  /**
+   * Adres OLDUĞU GİBİ gitsin: o anki tabana taşınmasın, ağ hatasında taban
+   * değiştirilmesin. Yalnız asıl adrese bağlı akışlar için (Android'de Apple
+   * tarayıcı akışı, bkz. lib/appleAuth).
+   */
+  pinned?: boolean;
 };
 
 /**
@@ -134,6 +149,75 @@ async function askConsent(req: AiConsentPrompt): Promise<boolean> {
   try { return await consentHandler(req); } catch { return false; }
 }
 
+/** Taşıma hatası mı (sunucudan cevap gelmedi): RN ağ hatası ya da bizim zaman aşımımız. */
+function isTransportError(e: unknown): boolean {
+  if (e instanceof ApiError) return e.status === 0;
+  return e instanceof TypeError && /network request failed|failed to fetch|network/i.test((e as Error).message ?? "");
+}
+
+/** Zaman aşımı ve ortak başlıklarla TEK deneme. */
+async function sendOnce(url: string, init?: ApiInit): Promise<Response> {
+  const ms = init?.timeoutMs ?? API_TIMEOUT_MS;
+  const ctl = ms > 0 ? new AbortController() : null;
+  const timer = ctl ? setTimeout(() => ctl.abort(), ms) : null;
+  try {
+    /*
+      Başlıklar yalnız BİZİM sunucumuza: ham `fetch` başka adreslere de gidebiliyor.
+
+      ORIGIN ELLE EKLENIYOR ve her zaman isteğin GİTTİĞİ taban. Tarayıcı bu
+      başlığı kendisi koyar; React Native koymaz. Better Auth'un CSRF kontrolü
+      ise ÇEREZ TAŞIYAN her POST'ta onu şart koşuyor ve yoksa isteği
+      MISSING_OR_NULL_ORIGIN ile reddediyor (api/middlewares/origin-check).
+      Cihazda görüldü 2026-09-10: parola değiştirme ekranda "Missing or null
+      Origin" diyordu. Sunucunun `sameOrigin` denetimi de Origin'i isteğin
+      Host'uyla karşılaştırıyor: yedek tabana giden istek yedek kökeni bildirmeli.
+
+      Güvenliği ZAYIFLATMIYOR: kontrolün amacı BAŞKA bir sitenin tarayıcıdaki
+      çerezle bize istek attırmasını engellemek. Native uygulama tarayıcı değil
+      ve zaten istediği başlığı koyabilir; burada yapılan, kendi kökenimizi
+      kendi istemcimizden doğru bildirmek. İki taban da `trustedOrigins`te.
+    */
+    const own = ownBaseOf(url);
+    const headers = own
+      ? { "x-lernomi-client": CLIENT_HEADER_VALUE, ...((init?.headers as Record<string, string>) ?? {}), origin: own }
+      : init?.headers;
+    /* RN'in `AbortSignal` tipi DOM'unkiyle birebir değil; dönüşüm burada.
+       Çağıranın kendi `signal`ını taşımıyoruz çünkü hiçbir çağrı yeri
+       vermiyor (ölçüldü: sıfır) - gerekirse o zaman eklenir. */
+    return await fetch(url, { ...init, headers, signal: ctl?.signal as RequestInit["signal"] });
+  } catch (e) {
+    /* Tek iptal sebebi bizim zaman aşımımız (çağıran `signal` vermiyor). */
+    if (timer && (e as Error)?.name === "AbortError") throw new ApiError(0, "timeout");
+    throw e;
+  } finally {
+    if (timer) clearTimeout(timer);
+  }
+}
+
+/**
+ * Bütün isteklerin taşıyıcısı: adres o anki tabana taşınır, ağ hatasında taban
+ * değiştirme denenir (bkz. ./base `failover`).
+ *
+ * YENİDEN DENEME YALNIZ AĞ HATASINDA ve yalnız taban DEĞİŞTİYSE: engelli ağda
+ * bağlantı el sıkışmada sıfırlanıyor, istek sunucuya hiç varmamış oluyor.
+ * Zaman aşımında taban yine değişebilir ama istek TEKRARLANMIYOR: sunucu
+ * işlemiş olabilir (sohbet, cevap kaydı) ve ikinci kopya yan etki üretirdi.
+ */
+async function send(url: string, init?: ApiInit): Promise<Response> {
+  if (init?.pinned) return sendOnce(url, init);
+  await baseReady();
+  const target = rebaseUrl(url, apiBase());
+  try {
+    return await sendOnce(target, init);
+  } catch (e) {
+    const from = ownBaseOf(target);
+    if (!from || !isTransportError(e)) throw e;
+    const next = await failover(from);
+    if (!next || next === from || e instanceof ApiError) throw e;
+    return sendOnce(rebaseUrl(target, next), init);
+  }
+}
+
 /**
  * Zaman aşımlı ham `fetch` — `api()`yi KULLANAMAYAN çağrılar için.
  *
@@ -147,21 +231,7 @@ async function askConsent(req: AiConsentPrompt): Promise<boolean> {
  * Kesilirse `ApiError(0, "timeout")`.
  */
 export async function fetchWithTimeout(url: string, init?: ApiInit): Promise<Response> {
-  const ms = init?.timeoutMs ?? API_TIMEOUT_MS;
-  const ctl = ms > 0 ? new AbortController() : null;
-  const timer = ctl ? setTimeout(() => ctl.abort(), ms) : null;
-  let res: Response;
-  try {
-    /* Başlık yalnız BİZİM sunucumuza: ham `fetch` başka adreslere de gidebiliyor. */
-    const own = url.startsWith(API_BASE);
-    const headers = own ? { "x-lernomi-client": CLIENT_HEADER_VALUE, ...((init?.headers as Record<string, string>) ?? {}) } : init?.headers;
-    res = await fetch(url, { ...init, headers, signal: ctl?.signal as RequestInit["signal"] });
-  } catch (e) {
-    if (timer && (e as Error)?.name === "AbortError") throw new ApiError(0, "timeout");
-    throw e;
-  } finally {
-    if (timer) clearTimeout(timer);
-  }
+  const res = await send(url, init);
   /* Rıza isteği: gövde küçük bir JSON, kopyasından okunuyor ki çağıran asıl
      yanıtı yine kendisi çözebilsin. */
   if (res.status === 403 && !init?.consentRetry) {
@@ -175,46 +245,14 @@ export async function fetchWithTimeout(url: string, init?: ApiInit): Promise<Res
 }
 
 export async function api<T = unknown>(path: string, init?: ApiInit): Promise<T> {
-  const ms = init?.timeoutMs ?? API_TIMEOUT_MS;
-  const ctl = ms > 0 ? new AbortController() : null;
-  const timer = ctl ? setTimeout(() => ctl.abort(), ms) : null;
-  let res: Response;
-  try {
-    res = await fetch(`${API_BASE}${path}`, {
-      ...init,
-      /* RN'in `AbortSignal` tipi DOM'unkiyle birebir değil; dönüşüm burada.
-         Çağıranın kendi `signal`ını taşımıyoruz çünkü hiçbir çağrı yeri
-         vermiyor (ölçüldü: sıfır) - gerekirse o zaman eklenir. */
-      signal: ctl?.signal as RequestInit["signal"],
-      headers: {
-        accept: "application/json",
-        /*
-          ORIGIN ELLE EKLENIYOR. Tarayıcı bu başlığı kendisi koyar; React
-          Native koymaz. Better Auth'un CSRF kontrolü ise ÇEREZ TAŞIYAN her
-          POST'ta onu şart koşuyor ve yoksa isteği MISSING_OR_NULL_ORIGIN ile
-          reddediyor (api/middlewares/origin-check). Cihazda görüldü
-          2026-09-10: parola değiştirme ekranda "Missing or null Origin"
-          diyordu.
-
-          Güvenliği ZAYIFLATMIYOR: kontrolün amacı BAŞKA bir sitenin
-          tarayıcıdaki çerezle bize istek attırmasını engellemek. Native
-          uygulama tarayıcı değil ve zaten istediği başlığı koyabilir; burada
-          yapılan, kendi kökenimizi kendi istemcimizden doğru bildirmek.
-          `API_BASE` uygulamaya gömülü ve `trustedOrigins` listesinde.
-        */
-        origin: API_BASE,
-        "x-lernomi-client": CLIENT_HEADER_VALUE,
-        ...(init?.body ? { "content-type": "application/json" } : {}),
-        ...(init?.headers ?? {}),
-      },
-    });
-  } catch (e) {
-    /* Tek iptal sebebi bizim zaman aşımımız (çağıran `signal` vermiyor). */
-    if (timer && (e as Error)?.name === "AbortError") throw new ApiError(0, "timeout");
-    throw e;
-  } finally {
-    if (timer) clearTimeout(timer);
-  }
+  const res = await send(`${apiBase()}${path}`, {
+    ...init,
+    headers: {
+      accept: "application/json",
+      ...(init?.body ? { "content-type": "application/json" } : {}),
+      ...((init?.headers as Record<string, string>) ?? {}),
+    },
+  });
   const text = await res.text().catch(() => "");
   if (!res.ok) {
     let msg = text.slice(0, 200);
