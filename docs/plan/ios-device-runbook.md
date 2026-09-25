@@ -553,6 +553,15 @@ karşılaştırılacak. `docs/plan/stt-capacity.md` varsayımları da buna bakı
 derlemesinde tekrarla (Release yapılandırması Debug'dan farklı davranabilir).
 **Geçti:** Release derlemesinde de aynı sonuçlar.
 
+### 9.3a · Görünür bildirim `remote-notification` kipi olmadan geliyor mu
+**Önce:** 9.3 (build 9 ve sonrası)
+**Neden:** 2026-09-25'te `UIBackgroundModes`tan `remote-notification` çıktı (denetim T1, 2.5.4):
+sessiz push yok, sunucu yalnız görünür bildirim gönderiyor. Görünür bildirim bu kip olmadan da
+gelmeli; gelmezse kip geri konur ve inceleme notuna gerekçe yazılır.
+**Yap:** Bildirim izni ver, uygulamayı arka plana al; panelden ya da seri koruma saatinde bir
+bildirim tetikle. Uygulama kapalıyken de bir kez dene.
+**Geçti:** Bildirim iki durumda da kilit ekranına düşüyor, dokununca uygulama açılıyor.
+
 ### 9.4 · Gizlilik manifesti ↔ App Store Connect etiketleri
 **Önce:** 9.3 · **Kaynak:** C1
 **Yap:** `mobile/ios/Lernomi/PrivacyInfo.xcprivacy` ile App Store Connect'teki gizlilik

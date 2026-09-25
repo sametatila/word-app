@@ -102,8 +102,9 @@
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>
-		<!-- Uzak bildirim: sessiz/veri taşıyan push uygulamayı kısa süreliğine uyandırır. -->
-		<string>remote-notification</string>
+		<!-- remote-notification YOK (denetim T1, 2.5.4): sunucu yalnız görünür bildirim
+		     gönderiyor (src/lib/fcm.ts, content-available yok), sessiz push kullanılmıyor.
+		     Görünür bildirim bu kip olmadan da gelir. Sessiz push eklenirse geri konur. -->
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
