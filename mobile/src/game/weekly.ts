@@ -30,7 +30,14 @@ export type QuizStimulus =
 
 export type Quiz = {
   id: string;
+  /** Tema, ÖĞRENİLEN dilde. */
   theme: string;
+  /**
+   * Tema, öğrencinin ANADİLİNDE — adı tarihsel. Sunucu Türkçe yazılmış
+   * içeriği anadili İngilizce/Almanca olana çözerek gönderiyor
+   * (`src/lib/weekly-quiz/native`); `genreTr` ve sonuçtaki `why` de öyle.
+   * Mobilde çözücü yok: sözlük cevap gerekçelerini taşıyor ve istemciye inmiyor.
+   */
   themeTr: string;
   level: string;
   stimuli: QuizStimulus[];
