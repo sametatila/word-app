@@ -41,8 +41,8 @@
   },
   {
     "id": 1527,
-    "tr": "tanıdık",
-    "en": "acquaintance",
+    "tr": "kadın tanıdık",
+    "en": "female acquaintance",
     "beispiel": "Eine Bekannte von mir arbeitet bei der Post.",
     "beispielTr": "Bir tanıdığım postanede çalışıyor.",
     "beispielEn": "An acquaintance of mine works at the post office."
@@ -289,8 +289,8 @@
   },
   {
     "id": 3150,
-    "tr": "tanık",
-    "en": "witness",
+    "tr": "kadın tanık",
+    "en": "female witness",
     "beispiel": "Die Zeugin hat den Unfall genau beschrieben.",
     "beispielTr": "Tanık kazayı ayrıntılı olarak anlattı.",
     "beispielEn": "The witness described the accident in detail."

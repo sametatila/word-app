@@ -241,8 +241,8 @@
  },
  {
   "id": 4473,
-  "tr": "komisyon",
-  "en": "commission",
+  "tr": "komisyon ücreti",
+  "en": "sales commission",
   "beispiel": "Der Makler erhält eine Provision von drei Prozent des Kaufpreises.",
   "beispielTr": "Emlakçı satış bedelinin yüzde üçü kadar komisyon alıyor.",
   "beispielEn": "The agent gets a commission of three percent of the purchase price."

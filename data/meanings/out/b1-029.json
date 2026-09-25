@@ -289,10 +289,10 @@
   },
   {
     "id": 1884,
-    "tr": "alan",
-    "en": "area",
+    "tr": "yüzölçümü",
+    "en": "surface area",
     "beispiel": "Die Wohnung hat eine Fläche von 80 Quadratmetern.",
-    "beispielTr": "Dairenin alanı 80 metrekare.",
+    "beispielTr": "Dairenin yüzölçümü 80 metrekare.",
     "beispielEn": "The apartment has an area of 80 square meters."
   },
   {

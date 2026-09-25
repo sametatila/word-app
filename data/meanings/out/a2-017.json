@@ -225,8 +225,8 @@
   },
   {
     "id": 7816,
-    "tr": "depozito",
-    "en": "deposit",
+    "tr": "şişe depozitosu",
+    "en": "bottle deposit",
     "beispiel": "Auf die Flasche zahlst du 25 Cent Pfand.",
     "beispielTr": "Şişe için 25 sent depozito ödüyorsun.",
     "beispielEn": "You pay a 25 cent deposit on the bottle."

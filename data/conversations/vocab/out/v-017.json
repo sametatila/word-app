@@ -33,5 +33,9 @@
  { "conversation": "de-b2-beschwerde-formell", "de": "der Ansprechpartner", "en": "contact person" },
  { "conversation": "de-b2-aufgrund-infolge", "de": "gegebenenfalls", "en": "if applicable" },
  { "conversation": "de-b2-festival", "de": "durchhalten", "en": "to hold out" },
- { "conversation": "de-a2-kennenlernen", "de": "befreundet", "en": "friends" }
+ { "conversation": "de-a2-kennenlernen", "de": "befreundet", "en": "friends" },
+ { "conversation": "de-a2-bibliothek", "de": "das Pfand", "en": "deposit" },
+ { "conversation": "de-b1-muelltrennung", "de": "das Pfand", "en": "bottle deposit" },
+ { "conversation": "de-b1-relativ-nom", "de": "die Bekannte", "en": "female acquaintance" },
+ { "conversation": "de-b2-verabschiedung-kollegen", "de": "die Zuwendung", "en": "affection" }
 ]
