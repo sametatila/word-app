@@ -121,7 +121,7 @@ export const EN_B1_03: MockPaper = {
               options: ["Do all three exercises more slowly", "Come back in three weeks in any case", "Leave out one of the exercises"],
               answer: 2,
               explain:
-                "İleti üçüncü egzersizi durduruyor: «stop the third one for now». Üç hafta bir üst sınır değil, alt sınır: şişlik dönerse «earlier» gelinmesi isteniyor.",
+                "İleti üçüncü egzersizi durduruyor: «stop the third one for now». Üç hafta kesin bir tarih değil, bir üst sınır: şişlik dönerse «earlier» gelinmesi isteniyor.",
             },
             {
               kind: "mcq",
@@ -227,9 +227,9 @@ The third thing is the one I am least comfortable with. My mood got worse in wee
 
 I am running again now, three mornings instead of four. The physiotherapist, who has seen this many times, says the fourth morning was never the useful one. She may be right. However, I have kept the walk on the fourth day, because I now know which part of it I was actually there for.`,
               gloss: [
-                { de: "a physiotherapist", tr: "fizyoterapist", en: "physiotherapist" },
-                { de: "a canal", tr: "kanal", en: "canal" },
-                { de: "mood", tr: "ruh hâli", en: "mood" },
+                { de: "a physiotherapist", tr: "fizyoterapist", en: "der Physiotherapeut" },
+                { de: "a canal", tr: "kanal", en: "der Kanal" },
+                { de: "mood", tr: "ruh hâli", en: "die Stimmung" },
               ],
             },
           ],
@@ -312,9 +312,9 @@ What changed was light. Once a room could be bright at ten at night, the evening
 
 None of this means that a broken night is good for you. {{20}}`,
               gloss: [
-                { de: "a diary", tr: "günlük", en: "diary" },
-                { de: "a court record", tr: "mahkeme kaydı", en: "court record" },
-                { de: "a generation", tr: "kuşak", en: "generation" },
+                { de: "a diary", tr: "günlük", en: "das Tagebuch" },
+                { de: "a court record", tr: "mahkeme kaydı", en: "die Gerichtsakte" },
+                { de: "a generation", tr: "kuşak", en: "die Generation" },
               ],
             },
           ],
@@ -415,7 +415,7 @@ And finally, be honest with the person treating you. A physiotherapist can only 
               id: "en-b1-03-l5-22",
               no: 22,
               text: "Gap 22",
-              options: ["are", "have", "did", "do"],
+              options: ["are", "does", "did", "do"],
               answer: 3,
               explain:
                 "Önceki yüklem `had` geniş bir geçmiş durum bildiriyor ama boşluk şimdiki durumu karşılaştırıyor: «and you do not» — yani şimdi o birikime sahip değilsin. `did not` cümleyi tümüyle geçmişe taşır ve karşılaştırmayı bozar; `are` ve `have` bu yüklemin yerini tutamaz.",
@@ -494,7 +494,7 @@ The difference is bigger {{30}} I expected: I am not a different person, but I a
               text: "Gap 27",
               accept: ["that", "which"],
               explain:
-                "Boşluk saatin niteleyen yan cümlesini başlatıyor ve öncül bir NESNE («a cheap watch»), bu yüzden `that` ya da `which` gelir. `who` yalnız kişiler için kullanılır.",
+                "Boşluk saati niteleyen yan cümleyi başlatıyor ve öncül bir NESNE («a cheap watch»), bu yüzden `that` ya da `which` gelir. `who` yalnız kişiler için kullanılır.",
             },
             {
               kind: "gap",
@@ -992,9 +992,9 @@ New members run in the:  {{19}} group`,
                 { speaker: "Ingrid", text: "Ask them once a year whether they still want it, and mean the question. If the answer is yes, that is a wonderful life. My complaint is not the swimming; it is that nobody asked." },
               ],
               gloss: [
-                { de: "competitively", tr: "yarışma düzeyinde", en: "competitively" },
-                { de: "a stroke", tr: "yüzme stili", en: "swimming stroke" },
-                { de: "certainty", tr: "kesinlik", en: "certainty" },
+                { de: "competitively", tr: "yarışma düzeyinde", en: "im Wettkampf" },
+                { de: "a stroke", tr: "yüzme stili", en: "der Schwimmstil" },
+                { de: "certainty", tr: "kesinlik", en: "die Gewissheit" },
               ],
             },
           ],

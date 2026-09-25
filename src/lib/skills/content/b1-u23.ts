@@ -41,14 +41,14 @@ export const b1U23: SkillExercise[] = [
       { de: "sich einsetzen", tr: "mücadele etmek", en: "to campaign" },
       { de: "der Streik", tr: "grev", en: "strike" },
       { de: "vorbei", tr: "bitmiş", en: "over" },
-      { de: "beraten", tr: "danışmanlık yapmak", en: "to advise" },
+      { de: "beraten", tr: "görüşmek, müzakere etmek", en: "to discuss" },
     ],
     text:
       "Am Samstag haben etwa dreitausend Menschen dafür protestiert, dass das alte " +
       "Bad bleibt. Der Protest war friedlich: niemand hat geschrien, " +
       "und um sechs war alles vorbei.\n\n" +
       "Die Forderung ist einfach. Das Bad soll bleiben, bis ein neues fertig " +
-      "ist. Wer sich dafür einsetzt, sagt: ein Viertel ohne Bad verliert " +
+      "ist. Wer sich dafür einsetzt, sagt: Ein Viertel ohne Bad verliert " +
       "mehr als ein Gebäude.\n\n" +
       "Die Stadt hatte den Abriss für Juni geplant. Wenn die Öffentlichkeit " +
       "nicht protestiert hätte, wäre die Entscheidung schon gefallen. So aber " +
@@ -109,21 +109,20 @@ export const b1U23: SkillExercise[] = [
       { de: "treu", tr: "sadık", en: "loyal" },
       { de: "beißen", tr: "ısırmak", en: "to bite" },
       { de: "bellen", tr: "havlamak", en: "to bark" },
-      { de: "der Pass", tr: "pasaport", en: "passport" },
+      { de: "passen", tr: "uymak", en: "to fit, to suit" },
     ],
     text:
       "Nero ist sieben Jahre alt und seit acht Monaten bei uns. Er ist groß, " +
       "ruhig und ausgesprochen treu — aber am Anfang sehr scheu.\n\n" +
-      "Er hat noch nie jemanden gebissen. Wenn er Angst hat, geht er weg " +
-      "statt zu bellen. Wer ihn füttert, ist nach drei Tagen sein Mensch. " +
-      "Danach hört er auf jedes Wort.\n\n" +
+      "Er hat noch nie jemanden gebissen. Wenn er Angst hat, geht er weg statt " +
+      "zu bellen. Wer ihn füttert, ist nach drei Tagen sein Mensch. Danach " +
+      "hört er auf jedes Wort.\n\n" +
       "Nero passt nicht in eine kleine Wohnung und nicht zu kleinen Kindern. " +
       "Er braucht einen Garten und zwei lange Runden am Tag. Wenn wir mehr " +
       "Platz hätten, würden wir ihn selbst behalten.\n\n" +
-      "Ein neues Zuhause zu finden braucht Zeit, und eine Beziehung zu einem \n" +
-      "Tier aus dem Heim erst recht. Die ersten " +
-      "zwei Wochen sind seltsam für beide Seiten. Danach kommt etwas zurück, " +
-      "das man nicht kaufen kann.",
+      "Ein neues Zuhause zu finden braucht Zeit, und eine Beziehung zu einem " +
+      "Tier aus dem Heim erst recht. Die ersten zwei Wochen sind seltsam für " +
+      "beide Seiten. Danach kommt etwas zurück, das man nicht kaufen kann.",
     questions: [
       {
         text: "Wie alt ist Nero?",

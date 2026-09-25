@@ -189,9 +189,9 @@ Despite the weight of that evidence, the standard reply from employers twenty ye
               id: "en-b2-07-l2-11",
               no: 11,
               text: "Gap 11",
-              accept: ["such"],
+              accept: ["such", "real", "genuine", "significant", "measurable", "actual"],
               explain:
-                "`no such effect` daha önce anılan türden bir etkiyi yok sayar. `such` bu göndermeyi yapar; sıfat ya da belirteç bu konumda aynı işi görmez.",
+                "`no such effect` daha önce anılan türden bir etkiyi yok sayar; beklenen cevap `such`. `real`, `genuine`, `significant`, `measurable`, `actual` gibi sıfatlar da dilbilgisel ve anlamca uyduğu için kabul edilir.",
             },
             {
               kind: "gap",
@@ -370,9 +370,9 @@ I am aware of the obvious reply. If the prejudice exists, my course was the only
 
 What changed my mind about the alternative was not principle but a spreadsheet. Two firms I worked with moved the first round to written tasks, and their shortlists changed shape within a year. It cost them almost nothing. Nobody had to sit in a room and be told that the way their mother spoke was a problem to be solved.`,
               gloss: [
-                { de: "prejudice", tr: "önyargı", en: "prejudice" },
-                { de: "a shortlist", tr: "kısa liste", en: "shortlist" },
-                { de: "to underplay", tr: "önemsizleştirmek", en: "underplay" },
+                { de: "prejudice", tr: "önyargı", en: "das Vorurteil" },
+                { de: "a shortlist", tr: "kısa liste", en: "die engere Auswahl" },
+                { de: "to underplay", tr: "önemsizleştirmek", en: "herunterspielen" },
               ],
             },
           ],
@@ -480,9 +480,9 @@ There is a third position, which is that none of this addresses the customer. A 
 
 That is a longer argument and a slower one. Given how few firms have ever asked a client what he actually wants, it is also the one least likely to be started. It also happens to be the only version of the problem that ends anywhere.`,
               gloss: [
-                { de: "a criterion", tr: "ölçüt", en: "criterion" },
-                { de: "to anonymise", tr: "kimliksizleştirmek", en: "anonymise" },
-                { de: "an obstacle", tr: "engel", en: "obstacle" },
+                { de: "a criterion", tr: "ölçüt", en: "das Kriterium" },
+                { de: "to anonymise", tr: "kimliksizleştirmek", en: "anonymisieren" },
+                { de: "an obstacle", tr: "engel", en: "das Hindernis" },
               ],
             },
           ],

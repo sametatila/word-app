@@ -78,7 +78,7 @@ export const enB2U14: SkillExercise[] = [
       "Where it goes wrong is with a long owner. „The family whose application for asylum was refused last winter has moved“ is correct and hard to read, and the fix is not a different pronoun. The fix is two sentences.",
     questions: [
       {
-        text: "What does „whose“ do in an ordinary sentence?",
+        text: "Which job does „whose“ do inside a relative clause?",
         options: ["the job of an apostrophe", "the job of a comma", "the job of „that“"],
         answer: 0,
         explain: "„it does the job that an apostrophe does in an ordinary sentence…“",

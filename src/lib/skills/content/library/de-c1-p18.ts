@@ -27,7 +27,7 @@ export const deC1P18: SkillExercise[] = [
       { de: "spenden", tr: "bağış yapmak", en: "to donate" },
       { de: "die Ausleihe", tr: "ödünç verme", en: "loan" },
       { de: "die Verspätung", tr: "gecikme", en: "delay" },
-      { de: "die Bilanz", tr: "bilanço", en: "balance" },
+      { de: "die Bilanz", tr: "bilanço", en: "review, assessment" },
     ],
     minutes: 10,
     text:

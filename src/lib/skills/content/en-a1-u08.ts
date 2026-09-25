@@ -108,10 +108,10 @@ export const enA1U08: SkillExercise[] = [
       "Waiter: No problem. Or cash, if you prefer.\n" +
       "Ali: I only have a card too. No cash today.\n" +
       "Waiter: That's fine. Here you are.\n" +
-      "Eda: Can I have a cheque for my work?\n" +
+      "Eda: Can I get a bill for my work, please?\n" +
       "Waiter: Yes, one moment. What time is it now?\n" +
       "Eda: It's a quarter to nine.\n" +
-      "Waiter: Then we close in one hour, at ten.\n" +
+      "Waiter: Then we close at ten.\n" +
       "Ali: Thank you. Can you give me the card?\n" +
       "Waiter: Here. Have a good evening!",
     questions: [
@@ -161,7 +161,7 @@ export const enA1U08: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["at ten", "ten", "10"],
-        explain: "„Then we close in one hour, at ten.“ — bir saat sonra, yani onda.",
+        explain: "„Then we close at ten.“ — bir saat sonra, yani onda.",
       },
     ],
   },

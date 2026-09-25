@@ -172,7 +172,7 @@
  {
   "tr": "Kayıp değil, yön belirleyici.",
   "kind": "explain",
-  "en": "Not a loss, but a bearing."
+  "en": "What decides is not the loss but the direction."
  },
  {
   "tr": "mit + Dativ, artikel korunur.",
@@ -392,7 +392,7 @@
  {
   "tr": "Aracı kendi işini görünür kılıyor.",
   "kind": "explain",
-  "en": "The device makes its own work visible."
+  "en": "The go-between makes their own work visible."
  },
  {
   "tr": "Çeviri değil, yeniden yaratma işi.",
@@ -567,7 +567,7 @@
  {
   "tr": "Üçü de metinde duruyor, seste değil.",
   "kind": "explain",
-  "en": "All three are in the text, not in the recording."
+  "en": "All three are in the text, not in the voice."
  },
  {
   "tr": "Yanlış: „Kostenlos, auch bei Regen!“",
@@ -618,11 +618,6 @@
   "tr": "gern'in üstünlük biçimi: am liebsten.",
   "kind": "explain",
   "en": "The superlative of gern: am liebsten."
- },
- {
-  "tr": "Gündelik korunma. Neyi nasıl yaparak?",
-  "kind": "intro",
-  "en": "Everyday prevention. What, and by doing it how?"
  },
  {
   "tr": "İhtar aldı. Ne yapmalı, ne yapmamalı?",

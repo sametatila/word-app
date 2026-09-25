@@ -31,7 +31,7 @@ export const enC1P5: SkillExercise[] = [
       { de: "caution", tr: "sakındırmak" },
       { de: "current", tr: "mevcut" },
       { de: "average", tr: "ortalama" },
-      { de: "frame", tr: "çerçeve öykü" },
+      { de: "frame", tr: "gözlük çerçevesi" },
       { de: "pair", tr: "çift" },
       { de: "recommendation", tr: "öneri" },
       { de: "pupil", tr: "okul öğrencisi" },
@@ -102,7 +102,7 @@ export const enC1P5: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "How long do children go without a broken pair?",
+        text: "How long do children go without glasses after breaking their only pair?",
         options: [],
         answer: 0,
         accept: ["five weeks", "about five weeks", "an average of five weeks"],

@@ -67,7 +67,7 @@ Rarely does anybody ask which of them the people living there would {{5}} to. Th
               id: "en-c1-10-l1-1",
               no: 1,
               text: "Gap 1",
-              options: ["give", "join", "fall", "come"],
+              options: ["take", "join", "fall", "come"],
               answer: 2,
               explain:
                 "`fall in with something` bir düzene uymayı anlatır ve cümle arazinin haritaya uymak zorunda olmadığını söylüyor. `give in` teslim olmak, `join in` katılmak, `come in` ise girmektir.",
@@ -97,7 +97,7 @@ Rarely does anybody ask which of them the people living there would {{5}} to. Th
               id: "en-c1-10-l1-4",
               no: 4,
               text: "Gap 4",
-              options: ["assume", "acquire", "assert", "attach"],
+              options: ["award", "acquire", "assert", "attach"],
               answer: 1,
               explain:
                 "`acquire authority` bir şeyin zamanla otorite kazanmasını anlatır ve cümle haritanın çizildikten sonra bunu kazandığını söylüyor. `assume` üstlenmek, `assert` ileri sürmek, `attach` iliştirmektir.",
@@ -107,7 +107,7 @@ Rarely does anybody ask which of them the people living there would {{5}} to. Th
               id: "en-c1-10-l1-5",
               no: 5,
               text: "Gap 5",
-              options: ["hold", "keep", "stand", "point"],
+              options: ["hold", "keep", "adhere", "point"],
               answer: 2,
               explain:
                 "`stand to something` bir belgeye bağlı kalmayı anlatan yapıdır ve soru insanların hangisine bağlı kalacağıdır. `hold to` de yakındır ama `would hold to` burada nesnesiz kalır; `point to` işaret etmektir.",
@@ -140,7 +140,7 @@ Rarely does anybody ask which of them the people living there would {{5}} to. Th
               title: "What a boundary is made of",
               body: `A boundary is not a line. It is a text, a set of coordinates, a row of markers and a habit, and the four of them agree less often {{7}} anybody outside the profession assumes.
 
-The text is authoritative and it is also the oldest, which means it describes a landscape {{8}} longer exists.
+The text is authoritative and it is also the oldest, which means it describes a landscape that {{8}} longer exists.
 
 Nor {{9}} the markers a neutral record. They were placed by teams working in one season, and a marker that fell over in 1954 was replaced by whoever noticed it, in a position established from memory.
 
@@ -193,9 +193,9 @@ As it is, the line is left alone, {{12}} suits everybody except the eleven house
               id: "en-c1-10-l2-11",
               no: 11,
               text: "Gap 11",
-              accept: ["since", "because"],
+              accept: ["since", "because", "as", "for"],
               explain:
-                "İkinci yarı birinci yarının gerekçesini veriyor: yeniden ölçüm ucuz, anlaşmazlık pahalı. Sebep bağlacı `since` ya da `because` bu ilişkiyi kurar.",
+                "İkinci yarı birinci yarının gerekçesini veriyor: yeniden ölçüm ucuz, anlaşmazlık pahalı. Sebep bağlacı `since`, `because`, `as` ya da `for` bu ilişkiyi kurar.",
             },
             {
               kind: "gap",
@@ -372,9 +372,9 @@ I am not arguing that the boundary is illegitimate. Every boundary was drawn by 
 
 The general point is uncomfortable for my own discipline. The reasons for most such decisions were never written down, and the histories that fill the gap were written later by people who needed the line to make sense.`,
               gloss: [
-                { de: "a ridge", tr: "sırt, tepe hattı", en: "ridge" },
-                { de: "a minute", tr: "tutanak", en: "minute" },
-                { de: "ecclesiastical", tr: "kiliseye ait", en: "ecclesiastical" },
+                { de: "a ridge", tr: "sırt, tepe hattı", en: "der Grat" },
+                { de: "a minute", tr: "tutanak", en: "das Protokoll" },
+                { de: "ecclesiastical", tr: "kiliseye ait", en: "kirchlich" },
               ],
             },
           ],
@@ -542,9 +542,9 @@ There have been three proposals since 1990 to establish a permanent inspection u
 
 The line, meanwhile, is being maintained perfectly adequately by two men with a chainsaw who do not know they are doing it, and everybody involved understands that this is not a plan.`,
               gloss: [
-                { de: "a post", tr: "sınır direği", en: "post" },
-                { de: "to inspect", tr: "denetlemek", en: "inspect" },
-                { de: "a chainsaw", tr: "motorlu testere", en: "chainsaw" },
+                { de: "a post", tr: "sınır direği", en: "der Grenzpfahl" },
+                { de: "to inspect", tr: "denetlemek", en: "prüfen" },
+                { de: "a chainsaw", tr: "motorlu testere", en: "die Motorsäge" },
               ],
             },
           ],

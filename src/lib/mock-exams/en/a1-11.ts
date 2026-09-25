@@ -52,8 +52,8 @@ Bring your card and the box of your old tablets.
 
 Dr Ilic`,
               gloss: [
-                { de: "an appointment", tr: "randevu", en: "appointment" },
-                { de: "a tablet", tr: "hap", en: "tablet" },
+                { de: "an appointment", tr: "randevu", en: "der Termin" },
+                { de: "a tablet", tr: "hap", en: "die Tablette" },
               ],
             },
             {
@@ -70,8 +70,8 @@ Tablets for a headache: 3 euros.
 
 Some medicine only with a paper from the doctor.`,
               gloss: [
-                { de: "a chemist", tr: "eczane", en: "chemist" },
-                { de: "medicine", tr: "ilaç", en: "medicine" },
+                { de: "a chemist", tr: "eczane", en: "die Apotheke" },
+                { de: "medicine", tr: "ilaç", en: "das Medikament" },
               ],
             },
           ],
@@ -294,7 +294,7 @@ We give you a paper for your insurance.`,
               text: "You go into room 3 without knocking.",
               answer: false,
               explain:
-                "Levha iki adım istiyor: «Please knock and wait». Yani önce vurulacak, sonra beklenecek.",
+                "Levha iki adım istiyor: «Please knock and wait». Yani önce kapı çalınacak, sonra beklenecek.",
             },
             {
               kind: "bool",

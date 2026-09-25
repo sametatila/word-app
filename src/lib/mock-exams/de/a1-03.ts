@@ -338,7 +338,7 @@ Handys bitte leise stellen.`,
               text: "Man ruft Ihren Namen laut.",
               answer: false,
               explain:
-                "Levhaya göre sıra ekranda görünüyor: \"wenn Ihr Name auf dem Bildschirm steht\". Telefonların sessize alınması isteniyor, çünkü isim seslenerek çağrılmıyor.",
+                "Levhaya göre sıra ekranda görünüyor: \"wenn Ihr Name auf dem Bildschirm steht\". İsmin yüksek sesle çağrıldığından söz edilmiyor.",
             },
           ],
         },

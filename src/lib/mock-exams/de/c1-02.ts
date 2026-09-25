@@ -138,7 +138,7 @@ Für die Praxis folgt daraus: Erhaltung verlangt keine tägliche Übung, wohl ab
               id: "de-c1-02-l1-6",
               no: 6,
               text: "Lücke 6",
-              accept: ["Zugriff", "Zugang", "Abruf", "Rückgriff"],
+              accept: ["Zugriff", "Rückgriff"],
               explain:
                 "Kaynakta fiil kullanılıyor: \"auf ein Wort ihrer Erstsprache zuzugreifen\". Özet bunu adlaştırıyor: `der Zugriff auf …`.",
             },
@@ -285,7 +285,7 @@ Ich höre oft, das Ganze sei doch eine Frage des Geldes. Das stimmt zum Teil, ab
               options: ["Text A", "Text B", "Text C", "In keinem der Texte"],
               answer: 3,
               explain:
-                "Hiçbir metin bir okul kademesi önermiyor. C ilkokul çağından söz ediyor («Unsere Tochter besucht seit zwei Jahren einen Kurs») ama bir sınır çizmiyor.",
+                "Hiçbir metin bir okul kademesi önermiyor. C bir çocuğun kursa gittiğinden söz ediyor («Unsere Tochter besucht seit zwei Jahren einen Kurs») ama bir sınır çizmiyor.",
             },
             {
               kind: "mcq",
@@ -412,7 +412,7 @@ Der letzte Rat fällt vielen schwer, {{25}} er der wirksamste ist: Nachfragen ko
               id: "de-c1-02-l3-24",
               no: 24,
               text: "Lücke 24",
-              options: ["als auch", "sondern eine andere", "sowie", "wie auch"],
+              options: ["als auch", "sondern", "sowie", "wie auch"],
               answer: 1,
               explain:
                 "`nicht mehr Mühe …, sondern eine andere` — `nicht … sondern` düzeltme yapısıdır; ötekiler ekleme bağlaçlarıdır ve olumsuzlamayla kurulamaz.",
@@ -479,7 +479,7 @@ Der letzte Rat fällt vielen schwer, {{25}} er der wirksamste ist: Nachfragen ko
                   text: "Zur Verbindlichkeit: Wir bitten um eine Zusage für ein volles Schuljahr. Aus Erfahrung wissen wir, dass der Nutzen erst nach etwa drei Monaten sichtbar wird. Wer nach sechs Wochen aufhört, hinterlässt beim Kind mehr Schaden als Nutzen.",
                 },
                 {
-                  text: "Begleitet werden Sie nicht allein gelassen. Es gibt alle sechs Wochen einen Gruppenabend, an dem Sie Fälle besprechen können, und für dringende Fragen eine Telefonnummer, die von Montag bis Freitag besetzt ist.",
+                  text: "Allein gelassen werden Sie nicht. Es gibt alle sechs Wochen einen Gruppenabend, an dem Sie Fälle besprechen können, und für dringende Fragen eine Telefonnummer, die von Montag bis Freitag besetzt ist.",
                 },
                 {
                   text: "Häufig gefragt wird nach den Fahrtkosten. Diese werden erstattet, allerdings nur gegen Beleg und nur für den öffentlichen Nahverkehr. Wer mit dem Auto kommt, bekommt nichts, das muss ich leider so deutlich sagen.",
@@ -582,7 +582,7 @@ Fahrtkosten: nur gegen Beleg und nur für {{10}}.`,
                 "ein erweitertes Führungszeugnis",
               ],
               explain:
-                "«ein erweitertes Führungszeugnis, das Sie beim Bürgeramt beantragen; die Gebühr übernehmen wir» — kayıttan önceki ikinci koşul.",
+                "«ein erweitertes Führungszeugnis, das Sie beim Bürgeramt beantragen; die Gebühr übernehmen wir» — ilk buluşmadan önceki ikinci koşul.",
             },
             {
               kind: "gap",
@@ -1101,12 +1101,7 @@ Dr. Elena Sturm, Vorstand`,
               id: "de-c1-02-s2-7",
               no: 7,
               text: "Lücke 7 (höfliche Bitte mit Frist)",
-              accept: [
-                "Wir bitten Sie",
-                "Wir würden Sie bitten",
-                "Wir wären Ihnen dankbar",
-                "Wir möchten Sie bitten",
-              ],
+              accept: ["Wir bitten Sie", "Wir würden Sie bitten", "Wir möchten Sie bitten"],
               explain:
                 "Süre içeren bir rica kibar kalıpla kurulur ve `zu`-mastarla devam eder: `Wir bitten Sie, uns bis Ende Juni …`.",
             },

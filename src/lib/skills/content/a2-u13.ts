@@ -67,7 +67,7 @@ export const a2U13: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["ansteckend"],
-        explain: "Bu yüzden doktor onu cumaya kadar rapor vermiş.",
+        explain: "Bu yüzden doktor ona cumaya kadar rapor vermiş.",
       },
       {
         text: "Wo ist das Attest?",
@@ -109,7 +109,7 @@ export const a2U13: SkillExercise[] = [
       { de: "der Schlussverkauf", tr: "sezon sonu indirimi", en: "end-of-season sale" },
       { de: "beliebt", tr: "sevilen", en: "popular" },
       { de: "sehen", tr: "görmek", en: "to see" },
-      { de: "stärken", tr: "güçlendirmek", en: "to strengthen" },
+      { de: "stark", tr: "sağlam, dayanıklı", en: "strong, sturdy" },
       { de: "niedrig", tr: "düşük", en: "low" },
     ],
     minutes: 4,

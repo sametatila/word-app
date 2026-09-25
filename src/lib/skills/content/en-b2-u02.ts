@@ -49,7 +49,7 @@ export const enB2U02: SkillExercise[] = [
       { de: "conditional", tr: "koşul cümlesi" },
       { de: "event", tr: "olay" },
       { de: "verb", tr: "fiil" },
-      { de: "rather", tr: "epeyce" },
+      { de: "rather", tr: "yerine" },
       { de: "version", tr: "sürüm" },
       { de: "wonder", tr: "merak etmek" },
       { de: "actually", tr: "aslında" },

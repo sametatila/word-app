@@ -24,7 +24,7 @@ export const deB2P7: SkillExercise[] = [
       { de: "der Entwurf", tr: "taslak", en: "draft" },
       { de: "die Nuance", tr: "nüans", en: "nuance" },
       { de: "der Fachbegriff", tr: "terim", en: "technical term" },
-      { de: "der Auftraggeber", tr: "iş veren", en: "client" },
+      { de: "der Auftraggeber", tr: "işveren", en: "client" },
       { de: "die Routine", tr: "rutin", en: "routine" },
     ],
     minutes: 8,

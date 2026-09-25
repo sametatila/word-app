@@ -109,7 +109,7 @@ We do not keep a copy unless you ask us to.`,
               options: ["Taking photographs home", "Scanning any number of them", "Scanning the first five"],
               answer: 2,
               explain:
-                "Duyuru sınırı veriyor: «We scan up to five for you free. More than five costs one euro each». Albümler odadan çıkmıyor.",
+                "Duyuru sınırı veriyor: «We scan up to five for you free. More than five costs one euro each». Fotoğraflar odadan çıkmıyor.",
             },
             {
               kind: "mcq",
@@ -237,9 +237,9 @@ There is a second thing and it is worse. She names about forty people in those e
 
 Although I would do it differently now, I am not sorry that I recorded her. The eleven hours exist and my children will have them, which is more than my parents left me. But I did the easy part, and I told myself it was the whole job.`,
               gloss: [
-                { de: "a recorder", tr: "ses kayıt cihazı", en: "recorder" },
-                { de: "unusable", tr: "kullanılamaz", en: "unusable" },
-                { de: "to spell", tr: "harf harf söylemek", en: "spell" },
+                { de: "a recorder", tr: "ses kayıt cihazı", en: "das Aufnahmegerät" },
+                { de: "unusable", tr: "kullanılamaz", en: "unbrauchbar" },
+                { de: "to spell", tr: "harf harf söylemek", en: "buchstabieren" },
               ],
             },
           ],
@@ -347,9 +347,9 @@ The captions are worse than the pictures. A name on the back is written by someb
 
 None of this is an argument for throwing them away. It is an argument for writing down what you actually know and what you are only guessing. If you write two words in brackets now, you will save somebody a year. {{20}}`,
               gloss: [
-                { de: "a caption", tr: "altyazı, açıklama", en: "caption" },
-                { de: "a frame", tr: "kare", en: "frame" },
-                { de: "confidently", tr: "kendinden emin biçimde", en: "confidently" },
+                { de: "a caption", tr: "altyazı, açıklama", en: "die Bildunterschrift" },
+                { de: "a frame", tr: "kare", en: "das Einzelbild" },
+                { de: "confidently", tr: "kendinden emin biçimde", en: "selbstsicher" },
               ],
             },
           ],
@@ -482,7 +482,7 @@ And a family {{25}} keeps no notes will lose the same story twice.`,
               id: "en-b1-10-l5-25",
               no: 25,
               text: "Gap 25",
-              options: ["that", "who", "whose", "what"],
+              options: ["that", "whom", "whose", "what"],
               answer: 0,
               explain:
                 "Eksik öğe özne görevinde bir ilgi adılı ve öncül `a family`, yani bir topluluk adı. `that` uyar; `whose` iyelik bildirir, `what` öncül almaz.",

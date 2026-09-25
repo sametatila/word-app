@@ -228,9 +228,9 @@ The problem was not the food. The problem was other people. When somebody came f
 
 Now I do it with two meals, not one. It is less boring and it still works. My friends are not convinced, but they eat the rice when they come.`,
               gloss: [
-                { de: "a shopping list", tr: "alışveriş listesi", en: "shopping list" },
-                { de: "to go bad", tr: "bozulmak", en: "go bad" },
-                { de: "boring", tr: "sıkıcı", en: "boring" },
+                { de: "a shopping list", tr: "alışveriş listesi", en: "der Einkaufszettel" },
+                { de: "to go bad", tr: "bozulmak", en: "schlecht werden" },
+                { de: "boring", tr: "sıkıcı", en: "langweilig" },
               ],
             },
           ],
@@ -290,7 +290,7 @@ Now I do it with two meals, not one. It is less boring and it still works. My fr
               id: "t4",
               genre: "Blog post",
               genreTr: "Blog yazısı",
-              title: "Four things I learned in a small kitchen",
+              title: "Three things I learned in a small kitchen",
               body: `I cooked in a very small kitchen for six years, and here is what I {{15}}.
 
 Wash while you cook. A kitchen with clean pans is {{16}} than a kitchen with a mountain in the sink.
@@ -395,18 +395,18 @@ I would go again, but next time I will call {{24}} the morning.`,
               id: "en-a2-05-l5-21",
               no: 21,
               text: "Gap 21",
-              accept: ["best"],
+              accept: ["best", "nicest", "tastiest"],
               explain:
-                "Boşluktan önce `the`, sonra `on the menu` var: bu ikisi birlikte en üstünlük derecesi ister ve `good` sıfatının en üstünlüğü `best`tir. `better` karşılaştırmadır ve `the … on` yapısıyla gelmez.",
+                "Boşluktan önce `the`, sonra `on the menu` var: bu ikisi birlikte en üstünlük derecesi ister. `good` sıfatının en üstünlüğü `best`tir; `nicest` ve `tastiest` de anlamca uyar ve kabul edilir. `better` karşılaştırmadır ve `the … on` yapısıyla gelmez.",
             },
             {
               kind: "gap",
               id: "en-a2-05-l5-22",
               no: 22,
               text: "Gap 22",
-              accept: ["but"],
+              accept: ["but", "yet", "although", "though"],
               explain:
-                "İki yarı karşıt: içeride boş masa yok, ama garson bir yer buluyor. Karşıtlığı `but` verir. `so` sonuç bildirir ve beklenmedikliği kaybeder; `because` ise ilişkiyi tersine çevirir.",
+                "İki yarı karşıt: içeride boş masa yok, ama garson bir yer buluyor. Karşıtlığı `but` verir; `yet`, `although` ve `though` da aynı ilişkiyi kurar. `so` sonuç bildirir ve beklenmedikliği kaybeder; `because` ise ilişkiyi tersine çevirir.",
             },
             {
               kind: "gap",

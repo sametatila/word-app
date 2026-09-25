@@ -369,9 +369,9 @@ What the criticism omitted was the ninety minutes. If she had waited for certain
 
 Three years later the same street was closed on the same reasoning and the water came through the wall at four in the morning. Nobody wrote about that decision either, which is the ordinary fate of a warning that works. The only visible outcome of a correct call is an absence, and absences are not reported.`,
               gloss: [
-                { de: "duty officer", tr: "nöbetçi amir", en: "duty officer" },
-                { de: "an evacuation", tr: "tahliye", en: "evacuation" },
-                { de: "an absence", tr: "yokluk", en: "absence" },
+                { de: "duty officer", tr: "nöbetçi amir", en: "der Dienst habende Beamte" },
+                { de: "an evacuation", tr: "tahliye", en: "die Evakuierung" },
+                { de: "an absence", tr: "yokluk", en: "das Ausbleiben" },
               ],
             },
           ],
@@ -479,9 +479,9 @@ This asymmetry is not a media conspiracy. It follows from what is visible, and v
 
 The practical consequence is that public pressure pushes in one direction only, and that any threshold set under such pressure will drift upwards year by year until an event arrives to push it back down.`,
               gloss: [
-                { de: "asymmetry", tr: "bakışımsızlık", en: "asymmetry" },
-                { de: "a threshold", tr: "eşik", en: "threshold" },
-                { de: "to drift", tr: "yavaşça kaymak", en: "drift" },
+                { de: "asymmetry", tr: "bakışımsızlık", en: "die Asymmetrie" },
+                { de: "a threshold", tr: "eşik", en: "die Schwelle" },
+                { de: "to drift", tr: "yavaşça kaymak", en: "abdriften" },
               ],
             },
           ],
@@ -848,7 +848,7 @@ The practical consequence is that public pressure pushes in one direction only, 
               title: "Flood warning service — notes",
               body: `New arrangements begin in:   {{9}}
 Warnings are sent by:        {{10}}
-To register, give your:      {{11}}
+Besides your number, give:   {{11}}
 Line updated every:          {{12}} hours
 Test message: first {{13}} of the month
 Amber = water within {{14}} hours
@@ -885,7 +885,7 @@ Cost of the service:         {{16}}`,
               text: "Gap 11",
               accept: ["address"],
               explain:
-                "«we need your address as well as your number» — numaranın yanında istenen bilgi. Numara zaten kayıtlı olduğu için satırın sorduğu şey adrestir.",
+                "«we need your address as well as your number» — numaranın yanında istenen bilgi. Numara not satırında zaten verildiği için boşluğa adres yazılır.",
             },
             {
               kind: "gap",

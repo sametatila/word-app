@@ -110,7 +110,7 @@ export const a2U06: SkillExercise[] = [
     minutes: 4,
     text:
       "Nicht gegen alles braucht man ein Medikament. Viele alte Hausmittel helfen wirklich — und man hat sie meistens zu Hause.\n\n" +
-      "Gegen Halsschmerzen hilft heißer Tee mit Zitrone. Wichtig: der Tee soll nicht zu heiß sein, sondern lauwarm, sonst tut er dem Hals nur weh. Man nimmt einen Löffel Honig und rührt ihn langsam ein.\n\n" +
+      "Gegen Halsschmerzen hilft warmer Tee mit Zitrone. Wichtig: der Tee soll nicht zu heiß sein, sondern lauwarm, sonst tut er dem Hals nur weh. Man nimmt einen Löffel Honig und rührt ihn langsam ein.\n\n" +
       "Bei einer Erkältung ist Vitamin C ein gutes Mittel. Eine Orange am Tag reicht schon.\n\n" +
       "Und ein Tipp von meiner Großmutter: warme Socken. Sie hat immer gesagt, kalte Füße machen krank. Ob das stimmt, weiß ich nicht — aber schaden kann es nicht.",
     questions: [

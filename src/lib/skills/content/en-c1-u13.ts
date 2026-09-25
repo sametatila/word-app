@@ -69,7 +69,7 @@ export const enC1U13: SkillExercise[] = [
       { de: "centuries", tr: "yüzyıllar" },
       { de: "plus", tr: "artı" },
       { de: "practical", tr: "işe dönük" },
-      { de: "edge", tr: "kenar" },
+      { de: "edge", tr: "yan" },
       { de: "except", tr: "dışında" },
       { de: "unit", tr: "ünite" },
       { de: "nowhere", tr: "hiçbir yer" },
@@ -243,10 +243,10 @@ export const enC1U13: SkillExercise[] = [
         items: [
           "In the report it is an efficiency gain; on the floor, work intensification.",
           "What management calls flexibilization, the union calls precarization.",
-          "Standardization is a method; rationalization is a programme.",
           "Whoever restores the verb first has moved the argument.",
+          "Standardization is a method; rationalization is a programme.",
         ],
-        explain: "İki defter, iki sahip, yöntem ile program; en sonda onarım.",
+        explain: "İki defter, iki sahip, onarım; en sonda yöntem ile program.",
       },
       {
         kind: "short_answer",

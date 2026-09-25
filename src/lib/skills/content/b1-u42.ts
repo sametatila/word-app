@@ -113,7 +113,7 @@ export const b1U42: SkillExercise[] = [
       { de: "strafbar", tr: "cezalandırılabilir", en: "punishable" },
       { de: "behindern", tr: "engellemek", en: "to obstruct" },
       { de: "erforderlich", tr: "gerekli", en: "required" },
-      { de: "sich anmelden", tr: "kaydolmak", en: "to register" },
+      { de: "anmelden", tr: "resmî makama bildirmek", en: "to register" },
       { de: "automatisch", tr: "otomatik", en: "automatic" },
       { de: "zum Beispiel", tr: "örneğin", en: "for example" },
       { de: "normal", tr: "normal", en: "normal" },

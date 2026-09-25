@@ -108,8 +108,8 @@ export const a2U14: SkillExercise[] = [
       { de: "der Filialleiter", tr: "şube müdürü", en: "branch manager" },
       { de: "verärgert", tr: "kızgın", en: "annoyed" },
       { de: "innerhalb", tr: "içinde", en: "within" },
-      { de: "der Artikel", tr: "makale", en: "article" },
-      { de: "tauschen", tr: "takas etmek", en: "to swap" },
+      { de: "der Artikel", tr: "ürün / mal", en: "item" },
+      { de: "umtauschen", tr: "yenisiyle değiştirmek", en: "to exchange" },
     ],
     minutes: 4,
     text:

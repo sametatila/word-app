@@ -368,9 +368,9 @@ I am not going to claim that a label changes anything material. The figure is st
 
 What I would recommend to any museum is not a policy but a habit: take one object a month and write down what you do not know about it. Given enough months, the gaps stop looking like accidents and start looking like a pattern.`,
               gloss: [
-                { de: "a label", tr: "etiket, tanıtım kartı", en: "museum label" },
-                { de: "an expedition", tr: "sefer, keşif gezisi", en: "expedition" },
-                { de: "a word count", tr: "kelime sınırı", en: "word count" },
+                { de: "a label", tr: "etiket, tanıtım kartı", en: "das Schild" },
+                { de: "an expedition", tr: "sefer, keşif gezisi", en: "die Expedition" },
+                { de: "a word count", tr: "kelime sınırı", en: "die Wortzahl" },
               ],
             },
           ],
@@ -453,9 +453,9 @@ Some museums have begun to catalogue their copies with the same care as their or
 
 None of this argues that a copy equals an original, which it plainly does not. It argues that the value of an object is not fixed at the moment it is made.`,
               gloss: [
-                { de: "a replica", tr: "kopya, replika", en: "replica" },
-                { de: "a plaster cast", tr: "alçı kalıp", en: "plaster cast" },
-                { de: "to weather away", tr: "aşınıp yok olmak", en: "weather away" },
+                { de: "a replica", tr: "kopya, replika", en: "die Nachbildung" },
+                { de: "a plaster cast", tr: "alçı kalıp", en: "der Gipsabguss" },
+                { de: "to weather away", tr: "aşınıp yok olmak", en: "verwittern" },
               ],
             },
           ],
@@ -1104,9 +1104,9 @@ The communities the project wants to hear from find the {{15}} almost unusable.
                 { speaker: "Tarik", text: "Not as a general rule. If your collection is the only record of a community that has no other archive, this is advice from a comfortable position, and it is worth saying so. What I would recommend is writing down who each part of the store is for, and then reading your own answer honestly." },
               ],
               gloss: [
-                { de: "a custodian", tr: "emanetçi, koruyucu", en: "custodian" },
-                { de: "a tenancy agreement", tr: "kira sözleşmesi", en: "tenancy agreement" },
-                { de: "a store", tr: "depo", en: "museum store" },
+                { de: "a custodian", tr: "emanetçi, koruyucu", en: "der Verwahrer" },
+                { de: "a tenancy agreement", tr: "kira sözleşmesi", en: "der Mietvertrag" },
+                { de: "a store", tr: "depo", en: "das Depot" },
               ],
             },
           ],

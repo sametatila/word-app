@@ -227,9 +227,9 @@ I am not going to pretend the two things balance. Twenty families cannot afford 
 
 What I have changed is smaller. I no longer name the town in anything I write. If I wrote that piece again, I would leave the name out. However, I have stopped believing that the choice is between writing and not writing. The choice is about what you name, and I was slow to see it.`,
               gloss: [
-                { de: "a ferry", tr: "vapur, feribot", en: "ferry" },
-                { de: "rent", tr: "kira", en: "rent" },
-                { de: "a contract", tr: "sözleşme", en: "contract" },
+                { de: "a ferry", tr: "vapur, feribot", en: "die Fähre" },
+                { de: "rent", tr: "kira", en: "die Miete" },
+                { de: "a contract", tr: "sözleşme", en: "der Vertrag" },
               ],
             },
           ],
@@ -312,9 +312,9 @@ That figure changed the argument. A debate about whether tourism is good became 
 
 The council now publishes the count every year, in a table that fits on one page. {{20}}`,
               gloss: [
-                { de: "a council", tr: "belediye meclisi", en: "council" },
-                { de: "an entrance", tr: "giriş", en: "entrance" },
-                { de: "on average", tr: "ortalama olarak", en: "on average" },
+                { de: "a council", tr: "belediye meclisi", en: "der Gemeinderat" },
+                { de: "an entrance", tr: "giriş", en: "der Eingang" },
+                { de: "on average", tr: "ortalama olarak", en: "im Durchschnitt" },
               ],
             },
           ],
@@ -415,7 +415,7 @@ None of this takes long. Ten minutes of questions can {{25}} you from a week of 
               id: "en-b1-05-l5-22",
               no: 22,
               text: "Gap 22",
-              options: ["tell", "say", "send", "speak"],
+              options: ["talk", "say", "send", "speak"],
               answer: 2,
               explain:
                 "Kod bir nesne gibi iletiliyor: «send you a code». `tell` bir bilgiyi sözle aktarır ve burada da olabilirdi ama `a code the day before` fiziksel bir gönderim anlatıyor; `say` iki nesne almaz, `speak` ise doğrudan nesne almaz.",
@@ -996,9 +996,9 @@ New guides walk with an experienced guide for: {{19}} tours`,
                 { speaker: "Iker", text: "Not as a general rule. If you have a loan on the building, or a family living from it, this is advice from a comfortable position and it is worth saying so. What I would recommend is reading your own reviews as though somebody else had written them." },
               ],
               gloss: [
-                { de: "a guest house", tr: "pansiyon", en: "guest house" },
-                { de: "a corridor", tr: "koridor", en: "corridor" },
-                { de: "a loan", tr: "kredi", en: "loan" },
+                { de: "a guest house", tr: "pansiyon", en: "die Pension" },
+                { de: "a corridor", tr: "koridor", en: "der Flur" },
+                { de: "a loan", tr: "kredi", en: "der Kredit" },
               ],
             },
           ],

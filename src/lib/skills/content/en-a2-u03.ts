@@ -52,7 +52,7 @@ export const enA2U03: SkillExercise[] = [
       "Ali: Yes. I waited two hours there. The doctor said: No break, only a bad injury.\n" +
       "Sena: How long do you have to wait?\n" +
       "Ali: Two weeks with no heavy work. Bad luck — we are moving to a new flat next month!\n" +
-      "Sena: Then I help you. I have moved four times in my life.\n" +
+      "Sena: Then I'll help you. I have moved four times in my life.\n" +
       "Ali: Really? Thank you very much.",
     questions: [
       {

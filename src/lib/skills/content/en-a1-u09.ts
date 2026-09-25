@@ -42,7 +42,7 @@ export const enA1U09: SkillExercise[] = [
     ],
     minutes: 4,
     text:
-      "I always get up at seven, also at the weekend. First I wake up, then I put on my clothes and I turn on the radio.\n\n" +
+      "I always get up at seven, even at the weekend. First I wake up, then I put on my clothes and I turn on the radio.\n\n" +
       "On Monday and on Friday I work in the city. I usually walk to work. Sometimes I am late, but my teacher is never angry.\n\n" +
       "In the evening I turn off the radio and I sit down with a newspaper. I often sit there until midnight.\n\n" +
       "At the weekend I look for a good game. After that I cook. Finally, before I sleep, I drink a cup of warm milk. That is my usual day.",
@@ -51,7 +51,7 @@ export const enA1U09: SkillExercise[] = [
         text: "When does the writer get up?",
         options: ["at seven, every day", "at seven, but not at the weekend", "at midnight"],
         answer: 0,
-        explain: "„I always get up at seven, also at the weekend.“ — „also“ hafta sonunu da içine alıyor.",
+        explain: "„I always get up at seven, even at the weekend.“ — „also“ hafta sonunu da içine alıyor.",
       },
       {
         text: "Who is never angry?",

@@ -551,7 +551,7 @@ Elif Radek: Wer für die Pflicht argumentiert, denkt an gute Familien. Ich denke
               options: ["Dafür.", "Dagegen."],
               answer: 0,
               explain:
-                "Kendi aleyhine konuşuyor: kırk yıl ödemiş olmasına rağmen yetmediğini kabul ediyor ve \"finde ich einen Beitrag von ihr richtig\" diyor.",
+                "Rahatsız edici bir şey söylediğini kabul ediyor: kırk yıl ödemiş olmasına rağmen yetmediğini kabul ediyor ve \"finde ich einen Beitrag von ihr richtig\" diyor.",
             },
             {
               kind: "mcq",
@@ -634,7 +634,7 @@ Schäden sind sofort zu melden. Wer einen Schaden verschweigt, trägt die vollen
               id: "de-b1-09-l5-29",
               no: 29,
               ref: "o1",
-              text: "Wann bekommt man den Schlüssel zurückgenommen?",
+              text: "Wann kann man den Schlüssel zurückgeben?",
               options: [
                 "Nach der Abnahme des Raums.",
                 "Am Morgen nach der Feier.",

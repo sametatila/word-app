@@ -39,8 +39,8 @@ export const a2U05: SkillExercise[] = [
       { de: "entspannt", tr: "rahatlamış", en: "relaxed" },
       { de: "weiterkommen", tr: "ilerlemek", en: "to make progress" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
-      { de: "leicht", tr: "hafif", en: "light" },
-      { de: "das Fach", tr: "ders", en: "subject" },
+      { de: "leicht", tr: "kolay", en: "easy" },
+      { de: "fachlich", tr: "mesleki olarak", en: "professionally" },
     ],
     minutes: 4,
     text:

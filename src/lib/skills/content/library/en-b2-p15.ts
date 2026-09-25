@@ -30,7 +30,7 @@ export const enB2P15: SkillExercise[] = [
       { de: "dispute", tr: "anlaşmazlık" },
       { de: "retention offer", tr: "vazgeçirme teklifi" },
       { de: "statement", tr: "hesap dökümü" },
-      { de: "to reverse", tr: "geri çevirmek" },
+      { de: "to reverse", tr: "iade etmek" },
       { de: "precise", tr: "net" },
     ],
     minutes: 8,

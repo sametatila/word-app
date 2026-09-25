@@ -105,8 +105,8 @@ export const enA1U18: SkillExercise[] = [
       "Office: Only the tap? Is the water in the bathroom good?\n" +
       "Ela: Yes, the bathroom is fine. But there is water on the floor.\n" +
       "Office: I understand. Can you call me this afternoon?\n" +
-      "Ela: Of course. And one more thing: the printer in the cellar doesn't work too.\n" +
-      "Office: The printer is not our work. Call the shop.\n" +
+      "Ela: Of course. And one more thing: the printer in the cellar doesn't work either.\n" +
+      "Office: The printer is not our problem. Call the shop.\n" +
       "Ela: And the telephone in the hall?\n" +
       "Office: Is it broken too? Then we come on Wednesday.\n" +
       "Ela: Can you fix the tap today? The water is everywhere!\n" +
@@ -122,7 +122,7 @@ export const enA1U18: SkillExercise[] = [
         text: "Who fixes the printer?",
         options: ["the shop", "the office", "nobody"],
         answer: 0,
-        explain: "„The printer is not our work. Call the shop.“",
+        explain: "„The printer is not our problem. Call the shop.“",
       },
       {
         kind: "truefalse",
@@ -146,7 +146,7 @@ export const enA1U18: SkillExercise[] = [
         answer: 0,
         items: [
           "The tap in the kitchen is broken.",
-          "the printer in the cellar doesn't work too",
+          "the printer in the cellar doesn't work either",
           "And the telephone in the hall?",
           "Can you fix the tap today?",
         ],

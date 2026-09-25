@@ -180,7 +180,7 @@ Kontrollen sind nötig, erzeugen aber teilweise selbst {{9}}. Umgekehrt wird Ver
               text: "Lücke 10",
               accept: ["Gutgläubigkeit", "Naivität", "Leichtgläubigkeit"],
               explain:
-                "Ters yöndeki basitleştirme için metin bir ad veriyor: nakit karşılığı olmadan istenen güven \"verwandelt es sich in Gutgläubigkeit\".",
+                "Ters yöndeki basitleştirme için metin bir ad veriyor: kanıt gösterilmeden istenen güven \"verwandelt es sich in Gutgläubigkeit\".",
             },
           ],
         },
@@ -212,7 +212,7 @@ Wie häufig solche Fälle sind, ist schwer zu sagen. Eine Auswertung von 340 Ver
 
 Bemerkenswert ist, wie unterschiedlich die Betroffenen darauf reagieren. Ein Teil zieht sich zurück; in einer Befragung unter 900 Sachverständigen gab jeder Fünfte an, Anfragen inzwischen abzulehnen, weil die Arbeit folgenlos bleibe. Ein anderer Teil ändert die Form: kürzere Gutachten, klarere Empfehlungen, weniger Vorbehalte. Fachlich ist das nicht unbedenklich, denn Vorbehalte gehören zur Sache. Wer sie streicht, um gehört zu werden, verschiebt die Ungenauigkeit von der Politik in die Wissenschaft.
 
-Vorschläge zur Abhilfe gibt es reichlich, und sie ähneln einander. Die meisten laufen auf eine Begründungspflicht hinaus: Wer von einer fachlichen Empfehlung abweicht, soll dies schriftlich und nachvollziehbar tun. Der Einwand dagegen ist ernst zu nehmen — eine solche Pflicht verlagert Macht zu denen, die Gutachten schreiben, und diese sind niemandem gewählt. Roeder teilt diesen Einwand ausdrücklich. Ihr Gegenvorschlag ist bescheidener und vermutlich wirksamer: Man solle im Protokoll vermerken, wer ein Gutachten bezahlt hat. Mehr nicht.
+Vorschläge zur Abhilfe gibt es reichlich, und sie ähneln einander. Die meisten laufen auf eine Begründungspflicht hinaus: Wer von einer fachlichen Empfehlung abweicht, soll dies schriftlich und nachvollziehbar tun. Der Einwand dagegen ist ernst zu nehmen — eine solche Pflicht verlagert Macht zu denen, die Gutachten schreiben, und diese sind von niemandem gewählt. Roeder teilt diesen Einwand ausdrücklich. Ihr Gegenvorschlag ist bescheidener und vermutlich wirksamer: Man solle im Protokoll vermerken, wer ein Gutachten bezahlt hat. Mehr nicht.
 
 Ob das genügt, ist offen. Sicher ist nur, dass die Bebauung inzwischen steht. Beim Hochwasser im vergangenen Sommer blieb sie trocken; der Pegel erreichte die Marke nicht, die Roeder in ihrer Stellungnahme als kritisch bezeichnet hatte. Sie selbst hält das für keinen Beleg. "Ein Gutachten ist keine Wette", sagt sie. "Dass etwas gut ausgeht, heißt nicht, dass die Entscheidung gut war."`,
               gloss: [
@@ -287,7 +287,7 @@ Ob das genügt, ist offen. Sicher ist nur, dass die Bebauung inzwischen steht. B
               ],
               answer: 3,
               explain:
-                "Metin ek üstünlüğü açıkça sayıyor: formül \"hat den zusätzlichen Vorzug, niemanden angreifbar zu machen\". Hukuki denetimi ise tam tersine zorlaştırıyor.",
+                "Metin ek üstünlüğü açıkça sayıyor: formül \"hat den zusätzlichen Vorzug, niemanden angreifbar zu machen\". Yargısal denetimi kolaylaştırdığına dair ise metinde bir şey yok.",
             },
             {
               kind: "mcq",
@@ -351,7 +351,7 @@ Ob das genügt, ist offen. Sicher ist nur, dass die Bebauung inzwischen steht. B
               ],
               answer: 2,
               explain:
-                "İtiraz yetki devri üzerine: böyle bir yükümlülük \"verlagert Macht zu denen, die Gutachten schreiben, und diese sind niemandem gewählt\". Maliyet ve denetlenebilirlik gerekçe olarak geçmiyor.",
+                "İtiraz yetki devri üzerine: böyle bir yükümlülük \"verlagert Macht zu denen, die Gutachten schreiben, und diese sind von niemandem gewählt\". Maliyet ve denetlenebilirlik gerekçe olarak geçmiyor.",
             },
             {
               kind: "mcq",
@@ -438,7 +438,7 @@ Ob sich das rechnet, hängt davon ab, was gerechnet wird. Pro Vorgang ist der Sc
               id: "de-c1-03-l3-23",
               no: 23,
               text: "Lücke 23",
-              options: ["zumal", "sondern", "vielmehr", "geschweige denn"],
+              options: ["zumal", "sondern", "wohingegen", "geschweige denn"],
               answer: 1,
               explain:
                 "Önce olumsuzlanan bir varsayım var (\"nicht vorrangig ältere Menschen\"), sonra düzeltme geliyor. Bu yapı `nicht … sondern` ister; `vielmehr` tek başına bağlaç işlevi görmez.",
@@ -1051,7 +1051,7 @@ Bianca Hoffmann`,
               text: "Lücke 1 (Übergang zur Begründung)",
               accept: ["Zur Begründung", "Zur Erläuterung", "Im Einzelnen", "Zur Sache"],
               explain:
-                "Gerekçe bölümü resmî yazıda kendi geçişiyle açılır. `Zur Begründung` ya da `Im Einzelnen` okura yapının neresinde olduğunu söyler; `Weil` ile başlamak kaydı düşürür.",
+                "Gerekçe bölümü resmî yazıda kendi geçişiyle açılır. `Zur Begründung` ya da `Im Einzelnen` okura yapının neresinde olduğunu söyler; `Weil` ile başlamak üslubu düşürür.",
             },
             {
               kind: "gap",
@@ -1087,7 +1087,7 @@ Bianca Hoffmann`,
               text: "Lücke 5 (einschränkender Anschluss)",
               accept: ["Gleichwohl", "Jedoch", "Allerdings", "Dennoch", "Nichtsdestoweniger"],
               explain:
-                "Kabulden sonra asıl argümanı getiren zıtlık bağlacı: ücret fiilen kullanılan süreye göre hesaplanır. `Gleichwohl` bu işlevi resmî kayıtta görür.",
+                "Kabulden sonra asıl argümanı getiren zıtlık bağlacı: ücret fiilen kullanılan süreye göre hesaplanır. `Gleichwohl` bu işlevi resmî üslupta görür.",
             },
             {
               kind: "gap",

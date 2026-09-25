@@ -87,7 +87,7 @@ export const enC1P15: SkillExercise[] = [
         text: "The shared laundry was part of the plans from the start without any debate.",
         options: ["True", "False"],
         answer: 1,
-        explain: "Para kazanmak için neredeyse planlardan çıkarılıyordu; tanışıklıkların çoğu orada başlıyor.",
+        explain: "Tasarruf etmek için neredeyse planlardan çıkarılıyordu; tanışıklıkların çoğu orada başlıyor.",
       },
       {
         kind: "gapfill",

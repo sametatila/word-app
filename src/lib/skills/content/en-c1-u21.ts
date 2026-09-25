@@ -130,7 +130,7 @@ export const enC1U21: SkillExercise[] = [
         answer: 0,
         items: [
           "In the press release it is a downturn; in the model, stagnation.",
-          "The same payslip is true in both halves.",
+          "Both halves are true of the same payslip.",
           "A frame can be moved and an ending cannot.",
           "Deflation is a number; the business cycle is a story.",
         ],

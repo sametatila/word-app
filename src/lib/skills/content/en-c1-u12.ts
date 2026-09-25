@@ -156,7 +156,7 @@ export const enC1U12: SkillExercise[] = [
       { de: "passives", tr: "edilgenler" },
       { de: "passive", tr: "edilgen" },
       { de: "agent", tr: "eyleyen" },
-      { de: "anywhere", tr: "başka yerde" },
+      { de: "anywhere", tr: "hiçbir yerde" },
       { de: "definite", tr: "belirli" },
       { de: "dropped", tr: "düşürülmüş" },
       { de: "identical", tr: "birebir aynı" },
@@ -180,7 +180,7 @@ export const enC1U12: SkillExercise[] = [
       { de: "a metaphor", tr: "eğretileme" },
       { de: "dead", tr: "ölü" },
       { de: "a root", tr: "kök" },
-      { de: "a policy", tr: "siyaset" },
+      { de: "a policy", tr: "politika" },
     ],
     minutes: 12,
     text:

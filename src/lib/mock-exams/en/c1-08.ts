@@ -370,9 +370,9 @@ The impression is not harmless. A sport which believes it has solved cheating st
 
 None of this is an argument for removing the cameras, which would restore neither trust nor accuracy. It is an argument for being exact about what they bought. They bought correct decisions. They did not buy honest players, and the confusion between the two is now built into the way the game is discussed.`,
               gloss: [
-                { de: "to retire", tr: "spordan çekilmek", en: "retire" },
-                { de: "conduct", tr: "davranış", en: "conduct" },
-                { de: "unmeasurable", tr: "ölçülemez", en: "unmeasurable" },
+                { de: "to retire", tr: "spordan çekilmek", en: "sich zurückziehen" },
+                { de: "conduct", tr: "davranış", en: "das Verhalten" },
+                { de: "unmeasurable", tr: "ölçülemez", en: "unmessbar" },
               ],
             },
           ],
@@ -390,7 +390,7 @@ None of this is an argument for removing the cameras, which would restore neithe
               ],
               answer: 0,
               explain:
-                "Açılış savı ve çürütmeyi birlikte veriyor: «it collapses on the first example anybody offers», ardından ıslak zeminde düşen oyuncu örneği geliyor.",
+                "Açılış savı ve çürütmeyi birlikte veriyor: «it collapses on the first example anybody offers», ardından ıslak zemin yüzünden rakibine çelme takan oyuncu örneği geliyor.",
             },
             {
               kind: "mcq",
@@ -540,9 +540,9 @@ None of this eliminates the problem, and the governing bodies have never claimed
 
 The lesson generalises awkwardly, which is the honest reason it is not applied more widely. It requires a community small enough for reputation to operate and stable enough for it to accumulate. Most institutions have neither, and a system which assumes both will simply fail in a new way.`,
               gloss: [
-                { de: "a handicap", tr: "denkleştirme puanı", en: "handicap" },
-                { de: "a card", tr: "skor kartı", en: "card" },
-                { de: "to accumulate", tr: "birikmek", en: "accumulate" },
+                { de: "a handicap", tr: "denkleştirme puanı", en: "das Handicap" },
+                { de: "a card", tr: "skor kartı", en: "die Zählkarte" },
+                { de: "to accumulate", tr: "birikmek", en: "sich ansammeln" },
               ],
             },
           ],
@@ -561,7 +561,7 @@ The lesson generalises awkwardly, which is the honest reason it is not applied m
               text: "Gap 31",
               answer: "b",
               explain:
-                "Açılış tasarımı olağandışı sayıyor: sistem «assumes, in its design, that a proportion of the people using it will lie». (b) neyin olağan olduğunu söyleyerek karşıtlığı tamamlıyor: öteki sistemler dürüstlüğü «an exception to be detected after the event» sayar.",
+                "Açılış tasarımı olağandışı sayıyor: sistem «assumes, in its design, that a proportion of the people using it will lie». (b) neyin olağan olduğunu söyleyerek karşıtlığı tamamlıyor: öteki sistemler sahtekârlığı «an exception to be detected after the event» sayar.",
             },
             {
               kind: "match",

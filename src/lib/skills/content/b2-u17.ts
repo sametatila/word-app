@@ -48,7 +48,7 @@ export const b2U17: SkillExercise[] = [
       { de: "die Länge", tr: "uzunluk", en: "length" },
       { de: "reagieren", tr: "tepki vermek", en: "to react" },
       { de: "die Atmung", tr: "solunum", en: "breathing" },
-      { de: "sich orientieren an", tr: "örnek almak", en: "to model oneself on" },
+      { de: "sich orientieren an", tr: "-e göre ayarlanmak", en: "to be guided by" },
       { de: "intensiv", tr: "yoğun", en: "intensive" },
       { de: "besonders", tr: "özellikle", en: "especially" },
     ],
@@ -138,7 +138,7 @@ export const b2U17: SkillExercise[] = [
     text:
       "BETON ODER ALTBAU?\n\n" +
       "Die Debatte läuft seit Jahrzehnten mit denselben Argumenten, und beide Seiten haben in einem Punkt recht.\n\n" +
-      "Für den Altbau spricht der Grundriss. Ein Gebäude, dessen Räume drei Meter hoch sind und deren Fenster bis fast zum Boden reichen, wirkt geräumig, auch wenn die Quadratmeterzahl kleiner ist als im Neubau. Dazu kommt etwas Unromantisches: Häuser, die hundert Jahre gestanden haben, haben bewiesen, dass sie stehen bleiben.\n\n" +
+      "Für den Altbau spricht der Grundriss. Ein Gebäude, dessen Räume drei Meter hoch sind und dessen Fenster bis fast zum Boden reichen, wirkt geräumig, auch wenn die Quadratmeterzahl kleiner ist als im Neubau. Dazu kommt etwas Unromantisches: Häuser, die hundert Jahre gestanden haben, haben bewiesen, dass sie stehen bleiben.\n\n" +
       "Gegen den Altbau spricht die Dämmung. Eine Fassade, deren Stuck man erhalten will, lässt sich von außen nicht dämmen; von innen geht es, kostet aber Fläche und braucht Sorgfalt, sonst schimmelt es. Das Dachgeschoss ist im Sommer heiß und im Winter kalt, solange nichts gemacht wird.\n\n" +
       "Und der Neubau? Er ist rechnerisch sparsamer, und das ist kein kleines Argument. Der Haken steckt in der Bilanz davor: Ein Haus abzureißen und neu zu bauen verbraucht so viel Energie, dass der Vorsprung erst nach Jahrzehnten hereinkommt. Wer den Bestand umgestaltet statt ihn abzureißen, hat diese Rechnung schon gewonnen.\n\n" +
       "Was viele unterschätzen, ist der Bebauungsplan. Er entscheidet über Höhe, Abstand und Nutzung — und damit darüber, ob überhaupt etwas möglich ist. Die schönste Idee scheitert an zwei Zeilen, die 1968 geschrieben wurden.\n\n" +

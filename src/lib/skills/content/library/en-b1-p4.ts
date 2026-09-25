@@ -25,7 +25,7 @@ export const enB1P4: SkillExercise[] = [
       { de: "van", tr: "kamyonet" },
       { de: "disagree", tr: "katılmamak" },
       { de: "add", tr: "eklemek" },
-      { de: "vote", tr: "oy" },
+      { de: "vote", tr: "oylama" },
       { de: "loan", tr: "kredi" },
       { de: "alternative", tr: "seçenek" },
       { de: "advertisement", tr: "ilan" },

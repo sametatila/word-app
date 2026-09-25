@@ -52,8 +52,8 @@ Please bring a pen. We have no pens here.
 
 Ines`,
               gloss: [
-                { de: "a course", tr: "kurs", en: "course" },
-                { de: "a pen", tr: "kalem", en: "pen" },
+                { de: "a course", tr: "kurs", en: "der Kurs" },
+                { de: "a pen", tr: "kalem", en: "der Stift" },
               ],
             },
             {

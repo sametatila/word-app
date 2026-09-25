@@ -81,7 +81,7 @@ export const deA1P4: SkillExercise[] = [
         text: "Was gibt es auf dem Fest?",
         options: ["Kaffee, Kuchen und Musik", "einen Raum nur für Kinder", "zwanzig Plätze zum Lernen"],
         answer: 0,
-        explain: "„Es gibt Kaffee, Kuchen und Musik.“ Çocuk odası binada var ama kurs geçmiyor.",
+        explain: "„Es gibt Kaffee, Kuchen und Musik.“ Çocuk odası ve çalışma yerleri yeni binada var; şenlikte sunulan şeyler değil.",
       },
     ],
   },

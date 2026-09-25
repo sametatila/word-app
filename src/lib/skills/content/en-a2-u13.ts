@@ -119,7 +119,7 @@ export const enA2U13: SkillExercise[] = [
       "Deniz: Good to know. How long do I have for a return?\n" +
       "Shop: Fourteen days. After that we give a card, not money.\n" +
       "Deniz: And if the item is damaged?\n" +
-      "Shop: Then there is no time. Damaged goods go back always.\n" +
+      "Shop: Then there is no time. Damaged goods always go back.\n" +
       "Deniz: Thank you. That was easier than I expected.",
     questions: [
       {

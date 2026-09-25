@@ -156,9 +156,9 @@ None of this is an argument for leaving books untranslated. It is an argument fo
               id: "en-c1-06-l2-8",
               no: 8,
               text: "Gap 8",
-              accept: ["but", "although", "though"],
+              accept: ["but", "although", "though", "yet"],
               explain:
-                "İki yarı ödün kuruyor: talep makul, ama eşit uygulanmıyor. `but`, `although` ve `though` bunu verir; `so` sonuç bildirir ve eleştiriyi tersine çevirir.",
+                "İki yarı ödün kuruyor: talep makul, ama eşit uygulanmıyor. `but`, `yet`, `although` ve `though` bunu verir; `so` sonuç bildirir ve eleştiriyi tersine çevirir.",
             },
             {
               kind: "gap",
@@ -260,9 +260,9 @@ The most likely future is therefore a divided one, with different literatures se
               id: "en-c1-06-l3-16",
               no: 16,
               text: "MYSTERY",
-              accept: ["mysticism"],
+              accept: ["mysticism", "mystification"],
               explain:
-                "`accused of ___` bir ad ister ve suçlama bir tutuma yöneliyor: işi anlaşılmaz kılmak. `mystery` bir olguyu adlandırır, tutumu değil; `mysterious` ise sıfattır.",
+                "`accused of ___` bir ad ister ve suçlama bir tutuma yöneliyor: işi anlaşılmaz kılmak. Bunu `mysticism` da `mystification` da adlandırır. `mystery` bir olguyu adlandırır, tutumu değil; `mysterious` ise sıfattır.",
             },
             {
               kind: "gap",
@@ -360,9 +360,9 @@ The way through is narrower than either camp allows. What a translation cannot d
 
 None of this would settle an argument that has run for two thousand years. It would, however, move the argument out of the review pages and into the book, which is where the evidence has been all along.`,
               gloss: [
-                { de: "faithful", tr: "sadık (çeviride)", en: "faithful" },
-                { de: "literalism", tr: "sözcüğü sözcüğüne çeviri anlayışı", en: "literalism" },
-                { de: "a syllable", tr: "hece", en: "syllable" },
+                { de: "faithful", tr: "sadık (çeviride)", en: "treu" },
+                { de: "literalism", tr: "sözcüğü sözcüğüne çeviri anlayışı", en: "die Wörtlichkeit" },
+                { de: "a syllable", tr: "hece", en: "die Silbe" },
               ],
             },
           ],
@@ -516,9 +516,9 @@ This has an implication that the team did not welcome. If the entries that are e
 
 {{34}}`,
               gloss: [
-                { de: "an entry", tr: "madde (sözlükte)", en: "dictionary entry" },
-                { de: "a compiler", tr: "derleyici", en: "compiler" },
-                { de: "ethnography", tr: "etnografya", en: "ethnography" },
+                { de: "an entry", tr: "madde (sözlükte)", en: "der Eintrag" },
+                { de: "a compiler", tr: "derleyici", en: "der Verfasser" },
+                { de: "ethnography", tr: "etnografya", en: "die Ethnografie" },
               ],
             },
           ],
@@ -939,9 +939,9 @@ The translators the programme most wants to fund are the least likely to {{13}}.
                 { speaker: "Dragan", text: "Only that the comparison with publishing a new novel is misleading. A publisher who backs a new novel is betting on a market that does not exist yet. We are choosing between books that already exist in another language, which is a smaller and much more answerable question. I would drop the analogy." },
               ],
               gloss: [
-                { de: "a retranslation", tr: "yeniden çeviri", en: "retranslation" },
-                { de: "allocation", tr: "kaynak dağıtımı", en: "allocation" },
-                { de: "an anecdote", tr: "tek olaya dayalı örnek", en: "anecdote" },
+                { de: "a retranslation", tr: "yeniden çeviri", en: "die Neuübersetzung" },
+                { de: "allocation", tr: "kaynak dağıtımı", en: "die Zuteilung" },
+                { de: "an anecdote", tr: "tek olaya dayalı örnek", en: "die Anekdote" },
               ],
             },
           ],

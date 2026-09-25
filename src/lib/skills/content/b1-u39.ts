@@ -69,7 +69,7 @@ export const b1U39: SkillExercise[] = [
       },
       {
         text: "Was ist der Vorteil des Betriebsrats?",
-        options: ["Er kennt die Tätigkeit", "Er ist billiger als ein Anwalt", "Er entscheidet allein"],
+        options: ["Er kennt die Tätigkeit", "Er arbeitet für den Chef", "Er entscheidet allein"],
         answer: 0,
         explain: "„… kennt die Tätigkeit, um die es geht. Das ist ein Vorteil, den ein Anwalt von außen nicht hat.“",
       },

@@ -117,7 +117,7 @@ Ein Rat, wenn Sie es probieren wollen: Sagen Sie es vorher allen. Der Versuch sc
               text: "Der Autor hat in den drei Monaten weniger gelesen als erwartet.",
               answer: true,
               explain:
-                "Beklentisi kitaplarla dolu bir zamandı, ama \"Überrascht hat mich, dass ich nicht mehr gelesen habe\". Onun yerine radyo ve toparlanma geliyor.",
+                "Beklentisi kitaplarla dolu bir zamandı, ama \"Überrascht hat mich, dass ich nicht mehr gelesen habe\". Onun yerine radyo dinlemek ve ortalığı toplamak geliyor.",
             },
             {
               kind: "bool",

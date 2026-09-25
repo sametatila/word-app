@@ -160,7 +160,7 @@ Wenn Sie das nicht möchten, kündigen Sie bitte bis zum 31. Januar. Eine Kündi
 Der monatliche Preis steigt ab März um zwei Euro.`,
               gloss: [
                 { de: "sich verlängern", tr: "kendiliğinden uzamak", en: "to renew automatically" },
-                { de: "kündigen", tr: "fesihi bildirmek", en: "to give notice" },
+                { de: "kündigen", tr: "feshi bildirmek", en: "to give notice" },
               ],
             },
             {
@@ -310,7 +310,7 @@ Ich hätte gern eine Erklärung und einen neuen Termin, möglichst diese Woche.`
               ref: "t6",
               text: "Was möchte die Person?",
               options: [
-                "Aufklärung und ein Ersatztermin.",
+                "Aufklärung und einen Ersatztermin.",
                 "Das Geld für die Buchung zurück.",
                 "Eine schriftliche Entschuldigung im Portal.",
               ],
@@ -625,7 +625,7 @@ Schäden sind bei der Rückgabe zu melden. Wer einen Schaden meldet, zahlt einen
               ],
               answer: 0,
               explain:
-                "Koşul ikinci maddede: uzatma bir kez ve \"sofern niemand wartet\" — üstelik son gün bildirilmeli.",
+                "Koşul ikinci maddede: uzatma bir kez ve \"sofern niemand wartet\" — üstelik en geç son gün bildirilmeli.",
             },
             {
               kind: "mcq",

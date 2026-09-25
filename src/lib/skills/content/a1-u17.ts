@@ -57,7 +57,7 @@ export const a1U17: SkillExercise[] = [
         text: "Richtig oder falsch? Man darf Kartons im Flur stellen.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "Yanlış: „Im Flur darf man keine Möbel und keine Kartons stellen.“",
+        explain: "Yanlış: „Im Flur darf man keine Möbel, keine Kartons und kein Gepäck stellen.“",
       },
       {
         kind: "gapfill",

@@ -54,7 +54,7 @@ export const enB2U16: SkillExercise[] = [
       { de: "a participle", tr: "ortaç" },
       { de: "a tense", tr: "zaman kipi" },
       { de: "own", tr: "kendi" },
-      { de: "the score", tr: "nota" },
+      { de: "the score", tr: "işin aslı" },
       { de: "a notice", tr: "duyuru" },
       { de: "a duration", tr: "süre" },
       { de: "prevent", tr: "önlemek" },

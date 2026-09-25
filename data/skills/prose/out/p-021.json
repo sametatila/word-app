@@ -70,11 +70,6 @@
   "en": "„Man nimmt ein Buch mit und stellt irgendwann ein anderes hinein“ — an exchange, not a sale or a membership."
  },
  {
-  "tr": "„Nicht 'Gibt es Fragen?', sondern die konkrete Frage, die Sie tatsächlich beantwortet haben wollen.“",
-  "kind": "explain",
-  "en": "„Nicht 'Gibt es Fragen?', sondern die konkrete Frage, die Sie tatsächlich beantwortet haben wollen.“"
- },
- {
   "tr": "„Perfekt bin ich nicht, aber mein Müll ist deutlich leichter geworden.“ — memnun ama kusursuz değil.",
   "kind": "explain",
   "en": "„Perfekt bin ich nicht, aber mein Müll ist deutlich leichter geworden.“ — content but not flawless."
@@ -257,7 +252,7 @@
  {
   "tr": "Sokakta bir direğe asılmış kayıp ilanı okuyacaksın: kim kayıp, nasıl görünüyor, kime haber verilecek.",
   "kind": "intro",
-  "en": "You are going to read a lost notice on a lamp post in the street: who is missing, what they look like, who should be told."
+  "en": "You are going to read a missing-pet notice on a lamp post in the street: who is missing, what they look like, who should be told."
  },
  {
   "tr": "Tüketici danışma merkezinde bir görüşme: sorun ne, hukuken kimin ne yapması gerekiyor, hangi sırayla.",
@@ -638,11 +633,6 @@
   "tr": "Modal fiillerle kurulan cümlede iki fiil vardır: biri ikinci sırada çekimli, öteki cümlenin sonunda yalın.",
   "kind": "intro",
   "en": "A sentence with a modal has two verbs: one conjugated in second place, the other bare at the end."
- },
- {
-  "tr": "Programda 2. gün (Cumartesi) 09:30'da \"Bus to the castle\" yazıyor, yani kaleye Cumartesi sabahı gidiliyor.",
-  "kind": "explain",
-  "en": "Day 2 (Saturday) in the programme says \"Bus to the castle\" at 09:30, so they go to the castle on Saturday morning."
  },
  {
   "tr": "Resmî bir tanışma (siz/Sie). Bay Koch, Bayan Yılmaz'la tanışıyor. Dikkat: burada „Sie“ (siz) kullanılıyor.",

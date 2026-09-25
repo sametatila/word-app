@@ -86,10 +86,10 @@ Whether the instrument could be used earlier is a question that has never been {
               id: "en-c1-09-l1-3",
               no: 3,
               text: "Gap 3",
-              options: ["pins", "puts", "sets", "holds"],
+              options: ["pins", "breaks", "turns", "holds"],
               answer: 0,
               explain:
-                "`pin something down` bir şeyi kesin biçimde sabitlemeyi anlatır ve cümle tarifin sabitlenmesinden söz ediyor. `put down` yazmak ya da bastırmak, `set down` kayda geçirmek, `hold down` ise tutmaktır.",
+                "`pin something down` bir şeyi kesin biçimde sabitlemeyi anlatır ve cümle tarifin sabitlenmesinden söz ediyor. `break down` çözümlemek ya da bozulmak, `turn down` reddetmek, `hold down` ise tutmaktır.",
             },
             {
               kind: "mcq",
@@ -156,9 +156,9 @@ As it is, the sequence is decided by lawyers, {{12}} duty is to the institution 
               id: "en-c1-09-l2-7",
               no: 7,
               text: "Gap 7",
-              accept: ["by"],
+              accept: ["by", "on"],
               explain:
-                "Edilgen cümlede eylemi yapan `by` ile bildirilir: «are confused by both sides». `between` iki şeyin arasını gösterir ve burada karıştıranı değil karıştırılanı verir.",
+                "Edilgen cümlede eylemi yapan `by` ile bildirilir: «are confused by both sides». «on both sides of the argument» kalıbıyla `on` da doğrudur. `between` iki şeyin arasını gösterir ve burada karıştıranı değil karıştırılanı verir.",
             },
             {
               kind: "gap",
@@ -174,9 +174,9 @@ As it is, the sequence is decided by lawyers, {{12}} duty is to the institution 
               id: "en-c1-09-l2-9",
               no: 9,
               text: "Gap 9",
-              accept: ["for"],
+              accept: ["for", "to"],
               explain:
-                "`for whom` yapısı bir kişi öbeğine ilgi cümlesi bağlıyor ve anlam «onlar için» olduğu için edat `for`dur. `to whom` yönelme bildirir ve burada tümlecin anlamını bozar.",
+                "`for whom` yapısı bir kişi öbeğine ilgi cümlesi bağlıyor ve anlam «onlar için» olduğu için edat `for`dur. «onların gözünde» anlamıyla `to whom` da doğrudur ve kabul edilir.",
             },
             {
               kind: "gap",
@@ -371,9 +371,9 @@ I am not making an accusation. Every individual decision in my thirty-one cases 
 
 The uncomfortable implication is that the instrument works best where it is worth least. An apology to somebody who is alive to hear it costs the institution something, which is arguably why it is not offered.`,
               gloss: [
-                { de: "a claimant", tr: "hak talep eden kişi", en: "claimant" },
-                { de: "an inquiry", tr: "soruşturma", en: "inquiry" },
-                { de: "indefensible", tr: "savunulamaz", en: "indefensible" },
+                { de: "a claimant", tr: "hak talep eden kişi", en: "der Antragsteller" },
+                { de: "an inquiry", tr: "soruşturma", en: "die Untersuchung" },
+                { de: "indefensible", tr: "savunulamaz", en: "unhaltbar" },
               ],
             },
           ],
@@ -541,9 +541,9 @@ Rarely is the sequence chosen by the people affected. It is chosen by lawyers, w
 
 That is a defensible instinct, and it produces, reliably, the version of the words that is worth least to the person receiving them.`,
               gloss: [
-                { de: "a settlement", tr: "uzlaşma, tazminat anlaşması", en: "settlement" },
-                { de: "closure", tr: "kapanma, tamamlanma duygusu", en: "closure" },
-                { de: "an instinct", tr: "içgüdü", en: "instinct" },
+                { de: "a settlement", tr: "uzlaşma, tazminat anlaşması", en: "der Vergleich" },
+                { de: "closure", tr: "kapanma, tamamlanma duygusu", en: "der Abschluss" },
+                { de: "an instinct", tr: "içgüdü", en: "der Instinkt" },
               ],
             },
           ],

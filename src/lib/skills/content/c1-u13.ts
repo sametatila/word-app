@@ -49,7 +49,7 @@ export const c1U13: SkillExercise[] = [
       { de: "außen", tr: "dıştan", en: "on the outside" },
       { de: "suggerieren", tr: "telkin etmek", en: "to imply" },
       { de: "lesen", tr: "okumak", en: "to read" },
-      { de: "fremd", tr: "yabancı", en: "unfamiliar" },
+      { de: "fremd", tr: "başkasına ait", en: "someone else's" },
       { de: "die Auslassung", tr: "atlama", en: "omission" },
       { de: "eckig", tr: "köşeli", en: "angular" },
       { de: "miss", tr: "olumsuzluk ön eki", en: "negative prefix" },
@@ -63,8 +63,8 @@ export const c1U13: SkillExercise[] = [
       "Der Mechanismus ist einfach. Fast jede wissenschaftliche Aussage steht unter Bedingungen: „Unter den hier untersuchten Bedingungen erhöht sich das Risiko deutlich.“ Wer den ersten Halbsatz streicht, hat kein Wort geändert und trotzdem eine allgemeine Behauptung erzeugt, die der Autor nie aufgestellt hat.\n\n" +
       "Ähnlich wirkt das Auslassungszeichen. Drei Punkte sind erlaubt, wenn sie Redundanz entfernen. Sie sind unzulässig, wenn zwischen ihnen eine Einschränkung verschwindet — und genau das lässt sich von außen nicht prüfen, weshalb die Verantwortung beim Zitierenden bleibt.\n\n" +
       "Ein dritter Fall betrifft die Urheberschaft. „Wie X treffend bemerkte, sei die Regel überholt“ suggeriert, X habe die Regel für überholt gehalten. Vielleicht hat X aber nur referiert, was andere behaupten. Wer eine Fußnote setzt, ohne die Passage im Original gelesen zu haben, übernimmt fremde Fehler und macht sie zu eigenen.\n\n" +
-      "Die zweite Regel betrifft die Auslassung. Drei Punkte in eckigen Klammern zeigen an, dass etwas fehlt; sie dürfen kürzen, aber nicht wenden. Wer mit ihnen eine Einschränkung entfernt, hat kein Zitat mehr, sondern eine eigene Aussage in fremden Anführungszeichen.\n\n" +
-      "Die Regel der Zunft ist deshalb streng und einfach: Man zitiert nur, was man selbst gelesen hat, und man verweist auf die Seite, nicht auf das Werk. Wer beides einhält, kann falsch liegen — aber nicht unredlich sein. Und die Integrität eines Textes bemisst sich nicht daran, ob er recht hat, sondern daran, ob man sie überprüfen kann.",
+      "Zurück zur Auslassung: Drei Punkte in eckigen Klammern zeigen an, dass etwas fehlt; sie dürfen kürzen, aber nicht wenden. Wer mit ihnen eine Einschränkung entfernt, hat kein Zitat mehr, sondern eine eigene Aussage in fremden Anführungszeichen.\n\n" +
+      "Die Regel der Zunft ist deshalb streng und einfach: Man zitiert nur, was man selbst gelesen hat, und man verweist auf die Seite, nicht auf das Werk. Wer beides einhält, kann falsch liegen — aber nicht unredlich sein. Und die Integrität eines Textes bemisst sich nicht daran, ob er recht hat, sondern daran, ob man ihn überprüfen kann.",
     questions: [
       {
         text: "Wie kann ein wörtlich korrektes Zitat trotzdem entstellen?",
@@ -113,7 +113,7 @@ export const c1U13: SkillExercise[] = [
         answer: 0,
         accept: [
           "an der Überprüfbarkeit",
-          "daran, ob man sie überprüfen kann",
+          "daran, ob man ihn überprüfen kann",
           "nicht daran, ob er recht hat, sondern ob man es prüfen kann",
         ],
         explain: "Doğruluk değil denetlenebilirlik ölçüt.",
@@ -146,7 +146,7 @@ export const c1U13: SkillExercise[] = [
       { de: "unbegrenzt", tr: "sınırsız", en: "unlimited" },
       { de: "der Angreifer", tr: "saldırgan", en: "attacker" },
       { de: "der Ermessensspielraum", tr: "takdir marjı", en: "margin of discretion" },
-      { de: "verlagern", tr: "nakletmek", en: "to relocate" },
+      { de: "verlagern", tr: "kaydırmak", en: "to shift" },
       { de: "automatisch", tr: "otomatik", en: "automatic" },
       { de: "genügen", tr: "yetmek", en: "to be enough" },
       { de: "die Fälligkeit", tr: "vade", en: "due date" },

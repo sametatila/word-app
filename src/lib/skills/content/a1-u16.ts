@@ -47,7 +47,7 @@ export const a1U16: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Die Wohnung ist im Stock ___.",
+        text: "Die Wohnung ist im ___. Stock.",
         options: [],
         answer: 0,
         accept: ["3.", "3"],

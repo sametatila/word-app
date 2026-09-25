@@ -20,7 +20,7 @@ export const deB1P13: SkillExercise[] = [
     skill: "reading",
     title: "Vom Schreibtisch in die Backstube",
     genre: "profile",
-    intro: "Bir portre yazısı: kırk iki yaşında masa başı işini bırakıp fırıncı olan biri neden değişti, bedeli ne oldu, bugün ne diyor.",
+    intro: "Bir portre yazısı: masa başı işini bırakıp fırıncı olan kırk iki yaşındaki biri neden değişti, bedeli ne oldu, bugün ne diyor.",
     gloss: [
       { de: "die Backstube", tr: "fırın atölyesi", en: "bakehouse" },
       { de: "der Buchhalter", tr: "muhasebeci", en: "accountant" },

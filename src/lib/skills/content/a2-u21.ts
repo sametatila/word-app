@@ -45,7 +45,7 @@ export const a2U21: SkillExercise[] = [
       { de: "total", tr: "tamamen", en: "totally" },
       { de: "die Erklärung", tr: "açıklama", en: "explanation" },
       { de: "der Text", tr: "metin", en: "text" },
-      { de: "leicht", tr: "hafif", en: "light" },
+      { de: "leicht", tr: "kolay", en: "easy" },
     ],
     minutes: 4,
     text:

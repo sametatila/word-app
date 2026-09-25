@@ -27,7 +27,7 @@ export const enB2P10: SkillExercise[] = [
       { de: "careless", tr: "dikkatsiz" },
       { de: "friction", tr: "sürtünme" },
       { de: "visible", tr: "görünür" },
-      { de: "caution", tr: "tedbir" },
+      { de: "caution", tr: "uyarı" },
       { de: "eventually", tr: "en sonunda" },
       { de: "harmful", tr: "zararlı" },
       { de: "compete", tr: "rekabet etmek" },

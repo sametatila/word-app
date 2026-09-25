@@ -7,7 +7,7 @@
  {
   "tr": "Lena ailesini tanıtıyor. Kim kimin nesi, kaç yaşında?",
   "kind": "intro",
-  "en": "Lena introduces her family. Who is whose what, and how old?"
+  "en": "Lena introduces her family. Who is related to whom, and how old are they?"
  },
  {
   "tr": "Nesne var (das) → dönüşlü zamir Dativ'e geçer: „mir“.",
@@ -410,11 +410,6 @@
   "en": "„Sie kommen aus Polen.“ Bremen is the city Lena lives in."
  },
  {
-  "tr": "„so … wie“ EŞİTLİK kurar. Eşit olmasaydı „als“ gelirdi.",
-  "kind": "explain",
-  "en": "„so … wie“ marks EQUALITY. If they were not equal it would be „als“."
- },
- {
   "tr": "„statt“ sonrası zu'lu MASTAR gelir, çekimli fiil değil.",
   "kind": "explain",
   "en": "„statt“ is followed by an INFINITIVE with zu, not a finite verb."
@@ -428,11 +423,6 @@
   "tr": "„Zusammen sind das 650 Euro warm.“ 550 kalt, 100 aidat.",
   "kind": "explain",
   "en": "„Zusammen sind das 650 Euro warm.“ 550 cold, 100 service charge."
- },
- {
-  "tr": "Aile mantığı dışına çıktığı için ayrıca akılda kalıyor.",
-  "kind": "explain",
-  "en": "It steps outside the logic of the family, which is why it sticks."
  },
  {
   "tr": "Almanca metin okurun öncekini hatırladığını varsayıyor.",
@@ -500,11 +490,6 @@
   "en": "The end of a farewell dinner. What is planned, who brings what?"
  },
  {
-  "tr": "Bir yazıya iki yanıt. Kim katılıyor, kim karşı çıkıyor?",
-  "kind": "intro",
-  "en": "Two replies to an article. Who agrees, who disagrees?"
- },
- {
   "tr": "Birebir çeviri neden tökezler? Sorun sözcüklerde değil.",
   "kind": "intro",
   "en": "Why does a literal translation stumble? The trouble is not the words."
@@ -513,11 +498,6 @@
   "tr": "Biri bir hayalin peşine düşüyor. İlk adım ne, kuşku ne?",
   "kind": "intro",
   "en": "Somebody is chasing a dream. What is the first step, and the doubt?"
- },
- {
-  "tr": "Biri memleket yemeğini anlatıyor. Ne en iyi nasıl olur?",
-  "kind": "intro",
-  "en": "Somebody describes a dish from home. How is it best made?"
  },
  {
   "tr": "Bu yüzden sonunda kendi konumunu adlandırmak gerekiyor.",

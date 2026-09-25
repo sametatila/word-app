@@ -30,20 +30,25 @@ export const deB1P9: SkillExercise[] = [
     minutes: 6,
     text:
       "Thema: Lohnt sich Gebrauchtes wirklich?\n\n" +
-      "nordlicht77: Ich kaufe seit fünf Jahren fast alles gebraucht. Die Ersparnis liegt bei " +
-      "Möbeln locker bei siebzig Prozent. Klar dauert die Suche, aber ich rechne die Stunden " +
-      "nicht gegen das Geld — ich suche abends auf dem Sofa, nicht während der Arbeitszeit.\n\n" +
-      "Marek_B: Bei Möbeln bin ich dabei, bei Technik nicht. Ich habe letztes Jahr eine " +
-      "gebrauchte Waschmaschine gekauft, hundertachtzig Euro. Nach vier Monaten war die Pumpe " +
-      "kaputt, die Reparatur hat hundertzwanzig gekostet. Wegen der fehlenden Garantie " +
-      "war ich allein mit dem Problem.\n\n" +
-      "Ines: Das ist der Punkt, über den selten jemand spricht. Gebraucht kaufen lohnt sich " +
-      "vor allem für Leute, die selbst reparieren können oder jemanden kennen. " +
-      "Für alle anderen ist der niedrige Preis nur die halbe Rechnung.\n\n" +
-      "nordlicht77: Stimmt teilweise. Aber trotz des Risikos wäre ich bei der Waschmaschine " +
-      "noch im Plus: dreihundert neu, hundertachtzig plus hundertzwanzig gebraucht — das ist " +
-      "dasselbe, und die Maschine läuft jetzt weiter.\n\n" +
-      "Marek_B: Rechnerisch hast du recht. Der Aufwand steht in der Rechnung nur nicht drin.",
+      "nordlicht77: Ich kaufe seit fünf Jahren fast alles gebraucht. Die " +
+      "Ersparnis liegt bei Möbeln locker bei siebzig Prozent. Klar dauert die " +
+      "Suche, aber ich rechne die Stunden nicht gegen das Geld — ich suche " +
+      "abends auf dem Sofa, nicht während der Arbeitszeit.\n\n" +
+      "Marek_B: Bei Möbeln bin ich dabei, bei Technik nicht. Ich habe letztes " +
+      "Jahr eine gebrauchte Waschmaschine gekauft, hundertachtzig Euro. Nach " +
+      "vier Monaten war die Pumpe kaputt, die Reparatur hat hundertzwanzig " +
+      "gekostet. Wegen der fehlenden Garantie war ich allein mit dem " +
+      "Problem.\n\n" +
+      "Ines: Das ist der Punkt, über den selten jemand spricht. Gebraucht " +
+      "kaufen lohnt sich vor allem für Leute, die selbst reparieren können " +
+      "oder jemanden kennen. Für alle anderen ist der niedrige Preis nur die " +
+      "halbe Rechnung.\n\n" +
+      "nordlicht77: Stimmt teilweise. Aber trotz des Risikos wäre ich bei der " +
+      "Waschmaschine nicht im Minus: dreihundert neu, hundertachtzig plus " +
+      "hundertzwanzig gebraucht — das ist dasselbe, und die Maschine läuft " +
+      "jetzt weiter.\n\n" +
+      "Marek_B: Rechnerisch hast du recht. Der Aufwand steht in der Rechnung " +
+      "nur nicht drin.",
     questions: [
       {
         text: "Worin sind sich nordlicht77 und Marek_B einig?",

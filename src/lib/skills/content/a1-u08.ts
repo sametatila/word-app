@@ -53,7 +53,7 @@ export const a1U08: SkillExercise[] = [
       {
         text: "Warum isst Tarek keinen Schinken?",
         options: [
-          "Er ist nicht allergisch — er mag ihn nicht",
+          "Er ist nicht allergisch — er isst ihn einfach nicht",
           "Er ist allergisch gegen Schinken",
           "Er hat keinen Hunger",
         ],

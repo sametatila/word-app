@@ -84,7 +84,7 @@ Fachlich diskutiere ich ohne Mühe; in der Kaffeepause bin ich still. Das hat Fo
 
 Man hat mir oft geraten, ich solle einfach mehr sprechen. Das ist gut gemeint und geht am Kern vorbei.
 
-Es fehlt mir nicht an Wörtern, sondern an Geschwindigkeit. Bis mein Satz fertig ist, sind zwei Themen weiter.`,
+Es fehlt mir nicht an Wörtern, sondern an Geschwindigkeit. Bis mein Satz fertig ist, sind die anderen schon zwei Themen weiter.`,
               gloss: [
                 { de: "die Absprache", tr: "gayriresmî anlaşma", en: "informal arrangement" },
                 { de: "am Kern vorbeigehen", tr: "asıl noktayı ıskalamak", en: "to miss the point" },

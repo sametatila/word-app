@@ -31,7 +31,7 @@ export const enB2P4: SkillExercise[] = [
       { de: "current", tr: "mevcut" },
       { de: "edge", tr: "kenar" },
       { de: "wind", tr: "rüzgâr" },
-      { de: "appear", tr: "bizzat gitmek" },
+      { de: "appear", tr: "ortaya çıkmak" },
       { de: "roof", tr: "çatı" },
     ],
     minutes: 9,

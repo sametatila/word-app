@@ -89,7 +89,7 @@ export const EN_B1_06: MockPaper = {
               options: ["Charge for repairs", "Hire out instruments after the first year", "Give back the fee if you stop early"],
               answer: 2,
               explain:
-                "Duyurunun son cümlesi bunu söylüyor: «we do not return the year's fee». Onarım için ücret AlINIYOR («You pay for repairs») ve kira ikinci yıl da sürüyor (yirmi euro), yani öteki iki şık okulun yaptığı şeyler.",
+                "Duyurunun son cümlesi bunu söylüyor: «we do not return the year's fee». Onarım için ücret ALINIYOR («You pay for repairs») ve kira ikinci yıl da sürüyor (yirmi euro), yani öteki iki şık okulun yaptığı şeyler.",
             },
             {
               kind: "mcq",
@@ -228,9 +228,9 @@ I should be honest about the limits. I will not play in public, I do not enjoy p
 
 However, I have started to hear things I could not hear before, and that has changed how I listen to everything else. My teacher, who has taught adults for twenty years, says this happens to everybody and that nobody mentions it, because it is not a result you can show anybody.`,
               gloss: [
-                { de: "modesty", tr: "alçakgönüllülük", en: "modesty" },
-                { de: "a conservatory", tr: "konservatuvar", en: "conservatory" },
-                { de: "to manage", tr: "üstesinden gelmek", en: "manage" },
+                { de: "modesty", tr: "alçakgönüllülük", en: "die Bescheidenheit" },
+                { de: "a conservatory", tr: "konservatuvar", en: "das Konservatorium" },
+                { de: "to manage", tr: "üstesinden gelmek", en: "schaffen" },
               ],
             },
           ],
@@ -313,9 +313,9 @@ The change that mattered most was not musical. Players who would never have audi
 
 The conductor is careful about recommending the model to other towns. {{20}}`,
               gloss: [
-                { de: "an audition", tr: "seçme sınavı", en: "audition" },
-                { de: "a rehearsal", tr: "prova", en: "rehearsal" },
-                { de: "a conductor", tr: "orkestra şefi", en: "conductor" },
+                { de: "an audition", tr: "seçme sınavı", en: "das Vorspiel" },
+                { de: "a rehearsal", tr: "prova", en: "die Probe" },
+                { de: "a conductor", tr: "orkestra şefi", en: "der Dirigent" },
               ],
             },
           ],
@@ -998,9 +998,9 @@ New players sit in the:     {{19}} row`,
                 { speaker: "Tuva", text: "Not as a general rule. If you need to be good at things, this is advice from a comfortable position and it is worth saying so. What I would recommend is telling one person in the first month, which costs nothing and would have saved me a year." },
               ],
               gloss: [
-                { de: "a cello", tr: "çello", en: "cello" },
-                { de: "a bar", tr: "ölçü (müzikte)", en: "bar in music" },
-                { de: "strings", tr: "teller", en: "strings" },
+                { de: "a cello", tr: "çello", en: "das Cello" },
+                { de: "a bar", tr: "ölçü (müzikte)", en: "der Takt" },
+                { de: "strings", tr: "teller", en: "die Streicher" },
               ],
             },
           ],

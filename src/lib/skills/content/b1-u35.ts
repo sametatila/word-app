@@ -42,7 +42,7 @@ export const b1U35: SkillExercise[] = [
       { de: "die Badewanne", tr: "küvet", en: "bathtub" },
       { de: "der Halt", tr: "tutamak / destek", en: "support" },
       { de: "die Länge", tr: "uzunluk", en: "length" },
-      { de: "rund", tr: "yuvarlak", en: "round" },
+      { de: "rund", tr: "gece gündüz, 24 saat", en: "around the clock" },
       { de: "der Anfänger", tr: "yeni başlayan", en: "beginner" },
       { de: "der Text", tr: "metin", en: "text" },
     ],
@@ -91,7 +91,7 @@ export const b1U35: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["eine Liste für den Tag", "eine Liste", "Liste"],
-        explain: "„… und danach eine Liste für den Tag dalässt.“",
+        explain: "„… und danach eine Liste für den Tag hinterlässt.“",
       },
     ],
   },
@@ -100,7 +100,7 @@ export const b1U35: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     unit: 35,
-    title: "Aufhören ist keine Frage von Willen",
+    title: "Aufhören ist keine Frage des Willens",
     genre: "personal",
     intro: "Biri sigarayı bırakmış. Ne işe yaradı, ne yaramadı?",
     minutes: 5,
@@ -115,23 +115,23 @@ export const b1U35: SkillExercise[] = [
     ],
     text:
       "Ich war zwanzig Jahre Raucher. Ich habe viermal mit dem Rauchen " +
-      "aufgehört und dreimal wieder angefangen. Beim fünften Mal hat es " +
+      "aufgehört und dreimal wieder angefangen. Beim vierten Mal hat es " +
       "geklappt, und ich weiß bis heute nicht genau warum.\n\n" +
       "Was nicht geholfen hat: gute Vorsätze. Was geholfen hat: keine " +
       "Zigaretten im Haus und ein anderer Weg zur Arbeit, weg vom Kiosk.\n\n" +
-      "Am schwersten war nicht der Körper, sondern das Verstecken. " +
-      "Als Raucher habe ich mich ständig versteckt — vor den Kindern, vor " +
-      "den Kollegen, am Ende vor mir selbst. Ein Suchtmittel macht dich " +
-      "nicht zum Opfer, aber es macht, dass du nicht mehr ehrlich bist.\n\n" +
-      "Heute bin ich Nichtraucher und rede nicht darüber, wenn mich " +
-      "niemand fragt. Wer aufhören will, hört nicht auf, weil ihm jemand " +
-      "eine Rede hält.",
+      "Am schwersten war nicht der Körper, sondern das Verstecken. Als Raucher " +
+      "habe ich mich ständig versteckt — vor den Kindern, vor den Kollegen, am " +
+      "Ende vor mir selbst. Ein Suchtmittel macht dich nicht zum Opfer, aber " +
+      "es macht, dass du nicht mehr ehrlich bist.\n\n" +
+      "Heute bin ich Nichtraucher und rede nicht darüber, wenn mich niemand " +
+      "fragt. Wer aufhören will, hört nicht auf, weil ihm jemand eine Rede " +
+      "hält.",
     questions: [
       {
         text: "Wie oft hat die Person aufgehört?",
         options: ["Einmal", "Viermal, beim fünften Mal hat es geklappt", "Nie"],
         answer: 1,
-        explain: "„Ich habe viermal mit dem Rauchen aufgehört … Beim fünften Mal hat es geklappt …“",
+        explain: "„Ich habe viermal mit dem Rauchen aufgehört … Beim vierten Mal hat es geklappt …“",
       },
       {
         text: "Was hat geholfen?",

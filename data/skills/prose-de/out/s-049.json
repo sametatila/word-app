@@ -92,7 +92,7 @@
  {
   "tr": "Üç kip bir şikâyette. Hangisi kişiyle yanıtlanıyor?",
   "kind": "intro",
-  "de": "Drei Modalverben in einer Beschwerde. Welche wird von einem Menschen beantwortet?"
+  "de": "Drei Modalverben in einer Beschwerde. Welches wird von einem Menschen beantwortet?"
  },
  {
   "tr": "Üç yarık cümle. Hangisi bir eksikliği adlandırıyor?",
@@ -110,11 +110,6 @@
   "de": "Das Objektpronomen fällt mal weg, mal nicht. Wo ist die Grenze?"
  },
  {
-  "tr": "Şart koymak ile durumu betimlemek. Ve seviyenin kendi ipi.",
-  "kind": "intro",
-  "de": "Eine Bedingung setzen und eine Lage beschreiben. Und der rote Faden der Stufe."
- },
- {
   "tr": "„the“ ile „of“ birlikte geliyor. Biri olmadan öteki olur mu?",
   "kind": "intro",
   "de": "„the“ und „of“ kommen zusammen. Geht das eine ohne das andere?"
@@ -128,11 +123,6 @@
   "tr": "„„on balance“ is the one that says something…“",
   "kind": "explain",
   "de": "„„on balance“ is the one that says something…“"
- },
- {
-  "tr": "Neden, şart, seviyenin ipi, en sonda tek soru.",
-  "kind": "explain",
-  "de": "Grund, Bedingung, der rote Faden der Stufe, am Ende eine einzige Frage."
  },
  {
   "tr": "„„Must have failed to“ sounds like a description…“",
@@ -843,5 +833,10 @@
   "tr": "ancak konuşmadan sonra",
   "kind": "gloss.tr",
   "de": "erst nach dem Gespräch"
+ },
+ {
+  "tr": "düşürdüler",
+  "kind": "gloss.tr",
+  "de": "senkten"
  }
 ]

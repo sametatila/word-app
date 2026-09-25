@@ -88,7 +88,7 @@ export const enC1U18: SkillExercise[] = [
       { de: "established", tr: "yerleşik" },
       { de: "coined", tr: "uydurulmuş" },
       { de: "a law", tr: "yasa" },
-      { de: "tempted", tr: "ayartılmış" },
+      { de: "tempted", tr: "meyilli" },
       { de: "a method", tr: "yöntem" },
       { de: "a quantity", tr: "nicelik" },
     ],
@@ -104,7 +104,7 @@ export const enC1U18: SkillExercise[] = [
       "The precipitation fell; the harvest did not. One more line with nobody in it, and by now that ought to be the first thing a reader notices rather than the last.",
     questions: [
       {
-        text: "What has changed in the two words?",
+        text: "What else has changed in the two words?",
         options: ["nothing else", "the stem", "the ending"],
         answer: 0,
         explain: "„Nothing else in either word has changed.“",

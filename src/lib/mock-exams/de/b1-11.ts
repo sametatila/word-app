@@ -471,7 +471,7 @@ Selma Idrissi`,
               genre: "Forum",
               genreTr: "Forum",
               title: "Nur noch aus der Region — ja oder nein?",
-              body: `Ruth Kirchhoff: Ich leite eine Mensa, die genau das gemacht hat, und ich bin dafür. Der Einkauf kostet uns achtzehn Cent mehr pro Portion, aber wir werfen dreiviertel weniger weg. Wer nur auf den Einkaufspreis schaut, rechnet die Hälfte.
+              body: `Ruth Kirchhoff: Ich leite eine Mensa, die genau das gemacht hat, und ich bin dafür. Der Einkauf kostet uns achtzehn Cent mehr pro Portion, aber wir werfen drei Viertel weniger weg. Wer nur auf den Einkaufspreis schaut, rechnet die Hälfte.
 
 Timur Aksoy: Ich koche in einer Kita und bin dagegen. Nicht weil regional schlecht wäre, sondern weil wir zwei Köche für hundertzwanzig Kinder sind. Kleine Lieferungen heißen mehr Bestellungen, mehr Rechnungen, mehr Telefonate. Diese Zeit haben wir schlicht nicht.
 
@@ -502,7 +502,7 @@ Frau Merzig: Ich bin dafür, unter einer Bedingung: Die Schule muss zwei Tage vo
               options: ["Dafür.", "Dagegen."],
               answer: 0,
               explain:
-                "Kendi deneyimiyle destekliyor: alım on sekiz kuruş pahalı ama israf dörtte üç azalmış — \"Wer nur auf den Einkaufspreis schaut, rechnet die Hälfte.\"",
+                "Kendi deneyimiyle destekliyor: alım porsiyon başına on sekiz sent pahalı ama israf dörtte üç azalmış — \"Wer nur auf den Einkaufspreis schaut, rechnet die Hälfte.\"",
             },
             {
               kind: "mcq",
@@ -524,7 +524,7 @@ Frau Merzig: Ich bin dafür, unter einer Bedingung: Die Schule muss zwei Tage vo
               options: ["Dafür.", "Dagegen."],
               answer: 0,
               explain:
-                "Destek koşullu ama açık: \"aber nur, wenn der Preis für die Familien gleich bleibt\" — elli kuruşluk zam sekiz çocuğu yemekhaneden çıkarmış.",
+                "Destek koşullu ama açık: \"aber nur, wenn der Preis für die Familien gleich bleibt\" — elli sentlik zam sekiz çocuğu yemekhaneden çıkarmış.",
             },
             {
               kind: "mcq",
@@ -535,7 +535,7 @@ Frau Merzig: Ich bin dafür, unter einer Bedingung: Die Schule muss zwei Tage vo
               options: ["Dafür.", "Dagegen."],
               answer: 1,
               explain:
-                "Kendisi üretici olmasına rağmen zorunluluğa karşı: şubatta yüz kilo salata teslim edemiyorlar, ve böyle bir kural mutfağı açıkta bırakıyor.",
+                "Kendisi üretici olmasına rağmen zorunluluğa karşı: şubatta yüz kilo salata teslim edemiyorlar ve böyle bir kural mutfağı açıkta bırakıyor.",
             },
             {
               kind: "mcq",

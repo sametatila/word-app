@@ -99,7 +99,7 @@ export const deB2P19: SkillExercise[] = [
           "einen Namen vorher laut auszuprobieren",
         ],
         answer: 2,
-        explain: "Karar vermeden önce adı bir kez yüksek sesle bir oyun parkında seslenerek denemeyi öneriyorlar.",
+        explain: "Karar vermeden önce adı bir oyun parkında bir kez yüksek sesle söyleyerek denemeyi öneriyorlar.",
       },
     ],
   },

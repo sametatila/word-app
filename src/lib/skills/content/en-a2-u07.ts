@@ -107,7 +107,7 @@ export const enA2U07: SkillExercise[] = [
     genre: "story",
     intro: "Bir sabah, üç masa: danışma, servis, sigorta. Ne gerekiyordu?",
     gloss: [
-      { de: "desk", tr: "masa" },
+      { de: "desk", tr: "danışma masası" },
       { de: "kind", tr: "nazik" },
       { de: "on the way home", tr: "eve dönerken" },
     ],
@@ -188,7 +188,7 @@ export const enA2U07: SkillExercise[] = [
       { de: "patients", tr: "hastalar" },
       { de: "go through", tr: "içinden geçmek" },
       { de: "Get well soon", tr: "geçmiş olsun" },
-      { de: "desk", tr: "masa" },
+      { de: "desk", tr: "danışma masası" },
       { de: "You're welcome", tr: "rica ederim" },
     ],
     minutes: 5,

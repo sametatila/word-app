@@ -44,9 +44,9 @@ export const a2U16: SkillExercise[] = [
       { de: "die Unterkunft", tr: "konaklama", en: "accommodation" },
       { de: "die Abreise", tr: "dönüş / ayrılış", en: "departure" },
       { de: "also", tr: "yani", en: "so" },
-      { de: "der Pass", tr: "pasaport", en: "passport" },
+      { de: "aufpassen", tr: "dikkat etmek", en: "to watch out" },
       { de: "morgens", tr: "sabahları", en: "in the morning" },
-      { de: "die Bucht", tr: "koy", en: "bay" },
+      { de: "umsteigen", tr: "aktarma yapmak", en: "to change" },
       { de: "gebucht", tr: "rezerve edilmiş", en: "booked" },
     ],
     minutes: 4,
@@ -118,7 +118,7 @@ export const a2U16: SkillExercise[] = [
     text:
       "JUGENDHERBERGE AM STRAND — GUT ZU WISSEN\n\n" +
       "ANKUNFT. Einchecken können Sie ab 15 Uhr. Kommen Sie früher an, stellen Sie Ihr Gepäck bitte in den Raum neben der Rezeption; dort können wir es bis 15 Uhr aufbewahren.\n\n" +
-      "ZIMMERSCHLÜSSEL. Jeder Gast bekommt einen Schlüssel. Bei Verlust zahlen Sie 20 Euro. Legen Sie ihn nicht ins Zimmer und schließen Sie die Tür nicht von außen zu.\n\n" +
+      "ZIMMERSCHLÜSSEL. Jeder Gast bekommt einen Schlüssel. Bei Verlust zahlen Sie 20 Euro. Lassen Sie ihn nicht im Zimmer liegen, wenn Sie die Tür von außen schließen.\n\n" +
       "ABREISE. Die Zimmer sind bis 10 Uhr frei zu machen. Wer später fährt, kann die Reisetasche wieder unten lassen.\n\n" +
       "WÄSCHE. Im Keller stehen zwei Maschinen, drei Euro pro Waschgang. Kleingeld bekommen Sie an der Rezeption.\n\n" +
       "FRÜHSTÜCK. 7 bis 9:30 Uhr. Wer ein Zimmer ohne Frühstück reserviert hat, kann für sechs Euro dazubuchen.",

@@ -39,7 +39,7 @@ export const a2U20: SkillExercise[] = [
       { de: "humorvoll", tr: "espritüel", en: "humorous" },
       { de: "modisch", tr: "modaya uygun", en: "fashionable" },
       { de: "lässig", tr: "rahat / havalı", en: "casual" },
-      { de: "der Pass", tr: "pasaport", en: "passport" },
+      { de: "passen", tr: "uymak", en: "to fit" },
       { de: "der Text", tr: "metin", en: "text" },
     ],
     minutes: 4,
@@ -97,7 +97,7 @@ export const a2U20: SkillExercise[] = [
     gloss: [
       { de: "der Kontakt", tr: "iletişim", en: "contact" },
       { de: "die Sprachnachricht", tr: "sesli mesaj", en: "voice message" },
-      { de: "zurückschreiben", tr: "geri yazmak", en: "to write back" },
+      { de: "zurückschreiben", tr: "cevap yazmak", en: "to write back" },
       { de: "die Webcam", tr: "kamera", en: "webcam" },
       { de: "chatten", tr: "yazışmak", en: "to chat" },
       { de: "mailen", tr: "e-posta atmak", en: "to email" },

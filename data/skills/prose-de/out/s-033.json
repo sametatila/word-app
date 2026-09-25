@@ -205,11 +205,6 @@
   "de": "„Don't press it twice. Then it starts again from the beginning.“"
  },
  {
-  "tr": "„How much is free on the disk? … Six.“ — onun altı sorun demekti.",
-  "kind": "explain",
-  "de": "„How much is free on the disk? … Six.“ — unter zehn hieß: das ist das Problem."
- },
- {
   "tr": "„We don't require the letter this year. But the address paper, yes.“",
   "kind": "explain",
   "de": "„We don't require the letter this year. But the address paper, yes.“"
@@ -228,11 +223,6 @@
   "tr": "„Renew. The old one is valid until November.“ — 2030 pasaportun tarihi.",
   "kind": "explain",
   "de": "„Renew. The old one is valid until November.“ — 2030 gehört zum Pass."
- },
- {
-  "tr": "„It happened at about six o'clock.“ — beş buçukta hâlâ ödeme yapılmıştı.",
-  "kind": "explain",
-  "de": "„It happened at about six o'clock.“ — um halb sechs wurde noch bezahlt."
  },
  {
   "tr": "„I agree with you about the games“ — yalnız oyunlar için, hepsi için değil.",

@@ -89,7 +89,7 @@ export const b1U17: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Was soll man tun, wenn eine Meldung sofort ärgert?",
+        text: "Was soll man tun, wenn eine Meldung einen sofort ärgert?",
         options: [],
         answer: 0,
         accept: ["zehn Minuten warten", "warten und noch einmal suchen", "zehn Minuten"],
@@ -128,7 +128,7 @@ export const b1U17: SkillExercise[] = [
       "Es passiert wenig, und ich habe zweimal aufgehört. Ab Kapitel sechs " +
       "wurde es besser, das gebe ich zu. Die Stimmung am Ende hat mich " +
       "wirklich überrascht.\n\n" +
-      "Nächstes Mal wählen wir ein Gedicht statt eines Romans. Der Verlag " +
+      "Nächstes Mal wählen wir einen Gedichtband statt eines Romans. Der Verlag " +
       "schickt uns dafür zehn Bücher. Wer eins möchte, sagt bis Freitag " +
       "Bescheid.",
     questions: [
@@ -164,7 +164,7 @@ export const b1U17: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["ein Gedicht", "Gedicht"],
-        explain: "„Nächstes Mal wählen wir ein Gedicht statt eines Romans.“",
+        explain: "„Nächstes Mal wählen wir einen Gedichtband statt eines Romans.“",
       },
     ],
   },

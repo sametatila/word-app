@@ -34,13 +34,13 @@ export const b1U04: SkillExercise[] = [
       { de: "die Gebühr", tr: "ücret / harç", en: "fee" },
       { de: "die Kündigung", tr: "fesih bildirimi", en: "termination" },
       { de: "regeln", tr: "düzenlemek", en: "to regulate" },
-      { de: "übernehmen", tr: "devralmak", en: "to take over" },
+      { de: "übernehmen", tr: "üstlenmek", en: "to pay for" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
       { de: "die Zahl", tr: "sayı", en: "number" },
     ],
     text:
       "Im Mietvertrag wird geregelt, was der Mieter und was der Vermieter machen muss. " +
-      "Der Mieter ist verpflichtet, die Miete bis zum dritten des Monats zu zahlen. " +
+      "Der Mieter ist verpflichtet, die Miete bis zum Dritten des Monats zu zahlen. " +
       "Zusätzlich werden jeden Monat Kosten für Heizung und Wasser berechnet. " +
       "Diese Gebühr wird einmal im Jahr genau geprüft.\n\n" +
       "Kleine Reparaturen bis fünfzig Euro werden vom Mieter übernommen. " +
@@ -53,9 +53,9 @@ export const b1U04: SkillExercise[] = [
     questions: [
       {
         text: "Bis wann muss die Miete gezahlt werden?",
-        options: ["Bis zum ersten", "Bis zum dritten", "Bis zum Monatsende"],
+        options: ["Bis zum Ersten", "Bis zum Dritten", "Bis zum Monatsende"],
         answer: 1,
-        explain: "„Der Mieter ist verpflichtet, die Miete bis zum dritten des Monats zu zahlen.“",
+        explain: "„Der Mieter ist verpflichtet, die Miete bis zum Dritten des Monats zu zahlen.“",
       },
       {
         text: "Wer bezahlt eine Reparatur für achtzig Euro?",
@@ -130,7 +130,7 @@ export const b1U04: SkillExercise[] = [
         explain: "„Der Lärm nachts muss aufhören!“",
       },
       {
-        text: "Was bittet Wohnung 3?",
+        text: "Worum bittet Wohnung 3?",
         options: ["Nach zehn Uhr etwas ruhiger zu sein", "Nie laut zu sein", "Auszuziehen"],
         answer: 0,
         explain: "„… es wäre schön, wenn es nach zehn Uhr etwas ruhiger wäre.“",

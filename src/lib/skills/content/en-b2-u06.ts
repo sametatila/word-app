@@ -160,7 +160,7 @@ export const enB2U06: SkillExercise[] = [
     ],
     minutes: 9,
     text:
-      "It is reported that the origin is unclear. Six words before anything is said, and they are all doing the same job: this is what we have been told, and we are not yet standing behind it.\n" +
+      "It is reported that the origin is unclear. Four words before anything is said, and they are all doing the same job: this is what we have been told, and we are not yet standing behind it.\n" +
       "The figures are said to verify the claim. The shorter route, and the one this kind of note prefers: the subject comes first, the infinitive follows, and a reader scanning the page finds the nouns where they expect them.\n" +
       "The accuracy is thought to be high. That one is worth stopping on, because it is the sentence that most often hides the fact that nobody has checked. Thought by whom? If the answer is „by the person who wrote the line“, the passive has been used to make one opinion look like a field of them.\n" +
       "There is a clean test and it takes two seconds. Put a name in front of the verb. „The laboratory reports that the origin is unclear“ either reads as true or it does not, and if it does not, the passive version was never true either.\n" +

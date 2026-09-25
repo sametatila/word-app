@@ -44,7 +44,7 @@ export const b2U01: SkillExercise[] = [
       { de: "darlegen", tr: "ortaya koymak", en: "to set out" },
       { de: "strukturieren", tr: "yapılandırmak", en: "to structure" },
       { de: "eingehen auf", tr: "değinmek", en: "to address" },
-      { de: "die Trainerin", tr: "kadın antrenör", en: "female coach" },
+      { de: "die Trainerin", tr: "kadın eğitmen", en: "female coach" },
       { de: "die Länge", tr: "uzunluk", en: "length" },
       { de: "der Text", tr: "metin", en: "text" },
     ],
@@ -146,7 +146,7 @@ export const b2U01: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["Rückgang"],
-        explain: "Edilgen Perfekt geçmişte: war … verzeichnet worden. Artıştan önce bir düşüş var.",
+        explain: "Edilgen Plusquamperfekt: war … verzeichnet worden. Artıştan önce bir düşüş var.",
       },
       {
         text: "Warum ist die gezeigte Zunahme von zwanzig Prozent irreführend?",

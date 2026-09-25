@@ -56,9 +56,9 @@ I cook at seven. Are you hungry?
 
 Mateo`,
               gloss: [
-                { de: "the market", tr: "pazar", en: "market" },
-                { de: "hungry", tr: "aç", en: "hungry" },
-                { de: "no more", tr: "daha fazla değil", en: "no more" },
+                { de: "the market", tr: "pazar", en: "der Markt" },
+                { de: "hungry", tr: "aç", en: "hungrig" },
+                { de: "no more", tr: "daha fazla değil", en: "nicht mehr" },
               ],
             },
             {
@@ -73,13 +73,13 @@ Tea and coffee cost 2 euros. Bread, cheese and eggs together cost 6 euros.
 
 Children under six eat for free.
 
-We do not take cards. Please pay with money.
+We do not take cards. Please pay in cash.
 
 Greta and Hakan`,
               gloss: [
-                { de: "for free", tr: "ücretsiz", en: "for free" },
-                { de: "together", tr: "birlikte", en: "together" },
-                { de: "to take a card", tr: "kart kabul etmek", en: "to accept a card" },
+                { de: "for free", tr: "ücretsiz", en: "kostenlos" },
+                { de: "together", tr: "birlikte", en: "zusammen" },
+                { de: "to take a card", tr: "kart kabul etmek", en: "Karten annehmen" },
               ],
             },
           ],
@@ -112,7 +112,7 @@ Greta and Hakan`,
               text: "Mateo makes the food in the evening.",
               answer: true,
               explain:
-                "Not «I cook at seven» diyor ve öncesinde saat dörtte pazara gittiğini söylüyor; yedi akşamüstüdür. Yemeği yapan Mateo, Zeynep değil — madde kimin pişirdiğini de ölçüyor.",
+                "Not «I cook at seven» diyor ve öncesinde saat dörtte pazara gideceğini söylüyor; yedi akşamüstüdür. Yemeği yapan Mateo, Zeynep değil — madde kimin pişirdiğini de ölçüyor.",
             },
             {
               kind: "bool",
@@ -156,7 +156,7 @@ Fruit, vegetables, bread and cheese from farms near the town.
 
 Bring your own bag. We have no plastic bags.
 
-You can pay with money or with a card.`,
+You can pay in cash or by card.`,
             },
             {
               kind: "text",
@@ -226,7 +226,7 @@ Write your name on the paper at the door.`,
               options: ["Green Market", "Late Night Shop", "Cooking Club"],
               answer: 0,
               explain:
-                "Yalnız pazar duyurusu ödeme biçimini açıkça veriyor: «You can pay with money or with a card». Öteki iki duyuruda kart kabul edildiğine dair bir bilgi yok.",
+                "Yalnız pazar duyurusu ödeme biçimini açıkça veriyor: «You can pay in cash or by card». Öteki iki duyuruda kart kabul edildiğine dair bir bilgi yok.",
             },
             {
               kind: "mcq",

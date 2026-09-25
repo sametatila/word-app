@@ -67,8 +67,8 @@ export const enC1U16: SkillExercise[] = [
       { de: "builds", tr: "kuruyor" },
       { de: "property", tr: "özellik" },
       { de: "belongs", tr: "ait" },
-      { de: "simply", tr: "düpedüz" },
-      { de: "anywhere", tr: "başka yerde" },
+      { de: "simply", tr: "öylece" },
+      { de: "anywhere", tr: "hiçbir yerinde" },
       { de: "side by side", tr: "yan yana" },
       { de: "posture", tr: "duruş" },
       { de: "a state", tr: "durum" },
@@ -165,7 +165,7 @@ export const enC1U16: SkillExercise[] = [
     gloss: [
       { de: "owners", tr: "sahipler" },
       { de: "disagreement", tr: "anlaşmazlık" },
-      { de: "fit", tr: "yerleşmek" },
+      { de: "fit", tr: "uymak" },
       { de: "whatever", tr: "her ne" },
       { de: "halves", tr: "yarılar" },
       { de: "practical", tr: "işe dönük" },
@@ -191,7 +191,7 @@ export const enC1U16: SkillExercise[] = [
       { de: "measured", tr: "ölçülen" },
       { de: "a hectare", tr: "hektar" },
       { de: "reversed", tr: "geri döndürülen" },
-      { de: "boundaries", tr: "sınır koymak" },
+      { de: "boundaries", tr: "sınırlar" },
     ],
     minutes: 12,
     text:

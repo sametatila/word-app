@@ -46,18 +46,17 @@ export const b1U41: SkillExercise[] = [
       { de: "fließend", tr: "akıcı", en: "fluent" },
     ],
     text:
-      "Meine Muttersprache ist Türkisch, meine Zweitsprache Deutsch. " +
-      "Beide spreche ich fließend, aber nicht gleich gern in jeder " +
-      "Situation.\n\n" +
-      "Über Gefühle rede ich lieber auf Türkisch. Über Arbeit am liebsten " +
-      "auf Deutsch — nicht weil es besser ist, sondern weil ich die Wörter " +
-      "dort gelernt habe. Ein Wörterbuch hilft dabei wenig.\n\n" +
+      "Meine Muttersprache ist Türkisch, meine Zweitsprache Deutsch. Beide " +
+      "spreche ich fließend, aber nicht gleich gern in jeder Situation.\n\n" +
+      "Über Gefühle rede ich lieber auf Türkisch. Über Arbeit am liebsten auf " +
+      "Deutsch — nicht weil es besser ist, sondern weil ich die Wörter dort " +
+      "gelernt habe. Ein Wörterbuch hilft dabei wenig.\n\n" +
       "Meine Aussprache ist gut, aber man hört etwas. Früher hat mich das " +
       "gestört, heute nicht mehr. Ein Kollege aus Bayern spricht einen " +
       "Dialekt, den ich manchmal schwerer verstehe als jeden Akzent.\n\n" +
-      "Was ich am meisten gelernt habe: Zwei Sprachen sind kein halbes " +
-      "Zuhause in jeder, sondern ein ganzes in beiden. Das habe ich lange " +
-      "gebraucht, um es zu glauben.",
+      "Was ich am meisten gelernt habe: Zwei Sprachen sind kein halbes Zuhause " +
+      "in jeder, sondern ein ganzes in beiden. Ich habe lange gebraucht, um " +
+      "das zu glauben.",
     questions: [
       {
         text: "Worüber redet die Person lieber auf Türkisch?",
@@ -120,7 +119,7 @@ export const b1U41: SkillExercise[] = [
       "Wenn achtzig Prozent etwas gut finden, heißt das nur: achtzig " +
       "Prozent finden es gut. Ob es richtig ist, steht auf einem anderen " +
       "Blatt. Eine Reform ist deshalb nicht automatisch gut, weil viele " +
-      "dafür sind — und nicht automatisch schlecht, weil wenige es sind.\n\n" +
+      "dafür sind — und nicht automatisch schlecht, weil wenige dafür sind.\n\n" +
       "Umgekehrt gilt dasselbe. Eine Minderheit hat nicht recht, nur weil " +
       "sie klein ist. Wer allgemein sagt „die Mehrheit versteht das nicht“, " +
       "hat noch kein Argument gebracht, sondern nur eine Gruppe genannt.\n\n" +

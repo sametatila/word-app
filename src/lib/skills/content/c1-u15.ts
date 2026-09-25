@@ -53,7 +53,7 @@ export const c1U15: SkillExercise[] = [
       { de: "also", tr: "yani", en: "so" },
       { de: "rechnen", tr: "hesaplamak", en: "to calculate" },
       { de: "der Text", tr: "metin", en: "text" },
-      { de: "der Absatz", tr: "satış", en: "sales" },
+      { de: "der Absatz", tr: "paragraf", en: "paragraph" },
       { de: "gewahrt", tr: "korunmuş", en: "preserved" },
     ],
     minutes: 7,
@@ -63,8 +63,8 @@ export const c1U15: SkillExercise[] = [
       "Das Verfahren trennt beides. Der Einspruch selbst ist ein formloser Akt und braucht drei Angaben: gegen welchen Bescheid, von wem, und dass Einspruch eingelegt wird. Ein Satz genügt. Er ist fristwahrend, und mit ihm bleibt der Fall offen.\n\n" +
       "Die Begründung kann man nachreichen. Das ist kein Trick, sondern ausdrücklich vorgesehen — die Behörde weiß, dass Unterlagen Zeit brauchen. Wer schreibt „Die Begründung reiche ich bis zum 15. nach“, hat beides: die Frist gewahrt und Zeit gewonnen.\n\n" +
       "Wenngleich das einfach klingt, scheitern viele Verfahren genau hier. Die Rechtsprechung ist bei Fristen streng, und zwar unabhängig davon, wie berechtigt der Einwand in der Sache ist. Ein verspäteter Einspruch mit hervorragender Begründung wird nicht geprüft; ein rechtzeitiger mit schwacher Begründung wird geprüft.\n\n" +
-      "Zwei praktische Punkte. Erstens zählt der Eingang bei der Behörde, nicht der Poststempel — bei knappen Fristen also nicht auf die Post verlassen. Zweitens beginnt die Frist mit der Bekanntgabe, meist drei Tage nach dem Datum auf dem Bescheid; wer sie ab dem Briefdatum rechnet, verschenkt drei Tage, wer ab dem Öffnen rechnet, verliert womöglich alles.\n\n" +
-      "Ein letzter Hinweis für den Fall, dass die Frist doch verstrichen ist: Die Wiedereinsetzung in den vorigen Stand gibt es, aber nur bei unverschuldeter Verhinderung und mit eigener Frist von zwei Wochen. Urlaub zählt nicht dazu, ein Krankenhausaufenthalt schon.\n\n" +
+      "Zwei praktische Punkte. Erstens zählt der Eingang bei der Behörde, nicht der Poststempel — bei knappen Fristen also nicht auf die Post verlassen. Zweitens beginnt die Frist mit der Bekanntgabe, meist vier Tage nach dem Datum auf dem Bescheid; wer sie ab dem Briefdatum rechnet, verschenkt vier Tage, wer ab dem Öffnen rechnet, verliert womöglich alles.\n\n" +
+      "Ein letzter Hinweis für den Fall, dass die Frist doch verstrichen ist: Die Wiedereinsetzung in den vorigen Stand gibt es, aber nur bei unverschuldeter Verhinderung und mit eigener Frist von zwei Wochen. Vergesslichkeit zählt nicht dazu, ein Krankenhausaufenthalt schon.\n\n" +
       "Die Aufhebung eines Bescheids beginnt fast nie mit einem starken Argument. Sie beginnt mit einem rechtzeitigen Satz.",
     questions: [
       {
@@ -101,11 +101,11 @@ export const c1U15: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: [
-          "drei Tage nach dem Bescheiddatum",
-          "mit der Bekanntgabe, meist drei Tage nach dem Datum auf dem Bescheid",
+          "vier Tage nach dem Bescheiddatum",
+          "mit der Bekanntgabe, meist vier Tage nach dem Datum auf dem Bescheid",
           "mit der Bekanntgabe",
         ],
-        explain: "Mektup tarihinden saymak üç gün kaybettiriyor, açtığı günden saymak her şeyi.",
+        explain: "Mektup tarihinden saymak dört gün kaybettiriyor, açtığı günden saymak her şeyi.",
       },
       {
         kind: "short_answer",
@@ -142,13 +142,13 @@ export const c1U15: SkillExercise[] = [
       { de: "meiste", tr: "çoğu", en: "most" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
       { de: "riskant", tr: "riskli", en: "risky" },
-      { de: "fremd", tr: "yabancı", en: "unfamiliar" },
+      { de: "fremd", tr: "başkasına ait", en: "someone else's" },
       { de: "der Gläubiger", tr: "alacaklı", en: "creditor" },
-      { de: "vollstrecken", tr: "infaz etmek", en: "to enforce" },
+      { de: "vollstrecken", tr: "icra takibi yapmak", en: "to enforce" },
       { de: "die Stufe", tr: "basamak", en: "step" },
       { de: "sehen", tr: "görmek", en: "to see" },
       { de: "der Blick", tr: "bakış", en: "look" },
-      { de: "nüchtern", tr: "aç karnına", en: "on an empty stomach" },
+      { de: "nüchtern", tr: "gerçekçi / soğukkanlı", en: "sober, matter-of-fact" },
       { de: "der Text", tr: "metin", en: "text" },
     ],
     minutes: 7,
@@ -178,7 +178,7 @@ export const c1U15: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["Haftung"],
-        explain: "in Haftung nehmen: sabit öbek, belirteç almaz.",
+        explain: "in Haftung nehmen: sabit öbek, tanımlık almaz.",
       },
       {
         text: "Was deckt eine Bürgschaft über 20.000 Euro in der Regel zusätzlich?",

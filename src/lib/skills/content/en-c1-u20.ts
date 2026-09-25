@@ -184,7 +184,7 @@ export const enC1U20: SkillExercise[] = [
       { de: "a resident", tr: "sakin" },
       { de: "an annex", tr: "ek" },
       { de: "a map", tr: "harita" },
-      { de: "boundaries", tr: "sınır koymak" },
+      { de: "boundaries", tr: "sınırlar" },
     ],
     minutes: 12,
     text:

@@ -138,7 +138,7 @@ export const enB2U24: SkillExercise[] = [
       { de: "specific", tr: "belirli" },
       { de: "cleft", tr: "yarık cümle" },
       { de: "search", tr: "arayış" },
-      { de: "dropped", tr: "düşürülmüş" },
+      { de: "dropped", tr: "elenmiş" },
       { de: "noun", tr: "isim" },
       { de: "per", tr: "başına" },
       { de: "clefts", tr: "yarık cümleler" },

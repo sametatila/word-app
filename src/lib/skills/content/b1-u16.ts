@@ -103,7 +103,7 @@ export const b1U16: SkillExercise[] = [
     unit: 16,
     title: "Ich sehe das anders",
     genre: "letter",
-    intro: "Bir yazıya iki yanıt. Kim katılıyor, kim karşı çıkıyor?",
+    intro: "Bir yazıya üç yanıt. Kim katılıyor, kim karşı çıkıyor?",
     minutes: 5,
     gloss: [
       { de: "die Ansicht", tr: "görüş", en: "view" },

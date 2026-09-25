@@ -47,8 +47,8 @@ export const enA2U04: SkillExercise[] = [
     text:
       "I was born in a small town in the north. My parents worked in a factory and we lived there for eleven years.\n\n" +
       "Then I moved to the city because I wanted to study. I have lived here since two thousand and fifteen — that is ten years.\n\n" +
-      "At the university I met my wife. We have known each other for nine years now. Our marriage was in May, and since then my life has changed a lot.\n\n" +
-      "I have already finished my studies, but I haven't found a good job yet. I work in a café at the moment. It is not bad: the people are friendly and the hours are on time.\n\n" +
+      "At the university I met my wife. We have known each other for nine years now. We got married in May, and since then my life has changed a lot.\n\n" +
+      "I have already finished my studies, but I haven't found a good job yet. I work in a café at the moment. It is not bad: the people are friendly and the hours are good.\n\n" +
       "Next year I'm going to look for work abroad. I promise I won't stay in the café for years!",
     questions: [
       {

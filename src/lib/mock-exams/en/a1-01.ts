@@ -74,9 +74,9 @@ In the evening I want pizza. Do you cook, or do we eat out?
 See you tomorrow!
 Dani`,
               gloss: [
-                { de: "platform", tr: "peron", en: "platform" },
-                { de: "broken", tr: "bozuk", en: "broken" },
-                { de: "eat out", tr: "dışarıda yemek", en: "eat out" },
+                { de: "platform", tr: "peron", en: "der Bahnsteig" },
+                { de: "broken", tr: "bozuk", en: "kaputt" },
+                { de: "eat out", tr: "dışarıda yemek", en: "auswärts essen" },
               ],
             },
             {
@@ -87,7 +87,7 @@ Dani`,
               title: "To all neighbours",
               body: `Dear neighbours,
 
-We make a small party in the garden on Saturday, 12 May. It starts at 3 p.m.
+We have a small party in the garden on Saturday, 12 May. It starts at 3 p.m.
 
 Coffee and cake are free. For the food in the evening, every person pays 5 euros.
 
@@ -97,9 +97,9 @@ Bad weather? Then we go to the big room in the cellar.
 
 The Aydin family, flat 3B`,
               gloss: [
-                { de: "free", tr: "ücretsiz", en: "free of charge" },
-                { de: "the cellar", tr: "bodrum", en: "cellar" },
-                { de: "the flat", tr: "daire", en: "flat" },
+                { de: "free", tr: "ücretsiz", en: "kostenlos" },
+                { de: "the cellar", tr: "bodrum", en: "der Keller" },
+                { de: "the flat", tr: "daire", en: "die Wohnung" },
               ],
             },
           ],
@@ -898,7 +898,7 @@ Signature:                 A. Kaya`,
               text: "First visit",
               accept: ["Saturday", "on Saturday"],
               explain:
-                "Yönerge «Aylin wants to come on Saturday» diyor; ilk geliş günü cumartesi. Gün adı büyük harfle yazılır ama katlama büyük-küçük harfe bakmadığı için küçük yazım da doğru sayılır.",
+                "Yönerge «Aylin wants to come on Saturday» diyor; ilk geliş günü cumartesi. Gün adı büyük harfle yazılır ama karşılaştırma büyük-küçük harfe bakmadığı için küçük yazım da doğru sayılır.",
             },
             {
               kind: "gap",

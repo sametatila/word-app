@@ -46,7 +46,7 @@ export const enC1U05: SkillExercise[] = [
       { de: "middle", tr: "orta" },
       { de: "easily", tr: "kolayca" },
       { de: "passive", tr: "edilgen" },
-      { de: "anywhere", tr: "başka yerde" },
+      { de: "anywhere", tr: "hiçbir yerde" },
       { de: "none", tr: "hiçbiri" },
       { de: "definition", tr: "tanım" },
       { de: "noun", tr: "isim" },
@@ -159,7 +159,7 @@ export const enC1U05: SkillExercise[] = [
     ],
     minutes: 11,
     text:
-      "This alone holds the chain of argument together. A paper of twenty pages, and the sentence that carries it is three words long before it reaches its verb.\n" +
+      "This alone holds the chain of argument together. A paper of twenty pages, and the sentence that carries it is two words long before it reaches its verb.\n" +
       "„This“ is doing the work, and in a document of that length it is the most dangerous word available. It can point at the last noun, the last clause, the last paragraph or the whole of the last section, and the reader chooses.\n" +
       "The fix is the same one the last unit gave and it matters more here: follow it with a summary word. „This approach“, „this objection“, „this reading“. The writer then chooses what is carried forward, and a reader who disagrees can say which of the four things they are disagreeing with.\n" +
       "Such an explanatory approach is rare. „Such“ points backwards at a quality and cannot point at an argument, which is why it is safe over a long distance and why it is the one I use across a section break.\n" +

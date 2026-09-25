@@ -50,11 +50,6 @@
   "en": "There is no meat on the list: potatoes, carrots, onion, water, salt, pepper and butter."
  },
  {
-  "tr": "Mektup tarihinden saymak üç gün kaybettiriyor, açtığı günden saymak her şeyi.",
-  "kind": "explain",
-  "en": "Counting from the date of the letter loses you three days; counting from the day you opened it loses everything."
- },
- {
   "tr": "Özneli biçimde fiil edilgen olur ve arkasından „to“ gelir: is believed to be.",
   "kind": "explain",
   "en": "In the subject-raised form the verb goes passive and „to“ follows: is believed to be."
@@ -252,7 +247,7 @@
  {
   "tr": "je yan cümlede, desto ana cümlede; her iki yarı da karşılaştırma biçimi ister.",
   "kind": "explain",
-  "en": "je in the clause, desto in the main clause; both halves need a comparative form."
+  "en": "je in the subordinate clause, desto in the main clause; both halves need a comparative form."
  },
  {
   "tr": "Kaan kız kardeşi için \"She's nineteen. She's studying music in London.\" diyor.",
@@ -273,11 +268,6 @@
   "tr": "Otobüsü kaçırınca yürümüş: „bin zu Fuß gelaufen. Jetzt bin ich komplett nass.“",
   "kind": "explain",
   "en": "He missed the bus and walked: „bin zu Fuß gelaufen. Jetzt bin ich komplett nass.“"
- },
- {
-  "tr": "Resmî kayıtta neden aufgrund + genitif ile verilir; günlük dilde wegen olurdu.",
-  "kind": "explain",
-  "en": "In formal register the reason is given with aufgrund + genitive; everyday language would use wegen."
  },
  {
   "tr": "Sıra sabittir: artikel + tümleçler + ortaç + isim. Tümleç ortaçtan önce gelir.",
@@ -693,11 +683,6 @@
   "tr": "Dilek kipi ricayı yumuşatır. Düz kipteki „Haben Sie Zeit?“ bir talep gibi durur.",
   "kind": "explain",
   "en": "The subjunctive softens a request. The plain „Haben Sie Zeit?“ reads like a demand."
- },
- {
-  "tr": "Edilgen Perfekt geçmişte: war … verzeichnet worden. Artıştan önce bir düşüş var.",
-  "kind": "explain",
-  "en": "The Perfekt passive in the past: war … verzeichnet worden. A fall came before the rise."
  },
  {
   "tr": "Eski yapı ile yeni yapı tartışması. Binaları anlatan ilgi cümlelerine dikkat et.",

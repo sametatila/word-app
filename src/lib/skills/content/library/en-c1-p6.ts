@@ -28,7 +28,7 @@ export const enC1P6: SkillExercise[] = [
       { de: "to moderate", tr: "denetlemek" },
       { de: "genuine", tr: "hakiki" },
       { de: "entire", tr: "tüm" },
-      { de: "fund", tr: "sağlık sigortası kurumu" },
+      { de: "fund", tr: "finanse etmek" },
       { de: "attractive", tr: "çekici" },
       { de: "theory", tr: "teori" },
       { de: "relationship", tr: "ilişki" },

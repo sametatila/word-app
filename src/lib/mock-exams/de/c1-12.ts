@@ -339,7 +339,7 @@ Mein früherer Chef sagt bis heute, ich hätte damit den Bildern ihre Kraft geno
               ],
               answer: 1,
               explain:
-                "Cümleyi okuyan birinin onu kurduğunu bilir; fotoğrafı gören ise \"glaubt zunächst, er sehe\".",
+                "Cümleyi okuyan, birinin onu kurduğunu bilir; fotoğrafı gören ise \"glaubt zunächst, er sehe\".",
             },
             {
               kind: "mcq",
@@ -1037,9 +1037,9 @@ Vorab: Die Trennung von technischer und inhaltlicher Prüfung halte ich für ric
 
 Erstens werden private Anfragen {{3}} zurückgewiesen, obwohl die drei zugelassenen Prüfstellen nach meiner Erfahrung überlastet sind. Wartezeiten von acht Wochen sind dort keine Ausnahme.
 
-Zweitens ist das Ergebnis „ungeklärt" im Entwurf {{4}} erläutert, um von Redaktionen richtig verstanden zu werden. In der Praxis wird es regelmäßig als Freigabe gelesen.
+Zweitens ist das Ergebnis „ungeklärt“ im Entwurf {{4}} erläutert, um von Redaktionen richtig verstanden zu werden. In der Praxis wird es regelmäßig als Freigabe gelesen.
 
-Ich rege {{5}} an, für den Befund „ungeklärt" eine kurze Erläuterung vorzusehen und die Kapazität der zugelassenen Stellen {{6}} zu überprüfen.
+Ich rege {{5}} an, für den Befund „ungeklärt“ eine kurze Erläuterung vorzusehen und die Kapazität der zugelassenen Stellen {{6}} zu überprüfen.
 
 Meine eigene Redaktion setzt {{7}} 2013 unter jedes Aufmacherbild eine Kontextzeile. Ich stelle Ihnen die Formulierungen gern zur Verfügung.
 

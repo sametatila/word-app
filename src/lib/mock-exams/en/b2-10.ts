@@ -105,7 +105,7 @@ The proposals that get discussed are all about speed. Very few of them {{6}} the
               id: "en-b2-10-l1-5",
               no: 5,
               text: "Gap 5",
-              options: ["wearing", "falling", "dying", "going"],
+              options: ["giving", "falling", "dying", "going"],
               answer: 2,
               explain:
                 "Bir yetinin yavaşça yitmesi `die away` ile anlatılır. `wear away` aşınmayı, `fall away` düşmeyi, `go away` ise uzaklaşmayı bildirir ve beceri için kullanılmaz.",
@@ -268,9 +268,9 @@ Reviews conclude that shortening the process has been discussed for decades with
               id: "en-b2-10-l3-16",
               no: 16,
               text: "ENTER",
-              accept: ["entry"],
+              accept: ["entry", "entrance"],
               explain:
-                "`a restriction on ___ to the profession` yapısında edatın nesnesi bir ad olmalı ve mesleğe GİRİŞ kastediliyor. `enter` fiildir, `entrance` ise bir kapıyı ya da giriş sınavını adlandırır.",
+                "`a restriction on ___ to the profession` yapısında edatın nesnesi bir ad olmalı ve mesleğe GİRİŞ kastediliyor. Beklenen `entry`; «entrance to a profession» da kullanıldığı için `entrance` de kabul edilir. `enter` fiildir.",
             },
             {
               kind: "gap",
@@ -370,9 +370,9 @@ The difference in outcome is not a difference in checking. Both countries checke
 
 Nine years is also long enough for a skill to go. Zsofia did not fail the supervised year. She never took it, because by the time the place came up she had a mortgage and a job that did not require her to sit an examination in a second language. If she had been allowed to work, she would have stayed.`,
               gloss: [
-                { de: "a ward", tr: "hastane servisi", en: "ward" },
-                { de: "supervised", tr: "gözetim altında", en: "supervised" },
-                { de: "a mortgage", tr: "konut kredisi", en: "mortgage" },
+                { de: "a ward", tr: "hastane servisi", en: "die Station" },
+                { de: "supervised", tr: "gözetim altında", en: "beaufsichtigt" },
+                { de: "a mortgage", tr: "konut kredisi", en: "die Hypothek" },
               ],
             },
           ],
@@ -435,7 +435,7 @@ Nine years is also long enough for a skill to go. Zsofia did not fail the superv
               ],
               answer: 1,
               explain:
-                "Metin ayrımı açıkça kuruyor: «Both countries checked her. One of them checked her while she was working and the other checked her by making her wait».",
+                "Metin ayrımı açıkça kuruyor: «Both countries checked her» ve «One of them checked her while she was working and the other checked her by making her wait».",
             },
             {
               kind: "mcq",
@@ -480,9 +480,9 @@ This is why the usual reform fails. A minister announces that the process will b
 
 The honest reform would be duller and harder: fund the supervisors, or accept that a stage which cannot be staffed is a stage that has been abolished in practice and should be abolished on paper.`,
               gloss: [
-                { de: "an inquiry", tr: "soruşturma", en: "inquiry" },
-                { de: "to abolish", tr: "kaldırmak", en: "abolish" },
-                { de: "deliberate", tr: "bilerek yapılan", en: "deliberate" },
+                { de: "an inquiry", tr: "soruşturma", en: "die Untersuchung" },
+                { de: "to abolish", tr: "kaldırmak", en: "abschaffen" },
+                { de: "deliberate", tr: "bilerek yapılan", en: "absichtlich" },
               ],
             },
           ],
@@ -517,7 +517,7 @@ The honest reform would be duller and harder: fund the supervisors, or accept th
               id: "en-b2-10-l6-30",
               no: 30,
               text: "Gap 30",
-              answer: "a",
+              answer: "d",
               explain:
                 "Paragraf kuyruğun kimse tarafından eklenmediğini ve gecikmenin çoğunu oluşturduğunu söylüyor. (a) bunun neden gözden kaçtığını veriyor: «a queue is not a stage and appears in no list of requirements».",
             },
@@ -526,7 +526,7 @@ The honest reform would be duller and harder: fund the supervisors, or accept th
               id: "en-b2-10-l6-31",
               no: 31,
               text: "Gap 31",
-              answer: "d",
+              answer: "a",
               explain:
                 "Paragraf her aşamanın haklı bulunduğu inceleme döngüsünü anlatıyor. (d) çıkarımı yapıyor: reformun başlaması gereken yer, reformların başladığı yer değil. (e) 1985'te imzalanan mimarlık anlaşmasından söz ediyor ve metinde anlaşmaların tarihi hiç tartışılmıyor — hiçbir boşluğa uymayan cümle odur.",
             },

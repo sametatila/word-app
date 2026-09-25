@@ -75,11 +75,6 @@
   "de": "\"You can bring an item back within 30 days.\" Bei Elektronik sind es 14 Tage."
  },
  {
-  "tr": "\"I have never written thirty pages in one week.\" Rapor henüz başlamadı.",
-  "kind": "explain",
-  "de": "\"I have never written thirty pages in one week.\" Der Bericht hat noch nicht begonnen."
- },
- {
   "tr": "\"We have already received your deposit of £60.\" Toplam fiyat 240 pound.",
   "kind": "explain",
   "de": "\"We have already received your deposit of £60.\" Der Gesamtpreis liegt bei 240 Pfund."

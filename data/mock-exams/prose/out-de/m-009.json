@@ -25,7 +25,7 @@
  { "tr": "Mektubu oku ve 20–24. boşlukları tamamla. Her boşluğa TEK bir sözcük yaz.", "kind": "promptTr", "en": "Lies den Brief und ergänze die Lücken 20–24. Schreibe in jede Lücke NUR EIN Wort." },
  { "tr": "Aynı konu üzerine biraz daha konuşuyoruz: gönüllülere bir şey ödenmeli mi.", "kind": "promptTr", "en": "Wir sprechen noch etwas weiter über dasselbe Thema: ob Freiwillige etwas bezahlt bekommen sollten." },
  { "tr": "Eleştiri yazısını oku ve 23–26. maddeleri yanıtla. a, b, c ya da d'yi seç.", "kind": "promptTr", "en": "Lies die Kritik und beantworte die Aufgaben 23–26. Wähle a, b, c oder d." },
- { "tr": "Karşı oy yazısını oku ve 23–26. maddeleri yanıtla. a, b, c ya da d'yi seç.", "kind": "promptTr", "en": "Lies die Gegendarstellung und beantworte die Aufgaben 23–26. Wähle a, b, c oder d." },
+ { "tr": "Karşı oy yazısını oku ve 23–26. maddeleri yanıtla. a, b, c ya da d'yi seç.", "kind": "promptTr", "en": "Lies das abweichende Votum und beantworte die Aufgaben 23–26. Wähle a, b, c oder d." },
  { "tr": "Sana yaşadığın yer ve başkalarına yardım etmek hakkında sorular soracağım.", "kind": "promptTr", "en": "Ich stelle dir Fragen zu deinem Wohnort und dazu, anderen zu helfen." },
  { "tr": "Sana yemek ve mutfak hakkında sorular soracağım. Tam cümlelerle cevap ver.", "kind": "promptTr", "en": "Ich stelle dir Fragen zu Essen und Küche. Antworte in vollständigen Sätzen." },
  { "tr": "Ailen bir hayvan düşünüyor. Fikirleri benimle konuş ve birlikte birini seç.", "kind": "promptTr", "en": "Deine Familie denkt über ein Tier nach. Sprich mit mir über die Ideen und wählt gemeinsam eine aus." },

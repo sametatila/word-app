@@ -31,7 +31,7 @@ export const enC1P4: SkillExercise[] = [
       { de: "hold", tr: "tutmak" },
       { de: "assume", tr: "varsaymak" },
       { de: "slight", tr: "ufak" },
-      { de: "frame", tr: "çerçeve öykü" },
+      { de: "frame", tr: "çerçeve" },
       { de: "discover", tr: "keşfetmek" },
       { de: "pleasant", tr: "keyifli" },
     ],

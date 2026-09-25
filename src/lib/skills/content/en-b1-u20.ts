@@ -173,7 +173,7 @@ export const enB1U20: SkillExercise[] = [
         text: "What is the father's sentence?",
         options: [],
         answer: 0,
-        accept: ["the rest is Tuesdays", "one afternoon then Tuesdays", "the rest is the hard part"],
+        accept: ["the rest is Tuesdays", "one afternoon then Tuesdays", "the decision is one afternoon"],
         explain: "„the decision is one afternoon, the rest is Tuesdays.“",
       },
     ],

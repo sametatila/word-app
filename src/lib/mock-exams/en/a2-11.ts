@@ -249,9 +249,9 @@ And do not stop taking him out. A tired dog waits better than a bored one.
 
 The Editor`,
               gloss: [
-                { de: "an owner", tr: "sahip", en: "owner" },
-                { de: "bored", tr: "canı sıkkın", en: "bored" },
-                { de: "a lead", tr: "tasma kayışı", en: "lead" },
+                { de: "an animal home", tr: "hayvan barınağı", en: "das Tierheim" },
+                { de: "bored", tr: "canı sıkkın", en: "gelangweilt" },
+                { de: "a return", tr: "dönüş", en: "die Rückkehr" },
               ],
             },
           ],

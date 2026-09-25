@@ -228,9 +228,9 @@ The part that hurt was what happened afterwards. They found somebody within a we
 
 I have started again somewhere smaller. There are four of us and there are no meetings. In two years it will probably be twelve of us, there will be meetings, and I will have to decide what I think then.`,
               gloss: [
-                { de: "to assume", tr: "varsaymak", en: "assume" },
-                { de: "to wobble", tr: "sallanmak", en: "wobble" },
-                { de: "to ignore", tr: "yok saymak", en: "ignore" },
+                { de: "to assume", tr: "varsaymak", en: "annehmen" },
+                { de: "to wobble", tr: "sallanmak", en: "wackeln" },
+                { de: "to ignore", tr: "yok saymak", en: "ignorieren" },
               ],
             },
           ],
@@ -338,9 +338,9 @@ There was one kind of offer that did work. If the note named a day and a time, s
 
 I should say what the board does not show. It does not show the six families who read it every week and never write anything, and it does not show whether the person who answered a note actually turned up. {{20}}`,
               gloss: [
-                { de: "to pin", tr: "iğnelemek, asmak", en: "pin" },
-                { de: "a request", tr: "istek, rica", en: "request" },
-                { de: "generosity", tr: "cömertlik", en: "generosity" },
+                { de: "to pin", tr: "raptiyeyle asmak", en: "anheften" },
+                { de: "a request", tr: "istek, rica", en: "die Bitte" },
+                { de: "generosity", tr: "cömertlik", en: "die Großzügigkeit" },
               ],
             },
           ],
@@ -518,9 +518,9 @@ And if you are ill, tell somebody early. Nothing here depends {{30}} one person,
               id: "en-b1-07-l6-27",
               no: 27,
               text: "Gap 27",
-              accept: ["who"],
+              accept: ["who", "that"],
               explain:
-                "Öncül `the people`, yani kişiler; özne görevindeki ilgi adılı `who` olur. `which` insanlar için kullanılmaz, `whose` ise iyelik bildirir.",
+                "Öncül `the people`, yani kişiler; özne görevindeki ilgi adılı `who` ya da `that` olur. `which` insanlar için kullanılmaz, `whose` ise iyelik bildirir.",
             },
             {
               kind: "gap",

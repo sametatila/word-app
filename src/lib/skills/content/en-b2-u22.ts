@@ -45,7 +45,7 @@ export const enB2U22: SkillExercise[] = [
     intro: "Kip olumlu kalıyor. Olumsuz nereye gidiyor?",
     gloss: [
       { de: "sentence", tr: "cümle" },
-      { de: "anywhere", tr: "başka yerde" },
+      { de: "anywhere", tr: "hiçbir yerde" },
       { de: "modal", tr: "kip" },
       { de: "impossible", tr: "olanaksız" },
       { de: "positive", tr: "olumlu" },

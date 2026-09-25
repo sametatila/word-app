@@ -73,17 +73,17 @@ That comparison is difficult to make, which is not the same as impossible, and t
               id: "en-b2-11-l1-2",
               no: 2,
               text: "Gap 2",
-              options: ["rational", "reasonable", "logical", "sensible"],
+              options: ["rational", "reasoning", "logic", "sensitive"],
               answer: 0,
               explain:
-                "Paragraf tek tek doğru olan kararın toplamda felaket olduğunu söylüyor; iktisatta bu ayrımın adı `rational`dır. Öteki üçü yakın anlamlı ama toplam-birey karşıtlığını taşımaz.",
+                "Paragraf tek tek doğru olan kararın toplamda felaket olduğunu söylüyor; iktisatta bu ayrımın adı `rational`dır. `reasoning` ve `logic` ad olduğu için `entirely`den sonra gelemez, `sensitive` ise «duyarlı» demektir.",
             },
             {
               kind: "mcq",
               id: "en-b2-11-l1-3",
               no: 3,
               text: "Gap 3",
-              options: ["forced", "obliged", "demanded", "required"],
+              options: ["enforced", "obliged", "demanded", "necessary"],
               answer: 1,
               explain:
                 "`be obliged to + fiil` bir yükümlülüğün bulunmadığını bildirir. `required` edilgen kuruluşta `to` alır ama burada `not required to keep` biçimi anlamı zayıflatır; `demanded` özneyi kişi olarak istemez, `forced` ise zorlamayı bildirir.",
@@ -103,7 +103,7 @@ That comparison is difficult to make, which is not the same as impossible, and t
               id: "en-b2-11-l1-5",
               no: 5,
               text: "Gap 5",
-              options: ["weighed", "measured", "counted", "valued"],
+              options: ["weighed", "estimated", "counted", "valued"],
               answer: 0,
               explain:
                 "`weigh something against something` iki tarafı karşılaştırmayı anlatır ve cümlede `against` var. `measured against` ölçüt bildirir, `counted` ile `valued` bu edatı bu anlamda almaz.",
@@ -358,7 +358,7 @@ Proposals for a repairability label have been discussed since the nineteen ninet
               title: "I designed the drum you cannot open",
               body: `I have spent nineteen years designing washing machines, and I have signed off the sealed drum that repair campaigners use as their standard example. I would like to make the case for it properly before I concede what I am going to concede.
 
-Bonding the motor into the drum was not a trick. It removed a joint, and a joint is where noise, leaks and warranty claims begin. The machine got quieter, lighter and about eleven per cent cheaper to build, and every one of those gains reached the customer. The cost I am accused of imposing, whereas that one arrives seven years later, is paid by somebody who has forgotten which model they bought.
+Bonding the motor into the drum was not a trick. It removed a joint, and a joint is where noise, leaks and warranty claims begin. The machine got quieter, lighter and about eleven per cent cheaper to build, and every one of those gains reached the customer. The cost I am accused of imposing, by contrast, arrives seven years later and is paid by somebody who has forgotten which model they bought.
 
 That last clause is the whole problem, and I am not going to pretend otherwise. Given that the gain is immediate and the cost is deferred, no competitive process will ever weigh the two honestly. A designer who added the joint back would produce a machine that is louder and dearer on the shop floor and better in its seventh year, and the shop floor is where machines are chosen.
 
@@ -368,9 +368,9 @@ What I reject is the story in which somebody in my industry sat down and planned
 
 The remedy is not moral instruction aimed at designers. It is a rule that makes year seven visible at the point of sale: a published repair cost, verified by somebody who does not sell machines. Give me that number on the label and I will design against it within one product cycle, because that is what I have always designed against.`,
               gloss: [
-                { de: "to bond", tr: "yapıştırarak birleştirmek", en: "bond" },
-                { de: "deferred", tr: "ertelenmiş", en: "deferred" },
-                { de: "a product cycle", tr: "ürün döngüsü", en: "product cycle" },
+                { de: "to bond", tr: "yapıştırarak birleştirmek", en: "verkleben" },
+                { de: "deferred", tr: "ertelenmiş", en: "aufgeschoben" },
+                { de: "a product cycle", tr: "ürün döngüsü", en: "der Produktzyklus" },
               ],
             },
           ],
@@ -478,9 +478,9 @@ This is why repairability cannot be improved at the repair stage. By the time a 
 
 None of which makes the four-euro figure useless. It is the clearest short way of saying that the failure was small and the consequence was total, and that is worth a sentence in any conversation about waste.`,
               gloss: [
-                { de: "moulded", tr: "kalıplanmış", en: "moulded" },
-                { de: "a workshop", tr: "atölye", en: "workshop" },
-                { de: "an accusation", tr: "suçlama", en: "accusation" },
+                { de: "moulded", tr: "kalıplanmış", en: "geformt" },
+                { de: "a workshop", tr: "atölye", en: "die Werkstatt" },
+                { de: "an accusation", tr: "suçlama", en: "der Vorwurf" },
               ],
             },
           ],

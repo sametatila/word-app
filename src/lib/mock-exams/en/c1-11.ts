@@ -63,7 +63,7 @@ Rarely is a target withdrawn once it has been published, and the reasons are pol
               id: "en-c1-11-l1-1",
               no: 1,
               text: "Gap 1",
-              options: ["respectable", "honourable", "creditable", "admirable"],
+              options: ["respectable", "reputable", "creditable", "admirable"],
               answer: 0,
               explain:
                 "Paragraf hedefin savunulabilir bir gerekçeyle kurulduğunu söylüyor: kimse süreyi bilmiyordu. `a respectable reason` bu yerleşik anlamı verir; öteki üçü ahlaki övgü bildirir ve `reason` ile eş dizim yapmaz.",
@@ -73,7 +73,7 @@ Rarely is a target withdrawn once it has been published, and the reasons are pol
               id: "en-c1-11-l1-2",
               no: 2,
               text: "Gap 2",
-              options: ["altered", "amended", "shifted", "converted"],
+              options: ["transferred", "amended", "shifted", "converted"],
               answer: 2,
               explain:
                 "Cümle ortalama sürenin hiç değişmediğini söylüyor ve `shift` bir ölçüm değerinin yer değiştirmesini anlatır. `amended` metin düzeltmede, `converted` biçim değiştirmede kullanılır; `altered` ise `at all` ile bu yapıda zayıf kalır.",
@@ -162,9 +162,9 @@ This is by {{12}} means an argument against measuring things, although it is reg
               id: "en-c1-11-l2-8",
               no: 8,
               text: "Gap 8",
-              accept: ["by"],
+              accept: ["precisely", "exactly", "just"],
               explain:
-                "`It is by this that the literature means …` yarma cümlesinde araç `by` ile bildirilir; `mean by something` yerleşik kuruluştur.",
+                "`It is ___ this that the literature means by a perverse indicator` bir yarma cümle ve boşluğa vurgu belirteci gelir: `precisely`, `exactly` ya da `just`. `mean by something` kalıbının `by`ı zaten cümlenin sonunda; ikinci bir `by` cümleyi bozar.",
             },
             {
               kind: "gap",
@@ -366,9 +366,9 @@ The omission matters because it shapes the conclusion. Having established that i
 
 None of which should deter the reader. The book is a genuine contribution and its final chapter, on the difficulty of withdrawing a published figure, ought to be read by anybody who has ever proposed one. It is simply a study that wins its argument and leaves the harder question untouched.`,
               gloss: [
-                { de: "drift", tr: "yavaş kayma", en: "drift" },
-                { de: "discretion", tr: "takdir yetkisi", en: "discretion" },
-                { de: "nostalgic", tr: "geçmişe özlem duyan", en: "nostalgic" },
+                { de: "drift", tr: "yavaş kayma", en: "die Drift" },
+                { de: "discretion", tr: "takdir yetkisi", en: "der Ermessensspielraum" },
+                { de: "nostalgic", tr: "geçmişe özlem duyan", en: "nostalgisch" },
               ],
             },
           ],
@@ -536,9 +536,9 @@ There is a general lesson here about the life cycle of a public number, and it i
 
 The eight-minute figure was eventually replaced in 2017, and the replacement was announced as a technical adjustment rather than as a change of policy. That was, on balance, the only way it could have been done.`,
               gloss: [
-                { de: "provisional", tr: "geçici", en: "provisional" },
-                { de: "a long tail", tr: "uzun kuyruk (dağılımda)", en: "long tail" },
-                { de: "a life cycle", tr: "yaşam döngüsü", en: "life cycle" },
+                { de: "provisional", tr: "geçici", en: "vorläufig" },
+                { de: "a long tail", tr: "uzun kuyruk (dağılımda)", en: "der Long Tail" },
+                { de: "a life cycle", tr: "yaşam döngüsü", en: "der Lebenszyklus" },
               ],
             },
           ],

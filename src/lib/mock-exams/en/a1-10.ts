@@ -51,8 +51,8 @@ The post office closes at five, but on Saturday at one.
 
 Piet`,
               gloss: [
-                { de: "a parcel", tr: "koli", en: "parcel" },
-                { de: "to keep", tr: "saklamak", en: "keep" },
+                { de: "a parcel", tr: "koli", en: "das Paket" },
+                { de: "to keep", tr: "saklamak", en: "aufbewahren" },
               ],
             },
             {
@@ -65,7 +65,7 @@ Piet`,
 
 A letter in this country: 90 cents. To another country: 2 euros.
 
-A parcel to 2 kilos: 5 euros.
+A parcel up to 2 kilos: 5 euros.
 
 You can pay bills here. Cash only.`,
             },
@@ -339,7 +339,7 @@ I am at the post office {{15}} Tuesday. The parcel is very big!
 
 There {{16}} a new machine now. You can pay bills with a card.
 
-I want to send a letter, {{17}} I have no stamps. I buy them tomorrow.
+I want to send a letter, {{17}} I have no stamps. I will buy them tomorrow.
 
 Yesterday I {{18}} two boxes for the parcel. They were one euro.
 

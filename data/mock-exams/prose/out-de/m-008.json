@@ -142,7 +142,7 @@
  { "tr": "Üç kısa parça dinleyeceksin. Her birinde iki soru var. a, b ya da c'yi seç. Her parçayı iki kez dinleyebilirsin.", "kind": "promptTr", "en": "Du hörst drei kurze Ausschnitte. In jedem gibt es zwei Fragen. Wähle a, b oder c. Jeden Ausschnitt kannst du zweimal hören." },
  { "tr": "Konuyu birlikte biraz daha tartışıyoruz.", "kind": "promptTr", "en": "Wir sprechen gemeinsam noch etwas weiter über das Thema." },
  { "tr": "Cümleler doğru mu yanlış mı? Her anonsu iki kez dinleyebilirsin.", "kind": "promptTr", "en": "Sind die Sätze richtig oder falsch? Jede Durchsage kannst du zweimal hören." },
- { "tr": "Değerlendirmeyi oku ve 20–24. boşlukları tamamla. Her boşluğa TEK bir sözcük yaz.", "kind": "promptTr", "en": "Lies die Besprechung und ergänze die Lücken 20–24. Schreibe in jede Lücke NUR EIN Wort." },
+ { "tr": "Değerlendirmeyi oku ve 20–24. boşlukları tamamla. Her boşluğa TEK bir sözcük yaz.", "kind": "promptTr", "en": "Lies die Bewertung und ergänze die Lücken 20–24. Schreibe in jede Lücke NUR EIN Wort." },
  { "tr": "Metni oku ve 1–6. boşluklara a, b, c ya da d şıklarından hangisinin en iyi uyduğuna karar ver.", "kind": "promptTr", "en": "Lies den Text und entscheide, welche der Möglichkeiten a, b, c oder d am besten in die Lücken 1–6 passt." },
  { "tr": "Yazıyı oku ve 23–27. maddeleri yanıtla. a, b, c ya da d'yi seç.", "kind": "promptTr", "en": "Lies den Artikel und beantworte die Aufgaben 23–27. Wähle a, b, c oder d." },
  { "tr": "Beş kısa konuşma dinleyeceksin. Doğru olan hangisi? Her kaydı iki kez dinleyebilirsin.", "kind": "promptTr", "en": "Du hörst fünf kurze Gespräche. Was ist richtig? Jede Aufnahme kannst du zweimal hören." },

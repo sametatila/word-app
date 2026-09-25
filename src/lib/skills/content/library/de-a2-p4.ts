@@ -26,7 +26,7 @@ export const deA2P4: SkillExercise[] = [
       { de: "die Verpackung", tr: "ambalaj", en: "packaging" },
       { de: "der Bioabfall", tr: "organik atık", en: "organic waste" },
       { de: "die Windel", tr: "bebek bezi", en: "diaper" },
-      { de: "das Geschirr", tr: "bulaşık", en: "crockery" },
+      { de: "das Geschirr", tr: "tabak çanak", en: "crockery" },
     ],
     minutes: 5,
     text:

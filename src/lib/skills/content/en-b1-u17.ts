@@ -48,7 +48,7 @@ export const enB1U17: SkillExercise[] = [
       { de: "exists", tr: "var" },
       { de: "real", tr: "gerçek" },
       { de: "become", tr: "dönüşmüş" },
-      { de: "neither", tr: "hiçbiri" },
+      { de: "neither", tr: "o da … değil" },
     ],
     minutes: 7,
     text:
@@ -70,7 +70,7 @@ export const enB1U17: SkillExercise[] = [
         text: "What happened by the third step?",
         options: ["the conditions were lost", "the number changed", "the author was wrong"],
         answer: 0,
-        explain: "„each step lost one condition. By the third step … had become eighty-one per cent of everybody.“",
+        explain: "„each step lost one condition. By the third step, a figure about four hundred people in one city had become a figure about everybody.“",
       },
       {
         kind: "truefalse",

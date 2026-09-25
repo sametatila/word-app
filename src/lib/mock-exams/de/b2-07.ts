@@ -581,13 +581,13 @@ Mir wäre deshalb eine kleine Lösung lieber als gar keine: Jede Praxis veröffe
           format: "mcq",
           goal: "instruction",
           prompt: "Lesen Sie die Erstattungsordnung und die Aufgaben 28 bis 30. Wählen Sie: a, b oder c.",
-          promptTr: "Ödeme yönetmeliğini ve 28–30. maddeleri oku. a, b ya da c'yi seç.",
+          promptTr: "Geri ödeme yönetmeliğini ve 28–30. maddeleri oku. a, b ya da c'yi seç.",
           texts: [
             {
               kind: "text",
               id: "o1",
               genre: "Erstattungsordnung",
-              genreTr: "Ödeme yönetmeliği",
+              genreTr: "Geri ödeme yönetmeliği",
               title: "Erstattungsordnung für Zusatzleistungen",
               body: `§1 Anspruch
 Erstattet werden Leistungen, die vor Beginn beantragt und schriftlich bewilligt wurden. Eine nachträgliche Bewilligung ist ausgeschlossen. Davon unberührt bleiben Notfälle; diese sind innerhalb von zehn Tagen anzuzeigen.

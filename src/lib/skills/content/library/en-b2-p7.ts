@@ -25,7 +25,7 @@ export const enB2P7: SkillExercise[] = [
       { de: "clarity", tr: "anlaşılırlık" },
       { de: "to hesitate", tr: "duraksamak" },
       { de: "structure", tr: "yapı" },
-      { de: "judge", tr: "hâkim" },
+      { de: "judge", tr: "yargılamak" },
       { de: "resist", tr: "direnmek" },
       { de: "explanation", tr: "açıklama" },
       { de: "communication", tr: "iletişim" },

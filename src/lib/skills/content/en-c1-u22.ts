@@ -156,10 +156,10 @@ export const enC1U22: SkillExercise[] = [
     intro: "Biri iddia ediyor, öteki kanıtlıyor. İki fiilin bedeli aynı mı?",
     gloss: [
       { de: "entirely", tr: "tümüyle" },
-      { de: "anywhere", tr: "başka yerde" },
+      { de: "anywhere", tr: "bir yere" },
       { de: "skipped", tr: "atlanmış" },
       { de: "practical", tr: "işe dönük" },
-      { de: "lying", tr: "yatan" },
+      { de: "lying", tr: "yalan söyleyen" },
       { de: "alleges", tr: "ileri sürüyor" },
       { de: "proves", tr: "kanıtlıyor" },
       { de: "a burden", tr: "yük" },

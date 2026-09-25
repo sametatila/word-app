@@ -103,8 +103,8 @@ export const a2U04: SkillExercise[] = [
       { de: "bislang", tr: "şimdiye kadar", en: "so far" },
       { de: "die Wohnungssuche", tr: "ev arayışı", en: "flat hunting" },
       { de: "einziehen", tr: "yeni eve taşınmak", en: "to move in" },
-      { de: "komplett", tr: "eksiksiz", en: "complete" },
-      { de: "anzeigen", tr: "ihbar etmek", en: "to report" },
+      { de: "komplett", tr: "tamamen", en: "completely" },
+      { de: "anzeigen", tr: "ilan", en: "advert" },
     ],
     minutes: 4,
     text:

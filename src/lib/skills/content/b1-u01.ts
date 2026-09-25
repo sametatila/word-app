@@ -115,8 +115,7 @@ export const b1U01: SkillExercise[] = [
       { de: "der Abschluss", tr: "diploma / mezuniyet", en: "degree" },
       { de: "die Karriere", tr: "kariyer", en: "career" },
       { de: "die Herausforderung", tr: "zorlu görev", en: "challenge" },
-      { de: "der Einkauf", tr: "alışveriş", en: "shopping" },
-      { de: "das Brauchtum", tr: "gelenek görenek", en: "folk tradition" },
+      { de: "der Einkauf", tr: "satın alma", en: "purchasing" },
     ],
     text:
       "Markus Bauer wurde 1990 in Kassel geboren. Nach der Schule machte er eine Ausbildung als Koch. " +

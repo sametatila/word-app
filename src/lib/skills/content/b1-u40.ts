@@ -111,7 +111,7 @@ export const b1U40: SkillExercise[] = [
     gloss: [
       { de: "die Umfrage", tr: "anket", en: "survey" },
       { de: "die Studie", tr: "araştırma", en: "study" },
-      { de: "insgesamt", tr: "toplamda", en: "in total" },
+      { de: "insgesamt", tr: "genel olarak", en: "overall" },
       { de: "gering", tr: "düşük", en: "low" },
       { de: "anstrengend", tr: "yorucu", en: "exhausting" },
       { de: "interessant", tr: "ilginç", en: "interesting" },

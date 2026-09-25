@@ -110,7 +110,7 @@ export const a1U25: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Hallo zusammen,\n\nvor einem Jahr war mein Deutsch-Start. Am Anfang war es schwer. Im Unterricht habe ich nichts verstanden.\n\nAber ich habe jeden Tag ein bisschen gelernt — zehn Minuten, manchmal zwanzig. Ich habe meine Hausaufgaben gemacht und viel Musik gehört.\n\nJetzt kann ich einen Termin machen, im Supermarkt fragen und eine E-Mail schreiben. Letzte Woche habe ich eine Frau aus Berlin getroffen. Eine halbe Stunde, nur auf Deutsch!\n\nIch bin wirklich stolz. Nächsten Monat mache ich den Test.\n\nWeiter machen, jeden Tag ein bisschen! Der Anfang ist schwer, aber es wird besser.\n\nEuer Ali",
+      "Hallo zusammen,\n\nvor einem Jahr war mein Deutsch-Start. Am Anfang war es schwer. Im Unterricht habe ich nichts verstanden.\n\nAber ich habe jeden Tag ein bisschen gelernt — zehn Minuten, manchmal zwanzig. Ich habe meine Hausaufgaben gemacht und viel Musik gehört.\n\nJetzt kann ich einen Termin machen, im Supermarkt fragen und eine E-Mail schreiben. Letzte Woche habe ich eine Frau aus Berlin getroffen. Eine halbe Stunde, nur auf Deutsch!\n\nIch bin wirklich stolz. Nächsten Monat mache ich den Test.\n\nWeitermachen, jeden Tag ein bisschen! Der Anfang ist schwer, aber es wird besser.\n\nEuer Ali",
     questions: [
       {
         text: "Wie war es am Anfang?",
@@ -145,12 +145,12 @@ export const a1U25: SkillExercise[] = [
       {
         text: "Ali ne öneriyor?",
         options: [
-          "jeden Tag ein bisschen weiter machen",
+          "jeden Tag ein bisschen weitermachen",
           "einen langen Kurs machen",
           "nach Deutschland reisen",
         ],
         answer: 0,
-        explain: "„Weiter machen, jeden Tag ein bisschen!“",
+        explain: "„Weitermachen, jeden Tag ein bisschen!“",
       },
           {
         kind: "gapfill",

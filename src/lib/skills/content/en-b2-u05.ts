@@ -50,7 +50,7 @@ export const enB2U05: SkillExercise[] = [
       { de: "whole", tr: "bütün" },
       { de: "own", tr: "kendi" },
       { de: "verb", tr: "fiil" },
-      { de: "reaches", tr: "uzanıyor" },
+      { de: "reaches", tr: "ulaşıyor" },
       { de: "noun", tr: "isim" },
       { de: "fronted", tr: "öne çıkarılmış" },
       { de: "jumped", tr: "atladı" },
@@ -69,7 +69,7 @@ export const enB2U05: SkillExercise[] = [
     ],
     minutes: 9,
     text:
-      "Under no circumstances will we accept a severe delay. The fronted phrase is four words long, and what it moves is not inside itself: „will“ has jumped in front of „we“ in the part that comes after.\n" +
+      "Under no circumstances will we accept a severe delay. The fronted phrase is three words long, and what it moves is not inside itself: „will“ has jumped in front of „we“ in the part that comes after.\n" +
       "That is the thing to hold on to. The inversion never happens in the fronted element. It happens in the clause that follows it, and the longer the fronted element gets, the easier it is to forget.\n" +
       "Not until the escalation did they reply. Here the first half is a phrase about time, and the second half is where „did“ appears, in front of „they“, exactly as it would in a question.\n" +
       "Now take the harder version. Not until they had escalated it did they reply. The first half is a whole clause with its own subject and verb, and that clause keeps its ordinary order — they had escalated, nothing moved. The inversion is still waiting in the main clause, where it always was.\n" +

@@ -91,7 +91,7 @@ Heute kaufe ich wieder Neues, aber selten. Wenn mich jemand nach dem Jahr fragt,
               id: "de-b1-06-l1-3",
               no: 3,
               ref: "t1",
-              text: "Für die Hochzeit hat er sich etwas geliehen.",
+              text: "Für die Hochzeit hat sie sich etwas geliehen.",
               answer: true,
               explain:
                 "Kasımdaki düğün için uygun bir şeyi yokmuş: \"Ich habe mir ein Kleid geliehen\". Gelinin de ödünç aldığını öğrenince utancı geçiyor.",
@@ -111,7 +111,7 @@ Heute kaufe ich wieder Neues, aber selten. Wenn mich jemand nach dem Jahr fragt,
               id: "de-b1-06-l1-5",
               no: 5,
               ref: "t1",
-              text: "Ein großer Teil seiner Kleidung stammt aus einer kurzen Phase.",
+              text: "Ein großer Teil ihrer Kleidung stammt aus einer kurzen Phase.",
               answer: true,
               explain:
                 "Metin oranı veriyor: \"Zwei Drittel meiner Kartons stammten aus einer einzigen Phase vor sechs Jahren\".",
@@ -121,7 +121,7 @@ Heute kaufe ich wieder Neues, aber selten. Wenn mich jemand nach dem Jahr fragt,
               id: "de-b1-06-l1-6",
               no: 6,
               ref: "t1",
-              text: "Heute kauft er grundsätzlich nichts Neues mehr.",
+              text: "Heute kauft sie grundsätzlich nichts Neues mehr.",
               answer: false,
               explain:
                 "Son paragraf sınırlıyor: \"Heute kaufe ich wieder Neues, aber selten\". Yani tümden bir vazgeçiş değil.",
@@ -254,7 +254,7 @@ Solange das so bleibt, ist der Vorwurf an die Kundschaft billig — im doppelten
               ],
               answer: 1,
               explain:
-                "Programdan kazançlı çıkacağını kendisi söylüyor (\"gebe ich offen zu\") ve hemen sınırlıyor: bodruma kalkacak cihazları onarmak ona bir şey kazandırmaz.",
+                "Programdan kazançlı çıkacağını kendisi söylüyor (\"gebe ich offen zu\") ve hemen sınırlıyor: bodruma kaldırılacak cihazları onarmak ona bir şey kazandırmaz.",
             },
             {
               kind: "mcq",
@@ -447,7 +447,7 @@ Frau Endres: Ich bin katholisch und höre oft, mein Argument sei von gestern. De
               options: ["Dafür.", "Dagegen."],
               answer: 1,
               explain:
-                "Argümanları bildiğini söylüyor ama kendi vardiyasından bakıyor: pazar \"der letzte freie Tag\" ve çocukları onu hiç görmemiş. Bilmek katılmak değil.",
+                "Argümanları bildiğini söylüyor ama kendi vardiyasından bakıyor: pazar \"der letzte freie Tag\" ve çocukları onu pazarları hiç görmemiş. Bilmek katılmak değil.",
             },
             {
               kind: "mcq",

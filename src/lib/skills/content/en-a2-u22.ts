@@ -83,7 +83,7 @@ export const enA2U22: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["six", "6"],
-        explain: "„How much is free on the disk? … Six.“ — onun altı sorun demekti.",
+        explain: "„How much is free on the disk? … Six.“ — ondan az olması sorun demekti.",
       },
       {
         kind: "short_answer",
@@ -109,7 +109,7 @@ export const enA2U22: SkillExercise[] = [
       { de: "stupid", tr: "basit" },
       { de: "the meaning", tr: "anlamı" },
       { de: "press", tr: "basmak" },
-      { de: "install", tr: "takmak" },
+      { de: "install", tr: "yüklemek" },
     ],
     minutes: 6,
     text:

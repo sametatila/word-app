@@ -248,10 +248,10 @@ There is one group for which the model has not worked well. In services that mus
 
 My own view after two years of reporting on this town is simple. The four-day week is not a gift and not a trick. It is a hard question about what a working day is actually for, and most places have never asked it.`,
               gloss: [
-                { de: "a council", tr: "belediye meclisi", en: "council" },
-                { de: "a department", tr: "birim, bölüm", en: "department" },
-                { de: "an application", tr: "başvuru", en: "application" },
-                { de: "a care home", tr: "bakımevi", en: "care home" },
+                { de: "a council", tr: "belediye meclisi", en: "der Gemeinderat" },
+                { de: "a department", tr: "birim, bölüm", en: "die Abteilung" },
+                { de: "an application", tr: "başvuru", en: "der Antrag" },
+                { de: "a care home", tr: "bakımevi", en: "das Pflegeheim" },
               ],
             },
           ],
@@ -359,9 +359,9 @@ Not every street is suitable, however. Trees need water and space for their root
 
 Cities that have worked on this for several years give the same advice. Plant fewer trees but plant them properly, and choose the route before you choose the species. {{20}}`,
               gloss: [
-                { de: "shade", tr: "gölge", en: "shade" },
-                { de: "a root", tr: "kök", en: "root" },
-                { de: "a species", tr: "tür", en: "species" },
+                { de: "shade", tr: "gölge", en: "der Schatten" },
+                { de: "a root", tr: "kök", en: "die Wurzel" },
+                { de: "a species", tr: "tür", en: "die Art" },
               ],
             },
           ],
@@ -452,7 +452,7 @@ And finally, go home on time. A person who stays until eight in the first week s
               id: "en-b1-01-l5-21",
               no: 21,
               text: "Gap 21",
-              options: ["hope", "wait", "consider", "expect"],
+              options: ["rely", "wait", "consider", "expect"],
               answer: 3,
               explain:
                 "Cümle bir önceki cümledeki `expects` fiilini karşıtlıkla sürdürüyor: kimse yararlı olmanı beklemiyor, ama insanların beklediği şey soru sormandır. `expect` bu yapıda nesnesini doğrudan alır; `hope` ve `wait` `for` ister, `consider` ise «göz önünde bulundurmak» demektir ve bir beklenti bildirmez.",
@@ -472,7 +472,7 @@ And finally, go home on time. A person who stays until eight in the first week s
               id: "en-b1-01-l5-23",
               no: 23,
               text: "Gap 23",
-              options: ["for", "behind", "underneath", "about"],
+              options: ["over", "behind", "underneath", "about"],
               answer: 1,
               explain:
                 "`a reason behind something` bir eşdizim: görünürdeki şeyin arkasındaki gerekçe. `a reason for` de doğrudur ama devamındaki «the reason may be a person you have not met» arka planı işaret ediyor; `underneath` fiziksel altta olmayı bildirir ve `about` bu adla kullanılmaz.",
@@ -559,7 +559,7 @@ The lane is not perfect. But it should be judged {{30}} the number of people it 
               text: "Gap 29",
               accept: ["where"],
               explain:
-                "Öncül bir yer: «on the street ___ they used to drive». Yer öncülüne bağlanan ilgi bağlacı `where` olur. `when` zaman öncülü ister, `which` ve `that` ise bu yapıda bir edat olmadan gelemez — dolayısıyla tek doğru sözcük `where`.",
+                "Öncül bir yer: «in the street ___ they used to drive». Yer öncülüne bağlanan ilgi bağlacı `where` olur. `when` zaman öncülü ister, `which` ve `that` ise bu yapıda bir edat olmadan gelemez — dolayısıyla tek doğru sözcük `where`.",
             },
             {
               kind: "gap",
@@ -1036,8 +1036,8 @@ If you cannot come:      tell your {{19}}`,
                 { speaker: "Petra", text: "I would tell them to visit in February, not in June. Everybody falls in love with a village in summer. If it still looks good in the rain, then talk to me again." },
               ],
               gloss: [
-                { de: "arithmetic", tr: "hesap, aritmetik", en: "arithmetic" },
-                { de: "a saving", tr: "tasarruf", en: "saving" },
+                { de: "arithmetic", tr: "hesap, aritmetik", en: "das Rechnen" },
+                { de: "a saving", tr: "tasarruf", en: "die Ersparnis" },
               ],
             },
           ],

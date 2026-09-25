@@ -156,7 +156,7 @@ Nicht alles war gut. Die Pausen sind kürzer geworden, und drei Mitarbeiter habe
 Die Firma macht aber weiter. Ab Januar gilt die Vier-Tage-Woche für alle Betriebe der Familie Hansen.`,
               gloss: [
                 { de: "der Mitarbeiter", tr: "çalışan", en: "employee" },
-                { de: "still stehen", tr: "durmak, çalışmamak", en: "to stand idle" },
+                { de: "stillstehen", tr: "durmak, çalışmamak", en: "to stand idle" },
                 { de: "produzieren", tr: "üretmek", en: "to produce" },
                 { de: "der Betrieb", tr: "işletme", en: "business, plant" },
               ],

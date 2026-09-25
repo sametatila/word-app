@@ -643,7 +643,7 @@ Die Vertreterversammlung beschließt mit einfacher Mehrheit; Änderungen der Sat
               ],
               answer: 0,
               explain:
-                "§ 7 iki süreyi üst üste koyuyor: en erken 6 ay, ve 10'dan fazla eşzamanlı ayrılışta yönetim ödemeyi 12 aya kadar uzatabiliyor. Toplam en geç 18 ay.",
+                "§ 7 iki süreyi üst üste koyuyor: en erken 6 ay, ve 10'dan fazla eşzamanlı ayrılışta yönetim ödemeyi 12 aya kadar daha erteleyebiliyor. Toplam en geç 18 ay.",
             },
             {
               kind: "mcq",

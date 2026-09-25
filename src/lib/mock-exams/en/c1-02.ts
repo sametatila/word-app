@@ -81,7 +81,7 @@ Whether any of this could have been prevented is an open question. Several citie
               id: "en-c1-02-l1-3",
               no: 3,
               text: "Gap 3",
-              options: ["attracts", "draws", "pulls", "gathers"],
+              options: ["attracts", "raises", "pulls", "gathers"],
               answer: 0,
               explain:
                 "`attract attention` yerleşik bir eşdizim. `draw attention` de doğrudur ama genellikle `to` ile bir hedefe yönlendirir; burada hedef yok. `pull` ve `gather` bu adla kullanılmaz.",
@@ -91,7 +91,7 @@ Whether any of this could have been prevented is an open question. Several citie
               id: "en-c1-02-l1-4",
               no: 4,
               text: "Gap 4",
-              options: ["tightened", "narrowed", "compressed", "shrank"],
+              options: ["tightened", "narrowed", "compressed", "lowered"],
               answer: 1,
               explain:
                 "`margins narrow` sektör dilinde yerleşik bir kalıptır: kâr payının daralması. `tighten` bütçe ya da kural için, `compress` fiziksel sıkışma için, `shrink` ise toplam büyüklük için kullanılır; `margins` ile en doğal eş `narrow`.",
@@ -111,7 +111,7 @@ Whether any of this could have been prevented is an open question. Several citie
               id: "en-c1-02-l1-6",
               no: 6,
               text: "Gap 6",
-              options: ["convinces", "persuades", "assures", "reminds"],
+              options: ["explains", "persuades", "assures", "reminds"],
               answer: 3,
               explain:
                 "Nesne insanlar ve devamında `that` yan cümlesi var; anlam ise zaten bilinen bir şeyi yeniden akla getirmek: `reminds people that …`. `convince` ve `persuade` bir görüşü değiştirmeyi, `assure` ise güvence vermeyi bildirir.",
@@ -149,9 +149,9 @@ That sense resists documentation, which is inconvenient for institutions and, ar
               id: "en-c1-02-l2-7",
               no: 7,
               text: "Gap 7",
-              accept: ["that"],
+              accept: ["that", "which"],
               explain:
-                "«It is not the existence of a procedure ___ distinguishes …» bir yarma cümle (cleft): vurgulanan öge öne çekilmiş ve geri kalanı `that` ile bağlanıyor. `which` bu yapıda olumsuz vurgulu ögeden sonra kullanılmaz.",
+                "«It is not the existence of a procedure ___ distinguishes …» bir yarma cümle (cleft): vurgulanan öge öne çekilmiş ve geri kalanı `that` ile bağlanıyor. Vurgulanan öge cansız bir ad öbeği olduğu için `which` de kabul edilir.",
             },
             {
               kind: "gap",
@@ -362,10 +362,10 @@ My reply is not that scale is bad but that the question is asked in the wrong or
 
 Whether any institution will adopt it is another matter. Sequencing of this kind is expensive to defend and impossible to put on a chart, which is, arguably, why it is so rarely proposed.`,
               gloss: [
-                { de: "artisanal", tr: "zanaat işi", en: "artisanal" },
-                { de: "a category error", tr: "kategori hatası", en: "category error" },
-                { de: "to caricature", tr: "çarpıtarak sunmak", en: "to caricature" },
-                { de: "at volume", tr: "büyük ölçekte", en: "at volume" },
+                { de: "artisanal", tr: "zanaat işi", en: "handwerklich" },
+                { de: "a category error", tr: "kategori hatası", en: "der Kategorienfehler" },
+                { de: "to caricature", tr: "çarpıtarak sunmak", en: "verzerrt darstellen" },
+                { de: "at volume", tr: "büyük ölçekte", en: "in großer Menge" },
               ],
             },
           ],
@@ -541,9 +541,9 @@ This has an uncomfortable implication for training. If the knowledge cannot be s
 
 None of this shows that the original project was misconceived. It shows that the object it was hunting was a different shape from the one it expected, and that is a more useful conclusion than failure.`,
               gloss: [
-                { de: "articulacy", tr: "kendini ifade edebilme", en: "articulacy" },
-                { de: "a cue", tr: "ipucu, işaret", en: "cue" },
-                { de: "misconceived", tr: "yanlış tasarlanmış", en: "misconceived" },
+                { de: "articulacy", tr: "kendini ifade edebilme", en: "die Ausdrucksfähigkeit" },
+                { de: "a cue", tr: "ipucu, işaret", en: "das Signal" },
+                { de: "misconceived", tr: "yanlış tasarlanmış", en: "verfehlt" },
               ],
             },
           ],
@@ -582,7 +582,7 @@ None of this shows that the original project was misconceived. It shows that the
               text: "Gap 31",
               answer: "a",
               explain:
-                "Boşluktan önce plan anlatılıyor: görüş, kural, öğretim. (a) o planın sonucunu veriyor: üç yıl sonra tutanaklar var, öğretilecek kural yok. Devamındaki «The failure was not one of articulacy» da bu başarısızlığa geri gönderme yapıyor.",
+                "Boşluktan önce plan anlatılıyor: görüşme, kural, öğretim. (a) o planın sonucunu veriyor: üç yıl sonra tutanaklar var, öğretilecek kural yok. Devamındaki «The failure was not one of articulacy» da bu başarısızlığa geri gönderme yapıyor.",
             },
             {
               kind: "match",
@@ -993,9 +993,9 @@ The entry test has been abandoned because the correlation was close to {{13}}.
                 { speaker: "Hana", text: "Mine is duller. Publish the cases where standardisation was tried and reversed. At present those disappear, and every organisation learns the same lesson from scratch." },
               ],
               gloss: [
-                { de: "to misdiagnose", tr: "yanlış teşhis koymak", en: "to misdiagnose" },
-                { de: "to absorb variation", tr: "değişkenliği soğurmak", en: "to absorb variation" },
-                { de: "a rhetorical trick", tr: "söz oyunu", en: "rhetorical trick" },
+                { de: "to misdiagnose", tr: "yanlış teşhis koymak", en: "falsch diagnostizieren" },
+                { de: "to absorb variation", tr: "değişkenliği soğurmak", en: "Schwankungen auffangen" },
+                { de: "a rhetorical trick", tr: "söz oyunu", en: "der rhetorische Kniff" },
               ],
             },
           ],

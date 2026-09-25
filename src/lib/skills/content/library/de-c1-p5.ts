@@ -98,7 +98,7 @@ export const deC1P5: SkillExercise[] = [
         explain: "„In einer Anleitung sucht niemand nach Kapiteln, sondern nach Absichten.“",
       },
       {
-        text: "Warum werden Anleitungen selten getestet?",
+        text: "Was ist laut Text das Problem beim Testen von Anleitungen?",
         options: [
           "Sie werden von Leuten geprüft, die das Gerät kennen.",
           "Die Hinweise werden ohnehin übersprungen.",

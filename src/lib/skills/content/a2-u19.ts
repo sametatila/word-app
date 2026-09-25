@@ -110,7 +110,7 @@ export const a2U19: SkillExercise[] = [
       { de: "gastfreundlich", tr: "misafirperver", en: "hospitable" },
       { de: "die Pünktlichkeit", tr: "dakiklik", en: "punctuality" },
       { de: "schenken", tr: "hediye etmek", en: "to give as a gift" },
-      { de: "leeren", tr: "boşaltmak", en: "to empty" },
+      { de: "leer", tr: "boş", en: "empty" },
       { de: "die Mitternacht", tr: "gece yarısı", en: "midnight" },
       { de: "der Text", tr: "metin", en: "text" },
     ],

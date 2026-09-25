@@ -175,11 +175,6 @@
   "de": "Zuerst die Frage, dann die Klage, dann die Einzelheit, zuletzt die Behandlung."
  },
  {
-  "tr": "„My password doesn't work too.“ — yeni bir tane istiyor.",
-  "kind": "explain",
-  "de": "„My password doesn't work too.“ — er bittet um ein neues."
- },
- {
   "tr": "Önce bağlantı, sonra haber, sonra öğüt, en son yeni gün.",
   "kind": "explain",
   "de": "Zuerst die Verbindung, dann die Nachricht, dann der Rat, zuletzt der neue Tag."
@@ -275,9 +270,9 @@
   "de": "„Then you shouldn't drink coffee after six! Try water or light tea.“"
  },
  {
-  "tr": "„Good. Twelve euros together, please.“ — iki artı dokuz artı iki pul.",
+  "tr": "„Good. Thirteen euros together, please.“ — iki artı dokuz artı iki pul.",
   "kind": "explain",
-  "de": "„Good. Twelve euros together, please.“ — zwei plus neun plus zwei Marken."
+  "de": "„Good. Thirteen euros together, please.“ — zwei plus neun plus zwei Marken."
  },
  {
   "tr": "„Can you send me a new one?“ — „one“ burada „password“ yerine geçiyor.",
@@ -288,11 +283,6 @@
   "tr": "„I didn't win, but it was good.“ — „didn't“ sonrası „win“ ilk hâlinde.",
   "kind": "explain",
   "de": "„I didn't win, but it was good.“ — nach „didn't“ steht „win“ in der Grundform."
- },
- {
-  "tr": "„I know. I am here after four years.“ — her yıl gelmek öğüdün kendisi.",
-  "kind": "explain",
-  "de": "„I know. I am here after four years.“ — jedes Jahr zu kommen ist der Rat selbst."
  },
  {
   "tr": "„I went to a farm near the mountains.“ — anne babayı ziyaret eden Nil.",
@@ -340,11 +330,6 @@
   "de": "„I use the internet for my class.“ — „the internet“ steht immer mit „the“."
  },
  {
-  "tr": "„I have a toothache. My tooth hurts since two days.“ — aynı şey iki kalıpla.",
-  "kind": "explain",
-  "de": "„I have a toothache. My tooth hurts since two days.“ — dasselbe mit zwei Wendungen."
- },
- {
   "tr": "„I have a headache. Can I have some medicine, please?“ — su ilacı içmek için.",
   "kind": "explain",
   "de": "„I have a headache. Can I have some medicine, please?“ — das Wasser ist zum Einnehmen."
@@ -358,11 +343,6 @@
   "tr": "„I eat a big dinner at ten in the evening.“ — hafif akşam yemeği öğüdün kendisi.",
   "kind": "explain",
   "de": "„I eat a big dinner at ten in the evening.“ — das leichte Abendessen ist der Rat selbst."
- },
- {
-  "tr": "„Three times: morning, afternoon and evening.“ — bir tanedir her seferde, altı fiyat.",
-  "kind": "explain",
-  "de": "„Three times: morning, afternoon and evening.“ — eine pro Mal, sechs ist der Preis."
  },
  {
   "tr": "„I didn't watch TV in the evening — I was too tired.“ — „didn't“ sonrası fiil ilk hâlinde.",

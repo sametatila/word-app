@@ -210,11 +210,6 @@
   "de": "schwer"
  },
  {
-  "tr": "nota",
-  "kind": "gloss.tr",
-  "de": "Noten"
- },
- {
   "tr": "olan",
   "kind": "gloss.tr",
   "de": "welches ist"
@@ -738,5 +733,10 @@
   "tr": "değiştiği düşünülüyor",
   "kind": "gloss.tr",
   "de": "soll sich geändert haben"
+ },
+ {
+  "tr": "işin aslı",
+  "kind": "gloss.tr",
+  "de": "der Stand der Dinge"
  }
 ]

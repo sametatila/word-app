@@ -63,7 +63,7 @@ export const enC1U07: SkillExercise[] = [
       { de: "missing", tr: "eksik" },
       { de: "puts it back", tr: "geri koyuyor" },
       { de: "transitive", tr: "geçişli" },
-      { de: "a policy", tr: "siyaset" },
+      { de: "a policy", tr: "politika" },
       { de: "the predicate", tr: "yüklem" },
       { de: "alone", tr: "tek başına" },
       { de: "deletes", tr: "siliyor" },
@@ -159,7 +159,7 @@ export const enC1U07: SkillExercise[] = [
       { de: "content", tr: "içerik" },
       { de: "belongs", tr: "ait" },
       { de: "hedges", tr: "çekinceler" },
-      { de: "dropped", tr: "düşürülmüş" },
+      { de: "dropped", tr: "yerleştirilmiş" },
       { de: "middle", tr: "orta" },
       { de: "whole", tr: "bütün" },
       { de: "caution", tr: "ihtiyat" },
@@ -192,7 +192,7 @@ export const enC1U07: SkillExercise[] = [
     ],
     minutes: 12,
     text:
-      "Granted, the insolvency is real, albeit recent. Eight words, two concessions, and the letter has not given anything away.\n" +
+      "Granted, the insolvency is real, albeit recent. Seven words, two concessions, and the letter has not given anything away.\n" +
       "„Granted“ opens by handing the reader a fact that cannot be argued with. „Albeit“ takes half of it back: the insolvency is real, and it is also three months old, and three months is not a history. Neither word carries an argument. Both of them arrange one.\n" +
       "Much as the indebtedness grew, the client is not insolvent. The same move on a different hinge. „Much as“ admits the size of the growth and then refuses the conclusion the reader was assembling, and the refusal is the only claim in the sentence.\n" +
       "The levy is irrevocable, whereas the fee is not. „Whereas“ is the cold one. It does not concede at all; it separates, and a letter that separates two items is usually about to pay one of them.\n" +

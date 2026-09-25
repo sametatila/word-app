@@ -500,11 +500,6 @@
     "en": "„Damit kann ich arbeiten“ — the condition is an application that includes how the tasks are split."
   },
   {
-    "tr": "„How little training there was.“ — bir öğleden sonra sonra doğrudan vardiya.",
-    "kind": "explain",
-    "en": "„How little training there was.“ — one afternoon and then straight onto a shift."
-  },
-  {
     "tr": "Bir blog yazısı: çalar saatsiz iki hafta neyi değiştirdi, neyi değiştirmedi.",
     "kind": "intro",
     "en": "A blog post: what two weeks without an alarm clock changed and what it did not."
@@ -648,5 +643,10 @@
     "tr": "Dört bine yapılıp kırka düzeltilen bir hata düzeltilmiş değil, dosyalanmıştır.",
     "kind": "explain",
     "en": "A mistake made to four thousand and corrected to forty has not been corrected but filed."
+  },
+  {
+    "tr": "„If it is worse tomorrow, call back and we'll find something the same day.“",
+    "kind": "explain",
+    "en": "„If it is worse tomorrow, call back and we'll find something the same day.“"
   }
 ]

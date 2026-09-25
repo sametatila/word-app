@@ -28,28 +28,35 @@ export const enB2P3: SkillExercise[] = [
       { de: "delay", tr: "gecikme" },
       { de: "in advance", tr: "peşin" },
       { de: "settle", tr: "çözmek" },
-      { de: "skip", tr: "dersi asmak" },
+      { de: "skip", tr: "atlamak" },
     ],
     minutes: 9,
     text:
       "BEFORE YOU HAVE WORK DONE ON YOUR FLAT\n\n" +
-      "Most disputes about building work do not start with bad work. They start with two people who each " +
-      "believed something different and never wrote it down.\n\n" +
-      "Get three quotes, and read them side by side before you read the prices. A quote that is fifteen per " +
-      "cent cheaper is often cheaper because something has been left out: the removal of the old material, the " +
-      "disposal fee, the second coat. It is said in the trade that the second page is where the money is, and " +
-      "the second page is the one people skip.\n\n" +
-      "Have the start and the end written into the contract, together with what happens if they move. It is " +
-      "widely reported that most delays are caused by materials, not by workers, and materials are ordered by " +
-      "whoever placed the order first. If you sign in March for work in September, ask when the order will " +
-      "actually be placed.\n\n" +
-      "Do not have everything paid before the work is finished. A third at the start, a third in the middle and " +
-      "a third on completion is normal; anything above half in advance should be questioned. If you are asked " +
+      "Most disputes about building work do not start with bad work. They " +
+      "start with two people who each believed something different and never " +
+      "wrote it down.\n\n" +
+      "Get three quotes, and read them side by side before you read the " +
+      "prices. A quote that is fifteen per cent cheaper is often cheaper " +
+      "because something has been left out: the removal of the old material, " +
+      "the disposal fee, the second coat. It is said in the trade that the " +
+      "second page is where the money is, and the second page is the one " +
+      "people skip.\n\n" +
+      "Have the start and the end written into the contract, together with " +
+      "what happens if they move. It is widely reported that most delays are " +
+      "caused by materials, not by workers, and materials are delivered to " +
+      "whoever placed the order first. If you sign in March for work in " +
+      "September, ask when the order will actually be placed.\n\n" +
+      "Do not have everything paid before the work is finished. A third at the " +
+      "start, a third in the middle and a third on completion is normal; " +
+      "anything above half in advance should be questioned. If you are asked " +
       "for cash, ask for the reason in writing.\n\n" +
-      "Photograph the room before anybody starts. It costs nothing and it settles nine arguments out of ten.\n\n" +
-      "Finally, the point that is most often forgotten: agree who cleans. It sounds small until a Friday " +
-      "evening when you have your kitchen back but cannot cook in it. Have that written down as well. " +
-      "A sentence in a contract is cheaper than a phone call at nine on a Friday.",
+      "Photograph the room before anybody starts. It costs nothing and it " +
+      "settles nine arguments out of ten.\n\n" +
+      "Finally, the point that is most often forgotten: agree who cleans. It " +
+      "sounds small until a Friday evening when you have your kitchen back but " +
+      "cannot cook in it. Have that written down as well. A sentence in a " +
+      "contract is cheaper than a phone call at nine on a Friday.",
     questions: [
       {
         text: "What is the main advice of the text?",

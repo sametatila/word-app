@@ -31,7 +31,7 @@ export const enC1P7: SkillExercise[] = [
       { de: "slight", tr: "ufak" },
       { de: "manufacturer", tr: "imalatçı" },
       { de: "independent", tr: "bağımsız" },
-      { de: "commercial", tr: "reklam filmi" },
+      { de: "commercial", tr: "ticari" },
       { de: "production", tr: "üretim" },
       { de: "environment", tr: "çevre" },
       { de: "sue", tr: "dava açmak" },
@@ -86,7 +86,7 @@ export const enC1P7: SkillExercise[] = [
           "releasing schematics after five years",
         ],
         answer: 0,
-        explain: "„We are not asking you to open your designs“ — bu talepleri davayı zayıflatıyor buluyorlar.",
+        explain: "„We are not asking you to open your designs“ — bu taleplerin davayı zayıflattığını düşünüyorlar.",
       },
       {
         kind: "truefalse",

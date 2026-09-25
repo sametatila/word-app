@@ -34,7 +34,7 @@ export const b1U05: SkillExercise[] = [
       { de: "die Höhe", tr: "yükseklik / tutar", en: "level" },
       { de: "die Summe", tr: "toplam", en: "total" },
       { de: "das Recht", tr: "hak", en: "right" },
-      { de: "die Reinigung", tr: "kuru temizlemeci", en: "dry cleaner" },
+      { de: "die Reinigung", tr: "temizlik", en: "cleaning" },
       { de: "also", tr: "yani", en: "so" },
       { de: "der Quadratmeter", tr: "metrekare", en: "square meter" },
       { de: "die Zahl", tr: "sayı", en: "number" },

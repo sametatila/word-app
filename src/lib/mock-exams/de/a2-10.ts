@@ -316,7 +316,7 @@ Ein Problem gibt es doch: Es fehlen jüngere Helfer. Die meisten am Tisch sind �
               title: "Ein Jahr nichts Neues gekauft",
               body: `Im Januar habe ich beschlossen, ein Jahr lang kein Gerät neu zu kaufen.
 
-Kaputt gegangen sind in diesem Jahr fünf Dinge: eine Lampe, ein Wasserkocher, ein Staubsauger, eine Uhr und mein Fahrrad.
+Kaputtgegangen sind in diesem Jahr fünf Dinge: eine Lampe, ein Wasserkocher, ein Staubsauger, eine Uhr und mein Fahrrad.
 
 Vier davon konnte ich reparieren lassen. Nur der Staubsauger war nicht zu retten.
 

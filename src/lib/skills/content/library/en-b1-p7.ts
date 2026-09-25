@@ -55,7 +55,7 @@ export const enB1P7: SkillExercise[] = [
           "how unfriendly the staff were",
         ],
         answer: 1,
-        explain: "„How little training there was.“ — bir öğleden sonra sonra doğrudan vardiya.",
+        explain: "„How little training there was.“ — bir öğleden sonralık eğitim, ardından doğrudan vardiya.",
       },
       {
         text: "Why didn't he ask questions at first?",

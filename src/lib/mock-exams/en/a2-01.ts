@@ -78,7 +78,7 @@ export const EN_A2_01: MockPaper = {
               genre: "Message",
               genreTr: "İleti",
               title: "From Ana",
-              body: `Hi Deniz, I cannot come to the yoga class tonight. My sister is ill and I stay with her children. Can you tell the teacher? Thanks!`,
+              body: `Hi Deniz, I cannot come to the yoga class tonight. My sister is ill and I am staying with her children. Can you tell the teacher? Thanks!`,
             },
             {
               kind: "text",
@@ -94,7 +94,7 @@ export const EN_A2_01: MockPaper = {
               genre: "Note at work",
               genreTr: "İş yerindeki not",
               title: "From Ken",
-              body: `Team, I go to the dentist tomorrow morning and I come at eleven. Please start the meeting without me. My notes are on the shared drive.`,
+              body: `Team, I am going to the dentist tomorrow morning and I will come in at eleven. Please start the meeting without me. My notes are on the shared drive.`,
             },
           ],
           items: [
@@ -246,9 +246,9 @@ Now I run three times a week, always in the morning. Morning is better for me be
 
 People often ask me for a secret. There is no secret. The only rule is this: do not run fast at the beginning. If you go too fast in the first month, you will stop in the second.`,
               gloss: [
-                { de: "a kilometre", tr: "kilometre", en: "kilometre" },
-                { de: "the beginning", tr: "başlangıç", en: "beginning" },
-                { de: "a secret", tr: "sır", en: "secret" },
+                { de: "a kilometre", tr: "kilometre", en: "der Kilometer" },
+                { de: "the beginning", tr: "başlangıç", en: "der Anfang" },
+                { de: "a secret", tr: "sır", en: "das Geheimnis" },
               ],
             },
           ],
@@ -447,7 +447,7 @@ Leyla`,
               text: "Gap 24",
               accept: ["if", "whether"],
               explain:
-                "«Please tell me ___ you need anything else» yine dolaylı bir evet/hayır sorusu: `if` gerekiyor. Bir önceki boşlukla aynı yapı, ama farklı bir fiilden sonra; A2'de bu kalıbın iki ayrı yerde tanınması bekleniyor.",
+                "«Please tell me ___ you need anything else» yine dolaylı bir evet/hayır sorusu: `if` gerekiyor. 22. boşlukla aynı yapı, ama farklı bir fiilden sonra; A2'de bu kalıbın iki ayrı yerde tanınması bekleniyor.",
             },
           ],
         },

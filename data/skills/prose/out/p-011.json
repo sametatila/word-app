@@ -350,11 +350,6 @@
   "en": "False: „Beides ist Heimat, und ich muss mich nicht entscheiden.“"
  },
  {
-  "tr": "Yanlış: „Im Flur darf man keine Möbel und keine Kartons stellen.“",
-  "kind": "explain",
-  "en": "False: „Im Flur darf man keine Möbel und keine Kartons stellen.“"
- },
- {
   "tr": "Yanlış: konuşma dilinde sık karıştırılıyor, yazıda ayrım geçerli.",
   "kind": "explain",
   "en": "False: it is often muddled in speech, but the distinction holds in writing."
@@ -527,7 +522,7 @@
  {
   "tr": "Eksiltmenin koşulu içtenlik; taklit edilirse kayıtsızlığa dönüyor.",
   "kind": "explain",
-  "en": "Cutting words works only if it is sincere; imitated, it turns into indifference."
+  "en": "Understatement works only if it is sincere; imitated, it turns into indifference."
  },
  {
   "tr": "Fiyat karşılaştırması nasıl yapılır? Neye bakmalı, neye bakmamalı?",
@@ -585,9 +580,9 @@
   "en": "Two words, opposite claims. The distinction exists in Turkish already — but reversed."
  },
  {
-  "tr": "indem yöntemi bildirir: alışkanlık kararla değil tekrarla kurulur.",
+  "tr": "indem yöntemi bildirir: alışkanlık kararla değil tekrarla kurulur. „wenn“ de dilbilgisel ve anlamca doğrudur.",
   "kind": "explain",
-  "en": "indem gives the method: a habit is built by repetition, not by a decision."
+  "en": "indem gives the method: a habit is built by repetition, not by a decision. „wenn“ is also grammatical and correct."
  },
  {
   "tr": "İş durumunu anlat. Sıfattan türeyen isimler artikele göre değişir.",

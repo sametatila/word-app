@@ -44,8 +44,8 @@ export const a2U17: SkillExercise[] = [
       { de: "die Wolke", tr: "bulut", en: "cloud" },
       { de: "besonders", tr: "özellikle", en: "especially" },
       { de: "Grad", tr: "derece", en: "degree" },
-      { de: "kühlen", tr: "soğutmak", en: "to cool" },
-      { de: "bergen", tr: "enkazdan çıkarmak", en: "to recover" },
+      { de: "kühl", tr: "serin", en: "cool" },
+      { de: "der Berg", tr: "dağ", en: "mountain" },
     ],
     minutes: 4,
     text:
@@ -67,7 +67,7 @@ export const a2U17: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["wird"],
-        explain: "Gelecek zaman werden ile kurulur; hava raporunun temel fiili budur.",
+        explain: "Burada werden „olmak, hâline gelmek“ anlamında; hava raporunda değişimi anlatan temel fiil budur.",
       },
       {
         text: "Wann gibt es ein Gewitter?",

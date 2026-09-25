@@ -190,9 +190,9 @@ There is a further problem. The people least likely to answer a survey are the p
               id: "en-b2-08-l2-11",
               no: 11,
               text: "Gap 11",
-              accept: ["for"],
+              accept: ["for", "to"],
               explain:
-                "`matter to` ve `matter for` arasından bu yapıda edat ilgi adılından önce gelir: «the people for whom the answer would matter most». `whom` bir edatın nesnesi olduğu için boşluk edatla dolar.",
+                "`matter to` / `matter for` kalıbında edat ilgi adılından önce gelir: «the people for whom the answer would matter most». `whom` bir edatın nesnesi olduğu için boşluk edatla dolar.",
             },
             {
               kind: "gap",
@@ -371,9 +371,9 @@ Aro is unusually willing to say so. She points out that her service was never de
 
 The awkward part is the cost. Doing less is not cheaper here: the promise of two hours requires people who are paid to be available and are frequently not called. The town accepts that bill because the money saved on emergency admissions lands in the same budget. A town where the hospital is funded from somewhere else would be paying for a benefit it never sees.`,
               gloss: [
-                { de: "an admission", tr: "hastaneye yatış", en: "admission" },
-                { de: "notice", tr: "önceden haber verme", en: "notice" },
-                { de: "convenient", tr: "işine gelen", en: "convenient" },
+                { de: "an admission", tr: "hastaneye yatış", en: "die Einweisung" },
+                { de: "notice", tr: "önceden haber verme", en: "die Vorankündigung" },
+                { de: "convenient", tr: "işine gelen", en: "bequem" },
               ],
             },
           ],
@@ -391,7 +391,7 @@ The awkward part is the cost. Doing less is not cheaper here: the promise of two
               ],
               answer: 0,
               explain:
-                "Tasarımın tamamı üç öğeden ibaret ve ilki bir yokluk: «There are no scheduled visits». Maliyetin daha düşük olmadığı ise son paragrafta açıkça söyleniyor.",
+                "Tasarım yalnız üç öğeden ibaret ve metin işe bir yoklukla başlıyor: «There are no scheduled visits». Maliyetin daha düşük olmadığı ise son paragrafta açıkça söyleniyor.",
             },
             {
               kind: "mcq",
@@ -481,9 +481,9 @@ The consequence is visible in what gets funded. A service aimed at loneliness se
 
 The remedy is unglamorous, and it is not expensive. It is a first question, asked once, about which of the two the person in front of you actually has. Given how little that question costs, its absence from almost every form is hard to explain.`,
               gloss: [
-                { de: "durable", tr: "kalıcı", en: "durable" },
-                { de: "a register", tr: "kayıt, sicil", en: "register" },
-                { de: "unglamorous", tr: "gösterişsiz", en: "unglamorous" },
+                { de: "durable", tr: "kalıcı", en: "dauerhaft" },
+                { de: "a register", tr: "kayıt, sicil", en: "das Register" },
+                { de: "unglamorous", tr: "gösterişsiz", en: "unspektakulär" },
               ],
             },
           ],

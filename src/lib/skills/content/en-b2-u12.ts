@@ -48,7 +48,7 @@ export const enB2U12: SkillExercise[] = [
       { de: "plain", tr: "yalın" },
       { de: "sentence", tr: "cümle" },
       { de: "verb", tr: "fiil" },
-      { de: "anywhere", tr: "başka yerde" },
+      { de: "anywhere", tr: "hiçbir yerde" },
       { de: "invert", tr: "devirmek" },
       { de: "appears", tr: "beliriyor" },
       { de: "phrase", tr: "öbek" },
@@ -136,7 +136,7 @@ export const enB2U12: SkillExercise[] = [
     unit: 12,
     title: "What the study shows",
     genre: "opinion",
-    intro: "Üçüncü yarık cümle ötekilerden ne yapıyor fazla?",
+    intro: "Üçüncü yarık cümle ötekilerden fazla ne yapıyor?",
     gloss: [
       { de: "plain", tr: "yalın" },
       { de: "sentence", tr: "cümle" },

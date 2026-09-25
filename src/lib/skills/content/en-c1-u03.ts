@@ -57,7 +57,7 @@ export const enC1U03: SkillExercise[] = [
       { de: "judgement", tr: "yargı" },
       { de: "resolves", tr: "çözüyor" },
       { de: "backwards", tr: "tersinden" },
-      { de: "understatement", tr: "eksiltili söyleyiş" },
+      { de: "understatement", tr: "az söyleme" },
       { de: "the opposite", tr: "tersi" },
       { de: "politeness", tr: "nezaket" },
       { de: "an insult", tr: "hakaret" },

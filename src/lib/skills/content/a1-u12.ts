@@ -94,7 +94,7 @@ export const a1U12: SkillExercise[] = [
       { de: "das Pfund", tr: "yarım kilo", en: "pound (500 g)" },
       { de: "mehr", tr: "daha fazla", en: "more" },
       { de: "die Bäckerei", tr: "fırın", en: "bakery" },
-      { de: "das Gefälle", tr: "fark", en: "disparity" },
+      { de: "günstig", tr: "ucuz, uygun fiyatlı", en: "cheap" },
     ],
     minutes: 3,
     text:
@@ -104,7 +104,7 @@ export const a1U12: SkillExercise[] = [
         text: "Wann geht die Person auf den Markt?",
         options: ["jeden Samstag", "jeden Sonntag", "jeden Tag"],
         answer: 0,
-        explain: "„Jeden Samstag gehe ich auf den Markt.“",
+        explain: "„Jeden Samstag gehe ich auf den Markt am Marktplatz.“",
       },
       {
         kind: "gapfill",

@@ -56,7 +56,7 @@ export const enC1U19: SkillExercise[] = [
       { de: "ordinary", tr: "olağan" },
       { de: "beside", tr: "yanında" },
       { de: "fourth", tr: "dördüncü" },
-      { de: "anyway", tr: "yine de" },
+      { de: "anyway", tr: "zaten" },
       { de: "a preposition", tr: "edat" },
       { de: "promotes", tr: "yukarı çıkarıyor" },
       { de: "govern", tr: "yönetmek" },
@@ -230,7 +230,7 @@ export const enC1U19: SkillExercise[] = [
           "Albeit aware of finiteness, the circular economy still needs growth.",
           "A concession large enough to be quoted, and then one claim.",
         ],
-        explain: "İki doğru, büyük bir taviz, dördüncü maliyet; en sonda biçim.",
+        explain: "İki doğru, büyük bir taviz, dört maliyet; en sonda biçim.",
       },
       {
         kind: "short_answer",

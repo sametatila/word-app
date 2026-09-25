@@ -135,9 +135,9 @@
   "de": "„„This“ on its own is the loosest of the links.“"
  },
  {
-  "tr": "Yarık cümle, edilgen, öne çıkarma; en sonda ilke.",
+  "tr": "Önce öne çıkarılmış cümle, sonra ilke; ardından yarık cümle ve edilgen.",
   "kind": "explain",
-  "de": "Spaltsatz, Passiv, Voranstellung; am Ende das Prinzip."
+  "de": "Zuerst der Satz mit Voranstellung, dann das Prinzip; danach Spaltsatz und Passiv."
  },
  {
   "tr": "Ödün yok: iki olgu yan yana, çizgiyi okur çekiyor.",
@@ -658,11 +658,6 @@
   "tr": "öne sürüyor",
   "kind": "gloss.tr",
   "de": "postuliert"
- },
- {
-  "tr": "iddia edildi",
-  "kind": "gloss.tr",
-  "de": "wurde behauptet"
  },
  {
   "tr": "ölçüp biçmek",

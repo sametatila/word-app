@@ -165,11 +165,6 @@
   "en": "Two tenses in the same work history. Which one names the experience, which a closed period?"
  },
  {
-  "tr": "„I have five vacation days this year.“ — üçü ağustos için isteniyor.",
-  "kind": "explain",
-  "en": "„I have five vacation days this year.“ — three of them are asked for in August."
- },
- {
   "tr": "„I have worked in three offices…“ — deneyimin kendisi, tarihi değil.",
   "kind": "explain",
   "en": "„I have worked in three offices…“ — the experience itself counts, not the date."
@@ -218,11 +213,6 @@
   "tr": "„I'll call and say the second version comes at four.“ — beş dünkü gidiş saati.",
   "kind": "explain",
   "en": "„I'll call and say the second version comes at four.“ — five was yesterday's time."
- },
- {
-  "tr": "„My sister arrives from Ankara in the morning…“ — kardeş mayısta tatil ayarlıyor.",
-  "kind": "explain",
-  "en": "„My sister arrives from Ankara in the morning…“ — the brother arranges his holiday in May."
  },
  {
   "tr": "„I've already been to the bakery three times this week.“ — fırıncı bugünü de sayıyor.",

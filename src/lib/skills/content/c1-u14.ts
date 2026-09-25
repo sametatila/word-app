@@ -41,7 +41,7 @@ export const c1U14: SkillExercise[] = [
       { de: "geltend machen", tr: "ileri sürmek", en: "to assert" },
       { de: "der Rechtsstreit", tr: "hukuki uyuşmazlık", en: "legal dispute" },
       { de: "die Wiedergutmachung", tr: "telafi", en: "restitution" },
-      { de: "die Anzeige", tr: "ilan", en: "ad" },
+      { de: "die Anzeige", tr: "bildirim / ihbar", en: "notification" },
       { de: "rückwirkend", tr: "geriye dönük", en: "retroactive" },
       { de: "also", tr: "yani", en: "so" },
       { de: "die Zahl", tr: "sayı", en: "number" },
@@ -49,7 +49,7 @@ export const c1U14: SkillExercise[] = [
       { de: "beziffern", tr: "rakamla belirtmek", en: "to put a figure on" },
       { de: "miss", tr: "olumsuzluk ön eki", en: "negative prefix" },
       { de: "rechnen", tr: "hesaplamak", en: "to calculate" },
-      { de: "raten", tr: "tahmin etmek", en: "to guess" },
+      { de: "raten", tr: "tavsiye etmek", en: "to advise" },
       { de: "der Text", tr: "metin", en: "text" },
       { de: "die Entschädigung", tr: "tazminat", en: "compensation" },
       { de: "anzeigen", tr: "ihbar etmek", en: "to report" },
@@ -109,7 +109,7 @@ export const c1U14: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Fasse den Weg in drei Wörtern zusammen, wie der Text es tut.",
+        text: "Fasse den Weg in drei Schritten zusammen, wie der Text es tut.",
         options: [],
         answer: 0,
         accept: [
@@ -154,8 +154,6 @@ export const c1U14: SkillExercise[] = [
       "INFORMIERT. Der Betroffene muss wissen, wer verarbeitet, was verarbeitet wird und ob eine Weitergabe stattfindet. Eine Datenschutzerklärung, die man erst nach dem Absenden erreicht, erfüllt das nicht.\n\n" +
       "WIDERRUFLICH. Die Einwilligung ist jederzeit widerruflich, und der Widerruf muss so einfach sein wie die Erteilung. Ein Häkchen zum Setzen und ein Brief zum Widerrufen ist unzulässig.\n\n" +
       "Der Widerruf wirkt allerdings nur nach vorn: Was bis dahin rechtmäßig verarbeitet wurde, bleibt rechtmäßig. Wer auch das beseitigt haben will, muss die Löschung gesondert verlangen — ein Recht, das unabhängig von der Einwilligung besteht.\n\n" +
-      "Praktisch folgt daraus eine unangenehme Konsequenz: Wer eine Auskunft braucht, muss zuerst herausfinden, wer sie geben darf. Die falsche Stelle antwortet oft trotzdem, und ihre Antwort bindet niemanden.\n\n" +
-      "Wer den Weg abkürzen will, fragt am besten direkt nach der zuständigen Stelle, statt nach der Sache zu fragen.\n\n" +
       "Das alles besagt nichts über die Qualität eines Dienstes. Es besagt nur, wer worüber entscheidet.",
     questions: [
       {

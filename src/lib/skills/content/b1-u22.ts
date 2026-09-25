@@ -43,9 +43,9 @@ export const b1U22: SkillExercise[] = [
       { de: "sich beteiligen", tr: "katılmak", en: "to take part" },
       { de: "verteilen", tr: "paylaştırmak", en: "to distribute" },
       { de: "die Gemeinschaft", tr: "topluluk", en: "community" },
-      { de: "leeren", tr: "boşaltmak", en: "to empty" },
+      { de: "leer", tr: "boş", en: "empty" },
       { de: "egal", tr: "fark etmez", en: "doesn't matter" },
-      { de: "sehen", tr: "görmek", en: "to see" },
+      { de: "aussehen nach", tr: "gibi görünmek", en: "to look like" },
     ],
     text:
       "Hinter dem Haus liegt seit Jahren eine leere Fläche. Ab April machen " +
@@ -155,7 +155,7 @@ export const b1U22: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Bis wann will die städtische Planung weiterentwickeln?",
+        text: "Bis wann will die städtische Planung das Viertel weiterentwickeln?",
         options: [],
         answer: 0,
         accept: ["bis 2030", "2030"],

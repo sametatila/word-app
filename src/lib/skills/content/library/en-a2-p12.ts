@@ -22,7 +22,7 @@ export const enA2P12: SkillExercise[] = [
     skill: "reading",
     title: "Driving the Night Bus",
     genre: "profile",
-    intro: "Şehir herkes uyurken çalışan bir gece otobüsü şoförünü anlatan kısa portreyi okuyacaksın.",
+    intro: "Şehirde herkes uyurken çalışan bir gece otobüsü şoförünü anlatan kısa portreyi okuyacaksın.",
     gloss: [
       { de: "shift", tr: "vardiya" },
       { de: "passenger", tr: "yolcu" },
@@ -30,7 +30,7 @@ export const enA2P12: SkillExercise[] = [
       { de: "empty", tr: "boş" },
       { de: "heater", tr: "ısıtıcı" },
       { de: "wake", tr: "uyandırmak" },
-      { de: "loud", tr: "yüksek sesli" },
+      { de: "loud", tr: "gürültülü" },
     ],
     minutes: 5,
     text:

@@ -119,7 +119,7 @@ export const EN_A2_03: MockPaper = {
               no: 4,
               ref: "m4",
               text: "What must Selim do on Friday?",
-              options: ["Give the plants water", "Move the green plant into the sun", "Take the key to Anja's sister"],
+              options: ["Give the plants water", "Move the green plant into the sun", "Take the key to the writer's sister"],
               answer: 0,
               explain:
                 "Not tek bir rica taşıyor: «Can you water the plants on Friday?». Küçük yeşil bitki için yazılan şey tam tersi bir yasak («Do not put … in the sun»); anahtar ise balkon kapısının anahtarı, kimseye götürülmüyor.",
@@ -226,9 +226,9 @@ The flat is smaller than my old one and it has no balcony. But the rent is a hun
 
 There is one more thing, and it is better than a balcony. When I come home late, the baker often gives me the bread that he cannot sell the next day. I take it, and in the morning I give half of it to the old man in flat 3.`,
               gloss: [
-                { de: "a bakery", tr: "fırın", en: "bakery" },
-                { de: "the rent", tr: "kira", en: "rent" },
-                { de: "a balcony", tr: "balkon", en: "balcony" },
+                { de: "a bakery", tr: "fırın", en: "die Bäckerei" },
+                { de: "the rent", tr: "kira", en: "die Miete" },
+                { de: "a balcony", tr: "balkon", en: "der Balkon" },
               ],
             },
           ],
@@ -293,7 +293,7 @@ There is one more thing, and it is better than a balcony. When I come home late,
 
 Talk about money in the first week. Who pays the internet? Who buys the things that everybody {{15}}?
 
-Write the cleaning days on a paper in the kitchen. A paper is {{16}} than a long discussion every Sunday.
+Write the cleaning days on a piece of paper in the kitchen. A list on paper is {{16}} than a long discussion every Sunday.
 
 A guest for one night is fine. But if somebody stays for a week, the others {{17}} know before, not after.
 

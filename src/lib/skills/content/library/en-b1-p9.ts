@@ -86,7 +86,7 @@ export const enB1P9: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What had the onions to do?",
+        text: "What did the onions have to do?",
         options: [],
         answer: 0,
         accept: ["go soft but not brown", "become soft", "go soft"],

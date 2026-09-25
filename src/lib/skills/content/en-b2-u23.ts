@@ -149,7 +149,7 @@ export const enB2U23: SkillExercise[] = [
       { de: "complete", tr: "tam" },
       { de: "a legal basis", tr: "yasal dayanak" },
       { de: "proceedings", tr: "dava süreci" },
-      { de: "held", tr: "tutulan" },
+      { de: "held", tr: "benimsenen" },
       { de: "backwards", tr: "geriye" },
       { de: "an amendment", tr: "değişiklik" },
       { de: "confidentiality", tr: "gizlilik" },

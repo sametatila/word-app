@@ -218,13 +218,8 @@ export const enC1U01: SkillExercise[] = [
         text: "Dersin sırası: doğru sıraya koy.",
         options: [],
         answer: 0,
-        items: [
-          "What the essayist does next is an allusion.",
-          "The passive moves the agent to the end.",
-          "Into the sentence creeps a connotation.",
-          "Old at the front, new at the end.",
-        ],
-        explain: "Yarık cümle, edilgen, öne çıkarma; en sonda ilke.",
+        items: ["Into the sentence creeps a connotation.", "Old at the front, new at the end.", "What the essayist does next is an allusion.", "The passive moves the agent to the end."],
+        explain: "Önce öne çıkarılmış cümle, sonra ilke; ardından yarık cümle ve edilgen.",
       },
       {
         kind: "short_answer",

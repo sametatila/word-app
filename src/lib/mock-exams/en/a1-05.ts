@@ -55,8 +55,8 @@ I am very hungry. Do we have bread at home?
 
 Alma`,
               gloss: [
-                { de: "to arrive", tr: "varmak", en: "arrive" },
-                { de: "heavy", tr: "ağır", en: "heavy" },
+                { de: "to arrive", tr: "varmak", en: "ankommen" },
+                { de: "hungry", tr: "aç", en: "hungrig" },
               ],
             },
             {

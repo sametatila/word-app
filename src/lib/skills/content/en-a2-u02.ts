@@ -39,7 +39,7 @@ export const enA2U02: SkillExercise[] = [
     gloss: [
       { de: "move", tr: "taşınmak" },
       { de: "winter", tr: "kış" },
-      { de: "know", tr: "bilmek" },
+      { de: "know", tr: "tanımak" },
       { de: "loud", tr: "gürültülü" },
       { de: "library", tr: "kütüphane" },
     ],
@@ -96,7 +96,7 @@ export const enA2U02: SkillExercise[] = [
     unit: 2,
     title: "A holiday I remember",
     genre: "story",
-    intro: "Bir tatil anlatısı. Sıralama sözcüklerini takip et: first, then, after that, finally.",
+    intro: "Bir tatil anlatısı. Sıralama sözcüklerini takip et: first, then, afterwards, after that.",
     gloss: [
       { de: "shade", tr: "gölge" },
       { de: "holiday", tr: "tatil" },

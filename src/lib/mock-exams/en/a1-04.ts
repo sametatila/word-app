@@ -56,9 +56,9 @@ We come back at 4 in the afternoon.
 
 Mrs Talia Roth`,
               gloss: [
-                { de: "the trip", tr: "gezi", en: "trip" },
-                { de: "to leave", tr: "hareket etmek", en: "to leave" },
-                { de: "parents", tr: "anne baba", en: "parents" },
+                { de: "the trip", tr: "gezi", en: "der Ausflug" },
+                { de: "to leave", tr: "hareket etmek", en: "abfahren" },
+                { de: "parents", tr: "anne baba", en: "die Eltern" },
               ],
             },
             {
@@ -75,9 +75,9 @@ For a new appointment please call us. Do not write an email; we are slow with em
 
 In the night and at the weekend, call 112.`,
               gloss: [
-                { de: "an appointment", tr: "randevu", en: "appointment" },
-                { de: "slow", tr: "yavaş", en: "slow" },
-                { de: "a patient", tr: "hasta", en: "patient" },
+                { de: "an appointment", tr: "randevu", en: "der Termin" },
+                { de: "slow", tr: "yavaş", en: "langsam" },
+                { de: "a patient", tr: "hasta", en: "der Patient" },
               ],
             },
           ],
@@ -190,7 +190,7 @@ For children we have a small room with toys.`,
               kind: "mcq",
               id: "en-a1-04-l2-6",
               no: 6,
-              text: "You are ill on Tuesday afternoon and you want to see a doctor.",
+              text: "You are ill on Wednesday afternoon and you want to see a doctor.",
               options: ["School Library", "Saturday Sport Club", "Doctor Yannis — Family Practice"],
               answer: 2,
               explain:
@@ -220,7 +220,7 @@ For children we have a small room with toys.`,
               kind: "mcq",
               id: "en-a1-04-l2-9",
               no: 9,
-              text: "It rains on Saturday morning and your son wants to move.",
+              text: "It rains on Saturday morning and your son wants to do some sport.",
               options: ["School Library", "Saturday Sport Club", "Doctor Yannis — Family Practice"],
               answer: 1,
               explain:
@@ -264,7 +264,7 @@ Last swimmers in the water: 21.30. We close at 22.`,
               genre: "Sign in the school",
               genreTr: "Okuldaki levha",
               title: "COMPUTER ROOM",
-              body: `Open in the big break and after 15.
+              body: `Open at lunchtime and after 15.
 
 Ask the teacher for the key.
 
@@ -311,10 +311,10 @@ The park is open from 6 to 22.`,
               id: "en-a1-04-l3-12",
               no: 12,
               ref: "s2",
-              text: "You can use the computers at 16 o'clock.",
+              text: "You can use the computers at 16.00.",
               answer: true,
               explain:
-                "Levha «Open in the big break and after 15» diyor: on beşten sonra açık, dolayısıyla on altı da açık. İki ayrı zaman aralığı var ve madde ikincisini ölçüyor.",
+                "Levha «Open at lunchtime and after 15» diyor: on beşten sonra açık, dolayısıyla on altı da açık. İki ayrı zaman aralığı var ve madde ikincisini ölçüyor.",
             },
             {
               kind: "bool",

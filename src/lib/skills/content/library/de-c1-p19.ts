@@ -76,7 +76,7 @@ export const deC1P19: SkillExercise[] = [
           "Das Wesentliche kam erst spät.",
         ],
         answer: 2,
-        explain: "Hangi belgenin ne zamana kadar eksik olduğu ancak dördüncü paragrafta söyleniyordu.",
+        explain: "Hangi belgenin eksik olduğu ve ne zamana kadar gönderilmesi gerektiği ancak dördüncü paragrafta söyleniyordu.",
       },
       {
         kind: "truefalse",
@@ -104,7 +104,7 @@ export const deC1P19: SkillExercise[] = [
       {
         text: "Was merkten viele Mitarbeitende beim Überarbeiten?",
         options: [
-          "dass sie die Texte selbst kaum verstanden",
+          "dass sie die Texte selbst nie ganz verstanden hatten",
           "dass die Bürger zu wenig lasen",
           "dass die Juristen im Recht waren",
         ],

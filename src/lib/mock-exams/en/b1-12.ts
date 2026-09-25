@@ -239,9 +239,9 @@ That result changed what the town did next. The council had planned a campaign a
 
 Petran is careful about how far the study goes. Four hundred people in one town is not a country, and the second question was asked in September, when everybody is busy. However, he says one finding has held everywhere he has looked: people do not fail to rest because they do not want to. They fail because rest is the only thing in the week that nobody else is expecting from them.`,
               gloss: [
-                { de: "a researcher", tr: "araştırmacı", en: "researcher" },
-                { de: "a campaign", tr: "kampanya", en: "campaign" },
-                { de: "guilty", tr: "suçluluk duyan", en: "guilty" },
+                { de: "a researcher", tr: "araştırmacı", en: "der Forscher" },
+                { de: "a campaign", tr: "kampanya", en: "die Kampagne" },
+                { de: "guilty", tr: "suçluluk duyan", en: "schuldbewusst" },
               ],
             },
           ],
@@ -349,9 +349,9 @@ There is a second confusion, between rest and enjoyment. An evening with friends
 
 None of this is an argument against sleep, which nothing replaces. It is an argument for noticing what kind of tiredness you have. {{20}}`,
               gloss: [
-                { de: "vague", tr: "belirsiz, muğlak", en: "vague" },
-                { de: "to recover", tr: "kendine gelmek", en: "recover" },
-                { de: "a record", tr: "kayıt", en: "record" },
+                { de: "vague", tr: "belirsiz, muğlak", en: "vage" },
+                { de: "tiredness", tr: "yorgunluk", en: "die Müdigkeit" },
+                { de: "a record", tr: "kayıt", en: "die Aufzeichnung" },
               ],
             },
           ],
@@ -472,7 +472,7 @@ I {{25}} to defend mine by explaining it. Now I say I am busy, which is shorter 
               id: "en-b1-12-l5-24",
               no: 24,
               text: "Gap 24",
-              options: ["make", "turn", "put", "take"],
+              options: ["give", "turn", "put", "take"],
               answer: 1,
               explain:
                 "`turn something into something` bir şeyi başka bir şeye dönüştürmeyi anlatır ve cümlede `into` var. `make` bu edatı almaz, `put into` yerleştirmedir, `take into` ise bu anlamı vermez.",

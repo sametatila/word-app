@@ -55,8 +55,8 @@ The key is with Mrs Orla in flat 4.
 
 Thank you! Suki`,
               gloss: [
-                { de: "a cup", tr: "fincan, kap", en: "cup" },
-                { de: "fast", tr: "hızlı", en: "fast" },
+                { de: "a cup", tr: "fincan, kap", en: "die Tasse" },
+                { de: "fast", tr: "hızlı", en: "schnell" },
               ],
             },
             {
@@ -213,7 +213,7 @@ No money. Only a warm coat!`,
               kind: "mcq",
               id: "en-a1-06-l2-9",
               no: 9,
-              text: "You want a small bird for your home.",
+              text: "Your small bird is ill on a Wednesday afternoon.",
               options: ["Animal Doctor", "Pet Shop Nova", "Park Walking Group"],
               answer: 0,
               explain:

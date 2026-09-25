@@ -227,9 +227,9 @@ I should say clearly that this is not a solution to anything large. The packagin
 
 So I have stopped feeling proud about my bin and I have started writing to the supermarket instead. If enough of us do that, they may listen, although I would not bet my month on it.`,
               gloss: [
-                { de: "packaging", tr: "ambalaj", en: "packaging" },
-                { de: "waste", tr: "atık, israf", en: "waste" },
-                { de: "loose", tr: "ambalajsız, dökme", en: "loose, unpackaged" },
+                { de: "packaging", tr: "ambalaj", en: "die Verpackung" },
+                { de: "waste", tr: "atık, israf", en: "der Abfall" },
+                { de: "loose", tr: "ambalajsız, dökme", en: "unverpackt" },
               ],
             },
           ],
@@ -337,9 +337,9 @@ There is a limit, and it is worth naming. A repair is only cheap if the labour i
 
 The most interesting effect may be a slower one. When people expect to repair a thing, they buy differently in the first place. {{20}}`,
               gloss: [
-                { de: "a manufacturer", tr: "üretici", en: "manufacturer" },
-                { de: "spare parts", tr: "yedek parça", en: "spare parts" },
-                { de: "labour", tr: "işçilik", en: "labour" },
+                { de: "a manufacturer", tr: "üretici", en: "der Hersteller" },
+                { de: "spare parts", tr: "yedek parça", en: "die Ersatzteile" },
+                { de: "labour", tr: "işçilik", en: "die Arbeitskosten" },
               ],
             },
           ],
@@ -450,7 +450,7 @@ None of this takes long. Fifteen minutes of questions can {{25}} you from a year
               id: "en-b1-02-l5-23",
               no: 23,
               text: "Gap 23",
-              options: ["explain", "say", "tell", "speak"],
+              options: ["talk", "say", "tell", "speak"],
               answer: 1,
               explain:
                 "Boşluktan sonra `that` ile bir yan cümle geliyor ve nesne yok. `say that …` bu yapıyı kurar; `tell` bir kişi nesnesi ister (tell you that), `speak` yan cümle almaz, `explain` ise burada anlamı değil biçimi bozar.",
@@ -470,7 +470,7 @@ None of this takes long. Fifteen minutes of questions can {{25}} you from a year
               id: "en-b1-02-l5-25",
               no: 25,
               text: "Gap 25",
-              options: ["save", "protect", "keep", "defend"],
+              options: ["save", "cover", "keep", "defend"],
               answer: 0,
               explain:
                 "`save somebody from something` kalıbı: birini bir şeyden kurtarmak. `protect from` de doğrudur ama nesne bir kişi ve kaynak bir zaman kaybı olduğunda `save` çok daha doğal; `keep` ve `defend` bu kalıpta bu anlamı vermez.",
@@ -1009,9 +1009,9 @@ Closed in the month of:  {{19}}`,
                 { speaker: "Ivan", text: "Do not sell the car first. Leave it on the street for a month and use it only when you truly have to. If you use it four times, you have your answer. If you use it twenty times, you also have your answer, and there is no shame in that." },
               ],
               gloss: [
-                { de: "insurance", tr: "sigorta", en: "insurance" },
-                { de: "an exception", tr: "istisna", en: "exception" },
-                { de: "fuel", tr: "yakıt", en: "fuel" },
+                { de: "insurance", tr: "sigorta", en: "die Versicherung" },
+                { de: "an exception", tr: "istisna", en: "die Ausnahme" },
+                { de: "fuel", tr: "yakıt", en: "der Kraftstoff" },
               ],
             },
           ],

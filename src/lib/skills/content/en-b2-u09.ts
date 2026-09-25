@@ -143,7 +143,7 @@ export const enB2U09: SkillExercise[] = [
       { de: "a distinction", tr: "ayrım" },
       { de: "rules out", tr: "dışarıda bırakıyor" },
       { de: "ought to", tr: "gerekirdi" },
-      { de: "the first person", tr: "birinci tekil" },
+      { de: "the first person", tr: "birinci şahıs" },
       { de: "the temptation", tr: "ayartı" },
       { de: "accurate", tr: "isabetli" },
       { de: "attach", tr: "yapışmak" },
@@ -155,7 +155,7 @@ export const enB2U09: SkillExercise[] = [
     ],
     minutes: 9,
     text:
-      "The bias must have been there from the start. Four words of verb before the point arrives, and every one of them is doing something.\n" +
+      "The bias must have been there from the start. Three words of verb before the point arrives, and every one of them is doing something.\n" +
       "„Must have been“ is the conclusion, not the accusation. It says the evidence leaves one reading. In a correction that distinction is the difference between a paragraph the paper can print and one it cannot.\n" +
       "The myth can't have started here. The negative of the same conclusion, and it is „can't have“ and never „mustn't have“ — a prohibition cannot be aimed at last March.\n" +
       "We should have checked the gossip. That one is not about evidence at all. It is about a choice that was available and was not taken, and it is the only sentence in the paragraph that anybody will remember.\n" +

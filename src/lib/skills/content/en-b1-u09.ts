@@ -41,12 +41,12 @@ export const enB1U09: SkillExercise[] = [
     genre: "opinion",
     intro: "İki seçenek, iki bağlaç. Hangisi şaşırtıyor, hangisi karşılaştırıyor?",
     gloss: [
-      { de: "surprise", tr: "şaşırtmaca" },
+      { de: "surprise", tr: "sürpriz" },
       { de: "side by side", tr: "yan yana" },
       { de: "in the end", tr: "sonunda" },
       { de: "sentence", tr: "cümle" },
       { de: "sounds", tr: "kulağa geliyor" },
-      { de: "anywhere", tr: "hiçbir yerde" },
+      { de: "anywhere", tr: "herhangi bir yerde" },
       { de: "equal weight", tr: "eşit ağırlık" },
       { de: "concede", tr: "ödün vermek" },
       { de: "the test", tr: "ölçüt" },
@@ -122,7 +122,7 @@ export const enB1U09: SkillExercise[] = [
     unit: 9,
     title: "The faulty order",
     genre: "email",
-    intro: "İkinci şikâyet mektubu. Hangi cümle tarihli, hangisi değil?",
+    intro: "Üçüncü şikâyet mektubu. Hangi cümle tarihli, hangisi değil?",
     gloss: [
       { de: "faulty", tr: "kusurlu" },
       { de: "reference number", tr: "işlem numarası" },
@@ -139,7 +139,7 @@ export const enB1U09: SkillExercise[] = [
       "Dear Sir or Madam,\n" +
       "I have written twice about this order and I am writing a third time, so I will keep it short.\n" +
       "I wrote to you on Monday the fourth and again on Thursday the seventh. The reference number is in both emails and at the top of this one.\n" +
-      "The delivery arrived on the second. One of the two devices is faulty: it is switched on, the screen lights up for about a second, and then nothing. I have tried two plugs and two rooms.\n" +
+      "The delivery arrived on the second. One of the two devices is faulty: it switches on, the screen lights up for about a second, and then nothing. I have tried two plugs and two rooms.\n" +
       "I do not want a repair. The device was repaired once before it reached me — the box had been opened and closed with new tape, which I photographed before I opened it.\n" +
       "Could you replace it, please? I have the receipt, the reference number, and the photograph of the box.\n" +
       "I am not asking for an apology and I do not need goodwill. I need one working device, which is what I paid for on the last day of the month.\n" +
@@ -148,7 +148,7 @@ export const enB1U09: SkillExercise[] = [
       "Ela Demir",
     questions: [
       {
-        text: "How many times has Ela written about this?",
+        text: "How many times has Ela written about this, including this letter?",
         options: ["three times with this one", "once", "twice"],
         answer: 0,
         explain: "„I have written twice about this order and I am writing a third time…“",
@@ -157,7 +157,7 @@ export const enB1U09: SkillExercise[] = [
         text: "What is wrong with the device?",
         options: ["the screen goes dark after a second", "it does not switch on", "the plug is broken"],
         answer: 0,
-        explain: "„it is switched on, the screen lights up for about a second, and then nothing.“",
+        explain: "„it switches on, the screen lights up for about a second, and then nothing.“",
       },
       {
         kind: "truefalse",
@@ -205,7 +205,7 @@ export const enB1U09: SkillExercise[] = [
       { de: "built", tr: "kurulmuş" },
       { de: "backwards", tr: "tersten" },
       { de: "sounds", tr: "kulağa geliyor" },
-      { de: "anywhere", tr: "hiçbir yerde" },
+      { de: "anywhere", tr: "herhangi bir yerde" },
       { de: "anyway", tr: "yine de" },
       { de: "whole", tr: "bütün" },
       { de: "design", tr: "tasarım" },

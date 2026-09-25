@@ -120,7 +120,7 @@ export const enB1U08: SkillExercise[] = [
     genre: "info",
     intro: "Üye kuralları. Hangisi zorunlu, hangisi yasak, hangisi öğüt?",
     gloss: [
-      { de: "sign in", tr: "kayıt olmak" },
+      { de: "sign in", tr: "girişte imza atmak" },
       { de: "on the wall", tr: "duvarda" },
       { de: "twice in a row", tr: "üst üste iki kez" },
       { de: "rather", tr: "tercihen" },

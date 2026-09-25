@@ -80,7 +80,7 @@ export const enA2: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["Saturday"],
-        explain: "„I go there every Saturday morning and stay for three hours.“",
+        explain: "„I go there every Saturday morning for three hours.“",
       },
       {
         text: "Why was the bus important for the writer?",

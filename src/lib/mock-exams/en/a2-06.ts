@@ -44,7 +44,7 @@ export const EN_A2_06: MockPaper = {
               genre: "Message",
               genreTr: "İleti",
               title: "Sunday or Saturday?",
-              body: `Hi Wim, the weather for Sunday is bad: rain all day and wind in the afternoon. I think we go on Saturday instead. The museum is open both days, so we can decide in the morning.`,
+              body: `Hi Wim, the weather for Sunday is bad: rain all day and wind in the afternoon. I think we should go on Saturday instead. The museum is open both days, so we can decide in the morning.`,
             },
             {
               kind: "text",
@@ -68,7 +68,7 @@ export const EN_A2_06: MockPaper = {
               genre: "Note for a neighbour",
               genreTr: "Komşuya not",
               title: "Snow tonight",
-              body: `Ilan, snow is coming tonight. Please move your car before ten; the men clear the street at six in the morning. My son can help you with the small one. Do not put salt on the plants!`,
+              body: `Ilan, snow is coming tonight. Please move your car before ten; the men clear the street at six in the morning. My son can help you with the snow. Do not put salt on the plants!`,
             },
             {
               kind: "text",
@@ -89,7 +89,7 @@ export const EN_A2_06: MockPaper = {
               options: ["Going one day earlier", "Going to the museum on Sunday", "Waiting until next week"],
               answer: 0,
               explain:
-                "İleti günü öne alıyor: «I think we go on Saturday instead», çünkü pazar yağmurlu. Müze iki gün de açık, yani müze pazarı kurtarmıyor; gelecek hafta hiç geçmiyor.",
+                "İleti günü öne alıyor: «I think we should go on Saturday instead», çünkü pazar yağmurlu. Müze iki gün de açık, yani müze pazarı kurtarmıyor; gelecek hafta hiç geçmiyor.",
             },
             {
               kind: "mcq",
@@ -228,9 +228,9 @@ The hardest month was not January. It was March, when the weather was better and
 
 Now I walk in the morning, before work. It is colder, but the street is empty and the day starts before the day starts.`,
               gloss: [
-                { de: "proper", tr: "gerçek, doğru dürüst", en: "proper" },
-                { de: "boots", tr: "bot", en: "boots" },
-                { de: "proud", tr: "gururlu", en: "proud" },
+                { de: "proper", tr: "gerçek, doğru dürüst", en: "richtig" },
+                { de: "boots", tr: "bot", en: "die Stiefel" },
+                { de: "proud", tr: "gururlu", en: "stolz" },
               ],
             },
           ],
@@ -395,9 +395,9 @@ If you go in February, take boots {{24}} are really waterproof.`,
               id: "en-a2-06-l5-21",
               no: 21,
               text: "Gap 21",
-              accept: ["but"],
+              accept: ["but", "yet", "although", "though"],
               explain:
-                "İki yarı karşıt: sabah en soğuk gündü, ama güneş açtı. Karşıtlığı `but` verir. `so` sonuç bildirir, `because` ise sebep kurar ve ikisi de bu beklenmedikliği taşımaz.",
+                "İki yarı karşıt: sabah en soğuk gündü, ama güneş açtı. Karşıtlığı `but` verir; `yet`, `although` ve `though` da aynı ilişkiyi kurar. `so` sonuç bildirir, `because` ise sebep kurar ve ikisi de bu beklenmedikliği taşımaz.",
             },
             {
               kind: "gap",

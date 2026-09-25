@@ -54,8 +54,8 @@ I have a red hat for you. It is a present, please do not buy one.
 See you on Friday!
 Cato`,
               gloss: [
-                { de: "a degree", tr: "derece", en: "degree" },
-                { de: "a present", tr: "hediye", en: "present" },
+                { de: "a degree", tr: "derece", en: "der Grad" },
+                { de: "a present", tr: "hediye", en: "das Geschenk" },
               ],
             },
             {

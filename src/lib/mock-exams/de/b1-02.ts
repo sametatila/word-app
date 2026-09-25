@@ -442,7 +442,7 @@ Und noch etwas übersehen viele: Der Strom nützt nur, wenn er auch verbraucht w
               options: ["Dafür.", "Dagegen."],
               answer: 1,
               explain:
-                "Gürültüden yakınıyor ama koşul öne sürüyor: önce otobüs seferleri, sonra kapatma — \"In dieser Reihenfolge, sonst nicht\". Bugünkü haliyle karşı.",
+                "Gürültüden yakınıyor ama koşul öne sürüyor: önce otobüs seferleri, sonra kapatma — \"In dieser Reihenfolge, sonst nicht\". Bugünkü hâliyle karşı.",
             },
             {
               kind: "mcq",

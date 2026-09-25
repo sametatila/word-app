@@ -102,7 +102,7 @@ export const a1U13: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Ihre Bestellung — online\n\nIm Warenkorb:\n— 2× Zahnpasta … 4,00 Euro\n— 1× Shampoo … 3,50 Euro\n— 1× Creme … 8,00 Euro\n— 1× Seife … 1,50 Euro\n\nZusammen: 17,00 Euro\n\nDie Lieferung ist kostenlos. Das Paket kommt in 2 bis 3 Tagen.\n\nSie sind nicht zu Hause? Dann geht das Paket zur Post.\n\nEine Frage? Klicken Sie hier an.",
+      "Ihre Bestellung — online\n\nIm Warenkorb:\n— 2× Zahnpasta … 4,00 Euro\n— 1× Shampoo … 3,50 Euro\n— 1× Creme … 8,00 Euro\n— 1× Seife … 1,50 Euro\n\nZusammen: 17,00 Euro\n\nDie Lieferung ist kostenlos. Das Paket kommt in 2 bis 3 Tagen.\n\nSie sind nicht zu Hause? Dann geht das Paket zur Post.\n\nEine Frage? Klicken Sie hier.",
     questions: [
       {
         text: "Was kostet die Lieferung?",

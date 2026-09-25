@@ -355,10 +355,10 @@ Reviews of the field conclude that the number of {{18}} claims is a better guide
               id: "t5",
               genre: "Opinion piece",
               genreTr: "Görüş yazısı",
-              title: "Twenty-nine words",
+              title: "Twenty-four words",
               body: `I want to take one clause apart, because arguments about small print are usually conducted without any small print in them.
 
-Here is the clause, from a household policy sold to about two hundred thousand people: "We do not pay for damage caused by water escaping from a fixed water system where the escape results from a lack of maintenance." Twenty-nine words.
+Here is the clause, from a household policy sold to about two hundred thousand people: "We do not pay for damage caused by water escaping from a fixed water system where the escape results from a lack of maintenance." Twenty-four words.
 
 Every one of them is honest. The clause does not lie and it is not hidden; it appears under a heading that says what it is. If you had read it before the pipe burst, you would have understood every word in it.
 
@@ -368,9 +368,9 @@ The result is a clause that is perfectly clear as English and unknowable as a pr
 
 I do not think this was designed. I think it is what you get when a document is drafted to survive a court rather than to inform a buyer, and those are different tests. The second one is not applied by anybody.`,
               gloss: [
-                { de: "a clause", tr: "madde, hüküm", en: "clause" },
-                { de: "a loss adjuster", tr: "hasar eksperi", en: "loss adjuster" },
-                { de: "maintenance", tr: "bakım", en: "maintenance" },
+                { de: "a clause", tr: "madde, hüküm", en: "die Klausel" },
+                { de: "a loss adjuster", tr: "hasar eksperi", en: "der Schadensregulierer" },
+                { de: "maintenance", tr: "bakım", en: "die Wartung" },
               ],
             },
           ],
@@ -478,9 +478,9 @@ There is a second approach, which is to standardise the product rather than the 
 
 That is a larger intervention, and it is resisted for a reason that is rarely stated out loud: a market in which the products are identical is a market in which the margins are visible.`,
               gloss: [
-                { de: "an exclusion", tr: "kapsam dışı hâl", en: "exclusion" },
-                { de: "to standardise", tr: "standartlaştırmak", en: "standardise" },
-                { de: "a margin", tr: "kâr payı", en: "margin" },
+                { de: "an exclusion", tr: "kapsam dışı hâl", en: "der Ausschluss" },
+                { de: "to standardise", tr: "standartlaştırmak", en: "vereinheitlichen" },
+                { de: "a margin", tr: "kâr payı", en: "die Gewinnspanne" },
               ],
             },
           ],

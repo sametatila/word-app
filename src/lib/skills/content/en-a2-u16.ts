@@ -122,7 +122,7 @@ export const enA2U16: SkillExercise[] = [
       "Put your bag on the belt. Big luggage goes at the desk, small bags go with you. Water is not allowed after this point — drink it or leave it here.\n" +
       "At the gate you have to show your boarding pass and your passport. Both. Every time.\n" +
       "Boarding starts forty minutes before the flight. If there is a delay, you see it on the screen in the terminal, not on your phone. The screen is always first.\n" +
-      "In the plane: bag under the seat or above you, phone off, seat belt closed until the light is off.\n" +
+      "In the plane: bag under the seat or above you, phone off, seat belt on until the light is off.\n" +
       "We land at ten past two. Local time is one hour later than here.\n" +
       "If you have any questions, ask at the desk before the gate. After the gate there is nobody.",
     questions: [

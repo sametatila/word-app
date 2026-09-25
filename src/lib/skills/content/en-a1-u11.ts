@@ -106,11 +106,11 @@ export const enA1U11: SkillExercise[] = [
     text:
       "BIG SALE — ALL COLOURS\n\n" +
       "Shirts: red, blue, white and black. Only fifteen dollars.\n" +
-      "Sweaters: green, yellow and gray. Twenty dollars.\n" +
+      "Sweaters: green, yellow and grey. Twenty dollars.\n" +
       "Jackets: black or blue. Sixty dollars — not cheap, but very good.\n" +
       "Shoes: black, white and red. From thirty dollars.\n\n" +
       "How much are these shoes? Thirty dollars. And these? Forty.\n" +
-      "Is this shirt too big for you? We sell every size: small, big and thin.\n\n" +
+      "Is this shirt too big for you? We sell every size, from small to very big.\n\n" +
       "Our store is open every day. The fitting room is near the shoes.\n" +
       "You can try on all our clothes. Come and buy!",
     questions: [

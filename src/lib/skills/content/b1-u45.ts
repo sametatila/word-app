@@ -43,12 +43,11 @@ export const b1U45: SkillExercise[] = [
       { de: "der Donner", tr: "gök gürültüsü", en: "thunder" },
       { de: "frieren", tr: "üşümek / donmak", en: "to freeze" },
       { de: "steil", tr: "dik", en: "steep" },
-      { de: "trocknen", tr: "kurutmak", en: "to dry" },
+      { de: "trocknen", tr: "kurumak", en: "to dry" },
       { de: "wild", tr: "vahşi", en: "wild" },
       { de: "kühl", tr: "serin", en: "cool" },
       { de: "normal", tr: "normal", en: "normal" },
-      { de: "zugehen", tr: "kapanmak", en: "to shut" },
-      { de: "weiterzugehen", tr: "devam etmek", en: "to continue" },
+      { de: "weitergehen", tr: "devam etmek", en: "to continue" },
     ],
     text:
       "Wenn Sie Donner hören und das Wetter wild wird, gehen Sie nicht " +
@@ -116,7 +115,6 @@ export const b1U45: SkillExercise[] = [
       { de: "endgültig", tr: "kesin", en: "final" },
       { de: "durchschnittlich", tr: "ortalama", en: "on average" },
       { de: "sehen", tr: "görmek", en: "to see" },
-      { de: "die Länge", tr: "uzunluk", en: "length" },
       { de: "lesen", tr: "okumak", en: "to read" },
       { de: "der Text", tr: "metin", en: "text" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
@@ -125,18 +123,17 @@ export const b1U45: SkillExercise[] = [
       "B1 heißt nicht, dass Sie fertig sind. Es heißt, dass Sie im Alltag " +
       "zurechtkommen: beim Arzt, im Amt, mit Nachbarn, bei der Arbeit.\n\n" +
       "Realistisch gesehen können Sie jetzt etwa dreitausend Wörter. " +
-      "Durchschnittlich braucht man von A1 bis hierher zwei Jahre, " +
-      "manche länger. Wer sechs Monate gebraucht hat, hat meistens " +
-      "achtzehn Monate lang etwas anderes dafür aufgegeben.\n\n" +
-      "Was Sie noch nicht können, ist auch klar: lange Texte über " +
-      "Themen, die Sie nicht kennen; schnelle Gespräche zwischen " +
-      "Muttersprachlern; Witze. Das kommt auf B2 — und endgültig fertig ist man " +
-      "auch dort nicht. Es kommt nur, " +
-      "wenn Sie weitermachen.\n\n" +
-      "Zum Schluss noch etwas. Am Anfang haben Sie jedes Wort einzeln " +
-      "gelernt. Heute lesen Sie diesen Text, ohne die meisten Wörter " +
-      "zu bemerken. Genau das war das Ziel — und wenn Sie das gerade " +
-      "gemerkt haben, ist es erfüllt.",
+      "Durchschnittlich braucht man von A1 bis hierher zwei Jahre, manche " +
+      "länger. Wer sechs Monate gebraucht hat, hat meistens sechs Monate lang " +
+      "fast alles andere dafür aufgegeben.\n\n" +
+      "Was Sie noch nicht können, ist auch klar: lange Texte über Themen, die " +
+      "Sie nicht kennen; schnelle Gespräche zwischen Muttersprachlern; Witze. " +
+      "Das kommt auf B2 — und endgültig fertig ist man auch dort nicht. Es " +
+      "kommt nur, wenn Sie weitermachen.\n\n" +
+      "Zum Schluss noch etwas. Am Anfang haben Sie jedes Wort einzeln gelernt. " +
+      "Heute lesen Sie diesen Text, ohne die meisten Wörter zu bemerken. Genau " +
+      "das war das Ziel — und wenn Sie das gerade gemerkt haben, ist es " +
+      "erfüllt.",
     questions: [
       {
         text: "Was heißt B1 laut Text?",

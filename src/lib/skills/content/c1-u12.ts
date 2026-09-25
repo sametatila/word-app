@@ -39,7 +39,7 @@ export const c1U12: SkillExercise[] = [
       { de: "die Fragestellung", tr: "araştırma sorusu", en: "research question" },
       { de: "die Vorgehensweise", tr: "yöntem", en: "methodology" },
       { de: "erwägen", tr: "değerlendirmek", en: "to consider" },
-      { de: "einlösen", tr: "bozdurmak", en: "to redeem" },
+      { de: "einlösen", tr: "yerine getirmek", en: "to deliver on" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
       { de: "die Abstufung", tr: "derecelendirme", en: "gradation" },
       { de: "die Stufe", tr: "basamak", en: "step" },
@@ -137,7 +137,7 @@ export const c1U12: SkillExercise[] = [
       { de: "verlobt", tr: "nişanlı", en: "engaged" },
       { de: "das Immunsystem", tr: "bağışıklık sistemi", en: "immune system" },
       { de: "der Angreifer", tr: "saldırgan", en: "attacker" },
-      { de: "sich richten nach", tr: "göre hareket etmek", en: "to go by" },
+      { de: "sich richten gegen", tr: "bir şeye karşı yönelmek", en: "to turn against" },
       { de: "abräumen", tr: "toplamak", en: "to clear away" },
       { de: "der Text", tr: "metin", en: "text" },
       { de: "das Signal", tr: "sinyal", en: "signal" },
@@ -151,7 +151,7 @@ export const c1U12: SkillExercise[] = [
       "Ein Beispiel. „Das Immunsystem ist eine Armee“ macht einen Vorgang greifbar und erklärt sofort, warum es Angreifer und Verteidiger gibt. Was verloren geht: dass dieses System keinen Befehlshaber hat und dass es sich auch gegen den eigenen Körper richten kann. Wer später Autoimmunerkrankungen erklären will, muss das Bild erst wieder abräumen — es steht im Weg.\n\n" +
       "Nützlich ist deshalb eine Faustregel: Ein Bild darf vereinfachen, aber es darf nicht in die falsche Richtung führen. Verkürzung ist erlaubt, Fehlrichtung nicht.\n\n" +
       "Wissenschaftsjournalisten haben dafür eine Formel, die man ruhig laut sagen kann: „Der Vergleich hinkt, aber …“. Sie kostet vier Wörter und macht den Text zugänglich, ohne ihn falsch zu machen. Sie signalisiert dem Fachpublikum, dass der Autor die Grenze kennt, und dem Laienpublikum, dass es sich auf ein Bild einlässt, nicht auf eine Tatsache.\n\n" +
-      "Was dagegen nicht funktioniert, ist die Vereinfachung ohne Kennzeichnung. Sie erzeugt beim Publikum ein Gefühl von Verständnis, das die nächste Nachricht sofort zerstört. Wer dreimal so erklärt wurde, glaubt beim vierten Mal nichts mehr — und differenziert dann in die andere Richtung: Alles sei ohnehin ungewiss.\n\n" +
+      "Was dagegen nicht funktioniert, ist die Vereinfachung ohne Kennzeichnung. Sie erzeugt beim Publikum ein Gefühl von Verständnis, das die nächste Nachricht sofort zerstört. Wer dreimal so eine Erklärung bekommen hat, glaubt beim vierten Mal nichts mehr — und differenziert dann in die andere Richtung: Alles sei ohnehin ungewiss.\n\n" +
       "Eine Grenze verläuft dort, wo die Vereinfachung eine Einschränkung tilgt. „In einer Studie an 300 Männern zwischen 50 und 60“ darf zu „in einer Studie“ werden; zu „bei Menschen“ nicht mehr.\n\n" +
       "Diese Grenze zu halten kostet oft nur vier oder fünf Wörter mehr.\n\n" +
       "Anschaulich zu sein ist keine Herablassung. Es unsauber zu tun schon.",

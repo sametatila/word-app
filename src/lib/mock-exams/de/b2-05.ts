@@ -169,7 +169,7 @@ Was mir niemand gesagt hat: Der teuerste Teil ist nicht die Gebühr, sondern das
               options: ["Ruth", "Herr Wittkamp", "Frau Delgado", "Sinem"],
               answer: 2,
               explain:
-                "Frau Delgado yetenek sözcüğünü kullanmayı bırakmış, çünkü okul günlüğünde \"fast immer die Herkunft beschreibt\". Varlığını değil, işlevini reddediyor.",
+                "Frau Delgado yetenek sözcüğünü kullanmayı bırakmış, çünkü okulun gündelik hayatında \"fast immer die Herkunft beschreibt\". Varlığını değil, işlevini reddediyor.",
             },
             {
               kind: "mcq",
@@ -629,7 +629,7 @@ Die Einsicht in die korrigierte Arbeit ist innerhalb von vier Wochen nach Bekann
               id: "de-b2-05-l5-28",
               no: 28,
               ref: "o1",
-              text: "Sie haben 35 Prozent der Stunden gefehlt, davon 25 Prozent mit Attest. Werden Sie zugelassen?",
+              text: "Sie haben 55 Prozent der Stunden gefehlt, davon 25 Prozent mit Attest. Werden Sie zugelassen?",
               options: [
                 "Ja, weil Atteste immer herausgerechnet werden.",
                 "Nein.",
@@ -637,7 +637,7 @@ Die Einsicht in die korrigierte Arbeit ist innerhalb von vier Wochen nach Bekann
               ],
               answer: 1,
               explain:
-                "§ 3 raporlu devamsızlığı en fazla yüzde 20'ye kadar saymıyor. 35 eksi 20 eşittir 15 sayılan devamsızlık; katılım yüzde 85 gibi görünse de kalan 5 puanlık raporlu kısım sayıldığı için eşik tutmuyor — kabul için gereken yüzde 70'e ulaşılamıyor.",
+                "§ 3 raporlu devamsızlığı en fazla yüzde 20'ye kadar saymıyor. 55 eksi 20 eşittir 35 sayılan devamsızlık; katılım yüzde 65'te kalıyor ve kabul için gereken yüzde 70'e ulaşılamıyor. Raporların tamamı düşülemez, çünkü sınır yüzde 20.",
             },
             {
               kind: "mcq",

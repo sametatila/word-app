@@ -72,7 +72,7 @@ export const b1U20: SkillExercise[] = [
       },
       {
         text: "Was kostet eine Beratung?",
-        options: ["Nichts", "Zwanzig Euro", "Es hängt ab"],
+        options: ["Nichts", "Zwanzig Euro", "Das kommt darauf an"],
         answer: 0,
         explain: "„… man spricht einmal, kostenlos, und entscheidet danach selbst.“",
       },

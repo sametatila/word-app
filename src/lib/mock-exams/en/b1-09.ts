@@ -233,9 +233,9 @@ His method is not complicated. He asks each person to write down, alone, the thr
 
 The last part is the one households resist. He asks them to write the rules down and put them on the fridge, and about a third refuse, because a written rule feels like an accusation. He has learned to leave the room while they argue about that, and to come back.`,
               gloss: [
-                { de: "a dispute", tr: "anlaşmazlık", en: "dispute" },
-                { de: "an accusation", tr: "suçlama", en: "accusation" },
-                { de: "a household", tr: "hane", en: "household" },
+                { de: "a dispute", tr: "anlaşmazlık", en: "der Streit" },
+                { de: "an accusation", tr: "suçlama", en: "der Vorwurf" },
+                { de: "a household", tr: "hane", en: "der Haushalt" },
               ],
             },
           ],
@@ -343,9 +343,9 @@ There is a solution and it is unglamorous. You write a list of what is shared, t
 
 I have lived in six shared flats and I have seen this work twice. Both times somebody wrote the list in the first week, before there was anything to argue about. {{20}}`,
               gloss: [
-                { de: "unspoken", tr: "söylenmemiş", en: "unspoken" },
-                { de: "a verdict", tr: "hüküm, karar", en: "verdict" },
-                { de: "to inherit", tr: "devralmak", en: "inherit" },
+                { de: "unspoken", tr: "söylenmemiş", en: "unausgesprochen" },
+                { de: "a verdict", tr: "hüküm, karar", en: "das Urteil" },
+                { de: "to inherit", tr: "devralmak", en: "erben" },
               ],
             },
           ],

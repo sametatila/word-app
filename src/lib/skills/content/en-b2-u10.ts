@@ -48,7 +48,7 @@ export const enB2U10: SkillExercise[] = [
       { de: "nouns", tr: "isimler" },
       { de: "verbs", tr: "fiiller" },
       { de: "verb", tr: "fiil" },
-      { de: "either", tr: "ikisinden biri" },
+      { de: "either", tr: "o da … değil" },
       { de: "noun", tr: "isim" },
       { de: "sentence", tr: "cümle" },
       { de: "a preposition", tr: "edat" },
@@ -68,7 +68,7 @@ export const enB2U10: SkillExercise[] = [
     minutes: 9,
     text:
       "The comparison of the two reports took a week. The distinction between the cases is clear. The contrast between the versions is sharp. Three nouns made from three verbs, and each of them has brought a preposition with it.\n" +
-      "„Comparison“ takes „of“. „Distinction“ takes „between“. „Contrast“ takes „between“ as well, and „with“ when the second thing is named separately: a contrast with last year's narrative. „Parallel“ takes „with“ and never „between“, which is the one that catches people.\n" +
+      "„Comparison“ takes „of“. „Distinction“ takes „between“. „Contrast“ takes „between“ as well, and „with“ when the second thing is named separately: a contrast with last year's narrative. „Parallel“ works like „contrast“: „between“ for both things together and „with“ for the second thing alone, which is the one that catches people.\n" +
       "So a nominalisation costs twice. Unit 4 showed that the ending cannot be worked out from the verb — enforce, enforcement; perform, performance. This is the second bill: the preposition cannot be worked out either, and the two have nothing to do with each other.\n" +
       "The verb underneath is no help. You compare one thing with another, but you write the comparison of two things. The preposition changes when the verb becomes a noun, and there is no rule saying it should.\n" +
       "Why does a quarterly report live on these? Because the noun can be counted and dated and put in a heading, and because „we compared the reports“ names us. In a document that will be read by the board, the week that the comparison took is a fact and we are not.\n" +
@@ -163,7 +163,7 @@ export const enB2U10: SkillExercise[] = [
     text:
       "Never before has such a landmark been shown. „Never before“ at the front, „has“ ahead of „such a landmark“, and the rest of the verb waiting where it was.\n" +
       "Not once did the legacy reach the public. Here there is no auxiliary in the plain sentence — the legacy reached the public — so „did“ appears to carry the inversion, and the main verb goes back to its bare form. „Did reached“ is the error, and it is the commonest one in this unit.\n" +
-      "Only in the memorial is the name written. The fronted element is a place, „only“ makes it a restriction, and what moves is „is“. Notice how long the subject is: „the name written“ has to wait, and a reader who loses the thread has lost it at the front and not at the end.\n" +
+      "Only in the memorial is the name written. The fronted element is a place, „only“ makes it a restriction, and what moves is „is“. Notice how long the front is: „the name written“ has to wait, and a reader who loses the thread has lost it at the front and not at the end.\n" +
       "Three sentences, three triggers, and one rule that has not changed since it was first stated: negative or restrictive at the front, auxiliary before subject, and the change happens in the clause that follows.\n" +
       "The register is the point. A catalogue entry for a collection uses this shape to say, without saying, that the imprint knows what it has. Autonomy, sovereignty and competence are all words that appear on the same page, and all of them would be flat in an ordinary sentence.\n" +
       "Once, in the first line. After that a catalogue is a list, and a list that shouts is a list nobody reads to the end.",

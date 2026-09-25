@@ -89,7 +89,7 @@ Whether any of this could have been prevented is an open question. Several citie
               id: "en-c1-03-l1-4",
               no: 4,
               text: "Gap 4",
-              options: ["put", "taken", "brought", "set"],
+              options: ["put", "taken", "given", "set"],
               answer: 1,
               explain:
                 "`take something into the calculation` hesaba katmak anlamındadır ve `take … into account` kalıbının aynı ailesindendir. `put into`, `bring into` ve `set into` bu adla bu anlamı vermez.",
@@ -158,7 +158,7 @@ It is worth adding that none of this is {{12}} any means a new observation; engi
               text: "Gap 8",
               accept: ["however", "though"],
               explain:
-                "`however generous` bir ödün öbeği kurar: ne kadar cömert olursa olsun. `however` sıfatın önüne geçer; `although` ise tam bir yan cümle ister ve tek başına sıfatın önünde duramaz.",
+                "`however generous` bir ödün öbeği kurar: ne kadar cömert olursa olsun. `however` sıfatın önüne geçer; `although` da aynı kısaltılmış ödün öbeğini kurar (`although generous`) ve `though` gibi kabul edilir.",
             },
             {
               kind: "gap",
@@ -360,9 +360,9 @@ The way through, I think, is narrower than either side allows. We cannot measure
 
 None of this will make the work visible in the way that a ribbon-cutting is visible. What it might do is make its absence visible, which is arguably the more useful of the two.`,
               gloss: [
-                { de: "a stairwell", tr: "merdiven boşluğu", en: "stairwell" },
-                { de: "a backlog", tr: "birikmiş iş yükü", en: "backlog" },
-                { de: "vigilance", tr: "tetikte olma", en: "vigilance" },
+                { de: "a stairwell", tr: "merdiven boşluğu", en: "das Treppenhaus" },
+                { de: "a backlog", tr: "birikmiş iş yükü", en: "der Arbeitsrückstand" },
+                { de: "vigilance", tr: "tetikte olma", en: "die Wachsamkeit" },
               ],
             },
           ],
@@ -516,9 +516,9 @@ This has an uncomfortable implication for policy. If the total depends on a defi
 
 {{34}}`,
               gloss: [
-                { de: "an audit office", tr: "sayıştay", en: "audit office" },
-                { de: "a defect", tr: "kusur, arıza", en: "defect" },
-                { de: "negotiable", tr: "pazarlığa açık", en: "negotiable" },
+                { de: "an audit office", tr: "sayıştay", en: "der Rechnungshof" },
+                { de: "a defect", tr: "kusur, arıza", en: "der Mangel" },
+                { de: "negotiable", tr: "pazarlığa açık", en: "verhandelbar" },
               ],
             },
           ],
@@ -946,9 +946,9 @@ The council has eleven inspectors and needs {{14}}.`,
                 { speaker: "Fenna", text: "Only that the comparison with private companies is misleading and I wish it would stop. A company that defers maintenance eventually loses customers, which disciplines it. A council that defers maintenance loses nothing measurable for fifteen years, and by then the people who decided have gone. Those are not the same problem." },
               ],
               gloss: [
-                { de: "a backlog", tr: "birikmiş iş yükü", en: "backlog" },
-                { de: "comparability", tr: "karşılaştırılabilirlik", en: "comparability" },
-                { de: "to reclassify", tr: "yeniden sınıflandırmak", en: "reclassify" },
+                { de: "a backlog", tr: "birikmiş iş yükü", en: "der Arbeitsrückstand" },
+                { de: "comparability", tr: "karşılaştırılabilirlik", en: "die Vergleichbarkeit" },
+                { de: "to reclassify", tr: "yeniden sınıflandırmak", en: "neu einstufen" },
               ],
             },
           ],

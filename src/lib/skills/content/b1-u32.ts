@@ -42,7 +42,7 @@ export const b1U32: SkillExercise[] = [
       { de: "die Hütte", tr: "dağ evi", en: "hut" },
       { de: "die Saison", tr: "sezon", en: "season" },
       { de: "der Tourismus", tr: "turizm", en: "tourism" },
-      { de: "die Rundfahrt", tr: "tur", en: "round trip" },
+      { de: "die Rundfahrt", tr: "tur", en: "tour" },
       { de: "sehen", tr: "görmek", en: "to see" },
     ],
     text:
@@ -110,7 +110,7 @@ export const b1U32: SkillExercise[] = [
       { de: "der Wohnort", tr: "ikamet yeri", en: "place of residence" },
       { de: "die Rückkehr", tr: "geri dönüş", en: "return" },
       { de: "die Region", tr: "bölge", en: "region" },
-      { de: "die Länge", tr: "uzunluk", en: "length" },
+      { de: "lang", tr: "uzun", en: "long" },
       { de: "der Blick", tr: "bakış", en: "look" },
       { de: "normal", tr: "normal", en: "normal" },
       { de: "schließen", tr: "kapatmak", en: "to close" },

@@ -42,7 +42,7 @@ export const enA2P2: SkillExercise[] = [
       "Better than most people think. In the country there are big fields with only one plant. Here we have " +
       "gardens, parks and balconies, so the bees find something from March to October.\n\n" +
       "What is the hardest part?\n" +
-      "The neighbors, not the bees. Before I put a hive on a roof, I talk to every flat in the building. " +
+      "The neighbours, not the bees. Before I put a hive on a roof, I talk to every flat in the building. " +
       "It takes longer than the beekeeping, but after that nobody is worried.",
     questions: [
       {

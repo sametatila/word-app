@@ -224,11 +224,11 @@ The second thing surprised me. At about nine o'clock my old teacher arrived. I h
 
 The money was the difficult part. My sister paid for everything and she has less money than I do. I asked her about it twice and she changed the subject twice.
 
-This year I organise something myself: eight people, one long table, no music. My sister says it is boring. She is coming.`,
+This year I am organising something myself: eight people, one long table, no music. My sister says it is boring. She is coming.`,
               gloss: [
-                { de: "a guest list", tr: "davetli listesi", en: "guest list" },
-                { de: "to organise", tr: "düzenlemek", en: "organise" },
-                { de: "boring", tr: "sıkıcı", en: "boring" },
+                { de: "a guest list", tr: "davetli listesi", en: "die Gästeliste" },
+                { de: "to organise", tr: "düzenlemek", en: "organisieren" },
+                { de: "boring", tr: "sıkıcı", en: "langweilig" },
               ],
             },
           ],

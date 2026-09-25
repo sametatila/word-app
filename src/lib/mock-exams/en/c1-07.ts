@@ -366,9 +366,9 @@ What I did get wrong was the writing. We recorded what we destroyed, in the sens
 
 I notice that the digital form of this problem is discussed as though it had been solved. It has not. On balance it is the harder version of the problem, not the easier one. Storage is cheap and finding is not, and a system that returns four million results has performed an appraisal without telling anybody its criteria. A committee, at least, can be asked.`,
               gloss: [
-                { de: "to authorise", tr: "onay vermek", en: "authorise" },
-                { de: "omniscience", tr: "her şeyi bilme", en: "omniscience" },
-                { de: "extent", tr: "hacim, kapsam", en: "extent" },
+                { de: "to authorise", tr: "onay vermek", en: "genehmigen" },
+                { de: "omniscience", tr: "her şeyi bilme", en: "die Allwissenheit" },
+                { de: "extent", tr: "hacim, kapsam", en: "der Umfang" },
               ],
             },
           ],
@@ -536,9 +536,9 @@ The programme's answer was to keep everything from a small number of accounts an
 
 Seventeen years on, the pilot has produced about four terabytes and one genuinely useful finding, which is that the interesting decisions were not made in email at all. They were made in meetings, and the email says "as discussed".`,
               gloss: [
-                { de: "to capture", tr: "kayda almak", en: "capture" },
-                { de: "to migrate a format", tr: "biçimi taşımak", en: "migrate a format" },
-                { de: "a records officer", tr: "belge sorumlusu", en: "records officer" },
+                { de: "to capture", tr: "kayda almak", en: "erfassen" },
+                { de: "to migrate a format", tr: "biçimi taşımak", en: "ein Format migrieren" },
+                { de: "a records officer", tr: "belge sorumlusu", en: "der Aktenverwalter" },
               ],
             },
           ],

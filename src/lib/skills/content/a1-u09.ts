@@ -38,7 +38,7 @@ export const a1U09: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Am Montag stehe ich früh auf. Um halb sieben! Dann dusche ich schnell und frühstücke.\n\nAm Dienstag lerne ich Deutsch. Mein Kurs beginnt um neun Uhr und geht von neun bis elf.\n\nAm Samstag kaufe ich ein. Ich gehe in den Supermarkt und kaufe Obst, Gemüse und Milch.\n\nAm Sonntag stehe ich nie früh auf. Ich schlafe lange und frühstücke um halb elf. Sonntag ist mein Tag!\n\nJede Woche rufe ich meine Eltern an. Manchmal kommt meine Schwester mit.",
+      "Am Montag stehe ich früh auf. Um halb sieben! Dann dusche ich schnell und frühstücke.\n\nAm Dienstag lerne ich Deutsch. Mein Kurs beginnt um neun Uhr und geht von neun bis elf.\n\nAm Samstag kaufe ich ein. Ich gehe in den Supermarkt und kaufe Obst, Gemüse und Milch.\n\nAm Sonntag stehe ich nie früh auf. Ich schlafe lange und frühstücke um halb elf. Sonntag ist mein Tag!\n\nJede Woche rufe ich meine Eltern an. Manchmal spreche ich auch mit meiner Schwester.",
     questions: [
       {
         text: "Wann steht Tom früh auf?",

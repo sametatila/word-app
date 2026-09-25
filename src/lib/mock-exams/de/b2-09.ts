@@ -169,7 +169,7 @@ Der eigentliche Streit war nicht mit den Schülerinnen, sondern im Kollegium. Je
               kind: "mcq",
               id: "de-b2-09-l1-5",
               no: 5,
-              text: "Wer belegt eine Veränderung mit Zahlen?",
+              text: "Wer belegt mit Zahlen, dass eine Kürzung nicht geschadet hat?",
               options: ["Frau Riedl", "Herr Osterkamp", "Frau Wenninger", "Herr Belz"],
               answer: 3,
               explain:
@@ -243,7 +243,7 @@ Hinzu kommt ein Zeitproblem. Die Wirkung einer Kontrolle hält nur so lange an, 
 
 Auffällig ist, wie selten die Kosten der Durchsetzung mitgedacht werden. Eine Regel gilt als beschlossen, wenn sie im Text steht. {{14}}
 
-Aus alldem folgt keine Empfehlung gegen Regeln. Es folgt eine unbequeme Reihenfolge: erst prüfen, ob eine Regel überprüfbar ist, dann sie beschließen. {{15}}
+Aus alldem folgt keine Empfehlung gegen Regeln. Es folgt eine unbequeme Reihenfolge: erst prüfen, ob eine Regel überprüfbar ist, dann beschließen. {{15}}
 
 Was bleibt, ist eine schlichte Einsicht: Nicht die Zustimmung entscheidet über die Wirkung, sondern die Wahrscheinlichkeit, entdeckt zu werden.`,
               gloss: [
@@ -255,7 +255,7 @@ Was bleibt, ist eine schlichte Einsicht: Nicht die Zustimmung entscheidet über 
             },
           ],
           options: [
-            { key: "a", label: "a", body: "Sie liegt fast immer im Weg von der Vorschrift bis zur Wirkung." },
+            { key: "a", label: "a", body: "Es liegt fast immer auf dem Weg von der Vorschrift bis zur Wirkung." },
             {
               key: "b",
               label: "b",

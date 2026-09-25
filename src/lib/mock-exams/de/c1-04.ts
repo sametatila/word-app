@@ -151,7 +151,7 @@ Gegen eine feinere Einteilung spricht, dass sie die Verständigung {{9}}. Der Te
                 "über 85-Jährigen",
               ],
               explain:
-                "Artışın yeri metinde: \"nicht bei den jungen Alten, sondern bei den über Fünfundachtzigjährigen\". Özet bu grubu adlandırmayı istiyor.",
+                "Artışın yeri metinde: \"kaum bei den jungen Alten statt, sondern bei den über Fünfundachtzigjährigen\". Özet bu grubu adlandırmayı istiyor.",
             },
             {
               kind: "gap",
@@ -341,7 +341,7 @@ Ob das Modell trägt, wird sich zeigen. Die Kasse hat die Förderung um zwei Jah
               options: [
                 "Sie akzeptiert die Kritik, nicht ihre Folgerung.",
                 "Sie weist die Kritik als politisch motiviert zurück.",
-                "Sie übernimmt ihn und schränkt das Angebot ein.",
+                "Sie übernimmt die Kritik und schränkt das Angebot ein.",
                 "Sie verweist auf die Zuständigkeit der Kasse.",
               ],
               answer: 0,
@@ -550,7 +550,7 @@ Antrag auf Pflegegrad: formlos möglich; Leistungen ab {{10}}.`,
               text: "Notiz 1",
               accept: ["89 Prozent", "neunundachtzig Prozent", "89 %", "89"],
               explain:
-                "Konuşma açılış rakamını veriyor: \"Neunundachtzig Prozent der über Achtzigjährigen ... leben in der eigenen Wohnung\", yani yurt istisna.",
+                "Konuşma açılış rakamını veriyor: \"Neunundachtzig Prozent der über Achtzigjährigen ... leben in der eigenen Wohnung\", yani bakımevi istisna.",
             },
             {
               kind: "gap",
@@ -616,7 +616,7 @@ Antrag auf Pflegegrad: formlos möglich; Leistungen ab {{10}}.`,
               text: "Notiz 7",
               accept: ["Rechtsform", "die Rechtsform", "rechtliche Form"],
               explain:
-                "Belirleyici olan şey \"die Rechtsform\": sakinler işveren olarak kalıyor, yurt sakini olmuyor; karıştıran söz hakkını kaybediyor.",
+                "Belirleyici olan şey \"die Rechtsform\": sakinler hizmeti sözleşmeyle alan taraf olarak kalıyor, bakımevi sakini olmuyor; karıştıran söz hakkını kaybediyor.",
             },
             {
               kind: "gap",
@@ -1126,7 +1126,7 @@ Dorothea Simon`,
               text: "Lücke 9 (höfliche Erwartung am Satzende)",
               accept: ["würde ich mich freuen", "wäre ich Ihnen dankbar", "freue ich mich", "wäre ich dankbar"],
               explain:
-                "Cümle `Über eine Rückmeldung …` ile başladığı için yüklem sona, özne fiilden sonraya geçer. Süre böylece talep değil rica olur.",
+                "Cümle `Über eine Rückmeldung …` ile başladığı için çekimli fiil ikinci sıraya, özne fiilden sonraya geçer. Süre böylece talep değil rica olur.",
             },
             {
               kind: "gap",

@@ -126,7 +126,7 @@ Ihr Team vom Freibad Süd`,
               id: "de-a1-08-l1-4",
               no: 4,
               ref: "t2",
-              text: "Im Sommer kann man in die Sauna gehen.",
+              text: "Im Juli kann man in die Sauna gehen.",
               answer: false,
               explain:
                 "Duyuru iki yaz ayını adıyla sayıyor: \"Die Sauna bleibt im Juli und August zu\".",

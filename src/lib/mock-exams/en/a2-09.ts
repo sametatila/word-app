@@ -226,15 +226,15 @@ export const EN_A2_09: MockPaper = {
 
 Look at the plug and the cable. About one machine in five is not broken at all. The cable is loose or the plug is dead, and a repair man will charge fifty euros to tell you that.
 
-Find the number of the model. It is on a small paper on the back or under the door. With that number you can search on the internet, and often you find the answer in two minutes.
+Find the number of the model. It is on a small label on the back or under the door. With that number you can search on the internet, and often you find the answer in two minutes.
 
 Ask about the price of the part before you say yes. A part for an old machine can cost more than a new machine, and the shop does not always tell you.
 
 And one thing you should not do: never open a machine that uses water or gas. That is not saving money. That is a different problem.`,
               gloss: [
-                { de: "a plug", tr: "fiş", en: "plug" },
-                { de: "a model", tr: "model", en: "model" },
-                { de: "loose", tr: "gevşek", en: "loose" },
+                { de: "a plug", tr: "fiş", en: "der Stecker" },
+                { de: "a model", tr: "model", en: "das Modell" },
+                { de: "loose", tr: "gevşek", en: "locker" },
               ],
             },
           ],
@@ -257,7 +257,7 @@ And one thing you should not do: never open a machine that uses water or gas. Th
               options: ["Somewhere on the machine itself", "On the plug at the end of the cable", "In the shop where you bought it"],
               answer: 0,
               explain:
-                "Metin yeri tarif ediyor: «It is on a small paper on the back or under the door». Yani numara makinenin üstünde; fişte ya da dükkânda değil.",
+                "Metin yeri tarif ediyor: «It is on a small label on the back or under the door». Yani numara makinenin üstünde; fişte ya da dükkânda değil.",
             },
             {
               kind: "mcq",
@@ -417,9 +417,9 @@ I live on the fourth floor and I still {{24}} not know how my neighbour on the s
               id: "en-a2-09-l5-23",
               no: 23,
               text: "Gap 23",
-              accept: ["for"],
+              accept: ["for", "about", "almost", "nearly", "over", "around"],
               explain:
-                "Süre uzunluğu `for` ile verilir: `waited for three weeks`. `since` bir başlangıç noktası ister, süre değil.",
+                "Süre uzunluğu `for` ile verilir: `waited for three weeks`. Yaklaşık süre bildiren `about`, `around`, `almost`, `nearly` ve «üç haftadan fazla» anlamında `over` da tek sözcük olarak doğrudur. `since` bir başlangıç noktası ister, süre değil.",
             },
             {
               kind: "gap",

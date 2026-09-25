@@ -232,9 +232,9 @@ I want to be careful here. Twelve weeks is nothing, I am one person, and I knew 
 
 So I have not stopped typing. I type in meetings, where I need the record, and I write by hand in anything I want to remember in a year.`,
               gloss: [
-                { de: "a lecture", tr: "ders, konferans", en: "lecture" },
-                { de: "to measure", tr: "ölçmek", en: "measure" },
-                { de: "sore", tr: "ağrılı", en: "sore" },
+                { de: "a lecture", tr: "ders, konferans", en: "die Vorlesung" },
+                { de: "to measure", tr: "ölçmek", en: "messen" },
+                { de: "sore", tr: "ağrılı", en: "schmerzend" },
               ],
             },
           ],
@@ -342,9 +342,9 @@ There is also the matter of what else you are doing. Almost nobody listens to a 
 
 My own answer has changed. I used to say that the two were the same activity in different clothes, and I no longer think that. They are two activities that leave you with a similar feeling of having been somewhere. {{20}}`,
               gloss: [
-                { de: "aloud", tr: "sesli olarak", en: "aloud" },
-                { de: "control", tr: "denetim", en: "control" },
-                { de: "an activity", tr: "etkinlik", en: "activity" },
+                { de: "aloud", tr: "sesli olarak", en: "laut" },
+                { de: "control", tr: "denetim", en: "die Kontrolle" },
+                { de: "an activity", tr: "etkinlik", en: "die Aktivität" },
               ],
             },
           ],
@@ -502,7 +502,7 @@ I put the phone in another room, {{27}} sounds extreme until you try it.
 
 I stopped counting hours. Hours are easy {{28}} count and they tell you nothing at all.
 
-I write by hand in anything I want to remember {{29}} more than a week.
+I write by hand anything I want to remember {{29}} more than a week.
 
 And I tell one person what I am going to do, {{30}} that I have to say it out loud.`,
             },

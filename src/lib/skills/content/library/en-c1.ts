@@ -34,7 +34,7 @@ export const enC1: SkillExercise[] = [
       { de: "furniture", tr: "mobilya" },
       { de: "uncomfortable", tr: "rahatsız" },
       { de: "object", tr: "nesne" },
-      { de: "bench", tr: "test tezgâhı" },
+      { de: "bench", tr: "bank" },
       { de: "involve", tr: "işin içine katmak" },
       { de: "explanation", tr: "açıklama" },
       { de: "renovate", tr: "tadilat yapmak" },

@@ -51,7 +51,7 @@ export const a2U10: SkillExercise[] = [
       "Kim, Wohnung 2b\n\n" +
       "— — — — —\n\n" +
       "Hallo Kim, willkommen im Haus!\n\n" +
-      "Staubsauger kannst du bei mir holen, ich bin fast immer ab 18 Uhr da. Wenn du Werkzeug brauchst: ich habe eine kleine Werkstatt im Keller, Schraubenzieher und alles Weitere findest du dort.\n\n" +
+      "Einen Staubsauger kannst du bei mir holen, ich bin fast immer ab 18 Uhr da. Wenn du Werkzeug brauchst: ich habe eine kleine Werkstatt im Keller, Schraubenzieher und alles Weitere findest du dort.\n\n" +
       "Und wenn beim Umzug etwas schwer ist, sag Bescheid — ich helfe dir gern aus.\n\n" +
       "Ahmet, Wohnung 1a",
     questions: [
@@ -108,7 +108,7 @@ export const a2U10: SkillExercise[] = [
       { de: "benachrichtigen", tr: "haber vermek", en: "to notify" },
       { de: "austragen", tr: "dağıtmak", en: "to deliver" },
       { de: "der Absender", tr: "gönderen", en: "sender" },
-      { de: "zustellen", tr: "tebliğ etmek", en: "to deliver" },
+      { de: "zustellen", tr: "teslim etmek", en: "to deliver" },
     ],
     minutes: 4,
     text:

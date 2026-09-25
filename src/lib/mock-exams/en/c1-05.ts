@@ -236,7 +236,7 @@ Whether that is a price worth paying is a political question rather than a techn
               text: "QUANTITY",
               accept: ["quantify"],
               explain:
-                "`difficult to ___` yapısı mastar ister, yani bir fiil: `quantify`. `quantity` addır ve `to` mastarının ardında duramaz; `quantifiable` ise sıfattır ve `difficult to` ile değil `hard to be` benzeri bir yapıyla gelirdi.",
+                "`difficult to ___` yapısı mastar ister, yani bir fiil: `quantify`. `quantity` addır ve `to` mastarının ardında duramaz; `quantifiable` ise sıfattır ve `to` mastarından sonra fiil gereken bu konumda duramaz.",
             },
             {
               kind: "gap",
@@ -361,9 +361,9 @@ What the panel is really doing is something else, and the something else is what
 
 I am not going to pretend that I stand outside this. I have sat on panels where the structured questions were asked, scored and then set aside for a conversation about fit, and I did not object, because objecting would have meant saying that I did not trust the room. Rarely does a panel record why it set the scores aside, and the reluctance of employers to record it is not an accident. On balance I think the room was wrong. I also think that anybody who has never been in that position is describing a workplace I have not worked in.`,
               gloss: [
-                { de: "a work sample", tr: "iş örneği sınavı", en: "work sample" },
-                { de: "a panel", tr: "seçme kurulu", en: "interview panel" },
-                { de: "fit", tr: "uyum", en: "fit" },
+                { de: "a work sample", tr: "iş örneği sınavı", en: "die Arbeitsprobe" },
+                { de: "a panel", tr: "seçme kurulu", en: "das Auswahlgremium" },
+                { de: "fit", tr: "uyum", en: "die Passung" },
               ],
             },
           ],
@@ -517,9 +517,9 @@ The third attempt was designed by people who had read the second report carefull
 
 {{34}}`,
               gloss: [
-                { de: "a pilot", tr: "pilot uygulama", en: "pilot scheme" },
-                { de: "a veto", tr: "veto", en: "veto" },
-                { de: "discretion", tr: "takdir yetkisi", en: "discretion" },
+                { de: "a pilot", tr: "pilot uygulama", en: "das Pilotprojekt" },
+                { de: "a veto", tr: "veto", en: "das Veto" },
+                { de: "discretion", tr: "takdir yetkisi", en: "der Ermessensspielraum" },
               ],
             },
           ],
@@ -565,7 +565,7 @@ The third attempt was designed by people who had read the second report carefull
               text: "Gap 34",
               answer: "d",
               explain:
-                "Son paragraf vetonun etkisini veriyor: «the difference between the two methods disappeared». (d) bunun yöntemin başarısızlığı olmadığını söyleyip yazının savını kuruyor: yöntem ile çevresine bırakılan takdir yetkisi ayrı şeyler değil. (e) dış alım durdurmasından söz ediyor ve metnin hiçbir yerinde alım yasağı tartışılmıyor — hiçbir boşluğa uymayan paragraf odur.",
+                "Son paragraf vetonun etkisini veriyor: «the difference between the two methods disappeared». (d) bunun yöntemin başarısızlığı olmadığını söyleyip yazının savını kuruyor: yöntem ile çevresine bırakılan takdir yetkisi ayrı şeyler değil. (e) dışarıdan işe alımın dondurulmasından söz ediyor ve metnin hiçbir yerinde alım yasağı tartışılmıyor — hiçbir boşluğa uymayan paragraf odur.",
             },
           ],
         },
@@ -940,9 +940,9 @@ Cost of each competition in staff time: {{14}} pounds`,
                 { speaker: "Juno", text: "Only that we keep comparing this with clinical trials, and it does not fit. In a trial the control group does not know it is competing with the treatment group. Here the control group runs the treatment group's process and writes the report. I would drop the analogy entirely." },
               ],
               gloss: [
-                { de: "to mark", tr: "değerlendirmek, puanlamak", en: "mark" },
-                { de: "imposition", tr: "dayatma", en: "imposition" },
-                { de: "impermanence", tr: "geçicilik", en: "impermanence" },
+                { de: "to mark", tr: "değerlendirmek, puanlamak", en: "bewerten" },
+                { de: "imposition", tr: "dayatma", en: "die Zumutung" },
+                { de: "impermanence", tr: "geçicilik", en: "die Vergänglichkeit" },
               ],
             },
           ],

@@ -210,7 +210,7 @@ Der teuerste Teil ist übrigens nicht das Essen, sondern die Küche. Bei uns kos
               ],
               answer: 0,
               explain:
-                "Ayrımı kendisi kuruyor: \"Für Sport bräuchte ich Motivation, für einen Weg nicht\". Kulüp ve ekipman metinde hiç geçmiyor.",
+                "Ayrımı kendisi kuruyor: \"Für Sport bräuchte ich Motivation, für einen Weg nicht\". Plan ve ekipman bu ayrımın gerekçesi değil; ekipman metinde hiç geçmiyor.",
             },
             {
               kind: "mcq",

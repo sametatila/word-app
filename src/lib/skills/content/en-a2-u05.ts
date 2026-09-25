@@ -45,7 +45,7 @@ export const enA2U05: SkillExercise[] = [
     text:
       "Ten years ago my life was very different. I used to work in a big office in the city. The job was important but difficult, and I was tired every evening.\n\n" +
       "Now I work at home. The money is less, but the hours are better and I am still here at six when my children come back from school.\n\n" +
-      "I used to travel a lot. I don't travel anymore — or almost not. Last year I was abroad only once.\n\n" +
+      "I used to travel a lot. I don't travel anymore — or hardly ever. Last year I was abroad only once.\n\n" +
       "Some things are the same. I still read every night, and my favourite café is still the little one near the park. It is tiny, but the coffee is excellent and it is cheaper than the big places in the centre.\n\n" +
       "My dream is to write a book. That is my goal for the next two years.",
     questions: [
@@ -66,7 +66,7 @@ export const enA2U05: SkillExercise[] = [
         text: "The writer almost never travels now.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„I don't travel anymore — or almost not.“ — „anymore“ değişimi söylüyor.",
+        explain: "„I don't travel anymore — or hardly ever.“ — „anymore“ değişimi söylüyor.",
       },
       {
         kind: "gapfill",

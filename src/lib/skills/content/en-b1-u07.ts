@@ -49,7 +49,7 @@ export const enB1U07: SkillExercise[] = [
       { de: "event", tr: "olay" },
       { de: "sentence", tr: "cümle" },
       { de: "lane", tr: "şerit" },
-      { de: "appears", tr: "görünüyor" },
+      { de: "appears", tr: "geçiyor" },
     ],
     minutes: 7,
     text:

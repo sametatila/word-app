@@ -26,7 +26,7 @@ export const deB2P14: SkillExercise[] = [
       { de: "pflegebedürftig", tr: "bakıma muhtaç", en: "in need of care" },
       { de: "die Belastung", tr: "yük", en: "burden" },
       { de: "der Anspruch", tr: "hak", en: "entitlement" },
-      { de: "die Vertretung", tr: "vekâlet", en: "cover" },
+      { de: "die Vertretung", tr: "geçici bakım", en: "cover" },
       { de: "die Sprechstunde", tr: "danışma saati", en: "consultation hour" },
     ],
     minutes: 8,
@@ -70,7 +70,7 @@ export const deB2P14: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Die meisten Befragten kannten alle Hilfen, auf die sie Anspruch haben.",
+        text: "Fast alle Befragten kannten die Hilfen, auf die sie Anspruch haben.",
         options: ["Richtig", "Falsch"],
         answer: 1,
         explain: "„Fast die Hälfte wusste nicht, dass es Hilfen gibt, auf die sie Anspruch haben.“",
@@ -89,7 +89,7 @@ export const deB2P14: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["Darf ich mir das erlauben", "Darf ich mir das überhaupt erlauben", "ob sie sich das erlauben dürfen"],
-        explain: "Soru „Neyim hakkım?“ değil, „Buna izin verebilir miyim?“.",
+        explain: "Soru „Neye hakkım var?“ değil, „Buna izin verebilir miyim?“.",
       },
       {
         text: "Was ist die Botschaft des letzten Absatzes?",

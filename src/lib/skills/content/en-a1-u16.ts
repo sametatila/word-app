@@ -99,7 +99,7 @@ export const enA1U16: SkillExercise[] = [
     ],
     minutes: 4,
     text:
-      "Ela: Where is my phone? I don't find it.\n" +
+      "Ela: Where is my phone? I can't find it.\n" +
       "Can: Is it on the table?\n" +
       "Ela: No, only a book and a lamp are on the table.\n" +
       "Can: Under the sofa?\n" +

@@ -290,11 +290,6 @@
   "en": "„Die Lieferung ist kostenlos.“ 17 Euro is the total for the items."
  },
  {
-  "tr": "„es ist bewegend, weil es wahr ist“ — iddia yerine kanıt.",
-  "kind": "explain",
-  "en": "„es ist bewegend, weil es wahr ist“ — proof instead of assertion."
- },
- {
   "tr": "„Ich spiele Klavier, seit ich zehn bin.“ Gitar çalan Mia.",
   "kind": "explain",
   "en": "„Ich spiele Klavier, seit ich zehn bin.“ Mia is the one who plays the guitar."
@@ -648,11 +643,6 @@
   "tr": "„Wir sind neu hier, Wohnung 7.“ 5 numara komşunun dairesi.",
   "kind": "explain",
   "en": "„Wir sind neu hier, Wohnung 7.“ Number 5 is the neighbour's flat."
- },
- {
-  "tr": "„Wohnung B: Dach, achtzig Quadratmeter …“ — en büyük alan.",
-  "kind": "explain",
-  "en": "„Wohnung B: Dach, achtzig Quadratmeter …“ — the largest floor area."
  },
  {
   "tr": "„you“ ile yardımcı fiil „do“; „does“ yalnız he/she/it ile.",

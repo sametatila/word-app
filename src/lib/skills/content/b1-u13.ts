@@ -47,15 +47,16 @@ export const b1U13: SkillExercise[] = [
       "Vertreter eine Vollmacht: ein kurzes Schreiben, in dem steht, wer wen " +
       "wobei vertritt.\n\n" +
       "Die Vollmacht muss das Datum, beide Namen und eine Unterschrift haben. " +
-      "Viele Ämter verlangen zusätzlich eine Kopie Ihres Ausweises. Das Original " +
-      "der Urkunde bleibt bei Ihnen; der Vertreter nimmt nur die Kopie mit.\n\n" +
-      "Es ist wichtig, genau festzulegen, wofür die Vollmacht gilt. „Für alles“ " +
-      "ist keine gute Absicht — schreiben Sie lieber, worum es geht. Wenn ein " +
-      "Amt sich weigert, fragen Sie nach dem Grund und lassen Sie ihn " +
+      "Viele Ämter verlangen zusätzlich eine Kopie Ihres Ausweises. Das " +
+      "Original der Urkunde bleibt bei Ihnen; der Vertreter nimmt nur die " +
+      "Kopie mit.\n\n" +
+      "Es ist wichtig, genau festzulegen, wofür die Vollmacht gilt. „Für " +
+      "alles“ ist keine gute Idee — schreiben Sie lieber, worum es geht. Wenn " +
+      "ein Amt sich weigert, fragen Sie nach dem Grund und lassen Sie ihn sich " +
       "schriftlich geben.\n\n" +
-      "Manche versuchen, ihre Verwandten zu überreden, die Sache im Gespräch zu " +
-      "regeln. Das geht meistens schlecht. Ein Blatt Papier kostet nichts und spart " +
-      "später viel Ärger.",
+      "Manche versuchen, ihre Verwandten zu überreden, die Sache im Gespräch " +
+      "zu regeln. Das geht meistens schlecht. Ein Blatt Papier kostet nichts " +
+      "und spart später viel Ärger.",
     questions: [
       {
         text: "Was steht in einer Vollmacht?",
@@ -109,7 +110,7 @@ export const b1U13: SkillExercise[] = [
       { de: "abstimmen", tr: "oy vermek", en: "to vote" },
       { de: "die Tradition", tr: "gelenek", en: "tradition" },
       { de: "die Sprachkenntnisse", tr: "dil becerileri", en: "language skills" },
-      { de: "leicht", tr: "hafif", en: "light" },
+      { de: "leicht", tr: "kolay", en: "easy" },
       { de: "die Zahl", tr: "sayı", en: "number" },
       { de: "der Text", tr: "metin", en: "text" },
     ],

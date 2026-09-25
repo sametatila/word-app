@@ -44,15 +44,15 @@ export const b1U28: SkillExercise[] = [
     ],
     text:
       "Am Samstag ist der Empfang im großen Saal. Alles, was wir dafür " +
-      "brauchen, hängt im Flur — bitte streicht durch, was " +
-      "ihr schon mitgebracht habt.\n\n" +
+      "brauchen, hängt im Flur — bitte streicht durch, was ihr schon " +
+      "mitgebracht habt.\n\n" +
       "Der Kuchen wird bei uns gebacken, nicht gekauft. Mit Margarine statt " +
-      "Butter geht es genauso gut und ist billiger. Für achtzig Leute " +
-      "brauchen wir vier Bleche.\n\n" +
-      "Was danach übrig bleibt, kommt als Dessert auf den Nachmittag. " +
+      "Butter geht es genauso gut und ist billiger. Für achtzig Leute brauchen " +
+      "wir vier Bleche.\n\n" +
+      "Was danach übrig bleibt, kommt am Nachmittag als Dessert auf den Tisch. " +
       "Bitte niemand vorher probieren — das ist alles, was ich verlange.\n\n" +
-      "Zum Schluss noch etwas Wichtiges: abwaschen und spülen macht nicht " +
-      "die Küche allein. Wer eine Gratulation hält, darf danach ruhig zehn " +
+      "Zum Schluss noch etwas Wichtiges: Abwaschen und Spülen macht nicht die " +
+      "Küche allein. Wer eine Glückwunschrede hält, darf danach ruhig zehn " +
       "Minuten am Becken stehen. Das gehört dazu.",
     questions: [
       {
@@ -69,9 +69,9 @@ export const b1U28: SkillExercise[] = [
       },
       {
         text: "Was passiert mit dem Rest?",
-        options: ["Er wird weggeworfen", "Er kommt als Dessert auf den Nachmittag", "Er wird verkauft"],
+        options: ["Er wird weggeworfen", "Er kommt am Nachmittag als Dessert auf den Tisch", "Er wird verkauft"],
         answer: 1,
-        explain: "„Was danach übrig bleibt, kommt als Dessert auf den Nachmittag.“",
+        explain: "„Was danach übrig bleibt, kommt am Nachmittag als Dessert auf den Tisch.“",
       },
       {
         kind: "gapfill",

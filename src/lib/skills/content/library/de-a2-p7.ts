@@ -48,7 +48,7 @@ export const deA2P7: SkillExercise[] = [
         explain: "İlanda sulama, raf düzenleme, müşteri danışmanlığı ve kasa var; teslimat yok.",
       },
       {
-        text: "Was ist dem Gartencenter am wichtigsten?",
+        text: "Was erwartet das Gartencenter von den Bewerbern?",
         options: [
           "dass man schon im Verkauf gearbeitet hat",
           "dass man freundlich und zuverlässig ist",

@@ -39,10 +39,10 @@ export const b1U03: SkillExercise[] = [
     text:
       "Wer die Stelle wechseln will, muss zwei Dinge beachten: die Frist und die Form. " +
       "In den meisten Verträgen steht eine Frist von vier Wochen zum Monatsende. " +
-      "Wenn Sie am zehnten kündigen, endet das Verhältnis nicht am zehnten. " +
+      "Wenn Sie am Zehnten kündigen, endet das Verhältnis nicht am Zehnten. " +
       "Es endet erst am Ende des nächsten Monats.\n\n" +
       "Die Form ist einfach, aber wichtig: eine Kündigung muss schriftlich sein. " +
-      "Eine Mail reicht nicht immer; in vielen Firmen ist ein Brief mit Unterschrift nötig. " +
+      "Eine Mail reicht nicht; nötig ist ein Brief mit Unterschrift. " +
       "Schreiben Sie kurz, ohne Sorge und ohne böse Worte. Der Grund muss nicht im Brief stehen.\n\n" +
       "Zusätzlich sollten Sie ein gutes Verhältnis haben. Sie brauchen später vielleicht " +
       "einen Kontakt in dieser Branche, und die Welt ist klein. " +
@@ -57,10 +57,10 @@ export const b1U03: SkillExercise[] = [
         explain: "„… muss zwei Dinge beachten: die Frist und die Form.“",
       },
       {
-        text: "Wann endet das Verhältnis, wenn man am zehnten kündigt?",
-        options: ["Am zehnten", "Am Ende des nächsten Monats", "Nach einer Woche"],
+        text: "Wann endet das Verhältnis, wenn man am Zehnten kündigt?",
+        options: ["Am Zehnten", "Am Ende des nächsten Monats", "Nach einer Woche"],
         answer: 1,
-        explain: "„… endet das Verhältnis also nicht am zehnten, sondern erst am Ende des nächsten Monats.“",
+        explain: "„Es endet erst am Ende des nächsten Monats.“",
       },
       {
         text: "Wie muss eine Kündigung sein?",
@@ -110,13 +110,13 @@ export const b1U03: SkillExercise[] = [
       { de: "der Quadratmeter", tr: "metrekare", en: "square meter" },
       { de: "die Notiz", tr: "not", en: "note" },
       { de: "also", tr: "yani", en: "so" },
-      { de: "der Pass", tr: "pasaport", en: "passport" },
+      { de: "passen", tr: "uymak, uygun olmak", en: "to fit, to suit" },
       { de: "beste", tr: "en iyi", en: "best" },
     ],
     text:
       "Wohnung A: zweite Etage, Fläche fünfundfünfzig Quadratmeter, guter Zustand, " +
       "kein Aufzug im Gebäude. Man kann sofort einziehen. Der Boden ist neu.\n\n" +
-      "Wohnung B: Dach, achtzig Quadratmeter, sehr hell, aber im Winter teuer zu heizen. " +
+      "Wohnung B: Dachgeschoss, achtzig Quadratmeter, sehr hell, aber im Winter teuer zu heizen. " +
       "Der Flur ist lang und dunkel. Frei ab dem ersten Juli.\n\n" +
       "Wohnung C: Erdgeschoss, sechzig Quadratmeter, alter Zustand, günstig. " +
       "Der Mieter muss selbst renovieren. Zusätzlich gibt es einen kleinen Garten.\n\n" +
@@ -130,7 +130,7 @@ export const b1U03: SkillExercise[] = [
         text: "Welche Wohnung ist am größten?",
         options: ["A", "B", "C"],
         answer: 1,
-        explain: "„Wohnung B: Dach, achtzig Quadratmeter …“ — en büyük alan.",
+        explain: "„Wohnung B: Dachgeschoss, achtzig Quadratmeter …“ — en büyük alan.",
       },
       {
         text: "Was ist das Problem bei Wohnung B?",

@@ -45,7 +45,7 @@ export const enB2U25: SkillExercise[] = [
     unit: 25,
     title: "The closing line",
     genre: "opinion",
-    intro: "Şart koymak ile durumu betimlemek. Ve seviyenin kendi ipi.",
+    intro: "Şart koymak ile durumu betimlemek. Ve seviyenin ortak çizgisi.",
     gloss: [
       { de: "sentence", tr: "cümle" },
       { de: "whole", tr: "bütün" },
@@ -126,7 +126,7 @@ export const enB2U25: SkillExercise[] = [
           "Every one of them is a decision about who is visible.",
           "Ask who disappears when you use it.",
         ],
-        explain: "Neden, şart, seviyenin ipi, en sonda tek soru.",
+        explain: "Neden, şart, seviyenin ortak çizgisi, en sonda tek soru.",
       },
       {
         kind: "short_answer",

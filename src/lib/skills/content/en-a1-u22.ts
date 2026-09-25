@@ -63,7 +63,7 @@ export const enA1U22: SkillExercise[] = [
         text: "How many times a day does Ela take the tablets?",
         options: ["three", "one", "six"],
         answer: 0,
-        explain: "„Three times: morning, afternoon and evening.“ — bir tanedir her seferde, altı fiyat.",
+        explain: "„Three times: morning, afternoon and evening.“ — her seferde bir tane, altı ise fiyat.",
       },
       {
         kind: "truefalse",

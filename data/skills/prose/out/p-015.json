@@ -90,11 +90,6 @@
   "en": "In a clause the auxiliary of the past tense goes AFTER the participle, right at the end."
  },
  {
-  "tr": "Yangının çıkması ve halin yanması gazetenin kendi tespiti; kalanı aktarım.",
-  "kind": "explain",
-  "en": "The fire breaking out and the hall burning down are the paper's own finding; the rest is reported."
- },
- {
   "tr": "Yanlış: „Frau Klein denkt, dass es funktioniert.“ Şüpheli olan Herr Nowak.",
   "kind": "explain",
   "en": "False: „Frau Klein denkt, dass es funktioniert.“ It is Herr Nowak who is doubtful."
@@ -602,12 +597,7 @@
  {
   "tr": "„Ein Termin ohne Anruf kostet 20 Euro.“ — haber vermemek para cezası doğurur.",
   "kind": "explain",
-  "en": "„Ein Termin ohne Anruf kostet 20 Euro.“ — not saying so brings a charge."
- },
- {
-  "tr": "„Es gibt Kaffee, Kuchen und Musik.“ Çocuk odası binada var ama kurs geçmiyor.",
-  "kind": "explain",
-  "en": "„Es gibt Kaffee, Kuchen und Musik.“ There is a children's room in the building but no course."
+  "en": "„Ein Termin ohne Anruf kostet 20 Euro.“ — not calling to cancel means a fee."
  },
  {
   "tr": "„Grammatik im Dienst der Betonung“ — seçim cümle başlamadan yapılmak zorunda.",
@@ -658,11 +648,6 @@
   "tr": "Amaç bildiriliyor ve iki yarının öznesi aynı kişi; um … zu doğru kullanılmış.",
   "kind": "explain",
   "en": "A purpose is stated and both halves share a subject; um … zu is used correctly."
- },
- {
-  "tr": "Ayrılabilen fiilin Perfekt biçimi: aus-ge-probiert; ge- ön ekten sonra gelir.",
-  "kind": "explain",
-  "en": "The Perfekt of a separable verb: aus-ge-probiert; ge- comes after the prefix."
  },
  {
   "tr": "Başardığın bir şeyi anlat: arkasında ne kadar emek vardı, zor anda ne yaptın?",

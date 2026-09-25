@@ -165,7 +165,7 @@ export const enB1U25: SkillExercise[] = [
       "In the first one the person who chose is left out, because the sentence is about the gift. In the second the person is put back in with „by“, because the point of the sentence is precisely who does the appreciating: everyone.\n" +
       "The third has a modal in front of it, and the order never moves: „must“, then „be“, then the third form.\n" +
       "So „by“ is not decoration and it is not optional grammar. It is a decision. Leaving it out says the doer does not matter; putting it in says the doer is the news.\n" +
-      "There is a small trap in a letter of thanks. „Your help is appreciated“ sounds generous and is not: nobody is thanking anybody, and the person reading it hears a form letter. „I appreciate your help“ names me and names you, and it is two words shorter.\n" +
+      "There is a small trap in a letter of thanks. „Your help is appreciated“ sounds generous and is not: nobody is thanking anybody, and the person reading it hears a form letter. „I appreciate your help“ names me and names you, and it is just as short.\n" +
       "Use the passive where the doer is genuinely unimportant, unknown or obvious. Use it in a notice, on a label, in a report. In a letter of thanks, be a person; a hero in a story is always somebody with a name.",
     questions: [
       {

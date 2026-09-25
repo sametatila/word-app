@@ -51,7 +51,7 @@ export const a1U24: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "Liebe Freunde,\n\nhier ist meine Einladung: am Samstag habe ich Geburtstag! Das möchte ich mit euch feiern.\n\nWann: am Samstag um 19 Uhr\nWo: bei mir zu Hause, Bahnhofstraße 12\n\nBitte kommt pünktlich um 19 Uhr — dann essen wir zusammen. Ich koche für alle Gäste.\n\nWas sollt ihr mitbringen? Nichts Großes! Vielleicht einen Saft oder etwas Süßes. Dein Partner oder deine Partnerin kann auch kommen.\n\nSchreibt mir bitte bis Mittwoch. Ich möchte wissen, wie viele Gäste kommen.\n\nLiebe Grüße\nMia",
+      "Liebe Freunde,\n\nhier ist meine Einladung: Am Samstag habe ich Geburtstag! Das möchte ich mit euch feiern.\n\nWann: am Samstag um 19 Uhr\nWo: bei mir zu Hause, Bahnhofstraße 12\n\nBitte kommt pünktlich um 19 Uhr — dann essen wir zusammen. Ich koche für alle Gäste.\n\nWas sollt ihr mitbringen? Nichts Großes! Vielleicht einen Saft oder etwas Süßes. Dein Partner oder deine Partnerin kann auch kommen.\n\nSchreibt mir bitte bis Mittwoch. Ich möchte wissen, wie viele Gäste kommen.\n\nLiebe Grüße\nMia",
     questions: [
       {
         text: "Womit beginnt die Einladung?",
@@ -63,7 +63,7 @@ export const a1U24: SkillExercise[] = [
         text: "Warum feiert Mia?",
         options: ["Sie hat Geburtstag.", "Sie hat eine Wohnung gekauft.", "Sie hat eine Stelle bekommen."],
         answer: 0,
-        explain: "„am Samstag habe ich Geburtstag! Das möchte ich mit euch feiern.“",
+        explain: "„Am Samstag habe ich Geburtstag! Das möchte ich mit euch feiern.“",
       },
       {
         kind: "gapfill",

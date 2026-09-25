@@ -48,7 +48,7 @@ export const enB2U15: SkillExercise[] = [
       { de: "sentences", tr: "cümleler" },
       { de: "itself", tr: "kendisi" },
       { de: "sentence", tr: "cümle" },
-      { de: "anywhere", tr: "başka yerde" },
+      { de: "anywhere", tr: "hiçbir yerde" },
       { de: "trap", tr: "tuzak" },
       { de: "large", tr: "büyük" },
       { de: "a hedge", tr: "çekince" },

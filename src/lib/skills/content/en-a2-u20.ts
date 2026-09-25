@@ -110,7 +110,7 @@ export const enA2U20: SkillExercise[] = [
       "Mert: And the man next to her?\n" +
       "Nil: Her husband. They have been married for ten years — no, nine. I always say ten.\n" +
       "Mert: And the little one?\n" +
-      "Nil: Their daughter. My aunt's first grandchild. She was born in the same month as my brother's son.\n" +
+      "Nil: Their daughter. My aunt's first grandchild. She was born in the same month as my other cousin's son.\n" +
       "Mert: So your aunt got two grandchildren in one month.\n" +
       "Nil: In three weeks. She did not sleep that year.\n" +
       "Mert: My family is smaller. My parents divorced when I was six and I have one relative in this city.\n" +

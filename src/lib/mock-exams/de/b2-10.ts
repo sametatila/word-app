@@ -414,7 +414,7 @@ Mein Vorschlag ist deshalb bescheiden: Wer eine Veränderung nennt, nennt den Ve
               options: ["Elf Prozent.", "Sechzig Prozent.", "Zwölf Prozent."],
               answer: 0,
               explain:
-                "\"Gegenüber demselben Quartal des Vorjahres beträgt der Anstieg elf Prozent\" — on iki, karşılaştırılan zayıf çeyreğin kaç yıl geriye gittiği.",
+                "\"Gegenüber demselben Quartal des Vorjahres beträgt der Anstieg elf Prozent\" — on iki ise bir oran değil: karşılaştırılan çeyrek son on iki yılın en zayıfı.",
             },
             {
               kind: "mcq",

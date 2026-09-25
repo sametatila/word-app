@@ -74,7 +74,7 @@ Das ist keine schöne Erkenntnis für jemanden in meinem Amt. Sie bedeutet, dass
               genre: "Erfahrungsbericht",
               genreTr: "Deneyim yazısı",
               title: "Herr Zeplin, mit 19 gegangen, mit 41 zurück",
-              body: `Ich bin gegangen, weil ich weg wollte, und ich bin zurückgekommen, weil meine Mutter krank wurde. Beides klingt banaler, als es war.
+              body: `Ich bin gegangen, weil ich wegwollte, und ich bin zurückgekommen, weil meine Mutter krank wurde. Beides klingt banaler, als es war.
 
 Zurückgekommen bin ich nicht wegen des Dorfes. Ich hatte nach vier Wochen keinen Menschen, mit dem ich über etwas anderes als Wetter reden konnte.
 

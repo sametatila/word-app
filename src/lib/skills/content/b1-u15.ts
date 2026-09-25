@@ -45,18 +45,18 @@ export const b1U15: SkillExercise[] = [
       { de: "beste", tr: "en iyi", en: "best" },
     ],
     text:
-      "Am Montag bin ich um sieben mit dem Rad in den Betrieb gefahren. " +
-      "Eine Kollegin hat mich betreut und mir alles gezeigt.\n\n" +
-      "Die ersten zwei Tage habe ich nur zugesehen. Das war keine verlorene Zeit: " +
-      "wer vorher genau beobachtet, macht später weniger Fehler. Am Mittwoch " +
-      "durfte ich zum ersten Mal den Rechner bedienen.\n\n" +
+      "Am Montag bin ich um sieben mit dem Rad in den Betrieb gefahren. Eine " +
+      "Kollegin hat mich betreut und mir alles gezeigt.\n\n" +
+      "Die ersten zwei Tage habe ich nur zugesehen. Das war keine verlorene " +
+      "Zeit: wer vorher genau beobachtet, macht später weniger Fehler. Am " +
+      "Mittwoch durfte ich zum ersten Mal den Rechner bedienen.\n\n" +
       "Am Donnerstag kam eine Aushilfe dazu, und ich sollte ihr die Arbeit " +
-      "darstellen. Da habe ich gemerkt, wie viel ich schon verstanden hatte. " +
+      "erklären. Da habe ich gemerkt, wie viel ich schon verstanden hatte. " +
       "Etwas zu erklären ist die beste Wiederholung.\n\n" +
       "Am Freitag haben wir die Woche besprochen. Ich habe mir alles " +
-      "aufgeschrieben, weil ich sonst zu schnell alles vergesse. " +
-      "Nächste Woche darf ich allein arbeiten — mit Unterstützung im " +
-      "Hintergrund, aber allein.",
+      "aufgeschrieben, weil ich sonst zu schnell alles vergesse. Nächste Woche " +
+      "darf ich allein arbeiten — mit Unterstützung im Hintergrund, aber " +
+      "allein.",
     questions: [
       {
         text: "Wie ist die Person am Montag gekommen?",
@@ -74,7 +74,7 @@ export const b1U15: SkillExercise[] = [
         text: "Was war am Donnerstag ihre Aufgabe?",
         options: ["Der Aushilfe die Arbeit darstellen", "Den Rechner reparieren", "Die Woche besprechen"],
         answer: 0,
-        explain: "„Am Donnerstag kam eine Aushilfe dazu, und ich sollte ihr die Arbeit darstellen.“",
+        explain: "„Am Donnerstag kam eine Aushilfe dazu, und ich sollte ihr die Arbeit erklären.“",
       },
       {
         kind: "gapfill",

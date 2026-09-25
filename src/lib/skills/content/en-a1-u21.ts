@@ -50,7 +50,7 @@ export const enA1U21: SkillExercise[] = [
       "Ela: And do I have to pay?\n" +
       "Clerk: No, not today. But you must bring your card tomorrow.\n" +
       "Ela: Thank you. My arm hurts too — is that bad?\n" +
-      "Clerk: The doctor says that. Be patient, please.",
+      "Clerk: Only the doctor can say that. Be patient, please.",
     questions: [
       {
         text: "What does Ela need?",

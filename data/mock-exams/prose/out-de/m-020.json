@@ -1,6 +1,6 @@
 [
  { "tr": "Bir sunucu, yedek parça deposu yöneten Vida ile konuşuyor.", "kind": "situation", "en": "Ein Moderator spricht mit Vida, die ein Ersatzteillager führt." },
- { "tr": "Bir yürüyüş grubunun sorumlusu yeni üyelere bilgi veriyor.", "kind": "situation", "en": "Die Leiterin einer Wandergruppe weist die neuen Mitglieder ein." },
+ { "tr": "Bir yürüyüş grubunun sorumlusu yeni üyelere bilgi veriyor.", "kind": "situation", "en": "Der Leiter einer Wandergruppe weist die neuen Mitglieder ein." },
  { "tr": "Birinci konuşmacı davetiyenin geliş zamanından söz ediyor.", "kind": "situation", "en": "Der erste Sprecher spricht darüber, wann die Einladung kam." },
  { "tr": "İki görevli bir ceza değişikliğinin sonuçlarını konuşuyor.", "kind": "situation", "en": "Zwei Mitarbeiterinnen sprechen über die Folgen einer Strafänderung." },
  { "tr": "İkinci konuşmacı kendisinden istenen açıklamayı anlatıyor.", "kind": "situation", "en": "Der zweite Sprecher schildert die Erklärung, die von ihm verlangt wurde." },
@@ -89,7 +89,7 @@
  { "tr": "Bir radyo programında uzun süreli bir kampanyacıyla söyleşi yapılıyor.", "kind": "situation", "en": "In einer Radiosendung wird ein Interview mit einem langjährigen Aktivisten geführt." },
  { "tr": "Bir sunucu, dört yıl tek kişilik yemek kursu veren Ines ile konuşuyor.", "kind": "situation", "en": "Ein Moderator spricht mit Ines, die vier Jahre lang Kochkurse für eine Person gegeben hat." },
  { "tr": "Bir panelde üç konuşmacı mesleki işin standartlaştırılmasını tartışıyor.", "kind": "situation", "en": "Auf einem Podium diskutieren drei Sprechende über die Standardisierung fachlicher Arbeit." },
- { "tr": "Bir zanaat eğitimi programının sorumlusu değerlendirme raporunu sunuyor.", "kind": "situation", "en": "Die Leiterin eines Ausbildungsprogramms im Handwerk stellt den Bewertungsbericht vor." },
+ { "tr": "Bir zanaat eğitimi programının sorumlusu değerlendirme raporunu sunuyor.", "kind": "situation", "en": "Der Leiter eines Ausbildungsprogramms im Handwerk stellt den Bewertungsbericht vor." },
  { "tr": "Bir radyo programında şehirden köye taşınan bir kadınla söyleşi yapılıyor.", "kind": "situation", "en": "In einer Radiosendung wird ein Interview mit einer Frau geführt, die aus der Stadt aufs Land gezogen ist." },
  { "tr": "Bir radyo programında çiftçilikte yön değiştiren biriyle söyleşi yapılıyor.", "kind": "situation", "en": "In einer Radiosendung wird ein Interview mit jemandem geführt, der in der Landwirtschaft umgestellt hat." },
  { "tr": "Bir yönetici, arşivci Halvard, tarihçi Ines ve belge sorumlusu Runa ile konuşuyor.", "kind": "situation", "en": "Eine Leiterin spricht mit dem Archivar Halvard, der Historikerin Ines und der Aktenverantwortlichen Runa." },

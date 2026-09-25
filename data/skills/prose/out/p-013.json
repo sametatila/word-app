@@ -87,7 +87,7 @@
  {
   "tr": "Almanca cümle öznesiz kurulmaz; anlamı olmayan yer tutucu „es“ gelir.",
   "kind": "explain",
-  "en": "A German sentence is not built without a subject; a meaningless placeholder „es“ comes in."
+  "en": "A German sentence is not built without a subject; the dummy placeholder „es“ is used."
  },
  {
   "tr": "An deiner Stelle artı Konjunktiv II: gerçekleşmemiş bir durumun kipi.",
@@ -225,11 +225,6 @@
   "en": "If the time is asked the question word is wann; the verb comes straight after it."
  },
  {
-  "tr": "schon = beklenenden ÇOK; erst = beklenenden AZ. Aynı saat, iki bakış.",
-  "kind": "explain",
-  "en": "schon = MORE than expected; erst = LESS. The same hour, two views of it."
- },
- {
   "tr": "Sıra: özne + be + going to + yalın fiil: I am going to study tonight.",
   "kind": "explain",
   "en": "Order: subject + be + going to + bare verb: I am going to study tonight."
@@ -357,7 +352,7 @@
  {
   "tr": "„weil mein Wecker nicht geklingelt hat“ — sebep yan cümlede veriliyor.",
   "kind": "explain",
-  "en": "„weil mein Wecker nicht geklingelt hat“ — the reason is given in the clause."
+  "en": "„weil mein Wecker nicht geklingelt hat“ — the reason is given in the subordinate clause."
  },
  {
   "tr": "„weil“ yan cümle kurar, çekimli fiil sona gider: … weil ich krank bin.",

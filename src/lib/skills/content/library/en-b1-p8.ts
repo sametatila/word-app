@@ -17,7 +17,7 @@ export const enB1P8: SkillExercise[] = [
     skill: "reading",
     title: "Forum: Cycling to Work — Be Honest",
     genre: "forum",
-    intro: "Bir forumda dört kişi işe bisikletle gitmeyi tartışıyor: kime yarıyor, kime yaramıyor.",
+    intro: "Bir forumda üç kişi işe bisikletle gitmeyi tartışıyor: kime yarıyor, kime yaramıyor.",
     gloss: [
       { de: "colleague", tr: "iş arkadaşı" },
       { de: "shower", tr: "duş" },

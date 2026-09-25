@@ -43,7 +43,7 @@ export const a2U25: SkillExercise[] = [
       { de: "der Buchhalter", tr: "muhasebeci", en: "accountant" },
       { de: "der Berater", tr: "danışman", en: "adviser" },
       { de: "unerfahren", tr: "deneyimsiz", en: "inexperienced" },
-      { de: "aufgehen", tr: "doğmak", en: "to rise" },
+      { de: "aufhören", tr: "bırakmak, durmak", en: "to stop" },
       { de: "also", tr: "yani", en: "so" },
       { de: "verdienen", tr: "para kazanmak", en: "to earn" },
       { de: "dumm", tr: "aptal", en: "stupid" },
@@ -54,7 +54,7 @@ export const a2U25: SkillExercise[] = [
       "VIER WEGE IN EINEN BERUF\n\n" +
       "MARIA, 34, Programmiererin. „Ich wollte Chirurgin werden, ehrlich. Dann habe ich mit siebzehn eine Website für den Verein meines Vaters gebaut und nie wieder aufgehört. Ich möchte Programmiererin bleiben, weil ich gern allein und konzentriert arbeite.“\n\n" +
       "TOBIAS, 51, Tischler. „Mein Vater hatte die Werkstatt, also war es klar. Zwanzig Jahre habe ich das gedacht. Heute weiß ich: Es war klar, aber es war auch richtig.“\n\n" +
-      "AYLA, 26, Erzieherin. „Ich habe als Buchhalterin angefangen. Zahlen kann ich, aber ich saß acht Stunden still. Nach zwei Jahren habe ich noch einmal eine Ausbildung gemacht. Am Anfang war ich unerfahren und die Kolleginnen zehn Jahre jünger. Das war komisch, aber nur drei Wochen lang.“\n\n" +
+      "AYLA, 26, Erzieherin. „Ich habe als Buchhalterin angefangen. Zahlen kann ich, aber ich saß acht Stunden still. Nach zwei Jahren habe ich noch einmal eine Ausbildung gemacht. Am Anfang war ich unerfahren und die Kolleginnen fünf Jahre jünger. Das war komisch, aber nur drei Wochen lang.“\n\n" +
       "HENDRIK, 43, Gärtner. „Ich war Berater in einer großen Firma und habe gut verdient. Dann kam ein Jahr, in dem ich jeden Sonntag schlecht geschlafen habe. Jetzt verdiene ich weniger und schlafe besser. Für viele klingt das dumm. Für mich nicht.“\n\n" +
       "Vier Wege, und nur einer davon geradeaus.",
     questions: [
@@ -128,7 +128,7 @@ export const a2U25: SkillExercise[] = [
     minutes: 4,
     text:
       "Ich bin jetzt zwei Jahre hier. Ein paar Sachen sind mir aufgefallen.\n\n" +
-      "DER MÜLL. Bei uns gibt es einen Mülleimer, hier fünf. Am Anfang habe ich alles falsch gemacht und mein Nachbar hat es mir dreimal erklärt, sehr geduldig. Den Müll trennt man hier getrennt, und ehrlich gesagt finde ich das inzwischen richtig.\n\n" +
+      "DER MÜLL. Bei uns gibt es einen Mülleimer, hier fünf. Am Anfang habe ich alles falsch gemacht und mein Nachbar hat es mir dreimal erklärt, sehr geduldig. Der Müll wird hier getrennt, und ehrlich gesagt finde ich das inzwischen richtig.\n\n" +
       "DER SONNTAG. Sonntags ist alles zu. Alles. Nur der Bäcker macht morgens für drei Stunden auf. Am Anfang war ich wütend, weil ich immer etwas vergessen hatte. Heute ist der Sonntag mein liebster Tag — die Stadt ist ruhiger als bei uns an jedem anderen Tag.\n\n" +
       "DIE PÜNKTLICHKEIT. Alles stimmt, bis der Zug kommt. Dann stimmt gar nichts mehr.\n\n" +
       "DIE MIETE. Hier ist vieles anständig geregelt, aber die Miete pro Quadratmeter ist in zwei Jahren um fast ein Fünftel gestiegen. Für Leute mit kleinem Gehalt ist das ungerecht, und zudem findet man kaum noch etwas.\n\n" +

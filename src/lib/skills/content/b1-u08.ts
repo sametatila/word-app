@@ -45,17 +45,19 @@ export const b1U08: SkillExercise[] = [
       { de: "automatisch", tr: "otomatik", en: "automatic" },
     ],
     text:
-      "Ab Montag gibt es bei uns täglich zwei Gerichte: entweder ein Gericht mit Fleisch " +
-      "oder eine vegetarische Alternative. Sie wählen morgens aus, damit die Küche " +
-      "rechtzeitig planen kann.\n\n" +
-      "Warum diese Änderung? Bisher gab es nur ein Gericht. Wer kein Fleisch isst, " +
-      "musste sich etwas mitbringen. Das war nicht richtig, sondern einfach bequem für uns.\n\n" +
-      "Notiz von Katrin: Ich esse eher wenig Fleisch, deshalb finde ich das klasse. " +
-      "Mein Kollege dagegen sagt, der Typ Mensch, der jeden Tag Fleisch will, wird " +
-      "jetzt weniger Auswahl haben. Das ist aber falsch: es sind genauso zwei " +
-      "Gerichte wie vorher, nur anders.\n\n" +
-      "Übrigens: Wer nichts auswählt, bekommt automatisch das vegetarische Essen. " +
-      "Das ist kein Problem, sondern eine einfache Regel.",
+      "Ab Montag gibt es bei uns täglich zwei Gerichte: entweder ein Gericht " +
+      "mit Fleisch oder eine vegetarische Alternative. Sie wählen morgens aus, " +
+      "damit die Küche rechtzeitig planen kann.\n\n" +
+      "Warum diese Änderung? Bisher gab es nur ein Gericht. Wer kein Fleisch " +
+      "isst, musste sich etwas mitbringen. Das war nicht richtig, sondern " +
+      "einfach bequem für uns.\n\n" +
+      "Notiz von Katrin: Ich esse eher wenig Fleisch, deshalb finde ich das " +
+      "klasse. Mein Kollege dagegen sagt, der Typ Mensch, der jeden Tag " +
+      "Fleisch will, wird jetzt weniger Auswahl haben. Das ist aber falsch: es " +
+      "gibt weiterhin jeden Tag ein Gericht mit Fleisch, dazu jetzt eine " +
+      "Alternative.\n\n" +
+      "Übrigens: Wer nichts auswählt, bekommt automatisch das vegetarische " +
+      "Essen. Das ist kein Problem, sondern eine einfache Regel.",
     questions: [
       {
         text: "Was gibt es ab Montag?",

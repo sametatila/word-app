@@ -28,7 +28,7 @@ export const enA1P3: SkillExercise[] = [
       { de: "juice", tr: "meyve suyu" },
       { de: "bake", tr: "pişirmek" },
       { de: "bowl", tr: "kase" },
-      { de: "pan", tr: "tava" },
+      { de: "pan", tr: "kek kalıbı" },
       { de: "recipe", tr: "tarif" },
     ],
     minutes: 4,

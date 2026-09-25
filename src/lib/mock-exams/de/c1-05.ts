@@ -54,7 +54,7 @@ Diese Beiläufigkeit ist der Grund für ihre Wirkung. Ein Denkmal verlangt eine 
 
 Umstritten ist deshalb weniger die Vergangenheit als die Gegenwart der Namen. Wer eine Umbenennung fordert, wird regelmäßig darauf hingewiesen, man könne Geschichte nicht auslöschen. Der Einwand geht am Gegenstand vorbei: Ein Straßenname ist keine Aufbewahrung, sondern eine fortlaufende Ehrung. Wer ihn ändert, löscht nichts, sondern beendet eine Auszeichnung.
 
-Gleichwohl wäre es zu einfach, die Frage allein moralisch zu führen. Untersuchungen zu Umbenennungen in mehreren europäischen Städten zeigen einen Befund, der beide Lager irritiert: Nach etwa fünfzehn Jahren erinnert kaum jemand mehr, wie eine Straße vorher hieß, und zwar unabhängig davon, wie heftig der Streit zuvor war. Die Erregung ist erheblich, die Halbwertszeit gering.
+Gleichwohl wäre es zu einfach, die Frage allein moralisch zu führen. Untersuchungen zu Umbenennungen in mehreren europäischen Städten zeigen einen Befund, der beide Lager irritiert: Nach etwa fünfzehn Jahren erinnert sich kaum jemand mehr daran, wie eine Straße vorher hieß, und zwar unabhängig davon, wie heftig der Streit zuvor war. Die Erregung ist erheblich, die Halbwertszeit gering.
 
 Daraus folgt für manche, das Ganze sei Symbolpolitik. Diese Schlussfolgerung übersieht, dass die Debatte selbst der Vorgang ist, um den es geht. In den Anhörungen kommen Familien zu Wort, deren Geschichte in keinem Lehrbuch steht; Stadtarchive verzeichnen in solchen Jahren regelmäßig ein Vielfaches der üblichen Anfragen. Erinnerung entsteht nicht am Ende des Verfahrens, sondern in ihm.
 
@@ -80,7 +80,7 @@ Genau darin liegt ihre {{3}}: Ein Denkmal verlangt eine Entscheidung, ein Name v
 
 Der Einwand, man könne Geschichte nicht auslöschen, trifft nach dem Text nicht zu, weil ein Straßenname keine Aufbewahrung ist, sondern eine fortlaufende {{5}}. Wer ihn ändert, beendet also eine {{6}}.
 
-Untersuchungen zeigen allerdings, dass nach etwa {{7}} Jahren kaum jemand den früheren Namen erinnert. Der Text schließt daraus nicht, dass alles bloße Symbolpolitik sei, denn der eigentliche Vorgang ist die {{8}} selbst; in solchen Jahren steigt auch die Zahl der Anfragen an die {{9}}.
+Untersuchungen zeigen allerdings, dass nach etwa {{7}} Jahren sich kaum jemand an den früheren Namen erinnert. Der Text schließt daraus nicht, dass alles bloße Symbolpolitik sei, denn der eigentliche Vorgang ist die {{8}} selbst; in solchen Jahren steigt auch die Zahl der Anfragen an die {{9}}.
 
 Vollständig ersetzen lässt sich ein Name jedoch nicht: Was bleibt, ist der {{10}}, also die Erinnerung an die Änderung.`,
             },
@@ -147,7 +147,7 @@ Vollständig ersetzen lässt sich ein Name jedoch nicht: Was bleibt, ist der {{1
               text: "Lücke 7",
               accept: ["fünfzehn", "15"],
               explain:
-                "Sayı metinde: \"Nach etwa fünfzehn Jahren erinnert kaum jemand mehr, wie eine Straße vorher hieß\".",
+                "Sayı metinde: \"Nach etwa fünfzehn Jahren erinnert sich kaum jemand mehr daran, wie eine Straße vorher hieß\".",
             },
             {
               kind: "gap",
@@ -194,7 +194,7 @@ Vollständig ersetzen lässt sich ein Name jedoch nicht: Was bleibt, ist der {{1
               title: "Der Name über dem Eingang",
               body: `Die Sitzung, in der über den Namen der Schule entschieden werden sollte, dauerte vier Stunden und endete ohne Beschluss. Das war, wie sich später zeigte, das Beste, was passieren konnte.
 
-Angefangen hatte es mit einer Facharbeit. Merle Krautwig, damals in der elften Klasse, hatte über den Namensgeber ihrer Schule geschrieben, einen Mediziner aus der Region, dessen Straßenzug, Krankenhausflügel und eben Schule seinen Namen tragen. In den Akten des Landesarchivs fand sie Anträge aus den Jahren 1936 bis 1939, die sie zunächst nicht einordnen konnte. Ihre Lehrerin riet ihr, einen Historiker anzuschreiben. Zwei Monate später stand fest, worum es sich handelte.
+Angefangen hatte es mit einer Facharbeit. Merle Krautwig, damals in der elften Klasse, hatte über den Namensgeber ihrer Schule geschrieben, einen Mediziner aus der Region, dessen Namen ein Straßenzug, ein Krankenhausflügel und eben die Schule tragen. In den Akten des Landesarchivs fand sie Anträge aus den Jahren 1936 bis 1939, die sie zunächst nicht einordnen konnte. Ihre Lehrerin riet ihr, einen Historiker anzuschreiben. Zwei Monate später stand fest, worum es sich handelte.
 
 Die Reaktion der Schule war zunächst zurückhaltend. Man dankte für die Arbeit, verwies auf den Umfang der Frage und richtete eine Arbeitsgruppe ein. Krautwig, die inzwischen studierte, hielt das für eine Beerdigung erster Klasse. Rückblickend urteilt sie milder: "Die Arbeitsgruppe hat zwei Jahre gebraucht und dabei mehr Leute erreicht als jede schnelle Entscheidung."
 
@@ -422,14 +422,14 @@ Am Ende dürfte weniger die Frage entscheidend sein, wie viele kommen, {{25}} ob
               options: ["ohnehin", "gleichwohl", "insofern", "immerhin"],
               answer: 1,
               explain:
-                "Dijitalleşme kabul ediliyor, ama kanıtlar zayıf: ödünlü bir geçiş gerekiyor. `gleichwohl` bunu kurar; ötekiler zaten olanı, sınırlamayı ya da asgari tesellîyi bildirir.",
+                "Dijitalleşme kabul ediliyor, ama kanıtlar zayıf: ödünlü bir geçiş gerekiyor. `gleichwohl` bunu kurar; ötekiler zaten olanı, sınırlamayı ya da asgari teselliyi bildirir.",
             },
             {
               kind: "mcq",
               id: "de-c1-05-l3-23",
               no: 23,
               text: "Lücke 23",
-              options: ["zumal", "sondern", "vielmehr", "geschweige denn"],
+              options: ["zumal", "sondern", "sowie", "geschweige denn"],
               answer: 1,
               explain:
                 "Önce olumsuzlanan bir varsayım var (\"nicht vorrangig Fachleute\"), sonra düzeltme geliyor. Bu yapı `nicht … sondern` ister.",
@@ -1032,7 +1032,7 @@ für eine Arbeit über die Schulen meiner Heimatstadt bitte ich um Einsicht in d
 
 {{1}} handelt es sich um Personalakten aus den Jahren 1935 bis 1945, die nach Ihrer Benutzungsordnung einer Schutzfrist unterliegen.
 
-{{2}} beantrage ich eine Verkürzung dieser Frist. Die betroffenen Personen sind sämtlich verstorben; Sterbedaten habe ich der beigefügten Aufstellung entnommen.
+{{2}} beantrage ich eine Verkürzung dieser Frist. Die betroffenen Personen sind sämtlich verstorben; Die Sterbedaten entnehmen Sie bitte der beigefügten Aufstellung.
 
 {{3}} übersende ich Ihnen eine Bestätigung meiner Hochschule sowie eine Erklärung zum Umgang mit personenbezogenen Angaben.
 
@@ -1107,7 +1107,7 @@ Rasmus Kienle`,
               kind: "gap",
               id: "de-c1-05-s2-7",
               no: 7,
-              text: "Lücke 7 (Hilfsantrag, Konditional ohne \\\"wenn\\\")",
+              text: "Lücke 7 (Hilfsantrag, Konditional ohne \"wenn\")",
               accept: ["Sollte", "Sollte wider Erwarten"],
               explain:
                 "İkincil talep koşula bağlanıyor ve resmî yazıda koşul `wenn` olmadan, fiil başta kuruluyor: `Sollte dies nicht möglich sein, …`.",
@@ -1116,7 +1116,7 @@ Rasmus Kienle`,
               kind: "gap",
               id: "de-c1-05-s2-8",
               no: 8,
-              text: "Lücke 8 (Präposition zu \\\"bitten\\\")",
+              text: "Lücke 8 (Präposition zu \"bitten\")",
               accept: ["um"],
               explain:
                 "`bitten` bu anlamda `um` ister: `ich bitte um Auskunft darüber`. Edat düşerse cümle kurulmaz.",
@@ -1128,7 +1128,7 @@ Rasmus Kienle`,
               text: "Lücke 9 (höfliche Erwartung am Satzende)",
               accept: ["würde ich mich freuen", "wäre ich Ihnen dankbar", "wäre ich dankbar", "freue ich mich"],
               explain:
-                "Cümle `Über eine Rückmeldung …` ile başladığı için yüklem sona geçiyor ve özne devriliyor; süre isteği böylece rica olarak okunuyor.",
+                "Cümle `Über eine Rückmeldung …` ile başladığı için çekimli fiil ikinci sıraya geçiyor ve özne fiilin ardına düşüyor; süre isteği böylece rica olarak okunuyor.",
             },
             {
               kind: "gap",

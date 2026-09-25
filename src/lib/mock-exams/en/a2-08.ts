@@ -227,9 +227,9 @@ In June we stopped for two months. I thought that was the end.
 
 We started again in September with one new rule: no counting. Now I do not know how many people were there last week, and I sleep well.`,
               gloss: [
-                { de: "a garage", tr: "garaj", en: "garage" },
-                { de: "to count", tr: "saymak", en: "count" },
-                { de: "a rule", tr: "kural", en: "rule" },
+                { de: "a garage", tr: "garaj", en: "die Garage" },
+                { de: "to count", tr: "saymak", en: "zählen" },
+                { de: "a rule", tr: "kural", en: "die Regel" },
               ],
             },
           ],

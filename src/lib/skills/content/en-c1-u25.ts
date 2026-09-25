@@ -58,7 +58,7 @@ export const enC1U25: SkillExercise[] = [
       { de: "either", tr: "ikisinden biri" },
       { de: "noun", tr: "isim" },
       { de: "general", tr: "genel" },
-      { de: "anywhere", tr: "başka yerde" },
+      { de: "anywhere", tr: "hiçbir yerde" },
       { de: "object", tr: "nesne" },
       { de: "comma", tr: "virgül" },
       { de: "exist", tr: "var olmak" },
@@ -94,7 +94,7 @@ export const enC1U25: SkillExercise[] = [
     ],
     minutes: 12,
     text:
-      "Serenity we learn; sincerity, we choose. Nine words, and almost everything this level has measured is in them.\n" +
+      "Serenity we learn from others; sincerity, from ourselves. Eight words, and almost everything this level has measured is in them.\n" +
       "Count what is not there. No article in front of either noun, because both are abstract and general. No ending anywhere to say which word is the object, because English stopped marking that centuries ago. No verb in the second half, because the first half has already supplied it and a comma is holding its place. And no subject at the front of either clause, because the object has been moved there instead and the subject has been pushed behind it.\n" +
       "Four decisions, and not one of them is made by adding anything. Each of them is made by a position or by an absence.\n" +
       "That is the closing measure of this level and it has been earned rather than asserted. Look back at what the units before this one found. The comparison that cannot say which role the compared noun had, because there is no case ending to say it. The class of a word changed by putting nothing in front of it. The gap a reader has to fill because the rule that would have marked it does not exist here. The slot before the verb where a judgement goes, which exists only because the verb is not required to stand in second place.\n" +
@@ -124,11 +124,11 @@ export const enC1U25: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "Serenity we learn; sincerity, we ___.",
+        text: "Serenity we learn from others; sincerity, from ___.",
         options: [],
         answer: 0,
-        accept: ["choose"],
-        explain: "„Serenity we learn; sincerity, we choose.“",
+        accept: ["ourselves"],
+        explain: "„Serenity we learn from others; sincerity, from ourselves.“",
       },
       {
         kind: "order",

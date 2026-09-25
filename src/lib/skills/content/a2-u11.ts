@@ -68,7 +68,7 @@ export const a2U11: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["Ausbildung"],
-        explain: "„Sie brauchen keine Ausbildung als Koch oder Kellner.“ Önemli olan dil bilgisi ve isteklilik.",
+        explain: "„Sie brauchen keine Ausbildung als Koch oder Kellner.“ Önemli olan Almanca bilgisi ve isteklilik.",
       },
       {
         text: "Was bietet das Café?",

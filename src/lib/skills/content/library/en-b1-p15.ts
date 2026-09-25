@@ -21,7 +21,7 @@ export const enB1P15: SkillExercise[] = [
     skill: "reading",
     title: "One Question, Two Answers",
     genre: "article",
-    intro: "Bir anneyle on beş yaşındaki oğluna aynı soru soruluyor: bir genç neye izin almalı, neye almamalı?",
+    intro: "Bir anneyle on beş yaşındaki oğluna aynı soru soruluyor: ebeveynler bir gence neye izin vermeli, neye vermemeli?",
     gloss: [
       { de: "teenagers", tr: "ergenler" },
       { de: "to allow", tr: "izin vermek" },

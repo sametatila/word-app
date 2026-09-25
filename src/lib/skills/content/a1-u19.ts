@@ -42,7 +42,7 @@ export const a1U19: SkillExercise[] = [
     ],
     minutes: 3,
     text:
-      "SPORTVEREIN BREMEN\n\nFußball: Wir suchen Spieler für unsere Mannschaft. Wir üben zweimal pro Woche — am Dienstag und am Samstag, immer um 18 Uhr.\n\nBasketball: montags um 19 Uhr. Auch für alle!\n\nTennis spielen: am Sonntag, 10 bis 12 Uhr. Bitte einen Ball holen.\n\nJoggen: Jeden Morgen um 7 Uhr am Marktplatz. Kostenlos, auch bei Regen!\n\nDas Fitnessstudio im Haus ist von 8 bis 22 Uhr auf. Für Mitglieder kostenlos.\n\nWollen Sie mitmachen? Kommen Sie einfach!",
+      "SPORTVEREIN BREMEN\n\nFußball: Wir suchen Spieler für unsere Mannschaft. Wir üben zweimal pro Woche — am Dienstag und am Samstag, immer um 18 Uhr.\n\nBasketball: montags um 19 Uhr. Auch für alle!\n\nTennis spielen: am Sonntag, 10 bis 12 Uhr. Bitte einen Ball mitbringen.\n\nJoggen: Jeden Morgen um 7 Uhr am Marktplatz. Kostenlos, auch bei Regen!\n\nDas Fitnessstudio im Haus ist von 8 bis 22 Uhr auf. Für Mitglieder kostenlos.\n\nWollen Sie mitmachen? Kommen Sie einfach!",
     questions: [
       {
         text: "Wie oft übt die Fußballmannschaft?",
@@ -62,7 +62,7 @@ export const a1U19: SkillExercise[] = [
         text: "Was soll man zum Tennis mitbringen?",
         options: ["einen Ball", "Popcorn", "eine CD"],
         answer: 0,
-        explain: "„Bitte einen Ball holen.“",
+        explain: "„Bitte einen Ball mitbringen.“",
       },
       {
         text: "Richtig oder falsch? Bei Regen gibt es kein Joggen.",

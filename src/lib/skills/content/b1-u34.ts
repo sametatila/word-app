@@ -33,7 +33,7 @@ export const b1U34: SkillExercise[] = [
     unit: 34,
     title: "Gesund bleiben im Alltag",
     genre: "guide",
-    intro: "Gündelik korunma. Neyi nasıl yaparak?",
+    intro: "Gündelik korunma. Hangi küçük alışkanlıklarla?",
     minutes: 5,
     gloss: [
       { de: "die Gymnastik", tr: "jimnastik", en: "gymnastics" },

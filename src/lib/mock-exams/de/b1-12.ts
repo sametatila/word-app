@@ -612,7 +612,7 @@ Bei einem Rücktritt bis eine Woche vor Kursbeginn erstatten wir die volle Gebü
               options: [
                 "Er ist bei jeder neuen Anmeldung zu wiederholen.",
                 "Er ist gratis und ein halbes Jahr gültig.",
-                "Er kostet Gebühr und gilt unbegrenzt.",
+                "Er kostet eine Gebühr und gilt unbegrenzt.",
               ],
               answer: 1,
               explain:

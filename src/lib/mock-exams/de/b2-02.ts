@@ -272,7 +272,7 @@ Was also tun? Fachleute empfehlen drei Fragen, die sich ohne Vorkenntnisse stell
               text: "Lücke 12",
               answer: "d",
               explain:
-                "\"Eine Verdopplung klingt dramatisch\" cümlesinin ardından somut sayı geliyor: iki binde dörde çıkmak. (d) mutlak ve göreli riski karşı karşıya koyan tek cümle.",
+                "\"Eine Verdopplung klingt dramatisch\" cümlesinin ardından somut sayı geliyor: on binde ikiden on binde dörde çıkmak. (d) mutlak ve göreli riski karşı karşıya koyan tek cümle.",
             },
             {
               kind: "match",
@@ -365,7 +365,7 @@ Bleibt ein Einwand, den ich ernst nehme: Ohne konkrete Zahl erreicht man womögl
               ],
               answer: 2,
               explain:
-                "\"Sie erfüllen etwas, das Empfehlungen mit Spannbreiten nicht leisten: Sie lassen sich abhaken.\" Güç, doğruluktan değil kapanabilirlikten geliyor.",
+                "\"Sie erfüllen etwas, das Empfehlungen mit Spannbreiten nicht leisten: Sie lassen sich abhaken.\" Güçleri doğruluklarından değil, yapıldı diye işaretlenebilmelerinden geliyor.",
             },
             {
               kind: "mcq",

@@ -169,7 +169,7 @@ The lesson is not that communication is hopeless. It is that a probability has t
               text: "Gap 9",
               accept: ["why"],
               explain:
-                "`there is no reason why …` kalıbında yan cümleyi `why` bağlar. `that` bu adla da kurulabilir ama ardından gelen `should have learned` yapısı gerekçe sorusunu istiyor; `for` ise mastar gerektirir, çekimli yüklem alamaz.",
+                "`there is no reason why …` kalıbında yan cümleyi `why` bağlar. `that` da bu adla kurulabilir ve kabul edilir; `for` ise mastar gerektirir, çekimli yüklem alamaz.",
             },
             {
               kind: "gap",
@@ -362,9 +362,9 @@ The way through is narrower than either side allows. The credibility problem is 
 
 None of this makes the false alarm pleasant. What it might do is make the alternative visible, which is arguably the more useful of the two.`,
               gloss: [
-                { de: "to be tuned", tr: "ayarlanmak", en: "tuned" },
-                { de: "an evacuation", tr: "tahliye", en: "evacuation" },
-                { de: "credibility", tr: "inandırıcılık", en: "credibility" },
+                { de: "to be tuned", tr: "ayarlanmak", en: "abgestimmt sein" },
+                { de: "an evacuation", tr: "tahliye", en: "die Evakuierung" },
+                { de: "credibility", tr: "inandırıcılık", en: "die Glaubwürdigkeit" },
               ],
             },
           ],
@@ -518,9 +518,9 @@ This has an uncomfortable implication for any system trained on administrative r
 
 {{34}}`,
               gloss: [
-                { de: "to fit a model", tr: "modeli veriye uydurmak", en: "fit a model" },
-                { de: "a defect", tr: "kusur, arıza", en: "defect" },
-                { de: "a regime", tr: "düzen, uygulama biçimi", en: "regime" },
+                { de: "to fit a model", tr: "modeli veriye uydurmak", en: "ein Modell anpassen" },
+                { de: "a defect", tr: "kusur, arıza", en: "der Mangel" },
+                { de: "a regime", tr: "düzen, uygulama biçimi", en: "das Verfahren" },
               ],
             },
           ],
@@ -948,9 +948,9 @@ The service has nine duty forecasters and needs {{14}}.`,
                 { speaker: "Reza", text: "Only that the comparison with medical screening is misleading and I wish it would stop. A screening programme can offer a second test to the people it worries. A flood warning cannot; the event either arrives or it does not, and there is no confirmatory step in between. Those are not the same problem." },
               ],
               gloss: [
-                { de: "a threshold", tr: "eşik", en: "threshold" },
-                { de: "to cluster", tr: "bir noktada toplanmak", en: "cluster" },
-                { de: "confirmatory", tr: "doğrulayıcı", en: "confirmatory" },
+                { de: "a threshold", tr: "eşik", en: "die Schwelle" },
+                { de: "to cluster", tr: "bir noktada toplanmak", en: "sich häufen" },
+                { de: "confirmatory", tr: "doğrulayıcı", en: "bestätigend" },
               ],
             },
           ],

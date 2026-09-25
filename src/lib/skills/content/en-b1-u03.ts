@@ -42,7 +42,7 @@ export const enB1U03: SkillExercise[] = [
     gloss: [
       { de: "nowhere", tr: "hiçbir yere" },
       { de: "meant", tr: "kastetti" },
-      { de: "the line", tr: "satır" },
+      { de: "the line", tr: "söz" },
       { de: "real", tr: "gerçek" },
     ],
     minutes: 7,
@@ -141,7 +141,7 @@ export const enB1U03: SkillExercise[] = [
     questions: [
       {
         text: "Why is the flat brighter than the photos?",
-        options: ["the photos were taken in November", "the corridor is painted", "the ceiling is high"],
+        options: ["the photos were taken in November", "the windows are new", "the ceiling is high"],
         answer: 0,
         explain: "„The photos were taken in November.“ — kasımda ışık az.",
       },

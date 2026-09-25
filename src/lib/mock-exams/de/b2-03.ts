@@ -284,7 +284,7 @@ Die Politik reagiert bislang vor allem mit Programmen für Umschulung. Sinnvolle
             {
               key: "h",
               label: "h",
-              body: "Wie stark ein Beruf betroffen ist, hängt folglich weniger von seinem Namen ab als von diesem Anteil.",
+              body: "Wie stark ein Beruf betroffen ist, hängt folglich weniger von seinem Namen ab als davon, wie viele seiner Aufgaben so klar geregelt sind wie das Erfassen von Belegen.",
             },
           ],
           items: [

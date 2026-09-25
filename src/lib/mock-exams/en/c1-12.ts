@@ -154,7 +154,7 @@ That is by {{12}} means a small claim, although it is routinely dismissed as one
               id: "en-c1-12-l2-7",
               no: 7,
               text: "Gap 7",
-              accept: ["whereas", "although", "though"],
+              accept: ["whereas", "although", "though", "while"],
               explain:
                 "İki yarı arasında karşıtlık var: sıra «presented as though it had arrived from nowhere» diyor, oysa listeyi bir kural gözeterek biri yazmıştır. Karşıtlık bağlacı gerekiyor; `because` gerekçe verirdi.",
             },
@@ -163,9 +163,9 @@ That is by {{12}} means a small claim, although it is routinely dismissed as one
               id: "en-c1-12-l2-8",
               no: 8,
               text: "Gap 8",
-              accept: ["that"],
+              accept: ["that", "this", "the", "such"],
               explain:
-                "Bir önceki cümlede geçen kuşkuya geri gönderme yapılıyor: `that suspicion`. `this` de gönderme yapar ama önceki cümlede adlandırılmış bir öğeye dönüşün yerleşik biçimi `that`tır.",
+                "Aynı cümlenin başında geçen kuşkuya geri gönderme yapılıyor: `that suspicion`. `this`, `the` ve `such` de aynı göndermeyi yapar ve kabul edilir.",
             },
             {
               kind: "gap",
@@ -369,9 +369,9 @@ My recommendation is narrower than the report's and I believe it would survive c
 
 I record my thanks to the secretariat, whose work was exemplary, and my regret that this note was necessary.`,
               gloss: [
-                { de: "to dissent", tr: "karşı oy kullanmak", en: "dissent" },
-                { de: "an assessor", tr: "değerlendirici", en: "assessor" },
-                { de: "exemplary", tr: "örnek gösterilecek", en: "exemplary" },
+                { de: "to dissent", tr: "karşı oy kullanmak", en: "widersprechen" },
+                { de: "an assessor", tr: "değerlendirici", en: "der Prüfer" },
+                { de: "exemplary", tr: "örnek gösterilecek", en: "vorbildlich" },
               ],
             },
           ],
@@ -539,9 +539,9 @@ Neither of these mechanisms was designed. Both are the residue of decisions take
 
 What follows from this is not that criteria are worthless. It is that a criterion is a claim about the future which only an audit can convert into a description of the past, and the audits that would matter here have never been commissioned.`,
               gloss: [
-                { de: "residue", tr: "kalıntı", en: "residue" },
-                { de: "to defer", tr: "ertelemek", en: "defer" },
-                { de: "an audit", tr: "denetim", en: "audit" },
+                { de: "residue", tr: "kalıntı", en: "der Rest" },
+                { de: "to defer", tr: "ertelemek", en: "aufschieben" },
+                { de: "an audit", tr: "denetim", en: "die Prüfung" },
               ],
             },
           ],

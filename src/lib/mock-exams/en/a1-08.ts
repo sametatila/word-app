@@ -52,8 +52,8 @@ After the game we eat together in the café. It is free for the team.
 
 Mirek`,
               gloss: [
-                { de: "a coach", tr: "antrenör", en: "coach" },
-                { de: "a team", tr: "takım", en: "team" },
+                { de: "a coach", tr: "antrenör", en: "der Trainer" },
+                { de: "a team", tr: "takım", en: "die Mannschaft" },
               ],
             },
             {

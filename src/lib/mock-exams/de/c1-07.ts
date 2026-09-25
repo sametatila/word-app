@@ -422,7 +422,7 @@ Das Verfahren hat mithin Grenzen. Es verhindert nicht, dass später verglichen u
               options: ["wie", "denn", "als", "sondern"],
               answer: 2,
               explain:
-                "`weniger …` karşılaştırma kurar ve `als` ister: \"weniger in der Aktenführung als in der Art\". `sondern` ancak önünde bir olumsuzlama olsaydı gelirdi.",
+                "`weniger …` karşılaştırma kurar ve `als` ister: \"weniger dort als in der Art\". `sondern` ancak önünde bir olumsuzlama olsaydı gelirdi.",
             },
             {
               kind: "mcq",
@@ -452,10 +452,10 @@ Das Verfahren hat mithin Grenzen. Es verhindert nicht, dass später verglichen u
               no: 24,
               ref: "t3",
               text: "Lücke 24",
-              options: ["wie", "so", "was", "wenn"],
+              options: ["als", "so", "was", "wenn"],
               answer: 1,
               explain:
-                "Ödün cümlesinin kalıbı `so + sıfat … auch`: \"so lückenhaft sie … auch sein mögen\". `wie` burada karşılaştırma kurar, ödün değil.",
+                "Ödün cümlesinin kalıbı `so + sıfat … auch`: \"so lückenhaft sie … auch sein mögen\". `als` ise ödün kurmaz.",
             },
             {
               kind: "mcq",
@@ -1061,7 +1061,7 @@ Ruth {{10}}`,
               id: "de-c1-07-s2-1",
               no: 1,
               text: "Lücke 1 (Bezugnahme auf einen Text)",
-              accept: ["Bezugnehmend", "Bezug"],
+              accept: ["Bezugnehmend", "Bezug nehmend"],
               explain:
                 "Resmî yazının açılışında bir metne gönderme kalıbı gerekiyor: `Bezugnehmend auf Ihren Beitrag …` ya da `Bezug nehmend`. Cümle `auf` ile devam ettiği için bu iki biçim oturur.",
             },
@@ -1090,7 +1090,7 @@ Ruth {{10}}`,
               text: "Lücke 4 (Einräumung)",
               accept: ["allerdings", "hingegen", "indes"],
               explain:
-                "Yazar bir noktayı kabul edip sınırlıyor: \"Richtig ist allerdings, dass …\". Ödün bildiren bu belirteçler cümlenin ikinci konumunda durur.",
+                "Yazar bir noktayı kabul edip sınırlıyor: \"Richtig ist allerdings, dass …\". Ödün bildiren bu belirteçler çekimli fiilin ardında, orta alanda durur.",
             },
             {
               kind: "gap",

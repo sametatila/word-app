@@ -120,11 +120,6 @@
   "en": "Write a recipe. The imperative has no subject, the sentence starts with the verb."
  },
  {
-  "tr": "„Then we close in one hour, at ten.“ — bir saat sonra, yani onda.",
-  "kind": "explain",
-  "en": "„Then we close in one hour, at ten.“ — in one hour, that is at ten."
- },
- {
   "tr": "„Two euros a kilo.“ — yarım euro muzun fiyatı, dokuz euro toplam.",
   "kind": "explain",
   "en": "„Two euros a kilo.“ — half a euro is the price of a banana, nine euros the total."
@@ -333,11 +328,6 @@
   "tr": "„I have dinner at half past seven.“ — „half past seven“ yedi buçuk, sekiz buçuk değil.",
   "kind": "explain",
   "en": "„I have dinner at half past seven.“ — „half past seven“ is half an hour after seven, not after eight."
- },
- {
-  "tr": "„I always get up at seven, also at the weekend.“ — „also“ hafta sonunu da içine alıyor.",
-  "kind": "explain",
-  "en": "„I always get up at seven, also at the weekend.“ — „also“ takes the weekend in as well."
  },
  {
   "tr": "„I always turn it off before I sleep.“ — nesne zamir olunca ARAYA giriyor: turn it off.",

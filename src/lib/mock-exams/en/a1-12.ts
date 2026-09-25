@@ -52,8 +52,8 @@ Ask for Mira at the desk. Bring your passport.
 
 Mira`,
               gloss: [
-                { de: "an office", tr: "ofis, büro", en: "office" },
-                { de: "a floor", tr: "kat", en: "floor" },
+                { de: "an office", tr: "ofis, büro", en: "das Büro" },
+                { de: "a floor", tr: "kat", en: "das Stockwerk" },
               ],
             },
             {
@@ -70,8 +70,8 @@ Hot food: 4 euros. Please bring your card.
 
 You cannot pay with money here.`,
               gloss: [
-                { de: "a canteen", tr: "yemekhane", en: "canteen" },
-                { de: "staff", tr: "çalışanlar", en: "staff" },
+                { de: "a canteen", tr: "yemekhane", en: "die Kantine" },
+                { de: "staff", tr: "çalışanlar", en: "das Personal" },
               ],
             },
           ],
@@ -198,7 +198,7 @@ Please bring a pen.`,
               kind: "mcq",
               id: "en-a1-12-l2-8",
               no: 8,
-              text: "You want to learn the computer programme.",
+              text: "You want to learn the computer program.",
               options: ["Office", "Canteen", "Training Room"],
               answer: 2,
               explain:

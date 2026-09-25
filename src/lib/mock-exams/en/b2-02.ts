@@ -70,7 +70,7 @@ That is a real improvement, but it is worth {{6}} in mind that a third is not ev
               id: "en-b2-02-l1-2",
               no: 2,
               text: "Gap 2",
-              options: ["check", "control", "prove", "confirm"],
+              options: ["check", "control", "prove", "remind"],
               answer: 0,
               explain:
                 "Anlam, ifadenin çalışmayla örtüşüp örtüşmediğini denetlemek: `check that …`. `control` Türkçedeki \"kontrol etmek\"in yanıltıcı karşılığıdır ve İngilizcede yönetmek demektir; `prove` ve `confirm` ise sonucu baştan varsayar.",
@@ -100,7 +100,7 @@ That is a real improvement, but it is worth {{6}} in mind that a third is not ev
               id: "en-b2-02-l1-5",
               no: 5,
               text: "Gap 5",
-              options: ["lowered", "reduced", "shortened", "decreased"],
+              options: ["declined", "reduced", "shortened", "narrowed"],
               answer: 1,
               explain:
                 "Nesne `the number of overstated claims` ve anlam sayıyı azaltmak: `reduce the number of` en doğal eşdizim. `lower` fiyat ya da düzeyle, `shorten` uzunlukla gider; `decrease` genelde geçişsiz kullanılır ve bu yapıda zayıf durur.",
@@ -113,7 +113,7 @@ That is a real improvement, but it is worth {{6}} in mind that a third is not ev
               options: ["holding", "taking", "keeping", "having"],
               answer: 2,
               explain:
-                "`bear in mind` ve `keep in mind` aynı anlamı taşıyan iki kalıptır; cümledeki `worth + -ing` yapısı ikincisini istiyor. `hold in mind`, `take in mind` ve `have in mind` bu kalıbı kurmaz — `have in mind` başka bir anlam taşır (aklında bir plan olmak).",
+                "`bear in mind` ve `keep in mind` aynı anlamı taşıyan iki kalıptır; şıklarda `bearing` olmadığı için `worth + -ing` yapısına uyan doğru biçim `keeping`. `hold in mind`, `take in mind` ve `have in mind` bu kalıbı kurmaz — `have in mind` başka bir anlam taşır (aklında bir plan olmak).",
             },
           ],
         },
@@ -184,9 +184,9 @@ Editors are therefore being asked to think {{12}} terms of prevention rather tha
               id: "en-b2-02-l2-11",
               no: 11,
               text: "Gap 11",
-              accept: ["would"],
+              accept: ["would", "could", "might"],
               explain:
-                "Koşul cümlesi `If the cause were …` biçiminde ikinci tip; ana cümlenin yardımcı fiili `would` olur ve `have solved` ile birleşerek karma bir koşul kurar. `will` bu yapıda gelmez.",
+                "Koşul cümlesi `If the cause were …` biçiminde ikinci tip; ana cümlenin yardımcı fiili `would` (olasılık için `could` ya da `might`) olur ve `have solved` ile birleşerek karma bir koşul kurar. `will` bu yapıda gelmez.",
             },
             {
               kind: "gap",
@@ -363,10 +363,10 @@ If that is right, the practical conclusion is unwelcome for people like me. It m
 
 I want to be clear that I am not against explanation, which would be an odd position for someone who writes for a living. I am against treating it as sufficient. If we had built those relationships, the debate would have gone very differently.`,
               gloss: [
-                { de: "a diagnosis", tr: "teşhis", en: "diagnosis" },
-                { de: "to equip", tr: "donatmak", en: "to equip" },
-                { de: "standing", tr: "itibar, saygınlık", en: "standing" },
-                { de: "unglamorous", tr: "gösterişsiz", en: "unglamorous" },
+                { de: "a diagnosis", tr: "teşhis", en: "die Diagnose" },
+                { de: "to equip", tr: "donatmak", en: "ausrüsten, befähigen" },
+                { de: "standing", tr: "itibar, saygınlık", en: "das Ansehen" },
+                { de: "unglamorous", tr: "gösterişsiz", en: "unspektakulär" },
               ],
             },
           ],
@@ -474,9 +474,9 @@ Some journals now require a second panel showing absolute numbers alongside any 
 
 None of this is an argument against graphs, which remain the most efficient way to show a pattern. It is an argument for reading the axis and the window before reading the shape.`,
               gloss: [
-                { de: "truncated", tr: "kesilmiş, kırpılmış", en: "truncated" },
-                { de: "an axis", tr: "eksen", en: "axis" },
-                { de: "absolute numbers", tr: "mutlak sayılar", en: "absolute numbers" },
+                { de: "truncated", tr: "kesilmiş, kırpılmış", en: "abgeschnitten, gekürzt" },
+                { de: "an axis", tr: "eksen", en: "die Achse" },
+                { de: "absolute numbers", tr: "mutlak sayılar", en: "absolute Zahlen" },
               ],
             },
           ],
@@ -1121,10 +1121,10 @@ The speaker says the greatest risk is the {{16}}, not the abuse.`,
                 { speaker: "Daniel", text: "Publish less. We currently cover about eleven studies a week and I would rather do four properly. Whether my editor agrees is a separate conversation." },
               ],
               gloss: [
-                { de: "to hedge", tr: "temkinli ifade kullanmak", en: "to hedge" },
-                { de: "sceptical", tr: "kuşkucu", en: "sceptical" },
-                { de: "to misrepresent", tr: "yanlış aktarmak", en: "to misrepresent" },
-                { de: "prominently", tr: "göze çarpan bir yerde", en: "prominently" },
+                { de: "to hedge", tr: "temkinli ifade kullanmak", en: "sich vorsichtig ausdrücken" },
+                { de: "sceptical", tr: "kuşkucu", en: "skeptisch" },
+                { de: "to misrepresent", tr: "yanlış aktarmak", en: "falsch darstellen" },
+                { de: "prominently", tr: "göze çarpan bir yerde", en: "an prominenter Stelle" },
               ],
             },
           ],

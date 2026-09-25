@@ -226,9 +226,9 @@ Then our teacher gave us a task in pairs. My partner was nineteen and she typed 
 
 Now the course is finished. My English is better, but I learned something else too: in a class of twenty, nobody has time to look at your age.`,
               gloss: [
-                { de: "a classroom", tr: "derslik", en: "classroom" },
-                { de: "to type", tr: "klavyeyle yazmak", en: "type" },
-                { de: "a pair", tr: "ikili", en: "pair" },
+                { de: "a classroom", tr: "derslik", en: "das Klassenzimmer" },
+                { de: "to type", tr: "klavyeyle yazmak", en: "tippen" },
+                { de: "a pair", tr: "ikili", en: "das Paar" },
               ],
             },
           ],
@@ -395,18 +395,18 @@ I will do the second part {{24}} the spring.`,
               id: "en-a2-04-l5-21",
               no: 21,
               text: "Gap 21",
-              accept: ["our", "my"],
+              accept: ["our", "my", "the"],
               explain:
-                "Boşluk adın önünde: «she answered all ___ questions». Oraya iyelik sıfatı gelir. Yazan kişi tek başına da («my») grubun adına da («our») konuşabildiği için ikisi de kabul edilir; `us` ve `me` nesne biçimidir ve adın önüne gelemez.",
+                "Boşluk adın önünde: «she answered all ___ questions». Oraya bir belirleyici gelir: yazan kişi tek başına da («my») grubun adına da («our») konuşabilir, «all the questions» da doğrudur; üçü de kabul edilir. `us` ve `me` nesne biçimidir ve adın önüne gelemez.",
             },
             {
               kind: "gap",
               id: "en-a2-04-l5-22",
               no: 22,
               text: "Gap 22",
-              accept: ["but"],
+              accept: ["but", "yet", "although", "though"],
               explain:
-                "İki yarı çelişiyor: asansör yok, ama merdiven sorun değil. Karşıtlığı `but` verir. `so` sonuç bildirir ve burada sonuç yok; `because` ise sebep kurar ve cümleyi tersine çevirir.",
+                "İki yarı çelişiyor: asansör yok, ama merdiven sorun değil. Karşıtlığı `but` verir; `yet`, `although` ve `though` da aynı ilişkiyi kurar. `so` sonuç bildirir ve burada sonuç yok; `because` ise sebep kurar ve cümleyi tersine çevirir.",
             },
             {
               kind: "gap",

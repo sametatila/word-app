@@ -362,9 +362,9 @@ I should be careful here, because the obvious conclusion is the wrong one. The p
 
 Nevertheless, I do not regret the year. What it changed was not my bill but my patience with a certain kind of advice, and that has been worth rather more than the fifteen pounds.`,
               gloss: [
-                { de: "a plug meter", tr: "priz ölçer", en: "plug meter" },
-                { de: "a router", tr: "modem, yönlendirici", en: "router" },
-                { de: "a lease", tr: "kira sözleşmesi", en: "lease" },
+                { de: "a plug meter", tr: "priz ölçer", en: "das Strommessgerät" },
+                { de: "a router", tr: "modem, yönlendirici", en: "der Router" },
+                { de: "a lease", tr: "kira sözleşmesi", en: "der Mietvertrag" },
               ],
             },
           ],
@@ -447,9 +447,9 @@ Some countries now require a minimum standard before a property may be let. The 
 
 None of this argues that behaviour is irrelevant, since a household that heats one room instead of four uses less whatever the walls are like. It argues for asking who holds the decision before designing the advice.`,
               gloss: [
-                { de: "insulation", tr: "yalıtım", en: "insulation" },
-                { de: "a tenant", tr: "kiracı", en: "tenant" },
-                { de: "to let a property", tr: "kiraya vermek", en: "let a property" },
+                { de: "insulation", tr: "yalıtım", en: "die Dämmung" },
+                { de: "a tenant", tr: "kiracı", en: "der Mieter" },
+                { de: "to let a property", tr: "kiraya vermek", en: "eine Immobilie vermieten" },
               ],
             },
           ],
@@ -468,7 +468,7 @@ None of this argues that behaviour is irrelevant, since a household that heats o
               text: "Gap 28",
               answer: "d",
               explain:
-                "Giriş savı kuruyor: kiralık konutta varsayım çöküyor ve «no amount of advice can repair» ediyor. (d) bunu «the harder problem» diye adlandırıp aynı gerekçeyi başka sözcüklerle veriyor.",
+                "Giriş savı kuruyor: kiralık konutta varsayım, hiçbir öğüdün onaramayacağı biçimde çöküyor («no amount of advice can repair»). (d) bunu «the harder problem» diye adlandırıp aynı gerekçeyi başka sözcüklerle veriyor.",
             },
             {
               kind: "match",
@@ -1096,9 +1096,9 @@ The households hardest to reach are those in the {{15}} properties.
                 { speaker: "Urho", text: "Not as a general rule. If you need to see results within a normal working life, this is advice from a comfortable position and it is worth saying so. What I would recommend is deciding at the start who will read the regulations, and paying that person." },
               ],
               gloss: [
-                { de: "a threshold", tr: "eşik", en: "threshold" },
-                { de: "enforcement", tr: "denetim, uygulama", en: "enforcement" },
-                { de: "implementation", tr: "hayata geçirme", en: "implementation" },
+                { de: "a threshold", tr: "eşik", en: "die Schwelle" },
+                { de: "enforcement", tr: "denetim, uygulama", en: "die Durchsetzung" },
+                { de: "implementation", tr: "hayata geçirme", en: "die Umsetzung" },
               ],
             },
           ],

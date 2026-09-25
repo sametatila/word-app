@@ -49,7 +49,7 @@ export const a1U07: SkillExercise[] = [
         text: "Richtig oder falsch? Tom braucht kein Obst.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "Doğru: „Obst brauchen wir nicht, wir haben noch Äpfel und Bananen.“",
+        explain: "Doğru: „Obst brauchen wir nicht, wir haben noch Äpfel, Birnen und Bananen.“",
       },
       {
         text: "Was kocht Tom heute?",

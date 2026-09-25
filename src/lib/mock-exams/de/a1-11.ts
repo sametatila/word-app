@@ -726,7 +726,7 @@ Ab 22 Uhr bitte leise sein.`,
           prompt:
             "Ihre Nachbarin Anna Dziuba meldet Sperrmüll an. Sie helfen ihr beim Formular. Anna ist am 3. März 1979 geboren. Sie wohnt in der Kastanienallee 17 in 44137 Dortmund. Ihre Telefonnummer ist 0231 445208. Sie gibt einen Schrank ab. Füllen Sie das Formular aus.",
           promptTr:
-            "Komşun Anna Dziuba iri çöp için kayıt yaptırıyor. Formu doldurmasına yardım ediyorsun. Anna 3 Mart 1979 doğumlu. Kastanienallee 17, 44137 Dortmund adresinde oturuyor. Telefon numarası 0231 445208. Bir dolap veriyor. Formu doldur.",
+            "Komşun Anna Dziuba hacimli atık (eski eşya) alımı için başvuruyor. Formu doldurmasına yardım ediyorsun. Anna 3 Mart 1979 doğumlu. Kastanienallee 17, 44137 Dortmund adresinde oturuyor. Telefon numarası 0231 445208. Bir dolap veriyor. Formu doldur.",
           texts: [
             {
               kind: "text",

@@ -49,9 +49,9 @@ export const enA2U14: SkillExercise[] = [
     minutes: 6,
     text:
       "Question: I ordered a chair two weeks ago and it hasn't arrived yet. What can I do?\n" +
-      "Answer 1: First track the package. In your account there is a number. With that number you see where it is. Usually it stands in a city two hours away and comes on Monday.\n" +
+      "Answer 1: First track the package. In your account there is a number. With that number you see where it is. Usually it sits in a city two hours away and comes on Monday.\n" +
       "Answer 2: I had the same problem in March. The package was at my neighbour's door for six days. Nobody wrote to me. Ask the people in your building first.\n" +
-      "Answer 3: Write to the shop, not to the driver. The shop has the contract with you. Write short: the order number, the date and one question — when will it arrive?\n" +
+      "Answer 3: Write to the shop, not to the driver. The shop has the contract with you. Keep it short: the order number, the date and one question — when will it arrive?\n" +
       "Answer 4: And put everything in one email. I sent four emails in two days and they answered the first one after a week.\n" +
       "Question: Thank you. It arrived this morning. It was in the wrong building for ten days. Nobody understands it.",
     questions: [

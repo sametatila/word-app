@@ -150,7 +150,7 @@ export const enA1U03: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["28195"],
-        explain: "„Code: 28195“ — şehir kodu adresle aynı satırda değil, kendi satırında.",
+        explain: "„Code: 28195“ — posta kodu adresle aynı satırda değil, kendi satırında.",
       },
     ],
   },

@@ -57,7 +57,7 @@ export const enB1U01: SkillExercise[] = [
       "Three things that decide a CV in twenty seconds.\n" +
       "Order. The reader starts at the top and stops when it gets boring. Put the last job first and the degree after it, not before. Nobody reads a CV from 2009 to today.\n" +
       "Time. Every job needs two dates and no gaps. If there is a gap, write one line: travelled, studied, cared for a parent. A gap with no line is a question; a gap with a line is a fact.\n" +
-      "Proof. „Reliable and careful“ says nothing, because everybody writes it. „I had finished my degree before I started there, so I worked and studied for two years“ says the same thing and can be checked.\n" +
+      "Proof. „Reliable and careful“ says nothing, because everybody writes it. „I had started my degree before I started there, so I worked and studied for two years“ says the same thing and can be checked.\n" +
       "One more thing about the previous employer. Ask for the reference before you leave, not six months later. People change jobs, and the person who knows your work today may be somewhere else in April.\n" +
       "And the training courses: only the ones that touch this job. A CV is not a list of everything you have done. It is an answer to one question — why this person for this position?\n" +
       "Two pages at most. One is better.",
@@ -133,11 +133,11 @@ export const enB1U01: SkillExercise[] = [
       "Deniz: Come in. Please sit down. Did you find us easily?\n" +
       "Can: Yes, thank you. The tram stops at the door.\n" +
       "Deniz: Good. Tell me about the last two years.\n" +
-      "Can: I worked in a small company until March. Before that I had worked in a bigger one for three years, but I wanted a team where I know every name.\n" +
+      "Can: I have worked in a small company since last March. Before that I had worked in a bigger one for three years, but I wanted a team where I know every name.\n" +
       "Deniz: And why are you leaving the small one?\n" +
       "Can: I am not leaving because it is bad. The work stopped growing and I did not.\n" +
       "Deniz: Fair. What is your weakness?\n" +
-      "Can: I say yes too fast. I had said yes to four projects in one week once, and two of them were late. Now I ask for the deadline before I answer.\n" +
+      "Can: I say yes too fast. I once said yes to four projects in one week, and two of them were late. Now I ask for the deadline before I answer.\n" +
       "Deniz: That is a real answer. Salary?\n" +
       "Can: I read the advert. The number there works for me.\n" +
       "Deniz: You have to give one month's notice, yes?\n" +

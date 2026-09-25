@@ -45,11 +45,6 @@
   "de": "Fragen zur Erfahrung. Welche Antwort nennt ein Datum, welche nicht?"
  },
  {
-  "tr": "İkinci şikâyet mektubu. Hangi cümle tarihli, hangisi değil?",
-  "kind": "intro",
-  "de": "Der zweite Beschwerdebrief. Welcher Satz nennt ein Datum, welcher nicht?"
- },
- {
   "tr": "Üç haber, üç edilgen biçim. Hangisi bitti, hangisi sürüyor?",
   "kind": "intro",
   "de": "Drei Meldungen, drei Passivformen. Welche ist fertig, welche läuft noch?"
@@ -370,11 +365,6 @@
   "de": "Fundbüro"
  },
  {
-  "tr": "şaşırtmaca",
-  "kind": "gloss.tr",
-  "de": "eine Überraschung"
- },
- {
   "tr": "yayımlandı",
   "kind": "gloss.tr",
   "de": "wurde veröffentlicht"
@@ -383,11 +373,6 @@
   "tr": "ev arkadaşı",
   "kind": "gloss.tr",
   "de": "Mitbewohnerin"
- },
- {
-  "tr": "kayıt olmak",
-  "kind": "gloss.tr",
-  "de": "sich eintragen"
  },
  {
   "tr": "olay örgüsü",

@@ -103,7 +103,7 @@ export const enB1U15: SkillExercise[] = [
           "You will not quit unless you stop enjoying it.",
           "The streak is not the point either.",
         ],
-        explain: "Gerçek koşul, gerçek olmayan koşul, tutorun cümlesi, en sonda seri.",
+        explain: "Gerçek koşul, gerçek olmayan koşul, öğretmenin cümlesi, en sonda seri.",
       },
       {
         kind: "short_answer",

@@ -50,7 +50,7 @@ export const A2_02: MockPaper = {
 
 Am Anfang war es leicht. Mein Schrank war voll und einige Sachen habe ich lange nicht getragen.
 
-Im April ist meine Lieblingsjacke kaputt gegangen. Ich bin zum ersten Mal zu einer Änderungsschneiderei gegangen. Die Reparatur hat zwölf Euro gekostet. Eine neue Jacke kostet bei mir normalerweise achtzig.
+Im April ist meine Lieblingsjacke kaputtgegangen. Ich bin zum ersten Mal zu einer Änderungsschneiderei gegangen. Die Reparatur hat zwölf Euro gekostet. Eine neue Jacke kostet bei mir normalerweise achtzig.
 
 Im Sommer war es schwierig. Eine Kollegin hat geheiratet und ich hatte kein passendes Kleid. Deshalb habe ich eins von einer Freundin geliehen. Auf den Fotos sehe ich sehr gut aus.
 

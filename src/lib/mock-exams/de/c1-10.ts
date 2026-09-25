@@ -1063,7 +1063,7 @@ Marlies {{10}}`,
               id: "de-c1-10-s2-1",
               no: 1,
               text: "Lücke 1 (Bezugnahme auf eine Veranstaltung)",
-              accept: ["Bezugnehmend", "Bezug"],
+              accept: ["Bezugnehmend", "Bezug nehmend"],
               explain:
                 "Yazı bir sunuma gönderme yaparak açılıyor ve cümle `auf` ile sürüyor; buraya `Bezugnehmend` ya da ayrık yazımıyla `Bezug nehmend` girer.",
             },
@@ -1092,7 +1092,7 @@ Marlies {{10}}`,
               text: "Lücke 4 (unvermeidliche Folge)",
               accept: ["zwangsläufig", "regelmäßig", "unweigerlich"],
               explain:
-                "Sonuç kaçınılmaz olarak sunuluyor: devir teslim uzuyorsa sabah vardiyasından gelen \"zwangsläufig zu spät erscheinen\" wird.",
+                "Sonuç kaçınılmaz olarak sunuluyor: devir teslim uzuyorsa \"Wer aus dem Frühdienst kommt, wird zwangsläufig zu spät erscheinen.\"",
             },
             {
               kind: "gap",

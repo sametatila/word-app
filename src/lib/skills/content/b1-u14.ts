@@ -82,7 +82,7 @@ export const b1U14: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["wie"],
-        explain: "„so … wie“ EŞİTLİK kurar. Eşit olmasaydı „als“ gelirdi.",
+        explain: "„so … wie“ eşitlik karşılaştırması kurar; olumsuzu „nicht so … wie“ da „wie“ ile kurulur. Üstünlük sıfatıyla (schneller) „als“ gelirdi.",
       },
       {
         kind: "short_answer",

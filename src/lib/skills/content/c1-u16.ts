@@ -42,7 +42,7 @@ export const c1U16: SkillExercise[] = [
       { de: "umfangreich", tr: "kapsamlı", en: "extensive" },
       { de: "eingrenzen", tr: "sınırlandırmak", en: "to narrow down" },
       { de: "die Lesbarkeit", tr: "okunabilirlik", en: "readability" },
-      { de: "verlagern", tr: "nakletmek", en: "to relocate" },
+      { de: "verlagern", tr: "kaydırmak", en: "to shift" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
       { de: "die Information", tr: "bilgi", en: "information" },
       { de: "sich nähern", tr: "yaklaşmak", en: "to approach" },
@@ -50,7 +50,7 @@ export const c1U16: SkillExercise[] = [
       { de: "teilweise", tr: "kısmen", en: "partly" },
       { de: "kontrovers", tr: "ihtilaflı", en: "controversial" },
       { de: "aller", tr: "hepsinden", en: "of all" },
-      { de: "der Artikel", tr: "makale", en: "article" },
+      { de: "der Artikel", tr: "tanımlık", en: "article" },
       { de: "die Schwierigkeit", tr: "zorluk", en: "difficulty" },
       { de: "lesen", tr: "okumak", en: "to read" },
       { de: "sammeln", tr: "toplamak", en: "to collect" },
@@ -65,7 +65,7 @@ export const c1U16: SkillExercise[] = [
     text:
       "ZWEI WEGE, DASSELBE ZU SAGEN\n\n" +
       "„Die Entscheidung, die vor Jahren getroffen wurde, wirkt bis heute.“ Und: „Die vor Jahren getroffene Entscheidung wirkt bis heute.“\n\n" +
-      "Beide Sätze sind korrekt. Der zweite ist um vier Wörter kürzer und verlagert das Gewicht: Das Attribut steht vorangestellt, der Leser bekommt die Einschränkung, bevor er das Nomen hat.\n\n" +
+      "Beide Sätze sind korrekt. Der zweite ist um zwei Wörter kürzer und verlagert das Gewicht: Das Attribut steht vorangestellt, der Leser bekommt die Einschränkung, bevor er das Nomen hat.\n\n" +
       "Genau darin liegt Nutzen und Gefahr. Der Nutzen: Der Satz verdichtet, ohne Information zu verlieren, und die Hauptaussage rückt näher zusammen. In Fachtexten spart das über eine Seite hinweg erhebliche Länge.\n\n" +
       "Die Gefahr beginnt bei der Länge des Attributs. „Die vor Jahren nach umfangreichen und teilweise kontrovers geführten Beratungen unter Beteiligung aller Fachabteilungen getroffene Entscheidung“ ist grammatisch einwandfrei und praktisch unlesbar: Zwischen Artikel und Nomen liegen vierzehn Wörter, und der Leser weiß bis zum Schluss nicht, wovon die Rede ist.\n\n" +
       "Eine brauchbare Grenze liegt bei etwa vier Wörtern. Darüber hinaus sollte man auflösen — in einen Relativsatz, oder besser in zwei Sätze.\n\n" +
@@ -148,14 +148,14 @@ export const c1U16: SkillExercise[] = [
       { de: "einzige", tr: "tek", en: "only" },
       { de: "solche", tr: "böyle", en: "such" },
       { de: "passiv", tr: "pasif", en: "passive" },
-      { de: "der Urheber", tr: "eser sahibi", en: "creator" },
+      { de: "der Urheber", tr: "eylemi yapan / fail", en: "agent" },
       { de: "vermuten", tr: "sanmak", en: "to suspect" },
       { de: "der Text", tr: "metin", en: "text" },
     ],
     minutes: 7,
     text:
       "„DIE DURCHFÜHRUNG DER PRÜFUNG ERFOLGT“\n\n" +
-      "Vier Wörter für eine Sache, die zwei brauchen würde: „Wir prüfen.“\n\n" +
+      "Fünf Wörter für eine Sache, die zwei brauchen würde: „Wir prüfen.“\n\n" +
       "Der Nominalstil entsteht, wenn das Verb in ein Substantiv wandert und ein blasses Hilfsverb seinen Platz einnimmt — erfolgen, vornehmen, durchführen, zur Anwendung kommen. Übrig bleibt ein Satz ohne Handlung.\n\n" +
       "Er hat gute Gründe. Er ist unpersönlich, und manchmal soll er das sein: In einer Verfahrensbeschreibung ist gleichgültig, wer prüft. Er ist auch kompakt, wenn man mehrere Vorgänge aufzählt.\n\n" +
       "Schwerfällig wird er dort, wo eine Handlung wirklich stattfindet und jemand sie ausführt. „Nach erfolgter Prüfung der eingereichten Unterlagen durch die zuständige Stelle ergeht ein Bescheid“ enthält drei Substantive für einen Vorgang und keinen einzigen Handelnden im Nominativ.\n\n" +

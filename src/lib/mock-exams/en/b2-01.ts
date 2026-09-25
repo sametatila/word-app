@@ -88,7 +88,7 @@ None of this means that quiet carriages solve anything large. They do, however, 
               id: "en-b2-01-l1-1",
               no: 1,
               text: "Gap 1",
-              options: ["stick", "hold", "keep", "follow"],
+              options: ["stick", "hold", "obey", "follow"],
               answer: 0,
               explain:
                 "Boşluktan sonra `to them` var ve anlam kurallara uymak. `stick to` bu öbek fiili kurar. `hold to` başka bir anlam taşır (bir söze bağlı kalmak), `keep to` yakın ama devamında yol ya da program ister, `follow` ise `to` almaz.",
@@ -128,7 +128,7 @@ None of this means that quiet carriages solve anything large. They do, however, 
               id: "en-b2-01-l1-5",
               no: 5,
               text: "Gap 5",
-              options: ["large", "wide", "vast", "broad"],
+              options: ["deep", "wide", "vast", "broad"],
               answer: 2,
               explain:
                 "`the vast majority` yerleşik bir eşdizim. `large majority` de geçer ama `vast` bu kalıpta belirgin biçimde daha sık; `wide` ve `broad` `majority` ile kullanılmaz, onlar `range` ya da `agreement` ile gider.",
@@ -176,9 +176,9 @@ Neither approach has been evaluated properly. If the funding {{12}} arrived with
               id: "en-b2-01-l2-7",
               no: 7,
               text: "Gap 7",
-              accept: ["although", "though", "even"],
+              accept: ["although", "though", "but", "yet"],
               explain:
-                "İki yarı karşıt: kütüphaneler iş yeri oldu, oysa kimse bunu planlamadı. `although` ya da `though` bu ödün ilişkisini kurar; `even` de «even though» yapısının ilk sözcüğü olarak kabul edilir. `because` anlamı tersine çevirirdi.",
+                "İki yarı karşıt: kütüphaneler iş yeri oldu, oysa kimse bunu planlamadı. `although` ya da `though` bu ödün ilişkisini kurar; `but` ve `yet` de karşıtlığı verir. Tek başına `even` boşluğa oturmaz, `because` ise anlamı tersine çevirirdi.",
             },
             {
               kind: "gap",
@@ -247,7 +247,7 @@ Neither approach has been evaluated properly. If the funding {{12}} arrived with
 
 Their main use is planning. A council that knows where the problem lies can act {{14}} instead of responding to complaints one at a time.
 
-The maps have also changed the public conversation. Residents who were once told that their street was {{15}} loud can now point to a number.
+The maps have also changed the public conversation. Residents who were once told that their street was not {{15}} loud can now point to a number.
 
 Critics argue that a map measures volume but not {{16}}: a busy road and a night club produce very different kinds of disturbance at the same level.
 
@@ -389,10 +389,10 @@ None of this defends the meeting as it is usually run. A meeting with fourteen p
 
 The reason this reform is rarely adopted is that it is not dramatic. Abolishing meetings makes a headline. Making them shorter makes a calendar entry, and nobody has ever been promoted for that.`,
               gloss: [
-                { de: "to abolish", tr: "kaldırmak, ilga etmek", en: "to abolish" },
-                { de: "an objection", tr: "itiraz", en: "objection" },
-                { de: "to compose", tr: "kurmak, kaleme almak", en: "to compose" },
-                { de: "duller", tr: "daha sıkıcı", en: "duller" },
+                { de: "to abolish", tr: "kaldırmak, ilga etmek", en: "abschaffen" },
+                { de: "an objection", tr: "itiraz", en: "der Einwand" },
+                { de: "to compose", tr: "kurmak, kaleme almak", en: "verfassen, formulieren" },
+                { de: "duller", tr: "daha sıkıcı", en: "langweiliger" },
               ],
             },
           ],
@@ -500,9 +500,9 @@ Employers who have taken this seriously have not banned anything. Instead they h
 
 The remaining difficulty is cultural rather than technical. In most teams, speed of reply is still read as a sign of commitment, and nobody has yet found a comfortable way to say that it is not.`,
               gloss: [
-                { de: "working memory", tr: "işleyen bellek", en: "working memory" },
-                { de: "to batch", tr: "toplu hâle getirmek", en: "to batch" },
-                { de: "commitment", tr: "bağlılık, adanmışlık", en: "commitment" },
+                { de: "working memory", tr: "işleyen bellek", en: "das Arbeitsgedächtnis" },
+                { de: "to batch", tr: "toplu hâle getirmek", en: "bündeln, gesammelt erledigen" },
+                { de: "commitment", tr: "bağlılık, adanmışlık", en: "das Engagement" },
               ],
             },
           ],
@@ -950,7 +950,7 @@ The council is asked to provide a licence officer who works after {{16}}.`,
               text: "Gap 15",
               accept: ["one", "a single", "1"],
               explain:
-                "«almost all of them come from one street» — şikâyetlerin neredeyse tamamı tek bir sokaktan geliyor. Bu bilgi, kırk yüzdelik artışın şehre yayılmış bir sorun olmadığını gösteriyor.",
+                "«almost all of them come from one street» — şikâyetlerin neredeyse tamamı tek bir sokaktan geliyor. Bu bilgi, yüzde kırklık artışın şehre yayılmış bir sorun olmadığını gösteriyor.",
             },
             {
               kind: "gap",
@@ -1146,10 +1146,10 @@ The council is asked to provide a licence officer who works after {{16}}.`,
                 { speaker: "Halim", text: "Cautiously, and for an unromantic reason. Attention is now expensive enough that finance departments have started asking about it, and things change when they are counted." },
               ],
               gloss: [
-                { de: "distraction", tr: "dikkat dağınıklığı", en: "distraction" },
+                { de: "distraction", tr: "dikkat dağınıklığı", en: "die Ablenkung" },
                 { de: "robust", tr: "sağlam, güvenilir (bulgu)", en: "robust" },
-                { de: "to compensate", tr: "telafi etmek", en: "to compensate" },
-                { de: "explicit", tr: "açıkça belirtilmiş", en: "explicit" },
+                { de: "to compensate", tr: "telafi etmek", en: "ausgleichen" },
+                { de: "explicit", tr: "açıkça belirtilmiş", en: "ausdrücklich" },
               ],
             },
           ],

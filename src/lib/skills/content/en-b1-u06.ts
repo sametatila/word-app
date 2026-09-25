@@ -48,7 +48,7 @@ export const enB1U06: SkillExercise[] = [
       { de: "real", tr: "gerçek" },
       { de: "except", tr: "dışında" },
       { de: "by itself", tr: "tek başına" },
-      { de: "enroll", tr: "okula yazılmak" },
+      { de: "enroll", tr: "kaydolmak" },
     ],
     minutes: 7,
     text:

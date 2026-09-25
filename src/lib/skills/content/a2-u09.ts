@@ -32,7 +32,7 @@ export const a2U09: SkillExercise[] = [
     unit: 9,
     title: "Wo ist der Schlüssel?",
     genre: "message",
-    intro: "Evden çıkmış birine yazılmış mesaj: eşyalar tam olarak nerede?",
+    intro: "Evden çıkmış birinin yazdığı mesaj: eşyalar tam olarak nerede?",
     gloss: [
       { de: "die Schublade", tr: "çekmece", en: "drawer" },
       { de: "der Nachttisch", tr: "komodin", en: "bedside table" },
@@ -44,7 +44,7 @@ export const a2U09: SkillExercise[] = [
       { de: "irgendwo", tr: "bir yerde", en: "somewhere" },
       { de: "der Ersatzschlüssel", tr: "yedek anahtar", en: "spare key" },
       { de: "die Papiere", tr: "belgeler", en: "documents" },
-      { de: "das Fach", tr: "ders", en: "subject" },
+      { de: "das Fach", tr: "raf gözü", en: "compartment, shelf" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     minutes: 4,
@@ -109,8 +109,7 @@ export const a2U09: SkillExercise[] = [
       { de: "die Abkürzung", tr: "kestirme yol", en: "shortcut" },
       { de: "außerhalb", tr: "dışında", en: "outside" },
       { de: "parken", tr: "park etmek", en: "to park" },
-      { de: "der Kinderwagen", tr: "bebek arabası", en: "stroller" },
-      { de: "leicht", tr: "hafif", en: "light" },
+      { de: "der Kinderwagen", tr: "bebek arabası", en: "pushchair" },
     ],
     minutes: 4,
     text:

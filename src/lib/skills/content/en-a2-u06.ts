@@ -118,11 +118,11 @@ export const enA2U06: SkillExercise[] = [
       "Deniz: Do you have anything earlier? Friday is too late for me.\n" +
       "Office: Let me look. Wednesday at two is available. Or Thursday at half past eight.\n" +
       "Deniz: Thursday is better. Half past eight is fine.\n" +
-      "Office: Good. And Friday? Do I cancel it?\n" +
+      "Office: Good. And Friday? Shall I cancel it?\n" +
       "Deniz: Yes, please cancel it.\n" +
       "Office: Is the problem urgent?\n" +
       "Deniz: Not urgent, but I have had the pain for two weeks and it is getting worse.\n" +
-      "Office: Then Thursday is good. If it is worse tomorrow, call back and we find something today.\n" +
+      "Office: Then Thursday is good. If it is worse tomorrow, call back and we'll find something the same day.\n" +
       "Deniz: Thank you. I'll let you know.",
     questions: [
       {
@@ -135,7 +135,7 @@ export const enA2U06: SkillExercise[] = [
         text: "What happens to the Friday appointment?",
         options: ["it is cancelled", "it stays", "it moves to two"],
         answer: 0,
-        explain: "„Do I cancel it? — Yes, please cancel it.“",
+        explain: "„Shall I cancel it? — Yes, please cancel it.“",
       },
       {
         kind: "truefalse",
@@ -171,7 +171,7 @@ export const enA2U06: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["call back", "call the office", "call"],
-        explain: "„If it is worse tomorrow, call back and we find something today.“",
+        explain: "„If it is worse tomorrow, call back and we'll find something the same day.“",
       },
     ],
   },

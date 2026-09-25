@@ -46,22 +46,23 @@ export const b1U21: SkillExercise[] = [
       { de: "das Pfand", tr: "depozito", en: "deposit" },
       { de: "entsorgen", tr: "atmak / bertaraf etmek", en: "to dispose of" },
       { de: "braun", tr: "kahverengi", en: "brown" },
-      { de: "verschmutzt", tr: "kirlenmiş", en: "polluted" },
+      { de: "verschmutzen", tr: "kirletmek", en: "to pollute" },
       { de: "abgeben", tr: "teslim etmek", en: "to hand in" },
     ],
     text:
-      "Im Hof stehen vier Tonnen. Wer den Abfall richtig sortiert, hilft mehr " +
-      "als er denkt: falsch sortierter Müll wird am Ende oft ganz verbrannt.\n\n" +
+      "Im Hof stehen vier Tonnen. Wer den Abfall richtig sortiert, hilft mehr, " +
+      "als er denkt: falsch sortierter Müll wird am Ende oft ganz " +
+      "verbrannt.\n\n" +
       "Die blaue Tonne ist für Papier, die gelbe für Verpackungen, die braune " +
       "für Reste aus der Küche. Alles andere kommt in die graue Tonne. " +
-      "Flaschen mit Pfand gehören in keine Tonne — die bringen Sie zurück " +
-      "in den Laden.\n\n" +
+      "Flaschen mit Pfand gehören in keine Tonne — die bringen Sie zurück in " +
+      "den Laden.\n\n" +
       "Alte Geräte dürfen Sie nicht im Hof entsorgen. Dafür gibt es einen " +
       "Platz am Bahnhof, zweimal im Monat samstags. Ein altes Gerät im Müll " +
       "verschmutzt mehr als eine Woche Autofahren.\n\n" +
-      "Der Umweltschutz fängt hier an, im Hof, nicht in großen Reden. " +
-      "Es dauert zwei Wochen, bis es zur Gewohnheit wird — danach denkt man " +
-      "gar nicht mehr darüber nach.",
+      "Der Umweltschutz fängt hier an, im Hof, nicht in großen Reden. Es " +
+      "dauert zwei Wochen, bis es zur Gewohnheit wird — danach denkt man gar " +
+      "nicht mehr darüber nach.",
     questions: [
       {
         text: "Wie viele Tonnen stehen im Hof?",
@@ -123,14 +124,15 @@ export const b1U21: SkillExercise[] = [
       "Die meisten glauben, dass elektrische Geräte den größten Teil " +
       "verbrauchen. Das stimmt nicht. Den größten Teil frisst die Wärme: " +
       "Heizung und warmes Wasser.\n\n" +
-      "Ein Grad weniger im Wohnzimmer spart etwa sechs Prozent. Das merkt " +
-      "man kaum, aber das Kraftwerk schon. Wer kurz lüftet statt das Fenster " +
+      "Ein Grad weniger im Wohnzimmer spart etwa sechs Prozent. Das merkt man " +
+      "kaum, aber das Kraftwerk schon. Wer kurz lüftet, statt das Fenster " +
       "stundenlang zu kippen, verliert auch weniger Wärme — die Wand kühlt " +
-      "dann nicht aus, und die kalte Luft ist nach fünf Minuten wieder warm.\n\n" +
-      "Beim Strom lohnt sich vor allem eines: Geräte ganz ausschalten. " +
-      "Ein Rechner im Schlafmodus verbraucht das ganze Jahr Strom, ohne " +
-      "dass jemand ihn benutzt. Staubsaugen können Sie ruhig weiter — " +
-      "das ist nicht das Problem.\n\n" +
+      "dann nicht aus, und die kalte Luft ist nach fünf Minuten wieder " +
+      "warm.\n\n" +
+      "Beim Strom lohnt sich vor allem eines: Geräte ganz ausschalten. Ein " +
+      "Rechner im Schlafmodus verbraucht das ganze Jahr Strom, ohne dass " +
+      "jemand ihn benutzt. Staubsaugen können Sie ruhig weiter — das ist nicht " +
+      "das Problem.\n\n" +
       "Rechnen Sie einmal nach, statt nur zu glauben. Auf der Rechnung steht, " +
       "wie viel Sie im letzten Jahr verbraucht haben.",
     questions: [

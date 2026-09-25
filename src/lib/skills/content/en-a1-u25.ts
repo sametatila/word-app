@@ -41,7 +41,7 @@ export const enA1U25: SkillExercise[] = [
       { de: "went", tr: "gitti" },
       { de: "saw", tr: "gördü" },
       { de: "ate", tr: "yedi" },
-      { de: "had", tr: "vardı" },
+      { de: "had", tr: "yedi / aldı" },
     ],
     minutes: 4,
     text:

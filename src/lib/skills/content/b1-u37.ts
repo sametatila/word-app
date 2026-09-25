@@ -110,7 +110,7 @@ export const b1U37: SkillExercise[] = [
       { de: "stehlen", tr: "çalmak", en: "to steal" },
       { de: "der Täter", tr: "fail", en: "perpetrator" },
       { de: "sichtbar", tr: "görünür", en: "visible" },
-      { de: "räumen", tr: "tahliye etmek", en: "to vacate" },
+      { de: "aufräumen", tr: "toplamak", en: "to tidy up" },
       { de: "die Papiere", tr: "belgeler", en: "documents" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
     ],

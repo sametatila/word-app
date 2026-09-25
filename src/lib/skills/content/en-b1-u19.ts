@@ -152,7 +152,7 @@ export const enB1U19: SkillExercise[] = [
         explain: "„By the time we arrived, the bleeding had stopped.“",
       },
       {
-        text: "What turned out to be the chest pain?",
+        text: "What did the chest pain turn out to be?",
         options: ["breath", "the heart", "the wound"],
         answer: 0,
         explain: "„the chest pain that had frightened me most turned out to be breath, not heart.“",

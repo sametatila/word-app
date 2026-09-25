@@ -364,9 +364,9 @@ By the end of the week my shopping had cost about a fifth more and had taken rou
 
 I am not going to recommend that anybody repeat it. What I would recommend is choosing one product, once, and following it as far back as somebody is willing to tell you. The answer matters less than the discovery that the question is often unanswerable.`,
               gloss: [
-                { de: "to trace", tr: "izini sürmek", en: "trace" },
-                { de: "a cooperative", tr: "kooperatif", en: "cooperative" },
-                { de: "packaging", tr: "ambalaj", en: "packaging" },
+                { de: "to trace", tr: "izini sürmek", en: "zurückverfolgen" },
+                { de: "a cooperative", tr: "kooperatif", en: "die Genossenschaft" },
+                { de: "packaging", tr: "ambalaj", en: "die Verpackung" },
               ],
             },
           ],
@@ -449,9 +449,9 @@ Given all this, some retailers have begun to publish a figure that includes the 
 
 None of this argues against buying from a nearby farm, which supports things that no calculation captures. It argues for knowing which part of the journey a number describes.`,
               gloss: [
-                { de: "a glasshouse", tr: "sera", en: "glasshouse" },
-                { de: "a lorry", tr: "kamyon", en: "lorry" },
-                { de: "fuel", tr: "yakıt", en: "fuel" },
+                { de: "a glasshouse", tr: "sera", en: "das Gewächshaus" },
+                { de: "a lorry", tr: "kamyon", en: "der Lastwagen" },
+                { de: "fuel", tr: "yakıt", en: "der Kraftstoff" },
               ],
             },
           ],
@@ -882,7 +882,7 @@ The households who leave within eight weeks are the ones the scheme most wanted 
               text: "Gap 13",
               accept: ["Thursday"],
               explain:
-                "«A box delivered on Thursday is empty by Saturday» — en hızlı tüketilen gün. Pazartesi kutusu cuma günü hâlâ dolu, yani karşılaştırmanın öteki ucu.",
+                "«A box delivered on Thursday is empty by Saturday» — en hızlı tüketilen gün. Pazartesi kutusunda cuma günü hâlâ bir şeyler var, yani karşılaştırmanın öteki ucu.",
             },
             {
               kind: "gap",
@@ -1100,9 +1100,9 @@ The households who leave within eight weeks are the ones the scheme most wanted 
                 { speaker: "Ilkay", text: "Not as a general rule. If you have debt, or a family depending on the income, this is advice from a comfortable position and it is worth saying so. What I would recommend is writing down what the farm is for, and then reading your own sentence honestly." },
               ],
               gloss: [
-                { de: "a hectare", tr: "hektar", en: "hectare" },
-                { de: "machinery", tr: "makine parkı", en: "machinery" },
-                { de: "a spreadsheet", tr: "hesap tablosu", en: "spreadsheet" },
+                { de: "a hectare", tr: "hektar", en: "der Hektar" },
+                { de: "machinery", tr: "makine parkı", en: "der Maschinenpark" },
+                { de: "a spreadsheet", tr: "hesap tablosu", en: "die Tabelle" },
               ],
             },
           ],

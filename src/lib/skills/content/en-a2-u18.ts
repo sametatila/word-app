@@ -46,14 +46,14 @@ export const enA2U18: SkillExercise[] = [
       "Nil: Excuse me, how much is this?\n" +
       "Shop: The small one is nine euros, the big one fourteen.\n" +
       "Nil: Do you have anything cheaper? I need six gifts.\n" +
-      "Shop: Six! Then look here. These postcards are one euro and this jewelry is four.\n" +
+      "Shop: Six! Then look here. These postcards are two euros and this jewelry is four.\n" +
       "Nil: The jewelry is nice. Is it from here?\n" +
       "Shop: From this street, yes. A woman makes it in the house opposite.\n" +
       "Nil: Then I take four of them. And two postcards for my parents.\n" +
       "Shop: Your parents get postcards and your friends get jewelry?\n" +
       "Nil: My parents want postcards. They put them on the door.\n" +
       "Shop: Then they are right. Could I wrap them as a gift?\n" +
-      "Nil: Yes, please. The four small ones — the postcards not.\n" +
+      "Nil: Yes, please. The four small ones — not the postcards.\n" +
       "Shop: Understood. Twenty euros for everything.\n" +
       "Nil: Here you are. And thank you for the cheaper idea.\n" +
       "Shop: Everybody asks. Not everybody listens.",
@@ -75,7 +75,7 @@ export const enA2U18: SkillExercise[] = [
         text: "The jewelry costs four euros.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„These postcards are one euro and this jewelry is four.“",
+        explain: "„These postcards are two euros and this jewelry is four.“",
       },
       {
         kind: "gapfill",
@@ -87,7 +87,7 @@ export const enA2U18: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What does Nil ask the shop to do?",
+        text: "What does Nil want the shop to do?",
         options: [],
         answer: 0,
         accept: ["wrap them", "wrap the jewelry", "wrap them as a gift"],
@@ -101,7 +101,7 @@ export const enA2U18: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     unit: 18,
-    title: "Telling about a trip",
+    title: "Talking about a trip",
     genre: "blog",
     intro: "Üç günlük gezi. İlk gün ile ikinci gün arasında ne değişiyor?",
     gloss: [
@@ -115,7 +115,7 @@ export const enA2U18: SkillExercise[] = [
     text:
       "We arrived on Friday evening and the weather was terrible. Rain, wind, and the hotel was on the wrong side of the town. I said nothing for an hour.\n" +
       "Saturday was amazing. Sun from seven, the sea warm, and a boat trip for nine euros. Nine! At home a boat trip costs that much for ten minutes.\n" +
-      "We stayed there for three days. On Sunday we made a picnic next to the water. Bread, cheese, tomatoes, and a wonderful view over the sea.\n" +
+      "We stayed there for three days. On Sunday we had a picnic next to the water. Bread, cheese, tomatoes, and a wonderful view over the sea.\n" +
       "The people there work in the summer and read in the winter. A man in the shop told me that. He said it like a plan, not like a problem.\n" +
       "I want to go there again. Not in August — in June, when the water is cold and the town is quiet.\n" +
       "My friend asked: Would you like to go next year? I said: I'd love to.",
@@ -130,7 +130,7 @@ export const enA2U18: SkillExercise[] = [
         text: "What did they do on Sunday?",
         options: ["a picnic next to the water", "a boat trip", "nothing"],
         answer: 0,
-        explain: "„On Sunday we made a picnic next to the water.“ — tekne gezisi cumartesi.",
+        explain: "„On Sunday we had a picnic next to the water.“ — tekne gezisi cumartesi.",
       },
       {
         kind: "truefalse",

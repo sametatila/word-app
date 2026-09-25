@@ -45,7 +45,7 @@ export const a2U18: SkillExercise[] = [
       { de: "die Kosmetik", tr: "kozmetik", en: "cosmetics" },
       { de: "das Wechselgeld", tr: "para üstü", en: "change" },
       { de: "normal", tr: "normal", en: "normal" },
-      { de: "passend", tr: "uygun", en: "suitable" },
+      { de: "passend", tr: "tam tutarında", en: "with exact change" },
       { de: "das Café", tr: "kafe", en: "café" },
       { de: "der Text", tr: "metin", en: "text" },
     ],

@@ -112,7 +112,7 @@ Gerechnet hat sich das bisher nicht, und wer etwas anderes behauptet, hat nicht 
 
 Was mich beschäftigt, ist etwas anderes. In meiner Straße wohnen elf Haushalte, und neun davon könnten sich das nicht leisten. Wenn Klimaschutz so aussieht, macht ihn am Ende, wer ihn ohnehin bezahlen kann.
 
-Über Verzicht rede ich deshalb nicht gern. Ich habe nichts verzichtet, ich habe investiert. Das ist etwas völlig anderes, und die Debatte verwechselt es dauernd.`,
+Über Verzicht rede ich deshalb nicht gern. Ich habe auf nichts verzichtet, ich habe investiert. Das ist etwas völlig anderes, und die Debatte verwechselt es dauernd.`,
               gloss: [
                 { de: "dämmen", tr: "yalıtım yapmak", en: "to insulate" },
                 { de: "sich rechnen", tr: "kendini amorti etmek", en: "to pay off" },
@@ -139,7 +139,7 @@ Was mich beschäftigt, ist etwas anderes. In meiner Straße wohnen elf Haushalte
               options: ["Herr Baltes", "Frau Grohmann", "Jarek", "Frau Ostrowski"],
               answer: 3,
               explain:
-                "Frau Ostrowski ayrımı açıkça kuruyor: \"Ich habe nichts verzichtet, ich habe investiert\" ve tartışmanın bunu sürekli karıştırdığını söylüyor.",
+                "Frau Ostrowski ayrımı açıkça kuruyor: \"Ich habe auf nichts verzichtet, ich habe investiert\" ve tartışmanın bunu sürekli karıştırdığını söylüyor.",
             },
             {
               kind: "mcq",

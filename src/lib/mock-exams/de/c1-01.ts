@@ -166,7 +166,7 @@ Für Betriebe bedeutet das: Mehr Zeitwohlstand kostet kaum {{9}}, wohl aber {{10
               text: "Lücke 8",
               accept: ["Einkommen", "Gehalt", "Verdienst", "Lohn", "Entgelt"],
               explain:
-                "\"verfüge in aller Regel auch über ein höheres Einkommen\" — `mit einem höheren …` yapısı yalın bir yansız ad istiyor.",
+                "\"verfüge in aller Regel auch über ein höheres Einkommen\" — `mit einem höheren …` yapısı eril ya da yansız bir ad istiyor.",
             },
             {
               kind: "gap",
@@ -212,7 +212,7 @@ Was mich an der Diskussion darüber hinaus stört, ist ihre Fixierung auf Bildsc
 
 Hinzu kommt eine Gruppe, die praktisch nie vorkommt: Teilzeitbeschäftigte. Für sie bedeutet Flexibilität regelmäßig, dass die vereinbarten Stunden über die ganze Woche verstreut liegen. Rechtlich ist das zulässig, praktisch verhindert es jede zweite Tätigkeit — eine Weiterbildung, eine Pflegeaufgabe, einen zweiten Vertrag. Wer den Umfang reduziert, verliert Einkommen; wer die Lage nicht bestimmen kann, verliert den Rest des Tages dazu.`,
               gloss: [
-                { de: "kranken an", tr: "bir kusurdan mustarip olmak", en: "to suffer from" },
+                { de: "kranken an", tr: "bir kusurdan muzdarip olmak", en: "to suffer from" },
                 { de: "aufweichen", tr: "gevşetmek", en: "to soften, to dilute" },
                 { de: "ersetzbar", tr: "yeri doldurulabilir", en: "replaceable" },
               ],
@@ -1122,7 +1122,7 @@ Halim Yücel`,
               id: "de-c1-01-s2-8",
               no: 8,
               text: "Lücke 8 (Freude über eine mögliche Zusage)",
-              accept: ["würde ich mich freuen", "wäre ich dankbar", "freue ich mich"],
+              accept: ["würde ich mich freuen", "würde ich mich sehr freuen", "freue ich mich"],
               explain:
                 "`Über einen Gesprächstermin … würde ich mich freuen` — edat tümleci başta olduğu için fiil hemen boşlukta gelir ve Konjunktiv II ölçüyü korur.",
             },

@@ -43,7 +43,7 @@ export const c1U11: SkillExercise[] = [
       { de: "die Aussage", tr: "ifade", en: "statement" },
       { de: "heraus", tr: "dışarı", en: "out" },
       { de: "markieren", tr: "işaretlemek", en: "to mark" },
-      { de: "der Urheber", tr: "eser sahibi", en: "creator" },
+      { de: "der Urheber", tr: "sözün sahibi / kaynağı", en: "originator" },
       { de: "meiden", tr: "uzak durmak", en: "to avoid" },
       { de: "unhöflich", tr: "nezaketsiz", en: "impolite" },
       { de: "zwingend", tr: "zorunlu", en: "mandatory" },
@@ -54,7 +54,7 @@ export const c1U11: SkillExercise[] = [
     minutes: 7,
     text:
       "WER HAFTET FÜR DEN SATZ?\n\n" +
-      "„Der Geschäftsführer sagt, er ist am Freitag im Ausland gewesen.“ Und: „Der Geschäftsführer sagt, er sei am Freitag im Ausland gewesen.“ Der Unterschied ist ein Buchstabe und eine Haftungsfrage.\n\n" +
+      "„Der Geschäftsführer sagt, er ist am Freitag im Ausland gewesen.“ Und: „Der Geschäftsführer sagt, er sei am Freitag im Ausland gewesen.“ Der Unterschied ist ein Wort und eine Haftungsfrage.\n\n" +
       "Im ersten Satz übernimmt der Schreibende die Aussage. Er berichtet nicht nur, dass etwas gesagt wurde, sondern behandelt es als Tatsache. Stellt sich später heraus, dass der Geschäftsführer in der Stadt war, hat der Schreibende falsch berichtet.\n\n" +
       "Im zweiten Satz ist die Wiedergabe markiert. Der Konjunktiv I schreibt die Aussage ihrem Urheber zu und lässt den Berichtenden daneben stehen. Er distanziert sich, ohne zu widersprechen — und das ist der entscheidende Punkt: Distanz ist kein Zweifel.\n\n" +
       "Viele Lernende meiden die Form, weil sie unhöflich wirkt. Das Gegenteil ist der Fall. Wer den Konjunktiv weglässt, tut so, als kenne er die Wahrheit; wer ihn setzt, gibt zu, dass er nur den Wortlaut kennt.\n\n" +
@@ -139,7 +139,7 @@ export const c1U11: SkillExercise[] = [
       { de: "die Zahl", tr: "sayı", en: "number" },
       { de: "daraufhin", tr: "bunun üzerine", en: "thereupon" },
       { de: "stumm", tr: "sesi kapalı", en: "muted" },
-      { de: "bekannt", tr: "tanınmış", en: "well-known" },
+      { de: "bekannt", tr: "bilinen", en: "known" },
       { de: "offen", tr: "açık", en: "open" },
       { de: "vorerst", tr: "şimdilik", en: "for now" },
       { de: "die Aussage", tr: "ifade", en: "statement" },
@@ -171,7 +171,7 @@ export const c1U11: SkillExercise[] = [
           "Der Eigentümer habe die Anlage warten lassen.",
         ],
         answer: 1,
-        explain: "Yangının çıkması ve halin yanması gazetenin kendi tespiti; kalanı aktarım.",
+        explain: "Yangının çıkması ve deponun yanması gazetenin kendi tespiti; kalanı aktarım.",
       },
       {
         kind: "gapfill",

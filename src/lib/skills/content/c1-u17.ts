@@ -46,7 +46,7 @@ export const c1U17: SkillExercise[] = [
       { de: "das Signal", tr: "sinyal", en: "signal" },
       { de: "der Text", tr: "metin", en: "text" },
       { de: "die Schwierigkeit", tr: "zorluk", en: "difficulty" },
-      { de: "der Absatz", tr: "satış", en: "sales" },
+      { de: "der Absatz", tr: "paragraf", en: "paragraph" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
       { de: "eindeutig", tr: "net", en: "unambiguous" },
     ],
@@ -56,7 +56,7 @@ export const c1U17: SkillExercise[] = [
       "„Wir haben zwei Angebote geprüft. Das zweite Angebot erscheint uns günstiger, deshalb möchten wir das zweite Angebot annehmen.“\n\n" +
       "Grammatisch fehlerfrei, inhaltlich klar — und trotzdem liest es sich wie eine Übersetzung. Ein deutscher Muttersprachler schreibt: „Letzteres erscheint uns günstiger; wir möchten es annehmen.“\n\n" +
       "Der Unterschied ist nicht Stil, sondern Ökonomie. Deutsche Sachtexte gehen davon aus, dass der Leser sich das Vorherige merkt. Wer denselben Ausdruck wiederholt, signalisiert Misstrauen gegenüber dem Leser — oder Unsicherheit im eigenen Text.\n\n" +
-      "Das Werkzeugkasten ist überschaubar. „Letzteres“ und „Ersteres“ greifen zwei zuvor genannte Dinge auf. „Diesbezüglich“ ersetzt eine ganze Nominalphrase („in Bezug auf diese Frage“). Die Verbindungen aus „da(r)-“ plus Präposition — darauf, damit, dafür, davon — nehmen einen ganzen Sachverhalt auf: „Darauf komme ich später zurück.“\n\n" +
+      "Der Werkzeugkasten ist überschaubar. „Letzteres“ und „Ersteres“ greifen zwei zuvor genannte Dinge auf. „Diesbezüglich“ ersetzt eine ganze Nominalphrase („in Bezug auf diese Frage“). Die Verbindungen aus „da(r)-“ plus Präposition — darauf, damit, dafür, davon — nehmen einen ganzen Sachverhalt auf: „Darauf komme ich später zurück.“\n\n" +
       "Aufschlussreich ist, was passiert, wenn man sie weglässt. Der Text wird nicht falsch, er wird schwerfällig, und der Leser bekommt den Eindruck, jeder Satz beginne von vorn.\n\n" +
       "Schriftlich kommt eine zweite Schwierigkeit dazu: Zwischen dem Verweis und seinem Bezug darf nicht zu viel liegen. Über einen Absatz hinweg trägt „Letzteres“ nicht mehr, und der Leser blättert zurück — was er im Zweifel nicht tut.\n\n" +
       "In langen Texten hilft eine einfache Gewohnheit: Nach jedem Verweis einmal prüfen, ob genau ein Bezug in Frage kommt.\n\n" +
@@ -78,7 +78,7 @@ export const c1U17: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["Letzteres"],
-        explain: "İkisinden sonuncusu; Ersteres ilkini alır.",
+        explain: "İkisinden sonuncusu; Ersteres ilkini gösterir.",
       },
       {
         text: "Was ersetzt „diesbezüglich“?",

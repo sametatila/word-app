@@ -129,7 +129,7 @@ Der Text empfiehlt deshalb eine Aufteilung: Voreinstellungen für das Bekannte u
               id: "de-c1-06-l1-5",
               no: 5,
               text: "Lücke 5",
-              accept: ["aufklären", "informieren", "aufklärt"],
+              accept: ["aufklären", "informieren"],
               explain:
                 "Alışılmış sonuç: \"man müsse besser aufklären\". Metin bu çıkarımı yetersiz buluyor.",
             },
@@ -147,7 +147,7 @@ Der Text empfiehlt deshalb eine Aufteilung: Voreinstellungen für das Bekannte u
               id: "de-c1-06-l1-7",
               no: 7,
               text: "Lücke 7",
-              accept: ["entlastet", "befreit", "ablenkt"],
+              accept: ["entlastet", "befreit"],
               explain:
                 "Metin işlevi adlandırıyor: korku \"entlastet damit von der Frage nach dem eigenen Verhalten\".",
             },
@@ -156,7 +156,7 @@ Der Text empfiehlt deshalb eine Aufteilung: Voreinstellungen für das Bekannte u
               id: "de-c1-06-l1-8",
               no: 8,
               text: "Lücke 8",
-              accept: ["Voreinstellungen", "Standardeinstellungen", "Voreinstellung"],
+              accept: ["Voreinstellungen", "Standardeinstellungen"],
               explain:
                 "\"Wirksam sind dagegen Voreinstellungen\" — hazır asılı bir duman dedektörü, davetle gelen bir tarama.",
             },
@@ -194,7 +194,7 @@ Der Text empfiehlt deshalb eine Aufteilung: Voreinstellungen für das Bekannte u
               genre: "Reportage",
               genreTr: "Röportaj-inceleme",
               title: "Die Übung",
-              body: `Um 6.14 Uhr an einem Dienstag im März fiel im Kreiskrankenhaus醫 — genauer: im Kreiskrankenhaus Rethem — der Strom aus. Geplant war das seit acht Monaten, gewusst hatten es vier Personen.
+              body: `Um 6.14 Uhr an einem Dienstag im März fiel im Kreiskrankenhaus Rethem der Strom aus. Geplant war das seit acht Monaten, gewusst hatten es vier Personen.
 
 Der Übungsleiter, ein Feuerwehrmann im Ruhestand namens Ortwin Zeller, hatte darauf bestanden, den Termin nicht bekanntzugeben. Die Klinikleitung war dagegen; man einigte sich auf einen Kompromiss, den Zeller heute für den entscheidenden Fehler hält: Die Übung wurde nicht angekündigt, aber auf einen Zeitraum von zwei Wochen eingegrenzt. "Damit haben wir genau das getestet, was wir nicht testen wollten — nämlich eine vorbereitete Station."
 
@@ -1088,8 +1088,8 @@ Ruth Sundermann`,
               kind: "gap",
               id: "de-c1-06-s2-7",
               no: 7,
-              text: "Lücke 7 (Hilfsantrag, Konditional ohne \\\"wenn\\\")",
-              accept: ["Sollten", "Sollten Sie wider Erwarten"],
+              text: "Lücke 7 (Hilfsantrag, Konditional ohne \"wenn\")",
+              accept: ["Sollten"],
               explain:
                 "İkincil talep koşula bağlanıyor ve resmî yazıda koşul `wenn` olmadan, fiil başta kuruluyor: `Sollten Sie an Ihrer Entscheidung festhalten, …`.",
             },
@@ -1097,7 +1097,7 @@ Ruth Sundermann`,
               kind: "gap",
               id: "de-c1-06-s2-8",
               no: 8,
-              text: "Lücke 8 (Präposition zu \\\"bitten\\\")",
+              text: "Lücke 8 (Präposition zu \"bitten\")",
               accept: ["um"],
               explain:
                 "`bitten` bu anlamda `um` ister: `ich bitte um eine schriftliche Begründung`. Edat düşerse cümle kurulmaz.",

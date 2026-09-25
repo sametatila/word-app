@@ -109,14 +109,14 @@ Bei Regen fällt das Fest aus.`,
               text: "Kemal wohnt nicht im Erdgeschoss.",
               answer: true,
               explain:
-                "Daire \"im vierten Stock\", yani dördüncü katta. Asansörün küçük olduğu uyarısı da katın yüksek olduğunu doğruluyor.",
+                "Daire \"im vierten Stock\", yani dördüncü katta. Yani zemin katta (Erdgeschoss) oturmuyor.",
             },
             {
               kind: "bool",
               id: "de-a1-04-l1-3",
               no: 3,
               ref: "t1",
-              text: "Marta antwortet bis Donnerstag.",
+              text: "Marta soll bis Donnerstag antworten.",
               answer: true,
               explain:
                 "\"Sag mir bis Donnerstag Bescheid\" — cevap için son gün perşembe. Parti cumartesi, ama sorulan tarih cevabın tarihi.",

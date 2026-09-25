@@ -134,7 +134,7 @@ export const enB1U18: SkillExercise[] = [
     text:
       "Joining this practice, in the order that saves you a second visit.\n" +
       "You have to bring your ID to reception. Bring the card too if you have one; without the ID nothing starts, and the person at the desk cannot make an exception even when they want to.\n" +
-      "You don't have to see a nurse first. That is written on the door of three practices in this city and it is wrong in all of them: the nurse appointment is offered, not required. Take it if you want your file read by somebody before the doctor sees you, which is usually a good idea in the first month.\n" +
+      "You don't have to see a nurse first. The opposite is written on the door of three practices in this city and it is wrong in all of them: the nurse appointment is offered, not required. Take it if you want your file read by somebody before the doctor sees you, which is usually a good idea in the first month.\n" +
       "You must not lose the file number. It is four digits and it is on everything. Photograph it once and the next four years are easier.\n" +
       "The list: new patients are added on the first working day of the month, not on the day you come in. If you register on the second, you are on the list at the beginning of the next month.\n" +
       "Vaccines are booked separately and not with the doctor. That is the one thing everybody gets wrong, because at the old practice it was the same appointment.\n" +

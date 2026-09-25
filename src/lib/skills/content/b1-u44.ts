@@ -81,7 +81,7 @@ export const b1U44: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["schon erst", "schon / erst"],
-        explain: "schon = beklenenden ÇOK; erst = beklenenden AZ. Aynı saat, iki bakış.",
+        explain: "schon = beklenenden ERKEN; erst = beklenenden GEÇ. Aynı saat, iki bakış.",
       },
       {
         kind: "short_answer",

@@ -33,7 +33,7 @@ export const b2U06: SkillExercise[] = [
     intro: "Bir üretim biriminin haftalık raporu. Neyin yapıldığı, neyin yapılması gerektiği ayrı ayrı yazılmış.",
     gloss: [
       { de: "bearbeiten", tr: "işleme almak", en: "to process" },
-      { de: "die Erledigung", tr: "yapılacak iş", en: "task" },
+      { de: "die Erledigung", tr: "tamamlanan iş", en: "completed task" },
       { de: "der Arbeitsgang", tr: "iş adımı", en: "operation" },
       { de: "die Abnahme", tr: "kabul", en: "acceptance" },
       { de: "die Zertifizierung", tr: "sertifikasyon", en: "certification" },
@@ -121,12 +121,12 @@ export const b2U06: SkillExercise[] = [
       { de: "genau", tr: "tam olarak", en: "exactly" },
       { de: "besonders", tr: "özellikle", en: "especially" },
       { de: "lesen", tr: "okumak", en: "to read" },
-      { de: "der Pass", tr: "pasaport", en: "passport" },
+      { de: "passieren", tr: "olmak, meydana gelmek", en: "to happen" },
     ],
     minutes: 6,
     text:
       "GEÖFFNET ODER WIRD GEÖFFNET?\n\n" +
-      "Zwei Sätze, ein Buchstabe Unterschied, zwei völlig verschiedene Aussagen. „Die Tür wird geöffnet“ beschreibt einen Vorgang: gerade passiert etwas. „Die Tür ist geöffnet“ beschreibt einen Zustand: irgendwann hat jemand geöffnet, und jetzt ist sie offen.\n\n" +
+      "Zwei Sätze, ein Wort Unterschied, zwei völlig verschiedene Aussagen. „Die Tür wird geöffnet“ beschreibt einen Vorgang: gerade passiert etwas. „Die Tür ist geöffnet“ beschreibt einen Zustand: irgendwann hat jemand geöffnet, und jetzt ist sie offen.\n\n" +
       "Im Deutschen sind das zwei verschiedene Formen, im Türkischen oft dieselbe. Wer aus dem Türkischen kommt, hört den Unterschied deshalb nicht sofort — er muss ihn lernen wie eine Vokabel.\n\n" +
       "Warum lohnt sich das? Weil in Verträgen, Berichten und Bauplänen genau dieser Unterschied entscheidet. „Die Wohnung wird bezugsfertig gemacht“ heißt: Es wird noch gearbeitet. „Die Wohnung ist bezugsfertig“ heißt: Sie können einziehen. Der Bauleiter, der das erste sagt, und der Mieter, der das zweite hört, streiten drei Wochen später.\n\n" +
       "Dasselbe gilt für Anlagen. „Die Anlage wird stillgelegt“ ist eine Ankündigung. „Die Anlage ist stillgelegt“ ist ein Befund. Und „die Anlage ist betriebsbereit“ sagt nicht, dass sie läuft — nur, dass sie laufen könnte.\n\n" +

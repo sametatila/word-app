@@ -40,18 +40,18 @@ export const c1U01: SkillExercise[] = [
       { de: "in Kraft treten", tr: "yürürlüğe girmek", en: "to come into force" },
       { de: "der Vorbehalt", tr: "çekince", en: "reservation" },
       { de: "der Vorstand", tr: "yönetim kurulu", en: "board" },
-      { de: "reif", tr: "olgun", en: "ripe" },
+      { de: "reiflich", tr: "etraflıca", en: "careful" },
       { de: "sehen", tr: "görmek", en: "to see" },
       { de: "folgend", tr: "aşağıdaki", en: "following" },
       { de: "die Sitzung", tr: "oturum", en: "session" },
       { de: "die Geschäftsführung", tr: "şirket yönetimi", en: "management" },
       { de: "zulegen", tr: "artmak", en: "to go up" },
-      { de: "rund", tr: "yuvarlak", en: "round" },
+      { de: "rund", tr: "yaklaşık", en: "about" },
       { de: "wirtschaftlich", tr: "ekonomik", en: "economic" },
       { de: "die Entwicklung", tr: "gelişim", en: "development" },
       { de: "der Vertrieb", tr: "satış bölümü", en: "sales department" },
       { de: "der Standort", tr: "konum", en: "location" },
-      { de: "sich strecken", tr: "gerinmek", en: "to stretch" },
+      { de: "strecken", tr: "zamana yaymak", en: "to spread out" },
       { de: "bemessen", tr: "ölçüp belirlemek", en: "to gauge" },
       { de: "der Text", tr: "metin", en: "text" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
@@ -60,7 +60,7 @@ export const c1U01: SkillExercise[] = [
     text:
       "BESCHLUSSVORLAGE 14/3 — VERLAGERUNG DES STANDORTS NORD\n\n" +
       "Der Vorstand hat die Verlagerung des Standorts Nord nach reiflicher Erwägung geprüft. In Betracht gezogen wurden drei Varianten: vollständige Verlagerung, Teilverlagerung und Beibehaltung bei reduzierter Fläche.\n\n" +
-      "Die Tragweite der Entscheidung ist erheblich. Betroffen sind 84 Beschäftigte, von denen nach derzeitigem Stand 31 einen Umzug nicht in Frage kommen sehen. Für diese Gruppe stehen ab Januar Beratungsgespräche zur Verfügung.\n\n" +
+      "Die Tragweite der Entscheidung ist erheblich. Betroffen sind 84 Beschäftigte, von denen nach derzeitigem Stand 31 einen Umzug nicht als Option sehen. Für diese Gruppe stehen ab Januar Beratungsgespräche zur Verfügung.\n\n" +
       "Der Vorstand fasst folgenden Beschluss: Variante 2 (Teilverlagerung) wird umgesetzt. Die entsprechenden Bestimmungen treten zum 1. April in Kraft, vorbehaltlich der Zustimmung des Aufsichtsrats in seiner Sitzung am 12. Februar.\n\n" +
       "Die Geschäftsführung wird veranlasst, bis Ende Januar einen Sozialplan vorzulegen. Von einer Ankündigung gegenüber der Presse ist bis zur Sitzung des Aufsichtsrats Abstand zu nehmen.\n\n" +
       "Zur Begründung: Variante 1 hätte eine Einsparung von jährlich rund 1,2 Millionen Euro erbracht, wäre jedoch mit dem vollständigen Verlust der regionalen Zulieferbeziehungen verbunden gewesen. Variante 3 ist wirtschaftlich nicht darstellbar, da die Bestimmungen des bestehenden Mietvertrags eine Reduzierung der Fläche vor 2029 nicht zulassen.\n\n" +
@@ -84,7 +84,7 @@ export const c1U01: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["treten … Kraft", "treten Kraft", "treten, Kraft"],
-        explain: "in Kraft treten: işlev fiili öbeği belirteç almaz ve parçaları cümlenin iki ucuna dağılır.",
+        explain: "in Kraft treten: işlev fiili öbeği tanımlık almaz ve parçaları cümlenin iki ucuna dağılır.",
       },
       {
         text: "Wie äußert der Betriebsrat seine Kritik?",
@@ -139,10 +139,10 @@ export const c1U01: SkillExercise[] = [
       { de: "relativieren", tr: "görecelileştirmek", en: "to qualify" },
       { de: "verbindlich", tr: "bağlayıcı", en: "binding" },
       { de: "positiv", tr: "olumlu", en: "positive" },
-      { de: "heben", tr: "kaldırmak", en: "to lift" },
+      { de: "hervorheben", tr: "vurgulamak", en: "to emphasise" },
       { de: "insbesondere", tr: "bilhassa", en: "in particular" },
       { de: "methodisch", tr: "yöntemsel", en: "methodological" },
-      { de: "raten", tr: "tahmin etmek", en: "to guess" },
+      { de: "raten", tr: "tavsiye etmek", en: "to advise" },
       { de: "das Fach", tr: "ders", en: "subject" },
       { de: "die Einschätzung", tr: "değerlendirme", en: "assessment" },
       { de: "solche", tr: "böyle", en: "such" },

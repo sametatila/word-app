@@ -114,7 +114,7 @@ export const enA2U10: SkillExercise[] = [
     minutes: 6,
     text:
       "Rules for the residents\n" +
-      "You have to put the rubbish in the garbage can before eight in the evening. The caretaker takes it out on Monday and Thursday.\n" +
+      "You have to put the rubbish in the bin before eight in the evening. The caretaker takes it out on Monday and Thursday.\n" +
       "You mustn't make noise between ten at night and seven in the morning. On Sunday the quiet time is all day.\n" +
       "You don't have to clean the stairs. A company comes every week. But you have to clean the balcony in front of your flat.\n" +
       "Bikes are forbidden in the hallway. There is a room for them next to the front door.\n" +
@@ -124,7 +124,7 @@ export const enA2U10: SkillExercise[] = [
     questions: [
       {
         text: "What do you have to do with the rubbish?",
-        options: ["put it in the garbage can before eight", "take it out on Monday", "leave it in the hallway"],
+        options: ["put it in the bin before eight", "take it out on Monday", "leave it in the hallway"],
         answer: 0,
         explain: "Çöpü kutuya koymak sakine, dışarı çıkarmak görevliye ait.",
       },
@@ -147,7 +147,7 @@ export const enA2U10: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["October"],
-        explain: "„The attic is open from April to October. In winter it is closed…“",
+        explain: "„The attic is open from April to October. From November it is closed…“",
       },
       {
         kind: "short_answer",

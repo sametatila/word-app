@@ -192,7 +192,7 @@ Sein Schluss lautet, dass über Ersatzteilpflicht verhandelt, in Wahrheit aber �
           no: 2,
           format: "mcq",
           goal: "opinion",
-          prompt: "Lesen Sie den Essay und die Aufgaben 11 bis 20. Wählen Sie: a, b, c oder d?",
+          prompt: "Lesen Sie den Essay und die Aufgaben 11 bis 20. Wählen Sie: a, b, c oder d.",
           promptTr: "Deneme metnini ve 11–20. maddeleri oku. a, b, c ya da d'yi seç.",
           texts: [
             {
@@ -350,7 +350,7 @@ Mein Großvater hätte diesen Text vermutlich für umständlich gehalten. Er hä
               ],
               answer: 2,
               explain:
-                "Önce kabul: \"Das stimmt, und ich unterschätze es nicht.\" Sonra sınır: normlar atölyelerden ucuza kayar.",
+                "Önce kabul: \"Das stimmt, und ich unterschätze es nicht.\" Sonra sınır: normları kaydırmak, atölye kurmaktan ucuzdur.",
             },
             {
               kind: "mcq",
@@ -451,7 +451,7 @@ Was sich festhalten lässt: Eine Vorschrift wirkt erst dort, {{25}} sie das Verh
               no: 24,
               ref: "t3",
               text: "Lücke 24",
-              options: ["wie", "als", "denn", "sondern"],
+              options: ["wie", "als", "doch", "sondern"],
               answer: 1,
               explain:
                 "`weniger …` karşılaştırması `als` ister: \"weniger eine längere Frist als eine gedeckelte Preisbildung\". `sondern` önünde olumsuzlama gerektirir.",
@@ -549,7 +549,7 @@ Kern des Vorhabens ist nicht das Gerät, sondern die {{6}}.
 
 Geschätzte Umbaukosten: {{7}} Euro.
 
-Vergleichbare Zentren brauchten im Schnitt {{8}} ohne Zuschuss.
+Vergleichbare Zentren brauchten im Schnitt {{8}}, bis sie ohne Zuschuss auskamen.
 
 Anteil der Befragten mit defektem Gerät: {{9}} Prozent.
 
@@ -1062,7 +1062,7 @@ Jens {{10}}`,
               id: "de-c1-09-s2-1",
               no: 1,
               text: "Lücke 1 (Bezugnahme auf eine Veranstaltung)",
-              accept: ["Bezugnehmend", "Bezug"],
+              accept: ["Bezugnehmend", "Bezug nehmend"],
               explain:
                 "Resmî yazının açılış kalıbı: `Bezugnehmend auf Ihre Informationsveranstaltung …` ya da `Bezug nehmend`. Cümle `auf` ile sürdüğü için bu iki biçim oturur.",
             },

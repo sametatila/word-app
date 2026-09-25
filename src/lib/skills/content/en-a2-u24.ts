@@ -70,7 +70,7 @@ export const enA2U24: SkillExercise[] = [
         text: "When did it happen?",
         options: ["at about six o'clock", "at half past five", "at two"],
         answer: 0,
-        explain: "„It happened at about six o'clock.“ — beş buçukta hâlâ ödeme yapılmıştı.",
+        explain: "„It happened at about six o'clock.“ — beş buçukta cüzdan hâlâ yanındaydı, onunla ödeme yaptı.",
       },
       {
         text: "Why is it not „lost“?",

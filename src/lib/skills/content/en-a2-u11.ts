@@ -55,7 +55,7 @@ export const enA2U11: SkillExercise[] = [
       "German is not required, but you have to understand simple instructions.\n" +
       "What we offer: a free meal every day, a coffee break in the morning and in the afternoon, and a team of eight people.\n" +
       "If you want to apply for this job, write to us and tell us where you have worked before.\n" +
-      "We answer every letter — also when the answer is no.",
+      "We answer every letter — even when the answer is no.",
     questions: [
       {
         text: "When is the work?",

@@ -49,7 +49,7 @@ export const enC1U09: SkillExercise[] = [
     genre: "info",
     intro: "Aynı hareket iki dilde var. Peki aynı katta mı?",
     gloss: [
-      { de: "anywhere", tr: "başka yerde" },
+      { de: "anywhere", tr: "hiçbir yerde" },
       { de: "court", tr: "mahkeme" },
       { de: "altogether", tr: "büsbütün" },
       { de: "disappears", tr: "yok oluyor" },
@@ -73,7 +73,7 @@ export const enC1U09: SkillExercise[] = [
       { de: "recognise", tr: "tanımak" },
       { de: "immediately", tr: "hemen" },
       { de: "identical", tr: "birebir aynı" },
-      { de: "the floor", tr: "kat" },
+      { de: "the floor", tr: "zemin" },
       { de: "ordinary", tr: "sıradan" },
       { de: "a complaint", tr: "şikâyet" },
       { de: "unusual", tr: "alışılmadık" },
@@ -160,7 +160,7 @@ export const enC1U09: SkillExercise[] = [
     intro: "Bakış açısı bir yer değil bir liste. Neyin listesi?",
     gloss: [
       { de: "cleft", tr: "yarık cümle" },
-      { de: "fourth", tr: "dördüncü" },
+      { de: "fourth", tr: "altıncı" },
       { de: "narrator", tr: "anlatıcı" },
       { de: "event", tr: "olay" },
       { de: "whole", tr: "bütün" },
@@ -190,7 +190,7 @@ export const enC1U09: SkillExercise[] = [
       { de: "a theory", tr: "kuram" },
       { de: "a period", tr: "dönem" },
       { de: "a code", tr: "şifre" },
-      { de: "a body", tr: "gövde" },
+      { de: "a body", tr: "ceset" },
       { de: "an assumption", tr: "varsayım" },
       { de: "written down", tr: "yazıya dökülmüş" },
       { de: "an inference", tr: "çıkarım" },
@@ -201,7 +201,7 @@ export const enC1U09: SkillExercise[] = [
     ],
     minutes: 12,
     text:
-      "What the narrative perspective does is withhold. The shape of that sentence has been met twice already, a cleft with „is“ as the fourth word, and it is here because the claim needs the emphasis a cleft gives it.\n" +
+      "What the narrative perspective does is withhold. The shape of that sentence has been met twice already, a cleft with „is“ in the middle, and it is here because the claim needs the emphasis a cleft gives it.\n" +
       "A perspective is not a place the narrator stands. It is a list of things the reader is not going to be told, and the list was chosen before the first line was written. The reader feels it as atmosphere. It was arithmetic.\n" +
       "Into the novella creeps a monologue. The place first, the subject last, and something has entered a text that was not built for it. Written the ordinary way round, a monologue creeps into the novella, the sentence reports an event. Written this way it stages one, and that is the whole difference between a summary and a scene.\n" +
       "The topos we know; the canon we argue about. Two objects at the front, and the second half repeats the shape rather than deleting the verb, because a deletion here would have made the two halves sound equal, and they are not.\n" +

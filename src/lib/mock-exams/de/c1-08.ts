@@ -449,7 +449,7 @@ Was sich sagen lässt: Wer heute pflanzt, entscheidet über einen Bestand, {{25}
               no: 24,
               ref: "t3",
               text: "Lücke 24",
-              options: ["wie", "als", "denn", "sondern"],
+              options: ["wie", "als", "doch", "sondern"],
               answer: 1,
               explain:
                 "`weniger …` karşılaştırması `als` ister: \"weniger eine über das Pflanzen als eine über die Jagd\". `sondern` önünde olumsuzlama gerektirir.",
@@ -1046,7 +1046,7 @@ Beate {{10}}`,
               id: "de-c1-08-s2-1",
               no: 1,
               text: "Lücke 1 (Bezugnahme auf eine Veranstaltung)",
-              accept: ["Bezugnehmend", "Bezug"],
+              accept: ["Bezugnehmend", "Bezug nehmend"],
               explain:
                 "Resmî yazının açılış kalıbı: `Bezugnehmend auf die Bürgerinformation …` ya da `Bezug nehmend`. Cümle `auf` ile sürdüğü için bu iki biçim oturur.",
             },

@@ -46,7 +46,7 @@ export const EN_A1_02: MockPaper = {
               title: "From: kemal@post.net",
               body: `Hi Sofia,
 
-Good news! I find a flat in Green Street. It is on the third floor and it is very quiet.
+Good news! I have a flat in Green Street. It is on the third floor and it is very quiet.
 
 The rent is 480 pounds a month. Water is in the price, but not electricity.
 
@@ -56,9 +56,9 @@ I move on 3 August. Can you help me on that day?
 
 Kemal`,
               gloss: [
-                { de: "the rent", tr: "kira", en: "rent" },
-                { de: "the lift", tr: "asansör", en: "lift" },
-                { de: "electricity", tr: "elektrik", en: "electricity" },
+                { de: "the rent", tr: "kira", en: "die Miete" },
+                { de: "the lift", tr: "asansör", en: "der Aufzug" },
+                { de: "electricity", tr: "elektrik", en: "der Strom" },
               ],
             },
             {
@@ -77,9 +77,9 @@ Do not put paper in the old machine. It is not safe.
 
 Anna (office)`,
               gloss: [
-                { de: "the printer", tr: "yazıcı", en: "printer" },
-                { de: "slow", tr: "yavaş", en: "slow" },
-                { de: "safe", tr: "güvenli", en: "safe" },
+                { de: "the printer", tr: "yazıcı", en: "der Drucker" },
+                { de: "slow", tr: "yavaş", en: "langsam" },
+                { de: "safe", tr: "güvenli", en: "sicher" },
               ],
             },
           ],
@@ -232,7 +232,7 @@ Ask at the desk in the town hall.`,
               kind: "mcq",
               id: "en-a1-02-l2-10",
               no: 10,
-              text: "You have a cat and you look for a room.",
+              text: "You look for a room near a bus stop.",
               options: ["Room to Rent", "Help at Home", "Evening Courses"],
               answer: 0,
               explain:
@@ -326,7 +326,7 @@ Sunday: from 9.00. No night bus.`,
               text: "You can drink coffee in the gym.",
               answer: false,
               explain:
-                "Levha suyu serbest bırakıp ötekileri kapatıyor: «Other drinks are not allowed here». Yalnız ilk cümleyi okuyup «Water is free» diyene bakan öğrenci yanılır.",
+                "Levha suyu serbest bırakıp ötekileri kapatıyor: «Other drinks are not allowed here». Yalnız ilk cümleyi, «Water is free» cümlesini okuyan öğrenci yanılır.",
             },
             {
               kind: "bool",

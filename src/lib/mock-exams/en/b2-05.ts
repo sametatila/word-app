@@ -363,9 +363,9 @@ I should be careful here, because the obvious conclusion is the wrong one. The a
 
 What I have changed is smaller. When somebody now says that a club runs on goodwill, I ask them to put an hour figure on it. Nevertheless, I remain uncertain what the right arrangement is, and anybody who is certain has probably not done the arithmetic.`,
               gloss: [
-                { de: "a secretary", tr: "yazman", en: "club secretary" },
-                { de: "insurance", tr: "sigorta", en: "insurance" },
-                { de: "goodwill", tr: "iyi niyet", en: "goodwill" },
+                { de: "a secretary", tr: "yazman", en: "der Schriftführer" },
+                { de: "insurance", tr: "sigorta", en: "die Versicherung" },
+                { de: "goodwill", tr: "iyi niyet", en: "der gute Wille" },
               ],
             },
           ],
@@ -408,7 +408,7 @@ What I have changed is smaller. When somebody now says that a club runs on goodw
               options: ["Because the volunteers do the work better", "Because almost no club could afford it", "Because the committee would not agree", "Because it would close half the sport"],
               answer: 1,
               explain:
-                "Gerekçe doğrudan veriliyor: «since almost none of them could afford it». Yarım sporun kapanması ise ötekini, gönüllülerin bırakmasını reddetme gerekçesi.",
+                "Gerekçe doğrudan veriliyor: «since almost none of them could afford it». Sporun yarısının kapanması ise ötekini, gönüllülerin bırakmasını reddetme gerekçesi.",
             },
             {
               kind: "mcq",
@@ -418,7 +418,7 @@ What I have changed is smaller. When somebody now says that a club runs on goodw
               options: ["She has left the club", "She now employs a part-time assistant", "She asks people to quantify goodwill", "She has stopped keeping any records at all"],
               answer: 2,
               explain:
-                "Son paragraf: «When somebody now says that a club runs on goodwill, I ask them to put an hour figure on it». Yazının kendisi çözümden emin olmadığını da açıkça söylüyor.",
+                "Son paragraf: «When somebody now says that a club runs on goodwill, I ask them to put an hour figure on it». Yazar çözümden emin olmadığını da açıkça söylüyor.",
             },
           ],
         },
@@ -448,9 +448,9 @@ Some federations now publish the expected effect of a rule before adopting it. T
 
 None of this is an argument against rules, which are the only thing standing between sport and an auction. It is an argument for saying which unfairness you have chosen.`,
               gloss: [
-                { de: "a governing body", tr: "federasyon, yönetim kurulu", en: "governing body" },
-                { de: "a trade-off", tr: "ödünleşim", en: "trade-off" },
-                { de: "an auction", tr: "açık artırma", en: "auction" },
+                { de: "a governing body", tr: "federasyon, yönetim kurulu", en: "der Verband" },
+                { de: "a trade-off", tr: "ödünleşim", en: "der Zielkonflikt" },
+                { de: "an auction", tr: "açık artırma", en: "die Versteigerung" },
               ],
             },
           ],
@@ -851,7 +851,7 @@ The families who leave never came to a {{15}}.
               text: "Gap 10",
               accept: ["240", "two hundred and forty"],
               explain:
-                "«we now have two hundred and forty» — bugünkü üye sayısı. Altmış, kulübün kurulduğu andaki sayı.",
+                "«we now have two hundred and forty» — bugünkü üye sayısı. Altmış, üç yıllık dönemin başındaki sayı.",
             },
             {
               kind: "gap",
@@ -1097,9 +1097,9 @@ The families who leave never came to a {{15}}.
                 { speaker: "Xenia", text: "Do not start alone. Find the person in your league who has done it for twenty years and ask them to come to three of your matches. If they say no, ask somebody else; and if nobody says yes, that tells you what the league is like before you find out the hard way." },
               ],
               gloss: [
-                { de: "a match official", tr: "maç hakemi", en: "match official" },
-                { de: "the touchline", tr: "taç çizgisi", en: "touchline" },
-                { de: "to be fined", tr: "para cezası almak", en: "be fined" },
+                { de: "a match official", tr: "maç hakemi", en: "der Schiedsrichter" },
+                { de: "the touchline", tr: "taç çizgisi", en: "die Seitenlinie" },
+                { de: "to be fined", tr: "para cezası almak", en: "eine Geldstrafe bekommen" },
               ],
             },
           ],

@@ -242,9 +242,9 @@ The number of letters has not gone down. What has changed is that there is one p
 
 We know that Friday is not a good day for everybody. Tell us at the parents' evening and we will change it.`,
               gloss: [
-                { de: "a newsletter", tr: "bülten", en: "newsletter" },
-                { de: "a trip", tr: "gezi", en: "trip" },
-                { de: "the same colour", tr: "aynı renk", en: "same colour" },
+                { de: "a newsletter", tr: "bülten", en: "der Newsletter" },
+                { de: "a trip", tr: "gezi", en: "der Ausflug" },
+                { de: "the same colour", tr: "aynı renk", en: "dieselbe Farbe" },
               ],
             },
           ],
@@ -264,7 +264,7 @@ We know that Friday is not a good day for everybody. Tell us at the parents' eve
               id: "en-a2-12-l3-12",
               no: 12,
               text: "What happened in 2022?",
-              options: ["Almost nobody read the information", "The trip cost more than usual", "The school sent even more letters"],
+              options: ["Many parents did not read the information", "The trip cost more than usual", "The school sent even more letters"],
               answer: 0,
               explain:
                 "Bülten sonucu sayıyla veriyor: «Fewer than half of you looked at it, and the trip in June had eleven children instead of sixty».",

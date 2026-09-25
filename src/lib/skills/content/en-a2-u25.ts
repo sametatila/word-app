@@ -91,7 +91,7 @@ export const enA2U25: SkillExercise[] = [
         text: "What does Nil expect?",
         options: [],
         answer: 0,
-        accept: ["an answer", "an answer within a week", "a week"],
+        accept: ["an answer", "an answer within a week", "an answer in a week"],
         explain: "„I expect an answer within a week.“",
       },
     ],
@@ -117,7 +117,7 @@ export const enA2U25: SkillExercise[] = [
       "They recycle glass at three points in this area: at the market, behind the school and next to the bakery. Glass is not collected from the houses.\n" +
       "Water and energy bills come four times a year. If you pay by card, they come by email. If you pay at the bank, they come on paper and two weeks later.\n" +
       "The tax office is open on Tuesday and Thursday until four, and on the first Saturday of the month until twelve. That Saturday is the quiet one — everybody comes on Tuesday.\n" +
-      "One number for everything: it is on the trash can.",
+      "One number for everything: it is on the bin.",
     questions: [
       {
         text: "When do they collect paper?",

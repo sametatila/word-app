@@ -108,7 +108,7 @@ export const enA2U12: SkillExercise[] = [
       "Could I take a day off on Friday? My sister arrives from Ankara in the morning and I would like to meet her at the station.\n" +
       "I have already talked to Mert and he can do my tasks that day. The reports for the week are finished and the meeting on Friday is not mine.\n" +
       "If Friday is not possible, would it be possible to leave early, at two? Then I can work in the morning and still meet her.\n" +
-      "I have one more question. I have five vacation days this year. Can I take three of them in August? I ask now because my brother arranges his holiday in May.\n" +
+      "I have one more question. I have five days of holiday this year. Can I take three of them in August? I ask now because my brother arranges his holiday in May.\n" +
       "Thank you very much. If you need anything from me before Friday, tell me today or tomorrow.\n" +
       "Best wishes,\n" +
       "Nil",
@@ -117,7 +117,7 @@ export const enA2U12: SkillExercise[] = [
         text: "Who arrives from Ankara on Friday?",
         options: ["the sister", "the brother", "Mert"],
         answer: 0,
-        explain: "„My sister arrives from Ankara in the morning…“ — kardeş mayısta tatil ayarlıyor.",
+        explain: "„My sister arrives from Ankara in the morning…“ — erkek kardeşi mayısta tatil ayarlıyor.",
       },
       {
         text: "What does Nil ask for if Friday is not possible?",
@@ -138,7 +138,7 @@ export const enA2U12: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["five", "5"],
-        explain: "„I have five vacation days this year.“ — üçü ağustos için isteniyor.",
+        explain: "„I have five days of holiday this year.“ — üçü ağustos için isteniyor.",
       },
       {
         kind: "order",

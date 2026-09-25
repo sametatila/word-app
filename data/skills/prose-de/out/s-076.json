@@ -31,5 +31,9 @@
  { "tr": "… konusunda küçük bir değişiklik önermek için yazıyorum", "kind": "gloss.tr", "de": "Ich schreibe, um eine kleine Änderung bei … vorzuschlagen" },
  { "tr": "Hepimiz aynı fikirde değildik. Karşı çıkanlar … diye savundu.", "kind": "gloss.tr", "de": "Nicht alle waren einer Meinung. Dass …, war das Argument der Gegner." },
  { "tr": "İki değişikliği ve değişmeyen bir şeyi açıklamak için yazıyorum.", "kind": "gloss.tr", "de": "Ich schreibe, um zwei Änderungen und eine Sache zu erklären, die sich nicht ändert." },
- { "tr": "sürpriz", "kind": "gloss.tr", "de": "Überraschung" }
+ { "tr": "sürpriz", "kind": "gloss.tr", "de": "Überraschung" },
+ { "tr": "Şehirde herkes uyurken çalışan bir gece otobüsü şoförünü anlatan kısa portreyi okuyacaksın.", "kind": "intro", "de": "Du liest ein kurzes Porträt über einen Nachtbusfahrer, der arbeitet, während die Stadt schläft." },
+ { "tr": "Bir anneyle on beş yaşındaki oğluna aynı soru soruluyor: ebeveynler bir gence neye izin vermeli, neye vermemeli?", "kind": "intro", "de": "Einer Mutter und ihrem fünfzehnjährigen Sohn wird dieselbe Frage gestellt: Was sollten Eltern einem Jugendlichen erlauben und was nicht?" },
+ { "tr": "boşaltmak", "kind": "gloss.tr", "de": "freigeben" },
+ { "tr": "Tasarruf etmek için neredeyse planlardan çıkarılıyordu; tanışıklıkların çoğu orada başlıyor.", "kind": "explain", "de": "Um Geld zu sparen, wäre sie fast aus den Plänen gestrichen worden; die meisten Bekanntschaften beginnen dort." }
 ]

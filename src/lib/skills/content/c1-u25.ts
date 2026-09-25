@@ -191,7 +191,7 @@ export const c1U25: SkillExercise[] = [
         accept: [
           "lesen, schreiben, sich korrigieren lassen",
           "lesen, was einen interessiert; schreiben, was ohnehin nötig ist; korrigiert werden",
-          "weniger anstrengend und weniger sichtbar weitermachen",
+          "mit Vernunft statt Ehrgeiz weitermachen",
         ],
         explain: "Program değil, süreklilik.",
       },

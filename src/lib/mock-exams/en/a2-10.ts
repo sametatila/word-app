@@ -243,9 +243,9 @@ No, and it goes both ways. Somebody brings a box from the attic and it is worth 
 What is your best advice for a seller?
 Clean it. That is all. A clean thing sells for twice the money, and cleaning is free.`,
               gloss: [
-                { de: "an attic", tr: "tavan arası", en: "attic" },
-                { de: "worth", tr: "değerinde", en: "worth" },
-                { de: "a seller", tr: "satıcı", en: "seller" },
+                { de: "an attic", tr: "tavan arası", en: "der Dachboden" },
+                { de: "worth", tr: "değerinde", en: "wert" },
+                { de: "a seller", tr: "satıcı", en: "der Verkäufer" },
               ],
             },
           ],
@@ -392,7 +392,7 @@ It is heavier {{22}} anything else in the flat.
 
 We moved three times and we took it {{23}} us every time.
 
-I have two chairs from a shop and I {{24}} not know where they are now.`,
+I bought two chairs from a shop and I {{24}} not know where they are now.`,
             },
           ],
           items: [

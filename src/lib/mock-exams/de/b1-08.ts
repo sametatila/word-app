@@ -480,7 +480,6 @@ Timo Reichert: Bezahlung nein, Ersatz der Auslagen ja. Und vor allem: Versicheru
                 { de: "die Auslagen", tr: "yapılan masraflar", en: "out-of-pocket expenses" },
                 { de: "der Einsatz", tr: "görev, nöbet", en: "assignment, shift" },
                 { de: "die Nachbarschaftshilfe", tr: "komşuluk yardımlaşması", en: "neighbourhood help" },
-                { de: "zynisch", tr: "alaycı, acımasız", en: "cynical" },
                 { de: "unterm Strich", tr: "sonuçta", en: "on balance" },
               ],
             },

@@ -216,7 +216,7 @@ Ein Problem bleibt: Es fehlen jüngere Fahrer, denn die meisten im Team sind üb
                 { de: "die Verbindung", tr: "ulaşım bağlantısı", en: "connection, link" },
                 { de: "das Steuer", tr: "direksiyon", en: "steering wheel" },
                 { de: "decken", tr: "karşılamak", en: "to cover (costs)" },
-                { de: "der Nachwuchs", tr: "yeni katılanlar", en: "new recruits, next generation" },
+                { de: "die Kreisstadt", tr: "ilçe merkezi", en: "district town" },
               ],
             },
           ],
@@ -325,7 +325,7 @@ Ganz ohne Auto bleiben wir wohl nicht für immer. Ein eigenes brauchen wir aber 
               options: ["Weil es kaputt war.", "Um es auszuprobieren.", "Weil sie Geld brauchten."],
               answer: 1,
               explain:
-                "Sebep ikinci cümlede: \"weil wir sehen wollten, ob es auch ohne geht\". Arıza ya da para sıkıntısı hiç geçmiyor.",
+                "Sebep ilk cümlede: \"weil wir sehen wollten, ob es auch ohne geht\". Arıza ya da para sıkıntısı hiç geçmiyor.",
             },
             {
               kind: "mcq",

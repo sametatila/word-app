@@ -72,7 +72,7 @@ Heute abonniere ich eine Wochenzeitung und gehe sie samstags in zwei Stunden dur
 Vermissen tue ich vor allem eines: das Gefühl, früh Bescheid zu wissen. Es war ein angenehmes Gefühl, und es war fast immer wertlos.`,
               gloss: [
                 { de: "sich erledigen", tr: "kendiliğinden çözülmek, konu olmaktan çıkmak", en: "to sort itself out" },
-                { de: "der Aufreger", tr: "ortalığı karıştıran haber", en: "hot-button story" },
+                { de: "aufregen", tr: "sinirlendirmek", en: "to upset" },
               ],
             },
             {
@@ -288,7 +288,7 @@ Ganz auflösen lässt sich das Problem damit allerdings nicht. Wer die erste Fas
               text: "Lücke 12",
               answer: "e",
               explain:
-                "Sabah/akşam aralığından söz ediliyor; (e) \"In der Zwischenzeit\" ile o aralığa gönderme yapıyor. Başka hiçbir cümlede zaman göndermesi yok.",
+                "Sabah/akşam aralığından söz ediliyor; (e) \"In der Zwischenzeit\" ile o aralığa gönderme yapıyor. Başka hiçbir cümle bu aralığa gönderme yapmıyor.",
             },
             {
               kind: "match",

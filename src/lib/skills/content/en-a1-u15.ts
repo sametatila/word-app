@@ -105,7 +105,7 @@ export const enA1U15: SkillExercise[] = [
     text:
       "Ela: Excuse me, could you help me? I'm lost.\n" +
       "Man: Of course. Where do you want to go?\n" +
-      "Ela: To the train station. I have a map, but I don't find the way.\n" +
+      "Ela: To the train station. I have a map, but I can't find the way.\n" +
       "Man: You are near. Can you see the church? Go on this path, behind the church.\n" +
       "Ela: And then?\n" +
       "Man: Then turn right. The station is at the end of the street.\n" +
@@ -133,7 +133,7 @@ export const enA1U15: SkillExercise[] = [
         text: "Ela doesn't have a map.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„I have a map, but I don't find the way.“ — harita var, yön yok.",
+        explain: "„I have a map, but I can't find the way.“ — harita var, yön yok.",
       },
       {
         kind: "gapfill",

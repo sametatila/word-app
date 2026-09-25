@@ -133,7 +133,7 @@ Würde ich es wieder machen? Ja, aber nicht auf jeder Strecke. Unter sechs Stund
               id: "de-b1-03-l1-6",
               no: 6,
               ref: "t1",
-              text: "Neue Wagen sind schon bestellt, kommen aber nicht sofort.",
+              text: "Neue Wagen kommen nicht sofort, sondern erst in einigen Jahren.",
               answer: true,
               explain:
                 "Metin yolcu sayısının üç yıldır arttığını, buna karşılık \"Neue Wagen kommen aber erst in einigen Jahren\" diyor. Yani bekleniyorlar ama hemen değil.",
@@ -214,7 +214,7 @@ Ich fahre gern Fahrrad, im Sommer sogar zur Arbeit. Aber im Januar um halb sechs
               options: ["Er gibt deutlich weniger aus.", "Er gibt ungefähr gleich viel aus.", "Er gibt mehr aus als vorher."],
               answer: 0,
               explain:
-                "Yeni giderler 58 artı yaklaşık 30 euro; eskisi sigorta, vergi ve servisle birlikte 300 euronun üstünde. Fark yaklaşık üç katı ve metin bunu \"Teuer geworden ist es trotzdem nicht\" diye özetliyor.",
+                "Yeni giderler 58 artı yaklaşık 30 euro; eskisi sigorta, vergi ve servisle birlikte 300 euronun üstünde. Eski gider yenisinin üç katından fazla ve metin bunu \"Teuer geworden ist es trotzdem nicht\" diye özetliyor.",
             },
             {
               kind: "mcq",
@@ -255,7 +255,7 @@ Ich fahre gern Fahrrad, im Sommer sogar zur Arbeit. Aber im Januar um halb sechs
               no: 12,
               ref: "t3",
               text: "Wie steht die Autorin zum Fahrrad?",
-              options: ["Sie fährt im Sommer damit zur Arbeit.", "Sie hält das Fahrrad im Winter für unsicher.", "Sie fährt grundsätzlich nicht Rad."],
+              options: ["Sie fährt im Sommer damit zur Arbeit.", "Sie fährt nur in ihrer Freizeit Rad.", "Sie fährt grundsätzlich nicht Rad."],
               answer: 0,
               explain:
                 "\"Ich fahre gern Fahrrad, im Sommer sogar zur Arbeit\" diyor. Güvenlik itirazı bisiklete değil, ocak ayında sabah beş buçukta yağmurda gitmeye.",
@@ -469,7 +469,7 @@ Nora B.: Man vergisst schnell, wie es vorher war. Ich bin hier aufgewachsen und 
               options: ["Dafür.", "Dagegen."],
               answer: 1,
               explain:
-                "İtirazı sıraya değil sonuca kadar uzanıyor: söz verilen istisna izinlerini alamamış ve \"hier war es umgekehrt\" diyor. Fikri değil, bu uygulamayı reddediyor.",
+                "İtirazı yalnız sıraya değil, sonuca da uzanıyor: söz verilen istisna izinlerini alamamış ve \"hier war es umgekehrt\" diyor. Fikri değil, bu uygulamayı reddediyor.",
             },
             {
               kind: "mcq",

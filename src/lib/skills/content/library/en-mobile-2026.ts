@@ -56,7 +56,7 @@ export const enMobile2026: SkillExercise[] = [
         "tr": "önünde"
       },
         { "de": "comedy", "tr": "komedi" },
-        { "de": "poor", "tr": "fakir" },
+        { "de": "poor", "tr": "zavallı" },
     ],
     "minutes": 4,
     "text": "Deniz: Hi Emma! What are you doing on Saturday?\nEmma: Nothing special. I am at home. Why?\nDeniz: There is a new film at the Star Cinema. It is a comedy.\nEmma: Nice! What time does it start?\nDeniz: At seven o'clock. But the tickets are cheap before six.\nEmma: OK, can we meet early? I finish work at five.\nDeniz: Sure. Let's meet at half past five in front of the cinema.\nEmma: Perfect. Is Murat coming too?\nDeniz: No, he is busy. He has got an exam on Monday.\nEmma: Poor Murat! I have got twenty lira. Is that enough for a ticket?\nDeniz: Yes, a ticket is fifteen lira. See you on Saturday!\nEmma: See you!",
@@ -359,7 +359,7 @@ export const enMobile2026: SkillExercise[] = [
         "de": "soup",
         "tr": "çorba"
       },
-        { "de": "toast", "tr": "kadeh kaldırmak" },
+        { "de": "toast", "tr": "tost" },
     ],
     "minutes": 4,
     "text": "GREEN CUP CAFE\nOpen every day, 8:00 - 19:00\n\nDRINKS\nTea ................ 30 TL\nCoffee ............. 45 TL\nHot chocolate ...... 50 TL\nOrange juice ....... 55 TL\n\nFOOD\nCheese toast ....... 60 TL\nChocolate cake ..... 65 TL\nSoup of the day .... 70 TL\n\nNOTE\nBreakfast is only in the morning. We serve it from 8:00 to 11:00.\nStudents have got a 10% discount. Please show your student card.\nThere is free water on every table.\nWe have not got Wi-Fi in the garden, but there is Wi-Fi inside.\nOur waiter Emre is here at the weekend. He can help you in English.",
@@ -465,8 +465,8 @@ export const enMobile2026: SkillExercise[] = [
         "de": "exam",
         "tr": "sınav"
       },
-        { "de": "science", "tr": "bilim" },
-        { "de": "math", "tr": "matematik" },
+        { "de": "science", "tr": "fen bilgisi" },
+        { "de": "maths", "tr": "matematik" },
     ],
     "minutes": 4,
     "text": "Tuesday, 14 March\n\nI get up at half past six. I am always tired, but I open the window and drink a big glass of water.\nAt seven o'clock I have breakfast with my sister Elif. She makes tea.\nI walk to school. It is twenty minutes.\nLessons start at eight. My favourite lesson is science, because our teacher is funny.\nAt half past twelve we have lunch. Today it is rice and a small salad.\nAfter school I go to the library with Deniz. We do our homework there until five.\nIn the evening I help my mother in the kitchen. Then I watch a film.\nI go to bed at eleven. Tomorrow is Wednesday and I have got a maths exam!",
@@ -1088,7 +1088,7 @@ export const enMobile2026: SkillExercise[] = [
         "de": "bring",
         "tr": "getirmek"
       },
-        { "de": "mill", "tr": "öğütmek" },
+        { "de": "medicine", "tr": "ilaç" },
     ],
     "minutes": 4,
     "text": "GREEN PARK HEALTH CENTRE\nAppointment Card\n\nPatient: Elif Yildiz\nDoctor: Dr. Miller\nDate: Tuesday, 14 October\nTime: 9:30 in the morning\nRoom: 12, second floor\n\nPlease come ten minutes early. Bring this card and your ID.\nThere is a pharmacy next to the main door. It is open every day.\n\nMEDICINE NOTE\nTake one white tablet after breakfast.\nTake one blue tablet before bed.\nDo not take the tablets with coffee or tea. Drink a big glass of water.\nYou have got a cough, so drink hot water with lemon.\nAre you feeling bad? Call us on 0212 555 30 30.\nWe are open from 8 a.m. to 6 p.m.",
@@ -3785,7 +3785,7 @@ export const enMobile2026: SkillExercise[] = [
         "tr": "öğle vakti"
       },
         { "de": "hate", "tr": "nefret etmek" },
-        { "de": "poor", "tr": "fakir" },
+        { "de": "poor", "tr": "zavallı" },
     ],
     "minutes": 5,
     "text": "Elif, 10:14\nHi Kerem! How was your weekend? I called you on Saturday but you never answered.\n\nKerem, 10:20\nSorry! I was on a train to Bursa. My cousin got married on Saturday evening, so the whole family travelled together.\n\nElif, 10:22\nWow, a wedding! Did you dance?\n\nKerem, 10:25\nOf course. The music was louder than last year's party and we stayed until one o'clock. My little brother fell asleep on a chair.\n\nElif, 10:27\nPoor kid. My weekend was quieter. I used to hate cooking, but now I really enjoy it. On Sunday I made lentil soup for my neighbours.\n\nKerem, 10:30\nThat sounds better than my Sunday. I slept until noon and then I cleaned the car.\n\nElif, 10:31\nHave you finished your report yet?\n\nKerem, 10:33\nNot yet! I must start tonight. I have never written thirty pages in one week.\n\nElif, 10:35\nGood luck. I will bring you a cup of soup tomorrow. It is the best thing I have ever cooked.",
@@ -3838,7 +3838,7 @@ export const enMobile2026: SkillExercise[] = [
           "thirty",
           "30"
         ],
-        "explain": "\"I have never written thirty pages in one week.\" Rapor henüz başlamadı."
+        "explain": "\"I have never written thirty pages in one week.\" Kerem rapora henüz başlamadı."
       },
       {
         "kind": "short_answer",
@@ -4295,7 +4295,7 @@ export const enMobile2026: SkillExercise[] = [
         "de": "customers",
         "tr": "müşteriler"
       },
-        { "de": "electronics", "tr": "elektronik aksam" },
+        { "de": "electronics", "tr": "elektronik ürünler" },
     ],
     "minutes": 5,
     "text": "NOTICE — RETURNS AND EXCHANGES\n\nDear customers,\n\nWe changed our returns policy last month, so please read this notice.\n\nYou can bring an item back within 30 days. You must show the receipt. Without a receipt we cannot give your money back, but we can offer an exchange or a store card.\n\nCLOTHES: please keep the label on the item. We have already helped hundreds of shoppers this year, and the label makes everything faster.\n\nSHOES: you must not wear them outside. We only accept shoes in the original box.\n\nSALE ITEMS: these things are cheaper, so the rules are stricter. We exchange them, but we never give money back for them.\n\nELECTRONICS: you have 14 days. Please bring the box, the cable and the charger.\n\nThe returns desk is on the second floor, next to the coffee shop. It opens at 10:00 every day and closes at 19:00. On Sundays it closes earlier, at 17:00.\n\nElif Demir, our new manager, will answer your questions on Saturday morning.\n\nThank you!",
@@ -4413,7 +4413,7 @@ export const enMobile2026: SkillExercise[] = [
           "False"
         ],
         "answer": 0,
-        "explain": "Programda 2. gün (Cumartesi) 09:30'da \"Bus to the castle\" yazıyor, yani kaleye Cumartesi sabahı gidiliyor."
+        "explain": "Programda 2. gün (cumartesi) 09:30'da \"Bus to the castle\" yazıyor, yani kaleye cumartesi sabahı gidiliyor."
       },
       {
         "text": "What time must everybody be back at the bus stop on Saturday?",
@@ -4610,7 +4610,7 @@ export const enMobile2026: SkillExercise[] = [
         "tr": "yeterli"
       },
         { "de": "chart", "tr": "grafik" },
-        { "de": "alarm", "tr": "çalar saat" },
+        { "de": "alarm", "tr": "alarm" },
     ],
     "minutes": 5,
     "text": "FocusLeaf — Study Timer\n4.2 stars · 12,400 reviews\n\n★★★★★ Deniz K. — 2 March\nI have used this app since January and I love it. I used to study with music, but I could never finish anything. Now I start a 25-minute timer and I stop only when it rings. The free version is enough for me. Last week I studied 20 hours!\n\n★★☆☆☆ Marta — 28 February\nThe new update is worse than the old one. Before, I could see my whole week on one screen. Now I must open three menus to find the same chart. Also, the app crashed twice while I was writing my notes. Please bring the old screen back.\n\n★★★★☆ Tom_92 — 26 February\nGood app, cheap price. I paid 3 euros for a year. The alarm is louder than my phone ringtone, so I never miss a break. The support team has not translated the help page into Turkish yet, but they answered my email in one day. I am going to buy the family plan in April.",
@@ -4716,7 +4716,7 @@ export const enMobile2026: SkillExercise[] = [
         "de": "busy",
         "tr": "yoğun"
       },
-        { "de": "mill", "tr": "öğütmek" },
+        { "de": "mill", "tr": "değirmen" },
     ],
     "minutes": 5,
     "text": "GREENFIELD TOWN COUNCIL\nPublic Notice - 12 March\n\nDear resident,\n\nOur Housing Office has moved. Since Monday we have worked at 4 King Street, next to the library. The old office on Mill Road is closed.\n\nOpening hours:\nMonday to Friday: 08:30 - 16:00\nSaturday: 09:00 - 12:00\nSunday: closed\n\nYou must bring your ID card and your last bill when you pay for water. We cannot take cash any more, so please bring a bank card.\n\nWe used to send paper bills every month. From 1 April we are going to send all bills by email. Please give us your email address before 25 March. Email is faster and cheaper than post.\n\nThe new building is bigger than the old one, but the car park is much smaller. You should come by bus. Bus 14 stops in front of the door.\n\nMonday morning is our busiest time, so Wednesday is the best day for a visit.\n\nElif Barnes\nOffice Manager",
@@ -4822,7 +4822,7 @@ export const enMobile2026: SkillExercise[] = [
         "de": "car park",
         "tr": "otopark"
       },
-        { "de": "mill", "tr": "öğütmek" },
+        { "de": "mill", "tr": "değirmen" },
         { "de": "stone", "tr": "taş" },
         { "de": "lorry", "tr": "kamyon" },
     ],

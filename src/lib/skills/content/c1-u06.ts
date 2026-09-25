@@ -42,28 +42,48 @@ export const c1U06: SkillExercise[] = [
       { de: "die Verstärkung", tr: "pekiştirme", en: "reinforcement" },
       { de: "die Wirkung", tr: "etki", en: "effect" },
       { de: "zwingen", tr: "zorlamak", en: "to force" },
-      { de: "der Erzeuger", tr: "üretici", en: "producer" },
-      { de: "stärken", tr: "güçlendirmek", en: "to strengthen" },
-      { de: "der Verstand", tr: "zihin", en: "mind" },
+      { de: "erzeugen", tr: "üretmek", en: "to produce" },
+      { de: "stark", tr: "güçlü", en: "strong" },
+      { de: "verstehen", tr: "anlamak", en: "to understand" },
       { de: "also", tr: "yani", en: "so" },
       { de: "vordere", tr: "ön", en: "front" },
       { de: "besondere", tr: "özel", en: "special" },
       { de: "die Schwierigkeit", tr: "zorluk", en: "difficulty" },
-      { de: "fremd", tr: "yabancı", en: "unfamiliar" },
-      { de: "untereinander", tr: "kendi aralarında", en: "among themselves" },
+      { de: "fremd", tr: "yabancı", en: "other people's" },
+      { de: "untereinander", tr: "alt alta", en: "one below the other" },
       { de: "der Text", tr: "metin", en: "text" },
     ],
     minutes: 7,
     text:
       "DER SATZ HAT EINE VORDERTÜR\n\n" +
-      "„Ich habe selten so gelacht“ und „Selten habe ich so gelacht“ enthalten dieselben Wörter. Ihre Wirkung ist verschieden.\n\n" +
-      "Der Grund liegt in der ersten Position. Das deutsche Hauptsatzverb steht auf Platz zwei; alles, was davor steht, ist damit hervorgehoben. Wer „selten“ nach vorn zieht, zwingt den Zuhörer, mit der Seltenheit zu beginnen. Der Rest des Satzes lehnt sich daran an.\n\n" +
-      "Das ist keine Stilfrage, sondern Grammatik im Dienst der Betonung. Sprachen mit freierer Wortstellung verteilen diese Aufgabe auf die Stimme; das Deutsche verlangt eine Entscheidung, bevor der Satz beginnt.\n\n" +
-      "Zwei Beobachtungen dazu. Erstens: Die Hervorhebung nutzt sich ab. Wer jeden zweiten Satz invertiert, erzeugt keine Verstärkung mehr, sondern Manier. Zweitens: Die stärkste erste Position ist selten das Subjekt. „Erst dann verstand ich, worum es ging“ wirkt, weil der Zeitpunkt vorn steht und der Erkennende hinten.\n\n" +
-      "Wirkungsvoll ist die Umstellung also nur, solange sie selten bleibt und die vordere Stelle etwas trägt, das der Zuhörer noch nicht hat.\n\n" +
-      "Für Türkisch sprechende Lernende liegt hier eine besondere Schwierigkeit. Das Türkische ordnet die Betonung über die Stellung vor dem Verb und kann sie im Satz frei verschieben; das Deutsche hat dafür nur die erste Position und den Satzakzent. Was in der einen Sprache eine Feinabstimmung ist, wird in der anderen zu einer Entscheidung, die vor dem ersten Wort fällt.\n\n" +
-      "Dieselbe Probe funktioniert übrigens auch bei fremden Texten und erklärt schnell, warum manche Absätze schleppen.\n\n" +
-      "Wer eine Rede schreibt, kann das verdeutlichen, indem er die ersten drei Wörter jedes Satzes untereinander schreibt. Steht dort dreimal „Wir“, ist die Rede noch nicht fertig.",
+      "„Ich habe selten so gelacht“ und „Selten habe ich so gelacht“ enthalten " +
+      "dieselben Wörter. Ihre Wirkung ist verschieden.\n\n" +
+      "Der Grund liegt in der ersten Position. Das deutsche Hauptsatzverb " +
+      "steht auf Platz zwei; alles, was davor steht, ist damit hervorgehoben. " +
+      "Wer „selten“ nach vorn zieht, zwingt den Zuhörer, mit der Seltenheit zu " +
+      "beginnen. Der Rest des Satzes lehnt sich daran an.\n\n" +
+      "Das ist keine Stilfrage, sondern Grammatik im Dienst der Betonung. " +
+      "Sprachen mit freierer Wortstellung verteilen diese Aufgabe auf die " +
+      "Stimme; das Deutsche verlangt eine Entscheidung, bevor der Satz " +
+      "beginnt.\n\n" +
+      "Zwei Beobachtungen dazu. Erstens: Die Hervorhebung nutzt sich ab. Wer " +
+      "jeden zweiten Satz invertiert, erzeugt keine Verstärkung mehr, sondern " +
+      "Manier. Zweitens: Die stärkste erste Position ist selten das Subjekt. " +
+      "„Erst dann verstand ich, worum es ging“ wirkt, weil der Zeitpunkt vorn " +
+      "steht und der Erkennende hinten.\n\n" +
+      "Wirkungsvoll ist die Umstellung also nur, solange sie selten bleibt und " +
+      "die vordere Stelle etwas trägt, das der Zuhörer noch nicht hat.\n\n" +
+      "Für Türkisch sprechende Lernende liegt hier eine besondere " +
+      "Schwierigkeit. Das Türkische ordnet die Betonung über die Stellung vor " +
+      "dem Verb und kann sie im Satz frei verschieben; das Deutsche hat dafür " +
+      "nur die erste Position und den Satzakzent. Was in der einen Sprache " +
+      "eine Feinabstimmung ist, wird in der anderen zu einer Entscheidung, die " +
+      "vor dem ersten Wort fällt.\n\n" +
+      "Wer eine Rede schreibt, kann das verdeutlichen, indem er die ersten " +
+      "drei Wörter jedes Satzes untereinander schreibt. Steht dort dreimal " +
+      "„Wir“, ist die Rede noch nicht fertig.\n\n" +
+      "Dieselbe Probe funktioniert übrigens auch bei fremden Texten und " +
+      "erklärt schnell, warum manche Absätze schleppen.",
     questions: [
       {
         text: "Warum wirken die beiden Sätze verschieden?",
@@ -81,7 +101,7 @@ export const c1U06: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["Erst"],
-        explain: "Zaman öne çekilince fiil ikinci sıraya, özne arkaya geçiyor — vurgu ana.",
+        explain: "Zaman öne çekilince fiil ikinci sıraya, özne arkaya geçiyor — vurgu o ana düşüyor.",
       },
       {
         text: "Was passiert laut Text bei zu häufiger Inversion?",
@@ -143,17 +163,17 @@ export const c1U06: SkillExercise[] = [
       { de: "die Aussage", tr: "ifade", en: "statement" },
       { de: "nachhaltig", tr: "sürdürülebilir", en: "sustainable" },
       { de: "verlobt", tr: "nişanlı", en: "engaged" },
-      { de: "der Absatz", tr: "satış", en: "sales" },
+      { de: "der Absatz", tr: "paragraf", en: "paragraph" },
       { de: "der Kampf", tr: "mücadele", en: "fight" },
       { de: "meiste", tr: "çoğu", en: "most" },
       { de: "aufgehen", tr: "doğmak", en: "to rise" },
       { de: "besonders", tr: "özellikle", en: "especially" },
       { de: "solche", tr: "böyle", en: "such" },
-      { de: "natürlich", tr: "elbette", en: "of course" },
+      { de: "natürlich", tr: "doğal", en: "natural" },
       { de: "abbauen", tr: "azaltmak", en: "to reduce" },
       { de: "die Zahl", tr: "sayı", en: "number" },
       { de: "strittig", tr: "ihtilaflı", en: "disputed" },
-      { de: "nüchtern", tr: "aç karnına", en: "on an empty stomach" },
+      { de: "nüchtern", tr: "sade / yavan", en: "plain, dry" },
       { de: "der Pass", tr: "pasaport", en: "passport" },
       { de: "lesen", tr: "okumak", en: "to read" },
       { de: "der Text", tr: "metin", en: "text" },

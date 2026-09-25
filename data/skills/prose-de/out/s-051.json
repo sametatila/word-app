@@ -130,11 +130,6 @@
   "de": "Das lockerste, das sichere, das zerbrechlichste; am Ende das Kriterium."
  },
  {
-  "tr": "İki sözcük, idari kayıt, konuşma dili; en sonda kural.",
-  "kind": "explain",
-  "de": "Zwei Wörter, die Verwaltungsebene, die gesprochene Ebene; am Ende die Regel."
- },
- {
   "tr": "Zarf, fiil listesi, özne; en sonda neden işe yaradığı.",
   "kind": "explain",
   "de": "Adverb, Verbliste, Subjekt; am Ende, warum es funktioniert."
@@ -147,7 +142,7 @@
  {
   "tr": "Yarık cümle, öne çıkarma, ikisinin karıştığı yer, devrilen biçim.",
   "kind": "explain",
-  "de": "Spaltsatz, Voranstellung, die Stelle, wo beide sich mischen, die kippende Form."
+  "de": "Spaltsatz, Voranstellung, die Stelle, wo beide sich mischen, die umgestellte Form."
  },
  {
   "tr": "„The missing word is „serve“, and the comma is holding its place.“",

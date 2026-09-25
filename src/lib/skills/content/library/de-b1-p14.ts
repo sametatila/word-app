@@ -19,14 +19,14 @@ export const deB1P14: SkillExercise[] = [
     skill: "reading",
     title: "Aus Asphalt wird Schatten",
     genre: "article",
-    intro: "Yerel bir haber: bir ilkokul bahçesindeki asfaltı söküp ağaç dikiyor; parayı kim veriyor, ne ölçülmüş, kim şikâyetçi.",
+    intro: "Yerel bir haber: bir ilkokul, bahçesindeki asfaltı söküp ağaç dikiyor; parayı kim veriyor, ne ölçülmüş, kim şikâyetçi.",
     gloss: [
       { de: "der Asphalt", tr: "asfalt", en: "asphalt" },
       { de: "aufbrechen", tr: "sökmek", en: "to break up" },
       { de: "das Sonnensegel", tr: "gölgelik", en: "shade sail" },
       { de: "übernehmen", tr: "üstlenmek", en: "to cover" },
       { de: "messen", tr: "ölçmek", en: "to measure" },
-      { de: "der Hausmeister", tr: "kapıcı", en: "caretaker" },
+      { de: "der Hausmeister", tr: "okul görevlisi", en: "caretaker" },
     ],
     minutes: 6,
     text:
@@ -71,7 +71,7 @@ export const deB1P14: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["zwanzig", "20"],
-        explain: "Kapıcı ağustosta ölçmüş: „um fast zwanzig Grad kühler als auf dem alten Asphalt“.",
+        explain: "Okul görevlisi ağustosta ölçmüş: „um fast zwanzig Grad kühler als auf dem alten Asphalt“.",
       },
       {
         kind: "short_answer",

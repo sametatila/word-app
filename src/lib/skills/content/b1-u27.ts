@@ -33,7 +33,7 @@ export const b1U27: SkillExercise[] = [
     unit: 27,
     title: "Mein Heimatgericht",
     genre: "guide",
-    intro: "Biri memleket yemeğini anlatıyor. Ne en iyi nasıl olur?",
+    intro: "Biri memleket yemeğini anlatıyor. En iyi nasıl yapılır?",
     minutes: 5,
     gloss: [
       { de: "der Braten", tr: "fırın kızartması", en: "roast" },
@@ -45,16 +45,16 @@ export const b1U27: SkillExercise[] = [
       { de: "genau", tr: "tam olarak", en: "exactly" },
     ],
     text:
-      "Bei uns zu Hause gab es sonntags immer den gleichen Braten. Meine Mutter " +
-      "hat ihn nie gegrillt, sondern immer im Ofen gemacht — langsam, drei " +
-      "Stunden, bei kleiner Hitze.\n\n" +
+      "Bei uns zu Hause gab es sonntags immer den gleichen Braten. Meine " +
+      "Mutter hat ihn nie gegrillt, sondern immer im Ofen gemacht — langsam, " +
+      "drei Stunden, bei kleiner Hitze.\n\n" +
       "Das Fleisch soll nicht zu mager sein. Wer es ganz ohne Fett nimmt, " +
       "bekommt am Ende etwas Trockenes, und das rettet auch kein Öl. " +
       "Hackfleisch geht auch, aber dann schmeckt es anders.\n\n" +
-      "Am besten schneidet man den Braten in dünne Scheiben, erst nach " +
-      "zwanzig Minuten Ruhe. Wer sofort schneidet, verliert den Saft. " +
-      "Das ist der wichtigste Teil und der, den alle vergessen.\n\n" +
-      "Dazu gibt es bei uns nichts Kompliziertes: Brot, etwas Salziges " +
+      "Am besten schneidet man den Braten in dünne Scheiben, erst nach zwanzig " +
+      "Minuten Ruhe. Wer sofort schneidet, verliert den Saft. Das ist der " +
+      "wichtigste Teil und der, den alle vergessen.\n\n" +
+      "Dazu gibt es bei uns nichts Kompliziertes: Brot, etwas in Salz " +
       "eingelegtes Gemüse, fertig. Der beste Sonntag meiner Kindheit riecht " +
       "genau so.",
     questions: [
@@ -90,7 +90,7 @@ export const b1U27: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["drei Stunden", "3 Stunden"],
-        explain: "„… langsam, drei Stunden, bei niedriger Hitze.“",
+        explain: "„… langsam, drei Stunden, bei kleiner Hitze.“",
       },
     ],
   },
@@ -110,7 +110,7 @@ export const b1U27: SkillExercise[] = [
       { de: "salzig", tr: "tuzlu", en: "salty" },
       { de: "übrig", tr: "artan", en: "left over" },
       { de: "unhöflich", tr: "nezaketsiz", en: "impolite" },
-      { de: "tauschen", tr: "takas etmek", en: "to swap" },
+      { de: "tauschen", tr: "değiştirmek", en: "to exchange" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
       { de: "beste", tr: "en iyi", en: "best" },
       { de: "normal", tr: "normal", en: "normal" },

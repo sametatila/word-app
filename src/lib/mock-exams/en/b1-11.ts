@@ -238,9 +238,9 @@ What changed things for me was not a recipe at all. It was a second small pan an
 
 I still eat alone six nights a week. On the seventh I eat with four other people at the community centre, and nobody there asks anybody why they came.`,
               gloss: [
-                { de: "sympathy", tr: "acıma, anlayış", en: "sympathy" },
-                { de: "a portion", tr: "porsiyon", en: "portion" },
-                { de: "bleak", tr: "iç karartıcı", en: "bleak" },
+                { de: "sympathy", tr: "acıma, anlayış", en: "das Mitgefühl" },
+                { de: "a portion", tr: "porsiyon", en: "die Portion" },
+                { de: "bleak", tr: "iç karartıcı", en: "trostlos" },
               ],
             },
           ],
@@ -348,9 +348,9 @@ Some shops have removed that difference, and the ones that have done it are usua
 
 None of this is an argument for shopping in an expensive shop out of principle. It is an argument for noticing what a price is telling you. {{20}}`,
               gloss: [
-                { de: "a chain", tr: "zincir mağaza", en: "chain" },
-                { de: "handling", tr: "elleçleme, taşıma işi", en: "handling" },
-                { de: "a household", tr: "hane", en: "household" },
+                { de: "a chain", tr: "zincir mağaza", en: "die Kette" },
+                { de: "handling", tr: "elleçleme, taşıma işi", en: "die Handhabung" },
+                { de: "a household", tr: "hane", en: "der Haushalt" },
               ],
             },
           ],
@@ -530,9 +530,9 @@ If you are cooking it for one, do not divide it. Make all of it and give half {{
               id: "en-b1-11-l6-27",
               no: 27,
               text: "Gap 27",
-              accept: ["because"],
+              accept: ["because", "since", "as"],
               explain:
-                "İkinci yarı birincinin sebebini veriyor: altı kişilik olması, kırk yıl altı kişiye pişirmiş olmasından geliyor. `but` karşıtlık kurar ve burada karşıtlık yok.",
+                "İkinci yarı birincinin sebebini veriyor: altı kişilik olması, kırk yıl altı kişiye pişirmiş olmasından geliyor. Sebebi `because`, `since` ya da `as` bağlar. `but` karşıtlık kurar ve burada karşıtlık yok.",
             },
             {
               kind: "gap",
@@ -548,9 +548,9 @@ If you are cooking it for one, do not divide it. Make all of it and give half {{
               id: "en-b1-11-l6-29",
               no: 29,
               text: "Gap 29",
-              accept: ["if"],
+              accept: ["if", "when"],
               explain:
-                "Yönerge bir koşula bağlanıyor: yanlış göründüğü takdirde su ekle. `if` bu koşulu kurar; `when` kesin bir zaman varsayardı.",
+                "Yönerge bir koşula bağlanıyor: yanlış göründüğü takdirde su ekle. `if` bu koşulu kurar; `when` de «göründüğü zaman» anlamıyla aynı yönergeyi verir.",
             },
             {
               kind: "gap",

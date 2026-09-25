@@ -91,7 +91,7 @@ Heute lade ich selbst ein. Meine Gäste kommen pünktlich und niemand hilft in d
               ],
               answer: 0,
               explain:
-                "Saat sekiz için çeyrek geçe gelmiş ve Frau Lorenz çorbanın soğuduğunu söylemiş. Almanya'da davet saati başlangıç saatidir.",
+                "Saat sekizdeki davete sekizi çeyrek geçe gelmiş ve Frau Lorenz çorbanın soğuduğunu söylemiş. Almanya'da davet saati başlangıç saatidir.",
             },
             {
               kind: "mcq",

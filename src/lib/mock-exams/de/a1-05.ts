@@ -275,7 +275,7 @@ Der Zug fährt hier ohne Halt durch.`,
               id: "s5",
               genre: "Aushang im Parkhaus",
               genreTr: "Otoparktaki duyuru",
-              body: `Bezahlen Sie vor der Ausfahrt am Automat.
+              body: `Bezahlen Sie vor der Ausfahrt am Automaten.
 
 Die Karte brauchen Sie an der Schranke.
 
@@ -331,7 +331,7 @@ Nach dem Bezahlen haben Sie 15 Minuten Zeit.`,
               text: "Sie bezahlen erst an der Schranke.",
               answer: false,
               explain:
-                "Duyuru \"Bezahlen Sie vor der Ausfahrt am Automat\" diyor. Bariyerde yalnız kart gerekiyor, ödeme öncesinde yapılıyor.",
+                "Duyuru \"Bezahlen Sie vor der Ausfahrt am Automaten\" diyor. Bariyerde yalnız kart gerekiyor, ödeme öncesinde yapılıyor.",
             },
           ],
         },

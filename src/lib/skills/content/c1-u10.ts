@@ -56,7 +56,7 @@ export const c1U10: SkillExercise[] = [
       "Wer „den Ton angibt“, bestimmt nicht, was gespielt wird, sondern in welcher Höhe alle einsetzen. Das Bild sagt also: Diese Person legt nicht den Inhalt fest, sondern den Rahmen. Wer dagegen „nach jemandes Pfeife tanzt“, hat weder das eine noch das andere.\n\n" +
       "„Die erste Geige spielen“ liegt dazwischen. Die erste Geige führt, aber sie dirigiert nicht — sie ist die sichtbarste Stimme, nicht die entscheidende. Wer den Unterschied kennt, kann in einem Satz sagen, wie eine Abteilung wirklich funktioniert.\n\n" +
       "Bei den Geldbildern zeigt sich eine andere Feinheit: Sie bewerten. „Das Geld auf den Kopf hauen“ ist nie neutral; „jeden Cent umdrehen“ auch nicht, aber in die andere Richtung. Wer sachlich bleiben will, sagt „die Kosten im Griff haben“ — das einzige Bild dieser Familie, das ohne Urteil auskommt.\n\n" +
-      "Aus derselben Familie stammt der Ohrwurm — ein Bild ohne jede Wertung, das im Deutschen so fest sitzt, dass niemand mehr an Musik denkt.\n\n" +
+      "Aus der Musikfamilie stammt der Ohrwurm — ein Bild ohne jede Wertung, das im Deutschen so fest sitzt, dass niemand mehr an Musik denkt.\n\n" +
       "Die Musikfamilie kann noch mehr. „Das ist Musik in meinen Ohren“ nimmt eine Nachricht an, ohne sie zu bewerten, und „den richtigen Ton treffen“ lobt eine Form, ohne den Inhalt zu berühren — beides Sätze, die man auch einem Vorgesetzten sagen kann.\n\n" +
       "Deshalb sind Geldbilder in Protokollen heikel und Musikbilder erstaunlich brauchbar. „Wer gibt hier eigentlich den Ton an?“ ist eine Frage nach Zuständigkeit, gestellt in vier Wörtern — und dabei so höflich, dass niemand sie abwehren kann.",
     questions: [
@@ -126,7 +126,7 @@ export const c1U10: SkillExercise[] = [
       { de: "die Falle", tr: "tuzak", en: "trap" },
       { de: "solche", tr: "böyle", en: "such" },
       { de: "die Formulierung", tr: "ifade biçimi", en: "wording" },
-      { de: "verdienen", tr: "para kazanmak", en: "to earn" },
+      { de: "verdienen", tr: "hak etmek", en: "to deserve" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
       { de: "der Widerstand", tr: "direniş", en: "resistance" },
       { de: "meiste", tr: "çoğu", en: "most" },

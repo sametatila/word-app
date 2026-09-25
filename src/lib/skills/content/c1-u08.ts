@@ -92,7 +92,7 @@ export const c1U08: SkillExercise[] = [
           "Weil es sachlicher klingt",
         ],
         answer: 1,
-        explain: "„es ist bewegend, weil es wahr ist“ — iddia yerine kanıt.",
+        explain: "„er ist bewegend, weil er wahr ist“ — iddia yerine kanıt.",
       },
       {
         kind: "short_answer",
@@ -156,7 +156,7 @@ export const c1U08: SkillExercise[] = [
       "DAS ZUGESTÄNDNIS ALS WAFFE\n\n" +
       "In einer Debatte gilt Nachgeben als Schwäche. In einer guten Debatte ist es das Gegenteil.\n\n" +
       "Wer den stärksten Punkt der Gegenseite einräumt, bevor er widerlegt, nimmt ihr das Wichtigste: die Möglichkeit, ihn später als übersehen darzustellen. „Zugegeben, die Wartezeiten sind gestiegen. Dennoch …“ — dieser Satz kostet zwei Sekunden und spart zehn Minuten.\n\n" +
-      "Wichtiger noch: Er verändert, worüber gestritten wird. Solange beide Seiten dieselbe Tatsache bestreiten, gibt es keine Streitfrage, sondern zwei Behauptungen. Erst wenn die Tatsache steht, wird sichtbar, was wirklich strittig ist — meist die Deutung, nicht die Zahl.\n\n" +
+      "Wichtiger noch: Er verändert, worüber gestritten wird. Solange beide Seiten über dieselbe Tatsache streiten, gibt es keine Streitfrage, sondern zwei Behauptungen. Erst wenn die Tatsache steht, wird sichtbar, was wirklich strittig ist — meist die Deutung, nicht die Zahl.\n\n" +
       "Ein Argument ist stichhaltig, wenn es sich auf etwas stützt, das der andere prüfen kann. Wer sich stattdessen auf eine Autorität beruft — „Alle Fachleute sagen …“ —, verlagert die Prüfung dorthin, wo sie niemand vornimmt.\n\n" +
       "Unterm Strich unterscheidet sich eine Debatte von einem Streit an einer Stelle: Im Streit will man recht behalten, in der Debatte will man wissen, wer recht hat. Der erste Satz verrät meist, welches von beidem läuft.\n\n" +
       "Praktisch gibt es dafür eine Probe, die im Gespräch selbst funktioniert: Man fasst die Gegenposition zusammen, bis das Gegenüber zustimmt, dass sie richtig wiedergegeben ist. Erst danach widerspricht man. Der Umweg kostet zwei Sätze und nimmt der Debatte den größten Teil ihrer Hitze.\n\n" +

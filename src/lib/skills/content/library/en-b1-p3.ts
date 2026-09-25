@@ -28,7 +28,7 @@ export const enB1P3: SkillExercise[] = [
       { de: "sort", tr: "ayırmak" },
       { de: "load", tr: "yüklemek" },
       { de: "return", tr: "geri vermek" },
-      { de: "appear", tr: "bizzat gitmek" },
+      { de: "appear", tr: "ortaya çıkmak" },
       { de: "contain", tr: "içermek" },
       { de: "rubber", tr: "kauçuk" },
     ],

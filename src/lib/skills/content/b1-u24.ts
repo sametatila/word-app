@@ -38,7 +38,7 @@ export const b1U24: SkillExercise[] = [
       { de: "versäumen", tr: "kaçırmak", en: "to miss" },
       { de: "die Chance", tr: "fırsat", en: "chance" },
       { de: "ursprünglich", tr: "aslında / başlangıçta", en: "originally" },
-      { de: "der Zeitpunkt", tr: "zaman noktası", en: "point in time" },
+      { de: "der Zeitpunkt", tr: "zamanlama, an", en: "point in time" },
       { de: "das Gewissen", tr: "vicdan", en: "conscience" },
     ],
     text:

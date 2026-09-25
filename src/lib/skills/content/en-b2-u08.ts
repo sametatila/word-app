@@ -76,7 +76,7 @@ export const enB2U08: SkillExercise[] = [
       "Three verbs can do it and no others: „had“, „were“ and „should“. Had the variable been fixed, the result would be clear now. Were the premise wrong, the inference would fail. Should the parameter change, we will run it again.\n" +
       "That last one is worth a second look, because „should“ here does not mean obligation at all. It means „if it happens to“, and it is the politest way English has of writing a condition into a contract.\n" +
       "The register is formal and that is the whole of its use. A report uses it once, usually in the paragraph where the correlation is discussed, and the effect is that the sentence sounds considered rather than argued.\n" +
-      "There is one thing it cannot do. There is no negative short form: „hadn't the factor been known“ is not written. The negative goes back to the full „if“ version, and a writer who has used the inverted shape three times will suddenly need the plain one and should not fight it.",
+      "There is one thing it cannot do. There is no negative short form: „hadn't the factor been known“ is not written. The negative keeps „not“ after the subject — „had the factor not been known“ — or goes back to the full „if“ version, and a writer who finds the inverted negative too formal should use the plain one and not fight it., and a writer who has used the inverted shape three times will suddenly need the plain one and should not fight it.",
     questions: [
       {
         text: "What is the inversion marking here?",

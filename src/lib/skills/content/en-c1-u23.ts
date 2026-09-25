@@ -109,7 +109,7 @@ export const enC1U23: SkillExercise[] = [
         text: "The rule is: no article until something narrows the noun.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„the rule is not that abstract nouns take no article.“",
+        explain: "„So the rule is not that abstract nouns take no article. It is: no article until something narrows it.“",
       },
       {
         kind: "gapfill",
@@ -159,7 +159,7 @@ export const enC1U23: SkillExercise[] = [
       { de: "discovers", tr: "keşfediyor" },
       { de: "builder", tr: "yapan" },
       { de: "negotiation", tr: "pazarlık" },
-      { de: "anywhere", tr: "başka yerde" },
+      { de: "anywhere", tr: "hiçbir yerde" },
       { de: "smooth", tr: "pürüzsüz" },
       { de: "a tender", tr: "ihale" },
       { de: "a form", tr: "form" },

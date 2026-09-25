@@ -138,7 +138,7 @@ export const enB1U14: SkillExercise[] = [
     text:
       "I had learned it wrong at the start, and that is the most expensive kind of mistake.\n" +
       "The rule I had in my head was simple and it was not the rule. Nobody corrected it for eleven months, because the sentences I built with it were understandable. A wrong sentence that works is a wrong sentence that stays.\n" +
-      "Then the correction helped me. It came in one line from a tutor who did not make a speech about it: „this is common, and here is the pattern.“ Six words of explanation and one example.\n" +
+      "Then the correction helped me. It came in one line from a tutor who did not make a speech about it: „this is common, and here is the pattern.“ Eight words of explanation and one example.\n" +
       "By the time I noticed, I had repeated it often. That is the part nobody warns you about. The correction is easy; the eleven months of practice underneath it are not.\n" +
       "It took another month to change. Not because the new rule was hard, but because the old one came out first, every time, and I had to catch it after it was already in the air.\n" +
       "I was not careless. I was consistent, which is worse, because consistency makes a mistake look like a decision.\n" +
@@ -154,7 +154,7 @@ export const enB1U14: SkillExercise[] = [
         text: "What did the tutor say?",
         options: ["this is common, and here is the pattern", "you are careless", "start again"],
         answer: 0,
-        explain: "„„this is common, and here is the pattern.“ Six words of explanation and one example.“",
+        explain: "„„this is common, and here is the pattern.“ Eight words of explanation and one example.“",
       },
       {
         kind: "truefalse",

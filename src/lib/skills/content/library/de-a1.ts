@@ -65,7 +65,7 @@ export const deA1: SkillExercise[] = [
         text: "Luna hat Angst vor ___.",
         options: [],
         answer: 0,
-        accept: ["Hunden", "Hunde"],
+        accept: ["Hunden"],
         explain: "„Sie hat Angst vor Hunden.“ — köpeklerden korkuyor. „vor“ edatından sonra çoğul -n alır: Hunden.",
       },
       {

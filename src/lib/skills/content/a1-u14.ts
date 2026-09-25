@@ -26,7 +26,7 @@ export const a1U14: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     unit: 14,
-    title: "Am Fahrkartenautomat",
+    title: "Am Fahrkartenautomaten",
     genre: "info",
     intro: "Bilet otomatındaki bilgi ekranını okuyacaksın.",
     gloss: [

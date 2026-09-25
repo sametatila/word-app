@@ -42,7 +42,7 @@ export const enA1U23: SkillExercise[] = [
     minutes: 4,
     text:
       "Do you want to be healthy? It is simple.\n\n" +
-      "You should eat fruit every day: an apple, a banana, a carrot. A salad with chicken is good for dinner too.\n\n" +
+      "You should eat fruit every day: an apple, a banana, an orange. A salad with chicken is good for dinner too.\n\n" +
       "You shouldn't smoke. And you shouldn't eat a big dinner at ten in the evening.\n\n" +
       "Should I do exercise? Yes! Twenty minutes a day is good. You can walk, run or swim — all three are exercise.\n\n" +
       "Is weight a problem? Then you should drink more water and eat less sugar. But be careful: a fast change is not healthy. Slow is better.",
@@ -51,7 +51,7 @@ export const enA1U23: SkillExercise[] = [
         text: "What should you eat every day?",
         options: ["fruit", "chicken", "sugar"],
         answer: 0,
-        explain: "„You should eat fruit every day: an apple, a banana, a carrot.“",
+        explain: "„You should eat fruit every day: an apple, a banana, an orange.“",
       },
       {
         text: "How much exercise is good?",
@@ -104,7 +104,7 @@ export const enA1U23: SkillExercise[] = [
     minutes: 4,
     text:
       "Dentist: Good morning. Please sit here. What is the problem?\n" +
-      "Kaan: I have a toothache. My tooth hurts since two days.\n" +
+      "Kaan: I have a toothache. My tooth has hurt for two days.\n" +
       "Dentist: Which tooth? This one?\n" +
       "Kaan: Yes! That one.\n" +
       "Dentist: Does it hurt with cold water?\n" +
@@ -112,7 +112,7 @@ export const enA1U23: SkillExercise[] = [
       "Dentist: I see. The tooth is not clean here. Do you eat a lot of sugar?\n" +
       "Kaan: Maybe. I eat ice cream every evening.\n" +
       "Dentist: Then you should eat less ice cream. And you should come every year.\n" +
-      "Kaan: I know. I am here after four years.\n" +
+      "Kaan: I know. This is my first visit in four years.\n" +
       "Dentist: Four years! Today I clean the tooth. Come again in one week.\n" +
       "Kaan: Does it hurt today?\n" +
       "Dentist: A little. But after that you feel better.",
@@ -121,7 +121,7 @@ export const enA1U23: SkillExercise[] = [
         text: "What is the problem?",
         options: ["a toothache", "a headache", "cold water"],
         answer: 0,
-        explain: "„I have a toothache. My tooth hurts since two days.“ — aynı şey iki kalıpla.",
+        explain: "„I have a toothache. My tooth has hurt for two days.“ — aynı şey iki kalıpla.",
       },
       {
         text: "What does Kaan eat every evening?",
@@ -134,15 +134,15 @@ export const enA1U23: SkillExercise[] = [
         text: "Kaan comes to the dentist every year.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„I know. I am here after four years.“ — her yıl gelmek öğüdün kendisi.",
+        explain: "„I know. This is my first visit in four years.“ — her yıl gelmek öğüdün kendisi.",
       },
       {
         kind: "gapfill",
-        text: "Kaan is here after ___ years.",
+        text: "This is Kaan's first visit in ___ years.",
         options: [],
         answer: 0,
         accept: ["four", "4"],
-        explain: "„I am here after four years.“",
+        explain: "„This is my first visit in four years.“",
       },
       {
         kind: "order",

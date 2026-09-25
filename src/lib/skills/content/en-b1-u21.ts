@@ -126,7 +126,7 @@ export const enB1U21: SkillExercise[] = [
     gloss: [
       { de: "the bin", tr: "çöp kutusu" },
       { de: "lorry", tr: "kamyon" },
-      { de: "contaminated", tr: "bozulmuş" },
+      { de: "contaminated", tr: "kirlenmiş" },
       { de: "whole", tr: "bütün" },
       { de: "modal", tr: "kip" },
       { de: "passive", tr: "edilgen" },

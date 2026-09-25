@@ -73,7 +73,7 @@ export const enC1U06: SkillExercise[] = [
       "English lets an infinitive be the subject of a sentence without any support. „To enact a rule“ stands at the front, carries the weight of a noun, and nothing has to be put in front of it to hold it up. That is not true of every language, and it is the reason this shape feels natural here and heavy in translation.\n" +
       "The affirmative version asserts an identity. „To resign oneself is to forfeit the argument“ says the two are one thing, and a reader who accepts the first half has accepted the second before noticing.\n" +
       "The negative version is the more useful of the two, and it is the characteristic sentence of a legal or an academic paragraph. It denies an inference without denying a fact. Everything before it can stand; only the step the reader was about to take is refused. To record a revocation is not to accept it. To report a claim is not to falsify it.\n" +
-      "What a term of office grants, discretion can take. A different shape on the same page: the object has been fronted, and by now the fourth word tells you which construction you are in.\n" +
+      "What a term of office grants, discretion can take. A different shape on the same page: the object has been fronted, and by now the first words tell you which construction you are in.\n" +
       "They outvote a group they cannot swear in. And here the relative pronoun has gone, which a choosing clause allows, and the phrasal verb has been left with its particle stranded at the end, which English does without comment and many languages cannot do at all.\n" +
       "Three shapes and one habit underneath them. Each of them puts something heavy at the front of the sentence and trusts the reader to carry it until the verb arrives. That trust is the register. A paragraph written this way is telling the reader that it expects to be read slowly, and a reader who is not going to read it slowly should be given a different paragraph.",
     questions: [
@@ -152,7 +152,7 @@ export const enC1U06: SkillExercise[] = [
       { de: "a procedure", tr: "usul" },
       { de: "an item", tr: "kalem" },
       { de: "a corridor", tr: "koridor" },
-      { de: "in his favour", tr: "lehine" },
+      { de: "in his favor", tr: "lehine" },
       { de: "survive", tr: "sağ kalmak" },
       { de: "the outcome", tr: "sonuç" },
       { de: "the reasoning", tr: "gerekçe" },
@@ -167,7 +167,7 @@ export const enC1U06: SkillExercise[] = [
       "A misdemeanor in one register is an administrative offense in another. The same act, the same file, two words, and the second one has taken the person out of it.\n" +
       "That is the whole of this lesson and it is worth being slow about. „Misdemeanor“ has somebody in it: a person did a thing that has a name in the code. „Administrative offense“ has a procedure in it, and the person has become an item in one.\n" +
       "Written as an administrative act, the same step reads colder. Note the verb again: „reads“, middle voice, no reader named, and this unit has now used it twice because it is the only way to talk about how a text behaves.\n" +
-      "The acquittal becomes a sentence in the spoken register. That one goes the other way. A word that is precise in a court becomes a word with a verdict attached in a corridor, and the man who was acquitted spends ten years explaining a term that had been in his favour.\n" +
+      "The acquittal becomes a sentence in the spoken register. That one goes the other way. A word that is precise in a court becomes a word with a verdict attached in a corridor, and the man who was acquitted spends ten years explaining a term that had been in his favor.\n" +
       "So register here is not politeness and it is not style. It is which facts survive the move from one document to another, and the answer is never all of them.\n" +
       "What survives a move into the administrative register is the procedure. What survives a move into the spoken register is the outcome. Neither keeps the reasoning, and the reasoning was the part that took the court four days.\n" +
       "The practical consequence for a writer is narrow and hard. When a fact has to cross between registers, it has to be rewritten in each one rather than translated, and a sentence that has been carried across unchanged is almost always saying something it did not say at home.",
@@ -210,7 +210,7 @@ export const enC1U06: SkillExercise[] = [
           "The acquittal becomes a sentence in the spoken register.",
           "A fact has to be rewritten in each register.",
         ],
-        explain: "İki sözcük, idari kayıt, konuşma dili; en sonda kural.",
+        explain: "İki sözcük, idari dil, konuşma dili; en sonda kural.",
       },
       {
         kind: "short_answer",

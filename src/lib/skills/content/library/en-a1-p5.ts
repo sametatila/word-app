@@ -38,7 +38,7 @@ export const enA1P5: SkillExercise[] = [
       "I work from Monday to Friday, from nine to five. I need somebody for one walk every day, " +
       "at about one o'clock. The walk is thirty or forty minutes in the park.\n\n" +
       "I pay ten euros for one walk.\n\n" +
-      "You can start in March. You do not need a car; I live in Lime Street eight, near the bus stop.\n\n" +
+      "You can start in March. You do not need a car; I live at 8 Lime Street, near the bus stop.\n\n" +
       "Please call me: 0176 22 88 41. Ask for Marta.",
     questions: [
       {
@@ -80,7 +80,7 @@ export const enA1P5: SkillExercise[] = [
         text: "What do you not need for this job?",
         options: ["a car", "time in the afternoon", "a phone"],
         answer: 0,
-        explain: "„You do not need a car; I live in Lime Street eight, near the bus stop.“",
+        explain: "„You do not need a car; I live at 8 Lime Street, near the bus stop.“",
       },
     ],
   },

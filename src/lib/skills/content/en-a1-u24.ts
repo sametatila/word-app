@@ -44,8 +44,8 @@ export const enA1U24: SkillExercise[] = [
     text:
       "Dear Anna,\n\n" +
       "Thank you very much for your message. I was at home yesterday and I read it in the evening.\n\n" +
-      "I have a question: which website do you use for the course? I try two, but I don't find the class.\n\n" +
-      "My password doesn't work too. Can you send me a new one? Or can we speak on the phone?\n\n" +
+      "I have a question: which website do you use for the course? I tried two, but I can't find the class.\n\n" +
+      "My password doesn't work either. Can you send me a new one? Or can we speak on the phone?\n\n" +
       "Last week I was very tired. I was sick and the internet was not important.\n\n" +
       "Thank you and see you soon,\nDeniz",
     questions: [
@@ -66,7 +66,7 @@ export const enA1U24: SkillExercise[] = [
         text: "Deniz's password does not work.",
         options: ["True", "False"],
         answer: 0,
-        explain: "„My password doesn't work too.“ — yeni bir tane istiyor.",
+        explain: "„My password doesn't work either.“ — yeni bir tane istiyor.",
       },
       {
         kind: "gapfill",
@@ -114,7 +114,7 @@ export const enA1U24: SkillExercise[] = [
       "Ela: Can I have two stamps, please? For two letters tomorrow.\n" +
       "Clerk: Here you are. And here is a pencil — you have to write the address.\n" +
       "Ela: The address of the parcel is on the paper.\n" +
-      "Clerk: Good. Twelve euros together, please.\n" +
+      "Clerk: Good. Thirteen euros together, please.\n" +
       "Ela: Here is my card. Thank you!",
     questions: [
       {
@@ -153,7 +153,7 @@ export const enA1U24: SkillExercise[] = [
           "I'd like to send this letter to Ireland.",
           "How much is a stamp for Germany?",
           "I have a parcel too.",
-          "Twelve euros together, please.",
+          "Thirteen euros together, please.",
         ],
         explain: "Önce mektup, sonra pul, sonra paket, en son toplam.",
       },
@@ -162,8 +162,8 @@ export const enA1U24: SkillExercise[] = [
         text: "How much is everything together?",
         options: [],
         answer: 0,
-        accept: ["twelve euros", "12 euros", "twelve"],
-        explain: "„Good. Twelve euros together, please.“ — iki artı dokuz artı iki pul.",
+        accept: ["thirteen euros", "13 euros", "thirteen"],
+        explain: "„Good. Thirteen euros together, please.“ — iki artı dokuz artı iki pul.",
       },
     ],
   },

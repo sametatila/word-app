@@ -40,7 +40,7 @@ export const enB1U16: SkillExercise[] = [
     unit: 16,
     title: "Reacting to the news",
     genre: "opinion",
-    intro: "Bir başlık ve iki gün. Neden bu kadar yayıldı?",
+    intro: "Bir başlık ve bir sabah. Neden bu kadar yayıldı?",
     gloss: [
       { de: "shocking", tr: "şaşırtıcı" },
       { de: "the wording", tr: "sözcük seçimi" },

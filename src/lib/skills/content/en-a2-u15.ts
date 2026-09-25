@@ -119,8 +119,8 @@ export const enA2U15: SkillExercise[] = [
       "Can: Yes, here. It's still under warranty.\n" +
       "Shop: Two years, yes. But the warranty is not valid for every problem.\n" +
       "Can: What do you mean?\n" +
-      "Shop: If it fell down, it is not the warranty, it is you. If the screen went dark alone, it is us.\n" +
-      "Can: It went dark alone. On Tuesday morning, on the table.\n" +
+      "Shop: If it fell down, it is not the warranty, it is you. If the screen just went dark, it is us.\n" +
+      "Can: It just went dark. On Tuesday morning, on the table.\n" +
       "Shop: Then the receipt is your proof and we replace it free.\n" +
       "Can: How long will it take?\n" +
       "Shop: Ten days. The technical service is not here — it is two hours away.\n" +

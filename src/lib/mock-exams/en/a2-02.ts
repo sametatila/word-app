@@ -43,7 +43,7 @@ export const EN_A2_02: MockPaper = {
               genre: "Message",
               genreTr: "İleti",
               title: "From Julia",
-              body: `Hi, our flight is fine but the airport bus does not run tonight. We will take a taxi and pay it ourselves. Please do not wait outside in the cold.`,
+              body: `Hi, our flight is fine but the airport bus does not run tonight. We will take a taxi and pay for it ourselves. Please do not wait outside in the cold.`,
             },
             {
               kind: "text",
@@ -219,7 +219,7 @@ export const EN_A2_02: MockPaper = {
               title: "One suitcase for three weeks",
               body: `Last spring I travelled for three weeks with one small suitcase. My friends said it was impossible. They were wrong, and here is what I learned.
 
-First, I took four shirts and two trousers. That sounds too little, but every hostel had a washing machine. I washed my clothes on Sunday evening and everything was dry on Monday morning.
+First, I took four shirts and two pairs of trousers. That sounds too little, but every hostel had a washing machine. I washed my clothes on Sunday evening and everything was dry on Monday morning.
 
 Second, I left my big camera at home. My phone took better pictures than my old camera, and it was much lighter in my bag.
 
@@ -227,9 +227,9 @@ The only mistake was shoes. I took three pairs, and I wore one pair for nineteen
 
 Now I have a rule for every journey. I put everything on the bed, and then I take half of it away again. It is hard the first time, but after that it becomes normal.`,
               gloss: [
-                { de: "a suitcase", tr: "bavul", en: "suitcase" },
-                { de: "a hostel", tr: "hostel", en: "hostel" },
-                { de: "a pair", tr: "çift", en: "pair" },
+                { de: "a suitcase", tr: "bavul", en: "der Koffer" },
+                { de: "a hostel", tr: "hostel", en: "das Hostel" },
+                { de: "a pair", tr: "çift", en: "das Paar" },
               ],
             },
           ],
@@ -317,7 +317,7 @@ And finally: {{19}} you have a long wait, take a book. Your phone battery will n
               id: "en-a2-02-l4-16",
               no: 16,
               text: "Gap 16",
-              options: ["can", "should", "must"],
+              options: ["does", "should", "must"],
               answer: 2,
               explain:
                 "Cümle bir kuralı bildiriyor ve olumsuzu zorunluluğun yasaklanması: bir litreyi geçemez. `must not` bu kesin yasağı verir. `can not` yalnız imkânsızlığı, `should not` ise tavsiyeyi bildirir; havaalanı kuralı tavsiye değildir.",

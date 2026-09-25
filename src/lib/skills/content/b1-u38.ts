@@ -43,7 +43,7 @@ export const b1U38: SkillExercise[] = [
       { de: "der Übersetzer", tr: "çevirmen", en: "translator" },
       { de: "der Sozialarbeiter", tr: "sosyal hizmet uzmanı", en: "social worker" },
       { de: "der Metzger", tr: "kasap", en: "butcher" },
-      { de: "das Fach", tr: "ders", en: "subject" },
+      { de: "das Fach", tr: "alan / branş", en: "field" },
       { de: "verdienen", tr: "para kazanmak", en: "to earn" },
       { de: "offen", tr: "açık", en: "open" },
       { de: "das Studium", tr: "üniversite eğitimi", en: "studies" },
@@ -51,17 +51,16 @@ export const b1U38: SkillExercise[] = [
     text:
       "Frau Berger ist Architektin. Sie hat studiert, sechs Jahre lang, und " +
       "arbeitet heute in einem kleinen Büro mit vier Personen.\n\n" +
-      "Herr Aydın ist Übersetzer. Er hat kein Diplom in diesem Fach, " +
-      "sondern zwei Sprachen von zu Hause und ein Zertifikat aus einer " +
-      "Fortbildung. Seine Frau ist Ingenieurin und verdient mehr, das sagt " +
-      "er ganz offen.\n\n" +
-      "Frau Klein ist Metzgerin in dritter Generation — ihr Vater war auch \n" +
-      "Metzger. Sie hat eine Lehre " +
-      "gemacht, drei Jahre, und danach den Betrieb übernommen. Ein Studium " +
-      "hätte ihr nichts genützt, sagt sie.\n\n" +
+      "Herr Aydın ist Übersetzer. Er hat kein Diplom in diesem Fach, sondern " +
+      "zwei Sprachen von zu Hause und ein Zertifikat aus einer Fortbildung. " +
+      "Seine Frau ist Ingenieurin und verdient mehr, das sagt er ganz " +
+      "offen.\n\n" +
+      "Frau Klein ist Metzgerin in dritter Generation — ihr Vater war auch " +
+      "Metzger. Sie hat eine Lehre gemacht, drei Jahre, und danach den Betrieb " +
+      "übernommen. Ein Studium hätte ihr nichts genützt, sagt sie.\n\n" +
       "Und Herr Vogel ist Sozialarbeiter. Er war vorher Musiker und hat mit " +
-      "vierzig noch einmal angefangen. Er sagt, dass beide Berufe unterschiedlich sind — aber dass es in " +
-      "beiden darum geht, zuzuhören.",
+      "vierzig noch einmal angefangen. Er sagt, dass beide Berufe " +
+      "unterschiedlich sind — aber dass es in beiden darum geht, zuzuhören.",
     questions: [
       {
         text: "Wie lange hat Frau Berger studiert?",
