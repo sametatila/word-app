@@ -237,9 +237,9 @@ export const enC1P19: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Sekiz günlük süreç çoğumuzun beklediğinden daha zordu.",
-        answer: "The eight-day process was harder than most of us expected.",
-        alternatives: ["The eight-day process was more difficult than most of us expected."],
+        tr: "Geriye bakınca sekiz günlük süreç çoğumuzun beklediğinden daha zordu.",
+        answer: "Looking back, the eight-day process was harder than most of us expected.",
+        alternatives: ["The eight-day process was harder than most of us expected, looking back."],
         hint: "Sayı + isim ismin önüne geçince isim tekil kalır ve tireyle bağlanır: „eight-day“.",
       },
       {

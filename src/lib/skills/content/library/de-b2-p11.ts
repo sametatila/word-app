@@ -225,7 +225,7 @@ export const deB2P11: SkillExercise[] = [
         kind: "build",
         tr: "Bize otelin eski şehirde olduğu söz verilmişti.",
         answer: "Uns war zugesagt worden, dass das Hotel in der Altstadt liegt.",
-        alternatives: ["Es war uns zugesagt worden, dass das Hotel in der Altstadt liegt."],
+        alternatives: ["Dass das Hotel in der Altstadt liegt, war uns zugesagt worden."],
         hint: "Başka bir geçmiş olaydan önce: Plusquamperfekt edilgen „war … zugesagt worden“.",
       },
       {

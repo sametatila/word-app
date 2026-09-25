@@ -180,7 +180,7 @@ export const deA1P16: SkillExercise[] = [
         kind: "build",
         tr: "Bir saat on beş avro.",
         answer: "Eine Stunde kostet fünfzehn Euro.",
-        alternatives: ["Eine Stunde kostet 15 Euro."],
+        alternatives: ["Fünfzehn Euro kostet eine Stunde."],
         hint: "Fiyat „kosten“ fiiliyle söylenir; özne „eine Stunde“, fiil ikinci sırada.",
       },
       {

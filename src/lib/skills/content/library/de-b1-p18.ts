@@ -205,7 +205,7 @@ export const deB1P18: SkillExercise[] = [
         kind: "build",
         tr: "Umarım hâlâ her gün Almanca konuşuyorsundur.",
         answer: "Ich hoffe, dass du immer noch jeden Tag Deutsch sprichst.",
-        alternatives: ["Ich hoffe, du sprichst immer noch jeden Tag Deutsch."],
+        alternatives: ["Ich hoffe, dass du noch immer jeden Tag Deutsch sprichst."],
         hint: "„dass“ yan cümlesinde fiil sona gider; umut bildirirken Präsens de geleceği anlatır.",
       },
       {

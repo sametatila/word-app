@@ -223,16 +223,16 @@ export const enB2P17: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Ne kadar az toplantı yaparsak o kadar çok iş bitiriyoruz.",
-        answer: "The fewer meetings we have, the more work we finish.",
-        alternatives: ["The fewer meetings we hold, the more work we finish."],
+        tr: "Ekibimizde ne kadar az toplantı yaparsak o kadar çok iş bitiriyoruz.",
+        answer: "In our team, the fewer meetings we have, the more work we finish.",
+        alternatives: ["The fewer meetings we have in our team, the more work we finish."],
         hint: "the + karşılaştırma …, the + karşılaştırma …: iki değişim birlikte yürür.",
       },
       {
         kind: "build",
-        tr: "Yeni düzen eskisi kadar pahalı değil, yakınından bile geçmiyor.",
-        answer: "The new schedule is not nearly as expensive as the old one.",
-        alternatives: ["The new schedule isn't nearly as expensive as the old one."],
+        tr: "Uygulamada yeni düzen eskisi kadar pahalı değil, yakınından bile geçmiyor.",
+        answer: "In practice the new schedule is not nearly as expensive as the old one.",
+        alternatives: ["The new schedule is not nearly as expensive as the old one in practice."],
         hint: "„not nearly as … as“ farkın büyük olduğunu vurgular.",
       },
       {

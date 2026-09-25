@@ -222,15 +222,15 @@ export const enB2P16: SkillExercise[] = [
       {
         kind: "build",
         tr: "Artık birinin bu alanın sorumluluğunu üstlenmesinin zamanı geldi.",
-        answer: "It's time somebody took responsibility for this space.",
-        alternatives: ["It is time somebody took responsibility for this space."],
+        answer: "It's time somebody finally took responsibility for this space.",
+        alternatives: ["It's finally time somebody took responsibility for this space."],
         hint: "„It's time“ ardından özne + geçmiş zaman gelir; anlam şimdidir.",
       },
       {
         kind: "build",
         tr: "Otoparkı tamamen kapatmamanızı tercih ederiz.",
         answer: "We would rather you didn't close the car park completely.",
-        alternatives: ["We'd rather you didn't close the car park completely."],
+        alternatives: ["We would rather you didn't completely close the car park."],
         hint: "Başka birinin eylemi için „would rather + özne + geçmiş zaman“.",
       },
       {

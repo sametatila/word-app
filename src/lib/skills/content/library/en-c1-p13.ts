@@ -231,16 +231,16 @@ export const enC1P13: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Değişiklik yalnızca cumartesi gece vardiyasını etkiliyor.",
-        answer: "The change affects only the Saturday night shift.",
-        alternatives: ["Only the Saturday night shift is affected by the change."],
+        tr: "Bu yıl değişiklik yalnızca cumartesi gece vardiyasını etkiliyor.",
+        answer: "This year the change affects only the Saturday night shift.",
+        alternatives: ["The change affects only the Saturday night shift this year."],
         hint: "Yazıda „only“ sınırladığı öğenin hemen önüne gelir.",
       },
       {
         kind: "build",
-        tr: "Deneyimli hemşireler bile fazladan saati uzun buluyor.",
-        answer: "Even experienced nurses find the extra hour long.",
-        alternatives: ["Even the experienced nurses find the extra hour long."],
+        tr: "Geceleri deneyimli hemşireler bile fazladan saati uzun buluyor.",
+        answer: "At night even experienced nurses find the extra hour long.",
+        alternatives: ["Even experienced nurses find the extra hour long at night."],
         hint: "„even“ beklenmeyen özneyi işaretler ve onun önüne gelir.",
       },
       {

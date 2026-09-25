@@ -200,19 +200,16 @@ export const enB1P15: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Sana tek bir tavsiye vermek istiyorum.",
-        answer: "I'd like to give you one piece of advice.",
-        alternatives: ["I want to give you one piece of advice.", "I'd like to give you a piece of advice."],
+        tr: "Bugün sana tek bir tavsiye vermek istiyorum.",
+        answer: "I'd like to give you one piece of advice today.",
+        alternatives: ["Today I'd like to give you one piece of advice."],
         hint: "give + kişi + şey: önce you, sonra advice; advice sayılamaz, „one piece of advice“ denir.",
       },
       {
         kind: "build",
         tr: "Büyükannen bu saati bana vermişti, şimdi ben onu sana veriyorum.",
         answer: "Your grandmother gave me this watch, and now I'm giving it to you.",
-        alternatives: [
-          "Your grandmother gave me this watch and now I'm giving it to you.",
-          "Your grandmother gave this watch to me, and now I'm giving it to you.",
-        ],
+        alternatives: ["Your grandmother gave me this watch and now I'm giving it to you."],
         hint: "Şey bir zamir (it) olunca kişi sona gider ve önüne „to“ gelir: giving it to you.",
       },
       {

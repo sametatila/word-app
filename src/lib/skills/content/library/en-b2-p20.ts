@@ -225,7 +225,7 @@ export const enB2P20: SkillExercise[] = [
         kind: "build",
         tr: "İndirim oldukça küçük ama bilgi son derece değerli.",
         answer: "The discount is fairly small, but the information is extremely valuable.",
-        alternatives: ["The discount is quite small, but the information is extremely valuable."],
+        alternatives: ["The information is extremely valuable, but the discount is fairly small."],
         hint: "Derecelenen sıfatlar „fairly“, „quite“ ve „extremely“ ile yumuşar ya da güçlenir.",
       },
       {

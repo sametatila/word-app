@@ -214,7 +214,7 @@ export const deB1P11: SkillExercise[] = [
         kind: "build",
         tr: "Evin hangi yıl yapıldığını öğrenmek isterim.",
         answer: "Ich würde gern erfahren, in welchem Jahr das Haus gebaut wurde.",
-        alternatives: ["Ich möchte gern erfahren, in welchem Jahr das Haus gebaut wurde."],
+        alternatives: ["Gern würde ich erfahren, in welchem Jahr das Haus gebaut wurde."],
         hint: "Dolaylı soruda çekimli fiil sona gider; edilgen geçmişte „wurde“ en sonda durur.",
       },
       {

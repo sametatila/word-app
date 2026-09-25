@@ -217,14 +217,14 @@ export const deB2P20: SkillExercise[] = [
         kind: "build",
         tr: "Birçok meslektaşım şimdiye kadar hiçbir liste görmemiş olduğunu söylüyor.",
         answer: "Mehrere Kollegen sagen, bisher keine Liste gesehen zu haben.",
-        alternatives: ["Mehrere Kolleginnen sagen, bisher keine Liste gesehen zu haben."],
+        alternatives: ["Bisher keine Liste gesehen zu haben, sagen mehrere Kollegen."],
         hint: "Geçmiş zu-mastarı: Partizip II + „zu haben“ — görmemek, söylemekten önceki bir durum.",
       },
       {
         kind: "build",
         tr: "Ortak bir görüşmeye davet edilirsek seviniriz.",
         answer: "Wir würden uns freuen, zu einem gemeinsamen Gespräch eingeladen zu werden.",
-        alternatives: ["Es würde uns freuen, zu einem gemeinsamen Gespräch eingeladen zu werden."],
+        alternatives: ["Zu einem gemeinsamen Gespräch eingeladen zu werden, würden wir uns freuen."],
         hint: "Edilgen zu-mastarı: Partizip II + „zu werden“ — davet eden değil, davet edilen taraf.",
       },
       {

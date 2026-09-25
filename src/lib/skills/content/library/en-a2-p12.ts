@@ -211,7 +211,7 @@ export const enA2P12: SkillExercise[] = [
         kind: "build",
         tr: "Cumartesi gecesi bizimle gelmek ister misin?",
         answer: "Would you like to come with us on Saturday night?",
-        alternatives: ["Do you want to come with us on Saturday night?"],
+        alternatives: ["Would you like to come on Saturday night with us?"],
         hint: "Kibar davet „Would you like to …?“ ile kurulur; gün adından önce „on“ gelir.",
       },
       {

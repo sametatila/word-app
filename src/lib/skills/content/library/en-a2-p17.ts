@@ -34,9 +34,9 @@ export const enA2P17: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Birincilik ödülünü kim kazandı?",
-        answer: "Who won the first prize?",
-        alternatives: ["Who won first prize?"],
+        tr: "Cuma günü birincilik ödülünü kim kazandı?",
+        answer: "Who won the first prize on Friday?",
+        alternatives: ["On Friday, who won the first prize?"],
         hint: "Özneyi soruyorsan „did“ gelmez ve fiil geçmiş biçimde kalır: Who won …? („Who did win“ değil).",
       },
       {

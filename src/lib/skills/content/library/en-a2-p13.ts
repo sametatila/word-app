@@ -192,9 +192,9 @@ export const enA2P13: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Çocuklar kendi kendilerine giyinebiliyor.",
-        answer: "The children can dress themselves.",
-        alternatives: ["The kids can dress themselves."],
+        tr: "Çocuklar sabahları kendi kendilerine giyinebiliyor.",
+        answer: "The children can dress themselves in the morning.",
+        alternatives: ["In the morning the children can dress themselves."],
         hint: "Kişi işi kendine yapıyorsa dönüşlü zamir gelir: they → themselves.",
       },
       {

@@ -41,7 +41,7 @@ export const enA2P15: SkillExercise[] = [
         kind: "build",
         tr: "Kafenin önünden geç ve tepeye çık.",
         answer: "Walk past the café and go up the hill.",
-        alternatives: ["Go past the café and walk up the hill.", "Go past the café and go up the hill."],
+        alternatives: ["Go past the café and walk up the hill."],
         hint: "„past“ bir şeyin önünden geçip devam etmeyi, „up“ yukarı doğru hareketi anlatır.",
       },
       {

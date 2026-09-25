@@ -224,9 +224,9 @@ export const enB2P12: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Sistem şu anda güncelleniyor, bu yüzden hatlar yoğun.",
-        answer: "The system is being updated, so the lines are busy.",
-        alternatives: ["The lines are busy because the system is being updated."],
+        tr: "Sistem şu anda güncellendiği için hatlar yoğun.",
+        answer: "The lines are busy because the system is being updated.",
+        alternatives: ["Because the system is being updated, the lines are busy."],
         hint: "Şu anda süren edilgen iş: is/are being + üçüncü biçim.",
       },
       {

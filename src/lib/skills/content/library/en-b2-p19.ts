@@ -221,16 +221,16 @@ export const enB2P19: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Bu isteği mantıksız bulmayacağınızı umuyorum.",
-        answer: "I hope you will not find this request unreasonable.",
-        alternatives: ["I hope you won't find this request unreasonable."],
+        tr: "Şimdiye kadarki kiracılığımıza bakarak bu isteği mantıksız bulmayacağınızı umuyorum.",
+        answer: "Given our record, I hope you will not find this request unreasonable.",
+        alternatives: ["I hope you will not find this request unreasonable, given our record."],
         hint: "Olumsuz ön ek: reasonable → unreasonable.",
       },
       {
         kind: "build",
         tr: "Her türlü hasarın tüm sorumluluğunu üstlenirim.",
         answer: "I would take full responsibility for any damage.",
-        alternatives: ["I'd take full responsibility for any damage."],
+        alternatives: ["For any damage I would take full responsibility."],
         hint: "Sıfattan isim: responsible → responsibility (-ity eki).",
       },
       {

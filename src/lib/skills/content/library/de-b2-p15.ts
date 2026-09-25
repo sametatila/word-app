@@ -213,7 +213,7 @@ export const deB2P15: SkillExercise[] = [
         kind: "build",
         tr: "Eski lamba yalnız hareket olunca yanarken yenisi bütün gece yanıyor.",
         answer: "Während die alte Lampe nur bei Bewegung anging, leuchtet die neue die ganze Nacht.",
-        alternatives: ["Die alte Lampe ging nur bei Bewegung an, wohingegen die neue die ganze Nacht leuchtet."],
+        alternatives: ["Die neue leuchtet die ganze Nacht, während die alte Lampe nur bei Bewegung anging."],
         hint: "Karşıtlık bildiren „während“ yan cümle kurar ve fiili sona atar; arkasındaki ana cümle fiille başlar: leuchtet die neue.",
       },
       {

@@ -252,7 +252,7 @@ export const enB1P13: SkillExercise[] = [
     course: "en",
     level: "B1",
     skill: "speaking",
-    title: "Should Museums Be Free?",
+    title: "Free Museums for Everyone?",
     genre: "monologue",
     intro: "Yaklaşık bir dakika tek başına konuşacaksın: bir kamu hizmetinin bedelini tart ve bir çözüm öner.",
     gloss: [],

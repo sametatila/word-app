@@ -211,7 +211,7 @@ export const deB1P19: SkillExercise[] = [
         kind: "build",
         tr: "Gençlerin buluşabilecekleri bir yere ihtiyaçları var.",
         answer: "Die Jugendlichen brauchen einen Ort, an dem sie sich treffen können.",
-        alternatives: ["Die Jugendlichen brauchen einen Ort, wo sie sich treffen können."],
+        alternatives: ["Einen Ort, an dem sie sich treffen können, brauchen die Jugendlichen."],
         hint: "„die Jugendlichen“ sıfattan türemiş bir isimdir ve sıfat gibi çekilir: belirli artikelli çoğulda -en.",
       },
       {

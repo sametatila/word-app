@@ -233,9 +233,9 @@ export const enB2P14: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Kaldırım o kadar dardı ki puset geçemiyordu.",
-        answer: "The pavement was so narrow that a pushchair could not get past.",
-        alternatives: ["The pavement was so narrow that a pushchair couldn't get past."],
+        tr: "Köşede kaldırım o kadar dardı ki puset geçemiyordu.",
+        answer: "At the corner the pavement was so narrow that a pushchair could not get past.",
+        alternatives: ["The pavement was so narrow at the corner that a pushchair could not get past."],
         hint: "so + sıfat + that; isim öbeğiyle „such a … that“ kullanılır.",
       },
       {

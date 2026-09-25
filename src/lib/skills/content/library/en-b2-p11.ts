@@ -226,7 +226,7 @@ export const enB2P11: SkillExercise[] = [
         kind: "build",
         tr: "Saatlerdir yürüyorduk ve kimseyi görmemiştik.",
         answer: "We had been walking for hours and had not seen anyone.",
-        alternatives: ["We had been walking for hours and hadn't seen anyone."],
+        alternatives: ["For hours we had been walking and had not seen anyone."],
         hint: "Geçmişteki bir ana kadar süren eylem: had been + -ing.",
       },
       {

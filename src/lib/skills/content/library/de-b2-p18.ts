@@ -227,7 +227,7 @@ export const deB2P18: SkillExercise[] = [
         kind: "build",
         tr: "Gittikçe daha çok güvercin geliyor, öyle ki artık kimse dışarıda oturmuyor.",
         answer: "Es kommen immer mehr Tauben, sodass niemand mehr draußen sitzt.",
-        alternatives: ["Immer mehr Tauben kommen, sodass niemand mehr draußen sitzt."],
+        alternatives: ["Es kommen immer mehr Tauben, sodass draußen niemand mehr sitzt."],
         hint: "„sodass“ sonucu tek parçalı bir bağlaçla bildirir; yan cümlede fiil sonda.",
       },
       {
