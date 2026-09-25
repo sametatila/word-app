@@ -186,6 +186,8 @@ Her yerelleştirme kendi ekran görüntülerini de ister (§4).
 
 ### 3.1 Türkçe (tr)
 
+> **2026-09-25:** geçerli ve doğrulanmış Türkçe uzun açıklama `docs/store/README.md` › "Onaylanan Türkçe uzun açıklama". Aşağıdaki metin eski kurallara göre yazılmıştı; kullanılmaz.
+
 **App Name**
 
 ```

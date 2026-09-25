@@ -95,8 +95,53 @@ der (2.3.2). Aşağıdaki "Kurallar" bölümü de geçerli.
 - App Store tanıtım videosu (App Preview) GÖNDERİLECEK ama şimdi değil (Cepte yürüyüş + Konuşma,
   gerçek cihazda; aynı çekim Play ön plan servisi beyanı videosu için de kullanılabilir, AND-3).
 
-**Açık (sonraki soru-cevap):** tam açıklama metinleri (tr/en/de), yeni kurallara göre yeniden
-doğrulanacak.
+**Onaylanan Türkçe uzun açıklama (App Store + Play ortak, 2026-09-25):** 41 iddia koda, canlı
+ayara ve içeriğe karşı doğrulandı (kanıt tablosu oturum çıktısında). Kararlar: belge her yerde
+"başarı belgesi"; seri kademesi tavansız ("sonra her 7 günlük seride yeniden" doğru); fiyat
+cümlesi yok (mağaza ve paywall gösteriyor). Karakter: 3959/4000. Paragraflar tek satır.
+
+```text
+Konuş, anla, sınava hazırlan.
+
+Lernomi ile Almancayı A1'den C1'e, Türkçe anlatımla ve konuşarak öğren. Kelime ezberinde kalmazsın: dili kullanırsın, konuşmana ve yazına geri bildirim alırsın, hazır olduğunda deneme sınavlarıyla kendini ölçersin.
+
+A1'DEN C1'E ADIM ADIM
+Almancada 8.500'den fazla kelime ve 900'den fazla alıştırma. Patika seni seviye seviye, ünite ünite ilerletir: her ünitede okuma, dinleme, konuşma, yazma, dil bilgisi ve quiz adımları var; modül ve seviye sınavlarıyla nerede olduğunu görürsün. Başlangıç seviyeni kendin seçebilir ya da kısa bir seviye testiyle bulabilirsin. Dili biraz biliyorsan Beceriler'de istediğin seviyeden alıştırma yaparsın.
+
+KONUŞARAK ÖĞREN
+Doktorda, iş görüşmesinde, yol sorarken… Gerçek hayatta karşına çıkacak durumları yapay zekâ karakteriyle konuşarak çalışırsın. Hatanı hemen düzeltir, takıldığında ne diyebileceğini önerir. Konuşma adımı Türkçe bir anlatımla başlar: kullanacağın kalıpları önce kendi dilinde dinlersin. İstersen sonunda kendini puanlarsın. Uygulama karşındakinin yapay zekâ olduğunu ekranda söyler.
+
+DÖRT BECERİLİ DENEME SINAVLARI
+Her seviyede birden çok, toplamda 50'den fazla deneme sınavı. Her birinde okuma, dinleme, yazma ve konuşma bölümleri ve bölüm başına süre var. Okuma ve dinleme otomatik puanlanır; yazma ve konuşma cevaplarını yapay zekâ puanlar ve hatalarını düzeltmeleriyle gösterir. Sonunda başarı yüzdeni ve neye çalışman gerektiğini gösteren bir liste alırsın.
+
+CEPTE YÜRÜYÜŞ
+Yürüyüş modunda ekrana bakmadan çalışırsın: Türkçe ipucunu duyar, kelimeyi sesli söylersin. Ücretsizde ekran açıkken günde 3 tur. Telefon cebindeyken, ekran kapalıyken de süren Cepte yürüyüş Premium'da.
+
+HER GÜN BİRKAÇ DAKİKA
+Günlük kelime turunda aralıklı tekrar, kelimeleri unutmadan önce yeniden karşına çıkarır. Pratikte istediğin kadar tekrar eder, her hafta öğrendiklerinden kurulan bir quiz çözersin. Serini koru, haftalık ligde yarış, arkadaşlarınla sıralamanı karşılaştır.
+
+İNGİLİZCE DE VAR
+Aynı yapıda İngilizce kursu: A1'den C1'e 7.000'den fazla kelime, 900'den fazla alıştırma ve 50'den fazla deneme sınavı.
+
+HESAPSIZ BAŞLA
+Hesap açmadan başlayabilirsin. Hesap oluşturunca ilerlemen hesabına taşınır; telefonda, tablette ve web'de aynı hesapla devam edersin. Arkadaşlar ve lig, yapay zekâyla sohbet ve Premium hesap ister; hesapsızken Konuşma adımı önceden hazırlanmış bir sohbetle sürer. Metnin yapay zekâya ancak iznini verirsen gider.
+
+ÜCRETSİZ
+Kelime çalışma, pratik, okuma, dinleme, dil bilgisi ve quiz ücretsiz ve sınırsız. Haftalık quiz, ekran açık yürüyüş ve her seviyede 1 deneme sınavı da ücretsiz. Patika'da her seviyede 2 Konuşma ve 2 Yazma adımı, Beceriler'de her seviyede 2 konuşma ve 2 yazma değerlendirmesi açık. Açık olanları bitirip 7 günlük seri yapınca her birine 2, deneme sınavına 1 yeni hak eklenir; sonra her 7 günlük seride yeniden.
+
+PREMIUM
+Ekran kapalı Cepte yürüyüş, tüm deneme sınavları, Patika ve Beceriler'de bütün konuşma ve yazma çalışmaları, seri ve bitirme beklemeden. Deneme sınavları her seviyede 3'lü paketlerle açılır: paketteki 3 sınavı bitirince sonraki paket gelir. Kötüye kullanımı önleyen günlük üst sınır: 20 yürüyüş turu, 30 yapay zekâ değerlendirmesi, 300 sohbet mesajı.
+Premium aylık ya da yıllık, otomatik yenilenen bir aboneliktir ve aynı hesapla telefonda, tablette ve web'de geçerlidir. Yeni abonelere ilk ay ücretsiz; deneme bitmeden iptal edersen ücret alınmaz. Dönem bitiminden en az 24 saat önce iptal edilmezse abonelik yenilenir; aboneliğini satın aldığın mağazanın hesap ayarlarından yönetebilir ya da iptal edebilirsin.
+
+Modül ve seviye sınavlarını geçince neler yapabildiğini gösteren, paylaşabileceğin bir başarı belgesi alırsın. Deneme sınavlarını Lernomi hazırladı; Lernomi hiçbir sınav kurumuyla bağlantılı değildir, belgeler resmî bir sertifika yerine geçmez.
+
+Reklam yok. Hesabını uygulamanın içinden silebilirsin.
+
+Kullanım Şartları: https://www.lernomi.app/terms
+Gizlilik Politikası: https://www.lernomi.app/privacy
+```
+
+**Açık (sonraki soru-cevap):** en-US ve de-DE uzun açıklamaları (tr metnin karşılığı, kendi kursları ve dilleriyle; aynı doğrulama).
 
 ## Yeniden üretmek
 

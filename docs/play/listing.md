@@ -122,6 +122,8 @@ kırılma olmasın. Sayımlara satır sonları dahil.
 
 ### 3.1 Türkçe (tr-TR) — varsayılan dil
 
+> **2026-09-25:** geçerli ve doğrulanmış Türkçe uzun açıklama `docs/store/README.md` › "Onaylanan Türkçe uzun açıklama". Aşağıdaki metin eski kurallara göre yazılmıştı; kullanılmaz.
+
 **Başlık** (en çok 30 karakter)
 
 ```
