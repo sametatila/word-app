@@ -188,6 +188,19 @@ if (existsSync(mockDir))
   for (const f of readdirSync(mockDir).filter((x) => x.endsWith(".json")).sort())
     for (const r of JSON.parse(readFileSync(mockDir + f, "utf8"))) mock[r.kind + SEP + r.tr] = r.en;
 
+/*
+  HAFTALIK QUIZ — Almanca kursun 25 haftasının Türkçe yüzü (tema, tür
+  etiketi, açıklama; `data/weekly-quiz/prose/out/`). Anahtar `tür + AYRAÇ + tr`
+  (`weekly-quiz/native` `quizKey`). Sözlükte duruyor ama `native/en`
+  paketine GİRMİYOR: `content:publish` onu kapılı `quiznative/en` paketine
+  ayırıyor, çünkü açıklamalar quizin cevap gerekçeleri.
+*/
+const quiz = {};
+const quizDir = `${DIR}../weekly-quiz/prose/out/`;
+if (existsSync(quizDir))
+  for (const f of readdirSync(quizDir).filter((x) => x.endsWith(".json")).sort())
+    for (const r of JSON.parse(readFileSync(quizDir + f, "utf8"))) quiz[r.kind + SEP + r.tr] = r.en;
+
 const swap = {};
 const swapEn = {};
 const swapFile = `${DIR}swap/en.json`;
@@ -197,7 +210,7 @@ if (existsSync(swapFile))
     for (const [from, to] of r.en) swapEn[r.conversation + SEP + from] = to;
   }
 
-const data = { lecture, lectureSplit, frames, ordinals, notes, vocab, patterns, meta, chat, cando, script, exam, prose, task, mock, swap, swapEn };
+const data = { lecture, lectureSplit, frames, ordinals, notes, vocab, patterns, meta, chat, cando, script, exam, prose, task, mock, quiz, swap, swapEn };
 
 mkdirSync(OUT, { recursive: true });
 writeFileSync(`${OUT}native-en.json`, `${JSON.stringify(data)}\n`);
@@ -207,6 +220,6 @@ console.log(
   "native-en.json yazıldı\n" +
     `  anlatım ${n(lecture)} (+${n(lectureSplit)} bölünmüş) · çerçeve ${n(frames)} · sıra ${n(ordinals)} · not ${n(notes)}\n` +
     `  sözlükçe ${n(vocab)} · kalıp ${n(patterns)} · konuşma ${n(meta)} · sohbet ${n(chat)} · can-do ${n(cando)} · senaryo ${n(script)} · sınav ${n(exam)}\n` +
-    `  beceri düz metni ${n(prose)} · görev metni ${n(task)} · deneme kâğıdı ${n(mock)}\n` +
+    `  beceri düz metni ${n(prose)} · görev metni ${n(task)} · deneme kâğıdı ${n(mock)} · haftalık quiz ${n(quiz)}\n` +
     `  takas ${n(swap)} Almanca + ${n(swapEn)} İngilizce`,
 );

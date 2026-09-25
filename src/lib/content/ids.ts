@@ -70,8 +70,12 @@ export function isContentHash(v: unknown): v is string {
  * gövde adreslerinin ve kapı denetiminin anahtarı. Adını değiştirmek bir
  * deploy penceresinde kapılı içeriği kapısız bırakabilecek bir göç ister;
  * kazancı yalnız bir iç ad.
+ *
+ * `quiznative/` haftalık quizin anadil sözlüğü: premium değil ama quizin
+ * açıklamalarını (cevabın gerekçesini) taşıyor ve quiz onları gönderimden
+ * önce hiçbir istemciye vermiyor (bkz. `content/packs` `quizNativePack`).
  */
-const GATED_PREFIXES = ["papers/"];
+const GATED_PREFIXES = ["papers/", "quiznative/"];
 
 export function isGatedPack(pack: string): boolean {
   return GATED_PREFIXES.some((prefix) => pack.startsWith(prefix));

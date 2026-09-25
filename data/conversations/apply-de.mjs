@@ -23,6 +23,7 @@
  *   task    `data/skills/task-de/out/`        anahtar `tür + AYRAÇ + tr`
  *   mock    `data/mock-exams/prose/out-de/`   anahtar `tür + AYRAÇ + tr`
  *   cando   `data/conversations/cando-de/out/`      anahtar `id` (`A1.SPK.1`)
+ *   quiz    `data/weekly-quiz/prose/out-de/`  anahtar `tür + AYRAÇ + tr` (kapılı pakete ayrılır)
  *
  * `cando` ÇÖZÜCÜDEN GEÇMİYOR ve bu yüzden kendi hattı var: konuşmanın
  * altındaki "bunu yapabileceksin" köprüsü `nativeCando` ile ayrı
@@ -99,7 +100,13 @@ for (const r of read(`${DIR}cando-de/out/`)) cando[r.id] = value(r);
 const exam = {};
 for (const r of read(`${DIR}exam-de/out/`)) exam[r.tr] = value(r);
 
-const data = { conversation, prose, task, mock, cando, exam };
+/* HAFTALIK QUIZ — İngilizce kursun haftaları (`weekly-quiz/prose/out-de/`),
+   anahtar `tür + AYRAÇ + tr`. Kardeşindeki gibi `content:publish` bunu kapılı
+   `quiznative/de` paketine ayırıyor; `native/de`ye girmiyor. */
+const quiz = {};
+for (const r of read(`${DIR}../weekly-quiz/prose/out-de/`)) quiz[r.kind + SEP + r.tr] = value(r);
+
+const data = { conversation, prose, task, mock, cando, exam, quiz };
 
 mkdirSync(OUT, { recursive: true });
 writeFileSync(`${OUT}native-de.json`, `${JSON.stringify(data)}\n`);
@@ -108,5 +115,5 @@ const n = (o) => Object.keys(o).length;
 console.log(
   "native-de.json yazıldı\n" +
     `  konuşma düzyazısı ${n(conversation)} · beceri düz metni ${n(prose)} · görev metni ${n(task)} · ` +
-    `deneme kâğıdı ${n(mock)} · can-do ${n(cando)} · modül sınavı ${n(exam)}`,
+    `deneme kâğıdı ${n(mock)} · can-do ${n(cando)} · modül sınavı ${n(exam)} · haftalık quiz ${n(quiz)}`,
 );

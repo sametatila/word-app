@@ -6,6 +6,7 @@ import { adminErrorText } from "@/lib/admin-errors";
 import type { ContentAdminData, ContentFlag } from "@/lib/admin-content";
 import { AdminPage, Badge, BTN, DataTable, Field, FIELD, FIELD_STYLE, Notice, PageHeader, Panel, Stat, Stats, TONE, when, type Tone } from "../_ui/ui";
 import { TwoStep } from "../_ui/two-step";
+import { isGatedPack } from "@/lib/content/ids";
 
 /**
  * İçerik sürümü — panelin içerik hattındaki İKİ yetkisi.
@@ -209,7 +210,13 @@ export function ContentAdmin({ data }: { data: ContentAdminData }) {
             <span key="p" className="font-mono">{p.pack}</span>,
             p.items,
             kb(p.bytes),
-            p.pack.startsWith("papers/") ? <Badge key="g" tone="warn">kapılı (premium)</Badge> : <Badge key="g">açık</Badge>,
+            /* Kapı kararı `isGatedPack`ta: burada öneki ayrıca yazmak, yeni bir
+               kapılı paketi panelde "açık" gösterirdi. */
+            isGatedPack(p.pack) ? (
+              <Badge key="g" tone="warn">{p.pack.startsWith("papers/") ? "kapılı (premium)" : "kapılı (yalnız sunucu)"}</Badge>
+            ) : (
+              <Badge key="g">açık</Badge>
+            ),
           ])}
         />
       </Panel>

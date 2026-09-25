@@ -44,6 +44,20 @@ export function quizPack(course: PackCourse): string {
 }
 
 /**
+ * Haftalık quizin ANA DİL sözlüğü — `quiznative/en`, `quiznative/de`.
+ *
+ * `native/<dil>` paketinin İÇİNDE DEĞİL ve KAPILI (`lib/content/ids`
+ * `GATED_PREFIXES`). Sözlük quizin açıklamalarını (`why`) taşıyor ve quiz
+ * açıklamayı ancak gönderimden sonra veriyor: cevap anahtarı istemciye hiç
+ * inmiyor (bkz. `weekly-quiz/scoring`). Herkese açık `native/en` manifestinde
+ * dursaydı her açıklama — yani her maddenin "neden doğru"su — tek bir liste
+ * okumasıyla dışarıdaydı. Sözlüğü yalnız sunucu okuyor (`/api/quiz`).
+ */
+export function quizNativePack(lang: "en" | "de"): string {
+  return `quiznative/${lang}`;
+}
+
+/**
  * Kimlikten seviye — üç biçim de dolaşıyor ve hiçbiri seviyeyi sabit konumda
  * tutmuyor: "a1-u1-r1", "de-a1-lib-r1", "en-c1-u2-w1". Kapalı bir kalıp aramak
  * konuma güvenmekten sağlam.

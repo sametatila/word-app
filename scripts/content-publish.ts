@@ -18,7 +18,8 @@
  *
  * KAPILI PAKET: deneme sınavı kâğıtları da buradan yayınlanıyor ama
  * `papers/` öneki `isGatedPack` ile kapılı — manifestte görünmüyorlar,
- * herkese açık gövde ucu onları reddediyor (bkz. `lib/content/ids`).
+ * herkese açık gövde ucu onları reddediyor (bkz. `lib/content/ids`). Haftalık
+ * quizin anadil sözlüğü de (`quiznative/`) aynı kapının arkasında.
  */
 import "dotenv/config";
 import { execFileSync } from "node:child_process";
@@ -27,7 +28,7 @@ import { buildSkillDump } from "./dump-skills-mobile";
 import { buildPaperDump } from "./dump-mock-exams-mobile";
 import { buildNativeDump } from "./dump-native-mobile";
 import { ORDER_ITEM } from "../src/lib/content/ids";
-import { conversationPack, mockIndexPack, paperPack, skillPack, type PackCourse } from "../src/lib/content/packs";
+import { conversationPack, mockIndexPack, paperPack, quizNativePack, skillPack, type PackCourse } from "../src/lib/content/packs";
 import { catalogEntry } from "../src/lib/mock-exams/deliver";
 import { publish, type PackInput } from "../src/lib/content/publish";
 
@@ -128,7 +129,17 @@ function collect(): Map<string, PackInput> {
   ] as const) {
     const dict = JSON.parse(json) as Record<string, unknown>;
     const items: PackInput = new Map();
-    for (const [key, value] of Object.entries(dict)) items.set(key, value);
+    for (const [key, value] of Object.entries(dict)) {
+      /* HAFTALIK QUIZ SÖZLÜĞÜ AYRILIYOR. Açıklamaları quizin cevap
+         gerekçeleri ve `native/<dil>` herkese açık; kapılı `quiznative/<dil>`
+         paketine gidiyor, onu yalnız sunucu okuyor (bkz. `content/packs`). */
+      if (key === "quiz") {
+        if (value && typeof value === "object" && Object.keys(value).length > 0)
+          packs.set(quizNativePack(lang), new Map([["quiz", value]]));
+        continue;
+      }
+      items.set(key, value);
+    }
     if (items.size > 0) packs.set(`native/${lang}`, items);
   }
 

@@ -49,6 +49,10 @@ const check = (name: string, ok: boolean, detail = "") => {
 
 const FREE = "tests/free";
 const GATED = "papers/tests";
+/* Haftalık quizin anadil sözlüğü de kapılı: açıklamaları cevap gerekçesi
+   (bkz. `content/packs` `quizNativePack`). Önek `papers/`tan ayrı, o yüzden
+   ayrıca sınanıyor — `GATED_PREFIXES`e yazılmasa burada kırmızı yanar. */
+const QUIZ = "quiznative/tests";
 
 function pack(entries: Record<string, unknown>): PackInput {
   return new Map(Object.entries(entries));
@@ -70,6 +74,7 @@ async function restore(previousLive: number | null) {
   await db.delete(contentFlags).where(like(contentFlags.pack, "skills/%"));
   await db.delete(contentFlags).where(like(contentFlags.pack, "papers/%"));
   await db.delete(contentFlags).where(like(contentFlags.pack, "quiz/%"));
+  await db.delete(contentFlags).where(like(contentFlags.pack, "quiznative/%"));
   /* Gövdeler hash adresli ve paylaşılabilir; testinkileri ancak başka hiçbir
      sürüm kullanmıyorsa siliyoruz. */
   await db.execute(
@@ -97,11 +102,12 @@ async function main() {
       new Map([
         [FREE, pack({ a: { t: "bir" }, b: { t: "iki" }, c: { t: "üç" } })],
         [GATED, pack({ p1: { t: "kâğıt" } })],
+        [QUIZ, pack({ quiz: { k: "why" } })],
       ]),
       { by, note: "test 1" },
     );
     check("ilk yayın sürüm açıyor", first.version > 0 && !first.unchanged, JSON.stringify(first));
-    check("madde sayısı doğru", first.items === 4, `items=${first.items}`);
+    check("madde sayısı doğru", first.items === 5, `items=${first.items}`);
 
     /* 2. AYNI İÇERİK: yeni sürüm YOK. Her deploy bir sürüm açsaydı sürüm
        listesi kullanılamaz, geri alma anlamsız olurdu. */
@@ -109,6 +115,7 @@ async function main() {
       new Map([
         [FREE, pack({ a: { t: "bir" }, b: { t: "iki" }, c: { t: "üç" } })],
         [GATED, pack({ p1: { t: "kâğıt" } })],
+        [QUIZ, pack({ quiz: { k: "why" } })],
       ]),
       { by, note: "test 1 tekrar" },
     );
@@ -119,6 +126,7 @@ async function main() {
       new Map([
         [FREE, pack({ a: { t: "bir" }, b: { t: "İKİ" }, c: { t: "üç" } })],
         [GATED, pack({ p1: { t: "kâğıt" } })],
+        [QUIZ, pack({ quiz: { k: "why" } })],
       ]),
       { by, note: "test 2" },
     );
@@ -136,10 +144,11 @@ async function main() {
       new Map([
         [FREE, pack({ a: { t: "bir" }, b: { t: "İKİ" } })],
         [GATED, pack({ p1: { t: "kâğıt" } })],
+        [QUIZ, pack({ quiz: { k: "why" } })],
       ]),
       { by, note: "test 3" },
     );
-    check("madde düşürmek yeni sürüm açıyor", third.version > second.version && third.items === 3, `items=${third.items}`);
+    check("madde düşürmek yeni sürüm açıyor", third.version > second.version && third.items === 4, `items=${third.items}`);
     invalidatePointer();
     const dropped = await manifest(FREE, second.version);
     check("düşen madde deltada", dropped.x.length === 1 && dropped.x[0] === "c", JSON.stringify(dropped.x));
@@ -153,6 +162,8 @@ async function main() {
     /* 6. KAPI: kapılı paket herkese açık manifestte yok. */
     const gated = await manifest(GATED, 0);
     check("kapılı paket manifestte görünmüyor", gated.i.length === 0 && gated.f === null);
+    const quizGated = await manifest(QUIZ, 0);
+    check("quiz sözlüğü manifestte görünmüyor", quizGated.i.length === 0 && quizGated.f === null);
 
     const gatedHashes = await db
       .select({ hash: contentReleaseItems.hash, item: contentReleaseItems.item })

@@ -29,8 +29,8 @@
  * değiştirebiliyor (aşağıda).
  *
  * TÜRKÇE YAZILIR, ÇEVİRİ HATTI TAŞIR. `why` ve öğrenciye söylenen her şey
- * Türkçe yazılıyor; en/de anadilli öğrenciye `data/**\/out/` hattından
- * ulaşıyor. Ev kuralı bu (bkz. `data/content/SPEC.md`); burada üç dil elle
+ * Türkçe yazılıyor; en/de anadilli öğrenciye `data/weekly-quiz/prose/out*`
+ * hattından, sunucuda (`native.ts`, `/api/quiz`) çözülerek ulaşıyor. Ev kuralı bu (bkz. `data/content/SPEC.md`); burada üç dil elle
  * yazılsaydı çeviri kapıları bu aileyi hiç görmezdi.
  */
 
