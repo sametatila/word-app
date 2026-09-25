@@ -20,17 +20,14 @@ import { extractVocab } from "./extract.mjs";
 
 const ROOT = new URL("../../../", import.meta.url).pathname;
 const OUT = `${ROOT}data/conversations/vocab`;
-const norm = (s) => String(s).toLowerCase().replace(/^(der|die|das)\s+/, "").trim();
-
-const pool = new Map();
-for (const r of JSON.parse(readFileSync(`${ROOT}data/app/words.json`, "utf8")))
-  if (r.de && r.en) pool.set(norm(r.de), { tr: r.tr, en: r.en });
+const { poolLookup } = await import("./pool.mjs");
+const lookup = poolLookup(JSON.parse(readFileSync(`${ROOT}data/app/words.json`, "utf8")));
 
 const rows = extractVocab();
 const derived = [];
 const todo = [];
 for (const r of rows) {
-  const w = pool.get(norm(r.de));
+  const w = lookup(r.de);
   const agree = w && String(w.tr ?? "").toLowerCase().trim() === r.tr.toLowerCase().trim();
   if (agree) derived.push({ conversation: r.conversation, de: r.de, en: w.en });
   else todo.push({ ...r, poolTr: w?.tr ?? null, poolEn: w?.en ?? null });

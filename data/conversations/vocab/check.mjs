@@ -78,10 +78,8 @@ for (const key of written.keys())
 // Kapsam yalnız bütün denetimde anlamlı: tek pakete bakarken sorusu yok.
 let coverage = null;
 if (ARG === "all") {
-  const norm = (s) => String(s).toLowerCase().replace(/^(der|die|das)\s+/, "").trim();
-  const pool = new Map();
-  for (const r of JSON.parse(readFileSync(`${ROOT}data/app/words.json`, "utf8")))
-    if (r.de && r.en) pool.set(norm(r.de), { tr: r.tr, en: r.en });
+  const { poolLookup } = await import("./pool.mjs");
+  const lookup = poolLookup(JSON.parse(readFileSync(`${ROOT}data/app/words.json`, "utf8")));
 
   let rows = 0;
   let derived = 0;
@@ -89,7 +87,7 @@ if (ARG === "all") {
   let missing = 0;
   for (const r of extractVocab()) {
     rows++;
-    const w = pool.get(norm(r.de));
+    const w = lookup(r.de);
     const agree = w && String(w.tr ?? "").toLowerCase().trim() === r.tr.toLowerCase().trim();
     if (agree) derived++;
     else if (written.has(`${r.conversation} ${r.de}`)) hand++;
