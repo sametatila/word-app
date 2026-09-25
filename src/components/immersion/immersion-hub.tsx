@@ -7,7 +7,7 @@ import { useT, useLang } from "@/lib/i18n/client";
 import { localeOf } from "@/lib/i18n/dict";
 import { UnitPane, KindIconFor } from "@/components/immersion/unit-pane";
 import type { PathQuota } from "@/lib/premium/unlock-copy";
-import { CheckIcon, LockIcon } from "@/components/icons";
+import { CheckIcon, ExamIcon, LockIcon } from "@/components/icons";
 import { useCourse } from "@/components/app-shell";
 import type { CefrLevel } from "@/lib/skills/types";
 import type { ImmersionItemKind } from "@/lib/immersion/types";
@@ -199,6 +199,16 @@ export function ImmersionHub({ level, units, currentIndex, doneUnits, totalUnits
           </div>
         </section>
       ) : null}
+
+      {/*
+        SEVİYE SINAVI — Patika'nın Sınav adımı. Beş bölüm, 45 dakika: ünite ya
+        da modül ölçeğinde değil, seviyenin tamamını ölçüyor; bu yüzden en
+        sonda, modül sınavlarından sonra. 2026-09-25'e kadar Öğren'deydi.
+      */}
+      <section className="mt-6">
+        <h2 className="mb-2 ml-1 text-h3">{t("path.exam_section")}</h2>
+        <LevelExamRow level={level} />
+      </section>
     </>
   );
 
@@ -467,6 +477,19 @@ export function StepBar({ unit, next, size = "md" }: { unit: HubUnit; next?: Hub
         />
       ))}
     </div>
+  );
+}
+
+function LevelExamRow({ level }: { level: CefrLevel }) {
+  const t = useT();
+  return (
+    <Link href={`/exam/${level}`} prefetch={false} className="card pressable flex items-center gap-3 px-4 py-3">
+      <ExamIcon size={20} />
+      <span className="min-w-0 flex-1">
+        <span className="block text-strong">{t("path.level_exam", { level })}</span>
+        <span className="muted block text-caption">{t("path.level_exam_sub")}</span>
+      </span>
+    </Link>
   );
 }
 

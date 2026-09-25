@@ -238,19 +238,9 @@ export function LearnHub({ data }: { data: LearnHubData }) {
           title={t("learn.survival")}
           sub={t("learn.survival_pitch")}
         />
-        {/*
-          Seviye sınavı Öğren'de: beş bölümlük, 45 dakikalık bir ölçüm, yani
-          ünite ya da modül ölçeğinde değil. Bir süre Beceriler'in altında
-          duruyordu (bkz. app/(app)/skills/page.tsx); orası çalışma yüzeyi,
-          burası "bugün ne yapayım" yüzeyi.
-        */}
-        <Action
-          href={`/exam/${data.level}`}
-          tone="var(--color-flame-500)"
-          icon={<ExamIcon size={24} />}
-          title={t("learn.level_exam", { level: data.level })}
-          sub={t("learn.level_exam_sub")}
-        />
+        {/* Seviye sınavı 2026-09-25'te Patika'ya taşındı: Patika'nın Sınav
+            adımı (modül sınavlarıyla birlikte), bkz. immersion-hub. Öğren'de
+            yalnız deneme sınavları kalıyor (docs/premium/README.md §2). */}
       </CardGrid>
     </div>
   );

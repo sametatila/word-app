@@ -71,7 +71,6 @@ export function LearnScreen() {
   // olmayan bir şeyin kapısı olurdu. Katalog var ama liste henüz boşsa kart
   // yine çiziliyor: ekran o zaman "bu seviyede sınav yok" diyor.
   const exams = supportsMockExams(currentCourseId());
-  const level = me?.level ?? "A1";
   const dailyGoal = me?.dailyGoal ?? 0;
   const reviewsToday = me?.reviewsToday ?? 0;
   const dueCount = me?.dueCount ?? 0;
@@ -218,11 +217,8 @@ export function LearnScreen() {
             Android'de yoktu: aynı rekor tablosuna yalnız tarayıcıdan
             oynayanlar yazıyordu. */}
         <ActionRow title={t("learn.survival")} subtitle={t("learn.survival_pitch")} tint={fillOf("danger")} icon={FlameIcon} onPress={() => nav.navigate("Challenge")} />
-        {/* Seviye sınavı: beş bölüm, 45 dakika — ünite ya da modül ölçeğinde
-            değil, o yüzden Patika'da değil burada. Web'de de Öğren'de
-            (components/learn/learn-hub). Mobilde ExamScreen'e giden İLK
-            bağlantı bu: ekran aylardır kayıtlıydı ama çağıran yoktu. */}
-        <ActionRow title={t("learn.level_exam", { level })} subtitle={t("learn.level_exam_sub")} tint={fillOf("streak")} icon={ExamIcon} onPress={() => nav.navigate("Exam", { level, module: null })} />
+        {/* Seviye sınavı 2026-09-25'te Patika'ya taşındı (Patika'nın Sınav
+            adımı, bkz. PathScreen). Öğren'de yalnız deneme sınavları kalıyor. */}
       </CardGrid>
     </Screen>
   );

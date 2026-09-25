@@ -102,6 +102,21 @@ function StepBar({ unit, next, colors, thin = false }: { unit: LearningPathUnit;
   );
 }
 
+function LevelExamRow({ level, colors, onPress }: { level: string; colors: Palette; onPress: () => void }) {
+  return (
+    <PressableScale onPress={onPress}>
+      <Card padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md }}>
+        <ExamIcon color={colors.streakText} size={18} />
+        <View style={{ flex: 1 }}>
+          <Text variant="bodyStrong" numberOfLines={1}>{t("path.level_exam", { level })}</Text>
+          <Text variant="caption" color={colors.textMuted} numberOfLines={2}>{t("path.level_exam_sub")}</Text>
+        </View>
+        <ChevronRightIcon color={colors.textFaint} size={20} />
+      </Card>
+    </PressableScale>
+  );
+}
+
 function ModuleExamRow({ m, colors, onPress }: { m: { index: number; code: string; titleTr: string; titleDe: string }; colors: Palette; onPress: () => void }) {
   return (
     <PressableScale onPress={onPress} style={{ marginTop: spacing.md }}>
@@ -316,6 +331,13 @@ export function PathScreen() {
           ))}
         </View>
       ) : null}
+
+      {/* SEVİYE SINAVI — Patika'nın Sınav adımı (web immersion-hub ile aynı yer):
+          beş bölüm, 45 dakika; modül sınavlarından sonra, en sonda. */}
+      <View style={{ marginTop: spacing.xl }}>
+        <Text variant="h3" style={{ marginBottom: spacing.sm, marginLeft: spacing.xs }}>{t("path.exam_section")}</Text>
+        <LevelExamRow level={path.level} colors={colors} onPress={() => nav.navigate("Exam", { level: path.level, module: null })} />
+      </View>
     </>
   );
 
