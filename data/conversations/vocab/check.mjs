@@ -87,7 +87,7 @@ if (ARG === "all") {
   let missing = 0;
   for (const r of extractVocab()) {
     rows++;
-    const w = lookup(r.de);
+    const w = lookup(r.de, r.tr);
     const agree = w && String(w.tr ?? "").toLowerCase().trim() === r.tr.toLowerCase().trim();
     if (agree) derived++;
     else if (written.has(`${r.conversation} ${r.de}`)) hand++;

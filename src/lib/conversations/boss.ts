@@ -7,7 +7,7 @@ import { ensureProfile, makeRound, toRoundWord } from "@/lib/session";
 import { conversationsForLevel } from "./index";
 import { conversationBoard } from "./progress";
 import { MODULE_SIZE, moduleTheme } from "./modules";
-import { moduleContent } from "./module-content";
+import { moduleContent, taughtSense } from "./module-content";
 import type { Round } from "@/lib/types";
 import { nativeOf } from "@/lib/courses";
 import { hasGloss } from "@/lib/option-label";
@@ -112,7 +112,8 @@ export async function buildModuleBoss(
     bestLeft: clear?.bestLeft ?? null,
   };
 
-  const heads = await moduleVocab(course, level, moduleIndex);
+  const content = await moduleContent(course, level, moduleIndex);
+  const heads = content.words.map((w) => w.head);
   if (!heads.length) return { meta, rounds: [], pool: 0 };
 
   // Modülün kelimeleri. Eşleşmeyen madde sessizce düşüyor: konuşma içeriği ile
@@ -121,17 +122,20 @@ export async function buildModuleBoss(
      turlarının kuralının aynısı (`hasGloss`): süzülmeseydi karşılığı olmayan
      kelimenin çoktan seçmelisi boş şıkla, doğru/yanlış turu hiç kurulmadan
      gelir; çeldirici havuzunda ise boş şık görünürdü. */
-  const rows = (
-    await db
-      .select()
-      .from(words)
-      .where(
-        and(
-          practiceWordsOf(course),
-          inArray(sql`lower(${words.de})`, heads),
-        ),
-      )
-  ).filter((w) => hasGloss(w, native));
+  const rows = taughtSense(
+    (
+      await db
+        .select()
+        .from(words)
+        .where(
+          and(
+            practiceWordsOf(course),
+            inArray(sql`lower(${words.de})`, heads),
+          ),
+        )
+    ).filter((w) => hasGloss(w, native)),
+    content.words,
+  );
 
   if (rows.length < MIN_WORDS) return { meta, rounds: [], pool: rows.length };
 

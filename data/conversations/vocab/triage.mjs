@@ -27,7 +27,7 @@ const rows = extractVocab();
 const derived = [];
 const todo = [];
 for (const r of rows) {
-  const w = lookup(r.de);
+  const w = lookup(r.de, r.tr);
   const agree = w && String(w.tr ?? "").toLowerCase().trim() === r.tr.toLowerCase().trim();
   if (agree) derived.push({ conversation: r.conversation, de: r.de, en: w.en });
   else todo.push({ ...r, poolTr: w?.tr ?? null, poolEn: w?.en ?? null });

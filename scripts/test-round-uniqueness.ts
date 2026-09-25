@@ -12,6 +12,7 @@
  *   4. Eşleştirme kümesinde her kelime tek bir karşılığa eşlenebiliyor.
  *   5. Anadil ekseni: İngilizce ve Almanca anadilli öğrencide anlam şıkları
  *      KURULUYOR (tura Almanca karşılık konmuyordu, Almanca anadilde boş şık).
+ *   6. Aynı yazılışlı iki madde ("als"): modül sınavı öğretilen anlamı soruyor.
  *
  * Havuz tohumlama betiklerinin yazacağı satırlardan kuruluyor (seed.ts ve
  * seed-english.ts ile aynı dönüşüm), turlar `makeRound` ile — oturumun
@@ -22,6 +23,7 @@ import path from "node:path";
 import { makeRound, toRoundWord, buildCloze } from "../src/lib/session";
 import { glossFor, sharesMeaning, withArtikel } from "../src/lib/option-label";
 import { cleanHeadword } from "../src/lib/headword";
+import { taughtSense } from "../src/lib/conversations/module-content";
 import type { NativeLang } from "../src/lib/courses";
 import type { Round } from "../src/lib/types";
 
@@ -115,6 +117,14 @@ function run(label: string, rows: Row[], native: NativeLang, iterations: number)
     }
   }
   console.log(`${label}: ${choice} şık turu, ${empty} boş · boşluk doldurma ${cloze} (${inflected} çekimli cevap, ${typeOnly} yazarak)`);
+}
+
+/* 6. Aynı yazılışlı maddeler: modül sınavı konuşmanın öğrettiği anlamı soruyor. */
+{
+  const rows = [{ de: "als", tr: "-den daha" }, { de: "als", tr: "-dığında" }, { de: "Haus", tr: "ev" }];
+  const got = (items: { head: string; tr: string }[]) => taughtSense(rows, items.map((i) => ({ ...i, de: i.head, conversationId: "x" }))).map((r) => r.tr).join("|");
+  if (got([{ head: "als", tr: "-den daha" }, { head: "haus", tr: "ev" }]) !== "-den daha|ev") fail("taughtSense: öğretilen anlam seçilmedi");
+  if (got([{ head: "als", tr: "karşılaştırma" }]) !== "-den daha|-dığında|ev") fail("taughtSense: uymayan çeviride ikisi de kalmalı");
 }
 
 const de = germanRows();

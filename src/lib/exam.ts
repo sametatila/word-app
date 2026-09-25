@@ -9,6 +9,7 @@ import { conversationsForLevel } from "@/lib/conversations";
 import { MODULE_SIZE } from "@/lib/conversations/modules";
 import {
   moduleContent,
+  taughtSense,
   conversationModuleCount,
   selfAnswering,
   type ProduceItem as ConversationProduceItem,
@@ -242,7 +243,7 @@ export async function buildExam(userId: string, course: string, level: CefrLevel
   let candidates = pool;
   if (content) {
     const heads = new Set(content.words.map((w) => w.head));
-    const inModule = pool.filter((w) => heads.has(w.de.toLocaleLowerCase("de-DE")));
+    const inModule = taughtSense(pool.filter((w) => heads.has(w.de.toLocaleLowerCase("de-DE"))), content.words);
     if (inModule.length >= c.vocab) candidates = inModule;
   }
   const vocab: Round[] = [];

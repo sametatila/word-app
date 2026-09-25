@@ -34,6 +34,28 @@ export function headword(de: string): string {
 }
 
 /**
+ * Aynı yazılışlı maddelerden modülün ÖĞRETTİĞİ anlam.
+ *
+ * Havuz başlıkla eşleştiriliyor; "als" (-den daha / -dığında), "sein" (olmak /
+ * onun), "zu" (fazla / -e) gibi başlıkta iki madde var ve modül bunlardan
+ * yalnız birini öğretiyor. İkisi de sınava girseydi öğrenci öğretilmemiş bir
+ * anlamdan sorumlu tutulurdu. Konuşmanın Türkçesine uyan madde kalıyor; hiçbiri
+ * uymuyorsa (konuşma başka sözcükle çevirmiş) ikisi de kalıyor — tahmin yok.
+ */
+export function taughtSense<T extends { de: string; tr: string }>(rows: T[], items: WordItem[]): T[] {
+  const low = (s: string) => s.trim().toLocaleLowerCase("de-DE");
+  const trs = new Map<string, Set<string>>();
+  for (const w of items) (trs.get(w.head) ?? trs.set(w.head, new Set()).get(w.head)!).add(low(w.tr));
+  return rows.filter((r) => {
+    const same = rows.filter((x) => low(x.de) === low(r.de));
+    if (same.length < 2) return true;
+    const taught = trs.get(low(r.de));
+    const match = taught ? same.filter((x) => taught.has(low(x.tr))) : [];
+    return match.length ? match.includes(r) : true;
+  });
+}
+
+/**
  * Üretim adımının Türkçe yönergesinden sınav sorusu.
  *
  * Konuşma yönergesi sesli anlatım için yazılmış ve bir öğretmen ağzı taşıyor:
