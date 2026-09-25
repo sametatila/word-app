@@ -1,4 +1,5 @@
-import { API_BASE, fetchWithTimeout } from "../api/client";
+import { API_BASE, ApiError, fetchWithTimeout } from "../api/client";
+import { reportError } from "./errorReport";
 import { t } from "./i18n";
 
 /**
@@ -53,6 +54,24 @@ export type AuthOutcome =
   | { ok: false; code: string; message: string; status?: number };
 
 /**
+ * GERÇEK AĞ HATASI MI? "Bağlantı kurulamadı" yalnız o zaman gösteriliyor.
+ * Eskiden her istisna NETWORK sayılıyordu; uygulama içi bir hata da "internetini
+ * kontrol et" diye maskeleniyor ve sebep kaybolup gidiyordu (build 7, tablet).
+ * Ağ dışı hata CLIENT koduyla dönüyor ve hata kaydına düşüyor.
+ */
+export function isNetworkError(e: unknown): boolean {
+  if (e instanceof ApiError) return e.status === 0;
+  const msg = (e as Error | null)?.message ?? "";
+  return e instanceof TypeError && /network request failed|failed to fetch|network/i.test(msg);
+}
+
+function failOutcome(e: unknown): AuthOutcome {
+  if (isNetworkError(e)) return { ok: false, code: "NETWORK", message: t("common.connection_failed") };
+  reportError(e, "auth");
+  return { ok: false, code: "CLIENT", message: t("autherror.something_went_wrong") };
+}
+
+/**
  * `captchaToken`: Turnstile jetonu. Bot koruması açıkken kayıt, giriş ve
  * sıfırlama isteği bu başlık olmadan 400 dönüyor; kapalıyken başlık hiç
  * okunmuyor. Açık mı kapalı mı sorusunun cevabı `/api/config` (bkz.
@@ -105,8 +124,8 @@ async function parse(res: Response): Promise<AuthOutcome> {
 export async function signIn(email: string, password: string, captchaToken?: string | null): Promise<AuthOutcome> {
   try {
     return await parse(await post("sign-in/email", { email, password, rememberMe: true }, captchaToken));
-  } catch {
-    return { ok: false, code: "NETWORK", message: t("common.connection_failed") };
+  } catch (e) {
+    return failOutcome(e);
   }
 }
 
@@ -126,8 +145,8 @@ export async function signUp(name: string, email: string, password: string, capt
       if (res.status !== 404) return await parse(res);
     }
     return await parse(await post("sign-up/email", body, captchaToken));
-  } catch {
-    return { ok: false, code: "NETWORK", message: t("common.connection_failed") };
+  } catch (e) {
+    return failOutcome(e);
   }
 }
 
@@ -196,8 +215,8 @@ export async function signInSocial(provider: string, callbackURL: string): Promi
 export async function verifyOneTimeToken(token: string): Promise<AuthOutcome> {
   try {
     return await parse(await post("one-time-token/verify", { token }));
-  } catch {
-    return { ok: false, code: "NETWORK", message: t("common.connection_failed") };
+  } catch (e) {
+    return failOutcome(e);
   }
 }
 
@@ -212,8 +231,8 @@ export async function verifyOneTimeToken(token: string): Promise<AuthOutcome> {
 export async function signInGoogleNative(idToken: string): Promise<AuthOutcome> {
   try {
     return await parse(await post("sign-in/social", { provider: "google", idToken: { token: idToken } }));
-  } catch {
-    return { ok: false, code: "NETWORK", message: t("common.connection_failed") };
+  } catch (e) {
+    return failOutcome(e);
   }
 }
 
@@ -228,8 +247,8 @@ export async function signInGoogleNative(idToken: string): Promise<AuthOutcome> 
 export async function signInAppleNative(idToken: string): Promise<AuthOutcome> {
   try {
     return await parse(await post("sign-in/social", { provider: "apple", idToken: { token: idToken } }));
-  } catch {
-    return { ok: false, code: "NETWORK", message: t("common.connection_failed") };
+  } catch (e) {
+    return failOutcome(e);
   }
 }
 
@@ -300,8 +319,8 @@ export async function requestPasswordReset(email: string, captchaToken?: string 
 export async function sendVerificationEmail(email: string): Promise<AuthOutcome> {
   try {
     return await parse(await post("send-verification-email", { email, callbackURL: `${API_BASE}/learn` }));
-  } catch {
-    return { ok: false, code: "NETWORK", message: t("common.connection_failed") };
+  } catch (e) {
+    return failOutcome(e);
   }
 }
 
@@ -318,8 +337,8 @@ export async function sendVerificationEmail(email: string): Promise<AuthOutcome>
 export async function changePassword(currentPassword: string, newPassword: string): Promise<AuthOutcome> {
   try {
     return await parse(await post("change-password", { currentPassword, newPassword, revokeOtherSessions: true }));
-  } catch {
-    return { ok: false, code: "NETWORK", message: t("common.connection_failed") };
+  } catch (e) {
+    return failOutcome(e);
   }
 }
 
@@ -333,8 +352,8 @@ export async function changePassword(currentPassword: string, newPassword: strin
 export async function resetPassword(token: string, newPassword: string): Promise<AuthOutcome> {
   try {
     return await parse(await post("reset-password", { token, newPassword }));
-  } catch {
-    return { ok: false, code: "NETWORK", message: t("common.connection_failed") };
+  } catch (e) {
+    return failOutcome(e);
   }
 }
 
@@ -396,8 +415,10 @@ export async function deleteAccount(password?: string): Promise<DeleteOutcome> {
        Türkçe arayüzde İngilizce bir hata satırı görünebiliyordu. Web aynı
        yerde tek çevrilmiş cümle veriyor (`del.failed`). */
     return { ok: false, code: "OTHER", message: t("autherror.not_deleted") };
-  } catch {
-    return { ok: false, code: "NETWORK", message: t("common.connection_failed") };
+  } catch (e) {
+    if (isNetworkError(e)) return { ok: false, code: "NETWORK", message: t("common.connection_failed") };
+    reportError(e, "auth");
+    return { ok: false, code: "OTHER", message: t("autherror.not_deleted") };
   }
 }
 
@@ -411,8 +432,8 @@ export async function deleteAccount(password?: string): Promise<DeleteOutcome> {
 export async function sendTwoFactorOtp(): Promise<AuthOutcome> {
   try {
     return await parse(await post("two-factor/send-otp", {}));
-  } catch {
-    return { ok: false, code: "NETWORK", message: t("common.connection_failed") };
+  } catch (e) {
+    return failOutcome(e);
   }
 }
 
@@ -423,8 +444,8 @@ export async function sendTwoFactorOtp(): Promise<AuthOutcome> {
 export async function verifyTwoFactorOtp(code: string, trustDevice: boolean): Promise<AuthOutcome> {
   try {
     return await parse(await post("two-factor/verify-otp", { code: code.trim(), trustDevice }));
-  } catch {
-    return { ok: false, code: "NETWORK", message: t("common.connection_failed") };
+  } catch (e) {
+    return failOutcome(e);
   }
 }
 
@@ -435,8 +456,8 @@ export async function verifyTwoFactorOtp(code: string, trustDevice: boolean): Pr
 export async function enableTwoFactor(password: string): Promise<AuthOutcome> {
   try {
     return await parse(await post("two-factor/enable", { password, method: "otp" }));
-  } catch {
-    return { ok: false, code: "NETWORK", message: t("common.connection_failed") };
+  } catch (e) {
+    return failOutcome(e);
   }
 }
 
@@ -444,8 +465,8 @@ export async function enableTwoFactor(password: string): Promise<AuthOutcome> {
 export async function disableTwoFactor(password: string): Promise<AuthOutcome> {
   try {
     return await parse(await post("two-factor/disable", { password }));
-  } catch {
-    return { ok: false, code: "NETWORK", message: t("common.connection_failed") };
+  } catch (e) {
+    return failOutcome(e);
   }
 }
 
