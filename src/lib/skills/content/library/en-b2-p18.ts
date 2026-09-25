@@ -56,7 +56,7 @@ export const enB2P18: SkillExercise[] = [
       "up when the machine disappeared.\n\n" +
       "The council has asked the banks to share a small branch one day a week in the library. " +
       "Both of the large banks have said they are “considering the request”. Until they decide, " +
-      "the town's financial centre is a counter between the bread and the newspapers.",
+      "the town's financial center is a counter between the bread and the newspapers.",
     questions: [
       {
         text: "Why did the shop become the town's only place to get cash?",
@@ -341,7 +341,7 @@ export const enB2P18: SkillExercise[] = [
         heading: "Vurgu zamiri: bizzat, kendisi",
         tr: "A2'de „I made it myself“ kalıbını gördün. Vurgu zamiri ismin hemen ardına da gelir ve „başkası değil, tam o“ anlamı verir. Nesne değildir: çıkarılınca cümle yine tamdır, yalnız vurgu kaybolur.",
         examples: [
-          { de: "The manager herself apologised to us.", tr: "Yönetici bizzat kendisi bizden özür diledi.", note: "ismin hemen ardı" },
+          { de: "The manager herself apologized to us.", tr: "Yönetici bizzat kendisi bizden özür diledi.", note: "ismin hemen ardı" },
           { de: "The machine itself works; the problem is the software.", tr: "Makinenin kendisi çalışıyor; sorun yazılımda.", note: "şeyi ötekinden ayırır" },
           { de: "The customers themselves asked for the change.", tr: "Değişikliği müşterilerin kendileri istedi.", note: "başkası değil" },
         ],

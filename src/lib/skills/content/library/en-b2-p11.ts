@@ -21,7 +21,7 @@ export const enB2P11: SkillExercise[] = [
     genre: "article",
     intro: "Bir haber yazısı: kalabalıktan bunalan bir liman kasabası günübirlik ziyaretçiden ücret almaya başlıyor; altı ay sonra ne değişti?",
     gloss: [
-      { de: "harbour", tr: "liman" },
+      { de: "harbor", tr: "liman" },
       { de: "exempt", tr: "muaf" },
       { de: "to overflow", tr: "taşmak" },
       { de: "leaflet", tr: "broşür" },
@@ -47,9 +47,9 @@ export const enB2P11: SkillExercise[] = [
       "extra cleaning and a second summer bus. Local businesses had warned that the charge would " +
       "empty the high street. So far, cafés report takings that are roughly unchanged, because " +
       "the visitors who stayed away were largely those who had been bringing their own food.\n\n" +
-      "Not everyone is convinced. Ms Harlow, who runs a gift shop by the harbour, points out that " +
+      "Not everyone is convinced. Ms Harlow, who runs a gift shop by the harbor, points out that " +
       "the town spent years inviting people to come and is now, in effect, asking them to " +
-      "apologise for it. Others argue that the fee treats a symptom. The real trouble, they say, " +
+      "apologize for it. Others argue that the fee treats a symptom. The real trouble, they say, " +
       "is that everyone arrives at the same hour, and a flat charge does nothing about that.\n\n" +
       "The council accepts the point. Next year it plans to try a lower price before ten in the " +
       "morning, to see whether the crowd can be spread across the day rather than simply reduced.",
@@ -148,7 +148,7 @@ export const enB2P11: SkillExercise[] = [
         options: [
           "a photograph shared online",
           "a new car park by the lane",
-          "a programme on television",
+          "a program on television",
         ],
         answer: 0,
         explain: "Tek bir fotoğraf birkaç milyon kez paylaşılınca patika ünlendi.",

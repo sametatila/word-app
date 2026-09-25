@@ -182,7 +182,7 @@ export const enA2P15: SkillExercise[] = [
         tr: "„across“ bir yandan öbür yana geçmek (yol, köprü, meydan), „along“ bir çizgiyi izlemek (nehir, sokak, sahil), „past“ bir şeyin önünden geçip devam etmektir. Yol tariflerinin çoğu bu üçüyle kurulur.",
         examples: [
           { de: "Go across the road at the lights.", tr: "Işıklardan karşıya geç." },
-          { de: "Drive along the river for two kilometers.", tr: "Nehir boyunca iki kilometre sür." },
+          { de: "Drive along the river for two kilometers.", tr: "Nehir boyunca iki kilometer sür." },
           { de: "Walk past the church and turn left.", tr: "Kilisenin önünden geç ve sola dön." },
         ],
       },

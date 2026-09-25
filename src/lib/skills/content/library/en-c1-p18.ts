@@ -366,7 +366,7 @@ export const enC1P18: SkillExercise[] = [
         tr: "„be about to + yalın fiil“ çok yakın bir geleceği bildirir: „We are about to send the invitations.“ „be on the point of + -ing“ aynı yakınlığı daha resmî ve daha dramatik söyler. İkisinin de yanına „tomorrow“ ya da „next year“ gibi zaman sözcüğü konmaz, çünkü yakınlık zaten anlamın içindedir.",
         examples: [
           { de: "We are about to send the invitations.", tr: "Davetleri göndermek üzereyiz.", note: "çok yakın" },
-          { de: "The school was on the point of cancelling the trial.", tr: "Okul denemeyi iptal etmek üzereydi.", note: "on the point of + -ing" },
+          { de: "The school was on the point of canceling the trial.", tr: "Okul denemeyi iptal etmek üzereydi.", note: "on the point of + -ing" },
           { de: "The figures are about to be published.", tr: "Rakamlar yayımlanmak üzere.", note: "edilgen" },
         ],
       },
@@ -384,7 +384,7 @@ export const enC1P18: SkillExercise[] = [
       },
       {
         text: "The school was on the point of ___ the trial.",
-        options: ["cancel", "to cancel", "cancelling"],
+        options: ["cancel", "to cancel", "canceling"],
         answer: 2,
         explain: "„on the point of“ + -ing.",
       },

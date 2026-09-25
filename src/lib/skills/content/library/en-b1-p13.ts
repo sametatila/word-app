@@ -324,7 +324,7 @@ export const enB1P13: SkillExercise[] = [
         examples: [
           { de: "The film was boring.", tr: "Film sıkıcıydı.", note: "hissi yaratan şey" },
           { de: "It was a tiring journey.", tr: "Yorucu bir yolculuktu.", note: "ismin önünde de durur" },
-          { de: "Our new neighbour is a bit boring.", tr: "Yeni komşumuz biraz sıkıcı biri.", note: "başkalarını sıkıyor" },
+          { de: "Our new neighbor is a bit boring.", tr: "Yeni komşumuz biraz sıkıcı biri.", note: "başkalarını sıkıyor" },
         ],
       },
       {

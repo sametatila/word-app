@@ -131,7 +131,7 @@ export const enC1P14: SkillExercise[] = [
       { de: "behalf", tr: "ad" },
       { de: "arrogant", tr: "kibirli" },
       { de: "aware", tr: "farkında" },
-      { de: "defence", tr: "savunma" },
+      { de: "defense", tr: "savunma" },
       { de: "to object", tr: "itiraz etmek" },
       { de: "to employ", tr: "istihdam etmek" },
       { de: "editor", tr: "editör" },
@@ -144,7 +144,7 @@ export const enC1P14: SkillExercise[] = [
       { speaker: "Host", text: "You've presented the same late-night music show for nineteen years. What does a person do that an algorithm can't?" },
       { speaker: "Ms Lund", text: "Take a risk on the listener's behalf. An algorithm plays what you are likely to finish. I play what I think you ought to hear, which is a far more arrogant position, and I'm aware of that." },
       { speaker: "Host", text: "Arrogant is your word, not mine." },
-      { speaker: "Ms Lund", text: "It's the right one. My only defence is that I tell you why. Every record comes with a sentence about the reason it's there, which is the part people write in about." },
+      { speaker: "Ms Lund", text: "It's the right one. My only defense is that I tell you why. Every record comes with a sentence about the reason it's there, which is the part people write in about." },
       { speaker: "Host", text: "Do listeners ever object?" },
       { speaker: "Ms Lund", text: "Constantly, and I read those letters on air. A show in which nobody ever disagrees with the presenter would be a show nobody was really listening to." },
       { speaker: "Ms Lund", text: "Last winter a man wrote to say that a record I had defended for ten minutes was the worst thing he'd heard all year. I played it again the next week, with his letter." },
@@ -165,14 +165,14 @@ export const enC1P14: SkillExercise[] = [
         explain: "„An algorithm plays what you are likely to finish.“ — kendisi duyman gerektiğini düşündüğünü çalıyor.",
       },
       {
-        text: "What is her only defence of her “arrogant” position?",
+        text: "What is her only defense of her “arrogant” position?",
         options: [
           "She plays only well-known records.",
           "She explains why each record is there.",
           "She lets listeners vote on the list.",
         ],
         answer: 1,
-        explain: "„My only defence is that I tell you why.“",
+        explain: "„My only defense is that I tell you why.“",
       },
       {
         kind: "truefalse",
@@ -268,7 +268,7 @@ export const enC1P14: SkillExercise[] = [
           "dark, before you decide.\n\n" +
           "At first I disliked the opening track, which is why I nearly stopped. It seemed to be going " +
           "nowhere, and the sounds behind the piano, rain and a distant train, felt like decoration. " +
-          "Somewhere around the fourth track, however, I realised that the recordings were not decoration at " +
+          "Somewhere around the fourth track, however, I realized that the recordings were not decoration at " +
           "all. Each one is a place in which the pianist once lived, and the music changes to answer it. " +
           "Once I understood that, the album stopped being slow and started being patient, which is not the " +
           "same thing.\n\n" +

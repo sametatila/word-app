@@ -53,7 +53,7 @@ export const enC1P15: SkillExercise[] = [
       "rarely mention size at all. Two retired residents who seldom attend meals told me their flats feel " +
       "nowhere near as large as the ones they left.\n\n" +
       "The project's clearest success is one nobody planned for. Residents report knowing roughly three " +
-      "times as many neighbours by name as they did in their previous homes, and loneliness, measured by a " +
+      "times as many neighbors by name as they did in their previous homes, and loneliness, measured by a " +
       "short annual survey, is far lower than the city average. The shared laundry, which was nearly cut " +
       "from the plans to save money, turns out to be the room where most of those acquaintances begin.\n\n" +
       "The difficulties are just as real. Meetings are long, decisions are slow, and a disagreement about a " +
@@ -266,7 +266,7 @@ export const enC1P15: SkillExercise[] = [
           "You asked me whether I'd do it again, and the short answer is yes, with two conditions.\n\n" +
           "The good part first. In practice, the flats are nowhere near as small as I had expected, because " +
           "I hardly use half of mine. I cook at the shared table twice a week, I borrow tools from the " +
-          "workshop instead of owning them, and I know more of my neighbours than I did in ten years in my " +
+          "workshop instead of owning them, and I know more of my neighbors than I did in ten years in my " +
           "old building. The more you take part, the more the place gives back.\n\n" +
           "The hard part is the meetings. It is every bit as slow as people say, and some weeks it feels as if " +
           "every decision about a doormat needs a vote. If you are somebody who wants a problem solved by " +
@@ -316,7 +316,7 @@ export const enC1P15: SkillExercise[] = [
         "Meeting someone usually requires a plan, a place and a reason, and shared housing removes all three. " +
         "You see the same people at the post boxes every morning whether you meant to or not. " +
         "The comparison is flattering, though, because those who sign up for this kind of life tend to be " +
-        "unusually sociable before they ever arrive. Comparing them with their old neighbours tells you about " +
+        "unusually sociable before they ever arrive. Comparing them with their old neighbors tells you about " +
         "the kind of person who signs up, not only about the building. " +
         "Where the model seems to work is for people who are lonely by circumstance rather than by " +
         "temperament: someone new to a city, a parent at home with small children, a widower whose friends " +
@@ -349,11 +349,11 @@ export const enC1P15: SkillExercise[] = [
     explanation: [
       {
         heading: "Yüklemi öne almak: Gone are the days, Such was",
-        tr: "Durum bildiren bir yüklem başa alınınca fiil özneden önce gelir: „The days when … are gone“ yerine „Gone are the days when …“. „Such“ ile „be“ bir şeyin derecesini başa taşır, sonucu „that“ verir: „Such was the demand that …“. Bir yer öbeği de aynı sırayı kurabilir: „At the centre of the yard stands …“. Bu yapılar yazıda ve konuşmalarda vurgu içindir; gündelik sohbette yapay durabilir.",
+        tr: "Durum bildiren bir yüklem başa alınınca fiil özneden önce gelir: „The days when … are gone“ yerine „Gone are the days when …“. „Such“ ile „be“ bir şeyin derecesini başa taşır, sonucu „that“ verir: „Such was the demand that …“. Bir yer öbeği de aynı sırayı kurabilir: „At the center of the yard stands …“. Bu yapılar yazıda ve konuşmalarda vurgu içindir; gündelik sohbette yapay durabilir.",
         examples: [
-          { de: "Gone are the days when neighbours met by accident.", tr: "Komşuların birbiriyle tesadüfen karşılaştığı günler geride kaldı.", note: "yüklem + be + özne" },
+          { de: "Gone are the days when neighbors met by accident.", tr: "Komşuların birbiriyle tesadüfen karşılaştığı günler geride kaldı.", note: "yüklem + be + özne" },
           { de: "Such was the demand that the waiting list closed.", tr: "Talep öyle büyüktü ki bekleme listesi kapandı.", note: "such + be + özne + that" },
-          { de: "At the centre of the yard stands the old laundry.", tr: "Avlunun ortasında eski çamaşırhane duruyor.", note: "yer öbeği + fiil + özne" },
+          { de: "At the center of the yard stands the old laundry.", tr: "Avlunun ortasında eski çamaşırhane duruyor.", note: "yer öbeği + fiil + özne" },
         ],
       },
       {
@@ -416,7 +416,7 @@ export const enC1P15: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "At the centre of the yard ___ the old laundry. (stand)",
+        text: "At the center of the yard ___ the old laundry. (stand)",
         options: [],
         answer: 0,
         accept: ["stands"],
@@ -435,7 +435,7 @@ export const enC1P15: SkillExercise[] = [
         text: "Cümleyi doğru sıraya diz.",
         options: [],
         answer: 0,
-        items: ["Gone are", "the days", "when neighbours met", "by accident"],
+        items: ["Gone are", "the days", "when neighbors met", "by accident"],
         explain: "Başa alınan yüklem, ardından fiil ve özne.",
       },
       {

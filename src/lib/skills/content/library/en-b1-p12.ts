@@ -17,7 +17,7 @@ export const enB1P12: SkillExercise[] = [
     course: "en",
     level: "B1",
     skill: "reading",
-    title: "The Line I Had Practised on the Bus",
+    title: "The Line I Had Practiced on the Bus",
     genre: "blog",
     intro: "Kırk dört yaşında ilk kez sahneye çıkan birinin blog yazısı: neden katıldı, ikinci perdede ne oldu, kim durumu kurtardı.",
     gloss: [
@@ -36,10 +36,10 @@ export const enB1P12: SkillExercise[] = [
       "a school play.\n\n" +
       "Our group performs two plays a year in the hall behind the library. I joined because " +
       "a friend had dropped out and they needed someone tall to play a policeman. I had four " +
-      "lines. I practised them on the bus, in the shower and, once, by accident, out loud " +
+      "lines. I practiced them on the bus, in the shower and, once, by accident, out loud " +
       "in a meeting.\n\n" +
       "On the first night everything went well until the second act. I walked on, opened my " +
-      "mouth, and realised that the actor in front of me had already said half of my first line. " +
+      "mouth, and realized that the actor in front of me had already said half of my first line. " +
       "He had jumped a whole page. For about three seconds nobody on stage knew what to do.\n\n" +
       "Then the woman playing my wife did something I will never forget. She looked at me and " +
       "said, “You were going to tell me about the car, weren't you?” It wasn't in the script. " +
@@ -135,7 +135,7 @@ export const enB1P12: SkillExercise[] = [
     questions: [
       {
         text: "What happened in the final?",
-        options: ["The village won three–one.", "The village lost three–one.", "The game was cancelled."],
+        options: ["The village won three–one.", "The village lost three–one.", "The game was canceled."],
         answer: 1,
         explain: "„we lost the final three–one“ — ama köyde kimse bunu dert etmiyor.",
       },
@@ -191,7 +191,7 @@ export const enB1P12: SkillExercise[] = [
     genre: "story",
     intro: "Bir dergi öykü yarışmasına katılıyorsun: önce iki cümle kur, sonra verilen cümleyle başlayan kısa bir öykü yaz.",
     gloss: [
-      { de: "to realise", tr: "fark etmek" },
+      { de: "to realize", tr: "fark etmek" },
       { de: "to water", tr: "sulamak" },
       { de: "neat", tr: "düzenli" },
       { de: "missing", tr: "kayıp" },
@@ -203,8 +203,8 @@ export const enB1P12: SkillExercise[] = [
       {
         kind: "build",
         tr: "Eve geldiğimde birinin dairede bulunmuş olduğunu fark ettim.",
-        answer: "When I got home, I realised that someone had been in the flat.",
-        alternatives: ["I realised that someone had been in the flat when I got home."],
+        answer: "When I got home, I realized that someone had been in the flat.",
+        alternatives: ["I realized that someone had been in the flat when I got home."],
         hint: "Fark etmekten ÖNCE olan iş bir basamak geriye çekilir: had + üçüncü hâl.",
       },
       {
@@ -217,7 +217,7 @@ export const enB1P12: SkillExercise[] = [
       {
         kind: "free",
         prompt:
-          "Bir dergi yarışması için kısa bir öykü yaz. Öykün şu cümleyle başlamalı: „When I got home, I realised that someone had been in the flat.“ Neyin değiştiğini anlat, okuru kimin gelmiş olabileceği üzerine düşündür, bir sürprizle çöz ve kısa bir cümleyle bitir.",
+          "Bir dergi yarışması için kısa bir öykü yaz. Öykün şu cümleyle başlamalı: „When I got home, I realized that someone had been in the flat.“ Neyin değiştiğini anlat, okuru kimin gelmiş olabileceği üzerine düşündür, bir sürprizle çöz ve kısa bir cümleyle bitir.",
         checklist: [
           "Verilen cümleyle başla",
           "Neyin değiştiğini somut ayrıntılarla anlat",
@@ -233,7 +233,7 @@ export const enB1P12: SkillExercise[] = [
           { de: "In the end, …", tr: "Sonunda …", en: "" },
         ],
         sample:
-          "When I got home, I realised that someone had been in the flat. The first thing I noticed " +
+          "When I got home, I realized that someone had been in the flat. The first thing I noticed " +
           "was the smell of coffee, and I never drink coffee. Then I saw that someone had watered " +
           "the plants by the window, which had looked almost dead that morning, and had put my shoes " +
           "in a neat line by the door. " +
@@ -305,7 +305,7 @@ export const enB1P12: SkillExercise[] = [
     focus: "Past perfect (simple): had + üçüncü hâl ve geçmişteki iki olayın sırası — continuous biçimi değil",
     gloss: [
       { de: "station", tr: "istasyon" },
-      { de: "to recognise", tr: "tanımak" },
+      { de: "to recognize", tr: "tanımak" },
       { de: "to book", tr: "yer ayırtmak" },
       { de: "speech", tr: "konuşma" },
     ],
@@ -347,7 +347,7 @@ export const enB1P12: SkillExercise[] = [
         explain: "Film bizim varışımızdan ÖNCE başlamıştı: had + üçüncü hâl.",
       },
       {
-        text: "I didn't recognise him because he ___ his hair.",
+        text: "I didn't recognize him because he ___ his hair.",
         options: ["cuts", "had cut", "has cut"],
         answer: 1,
         explain: "Saç kesimi tanımamaktan önce oldu ve sebebini veriyor.",

@@ -49,7 +49,7 @@ export const enB2P19: SkillExercise[] = [
       "dog?” imagines the worst dog they have ever met. A landlord who reads about a " +
       "nine-year-old cat, already neutered and vaccinated, with a reference from a previous " +
       "landlord, is being asked something far more manageable.\n\n" +
-      "Offer to reduce the risk, not just to promise good behaviour. Common offers include an " +
+      "Offer to reduce the risk, not just to promise good behavior. Common offers include an " +
       "additional deposit, professional cleaning when you leave, or insurance that covers damage " +
       "caused by animals. Some landlords are unaware that such insurance exists.\n\n" +
       "Be realistic about what counts as reasonable. A large dog in a small flat with no outside " +
@@ -139,7 +139,7 @@ export const enB2P19: SkillExercise[] = [
       { speaker: "Host", text: "What about cats? People often assume they're the easy option." },
       { speaker: "Dr Mensah", text: "An adult indoor cat is usually very manageable. Kittens are a different matter: they're energetic, occasionally destructive, and a new sofa is an unwise purchase in the first year." },
       { speaker: "Host", text: "And for someone who has genuinely never had an animal before?" },
-      { speaker: "Dr Mensah", text: "I'd suggest fostering first. Rescue centres need temporary homes, the costs are usually covered, and after two months you'll know whether you can cope, without making an irreversible decision." },
+      { speaker: "Dr Mensah", text: "I'd suggest fostering first. Rescue centers need temporary homes, the costs are usually covered, and after two months you'll know whether you can cope, without making an irreversible decision." },
       { speaker: "Dr Mensah", text: "The unhappiest cases I deal with come from people who chose a pet for how it looked in a photograph rather than for how they actually live." },
     ],
     questions: [
@@ -189,7 +189,7 @@ export const enB2P19: SkillExercise[] = [
       {
         text: "What leads to the unhappiest cases?",
         options: [
-          "adopting from rescue centres",
+          "adopting from rescue centers",
           "choosing a pet from a photo",
           "moving house too often",
         ],

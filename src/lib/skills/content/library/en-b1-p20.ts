@@ -29,7 +29,7 @@ export const enB1P20: SkillExercise[] = [
       { de: "to invent", tr: "uydurmak" },
       { de: "excuse", tr: "bahane" },
       { de: "to respect", tr: "saygı duymak" },
-      { de: "to organise", tr: "düzenlemek" },
+      { de: "to organize", tr: "düzenlemek" },
     ],
     minutes: 6,
     text:
@@ -48,7 +48,7 @@ export const enB1P20: SkillExercise[] = [
       "against your photos online within a day. The truth is simpler: you're saving for something " +
       "important, and four hundred pounds is too much right now. Most people respect that more " +
       "than you expect.\n\n" +
-      "Then offer something. Suggest that you organise the first evening when they come back, " +
+      "Then offer something. Suggest that you organize the first evening when they come back, " +
       "with their photos and your food. That way you are choosing a different part of the " +
       "celebration, not refusing all of it. — Maggie",
     questions: [
@@ -95,7 +95,7 @@ export const enB1P20: SkillExercise[] = [
         text: "What does Maggie suggest offering?",
         options: [
           "to pay for half of the flight",
-          "to organise an evening when they come back",
+          "to organize an evening when they come back",
           "to join them for one day",
         ],
         answer: 1,

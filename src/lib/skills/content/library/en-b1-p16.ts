@@ -38,7 +38,7 @@ export const enB1P16: SkillExercise[] = [
       "Mrs Patel at number 11 is afraid of them. Not because they are dangerous, she says, but " +
       "because they scream at night, and the first time she heard it she thought someone was being " +
       "attacked. She has complained to the council twice.\n\n" +
-      "Her neighbour, Tom Reilly, is the opposite. He is fascinated by the foxes and has put a small " +
+      "Her neighbor, Tom Reilly, is the opposite. He is fascinated by the foxes and has put a small " +
       "camera in his garden. He is proud of his videos, which show the young ones playing with " +
       "a tennis ball at three in the morning. More than two hundred people follow his page.\n\n" +
       "Most residents are somewhere in the middle. They are tired of finding their rubbish bags " +
@@ -139,20 +139,20 @@ export const enB1P16: SkillExercise[] = [
       },
       {
         text: "What is the best thing to do in that case?",
-        options: ["feed it some bread", "take it to the centre", "keep pets inside for a day or two"],
+        options: ["feed it some bread", "take it to the center", "keep pets inside for a day or two"],
         answer: 2,
         explain: "„keep cats and dogs inside for a day or two. That is all.“",
       },
       {
         kind: "truefalse",
-        text: "You should bring a bird to the centre if a cat has had it in its mouth.",
+        text: "You should bring a bird to the center if a cat has had it in its mouth.",
         options: ["True", "False"],
         answer: 0,
         explain: "İyi görünse bile getirilmeli: kedi ısırığı çok çabuk mikrop kapıyor.",
       },
       {
         kind: "gapfill",
-        text: "The centre answers most photos within the ___.",
+        text: "The center answers most photos within the ___.",
         options: [],
         answer: 0,
         accept: ["hour"],
@@ -167,7 +167,7 @@ export const enB1P16: SkillExercise[] = [
         explain: "„Please don't try to feed it bread or milk.“",
       },
       {
-        text: "What does the centre say about the smell of your hands?",
+        text: "What does the center say about the smell of your hands?",
         options: [
           "It doesn't matter; that is an old story.",
           "The parents will leave the nest.",

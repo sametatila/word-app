@@ -30,7 +30,7 @@ export const enB2P20: SkillExercise[] = [
       { de: "to indicate", tr: "işaret etmek" },
       { de: "pregnancy", tr: "hamilelik" },
       { de: "purpose", tr: "amaç" },
-      { de: "personalised", tr: "kişiye özel" },
+      { de: "personalized", tr: "kişiye özel" },
       { de: "invisible", tr: "görünmez" },
       { de: "trade", tr: "takas" },
       { de: "deal", tr: "fırsat" },
@@ -51,7 +51,7 @@ export const enB2P20: SkillExercise[] = [
       "real. For a household on a tight budget, card prices can make a noticeable difference " +
       "over a year.\n\n" +
       "The more difficult question is what happens next. In many cases the data is shared with " +
-      "partner companies or used to set personalised prices, where two customers are offered " +
+      "partner companies or used to set personalized prices, where two customers are offered " +
       "different deals on the same product. This is perfectly legal in most places, and almost " +
       "completely invisible to the customer.\n\n" +
       "None of this means you should cut up your card. It does mean the trade deserves a clearer " +
@@ -87,7 +87,7 @@ export const enB2P20: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "With personalised prices, two customers are offered different ___ on the same product.",
+        text: "With personalized prices, two customers are offered different ___ on the same product.",
         options: [],
         answer: 0,
         accept: ["deals", "prices", "offers"],

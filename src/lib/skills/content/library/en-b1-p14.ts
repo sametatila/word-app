@@ -277,7 +277,7 @@ export const enB1P14: SkillExercise[] = [
       ],
       targets: [
         { de: "People call it a waste of time, but …", tr: "İnsanlar buna vakit kaybı diyor ama …" },
-        { de: "I realised this when …", tr: "Bunu … olduğunda anladım" },
+        { de: "I realized this when …", tr: "Bunu … olduğunda anladım" },
         { de: "To be fair, some people find it …", tr: "Hakkını vermek gerekirse bazıları bunu … buluyor" },
         { de: "My suggestion would be …", tr: "Önerim … olurdu" },
       ],
@@ -287,7 +287,7 @@ export const enB1P14: SkillExercise[] = [
         "People call it a waste of time, but I think small talk is how bigger conversations are " +
         "allowed to start. Nobody walks up to a stranger and asks about their childhood. You say " +
         "the queue is long, isn't it, and the other person decides whether they want to talk. " +
-        "I realised this when I started a new job last year. For two weeks I only said hello to " +
+        "I realized this when I started a new job last year. For two weeks I only said hello to " +
         "the man at the next desk. Then one Monday we both complained about the rain, and ten " +
         "minutes later I found out he had grown up in the same small town as my grandparents. " +
         "Now he's the colleague I trust most. " +
@@ -296,7 +296,7 @@ export const enB1P14: SkillExercise[] = [
         "My suggestion would be to keep it short and honest: one comment, one question, and if " +
         "the answer is a single word, leave the person in peace.",
       rubricHint:
-        "Görüş, somut bir anı, karşı tarafı anlama ve bir öneri beklenir; „I realised this when“, „to be fair“ kullanılabilir.",
+        "Görüş, somut bir anı, karşı tarafı anlama ve bir öneri beklenir; „I realized this when“, „to be fair“ kullanılabilir.",
     },
   },
 

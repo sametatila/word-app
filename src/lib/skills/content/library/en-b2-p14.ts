@@ -45,14 +45,14 @@ export const enB2P14: SkillExercise[] = [
       "predicted crowded pavements and injured pedestrians. A year later, the data suggests that " +
       "both sides were partly right, though not in the proportions they expected.\n\n" +
       "The scooters were used heavily: just over nine hundred thousand trips, most of them " +
-      "shorter than two kilometres. However, a survey of riders found that only about one trip " +
+      "shorter than two kilometers. However, a survey of riders found that only about one trip " +
       "in eight had replaced a car journey. The majority had replaced walking or the bus. As a " +
       "result, the environmental benefit was far smaller than the operators' early figures " +
       "suggested.\n\n" +
       "Injuries were also lower than feared, but they were not evenly distributed. Most involved " +
       "the riders themselves, often on their first or second journey, and a noticeable share " +
       "happened late at night. The operators have since introduced a short compulsory tutorial " +
-      "before a first ride, and lower speeds in the centre after eleven.\n\n" +
+      "before a first ride, and lower speeds in the center after eleven.\n\n" +
       "The most persistent complaint was not about speed at all. It was about parking. Because " +
       "scooters could be left anywhere, they were left everywhere, and wheelchair users and " +
       "people with pushchairs reported being blocked on their own streets. Since September, " +
@@ -132,7 +132,7 @@ export const enB2P14: SkillExercise[] = [
       { de: "identical", tr: "tıpatıp aynı" },
       { de: "absurd", tr: "saçma" },
       { de: "fine", tr: "para cezası" },
-      { de: "licence", tr: "ehliyet" },
+      { de: "license", tr: "ehliyet" },
       { de: "consultation", tr: "görüş alma" },
     ],
     minutes: 8,
@@ -141,7 +141,7 @@ export const enB2P14: SkillExercise[] = [
       { speaker: "Ms Rourke", text: "The single most common thing we hear is, “But I bought it in a shop, so it must be legal.” Unfortunately, being sold legally and being ridden legally are two different things." },
       { text: "Under current rules, a privately owned scooter may only be used on private land with the owner's permission. Rental scooters in the city trial are treated differently because they are insured by the operator." },
       { speaker: "Ms Rourke", text: "Owing to that difference, two scooters that look identical can be legal and illegal on the same street. I understand why people find that absurd." },
-      { text: "Riders stopped on a public road can have the scooter taken away, and may receive a fine and points on a driving licence they may not even hold yet." },
+      { text: "Riders stopped on a public road can have the scooter taken away, and may receive a fine and points on a driving license they may not even hold yet." },
       { speaker: "Ms Rourke", text: "Our approach with teenagers is to talk to the parents first. Most of them bought the scooter as a present and had no idea there was a problem." },
       { text: "The government has said it intends to change the law, but it has not said when, and several consultations have closed without a decision." },
       { speaker: "Ms Rourke", text: "Until then my advice is simple: if you haven't bought one yet, check the rules before you pay, not after you've been stopped." },
@@ -345,8 +345,8 @@ export const enB2P14: SkillExercise[] = [
         heading: "İsim mi, cümle mi?",
         tr: "„because of“, „due to“ ve „owing to“ arkasından İSİM öbeği alır: „because of the storm“. „because“, „since“ ve „as“ ise CÜMLE alır: „because a tree had fallen“. „since“ ve „as“ nedeni zaten bilinen bir bilgi gibi sunar ve çoğu zaman başa gelir.",
         examples: [
-          { de: "The train was cancelled because of the storm.", tr: "Tren fırtına yüzünden iptal edildi.", note: "because of + isim" },
-          { de: "The train was cancelled because a tree had fallen.", tr: "Bir ağaç devrildiği için tren iptal edildi.", note: "because + cümle" },
+          { de: "The train was canceled because of the storm.", tr: "Tren fırtına yüzünden iptal edildi.", note: "because of + isim" },
+          { de: "The train was canceled because a tree had fallen.", tr: "Bir ağaç devrildiği için tren iptal edildi.", note: "because + cümle" },
           { de: "Since you're here, could you check the list?", tr: "Madem buradasın, listeye bakar mısın?", note: "bilinen neden" },
         ],
       },
@@ -371,7 +371,7 @@ export const enB2P14: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "The train was cancelled ___ the storm.",
+        text: "The train was canceled ___ the storm.",
         options: ["because of", "because", "since"],
         answer: 0,
         explain: "Arkasından isim öbeği geliyor: because of.",

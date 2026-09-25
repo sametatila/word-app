@@ -18,7 +18,7 @@ export const enB2P15: SkillExercise[] = [
     course: "en",
     level: "B2",
     skill: "reading",
-    title: "Getting Out: Cancelling a Subscription",
+    title: "Getting Out: Canceling a Subscription",
     genre: "guide",
     intro: "Bir tüketici rehberi: bir abonelikten çıkarken nelere bakmalı, ne yazılı olmalı, ücret kesilmeye devam ederse ne yapmalı.",
     gloss: [
@@ -35,7 +35,7 @@ export const enB2P15: SkillExercise[] = [
     ],
     minutes: 8,
     text:
-      "Getting out: a short guide to cancelling subscriptions\n\n" +
+      "Getting out: a short guide to canceling subscriptions\n\n" +
       "Signing up for a subscription usually takes one click. Leaving can take considerably " +
       "longer, and companies are not always keen on making it easy. Before you start, it helps " +
       "to know what you are entitled to and what you are not.\n\n" +
@@ -52,7 +52,7 @@ export const enB2P15: SkillExercise[] = [
       "suits you, but read what you are agreeing to: some offers quietly restart the minimum " +
       "term.\n\n" +
       "Finally, check your bank statement for the next two months. If you are charged after " +
-      "cancelling, contact the company first and keep a copy of your cancellation. If that " +
+      "canceling, contact the company first and keep a copy of your cancellation. If that " +
       "fails, your bank may be able to reverse the payment, although this is not guaranteed and " +
       "should not be treated as a first step.\n\n" +
       "Above all, stay calm and keep records. The person on the phone is rarely responsible for " +
@@ -69,7 +69,7 @@ export const enB2P15: SkillExercise[] = [
         explain: "Yenileme tarihinden ne kadar önce iptal edilmesi gerektiğini gösteren bildirim süresi ve asgari süre.",
       },
       {
-        text: "Why does the guide recommend cancelling in writing?",
+        text: "Why does the guide recommend canceling in writing?",
         options: [
           "It is quicker than phoning.",
           "It creates a dated record.",
@@ -95,7 +95,7 @@ export const enB2P15: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Who should you contact first if you are charged after cancelling?",
+        text: "Who should you contact first if you are charged after canceling?",
         options: [],
         answer: 0,
         accept: ["the company", "the company first", "the service"],
@@ -106,7 +106,7 @@ export const enB2P15: SkillExercise[] = [
         options: [
           "being polite and precise",
           "asking for a manager at once",
-          "cancelling by phone only",
+          "canceling by phone only",
         ],
         answer: 0,
         explain: "Telefondaki kişi politikadan sorumlu değil; nazik ve net olana yardım etmesi daha olası.",
@@ -137,7 +137,7 @@ export const enB2P15: SkillExercise[] = [
     minutes: 8,
     segments: [
       { speaker: "Agent", text: "Thanks for holding. I understand you'd like to cancel your weekly recipe box. Can I ask what the reason is?" },
-      { speaker: "Mr Hale", text: "It's nothing to do with the food, which is fine. We've just realised we throw away about a third of it, because we're rarely home before eight." },
+      { speaker: "Mr Hale", text: "It's nothing to do with the food, which is fine. We've just realized we throw away about a third of it, because we're rarely home before eight." },
       { speaker: "Agent", text: "That's useful to know. Before you go, we could switch you to a box every other week, at twenty per cent off for the first three months." },
       { speaker: "Mr Hale", text: "Would that change my contract? The last time I accepted a discount somewhere, I found out later that I'd agreed to another year." },
       { speaker: "Agent", text: "No, there's no minimum period on this plan. You can pause or cancel at any time, as long as you do it before Wednesday midnight for the following week." },
@@ -195,7 +195,7 @@ export const enB2P15: SkillExercise[] = [
         options: [
           "The online button does not work.",
           "He should not have been told to phone.",
-          "The smaller portions are cancelled.",
+          "The smaller portions are canceled.",
         ],
         answer: 1,
         explain: "„You shouldn't have been told to phone us in the first place.“",
@@ -209,7 +209,7 @@ export const enB2P15: SkillExercise[] = [
     course: "en",
     level: "B2",
     skill: "writing",
-    title: "Charged After Cancelling",
+    title: "Charged After Canceling",
     genre: "email",
     intro: "İptal ettiğin bir abonelik için ücret alınmaya devam ediyor: önce iki cümle kur, sonra şirkete net ve kanıtlı bir e-posta yaz.",
     gloss: [
@@ -249,7 +249,7 @@ export const enB2P15: SkillExercise[] = [
         ],
         minWords: 120,
         phrases: [
-          { de: "I cancelled my subscription on … by …", tr: "Aboneliğimi … tarihinde … yoluyla iptal ettim", en: "" },
+          { de: "I canceled my subscription on … by …", tr: "Aboneliğimi … tarihinde … yoluyla iptal ettim", en: "" },
           { de: "Despite this, I have been charged for …", tr: "Buna rağmen … için ücret alındı", en: "" },
           { de: "I would therefore like you to …", tr: "Bu nedenle … yapmanızı rica ediyorum", en: "" },
           { de: "I have attached …", tr: "… ekte gönderiyorum", en: "" },
@@ -257,8 +257,8 @@ export const enB2P15: SkillExercise[] = [
         ],
         sample:
           "Dear Customer Services, I am writing to complain about being charged twice after " +
-          "cancelling my membership, and to ask for both payments to be refunded. " +
-          "I cancelled my subscription on 3 March by email, as your terms require, and received an " +
+          "canceling my membership, and to ask for both payments to be refunded. " +
+          "I canceled my subscription on 3 March by email, as your terms require, and received an " +
           "automatic reply confirming that my request had arrived. My notice period was one month, " +
           "so I accepted the payment taken on 1 April. " +
           "Despite this, I have been charged for May and June as well, a total of fifty-eight " +
@@ -268,7 +268,7 @@ export const enB2P15: SkillExercise[] = [
           "that my account has been closed. I have attached a copy of my original email and of " +
           "your automatic reply. " +
           "If I have not heard from you by 30 June, I will ask my bank to reverse the payments and " +
-          "report the matter to a consumer organisation. I would much prefer to settle it with you " +
+          "report the matter to a consumer organization. I would much prefer to settle it with you " +
           "directly. " +
           "Yours faithfully, Daniel Ferreira",
       },
@@ -307,14 +307,14 @@ export const enB2P15: SkillExercise[] = [
         "I think the rule should be simple: if you can join with one click, you should be able to " +
         "leave with one click. Anything else is a fee you pay in time instead of money. " +
         "To be fair to the companies, there are reasons for some friction. A short conversation " +
-        "can catch people who are cancelling by mistake or who would genuinely prefer a cheaper " +
+        "can catch people who are canceling by mistake or who would genuinely prefer a cheaper " +
         "plan, and an offer to stay isn't a trick in itself. Some customers are glad to be asked. " +
         "The problem starts when the process is designed to be tiring. In practice, the people " +
         "who lose out are the ones with the least spare attention: people working shifts, people " +
         "caring for a relative, older customers who find phone menus stressful. They keep paying " +
         "for months, not because they have chosen to, but because leaving takes an evening they " +
         "don't have. " +
-        "What I'd like to see is a rule that cancelling must use the same channel as joining, and " +
+        "What I'd like to see is a rule that canceling must use the same channel as joining, and " +
         "that any offer made on the way out appears on one screen, with a visible button to " +
         "refuse it. Companies can still try to keep their customers; they just have to do it " +
         "in the open.",

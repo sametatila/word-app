@@ -45,7 +45,7 @@ export const enB2P12: SkillExercise[] = [
       "The largest group, almost forty per cent, had tried to cancel. Most had rung during the " +
       "morning, when the lines are busiest, and given up after several minutes on hold. " +
       "In other words, many of the appointments recorded as missed should have been recorded " +
-      "as cancelled, and could have been offered to another patient if cancelling had been " +
+      "as canceled, and could have been offered to another patient if canceling had been " +
       "easier.\n\n" +
       "A second group had been given a time they could not realistically attend: an early slot " +
       "for a parent on the school run, or an appointment that had been moved without their " +
@@ -306,7 +306,7 @@ export const enB2P12: SkillExercise[] = [
         "The people it would hit hardest are exactly the ones a clinic ought to worry about most: " +
         "people with unpredictable shifts, carers, and people who are unwell in ways that make " +
         "planning difficult. " +
-        "What would work better, I think, is making cancelling as easy as booking. If a patient " +
+        "What would work better, I think, is making canceling as easy as booking. If a patient " +
         "can cancel with one word in a text message, a lot of the missed slots become freed " +
         "slots, somebody on the waiting list is seen sooner, and nobody has to be punished for " +
         "having a complicated life.",
@@ -344,10 +344,10 @@ export const enB2P12: SkillExercise[] = [
       },
       {
         heading: "Kipli edilgen",
-        tr: "Kip fiilinden sonra „be + üçüncü biçim“ gelir: „must be confirmed“, „can be cancelled“. Geçmişe dönük yargıda „should/could/must have been + üçüncü biçim“ kullanılır; „should have been“ çoğu zaman yapılmamış bir işi eleştirir.",
+        tr: "Kip fiilinden sonra „be + üçüncü biçim“ gelir: „must be confirmed“, „can be canceled“. Geçmişe dönük yargıda „should/could/must have been + üçüncü biçim“ kullanılır; „should have been“ çoğu zaman yapılmamış bir işi eleştirir.",
         examples: [
           { de: "Changes must be confirmed by the patient.", tr: "Değişiklikler hasta tarafından onaylanmalı.", note: "must be" },
-          { de: "Appointments can be cancelled by text.", tr: "Randevular mesajla iptal edilebilir.", note: "can be" },
+          { de: "Appointments can be canceled by text.", tr: "Randevular mesajla iptal edilebilir.", note: "can be" },
           { de: "She should have been informed about the change.", tr: "Değişiklik hakkında bilgilendirilmesi gerekirdi.", note: "yapılmadı" },
         ],
       },
@@ -401,7 +401,7 @@ export const enB2P12: SkillExercise[] = [
         text: "Appointments can be ___ by text. (cancel)",
         options: [],
         answer: 0,
-        accept: ["cancelled", "canceled"],
+        accept: ["canceled", "canceled"],
         explain: "„can be“ ardından üçüncü biçim gelir.",
       },
       {

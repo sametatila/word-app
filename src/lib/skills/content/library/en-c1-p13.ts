@@ -105,7 +105,7 @@ export const enC1P13: SkillExercise[] = [
         explain: "„the experiment survived only three winters“ — karanlık sabah şikâyetleri onu bitirdi.",
       },
       {
-        text: "What does the writer criticise at the end?",
+        text: "What does the writer criticize at the end?",
         options: [
           "researchers who oppose summer time",
           "governments that ignore the surveys",

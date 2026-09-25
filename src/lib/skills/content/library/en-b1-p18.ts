@@ -42,7 +42,7 @@ export const enB1P18: SkillExercise[] = [
       "indoors, but most days were cold, bright and completely still. It was so quiet at night " +
       "that I could hear the sea from my bed, three fields away.\n\n" +
       "There were difficult moments. The shop sells such a small range of food that I ate eggs on " +
-      "four of the seven days. On Thursday the ferry was cancelled because of the wind, and I had " +
+      "four of the seven days. On Thursday the ferry was canceled because of the wind, and I had " +
       "to stay two extra nights.\n\n" +
       "I didn't mind. The woman who rented me the cottage refused to take money for those nights. " +
       "“You're not a tourist now,” she said. “You're stuck, like the rest of us.”",
@@ -122,7 +122,7 @@ export const enB1P18: SkillExercise[] = [
       { speaker: "Presenter", text: "If you've walked down Mill Lane before eight in the morning, you've seen it: a queue of thirty people outside a bakery that only opened in March. We went to find out why." },
       { speaker: "Mr Novak", text: "Honestly, I didn't plan any of this. I bake such a small amount each day that it sells out by ten. People think it's a clever trick. It isn't. My oven is just very small." },
       { speaker: "Sarah", text: "I come every Saturday. The bread is so good that I don't mind waiting twenty minutes. And you talk to people in the queue. I've made two friends there." },
-      { speaker: "Presenter", text: "Not everyone is happy. The shop next door says the queue blocks its entrance, and a neighbour has complained about the noise at half past six." },
+      { speaker: "Presenter", text: "Not everyone is happy. The shop next door says the queue blocks its entrance, and a neighbor has complained about the noise at half past six." },
       { speaker: "Mr Novak", text: "That's fair. We've painted a line on the pavement, so people stand on one side, and I've asked customers to keep their voices down before seven." },
       { speaker: "Presenter", text: "So will you buy a bigger oven?" },
       { speaker: "Mr Novak", text: "Maybe next year. But I'll tell you something. If the bread gets worse, the queue will disappear, and it should." },
@@ -227,7 +227,7 @@ export const enB1P18: SkillExercise[] = [
           { de: "I'd give it … because …", tr: "… veririm çünkü …", en: "" },
         ],
         sample:
-          "We booked the two-hour seal trip from Harbour Street for a Saturday in August. Tickets " +
+          "We booked the two-hour seal trip from Harbor Street for a Saturday in August. Tickets " +
           "were twenty-two pounds for adults and twelve for children, which felt fair for what you " +
           "get. The boat is small, with room for about twenty people, and the captain talks the " +
           "whole time, mostly about the seals and sometimes about his dog. " +
@@ -350,9 +350,9 @@ export const enB1P18: SkillExercise[] = [
       {
         text: "Which sentence is correct?",
         options: [
-          "They were such kind neighbours.",
-          "They were such a kind neighbours.",
-          "They were so kind neighbours.",
+          "They were such kind neighbors.",
+          "They were such a kind neighbors.",
+          "They were so kind neighbors.",
         ],
         answer: 0,
         explain: "Çoğul isim öbeğinde „such“ tek başına gelir, „a“ almaz.",

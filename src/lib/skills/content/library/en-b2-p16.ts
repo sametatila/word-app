@@ -42,7 +42,7 @@ export const enB2P16: SkillExercise[] = [
       "somebody did something about the rubbish. They wrote back asking whether I had any ideas. " +
       "I hadn't expected that, so I'd better admit that the garden was their suggestion as much " +
       "as mine.\n\n" +
-      "Was everyone in favour?\n" +
+      "Was everyone in favor?\n" +
       "Not at all. The eleven drivers were understandably unhappy. Two of them said they would " +
       "rather we left the car park alone and just cleaned it. In the end we kept six spaces and " +
       "turned the rest into raised beds, which were cheap because nothing had to be dug up.\n\n" +
@@ -248,7 +248,7 @@ export const enB2P16: SkillExercise[] = [
           { de: "We are writing on behalf of …", tr: "… adına yazıyoruz", en: "" },
           { de: "At present, the space is …", tr: "Şu anda alan …", en: "" },
           { de: "What we propose is …", tr: "Önerdiğimiz şey …", en: "" },
-          { de: "We recognise that … would lose …, so …", tr: "… kişilerin … kaybedeceğinin farkındayız, bu yüzden …", en: "" },
+          { de: "We recognize that … would lose …, so …", tr: "… kişilerin … kaybedeceğinin farkındayız, bu yüzden …", en: "" },
           { de: "We would therefore ask you to …", tr: "Bu nedenle sizden … rica ediyoruz", en: "" },
         ],
         sample:
@@ -260,7 +260,7 @@ export const enB2P16: SkillExercise[] = [
           "What we propose is a shared garden with eight raised beds, two benches and a water butt. " +
           "The beds would be built by volunteers, and the materials would cost around nine hundred " +
           "pounds, most of which we have already raised. " +
-          "We recognise that residents who still dry clothes outside would lose that space, so we " +
+          "We recognize that residents who still dry clothes outside would lose that space, so we " +
           "would keep two lines along the south wall, and we would rather you didn't remove them. " +
           "A committee of four residents, whose names are attached, would be responsible for the " +
           "keys, the watering and any complaints. " +
@@ -310,7 +310,7 @@ export const enB2P16: SkillExercise[] = [
         "That is why so many owners simply keep the fence up. " +
         "What decides whether it works is who holds the keys and who signs the agreement. " +
         "A named group of residents, an end date in writing and everything built so that it can " +
-        "be moved turn a vague favour into something both sides can rely on. " +
+        "be moved turn a vague favor into something both sides can rely on. " +
         "It's time councils made this easier by offering a standard agreement, so that owners " +
         "and residents don't have to invent a new one every time a site sits empty.",
       rubricHint:

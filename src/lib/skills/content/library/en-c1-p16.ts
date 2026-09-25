@@ -48,7 +48,7 @@ export const enC1P16: SkillExercise[] = [
       "My editor would rather I had. Her view, which I respect, is that a critic who softens the verdict for " +
       "beginners is not being kind but useful to nobody: the audience is misled and the writer learns " +
       "nothing. Suppose a reader bought a ticket because of my silence; what would I owe them?\n\n" +
-      "It is a strong argument, and for established companies I agree with it completely. A national theatre " +
+      "It is a strong argument, and for established companies I agree with it completely. A national theater " +
       "with a large budget can survive a bad notice, and it is high time some of them received a few more. " +
       "But a small production is in a different position. A review in a city paper may be the only public " +
       "record the play ever gets. If that record says only that it failed, it will be the first thing anyone " +
@@ -82,7 +82,7 @@ export const enC1P16: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "The writer believes large theatres should be protected from bad reviews.",
+        text: "The writer believes large theaters should be protected from bad reviews.",
         options: ["True", "False"],
         answer: 1,
         explain: "Tersine: „it is high time some of them received a few more“.",
@@ -106,7 +106,7 @@ export const enC1P16: SkillExercise[] = [
       {
         text: "What weakness in the rule does the writer admit?",
         options: [
-          "It is too strict on large theatres.",
+          "It is too strict on large theaters.",
           "It is hard to apply to new writers.",
           "It treats silence as neutral.",
         ],
@@ -266,7 +266,7 @@ export const enC1P16: SkillExercise[] = [
           "that small venues exist for: a first work, four actors, one set and a ninety-minute running time " +
           "without an interval.\n\n" +
           "What it is trying to do is ambitious. It tells the same evening three times, from the point of view " +
-          "of three people who each believe they caused the accident at its centre, and it asks the audience to " +
+          "of three people who each believe they caused the accident at its center, and it asks the audience to " +
           "decide which account to trust.\n\n" +
           "It works best when it trusts that structure. The second version, told by the brother, is the finest " +
           "twenty minutes I have seen on a small stage this year, largely because the cast play it quietly, as " +
@@ -320,7 +320,7 @@ export const enC1P16: SkillExercise[] = [
         "advice to readers. It is the first result for the writer's name, perhaps for ten years. " +
         "So my principle would be this: be exactly as honest with beginners, but be more specific. " +
         "Say what the play was attempting, what worked and what did not, in terms the writer could use. " +
-        "A verdict without reasons is harmless to a national theatre and cruel to a beginner. " +
+        "A verdict without reasons is harmless to a national theater and cruel to a beginner. " +
         "It's time we treated reviews of new work as part of how people learn the craft, rather than as if " +
         "they were a consumer warning.",
       rubricHint:

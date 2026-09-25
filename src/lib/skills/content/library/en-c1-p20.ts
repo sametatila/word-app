@@ -43,7 +43,7 @@ export const enC1P20: SkillExercise[] = [
     text:
       "The trouble with restricted gifts\n\n" +
       "Most people who give to charity would like to know where their money goes, and in view of some " +
-      "well-publicised scandals, that wish is entirely reasonable. The usual way of satisfying it is the " +
+      "well-publicized scandals, that wish is entirely reasonable. The usual way of satisfying it is the " +
       "restricted gift: money given on condition that it is spent on a particular project, a named school or a " +
       "specific number of meals.\n\n" +
       "Restricted gifts are popular with donors and, on the surface, with charities too. They produce clear " +
@@ -59,7 +59,7 @@ export const enC1P20: SkillExercise[] = [
       "gift at least makes failure visible.\n\n" +
       "The answer, I think, is not to abolish restrictions but to price them honestly. Some foundations now add a " +
       "fixed share, often around fifteen per cent, to every restricted grant for general costs, and state this " +
-      "openly in their terms. In the event of a project being cancelled, the money can move to another purpose " +
+      "openly in their terms. In the event of a project being canceled, the money can move to another purpose " +
       "with the donor's agreement rather than being returned.\n\n" +
       "With regard to trust, the lesson is simple. A charity that is never allowed to spend money on itself will " +
       "eventually have nothing left to spend it through.",
@@ -315,7 +315,7 @@ export const enC1P20: SkillExercise[] = [
         "should be made to feel suspicious for having it. " +
         "If I give to a school project, I would like the money to reach the school. " +
         "Where it becomes harmful is when every donor makes the same choice. " +
-        "Nobody restricts a gift to the accountant, the rent or the phone bill, and so the organisation slowly " +
+        "Nobody restricts a gift to the accountant, the rent or the phone bill, and so the organization slowly " +
         "stops being able to run the projects that everybody is so keen to fund. " +
         "It is a little like paying for the meal but refusing to pay for the kitchen. " +
         "What I'd propose is a balance: donors choose the purpose, but a fixed share of every gift, perhaps " +

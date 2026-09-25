@@ -32,7 +32,7 @@ export const enC1P19: SkillExercise[] = [
       { de: "admission", tr: "hastaneye yatış" },
       { de: "heatwave", tr: "sıcak hava dalgası" },
       { de: "planner", tr: "şehir plancısı" },
-      { de: "to favour", tr: "desteklemek" },
+      { de: "to favor", tr: "desteklemek" },
       { de: "shade", tr: "gölge" },
       { de: "isolated", tr: "yalnız kalmış" },
       { de: "recommendation", tr: "öneri" },
@@ -48,12 +48,12 @@ export const enC1P19: SkillExercise[] = [
       "and given four weekends to answer a single question: how should the town prepare for summers that are " +
       "getting hotter?\n\n" +
       "The members were paid for their time, and childcare was provided on each of the eight meeting days, " +
-      "which the organisers say explains why the group included two night-shift workers, a retired roofer and " +
+      "which the organizers say explains why the group included two night-shift workers, a retired roofer and " +
       "several parents of small children, people who seldom appear at public meetings.\n\n" +
       "The first weekend was spent listening. Doctors described the rise in hospital admissions among older " +
-      "people during last year's week-long heatwave; a planner explained why the town centre stays several " +
+      "people during last year's week-long heatwave; a planner explained why the town center stays several " +
       "degrees warmer than the surrounding fields. Only after that did the members begin to argue.\n\n" +
-      "What surprised observers most was how often people changed their minds. Early votes favoured " +
+      "What surprised observers most was how often people changed their minds. Early votes favored " +
       "air-conditioned public buildings. By the final weekend, the assembly had moved towards cheaper and " +
       "slower measures: shade trees on the ten hottest streets, a phone list of isolated residents to be called " +
       "during heat warnings, and later opening hours for the town's two swimming pools.\n\n" +
@@ -87,7 +87,7 @@ export const enC1P19: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Early votes favoured shade trees on the hottest streets.",
+        text: "Early votes favored shade trees on the hottest streets.",
         options: ["True", "False"],
         answer: 1,
         explain: "İlk oylamalar klimalı kamu binalarından yanaydı; ağaçlar son hafta sonunda öne çıktı.",
@@ -227,7 +227,7 @@ export const enC1P19: SkillExercise[] = [
     intro: "Kurayla seçilen meclisin bir üyesisin ve toplantılarda bulunmayan sakinlere açık mektup yazıyorsun: önce iki cümle kur, sonra önerileri ve karşı görüşü dürüstçe anlatan bir mektup yaz.",
     gloss: [
       { de: "invitation", tr: "davet" },
-      { de: "to summarise", tr: "özetlemek" },
+      { de: "to summarize", tr: "özetlemek" },
       { de: "in full", tr: "eksiksiz" },
       { de: "to deserve", tr: "hak etmek" },
       { de: "fully grown", tr: "tam boyuna ulaşmış" },
@@ -279,7 +279,7 @@ export const enC1P19: SkillExercise[] = [
           "fully grown.\n\n" +
           "Not all of us agreed. Those who disagreed argued for cooled rooms in the library and the sports hall, " +
           "because trees do nothing for anyone next July. Their statement is printed in full in the report, and I " +
-          "think it deserves to be read rather than summarised by me.\n\n" +
+          "think it deserves to be read rather than summarized by me.\n\n" +
           "If you would like to volunteer for the phone list, the council is looking for about sixty people. The " +
           "eight-day process was harder than most of us expected, but this part takes ten minutes a week.\n\n" +
           "Yours,\nDaniel Price",
@@ -378,7 +378,7 @@ export const enC1P19: SkillExercise[] = [
         examples: [
           { de: "the town's heat plan", tr: "kasabanın sıcak hava planı", note: "heat: niteleyen isim" },
           { de: "a phone list for people living alone", tr: "yalnız yaşayanlar için bir telefon listesi", note: "phone tekil" },
-          { de: "a review of the plan for the town centre", tr: "kasaba merkezine yönelik planın gözden geçirilmesi", note: "uzun yığını of ile açmak" },
+          { de: "a review of the plan for the town center", tr: "kasaba merkezine yönelik planın gözden geçirilmesi", note: "uzun yığını of ile açmak" },
         ],
       },
     ],

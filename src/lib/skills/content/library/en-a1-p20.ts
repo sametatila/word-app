@@ -126,7 +126,7 @@ export const enA1P20: SkillExercise[] = [
         examples: [
           { de: "Is it far? — No, it's near.", tr: "Uzak mı? — Hayır, yakın." },
           { de: "It's ten minutes to the station.", tr: "İstasyona on dakika." },
-          { de: "How far is it to the park? — It's two kilometers.", tr: "Parka ne kadar uzak? — İki kilometre.", note: "soruda da it" },
+          { de: "How far is it to the park? — It's two kilometers.", tr: "Parka ne kadar uzak? — İki kilometer.", note: "soruda da it" },
         ],
       },
     ],

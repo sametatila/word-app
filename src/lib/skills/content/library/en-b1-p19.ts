@@ -29,7 +29,7 @@ export const enB1P19: SkillExercise[] = [
       { de: "barbecue", tr: "mangal" },
       { de: "host", tr: "ev sahibi" },
       { de: "contract", tr: "sözleşme" },
-      { de: "neighbour", tr: "komşu" },
+      { de: "neighbor", tr: "komşu" },
     ],
     minutes: 6,
     text:
@@ -47,7 +47,7 @@ export const enB1P19: SkillExercise[] = [
       "so in the contract. But nobody does. You are supposed to stay until at least five, and " +
       "nobody can tell me why.\n\n" +
       "My advice to anyone moving here is simple: find one person who will tell you the truth. " +
-      "Mine is my neighbour Pat, who wrote the note about the bins. We have tea together every " +
+      "Mine is my neighbor Pat, who wrote the note about the bins. We have tea together every " +
       "Sunday now.",
     questions: [
       {
@@ -86,8 +86,8 @@ export const enB1P19: SkillExercise[] = [
         text: "Who wrote the note about the bins?",
         options: [],
         answer: 0,
-        accept: ["Pat", "the neighbour", "the writer's neighbour"],
-        explain: "„my neighbour Pat, who wrote the note about the bins“.",
+        accept: ["Pat", "the neighbor", "the writer's neighbor"],
+        explain: "„my neighbor Pat, who wrote the note about the bins“.",
       },
       {
         text: "What is the writer's advice?",
@@ -271,7 +271,7 @@ export const enB1P19: SkillExercise[] = [
         "Adil bir kural öner",
       ],
       targets: [
-        { de: "I'm in favour, as long as …", tr: "… olduğu sürece yanlısıyım" },
+        { de: "I'm in favor, as long as …", tr: "… olduğu sürece yanlısıyım" },
         { de: "At my local café, for example, …", tr: "Mesela mahallemdeki kafede …" },
         { de: "I completely understand people who …", tr: "… olan insanları çok iyi anlıyorum" },
         { de: "A fair rule would be …", tr: "Adil bir kural … olurdu" },
@@ -279,10 +279,10 @@ export const enB1P19: SkillExercise[] = [
       minSeconds: 40,
       maxSeconds: 80,
       sampleDe:
-        "I'm in favour, as long as the dog is calm and the owner is paying attention. " +
+        "I'm in favor, as long as the dog is calm and the owner is paying attention. " +
         "At my local café, for example, dogs are allowed inside on weekdays, and most of the time " +
         "you only notice them when you nearly step on one under a table. There is an old man who " +
-        "comes every morning with a grey dog that is so quiet that I thought it was a bag the first " +
+        "comes every morning with a gray dog that is so quiet that I thought it was a bag the first " +
         "time. For him, that café is probably the only conversation he has all day, and he couldn't " +
         "go if the dog had to stay at home. " +
         "I completely understand people who are afraid of dogs, or who have allergies, and they " +

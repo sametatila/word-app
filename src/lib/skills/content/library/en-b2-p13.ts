@@ -212,7 +212,7 @@ export const enB2P13: SkillExercise[] = [
       { de: "to consult", tr: "danışmak" },
       { de: "survey", tr: "anket" },
       { de: "noticeably", tr: "belirgin biçimde" },
-      { de: "to summarise", tr: "özetlemek" },
+      { de: "to summarize", tr: "özetlemek" },
       { de: "recommendation", tr: "öneri" },
     ],
     minutes: 14,
@@ -250,7 +250,7 @@ export const enB2P13: SkillExercise[] = [
           { de: "We therefore recommend that …", tr: "Bu nedenle … öneriyoruz", en: "" },
         ],
         sample:
-          "The purpose of this report is to summarise the first term of the phone-free trial and " +
+          "The purpose of this report is to summarize the first term of the phone-free trial and " +
           "to make one recommendation to the parent council. " +
           "Since September, the school has made students hand in their phones at the gate each " +
           "morning. They are allowed to collect them at the end of the day, or earlier if a parent " +
@@ -305,7 +305,7 @@ export const enB2P13: SkillExercise[] = [
         "ignore a group chat when nobody expects them to answer. " +
         "What it doesn't solve is attention in lessons. If students are allowed to use laptops, " +
         "the same habits move to the bigger screen, and the school has banned a device rather " +
-        "than a behaviour. " +
+        "than a behavior. " +
         "Parents are right to worry about being unable to reach their children, but that is a " +
         "problem of communication, not of phones. Every school office has a phone, and a clear " +
         "rule about when it will be used is more reassuring than a child who may or may not " +

@@ -36,7 +36,7 @@ export const enB1P17: SkillExercise[] = [
       "the weather as carefully as we should have. At the top the sky was blue. Twenty minutes " +
       "later we couldn't see our own boots.\n\n" +
       "My friend Joe had a map, but the fog was so thick that the map was almost useless. We could " +
-      "see about three metres in every direction. My phone had no signal, and the battery was at " +
+      "see about three meters in every direction. My phone had no signal, and the battery was at " +
       "eleven per cent.\n\n" +
       "What saved us was something Joe had learned in the scouts thirty years earlier. We weren't " +
       "able to see the path, but we were able to see the small piles of stones that walkers leave " +
@@ -60,9 +60,9 @@ export const enB1P17: SkillExercise[] = [
       },
       {
         text: "How far could they see in the fog?",
-        options: ["about thirty metres", "about one metre", "about three metres"],
+        options: ["about thirty meters", "about one meter", "about three meters"],
         answer: 2,
-        explain: "„We could see about three metres in every direction.“",
+        explain: "„We could see about three meters in every direction.“",
       },
       {
         kind: "truefalse",
@@ -120,7 +120,7 @@ export const enB1P17: SkillExercise[] = [
     ],
     minutes: 6,
     segments: [
-      { speaker: "Presenter", text: "When the only shop in Haddon closed last year, the nearest bread and milk were eleven kilometres away. Today the shop is open again, run by the village itself. Mrs Evans led the project." },
+      { speaker: "Presenter", text: "When the only shop in Haddon closed last year, the nearest bread and milk were eleven kilometers away. Today the shop is open again, run by the village itself. Mrs Evans led the project." },
       { speaker: "Mrs Evans", text: "The owner retired and tried to sell it for two years, but he couldn't find a buyer. Nobody could make a normal shop pay in a village this size." },
       { speaker: "Presenter", text: "So how were you able to do it?" },
       { speaker: "Mrs Evans", text: "We sold shares at twenty pounds each. We hoped to raise fifteen thousand. In the end, three hundred and ten people bought shares, and we managed to raise almost twenty-two thousand." },
