@@ -34,6 +34,27 @@ anlatımla." (iOS altyazısıyla aynı cümleyle başlar.)
 550'den fazla ders", "900'den fazla beceri alıştırması", "60 deneme sınavı"; İngilizce için
 "500 ders" (500'den fazla DENMEZ). İçerik azalırsa bu cümleler gözden geçirilir.
 
+**Açıklama metni kararları (2026-09-25):** her iddia koda, canlı ayara ve içeriğe göre
+doğrulanır, gerekirse metin değişir (Samet'in kuralı). Doğrulanmış tr taslağı ve 32
+satırlık kanıt tablosu oturum çıktısında; kararlar:
+- Deneme süresi açıkça: "yeni abonelere ilk ay ücretsiz" (iki mağazada 175 bölgede FREE_TRIAL
+  1 ay, ASC ve Play'den okundu; yalnız daha önce abone olmamışa).
+- "8.500'den fazla kelime" (Almanca 8.707; İngilizce "7.000'den fazla", 7.175).
+- "HESAPSIZ BAŞLA" paragrafı kalıyor (hesapsız başlama, ilerlemenin hesaba taşınması, aynı
+  hesap telefon/tablet/web, hesap isteyen özellikler).
+- Ücretsiz değerlendirme kotası seri mekaniğiyle somut anlatılır (canlı: 2 konuşma + 2 yazma;
+  her 7 günlük seride +2, en çok 5 kademe; sonra haftada 2). Panelde sayı değişirse metin de.
+- Düzeltilen yanlış/yanıltıcı iddialar: rol yapma "daha doğal söyleyiş önermez" (yalnız dil
+  bilgisi düzeltir + takılınca 3 öneri; `src/lib/lessons/roleplay.ts` üslup kuralı); Premium'da
+  da deneme kâğıtları üçerli paketlerle sırayla açılır (`computePacks`); deneme sınavında
+  sonuç tek yüzde + hata→düzeltme (ölçüt çubukları yalnız beceri turu ve modül sınavında);
+  aralıklı tekrar SM-2 türevi ("unutmadan önce", "tam unutmak üzereyken" DEĞİL); kulaklık
+  zorunlu değil. Metinde Android/Google Play adı geçmez (App Store 2.3.10).
+- AÇIK: ders sonundaki rol yapma SOHBETİ bugün ücretsiz ve kotasız (hesap + yapay zekâ izni,
+  herkese günde 300 tur). Samet kodla sınırlamaya karar verdi; tasarım, yapay zekâ
+  yüzeyleri haritası çıkarıldıktan sonra konuşulacak. Premium tavanı 300 tur/gün KALIYOR.
+  Karar çıkana dek metin rol yapma sohbetini "ücretsiz" diye anmaz.
+
 **Beş sütun (öncelik sırası):** 1) A1'den C1'e tam müfredat, Türkçe anlatım · 2) konuşarak
 öğren: her derste rol yapma + konuşmaya geri bildirim · 3) dört becerili deneme sınavları,
 konuşma ve yazma da puanlanır · 4) Cepte yürüyüş (ekran kapalı, **Premium**; ekran açık
