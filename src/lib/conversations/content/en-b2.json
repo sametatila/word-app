@@ -8418,7 +8418,7 @@
     "tr": "sebebi ortaçla bağlar"
    },
    {
-    "de": "Delayed on Monday, the account was resumed later.",
+    "de": "Suspended on Monday, the service was resumed on Wednesday.",
     "tr": "edilgen ortaçla bağlar"
    }
   ],
@@ -8530,16 +8530,16 @@
      },
      {
       "lang": "en",
-      "text": "Delayed on Monday, the account was resumed later."
+      "text": "Suspended on Monday, the service was resumed on Wednesday."
      },
      {
       "lang": "tr",
-      "text": "Pazartesi geciken hesap sonra yeniden başlatıldı."
+      "text": "Pazartesi durdurulan hizmet çarşamba yeniden başlatıldı."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Delayed on Monday, the account was resumed later."
+     "target": "Suspended on Monday, the service was resumed on Wednesday."
     }
    },
    {
@@ -33537,7 +33537,7 @@
     "tr": "sonucu geçmişte bırakır"
    },
    {
-    "de": "If the depiction had been elegant, the hall would be full now.",
+    "de": "If the depiction had been more elegant, the hall would be full now.",
     "tr": "sonucu bugüne taşır"
    },
    {
@@ -33617,16 +33617,16 @@
      },
      {
       "lang": "en",
-      "text": "If the depiction had been elegant, the hall would be full now."
+      "text": "If the depiction had been more elegant, the hall would be full now."
      },
      {
       "lang": "tr",
-      "text": "Tasvir zarif olsaydı salon bugün dolu olurdu."
+      "text": "Tasvir daha zarif olsaydı salon bugün dolu olurdu."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "If the depiction had been elegant, the hall would be full now."
+     "target": "If the depiction had been more elegant, the hall would be full now."
     }
    },
    {
@@ -33743,12 +33743,12 @@
      },
      {
       "lang": "en",
-      "text": "If the depiction had been elegant, the hall would be full now."
+      "text": "If the depiction had been more elegant, the hall would be full now."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "If the depiction had been elegant, the hall would be full now.",
+     "statement": "If the depiction had been more elegant, the hall would be full now.",
      "answer": true,
      "why": [
       {
@@ -33806,15 +33806,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sen kur: Hikâye zarif olsaydı salon bugün dolu olurdu."
+      "text": "Şimdi sen kur: Hikâye daha zarif olsaydı salon bugün dolu olurdu."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "If the story had been elegant, the hall would be full now.",
+     "target": "If the story had been more elegant, the hall would be full now.",
      "accept": [
-      "If the story had been elegant, the room would be full now.",
-      "If the depiction had been elegant, the hall would be full now."
+      "If the story had been more elegant, the theater would be full now.",
+      "If the depiction had been more elegant, the hall would be full now."
      ],
      "hint": [
       {
@@ -33831,7 +33831,7 @@
       },
       {
        "lang": "en",
-       "text": "If the story had been elegant, the hall would be full now."
+       "text": "If the story had been more elegant, the hall would be full now."
       },
       {
        "lang": "tr",
@@ -37417,7 +37417,7 @@
     "tr": "bir tarihe kadar bitmiş olanı söyler"
    },
    {
-    "de": "Next month we will be watching the due date.",
+    "de": "Next month we will be preparing for the due date.",
     "tr": "o sırada sürüyor olanı söyler"
    },
    {
@@ -37489,16 +37489,16 @@
      },
      {
       "lang": "en",
-      "text": "Next month we will be watching the due date."
+      "text": "Next month we will be preparing for the due date."
      },
      {
       "lang": "tr",
-      "text": "Gelecek ay vade tarihini izliyor olacağız."
+      "text": "Gelecek ay vade tarihine hazırlanıyor olacağız."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Next month we will be watching the due date."
+     "target": "Next month we will be preparing for the due date."
     }
    },
    {
@@ -37561,11 +37561,11 @@
      },
      {
       "lang": "en",
-      "text": "will be watching"
+      "text": "will be preparing"
      },
      {
       "lang": "tr",
-      "text": "ise o sırada sürüyor olanı söyler. Borç konuşmasında birincisi bir taahhüt, ikincisi bir takip sözüdür."
+      "text": "ise o sırada sürüyor olanı söyler. Borç konuşmasında birincisi bir taahhüt, ikincisi bir hazırlık sözüdür."
      }
     ]
    },
@@ -37615,12 +37615,12 @@
      },
      {
       "lang": "en",
-      "text": "Next month we will be watching the due date."
+      "text": "Next month we will be preparing for the due date."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Next month we will be watching the due date.",
+     "statement": "Next month we will be preparing for the due date.",
      "answer": true,
      "why": [
       {
@@ -37670,15 +37670,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Şimdi sen kur: Gelecek ay piyasayı izliyor olacağız."
+      "text": "Şimdi sen kur: Gelecek ay ilk taksite hazırlanıyor olacağız."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "Next month we will be watching the market.",
+     "target": "Next month we will be preparing for the first installment.",
      "accept": [
-      "Next month we will be following the market.",
-      "Next month we will be watching the due date."
+      "Next month we will be preparing for the first payment.",
+      "Next month we will be preparing for the due date."
      ],
      "hint": [
       {
@@ -37687,7 +37687,7 @@
       },
       {
        "lang": "en",
-       "text": "will be watching"
+       "text": "will be preparing"
       },
       {
        "lang": "tr",
@@ -37695,7 +37695,7 @@
       },
       {
        "lang": "en",
-       "text": "Next month we will be watching the market."
+       "text": "Next month we will be preparing for the first installment."
       },
       {
        "lang": "tr",
@@ -37838,7 +37838,7 @@
      },
      {
       "lang": "en",
-      "text": "will be watching"
+      "text": "will be preparing"
      },
      {
       "lang": "tr",
@@ -42387,7 +42387,7 @@
     "tr": "o sırada sürüyor olanı söyler"
    },
    {
-    "de": "By then the puberty will have ended.",
+    "de": "By then his puberty will have ended.",
     "tr": "bir tarihe kadar biten dönemi söyler"
    }
   ],
@@ -42491,16 +42491,16 @@
      },
      {
       "lang": "en",
-      "text": "By then the puberty will have ended."
+      "text": "By then his puberty will have ended."
      },
      {
       "lang": "tr",
-      "text": "O zamana kadar ergenlik bitmiş olacak."
+      "text": "O zamana kadar ergenliği bitmiş olacak."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "By then the puberty will have ended."
+     "target": "By then his puberty will have ended."
     }
    },
    {
@@ -42762,7 +42762,7 @@
      "target": "By then the school year will have ended.",
      "accept": [
       "By then the term will have ended.",
-      "By then the puberty will have ended."
+      "By then his puberty will have ended."
      ],
      "hint": [
       {
@@ -48844,7 +48844,7 @@
     "tr": "kapanışı bir koşula bağlar"
    },
    {
-    "de": "On balance I would arguably make clear one last point.",
+    "de": "On balance, one last point is arguably worth making.",
     "tr": "tartıp ölçerek son sözü açar"
    }
   ],
@@ -48948,16 +48948,16 @@
      },
      {
       "lang": "en",
-      "text": "On balance I would arguably make clear one last point."
+      "text": "On balance, one last point is arguably worth making."
      },
      {
       "lang": "tr",
-      "text": "Her şey tartıldığında son bir noktayı tartışmalı biçimde açıkça belirtirdim."
+      "text": "Her şey tartıldığında son bir nokta belki de belirtilmeye değer."
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "On balance I would arguably make clear one last point."
+     "target": "On balance, one last point is arguably worth making."
     }
    },
    {
@@ -49219,15 +49219,15 @@
     "say": [
      {
       "lang": "tr",
-      "text": "Bir tane daha: Her şey tartıldığında bir noktayı daha tartışmalı biçimde açıkça belirtirdim."
+      "text": "Bir tane daha: Her şey tartıldığında bir nokta daha belki de belirtilmeye değer."
      }
     ],
     "expect": {
      "kind": "produce",
-     "target": "On balance I would arguably make clear one more point.",
+     "target": "On balance, one more point is arguably worth making.",
      "accept": [
-      "On balance I would arguably make clear another point.",
-      "On balance I would arguably make clear one last point."
+      "On balance, another point is arguably worth making.",
+      "On balance, one last point is arguably worth making."
      ],
      "hint": [
       {
@@ -49244,7 +49244,7 @@
       },
       {
        "lang": "en",
-       "text": "On balance I would arguably make clear one more point."
+       "text": "On balance, one more point is arguably worth making."
       },
       {
        "lang": "tr",

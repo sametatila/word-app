@@ -165,7 +165,7 @@
   "de": "Lehrt zu sagen, wer in einer Erzählung wie viel sieht; was vorangestellt wird, hat die Erzählstimme gewählt."
  },
  {
-  "tr": "Aynı cümlenin konuşmada ve yazıda nasıl değiştiğini öğretir; dil sezgisi hangi kaydın uyduğunu söyler.",
+  "tr": "Aynı cümlenin konuşmada ve yazıda nasıl değiştiğini öğretir; dil sezgisi hangi dil düzeyinin uyduğunu söyler.",
   "kind": "summary",
   "de": "Lehrt, wie sich derselbe Satz im Sprechen und im Schreiben verändert; das Sprachgefühl sagt, welches Register passt."
  },
@@ -290,7 +290,7 @@
   "de": "Das Gespräch gilt als geschafft, wenn du in drei Sätzen je ein Glied weggelassen und gesagt hast, was das Weggelassene bei der Leserin auslöst."
  },
  {
-  "tr": "Aynı düşünceyi konuşma ve yazı kaydında söylediysen ve kaybolan desteği adlandırdıysan konuşma başarılı sayılır.",
+  "tr": "Aynı düşünceyi konuşma ve yazı dilinde söylediysen ve kaybolan desteği adlandırdıysan konuşma başarılı sayılır.",
   "kind": "goal",
   "de": "Das Gespräch gilt als geschafft, wenn du denselben Gedanken im gesprochenen und im geschriebenen Register gesagt und die verlorene Stütze benannt hast."
  },
@@ -325,7 +325,7 @@
   "de": "Richtig. In der zweiten Hälfte ist das Prädikat auf das Hilfsverb gekürzt und der Rest bleibt bei der Leserin."
  },
  {
-  "tr": "Doğru. Kaydı seçen şey bir kural listesi değil, kullanımla kazanılan sezgidir.",
+  "tr": "Doğru. Dil düzeyini seçen şey bir kural listesi değil, kullanımla kazanılan sezgidir.",
   "kind": "why.tr",
   "de": "Richtig. Was das Register wählt, ist keine Regelliste, sondern das im Gebrauch erworbene Gespür."
  },
@@ -430,7 +430,7 @@
   "de": "kürzt das Prädikat auf das Hilfsverb"
  },
  {
-  "tr": "kaydı sezginin seçtiğini söyler",
+  "tr": "dil düzeyini sezginin seçtiğini söyler",
   "kind": "pattern.tr",
   "de": "sagt, dass das Gespür das Register wählt"
  },
@@ -460,7 +460,7 @@
   "de": "baut die klassische Forderung in fester Form"
  },
  {
-  "tr": "aynı cümlenin kayda göre değiştiğini söyler",
+  "tr": "aynı cümlenin dil düzeyine göre değiştiğini söyler",
   "kind": "pattern.tr",
   "de": "sagt, dass derselbe Satz sich mit dem Register ändert"
  },
@@ -805,9 +805,9 @@
   "de": "Gesprächsführung"
  },
  {
-  "tr": "yorumlama kalıbı",
+  "tr": "yorumlama çerçevesi",
   "kind": "vocab.tr",
-  "de": "Deutungsmuster"
+  "de": "Deutungsrahmen"
  },
  {
   "tr": "parçalara ayırmak",
@@ -965,7 +965,7 @@
   "de": "Um das Prädikat auf das Hilfsverb zu kürzen"
  },
  {
-  "tr": "Kaydı sezginin seçtiğini söylemek için",
+  "tr": "Dil düzeyini sezginin seçtiğini söylemek için",
   "kind": "hint.tr",
   "de": "Um zu sagen, dass das Gespür das Register wählt"
  },
@@ -995,7 +995,7 @@
   "de": "Um die klassische Forderung in fester Form zu bauen"
  },
  {
-  "tr": "Aynı cümlenin kayda göre değiştiğini söylemek için",
+  "tr": "Aynı cümlenin dil düzeyine göre değiştiğini söylemek için",
   "kind": "hint.tr",
   "de": "Um zu sagen, dass derselbe Satz sich mit dem Register ändert"
  },
@@ -1130,7 +1130,7 @@
   "de": "Hallo! Heute lernen wir, wie sich derselbe Satz im Sprechen und im Schreiben verändert."
  },
  {
-  "tr": "C1'de kayıt bilgisi kural bilgisi değildir; hangi kaydın uyduğunu kural değil sezgi söyler ve sezgi de öğrenilir. Hazır mısın?",
+  "tr": "C1'de dil düzeyi bilgisi kural bilgisi değildir; hangi dil düzeyinin uyduğunu kural değil sezgi söyler ve sezgi de öğrenilir. Hazır mısın?",
   "kind": "say.tr",
   "de": "Auf C1 ist Registerwissen kein Regelwissen; welches Register passt, sagt nicht die Regel, sondern das Gespür, und auch das Gespür wird gelernt. Bist du bereit?"
  },
@@ -1145,12 +1145,12 @@
   "de": "Die Fähigkeit, das Richtige auch ohne Regel zu wissen, heißt"
  },
  {
-  "tr": "İkinci kalıbımız kaydı sezginin seçtiğini söylüyor. Tekrar et:",
+  "tr": "İkinci kalıbımız dil düzeyini sezginin seçtiğini söylüyor. Tekrar et:",
   "kind": "say.tr",
   "de": "Unsere zweite Wendung sagt, dass das Gespür das Register wählt. Sprich nach:"
  },
  {
-  "tr": "Hangi kaydın uyduğunu dil sezgisi söyler.",
+  "tr": "Hangi dil düzeyinin uyduğunu dil sezgisi söyler.",
   "kind": "say.tr",
   "de": "Welches Register passt, sagt das Sprachgefühl."
  },
@@ -1230,7 +1230,7 @@
   "de": "Die Macht, sich ausdrücken zu können, heißt"
  },
  {
-  "tr": "İfade gücü kayıtla birlikte büyüyor.",
+  "tr": "İfade gücü dil düzeyiyle birlikte büyüyor.",
   "kind": "say.tr",
   "de": "Die Ausdruckskraft wächst mit dem Register."
  },
@@ -1240,7 +1240,7 @@
   "de": "Noch eins: Welches Wort passt, sagt das Sprachgefühl."
  },
  {
-  "tr": "Şimdi aynı cümleyi iki kayıtta söyleyeceksin.",
+  "tr": "Şimdi aynı cümleyi iki dil düzeyinde söyleyeceksin.",
   "kind": "say.tr",
   "de": "Jetzt sagst du denselben Satz in zwei Registern."
  },
@@ -1500,9 +1500,9 @@
   "de": "und ein Ganzes in seine Teile zu zerlegen heißt"
  },
  {
-  "tr": "Yorumlama kalıbı, okumanın varsaydığını iddia ediyor.",
+  "tr": "Yorumlama çerçevesi, okumanın yalnızca varsaydığını açıkça iddia ediyor.",
   "kind": "say.tr",
-  "de": "Das Deutungsmuster behauptet, was die Lesart voraussetzt."
+  "de": "Der Deutungsrahmen behauptet offen, was die Lesart bloß voraussetzt."
  },
  {
   "tr": "Okuma biçimini önceden belirleyen çerçeveye",
@@ -1560,9 +1560,9 @@
   "de": "Jede Sinnbildung ist normativ."
  },
  {
-  "tr": "Şimdi sen kur: Kalıp, okumanın varsaydığını iddia ediyor.",
+  "tr": "Şimdi sen kur: Çerçeve, okumanın yalnızca varsaydığını açıkça iddia ediyor.",
   "kind": "say.tr",
-  "de": "Bilde du jetzt: Das Muster behauptet, was die Lesart voraussetzt."
+  "de": "Bilde du jetzt: Der Rahmen behauptet offen, was die Lesart bloß voraussetzt."
  },
  {
   "tr": "Çoğunlukta olana",
@@ -1905,9 +1905,9 @@
   "de": "steht in der Mitte wie ein Vorbehalt, an den Anfang gezogen verstärkt es den Hauptsatz. Alle drei geben dasselbe zu und alle drei wiegen anders."
  },
  {
-  "tr": "Şimdi sıra sende: Ona mesafe desek de ötekiliktir.",
+  "tr": "Şimdi sıra sende: Ona ne kadar mesafe demeyi sevsek de aslında ötekiliktir.",
   "kind": "say.tr",
-  "de": "Jetzt bist du dran: Auch wenn wir es Abstand nennen, ist es Andersheit."
+  "de": "Jetzt bist du dran: So gern wir es Abstand nennen, eigentlich ist es Andersheit."
  },
  {
   "tr": "El yapımı ya da kazı ürünü nesneye",
@@ -1920,9 +1920,9 @@
   "de": "und das negative Zeichen, das einem Menschen angeheftet wird, heißt"
  },
  {
-  "tr": "Muhit değişse de kendini tanımlayış duruyor.",
+  "tr": "Muhit ne kadar değişirse değişsin kendini tanımlayış duruyor.",
   "kind": "say.tr",
-  "de": "Auch wenn sich das Milieu ändert, bleibt das Selbstverständnis."
+  "de": "Wie sehr sich das Milieu auch ändert, das Selbstverständnis bleibt."
  },
  {
   "tr": "Şimdi sen kur: Tavrı, soğuk olsa da, muhite uyuyor.",
@@ -2210,9 +2210,9 @@
   "de": "Unsere zweite Wendung schiebt den Rückverweis ein. Sprich nach:"
  },
  {
-  "tr": "O gazap, belirtildiği gibi, önceki bir sayfanın içerlemesidir.",
+  "tr": "Bu gazap, daha önce belirtildiği gibi, eski bir içerlemeden doğuyor.",
   "kind": "say.tr",
-  "de": "Jener Zorn ist, wie angemerkt, der Groll einer früheren Seite."
+  "de": "Dieser Zorn erwächst, wie bereits angemerkt, aus einem alten Groll."
  },
  {
   "tr": "İçte biriken kırgınlığa",
@@ -2250,9 +2250,9 @@
   "de": "dagegen schickt sie zu dem zurück, was sie vorher gelesen hat. Ohne diese Adressen sind dreißig Seiten dreißig getrennte Texte."
  },
  {
-  "tr": "Şimdi sıra sende: Yukarıdaki çok katmanlılık aşağıda bir alışkanlığa dönüşüyor.",
+  "tr": "Şimdi sıra sende: Yukarıda anlatılan çok katmanlılık, aşağıda ele alınan alışkanlığı açıklıyor.",
   "kind": "say.tr",
-  "de": "Jetzt bist du dran: Die Vielschichtigkeit oben wird unten zu einer Gewohnheit."
+  "de": "Jetzt bist du dran: Die oben beschriebene Vielschichtigkeit erklärt die unten behandelte Gewohnheit."
  },
  {
   "tr": "İlerlemeyip olduğu yerde kalmaya",
@@ -2270,9 +2270,9 @@
   "de": "Die Größenordnung ändert die These."
  },
  {
-  "tr": "Şimdi sen kur: O korku, belirtildiği gibi, önceki bir sayfanın içerlemesidir.",
+  "tr": "Şimdi sen kur: Bu korku, daha önce belirtildiği gibi, eski bir içerlemeden doğuyor.",
   "kind": "say.tr",
-  "de": "Bilde du jetzt: Jene Furcht ist, wie angemerkt, der Groll einer früheren Seite."
+  "de": "Bilde du jetzt: Diese Furcht erwächst, wie bereits angemerkt, aus einem alten Groll."
  },
  {
   "tr": "On ya da yüz katlık farka",
@@ -2280,7 +2280,7 @@
   "de": "Der Unterschied um das Zehn- oder Hundertfache heißt"
  },
  {
-  "tr": "Bu ders modülün sonuncusu; kaydı, kalıbı ve bağlantıyı birlikte kullanacaksın.",
+  "tr": "Bu ders modülün sonuncusu; dil düzeyini, kalıbı ve bağlantıyı birlikte kullanacaksın.",
   "kind": "say.tr",
   "de": "Diese Lektion ist die letzte des Moduls; du benutzt Register, Wendung und Verbindung zusammen."
  },

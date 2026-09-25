@@ -275,7 +275,7 @@
   "de": "Das Gespräch gilt als geschafft, wenn du in drei Sätzen je ein Glied weggelassen und das fehlende Versprechen benannt hast."
  },
  {
-  "tr": "Aynı hedefi iki kayıtta adlandırdıysan ve her adın kapsamını söylediysen konuşma başarılı sayılır.",
+  "tr": "Aynı hedefi iki dil düzeyinde adlandırdıysan ve her adın kapsamını söylediysen konuşma başarılı sayılır.",
   "kind": "goal",
   "de": "Das Gespräch gilt als geschafft, wenn du dasselbe Ziel in zwei Registern benannt und den Umfang jedes Namens gesagt hast."
  },
@@ -350,7 +350,7 @@
   "de": "trennt Entwurf und Kosten"
  },
  {
-  "tr": "aynı hedefi iki kayıtta söyler",
+  "tr": "aynı hedefi iki dil düzeyinde söyler",
   "kind": "pattern.tr",
   "de": "sagt dasselbe Ziel in zwei Registern"
  },
@@ -495,9 +495,9 @@
   "de": "Kohlenstoffsenke"
  },
  {
-  "tr": "madde döngüsü",
+  "tr": "kapalı madde döngüsü",
   "kind": "vocab.tr",
-  "de": "Stoffkreislauf"
+  "de": "geschlossener Stoffkreislauf"
  },
  {
   "tr": "soylulaştırma",
@@ -790,7 +790,7 @@
   "de": "Um Ziel und Etikett zu trennen, werden zwei Hälften gebaut:"
  },
  {
-  "tr": "Aynı hedefi iki kayıtta söylemek için iki yer adı yeter:",
+  "tr": "Aynı hedefi iki dil düzeyinde söylemek için iki yer adı yeter:",
   "kind": "hint.tr",
   "de": "Um dasselbe Ziel in zwei Registern zu sagen, genügen zwei Ortsangaben:"
  },
@@ -1290,7 +1290,7 @@
   "de": "und der Teil der Stadt, der wärmer ist als sein Umland, heißt"
  },
  {
-  "tr": "Şimdi aynı hedefi iki kayıtta anlatacaksın.",
+  "tr": "Şimdi aynı hedefi iki dil düzeyinde anlatacaksın.",
   "kind": "say.tr",
   "de": "Jetzt beschreibst du dasselbe Ziel in zwei Registern."
  },
@@ -1510,9 +1510,9 @@
   "de": "Wer eine Messung wiedergibt, gibt auch weiter, wie sehr er ihr traut."
  },
  {
-  "tr": "Doğal sermaye olmasaydı hiçbir ortak kullanım alanı tutmazdı.",
+  "tr": "Doğal sermayesi olmasaydı köyün paylaşacak ortak kullanım alanı olmazdı.",
   "kind": "say.tr",
-  "de": "Ohne Naturkapital würde keine Allmende halten."
+  "de": "Ohne sein Naturkapital hätte das Dorf keine Allmende zu teilen."
  },
  {
   "tr": "Kaynakların korunması düşük emisyonlu bir filodan fazlasıdır.",
@@ -1530,9 +1530,9 @@
   "de": "Der Infrastrukturausbau kam nach der Untersuchung zur Erreichbarkeit."
  },
  {
-  "tr": "Dış kaynaklı fon, bilimsel derginin varsaydığını iddia ediyor.",
+  "tr": "Basın bülteni, bilimsel derginin yalnızca işaret ettiğini açıkça iddia ediyor.",
   "kind": "say.tr",
-  "de": "Die Drittmittel behaupten, was die Fachzeitschrift voraussetzt."
+  "de": "Die Pressemitteilung behauptet offen, was die Fachzeitschrift bloß andeutet."
  },
  {
   "tr": "İkinci kalıbımız olmasaydıyı çevre savında kuruyor. Tekrar et:",
@@ -1590,9 +1590,9 @@
   "de": "Bilde du jetzt: Die Häuser verwahrlosen, die Schulen verfallen."
  },
  {
-  "tr": "Şimdi sen kur: Fon, bilimsel derginin varsaydığını iddia ediyor.",
+  "tr": "Şimdi sen kur: Sponsor, bilimsel derginin yalnızca işaret ettiğini açıkça iddia ediyor.",
   "kind": "say.tr",
-  "de": "Bilde du jetzt: Das Geld behauptet, was die Fachzeitschrift voraussetzt."
+  "de": "Bilde du jetzt: Der Geldgeber behauptet offen, was die Fachzeitschrift bloß andeutet."
  },
  {
   "tr": "Burada soylulaştırma yok, yoğunlaştırıyoruz ve elden geçiriyoruz.",
@@ -1640,9 +1640,9 @@
   "de": "Jetzt die Regel der Lektion. In der Wachstumsdebatte ist das Zugeständnis eine EINTRITTSKARTE:"
  },
  {
-  "tr": "Şimdi sıra sende: İhtiyat ilkesi incelemenin önce olmasını istiyor.",
+  "tr": "Şimdi sıra sende: İhtiyat ilkesi, güvenlik incelemesine öncelik verilmesini gerektirir.",
   "kind": "say.tr",
-  "de": "Jetzt bist du dran: Das Vorsorgeprinzip verlangt, dass die Prüfung vorher sei."
+  "de": "Jetzt bist du dran: Das Vorsorgeprinzip verlangt, dass der Sicherheitsprüfung Vorrang gegeben werde."
  },
  {
   "tr": "Merhaba! Bugün atık konuşmasının yerleşik eşdizimlerini öğreneceğiz.",
@@ -1650,9 +1650,9 @@
   "de": "Hallo! Heute lernen wir die festen Wortverbindungen des Redens über Abfall."
  },
  {
-  "tr": "Şimdi sen kur: Orman olmasaydı hiçbir ortak kullanım alanı tutmazdı.",
+  "tr": "Şimdi sen kur: Orman olmasaydı köyün paylaşacak ortak kullanım alanı olmazdı.",
   "kind": "say.tr",
-  "de": "Bilde du jetzt: Ohne Wald würde keine Allmende halten."
+  "de": "Bilde du jetzt: Ohne den Wald hätte das Dorf keine Allmende zu teilen."
  },
  {
   "tr": "Belirsizliği söyleyen model, bir kez şaşırdığında güvenini kaybetmez.",
@@ -1810,9 +1810,9 @@
   "de": "Bilde du jetzt: Sie gewinnen das Glas zurück und verkaufen es als Sekundärrohstoff."
  },
  {
-  "tr": "Şimdi sıra sende: Yukarıdaki mekânsal planlama aşağıda bir kurala dönüşüyor.",
+  "tr": "Şimdi sıra sende: Yukarıda özetlenen mekânsal planlama, aşağıdaki haritada somutlaşıyor.",
   "kind": "say.tr",
-  "de": "Jetzt bist du dran: Die Raumplanung oben wird unten zu einer Regel."
+  "de": "Jetzt bist du dran: Die oben skizzierte Raumplanung wird in der Karte unten konkret."
  },
  {
   "tr": "Bir önlemin davranışı yönlendirme gücü demek. İlk kalıbımız da bu. Tekrar et:",
@@ -1875,9 +1875,9 @@
   "de": "dagegen sagt, unter welcher Annahme es geschrieben wurde. Fällt die Adresse, wird der Maßstab eines Viertels auf die Stadt angewandt."
  },
  {
-  "tr": "Şimdi sıra sende: Eleştiri haklı olsa da emekli aylıklarını büyüme zorunluluğu ödüyor.",
+  "tr": "Şimdi sıra sende: Eleştiriye ne kadar katılsam da emekli aylıklarını büyüme zorunluluğu ödüyor.",
   "kind": "say.tr",
-  "de": "Jetzt bist du dran: So berechtigt die Kritik ist, die Renten zahlt der Wachstumszwang."
+  "de": "Jetzt bist du dran: So sehr ich der Kritik zustimme, die Renten zahlt der Wachstumszwang."
  },
  {
   "tr": "ise onu askıya alır. İkisi de meşrudur; meşru olmayan, hangisini seçtiğini gizlemektir.",

@@ -155,7 +155,7 @@
   "de": "Lehrt, das Ausgeschlossene an den Satzanfang zu stellen; was vorn steht, wird zum Thema des Gesprächs."
  },
  {
-  "tr": "Aynı topluluğun kayda göre başka ad aldığını öğretir; adı seçen kurum kendi hükmünü de seçmiş olur.",
+  "tr": "Aynı topluluğun dil düzeyine göre başka ad aldığını öğretir; adı seçen kurum kendi hükmünü de seçmiş olur.",
   "kind": "summary",
   "de": "Lehrt, dass dieselbe Gruppe je nach Register einen anderen Namen bekommt; wer den Namen wählt, wählt auch sein Urteil."
  },
@@ -725,9 +725,9 @@
   "de": "soziale Schicht"
  },
  {
-  "tr": "yörede alışılmış",
+  "tr": "yerel âdet",
   "kind": "vocab.tr",
-  "de": "ortsüblich"
+  "de": "örtlicher Brauch"
  },
  {
   "tr": "hatırlama kültürü",
@@ -1000,9 +1000,9 @@
   "de": "Fassen wir zusammen: den Namen berichtigen"
  },
  {
-  "tr": "Okuru adres taşıyor.",
+  "tr": "Açık göndermeler okuru yolda tutar.",
   "kind": "say.tr",
-  "de": "Die Adresse trägt die Leserin."
+  "de": "Klare Verweise halten die Leserin auf Kurs."
  },
  {
   "tr": "Ad kurumu da taşıyor.",
@@ -1025,9 +1025,9 @@
   "de": "Die Wortverbindung wählt das Thema."
  },
  {
-  "tr": "O yörede olağan sayılana",
+  "tr": "O yörede olağan sayılan davranışa",
   "kind": "say.tr",
-  "de": "Was in jener Gegend als üblich gilt, heißt"
+  "de": "Ein Verhalten, das in jener Gegend als üblich gilt, heißt"
  },
  {
   "tr": "Sözcüğün düz karşılığına",
@@ -1585,9 +1585,9 @@
   "de": "und die Macht zu entscheiden, was als richtige Lesart gilt, heißt"
  },
  {
-  "tr": "Tabu yıkma, dediler, üstelik uyumsuzluğa iyi geliyor.",
+  "tr": "Sağlıklı bir tabu yıkma, dediler, üstelik havaya iyi geliyor.",
   "kind": "say.tr",
-  "de": "Tabubruch, sagten sie, und dazu gut für die Dissonanz."
+  "de": "Ein gesunder Tabubruch, sagten sie, und dazu gut für die Stimmung."
  },
  {
   "tr": "Eğitim eşitsizliği olmasaydı sınıflı toplum silinirdi.",
@@ -1600,7 +1600,7 @@
   "de": "Herkunftsbedingte Benachteiligung ist gesellschaftlich bedingt."
  },
  {
-  "tr": "Yüksek kültür bir kayıttır, başat kültür bir iddiadır.",
+  "tr": "Yüksek kültür bir üsluptur, başat kültür bir iddiadır.",
   "kind": "say.tr",
   "de": "Hochkultur ist ein Register, Leitkultur ein Anspruch."
  },
@@ -1615,9 +1615,9 @@
   "de": "Das heißt prächtig und reichlich. Das ist auch unsere erste Wendung. Sprich nach:"
  },
  {
-  "tr": "Her katılım modelinin dayanışma göstermesini istiyorlar.",
+  "tr": "Her katılım modelinin kiracılara oy hakkı tanımasını istiyorlar.",
   "kind": "say.tr",
-  "de": "Sie verlangen, dass jedes Teilhabemodell Solidarität zeige."
+  "de": "Sie verlangen, dass jedes Teilhabemodell den Mietern ein Stimmrecht gebe."
  },
  {
   "tr": "Şimdi sen kur: Dışa göç ve geri dönüş net göçü üretiyor.",
@@ -1625,9 +1625,9 @@
   "de": "Bilde du jetzt: Abwanderung und Rückkehr ergeben die Nettozuwanderung."
  },
  {
-  "tr": "Toplumsal katman değişti, değerlerin dönüşümü değişmedi.",
+  "tr": "Toplumsal katman değişti, değerleri değişmedi.",
   "kind": "say.tr",
-  "de": "Die soziale Schicht änderte sich, der Wertewandel nicht."
+  "de": "Die soziale Schicht hat sich verändert, ihre Werte nicht."
  },
  {
   "tr": "Toplumsallaşma sıra düzenini başlatmadan önce kurabilir.",
@@ -1685,9 +1685,9 @@
   "de": "Jetzt bist du dran: Die Diaspora hält die Sprache, die Enklave das Schweigen."
  },
  {
-  "tr": "Bir tane daha: Her okulun dayanışma göstermesini istiyorlar.",
+  "tr": "Bir tane daha: Her okulun velilere oy hakkı tanımasını istiyorlar.",
   "kind": "say.tr",
-  "de": "Noch eins: Sie verlangen, dass jede Schule Solidarität zeige."
+  "de": "Noch eins: Sie verlangen, dass jede Schule den Eltern ein Stimmrecht gebe."
  },
  {
   "tr": "İkinci kalıbımız yalanlayıp aynı şeyi doğruluyor. Tekrar et:",
@@ -1715,9 +1715,9 @@
   "de": "Bilde du jetzt: Hinter der Mauer steht die Fremdenfeindlichkeit."
  },
  {
-  "tr": "Bir tane daha: Katman değişti, değerlerin dönüşümü değişmedi.",
+  "tr": "Bir tane daha: Mahalle değişti, değerleri değişmedi.",
   "kind": "say.tr",
-  "de": "Noch eins: Die Schicht änderte sich, der Wertewandel nicht."
+  "de": "Noch eins: Das Viertel hat sich verändert, seine Werte nicht."
  },
  {
   "tr": "Birini kenara itme işi demek. İlk kalıbımız da bu. Tekrar et:",
@@ -1740,7 +1740,7 @@
   "de": "Die Staatenlosigkeit erben wir, die Fremdherrschaft erinnern wir."
  },
  {
-  "tr": "Bir tane daha: Yüksek kültür bir kayıttır, kanon bir iddiadır.",
+  "tr": "Bir tane daha: Yüksek kültür bir üsluptur, kanon bir iddiadır.",
   "kind": "say.tr",
   "de": "Noch eins: Hochkultur ist ein Register, der Kanon ein Anspruch."
  },
@@ -1755,19 +1755,19 @@
   "de": "Der Integrationskurs, wenn auch nützlich, ist keine Willkommenskultur."
  },
  {
-  "tr": "Bir tane daha: Tabu yıkma, dediler, üstelik havaya iyi geliyor.",
+  "tr": "Bir tane daha: Sağlıklı bir kural ihlali, dediler, üstelik akşama renk katıyor.",
   "kind": "say.tr",
-  "de": "Noch eins: Tabubruch, sagten sie, und dazu gut für die Stimmung."
+  "de": "Noch eins: Ein gesunder Regelverstoß, sagten sie, und dazu Farbe für den Abend."
  },
  {
-  "tr": "Burada normdan sapma yok, yörede alışılmış bir norm ihlali var.",
+  "tr": "Burada normdan sapma yok, yerel bir âdet var.",
   "kind": "say.tr",
-  "de": "Hier gibt es keine Abweichung, hier gibt es einen ortsüblichen Normverstoß."
+  "de": "Hier gibt es keine Abweichung, hier gibt es einen örtlichen Brauch."
  },
  {
-  "tr": "Şimdi sen kur: Metin yorumu, müzenin varsaydığını iddia ediyor.",
+  "tr": "Şimdi sen kur: Metin yorumu, müzenin yalnızca varsaydığını açıkça iddia ediyor.",
   "kind": "say.tr",
-  "de": "Bilde du jetzt: Die Exegese behauptet, was das Museum voraussetzt."
+  "de": "Bilde du jetzt: Die Exegese behauptet offen, was das Museum bloß voraussetzt."
  },
  {
   "tr": "Bir tane daha: Bir geleneğe saygıdeğer demek ona uymak değildir.",
@@ -1805,9 +1805,9 @@
   "de": "Jetzt bist du dran: Der Gleichheitsgrundsatz verlangt, dass die Schule frei sei."
  },
  {
-  "tr": "Şimdi sıra sende: Ona kurs desek de asimilasyon demek istiyorlar.",
+  "tr": "Şimdi sıra sende: Ona ne kadar kurs demeyi sevsek de onlar asimilasyonu kastediyor.",
   "kind": "say.tr",
-  "de": "Jetzt bist du dran: Auch wenn wir es Kurs nennen, meinen sie Assimilation."
+  "de": "Jetzt bist du dran: So gern wir es Kurs nennen, sie meinen Assimilation."
  },
  {
   "tr": "Bilineni yeni baştan okumak demek. İlk kalıbımız da bu. Tekrar et:",
@@ -1815,9 +1815,9 @@
   "de": "Das heißt, das Bekannte von neuem zu lesen. Das ist auch unsere erste Wendung. Sprich nach:"
  },
  {
-  "tr": "Çevrilemezlik maneviyat olarak kalır, inanç krizi bir soru olarak.",
+  "tr": "Eski din maneviyat olarak kalır, inanç krizi bir soru olarak.",
   "kind": "say.tr",
-  "de": "Unübersetzbarkeit bleibt als Spiritualität, eine Glaubenskrise als Frage."
+  "de": "Die alte Religion bleibt als Spiritualität, die Glaubenskrise als Frage."
  },
  {
   "tr": "Geçmişi kimin aktardığı, aktarılanın kendisi kadar belirleyicidir.",
@@ -1855,9 +1855,9 @@
   "de": "Hallo! Heute lernen wir die festen Wortverbindungen des Redens über Migration."
  },
  {
-  "tr": "Metin yorumu, kültürel miras korumasının varsaydığını iddia ediyor.",
+  "tr": "Metin yorumu, geleneğin yalnızca varsaydığını açıkça iddia ediyor.",
   "kind": "say.tr",
-  "de": "Die Exegese behauptet, was der Denkmalschutz voraussetzt."
+  "de": "Die Exegese behauptet offen, was die Überlieferung bloß voraussetzt."
  },
  {
   "tr": "Şimdi dersin kuralı. Ödün karşı çıkışı zayıflatmaz, DİNLENİR kılar:",
@@ -1905,9 +1905,9 @@
   "de": "Jetzt die Regel der Lektion. Im Reden über Zugehörigkeit ist das weggelassene Glied wie eine PRÜFUNG:"
  },
  {
-  "tr": "Şimdi sen kur: Burada sorun yok, yörede alışılmış bir norm ihlali var.",
+  "tr": "Şimdi sen kur: Burada kural ihlali yok, yerel bir âdet var.",
   "kind": "say.tr",
-  "de": "Bilde du jetzt: Hier gibt es kein Problem, hier gibt es einen ortsüblichen Normverstoß."
+  "de": "Bilde du jetzt: Hier gibt es keinen Regelverstoß, hier gibt es einen örtlichen Brauch."
  },
  {
   "tr": "Merhaba! Bugün uyum tartışmasında kabul edip karşı çıkmayı öğreneceğiz.",
@@ -1915,9 +1915,9 @@
   "de": "Hallo! Heute lernen wir, in der Integrationsdebatte zuzugeben und zu widersprechen."
  },
  {
-  "tr": "Şimdi sıra sende: Dışlamanın yaptığı şey bir marjinal grup adlandırmak.",
+  "tr": "Şimdi sıra sende: Dışlamanın yaptığı şey bir marjinal grup yaratmak.",
   "kind": "say.tr",
-  "de": "Jetzt bist du dran: Was die Ausschließung tut, ist eine Randgruppe zu benennen."
+  "de": "Jetzt bist du dran: Was die Ausschließung tut, ist eine Randgruppe zu schaffen."
  },
  {
   "tr": "Tartışmayı sürdürmek isteyen, karşısındakine haklı olduğu yeri bırakır.",
@@ -1930,7 +1930,7 @@
   "de": "Das heißt die wechselseitige Veränderung zweier Kulturen. Das ist auch unsere erste Wendung. Sprich nach:"
  },
  {
-  "tr": "Merhaba! Bugün aynı topluluğun kayda göre başka ad aldığını öğreneceğiz.",
+  "tr": "Merhaba! Bugün aynı topluluğun dil düzeyine göre başka ad aldığını öğreneceğiz.",
   "kind": "say.tr",
   "de": "Hallo! Heute lernen wir, dass dieselbe Gruppe je nach Register einen anderen Namen bekommt."
  },
@@ -1945,9 +1945,9 @@
   "de": "Beim Rutschen der Bedeutung bleibt die Leserin nicht allein; jedes Rutschen wird mit einer Adresse markiert."
  },
  {
-  "tr": "O anlam değişimi, belirtildiği gibi, önceki bir sayfanın dil kullanımıdır.",
+  "tr": "Bu anlam değişimi, daha önce belirtildiği gibi, günlük dil kullanımından geliyor.",
   "kind": "say.tr",
-  "de": "Jener Bedeutungswandel ist, wie angemerkt, der Sprachgebrauch einer früheren Seite."
+  "de": "Dieser Bedeutungswandel kommt, wie bereits angemerkt, aus dem alltäglichen Sprachgebrauch."
  },
  {
   "tr": "Bu ders modülün sonuncusu; adı, ödünü ve eksiltmeyi birlikte kullanacaksın.",
@@ -1980,9 +1980,9 @@
   "de": "Noch eins: Die Fremdherrschaft erben wir, die Staatenlosigkeit erinnern wir."
  },
  {
-  "tr": "Şimdi sıra sende: Yukarıdaki dil değişimi aşağıda bir alışkanlığa dönüşüyor.",
+  "tr": "Şimdi sıra sende: Yukarıda anlatılan dil değişimi, aşağıda ele alınan alışkanlığa dönüşüyor.",
   "kind": "say.tr",
-  "de": "Jetzt bist du dran: Der Sprachwandel oben wird unten zu einer Gewohnheit."
+  "de": "Jetzt bist du dran: Der oben beschriebene Sprachwandel wird zu der unten behandelten Gewohnheit."
  },
  {
   "tr": "Merhaba! Bugün yakınlık üstüne konuşurken kipin koyduğu mesafeyi öğreneceğiz.",
@@ -2010,9 +2010,9 @@
   "de": "Hallo! Heute lernen wir, beim Wiedergeben einer Lesart der Vergangenheit das Urteil ins Verb zu legen."
  },
  {
-  "tr": "Şimdi sen kur: Çevrilemezlik maneviyat olarak kalır, bir kuşku bir soru olarak.",
+  "tr": "Şimdi sen kur: Eski din maneviyat olarak kalır, kuşku bir soru olarak.",
   "kind": "say.tr",
-  "de": "Bilde du jetzt: Unübersetzbarkeit bleibt als Spiritualität, ein Zweifel als Frage."
+  "de": "Bilde du jetzt: Die alte Religion bleibt als Spiritualität, der Zweifel als Frage."
  },
  {
   "tr": "Şimdi dersin kuralı. Kip, bilmediğin bir hayatı anlatırken senin mesafeni söyler:",
@@ -2035,9 +2035,9 @@
   "de": "dagegen hält sie für ein Problem. Dieselbe Straße, dieselben Menschen, zwei Namen und zwei Politiken."
  },
  {
-  "tr": "Şimdi sen kur: O anlam değişimi, belirtildiği gibi, önceki bir sayfanın alışkanlığıdır.",
+  "tr": "Şimdi sen kur: Bu anlam değişimi, daha önce belirtildiği gibi, günlük konuşmadan geliyor.",
   "kind": "say.tr",
-  "de": "Bilde du jetzt: Jener Bedeutungswandel ist, wie angemerkt, die Gewohnheit einer früheren Seite."
+  "de": "Bilde du jetzt: Dieser Bedeutungswandel kommt, wie bereits angemerkt, aus der Alltagssprache."
  },
  {
   "tr": "ise insanları. Üçü de aynı olguyu anlatır ve üçünde de dinleyen başka bir şeyi hatırlar.",

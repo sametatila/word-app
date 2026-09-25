@@ -680,9 +680,9 @@
   "de": "Jetzt du: Erst zum Termin haben sie geantwortet."
  },
  {
-  "tr": "Pazartesi geciken hesap sonra yeniden başlatıldı.",
+  "tr": "Pazartesi durdurulan hizmet çarşamba yeniden başlatıldı.",
   "kind": "say.tr",
-  "de": "Das am Montag verzögerte Konto wurde später wieder aufgenommen."
+  "de": "Der am Montag ausgesetzte Dienst wurde am Mittwoch wieder aufgenommen."
  },
  {
   "tr": "Süre uzatımı isteseydik bugün daha sakin olurduk.",

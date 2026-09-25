@@ -285,7 +285,7 @@
   "de": "Das Gespräch gilt als geschafft, wenn du in drei Modalstufen erzählt und bei jeder gesagt hast, was du nicht weißt."
  },
  {
-  "tr": "Aynı kararı iki kayıtta adlandırdıysan ve her adın neyi görünmez kıldığını söylediysen konuşma başarılı sayılır.",
+  "tr": "Aynı kararı iki dil düzeyinde adlandırdıysan ve her adın neyi görünmez kıldığını söylediysen konuşma başarılı sayılır.",
   "kind": "goal",
   "de": "Das Gespräch gilt als geschafft, wenn du dieselbe Entscheidung in zwei Registern benannt und gesagt hast, was jeder Name unsichtbar macht."
  },
@@ -360,7 +360,7 @@
   "de": "bringt zwei Wortverbindungen zusammen"
  },
  {
-  "tr": "aynı kararı iki kayıtta söyler",
+  "tr": "aynı kararı iki dil düzeyinde söyler",
   "kind": "pattern.tr",
   "de": "sagt dieselbe Entscheidung in zwei Registern"
  },
@@ -700,9 +700,9 @@
   "de": "entfristen"
  },
  {
-  "tr": "statü güvencesizliği",
+  "tr": "iş güvencesizliği",
   "kind": "vocab.tr",
-  "de": "Statusunsicherheit"
+  "de": "Arbeitsplatzunsicherheit"
  },
  {
   "tr": "yasal emeklilik yaşı",
@@ -770,9 +770,9 @@
   "de": "Generationenvertrag"
  },
  {
-  "tr": "toplu sözleşme özerkliği",
+  "tr": "toplu sözleşme hakkı",
   "kind": "vocab.tr",
-  "de": "Tarifautonomie"
+  "de": "Tarifautonomie / Tarifrecht"
  },
  {
   "tr": "Talebi kalıpla kurmak için",
@@ -815,7 +815,7 @@
   "de": "Um Methode und Programm zu trennen, werden zwei Hälften gebaut:"
  },
  {
-  "tr": "Aynı kararı iki kayıtta söylemek için iki yer adı yeter:",
+  "tr": "Aynı kararı iki dil düzeyinde söylemek için iki yer adı yeter:",
   "kind": "hint.tr",
   "de": "Um dieselbe Entscheidung in zwei Registern zu sagen, genügen zwei Ortsangaben:"
  },
@@ -980,9 +980,9 @@
   "de": "woher die Entscheidung kommt,"
  },
  {
-  "tr": "Sorumluluğu adres tutuyor.",
+  "tr": "Açık göndermeler sorumluluğu izlenebilir kılar.",
   "kind": "say.tr",
-  "de": "Die Verantwortung hält die Adresse."
+  "de": "Klare Verweise machen Verantwortung nachvollziehbar."
  },
  {
   "tr": "Geçimini sağlayan çalışmaya",
@@ -1360,7 +1360,7 @@
   "de": "Die Legitimierung kommt, wenn alles vorbei ist."
  },
  {
-  "tr": "Şimdi aynı kararı iki kayıtta anlatacaksın.",
+  "tr": "Şimdi aynı kararı iki dil düzeyinde anlatacaksın.",
   "kind": "say.tr",
   "de": "Jetzt erzählst du dieselbe Entscheidung in zwei Registern."
  },
@@ -1575,9 +1575,9 @@
   "de": "Jetzt bist du dran: Das Rentenniveau fiel, der Beitrag nicht."
  },
  {
-  "tr": "Yayın baskısı, dediler, üstelik intihale karşı iyi geliyor.",
+  "tr": "Sağlıklı bir yayın baskısı, dediler, üstelik kaliteye iyi geliyor.",
   "kind": "say.tr",
-  "de": "Publikationsdruck, sagten sie, und dazu gut gegen Plagiate."
+  "de": "Gesunder Publikationsdruck, sagten sie, und dazu gut für die Qualität."
  },
  {
   "tr": "Alan dışından geçiş ve yetkinlik odaklılık birlikte geliyor.",
@@ -1585,9 +1585,9 @@
   "de": "Quereinstieg und Kompetenzorientierung kommen zusammen."
  },
  {
-  "tr": "Eylem kalıbı, gündelik uygulamanın varsaydığını iddia ediyor.",
+  "tr": "Yazılı kural, gündelik uygulamanın yalnızca varsaydığını açıkça iddia ediyor.",
   "kind": "say.tr",
-  "de": "Das Handlungsmuster behauptet, was die Alltagspraxis voraussetzt."
+  "de": "Die schriftliche Regel behauptet offen, was die Alltagspraxis bloß voraussetzt."
  },
  {
   "tr": "Son kalıbımız iki sonucu tek kipin altına koyuyor. Tekrar et:",
@@ -1595,9 +1595,9 @@
   "de": "Unsere letzte Wendung stellt zwei Folgen unter ein Modalverb. Sprich nach:"
  },
  {
-  "tr": "Şimdi sıra sende: Program desteklendi, geçiş oranı pek değil.",
+  "tr": "Şimdi sıra sende: Program başarılı oldu, geçiş oranı pek değil.",
   "kind": "say.tr",
-  "de": "Jetzt bist du dran: Das Programm wurde gefördert, die Übergangsquote weniger."
+  "de": "Jetzt bist du dran: Das Programm war ein Erfolg, die Übergangsquote weniger."
  },
  {
   "tr": "Şimdi sıra sende: Raporda tasarruf, atölyede iş yoğunlaşması.",
@@ -1690,9 +1690,9 @@
   "de": "Die Erwerbsquote stieg, das zweckgebundene Geld überhaupt nicht."
  },
  {
-  "tr": "Sınır, geçirgen olsa da, statü güvencesizliğini ortadan kaldırmıyor.",
+  "tr": "Sınır, geçirgen olsa da, iş güvencesizliğini ortadan kaldırmıyor.",
   "kind": "say.tr",
-  "de": "Die Grenze, wenn auch durchlässig, beseitigt die Statusunsicherheit nicht."
+  "de": "Die Grenze, wenn auch durchlässig, beseitigt die Arbeitsplatzunsicherheit nicht."
  },
  {
   "tr": "Alay kurumun kendi diline yaslandığında en zor çürütülen eleştiridir.",
@@ -1700,9 +1700,9 @@
   "de": "Stützt sich der Spott auf die Sprache der Einrichtung selbst, ist er die am schwersten zu widerlegende Kritik."
  },
  {
-  "tr": "Şimdi sen kur: Kalıp, gündelik uygulamanın varsaydığını iddia ediyor.",
+  "tr": "Şimdi sen kur: Yönetmelik, gündelik uygulamanın yalnızca varsaydığını açıkça iddia ediyor.",
   "kind": "say.tr",
-  "de": "Bilde du jetzt: Das Muster behauptet, was die Alltagspraxis voraussetzt."
+  "de": "Bilde du jetzt: Die Vorschrift behauptet offen, was die Alltagspraxis bloß voraussetzt."
  },
  {
   "tr": "Bir tane daha: Sorumluluk belirsizse performans göstergesi işe yaramaz.",
@@ -1730,14 +1730,14 @@
   "de": "Hallo! Heute lernen wir die feste Form der Tarifsprache."
  },
  {
-  "tr": "Şimdi dersin kuralı. Aynı karar iki kayıtta iki ayrı olgu gibi görünür:",
+  "tr": "Şimdi dersin kuralı. Aynı karar iki dil düzeyinde iki ayrı olgu gibi görünür:",
   "kind": "say.tr",
   "de": "Jetzt die Regel der Lektion. Dieselbe Entscheidung sieht in zwei Registern wie zwei Tatsachen aus:"
  },
  {
-  "tr": "Şimdi sıra sende: Ekibi bünyeden ayırsalar da iş şirket içinde kalıyor.",
+  "tr": "Şimdi sıra sende: Ekibi bünyeden ayırmayı ne kadar isteseler de asıl iş şirket içinde kalıyor.",
   "kind": "say.tr",
-  "de": "Jetzt bist du dran: Sooft sie das Team ausgliedern, bleibt die Arbeit hausintern."
+  "de": "Jetzt bist du dran: So gern sie das Team ausgliedern würden, die eigentliche Arbeit bleibt im Haus."
  },
  {
   "tr": "Şimdi sıra sende: Hiyerarşinin yaptığı şey güç dengesizliğini gizlemek.",
@@ -1760,9 +1760,9 @@
   "de": "Bilde du jetzt: Quereinstieg und Personalentwicklung kommen zusammen."
  },
  {
-  "tr": "Şimdi sıra sende: Yukarıdaki yapısal değişim aşağıda bir riske dönüşüyor.",
+  "tr": "Şimdi sıra sende: Yukarıda anlatılan yapısal değişim, aşağıda ele alınan riski doğuruyor.",
   "kind": "say.tr",
-  "de": "Jetzt bist du dran: Der Strukturwandel oben wird unten zu einem Risiko."
+  "de": "Jetzt bist du dran: Der oben beschriebene Strukturwandel erzeugt das unten behandelte Risiko."
  },
  {
   "tr": "Bir tane daha: Hareket alanını fark ediyoruz, boyun eğmeyi fark etmiyoruz.",
@@ -1795,12 +1795,12 @@
   "de": "Das Zugeständnis gibt man nicht, um das Gegenüber zu gewinnen, sondern um den Einwand tragen zu können."
  },
  {
-  "tr": "Şimdi sıra sende: Toplu sözleşme özerkliği masanın serbest olmasını istiyor.",
+  "tr": "Şimdi sıra sende: Toplu sözleşme hakkı, görüşmelerin baskı olmadan yürütülmesini gerektirir.",
   "kind": "say.tr",
-  "de": "Jetzt bist du dran: Die Tarifautonomie verlangt, dass der Tisch frei sei."
+  "de": "Jetzt bist du dran: Die Tarifautonomie verlangt, dass die Gespräche frei von Druck geführt werden."
  },
  {
-  "tr": "Bir tane daha: Kurul şirketin her sözleşmeyi kalıcı hale getirmesini istiyor.",
+  "tr": "Bir tane daha: Kurul şirketin her sözleşmeyi kalıcı hâle getirmesini istiyor.",
   "kind": "say.tr",
   "de": "Noch eins: Der Rat verlangt, dass die Firma jeden Vertrag entfriste."
  },
@@ -1900,9 +1900,9 @@
   "de": "Das heißt das Recht der Parteien, sich ohne den Staat zu einigen. Das ist auch unsere erste Wendung. Sprich nach:"
  },
  {
-  "tr": "Şimdi sen kur: Kural, geçirgen olsa da, statü güvencesizliğini ortadan kaldırmıyor.",
+  "tr": "Şimdi sen kur: Kural, geçirgen olsa da, iş güvencesizliğini ortadan kaldırmıyor.",
   "kind": "say.tr",
-  "de": "Bilde du jetzt: Die Regel, wenn auch durchlässig, beseitigt die Statusunsicherheit nicht."
+  "de": "Bilde du jetzt: Die Regel, wenn auch durchlässig, beseitigt die Arbeitsplatzunsicherheit nicht."
  },
  {
   "tr": "Bir birimi şirketten ayırıp bağımsızlaştırmak demek. İlk kalıbımız da bu. Tekrar et:",
@@ -1915,9 +1915,9 @@
   "de": "Jetzt die Regel der Lektion. Im Eigenlob entsteht der Spott, wenn man das Lobwort selbst benutzt:"
  },
  {
-  "tr": "O rekabetin bozulması, belirtildiği gibi, önceki bir sayfanın fizibilite çalışmasıdır.",
+  "tr": "Rekabetin bozulması, daha önce belirtildiği gibi, fizibilite çalışmasında işaretlenmişti.",
   "kind": "say.tr",
-  "de": "Jene Wettbewerbsverzerrung ist, wie angemerkt, die Machbarkeitsstudie einer früheren Seite."
+  "de": "Die Wettbewerbsverzerrung wurde, wie bereits angemerkt, in der Machbarkeitsstudie angesprochen."
  },
  {
   "tr": "ise kimin daha önce ne dediğini işaretler. Adres yoksa hiçbir karar kimseye bağlanamaz.",
@@ -1940,14 +1940,14 @@
   "de": "dagegen stellt den Preis voran. Niemand lügt; es ändert sich nur, welche Hälfte gesagt wird."
  },
  {
-  "tr": "Kadın işçi temsilcisi şirketin her çıraklık sözleşmesini kalıcı hale getirmesini istiyor.",
+  "tr": "Kadın işçi temsilcisi şirketin her çıraklık sözleşmesini kalıcı hâle getirmesini istiyor.",
   "kind": "say.tr",
   "de": "Die Betriebsrätin verlangt, dass die Firma jeden Ausbildungsvertrag entfriste."
  },
  {
-  "tr": "Şimdi sen kur: O gecikme, belirtildiği gibi, önceki bir sayfanın fizibilite çalışmasıdır.",
+  "tr": "Şimdi sen kur: Gecikme, daha önce belirtildiği gibi, fizibilite çalışmasında işaretlenmişti.",
   "kind": "say.tr",
-  "de": "Bilde du jetzt: Jene Verzögerung ist, wie angemerkt, die Machbarkeitsstudie einer früheren Seite."
+  "de": "Bilde du jetzt: Die Verzögerung wurde, wie bereits angemerkt, in der Machbarkeitsstudie angesprochen."
  },
  {
   "tr": "ise insanları bekleyen bir stok gibi gösterir. Sözcük seçimi burada bir siyaset seçimidir.",

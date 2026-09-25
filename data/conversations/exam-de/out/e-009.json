@@ -84,7 +84,7 @@
  { "tr": "Rakamların düşüş gösterdiği söyleniyor ama kaynak bir tahmin.", "kind": "speaking", "de": "Es heißt, die Zahlen zeigten einen Rückgang, aber die Quelle ist eine Hochrechnung." },
  { "tr": "Süre bitmeden bir kopya göndermiştim. Kopya yeterli değil mi?", "kind": "turn", "de": "Ich hatte vor Fristablauf eine Kopie geschickt. Genügt eine Kopie nicht?" },
  { "tr": "Üç yıldır bir ekiple çalışıyorum ve projeleri organize ettim.", "kind": "speaking", "de": "Ich arbeite seit drei Jahren in einem Team und habe Projekte organisiert." },
- { "tr": "Biz ona kültürlenme desek de gittikleri kursun adı uyum kursu.", "kind": "turn", "de": "Wir nennen es Akkulturation, der Kurs aber, den sie besuchen, heißt Anpassungskurs." },
+ { "tr": "Ona ne kadar kültürlenme demeyi sevsek de gittikleri kursun adı uyum kursu.", "kind": "turn", "de": "So gern wir es Akkulturation nennen, der Kurs, den sie besuchen, heißt Anpassungskurs." },
  { "tr": "Bunlar iki ayrı fiil ve bir kararda bu fark davanın tamamıdır.", "kind": "turn", "de": "Das sind zwei verschiedene Verben, und in einem Bescheid ist dieser Unterschied der ganze Fall." },
  { "tr": "Burada kariyeri belirleyen şey saat ücreti değil, terfi şansı.", "kind": "turn", "de": "Über die Laufbahn entscheidet hier nicht der Stundenlohn, sondern die Aufstiegschance." },
  { "tr": "Ev sahibi kombinin kontrol edileceğini söylemişti. Yapıldı mı?", "kind": "turn", "de": "Der Vermieter sagte, die Heizung werde geprüft. Ist das geschehen?" },

@@ -148,5 +148,5 @@
  { "tr": "Broşürde …, imar planında …", "kind": "phrase", "de": "In der Broschüre …, im Bebauungsplan …" },
  { "tr": "Kombi …-den beri çalışmıyor", "kind": "phrase", "de": "Die Heizung funktioniert seit … nicht" },
  { "tr": "… olduğu sürece yine denerim", "kind": "phrase", "de": "Ich versuche es wieder, solange …" },
- { "tr": "…-i görsem de plan … kalıyor", "kind": "phrase", "de": "So sehr ich … sehe, der Plan bleibt …" }
+ { "tr": "…-i kabul etsem de plan … kalıyor", "kind": "phrase", "de": "So sehr ich … anerkenne, der Plan bleibt …" }
 ]

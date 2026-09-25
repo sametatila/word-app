@@ -130,7 +130,7 @@
   "de": "Eine Freiheit fordern"
  },
  {
-  "tr": "Aynı savın üç kaydı",
+  "tr": "Aynı savın üç dil düzeyi",
   "kind": "titleTr",
   "de": "Drei Register einer These"
  },
@@ -195,7 +195,7 @@
   "de": "Die letzte Lektion des Kurses: zeigt, dass auf C1 nicht eine neue Regel, sondern eine Wahl gelernt wurde, und dass die Auslassung die leiseste Form dieser Wahl ist."
  },
  {
-  "tr": "Bir savı önce denemenin, sonra broşürün üslubuyla söylüyorsun. İki kaydı da kur ve hangisinde savın yerini duygunun aldığını söyle.",
+  "tr": "Bir savı önce denemenin, sonra broşürün üslubuyla söylüyorsun. İki üslubu da kur ve hangisinde savın yerini duygunun aldığını söyle.",
   "kind": "scene",
   "de": "Du sagst eine These erst im Stil des Essays, dann im Stil des Flugblatts. Bilde beide Register und sag, in welchem das Gefühl die Stelle der These einnimmt."
  },
@@ -265,7 +265,7 @@
   "de": "Das Gespräch gilt als geschafft, wenn du die beiden Wiedergaben mit zwei Verben gesagt und gesagt hast, wo du selbst stehst."
  },
  {
-  "tr": "Aynı savı iki üslup kaydında söylediysen ve duygunun savın yerini aldığı yeri gösterdiysen konuşma başarılı sayılır.",
+  "tr": "Aynı savı iki üslupta söylediysen ve duygunun savın yerini aldığı yeri gösterdiysen konuşma başarılı sayılır.",
   "kind": "goal",
   "de": "Das Gespräch gilt als geschafft, wenn du dieselbe These in zwei Stilregistern gesagt und die Stelle gezeigt hast, an der das Gefühl die These ersetzt."
  },
@@ -335,7 +335,7 @@
   "de": "trennt Verzerrung und Gemeinplatz"
  },
  {
-  "tr": "aynı aracı iki kayıtta söyler",
+  "tr": "aynı aracı iki dil düzeyinde söyler",
   "kind": "pattern.tr",
   "de": "sagt dasselbe Mittel in zwei Registern"
  },
@@ -485,9 +485,9 @@
   "de": "Gleichgültigkeit"
  },
  {
-  "tr": "üslup akımı",
+  "tr": "edebî akım",
   "kind": "vocab.tr",
-  "de": "Stilrichtung"
+  "de": "literarische Strömung"
  },
  {
   "tr": "üslup aracı",
@@ -510,9 +510,9 @@
   "de": "Fehlerquelle"
  },
  {
-  "tr": "üslup düzeyi",
+  "tr": "dil düzeyi",
   "kind": "vocab.tr",
-  "de": "Stilebene"
+  "de": "Register / Stilebene"
  },
  {
   "tr": "benlik algısı",
@@ -765,7 +765,7 @@
   "de": "Um Wahl und Fehler zu trennen, werden zwei Hälften gebaut:"
  },
  {
-  "tr": "Aynı aracı iki kayıtta söylemek için iki yer adı yeter:",
+  "tr": "Aynı aracı iki dil düzeyinde söylemek için iki yer adı yeter:",
   "kind": "hint.tr",
   "de": "Um dasselbe Mittel in zwei Registern zu sagen, genügen zwei Ortsangaben:"
  },
@@ -1020,9 +1020,9 @@
   "de": "und die Zahl nahe am genauen Wert heißt"
  },
  {
-  "tr": "bir çağın ortak üslubuna ise",
+  "tr": "bir çağın ortak edebî eğilimine ise",
   "kind": "say.tr",
-  "de": "und der gemeinsame Stil einer Epoche heißt"
+  "de": "und die gemeinsame literarische Richtung einer Epoche heißt"
  },
  {
   "tr": "gidişi belirleyen karara ise",
@@ -1270,7 +1270,7 @@
   "de": "und der offenkundige Satz, den man nicht sagen müsste, heißt"
  },
  {
-  "tr": "Şimdi aynı savı iki kayıtta söyleyeceksin.",
+  "tr": "Şimdi aynı savı iki dil düzeyinde söyleyeceksin.",
   "kind": "say.tr",
   "de": "Jetzt sagst du dieselbe These in zwei Registern."
  },
@@ -1485,9 +1485,9 @@
   "de": "Noch eins: Die Gelassenheit lernen wir, den Rest wählen wir."
  },
  {
-  "tr": "Eleştirmenin üslup akımı dediğine okur üslup düzeyi diyor.",
+  "tr": "Eleştirmenin edebî akım dediğine okur gelip geçici bir moda diyor.",
   "kind": "say.tr",
-  "de": "Was die Kritikerin Stilrichtung nennt, nennt die Leserin Stilebene."
+  "de": "Was die Kritikerin eine literarische Strömung nennt, nennt die Leserin eine vorübergehende Mode."
  },
  {
   "tr": "Kendini kandırma bir savunma mekanizması gibi görünebilir.",
@@ -1550,9 +1550,9 @@
   "de": "Jetzt die Regel der Lektion. Die Ordnung der These wählt, was unsichtbar bleibt:"
  },
  {
-  "tr": "Ayrıntı düşkünlüğü, dediler, üstelik hiddete karşı iyi geliyor.",
+  "tr": "Ayrıntı düşkünlüğü, dediler, üstelik epey sevimli.",
   "kind": "say.tr",
-  "de": "Ein Hang zum Detail, sagten sie, und dazu gut gegen Heftigkeit."
+  "de": "Ein Hang zum Detail, sagten sie, und recht charmant."
  },
  {
   "tr": "Merhaba! Bugün uzun bir savı baştan sona bağlamayı öğreneceğiz.",
@@ -1595,9 +1595,9 @@
   "de": "Sie verlangen, dass die Privatautonomie der richterlichen Kontrolle unterzogen werde."
  },
  {
-  "tr": "Sanat özgürlüğü olmasaydı hiçbir bilgi edinme özgürlüğü tutmazdı.",
+  "tr": "Bilgi edinme özgürlüğü olmasaydı kamuoyu bu dosyaları hiç göremezdi.",
   "kind": "say.tr",
-  "de": "Ohne Kunstfreiheit würde keine Informationsfreiheit halten."
+  "de": "Gäbe es die Informationsfreiheit nicht, würde die Öffentlichkeit diese Akten nie sehen."
  },
  {
   "tr": "Şimdi dersin kuralı. Aktarma fiili senin nerede durduğunu söyler:",
@@ -1660,9 +1660,9 @@
   "de": "Hallo! Heute lernen wir die festen Wortverbindungen des Redens über Belege."
  },
  {
-  "tr": "Şimdi sen kur: Editörün üslup akımı dediğine okur üslup düzeyi diyor.",
+  "tr": "Şimdi sen kur: Editörün edebî akım dediğine okur bir heves diyor.",
   "kind": "say.tr",
-  "de": "Bilde du jetzt: Was der Lektor Stilrichtung nennt, nennt die Leserin Stilebene."
+  "de": "Bilde du jetzt: Was der Lektor eine literarische Strömung nennt, nennt die Leserin eine Laune."
  },
  {
   "tr": "Tartışmalı konuyu adlandırıyoruz, uzman tartışmasını adlandırmıyoruz.",
@@ -1700,9 +1700,9 @@
   "de": "Jetzt bist du dran: Was die These tut, ist einen Denkfehler zu verbergen."
  },
  {
-  "tr": "Şimdi sıra sende: Vicdan özgürlüğü kanunun dokunulmaz olmasını istiyor.",
+  "tr": "Şimdi sıra sende: Akademik özgürlük, hiçbir araştırmanın siyasi gerekçeyle durdurulmamasını gerektirir.",
   "kind": "say.tr",
-  "de": "Jetzt bist du dran: Die Gewissensfreiheit verlangt, dass das Gesetz unangetastet bleibe."
+  "de": "Jetzt bist du dran: Die Wissenschaftsfreiheit verlangt, dass keine Forschung aus politischen Gründen gestoppt werde."
  },
  {
   "tr": "Ahlak tartışmasında ödün, karşındakinin düşünmeye devam etmesini sağlar.",
@@ -1755,9 +1755,9 @@
   "de": "Eine Bewältigungsstrategie kann die Übertragung verbergen und latent bleiben."
  },
  {
-  "tr": "Şimdi sen kur: Mahkemeler olmasaydı hiçbir bilgi edinme özgürlüğü tutmazdı.",
+  "tr": "Şimdi sen kur: Mahkemeler olmasaydı kamuoyu bu dosyaları hiç göremezdi.",
   "kind": "say.tr",
-  "de": "Bilde du jetzt: Ohne Gerichte würde keine Informationsfreiheit halten."
+  "de": "Bilde du jetzt: Gäbe es die Gerichte nicht, würde die Öffentlichkeit diese Akten nie sehen."
  },
  {
   "tr": "Şimdi sıra sende: Arayış bir alışkanlık olarak kalır, hedef bir anı olarak.",
@@ -1820,9 +1820,9 @@
   "de": "Jetzt bist du dran: So sehr uns der Zweifel beunruhigt, keine Maxime überlebt ohne Zweifel."
  },
  {
-  "tr": "Şimdi sıra sende: Yukarıdaki etki değerlendirmesi aşağıda bir maliyete dönüşüyor.",
+  "tr": "Şimdi sıra sende: Yukarıdaki etki değerlendirmesi, aşağıdaki maliyet hesabıyla tartılmalı.",
   "kind": "say.tr",
-  "de": "Jetzt bist du dran: Die Folgenabschätzung oben wird unten zu einer Kostenfrage."
+  "de": "Jetzt bist du dran: Die Folgenabschätzung oben muss gegen die Kostenrechnung unten abgewogen werden."
  },
  {
   "tr": "Bir tane daha: Uzman tartışmasını adlandırıyoruz, tartışmalı konuyu adlandırmıyoruz.",
@@ -1855,9 +1855,9 @@
   "de": "Bilde du jetzt: Eine Zahl zu verfälschen ist eine Verzerrung, keine Binsenweisheit."
  },
  {
-  "tr": "Şimdi sen kur: O karar, belirtildiği gibi, önceki bir sayfanın teknoloji değerlendirmesidir.",
+  "tr": "Şimdi sen kur: O karar, daha önce belirtildiği gibi, bir teknoloji değerlendirmesine dayanıyordu.",
   "kind": "say.tr",
-  "de": "Bilde du jetzt: Jene Entscheidung ist, wie angemerkt, die Technikfolgenabschätzung einer früheren Seite."
+  "de": "Bilde du jetzt: Jene Entscheidung beruhte, wie bereits angemerkt, auf einer Technikfolgenabschätzung."
  },
  {
   "tr": "İlk cümle savın neyi gizleyeceğini de belirliyor; sıra bir üslup meselesi değil. Hazır mısın?",
@@ -1865,9 +1865,9 @@
   "de": "Der erste Satz bestimmt auch, was die These verbirgt; die Ordnung ist keine Stilfrage. Bist du bereit?"
  },
  {
-  "tr": "O yön belirleyici karar, belirtildiği gibi, önceki bir sayfanın teknoloji değerlendirmesidir.",
+  "tr": "O yön belirleyici karar, daha önce belirtildiği gibi, bir teknoloji değerlendirmesine dayanıyordu.",
   "kind": "say.tr",
-  "de": "Jene Weichenstellung ist, wie angemerkt, die Technikfolgenabschätzung einer früheren Seite."
+  "de": "Jene Weichenstellung beruhte, wie bereits angemerkt, auf einer Technikfolgenabschätzung."
  },
  {
   "tr": "Savunmakla onaylamak arasındaki fark fiilde duruyor ve dinleyen o farkı duyuyor. Hazır mısın?",

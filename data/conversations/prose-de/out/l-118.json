@@ -265,7 +265,7 @@
   "de": "Das Gespräch gilt als geschafft, wenn du die Börse, den Haushalt und den Direktverkauf mit drei Wortverbindungen benannt hast."
  },
  {
-  "tr": "Aynı tarlayı iki kayıtta adlandırdıysan ve her adın getirdiği izni söylediysen konuşma başarılı sayılır.",
+  "tr": "Aynı tarlayı iki dil düzeyinde adlandırdıysan ve her adın getirdiği izni söylediysen konuşma başarılı sayılır.",
   "kind": "goal",
   "de": "Das Gespräch gilt als geschafft, wenn du denselben Acker in zwei Registern benannt und die Erlaubnis jedes Namens gesagt hast."
  },
@@ -290,9 +290,9 @@
   "de": "Richtig. Das eine benennt eine Weitergabe, das andere erhebt einen Fachanspruch."
  },
  {
-  "tr": "Doğru. Fiil çekilmemiş; koşul kişiye değil hedefin kendisine bağlanmış.",
+  "tr": "Doğru. Fiil çekilmemiş; koşul kişiye değil ölçünün kendisine bağlanmış.",
   "kind": "why.tr",
-  "de": "Richtig. Das Verb ist nicht gebeugt; die Bedingung hängt nicht an einer Person, sondern am Ziel selbst."
+  "de": "Richtig. Das Verb ist nicht gebeugt; die Bedingung hängt nicht an einer Person, sondern am Maßstab selbst."
  },
  {
   "tr": "Doğru. «might» iddiayı uzakta tutuyor; cümle bir senaryo olarak kalıyor.",
@@ -330,7 +330,7 @@
   "de": "trennt Streit und Tatsache"
  },
  {
-  "tr": "aynı toprağı iki kayıtta söyler",
+  "tr": "aynı toprağı iki dil düzeyinde söyler",
   "kind": "pattern.tr",
   "de": "sagt denselben Boden in zwei Registern"
  },
@@ -780,7 +780,7 @@
   "de": "Um in der zweiten Hälfte das Objekt voranzustellen, wird ein Komma verwendet:"
  },
  {
-  "tr": "Aynı toprağı iki kayıtta söylemek için iki yer adı yeter:",
+  "tr": "Aynı toprağı iki dil düzeyinde söylemek için iki yer adı yeter:",
   "kind": "hint.tr",
   "de": "Um denselben Boden in zwei Registern zu sagen, genügen zwei Ortsangaben:"
  },
@@ -895,9 +895,9 @@
   "de": "Der Preis gehört in den Satz."
  },
  {
-  "tr": "Koşulu adres taşıyor.",
+  "tr": "Her gönderme kendi koşulunu taşır.",
   "kind": "say.tr",
-  "de": "Die Bedingung trägt die Adresse."
+  "de": "Jeder Verweis trägt seine eigene Bedingung."
  },
  {
   "tr": "Özetleyelim: ölçülmüş",
@@ -1285,7 +1285,7 @@
   "de": "Der Regen lässt das Nitrat versickern."
  },
  {
-  "tr": "Şimdi aynı toprağı iki kayıtta anlatacaksın.",
+  "tr": "Şimdi aynı toprağı iki dil düzeyinde anlatacaksın.",
   "kind": "say.tr",
   "de": "Jetzt beschreibst du denselben Boden in zwei Registern."
  },
@@ -1625,9 +1625,9 @@
   "de": "Jetzt die Regel der Lektion. Im Saatgutvertrag ist die Auslassung eine RECHTSFRAGE:"
  },
  {
-  "tr": "Şimdi sen kur: Rapor, saha araştırmasının varsaydığını iddia ediyor.",
+  "tr": "Şimdi sen kur: Rapor, saha araştırmasının yalnızca işaret ettiğini açıkça iddia ediyor.",
   "kind": "say.tr",
-  "de": "Bilde du jetzt: Der Bericht behauptet, was die Feldforschung voraussetzt."
+  "de": "Bilde du jetzt: Der Bericht behauptet offen, was die Feldforschung bloß andeutet."
  },
  {
   "tr": "Değişen iklime göre düzen kurma demek. İlk kalıbımız da bu. Tekrar et:",
@@ -1675,14 +1675,14 @@
   "de": "Bilde du jetzt: Hinter dem Verkauf steht eine gescheiterte Hofnachfolge."
  },
  {
-  "tr": "Sürdürülebilirlik raporu, saha araştırmasının varsaydığını iddia ediyor.",
+  "tr": "Sürdürülebilirlik raporu, saha araştırmasının yalnızca işaret ettiğini açıkça iddia ediyor.",
   "kind": "say.tr",
-  "de": "Der Nachhaltigkeitsbericht behauptet, was die Feldforschung voraussetzt."
+  "de": "Der Nachhaltigkeitsbericht behauptet offen, was die Feldforschung bloß andeutet."
  },
  {
-  "tr": "Şimdi sıra sende: Yukarıdaki iklime uyum aşağıda bir maliyete dönüşüyor.",
+  "tr": "Şimdi sıra sende: Yukarıda anlatılan iklime uyum, aşağıda ele alınan maliyetleri doğuruyor.",
   "kind": "say.tr",
-  "de": "Jetzt bist du dran: Die Klimaanpassung oben wird unten zu einer Kostenfrage."
+  "de": "Jetzt bist du dran: Die oben beschriebene Klimaanpassung verursacht die unten behandelten Kosten."
  },
  {
   "tr": "Bir tane daha: Arazi kullanım çatışması bir tartışmadır, yol bir olgudur.",
@@ -1705,9 +1705,9 @@
   "de": "Hallo! Heute lernen wir, in der Agrardebatte mit Zugeständnis zu widersprechen."
  },
  {
-  "tr": "Şimdi sıra sende: Satın almanın yaptığı şey bir toprak talebini giydirmek.",
+  "tr": "Şimdi sıra sende: Satın almanın yaptığı şey bir toprak talebini yatırım kılığına sokmak.",
   "kind": "say.tr",
-  "de": "Jetzt bist du dran: Was der Kauf tut, ist einen Gebietsanspruch einzukleiden."
+  "de": "Jetzt bist du dran: Was der Kauf tut, ist, einen Gebietsanspruch als Investition zu verkleiden."
  },
  {
   "tr": "Ürünün nereden geldiğinin yazılması demek. İlk kalıbımız da bu. Tekrar et:",
@@ -1760,9 +1760,9 @@
   "de": "Hallo! Heute lernen wir die festen Wortverbindungen des Redens über Agrarpreise."
  },
  {
-  "tr": "O çevreyle uyumluluk, belirtildiği gibi, önceki bir sayfanın çevre etiğidir.",
+  "tr": "Çevreyle uyumluluk, daha önce belirtildiği gibi, aynı zamanda bir çevre etiği sorusudur.",
   "kind": "say.tr",
-  "de": "Jene Umweltverträglichkeit ist, wie angemerkt, die Umweltethik einer früheren Seite."
+  "de": "Umweltverträglichkeit ist, wie bereits angemerkt, auch eine Frage der Umweltethik."
  },
  {
   "tr": "Merhaba! Bugün toprak el değiştirirken kimi başa aldığını seçmeyi öğreneceğiz.",
@@ -1770,9 +1770,9 @@
   "de": "Hallo! Heute lernen wir, beim Besitzwechsel von Land zu wählen, wen wir voranstellen."
  },
  {
-  "tr": "Şimdi sen kur: O önlem, belirtildiği gibi, önceki bir sayfanın çevre etiğidir.",
+  "tr": "Şimdi sen kur: Bu önlem, daha önce belirtildiği gibi, aynı zamanda bir çevre etiği sorusudur.",
   "kind": "say.tr",
-  "de": "Bilde du jetzt: Jene Maßnahme ist, wie angemerkt, die Umweltethik einer früheren Seite."
+  "de": "Bilde du jetzt: Diese Maßnahme ist, wie bereits angemerkt, auch eine Frage der Umweltethik."
  },
  {
   "tr": "Şimdi sen kur: Yamacı yeniden ağaçlandırıyorlar, vadiyi ormansızlaştırıyorlar.",
@@ -1825,9 +1825,9 @@
   "de": "Noch eins: Ist ein Hof importabhängig, wirkt keine Maßnahme flächendeckend."
  },
  {
-  "tr": "Bir tane daha: Her çiftliğin bir sürdürülebilirlik standardı taşımasını istiyorlar.",
+  "tr": "Bir tane daha: Her çiftliğin bir sürdürülebilirlik standardını karşılamasını istiyorlar.",
   "kind": "say.tr",
-  "de": "Noch eins: Sie verlangen, dass jeder Hof einen Nachhaltigkeitsstandard trage."
+  "de": "Noch eins: Sie verlangen, dass jeder Hof einen Nachhaltigkeitsstandard erfülle."
  },
  {
   "tr": "Hasattan ayrılan tohumu ertesi yıl ekme hakkı demek. İlk kalıbımız da bu. Tekrar et:",
@@ -1840,9 +1840,9 @@
   "de": "Noch eins: Wenn auch naturnah, gibt ein artenreiches Feld weniger her."
  },
  {
-  "tr": "Her sürdürülebilirlik hedefinin bir sürdürülebilirlik standardı taşımasını istiyorlar.",
+  "tr": "Her tedarikçinin bir sürdürülebilirlik standardını karşılamasını istiyorlar.",
   "kind": "say.tr",
-  "de": "Sie verlangen, dass jedes Nachhaltigkeitsziel einen Nachhaltigkeitsstandard trage."
+  "de": "Sie verlangen, dass jeder Lieferant einen Nachhaltigkeitsstandard erfülle."
  },
  {
   "tr": "Merhaba! Bugün toprağın geleceği üstüne konuşurken kipin koyduğu mesafeyi öğreneceğiz.",

@@ -1,6 +1,6 @@
 [
  { "tr": "Bir süre tanı ve nazikçe kapat", "kind": "writing.checklist", "de": "Setze eine Frist und schließe höflich" },
- { "tr": "demands that the duty be prior", "kind": "focus", "de": "demands that the duty be prior" },
+ { "tr": "demands that the duty be given priority", "kind": "focus", "de": "demands that the duty be given priority" },
  { "tr": "emri kimin verdiğini öne almak", "kind": "focus", "de": "voranstellen, wer die Anweisung gibt" },
  { "tr": "Evet, mavi bir ceket arıyorum.", "kind": "turn", "de": "Ja, ich suche eine blaue Jacke." },
  { "tr": "Hasta yazıyı unutursa ne olur?", "kind": "question", "de": "Was passiert, wenn der Patient das Schreiben vergisst?" },
@@ -57,7 +57,7 @@
  { "tr": "aynı şeyi üç ayrı tonda söylemek", "kind": "focus", "de": "dasselbe in drei Tonlagen sagen" },
  { "tr": "beğenmediğini incelikle söylemek", "kind": "focus", "de": "taktvoll sagen, dass es nicht gefiel" },
  { "tr": "Burası çok sessiz. Bahçe var mı?", "kind": "turn", "de": "Hier ist es sehr ruhig. Gibt es einen Garten?" },
- { "tr": "demands that the reform be local", "kind": "focus", "de": "demands that the reform be local" },
+ { "tr": "demands that the reform be decided locally", "kind": "focus", "de": "demands that the reform be decided locally" },
  { "tr": "Etkinliği ve beklentiyi başa yaz", "kind": "writing.checklist", "de": "Nenne zu Beginn Veranstaltung und Erwartung" },
  { "tr": "Gişede eksik belgeyi soruyorsun.", "kind": "speaking.situation", "de": "Du fragst am Schalter nach dem fehlenden Dokument." },
  { "tr": "Görüşünü gerekçeyle söylüyorsun.", "kind": "speaking.situation", "de": "Du sagst deine Meinung mit Begründung." },

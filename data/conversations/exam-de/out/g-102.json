@@ -140,7 +140,7 @@
  { "tr": "…-den önce sizi yeniden bilgilendireceğiz", "kind": "phrase", "de": "Wir informieren Sie vor … erneut" },
  { "tr": "…-den önce tamirci ayarlayabilir misiniz?", "kind": "phrase", "de": "Können Sie vor … einen Klempner bestellen?" },
  { "tr": "Bilet alabiliyor ve peronu sorabiliyorum.", "kind": "cando", "de": "Ich kann eine Fahrkarte kaufen und nach dem Gleis fragen." },
- { "tr": "Bir önergeyi resmî kayıtta yazabiliyorum.", "kind": "cando", "de": "Ich kann einen Antrag im förmlichen Register formulieren." },
+ { "tr": "Bir önergeyi resmî üslupta yazabiliyorum.", "kind": "cando", "de": "Ich kann einen Antrag im förmlichen Register formulieren." },
  { "tr": "Bir sebebi ve sonucunu açıklayabiliyorum.", "kind": "cando", "de": "Ich kann einen Grund und seine Folge erklären." },
  { "tr": "Bir uygulamanın nasıl kullanıldığını adım adım anlatabiliyorum.", "kind": "cando", "de": "Ich kann Schritt für Schritt erklären, wie man eine App benutzt." },
  { "tr": "Çöpün nasıl toplandığını anlayabiliyorum.", "kind": "cando", "de": "Ich kann verstehen, wie der Müll abgeholt wird." },

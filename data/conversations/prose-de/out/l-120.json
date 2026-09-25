@@ -260,7 +260,7 @@
   "de": "Das Gespräch gilt als geschafft, wenn du in drei Sätzen je ein Glied weggelassen und das unbenannte Risiko gesagt hast."
  },
  {
-  "tr": "Aynı rakamı iki kayıtta adlandırdıysan ve her adın sorumlusunu söylediysen konuşma başarılı sayılır.",
+  "tr": "Aynı rakamı iki dil düzeyinde adlandırdıysan ve her adın sorumlusunu söylediysen konuşma başarılı sayılır.",
   "kind": "goal",
   "de": "Das Gespräch gilt als geschafft, wenn du dieselbe Zahl in zwei Registern benannt und die verantwortliche Seite jedes Namens gesagt hast."
  },
@@ -340,7 +340,7 @@
   "de": "stellt das Zugeständnis voran und nennt den Preis"
  },
  {
-  "tr": "aynı rakamı iki kayıtta söyler",
+  "tr": "aynı rakamı iki dil düzeyinde söyler",
   "kind": "pattern.tr",
   "de": "sagt dieselbe Zahl in zwei Registern"
  },
@@ -540,9 +540,9 @@
   "de": "Betreibermodell"
  },
  {
-  "tr": "menfaat temini",
+  "tr": "menfaat kabul etmek",
   "kind": "vocab.tr",
-  "de": "Vorteilsannahme"
+  "de": "Vorteile annehmen"
  },
  {
   "tr": "nominal olarak",
@@ -770,7 +770,7 @@
   "de": "Um Zahl und Erzählung zu trennen, werden zwei Hälften gebaut:"
  },
  {
-  "tr": "Aynı rakamı iki kayıtta söylemek için iki yer adı yeter:",
+  "tr": "Aynı rakamı iki dil düzeyinde söylemek için iki yer adı yeter:",
   "kind": "hint.tr",
   "de": "Um dieselbe Zahl in zwei Registern zu sagen, genügen zwei Ortsangaben:"
  },
@@ -875,9 +875,9 @@
   "de": "Die Person schützt die Form."
  },
  {
-  "tr": "Pazarı adres taşıyor.",
+  "tr": "Her gönderme, geçerli olduğu pazarı adlandırır.",
   "kind": "say.tr",
-  "de": "Den Markt trägt die Adresse."
+  "de": "Jeder Verweis nennt den Markt, für den er gilt."
  },
  {
   "tr": "Zararı biri imzaladı.",
@@ -1280,14 +1280,14 @@
   "de": "Wer und wie den Betrieb führt, heißt"
  },
  {
-  "tr": "Şimdi aynı rakamı iki kayıtta anlatacaksın.",
+  "tr": "Şimdi aynı rakamı iki dil düzeyinde anlatacaksın.",
   "kind": "say.tr",
   "de": "Jetzt gibst du dieselbe Zahl in zwei Registern wieder."
  },
  {
-  "tr": "Gri alan, kılıfın varsaydığını iddia ediyor.",
+  "tr": "Muhbir, denetçilerin yalnızca varsaydığını açıkça iddia ediyor.",
   "kind": "say.tr",
-  "de": "Die Grauzone behauptet, was der Vorwand voraussetzt."
+  "de": "Der Hinweisgeber behauptet offen, was die Prüfer bloß annehmen."
  },
  {
   "tr": "Rakiplerin gizlice fiyat üstünde anlaşmasına",
@@ -1480,9 +1480,9 @@
   "de": "Bilde du jetzt: Das Konsortium baut, das Risiko benennt es nicht."
  },
  {
-  "tr": "Şimdi sen kur: Gri alan, bahanenin varsaydığını iddia ediyor.",
+  "tr": "Şimdi sen kur: Gazeteci, denetçilerin yalnızca varsaydığını açıkça iddia ediyor.",
   "kind": "say.tr",
-  "de": "Bilde du jetzt: Die Grauzone behauptet, was die Ausrede voraussetzt."
+  "de": "Bilde du jetzt: Die Journalistin behauptet offen, was die Prüfer bloß annehmen."
  },
  {
   "tr": "Yüksek tasarruf potansiyeli ödeme gücü anlamına gelmeyebilir.",
@@ -1530,9 +1530,9 @@
   "de": "Unsere zweite Wendung baut das Wäre-nicht in der Aufsichtsthese. Sprich nach:"
  },
  {
-  "tr": "Kimse haksız kazanç sağlamak istemedi, bu bir menfaat teminiydi.",
+  "tr": "Kimse haksız kazanç sağlamak istemedi, yalnızca menfaat kabul ediyorlardı.",
   "kind": "say.tr",
-  "de": "Niemand wollte sich bereichern, es war eine Vorteilsannahme."
+  "de": "Niemand wollte sich bereichern, sie nahmen nur Vorteile an."
  },
  {
   "tr": "Kip, tahmini bir söz olmaktan çıkarıp bir analiz hâline getirir.",
@@ -1655,9 +1655,9 @@
   "de": "Bilde du jetzt: Eine hohe Sparquote bedeutet womöglich keine Zahlungsfähigkeit."
  },
  {
-  "tr": "Şimdi sıra sende: Yukarıdaki pazara nüfuz aşağıda bir riske dönüşüyor.",
+  "tr": "Şimdi sıra sende: Yukarıda anlatılan pazara nüfuz, aşağıda ele alınan riske yol açıyor.",
   "kind": "say.tr",
-  "de": "Jetzt bist du dran: Die Marktdurchdringung oben wird unten zu einem Risiko."
+  "de": "Jetzt bist du dran: Die oben beschriebene Marktdurchdringung führt zu dem unten behandelten Risiko."
  },
  {
   "tr": "Biçim burada yalnız bir üslup değil; talebi taşıyanı koruyan bir siper.",
@@ -1680,9 +1680,9 @@
   "de": "Hallo! Heute lernen wir die festen Wortverbindungen des Redens über Kosten."
  },
  {
-  "tr": "O rekabet gücü, belirtildiği gibi, önceki bir sayfanın tekel konumudur.",
+  "tr": "Rekabet gücümüz, daha önce belirtildiği gibi, bir tekel konumuna dayanıyor.",
   "kind": "say.tr",
-  "de": "Jene Wettbewerbsfähigkeit ist, wie angemerkt, die Monopolstellung einer früheren Seite."
+  "de": "Unsere Wettbewerbsfähigkeit beruht, wie bereits angemerkt, auf einer Monopolstellung."
  },
  {
   "tr": "Bir birim daha üretmenin maliyeti demek. İlk kalıbımız da bu. Tekrar et:",
@@ -1710,9 +1710,9 @@
   "de": "Bilde du jetzt: Was das Ministerium Abwertung nennt, nennt die Realwirtschaft Verlust."
  },
  {
-  "tr": "Yanıltıcı etiketleme, dediler, üstelik itibar riskine karşı iyi geliyor.",
+  "tr": "Yaratıcı etiketleme, dediler, üstelik itibarımıza iyi geliyor.",
   "kind": "say.tr",
-  "de": "Etikettenschwindel, sagten sie, und dazu gut gegen das Reputationsrisiko."
+  "de": "Kreative Kennzeichnung, sagten sie, und dazu gut für unseren Ruf."
  },
  {
   "tr": "Bir rakip bizim altımıza inebiliyorsa hiçbir fiyat anlaşması işe yaramaz.",
@@ -1730,9 +1730,9 @@
   "de": "Jetzt bist du dran: Was das Defizit tut, ist ein Marktversagen zu verbergen."
  },
  {
-  "tr": "Şimdi sıra sende: Politika işe yarasa da politika faizi gençleri vuruyor.",
+  "tr": "Şimdi sıra sende: Politikayı ne kadar olumlu bulsam da politika faizi gençleri vuruyor.",
   "kind": "say.tr",
-  "de": "Jetzt bist du dran: So sehr die Politik wirkt, der Leitzins trifft die Jungen."
+  "de": "Jetzt bist du dran: So sehr ich die Politik begrüße, der Leitzins trifft die Jungen."
  },
  {
   "tr": "Alay burada iddiayı çürütmüyor; iddianın kendi sözcüğünü ona geri veriyor.",
@@ -1745,9 +1745,9 @@
   "de": "Noch eins: Folgekosten werden geschätzt, eine Verzögerung wird angekündigt."
  },
  {
-  "tr": "Bir tane daha: Yanıltıcı etiketleme, dediler, üstelik markaya iyi geliyor.",
+  "tr": "Bir tane daha: Yaratıcı etiketleme, dediler, üstelik markaya iyi geliyor.",
   "kind": "say.tr",
-  "de": "Noch eins: Etikettenschwindel, sagten sie, und dazu gut für die Marke."
+  "de": "Noch eins: Kreative Kennzeichnung, sagten sie, und dazu gut für die Marke."
  },
  {
   "tr": "Devletin gelirinden fazla harcaması demek. İlk kalıbımız da bu. Tekrar et:",
@@ -1815,9 +1815,9 @@
   "de": "dagegen uns. Im ersten Satz hat niemand entschieden; im zweiten haben wir entschieden."
  },
  {
-  "tr": "Şimdi sen kur: O üstünlük, belirtildiği gibi, önceki bir sayfanın tekel konumudur.",
+  "tr": "Şimdi sen kur: Üstünlüğümüz, daha önce belirtildiği gibi, bir tekel konumuna dayanıyor.",
   "kind": "say.tr",
-  "de": "Bilde du jetzt: Jener Vorsprung ist, wie angemerkt, die Monopolstellung einer früheren Seite."
+  "de": "Bilde du jetzt: Unser Vorsprung beruht, wie bereits angemerkt, auf einer Monopolstellung."
  },
  {
   "tr": "Şimdi sıra sende: İhale süreci bir biçim olarak kalır, denetim bir gecikme olarak.",

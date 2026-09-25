@@ -94,7 +94,7 @@
  { "tr": "aynı kararın üç adı", "kind": "focus", "de": "drei Namen für eine Maßnahme" },
  { "tr": "aynı kesimin üç adı", "kind": "focus", "de": "drei Namen für dieselbe Gruppe" },
  { "tr": "aynı rakamın üç adı", "kind": "focus", "de": "drei Namen für eine Zahl" },
- { "tr": "aynı savın üç kaydı", "kind": "focus", "de": "dieselbe These in drei Registern" },
+ { "tr": "aynı savın üç dil düzeyi", "kind": "focus", "de": "dieselbe These in drei Registern" },
  { "tr": "Aynı sokağın üç adı", "kind": "listening.title", "de": "Drei Namen für eine Straße" },
  { "tr": "Banyodaki sorun ne?", "kind": "question", "de": "Was ist im Bad kaputt?" },
  { "tr": "demands that … be …", "kind": "focus", "de": "demands that … be …" },
