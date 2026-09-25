@@ -117,7 +117,7 @@
   "en": "flextime",
   "beispiel": "Dank der Gleitzeit kann ich meine Kinder morgens zur Schule bringen.",
   "beispielTr": "Esnek mesai sayesinde sabahları çocuklarımı okula bırakabiliyorum.",
-  "beispielEn": "Thanks to flextime I can take my kids to school."
+  "beispielEn": "Thanks to flextime I can take my kids to school in the morning."
  },
  {
   "id": 4058,
@@ -308,7 +308,7 @@
   "tr": "işyeri emekliliği",
   "en": "company pension",
   "beispiel": "Neben der gesetzlichen Rente bekommt er eine kleine Betriebsrente.",
-  "beispielTr": "Yasal emekli aylığının yanında küçük bir işyeri emekliliği alıyor.",
+  "beispielTr": "Yasal emekli aylığının yanı sıra işyerinden de küçük bir emekli aylığı alıyor.",
   "beispielEn": "Besides the state pension he gets a small company pension."
  },
  {

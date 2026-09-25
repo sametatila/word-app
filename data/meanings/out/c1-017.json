@@ -36,8 +36,8 @@
     "tr": "yapısal olarak zayıf",
     "en": "structurally weak",
     "beispiel": "In strukturschwachen Regionen fehlt es an Ärzten und Busverbindungen.",
-    "beispielTr": "Yapısal olarak zayıf bölgelerde doktor da otobüs seferi de yok.",
-    "beispielEn": "In structurally weak regions there are no doctors and no bus connections."
+    "beispielTr": "Yapısal olarak zayıf bölgelerde doktor ve otobüs seferi eksik.",
+    "beispielEn": "Structurally weak regions lack doctors and bus connections."
   },
   {
     "id": 6058,

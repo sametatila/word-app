@@ -109,14 +109,14 @@
   "en": "to miss",
   "beispiel": "Seit sie weg ist, vermisse ich sie sehr.",
   "beispielTr": "O gittiğinden beri onu çok özlüyorum.",
-  "beispielEn": "Since she left, I miss her a lot."
+  "beispielEn": "Since she left, I've missed her a lot."
  },
  {
   "id": 1808,
   "tr": "deneyimlemek",
   "en": "to experience",
   "beispiel": "Auf der Reise haben wir viel Schönes erlebt.",
-  "beispielTr": "Yolculukta çok güzel şeyler deneyimledik.",
+  "beispielTr": "Yolculukta çok güzel şeyler yaşadık.",
   "beispielEn": "We experienced many beautiful things on the trip."
  },
  {
@@ -292,7 +292,7 @@
   "tr": "hizmet etmek",
   "en": "to serve",
   "beispiel": "Dieser Raum dient uns als Lager.",
-  "beispielTr": "Bu oda bize depo olarak hizmet ediyor.",
+  "beispielTr": "Bu odayı depo olarak kullanıyoruz.",
   "beispielEn": "This room serves us as a storage space."
  },
  {

@@ -317,7 +317,7 @@
     "en": "utility statement",
     "beispiel": "Die Nebenkostenabrechnung brachte diesmal eine hohe Nachzahlung.",
     "beispielTr": "Yan giderler hesabı bu sefer yüksek bir ek ödeme getirdi.",
-    "beispielEn": "This time the utility statement brought a large extra payment."
+    "beispielEn": "This time the utility statement resulted in a large additional payment."
   },
   {
     "id": 5235,
@@ -396,7 +396,7 @@
     "tr": "tebliğ etmek",
     "en": "to deliver",
     "beispiel": "Der Bescheid wurde ihm gestern persönlich zugestellt.",
-    "beispielTr": "Tebligat kendisine dün bizzat tebliğ edildi.",
+    "beispielTr": "Karar kendisine dün bizzat tebliğ edildi.",
     "beispielEn": "The notice was delivered to him in person yesterday."
   }
 ]

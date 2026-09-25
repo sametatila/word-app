@@ -13,7 +13,7 @@
   "en": "value-added tax",
   "beispiel": "Auf der Rechnung ist die Umsatzsteuer gesondert ausgewiesen.",
   "beispielTr": "Faturada KDV ayrı olarak gösterilmiş.",
-  "beispielEn": "The sales tax is listed separately on the invoice."
+  "beispielEn": "The VAT is shown separately on the invoice."
  },
  {
   "id": 5598,
@@ -180,8 +180,8 @@
   "tr": "ekonomik",
   "en": "economic",
   "beispiel": "Die Lage des Betriebs ist wirtschaftlich äußerst angespannt.",
-  "beispielTr": "İşletmenin durumu ekonomik açıdan son derece gergin.",
-  "beispielEn": "The company is in an extremely tense economic situation."
+  "beispielTr": "İşletmenin ekonomik durumu son derece sıkıntılı.",
+  "beispielEn": "The company's economic situation is extremely strained."
  },
  {
   "id": 5619,

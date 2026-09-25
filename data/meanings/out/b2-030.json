@@ -116,8 +116,8 @@
   "tr": "kurumak",
   "en": "to wither",
   "beispiel": "Der Rasen ist im heißen August völlig verdorrt.",
-  "beispielTr": "Çimenlik sıcak ağustosta tamamen kurudu.",
-  "beispielEn": "The lawn withered completely in the hot August."
+  "beispielTr": "Çimenler ağustos sıcağında tamamen kurudu.",
+  "beispielEn": "The lawn withered completely in the August heat."
  },
  {
   "id": 5110,
@@ -125,7 +125,7 @@
   "en": "to sprout",
   "beispiel": "Nach dem warmen Regen sprießt überall frisches Grün.",
   "beispielTr": "Ilık yağmurdan sonra her yerde taze yeşillikler filizleniyor.",
-  "beispielEn": "After the warm rain fresh green sprouts everywhere."
+  "beispielEn": "After the warm rain, fresh greenery is sprouting everywhere."
  },
  {
   "id": 5111,
@@ -180,7 +180,7 @@
   "tr": "soğumak",
   "en": "to cool down",
   "beispiel": "Nach dem Gewitter hat sich die Luft spürbar abgekühlt.",
-  "beispielTr": "Sağanaktan sonra hava gözle görülür biçimde soğudu.",
+  "beispielTr": "Sağanaktan sonra hava hissedilir biçimde soğudu.",
   "beispielEn": "After the thunderstorm the air cooled down noticeably."
  },
  {

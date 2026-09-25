@@ -52,7 +52,7 @@
   "tr": "çoktan",
   "en": "already",
   "beispiel": "Frau Kaiser hat bereits dreimal angerufen.",
-  "beispielTr": "Kaiser Hanım çoktan üç kez aradı.",
+  "beispielTr": "Kaiser Hanım şimdiden üç kez aradı.",
   "beispielEn": "Ms. Kaiser has already called three times."
  },
  {
@@ -260,7 +260,7 @@
   "tr": "kurban",
   "en": "victim",
   "beispiel": "Bei dem Unfall gab es zum Glück keine Opfer.",
-  "beispielTr": "Kazada şans eseri hiç kurban olmadı.",
+  "beispielTr": "Neyse ki kazada ölen ya da yaralanan olmadı.",
   "beispielEn": "Fortunately there were no victims in the accident."
  },
  {

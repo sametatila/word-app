@@ -13,7 +13,7 @@
     "en": "holiday apartment",
     "beispiel": "Wir haben eine Ferienwohnung direkt am Meer gemietet.",
     "beispielTr": "Denizin hemen kıyısında bir tatil evi kiraladık.",
-    "beispielEn": "We rented a vacation rental right by the sea."
+    "beispielEn": "We rented a vacation apartment right by the sea."
   },
   {
     "id": 3766,
@@ -237,7 +237,7 @@
     "en": "language exam",
     "beispiel": "Ohne bestandene Sprachprüfung ist keine Immatrikulation möglich.",
     "beispielTr": "Dil sınavını geçmeden üniversiteye kayıt yapılamıyor.",
-    "beispielEn": "Without a passed language exam there is no enrollment."
+    "beispielEn": "Without passing the language exam, you can't enroll."
   },
   {
     "id": 3839,

@@ -324,8 +324,8 @@
   "tr": "alt dallara ayırmak",
   "en": "to differentiate",
   "beispiel": "Die Hochschule hat ihr Studienangebot stark ausdifferenziert.",
-  "beispielTr": "Üniversite, ders programını güçlü biçimde alt dallara ayırdı.",
-  "beispielEn": "The university has strongly differentiated its range of courses."
+  "beispielTr": "Üniversite, ders programını çok sayıda alt dala ayırdı.",
+  "beispielEn": "The university has greatly differentiated its range of courses."
  },
  {
   "id": 5994,
@@ -372,7 +372,7 @@
   "tr": "tahsis etmek",
   "en": "to allocate",
   "beispiel": "Den Fakultäten werden die Stellen nach einem festen Schlüssel zugewiesen.",
-  "beispielTr": "Kadrolar fakültelere belirli bir anahtara göre tahsis ediliyor.",
+  "beispielTr": "Kadrolar fakültelere sabit bir formüle göre tahsis ediliyor.",
   "beispielEn": "Positions are allocated to the faculties by a fixed formula."
  },
  {

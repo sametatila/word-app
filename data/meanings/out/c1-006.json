@@ -349,7 +349,7 @@
     "en": "to take on a life of its own",
     "beispiel": "Das Projekt hat sich völlig verselbstständigt.",
     "beispielTr": "Proje tamamen kontrolden çıktı.",
-    "beispielEn": "The project has completely spiraled out of control."
+    "beispielEn": "The project has completely taken on a life of its own."
   },
   {
     "id": 3688,
@@ -372,7 +372,7 @@
     "tr": "kusur bulmak",
     "en": "to fault",
     "beispiel": "Die Prüfer bemängeln die fehlende Dokumentation.",
-    "beispielTr": "Denetçiler, belgelerin eksikliğine kusur buluyor.",
+    "beispielTr": "Denetçiler, belgelerin eksik olmasını kusur sayıyor.",
     "beispielEn": "The auditors fault the missing documentation."
   },
   {
@@ -396,7 +396,7 @@
     "tr": "meyvesini vermek",
     "en": "to pay off",
     "beispiel": "Die harte Arbeit hat sich am Ende ausgezahlt.",
-    "beispielTr": "Sıkı çalışma sonunda karşılığını verdi.",
+    "beispielTr": "Sıkı çalışma sonunda meyvesini verdi.",
     "beispielEn": "The hard work paid off in the end."
   }
 ]

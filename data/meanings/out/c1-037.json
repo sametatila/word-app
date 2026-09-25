@@ -348,8 +348,8 @@
     "tr": "kelime anlamı",
     "en": "literal meaning",
     "beispiel": "Im engeren Wortsinn trifft der Begriff hier gar nicht zu.",
-    "beispielTr": "Dar kelime anlamıyla bu terim burada hiç uymuyor.",
-    "beispielEn": "In the narrower literal meaning the term does not apply here at all."
+    "beispielTr": "Kelimenin dar anlamıyla bu terim burada hiç uymuyor.",
+    "beispielEn": "In the strict sense of the word, the term does not apply here at all."
   },
   {
     "id": 7097,
