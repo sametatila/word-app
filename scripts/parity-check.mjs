@@ -14137,8 +14137,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "beklenen",
     );
 
-    /* Beceri satirinin "bitti" durumu iki platformda da duyuruluyor. */
-    const bw = sil(read("src/app/(app)/skills/page.tsx"));
+    /* Beceri satirinin "bitti" durumu iki platformda da duyuruluyor.
+       Web satiri 2026-09-25'ten beri istemci bileseninde (`skill-browser`):
+       beceri karolari gelince liste sayfadan oraya tasindi. */
+    const bw = sil(read("src/components/skills/skill-browser.tsx"));
     const bm = sil(read("mobile/src/screens/SkillsScreen.tsx"));
     /* YER DEGIL VARLIK olculuyor: Android durumu SATIRIN adina ekliyor
        (`accessibilityLabel`), web onay SIMGESINE ad veriyor - ikisi de o
@@ -15386,6 +15388,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "src/components/app-shell.tsx",
       "src/app/(app)/mock-exams/page.tsx",
       "src/app/(app)/skills/page.tsx",
+      /* Beceriler'in seviye seridi 2026-09-25'te buraya tasindi. */
+      "src/components/skills/skill-browser.tsx",
     ];
     let secili = 0, akimsiz = 0;
     for (const y of WEB_GEZINME) {
