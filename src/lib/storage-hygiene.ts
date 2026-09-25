@@ -4,9 +4,7 @@
  *
  * Mobil karşılığı `mobile/src/lib/storageMigration` `sweepDeviceStorage`.
  */
-import { migrateLegacyWebStorage } from "@/lib/legacy-names";
-
-/** Yarım konuşmanın saklandığı anahtarın öneki: `<önek>:<dersId>`. */
+/** Yarım konuşmanın saklandığı anahtarın öneki: `<önek>:<konuşmaId>`. */
 export const CONVERSATION_RESUME_KEY = "lernomi-conversation-progress";
 /** Yarım konuşma bu kadar gün sonra devam ettirilmiyor ve siliniyor. */
 export const CONVERSATION_RESUME_DAYS = 3;
@@ -26,6 +24,8 @@ export const CONVERSATIONS_PENDING_KEY = "lernomi-conversations-pending";
     :session               yarım tur (2026-08-05, sunucuya taşındı)
     skills-level/skill/tab beceri merkezi süzgeçleri (2026-08-28, sayfa kalktı)
     mic-consent:v1         onay metni değişti, v2 yeniden soruyor (2026-09-14)
+    lessons-pending,       Konuşma adımının eski adlı anahtarları (2026-09-25,
+    lesson-progress:*      yeni adlara geçti; eski kayıt taşınmıyor, siliniyor)
 
   Yeni bir anahtar kaldırıldığında buraya eklenmeli: silinen kodun değeri
   kendiliğinden gitmiyor.
@@ -41,7 +41,10 @@ const DEAD_KEYS = [
   "lernomi-skills-skill",
   "lernomi-skills-tab",
   "lernomi:mic-consent:v1",
+  "lernomi-lessons-pending",
 ];
+/** Önekle silinen sahipsiz anahtarlar (yukarıdaki listeyle aynı kural). */
+const DEAD_PREFIXES = ["lernomi-lesson-progress:"];
 
 /**
  * Temizliği yapar. Uygulama açılışında bir kez çağrılıyor; olmayan anahtarı
@@ -60,15 +63,16 @@ export function sweepDeviceStorage(): void {
   } catch {
     return;
   }
-  /* Eski anahtarlardaki yarım adım ve bekleyen sonuç önce yeni anahtara
-     taşınıyor (geçici, bkz. lib/legacy-names), sonra temizlik. */
-  migrateLegacyWebStorage(store, CONVERSATIONS_PENDING_KEY, CONVERSATION_RESUME_KEY);
   try {
     for (const key of DEAD_KEYS) store.removeItem(key);
     const cutoff = Date.now() - CONVERSATION_RESUME_DAYS * 86400000;
     const stale: string[] = [];
     for (let i = 0; i < store.length; i++) {
       const key = store.key(i);
+      if (key && DEAD_PREFIXES.some((p) => key.startsWith(p))) {
+        stale.push(key);
+        continue;
+      }
       if (!key || !key.startsWith(`${CONVERSATION_RESUME_KEY}:`)) continue;
       let at = 0;
       try {

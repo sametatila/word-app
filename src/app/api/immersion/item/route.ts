@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import { legacyPathItemId } from "@/lib/legacy-names";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { ensureProfile } from "@/lib/session";
@@ -28,9 +27,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "bad_json" }, { status: 400 });
   }
   const b = (typeof body === "object" && body !== null ? body : {}) as Record<string, unknown>;
-  // Build 6 ünite quizini eski kimlikle (`-checkpoint1`) gönderiyor (geçici, lib/legacy-names).
-  const rawId = legacyPathItemId(b.itemId);
-  const itemId = typeof rawId === "string" && rawId.length <= 40 ? rawId : "";
+  const itemId = typeof b.itemId === "string" && b.itemId.length <= 40 ? b.itemId : "";
   const total = typeof b.total === "number" && Number.isInteger(b.total) ? b.total : -1;
   const correct = typeof b.correct === "number" && Number.isInteger(b.correct) ? b.correct : -1;
   const parsed = parsePracticeItemId(itemId);

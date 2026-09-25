@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import { manifest } from "@/lib/content/read";
 import { jsonWithEtag } from "@/lib/content/http";
 import { isPackId } from "@/lib/content/ids";
-import { isLegacyClient, legacyNativeManifest } from "@/lib/legacy-names";
 
 export const dynamic = "force-dynamic";
 
@@ -30,9 +29,5 @@ export async function GET(req: Request) {
   if (!isPackId(pack)) return NextResponse.json({ error: "pack" }, { status: 400 });
   const raw = Number(url.searchParams.get("since") ?? 0);
   const since = Number.isFinite(raw) && raw > 0 ? Math.floor(raw) : 0;
-  const m = await manifest(pack, since);
-  /* Build 6 anadil maddelerini eski adla istiyor (geçici, lib/legacy-names). */
-  const res = jsonWithEtag(req, isLegacyClient(req.headers) ? legacyNativeManifest(pack, m) : m, 30);
-  res.headers.set("vary", "x-lernomi-client");
-  return res;
+  return jsonWithEtag(req, await manifest(pack, since), 30);
 }

@@ -13,7 +13,6 @@ import { langOf } from "@/lib/social/notify";
 import { translate } from "@/lib/i18n/dict";
 import { localiseExercise, localiseConversation } from "@/lib/conversations/native-server";
 import { recordAiUsage } from "@/lib/ai-usage";
-import { legacyBody, legacyChatMode } from "@/lib/legacy-names";
 import { takeUsage } from "@/lib/premium";
 import { claimTiered } from "@/lib/premium/access";
 import { aiConsentGate, aiConsentStateFor } from "@/lib/ai-consent";
@@ -98,11 +97,9 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "bad_request" }, { status: 400 });
   }
 
-  // Build 6 alanı eski adla gönderiyor (geçici, lib/legacy-names).
-  const { conversationId, exerciseId, messages: raw, mode: rawMode } = legacyBody(body as Record<string, unknown>) as { conversationId?: unknown; exerciseId?: unknown; messages?: unknown; mode?: unknown };
+  const { conversationId, exerciseId, messages: raw, mode: rawMode } = body as { conversationId?: unknown; exerciseId?: unknown; messages?: unknown; mode?: unknown };
   // Mod (WP-22): puanlı kısımda yardım/düzeltme yok; kayıtta da işaretlenir.
-  // Build 6 puanlı kısmı eski adla gönderiyor (geçici, lib/legacy-names).
-  const mode: ChatMode = legacyChatMode(rawMode) === "scored" ? "scored" : "practice";
+  const mode: ChatMode = rawMode === "scored" ? "scored" : "practice";
   // Beceri diyaloğu (WP-23): konuşma yerine temalı egzersiz; senaryo istemcide yedek.
   const dialogue = typeof exerciseId === "string" ? await getExercise(exerciseId) : undefined;
   const dialogueRaw = dialogue && dialogue.skill === "speaking" && "dialogue" in dialogue && dialogue.theme ? dialogue : undefined;

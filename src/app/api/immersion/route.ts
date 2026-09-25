@@ -6,7 +6,6 @@ import { loadTrack } from "@/lib/immersion/build";
 import { buildTrackState } from "@/lib/immersion/state";
 import { immersionCompletion } from "@/lib/immersion/progress";
 import type { CefrLevel } from "@/lib/skills/types";
-import { isLegacyClient, legacyImmersionUnit } from "@/lib/legacy-names";
 
 export const dynamic = "force-dynamic";
 const LEVELS = ["A1", "A2", "B1", "B2", "C1"];
@@ -16,7 +15,7 @@ const LEVELS = ["A1", "A2", "B1", "B2", "C1"];
  * kurgusunun REST karşılığı: kullanıcının seviyesindeki track, ilerlemesiyle
  * gating'lenmiş üniteler + item'lar. Yalnız okur, oturumsuz 401.
  */
-export async function GET(req: Request) {
+export async function GET() {
   const userId = await getUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   try {
@@ -59,12 +58,10 @@ export async function GET(req: Request) {
       })),
     }));
 
-    /* Build 6 öğe türünü ve sayaçları eski adla okuyor (geçici, lib/legacy-names). */
-    const legacy = isLegacyClient(req.headers);
     return NextResponse.json(
       {
         level,
-        units: legacy ? units.map(legacyImmersionUnit) : units,
+        units,
         currentIndex: state.currentIndex,
         doneUnits: state.units.filter((u) => u.complete).length,
         totalUnits: state.units.length,

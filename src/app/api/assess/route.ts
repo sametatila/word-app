@@ -4,7 +4,6 @@ import { getUserInfo } from "@/lib/auth/server";
 import { getUsage, refundUsage } from "@/lib/premium/quota";
 import { sameOrigin } from "@/lib/auth/origin";
 import { recordAiUsage } from "@/lib/ai-usage";
-import { legacyKind, legacyScoredRef } from "@/lib/legacy-names";
 import { assess } from "@/lib/assess";
 import {
   ASSESS_KINDS,
@@ -217,9 +216,7 @@ function list(v: unknown): string[] | undefined {
 
 function parseBody(body: unknown): { req: AssessRequest; day: string; tooLong: boolean } | null {
   if (typeof body !== "object" || body === null) return null;
-  const b = { ...(body as Record<string, unknown>) };
-  b.kind = legacyKind(b.kind); // build 6 eski türü gönderiyor (geçici, lib/legacy-names)
-  b.exerciseId = legacyScoredRef(b.exerciseId); // ve puanlı kısmın eski kimliğini
+  const b = body as Record<string, unknown>;
   if (!ASSESS_KINDS.includes(b.kind as AssessKind)) return null;
   if (!ASSESS_LEVELS.includes(b.level as AssessLevel)) return null;
   const task = (b.task ?? {}) as Record<string, unknown>;

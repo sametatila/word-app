@@ -15,8 +15,6 @@
  *  - biri düşerse kalanı kuyrukta kalıyor ve sıradakiler denenmiyor.
  */
 import { apiFetch } from "@/lib/api-fetch";
-import { migrateLegacyWebStorage } from "@/lib/legacy-names";
-import { CONVERSATION_RESUME_KEY } from "@/lib/storage-hygiene";
 
 export type PendingConversation = {
   conversationId: string;
@@ -30,7 +28,6 @@ const KEY = "lernomi-conversations-pending"; // storage-hygiene CONVERSATIONS_PE
 
 function read(): PendingConversation[] {
   try {
-    migrateLegacyWebStorage(localStorage, KEY, CONVERSATION_RESUME_KEY); // eski anahtar (geçici)
     const raw = localStorage.getItem(KEY);
     return raw ? (JSON.parse(raw) as PendingConversation[]) : [];
   } catch {

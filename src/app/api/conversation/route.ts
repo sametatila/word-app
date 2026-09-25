@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { clampDay } from "@/lib/award";
-import { legacyBody } from "@/lib/legacy-names";
 import { findConversation } from "@/lib/conversations";
 import { scoredSteps } from "@/lib/conversations/types";
 import { recordConversation } from "@/lib/conversations/progress";
@@ -31,8 +30,7 @@ export async function POST(req: Request) {
   if (typeof body !== "object" || body === null) {
     return NextResponse.json({ error: "bad_request" }, { status: 400 });
   }
-  // Build 6 alanları eski adla gönderiyor (geçici, lib/legacy-names).
-  const { conversationId, correct, chatDone, day, seconds } = legacyBody(body as Record<string, unknown>);
+  const { conversationId, correct, chatDone, day, seconds } = body as Record<string, unknown>;
 
   const conversation = typeof conversationId === "string" ? await findConversation(conversationId) : undefined;
   if (!conversation) return NextResponse.json({ error: "bad_conversation" }, { status: 400 });
