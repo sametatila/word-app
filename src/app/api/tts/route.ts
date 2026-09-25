@@ -73,6 +73,9 @@ const VOICE_IDS = new Set<string>([
   // Karakter sesleri (Defne/Aras, üç dil) ve Edge'in eski seçilebilir sesleri: 2026-09-23 öncesi
   // seçimi saklı eski bir mobil sürüm Katja/Conrad/Jenny/Guy istemeye devam ediyor, 400 ile susmasın.
   ...Object.keys(OWN_VOICES),
+  // Karakterlerin Edge karşılıkları: kelime dışı içerik ve anlatım seçilen karakterin karşılığıyla okunuyor
+  // (Aras → Conrad/Guy/Ahmet, 2026-09-25); Ahmet ancak bu yoldan istenir, listede olmasa 400 ile susardı.
+  ...Object.values(OWN_VOICES).map((o) => o!.edge),
   "de-DE-KatjaNeural",
   "de-DE-ConradNeural",
   "en-US-JennyNeural",
