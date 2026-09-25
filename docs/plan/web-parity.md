@@ -6540,7 +6540,7 @@ gereken yer orası; web onu iki tıpatıp aynı düğmeyle soruyordu. Eşitlendi
 
 Tabanların kendisi temiz çıktı: mobildeki on yedi dizginin ve webdeki 163'ün
 hepsi meşru (kurs adları zaten üç dilde yazılı, içerik çözücünün desenleri,
-Goethe'nin Almanca bölüm adları, model istemleri, konsol kayıtları, dil adının
+sınavların Almanca bölüm adları, model istemleri, konsol kayıtları, dil adının
 kendi dilinde kalması). Gerekçeleri artık taban dosyasında yazılı - **sayı da
 bir muafiyet listesi ve sebebi yazılmazsa eskiyor**, bu turun dört kaydının
 ortak çıkarımı bu.
