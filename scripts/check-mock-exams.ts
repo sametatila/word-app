@@ -180,6 +180,7 @@ const BRANDS = [
   "pearson", "pte", "esol", "ukvi", "ets", "british council", "idp", "linguaskill",
   "key english test", "preliminary english test", "first certificate",
   "certificate in advanced english", "certificate of proficiency", "use of english",
+  "a2 key", "b1 preliminary", "b2 first", "c1 advanced", "c2 proficiency", "duolingo english test",
 ];
 const BRAND_RE = new RegExp(`(^|[^\\p{L}])(${BRANDS.map((b) => b.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})($|[^\\p{L}])`, "iu");
 
