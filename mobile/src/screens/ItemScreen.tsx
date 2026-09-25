@@ -28,6 +28,9 @@ import { bumpStats } from "../lib/statsSignal";
 import { AiNotice } from "../ui/AiNotice";
 import { todayStr } from "../game/session";
 import type { RootStackParams } from "../navigation/RootStack";
+import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { pathWritingSpent, tieredCopy } from "../lib/unlock";
+import { UnlockProgress } from "../ui/UnlockProgress";
 import { useTheme, spacing, radii, type Palette } from "../theme";
 import { sfx } from "../lib/sfx";
 
@@ -213,6 +216,28 @@ export function ItemScreen() {
   const guest = Boolean(useAuth().user?.guest);
   const { status: premiumStatus } = usePremiumStatus();
   const guestTrial = (premiumStatus?.guestAiLeft ?? 0) > 0;
+  /*
+    YAPAY ZEKÂ HAKKI BİTTİYSE BAŞTA SÖYLE (2026-09-25). Patika Yazma ve
+    Beceriler (yazma, B1+ monolog) seviye başına ayrı sayaç. Hak yoksa ve bu
+    alıştırmaya daha önce hak düşmediyse değerlendirme gelmeyecek: görev yine
+    yapılır (puansız tamamlanır), ama bir sonraki hakkın nasıl açılacağı ve
+    Premium yolu yazmaya BAŞLAMADAN görünüyor.
+  */
+  const nav2 = useNavigation<NativeStackNavigationProp<RootStackParams>>();
+  const aiCopy = (ex: { id: string; level: string; skill: string; unit?: number | null; monologue?: unknown } | undefined) => {
+    const u = premiumStatus?.unlock;
+    if (!ex || guest || !u) return null;
+    const lv = u.levels[ex.level];
+    if (!lv) return null;
+    if (ex.unit != null) {
+      if (ex.skill !== "writing" || !pathWritingSpent(u, ex.id, ex.level, guest)) return null;
+      return tieredCopy(lv.pathWriting, "write");
+    }
+    const kind = ex.skill === "writing" ? "writing" : ex.skill === "speaking" && ex.monologue ? "speaking" : null;
+    if (!kind || u.owned.skills.includes(ex.id)) return null;
+    const c = tieredCopy(kind === "writing" ? lv.skillWriting : lv.skillSpeaking, kind === "writing" ? "skill_write" : "skill_speak");
+    return c && c.spent ? c : null;
+  };
   const guestAiNote = <View style={{ marginBottom: spacing.md }}><FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={t(guestTrial ? "guest.skill_ai_trial" : "guest.skill_ai")} /></View>;
   const insets = useSafeAreaInsets();
   const nav = useNavigation<{ goBack: () => void }>();
@@ -343,6 +368,8 @@ export function ItemScreen() {
     );
   }
 
+  const aiSpent = aiCopy(exercise as { id: string; level: string; skill: string; unit?: number | null; monologue?: unknown });
+
   // Konuşma iki biçim: söyleyiş drilli (`tasks`, her biri bir cümle) ya da
   // monolog (`monologue`, tek görev). Dil bilgisi okuma gibi soru sayar.
   const drillTasks = exercise.skill === "speaking" && !exercise.monologue ? ((exercise.tasks ?? []) as SpeakingTask[]) : null;
@@ -438,12 +465,14 @@ export function ItemScreen() {
           // değerlendirdiği yazmaya başlamadan önce söyleniyor.
           <>
             {guest ? guestAiNote : <AiNotice variant="output" style={{ marginBottom: spacing.md }} />}
+            {aiSpent ? <View style={{ marginBottom: spacing.md }}><UnlockProgress copy={aiSpent} onPremium={() => nav2.navigate("Paywall")} /></View> : null}
             <WritingList key={round} tasks={(exercise.tasks ?? []) as WritingTask[]} level={exercise.level} exerciseId={exercise.id} onAllDone={recordAndFinish} colors={colors} />
           </>
         ) : exercise.skill === "speaking" && exercise.monologue ? (
           // Monolog: metin sunucuda rubrikle puanlanıyor (ses gitmiyor).
           <>
             {guest ? guestAiNote : <AiNotice variant="output" style={{ marginBottom: spacing.md }} />}
+            {aiSpent ? <View style={{ marginBottom: spacing.md }}><UnlockProgress copy={aiSpent} onPremium={() => nav2.navigate("Paywall")} /></View> : null}
             {/* Monologda band geri bildirimin ÜSTÜNDE (web `ResultCard` onu
                 ayrıntı olarak içine alıyor); gövde yerinde kalıyor ki durumu
                 (puan, transkript) sökülmesin. */}

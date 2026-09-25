@@ -556,7 +556,7 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
       setReveal(true);
     } catch (e) {
       if (isPremiumRefusal(e) || isQuotaRefusal(e)) {
-        if (isPremiumRefusal(e)) notePremiumGate("writing");
+        if (isPremiumRefusal(e)) { notePremiumGate("writing"); void refreshPremium(); }
         setNote(tx(isPremiumRefusal(e) ? "assess.fail_premium" : "assess.fail_quota"));
       } else if (isAccountRequired(e)) {
         /* MİSAFİR: yapay zekâ hesap istiyor; kuyruk da aynı sağlayıcıya gidiyor

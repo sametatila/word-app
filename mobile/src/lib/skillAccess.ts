@@ -15,7 +15,11 @@ export type SkillGate = {
   quota?: { remaining: number; limit: number; period: "day" | "week" | "all" };
 };
 
-export type SkillAccess = { writing: SkillGate; speaking: SkillGate; owned: string[] };
+/**
+ * `levels`: hak 2026-09-25'ten beri SEVİYE BAŞINA — her seviyenin kapısı.
+ * Üst düzeydeki `writing`/`speaking` eski sunucunun tek (seviyesiz) kapısı.
+ */
+export type SkillAccess = { writing: SkillGate; speaking: SkillGate; owned: string[]; levels?: Record<string, { writing: SkillGate; speaking: SkillGate }> };
 
 export async function fetchSkillAccess(): Promise<SkillAccess | null> {
   try {
@@ -40,7 +44,13 @@ export function isSkillLocked(m: { id: string; skill: string; level: string; uni
   const kind = gatedMetaKind(m);
   if (!kind) return false;
   if (access.owned.includes(m.id)) return false;
-  return !access[kind].allowed;
+  return !(access.levels?.[m.level]?.[kind] ?? access[kind]).allowed;
+}
+
+/** Bir seviyenin kapısı — eski sunucuda seviyesiz kapıya düşer. */
+export function levelGate(access: SkillAccess | null, level: string, kind: "writing" | "speaking"): SkillGate | null {
+  if (!access) return null;
+  return access.levels?.[level]?.[kind] ?? access[kind];
 }
 
 /** Web `lib/premium/gate-note` ile aynı: hangi anahtar, hangi sayı. */
@@ -48,7 +58,9 @@ export function gateNote(g: SkillGate | null | undefined): { key: string; n: num
   if (!g) return null;
   if (g.reason === "premium") return null;
   if (g.reason === "fair_use") return { key: "gate.fair_use", n: g.quota?.limit ?? 0 };
-  if (!g.allowed) return { key: "gate.quota_spent_week", n: 0 };
+  /* Haftada yenilenen hak 2026-09-25'te kalktı: hak bitince yol seri +
+     bitirmekten ya da Premium'dan geçiyor (bkz. `ui/UnlockProgress`). */
+  if (!g.allowed) return { key: "gate.quota_spent_total", n: 0 };
   if (!g.quota) return null;
-  return { key: g.quota.period === "all" ? "gate.quota_left_total" : "gate.quota_left_week", n: g.quota.remaining };
+  return { key: g.quota.period === "day" ? "gate.quota_left_day" : "gate.quota_left_total", n: g.quota.remaining };
 }

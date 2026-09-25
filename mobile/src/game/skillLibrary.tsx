@@ -318,7 +318,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
        * baştan beri ayırıyor ve aynı iki anahtarı kullanıyor.
        */
       if (isPremiumRefusal(e) || isQuotaRefusal(e)) {
-        if (isPremiumRefusal(e)) notePremiumGate("speaking");
+        if (isPremiumRefusal(e)) { notePremiumGate("speaking"); void refreshPremium(); }
         setGateNote(isPremiumRefusal(e) ? t("assess.fail_premium") : t("assess.fail_quota"));
         setResult(null);
         setPhase("result");
