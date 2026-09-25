@@ -113,10 +113,10 @@
  },
  {
   "id": 4357,
-  "tr": "ekim",
+  "tr": "yetiştiricilik",
   "en": "cultivation",
   "beispiel": "Der Anbau von Mais lohnt sich auf diesen Böden kaum noch.",
-  "beispielTr": "Bu topraklarda mısır ekimi artık pek kârlı değil.",
+  "beispielTr": "Bu topraklarda mısır yetiştiriciliği artık pek kârlı değil.",
   "beispielEn": "Growing corn on these soils barely pays off anymore."
  },
  {
@@ -329,7 +329,7 @@
  },
  {
   "id": 4384,
-  "tr": "zararlı",
+  "tr": "haşere",
   "en": "pest",
   "beispiel": "Gegen diesen Schädling hilft nur eine frühe Behandlung.",
   "beispielTr": "Bu zararlı böceğe karşı sadece erken ilaçlama işe yarar.",

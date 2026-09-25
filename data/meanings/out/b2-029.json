@@ -17,7 +17,7 @@
   },
   {
     "id": 5047,
-    "tr": "tasdik etmek",
+    "tr": "belgelemek",
     "en": "to certify",
     "beispiel": "Der Kursleiter bescheinigt uns die regelmäßige Teilnahme am Unterricht.",
     "beispielTr": "Kurs öğretmeni derse düzenli katıldığımızı belgeliyor.",
@@ -130,7 +130,7 @@
   {
     "id": 5061,
     "tr": "gerekirse",
-    "en": "if necessary",
+    "en": "if applicable",
     "beispiel": "Weitere Unterlagen fordern wir gegebenenfalls schriftlich an.",
     "beispielTr": "Gerekirse başka evrakları sizden yazılı olarak isteriz.",
     "beispielEn": "If necessary, we will request further documents in writing."
@@ -161,7 +161,7 @@
   },
   {
     "id": 5065,
-    "tr": "dolu",
+    "tr": "dolu yağışı",
     "en": "hail",
     "beispiel": "Der Hagel hat gestern die ganze Ernte zerstört.",
     "beispielTr": "Dolu dün bütün ürünü mahvetti.",

@@ -90,7 +90,7 @@
   {
     "id": 7164,
     "tr": "ortaya çıkış biçimi",
-    "en": "form",
+    "en": "manifestation",
     "beispiel": "Die Krankheit tritt bei Kindern in milderer Ausprägung auf.",
     "beispielTr": "Hastalık çocuklarda daha hafif bir biçimde ortaya çıkıyor.",
     "beispielEn": "In children the disease appears in a milder form."
@@ -138,7 +138,7 @@
   {
     "id": 7170,
     "tr": "ortalama değer",
-    "en": "mean",
+    "en": "mean value",
     "beispiel": "Der Mittelwert verdeckt hier erhebliche Unterschiede zwischen den Gruppen.",
     "beispielTr": "Ortalama değer burada gruplar arasındaki büyük farkları gizliyor.",
     "beispielEn": "The mean hides considerable differences between the groups here."
@@ -154,7 +154,7 @@
   {
     "id": 7172,
     "tr": "ana kütle",
-    "en": "population",
+    "en": "statistical population",
     "beispiel": "Die Grundgesamtheit umfasst alle Haushalte in Bayern.",
     "beispielTr": "Ana kütle, Bavyera'daki bütün haneleri kapsıyor.",
     "beispielEn": "The population comprises all households in Bavaria."

@@ -289,7 +289,7 @@
  },
  {
   "id": 5482,
-  "tr": "girmek",
+  "tr": "veri girmek",
   "en": "to input",
   "beispiel": "Geben Sie bitte den Bestätigungscode aus der Nachricht ein.",
   "beispielTr": "Lütfen mesajdaki onay kodunu girin.",
@@ -313,7 +313,7 @@
  },
  {
   "id": 5485,
-  "tr": "sorgulamak",
+  "tr": "erişmek",
   "en": "to retrieve",
   "beispiel": "Den Kontostand kann man jederzeit vom Handy abrufen.",
   "beispielTr": "Hesap bakiyesi istendiği an telefondan sorgulanabiliyor.",

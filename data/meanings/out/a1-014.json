@@ -97,7 +97,7 @@
   },
   {
     "id": 40,
-    "tr": "toplamak",
+    "tr": "toparlamak",
     "en": "to tidy up",
     "beispiel": "Räum bitte dein Zimmer auf.",
     "beispielTr": "Lütfen odanı topla.",
@@ -385,7 +385,7 @@
   },
   {
     "id": 348,
-    "tr": "not",
+    "tr": "okul notu",
     "en": "grade",
     "beispiel": "Hast du gute Noten in Englisch?",
     "beispielTr": "İngilizceden notların iyi mi?",
@@ -393,7 +393,7 @@
   },
   {
     "id": 686,
-    "tr": "ocak",
+    "tr": "mutfak ocağı",
     "en": "stove",
     "beispiel": "In der neuen Küche fehlt noch der Herd.",
     "beispielTr": "Yeni mutfakta bir tek ocak eksik.",

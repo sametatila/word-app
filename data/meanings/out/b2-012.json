@@ -57,7 +57,7 @@
  },
  {
   "id": 4200,
-  "tr": "fark",
+  "tr": "düzey farkı",
   "en": "disparity",
   "beispiel": "Zwischen Stadt und Land besteht ein deutliches Gefälle bei den Löhnen.",
   "beispielTr": "Şehir ile kır arasında ücretlerde belirgin bir uçurum var.",
@@ -153,7 +153,7 @@
  },
  {
   "id": 4212,
-  "tr": "uzmanlık alanı",
+  "tr": "öğrenim alanı",
   "en": "field of study",
   "beispiel": "Nach zwei Semestern wechselte er die Fachrichtung.",
   "beispielTr": "İki dönem sonra uzmanlık alanını değiştirdi.",
@@ -378,7 +378,7 @@
  {
   "id": 4240,
   "tr": "kabiliyet",
-  "en": "gift",
+  "en": "talent",
   "beispiel": "Ihre musikalische Begabung zeigte sich schon im Kindergarten.",
   "beispielTr": "Müzik yeteneği daha anaokulunda belli oldu.",
   "beispielEn": "Her musical gift was obvious already in kindergarten."

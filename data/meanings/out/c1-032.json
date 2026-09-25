@@ -26,7 +26,7 @@
   {
     "id": 6806,
     "tr": "kamusal varlık",
-    "en": "common good",
+    "en": "common property",
     "beispiel": "Sauberes Wasser gilt vielen Ökonomen als klassisches Gemeingut.",
     "beispielTr": "Temiz su, birçok iktisatçıya göre klasik bir kamusal varlıktır.",
     "beispielEn": "Many economists regard clean water as a classic common good."
@@ -49,7 +49,7 @@
   },
   {
     "id": 6809,
-    "tr": "ayrıştırma",
+    "tr": "ayrışma",
     "en": "decoupling",
     "beispiel": "Eine absolute Entkopplung von Wachstum und Emissionen ist bislang selten gelungen.",
     "beispielTr": "Büyüme ile emisyonların mutlak ayrıştırılması şimdiye dek nadiren başarıldı.",
@@ -369,8 +369,8 @@
   },
   {
     "id": 6849,
-    "tr": "soğukkanlılık",
-    "en": "composure",
+    "tr": "sağduyu",
+    "en": "level-headedness",
     "beispiel": "In der Krise zeigte sie eine bemerkenswerte Besonnenheit.",
     "beispielTr": "Kriz sırasında dikkate değer bir soğukkanlılık gösterdi.",
     "beispielEn": "In the crisis she showed remarkable composure."

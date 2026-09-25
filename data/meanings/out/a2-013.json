@@ -265,7 +265,7 @@
   },
   {
     "id": 7621,
-    "tr": "ne",
+    "tr": "ne … ne de",
     "en": "neither",
     "beispiel": "Ich habe weder Zeit noch Lust.",
     "beispielTr": "Ne vaktim ne de hevesim var.",
@@ -274,7 +274,7 @@
   {
     "id": 7622,
     "tr": "hem",
-    "en": "both",
+    "en": "both … and",
     "beispiel": "Sie spricht sowohl Türkisch als auch Deutsch.",
     "beispielTr": "Hem Türkçe hem de Almanca konuşuyor.",
     "beispielEn": "She speaks both Turkish and German."

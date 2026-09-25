@@ -178,7 +178,7 @@
   {
     "id": 5217,
     "tr": "kanun yolu",
-    "en": "appeal",
+    "en": "legal remedy",
     "beispiel": "Gegen dieses Urteil sind keine weiteren Rechtsmittel mehr möglich.",
     "beispielTr": "Bu karara karşı başka kanun yolu kalmadı.",
     "beispielEn": "No further appeal is possible against this judgment."
@@ -258,7 +258,7 @@
   {
     "id": 5227,
     "tr": "sır saklama yükümlülüğü",
-    "en": "confidentiality",
+    "en": "duty of confidentiality",
     "beispiel": "Ärzte unterliegen gegenüber Dritten einer strengen Schweigepflicht.",
     "beispielTr": "Doktorlar üçüncü kişilere karşı katı bir sır saklama yükümlülüğü altında.",
     "beispielEn": "Doctors are bound by strict confidentiality toward third parties."
@@ -369,7 +369,7 @@
   },
   {
     "id": 5241,
-    "tr": "hak vermek",
+    "tr": "hak tanımak",
     "en": "to entitle",
     "beispiel": "Diese Karte berechtigt Sie zur kostenlosen Nutzung der Bibliothek.",
     "beispielTr": "Bu kart size kütüphaneyi ücretsiz kullanma hakkı veriyor.",

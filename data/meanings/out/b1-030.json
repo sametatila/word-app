@@ -194,7 +194,7 @@
  {
   "id": 1440,
   "tr": "çağırmak",
-  "en": "to ask",
+  "en": "to request",
   "beispiel": "Der Lehrer forderte mich auf, lauter zu sprechen.",
   "beispielTr": "Öğretmen benden daha yüksek sesle konuşmamı istedi.",
   "beispielEn": "The teacher asked me to speak louder."
@@ -361,7 +361,7 @@
  },
  {
   "id": 2367,
-  "tr": "hareketli",
+  "tr": "mobil",
   "en": "mobile",
   "beispiel": "Mit dem Fahrrad bin ich in der Stadt sehr mobil.",
   "beispielTr": "Bisikletle şehirde çok rahat hareket ediyorum.",
