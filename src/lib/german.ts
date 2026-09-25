@@ -93,9 +93,21 @@ const RULE_CANDIDATES: { umlaut: boolean; suffix: string }[] = [
   { umlaut: true, suffix: "er" },
 ];
 
-/** `formen` bir kural değil çoğulun kendisiyse o sözcük ("Museen", "die Arbeitsverträge"). */
+/**
+ * `formen` bir kural değil çoğulun kendisiyse o biçim ("Museen", "die Arbeitsverträge").
+ *
+ * Çok sözcüklü başlıkta (sıfatlı ad, deyim) ek kuralı uygulanamıyor: "falsche
+ * Freund" + "-e" kartta ham "-e" diye çıkıyordu. Orada çoğul "die" ile yazılmış
+ * tam biçim olarak duruyor ("die falschen Freunde"); "die" şartı serbest metni
+ * ("nur Singular") çoğul sanmayı engelliyor.
+ */
 function fullPluralOf(formen: string | null): string | null {
-  return (formen ?? "").trim().match(/^(?:die\s+)?(\p{Lu}[\p{L}-]*)$/u)?.[1] ?? null;
+  const value = (formen ?? "").trim();
+  return (
+    value.match(/^(?:die\s+)?(\p{Lu}[\p{L}\d-]*)$/u)?.[1] ??
+    value.match(/^die\s+(\p{L}[\p{L}\d-]*(?:\s+\p{L}[\p{L}\d-]*)+)$/u)?.[1] ??
+    null
+  );
 }
 
 /**

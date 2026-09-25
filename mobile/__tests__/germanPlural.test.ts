@@ -35,5 +35,14 @@ describe("Almanca çoğul", () => {
   it("çoğulu olmayan maddede biçim yok", () => {
     expect(pluralFormOf("Milch", "(Sg.)")).toBeNull();
     expect(pluralFormOf("gehen", "ist gegangen")).toBeNull();
+    expect(pluralFormOf("Datenschutz", "nur Singular")).toBeNull();
+  });
+
+  it("çok sözcüklü başlıkta çoğul 'die' ile yazılmış tam biçim; tur kurulmuyor", () => {
+    expect(pluralFormOf("falsche Freund", "die falschen Freunde")).toBe("falschen Freunde");
+    expect(pluralRuleOf("falsche Freund", "die falschen Freunde")).toBeNull();
+    expect(pluralOf("falsche Freund", "die falschen Freunde")).toBeNull();
+    // rakamlı başlık: kural aynı çoğulu üretiyor
+    expect(pluralFormOf("CO2-Fußabdruck", "¨-e")).toBe("CO2-Fußabdrücke");
   });
 });
