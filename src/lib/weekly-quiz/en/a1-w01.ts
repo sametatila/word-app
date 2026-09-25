@@ -40,7 +40,7 @@ export const EN_A1_W01: QuizWeek = {
         "My family is not here. My mother and my father live in Dublin. " +
         "I have a brother. His name is Jack and he is young. " +
         "I like music and I read books. " +
-        "Today I meet a friend in the city. We drink coffee and we speak English.",
+        "Today I am meeting a friend in the city. We want to drink coffee and speak English.",
     },
     {
       kind: "audio",
@@ -53,7 +53,7 @@ export const EN_A1_W01: QuizWeek = {
         { speaker: "Deniz", text: "My name is Deniz. Hello Jack!" },
         { speaker: "Jack", text: "Where are you from?" },
         { speaker: "Deniz", text: "I am from Turkey. And you?" },
-        { speaker: "Jack", text: "I am from London. What do you do here?" },
+        { speaker: "Jack", text: "I am from London. And what do you do here in London?" },
         { speaker: "Deniz", text: "I learn English. I am a student." },
         { speaker: "Jack", text: "Good! Where do you live?" },
         { speaker: "Deniz", text: "I live in the city now." },
@@ -90,7 +90,7 @@ export const EN_A1_W01: QuizWeek = {
       stem: "What does Emma do today?",
       options: ["She works", "She goes to Dublin", "She studies music", "She meets a friend"],
       answer: 3,
-      why: "\"Today I meet a friend\" cümlesi bugünü anlatıyor. Music ve Dublin metinde geçiyor ama bugüne bağlı değil — doğru sözcüğü görmek yetmiyor, hangi cümlede geçtiği önemli.",
+      why: "\"Today I am meeting a friend\" cümlesi bugünü anlatıyor. Music ve Dublin metinde geçiyor ama bugüne bağlı değil — doğru sözcüğü görmek yetmiyor, hangi cümlede geçtiği önemli.",
       targets: ["reading.detail", "time.today"],
     },
 

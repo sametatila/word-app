@@ -218,9 +218,9 @@ export const EN_C1_W05: QuizWeek = {
       id: "en-c1-w05-v1",
       block: "vocab",
       stem: "That is not quite ___.",
-      options: ["accurate", "exact", "right of", "true to"],
+      options: ["accurate", "exacting", "right of", "true to"],
       answer: 0,
-      why: "`accurate` bir ifadenin olguya uygunluğunu anlatır ve düzeltme dilinin yerleşik sözcüğüdür. `exact` ölçü kesinliği içindir; öteki ikisi bu konumda kurulmuş öbekler değildir.",
+      why: "`accurate` bir ifadenin olguya uygunluğunu anlatır ve düzeltme dilinin yerleşik sözcüğüdür. `exacting` 'titiz, zahmetli' demek ve bir ifadeyi değil bir işi ya da kişiyi niteler; öteki ikisi bu konumda kurulmuş öbekler değildir.",
       targets: ["adjective.accurate", "wordfield.evidence"],
     },
     {

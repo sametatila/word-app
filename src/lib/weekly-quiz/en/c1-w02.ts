@@ -192,7 +192,7 @@ export const EN_C1_W02: QuizWeek = {
         "There is the existence of a travel time reduction benefit.",
       ],
       answer: 2,
-      why: "İngilizce fiil yeğler; aynı içeriği isim zincirine çevirmek cümleyi ağırlaştırır ve okunurluğu düşürür. Üç seçenek de dilbilgisel olarak kurulabilir, ama İngilizcede yerleşik üslup fiille kurulanıdır.",
+      why: "İngilizce fiil yeğler; aynı içeriği isim zincirine çevirmek cümleyi ağırlaştırır ve okunurluğu düşürür. Üç seçenek de dil bilgisel olarak kurulabilir, ama İngilizcede yerleşik üslup fiille kurulanıdır.",
       targets: ["style.nominalisation", "register.formal"],
       byNative: {
         de: {
@@ -203,7 +203,7 @@ export const EN_C1_W02: QuizWeek = {
             "There is the existence of a travel time reduction benefit.",
           ],
           answer: 2,
-          why: "Almanca isim yeğleyen bir üsluba sahiptir (`die Verkürzung der Fahrzeit`) ve bu doğrudan İngilizceye taşınıyor. Sonuç dilbilgisel ama ağır ve yapay bir cümle — C1'de Almanca konuşanın en karakteristik hatası budur.",
+          why: "Almanca isim yeğleyen bir üsluba sahiptir (`die Verkürzung der Fahrzeit`) ve bu doğrudan İngilizceye taşınıyor. Sonuç dil bilgisel ama ağır ve yapay bir cümle — C1'de Almanca konuşanın en karakteristik hatası budur.",
         },
         tr: {
           options: [

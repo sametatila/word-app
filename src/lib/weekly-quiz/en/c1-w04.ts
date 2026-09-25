@@ -77,7 +77,7 @@ export const EN_C1_W04: QuizWeek = {
         "Too many bookings at once",
       ],
       answer: 2,
-      why: "\"The cause lay in an update installed on a Friday evening. It should have been tested first, but the step … was skipped.\" Cuma akşamı güncellemenin ZAMANI, sebebi değil.",
+      why: "\"Technically the cause lay in an update installed on a Friday evening. It should have been tested first, but the step … was skipped.\" Cuma akşamı güncellemenin ZAMANI, sebebi değil.",
       targets: ["reading.detail", "argument.cause"],
     },
     {
@@ -92,7 +92,7 @@ export const EN_C1_W04: QuizWeek = {
         "Because it describes an event without naming anyone responsible",
       ],
       answer: 3,
-      why: "Metin bunu doğrudan söylüyor: `the passive allows an event to be described without naming anyone responsible`. Eleştiri dilbilgisine değil, edilgen çatının FAİLİ SİLME imkânına yönelik.",
+      why: "Metin bunu doğrudan söylüyor: `the passive allows an event to be described without naming anyone responsible`. Eleştiri dil bilgisine değil, edilgen çatının FAİLİ SİLME imkânına yönelik.",
       targets: ["reading.language-critique", "passive.agentless"],
     },
     {

@@ -19,8 +19,8 @@ import type { QuizWeek } from "../types";
  *  - `w05-v1` → W1 `falsefriend.actually`, `w05-v2` → W3 `falsefriend.become`
  *
  * ÇELDİRİCİLERİN GEREKÇESİ:
- *  - `w05-g2` (`was canceled`): Almancada `ist abgesagt worden` Perfekt'le
- *    kuruluyor ve `has been canceled` getiriyor; Türkçede `iptal edildi`
+ *  - `w05-g2` (`was cancelled`): Almancada `ist abgesagt worden` Perfekt'le
+ *    kuruluyor ve `has been cancelled` getiriyor; Türkçede `iptal edildi`
  *    edilgenliği ekle taşıyor ve `be` düşüyor.
  *  - `w05-g4` (`If … were`): Almanca `wäre` → `would be`.
  *
@@ -42,18 +42,18 @@ export const EN_B1_W05: QuizWeek = {
       id: "t1",
       genre: "Online review",
       genreTr: "İnternet yorumu",
-      title: "Three stars: good teacher, bad organization",
+      title: "Three stars: good teacher, bad organisation",
       body:
         "I have taken a lot of evening courses, but this photography course was a strange experience.\n\n" +
         "Let's start with the good things. The teacher, who has worked as a photographer for 20 years, was excellent. " +
         "She explained everything clearly and gave us useful feedback on every photo. " +
         "I have learned more in ten weeks than in two years of watching videos online.\n\n" +
-        "However, the organization was a disaster. The first lesson was canceled one hour before it started, and we were only told by text message. " +
+        "However, the organisation was a disaster. The first lesson was cancelled one hour before it started, and we were only told by text message. " +
         "In week four, we arrived at the room where the course usually took place and found a dance class there. " +
         "Nobody from the school said sorry.\n\n" +
         "When I complained, a man at the office said that the problems would be solved soon. They weren't. " +
         "Two students left the course in the middle, and I don't blame them.\n\n" +
-        "Would I recommend it? If the school were better organized, I would give it five stars without thinking. " +
+        "Would I recommend it? If the school were better organised, I would give it five stars without thinking. " +
         "Although there were problems, I don't regret taking the course, because the teacher was worth it. " +
         "But if you need a reliable schedule, look somewhere else.",
     },
@@ -89,7 +89,7 @@ export const EN_B1_W05: QuizWeek = {
         "She didn't have much experience.",
         "She was very good at explaining.",
         "She was often late for the lessons.",
-        "She canceled the first lesson.",
+        "She cancelled the first lesson.",
       ],
       answer: 1,
       why: "Öğretmen `Let's start with the good things` ile başlayan kısımda anlatılıyor ve orada her şey olumlu; `However` ile başlayan kısım okulun organizasyonunu anlatıyor. İlk dersin iptali okula ait bir sorun. `who has worked as a photographer for 20 years` ilgi cümlesi de deneyimin az değil çok olduğunu söylüyor.",
@@ -101,7 +101,7 @@ export const EN_B1_W05: QuizWeek = {
       ref: "t1",
       stem: "What happened in week four?",
       options: [
-        "The lesson was canceled by text message.",
+        "The lesson was cancelled by text message.",
         "Two students left the course.",
         "The teacher did not come.",
         "Another class was in their room.",
@@ -122,7 +122,7 @@ export const EN_B1_W05: QuizWeek = {
         "people who prefer videos online",
       ],
       answer: 0,
-      why: "`If the school were better organized, I would give it five stars` ikinci tip koşul: okul şu an iyi organize DEĞİL, yani beş yıldız yok. `without thinking` bu gerçek dışı durumun parçası. Tavsiye son cümlede bir koşulla geliyor: güvenilir bir program gerekiyorsa başka yere bakın.",
+      why: "`If the school were better organised, I would give it five stars` ikinci tip koşul: okul şu an iyi organize DEĞİL, yani beş yıldız yok. `without thinking` bu gerçek dışı durumun parçası. Tavsiye son cümlede bir koşulla geliyor: güvenilir bir program gerekiyorsa başka yere bakın.",
       targets: ["reading.opinion", "conditional.second"],
     },
 
@@ -199,20 +199,20 @@ export const EN_B1_W05: QuizWeek = {
       id: "en-b1-w05-g2",
       block: "grammar",
       stem: "The first lesson ___ one hour before it started.",
-      options: ["was canceled", "has been canceled", "canceled", "is canceled"],
+      options: ["was cancelled", "has been cancelled", "cancelled", "is cancelled"],
       answer: 0,
       why: "Olay geçmişte belli bir ana bağlı (`one hour before it started`): past simple. Dersi biri iptal etti, ders bir şeyi iptal etmedi, yani edilgen: `was` + fiilin üçüncü hâli.",
       targets: ["passive.past", "tense.past-vs-present-perfect"],
       byNative: {
         tr: {
-          options: ["was canceled", "has been canceled", "canceled", "is canceled"],
+          options: ["was cancelled", "has been cancelled", "cancelled", "is cancelled"],
           answer: 0,
-          why: "Türkçede `iptal edildi` edilgenliği ekle taşıyor, ayrı bir yardımcı fiil yok; bu yüzden `canceled` yetiyor gibi görünüyor. Ama o biçim etken: `ders bir şeyi iptal etti`. Edilgen `be` ister: `was canceled`.",
+          why: "Türkçede `iptal edildi` edilgenliği ekle taşıyor, ayrı bir yardımcı fiil yok; bu yüzden `cancelled` yetiyor gibi görünüyor. Ama o biçim etken: `ders bir şeyi iptal etti`. Edilgen `be` ister: `was cancelled`.",
         },
         de: {
-          options: ["was canceled", "has been canceled", "canceled", "is canceled"],
+          options: ["was cancelled", "has been cancelled", "cancelled", "is cancelled"],
           answer: 0,
-          why: "Almancada `Die erste Stunde ist abgesagt worden` Perfekt'le kuruluyor ve `has been canceled` getiriyor. İngilizcede geçmişte belli bir ana bağlı olay past simple ister; present perfect bu zaman bilgisiyle birleşmez.",
+          why: "Almancada `Die erste Stunde ist abgesagt worden` Perfekt'le kuruluyor ve `has been cancelled` getiriyor. İngilizcede geçmişte belli bir ana bağlı olay past simple ister; present perfect bu zaman bilgisiyle birleşmez.",
         },
       },
     },
@@ -235,7 +235,7 @@ export const EN_B1_W05: QuizWeek = {
     {
       id: "en-b1-w05-g4",
       block: "grammar",
-      stem: "If the school ___ better organized, I would give it five stars.",
+      stem: "If the school ___ better organised, I would give it five stars.",
       options: ["is", "will be", "were", "would be"],
       answer: 2,
       why: "İkinci tip koşul: okul şu an iyi organize DEĞİL. `if` kısmında geçmiş biçim (`were`), `would` yalnız ana cümlede. `is` ve `will be` gerçekleşebilecek bir koşul kurar.",
@@ -256,7 +256,7 @@ export const EN_B1_W05: QuizWeek = {
     {
       id: "en-b1-w05-g5",
       block: "grammar",
-      stem: "___ the course was badly organized, I don't regret taking it.",
+      stem: "___ the course was badly organised, I don't regret taking it.",
       options: ["Although", "Despite", "However", "Because of"],
       answer: 0,
       why: "Boşluktan sonra özne ve fiil geliyor (`the course was`): karşıtlık bağlacı `although`. `despite` ve `because of` arkalarından bir isim öbeği ister; `however` iki ayrı cümleyi bağlar.",

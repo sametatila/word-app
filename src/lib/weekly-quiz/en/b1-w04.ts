@@ -41,10 +41,10 @@ export const EN_B1_W04: QuizWeek = {
       title: "Where does your bottle go?",
       body:
         "Every year, a huge number of plastic bottles are sold in our city. But what happens to them after you have finished your drink?\n\n" +
-        "Bottles that are put in the yellow bin are collected every two weeks and taken to a recycling center outside the city. " +
+        "Bottles that are put in the yellow bin are collected every two weeks and taken to a recycling centre outside the city. " +
         "There they are sorted by machines and cleaned. Clear plastic can be recycled several times, " +
-        "but colored plastic is much harder to use again, so most of it is burned to produce energy.\n\n" +
-        "Although many people recycle correctly, about a third of all bottles still go into normal trash bins. " +
+        "but coloured plastic is much harder to use again, so most of it is burned to produce energy.\n\n" +
+        "Although many people recycle correctly, about a third of all bottles still go into normal rubbish bins. " +
         "This plastic is not recycled at all. The city says that if everyone used the yellow bin correctly, " +
         "it could save around 200,000 euros a year.\n\n" +
         "Since January, shops which sell drinks have had to take back empty bottles. " +
@@ -79,7 +79,7 @@ export const EN_B1_W04: QuizWeek = {
       id: "en-b1-w04-r1",
       block: "read",
       ref: "t1",
-      stem: "What happens to most colored plastic?",
+      stem: "What happens to most coloured plastic?",
       options: [
         "It is recycled several times.",
         "It is burned to produce energy.",
@@ -87,7 +87,7 @@ export const EN_B1_W04: QuizWeek = {
         "It is cleaned and sold again.",
       ],
       answer: 1,
-      why: "`Clear plastic can be recycled …, but colored plastic …, so most of it is burned`: `but` iki plastik türünü ayırıyor. Defalarca geri dönüşüm şeffaf plastiğe ait. Edilgen cümlelerde öznenin hangi plastik olduğunu izlemek gerekiyor.",
+      why: "`Clear plastic can be recycled …, but coloured plastic …, so most of it is burned`: `but` iki plastik türünü ayırıyor. Defalarca geri dönüşüm şeffaf plastiğe ait. Edilgen cümlelerde öznenin hangi plastik olduğunu izlemek gerekiyor.",
       targets: ["reading.detail", "passive.present"],
     },
     {

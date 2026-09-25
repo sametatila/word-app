@@ -40,19 +40,19 @@ export const EN_B1_W02: QuizWeek = {
       id: "t1",
       genre: "Local news report",
       genreTr: "Yerel haber",
-      title: "Old cinema to become a youth center",
+      title: "Old cinema to become a youth centre",
       body:
-        "The old Rex Cinema on Market Street, which was built in 1932, is going to become a youth center. " +
+        "The old Rex Cinema on Market Street, which was built in 1932, is going to become a youth centre. " +
         "The plan was announced on Monday after a long discussion.\n\n" +
         "The cinema was closed ten years ago because too few people were buying tickets. " +
         "Since then, the building has been empty, and many people in the area have complained that it looks dangerous.\n\n" +
         "The project will cost a lot of money. Most of it will be paid by the city, but local businesses have also promised to help. " +
-        "The mayor said that the work would start in March and that the center would open one year later.\n\n" +
-        "Not everyone is happy. Some neighbors told reporters that they were worried about noise in the evenings. " +
+        "The mayor said that the work would start in March and that the centre would open one year later.\n\n" +
+        "Not everyone is happy. Some neighbours told reporters that they were worried about noise in the evenings. " +
         "Others said they would prefer a new cinema. " +
         "\"Young people in this town have nowhere to go,\" said Sara Malik, 17, who wrote to the mayor about the idea last year. " +
         "\"This is the best news I have heard in a long time.\"\n\n" +
-        "The city has promised to talk to the neighbors before the plans are finished.",
+        "The city has promised to talk to the neighbours before the plans are finished.",
     },
     {
       kind: "audio",
@@ -100,8 +100,8 @@ export const EN_B1_W02: QuizWeek = {
       options: [
         "The work would start in March.",
         "The work had already started.",
-        "The center would open in March.",
-        "The neighbors would decide about the plan.",
+        "The centre would open in March.",
+        "The neighbours would decide about the plan.",
       ],
       answer: 0,
       why: "Aktarılan sözde `would start`, başkanın o anki `will start` sözünün geriye kaymış hâli: gelecek bir plan. `had started` bitmiş bir iş olurdu. Mart başlangıç tarihi, açılış değil; açılış `one year later`.",
@@ -115,11 +115,11 @@ export const EN_B1_W02: QuizWeek = {
       options: [
         "She would prefer a new cinema.",
         "She is worried about noise.",
-        "She wants to talk to the neighbors first.",
+        "She wants to talk to the neighbours first.",
         "She thinks it is very good news.",
       ],
       answer: 3,
-      why: "Sara'nın görüşü tırnak içinde, kendi sözleriyle: `the best news I have heard in a long time`. Yeni sinema ve gürültü `Others`/`Some neighbors`a ait; komşularla konuşma sözünü ise şehir veriyor. Haberde her görüşün kime ait olduğunu izlemek gerekiyor.",
+      why: "Sara'nın görüşü tırnak içinde, kendi sözleriyle: `the best news I have heard in a long time`. Yeni sinema ve gürültü `Others`/`Some neighbours`a ait; komşularla konuşma sözünü ise şehir veriyor. Haberde her görüşün kime ait olduğunu izlemek gerekiyor.",
       targets: ["reading.opinion"],
     },
 
@@ -253,7 +253,7 @@ export const EN_B1_W02: QuizWeek = {
     {
       id: "en-b1-w02-g5",
       block: "grammar",
-      stem: "Some neighbors ___ reporters that they were worried about noise.",
+      stem: "Some neighbours ___ reporters that they were worried about noise.",
       options: ["said", "told", "talked", "spoke"],
       answer: 1,
       why: "Kişi nesnesi doğrudan geliyorsa (`reporters`) fiil `tell` olur: `tell someone that …`. `say` kişiyi doğrudan nesne almaz; `talk` ve `speak` ise `that` cümlesiyle bir söz aktarmaz.",
@@ -293,9 +293,9 @@ export const EN_B1_W02: QuizWeek = {
       id: "en-b1-w02-v1",
       block: "vocab",
       stem: "Many people only read the ___ and never the whole article.",
-      options: ["channel", "program", "headline", "page"],
+      options: ["channel", "programme", "headline", "page"],
       answer: 2,
-      why: "Bir haberin tamamıyla karşılaştırılan kısa, büyük yazılmış satır `headline`. `channel` ve `program` televizyon ya da radyoya aittir ve okunmaz; `page` ise bir metin parçası değil, basılı bir yüzey.",
+      why: "Bir haberin tamamıyla karşılaştırılan kısa, büyük yazılmış satır `headline`. `channel` ve `programme` televizyon ya da radyoya aittir ve okunmaz; `page` ise bir metin parçası değil, basılı bir yüzey.",
       targets: ["wordfield.media"],
     },
     {

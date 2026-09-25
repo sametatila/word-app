@@ -33,7 +33,7 @@ export const EN_A1_W02: QuizWeek = {
       body:
         "I get up at 6 in the morning. I have breakfast and drink coffee. " +
         "Then I go to work by bus. I work from 8 to 4. " +
-        "Then I go to my house and read a book. " +
+        "Then I go home and read a book. " +
         "Sometimes I meet friends in the city. " +
         "I do not have much time, but I learn English at school. " +
         "I always sleep late.",
@@ -50,7 +50,7 @@ export const EN_A1_W02: QuizWeek = {
         { speaker: "Ben", text: "I get up at 7. Why do you get up early?" },
         { speaker: "Mia", text: "I work from 6 to 2." },
         { speaker: "Ben", text: "And then?" },
-        { speaker: "Mia", text: "Then I am at my house. I read or play music." },
+        { speaker: "Mia", text: "Then I am at home. I read or play music." },
       ],
     },
   ],
@@ -64,7 +64,7 @@ export const EN_A1_W02: QuizWeek = {
       stem: "When does the person get up?",
       options: ["At 8", "At 6", "At 4", "At 5"],
       answer: 1,
-      why: "\"I get up at 6 in the morning.\" Metinde dört saat geçiyor (6, 8, 4, ve `late`) ve her biri başka bir işe ait.",
+      why: "\"I get up at 6 in the morning.\" Metinde üç saat geçiyor (6, 8, 4) ve her biri başka bir işe ait; 5 ise dinlemedeki Mia'nın kalkma saati.",
       targets: ["reading.detail", "time.clock"],
     },
     {
@@ -114,9 +114,9 @@ export const EN_A1_W02: QuizWeek = {
       block: "listen",
       ref: "a1",
       stem: "What does Mia do after work?",
-      options: ["She works", "She is at her house", "She goes to school", "She gets up"],
+      options: ["She works", "She is at home", "She goes to school", "She gets up"],
       answer: 1,
-      why: "\"Then I am at my house. I read or play music.\" `then` işten sonrasını gösteriyor.",
+      why: "\"Then I am at home. I read or play music.\" `then` işten sonrasını gösteriyor.",
       targets: ["listening.detail", "time.sequence"],
     },
 

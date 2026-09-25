@@ -32,7 +32,7 @@ export const EN_A1_W04: QuizWeek = {
       body:
         "I live in a small house in the city. The house has 2 rooms. " +
         "My room is small but good. There is a bed and a table. " +
-        "On the table there are my books. Under the bed there is my dog. " +
+        "My books are on the table. My dog sleeps under the bed. " +
         "The door is old. Next to the house there is a garden. My bicycle is there. " +
         "I like the house. I go to school by bicycle.",
     },
@@ -62,7 +62,7 @@ export const EN_A1_W04: QuizWeek = {
       stem: "Where are the books?",
       options: ["Under the bed", "Next to the house", "On the table", "In the garden"],
       answer: 2,
-      why: "\"On the table there are my books.\" Metinde dört ayrı yer bildirimi var ve her biri başka bir nesneye ait — edatı değil, edatın BAĞLANDIĞI şeyi takip etmek gerekiyor.",
+      why: "\"My books are on the table.\" Metinde dört ayrı yer bildirimi var ve her biri başka bir nesneye ait — edatı değil, edatın BAĞLANDIĞI şeyi takip etmek gerekiyor.",
       targets: ["reading.detail", "preposition.place"],
     },
     {
@@ -72,7 +72,7 @@ export const EN_A1_W04: QuizWeek = {
       stem: "Where is the dog?",
       options: ["On the table", "Under the bed", "In the garden", "In the street"],
       answer: 1,
-      why: "\"Under the bed there is my dog.\" Bir önceki cümle masadan söz ediyor; iki cümle arka arkaya iki ayrı yer veriyor.",
+      why: "\"My dog sleeps under the bed.\" Bir önceki cümle masadan söz ediyor; iki cümle arka arkaya iki ayrı yer veriyor.",
       targets: ["reading.detail", "preposition.place"],
     },
     {

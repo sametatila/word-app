@@ -247,7 +247,7 @@ export const EN_A2_W04: QuizWeek = {
       id: "en-a2-w04-v3",
       block: "vocab",
       stem: "Can I use your ___? I need to call the manager.",
-      options: ["phone call", "mobile phone", "phone number", "phone line"],
+      options: ["phone call", "mobile phone", "phone number", "phone case"],
       answer: 1,
       why: "Cep telefonu cihazı `mobile phone` (Amerikan İngilizcesinde `cell phone`). `phone call` bir arama, `phone number` numara: ikisi de kullanılacak bir nesne değil. Türkçe 'telefon' hem cihaz hem arama demek ('bir telefon edeyim'), o yüzden `phone call` seçiliyor; bileşik isimde anlamı ikinci sözcük taşır.",
       targets: ["noun.phone"],

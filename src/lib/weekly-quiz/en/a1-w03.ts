@@ -33,12 +33,12 @@ export const EN_A1_W03: QuizWeek = {
       genreTr: "Not",
       title: "Shopping",
       body:
-        "Today I go to the shop. I need bread, milk and water. " +
+        "Today I go to the supermarket. I need bread, milk and water. " +
         "The bread costs 3 euros. The milk is cheap, only 1 euro. " +
         "I buy an egg and some cheese for breakfast. " +
         "The cheese is expensive, but I like it. " +
         "I have 20 euros. That is enough. " +
-        "Then I go to the store in the street and buy a book.",
+        "Then I go to the book shop and buy a book.",
     },
     {
       kind: "audio",
@@ -84,9 +84,9 @@ export const EN_A1_W03: QuizWeek = {
       block: "read",
       ref: "t1",
       stem: "Where does the person buy a book?",
-      options: ["In the shop", "At school", "In the city", "In the store in the street"],
+      options: ["In the supermarket", "At school", "In the city", "In the book shop"],
       answer: 3,
-      why: "Son cümle: \"Then I go to the store in the street and buy a book.\" İlk dükkân (`shop`) yiyecek içindi.",
+      why: "Son cümle: \"Then I go to the book shop and buy a book.\" Süpermarket (`supermarket`) yiyecek içindi.",
       targets: ["reading.detail", "question.where"],
     },
 
@@ -108,7 +108,7 @@ export const EN_A1_W03: QuizWeek = {
       stem: "What does Anna buy?",
       options: ["The book", "The card", "Both", "Nothing"],
       answer: 1,
-      why: "\"Good, I buy the card.\" Kitabı `expensive` bulup vazgeçiyor; kararı doğrudan söylemiyor, fiyatı yorumlayarak belli ediyor.",
+      why: "\"Good, I buy the card.\" Kitabı `expensive` bulup almıyor; kitaptan vazgeçtiğini doğrudan söylemiyor, fiyatı yorumlayarak belli ediyor.",
       targets: ["listening.inference", "verb.buy"],
     },
     {
