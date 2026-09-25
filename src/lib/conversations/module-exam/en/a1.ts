@@ -7,7 +7,7 @@ import type { ModuleExamPlan } from "../types";
  * `canDo[].de`, `ExamTurn.de`, `ExamQuestion.de`, `speaking[].de` ve
  * `Gloss.de` bu dosyada İNGİLİZCE yazılı. Ad tarihsel: tip iki kurs varken
  * yazıldı ve o gün tek kurs Almancaydı. Kolonu yeniden adlandırmak 58 Almanca
- * kâğıdı ve `resolveExam`, `check-exam-vocab`, `data/lessons/exam` hatlarını
+ * sınavı ve `resolveExam`, `check-exam-vocab`, `data/conversations/exam` hatlarını
  * birlikte kırardı — bedeli, adı yanlış ama anlamı sabit bir alandan büyük.
  * Okunacak kural şu: `de` = ÖLÇÜLEN dil, `tr` = öğrencinin dili.
  *
@@ -19,8 +19,8 @@ import type { ModuleExamPlan } from "../types";
  * kursu almıyor (`PAIR_READY.en` yalnız `de`), yani alan pratikte hiç
  * okunmuyor — ama tipin ve kapının sözü veride duruyor.
  *
- * Anadili ALMANCA olan kullanıcı bu kâğıtların Türkçe yarısını Almanca
- * görüyor; çeviri kâğıtta değil sözlükte (`data/lessons/exam-de/`,
+ * Anadili ALMANCA olan kullanıcı bu sınavların Türkçe yarısını Almanca
+ * görüyor; çeviri sınavda değil sözlükte (`data/conversations/exam-de/`,
  * `localiseExam`in Almanca dalı). Aynı şeyin iki doğruluk kaynağı olmasın.
  *
  * PEDAGOJİK KISIT — Almanca kardeşiyle birebir aynı: her bölüm modülün KENDİ
