@@ -154,7 +154,7 @@ export function CandoScreen() {
             icon={CheckIcon}
             tint={colors.success}
             title={t("cando.what_i_can_do")}
-            text={t("cando.sign_in_and_finish_lessons_and")}
+            text={t("cando.sign_in_and_finish_conversations_and")}
             action={t("nav.path")}
             onAction={() => nav.navigate("Tabs", { screen: "Path" })}
           />

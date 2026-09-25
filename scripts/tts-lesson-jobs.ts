@@ -69,7 +69,7 @@ for (const l of LESSONS) {
   walk((l as unknown as { lecture: unknown }).lecture, `${l.course}.${l.id}`);
 }
 // anlatım övgüleri ve düzeltme girişi (anadil tr)
-for (const key of ["lesson.praise_1", "lesson.praise_2", "lesson.praise_3", "lesson.praise_4", "lesson.praise_5", "lessonp.not_quite"])
+for (const key of ["conversation.praise_1", "conversation.praise_2", "conversation.praise_3", "conversation.praise_4", "conversation.praise_5", "conversationp.not_quite"])
   emit(`nar.${key}`, [{ lang: "tr", text: translate("tr", key), narration: true }]);
 
 writeFileSync(out, lines.join("\n") + "\n");

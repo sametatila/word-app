@@ -4,7 +4,7 @@ import { getUserId } from "@/lib/auth/server";
 import { ExamPlayer } from "@/components/exam-player";
 import type { CefrLevel } from "@/lib/skills/types";
 
-export const generateMetadata = titleMeta("lesson.module_exam");
+export const generateMetadata = titleMeta("exam.module_exam_title");
 export const dynamic = "force-dynamic";
 const LEVELS = ["A1", "A2", "B1", "B2", "C1"];
 

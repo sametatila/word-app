@@ -42,8 +42,8 @@ export function ReportLink({ kind, refId, content, style }: {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <PressableScale onPress={() => setOpen(true)} hitSlop={8} accessibilityRole="button" accessibilityLabel={t("lesson.report_this_answer")} style={style}>
-        <Text variant="micro" color={colors.textFaint}>{t("lesson.report")}</Text>
+      <PressableScale onPress={() => setOpen(true)} hitSlop={8} accessibilityRole="button" accessibilityLabel={t("conversation.report_this_answer")} style={style}>
+        <Text variant="micro" color={colors.textFaint}>{t("conversation.report")}</Text>
       </PressableScale>
       <ReportSheet visible={open} kind={kind} refId={refId} content={content} onClose={() => setOpen(false)} />
     </>

@@ -198,7 +198,7 @@ export function LessonScreen() {
   /*
    * ELLER SERBEST — mobilde HİÇ YOKTU.
    *
-   * Web derste kalıcı bir anahtar tutuyor (`lessonp.hands_free`): açıkken her
+   * Web derste kalıcı bir anahtar tutuyor (`conversationp.hands_free`): açıkken her
    * adımda mikrofona dokunmak gerekmiyor, öğretmen cümlesini bitirir bitirmez
    * dinleme kendiliğinden başlıyor. Telefonda bu farkın webdekinden BÜYÜK
    * olması gerekirdi - cihaz masaya dayalıyken her tur için ekrana uzanmak,
@@ -262,8 +262,8 @@ export function LessonScreen() {
    * HİÇBİR ŞEY söylemiyordu: kullanıcı konuş düğmesinin kaybolduğunu görüyor,
    * sebebini bilmiyor. İki sebep de var ve ayrı şeyler söylüyor — izin
    * reddedildiyse yapılacak bir şey var ("Ayarlardan açabilirsin"), tanıyıcı
-   * yoksa yok. Web ikisini ayrı ayrı yazıyor (`lessonp.mic_denied` ve
-   * `lesson.no_asr`); mobil ikisini tek duruma katlayıp susuyordu.
+   * yoksa yok. Web ikisini ayrı ayrı yazıyor (`conversationp.mic_denied` ve
+   * `conversation.no_asr`); mobil ikisini tek duruma katlayıp susuyordu.
    */
   const [sttSebep, setSttSebep] = useState<"denied" | "unavailable" | null>(null);
   /* Eller serbest dinlemesi bir söz bitince tetikleniyor: o ana kadar izin
@@ -321,7 +321,7 @@ export function LessonScreen() {
              B24). Servis kapalı değil; senaryo devralıyor ve konuşma sayılıyor. */
           offlineRef.current = true;
           /* "Servis kapalı" notu EKLENMİYOR: servis kapalı değil. */
-          offNoteRef.current = { role: "teacher", segments: [{ lang: "tr", text: tx("lessonp.chat_off_account") }], tone: "hint" };
+          offNoteRef.current = { role: "teacher", segments: [{ lang: "tr", text: tx("conversationp.chat_off_account") }], tone: "hint" };
           push(offNoteRef.current);
           return;
         }
@@ -330,7 +330,7 @@ export function LessonScreen() {
              teşhis olurdu; kullanıcıya neden senaryoya düşüldüğü ve nereden
              açılacağı söyleniyor. */
           offlineRef.current = true;
-          offNoteRef.current = { role: "teacher", segments: [{ lang: "tr", text: tx("lessonp.chat_off_consent") }], tone: "hint" };
+          offNoteRef.current = { role: "teacher", segments: [{ lang: "tr", text: tx("conversationp.chat_off_consent") }], tone: "hint" };
           push(offNoteRef.current);
           return;
         }
@@ -349,8 +349,8 @@ export function LessonScreen() {
           offNoteRef.current = {
             role: "teacher",
             segments: [
-              { lang: "tr", text: tx(lesson?.roleplay.script?.length ? "lessonp.chat_off_scripted" : "lessonp.chat_off_patterns") },
-              { lang: "tr", text: tx("lesson.chat_offline_note") },
+              { lang: "tr", text: tx(lesson?.roleplay.script?.length ? "conversationp.chat_off_scripted" : "conversationp.chat_off_patterns") },
+              { lang: "tr", text: tx("conversation.chat_offline_note") },
             ],
             tone: "hint",
           };
@@ -628,7 +628,7 @@ export function LessonScreen() {
     setPhase("roleplay");
     /* Kayıt SİLİNMİYOR: konuşma fazı da saklanıyor (bkz. `saveLessonResume`). */
     setFeed([]);
-    push({ role: "teacher", segments: [{ lang: "tr", text: tx("lesson.scene", { scene: lesson.roleplay.scene }) }] });
+    push({ role: "teacher", segments: [{ lang: "tr", text: tx("conversation.scene", { scene: lesson.roleplay.scene }) }] });
     if (offlineRef.current && offNoteRef.current) push(offNoteRef.current);
     /* Çevrimdışı yolda açılış senaryodan geliyor (ilk turun sorusu); model
        çalışıyorsa dersin kendi açılış repliği. */
@@ -655,13 +655,13 @@ export function LessonScreen() {
     setCursor(lesson.lecture.length);
     setPhase("roleplay");
     setFeed([]);
-    push({ role: "teacher", segments: [{ lang: "tr", text: tx("lesson.scene", { scene: lesson.roleplay.scene }) }] });
+    push({ role: "teacher", segments: [{ lang: "tr", text: tx("conversation.scene", { scene: lesson.roleplay.scene }) }] });
     const msgs = r.roleMsgs ?? [];
     for (const m of msgs) {
       if (m.role === "user") push({ role: "student", text: m.content });
       else push({ role: "teacher", segments: [{ lang: "de", text: m.content }] });
     }
-    push({ role: "teacher", segments: [{ lang: "tr", text: tx("lessonp.resumed") }], tone: "hint" });
+    push({ role: "teacher", segments: [{ lang: "tr", text: tx("conversationp.resumed") }], tone: "hint" });
     setRoleMsgs(msgs);
     setRoleTurns(r.roleTurns ?? msgs.filter((m) => m.role === "user").length);
     if (r.offline) {
@@ -721,7 +721,7 @@ export function LessonScreen() {
         const st = offlineStart(lesson);
         const r = offlineReply(lesson, st.state, text);
         setOffline(r.state);
-        push({ role: "teacher", segments: [{ lang: "tr", text: tx("lessonp.chat_off_consent") }], tone: "hint" });
+        push({ role: "teacher", segments: [{ lang: "tr", text: tx("conversationp.chat_off_consent") }], tone: "hint" });
         const parsed = parseReply(r.content);
         const bodyText = parsed.body || r.content;
         setRoleMsgs([...next, { role: "assistant", content: bodyText }]);
@@ -737,9 +737,9 @@ export function LessonScreen() {
       } else if (e instanceof ApiError && e.status === 429) {
         /* Günlük sohbet mesajı tavanı (kötüye kullanım sınırı) — "bağlantı
            sorunu" DEĞİL, yarın sürüyor. */
-        push({ role: "teacher", segments: [{ lang: "tr", text: tx("lessonp.chat_quota", { n: premiumStatus?.limits.fairUse.chatTurnsPerDay ?? 300 }) }], tone: "hint" });
+        push({ role: "teacher", segments: [{ lang: "tr", text: tx("conversationp.chat_quota", { n: premiumStatus?.limits.fairUse.chatTurnsPerDay ?? 300 }) }], tone: "hint" });
       } else {
-        push({ role: "teacher", segments: [{ lang: "tr", text: tx("lesson.connection_problem") }], tone: "hint" });
+        push({ role: "teacher", segments: [{ lang: "tr", text: tx("conversation.connection_problem") }], tone: "hint" });
       }
     } finally {
       setBusy(false);
@@ -824,9 +824,9 @@ export function LessonScreen() {
   }
   if (!lesson) {
     return (
-      <FlowScreen center actions={<FlowActions primary={{ label: tx("lesson.go_back"), onPress: () => nav.goBack() }} />}>
+      <FlowScreen center actions={<FlowActions primary={{ label: tx("conversation.go_back"), onPress: () => nav.goBack() }} />}>
         {/* DURUM ŞABLONU: bulunamayan konuşma = üzgün maskot, tek çıkış (web `lessons/[id]/not-found`). */}
-        <StateBody alert title={packFailed ? tx("content.couldn_t_load") : tx("lesson.this_lesson_wasn_t_found")} body={packFailed ? tx("social.err_offline") : null} />
+        <StateBody alert title={packFailed ? tx("content.couldn_t_load") : tx("conversation.this_conversation_wasn_t_found")} body={packFailed ? tx("social.err_offline") : null} />
       </FlowScreen>
     );
   }
@@ -841,7 +841,7 @@ export function LessonScreen() {
         <View style={{ flex: 1 }}>
           <Text variant="h3" numberOfLines={1}>{lesson.title}</Text>
           <Text variant="caption" color={colors.textMuted} numberOfLines={1}>
-            {tx(phase === "lecture" ? "lesson.phase_lecture" : phase === "roleplay" ? "lesson.phase_roleplay" : "lesson.phase_summary")} · {lesson.titleTr}
+            {tx(phase === "lecture" ? "conversation.phase_lecture" : phase === "roleplay" ? "conversation.phase_chat" : "conversation.phase_summary")} · {lesson.titleTr}
           </Text>
         </View>
         {/* ELLER SERBEST anahtarı — web başlık şeridinde tutuyor. Mikrofon
@@ -852,7 +852,7 @@ export function LessonScreen() {
             onPress={toggleHandsFree}
             accessibilityRole="switch"
             accessibilityState={{ checked: handsFree }}
-            accessibilityLabel={tx(handsFree ? "lessonp.hands_free_on" : "lessonp.hands_free")}
+            accessibilityLabel={tx(handsFree ? "conversationp.hands_free_on" : "conversationp.hands_free")}
             style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs, paddingHorizontal: compactWidth ? spacing.md : 10, paddingVertical: spacing.sm, minHeight: 36, borderRadius: radii.pill, backgroundColor: handsFree ? colors.primarySoft : colors.surface2 }}
           >
             <MicIcon color={handsFree ? colors.primaryText : colors.textMuted} size={compactWidth ? 18 : 14} />
@@ -860,7 +860,7 @@ export function LessonScreen() {
                 kesiyordu. Durum rengi ve erişilebilirlik adı yine taşıyor. */}
             {!compactWidth && (
               <Text variant="micro" color={handsFree ? colors.primaryText : colors.textMuted}>
-                {tx(handsFree ? "lessonp.hands_free_on" : "lessonp.hands_free")}
+                {tx(handsFree ? "conversationp.hands_free_on" : "conversationp.hands_free")}
               </Text>
             )}
           </PressableScale>
@@ -891,7 +891,7 @@ export function LessonScreen() {
           </View>
           <FlowActions
             primary={{ label: tx("unlock.premium_now"), onPress: () => nav.navigate("Paywall") }}
-            tertiary={{ label: tx("lesson.go_back"), onPress: () => nav.goBack() }}
+            tertiary={{ label: tx("conversation.go_back"), onPress: () => nav.goBack() }}
           />
         </View>
       ) : !resumeChecked ? (
@@ -928,21 +928,21 @@ export function LessonScreen() {
         */
         <View style={{ flex: 1, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.md }}>
           <View style={{ flex: 1, justifyContent: "center", gap: spacing.md }}>
-            <StateBody title={tx("lesson.pick_up_where_you_left_off")} body={tx("lesson.you_paused_this_lesson_pick_up")} />
-            <DetailCard title={tx("lessonp.resume_where")}>
+            <StateBody title={tx("conversation.pick_up_where_you_left_off")} body={tx("conversation.you_paused_this_conversation_pick_up")} />
+            <DetailCard title={tx("conversationp.resume_where")}>
               <DetailRow
-                left={tx("lesson.phase_lecture")}
+                left={tx("conversation.phase_lecture")}
                 right={resumeOffer.phase === "roleplay" || resumeOffer.cursor >= lesson.lecture.length ? `${lesson.lecture.length}/${lesson.lecture.length} ✓` : `${resumeOffer.cursor}/${lesson.lecture.length}`}
                 faded={resumeOffer.phase === "roleplay"}
               />
               {resumeOffer.phase === "roleplay" ? (
-                <DetailRow left={tx("lesson.phase_roleplay")} right={tx("lessonp.resume_turns", { n: resumeOffer.roleTurns ?? (resumeOffer.roleMsgs ?? []).filter((m) => m.role === "user").length, min: lesson.roleplay.minTurns })} />
+                <DetailRow left={tx("conversation.phase_chat")} right={tx("conversationp.resume_turns", { n: resumeOffer.roleTurns ?? (resumeOffer.roleMsgs ?? []).filter((m) => m.role === "user").length, min: lesson.roleplay.minTurns })} />
               ) : null}
             </DetailCard>
           </View>
           <FlowActions
-            primary={{ label: tx("lesson.continue_where_you_left_off"), onPress: () => { const r = resumeOffer; setResumeOffer(null); if (r.phase === "roleplay") resumeRoleplay(r); else { setCorrect(r.correct); beginLecture(r.cursor, true); } } }}
-            tertiary={{ label: tx("lesson.start_over"), onPress: () => { setResumeOffer(null); void clearLessonResume(lesson.id); beginLecture(0, false); } }}
+            primary={{ label: tx("conversation.continue_where_you_left_off"), onPress: () => { const r = resumeOffer; setResumeOffer(null); if (r.phase === "roleplay") resumeRoleplay(r); else { setCorrect(r.correct); beginLecture(r.cursor, true); } } }}
+            tertiary={{ label: tx("conversation.start_over"), onPress: () => { setResumeOffer(null); void clearLessonResume(lesson.id); beginLecture(0, false); } }}
           />
         </View>
       ) : (
@@ -951,7 +951,7 @@ export function LessonScreen() {
             {feed.map((b) => <BubbleView key={b.id} b={b} colors={colors} onReport={setReport} />)}
             {busy && (
               <View style={{ alignSelf: "flex-start", flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.xs }}>
-                <ActivityIndicator color={colors.primaryText} size="small" /><Text variant="caption" color={colors.textMuted}>{tx("lesson.typing")}</Text>
+                <ActivityIndicator color={colors.primaryText} size="small" /><Text variant="caption" color={colors.textMuted}>{tx("conversation.typing")}</Text>
               </View>
             )}
           </KeyboardAwareScroll>
@@ -980,7 +980,7 @@ export function LessonScreen() {
 }
 
 /** Övgü satırları — t() çağrı anında (dil modül yüklenirken hazır değil). */
-const PRAISE_KEYS = ["lesson.praise_1", "lesson.praise_2", "lesson.praise_3", "lesson.praise_4", "lesson.praise_5"];
+const PRAISE_KEYS = ["conversation.praise_1", "conversation.praise_2", "conversation.praise_3", "conversation.praise_4", "conversation.praise_5"];
 
 function BubbleView({ b, colors, onReport }: { b: Bubble; colors: Palette; onReport?: (r: ReportRef) => void }) {
   if (b.role === "student") {
@@ -1013,19 +1013,19 @@ function BubbleView({ b, colors, onReport }: { b: Bubble; colors: Palette; onRep
         </Text>
         {b.fix?.length ? (
           <View style={{ marginTop: spacing.sm, gap: 2, borderTopWidth: 1, borderTopColor: colors.hairline, paddingTop: 6 }}>
-            {b.fix.map((f, i) => <Text key={i} variant="micro" color={colors.textMuted}>{tx("lesson.fix", { text: f })}</Text>)}
+            {b.fix.map((f, i) => <Text key={i} variant="micro" color={colors.textMuted}>{tx("conversation.fix", { text: f })}</Text>)}
           </View>
         ) : null}
       </View>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginTop: spacing.xs, marginLeft: spacing.xs }}>
         {targetText(b.segments) ? (
           <PressableScale onPress={() => speakTarget(targetText(b.segments))} hitSlop={8} style={{ flexDirection: "row", alignItems: "center", gap: spacing.xs }}>
-            <SpeakerIcon color={colors.textMuted} size={15} /><Text variant="micro" color={colors.textMuted}>{tx("lesson.listen")}</Text>
+            <SpeakerIcon color={colors.textMuted} size={15} /><Text variant="micro" color={colors.textMuted}>{tx("conversation.listen")}</Text>
           </PressableScale>
         ) : null}
         {b.report && onReport ? (
-          <PressableScale onPress={() => onReport(b.report!)} hitSlop={8} accessibilityLabel={tx("lesson.report_this_answer")}>
-            <Text variant="micro" color={colors.textFaint}>{tx("lesson.report")}</Text>
+          <PressableScale onPress={() => onReport(b.report!)} hitSlop={8} accessibilityLabel={tx("conversation.report_this_answer")}>
+            <Text variant="micro" color={colors.textFaint}>{tx("conversation.report")}</Text>
           </PressableScale>
         ) : null}
       </View>
@@ -1092,7 +1092,7 @@ function TypedRow({ value, onChange, onSubmit, placeholder, colors, disabled }: 
 function TypeToggle({ onPress, colors }: { onPress: () => void; colors: Palette }) {
   return (
     <PressableScale onPress={onPress} style={{ alignItems: "center", paddingVertical: spacing.xs }}>
-      <Text variant="caption" color={colors.textMuted}>{tx("lesson.answer_by_typing")}</Text>
+      <Text variant="caption" color={colors.textMuted}>{tx("conversation.answer_by_typing")}</Text>
     </PressableScale>
   );
 }
@@ -1112,7 +1112,7 @@ function LectureControls({ expect, tries, input, setInput, onConfirm, onSpeakRep
   const sttNotu =
     sttOk === false ? (
       <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>
-        {tx(sttSebep === "denied" ? "speak.mic_needed" : "lesson.no_asr")}
+        {tx(sttSebep === "denied" ? "speak.mic_needed" : "conversation.no_asr")}
       </Text>
     ) : null;
   /* Beklentili her adımda atlama yolu: tıkanan öğrenci dersi bırakmak zorunda
@@ -1120,24 +1120,24 @@ function LectureControls({ expect, tries, input, setInput, onConfirm, onSpeakRep
      "hazırım" adımlarında anlamsız - orada beklenti yok. */
   const atla = (
     <PressableScale onPress={onSkip} style={{ alignItems: "center", paddingVertical: spacing.xs }}>
-      <Text variant="caption" color={colors.textMuted}>{tx("lessonp.skip_step")}</Text>
+      <Text variant="caption" color={colors.textMuted}>{tx("conversationp.skip_step")}</Text>
     </PressableScale>
   );
-  if (!expect) return <BigButton label={tx("lesson.continue")} onPress={onConfirm} colors={colors} />;
-  if (expect.kind === "confirm") return <BigButton label={tx("lesson.i_m_ready")} onPress={onConfirm} colors={colors} />;
+  if (!expect) return <BigButton label={tx("conversation.continue")} onPress={onConfirm} colors={colors} />;
+  if (expect.kind === "confirm") return <BigButton label={tx("conversation.i_m_ready")} onPress={onConfirm} colors={colors} />;
   if (expect.kind === "repeat") {
     return (
       <View style={{ gap: spacing.sm }}>
         {sttNotu}
-        {tries > 0 && <Text variant="caption" color={colors.dangerText}>{tx("lesson.try_again", { n: tries })}</Text>}
+        {tries > 0 && <Text variant="caption" color={colors.dangerText}>{tx("conversation.try_again", { n: tries })}</Text>}
         <PressableScale onPress={() => speakTarget(expect.target)} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: spacing.sm, paddingVertical: 10, borderRadius: radii.lg, backgroundColor: colors.surface2 }}>
           <SpeakerIcon color={colors.primaryText} size={20} /><Text variant="bodyStrong" color={colors.primaryText}>{expect.target}</Text>
         </PressableScale>
         {yaziYolu ? (
-          <TypedRow value={input} onChange={setInput} onSubmit={onTypedRepeat} placeholder={tx("lesson.type_in", { lang: targetLangName() })} colors={colors} />
+          <TypedRow value={input} onChange={setInput} onSubmit={onTypedRepeat} placeholder={tx("conversation.type_in", { lang: targetLangName() })} colors={colors} />
         ) : (
           <>
-            <MicButton listening={listening} onPress={onSpeakRepeat} label={tx("lesson.mic_repeat")} colors={colors} />
+            <MicButton listening={listening} onPress={onSpeakRepeat} label={tx("conversation.mic_repeat")} colors={colors} />
             <TypeToggle onPress={() => setTyping(true)} colors={colors} />
           </>
         )}
@@ -1151,14 +1151,14 @@ function LectureControls({ expect, tries, input, setInput, onConfirm, onSpeakRep
         <View style={{ flex: 1 }}>
           <PressableScale onPress={() => onTrueFalse(true)}>
             <View style={[{ borderRadius: radii.lg, backgroundColor: colors.success, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: spacing.sm }, softShadow(colors.success, 8)]}>
-              <CheckIcon color={colors.onFill} size={22} /><Text variant="h3" color={colors.onFill}>{tx("lesson.correct")}</Text>
+              <CheckIcon color={colors.onFill} size={22} /><Text variant="h3" color={colors.onFill}>{tx("conversation.correct")}</Text>
             </View>
           </PressableScale>
         </View>
         <View style={{ flex: 1 }}>
           <PressableScale onPress={() => onTrueFalse(false)}>
             <View style={[{ borderRadius: radii.lg, backgroundColor: colors.danger, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: spacing.sm }, softShadow(colors.danger, 8)]}>
-              <XIcon color={colors.onFill} size={22} /><Text variant="h3" color={colors.onFill}>{tx("lesson.wrong")}</Text>
+              <XIcon color={colors.onFill} size={22} /><Text variant="h3" color={colors.onFill}>{tx("conversation.wrong")}</Text>
             </View>
           </PressableScale>
         </View>
@@ -1170,12 +1170,12 @@ function LectureControls({ expect, tries, input, setInput, onConfirm, onSpeakRep
   return (
     <View style={{ gap: spacing.sm }}>
       {sttNotu}
-      {tries > 0 && <Text variant="caption" color={colors.dangerText}>{tx("lesson.try_again", { n: tries })}</Text>}
+      {tries > 0 && <Text variant="caption" color={colors.dangerText}>{tx("conversation.try_again", { n: tries })}</Text>}
       {yaziYolu ? (
-        <TypedRow value={input} onChange={setInput} onSubmit={onProduce} placeholder={tx("lesson.type_your_answer", { lang: targetLangName() })} colors={colors} />
+        <TypedRow value={input} onChange={setInput} onSubmit={onProduce} placeholder={tx("conversation.type_your_answer", { lang: targetLangName() })} colors={colors} />
       ) : (
         <>
-          <MicButton listening={listening} onPress={onSpeakProduce} label={tx("lesson.mic_produce")} colors={colors} />
+          <MicButton listening={listening} onPress={onSpeakProduce} label={tx("conversation.mic_produce")} colors={colors} />
           <TypeToggle onPress={() => setTyping(true)} colors={colors} />
         </>
       )}
@@ -1197,7 +1197,7 @@ function RoleplayControls({ input, setInput, busy, onSend, onSpeak, suggestions,
   const sttNotu =
     sttOk === false ? (
       <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>
-        {tx(sttSebep === "denied" ? "speak.mic_needed" : "lesson.no_asr")}
+        {tx(sttSebep === "denied" ? "speak.mic_needed" : "conversation.no_asr")}
       </Text>
     ) : null;
   return (
@@ -1213,25 +1213,25 @@ function RoleplayControls({ input, setInput, busy, onSend, onSpeak, suggestions,
         </View>
       )}
       {ready ? (
-        <BigButton label={tx("lesson.end_conversation_summary")} onPress={onFinish} tint={colors.success} colors={colors} />
+        <BigButton label={tx("conversation.end_conversation_summary")} onPress={onFinish} tint={colors.success} colors={colors} />
       ) : (
         /* "ŞİMDİLİK BIRAK" — web `lesson-player` ile aynı çıkış. Yoktu: tur
            sayısı dolmadan konuşmadan çıkmanın tek yolu geri tuşuydu ve deneme
            hiçbir yere yazılmıyordu. Kaldığı yer saklı kalıyor. */
         <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: spacing.sm }}>
-          <Text variant="caption" color={colors.textMuted} style={{ flex: 1 }}>{tx("lesson.keep_talking", { n: turns, target: minTurns })}</Text>
+          <Text variant="caption" color={colors.textMuted} style={{ flex: 1 }}>{tx("conversation.keep_talking", { n: turns, target: minTurns })}</Text>
           {turns > 0 ? (
             <PressableScale onPress={onLeave} hitSlop={6} style={{ paddingHorizontal: spacing.sm, paddingVertical: spacing.xs }}>
-              <Text variant="caption" color={colors.primaryText}>{tx("lessonp.leave_for_now")}</Text>
+              <Text variant="caption" color={colors.primaryText}>{tx("conversationp.leave_for_now")}</Text>
             </PressableScale>
           ) : null}
         </View>
       )}
       {yaziYolu ? (
-        <TypedRow value={input} onChange={setInput} onSubmit={onSend} placeholder={tx("lesson.type_in", { lang: targetLangName() })} colors={colors} disabled={busy} />
+        <TypedRow value={input} onChange={setInput} onSubmit={onSend} placeholder={tx("conversation.type_in", { lang: targetLangName() })} colors={colors} disabled={busy} />
       ) : (
         <>
-          <MicButton listening={listening} onPress={busy ? () => {} : onSpeak} label={tx("lesson.mic_talk")} colors={colors} />
+          <MicButton listening={listening} onPress={busy ? () => {} : onSpeak} label={tx("conversation.mic_talk")} colors={colors} />
           <TypeToggle onPress={() => setTyping(true)} colors={colors} />
         </>
       )}
@@ -1250,7 +1250,7 @@ function Summary({ lesson, correct, total, next, roleMsgs, nextDays, passed, tur
   /*
    * "ARTIK ŞUNU YAPABİLİRİM" — dersin ödeme satırı ve mobilde hiç yoktu.
    *
-   * Web özetin altında bunu yazıyor (`lessonp.i_can`): kullanıcı turu
+   * Web özetin altında bunu yazıyor (`conversationp.i_can`): kullanıcı turu
    * bitiriyor, kaç doğru yaptığını görüyor ama NE KAZANDIĞINI görmüyordu.
    * Kimlikler dersten (`candoMap`), metni `/api/cando`dan — rol yapma
    * sınavındaki yolun aynısı (`RoleplayExamScreen`). Alınamazsa satır
@@ -1293,31 +1293,31 @@ function Summary({ lesson, correct, total, next, roleMsgs, nextDays, passed, tur
       <Celebrate show={!unfinished && pct >= 80} />
       <KeyboardAwareScroll contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: spacing.lg, gap: spacing.md }} showsVerticalScrollIndicator={false}>
         <ResultHero
-          eyebrow={`${tx("unitkind.lesson")} · ${lesson.title}`}
-          title={tx(unfinished ? "lessonp.conversation_unfinished" : "lesson.lesson_complete")}
+          eyebrow={`${tx("unitkind.conversation")} · ${lesson.title}`}
+          title={tx(unfinished ? "conversationp.conversation_unfinished" : "conversation.conversation_complete")}
           figure={total ? `${correct}/${total}` : null}
-          sub={tx("lessonp.n_turns", { n: userTurns })}
+          sub={tx("conversationp.n_turns", { n: userTurns })}
           quiet={unfinished}
-          pill={unfinished ? { text: tx("lessonp.pill_min_turns", { n: lesson.roleplay.minTurns }), tone: "bad" } : null}
+          pill={unfinished ? { text: tx("conversationp.pill_min_turns", { n: lesson.roleplay.minTurns }), tone: "bad" } : null}
         />
         {/* Tur sayısı KONUŞMANIN UZUNLUĞU, isabetten ayrı bir şey söylüyor;
             eşikle birlikte yazılıyor ki eksik kalanı görünsün. Tekrar günü
             aralıklı tekrar merdiveninden (kayıt yanıtı). */}
         <StatRow items={[
-          { value: formatPercent(pct), label: tx("lesson.accuracy") },
-          { value: `${userTurns}/${lesson.roleplay.minTurns}`, label: tx("lessonp.stat_turns"), tone: unfinished ? "bad" : "ok" },
-          ...(!unfinished && nextDays !== null ? [{ value: tx("profile.days", { n: nextDays }), label: tx("lessonp.stat_review") }] : []),
+          { value: formatPercent(pct), label: tx("conversation.accuracy") },
+          { value: `${userTurns}/${lesson.roleplay.minTurns}`, label: tx("conversationp.stat_turns"), tone: unfinished ? "bad" : "ok" },
+          ...(!unfinished && nextDays !== null ? [{ value: tx("profile.days", { n: nextDays }), label: tx("conversationp.stat_review") }] : []),
         ]} />
 
         {/* KONUŞMA NEDEN TAMAMLANMADI ve NE YAPILACAK — not + "Konuşmaya dön". */}
-        {unfinished ? <FlowNote tone="warn" icon={<AlertIcon color={colors.streakText} size={16} />} text={tx("lessonp.min_turns_note", { n: lesson.roleplay.minTurns })} /> : null}
-        {cando.length ? <FlowNote tone="ok" icon={<CheckIcon color={colors.successText} size={16} />} text={`${tx("lessonp.i_can")} ${cando.join(" · ")}`} /> : null}
+        {unfinished ? <FlowNote tone="warn" icon={<AlertIcon color={colors.streakText} size={16} />} text={tx("conversationp.min_turns_note", { n: lesson.roleplay.minTurns })} /> : null}
+        {cando.length ? <FlowNote tone="ok" icon={<CheckIcon color={colors.successText} size={16} />} text={`${tx("conversationp.i_can")} ${cando.join(" · ")}`} /> : null}
         {/* Misafirin ilk tamamlanan dersi: kaybedecek bir şeyi olduğu ilk an. */}
         <GuestMilestoneCard milestone="first_lesson" when={!unfinished} />
-        {!corrections.length && talked ? <FlowNote tone="ok" icon={<CheckIcon color={colors.successText} size={16} />} text={tx("lessonp.no_corrections")} /> : null}
+        {!corrections.length && talked ? <FlowNote tone="ok" icon={<CheckIcon color={colors.successText} size={16} />} text={tx("conversationp.no_corrections")} /> : null}
 
         {lesson.patterns?.length ? (
-          <DetailCard title={tx("lesson.patterns_you_learned")}>
+          <DetailCard title={tx("conversation.patterns_you_learned")}>
             {/*
               KULLANILAN KALIP İŞARETLİ — dersin asıl amacı kalıbı KULLANMAK.
               Web aynı `patternUsed` kuralıyla işaretliyor. Konuşma hiç
@@ -1342,7 +1342,7 @@ function Summary({ lesson, correct, total, next, roleMsgs, nextDays, passed, tur
 
         {/* DÜZELTMELER TOPLU — konuşmada balon balon geçiyor, kapanışta bir arada. */}
         {corrections.length ? (
-          <DetailCard title={tx("lessonp.corrections")}>
+          <DetailCard title={tx("conversationp.corrections")}>
             {corrections.map((c, i) => (
               <Text key={i} variant="caption" color={colors.text}>{c}</Text>
             ))}
@@ -1351,7 +1351,7 @@ function Summary({ lesson, correct, total, next, roleMsgs, nextDays, passed, tur
 
         {/* DERSİN KELİMELERİ kapanışta bir kez daha — dersin dili toplu. */}
         {lesson.vocab?.length ? (
-          <DetailCard title={tx("lessonp.words_of_lesson")}>
+          <DetailCard title={tx("conversationp.words_of_conversation")}>
             <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6 }}>
               {lesson.vocab.map((v) => (
                 <View key={v.de} style={{ paddingHorizontal: 10, paddingVertical: 6, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
@@ -1367,16 +1367,16 @@ function Summary({ lesson, correct, total, next, roleMsgs, nextDays, passed, tur
       <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: insets.bottom + spacing.md }}>
         {unfinished ? (
           <FlowActions
-            primary={onResume ? { label: tx("lessonp.back_to_conversation"), onPress: onResume } : { label: tx("lesson.back_to_path"), onPress: onBack }}
-            tertiary={onResume ? { label: tx("lesson.back_to_path"), onPress: onBack } : null}
+            primary={onResume ? { label: tx("conversationp.back_to_conversation"), onPress: onResume } : { label: tx("conversation.back_to_path"), onPress: onBack }}
+            tertiary={onResume ? { label: tx("conversation.back_to_path"), onPress: onBack } : null}
           />
         ) : (
           <FlowActions
-            primary={onNext && next ? { label: tx("lesson.next_speaking", { title: next.title }), onPress: onNext } : { label: tx("lesson.back_to_path"), onPress: onBack }}
+            primary={onNext && next ? { label: tx("conversation.next_speaking", { title: next.title }), onPress: onNext } : { label: tx("conversation.back_to_path"), onPress: onBack }}
             /* SINAV OLARAK DENE — konuşma yapıldıysa aynı sahne bir de ölçüm
                olarak oynanabiliyor (WP-22): yardım yok, 5 tur, rubrik puanı. */
-            secondary={onExam && talked ? { label: tx("lessonp.try_as_exam"), hint: tx("lessonp.exam_hint"), onPress: onExam } : null}
-            tertiary={onNext && next ? { label: tx("lesson.back_to_path"), onPress: onBack } : null}
+            secondary={onExam && talked ? { label: tx("conversationp.try_scored"), hint: tx("conversationp.scored_hint"), onPress: onExam } : null}
+            tertiary={onNext && next ? { label: tx("conversation.back_to_path"), onPress: onBack } : null}
           />
         )}
       </View>

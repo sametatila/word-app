@@ -67,7 +67,7 @@ const QUESTS: QuestDef[] = [
   { id: "artikel5", labelKey: "quest.artikel5", href: "/learn", target: 5, xp: 150 },
   { id: "listen5", labelKey: "quest.listen5", href: "/learn", target: 5, xp: 150 },
   { id: "skill1", labelKey: "quest.skill1", href: "/immersion", target: 1, xp: 200, discovery: true },
-  { id: "lesson1", labelKey: "quest.lesson1", href: "/immersion", target: 1, xp: 200, discovery: true },
+  { id: "lesson1", labelKey: "quest.conversation1", href: "/immersion", target: 1, xp: 200, discovery: true },
 ];
 
 /* Üçünü birden bitirmenin ödülü ve kimliği: kart da (istemci) okuduğu için

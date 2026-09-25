@@ -97,7 +97,7 @@ for (const plan of MODULE_EXAMS) plan.listening?.turns?.forEach((t: { de: string
 /* 4. anlatım arayüz cümleleri (yürüyüş modu, ders geri bildirimi) */
 for (const lang of ["tr", "en", "de"]) {
   const src = readFileSync(`src/i18n/base/${lang}.ts`, "utf8");
-  for (const m of src.matchAll(/"((?:walk|walkmode|lessonp|common\.answer_is|aiconsent\.voice_without)[a-z_.]*)"\s*:\s*"((?:[^"\\]|\\.)*)"/g)) add(`ui.${lang}.narration`, lang, "narration", m[2]);
+  for (const m of src.matchAll(/"((?:walk|walkmode|conversationp|common\.answer_is|aiconsent\.voice_without)[a-z_.]*)"\s*:\s*"((?:[^"\\]|\\.)*)"/g)) add(`ui.${lang}.narration`, lang, "narration", m[2]);
 }
 
 /* özet */

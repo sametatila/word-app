@@ -72,7 +72,7 @@ function isPass(m: SentenceMatch): boolean {
 
 /** Hüküm satırı — web `writing-player` ile aynı dört metin. */
 function Verdict({ m, ok, colors }: { m: SentenceMatch; ok: boolean; colors: Palette }) {
-  const key = m.verdict === "exact" ? "writp.exact" : m.verdict === "spelling" ? "writp.spelling_only" : m.verdict === "order" ? "writp.order_only" : "lessonp.not_quite";
+  const key = m.verdict === "exact" ? "writp.exact" : m.verdict === "spelling" ? "writp.spelling_only" : m.verdict === "order" ? "writp.order_only" : "conversationp.not_quite";
   return <Text variant="bodyStrong" color={ok ? colors.successText : colors.dangerText}>{tx(key)}</Text>;
 }
 

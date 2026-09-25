@@ -33,7 +33,7 @@ export type PlayerFrameValue = {
 const PlayerFrameContext = createContext<PlayerFrameValue>({
   lang: "de",
   backHref: "/immersion",
-  backLabel: "lesson.back_to_path",
+  backLabel: "conversation.back_to_path",
   next: null,
 });
 

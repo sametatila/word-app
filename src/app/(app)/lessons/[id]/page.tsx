@@ -15,7 +15,7 @@ import { lessonDisabled } from "@/lib/content/read";
 
 export const dynamic = "force-dynamic";
 
-export const generateMetadata = titleMeta("unitkind.lesson");
+export const generateMetadata = titleMeta("unitkind.conversation");
 
 export default async function LessonPage({ params }: { params: Promise<{ id: string }> }) {
   const who = await getUserInfo();

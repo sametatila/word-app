@@ -127,7 +127,7 @@ export function CandoCard() {
         icon={CheckIcon}
         tint="var(--color-mint)"
         title={t("cando.what_i_can_do")}
-        text={t("cando.sign_in_and_finish_lessons_and")}
+        text={t("cando.sign_in_and_finish_conversations_and")}
         action={
           <Link href="/immersion" className="btn btn-primary px-4 py-2 text-body">
             {t("nav.path")}

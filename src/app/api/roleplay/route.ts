@@ -187,7 +187,7 @@ export async function POST(req: Request) {
           console.error("[roleplay] akış koptu", err);
           // Akış başladıysa durum kodu değiştirilemez; kullanıcı boş baloncuk
           // görmesin diye kopmayı metnin içinde bildiriyoruz.
-          controller.enqueue(encoder.encode(`\n\n[${translate(native, "roleplay.stream_dropped")}]`));
+          controller.enqueue(encoder.encode(`\n\n[${translate(native, "chat.stream_dropped")}]`));
         } finally {
           controller.close();
           if (full.trim()) void logRoleplayTurn(userId, logId, turn, said, full, meta, mode);

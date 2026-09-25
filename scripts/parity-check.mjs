@@ -3767,16 +3767,16 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "hedef kaliplar=" + (/targets: lesson\.patterns/.test(src) ? "var" : "yok"),
       "kisitlar=" + (/constraints: \[`\$\{EXAM_TURNS\} tur`/.test(src) ? "var" : "yok"),
       "gun=" + (/day:/.test(solo) ? "var" : "yok"),
-      "en iyi cumleler=" + (/rpexam\.best_sentences/.test(src) ? "var" : "yok"),
-      "en sik hata=" + (/rpexam\.most_common/.test(src) ? "var" : "yok"),
-      "yapabilirlik=" + (/lessonp\.i_can/.test(src) ? "var" : "yok"),
+      "en iyi cumleler=" + (/scored\.best_sentences/.test(src) ? "var" : "yok"),
+      "en sik hata=" + (/scored\.most_common/.test(src) ? "var" : "yok"),
+      "yapabilirlik=" + (/conversationp\.i_can/.test(src) ? "var" : "yok"),
       /* ESKIDEN `/>= 60/` ARANIYORDU. Esik sabite tasininca bu satir iki
          tarafta da "yok" uretecek ve karsilastirma yesil kalacakti - §144'un
          tuzagi. Artik hem sayinin KENDISI hem de ekranin sabiti kullanip
          kullanmadigi okunuyor; mutlak olcut §186-187'de. */
       "esik=" + sabit("EXAM_PASS_SCORE"),
       "esik kaynaktan=" + (/>= EXAM_PASS_SCORE/.test(src) ? "var" : "yok"),
-      "giris dugmesi=" + (/lessonp\.try_as_exam/.test(src) ? "var" : "yok"),
+      "giris dugmesi=" + (/conversationp\.try_scored/.test(src) ? "var" : "yok"),
     ];
   };
   sameList(
@@ -4235,7 +4235,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const atla = (p) => {
     const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
     return [
-      "atlama yolu=" + (/lessonp\.skip_step/.test(src) ? "var" : "yok"),
+      "atlama yolu=" + (/conversationp\.skip_step/.test(src) ? "var" : "yok"),
       "olcumde sifir=" + (/track\("lesson_step", 0, `\$\{k\}:skip`\)/.test(src) ? "var" : "yok"),
     ];
   };
@@ -4258,7 +4258,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
     return [
       "yedegin adi=" + (/chat_off_scripted/.test(src) && /chat_off_patterns/.test(src) ? "var" : "yok"),
-      "yarim kaldi basligi=" + (/lessonp\.conversation_unfinished/.test(src) ? "var" : "yok"),
+      "yarim kaldi basligi=" + (/conversationp\.conversation_unfinished/.test(src) ? "var" : "yok"),
       /* SUNUCU YANITINDAN okunuyor mu: özet bileşeninin kendi `passed`
          alanı da dosyada geçtiği için gevşek desen yanıt okumasını hiç
          ölçmüyordu (enjeksiyonda kırmızı olmadı). */
@@ -4771,7 +4771,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 
 /* ── 129. dersin kapanis ozeti ────────────────────────────────────────────
  * Uc fark cikti, ucu de Androidde:
- *   - "Artik sunu yapabilirim" (`lessonp.i_can`) satiri hic yoktu: kullanici
+ *   - "Artik sunu yapabilirim" (`conversationp.i_can`) satiri hic yoktu: kullanici
  *     kac dogru yaptigini goruyor, NE KAZANDIGINI gormuyordu.
  *   - Konusma tamamlanmadiginda baslik "tamamlanmadi" deyip susuyordu: kac
  *     tur gerektigi yazmiyor, konusmaya donmenin yolu da gorunmuyordu -
@@ -4783,33 +4783,33 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  * Olculen: ozetin bolum sirasi. */
 {
   const BOLUM = [
-    ["baslik", /lesson\.lesson_complete/, /lesson\.lesson_complete/],
+    ["baslik", /conversation\.conversation_complete/, /conversation\.conversation_complete/],
     /* 2026-09-15 SONUC SABLONU: "alistirma" (`lesson.correct_production`) ve
        "sonraki gun" (`lessonp.next_in_days`) satirlari iki taraftan da kalkti
        - alistirma bandin ana sayisi (dogru/toplam), tekrar gunu uc sayinin
-       ucuncusu (`lessonp.stat_review`). Tur sayisi iki tarafta da bandin alt
-       satiri (`lessonp.n_turns`); mobilin eski `lesson.phase_roleplay`
+       ucuncusu (`conversationp.stat_review`). Tur sayisi iki tarafta da bandin alt
+       satiri (`conversationp.n_turns`); mobilin eski `conversation.phase_chat`
        deseni kalkti. */
-    ["basari", /lesson\.accuracy/, /lesson\.accuracy/],
-    ["tur sayisi", /lessonp\.n_turns/, /lessonp\.n_turns/],
-    ["kelimeler", /lessonp\.words_of_lesson/, /lessonp\.words_of_lesson/],
-    ["yapabildiklerim", /lessonp\.i_can/, /lessonp\.i_can/],
-    ["duzeltmeler", /lessonp\.corrections/, /lessonp\.corrections/],
-    ["en az kac tur", /lessonp\.min_turns_note/, /lessonp\.min_turns_note/],
+    ["basari", /conversation\.accuracy/, /conversation\.accuracy/],
+    ["tur sayisi", /conversationp\.n_turns/, /conversationp\.n_turns/],
+    ["kelimeler", /conversationp\.words_of_conversation/, /conversationp\.words_of_conversation/],
+    ["yapabildiklerim", /conversationp\.i_can/, /conversationp\.i_can/],
+    ["duzeltmeler", /conversationp\.corrections/, /conversationp\.corrections/],
+    ["en az kac tur", /conversationp\.min_turns_note/, /conversationp\.min_turns_note/],
 
-    ["konusmaya don", /lessonp\.back_to_conversation/, /lessonp\.back_to_conversation/],
-    ["sinav olarak dene", /lessonp\.try_as_exam/, /lessonp\.try_as_exam/],
-    ["patikaya don", /lesson\.back_to_path/, /lesson\.back_to_path/],
+    ["konusmaya don", /conversationp\.back_to_conversation/, /conversationp\.back_to_conversation/],
+    ["sinav olarak dene", /conversationp\.try_scored/, /conversationp\.try_scored/],
+    ["patikaya don", /conversation\.back_to_path/, /conversation\.back_to_path/],
   ];
   /* KALIPLAR bolumu tablonun DISINDA: iki taraf ayni listeyi ayri adla
-     yaziyor (`lessonp.patterns` / `lesson.patterns_you_learned`) ve sirasi da
+     yaziyor (`lessonp.patterns` / `conversation.patterns_you_learned`) ve sirasi da
      ayri (webde kelimelerden sonra, mobilde once). Ayni bilgi, ayri yer -
      siralamayi burada zorlamak tasarimi degil olcuyu duzeltmek olurdu. */
   const dilim = (src, bas, son) => {
     const i = src.indexOf(bas);
     const j = src.indexOf(son, i);
     /* YORUMLAR ATILIYOR — sonra. Once atilsaydi kesme noktalari kayardi;
-       atilmasaydi `lessonp.i_can`e ATIF yapan bir yorum ("web ozetin altinda
+       atilmasaydi `conversationp.i_can`e ATIF yapan bir yorum ("web ozetin altinda
        bunu yaziyor") bolumun kendisinden once gorunur ve sira yanlis
        okunurdu. Nitekim ilk calistirmada tam olarak oyle oldu. */
     const dilimlenmis = i < 0 ? "" : src.slice(i, j < 0 ? src.length : j);
@@ -4820,7 +4820,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       .filter(([, i]) => i >= 0)
       .sort((a, b) => a[1] - b[1])
       .map(([ad]) => ad);
-  const web = dilim(read("src/components/lessons/lesson-player.tsx"), 'lesson.lesson_complete', "\n  if (phase ===");
+  const web = dilim(read("src/components/lessons/lesson-player.tsx"), 'conversation.conversation_complete', "\n  if (phase ===");
   const mob = dilim(read("mobile/src/screens/LessonScreen.tsx"), "function Summary({", "\nfunction ");
   sameList("ders kapanis ozeti", sira(mob, 1), sira(web, 0));
 }
@@ -7644,7 +7644,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     {
       ad: "rol yapma gecme esigi",
       yer: ["{n}"],
-      anahtarlar: ["rpexam.below_threshold"],
+      anahtarlar: ["scored.below_threshold"],
       gecis: /n:\s*EXAM_PASS_SCORE/,
       cagiranlar: ["src/components/lessons/roleplay-exam.tsx", "mobile/src/screens/RoleplayExamScreen.tsx"],
     },
@@ -12725,7 +12725,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
        bakan bir olcu orada HER ZAMAN yesil kalirdi - "yuzeyi degil dosyayi
        olcmek". Isaretten sonraki acilis etiketi okunuyor. */
     const ALANLAR = [
-      ["ders sohbeti", "src/components/lessons/lesson-player.tsx", '"lesson.type_in"', "mobile/src/screens/LessonScreen.tsx", "placeholder={placeholder}", "sentences"],
+      ["ders sohbeti", "src/components/lessons/lesson-player.tsx", '"conversation.type_in"', "mobile/src/screens/LessonScreen.tsx", "placeholder={placeholder}", "sentences"],
       ["rol yapma sohbeti", "src/components/lessons/roleplay-exam.tsx", "value={draft}", "mobile/src/screens/RoleplayExamScreen.tsx", "value={draft}", "sentences"],
       ["sinav yazma", "src/components/exam-player.tsx", "value={writingText}", "mobile/src/screens/ExamScreen.tsx", '"exam.write_text"', "sentences"],
       ["deneme acik gorev", "src/components/mock-exam-player.tsx", '"mockexam.write_here"', "mobile/src/screens/MockExamScreen.tsx", '"mockexam.write_here"', "sentences"],
@@ -14296,7 +14296,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    *     `title=` ipucu balonunda tutuyordu: dokunmatikte hic acilmiyor,
    *     klavyeyle de erisilmiyor - yani en cok guven veren kisim
    *     kullanicilarin bir bolumune HIC ulasmiyordu. Android'de cumle hic
-   *     yoktu. Ortak anahtara alindi (`lesson.chat_offline_note`) ve iki
+   *     yoktu. Ortak anahtara alindi (`conversation.chat_offline_note`) ve iki
    *     tarafta da GORUNUR yazildi. */
   {
     const dm = sil(read("mobile/src/screens/LessonScreen.tsx"));
@@ -14320,12 +14320,12 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     sameList(
       "servis kapaliyken guvence gorunur",
       [
-        "guvence=" + (/lesson\.chat_offline_note/.test(dm) ? "var" : "YOK"),
-        "ipucu balonunda mi=" + (/title=\{t\("lesson\.chat_offline_note"\)\}/.test(dm) ? "EVET" : "hayir"),
+        "guvence=" + (/conversation\.chat_offline_note/.test(dm) ? "var" : "YOK"),
+        "ipucu balonunda mi=" + (/title=\{t\("conversation\.chat_offline_note"\)\}/.test(dm) ? "EVET" : "hayir"),
       ],
       [
-        "guvence=" + (/lesson\.chat_offline_note/.test(dw) ? "var" : "YOK"),
-        "ipucu balonunda mi=" + (/title=\{t\("lesson\.chat_offline_note"\)\}/.test(dw) ? "EVET" : "hayir"),
+        "guvence=" + (/conversation\.chat_offline_note/.test(dw) ? "var" : "YOK"),
+        "ipucu balonunda mi=" + (/title=\{t\("conversation\.chat_offline_note"\)\}/.test(dw) ? "EVET" : "hayir"),
       ],
       "mobil",
       "web",
@@ -14354,7 +14354,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    *     Webin ikinci-yanlis dali kalkti, ucuncu dal cevabi soyluyor; webde
    *     olu kalan iki anahtar silindi.
    *  3. DENEME SAYACI webde hic yoktu. Android her yanlistan sonra
-   *     "{n}. deneme" yaziyor (`lesson.try_again`); ogrenci kacinci denemede
+   *     "{n}. deneme" yaziyor (`conversation.try_again`); ogrenci kacinci denemede
    *     oldugunu ve cevabin ne zaman acilacagini bilmiyordu. Web `attempts`i
    *     bir ref'te tutuyordu, yani cizime giremiyordu - yansi bir duruma
    *     alindi ve ref'in degistigi her yerde birlikte guncelleniyor. */
@@ -14376,14 +14376,14 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
            gorunmuyordu. Olcu artik "elle yazilmis esik sayisi = 0". */
         "elle esik=" + (dm.match(/\b(?:t|tries|attempts\.current) >= \d+/g) ?? []).length,
         "cevap acilan an=" + (/LESSON_TRY_CEILING\)[\s\S]{0,400}common\.answer_is/.test(dm) ? "tavanda" : "BASKA"),
-        "sayac ekranda=" + (/lesson\.try_again", \{ n: tries \}/.test(dm) ? "var" : "YOK"),
+        "sayac ekranda=" + (/conversation\.try_again", \{ n: tries \}/.test(dm) ? "var" : "YOK"),
       ],
       [
         "tavan sabiti=" + ((sw.match(/LESSON_TRY_CEILING = (\d+)/) ?? [])[1] ?? "YOK"),
         "tavan koddan=" + (/>= LESSON_TRY_CEILING/.test(dw) ? "sabitten" : "ELLE"),
         "elle esik=" + (dw.match(/\b(?:t|tries|attempts\.current) >= \d+/g) ?? []).length,
         "cevap acilan an=" + (/LESSON_TRY_CEILING\)[\s\S]{0,400}common\.answer_is/.test(dw) ? "tavanda" : "BASKA"),
-        "sayac ekranda=" + (/lesson\.try_again", \{ n: tryCount \}/.test(dw) ? "var" : "YOK"),
+        "sayac ekranda=" + (/conversation\.try_again", \{ n: tryCount \}/.test(dw) ? "var" : "YOK"),
       ],
       "mobil",
       "web",
@@ -14411,12 +14411,12 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    *   izin reddedildi  -> yapilacak bir sey var: "Ayarlardan acabilirsin"
    *   taniyici yok     -> yapilacak bir sey yok: yazarak devam
    *
-   * Web ikisini bastan beri ayri yaziyor (`lessonp.mic_denied` ve kisa
+   * Web ikisini bastan beri ayri yaziyor (`conversationp.mic_denied` ve kisa
    * "taniyici yok" notu). Android'e sebep durumu (`sttSebep`) eklendi ve not
    * iki denetim bileseninde de ciziliyor.
    *
    * "Taniyici yok" metni webde `lessonp.no_asr` diye YALNIZ webde duruyordu;
-   * `lesson.no_asr` olarak ortak kumeye tasindi (mobile yazilip cekildi) ve
+   * `conversation.no_asr` olarak ortak kumeye tasindi (mobile yazilip cekildi) ve
    * webin kopyasi silindi. Izin metni zaten ortakti (`speak.mic_needed`). */
   {
     const dm = sil(read("mobile/src/screens/LessonScreen.tsx"));
@@ -14430,7 +14430,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         "izin reddi isaretleniyor=" + (/setSttSebep\("denied"\)/.test(dm) ? "evet" : "HAYIR"),
         "taniyici yok isaretleniyor=" + (/setSttSebep\("unavailable"\)/.test(dm) ? "evet" : "HAYIR"),
         "izin metni=" + (/speak\.mic_needed/.test(dm) ? "ortak" : "YOK"),
-        "taniyici metni=" + (/lesson\.no_asr/.test(dm) ? "ortak" : "YOK"),
+        "taniyici metni=" + (/conversation\.no_asr/.test(dm) ? "ortak" : "YOK"),
         /* SAYIM DEGIL YUZEY. Ilk yazim `{sttNotu}` sayisini sayiyordu ve
            mobil 3, web 2 cikiyordu - oysa ayrim SAYIDA degil YAPIDA: mobilin
            ders adimlari iki ayri dal (tekrarla / kur ve soyle), webin tek bir
@@ -14440,16 +14440,16 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         "rol yapmada=" + (dm.slice(dm.indexOf("function RoleplayControls")).includes("{sttNotu}") ? "var" : "YOK"),
       ],
       [
-        "sebep ayirt ediliyor=" + (/lessonp\.mic_denied/.test(dw) && /lesson\.no_asr/.test(dw) ? "iki sebep" : "TEK"),
-        "izin reddi isaretleniyor=" + (/setError\(t\("lessonp\.mic_denied"\)\)/.test(dw) ? "evet" : "HAYIR"),
+        "sebep ayirt ediliyor=" + (/conversationp\.mic_denied/.test(dw) && /conversation\.no_asr/.test(dw) ? "iki sebep" : "TEK"),
+        "izin reddi isaretleniyor=" + (/setError\(t\("conversationp\.mic_denied"\)\)/.test(dw) ? "evet" : "HAYIR"),
         "taniyici yok isaretleniyor=" + (/!asrAvailable/.test(dw) ? "evet" : "HAYIR"),
-        "izin metni=" + (/lessonp\.mic_denied/.test(dw) ? "ortak" : "YOK"),
-        "taniyici metni=" + (/lesson\.no_asr/.test(dw) ? "ortak" : "YOK"),
+        "izin metni=" + (/conversationp\.mic_denied/.test(dw) ? "ortak" : "YOK"),
+        "taniyici metni=" + (/conversation\.no_asr/.test(dw) ? "ortak" : "YOK"),
         /* Sinir, rol yapma dalinin CIZIM yeri (`? (`) - ayni kosul yukarida
            iki kez daha geciyor (etki ve dinleme) ve ilk gecise gore bolmek
            ders adimlarini rol yapma tarafina atiyordu. */
-        "ders adimlarinda=" + (dw.slice(0, dw.indexOf('phase === "roleplay" ? (')).includes('t("lesson.no_asr")') ? "var" : "YOK"),
-        "rol yapmada=" + (dw.slice(dw.indexOf('phase === "roleplay" ? (')).includes('t("lesson.no_asr")') ? "var" : "YOK"),
+        "ders adimlarinda=" + (dw.slice(0, dw.indexOf('phase === "roleplay" ? (')).includes('t("conversation.no_asr")') ? "var" : "YOK"),
+        "rol yapmada=" + (dw.slice(dw.indexOf('phase === "roleplay" ? (')).includes('t("conversation.no_asr")') ? "var" : "YOK"),
       ],
       "mobil",
       "web",
@@ -14458,9 +14458,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "taniyici yok metni ortak kumede",
       [
         "webde kalan lessonp.no_asr=" + WEB_SOZLUK.reduce((n, y) => n + (read(y).includes('"lessonp.no_asr":') ? 1 : 0), 0),
-        "mobil sozlukte lesson.no_asr=" + MOB_SOZLUK.reduce((n, y) => n + (read(y).includes('"lesson.no_asr"') ? 1 : 0), 0),
+        "mobil sozlukte conversation.no_asr=" + MOB_SOZLUK.reduce((n, y) => n + (read(y).includes('"conversation.no_asr"') ? 1 : 0), 0),
       ],
-      ["webde kalan lessonp.no_asr=0", "mobil sozlukte lesson.no_asr=3"],
+      ["webde kalan lessonp.no_asr=0", "mobil sozlukte conversation.no_asr=3"],
       "bulunan",
       "beklenen",
     );
@@ -14496,7 +14496,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         "isabet hesabi=" + (/const pct = total \? Math\.round\(\(correct \/ total\) \* 100\) : 100/.test(dm) ? "correct/total" : (/const pct = /.test(dm) ? "BASKA" : "YOK")),
         "maskot=" + (/pct >= 80 \? "celebrate" : pct >= 50 \? "happy" : "idle"/.test(dm) ? "uc kademe" : "TEK"),
         "konfeti=" + (/<Celebrate show=\{pct >= 80\}/.test(dm) ? "80 esigi" : "BASKA"),
-        "baslik bilinmeyende=" + (/passed === false \? "lessonp\.conversation_unfinished" : "lesson\.lesson_complete"/.test(dm) ? "tamamlandi" : "BITMEDI"),
+        "baslik bilinmeyende=" + (/passed === false \? "conversationp\.conversation_unfinished" : "conversation\.conversation_complete"/.test(dm) ? "tamamlandi" : "BITMEDI"),
         "ilk karo etiketi=" + (/lesson\.correct_production/.test(dm) ? "ortak" : "?"),
       ],
       [
@@ -14506,7 +14506,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
            cevirdi. */
         "maskot=" + (/pct >= 80 \? "celebrate" : pct >= 50 \? "happy" : "idle"/.test(dw) ? "uc kademe" : "TEK"),
         "konfeti=" + (/<Confetti fire=\{pct >= 80 \? 1 : 0\}/.test(dw) ? "80 esigi" : "BASKA"),
-        "baslik bilinmeyende=" + (/saved\?\.passed === false \? "lessonp\.conversation_unfinished" : "lesson\.lesson_complete"/.test(dw) ? "tamamlandi" : "BITMEDI"),
+        "baslik bilinmeyende=" + (/saved\?\.passed === false \? "conversationp\.conversation_unfinished" : "conversation\.conversation_complete"/.test(dw) ? "tamamlandi" : "BITMEDI"),
         "ilk karo etiketi=" + (/lesson\.correct_production/.test(dw) ? "ortak" : "?"),
       ],
       "mobil",
@@ -14869,7 +14869,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 
     const CIFTLER = [
       ["meydan bos", "mobile/src/screens/ChallengeScreen.tsx", 'phase === "empty"', 'challenge.none_title', "src/components/challenge-player.tsx", 'status === "empty"', 'challenge.none_title'],
-      ["rol hata", "mobile/src/screens/RoleplayExamScreen.tsx", 'if (phase === "error")', 'rpexam.service_down', "src/components/lessons/roleplay-exam.tsx", 'if (phase === "error")', 'rpexam.service_down'],
+      ["rol hata", "mobile/src/screens/RoleplayExamScreen.tsx", 'if (phase === "error")', 'scored.service_down', "src/components/lessons/roleplay-exam.tsx", 'if (phase === "error")', 'scored.service_down'],
       ["rol puanlama", "mobile/src/screens/RoleplayExamScreen.tsx", 'if (phase === "scoring")', 'item.mono_scoring', "src/components/lessons/roleplay-exam.tsx", 'if (phase === "scoring")', 'item.mono_scoring'],
       ["sinav hata", "mobile/src/screens/ExamScreen.tsx", "if (err) {", 'title={err}', "src/components/exam-player.tsx", 'if (phase === "error") {', 'exam.load_or_save_failed'],
       /* Web kapagi uc durumlu bir dalin icinde (duraklama / kapak); capa
@@ -15029,7 +15029,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       ["src/components/weekly-player.tsx", 't("weekly.couldn_t_load_weekly_quiz")'],
       ["src/components/placement/placement-test.tsx", 't("placement.couldn_t_load_test")'],
       ["src/components/walk-player.tsx", 't("walk.error_title")'],
-      ["src/components/lessons/roleplay-exam.tsx", 't("rpexam.service_down")'],
+      ["src/components/lessons/roleplay-exam.tsx", 't("scored.service_down")'],
       ["src/components/session-player.tsx", "title={content.title}"],
       ["src/components/exam-player.tsx", 't("exam.load_or_save_failed")'],
       ["src/components/cando-card.tsx", 't("cando.couldn_t_load")'],
@@ -15040,7 +15040,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       ["mobile/src/screens/WalkModeScreen.tsx", 'tx("walk.error_title")'],
       ["mobile/src/screens/WordsScreen.tsx", 't("words.couldn_t_load_your_words")', 'phase === "error" ? ('],
       ["mobile/src/screens/WritingsScreen.tsx", 't("writings.couldn_t_load_writings")', 'phase === "error" ? ('],
-      ["mobile/src/screens/RoleplayExamScreen.tsx", 'tx("rpexam.service_down")'],
+      ["mobile/src/screens/RoleplayExamScreen.tsx", 'tx("scored.service_down")'],
       ["mobile/src/screens/ExamScreen.tsx", "title={err}"],
       ["mobile/src/screens/CandoScreen.tsx", 't("cando.couldn_t_load")', 'phase === "error" ? ('],
     ];
@@ -15060,10 +15060,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "yapabildiklerim hata dali bos daldan ayri",
       [
         "web hata metni=" + (/cando\.couldn_t_load/.test(cw) ? "kendi" : "BOS METNI"),
-        "web bos metni=" + (/cando\.sign_in_and_finish_lessons_and/.test(cw) ? "var" : "YOK"),
+        "web bos metni=" + (/cando\.sign_in_and_finish_conversations_and/.test(cw) ? "var" : "YOK"),
         "web tekrar=" + (/\bsetAttempt\b/.test(cw) ? "var" : "YOK"),
         "mobil hata metni=" + (/cando\.couldn_t_load/.test(cm) ? "kendi" : "BOS METNI"),
-        "mobil bos metni=" + (/cando\.sign_in_and_finish_lessons_and/.test(cm) ? "var" : "YOK"),
+        "mobil bos metni=" + (/cando\.sign_in_and_finish_conversations_and/.test(cm) ? "var" : "YOK"),
         "mobil tekrar=" + (/\bsetAttempt\b/.test(cm) ? "var" : "YOK"),
       ],
       ["web hata metni=kendi", "web bos metni=var", "web tekrar=var", "mobil hata metni=kendi", "mobil bos metni=var", "mobil tekrar=var"],
@@ -15574,10 +15574,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         "mobil meydan=" + sonucDuyuruyor(mobMeydan, 't("daily.your_score")', "mobil"),
         "web haftalik=" + sonucDuyuruyor(webHaftalik, '"wquiz.done_sub"', "web"),
         "web deneme=" + sonucDuyuruyor(webDeneme, '"mockexam.part_done"', "web"),
-        "web rol yapma=" + sonucDuyuruyor(webRol, '"rpexam.below_threshold"', "web"),
+        "web rol yapma=" + sonucDuyuruyor(webRol, '"scored.below_threshold"', "web"),
         "mobil haftalik=" + sonucDuyuruyor(mobHaftalik, '"wquiz.done_sub"', "mobil"),
         "mobil deneme=" + sonucDuyuruyor(mobDeneme, '"mockexam.part_done"', "mobil"),
-        "mobil rol yapma=" + sonucDuyuruyor(mobRol, '"rpexam.below_threshold"', "mobil"),
+        "mobil rol yapma=" + sonucDuyuruyor(mobRol, '"scored.below_threshold"', "mobil"),
         /* SON UC YUZEY COK DURUMLU: sinav (tek sonuc; bolum gecisleri calisan
            fazin icinde bir KAPAK ve bandi `live={false}` - ayri bir sonuc
            degil), oturum (ETAP karti + BITIS karti, iki ayri sonuc) ve

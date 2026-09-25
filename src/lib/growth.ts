@@ -153,7 +153,7 @@ export async function growthReport(
     .limit(1);
   if (firstGoodWriting) milestones.push({ at: firstGoodWriting.at.toISOString().slice(0, 10), text: translate(lang, "growth.first_good_writing") });
   const [firstLesson] = await db.select({ at: userLessons.lastAt }).from(userLessons).where(and(eq(userLessons.userId, userId), eq(userLessons.roleplayDone, true))).orderBy(asc(userLessons.lastAt)).limit(1);
-  if (firstLesson) milestones.push({ at: firstLesson.at.toISOString().slice(0, 10), text: translate(lang, "growth.first_lesson") });
+  if (firstLesson) milestones.push({ at: firstLesson.at.toISOString().slice(0, 10), text: translate(lang, "growth.first_conversation") });
   const [firstPlacement] = await db.select({ day: events.day, kind: events.kind }).from(events).where(and(eq(events.userId, userId), eq(events.name, "placement_finish"))).orderBy(asc(events.createdAt)).limit(1);
   if (firstPlacement) milestones.push({ at: String(firstPlacement.day), text: translate(lang, "growth.first_placement", { level: firstPlacement.kind ?? "?" }) });
   milestones.sort((a, b) => a.at.localeCompare(b.at));
@@ -203,7 +203,7 @@ export async function weeklySummary(
   const T = (k: string, v?: Record<string, string | number>) => translate(lang, k, v);
   if (answers) parts.push(T("growth.p_answers", { n: answers }));
   if (exercises) parts.push(T("growth.p_exercises", { n: exercises }));
-  if (lessonsPassed) parts.push(T("growth.p_lessons", { n: lessonsPassed }));
+  if (lessonsPassed) parts.push(T("growth.p_conversations", { n: lessonsPassed }));
   if (writing.to !== null)
     parts.push(
       writing.from !== null

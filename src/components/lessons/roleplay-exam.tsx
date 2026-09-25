@@ -299,16 +299,16 @@ export function RoleplayExam({
               <span lang={lesson.course}>{lesson.title}</span> · {lesson.titleTr}
             </>
           }
-          title={t("rpexam.title")}
+          title={t("scored.title")}
           pitch={lesson.roleplay.scene}
           rules={[
-            { icon: <ClockIcon size={16} />, text: t("rpexam.rule_time", { turns: EXAM_TURNS, minutes: EXAM_SECONDS / 60 }) },
-            { icon: <LockIcon size={16} />, text: t("rpexam.rule_partner") },
-            { icon: <TargetIcon size={16} />, text: t("rpexam.rule_scoring") },
+            { icon: <ClockIcon size={16} />, text: t("scored.rule_time", { turns: EXAM_TURNS, minutes: EXAM_SECONDS / 60 }) },
+            { icon: <LockIcon size={16} />, text: t("scored.rule_partner") },
+            { icon: <TargetIcon size={16} />, text: t("scored.rule_scoring") },
           ]}
         >
           {lesson.patterns.length ? (
-            <DetailCard title={t("rpexam.patterns_title")}>
+            <DetailCard title={t("scored.patterns_title")}>
               {lesson.patterns.map((p) => (
                 <DetailRow key={p.de} left={p.de} right={p.tr} lang={lesson.course} />
               ))}
@@ -326,7 +326,7 @@ export function RoleplayExam({
          `ActivityIndicator` çiziyor; webde bekleme hareketsizdi. */
       <FlowColumn>
         <div aria-busy="true">
-          <StateBody title={t("item.mono_scoring")} body={t("rpexam.scoring_note", { n: userTurns })}>
+          <StateBody title={t("item.mono_scoring")} body={t("scored.scoring_note", { n: userTurns })}>
             <span
               aria-hidden
               className="mx-auto block h-6 w-6 animate-spin rounded-full border-2 border-t-transparent"
@@ -347,8 +347,8 @@ export function RoleplayExam({
          kaybettiriyordu. İzin verilmediyse servis kapalı DEĞİL: sebep kendi
          cümlesiyle söyleniyor (bkz. `consentOff`). Hata `alert` ile duyuruluyor. */
       <FlowColumn>
-        <StateBody alert title={t("rpexam.cant_run")} body={!consentOff ? t("rpexam.service_down") : t("assess.fail_consent")} />
-        <FlowActions primary={{ label: t("common.try_again"), onClick: restart }} tertiary={{ label: t("lessonp.back_to_conversation"), href: `/lessons/${lesson.id}` }} />
+        <StateBody alert title={t("scored.cant_run")} body={!consentOff ? t("scored.service_down") : t("assess.fail_consent")} />
+        <FlowActions primary={{ label: t("common.try_again"), onClick: restart }} tertiary={{ label: t("conversationp.back_to_conversation"), href: `/lessons/${lesson.id}` }} />
       </FlowColumn>
     );
   }
@@ -366,7 +366,7 @@ export function RoleplayExam({
     const passed = result.score.overall >= EXAM_PASS_SCORE;
     /* Eşiğin altındaysa birincil düğme "Tekrar dene". */
     const retry = { label: t("common.try_again"), onClick: restart };
-    const leave = { label: t("lessonp.back_to_conversation"), href: `/lessons/${lesson.id}` };
+    const leave = { label: t("conversationp.back_to_conversation"), href: `/lessons/${lesson.id}` };
     return (
       /*
         SONUÇ ŞABLONU: band → üç sayı → notlar → ayrıntı kartları → tek
@@ -376,46 +376,46 @@ export function RoleplayExam({
       */
       <FlowColumn celebrate={passed}>
         <ResultHero
-          eyebrow={t("rpexam.title")}
+          eyebrow={t("scored.title")}
           title={t(passed ? "exam.passed" : "exam.not_passed")}
           figure={formatPercent(result.score.overall, lang)}
           sub={
             <>
-              <span lang={lesson.course}>{lesson.title}</span> · {t("lessonp.n_turns", { n: userTurns })}
+              <span lang={lesson.course}>{lesson.title}</span> · {t("conversationp.n_turns", { n: userTurns })}
             </>
           }
           /* Erdi bandın ALTINDA konuşuyor (koç balonu). */
-          pill={{ text: t("rpexam.below_threshold", { n: EXAM_PASS_SCORE }), tone: passed ? "ok" : "bad" }}
+          pill={{ text: t("scored.below_threshold", { n: EXAM_PASS_SCORE }), tone: passed ? "ok" : "bad" }}
           quiet={!passed}
         />
         <CoachLine moment={passed ? "exam_pass" : "exam_fail"} vars={{ pct: result.score.overall, level: lesson.level }} />
         <StatRow
           items={[
-            { value: String(userTurns), label: t("rpexam.stat_turns") },
+            { value: String(userTurns), label: t("scored.stat_turns") },
             { value: `${result.score.task}/4`, label: t("assess.task") },
-            { value: String(result.errors.length), label: t("rpexam.stat_errors"), tone: result.errors.length ? null : "ok" },
+            { value: String(result.errors.length), label: t("scored.stat_errors"), tone: result.errors.length ? null : "ok" },
           ]}
         />
         {topErrors.length ? (
           <FlowNote
             icon={<AlertIcon size={16} />}
-            text={`${t("rpexam.most_common")} ${topErrors.map(([type, n]) => `${t(ERROR_LABEL_KEYS[type])} ×${n}`).join(", ")}`}
+            text={`${t("scored.most_common")} ${topErrors.map(([type, n]) => `${t(ERROR_LABEL_KEYS[type])} ×${n}`).join(", ")}`}
           />
         ) : (
-          <FlowNote tone="ok" icon={<CheckIcon size={16} />} text={t("rpexam.no_errors")} />
+          <FlowNote tone="ok" icon={<CheckIcon size={16} />} text={t("scored.no_errors")} />
         )}
         {cando.length ? (
           <FlowNote
             tone={passed ? "ok" : "neutral"}
             icon={passed ? <CheckIcon size={16} /> : <TargetIcon size={16} />}
-            text={`${passed ? t("lessonp.i_can") : t("rpexam.goal")} ${cando.join(" · ")}`}
+            text={`${passed ? t("conversationp.i_can") : t("scored.goal")} ${cando.join(" · ")}`}
           />
         ) : null}
-        <DetailCard title={t("rpexam.assessment_title")}>
+        <DetailCard title={t("scored.assessment_title")}>
           <AssessmentCard answer={said.join("\n")} result={result} failure={failure} example={null} reportRef={`exam:${lesson.id}`} />
         </DetailCard>
         {best.length ? (
-          <DetailCard title={t("rpexam.best_sentences")}>
+          <DetailCard title={t("scored.best_sentences")}>
             <ul className="space-y-1">
               {best.map((s) => (
                 <li key={s} className="rounded-panel px-3 py-2 text-body surface-2" lang={lesson.course}>
@@ -434,7 +434,7 @@ export function RoleplayExam({
     <section className="card mx-auto flex w-full max-w-md flex-col p-4">
       <div className="flex items-center justify-between text-caption">
         <span className="muted">
-          {t("rpexam.turn_of", { n: Math.min(userTurns + 1, EXAM_TURNS), total: EXAM_TURNS })}
+          {t("scored.turn_of", { n: Math.min(userTurns + 1, EXAM_TURNS), total: EXAM_TURNS })}
         </span>
         <span className="tabular-nums" style={{ color: left <= 30 ? "var(--color-rose)" : "var(--text-muted)" }}>
           {mm}:{ss}
@@ -460,7 +460,7 @@ export function RoleplayExam({
                 onClick={() => setReported({ ref: `${lesson.id}:exam:${i}`, text: turn.content })}
                 className="muted mt-1 text-micro underline underline-offset-2 hit-8"
               >
-                {t("lesson.report_this_answer")}
+                {t("conversation.report_this_answer")}
               </button>
             ) : null}
           </div>
@@ -474,7 +474,7 @@ export function RoleplayExam({
             type="button"
             onClick={() => void listen()}
             disabled={busy || listening}
-            aria-label={t("lesson.mic_talk")}
+            aria-label={t("conversation.mic_talk")}
             className="brand-gradient flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-white shadow disabled:opacity-60"
           >
             <MicIcon size={20} />
@@ -502,15 +502,15 @@ export function RoleplayExam({
             listening
               ? t("speak.listening")
               : asr
-                ? t("rpexam.speak_or_type")
-                : t("lesson.type_in", { lang: targetName })
+                ? t("scored.speak_or_type")
+                : t("conversation.type_in", { lang: targetName })
           }
           aria-label={
             listening
               ? t("speak.listening")
               : asr
-                ? t("rpexam.speak_or_type")
-                : t("lesson.type_in", { lang: targetName })
+                ? t("scored.speak_or_type")
+                : t("conversation.type_in", { lang: targetName })
           }
           disabled={busy}
           className="input max-h-24 min-w-0 flex-1 resize-none py-2 text-body"

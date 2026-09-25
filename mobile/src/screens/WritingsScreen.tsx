@@ -31,7 +31,7 @@ const KIND_KEY: Record<string, string> = {
   writing: "exam.sec_writing",
   sentence: "writ.kind_sentence",
   speaking: "exam.sec_speaking",
-  roleplay: "writ.kind_roleplay",
+  roleplay: "writ.kind_chat",
 };
 
 /**

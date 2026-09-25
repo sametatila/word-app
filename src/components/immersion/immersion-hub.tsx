@@ -88,7 +88,7 @@ export type ImmersionHubProps = {
 
 /** Tür → sözlük anahtarı; etiket kullanım anında çözülüyor (mobil `KIND_KEY`). */
 const KIND_KEY: Record<ImmersionItemKind, string> = {
-  lesson: "unitkind.lesson",
+  lesson: "unitkind.conversation",
   read: "unitkind.read",
   listen: "unitkind.listen",
   write: "unitkind.write",

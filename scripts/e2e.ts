@@ -1874,7 +1874,7 @@ async function main() {
   check("anlaşılmayan cevap: tur ilerlemiyor, örnek öneriliyor", !miss1.understood && miss1.state.turnId === "t1" && miss1.content.includes("[SAY] Ich heiße Mehmet."));
   const noScript = LESSONS.find((l) => !l.roleplay.script?.length && l.patterns.length >= 2)!;
   os = offlineStart(noScript);
-  check("senaryosuz ders: kalıp modu, ilk kalıp isteniyor", os.state.turnId === null && os.hint?.key === "roleplay.hint_use_pattern");
+  check("senaryosuz ders: kalıp modu, ilk kalıp isteniyor", os.state.turnId === null && os.hint?.key === "chat.hint_use_pattern");
   const p0 = noScript.patterns[0].de;
   const r0 = offlineReply(noScript, os.state, p0.replace(/…/g, "Berlin"));
   check("kalıp söylenince sayılıyor", r0.understood && r0.state.usedPatterns.includes(p0));

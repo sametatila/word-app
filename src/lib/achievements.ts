@@ -168,10 +168,10 @@ export const ACHIEVEMENTS: AchievementDef[] = [
   { id: "grammar25", titleKey: "ach.grammar25.title", hintKey: "ach.grammar25.hint", icon: "MountainIcon", tier: "gold", group: "grammar", metric: "grammarDone", target: 25 },
 
   // ——— Ders ——————————————————————————————————————————————————————
-  { id: "lesson1", titleKey: "ach.lesson1.title", hintKey: "ach.lesson1.hint", icon: "ChatIcon", tier: "bronze", group: "lessons", metric: "lessons", target: 1 },
-  { id: "lesson10", titleKey: "ach.lesson10.title", hintKey: "ach.lesson10.hint", icon: "SchoolIcon", tier: "bronze", group: "lessons", metric: "lessons", target: 10 },
-  { id: "lesson50", titleKey: "ach.lesson50.title", hintKey: "ach.lesson50.hint", icon: "SchoolIcon", tier: "gold", group: "lessons", metric: "lessons", target: 50 },
-  { id: "lesson100", titleKey: "ach.lesson100.title", hintKey: "ach.lesson100.hint", icon: "MountainIcon", tier: "legend", group: "lessons", metric: "lessons", target: 100 },
+  { id: "lesson1", titleKey: "ach.conversation1.title", hintKey: "ach.conversation1.hint", icon: "ChatIcon", tier: "bronze", group: "lessons", metric: "lessons", target: 1 },
+  { id: "lesson10", titleKey: "ach.conversation10.title", hintKey: "ach.conversation10.hint", icon: "SchoolIcon", tier: "bronze", group: "lessons", metric: "lessons", target: 10 },
+  { id: "lesson50", titleKey: "ach.conversation50.title", hintKey: "ach.conversation50.hint", icon: "SchoolIcon", tier: "gold", group: "lessons", metric: "lessons", target: 50 },
+  { id: "lesson100", titleKey: "ach.conversation100.title", hintKey: "ach.conversation100.hint", icon: "MountainIcon", tier: "legend", group: "lessons", metric: "lessons", target: 100 },
   { id: "boss1", titleKey: "ach.boss1.title", hintKey: "ach.boss1.hint", icon: "FlagIcon", tier: "silver", group: "lessons", metric: "bossClears", target: 1 },
   { id: "boss10", titleKey: "ach.boss10.title", hintKey: "ach.boss10.hint", icon: "FlagIcon", tier: "gold", group: "lessons", metric: "bossClears", target: 10 },
 

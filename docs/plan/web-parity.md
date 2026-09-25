@@ -3339,7 +3339,7 @@ döndürüyor ve kullanıcı yalnız başlığı görüyordu: bir şeyin yüklen
 yapacak bir şey olmadığını mı anlayamıyor.
 
 Boş durum eklendi. Ne bileşen ne metin uyduruldu: `EmptyCard` mobilde zaten
-sekiz yerde kullanılıyor ve metnin anahtarı (`cando.sign_in_and_finish_lessons_and`)
+sekiz yerde kullanılıyor ve metnin anahtarı (`cando.sign_in_and_finish_conversations_and`)
 mobil sözlükte DURUYORDU - webin aynı yerde gösterdiği cümle, mobilde
 çevrilmiş ama hiç çağrılmamış.
 
@@ -5376,7 +5376,7 @@ Türkçe arayüzde hepsi doğru görünüyor.
 
 ### 11.141 Derste eller serbest mobilde hiç yoktu
 
-Web derste kalıcı bir anahtar tutuyor (`lessonp.hands_free`) ve **varsayılan
+Web derste kalıcı bir anahtar tutuyor (`conversationp.hands_free`) ve **varsayılan
 açık**: açıkken öğretmen cümlesini bitirir bitirmez dinleme kendiliğinden
 başlıyor. Mobilde hiç yoktu — her tekrar ve üretim adımında ekrana dokunmak
 gerekiyordu.
@@ -7494,7 +7494,7 @@ de artık "Sonra" (`common.later`, haftalık sınavda da).
 Ders özetinde üç fark çıktı, üçü de Android'de:
 
 - **"Yapabildiklerim" satırı hiç yoktu.** Web özetin altında dersin kazandırdığı
-  can-do ifadelerini yazıyor (`lessonp.i_can`): kullanıcı kaç doğru yaptığını
+  can-do ifadelerini yazıyor (`conversationp.i_can`): kullanıcı kaç doğru yaptığını
   görüyor ama **ne kazandığını** görmüyordu. Kimlikler dersten (`candoMap`),
   metni `/api/cando`dan — rol yapma sınavındaki yolun aynısı. Alınamazsa satır
   çizilmiyor; etiket bir süs, özet ona bağlı değil.
@@ -7514,7 +7514,7 @@ dışında ve gerekçesi kapının içinde: iki taraf aynı listeyi ayrı adla v
 yerde yazıyor; sırayı orada zorlamak tasarımı değil ölçüyü düzeltmek olurdu.
 
 Kapı ilk çalıştırmasında "yapabildiklerim"i **en başta** gördü: dilim yorumları
-atmıyordu ve `lessonp.i_can`e ATIF yapan bir yorum bölümün kendisinden önce
+atmıyordu ve `conversationp.i_can`e ATIF yapan bir yorum bölümün kendisinden önce
 geliyordu. Ölçünün komşusunu ölçmenin on birinci biçimi. Üç enjeksiyonun üçü
 de yakalandı.
 
@@ -11761,7 +11761,7 @@ düşerse "denied" işaretleniyor ve not **iki yüzeyde de** çiziliyor: ders
 adımları ve rol yapma.
 
 "Tanıyıcı yok" metni webde `lessonp.no_asr` diye **yalnız webde** duruyordu;
-`lesson.no_asr` olarak ortak kümeye taşındı (mobile yazılıp `i18n-pull` ile
+`conversation.no_asr` olarak ortak kümeye taşındı (mobile yazılıp `i18n-pull` ile
 çekildi) ve webin kopyası silindi. İzin metni zaten ortaktı
 (`speak.mic_needed`).
 
@@ -11803,7 +11803,7 @@ kalktı, üçüncü dal cevabı söylüyor; ölü kalan iki web anahtarı silind
 
 ### 3. Deneme sayacı webde hiç yoktu
 
-Android her yanlıştan sonra "{n}. deneme" yazıyor (`lesson.try_again`);
+Android her yanlıştan sonra "{n}. deneme" yazıyor (`conversation.try_again`);
 webde hiçbir yerde yazmıyordu — öğrenci kaçıncı denemede olduğunu ve cevabın
 ne zaman açılacağını bilmiyordu. Web `attempts`i bir **ref**te tutuyordu,
 yani çizime giremiyordu; yansı bir duruma alındı ve ref'in değiştiği **dört**
@@ -11845,7 +11845,7 @@ erişilmiyor; yani en çok güven veren kısım kullanıcıların bir bölümün
 ulaşmıyordu**. Android'de cümle **hiç yoktu** — kullanıcı konuşmasının
 sayılmayacağını sanıp dersi bırakabilirdi.
 
-Cümle ortak anahtara alındı (`lesson.chat_offline_note`) ve iki tarafta da
+Cümle ortak anahtara alındı (`conversation.chat_offline_note`) ve iki tarafta da
 **görünür** yazıldı: webde rozetin altında bir satır, Android'de balonun
 ikinci parçası.
 
@@ -12000,7 +12000,7 @@ Her site için uygulanan kural, Android'in o yerde ne yaptığına bakılarak
 seçildi — üç ayrı çözüm çıktı:
 
 **Android görünür yazıyor → görünür yazıldı.**
-`lesson-player` sınav düğmesinin ipucu (`lessonp.exam_hint`): Android aynı
+`lesson-player` sınav düğmesinin ipucu (`conversationp.scored_hint`): Android aynı
 düğmenin altına ikinci satır olarak yazıyor (`LessonScreen`), web `title=`
 balonunda tutuyordu.
 
@@ -15484,7 +15484,7 @@ profil daha önce). Tanınmayan bir ders kimliği (`/lessons/<id>` ve
 `/lessons/<id>/exam`) kökteki genel 404'e düşüyordu — iki kayıpla birlikte:
 
 - Cümle genel: "Sayfa bulunamadı". Bulunamayan şey bir sayfa değil bir
-  **konuşma**; Android'in cümlesi (`lesson.this_lesson_wasn_t_found`) üç dilde
+  **konuşma**; Android'in cümlesi (`conversation.this_conversation_wasn_t_found`) üç dilde
   zaten tabanda duruyordu ve webde **hiçbir yerden çağrılmıyordu**.
 - Kökteki 404 kök düzeninde çiziliyor, yani **uygulama kabuğunun dışında**:
   gezinme çubuğu kayboluyor, çıkış yolu iki bağlantıdan ibaret kalıyor.
@@ -15727,7 +15727,7 @@ ayrışıktı** — ikisi de rol yapma sınavında:
 | yüzey | web | mobil |
 |---|---|---|
 | `item.mono_scoring` (puanlama beklemesi) | `think` / 80 | **`idle` / 92** |
-| `rpexam.service_down` (servis kapalı) | `sad` / 80 | `sad` / **92** |
+| `scored.service_down` (servis kapalı) | `sad` / 80 | `sad` / **92** |
 
 `idle` neşeli boşta-bekleme klibi ve puanlama anını anlatmıyor; web aynı dalda
 `think` çiziyor. Üstelik `think` klibi mobile bu turlarda eklenmişti (§11.417)

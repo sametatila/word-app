@@ -136,7 +136,7 @@ export function WeakSpotsCard({ bare = false }: { bare?: boolean } = {}) {
               <li key={r} className="flex items-center justify-between text-body">
                 <span>{r}</span>
                 <Link href="/immersion" className="btn btn-ghost px-3 py-1 text-caption">
-                  {tx("weak.go_to_lesson")}
+                  {tx("weak.go_to_conversation")}
                 </Link>
               </li>
             ))}

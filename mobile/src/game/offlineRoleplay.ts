@@ -106,7 +106,7 @@ export function offlineStart(lesson: Lesson): { state: OfflineState; opening: st
   return {
     state: { turnId: null, path: [], usedPatterns: [], userTurns: 0, ended: false },
     opening: lesson.roleplay.opening,
-    hint: first ? { key: "roleplay.hint_use_pattern", vars: { pattern: first.de } } : null,
+    hint: first ? { key: "chat.hint_use_pattern", vars: { pattern: first.de } } : null,
   };
 }
 
@@ -159,7 +159,7 @@ export function offlineReply(lesson: Lesson, state: OfflineState, said: string):
       content: say(fb.say, fb.example),
       speak: fb.say,
       understood: false,
-      hint: { key: "roleplay.hint_not_understood", vars: { example: fb.example } },
+      hint: { key: "chat.hint_not_understood", vars: { example: fb.example } },
       ended: false,
     };
   }
@@ -197,7 +197,7 @@ export function offlineReply(lesson: Lesson, state: OfflineState, said: string):
     understood,
     hint: ended
       ? null
-      : { key: understood ? "roleplay.hint_next_pattern" : "roleplay.hint_try_pattern", vars: { pattern: nextP } },
+      : { key: understood ? "chat.hint_next_pattern" : "chat.hint_try_pattern", vars: { pattern: nextP } },
     ended,
   };
 }

@@ -135,7 +135,7 @@ export function CourseOnboarding({
       // bağlı. Karşılamadan sonra duruyor çünkü karşılama ekranında seçim yok.
       key: "lang",
       title: t("onboarding.which_language_should_we_teach"),
-      subtitle: t("onboarding.lessons_and_hints_will_be_in"),
+      subtitle: t("onboarding.conversations_and_hints_will_be_in"),
       options: offeredNativeLangs().map((l) => ({ key: l, label: LANG_LABEL[l] })),
     },
     {

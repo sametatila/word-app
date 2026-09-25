@@ -249,7 +249,7 @@ export function RoleplayExamScreen() {
         top={<FlowTopBar back onClose={() => nav.goBack()} />}
         actions={<FlowActions primary={{ label: tx("item.go_back"), onPress: () => nav.goBack() }} />}
       >
-        <StateBody alert title={packFailed ? tx("content.couldn_t_load") : tx("lesson.this_lesson_wasn_t_found")} body={packFailed ? tx("social.err_offline") : null} />
+        <StateBody alert title={packFailed ? tx("content.couldn_t_load") : tx("conversation.this_conversation_wasn_t_found")} body={packFailed ? tx("social.err_offline") : null} />
       </FlowScreen>
     );
   }
@@ -340,17 +340,17 @@ export function RoleplayExamScreen() {
           /* Dersin adı hedef dilde; üst satır büyük harf ve Türkçe yerelde
              "i" → "İ" oluyordu. JS `toUpperCase` yerelden bağımsız. */
           eyebrow={`${lesson.title.toUpperCase()} · ${lesson.titleTr}`}
-          title={tx("rpexam.title")}
+          title={tx("scored.title")}
           pitch={lesson.roleplay.scene}
           rules={[
-            { icon: ClockIcon, text: tx("rpexam.rule_time", { turns: EXAM_TURNS, minutes: EXAM_SECONDS / 60 }) },
-            { icon: LockIcon, text: tx("rpexam.rule_partner") },
-            { icon: TargetIcon, text: tx("rpexam.rule_scoring") },
+            { icon: ClockIcon, text: tx("scored.rule_time", { turns: EXAM_TURNS, minutes: EXAM_SECONDS / 60 }) },
+            { icon: LockIcon, text: tx("scored.rule_partner") },
+            { icon: TargetIcon, text: tx("scored.rule_scoring") },
           ]}
         >
           {guest ? <FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={tx("guest.ai_exam")} /> : null}
           {lesson.patterns.length ? (
-            <DetailCard title={tx("rpexam.patterns_title")}>
+            <DetailCard title={tx("scored.patterns_title")}>
               {lesson.patterns.map((p) => <DetailRow key={p.de} left={p.de} right={p.tr} />)}
             </DetailCard>
           ) : null}
@@ -366,7 +366,7 @@ export function RoleplayExamScreen() {
          web ayni dalda `think` ciziyor. Ilerleme rolu ve mesgul durumu kapta. */
       <FlowScreen center>
         <View accessibilityRole="progressbar" accessibilityState={{ busy: true }}>
-          <StateBody title={tx("item.mono_scoring")} body={tx("rpexam.scoring_note", { n: userTurns })}>
+          <StateBody title={tx("item.mono_scoring")} body={tx("scored.scoring_note", { n: userTurns })}>
             <ActivityIndicator color={colors.primary} />
           </StateBody>
         </View>
@@ -379,7 +379,7 @@ export function RoleplayExamScreen() {
     return (
       <FlowScreen
         center
-        actions={<FlowActions primary={{ label: tx("unlock.premium_now"), onPress: () => nav.navigate("Paywall") }} tertiary={{ label: tx("lessonp.back_to_conversation"), onPress: () => nav.goBack() }} />}
+        actions={<FlowActions primary={{ label: tx("unlock.premium_now"), onPress: () => nav.navigate("Paywall") }} tertiary={{ label: tx("conversationp.back_to_conversation"), onPress: () => nav.goBack() }} />}
       >
         <StateBody title={tx("unlock.locked_conv")}>
           {copy ? <View style={{ alignSelf: "stretch", marginTop: spacing.md }}><UnlockProgress copy={copy} /></View> : null}
@@ -398,9 +398,9 @@ export function RoleplayExamScreen() {
          cümlesiyle söyleniyor (bkz. `consentOff`). */
       <FlowScreen
         center
-        actions={<FlowActions primary={{ label: tx("common.try_again"), onPress: restart }} tertiary={{ label: tx("lessonp.back_to_conversation"), onPress: () => nav.goBack() }} />}
+        actions={<FlowActions primary={{ label: tx("common.try_again"), onPress: restart }} tertiary={{ label: tx("conversationp.back_to_conversation"), onPress: () => nav.goBack() }} />}
       >
-        <StateBody alert title={tx("rpexam.cant_run")} body={!consentOff ? tx("rpexam.service_down") : tx("assess.fail_consent")} />
+        <StateBody alert title={tx("scored.cant_run")} body={!consentOff ? tx("scored.service_down") : tx("assess.fail_consent")} />
       </FlowScreen>
     );
   }
@@ -422,7 +422,7 @@ export function RoleplayExamScreen() {
        konuşmaya dönmek. */
     const retryFirst = !!result && !passed;
     const retry = { label: tx("common.try_again"), onPress: restart };
-    const leave = { label: tx("lessonp.back_to_conversation"), onPress: () => nav.goBack() };
+    const leave = { label: tx("conversationp.back_to_conversation"), onPress: () => nav.goBack() };
     return (
       /*
         SONUÇ ŞABLONU (ui/flow): band → üç sayı → notlar → ayrıntı kartları →
@@ -435,20 +435,20 @@ export function RoleplayExamScreen() {
         actions={<FlowActions primary={retryFirst ? retry : leave} tertiary={retryFirst ? leave : retry} />}
       >
         <ResultHero
-          eyebrow={tx("rpexam.title")}
-          title={result ? tx(passed ? "exam.passed" : "exam.not_passed") : tx("rpexam.not_scored")}
+          eyebrow={tx("scored.title")}
+          title={result ? tx(passed ? "exam.passed" : "exam.not_passed") : tx("scored.not_scored")}
           figure={result ? formatPercent(overall) : null}
-          sub={`${lesson.title} · ${tx("lessonp.n_turns", { n: userTurns })}`}
+          sub={`${lesson.title} · ${tx("conversationp.n_turns", { n: userTurns })}`}
           /* Puanlandıysa Erdi bandın ALTINDA konuşuyor (koç balonu). */
-          pill={result ? { text: tx("rpexam.below_threshold", { n: EXAM_PASS_SCORE }), tone: passed ? "ok" : "bad" } : null}
+          pill={result ? { text: tx("scored.below_threshold", { n: EXAM_PASS_SCORE }), tone: passed ? "ok" : "bad" } : null}
           quiet={!passed}
         />
         {result ? <CoachLine moment={passed ? "exam_pass" : "exam_fail"} vars={{ pct: overall, level: lesson.level }} /> : null}
         {result ? (
           <StatRow items={[
-            { value: String(userTurns), label: tx("rpexam.stat_turns") },
+            { value: String(userTurns), label: tx("scored.stat_turns") },
             { value: `${result.score.task}/4`, label: tx("assess.task") },
-            { value: String(result.errors.length), label: tx("rpexam.stat_errors"), tone: result.errors.length ? null : "ok" },
+            { value: String(result.errors.length), label: tx("scored.stat_errors"), tone: result.errors.length ? null : "ok" },
           ]} />
         ) : null}
 
@@ -456,16 +456,16 @@ export function RoleplayExamScreen() {
         {gateNote ? <FlowNote tone="bad" icon={<AlertIcon color={colors.dangerText} size={16} />} text={gateNote} /> : null}
         {result ? (
           topErrors.length ? (
-            <FlowNote icon={<AlertIcon color={colors.textMuted} size={16} />} text={`${tx("rpexam.most_common")} ${topErrors.map(([type, n]) => `${tx(ERROR_LABEL_KEYS[type] ?? "err.meaning")} x${n}`).join(", ")}`} />
+            <FlowNote icon={<AlertIcon color={colors.textMuted} size={16} />} text={`${tx("scored.most_common")} ${topErrors.map(([type, n]) => `${tx(ERROR_LABEL_KEYS[type] ?? "err.meaning")} x${n}`).join(", ")}`} />
           ) : (
-            <FlowNote tone="ok" icon={<CheckIcon color={colors.successText} size={16} />} text={tx("rpexam.no_errors")} />
+            <FlowNote tone="ok" icon={<CheckIcon color={colors.successText} size={16} />} text={tx("scored.no_errors")} />
           )
         ) : null}
         {cando.length ? (
           <FlowNote
             tone={passed ? "ok" : "neutral"}
             icon={passed ? <CheckIcon color={colors.successText} size={16} /> : <TargetIcon color={colors.textMuted} size={16} />}
-            text={`${passed ? tx("lessonp.i_can") : tx("rpexam.goal")} ${cando.join(" · ")}`}
+            text={`${passed ? tx("conversationp.i_can") : tx("scored.goal")} ${cando.join(" · ")}`}
           />
         ) : null}
 
@@ -474,13 +474,13 @@ export function RoleplayExamScreen() {
              rubrik çubuğu vardı: öğrenci "72" görüyor, neyi yanlış yaptığını
              öğrenmiyordu. Kart hataların gerekçesini, düzeltilmiş cümleyi,
              övgüyü ve sıradaki ipucunu da yazıyor. */
-          <DetailCard title={tx("rpexam.assessment_title")}>
+          <DetailCard title={tx("scored.assessment_title")}>
             <AssessmentCard answer={said.join("\n")} result={result} reportRef={assessmentRef(resultId, `${lesson.id}:exam`)} />
           </DetailCard>
         ) : null}
 
         {best.length ? (
-          <DetailCard title={tx("rpexam.best_sentences")}>
+          <DetailCard title={tx("scored.best_sentences")}>
             {best.map((s) => (
               <View key={s} style={{ backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: 10 }}>
                 <Text variant="body">{s}</Text>
@@ -495,7 +495,7 @@ export function RoleplayExamScreen() {
   return (
     <View ref={rootRef} collapsable={false} style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.md, paddingBottom: insets.bottom + spacing.md, paddingHorizontal: spacing.lg }}>
       <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
-        <Text variant="caption" color={colors.textMuted}>{tx("rpexam.turn_of", { n: Math.min(userTurns + 1, EXAM_TURNS), total: EXAM_TURNS })}</Text>
+        <Text variant="caption" color={colors.textMuted}>{tx("scored.turn_of", { n: Math.min(userTurns + 1, EXAM_TURNS), total: EXAM_TURNS })}</Text>
         <Text variant="bodyStrong" color={left <= 30 ? colors.dangerText : colors.textMuted}>{mm}:{ss}</Text>
       </View>
       <AiNotice variant="character" />
@@ -544,7 +544,7 @@ export function RoleplayExamScreen() {
           <PressableScale
             onPress={() => void listen()}
             disabled={busy || listening}
-            accessibilityLabel={tx("lesson.mic_talk")}
+            accessibilityLabel={tx("conversation.mic_talk")}
             style={[{ width: 48, height: 48, borderRadius: radii.pill, backgroundColor: colors.primary, alignItems: "center", justifyContent: "center" }, softShadow(colors.primary, 8)]}
           >
             <MicIcon color={colors.onPrimary} size={20} />
@@ -563,8 +563,8 @@ export function RoleplayExamScreen() {
              yoktu ve web tarafinda da yoktu; ikisi birlikte duzeltildi. */
           autoCapitalize="sentences"
           autoCorrect={false}
-          placeholder={listening ? tx("speak.listening") : asr ? tx("rpexam.speak_or_type") : tx("lesson.type_in", { lang: targetLangName() })}
-          accessibilityLabel={listening ? tx("speak.listening") : asr ? tx("rpexam.speak_or_type") : tx("lesson.type_in", { lang: targetLangName() })}
+          placeholder={listening ? tx("speak.listening") : asr ? tx("scored.speak_or_type") : tx("conversation.type_in", { lang: targetLangName() })}
+          accessibilityLabel={listening ? tx("speak.listening") : asr ? tx("scored.speak_or_type") : tx("conversation.type_in", { lang: targetLangName() })}
           placeholderTextColor={colors.textFaint}
           style={{ flex: 1, maxHeight: ds(96), backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.md, paddingVertical: spacing.md, color: colors.text, fontSize: 15 }}
         />

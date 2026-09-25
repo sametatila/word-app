@@ -102,7 +102,7 @@ export async function buildPlan(
       const doneT = row ? row.lastAt.toISOString().slice(0, 10) >= today : false;
       items.push({
         id: "lesson",
-        title: translate(lang, next.due ? "plan.lesson_review" : "plan.lesson", { title: next.lesson.title }),
+        title: translate(lang, next.due ? "plan.conversation_review" : "plan.conversation", { title: next.lesson.title }),
         detail: next.lesson.titleTr,
         minutes: next.lesson.minutes,
         done: doneT,

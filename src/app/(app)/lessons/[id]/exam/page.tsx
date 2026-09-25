@@ -14,7 +14,7 @@ import { isNativeLang } from "@/lib/i18n/dict";
 export const dynamic = "force-dynamic";
 
 /** Dersin rol yapma sahnesi sınav olarak (WP-22): /lessons/[id]/exam. */
-export const generateMetadata = titleMeta("rpexam.title");
+export const generateMetadata = titleMeta("scored.title");
 
 export default async function LessonExamPage({ params }: { params: Promise<{ id: string }> }) {
   const who = await getUserInfo();

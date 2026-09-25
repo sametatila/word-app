@@ -107,7 +107,7 @@ export default async function ImmersionSkillPage({
   const frame: PlayerFrameValue = {
     lang: targetLangOf(exercise),
     backHref,
-    backLabel: fromSkills ? "item.back_to_skills" : "lesson.back_to_path",
+    backLabel: fromSkills ? "item.back_to_skills" : "conversation.back_to_path",
     next: fromSkills && isLibraryExercise(exercise) ? await nextInLibrary(exercise.id, exercise.course ?? "de", exercise.level, exercise.skill) : null,
   };
 

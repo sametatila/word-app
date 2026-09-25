@@ -107,9 +107,9 @@ const STEP_TONE: Record<string, string> = {
 };
 /** Adım rozeti — anahtar; metin gösterildiği yerde çevriliyor. */
 const STEP_LABEL_KEYS: Record<string, string> = {
-  repeat: "lessonp.step_repeat",
-  produce: "lessonp.step_produce",
-  truefalse: "lessonp.step_truefalse",
+  repeat: "conversationp.step_repeat",
+  produce: "conversationp.step_produce",
+  truefalse: "conversationp.step_truefalse",
 };
 
 /** Özet köprüleri — sunucuda hesaplanıp sayfadan gelir. */
@@ -191,11 +191,11 @@ const TRUE_WORD: Record<NativeLang, string> = { tr: "doğru", en: "true", de: "r
 const FALSE_WORD: Record<NativeLang, string> = { tr: "yanlış", en: "false", de: "falsch" };
 
 const PRAISE_KEYS = [
-  "lesson.praise_1",
-  "lesson.praise_2",
-  "lesson.praise_3",
-  "lesson.praise_4",
-  "lesson.praise_5",
+  "conversation.praise_1",
+  "conversation.praise_2",
+  "conversation.praise_3",
+  "conversation.praise_4",
+  "conversation.praise_5",
 ];
 
 
@@ -282,7 +282,7 @@ function LessonPlayerBody({
   const attempts = useRef(0);
   /*
    * DENEME SAYACI EKRANDA. Android her yanlistan sonra "{n}. deneme" yaziyor
-   * (`lesson.try_again`), webde hicbir yerde yazmiyordu: ogrenci kacinci
+   * (`conversation.try_again`), webde hicbir yerde yazmiyordu: ogrenci kacinci
    * denemede oldugunu ve cevabin ne zaman acilacagini bilmiyordu. `attempts`
    * bir ref oldugu icin cizime giremiyor - yansi bir durumda tutuluyor ve
    * ref'in degistigi her yerde birlikte guncelleniyor.
@@ -516,7 +516,7 @@ function LessonPlayerBody({
       if (e?.kind === "produce") prefetchSegments(e.hint);
       if (e?.kind === "truefalse") {
         prefetchSegments([nar(PRAISE_KEYS[i % PRAISE_KEYS.length]), ...e.why]);
-        prefetchSegments([nar("lessonp.not_quite"), ...e.why]);
+        prefetchSegments([nar("conversationp.not_quite"), ...e.why]);
       }
     }
     prefetchGerman(lesson.roleplay.opening);
@@ -550,7 +550,7 @@ function LessonPlayerBody({
       if (!Ctor) return;
       const permission = await requestMicrophone();
       if (permission === "denied") {
-        setError(t("lessonp.mic_denied"));
+        setError(t("conversationp.mic_denied"));
         return;
       }
       recognition.current?.abort();
@@ -633,7 +633,7 @@ function LessonPlayerBody({
           silence.current = setTimeout(() => {
             rec.stop();
             setListening(false);
-            setHintKey({ key: "lessonp.not_heard" });
+            setHintKey({ key: "conversationp.not_heard" });
           }, SILENCE_MS);
           heard.current = false;
           typeNudge.current = setTimeout(() => {
@@ -801,7 +801,7 @@ function LessonPlayerBody({
       if (e.kind === "truefalse") {
         const judgment = parseJudgment(said, lang);
         if (judgment === null) {
-          interject([nar("lessonp.say_true_or_false")], reopen);
+          interject([nar("conversationp.say_true_or_false")], reopen);
           return;
         }
         const ok = judgment === e.answer;
@@ -809,7 +809,7 @@ function LessonPlayerBody({
         if (ok && isFirstTry) setCorrectCount((n) => n + 1);
         vibrate(ok ? "correct" : "wrong");
         interject(
-          [nar(ok ? PRAISE_KEYS[stepIndexRef.current % PRAISE_KEYS.length] : "lessonp.not_quite"), ...e.why],
+          [nar(ok ? PRAISE_KEYS[stepIndexRef.current % PRAISE_KEYS.length] : "conversationp.not_quite"), ...e.why],
           () => runStepRef.current(stepIndexRef.current + 1),
           ok ? undefined : "hint",
         );
@@ -835,7 +835,7 @@ function LessonPlayerBody({
 
       if (best.kind === "uncertain") {
         interject(
-          [nar("lessonp.didnt_catch"), { lang: "de", text: e.target }],
+          [nar("conversationp.didnt_catch"), { lang: "de", text: e.target }],
           reopen,
         );
         return;
@@ -876,12 +876,12 @@ function LessonPlayerBody({
         interject(
           missing.length
             ? [
-                nar("lessonp.almost_missing"),
+                nar("conversationp.almost_missing"),
                 { lang: "de", text: missing.join(", ") },
-                nar("lessonp.once_more"),
+                nar("conversationp.once_more"),
                 { lang: "de", text: e.target },
               ]
-            : [nar("lessonp.lets_try_again"), { lang: "de", text: e.target }],
+            : [nar("conversationp.lets_try_again"), { lang: "de", text: e.target }],
           reopen,
         );
       }
@@ -1019,7 +1019,7 @@ function LessonPlayerBody({
           /* Günlük sohbet mesajı tavanı (kötüye kullanım önlemi). Sebebi doğru
              söyle: "bağlantı yok" demek kullanıcıyı ağına baktırırdı. */
           setTurns(next);
-          setError(t("lessonp.chat_quota", { n: DAILY_QUOTAS.roleplayTurns }));
+          setError(t("conversationp.chat_quota", { n: DAILY_QUOTAS.roleplayTurns }));
           return;
         }
         if (res.status === 503) {
@@ -1042,7 +1042,7 @@ function LessonPlayerBody({
         }
         if (!res.ok || !res.body) {
           setTurns(next);
-          setError(t("lessonp.no_answer"));
+          setError(t("conversationp.no_answer"));
           return;
         }
         const reader = res.body.getReader();
@@ -1076,7 +1076,7 @@ function LessonPlayerBody({
         }
       } catch {
         setTurns(next);
-        setError(t("lessonp.no_connection"));
+        setError(t("conversationp.no_connection"));
       } finally {
         stopThinking();
         setBusy(false);
@@ -1222,12 +1222,12 @@ function LessonPlayerBody({
   // ─────────────────────────── görünüm ───────────────────────────
 
   const micLabel = busy
-    ? t("lessonp.answer_coming")
+    ? t("conversationp.answer_coming")
     : listening
       ? partial
         ? `“${partial}”`
-        : t("lessonp.listening_take_time")
-      : (hint ?? t("lessonp.tap_to_speak"));
+        : t("conversationp.listening_take_time")
+      : (hint ?? t("conversationp.tap_to_speak"));
 
   return (
     /* KISA EKRANDA SIKIŞAN DÜZEN. 320×568'de adım sekmeleri, ilerleme
@@ -1263,7 +1263,7 @@ function LessonPlayerBody({
         <FlowNote
           text={
             <span className="flex items-center gap-2">
-              <span className="min-w-0 flex-1">{t("lessonp.resumed")}</span>
+              <span className="min-w-0 flex-1">{t("conversationp.resumed")}</span>
               <button
                 type="button"
                 onClick={() => {
@@ -1283,7 +1283,7 @@ function LessonPlayerBody({
                 }}
                 className="btn btn-ghost shrink-0 px-2 py-0.5 text-caption"
               >
-                {t("lesson.start_over")}
+                {t("conversation.start_over")}
               </button>
               <button
                 type="button"
@@ -1324,7 +1324,7 @@ function LessonPlayerBody({
                     style={{ color: handsFree ? "var(--color-brand)" : undefined }}
                   >
                     <MicIcon size={13} />
-                    {t(handsFree ? "lessonp.hands_free_on" : "lessonp.hands_free")}
+                    {t(handsFree ? "conversationp.hands_free_on" : "conversationp.hands_free")}
                   </button>
                 ) : null}
               </div>
@@ -1365,10 +1365,10 @@ function LessonPlayerBody({
                     }}
                     className="btn btn-primary w-full py-3 text-body"
                   >
-                    {t("lessonp.ready_lets_start")}
+                    {t("conversationp.ready_lets_start")}
                   </button>
                   {asrAvailable ? (
-                    <p className="muted text-center text-caption">{t("lessonp.or_answer_aloud")}</p>
+                    <p className="muted text-center text-caption">{t("conversationp.or_answer_aloud")}</p>
                   ) : null}
                 </div>
               ) : null}
@@ -1391,7 +1391,7 @@ function LessonPlayerBody({
                     style={{ background: "var(--color-success)", "--tint-fill": "var(--color-success)" } as React.CSSProperties}
                   >
                     <CheckIcon size={18} />
-                    {t("lesson.correct")}
+                    {t("conversation.correct")}
                   </button>
                   <button
                     type="button"
@@ -1404,7 +1404,7 @@ function LessonPlayerBody({
                     style={{ background: "var(--color-danger)", "--tint-fill": "var(--color-danger)" } as React.CSSProperties}
                   >
                     <XIcon size={18} />
-                    {t("lesson.wrong")}
+                    {t("conversation.wrong")}
                   </button>
                 </div>
               ) : null}
@@ -1433,7 +1433,7 @@ function LessonPlayerBody({
                       setAwaiting(true);
                       void capture(langFor(expect), (a) => evaluate(a), false);
                     }}
-                    aria-label={t(listening ? "exam.stop_recording" : "lessonp.start_speaking")}
+                    aria-label={t(listening ? "exam.stop_recording" : "conversationp.start_speaking")}
                     className={`${typing ? "hidden" : "flex"} h-16 w-16 items-center justify-center rounded-full on-fill shadow-lg short:h-14 short:w-14`}
                     style={{
                       background: listening ? "var(--color-rose)" : "var(--color-brand)",
@@ -1457,9 +1457,9 @@ function LessonPlayerBody({
                       ? partial
                         ? `“${partial}”`
                         : expect.kind === "truefalse"
-                          ? t("lessonp.listening_true_false")
-                          : t("lessonp.listening_take_time")
-                      : (hint ?? t("lessonp.tap_to_speak"))}
+                          ? t("conversationp.listening_true_false")
+                          : t("conversationp.listening_take_time")
+                      : (hint ?? t("conversationp.tap_to_speak"))}
                   </p>
                   <div className="flex items-center gap-2">
                     {expect.kind !== "truefalse" ? (
@@ -1468,7 +1468,7 @@ function LessonPlayerBody({
                         onClick={() => setTyping((v) => !v)}
                         className="btn btn-ghost px-3 py-1 text-caption"
                       >
-                        {t(typing ? "lessonp.close_typing" : "lesson.answer_by_typing")}
+                        {t(typing ? "conversationp.close_typing" : "conversation.answer_by_typing")}
                       </button>
                     ) : null}
                     <button
@@ -1476,7 +1476,7 @@ function LessonPlayerBody({
                       onClick={skipStep}
                       className="btn btn-ghost px-3 py-1 text-caption"
                     >
-                      {t("lessonp.skip_step")}
+                      {t("conversationp.skip_step")}
                     </button>
                   </div>
                 </div>
@@ -1485,13 +1485,13 @@ function LessonPlayerBody({
               {/* Kacinci deneme - Android ayni yeri ayni cumleyle yaziyor. */}
               {expect && tryCount > 0 ? (
                 <p className="mb-2 text-center text-caption" style={{ color: "var(--color-danger)" }}>
-                  {t("lesson.try_again", { n: tryCount })}
+                  {t("conversation.try_again", { n: tryCount })}
                 </p>
               ) : null}
 
               {expect && expect.kind !== "confirm" && !asrAvailable ? (
                 <p className="muted mb-2 text-center text-caption">
-                  {t("lesson.no_asr")}
+                  {t("conversation.no_asr")}
                 </p>
               ) : null}
 
@@ -1519,8 +1519,8 @@ function LessonPlayerBody({
                     autoCapitalize="sentences"
                     autoCorrect="off"
                     spellCheck={false}
-                    placeholder={t("lesson.type_in", { lang: courseName(lesson.course, lang) })}
-                    aria-label={t("lesson.type_in", { lang: courseName(lesson.course, lang) })}
+                    placeholder={t("conversation.type_in", { lang: courseName(lesson.course, lang) })}
+                    aria-label={t("conversation.type_in", { lang: courseName(lesson.course, lang) })}
                     className="input max-h-28 min-w-0 flex-1 resize-none py-2 text-body"
                   />
                   <button
@@ -1540,7 +1540,7 @@ function LessonPlayerBody({
                   onClick={startRoleplay}
                   className="btn btn-primary w-full py-3 text-body"
                 >
-                  {t("lessonp.to_roleplay")}
+                  {t("conversationp.to_chat")}
                 </button>
               ) : null}
             </div>
@@ -1577,7 +1577,7 @@ function LessonPlayerBody({
                   }}
                 >
                   <AlertIcon size={12} className="mt-1 shrink-0" />
-                  {t("lessonp.chat_off_consent")}
+                  {t("conversationp.chat_off_consent")}
                 </p>
               ) : offline ? (
                 <>
@@ -1589,7 +1589,7 @@ function LessonPlayerBody({
                     }}
                   >
                     <AlertIcon size={12} />
-                    {t(lesson.roleplay.script?.length ? "lessonp.chat_off_scripted" : "lessonp.chat_off_patterns")}
+                    {t(lesson.roleplay.script?.length ? "conversationp.chat_off_scripted" : "conversationp.chat_off_patterns")}
                   </p>
                   {/* "KONUŞMA YİNE SAYILIR" GÖRÜNÜR OLDU. Cümle `title=` ile
                       bir ipucu balonunda duruyordu: dokunmatikte hiç
@@ -1598,12 +1598,12 @@ function LessonPlayerBody({
                       kullanıcıların bir bölümüne hiç ulaşmıyordu. Android'de
                       bu cümle hiç yoktu; aynı turda ortak anahtara alınıp iki
                       tarafta da yazılır oldu. */}
-                  <p className="muted mt-1 text-caption leading-relaxed">{t("lesson.chat_offline_note")}</p>
+                  <p className="muted mt-1 text-caption leading-relaxed">{t("conversation.chat_offline_note")}</p>
                 </>
               ) : null}
               <div className="mt-2 flex items-center justify-between gap-2">
                 <span className="muted text-caption tabular-nums">
-                  {t("lessonw.turns", { n: userTurns, total: lesson.roleplay.minTurns })}
+                  {t("conversationw.turns", { n: userTurns, total: lesson.roleplay.minTurns })}
                 </span>
                 {ttsAvailable || asrAvailable ? (
                   <button
@@ -1614,7 +1614,7 @@ function LessonPlayerBody({
                     style={{ color: handsFree ? "var(--color-brand)" : undefined }}
                   >
                     <MicIcon size={13} />
-                    {t(handsFree ? "lessonp.hands_free_on" : "lessonp.hands_free")}
+                    {t(handsFree ? "conversationp.hands_free_on" : "conversationp.hands_free")}
                   </button>
                 ) : null}
               </div>
@@ -1681,7 +1681,7 @@ function LessonPlayerBody({
                       void listenRoleplay();
                     }}
                     disabled={busy}
-                    aria-label={t(listening ? "exam.stop_recording" : "lessonp.start_speaking")}
+                    aria-label={t(listening ? "exam.stop_recording" : "conversationp.start_speaking")}
                     className={`${typing ? "hidden" : "flex"} h-16 w-16 items-center justify-center rounded-full on-fill shadow-lg disabled:opacity-60 short:h-14 short:w-14`}
                     style={{
                       background: listening ? "var(--color-rose)" : "var(--color-brand)",
@@ -1710,12 +1710,12 @@ function LessonPlayerBody({
                     onClick={() => setTyping((v) => !v)}
                     className="btn btn-ghost px-3 py-1 text-caption"
                   >
-                    {t(typing ? "lessonp.close_typing" : "lesson.answer_by_typing")}
+                    {t(typing ? "conversationp.close_typing" : "conversation.answer_by_typing")}
                   </button>
                 </div>
               ) : (
                 <p className="muted mb-2 text-center text-caption">
-                  {t("lesson.no_asr")}
+                  {t("conversation.no_asr")}
                 </p>
               )}
 
@@ -1741,8 +1741,8 @@ function LessonPlayerBody({
                     autoCapitalize="sentences"
                     autoCorrect="off"
                     spellCheck={false}
-                    placeholder={t("lesson.type_in", { lang: courseName(lesson.course, lang) })}
-                    aria-label={t("lesson.type_in", { lang: courseName(lesson.course, lang) })}
+                    placeholder={t("conversation.type_in", { lang: courseName(lesson.course, lang) })}
+                    aria-label={t("conversation.type_in", { lang: courseName(lesson.course, lang) })}
                     className="input max-h-28 min-w-0 flex-1 resize-none py-2 text-body"
                   />
                   <button
@@ -1763,7 +1763,7 @@ function LessonPlayerBody({
                 onClick={() => void finish()}
                 className="btn btn-ghost w-full py-2.5 text-body"
               >
-                {t(roleplayDone ? "lessonp.end_conversation" : "lessonp.leave_for_now")}
+                {t(roleplayDone ? "conversationp.end_conversation" : "conversationp.leave_for_now")}
               </button>
             </div>
           </motion.section>
@@ -1786,38 +1786,38 @@ function LessonPlayerBody({
             */}
             <FlowColumn celebrate={!unfinished && pct >= 80}>
               <ResultHero
-                eyebrow={`${t("unitkind.lesson")} · ${lesson.title}`}
-                title={t(unfinished ? "lessonp.conversation_unfinished" : "lesson.lesson_complete")}
+                eyebrow={`${t("unitkind.conversation")} · ${lesson.title}`}
+                title={t(unfinished ? "conversationp.conversation_unfinished" : "conversation.conversation_complete")}
                 figure={scoredTotal ? `${correctCount}/${scoredTotal}` : null}
-                sub={t("lessonp.n_turns", { n: userTurns })}
+                sub={t("conversationp.n_turns", { n: userTurns })}
                 quiet={unfinished}
-                pill={unfinished ? { text: t("lessonp.pill_min_turns", { n: lesson.roleplay.minTurns }), tone: "bad" } : null}
+                pill={unfinished ? { text: t("conversationp.pill_min_turns", { n: lesson.roleplay.minTurns }), tone: "bad" } : null}
               />
               {/* Tur sayısı konuşmanın UZUNLUĞU, isabetten ayrı bir şey; eşikle
                   birlikte yazılıyor. Tekrar günü aralıklı tekrar merdiveninden. */}
               <StatRow
                 items={[
-                  { value: formatPercent(pct, lang), label: t("lesson.accuracy") },
-                  { value: `${userTurns}/${lesson.roleplay.minTurns}`, label: t("lessonp.stat_turns"), tone: unfinished ? "bad" : "ok" },
-                  ...(!unfinished && saved ? [{ value: t("profile.days", { n: saved.nextDays }), label: t("lessonp.stat_review") }] : []),
+                  { value: formatPercent(pct, lang), label: t("conversation.accuracy") },
+                  { value: `${userTurns}/${lesson.roleplay.minTurns}`, label: t("conversationp.stat_turns"), tone: unfinished ? "bad" : "ok" },
+                  ...(!unfinished && saved ? [{ value: t("profile.days", { n: saved.nextDays }), label: t("conversationp.stat_review") }] : []),
                 ]}
               />
 
               {unfinished ? (
-                <FlowNote tone="warn" icon={<AlertIcon size={16} />} text={t("lessonp.min_turns_note", { n: lesson.roleplay.minTurns })} />
+                <FlowNote tone="warn" icon={<AlertIcon size={16} />} text={t("conversationp.min_turns_note", { n: lesson.roleplay.minTurns })} />
               ) : null}
               {extras.cando.length ? (
-                <FlowNote tone="ok" icon={<CheckIcon size={16} />} text={`${t("lessonp.i_can")} ${extras.cando.join(" · ")}`} />
+                <FlowNote tone="ok" icon={<CheckIcon size={16} />} text={`${t("conversationp.i_can")} ${extras.cando.join(" · ")}`} />
               ) : null}
               {!corrections.length && turns.length > 1 ? (
-                <FlowNote tone="ok" icon={<CheckIcon size={16} />} text={t("lessonp.no_corrections")} />
+                <FlowNote tone="ok" icon={<CheckIcon size={16} />} text={t("conversationp.no_corrections")} />
               ) : null}
 
               {/* Kullanılan kalıplar (WP-62): konuşmada geçen kalıp yeşil tik,
                   geçmeyen soluk — dersin asıl amacı kalıbı kullanmak. Konuşma
                   hiç olmadıysa işaret yok (yanlış bir "yapmadın" damgası). */}
               {lesson.patterns.length ? (
-                <DetailCard title={t("lesson.patterns_you_learned")}>
+                <DetailCard title={t("conversation.patterns_you_learned")}>
                   {lesson.patterns.map((pt) => {
                     const talked = turns.length > 1;
                     const used = talked && patternUsed(pt.de, turns);
@@ -1839,7 +1839,7 @@ function LessonPlayerBody({
               ) : null}
 
               {corrections.length ? (
-                <DetailCard title={t("lessonp.corrections")}>
+                <DetailCard title={t("conversationp.corrections")}>
                   <ul className="space-y-1">
                     {corrections.map((c, i) => (
                       <li key={i} className="text-caption leading-relaxed">
@@ -1852,7 +1852,7 @@ function LessonPlayerBody({
 
               {/* Öğrenilen kelimeler özette bir kez daha: dersin dili kapanışta toplu. */}
               {lesson.vocab.length ? (
-                <DetailCard title={t("lessonp.words_of_lesson")}>
+                <DetailCard title={t("conversationp.words_of_conversation")}>
                   <div className="flex flex-wrap gap-1.5">
                     {lesson.vocab.map((v) => (
                       <span key={v.de} className="chip px-2 py-1 text-caption">
@@ -1865,19 +1865,19 @@ function LessonPlayerBody({
 
               {unfinished ? (
                 <FlowActions
-                  primary={{ label: t("lessonp.back_to_conversation"), onClick: () => setPhase("roleplay") }}
-                  tertiary={{ label: t("lesson.back_to_path"), href: "/immersion" }}
+                  primary={{ label: t("conversationp.back_to_conversation"), onClick: () => setPhase("roleplay") }}
+                  tertiary={{ label: t("conversation.back_to_path"), href: "/immersion" }}
                 />
               ) : (
                 <FlowActions
                   primary={
                     extras.next
-                      ? { label: t("lesson.next_speaking", { title: extras.next.title }), href: `/lessons/${extras.next.id}` }
-                      : { label: t("lesson.back_to_path"), href: "/immersion" }
+                      ? { label: t("conversation.next_speaking", { title: extras.next.title }), href: `/lessons/${extras.next.id}` }
+                      : { label: t("conversation.back_to_path"), href: "/immersion" }
                   }
                   /* İPUCU GÖRÜNÜR: düğmenin ikinci satırı (Android aynı). */
-                  secondary={turns.length > 1 ? { label: t("lessonp.try_as_exam"), hint: t("lessonp.exam_hint"), href: `/lessons/${lesson.id}/exam` } : null}
-                  tertiary={extras.next ? { label: t("lesson.back_to_path"), href: "/immersion" } : null}
+                  secondary={turns.length > 1 ? { label: t("conversationp.try_scored"), hint: t("conversationp.scored_hint"), href: `/lessons/${lesson.id}/exam` } : null}
+                  tertiary={extras.next ? { label: t("conversation.back_to_path"), href: "/immersion" } : null}
                 />
               )}
             </FlowColumn>
@@ -1927,9 +1927,9 @@ function LessonExit() {
 function Steps({ phase }: { phase: Phase }) {
   const t = useT();
   const steps: { id: Phase; label: string }[] = [
-    { id: "lecture", label: t("lesson.phase_lecture") },
-    { id: "roleplay", label: t("lesson.phase_roleplay") },
-    { id: "summary", label: t("lesson.phase_summary") },
+    { id: "lecture", label: t("conversation.phase_lecture") },
+    { id: "roleplay", label: t("conversation.phase_chat") },
+    { id: "summary", label: t("conversation.phase_summary") },
   ];
   const at = steps.findIndex((s) => s.id === phase);
   return (
@@ -2018,7 +2018,7 @@ function TypingDots() {
   const t = useT();
   const still = useStill();
   return (
-    <span className="flex items-center gap-1 px-0.5 py-1.5" aria-label={t("lesson.typing")}>
+    <span className="flex items-center gap-1 px-0.5 py-1.5" aria-label={t("conversation.typing")}>
       {[0, 1, 2].map((i) => (
         <motion.span
           key={i}
@@ -2128,7 +2128,7 @@ function LectureBubble({
           type="button"
           whileTap={{ scale: 0.96 }}
           onClick={() => speakSegments(item.segments)}
-          aria-label={t("lessonp.listen_again")}
+          aria-label={t("conversationp.listen_again")}
           /* 28px gorunen daire, `hit-8` ile 44 hedef: mobil karsiligi da
              `hitSlop={8}` tasiyor (`LessonScreen`). */
           className="btn btn-ghost hit-8 h-7 w-7 shrink-0"
@@ -2186,7 +2186,7 @@ function Bubble({
               type="button"
               whileTap={{ scale: 0.96 }}
               onClick={() => speakGerman(body)}
-              aria-label={t("lessonp.listen_again")}
+              aria-label={t("conversationp.listen_again")}
               className="btn btn-ghost hit-8 ml-1 h-7 w-7 shrink-0 align-middle"
             >
               <SpeakerIcon size={13} />
@@ -2219,7 +2219,7 @@ function Bubble({
              Mobil karsiligi da `hitSlop={8}` tasiyor. */
           className="muted text-micro underline underline-offset-2 hit-8"
         >
-          {t("lesson.report_this_answer")}
+          {t("conversation.report_this_answer")}
         </button>
       ) : null}
     </motion.div>
@@ -2239,7 +2239,7 @@ function AsrNote({ visible }: { visible: boolean }) {
       }}
     >
       <AlertIcon size={14} className="mt-0.5 shrink-0" />
-      <span>{t("lessonp.no_asr_long")}</span>
+      <span>{t("conversationp.no_asr_long")}</span>
     </div>
   );
 }

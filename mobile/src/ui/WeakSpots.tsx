@@ -122,7 +122,7 @@ export function WeakSpots() {
             <View key={r} style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: spacing.sm, marginTop: spacing.xs }}>
               <Text variant="caption" color={colors.text} style={{ flex: 1 }}>{r}</Text>
               <PressableScale onPress={() => nav.navigate("Tabs", { screen: "Path" })} style={{ paddingHorizontal: spacing.md, paddingVertical: 6, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
-                <Text variant="micro" color={colors.primaryText}>{t("weak.go_to_lesson")}</Text>
+                <Text variant="micro" color={colors.primaryText}>{t("weak.go_to_conversation")}</Text>
               </PressableScale>
             </View>
           ))}
