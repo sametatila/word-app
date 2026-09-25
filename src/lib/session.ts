@@ -523,6 +523,7 @@ export function toRoundWord(w: typeof words.$inferSelect, isNew: boolean): Round
     beispielTr: w.beispielTr,
     beispielEn: w.beispielEn,
     formen: w.formen,
+    usage: w.usage,
     deGloss: w.deGloss,
     beispielDe: w.beispielDe,
     isNew,

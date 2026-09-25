@@ -100,6 +100,8 @@ export type RoundWord = {
   /** Aynı cümlenin doğal İngilizce çevirisi (varsa). */
   beispielEn: string | null;
   formen: string | null;
+  /** Kullanım bilgisi kodları (`lib/usage`): edatın hâli, söz dizimi, kayıt. İsteğe bağlı: eski turlar taşımıyor. */
+  usage?: string | null;
   /**
    * Almanca karşılık ve örnek cümlenin Almancası — İngilizce kursu Almanca
    * anadilli öğrenene açıldığında (PAIR_READY de→en) anlamın kendisi bunlar.

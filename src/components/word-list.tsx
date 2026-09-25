@@ -33,6 +33,7 @@ export type WordRow = {
   deGloss?: string | null;
   beispielDe?: string | null;
   formen: string | null;
+  usage?: string | null;
   intervalDays: number | null;
   dueAt: string | null;
   lapses: number | null;

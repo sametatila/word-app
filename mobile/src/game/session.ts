@@ -20,6 +20,8 @@ export type RoundWord = {
   beispielTr: string | null;
   beispielEn?: string | null;
   formen: string | null;
+  /** Kullanım bilgisi kodları — web `RoundWord.usage`, `lib/usage`. */
+  usage?: string | null;
   /** Almanca karşılık ve örneğin Almancası (İngilizce kurs, Almanca anadil) — web `RoundWord`. */
   deGloss?: string | null;
   beispielDe?: string | null;

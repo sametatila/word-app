@@ -1,12 +1,13 @@
 import { t } from "../lib/i18n";
 import { pluralFormOf } from "../lib/german";
+import { usageCodes } from "../lib/usage";
 
 /**
  * Notun okuduğu ALANLAR kadarı — `RoundWord` da `WordRow` da bunu karşılıyor.
  * Tam tipi istemek, aynı iki alanı taşıyan kelime listesi satırını dışarıda
  * bırakıyordu.
  */
-type GrammarWord = { de: string; artikel: string | null; typ: string; formen: string | null };
+type GrammarWord = { de: string; artikel: string | null; typ: string; formen: string | null; usage?: string | null };
 
 /**
  * Kelimenin dilbilgisi bilgisi — web `components/games/types.ts` içindeki
@@ -35,6 +36,12 @@ export function typLabel(typ: string, tr: string): string {
  * Ham PDF gösterimi ("¨-e", "(Sg.)") yerine öğrencinin okuyabileceği bir metin.
  */
 export function grammarNote(word: GrammarWord): string | null {
+  // Biçim notu ve kullanım bilgisi (hâl, söz dizimi, kayıt) aynı satırda — web `grammarNote`.
+  const parts = [formNote(word), ...usageCodes(word.usage).map((c) => t(`usage.${c}`))].filter(Boolean);
+  return parts.length ? parts.join(" · ") : null;
+}
+
+function formNote(word: GrammarWord): string | null {
   const raw = word.formen?.trim();
   if (!raw) return null;
   if (/^\(?Sg\.?\)?$/i.test(raw)) return t("words.no_plural");

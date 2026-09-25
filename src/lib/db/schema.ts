@@ -45,6 +45,12 @@ export const words = pgTable(
      */
     en: text("en"),
     formen: text("formen"), // gsw kursunda Hochdeutsch köprüsü ("HD: …")
+    /**
+     * Kullanım bilgisi: kapalı kümeden boşlukla ayrılmış kodlar (`lib/usage`):
+     * edatın hâli (dat, akk, gen, wechsel), bağlacın söz dizimi (ns, konj0, pos1),
+     * kayıt (ugs, geh, amtl), İngilizce kursta brit. Kart satırında anadilde.
+     */
+    usage: text("usage"),
     typ: text("typ").notNull(), // Nomen | Verb | Sonstiges
     niveau: text("niveau").notNull(), // A1 | A2 | B1 | B2 | C1
     /**

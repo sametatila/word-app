@@ -6,6 +6,7 @@ import type { ErrorType } from "@/lib/errors";
 import { pluralFormOf } from "@/lib/german";
 import { foldNumbers } from "@/lib/numbers";
 import { foldEnglishSpelling } from "@/lib/en-spelling";
+import { usageCodes } from "@/lib/usage";
 import { translate, type NativeLang } from "@/lib/i18n/dict";
 
 export type GameResult = {
@@ -76,6 +77,12 @@ export function typLabel(typ: string, tr: string, lang: NativeLang): string {
  * Ham PDF gösterimi ("¨-e", "(Sg.)") yerine öğrencinin okuyabileceği bir metin döner.
  */
 export function grammarNote(word: RoundWord, lang: NativeLang): string | null {
+  // Biçim notu ve kullanım bilgisi (hâl, söz dizimi, kayıt) aynı satırda.
+  const parts = [formNote(word, lang), ...usageCodes(word.usage).map((c) => translate(lang, `usage.${c}`))].filter(Boolean);
+  return parts.length ? parts.join(" · ") : null;
+}
+
+function formNote(word: RoundWord, lang: NativeLang): string | null {
   const raw = word.formen?.trim();
   if (!raw) return null;
   if (/^\(?Sg\.?\)?$/i.test(raw)) return translate(lang, "words.no_plural");

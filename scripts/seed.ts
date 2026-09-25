@@ -15,6 +15,7 @@ type Row = {
   tr: string;
   en?: string | null;
   formen: string;
+  usage?: string;
   typ: string;
   niveau: string;
   beispiel: string;
@@ -73,6 +74,7 @@ async function main() {
       tr: m?.tr ?? r.tr,
       en: m?.en ?? r.en ?? null,
       formen: r.formen || null,
+      usage: r.usage || null,
       typ: inferTyp(m ? { ...r, tr: m.tr } : r),
       niveau: r.niveau.startsWith("A1") ? "A1" : r.niveau,
       beispiel: m?.beispiel ?? r.beispiel ?? null,
@@ -95,6 +97,7 @@ async function main() {
           artikel: sql`excluded.artikel`,
           tr: sql`excluded.tr`,
           formen: sql`excluded.formen`,
+          usage: sql`excluded.usage`,
           typ: sql`excluded.typ`,
           niveau: sql`excluded.niveau`,
           en: sql`excluded.en`,

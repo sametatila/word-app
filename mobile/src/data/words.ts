@@ -13,6 +13,8 @@ export type WordRow = {
   /** Tür ("Nomen"/"Verb"/...) ve çoğul kalıbı — `ui/wordGrammar` ile etikete çevrilir. */
   typ: string;
   formen: string | null;
+  /** Kullanım bilgisi kodları (`lib/usage`). */
+  usage?: string | null;
   /** İngilizce karşılık — satırda Türkçenin yanında ayraçla. */
   en?: string | null;
   beispiel?: string | null;

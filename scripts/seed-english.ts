@@ -50,6 +50,8 @@ type Row = {
    * Elle yazılan değer türetilenden önce gelir — açık bilgi çıkarımı yener.
    */
   deGloss?: string;
+  /** Kullanım bilgisi kodları (`lib/usage`): brit, ugs, geh. */
+  usage?: string;
 };
 
 type SrcRow = { id: number; de: string };
@@ -139,6 +141,7 @@ async function main() {
       tr: r.tr,
       en: null,
       formen: null,
+      usage: r.usage || null,
       typ: r.typ,
       niveau: r.niveau,
       beispiel: r.beispiel || null,
@@ -167,6 +170,7 @@ async function main() {
           de: sql`excluded.de`,
           tr: sql`excluded.tr`,
           typ: sql`excluded.typ`,
+          usage: sql`excluded.usage`,
           niveau: sql`excluded.niveau`,
           beispiel: sql`excluded.beispiel`,
           beispielTr: sql`excluded.beispiel_tr`,

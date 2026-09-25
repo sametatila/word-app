@@ -141,6 +141,7 @@
     "report:library": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/report-library.ts",
     "prep:library": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/prep-library-inputs.ts",
     "check:examvocab": "tsx scripts/check-exam-vocab.ts",
+    "check:usage": "tsx scripts/check-usage.ts",
     "check:conversations-vocab": "node data/conversations/vocab/check.mjs",
     "check:conversations-patterns": "node data/conversations/patterns/check.mjs",
     "check:conversations-meta": "node data/conversations/meta/check.mjs",

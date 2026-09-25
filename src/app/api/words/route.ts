@@ -69,6 +69,7 @@ export async function GET(req: Request) {
            isim mi fiil mi olduğunu söyleyemiyordu. */
         typ: words.typ,
         formen: words.formen,
+        usage: words.usage,
         intervalDays: userWords.intervalDays,
         /* Tekrar takvimi de gidiyor: web listesi "tekrar zamanı geldi",
            "3 gün sonra" ve kaç kez unutulduğunu yazıyor, çünkü sunucu
@@ -101,6 +102,7 @@ export async function GET(req: Request) {
       niveau: r.niveau,
       typ: r.typ,
       formen: r.formen,
+      usage: r.usage,
       dueAt: r.intervalDays == null ? null : (r.dueAt ? new Date(r.dueAt).toISOString() : null),
       /* ARALIK DA GİDİYOR. Web listesi "tanıdık" (aralık ≥ 3 gün) ile
          "öğreniyor" ayrımını `intervalDays` üzerinden yapıyor; mobil bu alan

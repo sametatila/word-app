@@ -1731,7 +1731,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
   const fn = (p, name) => {
     const x = strip(read(p));
-    const i = x.indexOf("export function " + name);
+    let i = x.indexOf("export function " + name);
+    if (i < 0) i = x.indexOf("function " + name + "(");
     if (i < 0) return "";
     const j = x.indexOf("\n}", i);
     return x.slice(i, j < 0 ? undefined : j);
@@ -1746,7 +1747,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   ];
   for (const [name, wp, mp] of [
     ["typLabel", "src/components/games/types.ts", "mobile/src/game/wordGrammar.ts"],
-    ["grammarNote", "src/components/games/types.ts", "mobile/src/game/wordGrammar.ts"],
+    /* Biçim notu `formNote`ta; `grammarNote` onu kullanım etiketleriyle birleştiriyor (250). */
+    ["formNote", "src/components/games/types.ts", "mobile/src/game/wordGrammar.ts"],
   ]) {
     const w = fn(wp, name);
     const m = fn(mp, name);
@@ -21671,6 +21673,22 @@ console.log("\n" + C.b + "249. anlamin sesli hali" + C.off);
      kabul listesine koymali, yoksa biri dogru cevabi yanlis sayar. */
   sameList("yuruyus esleri kabul (mobil)", [/spokenMatches\(cands, \[withArtikel\(w\), w\.de, \.\.\.\(w\.alts \?\? \[\]\)\]\)/.test(yurMobil) ? "evet" : "hayir"], ["evet"]);
   sameList("yuruyus esleri kabul (web)", [(yurWeb.match(/spokenMatches\([a-z]+, accepted\)/g) ?? []).length === 2 ? "evet" : "hayir"], ["evet"]);
+}
+
+/* ── 250. kullanim bilgisi ─────────────────────────────────────────────────
+ * Kartin dilbilgisi satiri `usage` kodlarini (hal, soz dizimi, kayit) anadilde
+ * etikete ceviriyor. Kod listesi ve etiketler iki istemcide ayni olmali: biri
+ * bir kodu taniyip oteki tanimazsa ayni kelime iki ekranda farkli bilgi verir. */
+console.log("\n" + C.b + "250. kullanim bilgisi" + C.off);
+{
+  const kodlar = (p) => (read(p).match(/USAGE_CODES = \[([^\]]*)\]/)?.[1] ?? "").replace(/\s+/g, "");
+  sameList("kullanim kodlari", [kodlar("mobile/src/lib/usage.ts")], [kodlar("src/lib/usage.ts")]);
+  const etiket = (p) => [...read(p).matchAll(/"(usage\.[a-z0-9]+)":\s*("(?:[^"\\]|\\.)*")/g)].map((m) => m[1] + "=" + m[2]).sort();
+  for (const l of ["tr", "en", "de"]) sameList("kullanim etiketleri " + l, etiket(`mobile/src/i18n/${l}.ts`), etiket(`src/i18n/base/${l}.ts`));
+  const birlestir = (p) => (/export function grammarNote[\s\S]*?formNote\(word[^)]*\), \.\.\.usageCodes\(word\.usage\)\.map/.test(read(p)) ? "evet" : "hayir");
+  sameList("grammarNote bicim notu + kullanim", [birlestir("mobile/src/game/wordGrammar.ts")], [birlestir("src/components/games/types.ts")]);
+  const kodSay = kodlar("src/lib/usage.ts").split(",").filter(Boolean).length;
+  for (const l of ["tr", "en", "de"]) sameList("her koda etiket " + l, [String(etiket(`src/i18n/base/${l}.ts`).length)], [String(kodSay)]);
 }
 
 /* ── 400. YONLENDIRME GENEL ADRESE ─────────────────────────────────────────
