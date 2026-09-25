@@ -191,7 +191,7 @@ export const enC1P18: SkillExercise[] = [
         text: "When is the parents' evening?",
         options: [],
         answer: 0,
-        accept: ["the fourteenth of May", "14 May", "May the fourteenth", "on the fourteenth of May"],
+        accept: ["the fourteenth of May", "14 May", "14th May", "the 14th of May", "May 14", "May 14th", "May the fourteenth", "on the fourteenth of May", "on 14 May"],
         explain: "„A parents' evening on the changes is set for the fourteenth of May.“",
       },
       {
@@ -389,7 +389,7 @@ export const enC1P18: SkillExercise[] = [
         explain: "„on the point of“ + -ing.",
       },
       {
-        text: "We are ___ to send the invitations — they are ready now.",
+        text: "We are ___ to send the invitations — any minute now.",
         options: ["about", "due", "set"],
         answer: 0,
         explain: "Çok yakın gelecek: „be about to“.",

@@ -40,7 +40,7 @@ export const deC1P15: SkillExercise[] = [
       "Fachleute begegneten dem Projekt anfangs mit Misstrauen. Laien, so der Einwand, " +
       "verwechselten Arten, zählten denselben Vogel zweimal und meldeten bevorzugt, was sie " +
       "gern sähen. Tatsächlich zeigen Kontrollen, dass seltene Arten deutlich zu häufig gemeldet " +
-      "werden: Wer einen Buntspecht zu sehen glaubt, meldet ihn, auch wenn es ein Kleiber war.\n\n" +
+      "werden: Wer einen Eisvogel zu sehen glaubt, meldet ihn, auch wenn es eine Blaumeise war.\n\n" +
       "Und doch hat sich die Zählung als erstaunlich brauchbar erwiesen. Der Grund liegt nicht " +
       "in der Genauigkeit des Einzelnen, sondern in der Menge. Fehler, die zufällig auftreten, " +
       "gleichen sich über Tausende Meldungen weitgehend aus. Was übrig bleibt, sind Trends, und " +
@@ -96,7 +96,7 @@ export const deC1P15: SkillExercise[] = [
         text: "Warum stiegen die Meldungen des Haussperlings plötzlich an?",
         options: [],
         answer: 0,
-        accept: ["mehr Menschen achteten auf ihn", "wegen der Medienberichte", "mehr Aufmerksamkeit"],
+        accept: ["mehr Menschen achteten auf ihn", "wegen der Medienberichte", "mehr Aufmerksamkeit", "weil mehr Menschen auf ihn achteten", "weil mehr Menschen auf Spatzen achteten", "wegen Medienberichten"],
         explain: "Serçe sayısı artmamıştı; haberler yüzünden daha çok insan onlara dikkat ediyordu.",
       },
       {
@@ -179,7 +179,7 @@ export const deC1P15: SkillExercise[] = [
         text: "Wann sind die Werte bei Frau Reiter schlecht?",
         options: [],
         answer: 0,
-        accept: ["wenn die Nachbarn Kamine anmachen", "wenn die Kamine brennen", "wenn die Nachbarn heizen"],
+        accept: ["wenn die Nachbarn Kamine anmachen", "wenn die Kamine brennen", "wenn die Nachbarn heizen", "wenn die Nachbarn ihre Kamine anmachen"],
         explain: "Komşular şömineyi yaktığında onun balkonundaki değerler kötüleşiyor.",
       },
       {

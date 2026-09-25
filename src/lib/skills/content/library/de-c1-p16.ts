@@ -426,7 +426,7 @@ export const deC1P16: SkillExercise[] = [
         text: "Cümleyi doğru sıraya diz.",
         options: [],
         answer: 0,
-        items: ["Wir", "haben", "lange gesprochen", "über die Risiken"],
+        items: ["Wir", "haben", "lange", "gesprochen über die Risiken"],
         explain: "Edat öbeği vurgu için çerçevenin arkasına alınmış: Ausklammerung.",
       },
       {

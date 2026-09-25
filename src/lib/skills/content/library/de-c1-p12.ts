@@ -120,7 +120,7 @@ export const deC1P12: SkillExercise[] = [
     skill: "listening",
     title: "Gespräch: Der Saal und seine Regeln",
     genre: "interview",
-    intro: "Bir radyo söyleşisi: bir orkestra şefi salon kurallarını gevşeten yeni konser dizisini ve bunun bedelini anlatıyor.",
+    intro: "Bir radyo söyleşisi: bir orkestra şefi salon kurallarını üç sezondur gevşeten konser dizisini ve bunun bedelini anlatıyor.",
     gloss: [
       { de: "die Dirigentin", tr: "orkestra şefi", en: "conductor" },
       { de: "lockern", tr: "gevşetmek", en: "to relax" },
@@ -131,7 +131,7 @@ export const deC1P12: SkillExercise[] = [
     ],
     minutes: 10,
     segments: [
-      { speaker: "Herr Brenner", text: "Frau Albrecht, Ihr Orchester hat angekündigt, bei einer neuen Konzertreihe die Regeln im Saal zu lockern. Was heißt das konkret?" },
+      { speaker: "Herr Brenner", text: "Frau Albrecht, Ihr Orchester lockert seit drei Spielzeiten bei einer eigenen Konzertreihe die Regeln im Saal. Was heißt das konkret?" },
       { speaker: "Frau Albrecht", text: "Man darf klatschen, wann man möchte, man darf ein Getränk mit in den Saal nehmen, und die Konzerte dauern höchstens siebzig Minuten, ohne Pause." },
       { speaker: "Herr Brenner", text: "Viele Stammgäste empfinden das als Zumutung. Sie fürchten, dass die Aufmerksamkeit leidet und aus dem Konzertsaal eine Bar wird." },
       { speaker: "Frau Albrecht", text: "Die Sorge verstehe ich. Aber wer einmal einen Mitschnitt von einem gewöhnlichen Abend gehört hat, weiß, wie laut ein angeblich stilles Publikum ist: Husten, Bonbonpapier, raschelnde Programmhefte." },
@@ -185,7 +185,7 @@ export const deC1P12: SkillExercise[] = [
         text: "Auf welche Regeln verzichtet Frau Albrecht?",
         options: [],
         answer: 0,
-        accept: ["auf Regeln, die niemand erklärt", "unerklärte Regeln", "Regeln, die niemand erklärt"],
+        accept: ["auf Regeln, die niemand erklärt", "unerklärte Regeln", "Regeln, die niemand erklärt", "auf unerklärte Regeln", "Regeln, die man erraten muss"],
         explain: "Görülebilen kuralı kabul ediyor; kimsenin açıklamadığı kuraldan vazgeçiyor.",
       },
       {
@@ -249,7 +249,7 @@ export const deC1P12: SkillExercise[] = [
         ],
         sample:
           "Sehr geehrte Frau Seeger, vielen Dank, dass Sie uns so offen schreiben — nach " +
-          "einunddreißig Jahren im Abonnement haben Sie jedes Recht dazu. " +
+          "dreißig Jahren im Abonnement haben Sie jedes Recht dazu. " +
           "Ihren Zeilen entnehme ich, dass es Ihnen weniger um das Klatschen selbst geht als um " +
           "den Eindruck, dass Ihr Haus Sie gegen ein anderes Publikum eintauscht. Sie fragen, " +
           "ob wir unser treues Publikum etwa nicht mehr wollen. Doch, und gerade Sie. " +
@@ -260,7 +260,7 @@ export const deC1P12: SkillExercise[] = [
           "Dass wir dennoch an der Reihe festhalten, hat einen Grund: Ein Drittel der Besucher " +
           "kommt dort zum ersten Mal zu uns, und manche von ihnen sitzen später in Ihren " +
           "Konzerten. Ihre Beschwerde übergehen wir trotzdem nicht: Wir werden die Reihe " +
-          "künftig im Spielplan deutlich kennzeichnen, und es sei darauf hingewiesen, dass die " +
+          "im Spielplan deutlich kennzeichnen, und es sei darauf hingewiesen, dass die " +
           "Plätze der Abonnenten künftig reserviert bleiben. Wie dem auch sei, Sie sollen sich in " +
           "Ihrem Haus weiterhin zu Hause fühlen. " +
           "Als kleinen Ausgleich möchten wir Ihnen zwei Karten für ein Konzert Ihrer Wahl " +
@@ -361,7 +361,7 @@ export const deC1P12: SkillExercise[] = [
         examples: [
           { de: "Es sei darauf hingewiesen, dass Aufnahmen nicht gestattet sind.", tr: "Kayıt yapılmasına izin verilmediği hatırlatılır.", note: "duyuru" },
           { de: "Für alle Konzerte gelte dieselbe Regel.", tr: "Bütün konserler için aynı kural geçerli olsun.", note: "kural koymak" },
-          { de: "Sei es im Theater, sei es im Konzert: Die Pause gehört dazu.", tr: "İster tiyatroda ister konserde: sessizlik işin parçasıdır.", note: "sei es … sei es" },
+          { de: "Sei es im Theater, sei es im Konzert: Die Pause gehört dazu.", tr: "İster tiyatroda ister konserde: ara işin parçasıdır.", note: "sei es … sei es" },
         ],
       },
     ],

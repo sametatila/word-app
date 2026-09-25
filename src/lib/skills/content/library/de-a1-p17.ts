@@ -44,7 +44,7 @@ export const deA1P17: SkillExercise[] = [
         text: "Was sucht Carlos?",
         options: ["eine Wohnung in Leipzig", "eine Arbeit in einem Hotel", "einen Partner für Deutsch und Spanisch"],
         answer: 2,
-        explain: "Oda ve işi zaten var; „Ich suche eine Partnerin oder einen Partner für ein Tandem“.",
+        explain: "Leipzig'de oturuyor ve işi zaten var; „Ich suche eine Partnerin oder einen Partner für ein Tandem“.",
       },
       {
         text: "Was ist für Carlos noch schwer?",
@@ -302,7 +302,7 @@ export const deA1P17: SkillExercise[] = [
           {
             heard: [],
             fix: "„schau“ tek hece: ŞAU. Sona v ya da ekstra ünlü ekleme.",
-            expected: "draußen",
+            expected: "schau",
           },
         ],
       },

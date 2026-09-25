@@ -298,7 +298,7 @@ export const deA2P18: SkillExercise[] = [
         confusions: [
           {
             heard: [],
-            fix: "genau'yu yükselirsen „emin misin?“ gibi soru olur; onaylarken net bir düşüş gerekir.",
+            fix: "genau'yu yükseltirsen „emin misin?“ gibi soru olur; onaylarken net bir düşüş gerekir.",
             expected: "Genau",
           },
         ],
@@ -433,8 +433,8 @@ export const deA2P18: SkillExercise[] = [
         text: "Cümleyi doğru sıraya diz.",
         options: [],
         answer: 0,
-        items: ["Nein,", "ich", "habe", "leider", "keinen"],
-        explain: "Fiil ikinci sırada, keinen isim yerine sonda duruyor.",
+        items: ["Nein,", "ich", "habe", "keinen", "dabei"],
+        explain: "Fiil ikinci sırada; keinen ismin yerini tutuyor: Nein, ich habe keinen dabei.",
       },
       {
         kind: "truefalse",

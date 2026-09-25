@@ -35,7 +35,7 @@ export const enA2P20: SkillExercise[] = [
         tr: "Haftaya görüşürüz.",
         hint: "„next“ = NEKST: k, s, t üst üste; t'yi yutma, ardından hemen „week“ gelsin.",
         confusions: [
-          { heard: ["See you nex week", "see you necks week"], fix: "Son t'yi hafif de olsa söyle; sona ünlü ekleme.", expected: "next" },
+          { heard: ["see you necks week"], fix: "Son t'yi hafif de olsa söyle; sona ünlü ekleme.", expected: "next" },
         ],
       },
       {
@@ -43,7 +43,7 @@ export const enA2P20: SkillExercise[] = [
         tr: "Sana iki mesaj attım.",
         hint: "„texts“ = TEKSTS. Zorlanırsan ortadaki t'yi hafif söyle ama sona ı ekleme: teksts, tekstıs değil.",
         confusions: [
-          { heard: ["I sent you two tex", "I sent you two texes"], fix: "Kümeyi bozma: k-s-t-s tek nefeste.", expected: "texts" },
+          { heard: ["I sent you two tex"], fix: "Kümeyi bozma: k-s-t-s tek nefeste.", expected: "texts" },
         ],
       },
       {
@@ -59,7 +59,7 @@ export const enA2P20: SkillExercise[] = [
         tr: "Soldaki ilk masa.",
         hint: "„first“ ST, „desk“ SK, „left“ FT ile biter. Hiçbirinin sonuna ünlü ekleme.",
         confusions: [
-          { heard: ["It's the firs desk on the lef"], fix: "Son t'leri düşürürsen kelimeler yarım kalır.", expected: "first" },
+          { heard: [], fix: "Son t'leri düşürürsen kelimeler yarım kalır.", expected: "first" },
         ],
       },
       {

@@ -84,7 +84,7 @@ export const enB1P17: SkillExercise[] = [
         text: "What helped them find the stones the second time?",
         options: [],
         answer: 0,
-        accept: ["a stream", "the stream", "the sound of the water"],
+        accept: ["a stream", "the stream", "the sound of the water", "the sound of water", "a stream that crossed the path"],
         explain: "Joe yolu kesen bir dereyi hatırlamış; suyun sesini takip etmişler.",
       },
       {

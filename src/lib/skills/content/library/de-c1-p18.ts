@@ -43,8 +43,8 @@ export const deC1P18: SkillExercise[] = [
       "Was nicht funktioniert hat, gehört ebenso in eine Bilanz. Unsere Annahme, dass die " +
       "Leute Dinge zurückbringen, ohne dass man sie daran erinnern muss, war zu optimistisch. " +
       "Etwa jede zehnte Ausleihe kam verspätet zurück, einige gar nicht. Gelöst haben wir das " +
-      "nicht, indem wir Strafen eingeführt haben, sondern dadurch, dass jede Ausleihe jetzt mit " +
-      "einer kurzen Nachricht am Vortag endet. Seitdem sind die Verspätungen um mehr als die " +
+      "nicht, indem wir Strafen eingeführt haben, sondern dadurch, dass jetzt am Tag vor jeder " +
+      "Rückgabe eine kurze Erinnerung verschickt wird. Seitdem sind die Verspätungen um mehr als die " +
       "Hälfte zurückgegangen.\n\n" +
       "Überrascht hat uns auch, wer kommt. Wir hatten mit Studierenden gerechnet; gekommen " +
       "sind vor allem Familien und ältere Menschen. Viele bleiben nach der Rückgabe noch eine " +
@@ -249,7 +249,7 @@ export const deC1P18: SkillExercise[] = [
           "Der Ablauf ist bewusst einfach gehalten: Wer Mitglied wird, kann bis zu drei " +
           "Gegenstände für eine Woche ausleihen; alle Ausleihen werden digital erfasst, und am " +
           "Vortag der Rückgabe bekommt jedes Mitglied eine Erinnerung geschickt. Hohe Gebühren verlangen wir " +
-          "nicht; stattdessen setzen wir auf ehrenamtliche Mitarbeit; zwölf Personen haben bereits zugesagt. " +
+          "nicht; stattdessen setzen wir auf ehrenamtliche Mitarbeit: Zwölf Personen haben bereits zugesagt. " +
           "Das größte Risiko sehen wir darin, dass teure Geräte beschädigt oder nicht " +
           "zurückgegeben werden. Wir begegnen dem, indem wir für Geräte über hundert Euro eine " +
           "Kaution verlangen und eine Haftpflichtversicherung abschließen; andernfalls würde " +

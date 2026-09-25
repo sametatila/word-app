@@ -227,7 +227,7 @@ export const enA2P13: SkillExercise[] = [
           "minutes. Mert doesn't eat tomatoes, so give him the blue bowl. After dinner they are allowed to watch one " +
           "film, but not on the tablets. They can wash and dress themselves, but please check their teeth. They have to " +
           "be in bed by half past eight. Duru always asks for one more story, and one is enough. If there is a problem, " +
-          "call me on 0532 118 40 27. If you can't reach me, call Mrs. Hale in flat four. We'll be back at eleven. Thanks! Aylin",
+          "call me on 0532 118 40 27. If you can't reach me, call Mrs Hale in flat four. We'll be back at eleven. Thanks! Aylin",
       },
     ],
   },
@@ -254,7 +254,7 @@ export const enA2P13: SkillExercise[] = [
         tr: "Bu sandalye çok rahat.",
         hint: "„comfortable“ = KAMF-tı-bıl, üç hece. Ortadaki „or“ hiç okunmaz.",
         confusions: [
-          { heard: ["This chair is very comfor table", "this chair is very come for table"], fix: "Dört heceyi tek tek okuma; ortadaki hece düşer: kamftıbıl.", expected: "comfortable" },
+          { heard: ["this chair is very come for table"], fix: "Dört heceyi tek tek okuma; ortadaki hece düşer: kamftıbıl.", expected: "comfortable" },
         ],
       },
       {
@@ -262,7 +262,7 @@ export const enA2P13: SkillExercise[] = [
         tr: "Biraz sebzeye ihtiyacımız var.",
         hint: "„vegetables“ = VEC-tı-bılz, üç hece. İkinci e yazılır ama söylenmez.",
         confusions: [
-          { heard: ["We need some vege tables"], fix: "Kelimeyi „vege + table“ diye bölme; vec-tı-bılz tek parça.", expected: "vegetables" },
+          { heard: [], fix: "Kelimeyi „vege + table“ diye bölme; vec-tı-bılz tek parça.", expected: "vegetables" },
         ],
       },
       {
@@ -270,7 +270,7 @@ export const enA2P13: SkillExercise[] = [
         tr: "Her aile farklıdır.",
         hint: "„every“ = EV-ri, „family“ = FEM-li, „different“ = DİF-rınt. Üçü de bir hece kaybeder.",
         confusions: [
-          { heard: ["Ever y fam i ly is dif fer ent"], fix: "Heceleri saymak yerine kelimeyi tek vuruşla söyle: evri, femli, difrınt.", expected: "different" },
+          { heard: [], fix: "Heceleri saymak yerine kelimeyi tek vuruşla söyle: evri, femli, difrınt.", expected: "different" },
         ],
       },
       {
@@ -278,7 +278,7 @@ export const enA2P13: SkillExercise[] = [
         tr: "İlginç bir akşamdı.",
         hint: "„interesting“ = İN-trıs-tiŋ, „evening“ = İİV-niŋ. Vurgusuz ünlüler düşer.",
         confusions: [
-          { heard: ["It was an inter esting eve ning"], fix: "„evening“ iki hece: iiv-niŋ; „interesting“ üç: in-trıs-tiŋ.", expected: "interesting" },
+          { heard: [], fix: "„evening“ iki hece: iiv-niŋ; „interesting“ üç: in-trıs-tiŋ.", expected: "interesting" },
         ],
       },
       {
@@ -286,7 +286,7 @@ export const enA2P13: SkillExercise[] = [
         tr: "Bu restoran pahalı mı?",
         hint: "„restaurant“ = RES-trant, iki hece. „au“ harfleri ayrı bir hece yapmaz.",
         confusions: [
-          { heard: ["Is this res tau rant expensive"], fix: "Üç hece yapma; iki hece yeter: restrant.", expected: "restaurant" },
+          { heard: [], fix: "Üç hece yapma; iki hece yeter: restrant.", expected: "restaurant" },
         ],
       },
       {
@@ -294,7 +294,7 @@ export const enA2P13: SkillExercise[] = [
         tr: "Onu genelde çarşamba görürüm.",
         hint: "„usually“ = YUU-jı-li, „Wednesday“ = WENZ-dey. İkisinde de yazılan bir parça söylenmez.",
         confusions: [
-          { heard: ["I usu al ly see her on wed nes day"], fix: "Wednesday'deki ilk d ve ortadaki e okunmaz: wenzdey.", expected: "Wednesday" },
+          { heard: [], fix: "Wednesday'deki ilk d ve ortadaki e okunmaz: wenzdey.", expected: "Wednesday" },
         ],
       },
     ],
@@ -338,7 +338,7 @@ export const enA2P13: SkillExercise[] = [
       },
       {
         heading: "each other ve zamirsiz fiiller",
-        tr: "İki kişi aynı şeyi birbirine yapıyorsa „each other“ gelir: „They help each other.“ Ayrıca Türkçede „-n-“ eki alan bazı fiiller İngilizcede zamir almaz: wash, dress, feel, relax. „I feel myself tired“ yanlıştır.",
+        tr: "İki kişi aynı şeyi birbirine yapıyorsa „each other“ gelir: „They help each other.“ Ayrıca Türkçede „-n-“ eki alan bazı fiiller İngilizcede genelde zamir almaz: wash, dress, relax („I washed and dressed“). Küçük bir çocuğun bunu kendi başına yapabildiği vurgulanırken „dress themselves“ denebilir. „feel“ ise hiç almaz: „I feel myself tired“ yanlıştır.",
         examples: [
           { de: "Ali and Sara help each other with homework.", tr: "Ali ile Sara ödevde birbirine yardım ediyor." },
           { de: "We wrote to each other every week.", tr: "Her hafta birbirimize yazdık." },
@@ -383,11 +383,11 @@ export const enA2P13: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "The children dressed ___ this morning.",
+        text: "The children are only four, but they can dress ___.",
         options: [],
         answer: 0,
         accept: ["themselves"],
-        explain: "Çocuklar kendilerini giydirdi: they → themselves.",
+        explain: "Küçük çocukların kendi başına giyinebildiği vurgulanıyor: they → themselves.",
       },
       {
         kind: "gapfill",

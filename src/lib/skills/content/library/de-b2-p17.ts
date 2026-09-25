@@ -118,7 +118,7 @@ export const deB2P17: SkillExercise[] = [
     gloss: [
       { de: "vernetzen", tr: "ağa bağlamak", en: "to network" },
       { de: "die Heizung", tr: "kalorifer", en: "heating" },
-      { de: "steuern", tr: "yönlendirmek", en: "to control" },
+      { de: "steuern", tr: "kontrol etmek", en: "to control" },
       { de: "der Schalter", tr: "şalter", en: "switch" },
       { de: "die Abhängigkeit", tr: "bağımlılık", en: "dependence" },
       { de: "der Lautsprecher", tr: "hoparlör", en: "speaker" },
@@ -176,7 +176,7 @@ export const deB2P17: SkillExercise[] = [
         text: "Womit sollte man laut Frau Weber anfangen?",
         options: [],
         answer: 0,
-        accept: ["mit einer einzigen Sache", "einer einzigen Sache", "mit einer Sache"],
+        accept: ["mit einer einzigen Sache", "einer einzigen Sache", "mit einer Sache", "eine einzige Sache", "mit einer Sache, die nervt", "mit einer einzigen Sache, die wirklich nervt"],
         explain: "Her şeyi birden değil, gerçekten sinir bozan tek bir şeyle başlamak.",
       },
       {
@@ -381,7 +381,7 @@ export const deB2P17: SkillExercise[] = [
         text: "Du ___ dein Passwort niemandem sagen.",
         options: [],
         answer: 0,
-        accept: ["darfst"],
+        accept: ["darfst", "sollst", "solltest"],
         explain: "Şifreyi paylaşmak yasak: nicht dürfen (burada niemandem ile).",
       },
       {

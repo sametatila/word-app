@@ -91,7 +91,7 @@ export const deB2P16: SkillExercise[] = [
         text: "Wo bekommt man Hilfe, wenn man den Überblick verloren hat?",
         options: [],
         answer: 0,
-        accept: ["bei einer Schuldnerberatung", "Schuldnerberatung", "bei der Schuldnerberatung"],
+        accept: ["bei einer Schuldnerberatung", "Schuldnerberatung", "bei der Schuldnerberatung", "Schuldnerberatungen", "bei Schuldnerberatungen"],
         explain: "Borç danışmanlıkları ücretsiz ve gizli yardım veriyor.",
       },
       {
@@ -180,7 +180,7 @@ export const deB2P16: SkillExercise[] = [
         text: "Was soll Herr Lang seinem Schreiben beilegen?",
         options: [],
         answer: 0,
-        accept: ["eine Kopie des Protokolls", "das Übergabeprotokoll", "das Protokoll"],
+        accept: ["eine Kopie des Protokolls", "das Übergabeprotokoll", "das Protokoll", "Kopie des Protokolls", "eine Kopie des Übergabeprotokolls", "Protokoll", "Übergabeprotokoll"],
         explain: "Hasar olmadığını gösteren teslim tutanağının bir kopyası.",
       },
       {

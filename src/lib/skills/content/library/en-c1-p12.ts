@@ -357,7 +357,7 @@ export const enC1P12: SkillExercise[] = [
       },
       {
         heading: "not necessarily ve I don't think",
-        tr: "„not necessarily“, „not always“ ve „not entirely“ bir iddiayı tümden reddetmez, yalnız zorunluluğunu ya da genelliğini kaldırır: „It is not necessarily a crisis.“ İngilizcede olumsuzluk ayrıca ana fiile taşınır: „I don't think it will work“ doğaldır, „I think it won't work“ daha serttir. Türkçede genelde ikinci biçim söylenir.",
+        tr: "„not necessarily“, „not always“ ve „not entirely“ bir iddiayı tümden reddetmez, yalnız zorunluluğunu ya da genelliğini kaldırır: „It is not necessarily a crisis.“ İngilizcede olumsuzluk ayrıca ana fiile taşınır: „I don't think it will work“ doğaldır, „I think it won't work“ daha serttir. Türkçede „bence işe yaramaz“ demek çok doğal olduğu için ikinci biçime kaymak kolaydır.",
         examples: [
           { de: "It is not necessarily a crisis.", tr: "Bu illa ki bir kriz değil.", note: "zorunluluk kalkıyor" },
           { de: "I'm not entirely convinced.", tr: "Tamamen ikna olmuş değilim.", note: "kısmi" },
@@ -366,7 +366,7 @@ export const enC1P12: SkillExercise[] = [
       },
       {
         heading: "no longer, not any more, hardly any",
-        tr: "„no longer“ bir durumun sona erdiğini bildirir ve yardımcı fiilden sonra, ana fiilden önce durur; „not … any more“ aynı anlamın gündelik biçimidir ve cümle sonuna gider. „hardly any“ ise miktarı neredeyse sıfıra indirir: „Hardly any of it can be cut.“ Bu kullanım devrik yapı gerektirmez, çünkü „hardly“ cümle başında değil bir isim öbeğinin içindedir.",
+        tr: "„no longer“ bir durumun sona erdiğini bildirir ve yardımcı fiilden sonra, ana fiilden önce durur; „not … any more“ aynı anlamın gündelik biçimidir ve cümle sonuna gider. „hardly any“ ise miktarı neredeyse sıfıra indirir: „Hardly any of it can be cut.“ Bu kullanım cümle başında bile devrik yapı gerektirmez, çünkü „hardly“ burada cümleyi değil öznenin içindeki „any“yi niteler.",
         examples: [
           { de: "Six of them are no longer on the rota.", tr: "Altısı artık çizelgede değil.", note: "resmî" },
           { de: "They don't come to meetings any more.", tr: "Artık toplantılara gelmiyorlar.", note: "gündelik" },

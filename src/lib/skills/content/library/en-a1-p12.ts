@@ -75,7 +75,7 @@ export const enA1P12: SkillExercise[] = [
         text: "When is the fresh bread ready?",
         options: [],
         answer: 0,
-        accept: ["at half past seven", "half past seven", "7.30", "at 7.30", "seven thirty"],
+        accept: ["at half past seven", "half past seven", "7.30", "at 7.30", "7:30", "at 7:30", "seven thirty"],
         explain: "„The fresh bread is ready at half past seven.“",
       },
       {
@@ -144,7 +144,7 @@ export const enA1P12: SkillExercise[] = [
         text: "When is breakfast?",
         options: [],
         answer: 0,
-        accept: ["from seven to ten", "seven to ten", "from 7 to 10", "7 to 10"],
+        accept: ["from seven to ten", "seven to ten", "from 7 to 10", "7 to 10", "from seven to ten in the morning"],
         explain: "„From seven to ten, in the room next to reception.“",
       },
       {
@@ -283,7 +283,7 @@ export const enA1P12: SkillExercise[] = [
         tr: "Kralın altın bir yüzüğü var.",
         hint: "„king“ ve „ring“ aynı sesle biter; sonda k ya da g yok.",
         confusions: [
-          { heard: ["kink", "rink"], fix: "„ring“ k ile biterse „rink“ (buz pisti) olur; sesi burunda bırak.", expected: "ring" },
+          { heard: ["rink"], fix: "„ring“ k ile biterse „rink“ (buz pisti) olur; sesi burunda bırak.", expected: "ring" },
         ],
       },
     ],

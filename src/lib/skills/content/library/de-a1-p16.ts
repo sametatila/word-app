@@ -237,11 +237,11 @@ export const deA1P16: SkillExercise[] = [
       {
         de: "Ich kaufe ein und dann koche ich.",
         tr: "Alışveriş yapıyorum, sonra yemek pişiriyorum.",
-        hint: "„und dann“: iki d buluşur, tek ve biraz uzun bir d söylenir: un-DAN.",
+        hint: "„und dann“: und'un sonundaki d, t gibi okunur ve dann'ın d'siyle aynı yerde oluşur; ikisi tek ve biraz uzun bir ses olur: un-DAN.",
         confusions: [
           {
             heard: [],
-            fix: "İki d arasında durup araya ı ekleme; dil yerinde kalır, ses kesilmez.",
+            fix: "İki ses arasında durup araya ı ekleme; dil yerinde kalır, ses kesilmez.",
             expected: "und dann",
           },
         ],
@@ -381,7 +381,7 @@ export const deA1P16: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["mich"],
-        explain: "„für“dan sonra zamir de belirtme hâlinde: ich → mich.",
+        explain: "„für“den sonra zamir de belirtme hâlinde: ich → mich.",
       },
       {
         kind: "gapfill",
@@ -397,7 +397,7 @@ export const deA1P16: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["dich"],
-        explain: "„ohne“dan sonra zamir belirtme hâlinde: du → dich.",
+        explain: "„ohne“den sonra zamir belirtme hâlinde: du → dich.",
       },
       {
         kind: "gapfill",
@@ -412,8 +412,8 @@ export const deA1P16: SkillExercise[] = [
         text: "Cümleyi doğru sıraya diz.",
         options: [],
         answer: 0,
-        items: ["Ich", "kaufe", "Blumen", "für", "meinen Vater"],
-        explain: "Fiil ikinci sırada; „für“dan sonra eril isim belirtme hâlinde: für meinen Vater.",
+        items: ["Die Blumen", "sind", "für", "meinen Vater"],
+        explain: "Fiil ikinci sırada; „für“den sonra eril isim belirtme hâlinde: für meinen Vater.",
       },
       {
         kind: "truefalse",

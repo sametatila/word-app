@@ -85,7 +85,7 @@ export const enB1P11: SkillExercise[] = [
         text: "Who told the fire service where they were?",
         options: [],
         answer: 0,
-        accept: ["the man on the phone", "the young man", "the man from the top floor"],
+        accept: ["the man on the phone", "the young man", "the man from the top floor", "a young man", "the young man from the top floor"],
         explain: "„The man on the phone told the fire service where we were.“",
       },
       {

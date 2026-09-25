@@ -83,7 +83,7 @@ export const deB1P13: SkillExercise[] = [
         text: "Was würde Feld heute vor dem Wechsel machen?",
         options: [],
         answer: 0,
-        accept: ["ein Praktikum", "ein Praktikum machen", "Praktikum"],
+        accept: ["ein Praktikum", "ein Praktikum machen", "Praktikum", "vorher ein Praktikum machen", "ein Praktikum vorher"],
         explain: "„Aber ich würde vorher ein Praktikum machen, nicht nur zwei Probetage wie ich.“",
       },
       {
@@ -141,7 +141,7 @@ export const deB1P13: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "Frau Barth findet ihr Studium im Rückblick nicht verloren.",
+        text: "Frau Barth hält ihr Studium im Rückblick nicht für verlorene Zeit.",
         options: ["Richtig", "Falsch"],
         answer: 0,
         explain: "„Beide Entscheidungen würde ich wieder treffen“ — üniversite ona ne istemediğini göstermiş.",
@@ -159,7 +159,7 @@ export const deB1P13: SkillExercise[] = [
         text: "Worüber hat keiner der vier gesprochen?",
         options: [],
         answer: 0,
-        accept: ["über das Geld", "das Geld", "Geld"],
+        accept: ["über das Geld", "das Geld", "Geld", "übers Geld"],
         explain: "„Niemand hat über das Geld gesprochen, aber alle über die Zeit.“",
       },
       {

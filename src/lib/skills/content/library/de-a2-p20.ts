@@ -427,7 +427,7 @@ export const deA2P20: SkillExercise[] = [
         text: "Cümleyi doğru sıraya diz.",
         options: [],
         answer: 0,
-        items: ["Ich", "lerne", "erst seit drei Monaten", "Deutsch"],
+        items: ["Erst seit drei Monaten", "lerne", "ich", "Deutsch"],
         explain: "erst zaman öbeğinin önüne gelir: erst seit drei Monaten, „daha üç aydır“.",
       },
       {

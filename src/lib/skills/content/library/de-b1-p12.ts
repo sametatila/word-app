@@ -82,7 +82,7 @@ export const deB1P12: SkillExercise[] = [
         text: "Wann geht die Autorin heute schwimmen?",
         options: [],
         answer: 0,
-        accept: ["jeden Sonntag früh", "sonntags früh", "am Sonntag früh", "sonntags"],
+        accept: ["jeden Sonntag früh", "sonntags früh", "am Sonntag früh", "sonntags", "jeden Sonntag", "am Sonntag", "sonntagmorgens", "am Sonntagmorgen", "jeden Sonntagmorgen"],
         explain: "„Seitdem gehe ich jeden Sonntag früh ins Bad, bevor es voll wird.“",
       },
       {
@@ -168,7 +168,7 @@ export const deB1P12: SkillExercise[] = [
         text: "Wie lange gilt die Karte?",
         options: [],
         answer: 0,
-        accept: ["ein Jahr", "1 Jahr", "ein ganzes Jahr"],
+        accept: ["ein Jahr", "1 Jahr", "ein ganzes Jahr", "ein Jahr lang"],
         explain: "„Die Karte gilt ein Jahr.“",
       },
       {

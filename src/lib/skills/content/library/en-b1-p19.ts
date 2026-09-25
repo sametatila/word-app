@@ -86,7 +86,7 @@ export const enB1P19: SkillExercise[] = [
         text: "Who wrote the note about the bins?",
         options: [],
         answer: 0,
-        accept: ["Pat", "the neighbor", "the writer's neighbor"],
+        accept: ["Pat", "the neighbor", "the writer's neighbor", "a neighbor", "her neighbor Pat", "the neighbor Pat", "his neighbor Pat"],
         explain: "„my neighbor Pat, who wrote the note about the bins“.",
       },
       {
@@ -168,7 +168,7 @@ export const enB1P19: SkillExercise[] = [
         text: "What should you do if the river water is brown?",
         options: [],
         answer: 0,
-        accept: ["stay out", "stay out of the river", "not swim"],
+        accept: ["stay out", "stay out of the river", "not swim", "stay out of the water", "don't swim", "not swim in it"],
         explain: "„If the water is brown, stay out.“",
       },
       {

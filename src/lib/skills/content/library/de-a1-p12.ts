@@ -75,7 +75,7 @@ export const deA1P12: SkillExercise[] = [
         text: "Wann arbeitet man am Samstag?",
         options: [],
         answer: 0,
-        accept: ["von acht bis dreizehn Uhr", "von 8 bis 13 Uhr", "acht bis dreizehn Uhr"],
+        accept: ["von acht bis dreizehn Uhr", "von 8 bis 13 Uhr", "acht bis dreizehn Uhr", "8 bis 13 Uhr", "von acht Uhr bis dreizehn Uhr", "von 8 Uhr bis 13 Uhr"],
         explain: "„Samstag von acht bis dreizehn Uhr“; cuma günü saatler farklı.",
       },
       {
@@ -342,7 +342,7 @@ export const deA1P12: SkillExercise[] = [
       },
       {
         heading: "am: günler ve günün bölümleri",
-        tr: "„am“, „an dem“ın kısa biçimidir. Günler, hafta sonu ve günün bölümleri (Morgen, Nachmittag, Abend) „am“ ile söylenir. Tek istisna gecedir: „in der Nacht“.",
+        tr: "„am“, „an dem“in kısa biçimidir. Günler, hafta sonu ve günün bölümleri (Morgen, Nachmittag, Abend) „am“ ile söylenir. Tek istisna gecedir: „in der Nacht“.",
         examples: [
           { de: "Am Wochenende schlafe ich lange.", tr: "Hafta sonu uzun uyurum.", note: "am Wochenende" },
           { de: "Wir essen am Abend zusammen.", tr: "Akşam birlikte yemek yiyoruz.", note: "günün bölümü → am" },

@@ -71,7 +71,7 @@ export const deA1P13: SkillExercise[] = [
         text: "Wo stehen die Fahrräder?",
         options: [],
         answer: 0,
-        accept: ["hinter dem Haus", "hinten am Haus"],
+        accept: ["hinter dem Haus", "hinten am Haus", "hinterm Haus"],
         explain: "„Fahrräder stehen hinter dem Haus.“",
       },
       {
@@ -410,8 +410,8 @@ export const deA1P13: SkillExercise[] = [
         text: "Cevabı doğru sıraya diz.",
         options: [],
         answer: 0,
-        items: ["Doch,", "ich", "habe", "heute", "Zeit"],
-        explain: "„Doch“ cümlenin dışında durur; ardından özne ve ikinci sırada fiil gelir: Doch, ich habe heute Zeit.",
+        items: ["Doch,", "ich", "komme", "mit"],
+        explain: "„Doch“ cümlenin dışında durur; ardından özne ve ikinci sırada fiil gelir: Doch, ich komme mit.",
       },
       {
         kind: "truefalse",

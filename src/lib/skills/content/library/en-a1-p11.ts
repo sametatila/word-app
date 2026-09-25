@@ -39,7 +39,7 @@ export const enA1P11: SkillExercise[] = [
       "Please come to Leo's birthday party on Saturday, June 14. The party starts at two o'clock and ends at five. " +
       "At five, parents can have a cup of coffee with us.\n\n" +
       "We are in Sunny Hill Park, next to the big playground. Look for the green and yellow balloons! " +
-      "If it rains, the party is at our flat: Oak Street 21, third floor.\n\n" +
+      "If it rains, the party is at our flat: 21 Oak Street, third floor.\n\n" +
       "There are games, music and a big chocolate cake. Leo loves books and animals, but please do not buy big presents. " +
       "A card is perfect.\n\n" +
       "Please answer by Wednesday. Call Anna on 0157 342 118.\n\n" +
@@ -55,7 +55,7 @@ export const enA1P11: SkillExercise[] = [
         text: "Where is the party if it rains?",
         options: ["at Anna and Leo's flat", "next to the playground", "in a café in the park"],
         answer: 0,
-        explain: "„If it rains, the party is at our flat: Oak Street 21, third floor.“",
+        explain: "„If it rains, the party is at our flat: 21 Oak Street, third floor.“",
       },
       {
         kind: "truefalse",
@@ -116,7 +116,7 @@ export const enA1P11: SkillExercise[] = [
       { speaker: "Mert", text: "No problem. What about the cake?" },
       { speaker: "Selin", text: "My sister is making an apple cake. It's Ben's favorite." },
       { speaker: "Mert", text: "How many people are coming?" },
-      { speaker: "Selin", text: "Twelve. Please come at half past seven. Nora brings Ben at eight." },
+      { speaker: "Selin", text: "Twelve. Please come at half past seven. Nora is bringing Ben at eight." },
       { speaker: "Mert", text: "And what about a present?" },
       { speaker: "Selin", text: "We're buying him a new bag. It's twenty-four euros, so everyone pays two euros." },
       { speaker: "Mert", text: "Perfect. See you on Friday!" },
@@ -146,7 +146,7 @@ export const enA1P11: SkillExercise[] = [
         text: "What time must Mert come?",
         options: [],
         answer: 0,
-        accept: ["at half past seven", "half past seven", "7.30", "at 7.30", "seven thirty"],
+        accept: ["at half past seven", "half past seven", "7.30", "at 7.30", "7:30", "at 7:30", "seven thirty"],
         explain: "„Please come at half past seven.“ — Ben saat sekizde geliyor, misafirler ondan önce.",
       },
       {
@@ -154,7 +154,7 @@ export const enA1P11: SkillExercise[] = [
         text: "Selin'in Mert'e yaptığı uyarıyı duyduğun gibi yaz.",
         options: [],
         answer: 0,
-        accept: ["It's a surprise, so don't tell him!", "It's a surprise, so don't tell him", "It is a surprise, so do not tell him!"],
+        accept: ["It's a surprise, so don't tell him!", "It's a surprise, so don't tell him", "It is a surprise, so do not tell him!", "It is a surprise, so do not tell him"],
         explain: "„It's a surprise, so don't tell him!“ — „so“ sonucu bağlıyor, „don't tell“ olumsuz emir.",
       },
       {
@@ -261,7 +261,7 @@ export const enA1P11: SkillExercise[] = [
         tr: "Beş kartım var.",
         hint: "„have“ ve „five“ v ile, „cards“ dz ile biter; f ve ts'ye kaçmasın.",
         confusions: [
-          { heard: ["half", "carts"], fix: "v sertleşirse „have“ „half“ (yarım) gibi duyulur; alt dudağı dişe değdirip titreştir.", expected: "have" },
+          { heard: ["half"], fix: "v sertleşirse „have“ „half“ (yarım) gibi duyulur; alt dudağı dişe değdirip titreştir.", expected: "have" },
         ],
       },
       {

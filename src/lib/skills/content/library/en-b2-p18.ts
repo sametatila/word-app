@@ -177,7 +177,7 @@ export const enB2P18: SkillExercise[] = [
         text: "For how long will they keep taking cash?",
         options: [],
         answer: 0,
-        accept: ["six months", "for six months", "another six months"],
+        accept: ["six months", "for six months", "another six months", "for another six months"],
         explain: "„Let's keep cash for another six months“.",
       },
       {

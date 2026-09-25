@@ -90,7 +90,7 @@ export const deB2P15: SkillExercise[] = [
         text: "Wann schalten sich die Laternen mit Bewegungsmelder wieder aus?",
         options: [],
         answer: 0,
-        accept: ["nach zwei Minuten", "nach 2 Minuten", "zwei Minuten später"],
+        accept: ["nach zwei Minuten", "nach 2 Minuten", "zwei Minuten später", "zwei Minuten", "nach zwei Minuten wieder"],
         explain: "„und schalten sich nach zwei Minuten wieder aus“.",
       },
       {
@@ -175,7 +175,7 @@ export const deB2P15: SkillExercise[] = [
         text: "Welches Licht dürfen die Taschenlampen haben?",
         options: [],
         answer: 0,
-        accept: ["rotes Licht", "nur rotes Licht", "rot", "Rot"],
+        accept: ["rotes Licht", "nur rotes Licht", "rot", "Rot", "mit rotem Licht", "nur mit rotem Licht"],
         explain: "„Taschenlampen bitte nur mit rotem Licht.“",
       },
       {
@@ -321,7 +321,7 @@ export const deB2P15: SkillExercise[] = [
     minutes: 10,
     explanation: [
       {
-        heading: "während und wohingegen: Gegensatz im Nebensatz",
+        heading: "während ve wohingegen: yan cümlede karşıtlık",
         tr: "„während“ yalnız zaman bildirmez (-irken); iki durumu karşılaştırırken de kullanılır: „A aydınlıkken B karanlık“. Hangi anlamın kastedildiğini bağlam söyler. „wohingegen“ ise yalnız karşıtlık bildirir ve çoğunlukla ana cümleden SONRA gelir. İkisi de yan cümle kurar: çekimli fiil sona gider.",
         examples: [
           { de: "Während die Hauptstraße hell bleibt, sind die Nebenstraßen dunkel.", tr: "Ana cadde aydınlık kalırken ara sokaklar karanlık.", note: "karşıtlık" },
@@ -330,8 +330,8 @@ export const deB2P15: SkillExercise[] = [
         ],
       },
       {
-        heading: "dagegen und jedoch: Adverbien",
-        tr: "„dagegen“ ve „jedoch“ zarftır, yan cümle kurmaz. Birinci konuma geçerlerse arkalarından doğrudan çekimli fiil gelir; orta alanda da, vurgulanan öğeden hemen sonra da durabilirler. „aber“dan farkı: „aber“ sıfır konumdadır ve sırayı değiştirmez („…, aber die Nebenstraßen sind dunkel“).",
+        heading: "dagegen ve jedoch: zarflar",
+        tr: "„dagegen“ ve „jedoch“ zarftır, yan cümle kurmaz. Birinci konuma geçerlerse arkalarından doğrudan çekimli fiil gelir; orta alanda da, vurgulanan öğeden hemen sonra da durabilirler. „aber“den farkı: „aber“ sıfır konumdadır ve sırayı değiştirmez („…, aber die Nebenstraßen sind dunkel“).",
         examples: [
           { de: "Im Zentrum brennt das Licht. Dagegen sind die Wohnstraßen dunkel.", tr: "Merkezde ışık yanıyor. Buna karşılık oturma sokakları karanlık.", note: "birinci konumda: fiil hemen arkada" },
           { de: "Die Wohnstraßen dagegen sind ab eins dunkel.", tr: "Oturma sokakları ise saat birden itibaren karanlık.", note: "öğeden sonra: vurgu" },
@@ -339,7 +339,7 @@ export const deB2P15: SkillExercise[] = [
         ],
       },
       {
-        heading: "stattdessen — und warum obwohl/trotzdem eine Einräumung ist",
+        heading: "stattdessen ve obwohl/trotzdem neden ödün bildirir",
         tr: "„stattdessen“ bir şeyin YERİNE başka bir şeyin geldiğini söyler; zarftır ve birinci konumda fiili hemen arkasına çeker. Buraya kadarki araçların hepsi iki durumu karşılaştırır. „obwohl“ ve „trotzdem“ ise bir beklentinin boşa çıktığını söyler: karanlığa rağmen yalnız yürümek bir ödündür, karşıtlık değil.",
         examples: [
           { de: "Die Stadt schaltet die Laternen nicht ab. Stattdessen dimmt sie sie.", tr: "Şehir lambaları söndürmüyor. Bunun yerine ışıklarını kısıyor.", note: "yerine geçen çözüm" },
@@ -388,7 +388,7 @@ export const deB2P15: SkillExercise[] = [
         text: "Im Dorf sieht man tausend Sterne, in der Stadt ___ nur ein paar.",
         options: [],
         answer: 0,
-        accept: ["dagegen", "jedoch"],
+        accept: ["dagegen", "jedoch", "hingegen", "aber"],
         explain: "İkinci kısım ilkiyle karşılaştırılıyor: „dagegen“ (buna karşılık) vurgulanan öğeden sonra durur.",
       },
       {

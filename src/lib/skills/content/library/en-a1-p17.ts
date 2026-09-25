@@ -63,7 +63,7 @@ export const enA1P17: SkillExercise[] = [
           { de: "Call me if you are lost.", tr: "Kaybolursan beni ara." },
         ],
         sample:
-          "Hi Zoe! My address is Lime Road 12. From the station, take bus number 5 and get off at City Park. " +
+          "Hi Zoe! My address is 12 Lime Road. From the station, take bus number 5 and get off at City Park. " +
           "Then walk to the bakery on the corner and turn left there. My house is the third one on the right. " +
           "There is a supermarket opposite my house. I live on the second floor. Call me if you are lost! See you at seven. Mira",
       },

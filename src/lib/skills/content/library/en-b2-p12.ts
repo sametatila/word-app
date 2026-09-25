@@ -92,7 +92,7 @@ export const enB2P12: SkillExercise[] = [
         text: "How can patients now cancel an appointment?",
         options: [],
         answer: 0,
-        accept: ["by replying to the reminder", "reply to the text", "by replying with one word"],
+        accept: ["by replying to the reminder", "replying to the reminder", "reply to the reminder", "by replying to the reminder with a single word", "by replying to the text", "reply to the text", "by replying with one word", "by replying with a single word", "by text"],
         explain: "Hatırlatma mesajına tek kelimeyle cevap vererek iptal edebiliyorlar.",
       },
       {

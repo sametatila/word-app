@@ -94,7 +94,7 @@ export const enB2P11: SkillExercise[] = [
         text: "What does the council plan to try next year?",
         options: [],
         answer: 0,
-        accept: ["a lower price before ten", "a cheaper morning price", "a lower early price"],
+        accept: ["a lower price before ten", "lower price before ten", "a lower price before ten in the morning", "a lower price in the morning", "a lower morning price", "a cheaper morning price", "a cheaper price before ten", "a lower early price"],
         explain: "Kalabalığı güne yaymak için sabah ondan önce daha düşük bir fiyat denenecek.",
       },
       {
@@ -362,7 +362,7 @@ export const enB2P11: SkillExercise[] = [
     questions: [
       {
         text: "When we got to the pier, the ferry ___, so we waited for the next one.",
-        options: ["left", "was leaving", "had already left"],
+        options: ["left", "has already left", "had already left"],
         answer: 2,
         explain: "Vapur biz varmadan önce gitmiş; önceki olay past perfect ile verilir.",
       },
@@ -387,7 +387,7 @@ export const enB2P11: SkillExercise[] = [
         text: "Before the council acted, residents ___ been complaining for years.",
         options: [],
         answer: 0,
-        accept: ["had"],
+        accept: ["had", "'d"],
         explain: "Geçmişteki bir ana kadar süren eylem: had been + -ing.",
       },
       {

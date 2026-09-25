@@ -166,10 +166,10 @@ export const deB1P15: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Wie hoch ist der Beitrag für Studierende?",
+        text: "Wie viel sollen Studierende nach Frau Vogts Vorschlag zahlen?",
         options: [],
         answer: 0,
-        accept: ["2,50 Euro", "zwei Euro fünfzig", "2,50", "die Hälfte"],
+        accept: ["2,50 Euro", "zwei Euro fünfzig", "2,50", "die Hälfte", "zweieinhalb Euro", "2,50 €", "2.50 Euro", "zwei fünfzig", "die Hälfte von fünf Euro", "Hälfte"],
         explain: "Aidat beş euro, öğrenciler için yarısı: iki buçuk euro.",
       },
       {

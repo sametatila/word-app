@@ -84,7 +84,7 @@ export const enB1P16: SkillExercise[] = [
         text: "What are most residents tired of?",
         options: [],
         answer: 0,
-        accept: ["torn rubbish bags", "rubbish bags torn open", "finding their rubbish bags torn open"],
+        accept: ["torn rubbish bags", "rubbish bags torn open", "finding their rubbish bags torn open", "their rubbish bags torn open", "finding rubbish bags torn open"],
         explain: "„They are tired of finding their rubbish bags torn open“.",
       },
       {
@@ -163,7 +163,7 @@ export const enB1P16: SkillExercise[] = [
         text: "What should you not feed a baby bird?",
         options: [],
         answer: 0,
-        accept: ["bread or milk", "milk", "bread"],
+        accept: ["bread or milk", "milk", "bread", "bread and milk", "milk or bread"],
         explain: "„Please don't try to feed it bread or milk.“",
       },
       {
@@ -367,7 +367,7 @@ export const enB1P16: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "I speak English, and I speak German ___ well.",
+        text: "I speak English, and I speak German ___ well. (= too)",
         options: [],
         answer: 0,
         accept: ["as"],

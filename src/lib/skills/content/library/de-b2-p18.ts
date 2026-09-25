@@ -93,7 +93,7 @@ export const deB2P18: SkillExercise[] = [
         text: "Was sollte man laut Frau Roth auf keinen Fall tun?",
         options: [],
         answer: 0,
-        accept: ["die Tiere füttern", "füttern", "Tiere füttern"],
+        accept: ["die Tiere füttern", "füttern", "Tiere füttern", "nicht füttern", "die Tiere nicht füttern", "Tiere nicht füttern", "sie füttern"],
         explain: "„Zuerst: nicht füttern.“ — hayvanlar korkularını kaybediyor.",
       },
       {
@@ -182,7 +182,7 @@ export const deB2P18: SkillExercise[] = [
         text: "Wie hoch soll ein Fledermauskasten mindestens hängen?",
         options: [],
         answer: 0,
-        accept: ["drei Meter", "3 Meter", "mindestens drei Meter"],
+        accept: ["drei Meter", "3 Meter", "mindestens drei Meter", "drei Meter hoch", "mindestens drei Meter hoch"],
         explain: "„mindestens drei Meter hoch und nicht in der prallen Sonne“.",
       },
       {

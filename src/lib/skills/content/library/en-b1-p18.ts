@@ -164,7 +164,7 @@ export const enB1P18: SkillExercise[] = [
         text: "What has been painted on the pavement?",
         options: [],
         answer: 0,
-        accept: ["a line", "a line on the pavement"],
+        accept: ["a line", "a line on the pavement", "line"],
         explain: "„We've painted a line on the pavement, so people stand on one side“.",
       },
       {

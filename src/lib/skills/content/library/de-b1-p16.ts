@@ -168,7 +168,7 @@ export const deB1P16: SkillExercise[] = [
         text: "Was kommt ins System?",
         options: [],
         answer: 0,
-        accept: ["jedes Gespräch", "die Gespräche", "jedes Gespräch mit Datum"],
+        accept: ["jedes Gespräch", "die Gespräche", "jedes Gespräch mit Datum", "alle Gespräche", "Gespräche", "jedes Gespräch mit Datum und Namen"],
         explain: "„Ja, jedes Gespräch kommt ins System, mit Datum und dem Namen des Kollegen.“",
       },
       {

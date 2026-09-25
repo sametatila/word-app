@@ -98,7 +98,7 @@ export const enB2P15: SkillExercise[] = [
         text: "Who should you contact first if you are charged after canceling?",
         options: [],
         answer: 0,
-        accept: ["the company", "the company first", "the service"],
+        accept: ["the company", "the company first", "company", "the service"],
         explain: "Önce şirkete başvurulmalı; banka yoluyla geri alma ilk adım sayılmamalı.",
       },
       {
@@ -187,7 +187,7 @@ export const enB2P15: SkillExercise[] = [
         text: "What does Mr Hale ask to receive in writing?",
         options: [],
         answer: 0,
-        accept: ["an email confirming it", "a confirmation email", "the new price"],
+        accept: ["an email confirming it", "a confirmation email", "an email", "an email confirming the new price", "a confirmation of the new price", "confirmation of the new price", "the new price", "the new price and no minimum term"],
         explain: "Yeni fiyatı ve asgari süre olmadığını onaylayan bir e-posta istiyor.",
       },
       {

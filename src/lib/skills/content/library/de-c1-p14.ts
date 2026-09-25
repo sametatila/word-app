@@ -190,11 +190,13 @@ export const deC1P14: SkillExercise[] = [
           "dass gute Kinder früher wechseln",
           "die guten wechseln früher",
           "frühe Wechsel zu großen Vereinen",
+          "dass die guten Kinder früher zu großen Vereinen wechseln",
+          "dass die Guten früher wechseln",
         ],
         explain: "Daha az çocuk bırakıyor ama iyi oyuncular büyük kulüplere daha erken geçiyor.",
       },
       {
-        text: "Worauf einigen sich die beiden am Ende?",
+        text: "Was schlägt Frau Kraus am Ende vor?",
         options: [
           "die Tabelle wieder einzuführen",
           "die Altersgrenze zu senken",

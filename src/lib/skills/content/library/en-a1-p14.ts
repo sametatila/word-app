@@ -127,8 +127,8 @@ export const enA1P14: SkillExercise[] = [
         ],
       },
       {
-        de: "How much money is it?",
-        tr: "Kaç para?",
+        de: "How much money do you have?",
+        tr: "Ne kadar paran var?",
         hint: "„much“ = MAÇ'a yakın, „money“ = MA-ni; ikisinde de aynı kısa a.",
         confusions: [
           { heard: ["match"], fix: "Ağzı fazla açarsan „match“ (maç) olur; ünlü daha kapalı ve kısa.", expected: "much" },

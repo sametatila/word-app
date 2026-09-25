@@ -85,10 +85,10 @@ export const enB1P20: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "How should the writer not tell the friends, according to Maggie?",
+        text: "According to Maggie, which way of telling the friends should the writer avoid?",
         options: [],
         answer: 0,
-        accept: ["by message", "not by message", "in a message"],
+        accept: ["by message", "not by message", "in a message", "a message", "sending a message", "telling them by message"],
         explain: "„You'd better tell them soon, and not by message.“",
       },
       {

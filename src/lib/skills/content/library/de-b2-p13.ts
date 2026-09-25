@@ -63,7 +63,7 @@ export const deB2P13: SkillExercise[] = [
         explain: "„rechnete die Leiterin mit fünfzig Antworten. Es kamen über dreihundert.“",
       },
       {
-        text: "Was steckt hinter dem Wort „Flohmarkt mit Beschriftung“?",
+        text: "Was steckt hinter dem Ausdruck „Flohmarkt mit Beschriftung“?",
         options: [
           "Die Räume sind zu klein und zu voll.",
           "Die Gegenstände werden auch verkauft.",
@@ -92,7 +92,7 @@ export const deB2P13: SkillExercise[] = [
         text: "Wer wählt die Dinge aus, die das Museum behalten will?",
         options: [],
         answer: 0,
-        accept: ["Fachleute", "die Fachleute", "Experten"],
+        accept: ["Fachleute", "die Fachleute", "Experten", "die Experten", "von Fachleuten", "von Experten"],
         explain: "Son cümle: bu sefer seçimi uzmanlar yapacak.",
       },
       {
@@ -178,7 +178,7 @@ export const deB2P13: SkillExercise[] = [
         text: "Was braucht er, um ein Bild auszustellen?",
         options: [],
         answer: 0,
-        accept: ["eine schriftliche Einwilligung", "schriftliche Einwilligung", "eine Einwilligung"],
+        accept: ["eine schriftliche Einwilligung", "schriftliche Einwilligung", "eine Einwilligung", "Einwilligung", "eine schriftliche Erlaubnis", "schriftliche Erlaubnis"],
         explain: "Sergi için yazılı rıza şart; yoksa hiçbir yüzü göstermiyor.",
       },
       {

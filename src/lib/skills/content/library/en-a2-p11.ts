@@ -87,7 +87,7 @@ export const enA2P11: SkillExercise[] = [
         text: "What did the French family leave on the kitchen table?",
         options: [],
         answer: 0,
-        accept: ["a card and honey", "a thank-you card and a jar of honey", "a card and a jar of honey", "a thank-you card and honey"],
+        accept: ["a card and honey", "a thank-you card and a jar of honey", "a card and a jar of honey", "a thank-you card and honey", "a jar of honey and a card", "honey and a card"],
         explain: "„They left a thank-you card and a jar of honey on the kitchen table.“",
       },
       {
@@ -230,7 +230,7 @@ export const enA2P11: SkillExercise[] = [
         ],
         sample:
           "Dear Clara and Marc, thank you for your home. We really enjoyed the two weeks here. The children loved the " +
-          "garden, and we ate outside almost every evening. Mrs. Blanc next door was very kind: on Tuesday she brought " +
+          "garden, and we ate outside almost every evening. Mrs Blanc next door was very kind: on Tuesday she brought " +
           "us a big bag of tomatoes from her garden. One small problem: we broke a glass, but we bought a new one at the " +
           "market. It is in the cupboard with the others. We watered the plants every morning, and the fridge is clean " +
           "and empty. The key is in the green box next to the door. We hope you enjoyed Bursa, too! Best wishes, Deniz and family",

@@ -100,7 +100,7 @@ export const enA1P19: SkillExercise[] = [
     minutes: 6,
     explanation: [
       {
-        heading: "Fiil ikinci sırada",
+        heading: "Fiil özneden hemen sonra",
         tr: "Türkçede „Ben çay içerim“ derken fiil en sondadır. İngilizcede sıra özne + fiil + nesnedir: I drink tea. Fiili sona atmak („I tea drink“) cümleyi anlaşılmaz yapar.",
         examples: [
           { de: "I drink tea.", tr: "Çay içerim.", note: "özne + fiil + nesne" },

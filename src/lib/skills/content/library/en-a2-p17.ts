@@ -24,7 +24,7 @@ export const enA2P17: SkillExercise[] = [
     genre: "report",
     intro: "Kulübün geçen cuma düzenlediği bilgi yarışması gecesini bülten için anlatacaksın; önce iki cümle kur, sonra yazını yaz.",
     gloss: [
-      { de: "quiz", tr: "kısa sınav" },
+      { de: "quiz", tr: "bilgi yarışması" },
       { de: "team", tr: "takım" },
       { de: "winner", tr: "kazanan" },
       { de: "prize", tr: "ödül" },
@@ -97,7 +97,7 @@ export const enA2P17: SkillExercise[] = [
         tr: "Küçük bir köyde yaşıyoruz.",
         hint: "„village“ = Vİ-lıc. -age burada „eyc“ değil, kısa ve zayıf „ıc“.",
         confusions: [
-          { heard: ["We live in a small villadge", "a small vill age"], fix: "Vurgu ilk hecede; -age'i uzatma, kısa ıc ile bitir.", expected: "village" },
+          { heard: [], fix: "Vurgu ilk hecede; -age'i uzatma, kısa ıc ile bitir.", expected: "village" },
         ],
       },
       {
@@ -113,7 +113,7 @@ export const enA2P17: SkillExercise[] = [
         tr: "Bu çikolata çok güzel.",
         hint: "„chocolate“ iki hecedir: ÇOK-lıt. Ortadaki o yutulur, -ate „eyt“ değil kısa „ıt“.",
         confusions: [
-          { heard: ["This choco late is very good", "this chocolat is very good"], fix: "Üç hece yapma; ortadaki ünlü düşer: çoklıt.", expected: "chocolate" },
+          { heard: [], fix: "Üç hece yapma; ortadaki ünlü düşer: çoklıt.", expected: "chocolate" },
         ],
       },
       {
@@ -121,7 +121,7 @@ export const enA2P17: SkillExercise[] = [
         tr: "Özel bir partiydi.",
         hint: "„private“ = PRAY-vıt. Vurgu başta, -ate zayıf.",
         confusions: [
-          { heard: ["It was a pri vate party", "it was a privet party"], fix: "Son heceyi „veyt“ diye uzatma: prayvıt.", expected: "private" },
+          { heard: ["it was a privet party"], fix: "Son heceyi „veyt“ diye uzatma: prayvıt.", expected: "private" },
         ],
       },
       {
@@ -129,7 +129,7 @@ export const enA2P17: SkillExercise[] = [
         tr: "O ünlü bir şarkıcı.",
         hint: "„famous“ = FEY-mıs. -ous tek hece ve kısa „ıs“; „ous“ harflerini tek tek okuma.",
         confusions: [
-          { heard: ["She is a famoose singer", "a fam ous singer"], fix: "Son hece zayıf ve kısa: feymıs.", expected: "famous" },
+          { heard: [], fix: "Son hece zayıf ve kısa: feymıs.", expected: "famous" },
         ],
       },
       {
@@ -137,7 +137,7 @@ export const enA2P17: SkillExercise[] = [
         tr: "Dikkatli ol, yol tehlikeli.",
         hint: "„careful“ = KER-fıl, „dangerous“ = DEYN-cı-rıs. -ful ve -ous ikisi de zayıf.",
         confusions: [
-          { heard: ["Be care full, the road is danger ous"], fix: "Ekleri ayrı kelime gibi söyleme; vurgusuz ve kısa bırak.", expected: "dangerous" },
+          { heard: [], fix: "Ekleri ayrı kelime gibi söyleme; vurgusuz ve kısa bırak.", expected: "dangerous" },
         ],
       },
     ],

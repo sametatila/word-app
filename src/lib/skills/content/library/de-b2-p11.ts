@@ -91,7 +91,7 @@ export const deB2P11: SkillExercise[] = [
         text: "Worüber will der Gemeinderat im Herbst beraten?",
         options: [],
         answer: 0,
-        accept: ["über feste Besuchszeiten", "feste Besuchszeiten", "Besuchszeiten für die Straße"],
+        accept: ["über feste Besuchszeiten", "feste Besuchszeiten", "Besuchszeiten für die Straße", "Besuchszeiten", "feste Besuchszeiten für diese Straße", "über feste Besuchszeiten für diese Straße"],
         explain: "Dizinin geçtiği sokak için sabit ziyaret saatleri konuşulacak.",
       },
       {
@@ -180,7 +180,7 @@ export const deB2P11: SkillExercise[] = [
         text: "Wann beginnt ihre schönste Führung?",
         options: [],
         answer: 0,
-        accept: ["um sieben Uhr morgens", "um sieben Uhr", "um sieben"],
+        accept: ["um sieben Uhr morgens", "um sieben Uhr", "um sieben", "sieben Uhr morgens", "morgens um sieben", "früh um sieben", "sieben Uhr"],
         explain: "„Meine Führung um sieben Uhr morgens ist die schönste.“",
       },
       {
@@ -216,7 +216,7 @@ export const deB2P11: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Kale turu önceden duyurulmadan iptal edildi.",
+        tr: "Şato turu önceden duyurulmadan iptal edildi.",
         answer: "Die Führung durch das Schloss ist ohne Ankündigung abgesagt worden.",
         alternatives: ["Ohne Ankündigung ist die Führung durch das Schloss abgesagt worden."],
         hint: "Edilgen Perfekt: „ist“ + Partizip II + „worden“ — burada „geworden“ yanlış olur.",
@@ -330,7 +330,7 @@ export const deB2P11: SkillExercise[] = [
     explanation: [
       {
         heading: "Perfekt: ist + Partizip + worden",
-        tr: "Edilgenin Perfekt'i her zaman „sein“ ile kurulur, çünkü yardımcı fiil „werden“dir ve „werden“ Perfekt'te „sein“ alır. Cümlenin sonuna iki öge gelir: asıl fiilin Partizip II'si ve „worden“. Konuşmada geçmişteki edilgen çoğunlukla bu biçimle anlatılır; „wurde gebaut“ daha çok yazı dilidir.",
+        tr: "Edilgenin Perfekt'i her zaman „sein“ ile kurulur, çünkü yardımcı fiil „werden“dir ve „werden“ Perfekt'te „sein“ alır. Cümlenin sonuna iki öge gelir: asıl fiilin Partizip II'si ve „worden“. Konuşmada geçmişteki edilgen çoğunlukla bu biçimle anlatılır; „wurde gebaut“ ise yazıda ve haberde daha sık görülür.",
         examples: [
           { de: "Der Parkplatz ist im Frühjahr gebaut worden.", tr: "Otopark ilkbaharda yapıldı.", note: "Perfekt edilgen" },
           { de: "Die Straße ist für Busse gesperrt worden.", tr: "Yol otobüslere kapatıldı.", note: "ist … gesperrt worden" },

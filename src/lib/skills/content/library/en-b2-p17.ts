@@ -185,7 +185,7 @@ export const enB2P17: SkillExercise[] = [
         text: "Which figures does Ms Petrova find harder to argue with?",
         options: [],
         answer: 0,
-        accept: ["sick days and turnover", "sick days", "staff turnover"],
+        accept: ["sick days and turnover", "sick days and staff turnover", "staff turnover and sick days", "turnover and sick days", "sick days", "staff turnover", "turnover"],
         explain: "Yöneticinin yargısına dayanmayan hastalık izni ve personel devri rakamları.",
       },
       {
@@ -418,7 +418,7 @@ export const enB2P17: SkillExercise[] = [
         text: "Thursdays are ___ busier now. (a small difference)",
         options: [],
         answer: 0,
-        accept: ["slightly", "a bit", "a little"],
+        accept: ["slightly", "a bit", "a little", "a little bit"],
         explain: "Küçük fark „slightly“, „a bit“ ya da „a little“ ile anlatılır.",
       },
       {

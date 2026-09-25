@@ -169,7 +169,7 @@ export const deB1P17: SkillExercise[] = [
         text: "Wann soll die Besichtigung stattfinden?",
         options: [],
         answer: 0,
-        accept: ["Donnerstag um acht", "am Donnerstag um acht", "am Donnerstag", "Donnerstag"],
+        accept: ["Donnerstag um acht", "am Donnerstag um acht", "am Donnerstag", "Donnerstag", "Donnerstag um acht Uhr", "am Donnerstag um acht Uhr"],
         explain: "„Passt Ihnen Donnerstag um acht für die Besichtigung?“",
       },
       {

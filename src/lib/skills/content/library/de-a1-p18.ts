@@ -147,7 +147,7 @@ export const deA1P18: SkillExercise[] = [
         text: "Wie viel Trinkgeld gibt Herr Aksu?",
         options: [],
         answer: 0,
-        accept: ["drei Euro", "drei", "3 Euro"],
+        accept: ["drei Euro", "drei", "3 Euro", "3"],
         explain: "Yirmi beş veriyor, fiyat yirmi iki: „Der Rest ist für Sie“ — kalan üç avro bahşiş.",
       },
       {
@@ -188,7 +188,7 @@ export const deA1P18: SkillExercise[] = [
         kind: "build",
         tr: "Pazar günleri orada sık sık yürüyüş yapıyorum.",
         answer: "Am Sonntag gehe ich dort oft spazieren.",
-        alternatives: ["Ich gehe am Sonntag dort oft spazieren."],
+        alternatives: ["Ich gehe am Sonntag dort oft spazieren.", "Ich gehe am Sonntag oft dort spazieren.", "Dort gehe ich am Sonntag oft spazieren."],
         hint: "„spazieren gehen“: „gehen“ çekilir ve ikinci sırada durur, „spazieren“ en sonda kalır.",
       },
       {

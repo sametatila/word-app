@@ -416,8 +416,8 @@ export const deA2P15: SkillExercise[] = [
         text: "Cümleyi doğru sıraya diz.",
         options: [],
         answer: 0,
-        items: ["Ich", "bleibe", "heute", "deshalb", "zu Hause"],
-        explain: "Fiil ikinci sırada; sonra zaman (heute), sebep (deshalb), yer (zu Hause).",
+        items: ["Wir", "fahren", "am Samstag", "mit dem Auto", "ans Meer"],
+        explain: "Fiil ikinci sırada; sonra zaman (am Samstag), tarz (mit dem Auto), yer (ans Meer).",
       },
       {
         kind: "order",

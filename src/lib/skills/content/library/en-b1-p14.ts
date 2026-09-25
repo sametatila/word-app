@@ -90,7 +90,7 @@ export const enB1P14: SkillExercise[] = [
         text: "Who was the man at the table?",
         options: [],
         answer: 0,
-        accept: ["the bride's old maths teacher", "the bride's maths teacher", "her old teacher"],
+        accept: ["the bride's old maths teacher", "the bride's maths teacher", "her old teacher", "her old maths teacher", "the bride's old teacher"],
         explain: "„turned out to be the bride's old maths teacher“.",
       },
       {

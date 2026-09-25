@@ -46,7 +46,7 @@ export const enC1P16: SkillExercise[] = [
       "they had been written by different people, and the ending explained what the play should have shown. " +
       "I wrote four hundred words saying so, and then I did not send them.\n\n" +
       "My editor would rather I had. Her view, which I respect, is that a critic who softens the verdict for " +
-      "beginners is not being kind but useful to nobody: the audience is misled and the writer learns " +
+      "beginners is being unhelpful rather than kind: the audience is misled and the writer learns " +
       "nothing. Suppose a reader bought a ticket because of my silence; what would I owe them?\n\n" +
       "It is a strong argument, and for established companies I agree with it completely. A national theater " +
       "with a large budget can survive a bad notice, and it is high time some of them received a few more. " +

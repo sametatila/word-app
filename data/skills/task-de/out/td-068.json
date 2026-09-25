@@ -51,7 +51,7 @@
  { "tr": "Eleştirmenlerin dürüst olmasını isterim ama dürüstlüğün birden çok biçimi var.", "kind": "monologue.targets.tr", "de": "Mir wäre es lieber, Kritiker wären ehrlich, aber Ehrlichkeit hat mehr als eine Form." },
  { "tr": "Rastgele seçilmiş bir grubun, seçilmiş temsilcilerin yapamayıp kendisinin yapabildiği şey …", "kind": "monologue.targets.tr", "de": "Was eine zufällig ausgewählte Gruppe kann und gewählte Vertreter nicht, ist …" },
  { "tr": "O kim?", "kind": "drill.tr", "de": "Wer ist er?" },
- { "tr": "Kaç para?", "kind": "drill.tr", "de": "Wie viel kostet es?" },
+ { "tr": "Ne kadar paran var?", "kind": "drill.tr", "de": "Wie viel Geld hast du?" },
  { "tr": "Şimdi yap.", "kind": "drill.tr", "de": "Mach es jetzt." },
  { "tr": "Ekmek sert.", "kind": "drill.tr", "de": "Das Brot ist hart." },
  { "tr": "Maç martta.", "kind": "drill.tr", "de": "Das Spiel ist im März." },

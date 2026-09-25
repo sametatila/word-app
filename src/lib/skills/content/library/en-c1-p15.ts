@@ -412,7 +412,7 @@ export const enC1P15: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["Such", "such"],
-        explain: "„Such was …, that …“ derecesi başa alır, sonucu „that“ verir.",
+        explain: "„Such was … that …“ derecesi başa alır, sonucu „that“ verir.",
       },
       {
         kind: "gapfill",

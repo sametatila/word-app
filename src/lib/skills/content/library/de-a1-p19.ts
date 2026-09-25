@@ -180,13 +180,13 @@ export const deA1P19: SkillExercise[] = [
         tr: "Mayıstan beri Blumenstraße'de oturuyoruz.",
         answer: "Wir wohnen seit Mai in der Blumenstraße.",
         alternatives: ["Seit Mai wohnen wir in der Blumenstraße."],
-        hint: "Süredir süren durum Almancada şimdiki zaman + „seit“ ile söylenir; fiil yine ikinci sırada.",
+        hint: "Bir süredir devam eden durum Almancada şimdiki zaman + „seit“ ile söylenir; fiil yine ikinci sırada.",
       },
       {
         kind: "build",
         tr: "Okul şenliğinde memnuniyetle yardım edebilirim.",
         answer: "Beim Schulfest kann ich gern helfen.",
-        alternatives: ["Ich kann beim Schulfest gern helfen."],
+        alternatives: ["Ich kann beim Schulfest gern helfen.", "Ich kann gern beim Schulfest helfen."],
         hint: "„kann“ ikinci sırada, „helfen“ en sonda; „gern“ modal fiilden sonra gelir.",
       },
       {

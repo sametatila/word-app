@@ -85,7 +85,7 @@ export const enB1P15: SkillExercise[] = [
         text: "What do Leo's parents make him do now?",
         options: [],
         answer: 0,
-        accept: ["his own washing", "do his own washing", "the washing"],
+        accept: ["his own washing", "do his own washing", "the washing", "do the washing", "his washing"],
         explain: "„My parents also make me do my own washing now.“",
       },
       {
@@ -163,7 +163,7 @@ export const enB1P15: SkillExercise[] = [
         text: "Why shouldn't parents send sweets?",
         options: [],
         answer: 0,
-        accept: ["the ants find them", "because of the ants", "ants"],
+        accept: ["the ants find them", "because of the ants", "ants", "because the ants find them", "the ants"],
         explain: "„the ants find them before the children do“.",
       },
       {

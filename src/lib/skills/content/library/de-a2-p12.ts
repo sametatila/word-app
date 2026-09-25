@@ -153,7 +153,7 @@ export const deA2P12: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Wann trinkt Tobias heute mit den Müttern Kaffee?",
+        text: "Wann trinkt Tobias jetzt mit den Müttern Kaffee?",
         options: [],
         answer: 0,
         accept: ["jeden Dienstag", "am Dienstag", "dienstags"],
@@ -270,7 +270,7 @@ export const deA2P12: SkillExercise[] = [
         confusions: [
           {
             heard: ["Ich kaufen heute Brot"],
-            fix: "ich'li fiil -e ile biter; dudakları kapatıp n eklersen „wir“ biçimine dönüşür.",
+            fix: "ich'li fiil -e ile biter; sona n eklersen „wir“ biçimine dönüşür.",
             expected: "kaufe",
           },
         ],
@@ -418,7 +418,7 @@ export const deA2P12: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["wollen"],
-        explain: "Çoğul özneyle wollen mastar biçimindedir; hareket fiili açıkça söylenmese de anlaşılır.",
+        explain: "Çoğul özneyle çekimli biçim mastarla aynıdır: sie wollen. Hareket fiili (fahren) söylenmese de anlaşılır.",
       },
       {
         kind: "gapfill",

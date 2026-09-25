@@ -75,15 +75,15 @@ export const deB1P11: SkillExercise[] = [
         text: "Die Freiwilligen haben fast ___ Fotos eingescannt.",
         options: [],
         answer: 0,
-        accept: ["viertausend", "4000"],
+        accept: ["viertausend", "4000", "4.000"],
         explain: "„Inzwischen haben die Freiwilligen fast viertausend Fotos eingescannt.“",
       },
       {
         kind: "short_answer",
-        text: "Was macht der Verein, wenn jemand nicht auf einem Foto hängen möchte?",
+        text: "Was macht der Verein, wenn jemand nicht möchte, dass ein Foto von ihm hängt?",
         options: [],
         answer: 0,
-        accept: ["das Foto sofort abnehmen", "er nimmt das Foto ab", "das Foto abnehmen"],
+        accept: ["das Foto sofort abnehmen", "er nimmt das Foto ab", "das Foto abnehmen", "er nimmt das Foto sofort ab", "Foto abnehmen", "sofort abnehmen"],
         explain: "„… und nimmt jedes Foto sofort ab, wenn jemand darum bittet.“",
       },
       {
@@ -137,7 +137,7 @@ export const deB1P11: SkillExercise[] = [
           "das Tagebuch ihrer Großmutter",
         ],
         answer: 1,
-        explain: "„einen alten Schuhkarton mit sechzig Briefen“ — dedesi Kanada'dan anneannesine yazmış.",
+        explain: "„einen alten Schuhkarton mit sechzig Briefen“ — dedesi Kanada'dan büyükannesine yazmış.",
       },
       {
         text: "Was hatte die Familie über den Großvater erzählt?",
@@ -169,7 +169,7 @@ export const deB1P11: SkillExercise[] = [
         text: "Wer hat ihr beim Lesen der Schrift geholfen?",
         options: [],
         answer: 0,
-        accept: ["eine Nachbarin", "die Nachbarin", "eine alte Nachbarin"],
+        accept: ["eine Nachbarin", "die Nachbarin", "eine alte Nachbarin", "Nachbarin", "ihre Nachbarin", "eine ältere Nachbarin"],
         explain: "„Eine Nachbarin von achtundachtzig Jahren hat mir geholfen.“",
       },
       {
@@ -350,7 +350,7 @@ export const deB1P11: SkillExercise[] = [
         explain: "„abfahren“ yer değiştirme bildirir; Plusquamperfekt'te yardımcı fiil war olur.",
       },
       {
-        text: "Nachdem er den Schlüssel ___ hatte, konnte er nicht hinein.",
+        text: "Weil er den Schlüssel ___ hatte, konnte er nicht hinein.",
         options: ["vergessen", "vergaß", "vergisst"],
         answer: 0,
         explain: "„hatte“nın yanında Partizip II gelir: vergessen.",

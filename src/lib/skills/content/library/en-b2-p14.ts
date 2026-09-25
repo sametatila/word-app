@@ -70,7 +70,7 @@ export const enB2P14: SkillExercise[] = [
         explain: "„The majority had replaced walking or the bus“; arabanın yerini alan yolculuk sekizde bir.",
       },
       {
-        text: "Who was hurt in most of the injuries?",
+        text: "Who was involved in most of the injuries?",
         options: [
           "the riders themselves",
           "pedestrians on pavements",
@@ -99,7 +99,7 @@ export const enB2P14: SkillExercise[] = [
         text: "What must new riders now do before their first ride?",
         options: [],
         answer: 0,
-        accept: ["a short tutorial", "complete a tutorial", "do a tutorial"],
+        accept: ["a short tutorial", "a short compulsory tutorial", "a compulsory tutorial", "a tutorial", "complete a tutorial", "complete a short tutorial", "do a tutorial", "do a short tutorial", "take a tutorial", "take a short tutorial"],
         explain: "„a short compulsory tutorial before a first ride“.",
       },
       {

@@ -98,7 +98,7 @@ export const enB2P20: SkillExercise[] = [
         text: "According to supermarkets, what is most of the data used for?",
         options: [],
         answer: 0,
-        accept: ["ordinary purposes", "ordering and offers", "deciding what to order"],
+        accept: ["ordinary purposes", "for ordinary purposes", "ordering and offers", "ordering bread and sending offers", "deciding what to order", "deciding how much bread to order"],
         explain: "Ne kadar ekmek sipariş edileceği ya da kime hangi teklifin gideceği gibi sıradan işler.",
       },
       {
@@ -185,7 +185,7 @@ export const enB2P20: SkillExercise[] = [
         text: "What has Ms Quinn asked the supermarket to do?",
         options: [],
         answer: 0,
-        accept: ["delete the profile", "delete it and stop sharing", "stop sharing it"],
+        accept: ["delete the profile", "delete her profile", "delete the profile and stop sharing it", "delete the profile and stop sharing", "delete it and stop sharing", "delete it and stop sharing it", "stop sharing it"],
         explain: "Profili silmelerini ve paylaşmayı durdurmalarını istemiş.",
       },
       {

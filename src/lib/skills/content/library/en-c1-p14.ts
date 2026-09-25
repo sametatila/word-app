@@ -101,7 +101,7 @@ export const enC1P14: SkillExercise[] = [
         text: "Who had left a note inside the record sleeve?",
         options: [],
         answer: 0,
-        accept: ["a stranger", "the stranger", "the previous borrower"],
+        accept: ["a stranger", "the stranger", "the previous borrower", "a previous borrower", "the person who borrowed it before"],
         explain: "Kütüphanenin plağı yazardan önce ödünç verdiği yabancı.",
       },
       {
@@ -272,8 +272,8 @@ export const enC1P14: SkillExercise[] = [
           "all. Each one is a place in which the pianist once lived, and the music changes to answer it. " +
           "Once I understood that, the album stopped being slow and started being patient, which is not the " +
           "same thing.\n\n" +
-          "It rewards attention and punishes background listening, some of which is my own fault rather than " +
-          "the album's. I would recommend it to anyone who has an hour, headphones and a willingness to be " +
+          "It rewards attention and punishes background listening, which is how I first heard it, and that was " +
+          "my mistake rather than the album's. I would recommend it to anyone who has an hour, headphones and a willingness to be " +
           "bored for ten minutes, but not to anyone looking for music to work to. " +
           "Three and a half stars for the music, and a full five for the note.",
       },

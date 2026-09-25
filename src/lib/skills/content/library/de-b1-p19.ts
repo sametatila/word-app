@@ -87,7 +87,7 @@ export const deB1P19: SkillExercise[] = [
         text: "Wer hilft neuen Mitgliedern mit den Fachwörtern?",
         options: [],
         answer: 0,
-        accept: ["ein Pate aus dem Stadtrat", "ein Pate", "der Pate"],
+        accept: ["ein Pate aus dem Stadtrat", "ein Pate", "der Pate", "Pate", "einen Paten", "ihr Pate", "jemand aus dem Stadtrat"],
         explain: "„… bekommt jedes neue Mitglied einen Paten aus dem Stadtrat, der die Fachwörter erklärt.“",
       },
       {
@@ -158,7 +158,7 @@ export const deB1P19: SkillExercise[] = [
         text: "Ältere Jugendliche dürfen das Zentrum nicht allein aufschließen.",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "„Aber allein dürfen sie nicht aufschließen.“ Ekipten biri saat on ikiye kadar kalmalı.",
+        explain: "„Aber allein dürfen sie nicht aufschließen.“ Ekipten biri saat yirmi ikiye kadar kalmalı.",
       },
       {
         kind: "gapfill",
@@ -173,7 +173,7 @@ export const deB1P19: SkillExercise[] = [
         text: "Bis wann läuft der Versuch?",
         options: [],
         answer: 0,
-        accept: ["bis zu den Sommerferien", "bis zu den Ferien", "bis zum Sommer"],
+        accept: ["bis zu den Sommerferien", "bis zu den Ferien", "bis zum Sommer", "Sommerferien", "bis zu den großen Ferien", "bis vor den Sommerferien"],
         explain: "„… dann probieren wir es bis zu den Sommerferien“.",
       },
       {

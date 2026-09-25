@@ -98,7 +98,7 @@ export const enB2P13: SkillExercise[] = [
         text: "According to several students, what did the rule make easier?",
         options: [],
         answer: 0,
-        accept: ["saying no to friends", "to say no to friends", "saying no"],
+        accept: ["saying no to friends", "saying no to their friends", "to say no to friends", "to say no to their friends", "say no to friends", "say no to their friends", "saying no"],
         explain: "„the rule had made it easier to say no to their friends“.",
       },
       {

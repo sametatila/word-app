@@ -88,7 +88,7 @@ export const deB1P18: SkillExercise[] = [
         text: "Um wen macht sich Roth Sorgen?",
         options: [],
         answer: 0,
-        accept: ["um die Älteren", "die Älteren", "ältere Menschen", "um ältere Menschen"],
+        accept: ["um die Älteren", "die Älteren", "ältere Menschen", "um ältere Menschen", "Ältere", "die älteren Menschen", "um die älteren Menschen"],
         explain: "„Die Älteren. Wer kein Smartphone hat, wird es schwer haben.“",
       },
       {

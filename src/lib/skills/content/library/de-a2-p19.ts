@@ -215,7 +215,7 @@ export const deA2P19: SkillExercise[] = [
         phrases: [
           { de: "Vielen Dank für Ihre Nachricht.", tr: "Notunuz için çok teşekkürler.", en: "Thank you for your message." },
           { de: "An diesem Tag bin ich leider nicht zu Hause.", tr: "O gün maalesef evde değilim.", en: "Unfortunately I'm not at home that day." },
-          { de: "Passt Ihnen vielleicht der … ?", tr: "… size uyar mı?", en: "Would … suit you?" },
+          { de: "Passt Ihnen vielleicht der …?", tr: "… size uyar mı?", en: "Would … suit you?" },
           { de: "Ich kann den Schlüssel bei … lassen.", tr: "Anahtarı …'a bırakabilirim.", en: "I can leave the key with …" },
           { de: "Bitte rufen Sie mich kurz an.", tr: "Lütfen beni kısaca arayın.", en: "Please give me a quick call." },
         ],
@@ -299,7 +299,7 @@ export const deA2P19: SkillExercise[] = [
       {
         de: "Der Zug ist gerade abgefahren.",
         tr: "Tren az önce kalktı.",
-        hint: "Vuruşlar: ZUK, GAA-de, AB-ge-fah-ren. abgefahren'de yalnız ab vurgulu, kalan üç hece kısa.",
+        hint: "Vuruşlar: ZUK, ge-RAA-de, AB-ge-fah-ren. abgefahren'de yalnız ab vurgulu, kalan üç hece kısa.",
         confusions: [
           {
             heard: [],
@@ -403,7 +403,7 @@ export const deA2P19: SkillExercise[] = [
         options: [],
         answer: 0,
         accept: ["Dieses", "dieses"],
-        explain: "das Jahr nötr: dieses, das'daki -s gibi.",
+        explain: "das Jahr nötr: dieses, das'taki -s gibi.",
       },
       {
         kind: "gapfill",

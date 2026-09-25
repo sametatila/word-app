@@ -161,7 +161,7 @@ export const deB1P14: SkillExercise[] = [
         text: "Wann soll Herr Feldmann lüften?",
         options: [],
         answer: 0,
-        accept: ["früh am Morgen", "am frühen Morgen", "morgens früh", "früh morgens"],
+        accept: ["früh am Morgen", "am frühen Morgen", "morgens früh", "früh morgens", "frühmorgens", "morgens", "am Morgen"],
         explain: "„Lüften Sie lieber früh am Morgen, bevor die Sonne kommt.“",
       },
       {
@@ -227,7 +227,7 @@ export const deB1P14: SkillExercise[] = [
           "Sehr geehrte Damen und Herren,\n\n" +
           "ich wohne seit drei Jahren in der Wohnung 12 im vierten Stock, Gartenstraße 5. Alle Fenster " +
           "liegen nach Süden und haben keinen Sonnenschutz. Im Sommer steigt die Temperatur so stark, dass " +
-          "mein Thermometer im Juli fast jeden Nachmittag über dreißig Grad gezeigt hat. Die Wohnung wird " +
+          "mein Thermometer im Juli fast jeden Nachmittag über dreißig Grad zeigt. Die Wohnung wird " +
           "so heiß, dass ich nachmittags nicht arbeiten kann, und ich bin zwei Tage pro Woche im Homeoffice. " +
           "Ich bitte Sie deshalb um die Erlaubnis, außen an den beiden großen Fenstern Rollos anzubringen. " +
           "Ein Fachbetrieb hat mir ein Angebot über 1.400 Euro gemacht. Selbstverständlich würde ich die " +

@@ -183,7 +183,7 @@ export const deA1P20: SkillExercise[] = [
         kind: "build",
         tr: "Benzini memnuniyetle öderim.",
         answer: "Ich bezahle gern das Benzin.",
-        alternatives: ["Das Benzin bezahle ich gern."],
+        alternatives: ["Das Benzin bezahle ich gern.", "Ich bezahle das Benzin gern."],
         hint: "Nesne başa gelince fiil yine ikinci sırada kalır ve özne arkasına geçer.",
       },
       {
@@ -293,7 +293,7 @@ export const deA1P20: SkillExercise[] = [
       {
         de: "Meine Hobbys sind Lesen, Kochen und Tanzen.",
         tr: "Hobilerim okumak, yemek pişirmek ve dans etmek.",
-        hint: "„Lesen“ ve „Kochen“da ses askıda, „Tanzen“de iner.",
+        hint: "„Lesen“ ve „Kochen“de ses askıda, „Tanzen“de iner.",
         confusions: [
           {
             heard: [],

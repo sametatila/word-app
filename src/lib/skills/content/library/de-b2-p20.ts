@@ -91,7 +91,7 @@ export const deB2P20: SkillExercise[] = [
         text: "Wem gehört das Trinkgeld laut Sabine Horn rechtlich?",
         options: [],
         answer: 0,
-        accept: ["den Beschäftigten", "Beschäftigten", "dem Personal"],
+        accept: ["den Beschäftigten", "Beschäftigten", "dem Personal", "den Mitarbeitern", "den Angestellten", "den Arbeitnehmern", "der Bedienung"],
         explain: "„Rechtlich gehört es den Beschäftigten“ — işveren onu tutamaz ve maaştan düşemez.",
       },
       {
@@ -299,7 +299,7 @@ export const deB2P20: SkillExercise[] = [
         "Köche, ohne die es kein Essen gäbe, gehen oft leer aus. " +
         "Würde man das Trinkgeld abschaffen, müssten die Preise steigen, und manche Gäste würden sich " +
         "beschweren. Dafür wüsste jeder im Betrieb, was er am Monatsende verdient. " +
-        "Meiner Meinung nach sollte Trinkgeld nicht verboten werden, aber überflüssig: Der Lohn muss auch " +
+        "Meiner Meinung nach sollte Trinkgeld nicht verboten, sondern überflüssig werden: Der Lohn muss auch " +
         "ohne Trinkgeld zum Leben reichen. Wer dann trotzdem etwas geben möchte, tut es wirklich freiwillig, " +
         "und genau so war das Trinkgeld ja einmal gemeint.",
       rubricHint:

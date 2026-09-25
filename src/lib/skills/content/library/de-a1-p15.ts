@@ -144,7 +144,7 @@ export const deA1P15: SkillExercise[] = [
         text: "Wann soll Herr Schulz wiederkommen?",
         options: [],
         answer: 0,
-        accept: ["am Freitag um zehn", "am Freitag", "Freitag um zehn Uhr"],
+        accept: ["am Freitag um zehn", "am Freitag", "Freitag um zehn Uhr", "Freitag", "am Freitag um zehn Uhr"],
         explain: "„Ja, am Freitag um zehn.“",
       },
       {
@@ -178,7 +178,7 @@ export const deA1P15: SkillExercise[] = [
         kind: "build",
         tr: "Barınaktan küçük bir köpek almak istiyoruz.",
         answer: "Wir möchten einen kleinen Hund aus dem Tierheim nehmen.",
-        alternatives: ["Aus dem Tierheim möchten wir einen kleinen Hund nehmen."],
+        alternatives: ["Aus dem Tierheim möchten wir einen kleinen Hund nehmen.", "Wir möchten aus dem Tierheim einen kleinen Hund nehmen."],
         hint: "„möchten“ ikinci sırada, „nehmen“ sonda; eril isim nesne olunca „einen kleinen Hund“ olur.",
       },
       {

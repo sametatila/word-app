@@ -84,7 +84,7 @@ export const enB1P12: SkillExercise[] = [
         text: "Who saved the scene?",
         options: [],
         answer: 0,
-        accept: ["the woman playing his wife", "the actress playing his wife", "his stage wife"],
+        accept: ["the woman playing his wife", "the actress playing his wife", "his stage wife", "the woman playing my wife", "the woman who played his wife", "the actress who played his wife"],
         explain: "Karısını oynayan kadın metinde olmayan bir soru sorup ona ikinci repliğini vermiş.",
       },
       {
@@ -169,7 +169,7 @@ export const enB1P12: SkillExercise[] = [
         text: "Who started watching the men's team?",
         options: [],
         answer: 0,
-        accept: ["the parents", "the girls' parents", "parents of the girls"],
+        accept: ["the parents", "the girls' parents", "parents of the girls", "parents", "the parents of the girls"],
         explain: "Kızlarını izlemeye gelen veliler erkek takımını da izlemeye başlamış.",
       },
       {

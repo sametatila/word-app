@@ -347,7 +347,7 @@ export const deA2P16: SkillExercise[] = [
       },
       {
         heading: "Ne olunur? Sıfat, meslek, yaş",
-        tr: "werden'den sonra bir sıfat (kalt, teurer), bir meslek ya da bir yaş gelir. Meslekte artikel kullanılmaz: „Sie wird Ärztin“, „eine Ärztin“ değil. Karşılaştırma ekiyle birlikte „gittikçe“ anlamı çıkar.",
+        tr: "werden'den sonra bir sıfat (kalt, teurer), bir meslek ya da bir yaş gelir. Meslekte artikel kullanılmaz: „Sie wird Ärztin“, „eine Ärztin“ değil; meslek bir sıfatla nitelenirse artikel gelir: „eine gute Ärztin“. Karşılaştırma ekiyle birlikte „gittikçe“ anlamı çıkar.",
         examples: [
           { de: "Die Wohnungen werden immer teurer.", tr: "Daireler gittikçe pahalanıyor.", note: "werden + Komparativ" },
           { de: "Meine Tochter will Ärztin werden.", tr: "Kızım doktor olmak istiyor.", note: "meslek, artikel yok" },

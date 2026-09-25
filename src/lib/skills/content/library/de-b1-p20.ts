@@ -83,7 +83,7 @@ export const deB1P20: SkillExercise[] = [
         text: "Wann wird es laut Hartmann gefährlich?",
         options: [],
         answer: 0,
-        accept: ["nach zwei Tagen Pause", "wenn man zwei Tage aussetzt", "zwei Tage hintereinander"],
+        accept: ["nach zwei Tagen Pause", "wenn man zwei Tage aussetzt", "zwei Tage hintereinander", "wenn man zwei Tage hintereinander aussetzt", "nach zwei Tagen", "wenn man zwei Tage hintereinander verpasst"],
         explain: "Tek gün sorun değil: „… erst, wenn man zwei Tage hintereinander aussetzt“.",
       },
       {
@@ -121,7 +121,7 @@ export const deB1P20: SkillExercise[] = [
       { speaker: "Frau Vogt", text: "Guten Morgen, ich bin Karin Vogt von der Stadtbibliothek. Viele sagen mir: Ich würde gern mehr lesen, aber ich habe keine Zeit. Heute drei Ideen dagegen." },
       { speaker: "Frau Vogt", text: "Erstens: Tragen Sie immer ein Buch bei sich. Man liest nicht mehr, indem man Zeit sucht, sondern indem man kurze Wartezeiten nutzt, beim Arzt oder an der Haltestelle." },
       { speaker: "Frau Vogt", text: "Zweitens: Lesen Sie ein Buch nicht nur deshalb zu Ende, weil Sie es angefangen haben. Wenn es Sie nach fünfzig Seiten langweilt, nehmen Sie ein anderes." },
-      { speaker: "Frau Vogt", text: "Das klingt unhöflich gegenüber dem Autor, ist aber der häufigste Grund, warum Menschen monatelang gar nichts lesen." },
+      { speaker: "Frau Vogt", text: "Das klingt unhöflich gegenüber dem Autor. Aber ein langweiliges Buch ist der häufigste Grund, warum Menschen monatelang gar nichts lesen." },
       { speaker: "Frau Vogt", text: "Drittens: Statt abends noch schnell die Nachrichten zu lesen, lesen Sie im Bett zehn Seiten aus einem Roman. Danach schlafen die meisten auch besser." },
       { speaker: "Frau Vogt", text: "Und wer mit dem Auto zur Arbeit fährt, kann Hörbücher ausprobieren. Die Bibliothek leiht sie kostenlos aus, man braucht nur einen Ausweis." },
       { speaker: "Frau Vogt", text: "Übrigens: Ein Ausweis kostet bei uns zwölf Euro im Jahr, für Schüler nichts. Wir haben von Montag bis Samstag geöffnet." },
@@ -167,7 +167,7 @@ export const deB1P20: SkillExercise[] = [
         text: "Was kostet der Ausweis für Schüler?",
         options: [],
         answer: 0,
-        accept: ["nichts", "gar nichts", "er ist kostenlos"],
+        accept: ["nichts", "gar nichts", "er ist kostenlos", "kostenlos", "gratis", "null Euro", "0 Euro"],
         explain: "„Ein Ausweis kostet bei uns zwölf Euro im Jahr, für Schüler nichts.“",
       },
       {

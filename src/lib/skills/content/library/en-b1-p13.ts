@@ -45,9 +45,9 @@ export const enB1P13: SkillExercise[] = [
       "Not everything worked. The music in the main hall was so loud that it was tiring to listen " +
       "to anybody, and the queue for the café was confusing, because there were two queues and " +
       "nobody knew which was which. By ten o'clock the free drinks had run out.\n\n" +
-      "Still, I left feeling more relaxed than I had all week. I'd recommend it to anyone who " +
-      "thinks museums are boring, and especially to them. Four stars, and one of the missing " +
-      "stars is for the music.",
+      "Still, I left feeling more relaxed than I had all week. I'd recommend it to anyone, and " +
+      "especially to people who think museums are boring. Four stars out of five, and the missing " +
+      "star is for the music.",
     questions: [
       {
         text: "Why did the writer go to the museum?",
@@ -85,18 +85,18 @@ export const enB1P13: SkillExercise[] = [
         text: "Why was the café queue confusing?",
         options: [],
         answer: 0,
-        accept: ["there were two queues", "two queues"],
+        accept: ["there were two queues", "two queues", "because there were two queues", "there were two queues and nobody knew which was which"],
         explain: "„there were two queues and nobody knew which was which“.",
       },
       {
         text: "Why did the museum lose a star?",
         options: [
-          "partly because of the loud music",
+          "because of the loud music",
           "because the evening was too short",
           "because the guides were boring",
         ],
         answer: 0,
-        explain: "„one of the missing stars is for the music“.",
+        explain: "„the missing star is for the music“.",
       },
     ],
   },
@@ -163,7 +163,7 @@ export const enB1P13: SkillExercise[] = [
         text: "What stops the mind from wandering?",
         options: [],
         answer: 0,
-        accept: ["the phone", "your phone", "picking up the phone"],
+        accept: ["the phone", "your phone", "picking up the phone", "a phone", "phones", "picking up your phone"],
         explain: "„the phone stops it completely“ — her sıkıldığında eline alırsan zihin dalıp gidemiyor.",
       },
       {

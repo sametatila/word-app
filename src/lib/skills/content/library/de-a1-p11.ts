@@ -150,7 +150,7 @@ export const deA1P11: SkillExercise[] = [
         explain: "„Ich bleibe bis Dienstag.“",
       },
       {
-        text: "Warum soll Sina am Abend zu Hause anrufen?",
+        text: "Warum soll Sina ihre Oma am Abend zu Hause anrufen?",
         options: ["Oma hat eine neue Nummer.", "Omas Handy ist fast leer.", "Oma ist am Abend nicht da."],
         answer: 1,
         explain: "„Mein Handy ist fast leer. Ruf mich bitte heute Abend zu Hause an.“",
@@ -348,7 +348,7 @@ export const deA1P11: SkillExercise[] = [
       },
       {
         heading: "Virgül ve tekrar",
-        tr: "„aber“ ve „denn“dan önce virgül konur; „und“ ile „oder“dan önce genellikle konmaz. Özne iki cümlede aynıysa „und“ ile „oder“dan sonra tekrar edilmeyebilir; „denn“den sonra ise özne hep söylenir.",
+        tr: "„aber“ ve „denn“den önce virgül konur; „und“ ile „oder“den önce genellikle konmaz. Özne iki cümlede aynıysa „und“ ile „oder“den sonra tekrar edilmeyebilir; „denn“den sonra ise özne hep söylenir.",
         examples: [
           { de: "Sie steht auf und macht Frühstück.", tr: "Kalkıyor ve kahvaltı hazırlıyor.", note: "özne tekrarlanmadı" },
           { de: "Die Jacke ist schön, aber sie ist teuer.", tr: "Ceket güzel ama pahalı.", note: "aber'den önce virgül" },
@@ -417,7 +417,7 @@ export const deA1P11: SkillExercise[] = [
         options: [],
         answer: 0,
         items: ["Ich bin müde,", "denn", "ich", "arbeite", "viel"],
-        explain: "„denn“dan sonra özne birinci, fiil ikinci: Ich bin müde, denn ich arbeite viel.",
+        explain: "„denn“den sonra özne birinci, fiil ikinci: Ich bin müde, denn ich arbeite viel.",
       },
       {
         kind: "truefalse",
@@ -431,7 +431,7 @@ export const deA1P11: SkillExercise[] = [
         text: "„Er ist nett, aber er kommt immer zu spät.“ — Bu cümle doğru mu?",
         options: ["Richtig", "Falsch"],
         answer: 0,
-        explain: "„aber“dan önce virgül var ve arkasından normal sıralı bir cümle geliyor.",
+        explain: "„aber“den önce virgül var ve arkasından normal sıralı bir cümle geliyor.",
       },
     ],
   },

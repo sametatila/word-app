@@ -137,7 +137,7 @@ export const deA1P14: SkillExercise[] = [
         text: "Der Kurs ist immer am ___.",
         options: [],
         answer: 0,
-        accept: ["Mittwoch", "mittwochs"],
+        accept: ["Mittwoch"],
         explain: "„immer mittwochs von achtzehn bis einundzwanzig Uhr“.",
       },
       {
@@ -145,7 +145,7 @@ export const deA1P14: SkillExercise[] = [
         text: "Was soll man zuerst machen?",
         options: [],
         answer: 0,
-        accept: ["die Hände waschen", "Hände waschen", "seine Hände waschen"],
+        accept: ["die Hände waschen", "Hände waschen", "seine Hände waschen", "sich die Hände waschen"],
         explain: "„Bitte waschen Sie zuerst Ihre Hände.“",
       },
       {
@@ -296,7 +296,7 @@ export const deA1P14: SkillExercise[] = [
       {
         de: "Die nächste Station ist der Marktplatz.",
         tr: "Sonraki durak Marktplatz.",
-        hint: "„Station“ = ştat-TSİON: baştaki st şt, sondaki -tion TSİON.",
+        hint: "„Station“ = şta-TSİON: baştaki st şt, sondaki -tion TSİON.",
         confusions: [
           {
             heard: [],

@@ -58,7 +58,7 @@ export const enC1P17: SkillExercise[] = [
       "before their child's first visit.\n\n" +
       "About a third of those who come expecting to object leave having changed their minds, she estimates. " +
       "The rest mostly stay away, and she accepts that. “I would rather lose a family,” she says, “than pretend " +
-      "to them that climbing is flat.”",
+      "to them that climbing is safe.”",
     questions: [
       {
         text: "What did the parent's letter object to most of all?",
@@ -100,7 +100,7 @@ export const enC1P17: SkillExercise[] = [
         text: "What are parents invited to do before the first visit?",
         options: [],
         answer: 0,
-        accept: ["spend an afternoon on site", "spend one afternoon on site", "visit for an afternoon"],
+        accept: ["spend an afternoon on site", "spend one afternoon on site", "spend an afternoon there", "spend one afternoon there", "spend an afternoon at the playground", "visit for an afternoon"],
         explain: "„parents are invited to spend one afternoon on site before their child's first visit“.",
       },
       {

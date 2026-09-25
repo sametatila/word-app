@@ -94,7 +94,7 @@ export const enB2P19: SkillExercise[] = [
         text: "What should you do if permission is given?",
         options: [],
         answer: 0,
-        accept: ["get it in writing", "get it written down", "keep a written copy"],
+        accept: ["get it in writing", "get it in writing and keep a copy", "get permission in writing", "get it written down", "keep a written copy", "keep a copy"],
         explain: "İzni yazılı alıp bir kopyasını saklamak gerekiyor; sözlü anlaşmalar unutulur.",
       },
       {

@@ -88,8 +88,8 @@ export const deB2P14: SkillExercise[] = [
         text: "Welche Frage hört man in der Sprechstunde am häufigsten?",
         options: [],
         answer: 0,
-        accept: ["Darf ich mir das erlauben", "Darf ich mir das überhaupt erlauben", "ob sie sich das erlauben dürfen"],
-        explain: "Soru „Neye hakkım var?“ değil, „Buna izin verebilir miyim?“.",
+        accept: ["Darf ich mir das erlauben", "Darf ich mir das überhaupt erlauben", "ob sie sich das erlauben dürfen", "ob sie sich das überhaupt erlauben dürfen", "ob man sich das erlauben darf", "ob man sich das überhaupt erlauben darf"],
+        explain: "Soru „Neye hakkım var?“ değil, „Kendime buna izin verebilir miyim?“.",
       },
       {
         text: "Was ist die Botschaft des letzten Absatzes?",
@@ -177,7 +177,7 @@ export const deB2P14: SkillExercise[] = [
         text: "Wer könnte vor Ort einen Schlüssel bekommen?",
         options: [],
         answer: 0,
-        accept: ["eine Nachbarin", "die Nachbarin", "die Nachbarin der Mutter"],
+        accept: ["eine Nachbarin", "die Nachbarin", "die Nachbarin der Mutter", "Nachbarin", "eine Nachbarin der Mutter", "die Nachbarin seiner Mutter"],
         explain: "Annesini otuz yıldır tanıyan bir komşu kadın var.",
       },
       {
