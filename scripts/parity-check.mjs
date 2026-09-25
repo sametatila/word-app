@@ -21667,6 +21667,10 @@ console.log("\n" + C.b + "249. anlamin sesli hali" + C.off);
   sameList("mobil yuruyus anlami speechOfGloss ile okunuyor", [/speechOfGloss\(glossText\(/.test(yurMobil) ? "evet" : "hayir"], ["evet"]);
   const yurWeb = read("src/components/walk-player.tsx");
   sameList("web yuruyus anlami spokenGloss ile okunuyor", [/const text = spokenGloss\(word, lang\)/.test(yurWeb) ? "evet" : "hayir"], ["evet"]);
+  /* Ayni sesli anlam: "o" hem er hem es. Sunucu esleri `alternatives` ile yolluyor; iki istemci de
+     kabul listesine koymali, yoksa biri dogru cevabi yanlis sayar. */
+  sameList("yuruyus esleri kabul (mobil)", [/spokenMatches\(cands, \[withArtikel\(w\), w\.de, \.\.\.\(w\.alts \?\? \[\]\)\]\)/.test(yurMobil) ? "evet" : "hayir"], ["evet"]);
+  sameList("yuruyus esleri kabul (web)", [(yurWeb.match(/spokenMatches\([a-z]+, accepted\)/g) ?? []).length === 2 ? "evet" : "hayir"], ["evet"]);
 }
 
 /* ── 400. YONLENDIRME GENEL ADRESE ─────────────────────────────────────────

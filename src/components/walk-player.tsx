@@ -1069,6 +1069,8 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
         for (const word of wordsOf(round)) {
           if (!alive()) return;
           const target = withArtikel(word);
+          // Sesli anlamı aynı öteki kelimeler de doğru cevap ("o" → er / es); sunucu `buildWalk` kuruyor.
+          const accepted = [target, word.de, ...(round.game === "speak" ? round.alternatives ?? [] : [])];
 
           // Yeni kelime: sorulmuyor, tanıtılıyor. Ekranda da öyle çalışıyor.
           if (round.game === "intro") {
@@ -1117,7 +1119,7 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
               target,
               // Doğru cevap DA teslim işareti ("weiter") de dinlemeyi erken
               // kapatır: cevap veren de teslim eden de pencerenin dolmasını beklemesin.
-              (alts) => spokenMatches(alts, [target, word.de]) || alts.some((h) => parseSkip(h, course)),
+              (alts) => spokenMatches(alts, accepted) || alts.some((h) => parseSkip(h, course)),
               [glossSegment(word, lang)],
             );
           let heard = await ask();
@@ -1147,7 +1149,7 @@ export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?:
           // Doğruluk ÖNCE. Teslim ("weiter", "weiß nicht") yalnız cevap hedefe
           // UYMADIĞINDA aranıyor — böylece hedefin kendisi bu kelimelerden biri
           // olsa bile doğru cevap yanlışlıkla teslim sayılmıyor.
-          const ok = !unheard && spokenMatches(heard, [target, word.de]);
+          const ok = !unheard && spokenMatches(heard, accepted);
           // Teslim YANLIŞ değil: ceza yok, kısa motive + doğrusu. İşaret ALMANCA
           // veriliyor çünkü de-DE tanıyıcı Türkçe "bilmiyorum"u yakalayamıyor.
           const skipped = !unheard && !ok && heard.some((h) => parseSkip(h, course));

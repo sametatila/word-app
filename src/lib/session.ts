@@ -1118,6 +1118,26 @@ export async function buildWalk(
 
   const rounds = composeWalk(dueWords, newWords, T);
 
+  /* SESLİ İSTEMDE AYIRT EDİCİ SATIR YOK. Yürüyüş yalnız anadildeki anlamı okuyor; ekrandaki İngilizce
+     alt satır ("he" / "it") orada duyulmuyor. Aynı anlamı taşıyan başka bir kelimeyi söyleyen öğrenci
+     soruyu doğru cevaplamış olur: "o" → er da es de, "patates" → Kartoffel da Erdapfel da. Yazma turunun
+     eş anlamlıları ikinci dilde de eşleşme istiyor (orada alt satır görünüyor); burada yalnız anlamın
+     kendisi, çünkü öğrencinin duyduğu yalnız o. */
+  const col = native === "en" ? words.en : native === "de" ? words.deGloss : words.tr;
+  const keys = [...new Set(rounds.flatMap((r) => (r.game === "speak" ? [glossFor(r.word, native)?.text ?? ""] : [])).filter(Boolean))];
+  if (keys.length) {
+    const same = await db
+      .select({ de: words.de, gloss: col })
+      .from(words)
+      .where(and(practiceWordsOf(course), inArray(col, keys)));
+    for (const r of rounds) {
+      if (r.game !== "speak") continue;
+      const key = glossFor(r.word, native)?.text;
+      const alternatives = same.filter((s) => s.gloss === key && s.de !== r.word.de).map((s) => s.de).slice(0, 6);
+      if (alternatives.length) r.alternatives = alternatives;
+    }
+  }
+
   // meta yürüyüş ekranında kullanılmıyor ama SessionPayload gereği doldurulur.
   const { meta } = await buildSession(userId, today, false, true);
   return { rounds, resume: null, meta };

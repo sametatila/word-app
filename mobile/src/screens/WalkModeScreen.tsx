@@ -55,7 +55,8 @@ type Verdict = "correct" | "wrong" | "skip" | "unheard" | null;
 
 /** Yürüyüş kelimesi — demo Word + oyunların gösterdiği İngilizce gloss (`en`). */
 type Artikel = "der" | "die" | "das";
-type WalkWord = { id: number; de: string; tr: string; artikel?: Artikel; en?: string | null; deGloss?: string | null };
+/** `alts`: sesli anlamı aynı öteki kelimeler — onlar da doğru cevap (web `walk-player` `accepted`). */
+type WalkWord = { id: number; de: string; tr: string; artikel?: Artikel; en?: string | null; deGloss?: string | null; alts?: string[] };
 /** Web walk turu: tek kelime + tür (intro = yeni kelimeyi öğret; speak = sor). */
 type WalkRound = { word: WalkWord; kind: "intro" | "speak" };
 
@@ -80,7 +81,7 @@ function glossText(w: WalkWord): string {
 /* Süzgeç ile ünlem AYRI iki iddia: süzgeç değişirse ünlem sessizce yalan
    söylemeye başlar. Tek geçişte hem eleme hem dönüştürme yapılıyor. */
 const mapRounds = (rs: Round[]): WalkRound[] =>
-  rs.flatMap((r) => (r.word ? [{ word: mapWord(r.word), kind: r.game === "intro" ? "intro" as const : "speak" as const }] : []));
+  rs.flatMap((r) => (r.word ? [{ word: { ...mapWord(r.word), alts: r.alternatives ?? [] }, kind: r.game === "intro" ? "intro" as const : "speak" as const }] : []));
 
 /**
  * Yürüyüş modu — web `components/walk-player.tsx` akışının birebir mobil karşılığı.
@@ -541,7 +542,7 @@ export function WalkModeScreen() {
       // kelimeleri aday yap → hedef kelime nerede geçerse geçsin exact eşleşsin.
       const cands = adaylar.flatMap((h) => [h, ...h.split(/\s+/)]).filter(Boolean);
       const unheard = adaylar.length === 0;
-      const ok = !unheard && spokenMatches(cands, [withArtikel(w), w.de]);
+      const ok = !unheard && spokenMatches(cands, [withArtikel(w), w.de, ...(w.alts ?? [])]);
       // Sarmalayıcı şart: parseSkip'in ikinci parametresi dil, ama .some()
       // ikinci argüman olarak dizinin index'ini geçirir.
       const skipped = !unheard && !ok && adaylar.some((h) => parseSkip(h));

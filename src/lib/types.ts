@@ -130,7 +130,13 @@ export type Round =
   // Yalnızca yürürken modu üretir ve tüketir: "Almancasını söyle". Ekran
   // oyunlarının hiçbiri bunu render etmez (GameSwitch'te bilinçli olarak yok),
   // çünkü sesli cevap yalnız yürüyüşte var. Taşıdığı tek şey kelime.
-  | { id: string; game: "speak"; word: RoundWord }
+  | {
+      id: string;
+      game: "speak";
+      word: RoundWord;
+      /** Sesli anlamı aynı olan öteki kelimeler — onları söyleyen de doğru cevap verdi (bkz. `buildWalk`). */
+      alternatives?: string[];
+    }
   | { id: string; game: "match"; words: RoundWord[] }
   | { id: string; game: "choice"; word: RoundWord; options: Option[]; direction: "de-tr" | "tr-de" }
   | { id: string; game: "artikel"; word: RoundWord }
