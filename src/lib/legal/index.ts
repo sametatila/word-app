@@ -147,9 +147,14 @@ import { DAILY_QUOTAS } from "@/lib/quotas";
  * "oturum" değil "tur" (Samet). Kural ve kapsam aynı, yalnız birimin adı —
  * yama basamağı. 1.8'in kaydına madde eklenmedi: yayımlanmış bir sürümün
  * metnini sessizce değiştirmek, bu dosyanın kuralının tam tersi.
+ *
+ * 1.8.2 (2026-09-25) yalnız ADLANDIRMA: "ders", "rol yapma" ve "konuşma
+ * pratiği" ürünün dilinden kalktı (docs/premium/README.md §2 Sözlük); aynı
+ * şey artık Patika'nın Konuşma adımı ve adımın yapay zekâ sohbeti. Toplanan
+ * veri, alıcılar, saklama süreleri ve kurallar aynı — yama basamağı.
  */
 export const LEGAL_EFFECTIVE_DATE = "2026-09-25";
-export const LEGAL_VERSION = "1.8.1";
+export const LEGAL_VERSION = "1.8.2";
 
 export const LEGAL_ENTITY = {
   /** Hizmet sağlayıcı, veri sorumlusu ve yayıncı: tek gerçek kişi (Türkiye'de yerleşik). */
@@ -211,7 +216,7 @@ export const LEGAL_ENTITY = {
    * düşme süresi. 30 gün seçildi ve seçim keyfî değil:
    *
    *   - Uygulamadaki öteki iki saklama penceresiyle aynı (oturum kaydı en çok
-   *     30 gün, rol yapma kaydı 30 gün); tek bir üst sınır akılda kalıyor.
+   *     30 gün, sohbet kaydı 30 gün); tek bir üst sınır akılda kalıyor.
    *   - KVKK m.13 otuz gün, GDPR m.12(3) bir ay içinde cevap istiyor. Yedek
    *     penceresi de 30 gün olunca silme talebi cevaplandığında veri gerçekten
    *     her yerden düşmüş oluyor; "sildik ama yedekte duruyor" boşluğu kalmıyor.
@@ -231,12 +236,12 @@ export const LEGAL_ENTITY = {
   backupRetentionDays: "30",
 
   /**
-   * Konuşma pratiği kaydının ve oturum kaydının saklama süresi (gün).
+   * Sohbet kaydının ve oturum kaydının saklama süresi (gün).
    *
    * Bu ikisi ÖTEKİ alanlardan farklı: değerleri elle yazılmıyor, kuralı
    * uygulayan sabitten okunuyor. Sebep, politikanın verdiği sözü kodun
    * TUTMASI gerektiği: "konuşma kayıtları 30 gün sonra silinir" cümlesi
-   * `lib/lessons/log-const` içindeki sayıyla, "oturum en çok 30 gün" cümlesi
+   * `lib/conversations/log-const` içindeki sayıyla, "oturum en çok 30 gün" cümlesi
    * `lib/auth/session-config` içindekiyle aynı olmak zorunda. Metne düz sayı
    * yazıldığı sürece biri değişip öteki eski sözü söylemeye devam edebilirdi
    * — ve bu sayfa Play Console ile App Store Connect'e URL olarak verilmiş
@@ -250,7 +255,7 @@ export const LEGAL_ENTITY = {
 
 /** Adil kullanım sınırları — koddaki gerçek kotalar (route dosyalarındaki sabitler). */
 export const FAIR_USE = {
-  roleplayTurnsPerDay: DAILY_QUOTAS.chatTurns,
+  chatTurnsPerDay: DAILY_QUOTAS.chatTurns,
   sttRequestsPerDay: DAILY_QUOTAS.sttRequests,
   pronounceRequestsPerDay: DAILY_QUOTAS.pronounceRequests,
   reportsPerDay: DAILY_QUOTAS.reports,
@@ -378,6 +383,22 @@ export type LegalChangelogEntry = {
 };
 
 export const LEGAL_CHANGELOG: readonly LegalChangelogEntry[] = [
+  {
+    /* YAMA BASAMAĞI: yalnız adlar değişti; veri, alıcı, süre ve kural aynı. */
+    version: "1.8.2",
+    date: "2026-09-25",
+    changes: {
+      tr: [
+        "Adlandırma: gizlilik politikası ve kullanım şartlarında \"ders\", \"rol yapma\" ve \"konuşma pratiği\" yerine uygulamadaki yeni adlar kullanıldı: Patika'nın Konuşma adımı (anlatım ve yapay zekâ sohbeti) ve sohbet kayıtları. İşlenen veriler, alıcılar, saklama süreleri ve kurallar değişmedi.",
+      ],
+      en: [
+        "Naming: the privacy policy and terms of use now use the app's new names instead of \"lessons\", \"roleplay\" and \"speaking practice\": the Path's Speaking steps (explanation and AI chat) and chat logs. The data processed, recipients, retention periods and rules did not change.",
+      ],
+      de: [
+        "Benennung: Datenschutzerklärung und Nutzungsbedingungen verwenden statt „Lektionen“, „Rollenspiel“ und „Sprechpraxis“ die neuen Namen der App: die Sprechen-Schritte des Pfads (Erklärung und KI-Chat) und Chat-Protokolle. Verarbeitete Daten, Empfänger, Speicherfristen und Regeln haben sich nicht geändert.",
+      ],
+    },
+  },
   {
     /* YAMA BASAMAĞI: birim düzeltmesi, hak ya da yükümlülük değişmedi. */
     version: "1.8.1",
@@ -784,9 +805,9 @@ const DATA_KINDS = {
     konsaydı rızanın parmak izi değişir ve herkesten izin yeniden istenirdi.
   */
   ttsText: {
-    tr: "Seslendirilecek metin (ders içerikleri, konuşma pratiğinde karakterin yanıtı); istek Lernomi sunucusundan gider, hesap bilgisi ve IP adresin gönderilmez",
-    en: "Text to be spoken (lesson content, the character's reply in speaking practice); the request comes from the Lernomi server, no account data and not your IP address",
-    de: "Vorzulesender Text (Lektionsinhalte, die Antwort der Figur in der Sprechpraxis); die Anfrage kommt vom Lernomi-Server, ohne Kontodaten und ohne deine IP-Adresse",
+    tr: "Seslendirilecek metin (Konuşma adımı içerikleri, sohbette karakterin yanıtı); istek Lernomi sunucusundan gider, hesap bilgisi ve IP adresin gönderilmez",
+    en: "Text to be spoken (Speaking step content, the character's reply in the chat); the request comes from the Lernomi server, no account data and not your IP address",
+    de: "Vorzulesender Text (Inhalte der Sprechen-Schritte, die Antwort der Figur im Chat); die Anfrage kommt vom Lernomi-Server, ohne Kontodaten und ohne deine IP-Adresse",
   },
   traffic: {
     tr: "IP adresi, tarayıcı/cihaz sinyalleri, iletilen istekler ve cevaplar (bağlantı şifrelemesi Cloudflare'de de çözülür)",

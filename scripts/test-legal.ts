@@ -169,8 +169,8 @@ console.log("\nSaklama süreleri");
     {
       token: "speechLogDays",
       value: SPEECH_LOG_RETENTION_DAYS,
-      label: "konuşma kaydı",
-      topic: /konuşma pratiği kayıt|speaking practice log|Protokolle der Sprechpraxis/i,
+      label: "sohbet kaydı",
+      topic: /sohbet kayıt|chat log|Chat-Protokoll/i,
     },
     {
       token: "sessionMaxDays",
@@ -240,7 +240,7 @@ console.log("\nAdil kullanım");
     { path: "src/app/api/reports/route.ts", field: "reports" },
   ];
   const PAIRS: [keyof typeof FAIR_USE, keyof typeof DAILY_QUOTAS][] = [
-    ["roleplayTurnsPerDay", "chatTurns"],
+    ["chatTurnsPerDay", "chatTurns"],
     ["sttRequestsPerDay", "sttRequests"],
     ["pronounceRequestsPerDay", "pronounceRequests"],
     ["reportsPerDay", "reports"],

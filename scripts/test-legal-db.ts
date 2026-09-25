@@ -4,6 +4,7 @@ import { appSettings, legalDocuments } from "@/lib/db/schema";
 import { LEGAL_LOCALES } from "@/lib/legal";
 import { clearLegalConfigCache, legalConfig, saveLegalConfig } from "@/lib/legal/config";
 import { defaultLegalConfig, parseLegalConfig } from "@/lib/legal/shape";
+import { LEGACY_FAIR_USE_CHAT_KEY } from "@/lib/legacy-names";
 import {
   LEGAL_DOC_IDS,
   allLegalDocuments,
@@ -62,8 +63,10 @@ async function main() {
   check("geçersiz sürüm reddedildi", clamped.version === d.version, clamped.version);
   check("geçersiz tarih reddedildi", clamped.effectiveDate === d.effectiveDate, clamped.effectiveDate);
 
-  const wild = parseLegalConfig({ fairUse: { roleplayTurnsPerDay: 9_999_999 }, platforms: { android: false, ios: "evet" } });
-  check("adil kullanım tavanı kırpıldı", wild.fairUse.roleplayTurnsPerDay === 100_000, String(wild.fairUse.roleplayTurnsPerDay));
+  const wild = parseLegalConfig({ fairUse: { chatTurnsPerDay: 9_999_999 }, platforms: { android: false, ios: "evet" } });
+  check("adil kullanım tavanı kırpıldı", wild.fairUse.chatTurnsPerDay === 100_000, String(wild.fairUse.chatTurnsPerDay));
+  const legacy = parseLegalConfig({ fairUse: { [LEGACY_FAIR_USE_CHAT_KEY]: 250 } });
+  check("taşınmamış kayıttaki eski sohbet anahtarı da okunuyor (geçici)", legacy.fairUse.chatTurnsPerDay === 250, String(legacy.fairUse.chatTurnsPerDay));
   check("android kapatılamıyor", wild.platforms.android === true);
   check("bozuk ios değeri varsayılana düştü", wild.platforms.ios === d.platforms.ios);
 

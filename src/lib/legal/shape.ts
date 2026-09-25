@@ -1,3 +1,4 @@
+import { LEGACY_FAIR_USE_CHAT_KEY } from "@/lib/legacy-names";
 import {
   FAIR_USE,
   LEGAL_EFFECTIVE_DATE,
@@ -240,7 +241,9 @@ export function parseLegalConfig(raw: unknown): LegalConfig {
       ios: bool(pf.ios, d.platforms.ios),
     },
     fairUse: {
-      roleplayTurnsPerDay: int(fu.roleplayTurnsPerDay, d.fairUse.roleplayTurnsPerDay, 1, 100_000),
+      /* Eski kayıt anahtarı `roleplayTurnsPerDay` 0069 ile taşındı; taşınmamış bir
+         panel kaydı için geçici olarak o da okunuyor (lib/legacy-names). */
+      chatTurnsPerDay: int(fu.chatTurnsPerDay ?? fu[LEGACY_FAIR_USE_CHAT_KEY], d.fairUse.chatTurnsPerDay, 1, 100_000),
       sttRequestsPerDay: int(fu.sttRequestsPerDay, d.fairUse.sttRequestsPerDay, 1, 100_000),
       pronounceRequestsPerDay: int(fu.pronounceRequestsPerDay, d.fairUse.pronounceRequestsPerDay, 1, 100_000),
       reportsPerDay: int(fu.reportsPerDay, d.fairUse.reportsPerDay, 1, 100_000),

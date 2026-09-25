@@ -41,6 +41,7 @@
 --   puanlı kısım         chat_logs.mode exam → scored · assessments.exercise_id <id>:exam → <id>:scored
 --                        content_reports.ref <id>:exam:<tur> → <id>:scored:<tur>
 --   user_path_items      <ünite>-checkpoint1 → <ünite>-unitQuiz1
+--   app_settings         legal.config fairUse.roleplayTurnsPerDay → fairUse.chatTurnsPerDay
 --
 -- Tek transaction: migrate-all ve apply-migration dosyayı tek cümle olarak
 -- gönderiyor (statement-breakpoint yok), psql de BEGIN/COMMIT'e uyuyor.
@@ -200,5 +201,13 @@ WHERE p.item_id ~ '-checkpoint\d+$'
   AND NOT EXISTS (SELECT 1 FROM user_path_items q
                   WHERE q.user_id = p.user_id AND q.item_id = regexp_replace(p.item_id, '-checkpoint(\d+)$', '-unitQuiz\1'));
 DELETE FROM user_path_items WHERE item_id ~ '-checkpoint\d+$';
+
+-- ── 10. Hukuki yapılandırma: fairUse.roleplayTurnsPerDay → fairUse.chatTurnsPerDay ─
+-- Panelden kaydedilmişse (üretimde 2026-09-14'te satır yoktu) anahtar taşınıyor;
+-- kod taşınmamış kaydı da okuyor (lib/legacy-names).
+UPDATE app_settings
+SET value = jsonb_set(value #- '{fairUse,roleplayTurnsPerDay}', '{fairUse,chatTurnsPerDay}', value #> '{fairUse,roleplayTurnsPerDay}')
+WHERE key = 'legal.config' AND value #> '{fairUse,roleplayTurnsPerDay}' IS NOT NULL
+  AND value #> '{fairUse,chatTurnsPerDay}' IS NULL;
 
 COMMIT;

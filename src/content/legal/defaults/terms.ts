@@ -59,7 +59,7 @@ Bu sözleşme, aşağıda kimliği verilen hizmet sağlayıcı ("Lernomi", "biz"
 
 ## 2. Hizmet
 
-Lernomi, kelime, dinleme, konuşma ve yazma pratiği sunan bir dil öğrenme uygulamasıdır: aralıklı tekrar turları, konuşmalar (anlatım ve yapay zekâ ile karşılıklı konuşma), yürüyüş modu, yazma değerlendirmesi, sınav hazırlığı, haftalık sıralama ve arkadaşlık özellikleri. Kurslar Almanca (Hochdeutsch), Zürih Almancası ve İngilizcedir; kurs listesi zamanla değişebilir ve her kursta her özellik aynı anda hazır olmayabilir. Özellikler zamanla eklenebilir, değişebilir ya da kaldırılabilir; ücretli özellikleri etkileyen değişiklikleri önceden duyururuz.
+Lernomi, kelime, dinleme, konuşma ve yazma çalışması sunan bir dil öğrenme uygulamasıdır: aralıklı tekrar turları, Patika'nın Konuşma adımları (anlatım ve yapay zekâ ile sohbet), yürüyüş modu, yazma değerlendirmesi, sınav hazırlığı, haftalık sıralama ve arkadaşlık özellikleri. Kurslar Almanca (Hochdeutsch), Zürih Almancası ve İngilizcedir; kurs listesi zamanla değişebilir ve her kursta her özellik aynı anda hazır olmayabilir. Özellikler zamanla eklenebilir, değişebilir ya da kaldırılabilir; ücretli özellikleri etkileyen değişiklikleri önceden duyururuz.
 
 ## 3. Hesap ve yaş
 
@@ -75,7 +75,7 @@ Lernomi, kelime, dinleme, konuşma ve yazma pratiği sunan bir dil öğrenme uyg
 - Görünen adında ya da paylaştığın metinlerde hakaret, nefret söylemi, taciz, cinsel içerik, başkasının kimliğine bürünme, kişisel veri ifşası ya da reklam kullanmak,
 - Sıralama, seri ve görevleri otomasyon, sahte hesap ya da hile ile manipüle etmek,
 - Hizmeti tersine mühendislikle çözmek, kazımak, aşırı yüklemek ya da başkalarının erişimini engellemek,
-- Yapay zekâ konuşma pratiğini yasa dışı, zararlı ya da başkalarını hedef alan içerik üretmek için kullanmak,
+- Yapay zekâ sohbetini yasa dışı, zararlı ya da başkalarını hedef alan içerik üretmek için kullanmak,
 - Uygulanan yasaları (fikri mülkiyet, kişisel veriler, yaptırımlar dâhil) ihlal etmek.
 
 Kabul edilemez içeriğe ve kötü niyetli kullanıcılara tolerans gösterilmez. Bildirimler en geç 24 saat içinde incelenir; kurala aykırı içerik kaldırılır ve ihlali yapan kullanıcının hesabı kısıtlanır ya da kapatılır. Kararı ve gerekçesini bildiririz; itiraz için {{supportEmail}} adresini kullanabilirsin. Ciddi ihlaller önceden uyarı gerektirmez.
@@ -95,7 +95,7 @@ Hukuka aykırı ya da bu şartlara aykırı bir içerik (başka bir kullanıcın
 
 ## 6. Yapay zekâ içeriği
 
-- Konuşma pratiği ve değerlendirmeler dil modelleriyle üretilir; bir yapay zekâ ile etkileştiğin uygulamada açıkça belirtilir. Yanıtlar yanlış, eksik ya da tutarsız olabilir; dil bilgisi düzeltmeleri kesin doğru sayılmamalıdır.
+- Sohbet yanıtları ve değerlendirmeler dil modelleriyle üretilir; bir yapay zekâ ile etkileştiğin uygulamada açıkça belirtilir. Yanıtlar yanlış, eksik ya da tutarsız olabilir; dil bilgisi düzeltmeleri kesin doğru sayılmamalıdır.
 - Yapay zekâ ve sunucu konuşma tanımasıyla çalışan özellikler, metninin ya da kısa ses kayıtlarının Gizlilik Politikası'nda adları sayılan sağlayıcılara gönderilmesini gerektirir. Bu gönderim ancak uygulama içinde izin verdiğinde yapılır; izin vermezsen ya da iznini Ayarlar › Gizlilik'ten geri alırsan bu özellikler yapay zekâ olmadan, kısıtlı biçimde çalışır ya da kapalı kalır.
 - Rahatsız edici ya da hatalı bir yanıtı, yanıtın altındaki "Bildir" ile uygulamadan çıkmadan bildirebilirsin.
 - Yapay zekâ karakterleri gerçek kişi değildir; tıbbi, hukuki ya da mali tavsiye vermezler.
@@ -111,7 +111,7 @@ Hukuka aykırı ya da bu şartlara aykırı bir içerik (başka bir kullanıcın
 
 ## 7a. Adil kullanım
 
-Yapay zekâ ve konuşma tanıma sağlayıcı kotalarını herkes için korumak amacıyla hesap başına günlük sınırlar uygulanır: yapay zekâ sohbeti {{fairUse:roleplayTurnsPerDay}} mesaj, sunucu konuşma tanıma {{fairUse:sttRequestsPerDay}} istek, telaffuz puanı {{fairUse:pronounceRequestsPerDay}} istek, içerik bildirimi {{fairUse:reportsPerDay}}. Sınıra ulaşınca uygulama bunu gösterir ve ertesi gün açılır. Sınırlar dürüst ağır kullanımın çok üstündedir; yalnız otomasyon ve kötüye kullanımı engellemek içindir ve gerektiğinde güncellenebilir.
+Yapay zekâ ve konuşma tanıma sağlayıcı kotalarını herkes için korumak amacıyla hesap başına günlük sınırlar uygulanır: yapay zekâ sohbeti {{fairUse:chatTurnsPerDay}} mesaj, sunucu konuşma tanıma {{fairUse:sttRequestsPerDay}} istek, telaffuz puanı {{fairUse:pronounceRequestsPerDay}} istek, içerik bildirimi {{fairUse:reportsPerDay}}. Sınıra ulaşınca uygulama bunu gösterir ve ertesi gün açılır. Sınırlar dürüst ağır kullanımın çok üstündedir; yalnız otomasyon ve kötüye kullanımı engellemek içindir ve gerektiğinde güncellenebilir.
 
 Ücretsiz hesapta yapay zekâyla çalışan bazı özelliklerin hakları sınırlıdır: Patika'daki Konuşma ve Yazma adımları, Beceriler'deki konuşma ve yazma değerlendirmesi ve deneme sınavları seviye başına belirli sayıda açıktır; yürüyüş modu ekran açıkken ve günde belirli sayıda turla kullanılır. Yeni haklar, açık olanları bitirip serini sürdürdükçe açılır. Hakların sayısı ve nasıl açıldığı **uygulamadaki Premium sayfasında** yazılıdır. Başladığın bir adım ya da alıştırma, hakların bitse de açık kalır.
 
@@ -196,7 +196,7 @@ This agreement is between the service provider identified below ("Lernomi", "we"
 
 ## 2. The service
 
-Lernomi is a language learning app offering vocabulary, listening, speaking and writing practice: spaced repetition rounds, speaking practices (explanation and a conversation with AI), walk mode, writing assessment, exam preparation, a weekly leaderboard and friend features. The courses are German (Hochdeutsch), Zurich German and English; the course list may change over time and not every feature is ready in every course at the same time. Features may be added, changed or removed; we announce changes affecting paid features in advance.
+Lernomi is a language learning app offering vocabulary, listening, speaking and writing study: spaced repetition rounds, the Path's Speaking steps (explanation and a chat with AI), walk mode, writing assessment, exam preparation, a weekly leaderboard and friend features. The courses are German (Hochdeutsch), Zurich German and English; the course list may change over time and not every feature is ready in every course at the same time. Features may be added, changed or removed; we announce changes affecting paid features in advance.
 
 ## 3. Account and age
 
@@ -212,7 +212,7 @@ You may not:
 - use insults, hate speech, harassment, sexual content, impersonation, disclosure of personal data or advertising in your display name or in any text you share,
 - manipulate the leaderboard, streaks or quests through automation, fake accounts or cheating,
 - reverse engineer, scrape or overload the service, or block others' access to it,
-- use the AI speaking practice to produce unlawful or harmful content, or content targeting other people,
+- use the AI chat to produce unlawful or harmful content, or content targeting other people,
 - breach applicable law, including intellectual property, personal data and sanctions rules.
 
 There is zero tolerance for objectionable content and abusive users. Reports are reviewed within 24 hours; content that breaks the rules is removed, and the account of the user responsible is restricted or closed. We tell you the decision and its reason, and you can appeal at {{supportEmail}}. Serious breaches do not require prior warning.
@@ -232,7 +232,7 @@ If you see content that is unlawful or breaches these terms (another user's name
 
 ## 6. AI content
 
-- Speaking practice and assessments are produced by language models; the app states clearly where you are interacting with an AI. Answers can be wrong, incomplete or inconsistent; grammar corrections must not be treated as definitive.
+- Chat replies and assessments are produced by language models; the app states clearly where you are interacting with an AI. Answers can be wrong, incomplete or inconsistent; grammar corrections must not be treated as definitive.
 - Features that use AI or server-side speech recognition need your text or short audio recordings to be sent to the providers named in the Privacy Policy. This happens only after you allow it in the app; if you decline, or withdraw permission under Settings › Privacy, these features run without AI in a limited form or stay off.
 - You can report an offensive or incorrect answer without leaving the app, using "Report" under that answer.
 - AI characters are not real people; they do not give medical, legal or financial advice.
@@ -248,7 +248,7 @@ If you see content that is unlawful or breaches these terms (another user's name
 
 ## 7a. Fair use
 
-To protect AI and speech recognition provider quotas for everyone, daily per-account limits apply: {{fairUse:roleplayTurnsPerDay}} AI conversation messages, {{fairUse:sttRequestsPerDay}} server speech recognition requests, {{fairUse:pronounceRequestsPerDay}} pronunciation scoring requests and {{fairUse:reportsPerDay}} content reports. When you reach a limit the app says so and it reopens the next day. The limits sit far above honest heavy use; they exist only to stop automation and abuse and may be updated when needed.
+To protect AI and speech recognition provider quotas for everyone, daily per-account limits apply: {{fairUse:chatTurnsPerDay}} AI conversation messages, {{fairUse:sttRequestsPerDay}} server speech recognition requests, {{fairUse:pronounceRequestsPerDay}} pronunciation scoring requests and {{fairUse:reportsPerDay}} content reports. When you reach a limit the app says so and it reopens the next day. The limits sit far above honest heavy use; they exist only to stop automation and abuse and may be updated when needed.
 
 On a free account, some AI-powered features have limited allowances: the Speaking and Writing steps in Path, speaking and writing assessments in Skills, and mock exams are open in a set number per level; walk mode is used with the screen on and for a set number of rounds a day. New allowances unlock as you finish what is open and keep your streak going. The numbers and how they unlock are written **on the Premium page in the app**. A step or exercise you have started stays open even when your allowance runs out.
 
@@ -333,7 +333,7 @@ Diese Vereinbarung besteht zwischen dem unten bezeichneten Anbieter ("Lernomi", 
 
 ## 2. Der Dienst
 
-Lernomi ist eine Sprachlern-App mit Übungen zu Wortschatz, Hören, Sprechen und Schreiben: Wiederholungsrunden nach dem Spaced-Repetition-Prinzip, Sprechübungen (Erklärung und Dialog mit KI), Gehmodus, Schreibbewertung, Prüfungsvorbereitung, eine Wochen-Rangliste und Freundesfunktionen. Die Kurse sind Deutsch (Hochdeutsch), Zürichdeutsch und Englisch; die Kursliste kann sich im Laufe der Zeit ändern, und nicht jede Funktion ist in jedem Kurs gleichzeitig verfügbar. Funktionen können hinzugefügt, geändert oder entfernt werden; Änderungen, die bezahlte Funktionen betreffen, kündigen wir vorher an.
+Lernomi ist eine Sprachlern-App mit Übungen zu Wortschatz, Hören, Sprechen und Schreiben: Wiederholungsrunden nach dem Spaced-Repetition-Prinzip, die Sprechen-Schritte des Pfads (Erklärung und Chat mit KI), Gehmodus, Schreibbewertung, Prüfungsvorbereitung, eine Wochen-Rangliste und Freundesfunktionen. Die Kurse sind Deutsch (Hochdeutsch), Zürichdeutsch und Englisch; die Kursliste kann sich im Laufe der Zeit ändern, und nicht jede Funktion ist in jedem Kurs gleichzeitig verfügbar. Funktionen können hinzugefügt, geändert oder entfernt werden; Änderungen, die bezahlte Funktionen betreffen, kündigen wir vorher an.
 
 ## 3. Konto und Alter
 
@@ -349,7 +349,7 @@ Untersagt ist:
 - Beleidigungen, Hassrede, Belästigung, sexuelle Inhalte, Identitätsvortäuschung, Offenlegung personenbezogener Daten oder Werbung im Anzeigenamen oder in Texten, die du teilst,
 - die Rangliste, Serien und Aufgaben durch Automatisierung, Fake-Konten oder Betrug zu manipulieren,
 - den Dienst zu reverse-engineeren, zu scrapen, zu überlasten oder den Zugang anderer zu blockieren,
-- die KI-Sprechpraxis zu nutzen, um rechtswidrige, schädliche oder gegen andere gerichtete Inhalte zu erzeugen,
+- den KI-Chat zu nutzen, um rechtswidrige, schädliche oder gegen andere gerichtete Inhalte zu erzeugen,
 - geltendes Recht zu verletzen, einschließlich Urheberrecht, Datenschutzrecht und Sanktionsvorschriften.
 
 Für anstößige Inhalte und missbräuchliche Nutzer gilt null Toleranz. Meldungen werden innerhalb von 24 Stunden geprüft; regelwidrige Inhalte werden entfernt, und das Konto der verantwortlichen Person wird eingeschränkt oder geschlossen. Wir teilen dir die Entscheidung und ihre Begründung mit, und du kannst unter {{supportEmail}} Widerspruch einlegen. Schwere Verstöße erfordern keine Vorwarnung.
@@ -369,7 +369,7 @@ Wenn du einen rechtswidrigen oder diesen Bedingungen widersprechenden Inhalt sie
 
 ## 6. KI-Inhalte
 
-- Sprechpraxis und Bewertungen werden von Sprachmodellen erzeugt; die App weist deutlich darauf hin, wo du mit einer KI interagierst. Antworten können falsch, unvollständig oder widersprüchlich sein; Grammatikkorrekturen dürfen nicht als endgültig richtig gelten.
+- Chat-Antworten und Bewertungen werden von Sprachmodellen erzeugt; die App weist deutlich darauf hin, wo du mit einer KI interagierst. Antworten können falsch, unvollständig oder widersprüchlich sein; Grammatikkorrekturen dürfen nicht als endgültig richtig gelten.
 - Funktionen mit KI oder serverseitiger Spracherkennung setzen voraus, dass dein Text oder kurze Audioaufnahmen an die in der Datenschutzerklärung genannten Anbieter gesendet werden. Das geschieht erst, wenn du es in der App erlaubst; lehnst du ab oder widerrufst du die Erlaubnis unter Einstellungen › Datenschutz, laufen diese Funktionen ohne KI in eingeschränkter Form oder bleiben ausgeschaltet.
 - Eine anstößige oder fehlerhafte Antwort kannst du ohne die App zu verlassen über "Melden" unter der Antwort melden.
 - KI-Figuren sind keine echten Personen; sie erteilen keine medizinische, rechtliche oder finanzielle Beratung.
@@ -385,7 +385,7 @@ Wenn du einen rechtswidrigen oder diesen Bedingungen widersprechenden Inhalt sie
 
 ## 7a. Fair Use
 
-Um die Kontingente der KI- und Spracherkennungsanbieter für alle zu schützen, gelten tägliche Grenzen pro Konto: {{fairUse:roleplayTurnsPerDay}} Nachrichten im KI-Gespräch, {{fairUse:sttRequestsPerDay}} serverseitige Spracherkennungsanfragen, {{fairUse:pronounceRequestsPerDay}} Anfragen zur Aussprachebewertung und {{fairUse:reportsPerDay}} Inhaltsmeldungen. Ist eine Grenze erreicht, zeigt die App es an, und am nächsten Tag ist sie wieder offen. Die Grenzen liegen weit über ehrlicher intensiver Nutzung; sie bestehen nur, um Automatisierung und Missbrauch zu verhindern, und können bei Bedarf angepasst werden.
+Um die Kontingente der KI- und Spracherkennungsanbieter für alle zu schützen, gelten tägliche Grenzen pro Konto: {{fairUse:chatTurnsPerDay}} Nachrichten im KI-Gespräch, {{fairUse:sttRequestsPerDay}} serverseitige Spracherkennungsanfragen, {{fairUse:pronounceRequestsPerDay}} Anfragen zur Aussprachebewertung und {{fairUse:reportsPerDay}} Inhaltsmeldungen. Ist eine Grenze erreicht, zeigt die App es an, und am nächsten Tag ist sie wieder offen. Die Grenzen liegen weit über ehrlicher intensiver Nutzung; sie bestehen nur, um Automatisierung und Missbrauch zu verhindern, und können bei Bedarf angepasst werden.
 
 Mit einem kostenlosen Konto sind einige KI-gestützte Funktionen begrenzt: Die Schritte Sprechen und Schreiben im Pfad, Sprech- und Schreibbewertungen bei den Fähigkeiten und Probeprüfungen stehen pro Niveau in einer bestimmten Anzahl offen; den Gehmodus nutzt du bei eingeschaltetem Bildschirm und für eine bestimmte Zahl von Runden pro Tag. Neue Kontingente werden frei, wenn du Offenes abschließt und deine Serie fortsetzt. Wie viele es sind und wie sie frei werden, steht **auf der Premium-Seite in der App**. Ein begonnener Schritt oder eine begonnene Übung bleibt offen, auch wenn dein Kontingent aufgebraucht ist.
 

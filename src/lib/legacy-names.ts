@@ -208,3 +208,10 @@ export function legacyBossModule<M extends { conversationsDone: number; conversa
 export function legacyAchievementGroup(group: string): string {
   return group === "conversations" ? "lessons" : group;
 }
+
+/**
+ * Hukuki yapılandırmanın (`app_settings["legal.config"]`) adil kullanım
+ * anahtarı: `roleplayTurnsPerDay` → `chatTurnsPerDay`. 0069 kaydı taşıyor;
+ * taşınmamış bir panel kaydı da okunsun diye eski ad burada.
+ */
+export const LEGACY_FAIR_USE_CHAT_KEY = "roleplayTurnsPerDay";
