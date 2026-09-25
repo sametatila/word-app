@@ -32,7 +32,7 @@ export const EN_C1_EXAMS: ModuleExamPlan[] = [
     index: 0,
     code: "C1.1",
     titleDe: "Register and tone",
-    titleTr: "Üslup ve kayıt",
+    titleTr: "Üslup ve dil düzeyi",
     focus: [
       { de: "Register shift", tr: "aynı şeyi üç ayrı tonda söylemek" },
       { de: "Ellipsis and substitution", tr: "söylenmeyeni bırakmak" },

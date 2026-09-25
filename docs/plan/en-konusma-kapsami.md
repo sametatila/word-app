@@ -440,7 +440,7 @@ can-do'suna düşüyor.
 içeriği kaç ayrı biçimde söyleyebildiğin ve hangisini neden seçtiğin. On
 ifade de bu yüzden «kurabilirim» değil çoğu yerde «seçebilirim» diyor.
 
-**C1 modül 1 — Üslup ve kayıt (2026-09-11). TAM.** On konuşma: aynı şey üç
+**C1 modül 1 — Üslup ve dil düzeyi (2026-09-11; 2026-09-25’e kadar adı «Üslup ve kayıt»). TAM.** On konuşma: aynı şey üç
 kayıtta, söylenmeyeni bırakmak, ağırlığı sona atmak, resmî dilek,
 imtiyazın tonu, yerleşik eşdizim, hükmü aktarma fiili taşır, kip nüansı,
 eksiltili övgü, metni bir arada tutmak.

@@ -41,7 +41,7 @@ const BY_COURSE: Record<string, Record<string, string[]>> = {
     A2: ["Geçmişi anlatmak", "Benim hikâyem", "Sağlık", "Ev ve mahalle", "İş hayatı", "Alışveriş ve hizmetler", "Seyahat", "Kutlamalar ve ilişkiler", "Medya ve teknoloji", "Şehir ve resmî işler"],
     B1: ["İş dünyası", "Ev ve kira dünyası", "Cümleleri bağlamak", "Tarif etmek ve karar vermek", "Bürokrasi", "Eğitim ve gelişim", "Fikir ve tartışma", "Sağlık sistemi", "Çevre ve şehir yaşamı", "Duygular ve hayaller"],
     B2: ["Profesyonel iletişim", "Müzakere ve şikâyet", "Edilgenin bütün hâlleri", "Medya ve aktarılan söz", "Bilim ve teknoloji", "Toplum ve ekonomi", "Kültür ve sanat", "Para ve kariyer stratejisi", "İnsan ilişkileri ve psikoloji", "Resmî yazışma ve kapanış"],
-    C1: ["Üslup ve kayıt", "Tartışma ve karşı çıkma", "Hukuk ve sözleşme dili", "Edebiyat ve yorum", "Göç, aidiyet ve kültür", "Çalışma dünyası ve toplu sözleşme", "Toprak, gıda ve tarım", "İklim ve kent", "Ekonomi ve finans", "Kanıt, yargı ve seçim"],
+    C1: ["Üslup ve dil düzeyi", "Tartışma ve karşı çıkma", "Hukuk ve sözleşme dili", "Edebiyat ve yorum", "Göç, aidiyet ve kültür", "Çalışma dünyası ve toplu sözleşme", "Toprak, gıda ve tarım", "İklim ve kent", "Ekonomi ve finans", "Kanıt, yargı ve seçim"],
   },
 };
 
@@ -120,7 +120,7 @@ const NATIVE: Record<"en" | "de", Record<string, string>> = {
     "Ustalık sahneleri": "Mastery scenes",
     // İngilizce kursun C1 temaları (2026-09-21). Almanca kursta karşılığı
     // yok: iki müfredat C1'de ayrışıyor.
-    "Üslup ve kayıt": "Register and tone",
+    "Üslup ve dil düzeyi": "Register and tone",
     "Tartışma ve karşı çıkma": "Debate and dissent",
     "Edebiyat ve yorum": "Literature and interpretation",
     "Göç, aidiyet ve kültür": "Migration, belonging and culture",
@@ -193,7 +193,7 @@ const NATIVE: Record<"en" | "de", Record<string, string>> = {
     "Ustalık sahneleri": "Meisterszenen",
     // İngilizce kursun C1 temaları (2026-09-21). Almanca kursta karşılığı
     // yok: iki müfredat C1'de ayrışıyor.
-    "Üslup ve kayıt": "Register und Ton",
+    "Üslup ve dil düzeyi": "Register und Ton",
     "Tartışma ve karşı çıkma": "Debatte und Widerspruch",
     "Edebiyat ve yorum": "Literatur und Deutung",
     "Göç, aidiyet ve kültür": "Migration, Zugehörigkeit und Kultur",

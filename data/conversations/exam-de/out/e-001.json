@@ -131,7 +131,7 @@
  { "tr": "Tanışma ve ben", "kind": "plan.title", "de": "Vorstellen und ich" },
  { "tr": "Tanıtım yazısı", "kind": "reading.genre", "de": "Vorstellungstext" },
  { "tr": "temkinli sonuç", "kind": "focus", "de": "vorsichtiges Fazit" },
- { "tr": "Üslup ve kayıt", "kind": "plan.title", "de": "Register und Ton" },
+ { "tr": "Üslup ve dil düzeyi", "kind": "plan.title", "de": "Register und Ton" },
  { "tr": "went, had, saw", "kind": "focus", "de": "went, had, saw" },
  { "tr": "Akşamını da yaz", "kind": "writing.checklist", "de": "Schreib auch von deinem Abend" },
  { "tr": "Aramızdaki kişi", "kind": "listening.title", "de": "Die Person zwischen uns" },
