@@ -473,15 +473,15 @@ const PARAGRAPH_GAP_MS = 500;
  * parça iki platformda hiç kesişmeyen iki önbellek kümesi üretiyordu
  * (2 245 karakterlik bir metinde ~8+8 ayrı sentez).
  *
- * Ses kullanıcı tercihinden bağımsız (`defaultVoice`, webde `conversationVoice`):
- * okuma parçası uzun, yani pahalı bir sentez ve sabit ses onu bütün
- * kullanıcılar için tek önbellek girdisi yapıyor.
+ * Ses seçilen karakterin Edge karşılığı (`conversationVoice`, web ile aynı): Defne → Katja/Jenny, Aras →
+ * Conrad/Guy. Eskiden sabitti (tek önbellek girdisi); kelimede Aras, okumada kadın ses karışıklığı yüzünden
+ * 2026-09-25'te karaktere bağlandı.
  */
 export async function speakPassage(text: string, course: string, opts?: { slow?: boolean }): Promise<void> {
   const paragraphs = text.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
   if (!paragraphs.length) return;
-  // Sabit konuşma sesi (web `conversationVoice`): okuma katmanı henüz üretilmedi, kursun ilk sesi artık Defne.
-  const voice = conversationVoice(course);
+  // Seçilen karakterin Edge karşılığı (web `conversationVoice`): okuma katmanı henüz kendi sesimizle üretilmedi.
+  const voice = conversationVoice(course, currentVoice);
   const pace: Pace = opts?.slow ? "listenSlow" : "listen";
   // Bütün parçalar peşin: boru hattı yok, her paragraf sınırı yoksa bir
   // gidiş-dönüş olurdu.

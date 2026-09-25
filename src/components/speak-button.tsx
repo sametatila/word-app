@@ -8,7 +8,7 @@ import { isAppleMobile } from "@/lib/apple-mobile";
 import { afterMs } from "@/components/pocket-clock";
 import { trackOnce } from "@/lib/track";
 import { screenKey } from "@/lib/screens";
-import { PACE_PARAM, PITCH_PARAM, TURKISH_VOICE, conversationVoice, narrationVoice, resolveVoice, type Pace, type Pitch, type VoiceId } from "@/lib/tts/voices";
+import { PACE_PARAM, PITCH_PARAM, conversationVoice, narrationVoice, resolveVoice, type Pace, type Pitch, type VoiceId } from "@/lib/tts/voices";
 import { cleanForSpeech, splitForSpeech } from "@/lib/tts/text";
 import { dialogueCast } from "@/lib/tts/speakers";
 import { useT } from "@/lib/i18n/client";
@@ -483,20 +483,19 @@ export type SpeechSegment = {
 };
 
 /**
- * Parçanın sesi profil tercihinden BAĞIMSIZ: konuşmada öncelik gecikme.
- *
- * Ses sabit olunca konuşmanın her cümlesi kullanıcıdan bağımsız tek önbellek
- * girdisi — ilk dinleyen CDN'i herkes için ısıtıyor (bkz. lib/tts/voices,
- * conversationVoice). Profil sesi sohbet gibi kullanıcıya özel üretilen
- * yerlerde geçerli olmayı sürdürüyor.
+ * Parçanın sesi SEÇİLEN KARAKTERİN Edge karşılığı (2026-09-25): Defne → Katja/Jenny/Emel, Aras →
+ * Conrad/Guy/Ahmet. Eskiden profil tercihinden bağımsız sabit sesti (önbellek tek girdi olsun diye); kelime
+ * katmanı Defne/Aras'a geçince Aras'ı seçen kelimede erkek, konuşmada kadın ses duyuyordu. Bkz. lib/tts/voices
+ * `conversationVoice`, `narrationVoice`.
  */
 function voiceForSegment(seg: SpeechSegment): { voice: VoiceId; course: string } {
   // Parça kendi sesini söylüyorsa tartışma yok: diyalog kadrosu böyle çalışıyor.
   if (seg.voice) return { voice: seg.voice, course: seg.lang === "en" ? "en" : "de" };
   // Anlatım: ses kullanıcının ARAYÜZ dilinden. Çerez tek istemci kaynağı —
   // bu fonksiyon bir bileşen değil, kancadan okuyamaz.
-  if (seg.narration) return { voice: narrationVoice(seg.lang), course: "de" };
-  if (seg.lang === "tr") return { voice: TURKISH_VOICE, course: "de" };
+  const sel = selectedVoice();
+  if (seg.narration) return { voice: narrationVoice(seg.lang, sel), course: "de" };
+  if (seg.lang === "tr") return { voice: narrationVoice("tr", sel), course: "de" };
   /*
     PARÇANIN DİLİ KURSTAN ÖNCE GELİYOR.
 
@@ -508,8 +507,8 @@ function voiceForSegment(seg: SpeechSegment): { voice: VoiceId; course: string }
     uyuştuğunda belirleyici — Zürih'te lehçe sesi seçilebilsin diye.
   */
   const course = readLocal(COURSE_KEY) ?? "de";
-  if (seg.lang === "en") return { voice: conversationVoice("en"), course: "en" };
-  return { voice: conversationVoice(course === "en" ? "de" : course), course: course === "en" ? "de" : course };
+  if (seg.lang === "en") return { voice: conversationVoice("en", sel), course: "en" };
+  return { voice: conversationVoice(course === "en" ? "de" : course, sel), course: course === "en" ? "de" : course };
 }
 
 /**

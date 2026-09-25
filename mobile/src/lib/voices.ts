@@ -59,8 +59,8 @@ const NARRATION: Record<NativeLang, VoiceId> = {
   en: "en-US-JennyNeural",
   de: "de-DE-KatjaNeural",
 };
-export function narrationVoice(lang: NativeLang): VoiceId {
-  return NARRATION[lang] ?? TURKISH_VOICE;
+export function narrationVoice(lang: NativeLang, selected?: string | null): VoiceId {
+  return characterEdge(selected, lang) ?? NARRATION[lang] ?? TURKISH_VOICE;
 }
 
 export type Voice = {
@@ -129,16 +129,32 @@ export function glossVoice(native: NativeLang, selected: VoiceId): VoiceId {
 }
 
 /**
- * Konuşma, dinleme ve okuma parçasının SABİT sesi — web `conversationVoice` ile aynı tablo. Katalogdan türetilmiyor:
- * kursun ilk sesi artık Defne ve Defne'nin yalnız kelime katmanı üretildi.
+ * Konuşma, dinleme ve okuma parçasının sesi — web `conversationVoice` ile aynı kural. Seçilen karakterin Edge
+ * karşılığı (Defne → Katja/Jenny, Aras → Conrad/Guy; Zürih'te Leni/Jan), kendi seslerimiz bu katmanlarda
+ * üretilene kadar (2026-09-25). Karakter bilinmiyorsa eski sabit tablo.
  */
 const CONVERSATION: Record<"de" | "gsw-zh" | "en", VoiceId> = {
   de: "de-DE-KatjaNeural",
   "gsw-zh": "de-CH-LeniNeural",
   en: "en-US-JennyNeural",
 };
-export function conversationVoice(course: string): VoiceId {
-  return CONVERSATION[courseOrDefault(course).id as keyof typeof CONVERSATION] ?? CONVERSATION.de;
+export function conversationVoice(course: string, selected?: string | null): VoiceId {
+  const id = courseOrDefault(course).id;
+  const own = characterEdge(selected, id === "en" ? "en" : "de");
+  if (own && id !== "gsw-zh") return own;
+  if (id === "gsw-zh" && genderOfVoice(selected) === "male") return "de-CH-JanNeural";
+  return CONVERSATION[id as keyof typeof CONVERSATION] ?? CONVERSATION.de;
+}
+
+/** Seçilen karakterin (Defne/Aras) verilen dildeki Edge karşılığı; karakter sesi değilse null — web ile aynı. */
+function characterEdge(selected: string | null | undefined, lang: "de" | "en" | "tr"): VoiceId | null {
+  const own = selected ? OWN_VOICES[selected as VoiceId] : undefined;
+  // Karakter sesi değilse (Zürih'te Leni/Jan) cinsiyet yuvası: Jan'ı seçen anlatımı da erkek sesten duyuyor.
+  const gender = own ? null : genderOfVoice(selected);
+  const character = own?.character ?? (gender === "male" ? "aras" : gender === "female" ? "defne" : null);
+  if (!character) return null;
+  const hit = (Object.keys(OWN_VOICES) as VoiceId[]).find((v) => OWN_VOICES[v]!.character === character && OWN_VOICES[v]!.lang === lang);
+  return hit ? OWN_VOICES[hit]!.edge : null;
 }
 
 /** Kursun sesleri — seçim ekranı bunu listeler. */

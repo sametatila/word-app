@@ -82,8 +82,8 @@ const NARRATION: Record<NativeLang, VoiceId> = {
   de: "de-DE-KatjaNeural",
 };
 
-export function narrationVoice(lang: NativeLang): VoiceId {
-  return NARRATION[lang] ?? TURKISH_VOICE;
+export function narrationVoice(lang: NativeLang, selected?: string | null): VoiceId {
+  return characterEdge(selected, lang) ?? NARRATION[lang] ?? TURKISH_VOICE;
 }
 
 /**
@@ -96,7 +96,13 @@ export function narrationVoice(lang: NativeLang): VoiceId {
  * ağa hiç çıkmadan geliyor. Profil sesine saygı bu kazanımı ikiye bölerdi.
  * Katja zaten ölçülmüş en hızlı ses; Zürih kursunda lehçeyi doğru okuyan Leni.
  */
-export function conversationVoice(course: string): VoiceId {
+export function conversationVoice(course: string, selected?: string | null): VoiceId {
+  /* SEÇİLEN KARAKTERİN EDGE KARŞILIĞI (2026-09-25, Samet): kendi seslerimiz bu katmanlarda üretilene kadar Defne
+     seçen Katja/Jenny, Aras seçen Conrad/Guy duyuyor — kelimede Aras, konuşmada bir kadın sesi karışıklıktı.
+     Önbellek karakter başına ikiye bölünüyor; bilinçli bedel. Zürih'te cinsiyet yuvası: Leni/Jan. */
+  const own = characterEdge(selected, course === "en" ? "en" : "de");
+  if (own && course !== "gsw-zh") return own;
+  if (course === "gsw-zh" && genderOfVoice(selected) === "male") return "de-CH-JanNeural";
   /* AÇIK TABLO, katalogdan türetme DEĞİL. Eskiden `defaultVoice(course)` idi: kursun ilk sesi Katja'ydı.
      2026-09-23'te kursun ilk sesi Defne oldu ve Defne'nin yalnız kelime katmanı üretildi — türetme sürseydi
      konuşmaların, dinlemelerin ve okuma parçalarının bütün cümleleri Defne adıyla Katja'ya gider, bir kısmı
@@ -200,6 +206,17 @@ export const OWN_VOICES: Partial<Record<VoiceId, { character: OwnCharacter; lang
 
 export function isOwnVoice(voice: string): boolean {
   return voice in OWN_VOICES;
+}
+
+/** Seçilen karakterin (Defne/Aras) verilen dildeki Edge karşılığı; karakter sesi değilse null. */
+function characterEdge(selected: string | null | undefined, lang: "de" | "en" | "tr"): VoiceId | null {
+  const own = selected ? OWN_VOICES[selected as VoiceId] : undefined;
+  // Karakter sesi değilse (Zürih'te Leni/Jan) cinsiyet yuvası: Jan'ı seçen anlatımı da erkek sesten duyuyor.
+  const gender = own ? null : genderOfVoice(selected);
+  const character = own?.character ?? (gender === "male" ? "aras" : gender === "female" ? "defne" : null);
+  if (!character) return null;
+  const hit = (Object.keys(OWN_VOICES) as VoiceId[]).find((v) => OWN_VOICES[v]!.character === character && OWN_VOICES[v]!.lang === lang);
+  return hit ? OWN_VOICES[hit]!.edge : null;
 }
 
 /** Sentez zincirine giden ses: karakter sesi Edge karşılığına çevrilir, ötekiler aynen. */
