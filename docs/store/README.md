@@ -242,8 +242,8 @@ değiştirildi sayılır; çelişirse bu tablo geçerli. **Mağazaya GİRİLDİ 
 açıklama (bu belgedeki metinle birebir, geri okunup karşılaştırıldı), anahtar kelimeler, tanıtım metni,
 destek URL'si (`/support`, `/support/en`, `/support/de`), pazarlama URL'si `https://www.lernomi.app`.
 Play tr-TR/en-US/de-DE: başlık, kısa ve tam açıklama (edit commit edildi, geri okundu). Metin değişirse
-önce bu belge, sonra aynı yolla mağaza. Kalan: ekran görüntüleri, öne çıkan grafik, video; Play 512
-ikonu (aşağıda, yükleme betiği hazır).
+önce bu belge, sonra aynı yolla mağaza. Play 512 ikonu da yüklendi (üç dil, aşağıdaki türetmeyle).
+Kalan: ekran görüntüleri, öne çıkan grafik, video.
 
 **Açık:** ekran görüntüleri ve öne çıkan grafik tasarımdan sonra. (Haftalık quizin en/de çevirisi 2026-09-25'te canlıya çıktı, içerik sürümü 24, kilitli `quiznative/*` paketleri; en/de metinlerindeki "explained in English / Erklärungen auf Deutsch" iddiası artık haftalık quiz için de doğru.)
 
