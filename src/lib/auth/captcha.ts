@@ -51,7 +51,7 @@ export { CAPTCHA_ACTION } from "@/lib/auth/captcha-action";
 /**
  * ALAN ADI LİSTESİ BİLEREK YOK. Turnstile'ın kendi panelinde zaten bir alan
  * adı listesi var ve asıl kapı orası; koda ikinci bir liste yazmak, nginx'in
- * server_name'leri (www.lernomi.app, lernomi.app, exfe.me) değiştiğinde
+ * server_name'leri (www.lernomi.app, lernomi.app, exfe.me, lernomi.rumpuskit.com) değiştiğinde
  * girişi sessizce kıran bir eşleşme borcu yaratırdı.
  */
 export function captchaPlugins() {

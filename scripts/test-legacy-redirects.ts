@@ -24,6 +24,8 @@ check("asıl alan dokunulmaz", pinLegacyUrl(`${BASE}/learn`, BASE) === null);
 check("göreli yol dokunulmaz", pinLegacyUrl("/learn", BASE) === null);
 check("sonek taklidi (exfe.me.evil.example) dokunulmaz, better-auth reddeder", pinLegacyUrl("https://exfe.me.evil.example/x", BASE) === null);
 check("başka alan dokunulmaz", pinLegacyUrl("https://evil.example/x", BASE) === null);
+check("yedek alan adı (lernomi.rumpuskit.com) asıl alana sabitlenir", pinLegacyUrl("https://lernomi.rumpuskit.com/learn?a=1", BASE) === `${BASE}/learn?a=1`);
+check("yedek alanın sonek taklidi dokunulmaz", pinLegacyUrl("https://lernomi.rumpuskit.com.evil.example/x", BASE) === null);
 
 console.log("\ngövde alanları");
 const f = pinLegacyFields({ email: "a@b.c", redirectTo: "https://www.exfe.me/reset-password", callbackURL: "/learn", errorCallbackURL: "https://exfe.me/login" }, BASE);

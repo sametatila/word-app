@@ -19,6 +19,7 @@ import { checkPassword, MIN_PASSWORD_LENGTH, PASSWORD_ERROR_CODE } from "@/lib/a
 import { redisRateLimitStorage } from "@/lib/auth/rate-limit-store";
 import { clearFailedLogins, isLockedOut, MAX_FAILED_LOGINS, noteFailedLogin } from "@/lib/auth/login-throttle";
 import { captchaPlugins } from "@/lib/auth/captcha";
+import { FALLBACK_ORIGIN } from "@/lib/site";
 import { anonymous, twoFactor } from "better-auth/plugins";
 import { GUEST_EMAIL_DOMAIN, isGuestEmail } from "@/lib/auth/guest-email";
 import { guestResume } from "@/lib/auth/guest-resume";
@@ -153,6 +154,10 @@ export const auth = betterAuth({
     BASE_URL,
     "https://lernomi.app", "https://www.lernomi.app",
     "https://exfe.me", "https://www.exfe.me",
+    // Yedek köken (bkz. lib/site FALLBACK_ORIGIN): bazı ağlar asıl alan adını
+    // engelliyor, mobil o zaman buraya geçiyor. Oradan gelen yönlendirme
+    // adresleri de asıl alan adına sabitleniyor (lib/auth/legacy-redirects).
+    FALLBACK_ORIGIN,
     // Apple ile Giriş (web): e-posta paylaşımında callback https://appleid.apple.com'dan
     // form_post (cross-site POST) ile geliyor; Origin denetiminden geçmesi için güvenilir
     // sayılmalı, yoksa better-auth INVALID_ORIGIN döner. Yalnız Apple'ın kendi kökeni.

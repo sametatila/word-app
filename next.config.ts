@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { FALLBACK_HOST } from "./src/lib/site";
 
 /** Cloudflare Turnstile — tarayıcının bağlandığı TEK dış köken (giriş/kayıt formları). */
 const TURNSTILE = "https://challenges.cloudflare.com";
@@ -112,6 +113,19 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       { source: "/:path*", headers: SECURITY_HEADERS },
+      {
+        /*
+          YEDEK ALAN ADI dizine girmesin (bkz. lib/site FALLBACK_ORIGIN). Aynı
+          uygulama iki adreste servis ediliyor; yedek yalnız asıl adresi
+          engelleyen ağlardaki mobil API trafiği için. Sayfalar zaten asıl
+          adresi kanonik gösteriyor (`metadataBase`), bu başlık ikinci kopyanın
+          arama sonuçlarına hiç düşmemesini garantiliyor. Yönlendirme YOK:
+          API isteklerini yönlendirmek yedeğin var olma sebebini bozardı.
+        */
+        source: "/:path*",
+        has: [{ type: "host", value: FALLBACK_HOST }],
+        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
+      },
       {
         /*
           Uygulamaya giriş devri: adres tek kullanımlık bir jeton taşıyor

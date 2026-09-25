@@ -1,3 +1,5 @@
+import { FALLBACK_HOST } from "../site";
+
 /**
  * Eski alan adına (exfe.me) giden YÖNLENDİRME adreslerini asıl alan adına sabitler.
  *
@@ -21,10 +23,15 @@
  * (GET, sorgu dizesi) da aynı çeviri yapılıyor, yani daha önce gönderilmiş
  * e-postalar da kapsanıyor.
  *
+ * YEDEK ALAN ADI DA SABİTLENİYOR (lib/site FALLBACK_ORIGIN). Mobil, asıl alan
+ * adını engelleyen ağlarda API'yi oradan çağırıyor ve `callbackURL`'i o anki
+ * tabanla kuruyor; e-postaya giden bağlantı ise her zaman asıl adreste
+ * olmalı (yedek yalnız API trafiği için). Aynı çeviri ikisine de yetiyor.
+ *
  * Saf modül: sunucuya özgü bağımlılık yok, test doğrudan çağırıyor.
  */
 
-export const LEGACY_HOSTS: ReadonlySet<string> = new Set(["exfe.me", "www.exfe.me"]);
+export const LEGACY_HOSTS: ReadonlySet<string> = new Set(["exfe.me", "www.exfe.me", FALLBACK_HOST]);
 
 /** better-auth'un kullanıcı tarafından verilebilen yönlendirme alanları. */
 export const REDIRECT_KEYS = ["callbackURL", "redirectTo", "errorCallbackURL", "newUserCallbackURL"] as const;

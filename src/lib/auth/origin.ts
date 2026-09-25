@@ -18,6 +18,9 @@ export function sameOrigin(req: Request): boolean {
   if (!origin) return true;
   // Host başlığıyla karşılaştırılır: vekil sunucu arkasında req.url iç adrese
   // çözülebiliyor, Host ise tarayıcının gördüğü genel alan adı olarak kalıyor.
+  // Sabit bir liste değil, isteğin KENDİ kökeni: yedek alan adı
+  // (lib/site FALLBACK_ORIGIN) ek bir kayıt gerektirmeden geçiyor, çünkü mobil
+  // `origin`i o an konuştuğu tabanla dolduruyor.
   const host = req.headers.get("host");
   if (!host) return true;
   try {
