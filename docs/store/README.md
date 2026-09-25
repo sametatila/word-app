@@ -8,6 +8,49 @@ Mağazaya yüklenen ekran görüntüleri burada üretiliyor. Üç parça var:
 | `plan/` | Hangi ham görüntüye hangi altyazı, hangi sırayla | **Evet** |
 | `play/`, `appstore/` | Üretilen kareler | Hayır — `.gitignore`'da, tek komutla yeniden üretilir |
 
+## Vitrin kararları (2026-09-25) — GEÇERLİ OLAN BU
+
+Samet'le soru-cevapla verildi. `plan/*.json` (a-walk, b-exam, c-native) ve
+`docs/appstore/listing.md` §4'teki eski sıra **onaylanmamış referanslardır**; çelişirse bu
+bölüm geçerli. Kareler henüz ÇEKİLMEDİ: önce tasarım çalışması yapılacak (Samet), çekim bu
+tanıma göre olacak. Karar değişirse bu bölüm güncellenir, yeni belge açılmaz.
+
+**Konumlandırma.** Lernomi bir *dil* uygulaması; Almanca ilk ve en güçlü kurs (vitrin adı
+"Almanca Öğren A1-C1" ASO için), İngilizce ikinci planda ama açıklamada anılır: "tek dil
+uygulaması" izlenimi verilmez. Ana vaat **gerçek dil eğitimi** (tam müfredat, konuşarak,
+Türkçe anlatım); sınav bu eğitimin sonucu olarak ikinci katman. Sınava hazırlanan kitle
+(tarihi olan öğrenci) ayrıca WhatsApp/Telegram grup kampanyasıyla (2 ay) hedefleniyor;
+kampanya vitrinde YOK (görselde fiyat/süreli teklif olmaz), grup sayfasında.
+
+**Altyazı / tek cümle:** **"Konuş, anla, sınava hazırlan"** (tr, 28 karakter; iOS subtitle,
+Play kısa açıklamanın ilk cümlesi). en/de karşılıkları metin çalışmasında.
+
+**Beş sütun (öncelik sırası):** 1) A1'den C1'e tam müfredat, Türkçe anlatım · 2) konuşarak
+öğren: her derste rol yapma + konuşmaya geri bildirim · 3) dört becerili deneme sınavları,
+konuşma ve yazma da puanlanır · 4) Cepte yürüyüş (ekran kapalı, **Premium**; ekran açık
+yürüyüş ücretsiz ve sınırsız, `plan.free_walk`) · 5) günlük kelime turu ve seri.
+
+**Kare listesi (iPhone 6.9" ve Play telefon, bu sırayla; ilk üçü aramada görünür):**
+
+| # | Sütun | Ekran | İçerik durumu (çekimde hazırlanacak) | Altyazı taslağı |
+|---|---|---|---|---|
+| 1 | Tam müfredat | Patika: A1→C1 ünite haritası | B1'de ilerleyen hesap; A1–A2 tamamlanmış görünür | A1'den C1'e, Türkçe anlatımla |
+| 2 | Konuşma | Ders içi rol yapma | Gerçek bir sahne (ör. B1 doktor randevusu); kullanıcının cümlesi ve düzeltmesi görünür; yapay zekâ bildirimi görünür | Konuş, düzeltmeni anında gör |
+| 3 | Sınav | Deneme sınavı sonucu | B1 yazma ya da konuşma değerlendirmesi, ölçüt ölçüt puan | Konuşma ve yazma da puanlanır |
+| 4 | Fark | Cepte yürüyüş + kilit ekranı | Ekran kapalı akış; kilit ekranında "Yürüyüş modu açık" | Ekran kapalı, yolda çalış · Premium |
+| 5 | Alışkanlık | Günlük kelime turu | Sesli tur, kalan kelime sayısı | Her gün, tam unutmadan önce |
+| 6 | Beceriler | Beceri kütüphanesi | Beş beceri kartı | Okuma, dinleme, yazma, konuşma, dil bilgisi |
+
+**iPad 13" (yatay, 4 kare):** 1, 2, 3 ve 6 (tablet içerik kolonu en iyi bu ekranlarda).
+
+**Kurallar (değişmedi):** her vitrin kendi dilinde çekilir (tr-TR: Türkçe arayüz + Almanca
+kurs; en-US: İngilizce arayüz + Almanca kurs; de-DE: Almanca arayüz + İngilizce kurs);
+gerçek hesap, yer tutucu veri yok; sınav markası yok; Premium özellik altyazıda "Premium"
+der (2.3.2). Aşağıdaki "Kurallar" bölümü de geçerli.
+
+**Açık (sonraki soru-cevap):** en/de altyazılar ve açıklama metinleri, Play öne çıkan grafik
+(1024×500), ikon/maskot kullanımı, App Preview videosu (`docs/appstore/listing.md` §7 karar 3).
+
 ## Yeniden üretmek
 
 ```bash

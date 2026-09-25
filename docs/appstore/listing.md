@@ -461,6 +461,8 @@ _14/4000 karakter._
 
 ## 4. Görseller
 
+> **2026-09-25:** geçerli görsel kararları (konumlandırma, altyazı, kare listesi) `docs/store/README.md` › "Vitrin kararları". Aşağıdaki sıra eski ve onaylanmamış bir referans.
+
 Uygulama iPad'i de destekliyor (`TARGETED_DEVICE_FAMILY = "1,2"`), bu yüzden iPad ekran
 görüntüsü **zorunlu**.
 

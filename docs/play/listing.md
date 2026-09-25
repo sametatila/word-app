@@ -360,6 +360,8 @@ Kategori: **Eğitim**. Etiketler: dil öğrenme, Almanca, İngilizce, kelime, de
 
 ### Görseller
 
+> **2026-09-25:** geçerli görsel kararları (konumlandırma, altyazı, kare listesi) `docs/store/README.md` › "Vitrin kararları". Aşağıdaki sıra eski ve onaylanmamış bir referans.
+
 | Varlık | Ölçü | İçerik |
 |---|---|---|
 | Uygulama ikonu | 512×512 PNG | Mevcut adaptive ikonun ön planı, turuncu zemin |
