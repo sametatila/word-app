@@ -1,7 +1,7 @@
 import { titleMeta } from "@/lib/page-meta";
 import Link from "next/link";
 import { AppHeader } from "@/components/app-header";
-import { getT, getLang } from "@/lib/i18n/server";
+import { getT } from "@/lib/i18n/server";
 import { getUserInfo } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
 import { libraryMetas, listExerciseMeta, type SkillMeta } from "@/lib/skills";
@@ -9,13 +9,11 @@ import { listSkillStatus, type SkillStatus } from "@/lib/skills/record";
 import { isSkillDone } from "@/lib/score-bands";
 import { SKILL_LABEL_KEYS, SKILL_ORDER } from "@/lib/skills/meta";
 import { SKILL_ICON, SKILL_TINT } from "@/components/skills/theme";
-import { CardGrid } from "@/components/layout";
-import { CheckIcon, ChevronRightIcon, LockIcon } from "@/components/icons";
-import { FlowNote } from "@/components/flow";
+import { ChevronRightIcon } from "@/components/icons";
+import { SkillBrowser, type BrowserSection } from "@/components/skills/skill-browser";
 import { gatedMetaKind, isSkillLocked, skillLibraryAccess, type SkillLibraryAccess } from "@/lib/premium/skill-access";
 import { gateNote } from "@/lib/premium/gate-note";
 import type { CefrLevel, SkillId } from "@/lib/skills/types";
-import { formatPercent, localeOf } from "@/lib/i18n/dict";
 
 export const generateMetadata = titleMeta("skills.skills");
 export const dynamic = "force-dynamic";
@@ -50,8 +48,9 @@ const LEVELS: CefrLevel[] = ["A1", "A2", "B1", "B2", "C1"];
  * geçilmeden "deneme" sayılıyor), seviye sınavı ile deneme ve haftalık sınav
  * Öğren'de. Beceriler tek bir iş yapıyor: seçip çalışmak.
  *
- * Seviye seçimi sorgu parametresiyle: sayfa sunucuda çiziliyor, sekme için
- * istemci durumu taşımaya değmez.
+ * Seviye seçimi sorgu parametresiyle: sayfa sunucuda çiziliyor. Beceri
+ * seçimi istemcide (`SkillBrowser`): seviyede 5 × 20 egzersiz var ve beş liste
+ * alt alta 100 satır ediyordu; artık bir seferde tek becerinin listesi.
  */
 export default async function SkillsPage({
   searchParams,
@@ -118,138 +117,79 @@ export default async function SkillsPage({
   const nextLevel = LEVELS[LEVELS.indexOf(level) + 1] ?? null;
   const allDone = atLevel.length > 0 && doneCount === atLevel.length;
 
+  /* Açılışta seçili beceri: adresteki (sekme değişimi ve seviye bağlantıları
+     onu yazıyor), yoksa önerinin becerisi — öğrenci en geride kaldığı yerin
+     listesiyle karşılaşsın. */
+  const wantedSkill = (await searchParams)?.skill;
+  const initialSkill: SkillId =
+    (SKILL_ORDER as string[]).includes(wantedSkill as string) && sections.some((s) => s.skill === wantedSkill && s.list.length)
+      ? (wantedSkill as SkillId)
+      : suggestion?.skill ?? sections.find((s) => s.list.length)?.skill ?? "reading";
+
+  const browserSections: BrowserSection[] = sections.map(({ skill, list, next }) => {
+    const kind = list.some((m) => gatedMetaKind(m)) ? gatedMetaKind(list[0]) : null;
+    return {
+      skill,
+      nextId: next?.id ?? null,
+      note: kind && access ? gateNote(access[kind]) : null,
+      rows: list.map((m) => ({
+        id: m.id,
+        title: m.title,
+        genre: m.genre,
+        minutes: m.minutes,
+        items: m.items,
+        score: scoreOf(m.id),
+        done: done(m.id),
+        locked: isSkillLocked(m, access),
+      })),
+    };
+  });
+
   return (
-    /* xl'de kap AÇILIYOR. Aşağıdaki `CardGrid min={440}` geniş ekranda beceri
-       bölümlerini yan yana koymak için yazılmıştı ama kap 42rem'de (672 px)
-       sabitti: iki kez 440 oraya matematiksel olarak sığmadığı için ızgara HER
-       ZAMAN tek sütun kalıyordu, yani yazılmış özellik hiç çalışmıyordu.
-       Patika sayfası aynı açılımı zaten yapıyor (`max-w-3xl xl:max-w-none`) ve
-       mobil de Beceriler sekmesini geniş düzene alıyor (`wideColumnLayout`). */
-    <div className="mx-auto w-full max-w-3xl xl:max-w-none">
+    /* Kap tek sütun. Eskiden xl'de açılıyordu çünkü beş bölüm yan yana
+       diziliyordu; artık bir seferde tek becerinin listesi görünüyor ve geniş
+       ekranda yan yana konacak ikinci bir liste yok. */
+    <div className="mx-auto w-full max-w-3xl">
       {/* Ortak sekme başlığı: 32 punto başlık + açıklama alt satırı, sağda
           seri/gelen kutusu/profil. Mobilde `AppHeader` aynı iki satırı
           taşıyor (`SkillsScreen`). */}
       <AppHeader title={t("skills.skills")} subtitle={t("skills.aciklama")} />
 
-      {/*
-        Seviye seçici — mobildeki gibi EŞİT GENİŞLİKTE BEŞ sekme. Beş yerine
-        yalnız içeriği olan seviyeleri çizmek, seviyenin bir ÖLÇEK olduğunu
-        gizliyordu; tek bir şey söylenmesi gerekiyor: hangisi seçili.
-      */}
-      {/* Etiket ve sayaç TEK satırda, çiplerin üstünde — mobildeki
-          `SkillsScreen` düzeni. Sayaç önce çiplerin ALTINDA ayrı bir satırdı
-          ve seviyeyi bir kez daha yazıyordu ("A1 · 0/5 tamamlandı"); seçili
-          çip zaten hangi seviye olduğunu söylüyor. */}
-      <div className="mb-2 ml-1 flex items-center justify-between">
-        <p className="muted text-caption tracking-wide">{t("skills.level")}</p>
-        {atLevel.length ? (
-          <p className="muted text-caption">{t("skills.done_of", { done: doneCount, total: atLevel.length })}</p>
-        ) : null}
-      </div>
-      <nav className="mb-4 flex gap-2" aria-label={t("skills.level")}>
-        {LEVELS.map((lv) => {
-          const active = lv === level;
-          return (
-            <Link
-              key={lv}
-              href={`/skills?level=${lv}`}
-              aria-current={active ? "page" : undefined}
-              className="pressable flex-1 rounded-tile py-2.5 text-center text-strong"
-              style={{
-                border: `1.5px solid ${active ? "var(--color-brand-500)" : "var(--border)"}`,
-                background: active
-                  ? "color-mix(in srgb, var(--color-brand-500) 14%, transparent)"
-                  : "var(--surface)",
-                color: active ? "var(--color-brand)" : "var(--text-muted)",
-              }}
-            >
-              {lv}
-            </Link>
-          );
-        })}
-      </nav>
-
-      {/* BOŞ DURUM ÖNERİDEN ÖNCE. Bu kart sayfanın en ALTINDAYDI: içeriği
-          olmayan bir seviyeye geçen kullanıcı boş bir sayfa görüyor ve
-          sebebini ancak aşağı kaydırınca okuyordu. Mobilde sıra baştan beri
-          böyle (`SkillsScreen`: çipler, sonra boş durum). */}
-      {!atLevel.length ? (
-        <p className="card mb-4 p-4 text-body" style={{ color: "var(--text-muted)" }}>
-          {t("skills.this_course_has_no_reading")}
-        </p>
-      ) : null}
-
-      {/* Tek öneri: en geride kalan becerinin sıradaki egzersizi; hepsi
-          bittiyse bir üst seviye. Öğrenci "ne çalışsam" diye listeyi taramasın. */}
-      {suggestion?.next ? (
-        <SuggestionCard
-          skill={suggestion.skill}
-          meta={suggestion.next}
-          reason={
-            suggestion.ratio === 0
-              ? t("skills.next_start", { skill: t(SKILL_LABEL_KEYS[suggestion.skill]) })
-              : t("skills.next_behind", {
-                  skill: t(SKILL_LABEL_KEYS[suggestion.skill]),
-                  pct: Math.round(suggestion.ratio * 100),
-                })
-          }
-        />
-      ) : allDone && nextLevel ? (
-        /* Mobildeki kartın aynısı: 11 punto yosun üst satır, altında SÖNÜK
-           açıklama. Burada açıklama kalın ve koyu yazılmıştı; kartın işi bir
-           duyuru, vurgu üst satırda. */
-        <Link href={`/skills?level=${nextLevel}`} className="card mb-4 flex items-center gap-3 p-4">
-          <span className="min-w-0 flex-1">
-            <span className="block text-micro uppercase" style={{ color: "var(--color-mint)" }}>
-              {t("skills.level_done")}
-            </span>
-            <span className="muted mt-0.5 block text-caption">{t("skills.level_done_body", { level, next: nextLevel })}</span>
-          </span>
-          <ChevronRightIcon className="size-4 shrink-0" />
-        </Link>
-      ) : null}
-
-      {/* Geniş ekranda beceri bölümleri yan yana: tek sütunda okuma bitmeden
-          dinlemeyi görmek için kaydırmak gerekiyordu. Telefonda hiç
-          sarmalamıyor, düzen birebir eskisi. */}
-      <CardGrid min={440}>
-        {sections.map(({ skill, list, next }) => {
-          if (!list.length) return null;
-          const Icon = SKILL_ICON[skill];
-          const tint = SKILL_TINT[skill];
-          const finished = list.filter((m) => done(m.id)).length;
-          const kind = list.some((m) => gatedMetaKind(m)) ? gatedMetaKind(list[0]) : null;
-          const note = kind && access ? gateNote(access[kind]) : null;
-          return (
-            <section key={skill} className="mb-5">
-              <h2 className="mb-2 ml-1 flex items-center gap-2 text-h3">
-                <Icon size={18} style={{ color: tint }} />
-                {t(SKILL_LABEL_KEYS[skill])}
-                <span className="muted text-caption">
-                  {finished}/{list.length}
+      <SkillBrowser
+        level={level}
+        sections={browserSections}
+        initialSkill={initialSkill}
+        doneCount={doneCount}
+        total={atLevel.length}
+        suggestion={
+          /* Tek öneri: en geride kalan becerinin sıradaki egzersizi; hepsi
+             bittiyse bir üst seviye. Öğrenci "ne çalışsam" diye listeyi taramasın. */
+          suggestion?.next ? (
+            <SuggestionCard
+              skill={suggestion.skill}
+              meta={suggestion.next}
+              reason={
+                suggestion.ratio === 0
+                  ? t("skills.next_start", { skill: t(SKILL_LABEL_KEYS[suggestion.skill]) })
+                  : t("skills.next_behind", {
+                      skill: t(SKILL_LABEL_KEYS[suggestion.skill]),
+                      pct: Math.round(suggestion.ratio * 100),
+                    })
+              }
+            />
+          ) : allDone && nextLevel ? (
+            <Link href={`/skills?level=${nextLevel}`} className="card mb-4 flex items-center gap-3 p-4">
+              <span className="min-w-0 flex-1">
+                <span className="block text-micro uppercase" style={{ color: "var(--color-mint)" }}>
+                  {t("skills.level_done")}
                 </span>
-              </h2>
-              {/* Kuralı kilide çarpmadan ÖNCE söyle (deneme sınavlarındaki not). */}
-              {note ? (
-                <div className="mb-2">
-                  <FlowNote
-                    icon={<LockIcon size={16} className="muted shrink-0" />}
-                    text={`${t("skills.ai_quota")} · ${t(note.key, { n: note.n })}`}
-                  />
-                </div>
-              ) : null}
-              <ul className="card divide-y px-4" style={{ borderColor: "var(--hairline)" }}>
-                {list.map((m) => (
-                  <li key={m.id}>
-                    <Row meta={m} done={done(m.id)} score={scoreOf(m.id)} isNext={next?.id === m.id} tint={tint} locked={isSkillLocked(m, access)} />
-                  </li>
-                ))}
-              </ul>
-            </section>
-          );
-        })}
-      </CardGrid>
-
+                <span className="muted mt-0.5 block text-caption">{t("skills.level_done_body", { level, next: nextLevel })}</span>
+              </span>
+              <ChevronRightIcon className="size-4 shrink-0" />
+            </Link>
+          ) : null
+        }
+      />
     </div>
   );
 }
@@ -281,99 +221,6 @@ async function SuggestionCard({ skill, meta, reason }: { skill: SkillId; meta: S
         <span className="muted line-clamp-2 block text-caption">{reason}</span>
       </span>
       <ChevronRightIcon className="size-4 shrink-0" />
-    </Link>
-  );
-}
-
-async function Row({
-  meta,
-  done,
-  score,
-  isNext,
-  tint,
-  locked,
-}: {
-  meta: SkillMeta;
-  done: boolean;
-  score: number | null;
-  isNext: boolean;
-  tint: string;
-  /** Hak bitti ve alıştırma daha önce açılmadı: satır planlara götürür. */
-  locked: boolean;
-}) {
-  const t = await getT();
-  const lang = await getLang();
-  return (
-    <Link
-      href={locked ? "/premium" : `/immersion/skill/${meta.id}?from=skills`}
-      prefetch={locked ? false : undefined}
-      className="pressable flex items-center gap-3 py-3"
-      style={locked ? { opacity: 0.6 } : undefined}
-    >
-      {/* Nokta: biten yosun, bitmeyen becerinin kendi rengi. Mobilde de öyle —
-          renk hem durumu hem hangi beceride olunduğunu taşıyor. */}
-      <span
-        aria-hidden
-        className="h-2 w-2 shrink-0 rounded-full"
-        style={{ background: done ? "var(--color-mint-500)" : tint }}
-      />
-      <span className="min-w-0 flex-1">
-        <span className="block truncate text-strong">{meta.title}</span>
-        <span className="muted block text-caption">
-          {t(`genre.${meta.genre}`)} · {t("skills.dk", { n: meta.minutes })} · {t("skills.n_items_short", { n: meta.items })}
-          {isNext ? (
-            <>
-              {" · "}
-              <span style={{ color: tint }}>{t("skills.next").toLocaleLowerCase(localeOf(lang))}</span>
-            </>
-          ) : null}
-        </span>
-      </span>
-      {/* Son puan: bitmişse yeşil onay yanında, bitmemişse tek başına —
-          "denedim ama %50 aldım" ile "hiç açmadım" ayrışsın. */}
-      {score !== null ? (
-        <span
-          /* Yarıçap ve punto PROJENİN ölçeğinden: `rounded-md` (6 px) ve
-             `text-micro` ölçekte yok, mobil karşılığı radii.sm=10 ve
-             `micro`. */
-          className="shrink-0 rounded-chip px-1.5 py-0.5 text-micro"
-          style={{
-            /* %14 TİNT + ANLAMSAL JETON — uygulamanın her yerindeki kalıp
-               (bkz. `progress-view`, `app-shell`). Burada iki sapma vardı:
-               tint %18'di ve kehribar yanı sabit `flame-500` yazıyordu.
-               Ölçüm, %18 tint üstünde: flame-500 açık temada 2.43 - küçük
-               kalın yazı eşiği 4.5'in çok altında. `--color-flame` ile %18'de
-               4.39, %14'te 4.55; mint yanı da %14'te daha rahat geçiyor. */
-            background: done
-              ? "color-mix(in srgb, var(--color-mint-500) 14%, transparent)"
-              : "color-mix(in srgb, var(--color-flame-500) 14%, transparent)",
-            color: done ? "var(--color-mint)" : "var(--color-flame)",
-          }}
-        >
-          {formatPercent(score, lang)}
-        </span>
-      ) : null}
-      {/* "BİTTİ" DURUMU EKRAN OKUYUCUYA DA SÖYLENİYOR. Durumu taşıyan üç şey
-          de sessizdi: nokta `aria-hidden`, onay simgesi `aria-hidden`
-          (`icons.tsx` varsayılanı) ve satırın adı yalnız başlık + süre.
-          Yani hangi alıştırmanın bitmiş olduğu sesli okuyucu kullanan biri
-          için HİÇ okunamıyordu — aynı eksik Android'de de vardı ve ikisi
-          birlikte kapatıldı. Kalıp `option-mark`tan: simgeye rol ve ad
-          verilince `aria-hidden` varsayılanı eziliyor. */}
-      {locked ? (
-        <LockIcon size={18} role="img" aria-hidden={false} aria-label={t("gate.premium_only")} className="muted shrink-0" />
-      ) : done ? (
-        <CheckIcon
-          size={18}
-          role="img"
-          aria-hidden={false}
-          aria-label={t("common.completed")}
-          className="shrink-0"
-          style={{ color: "var(--color-mint)" }}
-        />
-      ) : (
-        <ChevronRightIcon size={20} className="muted shrink-0" />
-      )}
     </Link>
   );
 }

@@ -7,7 +7,6 @@ import { t, dateLocale, formatPercent } from "../lib/i18n";
 import { Screen } from "../ui/Screen";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
-import { CardGrid } from "../ui/CardGrid";
 import { PressableScale } from "../ui/PressableScale";
 import { AppHeader } from "../ui/AppHeader";
 import { Skeleton, SkeletonCard, SkeletonLine, textHeight } from "../ui/Skeleton";
@@ -92,6 +91,10 @@ export function SkillsScreen() {
      kadar her şeyi açık çiziyordu. Odaklanmada tazelenir: değerlendirme hak
      düşürdüyse dönünce not güncel olsun. */
   const [access, setAccess] = useState<SkillAccess | null>(null);
+  /* Seçili beceri: null iken önerinin becerisi (en geride kalan). Seviye
+     değişince seçim korunuyor — "B1'in dil bilgisine bakayım" doğal bir akış. */
+  const [picked, setPicked] = useState<SkillKey | null>(null);
+  const [hideDone, setHideDone] = useState(false);
   useEffect(() => {
     if (meLoading || me) return;
     void loadOnboardingPrefs().then((p) => { setGuestLevel(p.level ?? null); setPrefsRead(true); });
@@ -164,6 +167,8 @@ export function SkillsScreen() {
   const doneCount = lists.reduce((n, l) => n + l.finished, 0);
   const suggestion = lists.filter((l) => l.next).sort((a, b) => a.ratio - b.ratio)[0] ?? null;
   const nextLevel = LEVELS[LEVELS.indexOf(activeLevel as (typeof LEVELS)[number]) + 1] ?? null;
+  const visible = lists.filter((l) => l.items.length > 0);
+  const current = visible.find((l) => l.key === picked) ?? visible.find((l) => l.key === suggestion?.key) ?? visible[0] ?? null;
 
   function open(ex: SkillMeta, kind: Kind) {
     // Kilitli satır planlara gidiyor; açılsaydı öğrenci yazıp gönderirken 403 görürdü.
@@ -207,17 +212,20 @@ export function SkillsScreen() {
       )}
 
       {!levelReady || !poolsReady ? (
-        <CardGrid>
-        {SKILLS.map((s) => (
-          <View key={s.key} style={{ marginBottom: spacing.xl }}>
+        /* İskelet yüklenmiş ekranın biçiminde: beş karo ve TEK liste. */
+        <>
+          <View style={{ flexDirection: "row", gap: spacing.sm, marginBottom: spacing.lg }}>
+            {SKILLS.map((s) => <Skeleton key={s.key} height={10 + 20 + textHeight("caption") + textHeight("micro") + 4 + 3 * 4 + spacing.sm + 3} radius={radii.md} style={{ flex: 1 }} />)}
+          </View>
+          <View style={{ marginBottom: spacing.xl }}>
             <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginBottom: spacing.sm, marginLeft: spacing.xs }}>
               <Skeleton height={18} width={18} radius={9} />
               <SkeletonLine variant="h3" width={92} />
-              <SkeletonLine variant="caption" width={74} />
+              <SkeletonLine variant="caption" width={40} />
             </View>
             <SkeletonCard padded style={{ paddingVertical: spacing.xs }}>
-              {[0, 1, 2].map((i) => (
-                <View key={i} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderBottomWidth: i === 2 ? 0 : 1, borderBottomColor: colors.hairline }}>
+              {[0, 1, 2, 3, 4].map((i) => (
+                <View key={i} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderBottomWidth: i === 4 ? 0 : 1, borderBottomColor: colors.hairline }}>
                   <Skeleton height={8} width={8} radius={4} />
                   <View style={{ flex: 1 }}>
                     <SkeletonLine variant="bodyStrong" width="70%" />
@@ -228,8 +236,7 @@ export function SkillsScreen() {
               ))}
             </SkeletonCard>
           </View>
-        ))}
-        </CardGrid>
+        </>
       ) : (
         <>
           {!hasExercises ? (
@@ -272,39 +279,84 @@ export function SkillsScreen() {
             </PressableScale>
           ) : null}
 
-          {/* Geniş ekranda beceri bölümleri yan yana: tek sütunda okuma bitmeden
-              dinlemeyi görmek için kaydırmak gerekiyordu. Telefonda ve dar
-              kapta CardGrid hiç sarmalamıyor, düzen birebir eskisi. */}
-          <CardGrid>
-          {lists.map((s) => {
-            if (!s.items.length) return null;
-            const tint = colors[s.tint] as string;
-            return (
-              <View key={s.key} style={{ marginBottom: spacing.xl }}>
-                <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginBottom: spacing.sm, marginLeft: spacing.xs }}>
-                  <s.icon color={tint} size={18} />
-                  <Text variant="h3">{t(s.label)}</Text>
-                  <Text variant="caption" color={colors.textMuted}>{s.finished}/{s.items.length}</Text>
-                </View>
-                {/* Kuralı kilide çarpmadan ÖNCE söyle (web aynı notu çiziyor). */}
-                {(() => {
-                  const kind = s.items[0] ? gatedMetaKind(s.items[0]) : null;
-                  const note = kind && access ? gateNote(access[kind]) : null;
-                  return note ? (
-                    <View style={{ marginBottom: spacing.sm }}>
-                      <FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={`${t("skills.ai_quota")} · ${t(note.key, { n: note.n })}`} />
-                    </View>
-                  ) : null;
-                })()}
-                <Card padded style={{ paddingVertical: spacing.xs }}>
-                  {s.items.map((ex, i) => (
-                    <ExerciseRow key={ex.id} ex={ex} tint={tint} done={done.has(ex.id)} score={scores[ex.id]} isNext={s.next?.id === ex.id} last={i === s.items.length - 1} colors={colors} onPress={() => open(ex, s.kind)} locked={isSkillLocked(ex, access)} />
-                  ))}
-                </Card>
+          {/*
+            BECERİ KAROLARI (2026-09-25). Kütüphane hücre başına yirmiye çıktı;
+            beş bölüm alt alta bir seviyede 100 satır ediyordu ve dil bilgisine
+            inmek için dört listeyi geçmek gerekiyordu. Beş karo bir bakışta
+            beş becerinin ilerlemesini gösteriyor, liste yalnız seçili
+            becerininki. Web aynı düzeni çiziyor (`skill-browser`). Seçili karo
+            seviye sekmesinin dilini konuşuyor; simge becerinin rengini taşıyor.
+          */}
+          {current ? (
+            <>
+              <View style={{ flexDirection: "row", gap: 6, marginBottom: spacing.lg }} accessibilityRole="tablist">
+                {visible.map((s) => {
+                  const active = s.key === current.key;
+                  const tint = colors[s.tint] as string;
+                  const pct = Math.round((s.finished / s.items.length) * 100);
+                  return (
+                    <PressableScale
+                      key={s.key}
+                      onPress={() => setPicked(s.key)}
+                      accessibilityRole="tab"
+                      accessibilityState={{ selected: active }}
+                      accessibilityLabel={`${t(s.label)}, ${s.finished}/${s.items.length}`}
+                      style={{ flex: 1, minWidth: 0, alignItems: "center", gap: 4, paddingTop: 10, paddingBottom: spacing.sm, paddingHorizontal: 2, borderRadius: radii.md, borderWidth: 1.5, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : colors.surface }}
+                    >
+                      <s.icon color={tint} size={20} />
+                      {/* İki satıra kadar: dar telefonda "Dil bilgisi" tek satıra
+                          sığmıyor. Sayaç `marginTop: auto` ile dibe yaslı. */}
+                      <Text variant="caption" numberOfLines={2} color={active ? colors.primaryText : colors.text} style={{ textAlign: "center" }}>{t(s.label)}</Text>
+                      <Text variant="micro" color={colors.textMuted} style={{ marginTop: "auto" }}>{s.finished}/{s.items.length}</Text>
+                      <View style={{ width: "80%", height: 4, borderRadius: 2, backgroundColor: colors.surface2, overflow: "hidden" }}>
+                        <View style={{ width: `${pct}%`, height: "100%", borderRadius: 2, backgroundColor: tint }} />
+                      </View>
+                    </PressableScale>
+                  );
+                })}
               </View>
-            );
-          })}
-          </CardGrid>
+
+              {(() => {
+                const tint = colors[current.tint] as string;
+                const kind = current.items[0] ? gatedMetaKind(current.items[0]) : null;
+                const note = kind && access ? gateNote(access[kind]) : null;
+                const rows = hideDone ? current.items.filter((e) => !done.has(e.id)) : current.items;
+                return (
+                  <View style={{ marginBottom: spacing.xl }}>
+                    <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginBottom: spacing.sm, marginLeft: spacing.xs }}>
+                      <current.icon color={tint} size={18} />
+                      <Text variant="h3">{t(current.label)}</Text>
+                      <Text variant="caption" color={colors.textMuted}>{current.finished}/{current.items.length}</Text>
+                      {/* Bitenleri gizle: yirmi satırın çoğu bittiğinde sıradakini
+                          bulmak için kaydırmak gerekmesin. Biten yoksa anahtar yok. */}
+                      {current.finished ? (
+                        <PressableScale onPress={() => setHideDone((v) => !v)} accessibilityRole="button" accessibilityState={{ selected: hideDone }} style={{ marginLeft: "auto", paddingVertical: spacing.xs }}>
+                          <Text variant="caption" color={colors.primaryText}>{hideDone ? t("skills.show_done", { n: current.finished }) : t("skills.hide_done")}</Text>
+                        </PressableScale>
+                      ) : null}
+                    </View>
+                    {/* Kuralı kilide çarpmadan ÖNCE söyle (web aynı notu çiziyor). */}
+                    {note ? (
+                      <View style={{ marginBottom: spacing.sm }}>
+                        <FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={`${t("skills.ai_quota")} · ${t(note.key, { n: note.n })}`} />
+                      </View>
+                    ) : null}
+                    {rows.length ? (
+                      <Card padded style={{ paddingVertical: spacing.xs }}>
+                        {rows.map((ex, i) => (
+                          <ExerciseRow key={ex.id} ex={ex} tint={tint} done={done.has(ex.id)} score={scores[ex.id]} isNext={current.next?.id === ex.id} last={i === rows.length - 1} colors={colors} onPress={() => open(ex, current.kind)} locked={isSkillLocked(ex, access)} />
+                        ))}
+                      </Card>
+                    ) : (
+                      <Card padded>
+                        <Text variant="body" color={colors.textMuted}>{t("skills.all_done_hidden", { n: current.finished })}</Text>
+                      </Card>
+                    )}
+                  </View>
+                );
+              })()}
+            </>
+          ) : null}
         </>
       )}
     </Screen>
