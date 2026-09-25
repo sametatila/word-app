@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { WalkPlayer } from "@/components/walk-player";
+import type { WalkUnlock } from "@/lib/premium/unlock";
 import { ChallengePlayer } from "@/components/challenge-player";
 
 /**
@@ -21,7 +22,7 @@ import { ChallengePlayer } from "@/components/challenge-player";
  * `router.refresh()` çıkışta bir kez: mod XP/seri kazandırmış olabilir ve
  * merkez o sayıları sunucudan okuyor.
  */
-export function ModeScreen({ mode }: { mode: "walk" | "challenge" }) {
+export function ModeScreen({ mode, walk = null }: { mode: "walk" | "challenge"; walk?: WalkUnlock | null }) {
   const router = useRouter();
 
   /*
@@ -45,7 +46,7 @@ export function ModeScreen({ mode }: { mode: "walk" | "challenge" }) {
   };
   return (
     <div className="flex min-h-0 flex-1 flex-col">
-      {mode === "walk" ? <WalkPlayer onExit={onExit} /> : null}
+      {mode === "walk" ? <WalkPlayer onExit={onExit} walk={walk} /> : null}
       {mode === "challenge" ? <ChallengePlayer onExit={onExit} /> : null}
     </div>
   );

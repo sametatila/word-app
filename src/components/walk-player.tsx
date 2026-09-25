@@ -4,6 +4,8 @@ import { glossFor, type GlossWord } from "@/lib/option-label";
 import { glossVoice } from "@/lib/tts/voices";
 import { apiFetch } from "@/lib/api-fetch";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
+import type { WalkUnlock } from "@/lib/premium/unlock";
 import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { COURSE_KEY, readLocal, selectedVoice, speakSegments, stopSpeaking, type SpeechSegment } from "@/components/speak-button";
@@ -113,7 +115,11 @@ type Status =
   | "empty"
   | "error"
   | "unsupported"
-  | "denied";
+  | "denied"
+  /* Bugünkü ücretsiz oturumlar bitti (403 premium_required) — 2026-09-25. */
+  | "locked"
+  /* Premium'un günlük kötüye kullanım tavanı doldu (429). */
+  | "fair_use";
 
 /** Ekranda ne olduğunu söyleyen tek satır — bakan biri için. */
 type Phase = "speaking" | "listening" | "judging";
@@ -281,8 +287,16 @@ function wordsOf(round: Round): RoundWord[] {
   return round.game === "match" ? round.words : [round.word];
 }
 
-export function WalkPlayer({ onExit }: { onExit: () => void }) {
+export function WalkPlayer({ onExit, walk = null }: { onExit: () => void; walk?: WalkUnlock | null }) {
   const t = useT();
+  /*
+    GÜNLÜK OTURUM (2026-09-25). Ücretsizde günde 3 oturum, ekran açık; oturum
+    sunucuda `/api/session?walk=1` ile açılıyor ve 30 dakikalık pencere içindeki
+    devam isteği aynı oturum sayılıyor. Sayfa durumu yüklemeden ÖNCE okudu;
+    kuyruk yüklenince oturum açılmış oluyor, kapakta söylenen buna göre.
+  */
+  const [walkNow, setWalkNow] = useState<WalkUnlock | null>(walk);
+  const router = useRouter();
   const lang = useLang();
   // Hedef dilin adı ekranda geçiyor; kurs cihazdaki aynadan okunuyor (mobil
   // `currentCourseId()` ile aynı kaynak).
@@ -457,7 +471,14 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         cache: "no-store",
         signal: AbortSignal.timeout(NET_TIMEOUT_MS),
       });
+      const gate = await walkGate(res);
+      if (gate) {
+        track("premium_gate", 0, "walk");
+        return setStatus(gate);
+      }
       if (!res.ok) return setStatus("error");
+      /* Kuyruk geldi = oturum açık. Pencere dışındaysa bir hak düştü. */
+      setWalkNow((w) => (w && !w.premium && !w.sessionOpen ? { ...w, sessionOpen: true, used: w.used + 1, remaining: Math.max(0, w.remaining - 1) } : w));
       const data = (await res.json()) as SessionPayload & { resume?: SessionProgress | null };
       if (!data.rounds.length) return setStatus("empty");
       setSession(data);
@@ -918,13 +939,17 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
    * açısından yanlış: kelime yarın yine karşına çıkacak, on dakika sonra
    * çıkmasının öğretici bir karşılığı yok.
    */
-  const fetchSession = useCallback(async (): Promise<SessionPayload | null> => {
+  const fetchSession = useCallback(async (): Promise<SessionPayload | "locked" | "fair_use" | null> => {
     try {
       const skip = [...askedIds.current].join(",");
       const res = await apiFetch(`/api/session?day=${localDay()}&walk=1${skip ? `&skip=${skip}` : ""}`, {
         cache: "no-store",
         signal: AbortSignal.timeout(NET_TIMEOUT_MS),
       });
+      /* Devam isteği oturum penceresinin dışına düştüyse yeni oturum sayılıyor
+         ve hak yoksa kapı burada kapanıyor — "kelime kalmadı" DEĞİL. */
+      const gate = await walkGate(res);
+      if (gate) return gate;
       if (!res.ok) return null;
       return (await res.json()) as SessionPayload;
     } catch {
@@ -1261,8 +1286,19 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
 
       setPhase("speaking");
       await say([{ lang, narration: true, text: t("walk.continuing") }]);
-      const next = await fetchSession();
+      const fetched = await fetchSession();
       if (!alive()) return;
+      if (fetched === "locked" || fetched === "fair_use") {
+        track("premium_gate", 0, "walk");
+        track("walk_end", 2);
+        ended.current = true;
+        closeMic();
+        void release();
+        endedAt.current = Date.now();
+        setStatus(fetched);
+        return;
+      }
+      const next = fetched;
       if (!next?.rounds.length) {
         track("walk_end", 2);
         ended.current = true;
@@ -1573,6 +1609,23 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       </FlowColumn>
     );
 
+  /* OTURUM HAKKI BİTTİ (2026-09-25): ücretsizde günde 3 oturum. Kilit,
+     yarın yenileneceği ve Premium'la ekran kapalıyken de, günlük oturum
+     beklemeden yürüneceği söyleniyor. */
+  if (status === "locked" || status === "fair_use")
+    return (
+      <FlowColumn>
+        <StateBody
+          title={t(status === "locked" ? "unlock.walk_spent" : "gate.fair_use", { n: walkNow?.perDay ?? 0 })}
+          body={status === "locked" ? t("plan.pro_pocket_walk") : undefined}
+        />
+        <FlowActions
+          primary={status === "locked" ? { label: t("unlock.premium_now"), onClick: () => router.push("/premium") } : { label: t("common.go_back"), onClick: leave }}
+          tertiary={status === "locked" ? { label: t("common.go_back"), onClick: leave } : null}
+        />
+      </FlowColumn>
+    );
+
   /* BUGÜNLÜK KELİME YOK — mobille aynı metin (`walkmode.done_no_more*`);
      iki platform aynı boş kuyruğu iki ayrı cümleyle anlatıyordu. */
   if (status === "empty")
@@ -1606,6 +1659,13 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     );
 
   if (status === "ready" || status === "paused") {
+    /* Bugünkü oturum hakkı — oturum açıkken kalan oturum sayısı, yoksa açık. */
+    const walkLine =
+      walkNow && !walkNow.premium
+        ? walkNow.remaining > 0
+          ? t("unlock.walk_left", { n: walkNow.remaining })
+          : t("unlock.walk_open")
+        : null;
     /* Kaldığın yer: kapakta da duraklamada da aynı satır. */
     const where = (
       <FlowNote
@@ -1657,6 +1717,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           />
         )}
         {where}
+        {walkLine ? <FlowNote icon={<WalkIcon size={16} />} text={walkLine} /> : null}
         {actions}
         {/* Açıklama İKİ düğmenin de önünde: hangisine basılmışsa onay
             verildikten sonra o yol sürüyor. Onay diyaloğunun düğmesi de bir
@@ -1940,4 +2001,15 @@ function Frame({ children, role, busy }: { children: React.ReactNode; role?: "st
       <div role={role} aria-busy={busy ? "true" : undefined} className="card p-6">{children}</div>
     </div>
   );
+}
+
+/**
+ * Yürüyüş kapısının cevabı: 403 premium_required → "locked", 429 → "fair_use".
+ * Başka her şey null (çağıran kendi hata dalına bakar).
+ */
+async function walkGate(res: Response): Promise<"locked" | "fair_use" | null> {
+  if (res.status === 429) return "fair_use";
+  if (res.status !== 403) return null;
+  const j = (await res.clone().json().catch(() => null)) as { error?: string } | null;
+  return j?.error === "premium_required" ? "locked" : null;
 }
