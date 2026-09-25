@@ -101,8 +101,8 @@
  { "tr": "Fonlanmayan şey ne?", "kind": "question", "de": "Was wurde nicht finanziert?" },
  { "tr": "Fotoğrafta kim var?", "kind": "question", "de": "Wer ist auf dem Foto?" },
  { "tr": "Gelmek ister misin?", "kind": "listening.title", "de": "Möchtest du kommen?" },
- { "tr": "Hasta ne getirmeli?", "kind": "question", "de": "Was soll der Patient mitbringen?" },
- { "tr": "Hasta neden arıyor?", "kind": "question", "de": "Warum ruft der Patient an?" },
+ { "tr": "Hasta ne getirmeli?", "kind": "question", "de": "Was soll die Patientin mitbringen?" },
+ { "tr": "Hasta neden arıyor?", "kind": "question", "de": "Warum ruft die Patientin an?" },
  { "tr": "If we had talked, …", "kind": "focus", "de": "If we had talked, …" },
  { "tr": "İki telefon teklifi", "kind": "reading.title", "de": "Zwei Angebote für Ihr Handy" },
  { "tr": "İtiraz edilen hesap", "kind": "listening.title", "de": "Die strittige Rechnung" },
@@ -144,9 +144,9 @@
  { "tr": "Projeyi ne kurtardı?", "kind": "question", "de": "Was hat das Projekt gerettet?" },
  { "tr": "Sinemaya gidelim mi?", "kind": "listening.title", "de": "Gehen wir ins Kino?" },
  { "tr": "Sonunda bir soru sor", "kind": "writing.checklist", "de": "Stell am Ende eine Frage" },
- { "tr": "Şefin eleştirisi ne?", "kind": "question", "de": "Was kritisiert die Vorgesetzte?" },
+ { "tr": "Şefin eleştirisi ne?", "kind": "question", "de": "Was kritisiert der Chef?" },
  { "tr": "Şehir ve resmî işler", "kind": "plan.title", "de": "Stadt und Behördengänge" },
  { "tr": "Tabii, kabin şurada.", "kind": "turn", "de": "Ja, die Umkleide ist dort." },
  { "tr": "Teslim neden gecikti", "kind": "listening.title", "de": "Warum die Lieferung zu spät kam" },
- { "tr": "„cam salı toplanıyor“", "kind": "focus", "de": "„Glas wird dienstags geholt“" }
+ { "tr": "„cam salı toplanıyor“", "kind": "focus", "de": "„Glas wird dienstags abgeholt“" }
 ]

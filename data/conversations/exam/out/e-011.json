@@ -8,7 +8,7 @@
  { "tr": "Çocukken pilot olmak istiyordum ama matematiğim iyi değildi.", "kind": "speaking", "en": "As a child I wanted to be a pilot, but I was not good at arithmetic." },
  { "tr": "İsterim tabii. Hadi, her şey yoluna girer — akşam daha bitmedi ki.", "kind": "turn", "en": "I would, of course. Come on, it will be all right — the evening is not over yet." },
  { "tr": "İyi fikir. Oyun sekizde başlıyor. Beklerken bir şeyler yiyebiliriz.", "kind": "turn", "en": "Good idea. The performance starts at eight. While we wait we could have something to eat." },
- { "tr": "İyi günler, ben Nuray Aydın. Bay Berg ile görüşebilir miyim?", "kind": "turn", "en": "Good afternoon, this is Nuray Aydin. Can I speak to Mr Berg?" },
+ { "tr": "İyi günler, ben Nuray Aydın. Bay Berg ile görüşebilir miyim?", "kind": "turn", "en": "Good afternoon, this is Nuray Aydın. Can I speak to Mr Berg?" },
  { "tr": "Senin yerinde olsam muhtemelen ben de aynı tepkiyi verirdim.", "kind": "speaking", "en": "In your place I would probably have reacted just the same." },
  { "tr": "Son tatilini ya da geçen hafta sonunu anlatan bir metin yaz.", "kind": "writing.prompt", "en": "Write a text about your last holiday or last weekend." },
  { "tr": "„Je stiller der Abend wird, desto stärker wirkt er“ ne demek?", "kind": "question", "en": "What does „Je stiller der Abend wird, desto stärker wirkt er“ mean?" },
@@ -139,7 +139,7 @@
  { "tr": "O zaman güç kaynağı gibi duruyor. Tamir ettirilebilir, çoğu zaman değer.", "kind": "turn", "en": "Then it sounds like the power supply. You can have that repaired, it is usually worth it." },
  { "tr": "Başvuruya eklenmesi gereken belgeler, eklenmesi zorunlu olan belgelerdir.", "kind": "speaking", "en": "The documents to be attached to the application are the documents that must be attached." },
  { "tr": "Bir mağazanın internet sitesine kısa bir mesaj yaz ve aradığın ürünü sor.", "kind": "writing.prompt", "en": "Write a short message to a shop's website asking about the item you want." },
- { "tr": "Doğru anladıysam, bir karar verilmeden önce bir ara geri bildirim oluyor.", "kind": "turn", "en": "If I understand you correctly, there is an interim reply before anything is decided." },
+ { "tr": "Doğru anladıysam, bir karar verilmeden önce bir ara geri bildirim oluyor.", "kind": "turn", "en": "If I understand you correctly, there is interim feedback before anything is decided." },
  { "tr": "İnternetten aldığın bir ürün bozuk çıktı. Mağazaya şikâyet e-postası yaz.", "kind": "writing.prompt", "en": "Something you bought online turned out to be faulty. Write a complaint email to the shop." },
  { "tr": "İşte mesele tam orada: Altyapı ne kadar iyiyse o kadar az insan göç eder.", "kind": "turn", "en": "That is exactly the point: the better the infrastructure, the fewer people move away." },
  { "tr": "Kısa vaktiniz var mı? Cuma günleri erken çıkabilir miyim diye soracaktım.", "kind": "turn", "en": "Have you got a minute? I wanted to ask whether I could leave earlier on Fridays." },
@@ -148,5 +148,5 @@
  { "tr": "Belki de yanlış algıladım. Ama o anda sanki sorun benmişim gibi hissettim.", "kind": "turn", "en": "Perhaps I took it the wrong way. But in that moment it felt as if I were the problem." },
  { "tr": "Ben pazartesi ve çarşamba gelebilirim. Güvendiğimiz komşu da cuma geliyor.", "kind": "turn", "en": "I can do Mondays and Wednesdays. And the neighbour we trust comes on Fridays." },
  { "tr": "Bir itirazı kendin dile getirip karşıla (Dem ist entgegenzuhalten, dass …)", "kind": "writing.checklist", "en": "Raise an objection yourself and answer it (Dem ist entgegenzuhalten, dass …)" },
- { "tr": "Bugün bir karar vermek zorundayız. Sizce hangi seçenekler hâlâ söz konusu?", "kind": "turn", "en": "We have to take a decision today. Which options are still in question, in your view?" }
+ { "tr": "Bugün bir karar vermek zorundayız. Sizce hangi seçenekler hâlâ söz konusu?", "kind": "turn", "en": "We have to take a decision today. Which options are still on the table, in your view?" }
 ]

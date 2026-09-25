@@ -7,7 +7,7 @@
  { "tr": "Aldım, 214 numara. Adres kaydı yaptırmak istiyorum.", "kind": "turn", "en": "I have one, number 214. I would like to register my address." },
  { "tr": "Aylık 180 euro. Isıtma ve su dâhil, elektrik değil.", "kind": "turn", "en": "180 euros a month. Heating and water are included, electricity is not." },
  { "tr": "Ben de içecekleri hallederim. Ona ne hediye edelim?", "kind": "turn", "en": "And I will take care of the drinks. What shall we give him?" },
- { "tr": "Bir çalışan çalışma saatlerini değiştirmek istiyor.", "kind": "listening.situation", "en": "An employee wants to change her working hours." },
+ { "tr": "Bir çalışan çalışma saatlerini değiştirmek istiyor.", "kind": "listening.situation", "en": "An employee wants to change his working hours." },
  { "tr": "Bir konuda üç dakikalık kısa bir konuşma metni yaz.", "kind": "writing.prompt", "en": "Write a short three-minute talk on a topic." },
  { "tr": "Bir öneriyi nazikçe reddeden resmî bir e-posta yaz.", "kind": "writing.prompt", "en": "Write a formal email that politely turns down a proposal." },
  { "tr": "Bugün maalesef olmaz. Ama yarın saat onda oradayım.", "kind": "turn", "en": "Not today, unfortunately. But tomorrow at ten I will be there." },
