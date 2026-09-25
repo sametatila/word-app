@@ -393,7 +393,7 @@ export function PaywallScreen() {
    *
    * Burada eskiden erken bir dönüş vardı: "Premium satışta değil · tüm
    * özellikler şimdilik ücretsiz". İki sorunu vardı. Birincisi YANLIŞTI —
-   * ekran kapalı yürüyüş ücretsiz katmanda kapalı (`free.pocketWalksPerDay: 0`),
+   * ekran kapalı yürüyüş ücretsiz katmanda yok (yalnız premium),
    * yani uygulama her şeyin ücretsiz olduğunu söylerken sunucu o yolu
    * reddediyordu. İkincisi çıkmaz sokaktı: promo kodu kutusu da davet kutusu da
    * o dalın arkasında kalıyordu, oysa ikisi mağazadan BAĞIMSIZ çalışıyor ve
@@ -524,7 +524,14 @@ export function PaywallScreen() {
         <View style={{ marginBottom: spacing.xl, gap: spacing.xs }}>
           {status?.limits ? (
             <Text variant="micro" color={colors.textMuted}>
-              {t("paywall.fair_use_title")}: {t("plan.pro_walk_cap", { n: status.limits.fairUse.pocketWalksPerDay })} · {t("plan.pro_ai", { n: status.limits.fairUse.aiPracticePerDay })}
+              {/* Üç tavan tek cümlede ve "sınırsız" denmeden (App Store 3.1.2).
+                  Sohbet mesajı tavanı sabit (sunucu `lib/quotas`); eski sunucu
+                  göndermiyorsa aynı sayı. `pocketWalksPerDay` eski sunucunun adı. */}
+              {t("plan.pro_fair_use", {
+                w: status.limits.fairUse.walkSessionsPerDay ?? status.limits.fairUse.pocketWalksPerDay ?? 20,
+                a: status.limits.fairUse.aiPracticePerDay,
+                c: status.limits.fairUse.chatTurnsPerDay ?? 300,
+              })}
             </Text>
           ) : null}
           {/* İçerik vaadi AYRI satır: adil kullanım tavanlarıyla aynı cümlede
