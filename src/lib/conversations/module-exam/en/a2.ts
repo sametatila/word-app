@@ -242,7 +242,7 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
     titleTr: "Ev ve mahalle",
     focus: [
       { de: "Present perfect for a problem", tr: "„pazartesiden beri çalışmıyor“" },
-      { de: "have to / mustn't", tr: "kural ve yasak" },
+      { de: "have to / can't", tr: "kural ve yasak" },
       { de: "Could you …, please?", tr: "nazik şikâyet ve rica" },
       { de: "Comparatives", tr: "daha sessiz, daha aydınlık" },
     ],
@@ -276,9 +276,9 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
       title: "Rules for the building",
       titleTr: "Bina kuralları",
       genre: "Duyuru",
-      text: "RULES FOR THE BUILDING\n\nDear residents,\n\nPlease read these rules carefully.\n\n1. After ten o'clock you mustn't make noise.\n2. You have to put the paper in the blue garbage can.\n3. Bikes are forbidden in the hallway. There is a place for them in the basement.\n4. You don't have to clean the stairs — the caretaker does it every Friday.\n\nIf something is broken, please call the caretaker immediately.",
+      text: "RULES FOR THE BUILDING\n\nDear residents,\n\nPlease read these rules carefully.\n\n1. After ten o'clock you must not make noise.\n2. You have to put the paper in the blue garbage can.\n3. Bikes are forbidden in the hallway. There is a place for them in the basement.\n4. You don't have to clean the stairs — the caretaker does it every Friday.\n\nIf something is broken, please call the caretaker immediately.",
       questions: [
-        { de: "What mustn't the residents do after ten o'clock?", tr: "Kiracılar saat ondan sonra ne yapmamalı?", options: ["Make noise", "Use the lift", "Clean the stairs", "Park a bike"], answer: 0 },
+        { de: "What can't the residents do after ten o'clock?", tr: "Kiracılar saat ondan sonra ne yapmamalı?", options: ["Make noise", "Use the lift", "Clean the stairs", "Park a bike"], answer: 0 },
         { de: "Who cleans the stairs?", tr: "Merdivenleri kim temizliyor?", options: ["The residents", "The caretaker", "Nobody", "A mechanic"], answer: 1 },
       ],
     },

@@ -21,7 +21,7 @@ import type { SkillExercise } from "../types";
  *           I am going to revise every evening. ·
  *           I will take a break at nine. ·
  *           You must bring your card to the exam. ·
- *           You mustn't cheat in the test. ·
+ *           You can't cheat on the test. ·
  *           You should do more practice.
  *
  * Ünitenin tek öğretme noktası ŞUNU ÖNCEKİ SÖZCÜK BELİRLİYOR. Üç satır
@@ -286,7 +286,7 @@ export const enB1U13: SkillExercise[] = [
       { speaker: "Nil", text: "Even if you know me?" },
       { speaker: "Tutor", text: "Especially then. The rule exists so that nobody has to decide who is known." },
       { speaker: "Nil", text: "Second?" },
-      { speaker: "Tutor", text: "You mustn't cheat in the test. That is obvious, but here is the part that is not: a phone in a bag under the table counts." },
+      { speaker: "Tutor", text: "You can't cheat on the test. That is obvious, but here is the part that is not: a phone in a bag under the table counts." },
       { speaker: "Nil", text: "Even switched off?" },
       { speaker: "Tutor", text: "Even when it is off. Leave it at the door with the invigilator." },
       { speaker: "Nil", text: "And the advice?" },
@@ -329,8 +329,8 @@ export const enB1U13: SkillExercise[] = [
         text: "Duyduğun cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["You mustn't cheat in the test.", "You must not cheat in the test.", "You mustn't cheat in the test"],
-        explain: "„mustn't“ yasak; sonrası eksiz fiil.",
+        accept: ["You can't cheat on the test.", "You cannot cheat on the test.", "You can't cheat on the test"],
+        explain: "„can't“ burada yasak; sonrası eksiz fiil.",
       },
       {
         kind: "short_answer",

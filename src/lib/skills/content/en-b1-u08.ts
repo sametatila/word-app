@@ -12,7 +12,7 @@ import type { SkillExercise } from "../types";
  *           quiet, personality, wear, village, coast, valley, crowded,
  *           peaceful, tourist, scenery, hill.
  *   Kalıp:  You must show your card at the door. ·
- *           You mustn't bring food inside. ·
+ *           You must not bring food inside. ·
  *           You should ask for permission first. ·
  *           I have worked abroad for two years. ·
  *           I volunteered at a school last summer. ·
@@ -129,7 +129,7 @@ export const enB1U08: SkillExercise[] = [
     text:
       "For members, and for the people who bring them.\n" +
       "You must show your card at the door. Every time, also on the days when the person at the desk knows you. The rule is not about you; it is about the evening when somebody else is at the desk.\n" +
-      "You mustn't bring food inside. Water in a bottle is fine. The reason is on the wall in one line: the room was repaired twice in four years and both times it was food.\n" +
+      "You must not bring food inside. Water in a bottle is fine. The reason is on the wall in one line: the room was repaired twice in four years and both times it was food.\n" +
       "You should ask for permission first if you want to bring a guest. Not must — should. Nobody has ever said no, but the room has twenty seats and the person who asks on Tuesday gets one.\n" +
       "Members who do not sign in are warned once. The second time there is a penalty of five euros, which goes into the coffee box and has paid for the coffee since March.\n" +
       "One more thing, and it is not a rule. If somebody behaves badly here twice in a row, three people will talk to them before anybody writes anything down. That has worked every time so far, and we would rather keep it that way.",
@@ -416,9 +416,9 @@ export const enB1U08: SkillExercise[] = [
       {
         kind: "build",
         tr: "İçeri yiyecek getirmemelisin.",
-        answer: "You mustn't bring food inside.",
-        alternatives: ["You must not bring food inside."],
-        hint: "„mustn't“ yasak demek; „don't have to“ olsaydı gerek yok olurdu.",
+        answer: "You must not bring food inside.",
+        alternatives: ["You mustn't bring food inside.", "You can't bring food inside.", "You cannot bring food inside."],
+        hint: "„must not“ yazılı kuralın yasağı; „don't have to“ olsaydı gerek yok olurdu.",
       },
       {
         kind: "build",

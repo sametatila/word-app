@@ -488,7 +488,7 @@ export const EN_A1_EXAMS: ModuleExamPlan[] = [
     focus: [
       { de: "There is / There are", tr: "„… var“ demek" },
       { de: "Prepositions of place", tr: "on the table, in the corner" },
-      { de: "must / mustn't", tr: "kural ve zorunluluk" },
+      { de: "must / must not", tr: "kural ve zorunluluk" },
       { de: "Rent and bills", tr: "kira dili" },
     ],
     canDo: [

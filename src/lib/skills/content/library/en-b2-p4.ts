@@ -355,7 +355,7 @@ export const enB2P4: SkillExercise[] = [
         tr: "„must“ kipinin çıkarımdaki olumsuzu „mustn't“ değil, „can't“tir. „He mustn't be at home“ cümlesi bir yasak gibi okunur; „evde olamaz“ demek için „He can't be at home“ gerekir.",
         examples: [
           { de: "He can't be at home; his car is gone.", tr: "Evde olamaz; arabası yok." },
-          { de: "You mustn't park here.", tr: "Buraya park etmek yasak.", note: "yasak, çıkarım değil" },
+          { de: "You must not park here.", tr: "Buraya park etmek yasak.", note: "yasak, çıkarım değil" },
           { de: "It can't have been the wind; the window was locked.", tr: "Rüzgâr olamaz; pencere kilitliydi." },
         ],
       },

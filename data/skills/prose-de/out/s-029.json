@@ -60,11 +60,6 @@
   "de": "Ein Anruf wegen einer kaputten Maschine. Wann kommt er, was kostet es?"
  },
  {
-  "tr": "Zorunluluk üçlüsü. Üçüncüsü ikinciye benziyor ama tam karşıtı.",
-  "kind": "intro",
-  "de": "Die drei Formen der Pflicht. Die dritte sieht aus wie die zweite, meint aber das Gegenteil."
- },
- {
   "tr": "Bina kuralları. Hangisi zorunlu, hangisi yasak, hangisi serbest?",
   "kind": "intro",
   "de": "Die Hausordnung. Was ist Pflicht, was verboten, was freigestellt?"
@@ -388,11 +383,6 @@
   "tr": "erken çıkmak",
   "kind": "gloss.tr",
   "de": "früher gehen"
- },
- {
-  "tr": "yapmamalısın",
-  "kind": "gloss.tr",
-  "de": "du darfst nicht"
  },
  {
   "tr": "dersin tamamı",

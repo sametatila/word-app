@@ -432,7 +432,7 @@ export const enB1U01: SkillExercise[] = [
         tr: "Takım elbise giymen gerekmiyor.",
         answer: "You don't have to wear a suit.",
         alternatives: ["You do not have to wear a suit."],
-        hint: "Yasak değil, gerek yok. „mustn't“ olsaydı yasak olurdu.",
+        hint: "Yasak değil, gerek yok. „can't“ ya da „must not“ olsaydı yasak olurdu.",
       },
       {
         kind: "build",

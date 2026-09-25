@@ -200,11 +200,6 @@
   "de": "Nach „decide“ kommt der Infinitiv — genau umgekehrt wie bei „enjoy“."
  },
  {
-  "tr": "Yasak değil, gerek yok. „mustn't“ olsaydı yasak olurdu.",
-  "kind": "build.hint",
-  "de": "Kein Verbot, sondern keine Pflicht: genau das deutsche „du musst nicht“."
- },
- {
   "tr": "„although“ bir cümle bağlıyor; „despite“ ise isim ister.",
   "kind": "build.hint",
   "de": "„although“ verbindet einen Satz, „despite“ verlangt ein Nomen — wie „obwohl“ und „trotz“."

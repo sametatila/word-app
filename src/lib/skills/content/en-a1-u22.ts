@@ -410,7 +410,7 @@ export const enA1U22: SkillExercise[] = [
         tr: "Kahve içmemelisin.",
         answer: "You shouldn't drink coffee.",
         alternatives: ["You should not drink coffee."],
-        hint: "„shouldn't“ yasak değil tavsiye: „mustn't“ten yumuşak.",
+        hint: "„shouldn't“ yasak değil tavsiye: „must not“tan yumuşak.",
       },
       {
         kind: "build",

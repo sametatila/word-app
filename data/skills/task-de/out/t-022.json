@@ -115,11 +115,6 @@
   "de": "Zu Fuß dauert es zehn Minuten."
  },
  {
-  "tr": "Geceleri gürültü yapmamalısın.",
-  "kind": "build.tr",
-  "de": "Nachts darfst du keinen Lärm machen."
- },
- {
   "tr": "Özür dilerim, bir hata yaptım.",
   "kind": "build.tr",
   "de": "Entschuldigung, ich habe einen Fehler gemacht."
@@ -158,11 +153,6 @@
   "tr": "Çöpü akşam sekizden önce çöp kutusuna koymalısın.",
   "kind": "build.tr",
   "de": "Du musst den Müll vor acht Uhr abends in die Tonne tun."
- },
- {
-  "tr": "„mustn't“ YASAK demek: izin yok.",
-  "kind": "build.hint",
-  "de": "„mustn't“ heißt VERBOT: „du darfst nicht“, nicht „du musst nicht“."
  },
  {
   "tr": "„nearby“ tek sözcük ve önüne edat almıyor.",
@@ -253,11 +243,6 @@
   "tr": "„quiet“ kısa: „-er“ alıyor ve sondaki „t“den önce „e“ düşmüyor.",
   "kind": "build.hint",
   "de": "„quiet“ ist kurz: es nimmt „-er“ und das „e“ vor dem „t“ bleibt stehen."
- },
- {
-  "tr": "„don't have to“ yasak DEĞİL, gerek yok — „mustn't“un tam karşıtı.",
-  "kind": "build.hint",
-  "de": "„don't have to“ ist KEIN Verbot, sondern keine Pflicht: genau das deutsche „du musst nicht“."
  },
  {
   "tr": "Buradaki „have“ sahiplik, yardımcı fiil değil; ölçüyü „of“ bağlıyor.",

@@ -22,7 +22,7 @@ import type { SkillExercise } from "../types";
  *           The place where I smiled was quiet. ·
  *           You have to cheer her up first. ·
  *           You don't have to face it alone. ·
- *           You must not give advice too early.
+ *           You can't give advice too early.
  *
  * Ünitenin tek öğretme noktası İLGİ ADILI HİÇ ÇEKİLMİYOR. „that“, „who“
  * ve „where“ arasında yapılacak tek seçim sözcüğün TÜRÜ — şey, kişi, yer;
@@ -321,11 +321,11 @@ export const enB1U24: SkillExercise[] = [
     segments: [
       { speaker: "İpek", text: "You have to cheer her up first. Not with advice — with tea and forty minutes." },
       { speaker: "Timur", text: "Why not advice?" },
-      { speaker: "İpek", text: "You must not give advice too early. It sounds like a door closing, and she will stop talking about the thing that actually hurts." },
+      { speaker: "İpek", text: "You can't give advice too early. It sounds like a door closing, and she will stop talking about the thing that actually hurts." },
       { speaker: "Timur", text: "And if I say nothing at all?" },
       { speaker: "İpek", text: "Then you are doing it right. „You don't have to face it alone“ is a sentence, not a plan; the plan is that somebody sits there." },
-      { speaker: "Timur", text: "„Don't have to“ and „must not“ are not the same, are they?" },
-      { speaker: "İpek", text: "They are opposites. „Don't have to“ takes a rule away; „must not“ puts one there, and people learning English mix them up in exactly the situation where it matters." },
+      { speaker: "Timur", text: "„Don't have to“ and „can't“ are not the same, are they?" },
+      { speaker: "İpek", text: "They are opposites. „Don't have to“ takes a rule away; „can't“ puts one there, and people learning English mix them up in exactly the situation where it matters." },
       { speaker: "Timur", text: "What does she need courage for?" },
       { speaker: "İpek", text: "For Thursday. She has to call them, and she has been kind about it for three weeks, which is her way of not doing it." },
       { speaker: "Timur", text: "And the stress?" },
@@ -342,7 +342,7 @@ export const enB1U24: SkillExercise[] = [
         text: "What does „don't have to“ do?",
         options: ["takes a rule away", "puts a rule there", "asks a question"],
         answer: 0,
-        explain: "„„Don't have to“ takes a rule away; „must not“ puts one there…“",
+        explain: "„„Don't have to“ takes a rule away; „can't“ puts one there…“",
       },
       {
         kind: "truefalse",
@@ -364,8 +364,8 @@ export const enB1U24: SkillExercise[] = [
         text: "Duyduğun cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["You must not give advice too early.", "You must not give advice too early"],
-        explain: "Yasak: „must not“, „don't have to“ değil.",
+        accept: ["You can't give advice too early.", "You cannot give advice too early.", "You can't give advice too early"],
+        explain: "Yasak: „can't“, „don't have to“ değil.",
       },
       {
         kind: "short_answer",
@@ -478,7 +478,8 @@ export const enB1U24: SkillExercise[] = [
       {
         kind: "build",
         tr: "Ona çok erken öğüt vermemelisin.",
-        answer: "You must not give advice too early.",
+        answer: "You can't give advice too early.",
+        alternatives: ["You cannot give advice too early.", "You must not give advice too early.", "You mustn't give advice too early."],
         hint: "Yasak koyuyor; kuralı kaldırmıyor.",
       },
     ],

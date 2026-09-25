@@ -43,5 +43,14 @@
  { "tr": "\"Don't forget your ID card. We can't help you without it.\"", "kind": "explain", "de": "\"Don't forget your ID card. We can't help you without it.\"" },
  { "tr": "sıcak hava", "kind": "gloss.tr", "de": "die Hitze" },
  { "tr": "Yasak günlük dilde „can't“ ile bildirilir; „shouldn't“ yalnız tavsiye, „don't have to“ gerek yok demektir.", "kind": "explain", "de": "Ein Verbot drückt man im Alltag mit „can't“ aus; „shouldn't“ ist nur ein Rat, „don't have to“ heißt: nicht nötig." },
- { "tr": "Amerikan İngilizcesinde kelime sonundaki r söylenir: dilin ucu hafifçe geri kıvrılır ve Türkçedeki gibi titremez. Bu alıştırma o r'yi çalışıyor.", "kind": "intro", "de": "Im amerikanischen Englisch wird das r am Wortende gesprochen: Die Zungenspitze biegt sich leicht nach hinten, anders als das deutsche Rachen-r. Diese Übung trainiert dieses r." }
+ { "tr": "Amerikan İngilizcesinde kelime sonundaki r söylenir: dilin ucu hafifçe geri kıvrılır ve Türkçedeki gibi titremez. Bu alıştırma o r'yi çalışıyor.", "kind": "intro", "de": "Im amerikanischen Englisch wird das r am Wortende gesprochen: Die Zungenspitze biegt sich leicht nach hinten, anders als das deutsche Rachen-r. Diese Übung trainiert dieses r." },
+ { "tr": "Zorunluluk üçlüsü. İkincisi yasak, üçüncüsü gerek yok: anlamları tam karşıt.", "kind": "intro", "de": "Die drei Formen der Pflicht. Die zweite ist ein Verbot, die dritte heißt nicht nötig: genaue Gegenteile." },
+ { "tr": "Yasak: „can't“, „don't have to“ değil.", "kind": "explain", "de": "Verbot: „can't“, nicht „don't have to“." },
+ { "tr": "„can't“ burada yasak; sonrası eksiz fiil.", "kind": "explain", "de": "„can't“ heißt hier Verbot; danach steht das nackte Verb." },
+ { "tr": "„You can't press both buttons. One at a time, always.“", "kind": "explain", "de": "„You can't press both buttons. One at a time, always.“" },
+ { "tr": "„„Don't have to“ takes a rule away; „can't“ puts one there…“", "kind": "explain", "de": "„„Don't have to“ takes a rule away; „can't“ puts one there…“" },
+ { "tr": "„can't“ burada yasak; „don't have to“ olsaydı gerek yok olurdu.", "kind": "explain", "de": "„can't“ heißt hier Verbot; „don't have to“ hieße keine Pflicht." },
+ { "tr": "İlki „gelemezsin, izin yok“, ikincisi „gelmek zorunda değilsin“ demektir.", "kind": "explain", "de": "Das erste heißt „du darfst nicht kommen“, das zweite „du musst nicht kommen“." },
+ { "tr": "Yasak günlük dilde „can't“ ile anlatılır; „don't have to“ tam tersini söylerdi.", "kind": "explain", "de": "Ein Verbot sagt man im Alltag mit „can't“; „don't have to“ sagte das Gegenteil." },
+ { "tr": "yapamazsın", "kind": "gloss.tr", "de": "du darfst nicht" }
 ]

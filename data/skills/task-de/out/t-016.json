@@ -215,11 +215,6 @@
   "de": "„rent“ ist nicht zählbar und steht im Singular: „how much“, nicht „how many“ — wie die Miete."
  },
  {
-  "tr": "„mustn't“ yasak demek. „noise“ sayılamaz, önünde „a“ yok.",
-  "kind": "build.hint",
-  "de": "„mustn't“ heißt VERBOTEN, nicht „muss nicht“ — deutsch „darfst nicht“. „noise“ ist nicht zählbar, kein „a“ davor."
- },
- {
   "tr": "Özne „it“ zorunlu: Türkçedeki gibi öznesiz cümle olmuyor.",
   "kind": "build.hint",
   "de": "Das Subjekt „it“ ist Pflicht: einen Satz ohne Subjekt gibt es nicht, genauso wenig wie im Deutschen."

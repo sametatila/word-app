@@ -255,11 +255,6 @@
   "de": "Nach „should“ steht das Verb ohne Endung; „more“ steht am Satzende."
  },
  {
-  "tr": "„shouldn't“ yasak değil tavsiye: „mustn't“ten yumuşak.",
-  "kind": "build.hint",
-  "de": "„shouldn't“ ist kein Verbot, sondern ein Rat: weicher als „mustn't“ — wie „solltest nicht“."
- },
- {
   "tr": "„the internet“ hep „the“ ile geliyor, tek bir şey gibi.",
   "kind": "build.hint",
   "de": "„the internet“ steht immer mit „the“, wie ein einziges Ding — deutsch „das Internet“."

@@ -223,7 +223,7 @@ export const enB1P5: SkillExercise[] = [
         tr: "Yolculuk boyunca bu evrakı yanında taşımak zorunda değilsin.",
         answer: "During the trip you don't have to carry this paper with you.",
         alternatives: ["You don't have to carry this paper with you during the trip."],
-        hint: "„don't have to“ zorunluluk yok demektir, „mustn't“ ise yasak; süre öbeği iki uçta da durabilir.",
+        hint: "„don't have to“ zorunluluk yok demektir, „can't“ ise yasak; süre öbeği iki uçta da durabilir.",
       },
       {
         kind: "free",
@@ -338,9 +338,10 @@ export const enB1P5: SkillExercise[] = [
       },
       {
         heading: "En önemli tuzak: olumsuzlar",
-        tr: "„mustn't“ ve „don't have to“ birbirinin karşıtıdır. „mustn't“ yasak demektir, „don't have to“ ise gerek yok demektir. Olumsuzluk „must“a eklenince anlam „gerek yok“ olmaz, „yasak“ olur; bu yüzden sık karışır.",
+        tr: "Olumsuzluk „must“a eklenince anlam „gerek yok“ olmaz, „yasak“ olur: „must not“ yasak demektir, „don't have to“ ise gerek yok; ikisi birbirinin karşıtıdır ve bu yüzden sık karışır. „must not“ daha çok tabelada ve yazılı kuralda görünür; günlük konuşmada Amerikalılar yasağı „can't“ ile söyler.",
         examples: [
-          { de: "You mustn't smoke here.", tr: "Burada sigara içmek yasak.", note: "yasak" },
+          { de: "You can't smoke here.", tr: "Burada sigara içemezsin.", note: "yasak, günlük dil" },
+          { de: "Visitors must not smoke.", tr: "Ziyaretçilerin sigara içmesi yasaktır.", note: "yasak, yazılı kural" },
           { de: "You don't have to come.", tr: "Gelmek zorunda değilsin.", note: "gerek yok" },
           { de: "It's Sunday. You don't have to get up early.", tr: "Bugün pazar. Erken kalkman gerekmiyor." },
         ],
@@ -361,9 +362,9 @@ export const enB1P5: SkillExercise[] = [
       },
       {
         text: "You ___ smoke here. It is forbidden.",
-        options: ["mustn't", "don't have to", "shouldn't"],
+        options: ["can't", "don't have to", "shouldn't"],
         answer: 0,
-        explain: "Yasak anlatılıyor; „don't have to“ tam tersini söylerdi.",
+        explain: "Yasak günlük dilde „can't“ ile anlatılır; „don't have to“ tam tersini söylerdi.",
       },
       {
         kind: "gapfill",
@@ -407,10 +408,10 @@ export const enB1P5: SkillExercise[] = [
       },
       {
         kind: "truefalse",
-        text: "„You mustn't come“ ile „You don't have to come“ aynı anlama gelir.",
+        text: "„You can't come“ ile „You don't have to come“ aynı anlama gelir.",
         options: ["True", "False"],
         answer: 1,
-        explain: "İlki „gelme, yasak“, ikincisi „gelmek zorunda değilsin“ demektir.",
+        explain: "İlki „gelemezsin, izin yok“, ikincisi „gelmek zorunda değilsin“ demektir.",
       },
       {
         kind: "truefalse",

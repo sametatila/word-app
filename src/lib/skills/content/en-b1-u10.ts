@@ -15,7 +15,7 @@ import type { SkillExercise } from "../types";
  *           I am going to cancel the booking. ·
  *           I will confirm it this evening. ·
  *           You must read every instruction first. ·
- *           You mustn't press both buttons. ·
+ *           You can't press both buttons. ·
  *           You should ensure the tool is dry. ·
  *           They had sent the wrong box. · Then I spotted the mistake. ·
  *           By the time I called, they had corrected it. ·
@@ -275,7 +275,7 @@ export const enB1U10: SkillExercise[] = [
       { speaker: "Ela", text: "That I can do. What is the first step?" },
       { speaker: "Mert", text: "You should ensure the tool is dry. Not the handle — the part that goes in the wall." },
       { speaker: "Ela", text: "And the buttons?" },
-      { speaker: "Mert", text: "You mustn't press both buttons. One at a time, always. Both together is how the last one broke." },
+      { speaker: "Mert", text: "You can't press both buttons. One at a time, always. Both together is how the last one broke." },
       { speaker: "Ela", text: "Why are there two then?" },
       { speaker: "Mert", text: "Because one is for the safety. It is written on the label in letters nobody reads." },
       { speaker: "Ela", text: "Anything to avoid?" },
@@ -293,10 +293,10 @@ export const enB1U10: SkillExercise[] = [
         explain: "„you must read every instruction first. All four pages.“",
       },
       {
-        text: "What mustn't Ela do?",
+        text: "What can't Ela do?",
         options: ["press both buttons", "read the label", "use water"],
         answer: 0,
-        explain: "„You mustn't press both buttons. One at a time, always.“",
+        explain: "„You can't press both buttons. One at a time, always.“",
       },
       {
         kind: "truefalse",
@@ -318,8 +318,8 @@ export const enB1U10: SkillExercise[] = [
         text: "Duyduğun cümleyi yaz.",
         options: [],
         answer: 0,
-        accept: ["You mustn't press both buttons.", "You must not press both buttons.", "You mustn't press both buttons"],
-        explain: "„mustn't“ yasak; „don't have to“ olsaydı gerek yok olurdu.",
+        accept: ["You can't press both buttons.", "You cannot press both buttons.", "You can't press both buttons"],
+        explain: "„can't“ burada yasak; „don't have to“ olsaydı gerek yok olurdu.",
       },
       {
         kind: "short_answer",

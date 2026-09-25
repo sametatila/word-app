@@ -250,11 +250,6 @@
   "de": "Nach „recommend“ steht „-ing“; „recommend to watch“ gibt es nicht."
  },
  {
-  "tr": "„mustn't“ yasak demek; „don't have to“ olsaydı gerek yok olurdu.",
-  "kind": "build.hint",
-  "de": "„mustn't“ heißt Verbot: „du darfst nicht“. „don't have to“ hieße „du musst nicht“."
- },
- {
   "tr": "„whereas“ iki olguyu eşit ağırlıkta karşılaştırıyor; şaşırtma yok.",
   "kind": "build.hint",
   "de": "„whereas“ vergleicht zwei Tatsachen mit gleichem Gewicht; keine Überraschung. Deutsch sagt „wohingegen“."

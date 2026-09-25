@@ -13,16 +13,18 @@ import type { SkillExercise } from "../types";
  *           laundry, open, close, butcher shop, bookstore, shopping mall.
  *   Kalıp:  My washing machine isn't working. ·
  *           Can you come tomorrow morning? · How much will it cost? ·
- *           You have to … · You mustn't … · You don't have to … ·
+ *           You have to … · You can't … · You don't have to … ·
  *           There is a park nearby. · It takes ten minutes on foot. ·
  *           It's quieter than the city centre. · What time do you open? ·
  *           I've already been to the bakery. · Do you have any fresh bread?
  *
  * Ünitenin tek öğretme noktası ZORUNLULUK ÜÇLÜSÜ: „have to“ (kural
- * böyle), „mustn't“ (yasak) ve „don't have to“ (gerek yok). Üçüncüsü
- * tuzağın kendisi, çünkü biçimi ikincisine benziyor ama anlamı tam
- * karşıtı. A1'de „mustn't“ tek başına öğretilmişti; burada üçlü
- * tamamlanıyor ve bina kuralları metni üçünü yan yana kullanıyor.
+ * böyle), yasak ve „don't have to“ (gerek yok). Yasak Amerikan
+ * kullanımında günlük dilde „can't“, yazılı kuralda „must not“ („mustn't“
+ * seyrek). Üçüncüsü tuzağın kendisi: Türkçede ikisi de „-memelisin“ /
+ * „zorunda değilsin“ diye karışıyor ama anlamları tam karşıt. A1'de
+ * „must not“ tek başına öğretilmişti; burada üçlü tamamlanıyor ve bina
+ * kuralları metni üçünü yan yana kullanıyor.
  */
 export const enA2U10: SkillExercise[] = [
   // ─────────────────────────── OKUMA ───────────────────────────
@@ -115,7 +117,7 @@ export const enA2U10: SkillExercise[] = [
     text:
       "Rules for the residents\n" +
       "You have to put the rubbish in the bin before eight in the evening. The caretaker takes it out on Monday and Thursday.\n" +
-      "You mustn't make noise between ten at night and seven in the morning. On Sunday the quiet time is all day.\n" +
+      "You must not make noise between ten at night and seven in the morning. On Sunday the quiet time is all day.\n" +
       "You don't have to clean the stairs. A company comes every week. But you have to clean the balcony in front of your flat.\n" +
       "Bikes are forbidden in the hallway. There is a room for them next to the front door.\n" +
       "The attic is open from April to October. From November it is closed, because the roof is old.\n" +
@@ -315,12 +317,12 @@ export const enA2U10: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     unit: 10,
-    title: "You have to, you mustn't, you don't have to",
+    title: "You have to, you can't, you don't have to",
     genre: "info",
-    intro: "Zorunluluk üçlüsü. Üçüncüsü ikinciye benziyor ama tam karşıtı.",
+    intro: "Zorunluluk üçlüsü. İkincisi yasak, üçüncüsü gerek yok: anlamları tam karşıt.",
     gloss: [
       { de: "have to", tr: "zorundasın" },
-      { de: "mustn't", tr: "yapmamalısın" },
+      { de: "can't", tr: "yapamazsın" },
       { de: "don't have to", tr: "gerek yok" },
       { de: "a company", tr: "bir şirket" },
     ],
@@ -334,17 +336,17 @@ export const enA2U10: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Geceleri gürültü yapmamalısın.",
-        answer: "You mustn't make noise at night.",
-        alternatives: ["You must not make noise at night."],
-        hint: "„mustn't“ YASAK demek: izin yok.",
+        tr: "Geceleri gürültü yapamazsın.",
+        answer: "You can't make noise at night.",
+        alternatives: ["You cannot make noise at night.", "You must not make noise at night.", "You mustn't make noise at night."],
+        hint: "„can't“ burada YASAK demek: izin yok. Yazılı kuralda „must not“ görürsün.",
       },
       {
         kind: "build",
         tr: "Merdivenleri temizlemen gerekmiyor.",
         answer: "You don't have to clean the stairs.",
         alternatives: ["You do not have to clean the stairs."],
-        hint: "„don't have to“ yasak DEĞİL, gerek yok — „mustn't“un tam karşıtı.",
+        hint: "„don't have to“ yasak DEĞİL, gerek yok — yasak bildiren „can't“in tam karşıtı.",
       },
       {
         kind: "build",

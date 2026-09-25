@@ -9,14 +9,15 @@ import type { SkillExercise } from "../types";
  *           bill, water, electricity, expensive, bank, paper, each, wash,
  *           help, tidy up, rubbish, put, dry, wet, box, carry, heavy, new,
  *           hard, push, down.
- *   Kalıp:  You must be quiet. · You mustn't make noise. · Is it allowed? ·
+ *   Kalıp:  You must be quiet. · You must not make noise. · Is it allowed? ·
  *           How much is the rent? · I pay the rent every month. ·
  *           Is water included? · I tidy up my room. ·
  *           I take out the rubbish. · Do you help at home? ·
  *           Can you help me? · I can carry it. · This box is very heavy.
  *
- * Ünitenin yeni yapısı ZORUNLULUK ve tuzağı OLUMSUZDA: „You mustn't make
- * noise“ izin vermemek demek, „you don't have to“ ise gerek yok demek —
+ * Ünitenin yeni yapısı ZORUNLULUK ve tuzağı OLUMSUZDA: „You must not make
+ * noise“ izin vermemek demek (kural metninin dili; günlük konuşmada
+ * Amerikalılar yasağı „can't“ ile söyler), „you don't have to“ ise gerek yok demek —
  * ikisi Türkçede de ayrı ("yapmamalısın" / "yapmak zorunda değilsin") ama
  * İngilizcede aynı kökten türüyor ve karışıyor. İçerik bu ünitede yalnız
  * „must“ ile „have to“yu kuruyor; olumsuz ayrımın kendisi A2'nin işi.
@@ -41,7 +42,7 @@ export const enA1U17: SkillExercise[] = [
     minutes: 4,
     text:
       "HOUSE RULES\n\n" +
-      "You must be quiet from ten at night to seven in the morning. You mustn't make noise on Sunday.\n\n" +
+      "You must be quiet from ten at night to seven in the morning. You must not make noise on Sunday.\n\n" +
       "The stairs must be clean. Please put the rubbish in the bin downstairs, not in front of your door.\n\n" +
       "Is it allowed to have a party? Yes, but you have to ask your neighbors. A party has to end at eleven.\n\n" +
       "Water and electricity are not included in the rent. Each apartment pays the bill every month.\n\n" +
@@ -77,10 +78,10 @@ export const enA1U17: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What mustn't you take in a fire?",
+        text: "What can't you take in a fire?",
         options: [],
         answer: 0,
-        accept: ["the lift", "lift", "you mustn't take the lift"],
+        accept: ["the lift", "lift", "you can't take the lift", "you mustn't take the lift", "you must not take the lift"],
         explain: "„In a fire: don't take the lift. Go down the stairs.“",
       },
     ],
@@ -329,7 +330,7 @@ export const enA1U17: SkillExercise[] = [
     intro: "Zorunluluk ve yasak yaz. Sonunda kira formunu doldur.",
     gloss: [
       { de: "You must …", tr: "… meli/malısın" },
-      { de: "You mustn't …", tr: "… memelisin" },
+      { de: "You must not …", tr: "… memelisin" },
       { de: "Is it allowed?", tr: "izin var mı" },
     ],
     minutes: 6,
@@ -343,9 +344,9 @@ export const enA1U17: SkillExercise[] = [
       {
         kind: "build",
         tr: "Gürültü yapmamalısın.",
-        answer: "You mustn't make noise.",
-        alternatives: ["You must not make noise."],
-        hint: "„mustn't“ yasak demek. „noise“ sayılamaz, önünde „a“ yok.",
+        answer: "You must not make noise.",
+        alternatives: ["You mustn't make noise.", "You can't make noise.", "You cannot make noise."],
+        hint: "„must not“ yasak demek; kural böyle yazılır, konuşurken „can't“ denir. „noise“ sayılamaz, önünde „a“ yok.",
       },
       {
         kind: "build",
