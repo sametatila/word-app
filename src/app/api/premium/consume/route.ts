@@ -13,9 +13,9 @@ export const dynamic = "force-dynamic";
 
   ÖLÇÜM (2026-09-12): ne web ne mobil bu ucu çağırıyor.
 
-  ARADAN GEÇEN KARARLAR: konuşma/yazma hakkı 2026-09-17'den, yürüyüş oturumu
+  ARADAN GEÇEN KARARLAR: konuşma/yazma hakkı 2026-09-17'den, yürüyüş turu
   2026-09-25'ten beri SUNUCUDA, özellik ucunun kendi içinde harcanıyor
-  (`claimTiered` — `/api/assess`, `/api/roleplay`; `openWalkSession` —
+  (`claimTiered` — `/api/assess`, `/api/roleplay`; `openWalkRound` —
   `/api/session?walk=1`). İstemcinin "başlıyorum" demesine gerek kalmadı ve
   istemcinin söylediği bir başlangıca dayanan sayaç sayaç değil.
 

@@ -122,12 +122,12 @@ export async function GET() {
  * ince yazısı üç tavanı birlikte söylüyor. `fairUse.pocketWalksPerDay` ESKİ
  * SÜRÜMLER İÇİN takma ad — eski paywall "Cepte Yürüyüş — günde {n} tura kadar"
  * cümlesini bu alanla kuruyor ve alan yoksa ekrana "undefined" basıyordu. Değeri
- * artık gerçekten sayılan oturum tavanı.
+ * artık gerçekten sayılan tur tavanı (`walkRoundsPerDay`).
  */
 function limitsOf(cfg: PremiumConfig) {
   return {
     free: cfg.free,
-    fairUse: { ...cfg.fairUse, chatTurnsPerDay: DAILY_QUOTAS.roleplayTurns, pocketWalksPerDay: cfg.fairUse.walkSessionsPerDay },
+    fairUse: { ...cfg.fairUse, chatTurnsPerDay: DAILY_QUOTAS.roleplayTurns, pocketWalksPerDay: cfg.fairUse.walkRoundsPerDay },
     mock: cfg.mock,
   };
 }

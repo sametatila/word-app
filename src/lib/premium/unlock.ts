@@ -95,15 +95,13 @@ export type MockUnlock =
       next: { complete: Progress } | null;
     };
 
-/** Yürüyüş modu — gün başına oturum. */
+/** Yürüyüş modu — gün başına TUR (her yürüyüş kuyruğu isteği, "devam" dahil). */
 export type WalkUnlock = {
   premium: boolean;
-  /** Günlük oturum hakkı (premium'da kötüye kullanım tavanı). */
+  /** Günlük tur hakkı (premium'da kötüye kullanım tavanı). */
   perDay: number;
   used: number;
   remaining: number;
-  /** Şu an açık bir oturum var mı — varsa yeni istek hak yemiyor. */
-  sessionOpen: boolean;
   /** Ekran kapalı (sunucu ses tanıma) yol açık mı — yalnız premium. */
   pocket: boolean;
 };

@@ -136,13 +136,13 @@ export async function POST(req: Request) {
     /**
      * Emniyet tavanı — KELİME başına.
      *
-     * Premium'un yürüyüş tavanı OTURUM cinsinden duyuruluyor ve oturum
-     * `/api/session?walk=1` açılırken sayılıyor (`openWalkSession`). Buradaki
-     * kelime tavanı değiştirilmiş bir istemciye karşı ikinci kat: oturum başına
-     * ~20 kelimenin iki katı (40) — normal kullanıcı bunu görmez.
+     * Premium'un yürüyüş tavanı TUR cinsinden duyuruluyor ve tur
+     * `/api/session?walk=1` isteğinde sayılıyor (`openWalkRound`). Buradaki
+     * kelime tavanı değiştirilmiş bir istemciye karşı ikinci kat: tur başına
+     * kuyruğun (20 kelime, `buildWalk`) iki katı — normal kullanıcı bunu görmez.
      */
     const cfg = await premiumConfig();
-    const ceiling = Math.max(cfg.fairUse.walkSessionsPerDay, 1) * 40;
+    const ceiling = Math.max(cfg.fairUse.walkRoundsPerDay, 1) * 40;
     if (!(await takeUsage(userId, "pocket_walk_words", "day", ceiling))) {
       return NextResponse.json({ error: "quota", reason: "fair_use" }, { status: 429 });
     }

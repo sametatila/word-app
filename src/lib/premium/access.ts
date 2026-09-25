@@ -228,85 +228,96 @@ export async function isOwned(userId: string, surface: TieredSurface, level: str
 
 /* ───────────────────────────── Yürüyüş modu ───────────────────────────── */
 
-/** Günlük oturum sayacı. `updated_at` son oturumun BAŞLADIĞI an. */
-const WALK_KEY = "walk_sessions";
+/**
+ * Günlük TUR sayacı. `updated_at` son sayılan turun başladığı an.
+ *
+ * Birim 2026-09-25 düzeltmesiyle "oturum"dan "tur"a döndü (Samet): her
+ * `/api/session?walk=1` isteği — tur sonundaki "devam" dahil — bir tur ve
+ * günlük haktan bir düşüyor; eski 30 dakikalık "aynı oturum" penceresi kalktı.
+ * Eski sayaç `walk_sessions` yalnız o günle sınırlıydı (period = gün), taşımaya
+ * gerek yok: ertesi gün kendiliğinden anlamını yitiriyor.
+ */
+const WALK_KEY = "walk_rounds";
 
 /**
- * Bir oturumun penceresi — bu süre içinde gelen yürüyüş isteği AYNI oturum.
- *
- * Oturum sunucuda, kuyruğun açıldığı istekte başlıyor. Aynı yürüyüşün
- * devamı (tur bitince "devam", ekrana dönüp yeniden yükleme, ağ hatasından
- * sonra tekrar) yeni bir istek atıyor; bunlar hak yememeli. İstemcinin "bu
- * devam isteği" demesine güvenilmiyor — değiştirilmiş bir istemci her isteği
- * devam diye işaretlerdi — ölçü sunucunun saati: oturum başladıktan sonraki
- * 30 dakikadaki her istek aynı oturum. Bir tur (~20 kelime) ekran açıkken
- * 7–10 dakika sürüyor; pencere bir yürüyüşün birkaç turunu kapsıyor.
+ * ÇİFT İSTEK KORUMASI — pencere DEĞİL. Aynı tur isteği ağ tekrarı ya da çift
+ * tetiklenme yüzünden iki kez gelebiliyor (ör. geliştirme kipinde efekt iki kez
+ * koşuyor); ikincisi aynı turu istiyor, ikinci tur saymamalı. İstemcinin tur
+ * kimliğine güvenilmiyor (değiştirilmiş bir istemci her isteğe aynı kimliği
+ * koyup hiç saydırmazdı); ölçü sunucunun saati ve yalnız birkaç saniye: son
+ * sayılan turdan bu kadar kısa süre sonra gelen istek aynı turun tekrarı.
  */
-export const WALK_SESSION_WINDOW_MIN = 30;
+const WALK_DUPLICATE_SEC = 2;
 
 /** Bugünün yürüyüş durumu — SAYMAZ. */
 export async function walkState(userId: string, premium?: boolean, cfgIn?: PremiumConfig): Promise<WalkUnlock> {
   const cfg = cfgIn ?? (await premiumConfig());
   const isPro = premium ?? (await isPremiumCached(userId));
-  const perDay = isPro ? cfg.fairUse.walkSessionsPerDay : cfg.free.walkSessionsPerDay;
-  let used = 0;
-  let sessionOpen = false;
+  const perDay = isPro ? cfg.fairUse.walkRoundsPerDay : cfg.free.walkRoundsPerDay;
+  const used = (await walkRow(userId))?.count ?? 0;
+  return { premium: isPro, perDay, used, remaining: Math.max(0, perDay - used), pocket: isPro };
+}
+
+async function walkRow(userId: string): Promise<{ count: number; at: Date } | null> {
   try {
     const [row] = await db
       .select({ count: usageCounters.count, at: usageCounters.updatedAt })
       .from(usageCounters)
       .where(and(eq(usageCounters.userId, userId), eq(usageCounters.key, WALK_KEY), eq(usageCounters.period, periodKey("day"))))
       .limit(1);
-    used = row?.count ?? 0;
-    sessionOpen = Boolean(row && row.count > 0 && Date.now() - row.at.getTime() < WALK_SESSION_WINDOW_MIN * 60_000);
+    return row ?? null;
   } catch {
     // Okunamadı: kapı AÇIK (bkz. `quota.getUsage`).
+    return null;
   }
-  return { premium: isPro, perDay, used, remaining: Math.max(0, perDay - used), sessionOpen, pocket: isPro };
 }
 
 /**
- * Yürüyüş oturumu aç — `/api/session?walk=1` her istekte çağırıyor.
+ * Yürüyüş turu başlat — `/api/session?walk=1` her istekte çağırıyor.
  *
- * Açık bir oturum varsa (pencere içinde) SAYMADAN geçer. Yoksa yeni oturum
- * TEK ifadede sayılır: sayaç tavanın altındaysa ve son oturum pencerenin
- * dışındaysa artar. Eşzamanlı iki "ilk" istek iki oturum yakamıyor — ikincisi
- * satırı kilitli bulup güncel `updated_at`i görüyor ve pencerenin içinde kalıyor.
+ * Tur TEK ifadede sayılıyor: sayaç tavanın altındaysa ve son sayılan tur çift
+ * istek korumasının dışındaysa artar. Eşzamanlı iki istek iki tur yakamıyor —
+ * ikincisi satırı kilitli bulup güncel `updated_at`i görüyor ve tekrar sayılıyor.
  */
-export async function openWalkSession(userId: string): Promise<Access & { continued: boolean }> {
+export async function openWalkRound(userId: string): Promise<Access & { duplicate: boolean }> {
   const cfg = await premiumConfig();
   const premium = await isPremiumCached(userId);
-  const limit = premium ? cfg.fairUse.walkSessionsPerDay : cfg.free.walkSessionsPerDay;
-  if (limit <= 0) return { allowed: false, reason: "premium_only", gate: "walk", continued: false };
-  const day = periodKey("day");
+  const limit = premium ? cfg.fairUse.walkRoundsPerDay : cfg.free.walkRoundsPerDay;
+  const ok = { allowed: true, reason: premium ? ("premium" as const) : ("free_quota" as const), gate: "walk" as const };
+  if (limit <= 0) return { allowed: false, reason: "premium_only", gate: "walk", duplicate: false };
   try {
     const rows = await db
       .insert(usageCounters)
-      .values({ userId, key: WALK_KEY, period: day, count: 1 })
+      .values({ userId, key: WALK_KEY, period: periodKey("day"), count: 1 })
       .onConflictDoUpdate({
         target: [usageCounters.userId, usageCounters.key, usageCounters.period],
         set: { count: sql`${usageCounters.count} + 1`, updatedAt: new Date() },
-        setWhere: sql`${usageCounters.count} < ${limit} and ${usageCounters.updatedAt} < now() - ${sql.raw(`interval '${WALK_SESSION_WINDOW_MIN} minutes'`)}`,
+        setWhere: sql`${usageCounters.count} < ${limit} and ${usageCounters.updatedAt} < now() - ${sql.raw(`interval '${WALK_DUPLICATE_SEC} seconds'`)}`,
       })
       .returning({ count: usageCounters.count });
-    if (rows.length) return { allowed: true, reason: premium ? "premium" : "free_quota", gate: "walk", continued: false };
+    if (rows.length) return { ...ok, duplicate: false };
   } catch (err) {
     // Sayaç yazılamadı: yürüyüşü ENGELLEME (bkz. `quota.takeUsage`).
-    console.error("[walk:session]", err);
-    return { allowed: true, reason: premium ? "premium" : "free_quota", gate: "walk", continued: false };
+    console.error("[walk:round]", err);
+    return { ...ok, duplicate: false };
   }
-  // Güncellenmedi: ya pencere içinde (devam) ya tavan dolu.
-  const state = await walkState(userId, premium, cfg);
-  if (state.sessionOpen) return { allowed: true, reason: premium ? "premium" : "free_quota", gate: "walk", continued: true };
-  const quota: QuotaCheck = { allowed: false, used: state.used, limit, remaining: 0, period: "day" };
-  return { allowed: false, reason: premium ? "fair_use" : "quota_spent", gate: "walk", quota, continued: false };
+  // Güncellenmedi: ya az önce sayılan turun tekrarı ya tavan dolu.
+  const row = await walkRow(userId);
+  if (row && row.count > 0 && Date.now() - row.at.getTime() < WALK_DUPLICATE_SEC * 1000) return { ...ok, duplicate: true };
+  const quota: QuotaCheck = { allowed: false, used: row?.count ?? limit, limit, remaining: 0, period: "day" };
+  return { allowed: false, reason: premium ? "fair_use" : "quota_spent", gate: "walk", quota, duplicate: false };
+}
+
+/** Tur kurulamadıysa (sunucu hatası) hak geri veriliyor. */
+export async function refundWalkRound(userId: string): Promise<void> {
+  await refundUsage(userId, WALK_KEY, "day");
 }
 
 /**
  * Cepte / ekran kapalı yürüyüş — yalnız premium.
  *
  * Ekran AÇIK yürüyüş buradan HİÇ geçmiyor: cihazın kendi tanıyıcısı kullanılıyor,
- * bize maliyeti yok (sayılan yalnız günlük oturum, `openWalkSession`). Kilit
+ * bize maliyeti yok (sayılan yalnız günlük tur, `openWalkRound`). Kilit
  * sunucu ses tanımaya (Azure) düşen yolda; premium'daki tavan kelime ve istek
  * sayısı (`/api/stt`).
  */

@@ -91,7 +91,9 @@ export function parsePremiumConfig(raw: unknown): PremiumConfig {
     free: {
       mockPapersPerLevel: int(f.mockPapersPerLevel, d.free.mockPapersPerLevel, 0, 50),
       mockStreakBonus: int(f.mockStreakBonus, d.free.mockStreakBonus, 0, 10),
-      walkSessionsPerDay: int(f.walkSessionsPerDay, d.free.walkSessionsPerDay, 0, 50),
+      /* `walkSessionsPerDay`: 2026-09-25'teki ilk adın (birim "oturum"du). Kayıtta
+         yalnız o varsa o okunuyor. */
+      walkRoundsPerDay: int(f.walkRoundsPerDay ?? f.walkSessionsPerDay, d.free.walkRoundsPerDay, 0, 50),
       conversationsPerLevel: int(f.conversationsPerLevel, d.free.conversationsPerLevel, 0, 100),
       pathWritingPerLevel: int(f.pathWritingPerLevel, d.free.pathWritingPerLevel, 0, 100),
       speakingSkills: int(f.speakingSkills, d.free.speakingSkills, 0, 100),
@@ -105,7 +107,7 @@ export function parsePremiumConfig(raw: unknown): PremiumConfig {
     fairUse: {
       // Tavan 1'den küçük olamaz: 0 yazılırsa premium kullanıcı hiçbir şey
       // yapamaz ve bu, parasını ödemiş birini kilitlemek demektir.
-      walkSessionsPerDay: int(u.walkSessionsPerDay, d.fairUse.walkSessionsPerDay, 1, 500),
+      walkRoundsPerDay: int(u.walkRoundsPerDay ?? u.walkSessionsPerDay, d.fairUse.walkRoundsPerDay, 1, 500),
       aiPracticePerDay: int(u.aiPracticePerDay, d.fairUse.aiPracticePerDay, 1, 500),
     },
     mock: {

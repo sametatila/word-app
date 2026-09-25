@@ -4,7 +4,7 @@ import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { buildWalk, clearSessionState, loadSession, saveSessionProgress } from "@/lib/session";
 import { parseProgress } from "@/lib/progress";
-import { openWalkSession } from "@/lib/premium/access";
+import { openWalkRound, refundWalkRound } from "@/lib/premium/access";
 import { GAME_LABEL_KEYS, PLAYABLE_GAMES, type PlayableGame } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
@@ -63,16 +63,18 @@ export async function GET(req: Request) {
     .filter((g) => g in GAME_LABEL_KEYS)
     .slice(0, 8);
   /*
-    YÜRÜYÜŞ OTURUMU SUNUCUDA SAYILIYOR (2026-09-25, `docs/premium/README.md` §2):
-    ücretsizde günde 3 oturum, premium'da kötüye kullanım tavanı. Oturum bu
-    istekle BAŞLIYOR; aynı oturumun devamı (tur sonunda "devam", ekrana dönüp
-    yeniden yükleme) pencere içinde geldiği için hak yemiyor (`openWalkSession`).
-    İstemcinin "başladım" ya da "devam ediyorum" demesine bakılmıyor — ölçü
-    sunucunun saati. Hak yoksa 403 premium_required: istemci kilidi ve paywall'ı
-    gösteriyor.
+    YÜRÜYÜŞ TURU SUNUCUDA SAYILIYOR (2026-09-25, `docs/premium/README.md` §2):
+    ücretsizde günde 3 tur, premium'da kötüye kullanım tavanı (günde 20 tur).
+    Her yürüyüş kuyruğu isteği bir tur — tur sonundaki "devam" da
+    (`openWalkRound`); yalnız birkaç saniye içinde gelen çift istek aynı turun
+    tekrarı sayılıyor. İstemcinin beyanına bakılmıyor. Hak yoksa 403
+    premium_required: istemci kilidi ve paywall'ı gösteriyor. Kuyruk
+    kurulamazsa (500) hak geri veriliyor.
   */
+  let counted = false;
   if (walk) {
-    const gate = await openWalkSession(userId);
+    const gate = await openWalkRound(userId);
+    counted = gate.allowed && !gate.duplicate;
     if (!gate.allowed) {
       const status = gate.reason === "fair_use" ? 429 : 403;
       return NextResponse.json(
@@ -88,6 +90,7 @@ export async function GET(req: Request) {
     return NextResponse.json(payload);
   } catch (err) {
     console.error("[session]", err);
+    if (counted) await refundWalkRound(userId);
     return NextResponse.json({ error: "database" }, { status: 500 });
   }
 }

@@ -34,14 +34,15 @@ export type FreeLimits = {
   /** Deneme sınavında her dilimin açtığı kâğıt (kararda 1). */
   mockStreakBonus: number;
   /**
-   * Yürüyüş modu, günde oturum — yalnız EKRAN AÇIK.
+   * Yürüyüş modu, günde TUR — yalnız EKRAN AÇIK.
    *
-   * Oturum sunucuda, yürüyüş kuyruğunun (`/api/session?walk=1`) açıldığı anda
-   * sayılıyor (`walkSession`); istemcinin "başladım" demesine bakılmıyor. Ekran
+   * Tur sunucuda, yürüyüş kuyruğunun (`/api/session?walk=1`) her isteğinde
+   * sayılıyor (`openWalkRound`), tur sonundaki "devam" da bir tur; istemcinin
+   * "başladım" demesine bakılmıyor. Ekran
    * KAPALI yol (sunucu ses tanıma, maliyetin tamamı orada) ücretsizde hiç yok.
    * 0 = yürüyüş modu ücretsizde kapalı.
    */
-  walkSessionsPerDay: number;
+  walkRoundsPerDay: number;
   /**
    * Patika Konuşma adımı, seviye başına (taban).
    *
@@ -76,11 +77,11 @@ export type FreeLimits = {
  */
 export type FairUse = {
   /**
-   * Günde yürüyüş oturumu (ekran açık + kapalı). Ücretsizdeki sayaçla AYNI
-   * sayaç, yani duyurulan sayı gerçekten sayılıyor. Eskiden burada "günde 20
-   * tur" duruyordu ve o turu hiçbir yer saymıyordu.
+   * Günde yürüyüş turu (ekran açık + kapalı). Ücretsizdeki sayaçla AYNI sayaç,
+   * yani duyurulan sayı gerçekten sayılıyor. Eskiden burada da "günde 20 tur"
+   * duruyordu ama o turu hiçbir yer saymıyordu.
    */
-  walkSessionsPerDay: number;
+  walkRoundsPerDay: number;
   /** Günde en fazla yapay zekâ değerlendirmesi (alıştırma başına ilk değerlendirme). */
   aiPracticePerDay: number;
 };
@@ -145,7 +146,7 @@ export type PremiumConfig = {
  *    tadına bakmaya yetiyor, bitirmeye yetmiyor. Üstü "bitir + 7 günlük seri" ile
  *    ikişer ikişer açılıyor (`streakBonus`).
  *  - Deneme sınavı seviye başına `1` + her dilimde `1`.
- *  - Yürüyüş modu günde `3` oturum, yalnız ekran açık (cihazın tanıyıcısı, maliyet
+ *  - Yürüyüş modu günde `3` tur, yalnız ekran açık (cihazın tanıyıcısı, maliyet
  *    yok); ekran kapalı yol premium.
  *  - `maxTiers: 0` — kademe tavanı yok (karar verilmedi, panelden ayarlanabilir).
  *  - `fairUse` değerleri normal kullanımın çok üstünde; iş bütçeyi tek bir hesabın
@@ -155,7 +156,7 @@ export const DEFAULT_PREMIUM_CONFIG: PremiumConfig = {
   free: {
     mockPapersPerLevel: 1,
     mockStreakBonus: 1,
-    walkSessionsPerDay: 3,
+    walkRoundsPerDay: 3,
     conversationsPerLevel: 2,
     pathWritingPerLevel: 2,
     speakingSkills: 2,
@@ -165,7 +166,7 @@ export const DEFAULT_PREMIUM_CONFIG: PremiumConfig = {
     maxTiers: 0,
   },
   fairUse: {
-    walkSessionsPerDay: 20,
+    walkRoundsPerDay: 20,
     aiPracticePerDay: 30,
   },
   mock: {
@@ -211,7 +212,7 @@ export const PREMIUM_GATES = {
      kapısını (`i18n-hardcoded`) şişiriyordu. */
   mock_exam: "mock_exam", // Deneme sınavları
   pocket_walk: "pocket_walk", // Cepte yürüyüş (ekran kapalı)
-  walk: "walk", // Yürüyüş modu oturumu (günlük)
+  walk: "walk", // Yürüyüş modu turu (günlük)
   conversation: "conversation", // Patika Konuşma adımı
   speaking: "speaking", // Konuşma değerlendirmesi (Beceriler)
   writing: "writing", // Yazma değerlendirmesi (Patika Yazma, Beceriler)
@@ -253,13 +254,13 @@ export function describeLimits(cfg: PremiumConfig): { free: CopyLine[]; premium:
       KALKANLAR: "patika ve Beceriler ortak" (`plan.free_skills`in eski metni),
       haftada yenilenen hak (`plan.free_weekly_ai`), cepte yürüyüşte sayılmayan
       "günde 20 tur" (`plan.pro_walk_cap` premium listesinden çıktı; tavan artık
-      gerçekten sayılan oturum ve adil kullanım satırında).
+      gerçekten sayılan tur ve kötüye kullanım satırında).
     */
     free: [
       { key: "plan.free_core" },
       /* Haftalık quiz iki katmanda da haftada bir — kota değil, benzersiz kısıt. */
       { key: "plan.free_weekly", params: { n: 1 } },
-      ...(free.walkSessionsPerDay > 0 ? [{ key: "plan.free_walk", params: { n: free.walkSessionsPerDay } }] : []),
+      ...(free.walkRoundsPerDay > 0 ? [{ key: "plan.free_walk", params: { n: free.walkRoundsPerDay } }] : []),
       { key: "plan.free_mock", params: { n: free.mockPapersPerLevel } },
       { key: "plan.free_path_ai", params: { c: free.conversationsPerLevel, w: free.pathWritingPerLevel } },
       { key: "plan.free_skills", params: { s: free.speakingSkills, w: free.writingSkills } },
