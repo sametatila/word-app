@@ -117,7 +117,7 @@
  { "tr": "Daha taşınır taşınmaz ilk toplantı başladı.", "kind": "explanation.examples.tr", "de": "Kaum waren wir eingezogen, begann schon die erste Versammlung." },
  { "tr": "Değişiklikler hasta tarafından onaylanmalı.", "kind": "explanation.examples.tr", "de": "Änderungen müssen vom Patienten bestätigt werden." },
  { "tr": "Evde kalabiliriz ya da teyzeme gidebiliriz.", "kind": "explanation.examples.tr", "de": "Vielleicht bleiben wir zu Hause, vielleicht besuchen wir meine Tante." },
- { "tr": "Hiçbir şeyin yeni olmadığı bir rahatlık bu.", "kind": "explanation.examples.tr", "de": "Es ist ein Trost, in dem nie etwas neu ist." },
+ { "tr": "Hiçbir şeyin yeni olmadığı bir rahatlık bu.", "kind": "explanation.examples.tr", "de": "Es ist eine Bequemlichkeit, in der nie etwas neu ist." },
  { "tr": "İçeride fotoğraf çekmene izin verilmeyecek.", "kind": "explanation.examples.tr", "de": "Drinnen wirst du nicht fotografieren dürfen." },
  { "tr": "Kız kardeşin hastanede çalışıyor, değil mi?", "kind": "explanation.examples.tr", "de": "Deine Schwester arbeitet im Krankenhaus, oder?" },
  { "tr": "Masa ayırtmamışlardı, bu yüzden beklediler.", "kind": "explanation.examples.tr", "de": "Sie hatten keinen Tisch reserviert, deshalb mussten sie warten." },
@@ -148,5 +148,5 @@
  { "tr": "Ailesi cuma günleri geç yatmasına izin veriyor.", "kind": "explanation.examples.tr", "de": "Ihre Eltern lassen sie freitags lange aufbleiben." },
  { "tr": "Çoğu çocuk izlemektense tırmanmayı tercih eder.", "kind": "explanation.examples.tr", "de": "Die meisten Kinder klettern lieber, als zuzuschauen." },
  { "tr": "Oyuncular hakkında bir şey söyleyecek miydiniz?", "kind": "explanation.examples.tr", "de": "Wollten Sie etwas über die Schauspieler sagen?" },
- { "tr": "Şikâyetleri yayında okudu, bu herkesi şaşırttı.", "kind": "explanation.examples.tr", "de": "Sie las die Beschwerden auf Sendung vor, was alle überraschte." }
+ { "tr": "Şikâyetleri yayında okudu, bu herkesi şaşırttı.", "kind": "explanation.examples.tr", "de": "Sie las die Beschwerden in der Sendung vor, was alle überraschte." }
 ]

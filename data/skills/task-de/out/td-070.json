@@ -11,7 +11,7 @@
  { "tr": "Son t'yi hafif de olsa söyle; sona ünlü ekleme.", "kind": "drill.fix", "de": "Sprich das End-t, auch wenn nur leicht; häng keinen Vokal an." },
  { "tr": "Ağzı kapatırsan „cut“, uzatırsan „cart“ duyulur.", "kind": "drill.fix", "de": "Schließt du den Mund, hört man „cut“, dehnst du, hört man „cart“." },
  { "tr": "Düz e ile „wet“ olur; ünlüyü uzatıp i'ye kaydır.", "kind": "drill.fix", "de": "Mit flachem e wird es „wet“; dehn den Vokal und gleite zum i." },
- { "tr": "Kümedeki d sessizdir ama söylenir: hendz, kould.", "kind": "drill.fix", "de": "Das d in der Gruppe ist ein Konsonant, wird aber gesprochen: händs, kould." },
+ { "tr": "Kümedeki d sessizdir ama söylenir: hendz, kould.", "kind": "drill.fix", "de": "Das d in der Konsonantengruppe ist leise, wird aber gesprochen: händs, kould." },
  { "tr": "Üçüncü tekilde -s var ve kısaltma yok: wants to.", "kind": "drill.fix", "de": "In der dritten Person Singular steht -s, und es gibt keine Kurzform: wants to." },
  { "tr": "Düz i ile „fin“ (yüzgeç) olur; sesi a'dan başlat.", "kind": "drill.fix", "de": "Mit flachem i wird es „fin“ (Flosse); beginn den Laut bei a." },
  { "tr": "Geçmişte ünlü değişir: ağzı daha çok açıp REN de.", "kind": "drill.fix", "de": "In der Vergangenheit ändert sich der Vokal: öffne den Mund weiter und sag RÄN." },

@@ -1,5 +1,5 @@
 [
- { "tr": "stok", "kind": "gloss.tr", "de": "Vorrat" },
+ { "tr": "stok", "kind": "gloss.tr", "de": "Ware" },
  { "tr": "şans", "kind": "gloss.tr", "de": "Glück" },
  { "tr": "uçuş", "kind": "gloss.tr", "de": "Flug" },
  { "tr": "yine", "kind": "gloss.tr", "de": "wieder" },
@@ -59,7 +59,7 @@
  { "tr": "yüzey", "kind": "gloss.tr", "de": "Oberfläche" },
  { "tr": "yüzük", "kind": "gloss.tr", "de": "Ring" },
  { "tr": "adalet", "kind": "gloss.tr", "de": "Fairness" },
- { "tr": "anında", "kind": "gloss.tr", "de": "sofort" },
+ { "tr": "anında", "kind": "gloss.tr", "de": "sofortig" },
  { "tr": "bahane", "kind": "gloss.tr", "de": "Ausrede" },
  { "tr": "bakıcı", "kind": "gloss.tr", "de": "Betreuer" },
  { "tr": "bakkal", "kind": "gloss.tr", "de": "Lebensmittelladen" },
@@ -108,9 +108,9 @@
  { "tr": "anlaşma", "kind": "gloss.tr", "de": "Abmachung" },
  { "tr": "avantaj", "kind": "gloss.tr", "de": "Vorteil" },
  { "tr": "ayarlar", "kind": "gloss.tr", "de": "Einstellungen" },
- { "tr": "belirti", "kind": "gloss.tr", "de": "Anzeichen" },
+ { "tr": "belirti", "kind": "gloss.tr", "de": "Symptom" },
  { "tr": "boyamak", "kind": "gloss.tr", "de": "streichen" },
- { "tr": "buluşma", "kind": "gloss.tr", "de": "Wiedersehen" },
+ { "tr": "buluşma", "kind": "gloss.tr", "de": "Klassentreffen" },
  { "tr": "bulutlu", "kind": "gloss.tr", "de": "bewölkt" },
  { "tr": "coşkulu", "kind": "gloss.tr", "de": "begeistert" },
  { "tr": "çarpıcı", "kind": "gloss.tr", "de": "dramatisch" },
@@ -148,5 +148,5 @@
  { "tr": "yenilik", "kind": "gloss.tr", "de": "Neuheit" },
  { "tr": "acımasız", "kind": "gloss.tr", "de": "gnadenlos" },
  { "tr": "açıkçası", "kind": "gloss.tr", "de": "offen gesagt" },
- { "tr": "beklenen", "kind": "gloss.tr", "de": "fällig" }
+ { "tr": "beklenen", "kind": "gloss.tr", "de": "vorgesehen" }
 ]
