@@ -42,7 +42,7 @@ taşır — İngilizce kursta `de` alanına İngilizce yazılır.** Türkçe ala
    metni, program, yorum…); beş dinleme beş farklı biçim (diyalog, telefon,
    anons, röportaj, sesli mesaj, tanıtım konuşması); beş dil bilgisi BEŞ AYRI
    kural.
-2. `avoid/<kurs>-<seviye>.txt` — Patika, konuşma ve deneme kâğıdı içeriği.
+2. `avoid/<kurs>-<seviye>.txt` — Patika, konuşma ve deneme sınavı içeriği.
 
 `avoid/<kurs>-<seviye>.txt` dosyasını oku. Oradaki konuşma başlıkları, ünite egzersiz başlıkları ve
 deneme sınavı metinleri **tekrar edilmez**: aynı sahne, aynı karakter adları dizisi, aynı metin

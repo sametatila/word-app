@@ -35,7 +35,7 @@ düşürüyordu).
 
 ## İçerik kuralları (özet; şartname `data/content/SPEC.md` ve yazar brifi)
 
-- **Kopya yok.** Patika konuşmaları, ünite egzersizleri ve deneme kâğıtlarıyla aynı
+- **Kopya yok.** Patika konuşmaları, ünite egzersizleri ve deneme sınavlarıyla aynı
   sahne/konu/metin yok; konu yakın olabilir, metin özgün.
 - **Havuza riayet.** Metin seviyenin ve alt seviyelerin havuz katmanında kalır;
   hedef A1/A2 ≤ %10, B1 ≤ %15, B2/C1 ≤ %20 dışarıda (`check:libvocab`).
@@ -89,7 +89,7 @@ Pedagojik ölçüm `npm run report:library` ile alınıyor ve şunları basıyor
 kapsam matrisi, egzersiz başına madde/süre/sözlükçe, tanıma-üretim dengesi,
 gerekçe doluluğu, doğru şık konumu ve uzunluğu, metin uzunluğunun seviye
 hedefine uyumu, seviyeler arası tırmanma, yapabilirlik etiketi ve **kopya
-denetimi** (sekiz kelimelik pencerelerin Patika, konuşma ve deneme kâğıdı
+denetimi** (sekiz kelimelik pencerelerin Patika, konuşma ve deneme sınavı
 havuzuyla karşılaştırılması).
 
 Kontrolde düzeltilenler: iki dinleme metni seviye hedefinin altındaydı
@@ -109,7 +109,7 @@ buldu; üçü de formül cümle ("Guten Tag, was kann ich für Sie tun?",
 | B2 | Depozito raporu · şikâyet yönetimi · kuruma itiraz · dört günlük hafta · Passiv | Yıldızlı puanlama · terfi mi işe alım mı · şikâyet yanıtı · bahşiş · conditionals |
 | C1 | İstatistik denemesi · arşiv söyleşisi · jüri gerekçesi · çeviri araçları · Nominalstil | Kamusal alan denemesi · ses tasarımı · okur mektubu · çalışan izleme · inversion |
 
-Konu seçimi Patika konuşmalarının, ünite egzersizlerinin ve deneme kâğıtlarının
+Konu seçimi Patika konuşmalarının, ünite egzersizlerinin ve deneme sınavlarının
 dışından yapıldı (`scratchpad/avoid/*` listeleriyle karşılaştırılarak).
 
 ## Sınavların yeri (2026-09-09)
@@ -125,8 +125,8 @@ bilerek üç sekmede tutuluyor — kapı en yakın boş duvara açılmıştı.
 | Patika | konuşmalar · ünite quizi · ünite quizi · **modül sınavları** |
 | Beceriler | yalnız serbest çalışma kütüphanesi |
 
-Modül sınavı Patika'da çünkü kâğıdı modülün kendi konuşmalarından üretiliyor ve
-konuşmaları geçilmemişse motor kâğıdı "deneme" sayıyor; ön koşulu orada olan bir
+Modül sınavı Patika'da çünkü soruları modülün kendi konuşmalarından üretiliyor ve
+konuşmalar geçilmemişse motor sınavı "deneme" sayıyor; ön koşulu orada olan bir
 şeyin girişi başka sekmede duruyordu. Seviye sınavı beş bölüm ve 45 dakika,
 yani ünite ölçeğinde değil.
 

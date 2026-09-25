@@ -30,7 +30,7 @@ mobilde. Üç katmanın üçü de doğrulandı; kelime katmanı için üretim OK
 mobilde. Kelime katmanı o gün üretime tohumlandı (`db:seed:en`; izin ayrıca
 soruldu, öncesinde `words` tablosunun yedeği alındı): 7.175/7.175 Almanca
 karşılık, 7.175/7.175 örnek cümle çevirisi. İçerik katmanı beş hatta yazıldı
-ve `check:native-de` ile ölçüldü — konuşma 200/200, egzersiz 189/189, kâğıt
+ve `check:native-de` ile ölçüldü — konuşma 200/200, egzersiz 189/189, sınav
 60/60, can-do 11/11.
 
 **gsw-zh HİÇBİR paritede düşünülmüyor** (kullanıcı kararı, 2026-09-10).
@@ -751,7 +751,7 @@ birden sayıyor (`exam` hattı + kaynakta zaten dolu olan `en` alanları).
 
 #### Kalan tek kalem: MODÜL SINAVI (1.781 dize)
 
-58 kâğıt, on üç ayrı alan. Büyükten küçüğe:
+58 sınav, on üç ayrı alan. Büyükten küçüğe:
 
 ```
 listening.turns.tr   408   dinleme diyaloğunun replik çevirileri
@@ -766,7 +766,7 @@ plan.titleTr          58 · listening.situation 58 · reading.titleTr 58
 writing.prompt        58 · listening.titleTr   57 · reading.genre    37
 ```
 
-**`ExamCando.en` ZATEN VAR ve dolu** — 290'ın 290'ı. Kâğıtları yazan
+**`ExamCando.en` ZATEN VAR ve dolu** — 290'ın 290'ı. Sınavları yazan
 taraf İngilizceyi baştan düşünmüş ve tipin içine koymuş; kalemin
 tamamı sıfırdan yazılmayacak. Kalan 1.781 dize on iki alanda.
 
@@ -780,10 +780,10 @@ Kapı bu alan için üç kural taşıyor: son noktalama pariteleri, sayı
 pariteleri ve **şık sızıntısı** — İngilizce soru kökü Almanca şıklardan
 birini iki kelimeden uzun biçimde içeriyorsa hata. Üçü de sıfır.
 
-Hat yazılırken üç karar çıktı ve üçü de kâğıdın Almanca yarısıyla Türkçe
+Hat yazılırken üç karar çıktı ve üçü de sınavın Almanca yarısıyla Türkçe
 yarısı arasındaki hiyerarşiyi gösteriyor:
 
-1. **Özel adlar ALMANCA kâğıdı izliyor.** "Bay Yalçın" → "Mr Yalcin",
+1. **Özel adlar ALMANCA sınavı izliyor.** "Bay Yalçın" → "Mr Yalcin",
    "Bayan Aydın" → "Ms Aydin", "Ayşe" → "Ayse". Türkçe soru kökü adı
    Türkçe yazımıyla yazmış ama öğrencinin önündeki dinleme metni Almanca
    ve orada "Herr Yalcin" duruyor. Soru "Yalçın" deseydi öğrenci
@@ -793,7 +793,7 @@ yarısı arasındaki hiyerarşiyi gösteriyor:
    yazsa da Türkçe "15 Mayıs'ta" yazmışsa İngilizce de "15 May" oluyor;
    Türkçe "on iki numaradan" yazmışsa Almanca "Wohnung zwölf" olsa bile
    İngilizce "flat twelve" kalıyor. Rakamla yazılmış sayı öğrencinin
-   gözünde harfle yazılmış olandan farklı bir şey ve kâğıdı yazan taraf
+   gözünde harfle yazılmış olandan farklı bir şey ve sınavı yazan taraf
    bu ayrımı Türkçede bilerek yapmış. Telefon, peron ve oda numarası
    ("0157 88 44 21", "15:10'da, 8. perondan", "214 numara") bu yüzden
    olduğu gibi duruyor: miktar değil kimlik, ve dinleme sorusunun ölçtüğü
@@ -832,7 +832,7 @@ konuşma o ayrımı öğretiyorsa, hedef dil onu yapar.
 Yazılan 1.781 dize hiçbir yere gitmiyordu — `lecture`de olduğu gibi.
 Zincir: `apply.mjs` → `exam` sözlüğü → `resolveExam` → `localiseExam`.
 
-**Çevrilen yalnız orta sütun.** Kâğıt üç dilli ve üçünün rolü ayrı:
+**Çevrilen yalnız orta sütun.** Sınav üç dilli ve üçünün rolü ayrı:
 Almanca ölçülen dil, Türkçe/İngilizce öğrencinin dili, şıklar Almanca.
 `titleDe`, replik `de`si, soru kökünün `de`si, şıklar, okuma metni ve
 örnek cevap olduğu gibi kalıyor — onları çevirmek sınavı ortadan
@@ -842,14 +842,14 @@ Dört çağrı yeri çıktı ve **üçü görünmezdi**:
 
 | yer | neden görünmedi |
 |---|---|
-| `buildExam` | — modül kâğıdının kendisi, tek açık olan |
-| seviye sınavının konuşma havuzu | maddeleri modül kâğıtlarından geliyor ve orada `plan` boş; tek kâğıtlık çeviri oraya hiç ulaşmıyordu |
+| `buildExam` | — modül sınavının kendisi, tek açık olan |
+| seviye sınavının konuşma havuzu | maddeleri modül sınavlarından geliyor ve orada `plan` boş; tek sınavlık çeviri oraya hiç ulaşmıyordu |
 | sertifika SVG'si | `titleTr` ve yapabilirlik satırları; `examCando` ayrı bir çağrıydı ve çevrilmemiş ikinci kopya döndürüyordu |
 | modül listeleri | uç (`/api/exam?level=`) ve Patika ekranı |
 
 **Liste satırlarında hep-ya-hiç YOK, bilerek.** `resolveExam` bir alan
-bile eksikse kâğıdı reddediyor: yarım bir sınav kâğıdı, öğrencinin
-okuduğu yönergeye güvenemediği bir kâğıt. Liste satırı öyle değil —
+bile eksikse sınavı reddediyor: yarım bir sınav, öğrencinin
+okuduğu yönergeye güvenemediği bir sınav. Liste satırı öyle değil —
 kimliği ALMANCA başlık ve o yanında zaten duruyor. Karşılığı olmayan bir
 alt başlık leke, satırı düşürmek ise o modülün sınavını gizler.
 ##### BİTTİ (2026-09-10): 8.824/8.824 dize, 17.293/17.293 parça (%100)
@@ -1322,7 +1322,7 @@ var mı.
 |---|---|
 | Konuşma anlatımı, sözlükçe, kalıp, başlık, sohbet, senaryo | ✅ 26.375/26.375 · kapı: `check:conversations-native` |
 | Almanca takas tablosu (öğrenciye söyletilen cümleler) | ✅ 25 + 17 · kapı: `check:conversations-swap` |
-| Modül sınavı kâğıtları | ✅ 1.781/1.781 · bağlı |
+| Modül sınavları | ✅ 1.781/1.781 · bağlı |
 | Can-do ifadeleri | ✅ kaynakta `en` dolu |
 | Beceri düz metni (`intro`, `questions.explain`) | ✅ 3.394/3.394 · bağlı |
 | Beceri görev metni (27 alan) | ✅ 3.715/3.715 · kapı: `check:skills-task` |
@@ -1330,14 +1330,14 @@ var mı.
 | Kelime havuzu | ✅ 8.707/8.707 `en` dolu · kapı: `test:gloss` |
 | Arayüz metinleri | ✅ 1.203 anahtar × 3 dil · kapı: `i18n:check` |
 | Beceri egzersizlerinin kalanı (kök, şık, başlık, brifing) | ✅ 241/241 · kapı: `check:skills-native` |
-| Deneme kâğıtları (60 Almanca kâğıt) | ✅ 6.627/6.627 · kapı: `check:mock-prose` |
+| Deneme sınavları (60 Almanca sınav) | ✅ 6.627/6.627 · kapı: `check:mock-prose` |
 
 Tablo artık baştan sona yeşil. **`PAIR_READY.en` yine de BOŞ** ve bu bir
 unutma değil: yazılanların hepsi YERELDE duruyor. Beyan, kod canlıya
 çıktıktan sonra doldurulur — push Samet'te. Sıra: push → deploy → `en`
 beyanı → `check:pairs`in "!" işareti.
 
-**Deneme kâğıtları eksenin EN BÜYÜK kalemiydi ve bugüne kadar hiç
+**Deneme sınavları eksenin EN BÜYÜK kalemiydi ve bugüne kadar hiç
 ölçülmemişti.** İlk ölçüm 4.920 dedi, hat kurulunca gerçek sayı **6.627**
 çıktı — %35 fark. Sebep ölçüm hatası değil, ÖLÇÜTÜN kendisi: ilk sayım
 "Türkçe görünen" dizeleri sayıyordu (beceri ekseninde 445 → 241 yapan aynı
@@ -1394,8 +1394,8 @@ CI'da "Ana dil çözücüsü" adımında, hepsi yeşil:
 | `check:conversations-swap` | öğrenciye söyletilen Almanca cümleler | 25 + 17 |
 | `check:skills-native` | çözülmüş egzersiz çıktısında Türkçe kaldı mı | 995/995 |
 | `check:skills-task` | beceri görev metni, YAZILAN (27 tür) | 3.715/3.715 |
-| `check:mock-prose` | deneme kâğıtları, YAZILAN (11 tür) | 6.627/6.627 |
-| `check:mock-native` | çözülmüş deneme kâğıdı — yazılan uygulamaya varıyor mu | 60/60 |
+| `check:mock-prose` | deneme sınavları, YAZILAN (11 tür) | 6.627/6.627 |
+| `check:mock-native` | çözülmüş deneme sınavı — yazılan uygulamaya varıyor mu | 60/60 |
 
 Kapılar İKİ SORU soruyor ve ayrım kasıtlı: `-native` ekliler sözlüğü
 yeniden kurup yazılanın UYGULAMAYA ULAŞTIĞINI ölçüyor, ötekiler
@@ -1413,7 +1413,7 @@ eklendikten sonra aynı boşluk bir daha sessiz kalamaz.
 çözücü çağıran her dosyayla karşılaştırıldı. Fark eden dosyaların tamamı
 istemci bileşeni ve hepsi zaten çevrilmiş nesneyi sunucu sayfasından prop
 olarak alıyor. Bir boşluk çıktı: `/api/mock-exam` `finish`, yanlış
-maddelerin `explain` cümlelerini KAYNAK kâğıttan okuyup modele gerekçe
+maddelerin `explain` cümlelerini KAYNAK sınavdan okuyup modele gerekçe
 olarak veriyordu — cevabın dili doğru, dayanağı Türkçeydi.
 
 Patika kancasındaki `titleTr` ayrıca bakıldı: web onu HİÇ çizmiyor
@@ -1424,7 +1424,7 @@ Patika kancasındaki `titleTr` ayrıca bakıldı: web onu HİÇ çizmiyor
 **İkinci tarama — ÇIKTI taraması, ve asıl bulan bu oldu.** Çağıran
 taraması doğru yerde çözücünün çağrıldığını gösteriyor ama çözücünün o
 nesnenin TAMAMINI kapsadığını göstermiyor. `check:mock-native`e "çözülmüş
-kâğıdın her dizesine bak, alan adına bakmadan" ölçütü eklendi ve ilk
+sınavın her dizesine bak, alan adına bakmadan" ölçütü eklendi ve ilk
 koşuşunda **408 dize** buldu: metinlerin `gloss` sözlükçeleri hiç
 katlanmıyordu. Ölçüldü — 857 maddenin 857'sinde `en` dolu, yani yazılacak
 hiçbir şey yoktu, yalnız hangi sütunun gösterileceği seçilmemişti.
@@ -1476,7 +1476,7 @@ Sözlük yolu %45 daha küçük çünkü Almanca içeriği İKİNCİ KEZ taşım
 yalnız Türkçe→İngilizce eşlemeleri, tekilleştirilmiş. Bedeli, `native.ts`in
 mobilde İKİNCİ BİR KOPYASI: mobil `src/`i göremiyor. `taskSeconds` ile aynı
 durum ve orada kural yazılı — "ikisi birlikte değişir; ayrılırlarsa
-oynatıcının saati kâğıdın süresiyle çelişir".
+oynatıcının saati sınavın süresiyle çelişir".
 
 Üçüncü bir yol (İngilizce paketi ağdan indirmek) DEĞERLENDİRİLDİ ve elendi:
 içerik bilerek pakete gömülü, çevrimdışı çalışması gerekiyor.
@@ -1505,7 +1505,7 @@ cümleler Almanca cümlenin çevirisi değil, bağımsız yazılmış cümleler)
 
 | hat | birim | dize |
 |---|---|---:|
-| deneme kâğıdı | 60 İngilizce kâğıt | **6.828** (46 paket, `in-de/` kuruldu) |
+| deneme sınavı | 60 İngilizce sınav | **6.828** (46 paket, `in-de/` kuruldu) |
 | konuşma anlatımı | 200 konuşma | ~8.515 benzersiz parça (9.986 geçiş) |
 | konuşma başlığı/özeti | 200 konuşma | 400 |
 | konuşma sözlükçesi | | 1.000 |
@@ -1518,7 +1518,7 @@ haftalar sürdü.
 
 **Bir ürün gerçeği:** İngilizce kursun bugün 200 konuşması var (A1 tam, A2'nin
 ilk modülü); B1/B2/C1'de hiç konuşma yok. de→en açıldığında Almanca konuşan
-kullanıcı A1–A2 görecek, üstü "Yakında". Deneme kâğıtları beş seviyede de
+kullanıcı A1–A2 görecek, üstü "Yakında". Deneme sınavları beş seviyede de
 tam. Bu bir engel değil ama beyanla birlikte bilinmesi gereken bir şey.
 
 **Hat deseni aynı, kurallar AYNA DEĞİL.** `extractMock` kurs argümanı aldı
@@ -1530,7 +1530,7 @@ kapısı ayrı yazılacak.
 ### de→en nasıl bitti (2026-09-11)
 
 Beş hat yazıldı ve beşinin de kapısı CI'da: konuşma düzyazısı 11.011, beceri
-düz metni 1.725 (sözlükçe dahil), görev metni 1.325, deneme kâğıdı 6.828,
+düz metni 1.725 (sözlükçe dahil), görev metni 1.325, deneme sınavı 6.828,
 can-do 131. Bağlama tarafı ayrı bir işti ve ayrı kapısı var
 (`check:native-de`) — yazılanı ölçen kapı, yazılanın uygulamaya VARDIĞINI
 göremiyor.
@@ -1559,14 +1559,14 @@ hızları farklı. Push Samet'te.
 
 ### Bu fazda üç kez tekrarlanan konuşma
 
-**Kapı yanlış öterse ÖLÇ, sonra TÜRKÇE tarafı genişlet.** Deneme kâğıtları
+**Kapı yanlış öterse ÖLÇ, sonra TÜRKÇE tarafı genişlet.** Deneme sınavları
 hattında kapı üç kez yanlış öttü ve üçünde de refleks "Almanca ölçütünü
 daralt" idi. Ölçüldüğünde: daraltma 3 yanlış pozitifi düzeltirken 107
 gerçek Almanca açıklığı kaybediyordu. Türkçe tarafı genişletmek aynı üçünü
 düzeltip 2.991 açıklığın 2.988'ini koruyor. Kanıtı korumak, gürültüyü
 susturmaktan önce gelir.
 
-**Türkçe-görünürlük ölçütü KAPSAM ölçmez.** Deneme kâğıtları 4.920 sanıldı,
+**Türkçe-görünürlük ölçütü KAPSAM ölçmez.** Deneme sınavları 4.920 sanıldı,
 6.627 çıktı; fark, ölçütün Türkçe saymadığı kısa gerekçeler ve hiç ayrı
 sayılmamış bir alan. Kapsam alandan çıkar, dizeye bakan bir sezgiden değil.
 

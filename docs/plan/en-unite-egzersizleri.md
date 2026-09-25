@@ -1999,7 +1999,7 @@ bütün soru yüzeylerine soruldu.
 - *Beceriler kütüphanesi* (854 soru): iki şıklıda %47/%53, üç şıklıda
   %31/%35/%34. Dengeli. Kapı yine de genişletildi ve kütüphaneyi ayrı grup
   olarak sayıyor — bugün temiz olan şeyi yarın için kilitlemek ucuz.
-- *Deneme kâğıtları* (3 996 soru, iki kurs): `bool` %47/%53 ve %49/%51,
+- *Deneme sınavları* (3 996 soru, iki kurs): `bool` %47/%53 ve %49/%51,
   üç şıklı %32/%35/%33, dört şıklı %27/%24/%27/%22. Dengeli.
 - *Modül sınavları* (310 soru): depoda **%6/%81/%13/%1** — ilk bakışta bu
   oturumun bulduğu kusurun en büyüğü. Ama `check-content.ts` bunu zaten
@@ -2007,7 +2007,7 @@ bütün soru yüzeylerine soruldu.
   Bu oturumda iki kez „başka bir şey hallediyor“ gerekçesi yanlış çıktığı
   için bu kez DENENDİ: `seededShuffle` 310 soru × 200 ayrı tohumla
   benzetildi, sonuç **%25,2 / %24,7 / %24,8 / %25,3**; tek bir kullanıcının
-  kâğıdında da %26,5 / %21,9 / %28,1 / %23,5. Muafiyet sağlam. Kaynaktaki
+  sınavında da %26,5 / %21,9 / %28,1 / %23,5. Muafiyet sağlam. Kaynaktaki
   not artık bu ölçümü de taşıyor, çünkü ölçülmemiş bir muafiyet not değil
   temennidir.
 

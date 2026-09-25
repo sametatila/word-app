@@ -10,7 +10,7 @@
 |---|---|---|---|---|---|
 | konuşma (Patika) | 100 | 100 | **0** | **0** | **0** |
 | beceri | 57 | 57 | 25 | 25 | 25 |
-| deneme kâğıdı | 12 | 12 | 12 | 12 | 12 |
+| deneme sınavı | 12 | 12 | 12 | 12 | 12 |
 
 Almanca kursta aynı satır 100 / 100 / 180 / 100 / 100. Yani İngilizce
 öğrencisi B1'e çıktığında beceri kütüphanesi ve deneme sınavı çalışıyor,

@@ -131,7 +131,7 @@ B1'e 80 konuşma eklendi ama o modüllerin sınav planları yazılmadı. Sonuç:
   üretilemiyor.
 
 Bu, o modüllerin **modül sınavının çalışmadığı** anlamına geliyor: plan
-olmadan `moduleExamPlan` boş dönüyor ve kâğıt eksik kuruluyor.
+olmadan `moduleExamPlan` boş dönüyor ve sınav eksik kuruluyor.
 
 A1, A2, B2 ve C1'de bu hata yok — dolayısıyla iş B1'e ait. Modül başına bir
 plan (`src/lib/conversations/module-exam`) yazılmalı; mevcut B1.1-B1.10 planları
@@ -274,7 +274,7 @@ kısaltıldı.
 yazılsa da yerleştirilmezdi" gerekçesi eksikti: patika tek yol değil.
 `exam.ts` seviye sınavının Sprechen bölümünü beceri bankasından kuruyor ve
 oraya yalnız `genre: "Ses çalışması"` etiketli konuşma drill'lerini alıyor.
-B1'de hiç yoktu, yani kâğıt üç cümle isterken banka sıfır veriyordu ve
+B1'de hiç yoktu, yani sınav üç cümle isterken banka sıfır veriyordu ve
 bölüm hiç basılmıyordu. Yazılan dokuz egzersiz (ünite 5, 10, … 45) A1'i
 tekrarlamıyor: A1 tek tek sesleri kuruyor, B1 sesin cümle içindeki
 davranışını çalıştırıyor — Knacklaut, sönük heceler, r'nin iki yüzü, ünsüz

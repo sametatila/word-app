@@ -409,11 +409,11 @@ tane seçtiği için bu darlık değil, yalnız daha az çeşit — `build`, `re
 
 ### Bulunan hata: seviye sınavı seçeneksiz soruda kilitleniyordu (93c5db8)
 
-Sınav kâğıdı soruyu **yalnız şıklara basarak** çiziyor ve o ekranda atlama
+Sınav soruyu **yalnız şıklara basarak** çiziyor ve o ekranda atlama
 düğmesi yok. Beceri bölümündeki boşluk doldurma, kısa cevap ve dikte
 sorularının `options` alanı ise boş — beceri oynatıcısı onları yazdırarak
 cevaplatıyor. `pickTexts` soruları süzmeden ilk üçü alıyordu, yani böyle bir
-soru kâğıda düşünce hiçbir düğme çizilmiyor ve sınav orada kilitleniyordu.
+soru sınava düşünce hiçbir düğme çizilmiyor ve sınav orada kilitleniyordu.
 
 Ölçüm: sınava giden ilk-üç sorulardan seçeneği boş olanlar **A2'de 100, A1'de
 73**. B1/B2/C1 etkilenmiyordu, çünkü onların beceri içeriği tümüyle çoktan

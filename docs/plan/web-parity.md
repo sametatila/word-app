@@ -400,7 +400,7 @@ onu görünür kılıyor.
 **Bilerek Türkçe kalanlar (karar gerektirenler Samet'e):**
 
 1. **Konuşma ve sınav içeriği** (~89 bin satır): konuşma senaryoları, deneme
-   sınavı kâğıtları, beceri kütüphanesi. Mobilde de Türkçe; ayrı bir içerik
+   sınavları, beceri kütüphanesi. Mobilde de Türkçe; ayrı bir içerik
    projesi.
 2. **Can-do ifadeleri** (`lib/cando.ts`, 128) — aynı sınıf.
 3. **Karıştırma çiftleri** (`lib/confusables.ts`, 148 çift): hem çiftlerin
@@ -492,7 +492,7 @@ testlerde karşılıksız kalmıştı.
   `pg.Pool` şablon etiketi gibi çağrılıyordu (`sql\`…\``), yani o raporlama
   betikleri ilk sorguda patlardı. Etiket doğru biçimde yazıldı.
 - Beş beklenti, ürünün BİLEREK değiştiği yerlerde eskimişti: dilbilgisi
-  bölümü 2026-08'de kaldırıldı (yerleştirme + sınav kâğıdı), sohbet
+  bölümü 2026-08'de kaldırıldı (yerleştirme + sınav), sohbet
   `894ddb0b` ile 6-9 tura uzatıldı. Testler bugünkü tasarıma göre yazıldı.
 - Bir gerçek hata çıktı: hata analizi `gameLabel`i ham anahtar olarak
   döndürüyordu, yani zayıf nokta kartının ipucunda `games.article_race`
@@ -684,7 +684,7 @@ ve Mac'te cihaz koşusu.
 ### 10.3 Web → mobil içerik köprüleri: ayrışma yok
 
 Üç döküm betiği de koşuldu; `mobile/src/data/**` altında **tek satır fark
-çıkmadı**. Yani beceri egzersizleri, deneme kâğıtları ve Almanca konuşmalar için
+çıkmadı**. Yani beceri egzersizleri, deneme sınavları ve Almanca konuşmalar için
 "tek kaynak web, mobil türev" kuralı bugün gerçekten tutuyor.
 
 Betiğin kendisinde bir açık vardı: `dump:conversations` `package.json`'da **yoktu**.
@@ -693,7 +693,7 @@ edilmemişti. Eklendi.
 
 ### 10.4 Bulunan asıl ayrışma: İngilizce konuşmalar
 
-| kurs | web konuşma | web egzersiz | web kâğıt | mobil konuşma |
+| kurs | web konuşma | web egzersiz | web sınav | mobil konuşma |
 |---|---|---|---|---|
 | de | 580 | 995 | 60 | 580 |
 | gsw-zh | 0 (hedef dili Almanca) | 0 | 0 | — |
@@ -3232,8 +3232,8 @@ kaydırılabilir yüzeyin on ikisi bunu veriyor - bu ekran tek istisnaydı.
 ekranın beşi tekrar deneme sunuyor, üçü sunmuyordu. İkisi için bu doğru:
 `PathScreen`in `catch`i bilinçli sessiz (bölüm gösterilmiyor; webin patika
 kabuğu da tekrar deneme sunmuyor) ve Paywall paket listesi aynı sınıfta.
-`ExamScreen` gerçek eksikti - kâğıt isteği geçici bir kesintiyle düşerse tek
-çıkış sınavdan ÇIKMAKTI ve haftanın kâğıdı böyle harcanabiliyordu. Kalıp
+`ExamScreen` gerçek eksikti - sınav isteği geçici bir kesintiyle düşerse tek
+çıkış sınavdan ÇIKMAKTI ve haftanın sınavı böyle harcanabiliyordu. Kalıp
 `AchievementsScreen`den: sayaç artıyor, yükleme etkisi yeniden koşuyor, hata
 her denemede sıfırlanıyor.
 
@@ -3433,7 +3433,7 @@ telefonda A çıkıp B girdiğinde B şunları görüyordu:
     lernomi-daily/-weekly   A'nın günün turu / haftalık önbelleği
     lernomi-items-done      A'nın bitirdiği ünite öğeleri
     lernomi-conversation-resume:  A'nın yarım kalmış konuşması
-    lernomi:mock-done       A'nın bitirdiği deneme kâğıtları
+    lernomi:mock-done       A'nın bitirdiği deneme sınavları
     lernomi:mock-run:       A'nın yarım deneme koşusu
     lernomi-voice           A'nın okuma sesi (webde de hesaba ait)
 
@@ -4078,7 +4078,7 @@ görevde yazılı ve mobil dökümüne de doğru geçmiş — ama **iki oynatıc
 hiç okumuyordu**, yani kural hiçbir yerde görünmüyordu: bir şıkkı ikinci kez
 seçen öğrenci hatasını ancak sonuçta görüyordu.
 
-Kâğıt sınavda bu bilgi zaten var; öğrenci kendi yazdıklarını aynı sayfada
+Kâğıt üzerinde yapılan bir sınavda bu bilgi zaten var; öğrenci kendi yazdıklarını aynı sayfada
 görüyor. Ekranda her madde ayrı satır olduğu için kayboluyordu. Kullanılmış
 şıklar artık soluk, ama **yine basılabilir**: cevabını taşımak isteyen öğrenci
 engellenmemeli. `reuseOptions` açıkken hiçbir şık solmuyor.
@@ -4308,7 +4308,7 @@ webde de aynı biçimde duruyor:
 
 `SECTION_DE` özellikle kasıtlı: modül sınavı bölüm adlarını Almanca **ve**
 çevirisiyle yan yana yazıyor ("Hören · Dinleme") ve webin yorumu gerekçeyi
-söylüyor: "sınav havası kâğıdın dilinden başlıyor". Modül sınavı zaten yalnız
+söylüyor: "sınav havası sınavın kendi dilinden başlıyor". Modül sınavı zaten yalnız
 Almanca kursta açılıyor.
 
 Webin `exam-player`i bu Almanca parçalara `lang="de"` işaretliyor (ekran
@@ -5007,7 +5007,7 @@ kapalıydı.
 
 Sistem tarayıcısında açılmıyor, içeride çiziliyor: oturum çerezle taşınıyor ve
 o çerez uygulamanın kendi ağ katmanında; bağlantıyı tarayıcıya vermek 401
-döndürürdü. Kâğıt SVG olduğu için WebView'e olduğu gibi veriliyor. Geçilmemiş
+döndürürdü. Sertifika SVG olduğu için WebView'e olduğu gibi veriliyor. Geçilmemiş
 ya da deneme sınavında aynı yerde ne yapılacağı yazıyor.
 
 **Parity 58** düşen alanların listesini yazılı tutuyor: tam eşitlik istemiyor
@@ -5025,7 +5025,7 @@ yoktu.
 
 Altı cevap noktası da bildiriyor artık (kelime, dilbilgisi, üretim, okuma,
 dinleme, konuşma). Kırılım **kapalı başlıyor** ki puanın önüne geçmesin —
-webdeki karar da bu. Örnek cevap da kâğıtta zaten vardı (`task.sample`) ve hiç
+webdeki karar da bu. Örnek cevap da sınavda zaten vardı (`task.sample`) ve hiç
 gösterilmiyordu: yazma bölümünde öğrencinin karşılaştıracağı tek şey oydu.
 
 **Parity 59** iki tarafın hangi bölümler için kayıt açtığını eşliyor. Kapının
@@ -5043,12 +5043,12 @@ giriyordu. Odak listesinin başlığı da yoktu — madde madde Almanca/Türkçe
 çiftler, ne oldukları söylenmeden duruyordu.
 
 **Ölçüldü, ayrışma değil:** webin kapağı bölüm listesini göstermiyor çünkü
-kâğıt o aşamada henüz çekilmemiş (`start` çekiyor) — aynı bilgiyi kural satırı
+sınav o aşamada henüz çekilmemiş (`start` çekiyor) — aynı bilgiyi kural satırı
 veriyor ("Yedi bölüm, 45 dakika"). Yeniden yapılandırmaya değer bir açık değil.
 
 ### 11.125 Sonucun anlamı puan değil, kazanılan iş
 
-Kâğıdın kapağı **`canDo`** listesini taşıyor (`lib/exam`) ve mobil `cover`
+Sınavın kapağı **`canDo`** listesini taşıyor (`lib/exam`) ve mobil `cover`
 tipi alanı **sessizce düşürüyordu**: "artık şunları yapabiliyorsun" listesi
 mobilde hiç görünmüyordu. Sertifika ucunun kendi yorumu da aynı şeyi söylüyor:
 *"%78 bir hafta sonra hiçbir şey ifade etmiyor"* — sonucun anlamı puan değil,
@@ -5267,7 +5267,7 @@ Kapı kurulunca elle ölçümün **kaçırdığı iki uç** daha çıktı:
   (gerçek telaffuz değerlendirmesi, `lib/pronounce-client`), mobil aynı puanı
   **cihazdaki tanıyıcının metnini eşleyerek** üretiyor (`spokenMatches`). Yani
   seviye sınavının konuşma bölümü iki platformda **başka bir şey ölçüyor**:
-  webde söyleyiş, Android'de "doğru kelimeleri söyledi mi". Aynı kâğıt, aynı
+  webde söyleyiş, Android'de "doğru kelimeleri söyledi mi". Aynı sınav, aynı
   puan alanı, farklı ölçüm.
 
 **Kayıtlı ve sıradaki iş:**
@@ -5334,7 +5334,7 @@ o oturumun: ya bir istemciye bağlanacak ya sebebiyle listeye yazılacak.
   "doğru kelimeleri söyledi mi". Çevrimdışı da çalışıyor, ücretsiz, ama
   söyleyişi hiç ölçmüyor.
 
-Aynı kâğıt, aynı `speakingScore` alanı, **farklı ölçüm**.
+Aynı sınav, aynı `speakingScore` alanı, **farklı ölçüm**.
 
 **Altyapı hazır:** mobil zaten ham 16 kHz mono WAV kaydediyor
 (`Native.startRecording`/`stopRecording`) ve yükleme yolu var; ekran AÇIK
@@ -5395,7 +5395,7 @@ aynısı; yine de ilk gerçek cihaz denemesinde bakılacak yer burası.
 
 ### 11.142 Konuşma özeti: kelimeler ve düzeltmeler toplu
 
-**Konuşmanın kelimeleri** kâğıtta zaten vardı (`conversation.vocab`) ve mobil özet onu
+**Konuşmanın kelimeleri** sınavda zaten vardı (`conversation.vocab`) ve mobil özet onu
 hiç göstermiyordu — konuşmanın dili kapanışta toplu görünmeli. §11.80 sınıfı.
 
 **Düzeltmeler** konuşma sırasında her balonun altında tek tek geçiyor ve akışta
@@ -6411,9 +6411,9 @@ sınav kapağında bölüm listesini ve toplam süreyi gösteriyor; web kapağı
 göstermiyordu — kullanıcı yirmi beş dakikalık bir sınava süresini bilmeden
 giriyordu.
 
-**Uygulaması bir kısıtı korumak zorundaydı:** uç kapağı üretirken kâğıdı
-HAZIRLAMIYOR ("kapağı açmak haftanın kâğıdını harcamamalı" — uçtaki kendi
-yorumu). Madde sayıları ve süre sabit plandan geldiği için kâğıda dokunmadan
+**Uygulaması bir kısıtı korumak zorundaydı:** uç kapağı üretirken sınavı
+HAZIRLAMIYOR ("kapağı açmak haftanın sınavını harcamamalı" — uçtaki kendi
+yorumu). Madde sayıları ve süre sabit plandan geldiği için sınava dokunmadan
 eklenebildi.
 
 **Yöntem notu:** "hangi anahtar hangi tarafta kullanılıyor" ölçümü iki yönde
@@ -6853,7 +6853,7 @@ ne sorulacağını bilmek" ölçülmüştü, burada aynı soru bölüm başına 
 
 **Sayaç tuzağı.** Yeni fazı sayacın dışında bırakmak kolaydı — ve yanlış
 olurdu: web sayacı kart sırasında durdurmuyor, durdurmak Android'de bölümler
-arasında sınırsız okuma süresi verirdi. Aynı kâğıt iki platformda iki farklı
+arasında sınırsız okuma süresi verirdi. Aynı sınav iki platformda iki farklı
 sınav olurdu. Kapı bunu da ölçüyor.
 
 Aynı denetimde iki uzay daha bakıldı ve ikisi de **temiz çıktı**: `growth.`
@@ -6861,14 +6861,14 @@ Aynı denetimde iki uzay daha bakıldı ve ikisi de **temiz çıktı**: `growth.
 metni hazır alıyor — `ach.`, `push.` ve `email.` ile aynı sınıf.
 
 
-### 11.195 Sınav kâğıdının iki kuralı Android'de geçerli değildi
+### 11.195 Sınavın iki kuralı Android'de geçerli değildi
 
 §11.194'ün devamı, kalan `exam.*` satırlarını okurken çıktı. İkisi de aynı
-soruya çıkıyor: **aynı kâğıt iki platformda aynı sınav mı?**
+soruya çıkıyor: **aynı sorular iki platformda aynı sınav mı?**
 
 **İpucu.** Web sınav bölümünü "ipucu yok" bağlamıyla (`games/no-hints`)
 sarıyor ve ipucu düğmesi olan turlarda düğme orada görünmüyor; bağlamın kendi
-yorumu da "sınavda kâğıdın kuralı ipucu yok — kapak bunu yazıyor ve düğmenin
+yorumu da "sınavın kuralı: ipucu yok — kapak bunu yazıyor ve düğmenin
 orada durması sözü bozardı" diyor. Android'de düğme duruyordu. Bağlam taşındı.
 
 **Cevap.** Cümle kurma bölümü iki adımlıydı: "Kontrol et" → kenarlık yeşile/
@@ -7628,7 +7628,7 @@ bitiriyordu ve hiçbir şey sormuyordu: cevaplar hiçbir yere kaydedilmiyor,
 ikisi de baştan başlıyor.
 
 Uygulamanın kendi düzeni bunu zaten biliyor: tur ekranı `useBackConfirm`
-kullanıyor, deneme kâğıdı `ConfirmDialog` gösteriyor — **en pahalı iki yüzey
+kullanıyor, deneme sınavı `ConfirmDialog` gösteriyor — **en pahalı iki yüzey
 atlanmıştı.** İkisine de aynı onay kondu; sınavda bölüm girişinde ve bölümün
 kendisinde, yerleştirmede yalnız test sürerken (tanıtımda ve sonuçta
 kaybedilecek bir şey yok). Web sınav sürerken hiç çıkış düğmesi vermiyor,
@@ -7661,7 +7661,7 @@ düzeltiliyor.
 dönüyor, Android'de sonuna kadar aynı renkteydi — "süre bitiyor" uyarısı hiç
 verilmiyordu. Aynı eşik (120 sn) kondu.
 
-**Deneme kâğıdı bilerek farklı ve öyle kalıyor:** orada bütçe **görev** başına
+**Deneme sınavı bilerek farklı ve öyle kalıyor:** orada bütçe **görev** başına
 ve kalan saniye kaydediliyor (`secondsLeft`), yani bırakıp dönmek sürdürmek
 demek. İki platform da orada aynı sayıcı kalıbını kullanıyor; "hepsi duvar
 saati olsun" demek o tasarımı bozardı. §134 ikisini ayrı ayrı ölçüyor.
@@ -7701,7 +7701,7 @@ dosyanın altısı da "duvar saati" diye okunuyor.
 Bu turda değişmeyen üç şey de ölçüldü ve kayda geçiyor: hayatta kalma turu
 (iki tarafta birebir aynı `deadline` kalıbı, aynı 100 ms tık, aynı tehlike
 eşiği), yerel gün sınırı (`todayStr` / `localDay` — aynı hesap) ve deneme
-kâğıdının görev bütçesi (bilerek sayıcı, kalan saniye kaydediliyor).
+sınavının görev bütçesi (bilerek sayıcı, kalan saniye kaydediliyor).
 
 ### 11.229 Sekme kapanınca tur cevapları yok oluyordu
 
@@ -7738,10 +7738,10 @@ gövdesinden okunuyor — **on beşinci biçim.**
 
 ### 11.230 "Nerede kaldım" sorusu webde cevapsızdı
 
-Bir deneme kâğıdı 80-205 dakika sürüyor ve **bölüm bölüm** çözülüyor, yani
+Bir deneme sınavı 80-205 dakika sürüyor ve **bölüm bölüm** çözülüyor, yani
 listenin cevaplaması gereken soru tam olarak bu: nerede kaldım. Android bunu
 satır satır gösteriyor (`MockExamsScreen` `PartBadge`: yüzde, geçti/kaldı,
-yarım kaldı). Web'de bir kâğıdın hangi bölümlerini çözdüğün **hiçbir yerde
+yarım kaldı). Web'de bir sınavın hangi bölümlerini çözdüğün **hiçbir yerde
 görünmüyordu.**
 
 İlginç olan şu: **veri zaten çekiliyordu.** Sayfa bitmiş denemeleri (`done`,
@@ -8078,8 +8078,8 @@ karşılığı dururken kodda yazılmış dil, iki ayrı yerde ve iki ayrı dild
   kullanıcının okuyucusu da Türkçe söylüyordu. Web aynı düğmeye sözlükten
   etiket veriyordu; anahtar ortak tabana taşındı (`voicew.listen_to` →
   `voice.listen_to`).
-- **Web sınav kapağında kâğıt yoksa Almanca dizgiler gömülüydü**
-  ("Niveauprüfung", "Modulprüfung A2.3", "Prüfung A2"). Kâğıt **varsa**
+- **Web sınav kapağında sınav verisi yoksa Almanca dizgiler gömülüydü**
+  ("Niveauprüfung", "Modulprüfung A2.3", "Prüfung A2"). Sınav verisi **varsa**
   başlığın Almanca olması doğru — `cover.titleDe` gerçekten Almanca ve `lang`
   niteliği de onu söylüyor — ama yokluğunda uydurma Almanca yerine sözlük
   kullanılmalı; Android öyle yapıyor. Ham metin sayısı 163'ten 162'ye indi.
@@ -8092,12 +8092,12 @@ yalnız `cover` VARKEN kullanılıyor ve orada doğru. Ölçülen şey dizginin
 
 ### 11.244 Geçme notu dört yerde elle kopyalanmıştı
 
-Deneme kâğıdının geçme notu tek yerde yazılı (`MOCK_PASS_PCT = 60`) ama **renk
+Deneme sınavının geçme notu tek yerde yazılı (`MOCK_PASS_PCT = 60`) ama **renk
 eşikleri dört yerde "60" diye elle kopyalanmıştı** — ikisi webde, ikisi
 mobilde. Bugün tutuyorlar; sorun şu: geçme notu **admin panelinden
 değiştirilebiliyor** (`premium/gates` `unlockPct` yorumu bunu açıkça söylüyor)
 ve değiştiğinde renk "geçti" demeye devam ederdi. Puan kırmızı olması
-gerekirken yeşil görünür, kullanıcı kâğıdı geçtiğini sanırdı.
+gerekirken yeşil görünür, kullanıcı sınavı geçtiğini sanırdı.
 
 Dördü de sabite bağlandı. **§150** eşiğin **adını** ölçüyor, sayısını değil:
 iki platformun sabiti ayrı dosyalarda (`lib/mock-exams/types` ve
@@ -8203,7 +8203,7 @@ platformda da**:
 | ayarlarda tema seçeneği | profil formunda kurs ve seviye çipleri |
 | kelime listesinde seviye ve durum şeritleri | beceri quizinde şık ve sıralama satırı |
 | ses seçici satırları | |
-| deneme kâğıdı şık çipi | deneme kâğıdı şık çipi |
+| deneme sınavı şık çipi | deneme sınavı şık çipi |
 
 Sonuncusu iki tarafta da sessizdi — sınavda öğrencinin **kendi cevabını
 doğrulayamaması** demek. On birine de durum kondu (`aria-pressed` /
@@ -8584,14 +8584,14 @@ Altı enjeksiyonun altısı da doğru tarafta yakalandı.
 
 ## §11.261 — Sınav kapağını açmak sınavı başlatıyordu
 
-`POST /api/exam {action:"start"}` iki iş yapıyor: kâğıdı üretiyor ve sunucuda
+`POST /api/exam {action:"start"}` iki iş yapıyor: sınavı üretiyor ve sunucuda
 `exam_start` olayını yazıyor. **Android bunu ekran açılır açılmaz atıyordu.**
 Yani kapağı açıp vazgeçen kullanıcı "sınava başlamış" sayılıyordu; başlama →
 bitirme hunisi Android'de şişik çıkıyordu. Web hiçbir zaman öyle yapmadı:
 kapağı ayrı uçtan (`GET`) okuyup `start`ı ancak düğmeye basılınca atıyor.
 
 Bulgu, ucun kendi yorumundan çıktı — orada "kapağı görmek için soruları
-hazırlamak, vazgeçen kullanıcıya o haftanın kâğıdını harcatırdı" yazıyor ve
+hazırlamak, vazgeçen kullanıcıya o haftanın sınavını harcatırdı" yazıyor ve
 Android tam olarak onu yapıyordu.
 
 Ölçüm nasıl bulundu: **iki istemcinin aynı uca hangi parametrelerle gittiği**
@@ -8601,7 +8601,7 @@ alarm çıktı (parametre değişkenle kuruluyor), biri gerçekti —
 
 Aynı turda ucun kendi eksiği de kapatıldı: **kapak yalnızca modül sınavı için
 vardı.** Seviye sınavında "kaç dakika sürecek, hangi bölümler var" sorusu
-cevapsızdı — oysa sayılar sabit (`COUNTS.level`, `LEVEL_SECONDS`) ve kâğıt
+cevapsızdı — oysa sayılar sabit (`COUNTS.level`, `LEVEL_SECONDS`) ve sınav
 gerektirmiyor. `?kind=level` artık iki istemciye de aynı cevabı veriyor; web
 seviye sınavında da bölümleri ve süreyi gösteriyor.
 
@@ -8813,7 +8813,7 @@ iki-üç kelime ve "bunlarla bir cümle kur". Mobilde hiç yoktu ve tur sunucuda
 `skipGames=free_sentence` ile **susturuluyordu** — yani Android kullanıcısı o
 adımı hiç görmüyordu. Haftalık sınavda da aynı süzgeç vardı, orada sunucu
 kendi `typing` yedeğine düşüyordu: **Android'in haftalık sınavı sistematik
-olarak daha kolay bir kâğıttı.**
+olarak daha kolay bir sınavdı.**
 
 Port üç parça istedi ve üçü de yapıldı:
 
@@ -9450,12 +9450,12 @@ hiçbiri ekranda elle yazılı değil. Mobilin fiyat ve deneme süresini
 eksik değil, bilinçli ve doğru: App Store 3.1.2 ve Play'in beyan kuralı bunu
 istiyor, dosyanın kendi yorumu da bunu söylüyor.
 
-Bir tanesi kirliydi. `mock.unlockPct` (sonraki kâğıt paketini açan yüzde)
+Bir tanesi kirliydi. `mock.unlockPct` (sonraki sınav paketini açan yüzde)
 varsayılanı `60` diye elle yazılıydı ve `MOCK_PASS_PCT` de `60`. İkisinin aynı
 olması gerektiğini **söyleyen bir yorum vardı** — `gates.ts` içinde, alanın
 kendi açıklamasında: "Varsayılan `MOCK_PASS_PCT` ile aynı olmalı: uygulamanın
 zaten bir geçme notu var, ikinci bir eşik icat etmek kullanıcıya iki farklı
-'başarı' tanımı göstermek olurdu." Ölçen bir şey yoktu. Ayrışsaydı kâğıdı
+'başarı' tanımı göstermek olurdu." Ölçen bir şey yoktu. Ayrışsaydı sınavı
 "geçti" diye işaretlenen biri sonraki paketi açamazdı.
 
 Varsayılan artık sabitin kendisi. **§194** hem eşitliği hem de sayının elle
@@ -9733,7 +9733,7 @@ enjeksiyon, önce enjeksiyonun kendisinden şüphelenmeyi gerektirir.**
 
 §11.295'ten çıkan soruyu kalan seçimlere sordum: hangisi tohumlu, hangisi
 rastgele? Önce kapsamı daralttım — seviye sınavını kuran `lib/exam`
-`server-only`, yani kâğıdı **sunucu** seçiyor ve iki platform aynı soruları
+`server-only`, yani sınavı **sunucu** seçiyor ve iki platform aynı soruları
 alıyor; günün turu ve haftalık sınav da uçtan geliyor. Ayrışma ancak
 **istemcide** seçim yapan yerlerde olabilir.
 
@@ -10399,7 +10399,7 @@ kütüphanesinin. Patika'nın ünite başına 2 okuma + 2 dinleme + 2 yazma yuva
 göstermiyor (`unit-pane` ve `UnitScreen` aynı süzgeç) ve §11.312'den sonra
 ilerleme de yalnız dört konuşmayı sayıyor. Eksik olan içerik: 5 seviye × 3 beceri
 × 50 yuva. Deneme sınavları bu durumda değil — iki kursta da seviye başına 12
-kâğıt tam (120 kâğıt).
+sınav tam (120 sınav).
 
 Mobil katalog dosyasının yorumları bu ölçümle düzeltildi; eski sayıları
 söylüyorlardı (kütüphane "160 tane: 60 okuma, 60 dinleme, 40 yazma" yazıyordu,
@@ -10607,7 +10607,7 @@ soru `text-xl font-bold` (20) ve `text-lg font-bold` (18) ile yazılıydı.
 |---|---|---|---|
 | Sınav sorusu (4 yer) | `bodyStrong` 15/700 | `text-xl`/`text-lg` bold | `text-strong` |
 | Deneme sınavı sayacı | `bodyStrong` | `text-lg font-bold` | `text-strong` |
-| Deneme kâğıdı beceri başlığı | `h3` | `text-2xl font-bold` | `text-h3` |
+| Deneme sınavı beceri başlığı | `h3` | `text-2xl font-bold` | `text-h3` |
 | Konuşma geri sayımı | `h1` | `text-3xl font-bold` | `text-h1` |
 | Bölüm kapağı | `h1`/`h2` | `text-2xl font-bold` | `text-h1`/`text-h2` |
 | Düğme etiketi | `h3` | `text-base` | `text-h3` |
@@ -10708,19 +10708,19 @@ varsa yüzey yüzey bulunur.
 
 Modül sınavı planları Almanca yazılmış ve kurs boyutu yok; gerekçesi kendi
 dosyasında duruyor (`hasModuleExams`): "İngilizce öğrenen birinin Patika'sında
-Almanca başlıklı modül sınavları çıkıyor ve açtığında Almanca kâğıt geliyordu."
+Almanca başlıklı modül sınavları çıkıyor ve açtığında Almanca sınav geliyordu."
 Varsayımın adı var — ama **üç yol** var ve üçünde de uygulanması gerekiyor:
 
 | Yol | Kontrol |
 |---|---|
 | Kapak ucu (`/api/exam?level&module`) | vardı |
 | Modül listesi (`/api/exam?level`) | vardı |
-| **Kâğıt üretimi** (`POST {action:"start", module}`) | **yoktu** |
+| **Sınav üretimi** (`POST {action:"start", module}`) | **yoktu** |
 
 `/api/exam`a doğrudan `{action:"start", module: 3}` gönderen bir İngilizce kurs
-kullanıcısı Almanca kâğıt alıyordu. Arayüzden erişilmiyordu — iki istemci de
+kullanıcısı Almanca sınav alıyordu. Arayüzden erişilmiyordu — iki istemci de
 listeyi boş alıyor, yani kusur görünmüyordu — ama adı olan bir varsayımın en
-önemli yerde, kâğıdın üretildiği yerde, uygulanmaması tam bu turlarda tekrar
+önemli yerde, sınavın üretildiği yerde, uygulanmaması tam bu turlarda tekrar
 eden sınıf. §213 üç yolu birlikte okuyor; enjeksiyon (kontrolü `if (false)`
 yapmak) yakalandı.
 
@@ -10743,7 +10743,7 @@ bundan sonra yeniden ayıklanmaması için buraya yazılıyor:
    oyunda ve yazma oynatıcısında. Çevrilecek metin değil, karakter.
 4. **Hedef dilin kendi içeriği** — `voice-picker`ın Zürih Almancası / standart
    Almanca örnek cümlesi, `exam-types`in `Hören` bölüm adı, sınav kapağının
-   `Niveauprüfung`/`Modulprüfung` üst satırı (o da yalnız kâğıt Almanca başlık
+   `Niveauprüfung`/`Modulprüfung` üst satırı (o da yalnız sınav Almanca başlık
    taşıyorsa; İngilizce kursta modül sınavı hiç yok — §11.326).
 5. **Anadile göre eşlenmiş tablolar** — `TRUE_WORD`/`FALSE_WORD`
    (`conversation-player`, tanıyıcı arayüz dilindeki kelimeyi dinliyor), `UNIT_WORD`
@@ -11119,7 +11119,7 @@ quizinin sonucu. Web'de kabın `role="status"`u, mobilde sonuç metninin
 (`conversation-scored` ↔ `ConversationScoredScreen`), oturum (`session-player` ↔
 `GameScreen`) ve yürüyüş (`walk-player` ↔ `WalkModeScreen`). Hepsini bir
 turda eklemek doğru olmazdı: sonuç kabı her ekranda ayrı yerde ve bazılarında
-birden fazla sonuç durumu var (sınavın bölüm sonu ile kâğıt sonu ayrı). Sırayla
+birden fazla sonuç durumu var (sınavda bölüm sonu ile sınav sonu ayrı). Sırayla
 kapanacak; §223 şimdilik kapanan ikisini tutuyor.
 
 ## §11.338 — Sonuç duyurusu: üç yüzey daha (dokuzdan altısı kaldı)
@@ -11154,7 +11154,7 @@ deneme sınavı (`mock-exam-player` ↔ `MockExamScreen`), seviye sınavı
 (`exam-player` ↔ `ExamScreen`), sohbet (`conversation-scored` ↔
 `ConversationScoredScreen`), oturum (`session-player` ↔ `GameScreen`) ve yürüyüş
 (`walk-player` ↔ `WalkModeScreen`). Son üçü özellikle dikkat istiyor: sınavın
-**bölüm sonu** ile **kâğıt sonu** ayrı iki sonuç ve oturumun içinde etap
+**bölüm sonu** ile **sınav sonu** ayrı iki sonuç ve oturumun içinde etap
 kartları var.
 
 ## §11.339 — Sonuç duyurusu: üç yüzey daha; kalan üçü çok durumlu
@@ -11163,7 +11163,7 @@ Haftalık sınav, deneme sınavı ve puanlı kısım kapandı — §223 artık *
 yüzey × iki platform = on altı ölçüt** okuyor. Kalan üç yüzey: seviye sınavı
 (`exam-player` ↔ `ExamScreen`), oturum (`session-player` ↔ `GameScreen`) ve
 yürüyüş (`walk-player` ↔ `WalkModeScreen`). Üçü de **çok durumlu** — sınavın
-bölüm sonu ile kâğıt sonu ayrı iki sonuç, oturumun içinde etap kartları var —
+bölüm sonu ile sınav sonu ayrı iki sonuç, oturumun içinde etap kartları var —
 ve bilerek en sona bırakıldı.
 
 **Kapı bu turda iki kez kendi kusurunu gösterdi ve ikincisi öğreticiydi.**
@@ -11194,7 +11194,7 @@ günün turu, haftalık sınav, deneme sınavı, sohbet, seviye sınavı, oturum
 **etap** ve **bitiş** kartları, yürüyüş — iki platformda, yirmi dört ölçüt.
 
 **Bir varsayımım ölçümle düzeldi.** §11.338 ve §11.339'da "sınavın bölüm sonu
-ile kâğıt sonu ayrı iki sonuç" diye yazmıştım. Öyle değil: sınavın tek sonucu
+ile sınav sonu ayrı iki sonuç" diye yazmıştım. Öyle değil: sınavın tek sonucu
 var (`phase === "result"`), bölüm geçişleri çalışan fazın içinde bir **kapak**
 — başlangıç ekranı, sonuç değil. İki kez tekrarladığım bu cümleyi kod
 düzeltti. Çok durumlu olan **oturum**du: etap kartı ve bitiş kartı gerçekten
@@ -11374,7 +11374,7 @@ Eksen **bekleme**ydi ve iki ayrı kusur kümesi çıktı.
 | rota | sunucudaki bekleme |
 |---|---|
 | `immersion/skill/[id]` | **on istek** (egzersiz, profil, yerelleştirme, ilerleme, sıradaki) |
-| `mock-exams/[paper]/[skill]` | kâğıdın yerelleştirilmesi — sınav başlarken |
+| `mock-exams/[paper]/[skill]` | sınavın yerelleştirilmesi — sınav başlarken |
 | `conversations/[id]/scored` | sohbet sahnesinin çözülmesi |
 | `immersion/quiz/[unit]`, `immersion/grammar/[unit]` | ünite özetlerinden soru üretimi |
 | `premium` | beş okuma birden |
@@ -11401,7 +11401,7 @@ tamamını kaplıyor ve **on üçünün hiçbiri** kendini duyurmuyordu: ekran
 okuyucu kullanan biri "başla"ya basıp hiçbir şey duymuyor, ekranın donduğunu
 mu yoksa hazırlandığını mı bilemiyordu. Web'de sekiz (beceri turu, boss,
 yürüyüş, günlük, meydan, seviye sınavı, haftalık, yerleştirme), Android'de
-beş (boss, meydan, yerleştirme, sohbet, deneme kâğıdı).
+beş (boss, meydan, yerleştirme, sohbet, deneme sınavı).
 
 Üçünde `aria-busy` vardı ve **yetmiyor**: `aria-busy` "bu bölge
 güncelleniyor" der, **monte edildiğinde hiçbir şey okutmaz**. Okutan
@@ -11427,7 +11427,7 @@ ileri **JSX etiket yığını** tutuyor ve işarete gelindiğinde yığındaki
 ### Ve kendi kuralımı yine çiğnedim
 
 Enjeksiyonları **düzeltmeden ÖNCE alınmış** yedeklerden geri aldım: dört
-dosyada (boss, günlük, oturum, deneme kâğıdı) o turun **kendi düzeltmesi
+dosyada (boss, günlük, oturum, deneme sınavı) o turun **kendi düzeltmesi
 silindi**. §11.285'in tam olarak yazdığı hata. Kapı yeşile dönmeyince
 yakalandı ve dördü yeniden uygulandı. Doğrusu önceki turda yaptığım gibi:
 **düzeltmeden SONRA** bir anlık görüntü al, enjeksiyonu ondan geri al.
@@ -11465,8 +11465,8 @@ kendi başlığını + tekrar deneme düğmesini aldı, boş dal olduğu gibi ka
   olarak deniyor (`ChallengeScreen`). Geçici bir ağ hatası kullanıcıyı
   meydan okumadan tamamen atıyordu.
 - **Seviye sınavı**: aynı kusur, ve Android'de gerekçesi zaten yazılıydı —
-  *haftanın kâğıdı geçici bir ağ kesintisiyle harcanabiliyordu*. Web'de
-  tekrar **yalnız kâğıt alınamadığında** sunuluyor: cevaplar çevrimdışı
+  *haftanın sınavı geçici bir ağ kesintisiyle harcanabiliyordu*. Web'de
+  tekrar **yalnız sınav alınamadığında** sunuluyor: cevaplar çevrimdışı
   kaydedildiyse baştan açmak o kaydı çöpe atar, orada tek doğru çıkış
   Patika'ya dönmek. Android bu ayrımı baştan yapıyordu.
 
@@ -11664,11 +11664,11 @@ yerleşimi (5 ölçüt) ve ölü anahtarların kalkmış olması.
 
 ## §11.348 — Sınav sonucu: kutlama yoktu, sıra farklıydı, deneme cümlesi iki metindi
 
-Eksen **sınav sonuç ekranları**ydı. Deneme kâğıdının sonucu ölçüldü ve **zaten
+Eksen **sınav sonuç ekranları**ydı. Deneme sınavının sonucu ölçüldü ve **zaten
 eşitti** (yüzde + skor + hüküm + geçme notu, aynı sıra, geçme notu iki tarafta
 da `MOCK_PASS_PCT` sabitinden) — kapı orayı gerilemeyi tutmak için okuyor.
-İkisinde de kutlama yok ve bu bilinçli: kâğıdın bir **bölümü** bitiyor,
-kâğıdın kendisi değil.
+İkisinde de kutlama yok ve bu bilinçli: sınavın bir **bölümü** bitiyor,
+sınavın kendisi değil.
 
 **Seviye sınavında üç ayrışma vardı:**
 
@@ -11693,7 +11693,7 @@ Koç balonu ve sertifika bağlantısı ikisinde de zaten vardı.
 `parity-check` §232 dört listeyle ölçüyor: seviye sınavı sonucunun altı kalemi
 (kutlama, koç balonu, büyük yüzde, hüküm, deneme cümlesi, sertifika), üç
 parçanın **sırası** (konum karşılaştırması, metin değil), ölü anahtarların
-kalkmış olması ve deneme kâğıdının sonuç başı.
+kalkmış olması ve deneme sınavının sonuç başı.
 
 Bir not ölçümün kendisi hakkında: ilk anahtar diff'i `mockexam.passed`ı
 "yalnız mobilde" gösterdi ve bu **yanlıştı** — web `t(score.passed ?
@@ -12156,7 +12156,7 @@ ortalanmış tek bir sönük cümle.
 | Yüzey | Önce (iki platformda da) |
 |---|---|
 | Kelimeler | "Kelime bulunamadı." — ikon yok, sebep yok, çıkış yok |
-| Deneme kâğıtları | "{level} seviyesi için henüz deneme sınavı yok." |
+| Deneme sınavları | "{level} seviyesi için henüz deneme sınavı yok." |
 | Sınav istatistiği | "Henüz tamamlanmış bir deneme sınavın yok…" |
 | Patika | "Bu seviyede konuşma patikası henüz yok…" |
 | Kullanıcı arama sonucu | "Sonuç yok. Gizli profiller…" |
@@ -12170,7 +12170,7 @@ kabuğunda olmalı.
 var — hiç kelime yok, ya da süzgeçler her şeyi dışarıda bıraktı; ikincisinde
 çıkış yolu süzgeçleri kaldırmak ve bunu söylemeyen ekran kullanıcıyı listenin
 gerçekten boş olduğuna inandırıyordu (yeni `words.empty_sub` + süzgeç açıkken
-görünen "Süzgeçleri temizle" düğmesi). **Deneme kâğıtları** kâğıtların
+görünen "Süzgeçleri temizle" düğmesi). **Deneme sınavları** ekranı sınavların
 seviyeye bağlı olduğunu söylemiyordu, oysa seviye çubuğu kartın hemen
 üstünde duruyor. Sınav istatistiği ve Patika ise çıkış yolu kazandı (deneme
 sınavı listesi / Öğren).
@@ -12204,11 +12204,11 @@ Temizleme de Android'de X ikonu, webde metnin devamı gibi duran bir "Temizle"
 sözcüğüydü. Webde `SearchIcon` **hiç yoktu** — mobil `ui/icons.tsx`te
 duruyordu, aynı çizimin web karşılığı yazıldı.
 
-### Kâğıt bulunamadı: yanlış sebep
+### Sınav bulunamadı: yanlış sebep
 
-Mobilde tek taraflı bir hata çıktı. Bağlantıdaki kâğıt ya da bölüm
+Mobilde tek taraflı bir hata çıktı. Bağlantıdaki sınav ya da bölüm
 bulunamadığında `MockExamScreen` **"{level} seviyesi için henüz deneme sınavı
-yok"** yazıyordu. Sebep yanlış (kâğıtlar duruyor, bozuk olan bağlantı),
+yok"** yazıyordu. Sebep yanlış (sınavlar duruyor, bozuk olan bağlantı),
 üstelik `paper` da bulunamadığı için seviye **boş** basılıyordu:
 "&nbsp;seviyesi için henüz deneme sınavı yok". Geri dönüş yolu da yoktu; tek
 çıkış cihazın geri hareketiydi. Web aynı yolda `notFound()` çağırıp 404
@@ -12219,7 +12219,7 @@ sayfasını çiziyor. Artık Android'in kendi "bulunamadı" kalıbı var
 
 Yedi olgu: kabuğun duyuruyu iletmesi (mutlak), yedi yüzeyin boş hâlinin
 kabukta olması (iki platform ayrı listelerde, mutlak), beş hata çağrısının
-duyurması (iki platform), arama kutusunun işaretleri ve kâğıt bulunamadı
+duyurması (iki platform), arama kutusunun işaretleri ve sınav bulunamadı
 dalının doğru sebebi. Ölçü **düğüm**, pencere değil: boş hâl kartlarının
 içine düğme ve bağlantı giriyor, karakter mesafesi ölçü olamaz — işaretin
 kendi açılış etiketi derinlik/tırnak farkındaki `acilisSonu` ile okunuyor.
@@ -12263,7 +12263,7 @@ ikisi de yoktu:
 `useLeaveGuard` ikisini de aynı diyaloğa bağlıyor: yakalama `capture`
 evresinde, yalnız oturum sürerken; bağlantı tıklanınca varsayılan duruyor,
 hedef `pending`e yazılıyor, onaylanırsa yolculuk sürüyor. Beş oyuncu
-kullanıyor (tur, modül sınavı, yerleştirme, yürüyüş, deneme kâğıdı).
+kullanıyor (tur, modül sınavı, yerleştirme, yürüyüş, deneme sınavı).
 
 **Tarayıcı geri tuşu bilerek kapsam dışı.** Aynı belge içinde geçmişte geri
 gitmeyi durdurmak, geçmişe sahte bir kayıt eklemekle olur ve o kayıt
@@ -12371,7 +12371,7 @@ kotadan yer yer) ama üç sorun birden vardı, üçü de **her iki platformda**:
 1. **Sayı elle yazılıydı** — sekiz yerde `< 5`, üç yerde `< 2`. Hiçbir yerde
    adı geçmiyordu, yani iki platform sessizce ayrışabilirdi.
 2. **Sebep yazmıyordu.** Ekranda görünen sayaç **görevin** alt sınırını
-   söylüyor (`{n}/{min}`, kâğıda göre 40–120 kelime) ama düğmenin uyduğu sayı
+   söylüyor (`{n}/{min}`, sınava göre 40–120 kelime) ama düğmenin uyduğu sayı
    **başka**. Üç kelime yazan kullanıcı "3 / 40" görüyor ve ölü bir düğmeye
    bakıyor; beş kelimede düğme açılıyor ama sayaç hâlâ "yetersiz" diyor. Aynı
    ekranda iki farklı sayı.
@@ -12473,7 +12473,7 @@ yetmez, sayı tamamen kaldırılmış da olabilir).
 yorumunda yazılı ve ham kaynakta arayan bir ölçü onu "anahtar hâlâ var" diye
 okuyor. `sil()` ile yorumlar düşürülüyor artık.
 
-**Üç mevcut kapı onarıldı.** Seviye sınavı sonucu, deneme kâğıdı sonuç başı ve
+**Üç mevcut kapı onarıldı.** Seviye sınavı sonucu, deneme sınavı sonuç başı ve
 haftalık sonuç yerleşimi kapıları yüzdeyi `t("common.pct"` metniyle arıyordu
 ve üçü birden "yüzde YOK" dedi — yüzde kalkmamış, **biçimi** değişmişti. Aynı
 sınıf bu oturumda üçüncü kez çıktı (§228 `live`, §11.331 duyuru seviyesi):
@@ -12585,7 +12585,7 @@ Webde aynı denetim dört ayrı ölçüdeydi:
 |---|---|---|
 | Modül sınavı | 32 px | çapraz 16 |
 | Yerleştirme | 32 px | çapraz 16 |
-| Deneme kâğıdı | 36 px | çapraz 18 |
+| Deneme sınavı | 36 px | çapraz 18 |
 | Tur | 44 px | çapraz 22 (doğru olan) |
 | Tanıtım testi | 44 px `btn-ghost` | çapraz 20 |
 
@@ -12594,7 +12594,7 @@ alanını genişletiyor — ama **görünen** düğme küçüktü. Dokunma hedef
 görsel ölçü ayrı iki şey ve kapı yalnız birincisini tutuyordu.
 
 Beşi de `RoundExit`e taşındı; ölçü tek kaynakta. **Glif de ayrışıyordu:**
-deneme kâğıdının başlığı *listeye dönüyor*, ekranı kapatmıyor — Android orada
+deneme sınavının başlığı *listeye dönüyor*, ekranı kapatmıyor — Android orada
 geri oku çiziyor, web çaprazı. Bileşen artık `glyph` alıyor.
 
 ### Ayarlar dişlisi
@@ -12895,7 +12895,7 @@ yazan biri "Haus"u "House"a çevrilmiş buluyor, her kısa cevabın ilk harfi
 büyüyor.
 
 **On bir web alanı ve altı Android alanı** bu kuralı hiç söylemiyordu —
-özellikle sohbet alanları (konuşma, sohbet) ve deneme kâğıdının açık
+özellikle sohbet alanları (konuşma, sohbet) ve deneme sınavının açık
 görevleri, yani hedef dilde cümle yazılan yerlerin tamamı. Sohbet sohbeti
 ve biyografi **iki tarafta da** açıktı.
 
@@ -12964,7 +12964,7 @@ bu): **bir olguyu, onu taşımayan bir çıktıda aramak.**
 
 Eksen **çevrimdışı davranış**tı. Ölçüm önce altyapının **eşit** olduğunu
 doğruladı: cevap kuyruğu (tur cevapları ağ dönünce gönderiliyor), konuşma
-ilerlemesi kuyruğu, deneme kâğıdının yerel kaydı ve modelsiz sohbet iki
+ilerlemesi kuyruğu, deneme sınavının yerel kaydı ve modelsiz sohbet iki
 tarafta da var. İki ayrışma çıktı ve ikisi de **cümlede**.
 
 ### Yedeğin yedek olduğu
@@ -13744,13 +13744,13 @@ Bir de çevre notu: `check:pairs`, `test:mix`, `test:entitlement` yerel
 PostgreSQL, `test:walk` Playwright tarayıcısı istiyor. Bu makinede ikisi de
 yok; kırmızılıkları koddan değil ortamdan geliyor.
 
-## §11.392 — Deneme kâğıdının süresi arka planda duruyordu
+## §11.392 — Deneme sınavının süresi arka planda duruyordu
 
 Süreli her yüzeyin sayacı bir **zaman damgasından** okumalı, bir sayıcıyı
 azaltarak değil. Sebep basit: `setInterval` uygulama ya da sekme arka plana
 alınınca **duruyor** (tarayıcılar dakikada bire kadar kısıyor, mobil
 uygulamada tamamen duruyor). Sayıcı kullanılırsa süre **istenildiği kadar
-uzatılabilir** — ve süre sınavın kısıtı, kâğıdın kendisi kadar kuralın
+uzatılabilir** — ve süre sınavın kısıtı, soruların kendisi kadar kuralın
 parçası.
 
 Ölçüm dört süreli yüzey buldu; üçü zaten doğruydu:
@@ -13761,7 +13761,7 @@ parçası.
 | Patron · Meydan okuma | duvar saati (baştan beri `deadline` damgası) |
 | **Deneme sınavı** | **sayıcı — iki platformda birden** |
 
-Deneme kâğıdı görev başına bütçe işletiyor ve aynı satırı taşıyordu:
+Deneme sınavı görev başına bütçe işletiyor ve aynı satırı taşıyordu:
 `setInterval(() => setLeft((s) => s - 1), 1000)`. Üstelik yarım kalan koşu
 `secondsLeft` ile kaydedildiği için **kazanılan süre kalıcıydı**: uygulamayı
 arka plana atıp dönen öğrenci bir sonraki oturuma da o süreyle giriyordu.
@@ -13774,7 +13774,7 @@ damgadan okuyor ve arka plandan dönüşte ilk saniyeyi beklemeden düzeltiyor.
 En öğretici tarafı bu. Mevcut bir ölçü zaten tam bu şeye bakıyordu ve
 **yorumunda kusuru kural olarak yazıyordu**:
 
-> "Deneme kağıdında iki taraf da GOREV butcesini **sayıcıyla** işletiyor ve
+> "Deneme sınavında iki taraf da GOREV butcesini **sayıcıyla** işletiyor ve
 > kalan saniyeyi kaydediyor; kalıp birebir aynı olmalı."
 
 Ölçü eşitliği doğruluyordu — çünkü karşılaştırma **eşitliğe** bakar,
@@ -13798,7 +13798,7 @@ kapının kaybolması), üçü de yakalandı.
 §11.392'nin kardeşi ve aynı sınıf: **sınavın kısıtı yarım kalan koşuda
 korunmalı**.
 
-Dinleme görevinin kâğıtta yazılı bir oynatma bütçesi var (`st.plays`, çoğu
+Dinleme görevinin sınavda yazılı bir oynatma bütçesi var (`st.plays`, çoğu
 maddede bir ya da iki) ve iki taraf da onu **doğru uyguluyordu** — ama bütçe
 yalnız **ekranın belleğinde** tutuluyordu. Öğrenci bütçeyi tüketip uygulamayı
 kapatıp yeniden açınca (ya da sekmeyi kapatıp dönünce) bütçe **sıfırdan**
@@ -13842,7 +13842,7 @@ kaybolması, tavanın kalkması, sunucu yolunun silinmesi, bir kayıt yerinin
 
 ## §11.394 — Kural yazılıydı, üç yerden birinde uygulanıyordu
 
-Deneme kâğıdı ucunda üç eylem var — `save`, `assess`, `finish` — ve kural
+Deneme sınavı ucunda üç eylem var — `save`, `assess`, `finish` — ve kural
 deponun kendi yorumunda **yazılıydı**, `save` içinde:
 
 > "`state` koşulu bilerek: bitmiş bir denemenin cevapları değiştirilemez,
@@ -13850,9 +13850,9 @@ deponun kendi yorumunda **yazılıydı**, `save` içinde:
 
 Ötekilerde uygulanmıyordu.
 
-### `finish`: bitmiş kâğıt yeniden bitirilebiliyordu
+### `finish`: bitmiş sınav yeniden bitirilebiliyordu
 
-Güncelleme `state` koşulu taşımıyordu. Bitmiş bir kâğıt yeni cevaplarla
+Güncelleme `state` koşulu taşımıyordu. Bitmiş bir sınav yeni cevaplarla
 yeniden bitirilebiliyor, `score`/`passed`/`ai` üzerine yazılabiliyordu — oysa
 o puan **istatistik ekranının ve yönetim panosunun okuduğu kayıt**. Üstelik
 her çağrı yapay zekâ geri bildirimini yeniden üretiyor (kota) ve **ikinci bir
@@ -13868,10 +13868,10 @@ yiyordu.
 
 ### İkisi de idempotent
 
-Koruma "hata ver" değil: bitmiş kâğıt için **kayıtlı sonuç**, puanlanmış görev
+Koruma "hata ver" değil: bitmiş sınav için **kayıtlı sonuç**, puanlanmış görev
 için **mevcut puan** dönüyor. Yanıtı kaybolmuş bir isteğin tekrarı böylece
 hata almıyor — ama yeni bir şeye de yol açmıyor. `finish`te ayrıca yarışı
-kaybeden ikinci istek (arada başka bir çağrı kâğıdı bitirmişse) aynı yoldan
+kaybeden ikinci istek (arada başka bir çağrı sınavı bitirmişse) aynı yoldan
 geçiyor ve ikinci olay yazılmıyor.
 
 Sunucu tek olduğu için bu kusur **iki istemciyi de eşit** etkiliyordu; ölçü
@@ -14591,7 +14591,7 @@ aynı şekilde** eksikti — yani karşılaştırma geçiyordu:
   başlayabilir.
 
 Gerekçe zaten depoda yazılıydı, yalnız bir yerde: sınav oynatıcısının
-"haftanın kâğıdı geçici bir ağ kesintisiyle harcanabiliyordu" notu. Aynı
+"haftanın sınavı geçici bir ağ kesintisiyle harcanabiliyordu" notu. Aynı
 cümle bu iki yüzey için de geçerliydi. İkisinde de yükleme ayrı bir işleve
 çıkarıldı (`load`) ki hata dalından yeniden çağrılabilsin.
 
@@ -14896,15 +14896,15 @@ yazılıydı ama **hiçbir ölçü tutmuyordu**: kırk altı çağrı yerinden b
 dalında `role`/`live` vermeyi unutsa kimse görmezdi. Ölçüldüğünde iki platform
 da temiz çıktı; §289 o hâlin kilidi.
 
-### Gerçek eksik: deneme kâğıdı bulunamadığında
+### Gerçek eksik: deneme sınavı bulunamadığında
 
 Webin `mock-exams/[paper]/[skill]` sayfası üç durumda `notFound()` atıyor
-(kâğıt kimliği tanınmıyor, beceri adı listede değil, kâğıdın o becerisi yok)
+(sınav kimliği tanınmıyor, beceri adı listede değil, sınavın o becerisi yok)
 ve uygulamanın **genel** 404'ü çiziliyordu: "Sayfa bulunamadı" + Öğren'e dön.
 Kullanıcı **neyin** bulunamadığını ve ne yapacağını öğrenemiyordu — eski bir
-bağlantı mı, kaldırılmış bir kâğıt mı belli değildi.
+bağlantı mı, kaldırılmış bir sınav mı belli değildi.
 
-Android aynı durumda kâğıda özel kartı çiziyor (`MockExamScreen`, `!paper ||
+Android aynı durumda sınava özel kartı çiziyor (`MockExamScreen`, `!paper ||
 !part` dalı) ve metinler üç dilde **zaten vardı**, webde hiçbir yerden
 çağrılmıyordu — yani üç ölü dizgi. Bölüm artık kendi `not-found.tsx`sini
 taşıyor: kırmızı karo, `XIcon`, `role="alert"` (Android `live="assertive"`) ve
@@ -14919,7 +14919,7 @@ devam etmesi kartın çizilmesinin **ön koşulu**.
 Beş ölçü: kart çağrılarının **okunabildiği** (okunamazsa "sessiz hata yok" boş
 bir doğru olur), **mutlak** olarak hata dalındaki her kartın duyurduğu, iki
 tarafta da gerçekten **hata dalı bulunduğu** (yoksa bir önceki ölçü hiçbir şey
-ölçmez), kâğıt kartının üç metninin iki platformda da olduğu ve kartın
+ölçmez), sınav kartının üç metninin iki platformda da olduğu ve kartın
 duyurduğu.
 
 ## §11.415 — Parite betiği `mobile/ios` altına hiç bakmıyordu
@@ -15425,9 +15425,9 @@ listesi** ile yapılıyor (`components/session-keeper` `ACCOUNT_SCOPED_PREFIXES`
 mobilde `lib/accountScope` aynı ad).
 
 Web listesindeki kalıpların hepsi `lernomi-` önekliydi. Deneme sınavının yarım
-koşusu ise `lernomi:mock-run:<kâğıt>:<bölüm>` anahtarına yazılıyor
+koşusu ise `lernomi:mock-run:<sınav>:<bölüm>` anahtarına yazılıyor
 (`components/mock-exam-player` `runKey`) — **iki nokta üstü üste ile**. Yani
-`startsWith` ile hiçbir kalıp tutmuyordu: A çıkıp B girdiğinde B, kâğıdı
+`startsWith` ile hiçbir kalıp tutmuyordu: A çıkıp B girdiğinde B, sınavı
 açtığında A'nın cevaplarını ve kalan süresini kaldığı yerden devralıyor,
 bitirdiğinde de o sınavı **kendi** hesabına gönderiyordu.
 
@@ -15475,11 +15475,11 @@ artık var olmayan bir ad eklemek.
 Android'de bulunamayan içerik ekranın **kendi kabuğunun içinde** ve neyin
 bulunamadığını **adıyla** söyleniyor: olmayan konuşma üzgün mirket + "Bu konuşma
 bulunamadı" (`ConversationScreen` `!conversation` dalı, aynı anahtarı `ConversationScoredScreen`
-de kullanıyor), olmayan kâğıt kırmızı kart (`MockExamScreen`), kapalı profil
+de kullanıyor), olmayan sınav kırmızı kart (`MockExamScreen`), kapalı profil
 boş kart (`UserScreen`).
 
 Webde aynı adresler `notFound()` atıyor ve Next en **yakın** `not-found.tsx`'i
-çiziyor. Üç durumdan yalnız ikisinin kendi 404'ü vardı (kâğıt §11.419'da,
+çiziyor. Üç durumdan yalnız ikisinin kendi 404'ü vardı (sınav §11.419'da,
 profil daha önce). Tanınmayan bir konuşma kimliği (`/conversations/<id>` ve
 `/conversations/<id>/exam`) kökteki genel 404'e düşüyordu — iki kayıpla birlikte:
 
@@ -17648,7 +17648,7 @@ gönderdiği parametre kümeleri eşit çıktı. Üç görünür fark da açıkl
    göndereni yok. Yorumlar "mobil `free_sentence` gönderiyor" diyordu ve bu
    **artık doğru değil**: mobil o turu oynuyor ve süzgeci kaldırdı (sunucu o
    bayrakla kendi `typing` yedeğine düşüyordu, yani haftalık sınav Android'de
-   hep daha kolay bir kâğıtla yapılıyordu). Yorumlar düzeltildi — **yetenek
+   hep daha kolay bir sınavla yapılıyordu). Yorumlar düzeltildi — **yetenek
    kaldı**, çünkü "istemci bu turu oynayamıyor" gerçek bir kısıt ve süzgeç
    `pickRound`da çalışıyor.
 

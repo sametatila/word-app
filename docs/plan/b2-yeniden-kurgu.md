@@ -60,7 +60,7 @@ bağımsız çalışır.
 
 **(d) Seviye sınavı okuma/dinlemeyi beceri bankasından çeker.** Modül sınavı
 kendi planından beslenir, beceri içeriğine bakmaz. Detay: A2 briefi §10.
-**Önemli:** sınav kâğıdı soruyu yalnız şıklara basarak çiziyor. Boşluk doldurma,
+**Önemli:** sınav soruyu yalnız şıklara basarak çiziyor. Boşluk doldurma,
 kısa cevap ve dikte sorularının `options` alanı boştur; `exam.ts` bunları artık
 süzüyor (93c5db8), ama bu demektir ki **yazılı sorular sınava girmez** —
 sınav malzemesi çoktan seçmeli sorulardan gelir. Her egzersizde en az bir
