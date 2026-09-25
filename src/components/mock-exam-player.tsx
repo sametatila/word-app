@@ -8,6 +8,8 @@ import { dialogueSegments, prefetchSegments, speakSegments, stopSpeaking } from 
 import { SpeakerIcon, MicIcon, CheckIcon, ExamIcon, ClockIcon, ArrowRightIcon, ArrowLeftIcon, RefreshIcon, AlertIcon } from "@/components/icons";
 import { FlowColumn, FlowActions, FlowNote, CoverBody, StateBody, ResultHero, StatRow, DetailCard } from "@/components/flow";
 import { ConfirmDialog } from "@/components/confirm-dialog";
+import { ReportDialog } from "@/components/report-dialog";
+import { AiNotice } from "@/components/ai-notice";
 import { MIN_ASSESS_WORDS } from "@/lib/assess-const";
 import { RoundExit } from "@/components/round-exit";
 import { useLeaveGuard } from "@/lib/use-leave-guard";
@@ -466,7 +468,7 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
         </FlowColumn>
       );
     }
-    return <Result paper={paper} part={part} eyebrow={eyebrow} answers={answers} open={open} openScores={openScores} result={result} reveal={reveal} onReveal={(id) => setReveal((r) => ({ ...r, [id]: true }))} />;
+    return <Result attemptId={attempt?.id ?? null} paper={paper} part={part} eyebrow={eyebrow} answers={answers} open={open} openScores={openScores} result={result} reveal={reveal} onReveal={(id) => setReveal((r) => ({ ...r, [id]: true }))} />;
   }
 
   /** Cevaplanmamış kapalı uçlu madde sayısı — bırakma uyarısında geçiyor. */
@@ -894,7 +896,7 @@ function OpenTask({
       </p>
 
       {score ? (
-        <OpenResult score={score} />
+        <OpenResult score={score} refId={`mock:${attemptId ?? "local"}:${task.id}`} answer={value} />
       ) : (
         <>
           {/* SEBEP YAZIYOR (bkz. `exam-player`): üstteki sayaç görevin alt
@@ -1132,7 +1134,7 @@ function SpeakingTask({
             {t(micErr ? "mockexam.mic_failed" : voiceOff ? "mockexamw.voice_not_sent" : "mockexamw.transcript_note")}
           </p>
           {score ? (
-            <OpenResult score={score} />
+            <OpenResult score={score} refId={`mock:${attemptId ?? "local"}:${task.id}`} answer={value} />
           ) : (
             <>
               {/* TABAN KELIME, KARAKTER DEĞİL. Burada `length < 5` yazıyordu:
@@ -1154,9 +1156,15 @@ function SpeakingTask({
   );
 }
 
-function OpenResult({ score }: { score: OpenScore }) {
+/**
+ * Yazma/konuşma görevinin yapay zekâ sonucu. Altında yapay zekâ etiketi ve
+ * "Bildir" var (denetim İ2; mobil `MockExamScreen` `OpenResult` ile aynı ref
+ * biçimi: "mock:<deneme>:<görev>").
+ */
+function OpenResult({ score, refId, answer }: { score: OpenScore; refId: string; answer: string }) {
   const t = useT();
   const lang = useLang();
+  const [reporting, setReporting] = useState(false);
   if (score.score == null) {
     return <p className="muted mt-3 text-body leading-relaxed">{t(score.consent ? "assess.fail_consent" : "mockexam.ai_off")}</p>;
   }
@@ -1168,6 +1176,11 @@ function OpenResult({ score }: { score: OpenScore }) {
       {(score.errors ?? []).slice(0, 5).map((e, i) => (
         <p key={i} className="muted mt-1 text-body">{e.wrong} → {e.right}{e.why_tr ? ` · ${e.why_tr}` : ""}</p>
       ))}
+      <AiNotice variant="output" className="mt-3" />
+      <button type="button" onClick={() => setReporting(true)} className="muted mt-2 text-micro underline underline-offset-2 hit-8">
+        {t("writings.report_this_feedback")}
+      </button>
+      <ReportDialog open={reporting} kind="assessment" refId={refId} content={JSON.stringify({ answer, result: score })} onClose={() => setReporting(false)} />
     </div>
   );
 }
@@ -1198,8 +1211,9 @@ function shortBy(score: Score): number {
  * geri getiriyor. Mobil aynı iki görünümü çiziyor.
  */
 function Result({
-  paper, part, eyebrow, answers, open, openScores, result, reveal, onReveal,
+  paper, part, eyebrow, answers, open, openScores, result, reveal, onReveal, attemptId,
 }: {
+  attemptId: number | null;
   paper: MockPaper;
   part: MockPart;
   eyebrow: ReactNode;
@@ -1241,7 +1255,7 @@ function Result({
                       <p className="mt-1 whitespace-pre-line text-body leading-relaxed" lang={paper.course}>{open[task.id]}</p>
                     </>
                   ) : null}
-                  {openScores[task.id] ? <OpenResult score={openScores[task.id]} /> : null}
+                  {openScores[task.id] ? <OpenResult score={openScores[task.id]} refId={`mock:${attemptId ?? "local"}:${task.id}`} answer={open[task.id] ?? ""} /> : null}
                   <p className="muted mt-3 text-caption tracking-wide">{t("mockexam.criteria")}</p>
                   {task.rubric.criteria.map((c, i) => <p key={i} className="muted mt-1 text-body leading-relaxed">• {c}</p>)}
                   {reveal[task.id] ? (

@@ -50,6 +50,8 @@ import { askAiConsentUpfront } from "../lib/aiConsent";
 import type { RootStackParams } from "../navigation/RootStack";
 import { useTheme, spacing, radii, type Palette, ds } from "../theme";
 import { isAccountRequired } from "../lib/guest";
+import { AiNotice } from "../ui/AiNotice";
+import { ReportLink } from "../ui/ReportLink";
 import { useAuth } from "../lib/AuthContext";
 
 /**
@@ -511,6 +513,7 @@ export function MockExamScreen() {
     }
     return (
       <ResultView
+        attemptId={attempt?.id ?? null}
         course={paper.course}
         eyebrow={eyebrow}
         part={part}
@@ -987,7 +990,7 @@ function WritingTask({
       </Text>
 
       {score ? (
-        <OpenResult score={score} colors={colors} />
+        <OpenResult score={score} colors={colors} refId={`mock:${attemptId ?? "local"}:${task.id}`} answer={value} />
       ) : guest ? (
         /* MİSAFİR: düğme kesin 403 alacaktı; yerine nedeni ve örnek cevabın yeri. */
         <View style={{ marginTop: spacing.md }}><FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={t("guest.mock_ai_task")} /></View>
@@ -1012,7 +1015,12 @@ function WritingTask({
   );
 }
 
-function OpenResult({ score, colors }: { score: OpenScore; colors: Palette }) {
+/**
+ * Yazma ve konuşma görevinin yapay zekâ sonucu. Altında yapay zekâ etiketi ve
+ * "Bildir" var (denetim İ2): öteki yapay zekâ çıktılarında olduğu gibi çıktının
+ * olduğu yerde bildirilebiliyor. Ref "mock:<deneme>:<görev>".
+ */
+function OpenResult({ score, colors, refId, answer }: { score: OpenScore; colors: Palette; refId: string; answer: string }) {
   if (score.score == null) {
     return <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>{t(score.reason === "account" ? "assess.fail_account" : "mockexam.ai_off")}</Text>;
   }
@@ -1030,6 +1038,8 @@ function OpenResult({ score, colors }: { score: OpenScore; colors: Palette }) {
           {e.wrong} → {e.right}{e.why_tr ? ` · ${e.why_tr}` : ""}
         </Text>
       ))}
+      <AiNotice variant="output" style={{ marginTop: spacing.sm }} />
+      <ReportLink kind="assessment" refId={refId} content={JSON.stringify({ answer, result: score })} style={{ alignSelf: "flex-end", marginTop: spacing.xs }} />
     </View>
   );
 }
@@ -1224,7 +1234,7 @@ function SpeakingTask({
               yapıyor (`mic_failed` / `transcript_note`). */}
           <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t(micOk === false ? "mockexam.mic_failed" : "mockexam.transcript_note")}</Text>
           {score ? (
-            <OpenResult score={score} colors={colors} />
+            <OpenResult score={score} colors={colors} refId={`mock:${attemptId ?? "local"}:${task.id}`} answer={value} />
           ) : guest ? (
             <View style={{ marginTop: spacing.md }}><FlowNote icon={<LockIcon color={colors.textMuted} size={16} />} text={t("guest.mock_ai_task")} /></View>
           ) : (
@@ -1282,9 +1292,10 @@ function shortBy(score: MockScore): number {
  * çubuk sonuca geri getiriyor. Web aynı iki görünümü çiziyor.
  */
 function ResultView({
-  course, eyebrow, part, answers, open, openScores, score, ai, offline, reveal, colors, onReveal, onBack,
+  course, eyebrow, part, answers, open, openScores, score, ai, offline, reveal, colors, onReveal, onBack, attemptId,
 }: {
   course: MockCourse;
+  attemptId: number | null;
   eyebrow: string;
   part: MockPart;
   answers: Answers;
@@ -1332,7 +1343,7 @@ function ResultView({
                     <Text variant="body" style={{ marginTop: spacing.xs }}>{open[task.id]}</Text>
                   </>
                 ) : null}
-                {openScores[task.id] ? <OpenResult score={openScores[task.id]} colors={colors} /> : null}
+                {openScores[task.id] ? <OpenResult score={openScores[task.id]} colors={colors} refId={`mock:${attemptId ?? "local"}:${task.id}`} answer={open[task.id] ?? ""} /> : null}
                 <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.md }}>{t("mockexam.criteria")}</Text>
                 {task.rubric.criteria.map((c, i) => (
                   <Text key={i} variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>• {c}</Text>
