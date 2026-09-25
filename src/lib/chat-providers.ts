@@ -616,10 +616,15 @@ export function sttProviders(mode: SttMode = "default"): SttProvider[] {
   if (dgKey) {
     out.push({ name: "deepgram", dialect: "deepgram", baseUrl: "https://api.deepgram.com/v1/listen", key: dgKey, model: process.env.DEEPGRAM_STT_MODEL || "nova-3" });
   }
-  const mistral = process.env[CATALOG.mistral.envKey];
-  if (mistral && CATALOG.mistral.sttModel) {
-    out.push({ name: "mistral", dialect: "openai", baseUrl: CATALOG.mistral.baseUrl, key: mistral, model: (CATALOG.mistral.sttEnvModel && process.env[CATALOG.mistral.sttEnvModel]) || CATALOG.mistral.sttModel });
-  }
+  /*
+    MİSTRAL SES ZİNCİRİNDE YOK (2026-09-25, denetim G5). Mistral API girdiyi
+    kötüye kullanım izlemesi için 30 gün saklıyor; sıfır saklama yalnız Scale
+    planında. Oysa ses beyanlarımız (App Store "Audio: hayır", Play "geçici")
+    sağlayıcıda kalıcı ses olmamasına dayanıyor. Son yedekti; çıkması zinciri
+    düşürmüyor. Katalogdaki `sttModel` ve `MISTRAL_STT_MODEL` bilerek duruyor:
+    geri eklenecekse önce sıfır saklama, sonra alıcılar tablosu ve ses rızası
+    sürümü (lib/legal PROCESSORS, ai-consent-shared).
+  */
   if (mode === "walk") {
     /*
       Ekran-kapalı/cep yolu (mobil native): modül 16 kHz mono WAV yolluyor

@@ -37,7 +37,8 @@ export type AiConsentPurpose = (typeof AI_CONSENT_PURPOSES)[number];
 /** Yürürlükteki metin sürümü — rıza bu sayı ve üstüyle verilmişse geçerli. */
 export const AI_CONSENT_VERSIONS: Record<AiConsentPurpose, number> = {
   ai_text: 1,
-  ai_voice: 1,
+  /* 2 (2026-09-25): Mistral AI ses alıcılarından çıktı (denetim G5). */
+  ai_voice: 2,
 };
 
 /**
@@ -46,7 +47,7 @@ export const AI_CONSENT_VERSIONS: Record<AiConsentPurpose, number> = {
  */
 export const AI_CONSENT_FINGERPRINT: Record<AiConsentPurpose, string> = {
   ai_text: "Cerebras|Groq|Mistral AI",
-  ai_voice: "Cloudflare Workers AI|Deepgram|Groq|Microsoft Azure Speech|Mistral AI|Speechmatics",
+  ai_voice: "Cloudflare Workers AI|Deepgram|Groq|Microsoft Azure Speech|Speechmatics",
 };
 
 /** Uçların rıza yokken döndürdüğü hata kodu (403 gövdesinde `error`). */

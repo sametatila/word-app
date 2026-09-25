@@ -157,9 +157,14 @@ import { DAILY_QUOTAS } from "@/lib/quotas";
  * (hazırlık giriş ekranında, sonuç "Hesapsız devam et"te) ve "toplanan cihaz
  * tanımlayıcıları" cümlesi bu kontrolü de anıyor (denetim G2, G3). Toplanan veri,
  * alıcılar ve süreler aynı — yama basamağı.
+ *
+ * 1.8.4 (2026-09-25) işleme DARALDI: Mistral AI artık ses almıyor, yalnız dil
+ * modeli (denetim G5: Mistral API girdiyi 30 gün saklıyor). Yeni alıcı ya da yeni
+ * veri yok, bir alıcıya giden veri azaldı — yama basamağı. Ses rızası sürümü 2
+ * (liste değişti; yürüyüşteki izin bir kez yeniden soruluyor).
  */
 export const LEGAL_EFFECTIVE_DATE = "2026-09-25";
-export const LEGAL_VERSION = "1.8.3";
+export const LEGAL_VERSION = "1.8.4";
 
 export const LEGAL_ENTITY = {
   /** Hizmet sağlayıcı, veri sorumlusu ve yayıncı: tek gerçek kişi (Türkiye'de yerleşik). */
@@ -388,6 +393,22 @@ export type LegalChangelogEntry = {
 };
 
 export const LEGAL_CHANGELOG: readonly LegalChangelogEntry[] = [
+  {
+    /* YAMA BASAMAĞI: bir alıcıya giden veri azaldı; yeni alıcı ya da veri yok. */
+    version: "1.8.4",
+    date: "2026-09-25",
+    changes: {
+      tr: [
+        "Alıcılar: Mistral AI artık ses kaydı almıyor; yalnız dil modeli olarak konuşma ve değerlendirme metinlerini işliyor. Ekran kapalı yürüyüşteki konuşma tanıma sağlayıcıları listesi buna göre kısaldı, bu yüzden ses izni bir kez yeniden soruluyor.",
+      ],
+      en: [
+        "Recipients: Mistral AI no longer receives audio recordings; it only processes conversation and assessment texts as a language model. The list of speech recognition providers for walk mode with the screen off is shorter accordingly, so the audio permission is asked once more.",
+      ],
+      de: [
+        "Empfänger: Mistral AI erhält keine Audioaufnahmen mehr; es verarbeitet nur noch Gesprächs- und Bewertungstexte als Sprachmodell. Die Liste der Spracherkennungsanbieter für den Gehmodus bei ausgeschaltetem Bildschirm ist entsprechend kürzer, daher wird die Audio-Einwilligung einmal erneut abgefragt.",
+      ],
+    },
+  },
   {
     /* YAMA BASAMAĞI: anlatım netleşti; veri, alıcı, süre ve kural aynı. */
     version: "1.8.3",
@@ -774,7 +795,6 @@ const PURPOSES = {
   sttWhisperLlm: { tr: "Konuşma tanıma (Whisper) ve dil modeli", en: "Speech recognition (Whisper) and language model", de: "Spracherkennung (Whisper) und Sprachmodell" },
   sttWhisper: { tr: "Konuşma tanıma (Whisper)", en: "Speech recognition (Whisper)", de: "Spracherkennung (Whisper)" },
   stt: { tr: "Konuşma tanıma", en: "Speech recognition", de: "Spracherkennung" },
-  sttLlm: { tr: "Konuşma tanıma ve dil modeli", en: "Speech recognition and language model", de: "Spracherkennung und Sprachmodell" },
   llm: { tr: "Dil modeli", en: "Language model", de: "Sprachmodell" },
   googleSignIn: { tr: "Google ile giriş", en: "Sign-in with Google", de: "Anmeldung mit Google" },
   appleSignIn: { tr: "Apple ile giriş", en: "Sign-in with Apple", de: "Anmeldung mit Apple" },
@@ -1025,7 +1045,8 @@ export const PROCESSORS: Processor[] = [
   { name: "Cloudflare Workers AI", purpose: "sttWhisper", data: "audio", region: "globalNetwork", safeguard: "scc" },
   { name: "Speechmatics", purpose: "stt", data: "audio", region: "uk", safeguard: "ukAdequacy" },
   { name: "Deepgram", purpose: "stt", data: "audio", region: "us", safeguard: "scc" },
-  { name: "Mistral AI", purpose: "sttLlm", data: "audioAndTexts", region: "eu", safeguard: "euAdequacy" },
+  /* Ses almıyor (2026-09-25, G5): yalnız dil modeli. */
+  { name: "Mistral AI", purpose: "llm", data: "texts", region: "eu", safeguard: "euAdequacy" },
   { name: "Cerebras", purpose: "llm", data: "texts", region: "us", safeguard: "providerTerms" },
   { name: "Google (Sign-In)", purpose: "googleSignIn", data: "googleIdentity", region: "us", safeguard: "independentController", when: "googleSignInChosen" },
   /*
