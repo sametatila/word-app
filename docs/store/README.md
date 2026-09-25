@@ -87,8 +87,16 @@ kurs; en-US: İngilizce arayüz + Almanca kurs; de-DE: Almanca arayüz + İngili
 gerçek hesap, yer tutucu veri yok; sınav markası yok; Premium özellik altyazıda "Premium"
 der (2.3.2). Aşağıdaki "Kurallar" bölümü de geçerli.
 
-**Açık (sonraki soru-cevap):** açıklama metinleri, Play öne çıkan grafik
-(1024×500), ikon/maskot kullanımı, App Preview videosu (`docs/appstore/listing.md` §7 karar 3).
+**Görsel kararlar (2026-09-25, Samet):**
+- Play öne çıkan grafik (1024×500): mirket maskot + "Konuş, anla, sınava hazırlan", marka
+  renklerinde, az yazı.
+- Maskot ekran görüntülerinde YALNIZ 1. karede (Patika), küçük bir vurgu olarak; öteki kareler
+  yalnız uygulama ekranı + altyazı.
+- App Store tanıtım videosu (App Preview) GÖNDERİLECEK ama şimdi değil (Cepte yürüyüş + Konuşma,
+  gerçek cihazda; aynı çekim Play ön plan servisi beyanı videosu için de kullanılabilir, AND-3).
+
+**Açık (sonraki soru-cevap):** tam açıklama metinleri (tr/en/de), yeni kurallara göre yeniden
+doğrulanacak.
 
 ## Yeniden üretmek
 
