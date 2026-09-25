@@ -206,7 +206,7 @@ export const tr: Record<string, string> = {
   "coach.exam_intro_4": "Süre yeterli; hızlı değil, dikkatli ol.",
   "coach.exam_intro_5": "Takıldığın soruda durma, sonrakine geç — geri dönüş yok ama zaman var.",
   "coach.exam_pass_1": "%{pct} — geçtin! Bu sınav artık senin, başarı belgeni aç.",
-  "coach.exam_pass_2": "Geçtin! %{pct} ile {level} artık resmen senin.",
+  "coach.exam_pass_2": "Geçtin! %{pct} ile {level} yolunda sağlam bir adım attın.",
   "coach.exam_pass_3": "İşte bu! %{pct}. Zor bölümler bile eşiğin üstünde kaldı.",
   "coach.exam_pass_4": "Tebrikler, {name}! Sınavdan %{pct} çıktı, hak edilmiş.",
   "coach.exam_pass_5": "Geçtin — %{pct}. Şimdi sıradaki seviyenin konuşmaları seni bekliyor.",

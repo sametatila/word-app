@@ -201,7 +201,7 @@ export const en: Record<string, string> = {
   "coach.exam_intro_4": "There's enough time; be careful, not fast.",
   "coach.exam_intro_5": "Don't get stuck on a question, move on — there's no going back, but there is time.",
   "coach.exam_pass_1": "{pct}% — you passed! This exam is yours; open your certificate of achievement.",
-  "coach.exam_pass_2": "You passed! With {pct}%, {level} is now officially yours.",
+  "coach.exam_pass_2": "You passed! With {pct}%, you took a solid step in {level}.",
   "coach.exam_pass_3": "There it is! {pct}%. Even the hard sections stayed above the threshold.",
   "coach.exam_pass_4": "Congratulations, {name}! {pct}% on the exam, and well earned.",
   "coach.exam_pass_5": "You passed — {pct}%. The next level's conversations are waiting.",

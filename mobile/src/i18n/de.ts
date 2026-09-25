@@ -201,7 +201,7 @@ export const de: Record<string, string> = {
   "coach.exam_intro_4": "Die Zeit reicht; sei sorgfältig, nicht schnell.",
   "coach.exam_intro_5": "Bleib bei keiner Frage hängen, geh weiter — zurück geht es nicht, aber Zeit ist da.",
   "coach.exam_pass_1": "{pct} % — bestanden! Die Prüfung gehört dir; öffne deinen Leistungsnachweis.",
-  "coach.exam_pass_2": "Bestanden! Mit {pct} % gehört dir {level} jetzt offiziell.",
+  "coach.exam_pass_2": "Bestanden! Mit {pct} % hast du auf {level} einen großen Schritt gemacht.",
   "coach.exam_pass_3": "Da ist es! {pct} %. Selbst die schweren Teile lagen über der Schwelle.",
   "coach.exam_pass_4": "Glückwunsch, {name}! {pct} % in der Prüfung, verdient.",
   "coach.exam_pass_5": "Bestanden — {pct} %. Die Gespräche der nächsten Stufe warten.",
