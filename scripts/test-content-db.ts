@@ -15,9 +15,7 @@ import {
   pointer,
   readItem,
 } from "@/lib/content/read";
-import { legacyNativeManifest } from "@/lib/legacy-names";
 import { FULL_PACK } from "@/lib/content/ids";
-import { packItemsAt } from "@/lib/content/serve";
 
 /**
  * İÇERİK TESLİM HATTININ VERİTABANI TESTİ.
@@ -186,15 +184,7 @@ async function main() {
     await disableItem("conversations/de-b1", "de-b1-bewerbung", "broken", by);
     check("kapatılan konuşma webde de kapalı", await conversationDisabled("de-b1-bewerbung"));
     check("kapatılmamış konuşma açık", !(await conversationDisabled("de-b1-lebenslauf")));
-    /* Build 6 aynı maddeyi eski paket adıyla tutuyor (geçici, lib/legacy-names). */
-    check("kapatma göstergede eski paket adıyla da var", (await pointer()).d.includes("lessons/de-b1:de-b1-bewerbung"));
-    {
-      const m = legacyNativeManifest("native/de", { r: 2, p: "native/de", f: { h: "arsiv", b: 9 }, i: [{ i: "conversation", h: "H", b: 1 }], x: ["lesson"] });
-      check(
-        "build 6 anadil manifesti: eski madde adı aynı hash'le, arşiv yok, düşen listesinde değil",
-        m.f === null && m.i.some((e) => e.i === "lesson" && e.h === "H") && !m.x.includes("lesson"),
-      );
-    }
+    check("kapatma göstergede tek paket adıyla", (await pointer()).d.filter((k) => k.endsWith(":de-b1-bewerbung")).length === 1);
     await enableItem("conversations/de-b1", "de-b1-bewerbung");
 
     await disableItem("skills/de-a1", "a1-u1-r1", "reported", by);
@@ -247,19 +237,6 @@ async function main() {
     invalidatePointer();
     check("gösterge yeni sürümü işaret ediyor", (await pointer()).r === future.version);
     check("alınacak taslak kalmadı", (await promoteDueDrafts(by)).promoted === null);
-
-    /* 13. DEPLOY PENCERESİ — canlı sürümde yalnız eski adlı Konuşma paketi varken
-       yeni kod yeni adla okuyabiliyor mu (geçici, lib/legacy-names). */
-    const oldOnly = await publish(
-      new Map([["lessons/tests-a1", pack({ "tests-a1-x": { id: "tests-a1-x", roleplay: { scene: "s" } } })]]),
-      { by, note: "eski adlı paket", live: false },
-    );
-    const viaNew = await packItemsAt<Record<string, unknown>>(oldOnly.version, "conversations/tests-a1");
-    check(
-      "yeni ad eski adlı paketi okuyor, sohbet alanı yeni adla",
-      viaNew.length === 1 && !!viaNew[0].chat && !("roleplay" in viaNew[0]),
-      JSON.stringify(viaNew),
-    );
   } finally {
     await restore(previousLive);
   }

@@ -30,7 +30,6 @@ import { ORDER_ITEM } from "../src/lib/content/ids";
 import { conversationPack, mockIndexPack, paperPack, skillPack, type PackCourse } from "../src/lib/content/packs";
 import { catalogEntry } from "../src/lib/mock-exams/deliver";
 import { publish, type PackInput } from "../src/lib/content/publish";
-import { legacyConversationItem, legacyPackName } from "../src/lib/legacy-names";
 
 const COURSES = ["de", "en"] as const;
 
@@ -78,12 +77,6 @@ function collect(): Map<string, PackInput> {
       if (rows.length === 0) continue;
       const name = conversationPack(course as PackCourse, pack.level);
       packs.set(name, withOrder(rows));
-      /* GEÇİCİ: build 6 aynı içeriği eski paket adıyla ve eski alan adıyla
-         (`roleplay`) istiyor. Gövdeler hash adresli olduğu için ikinci paket
-         yalnız farklı baytları taşıyor; build 7 herkese ulaşınca silinecek
-         (lib/legacy-names). */
-      const old = legacyPackName(name);
-      if (old) packs.set(old, withOrder(rows.map((r) => legacyConversationItem(r as WithId & { chat?: unknown }) as unknown as WithId)));
     }
 
     /* BECERİ ALIŞTIRMALARI — seviye başına paket. Mobilde bugün tek dosya

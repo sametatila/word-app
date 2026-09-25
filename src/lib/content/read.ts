@@ -3,7 +3,6 @@ import { and, eq, inArray, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { contentFlags, contentItems, contentReleaseItems, contentReleases } from "@/lib/db/schema";
 import { FULL_PACK, flagKey, isGatedPack } from "./ids";
-import { legacyPackName } from "@/lib/legacy-names";
 import { conversationPack, levelOfId, packCourseOfId, paperPack, skillPack } from "./packs";
 
 /**
@@ -54,14 +53,7 @@ export async function pointer(): Promise<Pointer> {
     const flags = await db.select({ pack: contentFlags.pack, item: contentFlags.item }).from(contentFlags);
     const value: Pointer = {
       r: live?.version ?? 0,
-      /* Kapatılan Konuşma adımı eski paket adıyla da bildiriliyor: build 6
-         aynı maddeyi `lessons/` önekiyle tutuyor (geçici, lib/legacy-names). */
-      d: flags
-        .flatMap((f) => {
-          const old = legacyPackName(f.pack);
-          return old ? [flagKey(f.pack, f.item), flagKey(old, f.item)] : [flagKey(f.pack, f.item)];
-        })
-        .sort(),
+      d: flags.map((f) => flagKey(f.pack, f.item)).sort(),
     };
     pointerCache = { at: now, value };
     return value;
