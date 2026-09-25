@@ -1,7 +1,9 @@
 import { NextResponse } from "next/server";
 import { getUserInfo } from "@/lib/auth/server";
 import { premiumConfig, premiumCopy, resolveEntitlement } from "@/lib/premium";
-import { canPocketWalk, canAiPractice } from "@/lib/premium/access";
+import { canPocketWalk, unlockOverview } from "@/lib/premium/access";
+import { DAILY_QUOTAS } from "@/lib/quotas";
+import type { PremiumConfig } from "@/lib/premium/gates";
 import { referralStats } from "@/lib/premium/referral";
 import { GUEST_AI_TRIAL_KEY, GUEST_AI_TRIALS } from "@/lib/auth/guest";
 import { getUsage } from "@/lib/premium/quota";
@@ -21,11 +23,12 @@ export const dynamic = "force-dynamic";
  * uygulama açılışında hepsi birden gerekiyor ve dört ayrı istek dört ayrı
  * gecikme demek.
  *
- * `level` sorgu parametresi ücretsiz ders kotasının hangi seviyede sorulduğunu
- * söylüyor; verilmezse konuşma/yazma kotaları hesaplanmıyor (arayüz onları
- * ekranın kendisinde soruyor).
+ * KİLİT AÇMA GÖRÜNÜMÜ (`unlock`, 2026-09-25): her kotalı yüzey için kalan hak ve
+ * bir sonraki hakkın koşulları (bitir: x/y, seri: x/7, tahmini gün) — tüm
+ * seviyeler tek çağrıda. Hesap `lib/premium/unlock`ta; mobil ve web aynı
+ * sayıdan aynı cümleyi kuruyor. Eski `level` parametresi artık gerekmiyor.
  */
-export async function GET(req: Request) {
+export async function GET() {
   const who = await getUserInfo();
   const userId = who?.id ?? null;
   const cfg = await premiumConfig();
@@ -41,28 +44,29 @@ export async function GET(req: Request) {
         source: null,
         store: null,
         bonusDaysPending: 0,
-        limits: { free: cfg.free, fairUse: cfg.fairUse, mock: cfg.mock },
+        limits: limitsOf(cfg),
         plans: cfg.plans,
         copy,
         referral: null,
         guestAiLeft: null,
         gates: null,
+        unlock: null,
       },
       { headers: { "cache-control": "no-store" } },
     );
   }
 
-  const level = new URL(req.url).searchParams.get("level") ?? "";
-
   try {
     const ent = await resolveEntitlement(userId);
-    const [walk, referral, speaking, writing, guestAiUsed] = await Promise.all([
+    const [walk, referral, unlock, guestAiUsed] = await Promise.all([
       canPocketWalk(userId),
       /* Davet hesap istiyor (bkz. lib/auth/guest): misafire kod ÜRETİLMİYOR —
          üretilseydi o kodla ödeyen birinin ödülü misafire Premium yazardı. */
       who?.guest ? Promise.resolve(null) : referralStats(userId).catch(() => null),
-      level ? canAiPractice(userId, "speaking", "lesson", level) : Promise.resolve(null),
-      level ? canAiPractice(userId, "writing", "lesson", level) : Promise.resolve(null),
+      unlockOverview(userId).catch((err) => {
+        console.error("[premium/status] unlock", err);
+        return null;
+      }),
       who?.guest ? getUsage(userId, GUEST_AI_TRIAL_KEY, "all") : Promise.resolve(0),
     ]);
 
@@ -74,13 +78,16 @@ export async function GET(req: Request) {
         store: ent.store,
         /** Bekleyen hediye — "3 haftalık hakkın aboneliğin bitince başlayacak". */
         bonusDaysPending: ent.bonusDaysPending,
-        limits: { free: cfg.free, fairUse: cfg.fairUse, mock: cfg.mock },
+        limits: limitsOf(cfg),
         plans: cfg.plans,
         copy,
         referral,
         /* Misafirin kalan yapay zekâ deneme hakkı (bkz. lib/auth/guest); hesapta null. */
         guestAiLeft: who?.guest ? Math.max(0, GUEST_AI_TRIALS - guestAiUsed) : null,
-        gates: { pocket_walk: walk, speaking, writing },
+        /* `speaking`/`writing` eski sürümlerin alanı; hak artık seviye ve yüzey
+           başına ve `unlock`ta. Alan duruyor (null) ki eski istemci okurken düşmesin. */
+        gates: { pocket_walk: walk, speaking: null, writing: null },
+        unlock,
       },
       { headers: { "cache-control": "no-store" } },
     );
@@ -95,14 +102,32 @@ export async function GET(req: Request) {
         source: null,
         store: null,
         bonusDaysPending: 0,
-        limits: { free: cfg.free, fairUse: cfg.fairUse, mock: cfg.mock },
+        limits: limitsOf(cfg),
         plans: cfg.plans,
         copy,
         referral: null,
         guestAiLeft: null,
         gates: null,
+        unlock: null,
       },
       { status: 200, headers: { "cache-control": "no-store" } },
     );
   }
+}
+
+/**
+ * İstemciye giden sınırlar.
+ *
+ * `fairUse.chatTurnsPerDay` panelden değil sabit tavandan (`lib/quotas`): paywall
+ * ince yazısı üç tavanı birlikte söylüyor. `fairUse.pocketWalksPerDay` ESKİ
+ * SÜRÜMLER İÇİN takma ad — eski paywall "Cepte Yürüyüş — günde {n} tura kadar"
+ * cümlesini bu alanla kuruyor ve alan yoksa ekrana "undefined" basıyordu. Değeri
+ * artık gerçekten sayılan oturum tavanı.
+ */
+function limitsOf(cfg: PremiumConfig) {
+  return {
+    free: cfg.free,
+    fairUse: { ...cfg.fairUse, chatTurnsPerDay: DAILY_QUOTAS.roleplayTurns, pocketWalksPerDay: cfg.fairUse.walkSessionsPerDay },
+    mock: cfg.mock,
+  };
 }
