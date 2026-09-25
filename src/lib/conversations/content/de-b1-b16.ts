@@ -159,7 +159,7 @@ export const deB1B16: Conversation[] = [
     ],
     patterns: [
       { de: "Wissen Sie, ob …?", tr: "emin olmadığın bir şeyi sorar" },
-      { de: "Ich würde gern wissen, wie …", tr: "kibarca bilgi ister" },
+      { de: "Ich würde gern wissen, wie …", tr: "neyi merak ettiğini dolaylı yoldan söyler" },
     ],
     lecture: [
       { say: [tr("Merhaba! Bir uzmana danışacaksın. Uzmana soru sormanın kuralı var: doğrudan sormak değil, dolaylı sormak. Hazır mısın?")], expect: { kind: "confirm" } },
@@ -370,7 +370,7 @@ export const deB1B16: Conversation[] = [
       { de: "üblich", tr: "alışılmış" },
     ],
     patterns: [
-      { de: "Nachdem ich … hatte, …", tr: "önce olan olayı geriye alır" },
+      { de: "Nachdem ich … hatte, …", tr: "iş ararken bir adımdan sonra olanı anlatır" },
       { de: "Das ist hier üblich.", tr: "bir şeyin normal olduğunu söyler" },
     ],
     lecture: [

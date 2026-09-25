@@ -7,7 +7,7 @@
  { "conversation": "de-a1-alphabet", "de": "der Nachname", "en": "surname" },
  { "conversation": "de-a1-beruf", "de": "die Ärztin", "en": "doctor" },
  { "conversation": "de-a1-alter", "de": "alt", "en": "old" },
- { "conversation": "de-a1-haustiere", "de": "süß", "en": "cute" },
+ { "conversation": "de-a1-haustiere", "de": "süß", "en": "cute, sweet" },
  { "conversation": "de-a1-fotos", "de": "die Oma", "en": "grandma" },
  { "conversation": "de-a1-fotos", "de": "der Verwandte", "en": "relative" },
  { "conversation": "de-a1-plural", "de": "viele", "en": "many" },

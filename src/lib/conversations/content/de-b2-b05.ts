@@ -53,7 +53,7 @@ export const deB2B05: Conversation[] = [
       { de: "aufwendig", tr: "zahmetli" },
     ],
     patterns: [
-      { de: "die steigenden Preise", tr: "Partizip I: artmakta olan" },
+      { de: "die steigenden Preise", tr: "artmakta olan fiyatlar" },
       { de: "die laufenden Kosten", tr: "süregelen giderler" },
     ],
     lecture: [

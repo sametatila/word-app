@@ -7,7 +7,7 @@
  { "conversation": "de-b2-deadline", "de": "Sofern nichts dazwischenkommt, …", "en": "a conditional promise: if nothing comes up" },
  { "conversation": "de-b2-deadline", "de": "…, es sei denn, …", "en": "the one exception: unless" },
  { "conversation": "de-b2-homeoffice-regeln", "de": "Nach Absprache mit …", "en": "a condition in the form of a noun phrase" },
- { "conversation": "de-b2-homeoffice-regeln", "de": "Beim Arbeiten von zu Hause …", "en": "time expressed with a nominalised infinitive" },
+ { "conversation": "de-b2-homeoffice-regeln", "de": "Beim Arbeiten von zu Hause …", "en": "says what applies when working from home" },
  { "conversation": "de-b2-konferenz", "de": "aufgrund + Genitiv", "en": "a formal reason" },
  { "conversation": "de-b2-konferenz", "de": "trotz + Genitiv / während + Genitiv", "en": "contrast and duration with the genitive" },
  { "conversation": "de-b2-verhandeln", "de": "Wir könnten uns … vorstellen.", "en": "puts the offer forward as a suggestion" },

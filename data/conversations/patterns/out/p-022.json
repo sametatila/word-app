@@ -1,7 +1,7 @@
 [
  { "conversation": "de-b2-teures-hobby", "de": "Das ist es mir wert.", "en": "a value judgement" },
  { "conversation": "de-b2-als-ob", "de": "Er tut so, als ob … wäre.", "en": "as if: not really the case" },
- { "conversation": "de-b2-als-ob", "de": "Als wäre nichts passiert.", "en": "the short form" },
+ { "conversation": "de-b2-als-ob", "de": "Als wäre nichts passiert.", "en": "'as if nothing had happened' (short form)" },
  { "conversation": "de-b2-vermutungen", "de": "dürfte / müsste / könnte", "en": "degrees of certainty" },
  { "conversation": "de-b2-vermutungen", "de": "Das schließe ich nicht aus.", "en": "leaves the possibility open" },
  { "conversation": "de-b2-koerpersprache", "de": "…, indem wir …", "en": "says how it happens" },
@@ -16,7 +16,7 @@
  { "conversation": "de-b2-empathie", "de": "Wie würdest du dich fühlen?", "en": "invites empathy" },
  { "conversation": "de-b2-streitkultur", "de": "weder … noch …", "en": "neither of the two" },
  { "conversation": "de-b2-streitkultur", "de": "einerseits … andererseits …", "en": "weighs up both sides" },
- { "conversation": "de-b2-perfektionismus", "de": "Ich tue so, als ob … müsste.", "en": "names your own inner rule" },
+ { "conversation": "de-b2-perfektionismus", "de": "Ich tue so, als ob … müsste.", "en": "says you act as if you had to …" },
  { "conversation": "de-b2-perfektionismus", "de": "Gut ist gut genug.", "en": "lowers the bar" },
  { "conversation": "de-b2-veraenderung-b2", "de": "Sofern man bereit ist, …", "en": "a conditional encouragement" },
  { "conversation": "de-b2-veraenderung-b2", "de": "Wage den ersten Schritt.", "en": "encouragement in the imperative" },

@@ -378,7 +378,7 @@ export const deB2B04: Conversation[] = [
     ],
     patterns: [
       { de: "Thema der heutigen Folge ist …", tr: "bölümü açar" },
-      { de: "Beim Zuhören …", tr: "isimleşmiş mastarla zaman" },
+      { de: "Beim Zuhören …", tr: "dinlerken ne yapılabileceğini söyler" },
     ],
     lecture: [
       { say: [tr("Merhaba! Bugün mikrofonun arkasına geçiyorsun. Sunuş dili kısa ve isimleşmiştir: 'bugün konuşacağımız konu' değil, 'bugünkü bölümün konusu'. Hazır mısın?")], expect: { kind: "confirm" } },

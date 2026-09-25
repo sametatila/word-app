@@ -8,7 +8,7 @@
  { "conversation": "de-b2-buerokratie-gruendung", "de": "das Gewerbe", "en": "trade" },
  { "conversation": "de-b2-buerokratie-gruendung", "de": "die Bescheinigung", "en": "certificate" },
  { "conversation": "de-b2-work-life", "de": "der Ausgleich", "en": "balance" },
- { "conversation": "de-b2-jobwechsel", "de": "der Wechsel", "en": "change" },
+ { "conversation": "de-b2-jobwechsel", "de": "der Wechsel", "en": "switch, changeover" },
  { "conversation": "de-b2-rente", "de": "die Lücke", "en": "gap" },
  { "conversation": "de-b2-nebenjob", "de": "die Genehmigung", "en": "permit" },
  { "conversation": "de-b2-nebenjob", "de": "die Erschöpfung", "en": "burnout" },
@@ -39,14 +39,14 @@
  { "conversation": "de-c1-krisenkommunikation", "de": "die Aufarbeitung", "en": "reckoning" },
  { "conversation": "de-c1-krisenkommunikation", "de": "das Versäumnis", "en": "omission" },
  { "conversation": "de-c1-krisenkommunikation", "de": "abstreiten", "en": "to deny" },
- { "conversation": "de-c1-verhandlung-c1", "de": "in Kauf nehmen", "en": "to accept (a downside)" },
+ { "conversation": "de-c1-verhandlung-c1", "de": "in Kauf nehmen", "en": "to accept as a trade-off" },
  { "conversation": "de-c1-verhandlung-c1", "de": "ausloten", "en": "to sound out" },
  { "conversation": "de-c1-fuehrung", "de": "anregen", "en": "to suggest" },
- { "conversation": "de-c1-fuehrung", "de": "übertragen", "en": "to transfer" },
+ { "conversation": "de-c1-fuehrung", "de": "übertragen", "en": "to transfer, to delegate" },
  { "conversation": "de-c1-fuehrung", "de": "die Eigenverantwortung", "en": "personal responsibility" },
  { "conversation": "de-c1-fuehrung", "de": "der Rückhalt", "en": "backing" },
  { "conversation": "de-c1-buerojargon", "de": "im Nachgang", "en": "afterwards" },
  { "conversation": "de-c1-buerojargon", "de": "abstimmen", "en": "to coordinate" },
  { "conversation": "de-c1-buerojargon", "de": "die Schnittstelle", "en": "interface" },
- { "conversation": "de-c1-buerojargon", "de": "aufsetzen", "en": "to draw up" }
+ { "conversation": "de-c1-buerojargon", "de": "aufsetzen", "en": "to set up (a meeting); to draw up" }
 ]

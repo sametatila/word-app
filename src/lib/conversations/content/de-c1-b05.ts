@@ -418,7 +418,7 @@ export const deC1B05: Conversation[] = [
     vocab: [
       { de: "vereinfachen", tr: "basitleştirmek" },
       { de: "anschaulich", tr: "somut / göz önüne getiren" },
-      { de: "die Faustregel", tr: "kaba kural" },
+      { de: "die Faustregel", tr: "pratik kural" },
       { de: "zugänglich", tr: "erişilebilir" },
       { de: "greifbar", tr: "elle tutulur" },
       { de: "die Anklage", tr: "iddianame" },
@@ -434,7 +434,7 @@ export const deC1B05: Conversation[] = [
       { say: [tr("Almancanın bu iş için dürüst bir kalıbı var: benzetmeyi kurduktan sonra sınırını da söylemek —"), de("Der Vergleich hinkt, aber er hilft."), tr("Önce kelimeler.")] },
       word("İlk", { de: "vereinfachen", tr: "basitleştirmek" }),
       word("İkinci", { de: "anschaulich", tr: "somut" }),
-      word("Üçüncü", { de: "die Faustregel", tr: "kaba kural" }),
+      word("Üçüncü", { de: "die Faustregel", tr: "pratik kural" }),
       word("Dördüncü", { de: "zugänglich", tr: "erişilebilir" }),
       word("Beşinci", { de: "greifbar", tr: "elle tutulur" }),
       word("Altıncı", { de: "die Anklage", tr: "iddianame" }),

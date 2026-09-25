@@ -1639,7 +1639,7 @@ export const deA2B03: Conversation[] = [
       { de: "der Stress", tr: "stres" },
       { de: "gestresst", tr: "stresli" },
       { de: "sich entspannen", tr: "rahatlamak" },
-      { de: "abschalten", tr: "kafa dağıtmak" },
+      { de: "abschalten", tr: "kafa dağıtmak; kapatmak" },
       { de: "unruhig", tr: "huzursuz" },
       { de: "sich ausschlafen", tr: "uykusunu almak" },
       { de: "sich hinlegen", tr: "uzanmak" },

@@ -485,7 +485,7 @@ export const deB1B09: Conversation[] = [
       { de: "schreien", tr: "bağırmak" },
     ],
     patterns: [
-      { de: "Wir sind hier, damit …", tr: "amaç: özne farklı olduğunda damit" },
+      { de: "Wir sind hier, damit …", tr: "burada olma amacını söyler" },
       { de: "Ich setze mich für … ein.", tr: "bir şeyi savunmak" },
     ],
     lecture: [

@@ -2,7 +2,7 @@
  { "conversation": "de-b1-ehrenamt", "de": "Es gibt mir …", "en": "says what it gives you" },
  { "conversation": "de-b1-stadtentwicklung", "de": "Das Haus wurde saniert.", "en": "past passive" },
  { "conversation": "de-b1-stadtentwicklung", "de": "Die Mieten sind gestiegen.", "en": "describes a change" },
- { "conversation": "de-b1-demo", "de": "Wir sind hier, damit …", "en": "purpose: damit when the subject differs" },
+ { "conversation": "de-b1-demo", "de": "Wir sind hier, damit …", "en": "says why you are here" },
  { "conversation": "de-b1-demo", "de": "Ich setze mich für … ein.", "en": "standing up for something" },
  { "conversation": "de-b1-tierheim", "de": "Der Hund, dem wir helfen, …", "en": "a relative clause in the dative" },
  { "conversation": "de-b1-tierheim", "de": "Wer übernimmt Verantwortung?", "en": "asks who takes responsibility" },

@@ -475,7 +475,7 @@ export const deA1B02: Conversation[] = [
 ],
     patterns: [
       { de: "Ich habe kein …", tr: "nötr bir şeyin olmadığını söyler" },
-      { de: "Ich habe keine …", tr: "dişil ve çoğul adlar için kullanılır" },
+      { de: "Ich habe keine …", tr: "dişil ya da çoğul bir şeyin olmadığını söyler" },
       { de: "Kein Problem!", tr: "'sorun değil' demek" },
     ],
     lecture: [
@@ -697,7 +697,7 @@ export const deA1B02: Conversation[] = [
       { de: "der Hund", tr: "köpek" },
       { de: "die Katze", tr: "kedi" },
       { de: "der Fisch", tr: "balık" },
-      { de: "süß", tr: "sevimli" },
+      { de: "süß", tr: "sevimli / tatlı" },
       { de: "das Pferd", tr: "at" },
       { de: "der Ball", tr: "top" },
       { de: "lieben", tr: "sevmek" },

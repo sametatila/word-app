@@ -495,7 +495,7 @@ export const deA1B10: Conversation[] = [
       { de: "verschieben", tr: "ertelemek" },
       { de: "der Kalender", tr: "takvim" },
       { de: "das Datum", tr: "tarih" },
-      { de: "die Uhrzeit", tr: "saat bilgisi" },
+      { de: "die Uhrzeit", tr: "saat / vakit" },
       { de: "nächste", tr: "gelecek" },
           { de: "die Anrede", tr: "hitap" },
       { de: "erklären", tr: "açıklamak" },
@@ -503,7 +503,7 @@ export const deA1B10: Conversation[] = [
 ],
     patterns: [
       { de: "Passt es am …?", tr: "bir günün uygun olup olmadığını sorar" },
-      { de: "Können wir verschieben?", tr: "randevuyu ertelemek isterken kullanılır" },
+      { de: "Können wir den Termin verschieben?", tr: "randevuyu ertelemek isterken kullanılır" },
       { de: "Der Termin ist um …", tr: "randevunun saatini söyler" },
     ],
     lecture: [
@@ -556,7 +556,7 @@ export const deA1B10: Conversation[] = [
         say: [
           tr("Dördüncü kelimemiz:"),
           de("die Uhrzeit"),
-          tr("Türkçesi 'saat bilgisi' demek — kaçta olduğu. Lütfen"),
+          tr("Türkçesi 'saat / vakit' demek — kaçta olduğu. Lütfen"),
           de("die Uhrzeit"),
           tr("deyin."),
         ],
@@ -634,12 +634,12 @@ export const deA1B10: Conversation[] = [
       {
         say: [
           tr("İkinci kalıbımız erteleme için:"),
-          de("Können wir verschieben?"),
+          de("Können wir den Termin verschieben?"),
           tr("'Erteleyebilir miyiz?' demek. Lütfen"),
-          de("Können wir verschieben"),
+          de("Können wir den Termin verschieben"),
           tr("deyin."),
         ],
-        expect: { kind: "repeat", target: "Können wir verschieben" },
+        expect: { kind: "repeat", target: "Können wir den Termin verschieben" },
       },
       {
         say: [

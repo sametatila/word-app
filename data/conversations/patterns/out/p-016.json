@@ -36,7 +36,7 @@
  { "conversation": "de-b1-wohnort-wechseln", "de": "Damals wohnte ich …", "en": "says where you used to live" },
  { "conversation": "de-b1-notfall-unterwegs", "de": "An deiner Stelle würde ich …", "en": "gives advice: if I were you" },
  { "conversation": "de-b1-notfall-unterwegs", "de": "Es wäre besser, wenn …", "en": "politely says what would be better" },
- { "conversation": "de-b1-reise-erzaehlen", "de": "Nachdem wir … hatten, …", "en": "puts the earlier event further back" },
+ { "conversation": "de-b1-reise-erzaehlen", "de": "Nachdem wir … hatten, …", "en": "says what happened after you had done something on the trip" },
  { "conversation": "de-b1-reise-erzaehlen", "de": "Bis dahin hatte ich … nie gesehen.", "en": "says what you had never seen until then" },
  { "conversation": "de-b1-koerper-teile", "de": "Ich leide an + Dativ", "en": "names an ongoing condition" },
  { "conversation": "de-b1-koerper-teile", "de": "Es zieht in + Dativ", "en": "describes where the pain is" },

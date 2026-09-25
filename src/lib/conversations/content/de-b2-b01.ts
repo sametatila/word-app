@@ -487,7 +487,7 @@ export const deB2B01: Conversation[] = [
     ],
     patterns: [
       { de: "Nach Absprache mit …", tr: "isim öbeğiyle koşul" },
-      { de: "Beim Arbeiten von zu Hause …", tr: "isimleşmiş mastarla zaman" },
+      { de: "Beim Arbeiten von zu Hause …", tr: "evden çalışırken geçerli olanı söyler" },
     ],
     lecture: [
       { say: [tr("Merhaba! Bugün şirket kurallarının dilini çalışacağız. O dilde cümleler yan cümleyle değil, isim öbekleriyle kısaltılır. Hazır mısın?")], expect: { kind: "confirm" } },

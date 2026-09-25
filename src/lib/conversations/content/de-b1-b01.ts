@@ -64,7 +64,7 @@ export const deB1B01: Conversation[] = [
     ],
     patterns: [
       { de: "…, weil …", tr: "sebep söylerken kullanılır; fiil yan cümlenin sonuna gider" },
-      { de: "seit + Dativ", tr: "'…'den beri' derken kullanılır: seit drei Jahren" },
+      { de: "seit + Dativ", tr: "'…'den beri' derken kullanılır" },
     ],
     lecture: [
       {
@@ -693,7 +693,7 @@ export const deB1B01: Conversation[] = [
       { de: "die Kommunikation", tr: "iletişim" },
     ],
     patterns: [
-      { de: "Können Sie mir zeigen, wie …?", tr: "bir şeyin nasıl yapıldığını kibarca sorar" },
+      { de: "Können Sie mir zeigen, wie …?", tr: "bir şeyin nasıl yapıldığını göstermesini rica eder" },
       { de: "Ich weiß noch nicht, wo …", tr: "bilmediğini kibarca söyler" },
       { de: "An wen wende ich mich?", tr: "kime başvuracağını sorar" },
     ],
@@ -1174,7 +1174,7 @@ export const deB1B01: Conversation[] = [
       { de: "das Pech", tr: "şanssızlık" },
     ],
     patterns: [
-      { de: "Nachdem ich … geschickt hatte, …", tr: "önce olan olayı geriye alır" },
+      { de: "Nachdem ich … geschickt hatte, …", tr: "başvuruyu gönderdikten sonra olanı anlatır" },
       { de: "Leider hat es nicht geklappt.", tr: "olmadığını kibarca söyler" },
       { de: "Ich versuche es weiter.", tr: "denemeye devam edeceğini söyler" },
     ],

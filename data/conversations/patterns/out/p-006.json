@@ -23,7 +23,7 @@
  { "conversation": "de-a1-nachricht", "de": "Bis später!", "en": "closes a message in a friendly way" },
  { "conversation": "de-a1-nachricht", "de": "Liebe Grüße", "en": "closes a message warmly" },
  { "conversation": "de-a1-termin-machen", "de": "Passt es am …?", "en": "asks whether a day suits" },
- { "conversation": "de-a1-termin-machen", "de": "Können wir verschieben?", "en": "used to ask to postpone" },
+ { "conversation": "de-a1-termin-machen", "de": "Können wir den Termin verschieben?", "en": "used to ask to postpone" },
  { "conversation": "de-a1-termin-machen", "de": "Der Termin ist um …", "en": "says what time the appointment is" },
  { "conversation": "de-a1-einladung", "de": "Ich möchte dich einladen.", "en": "politely invites someone" },
  { "conversation": "de-a1-einladung", "de": "Kommst du zu …?", "en": "invites someone to an event" },

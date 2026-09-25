@@ -34,7 +34,7 @@
  { "conversation": "de-a1-geschwister", "de": "Ich habe eine …", "en": "says you have a feminine relative" },
  { "conversation": "de-a1-geschwister", "de": "Hast du Geschwister?", "en": "asks whether someone has siblings" },
  { "conversation": "de-a1-kein", "de": "Ich habe kein …", "en": "says you do not have a neuter thing" },
- { "conversation": "de-a1-kein", "de": "Ich habe keine …", "en": "used for feminine and plural nouns" },
+ { "conversation": "de-a1-kein", "de": "Ich habe keine …", "en": "says you have no … (feminine or plural noun)" },
  { "conversation": "de-a1-kein", "de": "Kein Problem!", "en": "means 'no problem'" },
  { "conversation": "de-a1-haustiere", "de": "Ich habe einen …", "en": "says which animal you have" },
  { "conversation": "de-a1-haustiere", "de": "Er heißt …", "en": "says the animal's name" },

@@ -11,7 +11,7 @@
  { "conversation": "de-c1-gericht", "de": "Der Zeuge gab an, er habe …", "en": "reporting a statement for the record" },
  { "conversation": "de-c1-gericht", "de": "Die Verhandlung wird vertagt.", "en": "the hearing is adjourned" },
  { "conversation": "de-c1-partizipial", "de": "die vor Jahren getroffene Entscheidung", "en": "a compressed relative clause" },
- { "conversation": "de-c1-partizipial", "de": "… in einen Relativsatz auflösen", "en": "unpacking it back into a relative clause" },
+ { "conversation": "de-c1-partizipial", "de": "… in einen Relativsatz auflösen", "en": "expands the participle phrase back into a full clause" },
  { "conversation": "de-c1-gerundiv", "de": "das zu lösende Problem", "en": "the problem that needs solving" },
  { "conversation": "de-c1-gerundiv", "de": "eine nicht zu unterschätzende Rolle", "en": "a role that should not be underestimated" },
  { "conversation": "de-c1-schachtelsatz", "de": "Suche zuerst den Kern.", "en": "find the subject and verb first" },

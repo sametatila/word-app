@@ -1,12 +1,12 @@
 [
- { "conversation": "de-b1-gegenstand", "de": "alles, was … / etwas, was …", "en": "was follows alles, etwas and nichts" },
+ { "conversation": "de-b1-gegenstand", "de": "alles, was … / etwas, was …", "en": "used to say 'everything that …' / 'something that …'" },
  { "conversation": "de-b1-lieblingsort", "de": "der Ort, an dem …", "en": "defining with a preposition of place" },
  { "conversation": "de-b1-lieblingsort", "de": "dorthin, wo …", "en": "the short form for place: wo" },
  { "conversation": "de-b1-fundbuero", "de": "eine Tasche, die …", "en": "describes a lost item" },
  { "conversation": "de-b1-fundbuero", "de": "Beschreiben Sie das Gerät, das …", "en": "a relative clause in a formal question" },
  { "conversation": "de-b1-rezept-empfehlen", "de": "ein Gericht, das …", "en": "defines a dish by its feature" },
  { "conversation": "de-b1-rezept-empfehlen", "de": "Zutaten, die …", "en": "die with plural ingredients" },
- { "conversation": "de-b1-passiv", "de": "Hier wird gebaut.", "en": "passive: finite werden first / Partizip II last" },
+ { "conversation": "de-b1-passiv", "de": "Hier wird gebaut.", "en": "passive: finite werden second / Partizip II last" },
  { "conversation": "de-b1-passiv", "de": "Die Straße wird gesperrt.", "en": "who does it is not said" },
  { "conversation": "de-b1-passiv-vergangen", "de": "Der Antrag wurde abgelehnt.", "en": "past passive: wurde plus Partizip II" },
  { "conversation": "de-b1-passiv-vergangen", "de": "Die Unterlagen wurden geprüft.", "en": "wurden in the plural" },
@@ -38,7 +38,7 @@
  { "conversation": "de-b1-weiterbildung", "de": "Das bringt mir …", "en": "names the benefit" },
  { "conversation": "de-b1-studium", "de": "Ich informiere mich, wie …", "en": "an indirect question; verb at the end" },
  { "conversation": "de-b1-studium", "de": "Was braucht man, um … zu …?", "en": "asks what is needed" },
- { "conversation": "de-b1-praktikum", "de": "Ich lernte …", "en": "past tense in written style: Präteritum" },
+ { "conversation": "de-b1-praktikum", "de": "Ich lernte …", "en": "says what you learnt, in the written past tense" },
  { "conversation": "de-b1-praktikum", "de": "Am meisten brachte mir …", "en": "says what helped most" },
  { "conversation": "de-b1-lernmethoden", "de": "sowohl … als auch …", "en": "both … and …" },
  { "conversation": "de-b1-lernmethoden", "de": "nicht nur …, sondern auch …", "en": "not only … but also …" },
@@ -47,6 +47,6 @@
  { "conversation": "de-b1-mentor", "de": "An deiner Stelle würde ich …", "en": "if I were you" },
  { "conversation": "de-b1-mentor", "de": "Was würdest du tun?", "en": "asking for advice" },
  { "conversation": "de-b1-meinung", "de": "Meiner Meinung nach …", "en": "gives an opinion; the verb follows" },
- { "conversation": "de-b1-meinung", "de": "Ich bin überzeugt, dass …", "en": "the verb goes to the end of the subordinate clause" },
+ { "conversation": "de-b1-meinung", "de": "Ich bin überzeugt, dass …", "en": "says you are convinced of something" },
  { "conversation": "de-b1-pro-contra", "de": "Einerseits …, andererseits …", "en": "puts the two sides side by side" }
 ]

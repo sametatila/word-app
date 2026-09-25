@@ -529,7 +529,7 @@ export const deB1B13: Conversation[] = [
       { de: "der Ozean", tr: "okyanus" },
     ],
     patterns: [
-      { de: "Nachdem wir … hatten, …", tr: "önce olanı geriye alır" },
+      { de: "Nachdem wir … hatten, …", tr: "yolculukta bir şeyi yaptıktan sonra olanı anlatır" },
       { de: "Bis dahin hatte ich … nie gesehen.", tr: "o ana kadar olmayanı anlatır" },
     ],
     lecture: [

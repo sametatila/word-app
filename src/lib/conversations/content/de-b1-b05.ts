@@ -53,7 +53,7 @@ export const deB1B05: Conversation[] = [
       { de: "illegal", tr: "yasa dışı" },
     ],
     patterns: [
-      { de: "Hier wird gebaut.", tr: "edilgen: çekimli werden başta / Partizip II sonda" },
+      { de: "Hier wird gebaut.", tr: "edilgen: çekimli werden ikinci sırada / Partizip II sonda" },
       { de: "Die Straße wird gesperrt.", tr: "eylemi kimin yaptığı söylenmez" },
     ],
     lecture: [
@@ -151,7 +151,7 @@ export const deB1B05: Conversation[] = [
     minutes: 10,
     focusId: "Passiv-Präsens",
     vocab: [
-      { de: "benötigen", tr: "gerekmek" },
+      { de: "benötigen", tr: "ihtiyaç duymak" },
       { de: "ablaufen", tr: "süresi dolmak" },
       { de: "das Visum", tr: "vize" },
       { de: "der Anspruch", tr: "hak" },
@@ -167,7 +167,7 @@ export const deB1B05: Conversation[] = [
     lecture: [
       { say: [tr("Merhaba! Bugün en çok işine yarayacak yerdeyiz: yabancılar dairesi. Orada duyacağın hemen her cümle edilgen ve aynı üç kalıptan çıkıyor. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("Amacımız iki yönlü: memurun söylediğini anlamak ve kendi sorunu doğru sormak. İkincisi çoğu zaman daha önemli. Önce kelimeler.")] },
-      word("İlk", { de: "benötigen", tr: "gerekmek" }),
+      word("İlk", { de: "benötigen", tr: "ihtiyaç duymak" }),
       word("İkinci", { de: "ablaufen", tr: "süresi dolmak" }),
       word("Üçüncü", { de: "das Visum", tr: "vize" }),
       word("Dördüncü", { de: "der Anspruch", tr: "hak" }),
@@ -374,7 +374,7 @@ export const deB1B05: Conversation[] = [
       { de: "der Zeuge", tr: "tanık" },
       { de: "die Aufnahme", tr: "kayıt" },
       { de: "gespannt", tr: "merakla bekleyen" },
-      { de: "die Nachfrage", tr: "talep / soruşturma" },
+      { de: "die Nachfrage", tr: "talep; bilgi isteme" },
     ],
     patterns: [
       { de: "Nachdem der Schaden entstanden war, …", tr: "önce olan iş: Plusquamperfekt" },
@@ -390,7 +390,7 @@ export const deB1B05: Conversation[] = [
       word("Beşinci", { de: "der Zeuge", tr: "tanık" }),
       word("Altıncı", { de: "die Aufnahme", tr: "kayıt" }),
       word("Yedinci", { de: "gespannt", tr: "merakla bekleyen" }),
-      word("Son", { de: "die Nachfrage", tr: "talep / soruşturma" }),
+      word("Son", { de: "die Nachfrage", tr: "talep; bilgi isteme" }),
       { say: [tr("Kalıbımız:"), de("Nachdem der Schaden entstanden war, …"), tr("Yan cümle bir basamak geride, ana cümle normal geçmişte. Sıra böyle net olur.")] },
       { say: [tr("Örnek:"), de("Nachdem der Schaden entstanden war, habe ich die Versicherung angerufen."), tr("Tekrar edin:"), de("Nachdem der Schaden entstanden war, habe ich die Versicherung angerufen")], expect: repeat("Nachdem der Schaden entstanden war, habe ich die Versicherung angerufen") },
       { say: [tr("Sıra sende: 'Olayı bildirdikten sonra bir eksper geldi.'")], expect: produce("Nachdem ich den Vorfall gemeldet hatte, kam ein Gutachter", [tr("Önce olan iş bir basamak geride; ana cümle fiille başlar:"), de("Nachdem ich den Vorfall gemeldet hatte, kam ein Gutachter."), tr("Tekrar dene.")]) },

@@ -160,8 +160,8 @@ export const deB1B04: Conversation[] = [
       { de: "persönlich", tr: "kişisel" },
     ],
     patterns: [
-      { de: "…, dem ich …", tr: "eril ve nötrde yönelme zamiri dem" },
-      { de: "…, der ich … / …, denen ich …", tr: "dişilde der / çoğulda denen" },
+      { de: "…, dem ich …", tr: "ilgi cümlesi: eril ya da nötr ad, yönelme hâli" },
+      { de: "…, der ich … / …, denen ich …", tr: "ilgi cümlesi: dişil ya da çoğul ad, yönelme hâli" },
     ],
     lecture: [
       { say: [tr("Merhaba! Bugün üçüncü hâl: yönelme. Bazı fiiller kendinden sonra yönelme ister — güvenmek, yardım etmek, kulak vermek. İlgi cümlesinde de aynısı olur. Hazır mısın?")], expect: { kind: "confirm" } },
@@ -377,7 +377,7 @@ export const deB1B04: Conversation[] = [
     ],
     patterns: [
       { de: "ein Gerät, das …", tr: "nesneyi işleviyle tanımlar" },
-      { de: "alles, was … / etwas, was …", tr: "alles / etwas ve nichts sonrası was gelir" },
+      { de: "alles, was … / etwas, was …", tr: "'…-en her şey' / '…-en bir şey' derken kullanılır" },
     ],
     lecture: [
       { say: [tr("Merhaba! Bugün çok işine yarayacak bir beceri: adını bilmediğin bir şeyi tarif etmek. 'Şu şey var ya, şununla açtığın…' Almancada bu bir ilgi cümlesidir. Hazır mısın?")], expect: { kind: "confirm" } },
@@ -479,7 +479,7 @@ export const deB1B04: Conversation[] = [
       { de: "der Inhalt", tr: "içindekiler" },
       { de: "die Brieftasche", tr: "cüzdan" },
       { de: "der Verlust", tr: "kayıp" },
-      { de: "die Beschreibung", tr: "tarif" },
+      { de: "die Beschreibung", tr: "tarif / betimleme" },
       { de: "auffällig", tr: "dikkat çekici" },
       { de: "erkennen", tr: "tanımak" },
     ],
@@ -495,7 +495,7 @@ export const deB1B04: Conversation[] = [
       word("Üçüncü", { de: "der Inhalt", tr: "içindekiler" }),
       word("Dördüncü", { de: "die Brieftasche", tr: "cüzdan" }),
       word("Beşinci", { de: "der Verlust", tr: "kayıp" }),
-      word("Altıncı", { de: "die Beschreibung", tr: "tarif" }),
+      word("Altıncı", { de: "die Beschreibung", tr: "tarif / betimleme" }),
       word("Yedinci", { de: "auffällig", tr: "dikkat çekici" }),
       word("Son", { de: "erkennen", tr: "tanımak" }),
       { say: [tr("Kalıbımız:"), de("eine Tasche, die ich verloren habe"), tr("Çanta kaybedilen şey, yani nesne; ama dişil olduğu için zamir yine die.")] },

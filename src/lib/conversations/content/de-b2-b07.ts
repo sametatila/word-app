@@ -53,7 +53,7 @@ export const deB2B07: Conversation[] = [
     ],
     patterns: [
       { de: "ein Buch, über das …", tr: "edatlı ilgi cümlesi" },
-      { de: "Die Handlung dreht sich um …", tr: "konuyu özetler" },
+      { de: "Die Handlung dreht sich um …", tr: "romanın neyi anlattığını söyler" },
     ],
     lecture: [
       { say: [tr("Merhaba! Yeni modül: kültür ve sanat. Bir kitaptan söz ederken Almanca çoğu zaman ilgi cümlesi kurar ve o cümle bir edatla başlar. Hazır mısın?")], expect: { kind: "confirm" } },
@@ -269,7 +269,7 @@ export const deB2B07: Conversation[] = [
     ],
     patterns: [
       { de: "…, indem sie …", tr: "nasıl etki ettiğini söyler" },
-      { de: "ins Gedächtnis gehen", tr: "hafızaya kazınmak" },
+      { de: "ins Ohr gehen", tr: "akılda kalmak (melodi)" },
     ],
     lecture: [
       { say: [tr("Merhaba! Bugün zor bir soru: müzik bizi neden etkiliyor. Cevabı 'nasıl' diye kurmak gerekiyor ve bunun bağlacını biliyorsun. Hazır mısın?")], expect: { kind: "confirm" } },
@@ -286,7 +286,7 @@ export const deB2B07: Conversation[] = [
       { say: [tr("Örnek:"), de("Musik berührt uns, indem sie unser Unterbewusstsein erreicht."), tr("Tekrar edin:"), de("Musik berührt uns, indem sie unser Unterbewusstsein erreicht")], expect: repeat("Musik berührt uns, indem sie unser Unterbewusstsein erreicht") },
       { say: [tr("Sıra sende: 'Ritmi değiştirerek gerilim yaratıyor.'")], expect: produce("Sie erzeugt Spannung, indem sie den Rhythmus ändert", [tr("Yan cümlede fiil sonda:"), de("Sie erzeugt Spannung, indem sie den Rhythmus ändert."), tr("Tekrar dene.")]) },
       { say: [tr("Şimdi: 'Melodi basit ama etkili.'")], expect: produce("Die Melodie ist einfach, wirkt aber stark", [tr("İkinci cümlede özne tekrarlanmıyor:"), de("Die Melodie ist einfach, wirkt aber stark."), tr("Tekrar dene.")]) },
-      { say: [tr("Bir tane daha: 'Bu melodi doğrudan hafızaya kazınıyor.'")], expect: produce("Diese Melodie geht direkt ins Gedächtnis", [tr("Kalıplaşmış ifade; edat belirtme hâli ister:"), de("Diese Melodie geht direkt ins Gedächtnis."), tr("Tekrar dene.")]) },
+      { say: [tr("Bir tane daha: 'Bu melodi doğrudan hafızaya kazınıyor.'")], expect: produce("Diese Melodie geht direkt ins Ohr", [tr("Kalıplaşmış ifade; edat belirtme hâli ister:"), de("Diese Melodie geht direkt ins Ohr."), tr("Tekrar dene.")]) },
       { say: [tr("Doğru mu yanlış mı:"), de("Dieses Lied erinnert mich an meiner Kindheit."), tr("cümlesi doğru mu?")], expect: truefalse("Dieses Lied erinnert mich an meiner Kindheit.", false, [tr("Bu fiilin sabit edatı belirtme hâli ister:"), de("Dieses Lied erinnert mich an meine Kindheit.")]) },
       { say: [tr("Son: 'Bu şarkı bana çocukluğumu hatırlatıyor.'")], expect: produce("Dieses Lied erinnert mich an meine Kindheit", [tr("Sabit edat belirtme hâliyle:"), de("Dieses Lied erinnert mich an meine Kindheit."), tr("Tekrar dene.")]) },
       { say: [tr("Hazırsın. Konuşmada seni etkileyen bir parçayı anlatacaksın.")] },
@@ -294,7 +294,7 @@ export const deB2B07: Conversation[] = [
     chat: {
       scene: "Bir arkadaşınla müziğin insanı neden etkilediğini konuşuyorsunuz. Seni etkileyen bir parçayı anlat, nasıl etki ettiğini yöntem bağlacıyla söyle ve onun örneğini de dinle.",
       partner: "müzikten anlayan, teknik ayrıntı da veren bir arkadaş",
-      opening: "Manche Stücke gehen mir sofort ins Gedächtnis — und ich weiß nicht genau, warum. Kennst du das?",
+      opening: "Manche Stücke gehen mir sofort ins Ohr — und ich weiß nicht genau, warum. Kennst du das?",
       openingTr: "Bazı parçalar hemen hafızama kazınıyor — ve nedenini tam bilmiyorum. Sende de olur mu?",
       goal: "Seni etkileyen bir parça anlatılmış, nasıl etki ettiği açıklanmış ve karşı tarafın örneği de konuşulmuş olur.",
       minTurns: 8,

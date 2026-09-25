@@ -312,7 +312,7 @@ export const deB1B06: Conversation[] = [
     focusId: "Indirekte-Frage",
     vocab: [
       { de: "die Hochschule", tr: "yükseköğretim kurumu" },
-      { de: "die Studentin", tr: "üniversite öğrencisi" },
+      { de: "die Studentin", tr: "kadın üniversite öğrencisi" },
       { de: "der Professor", tr: "profesör" },
       { de: "das Semester", tr: "dönem" },
       { de: "sich erkundigen", tr: "bilgi almak" },
@@ -328,7 +328,7 @@ export const deB1B06: Conversation[] = [
       { say: [tr("Merhaba! Üniversite başvurusu bir bilgi avıdır ve avın dili sorudur. Ama düz soru değil, yumuşatılmış soru: 'ne zaman bittiğini bilmiyorum'. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("Dolaylı soruda düz soru cümlesi bozulur: çekimli fiil en sona gider. Türkçede de benzer bir şey oluyor, cümle bir isim öbeğine dönüşüyor. Önce kelimeler.")] },
       word("İlk", { de: "die Hochschule", tr: "yükseköğretim kurumu" }),
-      word("İkinci", { de: "die Studentin", tr: "üniversite öğrencisi" }),
+      word("İkinci", { de: "die Studentin", tr: "kadın üniversite öğrencisi" }),
       word("Üçüncü", { de: "der Professor", tr: "profesör" }),
       word("Dördüncü", { de: "das Semester", tr: "dönem" }),
       word("Beşinci", { de: "sich erkundigen", tr: "bilgi almak" }),
@@ -375,7 +375,7 @@ export const deB1B06: Conversation[] = [
       { de: "die Aushilfe", tr: "yardımcı eleman" },
     ],
     patterns: [
-      { de: "Ich lernte …", tr: "yazı dilinde geçmiş: Präteritum" },
+      { de: "Ich lernte …", tr: "neler öğrendiğini yazı dilindeki geçmiş zamanla anlatır" },
       { de: "Am meisten brachte mir …", tr: "en çok neyin katkı yaptığını söyler" },
     ],
     lecture: [

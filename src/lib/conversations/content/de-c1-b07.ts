@@ -55,7 +55,7 @@ export const deC1B07: Conversation[] = [
     ],
     patterns: [
       { de: "die vor Jahren getroffene Entscheidung", tr: "katlanmış ilgi cümlesi" },
-      { de: "… in einen Relativsatz auflösen", tr: "geri açmak" },
+      { de: "… in einen Relativsatz auflösen", tr: "ortaç öbeğini yeniden tam cümleye açar" },
     ],
     lecture: [
       { say: [tr("Merhaba! Yeni modül: karmaşık yapılar. Ve buradaki beceri çift yönlü — sıkıştırmak ve AÇMAK. Hazır mısın?")], expect: { kind: "confirm" } },

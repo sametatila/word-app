@@ -55,7 +55,7 @@ export const deB2B09: Conversation[] = [
     ],
     patterns: [
       { de: "Er tut so, als ob … wäre.", tr: "sanki: gerçek değil" },
-      { de: "Als wäre nichts passiert.", tr: "kısa biçim" },
+      { de: "Als wäre nichts passiert.", tr: "'sanki hiçbir şey olmamış gibi' (kısa biçim)" },
     ],
     lecture: [
       { say: [tr("Merhaba! Yeni modül: insan ilişkileri. İlk ders küçük ama çok işlevsel bir yapı — 'sanki'. Hazır mısın?")], expect: { kind: "confirm" } },
@@ -486,7 +486,7 @@ export const deB2B09: Conversation[] = [
       { de: "abschneiden", tr: "sonuç almak" },
     ],
     patterns: [
-      { de: "Ich tue so, als ob … müsste.", tr: "kendi kuralını adlandırır" },
+      { de: "Ich tue so, als ob … müsste.", tr: "sanki … zorundaymış gibi davrandığını söyler" },
       { de: "Gut ist gut genug.", tr: "ölçüyü indirir" },
     ],
     lecture: [

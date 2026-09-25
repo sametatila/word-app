@@ -49,7 +49,7 @@ export const deB1B03: Conversation[] = [
     ],
     patterns: [
       { de: "…, damit …", tr: "amaç söyler; özne farklıysa kullanılır / fiil sona gider" },
-      { de: "Ich spare, damit meine Kinder studieren können.", tr: "damit ile tam cümle" },
+      { de: "Ich spare, damit meine Kinder studieren können.", tr: "neden para biriktirdiğini söyler" },
     ],
     lecture: [
       { say: [tr("Merhaba! Bugün bir şeyi NEDEN yaptığını söylemeyi öğreneceğiz: 'çocuklarım okuyabilsin diye', 'sağlıklı kalsınlar diye'. Almancada bunun için 'damit' var. Hazır mısın?")], expect: { kind: "confirm" } },

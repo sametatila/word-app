@@ -98,7 +98,7 @@ export const deC1B02: Conversation[] = [
     minutes: 14,
     focusId: "Modalpartikeln",
     vocab: [
-      { de: "die Überraschung", tr: "şaşkınlık" },
+      { de: "die Überraschung", tr: "sürpriz" },
       { de: "auffordern", tr: "rica etmek / davet etmek" },
       { de: "der Nachdruck", tr: "vurgu" },
       { de: "locker", tr: "rahat / gevşek" },
@@ -114,7 +114,7 @@ export const deC1B02: Conversation[] = [
     lecture: [
       { say: [tr("Merhaba! Bugün iki parçacık: biri şaşırtıyor, öteki yumuşatıyor. İkisi de küçük ama ikisi de cümlenin sesini değiştiriyor. Hazır mısın?")], expect: { kind: "confirm" } },
       { say: [tr("Birincisi ya şaşkınlık ya da 'bunu ikimiz de biliyoruz' anlamı taşır. İkincisi ricayı emirlikten çıkarır: 'bak' değil 'bir bak'. Önce kelimeler.")] },
-      word("İlk", { de: "die Überraschung", tr: "şaşkınlık" }),
+      word("İlk", { de: "die Überraschung", tr: "sürpriz" }),
       word("İkinci", { de: "auffordern", tr: "rica etmek / davet etmek" }),
       word("Üçüncü", { de: "der Nachdruck", tr: "vurgu" }),
       word("Dördüncü", { de: "locker", tr: "rahat / gevşek" }),
@@ -373,8 +373,8 @@ export const deC1B02: Conversation[] = [
       { de: "die Abneigung", tr: "hoşlanmama" },
     ],
     patterns: [
-      { de: "Nicht schlecht!", tr: "aslında: çok iyi" },
-      { de: "Da ist noch Luft nach oben.", tr: "aslında: yetersiz" },
+      { de: "Nicht schlecht!", tr: "ölçülü övgü: çok iyi" },
+      { de: "Da ist noch Luft nach oben.", tr: "ölçülü eleştiri: daha iyi olabilir" },
     ],
     lecture: [
       { say: [tr("Merhaba! Bugün bir kültür dersi. Almancada övgü ölçülüdür ve bunu bilmeyen bir Türk konuşan sürekli yanlış anlar. Hazır mısın?")], expect: { kind: "confirm" } },

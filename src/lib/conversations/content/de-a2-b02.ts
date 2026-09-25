@@ -856,7 +856,7 @@ export const deA2B02: Conversation[] = [
     vocab: [
       { de: "sich vertragen", tr: "iyi geçinmek" },
       { de: "sich anfreunden", tr: "arkadaş olmak" },
-      { de: "befreundet", tr: "arkadaş" },
+      { de: "befreundet", tr: "arkadaş olan" },
       { de: "romantisch", tr: "romantik" },
       { de: "charmant", tr: "sevimli" },
       { de: "flirten", tr: "flört etmek" },
