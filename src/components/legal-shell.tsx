@@ -90,8 +90,10 @@ export async function LegalPage({ doc, locale }: { doc: LegalDocId; locale: Lega
   const isContract = doc !== "support";
   const changelog = cfg.changelog.slice(0, 2);
 
+  /* Belgenin dili arayüzün dilinden bağımsız: `<html lang>` arayüzü söylüyor,
+     bu kapsayıcı okunan metnin dilini (ekran okuyucu, yazım, arama motoru). */
   return (
-    <div className="mx-auto w-full max-w-3xl px-5 py-10">
+    <div lang={locale} className="mx-auto w-full max-w-3xl px-5 py-10">
       <DocHeader locale={locale} />
       <h1 className="text-display tracking-tight">{page.title}</h1>
       {isContract ? (
