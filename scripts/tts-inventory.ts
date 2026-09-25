@@ -10,6 +10,8 @@ import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 import { MODULE_EXAMS } from "../src/lib/lessons/module-exam";
 import { LESSONS } from "../src/lib/lessons/source";
 import { cleanForSpeech, splitForSpeech } from "../src/lib/tts/text";
+import { cleanHeadword } from "../src/lib/headword";
+import { ownNeeds, type WordRow } from "./tts-own-needs";
 
 type Row = { source: string; lang: string; role: "target" | "narration"; text: string };
 const rows: Row[] = [];
@@ -19,19 +21,35 @@ const add = (source: string, lang: string, role: Row["role"], text: string) => {
   for (const part of splitForSpeech(text)) rows.push({ source, lang, role, text: cleanForSpeech(part) });
 };
 
-/* 1. kelime havuzları */
+/* 1. kelime havuzları — UYGULAMANIN KENDİ hesabıyla (`tts-own-needs` `ownNeeds`).
+   Burada eskiden ham alanlar sayılıyordu: çoğul "die -n" (kural köke hiç
+   uygulanmadan), örnek cümlenin tamamı (istemci yalnız ilk cümleyi okuyor),
+   anlam olarak ham `tr` (yürüyüş `spokenGloss` okuyor, ek notlarını okumuyor);
+   boşluk doldurma, dizilmiş cümle ve sözcük kutuları hiç yoktu. Satırlar
+   tohumlama betiklerinin yazacağı biçimde kuruluyor (seed.ts, seed-english.ts). */
 function loadWords(p: string) {
   const t = readFileSync(p, "utf8").trim();
   try { return JSON.parse(t) as Record<string, string>[]; } catch {
     return t.split("\n").filter((l) => l.trim().startsWith("{")).map((l) => JSON.parse(l.replace(/,\s*$/, "")));
   }
 }
-for (const [course, file] of [["de", "data/app/words.json"], ["en", "data/app/words-en.json"]] as const) {
-  for (const w of loadWords(file)) {
-    add(`words.${course}.word`, course, "target", `${w.artikel ?? ""} ${w.de}`.trim());
-    if (w.beispiel) add(`words.${course}.example`, course, "target", w.beispiel);
-    if (course === "de" && w.typ === "Nomen" && w.formen) add(`words.${course}.plural`, course, "target", `die ${w.formen}`);
-    if (w.tr) add(`words.${course}.gloss_tr`, "tr", "narration", w.tr);   // yürüyüş modu: anlam anadilde okunuyor
+{
+  const de = loadWords("data/app/words.json") as unknown as Record<string, string | number | null>[];
+  const german = new Map(de.map((w) => [w.id as number, cleanHeadword(String(w.de))]));
+  const rows: WordRow[] = [];
+  for (const w of de) {
+    rows.push({ id: w.id as number, de: cleanHeadword(String(w.de)), artikel: (w.artikel as string) || null, tr: String(w.tr), en: (w.en as string) ?? null,
+      formen: (w.formen as string) || null, typ: String(w.typ), niveau: String(w.niveau).startsWith("A1") ? "A1" : String(w.niveau),
+      beispiel: (w.beispiel as string) ?? null, de_gloss: null, rank: (w.rank as number) ?? null, course: "de" });
+  }
+  for (const w of loadWords("data/app/words-en.json") as unknown as Record<string, string | number | null>[]) {
+    const deGloss = (w.deGloss as string)?.trim() || (w.srcId ? german.get(w.srcId as number) ?? null : null);
+    rows.push({ id: w.id as number, de: String(w.de), artikel: null, tr: String(w.tr), en: null, formen: null, typ: String(w.typ),
+      niveau: String(w.niveau), beispiel: (w.beispiel as string) || null, de_gloss: deGloss, rank: null, course: "en" });
+  }
+  for (const n of ownNeeds(rows)) {
+    const narration = n.field.startsWith("gloss_") || n.field.startsWith("walk");
+    add(`words.${n.w.course}.${n.field}`, n.lang, narration ? "narration" : "target", n.text);
   }
 }
 
