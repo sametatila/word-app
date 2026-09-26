@@ -974,7 +974,7 @@ Deniz Arslan`,
               { de: "one free time activity", tr: "Bir boş zaman etkinliği" },
             ],
             sample:
-              "My name is Elif Demir. I am twenty-three years old and I come from Turkey. Now I live in Bristol. I speak Turkish, a little English and some German. I am a nurse. In my free time I like swimming.",
+              "My name is Elif Demir. I am twenty-three years old and I come from Türkiye. Now I live in Bristol. I speak Turkish, a little English and some German. I am a nurse. In my free time I like swimming.",
             criteria: [
               "Yedi sözcüğün her birine değinildi mi?",
               "Cümleler kısa ve tam mı? A1'de «My name is …», «I come from …» kalıpları yeterli.",

@@ -39,7 +39,7 @@
  { "tr": "Esnek çalışma isteği formunu doldur.", "kind": "form.prompt", "en": "Fill in the flexible working request form." },
  { "tr": "Gecikme bildiriminin künyesini doldur.", "kind": "form.prompt", "en": "Fill in the header of the delay notification." },
  { "tr": "Kişi sayısı: 4; soğan: 3; havuç: 2; un: 200 gram; bekleme: 20 dakika.", "kind": "form.facts", "en": "People: 4; onions: 3; carrots: 2; flour: 200 grams; resting time: 20 minutes." },
- { "tr": "Ali Demir; Türkiye'den (memleket ülkesi Türkei); şu an Berlin'de oturuyor.", "kind": "form.facts", "en": "Ali Demir; from Turkey (country of origin Türkei); lives in Berlin at the moment." },
+ { "tr": "Ali Demir; Türkiye'den (memleket ülkesi Türkei); şu an Berlin'de oturuyor.", "kind": "form.facts", "en": "Ali Demir; from Türkiye (country of origin Türkei); lives in Berlin at the moment." },
  { "tr": "Ay: temmuz; yer: sahil; konaklama: dağ evi; gezilen: kule ve anıt; ulaşım: feribot.", "kind": "form.facts", "en": "Month: July; place: the coast; accommodation: a mountain hut; visited: a tower and a monument; transport: ferry." },
  { "tr": "Arayan: Leyla Kaya; semt: doğu; oda: 3; istenen: teras ve ağaç; ölçüt: toplu taşıma yakın.", "kind": "form.facts", "en": "Looking: Leyla Kaya; district: east; rooms: 3; wanted: a terrace and a tree; criterion: close to public transport." },
  { "tr": "Bildiren: Nuri Öz; olay: trafik cezası; gün: salı, saat 7; tanık: eşi; ek: tamirhane makbuzu.", "kind": "form.facts", "en": "Reporting: Nuri Öz; incident: a traffic fine; day: Tuesday, at 7; witness: their spouse; enclosure: the garage receipt." },
