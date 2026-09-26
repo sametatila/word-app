@@ -14,7 +14,7 @@ import type { SkillExercise } from "../types";
  *           They ask that no evidence be ruled inadmissible without a hearing. ·
  *           A misdemeanor in one report is a civil infraction in another. ·
  *           Written as an administrative decision, the same step reads colder. ·
- *           In the spoken register, the acquittal becomes 'he was cleared.' ·
+ *           In the spoken register, the acquittal becomes "he was cleared." ·
  *           She stated it; he conceded it; they alleged it. ·
  *           The expert report openly claims what the file merely assumes. ·
  *           To record a revocation is not to accept it. ·
@@ -166,7 +166,7 @@ export const enC1U06: SkillExercise[] = [
       "A misdemeanor in one report is a civil infraction in another. The same act, the same file, two words, and the second one has taken the person out of it.\n" +
       "That is the whole of this lesson and it is worth being slow about. „Misdemeanor“ has somebody in it: a person did a thing that has a name in the code. „Civil infraction“ has a procedure in it, and the person has become an item in one.\n" +
       "Written as an administrative decision, the same step reads colder. Note the verb again: „reads“, middle voice, no reader named, and this unit has now used it twice because it is the only way to talk about how a text behaves.\n" +
-      "In the spoken register, the acquittal becomes 'he was cleared.' That one goes the other way. A word that is precise in a court becomes just a verdict in a corridor, and the man who was acquitted spends ten years hearing „cleared“ where the court had given reasons in his favor.\n" +
+      "In the spoken register, the acquittal becomes \"he was cleared.\" That one goes the other way. A word that is precise in a court becomes just a verdict in a corridor, and the man who was acquitted spends ten years hearing „cleared“ where the court had given reasons in his favor.\n" +
       "So register here is not politeness and it is not style. It is which facts survive the move from one document to another, and the answer is never all of them.\n" +
       "What survives a move into the administrative register is the procedure. What survives a move into the spoken register is the outcome. Neither keeps the reasoning, and the reasoning was the part that took the court four days.\n" +
       "The practical consequence for a writer is narrow and hard. When a fact has to cross between registers, it has to be rewritten in each one rather than translated, and a sentence that has been carried across unchanged is almost always saying something it did not say at home.",
@@ -206,7 +206,7 @@ export const enC1U06: SkillExercise[] = [
         items: [
           "A misdemeanor in one report is a civil infraction in another.",
           "Written as an administrative decision, the same step reads colder.",
-          "In the spoken register, the acquittal becomes 'he was cleared.'",
+          "In the spoken register, the acquittal becomes \"he was cleared.\"",
           "A fact has to be rewritten in each register.",
         ],
         explain: "İki sözcük, idari dil, konuşma dili; en sonda kural.",

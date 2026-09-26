@@ -12,7 +12,7 @@ import type { SkillExercise } from "../types";
  *           internalize, invalidate, enshrine, comprehend, impair,
  *           polarize, idealize, glorify, stylize, romanticize, transcend,
  *           embody.
- *   Kalıp:  Not exactly unscrupulous, are they? ·
+ *   Kalıp:  Not exactly scrupulous, are they? ·
  *           I wouldn't call that virtuous. ·
  *           Hardly alarmism, is it? ·
  *           Some serve the common good; others, themselves. ·
@@ -254,9 +254,9 @@ export const enC1U04: SkillExercise[] = [
     ],
     minutes: 8,
     segments: [
-      { speaker: "Aylin", text: "Not exactly unscrupulous, are they? That is the whole of the reply and it took four drafts." },
+      { speaker: "Aylin", text: "Not exactly scrupulous, are they? That is the whole of the reply and it took four drafts." },
       { speaker: "Cenk", text: "It sounds almost friendly." },
-      { speaker: "Aylin", text: "It sounds almost friendly and it says they are. The negative in front of a word that means the opposite is how English says a hard thing without leaving a sentence anybody can quote." },
+      { speaker: "Aylin", text: "It sounds almost friendly and it says they are not. The negative in front of a word that means the opposite is how English says a hard thing without leaving a sentence anybody can quote." },
       { speaker: "Cenk", text: "And the tag question." },
       { speaker: "Aylin", text: "„Are they?“ hands it to the room. Without the tag it is my claim; with it, it is a question I have asked and somebody else has to answer." },
       { speaker: "Cenk", text: "I wouldn't call that virtuous." },
@@ -464,7 +464,7 @@ export const enC1U04: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     unit: 4,
-    title: "Not exactly unscrupulous, are they?",
+    title: "Not exactly scrupulous, are they?",
     genre: "opinion",
     intro: "Üç eksiltili söyleyiş ve iki boşluk.",
     gloss: [
@@ -477,8 +477,8 @@ export const enC1U04: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Tam da vicdansız sayılmazlar, öyle mi?",
-        answer: "Not exactly unscrupulous, are they?",
+        tr: "Tam da vicdanlı sayılmazlar, öyle mi?",
+        answer: "Not exactly scrupulous, are they?",
         hint: "Olumsuzla söylenen olumlu; soru eki odaya devrediyor.",
       },
       {

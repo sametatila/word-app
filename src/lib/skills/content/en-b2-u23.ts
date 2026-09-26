@@ -17,7 +17,7 @@ import type { SkillExercise } from "../types";
  *           Apparently the tone of voice carried it. ·
  *           On balance the choice of words is arguably the problem. ·
  *           The filing of the enclosure is done. ·
- *           The sending of a registered letter is recorded. ·
+ *           The sending of a certified letter is recorded. ·
  *           The sorting of the incoming mail starts at eight. ·
  *           The case file is said to be complete. ·
  *           The legal basis is expected to change. ·
@@ -71,7 +71,7 @@ export const enB2U23: SkillExercise[] = [
       "The filing of the enclosure is done. Now take the „the“ away from the front and see what has to happen at the back.\n" +
       "Filing the enclosure is done. The „of“ has gone with it, and neither word can stay without the other. „The filing the enclosure“ is not a sentence and „filing of the enclosure“ is not one either.\n" +
       "So there are two shapes and no third option. With „the“ in front, the object arrives with „of“. Without „the“, the object arrives straight after the verb, exactly as it would in an ordinary sentence.\n" +
-      "The sending of a registered letter is recorded. The sorting of the incoming mail starts at eight. Both of those are the first shape, and a template for an office is written in it because a heading needs a noun and a noun needs „the“.\n" +
+      "The sending of a certified letter is recorded. The sorting of the incoming mail starts at eight. Both of those are the first shape, and a template for an office is written in it because a heading needs a noun and a noun needs „the“.\n" +
       "The second shape is what the same office says out loud. Filing the enclosure took twenty minutes. Sorting the incoming mail is somebody's whole morning.\n" +
       "There is a difference in weight and it is not small. The first shape is a thing: it can be put in a column, given a file number and counted. The second is an activity: it takes time and somebody is doing it.\n" +
       "A page that uses the first shape for everything has turned a morning's work into a register of nouns, and the habit is hard to see from inside it, because every line looks like the line above.",
@@ -420,7 +420,7 @@ export const enB2U23: SkillExercise[] = [
       {
         kind: "build",
         tr: "Taahhütlü mektup gönderilmesi kayda geçiyor.",
-        answer: "The sending of a registered letter is recorded.",
+        answer: "The sending of a certified letter is recorded.",
         hint: "Aynı biçim; başlık dili böyle kuruluyor.",
       },
       {

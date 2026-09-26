@@ -165,7 +165,7 @@ export const enB2U25: SkillExercise[] = [
       { de: "the complainant", tr: "şikâyet eden" },
       { de: "a judgment", tr: "yargı" },
       { de: "issued", tr: "düzenlenen" },
-      { de: "a credit note", tr: "alacak dekontu" },
+      { de: "store credit", tr: "mağaza kredisi" },
       { de: "a request", tr: "istek" },
       { de: "an apology", tr: "özür" },
       { de: "free", tr: "bedava" },
@@ -179,8 +179,8 @@ export const enB2U25: SkillExercise[] = [
       "They can't have meant to deceive us. The negative, and note why the strong form is here: the evidence really is strong. The company corrected the page within a day and refunded without being asked.\n" +
       "We should have kept the proof of purchase. The third form, about us, and it is the only line in the letter anybody will remember, which is exactly why it goes in.\n" +
       "A complaint that contains no sentence about the complainant is answered by a form. A complaint that contains one is answered by a person, and that is worth more than any adjective in the first paragraph.\n" +
-      "The words that do not help are the ones that come easily: overpriced, chargeable, the whole list. Each of them is a judgment and none of them is a fact, and a credit note is issued on facts.\n" +
-      "So the letter has three sentences of evidence, one sentence about us, and one request. The request is for a credit note and not for an apology, because an apology is free and a credit note is on a page somebody has to sign.",
+      "The words that do not help are the ones that come easily: overpriced, chargeable, the whole list. Each of them is a judgment and none of them is a fact, and store credit is issued on facts.\n" +
+      "So the letter has three sentences of evidence, one sentence about us, and one request. The request is for store credit and not for an apology, because an apology is free and store credit is on a page somebody has to sign.",
     questions: [
       {
         text: "Why is the strong negative used?",
@@ -190,7 +190,7 @@ export const enB2U25: SkillExercise[] = [
       },
       {
         text: "How is a complaint with no sentence about the complainant answered?",
-        options: ["by a form", "by a person", "by a credit note"],
+        options: ["by a form", "by a person", "by store credit"],
         answer: 0,
         explain: "„A complaint that contains no sentence about the complainant is answered by a form.“",
       },
@@ -199,7 +199,7 @@ export const enB2U25: SkillExercise[] = [
         text: "The letter asks for an apology.",
         options: ["True", "False"],
         answer: 1,
-        explain: "„The request is for a credit note and not for an apology…“",
+        explain: "„The request is for store credit and not for an apology…“",
       },
       {
         kind: "gapfill",
@@ -218,17 +218,17 @@ export const enB2U25: SkillExercise[] = [
           "The ad must have been misleading.",
           "They can't have meant to deceive us.",
           "We should have kept the proof of purchase.",
-          "The request is for a credit note.",
+          "The request is for store credit.",
         ],
         explain: "Kanıt, dışarıda bıraktığı, kendi payımız; en sonda istek.",
       },
       {
         kind: "short_answer",
-        text: "What is a credit note issued on?",
+        text: "What is store credit issued on?",
         options: [],
         answer: 0,
         accept: ["facts", "on facts", "not judgments"],
-        explain: "„a credit note is issued on facts.“",
+        explain: "„store credit is issued on facts.“",
       },
     ],
   },

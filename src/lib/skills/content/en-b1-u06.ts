@@ -6,7 +6,7 @@ import type { SkillExercise } from "../types";
  * Dört ders: Reason and result · When I arrive · Why I signed up · Only if.
  *
  *   Kelime: because, so, since, therefore, reason, cause, result, explain,
- *           until, meanwhile, arrive, depart, board, timetable, platform,
+ *           until, meanwhile, arrive, depart, board, timetable, track,
  *           journey, purpose, aim, course, enrol, practise, useful, goal,
  *           certificate, unless, agreement, promise, accept, refuse, deal,
  *           keep, risk.
@@ -194,7 +194,7 @@ export const enB1U06: SkillExercise[] = [
     minutes: 6,
     segments: [
       { speaker: "Nil", text: "What time does your train depart?" },
-      { speaker: "Can", text: "Ten past seven from platform four. The schedule says four, but it is always three." },
+      { speaker: "Can", text: "Ten past seven from track four. The schedule says four, but it is always three." },
       { speaker: "Nil", text: "Then go to three and read the board again." },
       { speaker: "Can", text: "When I arrive, I will call you." },
       { speaker: "Nil", text: "Call when you are on the train, not when you arrive. I will be in bed at midnight." },
@@ -203,7 +203,7 @@ export const enB1U06: SkillExercise[] = [
       { speaker: "Can", text: "Meanwhile you can eat something." },
       { speaker: "Nil", text: "Meanwhile I will move the car, which is the real reason I am here." },
       { speaker: "Can", text: "The journey is six hours." },
-      { speaker: "Nil", text: "Six hours and one change. Take a photo of the platform number when you change, so that you can find the way back." },
+      { speaker: "Nil", text: "Six hours and one change. Take a photo of the track number when you change, so that you can find the way back." },
       { speaker: "Can", text: "Nothing will go wrong." },
       { speaker: "Nil", text: "Take the photo in case it does. It costs one second." },
       { speaker: "Can", text: "The train is departing at ten. I have to go." },
@@ -211,7 +211,7 @@ export const enB1U06: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "Which platform will the train really leave from?",
+        text: "Which track will the train really leave from?",
         options: ["three", "four", "ten"],
         answer: 0,
         explain: "„The schedule says four, but it is always three.“",
@@ -247,7 +247,7 @@ export const enB1U06: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "Why should Can photograph the platform number?",
+        text: "Why should Can photograph the track number?",
         options: [],
         answer: 0,
         accept: ["in case it goes wrong", "to find the way back", "in case"],
@@ -384,7 +384,7 @@ export const enB1U06: SkillExercise[] = [
         facts: "Tren yedi onda; peron dört yazıyor ama üç; yolculuk altı saat; bir aktarma var.",
         fields: [
           { label: "Departure", answer: "ten past seven", accept: ["7.10"] },
-          { label: "Platform", answer: "three", accept: ["3"] },
+          { label: "Track", answer: "three", accept: ["3"] },
           { label: "Journey", answer: "six hours", accept: ["6 hours"] },
           { label: "Changes", answer: "one", accept: ["1"] },
         ],

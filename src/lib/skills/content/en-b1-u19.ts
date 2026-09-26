@@ -7,7 +7,7 @@ import type { SkillExercise } from "../types";
  * The results are in · Seeing a specialist.
  *
  *   Kelime: bleed, emergency, ambulance, injury, wound, chest, breath,
- *           ward, tablet, dose, package, medicine, pharmacy, painkiller,
+ *           unit, tablet, dose, package, medicine, pharmacy, painkiller,
  *           side effect, warning, blood, test, sample, scan, infection,
  *           virus, allergy, chronic, refer, specialist, surgeon, examine,
  *           x-ray, bone, knee, joint.
@@ -142,12 +142,12 @@ export const enB1U19: SkillExercise[] = [
       "The doctor had seen the wound before I spoke. Four seconds, from two meters away, while I was still saying the word „kitchen“. Everything I had prepared in the car was answered by looking.\n" +
       "Then the waiting. Two hours, and the triage nurse explained it in one line: the people who go first are the ones who cannot wait, and tonight that was not us.\n" +
       "The injury needed six stitches and the chest pain that had frightened me most turned out to be breath, not heart. I had made it into something else on the way in, which is what a car journey does.\n" +
-      "We left at one in the morning with a paper for the ward on Thursday. In the corridor a man was sitting with a bag and had been there since seven.\n" +
+      "We left at one in the morning with a paper for the unit on Thursday. In the corridor a man was sitting with a bag and had been there since seven.\n" +
       "What I took away was not medical. It was the triage line: two hours of waiting is the sound of a system working, and the hour I would have preferred belonged to somebody else.",
     questions: [
       {
         text: "What had happened before they arrived?",
-        options: ["the bleeding had stopped", "the doctor had gone", "the ward had closed"],
+        options: ["the bleeding had stopped", "the doctor had gone", "the unit had closed"],
         answer: 0,
         explain: "„By the time we arrived, the bleeding had stopped.“",
       },

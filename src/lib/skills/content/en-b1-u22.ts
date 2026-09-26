@@ -8,7 +8,7 @@ import type { SkillExercise } from "../types";
  *
  *   Kelime: town, bridge, traffic, suburb, building, square, street,
  *           pollution, seat, route, passenger, bike, lane, commute,
- *           driver, rush, clean, bottle, pipe, supply, landfill, destroy,
+ *           driver, rush hour, clean, bottle, pipe, supply, landfill, destroy,
  *           plant, dirty, mayor, space, poster, petition, committee,
  *           vote, stop, paper.
  *   Kalıp:  The town has changed a lot since 2010. ·

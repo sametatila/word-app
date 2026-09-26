@@ -270,14 +270,14 @@ export const enB1U20: SkillExercise[] = [
     intro: "Bir gecelik yatış. Hangi cümle plan, hangisi ayarlanmış?",
     gloss: [
       { de: "operate", tr: "ameliyat etmek" },
-      { de: "the ward", tr: "koğuş" },
+      { de: "the unit", tr: "hastane servisi" },
       { de: "apparently", tr: "anlaşılan" },
       { de: "a bit further", tr: "biraz daha uzağa" },
     ],
     minutes: 6,
     segments: [
       { speaker: "Ela", text: "They will operate tomorrow morning. Eight o'clock, and I am the first on the list, which everybody tells me is the good slot." },
-      { speaker: "Ela", text: "I am going to stay for one night. That was my decision three weeks ago and the ward agreed with it today." },
+      { speaker: "Ela", text: "I am going to stay for one night. That was my decision three weeks ago and the unit agreed with it today." },
       { speaker: "Ela", text: "My sister is visiting at eight this evening. Arranged, in the calendar, and she will bring the one thing the list does not mention: a phone charger with a long cable." },
       { speaker: "Ela", text: "The bed by the window was free and I took it. Six hours later I understand why it was free: the door and the window are the two noisy places." },
       { speaker: "Ela", text: "The care here is calm in a way I did not expect. Nobody hurries and nobody is late, and those two things are apparently possible together." },

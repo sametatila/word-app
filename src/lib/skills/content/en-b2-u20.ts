@@ -149,7 +149,7 @@ export const enB2U20: SkillExercise[] = [
       { de: "reach", tr: "ulaşmak" },
       { de: "alike", tr: "birbirine benzer" },
       { de: "entirely", tr: "tümüyle" },
-      { de: "paid vacation", tr: "izin hakkı" },
+      { de: "paid vacation", tr: "ücretli izin" },
       { de: "a complaint", tr: "yakınma" },
       { de: "grown", tr: "büyümüş" },
       { de: "the test", tr: "sınama" },

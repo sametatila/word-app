@@ -8,7 +8,7 @@ import type { SkillExercise } from "../types";
  * If the plant had stayed · Speaking about a group.
  *
  *   Kelime: upturn, investment, market share, supply chain, stock market,
- *           workforce, job market, draft law, regulation, enforcement,
+ *           workforce, job market, bill, regulation, enforcement,
  *           supervision, administration, authorize, prerequisite,
  *           bankruptcy, severance pay, dismissal, termination, employment,
  *           generalization, plausible, questionable, contradictory,
@@ -16,7 +16,7 @@ import type { SkillExercise } from "../types";
  *   Kalıp:  By spring the upturn will have started. ·
  *           Next year we will be watching the investment. ·
  *           By then the market share will have doubled. ·
- *           The draft law must have been unclear. ·
+ *           The bill must have been unclear. ·
  *           They can't have read the regulation. ·
  *           We should have funded enforcement. ·
  *           If the firm had avoided bankruptcy, we would have stayed. ·
@@ -157,13 +157,13 @@ export const enB2U15: SkillExercise[] = [
     ],
     minutes: 9,
     text:
-      "The draft law must have been unclear. Four words of verb, and the first of them is not giving an order.\n" +
+      "The bill must have been unclear. Four words of verb, and the first of them is not giving an order.\n" +
       "„Must have been“ reads the evidence. Three administrations applied the same regulation in three different ways, and only one explanation survives that. The sentence is a conclusion and it says so with a modal rather than with an argument.\n" +
       "They can't have read the regulation. The negative, and it is „can't have“ and never „mustn't have“: a prohibition cannot be sent backwards to last year.\n" +
       "We should have funded enforcement. The third one, and it is the only sentence in the paragraph about us. It is not about what happened; it is about what did not, and a public official reading the note will remember that line and forget the other two.\n" +
       "That is the whole of a review of this kind. What the evidence shows. What it rules out. What we did not do.\n" +
       "The temptation is to spend the page on supervision and prerequisites, because those are about the world. A note written that way is accurate and it changes nothing, because nobody in it has a name or a decision.\n" +
-      "So the third sentence is written first, and the rest of the page is built to earn it. A draft law that nobody was authorized to enforce was never a law; it was a sentence in a gazette with a number on it.",
+      "So the third sentence is written first, and the rest of the page is built to earn it. A bill that nobody was authorized to enforce was never a law; it was a sentence in a gazette with a number on it.",
     questions: [
       {
         text: "What does „must have been“ read?",
@@ -198,7 +198,7 @@ export const enB2U15: SkillExercise[] = [
         options: [],
         answer: 0,
         items: [
-          "The draft law must have been unclear.",
+          "The bill must have been unclear.",
           "They can't have read the regulation.",
           "We should have funded enforcement.",
           "The third sentence is written first.",
@@ -207,7 +207,7 @@ export const enB2U15: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "What was the draft law really?",
+        text: "What was the bill really?",
         options: [],
         answer: 0,
         accept: ["a sentence in a gazette", "a numbered sentence", "not a law"],
@@ -450,7 +450,7 @@ export const enB2U15: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     unit: 15,
-    title: "The draft law must have been unclear",
+    title: "The bill must have been unclear",
     genre: "info",
     intro: "Üç kip ve iki koşul. Hangisi bize dair?",
     gloss: [
@@ -464,7 +464,7 @@ export const enB2U15: SkillExercise[] = [
       {
         kind: "build",
         tr: "Kanun tasarısı belirsiz olmuş olmalı.",
-        answer: "The draft law must have been unclear.",
+        answer: "The bill must have been unclear.",
         hint: "Çıkarım: kanıt tek bir açıklama bırakıyor.",
       },
       {

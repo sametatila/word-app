@@ -15,7 +15,7 @@ import type { SkillExercise } from "../types";
  *           ideology, falsify, doctrine, dialectic.
  *   Kalıp:  Not exactly cheap, that one. ·
  *           I wouldn't say no to a less patronizing tone. ·
- *           Hardly self-righteous, is it? ·
+ *           Hardly modest, is it? ·
  *           This alone explains the proximity. ·
  *           Such composure is rare. ·
  *           The latter reading leaves an unease. ·
@@ -28,7 +28,7 @@ import type { SkillExercise } from "../types";
  *
  * Ünitenin tek öğretme noktası OLUMSUZLA SÖYLENEN OLUMLU (litotes).
  * „Not exactly cheap“ pahalı demek; „I wouldn't say no“ evet demek;
- * „Hardly self-righteous“ ise hem „hiç değil“ hem de ters okumayla
+ * „Hardly modest“ ise hem „hiç değil“ hem de ters okumayla
  * „epeyce“ olabiliyor — ve bunu ayıran şey ton değil, bağlam. „Hardly“
  * ayrıca kendi olumsuzunu taşıyor: yanına ikinci bir „not“ gelmiyor.
  */
@@ -76,8 +76,8 @@ export const enC1U03: SkillExercise[] = [
       "This is understatement, and English uses it far more than a learner expects. „Not exactly cheap“ means expensive. „I wouldn't say no to a less patronizing tone“ means the tone was patronizing and please change it. „No small matter“ means a large one.\n" +
       "The shape is always the same: a negative in front of a word that means the opposite of what is meant. And the effect is always the same too — the claim is made and it is left deniable, so the room can move on without anybody having to answer it.\n" +
       "That deniability is the whole point and it is not politeness for its own sake. A blunt version of the first sentence would require a reply. The understated one is a remark, and a remark can be heard and not taken up.\n" +
-      "Hardly self-righteous, is it? Here the device is doubled, because „hardly“ is itself a negative. It carries its own „not“, and a second one cannot be added: „hardly not self-righteous“ is nothing. That is the same trap as „by no means“ and „unless“, two levels below.\n" +
-      "What „hardly self-righteous“ means depends entirely on context, and this is where the device gets difficult. Said of a modest person it is a compliment. Said with a tag question after a speech full of judgment, it reverses and becomes an insult, and nothing in the words tells you which.\n" +
+      "Hardly modest, is it? Here the device is doubled, because „hardly“ is itself a negative. It carries its own „not“, and a second one cannot be added: „hardly not modest“ is nothing. That is the same trap as „by no means“ and „unless“, two levels below.\n" +
+      "What „hardly modest“ means depends entirely on context, and this is where the device gets difficult. Said of an ambitious plan it is a compliment. Said with a tag question after a speech full of judgment, it reverses and becomes an insult, and nothing in the words tells you which.\n" +
       "The reader resolves it from what came before. So understatement is the one figure in this course that cannot be taught from the sentence alone, and the only way to use it safely is to be sure the sentence before has done enough work for the reader to read this one backwards.",
     questions: [
       {
@@ -101,11 +101,11 @@ export const enC1U03: SkillExercise[] = [
       },
       {
         kind: "gapfill",
-        text: "___ self-righteous, is it?",
+        text: "___ modest, is it?",
         options: [],
         answer: 0,
         accept: ["Hardly", "hardly"],
-        explain: "„Hardly self-righteous, is it?“",
+        explain: "„Hardly modest, is it?“",
       },
       {
         kind: "order",
@@ -115,7 +115,7 @@ export const enC1U03: SkillExercise[] = [
         items: [
           "Not exactly cheap, that one.",
           "I wouldn't say no to a less patronizing tone.",
-          "Hardly self-righteous, is it?",
+          "Hardly modest, is it?",
           "The reader resolves it from what came before.",
         ],
         explain: "Üç örnek, en sonda okurun işi.",
@@ -430,8 +430,8 @@ export const enC1U03: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Pek de kendini haklı gören biri değil, öyle mi?",
-        answer: "Hardly self-righteous, is it?",
+        tr: "Pek alçakgönüllü sayılmaz, öyle mi?",
+        answer: "Hardly modest, is it?",
         hint: "„hardly“ kendi olumsuzunu taşıyor; ikinci „not“ olmaz.",
       },
       {

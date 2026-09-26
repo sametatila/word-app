@@ -7,7 +7,7 @@ import type { SkillExercise } from "../types";
  * Getting it fixed.
  *
  *   Kelime: lease, deposit, renew, sign, van, carry, fragile, unpack,
- *           address, meter, ground, upstairs, share, chore, rota, tidy,
+ *           address, meter, ground, upstairs, share, chore, rota, clean up,
  *           guest, split, agree, argue, leak, plumber, boiler, fix, moisture,
  *           broken, complain, delay.
  *   Kalıp:  The deposit is paid before you move in. ·
@@ -15,7 +15,7 @@ import type { SkillExercise } from "../types";
  *           The van is coming at nine. ·
  *           I am going to unpack the kitchen first. ·
  *           I will carry that one. ·
- *           You have to tidy the kitchen after cooking. ·
+ *           You have to clean up the kitchen after cooking. ·
  *           You don't have to ask about guests. ·
  *           We should agree on a rota. ·
  *           He said that he would come on Monday. ·
@@ -126,9 +126,9 @@ export const enB1U04: SkillExercise[] = [
     text:
       "Sena: Before you move in, three things. They are not rules, they are the reasons we still talk to each other.\n" +
       "Can: Go on.\n" +
-      "Sena: You have to tidy the kitchen after cooking. Not the next morning — after.\n" +
+      "Sena: You have to clean up the kitchen after cooking. Not the next morning — after.\n" +
       "Can: That is fair. I am the person who cooks at eleven at night.\n" +
-      "Sena: Then you are the person who tidies at half past eleven.\n" +
+      "Sena: Then you are the person who cleans up at half past eleven.\n" +
       "Can: And guests?\n" +
       "Sena: You don't have to ask about guests. This is your apartment too. Tell us if somebody stays three nights, because of the bathroom in the morning.\n" +
       "Can: And the chores?\n" +
@@ -141,10 +141,10 @@ export const enB1U04: SkillExercise[] = [
       "Sena: Then we argue once, quietly, and we split the work again. We have argued twice in two years. Both times about the same cupboard.",
     questions: [
       {
-        text: "When do you have to tidy the kitchen?",
+        text: "When do you have to clean up the kitchen?",
         options: ["after cooking", "the next morning", "once a week"],
         answer: 0,
-        explain: "„You have to tidy the kitchen after cooking. Not the next morning — after.“",
+        explain: "„You have to clean up the kitchen after cooking. Not the next morning — after.“",
       },
       {
         text: "Why did the old schedule stop working?",
@@ -400,7 +400,7 @@ export const enB1U04: SkillExercise[] = [
     genre: "personal",
     intro: "Ev kuralları ve aktarılan sözler. Hangi fiil kişiyi doğrudan alıyor?",
     gloss: [
-      { de: "tidy", tr: "toplamak" },
+      { de: "clean up", tr: "ortalığı toplamak" },
       { de: "agree on", tr: "anlaşmak" },
       { de: "he would come", tr: "geleceğini" },
     ],
@@ -409,7 +409,7 @@ export const enB1U04: SkillExercise[] = [
       {
         kind: "build",
         tr: "Yemekten sonra mutfağı toplaman gerekiyor.",
-        answer: "You have to tidy the kitchen after cooking.",
+        answer: "You have to clean up the kitchen after cooking.",
         hint: "Kuraldan gelen zorunluluk; „after“ sonrası fiil „-ing“ alıyor.",
       },
       {
