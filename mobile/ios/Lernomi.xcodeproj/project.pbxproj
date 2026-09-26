@@ -181,6 +181,7 @@
 				00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */,
 				E235C05ADACE081382539298 /* [CP] Copy Pods Resources */,
 				D33CDFF65CC4A1DF6BF404D8 /* [CP-User] [RNFB] Core Configuration */,
+				AB01F1002D4E51A700000099 /* Strip local networking (Release) */,
 			);
 			buildRules = (
 			);
@@ -338,6 +339,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Lernomi/Pods-Lernomi-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		AB01F1002D4E51A700000099 /* Strip local networking (Release) */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Strip local networking (Release)";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# NSAllowsLocalNetworking yalnız geliştirmede Metro için; yayın paketinde yok (denetim T2).\nif [ \"$CONFIGURATION\" = \"Release\" ]; then\n  /usr/libexec/PlistBuddy -c \"Delete :NSAppTransportSecurity:NSAllowsLocalNetworking\" \"$TARGET_BUILD_DIR/$INFOPLIST_PATH\" 2>/dev/null || true\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

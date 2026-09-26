@@ -17,9 +17,9 @@
 			<string>NSPrivacyAccessedAPICategoryUserDefaults</string>
 			<key>NSPrivacyAccessedAPITypeReasons</key>
 			<array>
+				<!-- Yalnız uygulamanın kendi ayarları (CA92.1). App Group yok (1C8F.1 değil),
+				     üçüncü taraf SDK sarmalayıcısı değiliz (C56D.1 değil); denetim T2. -->
 				<string>CA92.1</string>
-				<string>1C8F.1</string>
-				<string>C56D.1</string>
 			</array>
 		</dict>
 		<dict>
