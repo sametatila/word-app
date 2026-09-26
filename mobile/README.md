@@ -1,12 +1,14 @@
 # Lernomi — mobil uygulama (React Native)
 
 Deponun web tarafıyla **aynı backend'i** kullanan React Native uygulaması. Kendi
-sunucusu yok: bütün istekler `https://www.lernomi.app`'e gider (`src/api/client.ts`),
-oturum Better Auth çerezidir. Yani `mobile/` bir istemcidir; iş kuralları, içerik ve
+sunucusu yok: istekler `https://www.lernomi.app`'e gider; ağ o adresi engelliyorsa yedek
+`https://lernomi.rumpuskit.com`'a geçer (`src/api/base.ts`, istemci `src/api/client.ts`).
+Oturum Better Auth çerezidir ve adrese bağlıdır: yedeğe geçen hesap yeniden giriş yapar. Yani `mobile/` bir istemcidir; iş kuralları, içerik ve
 veritabanı depo kökündeki Next.js uygulamasında.
 
-- Android: `com.lernomi.learn` — **yayında değil**, ilk yükleme hazırlanıyor (`docs/play/`)
-- iOS: `app.lernomi.ios` — **yayında değil**, bkz. `docs/appstore/README.md`
+- Android: `com.lernomi.learn` — yayında değil, Play iç testte (`docs/play/`)
+- iOS: `app.lernomi.ios` — yayında değil, TestFlight'ta (`docs/appstore/README.md`)
+- Açık mağaza işleri: `docs/store/audit.md`
 
 ## Kurulum
 
@@ -39,9 +41,8 @@ Sonrasında **`ios/Lernomi.xcworkspace`** açılır, `.xcodeproj` değil — pod
 workspace'te bağlı. `Podfile.lock` gitignore'da **değil**: pod sürümlerini sabitlemesi
 için, üretildiği gün commit edilir (Android'de karşılığı `gradle-wrapper`).
 
-iOS 2026-09-22'den beri yerelde (Mac mini, Xcode) derleniyor ve TestFlight'a
-yükleniyor; önceki Linux döneminde `ios/` altı "derlenmemiş kod"du. Cihazda
-sınanacakların sıralı listesi `docs/plan/ios-device-runbook.md`'de.
+iOS yerelde (Xcode) ve CI'da derleniyor. Gerçek cihazda sınanacakların sıralı listesi
+`docs/plan/ios-device-runbook.md`'de.
 
 ## Sürüm: tek kaynak, üç hedef, bir kapı
 
@@ -50,7 +51,7 @@ tutulmuyor:
 
 ```json
 "version": "1.0.0",     // kullanıcıya görünen semver (mağaza sayfası, Ayarlar)
-"versionCode": 1,       // yalnız Android/iOS; MONOTON artar, tekrar edemez
+"versionCode": 8,       // yalnız Android/iOS; MONOTON artar, tekrar edemez
 ```
 
 Oradan üç hedefe `scripts/version.mjs` basıyor:
@@ -74,11 +75,6 @@ yükleme yenisini ister — Play aynı kodu ikinci kez kabul etmiyor, dolayısı
 kapalı testte `1.0.0`ın onuncu yüklemesi bile yeni bir kod demek. Bu yüzden
 versionCode semver'den türetilmiyor, ayrı bir sayaç.
 
-Eskiden üçü elle eşitleniyordu ve web dördüncü kaynak olarak kendi başına
-ilerliyordu. Sonuç: aynı ekranın aynı yerinde web `Lernomi 1.0.5`, mobil
-`Lernomi 1.0.0` yazıyordu. Denetimler de bunu görmüyordu, çünkü her biri yalnız
-kendi üç dosyasına bakıyordu.
-
 ## patch-package
 
 `npm install` sonrası `patches/` altındaki yamalar otomatik uygulanır (`postinstall`).
@@ -88,8 +84,8 @@ değerlerini kullanmıyorlar.
 
 | Yama | Ne düzeltiyor |
 |---|---|
-| `react-native-haptic-feedback+2.3.3` | eski mimari koşulu, yeni RN'de derlenmiyordu |
-| `react-native-purchases+10.9.0` | gradle `android {}` bloğu |
+| `react-native-haptic-feedback+2.3.4` | eski mimari koşulu, yeni RN'de derlenmiyordu |
+| `react-native-purchases+10.9.1` | gradle `android {}` bloğu |
 | `react-native-sound+0.11.2` | sabit `DEFAULT_COMPILE_SDK_VERSION` yerine proje değeri |
 | `react-native-tts+4.1.1` | aynı: sabit SDK sürümleri |
 
@@ -104,7 +100,7 @@ eski AGP kurulumuyla çalışan Android derlemesini bozabilirdi.
 ## Betikler
 
 ```sh
-npm run lint         # eslint (@react-native yapılandırması, ESLint 8 + .eslintrc.js)
+npm run lint         # ESLint 9, düz yapılandırma (eslint.config.js)
 npm test             # jest — App'i uçtan uca render eden duman testi
 npm run i18n:check   # çeviri katmanını ATLAYAN ham Türkçe metin taraması (CI kapısı)
 npm run i18n:scan    # aynı tarama, dosya dosya döküm
@@ -114,14 +110,10 @@ npm run release:android # Play için AAB + cihazda deneme APK'sı, üretilen do�
 npm run check:16kb   # bir .aab/.apk içindeki 64-bit .so'ların 16 KB hizası
 ```
 
-Lint ESLint 9 ve düz (flat) yapılandırmayla çalışıyor: `mobile/eslint.config.js`,
-RN'in `@react-native/eslint-config/flat` yapılandırmasının üstüne kurulu. ESLint 9
-yapılandırmayı çalıştığı dizinden yukarı doğru arıyor, yani `mobile/` içinde koşunca
-depo kökündeki `eslint.config.mjs`'e (o dosya `mobile/**`'ı yoksayıyor) ulaşmıyor.
-ESLint 8 döneminin `ESLINT_USE_FLAT_CONFIG=false` bayrağı bu yüzden kalktı.
-RN yapılandırmasının getirdiği `eslint-plugin-ft-flow` 2.x ESLint 9'da `.js`
-dosyalarında çöküyor (`context.getAllComments is not a function`);
-`package.json` › `overrides` onu ESLint 9'u resmen destekleyen 3.x'e çekiyor.
+Lint `mobile/eslint.config.js` (RN'in `@react-native/eslint-config/flat` yapılandırması
+üstüne). `mobile/` içinde koşunca depo kökündeki `eslint.config.mjs`'e ulaşmıyor (o dosya
+`mobile/**`'ı zaten yoksayıyor). `eslint-plugin-ft-flow` 2.x ESLint 9'da çöktüğü için
+`package.json` › `overrides` onu 3.x'e çekiyor.
 
 `npm test` bütün ekranları yükler, dolayısıyla **her native paketin bir taklidi
 `jest.setup.js`'te olmak zorunda**; yeni paket eklerken taklidi de eklenmeli, yoksa
@@ -132,78 +124,34 @@ yalnız aşağı inebilir. Taban gerçekten düştüyse: `node scripts/i18n-scan
 
 ## İmza ve yayın
 
-Sırların hiçbiri repoda değil.
+Sırların hiçbiri depoda değil.
 
 ```sh
-bash scripts/gen-release-keystore.sh   # Android release anahtarı (bir kez, YEDEKLE)
-npm run release:android                # AAB + APK üretir ve ürettiğini doğrular
+bash scripts/gen-release-keystore.sh   # Android yükleme anahtarı (bir kez; anahtar ve parola ayrı iki yerde yedeklenir)
+npm run release:android                # AAB + deneme APK'sı üretir ve ürettiğini doğrular
 bash scripts/ios-archive.sh            # iOS arşiv + App Store yüklemesi (yalnız macOS)
 ```
 
-Android anahtarı bir **yükleme** anahtarıdır; kaybı Google'dan sıfırlatılabilir ama
-süreç günler alır (ayrıntı aşağıda). iOS tarafında imza kimliği ve takım kimliği
-Xcode/Keychain'den gelir, `project.pbxproj`'da yalnız yer tutucu var.
-
-### Yayın imzası: anahtarsız release yapısı üretilmiyor
-
-`keystore.properties` (gitignore'da) yoksa **release görevleri düşüyor** — kapı
-`app/build.gradle`'da, görev grafiği hazır olunca bakılıyor; `./gradlew tasks`,
-IDE eşitlemesi ve debug yapıları etkilenmiyor.
-
-Eskiden anahtar yokken release sessizce **debug anahtarıyla** imzalanıyordu. Play
-böyle bir yüklemeyi reddediyor; kapı o sessiz hatayı yapının başında görünür kılıyor.
-
-Kapı `--dry-run` ile sınandı: anahtarsız `:app:assembleRelease` mesajla düşüyor,
-`-PallowDebugSigning` ile geçiyor (uyarı basarak), `:app:assembleDebug` ve
-`:app:tasks` etkilenmiyor.
-
-Deneme amaçlı bir release paketi gerekiyorsa kapı elle açılıyor:
-
-```sh
-./gradlew assembleRelease -PallowDebugSigning   # ya da LERNOMI_ALLOW_DEBUG_SIGNING=1
-```
-
-Çıkan yapı debug anahtarıyla imzalanıyor **ve** sürüm adının sonuna `-devkey` ekleniyor,
-yani elde kaldığında ne olduğunu kendisi söylüyor. O dosya mağazaya gidemez.
-
-### JDK nereden geliyor
-
-Bu makinede `java` PATH'te değil ama bir JDK 17 zaten var: Gradle kendisi indirmiş
-(`~/.gradle/jdks/`). Hem anahtar üreticisi hem `release:android` onu kendiliğinden
-buluyor (sıra: `JAVA_HOME` → PATH → Gradle'ın indirdiği → Android Studio'nun JBR'si),
-yani ayrı bir JDK kurmak gerekmiyor.
-
-Anahtar üretimi `scripts/gen-release-keystore.sh`: parolayı iki kez sorar (yanlış
-yazılan parola anahtarı kurtarılamaz yapar ve hata aylar sonra, yeni sürüm
-imzalanırken ortaya çıkar), var olan dosyaların üzerine yazmaz, `keystore.properties`i
-0600 bırakır ve sonunda **SHA-1/SHA-256 parmak izlerini basar** — Google ile Giriş'in
-Android OAuth istemcisi paket adı + SHA-1 eşleşmesiyle çalışıyor.
-
-Bu bir **yükleme anahtarı**, dağıtım anahtarı değil: Play App Signing yeni uygulamalarda
-zorunlu olduğu için telefona inen APK'yı Google imzalıyor. Kaybı sıfırlatılabilir ama
-süreç günler alır ve o günlerde yeni sürüm çıkamaz — anahtar ve parola yine ayrı iki
-yerde yedeklenir.
-
-`release:android` aynı kapıyı gradle'ı hiç başlatmadan, okunur bir mesajla söylüyor;
-sonrasında da ürettiğini denetliyor:
-
-| Adım | Ne bakıyor |
-|---|---|
-| Sürüm tutarlılığı | `version.ts`, `build.gradle` ve `project.pbxproj` aynı sürümü söylüyor mu |
-| Yayın anahtarı | `keystore.properties` var mı |
-| İmza | `apksigner` ile doğrulama; imzalayan "Android Debug" ise durur |
-| 16 KB sayfa boyutu | AAB ve APK içindeki her 64-bit `.so`nun LOAD hizası ≥ 16384, APK'da ayrıca `zipalign -P 16` |
-| Yüklenecekler | AAB, ProGuard eşlemi, native semboller (APK yalnız cihazda deneme için) |
-
-16 KB denetimi tek başına da koşar (`npm run check:16kb <dosya>`) ve yapılandırmaya
-değil **üretilen dosyaya** bakar: `useLegacyPackaging = false` yalnız arşiv içi
-hizalamayı verir, kitaplığın kendi LOAD hizası ondan ayrı bir şeydir.
+- **Anahtarsız release yok.** `keystore.properties` (gitignore) yoksa release görevleri düşer
+  (kapı `app/build.gradle`'da; debug yapıları ve `./gradlew tasks` etkilenmez). Deneme için
+  `./gradlew assembleRelease -PallowDebugSigning` (ya da `LERNOMI_ALLOW_DEBUG_SIGNING=1`): çıkan
+  yapı debug anahtarlı ve sürüm adı `-devkey` ile biter, mağazaya gidemez.
+- **Yükleme anahtarı, dağıtım değil.** Play App Signing telefona inen paketi Google'ın
+  anahtarıyla imzalıyor; kayıp anahtar sıfırlatılabilir ama günler sürer. Anahtar üreticisi
+  parolayı iki kez sorar, var olan dosyanın üstüne yazmaz ve SHA-1/SHA-256 parmak izlerini basar
+  (Google girişi istemcileri: `docs/play/console.md` §2).
+- **`release:android` denetimleri:** sürüm üçlüsü, yayın anahtarı, `apksigner` imzası (imzalayan
+  "Android Debug" ise durur), AAB ve APK'daki her 64-bit `.so`nun 16 KB LOAD hizası (APK'da ayrıca
+  `zipalign -P 16`); yüklenecekler AAB, ProGuard eşlemi ve native semboller.
+  `npm run check:16kb <dosya>` üretilen dosyaya bakar, yapılandırmaya değil.
+- JDK kendiliğinden bulunur: `JAVA_HOME` → PATH → `~/.gradle/jdks/` → Android Studio JBR.
+- iOS'ta imza kimliği ve takım Xcode/Keychain'den gelir; pbxproj'da yalnız yer tutucu var.
 
 ## Yerleşim
 
 ```
 App.tsx              kök: sağlayıcılar (tema, i18n, auth, oturum)
-src/api/            sunucu istemcisi (API_BASE, hata tipleri)
+src/api/            sunucu istemcisi (API tabanı + yedek adres, hata tipleri)
 src/lib/            iş mantığı: auth, stt, tts köprüsü, sfx, i18n, sürüm…
 src/screens/        ekranlar (sekmeler + akışlar)
 src/game/           tur/soru motoru
@@ -216,7 +164,9 @@ scripts/            i18n taraması, SFX üretimi, imza/arşiv betikleri
 
 ## İlgili belgeler
 
-- `docs/plan/ios-parity.md` — iOS'ta ne eksik, hangi şerit neyi yapıyor
-- `docs/appstore/` — App Store hazırlığı ve gizlilik beyanı
-- `docs/play/` — Play Console karşılığı
-- Depo kökündeki `AGENTS.md` — commit/deploy kuralları
+- `docs/plan/ios-parity.md` — iOS parite durumu, yayın kapıları ve kararlar
+- `docs/plan/ios-device-runbook.md` — gerçek cihazda sınanacaklar
+- `docs/appstore/` — App Store: durum, gizlilik etiketleri, inceleme notu
+- `docs/play/` — Play Console: uygulama erişimi, OAuth istemcileri (SHA-1), ön plan servisi, Veri güvenliği
+- `docs/store/` — vitrin metinleri, kareler, denetim kaydı
+- `AGENTS.md` (yerel, depoda değil) — commit/deploy kuralları

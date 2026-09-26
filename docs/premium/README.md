@@ -1,8 +1,7 @@
 # Premium — mimari, mağaza kurulumu ve yönetim
 
-Bu belge üç şeyi anlatıyor: yapının **neden** böyle kurulduğu, RevenueCat ve
-mağazalarda **adım adım** ne yapman gerektiği, ve bir gün RevenueCat'ten
-**nasıl çıkacağın**.
+Yetkinin neden sağlayıcıdan bağımsız kurulduğu, ücretsiz/Premium kararları (§2), mağazalarda
+ve RevenueCat'te neyin kurulu olduğu (§3), panel (§4) ve RevenueCat'ten çıkış (§5).
 
 ---
 
@@ -18,8 +17,8 @@ Tek cümle: **yetkinin kaynağı bizim veritabanımız, mağaza değil.**
                                     │  adaptör → StoreEvent
                                     ▼
                         entitlements + premium_grants   ◀── promo kodu
-                          (TEK YETKİ KAYNAĞI)           ◀── davet ödülü
-                                    │                   ◀── elle verilen süre
+                          (TEK YETKİ KAYNAĞI)           ◀── elle verilen süre
+                                    │
                     ┌───────────────┼───────────────┐
                     ▼               ▼               ▼
                   web            Android           iOS
@@ -32,8 +31,8 @@ Tek cümle: **yetkinin kaynağı bizim veritabanımız, mağaza değil.**
    sorusunu RevenueCat'e sormuyor. `RevenueCat` adı yalnız iki yerde geçiyor:
    `src/lib/premium/providers/revenuecat.ts` (sunucu) ve
    `mobile/src/lib/billing.ts` + `billingConfig.ts` (satın alma arayüzü).
-2. **Mağazadan gelmeyen yetki mümkün.** Promo kodu, davet ödülü ve elle verilen
-   süre mağazada yok. Sağlayıcıya sorulsaydı bunları kazanan kullanıcı
+2. **Mağazadan gelmeyen yetki mümkün.** Promo kodu ve elle verilen süre
+   mağazada yok. Sağlayıcıya sorulsaydı bunları kazanan kullanıcı
    uygulamada ücretsiz görünürdü.
 3. **Denetlenebilir.** Her hareket `premium_grants` defterinde: kim, ne zaman,
    hangi kaynaktan, ne kadar.
@@ -43,7 +42,7 @@ Tek cümle: **yetkinin kaynağı bizim veritabanımız, mağaza değil.**
 | | Nereden | Nasıl yazılır |
 |---|---|---|
 | **Mağaza penceresi** (`store_until`) | sağlayıcı bildirir | her olayda **üzerine yazılır** |
-| **Bonus** (`bonus_minutes` + `bonus_until`) | promo / davet / elle | **bakiyeye eklenir**, birikir |
+| **Bonus** (`bonus_minutes` + `bonus_until`) | promo / elle | **bakiyeye eklenir**, birikir |
 
 Ayrı tutulmalarının sebebi: sağlayıcı her yenilemede **mutlak bir bitiş tarihi**
 bildiriyor. Tek sütunda toplansalardı her yenileme biriken hediye günlerini
@@ -79,7 +78,7 @@ yer tam burasıdır, o yüzden garanti kısıtta duruyor.
 | `src/lib/premium/access.ts` | "Bu kullanıcı bunu yapabilir mi" kararları |
 | `src/lib/premium/quota.ts` | Kota sayaçları (gün / hafta / ömürlük) |
 | `src/lib/premium/promo.ts` | Kod üretimi ve bozdurma |
-| `src/lib/premium/referral.ts` | Davet zinciri ve ödül |
+| `src/lib/premium/referral.ts` | Davet zinciri (Premium ödülü yok) |
 | `src/lib/premium/ports.ts` | **Sağlayıcı sözleşmesi** — bağımsızlığın durduğu yer |
 | `src/lib/premium/providers/*` | Adaptörler (bugün yalnız RevenueCat) |
 | `mobile/src/lib/premium.ts` | Mobilde durum — **sunucudan** |
@@ -89,9 +88,9 @@ yer tam burasıdır, o yüzden garanti kısıtta duruyor.
 
 ## 2. Ürün yapısı ve kota kararları — 2026-09-25 (GEÇERLİ)
 
-Samet'le soru-cevapla verildi. Aşağıdaki 2026-09-08 bölümünü ve "tek havuz" anlatımını
-**geçersiz kılar**; o bölüm tarihçe olarak duruyor. Uygulama bu kararlara göre değiştiriliyor
-(2026-09-25'ten itibaren); iş bitene kadar kod ile bu tablo ayrışabilir, kesin kaynak burası.
+Samet'le soru-cevapla verildi; 2026-09-08 kararlarının ("tek havuz", haftalık yenilenen hak,
+deneme sınavında %60 koşulu) yerini aldı. Kod bu tabloyla birebir (`src/lib/premium/gates.ts`,
+`unlock.ts`); ayrışırsa kesin kaynak burası.
 
 **Sözlük (ürünün dili — kodda, arayüzde, paywall'da, mağazada aynı):**
 
@@ -238,438 +237,174 @@ transaction. `deploy.sh`'taki `drizzle-kit push --force` şemada olmayan tabloyu
 sildiği için sıra yedek → 0069 elle → deploy → 0069 bir kez daha oldu. Eski adresler ve eski
 adla gelen istekler reddedilir; geçici uyumluluk katmanı yok.
 
-## 2a. Ürün kararları (2026-09-08'de verildi) — TARİHÇE, yerini §2 aldı
+### 2.3 Kalıcı notlar
 
-| | Ücretsiz | Premium |
-|---|---|---|
-| Kelime turu, okuma, dinleme | sınırsız | sınırsız |
-| Yürüyüş modu **ekran açık** | sınırsız | sınırsız |
-| Yürüyüş modu **cepte / ekran kapalı** | yok | var (günlük adil kullanım tavanı) |
-| Deneme sınavı | seviye başına 1 | tamamı, 3'lü paketler hâlinde |
-| Haftalık quiz | herkese açık, haftada 1 (takvim haftası) | aynısı |
-| Konuşma/yazma alıştırması | 2 + 2 · **her 7 günlük seri +2/+2** | adil kullanım tavanına kadar |
-| Ömürlük hak bitince | haftada 2 yenilenen hak | — |
-
-**TEK HAVUZ, İKİ GİRİŞ KAPISI.** Patika ünitesindeki ve Beceriler
-kütüphanesindeki konuşma/yazma alıştırması AYNI içerik
-(`src/lib/skills/content`); kota alıştırmanın kimliğine düşüyor
-(`claimSkillAi`), hangi kapıdan açıldığına değil. Paywall bir dönem bunları iki
-ayrı satır olarak sayıyordu ("seviye başına 2 konuşma" + "kütüphanede 2") ve
-birincinin karşılığı olan ayrı bir hak hiç yoktu — vaat, olmayan bir yüzeyi
-anlatıyordu (2026-09-17'de tek satıra indirildi). Konuşma yolundan geçen tek
-gerçek yüzey **puanlı kısım** ve o da aynı konuşma havuzundan yiyor
-(`claimConversationAi`).
-
-**KAPASİTE KARARLILIĞA BAĞLI.** Taban hak müfredatın tadına bakmaya yetiyor,
-bitirmeye yetmiyor. Üstüne her `streakStep` (7) günlük seri kademesi
-`streakBonus` (2) kadar konuşma VE yazma hakkı açıyor, `streakMaxTiers` (5)
-kademeye kadar. Fikir deneme sınavı ilerlemesiyle aynı: hak edilen şey
-açılıyor. Kilidi "paran yetmiyor" diye değil "devam edersen açılır" diye
-kurmak hem doğru hem de kullanıcıyı uygulamada tutan şey; paywall bunu
-`plan.free_streak_ai` satırıyla söylüyor.
-
-Ölçü **`longest_streak`**, `current_streak` değil: kazanılan hak geri
-alınmıyor. Bir gün kaçıran kullanıcı elindekini kaybetseydi kilit,
-ödüllendirmek yerine cezalandıran bir şeye dönerdi.
-
-**KOTA GERÇEKTEN HARCANIYOR.** 2026-09-16 denetiminin 2. bulgusu buydu: konuşma
-yolu `canAiPractice` ile yalnız KONTROL ediyordu, sayaç hiç artmıyordu, yani
-kontrol her zaman geçiyordu ve duyurulan hak fiilen sınırsızdı. Birim çağrı
-değil **alıştırma**: hak ilk değerlendirmede düşüyor, aynı alıştırmayı tekrar
-puanlatmak yeni hak yakmıyor.
-
-**Yürüyüş bölmesi neden "ekran kapalı" üzerinden:** maliyetin tamamı orada.
-Ekran açıkken cihazın kendi tanıyıcısı çalışıyor ve bize hiçbir şeye mal olmuyor;
-ekran kapanınca sunucu STT'ye (Azure) düşülüyor. Bölme özelliğin kendisinde
-değil, faturayı üreten yolda — ücretsiz kullanıcı yürüyüş modunu her gün
-kullanabiliyor, premium'un ne olduğunu her gün görüyor.
-
-**Deneme sınavı paketleri:** ilk paket her zaman açık. Sonraki paket iki yoldan
-açılıyor — pakette **%60** başarı (başarı hızlandırır) **ya da** paketteki tüm
-sınavların bitirilmesi (çaba da açar). İkincisi bir emniyet supabı: onsuz %60'ı
-tutturamayan bir **ödeme yapmış** kullanıcı hiçbir yeni sınav göremez ve bu,
-iadenin ve tek yıldızın en sık sebebidir. Panelden kapatılabilir; kapatılırsa
-paywall metnine "puan yetmezse paket açılmaz" cümlesi eklenmeli.
-
-**Davetin karşılığı premium süresi DEĞİL** (2026-09-17). Bir dönem davet
-edilenin ilk ödemesinde davetçiye 7 gün yazılıyordu; iki yerden birden
-kırılıyordu. (1) Teslim edilemiyordu: süre bakiyeye yazılıyor, ödeyen bir
-davetçide ancak aboneliğini bırakırsa işe yarıyordu — mağaza tarafında gerçekten
-teslim etmenin yolu var (Apple *extend renewal date*, Google *defer*) ama Apple
-müşteri başına yılda iki çağrıyla sınırlı ve amaç olarak iyi niyet/kesinti
-telafisi diye tarif edilmiş. (2) Teşvik gücü yoktu: 7 gün için getirilen kişinin
-hem kurması hem ödemesi gerekiyordu, beklenen değer birkaç saatlik premium ve bir
-ay gecikmeli.
-
-Karşılık artık bir **bağlantı**: bağ kurulunca davet edilenden davetçiye
-arkadaşlık isteği gidiyor, kabul edilince ortak seri başlıyor
-(`lib/referral-link`, `lib/social/streaks`). İlk günden karşılığı var, mağaza
-yüzeyi sıfır ve farm edilemiyor — değeri karşı tarafın gerçek ve aktif
-olmasından geliyor. Davet bağlantısı yalnız **yeni hesaplar** için çalışıyor
-(`INVITE_WINDOW_DAYS`); mevcut kullanıcılar birbirini arkadaş aramasından
-ekliyor.
-
-`grantBonus` duruyor ama davete bağlı değil: promo kodu, elle telafi ve destek
-jesti onu kullanıyor. Aradaki fark, bunların **otomatik bir program olmaması** —
-seyrek ve kasıtlı kullanımda "askıda kalan süre" vaka bazında yönetilebilir,
-herkese vaat edilen bir mekanizmada yönetilemez.
-
-**PAYWALL SATIRLARINA YENİ ANAHTAR EKLEMEK GERİYE UYUMLU DEĞİL.** Satırlar
-sunucudan ANAHTAR + PARAMETRE olarak iniyor (`describeLimits`), çeviri
-istemcinin GÖMÜLÜ sözlüğünden geliyor ve bilinmeyen anahtar ham hâliyle
-basılıyor (`lib/i18n` `bul(key) ?? key`). Yani sunucuya yeni bir anahtar
-eklemek, o anahtarı bilmeyen KURULU sürümlerde paywall'a "plan.free_practice"
-gibi bir dizgi bastırıyor — emülatörde görüldü (2026-09-17). İki kural:
-
-- **Mümkünse var olan anahtarı yeniden kullan**, metnini değiştir. Eski sürüm
-  okunur bir cümle gösterir, yeni sürüm doğrusunu.
-- **Parametre ÇIKARMA.** Fazladan parametre zararsız (yer tutucu yoksa yok
-  sayılır), eksik parametre ekrana literal `{n}` bastırır. Bu yüzden
-  `plan.free_weekly` metni `{n}` kullanmadığı hâlde parametre almaya devam
-  ediyor.
-
-Gerçekten yeni bir satır şartsa (ör. `plan.free_streak_ai`) bunu bilerek yap:
-o satır ancak eklendikten SONRA derlenen sürümlerde görünür.
-
-**"Sınırsız" denmiyor.** Premium'un da adil kullanım tavanı var ve paywall'da
-yazılı. Tavanı olan bir şeyi sınırsız diye pazarlamak App Store 3.1.2 ve Play'in
-abonelik beyanı kurallarına aykırı.
+- **Davetin karşılığı Premium süresi değil** (2026-09-17, gerekçe `src/lib/premium/referral.ts`):
+  bağ kurulunca davet edilenden davetçiye arkadaşlık isteği gidiyor, kabul edilince ortak seri
+  başlıyor. `grantBonus` yalnız promo kodu, elle telafi ve destek jesti için.
+- **Yürüyüşte bölme ekran kapalı yol üzerinden:** maliyetin tamamı sunucu STT'de; ekran açıkken
+  cihazın kendi tanıyıcısı çalışıyor.
+- **Paywall satırına yeni anahtar eklemek geriye uyumlu değil.** Satırlar sunucudan anahtar +
+  parametre olarak iniyor (`describeLimits`), çeviri istemcinin gömülü sözlüğünden geliyor ve
+  bilinmeyen anahtar ham basılıyor. Mümkünse var olan anahtarı yeniden kullan, metnini değiştir;
+  parametre çıkarma (eksik parametre ekrana `{n}` basar). Yeni satır ancak eklendikten sonra
+  derlenen sürümlerde görünür.
+- **"Sınırsız" denmiyor:** Premium'un kötüye kullanım tavanı var ve paywall'da yazılı (App Store
+  3.1.2, Play abonelik beyanı).
 
 ---
 
-## 3. RevenueCat kurulumu — adım adım
+## 3. Kurulu durum — mağazalar ve RevenueCat
 
-> Sıra önemli: **önce mağazalarda ürünler**, sonra RevenueCat. RevenueCat
-> ürünleri mağazadan okuyor; ürün yoksa bağlayacak bir şey de yok.
+Sıra: önce mağazada ürün, sonra RevenueCat (ürünleri mağazadan okuyor). Ürün, fiyat, deneme,
+entitlement, offering ve webhook değişikliği canlı etkili: Samet açıkça istemeden yapılmaz.
 
-### 3.1 App Store Connect (iOS)
+| Ne | Değer |
+|---|---|
+| Ürünler (iki mağazada aynı kimlik) | `lernomi_premium_monthly` (1 ay), `lernomi_premium_yearly` (1 yıl); `gates.ts` › `plans.productMonthly/Yearly` |
+| App Store | Abonelik grubu `Lernomi Premium`; seviye sırası yıllık 1, aylık 2. Durum ve eksikler `docs/store/audit.md` (M4) |
+| Play base plan'lar | `monthly-autorenew` (P1M), `yearly-autorenew` (P1Y), otomatik yenilenen, `legacyCompatible: true` |
+| Deneme | 1 ay ücretsiz, yalnız gruptaki bir aboneliği daha önce almamışa. ASC intro offer (New Subscribers); Play teklifi `free-trial-1m`. Panel `plans.trialDays` = 30 |
+| Grup kodu teklifi | Play: her base plan'da `promo-2m` (P2M ücretsiz, etiketler `promo2m` + `rc-ignore-offer`). iOS: teklif kodları `promo2m-monthly` / `promo2m-yearly`; özel kod değerleri uygulama onaylanınca üretilir. Kod kaydı bizde (`promo_codes.kind='store_trial'`, `src/lib/premium/store-trial.ts`) |
+| Fiyat (aylık / yıllık) | TR 199,99 / 1.199,99 TRY · euro bölgesi 4,99 / 29,99 EUR · GB 4,99 / 29,99 GBP · CH 4 / 25 CHF · diğer 4,99 / 29,99 USD tabanından dönüşüm. Vitrin kopyası `gates.ts` › `plans.prices` |
+| Bölgeler | Play 173; ASC 175 bölge, satış 173'ünde (Çin, Rusya kapalı) |
+| RevenueCat projesi | `proj05e87e13`; uygulamalar Play `app2101cd9c6b`, App Store `app37837eed80` (Test Store `app7fb7bfd160` şablon, dokunulmaz) |
+| Entitlement | `lernomi_premium` = `billingConfig.ts` › `entitlementId`; dört ürün bağlı (Play: `…:monthly-autorenew`, `…:yearly-autorenew`) |
+| Geçerli offering | **`lernomi_default`** (`$rc_monthly`, `$rc_annual`, her birinde iOS + Play ürünü). `default` adlı offering Test Store şablonu, current değil |
+| Webhook | `https://www.lernomi.app/api/premium/webhook/revenuecat`, ortam **hepsi**, olay filtresi yok, Authorization `REVENUECAT_WEBHOOK_AUTH` |
+| Sandbox | Sunucu sandbox olaylarını kabul edip `store_environment='sandbox'` işaretliyor, gelirden düşüyor; `REVENUECAT_ALLOW_SANDBOX=0` kapatır |
+| SDK anahtarları | Public `goog_…` / `appl_…` `mobile/src/lib/billingConfig.ts`'te (sır değil). v2 gizli anahtar yalnız sunucuda `REVENUECAT_API_KEY` (hesap silmede RC kaydı) |
 
-> **ÜRÜN KİMLİĞİ TEK KULLANIMLIK.** Apple bir kimliği silsen bile serbest
-> bırakmıyor: aynı adla yeniden oluşturmaya çalışınca "already being used by
-> another subscription" diyor. Yani yanlış kurulmuş bir aboneliği silip
-> düzeltmek YOK — kimlik yanarsa yenisini seçmek ve kodu ona göre güncellemek
-> gerekiyor (`src/lib/premium/gates.ts` → `plans.productMonthly/Yearly`).
->
-> Bu bir kez yaşandı: `premium_monthly` / `premium_yearly` seviye sırasını
-> düzeltmek için silindi ve iki kimlik birden yandı. **Seviye sırası silmeden
-> değişiyor** — Subscriptions listesindeki *Edit* düğmesi yeterli.
+### 3.1 App Store tuzakları
 
-1. **My Apps → Lernomi → Subscriptions** → **Create** bir *Subscription Group*:
-   ad `Lernomi Premium`. (Aynı gruptaki ürünler arasında kullanıcı yükseltme /
-   düşürme yapabiliyor; aylık ve yıllık **aynı** grupta olmalı.)
-2. Gruba iki abonelik ekle. **Seviye sırası baştan doğru kurulmalı** (silmeden
-   düzeltilebilir ama kimlik yakmamak için baştan doğru kur): üst seviye
-   YÜKSELTME sayılıyor ve anında gerçekleşiyor, alt/aynı seviye dönem sonunu
-   bekliyor. İçerik ikisinde aynı olduğu için ayrım süre — yıllık üstte:
-   - **Level 1** · Product ID `lernomi_premium_yearly`, süre **1 Year**
-   - **Level 2** · Product ID `lernomi_premium_monthly`, süre **1 Month**
-   Ürün kimlikleri panelde yazılı olanla aynı olmalı (`/admin/premium` →
-   *Planlar*), yoksa RevenueCat offering'i boş döner.
-3. **Fiyat**: her ürün için *Subscription Prices* → önce **taban ülke** (US)
-   fiyatı, sonra Apple'ın önerdiği ülke tablosunu aç ve şunları **elle** düzelt:
+- **Ürün kimliği tek kullanımlık.** Silinen aboneliğin kimliği bir daha kullanılamıyor
+  ("already being used"); kimlik yanarsa yenisi seçilir ve `gates.ts` güncellenir. Seviye sırası
+  silmeden değişir (Subscriptions listesinde *Edit*). `premium_monthly`/`premium_yearly` bu
+  yüzden yandı.
+- Aylık ve yıllık aynı grupta olmalı; üst seviye yükseltme sayılır ve anında gerçekleşir.
+- RevenueCat'e App-Specific Shared Secret ve In-App Purchase Key (.p8) verildi; App Store Connect
+  API anahtarı da verildiği için ürünler mağazadan içe aktarılıyor.
 
-   | Bölge | Aylık | Yıllık |
-   |---|---|---|
-   | Türkiye | 199,99 ₺ | 1.199,99 ₺ |
-   | Euro bölgesi | 4,99 € | 29,99 € |
-   | Taban (US) ve diğer her yer | 4,99 $ | 29,99 $ |
+### 3.2 Play tuzakları
 
-   Apple listede olmayan ülkeleri tabandan dönüştürüyor; taban fiyat bu yüzden
-   "global" satır.
-4. **Ücretsiz deneme**: her ürün için *Subscription Prices → Introductory
-   Offers* → **Free Trial**, süre **1 Month**, hedef *New Subscribers*.
-   Panelde de aynı sayı yazılı olmalı (`Ücretsiz deneme (gün)` = 30).
-5. **Localizations**: tr, en, de için görünen ad ve açıklama. Açıklama ne
-   verdiğini SÖYLEMELİ (paketli deneme sınavları, cepte yürüyüş, adil kullanım);
-   uygulamadaki paywall ile ayrışmamalı.
-6. **App-Specific Shared Secret**: App Information → *App-Specific Shared
-   Secret* → üret ve kopyala (RevenueCat isteyecek).
-7. **In-App Purchase Key**: Users and Access → Integrations → In-App Purchase →
-   anahtar üret, `.p8` dosyasını indir (RevenueCat'e yükleyeceksin; Apple'ın
-   sunucu bildirimleri V2 için gerekiyor).
+- Abonelik menüsü ancak imzalı bir AAB bir kanala (iç test yeter) yüklendikten sonra açılıyor.
+- Etkin olmayan base plan RevenueCat'e görünmez.
+- Fiyat dönüşümünde bölge sürümü **`2025/03`** (2022/02 Bulgaristan'ı BGN sayıyor, dönüşüm EUR
+  veriyor → 400).
+- `promo-2m` teklifinden `rc-ignore-offer` etiketi kalkarsa RevenueCat onu normal satın almada
+  varsayılan deneme seçer (denetim S1).
+- **RevenueCat servis hesabı** (`docs/premium/play-service-account.sh`): Google Cloud'da Android
+  Publisher, Play Developer Reporting ve Cloud Pub/Sub API'leri; hesaba Pub/Sub Editor ve
+  Monitoring Viewer rolleri; Play Console'da dört yetki (uygulama bilgisi, finansal veri,
+  sipariş/abonelik yönetimi, mağaza varlığı). JSON anahtarı RevenueCat'e yüklenir, depoya ve
+  `.env`'e girmez. Yetkinin işlemesi 36 saati bulabilir.
+- RevenueCat Play uygulamasında paket adı `com.lernomi.learn` (`applicationId`, `namespace`
+  değil); Custom URL Scheme, finansal rapor kovası ve Apps Experience alanları bilerek boş.
 
-### 3.2 Play Console (Android)
-
-> **DURUM (2026-09-23): 1–4. adımlar YAPILDI (API ile).** İki ürün, base plan'lar
-> (`monthly-autorenew` P1M, `yearly-autorenew` P1Y) ve `free-trial-1m` teklifleri
-> ACTIVE, 173 bölge, fiyatlar App Store ile aynı (ayrıntı AGENTS.md › Google Play ›
-> Abonelik ürünleri). Kalan: 5. adım (RevenueCat servis hesabı) ve §3.3 panosu.
-
-> **ÖN KOŞUL — bu bölüm bir yapı yüklenmeden AÇILMAZ.** Play, abonelik
-> ürünlerini ancak imzalı bir AAB en az bir sürüm kanalına (en hızlısı
-> *Internal testing*) yüklendikten sonra gösteriyor. Menüde *Subscriptions*
-> soluk ya da boş görünüyorsa sebebi budur, hesap ya da yetki değil. iOS'ta
-> böyle bir kısıt yok: App Store Connect'te uygulama kaydı yeterli.
-
-1. **Monetise → Products → Subscriptions → Create subscription**
-   - Product ID `lernomi_premium_monthly` → *base plan* `monthly-autorenew`,
-     billing period **P1M**, **auto-renewing**
-   - Product ID `lernomi_premium_yearly` → *base plan* `yearly-autorenew`,
-     billing period **P1Y**, **auto-renewing**
-2. Her base plan için **Offer** ekle: *Free trial*, süre **P1M**, uygunluk
-   *New customers only*.
-3. **Fiyat**: base plan → *Set prices* → Türkiye ve Euro ülkeleri yukarıdaki
-   tabloya göre; kalan ülkeler için USD tabanından dönüştür.
-4. **Aktifleştir** (Activate). Etkin olmayan bir base plan RevenueCat'e
-   görünmez.
-5. **Service account** — RevenueCat'in satın almaları Google'a doğrulatmasını
-   sağlayan şey. Eksikse hiçbir Android aboneliği doğrulanmaz.
-
-   a. **Google Cloud** (Play hesabına bağlı proje) → *APIs & Services* → şu **üç**
-      API'yi etkinleştir: **Android Publisher API**, **Google Play Developer
-      Reporting API**, **Cloud Pub/Sub API** (sonuncusu platform sunucu
-      bildirimleri için).
-   b. *IAM & Admin → Service Accounts* → yeni servis hesabı, **iki** rol:
-      **Pub/Sub Editor** (bildirimler) ve **Monitoring Viewer** (bildirim
-      kuyruğunun izlenmesi).
-   c. Servis hesabı → *Keys → Add key → **JSON*** → inen dosya RevenueCat'e
-      yüklenir. **Bu dosya SIR**: depoya da `.env`'e de girmez, yüklendikten
-      sonra yerel kopyası silinir.
-   d. **Play Console → Users and permissions** → servis hesabının e-postasını
-      davet et ve **dört** yetkiyi ver:
-      *View app information and download bulk reports (read-only)* ·
-      *View financial data, orders, and cancellation survey responses* ·
-      *Manage orders and subscriptions* ·
-      *Manage store presence* (ürün oluşturma/güncelleme için).
-   e. **36 saate kadar sürebilir.** Hemen çalışmazsa bozuk değil. Hızlandırma:
-      *Monetize → Products*'ta bir ürün açıklamasını değiştir — bu genelde
-      kimlik bilgilerini hemen ya da 24 saat içinde aktive ediyor.
-
-### 3.3 RevenueCat panosu
-
-> **DURUM (2026-09-23): kuruldu (API v2 ile).** Play ürünleri (`…:monthly-autorenew`,
-> `…:yearly-autorenew`) `lernomi_premium` entitlement'ına ve geçerli offering
-> **`lernomi_default`**'un `$rc_monthly` / `$rc_annual` paketlerine iOS ürünlerinin
-> yanına bağlandı. Dikkat: geçerli offering `default` DEĞİL `lernomi_default`.
-> Webhook ortamı yalnız production; sandbox için önce sunucu tarafı (IAP-1).
-
-> **Pano 2025–26'da yeniden tasarlandı.** Dikey menüye geçildi, projeler üst
-> düzeye çıktı ve **Product catalog** diye birleşik bir bölüm geldi (Products,
-> Offerings, Entitlements, Virtual Currencies). API anahtarları ve entegrasyonlar
-> eskiden "Apps" altındaydı, artık **Platforms** başlığı altında. Aşağıdaki adlar
-> yeni panoya göre; eski düzendeysen adlar farklı görünür. Değişirse kaynak:
-> [Product catalog](https://www.revenuecat.com/docs/getting-started/entitlements) ·
-> [Webhooks](https://www.revenuecat.com/docs/integrations/webhooks) ·
-> [API keys](https://www.revenuecat.com/docs/projects/authentication).
-
-1. **Proje**: panonun üstündeki proje açılırından **+ Create new project** →
-   `Lernomi`.
-
-2. **Uygulamaları bağla** — proje panosunda **Apps** (yeni düzende **Platforms**
-   altında; web sağlayıcıları için ayrıca **Web**):
-   - **Google Play Store**: uygulama adı, paket adı `com.lernomi.learn`
-     (`build.gradle`'daki **`applicationId`** — `namespace` olan `com.lernomi`
-     DEĞİL), §3.2'deki **Service Credentials** (servis hesabı JSON'u).
-
-     Aynı ekrandaki üç alan **boş bırakılır** ve üçünün de sebebi ayrı:
-     · **Custom URL Scheme** — RevenueCat'in kendi hazır paywall'ının
-       önizlemesi için. Biz onu kullanmıyoruz (paywall bizim kodumuzda),
-       doldurmak AndroidManifest'e çalışmayan bir intent-filter eklemek olurdu.
-     · **Financial reports bucket ID** — yalnız GEÇMİŞ finansal veriyi içe
-       aktarmak için; yeni uygulamada geçmiş yok. Gerekirse Play Console →
-       *Download reports → Financial* altındaki `gs://pubsite_prod_…`.
-     · **Google Apps Experience / Games Level Up Program** — 1M doları aşan
-       TEKRARLANMAYAN satın almalarda hizmet bedelini düşüren program. Biz
-       yalnız abonelik satıyoruz; programa gerçekten katılmadan tarih yazmak
-       komisyon hesabını bozar.
-   - **Apple App Store**: uygulama adı, bundle `app.lernomi.ios`,
-     **Shared Secret** ve **In-App Purchase Key** (.p8).
-     İsteğe bağlı ama **işini kolaylaştırır**: **App Store Connect API Key** —
-     bunu da verirsen RevenueCat ürünleri mağazadan doğrudan çekebiliyor, elle
-     ürün girmen gerekmiyor.
-
-3. **Ürünler** — **Product catalog → Products**:
-   `+ New` → **Import Products** (mağazadan okur) ya da `+ New product` ile elle.
-   İki uygulama için de `lernomi_premium_monthly` ve `lernomi_premium_yearly` görünmeli.
-   Ürün kimlikleri panelde yazılı olanla aynı olmalı (`/admin/premium` →
-   *Planlar*), yoksa offering boş kalır.
-
-4. **Entitlement** — **Product catalog → Entitlements** → `+ New entitlement`,
-   identifier **`lernomi_premium`**.
-   (`premium` kullanılamıyor: RevenueCat yeni projeye örnek bir entitlement
-   kuruyor ve o kimliği tutuyor. Yazım önemsiz, iki tarafın aynı olması önemli.)
-   Bu değer `mobile/src/lib/billingConfig.ts` içindeki `entitlementId` ile
-   **birebir** aynı olmalı.
-   Entitlement'ı açıp **Attach** düğmesiyle dört ürünün (2 platform × 2 süre)
-   hepsini bağla.
-
-5. **Offering** — **Product catalog → Offerings** → `+ New`, identifier
-   **`default`**. İçine gir, **+ Add package** ile iki paket ekle; **Identifier**
-   alanı serbest metin değil, süreye göre bir **açılır liste**:
-   - *Monthly* (RevenueCat'in ayırdığı kimlik: `$rc_monthly`) → `lernomi_premium_monthly`
-   - *Annual* (`$rc_annual`) → `lernomi_premium_yearly`
-
-   Sonra bu offering'i projenin **Default Offering**'i yap. Paywall fiyatları
-   buradan okuyor; offering boşsa ya da varsayılan değilse fiyat gösterilemez.
-
-6. **Webhook** — sol menüde **Integrations → Webhooks** → *Add new configuration*:
-   - **Webhook Name**: serbest, ör. `Lernomi sunucu`
-   - **URL**: `https://www.lernomi.app/api/premium/webhook/revenuecat`
-   - **Authorization Header**: uzun rastgele bir sır üret
-     (`openssl rand -hex 32`) ve **aynı değeri** üç env dosyasına da yaz:
-     `.env.example` (boş bırak), yerel `.env`, sunucu `/opt/lernomi/.env` —
-     anahtar adı `REVENUECAT_WEBHOOK_AUTH`.
-   - **Environment filter**: **Production ve Sandbox (ikisi)**. 2026-09-23'ten
-     beri sunucu sandbox olaylarını (TestFlight, Play iç test, lisans testçisi)
-     KABUL ediyor: yetki yazılıyor ama `entitlements.store_environment` ve
-     `store_events.environment` "sandbox" işaretleniyor, gelir ve abone
-     sayıları onu dışarıda bırakıyor (denetim IAP-1: sandbox reddedilince test
-     eden kişi satın almanın premium açtığını hiç göremiyordu). Kapatmak için
-     sunucuda `REVENUECAT_ALLOW_SANDBOX=0`.
-   - **App scope**: tüm uygulamalar — tek uç iki platformu da karşılıyor.
-   - **Event type filters**: boş bırak. Adaptör tanımadığı olayı zaten sessizce
-     geçiyor ve filtre koymak, ileride eklenecek bir olay türünü sessizce
-     kaybettirir.
-
-   RevenueCat 200 dışını **beş kez** yeniden deniyor. Uç bu yüzden yalnız gerçek
-   hatada (401 yetkisiz, 503 yapılandırılmamış) 2xx dışı dönüyor; "bizim işimize
-   yaramayan ama geçerli" olaylar 200 ile kapanıyor.
-
-7. **SDK anahtarları** — **API keys** (yeni düzende **Platforms** altında; tek
-   bir uygulamanınkine **Apps** → uygulamayı seçerek de bakılabilir). Android
-   (`goog_…`) ve iOS (`appl_…`) **public** anahtarlarını
-   `mobile/src/lib/billingConfig.ts` içine yaz. Bunlar **sır değil**, uygulama
-   paketinde zaten gömülü; gizli olan `sk_…` ile başlayan secret anahtarlar ve
-   onlara bu projede hiç ihtiyaç yok.
-
-### 3.4 Sunucu tarafı
+### 3.3 Webhook ve sunucu
 
 ```bash
-# üç env dosyasında da aynı anahtar kümesi olmalı (AGENTS.md senkron kuralı)
-REVENUECAT_WEBHOOK_AUTH="…"      # §3.3-6'daki sır
+# üç env dosyasında da aynı anahtar kümesi (AGENTS.md senkron kuralı)
+REVENUECAT_WEBHOOK_AUTH="…"      # RevenueCat › Integrations › Webhooks › Authorization Header
 REVENUECAT_ALLOW_SANDBOX=""      # boş = sandbox işaretli kabul; "0" = yok say
 ```
 
-Sonra migration:
+RevenueCat 2xx dışını beş kez yeniden deniyor; uç yalnız gerçek hatada (401, 503) 2xx dışı dönüyor,
+tanımadığı olayı 200 ile kapatıyor. Aynı olayın ikinci gelişi `premium_grants(ref)` benzersizliğiyle
+eleniyor (§1).
 
-```bash
-npx tsx scripts/apply-migration.ts drizzle/0041_premium_entitlements.sql
-npm run db:check                 # şema ↔ kod sapması var mı
-```
-
-### 3.5 Doğrulama
-
-- `curl -sI https://www.lernomi.app/api/premium/status` → 200
-- RevenueCat panelinde webhook satırında **Send test event** → sunucu günlüğünde
-  `[premium/webhook]` hatası olmamalı, yanıt 200 (`skipped: ignored_type`).
-- Sandbox/test hesabıyla satın alma yap; `premium_grants` tablosunda `source =
-  'store'` satırı görünmeli.
+Doğrulama: `curl -sI https://www.lernomi.app/api/premium/status` → 200; RevenueCat'te *Send test
+event* → 200 (`skipped: ignored_type`); sandbox satın alma → `premium_grants`'te `source='store'`
+satırı (henüz yapılmadı, denetim S2).
 
 ---
 
 ## 4. Yönetim paneli — `/admin/premium`
 
-Buradaki her değer **canlıda geçerli**; kod değişikliği veya mağaza sürümü
-gerekmiyor (en geç 30 saniyede üç platformda yürürlükte).
+Buradaki değerler canlıda geçerli (en geç 30 saniyede üç platformda); kod ya da mağaza sürümü
+gerekmez.
 
-- **Ücretsiz katman**: seviye başına tabanlar (Patika Konuşma, Patika Yazma,
-  Beceriler konuşma/yazma, deneme sınavı), dilim başına ek hak, seri adımı, kademe
-  tavanı (0 = sınırsız), günde yürüyüş turu. `0` = "bu özellik ücretsizde hiç yok".
-- **Kötüye kullanım tavanı**: premium'un günlük tavanı (yürüyüş turu,
-  değerlendirme). Paywall'da kullanıcıya yazılıyor — değiştirirsen metin de
-  kendiliğinden değişir. Sohbet mesajı tavanı kodda sabit (300).
-- **Deneme sınavı paketleri**: paket boyu (paketi bitirince sonraki açılır).
-- **Referans**: ödül günü, kişi başı tavan.
-- **Planlar ve fiyat bilgisi**: ürün kimlikleri, deneme süresi ve **vitrin**
-  fiyatları. ⚠️ Buradaki fiyatlar **mağazadaki fiyatı değiştirmez**; mobilde
-  fiyat mağazadan gelir (politika gereği). Değiştirirsen App Store Connect ve
-  Play Console'daki tutarları da elle eşitle.
-- **Promo kodları**: üretim, listeleme, kapatma.
-- **Davet sıralaması**: kim kaç kişi getirdi.
+- **Ücretsiz katman:** seviye başına tabanlar (Patika Konuşma, Patika Yazma, Beceriler
+  konuşma/yazma, deneme sınavı), dilim başına ek hak, seri adımı, kademe tavanı (0 = sınırsız),
+  günde yürüyüş turu. `0` = özellik ücretsizde yok.
+- **Kötüye kullanım tavanı:** Premium'un günlük yürüyüş turu ve değerlendirme tavanı; paywall
+  metni kendiliğinden değişir. Sohbet mesajı tavanı kodda (300).
+- **Deneme sınavı paketleri:** paket boyu.
+- **Planlar ve fiyat bilgisi:** ürün kimlikleri, deneme süresi, vitrin fiyatları. Buradaki fiyat
+  mağazadaki fiyatı değiştirmez; değişirse iki konsolda elle eşitlenir.
+- **Promo kodları** ve **davet sıralaması** (davet Premium vermiyor; ayarlanacak bir şey yok).
 
-### Promo kodu ile 2–3 ay premium verme
+Haftada 2 yenilenen ortak hak (`ai_practice_weekly`) kalktı (`src/lib/premium/access.ts`).
 
-1. `/admin/premium` → *Promo kodları*
-2. `Kaç gün premium` = 60 ya da 90 · `Kaç kod üretilsin` = kaç kişiye
-   vereceksen · `Kod başına kullanım` = 1 (tek kişilik) veya büyük bir sayı
-   (kampanya kodu) · `Kampanya adı` = raporlama için
-3. **Kod üret** → çıkan listeyi kopyala. Her satırda kodun yanında dağıtım
-   bağlantısı var:
-   `https://www.lernomi.app/premium?code=KOD`
-   Bağlantıya tıklayan kullanıcıda kod alanı dolu geliyor.
-4. Kod üç platformda da geçerli; mağazadan bağımsız. Süre kullanıcının
-   bakiyesine ekleniyor — abonesi varsa yanmıyor, aboneliği bitince başlıyor.
+### Promo kodu ile 2–3 ay Premium verme
 
-Kodlar **silinmiyor**, kapatılıyor: kullananların geçmişi ayakta kalsın.
+1. `/admin/premium` → *Promo kodları*.
+2. `Kaç gün premium` = 60 ya da 90 · `Kaç kod` · `Kod başına kullanım` = 1 (kişisel) ya da büyük
+   sayı (kampanya) · `Kampanya adı`.
+3. **Kod üret**; her satırda dağıtım bağlantısı `https://www.lernomi.app/premium?code=KOD`.
+4. Süre bakiyeye eklenir: abonelik varken bekler, bitince başlar. Kod kutusu web'de ve Android'de
+   var, iOS'ta yok (App Store 3.1.1); yetki üç platformda geçerli.
 
-### Davet (referans)
+Kodlar silinmez, kapatılır. Grup kodları (`store_trial`) gün vermez, mağazanın 2 aylık denemesini
+açar (§3).
 
-- Her kullanıcının ömür boyu sabit bir kodu var (`profiles.referral_code`,
-  ilk istendiğinde üretiliyor).
-- Davet edilen kişi kodla kayıt olunca bağ kuruluyor (`referrals`), **ödül
-  verilmiyor**.
-- Davet edilenin **ilk gerçek ödemesi** alındığında davetçiye 7 gün düşüyor.
-  Ödüller bakiyede **birikiyor**: üç davet = 21 gün.
-- Bir kişi yalnız **bir kez** davet edilmiş sayılıyor; ilk davetçi kazanıyor.
+### Davet
+
+Her kullanıcının sabit kodu var (`profiles.referral_code`); kodla kayıt olunca bağ kuruluyor
+(`referrals`), ödül yok (§2.3). Bir kişi yalnız bir kez davet edilmiş sayılır.
 
 ---
 
 ## 5. RevenueCat'ten ayrılmak
 
-Mimarinin sınavı bu. Yapılacaklar:
+1. **Yeni adaptör:** `src/lib/premium/providers/<ad>.ts` — `StoreAdapter` (`configured()`,
+   `parse()`); `ports.ts` beklenen alanları anlatıyor.
+2. **Kayıt:** `providers/index.ts` › `ADAPTERS`; uç `/api/premium/webhook/<ad>` kendiliğinden açılır.
+3. **Mobil:** `mobile/src/lib/billing.ts`'teki beş fonksiyon (`configureBilling`, `getPackages`,
+   `purchase`, `restore`, `billingLogout`) yeni SDK ile; imzalar korunursa ekran değişmez.
+4. **Geçiş:** iki sağlayıcı aynı deftere yazdığı için bir süre birlikte açık kalabilir.
+5. **Değişmeyenler:** `entitlements`, `premium_grants`, promo, kotalar, panel, `/api/premium/*`.
 
-1. **Yeni adaptör**: `src/lib/premium/providers/<ad>.ts` — `StoreAdapter`
-   arayüzünü uygula (`configured()` ve `parse()`). Sağlayıcının olaylarını
-   `StoreEvent`e çevir; `ports.ts` ne beklendiğini alan alan anlatıyor.
-2. **Kayda ekle**: `providers/index.ts` içindeki `ADAPTERS` haritasına bir
-   satır. Webhook ucu `/api/premium/webhook/<ad>` olarak kendiliğinden açılır.
-3. **Mobil satın alma**: `mobile/src/lib/billing.ts` içindeki beş fonksiyonu
-   yeni SDK ile yaz (`configureBilling`, `getPackages`, `purchase`, `restore`,
-   `billingLogout`). Ekranlar bu imzaları çağırıyor; imzalar korunursa hiçbir
-   ekran değişmez.
-4. **Geçiş**: iki sağlayıcı bir süre **aynı anda** açık kalabilir — ikisi de
-   aynı deftere yazıyor. Eski aboneler eski sağlayıcıdan yenilenmeye devam
-   eder, yeni satın almalar yenisinden gelir. Kimse yetkisini kaybetmez.
-5. **Değişmeyenler**: `entitlements`, `premium_grants`, promo, davet, kotalar,
-   admin paneli, `/api/premium/*` uçları, web ve mobil arayüzler.
-
-Web'e kendi ödeme yolunu (Stripe) eklemek de aynı iş: bir adaptör. Web
-**komisyonsuz** tek kanal — Apple ve Google %15–30 alıyor. Bugün web'de satın
-alma yok ve sayfa bunu açıkça söylüyor ("yükseltme uygulamadan yapılıyor");
-kilit gösterip satın alma yolu sunmamak kullanıcıyı çıkmaza sokardı.
+Web'e kendi ödeme yolunu (Stripe) eklemek de bir adaptör; web komisyonsuz tek kanal. Bugün web'de
+satın alma yok ve sayfa "yükseltme uygulamadan yapılıyor" diyor.
 
 ---
 
-## 6. Yerelde testi koşturmak
+## 6. Yerelde test
 
-Yetki katmanının 32 doğrulaması **gerçek** Postgres istiyor; sınadıklarının
-yarısı veritabanının kendi davranışı (benzersiz kısıtın çakışması, kayıp
-güncelleme, `now()`un cümle içinde değerlendirilmesi). CI bunu bir servis
-kabıyla koşuyor; yerelde bir kap yetiyor:
+Yetki katmanının testleri gerçek Postgres istiyor (benzersiz kısıt çakışması, kayıp güncelleme,
+`now()`un cümle içi değeri). CI `postgres:17` servis kabıyla koşuyor; yerelde:
 
 ```bash
-docker run -d --name lernomi-pgtest --network host \
-  -e POSTGRES_PASSWORD=test -e POSTGRES_DB=lernomi \
-  -e PGPORT=55432 postgres:17-alpine
+docker run -d --name lernomi-pgtest -p 55432:5432 \
+  -e POSTGRES_PASSWORD=test -e POSTGRES_DB=lernomi postgres:17-alpine
 
 export DATABASE_URL=postgres://postgres:test@127.0.0.1:55432/lernomi
 export TEST_DATABASE_URL=$DATABASE_URL
-npx tsx scripts/migrate-all.ts     # 45 migration, sıra _journal.json'dan
+npx tsx scripts/migrate-all.ts     # bütün migration'lar (bugün 70), sıra _journal.json'dan
 npx tsx scripts/schema-check.ts    # şema ile veritabanı uyumlu mu
-npm run test:entitlement           # 32 doğrulama
+npm run test:entitlement
+npm run test:quota                 # kota kuralları (§2)
+npm run test:premium               # saf hesaplar, veritabanı istemez
 ```
 
-`--network host` tercih değil zorunluluk: bu makinede docker'ın köprü ağı
-(`veth` çifti) desteklenmiyor, varsayılan ağla kap ayağa kalkmıyor. Port
-5432 yerine 55432 seçilmesinin sebebi de bu — host ağında yerel Postgres ile
-çakışmasın.
-
-`migrate-all.ts` adres localhost değilse **baştan reddediyor**; test de aynı
-şekilde. Üretim veritabanına yanlışlıkla bağlanmak bu iki kapının arkasında.
+`migrate-all.ts` ve testler adres localhost değilse baştan reddediyor: üretime yanlışlıkla
+bağlanmak bu kapıların arkasında.
 
 ---
 
 ## 7. Sınanacaklar (mağaza hesapları gerektirir)
 
-- [ ] Sandbox satın alma → `premium_grants`'e `store` satırı düşüyor mu
-- [ ] Deneme başlangıcı → yetki açılıyor, `store_paid_at` **boş** kalıyor
-- [ ] Deneme → ücretli geçiş → `store_paid_at` doluyor, davetçiye 7 gün düşüyor
-- [ ] İptal → süre sonuna kadar erişim sürüyor (`canceled`)
-- [ ] İade → erişim **derhal** kapanıyor (`refunded`)
-- [ ] Promo kodu → üç platformda da aynı anda açılıyor
+Uçtan uca satın alma henüz hiç denenmedi (denetim S2).
+
+- [ ] Sandbox satın alma → `premium_grants`'e `store` satırı, `store_environment='sandbox'`
+- [ ] Deneme başlangıcı → yetki açılıyor, `store_paid_at` boş
+- [ ] Deneme → ücretli geçiş → `store_paid_at` doluyor
+- [ ] İptal → süre sonuna kadar erişim (`canceled`)
+- [ ] İade → erişim derhal kapanıyor (`refunded`)
+- [ ] Promo kodu → üç platformda aynı anda açılıyor
 - [ ] Hediye süresi çalışırken abone olmak → kalan hediye bakiyeye dönüyor
-- [ ] Ücretsiz hesapta cepte yürüyüş → 403 `premium_required`
-- [ ] Ücretsiz hesapta taban hak bitince → haftalık hakka düşüyor
-- [ ] 7 günlük seriden sonra hak sayısı artıyor (taban + kademe)
+- [ ] Ücretsiz hesapta ekran kapalı yürüyüş → 403 `premium_required`
+- [ ] Taban hak bitince kilit + paywall; bitir + 7 günlük seri → yeni dilim
 - [ ] Kilitli deneme sınavının kimliğini doğrudan uca göndermek → 403
-- [ ] Abonelik bitince premium ekranlar kilitleniyor, **ilerleme silinmiyor**
+- [ ] Abonelik bitince Premium ekranlar kilitleniyor, ilerleme silinmiyor
