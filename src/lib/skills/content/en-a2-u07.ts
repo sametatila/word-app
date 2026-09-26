@@ -7,21 +7,21 @@ import type { SkillExercise } from "../types";
  * Health insurance.
  *
  *   Kelime: tablet, twice, meal, dose, side effect, pill, syrup, pharmacy,
- *           hospital, nurse, ward, wait, result, hospital room, treatment,
+ *           hospital, nurse, unit, wait, result, hospital room, treatment,
  *           wait in line, exercise, usually, hardly ever, sugar, sleep,
  *           diet, protein, daily, insurance, card, cover, pay, form,
  *           signature, documents, fill out.
  *   Kalıp:  Take one tablet twice a day. · You should take it after meals. ·
  *           How many tablets should I take? ·
- *           Could you tell me where the ward is? · I'd like to see a doctor. ·
+ *           Could you tell me where the unit is? · I'd like to see a doctor. ·
  *           How long do I have to wait? · I usually get up at seven. ·
  *           I exercise three times a week. · How often do you exercise? ·
  *           Does my insurance cover this? ·
  *           I have already filled in the form. · How much do I have to pay?
  *
- * Ünitenin tek öğretme noktası DOLAYLI SORU. „Where is the ward?“ soru
+ * Ünitenin tek öğretme noktası DOLAYLI SORU. „Where is the unit?“ soru
  * sırasıyla kurulur, ama aynı soru „Could you tell me …“ içine girince
- * sıra DÜZ cümleye döner: „where the ward is“. Kurum diliyle konuşan üç
+ * sıra DÜZ cümleye döner: „where the unit is“. Kurum diliyle konuşan üç
  * ders de bu biçime dayanıyor, o yüzden dördü birden buraya toplandı.
  * Yanına sıklık kalıpları geliyor: twice a day, three times a week.
  */
@@ -115,7 +115,7 @@ export const enA2U07: SkillExercise[] = [
     text:
       "On Monday my father had an appointment at the hospital. We were there at eight.\n" +
       "First we went to the information desk. The nurse asked for his card and his documents.\n" +
-      "Then we had to wait in line for the ward. Ten people were before us and we waited an hour.\n" +
+      "Then we had to wait in line at the unit. Ten people were before us and we waited an hour.\n" +
       "The doctor looked at the results from March and said the treatment was working well.\n" +
       "After that we went to the insurance office. A woman gave us a form and asked for a signature.\n" +
       "My father asked: Does my insurance cover this? She said yes, but he has to pay ten euros for the medicine.\n" +
@@ -124,7 +124,7 @@ export const enA2U07: SkillExercise[] = [
       "Now I know one thing: take the card, the documents and a book.",
     questions: [
       {
-        text: "How long did they wait for the ward?",
+        text: "How long did they wait at the unit?",
         options: ["an hour", "ten minutes", "a day"],
         answer: 0,
         explain: "„Ten people were before us and we waited an hour.“",
@@ -157,7 +157,7 @@ export const enA2U07: SkillExercise[] = [
         answer: 0,
         items: [
           "We went to the information desk.",
-          "We waited in line for the ward.",
+          "We waited in line at the unit.",
           "We went to the insurance office.",
           "A nurse showed us the hospital room.",
         ],
@@ -181,7 +181,7 @@ export const enA2U07: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     unit: 7,
-    title: "Could you tell me where the ward is?",
+    title: "Could you tell me where the unit is?",
     genre: "dialogue",
     intro: "Hastane danışmasında üç dolaylı soru. Hepsi kibar.",
     gloss: [
@@ -193,10 +193,10 @@ export const enA2U07: SkillExercise[] = [
     ],
     minutes: 5,
     segments: [
-      { speaker: "Ela", text: "Excuse me, could you tell me where the ward is?" },
-      { speaker: "Nurse", text: "Which ward? There are three in this building." },
+      { speaker: "Ela", text: "Excuse me, could you tell me where the unit is?" },
+      { speaker: "Nurse", text: "Which unit? There are three in this building." },
       { speaker: "Ela", text: "I'm not sure. My mother has been here since yesterday. Her name is Nur Aslan." },
-      { speaker: "Nurse", text: "One moment. Aslan… yes, ward two. Go through the green door and then to the right." },
+      { speaker: "Nurse", text: "One moment. Aslan… yes, Unit 2. Go through the green door and then to the right." },
       { speaker: "Ela", text: "Do you know how long I can stay?" },
       { speaker: "Nurse", text: "Until seven. And only two people in the room." },
       { speaker: "Ela", text: "Could you tell me where I can find a nurse there?" },
@@ -210,7 +210,7 @@ export const enA2U07: SkillExercise[] = [
     ],
     questions: [
       {
-        text: "Where is ward two?",
+        text: "Where is Unit 2?",
         options: ["through the green door, on the right", "in the store", "next to the book"],
         answer: 0,
         explain: "„Go through the green door and then to the right.“",
@@ -246,11 +246,11 @@ export const enA2U07: SkillExercise[] = [
       },
       {
         kind: "short_answer",
-        text: "How many wards are in the building?",
+        text: "How many units are in the building?",
         options: [],
         answer: 0,
         accept: ["three", "3"],
-        explain: "„Which ward? There are three in this building.“",
+        explain: "„Which unit? There are three in this building.“",
       },
     ],
   },
@@ -394,7 +394,7 @@ export const enA2U07: SkillExercise[] = [
     gloss: [
       { de: "cover", tr: "karşılamak" },
       { de: "filled out", tr: "doldurdum" },
-      { de: "where the ward is", tr: "servisin nerede olduğunu" },
+      { de: "where the unit is", tr: "servisin nerede olduğunu" },
     ],
     minutes: 7,
     tasks: [
@@ -426,8 +426,8 @@ export const enA2U07: SkillExercise[] = [
       {
         kind: "build",
         tr: "Bana servisin nerede olduğunu söyleyebilir misiniz?",
-        answer: "Could you tell me where the ward is?",
-        hint: "Dolaylı soruda sıra DÜZ cümleye dönüyor: „where the ward is“, „where is the ward“ değil.",
+        answer: "Could you tell me where the unit is?",
+        hint: "Dolaylı soruda sıra DÜZ cümleye dönüyor: „where the unit is“, „where is the unit“ değil.",
       },
     ],
   },

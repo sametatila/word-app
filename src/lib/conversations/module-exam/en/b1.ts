@@ -587,10 +587,10 @@ export const EN_B1_EXAMS: ModuleExamPlan[] = [
       title: "Before your scan — please read",
       titleTr: "Hasta bilgilendirme notu",
       genre: "Bilgi notu",
-      text: "BEFORE YOUR SCAN — PLEASE READ\n\nYour appointment was arranged for Thursday at nine o'clock in ward 3.\n\nYou must not eat for six hours before the scan; water is allowed. If you take tablets every morning, the dose is taken as usual — the medicine was prescribed for you and must not be stopped.\n\nPlease arrive twenty minutes earlier, because a short form is filled out at reception. You have to bring your ID and the letter from your doctor; otherwise the scan is postponed.\n\nThe result is sent to the doctor who referred you. Moreover, a copy is kept in your file.\n\nIf you feel dizzy or weak on the day, please call the ward before eight.",
+      text: "BEFORE YOUR SCAN — PLEASE READ\n\nYour appointment was arranged for Thursday at nine o'clock in Unit 3.\n\nYou must not eat for six hours before the scan; water is allowed. If you take tablets every morning, the dose is taken as usual — the medicine was prescribed for you and must not be stopped.\n\nPlease arrive twenty minutes earlier, because a short form is filled out at reception. You have to bring your ID and the letter from your doctor; otherwise the scan is postponed.\n\nThe result is sent to the doctor who referred you. Moreover, a copy is kept in your file.\n\nIf you feel dizzy or weak on the day, please call the unit before eight.",
       questions: [
         { de: "What must the patient not do before the scan?", tr: "Hasta çekimden önce ne yapmamalı?", options: ["Eat for six hours", "Drink water", "Take the usual tablets", "Fill out the form"], answer: 0 },
-        { de: "What happens if the patient forgets the letter?", tr: "Hasta yazıyı unutursa ne olur?", options: ["The scan is postponed", "The result is sent later", "A fee is charged", "The ward calls the doctor"], answer: 0 },
+        { de: "What happens if the patient forgets the letter?", tr: "Hasta yazıyı unutursa ne olur?", options: ["The scan is postponed", "The result is sent later", "A fee is charged", "The unit calls the doctor"], answer: 0 },
       ],
     },
     speaking: [

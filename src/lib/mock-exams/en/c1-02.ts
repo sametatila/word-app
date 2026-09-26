@@ -637,7 +637,7 @@ None of this shows that the original project was misconceived. It shows that the
             {
               key: "c",
               label: "c — Nurse educator",
-              body: "The literature says exposure to cases is what builds judgment, and I do not dispute it. My difficulty is practical: a student on a ward sees whatever comes through the door that two weeks, and nobody is arranging for them to see the rare presentation. We call it experience and treat it as though it were curriculum.",
+              body: "The literature says exposure to cases is what builds judgment, and I do not dispute it. My difficulty is practical: a student on a unit sees whatever comes through the door that two weeks, and nobody is arranging for them to see the rare presentation. We call it experience and treat it as though it were curriculum.",
             },
             {
               key: "d",

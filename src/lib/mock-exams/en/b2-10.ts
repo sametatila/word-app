@@ -358,19 +358,19 @@ Reviews conclude that shortening the process has been discussed for decades with
               genre: "Opinion piece",
               genreTr: "Görüş yazısı",
               title: "Two nurses, one qualification",
-              body: `Uma and Zsofia trained together, in the same city, in the same three-year course, and they finished eleven days apart. They then moved to two different countries. Nine years later one of them runs a ward and the other has left the profession.
+              body: `Uma and Zsofia trained together, in the same city, in the same three-year course, and they finished eleven days apart. They then moved to two different countries. Nine years later one of them runs a unit and the other has left the profession.
 
 I want to be careful with this comparison, because it is the kind that proves too much if you let it. They are different people and nine years is long enough for anything to happen. What can be compared is not their careers but the two processes they entered.
 
 Uma's country recognized the qualification in eleven weeks, on the basis of a language test and a written examination in local law. She was working, at a reduced grade, within four months.
 
-Zsofia's country required a supervised year. That is defensible in itself. What is not usually mentioned is that the supervisors are senior nurses on the same wards that are short-staffed, and the queue for a place was, in her region, twenty-two months long. She spent those months in a warehouse.
+Zsofia's country required a supervised year. That is defensible in itself. What is not usually mentioned is that the supervisors are senior nurses on the same units that are short-staffed, and the queue for a place was, in her region, twenty-two months long. She spent those months in a warehouse.
 
 The difference in outcome is not a difference in checking. Both countries checked her. Given that, the gap between them is not a gap in safety. One of them checked her while she was working and the other checked her by making her wait, and only the second is described as protecting patients.
 
 Nine years is also long enough for a skill to go. Zsofia did not fail the supervised year. She never took it, because by the time the place came up she had a mortgage and a job that did not require her to sit an examination in a second language. If she had been allowed to work, she would have stayed.`,
               gloss: [
-                { de: "a ward", tr: "hastane servisi", en: "die Station" },
+                { de: "a unit", tr: "hastane servisi", en: "die Station" },
                 { de: "supervised", tr: "gözetim altında", en: "beaufsichtigt" },
                 { de: "a mortgage", tr: "konut kredisi", en: "die Hypothek" },
               ],
@@ -415,12 +415,12 @@ Nine years is also long enough for a skill to go. Zsofia did not fail the superv
               options: [
                 "Too few nurses applied for recognition",
                 "The examination was held only once a year",
-                "The supervisors were needed on the wards",
+                "The supervisors were needed on the units",
                 "The region had no hospitals of the right size",
               ],
               answer: 2,
               explain:
-                "Metin döngüyü açıklıyor: «the supervisors are senior nurses on the same wards that are short-staffed», ve sıra o bölgede yirmi iki ay.",
+                "Metin döngüyü açıklıyor: «the supervisors are senior nurses on the same units that are short-staffed», ve sıra o bölgede yirmi iki ay.",
             },
             {
               kind: "mcq",
@@ -561,7 +561,7 @@ The honest reform would be duller and harder: fund the supervisors, or accept th
             {
               key: "d",
               label: "d — Language teacher",
-              body: "The test is set at a level nobody uses. My students can take a history in a ward and cannot pass a paper that asks them to write a formal letter of complaint. I have written to the board about it three times and received the same reply twice.",
+              body: "The test is set at a level nobody uses. My students can take a history on a unit and cannot pass a paper that asks them to write a formal letter of complaint. I have written to the board about it three times and received the same reply twice.",
             },
           ],
           items: [
@@ -1004,7 +1004,7 @@ The region with the shortest wait had stopped requiring the supervised year in {
               situation: "Dördüncü konuşmacı sınavın içeriğini ele alıyor.",
               plays: 2,
               segments: [
-                { text: "The paper asks for a letter of complaint and a summary of a newspaper article. I have never once needed either on a ward. What I need is to understand a frightened person at two in the morning, and that is not on the paper." },
+                { text: "The paper asks for a letter of complaint and a summary of a newspaper article. I have never once needed either on a unit. What I need is to understand a frightened person at two in the morning, and that is not on the paper." },
               ],
             },
             {
@@ -1124,7 +1124,7 @@ The region with the shortest wait had stopped requiring the supervised year in {
                 { speaker: "Host", text: "What would you change about the system?" },
                 { speaker: "Juno", text: "One thing. Let people work at a reduced grade while the file is open. Some employers already do it quietly and it is legal, and it would remove the reason most people give up." },
                 { speaker: "Host", text: "Would that not lower standards?" },
-                { speaker: "Juno", text: "It would move the check rather than remove it. You are supervised on the ward instead of waiting for a place on a ward. The standard is the same; what changes is whether you can eat while you meet it." },
+                { speaker: "Juno", text: "It would move the check rather than remove it. You are supervised on the unit instead of waiting for a place on a unit. The standard is the same; what changes is whether you can eat while you meet it." },
                 { speaker: "Host", text: "Has anybody in authority listened?" },
                 { speaker: "Juno", text: "I have had three polite meetings. Everybody agrees, and nobody in the room controls the budget for supervisors, which is the honest answer to your question." },
               ],
@@ -1255,7 +1255,7 @@ The case for the assessment is strong and it is worth stating properly. A qualif
 
 What is harder to defend is the period in between. During it a trained person is not merely unemployed but deskilled, and the evidence suggests that most of those who withdraw do so for financial reasons rather than academic ones. The training is lost twice: once in the country that paid for it and again here.
 
-My own view is that the two functions have been confused. Supervision is a form of checking, and it can be carried out on a ward as easily as it can be waited for.
+My own view is that the two functions have been confused. Supervision is a form of checking, and it can be carried out on a unit as easily as it can be waited for.
 
 People should be allowed to work at a reduced grade while their file is open, provided the supervision is real and recorded.`,
             criteria: [
@@ -1370,7 +1370,7 @@ Two things. If withdrawal rates among recipients do not fall below twenty percen
               { de: "identify a problem with your own choice", tr: "Kendi seçiminde bir sorunu adlandır" },
             ],
             sample:
-              "The supervised year before employment has one clear advantage: nothing can go wrong with a patient while the assessment is still open, and that is not a small thing. Its cost is invisible and enormous. The person spends the year earning nothing, the skill decays, and the evidence suggests that most of those who leave the process leave for money rather than for failure. Supervision on the job reaches the same standard by a different route, and it reaches it while the person is still a practitioner. I would choose that. The problem with my own choice is who does the supervising. On a short-staffed ward the supervisor is the person with least time, and a check that is recorded but never performed is worse than a queue, because it looks like an answer.",
+              "The supervised year before employment has one clear advantage: nothing can go wrong with a patient while the assessment is still open, and that is not a small thing. Its cost is invisible and enormous. The person spends the year earning nothing, the skill decays, and the evidence suggests that most of those who leave the process leave for money rather than for failure. Supervision on the job reaches the same standard by a different route, and it reaches it while the person is still a practitioner. I would choose that. The problem with my own choice is who does the supervising. On a short-staffed unit the supervisor is the person with least time, and a check that is recorded but never performed is worse than a queue, because it looks like an answer.",
             criteria: [
               "İki yaklaşım da gerçekten karşılaştırıldı mı?",
               "Karşı tarafın gücü kabul edildi mi?",

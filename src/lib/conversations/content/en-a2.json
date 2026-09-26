@@ -16137,8 +16137,8 @@
     "tr": "hemşire"
    },
    {
-    "de": "ward",
-    "tr": "servis"
+    "de": "unit",
+    "tr": "hastane servisi"
    },
    {
     "de": "wait",
@@ -16163,7 +16163,7 @@
   ],
   "patterns": [
    {
-    "de": "Could you tell me where the ward is?",
+    "de": "Could you tell me where the unit is?",
     "tr": "kibarca bir yerin nerede olduğunu sorarken kullanılır"
    },
    {
@@ -16247,7 +16247,7 @@
      },
      {
       "lang": "en",
-      "text": "ward"
+      "text": "unit"
      },
      {
       "lang": "tr",
@@ -16255,7 +16255,7 @@
      },
      {
       "lang": "en",
-      "text": "the children's ward"
+      "text": "the children's unit"
      },
      {
       "lang": "tr",
@@ -16263,12 +16263,12 @@
      },
      {
       "lang": "en",
-      "text": "ward"
+      "text": "unit"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "ward"
+     "target": "unit"
     }
    },
    {
@@ -16403,7 +16403,7 @@
      },
      {
       "lang": "en",
-      "text": "Where is the ward?"
+      "text": "Where is the unit?"
      },
      {
       "lang": "tr",
@@ -16411,7 +16411,7 @@
      },
      {
       "lang": "en",
-      "text": "Could you tell me where the ward is?"
+      "text": "Could you tell me where the unit is?"
      },
      {
       "lang": "tr",
@@ -16435,7 +16435,7 @@
      },
      {
       "lang": "en",
-      "text": "where the ward is"
+      "text": "where the unit is"
      },
      {
       "lang": "tr",
@@ -16443,12 +16443,12 @@
      },
      {
       "lang": "en",
-      "text": "Could you tell me where the ward is?"
+      "text": "Could you tell me where the unit is?"
      }
     ],
     "expect": {
      "kind": "repeat",
-     "target": "Could you tell me where the ward is?"
+     "target": "Could you tell me where the unit is?"
     }
    },
    {
@@ -16771,7 +16771,7 @@
      },
      {
       "lang": "en",
-      "text": "Could you tell me where the ward is?"
+      "text": "Could you tell me where the unit is?"
      },
      {
       "lang": "tr",

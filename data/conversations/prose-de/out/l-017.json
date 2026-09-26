@@ -23,7 +23,7 @@
  { "tr": "patron", "kind": "vocab.tr", "de": "Chef" },
  { "tr": "peynir", "kind": "vocab.tr", "de": "Käse" },
  { "tr": "rehber", "kind": "vocab.tr", "de": "Reiseführer / Guide" },
- { "tr": "servis", "kind": "vocab.tr", "de": "Station" },
+ { "tr": "hastane servisi", "kind": "vocab.tr", "de": "Krankenhausstation" },
  { "tr": "sinema", "kind": "vocab.tr", "de": "Kino" },
  { "tr": "soyadı", "kind": "vocab.tr", "de": "Nachname" },
  { "tr": "şirket", "kind": "vocab.tr", "de": "Firma" },
