@@ -1,6 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 import { useLayout } from "../lib/useLayout";
+import { useLang } from "../lib/i18n";
 import { ErrorBoundary } from "./ErrorBoundary";
 
 /**
@@ -19,9 +20,19 @@ import { ErrorBoundary } from "./ErrorBoundary";
  */
 export function ContentColumn({ children }: { children: React.ReactNode }) {
   const { contentWidth } = useLayout();
+  /*
+    DİL DEĞİŞİNCE EKRAN YENİDEN KURULUYOR. `useLang()` yalnız çağrıldığı
+    bileşeni yeniden çiziyor; sekmelerde ve yığında bekleyen ekranlar eski
+    dilde kalıyordu. Görüldü (tablet turu, 2026-09-26): Türkçe cihazda İngilizce
+    hesapla giriş yapınca sekme adları İngilizceye döndü, Öğren ekranının
+    başlığı Türkçe kaldı. Ayarlar'dan dil değiştirmek de aynı karışıklığı
+    bırakıyordu. Her ekran bu kolondan geçtiği için anahtar burada: dil
+    değişince içerik yeni dilde baştan kuruluyor, gezinme yığını yerinde kalıyor.
+  */
+  const lang = useLang();
   return (
     <View style={{ flex: 1, alignItems: "center" }}>
-      <View style={{ flex: 1, width: "100%", maxWidth: contentWidth }}>{children}</View>
+      <View key={lang} style={{ flex: 1, width: "100%", maxWidth: contentWidth }}>{children}</View>
     </View>
   );
 }
