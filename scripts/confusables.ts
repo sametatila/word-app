@@ -2,7 +2,7 @@
  * Karıştırma çifti adayları (WP-73 adım 4): npm run content:confusables
  * → data/content/confusables.json
  *
- * Kelime havuzundan (data/app/words.json, 8 267 madde) biçimce yakın çiftler:
+ * Kelime havuzundan (data/app/words.json, 8 704 madde) biçimce yakın çiftler:
  *   - umlaut/ß düşürülünce aynı olanlar (schon/schön, Mutter/Mütter): "umlaut"
  *   - Levenshtein 1 (4+ harf) ya da 2 (7+ harf): "spelling"
  * Anlamca da yakın olanlar (aynı tür, aynı ilk 3 harf, Türkçesi kesişen) ayrı
