@@ -27,7 +27,7 @@ export const EN_C1_12: MockPaper = {
       skill: "reading",
       minutes: 80,
       instruction:
-        "This part has eight tasks. You read texts with gaps, sentences to rewrite, a dissenting note, five short texts, a text with missing paragraphs and four short texts.",
+        "There are eight tasks in this part. You read texts with gaps, sentences to rewrite, a dissenting note, five short texts, a text with missing paragraphs and four short texts.",
       instructionTr:
         "Bu bölümde sekiz görev var. Boşluklu metinler, yeniden yazılacak cümleler, bir karşı oy yazısı, beş kısa metin, paragrafı eksik bir metin ve dört kısa metin okuyacaksın.",
       tasks: [
@@ -126,7 +126,7 @@ None of which is an argument for abandoning lists, an alternative that {{6}} to 
           no: 2,
           format: "gap",
           goal: "structure",
-          prompt: "Gaps 7–12: complete the text with a suitable word. Write exactly ONE word per gap.",
+          prompt: "Gaps 7–12: complete the text with a suitable word. Each gap takes exactly one word.",
           promptTr: "Metni oku ve 7–12. boşluklara en iyi uyan sözcüğü düşün. Her boşluğa yalnız TEK sözcük yaz.",
           texts: [
             {
@@ -211,7 +211,7 @@ That is by {{12}} means a small claim, although it is routinely dismissed as one
           format: "gap",
           goal: "structure",
           prompt:
-            "Read the text and use the word given in capitals at the end of each line to form a word that fits the gap, 13 to 18.",
+            "Gaps 13 to 18: change the word in capitals at the end of the line so that it fits.",
           promptTr:
             "Metni oku ve 13–18. maddelerde büyük harfle verilen kökten boşluğa uyan sözcüğü türet.",
           texts: [
@@ -297,7 +297,7 @@ Reviews conclude that the strongest {{18}} for publishing full distributions is 
           format: "transform",
           goal: "structure",
           prompt:
-            "Complete the second sentence so that it has a similar meaning to the first, using the word given. Do NOT change the word given. Write between two and five words.",
+            "Rewrite the idea of the first sentence in the second one, using the word in capitals. Keep that word exactly as it is. Use two to five words.",
           promptTr:
             "İkinci cümleyi, birincisiyle aynı anlama gelecek biçimde tamamla; verilen sözcüğü kullan ve DEĞİŞTİRME. İki ile beş sözcük arası yaz.",
           items: [
@@ -348,7 +348,7 @@ Reviews conclude that the strongest {{18}} for publishing full distributions is 
           no: 5,
           format: "mcq",
           goal: "opinion",
-          prompt: "Read the dissenting note and answer questions 23 to 26. Choose a, b, c or d.",
+          prompt: "Read the dissenting note and answer questions 23 to 26. Pick one answer: a, b, c or d.",
           promptTr: "Karşı oy yazısını oku ve 23–26. maddeleri yanıtla. a, b, c ya da d'yi seç.",
           texts: [
             {
@@ -444,7 +444,7 @@ I record my thanks to the secretariat, whose work was exemplary, and my regret t
           format: "match",
           goal: "opinion",
           prompt:
-            "Read the five short texts a to e by different writers on the same subject. For questions 27 to 30, decide which writer this describes. You use each writer once only.",
+            "Read the five short texts a to e by different writers on the same subject. Questions 27 to 30: which writer is it? No writer is used twice.",
           promptTr:
             "Aynı konuda yazan beş yazarın a'dan e'ye kısa metinlerini oku. 27–30. maddeler için bunun hangi yazarı tarif ettiğine karar ver. Her yazar en fazla bir kez kullanılır.",
           options: [
@@ -519,7 +519,7 @@ I record my thanks to the secretariat, whose work was exemplary, and my regret t
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. One paragraph is missing from each of the gaps 31 to 34. Which paragraph a to e fits which gap? One paragraph fits nowhere.",
+            "Read the text. Gaps 31 to 34 each need One paragraph. Which paragraph a to e fits which gap? One paragraph is extra.",
           promptTr:
             "Metni oku. 31–34. boşluklarda birer paragraf eksik. a–e paragraflarından hangisi hangi boşluğa uyar? Bir paragraf hiçbir yere uymuyor.",
           texts: [
@@ -618,7 +618,7 @@ What follows from this is not that criteria are worthless. It is that a criterio
           goal: "detail",
           reuseOptions: true,
           prompt:
-            "Read the four short texts a to d. For questions 35 to 40, decide which text says this. The texts may be chosen more than once.",
+            "Read the four short texts a to d. Questions 35 to 40: which text is it? A text can be the answer more than once.",
           promptTr:
             "a'dan d'ye dört kısa metni oku. 35–40. maddeler için bunu hangi metin söylüyor, karar ver. Bir metin birden çok kez seçilebilir.",
           options: [
@@ -708,7 +708,7 @@ What follows from this is not that criteria are worthless. It is that a criterio
       skill: "listening",
       minutes: 40,
       instruction:
-        "This part has four tasks. You hear three extracts, a report, an interview and eight short monologues.",
+        "There are four tasks in this part. You hear three extracts, a report, an interview and eight short monologues.",
       instructionTr:
         "Bu bölümde dört görev var. Üç parça, bir sunum, bir söyleşi ve sekiz kısa konuşma dinleyeceksin.",
       tasks: [
@@ -717,7 +717,7 @@ What follows from this is not that criteria are worthless. It is that a criterio
           no: 1,
           format: "mcq",
           goal: "opinion",
-          prompt: "You hear three short extracts. There are two questions on each. Choose a, b or c. You hear each extract twice.",
+          prompt: "You hear three short extracts. There are two questions on each. Pick one answer: a, b or c. Each extract plays twice.",
           promptTr: "Üç kısa parça dinleyeceksin. Her birinde iki soru var. a, b ya da c'yi seç. Her parçayı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -840,7 +840,7 @@ What follows from this is not that criteria are worthless. It is that a criterio
           format: "notes",
           goal: "detail",
           prompt:
-            "You hear a man reporting the results of a review of a waiting list. Complete the sentences, questions 7 to 14, with a word or a number. You hear the report twice.",
+            "You hear a man reporting the results of a review of a waiting list. Complete the sentences, questions 7 to 14, with a word or a number. The report plays twice.",
           promptTr:
             "Bir bekleme listesi incelemesinin sonuçlarını sunan bir adamı dinleyeceksin. 7–14. maddelerdeki cümleleri bir sözcük ya da sayıyla tamamla. Kaydı iki kez dinleyebilirsin.",
           texts: [
@@ -969,7 +969,7 @@ The recommendation is to publish the {{14}} alongside the median.`,
           format: "mcq",
           goal: "opinion",
           prompt:
-            "You hear an interview with a woman who chaired a review of a waiting list. Choose a, b, c or d for questions 15 to 22. You hear the recording ONCE only.",
+            "You hear an interview with a woman who chaired a review of a waiting list. Questions 15 to 22: pick one answer, a, b, c or d. The recording plays only ONCE.",
           promptTr:
             "Bir bekleme listesi incelemesine başkanlık etmiş bir kadınla söyleşi dinleyeceksin. 15–22. maddeler için a, b, c ya da d'yi seç. Kaydı YALNIZ BİR KEZ dinleyeceksin.",
           texts: [
@@ -1137,7 +1137,7 @@ The recommendation is to publish the {{14}} alongside the median.`,
           format: "match",
           goal: "gist",
           prompt:
-            "You hear eight short monologues about waiting lists and priority. What is the speaker's main purpose? Choose from a to j. You use each answer once only. You hear the recordings twice.",
+            "You hear eight short monologues about waiting lists and priority. What is the speaker's main purpose? The options are a to j. No answer is used twice. The recordings play twice.",
           promptTr:
             "Bekleme listeleri ve öncelik üzerine sekiz kısa konuşma dinleyeceksin. Konuşmacının asıl amacı nedir? a'dan j'ye seç. Her seçenek en fazla bir kez kullanılır. Kayıtları iki kez dinleyebilirsin.",
           options: [
@@ -1332,7 +1332,7 @@ The recommendation is to publish the {{14}} alongside the median.`,
     {
       skill: "writing",
       minutes: 80,
-      instruction: "This part has two tasks: an essay and a note of dissent.",
+      instruction: "There are two tasks in this part: an essay and a note of dissent.",
       instructionTr: "Bu bölümde iki görev var: bir deneme ve bir karşı oy yazısı.",
       tasks: [
         {
@@ -1413,7 +1413,7 @@ I recommend, more narrowly than the report, that we publish the assessment rules
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "This part has three tasks: an interview, a long turn, and a discussion.",
+      instruction: "There are three tasks in this part: an interview, a long turn, and a discussion.",
       instructionTr: "Bu bölümde üç görev var: söyleşi, tek başına konuşma ve tartışma.",
       tasks: [
         {

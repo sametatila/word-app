@@ -25,7 +25,7 @@ export const EN_A1_07: MockPaper = {
       skill: "reading",
       minutes: 30,
       instruction:
-        "This part has four tasks. You read short messages, notices and signs, and you complete a short text. Choose the correct answer for each question.",
+        "There are four tasks in this part. You read short messages, notices and signs, and you complete a short text. Answer each question with one choice.",
       instructionTr:
         "Bu bölümde dört görev var. Kısa iletiler, duyurular ve levhalar okuyacak, sonra kısa bir metni tamamlayacaksın. Her soruda doğru cevabı işaretle.",
       tasks: [
@@ -34,7 +34,7 @@ export const EN_A1_07: MockPaper = {
           no: 1,
           format: "truefalse",
           goal: "detail",
-          prompt: "Read the two texts and questions 1 to 5. Are the sentences true or false?",
+          prompt: "Questions 1 to 5 are about the two texts. True or false? Decide for each sentence.",
           promptTr: "İki metni ve 1–5. maddeleri oku. Cümleler doğru mu yanlış mı?",
           texts: [
             {
@@ -235,7 +235,7 @@ Coffee shop on the first floor.`,
           no: 3,
           format: "truefalse",
           goal: "instruction",
-          prompt: "Read the four signs and questions 11 to 14. Are the sentences true or false?",
+          prompt: "Questions 11 to 14 are about the four signs. True or false? Decide for each sentence.",
           promptTr: "Dört levhayı ve 11–14. maddeleri oku. Cümleler doğru mu yanlış mı?",
           texts: [
             {
@@ -335,7 +335,7 @@ Thank you!`,
           no: 4,
           format: "gapMcq",
           goal: "structure",
-          prompt: "Read the message and complete gaps 15 to 18. Which word fits: a, b or c?",
+          prompt: "Fill gaps 15 to 18 in the message. Which word fits: a, b or c?",
           promptTr: "İletiyi oku ve 15–18. boşlukları tamamla. Hangi sözcük uyar: a, b ya da c?",
           texts: [
             {
@@ -408,7 +408,7 @@ Eren`,
       skill: "listening",
       minutes: 20,
       instruction:
-        "This part has three tasks. You hear short conversations, announcements and phone messages. You hear every recording twice.",
+        "There are three tasks in this part. You hear short conversations, announcements and phone messages. Each recording plays twice.",
       instructionTr:
         "Bu bölümde üç görev var. Kısa konuşmalar, anonslar ve telefon iletileri dinleyeceksin. Her kaydı iki kez dinleyebilirsin.",
       tasks: [
@@ -417,7 +417,7 @@ Eren`,
           no: 1,
           format: "mcq",
           goal: "detail",
-          prompt: "You hear six short recordings, questions 1 to 6. Choose a, b or c. You hear every recording twice.",
+          prompt: "You hear six short recordings, questions 1 to 6. Pick one answer: a, b or c. Each recording plays twice.",
           promptTr: "Altı kısa kayıt dinleyeceksin, 1–6. maddeler. a, b ya da c'yi seç. Her kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -567,7 +567,7 @@ Eren`,
           no: 2,
           format: "truefalse",
           goal: "instruction",
-          prompt: "You hear an announcement in a big shop. Are sentences 7 to 10 true or false? You hear the announcement twice.",
+          prompt: "You hear an announcement in a big shop. Are sentences 7 to 10 true or false? The announcement plays twice.",
           promptTr: "Büyük bir mağazada yapılan anonsu dinleyeceksin. 7–10. cümleler doğru mu yanlış mı? Anonsu iki kez dinleyebilirsin.",
           texts: [
             {
@@ -630,7 +630,7 @@ Eren`,
           no: 3,
           format: "mcq",
           goal: "detail",
-          prompt: "You hear five short recordings, questions 11 to 15. Choose a, b or c. You hear every recording twice.",
+          prompt: "You hear five short recordings, questions 11 to 15. Pick one answer: a, b or c. Each recording plays twice.",
           promptTr: "Beş kısa kayıt dinleyeceksin, 11–15. maddeler. a, b ya da c'yi seç. Her kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -761,7 +761,7 @@ Eren`,
     {
       skill: "writing",
       minutes: 20,
-      instruction: "This part has two tasks: you complete a form and you write a short message.",
+      instruction: "There are two tasks in this part: you complete a form and you write a short message.",
       instructionTr: "Bu bölümde iki görev var: bir formu tamamlayacak ve kısa bir ileti yazacaksın.",
       tasks: [
         {
@@ -879,7 +879,7 @@ Cato`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "This part has three tasks: you talk about clothes and weather, you ask and answer questions, and you do a role play in a shop.",
+      instruction: "There are three tasks in this part: you talk about clothes and weather, you ask and answer questions, and you do a role play in a shop.",
       instructionTr: "Bu bölümde üç görev var: giysi ve havayı anlatma, soru sorup cevaplama ve mağazada rol yapma.",
       tasks: [
         {

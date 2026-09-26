@@ -34,7 +34,7 @@ export const A2_08: MockPaper = {
       skill: "reading",
       minutes: 30,
       instruction:
-        "Dieser Teil hat vier Aufgaben. Sie lesen kurze Nachrichten, zwei längere Texte und Anzeigen. Wählen Sie jeweils die richtige Lösung.",
+        "In diesem Teil gibt es vier Aufgaben. Sie lesen kurze Nachrichten, zwei längere Texte und Anzeigen. Kreuzen Sie bei jeder Aufgabe die passende Antwort an.",
       instructionTr:
         "Bu bölümde dört görev var. Kısa iletiler, iki uzun metin ve ilanlar okuyacaksın. Her madde için doğru cevabı seç.",
       tasks: [
@@ -43,7 +43,7 @@ export const A2_08: MockPaper = {
           no: 1,
           format: "mcq",
           goal: "gist",
-          prompt: "Lesen Sie die fünf Texte. Worum geht es? Wählen Sie die richtige Lösung a, b oder c.",
+          prompt: "Lesen Sie die fünf Texte. Worum geht es? Kreuzen Sie a, b oder c an.",
           promptTr: "Beş metni oku. Konu ne? a, b ya da c şıklarından doğru olanı seç.",
           texts: [
             {
@@ -188,7 +188,7 @@ Stadtverwaltung`,
           no: 2,
           format: "mcq",
           goal: "detail",
-          prompt: "Lesen Sie den Text und die Aufgaben 6 bis 10. Wählen Sie die richtige Lösung a, b oder c.",
+          prompt: "Lesen Sie zuerst den Text; dazu gehören die Aufgaben 6 bis 10. Kreuzen Sie a, b oder c an.",
           promptTr: "Metni ve 6–10. maddeleri oku. a, b ya da c şıklarından doğru olanı seç.",
           texts: [
             {
@@ -287,7 +287,7 @@ Ein Problem bleibt: Es fehlen jüngere Fahrer, denn die meisten im Team sind üb
           no: 3,
           format: "mcq",
           goal: "detail",
-          prompt: "Lesen Sie den Blogtext und die Aufgaben 11 bis 15. Wählen Sie die richtige Lösung a, b oder c.",
+          prompt: "Lesen Sie zuerst den Blogtext; dazu gehören die Aufgaben 11 bis 15. Kreuzen Sie a, b oder c an.",
           promptTr: "Blog metnini ve 11–15. maddeleri oku. a, b ya da c şıklarından doğru olanı seç.",
           texts: [
             {
@@ -383,7 +383,7 @@ Ganz ohne Auto bleiben wir wohl nicht für immer. Ein eigenes brauchen wir aber 
           format: "match",
           goal: "orientation",
           prompt:
-            "Die Personen 16 bis 20 suchen ein Angebot. Lesen Sie die Anzeigen a bis h. Welche Anzeige passt zu welcher Person? Jede Anzeige passt nur einmal. Drei Anzeigen passen zu niemandem.",
+            "Die Personen 16 bis 20 suchen ein Angebot. Lesen Sie die Anzeigen a bis h. Finden Sie für jede Person die passende Anzeige. Keine Anzeige wird zweimal gebraucht. Drei Anzeigen bleiben übrig.",
           promptTr:
             "16–20. kişiler bir hizmet arıyor. a–h ilanlarını oku. Hangi ilan hangi kişiye uyar? Her ilan yalnız bir kez kullanılır; üç ilan hiç kimseye uymaz.",
           options: [
@@ -484,7 +484,7 @@ Ganz ohne Auto bleiben wir wohl nicht für immer. Ein eigenes brauchen wir aber 
       skill: "listening",
       minutes: 30,
       instruction:
-        "Dieser Teil hat vier Aufgaben. Sie hören Gespräche, ein längeres Gespräch, Ansagen und ein Interview.",
+        "In diesem Teil gibt es vier Aufgaben. Sie hören Gespräche, ein längeres Gespräch, Ansagen und ein Interview.",
       instructionTr:
         "Bu bölümde dört görev var. Konuşmalar, uzun bir konuşma, anonslar ve bir söyleşi dinleyeceksin.",
       tasks: [
@@ -493,7 +493,7 @@ Ganz ohne Auto bleiben wir wohl nicht für immer. Ein eigenes brauchen wir aber 
           no: 1,
           format: "mcq",
           goal: "detail",
-          prompt: "Was ist richtig? Sie hören jeden Text zweimal.",
+          prompt: "Welche Antwort passt? Jeder Text wird zweimal abgespielt.",
           promptTr: "Doğru olan hangisi? Her kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -631,7 +631,7 @@ Ganz ohne Auto bleiben wir wohl nicht für immer. Ein eigenes brauchen wir aber 
           format: "match",
           goal: "detail",
           prompt:
-            "Sie hören ein Gespräch. Fünf Personen sagen, wie sie zur Arbeit kommen. Wer fährt wie? Ordnen Sie zu. Drei Möglichkeiten bleiben übrig. Sie hören den Text zweimal.",
+            "Sie hören ein Gespräch. Fünf Personen sagen, wie sie zur Arbeit kommen. Wer fährt wie? Ordnen Sie zu. Drei Möglichkeiten bleiben übrig. Der Text wird zweimal abgespielt.",
           promptTr:
             "Bir konuşma dinleyeceksin. Beş kişi işe nasıl gittiğini söylüyor. Kim nasıl gidiyor? Eşleştir. Üç seçenek artıyor. Kaydı iki kez dinleyebilirsin.",
           texts: [
@@ -724,7 +724,7 @@ Ganz ohne Auto bleiben wir wohl nicht für immer. Ein eigenes brauchen wir aber 
           no: 3,
           format: "mcq",
           goal: "detail",
-          prompt: "Was ist richtig? Sie hören jeden Text zweimal.",
+          prompt: "Welche Antwort passt? Jeder Text wird zweimal abgespielt.",
           promptTr: "Doğru olan hangisi? Her kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -856,7 +856,7 @@ Ganz ohne Auto bleiben wir wohl nicht für immer. Ein eigenes brauchen wir aber 
           no: 4,
           format: "truefalse",
           goal: "opinion",
-          prompt: "Sie hören ein Interview. Sind die Sätze richtig oder falsch? Sie hören den Text zweimal.",
+          prompt: "Sie hören ein Interview. Richtig oder falsch? Entscheiden Sie bei jedem Satz. Der Text wird zweimal abgespielt.",
           promptTr: "Bir söyleşi dinleyeceksin. Cümleler doğru mu yanlış mı? Kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -955,7 +955,7 @@ Ganz ohne Auto bleiben wir wohl nicht für immer. Ein eigenes brauchen wir aber 
     {
       skill: "writing",
       minutes: 30,
-      instruction: "Dieser Teil hat zwei Aufgaben. Sie schreiben eine private Nachricht und eine halb offizielle Nachricht.",
+      instruction: "In diesem Teil gibt es zwei Aufgaben. Sie schreiben eine private Nachricht und eine halb offizielle Nachricht.",
       instructionTr: "Bu bölümde iki görev var: bir özel ileti ve bir yarı resmî ileti yazacaksın.",
       tasks: [
         {
@@ -1037,7 +1037,7 @@ Ana Prohaska`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "Dieser Teil hat drei Aufgaben: Fragen stellen, erzählen und gemeinsam planen.",
+      instruction: "In diesem Teil gibt es drei Aufgaben: Fragen stellen, erzählen und gemeinsam planen.",
       instructionTr: "Bu bölümde üç görev var: soru sorma, anlatma ve birlikte planlama.",
       tasks: [
         {

@@ -30,7 +30,7 @@ export const A1_07: MockPaper = {
       skill: "reading",
       minutes: 25,
       instruction:
-        "Dieser Teil hat drei Aufgaben. Sie lesen eine E-Mail, Anzeigen und Schilder. Zu jedem Text gibt es Fragen. Wählen Sie die richtige Lösung.",
+        "In diesem Teil gibt es drei Aufgaben. Sie lesen eine E-Mail, Anzeigen und Schilder. Jeder Text hat eigene Fragen. Kreuzen Sie jeweils die passende Antwort an.",
       instructionTr:
         "Bu bölümde üç görev var. Bir e-posta, ilanlar ve levhalar okuyacaksın. Her metnin soruları var; doğru cevabı işaretle.",
       tasks: [
@@ -39,7 +39,7 @@ export const A1_07: MockPaper = {
           no: 1,
           format: "truefalse",
           goal: "detail",
-          prompt: "Hier sind zwei Texte. Sind die Sätze 1 bis 5 richtig oder falsch?",
+          prompt: "Hier sind zwei Texte. Richtig oder falsch? Entscheiden Sie bei den Sätzen 1 bis 5.",
           promptTr: "İki metni ve 1–5. maddeleri oku. Cümleler doğru mu yanlış mı?",
           texts: [
             {
@@ -221,7 +221,7 @@ Ihr Team vom Markt am Ring`,
           no: 3,
           format: "truefalse",
           goal: "instruction",
-          prompt: "Lesen Sie die Schilder und die Aufgaben 11 bis 15. Sind die Sätze richtig oder falsch?",
+          prompt: "Lesen Sie zuerst die Schilder; dazu gehören die Aufgaben 11 bis 15. Richtig oder falsch? Entscheiden Sie bei jedem Satz.",
           promptTr: "Levhaları ve 11–15. maddeleri oku. Cümleler doğru mu yanlış mı?",
           texts: [
             {
@@ -308,7 +308,7 @@ Den Code finden Sie in Ihrer E-Mail.`,
       skill: "listening",
       minutes: 20,
       instruction:
-        "Dieser Teil hat drei Aufgaben. Sie hören kurze Gespräche und Durchsagen. Lesen Sie zuerst die Aufgaben.",
+        "In diesem Teil gibt es drei Aufgaben. Sie hören kurze Gespräche und Durchsagen. Sehen Sie sich vorher die Aufgaben an.",
       instructionTr:
         "Bu bölümde üç görev var. Kısa konuşmalar ve anonslar dinleyeceksin. Önce maddeleri oku.",
       tasks: [
@@ -317,7 +317,7 @@ Den Code finden Sie in Ihrer E-Mail.`,
           no: 1,
           format: "mcq",
           goal: "detail",
-          prompt: "Was ist richtig? Sie hören jeden Text zweimal.",
+          prompt: "Welche Antwort passt? Jeder Text wird zweimal abgespielt.",
           promptTr: "Doğru olan hangisi? Her kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -473,7 +473,7 @@ Den Code finden Sie in Ihrer E-Mail.`,
           no: 2,
           format: "truefalse",
           goal: "instruction",
-          prompt: "Sind die Sätze richtig oder falsch? Sie hören jeden Text einmal.",
+          prompt: "Richtig oder falsch? Entscheiden Sie bei jedem Satz. Jeder Text wird nur einmal abgespielt.",
           promptTr: "Cümleler doğru mu yanlış mı? Her anonsu bir kez dinleyeceksin.",
           texts: [
             {
@@ -577,7 +577,7 @@ Den Code finden Sie in Ihrer E-Mail.`,
           no: 3,
           format: "mcq",
           goal: "detail",
-          prompt: "Was ist richtig? Sie hören jeden Text zweimal.",
+          prompt: "Welche Antwort passt? Jeder Text wird zweimal abgespielt.",
           promptTr: "Doğru olan hangisi? Her kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -711,7 +711,7 @@ Den Code finden Sie in Ihrer E-Mail.`,
     {
       skill: "writing",
       minutes: 20,
-      instruction: "Dieser Teil hat zwei Aufgaben: ein Formular ausfüllen und eine kurze Nachricht schreiben.",
+      instruction: "In diesem Teil gibt es zwei Aufgaben: ein Formular ausfüllen und eine kurze Nachricht schreiben.",
       instructionTr: "Bu bölümde iki görev var: bir form doldurmak ve kısa bir ileti yazmak.",
       tasks: [
         {
@@ -793,7 +793,7 @@ Unterschrift:             M. Kowalczyk`,
           format: "writing",
           goal: "interaction",
           prompt:
-            "Sie haben im Markt am Ring Ihren Schal vergessen. Schreiben Sie an den Markt. Schreiben Sie zu jedem Punkt ein bis zwei Sätze (circa 30 Wörter). Vergessen Sie Anrede und Gruß nicht.",
+            "Sie haben im Markt am Ring Ihren Schal vergessen. Schreiben Sie an den Markt. Schreiben Sie zu jedem Punkt ein bis zwei Sätze (circa 30 Wörter). Denken Sie an Anrede und Grußformel.",
           promptTr:
             "Markt am Ring'de atkını unutmuşsun. Markete yaz. Her maddeye bir-iki cümle yaz (yaklaşık 30 kelime). Hitap ve veda cümlesini unutma.",
           items: [],
@@ -830,7 +830,7 @@ Elif Yalçın`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "Dieser Teil hat drei Aufgaben: vom Einkaufen erzählen, Fragen stellen, um etwas bitten und reagieren.",
+      instruction: "In diesem Teil gibt es drei Aufgaben: vom Einkaufen erzählen, Fragen stellen, um etwas bitten und reagieren.",
       instructionTr: "Bu bölümde üç görev var: alışverişi anlatma, soru sorma, rica etme ve yanıt verme.",
       tasks: [
         {

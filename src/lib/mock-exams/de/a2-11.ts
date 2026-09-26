@@ -32,7 +32,7 @@ export const A2_11: MockPaper = {
       skill: "reading",
       minutes: 30,
       instruction:
-        "Dieser Teil hat vier Aufgaben. Sie lesen kurze Texte, einen Zeitungsartikel, einen Blogtext und Anzeigen.",
+        "In diesem Teil gibt es vier Aufgaben. Sie lesen kurze Texte, einen Zeitungsartikel, einen Blogtext und Anzeigen.",
       instructionTr:
         "Bu bölümde dört görev var. Kısa metinler, bir gazete yazısı, bir blog metni ve ilanlar okuyacaksın.",
       tasks: [
@@ -41,7 +41,7 @@ export const A2_11: MockPaper = {
           no: 1,
           format: "mcq",
           goal: "gist",
-          prompt: "Lesen Sie die fünf Texte. Worum geht es? Wählen Sie die richtige Lösung a, b oder c.",
+          prompt: "Lesen Sie die fünf Texte. Worum geht es? Kreuzen Sie a, b oder c an.",
           promptTr: "Beş metni oku. Konu ne? a, b ya da c'yi seç.",
           texts: [
             {
@@ -216,7 +216,7 @@ Maren`,
           no: 2,
           format: "mcq",
           goal: "detail",
-          prompt: "Lesen Sie den Text und die Aufgaben 6 bis 10. Wählen Sie die richtige Lösung a, b oder c.",
+          prompt: "Lesen Sie zuerst den Text; dazu gehören die Aufgaben 6 bis 10. Kreuzen Sie a, b oder c an.",
           promptTr: "Metni ve 6–10. maddeleri oku. a, b ya da c'yi seç.",
           texts: [
             {
@@ -327,7 +327,7 @@ Gebhardt möchte trotzdem keine Werbung für ihr Modell machen. "Es funktioniert
           no: 3,
           format: "mcq",
           goal: "detail",
-          prompt: "Lesen Sie den Blogtext und die Aufgaben 11 bis 15. Wählen Sie die richtige Lösung a, b oder c.",
+          prompt: "Lesen Sie zuerst den Blogtext; dazu gehören die Aufgaben 11 bis 15. Kreuzen Sie a, b oder c an.",
           promptTr: "Blog metnini ve 11–15. maddeleri oku. a, b ya da c'yi seç.",
           texts: [
             {
@@ -441,7 +441,7 @@ Wenn Sie unsicher sind, gehen Sie einfach einmal hin. Fast jeder Verein lässt S
           format: "match",
           goal: "orientation",
           prompt:
-            "Die Personen 16 bis 20 suchen ein Sportangebot. Lesen Sie die Anzeigen a bis h. Welche Anzeige passt zu welcher Person? Jede Anzeige passt nur einmal. Drei Anzeigen passen zu niemandem.",
+            "Die Personen 16 bis 20 suchen ein Sportangebot. Lesen Sie die Anzeigen a bis h. Finden Sie für jede Person die passende Anzeige. Keine Anzeige wird zweimal gebraucht. Drei Anzeigen bleiben übrig.",
           promptTr:
             "16–20. kişiler bir spor imkânı arıyor. a–h ilanlarını oku. Hangi ilan hangi kişiye uyar? Her ilan yalnız bir kez kullanılır; üç ilan hiç kimseye uymaz.",
           options: [
@@ -542,7 +542,7 @@ Wenn Sie unsicher sind, gehen Sie einfach einmal hin. Fast jeder Verein lässt S
       skill: "listening",
       minutes: 30,
       instruction:
-        "Dieser Teil hat vier Aufgaben. Sie hören kurze Texte, ein Gespräch, Nachrichten und ein Interview.",
+        "In diesem Teil gibt es vier Aufgaben. Sie hören kurze Texte, ein Gespräch, Nachrichten und ein Interview.",
       instructionTr:
         "Bu bölümde dört görev var. Kısa kayıtlar, bir konuşma, mesajlar ve bir söyleşi dinleyeceksin.",
       tasks: [
@@ -551,7 +551,7 @@ Wenn Sie unsicher sind, gehen Sie einfach einmal hin. Fast jeder Verein lässt S
           no: 1,
           format: "mcq",
           goal: "detail",
-          prompt: "Was ist richtig? Sie hören jeden Text zweimal.",
+          prompt: "Welche Antwort passt? Jeder Text wird zweimal abgespielt.",
           promptTr: "Doğru olan hangisi? Her kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -694,7 +694,7 @@ Wenn Sie unsicher sind, gehen Sie einfach einmal hin. Fast jeder Verein lässt S
           format: "match",
           goal: "detail",
           prompt:
-            "Sie hören ein Gespräch. Fünf Personen sagen, was sie im Verein machen möchten. Wer möchte was? Ordnen Sie zu. Drei Angebote bleiben übrig. Sie hören den Text zweimal.",
+            "Sie hören ein Gespräch. Fünf Personen sagen, was sie im Verein machen möchten. Wer möchte was? Ordnen Sie zu. Drei Angebote bleiben übrig. Der Text wird zweimal abgespielt.",
           promptTr:
             "Bir konuşma dinleyeceksin. Beş kişi dernekte ne yapmak istediğini söylüyor. Kim ne istiyor? Eşleştir. Üç imkân artıyor. Kaydı iki kez dinleyebilirsin.",
           texts: [
@@ -787,7 +787,7 @@ Wenn Sie unsicher sind, gehen Sie einfach einmal hin. Fast jeder Verein lässt S
           no: 3,
           format: "mcq",
           goal: "detail",
-          prompt: "Was ist richtig? Sie hören jeden Text zweimal.",
+          prompt: "Welche Antwort passt? Jeder Text wird zweimal abgespielt.",
           promptTr: "Doğru olan hangisi? Her kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -931,7 +931,7 @@ Wenn Sie unsicher sind, gehen Sie einfach einmal hin. Fast jeder Verein lässt S
           no: 4,
           format: "truefalse",
           goal: "opinion",
-          prompt: "Sie hören ein Interview. Sind die Sätze richtig oder falsch? Sie hören den Text zweimal.",
+          prompt: "Sie hören ein Interview. Richtig oder falsch? Entscheiden Sie bei jedem Satz. Der Text wird zweimal abgespielt.",
           promptTr: "Bir söyleşi dinleyeceksin. Cümleler doğru mu yanlış mı? Kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -1030,7 +1030,7 @@ Wenn Sie unsicher sind, gehen Sie einfach einmal hin. Fast jeder Verein lässt S
     {
       skill: "writing",
       minutes: 30,
-      instruction: "Dieser Teil hat zwei Aufgaben. Schreiben Sie zu jedem Punkt ein bis zwei Sätze.",
+      instruction: "In diesem Teil gibt es zwei Aufgaben. Schreiben Sie zu jedem Punkt ein bis zwei Sätze.",
       instructionTr: "Bu bölümde iki görev var. Her maddeye bir iki cümle yaz.",
       tasks: [
         {
@@ -1113,7 +1113,7 @@ Maren`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "Dieser Teil hat drei Aufgaben: Fragen stellen, von sich erzählen und zusammen planen.",
+      instruction: "In diesem Teil gibt es drei Aufgaben: Fragen stellen, von sich erzählen und zusammen planen.",
       instructionTr: "Bu bölümde üç görev var: soru sormak, kendinden söz etmek ve birlikte plan yapmak.",
       tasks: [
         {

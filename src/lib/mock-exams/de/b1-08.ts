@@ -36,7 +36,7 @@ export const B1_08: MockPaper = {
       skill: "reading",
       minutes: 65,
       instruction:
-        "Dieser Teil hat fünf Aufgaben. Sie lesen einen Bericht, kurze Texte, Anzeigen, Forumsbeiträge und Einsatzregeln.",
+        "In diesem Teil gibt es fünf Aufgaben. Sie lesen einen Bericht, kurze Texte, Anzeigen, Forumsbeiträge und Einsatzregeln.",
       instructionTr:
         "Bu bölümde beş görev var. Bir haber metni, kısa metinler, ilanlar, forum yorumları ve görev kuralları okuyacaksın.",
       tasks: [
@@ -45,7 +45,7 @@ export const B1_08: MockPaper = {
           no: 1,
           format: "truefalse",
           goal: "detail",
-          prompt: "Lesen Sie den Bericht und die Aufgaben 1 bis 6. Sind die Aussagen richtig oder falsch?",
+          prompt: "Lesen Sie zuerst den Bericht; dazu gehören die Aufgaben 1 bis 6. Richtig oder falsch? Entscheiden Sie bei jedem Satz.",
           promptTr: "Haber metnini ve 1–6. maddeleri oku. İfadeler doğru mu yanlış mı?",
           texts: [
             {
@@ -148,7 +148,7 @@ Die größte Sorge ist das Alter. Zwei Drittel der Freiwilligen sind über sechz
           no: 2,
           format: "mcq",
           goal: "gist",
-          prompt: "Lesen Sie die sechs Texte. Was ist die Kernaussage? Wählen Sie a, b oder c.",
+          prompt: "Lesen Sie die sechs Texte. Was ist die Kernaussage? Kreuzen Sie a, b oder c an.",
           promptTr: "Altı metni oku. Ana ileti ne? a, b ya da c'yi seç.",
           texts: [
             {
@@ -324,7 +324,7 @@ Vereine finden also Mitglieder, aber keine Verantwortlichen.`,
           format: "match",
           goal: "orientation",
           prompt:
-            "Die Personen 13 bis 19 suchen eine ehrenamtliche Aufgabe. Lesen Sie die Anzeigen a bis j. Welche Anzeige passt zu welcher Person? Jede Anzeige passt nur einmal. Drei Anzeigen passen zu niemandem.",
+            "Die Personen 13 bis 19 suchen eine ehrenamtliche Aufgabe. Lesen Sie die Anzeigen a bis j. Finden Sie für jede Person die passende Anzeige. Keine Anzeige wird zweimal gebraucht. Drei Anzeigen bleiben übrig.",
           promptTr:
             "13–19. kişiler gönüllü bir görev arıyor. a–j ilanlarını oku. Hangi ilan hangi kişiye uyar? Her ilan yalnız bir kez kullanılır; üç ilan hiç kimseye uymaz.",
           options: [
@@ -569,7 +569,7 @@ Timo Reichert: Bezahlung nein, Ersatz der Auslagen ja. Und vor allem: Versicheru
           no: 5,
           format: "mcq",
           goal: "instruction",
-          prompt: "Lesen Sie die Einsatzregeln und die Aufgaben 27 bis 30. Wählen Sie a, b oder c.",
+          prompt: "Lesen Sie zuerst die Einsatzregeln; dazu gehören die Aufgaben 27 bis 30. Kreuzen Sie a, b oder c an.",
           promptTr: "Görev kurallarını ve 27–30. maddeleri oku. a, b ya da c'yi seç.",
           texts: [
             {
@@ -667,7 +667,7 @@ Fahrtkosten erstatten wir mit dreißig Cent je Kilometer, andere Auslagen nur na
       skill: "listening",
       minutes: 40,
       instruction:
-        "Dieser Teil hat vier Aufgaben. Sie hören kurze Texte, ein Gespräch, einen Vortrag und eine Diskussion.",
+        "In diesem Teil gibt es vier Aufgaben. Sie hören kurze Texte, ein Gespräch, einen Vortrag und eine Diskussion.",
       instructionTr:
         "Bu bölümde dört görev var. Kısa kayıtlar, bir konuşma, bir sunum ve bir tartışma dinleyeceksin.",
       tasks: [
@@ -676,7 +676,7 @@ Fahrtkosten erstatten wir mit dreißig Cent je Kilometer, andere Auslagen nur na
           no: 1,
           format: "mixed",
           goal: "detail",
-          prompt: "Sie hören fünf kurze Texte. Zu jedem Text gibt es zwei Aufgaben. Sie hören jeden Text einmal.",
+          prompt: "Sie hören fünf kurze Texte. Jeder Text hat zwei Aufgaben. Jeder Text wird nur einmal abgespielt.",
           promptTr: "Beş kısa kayıt dinleyeceksin. Her kayıt için iki madde var. Her kaydı bir kez dinleyeceksin.",
           texts: [
             {
@@ -862,7 +862,7 @@ Fahrtkosten erstatten wir mit dreißig Cent je Kilometer, andere Auslagen nur na
           no: 2,
           format: "mcq",
           goal: "detail",
-          prompt: "Sie hören ein Erstgespräch in einer Freiwilligenagentur. Wählen Sie a, b oder c. Sie hören den Text zweimal.",
+          prompt: "Sie hören ein Erstgespräch in einer Freiwilligenagentur. Kreuzen Sie a, b oder c an. Der Text wird zweimal abgespielt.",
           promptTr: "Gönüllü merkezindeki ilk görüşmeyi dinleyeceksin. a, b ya da c'yi seç. Kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -958,7 +958,7 @@ Fahrtkosten erstatten wir mit dreißig Cent je Kilometer, andere Auslagen nur na
           no: 3,
           format: "truefalse",
           goal: "detail",
-          prompt: "Sie hören einen Vortrag. Sind die Aussagen richtig oder falsch? Sie hören den Text zweimal.",
+          prompt: "Sie hören einen Vortrag. Richtig oder falsch? Entscheiden Sie bei jedem Satz. Der Text wird zweimal abgespielt.",
           promptTr: "Bir sunum dinleyeceksin. İfadeler doğru mu yanlış mı? Kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -1078,7 +1078,7 @@ Fahrtkosten erstatten wir mit dreißig Cent je Kilometer, andere Auslagen nur na
           no: 4,
           format: "mcq",
           goal: "opinion",
-          prompt: "Sie hören eine Diskussion. Wählen Sie a, b oder c. Sie hören den Text zweimal.",
+          prompt: "Sie hören eine Diskussion. Kreuzen Sie a, b oder c an. Der Text wird zweimal abgespielt.",
           promptTr: "Bir tartışma dinleyeceksin. a, b ya da c'yi seç. Kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -1236,7 +1236,7 @@ Fahrtkosten erstatten wir mit dreißig Cent je Kilometer, andere Auslagen nur na
     {
       skill: "writing",
       minutes: 60,
-      instruction: "Dieser Teil hat drei Aufgaben: eine Antwort, einen Beitrag und eine kurze halb offizielle Mail.",
+      instruction: "In diesem Teil gibt es drei Aufgaben: eine Antwort, einen Beitrag und eine kurze halb offizielle Mail.",
       instructionTr: "Bu bölümde üç görev var: bir yanıt, bir yazı ve kısa bir yarı resmî e-posta.",
       tasks: [
         {
@@ -1357,7 +1357,7 @@ Ana Brahim`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "Dieser Teil hat drei Aufgaben: gemeinsam planen, einen kurzen Vortrag halten, auf einen Vorwurf reagieren.",
+      instruction: "In diesem Teil gibt es drei Aufgaben: gemeinsam planen, einen kurzen Vortrag halten, auf einen Vorwurf reagieren.",
       instructionTr: "Bu bölümde üç görev var: birlikte planlama, kısa sunum, bir suçlamaya karşılık verme.",
       tasks: [
         {

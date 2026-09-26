@@ -34,7 +34,7 @@ export const A1_12: MockPaper = {
       skill: "reading",
       minutes: 25,
       instruction:
-        "Dieser Teil hat drei Aufgaben. Sie lesen eine E-Mail, Anzeigen und Schilder. Zu jedem Text gibt es Fragen. Wählen Sie die richtige Lösung.",
+        "In diesem Teil gibt es drei Aufgaben. Sie lesen eine E-Mail, Anzeigen und Schilder. Jeder Text hat eigene Fragen. Kreuzen Sie jeweils die passende Antwort an.",
       instructionTr:
         "Bu bölümde üç görev var. Bir e-posta, ilanlar ve levhalar okuyacaksın. Her metnin soruları var; doğru cevabı işaretle.",
       tasks: [
@@ -43,7 +43,7 @@ export const A1_12: MockPaper = {
           no: 1,
           format: "truefalse",
           goal: "detail",
-          prompt: "Hier sind zwei Texte. Sind die Sätze 1 bis 5 richtig oder falsch?",
+          prompt: "Hier sind zwei Texte. Richtig oder falsch? Entscheiden Sie bei den Sätzen 1 bis 5.",
           promptTr: "İki metni ve 1–5. maddeleri oku. Cümleler doğru mu yanlış mı?",
           texts: [
             {
@@ -226,7 +226,7 @@ Ihre Fahrkarten gelten auch im Bus.`,
           no: 3,
           format: "truefalse",
           goal: "instruction",
-          prompt: "Lesen Sie die Schilder und die Aufgaben 11 bis 15. Sind die Sätze richtig oder falsch?",
+          prompt: "Lesen Sie zuerst die Schilder; dazu gehören die Aufgaben 11 bis 15. Richtig oder falsch? Entscheiden Sie bei jedem Satz.",
           promptTr: "Levhaları ve 11–15. maddeleri oku. Cümleler doğru mu yanlış mı?",
           texts: [
             {
@@ -313,7 +313,7 @@ Fahrkarten bereithalten.`,
       skill: "listening",
       minutes: 20,
       instruction:
-        "Dieser Teil hat drei Aufgaben. Sie hören kurze Gespräche und Durchsagen. Lesen Sie zuerst die Aufgaben.",
+        "In diesem Teil gibt es drei Aufgaben. Sie hören kurze Gespräche und Durchsagen. Sehen Sie sich vorher die Aufgaben an.",
       instructionTr:
         "Bu bölümde üç görev var. Kısa konuşmalar ve anonslar dinleyeceksin. Önce maddeleri oku.",
       tasks: [
@@ -322,7 +322,7 @@ Fahrkarten bereithalten.`,
           no: 1,
           format: "mcq",
           goal: "detail",
-          prompt: "Was ist richtig? Sie hören jeden Text zweimal.",
+          prompt: "Welche Antwort passt? Jeder Text wird zweimal abgespielt.",
           promptTr: "Doğru olan hangisi? Her kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -478,7 +478,7 @@ Fahrkarten bereithalten.`,
           no: 2,
           format: "truefalse",
           goal: "instruction",
-          prompt: "Sie hören vier Durchsagen. Sind die Sätze richtig oder falsch? Sie hören jeden Text einmal.",
+          prompt: "Sie hören vier Durchsagen. Richtig oder falsch? Entscheiden Sie bei jedem Satz. Jeder Text wird nur einmal abgespielt.",
           promptTr: "Dört anons dinleyeceksin. Cümleler doğru mu yanlış mı? Her kaydı bir kez dinleyeceksin.",
           texts: [
             {
@@ -582,7 +582,7 @@ Fahrkarten bereithalten.`,
           no: 3,
           format: "mcq",
           goal: "detail",
-          prompt: "Sie hören fünf Nachrichten. Was ist richtig? Sie hören jeden Text zweimal.",
+          prompt: "Sie hören fünf Nachrichten. Welche Antwort passt? Jeder Text wird zweimal abgespielt.",
           promptTr: "Beş mesaj dinleyeceksin. Doğru olan hangisi? Her kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -716,7 +716,7 @@ Fahrkarten bereithalten.`,
     {
       skill: "writing",
       minutes: 20,
-      instruction: "Dieser Teil hat zwei Aufgaben: ein Formular ausfüllen und eine kurze Nachricht schreiben.",
+      instruction: "In diesem Teil gibt es zwei Aufgaben: ein Formular ausfüllen und eine kurze Nachricht schreiben.",
       instructionTr: "Bu bölümde iki görev var: bir form doldurmak ve kısa bir ileti yazmak.",
       tasks: [
         {
@@ -798,7 +798,7 @@ Unterschrift:             T. Berisha`,
           format: "writing",
           goal: "interaction",
           prompt:
-            "Sie kommen später an als geplant. Schreiben Sie an Ihre Freundin. Schreiben Sie zu jedem Punkt ein bis zwei Sätze (circa 30 Wörter). Vergessen Sie Anrede und Gruß nicht.",
+            "Sie kommen später an als geplant. Schreiben Sie an Ihre Freundin. Schreiben Sie zu jedem Punkt ein bis zwei Sätze (circa 30 Wörter). Denken Sie an Anrede und Grußformel.",
           promptTr:
             "Planlanandan geç varacaksın. Arkadaşına yaz. Her maddeye bir-iki cümle yaz (yaklaşık 30 kelime). Hitap ve veda cümlesini unutma.",
           items: [],
@@ -835,7 +835,7 @@ Teuta`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "Dieser Teil hat drei Aufgaben: von einer Reise erzählen, Fragen stellen, um etwas bitten und reagieren.",
+      instruction: "In diesem Teil gibt es drei Aufgaben: von einer Reise erzählen, Fragen stellen, um etwas bitten und reagieren.",
       instructionTr: "Bu bölümde üç görev var: bir yolculuğu anlatma, soru sorma, rica etme ve yanıt verme.",
       tasks: [
         {

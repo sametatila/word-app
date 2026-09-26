@@ -28,7 +28,7 @@ export const C1_04: MockPaper = {
       skill: "reading",
       minutes: 70,
       instruction:
-        "Dieser Teil hat drei Aufgaben: eine Zusammenfassung ergänzen, einen längeren Text auswerten und Lücken in einem Zeitschriftentext füllen.",
+        "In diesem Teil gibt es drei Aufgaben: eine Zusammenfassung ergänzen, einen längeren Text auswerten und Lücken in einem Zeitschriftentext füllen.",
       instructionTr:
         "Bu bölümde üç görev var: bir özeti tamamlamak, uzun bir metni değerlendirmek ve bir dergi metnindeki boşlukları doldurmak.",
       tasks: [
@@ -38,7 +38,7 @@ export const C1_04: MockPaper = {
           format: "gap",
           goal: "gist",
           prompt:
-            "Lesen Sie den Text und die Zusammenfassung darunter. Ergänzen Sie die Lücken 1 bis 10 sinngemäß. Schreiben Sie in jede Lücke ein Wort. Die Wörter stehen nicht immer wörtlich im Text.",
+            "Lesen Sie den Text und die Zusammenfassung darunter. Ergänzen Sie die Lücken 1 bis 10 sinngemäß. Pro Lücke genau ein Wort. Die passenden Wörter können vom Wortlaut des Textes abweichen.",
           promptTr:
             "Metni ve altındaki özeti oku. 1–10. boşlukları anlama uygun biçimde tamamla. Her boşluğa bir sözcük yaz. Sözcükler metinde her zaman birebir geçmiyor.",
           texts: [
@@ -187,7 +187,7 @@ Gegen eine feinere Einteilung spricht, dass sie die Verständigung {{9}}. Der Te
           no: 2,
           format: "mcq",
           goal: "opinion",
-          prompt: "Lesen Sie den Text und die Aufgaben 11 bis 20. Wählen Sie: a, b, c oder d.",
+          prompt: "Lesen Sie zuerst den Text; dazu gehören die Aufgaben 11 bis 20. Kreuzen Sie a, b, c oder d an.",
           promptTr: "Metni ve 11–20. maddeleri oku. a, b, c ya da d'yi seç.",
           texts: [
             {
@@ -387,7 +387,7 @@ Ob das Modell trägt, wird sich zeigen. Die Kasse hat die Förderung um zwei Jah
           no: 3,
           format: "gapMcq",
           goal: "structure",
-          prompt: "Lesen Sie den Text und ergänzen Sie die Lücken 21 bis 25. Welche Lösung passt: a, b, c oder d?",
+          prompt: "Lesen Sie den Text und ergänzen Sie die Lücken 21 bis 25. Welche Antwort passt: a, b, c oder d?",
           promptTr: "Metni oku ve 21–25. boşlukları tamamla. Hangi seçenek uyar: a, b, c ya da d?",
           texts: [
             {
@@ -467,7 +467,7 @@ Ob daraus ein dauerhaftes Modell wird, ist offen. Fest steht {{25}}, dass die Vo
     {
       skill: "listening",
       minutes: 40,
-      instruction: "Dieser Teil hat zwei Aufgaben: Notizen ergänzen und eine Diskussion auswerten.",
+      instruction: "In diesem Teil gibt es zwei Aufgaben: Notizen ergänzen und eine Diskussion auswerten.",
       instructionTr: "Bu bölümde iki görev var: not tamamlamak ve bir tartışmayı değerlendirmek.",
       tasks: [
         {
@@ -476,7 +476,7 @@ Ob daraus ein dauerhaftes Modell wird, ist offen. Fest steht {{25}}, dass die Vo
           format: "notes",
           goal: "detail",
           prompt:
-            "Sie hören eine Informationsveranstaltung. Ergänzen Sie die Notizen 1 bis 10. Schreiben Sie höchstens drei Wörter in jede Lücke. Sie hören den Text einmal.",
+            "Sie hören eine Informationsveranstaltung. Ergänzen Sie die Notizen 1 bis 10. Pro Lücke höchstens drei Wörter. Der Text wird nur einmal abgespielt.",
           promptTr:
             "Bir bilgilendirme konuşması dinleyeceksin. 1–10. notları tamamla. Her boşluğa en çok üç sözcük yaz. Kaydı bir kez dinleyeceksin.",
           texts: [
@@ -660,7 +660,7 @@ Antrag auf Pflegegrad: formlos möglich; Leistungen ab {{10}}.`,
           no: 2,
           format: "mcq",
           goal: "gist",
-          prompt: "Sie hören eine Diskussion. Wählen Sie zu den Aufgaben 11 bis 25: a, b oder c. Sie hören den Text zweimal.",
+          prompt: "Sie hören eine Diskussion. Kreuzen Sie bei den Aufgaben 11 bis 25 jeweils a, b oder c an. Der Text wird zweimal abgespielt.",
           promptTr: "Bir tartışma dinleyeceksin. 11–25. maddeler için a, b ya da c'yi seç. Kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -966,7 +966,7 @@ Antrag auf Pflegegrad: formlos möglich; Leistungen ab {{10}}.`,
       skill: "writing",
       minutes: 80,
       instruction:
-        "Dieser Teil hat zwei Aufgaben. Zuerst schreiben Sie einen zusammenhängenden Text zu fünf Leitpunkten, danach ergänzen Sie ein formelles Schreiben.",
+        "In diesem Teil gibt es zwei Aufgaben. Zuerst schreiben Sie einen zusammenhängenden Text zu fünf Leitpunkten, danach ergänzen Sie ein formelles Schreiben.",
       instructionTr:
         "Bu bölümde iki görev var: önce beş yönlendirme noktasına göre bütünlüklü bir metin yazacaksın, sonra resmî bir yazıyı tamamlayacaksın.",
       tasks: [
@@ -1146,7 +1146,7 @@ Dorothea Simon`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "Dieser Teil hat zwei Aufgaben: einen Vortrag halten und eine Position im Gespräch verteidigen.",
+      instruction: "In diesem Teil gibt es zwei Aufgaben: einen Vortrag halten und eine Position im Gespräch verteidigen.",
       instructionTr: "Bu bölümde iki görev var: bir sunum yapmak ve bir görüşü konuşmada savunmak.",
       tasks: [
         {

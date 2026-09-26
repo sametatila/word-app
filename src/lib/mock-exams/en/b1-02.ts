@@ -25,7 +25,7 @@ export const EN_B1_02: MockPaper = {
       skill: "reading",
       minutes: 55,
       instruction:
-        "This part has six tasks. You read notices, adverts, an article and two texts with gaps. Choose the correct answer for each question.",
+        "There are six tasks in this part. You read notices, adverts, an article and two texts with gaps. Answer each question with one choice.",
       instructionTr:
         "Bu bölümde altı görev var. Duyurular, ilanlar, bir yazı ve boşluklu iki metin okuyacaksın. Her soruda doğru cevabı işaretle.",
       tasks: [
@@ -34,7 +34,7 @@ export const EN_B1_02: MockPaper = {
           no: 1,
           format: "mcq",
           goal: "detail",
-          prompt: "Read the five texts and questions 1 to 5. Choose a, b or c.",
+          prompt: "Questions 1 to 5 are about the five texts. Pick one answer: a, b or c.",
           promptTr: "Beş metni ve 1–5. maddeleri oku. a, b ya da c'yi seç.",
           texts: [
             {
@@ -142,7 +142,7 @@ export const EN_B1_02: MockPaper = {
           format: "match",
           goal: "orientation",
           prompt:
-            "Read about five people, 6 to 10. Then read the eight adverts a to h. Which advert is right for each person? You use each advert once only.",
+            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best advert. No advert is used twice.",
           promptTr:
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
@@ -208,7 +208,7 @@ export const EN_B1_02: MockPaper = {
           no: 3,
           format: "mcq",
           goal: "opinion",
-          prompt: "Read the article and questions 11 to 15. Choose a, b, c or d.",
+          prompt: "Questions 11 to 15 are about the article. Pick one answer: a, b, c or d.",
           promptTr: "Yazıyı ve 11–15. maddeleri oku. a, b, c ya da d'yi seç.",
           texts: [
             {
@@ -317,7 +317,7 @@ So I have stopped feeling proud about my bin and I have started writing to the s
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. One sentence is missing from each of the gaps 16 to 20. Which sentence a to f fits which gap? One sentence fits nowhere.",
+            "Read the text. Gaps 16 to 20 each need One sentence. Which sentence a to f fits which gap? One sentence is extra.",
           promptTr:
             "Metni oku. 16–20. boşluklarda birer cümle eksik. a–f cümlelerinden hangisi hangi boşluğa uyar? Bir cümle hiçbir yere uymuyor.",
           texts: [
@@ -404,7 +404,7 @@ The most interesting effect may be a slower one. When people expect to repair a 
           no: 5,
           format: "gapMcq",
           goal: "structure",
-          prompt: "Read the text and complete gaps 21 to 25. Which word fits: a, b, c or d?",
+          prompt: "Fill gaps 21 to 25 in the text. Which word fits: a, b, c or d?",
           promptTr: "Metni oku ve 21–25. boşlukları tamamla. Hangi sözcük uyar: a, b, c ya da d?",
           texts: [
             {
@@ -482,7 +482,7 @@ None of this takes long. Fifteen minutes of questions can {{25}} you from a year
           no: 6,
           format: "gap",
           goal: "structure",
-          prompt: "Read the text and complete gaps 26 to 30. Write ONE word in each gap.",
+          prompt: "Fill gaps 26 to 30 in the text. Each gap takes exactly one word.",
           promptTr: "Metni oku ve 26–30. boşlukları tamamla. Her boşluğa TEK bir sözcük yaz.",
           texts: [
             {
@@ -556,7 +556,7 @@ So I have changed my mind, {{29}} not in the direction people expect. The materi
       skill: "listening",
       minutes: 35,
       instruction:
-        "This part has four tasks. You hear short extracts, conversations, a talk and an interview. You hear every recording twice.",
+        "There are four tasks in this part. You hear short extracts, conversations, a talk and an interview. Each recording plays twice.",
       instructionTr:
         "Bu bölümde dört görev var. Kısa parçalar, konuşmalar, bir sunum ve bir söyleşi dinleyeceksin. Her kaydı iki kez dinleyebilirsin.",
       tasks: [
@@ -565,7 +565,7 @@ So I have changed my mind, {{29}} not in the direction people expect. The materi
           no: 1,
           format: "mcq",
           goal: "detail",
-          prompt: "You hear seven short extracts. Choose a, b or c. You hear every extract twice.",
+          prompt: "You hear seven short extracts. Pick one answer: a, b or c. Each extract plays twice.",
           promptTr: "Yedi kısa parça dinleyeceksin. a, b ya da c'yi seç. Her parçayı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -736,7 +736,7 @@ So I have changed my mind, {{29}} not in the direction people expect. The materi
           no: 2,
           format: "mcq",
           goal: "gist",
-          prompt: "You hear six short conversations. What is the main point? Choose a, b or c. You hear every conversation twice.",
+          prompt: "You hear six short conversations. What is the main point? Pick one answer: a, b or c. Each conversation plays twice.",
           promptTr: "Altı kısa konuşma dinleyeceksin. Ana nokta nedir? a, b ya da c'yi seç. Her konuşmayı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -887,7 +887,7 @@ So I have changed my mind, {{29}} not in the direction people expect. The materi
           format: "notes",
           goal: "detail",
           prompt:
-            "You hear a talk about a tool library. Complete the notes, questions 14 to 19. Write ONE or TWO words or a number in each gap. You hear the talk twice.",
+            "You hear a talk about a tool library. Complete the notes, questions 14 to 19. Write ONE or TWO words or a number in each gap. The talk plays twice.",
           promptTr:
             "Bir alet kütüphanesi hakkında sunum dinleyeceksin. 14–19. maddelerdeki notları tamamla. Her boşluğa BİR ya da İKİ sözcük veya bir sayı yaz. Kaydı iki kez dinleyebilirsin.",
           texts: [
@@ -986,7 +986,7 @@ Closed in the month of:  {{19}}`,
           no: 4,
           format: "mcq",
           goal: "opinion",
-          prompt: "You hear an interview with a man who gave up his car. Choose a, b or c for questions 20 to 25. You hear the interview twice.",
+          prompt: "You hear an interview with a man who gave up his car. Questions 20 to 25: pick one answer, a, b or c. The interview plays twice.",
           promptTr: "Arabasından vazgeçen bir adamla söyleşi dinleyeceksin. 20–25. maddeler için a, b ya da c'yi seç. Kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -1091,7 +1091,7 @@ Closed in the month of:  {{19}}`,
     {
       skill: "writing",
       minutes: 50,
-      instruction: "This part has two tasks: an email and a longer text. Both are compulsory.",
+      instruction: "There are two tasks in this part: an email and a longer text. You must do both.",
       instructionTr: "Bu bölümde iki görev var: bir e-posta ve daha uzun bir metin. İkisi de zorunlu.",
       tasks: [
         {
@@ -1169,7 +1169,7 @@ The difference, I think, is that the bottle needed one decision and the phone ne
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "This part has four tasks: an interview, a long turn, a task we do together, and a general conversation.",
+      instruction: "There are four tasks in this part: an interview, a long turn, a task we do together, and a general conversation.",
       instructionTr: "Bu bölümde dört görev var: söyleşi, tek başına konuşma, birlikte yapılan bir görev ve genel sohbet.",
       tasks: [
         {

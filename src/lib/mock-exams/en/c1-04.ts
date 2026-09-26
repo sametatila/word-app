@@ -26,7 +26,7 @@ export const EN_C1_04: MockPaper = {
       skill: "reading",
       minutes: 80,
       instruction:
-        "This part has eight tasks. The first four are about vocabulary and grammar; the last four are reading tasks. Choose or write the correct answer for each question.",
+        "There are eight tasks in this part. The first four are about vocabulary and grammar; the last four are reading tasks. Choose or write the correct answer for each question.",
       instructionTr:
         "Bu bölümde sekiz görev var. İlk dördü kelime ve dilbilgisi, son dördü okuma görevi. Her soruda doğru cevabı seç ya da yaz.",
       tasks: [
@@ -121,7 +121,7 @@ Whether the failure could have been avoided is an open question. Several service
           no: 2,
           format: "gap",
           goal: "structure",
-          prompt: "Gaps 7–12: complete the text with a suitable word. Write exactly ONE word per gap.",
+          prompt: "Gaps 7–12: complete the text with a suitable word. Each gap takes exactly one word.",
           promptTr: "Metni oku ve 7–12. boşluklara en uygun sözcüğü bul. Her boşluğa YALNIZ BİR sözcük yaz.",
           texts: [
             {
@@ -206,7 +206,7 @@ The lesson is not that communication is hopeless. It is that a probability has t
           format: "gap",
           goal: "structure",
           prompt:
-            "Read the text and use the word given in capitals at the end of each line to form a word that fits the gap, 13 to 18.",
+            "Gaps 13 to 18: change the word in capitals at the end of the line so that it fits.",
           promptTr:
             "Metni oku ve 13–18. maddelerde büyük harfle verilen kökten boşluğa uyan sözcüğü türet.",
           texts: [
@@ -292,7 +292,7 @@ The most likely future is therefore an uneven one, with different regulators app
           format: "transform",
           goal: "structure",
           prompt:
-            "Complete the second sentence so that it has a similar meaning to the first, using the word given. Do NOT change the word given. Write between two and five words.",
+            "Rewrite the idea of the first sentence in the second one, using the word in capitals. Keep that word exactly as it is. Use two to five words.",
           promptTr:
             "İkinci cümleyi, birincisiyle aynı anlama gelecek biçimde tamamla; verilen sözcüğü kullan ve DEĞİŞTİRME. İki ile beş sözcük arası yaz.",
           items: [
@@ -343,7 +343,7 @@ The most likely future is therefore an uneven one, with different regulators app
           no: 5,
           format: "mcq",
           goal: "opinion",
-          prompt: "Read the article and questions 23 to 26. Choose a, b, c or d.",
+          prompt: "Questions 23 to 26 are about the article. Pick one answer: a, b, c or d.",
           promptTr: "Yazıyı ve 23–26. maddeleri oku. a, b, c ya da d'yi seç.",
           texts: [
             {
@@ -417,7 +417,7 @@ None of this makes the false alarm pleasant. What it might do is make the altern
           format: "match",
           goal: "opinion",
           prompt:
-            "Read the five short texts a to e by different writers on the same subject. For questions 27 to 30, decide which writer this describes. You use each writer once only.",
+            "Read the five short texts a to e by different writers on the same subject. Questions 27 to 30: which writer is it? No writer is used twice.",
           promptTr:
             "Aynı konuda yazan beş yazarın a'dan e'ye kısa metinlerini oku. 27–30. maddeler için bunun hangi yazarı tarif ettiğine karar ver. Her yazar en fazla bir kez kullanılır.",
           options: [
@@ -492,7 +492,7 @@ None of this makes the false alarm pleasant. What it might do is make the altern
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. One paragraph is missing from each of the gaps 31 to 34. Which paragraph a to e fits which gap? One paragraph fits nowhere.",
+            "Read the text. Gaps 31 to 34 each need One paragraph. Which paragraph a to e fits which gap? One paragraph is extra.",
           promptTr:
             "Metni oku. 31–34. boşluklarda birer paragraf eksik. a–e paragraflarından hangisi hangi boşluğa uyar? Bir paragraf hiçbir yere uymuyor.",
           texts: [
@@ -577,7 +577,7 @@ This has an uncomfortable implication for any system trained on administrative r
           goal: "detail",
           reuseOptions: true,
           prompt:
-            "Read the four short texts a to d. For questions 35 to 40, decide which text says this. The texts may be chosen more than once.",
+            "Read the four short texts a to d. Questions 35 to 40: which text is it? A text can be the answer more than once.",
           promptTr:
             "a'dan d'ye dört kısa metni oku. 35–40. maddeler için bunu hangi metin söylüyor, karar ver. Bir metin birden çok kez seçilebilir.",
           options: [
@@ -667,7 +667,7 @@ This has an uncomfortable implication for any system trained on administrative r
       skill: "listening",
       minutes: 40,
       instruction:
-        "This part has four tasks. You hear short extracts, a talk, a panel discussion and eight monologues. Read each instruction carefully: not every recording is played twice.",
+        "There are four tasks in this part. You hear short extracts, a talk, a panel discussion and eight monologues. Read each instruction carefully: not every recording is played twice.",
       instructionTr:
         "Bu bölümde dört görev var. Kısa parçalar, bir sunum, bir panel ve sekiz kısa konuşma dinleyeceksin. Yönergeleri dikkatle oku: her kayıt iki kez çalınmıyor.",
       tasks: [
@@ -676,7 +676,7 @@ This has an uncomfortable implication for any system trained on administrative r
           no: 1,
           format: "mcq",
           goal: "opinion",
-          prompt: "You hear three short extracts. There are two questions on each. Choose a, b or c. You hear each extract twice.",
+          prompt: "You hear three short extracts. There are two questions on each. Pick one answer: a, b or c. Each extract plays twice.",
           promptTr: "Üç kısa parça dinleyeceksin. Her birine iki soru var. a, b ya da c'yi seç. Her parçayı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -795,7 +795,7 @@ This has an uncomfortable implication for any system trained on administrative r
           format: "notes",
           goal: "detail",
           prompt:
-            "You hear an officer reporting five years of results from a flood warning service. Complete the sentences, questions 7 to 14, with a word, a number or a short phrase. You hear the report ONCE only.",
+            "You hear an officer reporting five years of results from a flood warning service. Complete the sentences, questions 7 to 14, with a word, a number or a short phrase. The report plays only ONCE.",
           promptTr:
             "Bir yetkilinin sel uyarı hizmetinin beş yıllık sonuçlarını anlattığını dinleyeceksin. 7–14. maddelerdeki cümleleri bir sözcük, bir sayı ya da kısa bir öbekle tamamla. Kaydı YALNIZ BİR KEZ dinleyeceksin.",
           texts: [
@@ -923,7 +923,7 @@ The service has nine duty forecasters and needs {{14}}.`,
           no: 3,
           format: "mcq",
           goal: "opinion",
-          prompt: "You hear part of a panel discussion about warnings and precaution. Choose a, b, c or d for questions 15 to 22. You hear the discussion ONCE only.",
+          prompt: "You hear part of a panel discussion about warnings and precaution. Questions 15 to 22: pick one answer, a, b, c or d. The discussion plays only ONCE.",
           promptTr: "Uyarılar ve ihtiyat üzerine bir panelin bir bölümünü dinleyeceksin. 15–22. maddeler için a, b, c ya da d'yi seç. Kaydı YALNIZ BİR KEZ dinleyeceksin.",
           texts: [
             {
@@ -1051,7 +1051,7 @@ The service has nine duty forecasters and needs {{14}}.`,
           format: "match",
           goal: "gist",
           prompt:
-            "You hear eight short monologues about warnings and risk decisions. What is the speaker's main purpose? Choose from a to j. You use each answer once only. You hear the recordings twice.",
+            "You hear eight short monologues about warnings and risk decisions. What is the speaker's main purpose? The options are a to j. No answer is used twice. The recordings play twice.",
           promptTr:
             "Uyarılar ve risk kararları üzerine sekiz kısa konuşma dinleyeceksin. Konuşmacının asıl amacı nedir? a'dan j'ye seç. Her seçenek en fazla bir kez kullanılır. Kayıtları iki kez dinleyebilirsin.",
           options: [
@@ -1246,7 +1246,7 @@ The service has nine duty forecasters and needs {{14}}.`,
     {
       skill: "writing",
       minutes: 80,
-      instruction: "This part has two tasks. Write 220 to 260 words for each. Both are compulsory.",
+      instruction: "There are two tasks in this part. Write 220 to 260 words for each. You must do both.",
       instructionTr: "Bu bölümde iki görev var. Her biri için 220–260 kelime yaz. İkisi de zorunlu.",
       tasks: [
         {
@@ -1330,7 +1330,7 @@ I recommend adopting the system for daytime alerts immediately and running the n
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "This part has three tasks: an interview, a long turn, and a task we do together.",
+      instruction: "There are three tasks in this part: an interview, a long turn, and a task we do together.",
       instructionTr: "Bu bölümde üç görev var: söyleşi, tek başına konuşma ve birlikte yapılan bir görev.",
       tasks: [
         {

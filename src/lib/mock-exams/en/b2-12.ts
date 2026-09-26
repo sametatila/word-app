@@ -27,7 +27,7 @@ export const EN_B2_12: MockPaper = {
       skill: "reading",
       minutes: 70,
       instruction:
-        "This part has seven tasks. You read texts with gaps, sentences to rewrite, an article, a text with missing sentences and four short texts.",
+        "There are seven tasks in this part. You read texts with gaps, sentences to rewrite, an article, a text with missing sentences and four short texts.",
       instructionTr:
         "Bu bölümde yedi görev var. Boşluklu metinler, yeniden yazılacak cümleler, bir yazı, cümlesi eksik bir metin ve dört kısa metin okuyacaksın.",
       tasks: [
@@ -126,7 +126,7 @@ Nevertheless, the cheaper error is the visible one, because a flood that did not
           no: 2,
           format: "gap",
           goal: "structure",
-          prompt: "Gaps 7–12: complete the text with a suitable word. Write exactly ONE word per gap.",
+          prompt: "Gaps 7–12: complete the text with a suitable word. Each gap takes exactly one word.",
           promptTr: "Metni oku ve 7–12. boşluklara en iyi uyan sözcüğü düşün. Her boşluğa yalnız TEK sözcük yaz.",
           texts: [
             {
@@ -211,7 +211,7 @@ The rest of the audience treats forty percent {{12}} a failed prediction wheneve
           format: "gap",
           goal: "structure",
           prompt:
-            "Read the text and use the word given in capitals at the end of each line to form a word that fits the gap, 13 to 18.",
+            "Gaps 13 to 18: change the word in capitals at the end of the line so that it fits.",
           promptTr:
             "Metni oku ve 13–18. maddelerde büyük harfle verilen kökten boşluğa uyan sözcüğü türet.",
           texts: [
@@ -297,7 +297,7 @@ Reviews carried out after major floods usually conclude that the information exi
           format: "transform",
           goal: "structure",
           prompt:
-            "Complete the second sentence so that it has a similar meaning to the first, using the word given. Do NOT change the word given. Write between two and five words.",
+            "Rewrite the idea of the first sentence in the second one, using the word in capitals. Keep that word exactly as it is. Use two to five words.",
           promptTr:
             "İkinci cümleyi, birincisiyle aynı anlama gelecek biçimde tamamla; verilen sözcüğü kullan ve DEĞİŞTİRME. İki ile beş sözcük arası yaz.",
           items: [
@@ -348,7 +348,7 @@ Reviews carried out after major floods usually conclude that the information exi
           no: 5,
           format: "mcq",
           goal: "opinion",
-          prompt: "Read the article and answer questions 23 to 27. Choose a, b, c or d.",
+          prompt: "Read the article and answer questions 23 to 27. Pick one answer: a, b, c or d.",
           promptTr: "Yazıyı oku ve 23–27. maddeleri yanıtla. a, b, c ya da d'yi seç.",
           texts: [
             {
@@ -459,7 +459,7 @@ Three years later the same street was closed on the same reasoning and the water
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. One sentence is missing from each of the gaps 28 to 31. Which sentence a to e fits which gap? One sentence fits nowhere.",
+            "Read the text. Gaps 28 to 31 each need One sentence. Which sentence a to e fits which gap? One sentence is extra.",
           promptTr:
             "Metni oku. 28–31. boşluklarda birer cümle eksik. a–e cümlelerinden hangisi hangi boşluğa uyar? Bir cümle hiçbir yere uymuyor.",
           texts: [
@@ -538,7 +538,7 @@ The practical consequence is that public pressure pushes in one direction only, 
           goal: "detail",
           reuseOptions: true,
           prompt:
-            "Read the four short texts a to d. For questions 32 to 36, decide which text says this. The texts may be chosen more than once.",
+            "Read the four short texts a to d. Questions 32 to 36: which text is it? A text can be the answer more than once.",
           promptTr:
             "a'dan d'ye dört kısa metni oku. 32–36. maddeler için bunu hangi metin söylüyor, karar ver. Bir metin birden çok kez seçilebilir.",
           options: [
@@ -619,7 +619,7 @@ The practical consequence is that public pressure pushes in one direction only, 
       skill: "listening",
       minutes: 40,
       instruction:
-        "This part has four tasks. You hear extracts, some information, six speakers and an interview. You hear every recording twice.",
+        "There are four tasks in this part. You hear extracts, some information, six speakers and an interview. Each recording plays twice.",
       instructionTr:
         "Bu bölümde dört görev var. Parçalar, bir bilgilendirme, altı konuşmacı ve bir söyleşi dinleyeceksin. Her kaydı iki kez dinleyebilirsin.",
       tasks: [
@@ -628,7 +628,7 @@ The practical consequence is that public pressure pushes in one direction only, 
           no: 1,
           format: "mcq",
           goal: "detail",
-          prompt: "You hear eight short extracts. Choose a, b or c for questions 1 to 8. You hear every extract twice.",
+          prompt: "You hear eight short extracts. Questions 1 to 8: pick one answer, a, b or c. Each extract plays twice.",
           promptTr: "Sekiz kısa parça dinleyeceksin. 1–8. maddeler için a, b ya da c'yi seç. Her parçayı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -823,7 +823,7 @@ The practical consequence is that public pressure pushes in one direction only, 
           format: "notes",
           goal: "detail",
           prompt:
-            "You hear information about a local flood warning service. Complete the notes, questions 9 to 16. Write ONE or TWO words or a number in each gap. You hear the information twice.",
+            "You hear information about a local flood warning service. Complete the notes, questions 9 to 16. Write ONE or TWO words or a number in each gap. The information plays twice.",
           promptTr:
             "Yerel bir sel uyarı hizmeti hakkında bilgi dinleyeceksin. 9–16. maddelerdeki notları tamamla. Her boşluğa BİR ya da İKİ sözcük veya bir sayı yaz. Kaydı iki kez dinleyebilirsin.",
           texts: [
@@ -945,7 +945,7 @@ Cost of the service:         {{16}}`,
           format: "match",
           goal: "opinion",
           prompt:
-            "You hear six speakers talking about warnings and forecasts, questions 17 to 22. Choose from a to h what each speaker says. You use each letter once only. You hear the recordings twice.",
+            "You hear six speakers talking about warnings and forecasts, questions 17 to 22. Choose from a to h what each speaker says. You use each letter once only. The recordings play twice.",
           promptTr:
             "Uyarılar ve tahminler üzerine konuşan altı kişi dinleyeceksin, 17–22. maddeler. Her konuşmacının söylediğini a'dan h'ye seç. Her harf en fazla bir kez kullanılır. Kayıtları iki kez dinleyebilirsin.",
           options: [
@@ -1095,7 +1095,7 @@ Cost of the service:         {{16}}`,
           format: "mcq",
           goal: "opinion",
           prompt:
-            "You hear an interview with a woman who works as a duty officer for a flood service. Choose a, b or c for questions 23 to 30. You hear the interview twice.",
+            "You hear an interview with a woman who works as a duty officer for a flood service. Questions 23 to 30: pick one answer, a, b or c. The interview plays twice.",
           promptTr:
             "Bir sel hizmetinde nöbetçi amir olarak çalışan bir kadınla söyleşi dinleyeceksin. 23–30. maddeler için a, b ya da c'yi seç. Söyleşiyi iki kez dinleyebilirsin.",
           texts: [
@@ -1224,7 +1224,7 @@ Cost of the service:         {{16}}`,
     {
       skill: "writing",
       minutes: 70,
-      instruction: "This part has two tasks: an essay and a report.",
+      instruction: "There are two tasks in this part: an essay and a report.",
       instructionTr: "Bu bölümde iki görev var: bir deneme ve bir rapor.",
       tasks: [
         {
@@ -1307,7 +1307,7 @@ I recommend one change: that the two timings behind any closure be published on 
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "This part has three tasks: an interview, a long turn with a comparison, and a discussion.",
+      instruction: "There are three tasks in this part: an interview, a long turn with a comparison, and a discussion.",
       instructionTr: "Bu bölümde üç görev var: söyleşi, karşılaştırmalı tek başına konuşma ve tartışma.",
       tasks: [
         {

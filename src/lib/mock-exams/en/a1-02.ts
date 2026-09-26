@@ -26,7 +26,7 @@ export const EN_A1_02: MockPaper = {
       skill: "reading",
       minutes: 30,
       instruction:
-        "This part has four tasks. You read short messages, notices and signs, and you complete a short text. Choose the correct answer for each question.",
+        "There are four tasks in this part. You read short messages, notices and signs, and you complete a short text. Answer each question with one choice.",
       instructionTr:
         "Bu bölümde dört görev var. Kısa iletiler, duyurular ve levhalar okuyacak, sonra kısa bir metni tamamlayacaksın. Her soruda doğru cevabı işaretle.",
       tasks: [
@@ -35,7 +35,7 @@ export const EN_A1_02: MockPaper = {
           no: 1,
           format: "truefalse",
           goal: "detail",
-          prompt: "Read the two texts and questions 1 to 5. Are the sentences true or false?",
+          prompt: "Questions 1 to 5 are about the two texts. True or false? Decide for each sentence.",
           promptTr: "İki metni ve 1–5. maddeleri oku. Cümleler doğru mu yanlış mı?",
           texts: [
             {
@@ -245,7 +245,7 @@ Ask at the desk in the town hall.`,
           no: 3,
           format: "truefalse",
           goal: "instruction",
-          prompt: "Read the four signs and questions 11 to 14. Are the sentences true or false?",
+          prompt: "Questions 11 to 14 are about the four signs. True or false? Decide for each sentence.",
           promptTr: "Dört levhayı ve 11–14. maddeleri oku. Cümleler doğru mu yanlış mı?",
           texts: [
             {
@@ -345,7 +345,7 @@ Sunday: from 9.00. No night bus.`,
           no: 4,
           format: "gapMcq",
           goal: "structure",
-          prompt: "Read the message and complete gaps 15 to 18. Which word fits: a, b or c?",
+          prompt: "Fill gaps 15 to 18 in the message. Which word fits: a, b or c?",
           promptTr: "İletiyi oku ve 15–18. boşlukları tamamla. Hangi sözcük uyar: a, b ya da c?",
           texts: [
             {
@@ -419,7 +419,7 @@ Rita`,
       skill: "listening",
       minutes: 20,
       instruction:
-        "This part has three tasks. You hear short conversations, announcements and phone messages. You hear every recording twice.",
+        "There are three tasks in this part. You hear short conversations, announcements and phone messages. Each recording plays twice.",
       instructionTr:
         "Bu bölümde üç görev var. Kısa konuşmalar, anonslar ve telefon iletileri dinleyeceksin. Her kaydı iki kez dinleyebilirsin.",
       tasks: [
@@ -428,7 +428,7 @@ Rita`,
           no: 1,
           format: "mcq",
           goal: "detail",
-          prompt: "Which answer is right? You hear every recording twice.",
+          prompt: "Which answer is right? Each recording plays twice.",
           promptTr: "Doğru olan hangisi? Her kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -584,7 +584,7 @@ Rita`,
           no: 2,
           format: "truefalse",
           goal: "instruction",
-          prompt: "Are the sentences true or false? You hear every announcement twice.",
+          prompt: "True or false? Decide for each sentence. Each announcement plays twice.",
           promptTr: "Cümleler doğru mu yanlış mı? Her anonsu iki kez dinleyebilirsin.",
           texts: [
             {
@@ -680,7 +680,7 @@ Rita`,
           no: 3,
           format: "mcq",
           goal: "detail",
-          prompt: "Which answer is right? You hear every recording twice.",
+          prompt: "Which answer is right? Each recording plays twice.",
           promptTr: "Doğru olan hangisi? Her kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -813,7 +813,7 @@ Rita`,
     {
       skill: "writing",
       minutes: 20,
-      instruction: "This part has two tasks: you complete a form and you write a short message.",
+      instruction: "There are two tasks in this part: you complete a form and you write a short message.",
       instructionTr: "Bu bölümde iki görev var: bir formu tamamlayacak ve kısa bir ileti yazacaksın.",
       tasks: [
         {
@@ -928,7 +928,7 @@ Omar`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "This part has three tasks: you introduce yourself, you ask and answer questions about a topic, and you react in everyday situations.",
+      instruction: "There are three tasks in this part: you introduce yourself, you ask and answer questions about a topic, and you react in everyday situations.",
       instructionTr: "Bu bölümde üç görev var: kendini tanıtma, bir konu üzerine soru sorup cevaplama ve günlük durumlarda karşılık verme.",
       tasks: [
         {

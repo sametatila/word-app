@@ -36,7 +36,7 @@ export const B2_07: MockPaper = {
       skill: "reading",
       minutes: 65,
       instruction:
-        "Dieser Teil hat fünf Aufgaben. Sie lesen persönliche Texte, einen Sachtext mit Lücken, einen Kommentar, Meinungsbeiträge und eine Erstattungsordnung.",
+        "In diesem Teil gibt es fünf Aufgaben. Sie lesen persönliche Texte, einen Sachtext mit Lücken, einen Kommentar, Meinungsbeiträge und eine Erstattungsordnung.",
       instructionTr:
         "Bu bölümde beş görev var. Kişisel metinler, boşluklu bir bilgi metni, bir köşe yazısı, görüş yazıları ve bir geri ödeme yönetmeliği okuyacaksın.",
       tasks: [
@@ -46,7 +46,7 @@ export const B2_07: MockPaper = {
           format: "mcq",
           goal: "opinion",
           prompt:
-            "Vier Personen schreiben über ihre Erfahrungen im Gesundheitswesen. Lesen Sie die Texte und die Aufgaben 1 bis 9. Welche Person sagt das? Jede Person kann mehrmals vorkommen.",
+            "Vier Personen schreiben über ihre Erfahrungen im Gesundheitswesen. Lesen Sie zuerst die Texte; dazu gehören die Aufgaben 1 bis 9. Welche Person sagt das? Eine Person kann mehrmals die Antwort sein.",
           promptTr:
             "Dört kişi sağlık alanındaki deneyimlerini yazıyor. Metinleri ve 1–9. maddeleri oku. Bunu hangi kişi söylüyor? Aynı kişi birden çok kez çıkabilir.",
           texts: [
@@ -227,7 +227,7 @@ In mehreren Nachbarländern ist das seit Jahren üblich, und die dortigen System
           format: "match",
           goal: "structure",
           prompt:
-            "Lesen Sie den Text. In den Lücken 10 bis 15 fehlt jeweils ein Satz. Welcher Satz a bis h passt in welche Lücke? Zwei Sätze passen nirgends.",
+            "Lesen Sie den Text. Aus dem Text wurden Sätze entfernt (Lücken 10 bis 15). Setzen Sie die Sätze a bis h richtig ein. Zwei Sätze bleiben übrig.",
           promptTr:
             "Metni oku. 10–15. boşluklarda birer cümle eksik. a–h cümlelerinden hangisi hangi boşluğa uyar? İki cümle hiçbir yere uymuyor.",
           texts: [
@@ -345,7 +345,7 @@ Was bleibt, ist eine nüchterne Einsicht: Vorbeugung verliert nicht in der Sache
           no: 3,
           format: "mcq",
           goal: "opinion",
-          prompt: "Lesen Sie den Kommentar und die Aufgaben 16 bis 21. Wählen Sie: a, b oder c.",
+          prompt: "Lesen Sie zuerst den Kommentar; dazu gehören die Aufgaben 16 bis 21. Kreuzen Sie a, b oder c an.",
           promptTr: "Köşe yazısını ve 16–21. maddeleri oku. a, b ya da c'yi seç.",
           texts: [
             {
@@ -580,7 +580,7 @@ Mir wäre deshalb eine kleine Lösung lieber als gar keine: Jede Praxis veröffe
           no: 5,
           format: "mcq",
           goal: "instruction",
-          prompt: "Lesen Sie die Erstattungsordnung und die Aufgaben 28 bis 30. Wählen Sie: a, b oder c.",
+          prompt: "Lesen Sie zuerst die Erstattungsordnung; dazu gehören die Aufgaben 28 bis 30. Kreuzen Sie a, b oder c an.",
           promptTr: "Geri ödeme yönetmeliğini ve 28–30. maddeleri oku. a, b ya da c'yi seç.",
           texts: [
             {
@@ -663,7 +663,7 @@ Anträge sind bis zum 31. März des Folgejahres einzureichen. Verspätet eingega
       skill: "listening",
       minutes: 40,
       instruction:
-        "Dieser Teil hat vier Aufgaben. Sie hören kurze Texte, ein Interview, eine Diskussion und acht kurze Beiträge.",
+        "In diesem Teil gibt es vier Aufgaben. Sie hören kurze Texte, ein Interview, eine Diskussion und acht kurze Beiträge.",
       instructionTr:
         "Bu bölümde dört görev var. Kısa kayıtlar, bir söyleşi, bir tartışma ve sekiz kısa parça dinleyeceksin.",
       tasks: [
@@ -672,7 +672,7 @@ Anträge sind bis zum 31. März des Folgejahres einzureichen. Verspätet eingega
           no: 1,
           format: "mixed",
           goal: "detail",
-          prompt: "Sie hören fünf kurze Texte. Zu jedem Text gibt es zwei Aufgaben. Sie hören jeden Text einmal.",
+          prompt: "Sie hören fünf kurze Texte. Jeder Text hat zwei Aufgaben. Jeder Text wird nur einmal abgespielt.",
           promptTr: "Beş kısa kayıt dinleyeceksin. Her kayıt için iki madde var. Her kaydı bir kez dinleyeceksin.",
           texts: [
             {
@@ -870,7 +870,7 @@ Anträge sind bis zum 31. März des Folgejahres einzureichen. Verspätet eingega
           no: 2,
           format: "mcq",
           goal: "detail",
-          prompt: "Sie hören ein Interview. Wählen Sie: a, b oder c. Sie hören den Text zweimal.",
+          prompt: "Sie hören ein Interview. Kreuzen Sie a, b oder c an. Der Text wird zweimal abgespielt.",
           promptTr: "Bir söyleşi dinleyeceksin. a, b ya da c'yi seç. Kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -1003,7 +1003,7 @@ Anträge sind bis zum 31. März des Folgejahres einzureichen. Verspätet eingega
           no: 3,
           format: "mcq",
           goal: "opinion",
-          prompt: "Sie hören eine Diskussion. Wählen Sie: a, b oder c. Sie hören den Text zweimal.",
+          prompt: "Sie hören eine Diskussion. Kreuzen Sie a, b oder c an. Der Text wird zweimal abgespielt.",
           promptTr: "Bir tartışma dinleyeceksin. a, b ya da c'yi seç. Kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -1139,7 +1139,7 @@ Anträge sind bis zum 31. März des Folgejahres einzureichen. Verspätet eingega
           no: 4,
           format: "mcq",
           goal: "gist",
-          prompt: "Sie hören acht kurze Beiträge. Worum geht es jeweils? Sie hören jeden Text einmal.",
+          prompt: "Sie hören acht kurze Beiträge. Worum geht es jeweils? Jeder Text wird nur einmal abgespielt.",
           promptTr: "Sekiz kısa parça dinleyeceksin. Her birinde konu ne? Her kaydı bir kez dinleyeceksin.",
           texts: [
             {
@@ -1377,7 +1377,7 @@ Anträge sind bis zum 31. März des Folgejahres einzureichen. Verspätet eingega
     {
       skill: "writing",
       minutes: 75,
-      instruction: "Dieser Teil hat zwei Aufgaben: einen Leserbrief und eine halb offizielle Nachricht.",
+      instruction: "In diesem Teil gibt es zwei Aufgaben: einen Leserbrief und eine halb offizielle Nachricht.",
       instructionTr: "Bu bölümde iki görev var: bir okur mektubu ve yarı resmî bir ileti.",
       tasks: [
         {
@@ -1468,7 +1468,7 @@ Lena Kolbe`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "Dieser Teil hat zwei Aufgaben: einen Vortrag halten und gemeinsam eine Entscheidung treffen.",
+      instruction: "In diesem Teil gibt es zwei Aufgaben: einen Vortrag halten und gemeinsam eine Entscheidung treffen.",
       instructionTr: "Bu bölümde iki görev var: bir sunum yapmak ve birlikte karar vermek.",
       tasks: [
         {

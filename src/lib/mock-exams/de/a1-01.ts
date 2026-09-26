@@ -36,7 +36,7 @@ export const A1_01: MockPaper = {
       skill: "reading",
       minutes: 25,
       instruction:
-        "Dieser Teil hat drei Aufgaben. Sie lesen kurze Nachrichten, Anzeigen und Schilder. Zu jedem Text gibt es Fragen. Wählen Sie die richtige Lösung.",
+        "In diesem Teil gibt es drei Aufgaben. Sie lesen kurze Nachrichten, Anzeigen und Schilder. Jeder Text hat eigene Fragen. Kreuzen Sie jeweils die passende Antwort an.",
       instructionTr:
         "Bu bölümde üç görev var. Kısa iletiler, ilanlar ve levhalar okuyacaksın. Her metnin soruları var; doğru cevabı işaretle.",
       tasks: [
@@ -45,7 +45,7 @@ export const A1_01: MockPaper = {
           no: 1,
           format: "truefalse",
           goal: "detail",
-          prompt: "Hier sind zwei Texte. Sind die Sätze 1 bis 5 richtig oder falsch?",
+          prompt: "Hier sind zwei Texte. Richtig oder falsch? Entscheiden Sie bei den Sätzen 1 bis 5.",
           promptTr: "İki metni ve 1–5. maddeleri oku. Cümleler doğru mu yanlış mı?",
           texts: [
             {
@@ -227,7 +227,7 @@ Familie Yılmaz, Wohnung 3 B`,
           no: 3,
           format: "truefalse",
           goal: "instruction",
-          prompt: "Lesen Sie die Schilder und die Aufgaben 11 bis 15. Sind die Sätze richtig oder falsch?",
+          prompt: "Lesen Sie zuerst die Schilder; dazu gehören die Aufgaben 11 bis 15. Richtig oder falsch? Entscheiden Sie bei jedem Satz.",
           promptTr: "Levhaları ve 11–15. maddeleri oku. Cümleler doğru mu yanlış mı?",
           texts: [
             {
@@ -351,7 +351,7 @@ zahlen alle nur 3 €.`,
       skill: "listening",
       minutes: 20,
       instruction:
-        "Dieser Teil hat drei Aufgaben. Sie hören kurze Gespräche und Ansagen. Lesen Sie zuerst die Aufgabe, hören Sie dann den Text.",
+        "In diesem Teil gibt es drei Aufgaben. Sie hören kurze Gespräche und Ansagen. Lesen Sie zuerst die Aufgabe, hören Sie dann den Text.",
       instructionTr:
         "Bu bölümde üç görev var. Kısa konuşmalar ve anonslar dinleyeceksin. Önce soruyu oku, sonra kaydı dinle.",
       tasks: [
@@ -360,7 +360,7 @@ zahlen alle nur 3 €.`,
           no: 1,
           format: "mcq",
           goal: "detail",
-          prompt: "Was ist richtig? Sie hören jeden Text zweimal.",
+          prompt: "Welche Antwort passt? Jeder Text wird zweimal abgespielt.",
           promptTr: "Doğru olan hangisi? Her kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -521,7 +521,7 @@ zahlen alle nur 3 €.`,
           no: 2,
           format: "truefalse",
           goal: "instruction",
-          prompt: "Sind die Sätze richtig oder falsch? Sie hören jeden Text einmal.",
+          prompt: "Richtig oder falsch? Entscheiden Sie bei jedem Satz. Jeder Text wird nur einmal abgespielt.",
           promptTr: "Cümleler doğru mu yanlış mı? Her anonsu bir kez dinleyeceksin.",
           texts: [
             {
@@ -625,7 +625,7 @@ zahlen alle nur 3 €.`,
           no: 3,
           format: "mcq",
           goal: "detail",
-          prompt: "Was ist richtig? Sie hören jeden Text zweimal.",
+          prompt: "Welche Antwort passt? Jeder Text wird zweimal abgespielt.",
           promptTr: "Doğru olan hangisi? Her kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -760,7 +760,7 @@ zahlen alle nur 3 €.`,
     {
       skill: "writing",
       minutes: 20,
-      instruction: "Dieser Teil hat zwei Aufgaben. Sie füllen ein Formular aus und schreiben eine kurze Nachricht.",
+      instruction: "In diesem Teil gibt es zwei Aufgaben. Sie füllen ein Formular aus und schreiben eine kurze Nachricht.",
       instructionTr: "Bu bölümde iki görev var: bir form dolduracak ve kısa bir ileti yazacaksın.",
       tasks: [
         {
@@ -837,7 +837,7 @@ Unterschrift:             A. Sarr`,
           format: "writing",
           goal: "interaction",
           prompt:
-            "Sie möchten im Juli nach Hamburg fahren. Schreiben Sie an die Touristeninformation. Schreiben Sie zu jedem Punkt ein bis zwei Sätze (circa 30 Wörter). Vergessen Sie Anrede und Gruß nicht.",
+            "Sie möchten im Juli nach Hamburg fahren. Schreiben Sie an die Touristeninformation. Schreiben Sie zu jedem Punkt ein bis zwei Sätze (circa 30 Wörter). Denken Sie an Anrede und Grußformel.",
           promptTr:
             "Temmuzda Hamburg'a gitmek istiyorsun. Turizm danışmasına yaz. Her maddeye bir-iki cümle yaz (yaklaşık 30 kelime). Hitap ve veda cümlesini unutma.",
           items: [],
@@ -870,7 +870,7 @@ Ana Ferreira`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "Dieser Teil hat drei Aufgaben: sich vorstellen, um Informationen bitten, um etwas bitten und reagieren.",
+      instruction: "In diesem Teil gibt es drei Aufgaben: sich vorstellen, um Informationen bitten, um etwas bitten und reagieren.",
       instructionTr: "Bu bölümde üç görev var: kendini tanıtma, bilgi isteme, rica etme ve yanıt verme.",
       tasks: [
         {

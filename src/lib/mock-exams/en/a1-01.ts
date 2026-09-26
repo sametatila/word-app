@@ -43,7 +43,7 @@ export const EN_A1_01: MockPaper = {
       skill: "reading",
       minutes: 30,
       instruction:
-        "This part has four tasks. You read short messages, notices and signs, and you complete a short text. Choose the correct answer for each question.",
+        "There are four tasks in this part. You read short messages, notices and signs, and you complete a short text. Answer each question with one choice.",
       instructionTr:
         "Bu bölümde dört görev var. Kısa iletiler, duyurular ve levhalar okuyacak, sonra kısa bir metni tamamlayacaksın. Her soruda doğru cevabı işaretle.",
       tasks: [
@@ -52,7 +52,7 @@ export const EN_A1_01: MockPaper = {
           no: 1,
           format: "truefalse",
           goal: "detail",
-          prompt: "Read the two texts and questions 1 to 5. Are the sentences true or false?",
+          prompt: "Questions 1 to 5 are about the two texts. True or false? Decide for each sentence.",
           promptTr: "İki metni ve 1–5. maddeleri oku. Cümleler doğru mu yanlış mı?",
           texts: [
             {
@@ -265,7 +265,7 @@ Bring a friend!`,
           no: 3,
           format: "truefalse",
           goal: "instruction",
-          prompt: "Read the four signs and questions 11 to 14. Are the sentences true or false?",
+          prompt: "Questions 11 to 14 are about the four signs. True or false? Decide for each sentence.",
           promptTr: "Dört levhayı ve 11–14. maddeleri oku. Cümleler doğru mu yanlış mı?",
           texts: [
             {
@@ -437,7 +437,7 @@ Nuray`,
       skill: "listening",
       minutes: 20,
       instruction:
-        "This part has three tasks. You hear short conversations, announcements and phone messages. You hear every recording twice.",
+        "There are three tasks in this part. You hear short conversations, announcements and phone messages. Each recording plays twice.",
       instructionTr:
         "Bu bölümde üç görev var. Kısa konuşmalar, anonslar ve telefon iletileri dinleyeceksin. Her kaydı iki kez dinleyebilirsin.",
       tasks: [
@@ -446,7 +446,7 @@ Nuray`,
           no: 1,
           format: "mcq",
           goal: "detail",
-          prompt: "Which answer is right? You hear every recording twice.",
+          prompt: "Which answer is right? Each recording plays twice.",
           promptTr: "Doğru olan hangisi? Her kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -605,7 +605,7 @@ Nuray`,
           no: 2,
           format: "truefalse",
           goal: "instruction",
-          prompt: "Are the sentences true or false? You hear every announcement twice.",
+          prompt: "True or false? Decide for each sentence. Each announcement plays twice.",
           promptTr: "Cümleler doğru mu yanlış mı? Her anonsu iki kez dinleyebilirsin.",
           texts: [
             {
@@ -701,7 +701,7 @@ Nuray`,
           no: 3,
           format: "mcq",
           goal: "detail",
-          prompt: "Which answer is right? You hear every recording twice.",
+          prompt: "Which answer is right? Each recording plays twice.",
           promptTr: "Doğru olan hangisi? Her kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -835,7 +835,7 @@ Nuray`,
     {
       skill: "writing",
       minutes: 20,
-      instruction: "This part has two tasks: you complete a form and you write a short email.",
+      instruction: "There are two tasks in this part: you complete a form and you write a short email.",
       instructionTr: "Bu bölümde iki görev var: bir formu tamamlayacak ve kısa bir e-posta yazacaksın.",
       tasks: [
         {
@@ -952,7 +952,7 @@ Deniz Arslan`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "This part has three tasks: you introduce yourself, you ask for information, and you make and answer requests.",
+      instruction: "There are three tasks in this part: you introduce yourself, you ask for information, and you make and answer requests.",
       instructionTr: "Bu bölümde üç görev var: kendini tanıtma, bilgi isteme, rica etme ve gelen ricaya karşılık verme.",
       tasks: [
         {

@@ -28,7 +28,7 @@ export const EN_C1_02: MockPaper = {
       skill: "reading",
       minutes: 80,
       instruction:
-        "This part has eight tasks. The first four are about vocabulary and grammar; the last four are reading tasks. Choose or write the correct answer for each question.",
+        "There are eight tasks in this part. The first four are about vocabulary and grammar; the last four are reading tasks. Choose or write the correct answer for each question.",
       instructionTr:
         "Bu bölümde sekiz görev var. İlk dördü kelime ve dilbilgisi, son dördü okuma görevi. Her soruda doğru cevabı seç ya da yaz.",
       tasks: [
@@ -123,7 +123,7 @@ Whether any of this could have been prevented is an open question. Several citie
           no: 2,
           format: "gap",
           goal: "structure",
-          prompt: "Gaps 7–12: complete the text with a suitable word. Write exactly ONE word per gap.",
+          prompt: "Gaps 7–12: complete the text with a suitable word. Each gap takes exactly one word.",
           promptTr: "Metni oku ve 7–12. boşluklara en uygun sözcüğü bul. Her boşluğa YALNIZ BİR sözcük yaz.",
           texts: [
             {
@@ -206,7 +206,7 @@ That sense resists documentation, which is inconvenient for institutions and, ar
           format: "gap",
           goal: "structure",
           prompt:
-            "Read the text and use the word given in capitals at the end of each line to form a word that fits the gap, 13 to 18.",
+            "Gaps 13 to 18: change the word in capitals at the end of the line so that it fits.",
           promptTr:
             "Metni oku ve 13–18. maddelerde büyük harfle verilen kökten boşluğa uyan sözcüğü türet.",
           texts: [
@@ -290,7 +290,7 @@ They hold that a standard should carry an explicit account of its own {{17}}: th
           format: "transform",
           goal: "structure",
           prompt:
-            "Complete the second sentence so that it has a similar meaning to the first, using the word given. Do NOT change the word given. Write between two and five words.",
+            "Rewrite the idea of the first sentence in the second one, using the word in capitals. Keep that word exactly as it is. Use two to five words.",
           promptTr:
             "İkinci cümleyi, birincisiyle aynı anlama gelecek biçimde tamamla; verilen sözcüğü kullan ve DEĞİŞTİRME. İki ile beş sözcük arası yaz.",
           items: [
@@ -341,7 +341,7 @@ They hold that a standard should carry an explicit account of its own {{17}}: th
           no: 5,
           format: "mcq",
           goal: "opinion",
-          prompt: "Read the article and questions 23 to 26. Choose a, b, c or d.",
+          prompt: "Questions 23 to 26 are about the article. Pick one answer: a, b, c or d.",
           promptTr: "Yazıyı ve 23–26. maddeleri oku. a, b, c ya da d'yi seç.",
           texts: [
             {
@@ -438,7 +438,7 @@ Whether any institution will adopt it is another matter. Sequencing of this kind
           format: "match",
           goal: "opinion",
           prompt:
-            "Read the five short texts a to e by different writers on the same subject. For questions 27 to 30, decide which writer this describes. You use each writer once only.",
+            "Read the five short texts a to e by different writers on the same subject. Questions 27 to 30: which writer is it? No writer is used twice.",
           promptTr:
             "Aynı konuda yazan beş yazarın a'dan e'ye kısa metinlerini oku. 27–30. maddeler için bunun hangi yazarı tarif ettiğine karar ver. Her yazar en fazla bir kez kullanılır.",
           options: [
@@ -513,7 +513,7 @@ Whether any institution will adopt it is another matter. Sequencing of this kind
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. One paragraph is missing from each of the gaps 31 to 34. Which paragraph a to e fits which gap? One paragraph fits nowhere.",
+            "Read the text. Gaps 31 to 34 each need One paragraph. Which paragraph a to e fits which gap? One paragraph is extra.",
           promptTr:
             "Metni oku. 31–34. boşluklarda birer paragraf eksik. a–e paragraflarından hangisi hangi boşluğa uyar? Bir paragraf hiçbir yere uymuyor.",
           texts: [
@@ -620,7 +620,7 @@ None of this shows that the original project was misconceived. It shows that the
           goal: "detail",
           reuseOptions: true,
           prompt:
-            "Read the four short texts a to d. For questions 35 to 40, decide which text says this. The texts may be chosen more than once.",
+            "Read the four short texts a to d. Questions 35 to 40: which text is it? A text can be the answer more than once.",
           promptTr:
             "a'dan d'ye dört kısa metni oku. 35–40. maddeler için bunu hangi metin söylüyor, karar ver. Bir metin birden çok kez seçilebilir.",
           options: [
@@ -710,7 +710,7 @@ None of this shows that the original project was misconceived. It shows that the
       skill: "listening",
       minutes: 40,
       instruction:
-        "This part has four tasks. Note that in tasks two and three you hear the recording ONCE only.",
+        "There are four tasks in this part. Note that in tasks two and three you hear the recording ONCE only.",
       instructionTr:
         "Bu bölümde dört görev var. İkinci ve üçüncü görevde kaydı YALNIZ BİR KEZ dinleyeceksin.",
       tasks: [
@@ -719,7 +719,7 @@ None of this shows that the original project was misconceived. It shows that the
           no: 1,
           format: "mcq",
           goal: "opinion",
-          prompt: "You hear three short extracts. There are two questions on each. Choose a, b or c. You hear each extract twice.",
+          prompt: "You hear three short extracts. There are two questions on each. Pick one answer: a, b or c. Each extract plays twice.",
           promptTr: "Üç kısa parça dinleyeceksin. Her birine iki soru var. a, b ya da c'yi seç. Her parçayı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -838,7 +838,7 @@ None of this shows that the original project was misconceived. It shows that the
           format: "notes",
           goal: "detail",
           prompt:
-            "You hear a talk about a craft training scheme. Complete the sentences, questions 7 to 14, with a word or a short phrase. You hear the talk ONCE only.",
+            "You hear a talk about a craft training scheme. Complete the sentences, questions 7 to 14, with a word or a short phrase. The talk plays only ONCE.",
           promptTr:
             "Bir zanaat eğitimi programı üzerine sunum dinleyeceksin. 7–14. maddelerdeki cümleleri bir sözcük ya da kısa bir öbekle tamamla. Kaydı YALNIZ BİR KEZ dinleyeceksin.",
           texts: [
@@ -966,7 +966,7 @@ The entry test has been abandoned because the correlation was close to {{13}}.
           no: 3,
           format: "mcq",
           goal: "opinion",
-          prompt: "You hear part of a panel discussion about standardising professional work. Choose a, b, c or d for questions 15 to 22. You hear the discussion ONCE only.",
+          prompt: "You hear part of a panel discussion about standardising professional work. Questions 15 to 22: pick one answer, a, b, c or d. The discussion plays only ONCE.",
           promptTr: "Mesleki işin standartlaştırılması üzerine bir panelin bir bölümünü dinleyeceksin. 15–22. maddeler için a, b, c ya da d'yi seç. Kaydı YALNIZ BİR KEZ dinleyeceksin.",
           texts: [
             {
@@ -1136,7 +1136,7 @@ The entry test has been abandoned because the correlation was close to {{13}}.
           format: "match",
           goal: "gist",
           prompt:
-            "You hear eight short monologues about a working practice. What is the speaker's main purpose? Choose from a to j. You use each answer once only. You hear the recordings twice.",
+            "You hear eight short monologues about a working practice. What is the speaker's main purpose? The options are a to j. No answer is used twice. The recordings play twice.",
           promptTr:
             "Bir çalışma pratiği hakkında sekiz kısa konuşma dinleyeceksin. Konuşmacının asıl amacı nedir? a'dan j'ye seç. Her seçenek en fazla bir kez kullanılır. Kayıtları iki kez dinleyebilirsin.",
           options: [
@@ -1315,7 +1315,7 @@ The entry test has been abandoned because the correlation was close to {{13}}.
     {
       skill: "writing",
       minutes: 80,
-      instruction: "This part has two tasks. Write 220 to 260 words for each. Both are compulsory.",
+      instruction: "There are two tasks in this part. Write 220 to 260 words for each. You must do both.",
       instructionTr: "Bu bölümde iki görev var. Her biri için 220–260 kelime yaz. İkisi de zorunlu.",
       tasks: [
         {
@@ -1403,7 +1403,7 @@ I recommend standardising the process, but not before the four steps have been e
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "This part has three tasks: an interview, a long turn, and a task we do together.",
+      instruction: "There are three tasks in this part: an interview, a long turn, and a task we do together.",
       instructionTr: "Bu bölümde üç görev var: söyleşi, tek başına uzun konuşma ve birlikte yapılan bir görev.",
       tasks: [
         {

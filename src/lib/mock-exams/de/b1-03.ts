@@ -38,7 +38,7 @@ export const B1_03: MockPaper = {
       skill: "reading",
       minutes: 65,
       instruction:
-        "Dieser Teil hat fünf Aufgaben. Sie lesen einen Erfahrungsbericht, zwei Meinungstexte, Anzeigen, Forumsbeiträge und eine Beförderungsordnung.",
+        "In diesem Teil gibt es fünf Aufgaben. Sie lesen einen Erfahrungsbericht, zwei Meinungstexte, Anzeigen, Forumsbeiträge und eine Beförderungsordnung.",
       instructionTr:
         "Bu bölümde beş görev var. Bir deneyim yazısı, iki görüş metni, ilanlar, forum yorumları ve bir taşıma yönetmeliği okuyacaksın.",
       tasks: [
@@ -47,7 +47,7 @@ export const B1_03: MockPaper = {
           no: 1,
           format: "truefalse",
           goal: "detail",
-          prompt: "Lesen Sie den Text und die Aufgaben 1 bis 6. Sind die Aussagen richtig oder falsch?",
+          prompt: "Lesen Sie zuerst den Text; dazu gehören die Aufgaben 1 bis 6. Richtig oder falsch? Entscheiden Sie bei jedem Satz.",
           promptTr: "Metni ve 1–6. maddeleri oku. İfadeler doğru mu yanlış mı?",
           texts: [
             {
@@ -145,7 +145,7 @@ Würde ich es wieder machen? Ja, aber nicht auf jeder Strecke. Unter sechs Stund
           no: 2,
           format: "mcq",
           goal: "gist",
-          prompt: "Zu den zwei Texten gehören die Aufgaben 7 bis 12. Welche Lösung passt: a, b oder c?",
+          prompt: "Zu den zwei Texten gehören die Aufgaben 7 bis 12. Welche Antwort passt: a, b oder c?",
           promptTr: "İki metni ve 7–12. maddeleri oku. a, b ya da c'yi seç.",
           texts: [
             {
@@ -268,7 +268,7 @@ Ich fahre gern Fahrrad, im Sommer sogar zur Arbeit. Aber im Januar um halb sechs
           format: "match",
           goal: "orientation",
           prompt:
-            "Die Personen 13 bis 19 suchen ein Reiseangebot. Lesen Sie die Anzeigen a bis j. Welche Anzeige passt zu welcher Person? Jede Anzeige passt nur einmal. Drei Anzeigen passen zu niemandem.",
+            "Die Personen 13 bis 19 suchen ein Reiseangebot. Lesen Sie die Anzeigen a bis j. Finden Sie für jede Person die passende Anzeige. Keine Anzeige wird zweimal gebraucht. Drei Anzeigen bleiben übrig.",
           promptTr:
             "13–19. kişiler bir yolculuk teklifi arıyor. a–j ilanlarını oku. Hangi ilan hangi kişiye uyar? Her ilan yalnız bir kez kullanılır; üç ilan hiç kimseye uymaz.",
           options: [
@@ -511,7 +511,7 @@ Nora B.: Man vergisst schnell, wie es vorher war. Ich bin hier aufgewachsen und 
           no: 5,
           format: "mcq",
           goal: "instruction",
-          prompt: "Lesen Sie die Beförderungsbedingungen und die Aufgaben 27 bis 30. Wählen Sie: a, b oder c.",
+          prompt: "Lesen Sie zuerst die Beförderungsbedingungen; dazu gehören die Aufgaben 27 bis 30. Kreuzen Sie a, b oder c an.",
           promptTr: "Taşıma koşullarını ve 27–30. maddeleri oku. a, b ya da c'yi seç.",
           texts: [
             {
@@ -613,7 +613,7 @@ Gefundene Gegenstände werden vier Wochen im Betriebshof aufbewahrt. Danach gehe
       skill: "listening",
       minutes: 40,
       instruction:
-        "Dieser Teil hat vier Aufgaben. Sie hören Durchsagen, ein Beratungsgespräch, einen Vortrag und eine Diskussion.",
+        "In diesem Teil gibt es vier Aufgaben. Sie hören Durchsagen, ein Beratungsgespräch, einen Vortrag und eine Diskussion.",
       instructionTr:
         "Bu bölümde dört görev var. Anonslar, bir danışma görüşmesi, bir sunum ve bir tartışma dinleyeceksin.",
       tasks: [
@@ -622,7 +622,7 @@ Gefundene Gegenstände werden vier Wochen im Betriebshof aufbewahrt. Danach gehe
           no: 1,
           format: "mixed",
           goal: "detail",
-          prompt: "Sie hören fünf kurze Texte. Zu jedem Text gibt es zwei Aufgaben. Sie hören jeden Text einmal.",
+          prompt: "Sie hören fünf kurze Texte. Jeder Text hat zwei Aufgaben. Jeder Text wird nur einmal abgespielt.",
           promptTr: "Beş kısa kayıt dinleyeceksin. Her kayıt için iki madde var. Her kaydı bir kez dinleyeceksin.",
           texts: [
             {
@@ -808,7 +808,7 @@ Gefundene Gegenstände werden vier Wochen im Betriebshof aufbewahrt. Danach gehe
           no: 2,
           format: "mcq",
           goal: "detail",
-          prompt: "Sie hören ein Beratungsgespräch. Wählen Sie zu den Aufgaben 11 bis 15: a, b oder c. Sie hören den Text zweimal.",
+          prompt: "Sie hören ein Beratungsgespräch. Kreuzen Sie bei den Aufgaben 11 bis 15 jeweils a, b oder c an. Der Text wird zweimal abgespielt.",
           promptTr: "Bir danışma görüşmesi dinleyeceksin. 11–15. maddeler için a, b ya da c'yi seç. Kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -916,7 +916,7 @@ Gefundene Gegenstände werden vier Wochen im Betriebshof aufbewahrt. Danach gehe
           no: 3,
           format: "truefalse",
           goal: "detail",
-          prompt: "Sie hören einen Vortrag. Sind die Aussagen 16 bis 22 richtig oder falsch? Sie hören den Text zweimal.",
+          prompt: "Sie hören einen Vortrag. Richtig oder falsch? Entscheiden Sie bei den Aussagen 16 bis 22. Der Text wird zweimal abgespielt.",
           promptTr: "Bir sunum dinleyeceksin. 16–22. ifadeler doğru mu yanlış mı? Kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -1040,7 +1040,7 @@ Gefundene Gegenstände werden vier Wochen im Betriebshof aufbewahrt. Danach gehe
           no: 4,
           format: "mcq",
           goal: "opinion",
-          prompt: "Sie hören eine Diskussion. Wählen Sie zu den Aufgaben 23 bis 30: a, b oder c. Sie hören den Text zweimal.",
+          prompt: "Sie hören eine Diskussion. Kreuzen Sie bei den Aufgaben 23 bis 30 jeweils a, b oder c an. Der Text wird zweimal abgespielt.",
           promptTr: "Bir tartışma dinleyeceksin. 23–30. maddeler için a, b ya da c'yi seç. Kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -1201,7 +1201,7 @@ Gefundene Gegenstände werden vier Wochen im Betriebshof aufbewahrt. Danach gehe
     {
       skill: "writing",
       minutes: 60,
-      instruction: "Dieser Teil hat drei Aufgaben: eine private Nachricht, einen Forumsbeitrag und eine halb offizielle Nachricht.",
+      instruction: "In diesem Teil gibt es drei Aufgaben: eine private Nachricht, einen Forumsbeitrag und eine halb offizielle Nachricht.",
       instructionTr: "Bu bölümde üç görev var: özel bir ileti, bir forum yazısı ve yarı resmî bir ileti.",
       tasks: [
         {
@@ -1318,7 +1318,7 @@ Jan Petrov`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "Dieser Teil hat drei Aufgaben: gemeinsam planen, ein Thema präsentieren und auf ein Problem reagieren.",
+      instruction: "In diesem Teil gibt es drei Aufgaben: gemeinsam planen, ein Thema präsentieren und auf ein Problem reagieren.",
       instructionTr: "Bu bölümde üç görev var: birlikte planlama, bir konuyu sunma ve bir soruna tepki verme.",
       tasks: [
         {

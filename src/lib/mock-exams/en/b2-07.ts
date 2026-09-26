@@ -28,7 +28,7 @@ export const EN_B2_07: MockPaper = {
       skill: "reading",
       minutes: 70,
       instruction:
-        "This part has seven tasks. You complete texts, transform sentences, read an article and match texts and sentences.",
+        "There are seven tasks in this part. You complete texts, transform sentences, read an article and match texts and sentences.",
       instructionTr:
         "Bu bölümde yedi görev var. Metinleri tamamlayacak, cümleleri dönüştürecek, bir yazı okuyacak ve metin/cümle eşleyeceksin.",
       tasks: [
@@ -125,7 +125,7 @@ None of this is about politeness. A firm that hires on eleven seconds is {{6}} o
           no: 2,
           format: "gap",
           goal: "structure",
-          prompt: "Gaps 7–12: complete the text with a suitable word. Write exactly ONE word per gap.",
+          prompt: "Gaps 7–12: complete the text with a suitable word. Each gap takes exactly one word.",
           promptTr: "Metni oku ve 7–12. boşluklara en iyi uyan sözcüğü düşün. Her boşluğa yalnız TEK sözcük yaz.",
           texts: [
             {
@@ -210,7 +210,7 @@ Despite the weight of that evidence, the standard reply from employers twenty ye
           format: "gap",
           goal: "structure",
           prompt:
-            "Read the text and use the word given in capitals at the end of each line to form a word that fits the gap, 13 to 18.",
+            "Gaps 13 to 18: change the word in capitals at the end of the line so that it fits.",
           promptTr:
             "Metni oku ve 13–18. maddelerde büyük harfle verilen kökten boşluğa uyan sözcüğü türet.",
           texts: [
@@ -296,7 +296,7 @@ Reviews of the field conclude that the effect is real, modest in size, and large
           format: "transform",
           goal: "structure",
           prompt:
-            "Complete the second sentence so that it has a similar meaning to the first, using the word given. Do NOT change the word given. Write between two and five words.",
+            "Rewrite the idea of the first sentence in the second one, using the word in capitals. Keep that word exactly as it is. Use two to five words.",
           promptTr:
             "İkinci cümleyi, birincisiyle aynı anlama gelecek biçimde tamamla; verilen sözcüğü kullan ve DEĞİŞTİRME. İki ile beş sözcük arası yaz.",
           items: [
@@ -347,7 +347,7 @@ Reviews of the field conclude that the effect is real, modest in size, and large
           no: 5,
           format: "mcq",
           goal: "opinion",
-          prompt: "Read the article and questions 23 to 27. Choose a, b, c or d.",
+          prompt: "Questions 23 to 27 are about the article. Pick one answer: a, b, c or d.",
           promptTr: "Yazıyı ve 23–27. maddeleri oku. a, b, c ya da d'yi seç.",
           texts: [
             {
@@ -460,7 +460,7 @@ What changed my mind about the alternative was not principle but a spreadsheet. 
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. One sentence is missing from each of the gaps 28 to 31. Which sentence a to e fits which gap? One sentence fits nowhere.",
+            "Read the text. Gaps 28 to 31 each need One sentence. Which sentence a to e fits which gap? One sentence is extra.",
           promptTr:
             "Metni oku. 28–31. boşluklarda birer cümle eksik. a–e cümlelerinden hangisi hangi boşluğa uyar? Bir cümle hiçbir yere uymuyor.",
           texts: [
@@ -539,7 +539,7 @@ That is a longer argument and a slower one. Given how few firms have ever asked 
           goal: "detail",
           reuseOptions: true,
           prompt:
-            "Read the four short texts a to d. For questions 32 to 36, decide which text says this. The texts may be chosen more than once.",
+            "Read the four short texts a to d. Questions 32 to 36: which text is it? A text can be the answer more than once.",
           promptTr:
             "a'dan d'ye dört kısa metni oku. 32–36. maddeler için bunu hangi metin söylüyor, karar ver. Bir metin birden çok kez seçilebilir.",
           options: [
@@ -620,7 +620,7 @@ That is a longer argument and a slower one. Given how few firms have ever asked 
       skill: "listening",
       minutes: 40,
       instruction:
-        "This part has four tasks. You hear short extracts, a report, six speakers and an interview. You hear every recording twice.",
+        "There are four tasks in this part. You hear short extracts, a report, six speakers and an interview. Each recording plays twice.",
       instructionTr:
         "Bu bölümde dört görev var. Kısa parçalar, bir rapor, altı konuşmacı ve bir söyleşi dinleyeceksin. Her kaydı iki kez dinleyebilirsin.",
       tasks: [
@@ -629,7 +629,7 @@ That is a longer argument and a slower one. Given how few firms have ever asked 
           no: 1,
           format: "mcq",
           goal: "detail",
-          prompt: "You hear eight short extracts. Choose a, b or c. You hear every extract twice.",
+          prompt: "You hear eight short extracts. Pick one answer: a, b or c. Each extract plays twice.",
           promptTr: "Sekiz kısa parça dinleyeceksin. a, b ya da c'yi seç. Her parçayı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -821,7 +821,7 @@ That is a longer argument and a slower one. Given how few firms have ever asked 
           format: "notes",
           goal: "detail",
           prompt:
-            "You hear a woman reporting the results of a three-year study. Complete the sentences, questions 9 to 16, with a word or a number. You hear the report twice.",
+            "You hear a woman reporting the results of a three-year study. Complete the sentences, questions 9 to 16, with a word or a number. The report plays twice.",
           promptTr:
             "Üç yıllık bir çalışmanın sonuçlarını anlatan bir kadını dinleyeceksin. 9–16. maddelerdeki cümleleri bir sözcük ya da sayıyla tamamla. Kaydı iki kez dinleyebilirsin.",
           texts: [
@@ -950,7 +950,7 @@ The study took {{16}} years.`,
           format: "match",
           goal: "opinion",
           prompt:
-            "You hear six speakers talking about accent and hiring, questions 17 to 22. Choose from a to h what each speaker says. You use each letter once only. You hear the recordings twice.",
+            "You hear six speakers talking about accent and hiring, questions 17 to 22. Choose from a to h what each speaker says. You use each letter once only. The recordings play twice.",
           promptTr:
             "Aksan ve işe alım üzerine konuşan altı kişi dinleyeceksin, 17–22. maddeler. Her konuşmacının söylediğini a'dan h'ye seç. Her harf en fazla bir kez kullanılır. Kayıtları iki kez dinleyebilirsin.",
           options: [
@@ -1100,7 +1100,7 @@ The study took {{16}} years.`,
           format: "mcq",
           goal: "opinion",
           prompt:
-            "You hear an interview with a man who argued against anonymous first rounds and now runs them. Choose a, b or c for questions 23 to 30. You hear the interview twice.",
+            "You hear an interview with a man who argued against anonymous first rounds and now runs them. Questions 23 to 30: pick one answer, a, b or c. The interview plays twice.",
           promptTr:
             "Kimliksiz birinci turlara karşı çıkmış, şimdi onları yürüten bir adamla söyleşi dinleyeceksin. 23–30. maddeler için a, b ya da c'yi seç. Söyleşiyi iki kez dinleyebilirsin.",
           texts: [
@@ -1227,7 +1227,7 @@ The study took {{16}} years.`,
     {
       skill: "writing",
       minutes: 70,
-      instruction: "This part has two tasks: an essay and a report.",
+      instruction: "There are two tasks in this part: an essay and a report.",
       instructionTr: "Bu bölümde iki görev var: bir deneme ve bir rapor.",
       tasks: [
         {
@@ -1317,7 +1317,7 @@ I recommend that we continue for a further year, with one change: the second rou
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "This part has three tasks: an interview, a long turn, and a task we do together.",
+      instruction: "There are three tasks in this part: an interview, a long turn, and a task we do together.",
       instructionTr: "Bu bölümde üç görev var: söyleşi, tek başına konuşma ve birlikte yapılan bir görev.",
       tasks: [
         {

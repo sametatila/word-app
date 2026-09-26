@@ -28,7 +28,7 @@ export const B2_02: MockPaper = {
       skill: "reading",
       minutes: 65,
       instruction:
-        "Dieser Teil hat fünf Aufgaben. Sie lesen Erfahrungsberichte, einen Sachtext, einen Kommentar, Leserstimmen und eine Teilnahmeinformation. Sie können mit jeder Aufgabe beginnen.",
+        "In diesem Teil gibt es fünf Aufgaben. Sie lesen Erfahrungsberichte, einen Sachtext, einen Kommentar, Leserstimmen und eine Teilnahmeinformation. Die Reihenfolge ist frei.",
       instructionTr:
         "Bu bölümde beş görev var: kişisel anlatılar, bir bilgi metni, bir yorum yazısı, okur görüşleri ve bir katılım bilgilendirmesi okuyacaksın. İstediğin görevle başlayabilirsin.",
       tasks: [
@@ -38,7 +38,7 @@ export const B2_02: MockPaper = {
           format: "mcq",
           goal: "opinion",
           prompt:
-            "Vier Personen schreiben darüber, wie sie mit wissenschaftlichen Empfehlungen umgehen. Lesen Sie die Texte und die Aufgaben 1 bis 9. Welche Person sagt das? Jede Person kann mehrmals vorkommen.",
+            "Vier Personen schreiben darüber, wie sie mit wissenschaftlichen Empfehlungen umgehen. Lesen Sie zuerst die Texte; dazu gehören die Aufgaben 1 bis 9. Welche Person sagt das? Eine Person kann mehrmals die Antwort sein.",
           promptTr:
             "Dört kişi bilimsel önerilerle nasıl baş ettiğini yazıyor. Metinleri ve 1–9. maddeleri oku. Bunu hangi kişi söylüyor? Aynı kişi birden çok kez çıkabilir.",
           texts: [
@@ -207,7 +207,7 @@ Was ich nicht mehr mache, ist gegen Überzeugungen anzureden. Ich lege die Zahle
           format: "match",
           goal: "structure",
           prompt:
-            "Lesen Sie den Text. In den Lücken 10 bis 15 fehlt jeweils ein Satz. Welcher Satz a bis h passt in welche Lücke? Zwei Sätze passen nirgends.",
+            "Lesen Sie den Text. Aus dem Text wurden Sätze entfernt (Lücken 10 bis 15). Setzen Sie die Sätze a bis h richtig ein. Zwei Sätze bleiben übrig.",
           promptTr:
             "Metni oku. 10–15. boşluklarda birer cümle eksik. a–h cümlelerinden hangisi hangi boşluğa uyar? İki cümle hiçbir yere uymuyor.",
           texts: [
@@ -308,7 +308,7 @@ Was also tun? Fachleute empfehlen drei Fragen, die sich ohne Vorkenntnisse stell
           no: 3,
           format: "mcq",
           goal: "opinion",
-          prompt: "Lesen Sie den Kommentar und die Aufgaben 16 bis 21. Wählen Sie: a, b oder c.",
+          prompt: "Lesen Sie zuerst den Kommentar; dazu gehören die Aufgaben 16 bis 21. Kreuzen Sie a, b oder c an.",
           promptTr: "Yorum yazısını ve 16–21. maddeleri oku. a, b ya da c'yi seç.",
           texts: [
             {
@@ -542,7 +542,7 @@ Bleibt ein Einwand, den ich ernst nehme: Ohne konkrete Zahl erreicht man womögl
           no: 5,
           format: "mcq",
           goal: "instruction",
-          prompt: "Lesen Sie die Teilnahmeinformation und die Aufgaben 28 bis 30. Wählen Sie: a, b oder c.",
+          prompt: "Lesen Sie zuerst die Teilnahmeinformation; dazu gehören die Aufgaben 28 bis 30. Kreuzen Sie a, b oder c an.",
           promptTr: "Katılım bilgilendirmesini ve 28–30. maddeleri oku. a, b ya da c'yi seç.",
           texts: [
             {
@@ -632,7 +632,7 @@ Auf Wunsch erhalten Sie nach Abschluss der Studie eine allgemein verständliche 
       skill: "listening",
       minutes: 40,
       instruction:
-        "Dieser Teil hat vier Aufgaben. Sie hören Alltagsgespräche, ein Interview, eine Besprechung und einen Vortrag. Lesen Sie zuerst die Aufgaben.",
+        "In diesem Teil gibt es vier Aufgaben. Sie hören Alltagsgespräche, ein Interview, eine Besprechung und einen Vortrag. Sehen Sie sich vorher die Aufgaben an.",
       instructionTr:
         "Bu bölümde dört görev var: gündelik konuşmalar, bir söyleşi, bir toplantı ve bir sunum dinleyeceksin. Önce soruları oku.",
       tasks: [
@@ -844,7 +844,7 @@ Auf Wunsch erhalten Sie nach Abschluss der Studie eine allgemein verständliche 
           no: 2,
           format: "mcq",
           goal: "detail",
-          prompt: "Sie hören ein Interview. Wählen Sie zu den Aufgaben 11 bis 16: a, b oder c. Sie hören den Text einmal.",
+          prompt: "Sie hören ein Interview. Kreuzen Sie bei den Aufgaben 11 bis 16 jeweils a, b oder c an. Der Text wird nur einmal abgespielt.",
           promptTr: "Bir söyleşi dinleyeceksin. 11–16. maddeler için a, b ya da c'yi seç. Kaydı bir kez dinleyeceksin.",
           texts: [
             {
@@ -992,7 +992,7 @@ Auf Wunsch erhalten Sie nach Abschluss der Studie eine allgemein verständliche 
           format: "mcq",
           goal: "opinion",
           prompt:
-            "Sie hören eine Besprechung mit drei Personen. Wer sagt das? Wählen Sie zu den Aufgaben 17 bis 22. Sie hören den Text zweimal.",
+            "Sie hören eine Besprechung mit drei Personen. Wer sagt das? Ordnen Sie die Aussagen 17 bis 22 den Personen zu. Der Text wird zweimal abgespielt.",
           promptTr:
             "Üç kişilik bir toplantı dinleyeceksin. Bunu kim söylüyor? 17–22. maddeler için seç. Kaydı iki kez dinleyebilirsin.",
           texts: [
@@ -1111,7 +1111,7 @@ Auf Wunsch erhalten Sie nach Abschluss der Studie eine allgemein verständliche 
           no: 4,
           format: "mcq",
           goal: "gist",
-          prompt: "Sie hören einen Vortrag. Wählen Sie zu den Aufgaben 23 bis 30: a, b oder c. Sie hören den Text einmal.",
+          prompt: "Sie hören einen Vortrag. Kreuzen Sie bei den Aufgaben 23 bis 30 jeweils a, b oder c an. Der Text wird nur einmal abgespielt.",
           promptTr: "Bir sunum dinleyeceksin. 23–30. maddeler için a, b ya da c'yi seç. Kaydı bir kez dinleyeceksin.",
           texts: [
             {
@@ -1286,7 +1286,7 @@ Auf Wunsch erhalten Sie nach Abschluss der Studie eine allgemein verständliche 
     {
       skill: "writing",
       minutes: 75,
-      instruction: "Dieser Teil hat zwei Aufgaben: eine Meinungsäußerung und eine halb formelle Mitteilung.",
+      instruction: "In diesem Teil gibt es zwei Aufgaben: eine Meinungsäußerung und eine halb formelle Mitteilung.",
       instructionTr: "Bu bölümde iki görev var: bir görüş yazısı ve yarı resmî bir ileti.",
       tasks: [
         {
@@ -1373,7 +1373,7 @@ Lea Brunner`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "Dieser Teil hat zwei Aufgaben: einen Vortrag mit Nachfragen und eine Diskussion.",
+      instruction: "In diesem Teil gibt es zwei Aufgaben: einen Vortrag mit Nachfragen und eine Diskussion.",
       instructionTr: "Bu bölümde iki görev var: sorularla birlikte bir sunum ve bir tartışma.",
       tasks: [
         {

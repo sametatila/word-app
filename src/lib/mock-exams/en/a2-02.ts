@@ -25,7 +25,7 @@ export const EN_A2_02: MockPaper = {
       skill: "reading",
       minutes: 35,
       instruction:
-        "This part has five tasks. You read short texts, adverts and a longer article, and you complete two short texts. Choose the correct answer for each question.",
+        "There are five tasks in this part. You read short texts, adverts and a longer article, and you complete two short texts. Answer each question with one choice.",
       instructionTr:
         "Bu bölümde beş görev var. Kısa metinler, ilanlar ve daha uzun bir yazı okuyacak, sonra iki kısa metni tamamlayacaksın. Her soruda doğru cevabı işaretle.",
       tasks: [
@@ -34,7 +34,7 @@ export const EN_A2_02: MockPaper = {
           no: 1,
           format: "mcq",
           goal: "gist",
-          prompt: "Read the five short texts and questions 1 to 5. What is the main message? Choose a, b or c.",
+          prompt: "Questions 1 to 5 are about the five short texts. What is the main message? Pick one answer: a, b or c.",
           promptTr: "Beş kısa metni ve 1–5. maddeleri oku. Ana mesaj nedir? a, b ya da c'yi seç.",
           texts: [
             {
@@ -142,7 +142,7 @@ export const EN_A2_02: MockPaper = {
           format: "match",
           goal: "orientation",
           prompt:
-            "Read about five people, 6 to 10. Then read the eight adverts a to h. Which advert is right for each person? You use each advert once only.",
+            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best advert. No advert is used twice.",
           promptTr:
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
@@ -208,7 +208,7 @@ export const EN_A2_02: MockPaper = {
           no: 3,
           format: "mcq",
           goal: "detail",
-          prompt: "Read the article and questions 11 to 14. Choose a, b or c.",
+          prompt: "Questions 11 to 14 are about the article. Pick one answer: a, b or c.",
           promptTr: "Yazıyı ve 11–14. maddeleri oku. a, b ya da c'yi seç.",
           texts: [
             {
@@ -281,7 +281,7 @@ Now I have a rule for every journey. I put everything on the bed, and then I tak
           no: 4,
           format: "gapMcq",
           goal: "structure",
-          prompt: "Read the text and complete gaps 15 to 19. Which word fits: a, b or c?",
+          prompt: "Fill gaps 15 to 19 in the text. Which word fits: a, b or c?",
           promptTr: "Metni oku ve 15–19. boşlukları tamamla. Hangi sözcük uyar: a, b ya da c?",
           texts: [
             {
@@ -359,7 +359,7 @@ And finally: {{19}} you have a long wait, take a book. Your phone battery will n
           no: 5,
           format: "gap",
           goal: "structure",
-          prompt: "Read the review and complete gaps 20 to 24. Write ONE word in each gap.",
+          prompt: "Read the review and complete gaps 20 to 24. Each gap takes exactly one word.",
           promptTr: "Değerlendirmeyi oku ve 20–24. boşlukları tamamla. Her boşluğa TEK bir sözcük yaz.",
           texts: [
             {
@@ -435,7 +435,7 @@ We will come back next year {{24}} the weather is good.`,
       skill: "listening",
       minutes: 30,
       instruction:
-        "This part has four tasks. You hear conversations, a talk and five short monologues. You hear every recording twice.",
+        "There are four tasks in this part. You hear conversations, a talk and five short monologues. Each recording plays twice.",
       instructionTr:
         "Bu bölümde dört görev var. Konuşmalar, bir sunum ve beş kişinin kısa anlatımını dinleyeceksin. Her kaydı iki kez dinleyebilirsin.",
       tasks: [
@@ -444,7 +444,7 @@ We will come back next year {{24}} the weather is good.`,
           no: 1,
           format: "mcq",
           goal: "detail",
-          prompt: "You hear five short conversations. Which answer is right? You hear every recording twice.",
+          prompt: "You hear five short conversations. Which answer is right? Each recording plays twice.",
           promptTr: "Beş kısa konuşma dinleyeceksin. Doğru olan hangisi? Her kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -577,7 +577,7 @@ We will come back next year {{24}} the weather is good.`,
           format: "notes",
           goal: "detail",
           prompt:
-            "You hear information about a city tour. Complete the notes, questions 6 to 10. Write ONE or TWO words or a number in each gap. You hear the information twice.",
+            "You hear information about a city tour. Complete the notes, questions 6 to 10. Write ONE or TWO words or a number in each gap. The information plays twice.",
           promptTr:
             "Bir şehir turu hakkında bilgi dinleyeceksin. 6–10. maddelerdeki notları tamamla. Her boşluğa BİR ya da İKİ sözcük veya bir sayı yaz. Kaydı iki kez dinleyebilirsin.",
           texts: [
@@ -665,7 +665,7 @@ Bring:                  a warm {{10}}`,
           no: 3,
           format: "mcq",
           goal: "gist",
-          prompt: "You hear five short speakers. What is each person doing? You hear every recording twice.",
+          prompt: "You hear five short speakers. What is each person doing? Each recording plays twice.",
           promptTr: "Beş kısa konuşmacı dinleyeceksin. Her kişi ne yapıyor? Her kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -788,7 +788,7 @@ Bring:                  a warm {{10}}`,
           format: "match",
           goal: "detail",
           prompt:
-            "You hear five people. They talk about a purchase they regret. What was the problem? Choose from a to h. You use each answer once only. You hear the recordings twice.",
+            "You hear five people. They talk about a purchase they regret. What was the problem? The options are a to h. No answer is used twice. The recordings play twice.",
           promptTr:
             "Beş kişi dinleyeceksin. Pişman oldukları bir alışverişten söz ediyorlar. Sorun neydi? a'dan h'ye seç. Her seçenek en fazla bir kez kullanılır. Kayıtları iki kez dinleyebilirsin.",
           options: [
@@ -918,7 +918,7 @@ Bring:                  a warm {{10}}`,
     {
       skill: "writing",
       minutes: 30,
-      instruction: "This part has two tasks: you write an email and a short text about an experience.",
+      instruction: "There are two tasks in this part: you write an email and a short text about an experience.",
       instructionTr: "Bu bölümde iki görev var: bir e-posta ve bir deneyim üzerine kısa bir metin yazacaksın.",
       tasks: [
         {
@@ -991,7 +991,7 @@ Elif`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "This part has three tasks: an interview, a photograph, and a decision you make together.",
+      instruction: "There are three tasks in this part: an interview, a photograph, and a decision you make together.",
       instructionTr: "Bu bölümde üç görev var: söyleşi, fotoğraf anlatma ve birlikte karar verme.",
       tasks: [
         {

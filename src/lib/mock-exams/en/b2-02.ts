@@ -25,7 +25,7 @@ export const EN_B2_02: MockPaper = {
       skill: "reading",
       minutes: 70,
       instruction:
-        "This part has seven tasks. The first four are about vocabulary and grammar; the last three are reading tasks. Choose or write the correct answer for each question.",
+        "There are seven tasks in this part. The first four are about vocabulary and grammar; the last three are reading tasks. Choose or write the correct answer for each question.",
       instructionTr:
         "Bu bölümde yedi görev var. İlk dördü kelime ve dilbilgisi, son üçü okuma görevi. Her soruda doğru cevabı seç ya da yaz.",
       tasks: [
@@ -122,7 +122,7 @@ That is a real improvement, but it is worth {{6}} in mind that a third is not ev
           no: 2,
           format: "gap",
           goal: "structure",
-          prompt: "Gaps 7–12: complete the text with a suitable word. Write exactly ONE word per gap.",
+          prompt: "Gaps 7–12: complete the text with a suitable word. Each gap takes exactly one word.",
           promptTr: "Metni oku ve 7–12. boşluklara en uygun sözcüğü bul. Her boşluğa YALNIZ BİR sözcük yaz.",
           texts: [
             {
@@ -205,7 +205,7 @@ Editors are therefore being asked to think {{12}} terms of prevention rather tha
           format: "gap",
           goal: "structure",
           prompt:
-            "Read the text and use the word given in capitals at the end of each line to form a word that fits the gap, 13 to 18.",
+            "Gaps 13 to 18: change the word in capitals at the end of the line so that it fits.",
           promptTr:
             "Metni oku ve 13–18. maddelerde büyük harfle verilen kökten boşluğa uyan sözcüğü türet.",
           texts: [
@@ -291,7 +291,7 @@ The most likely future is therefore a mixed one, with different fields making di
           format: "transform",
           goal: "structure",
           prompt:
-            "Complete the second sentence so that it has a similar meaning to the first, using the word given. Do NOT change the word given. Write between two and five words.",
+            "Rewrite the idea of the first sentence in the second one, using the word in capitals. Keep that word exactly as it is. Use two to five words.",
           promptTr:
             "İkinci cümleyi, birincisiyle aynı anlama gelecek biçimde tamamla; verilen sözcüğü kullan ve DEĞİŞTİRME. İki ile beş sözcük arası yaz.",
           items: [
@@ -342,7 +342,7 @@ The most likely future is therefore a mixed one, with different fields making di
           no: 5,
           format: "mcq",
           goal: "opinion",
-          prompt: "Read the article and questions 23 to 27. Choose a, b, c or d.",
+          prompt: "Questions 23 to 27 are about the article. Pick one answer: a, b, c or d.",
           promptTr: "Yazıyı ve 23–27. maddeleri oku. a, b, c ya da d'yi seç.",
           texts: [
             {
@@ -454,7 +454,7 @@ I want to be clear that I am not against explanation, which would be an odd posi
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. One sentence is missing from each of the gaps 28 to 31. Which sentence a to e fits which gap? One sentence fits nowhere.",
+            "Read the text. Gaps 28 to 31 each need One sentence. Which sentence a to e fits which gap? One sentence is extra.",
           promptTr:
             "Metni oku. 28–31. boşluklarda birer cümle eksik. a–e cümlelerinden hangisi hangi boşluğa uyar? Bir cümle hiçbir yere uymuyor.",
           texts: [
@@ -533,7 +533,7 @@ None of this is an argument against graphs, which remain the most efficient way 
           goal: "detail",
           reuseOptions: true,
           prompt:
-            "Read the four short texts a to d. For questions 32 to 36, decide which text says this. The texts may be chosen more than once.",
+            "Read the four short texts a to d. Questions 32 to 36: which text is it? A text can be the answer more than once.",
           promptTr:
             "a'dan d'ye dört kısa metni oku. 32–36. maddeler için bunu hangi metin söylüyor, karar ver. Bir metin birden çok kez seçilebilir.",
           options: [
@@ -614,7 +614,7 @@ None of this is an argument against graphs, which remain the most efficient way 
       skill: "listening",
       minutes: 40,
       instruction:
-        "This part has four tasks. You hear short extracts, a talk, six speakers and an interview. You hear every recording twice.",
+        "There are four tasks in this part. You hear short extracts, a talk, six speakers and an interview. Each recording plays twice.",
       instructionTr:
         "Bu bölümde dört görev var. Kısa parçalar, bir sunum, altı konuşmacı ve bir söyleşi dinleyeceksin. Her kaydı iki kez dinleyebilirsin.",
       tasks: [
@@ -623,7 +623,7 @@ None of this is an argument against graphs, which remain the most efficient way 
           no: 1,
           format: "mcq",
           goal: "detail",
-          prompt: "You hear eight short extracts. Choose a, b or c. You hear every extract twice.",
+          prompt: "You hear eight short extracts. Pick one answer: a, b or c. Each extract plays twice.",
           promptTr: "Sekiz kısa parça dinleyeceksin. a, b ya da c'yi seç. Her parçayı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -816,7 +816,7 @@ None of this is an argument against graphs, which remain the most efficient way 
           format: "notes",
           goal: "detail",
           prompt:
-            "You hear a talk about a fact-checking project. Complete the sentences, questions 9 to 16, with a word or a short phrase. You hear the talk twice.",
+            "You hear a talk about a fact-checking project. Complete the sentences, questions 9 to 16, with a word or a short phrase. The talk plays twice.",
           promptTr:
             "Bir doğrulama projesi üzerine sunum dinleyeceksin. 9–16. maddelerdeki cümleleri bir sözcük ya da kısa bir öbekle tamamla. Kaydı iki kez dinleyebilirsin.",
           texts: [
@@ -945,7 +945,7 @@ The speaker says the greatest risk is the {{16}}, not the abuse.`,
           format: "match",
           goal: "opinion",
           prompt:
-            "You hear six people talking about science in the news. What is each speaker's main point? Choose from a to h. You use each answer once only. You hear the recordings twice.",
+            "You hear six people talking about science in the news. What is each speaker's main point? The options are a to h. No answer is used twice. The recordings play twice.",
           promptTr:
             "Haberlerde bilim üzerine konuşan altı kişi dinleyeceksin. Her konuşmacının ana noktası nedir? a'dan h'ye seç. Her seçenek en fazla bir kez kullanılır. Kayıtları iki kez dinleyebilirsin.",
           options: [
@@ -1094,7 +1094,7 @@ The speaker says the greatest risk is the {{16}}, not the abuse.`,
           no: 4,
           format: "mcq",
           goal: "opinion",
-          prompt: "You hear an interview with a man who edits a science section. Choose a, b or c for questions 23 to 30. You hear the interview twice.",
+          prompt: "You hear an interview with a man who edits a science section. Questions 23 to 30: pick one answer, a, b or c. The interview plays twice.",
           promptTr: "Bir bilim sayfası editörüyle söyleşi dinleyeceksin. 23–30. maddeler için a, b ya da c'yi seç. Kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -1226,7 +1226,7 @@ The speaker says the greatest risk is the {{16}}, not the abuse.`,
     {
       skill: "writing",
       minutes: 70,
-      instruction: "This part has two tasks. Write 140 to 190 words for each. Both are compulsory.",
+      instruction: "There are two tasks in this part. Write 140 to 190 words for each. You must do both.",
       instructionTr: "Bu bölümde iki görev var. Her biri için 140–190 kelime yaz. İkisi de zorunlu.",
       tasks: [
         {
@@ -1308,7 +1308,7 @@ For anybody who reads statistics in the news, however, it is the most useful six
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "This part has three tasks: an interview, a long turn comparing two situations, and a task we do together.",
+      instruction: "There are three tasks in this part: an interview, a long turn comparing two situations, and a task we do together.",
       instructionTr: "Bu bölümde üç görev var: söyleşi, iki durumu karşılaştıran tek başına konuşma ve birlikte yapılan bir görev.",
       tasks: [
         {

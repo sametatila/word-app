@@ -38,7 +38,7 @@ export const C1_07: MockPaper = {
       skill: "reading",
       minutes: 70,
       instruction:
-        "Dieser Teil hat drei Aufgaben: eine Zusammenfassung ergänzen, einen Essay auswerten und strukturelle Lücken in einem Text schließen.",
+        "In diesem Teil gibt es drei Aufgaben: eine Zusammenfassung ergänzen, einen Essay auswerten und strukturelle Lücken in einem Text schließen.",
       instructionTr:
         "Bu bölümde üç görev var: bir özeti tamamlamak, bir deneme metnini çözümlemek ve bir metindeki yapısal boşlukları doldurmak.",
       tasks: [
@@ -48,7 +48,7 @@ export const C1_07: MockPaper = {
           format: "gap",
           goal: "gist",
           prompt:
-            "Lesen Sie den Text und die Zusammenfassung darunter. Ergänzen Sie die Lücken 1 bis 10 sinngemäß. Schreiben Sie in jede Lücke ein Wort. Die Wörter stehen nicht immer wörtlich im Text.",
+            "Lesen Sie den Text und die Zusammenfassung darunter. Ergänzen Sie die Lücken 1 bis 10 sinngemäß. Pro Lücke genau ein Wort. Die passenden Wörter können vom Wortlaut des Textes abweichen.",
           promptTr:
             "Metni ve altındaki özeti oku. 1–10. boşlukları anlama uygun biçimde tamamla. Her boşluğa bir sözcük yaz. Sözcükler metinde her zaman birebir geçmiyor.",
           texts: [
@@ -189,7 +189,7 @@ Schwierig bleibt der Umgang mit der {{10}}, weil sich ein Name besser für eine 
           no: 2,
           format: "mcq",
           goal: "opinion",
-          prompt: "Lesen Sie den Essay und die Aufgaben 11 bis 20. Wählen Sie: a, b, c oder d.",
+          prompt: "Lesen Sie zuerst den Essay; dazu gehören die Aufgaben 11 bis 20. Kreuzen Sie a, b, c oder d an.",
           promptTr: "Deneme metnini ve 11–20. maddeleri oku. a, b, c ya da d'yi seç.",
           texts: [
             {
@@ -392,7 +392,7 @@ Meine Neigung ist die erste. Nicht weil Einzelfälle unwichtig wären, sondern w
           no: 3,
           format: "gapMcq",
           goal: "structure",
-          prompt: "Lesen Sie den Text und ergänzen Sie die Lücken 21 bis 25. Welche Lösung passt: a, b, c oder d?",
+          prompt: "Lesen Sie den Text und ergänzen Sie die Lücken 21 bis 25. Welche Antwort passt: a, b, c oder d?",
           promptTr: "Metni oku ve 21–25. boşlukları tamamla. Hangi seçenek uyar: a, b, c ya da d?",
           texts: [
             {
@@ -477,7 +477,7 @@ Das Verfahren hat mithin Grenzen. Es verhindert nicht, dass später verglichen u
     {
       skill: "listening",
       minutes: 40,
-      instruction: "Dieser Teil hat zwei Aufgaben: Notizen ergänzen und eine Podiumsdiskussion auswerten.",
+      instruction: "In diesem Teil gibt es zwei Aufgaben: Notizen ergänzen und eine Podiumsdiskussion auswerten.",
       instructionTr: "Bu bölümde iki görev var: notları tamamlamak ve bir panel tartışmasını çözümlemek.",
       tasks: [
         {
@@ -486,7 +486,7 @@ Das Verfahren hat mithin Grenzen. Es verhindert nicht, dass später verglichen u
           format: "notes",
           goal: "detail",
           prompt:
-            "Sie hören eine Informationsveranstaltung. Ergänzen Sie die Notizen 1 bis 10. Schreiben Sie höchstens drei Wörter in jede Lücke. Sie hören den Text einmal.",
+            "Sie hören eine Informationsveranstaltung. Ergänzen Sie die Notizen 1 bis 10. Pro Lücke höchstens drei Wörter. Der Text wird nur einmal abgespielt.",
           promptTr:
             "Bir bilgilendirme konuşması dinleyeceksin. 1–10. notları tamamla. Her boşluğa en çok üç sözcük yaz. Kaydı bir kez dinleyeceksin.",
           texts: [
@@ -662,7 +662,7 @@ Beispiel Ampullen: Lagerung nach {{10}} Meldungen getrennt.`,
           no: 2,
           format: "mcq",
           goal: "gist",
-          prompt: "Sie hören eine Diskussion. Wählen Sie zu den Aufgaben 11 bis 25: a, b oder c. Sie hören den Text zweimal.",
+          prompt: "Sie hören eine Diskussion. Kreuzen Sie bei den Aufgaben 11 bis 25 jeweils a, b oder c an. Der Text wird zweimal abgespielt.",
           promptTr: "Bir tartışma dinleyeceksin. 11–25. maddeler için a, b ya da c'yi seç. Kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -983,7 +983,7 @@ Beispiel Ampullen: Lagerung nach {{10}} Meldungen getrennt.`,
     {
       skill: "writing",
       minutes: 80,
-      instruction: "Dieser Teil hat zwei Aufgaben: eine Stellungnahme und einen förmlichen Brief mit Lücken.",
+      instruction: "In diesem Teil gibt es zwei Aufgaben: eine Stellungnahme und einen förmlichen Brief mit Lücken.",
       instructionTr: "Bu bölümde iki görev var: bir görüş yazısı ve boşluklu resmî bir mektup.",
       tasks: [
         {
@@ -1027,7 +1027,7 @@ Meine Schlussfolgerung ist deshalb keine bequeme. Der Schutz von Meldungen ist z
           format: "gap",
           goal: "interaction",
           prompt:
-            "Sie schreiben an die Redaktion einer Fachzeitschrift, weil ein Beitrag Ihre Einrichtung falsch dargestellt hat. Ergänzen Sie die Lücken 1 bis 10 im Brief. Schreiben Sie in jede Lücke ein Wort.",
+            "Sie schreiben an die Redaktion einer Fachzeitschrift, weil ein Beitrag Ihre Einrichtung falsch dargestellt hat. Ergänzen Sie die Lücken 1 bis 10 im Brief. Pro Lücke genau ein Wort.",
           promptTr:
             "Bir meslek dergisinin yayın kuruluna yazıyorsun; bir yazı kurumunu yanlış aktarmış. Mektuptaki 1–10. boşlukları tamamla. Her boşluğa bir sözcük yaz.",
           texts: [
@@ -1155,7 +1155,7 @@ Ruth {{10}}`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "Dieser Teil hat zwei Aufgaben: einen Vortrag halten und gemeinsam eine Entscheidung treffen.",
+      instruction: "In diesem Teil gibt es zwei Aufgaben: einen Vortrag halten und gemeinsam eine Entscheidung treffen.",
       instructionTr: "Bu bölümde iki görev var: bir sunum yapmak ve birlikte karar vermek.",
       tasks: [
         {

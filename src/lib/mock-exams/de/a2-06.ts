@@ -28,7 +28,7 @@ export const A2_06: MockPaper = {
       skill: "reading",
       minutes: 30,
       instruction:
-        "Dieser Teil hat vier Aufgaben. Sie lesen einen Blogbeitrag, einen Zeitungstext, kurze Mitteilungen und Anzeigen.",
+        "In diesem Teil gibt es vier Aufgaben. Sie lesen einen Blogbeitrag, einen Zeitungstext, kurze Mitteilungen und Anzeigen.",
       instructionTr:
         "Bu bölümde dört görev var. Bir blog yazısı, bir gazete metni, kısa iletiler ve ilanlar okuyacaksın.",
       tasks: [
@@ -37,7 +37,7 @@ export const A2_06: MockPaper = {
           no: 1,
           format: "mcq",
           goal: "gist",
-          prompt: "Lesen Sie den Text und die Aufgaben 1 bis 5. Wählen Sie: a, b oder c.",
+          prompt: "Lesen Sie zuerst den Text; dazu gehören die Aufgaben 1 bis 5. Kreuzen Sie a, b oder c an.",
           promptTr: "Metni ve 1–5. maddeleri oku. a, b ya da c'yi seç.",
           texts: [
             {
@@ -142,7 +142,7 @@ Heute lade ich selbst ein. Meine Gäste kommen pünktlich und niemand hilft in d
           no: 2,
           format: "mcq",
           goal: "detail",
-          prompt: "Lesen Sie den Text und die Aufgaben 6 bis 10. Wählen Sie: a, b oder c.",
+          prompt: "Lesen Sie zuerst den Text; dazu gehören die Aufgaben 6 bis 10. Kreuzen Sie a, b oder c an.",
           promptTr: "Metni ve 6–10. maddeleri oku. a, b ya da c'yi seç.",
           texts: [
             {
@@ -243,7 +243,7 @@ Für dieses Jahr sind schon 60 Feste angemeldet.`,
           no: 3,
           format: "mcq",
           goal: "detail",
-          prompt: "Lesen Sie die fünf kurzen Texte und die Aufgaben 11 bis 15. Wählen Sie: a, b oder c.",
+          prompt: "Lesen Sie zuerst die fünf kurzen Texte; dazu gehören die Aufgaben 11 bis 15. Kreuzen Sie a, b oder c an.",
           promptTr: "Beş kısa metni ve 11–15. maddeleri oku. a, b ya da c'yi seç.",
           texts: [
             {
@@ -390,7 +390,7 @@ Der Hof ist ab 24 Uhr frei zu halten.`,
           format: "match",
           goal: "orientation",
           prompt:
-            "Die Personen 16 bis 20 planen ein Fest. Lesen Sie die Anzeigen a bis h. Welche Anzeige passt zu welcher Person? Jede Anzeige passt nur einmal. Drei Anzeigen passen zu niemandem.",
+            "Die Personen 16 bis 20 planen ein Fest. Lesen Sie die Anzeigen a bis h. Finden Sie für jede Person die passende Anzeige. Keine Anzeige wird zweimal gebraucht. Drei Anzeigen bleiben übrig.",
           promptTr:
             "16–20. kişiler bir kutlama planlıyor. a–h ilanlarını oku. Hangi ilan hangi kişiye uyar? Her ilan yalnız bir kez kullanılır; üç ilan hiç kimseye uymaz.",
           options: [
@@ -490,7 +490,7 @@ Der Hof ist ab 24 Uhr frei zu halten.`,
     {
       skill: "listening",
       minutes: 30,
-      instruction: "Dieser Teil hat vier Aufgaben. Sie hören Gespräche und ein Interview. Lesen Sie zuerst die Aufgaben.",
+      instruction: "In diesem Teil gibt es vier Aufgaben. Sie hören Gespräche und ein Interview. Sehen Sie sich vorher die Aufgaben an.",
       instructionTr: "Bu bölümde dört görev var. Konuşmalar ve bir söyleşi dinleyeceksin. Önce maddeleri oku.",
       tasks: [
         {
@@ -498,7 +498,7 @@ Der Hof ist ab 24 Uhr frei zu halten.`,
           no: 1,
           format: "mcq",
           goal: "detail",
-          prompt: "Sie hören fünf kurze Gespräche. Was ist richtig? Sie hören jeden Text zweimal.",
+          prompt: "Sie hören fünf kurze Gespräche. Welche Antwort passt? Jeder Text wird zweimal abgespielt.",
           promptTr: "Beş kısa konuşma dinleyeceksin. Doğru olan hangisi? Her kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -633,7 +633,7 @@ Der Hof ist ab 24 Uhr frei zu halten.`,
           format: "match",
           goal: "detail",
           prompt:
-            "Sie hören ein Gespräch. Fünf Personen sagen, was sie zum Fest mitbringen. Wer bringt was? Ordnen Sie zu. Drei Sachen bleiben übrig. Sie hören den Text zweimal.",
+            "Sie hören ein Gespräch. Fünf Personen sagen, was sie zum Fest mitbringen. Wer bringt was? Ordnen Sie zu. Drei Sachen bleiben übrig. Der Text wird zweimal abgespielt.",
           promptTr:
             "Bir konuşma dinleyeceksin. Beş kişi kutlamaya ne getireceğini söylüyor. Kim ne getiriyor? Eşleştir. Üç şey artıyor. Kaydı iki kez dinleyebilirsin.",
           texts: [
@@ -726,7 +726,7 @@ Der Hof ist ab 24 Uhr frei zu halten.`,
           no: 3,
           format: "mcq",
           goal: "detail",
-          prompt: "Sie hören fünf kurze Gespräche. Was ist richtig? Sie hören jeden Text zweimal.",
+          prompt: "Sie hören fünf kurze Gespräche. Welche Antwort passt? Jeder Text wird zweimal abgespielt.",
           promptTr: "Beş kısa konuşma dinleyeceksin. Doğru olan hangisi? Her kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -862,7 +862,7 @@ Der Hof ist ab 24 Uhr frei zu halten.`,
           no: 4,
           format: "truefalse",
           goal: "opinion",
-          prompt: "Sie hören ein Interview. Sind die Sätze richtig oder falsch? Sie hören den Text zweimal.",
+          prompt: "Sie hören ein Interview. Richtig oder falsch? Entscheiden Sie bei jedem Satz. Der Text wird zweimal abgespielt.",
           promptTr: "Bir söyleşi dinleyeceksin. Cümleler doğru mu yanlış mı? Kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -961,7 +961,7 @@ Der Hof ist ab 24 Uhr frei zu halten.`,
     {
       skill: "writing",
       minutes: 30,
-      instruction: "Dieser Teil hat zwei Aufgaben. Sie schreiben eine private Nachricht und eine halb offizielle Nachricht.",
+      instruction: "In diesem Teil gibt es zwei Aufgaben. Sie schreiben eine private Nachricht und eine halb offizielle Nachricht.",
       instructionTr: "Bu bölümde iki görev var: bir özel ileti ve bir yarı resmî ileti yazacaksın.",
       tasks: [
         {
@@ -1043,7 +1043,7 @@ Katja Berg`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "Dieser Teil hat drei Aufgaben: Fragen stellen, erzählen und gemeinsam planen.",
+      instruction: "In diesem Teil gibt es drei Aufgaben: Fragen stellen, erzählen und gemeinsam planen.",
       instructionTr: "Bu bölümde üç görev var: soru sorma, anlatma ve birlikte planlama.",
       tasks: [
         {

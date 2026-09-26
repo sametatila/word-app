@@ -29,7 +29,7 @@ export const B2_06: MockPaper = {
       skill: "reading",
       minutes: 65,
       instruction:
-        "Dieser Teil hat fünf Aufgaben. Sie lesen persönliche Berichte, einen Sachtext, einen Kommentar, Meinungsäußerungen und eine Abfallsatzung.",
+        "In diesem Teil gibt es fünf Aufgaben. Sie lesen persönliche Berichte, einen Sachtext, einen Kommentar, Meinungsäußerungen und eine Abfallsatzung.",
       instructionTr:
         "Bu bölümde beş görev var. Kişisel anlatılar, bir bilgi metni, bir köşe yazısı, görüş bildirimleri ve bir atık yönetmeliği okuyacaksın.",
       tasks: [
@@ -39,7 +39,7 @@ export const B2_06: MockPaper = {
           format: "mcq",
           goal: "opinion",
           prompt:
-            "Vier Personen schreiben darüber, wie sie mit Umweltfragen umgehen. Lesen Sie die Texte und die Aufgaben 1 bis 9. Welche Person sagt das? Jede Person kann mehrmals vorkommen.",
+            "Vier Personen schreiben darüber, wie sie mit Umweltfragen umgehen. Lesen Sie zuerst die Texte; dazu gehören die Aufgaben 1 bis 9. Welche Person sagt das? Eine Person kann mehrmals die Antwort sein.",
           promptTr:
             "Dört kişi çevre sorunlarıyla nasıl baş ettiğini yazıyor. Metinleri ve 1–9. maddeleri oku. Bunu hangi kişi söylüyor? Aynı kişi birden çok kez çıkabilir.",
           texts: [
@@ -219,7 +219,7 @@ Was mich beschäftigt, ist etwas anderes. In meiner Straße wohnen elf Haushalte
           format: "match",
           goal: "structure",
           prompt:
-            "Lesen Sie den Text. In den Lücken 10 bis 15 fehlt jeweils ein Satz. Welcher Satz a bis h passt in welche Lücke? Zwei Sätze passen nirgends.",
+            "Lesen Sie den Text. Aus dem Text wurden Sätze entfernt (Lücken 10 bis 15). Setzen Sie die Sätze a bis h richtig ein. Zwei Sätze bleiben übrig.",
           promptTr:
             "Metni oku. 10–15. boşluklarda birer cümle eksik. a–h cümlelerinden hangisi hangi boşluğa uyar? İki cümle hiçbir yere uymuyor.",
           texts: [
@@ -358,7 +358,7 @@ Für die Praxis heißt das eine Verschiebung des Blicks. Statt zu fragen, was je
           no: 3,
           format: "mcq",
           goal: "opinion",
-          prompt: "Lesen Sie den Kommentar und die Aufgaben 16 bis 21. Wählen Sie: a, b oder c.",
+          prompt: "Lesen Sie zuerst den Kommentar; dazu gehören die Aufgaben 16 bis 21. Kreuzen Sie a, b oder c an.",
           promptTr: "Köşe yazısını ve 16–21. maddeleri oku. a, b ya da c'yi seç.",
           texts: [
             {
@@ -592,7 +592,7 @@ Bleibt die unbequeme Wahrheit: Ohne Ausgleich wird die Abgabe irgendwann politis
           no: 5,
           format: "mcq",
           goal: "instruction",
-          prompt: "Lesen Sie die Abfallsatzung und die Aufgaben 28 bis 30. Wählen Sie: a, b oder c.",
+          prompt: "Lesen Sie zuerst die Abfallsatzung; dazu gehören die Aufgaben 28 bis 30. Kreuzen Sie a, b oder c an.",
           promptTr: "Atık yönetmeliğini ve 28–30. maddeleri oku. a, b ya da c'yi seç.",
           texts: [
             {
@@ -678,7 +678,7 @@ Die Gebühr richtet sich nach dem Volumen der Restmülltonne, nicht nach der Zah
     {
       skill: "listening",
       minutes: 40,
-      instruction: "Dieser Teil hat vier Aufgaben. Sie hören Durchsagen, ein Interview, eine Diskussion und einen Vortrag.",
+      instruction: "In diesem Teil gibt es vier Aufgaben. Sie hören Durchsagen, ein Interview, eine Diskussion und einen Vortrag.",
       instructionTr: "Bu bölümde dört görev var. Anonslar, bir söyleşi, bir tartışma ve bir sunum dinleyeceksin.",
       tasks: [
         {
@@ -686,7 +686,7 @@ Die Gebühr richtet sich nach dem Volumen der Restmülltonne, nicht nach der Zah
           no: 1,
           format: "mixed",
           goal: "detail",
-          prompt: "Sie hören fünf kurze Texte. Zu jedem Text gibt es zwei Aufgaben. Sie hören jeden Text einmal.",
+          prompt: "Sie hören fünf kurze Texte. Jeder Text hat zwei Aufgaben. Jeder Text wird nur einmal abgespielt.",
           promptTr: "Beş kısa kayıt dinleyeceksin. Her kayıt için iki madde var. Her kaydı bir kez dinleyeceksin.",
           texts: [
             {
@@ -888,7 +888,7 @@ Die Gebühr richtet sich nach dem Volumen der Restmülltonne, nicht nach der Zah
           no: 2,
           format: "mcq",
           goal: "detail",
-          prompt: "Sie hören ein Interview. Wählen Sie zu den Aufgaben 11 bis 16: a, b oder c. Sie hören den Text zweimal.",
+          prompt: "Sie hören ein Interview. Kreuzen Sie bei den Aufgaben 11 bis 16 jeweils a, b oder c an. Der Text wird zweimal abgespielt.",
           promptTr: "Bir söyleşi dinleyeceksin. 11–16. maddeler için a, b ya da c'yi seç. Kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -1030,7 +1030,7 @@ Die Gebühr richtet sich nach dem Volumen der Restmülltonne, nicht nach der Zah
           no: 3,
           format: "mcq",
           goal: "opinion",
-          prompt: "Sie hören eine Diskussion. Wählen Sie zu den Aufgaben 17 bis 22: a, b oder c. Sie hören den Text zweimal.",
+          prompt: "Sie hören eine Diskussion. Kreuzen Sie bei den Aufgaben 17 bis 22 jeweils a, b oder c an. Der Text wird zweimal abgespielt.",
           promptTr: "Bir tartışma dinleyeceksin. 17–22. maddeler için a, b ya da c'yi seç. Kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -1173,7 +1173,7 @@ Die Gebühr richtet sich nach dem Volumen der Restmülltonne, nicht nach der Zah
           no: 4,
           format: "mcq",
           goal: "gist",
-          prompt: "Sie hören einen Vortrag. Wählen Sie zu den Aufgaben 23 bis 30: a, b oder c. Sie hören den Text zweimal.",
+          prompt: "Sie hören einen Vortrag. Kreuzen Sie bei den Aufgaben 23 bis 30 jeweils a, b oder c an. Der Text wird zweimal abgespielt.",
           promptTr: "Bir sunum dinleyeceksin. 23–30. maddeler için a, b ya da c'yi seç. Kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -1345,7 +1345,7 @@ Die Gebühr richtet sich nach dem Volumen der Restmülltonne, nicht nach der Zah
     {
       skill: "writing",
       minutes: 75,
-      instruction: "Dieser Teil hat zwei Aufgaben: einen Leserbrief und eine halb offizielle Nachricht.",
+      instruction: "In diesem Teil gibt es zwei Aufgaben: einen Leserbrief und eine halb offizielle Nachricht.",
       instructionTr: "Bu bölümde iki görev var: bir okur mektubu ve yarı resmî bir ileti.",
       tasks: [
         {
@@ -1436,7 +1436,7 @@ Tomas Bihar`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "Dieser Teil hat zwei Aufgaben: einen Vortrag halten und gemeinsam zu einer Entscheidung kommen.",
+      instruction: "In diesem Teil gibt es zwei Aufgaben: einen Vortrag halten und gemeinsam zu einer Entscheidung kommen.",
       instructionTr: "Bu bölümde iki görev var: bir sunum yapmak ve birlikte bir karara varmak.",
       tasks: [
         {

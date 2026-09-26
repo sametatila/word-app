@@ -26,7 +26,7 @@ export const EN_B2_03: MockPaper = {
       skill: "reading",
       minutes: 70,
       instruction:
-        "This part has seven tasks. The first four are about vocabulary and grammar; the last three are reading tasks. Choose or write the correct answer for each question.",
+        "There are seven tasks in this part. The first four are about vocabulary and grammar; the last three are reading tasks. Choose or write the correct answer for each question.",
       instructionTr:
         "Bu bölümde yedi görev var. İlk dördü kelime ve dilbilgisi, son üçü okuma görevi. Her soruda doğru cevabı seç ya da yaz.",
       tasks: [
@@ -123,7 +123,7 @@ That result is worth {{6}} in mind, because a label that nobody acts on is a che
           no: 2,
           format: "gap",
           goal: "structure",
-          prompt: "Gaps 7–12: complete the text with a suitable word. Write exactly ONE word per gap.",
+          prompt: "Gaps 7–12: complete the text with a suitable word. Each gap takes exactly one word.",
           promptTr: "Metni oku ve 7–12. boşluklara en uygun sözcüğü bul. Her boşluğa YALNIZ BİR sözcük yaz.",
           texts: [
             {
@@ -206,7 +206,7 @@ Officials are therefore being asked to think {{11}} terms of outcomes rather tha
           format: "gap",
           goal: "structure",
           prompt:
-            "Read the text and use the word given in capitals at the end of each line to form a word that fits the gap, 13 to 18.",
+            "Gaps 13 to 18: change the word in capitals at the end of the line so that it fits.",
           promptTr:
             "Metni oku ve 13–18. maddelerde büyük harfle verilen kökten boşluğa uyan sözcüğü türet.",
           texts: [
@@ -292,7 +292,7 @@ The most likely future is therefore a mixed one, with different markets making d
           format: "transform",
           goal: "structure",
           prompt:
-            "Complete the second sentence so that it has a similar meaning to the first, using the word given. Do NOT change the word given. Write between two and five words.",
+            "Rewrite the idea of the first sentence in the second one, using the word in capitals. Keep that word exactly as it is. Use two to five words.",
           promptTr:
             "İkinci cümleyi, birincisiyle aynı anlama gelecek biçimde tamamla; verilen sözcüğü kullan ve DEĞİŞTİRME. İki ile beş sözcük arası yaz.",
           items: [
@@ -343,7 +343,7 @@ The most likely future is therefore a mixed one, with different markets making d
           no: 5,
           format: "mcq",
           goal: "opinion",
-          prompt: "Read the article and questions 23 to 27. Choose a, b, c or d.",
+          prompt: "Questions 23 to 27 are about the article. Pick one answer: a, b, c or d.",
           promptTr: "Yazıyı ve 23–27. maddeleri oku. a, b, c ya da d'yi seç.",
           texts: [
             {
@@ -429,7 +429,7 @@ I am not going to recommend that anybody repeat it. What I would recommend is ch
           format: "match",
           goal: "structure",
           prompt:
-            "Read the text. One sentence is missing from each of the gaps 28 to 31. Which sentence a to e fits which gap? One sentence fits nowhere.",
+            "Read the text. Gaps 28 to 31 each need One sentence. Which sentence a to e fits which gap? One sentence is extra.",
           promptTr:
             "Metni oku. 28–31. boşluklarda birer cümle eksik. a–e cümlelerinden hangisi hangi boşluğa uyar? Bir cümle hiçbir yere uymuyor.",
           texts: [
@@ -508,7 +508,7 @@ None of this argues against buying from a nearby farm, which supports things tha
           goal: "detail",
           reuseOptions: true,
           prompt:
-            "Read the four short texts a to d. For questions 32 to 36, decide which text says this. The texts may be chosen more than once.",
+            "Read the four short texts a to d. Questions 32 to 36: which text is it? A text can be the answer more than once.",
           promptTr:
             "a'dan d'ye dört kısa metni oku. 32–36. maddeler için bunu hangi metin söylüyor, karar ver. Bir metin birden çok kez seçilebilir.",
           options: [
@@ -589,7 +589,7 @@ None of this argues against buying from a nearby farm, which supports things tha
       skill: "listening",
       minutes: 40,
       instruction:
-        "This part has four tasks. You hear short extracts, a talk, six speakers and an interview. You hear every recording twice.",
+        "There are four tasks in this part. You hear short extracts, a talk, six speakers and an interview. Each recording plays twice.",
       instructionTr:
         "Bu bölümde dört görev var. Kısa parçalar, bir sunum, altı konuşmacı ve bir söyleşi dinleyeceksin. Her kaydı iki kez dinleyebilirsin.",
       tasks: [
@@ -598,7 +598,7 @@ None of this argues against buying from a nearby farm, which supports things tha
           no: 1,
           format: "mcq",
           goal: "detail",
-          prompt: "You hear eight short extracts. Choose a, b or c. You hear every extract twice.",
+          prompt: "You hear eight short extracts. Pick one answer: a, b or c. Each extract plays twice.",
           promptTr: "Sekiz kısa parça dinleyeceksin. a, b ya da c'yi seç. Her parçayı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -793,7 +793,7 @@ None of this argues against buying from a nearby farm, which supports things tha
           format: "notes",
           goal: "detail",
           prompt:
-            "You hear a woman reporting the results of a vegetable box scheme. Complete the sentences, questions 9 to 16, with a word or a number. You hear the report twice.",
+            "You hear a woman reporting the results of a vegetable box scheme. Complete the sentences, questions 9 to 16, with a word or a number. The report plays twice.",
           promptTr:
             "Bir sebze kutusu programının sonuçlarını anlatan bir kadını dinleyeceksin. 9–16. maddelerdeki cümleleri bir sözcük ya da sayıyla tamamla. Kaydı iki kez dinleyebilirsin.",
           texts: [
@@ -922,7 +922,7 @@ The households who leave within eight weeks are the ones the scheme most wanted 
           format: "match",
           goal: "opinion",
           prompt:
-            "You hear six speakers talking about food and farming, questions 17 to 22. Choose from a to h what each speaker says. You use each letter once only. You hear the recordings twice.",
+            "You hear six speakers talking about food and farming, questions 17 to 22. Choose from a to h what each speaker says. You use each letter once only. The recordings play twice.",
           promptTr:
             "Gıda ve tarım üzerine konuşan altı kişi dinleyeceksin, 17–22. maddeler. Her konuşmacının söylediğini a'dan h'ye seç. Her harf en fazla bir kez kullanılır. Kayıtları iki kez dinleyebilirsin.",
           options: [
@@ -1071,7 +1071,7 @@ The households who leave within eight weeks are the ones the scheme most wanted 
           no: 4,
           format: "mcq",
           goal: "opinion",
-          prompt: "You hear an interview with a woman who reduced the size of her farm. Choose a, b or c for questions 23 to 30. You hear the interview twice.",
+          prompt: "You hear an interview with a woman who reduced the size of her farm. Questions 23 to 30: pick one answer, a, b or c. The interview plays twice.",
           promptTr: "Çiftliğini küçülten bir kadınla söyleşi dinleyeceksin. 23–30. maddeler için a, b ya da c'yi seç. Kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -1204,7 +1204,7 @@ The households who leave within eight weeks are the ones the scheme most wanted 
     {
       skill: "writing",
       minutes: 70,
-      instruction: "This part has two tasks. Write 140 to 190 words for each. Both are compulsory.",
+      instruction: "There are two tasks in this part. Write 140 to 190 words for each. You must do both.",
       instructionTr: "Bu bölümde iki görev var. Her biri için 140–190 kelime yaz. İkisi de zorunlu.",
       tasks: [
         {
@@ -1286,7 +1286,7 @@ For anybody who cooks from what they find, however, it is the best two hours of 
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "This part has three tasks: an interview, a long turn, and a task we do together.",
+      instruction: "There are three tasks in this part: an interview, a long turn, and a task we do together.",
       instructionTr: "Bu bölümde üç görev var: söyleşi, tek başına konuşma ve birlikte yapılan bir görev.",
       tasks: [
         {

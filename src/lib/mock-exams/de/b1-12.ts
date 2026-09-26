@@ -37,7 +37,7 @@ export const B1_12: MockPaper = {
       skill: "reading",
       minutes: 65,
       instruction:
-        "Dieser Teil hat fünf Aufgaben. Sie lesen einen Bericht, kurze Texte, Anzeigen, Forumsbeiträge und Regeln.",
+        "In diesem Teil gibt es fünf Aufgaben. Sie lesen einen Bericht, kurze Texte, Anzeigen, Forumsbeiträge und Regeln.",
       instructionTr:
         "Bu bölümde beş görev var. Bir haber, kısa metinler, ilanlar, forum yorumları ve kurallar okuyacaksın.",
       tasks: [
@@ -46,7 +46,7 @@ export const B1_12: MockPaper = {
           no: 1,
           format: "truefalse",
           goal: "detail",
-          prompt: "Lesen Sie den Text und die Aufgaben 1 bis 6. Sind die Aussagen richtig oder falsch?",
+          prompt: "Lesen Sie zuerst den Text; dazu gehören die Aufgaben 1 bis 6. Richtig oder falsch? Entscheiden Sie bei jedem Satz.",
           promptTr: "Metni ve 1–6. maddeleri oku. İfadeler doğru mu yanlış mı?",
           texts: [
             {
@@ -142,7 +142,7 @@ Schwierig war die Suche nach Patinnen und Paten. Auf den ersten Aufruf meldeten 
           no: 2,
           format: "mcq",
           goal: "gist",
-          prompt: "Lesen Sie die sechs Texte. Worum geht es? Wählen Sie a, b oder c.",
+          prompt: "Lesen Sie die sechs Texte. Worum geht es? Kreuzen Sie a, b oder c an.",
           promptTr: "Altı metni oku. Konu ne? a, b ya da c'yi seç.",
           texts: [
             {
@@ -331,7 +331,7 @@ Ayla Cakir`,
           format: "match",
           goal: "orientation",
           prompt:
-            "Die Personen 13 bis 19 suchen ein Angebot zum Deutschlernen. Lesen Sie die Anzeigen a bis j. Welche Anzeige passt zu welcher Person? Jede Anzeige passt nur einmal. Drei Anzeigen passen zu niemandem.",
+            "Die Personen 13 bis 19 suchen ein Angebot zum Deutschlernen. Lesen Sie die Anzeigen a bis j. Finden Sie für jede Person die passende Anzeige. Keine Anzeige wird zweimal gebraucht. Drei Anzeigen bleiben übrig.",
           promptTr:
             "13–19. kişiler Almanca öğrenmek için bir imkân arıyor. a–j ilanlarını oku. Hangi ilan hangi kişiye uyar? Her ilan yalnız bir kez kullanılır; üç ilan hiç kimseye uymaz.",
           options: [
@@ -574,7 +574,7 @@ Frau Sperling: Ich bin dafür. Bei uns bezahlt die Firma die Hälfte der Zeit un
           no: 5,
           format: "mcq",
           goal: "instruction",
-          prompt: "Lesen Sie die Kursordnung und die Aufgaben 27 bis 30. Wählen Sie a, b oder c.",
+          prompt: "Lesen Sie zuerst die Kursordnung; dazu gehören die Aufgaben 27 bis 30. Kreuzen Sie a, b oder c an.",
           promptTr: "Kurs yönetmeliğini ve 27–30. maddeleri oku. a, b ya da c'yi seç.",
           texts: [
             {
@@ -673,7 +673,7 @@ Bei einem Rücktritt bis eine Woche vor Kursbeginn erstatten wir die volle Gebü
       skill: "listening",
       minutes: 40,
       instruction:
-        "Dieser Teil hat vier Aufgaben. Sie hören kurze Texte, ein Beratungsgespräch, einen Vortrag und eine Diskussion.",
+        "In diesem Teil gibt es vier Aufgaben. Sie hören kurze Texte, ein Beratungsgespräch, einen Vortrag und eine Diskussion.",
       instructionTr:
         "Bu bölümde dört görev var. Kısa kayıtlar, bir danışma görüşmesi, bir sunum ve bir tartışma dinleyeceksin.",
       tasks: [
@@ -682,7 +682,7 @@ Bei einem Rücktritt bis eine Woche vor Kursbeginn erstatten wir die volle Gebü
           no: 1,
           format: "mixed",
           goal: "detail",
-          prompt: "Sie hören fünf kurze Texte. Zu jedem Text gibt es zwei Aufgaben. Sie hören jeden Text einmal.",
+          prompt: "Sie hören fünf kurze Texte. Jeder Text hat zwei Aufgaben. Jeder Text wird nur einmal abgespielt.",
           promptTr: "Beş kısa kayıt dinleyeceksin. Her kayıt için iki madde var. Her kaydı bir kez dinleyeceksin.",
           texts: [
             {
@@ -864,7 +864,7 @@ Bei einem Rücktritt bis eine Woche vor Kursbeginn erstatten wir die volle Gebü
           no: 2,
           format: "mcq",
           goal: "detail",
-          prompt: "Sie hören ein Beratungsgespräch. Wählen Sie a, b oder c. Sie hören den Text zweimal.",
+          prompt: "Sie hören ein Beratungsgespräch. Kreuzen Sie a, b oder c an. Der Text wird zweimal abgespielt.",
           promptTr: "Bir danışma görüşmesi dinleyeceksin. a, b ya da c'yi seç. Kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -982,7 +982,7 @@ Bei einem Rücktritt bis eine Woche vor Kursbeginn erstatten wir die volle Gebü
           no: 3,
           format: "truefalse",
           goal: "detail",
-          prompt: "Sie hören einen Vortrag. Sind die Aussagen richtig oder falsch? Sie hören den Text zweimal.",
+          prompt: "Sie hören einen Vortrag. Richtig oder falsch? Entscheiden Sie bei jedem Satz. Der Text wird zweimal abgespielt.",
           promptTr: "Bir sunum dinleyeceksin. İfadeler doğru mu yanlış mı? Kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -1102,7 +1102,7 @@ Bei einem Rücktritt bis eine Woche vor Kursbeginn erstatten wir die volle Gebü
           no: 4,
           format: "mcq",
           goal: "opinion",
-          prompt: "Sie hören eine Diskussion. Wählen Sie a, b oder c. Sie hören den Text zweimal.",
+          prompt: "Sie hören eine Diskussion. Kreuzen Sie a, b oder c an. Der Text wird zweimal abgespielt.",
           promptTr: "Bir tartışma dinleyeceksin. a, b ya da c'yi seç. Kaydı iki kez dinleyebilirsin.",
           texts: [
             {
@@ -1283,7 +1283,7 @@ Bei einem Rücktritt bis eine Woche vor Kursbeginn erstatten wir die volle Gebü
     {
       skill: "writing",
       minutes: 60,
-      instruction: "Dieser Teil hat drei Aufgaben: eine Nachricht, einen Forumsbeitrag und eine kurze offizielle Mitteilung.",
+      instruction: "In diesem Teil gibt es drei Aufgaben: eine Nachricht, einen Forumsbeitrag und eine kurze offizielle Mitteilung.",
       instructionTr: "Bu bölümde üç görev var: bir ileti, bir forum yorumu ve kısa resmî bir bildirim.",
       tasks: [
         {
@@ -1402,7 +1402,7 @@ Tesfay Tadesse`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "Dieser Teil hat drei Aufgaben: gemeinsam etwas planen, einen kurzen Vortrag halten und darauf reagieren.",
+      instruction: "In diesem Teil gibt es drei Aufgaben: gemeinsam etwas planen, einen kurzen Vortrag halten und darauf reagieren.",
       instructionTr: "Bu bölümde üç görev var: birlikte plan yapmak, kısa bir sunum yapmak ve ona karşılık vermek.",
       tasks: [
         {
