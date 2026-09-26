@@ -221,7 +221,7 @@ export const deC1B01: Conversation[] = [
     ],
     lecture: [
       { say: [tr("Merhaba! Bugün Almancanın en sinsi tarafı: aynı cümle, iki anlam. Farkı taşıyan şey küçük kelimeler ve ton. Hazır mısın?")], expect: { kind: "confirm" } },
-      { say: [tr("Bir örnek:"), de("Eigentlich ist die Idee gut."), tr("Kulağa övgü gibi geliyor ama 'eigentlich' bir 'ama' vaat eder. C1'de bunu duymak da kurmak da senden bekleniyor. Önce kelimeler.")] },
+      { say: [tr("Bir örnek:"), de("Eigentlich ist die Idee gut."), tr("'Eigentlich' aslında demek. Kulağa övgü gibi geliyor ama bir 'ama' vaat eder. C1'de bunu duymak da kurmak da senden bekleniyor. Önce kelimeler.")] },
       word("İlk", { de: "die Andeutung", tr: "ima" }),
       word("İkinci", { de: "eigentlich", tr: "aslında" }),
       word("Üçüncü", { de: "an sich", tr: "esasen" }),
