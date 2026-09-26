@@ -208,40 +208,21 @@ async function main() {
   `) as Row[];
   if (n(ls[0]?.n)) console.log(`    konuşma başlangıcı ${ls[0].n} · kaldığı yerden ${ls[0].resumed} (${pct(n(ls[0].resumed), n(ls[0].n))})`);
 
-  // 10. Söyleyiş: karar kimin
-  const ss = (await q`
-    select kind as via, count(*)::int as n, count(*) filter (where value = 1)::int as ok
-    from events where name = 'speak_self' and day >= current_date - ${days}::int group by 1 order by 1
-  `) as Row[];
-  head("10. Söyleyiş kararı", "tanıyıcı (asr) mı öğrenci (self) mi karar verdi · doğru oranı — self payı yüksekse drill sınamıyor");
-  for (const r of ss) console.log(`  ${String(r.via).padEnd(6)} ${pad(r.n, 5)} karar  doğru ${pct(n(r.ok), n(r.n))}`);
-  if (!ss.length) console.log("  (kayıt yok)");
+  // 10. Telaffuz puanı
+  head("10. Telaffuz puanı", "klip · ortalama puan · 80 ve üstü · kişi");
   const pr = (await q`
     select count(*)::int as n, round(avg(value))::int as avg_score, count(*) filter (where value >= 80)::int as passed, count(distinct user_id)::int as people
     from events where name = 'pronounce' and day >= current_date - ${days}::int
   `) as Row[];
-  if (n(pr[0]?.n)) console.log(`  telaffuz puanı: ${pr[0].n} klip · ort ${pr[0].avg_score} · geçen ${pct(n(pr[0].passed), n(pr[0].n))} · ${pr[0].people} kişi`);
+  if (n(pr[0]?.n)) console.log(`  ${pr[0].n} klip · ort ${pr[0].avg_score} · geçen ${pct(n(pr[0].passed), n(pr[0].n))} · ${pr[0].people} kişi`);
+  else console.log("  (kayıt yok)");
 
-  // 11. Dilbilgisi drill'leri
-  const dr = (await q`
-    select kind as table_id, count(*)::int as sets, round(avg(value))::int as avg_pct, count(distinct user_id)::int as people
-    from events where name = 'drill_finish' and day >= current_date - ${days}::int group by 1 order by sets desc
-  `) as Row[];
-  head("11. Dilbilgisi drill setleri", "tablo · set · ortalama doğru · kişi");
-  for (const r of dr) console.log(`  ${String(r.table_id).padEnd(22)} ${pad(r.sets, 4)}  %${pad(r.avg_pct, 3)}  ${r.people} kişi`);
-  if (!dr.length) console.log("  (kayıt yok)");
-  const de = (await q`
-    select kind as error_type, count(*)::int as n, count(*) filter (where value = 1)::int as ok
-    from events where name = 'drill' and day >= current_date - ${days}::int group by 1 order by n desc
-  `) as Row[];
-  for (const r of de) console.log(`    ${String(r.error_type).padEnd(16)} ${pad(r.n, 5)} cevap  doğru ${pct(n(r.ok), n(r.n))}`);
-
-  // 12. Tur türleri
+  // 11. Tur türleri
   const st = (await q`
     select coalesce(split_part(kind, ':', 1), 'eski') as mode, count(*)::int as n, count(distinct user_id)::int as people
     from events where name = 'session_start' and day >= current_date - ${days}::int group by 1 order by n desc
   `) as Row[];
-  head("12. Tur türleri", "karışık · tek oyun · ek tur — üretim oranı düşükse tek oyun tercihi ipucu verir");
+  head("11. Tur türleri", "karışık · tek oyun · ek tur — üretim oranı düşükse tek oyun tercihi ipucu verir");
   for (const r of st) console.log(`  ${String(r.mode).padEnd(8)} ${pad(r.n, 5)} tur · ${r.people} kişi`);
   const sg = (await q`
     select split_part(kind, ':', 2) as game, count(*)::int as n from events
@@ -249,24 +230,24 @@ async function main() {
   `) as Row[];
   for (const r of sg) console.log(`    tek oyun ${String(r.game).padEnd(14)} ${pad(r.n, 4)}`);
 
-  // 13. Ekranda geçen süre — öğrenme yüzeyleri
+  // 12. Ekranda geçen süre — öğrenme yüzeyleri
   const ts = (await q`
     select kind as screen, sum(value)::int as seconds, count(*)::int as visits, count(distinct user_id)::int as people
     from events where name = 'time_spent' and day >= current_date - ${days}::int
-      and kind in ('learn','conversation','skill','drill','cheatsheet','exam','placement','weekly','conversation_scored')
+      and kind in ('learn','immersion','conversation','conversation_scored','skill','exam','placement','weekly')
     group by 1 order by seconds desc
   `) as Row[];
-  head("13. Öğrenme yüzeylerinde geçen süre", "ekran · toplam dakika · kalış · ortalama kalış · kişi");
+  head("12. Öğrenme yüzeylerinde geçen süre", "ekran · toplam dakika · kalış · ortalama kalış · kişi");
   for (const r of ts) console.log(`  ${String(r.screen).padEnd(14)} ${pad(Math.round(n(r.seconds) / 60), 5)} dk  ${pad(r.visits, 4)} kalış  ${pad(Math.round(n(r.seconds) / Math.max(1, n(r.visits))), 4)} sn  ${r.people} kişi`);
   if (!ts.length) console.log("  (kayıt yok)");
 
-  // 14. Sağlayıcı sağlığı — sessizce düşen konuşma hattı
+  // 13. Sağlayıcı sağlığı — sessizce düşen konuşma hattı
   const ai = (await q`
     select kind, provider, count(*)::int as n, count(*) filter (where ok)::int as ok,
            round(avg(ms))::int as latency, count(*) filter (where status = 429)::int as limited
     from ai_usage where created_at >= current_date - ${days}::int group by 1, 2 order by 1, n desc
   `) as Row[];
-  head("14. AI / STT sağlığı", "tür · sağlayıcı · istek · başarı · ort gecikme — başarı %90 altı = zincir çalışıyor ama kota yakın");
+  head("13. AI / STT sağlığı", "tür · sağlayıcı · istek · başarı · ort gecikme — başarı %90 altı = zincir çalışıyor ama kota yakın");
   for (const r of ai) console.log(`  ${String(r.kind).padEnd(9)} ${String(r.provider).padEnd(12)} ${pad(r.n, 5)}  ${pct(n(r.ok), n(r.n)).padStart(5)}  ${r.latency ?? "—"} ms${n(r.limited) ? `  · 429: ${r.limited}` : ""}`);
   if (!ai.length) console.log("  (kayıt yok)");
   const ce = (await q`
