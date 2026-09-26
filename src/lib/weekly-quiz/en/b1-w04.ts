@@ -36,7 +36,7 @@ export const EN_B1_W04: QuizWeek = {
     {
       kind: "text",
       id: "t1",
-      genre: "Information leaflet",
+      genre: "Information pamphlet",
       genreTr: "Bilgilendirme broşürü",
       title: "Where does your bottle go?",
       body:

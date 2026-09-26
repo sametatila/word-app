@@ -39,8 +39,8 @@ export const EN_B2_W04: QuizWeek = {
         "Yet someone always pays, and it is worth asking who.\n\n" +
         "A recent report, which was written for several consumer groups, suggests that the cost of returns has been rising steadily over the past five years. " +
         "Up to a third of all clothes bought online are said to be sent back, and many of these are never sold again. " +
-        "Because checking, cleaning and packing a returned item can cost more than the item itself, some online shops are believed to destroy goods that are in perfect condition.\n\n" +
-        "The shops argue that generous return policies are necessary to compete. If they had not offered free returns, they say, many customers would never have started shopping online at all. " +
+        "Because checking, cleaning and packing a returned item can cost more than the item itself, some online stores are believed to destroy goods that are in perfect condition.\n\n" +
+        "The stores argue that generous return policies are necessary to compete. If they had not offered free returns, they say, many customers would never have started shopping online at all. " +
         "There is some truth in this. However, the report points out that the costs are eventually passed on to all customers through higher prices, including those who never return anything.\n\n" +
         "Some companies have started to act. One British fashion company recently introduced a small fee for returns, which led to angry reactions on social media at first. " +
         "Six months later, though, its sales had hardly changed, while the number of returns had fallen by almost forty percent.\n\n" +
@@ -76,15 +76,15 @@ export const EN_B2_W04: QuizWeek = {
       id: "en-b2-w04-r1",
       block: "read",
       ref: "t1",
-      stem: "According to the report, what do some online shops do with returned goods?",
+      stem: "According to the report, what do some online stores do with returned goods?",
       options: [
-        "They sell them again at lower prices in special shops.",
+        "They sell them again at lower prices in special stores.",
         "They give them to people in need through local groups.",
         "They are thought to destroy some of them, even when not damaged.",
         "They send them back to the factories that made them.",
       ],
       answer: 2,
-      why: "`some online shops are believed to destroy goods` edilgen bildirme kalıbı: iddia bir kaynağa dayanıyor ama kanıtlanmış bir olgu gibi sunulmuyor. `in perfect condition` 'hasarsız' demek. İndirimli satış ve bağış metinde geçmiyor.",
+      why: "`some online stores are believed to destroy goods` edilgen bildirme kalıbı: iddia bir kaynağa dayanıyor ama kanıtlanmış bir olgu gibi sunulmuyor. `in perfect condition` 'hasarsız' demek. İndirimli satış ve bağış metinde geçmiyor.",
       targets: ["reading.detail", "passive.reporting"],
     },
     {
@@ -185,7 +185,7 @@ export const EN_B2_W04: QuizWeek = {
     {
       id: "en-b2-w04-g2",
       block: "grammar",
-      stem: "If the shops ___ free returns, many customers would never have started shopping online.",
+      stem: "If the stores ___ free returns, many customers would never have started shopping online.",
       options: ["hadn't offered", "didn't offer", "wouldn't have offered", "haven't offered"],
       answer: 0,
       why: "Gerçekleşmemiş geçmiş koşulda `if` tarafı past perfect ister: `hadn't offered`. `didn't offer` ikinci tip koşula kayar ve bugünü anlatır. Türkçe '-meseydi' geçmişi ayrı bir yardımcıyla işaretlemediği için basit geçmiş yeterli görünüyor.",

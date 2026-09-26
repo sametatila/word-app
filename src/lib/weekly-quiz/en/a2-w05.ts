@@ -49,7 +49,7 @@ export const EN_A2_W05: QuizWeek = {
       plays: 2,
       segments: [
         { speaker: "Kate", text: "Hi Omar! How was your trip to Edinburgh?" },
-        { speaker: "Omar", text: "Not bad, but I didn't see much. I was ill for two days." },
+        { speaker: "Omar", text: "Not bad, but I didn't see much. I was sick for two days." },
         { speaker: "Kate", text: "Oh no! What happened?" },
         { speaker: "Omar", text: "I think I ate something bad on the train. I felt terrible, so I stayed in the hotel." },
         { speaker: "Kate", text: "Did you see a doctor?" },
@@ -105,16 +105,16 @@ export const EN_A2_W05: QuizWeek = {
       block: "listen",
       ref: "a1",
       stem: "Why didn't Omar see much in Edinburgh?",
-      options: ["The weather was bad.", "The castle was closed.", "The train was late.", "He was ill."],
+      options: ["The weather was bad.", "The castle was closed.", "The train was late.", "He was sick."],
       answer: 3,
-      why: "Gerekçe ilk cevapta: `I was ill for two days`. Tren konuşmada geçiyor ama hastalığın nereden geldiğini anlatırken, gecikme olarak değil. Duyulan sözcüğü (tren) beklenen hikâyeyle (tren → gecikme) birleştirmek tuzak.",
+      why: "Gerekçe ilk cevapta: `I was sick for two days`. Tren konuşmada geçiyor ama hastalığın nereden geldiğini anlatırken, gecikme olarak değil. Duyulan sözcüğü (tren) beklenen hikâyeyle (tren → gecikme) birleştirmek tuzak.",
       targets: ["listening.detail", "past.was-were"],
     },
     {
       id: "en-a2-w05-l2",
       block: "listen",
       ref: "a1",
-      stem: "What did Omar do when he was ill?",
+      stem: "What did Omar do when he was sick?",
       options: ["He saw a doctor.", "He called Kate.", "He went home.", "He went to a pharmacy."],
       answer: 3,
       why: "`Did you see a doctor?` → `No, but…`: doktor elendi, asıl yapılan `but`tan sonra geliyor. `did` ile sorulan soruya verilen kısa olumsuz cevabı atlayınca soru cümlesi olmuş olay gibi duyuluyor.",
@@ -252,7 +252,7 @@ export const EN_A2_W05: QuizWeek = {
       stem: "How long does it ___ to get to the airport by train?",
       options: ["need", "last", "take", "make"],
       answer: 2,
-      why: "Yolculuğun ne kadar sürdüğü `it takes` kalıbıyla sorulur. Türkçe 'sürmek' `last`e çekiyor ama `last` bir olayın süresi için (`The film lasted two hours`), bir yere varma süresi için değil.",
+      why: "Yolculuğun ne kadar sürdüğü `it takes` kalıbıyla sorulur. Türkçe 'sürmek' `last`e çekiyor ama `last` bir olayın süresi için (`The movie lasted two hours`), bir yere varma süresi için değil.",
       targets: ["collocation.take"],
       byNative: {
         de: {

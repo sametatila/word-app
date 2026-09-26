@@ -33,20 +33,20 @@ export const EN_B2_W05: QuizWeek = {
       id: "t1",
       genre: "Online forum",
       genreTr: "Çevrimiçi forum",
-      title: "Our old book shop is closing – should we have done more?",
+      title: "Our old bookstore is closing – should we have done more?",
       body:
         "Posted by Clara_M\n\n" +
-        "I've just heard that Harper's, the book shop on Mill Street which has been part of our town for over sixty years, is closing at the end of the month. " +
+        "I've just heard that Harper's, the bookstore on Mill Street which has been part of our town for over sixty years, is closing at the end of the month. " +
         "I knew it had been having difficulties for a while, but I honestly hadn't realized how bad things were.\n\n" +
-        "The family who run the shop are said to have tried everything: evenings with authors, a small café, even an online shop. " +
+        "The family who run the store are said to have tried everything: evenings with authors, a small café, even an online store. " +
         "Apparently none of it was enough. The building is going to be turned into offices for a software company, which, to be fair, will bring some jobs into the town center.\n\n" +
         "What bothers me is that most of us must have seen this coming. How many times did we look at a book in Harper's and then order it online because it was two pounds cheaper? " +
-        "I'm not blaming anyone, because I did it myself. But if more of us had bought our books there, the shop might still be open today.\n\n" +
-        "I also think the town could have done something. Other towns have reduced taxes for independent shops, and it seems to have worked.\n\n" +
+        "I'm not blaming anyone, because I did it myself. But if more of us had bought our books there, the store might still be open today.\n\n" +
+        "I also think the town could have done something. Other towns have reduced taxes for independent stores, and it seems to have worked.\n\n" +
         "Reply from Dan_K\n\n" +
-        "I understand how you feel, but I'm not sure we should blame ourselves. Book shops like Harper's have been closing all over the country, so it is probably a much bigger problem than one town's shopping habits. " +
+        "I understand how you feel, but I'm not sure we should blame ourselves. Bookstores like Harper's have been closing all over the country, so it is probably a much bigger problem than one town's shopping habits. " +
         "That said, I agree about the town. The problem should at least have been pointed out at a public meeting before the building was sold.\n\n" +
-        "The good news is that the family are apparently planning to open a smaller shop near the station. If they do, I'll definitely be buying my books there.",
+        "The good news is that the family are apparently planning to open a smaller store near the station. If they do, I'll definitely be buying my books there.",
     },
     {
       kind: "audio",
@@ -82,7 +82,7 @@ export const EN_B2_W05: QuizWeek = {
         "A software company forced the family to leave the building.",
         "It had been having difficulties for some time.",
         "The family wanted to retire after sixty years.",
-        "The town increased the taxes for small shops.",
+        "The town increased the taxes for small stores.",
       ],
       answer: 1,
       why: "`it had been having difficulties for a while` past perfect continuous: kapanış haberinden önce süren bir zorluk. Yazılım şirketi binaya sonradan gelecek olan; dükkânı çıkardığı söylenmiyor. Sonucu (binanın yeni kullanımı) sebep sanmak sık yapılan bir okuma hatası.",
@@ -95,12 +95,12 @@ export const EN_B2_W05: QuizWeek = {
       stem: "What does Clara think about the people in her town?",
       options: [
         "They are completely to blame for the closing.",
-        "They didn't know that the shop was there.",
+        "They didn't know that the store was there.",
         "They probably helped cause the problem by buying online.",
-        "They tried very hard to save the shop.",
+        "They tried very hard to save the store.",
       ],
       answer: 2,
-      why: "`must have seen this coming` bir çıkarım; `I'm not blaming anyone … I did it myself` suçlamayı yumuşatıyor. Karma koşul (`if more of us had bought …, the shop might still be open today`) geçmişte yapılmayan alışverişi bugünkü sonuca bağlıyor.",
+      why: "`must have seen this coming` bir çıkarım; `I'm not blaming anyone … I did it myself` suçlamayı yumuşatıyor. Karma koşul (`if more of us had bought …, the store might still be open today`) geçmişte yapılmayan alışverişi bugünkü sonuca bağlıyor.",
       targets: ["reading.inference", "modal-perfect.must-have", "conditional.mixed"],
     },
     {
@@ -111,7 +111,7 @@ export const EN_B2_W05: QuizWeek = {
       options: [
         "The town should have done more.",
         "The people in the town are to blame.",
-        "The book shop will definitely open again.",
+        "The bookstore will definitely open again.",
         "The software company is bad for the town.",
       ],
       answer: 0,
@@ -170,7 +170,7 @@ export const EN_B2_W05: QuizWeek = {
     {
       id: "en-b2-w05-g1",
       block: "grammar",
-      stem: "The family who run the shop ___ to have tried everything.",
+      stem: "The family who run the store ___ to have tried everything.",
       options: ["say", "are said", "are saying", "have said"],
       answer: 1,
       why: "Kaynağı belirsiz, geçmişe dair bilgi `are said to have` + üçüncü hâl ile verilir. Türkçe 'her şeyi denemişler' kanıtsallık ekiyle kurulduğu için aile özne olarak kalıyor ve etken `say` seçiliyor; ama sözü söyleyen aile değil.",
@@ -186,7 +186,7 @@ export const EN_B2_W05: QuizWeek = {
     {
       id: "en-b2-w05-g2",
       block: "grammar",
-      stem: "If more of us had bought our books there, the shop ___ still open today.",
+      stem: "If more of us had bought our books there, the store ___ still open today.",
       options: ["might have been", "might be", "would have", "had been"],
       answer: 1,
       why: "Koşul geçmişte, sonuç bugünde (`today`): karma koşul, sonuç tarafı `might/would be`. `might have been` sonucu da geçmişe taşır ve `today` ile çelişir. Öğrenciyi geçmişe çeken `if` tarafındaki past perfect; sonuç tarafı ise `today` ile bugüne bağlı.",
@@ -228,12 +228,12 @@ export const EN_B2_W05: QuizWeek = {
     {
       id: "en-b2-w05-g4",
       block: "grammar",
-      stem: "Which sentence suggests that there is only ONE book shop in the town?",
+      stem: "Which sentence suggests that there is only ONE bookstore in the town?",
       options: [
-        "The book shop which is on Mill Street is closing.",
-        "The book shop that is on Mill Street is closing.",
-        "The book shop is on Mill Street which is closing.",
-        "The book shop, which is on Mill Street, is closing.",
+        "The bookstore which is on Mill Street is closing.",
+        "The bookstore that is on Mill Street is closing.",
+        "The bookstore is on Mill Street which is closing.",
+        "The bookstore, which is on Mill Street, is closing.",
       ],
       answer: 3,
       why: "Virgüllü ilgi cümlesi yalnız ek bilgi verir: kasabada tek bir kitapçı var ve o da Mill Street'te. Virgülsüz ve `that`li cümleler kitapçıyı ötekilerden ayırır, yani başka kitapçılar da olabilir. Türkçe 'Mill Street'teki kitapçı' iki okumayı da taşıyor.",
@@ -241,10 +241,10 @@ export const EN_B2_W05: QuizWeek = {
       byNative: {
         de: {
           options: [
-            "The book shop, which is on Mill Street, is closing.",
-            "The book shop which is on Mill Street is closing.",
-            "The book shop that is on Mill Street is closing.",
-            "The book shop is on Mill Street which is closing.",
+            "The bookstore, which is on Mill Street, is closing.",
+            "The bookstore which is on Mill Street is closing.",
+            "The bookstore that is on Mill Street is closing.",
+            "The bookstore is on Mill Street which is closing.",
           ],
           answer: 0,
           why: "Almancada ilgi cümlesinden önce virgül her zaman zorunlu ve anlam ayırmaz. İngilizcede virgül, tek bir kitapçı ile birkaç kitapçıdan biri arasındaki farkı işaretliyor.",

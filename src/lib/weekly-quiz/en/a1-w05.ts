@@ -32,7 +32,7 @@ export const EN_A1_W05: QuizWeek = {
         "Hello Tim! I am in London now. " +
         "I live in a small room with a family. " +
         "I get up at 7 and go to school by bus. I learn English. " +
-        "Then I go to the shop and buy bread and milk. That is not expensive. " +
+        "Then I go to the store and buy bread and milk. That is not expensive. " +
         "Sometimes I meet friends in the city. The city is big and good. " +
         "How are you?",
     },
@@ -72,7 +72,7 @@ export const EN_A1_W05: QuizWeek = {
       stem: "What does the person buy?",
       options: ["A book", "Coffee", "Bread and milk", "Nothing"],
       answer: 2,
-      why: "\"Then I go to the shop and buy bread and milk.\" Alışveriş ve ürünler aynı cümlede bağlı.",
+      why: "\"Then I go to the store and buy bread and milk.\" Alışveriş ve ürünler aynı cümlede bağlı.",
       targets: ["reading.detail", "wordfield.shopping"],
     },
     {

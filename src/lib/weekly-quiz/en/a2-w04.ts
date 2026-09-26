@@ -31,7 +31,7 @@ export const EN_A2_W04: QuizWeek = {
     {
       kind: "text",
       id: "t1",
-      genre: "Job advert",
+      genre: "Job ad",
       genreTr: "İş ilanı",
       title: "Summer job at the Seaside Hotel",
       body:

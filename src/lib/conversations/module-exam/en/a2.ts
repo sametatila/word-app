@@ -196,7 +196,7 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
       questions: [
         { de: "Why does the patient call?", tr: "Hasta neden arıyor?", options: ["To cancel the appointment", "To change the appointment", "To ask for a medicine", "To ask about the bill"], answer: 1 },
         { de: "How long has the patient had a cough?", tr: "Hastanın öksürüğü ne zamandan beri var?", options: ["For two days", "For five days", "Since Friday", "For a week"], answer: 1 },
-        { de: "What should the patient bring?", tr: "Hasta ne getirmeli?", options: ["A thermometer", "The insurance card", "The tablets", "Nothing"], answer: 1 },
+        { de: "What should the patient bring?", tr: "Hasta ne getirmeli?", options: ["A thermometer", "The insurance card", "The pills", "Nothing"], answer: 1 },
       ],
     },
     reading: {
@@ -276,10 +276,10 @@ export const EN_A2_EXAMS: ModuleExamPlan[] = [
       title: "Rules for the building",
       titleTr: "Bina kuralları",
       genre: "Duyuru",
-      text: "RULES FOR THE BUILDING\n\nDear residents,\n\nPlease read these rules carefully.\n\n1. After ten o'clock you must not make noise.\n2. You have to put the paper in the blue garbage can.\n3. Bikes are forbidden in the hallway. There is a place for them in the basement.\n4. You don't have to clean the stairs — the caretaker does it every Friday.\n\nIf something is broken, please call the caretaker immediately.",
+      text: "RULES FOR THE BUILDING\n\nDear residents,\n\nPlease read these rules carefully.\n\n1. After ten o'clock you must not make noise.\n2. You have to put the paper in the blue garbage can.\n3. Bikes are forbidden in the hallway. There is a place for them in the basement.\n4. You don't have to clean the stairs — the superintendent does it every Friday.\n\nIf something is broken, please call the superintendent immediately.",
       questions: [
         { de: "What can't the residents do after ten o'clock?", tr: "Kiracılar saat ondan sonra ne yapmamalı?", options: ["Make noise", "Use the elevator", "Clean the stairs", "Park a bike"], answer: 0 },
-        { de: "Who cleans the stairs?", tr: "Merdivenleri kim temizliyor?", options: ["The residents", "The caretaker", "Nobody", "A mechanic"], answer: 1 },
+        { de: "Who cleans the stairs?", tr: "Merdivenleri kim temizliyor?", options: ["The residents", "The superintendent", "Nobody", "A mechanic"], answer: 1 },
       ],
     },
     speaking: [
