@@ -942,7 +942,7 @@ New players sit in the:     {{19}} row`,
               no: 17,
               ref: "c1",
               text: "Gap 17",
-              accept: ["half past seven", "7:30", "19:30", "7.30", "19.30"],
+              accept: ["half past seven", "7:30", "19:30"],
               explain:
                 "«Rehearsals are on Wednesday at half past seven in the school hall» — prova saati. Yazıyla da rakamla da yazılabilir; yirmi dört saatlik biçim de kabul edilir.",
             },

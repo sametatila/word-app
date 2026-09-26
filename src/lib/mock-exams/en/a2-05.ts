@@ -638,7 +638,7 @@ You must bring:        an {{10}}`,
               no: 8,
               ref: "b1",
               text: "Gap 8",
-              accept: ["half past six", "6:30", "18:30", "6.30", "18.30"],
+              accept: ["half past six", "6:30", "18:30"],
               explain:
                 "«We meet at half past six in the school kitchen» — buluşma saati. Yazıyla da rakamla da yazılabilir; yirmi dört saatlik biçim de kabul edilir.",
             },

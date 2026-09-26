@@ -856,7 +856,7 @@ Group:              Tuesday`,
               id: "en-a1-02-w1-2",
               no: 2,
               text: "Date of birth",
-              accept: ["March 14, 1998", "March 14 1998", "03/14/1998", "14 March 1998", "14.03.1998"],
+              accept: ["March 14, 1998", "03/14/1998", "14 March 1998", "14.03.1998"],
               explain:
                 "Yönergede «He was born on March 14, 1998» geçiyor. Ay adıyla ya da rakamla yazım kabul edilir; ölçülen şey biçim değil doğru tarihi taşımak.",
             },
