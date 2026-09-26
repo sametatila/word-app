@@ -16,7 +16,7 @@
  { "conversation": "de-a2-friseur", "de": "Können Sie mir die Haare föhnen?", "en": "asks for an extra service" },
  { "conversation": "de-a2-reklamation", "de": "Das Paket ist beschädigt angekommen.", "en": "describes the state the parcel arrived in" },
  { "conversation": "de-a2-reklamation", "de": "Ich möchte das zurückgeben.", "en": "states that you want to return it" },
- { "conversation": "de-a2-handyvertrag", "de": "Dieser Tarif ist teurer als der andere.", "en": "compares two tariffs" },
+ { "conversation": "de-a2-handyvertrag", "de": "Dieser Tarif ist teurer als der andere.", "en": "compares two plans" },
  { "conversation": "de-a2-handyvertrag", "de": "Ist das WLAN kostenlos?", "en": "asks whether a service is free" },
  { "conversation": "de-a2-bank-konto", "de": "Ich möchte ein Konto eröffnen.", "en": "states what you want at the bank" },
  { "conversation": "de-a2-bank-konto", "de": "Wie hoch sind die Gebühren?", "en": "asks about the fees" },

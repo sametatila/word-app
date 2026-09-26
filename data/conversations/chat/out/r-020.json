@@ -1,7 +1,7 @@
 [
  {
   "conversation": "de-b2-verabschiedung-kollegen",
-  "sceneEn": "A colleague is leaving and you are at their leaving party. Recall the time you spent together, say what they gave you, pass on your good wishes and get a promise to keep in touch.",
+  "sceneEn": "A colleague is leaving and you are at their farewell party. Recall the time you spent together, say what they gave you, pass on your good wishes and get a promise to keep in touch.",
   "partnerEn": "a colleague who is moved and looking back",
   "openingEn": "Five years — I can hardly believe it. Do you remember how chaotic my first day was?",
   "goalEn": "A shared memory has been recalled, good wishes have been passed on and a concrete promise to keep in touch has been made."
@@ -38,7 +38,7 @@
   "conversation": "de-c1-fvg-treffen",
   "sceneEn": "You are in a board meeting and a hard decision has to be made. Say which options are in question, rule one out with reasons, state the scope of the decision and bring it to a resolution.",
   "partnerEn": "a board member who wants a quick decision and plays down the risks",
-  "openingEn": "We've been going round in circles for two meetings. In your view, which options are still in question at all?",
+  "openingEn": "We've been going around in circles for two meetings. In your view, which options are still in question at all?",
   "goalEn": "The options in question have been listed, one has been ruled out with reasons, the scope of the decision has been stated and a resolution has been reached."
  },
  {
@@ -80,14 +80,14 @@
   "conversation": "de-c1-fuehrung",
   "sceneEn": "You are running a project without any formal authority and someone on the team is letting their work slip. Name the problem, give direction without giving orders, leave the responsibility with them and say you will support them.",
   "partnerEn": "a well-meaning team member who questions your authority",
-  "openingEn": "With respect — you're not formally my line manager. Why should I do it that way now?",
+  "openingEn": "With respect — you're not formally my boss. Why should I do it that way now?",
   "goalEn": "The problem has been named, direction has been given without an order, the responsibility has been left with them and support has been promised."
  },
  {
   "conversation": "de-c1-buerojargon",
   "sceneEn": "You are talking to a colleague after a meeting: work out together what the jargon in the meeting actually meant, make clear who has taken on what and settle the next step.",
   "partnerEn": "a colleague fluent in the jargon but open to making things clear",
-  "openingEn": "'We'll take that away and align on it afterwards' — honestly, do you know who's doing what now?",
+  "openingEn": "'We'll take that offline and align on it afterwards' — honestly, do you know who's doing what now?",
   "goalEn": "The real meaning behind the jargon has been worked out, who has taken on what has been made clear and the next step has been tied to a date."
  },
  {
@@ -102,12 +102,12 @@
   "sceneEn": "You are mediating between two colleagues. Report what each side has said impartially, find the common ground, make a suggestion and bring them to a step both will accept.",
   "partnerEn": "a colleague certain they are in the right and unwilling to hear the other side",
   "openingEn": "Let me say straight away: I have done nothing wrong. What has the other side claimed, then?",
-  "goalEn": "Both sides' views have been reported impartially, common ground has been found and a step both accept has been agreed."
+  "goalEn": "Both sides' views have been reported impartially, common ground has been found and a step both accept has been agreed on."
  },
  {
   "conversation": "de-c1-doch",
   "sceneEn": "A friend does not want to come to an event. Invite them, argue against their reasons, answer their negative questions with the positive 'doch' and bring it to a decision.",
-  "partnerEn": "a reluctant friend who finds an excuse for everything but can be talked round",
+  "partnerEn": "a reluctant friend who finds an excuse for everything but can be won over",
   "openingEn": "You're not seriously trying to talk me into this thing, are you?",
   "goalEn": "The invitation has been made, the excuses have been argued against and it has been decided whether your friend is coming."
  },
@@ -129,7 +129,7 @@
   "conversation": "de-c1-wohl",
   "sceneEn": "You and a colleague are talking about a decision that has not been announced. Give your guesses while showing you are not sure, keep apart what you have grounds for and what you have not, and decide what you will do.",
   "partnerEn": "a colleague who likes to speak in certainties and presents guesses as facts",
-  "openingEn": "They'll have decided it long ago. Or have you got any grounds to think otherwise?",
+  "openingEn": "They'll have decided it long ago. Or do you have any grounds to think otherwise?",
   "goalEn": "What is grounded and what is not have been separated, the guesses have been given without certainty and it has been settled what to do."
  },
  {
@@ -141,16 +141,16 @@
  },
  {
   "conversation": "de-c1-partikel-streit",
-  "sceneEn": "You are waiting on a piece of work and the other side keeps putting it off. Show your impatience in measure, give a warning, acknowledge that you are pressing them and agree a deadline.",
+  "sceneEn": "You are waiting on a piece of work and the other side keeps putting it off. Show your impatience in measure, give a warning, acknowledge that you are pressing them and agree on a deadline.",
   "partnerEn": "someone who keeps putting it off and always has an excuse ready",
   "openingEn": "I know, I know — I'm on it. Does it really have to be today?",
-  "goalEn": "Impatience has been shown in measure, a warning has been given and a binding deadline has been agreed."
+  "goalEn": "Impatience has been shown in measure, a warning has been given and a binding deadline has been agreed on."
  },
  {
   "conversation": "de-c1-untertreibung",
   "sceneEn": "You are giving your verdict on a colleague's work. Give measured praise, say what is lacking politely, explain if they ask whether you disliked it, and give a clear conclusion.",
   "partnerEn": "a colleague used to lavish praise who finds measured language cold",
-  "openingEn": "'Not bad' — does that mean good or bad? One never knows with you lot.",
+  "openingEn": "'Not bad' — does that mean good or bad? You never know with you guys.",
   "goalEn": "Measured praise and polite criticism have been given separately, the misunderstanding has been cleared up and a clear conclusion has been stated."
  },
  {
@@ -162,16 +162,16 @@
  },
  {
   "conversation": "de-c1-telefonton",
-  "sceneEn": "You are ringing an institution and the person you need is not there. Explain your situation politely, ask to be put through, leave a message if that fails and arrange a time for a call back.",
+  "sceneEn": "You are calling an institution and the person you need is not there. Explain your situation politely, ask to be put through, leave a message if that fails and arrange a time for a callback.",
   "partnerEn": "a switchboard operator who sticks to the rules and does not put people through easily",
-  "openingEn": "Good afternoon, switchboard. I'm afraid Mr Baumann is not in the building today — what is it about?",
-  "goalEn": "The matter has been explained, a message has been left and a time for a call back has been arranged."
+  "openingEn": "Hello, switchboard. I'm afraid Mr. Baumann is not in the building today — what is it about?",
+  "goalEn": "The matter has been explained, a message has been left and a time for a callback has been arranged."
  },
  {
   "conversation": "de-c1-partikel-pruefung",
   "sceneEn": "You are talking to a friend about something that has upset your plans. Change your tone three times in the conversation: first inviting and softening, then mild reproach, and at the end comfort and acceptance.",
   "partnerEn": "a friend who upset the plan, defensive at first but apologizing in the end",
-  "openingEn": "Tell me, are you cross now? It really wasn't my fault.",
+  "openingEn": "Tell me, are you annoyed now? It really wasn't my fault.",
   "goalEn": "The reproach has been voiced, the other side's reasons have been heard and the conversation has closed with acceptance and a new plan."
  }
 ]

@@ -1,8 +1,8 @@
 [
  {
   "conversation": "de-a2-sport-verletzung",
-  "sceneEn": "You have injured yourself doing sport and come to the emergency department. Say how it happened, what you have hurt and how it feels now.",
-  "partnerEn": "a nurse working fast in the emergency department",
+  "sceneEn": "You have injured yourself playing sports and come to the emergency room. Say how it happened, what you have hurt and how it feels now.",
+  "partnerEn": "a nurse working fast in the emergency room",
   "openingEn": "What happened? Where does it hurt?",
   "goalEn": "How the accident happened and what was injured have been described, the nurse has said the next step and the patient has repeated it."
  },
@@ -10,12 +10,12 @@
   "conversation": "de-a2-krankenkasse",
   "sceneEn": "You have come to a new practice for the first time. The receptionist is asking about your insurance and your card; answer, and ask whether the appointment is free.",
   "partnerEn": "a fast-talking receptionist at the desk",
-  "openingEn": "Good afternoon. Have you been to us before? Which health insurer are you with?",
+  "openingEn": "Hello. Have you been here before? Which health insurer are you with?",
   "goalEn": "The insurance details have been given, any problem with the card has been mentioned and the question of cost has been settled."
  },
  {
   "conversation": "de-a2-zahnarzt-termin",
-  "sceneEn": "Your tooth has been hurting all night and you are ringing the practice in the morning. Describe the pain, say how urgent it is and ask whether you can come in today.",
+  "sceneEn": "Your tooth has been hurting all night and you are calling the practice in the morning. Describe the pain, say how urgent it is and ask whether you can come in today.",
   "partnerEn": "a receptionist on the phone working from the appointment book",
   "openingEn": "Berger dental practice, good morning. What can I do for you?",
   "goalEn": "The pain and the urgency have been described, a time has been agreed and the patient has repeated that time."
@@ -30,7 +30,7 @@
  {
   "conversation": "de-a2-vorsorge",
   "sceneEn": "You are talking to your doctor at your annual check-up. Say what you do to stay healthy, and listen to and confirm the doctor's advice.",
-  "partnerEn": "a GP who takes preventive care seriously",
+  "partnerEn": "a family doctor who takes preventive care seriously",
   "openingEn": "Your results look good. So what do you do for your health?",
   "goalEn": "What the patient does has been described, the doctor has given at least one piece of advice and the patient has repeated it in their own words."
  },
@@ -50,16 +50,16 @@
  },
  {
   "conversation": "de-a2-wechsel-wo",
-  "sceneEn": "Your flatmate is ringing you and wants you to describe where something they left at home is. Walk round the room and say what is where.",
-  "partnerEn": "your flatmate, at work and asking for directions on the phone",
+  "sceneEn": "Your roommate is calling you and wants you to describe where something they left at home is. Walk around the room and say what is where.",
+  "partnerEn": "your roommate, at work and asking for directions on the phone",
   "openingEn": "Can you have a look? I can't remember where I put my glasses.",
   "goalEn": "At least three places have been described, the thing being looked for has been found and where it was has been said in one clear sentence."
  },
  {
   "conversation": "de-a2-wechsel-wohin",
   "sceneEn": "You are arranging your new room with a friend. They keep asking where to put the thing in their hands; you say where it goes each time.",
-  "partnerEn": "a friend walking about with boxes who keeps asking",
-  "openingEn": "I've still got the lamp here. Where shall I put it?",
+  "partnerEn": "a friend walking around with boxes who keeps asking",
+  "openingEn": "I still have the lamp here. Where should I put it?",
   "goalEn": "Where at least three things go has been said, one has been moved afterwards and the room has been finished."
  },
  {
@@ -78,28 +78,28 @@
  },
  {
   "conversation": "de-a2-leihen",
-  "sceneEn": "You are putting something together at home but you have not got the tool. Knock on your neighbor's door, ask for help, borrow a tool and say when you will bring it back.",
+  "sceneEn": "You are putting something together at home but you don't have the tool. Knock on your neighbor's door, ask for help, borrow a tool and say when you will bring it back.",
   "partnerEn": "a helpful but inquisitive neighbor",
   "openingEn": "Hello! Can I help you?",
   "goalEn": "Help has been asked for, a tool has been borrowed, a promise to return it has been made and thanks have been given."
  },
  {
   "conversation": "de-a2-paket",
-  "sceneEn": "A parcel for your neighbor has been left at your address. Knock on their door, say you took it in, say when it came and hand it over.",
-  "partnerEn": "a surprised neighbor who has been waiting for the parcel",
-  "openingEn": "Oh, hello! Do come in — has something happened?",
-  "goalEn": "Why you have the parcel has been explained, it has been handed over and the neighbor has said thank you and offered something in return."
+  "sceneEn": "A package for your neighbor has been left at your address. Knock on their door, say you took it in, say when it came and hand it over.",
+  "partnerEn": "a surprised neighbor who has been waiting for the package",
+  "openingEn": "Oh, hello! Come on in — has something happened?",
+  "goalEn": "Why you have the package has been explained, it has been handed over and the neighbor has said thank you and offered something in return."
  },
  {
   "conversation": "de-a2-laerm",
   "sceneEn": "Your upstairs neighbor makes a lot of noise at night and you have not slept all week. Knock on their door, start politely, explain the problem and find a solution together.",
   "partnerEn": "an upstairs neighbor who has no idea they are making noise",
-  "openingEn": "Hello, what's the matter? Is something not right?",
+  "openingEn": "Hello, what's the matter? Is something wrong?",
   "goalEn": "The problem has been raised politely, the neighbor has explained themselves and the two of you have agreed on something concrete."
  },
  {
   "conversation": "de-a2-hausmeister",
-  "sceneEn": "Two things have broken at home and you are ringing the property management. Describe what is broken, say how long it has been like that and ask them to send someone.",
+  "sceneEn": "Two things have broken at home and you are calling the property management. Describe what is broken, say how long it has been like that and ask them to send someone.",
   "partnerEn": "a property manager taking notes on the phone",
   "openingEn": "Weber property management, good afternoon. What's broken at your place?",
   "goalEn": "Two faults have been described, a repair has been promised and the day and time have been agreed."
@@ -108,28 +108,28 @@
   "conversation": "de-a2-neue-stelle",
   "sceneEn": "You have found a new job and met up with a friend. Talk about how you applied, how the interview went and what the job is like.",
   "partnerEn": "a friend who is looking for work themselves",
-  "openingEn": "I hear you've got a new job. How's it going, then?",
+  "openingEn": "I heard you have a new job. How's it going?",
   "goalEn": "The application, the interview and starting the job have been told in order, and you have given your friend a piece of advice."
  },
  {
   "conversation": "de-a2-weil",
   "sceneEn": "On the first day of the language course the teacher is asking the class why they are learning German. Give your reason in a subordinate clause and say what you find hard.",
   "partnerEn": "a course teacher who wants to get to know the class",
-  "openingEn": "Welcome! Do tell me: why are you learning German?",
+  "openingEn": "Welcome! Tell me: why are you learning German?",
   "goalEn": "At least two reasons have been given in subordinate clauses, one difficult point has been named and the teacher has given a piece of advice."
  },
  {
   "conversation": "de-a2-denn",
-  "sceneEn": "You are stuck in traffic and you will be late for work. Ring your colleague, say how late you will be and explain why.",
-  "partnerEn": "a colleague waiting for you who will put the meeting back",
-  "openingEn": "Hello? Where have you got to? We were going to start at nine.",
+  "sceneEn": "You are stuck in traffic and you will be late for work. Call your colleague, say how late you will be and explain why.",
+  "partnerEn": "a colleague waiting for you who will push the meeting back",
+  "openingEn": "Hello? Where are you? We were going to start at nine.",
   "goalEn": "How late you will be and the reason have been given, and you and your colleague have decided what to do."
  },
  {
   "conversation": "de-a2-kollegen",
-  "sceneEn": "It is your first day in your new job. A colleague is showing you round the office and introducing you to people. Introduce yourself and ask who does what.",
-  "partnerEn": "a helpful colleague showing you round the office",
-  "openingEn": "Welcome to the team! Shall I show you the office first?",
+  "sceneEn": "It is your first day in your new job. A colleague is showing you around the office and introducing you to people. Introduce yourself and ask who does what.",
+  "partnerEn": "a helpful colleague showing you around the office",
+  "openingEn": "Welcome to the team! Should I show you the office first?",
   "goalEn": "You have introduced yourself, met at least two people and found out who does what."
  },
  {
@@ -143,35 +143,35 @@
   "conversation": "de-a2-telefon-arbeit",
   "sceneEn": "The phone is ringing in the office and the person being asked for is not there. Take the call, find out who is calling and what about, take the number and say you will pass the message on.",
   "partnerEn": "a customer trying to reach one of your colleagues",
-  "openingEn": "Good afternoon, could I speak to Ms Keller, please?",
+  "openingEn": "Hello, could I speak to Ms. Keller, please?",
   "goalEn": "The caller's name, business and number have been taken and you have said the message will be passed on."
  },
  {
   "conversation": "de-a2-pause",
   "sceneEn": "You and a colleague are deciding where to go on your lunch break. Say what you would prefer, give your reason and choose what to eat.",
   "partnerEn": "a colleague who is tired of going to the same place every day",
-  "openingEn": "Shall we go to the canteen again, or somewhere else for once today?",
+  "openingEn": "Should we go to the cafeteria again, or somewhere else for once today?",
   "goalEn": "Where to go has been decided and you have both said what you are having."
  },
  {
   "conversation": "de-a2-urlaub-antrag",
   "sceneEn": "You want to take leave in the summer but the team is busy at that time. Give your manager the dates, say how many days you want and suggest what should happen while you are away.",
-  "partnerEn": "a manager looking at the holiday rota",
+  "partnerEn": "a manager looking at the vacation schedule",
   "openingEn": "You wanted to talk about leave? When would you like to be off?",
   "goalEn": "The dates and the length of the leave have been given, one obstacle has been discussed and a date has been agreed in the end."
  },
  {
   "conversation": "de-a2-krankmeldung-buero",
-  "sceneEn": "You have fallen ill in the morning and you are ringing the office to let them know. Say what is wrong, say how many days you will be off and discuss how you will send in the note.",
+  "sceneEn": "You have fallen ill in the morning and you are calling the office to let them know. Say what is wrong, say how many days you will be off and discuss how you will send in the note.",
   "partnerEn": "someone from HR who has answered the phone",
   "openingEn": "Good morning, HR department. What can I do for you?",
   "goalEn": "The illness has been reported, the length has been given and it has been agreed when and how the note will arrive."
  },
  {
   "conversation": "de-a2-feedback",
-  "sceneEn": "You are in your annual appraisal. Your manager is giving you feedback; say where you disagree and why, and put a request of your own politely.",
+  "sceneEn": "You are in your annual performance review. Your manager is giving you feedback; say where you disagree and why, and put a request of your own politely.",
   "partnerEn": "a manager who speaks directly but listens",
-  "openingEn": "Do sit down. How has this year been for you?",
+  "openingEn": "Have a seat. How has this year been for you?",
   "goalEn": "The year has been reviewed, one point has been objected to with reasons, and a request has been made and answered."
  }
 ]

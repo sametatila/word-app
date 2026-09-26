@@ -1,10 +1,10 @@
 [
  {
   "conversation": "de-a2-urlaub",
-  "sceneEn": "You are having a coffee with a friend who is asking about your last holiday. Say where you went with verbs of movement, and what you did there with the other auxiliary.",
-  "partnerEn": "a friend who loves holiday stories",
-  "openingEn": "Hello! You were away, of course. Where did you travel to?",
-  "goalEn": "Where you went on holiday, when, and what you did there have been described, and your friend has said something about their own holiday."
+  "sceneEn": "You are having a coffee with a friend who is asking about your last vacation. Say where you went with verbs of movement, and what you did there with the other auxiliary.",
+  "partnerEn": "a friend who loves vacation stories",
+  "openingEn": "Hi! You were away, weren't you? Where did you travel to?",
+  "goalEn": "Where you went on vacation, when, and what you did there have been described, and your friend has said something about their own vacation."
  },
  {
   "conversation": "de-a2-perfekt-unregel",
@@ -15,9 +15,9 @@
  },
  {
   "conversation": "de-a2-perfekt-trennbar",
-  "sceneEn": "You are doing the last check with your flatmate before going away. They ask, and you say what you have sorted out, using the participle of separable verbs.",
-  "partnerEn": "a flatmate who asks everything twice",
-  "openingEn": "We're setting off in a minute. Have you got everything ready?",
+  "sceneEn": "You are doing the last check with your roommate before going away. They ask, and you say what you have sorted out, using the participle of separable verbs.",
+  "partnerEn": "a roommate who asks everything twice",
+  "openingEn": "We're setting off in a minute. Did you get everything ready?",
   "goalEn": "The door, the appliances and the preparations have been gone through one by one, and you have both decided you are ready to leave."
  },
  {
@@ -51,28 +51,28 @@
  {
   "conversation": "de-a2-erste-mal",
   "sceneEn": "You are sitting with a friend and they ask about something you did for the first time in your life. Tell what happened in order and say how you felt at the time.",
-  "partnerEn": "a friend who loves listening to a story",
-  "openingEn": "Tell me: what do you still remember when you think of your first time?",
+  "partnerEn": "a friend who loves listening to stories",
+  "openingEn": "Tell me: what do you still remember when you think of your first concert or your first exam?",
   "goalEn": "A first experience has been told with both the events and the feeling, and your friend has spoken about their own first time."
  },
  {
   "conversation": "de-a2-wochenbericht",
   "sceneEn": "It is Monday morning and you are having a coffee with a colleague, summing up last week. Say what you got done, which event took place and what you did not manage.",
   "partnerEn": "a colleague whose week was as busy as yours",
-  "openingEn": "Good morning! How was your week last week?",
+  "openingEn": "Good morning! How was last week?",
   "goalEn": "At least three of the week's jobs have been summed up, one has been marked as unfinished, and your colleague has described their own week."
  },
  {
   "conversation": "de-a2-tolle-nachricht",
-  "sceneEn": "You are ringing a friend and you have good news for them. Build up the suspense first, get them guessing, then tell the news and say how it came about.",
-  "partnerEn": "a close friend who picks up straight away",
+  "sceneEn": "You are calling a friend and you have good news for them. Build up the suspense first, get them guessing, then tell the news and say how it came about.",
+  "partnerEn": "a close friend who picks up right away",
   "openingEn": "Hey! You sound excited. What's going on?",
   "goalEn": "The news has been guessed at first and then told outright, and your friend has given their reaction."
  },
  {
   "conversation": "de-a2-lebensweg",
-  "sceneEn": "Someone you have just met at the language course is asking how you came to be here. Say where you came from, what was hard at first and how things are today.",
-  "partnerEn": "someone you have just met on the course who has also just arrived",
+  "sceneEn": "Someone you have just met in your language class is asking how you came to be here. Say where you came from, what was hard at first and how things are today.",
+  "partnerEn": "someone you have just met in class who has also just arrived",
   "openingEn": "And you? How long have you been here?",
   "goalEn": "Your arrival, the early difficulty and how things are today have been told in order, and the other person has spoken about their own story."
  },
@@ -92,10 +92,10 @@
  },
  {
   "conversation": "de-a2-umzug-geschichte",
-  "sceneEn": "You have moved into your new place and a friend is ringing you. Talk about the flat hunt, moving day and the new place.",
+  "sceneEn": "You have moved into your new place and a friend is calling you. Talk about the apartment hunt, moving day and the new place.",
   "partnerEn": "a friend who is curious about your new place",
   "openingEn": "And? How did the move go?",
-  "goalEn": "The flat hunt, moving day and the state of the new place have been described, and your friend has been invited round to see it."
+  "goalEn": "The apartment hunt, moving day and the state of the new place have been described, and your friend has been invited over to see it."
  },
  {
   "conversation": "de-a2-kennenlernen",
@@ -115,7 +115,7 @@
   "conversation": "de-a2-veraenderung",
   "sceneEn": "You have met a friend you have not seen for a long time. Say what has changed in your life in recent years, what you changed on purpose and what changed by itself.",
   "partnerEn": "an old friend who is seeing you after years",
-  "openingEn": "Goodness, it's been so long! What's changed with you?",
+  "openingEn": "Wow, long time no see! What's changed with you?",
   "goalEn": "At least two changes have been described, one marked as deliberate and one as having happened by itself, and your friend has told you their own change."
  },
  {
@@ -142,8 +142,8 @@
  {
   "conversation": "de-a2-arzt",
   "sceneEn": "You have had a cough for a week and you have gone to the doctor. Describe your symptoms, say how long it has been going on, and ask what you should do.",
-  "partnerEn": "a GP who asks questions calmly",
-  "openingEn": "Good afternoon, do sit down. What's the trouble?",
+  "partnerEn": "a family doctor who asks questions calmly",
+  "openingEn": "Hello, please have a seat. What seems to be the problem?",
   "goalEn": "The symptoms and how long they have lasted have been described, the doctor has named a treatment and the patient has repeated it in their own words."
  },
  {
@@ -155,23 +155,23 @@
  },
  {
   "conversation": "de-a2-duerfen",
-  "sceneEn": "You have come for a check-up after an operation and you want to know what you are allowed to do. Ask one by one about sport, food and work.",
+  "sceneEn": "You have come for a check-up after an operation and you want to know what you are allowed to do. Ask one by one about exercise, food and work.",
   "partnerEn": "a doctor who speaks plainly and answers briefly",
   "openingEn": "The wound looks good. Do you have any questions?",
   "goalEn": "Permission has been asked about at least three things, the doctor has allowed or forbidden each one, and the patient has repeated the bans in their own words."
  },
  {
   "conversation": "de-a2-hausmittel",
-  "sceneEn": "A friend has caught a cold and is ringing you. Suggest at least two home remedies, say how to make them and say what each is good for.",
+  "sceneEn": "A friend has caught a cold and is calling you. Suggest at least two home remedies, say how to make them and say what each is good for.",
   "partnerEn": "a friend with a cold who has lost their voice",
-  "openingEn": "I've got a terrible cold. Have you got any tips for me?",
+  "openingEn": "I have a terrible cold. Do you have any tips for me?",
   "goalEn": "At least two remedies have been suggested, one described with how it is made, and your friend has said which they will try."
  },
  {
   "conversation": "de-a2-apotheke-beratung",
   "sceneEn": "You are at the pharmacy and you want something for your cough. Ask whether you need a prescription, how often you take it and how to use it.",
   "partnerEn": "a pharmacist who explains patiently",
-  "openingEn": "Good afternoon! How can I help you?",
+  "openingEn": "Hello! How can I help you?",
   "goalEn": "The product has been bought, the dose and the way to take it have been learned, and the customer has repeated the instructions in their own words."
  }
 ]

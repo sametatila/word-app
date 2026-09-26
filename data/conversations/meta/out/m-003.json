@@ -1,5 +1,5 @@
 [
- { "conversation": "de-a2-urlaub", "titleEn": "Your last holiday", "summaryEn": "Teaches you to talk about the past, telling the two perfect auxiliaries apart." },
+ { "conversation": "de-a2-urlaub", "titleEn": "Your last vacation", "summaryEn": "Teaches you to talk about the past, telling the two perfect auxiliaries apart." },
  { "conversation": "de-a2-perfekt-unregel", "titleEn": "Irregular past participles", "summaryEn": "Teaches you the irregular participles of common verbs and why they have to be learned by heart." },
  { "conversation": "de-a2-perfekt-trennbar", "titleEn": "The perfect of separable verbs", "summaryEn": "Teaches you the participle of separable verbs: the syllable that slips in between prefix and stem." },
  { "conversation": "de-a2-gestern-abend", "titleEn": "Last night", "summaryEn": "Teaches you to tell an evening in order: first, then, and last of all." },
@@ -15,8 +15,8 @@
  { "conversation": "de-a2-umzug-geschichte", "titleEn": "The story of a move", "summaryEn": "Teaches you to tell the story of a move from start to finish and to say how hard it was at first." },
  { "conversation": "de-a2-kennenlernen", "titleEn": "How you met", "summaryEn": "Teaches you to tell the story of meeting someone and of a relationship, using reflexive verbs." },
  { "conversation": "de-a2-drei-jahre", "titleEn": "Duration and point in time", "summaryEn": "Teaches you to tell a stretch of time that is still running from a point left in the past." },
- { "conversation": "de-a2-veraenderung", "titleEn": "Changes", "summaryEn": "Teaches you to say what has changed and what you have got used to." },
- { "conversation": "de-a2-grosseltern", "titleEn": "Grandparents' memories", "summaryEn": "Teaches you to tell childhood memories: what it was like there, what there was, what was allowed." },
+ { "conversation": "de-a2-veraenderung", "titleEn": "Changes", "summaryEn": "Teaches you to say what has changed and what you remember." },
+ { "conversation": "de-a2-grosseltern", "titleEn": "Grandparents' memories", "summaryEn": "Teaches you to tell childhood memories: what it was like there, what there was, what people were like." },
  { "conversation": "de-a2-peinlich", "titleEn": "An embarrassing moment", "summaryEn": "Teaches you to tell an embarrassing thing that happened to you." },
  { "conversation": "de-a2-erfolg", "titleEn": "A proud moment", "summaryEn": "Teaches you to talk about something you achieved and the work behind it." },
  { "conversation": "de-a2-arzt", "titleEn": "At the doctor's", "summaryEn": "Teaches you to take and give advice, with three patterns built on the modal 'sollen'." },
@@ -36,7 +36,7 @@
  { "conversation": "de-a2-einrichten", "titleEn": "Arranging a room", "summaryEn": "Teaches you to furnish a room together and to argue about where things go." },
  { "conversation": "de-a2-nachbarschaft", "titleEn": "The neighborhood", "summaryEn": "Teaches you to describe what is where in your neighborhood." },
  { "conversation": "de-a2-leihen", "titleEn": "Borrowing and helping", "summaryEn": "Teaches you to ask a neighbor for help and for things, and to thank them." },
- { "conversation": "de-a2-paket", "titleEn": "Taking in a parcel", "summaryEn": "Teaches you to accept a parcel for a neighbor and to hand it over." },
+ { "conversation": "de-a2-paket", "titleEn": "Taking in a package", "summaryEn": "Teaches you to accept a package for a neighbor and to hand it over." },
  { "conversation": "de-a2-laerm", "titleEn": "A noise complaint", "summaryEn": "Teaches you to raise the noise from upstairs politely and to soften the complaint." },
  { "conversation": "de-a2-hausmeister", "titleEn": "The property manager", "summaryEn": "Teaches you to describe a fault at home and to arrange an appointment for the repair." },
  { "conversation": "de-a2-neue-stelle", "titleEn": "A new job", "summaryEn": "Teaches you to talk about looking for work and starting a new job." },
@@ -47,6 +47,6 @@
  { "conversation": "de-a2-telefon-arbeit", "titleEn": "Phone calls at work", "summaryEn": "Teaches you to answer the phone at work, take a note and pass a message on." },
  { "conversation": "de-a2-pause", "titleEn": "The lunch break", "summaryEn": "Teaches you to state a preference at lunch and to choose a dish." },
  { "conversation": "de-a2-urlaub-antrag", "titleEn": "Asking for leave", "summaryEn": "Teaches you to make a request for leave in writing and in person." },
- { "conversation": "de-a2-krankmeldung-buero", "titleEn": "The sick note", "summaryEn": "Teaches you to report an illness to work and to send the sick note by email." },
- { "conversation": "de-a2-feedback", "titleEn": "Feedback", "summaryEn": "Teaches you to understand and respond to feedback in an appraisal." }
+ { "conversation": "de-a2-krankmeldung-buero", "titleEn": "The doctor's note", "summaryEn": "Teaches you to report an illness to work and to send the doctor's note by email." },
+ { "conversation": "de-a2-feedback", "titleEn": "Feedback", "summaryEn": "Teaches you to understand and respond to feedback in a performance review." }
 ]

@@ -8,7 +8,7 @@
  { "conversation": "de-a1-alphabet", "titleEn": "Spelling", "summaryEn": "Teaches you to spell your name and ask how a word is written." },
  { "conversation": "de-a1-beruf", "titleEn": "Jobs", "summaryEn": "Teaches you to say your profession, what you do and which company you work for." },
  { "conversation": "de-a1-alter", "titleEn": "Age and birthplace", "summaryEn": "Teaches you to give your age, ask someone else's and say where you were born." },
- { "conversation": "de-a1-formular", "titleEn": "Filling in a form", "summaryEn": "Teaches you to understand and answer the name, address and zip code questions on an official form." },
+ { "conversation": "de-a1-formular", "titleEn": "Filling out a form", "summaryEn": "Teaches you to understand and answer the name, address and zip code questions on an official form." },
  { "conversation": "de-a1-familie", "titleEn": "My family", "summaryEn": "Teaches you to introduce family members and how the possessive changes with the noun." },
  { "conversation": "de-a1-geschwister", "titleEn": "Siblings", "summaryEn": "Teaches you to talk about your siblings and how a masculine noun changes as an object." },
  { "conversation": "de-a1-kein", "titleEn": "Negating with kein", "summaryEn": "Teaches you to say that something is not there, with the ready-made refusals of daily life." },
@@ -21,7 +21,7 @@
  { "conversation": "de-a1-familienfest", "titleEn": "A family gathering", "summaryEn": "Teaches you to plan a family gathering: who is coming and who is bringing what." },
  { "conversation": "de-a1-cafe", "titleEn": "At the cafe", "summaryEn": "Teaches you to order politely and ask for the bill." },
  { "conversation": "de-a1-fruehstueck", "titleEn": "Breakfast", "summaryEn": "Teaches you to say what you eat and drink for breakfast." },
- { "conversation": "de-a1-imbiss", "titleEn": "At the snack bar", "summaryEn": "Teaches you to order quickly at a snack bar, ask the price and ask for it to take away." },
+ { "conversation": "de-a1-imbiss", "titleEn": "At the snack bar", "summaryEn": "Teaches you to order quickly at a snack bar, ask the price and ask for it to go." },
  { "conversation": "de-a1-restaurant", "titleEn": "At the restaurant", "summaryEn": "Teaches you to order politely in a restaurant and pay the bill." },
  { "conversation": "de-a1-lieblingsessen", "titleEn": "Favorite foods", "summaryEn": "Teaches you to say what you enjoy eating and what you prefer." },
  { "conversation": "de-a1-supermarkt", "titleEn": "At the supermarket", "summaryEn": "Teaches you to say what you need and ask for what you are looking for." },
@@ -39,7 +39,7 @@
  { "conversation": "de-a1-feierabend", "titleEn": "After work", "summaryEn": "Teaches you to say what you do after work and what you prefer." },
  { "conversation": "de-a1-wochenende-plan", "titleEn": "Weekend plans", "summaryEn": "Teaches you to describe weekend plans and to talk about plans that are not fixed." },
  { "conversation": "de-a1-zeit-haben", "titleEn": "Asking if someone has time", "summaryEn": "Teaches you to ask whether someone has time and to say no politely." },
- { "conversation": "de-a1-kleidung", "titleEn": "Buying clothes", "summaryEn": "Teaches you to say what you are looking for, state your choice and ask where the till is." },
+ { "conversation": "de-a1-kleidung", "titleEn": "Buying clothes", "summaryEn": "Teaches you to say what you are looking for, state your choice and ask where the checkout is." },
  { "conversation": "de-a1-groesse", "titleEn": "Size and trying on", "summaryEn": "Teaches you to ask about size, ask to try something on and say whether it fits." },
  { "conversation": "de-a1-farben", "titleEn": "Colors", "summaryEn": "Teaches you to name colors and ask for the same item in another color." },
  { "conversation": "de-a1-preis", "titleEn": "Asking the price", "summaryEn": "Teaches you to ask the price, say that something is expensive or good value, and understand a discount." },
@@ -48,5 +48,5 @@
  { "conversation": "de-a1-geschenk", "titleEn": "Choosing a present", "summaryEn": "Teaches you to say who a present is for, make a suggestion and ask for gift wrapping." },
  { "conversation": "de-a1-markt", "titleEn": "At the market", "summaryEn": "Teaches you to ask the price of several things, adjust the quantity and understand the total." },
  { "conversation": "de-a1-apotheke-kauf", "titleEn": "Toiletries shopping", "summaryEn": "Teaches you to name toiletries, say what you need and ask which aisle they are in." },
- { "conversation": "de-a1-online", "titleEn": "Ordering online", "summaryEn": "Teaches you to order online, add an item to the basket and talk about delivery times." }
+ { "conversation": "de-a1-online", "titleEn": "Ordering online", "summaryEn": "Teaches you to order online, add an item to the shopping cart and talk about delivery times." }
 ]

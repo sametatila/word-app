@@ -8,10 +8,10 @@
  },
  {
   "conversation": "de-b1-im-gasthaus",
-  "sceneEn": "You have come to an inn for two. You are being seated, talking to the waiter and ordering, and asking for the bill at the end.",
+  "sceneEn": "You have come to an inn with a friend. You are being seated, talking to the waiter and ordering, and asking for the check at the end.",
   "partnerEn": "a polite waiter who is rushed off their feet",
   "openingEn": "Good evening! Have you booked, or shall I show you to a table?",
-  "goalEn": "You have been seated, food and drink have been ordered, the bill has been asked for and the tip has come up."
+  "goalEn": "You have been seated, food and drink have been ordered, the check has been asked for and the tip has come up."
  },
  {
   "conversation": "de-b1-markt-frisch",
@@ -43,8 +43,8 @@
  },
  {
   "conversation": "de-b1-haltbar-machen",
-  "sceneEn": "A lot is left over after a big meal. You and your flatmate discuss what to keep and how, and what to do with what tomorrow.",
-  "partnerEn": "an organized flatmate who cannot bear waste",
+  "sceneEn": "A lot is left over after a big meal. You and your roommate discuss what to keep and how, and what to do with what tomorrow.",
+  "partnerEn": "an organized roommate who cannot bear waste",
   "openingEn": "Well, that really is a lot left over. What are you going to do with it?",
   "goalEn": "A plan has been given for each of the leftovers and the two of you have agreed who does what."
  },
@@ -73,40 +73,40 @@
   "conversation": "de-b1-preis-vergleichen",
   "sceneEn": "You have seen the same product in two places. You and a friend compare the prices, the discount and the quality and decide where to buy it.",
   "partnerEn": "a careful friend who never buys without comparing",
-  "openingEn": "Have you compared the two prices? Which is cheaper?",
+  "openingEn": "Have you compared the two prices? So where is it cheaper?",
   "goalEn": "The two sellers have been compared on price and quality and a decision has been made with reasons."
  },
  {
   "conversation": "de-b1-umtausch",
   "sceneEn": "You have gone back to the shop to exchange something you bought two weeks ago. You give your reason, show the receipt and say clearly what you want.",
-  "partnerEn": "an assistant who sticks to the rules but looks for a solution",
-  "openingEn": "Good afternoon! What can I do for you — would you like to exchange something?",
+  "partnerEn": "a salesperson who sticks to the rules but looks for a solution",
+  "openingEn": "Hello! What can I do for you — would you like to exchange something?",
   "goalEn": "The reason for the return has been given, the receipt has been shown and an exchange or a refund has been agreed."
  },
  {
   "conversation": "de-b1-bank-konto",
   "sceneEn": "You have come to the bank to open an account. You find out about the fees, the card and the conditions for withdrawing money, with indirect questions.",
   "partnerEn": "an unhurried bank clerk who enjoys explaining",
-  "openingEn": "Good afternoon! You'd like to open an account — have you any questions already?",
+  "openingEn": "Hello! You'd like to open an account — do you have any questions already?",
   "goalEn": "The type of account, the fees and how the card is used have been found out and the next step to open it has been agreed."
  },
  {
   "conversation": "de-b1-online-bestellen",
-  "sceneEn": "There is a problem with something you ordered online: the wrong model came and the manual is missing. You ring customer service and describe what happened in order.",
+  "sceneEn": "There is a problem with something you ordered online: the wrong model came and the manual is missing. You call customer service and describe what happened in order.",
   "partnerEn": "a methodical agent who asks for the order number first",
-  "openingEn": "Customer service, good afternoon! What is it about your order?",
+  "openingEn": "Customer service, good afternoon! What's the issue with your order?",
   "goalEn": "What was ordered, what arrived and what is missing have been described and a solution has been agreed."
  },
  {
   "conversation": "de-b1-kleidung-kaufen",
   "sceneEn": "You are trying clothes on in a shop. You talk about the size, the fabric and the price, describing what you are after with adjectives in front of the noun.",
-  "partnerEn": "a keen assistant who wants you to try everything on",
+  "partnerEn": "an eager salesperson who wants you to try everything on",
   "openingEn": "Can I help you? Are you looking for anything in particular?",
   "goalEn": "The item you wanted has been described with adjectives, tried on, and it has been decided whether to buy it."
  },
  {
   "conversation": "de-b1-material-waehlen",
-  "sceneEn": "You are in a hardware shop and you do not know the name of the part you want. You describe what it is made of, what it does and where it goes.",
+  "sceneEn": "You are in a hardware store and you do not know the name of the part you want. You describe what it is made of, what it does and where it goes.",
   "partnerEn": "a patient shopkeeper who listens and tries to find the right part",
   "openingEn": "What are you looking for? Just describe it — what do you need it for?",
   "goalEn": "The part has been described by its material and its function and the shopkeeper has found the right one."
@@ -127,14 +127,14 @@
  },
  {
   "conversation": "de-b1-anzeige-lesen",
-  "sceneEn": "You and a friend are looking at a second-hand advertisement. You describe the advert, say what is good and what is doubtful about it, and list the missing details.",
-  "partnerEn": "an optimistic friend who is ready to be taken in by the advert",
-  "openingEn": "Look at this advert here — sounds great, doesn't it?",
-  "goalEn": "The advert has been described, at least two missing details have been listed and the questions to ask the seller have been decided."
+  "sceneEn": "You and a friend are looking at an ad for a second-hand item. You describe the ad, say what is good and what is doubtful about it, and list the missing details.",
+  "partnerEn": "an optimistic friend who is ready to be taken in by the ad",
+  "openingEn": "Look at this ad here — sounds great, doesn't it?",
+  "goalEn": "The ad has been described, at least two missing details have been listed and the questions to ask the seller have been decided."
  },
  {
   "conversation": "de-b1-reklamation-brief",
-  "sceneEn": "You are ringing an authority: the document you sent has been lost. You describe what you sent, what you are expecting and what you will put in a written complaint.",
+  "sceneEn": "You are calling an agency: the document you sent has been lost. You describe what you sent, what you are expecting and what you will put in a written complaint.",
   "partnerEn": "a polite official who avoids taking responsibility",
   "openingEn": "Administration office, good afternoon. How can I help you?",
   "goalEn": "The lost document has been described, your expectation has been put politely and an address for a written complaint has been taken."
@@ -150,7 +150,7 @@
   "conversation": "de-b1-am-flughafen",
   "sceneEn": "Your flight has been delayed and you have missed your connection. At the airport desk you describe what happened in order and ask for a new solution.",
   "partnerEn": "an airline agent checking the system and looking for a solution",
-  "openingEn": "Good afternoon! What's happened — which flight had you booked?",
+  "openingEn": "Hello! What's happened — which flight had you booked?",
   "goalEn": "What happened has been described in order and a new flight or a place to stay has been found."
  },
  {
@@ -169,7 +169,7 @@
  },
  {
   "conversation": "de-b1-unterkunft-suchen",
-  "sceneEn": "You and a friend are comparing two places to stay on holiday: price, location, quiet. In the end you choose one.",
+  "sceneEn": "You and a friend are comparing two places to stay on vacation: price, location, quiet. In the end you choose one.",
   "partnerEn": "a friend who watches the budget but will not give up comfort",
   "openingEn": "So, cabin or hotel? I really can't decide.",
   "goalEn": "The two options have been compared on at least three criteria and a decision has been made with reasons."

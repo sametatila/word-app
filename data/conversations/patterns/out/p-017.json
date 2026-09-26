@@ -36,7 +36,7 @@
  { "conversation": "de-b1-experte-fragen", "de": "Ich würde gern wissen, wie …", "en": "says indirectly what you would like to know" },
  { "conversation": "de-b1-buero-alltag", "de": "Die Konferenz wird vorbereitet.", "en": "describes the work impersonally" },
  { "conversation": "de-b1-buero-alltag", "de": "Von wem wird das gemacht?", "en": "asks who is doing it" },
- { "conversation": "de-b1-arbeitsrecht", "de": "Die Entlassung wurde … erklärt.", "en": "describes a decision taken in the past" },
+ { "conversation": "de-b1-arbeitsrecht", "de": "Die Entlassung wurde … ausgesprochen.", "en": "describes a decision taken in the past" },
  { "conversation": "de-b1-arbeitsrecht", "de": "Dagegen kann man vorgehen.", "en": "says that you can appeal against it" },
  { "conversation": "de-b1-chefin-gespraech", "de": "Ich würde vorschlagen, dass …", "en": "puts the suggestion politely" },
  { "conversation": "de-b1-chefin-gespraech", "de": "Könnten Sie ihr bitte ausrichten, dass …?", "en": "asks them to pass on a message" },
@@ -47,6 +47,6 @@
  { "conversation": "de-b1-selbststaendig", "de": "…, damit die Kunden zufrieden sind", "en": "states a purpose; the subject differs" },
  { "conversation": "de-b1-selbststaendig", "de": "Ich gründe eine Firma, um … zu …", "en": "states a purpose with an infinitive when the subject is the same" },
  { "conversation": "de-b1-arbeitszufriedenheit", "de": "sich bemühen um + Akkusativ", "en": "making an effort for something" },
- { "conversation": "de-b1-arbeitszufriedenheit", "de": "gewohnt sein an + Akkusativ", "en": "being used to something" },
+ { "conversation": "de-b1-arbeitszufriedenheit", "de": "gewöhnt sein an + Akkusativ", "en": "being used to something" },
  { "conversation": "de-b1-migration", "de": "Als ich ankam, …", "en": "describes a one-off event in the past" }
 ]

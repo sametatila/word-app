@@ -25,7 +25,7 @@
   "sceneEn": "Your words have been quoted in a text but taken out of context. Talk to the author: report exactly what you said, show where it has been distorted, ask for a correction and say how it should be attributed.",
   "partnerEn": "an author who defends the quotation as accurate but is open to listening",
   "openingEn": "I quoted you word for word — you can check. Where exactly do you see the problem?",
-  "goalEn": "The whole of what was said has been reported, the distortion has been shown and a correction has been agreed."
+  "goalEn": "The whole of what was said has been reported, the distortion has been shown and a correction has been agreed on."
  },
  {
   "conversation": "de-c1-podiumsdiskussion",
@@ -43,24 +43,24 @@
  },
  {
   "conversation": "de-c1-agb",
-  "sceneEn": "The terms and conditions of a service contain a clause that excludes liability entirely. Talk to customer services: say in your own words what the clause says, say why it is too wide and state what you are asking for.",
-  "partnerEn": "a customer services manager with limited authority who treats the clause as standard",
+  "sceneEn": "The terms and conditions of a service contain a clause that excludes liability entirely. Talk to customer service: say in your own words what the clause says, say why it is too wide and state what you are asking for.",
+  "partnerEn": "a customer service representative with limited authority who treats the clause as standard",
   "openingEn": "The clause is in our terms and conditions and is therefore taken as agreed. What are you getting at?",
   "goalEn": "The meaning of the clause has been put in your own words, why it is too wide has been stated and a concrete demand has been made."
  },
  {
   "conversation": "de-c1-miete-recht",
-  "sceneEn": "A fault in your flat has gone unrepaired for months. Talk to the landlord: report the fault and how long it has lasted, set a deadline for the repair, raise a claim for a rent reduction and ask for written confirmation.",
+  "sceneEn": "A fault in your apartment has gone unrepaired for months. Talk to the landlord: report the fault and how long it has lasted, set a deadline for the repair, raise a claim for a rent reduction and ask for written confirmation.",
   "partnerEn": "a landlord who avoids responsibility and calls it a small thing",
-  "openingEn": "It's a trifle, surely. Do you really want to cut the rent over that?",
+  "openingEn": "It's just a minor thing. Do you really want to cut the rent over that?",
   "goalEn": "The fault and its duration have been reported, a deadline has been set, a reduction has been claimed and written confirmation has been asked for."
  },
  {
   "conversation": "de-c1-arbeitsrecht",
-  "sceneEn": "A colleague has had a formal warning and is in a panic. Pass on what you heard from a solicitor, keep your own view separate, say which step has to be taken by when and calm them down.",
+  "sceneEn": "A colleague has had a formal warning and is in a panic. Pass on what you heard from a lawyer, keep your own view separate, say which step has to be taken by when and calm them down.",
   "partnerEn": "a panicking colleague who is thinking of resigning at once",
-  "openingEn": "I'll just resign myself before they throw me out. Or what did your solicitor say?",
-  "goalEn": "The solicitor's view has been reported in the reporting mood, the speaker's own view has been kept separate and the first step has been given with its date."
+  "openingEn": "I'll just resign myself before they throw me out. Or what did your lawyer say?",
+  "goalEn": "The lawyer's view has been reported in the reporting mood, the speaker's own view has been kept separate and the first step has been given with its date."
  },
  {
   "conversation": "de-c1-datenschutz-c1",
@@ -85,17 +85,17 @@
  },
  {
   "conversation": "de-c1-buergschaft",
-  "sceneEn": "Someone close is asking you to stand surety for them. Talk it through together: in what case you would be liable, how great the risk is, on what condition you could accept, or why you are refusing.",
+  "sceneEn": "Someone close is asking you to act as a guarantor for them. Talk it through together: in what case you would be liable, how great the risk is, on what condition you could accept, or why you are refusing.",
   "partnerEn": "someone close who trusts you, plays down the risk and will not let it go",
   "openingEn": "It's only a formality, the bank just wants to see it. You'll never actually have to pay — or don't you believe me?",
-  "goalEn": "The consequences of standing surety have been described, the risk has been discussed and the acceptance or refusal has been stated clearly with reasons."
+  "goalEn": "The consequences of acting as a guarantor have been described, the risk has been discussed and the acceptance or refusal has been stated clearly with reasons."
  },
  {
   "conversation": "de-c1-einspruch",
-  "sceneEn": "You are going to appeal against a decision from an authority but the deadline is closing in. Talk to the enquiries desk: ask how to lodge an appeal that protects the deadline, find out by when the grounds must be complete and ask for confirmation.",
+  "sceneEn": "You are going to appeal against a decision from an authority but the deadline is closing in. Talk to the information desk: ask how to file an appeal that protects the deadline, find out by when the grounds must be complete and ask for confirmation.",
   "partnerEn": "an official strict on procedure who gives you a form number",
-  "openingEn": "The deadline expires in two days. Have you got your grounds ready, then?",
-  "goalEn": "How to lodge a deadline-protecting appeal has been found out, the final date for the grounds has been made clear and confirmation has been promised."
+  "openingEn": "The deadline expires in two days. Do you have your grounds ready?",
+  "goalEn": "How to file a deadline-protecting appeal has been found out, the final date for the grounds has been made clear and confirmation has been promised."
  },
  {
   "conversation": "de-c1-gericht",

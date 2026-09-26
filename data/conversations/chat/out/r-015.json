@@ -1,21 +1,21 @@
 [
  {
   "conversation": "de-b1-berufe-vorstellen",
-  "sceneEn": "You are at a careers day at a school. You introduce three occupations to the young people, describing what each one does and what it requires.",
+  "sceneEn": "You are at a career day at a school. You introduce three occupations to the young people, describing what each one does and what it requires.",
   "partnerEn": "a curious student who does not know which career to choose",
   "openingEn": "I really don't know what to be — what do people in your job actually do?",
   "goalEn": "At least three occupations have been described by what they involve, and the training needed for each has been given."
  },
  {
   "conversation": "de-b1-lehre-machen",
-  "sceneEn": "You are talking to a careers adviser: an apprenticeship or university, which documents are needed, what you think is worth it.",
+  "sceneEn": "You are talking to a career counselor: an apprenticeship or university, which documents are needed, what you think is worth it.",
   "partnerEn": "an adviser who knows both paths and is trying to make the decision easier",
   "openingEn": "You're caught between two paths, aren't you? Which appeals to you more — an apprenticeship or a degree?",
   "goalEn": "The two paths have been compared, a decision has been given with reasons and the documents needed have been found out."
  },
  {
   "conversation": "de-b1-experte-fragen",
-  "sceneEn": "You have rung an institute to get an expert opinion on something. You ask what you want to know with indirect questions and arrange an appointment.",
+  "sceneEn": "You have called an institute to get an expert opinion on something. You ask what you want to know with indirect questions and arrange an appointment.",
   "partnerEn": "an expert who answers briefly but explains when pressed",
   "openingEn": "Institute for Research, good afternoon. What can I help you with?",
   "goalEn": "At least three questions have been asked indirectly and a meeting has been arranged."
@@ -24,12 +24,12 @@
   "conversation": "de-b1-buero-alltag",
   "sceneEn": "You are in a short office meeting. You list the week's jobs, ask who is doing what, and share out what is left.",
   "partnerEn": "a colleague willing to take jobs on but short of time",
-  "openingEn": "Right, a quick run through the week — what's all needed by Friday?",
+  "openingEn": "Right, a quick run through the week — what do we need by Friday?",
   "goalEn": "The jobs have been listed, who is doing what has been asked and the remaining jobs have been shared out."
  },
  {
   "conversation": "de-b1-arbeitsrecht",
-  "sceneEn": "You have been dismissed and gone to a trade union adviser. You describe what happened in order, ask about your rights and find out what to do.",
+  "sceneEn": "You have been dismissed and gone to a union adviser. You describe what happened in order, ask about your rights and find out what to do.",
   "partnerEn": "a calm union adviser who knows the rights well",
   "openingEn": "Do sit down. Please tell me — when were you given notice?",
   "goalEn": "The events have been described in order, the rights have been asked about and a next step has been settled."
@@ -71,7 +71,7 @@
  },
  {
   "conversation": "de-b1-migration",
-  "sceneEn": "You are on the introductions round at a language course. You describe where you came from, what the early days were like and what has changed.",
+  "sceneEn": "You are doing a round of introductions in a language class. You describe where you came from, what the early days were like and what has changed.",
   "partnerEn": "a curious fellow student who tells their own story too",
   "openingEn": "Let's introduce ourselves briefly — would you like to tell us how you came to be here?",
   "goalEn": "Your arrival, the early difficulties and how things are today have been told in order."
@@ -141,7 +141,7 @@
  },
  {
   "conversation": "de-b1-oper-konzert",
-  "sceneEn": "You went to a concert last night. You describe the hall, the piece that was played and how the evening went to a friend.",
+  "sceneEn": "You went to a concert last night. You tell a friend about the hall, the piece that was played and how the evening went.",
   "partnerEn": "a friend who is a stranger to classical music but curious",
   "openingEn": "You were at the opera yesterday? How was it — is it worth it?",
   "goalEn": "The venue and the piece have been described, how the evening went has been told and a recommendation has been given."
@@ -150,7 +150,7 @@
   "conversation": "de-b1-literatur-lesen",
   "sceneEn": "A friend is asking for a book recommendation. You describe the last one you read, tell them what it is about and say why you liked it.",
   "partnerEn": "a friend who is put off by long books but wants to read",
-  "openingEn": "I need something to read — have you got a tip for me?",
+  "openingEn": "I need something to read — do you have a tip for me?",
   "goalEn": "The book has been described, what it is about has been told and the reason for recommending it has been given."
  },
  {
@@ -164,7 +164,7 @@
   "conversation": "de-b1-sport-treiben",
   "sceneEn": "You have gone to a sports club for information. You ask which sports there are, the times and the fee, and say what you would like to try.",
   "partnerEn": "an energetic coach who wants to sign everyone up for something",
-  "openingEn": "Welcome! Are you looking for something in particular, or would you like to have a look round first?",
+  "openingEn": "Welcome! Are you looking for something in particular, or would you like to look around first?",
   "goalEn": "The sports and the conditions have been found out and a trial session has been arranged."
  },
  {

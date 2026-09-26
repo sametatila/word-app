@@ -23,20 +23,20 @@
  {
   "conversation": "de-c1-migrationsdebatte",
   "sceneEn": "Someone asks you where you are 'originally' from and the question wears you down. Name the assumption behind it, describe your own belonging from both sides, state your limit without blaming them and end the conversation constructively.",
-  "partnerEn": "a well-meaning acquaintance who does not know why the question is wearing",
+  "partnerEn": "a well-meaning acquaintance who does not know why the question is tiring",
   "openingEn": "I don't mean it badly — but where are you originally from?",
   "goalEn": "The assumption behind the question has been named, the belonging has been described from both sides and the conversation has been ended constructively without blame."
  },
  {
   "conversation": "de-c1-klimadebatte",
-  "sceneEn": "You and an acquaintance are arguing about responsibility for the climate: the individual or the system. Name the shifting of responsibility, say what an individual step does and does not do, show the conflict of aims and meet on a shared test.",
+  "sceneEn": "You and an acquaintance are arguing about responsibility for the climate: the individual or the system. Name the shifting of responsibility, say what an individual step does and does not do, show the conflict of aims and agree on a shared criterion.",
   "partnerEn": "an acquaintance who puts everything down to individual behavior",
   "openingEn": "If everyone starts with themselves, the problem is solved. Or are you just making excuses?",
-  "goalEn": "Individual and systemic responsibility have been separated, the conflict of aims has been shown and a shared test has been agreed."
+  "goalEn": "Individual and systemic responsibility have been separated, the conflict of aims has been shown and a shared criterion has been agreed on."
  },
  {
   "conversation": "de-c1-bildungsdebatte",
-  "sceneEn": "You are arguing about the education system at a parents' evening. Say what was neglected in the past with unreal conditions, separate what can be done today, accept the other side's objection and leave a concrete suggestion.",
+  "sceneEn": "You are arguing about the education system at a parent-teacher meeting. Say what was neglected in the past with unreal conditions, separate what can be done today, accept the other side's objection and leave a concrete suggestion.",
   "partnerEn": "a parent who defends the system and thinks looking back is pointless",
   "openingEn": "If only, if only — what good does that do us? Tell me instead what we should do now.",
   "goalEn": "The past neglect has been stated with unreal conditions, what can be done today has been separated and a concrete suggestion has been left."
@@ -45,22 +45,22 @@
   "conversation": "de-c1-ethik-ki",
   "sceneEn": "You are arguing about whether a decision should be left to artificial intelligence. Separate in your language the qualities attributed to the machine, ask who the responsibility is imputed to, say where you draw the line and propose a shared rule.",
   "partnerEn": "a colleague who argues the system decides better than a person",
-  "openingEn": "The system decides more objectively than any of us. Why shouldn't we leave it to that?",
+  "openingEn": "The system decides more objectively than any of us. Why shouldn't we leave that to it?",
   "goalEn": "The qualities attributed to the machine have been separated in language, who bears the responsibility has been discussed and a shared rule on the limit has been proposed."
  },
  {
   "conversation": "de-c1-generationenvertrag",
-  "sceneEn": "You are arguing with someone from another generation about pensions and the burden of contributions. Say who loses out and how, accept the other side's fair point, hold your own point nevertheless and propose a fair test.",
+  "sceneEn": "You are arguing with someone from another generation about pensions and the burden of contributions. Say who loses out and how, accept the other side's fair point, hold your own point nevertheless and propose a fair criterion.",
   "partnerEn": "an acquaintance who defends their own generation's due and knows the figures",
   "openingEn": "We paid in for forty years. Do you want to call that into question now?",
-  "goalEn": "Who loses out and how has been said, the other side's fair point has been accepted and a fair test has been proposed."
+  "goalEn": "Who loses out and how has been said, the other side's fair point has been accepted and a fair criterion has been proposed."
  },
  {
   "conversation": "de-c1-meinungsfreiheit",
-  "sceneEn": "Something someone said in a discussion has drawn a reaction. Separate freedom of expression from insult, say where the other side is right, justify where you draw the line and look for a shared test.",
+  "sceneEn": "Something someone said in a discussion has drawn a reaction. Separate freedom of expression from insult, say where the other side is right, justify where you draw the line and look for a shared criterion.",
   "partnerEn": "a debater who calls every criticism censorship and rejects the idea of a limit",
   "openingEn": "Surely one is still allowed to say anything. Or do you want to lay down rules as well now?",
-  "goalEn": "Freedom of expression and insult have been separated, the point where the other side is right has been said and a shared test has been sought."
+  "goalEn": "Freedom of expression and insult have been separated, the point where the other side is right has been said and a shared criterion has been sought."
  },
  {
   "conversation": "de-c1-zukunftsvision",
@@ -73,7 +73,7 @@
   "conversation": "de-c1-ironie",
   "sceneEn": "A colleague made an ironic remark after the meeting and you are not sure what they meant. Say what you heard, ask what they meant, state your own view plainly and clear the matter up.",
   "partnerEn": "a colleague with a dry wit who avoids saying things directly",
-  "openingEn": "Well, that went brilliantly today. Didn't you think so too?",
+  "openingEn": "Well, that went just great today. Didn't you think so too?",
   "goalEn": "What the ironic remark meant has come out and both sides have stated their view plainly."
  },
  {
@@ -88,7 +88,7 @@
   "sceneEn": "A friend has made a play on words in German and you did not get it. Say you did not, work it out together, discuss whether there is an equivalent in English and give an example from your own language.",
   "partnerEn": "a friend who loves wordplay and enjoys explaining",
   "openingEn": "You have to let that one melt on your tongue. Can you see where the double meaning is?",
-  "goalEn": "The wordplay has been worked out together, the limit of translation has been discussed and the learner has given an example from their own language."
+  "goalEn": "The wordplay has been worked out together, the limit of translation has been discussed and an example has been given from your own language."
  },
  {
   "conversation": "de-c1-regionale-kultur",
@@ -171,7 +171,7 @@
   "conversation": "de-c1-verhandlungsfinale",
   "sceneEn": "You are in the last round of a long negotiation. Put your final offer softly, offer an improvement on one point, meet the other side's last request and close the deal with a handshake — or end it politely.",
   "partnerEn": "a tough but fair negotiator who asks for one more thing at the last moment",
-  "openingEn": "One more thing, then I'll sign: could you come towards me on the term?",
+  "openingEn": "One more thing, then I'll sign: could you meet me halfway on the term?",
   "goalEn": "The final offer has been made, the last request has been met and the negotiation has been closed with an agreement or a polite ending."
  }
 ]

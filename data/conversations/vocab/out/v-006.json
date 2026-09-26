@@ -15,7 +15,7 @@
  { "conversation": "de-b1-haltbar-machen", "de": "gießen", "en": "to pour" },
  { "conversation": "de-b1-esskultur-b1", "de": "die Anzahl", "en": "number" },
  { "conversation": "de-b1-kuchen-backen", "de": "der Saal", "en": "hall" },
- { "conversation": "de-b1-kuchen-backen", "de": "abwaschen", "en": "to wash up" },
+ { "conversation": "de-b1-kuchen-backen", "de": "abwaschen", "en": "to wash the dishes" },
  { "conversation": "de-b1-kuchen-backen", "de": "der Empfang", "en": "reception" },
  { "conversation": "de-b1-preis-vergleichen", "de": "der Händler", "en": "trader" },
  { "conversation": "de-b1-online-bestellen", "de": "die Bedienungsanleitung", "en": "instruction manual" },
@@ -33,7 +33,7 @@
  { "conversation": "de-b1-kleine-verletzung", "de": "stecken", "en": "to stick" },
  { "conversation": "de-b1-kleine-verletzung", "de": "der Fall", "en": "case" },
  { "conversation": "de-b1-vorsorge-alltag", "de": "rein", "en": "pure" },
- { "conversation": "de-b1-schwangerschaft", "de": "der Nachwuchs", "en": "new generation" },
+ { "conversation": "de-b1-schwangerschaft", "de": "der Nachwuchs", "en": "new baby; offspring" },
  { "conversation": "de-b1-familie-gross", "de": "der Onkel", "en": "uncle" },
  { "conversation": "de-b1-familie-gross", "de": "die Tante", "en": "aunt" },
  { "conversation": "de-b1-generationen", "de": "verraten", "en": "to reveal" },
@@ -47,6 +47,6 @@
  { "conversation": "de-b1-netz-stoerung", "de": "weshalb", "en": "why" },
  { "conversation": "de-b1-werkzeug-leihen", "de": "umsonst", "en": "in vain; for free" },
  { "conversation": "de-b1-putzen-teilen", "de": "glatt", "en": "slippery" },
- { "conversation": "de-b1-grafik-lesen", "de": "die Darstellung", "en": "portrayal" },
+ { "conversation": "de-b1-grafik-lesen", "de": "die Darstellung", "en": "representation" },
  { "conversation": "de-b1-alte-technik", "de": "der Sender", "en": "channel; transmitter" }
 ]

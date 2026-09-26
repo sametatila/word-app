@@ -3,12 +3,12 @@
   "conversation": "de-b2-passiv-perfekt",
   "sceneEn": "You are in the weekly status meeting with your boss. Report which jobs have been completed, which are still waiting and why, in the past passive; give dates for the rest.",
   "partnerEn": "a department head who wants short answers and asks for dates",
-  "openingEn": "I haven't much time — tell me briefly: what has been done this week and what hasn't?",
+  "openingEn": "I don't have much time — tell me briefly: what has been done this week and what hasn't?",
   "goalEn": "The finished and unfinished jobs have been listed, the reason for the delay has been given and dates have been set for the rest."
  },
  {
   "conversation": "de-b2-passiv-modal",
-  "sceneEn": "You are at the enquiries desk of an authority asking which steps your application has to go through: what must be submitted, what will be examined, how long it takes, which document has to be approved.",
+  "sceneEn": "You are at the information desk of an authority asking which steps your application has to go through: what must be submitted, what will be examined, how long it takes, which document has to be approved.",
   "partnerEn": "an official who explains the rules in the language of the regulations",
   "openingEn": "We have your application. Before it can be processed, though, something still has to be cleared up — do you know what is missing?",
   "goalEn": "The missing document has been found out, the order and length of the steps have been made clear and it has been said when a decision will come."
@@ -36,7 +36,7 @@
  },
  {
   "conversation": "de-b2-restaurierung",
-  "sceneEn": "You are on a city tour asking the guide how the old center was restored: what was repaired, what could be preserved, which building is listed, when the work finished.",
+  "sceneEn": "You are on a city tour asking the guide how the old center was restored: what was repaired, what could be preserved, which building is protected, when the work finished.",
   "partnerEn": "a city guide who loves the history and gives detail",
   "openingEn": "You can see it best from here: this row of houses was completely renovated three years ago. Does anything strike you?",
   "goalEn": "What was repaired, what was preserved and when the work finished have all been found out."
@@ -60,13 +60,13 @@
   "sceneEn": "You are discussing the service on your car with the mechanic: find out what absolutely has to be done, what can wait, what it will cost and when it will be ready.",
   "partnerEn": "an honest mechanic who is in a hurry",
   "openingEn": "I've had a look underneath. Two things are due, one of them urgent — do you want both done?",
-  "goalEn": "The essential and the postponable jobs have been separated, the price has been found out and a collection time has been settled."
+  "goalEn": "The essential and the postponable jobs have been separated, the price has been found out and a pick-up time has been settled."
  },
  {
   "conversation": "de-b2-organisation",
   "sceneEn": "The two of you are sharing the preparations for a street party. List what has to be done in the impersonal passive, discuss who takes on what and tie the running order to a date.",
-  "partnerEn": "an eager but disorganised neighbor who keeps throwing in new ideas",
-  "openingEn": "Right, I've made a list already — it has got rather long, though. What shall we start with?",
+  "partnerEn": "an eager but disorganized neighbor who keeps throwing in new ideas",
+  "openingEn": "OK, I've already made a list — it's gotten pretty long, though. Where should we start?",
   "goalEn": "The jobs have been listed, who takes on what has been shared out and the running order has been tied to a date."
  },
  {
@@ -80,12 +80,12 @@
   "conversation": "de-b2-er-sagte",
   "sceneEn": "You are passing on a piece of news you heard to a friend. Give who said what in the reporting mood, name your source and put your own opinion in a separate sentence.",
   "partnerEn": "a friend who questions the source and asks what you think",
-  "openingEn": "Hang on — are you saying that, or did someone else say it? That's a difference.",
+  "openingEn": "Hang on — are you saying that, or did someone else say it? There's a difference.",
   "goalEn": "The source and the content have been given in the reporting mood and the speaker's own opinion has been stated separately."
  },
  {
   "conversation": "de-b2-soll-angeblich",
-  "sceneEn": "A rumor is going round at work. Talking to a colleague, keep apart what you heard, what you know and what you are only guessing, and decide how to deal with the rumor.",
+  "sceneEn": "A rumor is going around at work. Talking to a colleague, keep apart what you heard, what you know and what you are only guessing, and decide how to deal with the rumor.",
   "partnerEn": "a colleague eager to spread the rumor straight away",
   "openingEn": "Have you heard? The department is supposedly going to be closed. Do you know anything more definite?",
   "goalEn": "What was heard, what is known and what is guessed have been separated and it has been settled how to deal with the rumor."
@@ -143,7 +143,7 @@
   "conversation": "de-b2-partizip-1",
   "sceneEn": "You and an acquaintance are discussing a trend that has grown in recent years (screen time, rents, the cost of travel — whichever you choose). Describe what is rising, what is falling and what you have noticed yourself.",
   "partnerEn": "an acquaintance who is keen on figures and asks for examples",
-  "openingEn": "Something's struck me lately: everything is getting dearer, but nobody talks about the running costs. What do you observe?",
+  "openingEn": "Something's struck me lately: everything is getting more expensive, but nobody talks about the running costs. What do you observe?",
   "goalEn": "The rising and falling trends have been described with examples and the two of you have met on a shared observation."
  },
  {

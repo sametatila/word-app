@@ -3,12 +3,12 @@
   "conversation": "de-b1-bewerbung",
   "sceneEn": "You are at a job interview at a company. Say why you applied with 'weil' and how long you have been working or studying with 'seit'; talk about your strengths.",
   "partnerEn": "an HR specialist, professional but warm",
-  "openingEn": "Good afternoon, glad you could come! Tell me: why are you applying to us?",
+  "openingEn": "Hello, glad you could come! Tell me: why are you applying to us?",
   "goalEn": "Why you applied, your experience and your strengths have been described, and the interviewer has said how the process goes on."
  },
  {
   "conversation": "de-b1-lebenslauf",
-  "sceneEn": "You are at a job interview and the interviewer wants you to talk through your CV. Say where you worked, when you moved on and what you were responsible for, in order.",
+  "sceneEn": "You are at a job interview and the interviewer wants you to talk through your résumé. Say where you worked, when you moved on and what you were responsible for, in order.",
   "partnerEn": "an HR specialist taking notes and asking for detail",
   "openingEn": "Please tell us briefly about your career. Where did you start?",
   "goalEn": "The places you worked, when you moved on and your responsibilities have been described in order."
@@ -36,10 +36,10 @@
  },
  {
   "conversation": "de-b1-arbeitszeiten",
-  "sceneEn": "You are discussing the working hours in your new job. Ask how flexitime works, find out what counts as overtime, and describe your own preference in conditional clauses.",
+  "sceneEn": "You are discussing the working hours in your new job. Ask how flextime works, find out what counts as overtime, and describe your own preference in conditional clauses.",
   "partnerEn": "a team leader who explains the system in detail",
-  "openingEn": "We have flexitime here. Do you know how that works?",
-  "goalEn": "How flexitime works and what overtime is have been found out, and your own preference has been given."
+  "openingEn": "We have flextime here. Do you know how that works?",
+  "goalEn": "How flextime works and what overtime is have been found out, and your own preference has been given."
  },
  {
   "conversation": "de-b1-gehalt",
@@ -64,59 +64,59 @@
  },
  {
   "conversation": "de-b1-networking",
-  "sceneEn": "You are at a company stand at a careers fair. Introduce yourself, ask politely what the company does and whether they are recruiting, and share your contact details at the end.",
-  "partnerEn": "an energetic stand attendant who talks to a hundred people a day",
+  "sceneEn": "You are at a company booth at a career fair. Introduce yourself, ask politely what the company does and whether they are recruiting, and share your contact details at the end.",
+  "partnerEn": "an energetic booth attendant who talks to a hundred people a day",
   "openingEn": "Hello! Are you interested in our company?",
   "goalEn": "What the company does and whether they are recruiting have been found out, and contact details have been shared."
  },
  {
   "conversation": "de-b1-wohnung",
-  "sceneEn": "You are on the phone to a landlord about a flat advertisement. Ask about the flat with the patterns 'Ich würde gern …' and 'Könnten Sie …?', find out the rent and arrange a viewing.",
+  "sceneEn": "You are on the phone to a landlord about an apartment listing. Ask about the apartment with the patterns 'Ich würde gern …' and 'Könnten Sie …?', find out the rent and arrange a viewing.",
   "partnerEn": "a slightly formal but helpful landlord",
-  "openingEn": "Good afternoon! You're interested in the flat, is that right?",
-  "goalEn": "The state of the flat and the rent have been found out and a viewing has been arranged."
+  "openingEn": "Hello! You're interested in the apartment, is that right?",
+  "goalEn": "The state of the apartment and the rent have been found out and a viewing has been arranged."
  },
  {
   "conversation": "de-b1-besichtigung",
-  "sceneEn": "You have come to view a flat and the landlord is showing you round. Find out about the service charges, the deposit and when you could move in, using polite question forms.",
+  "sceneEn": "You have come to view an apartment and the landlord is showing you around. Find out about the additional costs, the deposit and when you could move in, using polite question forms.",
   "partnerEn": "a landlord seeing many applicants and weighing them up",
-  "openingEn": "Do come in! What would you like to know about the flat?",
-  "goalEn": "The service charges, the deposit and when you could move in have all been found out."
+  "openingEn": "Do come in! What would you like to know about the apartment?",
+  "goalEn": "The additional costs, the deposit and when you could move in have all been found out."
  },
  {
   "conversation": "de-b1-mietvertrag",
-  "sceneEn": "You are going through the tenancy agreement with the landlord. Ask about the clauses you do not understand, find out about the deposit and the notice period, and make clear what you are liable for.",
+  "sceneEn": "You are going through the rental agreement with the landlord. Ask about the clauses you do not understand, find out about the deposit and the notice period, and make clear what you are liable for.",
   "partnerEn": "a landlord who knows the agreement and explains it clause by clause",
-  "openingEn": "Here is the tenancy agreement. Do you have questions about any of the points?",
+  "openingEn": "Here is the rental agreement. Do you have questions about any of the points?",
   "goalEn": "The clauses you did not understand have been explained and the deposit and the notice period have been made clear."
  },
  {
   "conversation": "de-b1-nachbarn-streit",
   "sceneEn": "Your upstairs neighbor makes a lot of noise at night and you have knocked on their door. Describe the trouble in polite forms, say it without blame, and suggest a solution together.",
-  "partnerEn": "a neighbor who is defensive at first but comes round",
+  "partnerEn": "a neighbor who is defensive at first but comes around",
   "openingEn": "Yes? Has something happened?",
   "goalEn": "The trouble has been described without blame and a solution both sides accept has been found."
  },
  {
   "conversation": "de-b1-wg",
-  "sceneEn": "You have gone to see a house share as a candidate. Say what matters to you, ask about the rules of living together and suggest a compromise on the chores.",
-  "partnerEn": "a warm but selective flatmate",
+  "sceneEn": "You have gone to see a shared apartment as a candidate. Say what matters to you, ask about the rules of living together and suggest a compromise on the chores.",
+  "partnerEn": "a warm but selective roommate",
   "openingEn": "Good to have you here! Tell me: what matters to you about living together?",
   "goalEn": "What matters to you has been said, the house rules have been found out and a compromise on the chores has been reached."
  },
  {
   "conversation": "de-b1-reparatur-vermieter",
-  "sceneEn": "Something at home has broken and you have rung the landlord. Describe what is broken, say in formal language that it has to be repaired and ask for a deadline.",
+  "sceneEn": "Something at home has broken and you have called the landlord. Describe what is broken, say in formal language that it has to be repaired and ask for a deadline.",
   "partnerEn": "a landlord inclined to put things off but open to being persuaded",
   "openingEn": "Hello, Meier speaking. You called — what's the matter?",
   "goalEn": "The fault has been reported in formal language and a deadline has been agreed."
  },
  {
   "conversation": "de-b1-nebenkosten",
-  "sceneEn": "The service charge statement has come and the extra payment looks very high. Ask how it was worked out, say you find it too much and exercise your right to object.",
+  "sceneEn": "The utility cost statement has arrived and the extra payment looks very high. Ask how it was worked out, say you find it too much and exercise your right to object.",
   "partnerEn": "a landlord who defends the figures but is willing to show the paperwork",
   "openingEn": "You've had the statement. Is there a problem with it?",
-  "goalEn": "How the statement was arrived at has been found out, your objection has been put and it has been said how things go on."
+  "goalEn": "How the statement was arrived at has been found out, your objection has been passed on and you have been told how things will proceed."
  },
  {
   "conversation": "de-b1-einrichtung-stil",
@@ -141,17 +141,17 @@
  },
  {
   "conversation": "de-b1-damit",
-  "sceneEn": "You are talking to a friend about your plans for next year: saving money, a course, a holiday. Give the aim of each plan with 'damit'; your friend will ask you 'warum?' each time.",
+  "sceneEn": "You are talking to a friend about your plans for next year: saving money, a course, a vacation. Give the aim of each plan with 'damit'; your friend will ask you 'warum?' each time.",
   "partnerEn": "a curious and supportive friend",
   "openingEn": "Hey! You said you had big plans for next year. Tell me — what are you going to do, and why?",
   "goalEn": "The aim of each plan has been given and your friend has said which one they are most curious about."
  },
  {
   "conversation": "de-b1-um-zu",
-  "sceneEn": "A goals meeting with an adviser at a language course: say why you are learning German and why you are taking the exam with 'um … zu'; the adviser questions your plan.",
-  "partnerEn": "a course adviser whose questions are clear and encouraging",
-  "openingEn": "Good afternoon! Glad you could come. First tell me: what are you actually learning German for?",
-  "goalEn": "Your aim in learning German and in taking the exam has been described and the adviser has assessed your plan."
+  "sceneEn": "A goals meeting with an advisor at a language course: say why you are learning German and why you are taking the exam with 'um … zu'; the advisor questions your plan.",
+  "partnerEn": "a course advisor whose questions are clear and encouraging",
+  "openingEn": "Hello! Glad you could come. First tell me: what are you actually learning German for?",
+  "goalEn": "Your aim in learning German and in taking the exam has been described and the advisor has assessed your plan."
  },
  {
   "conversation": "de-b1-obwohl",

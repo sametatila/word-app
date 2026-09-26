@@ -4,7 +4,7 @@
  { "conversation": "de-a1-hallo", "de": "bitte", "en": "please" },
  { "conversation": "de-a1-alphabet", "de": "buchstabieren", "en": "to spell" },
  { "conversation": "de-a1-alphabet", "de": "schreiben", "en": "to write" },
- { "conversation": "de-a1-alphabet", "de": "der Nachname", "en": "surname" },
+ { "conversation": "de-a1-alphabet", "de": "der Nachname", "en": "last name" },
  { "conversation": "de-a1-beruf", "de": "die Ärztin", "en": "doctor" },
  { "conversation": "de-a1-alter", "de": "alt", "en": "old" },
  { "conversation": "de-a1-haustiere", "de": "süß", "en": "cute, sweet" },
@@ -43,10 +43,10 @@
  { "conversation": "de-a1-gefallen", "de": "praktisch", "en": "handy" },
  { "conversation": "de-a1-umtausch", "de": "der Kassenbon", "en": "receipt" },
  { "conversation": "de-a1-umtausch", "de": "weit", "en": "loose" },
- { "conversation": "de-a1-markt", "de": "weniger", "en": "fewer" },
+ { "conversation": "de-a1-markt", "de": "weniger", "en": "less" },
  { "conversation": "de-a1-apotheke-kauf", "de": "das Taschentuch", "en": "tissue" },
- { "conversation": "de-a1-online", "de": "der Warenkorb", "en": "basket" },
- { "conversation": "de-a1-online", "de": "das Paket", "en": "parcel" },
+ { "conversation": "de-a1-online", "de": "der Warenkorb", "en": "shopping cart" },
+ { "conversation": "de-a1-online", "de": "das Paket", "en": "package" },
  { "conversation": "de-a1-weg", "de": "der Bahnhof", "en": "train station" },
  { "conversation": "de-a1-weg", "de": "geradeaus", "en": "straight ahead" }
 ]

@@ -43,7 +43,7 @@
  { "conversation": "de-b1-verkehrswende", "de": "Einerseits bequem, andererseits teuer.", "en": "puts the two sides side by side" },
  { "conversation": "de-b1-verkehrswende", "de": "nicht nur …, sondern auch …", "en": "adds a second reason" },
  { "conversation": "de-b1-nachhaltig-einkaufen", "de": "Produkte, die …", "en": "defines a product by its feature" },
- { "conversation": "de-b1-nachhaltig-einkaufen", "de": "Läden, in denen …", "en": "defines a shop by its location" },
+ { "conversation": "de-b1-nachhaltig-einkaufen", "de": "Läden, in denen …", "en": "defines a store by its location" },
  { "conversation": "de-b1-garten-projekt", "de": "Es wird gepflanzt.", "en": "subjectless passive: the work is being done" },
  { "conversation": "de-b1-garten-projekt", "de": "Die Ernte wird geteilt.", "en": "states a shared rule" },
  { "conversation": "de-b1-wetterextrem", "de": "immer heißer", "en": "a change that keeps increasing" },

@@ -7,8 +7,8 @@
  { "conversation": "de-c1-tiere-idiome", "de": "Da hast du Schwein gehabt!", "en": "you were lucky there" },
  { "conversation": "de-c1-tiere-idiome", "de": "Mit ihm kann man Pferde stehlen.", "en": "you can rely on him completely" },
  { "conversation": "de-c1-wetter-idiome", "de": "Bei uns herrscht dicke Luft.", "en": "the atmosphere is tense" },
- { "conversation": "de-c1-wetter-idiome", "de": "ein Sturm im Wasserglas", "en": "a storm in a teacup" },
- { "conversation": "de-c1-farben-idiome", "de": "Er hat blaugemacht.", "en": "he skived off work" },
+ { "conversation": "de-c1-wetter-idiome", "de": "ein Sturm im Wasserglas", "en": "a tempest in a teapot" },
+ { "conversation": "de-c1-farben-idiome", "de": "Er hat blaugemacht.", "en": "he skipped work" },
  { "conversation": "de-c1-farben-idiome", "de": "Das ist nicht das Gelbe vom Ei.", "en": "it is not exactly wonderful" },
  { "conversation": "de-c1-sport-idiome", "de": "Bleib am Ball!", "en": "keep at it" },
  { "conversation": "de-c1-sport-idiome", "de": "ein Eigentor schießen", "en": "to score an own goal" },
@@ -47,6 +47,6 @@
  { "conversation": "de-c1-miete-recht", "de": "Anspruch auf … erheben", "en": "to assert a claim" },
  { "conversation": "de-c1-miete-recht", "de": "eine Frist setzen", "en": "to set a deadline" },
  { "conversation": "de-c1-arbeitsrecht", "de": "Der Anwalt sagte, man müsse …", "en": "reports a legal opinion" },
- { "conversation": "de-c1-arbeitsrecht", "de": "Einspruch einlegen", "en": "to lodge an objection" },
+ { "conversation": "de-c1-arbeitsrecht", "de": "Einspruch einlegen", "en": "to file an objection" },
  { "conversation": "de-c1-datenschutz-c1", "de": "die Verarbeitung personenbezogener Daten", "en": "a term built from a noun chain" }
 ]

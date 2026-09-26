@@ -1,12 +1,12 @@
 import type { DialogueTurn, DialogueReply } from "@/lib/dialogue";
 
 /**
- * A1 derslerinin çevrimdışı rol yapma senaryoları (WP-04, ilk 10 ders).
+ * A1 konuşmalarının çevrimdışı sohbet senaryoları (WP-04, ilk 10 konuşma).
  *
- * Her senaryo dersin sahnesini modelsiz oynatır: kapalı tema, 4 tur (dersin
- * `minTurns`ı), her turda öğrencinin verebileceği cevapların anahtar kökleri.
- * İlk turun `ask`i dersin açılış repliğiyle birebir aynı — oynatıcı açılışı
- * zaten gösteriyor. `uses` dersin kalıplarını (patterns.de) taşır; özet
+ * Her senaryo konuşmanın sahnesini modelsiz oynatır: kapalı tema, en az
+ * `minTurns` kadar tur, her turda öğrencinin verebileceği cevapların anahtar kökleri.
+ * İlk turun `ask`i konuşmanın açılış repliğiyle birebir aynı — oynatıcı açılışı
+ * zaten gösteriyor. `uses` konuşmanın kalıplarını (patterns.de) taşır; özet
  * "şunları kullandın" derken buradan sayar.
  *
  * Kökler bilerek cömert: tanıyıcı "heiße"yi "heisse", "Türkei"yi "turkei"
@@ -94,7 +94,7 @@ export const A1_SCRIPTS: Record<string, DialogueTurn[]> = {
       r(["ja", "nein", "kenne", "noch", "niemand", "frau", "herr", "kollege", "kollegin"], "Das kommt schnell. Ihre erste Aufgabe heute: Können Sie die Post sortieren?", "O çabuk olur. Bugünkü ilk işiniz: Postayı ayırabilir misiniz?", "t6", []),
     ], { say: "Kennen Sie jemanden hier — ja oder nein?", sayTr: "Burada tanıdığınız var mı — evet mi hayır mı?", example: "Nein, noch nicht." }),
     t("t6", "Können Sie heute die Post sortieren?", "Bugün postayı ayırabilir misiniz?", "Kabul et: Ja, gern / Natürlich", [
-      r(["ja", "gern", "gerne", "natürlich", "natuerlich", "klar", "kann", "mache"], "Wunderbar. Dann viel Erfolg am ersten Tag — und fragen Sie mich jederzeit!", "Harika. O zaman ilk gününüzde başarılar — ve istediğiniz zaman bana sorun!", undefined, ["Sie sind …?"]),
+      r(["ja", "gern", "gerne", "natürlich", "natuerlich", "klar", "kann", "mache"], "Wunderbar. Dann viel Erfolg am ersten Tag — und fragen Sie mich jederzeit!", "Harika. O zaman ilk gününüzde başarılar — ve istediğiniz zaman bana sorun!", undefined, []),
     ], { say: "Machen Sie das heute — ja oder nein?", sayTr: "Bugün yapar mısınız — evet mi hayır mı?", example: "Ja, gern." }),
   ],
 
@@ -146,7 +146,7 @@ export const A1_SCRIPTS: Record<string, DialogueTurn[]> = {
     ], { say: "Ihre Telefonnummer, bitte — Ziffer für Ziffer.", sayTr: "Telefon numaranız, lütfen — rakam rakam.", example: "Meine Nummer ist null sieben neun, drei vier fünf, sechs sieben." }),
     t("t2", "Wie ist Ihre Postleitzahl?", "Posta kodunuz kaç?", "Posta kodunu rakam rakam söyle", [
       r(["postleitzahl", "null", "eins", "zwei", "drei", "vier", "fünf", "fuenf", "sechs", "sieben", "acht", "neun", "zehn", "zwanzig", "dreißig", "achtzig"], "Perfekt. Möchten Sie die Monatskarte oder die Jahreskarte?", "Mükemmel. Aylık kart mı istersiniz, yıllık mı?", "t3", []),
-    ], { say: "Die Postleitzahl, bitte.", sayTr: "Posta kodu, lütfen.", example: "Achtzig null null fünf." }),
+    ], { say: "Die Postleitzahl, bitte.", sayTr: "Posta kodu, lütfen.", example: "Acht null null null fünf." }),
     t("t3", "Möchten Sie die Monatskarte oder die Jahreskarte?", "Aylık kart mı, yıllık mı?", "Birini seç ve fiyatı sor: Wie viel kostet das?", [
       r(["monatskarte", "monat", "jahreskarte", "jahr", "kostet", "kosten", "preis", "wie viel"], "Die Monatskarte kostet fünfundvierzig Euro, die Jahreskarte vierhundert. Möchten Sie bar oder mit Karte bezahlen?", "Aylık kart kırk beş euro, yıllık kart dört yüz. Nakit mi, kartla mı ödemek istersiniz?", "t4", ["Wie viel kostet das?"]),
     ], { say: "Monatskarte oder Jahreskarte?", sayTr: "Aylık kart mı, yıllık kart mı?", example: "Die Monatskarte, bitte. Wie viel kostet das?" }),
@@ -154,20 +154,20 @@ export const A1_SCRIPTS: Record<string, DialogueTurn[]> = {
       r(["bar", "karte", "bezahle", "bezahlen", "kreditkarte"], "Sehr gut. Ab wann möchten Sie anfangen — heute oder ab Montag?", "Çok iyi. Ne zaman başlamak istersiniz — bugün mü, pazartesiden mi?", "t5", []),
     ], { say: "Bar oder mit Karte?", sayTr: "Nakit mi, kartla mı?", example: "Mit Karte, bitte." }),
     t("t5", "Ab wann möchten Sie anfangen — heute oder ab Montag?", "Ne zaman başlamak istersiniz — bugün mü, pazartesiden mi?", "Bir gün seç", [
-      r(["heute", "montag", "morgen", "woche", "nächste", "naechste", "ab"], "Notiert. Wie ist Ihre Telefonnummer?", "Not aldım. Telefon numaranız kaç?", "t6", []),
+      r(["heute", "montag", "morgen", "woche", "nächste", "naechste", "ab"], "Notiert. Und wie ist Ihre Handynummer?", "Not aldım. Peki cep telefonu numaranız kaç?", "t6", []),
     ], { say: "Heute oder ab Montag?", sayTr: "Bugün mü, pazartesiden mi?", example: "Ab Montag, bitte." }),
-    t("t6", "Wie ist Ihre Telefonnummer?", "Telefon numaranız kaç?", "Numaranı rakam rakam söyle", [
-      r(["nummer", "null", "eins", "zwei", "drei", "vier", "fünf", "fuenf", "sechs", "sieben", "acht", "neun", "handy", "telefon"], "Danke. Der Beitrag ist neunundzwanzig Euro im Monat — ist das in Ordnung?", "Teşekkürler. Aidat ayda yirmi dokuz euro — uygun mu?", "t7", ["Meine Nummer ist …"]),
-    ], { say: "Ihre Telefonnummer, bitte.", sayTr: "Telefon numaranız, lütfen.", example: "Meine Nummer ist null sieben sechs, eins zwei drei." }),
-    t("t7", "Der Beitrag ist neunundzwanzig Euro im Monat — ist das in Ordnung?", "Aidat ayda yirmi dokuz euro — uygun mu?", "Onayla ya da fiyatı bir daha sor", [
-      r(["ja", "okay", "ok", "gut", "ordnung", "teuer", "nein", "wie viel", "kostet"], "Alles klar: neunundzwanzig Euro, Start am Montag. Hier ist Ihre Karte — viel Spaß beim Training!", "Tamamdır: yirmi dokuz euro, başlangıç pazartesi. İşte kartınız — antrenmanda iyi eğlenceler!", undefined, ["Wie viel kostet das?"]),
-    ], { say: "Neunundzwanzig Euro im Monat — geht das?", sayTr: "Ayda yirmi dokuz euro — olur mu?", example: "Ja, das ist in Ordnung." }),
+    t("t6", "Wie ist Ihre Handynummer?", "Cep telefonu numaranız kaç?", "Numaranı rakam rakam söyle", [
+      r(["nummer", "null", "eins", "zwei", "drei", "vier", "fünf", "fuenf", "sechs", "sieben", "acht", "neun", "handy", "telefon"], "Danke. Der Beitrag ist fünfundvierzig Euro im Monat — ist das in Ordnung?", "Teşekkürler. Aidat ayda kırk beş euro — uygun mu?", "t7", ["Meine Nummer ist …"]),
+    ], { say: "Ihre Handynummer, bitte.", sayTr: "Cep telefonu numaranız, lütfen.", example: "Meine Nummer ist null eins sieben sechs, eins zwei drei." }),
+    t("t7", "Der Beitrag ist fünfundvierzig Euro im Monat — ist das in Ordnung?", "Aidat ayda kırk beş euro — uygun mu?", "Onayla ya da fiyatı bir daha sor", [
+      r(["ja", "okay", "ok", "gut", "ordnung", "teuer", "nein", "wie viel", "kostet"], "Alles klar: fünfundvierzig Euro, Start am Montag. Hier ist Ihre Karte — viel Spaß beim Training!", "Tamamdır: kırk beş euro, başlangıç pazartesi. İşte kartınız — antrenmanda iyi eğlenceler!", undefined, ["Wie viel kostet das?"]),
+    ], { say: "Fünfundvierzig Euro im Monat — geht das?", sayTr: "Ayda kırk beş euro — olur mu?", example: "Ja, das ist in Ordnung." }),
   ],
 
   "de-a1-alphabet": [
     t("t1", "Guten Tag! Ich brauche Ihren Vornamen und Ihren Nachnamen. Können Sie das buchstabieren?", "İyi günler! Adınıza ve soyadınıza ihtiyacım var. Harfleyebilir misiniz?", "Adını söyle: Mein Vorname ist … Mein Nachname ist …", [
       r(["vorname", "nachname", "heiße", "heisse", "name", "bin"], "Danke. Buchstabieren Sie bitte den Nachnamen.", "Teşekkürler. Lütfen soyadınızı harfleyin.", "t2", ["Mein Nachname ist …"]),
-    ], { say: "Wie ist Ihr Vorname und Ihr Nachname?", sayTr: "Adınız ve soyadınız ne?", example: "Mein Vorname ist Ayşe. Mein Nachname ist Demir." }),
+    ], { say: "Wie ist Ihr Vor- und Nachname?", sayTr: "Adınız ve soyadınız ne?", example: "Mein Vorname ist Ayşe. Mein Nachname ist Demir." }),
     t("t2", "Buchstabieren Sie bitte den Nachnamen.", "Soyadınızı harfleyin lütfen.", "Harf harf söyle: D-E-M-I-R", [
       r(["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "r", "s", "t", "u", "v", "w", "y", "z", "buchstabiere"], "Danke. Und Ihre Straße? Wie schreibt man das?", "Teşekkürler. Peki sokağınız? Nasıl yazılıyor?", "t3", ["Buchstabieren Sie bitte."]),
     ], { say: "Bitte langsam buchstabieren: D – E – M …", sayTr: "Lütfen yavaşça harfleyin: D – E – M…", example: "D, E, M, I, R." }),
@@ -211,7 +211,7 @@ export const A1_SCRIPTS: Record<string, DialogueTurn[]> = {
 
   "de-a1-alter": [
     t("t1", "Hallo, ich bin Lena und heute dreißig Jahre alt. Wie alt bist du?", "Merhaba, ben Lena ve bugün otuz yaşındayım. Sen kaç yaşındasın?", "Yaşını söyle: Ich bin … Jahre alt.", [
-      r(["jahre", "alt", "bin", "zwanzig", "dreißig", "dreissig", "vierzig", "fünfzig", "fuenfzig", "achtzehn", "neunzehn"], "Herzlichen Glückwunsch nachträglich! Wo bist du geboren?", "Geçmiş doğum günün kutlu olsun! Nerede doğdun?", "t2", ["Ich bin … Jahre alt."]),
+      r(["jahre", "alt", "bin", "zwanzig", "dreißig", "dreissig", "vierzig", "fünfzig", "fuenfzig", "achtzehn", "neunzehn"], "Schön, dich kennenzulernen! Wo bist du geboren?", "Tanıştığımıza sevindim! Nerede doğdun?", "t2", ["Ich bin … Jahre alt."]),
     ], { say: "Wie alt bist du?", sayTr: "Kaç yaşındasın?", example: "Ich bin fünfundzwanzig Jahre alt." }),
     t("t2", "Wo bist du geboren?", "Nerede doğdun?", "Doğum yerini söyle: Ich bin in … geboren.", [
       r(["geboren", "istanbul", "ankara", "izmir", "türkei", "turkei", "in"], "Schön! Ich bin in Hamburg geboren. Und wann hast du Geburtstag?", "Güzel! Ben Hamburg'da doğdum. Peki doğum günün ne zaman?", "t3", ["Ich bin in … geboren."]),
@@ -220,11 +220,11 @@ export const A1_SCRIPTS: Record<string, DialogueTurn[]> = {
       r(["januar", "februar", "märz", "maerz", "april", "mai", "juni", "juli", "august", "september", "oktober", "november", "dezember", "geburtstag", "im"], "Dann feiern wir bald wieder! Wie alt ist dein bester Freund oder deine beste Freundin?", "O zaman yakında yine kutlarız! En iyi arkadaşın kaç yaşında?", "t4", []),
     ], { say: "In welchem Monat hast du Geburtstag?", sayTr: "Hangi ayda doğum günün?", example: "Ich habe im Oktober Geburtstag." }),
     t("t4", "Wie alt ist dein bester Freund oder deine beste Freundin?", "En iyi arkadaşın kaç yaşında?", "Arkadaşının yaşını söyle ve Lena'ya geri sor: Wie alt bist du?", [
-      r(["jahre", "alt", "ist", "zwanzig", "dreißig", "dreissig", "vierzig", "wie alt"], "Ha, fast so alt wie ich! Und wo bist du geboren?", "Ha, neredeyse benim yaşımda! Peki sen nerede doğdun?", "t5", ["Wie alt bist du?"]),
+      r(["jahre", "alt", "ist", "zwanzig", "dreißig", "dreissig", "vierzig", "wie alt"], "Ha, fast so alt wie ich! Und wo ist er oder sie geboren?", "Ha, neredeyse benim yaşımda! Peki o nerede doğmuş?", "t5", ["Wie alt bist du?"]),
     ], { say: "Wie alt ist dein Freund oder deine Freundin?", sayTr: "Arkadaşın kaç yaşında?", example: "Er ist achtundzwanzig Jahre alt." }),
-    t("t5", "Wo bist du geboren?", "Nerede doğdun?", "Doğduğun yeri söyle: Ich bin in … geboren", [
-      r(["geboren", "bin", "izmir", "ankara", "istanbul", "stadt", "dorf"], "Im Ernst? Meine Mutter kommt auch von dort! Warst du dieses Jahr schon dort?", "Cidden mi? Annem de oralı! Bu yıl gittin mi oraya?", "t6", ["Ich bin in … geboren."]),
-    ], { say: "In welcher Stadt bist du geboren?", sayTr: "Hangi şehirde doğdun?", example: "Ich bin in Izmir geboren." }),
+    t("t5", "Wo ist dein Freund oder deine Freundin geboren?", "Arkadaşın nerede doğmuş?", "Arkadaşının doğduğu yeri söyle: Er/Sie ist in … geboren", [
+      r(["geboren", "ist", "izmir", "ankara", "istanbul", "stadt", "dorf"], "Im Ernst? Meine Mutter kommt auch von dort! Warst du dieses Jahr schon dort?", "Cidden mi? Annem de oralı! Bu yıl gittin mi oraya?", "t6", ["Ich bin in … geboren."]),
+    ], { say: "In welcher Stadt ist er oder sie geboren?", sayTr: "Hangi şehirde doğmuş?", example: "Sie ist in Hamburg geboren." }),
     t("t6", "Warst du dieses Jahr schon dort?", "Bu yıl oraya gittin mi?", "Evet/hayır de ve kısa bir şey ekle", [
       r(["ja", "nein", "war", "sommer", "jahr", "noch", "nicht", "bald"], "Wie schön — dann haben wir ja etwas gemeinsam! Komm, wir holen uns ein Stück Kuchen.", "Ne güzel — demek ortak bir yanımız var! Gel, birer dilim pasta alalım.", undefined, []),
     ], { say: "Dieses Jahr schon dort — ja oder nein?", sayTr: "Bu yıl gittin mi — evet mi hayır mı?", example: "Ja, im Sommer war ich dort." }),
@@ -239,7 +239,7 @@ export const A1_SCRIPTS: Record<string, DialogueTurn[]> = {
     ], { say: "Ihre Adresse, bitte: Straße und Hausnummer.", sayTr: "Adresiniz, lütfen: sokak ve kapı numarası.", example: "Meine Adresse ist Bahnhofstraße zwölf." }),
     t("t3", "Und die Postleitzahl?", "Peki posta kodu?", "Posta kodunu ve şehri söyle", [
       r(["postleitzahl", "null", "eins", "zwei", "drei", "vier", "fünf", "fuenf", "sechs", "sieben", "acht", "neun", "zürich", "zurich", "berlin", "stadt"], "Gut. Und wie ist Ihre Telefonnummer?", "İyi. Peki telefon numaranız?", "t4", []),
-    ], { say: "Die Postleitzahl und die Stadt, bitte.", sayTr: "Posta kodu ve şehir, lütfen.", example: "Achtzig null null vier, Zürich." }),
+    ], { say: "Die Postleitzahl und die Stadt, bitte.", sayTr: "Posta kodu ve şehir, lütfen.", example: "Acht null null vier, Zürich." }),
     t("t4", "Wie ist Ihre Telefonnummer?", "Telefon numaranız kaç?", "Numaranı söyle; sonra memur birkaç şey daha soracak", [
       r(["nummer", "null", "eins", "zwei", "drei", "vier", "fünf", "fuenf", "sechs", "sieben", "acht", "neun", "telefon", "handy"], "Danke. Seit wann wohnen Sie in dieser Wohnung?", "Teşekkürler. Bu dairede ne zamandan beri oturuyorsunuz?", "t5", []),
     ], { say: "Ihre Telefonnummer, bitte.", sayTr: "Telefon numaranız, lütfen.", example: "Meine Nummer ist null sieben sechs, eins zwei drei." }),
@@ -250,7 +250,7 @@ export const A1_SCRIPTS: Record<string, DialogueTurn[]> = {
       r(["null", "eins", "zwei", "drei", "vier", "fünf", "fuenf", "sechs", "sieben", "acht", "neun", "postleitzahl"], "Alles erfasst. Unterschreiben Sie bitte hier — ist alles richtig?", "Hepsi kaydedildi. Buraya imza atın lütfen — her şey doğru mu?", "t7", ["Meine Adresse ist …"]),
     ], { say: "Ihre Postleitzahl, bitte.", sayTr: "Posta kodunuz, lütfen.", example: "Fünf null sechs sechs sieben." }),
     t("t7", "Unterschreiben Sie bitte hier — ist alles richtig?", "Buraya imza atın — her şey doğru mu?", "Onayla: Ja, das stimmt.", [
-      r(["ja", "stimmt", "richtig", "okay", "ok", "unterschreibe", "nein", "falsch"], "Dann ist Ihre Anmeldung fertig. Hier ist die Bestätigung — auf Wiedersehen!", "O zaman kaydınız tamam. İşte belgeniz — hoşça kalın!", undefined, ["Unterschreiben Sie hier, bitte."]),
+      r(["ja", "stimmt", "richtig", "okay", "ok", "unterschreibe", "nein", "falsch"], "Dann ist Ihre Anmeldung fertig. Hier ist die Bestätigung — auf Wiedersehen!", "O zaman kaydınız tamam. İşte kayıt belgeniz — hoşça kalın!", undefined, ["Unterschreiben Sie hier, bitte."]),
     ], { say: "Ist alles richtig — ja oder nein?", sayTr: "Her şey doğru mu — evet mi hayır mı?", example: "Ja, das stimmt." }),
   ],
 };

@@ -26,13 +26,13 @@
  { "conversation": "de-b1-rueckenschmerz", "titleEn": "Aches from desk work", "summaryEn": "Teaches you to give and to take advice in the subjunctive." },
  { "conversation": "de-b1-schlaf", "titleEn": "Sleep routine", "summaryEn": "Teaches you to describe the order of a day with the conjunctions bevor and während." },
  { "conversation": "de-b1-psychische-gesundheit", "titleEn": "Mental health", "summaryEn": "Teaches you to say that you are struggling and to ask for support, with fixed-preposition verbs." },
- { "conversation": "de-b1-notaufnahme", "titleEn": "The emergency department", "summaryEn": "Teaches you to tell what happened at the emergency department in order, pulling the earlier event back in time." },
+ { "conversation": "de-b1-notaufnahme", "titleEn": "The emergency room", "summaryEn": "Teaches you to tell what happened in the emergency room in order, pulling the earlier event back in time." },
  { "conversation": "de-b1-impfung", "titleEn": "A vaccination appointment", "summaryEn": "Teaches you to follow the vaccination process in passive sentences and to ask questions." },
- { "conversation": "de-b1-krankenhaus-besuch", "titleEn": "Visiting a patient", "summaryEn": "Teaches you to offer good wishes and help when you visit someone who is ill." },
- { "conversation": "de-b1-muelltrennung", "titleEn": "Sorting the rubbish", "summaryEn": "Teaches you to understand and ask about the rules for sorting rubbish, in passive sentences." },
+ { "conversation": "de-b1-krankenhaus-besuch", "titleEn": "Visiting a patient", "summaryEn": "Teaches you to offer good wishes and help when you visit someone who is sick." },
+ { "conversation": "de-b1-muelltrennung", "titleEn": "Sorting the trash", "summaryEn": "Teaches you to understand and ask about the rules for sorting trash, in passive sentences." },
  { "conversation": "de-b1-energie-sparen", "titleEn": "Saving energy", "summaryEn": "Teaches you to state the aim of an action with um … zu and to talk about saving." },
  { "conversation": "de-b1-verkehrswende", "titleEn": "The transport debate", "summaryEn": "Teaches you to weigh transport options with paired conjunctions and to defend your own choice." },
- { "conversation": "de-b1-nachhaltig-einkaufen", "titleEn": "Sustainable shopping", "summaryEn": "Teaches you to describe products and shops with relative clauses and to explain your choice." },
+ { "conversation": "de-b1-nachhaltig-einkaufen", "titleEn": "Sustainable shopping", "summaryEn": "Teaches you to describe products and stores with relative clauses and to explain your choice." },
  { "conversation": "de-b1-garten-projekt", "titleEn": "A community garden", "summaryEn": "Teaches you to set out the rules of a shared project in passive sentences." },
  { "conversation": "de-b1-wetterextrem", "titleEn": "Watching the climate", "summaryEn": "Teaches you to describe a change with comparative forms." },
  { "conversation": "de-b1-ehrenamt", "titleEn": "Volunteering", "summaryEn": "Teaches you to say why you volunteer and what it gives you." },
@@ -48,5 +48,5 @@
  { "conversation": "de-b1-konflikt-loesen", "titleEn": "Resolving a conflict", "summaryEn": "Teaches you to talk through a disagreement without blame and to state the aim with damit." },
  { "conversation": "de-b1-heimweh", "titleEn": "Between two worlds", "summaryEn": "Teaches you to describe a sense of belonging, tying it to the past with als." },
  { "conversation": "de-b1-lebenstraum", "titleEn": "A big dream", "summaryEn": "Teaches you to describe a long-term dream with infinitive phrases and to break it into steps." },
- { "conversation": "de-b1-rueckblick", "titleEn": "Closing B1", "summaryEn": "Teaches you to look back on your own learning and to look ahead to the next stage." }
+ { "conversation": "de-b1-rueckblick", "titleEn": "An interim review", "summaryEn": "Teaches you to look back on your own learning and to look ahead to the next stage." }
 ]

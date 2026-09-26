@@ -15,7 +15,7 @@
  { "conversation": "de-b2-verhandeln", "de": "verhandeln", "en": "to negotiate" },
  { "conversation": "de-b2-beschwerde-formell", "de": "die Stellungnahme", "en": "statement" },
  { "conversation": "de-b2-beschwerde-formell", "de": "unzumutbar", "en": "unacceptable" },
- { "conversation": "de-b2-hotline", "de": "der Sachbearbeiter", "en": "case worker" },
+ { "conversation": "de-b2-hotline", "de": "der Sachbearbeiter", "en": "case handler" },
  { "conversation": "de-b2-schadenersatz", "de": "der Schadenersatz", "en": "compensation" },
  { "conversation": "de-b2-schadenersatz", "de": "infolge", "en": "as a result of" },
  { "conversation": "de-b2-kompromiss", "de": "nachgeben", "en": "to give in" },
@@ -45,8 +45,8 @@
  { "conversation": "de-b2-wohnungsmarkt", "de": "der Neubau", "en": "new building" },
  { "conversation": "de-b2-wohnungsmarkt", "de": "der Leerstand", "en": "vacant housing" },
  { "conversation": "de-b2-ehrenamt-b2", "de": "sich engagieren", "en": "to get involved" },
- { "conversation": "de-b2-ehrenamt-b2", "de": "der Zusammenhalt", "en": "solidarity" },
+ { "conversation": "de-b2-ehrenamt-b2", "de": "der Zusammenhalt", "en": "cohesion" },
  { "conversation": "de-b2-generationen", "de": "der Umgang", "en": "way of dealing" },
- { "conversation": "de-b2-landflucht", "de": "der Ballungsraum", "en": "conurbation" },
+ { "conversation": "de-b2-landflucht", "de": "der Ballungsraum", "en": "metropolitan area" },
  { "conversation": "de-b2-wahl", "de": "die Beteiligung", "en": "participation" }
 ]

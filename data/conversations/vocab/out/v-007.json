@@ -1,7 +1,7 @@
 [
  { "conversation": "de-b1-alte-technik", "de": "senden", "en": "to broadcast" },
  { "conversation": "de-b1-alte-technik", "de": "vorläufig", "en": "for now" },
- { "conversation": "de-b1-alte-technik", "de": "mittlerweile", "en": "meanwhile" },
+ { "conversation": "de-b1-alte-technik", "de": "mittlerweile", "en": "by now; meanwhile" },
  { "conversation": "de-b1-alte-technik", "de": "umgekehrt", "en": "the other way around" },
  { "conversation": "de-b1-reparieren-lassen", "de": "klingeln", "en": "to ring" },
  { "conversation": "de-b1-reparieren-lassen", "de": "einstellen", "en": "to set" },
@@ -9,8 +9,8 @@
  { "conversation": "de-b1-reparieren-lassen", "de": "testen", "en": "to try out" },
  { "conversation": "de-b1-technik-diskussion", "de": "süchtig", "en": "addicted" },
  { "conversation": "de-b1-lehre-machen", "de": "die Lehre", "en": "apprenticeship" },
- { "conversation": "de-b1-lehre-machen", "de": "die Fortbildung", "en": "in-service training" },
- { "conversation": "de-b1-lehre-machen", "de": "die Matura", "en": "school leaving exam" },
+ { "conversation": "de-b1-lehre-machen", "de": "die Fortbildung", "en": "continuing education" },
+ { "conversation": "de-b1-lehre-machen", "de": "die Matura", "en": "high school exit exam" },
  { "conversation": "de-b1-experte-fragen", "de": "der Spezialist", "en": "specialist" },
  { "conversation": "de-b1-experte-fragen", "de": "der Fachmann", "en": "specialist, professional" },
  { "conversation": "de-b1-experte-fragen", "de": "die Fachfrau", "en": "female expert" },
@@ -48,5 +48,5 @@
  { "conversation": "de-b1-sport-treiben", "de": "kräftig", "en": "strong" },
  { "conversation": "de-b1-wetter-extrem", "de": "quer", "en": "crosswise" },
  { "conversation": "de-b1-wetter-extrem", "de": "trocknen", "en": "to dry" },
- { "conversation": "de-b1-tiere-natur", "de": "fressen", "en": "to eat (of animals)" }
+ { "conversation": "de-b1-tiere-natur", "de": "fressen", "en": "to eat" }
 ]

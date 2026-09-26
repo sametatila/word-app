@@ -15,7 +15,7 @@
  },
  {
   "conversation": "de-b1-notaufnahme",
-  "sceneEn": "You are telling the nurse at the emergency department what happened: what happened, in what order, and where it hurts now. Order it by pulling the earlier event back.",
+  "sceneEn": "You are telling the nurse in the emergency room what happened: what happened, in what order, and where it hurts now. Order it by pulling the earlier event back.",
   "partnerEn": "an emergency nurse who asks quick, clear questions",
   "openingEn": "Just stay sitting quietly. Tell me briefly: what happened and when was that?",
   "goalEn": "What happened has been told in order and where it hurts now has been said."
@@ -23,29 +23,29 @@
  {
   "conversation": "de-b1-impfung",
   "sceneEn": "You are at your vaccination appointment: ask what you need to bring, about the possible side effects and when the booster is due. Repeat the passive sentences you hear in your own words.",
-  "partnerEn": "a practice worker who speaks briefly and clearly",
-  "openingEn": "Good afternoon. Have you got your vaccination card with you? Then we'll see what's being done today.",
+  "partnerEn": "a doctor's office worker who speaks briefly and clearly",
+  "openingEn": "Hello. Do you have your vaccination card with you? Then we'll see what's being done today.",
   "goalEn": "What you need to bring, the possible side effects and the timing of the booster have all been found out."
  },
  {
   "conversation": "de-b1-krankenhaus-besuch",
-  "sceneEn": "You are visiting a relative in hospital: ask how they are, offer help, cheer them up. Soften your offers with the subjunctive.",
+  "sceneEn": "You are visiting a relative in the hospital: ask how they are, offer help, cheer them up. Soften your offers with the subjunctive.",
   "partnerEn": "a relative who is tired but wants to talk",
-  "openingEn": "How lovely that you're here. Sit down — and tell me something from outside, will you?",
+  "openingEn": "So nice that you're here. Sit down — and tell me something from outside, will you?",
   "goalEn": "How they are has been asked, help has been offered and their spirits have been lifted."
  },
  {
   "conversation": "de-b1-muelltrennung",
-  "sceneEn": "You are asking a neighbor about the rubbish rules in the building you have just moved into: which rubbish goes in which bin, how the deposit is claimed back, which day it is collected.",
+  "sceneEn": "You are asking a neighbor about the trash rules in the building you have just moved into: which trash goes in which can, how the deposit is claimed back, which day it is collected.",
   "partnerEn": "a slightly meticulous neighbor who knows the rules well",
-  "openingEn": "You're new here, aren't you? Everyone gets the rubbish wrong at first — what would you like to know?",
-  "goalEn": "Which rubbish goes where and how the deposit is claimed back have both been found out."
+  "openingEn": "You're new here, aren't you? Everyone gets the trash wrong at first — what would you like to know?",
+  "goalEn": "Which trash goes where and how the deposit is claimed back have both been found out."
  },
  {
   "conversation": "de-b1-energie-sparen",
-  "sceneEn": "You are discussing the rising electricity bill with your flatmate: what you suggest changing and why. Give the aim of your suggestions with um … zu.",
-  "partnerEn": "a flatmate who likes their comfort and is wary of saving",
-  "openingEn": "The electricity bill has got really high. But I don't want to sit in the dark — what do you suggest?",
+  "sceneEn": "You are discussing the rising electricity bill with your roommate: what you suggest changing and why. Give the aim of your suggestions with um … zu.",
+  "partnerEn": "a roommate who likes their comfort and is wary of saving",
+  "openingEn": "The electricity bill has gotten really high. But I don't want to sit in the dark — what do you suggest?",
   "goalEn": "At least two suggestions have been made along with their aim, and one has been agreed on."
  },
  {
@@ -57,10 +57,10 @@
  },
  {
   "conversation": "de-b1-nachhaltig-einkaufen",
-  "sceneEn": "You and a friend are talking about your shopping habits: which products you go for, which shops you go to, why. Describe your choices with relative clauses.",
+  "sceneEn": "You and a friend are talking about your shopping habits: which products you go for, which stores you go to, why. Describe your choices with relative clauses.",
   "partnerEn": "a friend who watches the price but is open to persuasion",
-  "openingEn": "You only shop at the packaging-free shop now? Isn't that much more expensive? Do tell.",
-  "goalEn": "Which products and shops you go for has been described along with your reasons."
+  "openingEn": "You only shop at the packaging-free store now? Isn't that much more expensive? Do tell.",
+  "goalEn": "Which products and stores you go for has been described along with your reasons."
  },
  {
   "conversation": "de-b1-garten-projekt",
@@ -72,23 +72,23 @@
  {
   "conversation": "de-b1-wetterextrem",
   "sceneEn": "You are talking to a neighbor about how the weather has changed: how it used to be, how it is now, what you notice. Describe the change with comparative forms.",
-  "partnerEn": "a long-standing neighbor who likes comparing the years",
+  "partnerEn": "a longtime neighbor who likes comparing the years",
   "openingEn": "We never used to have a summer like this. Do you notice it too, or am I imagining it?",
   "goalEn": "Then and now have been compared and what you have noticed has been described."
  },
  {
   "conversation": "de-b1-ehrenamt",
-  "sceneEn": "You are at an introductory meeting at a voluntary organization: say why you want to volunteer, how much time you have a week and what you could do.",
+  "sceneEn": "You are at an introductory meeting at a volunteer organization: say why you want to volunteer, how much time you have a week and what you could do.",
   "partnerEn": "a warm but realistic volunteer coordinator",
   "openingEn": "Glad you could come. First tell me: why do you want to get involved with us?",
   "goalEn": "Your reason for volunteering, the time you can give and what you could do have all been described."
  },
  {
   "conversation": "de-b1-stadtentwicklung",
-  "sceneEn": "You are talking about the changes with someone who has lived in the area a long time: what has been done up, what has closed, what has happened to the rents, who has left. Describe the change in the past passive.",
+  "sceneEn": "You are talking about the changes with someone who has lived in the area a long time: what has been renovated, what has closed, what has happened to the rents, who has left. Describe the change in the past passive.",
   "partnerEn": "a resident who resents the change and misses the old area",
   "openingEn": "You should have seen this neighborhood ten years ago. Do you know what's disappeared from here?",
-  "goalEn": "What has been done up, what has closed and what has happened to the rents have all been discussed."
+  "goalEn": "What has been renovated, what has closed and what has happened to the rents have all been discussed."
  },
  {
   "conversation": "de-b1-demo",

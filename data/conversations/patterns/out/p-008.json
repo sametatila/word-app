@@ -28,7 +28,7 @@
  { "conversation": "de-a2-nachbarschaft", "de": "Da drüben ist die Haltestelle.", "en": "points to a place over there" },
  { "conversation": "de-a2-leihen", "de": "Kannst du mir kurz helfen?", "en": "asks for help" },
  { "conversation": "de-a2-leihen", "de": "Kann ich mir … ausleihen?", "en": "asks to borrow something" },
- { "conversation": "de-a2-paket", "de": "Ich nehme das Päckchen für Sie an.", "en": "says that you took in a parcel" },
+ { "conversation": "de-a2-paket", "de": "Ich nehme das Päckchen für Sie an.", "en": "says that you took in a package" },
  { "conversation": "de-a2-paket", "de": "Ich benachrichtige dich, wenn es da ist.", "en": "says that you will let them know" },
  { "conversation": "de-a2-laerm", "de": "Wenn es zu laut ist, kann ich nicht schlafen.", "en": "links a condition to a result" },
  { "conversation": "de-a2-laerm", "de": "Könnten Sie bitte die Lautstärke leiser stellen?", "en": "puts the request in its most polite form" },

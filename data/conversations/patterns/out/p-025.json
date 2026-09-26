@@ -4,7 +4,7 @@
  { "conversation": "de-c1-polizei-aussage", "de": "Er sagte, der Mann sei …", "en": "reports what someone else said" },
  { "conversation": "de-c1-versicherungsfall", "de": "Wenngleich …, besteht …", "en": "concedes and still keeps the demand" },
  { "conversation": "de-c1-versicherungsfall", "de": "Wir behalten uns … vor.", "en": "reserves the right" },
- { "conversation": "de-c1-buergschaft", "de": "eine Bürgschaft übernehmen", "en": "to stand surety" },
+ { "conversation": "de-c1-buergschaft", "de": "eine Bürgschaft übernehmen", "en": "to act as a guarantor" },
  { "conversation": "de-c1-buergschaft", "de": "in Haftung genommen werden", "en": "to be held liable" },
  { "conversation": "de-c1-einspruch", "de": "fristwahrend Einspruch einlegen", "en": "an objection that keeps the deadline" },
  { "conversation": "de-c1-einspruch", "de": "Die Begründung reiche ich nach.", "en": "says the reasons will follow" },

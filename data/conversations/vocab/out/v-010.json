@@ -31,7 +31,7 @@
  { "conversation": "de-c1-smalltalk-c1", "de": "die Plauderei", "en": "chat" },
  { "conversation": "de-c1-smalltalk-c1", "de": "anknüpfen", "en": "to build on" },
  { "conversation": "de-c1-smalltalk-c1", "de": "auflockern", "en": "to lighten up" },
- { "conversation": "de-c1-telefonton", "de": "der Rückruf", "en": "call back" },
+ { "conversation": "de-c1-telefonton", "de": "der Rückruf", "en": "callback" },
  { "conversation": "de-c1-telefonton", "de": "die Leitung", "en": "line" },
  { "conversation": "de-c1-telefonton", "de": "hinterlassen", "en": "to leave (a message)" },
  { "conversation": "de-c1-telefonton", "de": "umgehend", "en": "promptly" },

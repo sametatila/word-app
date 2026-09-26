@@ -25,7 +25,7 @@
  { "conversation": "de-b2-vertrag-kuendigen", "de": "fristgerecht zum …", "en": "gives the termination date" },
  { "conversation": "de-b2-vertrag-kuendigen", "de": "Ich bitte um …", "en": "makes a formal request" },
  { "conversation": "de-b2-nachbarschaftsstreit", "de": "Sofern Sie einverstanden sind, …", "en": "a conditional proposal" },
- { "conversation": "de-b2-nachbarschaftsstreit", "de": "Können wir das unter Nachbarn klären?", "en": "looks for a neighbourly solution" },
+ { "conversation": "de-b2-nachbarschaftsstreit", "de": "Können wir das unter Nachbarn klären?", "en": "looks for a neighborly solution" },
  { "conversation": "de-b2-reklamation-b2", "de": "… ist bereits … worden", "en": "lists what has already been done" },
  { "conversation": "de-b2-reklamation-b2", "de": "Ich bestehe auf …", "en": "states the demand firmly" },
  { "conversation": "de-b2-feedbackgespraech", "de": "Mir ist aufgefallen, dass …", "en": "states an observation without making it personal" },

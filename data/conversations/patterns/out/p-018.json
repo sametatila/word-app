@@ -27,7 +27,7 @@
  { "conversation": "de-b1-sport-treiben", "de": "Ich versuche, … zu …", "en": "says what you are trying to do" },
  { "conversation": "de-b1-sport-treiben", "de": "Es ist wichtig, … zu …", "en": "says what is important" },
  { "conversation": "de-b1-wettkampf", "de": "Das Tor wurde in der letzten Minute geschossen.", "en": "describes a match event impersonally" },
- { "conversation": "de-b1-wettkampf", "de": "Es ging unentschieden aus.", "en": "says that it ended in a draw" },
+ { "conversation": "de-b1-wettkampf", "de": "Es ging unentschieden aus.", "en": "says that it ended in a tie" },
  { "conversation": "de-b1-natur-erleben", "de": "Als wir ankamen, …", "en": "describes a one-off event in the past" },
  { "conversation": "de-b1-natur-erleben", "de": "Es hat sich gelohnt.", "en": "says that it was worth it" },
  { "conversation": "de-b1-wetter-extrem", "de": "Es wird immer kälter.", "en": "describes a change that keeps growing" },

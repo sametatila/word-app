@@ -24,7 +24,7 @@
   "conversation": "de-b2-technikfrust",
   "sceneEn": "Your computer keeps freezing and you are asking a friend who knows about technology for help. Describe the problem, say when it happens, say what you have tried and repeat the fix in your own words.",
   "partnerEn": "a patient friend who always asks 'have you restarted it' first",
-  "openingEn": "Wait, slowly. When does it freeze — always, or only with certain programs?",
+  "openingEn": "Wait, slow down. When does it freeze — always, or only with certain programs?",
   "goalEn": "The problem has been described, what was tried has been said and the fix has been learned and repeated back."
  },
  {
@@ -43,7 +43,7 @@
  },
  {
   "conversation": "de-b2-aufgrund-infolge",
-  "sceneEn": "An authority's service has been suspended and you have rung for information. Ask the grounds for the decision, find out how long it will last, describe how it affects you and ask for an alternative.",
+  "sceneEn": "An authority's service has been suspended and you have called for information. Ask the grounds for the decision, find out how long it will last, describe how it affects you and ask for an alternative.",
   "partnerEn": "an official who speaks formally and repeats the rules",
   "openingEn": "In view of the current situation the service has been suspended for the time being. What is it about in your case?",
   "goalEn": "The grounds and length of the decision have been found out, the effect has been described and an alternative or an exception has been discussed."
@@ -57,17 +57,17 @@
  },
  {
   "conversation": "de-b2-wohnungsmarkt",
-  "sceneEn": "You and an acquaintance are talking about the housing market: why rents have risen so far, what the difference is between the center and the country, what can be done. Make the link with clauses of proportion.",
-  "partnerEn": "an acquaintance who tells their own flat-hunting story and is keen on solutions",
-  "openingEn": "I've been looking for four months and still found nothing. What's actually behind it?",
+  "sceneEn": "You and an acquaintance are talking about the housing market: why rents have risen so far, what the difference is between the center and rural areas, what can be done. Make the link with clauses of proportion.",
+  "partnerEn": "an acquaintance who tells their own apartment-hunting story and is keen on solutions",
+  "openingEn": "I've been looking for four months and still haven't found anything. What's actually behind it?",
   "goalEn": "The reason rents have risen has been explained with clauses of proportion and at least one solution has been discussed."
  },
  {
   "conversation": "de-b2-arbeitsmarkt",
-  "sceneEn": "You are talking to the manager of a business that cannot find staff: which posts are open, why they cannot be filled, what has been tried and what could be done.",
+  "sceneEn": "You are talking to the manager of a business that cannot find staff: which positions are open, why they cannot be filled, what has been tried and what could be done.",
   "partnerEn": "a tired business manager looking for a solution",
-  "openingEn": "We've been looking for a year — the post simply cannot be filled. Have you any idea why that is?",
-  "goalEn": "Which posts are open and why has been discussed, what has been tried has been found out and at least one suggestion has been made."
+  "openingEn": "We've been looking for a year — the position simply cannot be filled. Do you have any idea why that is?",
+  "goalEn": "Which positions are open and why has been discussed, what has been tried has been found out and at least one suggestion has been made."
  },
  {
   "conversation": "de-b2-ehrenamt-b2",
@@ -99,9 +99,9 @@
  },
  {
   "conversation": "de-b2-wahl",
-  "sceneEn": "You and an acquaintance are talking about a coming election: what has been promised, what the polls show, what you expect and what you decide on. Keep the promises, the polls and your own prediction apart.",
+  "sceneEn": "You and an acquaintance are talking about a coming election: what has been promised, what the polls show, what you expect and what you base your decision on. Keep the promises, the polls and your own prediction apart.",
   "partnerEn": "an undecided acquaintance who does not know which promise to believe",
-  "openingEn": "They all promise the same thing and in the end nothing gets done. What do you decide on, then?",
+  "openingEn": "They all promise the same thing and in the end nothing gets done. What do you base your decision on, then?",
   "goalEn": "The promises, the polls and your own prediction have been separated and a concrete test for deciding has been given."
  },
  {
@@ -121,13 +121,13 @@
  {
   "conversation": "de-b2-theater",
   "sceneEn": "You are coming out of the theater and giving your verdict on the play to the person beside you: what you think of the staging, the acting and the set, what you did not like and whether you would recommend it anyway.",
-  "partnerEn": "a theatregoer who loved the play and is curious about your objections",
+  "partnerEn": "a theatergoer who loved the play and is curious about your objections",
   "openingEn": "I thought that was magnificent — the set especially. How did you like it?",
   "goalEn": "A separate judgment has been given on the staging, the acting and the set, and whether to recommend it has been said."
  },
  {
   "conversation": "de-b2-museum-fuehrung",
-  "sceneEn": "You are guiding a small group round a museum. Say where the tour began, introduce one work (when it was made, from which period), answer a question and lead the tour on to the next room.",
+  "sceneEn": "You are guiding a small group around a museum. Say where the tour began, introduce one work (when it was made, from which period), answer a question and lead the tour on to the next room.",
   "partnerEn": "a curious visitor who asks for detail",
   "openingEn": "Excuse me — do you know when this painting was actually made?",
   "goalEn": "When a work was made and its period have been described, a question has been answered and the tour has been led on to the next stop."
@@ -162,9 +162,9 @@
  },
  {
   "conversation": "de-b2-kabarett",
-  "sceneEn": "You are planning a holiday and taking advice: which region is supposedly worth seeing, what you are not sure is true, what you are guessing yourself. Keep what you heard apart from what you guess.",
+  "sceneEn": "You are planning a vacation and taking advice: which region is supposedly worth seeing, what you are not sure is true, what you are guessing yourself. Keep what you heard apart from what you guess.",
   "partnerEn": "a friend who has not been but repeats what an acquaintance told them",
-  "openingEn": "Everyone says the coast there is supposed to be completely unspoilt. Do you really believe that?",
+  "openingEn": "Everyone says the coast there is supposed to be completely unspoiled. Do you really believe that?",
   "goalEn": "What was heard and what is guessed have been given separately and a conclusion has been reached about whether to go."
  },
  {

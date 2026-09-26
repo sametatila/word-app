@@ -3,28 +3,28 @@
   "conversation": "de-b1-infinitiv-zu",
   "sceneEn": "You are talking to a friend about your plans for the year: what you intend to learn, which habit you want to build, what you will give up. Describe your plans with the zu infinitive.",
   "partnerEn": "a friend who takes your plans seriously and asks questions",
-  "openingEn": "You said this year was going to be different. So what have you set yourself?",
+  "openingEn": "You said this year was going to be different. So what have you resolved to do?",
   "goalEn": "What you intend to learn, which habit you will build and what you will give up have all been described."
  },
  {
   "conversation": "de-b1-lernziele",
-  "sceneEn": "You are having a goals meeting with a course adviser: what you want to achieve in what time, what your intermediate steps are, how you will measure progress.",
-  "partnerEn": "a course adviser who wants concrete numbers",
+  "sceneEn": "You are having a goals meeting with a course advisor: what you want to achieve in what time, what your intermediate steps are, how you will measure progress.",
+  "partnerEn": "a course advisor who wants concrete numbers",
   "openingEn": "Before we pick a course: what exactly do you want to achieve in the next six months?",
-  "goalEn": "The timescale, the goal and the intermediate steps have been made clear, and it has been settled how progress will be measured."
+  "goalEn": "The time frame, the goal and the intermediate steps have been made clear, and it has been settled how progress will be measured."
  },
  {
   "conversation": "de-b1-sprachkurs",
   "sceneEn": "You are at the office of a language school: compare the intensive course with the evening course, ask about the price, the pace and the group size, then choose one with your reasons.",
   "partnerEn": "an honest course secretary who knows both courses well",
-  "openingEn": "We have two courses that would suit you. What would you like to decide on?",
+  "openingEn": "We have two courses that would suit you. What would you like to base your decision on?",
   "goalEn": "The two courses have been compared and one has been chosen with reasons."
  },
  {
   "conversation": "de-b1-pruefung-b1",
   "sceneEn": "You are talking to your teacher before the exam: say what you are apprehensive about, which part you find hard and what you will do if it happens. Build your sentences with conditional clauses.",
   "partnerEn": "a teacher who calms you down and gives concrete advice",
-  "openingEn": "You seem tense. What do you have most respect for in the exam?",
+  "openingEn": "You seem tense. What part of the exam makes you most nervous?",
   "goalEn": "The part you are apprehensive about has been named, what you will do if it happens has been discussed and a strategy has been agreed."
  },
  {
@@ -36,16 +36,16 @@
  },
  {
   "conversation": "de-b1-studium",
-  "sceneEn": "You are at the university's student advice service: ask about the application deadline, the documents needed and which course would suit you. Put your questions indirectly.",
-  "partnerEn": "a practical student adviser who has talked to a great many students",
+  "sceneEn": "You are at the university's student advising office: ask about the application deadline, the documents needed and which program would suit you. Put your questions indirectly.",
+  "partnerEn": "a practical student advisor who has talked to a great many students",
   "openingEn": "Do sit down. You're interested in studying with us — what would you like to clear up first?",
-  "goalEn": "The application deadline, the documents needed and the course that suits you have all been found out."
+  "goalEn": "The application deadline, the documents needed and the program that suits you have all been found out."
  },
  {
   "conversation": "de-b1-praktikum",
   "sceneEn": "At a job interview you are describing your internship: which company, how long it lasted, what work you did, what you got out of it. Tell it in the past tense of written German.",
   "partnerEn": "an HR specialist taking notes and asking for detail",
-  "openingEn": "There's an internship on your CV. Do tell us briefly: what did you do there?",
+  "openingEn": "There's an internship on your résumé. Do tell us briefly: what did you do there?",
   "goalEn": "Where the internship was, how long it lasted, the work you did and what you got out of it have all been described."
  },
  {
@@ -87,12 +87,12 @@
   "conversation": "de-b1-diskussion-hoeflich",
   "sceneEn": "In a meeting you disagree with a colleague's proposal. First show that you have understood them, then put your reservation in soft forms, and suggest a compromise at the end.",
   "partnerEn": "a reasonable colleague who is attached to their proposal",
-  "openingEn": "I suggest we put the project back by three months. How do you see it?",
+  "openingEn": "I suggest we push the project back by three months. How do you see it?",
   "goalEn": "The other side has been shown to be understood, the reservation has been put and a compromise has been suggested."
  },
  {
   "conversation": "de-b1-medienkonsum",
-  "sceneEn": "At a parents' evening you are discussing children's screen time: how much you think is right, what it depends on, how it should be limited. Build your opinion with fixed-preposition verbs.",
+  "sceneEn": "At a parent-teacher meeting you are discussing children's screen time: how much you think is right, what it depends on, how it should be limited. Build your opinion with fixed-preposition verbs.",
   "partnerEn": "an anxious parent who wants firm rules",
   "openingEn": "Two hours a day — that's far too much for a child. Do you see it that way too?",
   "goalEn": "How much is right, what it depends on and how it should be limited have all been discussed."
@@ -108,7 +108,7 @@
   "conversation": "de-b1-serienabend",
   "sceneEn": "You and a friend are arguing about the finale of the series you watched: what you liked, what you liked it in spite of, what ending you would have expected. Build clauses of contrast and expectation.",
   "partnerEn": "a friend who loved the finale and is trying to win you over",
-  "openingEn": "Well I thought the finale was superb. But you pulled such a face — what didn't you like?",
+  "openingEn": "Well I thought the finale was superb. But you made such a face — what didn't you like?",
   "goalEn": "What you liked and disliked about the finale has been said and the ending you expected has been described."
  },
  {
@@ -121,7 +121,7 @@
  {
   "conversation": "de-b1-musikgeschmack",
   "sceneEn": "You and a friend are arguing about your taste in music: which is better, why, what matters more to you. Compare, and close the argument politely.",
-  "partnerEn": "a jokey friend who defends their own music",
+  "partnerEn": "a playful friend who defends their own music",
   "openingEn": "How can you listen to that? It's the same rhythm all the way through. What do you see in it?",
   "goalEn": "Your tastes have been compared and the argument has been closed politely."
  },
@@ -134,30 +134,30 @@
  },
  {
   "conversation": "de-b1-debatte-kurz",
-  "sceneEn": "You are in a short debate: the subject is shops opening on the weekend. Give your view, line up your reasons and close your turn with a summary.",
+  "sceneEn": "You are in a short debate: the subject is stores opening on Sundays. Give your view, line up your reasons and close your turn with a summary.",
   "partnerEn": "a debating opponent who argues the other side and keeps the time",
-  "openingEn": "Two minutes each. I'll start: shops should stay shut on Sundays. What do you say to that?",
+  "openingEn": "Two minutes each. I'll start: stores should stay closed on Sundays. What do you say to that?",
   "goalEn": "Your view has been given, at least two reasons have been lined up and the turn has been closed with a summary."
  },
  {
   "conversation": "de-b1-hausarzt",
-  "sceneEn": "You are at the GP's describing a complaint that has gone on for months: since when, when it gets worse, what it might be connected with. Describe it with fixed-preposition verbs.",
-  "partnerEn": "a GP who takes their time and asks for detail",
+  "sceneEn": "You are at the family doctor's describing a complaint that has gone on for months: since when, when it gets worse, what it might be connected with. Describe it with fixed-preposition verbs.",
+  "partnerEn": "a family doctor who takes their time and asks for detail",
   "openingEn": "Do sit down. You said on the phone it's been going on a while — since when exactly?",
   "goalEn": "How long the complaint has lasted and what it might be connected with have been described, and the doctor has said the next step."
  },
  {
   "conversation": "de-b1-facharzt",
-  "sceneEn": "You are ringing a specialist's practice: say you have a referral, ask for an appointment, and ask about the waiting time and what you need to bring.",
+  "sceneEn": "You are calling a specialist's office: say you have a referral, ask for an appointment, and ask about the waiting time and what you need to bring.",
   "partnerEn": "a receptionist with a full appointment book who talks fast on the phone",
-  "openingEn": "Dr Ahrens' practice, good afternoon. Do you have a referral from your GP?",
+  "openingEn": "Dr. Ahrens's office, good afternoon. Do you have a referral from your family doctor?",
   "goalEn": "An appointment has been made and the waiting time and what to bring have been found out."
  },
  {
   "conversation": "de-b1-apotheke-b1",
   "sceneEn": "You are asking for advice at the pharmacy: say which medicines you are already taking, ask whether the new one can be taken with them, ask about the dose and the timing. Put your questions in conditional clauses.",
-  "partnerEn": "a careful pharmacist who checks the leaflet",
-  "openingEn": "Good afternoon. Before I give you this: are you taking any other medicines at the moment?",
+  "partnerEn": "a careful pharmacist who checks the package insert",
+  "openingEn": "Hello. Before I give you this: are you taking any other medicines at the moment?",
   "goalEn": "The medicines you take have been given, the interaction has been asked about and the dose and timing have been made clear."
  },
  {

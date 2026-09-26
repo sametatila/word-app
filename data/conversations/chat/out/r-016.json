@@ -23,8 +23,8 @@
  {
   "conversation": "de-b1-freizeit-planen",
   "sceneEn": "You and a friend are planning the weekend: what you will do, when, and for how much. Put your suggestions politely.",
-  "partnerEn": "a friend who objects to every suggestion but comes round in the end",
-  "openingEn": "So, the weekend — have you got anything on?",
+  "partnerEn": "a friend who objects to every suggestion but comes around in the end",
+  "openingEn": "So, the weekend — do you have anything planned?",
   "goalEn": "At least three suggestions have been made, one has been settled and the time and place have been fixed."
  },
  {
@@ -71,7 +71,7 @@
  },
  {
   "conversation": "de-b2-smalltalk-business",
-  "sceneEn": "You have met a senior manager in the lift and you have six floors. Open a short conversation, bring up a small matter in passing and close politely before you reach your floor.",
+  "sceneEn": "You have met a senior manager in the elevator and you have six floors. Open a short conversation, bring up a small matter in passing and close politely before you reach your floor.",
   "partnerEn": "a polite senior manager who is in a hurry",
   "openingEn": "Good morning! You're in early today. Is everything all right in your team?",
   "goalEn": "A short conversation has been had, a matter has been raised in passing and it has been closed with a non-committal word."
@@ -94,7 +94,7 @@
   "conversation": "de-b2-homeoffice-regeln",
   "sceneEn": "You are discussing the remote working arrangement with HR: how many days a week you can work from home, which days you must be in the office, how availability is defined.",
   "partnerEn": "an HR specialist who knows the rules by heart and is wary of flexibility",
-  "openingEn": "You wanted to talk about the home working policy. First tell me: how do you picture the week?",
+  "openingEn": "You wanted to talk about the work-from-home policy. First tell me: how do you picture the week?",
   "goalEn": "How many days will be worked from home, the office requirement and the availability condition have all been made clear."
  },
  {
@@ -107,28 +107,28 @@
  {
   "conversation": "de-b2-verhandeln",
   "sceneEn": "You are negotiating the price of the annual contract with a supplier. Put your offer in the subjunctive, ask for a concession, respond to the counter-offer and agree on a figure or a condition.",
-  "partnerEn": "an experienced sales manager who does not discount easily",
+  "partnerEn": "an experienced sales manager who does not discount easily but values the relationship",
   "openingEn": "Our offer is forty-eight euros a unit. What did you have in mind?",
   "goalEn": "Offers have been exchanged and a price or a condition has been agreed."
  },
  {
   "conversation": "de-b2-beschwerde-formell",
-  "sceneEn": "You are on the phone to a customer services manager making a formal complaint: what you are referring to, what the problem is, what you are demanding and what deadline you are setting.",
-  "partnerEn": "a polite customer services manager who avoids taking responsibility",
+  "sceneEn": "You are on the phone to a customer service representative making a formal complaint: what you are referring to, what the problem is, what you are demanding and what deadline you are setting.",
+  "partnerEn": "a polite customer service representative who avoids taking responsibility",
   "openingEn": "You've written to us already, haven't you? Just tell me briefly what it's about.",
   "goalEn": "The subject and grounds of the complaint have been given, a concrete demand and a deadline have been stated and the other side has said what they will do."
  },
  {
   "conversation": "de-b2-hotline",
-  "sceneEn": "The internet has been down for three days and you have rung technical support. Describe the fault, say what you have tried, ask when it will be fixed and get a solution or an engineer's appointment.",
+  "sceneEn": "The internet has been down for three days and you have called technical support. Describe the fault, say what you have tried, ask when it will be fixed and get a solution or a technician's appointment.",
   "partnerEn": "a support agent reading from a script who asks the standard questions first",
   "openingEn": "Technical support, my name is Weber. Please describe the fault to me — how long has it been going on?",
-  "goalEn": "The fault has been described, what was tried has been said and a solution or an engineer's appointment has been settled."
+  "goalEn": "The fault has been described, what was tried has been said and a solution or a technician's appointment has been settled."
  },
  {
   "conversation": "de-b2-schadenersatz",
-  "sceneEn": "You are talking to a representative of a removals firm: your things were damaged in the move. Describe what happened, say where the responsibility lies, state your claim with a figure and find out about the process.",
-  "partnerEn": "a company representative who shares out the responsibility and asks for paperwork",
+  "sceneEn": "You are talking to a representative of a moving company: your things were damaged in the move. Describe what happened, say where the responsibility lies, state your claim with a figure and find out about the process.",
+  "partnerEn": "a company representative who tries to split the responsibility and asks for paperwork",
   "openingEn": "I have your damage claim in front of me. Please tell me: what exactly happened?",
   "goalEn": "The damage has been described, the responsibility has been discussed, a claim with a figure has been put and the process has been explained."
  },
@@ -136,20 +136,20 @@
   "conversation": "de-b2-kompromiss",
   "sceneEn": "Two sides have got stuck on a joint project: you will not move on the date, they will not move on the budget. Say where you think they are right, state your own limit, offer a concession and agree a shared solution.",
   "partnerEn": "a project partner with fair grounds who is open to compromise",
-  "openingEn": "We're going round in circles. Tell me honestly: where can you really not give way?",
+  "openingEn": "We're going around in circles. Tell me honestly: where can you really not give way?",
   "goalEn": "Both sides' limits have been stated, a concession has been offered and a solution both sides accept has been agreed."
  },
  {
   "conversation": "de-b2-eskalation",
-  "sceneEn": "An angry customer is ringing you: the delivery is late for the third time. First acknowledge how they feel, bring the matter back to the facts, explain what happened and offer a solution.",
-  "partnerEn": "a customer who raises their voice but is not in the wrong",
+  "sceneEn": "An angry customer is calling you: the delivery is late for the third time. First acknowledge how they feel, bring the matter back to the facts, explain what happened and offer a solution.",
+  "partnerEn": "a customer who raises their voice but has a point, and may come around in the end",
   "openingEn": "This is the third time now! I really have had enough of excuses — what are you going to do?",
   "goalEn": "The anger has been acknowledged, the matter has been brought back to the facts and a concrete solution the customer accepts has been settled."
  },
  {
   "conversation": "de-b2-vertrag-kuendigen",
-  "sceneEn": "You have rung a gym's customer line and you want to cancel your membership. Give notice, state the date, answer the offers to keep you firmly and ask for written confirmation.",
-  "partnerEn": "a customer adviser offering a discount and a freeze to keep you",
+  "sceneEn": "You have called a gym's customer line and you want to cancel your membership. Give notice, state the date, answer the offers to keep you firmly and ask for written confirmation.",
+  "partnerEn": "a customer advisor offering a discount and a freeze to keep you",
   "openingEn": "It's a shame you want to leave. May I ask what the reason is? Perhaps we can find a solution.",
   "goalEn": "Notice has been given, the date has been made clear, the offers to keep you have been declined and written confirmation has been promised."
  },
@@ -162,8 +162,8 @@
  },
  {
   "conversation": "de-b2-reklamation-b2",
-  "sceneEn": "The same device has broken for the third time and you are in the shop. List in order what has been done so far, say the device is unusable, ask for a replacement or a refund and bring it to a conclusion.",
-  "partnerEn": "a shop assistant who suggests another repair and consults a manager when you insist",
+  "sceneEn": "The same device has broken for the third time and you are in the store. List in order what has been done so far, say the device is unusable, ask for a replacement or a refund and bring it to a conclusion.",
+  "partnerEn": "a store clerk who suggests another repair and consults a manager when you insist",
   "openingEn": "You've been here before, haven't you? Let me send it in once more, that's the quickest way.",
   "goalEn": "The repairs carried out have been listed, the offer of another repair has been declined and a conclusion has been reached on a replacement or a refund."
  },

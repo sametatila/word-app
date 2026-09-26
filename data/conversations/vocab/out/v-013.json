@@ -2,7 +2,7 @@
  { "conversation": "de-c1-verweiswoerter", "de": "hinweisen auf", "en": "to point out" },
  { "conversation": "de-c1-ellipse", "de": "weglassen", "en": "to leave out" },
  { "conversation": "de-c1-ellipse", "de": "preisgeben", "en": "to give away" },
- { "conversation": "de-c1-ellipse", "de": "kurzsichtig", "en": "short-sighted" },
+ { "conversation": "de-c1-ellipse", "de": "kurzsichtig", "en": "shortsighted" },
  { "conversation": "de-c1-doppeldeutig", "de": "absichtlich", "en": "on purpose" },
  { "conversation": "de-c1-doppeldeutig", "de": "beabsichtigt", "en": "intentional" },
  { "conversation": "de-c1-doppeldeutig", "de": "die Anspielung", "en": "allusion" },
@@ -20,7 +20,7 @@
  { "conversation": "de-c1-konzessiv", "de": "abschwächen", "en": "to soften" },
  { "conversation": "de-c1-konzessiv", "de": "beanspruchen", "en": "to claim" },
  { "conversation": "de-c1-hypothesen", "de": "die Hypothese", "en": "hypothesis" },
- { "conversation": "de-c1-hypothesen", "de": "unterstellen", "en": "to impute" },
+ { "conversation": "de-c1-hypothesen", "de": "unterstellen", "en": "to assume, to impute" },
  { "conversation": "de-c1-hypothesen", "de": "zutreffen", "en": "to apply" },
  { "conversation": "de-c1-migrationsdebatte", "de": "die Zuschreibung", "en": "attribution" },
  { "conversation": "de-c1-migrationsdebatte", "de": "die Abstammung", "en": "descent" },
@@ -32,7 +32,7 @@
  { "conversation": "de-c1-klimadebatte", "de": "die Adaption", "en": "adaptation" },
  { "conversation": "de-c1-klimadebatte", "de": "unterbinden", "en": "to suppress" },
  { "conversation": "de-c1-bildungsdebatte", "de": "versäumen", "en": "to neglect" },
- { "conversation": "de-c1-bildungsdebatte", "de": "die Weiche", "en": "points (switch)" },
+ { "conversation": "de-c1-bildungsdebatte", "de": "die Weiche", "en": "switch (on a railroad track)" },
  { "conversation": "de-c1-bildungsdebatte", "de": "überfällig", "en": "overdue" },
  { "conversation": "de-c1-ethik-ki", "de": "zurechnen", "en": "to attribute" },
  { "conversation": "de-c1-ethik-ki", "de": "simulieren", "en": "to simulate" },
@@ -48,5 +48,5 @@
  { "conversation": "de-c1-ironie", "de": "der Unterton", "en": "undertone" },
  { "conversation": "de-c1-ironie", "de": "das Gegenteil", "en": "opposite" },
  { "conversation": "de-c1-ironie", "de": "gespalten", "en": "divided" },
- { "conversation": "de-c1-sarkasmus-grenze", "de": "ankommen", "en": "to go down well" }
+ { "conversation": "de-c1-sarkasmus-grenze", "de": "ankommen", "en": "to be well received" }
 ]

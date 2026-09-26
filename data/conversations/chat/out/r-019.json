@@ -1,30 +1,30 @@
 [
  {
   "conversation": "de-b2-gehaltsverhandlung",
-  "sceneEn": "You are in your annual review with your boss and you want a rise. Put your expectation in the subjunctive, justify it with figures, answer the objection and settle on an outcome or a new date.",
+  "sceneEn": "You are in your annual review with your boss and you want a raise. Put your expectation in the subjunctive, justify it with figures, answer the objection and settle on an outcome or a new date.",
   "partnerEn": "a department head who cites the budget but is open to a good case",
   "openingEn": "You wanted to talk about pay. Before we start: what did you have in mind?",
   "goalEn": "The expectation has been given with a figure, justified, and tied to an outcome or a date for a further meeting."
  },
  {
   "conversation": "de-b2-sparen-anlegen",
-  "sceneEn": "You are discussing a savings plan with a bank adviser: how much you can put aside, how much risk you can take, which term suits you. Discuss risk against return with clauses of proportion.",
-  "partnerEn": "a bank adviser inclined to sell a product but honest in answering",
+  "sceneEn": "You are discussing a savings plan with a bank advisor: how much you can put aside, how much risk you can take, which term suits you. Discuss risk against return with clauses of proportion.",
+  "partnerEn": "a bank advisor inclined to sell a product but honest in answering",
   "openingEn": "You'd like to invest something. First tell me: how long can you do without the money?",
   "goalEn": "The term, the amount and the level of risk have been made clear and a plan has been agreed."
  },
  {
   "conversation": "de-b2-selbststaendig",
-  "sceneEn": "You are discussing your plan with a start-up adviser: what you want to set up, who your customers are, on what condition it works and what would make you give up. Tie every step to a condition.",
-  "partnerEn": "a start-up adviser who questions your optimism and asks for figures",
-  "openingEn": "Before we talk about the idea: how long could you hold out if there's hardly any turnover in the first year?",
+  "sceneEn": "You are discussing your plan with a start-up advisor: what you want to set up, who your customers are, on what condition it works and what would make you give up. Tie every step to a condition.",
+  "partnerEn": "a start-up advisor who questions your optimism and asks for figures",
+  "openingEn": "Before we talk about the idea: how long could you hold out if there's hardly any revenue in the first year?",
   "goalEn": "The idea, the customers and how long you could hold out have been described, and the condition for going on and the point of giving up have been said."
  },
  {
   "conversation": "de-b2-buerokratie-gruendung",
-  "sceneEn": "You are at the enquiries desk of the chamber of commerce asking what is needed to set up on your own: which registration, which documents, in what order, how long it takes and what it costs.",
-  "partnerEn": "an enquiries clerk who lists the steps formally and points you to forms",
-  "openingEn": "You'd like to register a business. Have you any idea yet what legal form it should take?",
+  "sceneEn": "You are at the information desk of the chamber of commerce asking what is needed to set up on your own: which registration, which documents, in what order, how long it takes and what it costs.",
+  "partnerEn": "an information desk clerk who lists the steps formally and points you to forms",
+  "openingEn": "You'd like to register a business. Do you have any idea yet what legal form it should take?",
   "goalEn": "The documents needed, the order of the steps and the timescale have been found out and a concrete next step has been settled."
  },
  {
@@ -45,13 +45,13 @@
   "conversation": "de-b2-jobwechsel",
   "sceneEn": "A friend is thinking of leaving a secure job and asking what you think. Describe your own experience or observation in clauses of contrast, name the risks and give them a concrete piece of advice.",
   "partnerEn": "an undecided friend who is both excited and afraid",
-  "openingEn": "The job is secure, the money is fine — and still I want to leave. Am I mad?",
+  "openingEn": "The job is secure, the money is fine — and still I want to leave. Am I crazy?",
   "goalEn": "The risks and the reasons have been discussed in clauses of contrast and a concrete piece of advice has been given."
  },
  {
   "conversation": "de-b2-rente",
-  "sceneEn": "You are discussing your pension plan with an adviser: what you have paid in so far, what the gap will be, what you can do. Keep the certain, the likely and the hearsay apart.",
-  "partnerEn": "a pension adviser who talks in figures and does not rush you",
+  "sceneEn": "You are discussing your pension plan with an advisor: what you have paid in so far, what the gap will be, what you can do. Keep the certain, the likely and the hearsay apart.",
+  "partnerEn": "a pension advisor who talks in figures and does not rush you",
   "openingEn": "A lot of people put this off. First tell me: what have you paid in so far?",
   "goalEn": "The current position, the expected gap and a concrete step to take have been discussed."
  },
@@ -94,7 +94,7 @@
   "conversation": "de-b2-missverstaendnis",
   "sceneEn": "Something you said was misunderstood and the other person is hurt. Accept how it sounded, explain what you meant, apologize if you need to and suggest a step to put the relationship right.",
   "partnerEn": "a close friend who is hurt but willing to talk",
-  "openingEn": "I thought for a long time about whether to bring it up. It sounded as if you wanted to show me up in front of everyone — was that what you meant?",
+  "openingEn": "I thought for a long time about whether to bring it up. It sounded as if you wanted to humiliate me in front of everyone — was that what you meant?",
   "goalEn": "How it sounded has been accepted, what was meant has been explained and a concrete step to put things right has been settled."
  },
  {
