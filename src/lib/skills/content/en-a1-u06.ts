@@ -7,7 +7,7 @@ import type { SkillExercise } from "../types";
  *
  *   Kelime: coffee, tea, water, please, order, cup, café, sandwich, bread,
  *           milk, egg, cheese, eat, butter, salt, plate, buy, money, price,
- *           bag, take, coin, newspaper, shop, restaurant, menu, table,
+ *           bag, take, coin, newspaper, store, restaurant, menu, table,
  *           waiter, bill, soup, knife, spoon.
  *   Kalıp:  I'd like a coffee, please. · I'll have a tea, please. ·
  *           Anything else? — No, thank you. · I eat some bread. ·

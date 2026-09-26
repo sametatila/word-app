@@ -143,7 +143,7 @@ export const EN_A2_04: MockPaper = {
           format: "match",
           goal: "orientation",
           prompt:
-            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best ad. No ad is used twice.",
+            "Here are five people, 6 to 10. There are also eight ads, a to h. Match each person with the best ad. No ad is used twice.",
           promptTr:
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
@@ -975,7 +975,7 @@ Milos`,
               { de: "Say who or what helped you.", tr: "Sana kimin ya da neyin yardım ettiğini söyle." },
               { de: "Say why it was useful.", tr: "Neden işe yaradığını söyle." },
             ],
-            sample: `Two years ago I learned to repair bikes. My uncle had an old shop in our street and I went there every Saturday. First I only watched him, then he gave me the small jobs. Now I repair my own bike and the bikes of my friends. I save money, and I am never late for work because of a flat tire.`,
+            sample: `Two years ago I learned to repair bikes. My uncle had an old shop on our street and I went there every Saturday. First I only watched him, then he gave me the small jobs. Now I repair my own bike and the bikes of my friends. I save money, and I am never late for work because of a flat tire.`,
             criteria: [
               "Üç içerik noktasının üçü de var mı?",
               "Geçmiş zaman doğru kullanıldı mı? Düzensiz fiiller (had, went, gave) doğru mu?",

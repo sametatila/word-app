@@ -12,7 +12,7 @@ import type { QuizWeek } from "../types";
  * ÇELDİRİCİLERİN GEREKÇESİ:
  *  - `w03-g3` (karma koşul): Türkçe `-meseydi` bugünü ve geçmişi ayırmadığı için
  *    ikinci tipe (`didn't learn`) kayılıyor; Almanca `Wenn sie … nicht gelernt
- *    hätte` koşul tarafında kip taşıdığı için `wouldn't have learnt` kuruluyor.
+ *    hätte` koşul tarafında kip taşıdığı için `wouldn't have learned` kuruluyor.
  *  - `w03-v2` (`grew up`): Almanca `ist aufgewachsen` Perfekt'i `sein` ile
  *    kurduğu için `is/was grown up`; bu tuzak Almancaya özgü.
  *  - `w03-g5` (ölçülü dil): İngilizce resmî tartışmada iddiayı yumuşatmak

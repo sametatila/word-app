@@ -357,7 +357,7 @@ Food and drinks: no money back.`,
 
 Welcome to the house! My name is Paulo and I live {{15}} the first floor.
 
-The small store in our street is open every day, {{16}} it is expensive.
+The small store on our street is open every day, {{16}} it is expensive.
 
 There {{17}} a big market on Saturday. I go there at eight in the morning.
 

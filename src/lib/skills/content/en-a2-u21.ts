@@ -14,7 +14,7 @@ import type { SkillExercise } from "../types";
  *   Kalıp:  First open Settings, then tap Update. ·
  *           Turn it off and turn it on again. ·
  *           Have you updated your phone yet? ·
- *           I usually post photos at the weekend. ·
+ *           I usually post photos on the weekend. ·
  *           I don't think social media is good. ·
  *           I have had this account for two years. · Have you seen …? ·
  *           I recommend it. · It's about … · Have you heard the news? ·

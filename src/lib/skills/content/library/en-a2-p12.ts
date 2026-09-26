@@ -125,7 +125,7 @@ export const enA2P12: SkillExercise[] = [
       { speaker: "Emre", text: "Hi, this is Emre Demir. You sent me an email about a trial morning." },
       { speaker: "Ola", text: "Yes, Emre, thanks for calling back. Can you come on Thursday? We start at four." },
       { speaker: "Emre", text: "Four in the morning? Wow. Yes, I can do that. Which door should I use?" },
-      { speaker: "Ola", text: "Not the shop door. Go around the building to the small green door at the back and ring the bell." },
+      { speaker: "Ola", text: "Not the store door. Go around the building to the small green door at the back and ring the bell." },
       { speaker: "Emre", text: "Okay. What should I wear?" },
       { speaker: "Ola", text: "Comfortable shoes and pants. We have aprons and hats here, so you don't need your own." },
       { speaker: "Emre", text: "Do I need to bring anything else?" },
@@ -147,9 +147,9 @@ export const enA2P12: SkillExercise[] = [
       },
       {
         text: "Which door should Emre use?",
-        options: ["the green door at the back", "the shop door at the front", "the door next to the ovens"],
+        options: ["the green door at the back", "the store door at the front", "the door next to the ovens"],
         answer: 0,
-        explain: "„Not the shop door. Go around the building to the small green door at the back …“",
+        explain: "„Not the store door. Go around the building to the small green door at the back …“",
       },
       {
         kind: "truefalse",

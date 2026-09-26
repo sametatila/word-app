@@ -11,7 +11,7 @@ import type { SkillExercise } from "../types";
  *           sit down, come in, look for, always, usually, sometimes,
  *           often, never, every, all, also, first, then, after, before,
  *           finally, step, until, begin.
- *   Kalıp:  on Monday · at the weekend · in the morning ·
+ *   Kalıp:  on Monday · on the weekend · in the morning ·
  *           I get up at seven. · Turn off the TV. / Turn the TV off. ·
  *           What time do you get up? · I always drink tea. ·
  *           She is never late. · Sometimes I walk to work. ·

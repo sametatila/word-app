@@ -154,7 +154,7 @@ We do not buy clothes.`,
           format: "match",
           goal: "orientation",
           prompt:
-            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best ad. No ad is used twice.",
+            "Here are five people, 6 to 10. There are also eight ads, a to h. Match each person with the best ad. No ad is used twice.",
           promptTr:
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
@@ -1088,7 +1088,7 @@ Eren`,
           exchange: [
             { who: "partner", de: "Here are three ideas: put everything online, take a table at the school market for three euros, or give it all to a thrift store. What do you think about selling online?", tr: "Üç fikir var: her şeyi internete koymak, okul pazarında üç euroya bir masa tutmak ya da hepsini bir yardım dükkânına vermek. İnternetten satmak hakkında ne düşünüyorsun?" },
             { who: "you", hint: "İnternetten satma fikri hakkında görüşünü söyle ve bir gerekçe ver.", expect: "bir fikir hakkında görüş bildirmek ve gerekçelendirmek", seconds: 35 },
-            { who: "partner", de: "I see your point. But you have about forty things, and online you write forty adverts and wait at home for forty people. Is the market not easier?", tr: "Anlıyorum. Ama kırk kadar eşyan var; internette kırk ilan yazıp kırk kişiyi evde beklersin. Pazar daha kolay değil mi?" },
+            { who: "partner", de: "I see your point. But you have about forty things, and online you write forty ads and wait at home for forty people. Is the market not easier?", tr: "Anlıyorum. Ama kırk kadar eşyan var; internette kırk ilan yazıp kırk kişiyi evde beklersin. Pazar daha kolay değil mi?" },
             { who: "you", hint: "Karşı tarafın söylediğine gönderme yap ve katıl ya da karşı çık.", expect: "karşı tarafın söylediğine açıkça gönderme yaparak katılmak ya da karşı çıkmak", seconds: 35 },
             { who: "partner", de: "All right. So what do we choose?", tr: "Peki. Hangisini seçiyoruz?" },
             { who: "you", hint: "Bir seçim yap ve kısa bir gerekçe ver.", expect: "ortak bir karara varmak ve gerekçelendirmek", seconds: 30 },
@@ -1102,7 +1102,7 @@ Eren`,
               { de: "make a decision together", tr: "Birlikte bir karara varmak" },
             ],
             sample:
-              "Online is good for two or three big things, because you get more money for them. You are right about the forty adverts; that is three evenings of work and I do not have them. So let us take a table at the market for the small things, and put the desk online, because the desk is worth eighty euros.",
+              "Online is good for two or three big things, because you get more money for them. You are right about the forty ads; that is three evenings of work and I do not have them. So let us take a table at the market for the small things, and put the desk online, because the desk is worth eighty euros.",
             criteria: [
               "Görüş bir gerekçeyle mi verildi? (because …)",
               "Karşı tarafın söylediğine gönderme yapıldı mı? (You are right … / That is true …)",

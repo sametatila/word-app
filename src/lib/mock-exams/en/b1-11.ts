@@ -1133,7 +1133,7 @@ The next class is on the {{19}}`,
             ],
             sample: `Dear Sir or Madam,
 
-I shop in your branch on Mill Street two or three times a week and I live alone.
+I shop at your branch on Mill Street two or three times a week and I live alone.
 
 Almost everything is sold in packages for a family. I buy a bag of six peppers because there is nothing smaller, and three of them go in the trash every week. That is not a complaint about quality; it is a complaint about the size.
 

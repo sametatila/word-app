@@ -907,7 +907,7 @@ Vito`,
             criteria: [
               "Altı sözcüğün her birine değinildi mi?",
               "`there is / there are` kullanıldı mı?",
-              "Yer bildiren ifadeler var mı? (behind, on the corner, in our street)",
+              "Yer bildiren ifadeler var mı? (behind, on the corner, on our street)",
               "Anlaşılır bir tempoda mı konuşuldu?",
             ],
           },

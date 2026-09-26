@@ -49,7 +49,7 @@ const DE_EN: PlacementQ[] = [
   { id: "p1", level: "A1", promptKey: "placement.fill_blank", question: "My name ___ Emma.", answer: "is", options: ["is", "am", "are", "be"] },
   { id: "p2", level: "A1", promptKey: "placement.right_article", question: "___ sun is very bright today.", answer: "The", options: ["The", "A", "An", "Some"] },
   { id: "p3", level: "A1", promptKey: "rounds.ask_native", question: "the water", answer: "Wasser", options: ["Wasser", "Brot", "Milch", "Tür"] },
-  { id: "p4", level: "A2", promptKey: "placement.fill_blank", question: "Yesterday I ___ at the cinema.", answer: "was", options: ["was", "am", "have", "were"] },
+  { id: "p4", level: "A2", promptKey: "placement.fill_blank", question: "Yesterday I ___ at the movies.", answer: "was", options: ["was", "am", "have", "were"] },
   { id: "p5", level: "A2", promptKey: "placement.right_preposition", question: "I am interested ___ music.", answer: "in", options: ["in", "on", "at", "with"] },
   { id: "p6", level: "B1", promptKey: "placement.fill_blank", question: "If I ___ time, I would travel.", answer: "had", options: ["had", "have", "would have", "having"] },
   { id: "p7", level: "B1", promptKey: "placement.right_conjunction", question: "I stay at home ___ it is raining.", answer: "because", options: ["because", "although", "however", "despite"] },

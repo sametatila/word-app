@@ -25,7 +25,7 @@
  { "tr": "Yer bildiren ifadeler var mı? (in the middle, next to, at the sink)", "kind": "rubric.criteria", "en": "Gibt es Ortsangaben? (in the middle, next to, at the sink)" },
  { "tr": "Karşılaştırma yapıları kullanıldı mı? (quieter, more, than, whereas)", "kind": "rubric.criteria", "en": "Wurden Vergleichsstrukturen verwendet? (quieter, more, than, whereas)" },
  { "tr": "Soyut ifadeler kullanılabildi mi? (independence, reporting, exclude)", "kind": "rubric.criteria", "en": "Konnten abstrakte Wendungen verwendet werden? (independence, reporting, exclude)" },
- { "tr": "Yer bildiren ifadeler var mı? (behind, on the corner, in our street)", "kind": "rubric.criteria", "en": "Gibt es Ortsangaben? (behind, on the corner, in our street)" },
+ { "tr": "Yer bildiren ifadeler var mı? (behind, on the corner, on our street)", "kind": "rubric.criteria", "en": "Gibt es Ortsangaben? (behind, on the corner, on our street)" },
  { "tr": "Yer bildiren ifadeler var mı? (in the middle, next to, on the floor)", "kind": "rubric.criteria", "en": "Gibt es Ortsangaben? (in the middle, next to, on the floor)" },
  { "tr": "Genel yargı koşullandırıldı mı? (I would say … where … and … where …)", "kind": "rubric.criteria", "en": "Wurde das allgemeine Urteil eingeschränkt? (I would say … where … and … where …)" },
  { "tr": "Rapor kaydı ve başlıklandırma uygun mu? 220–260 kelime aralığında mı?", "kind": "rubric.criteria", "en": "Passen Register und Überschriften zu einem Bericht? Liegt der Text zwischen 220 und 260 Wörtern?" },

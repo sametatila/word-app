@@ -759,7 +759,7 @@ So I have changed my mind, {{29}} not in the direction people expect. The materi
               situation: "İki komşu bir ağaç dikimi projesinden söz ediyor.",
               plays: 2,
               segments: [
-                { speaker: "Ida", text: "They planted forty trees in our street last spring." },
+                { speaker: "Ida", text: "They planted forty trees on our street last spring." },
                 { speaker: "Marc", text: "And nobody watered them in July. Eleven are already dead. It is not planting that is difficult, it is the second summer." },
               ],
             },

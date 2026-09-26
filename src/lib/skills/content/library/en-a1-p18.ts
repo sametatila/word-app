@@ -9,7 +9,7 @@ import type { SkillExercise } from "../../types";
  * Bu parti yalnız KONUŞMA ve DİL BİLGİSİ taşır (okuma, dinleme ve yazma
  * hücreleri 13 ve 17'de yirmiye ulaştı). Parti 18 giysi ve günlük hayat
  * hattı: söyleyiş odağı „ow / ou“ yazılışının kayan /aʊ/ sesi (now/no);
- * dil bilgisi hep çoğul isimler (jeans, trousers, glasses) ve a pair of.
+ * dil bilgisi hep çoğul isimler (jeans, pants, glasses) ve a pair of.
  */
 export const enA1P18: SkillExercise[] = [
   // ─────────────────────────── KONUŞMA ───────────────────────────
