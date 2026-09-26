@@ -43,7 +43,7 @@ export const enB2P5: SkillExercise[] = [
       "somebody was willing to carry to a table and hand to a person. The share that had to be thrown away " +
       "fell from thirty-one percent to four.\n\n" +
       "Cost. Emptying the old container cost us nothing, because the operator paid us. The monthly collection " +
-      "costs about two thousand four hundred euros a year in transport. We decided to accept that when we " +
+      "costs about two thousand four hundred euros a year in transportation. We decided to accept that when we " +
       "started, and we still recommend accepting it, for the reason below.\n\n" +
       "The reason. Fifty-eight volunteers have worked at least one collection. Nineteen of them had never done " +
       "anything with us before, and eleven now do something else as well. A container does not do that. " +
@@ -69,7 +69,7 @@ export const enB2P5: SkillExercise[] = [
         text: "Why is the smaller volume not a failure?",
         options: [
           "Far less had to be thrown away.",
-          "The transport is much cheaper now.",
+          "Transportation is much cheaper now.",
           "More people live in the area now.",
         ],
         answer: 0,
@@ -103,7 +103,7 @@ export const enB2P5: SkillExercise[] = [
         options: [
           "the effect on volunteering",
           "the drop in the total volume",
-          "the cost of the transport",
+          "the cost of transportation",
         ],
         answer: 0,
         explain: "„We did not expect to be writing a sentence like this in a report about textiles, but it is the clearest result we have.“",

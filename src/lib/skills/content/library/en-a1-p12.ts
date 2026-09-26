@@ -93,7 +93,7 @@ export const enA1P12: SkillExercise[] = [
     course: "en",
     level: "A1",
     skill: "listening",
-    title: "Checking In at the Blue Sky",
+    title: "Checking In at the Park Hotel",
     genre: "dialogue",
     intro: "Ela bir otele varıyor ve resepsiyonda giriş yapıyor; oda, kahvaltı, internet ve çantası için ne öğrendiğini dinle.",
     gloss: [
@@ -106,7 +106,7 @@ export const enA1P12: SkillExercise[] = [
     ],
     minutes: 4,
     segments: [
-      { speaker: "Receptionist", text: "Good evening, welcome to the Blue Sky Hotel." },
+      { speaker: "Receptionist", text: "Good evening, welcome to the Park Hotel." },
       { speaker: "Ela", text: "Hello. I have a room for one night. My name is Ela Kaya." },
       { speaker: "Receptionist", text: "Yes, a single room with a shower. Can I see your passport, please?" },
       { speaker: "Ela", text: "Here you are." },

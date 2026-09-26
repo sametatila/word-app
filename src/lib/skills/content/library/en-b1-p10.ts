@@ -126,7 +126,7 @@ export const enB1P10: SkillExercise[] = [
     segments: [
       { text: "Most people give up on a budget in the second month, and almost always for the same reason: they started with a plan instead of with numbers." },
       { text: "Step one is not planning. It is tracking. For four weeks, write down everything you spend and change nothing at all." },
-      { text: "Step two: separate the money that leaves your account whether you like it or not — rent, transport, phone — from the money you actually decide about." },
+      { text: "Step two: separate the money that leaves your account whether you like it or not — rent, transportation, phone — from the money you actually decide about." },
       { text: "Most budgets fail here, because people try to cut the fixed costs, which takes months, instead of the flexible ones, which takes a day." },
       { text: "Step three: set aside a small amount before you spend anything, not after. If you wait until the end of the month, there is nothing left, and that is not a character problem, it is arithmetic." },
       { text: "Step four: give yourself a category with no rules. A budget with no room in it is a diet, and diets end." },

@@ -59,7 +59,7 @@ export const enB2P14: SkillExercise[] = [
       "riders have had to end their trip in a marked bay, and complaints have fallen by more " +
       "than half.\n\n" +
       "The council must now decide whether to make the scheme permanent. The honest lesson of " +
-      "the trial is that scooters are a transport success and a modest environmental one, and " +
+      "the trial is that scooters are a transportation success and a modest environmental one, and " +
       "that the difference between a nuisance and a service turned out to be a painted " +
       "rectangle on the ground.",
     questions: [
@@ -309,7 +309,7 @@ export const enB2P14: SkillExercise[] = [
         "The figure that matters most here is not the number of trips; it's what those trips " +
         "replaced. In most trials only a small share of rides replace a car journey. The rest " +
         "replace walking or a bus, so the environmental gain is modest. That doesn't make " +
-        "scooters useless. It makes them a transport option rather than a climate policy, " +
+        "scooters useless. It makes them a transportation option rather than a climate policy, " +
         "and they should be judged as one. " +
         "The cost is mostly carried by people who never ride them: wheelchair users, parents " +
         "with strollers, older people who are nervous of anything silent and fast on a " +

@@ -277,7 +277,7 @@ export const enC1P4: SkillExercise[] = [
           "We object to the proposal as drafted on two grounds. First, the evidence in the consultation does not " +
           "separate the two groups it treats as one. Of the appointments recorded as missed last year, a little " +
           "over a third were at the first slot of the day, and the same pattern appears in every quarter. " +
-          "Read together with the transport figures, that suggests a scheduling problem rather than a " +
+          "Read together with the transportation figures, that suggests a scheduling problem rather than a " +
           "behavioral one, and a fee will not correct it.\n\n" +
           "Second, the exemption is defined by notice rather than by circumstance. Appointments canceled on the " +
           "same day because a child is sick would be charged, while appointments canceled a month ahead for no " +
