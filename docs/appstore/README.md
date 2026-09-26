@@ -21,7 +21,7 @@ maddeleri `docs/store/audit.md`'de.
 | TestFlight | Build 2–8 geçerli. Sürüm kaydına hâlâ build 4 bağlı; gönderimden önce son build bağlanır (denetim M5) |
 | Yayın | **Elle** (`releaseType: MANUAL`, 2026-09-26, Samet; denetim M13): onaydan sonra App Store Connect'te "Release this version" ile açılır. Android 14 günlük kapalı testte olduğundan iki platform birlikte açılabilsin diye |
 | Derleme | CI (`.github/workflows/ios-build.yml`) ve yerel Mac mini (Xcode) |
-| Cihaz | Kayıtlı bir gerçek iPhone koşusu yok (M10). Mikrofon, arka plan sesi, kilit ekranı, satın alma yalnız cihazda ölçülür; sıra `docs/plan/ios-device-runbook.md` |
+| Cihazda koşuldu mu | Kayıtlı bir gerçek iPhone koşusu yok (M10). Mikrofon, arka plan sesi, kilit ekranı, satın alma yalnız cihazda ölçülür; sıra `docs/plan/ios-device-runbook.md` |
 | Cihaz ailesi | iPhone + iPad (`TARGETED_DEVICE_FAMILY = "1,2"`, Split View açık). Bedeli: 13" iPad ekran görüntüsü zorunlu. `npm run ios:check` › "cihaz ailesi" beyanı ve kare betiğini birlikte tutuyor |
 
 ## Hukuki metinler iOS'u kapsıyor
@@ -94,7 +94,7 @@ iOS'ta uygulamayı ekran kapalıyken ayakta tutan tek şey etkin bir ses oturumu
 (Android'deki ön plan servisiyle aynı adlar). Kesinti toparlanması, kulaklık mikrofonu ve kilit
 ekranı denetimi kodda; cihazda doğrulanmadı (M10).
 
-App Review'da arka planda mikrofon en çok sorgulanan şeydir. Üç cevap da kodda karşılığı olan
+**İnceleme riski.** App Review'da arka planda mikrofon en çok sorgulanan şeydir. Üç cevap da kodda karşılığı olan
 cümleler ve inceleme notunun 7. adımında yazılı (`connect.md` §1):
 
 1. **Modu kullanıcı başlatır:** mikrofon açıklama ekranı ve sistem izni olmadan tur başlamaz.

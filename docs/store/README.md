@@ -1,6 +1,9 @@
-# Mağaza vitrin kareleri
+# Mağaza kaydı: vitrin metinleri ve kareler
 
-Mağazaya yüklenen ekran görüntüleri burada üretiliyor. Üç parça var:
+İki mağazanın vitrin metinlerinin (açıklama, altyazı, kısa açıklama, anahtar kelime, tanıtım
+metni, abonelik açıklamaları) tek kaynağı bu belge; metin değişirse önce burası, sonra aynı
+yolla mağaza. Açık konsol işleri `docs/store/audit.md`'de. Ekran görüntüleri de burada
+üretiliyor:
 
 | Klasör | Ne | Depoda mı |
 |---|---|---|
@@ -8,11 +11,10 @@ Mağazaya yüklenen ekran görüntüleri burada üretiliyor. Üç parça var:
 | `plan/` | Hangi ham görüntüye hangi altyazı, hangi sırayla | **Evet** |
 | `play/`, `appstore/` | Üretilen kareler | Hayır — `.gitignore`'da, tek komutla yeniden üretilir |
 
-## Vitrin kararları (2026-09-25) — GEÇERLİ OLAN BU
+## Vitrin kararları (2026-09-25)
 
-Samet'le soru-cevapla verildi. `plan/*.json` (a-walk, b-exam, c-native) ve
-`docs/appstore/listing.md` §4'teki eski sıra **onaylanmamış referanslardır**; çelişirse bu
-bölüm geçerli. Kareler henüz ÇEKİLMEDİ: önce tasarım çalışması yapılacak (Samet), çekim bu
+Samet'le soru-cevapla verildi. `plan/*.json` (a-walk, b-exam, c-native) eski ve onaylanmamış
+bir sıra taşıyor; çelişirse bu bölüm geçerli. Kareler henüz ÇEKİLMEDİ: önce tasarım çalışması yapılacak (Samet), çekim bu
 tanıma göre olacak. Karar değişirse bu bölüm güncellenir, yeni belge açılmaz.
 
 **Konumlandırma.** Lernomi bir *dil* uygulaması; Almanca ilk ve en güçlü kurs (vitrin adı
@@ -24,16 +26,19 @@ kampanya vitrinde YOK (görselde fiyat/süreli teklif olmaz), grup sayfasında.
 
 **Altyazı / tek cümle:** **"Konuş, anla, sınava hazırlan"** (tr, 28 karakter; iOS subtitle,
 Play kısa açıklamanın ilk cümlesi). en-US: **"Speak, understand, ace exams"** (28) ·
-de-DE: **"Sprechen, verstehen, bestehen"** (29).
+de-DE: **"Sprechen, verstehen, bestehen"** (29). "ace exams" / "bestehen" sınav geçme vaadi
+sayılabilir; risk kararı açık (denetim M14).
 
 **Play kısa açıklaması (tr, 70):** "Konuş, anla, sınava hazırlan: A1'den C1'e Almanca, Türkçe
 anlatımla." (iOS altyazısıyla aynı cümleyle başlar.)
 
 **Sayılar (2026-09-25, Samet):** birim KELİME + ALIŞTIRMA + DENEME SINAVI; adım/ünite sayısı
 anılmaz. Yuvarlak ve doğru: Almanca "8.500'den fazla kelime, 900'den fazla alıştırma, **50'den fazla
-deneme sınavı**" (Samet: içerik artacak, "60" ve seviye başına kesin sayı "her seviyede 12" YAZILMAZ) (ölçüm: 8.707 kelime, beceri alıştırması canlıda 1.120, repo sayımı 995; 60 deneme
-sınavı); İngilizce "7.000'den fazla kelime, 900'den fazla alıştırma, 50'den fazla deneme sınavı" (7.175 /
-1.034 canlı, 939 repo / 60). İçerik azalırsa bu cümleler gözden geçirilir.
+deneme sınavı**" (Samet: içerik artacak, "60" ve seviye başına kesin sayı "her seviyede 12" YAZILMAZ);
+İngilizce "7.000'den fazla kelime, 900'den fazla alıştırma, 50'den fazla deneme sınavı". Ölçüm
+(2026-09-26): Almanca 8.704 kelime (depo), 1.370 alıştırma, 60 deneme sınavı; İngilizce 7.165 /
+1.250 / 60 (alıştırma ve sınav canlı içerik sürümünden, sorgu `docs/play/listing.md` §3.0). İçerik
+azalırsa bu cümleler gözden geçirilir.
 
 **Konuşma adımının vitrindeki anlatımı (Samet'in seçtiği metin):** "Doktorda, iş
 görüşmesinde, yol sorarken… Gerçek hayatta karşına çıkacak durumları yapay zekâ karakteriyle
@@ -43,9 +48,8 @@ seviye başına sınırlı olduğu için "ücretsiz ve sınırsız" denmez.
 **Açıklama metni kararları (2026-09-25):** her iddia koda, canlı ayara ve içeriğe göre
 doğrulanır, gerekirse metin değişir (Samet'in kuralı). Doğrulanmış tr taslağı ve 32
 satırlık kanıt tablosu oturum çıktısında; kararlar:
-- Deneme süresi açıkça: "yeni abonelere ilk ay ücretsiz" (iki mağazada 175 bölgede FREE_TRIAL
-  1 ay, ASC ve Play'den okundu; yalnız daha önce abone olmamışa).
-- "8.500'den fazla kelime" (Almanca 8.707; İngilizce "7.000'den fazla", 7.175).
+- Deneme süresi açıkça: "yeni abonelere ilk ay ücretsiz" (FREE_TRIAL 1 ay: ASC'de 175 bölge,
+  satış 173'ünde, Çin ve Rusya kapalı; Play'de 173 bölge; yalnız daha önce abone olmamışa).
 - "HESAPSIZ BAŞLA" paragrafı kalıyor (hesapsız başlama, ilerlemenin hesaba taşınması, aynı
   hesap telefon/tablet/web, hesap isteyen özellikler).
 - Ücretsiz haklar "bitir + seri" mekaniğiyle somut anlatılır (2026-09-25 kararı, kod varsayılanı:
@@ -87,7 +91,8 @@ kurs; en-US: İngilizce arayüz + Almanca kurs; de-DE: Almanca arayüz + İngili
 gerçek hesap, yer tutucu veri yok; sınav markası yok; Premium özellik altyazıda "Premium"
 der (2.3.2). Aşağıdaki "Kurallar" bölümü de geçerli.
 
-**Görsel kararlar (2026-09-25, Samet):**
+**Görsel kararlar (2026-09-25, Samet; maskot kullanımı "çocuklara çekici değil" beyanıyla
+birlikte açık, denetim M15):**
 - Play öne çıkan grafik (1024×500): mirket maskot + "Konuş, anla, sınava hazırlan", marka
   renklerinde, az yazı.
 - Maskot ekran görüntülerinde YALNIZ 1. karede (Patika), küçük bir vurgu olarak; öteki kareler
@@ -98,7 +103,8 @@ der (2.3.2). Aşağıdaki "Kurallar" bölümü de geçerli.
 **Onaylanan Türkçe uzun açıklama (App Store + Play ortak, 2026-09-25):** 41 iddia koda, canlı
 ayara ve içeriğe karşı doğrulandı (kanıt tablosu oturum çıktısında). Kararlar: belge her yerde
 "başarı belgesi"; seri kademesi tavansız ("sonra her 7 günlük seride yeniden" doğru); fiyat
-cümlesi yok (mağaza ve paywall gösteriyor). Karakter: 3957/4000. 2026-09-25 düzeltmesi: anlatım ekranda yazı, sesli okunan yalnız öğrenilen dil → "dinlersin" değil "okursun". Paragraflar tek satır.
+cümlesi yok (mağaza ve paywall gösteriyor). Karakter: 3957/4000. Anlatım ekranda yazı, sesli okunan yalnız öğrenilen dil ("okursun"). Paragraflar
+tek satır: Console'a yapıştırınca satır ortasında kırılmasın.
 
 ```text
 Konuş, anla, sınava hazırlan.
@@ -145,7 +151,8 @@ Gizlilik Politikası: https://www.lernomi.app/privacy
 (en-US: İngilizce konuşup Almanca öğrenen; de-DE: Almanca konuşup İngilizce öğrenen). Her arayüzde tek
 kurs sunulduğu için "öteki kurs" paragrafı yok. Vitrine özgü iddialar doğrulandı (anlatım dili,
 sahneler, bağlantılar). Almanca metinde Beceriler "Fertigkeiten" (Samet'in kararı, uygulamayla aynı).
-Haftalık quizin en/de çevirisi 2026-09-25'te canlıya çıktı; iddia her içerik türü için doğru.
+Haftalık quiz de en/de çevrili (kilitli `quiznative/*` paketleri); "explained in English /
+Erklärungen auf Deutsch" iddiası her içerik türü için doğru.
 
 en-US (3978/4000):
 
@@ -237,13 +244,11 @@ Datenschutzerklärung: https://www.lernomi.app/privacy/de
 
 Anahtar kelime kuralları: ad ve altyazıdaki kelimeler tekrar yazılmaz (Apple onları zaten
 indeksliyor); sınav markası, "ders", "sertifika" yok (başarı belgesi resmî sertifika değil).
-`docs/appstore/listing.md` ve `docs/play/listing.md` içindeki eski taslaklar bunlarla
-değiştirildi sayılır; çelişirse bu tablo geçerli. **Mağazaya GİRİLDİ (2026-09-25, Samet'in isteğiyle, API):** ASC sürüm 1.0.0 tr/en-US/de-DE: altyazı,
+**Mağazaya GİRİLDİ (2026-09-25, API, geri okundu):** ASC sürüm 1.0.0 tr/en-US/de-DE: altyazı,
 açıklama (bu belgedeki metinle birebir, geri okunup karşılaştırıldı), anahtar kelimeler, tanıtım metni,
 destek URL'si (`/support`, `/support/en`, `/support/de`), pazarlama URL'si `https://www.lernomi.app`.
 Play tr-TR/en-US/de-DE: başlık, kısa ve tam açıklama (edit commit edildi, geri okundu). Metin değişirse
 önce bu belge, sonra aynı yolla mağaza. Play 512 ikonu da yüklendi (üç dil, aşağıdaki türetmeyle).
-Kalan: ekran görüntüleri, öne çıkan grafik, video.
 
 **Abonelik açıklamaları (2026-09-25, denetim S9):** paywall'daki iddiayla aynı (`paywall.pitch_exams`): Premium'un
 farkı Cepte yürüyüş, TÜM deneme sınavları ve seri beklemeden Konuşma/Yazma. "Tüm sınavlar" yazılmaz (modül ve
@@ -255,10 +260,10 @@ seviye sınavları ücretsiz), "yapay zekâyla konuşma-yazma" tek başına yaz�
 | Play faydalar (40) | Cepte yürüyüş (ekran kapalı) · Tüm deneme sınavları · Seri beklemeden Konuşma ve Yazma | Pocket Walking (screen off) · Every mock exam · Speaking & Writing, no streak wait | Taschen-Gehmodus (Bildschirm aus) · Alle Probeprüfungen · Sprechen & Schreiben ohne Serie |
 | Play açıklama (80) | Cepte yürüyüş, tüm deneme sınavları, seri beklemeden Konuşma ve Yazma adımları | Pocket Walking, every mock exam, every Speaking and Writing step, no streak wait | Taschen-Gehmodus, alle Probeprüfungen, alle Sprechen- und Schreiben-Schritte |
 
-Play iki üründe girildi ve geri okundu (2026-09-25). ASC girişi izin denetimine takıldı; Samet'in çalıştıracağı
-komut sohbette (girildiğinde bu satır güncellenir).
+Play iki üründe girildi ve geri okundu (2026-09-25). ASC'de 2026-09-26'da hâlâ eski metin
+("All exams…"); giriş Samet'in onayıyla API'den (denetim S9).
 
-**Açık:** ekran görüntüleri ve öne çıkan grafik tasarımdan sonra. (Haftalık quizin en/de çevirisi 2026-09-25'te canlıya çıktı, içerik sürümü 24, kilitli `quiznative/*` paketleri; en/de metinlerindeki "explained in English / Erklärungen auf Deutsch" iddiası artık haftalık quiz için de doğru.)
+**Açık:** ekran görüntüleri, öne çıkan grafik ve video tasarımdan sonra (denetim M3).
 
 ## Yeniden üretmek
 
@@ -300,8 +305,8 @@ Kırpma değerleri 1080×2400 · 420 dpi içindir: üstteki 74 piksel durum çub
 ## Kurallar
 
 - **Yer tutucu veri olmaz.** Kareler gerçek hesapla, gerçek ilerlemeyle alınır.
-- **Maskot ana unsur olmaz** (bkz. `docs/play/listing.md` §1): hedef kitle 18+ ve
-  vitrinde çocuk vurgusu istenmiyor.
+- **Çocuk vurgusu olmaz:** hedef kitle 18+ (`docs/play/listing.md` §1). Maskotun ne kadar yer
+  alacağı açık karar (M15).
 - **Altyazı özellik anlatır**, fiyat ya da vaat içermez.
 - **Sınav markası geçmez** (hiçbir sınav kurumunun ya da sınavın adı; karar
   `docs/play/listing.md` §4.2). "Gerçek
@@ -320,26 +325,17 @@ Kırpma değerleri 1080×2400 · 420 dpi içindir: üstteki 74 piksel durum çub
 - **iOS kareleri iOS'tan alınır.** Android karesini App Store'a yüklemek 2.3.3 ihlalidir;
   `--store ios` yalnız yerleşim provası için.
 
-## Altyazı değişikliği (2026-09-14)
+### Metin kuralları (iki mağaza)
 
-Mağaza ön inceleme raporu (B25, B26; ücretsiz/Premium ayrımı için B21) üzerine beş altyazı
-değişti. `play/` depoda değil, her makinede yerelde üretiliyor: bu tarihten önce üretilmiş
-kareler eski altyazıyı taşır ve yüklemeden önce üç set de yeniden üretilmeli (ham görüntüler
-değişmedi, yeni çekim gerekmiyor). Komut 2026-09-15'te koşuldu: yalnız bu beş kare değişti,
-farkı yalnız altyazı bölgesinde; öteki on üç kare önceki üretimle bayt bayt aynı çıktı.
-
-| Set | Kare | Eski | Yeni | Sebep |
-|---|---|---|---|---|
-| a-walk 05, b-exam 01, c-native 05 | `mock-list.png` | Her seviyede 12 tam deneme sınavı | Her seviyede 12 deneme sınavı: 1'i ücretsiz, tümü Premium'da | Ücretsizde seviye başına 1 deneme sınavı açık; kare premium hesapla çekildi |
-| b-exam 02 | `mock-task.png` | Gerçek sınav görevi, gerçek süre | Sınav düzeninde görev, süre tutarak | "Gerçek sınav" resmî sınav materyali iması taşıyordu |
-| c-native 06 | `walk.png` | Ekran kapalıyken bile çalışır | Ekran kapalıyken Cepte yürüyüş, Premium'da | Ekran kapalı çalışan yürüyüş (uygulamadaki adıyla Cepte yürüyüş) yalnız Premium'da |
-
-```bash
-for p in a-walk b-exam c-native; do
-  python3 scripts/store-shots.py --plan docs/store/plan/$p.json --out docs/store/play/$p --store play
-done
-```
-
-Yeni altyazıların üçü de mevcut punto aralığında en çok üç satıra sığıyor (betiğin kendi
-`fit_caption` hesabıyla ölçüldü; Play'de 90–96 px). Değişmeyen on üç altyazıda marka,
-fiyat ya da Premium'a bağlı bir iddia yok.
+- Rakip uygulama adı yok; "en iyi", "1 numara", başarı garantisi ve fiyat yok.
+- Sınav markası yok (karar `docs/play/listing.md` §4.2); "resmî sınav", "sertifika kazan" gibi
+  resmîlik iması yok. Başarı belgesi resmî sertifika değil.
+- Olmayan özellik yok. Premium gerektiren özellik aynı cümlede Premium diye anılır (App Store
+  2.3.2); adlar paywall'la aynı, Premium için "sınırsız" denmez (3.1.2(a)).
+- Promo kodu, davet ödülü ya da "kodla Premium" anılmaz (App Store 3.1.1).
+- App Store metninde başka platform adı ("Android", "Google Play") geçmez (2.3.10).
+- Mikrofon cümlesi gizlilik politikasıyla aynı (§4: mikrofon yalnız konuşarak cevap verirken
+  açılır, ses yalnız izinle gönderilir ve saklanmaz).
+- Bildirme kapsamı gerçeğe göre; "her ekranda" denmez.
+- iOS açıklaması ekran kapalı Cepte yürüyüşü anıyor: gerçek iPhone'da doğrulanmadan
+  gönderilecekse o cümle çıkarılır (denetim M10, App Store 2.3.1).
