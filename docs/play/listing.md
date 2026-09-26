@@ -12,10 +12,9 @@ kuralları `docs/store/README.md`'de; App Store karşılığı `docs/appstore/li
 | Aileler politikası | Kapsam dışı | Yapay zekâ sohbeti ve kullanıcı etkileşimi çocuk kitlesiyle bağdaşmaz |
 | Beklenmeyen çocuk kullanıcı | Hesap ve veri silinir | Gizlilik politikası §12 |
 
-Vitrinde "çocuk", "kids", "eğlenceli oyun" vurgusu yok. **Açık karar (denetim M15):** Samet'in
-2026-09-25 görsel kararında öne çıkan grafik ve 1. kare maskotlu; "çocuklara çekici değil"
-cevabıyla birlikte değerlendirilmesi gerekiyor. Karar verilince bu satır ve
-`docs/store/README.md` birlikte güncellenir.
+Vitrinde "çocuk", "kids", "eğlenceli oyun" vurgusu yok. Maskotun vitrindeki payı ve görsellerin
+tonu `docs/store/README.md` › "Görsel çerçeve"de (Samet, 2026-09-26; denetim M15): ana unsur
+gerçek uygulama ekranı, mirket köşede ve sakin, sahneler yetişkin hayatından.
 
 ## 2. İçerik derecelendirme anketi (IARC)
 

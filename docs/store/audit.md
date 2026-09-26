@@ -32,7 +32,7 @@ ASC salt okuma dökümünden güncellendi.
 | M12 | TestFlight beta açıklamaları kursları ters anlatıyor | ✅ | f1b75548, üç dil geri okundu |
 | M13 | releaseType AFTER_APPROVAL | ✅ | 54ab2ef7: `releaseType: MANUAL` (2026-09-26, Samet); onaydan sonra "Release this version" ile açılır |
 | M14 | Altyazı "ace exams" / "bestehen" sınav geçme vaadi | ⏳ Samet (karar) | Altyazılar Samet'in onayıyla girildi; risk kararı açık, değişirse iki mağazaya yeniden girilir |
-| M15 | Maskotlu öne çıkan grafik ↔ "çocuklara çekici değil" | ⏳ Samet (karar) | `docs/store/README.md` grafik ve 1. karede maskot diyor; `docs/play/listing.md` §1 "ana unsur değil" diyor |
+| M15 | Maskotlu öne çıkan grafik ↔ "çocuklara çekici değil" | ◐ Samet (tasarım) | Karar verildi (2026-09-26): `docs/store/README.md` › "Görsel çerçeve" (gerçek ekran ana unsur, mirket köşede, yetişkin sahneler). 18+ kalıyor. Kalan: tasarımın bu çerçeveyle yapılması (M3) |
 | M16 | İçerik hakları beyanı "üçüncü taraf içerik yok" | ⏳ Samet (karar) | 2026-09-26: ASC `DOES_NOT_USE_THIRD_PARTY_CONTENT`. Edge seslendirmesi (İ6) ve Defne/Aras referansı (İ5) kararına bağlı |
 
 ### S — Satın alma ve hesap akışları

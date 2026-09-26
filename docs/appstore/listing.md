@@ -83,8 +83,8 @@ Değişmeyen kurallar:
 1. Ankete **doğru** cevap verilir; dereceyi yükseltmek için anketi eğmek metadata ihlalidir,
    yol override.
 2. "Made for Kids" / Kids kategorisi seçilmez.
-3. Vitrinde çocuk vurgusu olmaz ("çocuk", "kids", "eğlenceli oyun" geçmez). Maskotun vitrinde ne
-   kadar yer alacağı açık karar (denetim M15).
+3. Vitrinde çocuk vurgusu olmaz ("çocuk", "kids", "eğlenceli oyun" geçmez). Maskotun payı
+   `docs/store/README.md` › "Görsel çerçeve"de (denetim M15).
 
 ## 5. Diğer alanlar
 

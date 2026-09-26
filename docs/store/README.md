@@ -91,12 +91,21 @@ kurs; en-US: İngilizce arayüz + Almanca kurs; de-DE: Almanca arayüz + İngili
 gerçek hesap, yer tutucu veri yok; sınav markası yok; Premium özellik altyazıda "Premium"
 der (2.3.2). Aşağıdaki "Kurallar" bölümü de geçerli.
 
-**Görsel kararlar (2026-09-25, Samet; maskot kullanımı "çocuklara çekici değil" beyanıyla
-birlikte açık, denetim M15):**
-- Play öne çıkan grafik (1024×500): mirket maskot + "Konuş, anla, sınava hazırlan", marka
-  renklerinde, az yazı.
-- Maskot ekran görüntülerinde YALNIZ 1. karede (Patika), küçük bir vurgu olarak; öteki kareler
-  yalnız uygulama ekranı + altyazı.
+**Görsel çerçeve (2026-09-26, Samet onayladı; denetim M15).** Hedef kitle 18+ ve Play'de
+"çocuklara çekici değil" beyanı var; Google'ın ret ölçütü "çocuksu animasyon ya da genç karakter".
+Tasarım bu çerçeveyle yapılır:
+- **İkon:** mirket ikonu kalır (sade, stilize, tek yetişkin figür). Vitrindeki maskot payının bir
+  kısmını ikon zaten kullanıyor.
+- **Play öne çıkan grafik (1024×500):** ana unsur gerçek bir uygulama ekranı, telefon çerçevesinde
+  (Konuşma adımı ya da deneme sınavı). Yazı "Konuş, anla, sınava hazırlan" + A1–C1 işareti.
+  Mirket varsa köşede, yüksekliğin en fazla üçte biri, sakin pozda; konfeti, yıldız, konuşma
+  balonu, zıplama yok. Zemin marka turuncusu ya da koyu nötr; pastel/gökkuşağı paleti ve
+  yuvarlak çizgi film yazı tipi yok.
+- **Ekran görüntüleri:** maskot yalnız gerçek arayüzde göründüğü yerde (Öğren ekranındaki günlük
+  tur kutusu); ayrıca eklenmez. Sahneler yetişkin hayatından (iş görüşmesi, doktor, resmî daire,
+  kira, seyahat); okul ve çocuk sahnesi yok. Oyunlaştırma (XP, lig, seri) en fazla bir karede ve
+  ana mesaj olmadan.
+- **Altyazılar** beceri ve sonuç anlatır; "eğlenceli", "oyun", "çocuk" geçmez.
 - App Store tanıtım videosu (App Preview) GÖNDERİLECEK ama şimdi değil (Cepte yürüyüş + Konuşma,
   gerçek cihazda; aynı çekim Play ön plan servisi beyanı videosu için de kullanılabilir, AND-3).
 
@@ -305,8 +314,8 @@ Kırpma değerleri 1080×2400 · 420 dpi içindir: üstteki 74 piksel durum çub
 ## Kurallar
 
 - **Yer tutucu veri olmaz.** Kareler gerçek hesapla, gerçek ilerlemeyle alınır.
-- **Çocuk vurgusu olmaz:** hedef kitle 18+ (`docs/play/listing.md` §1). Maskotun ne kadar yer
-  alacağı açık karar (M15).
+- **Çocuk vurgusu olmaz:** hedef kitle 18+ (`docs/play/listing.md` §1). Maskotun payı yukarıdaki
+  "Görsel çerçeve"de.
 - **Altyazı özellik anlatır**, fiyat ya da vaat içermez.
 - **Sınav markası geçmez** (hiçbir sınav kurumunun ya da sınavın adı; karar
   `docs/play/listing.md` §4.2). "Gerçek
