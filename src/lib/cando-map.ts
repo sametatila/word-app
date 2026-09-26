@@ -38,9 +38,124 @@ const CONVERSATION_SPK: Record<CefrLevel, Record<Theme, number>> = {
 };
 
 /** Konuşmanın dilbilgisi odağı (focusId) → dilbilgisi ifadesi. */
+/**
+ * A1 ALMANCA KONUŞMALARININ KONUŞMA İFADESİ, konuşma konuşma (2026-09-26).
+ *
+ * Tema kuralı (simge → sosyal/hizmet/iş) A1'de kabaydı: "hizmet" temasındaki
+ * her şey (saat, yol sorma, vücut, telefon, Perfekt) "Kafede sipariş
+ * verebilirim"e, alfabe ve form doldurma "Mesleğimi, ailemi anlatabilirim"e
+ * gidiyordu; SPK.2 (selamlaşma) ve SPK.4 (sayı, saat, tarih) ifadelerine hiçbir
+ * konuşma bağlanamıyordu. Ölçüldü: 100 konuşmanın 72'si yanlış ifadedeydi.
+ * Tablo tema kuralından önce uygulanıyor; öteki seviyeler tema kuralında.
+ * Mobil ikizi `mobile/src/game/candoMap.ts` (`check:parity`).
+ */
+const CONVERSATION_SPK_BY_ID: Record<string, number> = {
+  "de-a1-hallo": 1,
+  "de-a1-wie-gehts": 2,
+  "de-a1-du-oder-sie": 2,
+  "de-a1-woher": 1,
+  "de-a1-sprachen": 1,
+  "de-a1-zahlen": 4,
+  "de-a1-alphabet": 1,
+  "de-a1-beruf": 5,
+  "de-a1-alter": 1,
+  "de-a1-formular": 1,
+  "de-a1-familie": 5,
+  "de-a1-geschwister": 5,
+  "de-a1-kein": 6,
+  "de-a1-haustiere": 5,
+  "de-a1-fotos": 5,
+  "de-a1-plural": 6,
+  "de-a1-aussehen": 5,
+  "de-a1-freunde": 5,
+  "de-a1-nicht": 6,
+  "de-a1-familienfest": 5,
+  "de-a1-cafe": 3,
+  "de-a1-fruehstueck": 3,
+  "de-a1-imbiss": 3,
+  "de-a1-restaurant": 3,
+  "de-a1-lieblingsessen": 3,
+  "de-a1-supermarkt": 3,
+  "de-a1-mengen": 3,
+  "de-a1-kochen": 6,
+  "de-a1-allergie": 3,
+  "de-a1-einladung-essen": 6,
+  "de-a1-mein-tag": 4,
+  "de-a1-uhrzeit": 4,
+  "de-a1-trennbar": 4,
+  "de-a1-wochentage": 4,
+  "de-a1-v2": 6,
+  "de-a1-morgenroutine": 4,
+  "de-a1-arbeitstag": 5,
+  "de-a1-feierabend": 5,
+  "de-a1-wochenende-plan": 5,
+  "de-a1-zeit-haben": 4,
+  "de-a1-kleidung": 3,
+  "de-a1-groesse": 3,
+  "de-a1-farben": 3,
+  "de-a1-preis": 3,
+  "de-a1-gefallen": 3,
+  "de-a1-umtausch": 3,
+  "de-a1-geschenk": 3,
+  "de-a1-markt": 3,
+  "de-a1-apotheke-kauf": 3,
+  "de-a1-online": 3,
+  "de-a1-weg": 6,
+  "de-a1-bus-bahn": 6,
+  "de-a1-ticket": 3,
+  "de-a1-verspaetung": 6,
+  "de-a1-taxi": 6,
+  "de-a1-stadtplan": 6,
+  "de-a1-sehenswuerdig": 6,
+  "de-a1-verlaufen": 6,
+  "de-a1-fahrrad": 6,
+  "de-a1-bahnhof-info": 6,
+  "de-a1-wohnung-zeigen": 6,
+  "de-a1-zimmer": 6,
+  "de-a1-moebel": 6,
+  "de-a1-nachbarn": 1,
+  "de-a1-hausordnung": 6,
+  "de-a1-miete-zahlen": 4,
+  "de-a1-putzen": 6,
+  "de-a1-umzug": 6,
+  "de-a1-garten": 6,
+  "de-a1-kaputt": 6,
+  "de-a1-hobbys": 5,
+  "de-a1-koennen": 5,
+  "de-a1-sport": 5,
+  "de-a1-musik": 5,
+  "de-a1-kino": 6,
+  "de-a1-wetter-smalltalk": 2,
+  "de-a1-park": 6,
+  "de-a1-schwimmbad": 5,
+  "de-a1-fernsehen": 5,
+  "de-a1-absage": 6,
+  "de-a1-koerper": 6,
+  "de-a1-weh-tun": 6,
+  "de-a1-termin-arzt": 4,
+  "de-a1-muessen": 6,
+  "de-a1-apotheke": 3,
+  "de-a1-krank-melden": 6,
+  "de-a1-imperativ-du": 6,
+  "de-a1-notruf": 6,
+  "de-a1-gesund-leben": 6,
+  "de-a1-beim-zahnarzt": 6,
+  "de-a1-telefonieren": 4,
+  "de-a1-nachricht": 6,
+  "de-a1-termin-machen": 4,
+  "de-a1-einladung": 6,
+  "de-a1-perfekt-haben": 6,
+  "de-a1-perfekt-sein": 6,
+  "de-a1-gestern": 6,
+  "de-a1-wochenende-bericht": 5,
+  "de-a1-jahreszeiten": 4,
+  "de-a1-a1-rueckblick": 1,
+};
+
 const FOCUS_GR: [RegExp, Record<CefrLevel, number>][] = [
   [/artikel|plural|nomen|genus/i, { A1: 1, A2: 2, B1: 6, B2: 4, C1: 4 }],
-  [/perfekt|partizip|vergangen|prateritum|präteritum/i, { A1: 2, A2: 1, B1: 5, B2: 6, C1: 3 }],
+  /* A1: 0 — A1'de Perfekt ifadesi yok; A1.GR.2 Präsens çekimi, Perfekt konuşmasına bağlanmıyor. */
+  [/perfekt|partizip|vergangen|prateritum|präteritum/i, { A1: 0, A2: 1, B1: 5, B2: 6, C1: 3 }],
   [/akkusativ|dativ|genitiv|kasus|praeposition|präposition|preposition/i, { A1: 5, A2: 2, B1: 6, B2: 4, C1: 4 }],
   [/weil|dass|wenn|obwohl|nebensatz|relativ|konjunktion/i, { A1: 3, A2: 3, B1: 1, B2: 5, C1: 1 }],
   [/modal|konnen|können|mussen|müssen|wollen|sollen|durfen|dürfen/i, { A1: 4, A2: 4, B1: 2, B2: 2, C1: 3 }],
@@ -129,6 +244,7 @@ const FOCUS_GR_EN: [RegExp, Partial<Record<CefrLevel, number>>][] = [
 ];
 
 export function candoForConversation(conversation: {
+  id?: string;
   level: CefrLevel;
   icon: string;
   focusId: string;
@@ -138,7 +254,8 @@ export function candoForConversation(conversation: {
 }): string[] {
   if (conversation.cando?.length) return conversation.cando.filter(isCandoId);
   const theme = ICON_THEME[conversation.icon] ?? "social";
-  const out = [`${conversation.level}.SPK.${CONVERSATION_SPK[conversation.level][theme]}`];
+  const spk = CONVERSATION_SPK_BY_ID[conversation.id ?? ""] ?? CONVERSATION_SPK[conversation.level][theme];
+  const out = [`${conversation.level}.SPK.${spk}`];
   const gr = grammarCando(conversation.course, conversation.level, conversation.focusId);
   if (gr) out.push(gr);
   return out.filter(isCandoId);
@@ -151,8 +268,8 @@ function grammarCando(course: string | undefined, level: CefrLevel, focus: strin
     const n = hit?.[1][level];
     return n ? `${level}.GR.${n}` : null;
   }
-  const hit = FOCUS_GR.find(([re]) => re.test(focus));
-  return hit ? `${level}.GR.${hit[1][level]}` : null;
+  const n = FOCUS_GR.find(([re]) => re.test(focus))?.[1][level];
+  return n ? `${level}.GR.${n}` : null;
 }
 
 const SKILL_CODE: Record<SkillId, CandoSkill> = { reading: "RD", listening: "LS", writing: "WR", speaking: "SPK", grammar: "GR" };

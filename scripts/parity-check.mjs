@@ -3811,7 +3811,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const tema = [...src.matchAll(/(\w+): "(social|service|work)"/g)].map((m) => m[1] + "=" + m[2]);
     const spk = [...src.matchAll(/(A1|A2|B1|B2|C1): \{ social: (\d+), service: (\d+), work: (\d+) \}/g)].map((m) => m.slice(1).join(":"));
     const gr = [...src.matchAll(/\[(\/[^/]+\/i), \{ A1: (\d+), A2: (\d+), B1: (\d+), B2: (\d+), C1: (\d+) \}\]/g)].map((m) => m.slice(1).join(":"));
-    return [...tema, ...spk, ...gr];
+    /* A1 konuşma tablosu (kimliğe göre) ve İngilizce kursun dilbilgisi tablosu
+       (2026-09-26): ikisi de iki kopyada birebir aynı olmalı. */
+    const kimlik = [...src.matchAll(/"(de-a1-[\w-]+)": (\d+),/g)].map((m) => m[1] + "=" + m[2]);
+    const en = [...src.matchAll(/\[(\/[^/]+\/i), \{ ((?:[A-C][12]: \d+(?:, )?)+) \}\]/g)].filter((m) => !/A1: \d+, A2: \d+, B1/.test(m[2])).map((m) => m[1] + ":" + m[2]);
+    return [...tema, ...spk, ...gr, ...kimlik, ...en];
   };
   sameList("konusma yapabilirlik eslemesi", esleme("mobile/src/game/candoMap.ts"), esleme("src/lib/cando-map.ts"));
 }

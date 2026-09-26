@@ -76,7 +76,7 @@ export const CANDO: Cando[] = [
   c("A1", "WR", 3, "Kendimi tanıtan 3–5 cümle yazabilirim."),
   c("A1", "WR", 4, "Basit ana cümleler kurup birbirine 'und' ve 'aber' ile bağlayabilirim."),
   c("A1", "WR", 5, "Günlük rutinimi basit cümlelerle yazabilirim."),
-  c("A1", "GR", 1, "Isimlerin artikelini (der/die/das) ve çoğulunu doğru kullanabilirim."),
+  c("A1", "GR", 1, "İsimlerin artikelini (der/die/das) ve çoğulunu doğru kullanabilirim."),
   c("A1", "GR", 2, "Fiilleri Präsens'te özneye göre çekebilirim (ich/du/er…)."),
   c("A1", "GR", 3, "Ana cümlede fiili ikinci sıraya koyabilir, soru cümlesi kurabilirim."),
   c("A1", "GR", 4, "sein, haben ve temel modal fiilleri (können, möchten) kullanabilirim."),
@@ -154,7 +154,7 @@ export const CANDO: Cando[] = [
   c("B2", "LS", 2, "Radyo tartışmasında konuşmacıların tutumlarını ayırt edebilirim."),
   c("B2", "LS", 3, "Doğal hızda konuşulan bir diyalogda ima ve ton farklarını yakalayabilirim."),
   c("B2", "LS", 4, "Belgesel ya da podcast bölümünden ayrıntılı bilgi alabilirim."),
-  c("B2", "LS", 5, "Bir toplantı tutanağını dinleyip kararları ve sorumluları not edebilirim."),
+  c("B2", "LS", 5, "Bir toplantıyı dinleyip kararları ve sorumluları not edebilirim."),
   c("B2", "RD", 1, "Uzun bir köşe yazısı ya da röportajda yazarın tutumunu ve örtük anlamı anlayabilirim."),
   c("B2", "RD", 2, "Sözleşme, kira ya da iş yazışmalarındaki koşulları anlayabilirim."),
   c("B2", "RD", 3, "Uzmanlık dışı bir makaleyi (bilim, ekonomi) ana fikir ve kanıtlarıyla anlayabilirim."),
@@ -199,7 +199,7 @@ export const CANDO: Cando[] = [
      Yukarıdaki GR ifadeleri ALMANCA kursun müfredatına göre yazılmış
      (der/die/das, Perfekt, Konjunktiv). İki kurs varken bu görünmez bir
      varsayımdı; İngilizce kurs eklenince görünür oldu: `candoForConversation`
-     17 İngilizce konuşmayı "Isimlerin artikelini (der/die/das)" gibi bir
+     17 İngilizce konuşmayı "İsimlerin artikelini (der/die/das)" gibi bir
      ifadeye bağlıyordu — İngilizce öğrenen için yanlış, üstelik Türkçe
      okuyan da öyle görüyordu.
 
@@ -241,7 +241,7 @@ export const CANDO: Cando[] = [
      11'den başlıyor çünkü 1-6 Almanca kursun B2 dilbilgisi (Konjunktiv I,
      Partizip, Nominalisierung) ve iki kurs aynı numarayı paylaşamaz. */
   c("B2", "GR", 11, "Geçmişe dair çıkarım ve pişmanlık kurabilirim: must have been, can't have done, should have said."),
-  c("B2", "GR", 12, "Üçüncü ve karma koşul cümlesi kurabilirim: if + past perfect → would have, gerçekleşmemiş geçmiş ve bugüne uzanan sonucu."),
+  c("B2", "GR", 12, "Gerçekleşmemiş bir geçmişi ve onun bugüne uzanan sonucunu üçüncü ve karma koşul cümlesiyle anlatabilirim: if + past perfect → would have."),
   c("B2", "GR", 13, "Kaynağı belirsiz bilgiyi edilgen aktarım kalıbıyla verebilirim: it is said that ve he is thought to."),
   c("B2", "GR", 14, "Vurguyu yarık cümleyle öne alabilirim: what I need is ve it was … who."),
   c("B2", "GR", 15, "Olumsuz zarf başa gelince devrik kurabilirim: rarely have I, not only did he."),
@@ -260,12 +260,12 @@ export const CANDO: Cando[] = [
   c("C1", "GR", 11, "Söylenmesi gerekmeyeni düşürebilirim: I would if I could, so do I, the former ve the latter."),
   c("C1", "GR", 12, "Cümlenin ağırlığını sona atıp başa vurguyu taşıyabilirim: Into the hall came ve What he did next was."),
   c("C1", "GR", 13, "Resmî dilekte kalıplaşmış biçimleri seçebilirim: I insist that he be, were it not for ve lest."),
-  c("C1", "GR", 14, "İmtiyaz ve karşıtlığın tonunu ayarlayabilirim: granted, albeit, whereas ve much as I."),
+  c("C1", "GR", 14, "Ödün ve karşıtlığın tonunu ayarlayabilirim: granted, albeit, whereas ve much as I."),
   c("C1", "GR", 15, "Yerleşik eşdizimleri ve işlev fiillerini kullanabilirim: take issue with, bear the brunt, draw a distinction."),
-  c("C1", "GR", 16, "Aynı içeriği üç ayrı kayıtta söyleyebilirim: hukuk dili, nötr dil ve konuşma dili."),
+  c("C1", "GR", 16, "Aynı içeriği üç ayrı dil düzeyinde söyleyebilirim: resmî dil, nötr dil ve konuşma dili."),
   c("C1", "GR", 17, "Aktarırken hükmü aktarma fiiline yükleyebilirim: he claimed, he conceded, he alleged."),
   c("C1", "GR", 18, "Kip nüansıyla mesafe ayarlayabilirim: may well, might have been expected to, would tend to."),
-  c("C1", "GR", 19, "Eksiltili övgü ve ironiyi kurabilir ve duyabilirim: not exactly cheap, I wouldn't say no."),
+  c("C1", "GR", 19, "Ölçülü söyleyişi ve ironiyi kurabilir ve duyabilirim: not exactly cheap, I wouldn't say no."),
   c("C1", "GR", 20, "Metnin bütününü bağlayabilirim: this, such, the latter ve paragraf düzeyinde yön işaretleri."),
 ];
 
