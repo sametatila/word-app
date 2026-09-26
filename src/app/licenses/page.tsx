@@ -60,8 +60,8 @@ export default function Page() {
     <div className="mx-auto w-full max-w-3xl px-5 py-10" lang="en">
       <h1 className="text-display tracking-tight">Open source licenses</h1>
       <p className="muted mt-3 text-body leading-relaxed">
-        The Lernomi app is built with the open source software listed below. Each entry shows its license; tap it to read the
-        full notice.
+        The Lernomi app is built with the open source software and data listed below. Each entry shows its license; tap it to
+        read the full notice.
       </p>
 
       <Section title="JavaScript libraries" count={js.length}>
@@ -80,6 +80,22 @@ export default function Page() {
         {android.map((p) => (
           <Entry key={p.name} title={p.name} meta={p.license} text={null} url={p.url} />
         ))}
+      </Section>
+
+      {/* VERİ ATFI. Kelime sıklık sırası (`rank`) FrequencyWords 2018 Almanca
+          listesinden: içerik lisansı CC BY-SA 4.0, atıf şartı var. Kaynak ve
+          özet kanıtı `data/README.md` › Kaynaklar. */}
+      <Section title="Data" count={1}>
+        <Entry
+          title="FrequencyWords (German, 2018)"
+          meta="CC BY-SA 4.0"
+          text={
+            "Word frequency ranks are taken from the German 50k list of FrequencyWords by Hermit Dave, " +
+            "generated from the OpenSubtitles 2018 corpus (OPUS; P. Lison and J. Tiedemann, 2016). " +
+            "Licensed under Creative Commons Attribution-ShareAlike 4.0 International."
+          }
+          url="https://github.com/hermitdave/FrequencyWords"
+        />
       </Section>
 
       <p className="muted mt-10 text-caption leading-relaxed">

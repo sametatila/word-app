@@ -63,7 +63,7 @@ ASC salt okuma dökümünden güncellendi.
 | İ5 | Defne/Aras referans ses izni ve model lisansı | ⏳ Samet | Kaynak, izin ve lisans `docs/plan/tts-own-voices.md`'ye tek paragraf |
 | İ6 | Edge TTS (resmî olmayan uç) | ⏳ Samet | Beyan tarafı LEG-2 ile kapalı; çıkış planı (Azure ya da kendi sesler) açık |
 | İ7 | Açık kaynak lisans ekranı | ✅ | b01006ea, acbc8cee (`/licenses`, `npm run licenses:gen`) |
-| İ8 | Sıklık listesi ve maskot çiziminin kaynağı | ⏳ Claude + Samet | `data/a2-expansion/README.md` yalnız "OpenSubtitles türevi" diyor; lisans ve maskot sahibi yazılı değil |
+| İ8 | Sıklık listesi ve maskot çiziminin kaynağı | ✅ | Liste FrequencyWords 2018 `de_50k.txt` ile bayt bayt aynı (upstream karşılaştırması 2026-09-26), içerik CC BY-SA 4.0: atıf `/licenses` › Data ve `data/README.md` › Kaynaklar. Maskotu Lernomi ekibi oluşturdu (Samet, 2026-09-26), üçüncü taraf hakkı yok |
 | İ9 | Ligde bildirme yalnız uzun basış | ✅ | 333d7113 |
 
 ### G — Gizlilik beyanları
