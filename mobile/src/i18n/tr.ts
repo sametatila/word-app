@@ -788,7 +788,6 @@ export const tr: Record<string, string> = {
   "exam.trial_notice": "Bu bir deneme: modül konuşmalarının %80'i geçilmediği için sonuç sayılmaz.",
   "exam.independent_note": "Bu sınavı Lernomi hazırladı; hiçbir sınav kurumuyla bağlantılı değildir ve resmî bir sertifika yerine geçmez.",
   "exam.passed": "Geçtin",
-  "plan.weekly_exam": "Haftanın quiz'i",
   "exam.quit_title": "Sınavı bırak?",
   "exam.quit_body": "Verdiğin cevaplar kaydedilmiyor; sınava baştan başlaman gerekir.",
   "exam.pronunciation": "Söyleyiş",

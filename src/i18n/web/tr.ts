@@ -243,12 +243,6 @@ export const trWeb: Record<string, string> = {
      kuruluyor, o yüzden çeviri de orada. */
   "games.intro": "Yeni Kelime",
   "games.speak": "Sesli Söyle",
-  "plan.conversation": "Konuşma: {title}",
-  "plan.conversation_review": "Konuşma tekrarı: {title}",
-  "plan.weak_spot": "Zayıf nokta: {type}",
-  "plan.weak_spot_detail": "son 14 günde {n} hata · {game} turu",
-  "plan.review_waiting": "{n} tekrar bekliyor · yeni kelimeler",
-  "plan.review_goal": "hedef {n} tekrar · yeni kelimeler",
   /* Tur içindeki oyunlar — mobilin `rounds.*` sözlüğünün web'de karşılığı
      olmayan kalemleri, kelime türü etiketleri ve cümle hakeminin kararları. */
   "rounds.write_sentence_ph": "Cümleyi yaz…",

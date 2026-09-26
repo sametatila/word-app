@@ -783,7 +783,6 @@ export const de: Record<string, string> = {
   "exam.trial_notice": "Das ist ein Probelauf: Das Ergebnis zählt erst, wenn 80 % der Sprechen-Schritte des Moduls bestanden sind.",
   "exam.independent_note": "Diese Prüfung hat Lernomi erstellt; sie ist mit keinem Prüfungsanbieter verbunden und ersetzt kein offizielles Zertifikat.",
   "exam.passed": "Bestanden",
-  "plan.weekly_exam": "Wochen-Quiz",
   "exam.quit_title": "Prüfung verlassen?",
   "exam.quit_body": "Deine Antworten werden nicht gespeichert; du müsstest die Prüfung neu beginnen.",
   "exam.pronunciation": "Aussprache",

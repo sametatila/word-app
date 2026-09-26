@@ -207,12 +207,6 @@ export const deWeb: Record<string, string> = {
   /* Oyun adları + plan — bkz. tr.ts notu. */
   "games.intro": "Neues Wort",
   "games.speak": "Laut sprechen",
-  "plan.conversation": "Gespräch: {title}",
-  "plan.conversation_review": "Gesprächswiederholung: {title}",
-  "plan.weak_spot": "Schwachstelle: {type}",
-  "plan.weak_spot_detail": "{n} Fehler in den letzten 14 Tagen · {game}-Runde",
-  "plan.review_waiting": "{n} Wiederholungen warten · neue Wörter",
-  "plan.review_goal": "Ziel {n} Wiederholungen · neue Wörter",
   /* Tur içindeki oyunlar — mobilin `rounds.*` sözlüğünün web'de karşılığı
      olmayan kalemleri, kelime türü etiketleri ve cümle hakeminin kararları. */
   "rounds.write_sentence_ph": "Schreib den Satz…",

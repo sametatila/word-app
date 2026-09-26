@@ -783,7 +783,6 @@ export const en: Record<string, string> = {
   "exam.trial_notice": "This is a trial: results don't count until 80% of the module's Speaking steps are passed.",
   "exam.independent_note": "This exam was made by Lernomi; it is not affiliated with any exam provider and does not replace an official certificate.",
   "exam.passed": "You passed",
-  "plan.weekly_exam": "This week's quiz",
   "exam.quit_title": "Leave the exam?",
   "exam.quit_body": "Your answers aren't saved; you'd have to start the exam over.",
   "exam.pronunciation": "Pronunciation",

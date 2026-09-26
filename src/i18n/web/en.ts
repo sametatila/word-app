@@ -207,12 +207,6 @@ export const enWeb: Record<string, string> = {
   /* Oyun adları + plan — bkz. tr.ts notu. */
   "games.intro": "New Word",
   "games.speak": "Say It Aloud",
-  "plan.conversation": "Conversation: {title}",
-  "plan.conversation_review": "Conversation review: {title}",
-  "plan.weak_spot": "Weak spot: {type}",
-  "plan.weak_spot_detail": "{n} mistakes in the last 14 days · {game} round",
-  "plan.review_waiting": "{n} reviews waiting · new words",
-  "plan.review_goal": "goal {n} reviews · new words",
   /* Tur içindeki oyunlar — mobilin `rounds.*` sözlüğünün web'de karşılığı
      olmayan kalemleri, kelime türü etiketleri ve cümle hakeminin kararları. */
   "rounds.write_sentence_ph": "Write the sentence…",
