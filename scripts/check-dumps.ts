@@ -85,7 +85,7 @@ compare("konuşma tohumu", new Set(CONVERSATIONS.filter((l) => l.level === "A1")
 /*
   BECERİ EGZERSİZLERİ ARTIK DÖKÜLMÜYOR: iki JSON mobil paketten çıkarıldı ve
   içerik hattından seviye paketi hâlinde iniyor. Karşılaştırılacak dosya yok;
-  egzersizlerin doğrulayıcısı `npm run skills:check`.
+  egzersizlerin doğrulayıcısı `npm run test:content`.
 */
 
 /*
