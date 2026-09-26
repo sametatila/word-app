@@ -7,7 +7,7 @@ kuralları `docs/store/README.md`'de; App Store karşılığı `docs/appstore/li
 
 | Soru | Cevap | Gerekçe |
 |---|---|---|
-| Hedef yaş grupları | **Yalnız 18 ve üzeri** | Kullanım şartları §3 hesap açmayı 18 yaşla sınırlıyor. 16–17 işaretlenmez: altında bir yaş grubu uygulamayı Aileler politikasına alır; açık uçlu yapay zekâ sohbeti ve sosyal katman orada ek gereklilik doğurur. İçerik de yetişkine dönük (CEFR A1–C1, sınav hazırlığı, iş ve hukuk dili) |
+| Hedef yaş grupları | **Yalnız 18 ve üzeri** | Kullanım şartları §3 hesap açmayı 18 yaşla sınırlıyor; yaş bilgisi alınmadığı için 18 altında veli onayı gereken ses ve yapay zekâ işlemesi ayrıştırılamıyor. Aileler politikasını yalnız 13 altı gruplar açar (13–15, 16–17 açmaz); 13+'ya inme şimdilik yok (Samet, 2026-09-26). İçerik de yetişkine dönük (CEFR A1–C1, sınav hazırlığı, iş ve hukuk dili) |
 | Uygulama çocuklara çekici mi | **Hayır** | Maskot (mirket) ve oyunlaştırma var; listeleme yetişkin öğrenciye ve sınava odaklı |
 | Aileler politikası | Kapsam dışı | Yapay zekâ sohbeti ve kullanıcı etkileşimi çocuk kitlesiyle bağdaşmaz |
 | Beklenmeyen çocuk kullanıcı | Hesap ve veri silinir | Gizlilik politikası §12 |

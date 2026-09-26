@@ -15,8 +15,11 @@ Play'de hedef kitle **yalnız 18 ve üzeri** (`docs/play/listing.md` §1). İki 
    politikası §12 aynı yaşı söylüyor. Kodda doğrulayan bir yaş kapısı yok (kayıtta ve misafir
    girişinde yalnız 18 yaş beyanı içeren kabul satırı), doğruyu metin taşıyor; beyanlar
    birbirini tutmalı.
-2. **16–17 eklemek Aileler politikasını açardı.** Açık uçlu yapay zekâ sohbeti ve kullanıcılar
-   arası sosyal katman (görünen ad, kullanıcı adı, lig) o kapsamda ek gereklilik doğuruyor.
+2. **18 altı bilinçli olarak dışarıda.** Aileler politikasını yalnız 13 altı yaş grupları açar;
+   13–15 ve 16–17 açmaz (Play Console yardımı, Target audience and content). Onları dışarıda
+   tutan yaş bilgisi olmaması: 18 altında ses ve yapay zekâ işlemesi veli onayı ister, bazı
+   sağlayıcıların şartları 18 diyor. 13+'ya inmenin iş listesi 2026-09-26 sohbetinde; karar:
+   şimdilik 18+ (Samet).
 
 Play'in IARC içerik derecelendirmesi ayrı bir düğme ve ankete göre hesaplanıyor; hedef kitleyle
 farklı çıkması normal.
