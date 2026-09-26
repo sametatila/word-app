@@ -1338,7 +1338,7 @@ Two competitions changed their recording {{14}} in the same season.`,
             ],
             sample: `The two positions are usually presented as a disagreement about morality, when in fact only one of them is.
 
-The first rests on an intuition that is very hard to give up. A player who injures an opponent by accident and one who does it on purpose have not done the same thing, whatever the outcome on the pitch, and a code that treats them identically will strike everybody who plays as unjust. Justice of that kind is not decoration; it is what makes players accept the code at all.
+The first rests on an intuition that is very hard to give up. A player who injures an opponent by accident and one who does it on purpose have not done the same thing, whatever the outcome on the field, and a code that treats them identically will strike everybody who plays as unjust. Justice of that kind is not decoration; it is what makes players accept the code at all.
 
 The second position does not deny any of this. It denies that the institution can act on it. A referee cannot see intention, and a tribunal three days later has a video clip and twenty minutes. Where a finding cannot be made reliably, it will be made by impression, and impressions run in familiar directions: the well-known player is careless and the unknown one is malicious.
 
@@ -1374,7 +1374,7 @@ My own view is that the choice is being posed too early. The real question is wh
             sample: `Proposal: withdrawals from the winter league
 
 The problem
-In each of the last three seasons, between nine and fourteen teams have withdrawn after the draw was published. The effect is not primarily competitive. It falls on the club that has already paid for a pitch and on the fixtures secretary, who redraws the round by hand.
+In each of the last three seasons, between nine and fourteen teams have withdrawn after the draw was published. The effect is not primarily competitive. It falls on the club that has already paid for a field and on the league scheduler, who redraws the round by hand.
 
 What I propose
 That any team withdrawing after the draw forfeits its entry fee, and that the fee is raised from ten to twenty-five pounds so that the forfeit is meaningful. The money should be returned to the club left without an opponent rather than retained centrally, since it is that club which carries the loss.
@@ -1428,7 +1428,7 @@ Two findings would tell us. First, if withdrawals fall but total entries fall by
               { de: "propose and justify a criterion", tr: "Bir ölçüt önerip gerekçelendirmek" },
             ],
             sample:
-              "I return the shopping trolley to the shelter even when the parking lot is empty at ten at night, and the reason is not virtue; it is that I would have to watch myself not do it. A neighbor of mine parks across the end of the road every Sunday and it blocks nobody, and I notice that my objection evaporates the moment the inconvenience does, which tells me my principle was never about the rule. If I were writing rules for anything, I would refuse to include any provision that requires somebody to establish what another person was thinking, because that finding will be made anyway and it will be made by impression.",
+              "I return the shopping cart to the cart return even when the parking lot is empty at ten at night, and the reason is not virtue; it is that I would have to watch myself not do it. A neighbor of mine parks across the end of the road every Sunday and it blocks nobody, and I notice that my objection evaporates the moment the inconvenience does, which tells me my principle was never about the rule. If I were writing rules for anything, I would refuse to include any provision that requires somebody to establish what another person was thinking, because that finding will be made anyway and it will be made by impression.",
             criteria: [
               "İlk cevap örnekten gerekçeye geçebildi mi?",
               "İkinci cevapta kendi tepkisi çözümlendi mi, yoksa yalnız anlatıldı mı?",
@@ -1457,7 +1457,7 @@ Two findings would tell us. First, if withdrawals fall but total entries fall by
               { de: "state a serious objection to your own position", tr: "Kendi konumuna ciddi bir itiraz getir" },
             ],
             sample:
-              "Technical detection has the advantage of working on strangers, which is what modern competition consists of, and it produces a record that can be examined afterwards. Its cost is rarely stated: it converts a question of trust into a question of surveillance, and a player who is no longer trusted has correspondingly less reason to be trustworthy. Informal pressure is cheap, it reaches conduct that no rule describes, and it collapses the moment the group is large enough for anonymity. I would defend the technical route, chiefly because the alternative requires a stable community and most competitions no longer have one; nostalgia is not a governance strategy. The serious objection to my own position is that detection quietly retires the mechanisms it replaces. Clubs which install cameras stop having the conversation in the changing room, and if the cameras are later withdrawn, or simply fail, nothing is left underneath them.",
+              "Technical detection has the advantage of working on strangers, which is what modern competition consists of, and it produces a record that can be examined afterward. Its cost is rarely stated: it converts a question of trust into a question of surveillance, and a player who is no longer trusted has correspondingly less reason to be trustworthy. Informal pressure is cheap, it reaches conduct that no rule describes, and it collapses the moment the group is large enough for anonymity. I would defend the technical route, chiefly because the alternative requires a stable community and most competitions no longer have one; nostalgia is not a governance strategy. The serious objection to my own position is that detection quietly retires the mechanisms it replaces. Clubs which install cameras stop having the conversation in the changing room, and if the cameras are later withdrawn, or simply fail, nothing is left underneath them.",
             criteria: [
               "İki yaklaşım da gerçekten karşılaştırıldı mı?",
               "Konum gerekçelendirildi mi?",

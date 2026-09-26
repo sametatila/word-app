@@ -285,10 +285,10 @@ Put your books in the blue box next to the door.`,
               id: "s2",
               genre: "Sign in the store",
               genreTr: "Mağazadaki levha",
-              title: "CASH DESK 4",
+              title: "REGISTER 4",
               body: `Only for people with ten things or less.
 
-Cards only. No cash at this desk.`,
+Cards only. No cash at this register.`,
             },
             {
               kind: "text",
@@ -331,10 +331,10 @@ Wifi: NEST-3B. The code is on the fridge.`,
               id: "en-a1-01-l3-12",
               no: 12,
               ref: "s2",
-              text: "You cannot pay with cash at desk 4.",
+              text: "You cannot pay with cash at register 4.",
               answer: true,
               explain:
-                "Levha iki kez söylüyor: \"Cards only\" ve \"No cash at this desk\". A1'de `only` ve `no` ile kurulan sınırlama okumanın ölçütlerinden biri.",
+                "Levha iki kez söylüyor: \"Cards only\" ve \"No cash at this register\". A1'de `only` ve `no` ile kurulan sınırlama okumanın ölçütlerinden biri.",
             },
             {
               kind: "bool",
@@ -616,7 +616,7 @@ Nuray`,
               situation: "Bir mağazada kapanış anonsu yapılıyor.",
               plays: 2,
               segments: [
-                { text: "Dear customers, the store closes in fifteen minutes. Please go to the cash desks now. The bakery is closed already. Thank you." },
+                { text: "Dear customers, the store closes in fifteen minutes. Please go to the checkout now. The bakery is closed already. Thank you." },
               ],
             },
             {
@@ -844,9 +844,9 @@ Nuray`,
           format: "gap",
           goal: "detail",
           prompt:
-            "Your friend Aylin Kaya wants a library card for her daughter. The daughter is nine years old. The family lives at 24 Park Road, Bristol, post code BS1 5TR. Aylin wants to come on Saturday. She pays by card, not with cash. Five things are missing on the form. Write them in the gaps.",
+            "Your friend Aylin Kaya wants a library card for her daughter. The daughter is nine years old. The family lives at 24 Park Road, Portland, ZIP code 97205. Aylin wants to come on Saturday. She pays by card, not with cash. Five things are missing on the form. Write them in the gaps.",
           promptTr:
-            "Arkadaşın Aylin Kaya kızı için kütüphane kartı istiyor. Kızı dokuz yaşında. Aile 24 Park Road, Bristol, posta kodu BS1 5TR adresinde oturuyor. Aylin cumartesi gelmek istiyor. Nakit değil kartla ödüyor. Formda beş bilgi eksik; boşluklara yaz.",
+            "Arkadaşın Aylin Kaya kızı için kütüphane kartı istiyor. Kızı dokuz yaşında. Aile 24 Park Road, Portland, posta kodu 97205 adresinde oturuyor. Aylin cumartesi gelmek istiyor. Nakit değil kartla ödüyor. Formda beş bilgi eksik; boşluklara yaz.",
           texts: [
             {
               kind: "text",
@@ -857,7 +857,7 @@ Nuray`,
               body: `Family name, first name:   Kaya, Aylin
 Age of the child:          {{1}}
 Street and number:         {{2}}
-Post code:                 {{3}} Bristol
+ZIP code:                  {{3}} Portland
 First visit:               {{4}}
 Payment:                   {{5}}
 Signature:                 A. Kaya`,
@@ -886,10 +886,10 @@ Signature:                 A. Kaya`,
               kind: "gap",
               id: "en-a1-01-w1-3",
               no: 3,
-              text: "Post code",
-              accept: ["BS1 5TR", "BS15TR"],
+              text: "ZIP code",
+              accept: ["97205"],
               explain:
-                "Posta kodu «BS1 5TR». Şehir adı (Bristol) formda zaten basılı olduğu için boşluğa yalnız kod yazılır. Boşluklu ve boşluksuz yazım kabul edilir.",
+                "Posta kodu (ZIP code) «97205». Şehir adı (Portland) formda zaten basılı olduğu için boşluğa yalnız kod yazılır.",
             },
             {
               kind: "gap",
@@ -925,7 +925,7 @@ Signature:                 A. Kaya`,
             minWords: 25,
             points: [
               { de: "Why are you writing?", tr: "Neden yazıyorsun?" },
-              { de: "Ask about the opening times.", tr: "Açılış saatlerini sor." },
+              { de: "Ask about the hours.", tr: "Açılış saatlerini sor." },
               { de: "Ask about the price for students.", tr: "Öğrenci fiyatını sor." },
             ],
             sample: `Dear Sir or Madam,

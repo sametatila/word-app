@@ -1,7 +1,7 @@
 import type { MockPaper } from "../types";
 
 /**
- * C1 · Deneme 12 — "Queues, Priority and the Order of a List".
+ * C1 · Deneme 12 — "Waiting Lists, Priority and Who Goes First".
  *
  * C1'in öteki denemeleriyle AYNI PLAN; konu ayrı. Sıra konusu C1 için
  * verimli çünkü kuyruk yansız görünen ama tümüyle seçilmiş bir düzendir:
@@ -18,8 +18,8 @@ export const EN_C1_12: MockPaper = {
   course: "en",
   level: "C1",
   no: 12,
-  theme: "Queues, Priority and the Order of a List",
-  themeTr: "Kuyruklar, öncelik ve bir listenin sırası",
+  theme: "Waiting Lists, Priority and Who Goes First",
+  themeTr: "Bekleme listeleri, öncelik ve kimin önce geldiği",
   minutes: 215,
   parts: [
     /* ── READING ───────────────────────────────────────────────────────── */
@@ -51,7 +51,7 @@ The most common ordering rule is arrival, which has the advantage of being impos
 
 Ordering by need corrects that and introduces a problem of its own, because need has to be assessed, and assessment can be {{3}}. Once a judgment stands between a person and their place in a line, that judgment will be argued with, appealed against and, occasionally, arranged.
 
-What is least often examined is the queue before the queue. A list records the people who have been {{4}} onto it, and says nothing whatever about those who were never referred, who did not know the service existed or who were turned away at an earlier stage.
+What is least often examined is the waiting list before the waiting list. A list records the people who have been {{4}} onto it, and says nothing whatever about those who were never referred, who did not know the service existed or who were turned away at an earlier stage.
 
 The allocation of places is therefore decided twice: once by the published criteria and once, invisibly, by whatever {{5}} people to the door in the first place. Rarely is the second of these examined at all.
 
@@ -143,7 +143,7 @@ Nor {{9}} the difficulty removed by publishing the criteria. Published criteria 
 
 {{10}} makes randomization attractive, in the narrow set of cases where no criterion can distinguish between applicants, is that it is the only rule nobody can present as a judgment about them.
 
-At no point {{11}} the profession claimed that a queue is fair. The claim has always been the weaker and more defensible one: that it is more accountable than the arrangement it replaced.
+At no point {{11}} the profession claimed that a waiting list is fair. The claim has always been the weaker and more defensible one: that it is more accountable than the arrangement it replaced.
 
 That is by {{12}} means a small claim, although it is routinely dismissed as one.`,
             },
@@ -361,11 +361,11 @@ Reviews conclude that the strongest {{18}} for publishing full distributions is 
 
 The report recommends that the list be reordered by expected benefit. I accept the evidence assembled in chapters four and five, which is stronger than I expected when the review began, and I agree that ordering by arrival produces outcomes that nobody would choose deliberately. My objection is not to the direction of the reform but to a step the report treats as administrative.
 
-Expected benefit must be assessed, and assessment requires an assessor. The report devotes eleven pages to the criteria and one paragraph to the people who will apply them. That paragraph states that assessors will be trained. It does not state who they are accountable to, what happens when two assessors disagree, or how an applicant contests a judgment made about their own case. These are not details. They are the whole mechanism by which a criterion becomes a place in a queue.
+Expected benefit must be assessed, and assessment requires an assessor. The report devotes eleven pages to the criteria and one paragraph to the people who will apply them. That paragraph states that assessors will be trained. It does not state who they are accountable to, what happens when two assessors disagree, or how an applicant contests a judgment made about their own case. These are not details. They are the whole mechanism by which a criterion becomes a place on a waiting list.
 
-I am also unpersuaded by the report's treatment of the hidden queue. Chapter six estimates that eleven hundred people in the district meet the criteria and have never been referred, and then sets that figure aside as outside the review's scope. It is not outside the scope. A reform that reorders four thousand two hundred people while leaving eleven hundred invisible has improved the fairness of a list and not necessarily the fairness of anything else. That is arguably worth doing, and it is not what the recommendation claims to be doing.
+I am also unpersuaded by the report's treatment of the hidden waiting list. Chapter six estimates that eleven hundred people in the district meet the criteria and have never been referred, and then sets that figure aside as outside the review's scope. It is not outside the scope. A reform that reorders four thousand two hundred people while leaving eleven hundred invisible has improved the fairness of a list and not necessarily the fairness of anything else. That is arguably worth doing, and it is not what the recommendation claims to be doing.
 
-My recommendation is narrower than the report's and I believe it would survive contact with practice. Publish the assessment rules, publish the appeal route, and report annually on the number of referrals declined at the door. Reorder the list afterwards, when there is something to check the reordering against.
+My recommendation is narrower than the report's and I believe it would survive contact with practice. Publish the assessment rules, publish the appeal route, and report annually on the number of referrals declined at the door. Reorder the list afterward, when there is something to check the reordering against.
 
 I record my thanks to the secretariat, whose work was exemplary, and my regret that this note was necessary.`,
               gloss: [
@@ -425,7 +425,7 @@ I record my thanks to the secretariat, whose work was exemplary, and my regret t
               kind: "mcq",
               id: "en-c1-12-l5-26",
               no: 26,
-              text: "Why does she object to setting the hidden queue aside?",
+              text: "Why does she object to setting the hidden waiting list aside?",
               options: [
                 "The estimate of eleven hundred is unreliable",
                 "Those people would object to the reform",
@@ -564,7 +564,7 @@ What follows from this is not that criteria are worthless. It is that a criterio
             {
               key: "d",
               label: "d",
-              body: "A median cannot show either of them, because both operate by moving particular people between positions rather than by changing how long the middle of the queue waits.",
+              body: "A median cannot show either of them, because both operate by moving particular people between positions rather than by changing how long the middle of the list waits.",
             },
             {
               key: "e",
@@ -853,7 +853,7 @@ What follows from this is not that criteria are worthless. It is that a criterio
               plays: 2,
               segments: [
                 {
-                  text: "Thank you. The list we examined holds four thousand two hundred names. The median wait is thirty-one weeks; the longest wait we located was ninety-four. In seven percent of cases the recorded clock had been reset at least once, in every instance because an offered date was declined. Our estimate of the hidden queue — people who meet the criteria and have never been referred — is eleven hundred. Priority is decided by a panel of three, which meets every two weeks. Our single recommendation is that the service publish the range alongside the median, since the median conceals precisely the cases this committee was convened to examine.",
+                  text: "Thank you. The list we examined holds four thousand two hundred names. The median wait is thirty-one weeks; the longest wait we located was ninety-four. In seven percent of cases the recorded clock had been reset at least once, in every instance because an offered date was declined. Our estimate of the hidden waiting list — people who meet the criteria and have never been referred — is eleven hundred. Priority is decided by a panel of three, which meets every two weeks. Our single recommendation is that the service publish the range alongside the median, since the median conceals precisely the cases this committee was convened to examine.",
                 },
               ],
             },
@@ -871,7 +871,7 @@ The longest wait located was {{9}} weeks.
 
 The clock had been reset in {{10}} percent of cases.
 
-The hidden queue is estimated at {{11}} people.
+The hidden waiting list is estimated at {{11}} people.
 
 Priority is decided by a panel of {{12}}.
 
@@ -929,7 +929,7 @@ The recommendation is to publish the {{14}} alongside the median.`,
               text: "Gap 11",
               accept: ["1100", "1,100"],
               explain:
-                "«Our estimate of the hidden queue … is eleven hundred» — ölçütleri karşılayıp hiç sevk edilmemiş kişiler.",
+                "«Our estimate of the hidden waiting list … is eleven hundred» — ölçütleri karşılayıp hiç sevk edilmemiş kişiler.",
             },
             {
               kind: "gap",
@@ -1341,7 +1341,7 @@ The recommendation is to publish the {{14}} alongside the median.`,
           format: "writing",
           goal: "production",
           prompt:
-            "You have read an article arguing that waiting lists disguise choices as procedures. Write an essay for your instructor discussing which of the following should determine a person's place in a queue, and explaining why the other two are weaker: the order of arrival, an assessment of need, or a lottery among comparable cases. Write 220 to 260 words.",
+            "You have read an article arguing that waiting lists disguise choices as procedures. Write an essay for your instructor discussing which of the following should determine a person's place in line, and explaining why the other two are weaker: the order of arrival, an assessment of need, or a lottery among comparable cases. Write 220 to 260 words.",
           promptTr:
             "Bekleme listelerinin seçimleri usul gibi gösterdiğini savunan bir yazı okudun. Danışmanın için bir deneme yaz: bir kişinin kuyruktaki yerini aşağıdakilerden hangisi belirlemeli ve öteki ikisi neden daha zayıftır? Varış sırası, ihtiyaç değerlendirmesi ya da benzer durumlar arasında kura. 220–260 kelime.",
           items: [],
@@ -1355,7 +1355,7 @@ The recommendation is to publish the {{14}} alongside the median.`,
             ],
             sample: `Every ordering rule distributes the same scarcity differently, and the useful question is therefore not which rule is fair but which unfairness we are prepared to see.
 
-Assessment of need is the rule I would adopt, for the plain reason that it is the only one of the three that attends to what the queue exists for. A person who will lose their employment within a month and a person who will not are in materially different positions, and both arrival and the lottery are constructed so as to be unable to notice this. The objection to assessment is real and I want to state it properly: a judgment invites an appeal, and appeals are exercised disproportionately by applicants who have encountered such processes before. That is an argument for publishing the appeal route in usable language, not for abandoning judgment.
+Assessment of need is the rule I would adopt, for the plain reason that it is the only one of the three that attends to what the waiting list exists for. A person who will lose their employment within a month and a person who will not are in materially different positions, and both arrival and the lottery are constructed so as to be unable to notice this. The objection to assessment is real and I want to state it properly: a judgment invites an appeal, and appeals are exercised disproportionately by applicants who have encountered such processes before. That is an argument for publishing the appeal route in usable language, not for abandoning judgment.
 
 Ordering by arrival is defended precisely because it cannot be contested, and its advocates are right that unarguable rules resist manipulation. What they concede too little is that indifference is not neutrality. A rule that treats two unlike cases identically has made a decision about them, and has merely declined to say so.
 
@@ -1394,7 +1394,7 @@ I have signed this report and I dissent from its second recommendation. I set ou
 
 I accept the evidence in chapters four and five in full. It is more thorough than the material available to the previous review, and it establishes that ordering by arrival produces outcomes that no member of this committee would defend if asked to choose them deliberately. I accept, too, that reordering is within our remit and that delay has a cost.
 
-My objection concerns a step the report treats as procedural. Reordering by assessed need requires assessors, and the report gives eleven pages to the criteria and a single paragraph to the people who will apply them. That paragraph promises training. It is silent on accountability, silent on what occurs when two assessors reach different conclusions, and silent on how an applicant contests a judgment made about their own case. Those omissions are not incidental to the reform; they are the machinery by which a criterion becomes a position in a queue, and unexamined machinery will be filled by whoever already knows how such things work.
+My objection concerns a step the report treats as procedural. Reordering by assessed need requires assessors, and the report gives eleven pages to the criteria and a single paragraph to the people who will apply them. That paragraph promises training. It is silent on accountability, silent on what occurs when two assessors reach different conclusions, and silent on how an applicant contests a judgment made about their own case. Those omissions are not incidental to the reform; they are the machinery by which a criterion becomes a position on a waiting list, and unexamined machinery will be filled by whoever already knows how such things work.
 
 I recommend, more narrowly than the report, that we publish the assessment rules and the appeal route in language an applicant can act on, and report annually the number of referrals declined before the list is reached. Reordering should follow once there is something against which to check it.`,
             criteria: [

@@ -403,7 +403,7 @@ I am not going to pretend that I stand outside this. I have sat on panels where 
               id: "en-c1-05-l5-26",
               no: 26,
               text: "What does the writer say about her own conduct?",
-              options: ["She always insisted on keeping the structured questions", "She has never sat on a panel", "She reported the panel afterwards", "She did not object, and thinks the panel was wrong"],
+              options: ["She always insisted on keeping the structured questions", "She has never sat on a panel", "She reported the panel afterward", "She did not object, and thinks the panel was wrong"],
               answer: 3,
               explain:
                 "Son paragraf iki şeyi birlikte söylüyor: «I did not object, because objecting would have meant saying that I did not trust the room» ve «On balance I think the room was wrong».",
@@ -624,7 +624,7 @@ The third attempt was designed by people who had read the second report carefull
               kind: "match",
               id: "en-c1-05-l8-37",
               no: 37,
-              text: "Which text says that training is defeated by what happens afterwards?",
+              text: "Which text says that training is defeated by what happens afterward?",
               answer: "c",
               explain:
                 "Eğitim sorumlusu iki saatin iyi olduğunu söylüyor ama «the two hours evaporate before lunch» ve gerekçeyi veriyor: «it is competing with the room».",
@@ -807,7 +807,7 @@ The third attempt was designed by people who had read the second report carefull
               plays: 1,
               segments: [
                 {
-                  text: "Thank you. I will give you the headline findings and I will not pretend they are comfortable. We looked at four hundred and sixty appointments made between 2018 and 2023, and we were able to match three hundred and ninety of them to a performance review two years later. The correlation between the panel's ranking and the later assessment was zero point zero eight, which is not zero and is not much. Here is the first finding: the strongest predictor in our data is not the interview score, it is the work sample, which was used in only a fifth of the competitions. Second, the panel size matters more than we expected. A panel of three produces the same accuracy as a panel of five and takes about forty percent less time. Third, the format of the feedback. We tried a letter, a telephone call and a scored grid, and the grid produced the fewest appeals, which surprised the two of us who had argued for the call. Fourth, a caution: candidates who were already internal did substantially better at interview and no better afterwards. And finally, the cost. Each competition costs about eleven thousand pounds in staff time, and nobody had ever added that up before.",
+                  text: "Thank you. I will give you the headline findings and I will not pretend they are comfortable. We looked at four hundred and sixty appointments made between 2018 and 2023, and we were able to match three hundred and ninety of them to a performance review two years later. The correlation between the panel's ranking and the later assessment was zero point zero eight, which is not zero and is not much. Here is the first finding: the strongest predictor in our data is not the interview score, it is the work sample, which was used in only a fifth of the competitions. Second, the panel size matters more than we expected. A panel of three produces the same accuracy as a panel of five and takes about forty percent less time. Third, the format of the feedback. We tried a letter, a telephone call and a scored grid, and the grid produced the fewest appeals, which surprised the two of us who had argued for the call. Fourth, a caution: candidates who were already internal did substantially better at interview and no better afterward. And finally, the cost. Each competition costs about eleven thousand pounds in staff time, and nobody had ever added that up before.",
                 },
               ],
             },
@@ -823,7 +823,7 @@ Correlation with later assessment: {{9}}
 The strongest predictor is the {{10}}.
 A panel of {{11}} is as accurate as a larger one.
 The feedback format with the fewest appeals was the {{12}}.
-{{13}} candidates did better at interview and no better afterwards.
+{{13}} candidates did better at interview and no better afterward.
 Cost of each competition in staff time: {{14}} pounds`,
             },
           ],
@@ -896,7 +896,7 @@ Cost of each competition in staff time: {{14}} pounds`,
               text: "Gap 13",
               accept: ["internal"],
               explain:
-                "«candidates who were already internal did substantially better at interview and no better afterwards» — görüşmede öne çıkan ama sonrasında fark yaratmayan grup.",
+                "«candidates who were already internal did substantially better at interview and no better afterward» — görüşmede öne çıkan ama sonrasında fark yaratmayan grup.",
             },
             {
               kind: "gap",
@@ -927,7 +927,7 @@ Cost of each competition in staff time: {{14}} pounds`,
               plays: 1,
               segments: [
                 { speaker: "Chair", text: "Lenn, your paper says that most selection reform fails at implementation rather than at design. Why?" },
-                { speaker: "Lenn", text: "Because the design is done by people who will not run it. A work sample takes forty minutes to score, and the person scoring it has a full day of their own work. Nobody costed that, and the method dies in month four, blamed for something that was never tested." },
+                { speaker: "Lenn", text: "Because the design is done by people who will not run it. A work sample takes forty minutes to score, and the person scoring it has a full day of their own work. Nobody budgeted for that, and the method dies in month four, blamed for something that was never tested." },
                 { speaker: "Chair", text: "Wren, is that fair?" },
                 { speaker: "Wren", text: "It is fair and it is incomplete. I have run three of these. The scoring time is real. What killed two of mine was not time; it was that the panel could see the candidate's answers and could not see their face, and they did not trust a decision they could not feel." },
                 { speaker: "Chair", text: "Juno?" },
@@ -953,10 +953,10 @@ Cost of each competition in staff time: {{14}} pounds`,
               no: 15,
               ref: "c1",
               text: "According to Lenn, why does selection reform fail?",
-              options: ["The designs themselves are poorly thought out", "Candidates dislike the methods", "The evidence is weak", "Nobody costs the work of running it"],
+              options: ["The designs themselves are poorly thought out", "Candidates dislike the methods", "The evidence is weak", "Nobody budgets for the work of running it"],
               answer: 3,
               explain:
-                "Lenn maliyeti adlandırıyor: kırk dakikalık değerlendirme ve zaten dolu bir iş günü. «Nobody costed that, and the method dies in month four». Tasarımı kötü saymıyor, tasarımcının işi yürütmeyeceğini söylüyor.",
+                "Lenn maliyeti adlandırıyor: kırk dakikalık değerlendirme ve zaten dolu bir iş günü. «Nobody budgeted for that, and the method dies in month four». Tasarımı kötü saymıyor, tasarımcının işi yürütmeyeceğini söylüyor.",
             },
             {
               kind: "mcq",
@@ -1266,7 +1266,7 @@ The second point concerns what an organization is capable of executing. The clai
 
 I regard the second as the more important, though for a narrower reason than is usually offered. Accuracy can be recovered later; a reform that fails visibly cannot, because the failure is remembered as evidence against the method rather than against the implementation.
 
-My own view is that the framing conceals the real question, which is not which method to adopt but who is paid to run it. Nobody at the seminar costed the scoring, and until somebody does, both points remain arguments about a process that exists on paper.`,
+My own view is that the framing conceals the real question, which is not which method to adopt but who is paid to run it. Nobody at the seminar put a price on the scoring, and until somebody does, both points remain arguments about a process that exists on paper.`,
             criteria: [
               "İki nokta da adil biçimde özetlendi mi?",
               "Seçim açıkça yapıldı ve gerekçelendirildi mi?",
@@ -1298,13 +1298,13 @@ My own view is that the framing conceals the real question, which is not which m
             sample: `Report: proposed work sample for team leader positions
 
 Current practice
-Appointments are made by a panel of three after a forty-five-minute interview using six questions, four of which have been unchanged since 2017. Scores are recorded on a grid and, in eleven of the last fourteen competitions, the panel then held a further discussion that is not minuted. Two of those fourteen appointments were subsequently reversed within a year.
+Appointments are made by a panel of three after a forty-five-minute interview using six questions, four of which have been unchanged since 2017. Scores are recorded on a grid and, in eleven of the last fourteen competitions, the panel then held a further discussion that is not recorded in the minutes. Two of those fourteen appointments were subsequently reversed within a year.
 
 Assessment
-The gain is likely to be real but smaller than the literature suggests. A work sample would replace the least reliable element of the interview, and our own reversal rate implies room for improvement. Two costs are not in the proposal. The first is scoring: forty minutes per candidate, against an average of nine candidates, adds six hours per competition to the workload of people who currently have none allocated. The second is the unminuted discussion, which the proposal does not mention and which will survive the change unless it is addressed directly.
+The gain is likely to be real but smaller than the literature suggests. A work sample would replace the least reliable element of the interview, and our own reversal rate implies room for improvement. Two costs are not in the proposal. The first is scoring: forty minutes per candidate, against an average of nine candidates, adds six hours per competition to the workload of people who currently have none allocated. The second is the unrecorded discussion, which the proposal does not mention and which will survive the change unless it is addressed directly.
 
 Recommendation
-I recommend adopting the work sample for these positions, on two conditions: that the scoring time is budgeted and released, and that the post-interview discussion is either minuted or discontinued. I would not recommend introducing the method while leaving the discussion in place, since that combination produces the cost of the new method and the outcome of the old one. I would also advise against evaluating the change after a single competition, as one cycle cannot distinguish a method from a novelty.`,
+I recommend adopting the work sample for these positions, on two conditions: that the scoring time is budgeted and released, and that the post-interview discussion is either recorded in the minutes or discontinued. I would not recommend introducing the method while leaving the discussion in place, since that combination produces the cost of the new method and the outcome of the old one. I would also advise against evaluating the change after a single competition, as one cycle cannot distinguish a method from a novelty.`,
             criteria: [
               "Mevcut uygulama sayı ve tarihle mi anlatıldı?",
               "Hem kazanç hem bedel değerlendirildi mi?",

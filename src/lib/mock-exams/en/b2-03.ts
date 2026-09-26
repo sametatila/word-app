@@ -459,7 +459,7 @@ None of this argues against buying from a nearby farm, which supports things tha
             { key: "a", label: "a", body: "What it leaves out is everything that happens before the journey begins." },
             { key: "b", label: "b", body: "It moves part of the responsibility onto the reader, which is not what a label is usually for." },
             { key: "c", label: "c", body: "Distance, in that case, is measuring the wrong thing entirely." },
-            { key: "d", label: "d", body: "Supermarket opening hours have lengthened considerably over the last two decades." },
+            { key: "d", label: "d", body: "Supermarket hours have lengthened considerably over the last two decades." },
             { key: "e", label: "e", body: "The last four kilometers are a choice as well, and almost nobody counts them." },
           ],
           items: [
@@ -656,7 +656,7 @@ None of this argues against buying from a nearby farm, which supports things tha
               situation: "Bir depoda çalışanlara talimat veriliyor.",
               plays: 2,
               segments: [
-                { text: "A note for everybody handling the returns. Anything that comes back in the crates goes to the compost, not to the bin, except the packaging. The packaging is the one thing we still pay to remove, and it is weighed every month." },
+                { text: "A note for everybody handling the returns. Anything that comes back in the crates goes to the compost, not in the trash, except the packaging. The packaging is the one thing we still pay to remove, and it is weighed every month." },
               ],
             },
             {
@@ -667,7 +667,7 @@ None of this argues against buying from a nearby farm, which supports things tha
               situation: "Bir kişi perşembe teslimatı için ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hi, about Thursday. I can bring the van and do the delivery round, but I have to be back by two for the vet. If we load at six we will have finished the town before the traffic, and Cengiz said he can do the villages." },
+                { text: "Hi, about Thursday. I can bring the van and do the delivery route, but I have to be back by two for the vet. If we load at six we will have finished the town before the traffic, and Cengiz said he can do the villages." },
               ],
             },
             {
@@ -758,10 +758,10 @@ None of this argues against buying from a nearby farm, which supports things tha
               no: 6,
               ref: "a6",
               text: "What is the speaker doing?",
-              options: ["Agreeing to help within a time limit", "Asking somebody to take the round instead", "Canceling the delivery"],
+              options: ["Agreeing to help within a time limit", "Asking somebody to take the route instead", "Canceling the delivery"],
               answer: 0,
               explain:
-                "Konuşmacı geliyor ama sınır koyuyor: «I can bring the van and do the delivery round, but I have to be back by two». Cengiz köyleri alıyor, onun turunu devralmıyor.",
+                "Konuşmacı geliyor ama sınır koyuyor: «I can bring the van and do the delivery route, but I have to be back by two». Cengiz köyleri alıyor, onun turunu devralmıyor.",
             },
             {
               kind: "mcq",
@@ -1267,7 +1267,7 @@ Roughly half of them sell vegetables, and the rest are bread, cheese, eggs and o
 
 What the market does particularly well is refuse to pretend. Nothing is described as artisan, nothing has a photograph of a person in a field, and the prices are written large. Two stalls are noticeably cheaper than the supermarket; three are noticeably more expensive, and nobody hides that.
 
-It is not for everyone. If you want one trip and a full trolley, you will be disappointed, because there is no meat and no household aisle.
+It is not for everyone. If you want one trip and a full cart, you will be disappointed, because there is no meat and no household aisle.
 
 For anybody who cooks from what they find, however, it is the best two hours of my week.`,
             criteria: [

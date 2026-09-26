@@ -160,7 +160,7 @@ Children who cannot swim are in the second group.`,
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
             { key: "a", label: "Homework Club", body: "Monday to Thursday, 15:00 to 17:00, in the library. Free, and there is no booking." },
-            { key: "b", label: "Extra Lessons", body: "Mathematics and English in small groups, two afternoons a week. Twelve euros an hour." },
+            { key: "b", label: "Extra Lessons", body: "Math and English in small groups, two afternoons a week. Twelve euros an hour." },
             { key: "c", label: "School Office", body: "Open 8 to 15. For an appointment with a teacher outside the parent-teacher conference, call 6640." },
             { key: "d", label: "School Meals", body: "Three euros twenty a day, or free with the card from the town office. Tell us by Friday for the next week." },
             { key: "e", label: "Help Fund", body: "For families with a problem paying for a trip or a book. Write to the office; nobody sees your letter except the head." },
@@ -173,10 +173,10 @@ Children who cannot swim are in the second group.`,
               kind: "match",
               id: "en-a2-12-l2-6",
               no: 6,
-              text: "Mirek's daughter needs help with mathematics twice a week.",
+              text: "Mirek's daughter needs help with math twice a week.",
               answer: "b",
               explain:
-                "İlan hem dersi hem sıklığı veriyor: «Mathematics and English in small groups, two afternoons a week».",
+                "İlan hem dersi hem sıklığı veriyor: «Math and English in small groups, two afternoons a week».",
             },
             {
               kind: "match",
@@ -520,7 +520,7 @@ I have three children at the school and I still {{24}} not know all the teachers
               situation: "Bir veli başka bir veliden yardım istiyor.",
               plays: 2,
               segments: [
-                { text: "Hi Petra, it is Mirek. I cannot come to the parent-teacher conference on Wednesday. Can you ask the mathematics teacher about the extra lessons for me?" },
+                { text: "Hi Petra, it is Mirek. I cannot come to the parent-teacher conference on Wednesday. Can you ask the math teacher about the extra lessons for me?" },
               ],
             },
           ],
@@ -578,7 +578,7 @@ I have three children at the school and I still {{24}} not know all the teachers
               options: ["To change the day", "To pay for the lessons", "Petra to ask a question"],
               answer: 2,
               explain:
-                "İleti ricayı açıkça veriyor: «Can you ask the mathematics teacher about the extra lessons for me?»",
+                "İleti ricayı açıkça veriyor: «Can you ask the math teacher about the extra lessons for me?»",
             },
           ],
         },
@@ -843,7 +843,7 @@ If you cannot come, call: {{10}}`,
               situation: "Üçüncü veli kızının bir dersini anlatıyor.",
               plays: 2,
               segments: [
-                { text: "She is fine in everything except mathematics, and she has decided that she is bad at it. Two afternoons a week with four other children would cost us twelve an hour." },
+                { text: "She is fine in everything except math, and she has decided that she is bad at it. Two afternoons a week with four other children would cost us twelve an hour." },
               ],
             },
             {

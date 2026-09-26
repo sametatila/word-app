@@ -1,7 +1,7 @@
 import type { MockPaper } from "../types";
 
 /**
- * A1 · Deneme 3 — "Food, Shops and Money".
+ * A1 · Deneme 3 — "Food, Shopping and Money".
  *
  * Deneme 1 ve 2 ile AYNI PLAN; konu ayrı. İlk ikisi bir şehre varmayı ve
  * orada yerleşmeyi konu alıyordu, bu üçüncüsü gündelik alışverişi: yiyecek,
@@ -17,7 +17,7 @@ export const EN_A1_03: MockPaper = {
   course: "en",
   level: "A1",
   no: 3,
-  theme: "Food, Shops and Money",
+  theme: "Food, Shopping and Money",
   themeTr: "Yemek, alışveriş ve para",
   minutes: 85,
   parts: [
@@ -286,9 +286,9 @@ We do not give free water for a big group.`,
             {
               kind: "text",
               id: "s4",
-              genre: "Sign at the cash desk",
+              genre: "Sign at the register",
               genreTr: "Kasadaki levha",
-              title: "CASH DESK 1",
+              title: "REGISTER 1",
               body: `We give you your money back for ten days.
 
 Bring the paper from the store.
@@ -593,7 +593,7 @@ Paulo`,
               situation: "Markette bir anons yapılıyor.",
               plays: 2,
               segments: [
-                { text: "Dear customers, today the fish is half price. The offer is only until two o'clock. Cash desks three and four are open." },
+                { text: "Dear customers, today the fish is half price. The offer is only until two o'clock. Registers three and four are open." },
               ],
             },
             {

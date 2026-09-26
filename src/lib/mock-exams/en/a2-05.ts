@@ -154,7 +154,7 @@ export const EN_A2_05: MockPaper = {
             { key: "e", label: "Garden Café", body: "Open from nine to five. Cakes, coffee and a light lunch. Quiet, with a garden. No music at any time." },
             { key: "f", label: "Knife Sharpening", body: "Bring your knives on the first Saturday of the month to the market. Two euros each, while you wait, in about ten minutes." },
             { key: "g", label: "Free Fridge", body: "Take what you need, leave what you do not. Behind the library, open all day. Please do not leave cooked food." },
-            { key: "h", label: "School Cook Wanted", body: "Two mornings a week, term time only. You cook for sixty children. Experience with a big kitchen is necessary." },
+            { key: "h", label: "School Cook Wanted", body: "Two mornings a week, during the school year only. You cook for sixty children. Experience with a big kitchen is necessary." },
           ],
           items: [
             {
@@ -746,7 +746,7 @@ You must bring:        an {{10}}`,
               no: 12,
               ref: "c2",
               text: "What is the announcement about?",
-              options: ["New opening hours", "How to separate waste", "The price of the new bins for each apartment"],
+              options: ["New business hours", "How to separate waste", "The price of the new bins for each apartment"],
               answer: 1,
               explain:
                 "Anons üç kabı ayırıyor: cam mavi, yemek kahverengi, yağ ise «the bottle by the back door». Saat ve fiyat kayıtta hiç geçmiyor.",

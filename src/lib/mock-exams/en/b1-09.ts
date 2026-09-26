@@ -63,7 +63,7 @@ export const EN_B1_09: MockPaper = {
               genre: "Message",
               genreTr: "İleti",
               title: "Not about the plates",
-              body: `Uma, I am not angry about the washing up. I am tired of being the person who notices it. That is a different thing and it is much harder to fix. Can we talk on Sunday?`,
+              body: `Uma, I am not angry about the dishes. I am tired of being the person who notices it. That is a different thing and it is much harder to fix. Can we talk on Sunday?`,
             },
             {
               kind: "text",
@@ -111,10 +111,10 @@ export const EN_B1_09: MockPaper = {
               no: 3,
               ref: "m3",
               text: "What is the writer's point?",
-              options: ["The washing up is never done at all", "The problem is who has to notice", "She has decided to move out"],
+              options: ["The dishes are never done at all", "The problem is who has to notice", "She has decided to move out"],
               answer: 1,
               explain:
-                "İleti şikâyetin konusunu değiştiriyor: «I am not angry about the washing up. I am tired of being the person who notices it».",
+                "İleti şikâyetin konusunu değiştiriyor: «I am not angry about the dishes. I am tired of being the person who notices it».",
             },
             {
               kind: "mcq",
@@ -220,7 +220,7 @@ export const EN_B1_09: MockPaper = {
               id: "t3",
               genre: "Magazine article",
               genreTr: "Dergi yazısı",
-              title: "The argument is never about the washing up",
+              title: "The argument is never about the dishes",
               body: `Piet Marek has sat in about ninety shared apartments where the people living there had stopped speaking to each other. He is paid to do it by a housing charity, and he has a view that the households themselves rarely share.
 
 Almost every dispute he is called to is presented as a dispute about cleaning. In his experience it almost never is.

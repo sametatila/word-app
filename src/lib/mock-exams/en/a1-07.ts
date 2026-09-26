@@ -99,7 +99,7 @@ Open Monday to Saturday, 9 to 20.`,
               id: "en-a1-07-l1-3",
               no: 3,
               ref: "t1",
-              text: "The shops close at nine in the evening.",
+              text: "The stores close at nine in the evening.",
               answer: false,
               explain:
                 "İleti kapanış saatini veriyor: «The stores are open until eight». Dokuz bu saatten sonra; cuma planı da bu saate göre kuruluyor.",

@@ -1,7 +1,7 @@
 import type { MockPaper } from "../types";
 
 /**
- * A2 · Deneme 3 — "Homes and Neighbours".
+ * A2 · Deneme 3 — "Homes and Neighbors".
  *
  * Deneme 1 ve 2 ile AYNI PLAN; konu ayrı. İlk ikisi sağlık/boş zaman ve
  * yolculuk/alışverişi ölçüyordu; bu üçüncüsü ev ve komşuluğu alıyor, çünkü
@@ -17,7 +17,7 @@ export const EN_A2_03: MockPaper = {
   course: "en",
   level: "A2",
   no: 3,
-  theme: "Homes and Neighbours",
+  theme: "Homes and Neighbors",
   themeTr: "Ev ve komşuluk",
   minutes: 110,
   parts: [

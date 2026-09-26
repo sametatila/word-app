@@ -54,7 +54,7 @@ export const EN_A2_11: MockPaper = {
               id: "m2",
               genre: "Notice at a vet",
               genreTr: "Veteriner duyurusu",
-              title: "OPENING TIMES",
+              title: "HOURS",
               body: `Open 9 to 18. Saturday 9 to 12.
 
 For an emergency at night call 4180.
@@ -1040,7 +1040,7 @@ Vesna Roth`,
               { de: "use the past simple in the last answer", tr: "Son cevapta geçmiş zamanı kullanmak" },
             ],
             sample:
-              "My sister has a dog and I see him every Sunday. For a person who works all day I think a cat is better, because a dog cries when he is alone for four hours. Last winter our cat did not come home for two nights. We found her in the building next door, in a warm cupboard.",
+              "My sister has a dog and I see him every Sunday. For a person who works all day I think a cat is better, because a dog cries when he is alone for four hours. Last winter our cat did not come home for two nights. We found her in the building next door, in a warm closet.",
             criteria: [
               "Cevaplar tek sözcük değil, tam cümle mi?",
               "Tercih bir gerekçeyle mi verildi? (because …)",

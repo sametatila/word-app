@@ -42,7 +42,7 @@ export const EN_B1_03: MockPaper = {
               id: "m1",
               genre: "Notice at a swimming pool",
               genreTr: "Havuz duyurusu",
-              title: "New opening hours",
+              title: "New hours",
               body: `From April 1 the pool opens at six on weekdays for lane swimming only. Families and lessons start at nine. The last entry is forty-five minutes before closing, and the sauna closes half an hour earlier than the pool.`,
             },
             {
@@ -51,7 +51,7 @@ export const EN_B1_03: MockPaper = {
               genre: "Email from a practice",
               genreTr: "Muayenehaneden e-posta",
               title: "How to reach us",
-              body: `Dear patient, from May we no longer take appointments by email. Please phone between eight and ten, or use the online form, which is checked twice a day. If you need a repeat prescription, allow three working days.`,
+              body: `Dear patient, from May we no longer take appointments by email. Please phone between eight and ten, or use the online form, which is checked twice a day. If you need a prescription refill, allow three business days.`,
             },
             {
               kind: "text",

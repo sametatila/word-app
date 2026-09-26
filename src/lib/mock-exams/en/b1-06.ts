@@ -151,7 +151,7 @@ export const EN_B1_06: MockPaper = {
             { key: "b", label: "Repair Workshop", body: "Bring a broken instrument on the last Saturday of the month. A repairer looks at it with you and tells you what it needs. Ten euros." },
             { key: "c", label: "Choir, No Audition", body: "Every Thursday at seven. Nobody sings alone and nobody has to read music. Two concerts a year, and you decide whether to be in them." },
             { key: "d", label: "Practice Rooms", body: "By the hour, from six euros. A piano in two of the rooms. Book online; the door opens with a code, day or night." },
-            { key: "e", label: "Instrument Library", body: "Borrow an instrument for three months and decide afterwards. Twenty euros, returned if you buy from us later. Adults only." },
+            { key: "e", label: "Instrument Library", body: "Borrow an instrument for three months and decide afterward. Twenty euros, returned if you buy from us later. Adults only." },
             { key: "f", label: "Music for Under Fives", body: "Thirty minutes, Wednesday mornings, with a parent. Songs and simple percussion. No booking; just come." },
             { key: "g", label: "Recording Evening", body: "Once a month we record one song for each person who signs up. You leave with a file the same evening. Fifteen euros." },
             { key: "h", label: "Instrument Sale", body: "Second-hand instruments, all checked by a repairer. Three months' guarantee. Cash or card, and no delivery." },
@@ -164,7 +164,7 @@ export const EN_B1_06: MockPaper = {
               text: "Tuva wants to try an instrument for a few months before she spends money on one.",
               answer: "e",
               explain:
-                "İlan tam bu denemeyi satıyor: «Borrow an instrument for three months and decide afterwards», üstelik yirmi euro sonradan satın alınırsa iade ediliyor. Satış ilanı (h) ise denemeden önce ödeme ister.",
+                "İlan tam bu denemeyi satıyor: «Borrow an instrument for three months and decide afterward», üstelik yirmi euro sonradan satın alınırsa iade ediliyor. Satış ilanı (h) ise denemeden önce ödeme ister.",
             },
             {
               kind: "match",

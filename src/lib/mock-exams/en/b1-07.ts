@@ -1,7 +1,7 @@
 import type { MockPaper } from "../types";
 
 /**
- * B1 · Deneme 7 — "Volunteering, Neighbours and Getting Things Done".
+ * B1 · Deneme 7 — "Volunteering, Neighbors and Getting Things Done".
  *
  * B1'in öteki denemeleriyle AYNI PLAN; konu ayrı. Gönüllülük B1 için
  * elverişli bir alan çünkü öneri, ret, koşul ve gerekçe dili aynı metinde
@@ -17,7 +17,7 @@ export const EN_B1_07: MockPaper = {
   course: "en",
   level: "B1",
   no: 7,
-  theme: "Volunteering, Neighbours and Getting Things Done",
+  theme: "Volunteering, Neighbors and Getting Things Done",
   themeTr: "Gönüllülük, komşuluk ve işleri halletmek",
   minutes: 155,
   parts: [
@@ -224,7 +224,7 @@ What I could not do any more was the deciding. A shelf needed moving from one wa
 
 I am not saying the meetings were stupid, although that is what people expect me to say. Everybody in that room had been treated badly somewhere else, and a meeting is a promise that nobody will be ignored. But a promise like that has a price, and the price was paid in shelves.
 
-The part that hurt was what happened afterwards. They found somebody within a week. For three years I had believed the project would fall over without me, and it did not even wobble.
+The part that hurt was what happened afterward. They found somebody within a week. For three years I had believed the project would fall over without me, and it did not even wobble.
 
 I have started again somewhere smaller. There are four of us and there are no meetings. In two years it will probably be twelve of us, there will be meetings, and I will have to decide what I think then.`,
               gloss: [
@@ -591,7 +591,7 @@ And if you are sick, tell somebody early. Nothing here depends {{30}} one person
               plays: 2,
               segments: [
                 { speaker: "Woman", text: "I would like to help with the homework club." },
-                { speaker: "Man", text: "Lovely. There is a police check first and we pay for it, but it takes about three weeks." },
+                { speaker: "Man", text: "Great. There is a police check first and we pay for it, but it takes about three weeks." },
                 { speaker: "Woman", text: "So I cannot start on Monday?" },
                 { speaker: "Man", text: "Not this Monday, no." },
               ],
@@ -756,7 +756,7 @@ And if you are sick, tell somebody early. Nothing here depends {{30}} one person
               segments: [
                 { speaker: "Rosa", text: "I put a note up in March offering to help with the shopping. Nothing happened." },
                 { speaker: "Paul", text: "Nobody at all?" },
-                { speaker: "Rosa", text: "Then in June I wrote: Tuesday at four, I will be by the door with a trolley. Three people came. Same offer, one difference." },
+                { speaker: "Rosa", text: "Then in June I wrote: Tuesday at four, I will be by the door with a cart. Three people came. Same offer, one difference." },
               ],
             },
             {
@@ -1128,7 +1128,7 @@ Tell Selma by:         {{19}}`,
 
 On October 3 I filled out the form on your website and offered to help with the hallway shelf. I have not had an answer, which is fine — I know you are busy.
 
-I would like to make the offer smaller and clearer. I can be at the building every Tuesday from five to seven. I can sort what is on the shelf, throw away what has gone off and write a list of what is missing.
+I would like to make the offer smaller and clearer. I can be at the building every Tuesday from five to seven. I can sort what is on the shelf, throw away what has gone bad and write a list of what is missing.
 
 I cannot drive and I cannot come on weekends, because I work on Saturdays.
 

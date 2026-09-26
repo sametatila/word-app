@@ -587,7 +587,7 @@ So I have changed my mind, {{29}} not in the direction people expect. The materi
               situation: "İki arkadaş bir kurstan söz ediyor.",
               plays: 2,
               segments: [
-                { speaker: "Nils", text: "How is the cookery course going?" },
+                { speaker: "Nils", text: "How is the cooking course going?" },
                 { speaker: "Ayse", text: "The cooking is easy. What I did not expect is how much I have learned about buying: what is in season, what freezes well." },
               ],
             },
@@ -599,7 +599,7 @@ So I have changed my mind, {{29}} not in the direction people expect. The materi
               situation: "Bir tamirci müşteriye ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hello, it is the workshop. Your washing machine needs a new pump. The part is twenty-eight pounds and the work is an hour. Shall I go ahead?" },
+                { text: "Hello, it is the workshop. Your washing machine needs a new pump. The part is twenty-eight pounds and the work is an hour. Should I go ahead?" },
               ],
             },
             {
@@ -683,7 +683,7 @@ So I have changed my mind, {{29}} not in the direction people expect. The materi
               options: ["The customer to bring the machine in", "Permission to do the repair", "Payment before the work starts"],
               answer: 1,
               explain:
-                "İleti fiyatı verdikten sonra tek bir soru soruyor: «Shall I go ahead?» — yani onay istiyor. Makine zaten atölyede, ödeme zamanından hiç söz edilmiyor.",
+                "İleti fiyatı verdikten sonra tek bir soru soruyor: «Should I go ahead?» — yani onay istiyor. Makine zaten atölyede, ödeme zamanından hiç söz edilmiyor.",
             },
             {
               kind: "mcq",
@@ -1003,7 +1003,7 @@ Closed in the month of:  {{19}}`,
                 { speaker: "Ivan", text: "Not the daily journeys, which were fine. It was the exceptions: a sofa, a trip to a hospital in another town, my mother's birthday. Those four or five days a year are where a car really earns its money." },
                 { speaker: "Host", text: "And how do you manage those days now?" },
                 { speaker: "Ivan", text: "I rent a car by the hour. It costs me about two hundred pounds a year in total. My old car cost that much in insurance alone, before I put any fuel in it." },
-                { speaker: "Host", text: "Has anything got worse?" },
+                { speaker: "Host", text: "Has anything gotten worse?" },
                 { speaker: "Ivan", text: "Yes, and I want to be clear about this. I see my brother less. He lives forty minutes away by car and two hours by two buses. I have not solved that, and I do not pretend I have." },
                 { speaker: "Host", text: "What would you say to somebody who is thinking about it?" },
                 { speaker: "Ivan", text: "Do not sell the car first. Leave it on the street for a month and use it only when you truly have to. If you use it four times, you have your answer. If you use it twenty times, you also have your answer, and there is no shame in that." },

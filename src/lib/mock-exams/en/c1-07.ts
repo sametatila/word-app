@@ -86,7 +86,7 @@ What happened instead is that selection moved. It now takes place at the moment 
               options: ["incline", "lean", "apt", "tend"],
               answer: 3,
               explain:
-                "`tend to + yalın fiil` eğilim bildiren tek yapıdır. `incline` bu anlamda `be inclined to` ister, `apt` bir sıfattır ve `be apt to` biçiminde gelir, `lean` ise `towards` alır.",
+                "`tend to + yalın fiil` eğilim bildiren tek yapıdır. `incline` bu anlamda `be inclined to` ister, `apt` bir sıfattır ve `be apt to` biçiminde gelir, `lean` ise `toward` alır.",
             },
             {
               kind: "mcq",
@@ -412,7 +412,7 @@ I notice that the digital form of this problem is discussed as though it had bee
                 "Failing to record the reasons",
                 "Destroying too large a proportion of the whole",
                 "Keeping any sample at all",
-                "Cataloguing the minutes separately",
+                "Cataloging the minutes separately",
               ],
               answer: 0,
               explain:
@@ -602,7 +602,7 @@ Seventeen years on, the pilot has produced about four terabytes and one genuinel
             {
               key: "a",
               label: "a — Conservator",
-              body: "The queue on my bench is decided by what has been requested, which sounds fair and is not. A document nobody can find is never requested, so the material at the uncataloged end of the store ages quietly while I re-house things that are already in good order. I have raised this twice and been told, correctly, that it is not my decision to make.",
+              body: "What reaches my bench next is decided by what has been requested, which sounds fair and is not. A document nobody can find is never requested, so the material at the uncataloged end of the store ages quietly while I re-house things that are already in good order. I have raised this twice and been told, correctly, that it is not my decision to make.",
             },
             {
               key: "b",
@@ -739,7 +739,7 @@ Seventeen years on, the pilot has produced about four terabytes and one genuinel
               segments: [
                 { speaker: "Man", text: "The company's records were pulped in 2003, and everybody assumes that somebody made a decision." },
                 { speaker: "Host", text: "You think not?" },
-                { speaker: "Man", text: "I went and looked. There is a lease that ended, an invoice for a dumpster, and no minute of any kind. It was a Tuesday and somebody needed the room." },
+                { speaker: "Man", text: "I went and looked. There is a lease that ended, an invoice for a dumpster, and no minutes of any kind. It was a Tuesday and somebody needed the room." },
                 { speaker: "Host", text: "That is worse, in a way." },
                 { speaker: "Man", text: "It is much worse, and it is also far more common. Deliberate destruction leaves a trail you can argue with. This leaves an invoice for a dumpster." },
               ],
@@ -774,7 +774,7 @@ Seventeen years on, the pilot has produced about four terabytes and one genuinel
               no: 3,
               ref: "a2",
               text: "What is the woman's position?",
-              options: ["It is better to lose the bid than repeat the last one", "The panel is certain to reject the plan", "The cataloging should be added afterwards"],
+              options: ["It is better to lose the bid than repeat the last one", "The panel is certain to reject the plan", "The cataloging should be added afterward"],
               answer: 0,
               explain:
                 "Kadın iki sonucu karşılaştırıp seçiyor: «I would rather explain a failed bid than that», yani kullanılamaz bir küme daha üretmektense kaybetmeyi yeğliyor.",
@@ -796,10 +796,10 @@ Seventeen years on, the pilot has produced about four terabytes and one genuinel
               no: 5,
               ref: "a3",
               text: "What did the man find when he investigated?",
-              options: ["Evidence of a deliberate policy", "A minute recording the destruction", "No record of any decision at all"],
+              options: ["Evidence of a deliberate policy", "Minutes recording the destruction", "No record of any decision at all"],
               answer: 2,
               explain:
-                "Adam bulduklarını sayıyor: biten bir kira sözleşmesi, konteyner faturası ve «no minute of any kind».",
+                "Adam bulduklarını sayıyor: biten bir kira sözleşmesi, konteyner faturası ve «no minutes of any kind».",
             },
             {
               kind: "mcq",
@@ -855,9 +855,9 @@ A reason can be given for {{11}} percent of the series destroyed since 1994.
 
 Two independent appraisals of the same collection agreed on about a {{12}}.
 
-Cataloguing accounts for {{13}} percent of lifetime spending.
+Cataloging accounts for {{13}} percent of lifetime spending.
 
-Cataloguing is the first line {{14}} in a budget round.`,
+Cataloging is the first line {{14}} in a budget round.`,
             },
           ],
           items: [
@@ -978,7 +978,7 @@ Cataloguing is the first line {{14}} in a budget round.`,
                 { speaker: "Chair", text: "So a proposal, briefly." },
                 { speaker: "Runa", text: "Publish what was destroyed and why, five years after the event, with the reasoning and without the individuals. I would sign that this afternoon." },
                 { speaker: "Chair", text: "Halvard?" },
-                { speaker: "Halvard", text: "So would I, and I want it minuted that this is the first thing anybody has proposed in nine years that does not require new money." },
+                { speaker: "Halvard", text: "So would I, and I want it on the record that this is the first thing anybody has proposed in nine years that does not require new money." },
               ],
             },
           ],
@@ -1220,7 +1220,7 @@ Cataloguing is the first line {{14}} in a budget round.`,
               situation: "Sekizinci konuşmacı tartışmada kimin bulunmadığını söylüyor.",
               plays: 2,
               segments: [
-                { text: "Every person on this panel can get into a reading room. The catalog is in one language, the opening hours assume a salary, and the request form assumes you already know what you are looking for. The people those three facts exclude are the larger part of the potential readership, and they have never once been in the room when priorities were set." },
+                { text: "Every person on this panel can get into a reading room. The catalog is in one language, the hours assume a salary, and the request form assumes you already know what you are looking for. The people those three facts exclude are the larger part of the potential readership, and they have never once been in the room when priorities were set." },
               ],
             },
           ],
@@ -1340,7 +1340,7 @@ The case for keeping everything rests on a genuine limit: appraisal requires a p
 
 The second position accepts the limit and denies that deferral is available. A collection that has not been described cannot be searched, and a researcher who cannot find something is in precisely the position of one for whom it was destroyed. On this view, keeping without describing does not postpone the decision; it transfers it to whoever writes the search software, and that person publishes no criteria at all.
 
-The second point seems to me the more important, for a reason that is administrative rather than intellectual. Cataloguing is the first budget line cut in almost every institution, so a policy of total retention will in practice produce enormous holdings that nobody can enter, while allowing everyone involved to feel that nothing has been lost.
+The second point seems to me the more important, for a reason that is administrative rather than intellectual. Cataloging is the first budget line cut in almost every institution, so a policy of total retention will in practice produce enormous holdings that nobody can enter, while allowing everyone involved to feel that nothing has been lost.
 
 My own view is that the argument is miscast. What matters is neither volume nor description but the record of the reasoning: a destruction that is explained can be argued with, and one that is merely logged cannot.`,
             criteria: [
@@ -1382,7 +1382,7 @@ The risks are less visible. Scanning on request sounds economical, but it makes 
 There is also a legal exposure. We cannot currently demonstrate which files were consulted, and off-site storage will not improve that.
 
 Recommendation
-I recommend proceeding with the move, subject to two conditions. First, that the box list is expanded to file level before the boxes leave the building, which is a matter of perhaps three weeks' work and cannot be done afterwards at any price. Second, that retrieval statistics are recorded from the first day.
+I recommend proceeding with the move, subject to two conditions. First, that the box list is expanded to file level before the boxes leave the building, which is a matter of perhaps three weeks' work and cannot be done afterward at any price. Second, that retrieval statistics are recorded from the first day.
 
 I would not recommend scanning on request as the sole route of access, and I would not treat a fall in requests as a finding.`,
             criteria: [
@@ -1429,7 +1429,7 @@ I would not recommend scanning on request as the sole route of access, and I wou
               { de: "propose and justify a criterion", tr: "Bir ölçüt önerip gerekçelendirmek" },
             ],
             sample:
-              "I keep about nine years of bank statements that I have never once opened, and the honest reason is not caution; it is that throwing them away would require me to decide, and filing them requires nothing. My father's employer closed and shredded everything, and when he tried to prove thirty years of contributions there was no personnel file at all; he was believed, eventually, on the strength of two payslips he happened to have kept. If an institution could keep only one kind of record, I would keep the minutes of the meetings where decisions were made, because everything else in an organization is either a consequence of those or an attempt to describe them afterwards.",
+              "I keep about nine years of bank statements that I have never once opened, and the honest reason is not caution; it is that throwing them away would require me to decide, and filing them requires nothing. My father's employer closed and shredded everything, and when he tried to prove thirty years of contributions there was no personnel file at all; he was believed, eventually, on the strength of two payslips he happened to have kept. If an institution could keep only one kind of record, I would keep the minutes of the meetings where decisions were made, because everything else in an organization is either a consequence of those or an attempt to describe them afterward.",
             criteria: [
               "İlk cevap somut örnekten gerekçeye geçebildi mi?",
               "Anlatı tek ve belirgin mi, sonucu verildi mi?",

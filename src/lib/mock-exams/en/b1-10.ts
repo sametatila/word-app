@@ -345,7 +345,7 @@ Then there is the question of who is holding it. The person behind the camera is
 
 The captions are worse than the pictures. A name on the back is written by somebody who was sure, and being sure is not the same as being right. My grandfather is confidently named in two albums as his own brother. {{19}}
 
-None of this is an argument for throwing them away. It is an argument for writing down what you actually know and what you are only guessing. If you write two words in brackets now, you will save somebody a year. {{20}}`,
+None of this is an argument for throwing them away. It is an argument for writing down what you actually know and what you are only guessing. If you write two words in parentheses now, you will save somebody a year. {{20}}`,
               gloss: [
                 { de: "a caption", tr: "altyazı, açıklama", en: "die Bildunterschrift" },
                 { de: "a frame", tr: "kare", en: "das Einzelbild" },
@@ -357,7 +357,7 @@ None of this is an argument for throwing them away. It is an argument for writin
             { key: "a", label: "a", body: "Everybody in the album is therefore somebody the photographer chose to keep." },
             { key: "b", label: "b", body: "The second is much shorter than the life, and it is the only part anybody ever looks at." },
             { key: "c", label: "c", body: "My grandmother took every photograph in our house and appears in four of them." },
-            { key: "d", label: "d", body: "Two words in brackets would have saved me a year of asking the wrong relatives." },
+            { key: "d", label: "d", body: "Two words in parentheses would have saved me a year of asking the wrong relatives." },
             { key: "e", label: "e", body: "Nobody noticed until a cousin asked why he was wearing the wrong uniform." },
             { key: "f", label: "f", body: "Color film became cheaper than black and white in this country in about 1968." },
           ],
@@ -429,7 +429,7 @@ Write the questions down first. You will not think of them in the room, and aski
 
 Ask about objects rather than years. Nobody remembers 1961. Everybody remembers the chair that {{22}} in the corner.
 
-Spell the names out loud and ask the person to {{23}} you if you are wrong. You cannot do this afterwards.
+Spell the names out loud and ask the person to {{23}} you if you are wrong. You cannot do this afterward.
 
 I {{24}} to think that the recording was the record. Now I think the record is the page of notes you make while the recording runs.
 

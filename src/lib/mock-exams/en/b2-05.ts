@@ -45,7 +45,7 @@ export const EN_B2_05: MockPaper = {
               genre: "Magazine article",
               genreTr: "Dergi yazısı",
               title: "The season ticket problem",
-              body: `A club that raises the price of a season ticket is usually described as {{1}} in on its own supporters, which is a strange way to describe a market.
+              body: `A club that raises the price of a season ticket is usually described as {{1}} in on its own fans, which is a strange way to describe a market.
 
 Most clubs are now owned by people who did not grow up nearby, and that {{2}} for a good deal of what follows. A stadium is a fixed asset; a crowd is not.
 
@@ -514,7 +514,7 @@ None of this is an argument against rules, which are the only thing standing bet
             {
               key: "a",
               label: "a — Bertan, club treasurer",
-              body: "We put the junior fee up by three pounds a month and lost nine families in a term. Nobody complained; they simply stopped coming. I would do it again, because the alternative was closing, but anybody who says a small increase costs nothing has not watched the register.",
+              body: "We put the junior fee up by three pounds a month and lost nine families in a term. Nobody complained; they simply stopped coming. I would do it again, because the alternative was closing, but anybody who says a small increase costs nothing has not watched the enrollment numbers.",
             },
             {
               key: "b",
@@ -576,7 +576,7 @@ None of this is an argument against rules, which are the only thing standing bet
               text: "Which text challenges people who claim a change is painless?",
               answer: "a",
               explain:
-                "Bertan doğrudan bir itiraz kuruyor: «anybody who says a small increase costs nothing has not watched the register». Zammı savunuyor ama bedelini inkâr edenleri karşısına alıyor.",
+                "Bertan doğrudan bir itiraz kuruyor: «anybody who says a small increase costs nothing has not watched the enrollment numbers». Zammı savunuyor ama bedelini inkâr edenleri karşısına alıyor.",
             },
           ],
         },
@@ -608,7 +608,7 @@ None of this is an argument against rules, which are the only thing standing bet
               situation: "Maç öncesi stadyumda anons yapılıyor.",
               plays: 2,
               segments: [
-                { text: "A short announcement before kick-off. The away end will be opened at half past two, not at two, because of a problem with the turnstiles. Tickets bought online are being checked by hand, so please have your phone ready." },
+                { text: "A short announcement before kickoff. The visitors' section will be opened at half past two, not at two, because of a problem with the turnstiles. Tickets bought online are being checked by hand, so please have your phone ready." },
               ],
             },
             {
@@ -633,7 +633,7 @@ None of this is an argument against rules, which are the only thing standing bet
                 { speaker: "Woman", text: "How many came on Saturday?" },
                 { speaker: "Man", text: "Four hundred and ten." },
                 { speaker: "Woman", text: "That is up." },
-                { speaker: "Man", text: "It is up on last month and down on last season. Everybody quotes the first number." },
+                { speaker: "Man", text: "It is up from last month and down from last season. Everybody quotes the first number." },
               ],
             },
             {
@@ -655,7 +655,7 @@ None of this is an argument against rules, which are the only thing standing bet
               situation: "Gönüllülere görev öncesi bilgi veriliyor.",
               plays: 2,
               segments: [
-                { text: "A note for everybody on the gate. Anything found in the stand goes to the office, not to the bin, except food. Lost phones are the one thing we are asked about all week, and we log every single one." },
+                { text: "A note for everybody working the gate. Anything found in the stands goes to the office, not in the trash, except food. Lost phones are the one thing we are asked about all week, and we log every single one." },
               ],
             },
             {
@@ -705,7 +705,7 @@ None of this is an argument against rules, which are the only thing standing bet
               options: ["The match starts later", "One entrance opens later", "Online tickets are not valid"],
               answer: 1,
               explain:
-                "Anons tek bir gecikme bildiriyor: «The away end will be opened at half past two, not at two». Maç saati değişmiyor; çevrim içi biletler geçerli, yalnız elle kontrol ediliyor.",
+                "Anons tek bir gecikme bildiriyor: «The visitors' section will be opened at half past two, not at two». Maç saati değişmiyor; çevrim içi biletler geçerli, yalnız elle kontrol ediliyor.",
             },
             {
               kind: "mcq",
@@ -727,7 +727,7 @@ None of this is an argument against rules, which are the only thing standing bet
               options: ["The comparison depends on the period", "Attendance has been rising steadily all year", "The figures are unreliable"],
               answer: 0,
               explain:
-                "Aynı sayı iki karşılaştırmada zıt sonuç veriyor: «up on last month and down on last season». Rakamın doğruluğu sorgulanmıyor, seçilen dönem sorgulanıyor.",
+                "Aynı sayı iki karşılaştırmada zıt sonuç veriyor: «up from last month and down from last season». Rakamın doğruluğu sorgulanmıyor, seçilen dönem sorgulanıyor.",
             },
             {
               kind: "mcq",
@@ -746,7 +746,7 @@ None of this is an argument against rules, which are the only thing standing bet
               no: 5,
               ref: "a5",
               text: "What must volunteers do with a lost phone?",
-              options: ["Put it in the bin with the food", "Keep it at the gate until the Monday", "Take it to the office and log it"],
+              options: ["Put it in the trash with the food", "Keep it at the gate until Monday", "Take it to the office and log it"],
               answer: 2,
               explain:
                 "Talimat iki adım veriyor: bulunan her şey ofise gidiyor ve «we log every single one». Yalnız yiyecek istisna; kapıda tutmaktan hiç söz edilmiyor.",
@@ -965,7 +965,7 @@ The families who leave never came to a {{15}}.
               situation: "Üçüncü konuşmacı eski fikstürleri yeniden okuyor.",
               plays: 2,
               segments: [
-                { text: "I have kept the fixture lists since 1994 and I read them again last month. There are fewer midweek matches, the travel is shorter and somebody now asks the players. On the things that can be measured, this is a better decade." },
+                { text: "I have kept the schedules since 1994 and I read them again last month. There are fewer midweek matches, the travel is shorter and somebody now asks the players. On the things that can be measured, this is a better decade." },
               ],
             },
             {
@@ -987,7 +987,7 @@ The families who leave never came to a {{15}}.
               situation: "Beşinci konuşmacı kendi sitelerindeki bir rakamı anlatıyor.",
               plays: 2,
               segments: [
-                { text: "The figure on our website is correct: ninety percent of our players come from within thirty miles. What it does not say is that those players get about a fifth of the minutes on the pitch." },
+                { text: "The figure on our website is correct: ninety percent of our players come from within thirty miles. What it does not say is that those players get about a fifth of the minutes on the field." },
               ],
             },
             {
@@ -1051,7 +1051,7 @@ The families who leave never came to a {{15}}.
               text: "Speaker 5",
               answer: "b",
               explain:
-                "Rakamın doğruluğu kabul ediliyor ama tamamlanıyor: «those players get about a fifth of the minutes on the pitch». Doğru bir sayı yanlış bir izlenim bırakabiliyor.",
+                "Rakamın doğruluğu kabul ediliyor ama tamamlanıyor: «those players get about a fifth of the minutes on the field». Doğru bir sayı yanlış bir izlenim bırakabiliyor.",
             },
             {
               kind: "match",
@@ -1086,7 +1086,7 @@ The families who leave never came to a {{15}}.
                 { speaker: "Host", text: "Why do the other six stop?" },
                 { speaker: "Xenia", text: "Not for the reason that gets written about. The abuse is real and it is not the main cause; most of them stop because they were left alone. A new official does thirty matches in a first season and nobody watches a single one of them." },
                 { speaker: "Host", text: "What would help?" },
-                { speaker: "Xenia", text: "An experienced official standing on the touchline, saying nothing during the match and twenty minutes afterwards. It is not expensive and it is not glamorous, and I have been asking for it since 2014." },
+                { speaker: "Xenia", text: "An experienced official standing on the sideline, saying nothing during the match and twenty minutes afterward. It is not expensive and it is not glamorous, and I have been asking for it since 2014." },
                 { speaker: "Host", text: "Has anything improved?" },
                 { speaker: "Xenia", text: "Yes, and I want to be clear about it, because people in my position are expected to say no. Clubs are fined properly now, the reporting takes ten minutes instead of an hour, and the county association answers within a week. Those are real." },
                 { speaker: "Host", text: "What do people get wrong about referees?" },
@@ -1098,7 +1098,7 @@ The families who leave never came to a {{15}}.
               ],
               gloss: [
                 { de: "a match official", tr: "maç hakemi", en: "der Schiedsrichter" },
-                { de: "the touchline", tr: "taç çizgisi", en: "die Seitenlinie" },
+                { de: "the sideline", tr: "taç çizgisi", en: "die Seitenlinie" },
                 { de: "to be fined", tr: "para cezası almak", en: "eine Geldstrafe bekommen" },
               ],
             },
@@ -1135,7 +1135,7 @@ The families who leave never came to a {{15}}.
               options: ["Considerably higher fees for new officials", "An experienced official at the match", "Fewer matches in the first season"],
               answer: 1,
               explain:
-                "İstek somut: «An experienced official standing on the touchline, saying nothing during the match and twenty minutes afterwards». Ücret ya da maç sayısı hiç anılmıyor.",
+                "İstek somut: «An experienced official standing on the sideline, saying nothing during the match and twenty minutes afterward». Ücret ya da maç sayısı hiç anılmıyor.",
             },
             {
               kind: "mcq",
@@ -1264,7 +1264,7 @@ There are four groups by pace, and the slowest one is genuinely slow: on my firs
 
 What it does particularly well is refuse to pretend that everybody is an athlete. Nobody asked me for a time, nothing is measured unless you ask, and the noticeboard has a column for people who came and walked.
 
-It is not for everyone. If you want structured coaching towards a specific race, you will be disappointed, because there is no plan beyond the session in front of you. Anybody who dislikes talking should also be warned: the last twenty minutes are in a café.
+It is not for everyone. If you want structured coaching toward a specific race, you will be disappointed, because there is no plan beyond the session in front of you. Anybody who dislikes talking should also be warned: the last twenty minutes are in a café.
 
 For somebody starting again after years away, however, it is the easiest door I have found.`,
             criteria: [
@@ -1360,7 +1360,7 @@ For somebody starting again after years away, however, it is the easiest door I 
             "Bir lig, hakemlerin ilk sezondan sonra devam etmesini istiyor. Bu fikirleri benimle konuş, sonra hangi ikisini önereceğimize ve hangisini reddedeceğimize karar ver.",
           prepSeconds: 30,
           exchange: [
-            { who: "partner", de: "The ideas are: an experienced official at three matches in the first season, higher fees, automatic fines for clubs whose supporters abuse officials, and a rule that no new official works alone. Which of these would actually keep people refereeing?", tr: "Fikirler: ilk sezonda üç maçta deneyimli bir hakemin bulunması, daha yüksek ücret, taraftarı hakeme hakaret eden kulüplere otomatik para cezası ve yeni hakemin tek başına görev yapmaması kuralı. Sence bunlardan hangisi insanları hakemlikte tutar?" },
+            { who: "partner", de: "The ideas are: an experienced official at three matches in the first season, higher fees, automatic fines for clubs whose fans abuse officials, and a rule that no new official works alone. Which of these would actually keep people refereeing?", tr: "Fikirler: ilk sezonda üç maçta deneyimli bir hakemin bulunması, daha yüksek ücret, taraftarı hakeme hakaret eden kulüplere otomatik para cezası ve yeni hakemin tek başına görev yapmaması kuralı. Sence bunlardan hangisi insanları hakemlikte tutar?" },
             { who: "you", hint: "Bir ya da iki fikri seç ve neden işe yarayacağını açıkla.", expect: "seçenekleri değerlendirmek ve birini gerekçesiyle savunmak", seconds: 45 },
             { who: "partner", de: "I would question the automatic fines. A club cannot control every spectator, and a fine falls on the volunteers who run it, not on the person who shouted. Does that change your view?", tr: "Otomatik para cezasını sorgularım. Bir kulüp her seyirciyi denetleyemez ve ceza bağıran kişiye değil, kulübü çeviren gönüllülere düşer. Bu görüşünü değiştirir mi?" },
             { who: "you", hint: "İtirazı değerlendir: kabul et, sınırla ya da çürüt.", expect: "bir itirazı değerlendirmek ve kısmen kabul etmek ya da çürütmek", seconds: 45 },

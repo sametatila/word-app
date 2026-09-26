@@ -641,7 +641,7 @@ The remedy is unglamorous, and it is not expensive. It is a first question, aske
               situation: "Bir bakım görevlisi günlük programından söz ediyor.",
               plays: 2,
               segments: [
-                { text: "I have got fourteen calls today and the drive between the last two is nineteen minutes. Whoever built the round has never driven it. I am not asking for fewer people. I am asking whoever writes the list to sit in the car once." },
+                { text: "I have fourteen calls today and the drive between the last two is nineteen minutes. Whoever built the route has never driven it. I am not asking for fewer people. I am asking whoever writes the list to sit in the car once." },
               ],
             },
             {
@@ -732,7 +732,7 @@ The remedy is unglamorous, and it is not expensive. It is a first question, aske
               no: 1,
               ref: "a1",
               text: "What is the speaker asking for?",
-              options: ["For the round to be planned realistically", "For a reduction in the number of calls", "For a different car to be provided"],
+              options: ["For the route to be planned realistically", "For a reduction in the number of calls", "For a different car to be provided"],
               answer: 0,
               explain:
                 "Konuşmacı isteğini karşıtıyla veriyor: «I am not asking for fewer people. I am asking whoever writes the list to sit in the car once».",
@@ -1114,7 +1114,7 @@ The program is funded until {{16}}.`,
               plays: 2,
               segments: [
                 { speaker: "Host", text: "You have had some form of home care for nine years. What has changed in that time?" },
-                { speaker: "Lior", text: "The people have got younger and the visits have got shorter. I do not say that as a complaint about the people. The young ones are better trained than the ones who came in the beginning." },
+                { speaker: "Lior", text: "The people have gotten younger and the visits have gotten shorter. I do not say that as a complaint about the people. The young ones are better trained than the ones who came in the beginning." },
                 { speaker: "Host", text: "Shorter is usually described as a cut." },
                 { speaker: "Lior", text: "It is a cut. It is also, and nobody says this, sometimes an improvement. Forty minutes with somebody who does not want to be there is worse than fifteen with somebody who does." },
                 { speaker: "Host", text: "What would you change if you could change one thing?" },
@@ -1140,7 +1140,7 @@ The program is funded until {{16}}.`,
               options: ["The training has become noticeably worse", "The visits have become considerably longer", "Younger staff and shorter visits"],
               answer: 2,
               explain:
-                "Lior iki değişikliği birlikte veriyor: «The people have got younger and the visits have got shorter», ayrıca eğitimin iyileştiğini söylüyor.",
+                "Lior iki değişikliği birlikte veriyor: «The people have gotten younger and the visits have gotten shorter», ayrıca eğitimin iyileştiğini söylüyor.",
             },
             {
               kind: "mcq",
@@ -1341,7 +1341,7 @@ Anouk Persson`,
               { de: "use a second conditional", tr: "İkinci tip koşulu kullanmak" },
             ],
             sample:
-              "Asking for help means saying out loud that something has gone, and most people would rather manage badly than say that. My grandfather went up a ladder at eighty-one because he did not want to call anybody about a gutter; he did not fall, and he also never asked afterwards. If I were eighty and living alone, I would want somebody to ask me what I could not do any more, rather than whether I felt lonely, because the first question has an answer that somebody could act on.",
+              "Asking for help means saying out loud that something has gone, and most people would rather manage badly than say that. My grandfather went up a ladder at eighty-one because he did not want to call anybody about a gutter; he did not fall, and he also never asked afterward. If I were eighty and living alone, I would want somebody to ask me what I could not do any more, rather than whether I felt lonely, because the first question has an answer that somebody could act on.",
             criteria: [
               "Görüş bir örnekle mi desteklendi?",
               "Deneyim somut mu ve sonucu verildi mi?",

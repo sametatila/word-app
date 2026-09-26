@@ -411,7 +411,7 @@ I do not think this was designed. I think it is what you get when a document is 
               no: 25,
               text: "What is the problem with the phrase about maintenance?",
               options: [
-                "Its meaning is decided afterwards",
+                "Its meaning is decided afterward",
                 "It is defined far too narrowly",
                 "It appears in no other policy",
                 "It is a legal term with no English sense",
@@ -1253,7 +1253,7 @@ The practical objection concerns testing. It is easy to prove that a document ar
 
 The question of cost seems to me stronger. At present a misunderstanding costs the company nothing and the customer everything, which is precisely the distribution that removes any reason to improve. A rule that moved even part of that cost would change behavior without anybody having to define comprehension.
 
-My own reservation is that clarity and certainty are being confused. A perfectly clear sentence can still leave a buyer unable to know what will happen, because the meaning is fixed afterwards by the seller.
+My own reservation is that clarity and certainty are being confused. A perfectly clear sentence can still leave a buyer unable to know what will happen, because the meaning is fixed afterward by the seller.
 
 Companies should carry the responsibility, but the obligation should attach to publishing how their terms have been applied rather than to proving that a customer understood.`,
             criteria: [

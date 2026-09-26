@@ -49,7 +49,7 @@
  { "tr": "Tamir, yedek parça ve eşyanın ömrü", "kind": "themeTr", "en": "Reparatur, Ersatzteile und die Lebensdauer der Dinge" },
  { "tr": "Yolculuk, turizm ve yaşanan yerler", "kind": "themeTr", "en": "Reisen, Tourismus und Wohnorte" },
  { "tr": "Haritalar, sınırlar ve arazinin kendisi", "kind": "themeTr", "en": "Karten, Grenzen und das Gelände selbst" },
- { "tr": "Kuyruklar, öncelik ve bir listenin sırası", "kind": "themeTr", "en": "Warteschlangen, Vorrang und die Reihenfolge einer Liste" },
+ { "tr": "Bekleme listeleri, öncelik ve kimin önce geldiği", "kind": "themeTr", "en": "Wartelisten, Vorrang und wer zuerst drankommt" },
  { "tr": "Hayvanlar, veteriner ve bir hayvana bakmak", "kind": "themeTr", "en": "Tiere, Tierarzt und ein Tier versorgen" },
  { "tr": "Diploma denkliği, tanınma ve baştan başlamak", "kind": "themeTr", "en": "Abschlüsse, Anerkennung und neu anfangen" },
  { "tr": "Ev paylaşmak ve kimsenin anlaşmadığı kurallar", "kind": "themeTr", "en": "Zusammenwohnen und Regeln, auf die sich niemand einigt" },

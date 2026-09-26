@@ -978,7 +978,7 @@ Cost of the service:         {{16}}`,
               situation: "İkinci konuşmacı kendi iki hatasını anlatıyor.",
               plays: 2,
               segments: [
-                { text: "In one term I closed the market for a storm that never came, and eight months later I waited three hours too long. I have been shouted at for both, and only one of them kept me awake afterwards." },
+                { text: "In one term I closed the market for a storm that never came, and eight months later I waited three hours too long. I have been shouted at for both, and only one of them kept me awake afterward." },
               ],
             },
             {
@@ -1247,7 +1247,7 @@ Cost of the service:         {{16}}`,
             ],
             sample: `Both mistakes are real and only one of them is ever discussed, which is itself part of the problem.
 
-Warnings that come to nothing do genuine damage. After three closures with no flood, people begin to treat the fourth message as noise, and the loss of attention is not recovered by explaining afterwards that the service was being careful. A store owner who loses three Saturdays is not being unreasonable when he stops believing the fourth.
+Warnings that come to nothing do genuine damage. After three closures with no flood, people begin to treat the fourth message as noise, and the loss of attention is not recovered by explaining afterward that the service was being careful. A store owner who loses three Saturdays is not being unreasonable when he stops believing the fourth.
 
 Nevertheless, the two errors are not the same size. A closure costs a morning and some annoyance, whereas water arriving unannounced costs houses and occasionally lives, and no amount of inconvenience adds up to that. Treating the two as equal is the most common mistake in the public argument.
 

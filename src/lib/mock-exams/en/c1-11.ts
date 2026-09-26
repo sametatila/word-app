@@ -50,7 +50,7 @@ export const EN_C1_11: MockPaper = {
 
 Within four years the proportion of calls answered inside eight minutes had risen from sixty-eight to eighty-four percent, and the average time taken to reach the patient's side had not {{2}} at all.
 
-The two figures are not in conflict. The clock is stopped when a vehicle arrives at the address, and a service under pressure will {{3}} its resources towards the part of the journey that is counted. The allocation of vehicles is settled months in advance, and it is settled against the figure that will be published. A rapid-response car reaches the curb inside the target; the crew and the equipment that will actually treat the patient arrive some minutes later, and no instrument records that gap.
+The two figures are not in conflict. The clock is stopped when a vehicle arrives at the address, and a service under pressure will {{3}} its resources toward the part of the journey that is counted. The allocation of vehicles is settled months in advance, and it is settled against the figure that will be published. A rapid-response car reaches the curb inside the target; the crew and the equipment that will actually treat the patient arrive some minutes later, and no instrument records that gap.
 
 None of this required anybody to behave dishonestly, which is the part most commentators {{4}}. Every individual decision in that chain was defensible, and several were clinically sensible. What changed was not the intentions of the service but the {{5}} of its attention, and attention follows measurement as reliably as water follows a channel.
 
@@ -86,7 +86,7 @@ Rarely is a target withdrawn once it has been published, and the reasons are pol
               options: ["deviate", "divert", "distract", "displace"],
               answer: 1,
               explain:
-                "Kaynaklar sayılan bölüme yönlendiriliyor: `divert its resources towards`. `deviate` nesnesiz kullanılır, `distract` dikkati dağıtır, `displace` ise yerinden eder.",
+                "Kaynaklar sayılan bölüme yönlendiriliyor: `divert its resources toward`. `deviate` nesnesiz kullanılır, `distract` dikkati dağıtır, `displace` ise yerinden eder.",
             },
             {
               kind: "mcq",
@@ -140,7 +140,7 @@ Attach a consequence and the number begins to describe the response to the targe
 
 Nor {{9}} the effect confined to dishonest institutions. It appears wherever effort is finite and attention is directed, which is to say everywhere.
 
-{{10}} follows is not corruption but reallocation. Staff move towards what is counted, and the movement is usually visible in the records as an improvement.
+{{10}} follows is not corruption but reallocation. Staff move toward what is counted, and the movement is usually visible in the records as an improvement.
 
 At no point {{11}} it necessary for anybody to decide to mislead. The distortion is produced by the arrangement rather than by the people inside it, and would survive a complete change of personnel.
 

@@ -745,7 +745,7 @@ Bring a hat, a towel and shoes for the {{10}}`,
               no: 12,
               ref: "c2",
               text: "What is the announcement about?",
-              options: ["The opening hours", "The price of the beach", "What the flags mean"],
+              options: ["The hours", "The price of the beach", "What the flags mean"],
               answer: 2,
               explain:
                 "Anons üç durumu ayırıyor: kırmızı bayrak yasak, sarı bayrak «only near the beach», bayrak yoksa «nobody is watching». Saat ve fiyat kayıtta hiç geçmiyor.",

@@ -1153,7 +1153,7 @@ The households hardest to reach are those in the {{15}} properties.
               no: 27,
               ref: "d1",
               text: "What has surprised him?",
-              options: ["How little the rule cost", "How many landlords complied straight away", "How completely the argument was won"],
+              options: ["How little the rule cost", "How many landlords complied right away", "How completely the argument was won"],
               answer: 2,
               explain:
                 "«Nobody now says that a cold rented apartment is acceptable … it has simply gone». Şaşırtan şey tartışmanın hızla kapanması, üstelik uygulamanın kaybedilmesiyle birlikte.",
@@ -1209,7 +1209,7 @@ The households hardest to reach are those in the {{15}} properties.
           format: "writing",
           goal: "production",
           prompt:
-            "In your English class you have discussed energy in the home. Now write an essay for your teacher, answering this question: \"Should landlords be required to improve the properties they rent out?\" Use the two ideas below and add one idea of your own.\n\nIdeas: who pays for the work — what happens to the rent afterwards",
+            "In your English class you have discussed energy in the home. Now write an essay for your teacher, answering this question: \"Should landlords be required to improve the properties they rent out?\" Use the two ideas below and add one idea of your own.\n\nIdeas: who pays for the work — what happens to the rent afterward",
           promptTr:
             "İngilizce dersinde evlerde enerjiyi tartıştınız. Öğretmenin için bir deneme yaz: \"Ev sahipleri kiraya verdikleri konutları iyileştirmek zorunda tutulmalı mı?\" Aşağıdaki iki fikri kullan ve kendi fikrinden birini ekle.\n\nFikirler: işin parasını kim öder — sonrasında kiraya ne olur",
           items: [],
@@ -1217,7 +1217,7 @@ The households hardest to reach are those in the {{15}} properties.
             minWords: 140,
             points: [
               { de: "Discuss who pays for the work.", tr: "İşin parasını kimin ödeyeceğini tartış." },
-              { de: "Discuss what happens to the rent afterwards.", tr: "Sonrasında kiraya ne olacağını tartış." },
+              { de: "Discuss what happens to the rent afterward.", tr: "Sonrasında kiraya ne olacağını tartış." },
               { de: "Add a third idea of your own.", tr: "Kendi üçüncü fikrini ekle." },
               { de: "Reach a clear conclusion.", tr: "Açık bir sonuca var." },
             ],
@@ -1357,7 +1357,7 @@ For a homeowner deciding which machine to replace first, however, it is fifteen 
             "Bir belediyenin kiralık dairelerde enerji tüketimini azaltmak için iki önleme parası var. Bu fikirleri benimle konuş, sonra hangi ikisini önereceğimize ve hangisini reddedeceğimize karar ver.",
           prepSeconds: 30,
           exchange: [
-            { who: "partner", de: "The ideas are: free loft insulation for the worst properties, inspectors who actually enter the buildings, a pamphlet in every mailbox, and a grant towards new boilers. Which of these would actually reduce the bills?", tr: "Fikirler: en kötü durumdaki konutlara ücretsiz çatı yalıtımı, gerçekten binaya giren denetçiler, her posta kutusuna bir broşür ve yeni kazanlar için hibe. Sence bunlardan hangisi faturaları gerçekten düşürür?" },
+            { who: "partner", de: "The ideas are: free loft insulation for the worst properties, inspectors who actually enter the buildings, a pamphlet in every mailbox, and a grant toward new boilers. Which of these would actually reduce the bills?", tr: "Fikirler: en kötü durumdaki konutlara ücretsiz çatı yalıtımı, gerçekten binaya giren denetçiler, her posta kutusuna bir broşür ve yeni kazanlar için hibe. Sence bunlardan hangisi faturaları gerçekten düşürür?" },
             { who: "you", hint: "Bir ya da iki fikri seç ve neden işe yarayacağını açıkla.", expect: "seçenekleri değerlendirmek ve birini gerekçesiyle savunmak", seconds: 45 },
             { who: "partner", de: "I would question the inspectors. They repair nothing at all, and a budget spent on visits is a budget not spent on insulation. Is that not the worst possible use of the money?", tr: "Denetçileri sorgularım. Hiçbir şeyi onarmıyorlar ve ziyarete harcanan bütçe yalıtıma harcanmayan bütçedir. Bu paranın olabilecek en kötü kullanımı değil mi?" },
             { who: "you", hint: "İtirazı değerlendir: kabul et, sınırla ya da çürüt.", expect: "bir itirazı değerlendirmek ve kısmen kabul etmek ya da çürütmek", seconds: 45 },

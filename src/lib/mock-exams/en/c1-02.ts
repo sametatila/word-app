@@ -980,7 +980,7 @@ The entry test has been abandoned because the correlation was close to {{13}}.
                 { speaker: "Chair", text: "Hana, you have written that professional resistance to standardization is usually misdiagnosed. In what way?" },
                 { speaker: "Hana", text: "It is read as status defense, and sometimes that is exactly what it is. But in the cases I have studied, the resistance clusters around a small number of steps, and those steps almost always turn out to be the ones where the practitioner is absorbing variation that the standard does not see." },
                 { speaker: "Chair", text: "Ruben, you design these systems. Is that recognizable?" },
-                { speaker: "Ruben", text: "Recognizable and, I would add, predictable. We can usually tell in advance which steps will be defended, and we very rarely act on that knowledge, because the project is judged on how much has been standardized rather than on what happened afterwards." },
+                { speaker: "Ruben", text: "Recognizable and, I would add, predictable. We can usually tell in advance which steps will be defended, and we very rarely act on that knowledge, because the project is judged on how much has been standardized rather than on what happened afterward." },
                 { speaker: "Chair", text: "So the measurement drives the design?" },
                 { speaker: "Ruben", text: "It does, and I want to be careful not to sound as though I am blaming a spreadsheet. Somebody chose that measure, and the choice was reasonable at the time; what is unreasonable is that nobody revisits it." },
                 { speaker: "Chair", text: "Ella, from a union perspective?" },
@@ -1186,7 +1186,7 @@ The entry test has been abandoned because the correlation was close to {{13}}.
               genreTr: "Dördüncü konuşmacı",
               situation: "Dördüncü konuşmacı bir çalışma pratiğinden söz ediyor.",
               plays: 2,
-              segments: [{ text: "Two questions are being run together. One is whether the work can be described. The other is whether it can be transferred by a description. They have different answers, and treating them as one is why this discussion goes round in circles." }],
+              segments: [{ text: "Two questions are being run together. One is whether the work can be described. The other is whether it can be transferred by a description. They have different answers, and treating them as one is why this discussion goes around in circles." }],
             },
             {
               kind: "audio",
@@ -1264,7 +1264,7 @@ The entry test has been abandoned because the correlation was close to {{13}}.
               text: "Speaker 4",
               answer: "b",
               explain:
-                "Konuşmacı iki soruyu ayırıyor: iş tarif edilebilir mi, ve tarifle aktarılabilir mi. «They have different answers, and treating them as one is why this discussion goes round in circles».",
+                "Konuşmacı iki soruyu ayırıyor: iş tarif edilebilir mi, ve tarifle aktarılabilir mi. «They have different answers, and treating them as one is why this discussion goes around in circles».",
             },
             {
               kind: "match",
@@ -1337,7 +1337,7 @@ The entry test has been abandoned because the correlation was close to {{13}}.
             ],
             sample: `The two points raised in the seminar are not straightforwardly opposed, and the difficulty lies in deciding which one a training system should be built around.
 
-The case for written procedure is a case about reach. A documented method can be taught in a classroom, audited afterwards and revised centrally when it turns out to be wrong. Against the alternative, which depends on the availability of an experienced person, this is an enormous practical advantage, and it is worth adding that apprenticeship has historically rationed entry to a trade as effectively as any examination.
+The case for written procedure is a case about reach. A documented method can be taught in a classroom, audited afterward and revised centrally when it turns out to be wrong. Against the alternative, which depends on the availability of an experienced person, this is an enormous practical advantage, and it is worth adding that apprenticeship has historically rationed entry to a trade as effectively as any examination.
 
 The second point concerns what a document can hold. The claim is not that procedures are inaccurate but that they describe the anticipated case, and that the judgment worth having is exercised precisely where the description stops applying. On this account, working alongside someone is not a slower version of reading; it is the only exposure to unanticipated cases that a learner reliably gets.
 
@@ -1384,7 +1384,7 @@ Standardizing would produce real gains. Training currently takes six weeks and w
 
 Recommendation
 
-I recommend standardizing the process, but not before the four steps have been examined individually. Two of them can probably be written into the guidance at no cost. The address check may be redundant now that records are linked. What I would not do is adopt the standard first and review the exceptions afterwards, which is the sequence proposed. Once a step has been removed, the reason it existed is rarely recoverable, and the staff who could explain it will have moved on within two years.`,
+I recommend standardizing the process, but not before the four steps have been examined individually. Two of them can probably be written into the guidance at no cost. The address check may be redundant now that records are linked. What I would not do is adopt the standard first and review the exceptions afterward, which is the sequence proposed. Once a step has been removed, the reason it existed is rarely recoverable, and the staff who could explain it will have moved on within two years.`,
             criteria: [
               "Mevcut uygulama ve içindeki değişkenlik somut olarak anlatıldı mı?",
               "Hem kazanç hem kayıp değerlendirildi mi, yoksa tek yan mı sunuldu?",

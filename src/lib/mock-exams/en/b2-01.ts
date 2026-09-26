@@ -385,7 +385,7 @@ What we lost was not information. It was the moment when somebody says the quiet
 
 Defenders of the written model reply that a good culture allows written objections too. In principle this is true. In practice I have watched three organizations try it, and in each of them the written channel filled up with agreement while the doubts moved to private messages, where they helped nobody. Nevertheless, the objection deserves a proper answer rather than a shrug.
 
-None of this defends the meeting as it is usually run. A meeting with fourteen people and no decision is a waste, and the fact that it has always been held on Tuesday is not a reason. If we had kept one weekly meeting, we would have caught two expensive mistakes in October rather than in March. The reform I would argue for is smaller and duller than abolition: three people, twenty minutes, one question, and a written record afterwards.
+None of this defends the meeting as it is usually run. A meeting with fourteen people and no decision is a waste, and the fact that it has always been held on Tuesday is not a reason. If we had kept one weekly meeting, we would have caught two expensive mistakes in October rather than in March. The reform I would argue for is smaller and duller than abolition: three people, twenty minutes, one question, and a written record afterward.
 
 The reason this reform is rarely adopted is that it is not dramatic. Abolishing meetings makes a headline. Making them shorter makes a calendar entry, and nobody has ever been promoted for that.`,
               gloss: [

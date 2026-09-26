@@ -56,7 +56,7 @@ Villages sit across lines that were {{2}} by somebody who had never seen them, w
 
 None of this is a scandal, and treating it as one gets the argument wrong from the start. Every boundary anybody has ever drawn had to be drawn by somebody, {{3}} imperfect information and under a deadline.
 
-The interesting question is what happens afterwards. The map, having been drawn, begins to {{4}} authority of its own, and within two generations it is defended as though it were the older of the two documents.
+The interesting question is what happens afterward. The map, having been drawn, begins to {{4}} authority of its own, and within two generations it is defended as though it were the older of the two documents.
 
 Rarely does anybody ask which of them the people living there would {{5}} to. The survey is a technical exercise; the answer to that question would be a political one, and the two are kept carefully {{6}}.`,
             },
@@ -362,18 +362,18 @@ Reviews conclude that a resurvey is politically {{18}} in almost every case wher
               title: "One afternoon in 1907",
               body: `The line that runs through the village of Ostrec was drawn on the afternoon of May 14, 1907, and it is possible to say almost exactly how.
 
-Three documents survive. There is the minute of the commission, which records that the boundary was agreed and gives no reasoning. There is a working sheet with two pencil versions of the same stretch, one of them scored through. And there is a letter written eleven days later by the junior surveyor to his brother, complaining about the heat and mentioning, in a subordinate clause, that they had taken the northern option because the southern one would have required a second visit to the ridge.
+Three documents survive. There are the minutes of the commission, which record that the boundary was agreed and give no reasoning. There is a working sheet with two pencil versions of the same stretch, one of them scored through. And there is a letter written eleven days later by the junior surveyor to his brother, complaining about the heat and mentioning, in a subordinate clause, that they had taken the northern option because the southern one would have required a second visit to the ridge.
 
 That clause is the only surviving statement of a reason, and it is not in any archive of the commission. It is in a family collection that was cataloged in 1998.
 
-I set this out because of what happens to such a line afterwards. Within thirty years the northern option had acquired a history. It was described, in three separate publications, as following an older ecclesiastical boundary, and one of those publications is still cited. There is no evidence for that claim and there is a plausible reason for its appearance: a line that follows something older is easier to defend than a line that avoided a second walk up a hill.
+I set this out because of what happens to such a line afterward. Within thirty years the northern option had acquired a history. It was described, in three separate publications, as following an older ecclesiastical boundary, and one of those publications is still cited. There is no evidence for that claim and there is a plausible reason for its appearance: a line that follows something older is easier to defend than a line that avoided a second walk up a hill.
 
 I am not arguing that the boundary is illegitimate. Every boundary was drawn by tired people with instruments they did not entirely trust. What I am arguing is narrower: we know why this one is where it is, we know it by accident, and the account that circulates is not that one.
 
 The general point is uncomfortable for my own discipline. The reasons for most such decisions were never written down, and the histories that fill the gap were written later by people who needed the line to make sense.`,
               gloss: [
                 { de: "a ridge", tr: "sırt, tepe hattı", en: "der Grat" },
-                { de: "a minute", tr: "tutanak", en: "das Protokoll" },
+                { de: "the minutes", tr: "tutanak", en: "das Protokoll" },
                 { de: "ecclesiastical", tr: "kiliseye ait", en: "kirchlich" },
               ],
             },
@@ -536,9 +536,9 @@ The general point is uncomfortable for my own discipline. The reasons for most s
 
 The commission that owns the line meets twice a year and has no field staff. The posts are inspected, in practice, by two forestry teams who are paid for something else and who walk that ground anyway, and the arrangement has never been written down. {{32}}
 
-What happens when a post is lost is more revealing than the treaty. It is replaced from the position of the two neighboring posts, by people with a tape and an afternoon, and the replacement becomes the record for everybody who comes afterwards. {{33}}
+What happens when a post is lost is more revealing than the treaty. It is replaced from the position of the two neighboring posts, by people with a tape and an afternoon, and the replacement becomes the record for everybody who comes afterward. {{33}}
 
-There have been three proposals since 1990 to establish a permanent inspection unit. All three were costed, all three were affordable, and all three were abandoned at the point where somebody asked which of the two governments would employ the staff. {{34}}
+There have been three proposals since 1990 to establish a permanent inspection unit. All three came with cost estimates, all three were affordable, and all three were abandoned at the point where somebody asked which of the two governments would employ the staff. {{34}}
 
 The line, meanwhile, is being maintained perfectly adequately by two men with a chainsaw who do not know they are doing it, and everybody involved understands that this is not a plan.`,
               gloss: [

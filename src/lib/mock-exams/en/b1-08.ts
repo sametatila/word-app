@@ -155,7 +155,7 @@ export const EN_B1_08: MockPaper = {
             { key: "d", label: "Spoken Books", body: "Thousands of titles read aloud. Listen in the car or in the kitchen. Free with a library card." },
             { key: "e", label: "Parents' Evening Group", body: "First Monday of the month. For parents of children aged ten to fourteen. No experts, only parents." },
             { key: "f", label: "Homework Club", body: "Monday to Thursday, four to seven, for children in years five to nine. Adults sit with them but do not do the work." },
-            { key: "g", label: "Reading Aloud at the Primary School", body: "Volunteers needed for one hour a week. You read, the children listen and then they read to you." },
+            { key: "g", label: "Reading Aloud at the Elementary School", body: "Volunteers needed for one hour a week. You read, the children listen and then they read to you." },
             { key: "h", label: "Repair Evening", body: "First Thursday of the month. Phones, radios and small machines. We tell you the price before we start." },
           ],
           items: [
@@ -278,7 +278,7 @@ So I have not stopped typing. I type in meetings, where I need the record, and I
                 "She had to choose what to write down",
                 "Her hand hurt, so she paid more attention",
                 "The lectures were slower in that block",
-                "She read the notes more often afterwards",
+                "She read the notes more often afterward",
               ],
               answer: 0,
               explain:

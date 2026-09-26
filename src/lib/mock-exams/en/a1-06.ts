@@ -1,7 +1,7 @@
 import type { MockPaper } from "../types";
 
 /**
- * A1 · Deneme 6 — "Pets, the Park and the Neighbourhood".
+ * A1 · Deneme 6 — "Pets, the Park and the Neighborhood".
  *
  * A1'in öteki denemeleriyle AYNI PLAN; konu ayrı. Hayvanlar ve mahalle
  * A1'de verimli bir alan çünkü tamamı somut: kim, ne zaman, nerede, kaç
@@ -16,7 +16,7 @@ export const EN_A1_06: MockPaper = {
   course: "en",
   level: "A1",
   no: 6,
-  theme: "Pets, the Park and the Neighbourhood",
+  theme: "Pets, the Park and the Neighborhood",
   themeTr: "Evcil hayvanlar, park ve mahalle",
   minutes: 85,
   parts: [
@@ -973,7 +973,7 @@ Vito`,
             points: [
               { de: "say what you need", tr: "Neye ihtiyacın olduğunu söylemek" },
               { de: "ask about the price", tr: "Fiyatı sormak" },
-              { de: "ask about the opening times politely", tr: "Kibarca açılış saatini sormak" },
+              { de: "ask about the hours politely", tr: "Kibarca açılış saatini sormak" },
             ],
             sample:
               "I need food for a small cat, please. — How much is it? — When are you open on Saturday, please?",

@@ -75,7 +75,7 @@ What complicates matters is that confidence is not fixed. It rises after a witne
 
 Researchers have therefore argued for recording confidence at the first identification and treating later statements with {{3}}. This is now standard in several jurisdictions, and where it has been adopted the number of disputed identifications has fallen {{4}}.
 
-The reform is easy to describe and hard to sell, {{5}} it appears to weaken the strongest evidence a prosecutor has. In practice it does the opposite: it preserves the value of the first account instead of allowing it to be {{6}} away by everything that happens afterwards.`,
+The reform is easy to describe and hard to sell, {{5}} it appears to weaken the strongest evidence a prosecutor has. In practice it does the opposite: it preserves the value of the first account instead of allowing it to be {{6}} away by everything that happens afterward.`,
             },
           ],
           items: [
@@ -546,7 +546,7 @@ I am under no illusion that conventions arrive on request. They emerge slowly, u
               genre: "Long-form article",
               genreTr: "Uzun makale",
               title: "The interpreter in the room",
-              body: `When two governments negotiate, a third person is present whose name rarely appears in the account afterwards. The interpreter is treated as a channel, and the metaphor is convenient for everybody involved.
+              body: `When two governments negotiate, a third person is present whose name rarely appears in the account afterward. The interpreter is treated as a channel, and the metaphor is convenient for everybody involved.
 
 {{31}}
 
@@ -579,7 +579,7 @@ What is striking is how recent this discussion is. For most of the period in whi
             {
               key: "b",
               label: "b",
-              body: "The difficulty is that soundness cannot be assessed afterwards by anyone who was not in the room. A decision that was right at the time is indistinguishable, in the written record, from one that was not.",
+              body: "The difficulty is that soundness cannot be assessed afterward by anyone who was not in the room. A decision that was right at the time is indistinguishable, in the written record, from one that was not.",
             },
             {
               key: "c",
@@ -623,7 +623,7 @@ What is striking is how recent this discussion is. For most of the period in whi
               text: "Gap 33",
               answer: "b",
               explain:
-                "Önceki paragraf kararların çoğunlukla isabetli olduğunu söylüyor; (b) «The difficulty is that soundness cannot be assessed afterwards» ile o isabetliliğe geri gönderme yapıp asıl sorunu koyuyor. `soundness` doğrudan önceki cümledeki `sound` sözcüğünü karşılıyor.",
+                "Önceki paragraf kararların çoğunlukla isabetli olduğunu söylüyor; (b) «The difficulty is that soundness cannot be assessed afterward» ile o isabetliliğe geri gönderme yapıp asıl sorunu koyuyor. `soundness` doğrudan önceki cümledeki `sound` sözcüğünü karşılıyor.",
             },
             {
               kind: "match",
@@ -874,7 +874,7 @@ What is striking is how recent this discussion is. For most of the period in whi
               plays: 1,
               segments: [
                 {
-                  text: "Good afternoon. Ten years ago we set out to record two hundred interviews with people who had worked in the docks. We have completed three hundred and forty, which sounds like an achievement and was in fact a mistake, and I will come back to that. The average interview lasts two hours, and the longest ran to nine. Transcription is where the money goes: it costs us roughly eight times what the recording costs, and it is the item that funders least like to pay for. Now, the mistake. Because we prioritized numbers, we interviewed the people who volunteered, and the people who volunteer are not a cross-section. Our sample is heavily weighted towards men who stayed in the industry until retirement. The women who did the administrative work are barely represented, and those who left early are almost absent. If I were starting again, I would record half as many and choose them deliberately. One more thing worth saying: the most valuable material has come not from the interviews themselves but from the follow-up visits, when people bring out documents they did not think were interesting.",
+                  text: "Good afternoon. Ten years ago we set out to record two hundred interviews with people who had worked in the docks. We have completed three hundred and forty, which sounds like an achievement and was in fact a mistake, and I will come back to that. The average interview lasts two hours, and the longest ran to nine. Transcription is where the money goes: it costs us roughly eight times what the recording costs, and it is the item that funders least like to pay for. Now, the mistake. Because we prioritized numbers, we interviewed the people who volunteered, and the people who volunteer are not a cross-section. Our sample is heavily weighted toward men who stayed in the industry until retirement. The women who did the administrative work are barely represented, and those who left early are almost absent. If I were starting again, I would record half as many and choose them deliberately. One more thing worth saying: the most valuable material has come not from the interviews themselves but from the follow-up visits, when people bring out documents they did not think were interesting.",
                 },
               ],
             },
@@ -892,7 +892,7 @@ The longest interview lasted {{9}} hours.
 
 Transcription costs about {{10}} times as much as recording.
 
-The sample is weighted towards men who stayed until {{11}}.
+The sample is weighted toward men who stayed until {{11}}.
 
 The group that is almost absent is those who {{12}} early.
 
@@ -950,7 +950,7 @@ The most valuable material has come from the {{14}} visits.`,
               text: "Gap 11",
               accept: ["retirement"],
               explain:
-                "«heavily weighted towards men who stayed in the industry until retirement» — örneklem emekliliğe kadar sektörde kalan erkeklere kaymış. Bu, gönüllülük esasının yarattığı çarpıklığın somut hâli.",
+                "«heavily weighted toward men who stayed in the industry until retirement» — örneklem emekliliğe kadar sektörde kalan erkeklere kaymış. Bu, gönüllülük esasının yarattığı çarpıklığın somut hâli.",
             },
             {
               kind: "gap",
@@ -1503,7 +1503,7 @@ I would add that cataloging is divisible in a way that spending on equipment is 
             "Bir şehir arşivi sınırlı bir bütçeyi nasıl harcayacağına karar verecek. Seçenekleri benimle konuş ve ilk üç için bir öncelik sırasında anlaş.",
           prepSeconds: 40,
           exchange: [
-            { who: "partner", de: "The options are: cataloging the uncataloged material, digitizing what is already cataloged, a public exhibition, training staff in privacy review, and extending the opening hours. Which two strike you as most defensible, and why?", tr: "Seçenekler: kataloglanmamış malzemenin kataloglanması, zaten kataloglanmış olanın dijitalleştirilmesi, halka açık bir sergi, personele gizlilik incelemesi eğitimi ve açılış saatlerinin uzatılması. Sana en savunulabilir gelen ikisi hangisi, neden?" },
+            { who: "partner", de: "The options are: cataloging the uncataloged material, digitizing what is already cataloged, a public exhibition, training staff in privacy review, and extending the reading room's hours. Which two strike you as most defensible, and why?", tr: "Seçenekler: kataloglanmamış malzemenin kataloglanması, zaten kataloglanmış olanın dijitalleştirilmesi, halka açık bir sergi, personele gizlilik incelemesi eğitimi ve açılış saatlerinin uzatılması. Sana en savunulabilir gelen ikisi hangisi, neden?" },
             { who: "you", hint: "İki seçenek seç ve seçim ölçütünü açıkça söyle.", expect: "iki seçeneği seçmek ve seçim ölçütünü açıkça adlandırmak", seconds: 50 },
             { who: "partner", de: "Let me press you on that. Everything you have chosen is invisible to the public, and this archive depends on public support for its funding. Is that not a real risk?", tr: "Bu noktada üsteleyeyim. Seçtiklerinin hepsi halka görünmez ve bu arşiv fonu için kamu desteğine bağlı. Bu gerçek bir risk değil mi?" },
             { who: "you", hint: "İtirazı ciddiye al: gücünü kabul et, sonra ya konumunu değiştir ya da neden değiştirmediğini açıkla.", expect: "güçlü bir itirazı kabul etmek ve konumunu ya revize etmek ya da savunmasını gerekçelendirmek", seconds: 50 },
@@ -1519,7 +1519,7 @@ I would add that cataloging is divisible in a way that spending on equipment is 
               { de: "agree a justified priority order", tr: "Gerekçeli bir öncelik sırasında anlaşmak" },
             ],
             sample:
-              "My criterion is whether the spending makes later spending cheaper. On that test, cataloging and privacy training come first, because both reduce the cost of everything else. Your objection is a real one and I do not want to wave it away: an archive that produces nothing visible for two years is a soft target at the next budget. Where I would move is on sequencing rather than on priorities. I would take a small part of the sum for a modest exhibition drawn from what is already cataloged, precisely so that the invisible work survives politically. So: cataloging first, privacy training second, a small exhibition third, and I would drop the extended opening hours, since the reading room is not currently full at the hours we already have.",
+              "My criterion is whether the spending makes later spending cheaper. On that test, cataloging and privacy training come first, because both reduce the cost of everything else. Your objection is a real one and I do not want to wave it away: an archive that produces nothing visible for two years is a soft target at the next budget. Where I would move is on sequencing rather than on priorities. I would take a small part of the sum for a modest exhibition drawn from what is already cataloged, precisely so that the invisible work survives politically. So: cataloging first, privacy training second, a small exhibition third, and I would drop the extended hours, since the reading room is not currently full at the hours we already have.",
             criteria: [
               "Seçim ölçütü açıkça adlandırıldı mı?",
               "İtiraz güçlü hâliyle mi ele alındı, yoksa savuşturuldu mu?",

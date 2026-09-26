@@ -674,7 +674,7 @@ None of which makes the four-euro figure useless. It is the clearest short way o
               situation: "Bir gönüllü ne yapabildiklerini anlatıyor.",
               plays: 2,
               segments: [
-                { text: "People assume we send things away because they are too difficult. Almost nothing is too difficult. It is sealed, or the part has not been made since 2019, and there is no skill in this room that gets round either of those." },
+                { text: "People assume we send things away because they are too difficult. Almost nothing is too difficult. It is sealed, or the part has not been made since 2019, and there is no skill in this room that gets around either of those." },
               ],
             },
             {
@@ -798,7 +798,7 @@ None of which makes the four-euro figure useless. It is the clearest short way o
               no: 7,
               ref: "a7",
               text: "What is changing in October?",
-              options: ["The charge for each repair", "The number of items accepted", "The opening hours of the workshop"],
+              options: ["The charge for each repair", "The number of items accepted", "The workshop's hours"],
               answer: 1,
               explain:
                 "Duyuru değişikliği veriyor: «two items per person rather than one», ücret ise on iki euroda kalıyor.",

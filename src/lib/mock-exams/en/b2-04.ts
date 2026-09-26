@@ -54,7 +54,7 @@ Several museums have now {{4}} their acquisition records available online. Early
 
 Critics say the exercise is designed to {{5}} attention away from the real question, and that criticism deserves an answer rather than a press release.
 
-The pattern deserves {{6}} attention, because a queue that never forms is not the same as a queue that has been dealt with.`,
+The pattern deserves {{6}} attention, because a backlog that never builds up is not the same as a backlog that has been cleared.`,
             },
           ],
           items: [
@@ -1172,7 +1172,7 @@ The communities the project wants to hear from find the {{15}} almost unusable.
               no: 28,
               ref: "d1",
               text: "What does he say he misses?",
-              options: ["A sense of future possibility", "The larger staff and the longer opening hours", "The building itself"],
+              options: ["A sense of future possibility", "The larger staff and the longer hours", "The building itself"],
               answer: 0,
               explain:
                 "«The possibility, honestly. A large store is a store of futures» — özlenen şey bir duygu, üstelik kendisi bunun «a comfort rather than a plan» olduğunu ekliyor. Personel ya da bina anılmıyor.",

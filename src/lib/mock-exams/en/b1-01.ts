@@ -822,8 +822,8 @@ The lane is not perfect. But it should be judged {{30}} the number of people it 
               situation: "İki arkadaş bir tatilden söz ediyor.",
               plays: 2,
               segments: [
-                { speaker: "Vera", text: "Shall we book the same house as last year?" },
-                { speaker: "Tim", text: "It was lovely, but it is forty minutes from everything. This time I would like to walk to the stores." },
+                { speaker: "Vera", text: "Should we book the same house as last year?" },
+                { speaker: "Tim", text: "It was great, but it is forty minutes from everything. This time I would like to walk to the stores." },
               ],
             },
             {

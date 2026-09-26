@@ -51,7 +51,7 @@ export const EN_C1_09: MockPaper = {
 
 The standard criticism {{2}} on that oddness: the words are cheap, nobody present is guilty, and the money has not moved. Every part of this is true and none of it settles the question.
 
-What an apology actually {{3}} down is a description. Before it, what happened is contested; afterwards it is the official account, and every subsequent argument has to begin from there.
+What an apology actually {{3}} down is a description. Before it, what happened is contested; afterward it is the official account, and every subsequent argument has to begin from there.
 
 That is not a small thing, although it is routinely {{4}} for one. A government that has apologized cannot later argue that the matter was exaggerated, and the lawyers on both sides know it.
 
@@ -141,7 +141,7 @@ Whether the instrument could be used earlier is a question that has never been {
 
 The confusion is useful to a government, which can offer the cheaper of the two and {{8}} credit for having addressed the matter.
 
-It is also useful to some campaigners, {{9}} whom the words are a step towards the money rather than an end in themselves.
+It is also useful to some campaigners, {{9}} whom the words are a step toward the money rather than an end in themselves.
 
 The expectation of a settlement changes how the words are read. Nor {{10}} it obvious that the two should travel together. There are cases in which the money arrived and the description was never corrected at all.
 
@@ -453,12 +453,12 @@ The uncomfortable implication is that the instrument works best where it is wort
             {
               key: "a",
               label: "a — Writer A",
-              body: "The instrument is being judged against a standard it was never able to meet. Nobody claims that an apology repairs anything. What it does is fix a description, and a description that has been fixed can be built on; the objection that it changes nothing is answered by looking at what people argue about afterwards.",
+              body: "The instrument is being judged against a standard it was never able to meet. Nobody claims that an apology repairs anything. What it does is fix a description, and a description that has been fixed can be built on; the objection that it changes nothing is answered by looking at what people argue about afterward.",
             },
             {
               key: "b",
               label: "b — Writer B",
-              body: "The effect that has actually been measured is not on the recipients at all. Two studies now find the largest change among people with no connection whatever to the events, who reported afterwards that they had not previously believed the accounts. That is a finding about the general public, and nobody was looking for it.",
+              body: "The effect that has actually been measured is not on the recipients at all. Two studies now find the largest change among people with no connection whatever to the events, who reported afterward that they had not previously believed the accounts. That is a finding about the general public, and nobody was looking for it.",
             },
             {
               key: "c",
@@ -468,7 +468,7 @@ The uncomfortable implication is that the instrument works best where it is wort
             {
               key: "d",
               label: "d — Writer D",
-              body: "It is assumed that the demand comes from the families. In the four cases I have worked on it came from inside the institution, usually from the second generation of staff, and the families were consulted afterwards and were frequently more skeptical than anybody had expected.",
+              body: "It is assumed that the demand comes from the families. In the four cases I have worked on it came from inside the institution, usually from the second generation of staff, and the families were consulted afterward and were frequently more skeptical than anybody had expected.",
             },
             {
               key: "e",
@@ -977,7 +977,7 @@ The most common word in the interviews was {{14}}.`,
                 { speaker: "Chair", text: "Bexi?" },
                 { speaker: "Bexi", text: "Then the disagreement is not about law at all, which is worth establishing. I can tell you why any single apology was delayed. I cannot tell you why the median is forty-two years, and neither can anybody else in this room." },
                 { speaker: "Chair", text: "Noor, is there a version of this that would satisfy you?" },
-                { speaker: "Noor", text: "Publish the drafting record twenty years afterwards. Not the statement — the arguments about the statement. That is where the institution's actual position is, and it is the only document that would tell a family what was decided about them." },
+                { speaker: "Noor", text: "Publish the drafting record twenty years afterward. Not the statement — the arguments about the statement. That is where the institution's actual position is, and it is the only document that would tell a family what was decided about them." },
                 { speaker: "Chair", text: "Ilja, would that meet your objection?" },
                 { speaker: "Ilja", text: "It would meet a different one, and I would take it. It does not shorten anything. It does mean that the people who choose the tense have to expect to be read." },
                 { speaker: "Chair", text: "So we have a proposal about records and no agreement about timing." },
@@ -1080,7 +1080,7 @@ The most common word in the interviews was {{14}}.`,
               ],
               answer: 0,
               explain:
-                "Noor önerisini netleştiriyor: «Publish the drafting record twenty years afterwards. Not the statement — the arguments about the statement».",
+                "Noor önerisini netleştiriyor: «Publish the drafting record twenty years afterward. Not the statement — the arguments about the statement».",
             },
             {
               kind: "mcq",
@@ -1157,7 +1157,7 @@ The most common word in the interviews was {{14}}.`,
               situation: "İkinci konuşmacı beklenmedik bir etkiyi anlatıyor.",
               plays: 2,
               segments: [
-                { text: "We were measuring the recipients and they did not move, because they had believed the account for fifty years. The group that moved was the one we included as a comparison. A third of them told us afterwards that until the statement they had assumed the whole thing was exaggerated." },
+                { text: "We were measuring the recipients and they did not move, because they had believed the account for fifty years. The group that moved was the one we included as a comparison. A third of them told us afterward that until the statement they had assumed the whole thing was exaggerated." },
               ],
             },
             {
@@ -1201,7 +1201,7 @@ The most common word in the interviews was {{14}}.`,
               situation: "Altıncı konuşmacı emsalden söz ediyor.",
               plays: 2,
               segments: [
-                { text: "Everybody in the department treated it as a single decision about a single history. Four other groups have written to us since, citing it, and two of the four have a better case than the one we settled. Nobody costed that, because nobody was asked to." },
+                { text: "Everybody in the department treated it as a single decision about a single history. Four other groups have written to us since, citing it, and two of the four have a better case than the one we settled. Nobody counted that cost, because nobody was asked to." },
               ],
             },
             {
@@ -1341,7 +1341,7 @@ The most common word in the interviews was {{14}}.`,
 
 The first rests on a straightforward observation about incentives. Words cost an institution nothing that can be entered in an account, and a body that has apologized may reasonably calculate that the matter is now closed. On this reading the statement is not merely inadequate; it is actively useful to the party that issued it, since it converts a claim into a piece of history.
 
-The second position does not dispute the incentive and denies that it settles anything. What an apology produces is a fixed description. Before it, the events are contested and every subsequent argument must establish them again; afterwards they are the official account, and a government that has accepted them cannot later suggest that they were exaggerated. That is a durable asset, and it is one that money does not buy.
+The second position does not dispute the incentive and denies that it settles anything. What an apology produces is a fixed description. Before it, the events are contested and every subsequent argument must establish them again; afterward they are the official account, and a government that has accepted them cannot later suggest that they were exaggerated. That is a durable asset, and it is one that money does not buy.
 
 The second point seems to me the more important, though for a reason neither speaker gave. Compensation is agreed by a small number of people and is spent; a description is public and is cited by anybody who needs it, including in cases the original claimants never brought.
 

@@ -138,7 +138,7 @@ None of this is about politeness. A firm that hires on eleven seconds is {{6}} o
 
 The results are consistent enough {{8}} be uncomfortable. The speaker with the regional accent is rated lower on competence and higher on warmth, whatever the words.
 
-This is not a matter {{9}} deliberate prejudice. Most listeners cannot say afterwards what they based the judgment on.
+This is not a matter {{9}} deliberate prejudice. Most listeners cannot say afterward what they based the judgment on.
 
 Nor {{10}} the effect confined to one country. Similar findings have been reported wherever anybody has looked for them.
 
@@ -834,7 +834,7 @@ That is a longer argument and a slower one. Given how few firms have ever asked 
               plays: 2,
               segments: [
                 {
-                  text: "Thank you. I will give you the headline numbers and then the part we did not expect. We sent the same written application to eight hundred employers, varying nothing except the recorded voice attached to it. The callback rate for the standard accent was twenty-two percent; for the regional accents it was seventeen. That gap of five points held across every sector except construction, where it disappeared entirely. It was widest in law. We also asked the employers afterwards, and ninety-one percent of them said that accent had played no part. Now the part we did not expect. When we repeated the study with the voice removed and the application sent as text alone, the callback rate rose to twenty-four percent for everybody. The study took three years, and the finding people quote is the five points.",
+                  text: "Thank you. I will give you the headline numbers and then the part we did not expect. We sent the same written application to eight hundred employers, varying nothing except the recorded voice attached to it. The callback rate for the standard accent was twenty-two percent; for the regional accents it was seventeen. That gap of five points held across every sector except construction, where it disappeared entirely. It was widest in law. We also asked the employers afterward, and ninety-one percent of them said that accent had played no part. Now the part we did not expect. When we repeated the study with the voice removed and the application sent as text alone, the callback rate rose to twenty-four percent for everybody. The study took three years, and the finding people quote is the five points.",
                 },
               ],
             },
@@ -1125,7 +1125,7 @@ The study took {{16}} years.`,
                 { speaker: "Host", text: "Is the problem solved at your firm?" },
                 { speaker: "Piet", text: "No. We fixed the first round. The second round is a conversation between people in a room, and I have no idea what happens in it. We have started recording who says what, and I expect that to be uncomfortable." },
                 { speaker: "Host", text: "Would you recommend it to a smaller firm?" },
-                { speaker: "Piet", text: "With one condition: do not do it unless you are willing to look at the result afterwards. A firm that introduces this and never checks has bought the same theater I was warning about, and I would rather they kept the money." },
+                { speaker: "Piet", text: "With one condition: do not do it unless you are willing to look at the result afterward. A firm that introduces this and never checks has bought the same theater I was warning about, and I would rather they kept the money." },
               ],
             },
           ],
@@ -1216,7 +1216,7 @@ The study took {{16}} years.`,
               options: ["The firm must be large enough", "The first round must be written", "The firm must examine the results"],
               answer: 2,
               explain:
-                "Piet koşulu tek cümlede koyuyor: «do not do it unless you are willing to look at the result afterwards», yoksa aynı gösteriye para verilmiş olur.",
+                "Piet koşulu tek cümlede koyuyor: «do not do it unless you are willing to look at the result afterward», yoksa aynı gösteriye para verilmiş olur.",
             },
           ],
         },
@@ -1411,7 +1411,7 @@ I recommend that we continue for a further year, with one change: the second rou
               { de: "agree an order with reasons", tr: "Gerekçeli bir sıralamada anlaşmak" },
             ],
             sample:
-              "The written first round is the only one of the four that changes what the panel sees, and everything else changes what the panel says afterwards. You are right that the client survey looks weak from inside the company, and I partly accept that; what I would defend is that it removes an excuse rather than creating one, because three firms out of four have never asked. The scoring sheet is the one I would leave until last, since it is filled out after the impression has already formed. So: written tasks first, then the training, then the client survey, and the sheet last.",
+              "The written first round is the only one of the four that changes what the panel sees, and everything else changes what the panel says afterward. You are right that the client survey looks weak from inside the company, and I partly accept that; what I would defend is that it removes an excuse rather than creating one, because three firms out of four have never asked. The scoring sheet is the one I would leave until last, since it is filled out after the impression has already formed. So: written tasks first, then the training, then the client survey, and the sheet last.",
             criteria: [
               "Seçenekler birbirine karşı mı değerlendirildi?",
               "İtiraza doğrudan karşılık verildi mi ve kısmi kabul yapılabildi mi?",

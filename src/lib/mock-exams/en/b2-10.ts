@@ -50,7 +50,7 @@ export const EN_B2_10: MockPaper = {
 
 Nobody defends the delay. What everybody defends is each of the separate steps that {{2}} it, and that is a different position altogether. Nevertheless, the wait is the only part the applicant experiences.
 
-The language test is defensible. The examination in local practice is defensible. The supervised year is defensible, and so is the queue for a supervisor, which exists because the supervisors are the same people who are short-staffed in the first {{3}}.
+The language test is defensible. The examination in local practice is defensible. The supervised year is defensible, and so is the waiting list for a supervisor, which exists because the supervisors are the same people who are short-staffed in the first {{3}}.
 
 Add them together and you produce a wait that nobody chose and nobody can be blamed for. It is the ordinary way in which institutions {{4}} out results that none of their members would sign.
 
@@ -138,7 +138,7 @@ The proposals that get discussed are all about speed. Very few of them {{6}} the
               title: "What recognition is for",
               body: `Recognition is often described as a barrier, and that description gives away the whole argument {{7}} it begins.
 
-A barrier is something you put up. A standard is something you hold people {{8}}, and the two are not the same thing, however similar they look from the queue.
+A barrier is something you put up. A standard is something you hold people {{8}}, and the two are not the same thing, however similar they look to someone on the waiting list.
 
 Nor {{9}} the public interest served by pretending otherwise. Nobody wants a surgeon who has not been checked.
 
@@ -230,7 +230,7 @@ Applicants report that the requirements are published but that their {{15}} vari
 
 Critics argue that the arrangement is defended in the name of safety while operating as a restriction on {{16}} to the profession.
 
-The {{17}} of a supervised year is defended on safety grounds, although the shortage of supervisors turns it into a queue rather than a course.
+The {{17}} of a supervised year is defended on safety grounds, although the shortage of supervisors turns it into a waiting list rather than a course.
 
 Reviews conclude that shortening the process has been discussed for decades without any {{18}} change in its length.`,
             },
@@ -364,7 +364,7 @@ I want to be careful with this comparison, because it is the kind that proves to
 
 Uma's country recognized the qualification in eleven weeks, on the basis of a language test and a written examination in local law. She was working, at a reduced grade, within four months.
 
-Zsofia's country required a supervised year. That is defensible in itself. What is not usually mentioned is that the supervisors are senior nurses on the same units that are short-staffed, and the queue for a place was, in her region, twenty-two months long. She spent those months in a warehouse.
+Zsofia's country required a supervised year. That is defensible in itself. What is not usually mentioned is that the supervisors are senior nurses on the same units that are short-staffed, and the waiting list for a place was, in her region, twenty-two months long. She spent those months in a warehouse.
 
 The difference in outcome is not a difference in checking. Both countries checked her. Given that, the gap between them is not a gap in safety. One of them checked her while she was working and the other checked her by making her wait, and only the second is described as protecting patients.
 
@@ -411,7 +411,7 @@ Nine years is also long enough for a skill to go. Zsofia did not fail the superv
               kind: "mcq",
               id: "en-b2-10-l5-25",
               no: 25,
-              text: "Why was the queue for a supervisor so long?",
+              text: "Why was the waiting list for a supervisor so long?",
               options: [
                 "Too few nurses applied for recognition",
                 "The examination was held only once a year",
@@ -474,7 +474,7 @@ Nine years is also long enough for a skill to go. Zsofia did not fail the superv
 
 Each stage was added for a reason that survives inspection. The language test came after a case in which instructions were misunderstood. The local examination came after a change in the law. The supervised year came after an inquiry. {{29}}
 
-The queue is different, because it was not added by anybody. It appeared when the number of applicants rose and the number of supervisors did not, and it now accounts for more of the total delay than every deliberate stage combined. {{30}}
+The backlog is different, because it was not added by anybody. It appeared when the number of applicants rose and the number of supervisors did not, and it now accounts for more of the total delay than every deliberate stage combined. {{30}}
 
 This is why the usual reform fails. A minister announces that the process will be shortened, the professional body reviews its stages, and each stage is found to be justified, which it is. {{31}}
 
@@ -487,7 +487,7 @@ The honest reform would be duller and harder: fund the supervisors, or accept th
             },
           ],
           options: [
-            { key: "a", label: "a", body: "Nobody reviews the queue, because a queue is not a stage and appears in no list of requirements." },
+            { key: "a", label: "a", body: "Nobody reviews the backlog, because a backlog is not a stage and appears in no list of requirements." },
             { key: "b", label: "b", body: "It is the sum of a series of decisions, each of which was reasonable when it was taken." },
             { key: "c", label: "c", body: "Remove any one of them in isolation and you would be arguing against a specific harm that has already occurred." },
             { key: "d", label: "d", body: "That fact alone should tell you where a reform would have to begin, and it is not where reforms begin." },
@@ -519,7 +519,7 @@ The honest reform would be duller and harder: fund the supervisors, or accept th
               text: "Gap 30",
               answer: "d",
               explain:
-                "Paragraf kuyruğun kimse tarafından eklenmediğini ve gecikmenin çoğunu oluşturduğunu söylüyor. (a) bunun neden gözden kaçtığını veriyor: «a queue is not a stage and appears in no list of requirements».",
+                "Paragraf kuyruğun kimse tarafından eklenmediğini ve gecikmenin çoğunu oluşturduğunu söylüyor. (a) bunun neden gözden kaçtığını veriyor: «a backlog is not a stage and appears in no list of requirements».",
             },
             {
               kind: "match",
@@ -640,7 +640,7 @@ The honest reform would be duller and harder: fund the supervisors, or accept th
               situation: "Bir kurul üyesi gecikmenin nerede olduğunu anlatıyor.",
               plays: 2,
               segments: [
-                { text: "People write to us about the four years as though the four years happened in this room. Our part of it is eleven weeks. The rest is a queue for something we neither run nor pay for, and saying so sounds like an excuse even when it is a fact." },
+                { text: "People write to us about the four years as though the four years happened in this room. Our part of it is eleven weeks. The rest is a waiting list for something we neither run nor pay for, and saying so sounds like an excuse even when it is a fact." },
               ],
             },
             {
@@ -733,7 +733,7 @@ The honest reform would be duller and harder: fund the supervisors, or accept th
               options: ["The board could shorten it easily", "Most of it is the board's own work", "Most of it happens outside the board"],
               answer: 2,
               explain:
-                "Konuşmacı payı veriyor: «Our part of it is eleven weeks. The rest is a queue for something we neither run nor pay for».",
+                "Konuşmacı payı veriyor: «Our part of it is eleven weeks. The rest is a waiting list for something we neither run nor pay for».",
             },
             {
               kind: "mcq",
@@ -1370,7 +1370,7 @@ Two things. If withdrawal rates among recipients do not fall below twenty percen
               { de: "identify a problem with your own choice", tr: "Kendi seçiminde bir sorunu adlandır" },
             ],
             sample:
-              "The supervised year before employment has one clear advantage: nothing can go wrong with a patient while the assessment is still open, and that is not a small thing. Its cost is invisible and enormous. The person spends the year earning nothing, the skill decays, and the evidence suggests that most of those who leave the process leave for money rather than for failure. Supervision on the job reaches the same standard by a different route, and it reaches it while the person is still a practitioner. I would choose that. The problem with my own choice is who does the supervising. On a short-staffed unit the supervisor is the person with least time, and a check that is recorded but never performed is worse than a queue, because it looks like an answer.",
+              "The supervised year before employment has one clear advantage: nothing can go wrong with a patient while the assessment is still open, and that is not a small thing. Its cost is invisible and enormous. The person spends the year earning nothing, the skill decays, and the evidence suggests that most of those who leave the process leave for money rather than for failure. Supervision on the job reaches the same standard by a different route, and it reaches it while the person is still a practitioner. I would choose that. The problem with my own choice is who does the supervising. On a short-staffed unit the supervisor is the person with least time, and a check that is recorded but never performed is worse than a waiting list, because it looks like an answer.",
             criteria: [
               "İki yaklaşım da gerçekten karşılaştırıldı mı?",
               "Karşı tarafın gücü kabul edildi mi?",

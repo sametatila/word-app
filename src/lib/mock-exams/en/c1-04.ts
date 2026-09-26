@@ -352,7 +352,7 @@ The most likely future is therefore an uneven one, with different regulators app
               genre: "Essay",
               genreTr: "Deneme",
               title: "In defense of the false alarm",
-              body: `The false alarm has no defenders, which is a pity, because a system that never produces one is almost certainly worse than a system that does. This is not a paradox; it is arithmetic, and the arithmetic is not difficult. Any warning system that must decide in advance can be tuned towards missing real events or towards announcing events that do not occur, and it cannot be tuned away from both at once.
+              body: `The false alarm has no defenders, which is a pity, because a system that never produces one is almost certainly worse than a system that does. This is not a paradox; it is arithmetic, and the arithmetic is not difficult. Any warning system that must decide in advance can be tuned toward missing real events or toward announcing events that do not occur, and it cannot be tuned away from both at once.
 
 What follows from this is not an argument for carelessness. It is an argument about where the errors should be placed. If the cost of a missed flood is a hundred times the cost of an unnecessary evacuation, then a system producing no false alarms is announcing, in effect, that it is prepared to accept the hundredfold loss in order to avoid the embarrassment of the smaller one. It is precisely this preference that goes unstated whenever a service is criticized for crying wolf.
 
@@ -1119,7 +1119,7 @@ The service has nine duty forecasters and needs {{14}}.`,
               situation: "Beşinci konuşmacı hiçbir hesapta görünmeyen bir zararı anlatıyor.",
               plays: 2,
               segments: [
-                { text: "The evacuation appears in our accounts as a cost of two hundred thousand. What appears nowhere is that a hundred and forty small businesses lost a trading day, and that eleven of them told us afterwards it was the day that decided their year. Nobody has ever been asked to put a figure on that, so there is none." },
+                { text: "The evacuation appears in our accounts as a cost of two hundred thousand. What appears nowhere is that a hundred and forty small businesses lost a trading day, and that eleven of them told us afterward it was the day that decided their year. Nobody has ever been asked to put a figure on that, so there is none." },
               ],
             },
             {

@@ -86,8 +86,8 @@ We do not buy clothes.`,
               id: "m5",
               genre: "Message",
               genreTr: "İleti",
-              title: "The cupboard",
-              body: `Hi Tarek, eleven people wrote about the cupboard in one hour. I think my price was too low. I told the first person yes, so it is done. Next time I will ask more and I will wait a week.`,
+              title: "The cabinet",
+              body: `Hi Tarek, eleven people wrote about the cabinet in one hour. I think my price was too low. I told the first person yes, so it is done. Next time I will ask more and I will wait a week.`,
             },
           ],
           items: [
@@ -163,7 +163,7 @@ We do not buy clothes.`,
             { key: "c", label: "Second-hand Furniture", body: "Beds, desks and chairs. Delivery in the city for eight euros. Open Tuesday to Saturday." },
             { key: "d", label: "What Is It Worth?", body: "Free, Thursday afternoons. Bring one object. We look at it and we tell you. We do not buy anything." },
             { key: "e", label: "Book Shelf in the Hallway", body: "Leave a book, take a book. Free for everybody. Please, no wet books." },
-            { key: "f", label: "Clothes Shop", body: "We buy good clothes and we pay the same day. Bring ten pieces at most." },
+            { key: "f", label: "Clothing Store", body: "We buy good clothes and we pay the same day. Bring ten pieces at most." },
             { key: "g", label: "Tool Library", body: "Borrow a drill or a saw for two euros a day. You need a card and an address in the city." },
             { key: "h", label: "Small Ads", body: "Put your ad online free. Photograph, price and your street. You meet the buyer yourself." },
           ],
@@ -235,7 +235,7 @@ What do people bring you most?
 Chairs. Every day, chairs. I say no to almost all of them, because everybody already has enough chairs.
 
 What sells fastest?
-Small things that people did not know they wanted. Lamps go in two days. Big cupboards are harder than anything else, and one can stand here for a year.
+Small things that people did not know they wanted. Lamps go in two days. Big cabinets are harder than anything else, and one can stand here for a year.
 
 Do people know what their things are worth?
 No, and it goes both ways. Somebody brings a box from the attic and it is worth nothing. Then the same person gives me a chair from 1955 for free.
@@ -255,7 +255,7 @@ Clean it. That is all. A clean thing sells for twice the money, and cleaning is 
               id: "en-a2-10-l3-11",
               no: 11,
               text: "What do people bring most often?",
-              options: ["Chairs", "Lamps", "Cupboards"],
+              options: ["Chairs", "Lamps", "Cabinets"],
               answer: 0,
               explain:
                 "Piet cevabı iki kez veriyor: «Chairs. Every day, chairs», üstelik çoğunu geri çeviriyor. Lambalar ve dolaplar ise satış hızıyla ilgili soruda geçiyor.",
@@ -471,7 +471,7 @@ I bought two chairs from a store and I {{24}} not know where they are now.`,
               situation: "Bir alıcı ilan sahibini arıyor.",
               plays: 2,
               segments: [
-                { speaker: "Woman", text: "I am calling about the cupboard." },
+                { speaker: "Woman", text: "I am calling about the cabinet." },
                 { speaker: "Man", text: "Yes?" },
                 { speaker: "Woman", text: "Is it still there?" },
                 { speaker: "Man", text: "I am sorry, a woman took it this morning. I have a small table if you want." },
@@ -538,7 +538,7 @@ I bought two chairs from a store and I {{24}} not know where they are now.`,
               no: 1,
               ref: "a1",
               text: "What does the seller say?",
-              options: ["The cupboard is gone", "The price is higher now", "The cupboard is broken"],
+              options: ["The cabinet is gone", "The price is higher now", "The cabinet is broken"],
               answer: 0,
               explain:
                 "Satıcı durumu bildiriyor: «a woman took it this morning» ve yerine küçük bir masa öneriyor.",
@@ -771,7 +771,7 @@ Tell Bexi by:       {{10}}`,
               no: 13,
               ref: "c3",
               text: "Why does the speaker buy second-hand?",
-              options: ["Because it is cheaper", "Because it lasts longer", "Because the shops are far away"],
+              options: ["Because it is cheaper", "Because it lasts longer", "Because the stores are far away"],
               answer: 1,
               explain:
                 "Konuşmacı parayı açıkça eliyor: «it is not about money», sonra dayanıklılığı örnekliyor: 1960'tan bir sandalye hâlâ sandalye.",
@@ -828,7 +828,7 @@ Tell Bexi by:       {{10}}`,
               situation: "Birinci konuşmacı dolabını anlatıyor.",
               plays: 2,
               segments: [
-                { text: "Eleven answers in one hour. Eleven. I know what that means now: the number was wrong, not the cupboard. The first person had it in his car before I finished my coffee." },
+                { text: "Eleven answers in one hour. Eleven. I know what that means now: the number was wrong, not the cabinet. The first person had it in his car before I finished my coffee." },
               ],
             },
             {
@@ -885,7 +885,7 @@ Tell Bexi by:       {{10}}`,
               text: "Speaker 1",
               answer: "a",
               explain:
-                "Konuşmacı sonucu kendisi adlandırıyor: «the number was wrong, not the cupboard». Bir saatte on bir cevap ve kahve bitmeden giden eşya bunu gösteriyor.",
+                "Konuşmacı sonucu kendisi adlandırıyor: «the number was wrong, not the cabinet». Bir saatte on bir cevap ve kahve bitmeden giden eşya bunu gösteriyor.",
             },
             {
               kind: "match",

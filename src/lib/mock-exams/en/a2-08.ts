@@ -845,7 +845,7 @@ Leave the car at the {{10}}`,
               situation: "Dördüncü konuşmacı yalnız gitmeyi anlatıyor.",
               plays: 2,
               segments: [
-                { text: "I go to the movies on my own every Monday. My friends think that is sad. I do not have to talk about the movie in the car afterwards, and that is the whole point." },
+                { text: "I go to the movies on my own every Monday. My friends think that is sad. I do not have to talk about the movie in the car afterward, and that is the whole point." },
               ],
             },
             {
@@ -899,7 +899,7 @@ Leave the car at the {{10}}`,
               text: "Speaker 4",
               answer: "c",
               explain:
-                "Konuşmacı yalnızlığı seçiyor ve gerekçesini veriyor: «I do not have to talk about the movie in the car afterwards, and that is the whole point».",
+                "Konuşmacı yalnızlığı seçiyor ve gerekçesini veriyor: «I do not have to talk about the movie in the car afterward, and that is the whole point».",
             },
             {
               kind: "match",

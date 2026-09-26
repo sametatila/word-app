@@ -44,7 +44,7 @@ export const EN_B1_11: MockPaper = {
               genre: "Note in a shared kitchen",
               genreTr: "Ortak mutfaktaki not",
               title: "The pans",
-              body: `If you are cooking for one, the small pans are in the cupboard under the window. Please do not use the big one for a single portion; it takes twenty minutes to wash and somebody else is usually waiting for it.`,
+              body: `If you are cooking for one, the small pans are in the cabinet under the window. Please do not use the big one for a single portion; it takes twenty minutes to wash and somebody else is usually waiting for it.`,
             },
             {
               kind: "text",
@@ -97,7 +97,7 @@ This is not a charity meal and nobody asks you why you came.`,
               options: ["Cook for several people at once", "Use a small pan when only one person eats", "Wash the pans immediately after use"],
               answer: 1,
               explain:
-                "Not yeri gösterip yasağı koyuyor: «the small pans are in the cupboard under the window» ve «do not use the big one for a single portion».",
+                "Not yeri gösterip yasağı koyuyor: «the small pans are in the cabinet under the window» ve «do not use the big one for a single portion».",
             },
             {
               kind: "mcq",
@@ -652,7 +652,7 @@ If you are cooking it for one, do not divide it. Make all of it and give half {{
               situation: "Biri dükkândan arıyor.",
               plays: 2,
               segments: [
-                { text: "Hi Marta, it is Emir. I am at the store. The half loaves are gone and the whole ones are the same price. Shall I buy one and we split it, or do you want nothing?" },
+                { text: "Hi Marta, it is Emir. I am at the store. The half loaves are gone and the whole ones are the same price. Should I buy one and we split it, or do you want nothing?" },
               ],
             },
             {
@@ -732,7 +732,7 @@ If you are cooking it for one, do not divide it. Make all of it and give half {{
               options: ["Whether the bread is fresh", "Whether to buy and share a loaf", "Whether the store is still open"],
               answer: 1,
               explain:
-                "İleti iki seçenek sunuyor: «Shall I buy one and we split it, or do you want nothing?»",
+                "İleti iki seçenek sunuyor: «Should I buy one and we split it, or do you want nothing?»",
             },
             {
               kind: "mcq",
@@ -1171,7 +1171,7 @@ Marta Kral`,
             ],
             sample: `I have eaten the same dinner every Monday for two years. Rice, an egg and whatever vegetable is open in the fridge.
 
-I did not do it to save money. I did it because Monday used to be the evening when I stood in the kitchen at seven, opened three cupboards and ate bread at nine.
+I did not do it to save money. I did it because Monday used to be the evening when I stood in the kitchen at seven, opened three cabinets and ate bread at nine.
 
 People find this bleak. My brother has called it a punishment and my colleague asks every week what I am having, which she thinks is funny and which is also, I notice, a joke about the same thing.
 

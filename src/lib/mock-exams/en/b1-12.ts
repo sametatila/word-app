@@ -1068,7 +1068,7 @@ Paid for with money left from the {{19}}`,
               no: 22,
               ref: "d1",
               text: "What does she say about the quiet?",
-              options: ["It stops her sleeping", "It has got worse recently", "It helps her sleep, not rest"],
+              options: ["It stops her sleeping", "It has gotten worse recently", "It helps her sleep, not rest"],
               answer: 2,
               explain:
                 "Yrsa ayrımı kuruyor: «It helps me sleep, which is not the same thing», ve çarşamba günü hâlâ boş geldiğini söylüyor.",

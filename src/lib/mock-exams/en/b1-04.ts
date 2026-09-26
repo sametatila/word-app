@@ -600,7 +600,7 @@ If the page had existed in my first job, I {{30}} have saved two years of guessi
               situation: "İş yerinde yeni izin sistemi anlatılıyor.",
               plays: 2,
               segments: [
-                { text: "A short note about the new vacation system. You still ask your manager first; the system is only where you record it afterwards. Anything you booked before April is already in there, so please do not enter it a second time." },
+                { text: "A short note about the new vacation system. You still ask your manager first; the system is only where you record it afterward. Anything you booked before April is already in there, so please do not enter it a second time." },
               ],
             },
             {
@@ -790,7 +790,7 @@ If the page had existed in my first job, I {{30}} have saved two years of guessi
               situation: "İki meslektaş zam sonucunu konuşuyor.",
               plays: 2,
               segments: [
-                { speaker: "Farah", text: "Did the pay rise come through?" },
+                { speaker: "Farah", text: "Did the raise come through?" },
                 { speaker: "Pavel", text: "Six percent, not the eight I asked for." },
                 { speaker: "Farah", text: "Are you disappointed?" },
                 { speaker: "Pavel", text: "I asked for eight because somebody told me to ask for more than I wanted. It worked exactly as she said it would." },
