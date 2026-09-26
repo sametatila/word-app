@@ -130,6 +130,7 @@ export const enB2P4: SkillExercise[] = [
       { de: "genuine", tr: "hakiki" },
       { de: "slight", tr: "hafif" },
       { de: "teenager", tr: "ergen" },
+      { de: "total sleep", tr: "toplam uyku" },
     ],
     minutes: 9,
     segments: [

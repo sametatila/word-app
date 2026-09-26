@@ -27,6 +27,7 @@ export const enA2P14: SkillExercise[] = [
       { de: "lake", tr: "göl" },
       { de: "shower", tr: "duş" },
       { de: "recommend", tr: "tavsiye etmek" },
+      { de: "campground", tr: "kamp alanı" },
     ],
     minutes: 9,
     tasks: [

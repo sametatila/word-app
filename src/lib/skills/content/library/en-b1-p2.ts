@@ -30,6 +30,7 @@ export const enB1P2: SkillExercise[] = [
       { de: "waste", tr: "israf etmek" },
       { de: "engineer", tr: "mühendis" },
       { de: "sky", tr: "gökyüzü" },
+      { de: "on top", tr: "üstte" },
     ],
     minutes: 7,
     text:
@@ -202,6 +203,7 @@ export const enB1P2: SkillExercise[] = [
       { de: "installment", tr: "taksit" },
       { de: "roof", tr: "çatı" },
       { de: "shade", tr: "gölge" },
+      { de: "top floor", tr: "en üst kat" },
     ],
     minutes: 10,
     tasks: [

@@ -182,6 +182,7 @@ export const enC1U14: SkillExercise[] = [
       { de: "a measure", tr: "önlem" },
       { de: "cheaper", tr: "daha ucuz" },
       { de: "a year later", tr: "bir yıl sonra" },
+      { de: "hiring", tr: "işe alım" },
     ],
     minutes: 12,
     text:

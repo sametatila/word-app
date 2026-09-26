@@ -55,6 +55,7 @@ export const c1U15: SkillExercise[] = [
       { de: "der Text", tr: "metin", en: "text" },
       { de: "der Absatz", tr: "paragraf", en: "paragraph" },
       { de: "gewahrt", tr: "korunmuş", en: "preserved" },
+      { de: "die Vergesslichkeit", tr: "unutkanlık", en: "forgetfulness" },
     ],
     minutes: 7,
     text:

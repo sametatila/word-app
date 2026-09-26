@@ -209,6 +209,7 @@ export const enB1P8: SkillExercise[] = [
       { de: "gear", tr: "vites" },
       { de: "chain", tr: "zincir" },
       { de: "slip", tr: "yerinden kaymak" },
+      { de: "gears", tr: "vites" },
     ],
     minutes: 12,
     tasks: [

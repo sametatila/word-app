@@ -29,6 +29,8 @@ export const enB1P14: SkillExercise[] = [
       { de: "couple", tr: "çift" },
       { de: "bride", tr: "gelin" },
       { de: "nervous", tr: "gergin" },
+      { de: "math teacher", tr: "matematik öğretmeni" },
+      { de: "supposed", tr: "-mesi beklenmek" },
     ],
     minutes: 6,
     text:
@@ -123,6 +125,8 @@ export const enB1P14: SkillExercise[] = [
       { de: "nearby", tr: "yakınlarda" },
       { de: "dryer", tr: "kurutma makinesi" },
       { de: "properly", tr: "iyice" },
+      { de: "searching", tr: "aramak" },
+      { de: "annoyed", tr: "kızgın" },
     ],
     minutes: 6,
     segments: [
@@ -203,6 +207,7 @@ export const enB1P14: SkillExercise[] = [
       { de: "shift", tr: "vardiya" },
       { de: "to suit", tr: "uymak" },
       { de: "ending", tr: "ek" },
+      { de: "confuse", tr: "kafa karıştırmak" },
     ],
     minutes: 12,
     tasks: [

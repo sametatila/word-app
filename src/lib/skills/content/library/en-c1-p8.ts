@@ -244,6 +244,7 @@ export const enC1P8: SkillExercise[] = [
       { de: "agent", tr: "eylemi yapan" },
       { de: "worthless", tr: "değersiz" },
       { de: "regardless", tr: "-e bakılmaksızın" },
+      { de: "commitment", tr: "taahhüt" },
     ],
     minutes: 16,
     tasks: [

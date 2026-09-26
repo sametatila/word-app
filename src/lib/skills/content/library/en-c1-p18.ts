@@ -37,6 +37,8 @@ export const enC1P18: SkillExercise[] = [
       { de: "optional", tr: "isteğe bağlı" },
       { de: "completion", tr: "tamamlama" },
       { de: "to settle", tr: "karara bağlamak" },
+      { de: "slightly", tr: "biraz" },
+      { de: "skip", tr: "atlamak" },
     ],
     minutes: 10,
     text:
@@ -136,6 +138,7 @@ export const enC1P18: SkillExercise[] = [
       { de: "invitation", tr: "davet" },
       { de: "doubt", tr: "kuşku" },
       { de: "due", tr: "beklenen" },
+      { de: "appear", tr: "yer almak" },
     ],
     minutes: 10,
     segments: [
@@ -223,6 +226,7 @@ export const enC1P18: SkillExercise[] = [
       { de: "effort", tr: "çaba" },
       { de: "to postpone", tr: "ertelemek" },
       { de: "optional", tr: "isteğe bağlı" },
+      { de: "appear", tr: "yayımlanmak" },
     ],
     minutes: 16,
     tasks: [

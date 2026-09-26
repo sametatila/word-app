@@ -30,6 +30,8 @@ export const enB1P20: SkillExercise[] = [
       { de: "excuse", tr: "bahane" },
       { de: "to respect", tr: "saygı duymak" },
       { de: "to organize", tr: "düzenlemek" },
+      { de: "hate", tr: "hiç istememek" },
+      { de: "celebration", tr: "kutlama" },
     ],
     minutes: 6,
     text:

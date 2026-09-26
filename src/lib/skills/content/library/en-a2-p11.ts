@@ -33,6 +33,7 @@ export const enA2P11: SkillExercise[] = [
       { de: "invite", tr: "davet etmek" },
       { de: "jar", tr: "kavanoz" },
       { de: "honey", tr: "bal" },
+      { de: "French", tr: "Fransız" },
     ],
     minutes: 5,
     text:
@@ -119,6 +120,10 @@ export const enA2P11: SkillExercise[] = [
       { de: "wet", tr: "ıslak" },
       { de: "sick", tr: "hasta" },
       { de: "middle", tr: "orta" },
+      { de: "ladies and gentlemen", tr: "hanımlar beyler" },
+      { de: "ship", tr: "gemi" },
+      { de: "wind", tr: "rüzgâr" },
+      { de: "top floor", tr: "en üst kat" },
     ],
     minutes: 5,
     segments: [

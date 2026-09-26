@@ -122,6 +122,7 @@ export const b2U06: SkillExercise[] = [
       { de: "besonders", tr: "özellikle", en: "especially" },
       { de: "lesen", tr: "okumak", en: "to read" },
       { de: "passieren", tr: "olmak", en: "to happen" },
+      { de: "passen", tr: "uymak", en: "to fit" },
     ],
     minutes: 6,
     text:

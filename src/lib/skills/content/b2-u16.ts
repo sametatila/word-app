@@ -135,7 +135,7 @@ export const b2U16: SkillExercise[] = [
     minutes: 6,
     text:
       "EIN ROMAN, ÜBER DEN MAN SPRICHT\n\n" +
-      "Es gibt Bücher, über die geredet wird, und Bücher, die gelesen werden. „Der Nachtzug nach Halle“ ist beides, und das ist selten.\n\n" +
+      "Es gibt Bücher, über die geredet wird, und Bücher, die gelesen werden. „Der Nachtzug nach Kassel“ ist beides, und das ist selten.\n\n" +
       "Verfasst hat ihn eine Autorin, von der bis vor zwei Jahren niemand gehört hatte. Sie hat zwölf Jahre als Zugbegleiterin gearbeitet, und man merkt es auf jeder Seite: Die Menschen, mit denen ihre Erzählerin spricht, reden wie Menschen reden — abgebrochen, wiederholend, mit Sätzen, die nirgends hinführen.\n\n" +
       "Die Handlung dreht sich um eine Nacht. Eine Zugbegleiterin, deren Schicht eigentlich um Mitternacht endet, bleibt wegen eines Streckenschadens bis zum Morgen mit fünf Fahrgästen im stehenden Zug. Mehr passiert nicht. Und trotzdem hat mich kein Buch dieses Jahres so fasziniert.\n\n" +
       "Die Auszeichnung kam für viele überraschend. Die Jury, die den Preis vergeben hat, nannte das Buch in ihrer Begründung „künstlerisch bescheiden und literarisch genau“ — eine Formulierung, über die sich mehrere Kritiker geärgert haben. Zu Unrecht, finde ich: Genau das ist es.\n\n" +

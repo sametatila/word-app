@@ -197,6 +197,7 @@ export const enA2P12: SkillExercise[] = [
       { de: "sky", tr: "gökyüzü" },
       { de: "blanket", tr: "battaniye" },
       { de: "cloudy", tr: "bulutlu" },
+      { de: "moon", tr: "ay" },
     ],
     minutes: 9,
     tasks: [

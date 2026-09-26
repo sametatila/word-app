@@ -38,6 +38,7 @@ export const enC1P7: SkillExercise[] = [
       { de: "threaten", tr: "tehdit etmek" },
       { de: "explicitly", tr: "açıkça" },
       { de: "intend", tr: "niyetinde olmak" },
+      { de: "guarantee", tr: "garanti etmek" },
     ],
     minutes: 10,
     text:

@@ -144,6 +144,7 @@ export const b2U25: SkillExercise[] = [
       { de: "beste", tr: "en iyi", en: "best" },
       { de: "lesen", tr: "okumak", en: "to read" },
       { de: "unbekannt", tr: "bilinmeyen", en: "unknown" },
+      { de: "aufhören", tr: "bırakmak", en: "to stop" },
     ],
     minutes: 6,
     text:

@@ -95,6 +95,7 @@ export const a1U12: SkillExercise[] = [
       { de: "mehr", tr: "daha fazla", en: "more" },
       { de: "die Bäckerei", tr: "fırın", en: "bakery" },
       { de: "günstig", tr: "ucuz", en: "cheap" },
+      { de: "gefallen", tr: "hoşa gitmek", en: "to like" },
     ],
     minutes: 3,
     text:

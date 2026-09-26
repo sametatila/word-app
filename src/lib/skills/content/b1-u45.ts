@@ -118,6 +118,7 @@ export const b1U45: SkillExercise[] = [
       { de: "lesen", tr: "okumak", en: "to read" },
       { de: "der Text", tr: "metin", en: "text" },
       { de: "genau", tr: "tam olarak", en: "exactly" },
+      { de: "länger", tr: "daha uzun", en: "longer" },
     ],
     text:
       "B1 heißt nicht, dass Sie fertig sind. Es heißt, dass Sie im Alltag " +

@@ -358,6 +358,7 @@ export const enC1U24: SkillExercise[] = [
       { de: "unequal", tr: "eşitsiz" },
       { de: "a tenant", tr: "kiracı" },
       { de: "a judge", tr: "yargıç" },
+      { de: "beliefs", tr: "inanç" },
     ],
     minutes: 8,
     segments: [

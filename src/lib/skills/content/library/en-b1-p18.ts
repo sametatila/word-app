@@ -29,6 +29,10 @@ export const enB1P18: SkillExercise[] = [
       { de: "range", tr: "çeşit" },
       { de: "cottage", tr: "kır evi" },
       { de: "to refuse", tr: "reddetmek" },
+      { de: "wind", tr: "rüzgâr" },
+      { de: "anyway", tr: "yine de" },
+      { de: "terrible", tr: "korkunç" },
+      { de: "stormy", tr: "fırtınalı" },
     ],
     minutes: 6,
     text:
@@ -116,6 +120,8 @@ export const enB1P18: SkillExercise[] = [
       { de: "to block", tr: "önünü kapatmak" },
       { de: "entrance", tr: "giriş" },
       { de: "sidewalk", tr: "kaldırım" },
+      { de: "bake", tr: "pişirmek" },
+      { de: "clever", tr: "akıllıca" },
     ],
     minutes: 6,
     segments: [

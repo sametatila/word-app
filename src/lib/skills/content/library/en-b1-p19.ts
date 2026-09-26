@@ -30,6 +30,8 @@ export const enB1P19: SkillExercise[] = [
       { de: "host", tr: "ev sahibi" },
       { de: "contract", tr: "sözleşme" },
       { de: "neighbor", tr: "komşu" },
+      { de: "confuses", tr: "kafa karıştırmak" },
+      { de: "supposed", tr: "-mesi gerekmek" },
     ],
     minutes: 6,
     text:
@@ -118,6 +120,10 @@ export const enB1P19: SkillExercise[] = [
       { de: "barn", tr: "ambar" },
       { de: "speaker", tr: "hoparlör" },
       { de: "advantage", tr: "avantaj" },
+      { de: "stone", tr: "taş" },
+      { de: "brown", tr: "kahverengi" },
+      { de: "sheep", tr: "koyun" },
+      { de: "supposed", tr: "-mesi gerekmek" },
     ],
     minutes: 6,
     segments: [

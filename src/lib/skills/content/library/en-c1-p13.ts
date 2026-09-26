@@ -37,6 +37,11 @@ export const enC1P13: SkillExercise[] = [
       { de: "parliament", tr: "parlamento" },
       { de: "to strike", tr: "dikkatini çekmek" },
       { de: "rarely", tr: "nadiren" },
+      { de: "rise", tr: "doğmak" },
+      { de: "difficulty", tr: "zorluk" },
+      { de: "slightly", tr: "biraz" },
+      { de: "criticize", tr: "eleştirmek" },
+      { de: "appears", tr: "ortaya çıkmak" },
     ],
     minutes: 10,
     text:
@@ -137,6 +142,10 @@ export const enC1P13: SkillExercise[] = [
       { de: "region", tr: "bölge" },
       { de: "to rearrange", tr: "yeniden düzenlemek" },
       { de: "to adjust", tr: "uyum sağlamak" },
+      { de: "further south", tr: "daha güneyde" },
+      { de: "difficulty", tr: "zorluk" },
+      { de: "youth", tr: "gençlik" },
+      { de: "I gather", tr: "anladığım kadarıyla" },
     ],
     minutes: 10,
     segments: [
@@ -226,6 +235,8 @@ export const enC1P13: SkillExercise[] = [
       { de: "chart", tr: "hasta çizelgesi" },
       { de: "shift lead", tr: "vardiya sorumlusu" },
       { de: "affected", tr: "etkilenen" },
+      { de: "particular", tr: "özel" },
+      { de: "medication", tr: "ilaç" },
     ],
     minutes: 16,
     tasks: [

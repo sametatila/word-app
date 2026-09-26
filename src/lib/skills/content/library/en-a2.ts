@@ -119,6 +119,7 @@ export const enA2: SkillExercise[] = [
       { de: "brake", tr: "fren" },
       { de: "flag", tr: "bayrak" },
       { de: "on time", tr: "vaktinde" },
+      { de: "flat", tr: "engebesiz" },
     ],
     minutes: 5,
     segments: [

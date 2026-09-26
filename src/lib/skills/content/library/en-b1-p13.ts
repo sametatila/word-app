@@ -29,6 +29,8 @@ export const enB1P13: SkillExercise[] = [
       { de: "line", tr: "kuyruk" },
       { de: "confusing", tr: "kafa karıştırıcı" },
       { de: "relaxed", tr: "rahat" },
+      { de: "anyway", tr: "zaten" },
+      { de: "engineers", tr: "mühendis" },
     ],
     minutes: 6,
     text:
@@ -118,6 +120,7 @@ export const enB1P13: SkillExercise[] = [
       { de: "limit", tr: "sınır" },
       { de: "effect", tr: "etki" },
       { de: "annoyed", tr: "sinirli" },
+      { de: "pick it up", tr: "eline almak" },
     ],
     minutes: 6,
     segments: [
@@ -195,6 +198,10 @@ export const enB1P13: SkillExercise[] = [
       { de: "exhausted", tr: "bitkin" },
       { de: "disappointed", tr: "hayal kırıklığına uğramış" },
       { de: "starving", tr: "çok aç" },
+      { de: "baking", tr: "pişirmek" },
+      { de: "oven", tr: "fırın" },
+      { de: "in general", tr: "genel olarak" },
+      { de: "dishes", tr: "yemekler" },
     ],
     minutes: 12,
     tasks: [

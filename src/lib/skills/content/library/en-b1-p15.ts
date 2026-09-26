@@ -118,6 +118,9 @@ export const enB1P15: SkillExercise[] = [
       { de: "homesick", tr: "evini özlemiş" },
       { de: "flashlight", tr: "el feneri" },
       { de: "urgent", tr: "acil" },
+      { de: "pack", tr: "yanına koymak" },
+      { de: "camp", tr: "kamp" },
+      { de: "activity", tr: "etkinlik" },
     ],
     minutes: 6,
     segments: [
@@ -195,6 +198,7 @@ export const enB1P15: SkillExercise[] = [
       { de: "to lend", tr: "ödünç vermek" },
       { de: "to remember", tr: "hatırlamak" },
       { de: "adventure", tr: "macera" },
+      { de: "silly", tr: "gülünç" },
     ],
     minutes: 12,
     tasks: [

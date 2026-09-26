@@ -171,6 +171,7 @@ export const enA1P2: SkillExercise[] = [
       { de: "screen", tr: "ekran" },
       { de: "cost", tr: "tutmak" },
       { de: "take", tr: "sürmek" },
+      { de: "at the top", tr: "en üstte" },
     ],
     minutes: 8,
     tasks: [

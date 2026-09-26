@@ -45,6 +45,7 @@ export const b1U10: SkillExercise[] = [
       { de: "der Ausweis", tr: "kimlik", en: "ID card" },
       { de: "braun", tr: "kahverengi", en: "brown" },
       { de: "besonders", tr: "özellikle", en: "especially" },
+      { de: "verlieren", tr: "kaybetmek", en: "to lose" },
     ],
     text:
       "Wer etwas verliert, meldet den Verlust am besten sofort. Im Fundbüro liegen " +

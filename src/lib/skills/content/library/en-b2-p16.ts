@@ -30,6 +30,9 @@ export const enB2P16: SkillExercise[] = [
       { de: "household", tr: "hane" },
       { de: "fairness", tr: "adalet" },
       { de: "permission", tr: "izin" },
+      { de: "unhappy", tr: "mutsuz" },
+      { de: "difficulties", tr: "zorluk" },
+      { de: "in favor", tr: "lehinde" },
     ],
     minutes: 8,
     text:
@@ -133,6 +136,8 @@ export const enB2P16: SkillExercise[] = [
       { de: "bench", tr: "bank" },
       { de: "sharp", tr: "sivri" },
       { de: "to cheat", tr: "kandırmak" },
+      { de: "responsible", tr: "sorumlu" },
+      { de: "temporary", tr: "geçici" },
     ],
     minutes: 8,
     segments: [
@@ -216,6 +221,10 @@ export const enB2P16: SkillExercise[] = [
       { de: "volunteer", tr: "gönüllü" },
       { de: "to raise", tr: "para toplamak" },
       { de: "committee", tr: "kurul" },
+      { de: "furniture", tr: "mobilya" },
+      { de: "south", tr: "güney" },
+      { de: "responsible", tr: "sorumlu" },
+      { de: "benches", tr: "bank" },
     ],
     minutes: 14,
     tasks: [

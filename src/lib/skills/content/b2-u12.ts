@@ -49,6 +49,7 @@ export const b2U12: SkillExercise[] = [
       { de: "formlos", tr: "şekle bağlı olmayan", en: "informal" },
       { de: "genügen", tr: "yetmek", en: "to be enough" },
       { de: "der Text", tr: "metin", en: "text" },
+      { de: "geschehen", tr: "olmak", en: "to happen" },
     ],
     minutes: 6,
     text:

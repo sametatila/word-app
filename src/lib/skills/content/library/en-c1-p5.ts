@@ -144,6 +144,7 @@ export const enC1P5: SkillExercise[] = [
       { de: "rescue", tr: "kurtarmak" },
       { de: "repetition", tr: "tekrarlama" },
       { de: "unnecessary", tr: "gereksiz" },
+      { de: "organization", tr: "kurum" },
     ],
     minutes: 10,
     segments: [
@@ -233,6 +234,7 @@ export const enC1P5: SkillExercise[] = [
       { de: "discover", tr: "keşfetmek" },
       { de: "rely", tr: "bel bağlamak" },
       { de: "judgment", tr: "yargı" },
+      { de: "majority", tr: "çoğunluk" },
     ],
     minutes: 14,
     tasks: [

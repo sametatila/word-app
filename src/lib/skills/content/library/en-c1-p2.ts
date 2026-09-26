@@ -242,6 +242,7 @@ export const enC1P2: SkillExercise[] = [
       { de: "analyze", tr: "analiz etmek" },
       { de: "approximately", tr: "yaklaşık" },
       { de: "underestimate", tr: "hafife almak" },
+      { de: "organizations", tr: "kurum" },
     ],
     minutes: 14,
     tasks: [

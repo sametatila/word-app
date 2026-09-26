@@ -36,6 +36,12 @@ export const enC1P12: SkillExercise[] = [
       { de: "necessarily", tr: "zorunlu olarak" },
       { de: "safety", tr: "emniyet" },
       { de: "share", tr: "pay" },
+      { de: "active", tr: "aktif" },
+      { de: "history", tr: "tarih" },
+      { de: "intend", tr: "niyetinde olmak" },
+      { de: "accurate", tr: "doğru" },
+      { de: "affecting", tr: "etkilemek" },
+      { de: "dramatic", tr: "çarpıcı" },
     ],
     minutes: 10,
     text:
@@ -138,6 +144,12 @@ export const enC1P12: SkillExercise[] = [
       { de: "placement", tr: "görevlendirme" },
       { de: "to extend", tr: "uzatmak" },
       { de: "to abandon", tr: "yüzüstü bırakmak" },
+      { de: "active", tr: "aktif" },
+      { de: "reduced", tr: "azaltmak" },
+      { de: "risen", tr: "artmak" },
+      { de: "charities", tr: "yardım kuruluşu" },
+      { de: "concerned", tr: "ilgili olmak" },
+      { de: "disliked", tr: "sevmemek" },
     ],
     minutes: 10,
     segments: [
@@ -224,6 +236,7 @@ export const enC1P12: SkillExercise[] = [
       { de: "to pair", tr: "eşleştirmek" },
       { de: "unpaid", tr: "ödenmemiş" },
       { de: "commitment", tr: "yükümlülük" },
+      { de: "discover", tr: "fark etmek" },
     ],
     minutes: 16,
     tasks: [

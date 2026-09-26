@@ -232,6 +232,7 @@ export const c1U25: SkillExercise[] = [
       { de: "umso", tr: "o kadar", en: "the more" },
       { de: "rechnen", tr: "hesaplamak", en: "to calculate" },
       { de: "stetig", tr: "istikrarlı", en: "steady" },
+      { de: "rekrutieren", tr: "eleman almak", en: "to recruit" },
     ],
     minutes: 6,
     segments: [

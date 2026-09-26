@@ -34,6 +34,12 @@ export const enB2P20: SkillExercise[] = [
       { de: "invisible", tr: "görünmez" },
       { de: "trade", tr: "takas" },
       { de: "deal", tr: "fırsat" },
+      { de: "ban", tr: "yasak" },
+      { de: "price rise", tr: "zam" },
+      { de: "tight", tr: "kısıtlı" },
+      { de: "noticeable", tr: "gözle görülür" },
+      { de: "reasonably", tr: "haklı olarak" },
+      { de: "household", tr: "hane" },
     ],
     minutes: 8,
     text:
@@ -134,6 +140,9 @@ export const enB2P20: SkillExercise[] = [
       { de: "privacy notice", tr: "gizlilik bildirimi" },
       { de: "significant", tr: "önemli" },
       { de: "to delete", tr: "silmek" },
+      { de: "absolutely", tr: "son derece" },
+      { de: "selected", tr: "seçilmiş" },
+      { de: "loyalty card", tr: "müşteri kartı" },
     ],
     minutes: 8,
     segments: [
@@ -218,6 +227,9 @@ export const enB2P20: SkillExercise[] = [
       { de: "remarkably", tr: "dikkat çekici biçimde" },
       { de: "revealing", tr: "ele veren" },
       { de: "harmless", tr: "zararsız" },
+      { de: "absolutely", tr: "tamamen" },
+      { de: "valuable", tr: "değerli" },
+      { de: "households", tr: "hane" },
     ],
     minutes: 14,
     tasks: [

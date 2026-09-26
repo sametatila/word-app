@@ -33,6 +33,8 @@ export const enB2P13: SkillExercise[] = [
       { de: "to rely on", tr: "güvenmek" },
       { de: "to impose", tr: "dayatmak" },
       { de: "to justify", tr: "gerekçelendirmek" },
+      { de: "teenagers", tr: "ergen" },
+      { de: "majority", tr: "çoğunluk" },
     ],
     minutes: 8,
     text:
@@ -132,6 +134,8 @@ export const enB2P13: SkillExercise[] = [
       { de: "gradually", tr: "yavaş yavaş" },
       { de: "freedom", tr: "özgürlük" },
       { de: "ordinary", tr: "sıradan" },
+      { de: "overnight", tr: "gece boyunca" },
+      { de: "basic", tr: "basit" },
     ],
     minutes: 8,
     segments: [
@@ -214,6 +218,8 @@ export const enB2P13: SkillExercise[] = [
       { de: "noticeably", tr: "belirgin biçimde" },
       { de: "to summarize", tr: "özetlemek" },
       { de: "recommendation", tr: "öneri" },
+      { de: "active", tr: "hareketli" },
+      { de: "relied", tr: "güvenmek" },
     ],
     minutes: 14,
     tasks: [

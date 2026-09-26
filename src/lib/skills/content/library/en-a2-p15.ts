@@ -27,6 +27,7 @@ export const enA2P15: SkillExercise[] = [
       { de: "clue", tr: "ipucu" },
       { de: "fence", tr: "çit" },
       { de: "pond", tr: "gölet" },
+      { de: "wooden", tr: "tahta" },
     ],
     minutes: 9,
     tasks: [

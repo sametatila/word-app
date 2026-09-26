@@ -363,6 +363,8 @@ export const enC1U15: SkillExercise[] = [
       { de: "a dashboard", tr: "gösterge tablosu" },
       { de: "an alarm", tr: "alarm" },
       { de: "a summary", tr: "özet" },
+      { de: "flagged", tr: "işaret edilmiş" },
+      { de: "threatens", tr: "tehdit ediyor" },
     ],
     minutes: 8,
     segments: [
@@ -505,6 +507,7 @@ export const enC1U15: SkillExercise[] = [
       { de: "a competitive logic", tr: "rekabet mantığı" },
       { de: "a structural change", tr: "yapısal değişim" },
       { de: "a performance indicator", tr: "performans göstergesi" },
+      { de: "threatens", tr: "tehdit ediyor" },
     ],
     minutes: 10,
     tasks: [

@@ -29,6 +29,8 @@ export const enB1P16: SkillExercise[] = [
       { de: "trash", tr: "çöp" },
       { de: "to get rid of", tr: "kurtulmak" },
       { de: "lid", tr: "kapak" },
+      { de: "popular", tr: "sevilen" },
+      { de: "pests", tr: "zararlı hayvan" },
     ],
     minutes: 6,
     text:
@@ -117,6 +119,9 @@ export const enB1P16: SkillExercise[] = [
       { de: "injured", tr: "yaralı" },
       { de: "infected", tr: "mikrop kapmış" },
       { de: "to digest", tr: "sindirmek" },
+      { de: "gloves", tr: "eldiven" },
+      { de: "smell", tr: "koku" },
+      { de: "bites", tr: "ısırık" },
     ],
     minutes: 6,
     segments: [
@@ -195,6 +200,7 @@ export const enB1P16: SkillExercise[] = [
       { de: "beginner", tr: "acemi" },
       { de: "available", tr: "müsait" },
       { de: "trial", tr: "deneme" },
+      { de: "biology", tr: "biyoloji" },
     ],
     minutes: 12,
     tasks: [

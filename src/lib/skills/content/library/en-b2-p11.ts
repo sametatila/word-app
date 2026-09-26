@@ -31,6 +31,12 @@ export const enB2P11: SkillExercise[] = [
       { de: "symptom", tr: "belirti" },
       { de: "to spread", tr: "yaymak" },
       { de: "fee", tr: "ücret" },
+      { de: "flat charge", tr: "sabit ücret" },
+      { de: "reduced", tr: "azaltılmak" },
+      { de: "overnight", tr: "geceleyen" },
+      { de: "ban", tr: "yasak" },
+      { de: "trouble", tr: "sorun" },
+      { de: "guesthouses", tr: "pansiyon" },
     ],
     minutes: 8,
     text:
@@ -129,6 +135,8 @@ export const enB2P11: SkillExercise[] = [
       { de: "uncertainty", tr: "belirsizlik" },
       { de: "weakness", tr: "zayıf nokta" },
       { de: "damage", tr: "hasar" },
+      { de: "trail", tr: "yürüyüş parkuru" },
+      { de: "rise", tr: "artış" },
     ],
     minutes: 8,
     segments: [
@@ -212,6 +220,7 @@ export const enB2P11: SkillExercise[] = [
       { de: "to survive", tr: "atlatmak" },
       { de: "flashlight", tr: "el feneri" },
       { de: "crowd", tr: "kalabalık" },
+      { de: "wooden", tr: "tahta" },
     ],
     minutes: 14,
     tasks: [

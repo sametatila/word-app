@@ -284,6 +284,7 @@ export const enC1U07: SkillExercise[] = [
       { de: "neutral", tr: "yansız" },
       { de: "an order", tr: "sıra" },
       { de: "conceded", tr: "kabul edilmiş" },
+      { de: "reduced hours", tr: "kısa çalışma" },
     ],
     minutes: 8,
     segments: [

@@ -4303,6 +4303,7 @@ export const enMobile2026: SkillExercise[] = [
         "tr": "müşteriler"
       },
         { "de": "electronics", "tr": "elektronik ürünler" },
+        { "de": "sales clerk", "tr": "satış görevlisi" },
     ],
     "minutes": 5,
     "text": "NOTICE — RETURNS AND EXCHANGES\n\nDear customers,\n\nWe changed our returns policy last month, so please read this notice.\n\nYou can bring an item back within 30 days. You must show the receipt. Without a receipt we cannot give your money back, but we can offer an exchange or a store card.\n\nCLOTHES: please keep the label on the item. We have already helped hundreds of shoppers this year, and the label makes everything faster.\n\nSHOES: you must not wear them outside. We only accept shoes in the original box.\n\nSALE ITEMS: these things are cheaper, so the rules are stricter. We exchange them, but we never give money back for them.\n\nELECTRONICS: you have 14 days. Please bring the box, the cable and the charger.\n\nThe returns desk is on the second floor, next to the coffee shop. It opens at 10:00 every day and closes at 19:00. On Sundays it closes earlier, at 17:00.\n\nElif Demir, our new manager, will answer your questions on Saturday morning.\n\nThank you!",

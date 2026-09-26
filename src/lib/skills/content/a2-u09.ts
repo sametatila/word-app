@@ -110,6 +110,7 @@ export const a2U09: SkillExercise[] = [
       { de: "außerhalb", tr: "dışında", en: "outside" },
       { de: "parken", tr: "park etmek", en: "to park" },
       { de: "der Kinderwagen", tr: "bebek arabası", en: "pushchair" },
+      { de: "leichter", tr: "daha kolay", en: "more easily" },
     ],
     minutes: 4,
     text:

@@ -143,6 +143,7 @@ export const c1U12: SkillExercise[] = [
       { de: "das Signal", tr: "sinyal", en: "signal" },
       { de: "der Erzeuger", tr: "üretici", en: "producer" },
       { de: "das Beispiel", tr: "örnek", en: "example" },
+      { de: "die Erklärung", tr: "açıklama", en: "explanation" },
     ],
     minutes: 7,
     text:

@@ -210,6 +210,7 @@ export const enB1P7: SkillExercise[] = [
       { de: "supervisor", tr: "sorumlu" },
       { de: "to improve", tr: "geliştirmek" },
       { de: "responsibility", tr: "sorumluluk" },
+      { de: "packing", tr: "paketlemek" },
     ],
     minutes: 12,
     tasks: [

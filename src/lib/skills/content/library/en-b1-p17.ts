@@ -29,6 +29,9 @@ export const enB1P17: SkillExercise[] = [
       { de: "pile", tr: "yığın" },
       { de: "stream", tr: "dere" },
       { de: "mountain rescue", tr: "dağ kurtarma" },
+      { de: "sky", tr: "gökyüzü" },
+      { de: "stones", tr: "taş" },
+      { de: "at the top", tr: "en üstte" },
     ],
     minutes: 6,
     text:
@@ -117,6 +120,9 @@ export const enB1P17: SkillExercise[] = [
       { de: "volunteer", tr: "gönüllü" },
       { de: "to compete", tr: "rekabet etmek" },
       { de: "counter", tr: "gişe" },
+      { de: "led", tr: "yönetti" },
+      { de: "retired", tr: "emekli oldu" },
+      { de: "hoped", tr: "umut etmek" },
     ],
     minutes: 6,
     segments: [

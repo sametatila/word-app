@@ -152,6 +152,7 @@ export const enC1P6: SkillExercise[] = [
       { de: "concern", tr: "kaygı" },
       { de: "entire", tr: "tüm" },
       { de: "pointless", tr: "anlamsız" },
+      { de: "judgments", tr: "karar" },
     ],
     minutes: 10,
     segments: [

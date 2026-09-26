@@ -28,6 +28,8 @@ export const enB1P12: SkillExercise[] = [
       { de: "by accident", tr: "yanlışlıkla" },
       { de: "script", tr: "metin" },
       { de: "audience", tr: "seyirci" },
+      { de: "policeman", tr: "polis" },
+      { de: "actress", tr: "kadın oyuncu" },
     ],
     minutes: 6,
     text:
@@ -197,6 +199,8 @@ export const enB1P12: SkillExercise[] = [
       { de: "missing", tr: "eksik" },
       { de: "handwriting", tr: "el yazısı" },
       { de: "to lock", tr: "kilitlemek" },
+      { de: "smell", tr: "koku" },
+      { de: "plant pot", tr: "saksı" },
     ],
     minutes: 12,
     tasks: [

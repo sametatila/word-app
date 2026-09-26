@@ -30,6 +30,7 @@ export const enA1P12: SkillExercise[] = [
       { de: "beach", tr: "plaj" },
       { de: "rent", tr: "kiralamak" },
       { de: "quiet", tr: "sessiz" },
+      { de: "campground", tr: "kamp alanı" },
     ],
     minutes: 4,
     text:

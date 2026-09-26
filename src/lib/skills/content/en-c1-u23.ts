@@ -360,6 +360,7 @@ export const enC1U23: SkillExercise[] = [
       { de: "a cost base", tr: "maliyet tabanı" },
       { de: "a factory", tr: "fabrika" },
       { de: "an answer", tr: "cevap" },
+      { de: "leads to", tr: "yol açıyor" },
     ],
     minutes: 8,
     segments: [
@@ -502,6 +503,7 @@ export const enC1U23: SkillExercise[] = [
       { de: "market penetration", tr: "pazara nüfuz" },
       { de: "competitiveness", tr: "rekabet gücü" },
       { de: "to undercut", tr: "fiyatın altına inmek" },
+      { de: "leads to", tr: "yol açıyor" },
     ],
     minutes: 10,
     tasks: [

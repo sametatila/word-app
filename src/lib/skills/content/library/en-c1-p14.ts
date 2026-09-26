@@ -37,6 +37,12 @@ export const enC1P14: SkillExercise[] = [
       { de: "to exaggerate", tr: "abartmak" },
       { de: "objection", tr: "itiraz" },
       { de: "identical", tr: "tıpatıp aynı" },
+      { de: "lent", tr: "ödünç vermek" },
+      { de: "reduce", tr: "azaltmak" },
+      { de: "sales clerk", tr: "satış görevlisi" },
+      { de: "disliked", tr: "sevmemek" },
+      { de: "recommendation engine", tr: "öneri motoru" },
+      { de: "efficiently", tr: "etkili biçimde" },
     ],
     minutes: 10,
     text:
@@ -138,6 +144,8 @@ export const enC1P14: SkillExercise[] = [
       { de: "curation", tr: "seçki" },
       { de: "signature", tr: "imza" },
       { de: "to trust", tr: "güvenmek" },
+      { de: "constantly", tr: "sürekli" },
+      { de: "streaming services", tr: "yayın platformları" },
     ],
     minutes: 10,
     segments: [
@@ -226,6 +234,9 @@ export const enC1P14: SkillExercise[] = [
       { de: "patience", tr: "sabır" },
       { de: "unfamiliar", tr: "yabancı" },
       { de: "to recommend", tr: "tavsiye etmek" },
+      { de: "disliked", tr: "sevmemek" },
+      { de: "skip", tr: "atlamak" },
+      { de: "punishes", tr: "cezalandırmak" },
     ],
     minutes: 16,
     tasks: [

@@ -34,6 +34,9 @@ export const enB2P18: SkillExercise[] = [
       { de: "deposit", tr: "para yatırma" },
       { de: "necessity", tr: "zorunluluk" },
       { de: "coin", tr: "bozuk para" },
+      { de: "groceries", tr: "market alışverişi" },
+      { de: "association", tr: "dernek" },
+      { de: "withdrawal", tr: "para çekme" },
     ],
     minutes: 8,
     text:
@@ -128,6 +131,9 @@ export const enB2P18: SkillExercise[] = [
       { de: "to donate", tr: "bağışlamak" },
       { de: "counter", tr: "gişe" },
       { de: "review", tr: "yorum" },
+      { de: "anyway", tr: "zaten" },
+      { de: "confuses", tr: "kafa karıştırmak" },
+      { de: "association", tr: "dernek" },
     ],
     minutes: 8,
     segments: [

@@ -31,6 +31,7 @@ export const enB1P3: SkillExercise[] = [
       { de: "appear", tr: "ortaya çıkmak" },
       { de: "contain", tr: "içermek" },
       { de: "rubber", tr: "kauçuk" },
+      { de: "pack", tr: "bavul hazırlamak" },
     ],
     minutes: 7,
     text:
@@ -123,6 +124,7 @@ export const enB1P3: SkillExercise[] = [
       { de: "sand", tr: "kum" },
       { de: "iron", tr: "demir" },
       { de: "chlorine", tr: "klor" },
+      { de: "at the top", tr: "en üstte" },
     ],
     minutes: 7,
     segments: [

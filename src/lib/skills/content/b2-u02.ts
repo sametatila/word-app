@@ -51,6 +51,7 @@ export const b2U02: SkillExercise[] = [
       { de: "ebenso", tr: "aynı şekilde", en: "likewise" },
       { de: "der Text", tr: "metin", en: "text" },
       { de: "riskant", tr: "riskli", en: "risky" },
+      { de: "vorbeireden", tr: "konunun dışına çıkmak", en: "to talk past the point" },
     ],
     minutes: 6,
     text:

@@ -40,6 +40,7 @@ export const enC1: SkillExercise[] = [
       { de: "renovate", tr: "tadilat yapmak" },
       { de: "redesign", tr: "yeniden tasarlamak" },
       { de: "shelter", tr: "geçici barınak" },
+      { de: "operator", tr: "işletmeci" },
     ],
     minutes: 11,
     text:
@@ -150,6 +151,7 @@ export const enC1: SkillExercise[] = [
       { de: "vary", tr: "değişmek" },
       { de: "familiar", tr: "aşina" },
       { de: "imitate", tr: "taklit etmek" },
+      { de: "job title", tr: "unvan" },
     ],
     minutes: 11,
     segments: [
@@ -252,6 +254,8 @@ export const enC1: SkillExercise[] = [
       { de: "affect", tr: "etkilemek" },
       { de: "necessarily", tr: "zorunlu olarak" },
       { de: "warmth", tr: "sıcaklık" },
+      { de: "organization", tr: "kurum" },
+      { de: "commitment", tr: "taahhüt" },
     ],
     minutes: 15,
     tasks: [

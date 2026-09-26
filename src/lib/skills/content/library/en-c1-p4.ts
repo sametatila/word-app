@@ -139,6 +139,7 @@ export const enC1P4: SkillExercise[] = [
       { de: "ship", tr: "gemi" },
       { de: "rise", tr: "yükselmek" },
       { de: "ban", tr: "yasaklamak" },
+      { de: "on top", tr: "en üstte" },
     ],
     minutes: 10,
     segments: [

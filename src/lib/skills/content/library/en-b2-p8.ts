@@ -32,6 +32,7 @@ export const enB2P8: SkillExercise[] = [
       { de: "object", tr: "itiraz etmek" },
       { de: "property", tr: "mülk" },
       { de: "tin", tr: "teneke kutu" },
+      { de: "majority", tr: "çoğunluk" },
     ],
     minutes: 8,
     text:
@@ -213,6 +214,8 @@ export const enB2P8: SkillExercise[] = [
       { de: "genuine", tr: "hakiki" },
       { de: "household", tr: "hane" },
       { de: "contaminate", tr: "kirletmek" },
+      { de: "in total", tr: "toplamda" },
+      { de: "majority", tr: "çoğunluk" },
     ],
     minutes: 14,
     tasks: [

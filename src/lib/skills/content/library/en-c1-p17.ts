@@ -37,6 +37,10 @@ export const enC1P17: SkillExercise[] = [
       { de: "to estimate", tr: "kestirmek" },
       { de: "to pretend", tr: "-miş gibi yapmak" },
       { de: "to supervise", tr: "denetlemek" },
+      { de: "climbing", tr: "tırmanmak" },
+      { de: "sheet", tr: "kâğıt" },
+      { de: "adventure playground", tr: "macera parkı" },
+      { de: "honesty", tr: "dürüstlük" },
     ],
     minutes: 10,
     text:
@@ -136,6 +140,9 @@ export const enC1P17: SkillExercise[] = [
       { de: "to supervise", tr: "denetlemek" },
       { de: "qualification", tr: "nitelik" },
       { de: "governor", tr: "okul yönetim kurulu üyesi" },
+      { de: "climbing", tr: "tırmanmak" },
+      { de: "reacted", tr: "tepki vermek" },
+      { de: "rotation", tr: "nöbet çizelgesi" },
     ],
     minutes: 10,
     segments: [
@@ -223,6 +230,11 @@ export const enC1P17: SkillExercise[] = [
       { de: "hazard", tr: "tehlike" },
       { de: "to supervise", tr: "denetlemek" },
       { de: "independence", tr: "bağımsızlık" },
+      { de: "climbing", tr: "tırmanmak" },
+      { de: "ban", tr: "yasak" },
+      { de: "concerns", tr: "endişe" },
+      { de: "judge", tr: "değerlendirmek" },
+      { de: "providing", tr: "sağlamak" },
     ],
     minutes: 16,
     tasks: [

@@ -32,6 +32,7 @@ export const enA2P13: SkillExercise[] = [
       { de: "vest", tr: "yelek" },
       { de: "join", tr: "katılmak" },
       { de: "adult", tr: "yetişkin" },
+      { de: "picks them up", tr: "onları alıyor" },
     ],
     minutes: 5,
     text:

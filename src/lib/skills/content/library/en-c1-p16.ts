@@ -37,6 +37,10 @@ export const enC1P16: SkillExercise[] = [
       { de: "neutral", tr: "tarafsız" },
       { de: "permanent", tr: "kalıcı" },
       { de: "criticism", tr: "eleştiri" },
+      { de: "search", tr: "aramak" },
+      { de: "bar", tr: "bar" },
+      { de: "production", tr: "yapım" },
+      { de: "editor", tr: "editör" },
     ],
     minutes: 10,
     text:
@@ -138,6 +142,8 @@ export const enC1P16: SkillExercise[] = [
       { de: "savage", tr: "acımasız" },
       { de: "accurate", tr: "hatasız" },
       { de: "coverage", tr: "haber yeri" },
+      { de: "title", tr: "kitap" },
+      { de: "hate", tr: "nefret etmek" },
     ],
     minutes: 10,
     segments: [

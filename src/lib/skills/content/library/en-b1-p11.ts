@@ -29,6 +29,8 @@ export const enB1P11: SkillExercise[] = [
       { de: "to pass round", tr: "dağıtmak" },
       { de: "trumpet", tr: "trompet" },
       { de: "to complain", tr: "şikâyet etmek" },
+      { de: "top floor", tr: "en üst kat" },
+      { de: "engineer", tr: "teknisyen" },
     ],
     minutes: 6,
     text:
@@ -118,6 +120,7 @@ export const enB1P11: SkillExercise[] = [
       { de: "to knock", tr: "kapıyı çalmak" },
       { de: "stranger", tr: "yabancı" },
       { de: "directions", tr: "yol tarifi" },
+      { de: "garage", tr: "oto tamirhanesi" },
     ],
     minutes: 6,
     segments: [
@@ -198,6 +201,7 @@ export const enB1P11: SkillExercise[] = [
       { de: "sign", tr: "tabela" },
       { de: "number plate", tr: "plaka" },
       { de: "bent", tr: "bükülmüş" },
+      { de: "hit", tr: "çarptı" },
     ],
     minutes: 12,
     tasks: [

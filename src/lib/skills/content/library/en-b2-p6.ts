@@ -34,6 +34,7 @@ export const enB2P6: SkillExercise[] = [
       { de: "lazy", tr: "tembel" },
       { de: "relationship", tr: "ilişki" },
       { de: "caution", tr: "uyarı" },
+      { de: "organizations", tr: "kurum" },
     ],
     minutes: 8,
     text:
@@ -217,6 +218,7 @@ export const enB2P6: SkillExercise[] = [
       { de: "vacancy", tr: "açık pozisyon" },
       { de: "sheet", tr: "çizelge" },
       { de: "presentation", tr: "sunum" },
+      { de: "related", tr: "ilgili" },
     ],
     minutes: 14,
     tasks: [

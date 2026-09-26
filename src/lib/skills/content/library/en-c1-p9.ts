@@ -34,6 +34,7 @@ export const enC1P9: SkillExercise[] = [
       { de: "punish", tr: "cezalandırmak" },
       { de: "involve", tr: "işin içine katmak" },
       { de: "harmless", tr: "zararsız" },
+      { de: "judgment", tr: "muhakeme" },
     ],
     minutes: 10,
     text:
@@ -145,6 +146,7 @@ export const enC1P9: SkillExercise[] = [
       { de: "resist", tr: "direnmek" },
       { de: "decisive", tr: "belirleyici" },
       { de: "entire", tr: "tüm" },
+      { de: "organizations", tr: "kurum" },
     ],
     minutes: 10,
     segments: [

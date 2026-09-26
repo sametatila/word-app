@@ -33,6 +33,10 @@ export const enB2P17: SkillExercise[] = [
       { de: "patient", tr: "sabırlı" },
       { de: "to reveal", tr: "ortaya çıkarmak" },
       { de: "overloaded", tr: "aşırı yüklü" },
+      { de: "poor planning", tr: "kötü planlama" },
+      { de: "anyway", tr: "nasılsa" },
+      { de: "hoped", tr: "umut etmek" },
+      { de: "slightly", tr: "biraz" },
     ],
     minutes: 8,
     text:
@@ -132,6 +136,10 @@ export const enB2P17: SkillExercise[] = [
       { de: "turnover", tr: "personel devri" },
       { de: "absence", tr: "devamsızlık" },
       { de: "dramatic", tr: "çarpıcı" },
+      { de: "generally", tr: "genel olarak" },
+      { de: "positive", tr: "olumlu" },
+      { de: "vary", tr: "farklılık göstermek" },
+      { de: "caution", tr: "temkin" },
     ],
     minutes: 8,
     segments: [

@@ -36,6 +36,10 @@ export const enC1P11: SkillExercise[] = [
       { de: "confident", tr: "emin" },
       { de: "to divide", tr: "bölmek" },
       { de: "record", tr: "kayıt" },
+      { de: "general", tr: "genel" },
+      { de: "explanation", tr: "açıklama" },
+      { de: "entirely", tr: "tamamen" },
+      { de: "recalling", tr: "hatırlamak" },
     ],
     minutes: 10,
     text:
@@ -140,6 +144,10 @@ export const enC1P11: SkillExercise[] = [
       { de: "ceiling", tr: "tavan" },
       { de: "to survey", tr: "incelemek" },
       { de: "to redesign", tr: "yeniden tasarlamak" },
+      { de: "risen", tr: "artmak" },
+      { de: "appear", tr: "görünmek" },
+      { de: "deliberately", tr: "bilerek" },
+      { de: "affected", tr: "etkilenen" },
     ],
     minutes: 10,
     segments: [
