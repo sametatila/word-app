@@ -148,13 +148,29 @@ function konusmaSozlugu(kurs: Kurs): Map<string, string> {
  * öyle sayıyor: öğrenci o sözcükleri görevin içinde karşılığıyla alıyor).
  */
 type Kullanim = { toplam: Map<string, number>; sozluksuz: Map<string, number> };
-function kullanim(kurs: Kurs, hv: Map<string, string>): Kullanim {
+function kullanim(kurs: Kurs, hv: Map<string, string>, ds: Map<string, string>): Kullanim {
   const toplam = new Map<string, number>();
   const sozluksuz = new Map<string, number>();
   const onek = kurs === "en" ? /^en-(a1|a2|b1|b2|c1)-/ : /^(a1|a2|b1|b2|c1)-/;
   const kendi = new Map<string, string>();
   for (const w of hv.keys()) kendi.set(w, w);
-  const kokBul = (t: string) => (kurs === "en" ? enStems(t).find((st) => hv.has(st)) : kokAra(kendi, t));
+  /* ALMANCADA ÖNCE ÖĞRETİLEN KÖK (2026-09-26). `kokAra` bir belirteci havuzun
+     İLK uyan kaydına bağlıyor; o kayıt öğretilmeyen bir eşsesli olunca borç
+     uyduruluyordu: `passt` → der Pass (doğrusu passen), `verloren` → verlobt
+     (verlieren), `anfängt` → der Anfänger (anfangen), `stärker` → stärken
+     (stark), `gesucht` → das Gesuch (suchen), `vertritt` → der Vertrieb
+     (vertreten). Soru "bu sözcük öğretiliyor mu" olduğuna göre belirteç
+     aynı kurallarla ÖĞRETİLEN bir köke bağlanabiliyorsa borç değildir; ancak
+     bağlanamıyorsa havuzdaki köküne bakılır. Ünite kapısı (`nerede`) aynı
+     sırayı zaten izliyor: önce konuşma haritası, sonra havuz. İngilizcede
+     de aynı: `hopes` gövdelerinden `hop` (zıplamak) havuzda, `hope` ise
+     konuşmada; öğretilen gövde önce aranıyor. */
+  const ogretilen = new Map<string, string>();
+  for (const w of ds.keys()) ogretilen.set(w, w);
+  const kokBul = (t: string) =>
+    kurs === "en"
+      ? enStems(t).find((st) => ogretilen.has(st)) ?? enStems(t).find((st) => hv.has(st))
+      : kokAra(ogretilen, t) ?? kokAra(kendi, t);
   for (const e of BUNDLED_EXERCISES as unknown as LooseExercise[]) {
     if (!onek.test(e.id)) continue;
     /* Egzersizin sözlükçesi: `gloss` + yazma görevinin kalıp/sözcük listeleri. */
@@ -273,7 +289,7 @@ for (const kurs of kurslar) {
   /* Serbest listesi de GÖVDEYE bakıyor: `sunday` serbestse `sundays` da öyle,
      yoksa çoğul biçim "hiç öğretilmeyen" diye borca yazılıyordu. */
   const serbest = (w: string) => (kurs === "en" ? enStems(w).some((st) => EN_FREE.has(st)) : SERBEST.has(w));
-  const { toplam: kul, sozluksuz } = kullanim(kurs, hv);
+  const { toplam: kul, sozluksuz } = kullanim(kurs, hv, ds);
   console.log(`\n=== ${kurs.toUpperCase()} kursu — patika boşluğu ===`);
   for (const lv of LEVELS) {
     const seviyeHavuz = [...hv].filter(([, l]) => l === lv).map(([w]) => w);

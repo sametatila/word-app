@@ -257,6 +257,10 @@ function olc(ham0, unit, ekIzin = [], seviye = "a1") {
   for (const m of adMetni.matchAll(/\b([A-ZÄÖÜ][a-zäöüßéèêáàóúï]{1,})(?=\s+([A-ZÄÖÜ][a-zäöüßéèêáàóúï]{1,})\b)/g)) {
     if (!havuzKok.has(m[1].toLowerCase())) { ozelAd.add(m[1].toLowerCase()); ozelAd.add(m[2].toLowerCase()); }
   }
+  // Baş harf + soyad da ad: "Nachricht an M. Vogel" (a2-u15-w2). Tek harf ve
+  // noktadan sonra büyük harfle gelen sözcük soyadıdır; "Vogel" havuzda ortak
+  // isim olarak da bulunduğu için yukarıdaki desenlere takılmıyordu.
+  for (const m of adMetni.matchAll(/\b[A-ZÄÖÜ]\.\s+([A-ZÄÖÜ][a-zäöüßéèêáàóúï]+)/g)) ozelAd.add(m[1].toLowerCase());
   for (const m of adMetni.matchAll(/\b(Dr|Prof|Frau|Herrn|Herr)\.?\s+(?:(?:Dr|Prof)\.?\s+)?([A-ZÄÖÜ][a-zäöüßéèêáàóúï]+)/g)) {
     // Unvandan SONRA gelen sözcük soyadıdır — havuzda ortak isim olarak da
     // bulunması ("Berg" = dağ) bunu değiştirmez, o yüzden koşulsuz muaf.
