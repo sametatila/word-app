@@ -46,13 +46,13 @@ export const EN_C1_02: MockPaper = {
               genre: "Feature article",
               genreTr: "Dosya yazısı",
               title: "The last workshop on the street",
-              body: `Seldom has a trade disappeared as quietly as shoe repair. There was no closure announcement and no campaign; the shops simply {{1}} one by one over about fifteen years.
+              body: `Seldom has a trade disappeared as quietly as shoe repair. There was no closure announcement and no campaign; the stores simply {{1}} one by one over about fifteen years.
 
 The usual explanation is price, and it is not wrong so much as {{2}}. A resole costs more than a cheap pair of shoes, which settles the matter for most buyers. What that account leaves out is that the cheap pair became cheap only after the repairers had already begun to close, so the causation runs partly the other way.
 
 A second factor rarely {{3}} attention. Repair depends on a stock of knowledge that cannot be written down quickly, and the apprenticeships that carried it were the first thing to go when margins {{4}}.
 
-Whether any of this could have been prevented is an open question. Several cities have tried subsidies, with results that can only be described as {{5}}. What does seem to work, on the limited evidence available, is nothing so grand: a low rent, a visible location and a queue that {{6}} people that the shop is used.`,
+Whether any of this could have been prevented is an open question. Several cities have tried subsidies, with results that can only be described as {{5}}. What does seem to work, on the limited evidence available, is nothing so grand: a low rent, a visible location and a line that {{6}} people that the store is used.`,
             },
           ],
           items: [
@@ -215,14 +215,14 @@ That sense resists documentation, which is inconvenient for institutions and, ar
               id: "t3",
               genre: "Reference text",
               genreTr: "Başvuru metni",
-              title: "Standardisation",
-              body: `Standardisation is the process by which a variable practice is replaced by a single agreed method, usually with a gain in {{13}} and a loss that is harder to name.
+              title: "Standardization",
+              body: `Standardization is the process by which a variable practice is replaced by a single agreed method, usually with a gain in {{13}} and a loss that is harder to name.
 
 The gain is easy to measure. A standardized procedure can be taught quickly, audited cheaply, and compared across sites; without it, large organizations would be {{14}}.
 
 The loss is a question of scale rather than principle. In a small workshop, {{15}} from the method is a judgment; in a chain of four hundred branches it is a compliance failure, and the two are treated identically by the audit.
 
-Critics of over-standardisation are sometimes accused of {{16}}, as though any defense of local judgment were a wish to return to an imagined past. The better versions of the argument are more specific.
+Critics of over-standardization are sometimes accused of {{16}}, as though any defense of local judgment were a wish to return to an imagined past. The better versions of the argument are more specific.
 
 They hold that a standard should carry an explicit account of its own {{17}}: the conditions under which it applies. Where that account is missing, practitioners are left to infer it, and their inferences are {{18}} inconsistent.`,
             },
@@ -352,7 +352,7 @@ They hold that a standard should carry an explicit account of its own {{17}}: th
               title: "Against the word scalable",
               body: `The word has become an unquestioned compliment. A practice that scales is admired; one that does not is described, with a faint note of pity, as artisanal. I want to argue that the compliment conceals a category error, and that the error has costs we are only now beginning to count.
 
-The tendency of the word is to flatten exactly this difference. Scaling is not neutral with respect to what is being scaled. Some activities lose nothing when repeated a thousand times: the manufacture of a bolt, the sorting of a parcel. Others lose the thing that made them worth doing, and the loss is not a failure of execution but a property of the activity itself. Teaching is the obvious case. So, less obviously, is diagnosis.
+The tendency of the word is to flatten exactly this difference. Scaling is not neutral with respect to what is being scaled. Some activities lose nothing when repeated a thousand times: the manufacture of a bolt, the sorting of a package. Others lose the thing that made them worth doing, and the loss is not a failure of execution but a property of the activity itself. Teaching is the obvious case. So, less obviously, is diagnosis.
 
 It is precisely this distinction that the vocabulary of scale erases. When we ask whether a practice can be scaled, we are asking an engineering question about a matter that is often not an engineering matter at all, and the framing tends to produce the answer it assumes.
 
@@ -966,7 +966,7 @@ The entry test has been abandoned because the correlation was close to {{13}}.
           no: 3,
           format: "mcq",
           goal: "opinion",
-          prompt: "You hear part of a panel discussion about standardising professional work. Questions 15 to 22: pick one answer, a, b, c or d. The discussion plays only ONCE.",
+          prompt: "You hear part of a panel discussion about standardizing professional work. Questions 15 to 22: pick one answer, a, b, c or d. The discussion plays only ONCE.",
           promptTr: "Mesleki işin standartlaştırılması üzerine bir panelin bir bölümünü dinleyeceksin. 15–22. maddeler için a, b, c ya da d'yi seç. Kaydı YALNIZ BİR KEZ dinleyeceksin.",
           texts: [
             {
@@ -977,7 +977,7 @@ The entry test has been abandoned because the correlation was close to {{13}}.
               situation: "Bir panelde üç konuşmacı mesleki işin standartlaştırılmasını tartışıyor.",
               plays: 1,
               segments: [
-                { speaker: "Chair", text: "Hana, you have written that professional resistance to standardisation is usually misdiagnosed. In what way?" },
+                { speaker: "Chair", text: "Hana, you have written that professional resistance to standardization is usually misdiagnosed. In what way?" },
                 { speaker: "Hana", text: "It is read as status defense, and sometimes that is exactly what it is. But in the cases I have studied, the resistance clusters around a small number of steps, and those steps almost always turn out to be the ones where the practitioner is absorbing variation that the standard does not see." },
                 { speaker: "Chair", text: "Ruben, you design these systems. Is that recognizable?" },
                 { speaker: "Ruben", text: "Recognizable and, I would add, predictable. We can usually tell in advance which steps will be defended, and we very rarely act on that knowledge, because the project is judged on how much has been standardized rather than on what happened afterwards." },
@@ -990,7 +990,7 @@ The entry test has been abandoned because the correlation was close to {{13}}.
                 { speaker: "Chair", text: "One recommendation each." },
                 { speaker: "Ruben", text: "Measure what happened six months later, not how much was standardized." },
                 { speaker: "Ella", text: "Ask who absorbs the variation, and put the answer in the proposal." },
-                { speaker: "Hana", text: "Mine is duller. Publish the cases where standardisation was tried and reversed. At present those disappear, and every organization learns the same lesson from scratch." },
+                { speaker: "Hana", text: "Mine is duller. Publish the cases where standardization was tried and reversed. At present those disappear, and every organization learns the same lesson from scratch." },
               ],
               gloss: [
                 { de: "to misdiagnose", tr: "yanlış teşhis koymak", en: "falsch diagnostizieren" },
@@ -1057,7 +1057,7 @@ The entry test has been abandoned because the correlation was close to {{13}}.
               options: [
                 "That removing a step transfers variation to weaker staff",
                 "That variation disappears once a step is removed",
-                "That unions have opposed standardisation consistently",
+                "That unions have opposed standardization consistently",
                 "That new staff adapt more easily than senior staff",
               ],
               answer: 0,
@@ -1106,7 +1106,7 @@ The entry test has been abandoned because the correlation was close to {{13}}.
                 "To measure outcomes some months after the change",
                 "To standardize fewer processes each year",
                 "To involve practitioners in the design stage",
-                "To publish the full cost of each standardisation program",
+                "To publish the full cost of each standardization program",
               ],
               answer: 0,
               explain:
@@ -1324,7 +1324,7 @@ The entry test has been abandoned because the correlation was close to {{13}}.
           format: "writing",
           goal: "production",
           prompt:
-            "You have attended a seminar on training and expertise. Write an essay for your tutor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. Written procedures allow a skill to be taught to many people quickly.\n2. Some parts of a skill are learned only by working alongside an experienced person.\n\nWrite 220 to 260 words.",
+            "You have attended a seminar on training and expertise. Write an essay for your instructor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. Written procedures allow a skill to be taught to many people quickly.\n2. Some parts of a skill are learned only by working alongside an experienced person.\n\nWrite 220 to 260 words.",
           promptTr:
             "Eğitim ve uzmanlık üzerine bir seminere katıldın. Danışmanın için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Yazılı prosedürler bir beceriyi çok kişiye hızla öğretmeyi sağlar.\n2. Bir becerinin bazı parçaları ancak deneyimli biriyle çalışarak öğrenilir.\n\n220–260 kelime yaz.",
           items: [],
@@ -1361,7 +1361,7 @@ My own view is that the choice is a false one imposed by budgeting. The interest
           format: "writing",
           goal: "interaction",
           prompt:
-            "An organization you know is about to standardize a process that experienced staff carry out differently. Write a report for its management. Describe what is currently done, assess the likely effects of standardising it, and recommend a course of action. Write 220 to 260 words.",
+            "An organization you know is about to standardize a process that experienced staff carry out differently. Write a report for its management. Describe what is currently done, assess the likely effects of standardizing it, and recommend a course of action. Write 220 to 260 words.",
           promptTr:
             "Tanıdığın bir kurum, deneyimli çalışanların farklı farklı yürüttüğü bir süreci standartlaştırmak üzere. Yönetime bir rapor yaz. Şu an ne yapıldığını anlat, standartlaştırmanın olası etkilerini değerlendir ve bir yol öner. 220–260 kelime yaz.",
           items: [],
@@ -1369,10 +1369,10 @@ My own view is that the choice is a false one imposed by budgeting. The interest
             minWords: 220,
             points: [
               { de: "Describe current practice and the variation in it.", tr: "Mevcut uygulamayı ve içindeki değişkenliği anlat." },
-              { de: "Assess both gains and losses from standardising.", tr: "Standartlaştırmanın hem kazancını hem kaybını değerlendir." },
+              { de: "Assess both gains and losses from standardizing.", tr: "Standartlaştırmanın hem kazancını hem kaybını değerlendir." },
               { de: "Recommend a course of action, including what you would not do.", tr: "Bir yol öner; neyi yapmayacağını da söyle." },
             ],
-            sample: `Report: proposed standardisation of the intake process
+            sample: `Report: proposed standardization of the intake process
 
 Current practice
 
@@ -1380,11 +1380,11 @@ Intake is carried out by four staff, and the written guidance is two pages long.
 
 Assessment
 
-Standardising would produce real gains. Training currently takes six weeks and would fall, and the variation makes the current data almost useless for comparison. The risk lies in the four undocumented steps. Each was added by an experienced person in response to something that went wrong, and at least one of them guards against a category of error that the guidance does not mention.
+Standardizing would produce real gains. Training currently takes six weeks and would fall, and the variation makes the current data almost useless for comparison. The risk lies in the four undocumented steps. Each was added by an experienced person in response to something that went wrong, and at least one of them guards against a category of error that the guidance does not mention.
 
 Recommendation
 
-I recommend standardising the process, but not before the four steps have been examined individually. Two of them can probably be written into the guidance at no cost. The address check may be redundant now that records are linked. What I would not do is adopt the standard first and review the exceptions afterwards, which is the sequence proposed. Once a step has been removed, the reason it existed is rarely recoverable, and the staff who could explain it will have moved on within two years.`,
+I recommend standardizing the process, but not before the four steps have been examined individually. Two of them can probably be written into the guidance at no cost. The address check may be redundant now that records are linked. What I would not do is adopt the standard first and review the exceptions afterwards, which is the sequence proposed. Once a step has been removed, the reason it existed is rarely recoverable, and the staff who could explain it will have moved on within two years.`,
             criteria: [
               "Mevcut uygulama ve içindeki değişkenlik somut olarak anlatıldı mı?",
               "Hem kazanç hem kayıp değerlendirildi mi, yoksa tek yan mı sunuldu?",

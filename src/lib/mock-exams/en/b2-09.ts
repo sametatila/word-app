@@ -362,14 +362,14 @@ Here is the clause, from a household policy sold to about two hundred thousand p
 
 Every one of them is honest. The clause does not lie and it is not hidden; it appears under a heading that says what it is. If you had read it before the pipe burst, you would have understood every word in it.
 
-What you would not have understood is what it does. A lack of maintenance is not defined anywhere in the document, and it does not need to be, because the definition is supplied later, by the loss adjuster who visits your kitchen. That person is paid by the company. He is not dishonest either. He is applying a term that has no fixed content, and he applies it in the direction his employer would prefer.
+What you would not have understood is what it does. A lack of maintenance is not defined anywhere in the document, and it does not need to be, because the definition is supplied later, by the claims adjuster who visits your kitchen. That person is paid by the company. He is not dishonest either. He is applying a term that has no fixed content, and he applies it in the direction his employer would prefer.
 
 The result is a clause that is perfectly clear as English and unknowable as a promise. You cannot tell, before the event, whether you are covered, because the thing that decides it has not been written down anywhere. Given that, the price is the only part of the offer a buyer can actually compare.
 
 I do not think this was designed. I think it is what you get when a document is drafted to survive a court rather than to inform a buyer, and those are different tests. The second one is not applied by anybody.`,
               gloss: [
                 { de: "a clause", tr: "madde, hüküm", en: "die Klausel" },
-                { de: "a loss adjuster", tr: "hasar eksperi", en: "der Schadensregulierer" },
+                { de: "a claims adjuster", tr: "hasar eksperi", en: "der Schadensregulierer" },
                 { de: "maintenance", tr: "bakım", en: "die Wartung" },
               ],
             },
@@ -418,13 +418,13 @@ I do not think this was designed. I think it is what you get when a document is 
               ],
               answer: 0,
               explain:
-                "Metin tanımın belgede olmadığını ve sonradan sağlandığını söylüyor: «the definition is supplied later, by the loss adjuster who visits your kitchen».",
+                "Metin tanımın belgede olmadığını ve sonradan sağlandığını söylüyor: «the definition is supplied later, by the claims adjuster who visits your kitchen».",
             },
             {
               kind: "mcq",
               id: "en-b2-09-l5-26",
               no: 26,
-              text: "What does the writer say about the loss adjuster?",
+              text: "What does the writer say about the claims adjuster?",
               options: [
                 "He is dishonest about the damage",
                 "He is not qualified for the work",
@@ -706,7 +706,7 @@ That is a larger intervention, and it is resisted for a reason that is rarely st
               situation: "Bir konuşmacı ortak öneriyi ele alıyor.",
               plays: 2,
               segments: [
-                { text: "The suggestion is always the same: standard wording for everybody. I have some sympathy with it and one worry. A standard policy is a policy nobody can be sold badly, and it is also a policy that fits a flat above a river exactly as badly as it fits everybody else." },
+                { text: "The suggestion is always the same: standard wording for everybody. I have some sympathy with it and one worry. A standard policy is a policy nobody can be sold badly, and it is also a policy that fits an apartment above a river exactly as badly as it fits everybody else." },
               ],
             },
             {
@@ -797,7 +797,7 @@ That is a larger intervention, and it is resisted for a reason that is rarely st
               options: ["It would be too expensive to introduce", "It fits unusual cases badly", "Nobody would agree on the wording"],
               answer: 1,
               explain:
-                "Konuşmacı öneriyi kısmen destekleyip kaygısını veriyor: standart poliçe «fits a flat above a river exactly as badly as it fits everybody else».",
+                "Konuşmacı öneriyi kısmen destekleyip kaygısını veriyor: standart poliçe «fits an apartment above a river exactly as badly as it fits everybody else».",
             },
             {
               kind: "mcq",
@@ -1118,7 +1118,7 @@ The reviewers think those customers knew what to {{16}} about.`,
                 { speaker: "Host", text: "So the vagueness is not laziness." },
                 { speaker: "Halvard", text: "It is not laziness and it is not innocent either. Both things are true. The vague word survives because it is genuinely hard to replace and because it happens to suit whoever is holding the money." },
                 { speaker: "Host", text: "What would you change if it were up to you?" },
-                { speaker: "Halvard", text: "Not the wording. I would publish the decisions. Every quarter, every company puts out the last three hundred applications of the phrase reasonable care, anonymised. Then the phrase would have a meaning you could look up." },
+                { speaker: "Halvard", text: "Not the wording. I would publish the decisions. Every quarter, every company puts out the last three hundred applications of the phrase reasonable care, anonymized. Then the phrase would have a meaning you could look up." },
                 { speaker: "Host", text: "Why has that not been done?" },
                 { speaker: "Halvard", text: "Because it would be a definition, and once it is a definition you can be held to it. That is precisely the property the current arrangement is designed to avoid." },
                 { speaker: "Host", text: "Do you think the industry knows this?" },
@@ -1247,7 +1247,7 @@ The reviewers think those customers knew what to {{16}} about.`,
               { de: "Add a third idea of your own.", tr: "Kendi üçüncü fikrini ekle." },
               { de: "Reach a clear conclusion.", tr: "Açık bir sonuca var." },
             ],
-            sample: `Almost nobody defends the present arrangement, in which a document is sent, a box is ticked and everybody agrees that a decision has been made.
+            sample: `Almost nobody defends the present arrangement, in which a document is sent, a box is checked and everybody agrees that a decision has been made.
 
 The practical objection concerns testing. It is easy to prove that a document arrived and almost impossible to prove that it was understood, and any test that could be written down would immediately be taught to and passed. That is a genuine difficulty, but it is a difficulty about method rather than about principle.
 
@@ -1284,9 +1284,9 @@ Companies should carry the responsibility, but the obligation should attach to p
             ],
             sample: `Dear Sir or Madam,
 
-I am writing about claim 4471/22, refused on 3 April.
+I am writing about claim 4471/22, refused on April 3.
 
-On 11 March a pipe failed under the kitchen floor of my flat and the water damaged the floor and two cupboards. Your letter refuses the claim under clause 9.4, which excludes damage where the escape results from a lack of maintenance.
+On March 11 a pipe failed under the kitchen floor of my apartment and the water damaged the floor and two cupboards. Your letter refuses the claim under clause 9.4, which excludes damage where the escape results from a lack of maintenance.
 
 I do not dispute that the clause exists. I dispute that it was ever communicated to me. The summary document I was sent before purchase runs to two pages and does not mention maintenance at all. I have kept it and I attach a copy.
 
@@ -1371,7 +1371,7 @@ Selma Aro`,
               { de: "identify a problem with your own choice", tr: "Kendi seçiminde bir sorunu adlandır" },
             ],
             sample:
-              "Simpler wording is easy to require and easy to inspect, and it addresses something everybody can see. Its weakness is that the difficulty in these documents is not linguistic. A sentence can be perfectly plain and still leave the reader unable to predict what will happen, because the meaning of the key phrase is fixed later by the company. Publishing the decisions attacks precisely that: it turns a vague term into something with a history you can look up. I would choose that. The problem with my own choice is volume and privacy. Three hundred anonymised decisions a quarter is a great deal of material that nobody will read, and the cases that matter most are the unusual ones, which are also the ones that are hardest to anonymise.",
+              "Simpler wording is easy to require and easy to inspect, and it addresses something everybody can see. Its weakness is that the difficulty in these documents is not linguistic. A sentence can be perfectly plain and still leave the reader unable to predict what will happen, because the meaning of the key phrase is fixed later by the company. Publishing the decisions attacks precisely that: it turns a vague term into something with a history you can look up. I would choose that. The problem with my own choice is volume and privacy. Three hundred anonymized decisions a quarter is a great deal of material that nobody will read, and the cases that matter most are the unusual ones, which are also the ones that are hardest to anonymize.",
             criteria: [
               "İki yaklaşım da gerçekten karşılaştırıldı mı?",
               "Tercih gerekçelendirildi mi?",

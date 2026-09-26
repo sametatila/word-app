@@ -27,7 +27,7 @@ export const EN_B1_10: MockPaper = {
       skill: "reading",
       minutes: 55,
       instruction:
-        "There are six tasks in this part. You read short texts, adverts, an article and three texts with gaps. Answer each question with one choice.",
+        "There are six tasks in this part. You read short texts, ads, an article and three texts with gaps. Answer each question with one choice.",
       instructionTr:
         "Bu bölümde altı görev var. Kısa metinler, ilanlar, bir yazı ve boşluklu üç metin okuyacaksın. Her soruda doğru cevabı işaretle.",
       tasks: [
@@ -152,7 +152,7 @@ We do not keep a copy unless you ask us to.`,
           format: "match",
           goal: "orientation",
           prompt:
-            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best advert. No advert is used twice.",
+            "Here are five people, 6 to 10. There are also eight ads, a to h. Match each person with the best ad. No ad is used twice.",
           promptTr:
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
@@ -629,7 +629,7 @@ If you find this box, the notes are folded {{30}} the lid.`,
               situation: "Bir uzman saklama koşullarını anlatıyor.",
               plays: 2,
               segments: [
-                { text: "People ask me what to buy. Nothing, usually. The loft is the worst room in the house for paper and the cupboard under the stairs is one of the best. Moving the box costs you an afternoon and no money at all." },
+                { text: "People ask me what to buy. Nothing, usually. The loft is the worst room in the house for paper and the closet under the stairs is one of the best. Moving the box costs you an afternoon and no money at all." },
               ],
             },
             {
@@ -821,7 +821,7 @@ If you find this box, the notes are folded {{30}} the lid.`,
                 { speaker: "Man", text: "You cannot do family history without going to the village." },
                 { speaker: "Woman", text: "I did four years of it from a table." },
                 { speaker: "Man", text: "What did you miss?" },
-                { speaker: "Woman", text: "Smells, probably. And a woman in the shop who would have told me everything in an hour." },
+                { speaker: "Woman", text: "Smells, probably. And a woman in the store who would have told me everything in an hour." },
               ],
             },
             {
@@ -893,7 +893,7 @@ If you find this box, the notes are folded {{30}} the lid.`,
               options: ["That being there would have helped", "That the four years were largely wasted", "That village records are better"],
               answer: 0,
               explain:
-                "Konuşmacı masadan çalıştığını savunuyor ama kaybını sayıyor: «a woman in the shop who would have told me everything in an hour».",
+                "Konuşmacı masadan çalıştığını savunuyor ama kaybını sayıyor: «a woman in the store who would have told me everything in an hour».",
             },
             {
               kind: "mcq",
@@ -1037,7 +1037,7 @@ Volunteers come on Saturday: {{19}}`,
                 { speaker: "Host", text: "What would you tell somebody who is starting?" },
                 { speaker: "Vesna", text: "Do the last twenty years first. Everybody starts with the oldest box because it feels urgent, and the oldest box is the one where nobody can help you anyway. The pictures from the nineteen-nineties still have people alive who can name them." },
                 { speaker: "Host", text: "And what happened to the four thousand in the end?" },
-                { speaker: "Vesna", text: "They are in eleven boxes in a cupboard, and there is one page at the front of each box. If somebody throws the boxes away, they will at least have to read a page first. That is the whole of my ambition." },
+                { speaker: "Vesna", text: "They are in eleven boxes in a closet, and there is one page at the front of each box. If somebody throws the boxes away, they will at least have to read a page first. That is the whole of my ambition." },
               ],
             },
           ],
@@ -1139,7 +1139,7 @@ Volunteers come on Saturday: {{19}}`,
             ],
             sample: `Dear Aunt Hale,
 
-I was clearing my mother's flat last month and I found a shoebox of photographs at the back of a cupboard. There are about a hundred and fifty and most of them are from before 1960.
+I was clearing my mother's apartment last month and I found a shoebox of photographs in the back of a closet. There are about a hundred and fifty and most of them are from before 1960.
 
 I have sorted them by size, which is all I can do on my own. I recognize my mother and perhaps four other faces. Nobody wrote anything on the back.
 
@@ -1224,7 +1224,7 @@ What I do now is different and slightly ridiculous. I write two questions on a c
               { de: "use a second conditional", tr: "İkinci tip koşulu kullanmak" },
             ],
             sample:
-              "There is one box in my parents' flat and nobody has opened it since we moved in 2011. I know there are photographs in it because I have seen the corner of one. Two years ago my uncle told me that my grandmother had a brother who went to Canada, and until that afternoon I did not know he existed. If I had one afternoon with my grandmother, I would ask her about names rather than events, because names are the part that disappears first.",
+              "There is one box in my parents' apartment and nobody has opened it since we moved in 2011. I know there are photographs in it because I have seen the corner of one. Two years ago my uncle told me that my grandmother had a brother who went to Canada, and until that afternoon I did not know he existed. If I had one afternoon with my grandmother, I would ask her about names rather than events, because names are the part that disappears first.",
             criteria: [
               "İlk cevapta somut bir örnek verildi mi?",
               "Anlatı tek ve belirgin mi?",

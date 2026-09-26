@@ -27,7 +27,7 @@
  { "tr": "İtiraz ciddiye alındı ve yanıt keskinleştirildi mi?", "kind": "rubric.criteria", "en": "Wurde der Einwand ernst genommen und die Antwort geschärft?" },
  { "tr": "Öneri bir sıralama içeriyor mu — önce ne, sonra ne?", "kind": "rubric.criteria", "en": "Enthält der Vorschlag eine Reihenfolge — was zuerst, was danach?" },
  { "tr": "Tarih, tutar ve gün gibi somut bilgiler verildi mi?", "kind": "rubric.criteria", "en": "Wurden konkrete Angaben wie Datum, Betrag und Tag genannt?" },
- { "tr": "Beden sorusu doğru kuruldu mu? (Have you got size …)", "kind": "rubric.criteria", "en": "Wurde die Frage nach der Größe richtig gebildet? (Have you got size …)" },
+ { "tr": "Beden sorusu doğru kuruldu mu? (Do you have size …)", "kind": "rubric.criteria", "en": "Wurde die Frage nach der Größe richtig gebildet? (Do you have size …)" },
  { "tr": "İtiraz gücüyle mi ele alındı, yoksa savuşturuldu mu?", "kind": "rubric.criteria", "en": "Wurde der Einwand in seiner Stärke behandelt oder abgewehrt?" },
  { "tr": "Mevsim seçimi bir gerekçeyle mi verildi? (because …)", "kind": "rubric.criteria", "en": "Wurde die Wahl der Jahreszeit mit einer Begründung gegeben? (because …)" },
  { "tr": "Yasak açık bir olumsuz emirle mi kuruldu? (Do not …)", "kind": "rubric.criteria", "en": "Wurde das Verbot als klarer verneinter Imperativ gebildet? (Do not …)" },
@@ -142,7 +142,7 @@
  { "tr": "Sıklık ifadeleri kullanıldı mı? (most days, once a week, usually)", "kind": "rubric.criteria", "en": "Wurden Häufigkeitsangaben verwendet? (most days, once a week, usually)" },
  { "tr": "Sıklık ifadeleri kullanıldı mı? (two tablets a day, on Wednesday)", "kind": "rubric.criteria", "en": "Wurden Häufigkeitsangaben verwendet? (two tablets a day, on Wednesday)" },
  { "tr": "Sorular doğru kuruldu mu? (Do you … / Where is … / How much is …)", "kind": "rubric.criteria", "en": "Wurden die Fragen richtig gebildet? (Do you … / Where is … / How much is …)" },
- { "tr": "Sorular doğru kuruldu mu? (Where … / Have you got … / How much …)", "kind": "rubric.criteria", "en": "Wurden die Fragen richtig gebildet? (Where … / Have you got … / How much …)" },
+ { "tr": "Sorular doğru kuruldu mu? (Where … / Do you have … / How much …)", "kind": "rubric.criteria", "en": "Wurden die Fragen richtig gebildet? (Where … / Do you have … / How much …)" },
  { "tr": "Sorular doğru kuruldu mu? (Where is … / Do you … / How much is …)", "kind": "rubric.criteria", "en": "Wurden die Fragen richtig gebildet? (Where is … / Do you … / How much is …)" },
  { "tr": "Soyut ifadeler kullanılabildi mi? (accuracy, objection, audience)", "kind": "rubric.criteria", "en": "Konnten abstrakte Wendungen verwendet werden? (accuracy, objection, audience)" },
  { "tr": "Yer bildiren ifadeler var mı? (at the door, on the left, next to)", "kind": "rubric.criteria", "en": "Gibt es Ortsangaben? (at the door, on the left, next to)" }

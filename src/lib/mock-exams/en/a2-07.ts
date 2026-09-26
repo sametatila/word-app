@@ -49,7 +49,7 @@ export const EN_A2_07: MockPaper = {
               id: "m2",
               genre: "Notice at a community hall",
               genreTr: "Toplum salonu duyurusu",
-              title: "Hire the hall",
+              title: "Rent the hall",
               body: `You can book the hall for a family party. Sixty euros for four hours, one hundred for the whole day. Music must stop at eleven. We do not have plates or glasses; bring your own.`,
             },
             {
@@ -58,7 +58,7 @@ export const EN_A2_07: MockPaper = {
               genre: "Email",
               genreTr: "E-posta",
               title: "The wedding in June",
-              body: `Dear Uma, the wedding is on 14 June in my parents' garden. It starts at four and it is not formal — please do not buy a new dress. There is no hotel in the village, but you can stay with us.`,
+              body: `Dear Uma, the wedding is on June 14 in my parents' backyard. It starts at four and it is not formal — please do not buy a new dress. There is no hotel in the village, but you can stay with us.`,
             },
             {
               kind: "text",
@@ -145,7 +145,7 @@ export const EN_A2_07: MockPaper = {
           promptTr:
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
-            { key: "a", label: "Hall for Hire", body: "Sixty euros for four hours. Room for eighty people. Kitchen with a big fridge. Music until eleven. No plates or glasses." },
+            { key: "a", label: "Hall for Rent", body: "Sixty euros for four hours. Room for eighty people. Kitchen with a big fridge. Music until eleven. No plates or glasses." },
             { key: "b", label: "Cakes to Order", body: "Two days' notice. Any size, from twelve euros. We write a name on it for free. We do not deliver." },
             { key: "c", label: "Photographer for One Hour", body: "Sixty photographs, sent the same evening. Weddings, birthdays and family days. Ninety euros." },
             { key: "d", label: "Children's Games", body: "Two hours with a person who plays with the children while the adults eat. Twelve to twenty children. Fifty euros." },
@@ -811,7 +811,7 @@ Please bring a plate and a {{10}}`,
               situation: "Birinci konuşmacı davetiyenin geliş zamanından söz ediyor.",
               plays: 2,
               segments: [
-                { text: "The invitation came on the Wednesday for the Saturday. By then I had two other things in the diary and I could not move either of them." },
+                { text: "The invitation came on the Wednesday for the Saturday. By then I had two other things on the calendar and I could not move either of them." },
               ],
             },
             {
@@ -868,7 +868,7 @@ Please bring a plate and a {{10}}`,
               text: "Speaker 1",
               answer: "d",
               explain:
-                "Davetiye çarşamba geliyor, parti cumartesi: «By then I had two other things in the diary». Sorun mesafe ya da istek değil, haberin geç gelmesi.",
+                "Davetiye çarşamba geliyor, parti cumartesi: «By then I had two other things on the calendar». Sorun mesafe ya da istek değil, haberin geç gelmesi.",
             },
             {
               kind: "match",
@@ -941,7 +941,7 @@ Please bring a plate and a {{10}}`,
             ],
             sample: `Hi Wren,
 
-My sister finished her studies, so we are having a small party on Saturday at seven at my flat.
+My sister finished her studies, so we are having a small party on Saturday at seven at my apartment.
 
 There are about ten of us: my family and two friends from work. Everybody speaks English.
 
@@ -975,7 +975,7 @@ Zsofia`,
               { de: "Say what went wrong.", tr: "Neyin ters gittiğini söyle." },
               { de: "Say what you did in the end.", tr: "Sonunda ne yaptığını söyle." },
             ],
-            sample: `Two years ago we had a party in the garden for my father's sixtieth birthday. We put twenty chairs outside and my brother cooked all morning. At four o'clock the sky went black and it rained for two hours. Everybody came into the flat and we sat on the floor with the food on our knees. My father says it was his best birthday.`,
+            sample: `Two years ago we had a party in the backyard for my father's sixtieth birthday. We put twenty chairs outside and my brother cooked all morning. At four o'clock the sky went black and it rained for two hours. Everybody came inside and we sat on the floor with the food on our knees. My father says it was his best birthday.`,
             criteria: [
               "Üç içerik noktasının üçü de var mı?",
               "Geçmiş zaman doğru kullanıldı mı? Düzensiz fiiller (put, went, sat) doğru mu?",
@@ -1035,7 +1035,7 @@ Zsofia`,
           format: "speaking",
           goal: "production",
           prompt:
-            "Describe this situation for about one minute: a birthday party in a small flat. Six people are standing around a table with a cake on it. A woman is taking a photograph and a child is looking at the presents. Say what you see, what the people are doing, and whether you like birthday parties.",
+            "Describe this situation for about one minute: a birthday party in a small apartment. Six people are standing around a table with a cake on it. A woman is taking a photograph and a child is looking at the presents. Say what you see, what the people are doing, and whether you like birthday parties.",
           promptTr:
             "Şu durumu bir dakika kadar anlat: küçük bir dairede doğum günü partisi. Altı kişi üstünde pasta olan bir masanın çevresinde duruyor. Bir kadın fotoğraf çekiyor ve bir çocuk hediyelere bakıyor. Ne gördüğünü, insanların ne yaptığını ve doğum günü partilerini sevip sevmediğini söyle.",
           prepSeconds: 45,
@@ -1049,7 +1049,7 @@ Zsofia`,
               { de: "say if you like birthday parties", tr: "Doğum günü partilerini sevip sevmediğini söyle" },
             ],
             sample:
-              "This is a birthday party in a small flat. In the middle there is a table with a big cake and eight candles. Six people are standing around it and they are singing. On the left a woman is taking a photograph with her phone. Behind her a child is looking at the presents and he is not interested in the cake. I like birthday parties because everybody talks to everybody.",
+              "This is a birthday party in a small apartment. In the middle there is a table with a big cake and eight candles. Six people are standing around it and they are singing. On the left a woman is taking a photograph with her phone. Behind her a child is looking at the presents and he is not interested in the cake. I like birthday parties because everybody talks to everybody.",
             criteria: [
               "Şimdiki zaman (present continuous) kullanıldı mı? Bu görevin ana yapısı bu.",
               "Üç içerik noktasının üçü de işlendi mi?",

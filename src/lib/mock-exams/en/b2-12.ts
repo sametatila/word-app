@@ -357,11 +357,11 @@ Reviews carried out after major floods usually conclude that the information exi
               genre: "Reconstruction",
               genreTr: "Olay yeniden kurulumu",
               title: "One night in March, hour by hour",
-              body: `At 19.40 the duty officer for the district, Lenn Vanek, received a forecast giving a forty percent probability that the river would rise above the wall before dawn. Forty percent is the least useful number in the profession. It is too high to file and too low to justify anything expensive.
+              body: `At 19:40 the duty officer for the district, Lenn Vanek, received a forecast giving a forty percent probability that the river would rise above the wall before dawn. Forty percent is the least useful number in the profession. It is too high to file and too low to justify anything expensive.
 
-At 20.10 she asked for the two figures nobody publishes: how long an evacuation of the lower street would take, and how long the warning would give her. The answers were ninety minutes and, at worst, forty. Given that gap, the decision stopped being about probability and became about arithmetic.
+At 20:10 she asked for the two figures nobody publishes: how long an evacuation of the lower street would take, and how long the warning would give her. The answers were ninety minutes and, at worst, forty. Given that gap, the decision stopped being about probability and became about arithmetic.
 
-At 20.35 she closed the lower street and moved eleven households to the school. The road was reopened at 06.00. The river rose to within thirty centimeters of the wall and stopped there, and the storm turned north over the hills.
+At 20:35 she closed the lower street and moved eleven households to the school. The road was reopened at 06:00. The river rose to within thirty centimeters of the wall and stopped there, and the storm turned north over the hills.
 
 The following week she was criticized in two newspapers. The criticism was not stupid, and it deserves to be stated at its strongest: eleven families spent a night in a school hall for an event that did not occur, and the same officer had closed the same street twice in the previous eighteen months.
 
@@ -395,7 +395,7 @@ Three years later the same street was closed on the same reasoning and the water
               kind: "mcq",
               id: "en-b2-12-l5-24",
               no: 24,
-              text: "What changed the nature of the decision at 20.10?",
+              text: "What changed the nature of the decision at 20:10?",
               options: [
                 "The comparison of two lengths of time",
                 "A second forecast raising the probability",
@@ -1280,11 +1280,11 @@ I would rather be warned too often, provided I am told each time how probable th
               { de: "Assess the decision fairly, including its cost.", tr: "Kararı bedeliyle birlikte adil değerlendir." },
               { de: "Recommend one change.", tr: "Tek bir değişiklik öner." },
             ],
-            sample: `Report on the closure of Mill Street, 14 March
+            sample: `Report on the closure of Mill Street, March 14
 
-At 20.35 the duty officer closed Mill Street and moved eleven households to the school. The road reopened at 06.00. The river rose to within thirty centimeters of the wall and the storm passed north of the town.
+At 20:35 the duty officer closed Mill Street and moved eleven households to the school. The road reopened at 06:00. The river rose to within thirty centimeters of the wall and the storm passed north of the town.
 
-The cost was not nothing, and this report should say so plainly. Eleven families lost a night, two shops lost a Saturday delivery, and three residents have told me they will ignore the next message.
+The cost was not nothing, and this report should say so plainly. Eleven families lost a night, two stores lost a Saturday delivery, and three residents have told me they will ignore the next message.
 
 Nevertheless, the decision appears sound. Moving those households takes about ninety minutes and the warning would have given roughly forty, so waiting for certainty would have produced a decision that could no longer be carried out.
 
@@ -1335,7 +1335,7 @@ I recommend one change: that the two timings behind any closure be published on 
               { de: "use a third conditional", tr: "Üçüncü tip koşulu kullanmak" },
             ],
             sample:
-              "I look at the forecast every morning and I mostly use it to decide about a coat, which is not a serious use of a serious service. I did once ignore a wind warning and cycled anyway, and I spent forty minutes pushing the bicycle along a road covered in branches. If I had been told there was a forty percent chance of flooding, I would have moved everything off the floor and stayed, because moving things is cheap and leaving the flat is not.",
+              "I look at the forecast every morning and I mostly use it to decide about a coat, which is not a serious use of a serious service. I did once ignore a wind warning and cycled anyway, and I spent forty minutes pushing the bicycle along a road covered in branches. If I had been told there was a forty percent chance of flooding, I would have moved everything off the floor and stayed, because moving things is cheap and leaving the apartment is not.",
             criteria: [
               "İlk cevapta somut bir örnek verildi mi?",
               "Anlatı sonucuyla birlikte verildi mi?",
@@ -1399,7 +1399,7 @@ I recommend one change: that the two timings behind any closure be published on 
               { de: "choose a side and justify it", tr: "Bir tarafı seçip gerekçelendirmek" },
             ],
             sample:
-              "An apology would be the wrong instrument, because it treats a correct decision as a mistake that happened to be lucky. The officer who closed Mill Street was working with ninety minutes of action against forty minutes of warning, and that is not a gamble. Your point stands, though, and I do not want to wave it away: eleven families lost a night and two shops lost a delivery, and those losses are as real as the flood would have been. What they deserve is an accounting rather than an apology. On the probabilities, I would publish them, because a public that is never trusted with a number will never learn to read one.",
+              "An apology would be the wrong instrument, because it treats a correct decision as a mistake that happened to be lucky. The officer who closed Mill Street was working with ninety minutes of action against forty minutes of warning, and that is not a gamble. Your point stands, though, and I do not want to wave it away: eleven families lost a night and two stores lost a delivery, and those losses are as real as the flood would have been. What they deserve is an accounting rather than an apology. On the probabilities, I would publish them, because a public that is never trusted with a number will never learn to read one.",
             criteria: [
               "Görüş örnekle desteklendi mi?",
               "İtiraz küçümsenmeden karşılandı mı?",

@@ -474,20 +474,20 @@ What changed my mind about the alternative was not principle but a spreadsheet. 
 
 The obvious fix is to slow the process down. Give the panel a scoring sheet, make them write a sentence about each criterion, and the snap impression has to compete with something written. This helps. It helps a good deal less than the people who design the sheets expect. {{29}}
 
-A second approach removes the voice altogether from the first round. Written tasks, marked without names, produce shortlists that look different, and firms that try it rarely go back. {{30}}
+A second approach removes the voice altogether from the first round. Written tasks, scored without names, produce shortlists that look different, and firms that try it rarely go back. {{30}}
 
 There is a third position, which is that none of this addresses the customer. A law firm whose clients expect a particular voice is not being irrational when it hires that voice. It is passing on a preference that begins somewhere else. {{31}}
 
 That is a longer argument and a slower one. Given how few firms have ever asked a client what he actually wants, it is also the one least likely to be started. It also happens to be the only version of the problem that ends anywhere.`,
               gloss: [
                 { de: "a criterion", tr: "ölçüt", en: "das Kriterium" },
-                { de: "to anonymise", tr: "kimliksizleştirmek", en: "anonymisieren" },
+                { de: "to anonymize", tr: "kimliksizleştirmek", en: "anonymisieren" },
                 { de: "an obstacle", tr: "engel", en: "das Hindernis" },
               ],
             },
           ],
           options: [
-            { key: "a", label: "a", body: "The sheet gets filled in after the impression has formed, and it is remarkably good at justifying one." },
+            { key: "a", label: "a", body: "The sheet gets filled out after the impression has formed, and it is remarkably good at justifying one." },
             { key: "b", label: "b", body: "Impressions of competence are formed faster than anybody can be trained to notice them forming." },
             { key: "c", label: "c", body: "The cost is a day of somebody's time, and the objection is almost always that it feels impersonal." },
             { key: "d", label: "d", body: "Answering that requires changing the client, which no hiring policy can do on its own." },
@@ -551,7 +551,7 @@ That is a longer argument and a slower one. Given how few firms have ever asked 
             {
               key: "b",
               label: "b — Wren, speech coach",
-              body: "I teach people to be understood, which is not the same as teaching them to sound like a newsreader, although half my enquiries want the second thing. I turn those down now, and I lost income by doing it. What I will not do is pretend the market is fair while I am billing somebody for the consequences of it.",
+              body: "I teach people to be understood, which is not the same as teaching them to sound like a newsreader, although half my inquiries want the second thing. I turn those down now, and I lost income by doing it. What I will not do is pretend the market is fair while I am billing somebody for the consequences of it.",
             },
             {
               key: "c",
@@ -590,7 +590,7 @@ That is a longer argument and a slower one. Given how few firms have ever asked 
               text: "has refused work that is in demand",
               answer: "b",
               explain:
-                "Metin hem talebi hem reddi veriyor: «half my enquiries want the second thing. I turn those down now, and I lost income by doing it».",
+                "Metin hem talebi hem reddi veriyor: «half my inquiries want the second thing. I turn those down now, and I lost income by doing it».",
             },
             {
               kind: "match",
@@ -640,7 +640,7 @@ That is a longer argument and a slower one. Given how few firms have ever asked 
               situation: "Bir yönetici mülakat puanlama kâğıdından söz ediyor.",
               plays: 2,
               segments: [
-                { text: "We had a scoring sheet and everybody filled it in. Then I looked at the sheets and found that the candidate everybody liked had scored highest on every criterion, including two that nobody had asked about. That is not a scoring sheet. That is a receipt." },
+                { text: "We had a scoring sheet and everybody filled it out. Then I looked at the sheets and found that the candidate everybody liked had scored highest on every criterion, including two that nobody had asked about. That is not a scoring sheet. That is a receipt." },
               ],
             },
             {
@@ -720,7 +720,7 @@ That is a longer argument and a slower one. Given how few firms have ever asked 
               situation: "Bir konuşmacı ortak ölçünlü konuşma fikrini ele alıyor.",
               plays: 2,
               segments: [
-                { text: "There is a version of this argument that ends with everybody speaking the same way, and I want to say plainly that it would be a loss. But that is not the choice in front of a person filling in an application in a town with one employer. The loss is real and it is not theirs to carry." },
+                { text: "There is a version of this argument that ends with everybody speaking the same way, and I want to say plainly that it would be a loss. But that is not the choice in front of a person filling out an application in a town with one employer. The loss is real and it is not theirs to carry." },
               ],
             },
           ],
@@ -731,7 +731,7 @@ That is a longer argument and a slower one. Given how few firms have ever asked 
               no: 1,
               ref: "a1",
               text: "What is the speaker's point about the scoring sheet?",
-              options: ["It was filled in incorrectly by the panel", "It took far too long to complete", "It recorded a decision already made"],
+              options: ["It was filled out incorrectly by the panel", "It took far too long to complete", "It recorded a decision already made"],
               answer: 2,
               explain:
                 "Konuşmacı kâğıdı bir belge olarak yeniden adlandırıyor: «That is not a scoring sheet. That is a receipt». Sorulmamış iki ölçütte bile en yüksek puanın verilmesi bunu gösteriyor.",
@@ -752,7 +752,7 @@ That is a longer argument and a slower one. Given how few firms have ever asked 
               id: "en-b2-07-h1-3",
               no: 3,
               ref: "a3",
-              text: "What does the speaker do with most enquiries?",
+              text: "What does the speaker do with most inquiries?",
               options: ["Passes them on to a specialist colleague", "Tells them what they are really asking", "Offers them a shorter and cheaper course"],
               answer: 1,
               explain:
@@ -811,7 +811,7 @@ That is a longer argument and a slower one. Given how few firms have ever asked 
               options: ["A loss, but not the immediate question", "The only fair solution in the long term", "Something that has already happened"],
               answer: 0,
               explain:
-                "Konuşmacı kaybı kabul edip önceliği ayırıyor: «it would be a loss. But that is not the choice in front of a person filling in an application in a town with one employer».",
+                "Konuşmacı kaybı kabul edip önceliği ayırıyor: «it would be a loss. But that is not the choice in front of a person filling out an application in a town with one employer».",
             },
           ],
         },
@@ -1005,7 +1005,7 @@ The study took {{16}} years.`,
               situation: "Dördüncü konuşmacı sürecin dışındaki bir aktörü işaret ediyor.",
               plays: 2,
               segments: [
-                { text: "You can anonymise the first round, and you should. But the client who rings up and says he wants somebody who sounds a certain way is not in your hiring process, and no policy of yours reaches him." },
+                { text: "You can anonymize the first round, and you should. But the client who calls and says he wants somebody who sounds a certain way is not in your hiring process, and no policy of yours reaches him." },
               ],
             },
             {
@@ -1027,7 +1027,7 @@ The study took {{16}} years.`,
               situation: "Altıncı konuşmacı kabul ettiği işleri anlatıyor.",
               plays: 2,
               segments: [
-                { text: "I still teach clarity and I always will. What I stopped taking is the enquiry that begins: I want to sound less like where I am from. I used to take those, and I was better paid then." },
+                { text: "I still teach clarity and I always will. What I stopped taking is the inquiry that begins: I want to sound less like where I am from. I used to take those, and I was better paid then." },
               ],
             },
           ],
@@ -1090,7 +1090,7 @@ The study took {{16}} years.`,
               text: "Speaker 6",
               answer: "c",
               explain:
-                "Konuşmacı kabul ettiği işi daralttığını ve bedelini söylüyor: «What I stopped taking is the enquiry that begins … I used to take those, and I was better paid then».",
+                "Konuşmacı kabul ettiği işi daralttığını ve bedelini söylüyor: «What I stopped taking is the inquiry that begins … I used to take those, and I was better paid then».",
             },
           ],
         },
@@ -1254,7 +1254,7 @@ The honest answer is: less than its supporters claim, and more than nothing. An 
 
 The question of cost seems to me the stronger argument. At present the cost is carried by the candidate, who is expected to pay for lessons in order to repair a problem somebody else created. Moving that cost to the employer, who at least benefits from a better shortlist, is a fairer distribution whatever the size of the effect.
 
-My own reservation concerns the second round, which nobody anonymises and nobody examines.
+My own reservation concerns the second round, which nobody anonymizes and nobody examines.
 
 Employers should remove the voice from the first stage, provided they are willing to look at what happens after it.`,
             criteria: [
@@ -1273,7 +1273,7 @@ Employers should remove the voice from the first stage, provided they are willin
           format: "writing",
           goal: "interaction",
           prompt:
-            "Your company trialled anonymous written tasks in the first round of hiring for six months. Your manager has asked you for a short report. Say what was tried, what the results were and what you recommend for next year. Write 140 to 190 words.",
+            "Your company piloted anonymous written tasks in the first round of hiring for six months. Your manager has asked you for a short report. Say what was tried, what the results were and what you recommend for next year. Write 140 to 190 words.",
           promptTr:
             "Şirketin altı ay boyunca işe alımın ilk turunda kimliksiz yazılı görevleri denedi. Yöneticin senden kısa bir rapor istedi. Neyin denendiğini, sonuçların ne olduğunu ve gelecek yıl için ne önerdiğini yaz. 140–190 kelime.",
           items: [],
@@ -1281,7 +1281,7 @@ Employers should remove the voice from the first stage, provided they are willin
             minWords: 140,
             points: [
               { de: "Say what was tried and for how long.", tr: "Neyin ve ne kadar süre denendiğini söyle." },
-              { de: "Give the results, including one that is not favourable.", tr: "Sonuçları ver; olumsuz olan birini de içersin." },
+              { de: "Give the results, including one that is not favorable.", tr: "Sonuçları ver; olumsuz olan birini de içersin." },
               { de: "Make a clear recommendation for next year.", tr: "Gelecek yıl için açık bir öneri yap." },
             ],
             sample: `Purpose
@@ -1290,13 +1290,13 @@ This report sets out the results of the six-month trial of anonymous written tas
 
 What was tried
 
-Between January and June, all first-round applications were marked without names, photographs or recordings. Two assessors marked each task independently. The second round was unchanged.
+Between January and June, all first-round applications were scored without names, photographs or recordings. Two assessors scored each task independently. The second round was unchanged.
 
 Results
 
 Shortlists changed noticeably. The proportion of candidates from outside the two universities we usually draw on rose from a fifth to almost a third, and the eventual hires performed no worse in their first six months.
 
-One result was less encouraging. Marking took approximately forty additional hours across the period, and three assessors reported that they found the process impersonal. Two candidates said the same.
+One result was less encouraging. Scoring took approximately forty additional hours across the period, and three assessors reported that they found the process impersonal. Two candidates said the same.
 
 Recommendation
 
@@ -1345,7 +1345,7 @@ I recommend that we continue for a further year, with one change: the second rou
               { de: "use a second conditional", tr: "İkinci tip koşulu kullanmak" },
             ],
             sample:
-              "A first impression tells you a great deal about how somebody wants to be seen and very little about what they can do. I once interviewed for a job in a town where I had never lived, and the first question was about my surname; I was not offered the post and I still do not know whether those two things are connected, which is exactly the difficulty. If I were designing an interview from nothing, I would keep a task the person actually does in the job and I would put it first, because a conversation can be prepared and a task cannot.",
+              "A first impression tells you a great deal about how somebody wants to be seen and very little about what they can do. I once interviewed for a job in a town where I had never lived, and the first question was about my last name; I was not offered the position and I still do not know whether those two things are connected, which is exactly the difficulty. If I were designing an interview from nothing, I would keep a task the person actually does in the job and I would put it first, because a conversation can be prepared and a task cannot.",
             criteria: [
               "Görüş bir örnekle mi desteklendi?",
               "Deneyim somut mu ve sonucu verildi mi?",
@@ -1374,7 +1374,7 @@ I recommend that we continue for a further year, with one change: the second rou
               { de: "identify a problem with your own choice", tr: "Kendi seçiminde bir sorunu adlandır" },
             ],
             sample:
-              "Training works, and I want to concede that at the start, because the people who defend it are not fools. A candidate who takes the course is more likely to be hired this year, which is the year she needs. What the training cannot do is change the thing that made it necessary, and it sends the bill to the person with the least money. Removing the voice reaches the mechanism instead of the candidate, and the firms that have tried it report shortlists of a different shape. I would choose that. The problem with my own choice is that it stops at the first round: the second round is a conversation in a room, nobody anonymises it, and it is perfectly capable of undoing everything the first round achieved.",
+              "Training works, and I want to concede that at the start, because the people who defend it are not fools. A candidate who takes the course is more likely to be hired this year, which is the year she needs. What the training cannot do is change the thing that made it necessary, and it sends the bill to the person with the least money. Removing the voice reaches the mechanism instead of the candidate, and the firms that have tried it report shortlists of a different shape. I would choose that. The problem with my own choice is that it stops at the first round: the second round is a conversation in a room, nobody anonymizes it, and it is perfectly capable of undoing everything the first round achieved.",
             criteria: [
               "İki yaklaşım da gerçekten karşılaştırıldı mı?",
               "Karşı tarafın gücü kabul edildi mi? (I want to concede that …)",
@@ -1411,7 +1411,7 @@ I recommend that we continue for a further year, with one change: the second rou
               { de: "agree an order with reasons", tr: "Gerekçeli bir sıralamada anlaşmak" },
             ],
             sample:
-              "The written first round is the only one of the four that changes what the panel sees, and everything else changes what the panel says afterwards. You are right that the client survey looks weak from inside the company, and I partly accept that; what I would defend is that it removes an excuse rather than creating one, because three firms out of four have never asked. The scoring sheet is the one I would leave until last, since it is filled in after the impression has already formed. So: written tasks first, then the training, then the client survey, and the sheet last.",
+              "The written first round is the only one of the four that changes what the panel sees, and everything else changes what the panel says afterwards. You are right that the client survey looks weak from inside the company, and I partly accept that; what I would defend is that it removes an excuse rather than creating one, because three firms out of four have never asked. The scoring sheet is the one I would leave until last, since it is filled out after the impression has already formed. So: written tasks first, then the training, then the client survey, and the sheet last.",
             criteria: [
               "Seçenekler birbirine karşı mı değerlendirildi?",
               "İtiraza doğrudan karşılık verildi mi ve kısmi kabul yapılabildi mi?",

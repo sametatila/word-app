@@ -44,7 +44,7 @@ export const EN_C1_12: MockPaper = {
               id: "t1",
               genre: "Feature article",
               genreTr: "İnceleme yazısı",
-              title: "Nobody stands in a queue by accident",
+              title: "Nobody stands in line by accident",
               body: `A waiting list presents itself as an administrative object and is nothing of the kind. Somebody chose the order, and the {{1}} of that choice is that some people wait while others do not.
 
 The most common ordering rule is arrival, which has the advantage of being impossible to argue with and the {{2}} of being indifferent to consequence. Two people who arrive on the same morning may be facing wholly different costs of delay, and arrival cannot see the difference.
@@ -141,7 +141,7 @@ It is not the length of a wait that provokes the strongest objection. It is the 
 
 Nor {{9}} the difficulty removed by publishing the criteria. Published criteria are read by the people best equipped to read them, which is not the same population as the people waiting.
 
-{{10}} makes randomisation attractive, in the narrow set of cases where no criterion can distinguish between applicants, is that it is the only rule nobody can present as a judgment about them.
+{{10}} makes randomization attractive, in the narrow set of cases where no criterion can distinguish between applicants, is that it is the only rule nobody can present as a judgment about them.
 
 At no point {{11}} the profession claimed that a queue is fair. The claim has always been the weaker and more defensible one: that it is more accountable than the arrangement it replaced.
 
@@ -183,7 +183,7 @@ That is by {{12}} means a small claim, although it is routinely dismissed as one
               text: "Gap 10",
               accept: ["what"],
               explain:
-                "Cümle bir yarma kuruluş: «What makes randomisation attractive … is that …». Özne konumunda ad tümcesi `what` ile kurulur.",
+                "Cümle bir yarma kuruluş: «What makes randomization attractive … is that …». Özne konumunda ad tümcesi `what` ile kurulur.",
             },
             {
               kind: "gap",
@@ -731,7 +731,7 @@ What follows from this is not that criteria are worthless. It is that a criterio
                 { speaker: "Journalist", text: "Did you ever move somebody up?" },
                 { speaker: "Man", text: "Never in nine years, and I would have been caught if I had. That is not where the problem was." },
                 { speaker: "Journalist", text: "Where was it?" },
-                { speaker: "Man", text: "Before me. Two applicants in the same position, and one of them has an aunt who has been through this and knows which office to ring on a Tuesday. That one is talking to a human being inside a week. The other is waiting for a letter that answers a question nobody asked." },
+                { speaker: "Man", text: "Before me. Two applicants in the same position, and one of them has an aunt who has been through this and knows which office to call on a Tuesday. That one is talking to a human being inside a week. The other is waiting for a letter that answers a question nobody asked." },
                 { speaker: "Journalist", text: "So the criteria were fine." },
                 { speaker: "Man", text: "The criteria were fine and largely beside the point, which is the sentence nobody in this argument wants to hear." },
               ],
@@ -1194,7 +1194,7 @@ The recommendation is to publish the {{14}} alongside the median.`,
               situation: "Dördüncü konuşmacı adaletsizliğin yerini gösteriyor.",
               plays: 2,
               segments: [
-                { text: "Nine years, and I never moved a name I could not justify. The gap opened before anybody reached my screen: one applicant with a relative who knew which office to ring, the other holding a letter that answered a question she had not asked." },
+                { text: "Nine years, and I never moved a name I could not justify. The gap opened before anybody reached my screen: one applicant with a relative who knew which office to call, the other holding a letter that answered a question she had not asked." },
               ],
             },
             {
@@ -1341,7 +1341,7 @@ The recommendation is to publish the {{14}} alongside the median.`,
           format: "writing",
           goal: "production",
           prompt:
-            "You have read an article arguing that waiting lists disguise choices as procedures. Write an essay for your tutor discussing which of the following should determine a person's place in a queue, and explaining why the other two are weaker: the order of arrival, an assessment of need, or a lottery among comparable cases. Write 220 to 260 words.",
+            "You have read an article arguing that waiting lists disguise choices as procedures. Write an essay for your instructor discussing which of the following should determine a person's place in a queue, and explaining why the other two are weaker: the order of arrival, an assessment of need, or a lottery among comparable cases. Write 220 to 260 words.",
           promptTr:
             "Bekleme listelerinin seçimleri usul gibi gösterdiğini savunan bir yazı okudun. Danışmanın için bir deneme yaz: bir kişinin kuyruktaki yerini aşağıdakilerden hangisi belirlemeli ve öteki ikisi neden daha zayıftır? Varış sırası, ihtiyaç değerlendirmesi ya da benzer durumlar arasında kura. 220–260 kelime.",
           items: [],

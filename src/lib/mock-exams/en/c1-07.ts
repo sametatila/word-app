@@ -134,9 +134,9 @@ What happened instead is that selection moved. It now takes place at the moment 
               genre: "Review article",
               genreTr: "Derleme yazısı",
               title: "The economics of keeping",
-              body: `Nothing is kept for nothing. Storage costs money, cataloguing costs a great deal more, and {{7}} the two it is the second that gets cut.
+              body: `Nothing is kept for nothing. Storage costs money, cataloging costs a great deal more, and {{7}} the two it is the second that gets cut.
 
-An uncatalogued collection is not, in any working sense, an archive {{8}} all: it exists, and nobody can reach it.
+An uncataloged collection is not, in any working sense, an archive {{8}} all: it exists, and nobody can reach it.
 
 Institutions are aware of this, which is {{9}} the backlog figures are so rarely published. The reluctance of institutions to release them is itself a finding of a kind.
 
@@ -224,7 +224,7 @@ Nor {{12}} the problem confined to paper: material that was digital from the sta
 
 The {{14}} of a document is not a passive state. It requires periodic intervention, and the intervals are set by budgets rather than by the material itself.
 
-A collection that has not been catalogued is, for practical purposes, {{15}}, whatever its physical condition.
+A collection that has not been cataloged is, for practical purposes, {{15}}, whatever its physical condition.
 
 Critics of the field argue that appraisal criteria reflect {{16}} priorities which are seldom stated and never audited.
 
@@ -360,7 +360,7 @@ Reviews of the literature conclude that the most consequential decisions in the 
 
 The material was the correspondence of a regional office over thirty-one years: leave requests, travel claims, the internal weather of a bureaucracy. We kept a sample of one year in five and a complete run of the minutes. The rest went.
 
-The objection I hear most often is that I could not know what a historian in 2090 would want. That objection is correct and it is not an argument. Nobody can know. The alternative on offer was not omniscience; it was a different decision, which was to keep everything and catalog none of it. An uncatalogued box is not a preserved record. It is a preserved object, and the two are confused constantly by people who have never tried to find anything.
+The objection I hear most often is that I could not know what a historian in 2090 would want. That objection is correct and it is not an argument. Nobody can know. The alternative on offer was not omniscience; it was a different decision, which was to keep everything and catalog none of it. An uncataloged box is not a preserved record. It is a preserved object, and the two are confused constantly by people who have never tried to find anything.
 
 What I did get wrong was the writing. We recorded what we destroyed, in the sense that a line exists giving the series and its extent. We did not record why, and the why is the only part a future reader could have argued with. It would have cost a two weeks.
 
@@ -448,7 +448,7 @@ I notice that the digital form of this problem is discussed as though it had bee
             {
               key: "a",
               label: "a — Writer A",
-              body: "The proposal to digitise everything is presented as an alternative to appraisal. It is not. It is appraisal performed by whoever writes the funding bid, since the collections that get scanned are the ones that photograph well and the ones a sponsor has already heard of.",
+              body: "The proposal to digitize everything is presented as an alternative to appraisal. It is not. It is appraisal performed by whoever writes the funding bid, since the collections that get scanned are the ones that photograph well and the ones a sponsor has already heard of.",
             },
             {
               key: "b",
@@ -468,7 +468,7 @@ I notice that the digital form of this problem is discussed as though it had bee
             {
               key: "e",
               label: "e — Writer E",
-              body: "Any reform here has to begin with the money, and the money is not in the collections; it is in the catalog. A backlog is not a storage problem. It is an unpaid wage bill, and every institution I know would rather buy a building than a cataloguer.",
+              body: "Any reform here has to begin with the money, and the money is not in the collections; it is in the catalog. A backlog is not a storage problem. It is an unpaid wage bill, and every institution I know would rather buy a building than a cataloger.",
             },
           ],
           items: [
@@ -602,7 +602,7 @@ Seventeen years on, the pilot has produced about four terabytes and one genuinel
             {
               key: "a",
               label: "a — Conservator",
-              body: "The queue on my bench is decided by what has been requested, which sounds fair and is not. A document nobody can find is never requested, so the material at the uncatalogued end of the store ages quietly while I re-house things that are already in good order. I have raised this twice and been told, correctly, that it is not my decision to make.",
+              body: "The queue on my bench is decided by what has been requested, which sounds fair and is not. A document nobody can find is never requested, so the material at the uncataloged end of the store ages quietly while I re-house things that are already in good order. I have raised this twice and been told, correctly, that it is not my decision to make.",
             },
             {
               key: "b",
@@ -722,10 +722,10 @@ Seventeen years on, the pilot has produced about four terabytes and one genuinel
               situation: "İki kişi bir fon başvurusunu tartışıyor.",
               plays: 2,
               segments: [
-                { speaker: "Woman", text: "The plan says digitise, and it does not say catalog." },
+                { speaker: "Woman", text: "The plan says digitize, and it does not say catalog." },
                 { speaker: "Man", text: "The panel will notice that." },
                 { speaker: "Woman", text: "The panel will fund it. They funded the last one, and that collection is now four thousand images which nobody can search." },
-                { speaker: "Man", text: "So we write the cataloguing in and we lose on cost." },
+                { speaker: "Man", text: "So we write the cataloging in and we lose on cost." },
                 { speaker: "Woman", text: "We write it in and we lose on cost this year. The alternative is winning and producing another unusable set, and I would rather explain a failed bid than that." },
               ],
             },
@@ -739,9 +739,9 @@ Seventeen years on, the pilot has produced about four terabytes and one genuinel
               segments: [
                 { speaker: "Man", text: "The company's records were pulped in 2003, and everybody assumes that somebody made a decision." },
                 { speaker: "Host", text: "You think not?" },
-                { speaker: "Man", text: "I went and looked. There is a lease that ended, an invoice for a skip, and no minute of any kind. It was a Tuesday and somebody needed the room." },
+                { speaker: "Man", text: "I went and looked. There is a lease that ended, an invoice for a dumpster, and no minute of any kind. It was a Tuesday and somebody needed the room." },
                 { speaker: "Host", text: "That is worse, in a way." },
-                { speaker: "Man", text: "It is much worse, and it is also far more common. Deliberate destruction leaves a trail you can argue with. This leaves an invoice for a skip." },
+                { speaker: "Man", text: "It is much worse, and it is also far more common. Deliberate destruction leaves a trail you can argue with. This leaves an invoice for a dumpster." },
               ],
             },
           ],
@@ -774,7 +774,7 @@ Seventeen years on, the pilot has produced about four terabytes and one genuinel
               no: 3,
               ref: "a2",
               text: "What is the woman's position?",
-              options: ["It is better to lose the bid than repeat the last one", "The panel is certain to reject the plan", "The cataloguing should be added afterwards"],
+              options: ["It is better to lose the bid than repeat the last one", "The panel is certain to reject the plan", "The cataloging should be added afterwards"],
               answer: 0,
               explain:
                 "Kadın iki sonucu karşılaştırıp seçiyor: «I would rather explain a failed bid than that», yani kullanılamaz bir küme daha üretmektense kaybetmeyi yeğliyor.",
@@ -810,7 +810,7 @@ Seventeen years on, the pilot has produced about four terabytes and one genuinel
               options: ["There is nothing that can be argued with", "Far more material was lost than expected", "The company denied that it had happened"],
               answer: 0,
               explain:
-                "Adam karşıtlığı kuruyor: «Deliberate destruction leaves a trail you can argue with. This leaves an invoice for a skip».",
+                "Adam karşıtlığı kuruyor: «Deliberate destruction leaves a trail you can argue with. This leaves an invoice for a dumpster».",
             },
           ],
         },
@@ -833,7 +833,7 @@ Seventeen years on, the pilot has produced about four terabytes and one genuinel
               plays: 2,
               segments: [
                 {
-                  text: "Thank you. These are the figures from the appraisal review, and I will include the ones that were awkward. The review covered nine collections and thirty-one years of accessions. Our first finding is that the average time between transfer and cataloguing is now four years, which is up from eighteen months a decade ago. Second, on requests: sixty percent of everything we are asked for sits on less than two percent of the shelving. Third, on destruction: of the series destroyed since 1994, we can give a reason for eleven percent. Fourth, the awkward one — when we asked our own staff to appraise the same test collection independently, the two lists agreed on about a third. And finally, on cost: cataloguing accounts for seventy percent of what we spend on a collection across its life, and it is the first line cut in every budget round.",
+                  text: "Thank you. These are the figures from the appraisal review, and I will include the ones that were awkward. The review covered nine collections and thirty-one years of accessions. Our first finding is that the average time between transfer and cataloging is now four years, which is up from eighteen months a decade ago. Second, on requests: sixty percent of everything we are asked for sits on less than two percent of the shelving. Third, on destruction: of the series destroyed since 1994, we can give a reason for eleven percent. Fourth, the awkward one — when we asked our own staff to appraise the same test collection independently, the two lists agreed on about a third. And finally, on cost: cataloging accounts for seventy percent of what we spend on a collection across its life, and it is the first line cut in every budget round.",
                 },
               ],
             },
@@ -847,7 +847,7 @@ Seventeen years on, the pilot has produced about four terabytes and one genuinel
 
 It covered {{8}} years of accessions.
 
-The average wait between transfer and cataloguing is now {{9}} years.
+The average wait between transfer and cataloging is now {{9}} years.
 
 Sixty percent of requests are for material on less than {{10}} percent of the shelving.
 
@@ -889,7 +889,7 @@ Cataloguing is the first line {{14}} in a budget round.`,
               text: "Gap 9",
               accept: ["4", "four"],
               explain:
-                "«the average time between transfer and cataloguing is now four years» — bugünkü değer. On sekiz ay ise on yıl önceki değer.",
+                "«the average time between transfer and cataloging is now four years» — bugünkü değer. On sekiz ay ise on yıl önceki değer.",
             },
             {
               kind: "gap",
@@ -929,7 +929,7 @@ Cataloguing is the first line {{14}} in a budget round.`,
               text: "Gap 13",
               accept: ["70", "seventy"],
               explain:
-                "«cataloguing accounts for seventy percent of what we spend on a collection across its life» — ömür boyu harcamadaki pay.",
+                "«cataloging accounts for seventy percent of what we spend on a collection across its life» — ömür boyu harcamadaki pay.",
             },
             {
               kind: "gap",
@@ -964,7 +964,7 @@ Cataloguing is the first line {{14}} in a budget round.`,
                 { speaker: "Chair", text: "Halvard, you have argued against publishing the criteria in full. Why?" },
                 { speaker: "Halvard", text: "Because criteria that are published are criteria that are gamed. The moment a department knows which categories we keep, the interesting material gets filed in the categories we do not." },
                 { speaker: "Chair", text: "Ines, is that a real risk?" },
-                { speaker: "Ines", text: "It is real and it is not decisive. Everything Halvard describes is already happening, and it happens without publication because departments learn the criteria informally within about two years. Publication would only equalise who knows." },
+                { speaker: "Ines", text: "It is real and it is not decisive. Everything Halvard describes is already happening, and it happens without publication because departments learn the criteria informally within about two years. Publication would only equalize who knows." },
                 { speaker: "Chair", text: "Runa, from inside a department?" },
                 { speaker: "Runa", text: "I would confirm Ines on the facts and disagree on the conclusion. We do learn the criteria, and we learn them badly, which produces caution rather than evasion. People over-file. If you published, you would get less material rather than more, and it would be better sorted." },
                 { speaker: "Chair", text: "Halvard, does that change anything for you?" },
@@ -1198,7 +1198,7 @@ Cataloguing is the first line {{14}} in a budget round.`,
               situation: "Altıncı konuşmacı bir başarının nasıl ortaya çıktığını anlatıyor.",
               plays: 2,
               segments: [
-                { text: "Our regional collection is the most complete in the country, and I have heard three conference papers explaining why. The real reason is that the building had a dry cellar and no money for a skip, so nothing was thrown away for forty years. It was neglect, and it has been written up as policy." },
+                { text: "Our regional collection is the most complete in the country, and I have heard three conference papers explaining why. The real reason is that the building had a dry basement and no money for a dumpster, so nothing was thrown away for forty years. It was neglect, and it has been written up as policy." },
               ],
             },
             {
@@ -1323,7 +1323,7 @@ Cataloguing is the first line {{14}} in a budget round.`,
           format: "writing",
           goal: "production",
           prompt:
-            "You have attended a seminar on public records. Write an essay for your tutor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. An institution should keep as much as it possibly can, because nobody can know what will be wanted later.\n2. An institution should keep less and describe what it keeps, because material that cannot be found has not been kept.\n\nWrite 220 to 260 words.",
+            "You have attended a seminar on public records. Write an essay for your instructor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. An institution should keep as much as it possibly can, because nobody can know what will be wanted later.\n2. An institution should keep less and describe what it keeps, because material that cannot be found has not been kept.\n\nWrite 220 to 260 words.",
           promptTr:
             "Kamu belgeleri üzerine bir seminere katıldın. Danışmanın için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Kurum elinden geldiğince çok şey saklamalı, çünkü sonradan neyin isteneceği bilinemez.\n2. Kurum daha az saklamalı ve sakladığını betimlemeli, çünkü bulunamayan şey saklanmış sayılmaz.\n\n220–260 kelime yaz.",
           items: [],
@@ -1458,7 +1458,7 @@ I would not recommend scanning on request as the sole route of access, and I wou
               { de: "state a serious objection to your own position", tr: "Kendi konumuna ciddi bir itiraz getir" },
             ],
             sample:
-              "The first approach has the advantage of deferring a judgment that nobody is qualified to make, and the record of appraisal decisions is bad enough to justify a good deal of humility. Against that, it defers the judgment onto the search, and the search is performed by software whose criteria are less inspectable than a committee's. The second approach accepts a real loss in exchange for a collection that can actually be entered, and I would defend it, chiefly because cataloguing is the first thing cut in every budget round, which means that a policy of total retention produces vast unusable holdings while allowing everybody to feel that nothing has gone. The serious objection to my own position is that the categories dismissed as routine are precisely the ones that later turn out to carry the only evidence about people who left nothing else; canteen accounts and complaints files are the standard examples, and they are standard because the profession has got them wrong more than once.",
+              "The first approach has the advantage of deferring a judgment that nobody is qualified to make, and the record of appraisal decisions is bad enough to justify a good deal of humility. Against that, it defers the judgment onto the search, and the search is performed by software whose criteria are less inspectable than a committee's. The second approach accepts a real loss in exchange for a collection that can actually be entered, and I would defend it, chiefly because cataloging is the first thing cut in every budget round, which means that a policy of total retention produces vast unusable holdings while allowing everybody to feel that nothing has gone. The serious objection to my own position is that the categories dismissed as routine are precisely the ones that later turn out to carry the only evidence about people who left nothing else; canteen accounts and complaints files are the standard examples, and they are standard because the profession has got them wrong more than once.",
             criteria: [
               "İki yaklaşım da gerçekten karşılaştırıldı mı?",
               "Konum gerekçelendirildi mi?",
@@ -1473,14 +1473,14 @@ I would not recommend scanning on request as the sole route of access, and I wou
           format: "speaking",
           goal: "interaction",
           prompt:
-            "An institution has one year of a cataloguer's time and four candidate collections. Talk with me about how the year should be spent, and agree on a way of deciding rather than on a list.",
+            "An institution has one year of a cataloger's time and four candidate collections. Talk with me about how the year should be spent, and agree on a way of deciding rather than on a list.",
           promptTr:
             "Bir kurumun bir kataloglayıcının bir yıllık zamanı ve dört aday koleksiyonu var. Yılın nasıl harcanacağını benimle konuş ve bir liste üzerinde değil, bir karar verme yolu üzerinde anlaş.",
           prepSeconds: 30,
           exchange: [
-            { who: "partner", de: "The four are: a much-requested collection with a poor catalog, a large uncatalogued one nobody has asked for, a small collection a funder wants scanned, and the institution's own administrative records. Where would you start?", tr: "Dördü şunlar: çok istenen ama kataloğu kötü bir koleksiyon, kimsenin sormadığı kataloglanmamış büyük bir koleksiyon, bir bağışçının taranmasını istediği küçük bir koleksiyon ve kurumun kendi idari kayıtları. Nereden başlardın?" },
+            { who: "partner", de: "The four are: a much-requested collection with a poor catalog, a large uncataloged one nobody has asked for, a small collection a funder wants scanned, and the institution's own administrative records. Where would you start?", tr: "Dördü şunlar: çok istenen ama kataloğu kötü bir koleksiyon, kimsenin sormadığı kataloglanmamış büyük bir koleksiyon, bir bağışçının taranmasını istediği küçük bir koleksiyon ve kurumun kendi idari kayıtları. Nereden başlardın?" },
             { who: "you", hint: "Bir başlangıç seç ve seçimi bir ölçüte bağla.", expect: "bir seçeneği seçmek ve onu açık bir ölçütle gerekçelendirmek", seconds: 45 },
-            { who: "partner", de: "But the uncatalogued collection is unrequested precisely because it is uncatalogued, so demand cannot be the criterion. Does that not undo your argument?", tr: "Ama kataloglanmamış koleksiyon tam da kataloglanmadığı için istenmiyor; yani talep ölçüt olamaz. Bu savını çürütmüyor mu?" },
+            { who: "partner", de: "But the uncataloged collection is unrequested precisely because it is uncataloged, so demand cannot be the criterion. Does that not undo your argument?", tr: "Ama kataloglanmamış koleksiyon tam da kataloglanmadığı için istenmiyor; yani talep ölçüt olamaz. Bu savını çürütmüyor mu?" },
             { who: "you", hint: "İtirazın gücünü teslim et ve ölçütünü onaracak biçimde yeniden kur.", expect: "bir itirazı teslim edip kendi ölçütünü yeniden kurmak", seconds: 45 },
             { who: "partner", de: "Then give me the rule we would write down, not the collection we would choose.", tr: "Öyleyse bana seçeceğimiz koleksiyonu değil, yazacağımız kuralı ver." },
             { who: "you", hint: "Genel ve uygulanabilir bir kural formüle et.", expect: "tek bir olaydan genel bir kurala geçmek ve onu ifade etmek", seconds: 45 },
@@ -1494,7 +1494,7 @@ I would not recommend scanning on request as the sole route of access, and I wou
               { de: "formulate a general rule", tr: "Genel bir kural formüle etmek" },
             ],
             sample:
-              "I would start with the much-requested collection, on the criterion that a bad catalog over heavy use wastes more reader time than any other configuration. You are right that this criterion is circular, and I want to concede that properly rather than qualify it: demand measures description, not value, so it cannot be the whole rule. What I would keep from it is the observation about waste, and what I would add is a cheap test for the unknown collection — a week of sampling rather than a year of cataloguing. So the rule we write down is this: spend on the collections where use is known to be high, but reserve a fixed tenth of the year for sampling the ones we cannot see, and publish what the sampling found so that the next decision is made on something other than silence.",
+              "I would start with the much-requested collection, on the criterion that a bad catalog over heavy use wastes more reader time than any other configuration. You are right that this criterion is circular, and I want to concede that properly rather than qualify it: demand measures description, not value, so it cannot be the whole rule. What I would keep from it is the observation about waste, and what I would add is a cheap test for the unknown collection — a week of sampling rather than a year of cataloging. So the rule we write down is this: spend on the collections where use is known to be high, but reserve a fixed tenth of the year for sampling the ones we cannot see, and publish what the sampling found so that the next decision is made on something other than silence.",
             criteria: [
               "Seçim açık bir ölçütle mi gerekçelendirildi?",
               "İtirazın gücü gerçekten teslim edildi mi, yoksa geçiştirildi mi?",

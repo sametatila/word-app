@@ -26,7 +26,7 @@ export const EN_B1_07: MockPaper = {
       skill: "reading",
       minutes: 55,
       instruction:
-        "There are six tasks in this part. You read short texts, adverts, an article and three texts with gaps. Answer each question with one choice.",
+        "There are six tasks in this part. You read short texts, ads, an article and three texts with gaps. Answer each question with one choice.",
       instructionTr:
         "Bu bölümde altı görev var. Kısa metinler, ilanlar, bir yazı ve boşluklu üç metin okuyacaksın. Her soruda doğru cevabı işaretle.",
       tasks: [
@@ -52,7 +52,7 @@ export const EN_B1_07: MockPaper = {
               genre: "Email",
               genreTr: "E-posta",
               title: "The driving group",
-              body: `Dear Runa, I am leaving the driving group in March after four years. The job is one afternoon a week and a list of eleven people who need a lift. I am not asking you to say yes today; I am asking you to come once and watch. Nobody has ever said yes to this job on the telephone.`,
+              body: `Dear Runa, I am leaving the driving group in March after four years. The job is one afternoon a week and a list of eleven people who need a ride. I am not asking you to say yes today; I am asking you to come once and watch. Nobody has ever said yes to this job on the telephone.`,
             },
             {
               kind: "text",
@@ -60,7 +60,7 @@ export const EN_B1_07: MockPaper = {
               genre: "Notice",
               genreTr: "Duyuru",
               title: "The shelf in the hallway",
-              body: `Anything on the shelf is free and anybody may take it. Please do not leave fresh food; nobody knows how long it has been there. Tins, rice and pasta are always useful. The shelf is emptied on Sunday evenings and whatever is left goes up to the kitchen on the first floor.`,
+              body: `Anything on the shelf is free and anybody may take it. Please do not leave fresh food; nobody knows how long it has been there. Canned food, rice and pasta are always useful. The shelf is emptied on Sunday evenings and whatever is left goes up to the kitchen on the first floor.`,
             },
             {
               kind: "text",
@@ -108,7 +108,7 @@ export const EN_B1_07: MockPaper = {
               no: 3,
               ref: "m3",
               text: "What should people not leave on the shelf?",
-              options: ["Food that does not keep", "Tins, rice and pasta", "Anything at all on Sundays"],
+              options: ["Food that does not keep", "Canned food, rice and pasta", "Anything at all on Sundays"],
               answer: 0,
               explain:
                 "Duyuru gerekçesiyle birlikte yasaklıyor: «Please do not leave fresh food; nobody knows how long it has been there». Konserve ve pirinç tam tersine isteniyor.",
@@ -143,7 +143,7 @@ export const EN_B1_07: MockPaper = {
           format: "match",
           goal: "orientation",
           prompt:
-            "Here are five people, 6 to 10. There are also eight adverts, a to h. Which group is right for each person? No advert is used twice.",
+            "Here are five people, 6 to 10. There are also eight ads, a to h. Which group is right for each person? No ad is used twice.",
           promptTr:
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi grup uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
@@ -347,7 +347,7 @@ I should say what the board does not show. It does not show the six families who
           options: [
             { key: "a", label: "a", body: "By the end I had fifty-two photographs and a pattern I could not argue with." },
             { key: "b", label: "b", body: "That is probably true, but it does not explain why a good offer can sit there for weeks." },
-            { key: "c", label: "c", body: "The difference between those two notes is not generosity; it is that one of them can be put in a diary." },
+            { key: "c", label: "c", body: "The difference between those two notes is not generosity; it is that one of them can be put in a calendar." },
             { key: "d", label: "d", body: "For that you would have to stand in the hallway all week, and I was not willing to go that far." },
             { key: "e", label: "e", body: "The counting was simple enough: forty-one requests, twenty-nine offers and one lost cat." },
             { key: "f", label: "f", body: "The building was put up in 1962 and the hallway has not been painted since." },
@@ -769,7 +769,7 @@ And if you are ill, tell somebody early. Nothing here depends {{30}} one person,
               segments: [
                 { speaker: "Sarah", text: "He offered twenty hours a week and she said no." },
                 { speaker: "Tom", text: "I would have taken it." },
-                { speaker: "Sarah", text: "He did the same at the school last year. Six weeks, then nothing, and they had built the timetable round him." },
+                { speaker: "Sarah", text: "He did the same at the school last year. Six weeks, then nothing, and they had built the schedule around him." },
                 { speaker: "Tom", text: "All right, that is fair. Two hours that keep going is worth more." },
               ],
             },
@@ -833,7 +833,7 @@ And if you are ill, tell somebody early. Nothing here depends {{30}} one person,
               no: 8,
               ref: "b1",
               text: "What is the first speaker doing?",
-              options: ["Complaining about her neighbors", "Explaining why one note worked", "Asking for a lift to the shops"],
+              options: ["Complaining about her neighbors", "Explaining why one note worked", "Asking for a ride to the store"],
               answer: 1,
               explain:
                 "Konuşmacı iki notu karşılaştırıp farkı adlandırıyor: «Same offer, one difference» — ikincisi gün ve saat veriyor. Komşulardan yakınma yok.",
@@ -1035,7 +1035,7 @@ Tell Selma by:         {{19}}`,
               no: 20,
               ref: "d1",
               text: "What does Noor say about her reputation?",
-              options: ["It is close to the truth", "It only fitted her first year", "She has never turned anybody away"],
+              options: ["It is close to the truth", "It only fit her first year", "She has never turned anybody away"],
               answer: 0,
               explain:
                 "Noor itirazını sınırlıyor: «It is not quite fair, but it is close», sonra sayı veriyor: «about a third of the people who offered».",
@@ -1126,7 +1126,7 @@ Tell Selma by:         {{19}}`,
             ],
             sample: `Dear all,
 
-On 3 October I filled in the form on your website and offered to help with the hallway shelf. I have not had an answer, which is fine — I know you are busy.
+On October 3 I filled out the form on your website and offered to help with the hallway shelf. I have not had an answer, which is fine — I know you are busy.
 
 I would like to make the offer smaller and clearer. I can be at the building every Tuesday from five to seven. I can sort what is on the shelf, throw away what has gone off and write a list of what is missing.
 
@@ -1162,11 +1162,11 @@ Ilja Berg`,
               { de: "Say how it started.", tr: "Nasıl başladığını söyle." },
               { de: "Say what surprised you.", tr: "Seni neyin şaşırttığını söyle." },
             ],
-            sample: `For two years I have taken the bins of the flat below mine out on a Sunday evening. That is the whole thing. It takes four minutes.
+            sample: `For two years I have taken out the trash cans for the apartment below mine on a Sunday evening. That is the whole thing. It takes four minutes.
 
 It started because I heard her fall in the hallway with the bag in her hand. I did not ask her; I just did it the next week, and she did not mention it either.
 
-What surprised me was the effect on me rather than on her. Four minutes a week has made me somebody who knows which flats are empty in August. I did not know a single neighbor before, and I had lived here for nine years.`,
+What surprised me was the effect on me rather than on her. Four minutes a week has made me somebody who knows which apartments are empty in August. I did not know a single neighbor before, and I had lived here for nine years.`,
             criteria: [
               "Üç içerik noktasının üçü de işlendi mi?",
               "Anlatılan şey gerçekten küçük mü, yoksa görev yanlış mı okunmuş?",
@@ -1211,7 +1211,7 @@ What surprised me was the effect on me rather than on her. Four minutes a week h
               { de: "use a second conditional", tr: "İkinci tip koşulu kullanmak" },
             ],
             sample:
-              "I know two families in my building and nobody else, although I have lived there for six years. Last winter the man upstairs took my post in for a week while I was away, and he never said anything about it; I found it on my door. If I had one free afternoon a week, I would give it to the homework club at the school, because that is the only work near me where somebody would actually notice if I stopped.",
+              "I know two families in my building and nobody else, although I have lived there for six years. Last winter the man upstairs took my mail in for a week while I was away, and he never said anything about it; I found it on my door. If I had one free afternoon a week, I would give it to the homework club at the school, because that is the only work near me where somebody would actually notice if I stopped.",
             criteria: [
               "İlk cevapta somut bir örnek verildi mi?",
               "Geçmişteki olay tek ve belirgin mi, yoksa genel mi kalmış?",
@@ -1277,7 +1277,7 @@ What surprised me was the effect on me rather than on her. Four minutes a week h
               { de: "summarize the agreement", tr: "Varılan anlaşmayı özetlemek" },
             ],
             sample:
-              "One week each is fair on paper, but the weeks are not the same: the week after the food delivery is twice the work. You are right that Sunday is the problem, so let us split it: the two of you who work on weekends take the Monday to Friday jobs, and we two take the Sundays. On the note: every Sunday, Tarek and me; Monday to Friday, you two; and everybody empties the shelf before they go on holiday.",
+              "One week each is fair on paper, but the weeks are not the same: the week after the food delivery is twice the work. You are right that Sunday is the problem, so let us split it: the two of you who work on weekends take the Monday to Friday jobs, and we two take the Sundays. On the note: every Sunday, Tarek and me; Monday to Friday, you two; and everybody empties the shelf before they go on vacation.",
             criteria: [
               "İlk öneriye gerekçeli bir karşılık verildi mi?",
               "Karşı tarafın kısıtı (hafta sonu çalışma) çözüme katıldı mı?",

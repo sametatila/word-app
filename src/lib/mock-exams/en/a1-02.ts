@@ -46,18 +46,18 @@ export const EN_A1_02: MockPaper = {
               title: "From: kemal@post.net",
               body: `Hi Sofia,
 
-Good news! I have a flat in Green Street. It is on the third floor and it is very quiet.
+Good news! I have an apartment on Green Street. It is on the third floor and it is very quiet.
 
 The rent is 480 pounds a month. Water is in the price, but not electricity.
 
-There is no lift, so I carry everything up the stairs. My back is not happy!
+There is no elevator, so I carry everything up the stairs. My back is not happy!
 
-I move on 3 August. Can you help me on that day?
+I move on August 3. Can you help me on that day?
 
 Kemal`,
               gloss: [
                 { de: "the rent", tr: "kira", en: "die Miete" },
-                { de: "the lift", tr: "asansör", en: "der Aufzug" },
+                { de: "the elevator", tr: "asansör", en: "der Aufzug" },
                 { de: "electricity", tr: "elektrik", en: "der Strom" },
               ],
             },
@@ -99,7 +99,7 @@ Anna (office)`,
               id: "en-a1-02-l1-2",
               no: 2,
               ref: "t1",
-              text: "The flat is on the ground floor.",
+              text: "The apartment is on the ground floor.",
               answer: false,
               explain:
                 "Daire üçüncü katta: «It is on the third floor». Asansör olmadığı için eşyaları merdivenden taşıyor; zemin kat olsaydı bu cümle anlamsız olurdu.",
@@ -109,7 +109,7 @@ Anna (office)`,
               id: "en-a1-02-l1-3",
               no: 3,
               ref: "t1",
-              text: "Kemal asks Sofia for help on 3 August.",
+              text: "Kemal asks Sofia for help on August 3.",
               answer: true,
               explain:
                 "Son iki cümle birlikte okunur: taşınma günü 3 Ağustos ve «Can you help me on that day?». `that day` bir önceki cümledeki tarihi gösteriyor; gönderme öğesini izlemek A1'de ölçülen becerilerden.",
@@ -150,9 +150,9 @@ Anna (office)`,
               genre: "Notice",
               genreTr: "Duyuru",
               title: "Room to Rent",
-              body: `A big room in a flat with two students. 320 pounds a month.
+              body: `A big room in an apartment with two students. 320 pounds a month.
 
-Free from 1 September. Bus 14 stops in front of the house.
+Free from September 1. Bus 14 stops in front of the house.
 
 No animals, please. We share the kitchen and the bathroom.
 
@@ -164,11 +164,11 @@ Call Marek: 07700 900 118.`,
               genre: "Notice",
               genreTr: "Duyuru",
               title: "Help at Home",
-              body: `We clean flats and small offices. Monday to Saturday.
+              body: `We clean apartments and small offices. Monday to Saturday.
 
 15 pounds an hour. Two hours minimum.
 
-We also wash windows and water your plants in the holidays.
+We also wash windows and water your plants while you are on vacation.
 
 Write to us: hello@helpathome.co`,
             },
@@ -206,17 +206,17 @@ Ask at the desk in the town hall.`,
               options: ["Room to Rent", "Help at Home", "Evening Courses"],
               answer: 0,
               explain:
-                "İlan hem tarihi hem fiyatı veriyor: «Free from 1 September», ayda 320 pound. Öteki iki duyuru oturmakla ilgili değil; ikincisi ev temizliği, üçüncüsü kurs.",
+                "İlan hem tarihi hem fiyatı veriyor: «Free from September 1», ayda 320 pound. Öteki iki duyuru oturmakla ilgili değil; ikincisi ev temizliği, üçüncüsü kurs.",
             },
             {
               kind: "mcq",
               id: "en-a1-02-l2-8",
               no: 8,
-              text: "You go on holiday and somebody must water your plants.",
+              text: "You go on vacation and somebody must water your plants.",
               options: ["Room to Rent", "Help at Home", "Evening Courses"],
               answer: 1,
               explain:
-                "İkinci duyuru bunu açıkça sayıyor: «we also wash windows and water your plants in the holidays». Kelime eşleşmesi değil, ölçüt eşleşmesi: tatilde bitki sulama hizmeti.",
+                "İkinci duyuru bunu açıkça sayıyor: «we also wash windows and water your plants while you are on vacation». Kelime eşleşmesi değil, ölçüt eşleşmesi: tatilde bitki sulama hizmeti.",
             },
             {
               kind: "mcq",
@@ -253,7 +253,7 @@ Ask at the desk in the town hall.`,
               id: "s1",
               genre: "Sign in the building",
               genreTr: "Binadaki levha",
-              title: "RUBBISH",
+              title: "TRASH",
               body: `Paper in the blue bin. Glass in the green bin.
 
 Big things: only on the first Saturday of the month.
@@ -265,12 +265,12 @@ Please do not leave bags next to the bins.`,
               id: "s2",
               genre: "Sign at the office door",
               genreTr: "Ofis kapısındaki levha",
-              title: "POST ROOM",
-              body: `Open 8.00 - 11.30 and 13.00 - 15.00.
+              title: "MAIL ROOM",
+              body: `Open 8:00 - 11:30 and 13:00 - 15:00.
 
 Big boxes go to the back door, not to this desk.
 
-Last post of the day: 15.00.`,
+Last mail pickup of the day: 15:00.`,
             },
             {
               kind: "text",
@@ -290,11 +290,11 @@ Members can bring one guest on Sundays.`,
               genre: "Sign at the bus stop",
               genreTr: "Otobüs durağındaki levha",
               title: "BUS 14",
-              body: `Every ten minutes, 6.00 - 20.00.
+              body: `Every ten minutes, 6:00 - 20:00.
 
-After 20.00: every half hour.
+After 20:00: every half hour.
 
-Sunday: from 9.00. No night bus.`,
+Sunday: from 9:00. No night bus.`,
             },
           ],
           items: [
@@ -313,10 +313,10 @@ Sunday: from 9.00. No night bus.`,
               id: "en-a1-02-l3-12",
               no: 12,
               ref: "s2",
-              text: "You can post a letter at 14.00.",
+              text: "You can mail a letter at 14:00.",
               answer: true,
               explain:
-                "İkinci çalışma aralığı «13.00 - 15.00»; saat 14.00 bu aralığın içinde. Levhada iki ayrı aralık var ve madde ikisini birden okumayı ölçüyor.",
+                "İkinci çalışma aralığı «13:00 - 15:00»; saat 14:00 bu aralığın içinde. Levhada iki ayrı aralık var ve madde ikisini birden okumayı ölçüyor.",
             },
             {
               kind: "bool",
@@ -333,10 +333,10 @@ Sunday: from 9.00. No night bus.`,
               id: "en-a1-02-l3-14",
               no: 14,
               ref: "s4",
-              text: "On Sunday the first bus goes at 9.00.",
+              text: "On Sunday the first bus goes at 9:00.",
               answer: true,
               explain:
-                "Son satır pazar için ayrı bir başlangıç veriyor: «Sunday: from 9.00». Haftanın öteki günleri 6.00'da başlıyor; madde istisna satırını bulmayı ölçüyor.",
+                "Son satır pazar için ayrı bir başlangıç veriyor: «Sunday: from 9:00». Haftanın öteki günleri 6:00'da başlıyor; madde istisna satırını bulmayı ölçüyor.",
             },
           ],
         },
@@ -439,7 +439,7 @@ Rita`,
               situation: "Bir komşu paket için kapıyı çalıyor.",
               plays: 2,
               segments: [
-                { speaker: "Neighbor", text: "Hello, a box for you came this morning. It is in my flat." },
+                { speaker: "Neighbor", text: "Hello, a box for you came this morning. It is in my apartment." },
                 { speaker: "Yusuf", text: "Oh, thank you. Can I come at six?" },
                 { speaker: "Neighbor", text: "I work until seven today. Come after that, please." },
               ],
@@ -595,7 +595,7 @@ Rita`,
               situation: "Apartmanda su kesintisi anonsu.",
               plays: 2,
               segments: [
-                { text: "Good morning. There is no water in the building tomorrow, from nine to twelve. Please take water for the morning. The lift works normally." },
+                { text: "Good morning. There is no water in the building tomorrow, from nine to twelve. Please take water for the morning. The elevator works normally." },
               ],
             },
             {
@@ -822,7 +822,7 @@ Rita`,
           format: "gap",
           goal: "detail",
           prompt:
-            "Your friend Omar Haddad wants a place in the evening cooking course. He was born on 14 March 1998. He lives at 7 Mill Lane, Leeds. His phone number is 07700 900 245. He wants the Tuesday group. Five things are missing on the form. Write them in the gaps.",
+            "Your friend Omar Haddad wants a place in the evening cooking course. He was born on March 14, 1998. He lives at 7 Mill Lane, Leeds. His phone number is 07700 900 245. He wants the Tuesday group. Five things are missing on the form. Write them in the gaps.",
           promptTr:
             "Arkadaşın Omar Haddad akşam yemek kursuna kaydolmak istiyor. 14 Mart 1998 doğumlu. 7 Mill Lane, Leeds adresinde oturuyor. Telefonu 07700 900 245. Salı grubunu istiyor. Formda beş bilgi eksik; boşluklara yaz.",
           texts: [
@@ -856,9 +856,9 @@ Group:              Tuesday`,
               id: "en-a1-02-w1-2",
               no: 2,
               text: "Date of birth",
-              accept: ["14 March 1998", "14.03.1998"],
+              accept: ["March 14, 1998", "March 14 1998", "03/14/1998", "14 March 1998", "14.03.1998"],
               explain:
-                "Yönergede «He was born on 14 March 1998» geçiyor. Ay adıyla ya da rakamla yazım kabul edilir; ölçülen şey biçim değil doğru tarihi taşımak.",
+                "Yönergede «He was born on March 14, 1998» geçiyor. Ay adıyla ya da rakamla yazım kabul edilir; ölçülen şey biçim değil doğru tarihi taşımak.",
             },
             {
               kind: "gap",
@@ -936,7 +936,7 @@ Omar`,
           no: 1,
           format: "speaking",
           goal: "production",
-          prompt: "Talk about your home. Speak about these words: town — flat or house — rooms — the way to work or school — one good thing — one bad thing.",
+          prompt: "Talk about your home. Speak about these words: town — apartment or house — rooms — the way to work or school — one good thing — one bad thing.",
           promptTr: "Evinden söz et. Şu sözcüklere göre konuş: şehir — daire mi ev mi — odalar — işe/okula gidiş — bir iyi yan — bir kötü yan.",
           prepSeconds: 30,
           speakSeconds: 90,
@@ -950,7 +950,7 @@ Omar`,
               { de: "one good and one bad thing", tr: "Bir iyi ve bir kötü yan" },
             ],
             sample:
-              "I live in Leeds. I have a small flat on the second floor. There are two rooms, a kitchen and a bathroom. I go to work by bus. It takes twenty minutes. The good thing is the park next to my house. The bad thing is the noise from the street.",
+              "I live in Leeds. I have a small apartment on the second floor. There are two rooms, a kitchen and a bathroom. I go to work by bus. It takes twenty minutes. The good thing is the park next to my house. The bad thing is the noise from the street.",
             criteria: [
               "Altı sözcüğün her birine değinildi mi?",
               "`There is / There are` kalıbı odaları anlatmak için kullanıldı mı?",
@@ -987,7 +987,7 @@ Omar`,
               { de: "answers to my questions", tr: "Sorulara cevap vermek" },
             ],
             sample:
-              "What do you do on the weekend? — I visit my sister. Do you like sport? — Yes, I play football. What music do you listen to? — I like old rock music. Do you meet your friends in the week? — Yes, on Thursday. How much is a cinema ticket? — About nine pounds.",
+              "What do you do on the weekend? — I visit my sister. Do you like sport? — Yes, I play soccer. What music do you listen to? — I like old rock music. Do you meet your friends in the week? — Yes, on Thursday. How much is a movie ticket? — About nine pounds.",
             criteria: [
               "Beş sözcüğün her biri için bir soru kuruldu mu?",
               "Sorular doğru kuruldu mu? (Do you … / What … / How much …)",

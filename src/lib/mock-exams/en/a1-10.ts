@@ -1,7 +1,7 @@
 import type { MockPaper } from "../types";
 
 /**
- * A1 · Deneme 10 — "Post, Parcels and Paying Bills".
+ * A1 · Deneme 10 — "Mail, Parcels and Paying Bills".
  *
  * A1'in öteki denemeleriyle AYNI PLAN; konu ayrı. Postane A1 için verimli
  * bir zemin: gişe numarası, ağırlık, kuruş cinsinden fiyat, son gün ve
@@ -16,7 +16,7 @@ export const EN_A1_10: MockPaper = {
   course: "en",
   level: "A1",
   no: 10,
-  theme: "Post, Parcels and Paying Bills",
+  theme: "Mail, Parcels and Paying Bills",
   themeTr: "Posta, koliler ve fatura ödemek",
   minutes: 85,
   parts: [
@@ -270,10 +270,10 @@ Saturday 9–13. Closed on Sunday.`,
               id: "s4",
               genre: "Sign",
               genreTr: "Levha",
-              title: "LETTER BOX",
-              body: `Last collection: 17.00.
+              title: "MAILBOX",
+              body: `Last pickup: 17:00.
 
-On Saturday: 12.00.`,
+On Saturday: 12:00.`,
             },
           ],
           items: [
@@ -312,10 +312,10 @@ On Saturday: 12.00.`,
               id: "en-a1-10-l3-14",
               no: 14,
               ref: "s4",
-              text: "On Saturday the last collection is at twelve.",
+              text: "On Saturday the last pickup is at twelve.",
               answer: true,
               explain:
-                "Levha iki saat veriyor: normal günlerde 17.00, «On Saturday: 12.00». Cumartesi saati daha erken.",
+                "Levha iki saat veriyor: normal günlerde 17:00, «On Saturday: 12:00». Cumartesi saati daha erken.",
             },
           ],
         },
@@ -633,7 +633,7 @@ Kiro`,
               situation: "Postane koli için ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hello, this is about your parcel. It is too big for the letter box. You can take it from window 4 until Friday." },
+                { text: "Hello, this is about your parcel. It is too big for the mailbox. You can take it from window 4 until Friday." },
               ],
             },
             {
@@ -697,7 +697,7 @@ Kiro`,
               no: 11,
               ref: "c1",
               text: "Where is the parcel?",
-              options: ["At the post office", "In the letter box", "At the neighbor's house"],
+              options: ["At the post office", "In the mailbox", "At the neighbor's house"],
               answer: 0,
               explain:
                 "İleti yeri gişeyle veriyor: «You can take it from window 4 until Friday». Posta kutusuna sığmadığı da söyleniyor.",
@@ -872,7 +872,7 @@ Kiro`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "There are three tasks in this part: you talk about post and money, you ask and answer questions, and you do a role play at a post office.",
+      instruction: "There are three tasks in this part: you talk about mail and money, you ask and answer questions, and you do a role play at a post office.",
       instructionTr: "Bu bölümde üç görev var: posta ve parayı anlatma, soru sorup cevaplama ve postanede rol yapma.",
       tasks: [
         {
@@ -880,7 +880,7 @@ Kiro`,
           no: 1,
           format: "speaking",
           goal: "production",
-          prompt: "Talk about post and money. Speak about these words: a letter — a parcel — a day in the week — a shop — money — something you do not like.",
+          prompt: "Talk about mail and money. Speak about these words: a letter — a parcel — a day in the week — a shop — money — something you do not like.",
           promptTr: "Posta ve parayı anlat. Şu sözcüklere göre konuş: bir mektup — bir koli — haftanın bir günü — bir dükkân — para — sevmediğin bir şey.",
           prepSeconds: 30,
           speakSeconds: 90,
@@ -894,7 +894,7 @@ Kiro`,
               { de: "one thing you do not like", tr: "Sevmediğin bir şey" },
             ],
             sample:
-              "I send a parcel to my mother every month. I go on Friday after work. The parcel shop is in the supermarket near my house. It is open until ten. A parcel of three kilos is seven euros. I do not like the queue at the post office; it is very long.",
+              "I send a parcel to my mother every month. I go on Friday after work. The parcel shop is in the supermarket near my house. It is open until ten. A parcel of three kilos is seven euros. I do not like the line at the post office; it is very long.",
             criteria: [
               "Altı sözcüğün her birine değinildi mi?",
               "Gün, saat ve fiyat söylenebiliyor mu?",
@@ -909,12 +909,12 @@ Kiro`,
           format: "speaking",
           goal: "interaction",
           prompt:
-            "Topic: post and money. Make a question for each word and answer my questions: post office — parcel — card — shop — money.",
+            "Topic: mail and money. Make a question for each word and answer my questions: post office — parcel — card — shop — money.",
           promptTr:
             "Konu: posta ve para. Her sözcük için bir soru kur ve benim sorularımı cevapla: postane — koli — kart — dükkân — para.",
           prepSeconds: 30,
           exchange: [
-            { who: "partner", de: "Now we talk about post and money. Your first word is: post office. Please ask me a question.", tr: "Şimdi posta ve parayı konuşuyoruz. İlk sözcüğün: postane. Bana bir soru sor." },
+            { who: "partner", de: "Now we talk about mail and money. Your first word is: post office. Please ask me a question.", tr: "Şimdi posta ve parayı konuşuyoruz. İlk sözcüğün: postane. Bana bir soru sor." },
             { who: "you", hint: "«post office» ile bir soru kur.", expect: "post office ile dilbilgisel olarak doğru bir soru kurmak", seconds: 25 },
             { who: "partner", de: "The post office near me opens at nine. Your next word is: parcel.", tr: "Yakınımdaki postane dokuzda açılıyor. Sıradaki sözcüğün: koli." },
             { who: "you", hint: "«parcel» için bir soru kur.", expect: "parcel sözcüğüyle bir soru kurmak", seconds: 25 },

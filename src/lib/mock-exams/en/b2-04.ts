@@ -1093,7 +1093,7 @@ The communities the project wants to hear from find the {{15}} almost unusable.
                 { speaker: "Host", text: "How long did the decision take?" },
                 { speaker: "Tarik", text: "Five years, which is embarrassing to say out loud. I commissioned three reports, which is what people like me do instead of deciding. All three said the same thing, and I read all three as though they had said something else." },
                 { speaker: "Host", text: "What finally moved you?" },
-                { speaker: "Tarik", text: "A leak. Water came through the store roof one November and I stood there with a torch looking at boxes I could not identify. I realized I was not a custodian of those objects; I was a landlord who had lost the tenancy agreement." },
+                { speaker: "Tarik", text: "A leak. Water came through the store roof one November and I stood there with a flashlight looking at boxes I could not identify. I realized I was not a custodian of those objects; I was a landlord who had lost the tenancy agreement." },
                 { speaker: "Host", text: "And the smaller museum in practice?" },
                 { speaker: "Tarik", text: "We show about the same number of objects and we know far more about each of them. Visitor numbers are almost unchanged, which is not the dramatic answer people want. The real change is that a researcher who writes to us now gets an answer in a week rather than a year." },
                 { speaker: "Host", text: "Do you miss anything?" },

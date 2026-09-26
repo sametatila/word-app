@@ -26,7 +26,7 @@ export const EN_B1_06: MockPaper = {
       skill: "reading",
       minutes: 55,
       instruction:
-        "There are six tasks in this part. You read notices, adverts, an article and two texts with gaps. Answer each question with one choice.",
+        "There are six tasks in this part. You read notices, ads, an article and two texts with gaps. Answer each question with one choice.",
       instructionTr:
         "Bu bölümde altı görev var. Duyurular, ilanlar, bir yazı ve boşluklu iki metin okuyacaksın. Her soruda doğru cevabı işaretle.",
       tasks: [
@@ -43,7 +43,7 @@ export const EN_B1_06: MockPaper = {
               id: "m1",
               genre: "Notice at a music school",
               genreTr: "Müzik okulu duyurusu",
-              title: "Instrument hire",
+              title: "Instrument rental",
               body: `Forty euros for the first year, twenty after that. You pay for repairs but not for normal wear. If you stop before June, bring the instrument back within two weeks; we do not return the year's fee.`,
             },
             {
@@ -86,7 +86,7 @@ export const EN_B1_06: MockPaper = {
               no: 1,
               ref: "m1",
               text: "What does the school not do?",
-              options: ["Charge for repairs", "Hire out instruments after the first year", "Give back the fee if you stop early"],
+              options: ["Charge for repairs", "Rent out instruments after the first year", "Give back the fee if you stop early"],
               answer: 2,
               explain:
                 "Duyurunun son cümlesi bunu söylüyor: «we do not return the year's fee». Onarım için ücret ALINIYOR («You pay for repairs») ve kira ikinci yıl da sürüyor (yirmi euro), yani öteki iki şık okulun yaptığı şeyler.",
@@ -107,7 +107,7 @@ export const EN_B1_06: MockPaper = {
               id: "en-b1-06-l1-3",
               no: 3,
               ref: "m3",
-              text: "What does the advert promise?",
+              text: "What does the ad promise?",
               options: ["You will play very well after six evenings", "You will play a little after six evenings", "You can bring a child of fourteen"],
               answer: 1,
               explain:
@@ -143,7 +143,7 @@ export const EN_B1_06: MockPaper = {
           format: "match",
           goal: "orientation",
           prompt:
-            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best advert. No advert is used twice.",
+            "Here are five people, 6 to 10. There are also eight ads, a to h. Match each person with the best ad. No ad is used twice.",
           promptTr:
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
@@ -324,7 +324,7 @@ The conductor is careful about recommending the model to other towns. {{20}}`,
             { key: "b", label: "b", body: "By the fourth concert it was better than anything the smaller version had ever managed." },
             { key: "c", label: "c", body: "Nobody outside the orchestra believed that the standard could survive it." },
             { key: "d", label: "d", body: "That sentence has not changed since, although a great deal else has." },
-            { key: "e", label: "e", body: "Several of them had put an instrument in a cupboard at nineteen and left it there." },
+            { key: "e", label: "e", body: "Several of them had put an instrument in a closet at nineteen and left it there." },
             { key: "f", label: "f", body: "The town hall was rebuilt after a fire in 1974 and reopened three years later." },
           ],
           items: [
@@ -391,7 +391,7 @@ The conductor is careful about recommending the model to other towns. {{20}}`,
               title: "Before you buy a second-hand instrument",
               body: `A used instrument can be a very good deal, but only if you {{21}} three things carefully.
 
-First, ask when it was last repaired. An instrument that has stood in a cupboard for ten years may {{22}} more work than it is worth.
+First, ask when it was last repaired. An instrument that has stood in a closet for ten years may {{22}} more work than it is worth.
 
 Second, play it, or take somebody who can. A photograph tells you nothing, and a seller who is in a hurry rarely {{23}} out that anything is wrong.
 
@@ -644,7 +644,7 @@ It is the only piece of advice from that year {{30}} I still follow.`,
               id: "en-b1-06-h1-2",
               no: 2,
               ref: "a2",
-              text: "What is the shop asking for?",
+              text: "What is the store asking for?",
               options: ["The guitar to be collected this week", "Payment before Friday", "Permission to do the work"],
               answer: 2,
               explain:
@@ -942,7 +942,7 @@ New players sit in the:     {{19}} row`,
               no: 17,
               ref: "c1",
               text: "Gap 17",
-              accept: ["half past seven", "7.30", "19.30"],
+              accept: ["half past seven", "7:30", "19:30", "7.30", "19.30"],
               explain:
                 "«Rehearsals are on Wednesday at half past seven in the school hall» — prova saati. Yazıyla da rakamla da yazılabilir; yirmi dört saatlik biçim de kabul edilir.",
             },
@@ -987,7 +987,7 @@ New players sit in the:     {{19}} row`,
                 { speaker: "Host", text: "Tuva, you started the cello at forty-one. People assume there was a moment." },
                 { speaker: "Tuva", text: "They do, and it makes a better story than the truth. There was no illness and no birthday. A neighbor moved out and left a cello in the hall with a note saying anybody could have it, and nobody else took it for a week." },
                 { speaker: "Host", text: "Was the money the hardest part?" },
-                { speaker: "Tuva", text: "No. The hardest part was the noise. I live in a flat with thin walls, and for the first year I practiced with a towel under the strings, which teaches you nothing about sound. I told nobody I was learning, and that was the real cost." },
+                { speaker: "Tuva", text: "No. The hardest part was the noise. I live in an apartment with thin walls, and for the first year I practiced with a towel under the strings, which teaches you nothing about sound. I told nobody I was learning, and that was the real cost." },
                 { speaker: "Host", text: "How long before you told anybody?" },
                 { speaker: "Tuva", text: "Fourteen months. I made a plan, which is what people like me do instead of starting. The plan said tell somebody at six months, and I ignored it twice." },
                 { speaker: "Host", text: "What changed?" },
@@ -1187,7 +1187,7 @@ What I get from it is not pictures. It is that I look at things for longer than 
               { de: "use a second conditional", tr: "İkinci tip koşulu kullanmak" },
             ],
             sample:
-              "I read most evenings and I play football once a week, usually on Sunday morning. Two years ago I started Spanish with an app, and I used it every day for four months and then stopped; I have not opened it since March. If I had six free months, I would learn to swim properly, because I can swim badly and that is worse than not swimming at all.",
+              "I read most evenings and I play soccer once a week, usually on Sunday morning. Two years ago I started Spanish with an app, and I used it every day for four months and then stopped; I have not opened it since March. If I had six free months, I would learn to swim properly, because I can swim badly and that is worse than not swimming at all.",
             criteria: [
               "Sıklık ifadeleri kullanıldı mı? (most evenings, once a week)",
               "`used to` ya da present perfect ile değişim anlatıldı mı?",

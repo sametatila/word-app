@@ -62,7 +62,7 @@ export const EN_A2_01: MockPaper = {
               genre: "Note at home",
               genreTr: "Evdeki not",
               title: "For Sara",
-              body: `Sara, I put your medicine in the top drawer in the kitchen. Take one tablet after breakfast, not before it. The doctor said food first. Mum`,
+              body: `Sara, I put your medicine in the top drawer in the kitchen. Take one tablet after breakfast, not before it. The doctor said food first. Mom`,
             },
             {
               kind: "text",
@@ -170,7 +170,7 @@ export const EN_A2_01: MockPaper = {
             { key: "c", label: "Climbing Wall", body: "For strong beginners from sixteen years. Shoes are included in the price. Saturdays only, from ten to four. 18 pounds a day." },
             { key: "d", label: "Family Cycling", body: "A short ride on flat roads on Sunday morning. Children from six years with a parent. Bikes for children are free." },
             { key: "e", label: "Evening Yoga", body: "Two classes a week, at seven and at half past eight. The late class is quieter and slower. First class free." },
-            { key: "f", label: "Football for Girls", body: "Training on Wednesdays after school, from nine to fourteen years. Boots are necessary. Ten pounds a month." },
+            { key: "f", label: "Soccer for Girls", body: "Training on Wednesdays after school, from nine to fourteen years. Cleats are necessary. Ten pounds a month." },
             { key: "g", label: "Back Class", body: "A doctor sends you or you come alone. Small groups of six, on Monday and Thursday at five. The class is for people with back pain." },
             { key: "h", label: "Table Tennis Club", body: "Every day from four to nine, all ages. You can play alone or with a partner. Bring your own bat or borrow one." },
           ],
@@ -188,7 +188,7 @@ export const EN_A2_01: MockPaper = {
               kind: "match",
               id: "en-a2-01-l2-7",
               no: 7,
-              text: "Bekir was in hospital last month. He wants to start again slowly, with other people.",
+              text: "Bekir was in the hospital last month. He wants to start again slowly, with other people.",
               answer: "b",
               explain:
                 "İlan tam bu durumu adlandırıyor: «Good for people who come back after an illness». Yavaş yürüyüş ve grup birlikte veriliyor. Sırt dersi de yavaş ama o özellikle sırt ağrısı için, hastane sonrası genel dönüş için değil.",
@@ -206,7 +206,7 @@ export const EN_A2_01: MockPaper = {
               kind: "match",
               id: "en-a2-01-l2-9",
               no: 9,
-              text: "The Kaya family want to do something together on Sunday with their seven-year-old son.",
+              text: "The Kaya family wants to do something together on Sunday with their seven-year-old son.",
               answer: "d",
               explain:
                 "İlan üç ölçütü birden karşılıyor: pazar sabahı, ebeveynle birlikte ve «Children from six years». Yedi yaşındaki çocuk bu sınırın üstünde. Tırmanma duvarı on altı yaşından itibaren, uymuyor.",
@@ -474,13 +474,13 @@ Leyla`,
             {
               kind: "audio",
               id: "a1",
-              genre: "At the chemist",
+              genre: "At the pharmacy",
               genreTr: "Eczanede",
               situation: "Bir müşteri öksürük için ilaç istiyor.",
               plays: 2,
               segments: [
                 { speaker: "Customer", text: "I have a bad cough. Do you have something for it?" },
-                { speaker: "Chemist", text: "This syrup helps, but it makes you tired. These tablets are better if you drive." },
+                { speaker: "Pharmacist", text: "This syrup helps, but it makes you tired. These tablets are better if you drive." },
                 { speaker: "Customer", text: "I drive to work every day, so I will take the tablets." },
               ],
             },
@@ -964,7 +964,7 @@ Price for guests:     {{10}} pounds`,
             ],
             sample: `Hi Chris,
 
-Thanks for your email! In my town a lot of people play football, and in summer everybody swims in the river. I go running three times a week, always in the morning before work. It is quiet then.
+Thanks for your email! In my town a lot of people play soccer, and in summer everybody swims in the river. I go running three times a week, always in the morning before work. It is quiet then.
 
 When you come in July, come running with me. It is easy, I promise!
 
@@ -1055,7 +1055,7 @@ Deniz`,
           format: "speaking",
           goal: "production",
           prompt:
-            "Describe this situation for about one minute: a family is having a picnic in a park on a sunny day. Some people are playing football. Say what you see, what the people are doing, and whether you like this kind of day.",
+            "Describe this situation for about one minute: a family is having a picnic in a park on a sunny day. Some people are playing soccer. Say what you see, what the people are doing, and whether you like this kind of day.",
           promptTr:
             "Şu durumu bir dakika kadar anlat: Güneşli bir günde bir aile parkta piknik yapıyor. Bazı insanlar futbol oynuyor. Ne gördüğünü, insanların ne yaptığını ve böyle bir günü sevip sevmediğini söyle.",
           prepSeconds: 45,
@@ -1069,7 +1069,7 @@ Deniz`,
               { de: "say if you like this kind of day", tr: "Böyle bir günü sevip sevmediğini söyle" },
             ],
             sample:
-              "In this park I can see a family on the grass. They are having a picnic. The mother is cutting bread and two children are drinking juice. Behind them some young people are playing football. The sun is shining and everybody looks happy. I like days like this because they are simple and free. In summer I often go to the park with my friends.",
+              "In this park I can see a family on the grass. They are having a picnic. The mother is cutting bread and two children are drinking juice. Behind them some young people are playing soccer. The sun is shining and everybody looks happy. I like days like this because they are simple and free. In summer I often go to the park with my friends.",
             criteria: [
               "Şimdiki zaman (present continuous) kullanıldı mı? Bu görevin ana yapısı bu.",
               "Üç içerik noktasının üçü de işlendi mi?",

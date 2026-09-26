@@ -55,8 +55,8 @@ export const EN_A2_09: MockPaper = {
               id: "m2",
               genre: "Notice in a building",
               genreTr: "Bina duyurusu",
-              title: "The lift",
-              body: `The lift is out of order until Thursday. The part comes from Hamburg. If you cannot use the stairs, ring the caretaker on 214 and he will bring your shopping up.`,
+              title: "The elevator",
+              body: `The elevator is out of order until Thursday. The part comes from Hamburg. If you cannot use the stairs, call the caretaker at 214 and he will bring your shopping up.`,
             },
             {
               kind: "text",
@@ -101,10 +101,10 @@ export const EN_A2_09: MockPaper = {
               no: 2,
               ref: "m2",
               text: "What can people do?",
-              options: ["Use the second lift", "Take the stairs on Thursday", "Ask the caretaker for help"],
+              options: ["Use the second elevator", "Take the stairs on Thursday", "Ask the caretaker for help"],
               answer: 2,
               explain:
-                "Duyuru koşullu bir çözüm veriyor: «If you cannot use the stairs, ring the caretaker on 214». İkinci asansörden hiç söz edilmiyor.",
+                "Duyuru koşullu bir çözüm veriyor: «If you cannot use the stairs, call the caretaker at 214». İkinci asansörden hiç söz edilmiyor.",
             },
             {
               kind: "mcq",
@@ -134,7 +134,7 @@ export const EN_A2_09: MockPaper = {
               no: 5,
               ref: "m5",
               text: "Why must the writer stay at home?",
-              options: ["She is ill today", "She is cooking for Zeki", "Somebody is coming to the flat"],
+              options: ["She is ill today", "She is cooking for Zeki", "Somebody is coming to the apartment"],
               answer: 2,
               explain:
                 "İleti sebebi veriyor: «The man from the gas company comes between two and six, and I must be here».",
@@ -372,8 +372,8 @@ And the last thing: {{19}} something makes a new noise, write down the day. Nobo
               id: "t5",
               genre: "Blog comment",
               genreTr: "Blog yorumu",
-              title: "The lift in our building",
-              body: `Our building was built {{20}} 1974 and the lift is the same age.
+              title: "The elevator in our building",
+              body: `Our building was built {{20}} 1974 and the elevator is the same age.
 
 It stops working about four times {{21}} year, always in the summer.
 
@@ -694,7 +694,7 @@ If they cannot repair it, you pay: {{10}}`,
               situation: "Binada asansör için anons yapılıyor.",
               plays: 2,
               segments: [
-                { text: "The lift is out of order. The part arrives on Thursday. Please do not press the button; it does not help and the noise is very loud in flat one." },
+                { text: "The elevator is out of order. The part arrives on Thursday. Please do not press the button; it does not help and the noise is very loud in apartment one." },
               ],
             },
             {
@@ -749,7 +749,7 @@ If they cannot repair it, you pay: {{10}}`,
               no: 12,
               ref: "c2",
               text: "What does the announcement ask people to do?",
-              options: ["Use the other lift", "Come back on Thursday", "Leave the button alone"],
+              options: ["Use the other elevator", "Come back on Thursday", "Leave the button alone"],
               answer: 2,
               explain:
                 "Anonsun tek ricası bu: «Please do not press the button; it does not help». Perşembe parçanın geliş günü.",
@@ -828,7 +828,7 @@ If they cannot repair it, you pay: {{10}}`,
               situation: "İkinci konuşmacı model numarasını bulmuş.",
               plays: 2,
               segments: [
-                { text: "I found the model number under the door and there is a film on the internet with ninety thousand views. It is one screw and a rubber ring. I bought the ring for four euros this morning." },
+                { text: "I found the model number under the door and there is a video on the internet with ninety thousand views. It is one screw and a rubber ring. I bought the ring for four euros this morning." },
               ],
             },
             {
@@ -951,7 +951,7 @@ My washing machine is broken. The repair man comes on Thursday between eight and
 
 Could you open the door for him, please? He only needs ten minutes.
 
-The key is with the caretaker in flat 1. My number is 07700 900 412.
+The key is with the caretaker in apartment 1. My number is 07700 900 412.
 
 Thank you very much!
 Noor`,
@@ -981,7 +981,7 @@ Noor`,
               { de: "Say how long you waited.", tr: "Ne kadar beklediğini söyle." },
               { de: "Say what you did in that time.", tr: "O sürede ne yaptığını söyle." },
             ],
-            sample: `Last winter our heating stopped in the middle of January. The man came and said he needed a part from Poland. We waited eighteen days. In that time we slept in the living room with two small electric heaters and we went to my sister's flat every Sunday for a hot bath. When the part came, the repair took forty minutes.`,
+            sample: `Last winter our heating stopped in the middle of January. The man came and said he needed a part from Poland. We waited eighteen days. In that time we slept in the living room with two small electric heaters and we went to my sister's apartment every Sunday for a hot bath. When the part came, the repair took forty minutes.`,
             criteria: [
               "Üç içerik noktasının üçü de var mı?",
               "Geçmiş zaman doğru kullanıldı mı? Düzensiz fiiller (came, said, went) doğru mu?",

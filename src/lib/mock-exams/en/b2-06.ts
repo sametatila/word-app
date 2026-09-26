@@ -351,14 +351,14 @@ The most likely future is therefore a revised one, with different regions adjust
               id: "t5",
               genre: "Newspaper column",
               genreTr: "Gazete köşe yazısı",
-              title: "I measured everything in my flat for a year",
-              body: `For a year I recorded the electricity used by every appliance in my flat, and I want to describe what that taught me, because most of it was not about electricity.
+              title: "I measured everything in my apartment for a year",
+              body: `For a year I recorded the electricity used by every appliance in my apartment, and I want to describe what that taught me, because most of it was not about electricity.
 
 The measuring itself was easy. A plug meter costs fifteen pounds and the readings are not in dispute. What took the year was working out which numbers mattered, and the answer turned out to be almost none of them.
 
 The fridge, which I had suspected for years, used about eleven pounds a month and could not be improved without buying a new one, which would have cost more than eight years of the difference. The television used less than the router that was never turned off. The kettle, boiled roughly nine times a day, used more than everything else in the kitchen together, and I still boil it nine times a day.
 
-I should be careful here, because the obvious conclusion is the wrong one. The point is not that individual behavior is pointless; it is that the largest number in my flat was the heating, and the heating is a decision made by whoever owns the building. Faced with that, a plug meter is a hobby. If I had known it at the start, I would have spent the year reading the lease instead.
+I should be careful here, because the obvious conclusion is the wrong one. The point is not that individual behavior is pointless; it is that the largest number in my apartment was the heating, and the heating is a decision made by whoever owns the building. Faced with that, a plug meter is a hobby. If I had known it at the start, I would have spent the year reading the lease instead.
 
 Nevertheless, I do not regret the year. What it changed was not my bill but my patience with a certain kind of advice, and that has been worth rather more than the fifteen pounds.`,
               gloss: [
@@ -407,7 +407,7 @@ Nevertheless, I do not regret the year. What it changed was not my bill but my p
               options: ["Plug meters are inaccurate", "Individual behavior is entirely pointless", "The biggest decision is not hers to make", "Landlords should pay for heating"],
               answer: 2,
               explain:
-                "Dördüncü paragraf iki savı ayırıyor: «The point is not that individual behavior is pointless; it is that the largest number in my flat was the heating», ve ısıtma binanın sahibinin kararı.",
+                "Dördüncü paragraf iki savı ayırıyor: «The point is not that individual behavior is pointless; it is that the largest number in my apartment was the heating», ve ısıtma binanın sahibinin kararı.",
             },
             {
               kind: "mcq",
@@ -441,7 +441,7 @@ Nevertheless, I do not regret the year. What it changed was not my bill but my p
 
 Consider insulation. It pays for itself in about seven years, which is a good investment for whoever owns the building and no investment at all for a tenant with a twelve-month contract. {{29}}
 
-The same difficulty appears with appliances. A landlord buying a fridge for a flat they will never live in has no reason to pay forty pounds more for a better grade. {{30}}
+The same difficulty appears with appliances. A landlord buying a fridge for an apartment they will never live in has no reason to pay forty pounds more for a better grade. {{30}}
 
 Some countries now require a minimum standard before a property may be let. The change is slow and it is resisted, mainly because it turns a preference into a cost. {{31}}
 
@@ -454,7 +454,7 @@ None of this argues that behavior is irrelevant, since a household that heats on
             },
           ],
           options: [
-            { key: "a", label: "a", body: "The person who would benefit is not the person who would pay, and no leaflet changes that." },
+            { key: "a", label: "a", body: "The person who would benefit is not the person who would pay, and no pamphlet changes that." },
             { key: "b", label: "b", body: "That resistance is itself revealing, since it names the person who was carrying the cost before." },
             { key: "c", label: "c", body: "The tenant pays the higher bill for years and never sees the invoice for the cheaper machine." },
             { key: "d", label: "d", body: "This is the harder problem, because it cannot be solved by telling anybody anything." },
@@ -518,17 +518,17 @@ None of this argues that behavior is irrelevant, since a household that heats on
             {
               key: "b",
               label: "b — Yrsa, energy adviser",
-              body: "Tenants are blamed for bills that begin with the building. A flat with single glazing costs more to heat than one with double, and no amount of turning things off closes that gap. The advice we are funded to give is the advice that fits on a leaflet.",
+              body: "Tenants are blamed for bills that begin with the building. An apartment with single glazing costs more to heat than one with double, and no amount of turning things off closes that gap. The advice we are funded to give is the advice that fits on a pamphlet.",
             },
             {
               key: "c",
               label: "c — Aurel, appliance retailer",
-              body: "My job is to sell machines and I am judged on volume. Nobody has ever asked me whether the customer will still be able to afford to run it. Change what I am measured on and the display in my shop will change within a month.",
+              body: "My job is to sell machines and I am judged on volume. Nobody has ever asked me whether the customer will still be able to afford to run it. Change what I am measured on and the display in my store will change within a month.",
             },
             {
               key: "d",
               label: "d — Bodil, teacher",
-              body: "My pupils can list ten ways to save energy at home. What defeats them is a bill: a page of numbers with no unit they recognize and a total that depends on a decision made before they were born. That is the harder thing to teach.",
+              body: "My students can list ten ways to save energy at home. What defeats them is a bill: a page of numbers with no unit they recognize and a total that depends on a decision made before they were born. That is the harder thing to teach.",
             },
           ],
           items: [
@@ -557,7 +557,7 @@ None of this argues that behavior is irrelevant, since a household that heats on
               text: "Which text says that changing an incentive would change behavior quickly?",
               answer: "c",
               explain:
-                "Aurel koşulu ve süreyi birlikte söylüyor: «Change what I am measured on and the display in my shop will change within a month».",
+                "Aurel koşulu ve süreyi birlikte söylüyor: «Change what I am measured on and the display in my store will change within a month».",
             },
             {
               kind: "match",
@@ -607,7 +607,7 @@ None of this argues that behavior is irrelevant, since a household that heats on
               situation: "Binada kazan bakımı duyuruluyor.",
               plays: 2,
               segments: [
-                { text: "A short note about the boiler. The heating will be off between nine and two on Thursday while the new pump is fitted. Hot water is not affected. If you work from home and this is a problem, tell the office today and we will move you to Friday." },
+                { text: "A short note about the boiler. The heating will be off between nine and two on Thursday while the new pump is installed. Hot water is not affected. If you work from home and this is a problem, tell the office today and we will move you to Friday." },
               ],
             },
             {
@@ -643,7 +643,7 @@ None of this argues that behavior is irrelevant, since a household that heats on
               situation: "Radyoda bir uzman dinleyici sorusunu yanıtlıyor.",
               plays: 2,
               segments: [
-                { text: "Listeners ask me every week whether it is worth turning things off at the wall. The honest answer is that the question is too small: for a flat with good heating the answer is no, and for a flat with electric heating and thin walls almost nothing else matters at all." },
+                { text: "Listeners ask me every week whether it is worth unplugging things. The honest answer is that the question is too small: for an apartment with good heating the answer is no, and for an apartment with electric heating and thin walls almost nothing else matters at all." },
               ],
             },
             {
@@ -688,7 +688,7 @@ None of this argues that behavior is irrelevant, since a household that heats on
               plays: 2,
               segments: [
                 { speaker: "Iris", text: "Why is your bill so much lower than mine?" },
-                { speaker: "Tom", text: "Same flat, same size." },
+                { speaker: "Tom", text: "Same apartment, same size." },
                 { speaker: "Iris", text: "Exactly." },
                 { speaker: "Tom", text: "I am on the top floor and you are on the corner. Three outside walls against my one. Nothing I do explains it." },
               ],
@@ -712,7 +712,7 @@ None of this argues that behavior is irrelevant, since a household that heats on
               no: 2,
               ref: "a2",
               text: "What does the supplier want?",
-              options: ["A new meter to be fitted", "A photograph of the meter", "The bill to be paid first"],
+              options: ["A new meter to be installed", "A photograph of the meter", "The bill to be paid first"],
               answer: 1,
               explain:
                 "İstek açık: «Please send a photograph rather than a number». Sayaç değişmiyor ve ödeme istenmiyor; tersine fatura düzeltilecek.",
@@ -778,7 +778,7 @@ None of this argues that behavior is irrelevant, since a household that heats on
               no: 8,
               ref: "a8",
               text: "What explains the difference between the two bills?",
-              options: ["The position of the flat", "The behavior of the household", "The size of the flat"],
+              options: ["The position of the apartment", "The behavior of the household", "The size of the apartment"],
               answer: 0,
               explain:
                 "Konuşmacı konumu veriyor: «I am on the top floor and you are on the corner. Three outside walls against my one». Daireler aynı büyüklükte ve «Nothing I do explains it» diyerek davranışı dışlıyor.",
@@ -953,7 +953,7 @@ The households hardest to reach are those in the {{15}} properties.
               situation: "İkinci konuşmacı düşük gelirli hanelere verilen öğüdü ele alıyor.",
               plays: 2,
               segments: [
-                { text: "It is easy to tell somebody on a low income to heat one room. Show me a flat where one room can be heated without the damp moving into the next one, and then we can have that conversation." },
+                { text: "It is easy to tell somebody on a low income to heat one room. Show me an apartment where one room can be heated without the damp moving into the next one, and then we can have that conversation." },
               ],
             },
             {
@@ -997,7 +997,7 @@ The households hardest to reach are those in the {{15}} properties.
               situation: "Altıncı konuşmacı ilanlarında yaptığı bir değişikliği anlatıyor.",
               plays: 2,
               segments: [
-                { text: "I now put the estimated running cost on the advert next to the rent. The questions I get from tenants are completely different, and much better. I should have started years ago." },
+                { text: "I now put the estimated running cost on the ad next to the rent. The questions I get from tenants are completely different, and much better. I should have started years ago." },
               ],
             },
           ],
@@ -1020,7 +1020,7 @@ The households hardest to reach are those in the {{15}} properties.
               text: "Speaker 2",
               answer: "a",
               explain:
-                "Konuşmacı öğüdün koşullarını soruyor: «Show me a flat where one room can be heated without the damp moving into the next one». Suç haneye yükleniyor ama engel yapıda.",
+                "Konuşmacı öğüdün koşullarını soruyor: «Show me an apartment where one room can be heated without the damp moving into the next one». Suç haneye yükleniyor ama engel yapıda.",
             },
             {
               kind: "match",
@@ -1089,7 +1089,7 @@ The households hardest to reach are those in the {{15}} properties.
                 { speaker: "Host", text: "What would you do differently?" },
                 { speaker: "Urho", text: "I would spend the first year on enforcement and the last ten on the standard, which is the opposite of what we did. A rule nobody checks is a rule that punishes the honest landlord, and there are more of those than the campaign ever admitted." },
                 { speaker: "Host", text: "Has anything else surprised you?" },
-                { speaker: "Urho", text: "How quickly the argument moved. Nobody now says that a cold rented flat is acceptable. Ten years ago that was a serious position held by serious people, and it has simply gone. I did not expect to win the argument and lose the implementation." },
+                { speaker: "Urho", text: "How quickly the argument moved. Nobody now says that a cold rented apartment is acceptable. Ten years ago that was a serious position held by serious people, and it has simply gone. I did not expect to win the argument and lose the implementation." },
                 { speaker: "Host", text: "What do people get wrong about campaigns like yours?" },
                 { speaker: "Urho", text: "They think the hard part is persuading the public. The public was persuaded in about four years. The hard part is the eighteen months after you win, when everybody who helped goes home and the details are written by whoever is still in the room." },
                 { speaker: "Host", text: "Would you recommend the work?" },
@@ -1156,7 +1156,7 @@ The households hardest to reach are those in the {{15}} properties.
               options: ["How little the rule cost", "How many landlords complied straight away", "How completely the argument was won"],
               answer: 2,
               explain:
-                "«Nobody now says that a cold rented flat is acceptable … it has simply gone». Şaşırtan şey tartışmanın hızla kapanması, üstelik uygulamanın kaybedilmesiyle birlikte.",
+                "«Nobody now says that a cold rented apartment is acceptable … it has simply gone». Şaşırtan şey tartışmanın hızla kapanması, üstelik uygulamanın kaybedilmesiyle birlikte.",
             },
             {
               kind: "mcq",
@@ -1221,13 +1221,13 @@ The households hardest to reach are those in the {{15}} properties.
               { de: "Add a third idea of your own.", tr: "Kendi üçüncü fikrini ekle." },
               { de: "Reach a clear conclusion.", tr: "Açık bir sonuca var." },
             ],
-            sample: `Almost everyone agrees that nobody should be cold in a rented flat. The disagreement begins as soon as somebody asks who writes the check.
+            sample: `Almost everyone agrees that nobody should be cold in a rented apartment. The disagreement begins as soon as somebody asks who writes the check.
 
-The argument about payment is the weaker of the two, in my view. A landlord who improves a property keeps the asset, so the case for the owner paying is strong. What complicates it is that many small landlords own one flat and have no capital, and a rule that assumes deep pockets will simply push those properties out of the rental market.
+The argument about payment is the weaker of the two, in my view. A landlord who improves a property keeps the asset, so the case for the owner paying is strong. What complicates it is that many small landlords own one apartment and have no capital, and a rule that assumes deep pockets will simply push those properties out of the rental market.
 
 The second question is harder. If the work raises the rent by more than it lowers the bill, the tenant has paid for an improvement they do not own. That is not a reason to do nothing, but it is a reason to tie the two figures together in the regulation.
 
-My own view is that the missing element is enforcement. A standard that is modeled on paper rather than checked in the building rewards whoever fills in the form best.
+My own view is that the missing element is enforcement. A standard that is modeled on paper rather than checked in the building rewards whoever fills out the form best.
 
 Landlords should be required to improve, but only alongside inspection and a limit on the rent increase.`,
             criteria: [
@@ -1261,7 +1261,7 @@ Landlords should be required to improve, but only alongside inspection and a lim
 
 What it does well is settle arguments. For three years I had blamed the television for the winter bills. The meter showed that the television used about a pound a month and that the router, which is never switched off, used more than twice that. Neither number is large, and that is itself the useful finding.
 
-It is not for everyone. If you live in a flat with electric heating, the meter will tell you what you already know, because the heating will be four fifths of the bill and there is nothing to plug it into. Anybody who rents and cannot change an appliance should also be careful: knowing the number and being unable to act on it is worse than not knowing.
+It is not for everyone. If you live in an apartment with electric heating, the meter will tell you what you already know, because the heating will be four fifths of the bill and there is nothing to plug it into. Anybody who rents and cannot change an appliance should also be careful: knowing the number and being unable to act on it is worse than not knowing.
 
 For a homeowner deciding which machine to replace first, however, it is fifteen pounds well spent.`,
             criteria: [
@@ -1307,7 +1307,7 @@ For a homeowner deciding which machine to replace first, however, it is fifteen 
               { de: "analyze your own earlier decision", tr: "Kendi eski kararını çözümlemek" },
             ],
             sample:
-              "I live on the top floor of a building from about 1960, which means good light and a flat that loses heat on three sides. Two winters ago I bought a small heater for one room, thinking I would heat less; the bill went up, because I stopped opening the door and the rest of the flat got damp instead. What makes me trust a saving now is whether somebody has measured the same house before and after, although I have to admit that almost nobody publishes that.",
+              "I live on the top floor of a building from about 1960, which means good light and an apartment that loses heat on three sides. Two winters ago I bought a small heater for one room, thinking I would heat less; the bill went up, because I stopped opening the door and the rest of the apartment got damp instead. What makes me trust a saving now is whether somebody has measured the same house before and after, although I have to admit that almost nobody publishes that.",
             criteria: [
               "Cevaplar geliştirildi mi ve gerekçelendirildi mi?",
               "Somut bir örnek verildi mi, yoksa genel mi konuşuldu?",
@@ -1352,12 +1352,12 @@ For a homeowner deciding which machine to replace first, however, it is fifteen 
           format: "speaking",
           goal: "interaction",
           prompt:
-            "A council has money for two measures to reduce energy use in rented flats. Talk with me about these ideas, then decide which two we would recommend and which one we would reject.",
+            "A council has money for two measures to reduce energy use in rented apartments. Talk with me about these ideas, then decide which two we would recommend and which one we would reject.",
           promptTr:
             "Bir belediyenin kiralık dairelerde enerji tüketimini azaltmak için iki önleme parası var. Bu fikirleri benimle konuş, sonra hangi ikisini önereceğimize ve hangisini reddedeceğimize karar ver.",
           prepSeconds: 30,
           exchange: [
-            { who: "partner", de: "The ideas are: free loft insulation for the worst properties, inspectors who actually enter the buildings, a leaflet in every letterbox, and a grant towards new boilers. Which of these would actually reduce the bills?", tr: "Fikirler: en kötü durumdaki konutlara ücretsiz çatı yalıtımı, gerçekten binaya giren denetçiler, her posta kutusuna bir broşür ve yeni kazanlar için hibe. Sence bunlardan hangisi faturaları gerçekten düşürür?" },
+            { who: "partner", de: "The ideas are: free loft insulation for the worst properties, inspectors who actually enter the buildings, a pamphlet in every mailbox, and a grant towards new boilers. Which of these would actually reduce the bills?", tr: "Fikirler: en kötü durumdaki konutlara ücretsiz çatı yalıtımı, gerçekten binaya giren denetçiler, her posta kutusuna bir broşür ve yeni kazanlar için hibe. Sence bunlardan hangisi faturaları gerçekten düşürür?" },
             { who: "you", hint: "Bir ya da iki fikri seç ve neden işe yarayacağını açıkla.", expect: "seçenekleri değerlendirmek ve birini gerekçesiyle savunmak", seconds: 45 },
             { who: "partner", de: "I would question the inspectors. They repair nothing at all, and a budget spent on visits is a budget not spent on insulation. Is that not the worst possible use of the money?", tr: "Denetçileri sorgularım. Hiçbir şeyi onarmıyorlar ve ziyarete harcanan bütçe yalıtıma harcanmayan bütçedir. Bu paranın olabilecek en kötü kullanımı değil mi?" },
             { who: "you", hint: "İtirazı değerlendir: kabul et, sınırla ya da çürüt.", expect: "bir itirazı değerlendirmek ve kısmen kabul etmek ya da çürütmek", seconds: 45 },
@@ -1373,7 +1373,7 @@ For a homeowner deciding which machine to replace first, however, it is fifteen 
               { de: "reach a joint decision with reasons", tr: "Gerekçeli ortak bir karara varmak" },
             ],
             sample:
-              "The strongest is free loft insulation, because it is the cheapest measure per pound saved and almost nothing has been done since the nineteen-eighties. You are right that inspectors repair nothing, and I want to concede that; what I would defend is a small number of them aimed only at the properties that claim a good rating without ever having been entered. The leaflet seems like a cure worse than the disease: it moves responsibility to the person who cannot act. So I would recommend the insulation and the targeted inspection, and reject the leaflet.",
+              "The strongest is free loft insulation, because it is the cheapest measure per pound saved and almost nothing has been done since the nineteen-eighties. You are right that inspectors repair nothing, and I want to concede that; what I would defend is a small number of them aimed only at the properties that claim a good rating without ever having been entered. The pamphlet seems like a cure worse than the disease: it moves responsibility to the person who cannot act. So I would recommend the insulation and the targeted inspection, and reject the pamphlet.",
             criteria: [
               "Seçenekler birbirine karşı mı değerlendirildi?",
               "İtiraza doğrudan karşılık verildi mi ve kısmi kabul yapılabildi mi?",

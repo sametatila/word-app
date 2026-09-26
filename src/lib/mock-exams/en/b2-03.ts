@@ -48,7 +48,7 @@ export const EN_B2_03: MockPaper = {
 
 A farmer receives a share of it that varies from about eight percent for a loaf of bread to nearly forty for a box of eggs. Almost nobody {{2}} this variation into account when comparing two products.
 
-Economists who study the chain {{3}} out that the largest share usually goes to processing and transport rather than to the shop itself. Blaming the retailer alone therefore {{4}} the point.
+Economists who study the chain {{3}} out that the largest share usually goes to processing and transport rather than to the store itself. Blaming the retailer alone therefore {{4}} the point.
 
 Some countries now require a second figure on the shelf, showing what the farm was paid. Early trials {{5}} that shoppers change very little, which the designers had not expected.
 
@@ -330,7 +330,7 @@ The most likely future is therefore a mixed one, with different markets making d
               kind: "gap",
               id: "en-b2-03-l4-22",
               no: 22,
-              text: "I did not know the rules, so I filled in the wrong form.\nIf I ______ the rules, I would not have filled in the wrong form.",
+              text: "I did not know the rules, so I filled out the wrong form.\nIf I ______ the rules, I would not have filled out the wrong form.",
               cue: "KNOWN",
               accept: ["had known"],
               explain:
@@ -445,7 +445,7 @@ Take tomatoes. A heated glasshouse two hours from the city can use several times
 
 Transport itself is also badly understood. A truck carrying twenty tonnes uses very little fuel per box, whereas a customer who drives four kilometers for six items uses a great deal. {{30}}
 
-Given all this, some retailers have begun to publish a figure that includes the journey from the shop to the home. It has been resisted, and the reason for the resistance is instructive. {{31}}
+Given all this, some retailers have begun to publish a figure that includes the journey from the store to the home. It has been resisted, and the reason for the resistance is instructive. {{31}}
 
 None of this argues against buying from a nearby farm, which supports things that no calculation captures. It argues for knowing which part of the journey a number describes.`,
               gloss: [
@@ -684,7 +684,7 @@ None of this argues against buying from a nearby farm, which supports things tha
             {
               kind: "audio",
               id: "a8",
-              genre: "In a shop",
+              genre: "In a store",
               genreTr: "Dükkânda",
               situation: "Bir müşteri iki ekmek arasındaki farkı soruyor.",
               plays: 2,
@@ -1250,7 +1250,7 @@ Supermarkets should therefore be required to publish it, but at chain level rath
           format: "writing",
           goal: "interaction",
           prompt:
-            "You write for a student website. Write a review of a market, a shop or a restaurant you have used recently. Say what it offers, what it does well, and who would be disappointed by it. Write 140 to 190 words.",
+            "You write for a student website. Write a review of a market, a store or a restaurant you have used recently. Say what it offers, what it does well, and who would be disappointed by it. Write 140 to 190 words.",
           promptTr:
             "Bir öğrenci sitesi için yazıyorsun. Yakınlarda gittiğin bir pazarın, dükkânın ya da lokantanın değerlendirmesini yaz. Neler sunduğunu, neyi iyi yaptığını ve kimin hayal kırıklığına uğrayacağını söyle. 140–190 kelime yaz.",
           items: [],
@@ -1302,7 +1302,7 @@ For anybody who cooks from what they find, however, it is the best two hours of 
             { who: "you", hint: "Şimdiki durumu ve değişimi anlat, bir gerekçe ver.", expect: "bir alışkanlığı ve zaman içindeki değişimini gerekçesiyle anlatmak", seconds: 45 },
             { who: "partner", de: "Thank you. Can you think of a time when you paid more for something and later decided it was not worth it?", tr: "Teşekkürler. Bir şeye fazla ödeyip sonradan değmediğine karar verdiğin bir anı hatırlıyor musun?" },
             { who: "you", hint: "Somut bir örnek ver ve kendi kararını çözümle.", expect: "somut bir örnek vermek ve kendi kararını çözümlemek", seconds: 45 },
-            { who: "partner", de: "And what makes you trust one label or one shop more than another?", tr: "Bir etikete ya da bir dükkâna ötekinden çok güvenmeni ne sağlıyor?" },
+            { who: "partner", de: "And what makes you trust one label or one store more than another?", tr: "Bir etikete ya da bir dükkâna ötekinden çok güvenmeni ne sağlıyor?" },
             { who: "you", hint: "Bir ölçüt söyle ve sınırını da kabul et.", expect: "bir ölçüt öne sürmek ve sınırını kabul etmek", seconds: 45 },
           ],
           items: [],
@@ -1313,7 +1313,7 @@ For anybody who cooks from what they find, however, it is the best two hours of 
               { de: "analyze your own earlier decision", tr: "Kendi eski kararını çözümlemek" },
             ],
             sample:
-              "I used to do one big supermarket trip on Saturdays; now I buy vegetables at a market on the way home and everything else online, which is cheaper in time rather than in money. Two years ago I paid nearly double for eggs with a very convincing box, and when I finally looked the farm up it was owned by the same company as the cheap ones. What makes me trust a shop now is whether it will name a supplier when I ask, although I have to admit that most people, including me, almost never ask.",
+              "I used to do one big supermarket trip on Saturdays; now I buy vegetables at a market on the way home and everything else online, which is cheaper in time rather than in money. Two years ago I paid nearly double for eggs with a very convincing box, and when I finally looked the farm up it was owned by the same company as the cheap ones. What makes me trust a store now is whether it will name a supplier when I ask, although I have to admit that most people, including me, almost never ask.",
             criteria: [
               "Cevaplar geliştirildi mi ve gerekçelendirildi mi?",
               "Somut bir örnek verildi mi, yoksa genel mi konuşuldu?",
@@ -1328,7 +1328,7 @@ For anybody who cooks from what they find, however, it is the best two hours of 
           format: "speaking",
           goal: "production",
           prompt:
-            "Talk on your own for about one and a half minutes. Compare these two ways of helping small farms, say which is better and explain one problem with your choice: paying them a higher price through the shops, or paying them directly from public money.",
+            "Talk on your own for about one and a half minutes. Compare these two ways of helping small farms, say which is better and explain one problem with your choice: paying them a higher price through the stores, or paying them directly from public money.",
           promptTr:
             "Yaklaşık bir buçuk dakika tek başına konuş. Küçük çiftliklere yardımın şu iki yolunu karşılaştır, hangisinin daha iyi olduğunu söyle ve seçtiğinin bir sorununu açıkla: dükkânlar üzerinden daha yüksek fiyat ödemek mi, kamu parasından doğrudan ödeme yapmak mı?",
           prepSeconds: 60,
@@ -1342,7 +1342,7 @@ For anybody who cooks from what they find, however, it is the best two hours of 
               { de: "identify a problem with your own choice", tr: "Kendi seçiminde bir sorunu adlandır" },
             ],
             sample:
-              "A higher price through the shops keeps the relationship simple: the person who eats the food pays for it, and nobody has to design a form. The difficulty is that it falls hardest on people with the least money, and a policy that makes food more expensive for them is hard to defend. Public payment spreads the cost across everybody and can be targeted, but it creates paperwork that the largest farms are always best at completing, which is exactly what happened with area payments. I would choose public payment, mainly because the price route cannot be aimed at anybody. The problem with my own choice is that it hides the cost: nobody sees it at the till, so nobody defends it when a government looks for savings.",
+              "A higher price through the stores keeps the relationship simple: the person who eats the food pays for it, and nobody has to design a form. The difficulty is that it falls hardest on people with the least money, and a policy that makes food more expensive for them is hard to defend. Public payment spreads the cost across everybody and can be targeted, but it creates paperwork that the largest farms are always best at completing, which is exactly what happened with area payments. I would choose public payment, mainly because the price route cannot be aimed at anybody. The problem with my own choice is that it hides the cost: nobody sees it at the till, so nobody defends it when a government looks for savings.",
             criteria: [
               "İki yaklaşım da gerçekten karşılaştırıldı mı?",
               "Tercih gerekçelendirildi mi?",

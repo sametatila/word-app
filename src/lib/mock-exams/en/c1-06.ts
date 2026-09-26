@@ -1246,7 +1246,7 @@ The translators the program most wants to fund are the least likely to {{13}}.
           format: "writing",
           goal: "production",
           prompt:
-            "You have attended a seminar on translation. Write an essay for your tutor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. A translation should reproduce as closely as possible what the original says.\n2. A translation should reproduce as closely as possible what the original does to a reader.\n\nWrite 220 to 260 words.",
+            "You have attended a seminar on translation. Write an essay for your instructor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. A translation should reproduce as closely as possible what the original says.\n2. A translation should reproduce as closely as possible what the original does to a reader.\n\nWrite 220 to 260 words.",
           promptTr:
             "Çeviri üzerine bir seminere katıldın. Danışmanın için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Çeviri, aslın SÖYLEDİĞİNİ olabildiğince yakın aktarmalı.\n2. Çeviri, aslın okurda YAPTIĞINI olabildiğince yakın aktarmalı.\n\n220–260 kelime yaz.",
           items: [],
@@ -1349,7 +1349,7 @@ I recommend adopting the system for descriptive pages and retaining human transl
               { de: "propose and justify a criterion", tr: "Bir ölçüt önermek ve gerekçelendirmek" },
             ],
             sample:
-              "The clearest case for me was a novel where every character spoke in the same register, which I doubt was true of a book that had won a prize for its dialogue. I could not check it, and that is exactly the position most readers are in. I would say a reader without the original can judge a great deal — whether a page holds together, whether the jokes work — although I have to concede that they cannot judge the one thing they are usually asked about. As for improvement against modernisation, I would look at whether the new version is easier in the places the old one was easy, or only in the places it was hard.",
+              "The clearest case for me was a novel where every character spoke in the same register, which I doubt was true of a book that had won a prize for its dialogue. I could not check it, and that is exactly the position most readers are in. I would say a reader without the original can judge a great deal — whether a page holds together, whether the jokes work — although I have to concede that they cannot judge the one thing they are usually asked about. As for improvement against modernization, I would look at whether the new version is easier in the places the old one was easy, or only in the places it was hard.",
             criteria: [
               "Örnek somut mu ve çözümlendi mi?",
               "Konum alınırken karşı görüşe pay bırakıldı mı?",

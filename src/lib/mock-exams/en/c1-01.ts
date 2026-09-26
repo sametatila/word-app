@@ -1058,7 +1058,7 @@ The most valuable material has come from the {{14}} visits.`,
               ref: "c1",
               text: "What responsibility does Tomas accept?",
               options: [
-                "That his program digitised the wrong collections",
+                "That his program digitized the wrong collections",
                 "That the profession presented money as the only obstacle",
                 "That review standards were set too high",
                 "That funders were misled about the timescale",
@@ -1343,7 +1343,7 @@ The most valuable material has come from the {{14}} visits.`,
           format: "writing",
           goal: "production",
           prompt:
-            "You have attended a discussion on public archives. Write an essay for your tutor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. Making records freely available online serves everyone equally.\n2. Records often contain information about people who never agreed to publication.\n\nWrite 220 to 260 words.",
+            "You have attended a discussion on public archives. Write an essay for your instructor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. Making records freely available online serves everyone equally.\n2. Records often contain information about people who never agreed to publication.\n\nWrite 220 to 260 words.",
           promptTr:
             "Kamu arşivleri üzerine bir tartışmaya katıldın. Danışmanın için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Kayıtları internette serbestçe erişilebilir kılmak herkese eşit hizmet eder.\n2. Kayıtlar çoğu zaman yayımlanmayı hiç kabul etmemiş insanlar hakkında bilgi taşır.\n\n220–260 kelime yaz.",
           items: [],
@@ -1395,19 +1395,19 @@ My own view is that the choice is often false. What is missing is not a decision
 
 Current situation
 
-The collection holds approximately four thousand items, of which the catalog lists fewer than half. In practice this means that a reader must know what they are looking for before they can find it, which reverses the purpose of a catalog. Three enquiries in the last term were abandoned for this reason, according to the enquiry log.
+The collection holds approximately four thousand items, of which the catalog lists fewer than half. In practice this means that a reader must know what they are looking for before they can find it, which reverses the purpose of a catalog. Three inquiries in the last term were abandoned for this reason, according to the inquiry log.
 
 Recommendation
 
-I recommend that the whole sum be spent on cataloguing rather than on digitization. Two part-time posts for one year would clear the backlog, and the resulting records would be usable immediately, at no further cost, by every reader and by other libraries through the shared catalog.
+I recommend that the whole sum be spent on cataloging rather than on digitization. Two part-time positions for one year would clear the backlog, and the resulting records would be usable immediately, at no further cost, by every reader and by other libraries through the shared catalog.
 
 Anticipated objection
 
-The committee may reasonably object that digitization is more visible and photographs well, whereas a catalog record is invisible to anyone not already searching. I accept the force of this. My answer is that digitising an uncatalogued collection produces images that nobody can locate, and the sequence therefore matters: cataloguing first makes any later digitization cheaper, while digitising first does nothing to make cataloguing cheaper.
+The committee may reasonably object that digitization is more visible and photographs well, whereas a catalog record is invisible to anyone not already searching. I accept the force of this. My answer is that digitizing an uncataloged collection produces images that nobody can locate, and the sequence therefore matters: cataloging first makes any later digitization cheaper, while digitizing first does nothing to make cataloging cheaper.
 
 Conclusion
 
-I would add that cataloguing is divisible in a way that spending on equipment is not. If the committee prefers a smaller commitment, half the sum would still complete the two largest uncatalogued series, and I would regard that as a better outcome than an evenly divided budget that finishes neither task.`,
+I would add that cataloging is divisible in a way that spending on equipment is not. If the committee prefers a smaller commitment, half the sum would still complete the two largest uncataloged series, and I would regard that as a better outcome than an evenly divided budget that finishes neither task.`,
             criteria: [
               "Mevcut durum somut kanıtla mı anlatıldı? (sayı, kayıt, gözlem)",
               "Öneri belirli mi — ne, ne kadar, ne süreyle?",
@@ -1482,7 +1482,7 @@ I would add that cataloguing is divisible in a way that spending on equipment is
               { de: "acknowledge a case that your rule handles badly", tr: "Kendi kuralının kötü işlediği bir durumu kabul et" },
             ],
             sample:
-              "There are at least three interests here and they do not point the same way. The first is the public interest in understanding how an institution behaved, which is strongest exactly where the institution behaved badly. The second is the interest of the individuals described, who are usually the least powerful party and who never chose to be in the file. The third, which is often forgotten, is the interest of future readers, since a record withheld now is frequently a record lost. I would draw the line at identification rather than at content: publish what the institution did, in full, and withhold what identifies a private individual until a fixed period has passed. I am aware that my rule handles one case badly. Where the individual is the whole story — where the harm was done to one named person — anonymising the record can make it unreadable, and I do not have a clean answer to that. What I would resist is treating that hard case as a reason to abandon the general rule, which is what usually happens.",
+              "There are at least three interests here and they do not point the same way. The first is the public interest in understanding how an institution behaved, which is strongest exactly where the institution behaved badly. The second is the interest of the individuals described, who are usually the least powerful party and who never chose to be in the file. The third, which is often forgotten, is the interest of future readers, since a record withheld now is frequently a record lost. I would draw the line at identification rather than at content: publish what the institution did, in full, and withhold what identifies a private individual until a fixed period has passed. I am aware that my rule handles one case badly. Where the individual is the whole story — where the harm was done to one named person — anonymizing the record can make it unreadable, and I do not have a clean answer to that. What I would resist is treating that hard case as a reason to abandon the general rule, which is what usually happens.",
             criteria: [
               "En az iki çatışan çıkar adlandırıldı mı?",
               "Sınır açıkça çizildi mi ve gerekçelendirildi mi?",
@@ -1503,7 +1503,7 @@ I would add that cataloguing is divisible in a way that spending on equipment is
             "Bir şehir arşivi sınırlı bir bütçeyi nasıl harcayacağına karar verecek. Seçenekleri benimle konuş ve ilk üç için bir öncelik sırasında anlaş.",
           prepSeconds: 40,
           exchange: [
-            { who: "partner", de: "The options are: cataloguing the uncatalogued material, digitising what is already catalogued, a public exhibition, training staff in privacy review, and extending the opening hours. Which two strike you as most defensible, and why?", tr: "Seçenekler: kataloglanmamış malzemenin kataloglanması, zaten kataloglanmış olanın dijitalleştirilmesi, halka açık bir sergi, personele gizlilik incelemesi eğitimi ve açılış saatlerinin uzatılması. Sana en savunulabilir gelen ikisi hangisi, neden?" },
+            { who: "partner", de: "The options are: cataloging the uncataloged material, digitizing what is already cataloged, a public exhibition, training staff in privacy review, and extending the opening hours. Which two strike you as most defensible, and why?", tr: "Seçenekler: kataloglanmamış malzemenin kataloglanması, zaten kataloglanmış olanın dijitalleştirilmesi, halka açık bir sergi, personele gizlilik incelemesi eğitimi ve açılış saatlerinin uzatılması. Sana en savunulabilir gelen ikisi hangisi, neden?" },
             { who: "you", hint: "İki seçenek seç ve seçim ölçütünü açıkça söyle.", expect: "iki seçeneği seçmek ve seçim ölçütünü açıkça adlandırmak", seconds: 50 },
             { who: "partner", de: "Let me press you on that. Everything you have chosen is invisible to the public, and this archive depends on public support for its funding. Is that not a real risk?", tr: "Bu noktada üsteleyeyim. Seçtiklerinin hepsi halka görünmez ve bu arşiv fonu için kamu desteğine bağlı. Bu gerçek bir risk değil mi?" },
             { who: "you", hint: "İtirazı ciddiye al: gücünü kabul et, sonra ya konumunu değiştir ya da neden değiştirmediğini açıkla.", expect: "güçlü bir itirazı kabul etmek ve konumunu ya revize etmek ya da savunmasını gerekçelendirmek", seconds: 50 },
@@ -1519,7 +1519,7 @@ I would add that cataloguing is divisible in a way that spending on equipment is
               { de: "agree a justified priority order", tr: "Gerekçeli bir öncelik sırasında anlaşmak" },
             ],
             sample:
-              "My criterion is whether the spending makes later spending cheaper. On that test, cataloguing and privacy training come first, because both reduce the cost of everything else. Your objection is a real one and I do not want to wave it away: an archive that produces nothing visible for two years is a soft target at the next budget. Where I would move is on sequencing rather than on priorities. I would take a small part of the sum for a modest exhibition drawn from what is already catalogued, precisely so that the invisible work survives politically. So: cataloguing first, privacy training second, a small exhibition third, and I would drop the extended opening hours, since the reading room is not currently full at the hours we already have.",
+              "My criterion is whether the spending makes later spending cheaper. On that test, cataloging and privacy training come first, because both reduce the cost of everything else. Your objection is a real one and I do not want to wave it away: an archive that produces nothing visible for two years is a soft target at the next budget. Where I would move is on sequencing rather than on priorities. I would take a small part of the sum for a modest exhibition drawn from what is already cataloged, precisely so that the invisible work survives politically. So: cataloging first, privacy training second, a small exhibition third, and I would drop the extended opening hours, since the reading room is not currently full at the hours we already have.",
             criteria: [
               "Seçim ölçütü açıkça adlandırıldı mı?",
               "İtiraz güçlü hâliyle mi ele alındı, yoksa savuşturuldu mu?",

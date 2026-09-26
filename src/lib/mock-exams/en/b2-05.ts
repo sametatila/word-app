@@ -514,12 +514,12 @@ None of this is an argument against rules, which are the only thing standing bet
             {
               key: "a",
               label: "a — Bertan, club treasurer",
-              body: "We put the junior fee up by three pounds a month and lost nine families in a term. Nobody complained; they simply stopped coming. I would do it again, because the alternative was closing, but anybody who says a small rise costs nothing has not watched the register.",
+              body: "We put the junior fee up by three pounds a month and lost nine families in a term. Nobody complained; they simply stopped coming. I would do it again, because the alternative was closing, but anybody who says a small increase costs nothing has not watched the register.",
             },
             {
               key: "b",
-              label: "b — Nadja, physiotherapist",
-              body: "Coaches are blamed for injuries that begin with the fixture list. A body that plays sixty matches has a different risk from one that plays forty, and nobody who writes the calendar has ever had to explain that to a nineteen-year-old. The problem starts above us.",
+              label: "b — Nadja, physical therapist",
+              body: "Coaches are blamed for injuries that begin with the schedule. A body that plays sixty matches has a different risk from one that plays forty, and nobody who writes the calendar has ever had to explain that to a nineteen-year-old. The problem starts above us.",
             },
             {
               key: "c",
@@ -529,7 +529,7 @@ None of this is an argument against rules, which are the only thing standing bet
             {
               key: "d",
               label: "d — Saga, teacher",
-              body: "My pupils can name every player in two leagues. What defeats them is the idea that a club is an organization with accounts and choices, because there is nothing dramatic to hold on to. That is the harder thing to teach and we barely try.",
+              body: "My students can name every player in two leagues. What defeats them is the idea that a club is an organization with accounts and choices, because there is nothing dramatic to hold on to. That is the harder thing to teach and we barely try.",
             },
           ],
           items: [
@@ -576,7 +576,7 @@ None of this is an argument against rules, which are the only thing standing bet
               text: "Which text challenges people who claim a change is painless?",
               answer: "a",
               explain:
-                "Bertan doğrudan bir itiraz kuruyor: «anybody who says a small rise costs nothing has not watched the register». Zammı savunuyor ama bedelini inkâr edenleri karşısına alıyor.",
+                "Bertan doğrudan bir itiraz kuruyor: «anybody who says a small increase costs nothing has not watched the register». Zammı savunuyor ama bedelini inkâr edenleri karşısına alıyor.",
             },
           ],
         },
@@ -619,7 +619,7 @@ None of this is an argument against rules, which are the only thing standing bet
               situation: "Bir kulüp üyeye ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hello, this is about your junior membership. The fee for the new season is one hundred and eight pounds, which is nine pounds a month. If that is difficult, please ring me rather than simply not renewing; we have a fund and almost nobody uses it." },
+                { text: "Hello, this is about your junior membership. The fee for the new season is one hundred and eight pounds, which is nine pounds a month. If that is difficult, please call me rather than simply not renewing; we have a fund and almost nobody uses it." },
               ],
             },
             {
@@ -666,7 +666,7 @@ None of this is an argument against rules, which are the only thing standing bet
               situation: "Bir gönüllü pazar günü için ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hi, about Sunday. I can do the gate and the programs, but I have to leave at four for my mother. If we open at one we will have the queue clear by then, and Xenia said she can stay to the end." },
+                { text: "Hi, about Sunday. I can do the gate and the programs, but I have to leave at four for my mother. If we open at one we will have the line cleared by then, and Xenia said she can stay to the end." },
               ],
             },
             {
@@ -716,7 +716,7 @@ None of this is an argument against rules, which are the only thing standing bet
               options: ["Pay for the whole year at once", "Renew before the end of the current month", "Get in touch if the fee is a problem"],
               answer: 2,
               explain:
-                "İleti tek bir rica taşıyor: «please ring me rather than simply not renewing; we have a fund and almost nobody uses it». Peşin ödeme ya da son tarih hiç geçmiyor.",
+                "İleti tek bir rica taşıyor: «please call me rather than simply not renewing; we have a fund and almost nobody uses it». Peşin ödeme ya da son tarih hiç geçmiyor.",
             },
             {
               kind: "mcq",
@@ -1310,7 +1310,7 @@ For somebody starting again after years away, however, it is the easiest door I 
               { de: "analyze your own earlier decision", tr: "Kendi eski kararını çözümlemek" },
             ],
             sample:
-              "I swam with a club until I was seventeen and then stopped for eleven years; I joined a running group last spring, mainly because it meets at a time I can actually reach. The price stopped me once: a gym near my old flat cost fifty a month and I told myself it was really about time, not money, which was not true. What makes me think a club is well run now is whether it can tell you where its money goes, although I have to admit I have only asked twice.",
+              "I swam with a club until I was seventeen and then stopped for eleven years; I joined a running group last spring, mainly because it meets at a time I can actually reach. The price stopped me once: a gym near my old apartment cost fifty a month and I told myself it was really about time, not money, which was not true. What makes me think a club is well run now is whether it can tell you where its money goes, although I have to admit I have only asked twice.",
             criteria: [
               "Cevaplar geliştirildi mi ve gerekçelendirildi mi?",
               "Somut bir örnek verildi mi, yoksa genel mi konuşuldu?",

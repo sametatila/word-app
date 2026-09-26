@@ -49,7 +49,7 @@ A release is written by the university, not by the reporter, and its purpose is 
 
 Researchers who have compared releases with the papers behind them {{3}} out that exaggeration usually enters at this stage, before any journalist is involved. Blaming the newspapers alone therefore {{4}} the point.
 
-The remedy is unglamorous. Several universities now ask an author to sign off the release, which {{5}} the number of overstated claims by roughly a third in one trial.
+The remedy is unglamorous. Several universities now ask an author to sign off on the release, which {{5}} the number of overstated claims by roughly a third in one trial.
 
 That is a real improvement, but it is worth {{6}} in mind that a third is not everything, and the remaining two thirds still reach the public unchanged.`,
             },
@@ -309,7 +309,7 @@ The most likely future is therefore a mixed one, with different fields making di
               kind: "gap",
               id: "en-b2-02-l4-20",
               no: 20,
-              text: "I regret not applying for that post.\nI ______ for that post.",
+              text: "I regret not applying for that position.\nI ______ for that position.",
               cue: "WISH",
               accept: ["wish I had applied", "wish that I had applied", "wish I'd applied"],
               explain:
@@ -1168,7 +1168,7 @@ The speaker says the greatest risk is the {{16}}, not the abuse.`,
               no: 26,
               ref: "d1",
               text: "How does he answer the charge of negativity?",
-              options: ["By accepting it and promising to change", "By separating scepticism about one result from scepticism about science", "By pointing out that most of the critics have never read the section regularly"],
+              options: ["By accepting it and promising to change", "By separating skepticism about one result from skepticism about science", "By pointing out that most of the critics have never read the section regularly"],
               answer: 1,
               explain:
                 "Daniel iki şeyin karıştırıldığını söylüyor: tek sonuçlara kuşkucu olmak doğru, bilime kuşkucu olmak başka. Eleştiriyi kabul etmiyor ve okurları suçlamıyor, tersine düzenli okuyanın farkı göreceğini söylüyor.",
@@ -1235,21 +1235,21 @@ The speaker says the greatest risk is the {{16}}, not the abuse.`,
           format: "writing",
           goal: "production",
           prompt:
-            "In your English class you have discussed news and social media. Now write an essay for your teacher, answering this question: \"Should schools teach students how to judge news sources?\" Use the two ideas below and add one idea of your own.\n\nIdeas: time in the timetable — who decides what counts as reliable",
+            "In your English class you have discussed news and social media. Now write an essay for your teacher, answering this question: \"Should schools teach students how to judge news sources?\" Use the two ideas below and add one idea of your own.\n\nIdeas: time in the schedule — who decides what counts as reliable",
           promptTr:
             "İngilizce dersinde haberler ve sosyal medyayı tartıştınız. Öğretmenin için bir deneme yaz: \"Okullar öğrencilere haber kaynaklarını değerlendirmeyi öğretmeli mi?\" Aşağıdaki iki fikri kullan ve kendi fikrinden birini ekle.\n\nFikirler: ders programındaki zaman — neyin güvenilir sayılacağına kim karar veriyor",
           items: [],
           rubric: {
             minWords: 140,
             points: [
-              { de: "Discuss the question of time in the timetable.", tr: "Ders programındaki zaman sorununu tartış." },
+              { de: "Discuss the question of time in the schedule.", tr: "Ders programındaki zaman sorununu tartış." },
               { de: "Discuss who decides what counts as reliable.", tr: "Neyin güvenilir sayılacağına kimin karar verdiğini tartış." },
               { de: "Add a third idea of your own.", tr: "Kendi üçüncü fikrini ekle." },
               { de: "Reach a clear conclusion.", tr: "Açık bir sonuca var." },
             ],
             sample: `Almost everyone agrees that students should be able to judge what they read. The disagreement begins as soon as somebody asks where the lessons will fit and who will write them.
 
-The timetable objection is the weaker of the two, in my view. A separate subject is probably unnecessary; the skill can be practiced inside history and science, where sources are already discussed. What it does require is training for teachers, and that is a genuine cost.
+The schedule objection is the weaker of the two, in my view. A separate subject is probably unnecessary; the skill can be practiced inside history and science, where sources are already discussed. What it does require is training for teachers, and that is a genuine cost.
 
 The second objection is harder. If a school teaches a list of trusted outlets, it is teaching a political judgment, and families will not all accept the same list. A curriculum that avoids this by teaching method instead of lists is more defensible, although it is also more difficult to examine.
 
@@ -1385,7 +1385,7 @@ For anybody who reads statistics in the news, however, it is the most useful six
             "Bir üniversite araştırmalarının nasıl aktarıldığını iyileştirmek istiyor. Bu fikirleri benimle konuş, sonra hangi ikisini önereceğimize ve hangisini reddedeceğimize karar ver.",
           prepSeconds: 30,
           exchange: [
-            { who: "partner", de: "The ideas are: authors must sign off every press release, releases must include a limitations paragraph, journalists get a phone number for questions, and the university stops issuing releases altogether. Which of these would actually change what readers see?", tr: "Fikirler: bültenleri yazarların onaylaması, bültenlere bir sınırlamalar paragrafı konması, gazetecilere soru için bir telefon numarası verilmesi ve üniversitenin bülten yayımlamayı büsbütün bırakması. Sence bunlardan hangisi okurun gördüğünü gerçekten değiştirir?" },
+            { who: "partner", de: "The ideas are: authors must sign off on every press release, releases must include a limitations paragraph, journalists get a phone number for questions, and the university stops issuing releases altogether. Which of these would actually change what readers see?", tr: "Fikirler: bültenleri yazarların onaylaması, bültenlere bir sınırlamalar paragrafı konması, gazetecilere soru için bir telefon numarası verilmesi ve üniversitenin bülten yayımlamayı büsbütün bırakması. Sence bunlardan hangisi okurun gördüğünü gerçekten değiştirir?" },
             { who: "you", hint: "Bir ya da iki fikri seç ve neden işe yarayacağını açıkla.", expect: "seçenekleri değerlendirmek ve birini gerekçesiyle savunmak", seconds: 45 },
             { who: "partner", de: "I would question the limitations paragraph. In my experience nobody reads the last paragraph of anything. Does that change your view?", tr: "Sınırlamalar paragrafını sorgularım. Benim gördüğüm, hiç kimse hiçbir metnin son paragrafını okumuyor. Bu görüşünü değiştirir mi?" },
             { who: "you", hint: "İtirazı değerlendir: kabul et, sınırla ya da çürüt.", expect: "bir itirazı değerlendirmek ve kısmen kabul etmek ya da çürütmek", seconds: 45 },

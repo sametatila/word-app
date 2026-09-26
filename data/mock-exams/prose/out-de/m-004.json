@@ -5,7 +5,7 @@
  { "tr": "tek bir durumu sonucuyla anlatmak", "kind": "exchange.expect", "en": "einen einzelnen Fall mit seiner Folge schildern" },
  { "tr": "bir günü tam bir cümleyle anlatmak", "kind": "exchange.expect", "en": "einen Tag in einem vollständigen Satz schildern" },
  { "tr": "bir yeri tam bir cümleyle söylemek", "kind": "exchange.expect", "en": "einen Ort in einem vollständigen Satz nennen" },
- { "tr": "holiday sözcüğüyle bir soru kurmak", "kind": "exchange.expect", "en": "mit dem Wort holiday eine Frage bilden" },
+ { "tr": "vacation sözcüğüyle bir soru kurmak", "kind": "exchange.expect", "en": "mit dem Wort vacation eine Frage bilden" },
  { "tr": "kibarca değiştirme koşulunu sormak", "kind": "exchange.expect", "en": "höflich nach den Umtauschbedingungen fragen" },
  { "tr": "miktar belirterek bir ürün istemek", "kind": "exchange.expect", "en": "eine Ware mit Mengenangabe verlangen" },
  { "tr": "aradığı giysiyi ve rengini söylemek", "kind": "exchange.expect", "en": "das gesuchte Kleidungsstück und dessen Farbe nennen" },

@@ -26,7 +26,7 @@ export const EN_B1_11: MockPaper = {
       skill: "reading",
       minutes: 55,
       instruction:
-        "There are six tasks in this part. You read short texts, adverts, an article and three texts with gaps. Answer each question with one choice.",
+        "There are six tasks in this part. You read short texts, ads, an article and three texts with gaps. Answer each question with one choice.",
       instructionTr:
         "Bu bölümde altı görev var. Kısa metinler, ilanlar, bir yazı ve boşluklu üç metin okuyacaksın. Her soruda doğru cevabı işaretle.",
       tasks: [
@@ -49,14 +49,14 @@ export const EN_B1_11: MockPaper = {
             {
               kind: "text",
               id: "m2",
-              genre: "Notice in a shop",
+              genre: "Notice in a store",
               genreTr: "Dükkân duyurusu",
               title: "SMALL PORTIONS",
               body: `Bread in half loaves, on the shelf by the door.
 
 Vegetables loose, not in bags.
 
-We do not charge more per kilo for loose vegetables, although most shops do.`,
+We do not charge more per kilo for loose vegetables, although most stores do.`,
             },
             {
               kind: "text",
@@ -72,7 +72,7 @@ We do not charge more per kilo for loose vegetables, although most shops do.`,
               genre: "Notice at a community center",
               genreTr: "Toplum merkezi duyurusu",
               title: "EAT TOGETHER",
-              body: `Thursday, 18.30.
+              body: `Thursday, 18:30.
 
 Bring something or bring nothing; there is always enough.
 
@@ -104,11 +104,11 @@ This is not a charity meal and nobody asks you why you came.`,
               id: "en-b1-11-l1-2",
               no: 2,
               ref: "m2",
-              text: "What does the shop say about the price?",
+              text: "What does the store say about the price?",
               options: ["Loose vegetables cost more here", "Half loaves cost the same as whole ones", "The price per kilo is not higher"],
               answer: 2,
               explain:
-                "Duyuru kendini öteki dükkânlardan ayırıyor: «We do not charge more per kilo for loose vegetables, although most shops do».",
+                "Duyuru kendini öteki dükkânlardan ayırıyor: «We do not charge more per kilo for loose vegetables, although most stores do».",
             },
             {
               kind: "mcq",
@@ -151,15 +151,15 @@ This is not a charity meal and nobody asks you why you came.`,
           format: "match",
           goal: "orientation",
           prompt:
-            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best advert. No advert is used twice.",
+            "Here are five people, 6 to 10. There are also eight ads, a to h. Match each person with the best ad. No ad is used twice.",
           promptTr:
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
-            { key: "a", label: "Loose and Small", body: "A shop that sells by the piece: one carrot, half a loaf, two eggs. Nothing here comes in a bag." },
+            { key: "a", label: "Loose and Small", body: "A store that sells by the piece: one carrot, half a loaf, two eggs. Nothing here comes in a bag." },
             { key: "b", label: "Eat Together", body: "Thursday evenings at the community center. Bring something or nothing. No membership and no questions." },
             { key: "c", label: "Cook Ahead", body: "A two-hour class on Saturday mornings: six meals for the week, cooked once. Fifteen euros." },
             { key: "d", label: "Recipes for One", body: "A free page from the library every month. Everything is written for a single portion, with nothing left over." },
-            { key: "e", label: "Freezer Advice", body: "A free leaflet at the health center. What freezes, what does not, and for how long." },
+            { key: "e", label: "Freezer Advice", body: "A free pamphlet at the health center. What freezes, what does not, and for how long." },
             { key: "f", label: "Restaurant Card", body: "Twenty percent off from Monday to Wednesday in fourteen restaurants. Thirty euros a year." },
             { key: "g", label: "Kitchen Equipment", body: "Small pans, small dishes and one-portion boxes. Everything from four euros." },
             { key: "h", label: "Shopping Delivery", body: "Minimum order forty euros. Tuesday and Friday, between two and six." },
@@ -169,7 +169,7 @@ This is not a charity meal and nobody asks you why you came.`,
               kind: "match",
               id: "en-b1-11-l2-6",
               no: 6,
-              text: "Emir lives alone and throws away half of every packet of vegetables.",
+              text: "Emir lives alone and throws away half of every package of vegetables.",
               answer: "a",
               explain:
                 "İlan tam bu sorunu çözüyor: «sells by the piece: one carrot, half a loaf, two eggs. Nothing here comes in a bag».",
@@ -230,7 +230,7 @@ This is not a charity meal and nobody asks you why you came.`,
 
 What is genuinely difficult is not the eating. It is the arithmetic. Almost every recipe in every book I own serves four, and dividing by four does not work. A quarter of an onion is a thing you can cut. A quarter of an egg is not, and a quarter of the cooking time produces something raw in the middle.
 
-The shops are the second half of the problem. Vegetables come in bags of six when I need one, and the bag costs less than the single piece. That means the cheap option is the one where half of it goes in the bin in nine days. If the loose carrot cost the bag price, I would buy one.
+The stores are the second half of the problem. Vegetables come in bags of six when I need one, and the bag costs less than the single piece. That means the cheap option is the one where half of it goes in the trash in nine days. If the loose carrot cost the bag price, I would buy one.
 
 I want to be fair to the recipe writers. A book of single portions sells badly, and they know it, because people who live alone buy the same books as everybody else and then adapt them, badly, in private.
 
@@ -279,7 +279,7 @@ I still eat alone six nights a week. On the seventh I eat with four other people
               kind: "mcq",
               id: "en-b1-11-l3-13",
               no: 13,
-              text: "What does she say about the shops?",
+              text: "What does she say about the stores?",
               options: [
                 "Small portions are not sold at all",
                 "The vegetables are of poor quality",
@@ -288,7 +288,7 @@ I still eat alone six nights a week. On the seventh I eat with four other people
               ],
               answer: 3,
               explain:
-                "Üçüncü paragraf hesabı kuruyor: torba tek parçadan ucuz, «the cheap option is the one where half of it goes in the bin in nine days».",
+                "Üçüncü paragraf hesabı kuruyor: torba tek parçadan ucuz, «the cheap option is the one where half of it goes in the trash in nine days».",
             },
             {
               kind: "mcq",
@@ -338,15 +338,15 @@ I still eat alone six nights a week. On the seventh I eat with four other people
               genre: "Magazine text",
               genreTr: "Dergi metni",
               title: "The bag of six",
-              body: `A shop is not being unkind when it sells carrots in a bag of six. It is doing the only thing that makes sense to it. {{16}}
+              body: `A store is not being unkind when it sells carrots in a bag of six. It is doing the only thing that makes sense to it. {{16}}
 
-The packet is cheaper to move, cheaper to price and cheaper to put on a shelf, and every one of those savings is real. The customer who wants one carrot is asking the shop to do more work for less money. {{17}}
+The package is cheaper to move, cheaper to price and cheaper to put on a shelf, and every one of those savings is real. The customer who wants one carrot is asking the store to do more work for less money. {{17}}
 
-What is odd is the price. In most shops the loose carrot costs more per kilo than the bagged one, sometimes a great deal more. {{18}}
+What is odd is the price. In most stores the loose carrot costs more per kilo than the bagged one, sometimes a great deal more. {{18}}
 
-Some shops have removed that difference, and the ones that have done it are usually small. A shop with four staff can decide something in an afternoon that a chain decides in a year. {{19}}
+Some stores have removed that difference, and the ones that have done it are usually small. A store with four staff can decide something in an afternoon that a chain decides in a year. {{19}}
 
-None of this is an argument for shopping in an expensive shop out of principle. It is an argument for noticing what a price is telling you. {{20}}`,
+None of this is an argument for shopping in an expensive store out of principle. It is an argument for noticing what a price is telling you. {{20}}`,
               gloss: [
                 { de: "a chain", tr: "zincir mağaza", en: "die Kette" },
                 { de: "handling", tr: "elleçleme, taşıma işi", en: "die Handhabung" },
@@ -357,9 +357,9 @@ None of this is an argument for shopping in an expensive shop out of principle. 
           options: [
             { key: "a", label: "a", body: "That is not a punishment; it is the cost of handling, and it is genuinely there." },
             { key: "b", label: "b", body: "Every part of the way food is sold assumes a household of at least three." },
-            { key: "c", label: "c", body: "Nobody in the shop is deciding to make life harder for one person; the system arrived before the person did." },
-            { key: "d", label: "d", body: "It is telling you how many people the shop expects you to be." },
-            { key: "e", label: "e", body: "Size is doing the work here, not virtue, and it will stop as soon as the small shop becomes a chain." },
+            { key: "c", label: "c", body: "Nobody in the store is deciding to make life harder for one person; the system arrived before the person did." },
+            { key: "d", label: "d", body: "It is telling you how many people the store expects you to be." },
+            { key: "e", label: "e", body: "Size is doing the work here, not virtue, and it will stop as soon as the small store becomes a chain." },
             { key: "f", label: "f", body: "The first supermarket in this country opened in 1948 and had eleven members of staff." },
           ],
           items: [
@@ -397,7 +397,7 @@ None of this is an argument for shopping in an expensive shop out of principle. 
               text: "Gap 19",
               answer: "e",
               explain:
-                "Paragraf küçük dükkânın hızını veriyor: «A shop with four staff can decide something in an afternoon that a chain decides in a year». (e) bunun erdemle değil ölçekle ilgili olduğunu ve zincire dönüşünce biteceğini ekliyor.",
+                "Paragraf küçük dükkânın hızını veriyor: «A store with four staff can decide something in an afternoon that a chain decides in a year». (e) bunun erdemle değil ölçekle ilgili olduğunu ve zincire dönüşünce biteceğini ekliyor.",
             },
             {
               kind: "match",
@@ -597,7 +597,7 @@ If you are cooking it for one, do not divide it. Make all of it and give half {{
             {
               kind: "audio",
               id: "a2",
-              genre: "In a shop",
+              genre: "In a store",
               genreTr: "Dükkânda",
               situation: "Bir müşteri tek havuç istiyor.",
               plays: 2,
@@ -641,7 +641,7 @@ If you are cooking it for one, do not divide it. Make all of it and give half {{
               situation: "Bir öğretmen kursunda ne öğrettiğini anlatıyor.",
               plays: 2,
               segments: [
-                { text: "People come to my class expecting to learn to cook. Most of them can already cook. What they cannot do is buy for one, and that is a shop problem and a math problem, and I teach both of those instead." },
+                { text: "People come to my class expecting to learn to cook. Most of them can already cook. What they cannot do is buy for one, and that is a store problem and a math problem, and I teach both of those instead." },
               ],
             },
             {
@@ -652,7 +652,7 @@ If you are cooking it for one, do not divide it. Make all of it and give half {{
               situation: "Biri dükkândan arıyor.",
               plays: 2,
               segments: [
-                { text: "Hi Marta, it is Emir. I am at the shop. The half loaves are gone and the whole ones are the same price. Shall I buy one and we split it, or do you want nothing?" },
+                { text: "Hi Marta, it is Emir. I am at the store. The half loaves are gone and the whole ones are the same price. Shall I buy one and we split it, or do you want nothing?" },
               ],
             },
             {
@@ -685,7 +685,7 @@ If you are cooking it for one, do not divide it. Make all of it and give half {{
               no: 2,
               ref: "a2",
               text: "What does the assistant say?",
-              options: ["Loose carrots cost more here", "This shop does not charge extra", "Only bags are available today"],
+              options: ["Loose carrots cost more here", "This store does not charge extra", "Only bags are available today"],
               answer: 1,
               explain:
                 "Görevli kendi dükkânını ayırıyor: «Not here. In most places it is», ve uygulamayı anlamsız bulduğunu söylüyor.",
@@ -721,7 +721,7 @@ If you are cooking it for one, do not divide it. Make all of it and give half {{
               options: ["Cooking techniques", "Recipes for four people", "Shopping and amounts"],
               answer: 2,
               explain:
-                "Öğretmen dersin konusunu adlandırıyor: «that is a shop problem and a math problem, and I teach both of those instead».",
+                "Öğretmen dersin konusunu adlandırıyor: «that is a store problem and a math problem, and I teach both of those instead».",
             },
             {
               kind: "mcq",
@@ -729,7 +729,7 @@ If you are cooking it for one, do not divide it. Make all of it and give half {{
               no: 6,
               ref: "a6",
               text: "What is Emir asking?",
-              options: ["Whether the bread is fresh", "Whether to buy and share a loaf", "Whether the shop is still open"],
+              options: ["Whether the bread is fresh", "Whether to buy and share a loaf", "Whether the store is still open"],
               answer: 1,
               explain:
                 "İleti iki seçenek sunuyor: «Shall I buy one and we split it, or do you want nothing?»",
@@ -840,7 +840,7 @@ If you are cooking it for one, do not divide it. Make all of it and give half {{
               no: 8,
               ref: "b1",
               text: "What is the speaker doing?",
-              options: ["Recommending a particular shop", "Explaining why she waited", "Saying that a small change worked"],
+              options: ["Recommending a particular store", "Explaining why she waited", "Saying that a small change worked"],
               answer: 2,
               explain:
                 "Konuşmacı kullanımı ve fiyatı veriyor: «I have used it every evening for three weeks. It cost nine euros», ve iki yıl beklemiş olmasına şaşıyor.",
@@ -873,7 +873,7 @@ If you are cooking it for one, do not divide it. Make all of it and give half {{
               no: 11,
               ref: "b4",
               text: "What is the main point?",
-              options: ["The people in the flat are careless", "Cabbage should not be bought at all", "The size on sale is the problem"],
+              options: ["The people in the apartment are careless", "Cabbage should not be bought at all", "The size on sale is the problem"],
               answer: 2,
               explain:
                 "Konuşmacı ilk açıklamayı kendisi eliyor: «It is not that people are wasteful», sorun satılan boy.",
@@ -1023,9 +1023,9 @@ The next class is on the {{19}}`,
                 { speaker: "Host", text: "You ran the course for four years. What did people come for?" },
                 { speaker: "Ines", text: "They came to learn to cook, and about four in five of them could already cook perfectly well. That was the first thing I got wrong, and it took me a year to see it." },
                 { speaker: "Host", text: "So what were they missing?" },
-                { speaker: "Ines", text: "Two things, and neither of them is cooking. Buying — the shop sells in sixes and you are one. And deciding — at seven o'clock, with nobody in the room to disagree with you." },
+                { speaker: "Ines", text: "Two things, and neither of them is cooking. Buying — the store sells in sixes and you are one. And deciding — at seven o'clock, with nobody in the room to disagree with you." },
                 { speaker: "Host", text: "How did the course change?" },
-                { speaker: "Ines", text: "By the second year we spent the first hour in the shop and the second in the kitchen. People found that strange, and it was the hour that worked." },
+                { speaker: "Ines", text: "By the second year we spent the first hour in the store and the second in the kitchen. People found that strange, and it was the hour that worked." },
                 { speaker: "Host", text: "What about the food that was thrown away?" },
                 { speaker: "Ines", text: "It fell, but not because anybody became careful. It fell because we stopped buying the bag of six. Careful is not a plan; it is a mood." },
                 { speaker: "Host", text: "Did anything not work?" },
@@ -1056,7 +1056,7 @@ The next class is on the {{19}}`,
               options: ["Time and equipment", "Recipes and confidence", "Buying and deciding"],
               answer: 2,
               explain:
-                "Ines ikisini sayıyor: «Buying — the shop sells in sixes and you are one. And deciding — at seven o'clock».",
+                "Ines ikisini sayıyor: «Buying — the store sells in sixes and you are one. And deciding — at seven o'clock».",
             },
             {
               kind: "mcq",
@@ -1064,10 +1064,10 @@ The next class is on the {{19}}`,
               no: 22,
               ref: "d1",
               text: "How did the course change?",
-              options: ["Half of it moved to the shop", "It became much longer", "It was held in the evening"],
+              options: ["Half of it moved to the store", "It became much longer", "It was held in the evening"],
               answer: 0,
               explain:
-                "Ines yeni düzeni veriyor: «we spent the first hour in the shop and the second in the kitchen», ve işe yarayan saatin o olduğunu söylüyor.",
+                "Ines yeni düzeni veriyor: «we spent the first hour in the store and the second in the kitchen», ve işe yarayan saatin o olduğunu söylüyor.",
             },
             {
               kind: "mcq",
@@ -1075,7 +1075,7 @@ The next class is on the {{19}}`,
               no: 23,
               ref: "d1",
               text: "Why did the waste fall?",
-              options: ["People became more careful", "They stopped buying large packets", "The class cooked the leftovers"],
+              options: ["People became more careful", "They stopped buying large packages", "The class cooked the leftovers"],
               answer: 1,
               explain:
                 "Ines dikkatli olmayı açıkça eliyor: «not because anybody became careful … because we stopped buying the bag of six».",
@@ -1120,7 +1120,7 @@ The next class is on the {{19}}`,
           format: "writing",
           goal: "interaction",
           prompt:
-            "A shop near you sells almost everything in large packets. Write a letter to the manager. Write about 100 words and cover all the points.",
+            "A store near you sells almost everything in large packages. Write a letter to the manager. Write about 100 words and cover all the points.",
           promptTr:
             "Yakınındaki bir dükkân hemen her şeyi büyük paketlerde satıyor. Müdüre bir mektup yaz. Yaklaşık 100 kelime, bütün maddeleri işle.",
           items: [],
@@ -1129,13 +1129,13 @@ The next class is on the {{19}}`,
             points: [
               { de: "Say what you buy there and what happens to it.", tr: "Oradan ne aldığını ve o şeye ne olduğunu söyle." },
               { de: "Make one exact suggestion.", tr: "Tek ve somut bir öneri yap." },
-              { de: "Say what you would do differently if the shop changed.", tr: "Dükkân değişirse senin ne yapacağını söyle." },
+              { de: "Say what you would do differently if the store changed.", tr: "Dükkân değişirse senin ne yapacağını söyle." },
             ],
             sample: `Dear Sir or Madam,
 
 I shop in your branch on Mill Street two or three times a week and I live alone.
 
-Almost everything is sold in packets for a family. I buy a bag of six peppers because there is nothing smaller, and three of them go in the bin every week. That is not a complaint about quality; it is a complaint about the size.
+Almost everything is sold in packages for a family. I buy a bag of six peppers because there is nothing smaller, and three of them go in the trash every week. That is not a complaint about quality; it is a complaint about the size.
 
 My suggestion is narrow: a small loose box for peppers, onions and carrots, priced by weight rather than by the piece.
 
@@ -1220,7 +1220,7 @@ They are wrong. The evening is an hour shorter and I eat properly.`,
               { de: "use a second conditional", tr: "İkinci tip koşulu kullanmak" },
             ],
             sample:
-              "I decide in the morning, or I do not decide at all and I eat bread at nine. Last month I bought a bag of six peppers for a recipe that needed one, and four of them went into the bin about ten days later, which annoyed me more than the money. If I lived completely alone for a year, I would buy a second small pan and I would stop buying anything that comes in a bag.",
+              "I decide in the morning, or I do not decide at all and I eat bread at nine. Last month I bought a bag of six peppers for a recipe that needed one, and four of them went into the trash about ten days later, which annoyed me more than the money. If I lived completely alone for a year, I would buy a second small pan and I would stop buying anything that comes in a bag.",
             criteria: [
               "İlk cevapta somut bir örnek verildi mi?",
               "Anlatı tek ve belirgin mi, nedeni verildi mi?",
@@ -1249,7 +1249,7 @@ They are wrong. The evening is an hour shorter and I eat properly.`,
               { de: "mention one disadvantage of your choice", tr: "Seçtiğin yolun bir olumsuz yanını da söyle" },
             ],
             sample:
-              "Cooking fresh every evening sounds better, but it depends on a thing nobody counts, which is having a decision in you at seven o'clock after work. Cooking once on the weekend removes that decision entirely, and it also removes the shopping problem, because a recipe for six is exactly what the shop is selling. I would cook once on the weekend. The disadvantage is real and it is not about taste: by Thursday you are eating something you chose on Sunday, and the person who chose it was in a much better mood than the person eating it.",
+              "Cooking fresh every evening sounds better, but it depends on a thing nobody counts, which is having a decision in you at seven o'clock after work. Cooking once on the weekend removes that decision entirely, and it also removes the shopping problem, because a recipe for six is exactly what the store is selling. I would cook once on the weekend. The disadvantage is real and it is not about taste: by Thursday you are eating something you chose on Sunday, and the person who chose it was in a much better mood than the person eating it.",
             criteria: [
               "İki yol da gerçekten karşılaştırıldı mı?",
               "Karşılaştırma yapıları kullanıldı mı? (it depends on, entirely, by Thursday)",
@@ -1300,11 +1300,11 @@ They are wrong. The evening is an hour shorter and I eat properly.`,
           no: 4,
           format: "speaking",
           goal: "interaction",
-          prompt: "We talk a little more about the same topic: whether shops should sell smaller quantities.",
+          prompt: "We talk a little more about the same topic: whether stores should sell smaller quantities.",
           promptTr: "Aynı konu üzerine biraz daha konuşuyoruz: dükkânlar daha küçük miktarlar satmalı mı.",
           prepSeconds: 15,
           exchange: [
-            { who: "partner", de: "Some people say shops should be required to sell food in single portions. Is that reasonable?", tr: "Kimileri dükkânların yiyecekleri tek porsiyon satmak zorunda bırakılması gerektiğini söylüyor. Bu makul mü?" },
+            { who: "partner", de: "Some people say stores should be required to sell food in single portions. Is that reasonable?", tr: "Kimileri dükkânların yiyecekleri tek porsiyon satmak zorunda bırakılması gerektiğini söylüyor. Bu makul mü?" },
             { who: "you", hint: "Görüşünü söyle ve bir örnek ver.", expect: "genel bir soruya görüş bildirmek ve örneklendirmek", seconds: 40 },
             { who: "partner", de: "Others say that small portions mean more packaging and a higher price, so the buyer pays twice. Would you agree?", tr: "Kimileri de küçük porsiyonun daha çok ambalaj ve daha yüksek fiyat demek olduğunu, yani alıcının iki kez ödediğini söylüyor. Katılır mısın?" },
             { who: "you", hint: "Kısmen katıl ya da karşı çık; iki yanı da anmaya çalış.", expect: "bir iddiaya kısmen katılmak ya da karşı çıkmak, iki yanı da anmak", seconds: 45 },
@@ -1317,7 +1317,7 @@ They are wrong. The evening is an hour shorter and I eat properly.`,
               { de: "agree or disagree in a nuanced way", tr: "Katılırken ya da karşı çıkarken ince ayrım yapmak" },
             ],
             sample:
-              "Requiring it sounds heavy-handed to me, and there is a smaller version I would support: not charging more per kilo for loose vegetables, which is a decision a shop can take on a Tuesday. I partly agree about the packaging, because six small trays are worse than one bag and everybody knows it. But loose is not the same as packaged small, and the argument about packaging is usually made by people selling the bag.",
+              "Requiring it sounds heavy-handed to me, and there is a smaller version I would support: not charging more per kilo for loose vegetables, which is a decision a store can take on a Tuesday. I partly agree about the packaging, because six small trays are worse than one bag and everybody knows it. But loose is not the same as packaged small, and the argument about packaging is usually made by people selling the bag.",
             criteria: [
               "Görüş açıkça bildirildi mi?",
               "Somut bir örnek verildi mi?",

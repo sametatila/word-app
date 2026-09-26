@@ -360,11 +360,11 @@ Reviews conclude that a resurvey is politically {{18}} in almost every case wher
               genre: "Long-form article",
               genreTr: "Uzun yazı",
               title: "One afternoon in 1907",
-              body: `The line that runs through the village of Ostrec was drawn on the afternoon of 14 May 1907, and it is possible to say almost exactly how.
+              body: `The line that runs through the village of Ostrec was drawn on the afternoon of May 14, 1907, and it is possible to say almost exactly how.
 
 Three documents survive. There is the minute of the commission, which records that the boundary was agreed and gives no reasoning. There is a working sheet with two pencil versions of the same stretch, one of them scored through. And there is a letter written eleven days later by the junior surveyor to his brother, complaining about the heat and mentioning, in a subordinate clause, that they had taken the northern option because the southern one would have required a second visit to the ridge.
 
-That clause is the only surviving statement of a reason, and it is not in any archive of the commission. It is in a family collection that was catalogued in 1998.
+That clause is the only surviving statement of a reason, and it is not in any archive of the commission. It is in a family collection that was cataloged in 1998.
 
 I set this out because of what happens to such a line afterwards. Within thirty years the northern option had acquired a history. It was described, in three separate publications, as following an older ecclesiastical boundary, and one of those publications is still cited. There is no evidence for that claim and there is a plausible reason for its appearance: a line that follows something older is easier to defend than a line that avoided a second walk up a hill.
 
@@ -551,7 +551,7 @@ The line, meanwhile, is being maintained perfectly adequately by two men with a 
           options: [
             { key: "a", label: "a", body: "That question is not technical and it is not expensive, and it is the reason a file that everybody agrees about has been open for thirty-four years." },
             { key: "b", label: "b", body: "That sentence sounds trivial and it is the whole of boundary maintenance, which is why the subject has almost no literature and a great deal of practice." },
-            { key: "c", label: "c", body: "Nobody has ever audited that arrangement, and if either forestry service reorganised, the line would go uninspected without a single decision having been taken about it." },
+            { key: "c", label: "c", body: "Nobody has ever audited that arrangement, and if either forestry service reorganized, the line would go uninspected without a single decision having been taken about it." },
             { key: "d", label: "d", body: "The archive therefore documents a boundary that is, in several places, wherever two competent people with a tape decided it was in about 1978." },
             { key: "e", label: "e", body: "Concrete boundary posts of this pattern were first manufactured in 1911 and weigh approximately eighty kilograms each." },
           ],
@@ -1326,7 +1326,7 @@ Where the archive and the ground disagree, local land use follows the {{14}}.`,
           format: "writing",
           goal: "production",
           prompt:
-            "You have attended a seminar on boundaries and records. Write an essay for your tutor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. Where a record and long local practice disagree, the record should govern, because it can be checked by anybody.\n2. Where they disagree, practice should govern, because it reflects how people have actually lived.\n\nWrite 220 to 260 words.",
+            "You have attended a seminar on boundaries and records. Write an essay for your instructor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. Where a record and long local practice disagree, the record should govern, because it can be checked by anybody.\n2. Where they disagree, practice should govern, because it reflects how people have actually lived.\n\nWrite 220 to 260 words.",
           promptTr:
             "Sınırlar ve kayıtlar üzerine bir seminere katıldın. Danışmanın için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Kayıt ile yerleşik uygulama çeliştiğinde kayıt esas alınmalı; çünkü kaydı herkes denetleyebilir.\n2. Çeliştiklerinde uygulama esas alınmalı; çünkü insanların gerçekte nasıl yaşadığını gösterir.\n\n220–260 kelime yaz.",
           items: [],
@@ -1430,7 +1430,7 @@ I would not move any fence on the basis of it, and I would not approach the neig
               { de: "propose and justify a criterion", tr: "Bir ölçüt önerip gerekçelendirmek" },
             ],
             sample:
-              "The plan of my parents' building shows a corridor where there has been a wall since about 1980, and every official who visits works from the plan and is briefly confused. When the flats were sold, the surveyor's report finally recorded the wall, and what struck me was that nothing on the ground changed; only the possibility of arguing about it disappeared. If a document and a long practice disagreed, I would follow the document only where somebody outside has to be able to check the answer, and follow the practice everywhere else, because a rule that describes nothing anybody does is not doing any work.",
+              "The plan of my parents' building shows a corridor where there has been a wall since about 1980, and every official who visits works from the plan and is briefly confused. When the apartments were sold, the surveyor's report finally recorded the wall, and what struck me was that nothing on the ground changed; only the possibility of arguing about it disappeared. If a document and a long practice disagreed, I would follow the document only where somebody outside has to be able to check the answer, and follow the practice everywhere else, because a rule that describes nothing anybody does is not doing any work.",
             criteria: [
               "İlk cevap örnekten gözleme geçebildi mi?",
               "Anlatı tek ve belirgin mi, sonucu verildi mi?",

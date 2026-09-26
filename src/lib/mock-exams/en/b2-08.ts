@@ -317,7 +317,7 @@ Reviews conclude that outcomes depend less on the number of hours than on whethe
               kind: "gap",
               id: "en-b2-08-l4-20",
               no: 20,
-              text: "It is not necessary for you to fill in the form again.\nYou ______ in the form again.",
+              text: "It is not necessary for you to fill out the form again.\nYou ______ out the form again.",
               cue: "NEED",
               accept: ["do not need to fill", "don't need to fill"],
               explain:
@@ -384,7 +384,7 @@ The awkward part is the cost. Doing less is not cheaper here: the promise of two
               no: 23,
               text: "What is unusual about the service?",
               options: [
-                "It offers nothing on a fixed timetable",
+                "It offers nothing on a fixed schedule",
                 "It is run entirely by volunteers",
                 "It replaces the hospital in the town",
                 "It costs less than the visits it replaced",
@@ -562,7 +562,7 @@ The remedy is unglamorous, and it is not expensive. It is a first question, aske
             {
               key: "d",
               label: "d — Tomo, researcher",
-              body: "The evidence for befriending schemes is thinner than their popularity suggests, and I say that as somebody who has recommended them. What the evidence does support is much duller: keeping people out of hospital by mending the bathroom. That finding has never once been on the front of a newspaper.",
+              body: "The evidence for befriending schemes is thinner than their popularity suggests, and I say that as somebody who has recommended them. What the evidence does support is much duller: keeping people out of the hospital by mending the bathroom. That finding has never once been on the front of a newspaper.",
             },
           ],
           items: [
@@ -652,7 +652,7 @@ The remedy is unglamorous, and it is not expensive. It is a first question, aske
               situation: "Bir kadın annesi için doldurduğu formu anlatıyor.",
               plays: 2,
               segments: [
-                { text: "The first form asked whether she lives alone and I ticked yes. Nothing on that form asked whether she sees anybody, and she sees four people a week. She got the loneliness service, and she did not get the handrail." },
+                { text: "The first form asked whether she lives alone and I checked yes. Nothing on that form asked whether she sees anybody, and she sees four people a week. She got the loneliness service, and she did not get the handrail." },
               ],
             },
             {
@@ -984,7 +984,7 @@ The program is funded until {{16}}.`,
               situation: "İkinci konuşmacı kendisine sunulan hizmeti anlatıyor.",
               plays: 2,
               segments: [
-                { text: "They sent a young man to sit and talk to me for half an hour every Wednesday. He was perfectly nice. I have a brother who rings every day. What I needed was somebody to look at the step by the back door, and I said so on the form." },
+                { text: "They sent a young man to sit and talk to me for half an hour every Wednesday. He was perfectly nice. I have a brother who calls every day. What I needed was somebody to look at the step by the back door, and I said so on the form." },
               ],
             },
             {
@@ -1006,7 +1006,7 @@ The program is funded until {{16}}.`,
               situation: "Dördüncü konuşmacı programının bütçesinden söz ediyor.",
               plays: 2,
               segments: [
-                { text: "People assume that a service without scheduled visits is the cheap option. Ours is not. Promising to arrive within two hours means paying people to be available, and most of the time nobody rings." },
+                { text: "People assume that a service without scheduled visits is the cheap option. Ours is not. Promising to arrive within two hours means paying people to be available, and most of the time nobody calls." },
               ],
             },
             {
@@ -1122,11 +1122,11 @@ The program is funded until {{16}}.`,
                 { speaker: "Host", text: "Would you accept fewer hours in return for fewer people?" },
                 { speaker: "Lior", text: "Yes, and I have said so, and I was told that this is not how the contract works. I would take three hours a week from one person over five hours from four." },
                 { speaker: "Host", text: "Some people say that the answer is families." },
-                { speaker: "Lior", text: "My daughter lives in another country and she rings me on Sundays. If she moved back to look after me, that would be two lives spoiled instead of one, and I would still need somebody who can lift." },
+                { speaker: "Lior", text: "My daughter lives in another country and she calls me on Sundays. If she moved back to look after me, that would be two lives spoiled instead of one, and I would still need somebody who can lift." },
                 { speaker: "Host", text: "Do you feel lonely?" },
                 { speaker: "Lior", text: "That is the question everybody asks, and it is the wrong one for me. I see four people most weeks. What I am is stuck, which is a different word, and it has a different solution: it has a ramp." },
                 { speaker: "Host", text: "What would you say to somebody designing these services?" },
-                { speaker: "Lior", text: "Ask the first question and then act on the answer. And do not put me on a form that has only one box, because I will tick it and you will send me the wrong man." },
+                { speaker: "Lior", text: "Ask the first question and then act on the answer. And do not put me on a form that has only one box, because I will check it and you will send me the wrong man." },
               ],
             },
           ],
@@ -1287,7 +1287,7 @@ The state should pay, provided the payment protects the carer's future income ra
             ],
             sample: `Sir,
 
-Your article of 14 March was right about one thing, and it is the thing most reports leave out: the people who need help most are the least likely to ask for it, and a service that waits to be contacted will never meet them.
+Your article of March 14 was right about one thing, and it is the thing most reports leave out: the people who need help most are the least likely to ask for it, and a service that waits to be contacted will never meet them.
 
 Where the article went wrong was in treating living alone and being lonely as the same condition. They overlap, but they are not one thing. My neighbor is eighty-four, lives alone and sees a dozen people every week; what she cannot do is carry a basket up her front steps. When she was assessed last year, she was offered a weekly conversation and no handrail.
 
@@ -1341,7 +1341,7 @@ Anouk Persson`,
               { de: "use a second conditional", tr: "İkinci tip koşulu kullanmak" },
             ],
             sample:
-              "Asking for help means saying out loud that something has gone, and most people would rather manage badly than say that. My grandfather went up a ladder at eighty-one because he did not want to ring anybody about a gutter; he did not fall, and he also never asked afterwards. If I were eighty and living alone, I would want somebody to ask me what I could not do any more, rather than whether I felt lonely, because the first question has an answer that somebody could act on.",
+              "Asking for help means saying out loud that something has gone, and most people would rather manage badly than say that. My grandfather went up a ladder at eighty-one because he did not want to call anybody about a gutter; he did not fall, and he also never asked afterwards. If I were eighty and living alone, I would want somebody to ask me what I could not do any more, rather than whether I felt lonely, because the first question has an answer that somebody could act on.",
             criteria: [
               "Görüş bir örnekle mi desteklendi?",
               "Deneyim somut mu ve sonucu verildi mi?",
@@ -1386,7 +1386,7 @@ Anouk Persson`,
           format: "speaking",
           goal: "interaction",
           prompt:
-            "A council is rewriting the form that older people fill in when they ask for help. There is room for one question at the top. Talk with me about what it should ask, and agree on the wording.",
+            "A council is rewriting the form that older people fill out when they ask for help. There is room for one question at the top. Talk with me about what it should ask, and agree on the wording.",
           promptTr:
             "Bir belediye, yaşlıların yardım isterken doldurduğu formu yeniden yazıyor. Formun başında tek bir soruya yer var. Ne sorması gerektiğini benimle konuş ve sorunun nasıl yazılacağında anlaş.",
           prepSeconds: 30,

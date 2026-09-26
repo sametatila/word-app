@@ -538,7 +538,7 @@ The system's answer is neither to trust nor to police. It is to make the two inc
 
 None of this eliminates the problem, and the governing bodies have never claimed that it does. What it does is change who does the work. Detection is not carried out by an official examining a card; it is carried out by three people in a group who know roughly how well the fourth plays. {{34}}
 
-The lesson generalises awkwardly, which is the honest reason it is not applied more widely. It requires a community small enough for reputation to operate and stable enough for it to accumulate. Most institutions have neither, and a system which assumes both will simply fail in a new way.`,
+The lesson generalizes awkwardly, which is the honest reason it is not applied more widely. It requires a community small enough for reputation to operate and stable enough for it to accumulate. Most institutions have neither, and a system which assumes both will simply fail in a new way.`,
               gloss: [
                 { de: "a handicap", tr: "denkleştirme puanı", en: "das Handicap" },
                 { de: "a card", tr: "skor kartı", en: "die Zählkarte" },
@@ -1167,7 +1167,7 @@ Two competitions changed their recording {{14}} in the same season.`,
               situation: "Üçüncü konuşmacı fikstürün doğurduğu bir sonucu anlatıyor.",
               plays: 2,
               segments: [
-                { text: "Nobody sat down and decided that a coach should rest his best players in the final round. The fixture list did that. When the table is already settled, resting them is the correct decision for the coach and a disappointment for everybody who bought a ticket, and no rule has been broken by anyone." },
+                { text: "Nobody sat down and decided that a coach should rest his best players in the final round. The schedule did that. When the standings are already settled, resting them is the correct decision for the coach and a disappointment for everybody who bought a ticket, and no rule has been broken by anyone." },
               ],
             },
             {
@@ -1255,7 +1255,7 @@ Two competitions changed their recording {{14}} in the same season.`,
               text: "Speaker 3",
               answer: "c",
               explain:
-                "Konuşmacı sonucun kimsenin tasarımı olmadığını söylüyor: «Nobody sat down and decided … The fixture list did that», üstelik kural da çiğnenmiyor.",
+                "Konuşmacı sonucun kimsenin tasarımı olmadığını söylüyor: «Nobody sat down and decided … The schedule did that», üstelik kural da çiğnenmiyor.",
             },
             {
               kind: "match",
@@ -1325,7 +1325,7 @@ Two competitions changed their recording {{14}} in the same season.`,
           format: "writing",
           goal: "production",
           prompt:
-            "You have attended a seminar on rules in sport. Write an essay for your tutor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. A deliberate offense should be punished more heavily than a careless one, because intention is what makes an act wrong.\n2. Both should be punished identically, because intention cannot be established reliably and a rule that cannot be applied is worse than a blunt one.\n\nWrite 220 to 260 words.",
+            "You have attended a seminar on rules in sport. Write an essay for your instructor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. A deliberate offense should be punished more heavily than a careless one, because intention is what makes an act wrong.\n2. Both should be punished identically, because intention cannot be established reliably and a rule that cannot be applied is worse than a blunt one.\n\nWrite 220 to 260 words.",
           promptTr:
             "Spordaki kurallar üzerine bir seminere katıldın. Danışmanın için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Kasıtlı ihlal, dikkatsizlikle yapılandan daha ağır cezalandırılmalı; bir eylemi kötü kılan kasıttır.\n2. İkisi de aynı cezalandırılmalı; kast güvenilir biçimde saptanamaz ve uygulanamayan bir kural, kaba bir kuraldan kötüdür.\n\n220–260 kelime yaz.",
           items: [],

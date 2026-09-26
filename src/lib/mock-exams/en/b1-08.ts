@@ -28,7 +28,7 @@ export const EN_B1_08: MockPaper = {
       skill: "reading",
       minutes: 55,
       instruction:
-        "There are six tasks in this part. You read short texts, adverts, an article and three texts with gaps. Answer each question with one choice.",
+        "There are six tasks in this part. You read short texts, ads, an article and three texts with gaps. Answer each question with one choice.",
       instructionTr:
         "Bu bölümde altı görev var. Kısa metinler, ilanlar, bir yazı ve boşluklu üç metin okuyacaksın. Her soruda doğru cevabı işaretle.",
       tasks: [
@@ -62,7 +62,7 @@ export const EN_B1_08: MockPaper = {
               genre: "Message",
               genreTr: "İleti",
               title: "Seven to nine",
-              body: `Mira, from now on I am turning my phone off between seven and nine every evening. If something is urgent, ring the flat phone; the number is on the fridge. Please do not read anything into this. It is not about you and I am not annoyed with anybody.`,
+              body: `Mira, from now on I am turning my phone off between seven and nine every evening. If something is urgent, call the home phone; the number is on the fridge. Please do not read anything into this. It is not about you and I am not annoyed with anybody.`,
             },
             {
               kind: "text",
@@ -110,10 +110,10 @@ export const EN_B1_08: MockPaper = {
               no: 3,
               ref: "m3",
               text: "What does the writer ask Mira to do?",
-              options: ["Use another number in an emergency", "Stop sending messages after seven", "Ring later than nine o'clock"],
+              options: ["Use another number in an emergency", "Stop sending messages after seven", "Call later than nine o'clock"],
               answer: 0,
               explain:
-                "İleti tek bir yönerge taşıyor: «If something is urgent, ring the flat phone; the number is on the fridge». İleti göndermek yasaklanmıyor.",
+                "İleti tek bir yönerge taşıyor: «If something is urgent, call the home phone; the number is on the fridge». İleti göndermek yasaklanmıyor.",
             },
             {
               kind: "mcq",
@@ -145,7 +145,7 @@ export const EN_B1_08: MockPaper = {
           format: "match",
           goal: "orientation",
           prompt:
-            "Here are five people, 6 to 10. There are also eight adverts, a to h. Which one is right for each person? No advert is used twice.",
+            "Here are five people, 6 to 10. There are also eight ads, a to h. Which one is right for each person? No ad is used twice.",
           promptTr:
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangisi uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
@@ -163,7 +163,7 @@ export const EN_B1_08: MockPaper = {
               kind: "match",
               id: "en-b1-08-l2-6",
               no: 6,
-              text: "Eren wants to study in the evening but her flat is noisy and she has no money for a café.",
+              text: "Eren wants to study in the evening but her apartment is noisy and she has no money for a café.",
               answer: "a",
               explain:
                 "İlan üç koşulu birden karşılıyor: «Open eight until midnight», «Free with a library card» ve «no talking». Ücretsizlik burada belirleyici.",
@@ -352,7 +352,7 @@ My own answer has changed. I used to say that the two were the same activity in 
             { key: "a", label: "a", body: "None of that is possible at walking speed with a voice in your ear." },
             { key: "b", label: "b", body: "Whether that counts as the same thing depends on what you wanted from the book, which is a better question than the one we started with." },
             { key: "c", label: "c", body: "The question is not a silly one, and the people who ask it are usually the ones doing most of the listening." },
-            { key: "d", label: "d", body: "That is the honest difference: half of your attention is on the road, the washing-up or the dog." },
+            { key: "d", label: "d", body: "That is the honest difference: half of your attention is on the road, the dishes or the dog." },
             { key: "e", label: "e", body: "For a difficult book that is not a small advantage, because a good reader hands you the shape of a sentence for nothing." },
             { key: "f", label: "f", body: "The reading group meets in the back room of a café that closes at nine, which is why we never finish." },
           ],
@@ -391,7 +391,7 @@ My own answer has changed. I used to say that the two were the same activity in 
               text: "Gap 19",
               answer: "d",
               explain:
-                "Paragraf aynı anda başka iş yapıldığını söylüyor; (d) o başka işleri adlandırıyor: «the road, the washing-up or the dog». (a) da bir olanaksızlık bildiriyor ama okuma denetimiyle ilgili, dikkat bölünmesiyle değil.",
+                "Paragraf aynı anda başka iş yapıldığını söylüyor; (d) o başka işleri adlandırıyor: «the road, the dishes or the dog». (a) da bir olanaksızlık bildiriyor ama okuma denetimiyle ilgili, dikkat bölünmesiyle değil.",
             },
             {
               kind: "match",
@@ -882,7 +882,7 @@ And I tell one person what I am going to do, {{30}} that I have to say it out lo
               no: 12,
               ref: "b5",
               text: "What is the second speaker doing?",
-              options: ["Agreeing that the course is a bad idea", "Using the other person's own words against him", "Offering to fill in the forms for him"],
+              options: ["Agreeing that the course is a bad idea", "Using the other person's own words against him", "Offering to fill out the forms for him"],
               answer: 1,
               explain:
                 "Konuşmacı karşı tarafın daha önce söylediğini hatırlatıyor: «You told me last month that the forms take you all Friday».",
@@ -919,7 +919,7 @@ And I tell one person what I am going to do, {{30}} that I have to say it out lo
               plays: 2,
               segments: [
                 {
-                  text: "Good afternoon. The study-skills hour runs on a Thursday, between two and five. It is free and you book it online, but you must bring two weeks of your own notes; we do not work from memory. There are four advisers and each hour is with one person. Book at least five days before, and if you cannot come, cancel by the Monday. The room is on the second floor, next to the lift.",
+                  text: "Good afternoon. The study-skills hour runs on a Thursday, between two and five. It is free and you book it online, but you must bring two weeks of your own notes; we do not work from memory. There are four advisers and each hour is with one person. Book at least five days before, and if you cannot come, cancel by the Monday. The room is on the second floor, next to the elevator.",
                 },
               ],
             },
@@ -996,7 +996,7 @@ The room is on the {{19}} floor`,
               text: "Gap 19",
               accept: ["second", "2nd"],
               explain:
-                "«The room is on the second floor, next to the lift» — kat numarası. Asansör yer tarifi, kat değil.",
+                "«The room is on the second floor, next to the elevator» — kat numarası. Asansör yer tarifi, kat değil.",
             },
           ],
         },
@@ -1021,7 +1021,7 @@ The room is on the {{19}} floor`,
                 { speaker: "Host", text: "A year without a smartphone. Whose idea was it?" },
                 { speaker: "Ondrej", text: "My own, and I want to be honest: it was partly showing off. I told about forty people before I started, which is the only reason I lasted past March." },
                 { speaker: "Host", text: "What was the first month like?" },
-                { speaker: "Ondrej", text: "Boring, and not in the good way that people describe. I stood at bus stops with nothing to do and I did not have a single deep thought. I looked at the timetable." },
+                { speaker: "Ondrej", text: "Boring, and not in the good way that people describe. I stood at bus stops with nothing to do and I did not have a single deep thought. I looked at the schedule." },
                 { speaker: "Host", text: "When did it get easier?" },
                 { speaker: "Ondrej", text: "Around week seven, and the reason is dull. I had worked out the four or five things the phone had actually been doing for me: maps, tickets, the bank, messages from my mother. Then I had found a way to do each of them." },
                 { speaker: "Host", text: "What did you gain?" },
@@ -1131,9 +1131,9 @@ The room is on the {{19}} floor`,
               { de: "Describe what actually happens, with one example.", tr: "Gerçekte ne olduğunu bir örnekle anlat." },
               { de: "Ask for one clear change, not a general complaint.", tr: "Genel bir şikâyet değil, tek ve açık bir değişiklik iste." },
             ],
-            sample: `Dear Ms Vale,
+            sample: `Dear Ms. Vale,
 
-I am in the Tuesday photography group that started on 6 January. The information sheet said that phones would stay in bags during the lesson.
+I am in the Tuesday photography group that started on January 6. The information sheet said that phones would stay in bags during the lesson.
 
 In practice about half the group has a phone on the table for the whole two hours. Last week the person next to me answered three calls in the room, and I lost most of the second exercise.
 
@@ -1173,7 +1173,7 @@ Eren Roth`,
 
 I made the rule because I was reading the news at one in the morning and then telling my colleagues I had slept badly, as if it were the weather.
 
-It worked for five weeks. Then my sister was in hospital and the phone came back to the bedside table, which was the right decision. It never left again.
+It worked for five weeks. Then my sister was in the hospital and the phone came back to the bedside table, which was the right decision. It never left again.
 
 What I have kept is smaller and it still helps: the phone is in the room, but it is in a drawer.`,
             criteria: [
@@ -1220,7 +1220,7 @@ What I have kept is smaller and it still helps: the phone is in the room, but it
               { de: "use a second conditional", tr: "İkinci tip koşulu kullanmak" },
             ],
             sample:
-              "I work best at the kitchen table between six and eight in the morning, mostly because nobody in the flat is awake. I have tried studying in the evening and it never lasts more than a week. Last year I put my phone in a drawer while I worked, and for about a month it made a real difference. If I had to work without a phone for a month, the hardest part would be train tickets, because everything I need is in that one app.",
+              "I work best at the kitchen table between six and eight in the morning, mostly because nobody in the apartment is awake. I have tried studying in the evening and it never lasts more than a week. Last year I put my phone in a drawer while I worked, and for about a month it made a real difference. If I had to work without a phone for a month, the hardest part would be train tickets, because everything I need is in that one app.",
             criteria: [
               "İlk cevapta yer ve zaman verildi mi?",
               "Deneme somut mu anlatıldı, sonucu söylendi mi?",

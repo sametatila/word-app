@@ -32,7 +32,7 @@
  { "tr": "«parcel» için bir soru kur.", "kind": "exchange.hint", "en": "Bilde eine Frage zu «parcel»." },
  { "tr": "Bir şehir ya da ülke söyle.", "kind": "exchange.hint", "en": "Nenne eine Stadt oder ein Land." },
  { "tr": "Eşyayı ve süreyi somut ver.", "kind": "exchange.hint", "en": "Nenne den Gegenstand und die Dauer konkret." },
- { "tr": "«holiday» için bir soru kur.", "kind": "exchange.hint", "en": "Bilde eine Frage zu «holiday»." },
+ { "tr": "«vacation» için bir soru kur.", "kind": "exchange.hint", "en": "Bilde eine Frage zu «vacation»." },
  { "tr": "Bir saat söyleyerek cevapla.", "kind": "exchange.hint", "en": "Antworte, indem du eine Uhrzeit nennst." },
  { "tr": "Molanın saatini kibarca sor.", "kind": "exchange.hint", "en": "Frag höflich nach der Uhrzeit der Pause." },
  { "tr": "«colleague» için bir soru kur.", "kind": "exchange.hint", "en": "Bilde eine Frage zu «colleague»." },

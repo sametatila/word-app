@@ -44,12 +44,12 @@ export const EN_C1_05: MockPaper = {
               id: "t1",
               genre: "Feature article",
               genreTr: "Dosya yazısı",
-              title: "The post that was never advertised again",
-              body: `Seldom has an occupation disappeared as quietly as the switchboard operator. There was no announcement and no campaign; the posts simply {{1}} to be filled as the people in them retired.
+              title: "The position that was never advertised again",
+              body: `Seldom has an occupation disappeared as quietly as the switchboard operator. There was no announcement and no campaign; the positions simply {{1}} to be filled as the people in them retired.
 
 The usual explanation is the machine, and it explains less than the retellings suggest. An exchange that dials itself {{2}} away the task, which settles the matter for most accounts. What that story leaves out is that the work did not vanish; it was distributed across everybody else in the building, and nobody has ever counted it.
 
-A second factor tends to be {{3}} over. An occupation that disappears takes its training with it, and the apprenticeships that carried it were the first thing to go when the posts {{4}} unfilled.
+A second factor tends to be {{3}} over. An occupation that disappears takes its training with it, and the apprenticeships that carried it were the first thing to go when the positions {{4}} unfilled.
 
 Whether any of this could have been managed differently is an open question. Several countries tried retraining schemes, and the evidence for them remains {{5}} at best. What does seem to work is nothing so grand: a long notice period and somebody whose actual job {{6}} of finding the next one.`,
             },
@@ -299,7 +299,7 @@ Whether that is a price worth paying is a political question rather than a techn
               kind: "gap",
               id: "en-c1-05-l4-19",
               no: 19,
-              text: "It is possible that the post was left unfilled deliberately.\nThe post ______ unfilled deliberately.",
+              text: "It is possible that the position was left unfilled deliberately.\nThe position ______ unfilled deliberately.",
               cue: "HAVE",
               accept: ["may have been left", "might have been left", "could have been left"],
               explain:
@@ -501,11 +501,11 @@ I am not going to pretend that I stand outside this. I have sat on panels where 
               genre: "Long-form article",
               genreTr: "Uzun makale",
               title: "The pilot that was canceled twice",
-              body: `Between 2016 and 2022 a national employer ran the same pilot three times: replace the unstructured interview with a work sample for one category of post, and compare the appointments two years later. The design was sound and the sample was large enough to see an effect.
+              body: `Between 2016 and 2022 a national employer ran the same pilot three times: replace the unstructured interview with a work sample for one category of position, and compare the appointments two years later. The design was sound and the sample was large enough to see an effect.
 
 {{31}}
 
-The first cancellation is the least interesting. A minister changed, the program was reorganised, and the work stopped in month seven with no result at all.
+The first cancellation is the least interesting. A minister changed, the program was reorganized, and the work stopped in month seven with no result at all.
 
 {{32}}
 
@@ -598,7 +598,7 @@ The third attempt was designed by people who had read the second report carefull
             {
               key: "d",
               label: "d — Union representative",
-              body: "I have agreed to flexible arrangements every year I have been in post, and I would defend most of them against anybody. What I would not defend is that we never recorded which tasks moved and to whom, so the next negotiation starts from nothing.",
+              body: "I have agreed to flexible arrangements every year I have been in the job, and I would defend most of them against anybody. What I would not defend is that we never recorded which tasks moved and to whom, so the next negotiation starts from nothing.",
             },
           ],
           items: [
@@ -927,20 +927,20 @@ Cost of each competition in staff time: {{14}} pounds`,
               plays: 1,
               segments: [
                 { speaker: "Chair", text: "Lenn, your paper says that most selection reform fails at implementation rather than at design. Why?" },
-                { speaker: "Lenn", text: "Because the design is done by people who will not run it. A work sample takes forty minutes to mark, and the person marking it has a full day of their own work. Nobody costed that, and the method dies in month four, blamed for something that was never tested." },
+                { speaker: "Lenn", text: "Because the design is done by people who will not run it. A work sample takes forty minutes to score, and the person scoring it has a full day of their own work. Nobody costed that, and the method dies in month four, blamed for something that was never tested." },
                 { speaker: "Chair", text: "Wren, is that fair?" },
-                { speaker: "Wren", text: "It is fair and it is incomplete. I have run three of these. The marking time is real. What killed two of mine was not time; it was that the panel could see the candidate's answers and could not see their face, and they did not trust a decision they could not feel." },
+                { speaker: "Wren", text: "It is fair and it is incomplete. I have run three of these. The scoring time is real. What killed two of mine was not time; it was that the panel could see the candidate's answers and could not see their face, and they did not trust a decision they could not feel." },
                 { speaker: "Chair", text: "Juno?" },
                 { speaker: "Juno", text: "I want to disagree with both of them, politely. You are describing the failure of pilots, and pilots fail for pilot reasons. The interesting question is what happens when a method is simply imposed and nobody is asked whether they are comfortable. That has been done twice, in large organizations, and it worked." },
                 { speaker: "Chair", text: "Lenn, does that change your position?" },
                 { speaker: "Lenn", text: "Partly, and I should say so. Imposition works where an organization can absorb a year of resentment. Mine cannot. That is not a reason to reject Juno's evidence; it is a reason to stop calling it general." },
                 { speaker: "Chair", text: "Wren, what would you do tomorrow?" },
-                { speaker: "Wren", text: "Cost the marking properly and pay for it, and then stop reporting the thing as a pilot. Something everybody knows is temporary is evaluated as temporary. Half the effects we measure are measurements of impermanence." },
+                { speaker: "Wren", text: "Cost the scoring properly and pay for it, and then stop reporting the thing as a pilot. Something everybody knows is temporary is evaluated as temporary. Half the effects we measure are measurements of impermanence." },
                 { speaker: "Chair", text: "Juno, a last word." },
                 { speaker: "Juno", text: "Only that we keep comparing this with clinical trials, and it does not fit. In a trial the control group does not know it is competing with the treatment group. Here the control group runs the treatment group's process and writes the report. I would drop the analogy entirely." },
               ],
               gloss: [
-                { de: "to mark", tr: "değerlendirmek, puanlamak", en: "bewerten" },
+                { de: "to score", tr: "değerlendirmek, puanlamak", en: "bewerten" },
                 { de: "imposition", tr: "dayatma", en: "das Aufzwingen" },
                 { de: "impermanence", tr: "geçicilik", en: "die Vorläufigkeit" },
               ],
@@ -964,7 +964,7 @@ Cost of each competition in staff time: {{14}} pounds`,
               no: 16,
               ref: "c1",
               text: "What does Wren add to Lenn's account?",
-              options: ["That the marking time turned out not to be a real problem at all", "That panels distrusted a judgment they could not feel", "That the candidates strongly preferred the old method", "That the pilots were too small"],
+              options: ["That the scoring time turned out not to be a real problem at all", "That panels distrusted a judgment they could not feel", "That the candidates strongly preferred the old method", "That the pilots were too small"],
               answer: 1,
               explain:
                 "Wren süreyi doğruluyor ama Lenn'in açıklamasını eksik buluyor: «What killed two of mine was not time; it was that the panel could see the candidate's answers and could not see their face».",
@@ -997,10 +997,10 @@ Cost of each competition in staff time: {{14}} pounds`,
               no: 19,
               ref: "c1",
               text: "What does Wren propose doing tomorrow?",
-              options: ["Running a considerably larger pilot in another region", "Paying for marking and dropping the pilot label", "Abandoning work samples in all competitions", "Training the panels again"],
+              options: ["Running a considerably larger pilot in another region", "Paying for scoring and dropping the pilot label", "Abandoning work samples in all competitions", "Training the panels again"],
               answer: 1,
               explain:
-                "İki adım veriyor: «Cost the marking properly and pay for it, and then stop reporting the thing as a pilot». Yöntemi bırakmayı ya da yeni bir pilot açmayı önermiyor.",
+                "İki adım veriyor: «Cost the scoring properly and pay for it, and then stop reporting the thing as a pilot». Yöntemi bırakmayı ya da yeni bir pilot açmayı önermiyor.",
             },
             {
               kind: "mcq",
@@ -1019,7 +1019,7 @@ Cost of each competition in staff time: {{14}} pounds`,
               no: 21,
               ref: "c1",
               text: "Why does Juno reject the clinical trial comparison?",
-              options: ["Trials are very much larger than anything here", "Trials are better funded", "Here the control group writes the report", "Selection can never be properly randomised"],
+              options: ["Trials are very much larger than anything here", "Trials are better funded", "Here the control group writes the report", "Selection can never be properly randomized"],
               answer: 2,
               explain:
                 "Juno farkı düzenekte buluyor: denemede kontrol grubu yarıştığını bilmez, «Here the control group runs the treatment group's process and writes the report». Ölçek ve bütçe karşılaştırması yapılmıyor.",
@@ -1089,7 +1089,7 @@ Cost of each competition in staff time: {{14}} pounds`,
               situation: "Üçüncü konuşmacı durdurulan bir denemeyi anlatıyor.",
               plays: 2,
               segments: [
-                { text: "We ran the blind marking scheme for eleven months and then we stopped it. Not because it failed; the results were slightly better. It required two people to strip identifying details from every application, and when one of them left, nobody replaced her and the whole thing quietly ended." },
+                { text: "We ran the blind scoring scheme for eleven months and then we stopped it. Not because it failed; the results were slightly better. It required two people to strip identifying details from every application, and when one of them left, nobody replaced her and the whole thing quietly ended." },
               ],
             },
             {
@@ -1247,7 +1247,7 @@ Cost of each competition in staff time: {{14}} pounds`,
           format: "writing",
           goal: "production",
           prompt:
-            "You have attended a seminar on hiring and automation. Write an essay for your tutor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. A more accurate selection method is worth adopting even if managers dislike it.\n2. A method that managers will not use as designed produces no improvement at all.\n\nWrite 220 to 260 words.",
+            "You have attended a seminar on hiring and automation. Write an essay for your instructor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. A more accurate selection method is worth adopting even if managers dislike it.\n2. A method that managers will not use as designed produces no improvement at all.\n\nWrite 220 to 260 words.",
           promptTr:
             "İşe alım ve otomasyon üzerine bir seminere katıldın. Danışmanın için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Daha isabetli bir seçme yöntemi, yöneticiler sevmese de benimsenmeye değer.\n2. Yöneticilerin tasarlandığı gibi kullanmayacağı bir yöntem hiçbir iyileşme sağlamaz.\n\n220–260 kelime yaz.",
           items: [],
@@ -1266,7 +1266,7 @@ The second point concerns what an organization is capable of executing. The clai
 
 I regard the second as the more important, though for a narrower reason than is usually offered. Accuracy can be recovered later; a reform that fails visibly cannot, because the failure is remembered as evidence against the method rather than against the implementation.
 
-My own view is that the framing conceals the real question, which is not which method to adopt but who is paid to run it. Nobody at the seminar costed the marking, and until somebody does, both points remain arguments about a process that exists on paper.`,
+My own view is that the framing conceals the real question, which is not which method to adopt but who is paid to run it. Nobody at the seminar costed the scoring, and until somebody does, both points remain arguments about a process that exists on paper.`,
             criteria: [
               "İki nokta da adil biçimde özetlendi mi?",
               "Seçim açıkça yapıldı ve gerekçelendirildi mi?",
@@ -1284,7 +1284,7 @@ My own view is that the framing conceals the real question, which is not which m
           format: "writing",
           goal: "interaction",
           prompt:
-            "An organization you know is about to introduce a new selection method for one category of post. Write a report for its management. Describe how appointments are currently made, assess the likely effects of the change, and recommend a course of action. Write 220 to 260 words.",
+            "An organization you know is about to introduce a new selection method for one category of position. Write a report for its management. Describe how appointments are currently made, assess the likely effects of the change, and recommend a course of action. Write 220 to 260 words.",
           promptTr:
             "Tanıdığın bir kurum bir görev grubu için yeni bir seçme yöntemi getirmek üzere. Yönetime bir rapor yaz. Atamaların şu an nasıl yapıldığını anlat, değişikliğin olası etkilerini değerlendir ve bir yol öner. 220–260 kelime yaz.",
           items: [],
@@ -1295,16 +1295,16 @@ My own view is that the framing conceals the real question, which is not which m
               { de: "Assess both the gains and the costs of the change.", tr: "Değişikliğin hem kazancını hem bedelini değerlendir." },
               { de: "Recommend a course of action, including what you would not do.", tr: "Bir yol öner; neyi yapmayacağını da söyle." },
             ],
-            sample: `Report: proposed work sample for team leader posts
+            sample: `Report: proposed work sample for team leader positions
 
 Current practice
 Appointments are made by a panel of three after a forty-five-minute interview using six questions, four of which have been unchanged since 2017. Scores are recorded on a grid and, in eleven of the last fourteen competitions, the panel then held a further discussion that is not minuted. Two of those fourteen appointments were subsequently reversed within a year.
 
 Assessment
-The gain is likely to be real but smaller than the literature suggests. A work sample would replace the least reliable element of the interview, and our own reversal rate implies room for improvement. Two costs are not in the proposal. The first is marking: forty minutes per candidate, against an average of nine candidates, adds six hours per competition to the workload of people who currently have none allocated. The second is the unminuted discussion, which the proposal does not mention and which will survive the change unless it is addressed directly.
+The gain is likely to be real but smaller than the literature suggests. A work sample would replace the least reliable element of the interview, and our own reversal rate implies room for improvement. Two costs are not in the proposal. The first is scoring: forty minutes per candidate, against an average of nine candidates, adds six hours per competition to the workload of people who currently have none allocated. The second is the unminuted discussion, which the proposal does not mention and which will survive the change unless it is addressed directly.
 
 Recommendation
-I recommend adopting the work sample for these posts, on two conditions: that the marking time is budgeted and released, and that the post-interview discussion is either minuted or discontinued. I would not recommend introducing the method while leaving the discussion in place, since that combination produces the cost of the new method and the outcome of the old one. I would also advise against evaluating the change after a single competition, as one cycle cannot distinguish a method from a novelty.`,
+I recommend adopting the work sample for these positions, on two conditions: that the scoring time is budgeted and released, and that the post-interview discussion is either minuted or discontinued. I would not recommend introducing the method while leaving the discussion in place, since that combination produces the cost of the new method and the outcome of the old one. I would also advise against evaluating the change after a single competition, as one cycle cannot distinguish a method from a novelty.`,
             criteria: [
               "Mevcut uygulama sayı ve tarihle mi anlatıldı?",
               "Hem kazanç hem bedel değerlendirildi mi?",
@@ -1400,7 +1400,7 @@ I recommend adopting the work sample for these posts, on two conditions: that th
             "Bir işveren, insanları nasıl işe aldığını iyileştirmek için bir yıllık bütçeyi nasıl harcayacağına karar verecek. Seçenekleri benimle konuş, ikisini savun ve benimle bir öncelik sırası belirle.",
           prepSeconds: 40,
           exchange: [
-            { who: "partner", de: "The options are: paying for the marking time of work samples, training every panel chair, auditing last year's appointments against performance, anonymising applications, and reducing panels from five people to three. Which two would you defend, and on what criterion?", tr: "Seçenekler: iş örneği değerlendirmelerinin süresini ücretlendirmek, her kurul başkanını eğitmek, geçen yılın atamalarını sonraki iş performansıyla karşılaştırarak denetlemek, başvuruları anonimleştirmek ve kurulları beş kişiden üçe indirmek. Hangi ikisini savunursun, hangi ölçütle?" },
+            { who: "partner", de: "The options are: paying for the scoring time of work samples, training every panel chair, auditing last year's appointments against performance, anonymizing applications, and reducing panels from five people to three. Which two would you defend, and on what criterion?", tr: "Seçenekler: iş örneği değerlendirmelerinin süresini ücretlendirmek, her kurul başkanını eğitmek, geçen yılın atamalarını sonraki iş performansıyla karşılaştırarak denetlemek, başvuruları anonimleştirmek ve kurulları beş kişiden üçe indirmek. Hangi ikisini savunursun, hangi ölçütle?" },
             { who: "you", hint: "İki seçenek seç ve ölçütünü açıkça adlandır.", expect: "iki seçeneği seçmek ve seçim ölçütünü açıkça adlandırmak", seconds: 50 },
             { who: "partner", de: "Let me press you. An audit produces a report, and reports are where reforms go to die. Is that not exactly the wrong thing to buy with a single year?", tr: "Üsteleyeyim. Denetim bir rapor üretir ve reformlar raporlarda ölür. Tek bir yılla alınacak en yanlış şey tam da bu değil mi?" },
             { who: "you", hint: "İtirazın gücünü kabul et, sonra ya konumunu değiştir ya da neden değiştirmediğini açıkla.", expect: "güçlü bir itirazı kabul etmek ve konumunu revize etmek ya da savunmasını gerekçelendirmek", seconds: 50 },
@@ -1416,7 +1416,7 @@ I recommend adopting the work sample for these posts, on two conditions: that th
               { de: "settle a justified priority order", tr: "Gerekçeli bir öncelik sırası kurmak" },
             ],
             sample:
-              "I would defend paying for the marking time and the audit of last year's appointments, on the criterion of what fails first: methods die from unfunded labor long before they die from bad design, and nobody notices either without evidence. Your objection to the audit is fair and I want to concede most of it; what I would defend is a very small audit aimed at one question, namely whether the recorded scores predicted anything, which is cheap and produces a number rather than a report. So: fund the marking first, because nothing else survives without it; cut the panels to three second, since it releases the same hours we have just spent; and run the narrow audit third, because it tells us in a year whether any of this was worth doing. I would drop the training this year and say plainly why, rather than fund a course and let the room undo it before lunch.",
+              "I would defend paying for the scoring time and the audit of last year's appointments, on the criterion of what fails first: methods die from unfunded labor long before they die from bad design, and nobody notices either without evidence. Your objection to the audit is fair and I want to concede most of it; what I would defend is a very small audit aimed at one question, namely whether the recorded scores predicted anything, which is cheap and produces a number rather than a report. So: fund the scoring first, because nothing else survives without it; cut the panels to three second, since it releases the same hours we have just spent; and run the narrow audit third, because it tells us in a year whether any of this was worth doing. I would drop the training this year and say plainly why, rather than fund a course and let the room undo it before lunch.",
             criteria: [
               "Ölçüt açıkça adlandırıldı mı?",
               "İtirazın gücü kabul edildi mi ve konum ya revize edildi ya da gerekçelendirildi mi?",

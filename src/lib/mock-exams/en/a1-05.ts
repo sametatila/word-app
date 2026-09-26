@@ -278,10 +278,10 @@ If the machine does not work, buy your ticket in the shop.`,
             {
               kind: "text",
               id: "s4",
-              genre: "Sign at the lift",
+              genre: "Sign at the elevator",
               genreTr: "Asansördeki levha",
-              title: "LIFT",
-              body: `Out of order until 12 May.
+              title: "ELEVATOR",
+              body: `Out of order until May 12.
 
 Please use the stairs at the end of the platform.
 
@@ -324,7 +324,7 @@ Help: 0800 22 11.`,
               id: "en-a1-05-l3-14",
               no: 14,
               ref: "s4",
-              text: "You can call a number if you need help at the lift.",
+              text: "You can call a number if you need help at the elevator.",
               answer: true,
               explain:
                 "Levhanın son satırı bir numara veriyor: «Help: 0800 22 11». Asansör çalışmıyor ve merdiven kullanamayan biri için yardım hattı yazılı.",
@@ -642,7 +642,7 @@ Timo`,
               situation: "Bir otel misafirine ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hello Mr Idris, your room is ready from two in the afternoon. You can leave your bags with us before that. Breakfast is from seven to ten." },
+                { text: "Hello Mr. Idris, your room is ready from two in the afternoon. You can leave your bags with us before that. Breakfast is from seven to ten." },
               ],
             },
             {
@@ -705,7 +705,7 @@ Timo`,
               id: "en-a1-05-h3-11",
               no: 11,
               ref: "c1",
-              text: "When can Mr Idris go to his room?",
+              text: "When can Mr. Idris go to his room?",
               options: ["At seven", "At two", "At ten"],
               answer: 1,
               explain:
@@ -918,15 +918,15 @@ Alma`,
           format: "speaking",
           goal: "interaction",
           prompt:
-            "Topic: travel and free time. Make a question for each word and answer my questions: train — holiday — car — city — money.",
+            "Topic: travel and free time. Make a question for each word and answer my questions: train — vacation — car — city — money.",
           promptTr:
             "Konu: yolculuk ve boş zaman. Her sözcük için bir soru kur ve benim sorularımı cevapla: tren — tatil — araba — şehir — para.",
           prepSeconds: 30,
           exchange: [
             { who: "partner", de: "Now we talk about travel. Your first word is: train. Please ask me a question.", tr: "Şimdi yolculuğu konuşuyoruz. İlk sözcüğün: tren. Bana bir soru sor." },
             { who: "you", hint: "«train» sözcüğüyle bir soru kur.", expect: "train sözcüğüyle dilbilgisel olarak doğru bir soru kurmak", seconds: 25 },
-            { who: "partner", de: "I take the train to work every day. Your next word is: holiday.", tr: "Her gün işe trenle gidiyorum. Sıradaki sözcüğün: tatil." },
-            { who: "you", hint: "«holiday» için bir soru kur.", expect: "holiday sözcüğüyle bir soru kurmak", seconds: 25 },
+            { who: "partner", de: "I take the train to work every day. Your next word is: vacation.", tr: "Her gün işe trenle gidiyorum. Sıradaki sözcüğün: tatil." },
+            { who: "you", hint: "«vacation» için bir soru kur.", expect: "vacation sözcüğüyle bir soru kurmak", seconds: 25 },
             { who: "partner", de: "In August I go to the sea. Now a question for you: how do you go to the city center?", tr: "Ağustosta denize gidiyorum. Şimdi sana bir soru: Şehir merkezine nasıl gidersin?" },
             { who: "you", hint: "Ulaşım biçimini söyleyerek cevapla.", expect: "ulaşım biçimini tam bir cümleyle söylemek", seconds: 25 },
             { who: "partner", de: "Thank you. Last question: how much is a bus ticket where you live?", tr: "Teşekkürler. Son soru: Yaşadığın yerde otobüs bileti kaç para?" },
@@ -940,7 +940,7 @@ Alma`,
               { de: "answers to my questions", tr: "Sorulara cevap vermek" },
             ],
             sample:
-              "Do you like the train? — Yes, I read on the train. Where do you go on holiday? — To the sea. Have you got a car? — No, I have a bike. How do you go to the city center? — By bus, it takes fifteen minutes. How much is a ticket? — Two euros fifty.",
+              "Do you like the train? — Yes, I read on the train. Where do you go on vacation? — To the sea. Do you have a car? — No, I have a bike. How do you go to the city center? — By bus, it takes fifteen minutes. How much is a ticket? — Two euros fifty.",
             criteria: [
               "Beş sözcüğün her biri için bir soru kuruldu mu?",
               "Sorular doğru kuruldu mu? (Do you … / Where … / How much …)",

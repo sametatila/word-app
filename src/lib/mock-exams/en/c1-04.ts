@@ -220,7 +220,7 @@ The lesson is not that communication is hopeless. It is that a probability has t
 
 Its defenders describe it as codified common sense. Its critics point to its {{14}}: the same wording has been used to justify both a ban and a refusal to ban, depending on which harm is treated as the default.
 
-Neither characterisation is complete. The principle is not a decision procedure and it is {{15}} of producing one, because it says nothing whatever about how much precaution is enough.
+Neither characterization is complete. The principle is not a decision procedure and it is {{15}} of producing one, because it says nothing whatever about how much precaution is enough.
 
 What it does well is narrower and still valuable: it shifts the {{16}} onto the activity, so that a producer must show a product is safe rather than a regulator show that it is not.
 
@@ -599,7 +599,7 @@ This has an uncomfortable implication for any system trained on administrative r
             {
               key: "d",
               label: "d — Agency director",
-              body: "I have signed off warnings at the lower threshold every year I have been in post, and I would defend nearly all of them against anybody. What I would not defend is that we never recorded what we expected to happen, so nobody can now say whether we were right.",
+              body: "I have signed off on warnings at the lower threshold every year I have been in the job, and I would defend nearly all of them against anybody. What I would not defend is that we never recorded what we expected to happen, so nobody can now say whether we were right.",
             },
           ],
           items: [
@@ -1255,7 +1255,7 @@ The service has nine duty forecasters and needs {{14}}.`,
           format: "writing",
           goal: "production",
           prompt:
-            "You have attended a seminar on public warnings. Write an essay for your tutor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. A warning that is issued too often will eventually be ignored.\n2. A warning that is withheld to protect credibility leaves people unprepared.\n\nWrite 220 to 260 words.",
+            "You have attended a seminar on public warnings. Write an essay for your instructor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. A warning that is issued too often will eventually be ignored.\n2. A warning that is withheld to protect credibility leaves people unprepared.\n\nWrite 220 to 260 words.",
           promptTr:
             "Kamu uyarıları üzerine bir seminere katıldın. Danışmanın için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Çok sık verilen bir uyarı sonunda dikkate alınmaz olur.\n2. İnandırıcılığı korumak için verilmeyen bir uyarı insanları hazırlıksız bırakır.\n\n220–260 kelime yaz.",
           items: [],

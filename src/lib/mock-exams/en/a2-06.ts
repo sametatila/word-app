@@ -59,8 +59,8 @@ export const EN_A2_06: MockPaper = {
               id: "m3",
               genre: "Email",
               genreTr: "E-posta",
-              title: "Your holiday flat",
-              body: `Dear Ms Koc, thank you for your booking in September. The heating works from the first of October, so bring a warm jumper. The beach is five minutes away, but the water is cold after August.`,
+              title: "Your vacation apartment",
+              body: `Dear Ms. Koc, thank you for your booking in September. The heating works from the first of October, so bring a warm sweater. The beach is five minutes away, but the water is cold after August.`,
             },
             {
               kind: "text",
@@ -108,10 +108,10 @@ export const EN_A2_06: MockPaper = {
               no: 3,
               ref: "m3",
               text: "What does the email tell the guest?",
-              options: ["The heating is not working", "She should bring warm clothes", "The beach is far from the flat"],
+              options: ["The heating is not working", "She should bring warm clothes", "The beach is far from the apartment"],
               answer: 1,
               explain:
-                "E-posta bir öneri veriyor: «so bring a warm jumper», çünkü ısıtma ekimin birinde başlıyor ve konuk eylülde geliyor. Isıtma bozuk değil, henüz açılmamış; plaj ise beş dakika uzakta.",
+                "E-posta bir öneri veriyor: «so bring a warm sweater», çünkü ısıtma ekimin birinde başlıyor ve konuk eylülde geliyor. Isıtma bozuk değil, henüz açılmamış; plaj ise beş dakika uzakta.",
             },
             {
               kind: "mcq",
@@ -290,8 +290,8 @@ Now I walk in the morning, before work. It is colder, but the street is empty an
               id: "t4",
               genre: "Blog post",
               genreTr: "Blog yazısı",
-              title: "Three things about a cold flat",
-              body: `I lived in a cold flat for two winters, and here is what I {{15}}.
+              title: "Three things about a cold apartment",
+              body: `I lived in a cold apartment for two winters, and here is what I {{15}}.
 
 Close the doors. A small warm room is {{16}} than a big room you never warm up.
 
@@ -311,7 +311,7 @@ And the last thing: {{19}} you feel cold at your desk, stand up and walk for two
               options: ["learn", "learned", "learning"],
               answer: 1,
               explain:
-                "Cümlenin ilk yarısı kapanmış bir dönemi anlatıyor: «I lived in a cold flat for two winters». Bu yüzden öğrenme de geçmişe ait: `learned`. `learn` geniş zaman, `learning` ise yardımcı fiil olmadan yüklem olamaz.",
+                "Cümlenin ilk yarısı kapanmış bir dönemi anlatıyor: «I lived in a cold apartment for two winters». Bu yüzden öğrenme de geçmişe ait: `learned`. `learn` geniş zaman, `learning` ise yardımcı fiil olmadan yüklem olamaz.",
             },
             {
               kind: "mcq",
@@ -791,7 +791,7 @@ Bring a hat, a towel and shoes for the {{10}}`,
           format: "match",
           goal: "detail",
           prompt:
-            "You hear five people, questions 16 to 20. Why did each person change their holiday plan? The options are a to h. No answer is used twice. The recordings play twice.",
+            "You hear five people, questions 16 to 20. Why did each person change their vacation plan? The options are a to h. No answer is used twice. The recordings play twice.",
           promptTr:
             "Beş kişi dinleyeceksin, 16–20. maddeler. Her kişi tatil planını neden değiştirdi? a'dan h'ye seç. Her seçenek en fazla bir kez kullanılır. Kayıtları iki kez dinleyebilirsin.",
           options: [
@@ -813,7 +813,7 @@ Bring a hat, a towel and shoes for the {{10}}`,
               situation: "Birinci konuşmacı güneye yaptığı plandan söz ediyor.",
               plays: 2,
               segments: [
-                { text: "We had everything booked for the south. Then in May we read that it was forty degrees there in the summer, every day. With a baby that is not a holiday." },
+                { text: "We had everything booked for the south. Then in May we read that it was forty degrees there in the summer, every day. With a baby that is not a vacation." },
               ],
             },
             {
@@ -824,7 +824,7 @@ Bring a hat, a towel and shoes for the {{10}}`,
               situation: "İkinci konuşmacı kız kardeşiyle yapacağı yolculuktan söz ediyor.",
               plays: 2,
               segments: [
-                { text: "The plan was two weeks in the north with my sister. She started a new job in June and she gets no holiday in the first year. Alone it made no sense." },
+                { text: "The plan was two weeks in the north with my sister. She started a new job in June and she gets no vacation in the first year. Alone it made no sense." },
               ],
             },
             {
@@ -880,7 +880,7 @@ Bring a hat, a towel and shoes for the {{10}}`,
               text: "Speaker 2",
               answer: "d",
               explain:
-                "Plan kardeşiyle birlikteydi ve o gelemiyor: «she gets no holiday in the first year. Alone it made no sense». İptalin sebebi kişi, yer değil.",
+                "Plan kardeşiyle birlikteydi ve o gelemiyor: «she gets no vacation in the first year. Alone it made no sense». İptalin sebebi kişi, yer değil.",
             },
             {
               kind: "match",

@@ -25,7 +25,7 @@ export const EN_B1_03: MockPaper = {
       skill: "reading",
       minutes: 55,
       instruction:
-        "There are six tasks in this part. You read notices, adverts, an article and two texts with gaps. Answer each question with one choice.",
+        "There are six tasks in this part. You read notices, ads, an article and two texts with gaps. Answer each question with one choice.",
       instructionTr:
         "Bu bölümde altı görev var. Duyurular, ilanlar, bir yazı ve boşluklu iki metin okuyacaksın. Her soruda doğru cevabı işaretle.",
       tasks: [
@@ -43,7 +43,7 @@ export const EN_B1_03: MockPaper = {
               genre: "Notice at a swimming pool",
               genreTr: "Havuz duyurusu",
               title: "New opening hours",
-              body: `From 1 April the pool opens at six on weekdays for lane swimming only. Families and lessons start at nine. The last entry is forty-five minutes before closing, and the sauna closes half an hour earlier than the pool.`,
+              body: `From April 1 the pool opens at six on weekdays for lane swimming only. Families and lessons start at nine. The last entry is forty-five minutes before closing, and the sauna closes half an hour earlier than the pool.`,
             },
             {
               kind: "text",
@@ -66,7 +66,7 @@ export const EN_B1_03: MockPaper = {
               id: "m4",
               genre: "Message",
               genreTr: "İleti",
-              title: "From the physiotherapist",
+              title: "From the physical therapist",
               body: `Bora, I have looked at your knee again. Keep doing the first two exercises, but stop the third one for now: it is the one that hurts the next morning. Come back in three weeks, earlier if the swelling returns.`,
             },
             {
@@ -142,15 +142,15 @@ export const EN_B1_03: MockPaper = {
           format: "match",
           goal: "orientation",
           prompt:
-            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best advert. No advert is used twice.",
+            "Here are five people, 6 to 10. There are also eight ads, a to h. Match each person with the best ad. No ad is used twice.",
           promptTr:
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
             { key: "a", label: "Morning Yoga in the Park", body: "Every day at seven, April to September. Bring your own mat. Pay what you can, cash in the box. No booking needed, but the group is small when it rains." },
             { key: "b", label: "Sleep Clinic", body: "A first meeting of ninety minutes, then four short follow-ups by video. For people who wake at night and cannot go back to sleep. A doctor's letter is needed." },
             { key: "c", label: "Swim for Nervous Adults", body: "Twelve lessons in a warm, shallow pool with no more than five people. For adults who never learned as children. Wednesday evenings." },
-            { key: "d", label: "Walking Football", body: "Football with no running and no contact, for the over-fifties. Thursday afternoons in the sports hall. The first session is free." },
-            { key: "e", label: "Physio Advice Line", body: "Fifteen minutes on the phone with a physiotherapist. For small injuries: is this something to rest, or something to see somebody about? Ten pounds." },
+            { key: "d", label: "Walking Soccer", body: "Soccer with no running and no contact, for the over-fifties. Thursday afternoons in the sports hall. The first session is free." },
+            { key: "e", label: "Physio Advice Line", body: "Fifteen minutes on the phone with a physical therapist. For small injuries: is this something to rest, or something to see somebody about? Ten pounds." },
             { key: "f", label: "Climbing Wall Course", body: "Six evenings, from nothing to climbing with a partner. Equipment included. Minimum age sixteen. Saturdays are for practice, not for teaching." },
             { key: "g", label: "Cooking for One", body: "Four Monday evenings. Simple meals for one person that do not turn into four days of the same food. Ingredients included." },
             { key: "h", label: "Night Shift Group", body: "Once a month, Sunday morning, for people who work nights. We talk about sleep, food and family. Free tea and a quiet room." },
@@ -163,7 +163,7 @@ export const EN_B1_03: MockPaper = {
               text: "Ingrid is sixty-four and would like to play a team sport again, but her doctor has told her not to run.",
               answer: "d",
               explain:
-                "İlan iki koşulu birden karşılıyor: «Football with no running and no contact» ve «for the over-fifties». Takım oyunu isteği yalnız bu ilanda karşılanıyor; tırmanma kursu (f) takım sporu değil.",
+                "İlan iki koşulu birden karşılıyor: «Soccer with no running and no contact» ve «for the over-fifties». Takım oyunu isteği yalnız bu ilanda karşılanıyor; tırmanma kursu (f) takım sporu değil.",
             },
             {
               kind: "match",
@@ -217,7 +217,7 @@ export const EN_B1_03: MockPaper = {
               genre: "Newspaper column",
               genreTr: "Gazete köşe yazısı",
               title: "I gave up my morning run for a month",
-              body: `For six years I ran four mornings a week, and I told anybody who asked that it was the reason I felt well. Last winter my knee disagreed, and a physiotherapist told me to stop for four weeks. I want to describe what actually happened, because it was not what I expected.
+              body: `For six years I ran four mornings a week, and I told anybody who asked that it was the reason I felt well. Last winter my knee disagreed, and a physical therapist told me to stop for four weeks. I want to describe what actually happened, because it was not what I expected.
 
 The first surprise was that I slept worse, not better. I had always believed that the running tired me out. It turned out that what the run really gave me was daylight at seven o'clock, and in January I was now getting none. In the second week I started walking the same route without running it, and my sleep came back within days.
 
@@ -225,9 +225,9 @@ The second surprise was social. I used to see the same four or five people at th
 
 The third thing is the one I am least comfortable with. My mood got worse in week two, and I noticed that I was explaining it to myself as an injury problem. It was not. I had simply lost the one hour of the day that nobody else could book.
 
-I am running again now, three mornings instead of four. The physiotherapist, who has seen this many times, says the fourth morning was never the useful one. She may be right. However, I have kept the walk on the fourth day, because I now know which part of it I was actually there for.`,
+I am running again now, three mornings instead of four. The physical therapist, who has seen this many times, says the fourth morning was never the useful one. She may be right. However, I have kept the walk on the fourth day, because I now know which part of it I was actually there for.`,
               gloss: [
-                { de: "a physiotherapist", tr: "fizyoterapist", en: "der Physiotherapeut" },
+                { de: "a physical therapist", tr: "fizyoterapist", en: "der Physiotherapeut" },
                 { de: "a canal", tr: "kanal", en: "der Kanal" },
                 { de: "mood", tr: "ruh hâli", en: "die Stimmung" },
               ],
@@ -259,7 +259,7 @@ I am running again now, three mornings instead of four. The physiotherapist, who
               id: "en-b1-03-l3-13",
               no: 13,
               text: "What is the writer least comfortable admitting?",
-              options: ["That the physiotherapist was right about the fourth morning", "That she had told other people the running kept her well", "That she laughed at people who stopped running", "That her low mood was about lost private time"],
+              options: ["That the physical therapist was right about the fourth morning", "That she had told other people the running kept her well", "That she laughed at people who stopped running", "That her low mood was about lost private time"],
               answer: 3,
               explain:
                 "Yazı kendi açıklamasını çürütüyor: kötüleşen ruh hâlini sakatlığa bağlamış, oysa «I had simply lost the one hour of the day that nobody else could book». Gülme sahnesi kendi hakkında ve varsayımsal; fizyoterapistin haklılığı ise rahatsız edici değil, kabul edilen bir şey.",
@@ -396,7 +396,7 @@ Second, increase one thing at a time. If you make the run longer and faster in t
 
 Third, take the day after seriously. Pain during the run tells you less than pain the next morning, and that is the signal you must {{24}} attention to.
 
-And finally, be honest with the person treating you. A physiotherapist can only work with what you {{25}} them.`,
+And finally, be honest with the person treating you. A physical therapist can only work with what you {{25}} them.`,
             },
           ],
           items: [
@@ -564,7 +564,7 @@ The difference is bigger {{30}} I expected: I am not a different person, but I a
               situation: "Bir sağlık kuruluşu hastaya ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hello, this is the clinic about your blood test. Everything is normal except your iron, which is a little low. There is nothing to worry about, but I would like to see you in about a month. Please ring the desk." },
+                { text: "Hello, this is the clinic about your blood test. Everything is normal except your iron, which is a little low. There is nothing to worry about, but I would like to see you in about a month. Please call the desk." },
               ],
             },
             {
@@ -611,7 +611,7 @@ The difference is bigger {{30}} I expected: I am not a different person, but I a
               situation: "Bir oyuncu takım arkadaşlarına ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hi, this is about the football on Thursday. We only have nine people, so I have asked the other team whether we can play seven a side. If they say no, we play with nine against eleven, which nobody enjoys." },
+                { text: "Hi, this is about the soccer game on Thursday. We only have nine people, so I have asked the other team whether we can play seven a side. If they say no, we play with nine against eleven, which nobody enjoys." },
               ],
             },
             {
@@ -647,7 +647,7 @@ The difference is bigger {{30}} I expected: I am not a different person, but I a
               options: ["To cancel an appointment", "To report a result that is dangerous", "To ask the patient to come in"],
               answer: 2,
               explain:
-                "İleti bir davet: «I would like to see you in about a month. Please ring the desk». Sonuç düşük demir, ama «There is nothing to worry about» deniyor; randevu iptali hiç geçmiyor.",
+                "İleti bir davet: «I would like to see you in about a month. Please call the desk». Sonuç düşük demir, ama «There is nothing to worry about» deniyor; randevu iptali hiç geçmiyor.",
             },
             {
               kind: "mcq",
@@ -768,7 +768,7 @@ The difference is bigger {{30}} I expected: I am not a different person, but I a
             {
               kind: "audio",
               id: "b5",
-              genre: "In a shop",
+              genre: "In a store",
               genreTr: "Mağazada",
               situation: "Bir müşteri koşu ayakkabısı deniyor.",
               plays: 2,
@@ -881,7 +881,7 @@ The difference is bigger {{30}} I expected: I am not a different person, but I a
               plays: 2,
               segments: [
                 {
-                  text: "Welcome, and thank you all for coming. We started in 2014 with eleven members and we now have four hundred. The club fee is thirty pounds a year, and that includes the winter track hire, which is the expensive part. We meet on Tuesdays at half past six and on Sunday mornings at nine. The Tuesday session is on the track; the Sunday one is always on grass, because we think the legs need a soft surface once a week. New members run in the yellow group for the first six weeks, whatever their speed, so that a coach sees you before you choose a group yourself. And the thing people ask about most: yes, we have a bag store, but bring your own lock.",
+                  text: "Welcome, and thank you all for coming. We started in 2014 with eleven members and we now have four hundred. The club fee is thirty pounds a year, and that includes the winter track rental, which is the expensive part. We meet on Tuesdays at half past six and on Sunday mornings at nine. The Tuesday session is on the track; the Sunday one is always on grass, because we think the legs need a soft surface once a week. New members run in the yellow group for the first six weeks, whatever their speed, so that a coach sees you before you choose a group yourself. And the thing people ask about most: yes, we have a bag store, but bring your own lock.",
                 },
               ],
             },
@@ -1096,11 +1096,11 @@ New members run in the:  {{19}} group`,
             ],
             sample: `Dear Sir or Madam,
 
-I joined the club on 2 February and I have paid for three months. Two weeks after I joined I hurt my knee, and my physiotherapist has told me not to train until July.
+I joined the club on February 2 and I have paid for three months. Two weeks after I joined I hurt my knee, and my physical therapist has told me not to train until July.
 
 I have already spoken to the desk twice. I was told to write to you, so I am doing that now.
 
-I would like to pause my membership for two months rather than cancel it, because I do want to come back. I can send a letter from the physiotherapist if you need one, and I am happy to bring it to the desk in person.
+I would like to pause my membership for two months rather than cancel it, because I do want to come back. I can send a letter from the physical therapist if you need one, and I am happy to bring it to the desk in person.
 
 Could you let me know before the end of this month?
 

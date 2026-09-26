@@ -60,7 +60,7 @@ export const EN_A2_04: MockPaper = {
               genre: "Email",
               genreTr: "E-posta",
               title: "Your online course",
-              body: `Dear Teodor, thank you for your interest. The course begins on 3 October and runs for eight weeks. The videos stay online for a year, so you can watch a lesson again later. Please pay before the first lesson.`,
+              body: `Dear Teodor, thank you for your interest. The course begins on October 3 and runs for eight weeks. The videos stay online for a year, so you can watch a lesson again later. Please pay before the first lesson.`,
             },
             {
               kind: "text",
@@ -373,7 +373,7 @@ And do not eat alone. Lunch {{19}} the others is the fastest way into a team.`,
 
 The teacher explained everything twice, and she answered all {{21}} questions.
 
-The room is on the fourth floor and there is no lift, {{22}} the stairs are not a problem for me.
+The room is on the fourth floor and there is no elevator, {{22}} the stairs are not a problem for me.
 
 The course was cheaper {{23}} the one in the city center, and the group was smaller.
 
@@ -677,7 +677,7 @@ Do the level test:       {{10}}`,
               situation: "Bir kişi iş başvurusu için ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "I sent the application three weeks ago and I have heard nothing. I am not angry, but I would like to know: is my letter still on somebody's desk, or is it in the bin?" },
+                { text: "I sent the application three weeks ago and I have heard nothing. I am not angry, but I would like to know: is my letter still on somebody's desk, or is it in the trash?" },
               ],
             },
             {
@@ -721,7 +721,7 @@ Do the level test:       {{10}}`,
               situation: "Bir stajyer son gününde konuşuyor.",
               plays: 2,
               segments: [
-                { text: "Thank you for the two weeks in your team. I learned more about real work in fourteen days than in two years of reading. I hope you take another student next summer." },
+                { text: "Thank you for the two weeks on your team. I learned more about real work in fourteen days than in two years of reading. I hope you take another student next summer." },
               ],
             },
           ],
@@ -735,7 +735,7 @@ Do the level test:       {{10}}`,
               options: ["Asking about her application", "Complaining about a lost letter", "Sending a new application"],
               answer: 0,
               explain:
-                "İleti bir soru soruyor: «is my letter still on somebody's desk, or is it in the bin?». Konuşmacı kızgın olmadığını açıkça söylüyor, yani şikâyet değil; yeni bir başvuru da göndermiyor.",
+                "İleti bir soru soruyor: «is my letter still on somebody's desk, or is it in the trash?». Konuşmacı kızgın olmadığını açıkça söylüyor, yani şikâyet değil; yeni bir başvuru da göndermiyor.",
             },
             {
               kind: "mcq",
@@ -779,7 +779,7 @@ Do the level test:       {{10}}`,
               options: ["Thanking a workplace", "Asking for a job", "Explaining a mistake in the report"],
               answer: 0,
               explain:
-                "İlk cümle teşekkür: «Thank you for the two weeks in your team». Son cümle gelecek yaz için başka bir öğrenci diliyor, kendine iş istemiyor; hata konusu hiç geçmiyor.",
+                "İlk cümle teşekkür: «Thank you for the two weeks on your team». Son cümle gelecek yaz için başka bir öğrenci diliyor, kendine iş istemiyor; hata konusu hiç geçmiyor.",
             },
           ],
         },

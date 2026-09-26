@@ -25,7 +25,7 @@ export const EN_B1_04: MockPaper = {
       skill: "reading",
       minutes: 55,
       instruction:
-        "There are six tasks in this part. You read notices, adverts, an article and two texts with gaps. Answer each question with one choice.",
+        "There are six tasks in this part. You read notices, ads, an article and two texts with gaps. Answer each question with one choice.",
       instructionTr:
         "Bu bölümde altı görev var. Duyurular, ilanlar, bir yazı ve boşluklu iki metin okuyacaksın. Her soruda doğru cevabı işaretle.",
       tasks: [
@@ -43,7 +43,7 @@ export const EN_B1_04: MockPaper = {
               genre: "Notice at a post office",
               genreTr: "Postane duyurusu",
               title: "Counter hours",
-              body: `From 3 June this counter closes at four instead of five. Cash payments are still possible at the machine in the hall until midnight. Letters that need a signature must be collected before four.`,
+              body: `From June 3 this counter closes at four instead of five. Cash payments are still possible at the machine in the hall until midnight. Letters that need a signature must be collected before four.`,
             },
             {
               kind: "text",
@@ -51,7 +51,7 @@ export const EN_B1_04: MockPaper = {
               genre: "Email from an employer",
               genreTr: "İşverenden e-posta",
               title: "Summer closing",
-              body: `Dear colleagues, the summer closing this year is the last two weeks of August, not the first two. Anybody who has already booked flights should write to me by Friday and we will find a solution. Holiday that is not taken by December is lost.`,
+              body: `Dear colleagues, the summer closing this year is the last two weeks of August, not the first two. Anybody who has already booked flights should write to me by Friday and we will find a solution. Vacation that is not taken by December is lost.`,
             },
             {
               kind: "text",
@@ -142,14 +142,14 @@ export const EN_B1_04: MockPaper = {
           format: "match",
           goal: "orientation",
           prompt:
-            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best advert. No advert is used twice.",
+            "Here are five people, 6 to 10. There are also eight ads, a to h. Match each person with the best ad. No ad is used twice.",
           promptTr:
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
             { key: "a", label: "Weekend Market Stall", body: "Half a table for one Saturday, from twelve pounds. Good for testing whether people will pay for what you make. No electricity." },
             { key: "b", label: "Tax Help Evening", body: "Volunteers answer questions about your first year of working for yourself. Third Tuesday of the month, six to eight. Bring your own numbers." },
             { key: "c", label: "Second Language Pay", body: "A list of companies that pay extra for a second language, updated every month and sorted by city. Free to read, you register with an email address." },
-            { key: "d", label: "Cover for the Holidays", body: "Short jobs of one to three weeks while other people are away. Mostly offices and small shops. You are paid weekly." },
+            { key: "d", label: "Vacation Cover", body: "Short jobs of one to three weeks while other people are away. Mostly offices and small stores. You are paid weekly." },
             { key: "e", label: "Time Bank", body: "You give an hour of what you can do and take an hour of what you cannot. No money changes hands. Meetings once a month." },
             { key: "f", label: "Bike Courier Shifts", body: "Four-hour shifts, and you choose the days a week in advance. Your own bike, our bag. Paid at the end of every month." },
             { key: "g", label: "Return to Work Group", body: "For people who have been at home for two years or more. Six mornings: application letters, interviews, and what to say about the gap." },
@@ -190,7 +190,7 @@ export const EN_B1_04: MockPaper = {
               text: "Diego is free only between the middle of July and the middle of September and wants to work in an office.",
               answer: "d",
               explain:
-                "İlan hem süreyi hem yeri veriyor: «Short jobs of one to three weeks while other people are away» ve «Mostly offices and small shops». Bisiklet kuryeliği (f) esnek ama ofis işi değil.",
+                "İlan hem süreyi hem yeri veriyor: «Short jobs of one to three weeks while other people are away» ve «Mostly offices and small stores». Bisiklet kuryeliği (f) esnek ama ofis işi değil.",
             },
             {
               kind: "match",
@@ -221,13 +221,13 @@ export const EN_B1_04: MockPaper = {
 
 I should say at once that nobody was angry. Two people said no, politely, and one of those came back three weeks later and told me anyway. What surprised me was not the refusals but the relief. Several people said they had wanted to ask somebody for years.
 
-The numbers themselves were less dramatic than I expected. Nine of the eleven were within a few hundred pounds of each other. However, the two who were clearly below had one thing in common. Both had joined during a year when the company was not hiring much, and neither had ever asked for a rise since.
+The numbers themselves were less dramatic than I expected. Nine of the eleven were within a few hundred pounds of each other. However, the two who were clearly below had one thing in common. Both had joined during a year when the company was not hiring much, and neither had ever asked for a raise since.
 
 That is the finding I keep thinking about. The gap was not created by a manager who decided that somebody was worth less. It was created by the month somebody happened to be hired, and then nobody looked at it again.
 
 If somebody had asked me two years ago, I would have said that pay is a private matter. I am still not going to tell you that every company should publish a list. I do not know whether that would help, and I can see how it could go wrong. But the private version cost me nothing, and one colleague, who had never asked for anything, has since asked for eight percent and received six.`,
               gloss: [
-                { de: "a rise", tr: "zam", en: "die Gehaltserhöhung" },
+                { de: "a raise", tr: "zam", en: "die Gehaltserhöhung" },
                 { de: "relief", tr: "rahatlama", en: "die Erleichterung" },
                 { de: "to publish", tr: "yayımlamak", en: "veröffentlichen" },
               ],
@@ -252,7 +252,7 @@ If somebody had asked me two years ago, I would have said that pay is a private 
               options: ["They worked in the same department", "They had been at the company longest", "A manager had decided that they were worth less than the others", "They joined in a bad year and never asked for more"],
               answer: 3,
               explain:
-                "Metin ortak noktayı sayıyor: «Both had joined during a year when the company was not hiring much, and neither had ever asked for a rise since». Yönetici kararı ise bir sonraki paragrafta açıkça çürütülüyor.",
+                "Metin ortak noktayı sayıyor: «Both had joined during a year when the company was not hiring much, and neither had ever asked for a raise since». Yönetici kararı ise bir sonraki paragrafta açıkça çürütülüyor.",
             },
             {
               kind: "mcq",
@@ -279,7 +279,7 @@ If somebody had asked me two years ago, I would have said that pay is a private 
               id: "en-b1-04-l3-15",
               no: 15,
               text: "What was one result of the writer's conversations?",
-              options: ["The company published a list of all the salaries", "Two colleagues left the company", "The writer received a rise herself", "A colleague asked for more money and got some"],
+              options: ["The company published a list of all the salaries", "Two colleagues left the company", "The writer received a raise herself", "A colleague asked for more money and got some"],
               answer: 3,
               explain:
                 "Son cümle sonucu veriyor: bir meslektaş «has since asked for eight percent and received six». Yazarın kendi zammından söz edilmiyor ve şirket bir liste yayımlamıyor; tersine yazı bunu önermekten kaçınıyor.",
@@ -394,7 +394,7 @@ The first is the notice period. If you want to leave, how much warning must you 
 
 The second is overtime. Some contracts say that extra hours are already {{23}} in the salary. That sentence can mean almost anything, so ask what a normal week looked like last year.
 
-The third is holiday. Find out whether the days you have not used at the end of the year are {{24}} over, or simply lost.
+The third is vacation. Find out whether the days you have not used at the end of the year are {{24}} over, or simply lost.
 
 None of these questions makes a bad impression. An employer who cannot answer them {{25}} you something useful.`,
             },
@@ -600,7 +600,7 @@ If the page had existed in my first job, I {{30}} have saved two years of guessi
               situation: "İş yerinde yeni izin sistemi anlatılıyor.",
               plays: 2,
               segments: [
-                { text: "A short note about the new holiday system. You still ask your manager first; the system is only where you record it afterwards. Anything you booked before April is already in there, so please do not enter it a second time." },
+                { text: "A short note about the new vacation system. You still ask your manager first; the system is only where you record it afterwards. Anything you booked before April is already in there, so please do not enter it a second time." },
               ],
             },
             {
@@ -991,7 +991,7 @@ Sit with an adviser for:  {{19}} appointments`,
                 { speaker: "Host", text: "What actually changed your mind?" },
                 { speaker: "Pavel", text: "A very small thing. A colleague I liked was moved into my old role in the next department, and I watched him become tired in about nine weeks. It was like watching a recording of myself." },
                 { speaker: "Host", text: "And the lower salary in practice?" },
-                { speaker: "Pavel", text: "We moved to a smaller flat, and that was harder for my partner than for me, which I want to say clearly because it was not only my decision. But we spend less, because I am not tired enough to buy my way out of things." },
+                { speaker: "Pavel", text: "We moved to a smaller apartment, and that was harder for my partner than for me, which I want to say clearly because it was not only my decision. But we spend less, because I am not tired enough to buy my way out of things." },
                 { speaker: "Host", text: "Would you recommend it?" },
                 { speaker: "Pavel", text: "Not as a general rule. If you have debt or people depending on you, this is advice from a comfortable position, and it is worth saying so. What I would recommend is the spreadsheet, and then reading your own answer honestly the first time." },
               ],
@@ -1052,7 +1052,7 @@ Sit with an adviser for:  {{19}} appointments`,
               id: "en-b1-04-h4-24",
               no: 24,
               ref: "d1",
-              text: "What does he say about the smaller flat?",
+              text: "What does he say about the smaller apartment?",
               options: ["It was his partner's idea", "It saved much less money than they had expected", "It was harder for his partner than for him"],
               answer: 2,
               explain:
@@ -1100,7 +1100,7 @@ Sit with an adviser for:  {{19}} appointments`,
             ],
             sample: `Dear Sir or Madam,
 
-I booked the Tuesday evening bookkeeping course on 6 September and paid the full fee of 180 pounds the same week.
+I booked the Tuesday evening bookkeeping course on September 6 and paid the full fee of 180 pounds the same week.
 
 Since the middle of October my employer has moved me onto late shifts, and I now work until nine on Tuesdays. I have asked twice whether I can change back, and the answer is no before February.
 
@@ -1212,7 +1212,7 @@ I would do it again, although not for the reason people expect. The new job was 
               { de: "mention one disadvantage of your choice", tr: "Seçtiğin yolun bir olumsuz yanını da söyle" },
             ],
             sample:
-              "A monthly salary is the same every month, so you can plan a rent and a holiday. On the other hand, working faster brings you nothing, and after a while that shows. Being paid for each job is fairer in that sense, but a quiet November is frightening. I would prefer the salary, mainly because I sleep badly when I do not know what is coming. The disadvantage is that I have stayed in one job longer than I should have, exactly because it was safe.",
+              "A monthly salary is the same every month, so you can plan a rent and a vacation. On the other hand, working faster brings you nothing, and after a while that shows. Being paid for each job is fairer in that sense, but a quiet November is frightening. I would prefer the salary, mainly because I sleep badly when I do not know what is coming. The disadvantage is that I have stayed in one job longer than I should have, exactly because it was safe.",
             criteria: [
               "İki yol da gerçekten karşılaştırıldı mı?",
               "Karşılaştırma yapıları kullanıldı mı? (on the other hand, whereas, fairer than)",
@@ -1233,7 +1233,7 @@ I would do it again, although not for the reason people expect. The new job was 
             "Ekibimize bu yıl çalışma koşullarında tek bir değişiklik hakkı verildi. Seçenekleri benimle konuş ve birlikte karar ver.",
           prepSeconds: 30,
           exchange: [
-            { who: "partner", de: "The options are: two days a week at home, finishing at two on Fridays, five extra holiday days, or a later start every morning. Which do you think we should choose?", tr: "Seçenekler: haftada iki gün evden çalışma, cuma günleri ikide paydos, beş gün fazladan izin ya da her sabah daha geç başlama. Sence hangisini seçmeliyiz?" },
+            { who: "partner", de: "The options are: two days a week at home, finishing at two on Fridays, five extra vacation days, or a later start every morning. Which do you think we should choose?", tr: "Seçenekler: haftada iki gün evden çalışma, cuma günleri ikide paydos, beş gün fazladan izin ya da her sabah daha geç başlama. Sence hangisini seçmeliyiz?" },
             { who: "you", hint: "Bir seçenek seç ve gerekçelendir.", expect: "bir seçeneği seçmek ve gerekçelendirmek", seconds: 40 },
             { who: "partner", de: "I understand. But half the team cannot work at home, and they would get nothing from that. Does that change your mind?", tr: "Anlıyorum. Ama ekibin yarısı evden çalışamaz ve onlara hiçbir şey kalmaz. Bu fikrini değiştirir mi?" },
             { who: "you", hint: "İtiraza doğrudan karşılık ver: kabul et ya da çürüt.", expect: "bir itiraza doğrudan karşılık vermek", seconds: 40 },

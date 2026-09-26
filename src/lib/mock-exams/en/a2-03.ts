@@ -44,15 +44,15 @@ export const EN_A2_03: MockPaper = {
               genre: "Message",
               genreTr: "İleti",
               title: "From Oskar",
-              body: `Hi, a big parcel for you came this morning and the driver left it with me. I am at home after five every day this week. My flat is number 9, on the second floor.`,
+              body: `Hi, a big parcel for you came this morning and the driver left it with me. I am at home after five every day this week. My apartment is number 9, on the second floor.`,
             },
             {
               kind: "text",
               id: "m2",
               genre: "Notice in a building",
               genreTr: "Bina duyurusu",
-              title: "The lift",
-              body: `The lift will not work from Monday to Wednesday. Workers are changing the doors. Please use the stairs. If you cannot use the stairs, call the office and we will help you with your shopping.`,
+              title: "The elevator",
+              body: `The elevator will not work from Monday to Wednesday. Workers are changing the doors. Please use the stairs. If you cannot use the stairs, call the office and we will help you with your shopping.`,
             },
             {
               kind: "text",
@@ -65,7 +65,7 @@ export const EN_A2_03: MockPaper = {
             {
               kind: "text",
               id: "m4",
-              genre: "Note for a flatmate",
+              genre: "Note for a roommate",
               genreTr: "Ev arkadaşına not",
               title: "Back on Sunday",
               body: `Selim, I am at my sister's until Sunday. Can you water the plants on Friday? The key for the balcony door is in the kitchen drawer. Do not put the small green plant in the sun.`,
@@ -75,7 +75,7 @@ export const EN_A2_03: MockPaper = {
               id: "m5",
               genre: "Message to a group",
               genreTr: "Gruba ileti",
-              title: "Rubbish days",
+              title: "Trash days",
               body: `From next month the yellow bags are collected on Tuesday, not on Friday. Paper stays on Friday. Please put the bags out after seven in the evening, not earlier: the street is narrow.`,
             },
           ],
@@ -86,7 +86,7 @@ export const EN_A2_03: MockPaper = {
               no: 1,
               ref: "m1",
               text: "What does Oskar tell his neighbor?",
-              options: ["He will bring the parcel upstairs", "The parcel is in his flat", "The driver comes again tomorrow"],
+              options: ["He will bring the parcel upstairs", "The parcel is in his apartment", "The driver comes again tomorrow"],
               answer: 1,
               explain:
                 "İleti «the driver left it with me» diyor: koli Oskar'ın yanında duruyor. Oskar onu yukarı çıkaracağını hiç söylemiyor, tersine kendi kapı numarasını veriyor; şoförün tekrar gelmesi de yazmıyor.",
@@ -97,7 +97,7 @@ export const EN_A2_03: MockPaper = {
               no: 2,
               ref: "m2",
               text: "What should people do if they cannot use the stairs?",
-              options: ["Phone the office for help", "Wait for the workers at the door", "Use the lift only in the morning"],
+              options: ["Phone the office for help", "Wait for the workers at the door", "Use the elevator only in the morning"],
               answer: 0,
               explain:
                 "Duyurunun son cümlesi tek çözümü veriyor: «call the office and we will help you with your shopping». İşçiler kapıları değiştiriyor, yardım etmiyor; asansör üç gün boyunca hiç çalışmıyor, sabah da çalışmıyor.",
@@ -147,12 +147,12 @@ export const EN_A2_03: MockPaper = {
           promptTr:
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
-            { key: "a", label: "Flat Share", body: "One room free in a big flat from October. Three people, one bathroom, no smoking. 320 pounds with all bills." },
+            { key: "a", label: "Shared Apartment", body: "One room free in a big apartment from October. Three people, one bathroom, no smoking. 320 pounds with all bills." },
             { key: "b", label: "Repair Hour", body: "Every Thursday evening in the community room. Bring a small broken thing and a helper will look at it with you. Free." },
             { key: "c", label: "Storage Boxes", body: "Clean, dry boxes near the station. From two square meters. Day and night entry with your own key. From 18 pounds a month." },
             { key: "d", label: "Garden Group", body: "We look after the small garden behind the school. Saturday mornings, tools are here. Everybody can come, no experience needed." },
             { key: "e", label: "Painting Team", body: "Two painters, ten years of work. We work Monday to Friday and a normal room takes one day. We move the furniture and put it back." },
-            { key: "f", label: "Quiet Studio", body: "One person only, top floor, no lift. Small but very light. Near the university. Free from September." },
+            { key: "f", label: "Quiet Studio", body: "One person only, top floor, no elevator. Small but very light. Near the university. Free from September." },
             { key: "g", label: "Furniture Van", body: "Small van and a driver for two hours. Good for a bed or a sofa. 45 pounds. We do not carry things up the stairs." },
             { key: "h", label: "Night Study Room", body: "Open until one in the morning, seven days a week. Warm, quiet, free tea. Bring your own laptop." },
           ],
@@ -161,7 +161,7 @@ export const EN_A2_03: MockPaper = {
               kind: "match",
               id: "en-a2-03-l2-6",
               no: 6,
-              text: "Sanne is moving to a smaller flat and has no place for her winter things.",
+              text: "Sanne is moving to a smaller apartment and has no place for her winter things.",
               answer: "c",
               explain:
                 "İlan tam bunu satıyor: «Clean, dry boxes» ve «From two square meters». Sanne eşyayı atmıyor, bir yere koyacak yer arıyor; taşınma aracı (g) eşyayı taşır ama saklamaz.",
@@ -217,14 +217,14 @@ export const EN_A2_03: MockPaper = {
               id: "t3",
               genre: "Magazine article",
               genreTr: "Dergi yazısı",
-              title: "The flat above the bakery",
-              body: `Two years ago I moved into a small flat above a bakery. My friends asked me one question again and again: is it not too noisy?
+              title: "The apartment above the bakery",
+              body: `Two years ago I moved into a small apartment above a bakery. My friends asked me one question again and again: is it not too noisy?
 
 The answer is yes and no. The bakers start at four in the morning, and for the first week I woke up every night. Then something strange happened: after ten days I did not hear them any more. Now the machines are part of the house for me.
 
-The flat is smaller than my old one and it has no balcony. But the rent is a hundred pounds cheaper, and the bus stop is in front of the door.
+The apartment is smaller than my old one and it has no balcony. But the rent is a hundred pounds cheaper, and the bus stop is in front of the door.
 
-There is one more thing, and it is better than a balcony. When I come home late, the baker often gives me the bread that he cannot sell the next day. I take it, and in the morning I give half of it to the old man in flat 3.`,
+There is one more thing, and it is better than a balcony. When I come home late, the baker often gives me the bread that he cannot sell the next day. I take it, and in the morning I give half of it to the old man in apartment 3.`,
               gloss: [
                 { de: "a bakery", tr: "fırın", en: "die Bäckerei" },
                 { de: "the rent", tr: "kira", en: "die Miete" },
@@ -238,7 +238,7 @@ There is one more thing, and it is better than a balcony. When I come home late,
               id: "en-a2-03-l3-11",
               no: 11,
               text: "Why did the writer sleep badly at the beginning?",
-              options: ["Because the flat was too small", "Because the bus stopped in front of the door", "Because work in the bakery began very early"],
+              options: ["Because the apartment was too small", "Because the bus stopped in front of the door", "Because work in the bakery began very early"],
               answer: 2,
               explain:
                 "Yazı sebebi veriyor: «The bakers start at four in the morning, and for the first week I woke up every night». Küçüklük ve otobüs durağı metinde geçiyor ama ikisi de uykuyla bağlanmıyor; durak tam tersine olumlu bir yan olarak anılıyor.",
@@ -248,7 +248,7 @@ There is one more thing, and it is better than a balcony. When I come home late,
               id: "en-a2-03-l3-12",
               no: 12,
               text: "What happened after ten days?",
-              options: ["The noise stopped waking him", "The bakers began later", "He asked for a flat with a balcony"],
+              options: ["The noise stopped waking him", "The bakers began later", "He asked for an apartment with a balcony"],
               answer: 0,
               explain:
                 "Metin «after ten days I did not hear them any more» diyor: ses sürüyor, yazan alışıyor. Fırıncıların saati hiç değişmiyor; balkon isteği de yazıda yok, tersine balkonsuzluğun daha iyisini bulduğunu söylüyor.",
@@ -257,7 +257,7 @@ There is one more thing, and it is better than a balcony. When I come home late,
               kind: "mcq",
               id: "en-a2-03-l3-13",
               no: 13,
-              text: "What is better in the new flat than in the old one?",
+              text: "What is better in the new apartment than in the old one?",
               options: ["It has a balcony and more light", "The rent is lower", "The rooms are bigger"],
               answer: 1,
               explain:
@@ -268,10 +268,10 @@ There is one more thing, and it is better than a balcony. When I come home late,
               id: "en-a2-03-l3-14",
               no: 14,
               text: "What does the writer do with the bread?",
-              options: ["He sells it to the old man in flat 3", "He shares it with a neighbor", "He gives it back to the baker"],
+              options: ["He sells it to the old man in apartment 3", "He shares it with a neighbor", "He gives it back to the baker"],
               answer: 1,
               explain:
-                "Son cümle veriyor: «I give half of it to the old man in flat 3» — komşuyla paylaşıyor. Satmıyor (ekmek zaten satılamadığı için ona veriliyor) ve fırıncıya geri götürmüyor.",
+                "Son cümle veriyor: «I give half of it to the old man in apartment 3» — komşuyla paylaşıyor. Satmıyor (ekmek zaten satılamadığı için ona veriliyor) ve fırıncıya geri götürmüyor.",
             },
           ],
         },
@@ -288,8 +288,8 @@ There is one more thing, and it is better than a balcony. When I come home late,
               id: "t4",
               genre: "Blog post",
               genreTr: "Blog yazısı",
-              title: "Four years in a flat share",
-              body: `I lived in flat shares for four years, and here is my advice.
+              title: "Four years in a shared apartment",
+              body: `I lived in shared apartments for four years, and here is my advice.
 
 Talk about money in the first week. Who pays the internet? Who buys the things that everybody {{15}}?
 
@@ -297,7 +297,7 @@ Write the cleaning days on a piece of paper in the kitchen. A list on paper is {
 
 A guest for one night is fine. But if somebody stays for a week, the others {{17}} know before, not after.
 
-Next month a new person {{18}} come to our flat, and we are all a bit nervous.
+Next month a new person {{18}} come to our apartment, and we are all a bit nervous.
 
 And the last rule: {{19}} you take the last milk, buy new milk on the same day.`,
             },
@@ -371,13 +371,13 @@ And the last rule: {{19}} you take the last milk, buy new milk on the same day.`
               title: "Hello from the third floor",
               body: `Hello everyone,
 
-I moved {{20}} the flat on the third floor last week.
+I moved {{20}} the apartment on the third floor last week.
 
 My name is Sanne and I come {{21}} the north of the country.
 
 I work at home, so I am here {{22}} day. If a parcel arrives for you, I can take it.
 
-It is the {{23}} flat in the building, but that is fine for one person.
+It is the {{23}} apartment in the building, but that is fine for one person.
 
 I would like to meet you, {{24}} please knock on my door.`,
             },
@@ -390,7 +390,7 @@ I would like to meet you, {{24}} please knock on my door.`,
               text: "Gap 20",
               accept: ["into", "to"],
               explain:
-                "`move into a flat` bir yere yerleşmeyi anlatan kalıptır; `move to` da yön bildirdiği için kabul edilir. `move in the flat` yerleşmeyi değil dairenin içinde hareket etmeyi anlatır.",
+                "`move into an apartment` bir yere yerleşmeyi anlatan kalıptır; `move to` da yön bildirdiği için kabul edilir. `move in the apartment` yerleşmeyi değil dairenin içinde hareket etmeyi anlatır.",
             },
             {
               kind: "gap",
@@ -470,8 +470,8 @@ I would like to meet you, {{24}} please knock on my door.`,
               situation: "Bir kişi kiralık daire için arıyor.",
               plays: 2,
               segments: [
-                { speaker: "Caller", text: "Hello, I am calling about the flat in Garden Street. Is it still free?" },
-                { speaker: "Agent", text: "Yes, but there are eleven people on the list. I show the flat on Saturday at eleven, everybody together." },
+                { speaker: "Caller", text: "Hello, I am calling about the apartment on Garden Street. Is it still free?" },
+                { speaker: "Agent", text: "Yes, but there are eleven people on the list. I show the apartment on Saturday at eleven, everybody together." },
                 { speaker: "Caller", text: "All right. How much is the rent, and do I need papers?" },
                 { speaker: "Agent", text: "Six hundred with the heating. And please bring a letter from your work and your passport." },
               ],
@@ -498,7 +498,7 @@ I would like to meet you, {{24}} please knock on my door.`,
               plays: 2,
               segments: [
                 { speaker: "Woman", text: "We get the keys on the first, but the van is only free on the third." },
-                { speaker: "Man", text: "Then we sleep two more nights in the old flat. No problem, the beds are still there." },
+                { speaker: "Man", text: "Then we sleep two more nights in the old apartment. No problem, the beds are still there." },
                 { speaker: "Woman", text: "And my brother helps us on the third. He has the whole day." },
               ],
             },
@@ -510,7 +510,7 @@ I would like to meet you, {{24}} please knock on my door.`,
               situation: "Bina sakinlerine bir toplantı duyuruluyor.",
               plays: 2,
               segments: [
-                { text: "Everybody, the meeting about the garden is not in the community room this month. The room is full of chairs from the school. We meet in the garden itself. If it rains, we meet in my flat, number 2." },
+                { text: "Everybody, the meeting about the garden is not in the community room this month. The room is full of chairs from the school. We meet in the garden itself. If it rains, we meet in my apartment, number 2." },
               ],
             },
           ],
@@ -553,8 +553,8 @@ I would like to meet you, {{24}} please knock on my door.`,
               id: "en-a2-03-h1-4",
               no: 4,
               ref: "a4",
-              text: "Why do they stay two more nights in the old flat?",
-              options: ["Because the van is not free yet", "Because the brother works on the first", "Because the beds are in the new flat"],
+              text: "Why do they stay two more nights in the old apartment?",
+              options: ["Because the van is not free yet", "Because the brother works on the first", "Because the beds are in the new apartment"],
               answer: 0,
               explain:
                 "Anahtarlar ayın biri, araç ise «only free on the third»: aradaki iki gece bu yüzden. Kardeş de üçünde yardım ediyor; yataklar ise «still there», yani ESKİ dairede duruyor.",
@@ -565,10 +565,10 @@ I would like to meet you, {{24}} please knock on my door.`,
               no: 5,
               ref: "a5",
               text: "Where is the meeting if the weather is bad?",
-              options: ["In the community room", "In the garden", "In flat number 2"],
+              options: ["In the community room", "In the garden", "In apartment number 2"],
               answer: 2,
               explain:
-                "Koşul kaydın sonunda: «If it rains, we meet in my flat, number 2». Ortak oda bu ay okuldan gelen sandalyelerle dolu; bahçe ise yağmur yoksa geçerli olan yer.",
+                "Koşul kaydın sonunda: «If it rains, we meet in my apartment, number 2». Ortak oda bu ay okuldan gelen sandalyelerle dolu; bahçe ise yağmur yoksa geçerli olan yer.",
             },
           ],
         },
@@ -591,7 +591,7 @@ I would like to meet you, {{24}} please knock on my door.`,
               plays: 2,
               segments: [
                 {
-                  text: "Good evening and thank you for coming. Three things tonight. First, the front door: the new lock arrives on the fourteenth of May and every flat gets two keys. Second, the cellar. We must empty it before the workers come, so please take your things out by the end of the month. Third, the garden. Twelve people put their name on the list, and we start on Saturday at ten. Bring gloves if you have them; we have the tools. And one small thing: the bin for glass is now behind the garage, not next to the door.",
+                  text: "Good evening and thank you for coming. Three things tonight. First, the front door: the new lock arrives on the fourteenth of May and every apartment gets two keys. Second, the cellar. We must empty it before the workers come, so please take your things out by the end of the month. Third, the garden. Twelve people put their name on the list, and we start on Saturday at ten. Bring gloves if you have them; we have the tools. And one small thing: the bin for glass is now behind the garage, not next to the door.",
                 },
               ],
             },
@@ -602,7 +602,7 @@ I would like to meet you, {{24}} please knock on my door.`,
               genreTr: "Not kâğıdı",
               title: "Building meeting — notes",
               body: `New lock arrives on:      {{6}} May
-Keys for every flat:      {{7}}
+Keys for every apartment: {{7}}
 Empty the cellar before:  the end of the {{8}}
 Garden work starts:       Saturday at {{9}}
 Glass bin is now behind:  the {{10}}`,
@@ -627,7 +627,7 @@ Glass bin is now behind:  the {{10}}`,
               text: "Gap 7",
               accept: ["2", "two"],
               explain:
-                "«every flat gets two keys» — daire başına iki anahtar. Kayıtta on iki de geçiyor ama o bahçe listesine yazılan kişi sayısı; iki sayıyı ayırmak gerekiyor.",
+                "«every apartment gets two keys» — daire başına iki anahtar. Kayıtta on iki de geçiyor ama o bahçe listesine yazılan kişi sayısı; iki sayıyı ayırmak gerekiyor.",
             },
             {
               kind: "gap",
@@ -699,7 +699,7 @@ Glass bin is now behind:  the {{10}}`,
               situation: "Radyoda bir dinleyici konuşuyor.",
               plays: 2,
               segments: [
-                { text: "I lived in that building for nine years and I never met the family on the top floor. Then the lift broke, we walked up together every day, and now we eat together on Sundays." },
+                { text: "I lived in that building for nine years and I never met the family on the top floor. Then the elevator broke, we walked up together every day, and now we eat together on Sundays." },
               ],
             },
             {
@@ -710,7 +710,7 @@ Glass bin is now behind:  the {{10}}`,
               situation: "Bir kişi bina ofisini arıyor.",
               plays: 2,
               segments: [
-                { text: "Yes, hello, this is flat 7. There is water coming through my kitchen ceiling and I think it comes from the flat above me. Nobody answers the door there. Can somebody come today?" },
+                { text: "Yes, hello, this is apartment 7. There is water coming through my kitchen ceiling and I think it comes from the apartment above me. Nobody answers the door there. Can somebody come today?" },
               ],
             },
             {
@@ -721,7 +721,7 @@ Glass bin is now behind:  the {{10}}`,
               situation: "Eski bir evde oturan biri konuşuyor.",
               plays: 2,
               segments: [
-                { text: "A lot of people think an old building is always cold. Our house is from 1910 and the walls are thick. In August it is the coolest place in the street, and in winter we pay less than my sister in her new flat." },
+                { text: "A lot of people think an old building is always cold. Our house is from 1910 and the walls are thick. In August it is the coolest place in the street, and in winter we pay less than my sister in her new apartment." },
               ],
             },
           ],
@@ -743,7 +743,7 @@ Glass bin is now behind:  the {{10}}`,
               no: 12,
               ref: "c2",
               text: "What is the announcement about?",
-              options: ["A new price for the bags", "The times of the collection", "How to separate the rubbish"],
+              options: ["A new price for the bags", "The times of the collection", "How to separate the trash"],
               answer: 2,
               explain:
                 "Anons üç kabı ayırıyor: mavi torba plastik, sarı torba kâğıt, yemek ise «the brown bin in the yard». Fiyat ve toplama saati kayıtta hiç geçmiyor.",
@@ -754,10 +754,10 @@ Glass bin is now behind:  the {{10}}`,
               no: 13,
               ref: "c3",
               text: "What is the speaker doing?",
-              options: ["Saying how she met her neighbors", "Complaining about the broken lift in the building", "Inviting people for Sunday"],
+              options: ["Saying how she met her neighbors", "Complaining about the broken elevator in the building", "Inviting people for Sunday"],
               answer: 0,
               explain:
-                "Anlatı bir tanışma hikâyesi: dokuz yıl boyunca üst kattaki aileyi hiç görmemiş, «Then the lift broke, we walked up together every day». Asansörden şikâyet etmiyor, tersine onu iyi bir şeyin başlangıcı sayıyor.",
+                "Anlatı bir tanışma hikâyesi: dokuz yıl boyunca üst kattaki aileyi hiç görmemiş, «Then the elevator broke, we walked up together every day». Asansörden şikâyet etmiyor, tersine onu iyi bir şeyin başlangıcı sayıyor.",
             },
             {
               kind: "mcq",
@@ -765,7 +765,7 @@ Glass bin is now behind:  the {{10}}`,
               no: 14,
               ref: "c4",
               text: "Why is the person calling?",
-              options: ["To say that a neighbor is away", "To report a problem in the flat", "To ask for a new kitchen"],
+              options: ["To say that a neighbor is away", "To report a problem in the apartment", "To ask for a new kitchen"],
               answer: 1,
               explain:
                 "Arayan bir arıza bildiriyor: «There is water coming through my kitchen ceiling». Üst kattan kimsenin kapıyı açmaması bir ayrıntı, aramanın sebebi değil; yeni mutfak istemiyor.",
@@ -797,10 +797,10 @@ Glass bin is now behind:  the {{10}}`,
             { key: "b", label: "The journey to work was too long." },
             { key: "c", label: "There was too much noise at night." },
             { key: "d", label: "The family got bigger." },
-            { key: "e", label: "The flat was too cold in winter." },
+            { key: "e", label: "The apartment was too cold in winter." },
             { key: "f", label: "The neighbors changed." },
             { key: "g", label: "The building was sold." },
-            { key: "h", label: "There was no garden for the dog." },
+            { key: "h", label: "There was no yard for the dog." },
           ],
           texts: [
             {
@@ -811,7 +811,7 @@ Glass bin is now behind:  the {{10}}`,
               situation: "Birinci konuşmacı eski dairesinden söz ediyor.",
               plays: 2,
               segments: [
-                { text: "The flat was fine for two people. Then the twins arrived and suddenly two rooms were not enough." },
+                { text: "The apartment was fine for two people. Then the twins arrived and suddenly two rooms were not enough." },
               ],
             },
             {
@@ -822,7 +822,7 @@ Glass bin is now behind:  the {{10}}`,
               situation: "İkinci konuşmacı eski mahallesinden söz ediyor.",
               plays: 2,
               segments: [
-                { text: "I loved that street and I loved the flat. But I sat in the bus for eighty minutes every morning and eighty minutes every evening. In the end I could not do it any more." },
+                { text: "I loved that street and I loved the apartment. But I sat in the bus for eighty minutes every morning and eighty minutes every evening. In the end I could not do it any more." },
               ],
             },
             {
@@ -928,7 +928,7 @@ Glass bin is now behind:  the {{10}}`,
           format: "writing",
           goal: "interaction",
           prompt:
-            "You are away for two weeks and your friend Kiran will look after your flat. Write an email to Kiran. Write about 50 words. Answer all three points.",
+            "You are away for two weeks and your friend Kiran will look after your apartment. Write an email to Kiran. Write about 50 words. Answer all three points.",
           promptTr:
             "İki hafta şehir dışındasın ve arkadaşın Kiran evine bakacak. Kiran'a bir e-posta yaz. Yaklaşık 50 kelime. Üç maddenin hepsine cevap ver.",
           items: [],
@@ -936,14 +936,14 @@ Glass bin is now behind:  the {{10}}`,
             minWords: 50,
             points: [
               { de: "Say where the key is.", tr: "Anahtarın nerede olduğunu söyle." },
-              { de: "Say what Kiran must do in the flat.", tr: "Kiran'ın evde ne yapması gerektiğini söyle." },
+              { de: "Say what Kiran must do in the apartment.", tr: "Kiran'ın evde ne yapması gerektiğini söyle." },
               { de: "Say what he should do if there is a problem.", tr: "Bir sorun olursa ne yapması gerektiğini söyle." },
             ],
             sample: `Hi Kiran,
 
-Thank you very much! The key is with my neighbor in flat 9. He is at home after five.
+Thank you very much! The key is with my neighbor in apartment 9. He is at home after five.
 
-Please water the plants twice a week and take the post out of the box.
+Please water the plants twice a week and take the mail out of the box.
 
 If there is a problem with the water, call the office. The number is on the fridge.
 
@@ -975,7 +975,7 @@ Sanne`,
               { de: "Say what you did.", tr: "Sorunla ilgili ne yaptığını söyle." },
               { de: "Say how it ended.", tr: "Nasıl bittiğini söyle." },
             ],
-            sample: `Last winter the heating in our flat stopped in the middle of January. The rooms were cold and my son was ill. I called the office three times, but nobody came. Then I wrote a letter and I gave a copy to the neighbors. Two days later a man came and repaired it. Now the flat is warm, but I still keep the letter.`,
+            sample: `Last winter the heating in our apartment stopped in the middle of January. The rooms were cold and my son was ill. I called the office three times, but nobody came. Then I wrote a letter and I gave a copy to the neighbors. Two days later a man came and repaired it. Now the apartment is warm, but I still keep the letter.`,
             criteria: [
               "Üç içerik noktasının üçü de var mı?",
               "Geçmiş zaman doğru kullanıldı mı? Düzensiz fiiller (was, went, wrote, came) doğru mu?",
@@ -1004,7 +1004,7 @@ Sanne`,
           promptTr: "Sana evin ve komşuların hakkında sorular soracağım. Tam cümlelerle cevap ver.",
           prepSeconds: 20,
           exchange: [
-            { who: "partner", de: "Good afternoon. Tell me about the place where you live. Is it a flat or a house?", tr: "İyi günler. Yaşadığın yeri anlat. Daire mi ev mi?" },
+            { who: "partner", de: "Good afternoon. Tell me about the place where you live. Is it an apartment or a house?", tr: "İyi günler. Yaşadığın yeri anlat. Daire mi ev mi?" },
             { who: "you", hint: "Evini ve bir odasını kısaca anlat.", expect: "yaşadığı yeri tam bir cümleyle betimlemek", seconds: 30 },
             { who: "partner", de: "Thank you. Do you know your neighbors well? Why, or why not?", tr: "Teşekkürler. Komşularını iyi tanır mısın? Neden ya da neden değil?" },
             { who: "you", hint: "Cevabını bir gerekçeyle destekle.", expect: "bir durumu gerekçesiyle açıklamak", seconds: 30 },
@@ -1020,7 +1020,7 @@ Sanne`,
               { de: "use the past simple in the last answer", tr: "Son cevapta geçmiş zamanı kullanmak" },
             ],
             sample:
-              "I live in a flat on the fourth floor. It has two rooms and a small balcony. I know two neighbors well because we take the same bus in the morning. Last year I moved from a village to the city. My brother helped me and we carried everything in one day.",
+              "I live in an apartment on the fourth floor. It has two rooms and a small balcony. I know two neighbors well because we take the same bus in the morning. Last year I moved from a village to the city. My brother helped me and we carried everything in one day.",
             criteria: [
               "Cevaplar tek sözcük değil, tam cümle mi?",
               "Gerekçe verildi mi? (because …)",
@@ -1035,7 +1035,7 @@ Sanne`,
           format: "speaking",
           goal: "production",
           prompt:
-            "Describe this situation for about one minute: a family is moving into a flat. Two men are carrying a sofa up the stairs. A child is sitting on a box and a neighbor is watching from her door. Say what you see, what the people are doing, and whether you like moving day.",
+            "Describe this situation for about one minute: a family is moving into an apartment. Two men are carrying a sofa up the stairs. A child is sitting on a box and a neighbor is watching from her door. Say what you see, what the people are doing, and whether you like moving day.",
           promptTr:
             "Şu durumu bir dakika kadar anlat: Bir aile bir daireye taşınıyor. İki adam merdivenden kanepe çıkarıyor. Bir çocuk kutunun üstünde oturuyor ve bir komşu kapısından izliyor. Ne gördüğünü, insanların ne yaptığını ve taşınma gününü sevip sevmediğini söyle.",
           prepSeconds: 45,

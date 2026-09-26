@@ -46,7 +46,7 @@ export const EN_A1_04: MockPaper = {
               title: "To all parents",
               body: `Dear parents,
 
-On Friday the children go to the museum. The bus leaves the school at 8.30.
+On Friday the children go to the museum. The bus leaves the school at 8:30.
 
 Please give your child water and food for the day. We eat in the park.
 
@@ -54,7 +54,7 @@ The trip is free. The museum ticket costs 3 euros.
 
 We come back at 4 in the afternoon.
 
-Mrs Talia Roth`,
+Mrs. Talia Roth`,
               gloss: [
                 { de: "the trip", tr: "gezi", en: "der Ausflug" },
                 { de: "to leave", tr: "hareket etmek", en: "abfahren" },
@@ -67,7 +67,7 @@ Mrs Talia Roth`,
               genre: "Note at the doctor's",
               genreTr: "Doktordaki not",
               title: "For our patients",
-              body: `Doctor Otto is not here from 12 to 15 July.
+              body: `Doctor Otto is not here from July 12 to 15.
 
 Doctor Pelin works in this house on those days. Her room is number 4.
 
@@ -110,14 +110,14 @@ In the night and on the weekend, call 112.`,
               text: "The bus goes back at half past eight.",
               answer: false,
               explain:
-                "8.30 gidiş saati: «The bus leaves the school at 8.30». Dönüş öğleden sonra dörtte. A1'de saat okumak ölçülüyor ama saatin hangi yöne ait olduğunu da görmek gerekiyor.",
+                "8:30 gidiş saati: «The bus leaves the school at 8:30». Dönüş öğleden sonra dörtte. A1'de saat okumak ölçülüyor ama saatin hangi yöne ait olduğunu da görmek gerekiyor.",
             },
             {
               kind: "bool",
               id: "en-a1-04-l1-4",
               no: 4,
               ref: "t2",
-              text: "You can see a doctor on 13 July.",
+              text: "You can see a doctor on July 13.",
               answer: true,
               explain:
                 "13 Temmuz, Doktor Otto'nun olmadığı aralıkta (12–15) ama not devamı veriyor: «Doctor Pelin works in this house on those days». Yani o günlerde başka bir doktor var.",
@@ -162,9 +162,9 @@ Children under ten come with a parent.`,
               genre: "Notice",
               genreTr: "Duyuru",
               title: "Saturday Sport Club",
-              body: `Every Saturday from 10 to 12 in the school garden.
+              body: `Every Saturday from 10 to 12 in the schoolyard.
 
-Football, basketball and games for all ages.
+Soccer, basketball and games for all ages.
 
 Two euros for one day. Water is free.
 
@@ -200,11 +200,11 @@ For children we have a small room with toys.`,
               kind: "mcq",
               id: "en-a1-04-l2-7",
               no: 7,
-              text: "You want to play football with other children.",
+              text: "You want to play soccer with other children.",
               options: ["School Library", "Saturday Sport Club", "Doctor Yannis — Family Practice"],
               answer: 1,
               explain:
-                "Spor kulübü duyurusu «Football, basketball and games for all ages» diyor. Kütüphanede kitap ve bilgisayar var, oyun yok; muayenehanedeki oyuncak odası bekleyen çocuklar için.",
+                "Spor kulübü duyurusu «Soccer, basketball and games for all ages» diyor. Kütüphanede kitap ve bilgisayar var, oyun yok; muayenehanedeki oyuncak odası bekleyen çocuklar için.",
             },
             {
               kind: "mcq",
@@ -256,7 +256,7 @@ For children we have a small room with toys.`,
 
 Please take a shower before you swim.
 
-Last swimmers in the water: 21.30. We close at 22.`,
+Last swimmers in the water: 21:30. We close at 22.`,
             },
             {
               kind: "text",
@@ -288,7 +288,7 @@ Please do not use your phone here.`,
               genre: "Sign in the park",
               genreTr: "Parktaki levha",
               title: "CITY PARK — SPORT",
-              body: `Football on the grass, not on the path.
+              body: `Soccer on the grass, not on the path.
 
 The tables for table tennis are free. Bring your own ball and bat.
 
@@ -311,7 +311,7 @@ The park is open from 6 to 22.`,
               id: "en-a1-04-l3-12",
               no: 12,
               ref: "s2",
-              text: "You can use the computers at 16.00.",
+              text: "You can use the computers at 16:00.",
               answer: true,
               explain:
                 "Levha «Open at lunchtime and after 15» diyor: on beşten sonra açık, dolayısıyla on altı da açık. İki ayrı zaman aralığı var ve madde ikincisini ölçüyor.",
@@ -352,7 +352,7 @@ The park is open from 6 to 22.`,
               genre: "Message",
               genreTr: "İleti",
               title: "To my teacher",
-              body: `Dear Mrs Roth,
+              body: `Dear Mrs. Roth,
 
 My son Rudi is at home today. He {{15}} a bad cold and his head hurts.
 
@@ -404,7 +404,7 @@ Clara Weiss`,
               options: ["with", "by", "in"],
               answer: 1,
               explain:
-                "Bir iletişim yolunu bildirirken `by` kullanılır: by email, by phone, by post. `with` bir araç ya da eşlik bildirir, `in` ise bir yer ya da dil bildirir (in English).",
+                "Bir iletişim yolunu bildirirken `by` kullanılır: by email, by phone, by mail. `with` bir araç ya da eşlik bildirir, `in` ise bir yer ya da dil bildirir (in English).",
             },
           ],
         },
@@ -648,7 +648,7 @@ Clara Weiss`,
               text: "You can swim in the small pool at ten past nine.",
               answer: true,
               explain:
-                "Küçük havuz «until half past nine» açık; 21.10 bu saatten önce. Büyük havuz dokuzda kapanıyor, madde küçük olanı soruyor.",
+                "Küçük havuz «until half past nine» açık; 21:10 bu saatten önce. Büyük havuz dokuzda kapanıyor, madde küçük olanı soruyor.",
             },
             {
               kind: "bool",
@@ -688,7 +688,7 @@ Clara Weiss`,
               situation: "Bir öğretmen veliye ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hello, this is Mrs Roth from the school. The trip on Friday is now on Monday. The bus leaves at the same time." },
+                { text: "Hello, this is Mrs. Roth from the school. The trip on Friday is now on Monday. The bus leaves at the same time." },
               ],
             },
             {
@@ -699,7 +699,7 @@ Clara Weiss`,
               situation: "Bir kişi eczane soruyor.",
               plays: 2,
               segments: [
-                { speaker: "Man", text: "Excuse me, where is the chemist?" },
+                { speaker: "Man", text: "Excuse me, where is the pharmacy?" },
                 { speaker: "Woman", text: "Go left at the school. It is next to the bank." },
                 { speaker: "Man", text: "Is it open now?" },
                 { speaker: "Woman", text: "Until six, I think." },
@@ -727,7 +727,7 @@ Clara Weiss`,
               plays: 2,
               segments: [
                 { speaker: "Talia", text: "On Saturday we're going to Grandma's. And on Sunday?" },
-                { speaker: "Yannis", text: "I play football at ten. After that I am free." },
+                { speaker: "Yannis", text: "I play soccer at ten. After that I am free." },
               ],
             },
             {
@@ -739,7 +739,7 @@ Clara Weiss`,
               plays: 2,
               segments: [
                 { speaker: "Doctor", text: "Your arm is better. You can swim again." },
-                { speaker: "Patient", text: "And football?" },
+                { speaker: "Patient", text: "And soccer?" },
                 { speaker: "Doctor", text: "Not this month. Ask me again in four weeks." },
               ],
             },
@@ -761,7 +761,7 @@ Clara Weiss`,
               id: "en-a1-04-h3-12",
               no: 12,
               ref: "c2",
-              text: "Where is the chemist?",
+              text: "Where is the pharmacy?",
               options: ["Next to the bank", "In front of the school, on the right", "Behind the bus stop"],
               answer: 0,
               explain:
@@ -784,10 +784,10 @@ Clara Weiss`,
               no: 14,
               ref: "c4",
               text: "What does Yannis do on Sunday morning?",
-              options: ["He visits his grandmother", "He plays football", "He stays at home"],
+              options: ["He visits his grandmother", "He plays soccer", "He stays at home"],
               answer: 1,
               explain:
-                "Yannis «I play football at ten» diyor ve bu pazar gününe ait. Büyükanne ziyareti cumartesi; iki günü karıştıran öğrenci ilk şıkkı seçer.",
+                "Yannis «I play soccer at ten» diyor ve bu pazar gününe ait. Büyükanne ziyareti cumartesi; iki günü karıştıran öğrenci ilk şıkkı seçer.",
             },
             {
               kind: "mcq",
@@ -795,7 +795,7 @@ Clara Weiss`,
               no: 15,
               ref: "c5",
               text: "What can the patient do now?",
-              options: ["Play football again", "Swim again", "Nothing for four weeks"],
+              options: ["Play soccer again", "Swim again", "Nothing for four weeks"],
               answer: 1,
               explain:
                 "Doktor «You can swim again» diyor ama futbolu erteliyor: «Not this month». Yani hiçbir şey yapamaz demiyor; iki spor için iki ayrı karar veriyor.",
@@ -901,7 +901,7 @@ No sport in:         {{5}}`,
               { de: "Say when you will come back.", tr: "Ne zaman geleceğini söyle." },
               { de: "Ask for the homework.", tr: "Ödevi iste." },
             ],
-            sample: `Dear Mrs Roth,
+            sample: `Dear Mrs. Roth,
 
 I am at home today. I have a bad cold and I cannot come to the class. I will come back on Thursday. Can you send me the homework, please?
 
@@ -945,7 +945,7 @@ Meral`,
               { de: "one thing you do not like", tr: "Sevmediğin bir şey" },
             ],
             sample:
-              "On Monday morning I get up at six. I work in a shop from eight to four. On Wednesday I swim for one hour. On Friday evening I am free and I watch a good film. On the weekend I walk in the park with my sister. I do not like the bus in the morning.",
+              "On Monday morning I get up at six. I work in a shop from eight to four. On Wednesday I swim for one hour. On Friday evening I am free and I watch a good movie. On the weekend I walk in the park with my sister. I do not like the bus in the morning.",
             criteria: [
               "Altı sözcüğün her birine değinildi mi?",
               "Gün ve saat adları doğru söylendi mi?",

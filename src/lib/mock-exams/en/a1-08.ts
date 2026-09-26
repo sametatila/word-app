@@ -151,7 +151,7 @@ Three euros, or twenty for ten times.`,
               id: "p2",
               genre: "Notice",
               genreTr: "Duyuru",
-              title: "Football Club",
+              title: "Soccer Club",
               body: `Training on Tuesday and Thursday at 18.
 
 New players always welcome, all ages from eight.
@@ -181,7 +181,7 @@ No booking.`,
               id: "en-a1-08-l2-6",
               no: 6,
               text: "You want to play cards with other people on a Friday.",
-              options: ["Swimming Pool", "Football Club", "Game Evening"],
+              options: ["Swimming Pool", "Soccer Club", "Game Evening"],
               answer: 2,
               explain:
                 "Duyuru günü ve oyunu birlikte veriyor: «Every Friday at 19 in the library» ve «Cards and other games». Öteki iki yerde kâğıt oyunu yok.",
@@ -190,8 +190,8 @@ No booking.`,
               kind: "mcq",
               id: "en-a1-08-l2-7",
               no: 7,
-              text: "Your son is nine and wants to play football.",
-              options: ["Swimming Pool", "Football Club", "Game Evening"],
+              text: "Your son is nine and wants to play soccer.",
+              options: ["Swimming Pool", "Soccer Club", "Game Evening"],
               answer: 1,
               explain:
                 "Kulüp yaş sınırını veriyor: «all ages from eight». Dokuz yaş bu sınırın üstünde ve ilk ay ücretsiz.",
@@ -201,7 +201,7 @@ No booking.`,
               id: "en-a1-08-l2-8",
               no: 8,
               text: "You want to swim ten times and pay less.",
-              options: ["Swimming Pool", "Football Club", "Game Evening"],
+              options: ["Swimming Pool", "Soccer Club", "Game Evening"],
               answer: 0,
               explain:
                 "Havuz duyurusu iki fiyat veriyor: tek seferlik üç euro, «or twenty for ten times». On kez giden kişi on euro kazanıyor.",
@@ -211,7 +211,7 @@ No booking.`,
               id: "en-a1-08-l2-9",
               no: 9,
               text: "You want to do something free with your daughter in the evening.",
-              options: ["Swimming Pool", "Football Club", "Game Evening"],
+              options: ["Swimming Pool", "Soccer Club", "Game Evening"],
               answer: 2,
               explain:
                 "Oyun akşamı üç ölçütü de karşılıyor: akşam yedide, çayı ücretsiz ve «Children come with a parent». Havuz paralı, futbolda ise yalnız ilk ay ücretsiz.",
@@ -221,7 +221,7 @@ No booking.`,
               id: "en-a1-08-l2-10",
               no: 10,
               text: "You want to swim at seven in the morning.",
-              options: ["Swimming Pool", "Football Club", "Game Evening"],
+              options: ["Swimming Pool", "Soccer Club", "Game Evening"],
               answer: 0,
               explain:
                 "Havuz «Open from 6 to 21» diyor, yani yedide açık. Futbol antrenmanı akşam altıda, oyun akşamı ise cuma on dokuzda.",
@@ -278,7 +278,7 @@ Please take your cup to the desk.`,
               genre: "Sign at the field",
               genreTr: "Sahadaki levha",
               title: "GRASS",
-              body: `Football on the big field.
+              body: `Soccer on the big field.
 
 The small field is for children under ten.
 
@@ -437,7 +437,7 @@ Juno`,
               situation: "Kulüp oyuncuya ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hello, this is the football club. The game on Sunday is at the small field, not at the big one. Please come at nine. Bring your white shirt." },
+                { text: "Hello, this is the soccer club. The game on Sunday is at the small field, not at the big one. Please come at nine. Bring your white shirt." },
               ],
             },
             {
@@ -553,7 +553,7 @@ Juno`,
               no: 6,
               ref: "a6",
               text: "Why does Juno not come?",
-              options: ["She works today", "She is on holiday", "Her leg hurts"],
+              options: ["She works today", "She is on vacation", "Her leg hurts"],
               answer: 2,
               explain:
                 "İleti gerekçeyi veriyor: «my leg hurts» ve dörtte doktora gidiyor. İş ve tatil kayıtta hiç geçmiyor.",
@@ -899,7 +899,7 @@ Juno`,
               { de: "one thing you do not like", tr: "Sevmediğin bir şey" },
             ],
             sample:
-              "I swim two times a week, on Monday and Thursday. I go at seven in the morning. My friend Lena comes with me. On Sunday we watch a football game on television. The pool is three euros, or twenty for ten visits. I do not like the water in the winter; it is very cold.",
+              "I swim two times a week, on Monday and Thursday. I go at seven in the morning. My friend Lena comes with me. On Sunday we watch a soccer game on television. The pool is three euros, or twenty for ten visits. I do not like the water in the winter; it is very cold.",
             criteria: [
               "Altı sözcüğün her birine değinildi mi?",
               "Gün, saat ve fiyat söylenebiliyor mu?",
@@ -936,7 +936,7 @@ Juno`,
               { de: "answers to my questions", tr: "Sorulara cevap vermek" },
             ],
             sample:
-              "Are you in a club? — Yes, a tennis club. How many people are in your team? — Eleven. What do you do in the evening? — I run in the park at seven. Have you got shoes for the grass? — Yes, old ones. How much is a month? — Twelve euros.",
+              "Are you in a club? — Yes, a tennis club. How many people are on your team? — Eleven. What do you do in the evening? — I run in the park at seven. Do you have shoes for the grass? — Yes, old ones. How much is a month? — Twelve euros.",
             criteria: [
               "Beş sözcüğün her biri için bir soru kuruldu mu?",
               "Sorular doğru kuruldu mu? (Are you … / How many … / How much …)",
@@ -972,7 +972,7 @@ Juno`,
               { de: "ask about the price politely", tr: "Kibarca fiyat sormak" },
             ],
             sample:
-              "I would like to play football, please. — Which days is the training? — How much is it a month, please?",
+              "I would like to play soccer, please. — Which days is the training? — How much is it a month, please?",
             criteria: [
               "İstek açıkça söylendi mi? (hangi spor)",
               "Gün sorusu doğru kuruldu mu? (Which days … / When …)",

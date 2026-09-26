@@ -39,18 +39,18 @@ export const EN_A1_11: MockPaper = {
             {
               kind: "text",
               id: "t1",
-              genre: "Message from the surgery",
+              genre: "Message from the doctor's office",
               genreTr: "Muayenehaneden ileti",
               title: "Your appointment",
               body: `Hello Noor,
 
-Your appointment is on Wednesday at 9.20, not on Tuesday.
+Your appointment is on Wednesday at 9:20, not on Tuesday.
 
 Please come ten minutes before.
 
 Bring your card and the box of your old tablets.
 
-Dr Ilic`,
+Dr. Ilic`,
               gloss: [
                 { de: "an appointment", tr: "randevu", en: "der Termin" },
                 { de: "a tablet", tr: "hap", en: "die Tablette" },
@@ -59,18 +59,18 @@ Dr Ilic`,
             {
               kind: "text",
               id: "t2",
-              genre: "Notice at a chemist",
+              genre: "Notice at a pharmacy",
               genreTr: "Eczane duyurusu",
-              title: "CHEMIST",
+              title: "PHARMACY",
               body: `Open 8 to 18. Saturday 9 to 13. Closed on Sunday.
 
-On Sunday the shop in Green Street is open.
+On Sunday the store on Green Street is open.
 
 Tablets for a headache: 3 euros.
 
 Some medicine only with a paper from the doctor.`,
               gloss: [
-                { de: "a chemist", tr: "eczane", en: "die Apotheke" },
+                { de: "a pharmacy", tr: "eczane", en: "die Apotheke" },
                 { de: "medicine", tr: "ilaç", en: "das Medikament" },
               ],
             },
@@ -84,17 +84,17 @@ Some medicine only with a paper from the doctor.`,
               text: "The appointment is on Wednesday.",
               answer: true,
               explain:
-                "İleti iki günü karşılaştırıyor: «on Wednesday at 9.20, not on Tuesday». Salı bilerek elenen gün.",
+                "İleti iki günü karşılaştırıyor: «on Wednesday at 9:20, not on Tuesday». Salı bilerek elenen gün.",
             },
             {
               kind: "bool",
               id: "en-a1-11-l1-2",
               no: 2,
               ref: "t1",
-              text: "Noor must be there at 9.20.",
+              text: "Noor must be there at 9:20.",
               answer: false,
               explain:
-                "İleti iki saati ayırıyor: randevu 9.20'de ama «Please come ten minutes before», yani 9.10'da orada olmak gerekiyor.",
+                "İleti iki saati ayırıyor: randevu 9:20'de ama «Please come ten minutes before», yani 9:10'da orada olmak gerekiyor.",
             },
             {
               kind: "bool",
@@ -111,7 +111,7 @@ Some medicine only with a paper from the doctor.`,
               id: "en-a1-11-l1-4",
               no: 4,
               ref: "t2",
-              text: "This chemist is open on Sunday.",
+              text: "This pharmacy is open on Sunday.",
               answer: false,
               explain:
                 "Duyuru «Closed on Sunday» diyor. Pazar günü açık olan Green Street'teki başka bir dükkân.",
@@ -141,10 +141,10 @@ Some medicine only with a paper from the doctor.`,
               id: "p1",
               genre: "Notice",
               genreTr: "Duyuru",
-              title: "Doctor's Surgery",
+              title: "Doctor's Office",
               body: `Monday to Friday, 8 to 12 and 15 to 18.
 
-You need an appointment. Ring 4412.
+You need an appointment. Call 4412.
 
 Children before ten in the morning.`,
             },
@@ -153,10 +153,10 @@ Children before ten in the morning.`,
               id: "p2",
               genre: "Notice",
               genreTr: "Duyuru",
-              title: "Chemist",
+              title: "Pharmacy",
               body: `Open 8 to 18. Saturday 9 to 13.
 
-Tablets, plasters and tea.
+Tablets, bandages and tea.
 
 We can tell you what to take for a small problem. No appointment.`,
             },
@@ -179,7 +179,7 @@ Free parking for one hour.`,
               id: "en-a1-11-l2-6",
               no: 6,
               text: "You cut your hand badly at eleven at night.",
-              options: ["Doctor's Surgery", "Chemist", "Hospital"],
+              options: ["Doctor's Office", "Pharmacy", "Hospital"],
               answer: 2,
               explain:
                 "Duyuru saati veriyor: «Emergency: day and night». Muayenehane ve eczane akşam altıda kapanıyor.",
@@ -189,7 +189,7 @@ Free parking for one hour.`,
               id: "en-a1-11-l2-7",
               no: 7,
               text: "You want to see a doctor with your small child in the morning.",
-              options: ["Doctor's Surgery", "Chemist", "Hospital"],
+              options: ["Doctor's Office", "Pharmacy", "Hospital"],
               answer: 0,
               explain:
                 "Duyuru çocuklar için bir saat veriyor: «Children before ten in the morning». Hastane ise soğuk algınlığı için değil.",
@@ -199,7 +199,7 @@ Free parking for one hour.`,
               id: "en-a1-11-l2-8",
               no: 8,
               text: "You want something for a small cough and you have no appointment.",
-              options: ["Doctor's Surgery", "Chemist", "Hospital"],
+              options: ["Doctor's Office", "Pharmacy", "Hospital"],
               answer: 1,
               explain:
                 "Duyuru iki şeyi birden veriyor: «We can tell you what to take for a small problem. No appointment». Doktor için randevu gerekiyor.",
@@ -209,7 +209,7 @@ Free parking for one hour.`,
               id: "en-a1-11-l2-9",
               no: 9,
               text: "You go by bus and you do not know where to get off.",
-              options: ["Doctor's Surgery", "Chemist", "Hospital"],
+              options: ["Doctor's Office", "Pharmacy", "Hospital"],
               answer: 2,
               explain:
                 "Duyuru otobüsü ve durağı veriyor: «Bus 7 to the door». Öteki iki duyuruda otobüs yok.",
@@ -218,11 +218,11 @@ Free parking for one hour.`,
               kind: "mcq",
               id: "en-a1-11-l2-10",
               no: 10,
-              text: "You want plasters on a Saturday morning.",
-              options: ["Doctor's Surgery", "Chemist", "Hospital"],
+              text: "You want bandages on a Saturday morning.",
+              options: ["Doctor's Office", "Pharmacy", "Hospital"],
               answer: 1,
               explain:
-                "Duyuru hem ürünü hem günü veriyor: «Tablets, plasters and tea» ve «Saturday 9 to 13». Muayenehane cumartesi kapalı.",
+                "Duyuru hem ürünü hem günü veriyor: «Tablets, bandages and tea» ve «Saturday 9 to 13». Muayenehane cumartesi kapalı.",
             },
           ],
         },
@@ -250,7 +250,7 @@ No telephones. Water is free.`,
               genre: "Sign",
               genreTr: "Levha",
               title: "ROOM 3",
-              body: `Dr Ilic.
+              body: `Dr. Ilic.
 
 Please knock and wait.`,
             },
@@ -260,7 +260,7 @@ Please knock and wait.`,
               genre: "Sign",
               genreTr: "Levha",
               title: "CLOSED 12 TO 15",
-              body: `For an emergency ring 4412.
+              body: `For an emergency call 4412.
 
 We open again at three.`,
             },
@@ -301,10 +301,10 @@ We give you a paper for your insurance.`,
               id: "en-a1-11-l3-13",
               no: 13,
               ref: "s3",
-              text: "You can ring 4412 between twelve and three.",
+              text: "You can call 4412 between twelve and three.",
               answer: true,
               explain:
-                "Levha kapalı saatler için numara veriyor: «CLOSED 12 TO 15 — For an emergency ring 4412».",
+                "Levha kapalı saatler için numara veriyor: «CLOSED 12 TO 15 — For an emergency call 4412».",
             },
             {
               kind: "bool",
@@ -336,11 +336,11 @@ We give you a paper for your insurance.`,
 
 I am at the doctor {{15}} Wednesday morning. Come after twelve!
 
-There {{16}} two new doctors in the surgery. They are very friendly.
+There {{16}} two new doctors at the office. They are very friendly.
 
 I feel better, {{17}} I am still tired. I sleep in the afternoon.
 
-Last week I {{18}} the tablets from the chemist. They were three euros.
+Last week I {{18}} the tablets from the pharmacy. They were three euros.
 
 Runa`,
             },
@@ -416,21 +416,21 @@ Runa`,
               situation: "Muayenehane bir hastaya ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hello, this is the surgery. Your appointment on Tuesday is now on Wednesday at 9.20. The doctor is ill. We are very sorry." },
+                { text: "Hello, this is the doctor's office. Your appointment on Tuesday is now on Wednesday at 9:20. The doctor is ill. We are very sorry." },
               ],
             },
             {
               kind: "audio",
               id: "a2",
-              genre: "At the chemist",
+              genre: "At the pharmacy",
               genreTr: "Eczanede",
               situation: "Bir müşteri ilaç soruyor.",
               plays: 2,
               segments: [
                 { speaker: "Woman", text: "Something for a headache, please." },
-                { speaker: "Chemist", text: "These are three euros." },
+                { speaker: "Pharmacist", text: "These are three euros." },
                 { speaker: "Woman", text: "And for a cough?" },
-                { speaker: "Chemist", text: "For a cough you need a paper from the doctor." },
+                { speaker: "Pharmacist", text: "For a cough you need a paper from the doctor." },
               ],
             },
             {
@@ -455,7 +455,7 @@ Runa`,
               situation: "Muayenehanede anons yapılıyor.",
               plays: 2,
               segments: [
-                { text: "The surgery closes at twelve today, not at six. Doctor Ilic is at the hospital. For an emergency please ring 4412." },
+                { text: "The doctor's office closes at twelve today, not at six. Doctor Ilic is at the hospital. For an emergency please call 4412." },
               ],
             },
             {
@@ -491,7 +491,7 @@ Runa`,
               no: 1,
               ref: "a1",
               text: "Why is the appointment different?",
-              options: ["The patient is ill", "The doctor is ill", "The surgery is closed"],
+              options: ["The patient is ill", "The doctor is ill", "The doctor's office is closed"],
               answer: 1,
               explain:
                 "İleti sebebi tek cümlede veriyor: «The doctor is ill». Randevu salıdan çarşambaya alınıyor.",
@@ -535,7 +535,7 @@ Runa`,
               no: 5,
               ref: "a5",
               text: "What must Selma do now?",
-              options: ["Come back at ten", "Ring the surgery", "Take a number and wait"],
+              options: ["Come back at ten", "Call the doctor's office", "Take a number and wait"],
               answer: 2,
               explain:
                 "Görevli iki adım veriyor: «Please take a number and sit down. It is about twenty minutes».",
@@ -558,7 +558,7 @@ Runa`,
           no: 2,
           format: "truefalse",
           goal: "instruction",
-          prompt: "You hear an announcement in a surgery. Are sentences 7 to 10 true or false? The announcement plays twice.",
+          prompt: "You hear an announcement at a doctor's office. Are sentences 7 to 10 true or false? The announcement plays twice.",
           promptTr: "Bir muayenehanede yapılan anonsu dinleyeceksin. 7–10. cümleler doğru mu yanlış mı? Anonsu iki kez dinleyebilirsin.",
           texts: [
             {
@@ -569,7 +569,7 @@ Runa`,
               situation: "Muayenehane iki değişiklik duyuruyor.",
               plays: 2,
               segments: [
-                { text: "Good morning. Two things. From Monday the surgery opens at seven, not at eight. The afternoon does not change: three to six. And Doctor Ilic is on holiday in August. Doctor Bexi is here in that month." },
+                { text: "Good morning. Two things. From Monday the doctor's office opens at seven, not at eight. The afternoon does not change: three to six. And Doctor Ilic is on vacation in August. Doctor Bexi is here in that month." },
               ],
             },
           ],
@@ -579,7 +579,7 @@ Runa`,
               id: "en-a1-11-h2-7",
               no: 7,
               ref: "b1",
-              text: "From Monday the surgery opens earlier.",
+              text: "From Monday the doctor's office opens earlier.",
               answer: true,
               explain:
                 "Anons iki saati karşılaştırıyor: «opens at seven, not at eight». Yedi sekizden daha erken.",
@@ -602,7 +602,7 @@ Runa`,
               text: "Doctor Ilic works in August.",
               answer: false,
               explain:
-                "Anons «Doctor Ilic is on holiday in August» diyor. O ay başka bir doktor bakıyor.",
+                "Anons «Doctor Ilic is on vacation in August» diyor. O ay başka bir doktor bakıyor.",
             },
             {
               kind: "bool",
@@ -632,7 +632,7 @@ Runa`,
               situation: "Eczane bir müşteriye ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hello, this is about your tablets. They are ready here at the chemist. Please bring the paper from the doctor. We close at six." },
+                { text: "Hello, this is about your tablets. They are ready here at the pharmacy. Please bring the paper from the doctor. We close at six." },
               ],
             },
             {
@@ -670,21 +670,21 @@ Runa`,
               situation: "Binada asansör için anons yapılıyor.",
               plays: 2,
               segments: [
-                { text: "The lift is out of order. The doctors' rooms are on the first floor. If you cannot use the stairs, please tell us and the doctor comes down." },
+                { text: "The elevator is out of order. The doctors' rooms are on the first floor. If you cannot use the stairs, please tell us and the doctor comes down." },
               ],
             },
             {
               kind: "audio",
               id: "c5",
-              genre: "At the chemist",
+              genre: "At the pharmacy",
               genreTr: "Eczanede",
               situation: "Bir anne çocuğu için ilaç soruyor.",
               plays: 2,
               segments: [
                 { speaker: "Mother", text: "Is this medicine for children?" },
-                { speaker: "Chemist", text: "From age twelve." },
+                { speaker: "Pharmacist", text: "From age twelve." },
                 { speaker: "Mother", text: "My son is nine." },
-                { speaker: "Chemist", text: "Then this one. It is a little sweeter." },
+                { speaker: "Pharmacist", text: "Then this one. It is a little sweeter." },
               ],
             },
           ],
@@ -728,7 +728,7 @@ Runa`,
               no: 14,
               ref: "c4",
               text: "What can people do?",
-              options: ["Ask the doctor to come down", "Use the other lift", "Come back tomorrow"],
+              options: ["Ask the doctor to come down", "Use the other elevator", "Come back tomorrow"],
               answer: 0,
               explain:
                 "Anons koşullu bir çözüm veriyor: «If you cannot use the stairs, please tell us and the doctor comes down».",
@@ -771,7 +771,7 @@ Runa`,
               id: "f1",
               genre: "Form",
               genreTr: "Form",
-              title: "SURGERY — NEW PATIENT",
+              title: "DOCTOR'S OFFICE — NEW PATIENT",
               body: `Family name:        Vance
 First name:         {{1}}
 Age:                {{2}}
@@ -849,7 +849,7 @@ Day of appointment: {{5}}`,
 
 Noor says you are ill. I am sorry!
 
-I can bring soup and the tablets from the chemist. It is no problem.
+I can bring soup and the tablets from the pharmacy. It is no problem.
 
 When can I come? I am free after five.
 
@@ -871,7 +871,7 @@ Aras`,
     {
       skill: "speaking",
       minutes: 15,
-      instruction: "There are three tasks in this part: you talk about health, you ask and answer questions, and you do a role play at a doctor's surgery.",
+      instruction: "There are three tasks in this part: you talk about health, you ask and answer questions, and you do a role play at a doctor's office.",
       instructionTr: "Bu bölümde üç görev var: sağlığı anlatma, soru sorup cevaplama ve muayenehanede rol yapma.",
       tasks: [
         {
@@ -893,7 +893,7 @@ Aras`,
               { de: "one thing you do not like", tr: "Sevmediğin bir şey" },
             ],
             sample:
-              "My doctor is Doctor Ilic and her surgery is near my house. I go on Wednesday morning, because I work in the afternoon. I take two tablets a day for my back. My friend Aras comes with me and we drink a coffee after. The tablets are eight euros a month. I do not like the waiting room; it is always very warm.",
+              "My doctor is Doctor Ilic and her office is near my house. I go on Wednesday morning, because I work in the afternoon. I take two tablets a day for my back. My friend Aras comes with me and we drink a coffee after. The tablets are eight euros a month. I do not like the waiting room; it is always very warm.",
             criteria: [
               "Altı sözcüğün her birine değinildi mi?",
               "Gün, saat ve fiyat söylenebiliyor mu?",
@@ -945,7 +945,7 @@ Aras`,
           format: "speaking",
           goal: "interaction",
           prompt:
-            "You are at a doctor's surgery. Situations: you say what is wrong. — You ask for a day. — You ask about the price.",
+            "You are at a doctor's office. Situations: you say what is wrong. — You ask for a day. — You ask about the price.",
           promptTr:
             "Bir muayenehanedesin. Durumlar: Neyin olduğunu söyle. — Bir gün iste. — Fiyatı sor.",
           prepSeconds: 20,

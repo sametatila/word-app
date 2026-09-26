@@ -63,7 +63,7 @@ export const EN_A1_01: MockPaper = {
               title: "From: Dani",
               body: `Hi Marta,
 
-My train gets to the station at 4.15 tomorrow, not at 4.50. Trains are early on Fridays.
+My train gets to the station at 4:15 tomorrow, not at 4:50. Trains are early on Fridays.
 
 I wait in the small green coffee shop next to platform 2.
 
@@ -87,7 +87,7 @@ Dani`,
               title: "To all neighbors",
               body: `Dear neighbors,
 
-We have a small party in the garden on Saturday, 12 May. It starts at 3 p.m.
+We have a small party in the backyard on Saturday, May 12. It starts at 3 p.m.
 
 Coffee and cake are free. For the food in the evening, every person pays 5 euros.
 
@@ -95,11 +95,11 @@ Please bring your children. We have games and music.
 
 Bad weather? Then we go to the big room in the cellar.
 
-The Aydin family, flat 3B`,
+The Aydin family, apartment 3B`,
               gloss: [
                 { de: "free", tr: "ücretsiz", en: "kostenlos" },
                 { de: "the cellar", tr: "bodrum", en: "der Keller" },
-                { de: "the flat", tr: "daire", en: "die Wohnung" },
+                { de: "the apartment", tr: "daire", en: "die Wohnung" },
               ],
             },
           ],
@@ -109,10 +109,10 @@ The Aydin family, flat 3B`,
               id: "en-a1-01-l1-1",
               no: 1,
               ref: "t1",
-              text: "Dani's train comes before 4.30.",
+              text: "Dani's train comes before 4:30.",
               answer: true,
               explain:
-                "Metinde saat «4.15» olarak veriliyor ve 4.15, 4.30'dan öncedir. Metindeki ikinci sayı (4.50) tuzak: Dani onu \"not at 4.50\" diye açıkça eliyor. A1'de saat okumak ölçülen becerilerden biri, bu yüzden madde doğrudan saate dayanıyor.",
+                "Metinde saat «4:15» olarak veriliyor ve 4:15, 4:30'dan öncedir. Metindeki ikinci sayı (4:50) tuzak: Dani onu \"not at 4:50\" diye açıkça eliyor. A1'de saat okumak ölçülen becerilerden biri, bu yüzden madde doğrudan saate dayanıyor.",
             },
             {
               kind: "bool",
@@ -186,7 +186,7 @@ Free wifi for all readers.`,
               title: "Sports Center",
               body: `The pool is open from 7 a.m. to 10 p.m. A ticket costs 4 euros.
 
-Football and basketball on Tuesday and Thursday evenings.
+Soccer and basketball on Tuesday and Thursday evenings.
 
 New: a morning class for parents with small children, at 10 a.m.
 
@@ -222,11 +222,11 @@ Bring a friend!`,
               kind: "mcq",
               id: "en-a1-01-l2-7",
               no: 7,
-              text: "You want to swim at 7.30 in the morning, before work.",
+              text: "You want to swim at 7:30 in the morning, before work.",
               options: ["City Library", "Sports Center", "Language Café"],
               answer: 1,
               explain:
-                "Havuz «7 a.m.»de açılıyor, yani 7.30'da açık. Kütüphane 9'da, Dil Kafe ise akşam 6'da başlıyor; ikisi de sabah 7.30'a uymaz. Madde saat karşılaştırmasını ölçüyor.",
+                "Havuz «7 a.m.»de açılıyor, yani 7:30'da açık. Kütüphane 9'da, Dil Kafe ise akşam 6'da başlıyor; ikisi de sabah 7:30'a uymaz. Madde saat karşılaştırmasını ölçüyor.",
             },
             {
               kind: "mcq",
@@ -300,12 +300,12 @@ Cards only. No cash at this desk.`,
 
 Music: please use your own earphones.
 
-The park closes at 22.00.`,
+The park closes at 22:00.`,
             },
             {
               kind: "text",
               id: "s4",
-              genre: "Note in the flat",
+              genre: "Note in the apartment",
               genreTr: "Dairedeki not",
               title: "DEAR GUEST",
               body: `The key for the bikes is in the kitchen, in the little box.
@@ -458,7 +458,7 @@ Nuray`,
               plays: 2,
               segments: [
                 { speaker: "Customer", text: "Excuse me, how much is this blue jacket?" },
-                { speaker: "Shop assistant", text: "The blue one is thirty-five euros. The green one is cheaper, only twenty-eight." },
+                { speaker: "Salesclerk", text: "The blue one is thirty-five euros. The green one is cheaper, only twenty-eight." },
                 { speaker: "Customer", text: "Then I'll take the green one, please." },
               ],
             },
@@ -470,9 +470,9 @@ Nuray`,
               situation: "Bir kadın arkadaşını arıyor ve buluşma saatini soruyor.",
               plays: 2,
               segments: [
-                { speaker: "Ilya", text: "Hi Sam, are we still on for the film at seven?" },
+                { speaker: "Ilya", text: "Hi Sam, are we still on for the movie at seven?" },
                 { speaker: "Sam", text: "Sorry, I finish work at seven. Can we say half past eight?" },
-                { speaker: "Ilya", text: "Fine. I'll wait in front of the cinema." },
+                { speaker: "Ilya", text: "Fine. I'll wait in front of the movie theater." },
               ],
             },
             {
@@ -525,8 +525,8 @@ Nuray`,
               plays: 2,
               segments: [
                 { speaker: "Passenger", text: "One ticket to Leeds, please. For today." },
-                { speaker: "Clerk", text: "Single or return?" },
-                { speaker: "Passenger", text: "Return, please. I'm coming back in the evening." },
+                { speaker: "Clerk", text: "One-way or round-trip?" },
+                { speaker: "Passenger", text: "Round-trip, please. I'm coming back in the evening." },
                 { speaker: "Clerk", text: "That is nineteen pounds. Platform 6, in twelve minutes." },
               ],
             },
@@ -627,7 +627,7 @@ Nuray`,
               situation: "Trende bir anons yapılıyor.",
               plays: 2,
               segments: [
-                { text: "Good afternoon. This train goes to Manchester. The next stop is Derby, in about ten minutes. The café is in coach 5." },
+                { text: "Good afternoon. This train goes to Manchester. The next stop is Derby, in about ten minutes. The café is in car 5." },
               ],
             },
             {

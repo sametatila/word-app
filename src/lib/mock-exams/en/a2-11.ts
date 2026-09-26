@@ -47,7 +47,7 @@ export const EN_A2_11: MockPaper = {
               genre: "Note on a door",
               genreTr: "Kapıdaki not",
               title: "Until Sunday",
-              body: `I am away until Sunday. The cat is inside. Please give her one small tin in the morning and fresh water. Do not let her out; she does not come back before dark and I am not here.`,
+              body: `I am away until Sunday. The cat is inside. Please give her one small can in the morning and fresh water. Do not let her out; she does not come back before dark and I am not here.`,
             },
             {
               kind: "text",
@@ -57,7 +57,7 @@ export const EN_A2_11: MockPaper = {
               title: "OPENING TIMES",
               body: `Open 9 to 18. Saturday 9 to 12.
 
-For an emergency at night ring 4180.
+For an emergency at night call 4180.
 
 Please bring the little book with your animal's dates. First visit: twenty euros.`,
             },
@@ -67,7 +67,7 @@ Please bring the little book with your animal's dates. First visit: twenty euros
               genre: "Email",
               genreTr: "E-posta",
               title: "The dog is fine",
-              body: `Dear Hale, the dog is fine. He ate everything and he slept on your chair, which I think is not allowed. He barks at the post every morning at eight. I am sorry about your neighbors.`,
+              body: `Dear Hale, the dog is fine. He ate everything and he slept on your chair, which I think is not allowed. He barks at the mail carrier every morning at eight. I am sorry about your neighbors.`,
             },
             {
               kind: "text",
@@ -75,11 +75,11 @@ Please bring the little book with your animal's dates. First visit: twenty euros
               genre: "Notice in a park",
               genreTr: "Park duyurusu",
               title: "DOGS",
-              body: `On the grass without a lead.
+              body: `On the grass without a leash.
 
-On the path with a lead, please. There are small children on the path in the morning.
+On the path with a leash, please. There are small children on the path in the morning.
 
-Please take the bags home with you; there is no bin here.`,
+Please take the bags home with you; there is no trash can here.`,
             },
             {
               kind: "text",
@@ -97,7 +97,7 @@ Please take the bags home with you; there is no bin here.`,
               no: 1,
               ref: "m1",
               text: "What must the neighbor not do?",
-              options: ["Give the cat fresh water", "Let the cat outside", "Come to the flat before Sunday"],
+              options: ["Give the cat fresh water", "Let the cat outside", "Come to the apartment before Sunday"],
               answer: 1,
               explain:
                 "Not tek bir yasak taşıyor: «Do not let her out», gerekçesi de karanlıktan önce dönmemesi. Su vermek tersine isteniyor.",
@@ -122,7 +122,7 @@ Please take the bags home with you; there is no bin here.`,
               options: ["The dog is ill", "The chair is broken", "The dog wakes the neighbors"],
               answer: 2,
               explain:
-                "E-posta iki şeyi bağlıyor: «He barks at the post every morning at eight. I am sorry about your neighbors». Köpek iyi ve sandalye kırılmamış.",
+                "E-posta iki şeyi bağlıyor: «He barks at the mail carrier every morning at eight. I am sorry about your neighbors». Köpek iyi ve sandalye kırılmamış.",
             },
             {
               kind: "mcq",
@@ -130,10 +130,10 @@ Please take the bags home with you; there is no bin here.`,
               no: 4,
               ref: "m4",
               text: "What is the rule on the path?",
-              options: ["Dogs are not allowed at all", "Dogs must be on a lead", "Dogs may run on the path"],
+              options: ["Dogs are not allowed at all", "Dogs must be on a leash", "Dogs may run on the path"],
               answer: 1,
               explain:
-                "Duyuru iki yeri ayırıyor: «On the grass without a lead. On the path with a lead, please», gerekçesi de yoldaki küçük çocuklar.",
+                "Duyuru iki yeri ayırıyor: «On the grass without a leash. On the path with a leash, please», gerekçesi de yoldaki küçük çocuklar.",
             },
             {
               kind: "mcq",
@@ -159,8 +159,8 @@ Please take the bags home with you; there is no bin here.`,
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
             { key: "a", label: "Dog School", body: "Tuesday evenings, eight weeks. For dogs that bark, pull or run away. Twelve euros an evening." },
-            { key: "b", label: "Animal Home", body: "We look for the owner. Bring the animal to us or ring us; we come to you for free anywhere in the city." },
-            { key: "c", label: "Holiday Care", body: "We keep cats, dogs and rabbits from three days to a month. Fourteen euros a day. Book two weeks before." },
+            { key: "b", label: "Animal Home", body: "We look for the owner. Bring the animal to us or call us; we come to you for free anywhere in the city." },
+            { key: "c", label: "Vacation Care", body: "We keep cats, dogs and rabbits from three days to a month. Fourteen euros a day. Book two weeks before." },
             { key: "d", label: "The Vet Comes to You", body: "For old animals and for people without a car. Thursday afternoons. Thirty euros and then the treatment." },
             { key: "e", label: "Food Advice", body: "Free, Saturday mornings at the shop in Mill Street. Bring the vet's paper if you have one." },
             { key: "f", label: "Dog Walking", body: "One hour a day, ten euros. Mornings only, and only in this part of the city." },
@@ -320,7 +320,7 @@ She sleeps eighteen hours a day, {{17}} she is awake at exactly five in the morn
 
 Next month I {{18}} buy a second bowl, because she does not like the water next to the food.
 
-And one more thing: {{19}} you go on holiday, book the animal care early. In August everything is full.`,
+And one more thing: {{19}} you go on vacation, book the animal care early. In August everything is full.`,
             },
           ],
           items: [
@@ -519,7 +519,7 @@ I have two good chairs in the kitchen and I still {{24}} not sit on either of th
               situation: "Parkta köpekler için anons yapılıyor.",
               plays: 2,
               segments: [
-                { text: "A reminder about dogs. On the path please use a lead, because of the children. On the grass your dog can run. And please take the bags home; the bin here is broken." },
+                { text: "A reminder about dogs. On the path please use a leash, because of the children. On the grass your dog can run. And please take the bags home; the trash can here is broken." },
               ],
             },
             {
@@ -574,10 +574,10 @@ I have two good chairs in the kitchen and I still {{24}} not sit on either of th
               no: 4,
               ref: "a4",
               text: "What must people take home?",
-              options: ["The bags", "The lead", "The children"],
+              options: ["The bags", "The leash", "The children"],
               answer: 0,
               explain:
-                "Anons gerekçesiyle birlikte istiyor: «please take the bags home; the bin here is broken».",
+                "Anons gerekçesiyle birlikte istiyor: «please take the bags home; the trash can here is broken».",
             },
             {
               kind: "mcq",
@@ -708,7 +708,7 @@ Please bring the:   {{10}}`,
               situation: "Veterinerde pazartesi için anons yapılıyor.",
               plays: 2,
               segments: [
-                { text: "The vet is closed on Monday morning. Doctor Sora is at the animal home. For an emergency ring 4180. We open again at two." },
+                { text: "The vet is closed on Monday morning. Doctor Sora is at the animal home. For an emergency call 4180. We open again at two." },
               ],
             },
             {
@@ -818,7 +818,7 @@ Please bring the:   {{10}}`,
             { key: "c", label: "Getting to the vet." },
             { key: "d", label: "The animal does not eat." },
             { key: "e", label: "The neighbors complain." },
-            { key: "f", label: "Finding care for the holidays." },
+            { key: "f", label: "Finding care for vacations." },
             { key: "g", label: "The animal wakes them early." },
             { key: "h", label: "Walking far enough every day." },
           ],
@@ -831,7 +831,7 @@ Please bring the:   {{10}}`,
               situation: "Birinci konuşmacı temmuz planını anlatıyor.",
               plays: 2,
               segments: [
-                { text: "Two weeks in July, and everything is booked by March. I ring in April like somebody who has never had an animal, and every year I am surprised." },
+                { text: "Two weeks in July, and everything is booked by March. I call in April like somebody who has never had an animal, and every year I am surprised." },
               ],
             },
             {
@@ -842,7 +842,7 @@ Please bring the:   {{10}}`,
               situation: "İkinci konuşmacı köpeğinin davranışını anlatıyor.",
               plays: 2,
               segments: [
-                { text: "He is fine for three hours and then he cries. I have not been to the cinema since March, and my sister thinks I am making it bigger than it is." },
+                { text: "He is fine for three hours and then he cries. I have not been to the movies since March, and my sister thinks I am making it bigger than it is." },
               ],
             },
             {
@@ -875,7 +875,7 @@ Please bring the:   {{10}}`,
               situation: "Beşinci konuşmacı beslenme sorununu anlatıyor.",
               plays: 2,
               segments: [
-                { text: "He looks at the food, he smells it, and he walks away. The vet says he is healthy. I have bought six different tins and he ate two of them, once." },
+                { text: "He looks at the food, he smells it, and he walks away. The vet says he is healthy. I have bought six different cans and he ate two of them, once." },
               ],
             },
           ],
@@ -888,7 +888,7 @@ Please bring the:   {{10}}`,
               text: "Speaker 1",
               answer: "f",
               explain:
-                "Konuşmacı zamanlamayı anlatıyor: «everything is booked by March. I ring in April», yani tatil için yer bulamıyor.",
+                "Konuşmacı zamanlamayı anlatıyor: «everything is booked by March. I call in April», yani tatil için yer bulamıyor.",
             },
             {
               kind: "match",
@@ -961,7 +961,7 @@ Please bring the:   {{10}}`,
             ],
             sample: `Hello,
 
-I would like a place for my cat from 3 to 17 August. She is six years old.
+I would like a place for my cat from August 3 to 17. She is six years old.
 
 How much is it for two weeks, please?
 
@@ -995,7 +995,7 @@ Vesna Roth`,
               { de: "Say who looks after it.", tr: "Ona kimin baktığını söyle." },
               { de: "Say one thing it does.", tr: "Yaptığı bir şeyi söyle." },
             ],
-            sample: `My sister has a small brown dog. His name is Nils and he is seven years old. My sister works in the morning, so our mother takes him to the park at eleven. He waits at the door twenty minutes before she comes. I like that very much, but I do not like the barking in the morning when the post arrives at eight.`,
+            sample: `My sister has a small brown dog. His name is Nils and he is seven years old. My sister works in the morning, so our mother takes him to the park at eleven. He waits at the door twenty minutes before she comes. I like that very much, but I do not like the barking in the morning when the mail arrives at eight.`,
             criteria: [
               "Üç içerik noktasının üçü de var mı?",
               "Hayvan somut betimlendi mi (boyut, renk, yaş)?",
@@ -1055,7 +1055,7 @@ Vesna Roth`,
           format: "speaking",
           goal: "production",
           prompt:
-            "Describe this situation for about one minute: a waiting room at a vet. Four people are sitting with their animals. A woman is holding a box on her knees and a man next to her has a big dog on a lead. A child is looking at the box. Say what you see, what the people are doing, and whether you like animals.",
+            "Describe this situation for about one minute: a waiting room at a vet. Four people are sitting with their animals. A woman is holding a box on her knees and a man next to her has a big dog on a leash. A child is looking at the box. Say what you see, what the people are doing, and whether you like animals.",
           promptTr:
             "Şu durumu bir dakika kadar anlat: bir veteriner bekleme odası. Dört kişi hayvanlarıyla oturuyor. Bir kadın dizlerinde bir kutu tutuyor, yanındaki adamın tasmalı büyük bir köpeği var. Bir çocuk kutuya bakıyor. Ne gördüğünü, insanların ne yaptığını ve hayvanları sevip sevmediğini söyle.",
           prepSeconds: 45,
@@ -1069,7 +1069,7 @@ Vesna Roth`,
               { de: "say if you like animals", tr: "Hayvanları sevip sevmediğini söyle" },
             ],
             sample:
-              "This is a waiting room at a vet. Four people are sitting on chairs along the wall with their animals. On the left a woman is holding a box on her knees; I think there is a cat inside. Next to her a man has a big dog on a lead and the dog is sleeping. A small child is standing in front of the box and looking at it. I like animals, but I do not want one, because I am not at home in the day.",
+              "This is a waiting room at a vet. Four people are sitting on chairs along the wall with their animals. On the left a woman is holding a box on her knees; I think there is a cat inside. Next to her a man has a big dog on a leash and the dog is sleeping. A small child is standing in front of the box and looking at it. I like animals, but I do not want one, because I am not at home in the day.",
             criteria: [
               "Şimdiki zaman (present continuous) kullanıldı mı? Bu görevin ana yapısı bu.",
               "Üç içerik noktasının üçü de işlendi mi?",

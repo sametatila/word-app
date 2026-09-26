@@ -259,7 +259,7 @@ Please wash your cup.`,
               id: "s3",
               genre: "Sign",
               genreTr: "Levha",
-              title: "LIFT",
+              title: "ELEVATOR",
               body: `Out of order.
 
 Please use the stairs. Room 5 is on the first floor.`,
@@ -270,7 +270,7 @@ Please use the stairs. Room 5 is on the first floor.`,
               genre: "Sign",
               genreTr: "Levha",
               title: "MEETING",
-              body: `Room 2, Wednesday 14.00.
+              body: `Room 2, Wednesday 14:00.
 
 Everybody, please. Ten minutes only.`,
             },
@@ -301,7 +301,7 @@ Everybody, please. Ten minutes only.`,
               id: "en-a1-12-l3-13",
               no: 13,
               ref: "s3",
-              text: "The lift works today.",
+              text: "The elevator works today.",
               answer: false,
               explain:
                 "Levha «Out of order» diyor ve merdiveni gösteriyor: «Please use the stairs».",
@@ -442,7 +442,7 @@ Eyup`,
               plays: 2,
               segments: [
                 { speaker: "Man", text: "I am new here. Where is room 5?" },
-                { speaker: "Woman", text: "First floor. The lift is out of order, so please take the stairs." },
+                { speaker: "Woman", text: "First floor. The elevator is out of order, so please take the stairs." },
               ],
             },
             {
@@ -511,10 +511,10 @@ Eyup`,
               no: 3,
               ref: "a3",
               text: "How does the man go to room 5?",
-              options: ["He takes the stairs", "He takes the lift", "He waits at the desk"],
+              options: ["He takes the stairs", "He takes the elevator", "He waits at the desk"],
               answer: 0,
               explain:
-                "Görevli sebebiyle birlikte yönlendiriyor: «The lift is out of order, so please take the stairs».",
+                "Görevli sebebiyle birlikte yönlendiriyor: «The elevator is out of order, so please take the stairs».",
             },
             {
               kind: "mcq",
@@ -669,7 +669,7 @@ Eyup`,
               situation: "Binada asansör için anons yapılıyor.",
               plays: 2,
               segments: [
-                { text: "The lift is out of order today. Room 5 is on the first floor. If you cannot take the stairs, please tell Mira at the desk." },
+                { text: "The elevator is out of order today. Room 5 is on the first floor. If you cannot take the stairs, please tell Mira at the desk." },
               ],
             },
             {
@@ -929,7 +929,7 @@ Eyup`,
               { de: "answers to my questions", tr: "Sorulara cevap vermek" },
             ],
             sample:
-              "Where is your office? — On the second floor. How many colleagues have you got? — Four. When do you have a break? — At twelve, for half an hour. Do you work on a computer? — Yes, all day. How much is lunch? — Four euros in the canteen.",
+              "Where is your office? — On the second floor. How many colleagues do you have? — Four. When do you have a break? — At twelve, for half an hour. Do you work on a computer? — Yes, all day. How much is lunch? — Four euros in the canteen.",
             criteria: [
               "«office» ve «colleague» için birer soru kuruldu mu?",
               "Sorular doğru kuruldu mu? (Where is … / How many … / How much …)",

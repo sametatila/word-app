@@ -27,7 +27,7 @@ export const EN_B1_12: MockPaper = {
       skill: "reading",
       minutes: 55,
       instruction:
-        "There are six tasks in this part. You read short texts, adverts, an article and three texts with gaps. Answer each question with one choice.",
+        "There are six tasks in this part. You read short texts, ads, an article and three texts with gaps. Answer each question with one choice.",
       instructionTr:
         "Bu bölümde altı görev var. Kısa metinler, ilanlar, bir yazı ve boşluklu üç metin okuyacaksın. Her soruda doğru cevabı işaretle.",
       tasks: [
@@ -42,10 +42,10 @@ export const EN_B1_12: MockPaper = {
             {
               kind: "text",
               id: "m1",
-              genre: "Sign on a shop door",
+              genre: "Sign on a store door",
               genreTr: "Dükkân kapısındaki tabela",
               title: "SUNDAYS",
-              body: `We used to open on Sundays and we have stopped. The takings on a Sunday were good, and the four of us were tired every Tuesday. We are open Monday to Saturday and the phone is off at six.`,
+              body: `We used to open on Sundays and we have stopped. Sales on a Sunday were good, and the four of us were tired every Tuesday. We are open Monday to Saturday and the phone is off at six.`,
             },
             {
               kind: "text",
@@ -73,7 +73,7 @@ You do not have to be reading. Sitting is also allowed, although most people arr
               genre: "Notice at a swimming pool",
               genreTr: "Yüzme havuzu duyurusu",
               title: "EARLY SWIM",
-              body: `Weekdays, 6.30 to 8.00.
+              body: `Weekdays, 6:30 to 8:00.
 
 Half price, and the lanes are empty.
 
@@ -94,11 +94,11 @@ We do not run this session on the weekend, because the staff who would open it a
               id: "en-b1-12-l1-1",
               no: 1,
               ref: "m1",
-              text: "Why did the shop stop opening on Sundays?",
-              options: ["Because Sunday takings were low", "Because a new shop opened nearby", "Because of the effect on the staff"],
+              text: "Why did the store stop opening on Sundays?",
+              options: ["Because Sunday sales were low", "Because a new store opened nearby", "Because of the effect on the staff"],
               answer: 2,
               explain:
-                "Tabela kazancı açıkça eliyor: «The takings on a Sunday were good», gerekçe yorgunluk: «the four of us were tired every Tuesday».",
+                "Tabela kazancı açıkça eliyor: «Sales on a Sunday were good», gerekçe yorgunluk: «the four of us were tired every Tuesday».",
             },
             {
               kind: "mcq",
@@ -152,7 +152,7 @@ We do not run this session on the weekend, because the staff who would open it a
           format: "match",
           goal: "orientation",
           prompt:
-            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best advert. No advert is used twice.",
+            "Here are five people, 6 to 10. There are also eight ads, a to h. Match each person with the best ad. No ad is used twice.",
           promptTr:
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
@@ -160,9 +160,9 @@ We do not run this session on the weekend, because the staff who would open it a
             { key: "b", label: "Early Swim", body: "Weekdays from half past six. Half price and empty lanes. Not available on Saturday or Sunday." },
             { key: "c", label: "Saturday Walks", body: "Two hours, easy pace, meet at the bridge. Different route every week and no need to book." },
             { key: "d", label: "One Free Hour", body: "A short course on Tuesday evenings: how to keep one hour a day that nothing else is allowed into." },
-            { key: "e", label: "Night Shift Breakfast", body: "For people who finish work at seven in the morning. Hot food from 7.15, four days a week." },
-            { key: "f", label: "The Garden", body: "Open every day until dark. Benches, water, no music and no charge. Dogs on a lead." },
-            { key: "g", label: "Sunday Cinema", body: "One film every Sunday at three o'clock. Six euros, and the same seat every week if you want it." },
+            { key: "e", label: "Night Shift Breakfast", body: "For people who finish work at seven in the morning. Hot food from 7:15, four days a week." },
+            { key: "f", label: "The Garden", body: "Open every day until dark. Benches, water, no music and no charge. Dogs on a leash." },
+            { key: "g", label: "Sunday Movies", body: "One movie every Sunday at three o'clock. Six euros, and the same seat every week if you want it." },
             { key: "h", label: "Repair Café", body: "Bring a broken thing on the first Saturday of the month. Volunteers help you mend it yourself." },
           ],
           items: [
@@ -173,7 +173,7 @@ We do not run this session on the weekend, because the staff who would open it a
               text: "Miko finishes work at seven in the morning and does not want to go straight home.",
               answer: "e",
               explain:
-                "İlan tam bu saati karşılıyor: «For people who finish work at seven in the morning. Hot food from 7.15».",
+                "İlan tam bu saati karşılıyor: «For people who finish work at seven in the morning. Hot food from 7:15».",
             },
             {
               kind: "match",
@@ -209,7 +209,7 @@ We do not run this session on the weekend, because the staff who would open it a
               text: "Yrsa wants the same thing at the same time every week without deciding anything.",
               answer: "g",
               explain:
-                "İlan tekrarı veriyor: «One film every Sunday at three o'clock» ve «the same seat every week if you want it».",
+                "İlan tekrarı veriyor: «One movie every Sunday at three o'clock» ve «the same seat every week if you want it».",
             },
           ],
         },
@@ -231,7 +231,7 @@ We do not run this session on the weekend, because the staff who would open it a
 
 In September the same four hundred and twelve people were asked what they had actually done on the previous Saturday. Reading came ninth. The three activities at the top were shopping, cleaning and driving somebody somewhere.
 
-The researcher who ran the study, Radu Petran, says the gap is not dishonesty. People described what they wanted, and then Saturday arrived with the things nobody counts as plans: a boiler, a lift to the station, a birthday.
+The researcher who ran the study, Radu Petran, says the gap is not dishonesty. People described what they wanted, and then Saturday arrived with the things nobody counts as plans: a boiler, a ride to the station, a birthday.
 
 He argues that the interesting number is elsewhere. Of the people who reported a genuinely empty Saturday, seven in ten described it as uncomfortable. Several used the word guilty. If a day has nothing in it, they said, they would rather fill it than sit in it.
 
@@ -818,7 +818,7 @@ Please do not book anything in it, {{30}} the building is on fire.`,
               situation: "İki kişi bir alışkanlığı tartışıyor.",
               plays: 2,
               segments: [
-                { speaker: "Man", text: "You go to the same film at the same time every Sunday." },
+                { speaker: "Man", text: "You go to the same movie at the same time every Sunday." },
                 { speaker: "Woman", text: "Same seat as well." },
                 { speaker: "Man", text: "You could see something different." },
                 { speaker: "Woman", text: "I could, and then I would have to choose, and choosing is the part of the week I am trying to get away from." },
@@ -887,7 +887,7 @@ Please do not book anything in it, {{30}} the building is on fire.`,
               id: "en-b1-12-h2-12",
               no: 12,
               ref: "b5",
-              text: "Why does she always see the same film?",
+              text: "Why does she always see the same movie?",
               options: ["She wants to avoid choosing", "The seat is cheaper on Sunday", "She has seen everything else"],
               answer: 0,
               explain:
@@ -1299,11 +1299,11 @@ It works for the reason a café never did. In a café I am a customer and someth
           no: 4,
           format: "speaking",
           goal: "interaction",
-          prompt: "We talk a little more about the same topic: whether shops and offices should close on one day a week.",
+          prompt: "We talk a little more about the same topic: whether stores and offices should close on one day a week.",
           promptTr: "Aynı konu üzerine biraz daha konuşuyoruz: dükkânlar ve iş yerleri haftada bir gün kapanmalı mı.",
           prepSeconds: 15,
           exchange: [
-            { who: "partner", de: "Some people say every shop should close on the same day each week. Is that a good idea?", tr: "Kimileri bütün dükkânların haftanın aynı günü kapanması gerektiğini söylüyor. İyi bir fikir mi?" },
+            { who: "partner", de: "Some people say every store should close on the same day each week. Is that a good idea?", tr: "Kimileri bütün dükkânların haftanın aynı günü kapanması gerektiğini söylüyor. İyi bir fikir mi?" },
             { who: "you", hint: "Görüşünü söyle ve bir örnek ver.", expect: "genel bir soruya görüş bildirmek ve örneklendirmek", seconds: 40 },
             { who: "partner", de: "Others say that it would only move the work to another day and would hurt people who are paid by the hour. Would you agree?", tr: "Kimileri de bunun işi başka bir güne kaydıracağını ve saat başı ödenen kişilere zarar vereceğini söylüyor. Katılır mısın?" },
             { who: "you", hint: "Kısmen katıl ya da karşı çık; iki yanı da anmaya çalış.", expect: "bir iddiaya kısmen katılmak ya da karşı çıkmak, iki yanı da anmak", seconds: 45 },
@@ -1316,7 +1316,7 @@ It works for the reason a café never did. In a café I am a customer and someth
               { de: "agree or disagree in a nuanced way", tr: "Katılırken ya da karşı çıkarken ince ayrım yapmak" },
             ],
             sample:
-              "The same day for everybody is the part I like, because a free day is only worth much if the people you know have it too. My neighbor has Tuesdays off and spends them alone in an empty town. I partly agree about the hourly pay, and it is the serious objection: fewer hours can mean less money, and nobody who says this is a small problem is being paid that way. But moving the work is not automatic, and a shop that closes on Sunday does not usually sell less in the week.",
+              "The same day for everybody is the part I like, because a free day is only worth much if the people you know have it too. My neighbor has Tuesdays off and spends them alone in an empty town. I partly agree about the hourly pay, and it is the serious objection: fewer hours can mean less money, and nobody who says this is a small problem is being paid that way. But moving the work is not automatic, and a store that closes on Sunday does not usually sell less in the week.",
             criteria: [
               "Görüş açıkça bildirildi mi?",
               "Somut bir örnek verildi mi?",

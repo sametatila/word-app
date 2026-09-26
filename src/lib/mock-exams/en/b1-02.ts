@@ -25,7 +25,7 @@ export const EN_B1_02: MockPaper = {
       skill: "reading",
       minutes: 55,
       instruction:
-        "There are six tasks in this part. You read notices, adverts, an article and two texts with gaps. Answer each question with one choice.",
+        "There are six tasks in this part. You read notices, ads, an article and two texts with gaps. Answer each question with one choice.",
       instructionTr:
         "Bu bölümde altı görev var. Duyurular, ilanlar, bir yazı ve boşluklu iki metin okuyacaksın. Her soruda doğru cevabı işaretle.",
       tasks: [
@@ -50,8 +50,8 @@ export const EN_B1_02: MockPaper = {
               id: "m2",
               genre: "Email to residents",
               genreTr: "Sakinlere e-posta",
-              title: "New rubbish collection",
-              body: `Paper will be collected on Tuesdays instead of Fridays from 1 May. Glass does not change. If your street has building work, the truck may come a day late, and we will not send a message about this.`,
+              title: "New trash collection",
+              body: `Paper will be collected on Tuesdays instead of Fridays from May 1. Glass does not change. If your street has building work, the truck may come a day late, and we will not send a message about this.`,
             },
             {
               kind: "text",
@@ -67,7 +67,7 @@ export const EN_B1_02: MockPaper = {
               genre: "Message",
               genreTr: "İleti",
               title: "From the allotment group",
-              body: `The water tank is empty again. Please do not use the hose for the paths, only for the beds. We have asked twice now. If it continues, the group will have to lock the tap and give out keys.`,
+              body: `The water tank is empty again. Please do not use the hose for the paths, only for the beds. We have asked twice now. If it continues, the group will have to lock the faucet and give out keys.`,
             },
             {
               kind: "text",
@@ -118,10 +118,10 @@ export const EN_B1_02: MockPaper = {
               no: 4,
               ref: "m4",
               text: "What will happen if the problem does not stop?",
-              options: ["The group will pay for more water", "The tap will be locked and keys given out", "The paths will be closed to members"],
+              options: ["The group will pay for more water", "The faucet will be locked and keys given out", "The paths will be closed to members"],
               answer: 1,
               explain:
-                "İleti sonucu açıkça söylüyor: «the group will have to lock the tap and give out keys». Yollar hortum kullanımının yasak olduğu yer, kapatılan bir alan değil; su satın almaktan hiç söz edilmiyor.",
+                "İleti sonucu açıkça söylüyor: «the group will have to lock the faucet and give out keys». Yollar hortum kullanımının yasak olduğu yer, kapatılan bir alan değil; su satın almaktan hiç söz edilmiyor.",
             },
             {
               kind: "mcq",
@@ -142,12 +142,12 @@ export const EN_B1_02: MockPaper = {
           format: "match",
           goal: "orientation",
           prompt:
-            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best advert. No advert is used twice.",
+            "Here are five people, 6 to 10. There are also eight ads, a to h. Match each person with the best ad. No ad is used twice.",
           promptTr:
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
             { key: "a", label: "Tool Library", body: "Borrow a drill, a ladder or a sewing machine for up to a week. Twenty pounds a year for as many items as you like. You must return things clean." },
-            { key: "b", label: "Community Fridge", body: "Food that shops cannot sell, free for anybody, every evening from six. No questions and no forms. Bring a bag; we cannot give you one." },
+            { key: "b", label: "Community Fridge", body: "Food that stores cannot sell, free for anybody, every evening from six. No questions and no forms. Bring a bag; we cannot give you one." },
             { key: "c", label: "Bike Kitchen", body: "Repair your own bicycle with our tools and our help, Wednesdays and Saturdays. You pay for parts only. Beginners very welcome; we do not repair it for you." },
             { key: "d", label: "Clothes Swap", body: "Bring up to five clean items and take up to five home. First Sunday of the month, in the community hall. No money changes hands." },
             { key: "e", label: "Garden Share", body: "People with a big garden and no time are matched with people who want to grow food and have no garden. You share the harvest. Free to join." },
@@ -178,7 +178,7 @@ export const EN_B1_02: MockPaper = {
               kind: "match",
               id: "en-b1-02-l2-8",
               no: 8,
-              text: "The Osei family are moving into an empty flat and have almost no furniture.",
+              text: "The Osei family are moving into an empty apartment and have almost no furniture.",
               answer: "h",
               explain:
                 "İlan tam bu durumu adlandırıyor: eşyalar «families setting up a home» için toplanıyor. Kıyafet takası da ücretsiz ama mobilya vermiyor; Osei ailesinin ihtiyacı mobilya.",
@@ -217,15 +217,15 @@ export const EN_B1_02: MockPaper = {
               genre: "Newspaper column",
               genreTr: "Gazete köşe yazısı",
               title: "I counted everything I threw away for a month",
-              body: `I did not start this as an experiment. My bin broke, and for two weeks I put everything in bags in the hall, where I had to look at it. That was the whole method.
+              body: `I did not start this as an experiment. My trash can broke, and for two weeks I put everything in bags in the hall, where I had to look at it. That was the whole method.
 
 By the end of the month I had counted four hundred and twelve items. Two thirds of them were packaging. The rest was mostly food, and here I want to be honest: almost none of it was food I had planned to throw away. It was food I had bought twice because I could not remember what was already in the fridge.
 
-The obvious answer is a list. I have tried lists for years and they have never worked for me, because I write them at home and I shop on the way back from work. What did work was a photograph. Before I leave the flat I take a picture of the open fridge. It takes two seconds and it has cut my food waste by about half.
+The obvious answer is a list. I have tried lists for years and they have never worked for me, because I write them at home and I shop on the way back from work. What did work was a photograph. Before I leave the apartment I take a picture of the open fridge. It takes two seconds and it has cut my food waste by about half.
 
-I should say clearly that this is not a solution to anything large. The packaging, which was two thirds of the problem, is not my decision. I cannot buy rice that comes without a bag, and the shop that sells loose rice is a bus ride away, which has its own cost.
+I should say clearly that this is not a solution to anything large. The packaging, which was two thirds of the problem, is not my decision. I cannot buy rice that comes without a bag, and the store that sells loose rice is a bus ride away, which has its own cost.
 
-So I have stopped feeling proud about my bin and I have started writing to the supermarket instead. If enough of us do that, they may listen, although I would not bet my month on it.`,
+So I have stopped feeling proud about my trash can and I have started writing to the supermarket instead. If enough of us do that, they may listen, although I would not bet my month on it.`,
               gloss: [
                 { de: "packaging", tr: "ambalaj", en: "die Verpackung" },
                 { de: "waste", tr: "atık, israf", en: "der Abfall" },
@@ -242,12 +242,12 @@ So I have stopped feeling proud about my bin and I have started writing to the s
               options: [
                 "She wanted to write an article about waste",
                 "A friend asked her to try it for a month",
-                "Her bin stopped working and the bags stayed in sight",
+                "Her trash can stopped working and the bags stayed in sight",
                 "Her council sent her a form to complete",
               ],
               answer: 2,
               explain:
-                "İlk paragraf niyeti reddediyor: «I did not start this as an experiment». Sebep tesadüf: «My bin broke, and for two weeks I put everything in bags in the hall, where I had to look at it». Arkadaş, belediye ya da yazı planı metinde hiç geçmiyor.",
+                "İlk paragraf niyeti reddediyor: «I did not start this as an experiment». Sebep tesadüf: «My trash can broke, and for two weeks I put everything in bags in the hall, where I had to look at it». Arkadaş, belediye ya da yazı planı metinde hiç geçmiyor.",
             },
             {
               kind: "mcq",
@@ -272,7 +272,7 @@ So I have stopped feeling proud about my bin and I have started writing to the s
               options: [
                 "Because she often lost the paper on the way",
                 "Because she wrote them in the wrong place at the wrong time",
-                "Because her flatmate changed them",
+                "Because her roommate changed them",
                 "Because she found them too slow to write",
               ],
               answer: 1,
@@ -307,7 +307,7 @@ So I have stopped feeling proud about my bin and I have started writing to the s
               ],
               answer: 0,
               explain:
-                "Son paragraf iki davranışı karşı karşıya koyuyor: «I have stopped feeling proud about my bin and I have started writing to the supermarket instead». Başarıdan emin değil («I would not bet my month on it»), örgütlü bir kampanyadan da söz etmiyor.",
+                "Son paragraf iki davranışı karşı karşıya koyuyor: «I have stopped feeling proud about my trash can and I have started writing to the supermarket instead». Başarıdan emin değil («I would not bet my month on it»), örgütlü bir kampanyadan da söz etmiyor.",
             },
           ],
         },
@@ -344,7 +344,7 @@ The most interesting effect may be a slower one. When people expect to repair a 
             },
           ],
           options: [
-            { key: "a", label: "a", body: "Shops now ask whether a machine can be opened at all, and some customers pay more for one that can." },
+            { key: "a", label: "a", body: "Stores now ask whether a machine can be opened at all, and some customers pay more for one that can." },
             { key: "b", label: "b", body: "In a commercial workshop an hour of work can cost more than the machine is worth, and that has not changed." },
             { key: "c", label: "c", body: "The rise is small, but it has now continued for six years in a row." },
             { key: "d", label: "d", body: "That single rule has done more for repair than twenty years of advice to consumers." },
@@ -611,7 +611,7 @@ So I have changed my mind, {{29}} not in the direction people expect. The materi
               plays: 2,
               segments: [
                 { speaker: "Resident", text: "Can I get a second recycling bin?" },
-                { speaker: "Officer", text: "Only if four or more people live in the flat. Otherwise we give you extra bags, which are free." },
+                { speaker: "Officer", text: "Only if four or more people live in the apartment. Otherwise we give you extra bags, which are free." },
                 { speaker: "Resident", text: "There are two of us, so bags then." },
               ],
             },
@@ -635,13 +635,13 @@ So I have changed my mind, {{29}} not in the direction people expect. The materi
               plays: 2,
               segments: [
                 { speaker: "Ola", text: "The bill is higher again, and we have hardly used the heating." },
-                { speaker: "Tam", text: "It is not the heating. Look: the old freezer in the cellar uses more than everything else together." },
+                { speaker: "Tam", text: "It is not the heating. Look: the old freezer in the basement uses more than everything else together." },
               ],
             },
             {
               kind: "audio",
               id: "a7",
-              genre: "In a shop",
+              genre: "In a store",
               genreTr: "Mağazada",
               situation: "Bir müşteri ürün soruyor.",
               plays: 2,
@@ -691,7 +691,7 @@ So I have changed my mind, {{29}} not in the direction people expect. The materi
               no: 4,
               ref: "a4",
               text: "What will the resident get?",
-              options: ["A second bin, because two people live there", "Free bags instead of a bin", "Nothing, because the flat is too small"],
+              options: ["A second bin, because two people live there", "Free bags instead of a bin", "Nothing, because the apartment is too small"],
               answer: 1,
               explain:
                 "İkinci kutu için dört kişi gerekiyor, dairede iki kişi var; görevli alternatifi veriyor: «we give you extra bags, which are free» ve sakin «bags then» diyor. Boş çıkmıyor.",
@@ -713,10 +713,10 @@ So I have changed my mind, {{29}} not in the direction people expect. The materi
               no: 6,
               ref: "a6",
               text: "What does Tam think is the cause?",
-              options: ["The heating in the flat", "An old appliance in the cellar", "A mistake in the bill"],
+              options: ["The heating in the apartment", "An old appliance in the basement", "A mistake in the bill"],
               answer: 1,
               explain:
-                "Tam ısıtmayı eliyor ve sebebi gösteriyor: «the old freezer in the cellar uses more than everything else together». Faturada hata olduğu iddia edilmiyor, tersine tüketim açıklanıyor.",
+                "Tam ısıtmayı eliyor ve sebebi gösteriyor: «the old freezer in the basement uses more than everything else together». Faturada hata olduğu iddia edilmiyor, tersine tüketim açıklanıyor.",
             },
             {
               kind: "mcq",
@@ -724,7 +724,7 @@ So I have changed my mind, {{29}} not in the direction people expect. The materi
               no: 7,
               ref: "a7",
               text: "What does the assistant suggest?",
-              options: ["Coming back on a weekday", "Buying a larger packet instead", "Going to a different branch"],
+              options: ["Coming back on a weekday", "Buying a larger package instead", "Going to a different branch"],
               answer: 2,
               explain:
                 "Görevli bu şubede olmadığını söyleyip başka bir şube veriyor: «Our branch in Mill Street has a loose food section». Pazar günü açık olması ek bir kolaylık, gün değiştirme önerisi değil.",
@@ -802,7 +802,7 @@ So I have changed my mind, {{29}} not in the direction people expect. The materi
             {
               kind: "audio",
               id: "b6",
-              genre: "In a shop",
+              genre: "In a store",
               genreTr: "Mağazada",
               situation: "Bir müşteri ve bir görevli konuşuyor.",
               plays: 2,
@@ -819,7 +819,7 @@ So I have changed my mind, {{29}} not in the direction people expect. The materi
               no: 8,
               ref: "b1",
               text: "What is Lu's point about the app?",
-              options: ["It changed how she plans her work", "It takes too long to fill in every day", "It should be used by the whole company"],
+              options: ["It changed how she plans her work", "It takes too long to fill out every day", "It should be used by the whole company"],
               answer: 0,
               explain:
                 "Lu başta karşı olduğunu söylüyor («I was against it, honestly»), sonra uygulamanın yolculuklarını birleştirmesini sağladığını ve artık farklı planladığını anlatıyor. Süre şikâyeti ya da yaygınlaştırma önerisi kayıtta yok.",
@@ -1100,7 +1100,7 @@ Closed in the month of:  {{19}}`,
           format: "writing",
           goal: "interaction",
           prompt:
-            "You ordered a lamp online. It arrived damaged. Write an email to the shop. Write about 100 words and cover all the points.",
+            "You ordered a lamp online. It arrived damaged. Write an email to the store. Write about 100 words and cover all the points.",
           promptTr:
             "İnternetten bir lamba sipariş ettin. Hasarlı geldi. Mağazaya bir e-posta yaz. Yaklaşık 100 kelime, bütün maddeleri işle.",
           items: [],
@@ -1109,11 +1109,11 @@ Closed in the month of:  {{19}}`,
             points: [
               { de: "Say what you ordered and when it arrived.", tr: "Ne sipariş ettiğini ve ne zaman geldiğini söyle." },
               { de: "Describe the damage clearly.", tr: "Hasarı açıkça tarif et." },
-              { de: "Say what you want the shop to do, and by when.", tr: "Mağazadan ne yapmasını, ne zamana kadar istediğini söyle." },
+              { de: "Say what you want the store to do, and by when.", tr: "Mağazadan ne yapmasını, ne zamana kadar istediğini söyle." },
             ],
             sample: `Dear Sir or Madam,
 
-I ordered a floor lamp from your website on 3 March and it arrived on 9 March.
+I ordered a floor lamp from your website on March 3 and it arrived on March 9.
 
 Unfortunately the lamp was damaged. The glass shade has a crack about ten centimeters long on one side, and the box itself was open at one corner when the driver handed it to me.
 
@@ -1148,7 +1148,7 @@ Emre Yildiz`,
               { de: "Describe the habit you could not change.", tr: "Değiştiremediğin alışkanlığı anlat." },
               { de: "Explain why one worked and the other did not.", tr: "Birinin neden işe yaradığını, ötekinin neden yaramadığını açıkla." },
             ],
-            sample: `Two years ago I stopped buying bottled water. I bought one metal bottle and put it next to my keys, so I could not leave the flat without seeing it. That habit has never come back.
+            sample: `Two years ago I stopped buying bottled water. I bought one metal bottle and put it next to my keys, so I could not leave the apartment without seeing it. That habit has never come back.
 
 The one I could not change is my phone in the evening. I have tried a timer, a drawer and a rule about ten o'clock. None of them lasted a week.
 
@@ -1197,7 +1197,7 @@ The difference, I think, is that the bottle needed one decision and the phone ne
               { de: "use a second conditional", tr: "İkinci tip koşulu kullanmak" },
             ],
             sample:
-              "I get up at half past six and I leave the house at eight. I used to shop in the big supermarket on the way home, but since last year I have used the small shop near my flat, because the queue is shorter. If I had more time in the week, I would cook twice on the weekend and freeze half of it.",
+              "I get up at half past six and I leave the house at eight. I used to shop in the big supermarket on the way home, but since last year I have used the small store near my apartment, because the line is shorter. If I had more time in the week, I would cook twice on the weekend and freeze half of it.",
             criteria: [
               "Gün sırayla mı anlatıldı? (first, then, after that)",
               "`used to` ya da present perfect ile değişim anlatıldı mı?",

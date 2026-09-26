@@ -67,7 +67,7 @@ export const EN_A2_02: MockPaper = {
               genre: "Note for a guest",
               genreTr: "Misafir için not",
               title: "Welcome!",
-              body: `The keys are with the neighbor in flat 12. She works until six, so come after that. Do not ring my bell: I am away until Sunday.`,
+              body: `The keys are with the neighbor in apartment 12. She works until six, so come after that. Do not ring my bell: I am away until Sunday.`,
             },
             {
               kind: "text",
@@ -146,7 +146,7 @@ export const EN_A2_02: MockPaper = {
           promptTr:
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
-            { key: "a", label: "Night Coach", body: "Leaves at eleven in the evening and arrives at six in the morning. You sleep on the way and you save one hotel night. 24 pounds." },
+            { key: "a", label: "Night Bus", body: "Leaves at eleven in the evening and arrives at six in the morning. You sleep on the way and you save one hotel night. 24 pounds." },
             { key: "b", label: "City Bikes", body: "Take a bike at any station and leave it at another one. The first thirty minutes are free. You need a card and an app." },
             { key: "c", label: "Green Market", body: "Every Saturday from seven to one, in the old square. Vegetables from farms near the town. Bring your own bag: we have no plastic ones." },
             { key: "d", label: "Second Hand Books", body: "Thousands of used books, all under three pounds. Open Tuesday to Saturday. We also buy your old books, but only in good condition." },
@@ -163,7 +163,7 @@ export const EN_A2_02: MockPaper = {
               text: "Ravi finishes work at half past ten and often has nothing to eat at home.",
               answer: "h",
               explain:
-                "İlan «Open until midnight every day» diyor; Ravi'nin işi 22.30'da bitiyor, yani yetişiyor. Pazar günleri de açık. Green Market yalnız cumartesi sabahı, ona uymaz.",
+                "İlan «Open until midnight every day» diyor; Ravi'nin işi 22:30'da bitiyor, yani yetişiyor. Pazar günleri de açık. Green Market yalnız cumartesi sabahı, ona uymaz.",
             },
             {
               kind: "match",
@@ -187,7 +187,7 @@ export const EN_A2_02: MockPaper = {
               kind: "match",
               id: "en-a2-02-l2-9",
               no: 9,
-              text: "The Nowak family visit a lot of exhibitions and they have two small children.",
+              text: "The Nowak family visits a lot of exhibitions and they have two small children.",
               answer: "g",
               explain:
                 "Kart on iki müzeyi kapsıyor ve «free for children» diyor; iki küçük çocuk için ücret yok. Aile çok sergi gezdiği için yıllık kart mantıklı; öteki ilanların hiçbiri müzeyle ilgili değil.",
@@ -219,7 +219,7 @@ export const EN_A2_02: MockPaper = {
               title: "One suitcase for three weeks",
               body: `Last spring I traveled for three weeks with one small suitcase. My friends said it was impossible. They were wrong, and here is what I learned.
 
-First, I took four shirts and two pairs of trousers. That sounds too little, but every hostel had a washing machine. I washed my clothes on Sunday evening and everything was dry on Monday morning.
+First, I took four shirts and two pairs of pants. That sounds too little, but every hostel had a washing machine. I washed my clothes on Sunday evening and everything was dry on Monday morning.
 
 Second, I left my big camera at home. My phone took better pictures than my old camera, and it was much lighter in my bag.
 
@@ -294,9 +294,9 @@ Now I have a rule for every journey. I put everything on the bed, and then I tak
 
 Check your bag at home. Liquids must be in small bottles, and the total {{16}} not be more than one liter.
 
-Put your passport in the same pocket every time. People {{17}} lose it in the queue, not at home.
+Put your passport in the same pocket every time. People {{17}} lose it in line, not at home.
 
-Trains to the airport are often {{18}} than taxis, and they are cheaper too. Look at the timetable the night before.
+Trains to the airport are often {{18}} than taxis, and they are cheaper too. Look at the schedule the night before.
 
 And finally: {{19}} you have a long wait, take a book. Your phone battery will not last all day.`,
             },
@@ -731,7 +731,7 @@ Bring:                  a warm {{10}}`,
               no: 11,
               ref: "c1",
               text: "What is the customer doing?",
-              options: ["Asking for something special", "Complaining about a shop assistant", "Giving back something she bought"],
+              options: ["Asking for something special", "Complaining about a salesclerk", "Giving back something she bought"],
               answer: 0,
               explain:
                 "İndirim bitmiş ama müşteri bir istisna istiyor: «Is there any chance of the sale price today?». Kimseden şikâyet etmiyor ve iade istemiyor; hastalık yalnız gerekçe.",

@@ -158,7 +158,7 @@ We do not buy clothes.`,
           promptTr:
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
-            { key: "a", label: "We Collect", body: "We take large furniture and machines from your flat. We pay you less, but we carry it down. Send a photo first, please." },
+            { key: "a", label: "We Collect", body: "We take large furniture and machines from your apartment. We pay you less, but we carry it down. Send a photo first, please." },
             { key: "b", label: "School Market", body: "Sunday, 10 to 14. Bring your own table, three euros. Children's clothes, toys and books only." },
             { key: "c", label: "Second-hand Furniture", body: "Beds, desks and chairs. Delivery in the city for eight euros. Open Tuesday to Saturday." },
             { key: "d", label: "What Is It Worth?", body: "Free, Thursday afternoons. Bring one object. We look at it and we tell you. We do not buy anything." },
@@ -175,7 +175,7 @@ We do not buy clothes.`,
               text: "Ondrej wants to sell a fridge and cannot carry it down the stairs.",
               answer: "a",
               explain:
-                "İlan tam bu engeli çözüyor: «We take large furniture and machines from your flat … we carry it down». Daha az ödemesi de açıkça söyleniyor.",
+                "İlan tam bu engeli çözüyor: «We take large furniture and machines from your apartment … we carry it down». Daha az ödemesi de açıkça söyleniyor.",
             },
             {
               kind: "match",
@@ -388,7 +388,7 @@ And one more thing: {{19}} you write an advert, take the photograph in the morni
 
 She paid a little every week {{21}} four months.
 
-It is heavier {{22}} anything else in the flat.
+It is heavier {{22}} anything else in the apartment.
 
 We moved three times and we took it {{23}} us every time.
 
@@ -850,7 +850,7 @@ Tell Bexi by:       {{10}}`,
               situation: "Üçüncü konuşmacı büyükannesinin sandalyesinden söz ediyor.",
               plays: 2,
               segments: [
-                { text: "It was my grandmother's chair and I said yes too fast, because the flat was full of boxes. Two weeks later I asked the woman if she would sell it back. She was very kind, and she said no." },
+                { text: "It was my grandmother's chair and I said yes too fast, because the apartment was full of boxes. Two weeks later I asked the woman if she would sell it back. She was very kind, and she said no." },
               ],
             },
             {

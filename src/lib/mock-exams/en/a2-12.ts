@@ -48,7 +48,7 @@ export const EN_A2_12: MockPaper = {
               genre: "Letter from the school",
               genreTr: "Okuldan mektup",
               title: "The school trip",
-              body: `Dear parents, the school trip is on 12 May and it costs eighteen euros. Please pay before 5 May. If this is difficult, write to us; nobody stays at school because of money.`,
+              body: `Dear parents, the school trip is on May 12 and it costs eighteen euros. Please pay before May 5. If this is difficult, write to us; nobody stays at school because of money.`,
             },
             {
               kind: "text",
@@ -56,7 +56,7 @@ export const EN_A2_12: MockPaper = {
               genre: "Notice at the school door",
               genreTr: "Okul kapısındaki duyuru",
               title: "PARENTS' EVENING",
-              body: `Tuesday, 18.00 to 20.00.
+              body: `Tuesday, 18:00 to 20:00.
 
 Ten minutes with each teacher.
 
@@ -76,7 +76,7 @@ Please write your name on the list in the hall. Only two teachers a family, plea
               genre: "Notice",
               genreTr: "Duyuru",
               title: "SWIMMING",
-              body: `Every Thursday from 14 September.
+              body: `Every Thursday from September 14.
 
 Children need a towel and a swimming hat. The hat can be bought at school for four euros.
 
@@ -88,7 +88,7 @@ Children who cannot swim are in the second group.`,
               genre: "Email from the school",
               genreTr: "Okuldan e-posta",
               title: "Monday and Tuesday",
-              body: `Dear Mrs Roth, Veli was not at school on Monday and Tuesday. We have no letter from you. Please write one line and give it to his teacher tomorrow. Thank you.`,
+              body: `Dear Mrs. Roth, Veli was not at school on Monday and Tuesday. We have no letter from you. Please write one line and give it to his teacher tomorrow. Thank you.`,
             },
           ],
           items: [
@@ -159,12 +159,12 @@ Children who cannot swim are in the second group.`,
           promptTr:
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
-            { key: "a", label: "Homework Club", body: "Monday to Thursday, 15.00 to 17.00, in the library. Free, and there is no booking." },
+            { key: "a", label: "Homework Club", body: "Monday to Thursday, 15:00 to 17:00, in the library. Free, and there is no booking." },
             { key: "b", label: "Extra Lessons", body: "Mathematics and English in small groups, two afternoons a week. Twelve euros an hour." },
-            { key: "c", label: "School Office", body: "Open 8 to 15. For an appointment with a teacher outside the parents' evening, ring 6640." },
+            { key: "c", label: "School Office", body: "Open 8 to 15. For an appointment with a teacher outside the parents' evening, call 6640." },
             { key: "d", label: "School Meals", body: "Three euros twenty a day, or free with the card from the town office. Tell us by Friday for the next week." },
             { key: "e", label: "Help Fund", body: "For families with a problem paying for a trip or a book. Write to the office; nobody sees your letter except the head." },
-            { key: "f", label: "School Bus", body: "Two euros a week. The bus leaves at 7.40 from the market and comes back at 16.10." },
+            { key: "f", label: "School Bus", body: "Two euros a week. The bus leaves at 7:40 from the market and comes back at 16:10." },
             { key: "g", label: "Lost Property", body: "Room 12, Wednesday afternoons. Everything is thrown away after one month." },
             { key: "h", label: "Second-hand Books", body: "In the hall on the first Monday of the month. Bring the old ones and take new ones." },
           ],
@@ -185,7 +185,7 @@ Children who cannot swim are in the second group.`,
               text: "Petra cannot come to the parents' evening and wants another time.",
               answer: "c",
               explain:
-                "İlan tam bu durumu karşılıyor: «For an appointment with a teacher outside the parents' evening, ring 6640».",
+                "İlan tam bu durumu karşılıyor: «For an appointment with a teacher outside the parents' evening, call 6640».",
             },
             {
               kind: "match",
@@ -212,7 +212,7 @@ Children who cannot swim are in the second group.`,
               text: "Hedda wants her daughter to do something after school until five.",
               answer: "a",
               explain:
-                "İlan saatleri veriyor: «Monday to Thursday, 15.00 to 17.00», üstelik ücretsiz ve kayıt gerekmiyor.",
+                "İlan saatleri veriyor: «Monday to Thursday, 15:00 to 17:00», üstelik ücretsiz ve kayıt gerekmiyor.",
             },
           ],
         },
@@ -470,7 +470,7 @@ I have three children at the school and I still {{24}} not know all the teachers
               situation: "Okul bir veliye ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hello Mrs Roth, this is the school office. The parents' evening is now on Wednesday, not on Tuesday. The time is the same: six to eight." },
+                { text: "Hello Mrs. Roth, this is the school office. The parents' evening is now on Wednesday, not on Tuesday. The time is the same: six to eight." },
               ],
             },
             {
@@ -601,7 +601,7 @@ I have three children at the school and I still {{24}} not know all the teachers
               plays: 2,
               segments: [
                 {
-                  text: "Good evening. The parents' evening is on Wednesday the twenty-second, from six to eight. You have ten minutes with each teacher and you can see two teachers. Please write your name on the list in the hall by Monday. If you cannot come, ring the office on 6640 and we will find another time.",
+                  text: "Good evening. The parents' evening is on Wednesday the twenty-second, from six to eight. You have ten minutes with each teacher and you can see two teachers. Please write your name on the list in the hall by Monday. If you cannot come, call the office at 6640 and we will find another time.",
                 },
               ],
             },
@@ -615,7 +615,7 @@ I have three children at the school and I still {{24}} not know all the teachers
 It starts at:            {{7}}
 Minutes with each teacher: {{8}}
 Write your name by:      {{9}}
-If you cannot come, ring: {{10}}`,
+If you cannot come, call: {{10}}`,
             },
           ],
           items: [
@@ -667,7 +667,7 @@ If you cannot come, ring: {{10}}`,
               text: "Gap 10",
               accept: ["6640"],
               explain:
-                "«ring the office on 6640» — gelemeyenler için verilen numara.",
+                "«call the office at 6640» — gelemeyenler için verilen numara.",
             },
           ],
         },
@@ -949,9 +949,9 @@ If you cannot come, ring: {{10}}`,
               { de: "Say why.", tr: "Nedenini söyle." },
               { de: "Say what you will do about the homework.", tr: "Ödevle ilgili ne yapacağını söyle." },
             ],
-            sample: `Dear Mrs Kral,
+            sample: `Dear Mrs. Kral,
 
-Veli was not at school on Monday 4 and Tuesday 5 March.
+Veli was not at school on Monday, March 4 and Tuesday, March 5.
 
 He had a temperature on Sunday evening and the doctor said he must stay at home for two days.
 

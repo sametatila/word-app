@@ -25,7 +25,7 @@ export const EN_B1_05: MockPaper = {
       skill: "reading",
       minutes: 55,
       instruction:
-        "There are six tasks in this part. You read notices, adverts, an article and two texts with gaps. Answer each question with one choice.",
+        "There are six tasks in this part. You read notices, ads, an article and two texts with gaps. Answer each question with one choice.",
       instructionTr:
         "Bu bölümde altı görev var. Duyurular, ilanlar, bir yazı ve boşluklu iki metin okuyacaksın. Her soruda doğru cevabı işaretle.",
       tasks: [
@@ -43,15 +43,15 @@ export const EN_B1_05: MockPaper = {
               genre: "Notice at a station",
               genreTr: "İstasyon duyurusu",
               title: "Left luggage",
-              body: `From 1 October the lockers close at nine, not at midnight. Bags left overnight are moved to the office and cost an extra ten euros. The office opens at seven in the morning.`,
+              body: `From October 1 the lockers close at nine, not at midnight. Bags left overnight are moved to the office and cost an extra ten euros. The office opens at seven in the morning.`,
             },
             {
               kind: "text",
               id: "m2",
               genre: "Email to a guest",
               genreTr: "Misafire e-posta",
-              title: "Your flat next week",
-              body: `Dear Mr Bakker, the flat is on the third floor and there is no lift. The key is in a box by the door; we send the code the day before. If you arrive after eleven at night, please tell us today so that a neighbor is awake.`,
+              title: "Your apartment next week",
+              body: `Dear Mr. Bakker, the apartment is on the third floor and there is no elevator. The key is in a box by the door; we send the code the day before. If you arrive after eleven at night, please tell us today so that a neighbor is awake.`,
             },
             {
               kind: "text",
@@ -66,8 +66,8 @@ export const EN_B1_05: MockPaper = {
               id: "m4",
               genre: "Message",
               genreTr: "İleti",
-              title: "Flat 6 again",
-              body: `Dalia, the people in flat 6 rent it out by the week again. Four different groups in a month, and the front door is open half the night. I am writing to the office on Friday. Do you want your name on the letter?`,
+              title: "Apartment 6 again",
+              body: `Dalia, the people in apartment 6 rent it out by the week again. Four different groups in a month, and the front door is open half the night. I am writing to the office on Friday. Do you want your name on the letter?`,
             },
             {
               kind: "text",
@@ -95,8 +95,8 @@ export const EN_B1_05: MockPaper = {
               id: "en-b1-05-l1-2",
               no: 2,
               ref: "m2",
-              text: "What should Mr Bakker do if he arrives very late?",
-              options: ["Ask for the code again", "Take the lift to the third floor", "Tell the owner in advance"],
+              text: "What should Mr. Bakker do if he arrives very late?",
+              options: ["Ask for the code again", "Take the elevator to the third floor", "Tell the owner in advance"],
               answer: 2,
               explain:
                 "Koşul e-postada yazılı: «If you arrive after eleven at night, please tell us today». Kod zaten bir gün önce gönderiliyor; asansör ise hiç yok.",
@@ -106,7 +106,7 @@ export const EN_B1_05: MockPaper = {
               id: "en-b1-05-l1-3",
               no: 3,
               ref: "m3",
-              text: "What does the advert promise?",
+              text: "What does the ad promise?",
               options: ["No extra costs during the tour", "A tour that goes inside three buildings", "A tour with a student guide"],
               answer: 0,
               explain:
@@ -142,16 +142,16 @@ export const EN_B1_05: MockPaper = {
           format: "match",
           goal: "orientation",
           prompt:
-            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best advert. No advert is used twice.",
+            "Here are five people, 6 to 10. There are also eight ads, a to h. Match each person with the best ad. No ad is used twice.",
           promptTr:
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
             { key: "a", label: "Night Train", body: "Leaves at ten in the evening and arrives at six. A bed in a shared compartment is thirty-nine euros; a seat is nineteen. No food on board." },
-            { key: "b", label: "Flat Swap", body: "You stay in somebody's flat and they stay in yours, for the same week. No money changes hands. You register with two references." },
+            { key: "b", label: "Apartment Swap", body: "You stay in somebody's apartment and they stay in yours, for the same week. No money changes hands. You register with two references." },
             { key: "c", label: "Left Luggage", body: "Open six to twenty-two, next to the tourist office. Four euros a bag a day. Bikes and skis are eight." },
             { key: "d", label: "Walking Tour", body: "Two hours, small groups, every morning at ten. Free, but the guide is paid by what you give at the end." },
             { key: "e", label: "Room in a Family", body: "A room in a family home, breakfast included, minimum three nights. Quiet after ten. Good for people who want to practice the language." },
-            { key: "f", label: "Bike Hire", body: "From four hours to two weeks. Helmet and lock included. We deliver to your hotel for five euros." },
+            { key: "f", label: "Bike Rental", body: "From four hours to two weeks. Helmet and lock included. We deliver to your hotel for five euros." },
             { key: "g", label: "City Card", body: "Three days of buses and trams plus twelve museums. Sixty-five euros, or forty for students. Does not include the airport bus." },
             { key: "h", label: "Storage Rooms", body: "From one square meter, by the month. Day and night entry. Not for furniture or for anything that smells." },
           ],
@@ -160,7 +160,7 @@ export const EN_B1_05: MockPaper = {
               kind: "match",
               id: "en-b1-05-l2-6",
               no: 6,
-              text: "Anouk arrives at six in the morning and cannot get into her flat until three in the afternoon.",
+              text: "Anouk arrives at six in the morning and cannot get into her apartment until three in the afternoon.",
               answer: "c",
               explain:
                 "İlan hem saati hem hizmeti veriyor: «Open six to twenty-two» ve «Four euros a bag a day». Dokuz saatlik boşlukta çantayı bırakacak tek yer orası; depo odaları (h) aylık ve eşya için.",
@@ -196,10 +196,10 @@ export const EN_B1_05: MockPaper = {
               kind: "match",
               id: "en-b1-05-l2-10",
               no: 10,
-              text: "Joris has a flat in another city and no money for a hotel.",
+              text: "Joris has an apartment in another city and no money for a hotel.",
               answer: "b",
               explain:
-                "İlan tam bu takası tarif ediyor: «You stay in somebody's flat and they stay in yours» ve «No money changes hands». Elinde bir daire olması koşulu Joris için sağlanıyor.",
+                "İlan tam bu takası tarif ediyor: «You stay in somebody's apartment and they stay in yours» ve «No money changes hands». Elinde bir daire olması koşulu Joris için sağlanıyor.",
             },
           ],
         },
@@ -219,7 +219,7 @@ export const EN_B1_05: MockPaper = {
               title: "I went back to the town I wrote about",
               body: `Six years ago I wrote a short piece about a small town on the coast, and about forty people read it. Then a travel site copied three sentences from it, and last summer the town had four times as many visitors as it did the year I was there. I went back in September to look at what I had helped to do.
 
-The obvious story is the one everybody writes: too many people, higher rents, a bakery replaced by a shop selling the same postcards as everywhere else. All of that is true, and I saw all of it. But it was not the part that stayed with me.
+The obvious story is the one everybody writes: too many people, higher rents, a bakery replaced by a store selling the same postcards as everywhere else. All of that is true, and I saw all of it. But it was not the part that stayed with me.
 
 What stayed with me was a conversation with a woman who runs the ferry office, which is one room with two chairs in it. She said that the season used to end in August, and that her contract used to end with it. It now runs to the middle of October, and for the first time in eleven years she has not had to look for winter work.
 
@@ -269,7 +269,7 @@ What I have changed is smaller. I no longer name the town in anything I write. I
               id: "en-b1-05-l3-14",
               no: 14,
               text: "What does the writer refuse to do?",
-              options: ["Present the two effects as a balance", "Name the woman she spoke to", "Write about any small town again in future", "Return to the town a second time"],
+              options: ["Present the two effects as a balance", "Name the woman she spoke to", "Write about any small town again in the future", "Return to the town a second time"],
               answer: 0,
               explain:
                 "Dördüncü paragraf açık: «That is not a balance, and anybody who presents it as one is selling something». Küçük kasabalar hakkında yazmayı bırakmıyor; bıraktığı şey adı vermek.",
@@ -387,12 +387,12 @@ The council now publishes the count every year, in a table that fits on one page
               id: "t5",
               genre: "Consumer advice",
               genreTr: "Tüketici tavsiyesi",
-              title: "Before you book a holiday flat",
-              body: `A holiday flat can be much better value than a hotel, but only if you {{21}} attention to three things.
+              title: "Before you book a vacation apartment",
+              body: `A vacation apartment can be much better value than a hotel, but only if you {{21}} attention to three things.
 
 First, ask what happens if you arrive late. Many owners {{22}} you a code the day before, and a code that does not work at midnight is a long night.
 
-Second, check the floor. A photograph rarely {{23}} that the flat is on the fourth floor of a building with no lift.
+Second, check the floor. A photograph rarely {{23}} that the apartment is on the fourth floor of a building with no elevator.
 
 Third, agree in advance what counts as damage. A private owner does not have to {{24}} your deposit back quickly, and many guests discover this too late.
 
@@ -564,7 +564,7 @@ It is the second time this year {{30}} the date has moved.`,
               situation: "Bir daire sahibi misafire ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hello, this is about your booking for next week. The code for the key box is four four one nine. It changes every Monday, so do not use an old one. And the third floor is the top floor; there is no lift, as it says in the advert." },
+                { text: "Hello, this is about your booking for next week. The code for the key box is four four one nine. It changes every Monday, so do not use an old one. And the third floor is the top floor; there is no elevator, as it says in the ad." },
               ],
             },
             {
@@ -622,7 +622,7 @@ It is the second time this year {{30}} the date has moved.`,
               situation: "Bir danışman kısa süreli kiralama yapanlara sesleniyor.",
               plays: 2,
               segments: [
-                { text: "The most common mistake I see in a first year of renting to visitors is answering every message within a minute. It sounds like good service and it is not sustainable. Answer twice a day, say so in the advert, and nobody complains." },
+                { text: "The most common mistake I see in a first year of renting to visitors is answering every message within a minute. It sounds like good service and it is not sustainable. Answer twice a day, say so in the ad, and nobody complains." },
               ],
             },
           ],
@@ -644,7 +644,7 @@ It is the second time this year {{30}} the date has moved.`,
               no: 2,
               ref: "a2",
               text: "What is the owner warning about?",
-              options: ["An old code will not work", "The flat is on the second floor", "The lift is out of order"],
+              options: ["An old code will not work", "The apartment is on the second floor", "The elevator is out of order"],
               answer: 0,
               explain:
                 "Uyarı kodun haftalık değişmesiyle ilgili: «It changes every Monday, so do not use an old one». Daire üçüncü katta ve binada asansör hiç yok, bozuk değil.",
@@ -702,7 +702,7 @@ It is the second time this year {{30}} the date has moved.`,
               options: ["Answering messages immediately", "Employing somebody else to answer the messages", "Setting an answering time and saying so"],
               answer: 2,
               explain:
-                "Öneri iki adımlı: «Answer twice a day, say so in the advert». Anında cevap vermek tam olarak eleştirilen davranış; personel almaktan hiç söz edilmiyor.",
+                "Öneri iki adımlı: «Answer twice a day, say so in the ad». Anında cevap vermek tam olarak eleştirilen davranış; personel almaktan hiç söz edilmiyor.",
             },
           ],
         },
@@ -722,10 +722,10 @@ It is the second time this year {{30}} the date has moved.`,
               situation: "İki arkadaş kısa süreli kiralamayı konuşuyor.",
               plays: 2,
               segments: [
-                { speaker: "Freja", text: "Are you renting the flat out this summer?" },
+                { speaker: "Freja", text: "Are you renting the apartment out this summer?" },
                 { speaker: "Anouk", text: "Not any more." },
-                { speaker: "Freja", text: "Really? It paid for your holiday." },
-                { speaker: "Anouk", text: "It paid for my holiday and it cost me my neighbors. That is not a good exchange." },
+                { speaker: "Freja", text: "Really? It paid for your vacation." },
+                { speaker: "Anouk", text: "It paid for my vacation and it cost me my neighbors. That is not a good exchange." },
               ],
             },
             {
@@ -803,11 +803,11 @@ It is the second time this year {{30}} the date has moved.`,
               id: "en-b1-05-h2-8",
               no: 8,
               ref: "b1",
-              text: "Why did Anouk stop renting the flat out?",
+              text: "Why did Anouk stop renting the apartment out?",
               options: ["It was not profitable enough for her", "It damaged relationships nearby", "The rules changed"],
               answer: 1,
               explain:
-                "Anouk kazancı kabul edip bedeli veriyor: «It paid for my holiday and it cost me my neighbors». Kazanç var, yani kârsızlık değil; kural değişikliği hiç geçmiyor.",
+                "Anouk kazancı kabul edip bedeli veriyor: «It paid for my vacation and it cost me my neighbors». Kazanç var, yani kârsızlık değil; kural değişikliği hiç geçmiyor.",
             },
             {
               kind: "mcq",
@@ -1087,7 +1087,7 @@ New guides walk with an experienced guide for: {{19}} tours`,
           format: "writing",
           goal: "interaction",
           prompt:
-            "You booked a holiday flat for a week. When you arrived, two things were not as described in the advert. Write an email to the owner. Write about 100 words and cover all the points.",
+            "You booked a vacation apartment for a week. When you arrived, two things were not as described in the ad. Write an email to the owner. Write about 100 words and cover all the points.",
           promptTr:
             "Bir hafta için tatil dairesi kiraladın. Vardığında iki şey ilandaki tarifle uyuşmuyordu. Ev sahibine bir e-posta yaz. Yaklaşık 100 kelime, bütün maddeleri işle.",
           items: [],
@@ -1098,13 +1098,13 @@ New guides walk with an experienced guide for: {{19}} tours`,
               { de: "Describe the two differences clearly.", tr: "İki farkı açıkça anlat." },
               { de: "Say what you would like the owner to do.", tr: "Ev sahibinden ne yapmasını istediğini söyle." },
             ],
-            sample: `Dear Mr Roth,
+            sample: `Dear Mr. Roth,
 
-I booked your flat in Harbor Street for the week of 3 June and I arrived on Monday evening.
+I booked your apartment in Harbor Street for the week of June 3 and I arrived on Monday evening.
 
-Two things are different from the advert. The advert says the flat is on the second floor; it is on the fourth, and there is no lift. It also promises a washing machine, and there is none in the flat or in the building.
+Two things are different from the ad. The ad says the apartment is on the second floor; it is on the fourth, and there is no elevator. It also promises a washing machine, and there is none in the apartment or in the building.
 
-I do not want to cancel, because the flat itself is clean and quiet. I would like a reduction for the week, or the use of a machine somewhere nearby.
+I do not want to cancel, because the apartment itself is clean and quiet. I would like a reduction for the week, or the use of a machine somewhere nearby.
 
 Could you let me know by Wednesday?
 
@@ -1185,7 +1185,7 @@ Would I keep it secret? Honestly, no. The people who live near it sell almost no
               { de: "use a second conditional", tr: "İkinci tip koşulu kullanmak" },
             ],
             sample:
-              "I live in a town of about thirty thousand people, twenty minutes from the sea. There is one long street with everything on it and the rest is houses. It used to be quiet in summer, but since a film was made here we have had coaches every weekend. If I could change one thing, I would move the coach park outside the old town, because the buses stand where the market used to be.",
+              "I live in a town of about thirty thousand people, twenty minutes from the sea. There is one long street with everything on it and the rest is houses. It used to be quiet in summer, but since a film was made here we have had tour buses every weekend. If I could change one thing, I would move the bus parking lot outside the old town, because the buses stand where the market used to be.",
             criteria: [
               "Yer düzenli mi anlatıldı? (büyüklük, konum, ayrıntı)",
               "`used to` ya da present perfect ile değişim anlatıldı mı?",
@@ -1235,7 +1235,7 @@ Would I keep it secret? Honestly, no. The people who live near it sell almost no
             "Şehrimizin, burada yaşayanların hayatını kolaylaştıracak tek bir iş için parası var. Seçenekleri benimle konuş ve birlikte karar ver.",
           prepSeconds: 30,
           exchange: [
-            { who: "partner", de: "The options are: a limit on short-term renting, more buses in the evening, a parking lot outside the old town, or lower rents for local shops. Which do you think we should choose?", tr: "Seçenekler: kısa süreli kiralamaya sınır, akşam daha çok otobüs, eski şehrin dışında bir otopark ya da yerel dükkânlara düşük kira. Sence hangisini seçmeliyiz?" },
+            { who: "partner", de: "The options are: a limit on short-term renting, more buses in the evening, a parking lot outside the old town, or lower rents for local stores. Which do you think we should choose?", tr: "Seçenekler: kısa süreli kiralamaya sınır, akşam daha çok otobüs, eski şehrin dışında bir otopark ya da yerel dükkânlara düşük kira. Sence hangisini seçmeliyiz?" },
             { who: "you", hint: "Bir seçenek seç ve gerekçelendir.", expect: "bir seçeneği seçmek ve gerekçelendirmek", seconds: 40 },
             { who: "partner", de: "I understand. But a limit on renting takes money away from families who need it, and it is very hard to check. Does that change your mind?", tr: "Anlıyorum. Ama kiralama sınırı ihtiyacı olan ailelerin gelirini kesiyor ve denetlemesi çok zor. Bu fikrini değiştirir mi?" },
             { who: "you", hint: "İtiraza doğrudan karşılık ver: kabul et ya da çürüt.", expect: "bir itiraza doğrudan karşılık vermek", seconds: 40 },
@@ -1251,7 +1251,7 @@ Would I keep it secret? Honestly, no. The people who live near it sell almost no
               { de: "reach a decision together", tr: "Birlikte bir karara varmak" },
             ],
             sample:
-              "I would start with the limit on short-term renting, because it is the only option that changes who can live here. You are right that it takes income from families, and that is a real cost; I would set the limit high enough to allow one flat and not four. All right: let us put the evening buses forward, since everybody uses them, and bring the renting question back with proper numbers next year.",
+              "I would start with the limit on short-term renting, because it is the only option that changes who can live here. You are right that it takes income from families, and that is a real cost; I would set the limit high enough to allow one apartment and not four. All right: let us put the evening buses forward, since everybody uses them, and bring the renting question back with proper numbers next year.",
             criteria: [
               "Görüş gerekçelendirildi mi?",
               "İtiraza doğrudan mı karşılık verildi?",

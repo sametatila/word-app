@@ -50,7 +50,7 @@ export const EN_C1_11: MockPaper = {
 
 Within four years the proportion of calls answered inside eight minutes had risen from sixty-eight to eighty-four percent, and the average time taken to reach the patient's side had not {{2}} at all.
 
-The two figures are not in conflict. The clock is stopped when a vehicle arrives at the address, and a service under pressure will {{3}} its resources towards the part of the journey that is counted. The allocation of vehicles is settled months in advance, and it is settled against the figure that will be published. A rapid-response car reaches the kerb inside the target; the crew and the equipment that will actually treat the patient arrive some minutes later, and no instrument records that gap.
+The two figures are not in conflict. The clock is stopped when a vehicle arrives at the address, and a service under pressure will {{3}} its resources towards the part of the journey that is counted. The allocation of vehicles is settled months in advance, and it is settled against the figure that will be published. A rapid-response car reaches the curb inside the target; the crew and the equipment that will actually treat the patient arrive some minutes later, and no instrument records that gap.
 
 None of this required anybody to behave dishonestly, which is the part most commentators {{4}}. Every individual decision in that chain was defensible, and several were clinically sensible. What changed was not the intentions of the service but the {{5}} of its attention, and attention follows measurement as reliably as water follows a channel.
 
@@ -622,7 +622,7 @@ The eight-minute figure was eventually replaced in 2017, and the replacement was
             {
               key: "a",
               label: "a — Former service director",
-              body: "I signed off the rotas that everybody now criticizes, and I would sign them again with the information I had. The target was the only thing anybody above me read. What I would change is not the decision but the reporting: had the distribution been published alongside the proportion, the rota would have looked indefensible on paper within a month, and I would have lost the argument that I won.",
+              body: "I signed off on the schedules that everybody now criticizes, and I would sign them again with the information I had. The target was the only thing anybody above me read. What I would change is not the decision but the reporting: had the distribution been published alongside the proportion, the schedule would have looked indefensible on paper within a month, and I would have lost the argument that I won.",
             },
             {
               key: "b",
@@ -725,10 +725,10 @@ The eight-minute figure was eventually replaced in 2017, and the replacement was
               situation: "Bir gazeteci ile eski bir hizmet yöneticisi rakamı konuşuyor.",
               plays: 2,
               segments: [
-                { speaker: "Journalist", text: "Do you regret the rotas?" },
+                { speaker: "Journalist", text: "Do you regret the schedules?" },
                 { speaker: "Director", text: "Not with the information I had. The target was the only line anybody above me read, and I built around it, and I would do it again on the same evidence." },
                 { speaker: "Journalist", text: "That sounds like a defense." },
-                { speaker: "Director", text: "It is an explanation, which is a different thing. What I would change is what was published. Put the whole distribution next to the proportion and my rota looks indefensible inside a month." },
+                { speaker: "Director", text: "It is an explanation, which is a different thing. What I would change is what was published. Put the whole distribution next to the proportion and my schedule looks indefensible inside a month." },
                 { speaker: "Journalist", text: "So you would have lost the argument." },
                 { speaker: "Director", text: "I would have lost it, and the service would have been better for it. That is not a comfortable sentence and I have had eleven years to find a better one." },
               ],
@@ -854,7 +854,7 @@ The eight-minute figure was eventually replaced in 2017, and the replacement was
               plays: 2,
               segments: [
                 {
-                  text: "Thank you. These are the findings, including the ones we were not hoping for. The target requires arrival within eight minutes. We examined forty-one thousand calls made over three years. In twelve percent of those, the recorded arrival and the moment a crew reached the patient differed by more than four minutes. After the target was introduced, nine percent of calls were reclassified into a lower category. The proportion answered within the target rose from sixty-eight percent to eighty-four. The average time to reach the patient's side did not change. The clock, as you know, is stopped at the kerb. Our central recommendation is that the single proportion be replaced by the distribution, and our second is that reclassification be reported separately every quarter.",
+                  text: "Thank you. These are the findings, including the ones we were not hoping for. The target requires arrival within eight minutes. We examined forty-one thousand calls made over three years. In twelve percent of those, the recorded arrival and the moment a crew reached the patient differed by more than four minutes. After the target was introduced, nine percent of calls were reclassified into a lower category. The proportion answered within the target rose from sixty-eight percent to eighty-four. The average time to reach the patient's side did not change. The clock, as you know, is stopped at the curb. Our central recommendation is that the single proportion be replaced by the distribution, and our second is that reclassification be reported separately every quarter.",
                 },
               ],
             },
@@ -950,7 +950,7 @@ The main recommendation is to publish the {{14}} instead of the single proportio
               text: "Gap 13",
               accept: ["kerb", "curb"],
               explain:
-                "«The clock, as you know, is stopped at the kerb» — saatin durdurulduğu nokta; hastanın yanına varış ayrıca ölçülüyor.",
+                "«The clock, as you know, is stopped at the curb» — saatin durdurulduğu nokta; hastanın yanına varış ayrıca ölçülüyor.",
             },
             {
               kind: "gap",
@@ -1336,7 +1336,7 @@ The main recommendation is to publish the {{14}} instead of the single proportio
           format: "writing",
           goal: "production",
           prompt:
-            "You have listened to a lecture arguing that published targets distort the services they measure. Write an essay for your tutor discussing which of the following does most to limit that distortion, and explaining why the other two are weaker: publishing fuller data, changing the target regularly, or leaving judgment to professionals. Write 220 to 260 words.",
+            "You have listened to a lecture arguing that published targets distort the services they measure. Write an essay for your instructor discussing which of the following does most to limit that distortion, and explaining why the other two are weaker: publishing fuller data, changing the target regularly, or leaving judgment to professionals. Write 220 to 260 words.",
           promptTr:
             "Yayımlanan hedeflerin ölçtükleri hizmeti bozduğunu savunan bir ders dinledin. Danışmanın için bir deneme yaz: aşağıdakilerden hangisi bu bozulmayı en çok sınırlar ve öteki ikisi neden daha zayıftır? Daha ayrıntılı veri yayımlamak, hedefi düzenli olarak değiştirmek ya da kararı meslek erbabına bırakmak. 220–260 kelime.",
           items: [],
@@ -1385,7 +1385,7 @@ I would therefore publish the distribution and keep the target, on the ground th
             ],
             sample: `Proposal: replace the monthly headline figure with a published distribution
 
-The problem is not that our figure is inaccurate. It is accurate, and that is part of the difficulty. Since it was introduced in March, the proportion of enquiries answered within two working days has risen from seventy-one to eighty-eight percent, while the median time to a resolved case has lengthened by a day and a half. Both movements are real, and both follow from the same cause: a threshold at two days makes an enquiry answered on day three worth nothing, and staff have responded rationally to that arrangement.
+The problem is not that our figure is inaccurate. It is accurate, and that is part of the difficulty. Since it was introduced in March, the proportion of inquiries answered within two working days has risen from seventy-one to eighty-eight percent, while the median time to a resolved case has lengthened by a day and a half. Both movements are real, and both follow from the same cause: a threshold at two days makes an inquiry answered on day three worth nothing, and staff have responded rationally to that arrangement.
 
 I propose one change. We should publish the full distribution of response times each month and retire the single proportion from the summary page. Where a headline is unavoidable, the median should be used, since it has no threshold for effort to gather at.
 

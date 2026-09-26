@@ -1326,7 +1326,7 @@ The most common word in the interviews was {{14}}.`,
           format: "writing",
           goal: "production",
           prompt:
-            "You have attended a seminar on official apologies. Write an essay for your tutor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. An apology is worth little unless it is accompanied by compensation.\n2. An apology is valuable in itself, because it fixes the official account of what happened.\n\nWrite 220 to 260 words.",
+            "You have attended a seminar on official apologies. Write an essay for your instructor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. An apology is worth little unless it is accompanied by compensation.\n2. An apology is valuable in itself, because it fixes the official account of what happened.\n\nWrite 220 to 260 words.",
           promptTr:
             "Resmî özürler üzerine bir seminere katıldın. Danışmanın için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Tazminat eşlik etmedikçe özrün değeri azdır.\n2. Özür kendi başına değerlidir, çünkü olayın resmî anlatısını sabitler.\n\n220–260 kelime yaz.",
           items: [],

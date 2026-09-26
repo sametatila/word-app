@@ -51,7 +51,7 @@ The food is in the box under the window. One small cup, not two.
 
 Please do not open the balcony door. The cat is fast!
 
-The key is with Mrs Orla in flat 4.
+The key is with Mrs. Orla in apartment 4.
 
 Thank you! Suki`,
               gloss: [
@@ -90,10 +90,10 @@ On Monday the park is closed. We cut the grass.`,
               id: "en-a1-06-l1-2",
               no: 2,
               ref: "t1",
-              text: "The key is with a neighbor in flat 4.",
+              text: "The key is with a neighbor in apartment 4.",
               answer: true,
               explain:
-                "Notun son satırı yeri veriyor: «The key is with Mrs Orla in flat 4». Daire numarası da adı da yazılı.",
+                "Notun son satırı yeri veriyor: «The key is with Mrs. Orla in apartment 4». Daire numarası da adı da yazılı.",
             },
             {
               kind: "bool",
@@ -268,8 +268,8 @@ Do not give food to the animals in the shop.`,
               id: "s3",
               genre: "Sign in the building",
               genreTr: "Binadaki levha",
-              title: "FOR ALL FLATS",
-              body: `Bins: Tuesday and Friday.
+              title: "FOR ALL APARTMENTS",
+              body: `Trash: Tuesday and Friday.
 
 Please put the yellow bag out after 19.
 
@@ -353,7 +353,7 @@ He is very quiet in the day, {{16}} he is loud when the bell rings. Sorry!
 
 There {{17}} a good park behind our street. I walk there at seven every morning.
 
-Last week I {{18}} your cat in our garden. She is very friendly.
+Last week I {{18}} your cat in our yard. She is very friendly.
 
 Rune`,
             },
@@ -465,7 +465,7 @@ Rune`,
               situation: "Bir komşu ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hi Vito, it is Mila from flat 2. Your bird is very loud in the morning. Can you close the window before seven? Thank you." },
+                { text: "Hi Vito, it is Mila from apartment 2. Your bird is very loud in the morning. Can you close the window before seven? Thank you." },
               ],
             },
             {
@@ -490,7 +490,7 @@ Rune`,
               situation: "Binada duyuru yapılıyor.",
               plays: 2,
               segments: [
-                { text: "A note for all flats. The men come for the bins on Thursday this week, not on Friday. Please put your bags out on Wednesday evening." },
+                { text: "A note for all apartments. The men come for the trash on Thursday this week, not on Friday. Please put your bags out on Wednesday evening." },
               ],
             },
           ],
@@ -859,7 +859,7 @@ Phone:              {{5}}`,
             ],
             sample: `Dear Orla,
 
-Thank you very much! The key is with Mrs Alma in flat 4.
+Thank you very much! The key is with Mrs. Alma in apartment 4.
 
 Please give Nika one small cup of food in the morning. Do not open the balcony door!
 
@@ -903,7 +903,7 @@ Vito`,
               { de: "one thing you do not like", tr: "Sevmediğin bir şey" },
             ],
             sample:
-              "We have a small dog. His name is Bruno and he is four. There is a park behind our house. I walk there every morning at seven. In our street there are many children. The small shop on the corner is open every day. On the weekend the street is very quiet. I do not like the bins on Monday.",
+              "We have a small dog. His name is Bruno and he is four. There is a park behind our house. I walk there every morning at seven. On our street there are many children. The small shop on the corner is open every day. On the weekend the street is very quiet. I do not like the trash cans on Monday.",
             criteria: [
               "Altı sözcüğün her birine değinildi mi?",
               "`there is / there are` kullanıldı mı?",
@@ -940,10 +940,10 @@ Vito`,
               { de: "answers to my questions", tr: "Sorulara cevap vermek" },
             ],
             sample:
-              "Have you got a dog? — Yes, two. Is there a park near your house? — Yes, five minutes on foot. What food does your dog eat? — Chicken. When do you walk in the morning? — At half past six. How much is one box? — Six euros.",
+              "Do you have a dog? — Yes, two. Is there a park near your house? — Yes, five minutes on foot. What food does your dog eat? — Chicken. When do you walk in the morning? — At half past six. How much is one box? — Six euros.",
             criteria: [
               "Beş sözcüğün her biri için bir soru kuruldu mu?",
-              "Sorular doğru kuruldu mu? (Have you got … / Is there … / When … / How much …)",
+              "Sorular doğru kuruldu mu? (Do you have … / Is there … / When … / How much …)",
               "Cevaplar soruya uygun mu?",
               "Fiyat ve saat söylenebiliyor mu?",
             ],

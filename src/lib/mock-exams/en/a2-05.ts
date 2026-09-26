@@ -44,7 +44,7 @@ export const EN_A2_05: MockPaper = {
               genre: "Email from a restaurant",
               genreTr: "Lokantadan e-posta",
               title: "Your table on Friday",
-              body: `Dear Ms Baran, we have your table for four on Friday at eight. If you are more than fifteen minutes late we cannot keep it. Please tell us today if somebody in your group does not eat meat.`,
+              body: `Dear Ms. Baran, we have your table for four on Friday at eight. If you are more than fifteen minutes late we cannot keep it. Please tell us today if somebody in your group does not eat meat.`,
             },
             {
               kind: "text",
@@ -65,7 +65,7 @@ export const EN_A2_05: MockPaper = {
             {
               kind: "text",
               id: "m4",
-              genre: "Note for a flatmate",
+              genre: "Note for a roommate",
               genreTr: "Ev arkadaşına not",
               title: "Soup",
               body: `Toni, I made soup and it is in the big pot. There is enough for two. Please put the pot in the fridge tonight, not on the balcony. The bread on the table is three days old; do not eat it.`,
@@ -297,7 +297,7 @@ Wash while you cook. A kitchen with clean pans is {{16}} than a kitchen with a m
 
 Buy one good knife. A cheap knife is not dangerous because it cuts; it is dangerous {{17}} it does not cut.
 
-Next month I {{18}} move into a flat with a bigger kitchen, and I am a little sad about it.
+Next month I {{18}} move into an apartment with a bigger kitchen, and I am a little sad about it.
 
 And the last rule: {{19}} you finish the milk, write it on the list on the door.`,
             },
@@ -375,7 +375,7 @@ The soup was the {{21}} thing on the menu: hot, simple and not expensive.
 
 There were no free tables inside, {{22}} the waiter found a place for us in the corner.
 
-The bill came {{23}} twenty-eight euros for two people, with water.
+The check came {{23}} twenty-eight euros for two people, with water.
 
 I would go again, but next time I will call {{24}} the morning.`,
             },
@@ -415,7 +415,7 @@ I would go again, but next time I will call {{24}} the morning.`,
               text: "Gap 23",
               accept: ["to"],
               explain:
-                "`the bill comes to …` hesabın toplamını bildiren sabit bir kalıptır. `comes at` bir saat, `comes in` bir yer bildirir; ikisi de tutarla kullanılmaz.",
+                "`the check comes to …` hesabın toplamını bildiren sabit bir kalıptır. `comes at` bir saat, `comes in` bir yer bildirir; ikisi de tutarla kullanılmaz.",
             },
             {
               kind: "gap",
@@ -581,7 +581,7 @@ I would go again, but next time I will call {{24}} the morning.`,
           format: "notes",
           goal: "detail",
           prompt:
-            "You hear information about a cookery course. Complete the notes, questions 6 to 10. Write ONE or TWO words or a number in each gap. The information plays twice.",
+            "You hear information about a cooking class. Complete the notes, questions 6 to 10. Write ONE or TWO words or a number in each gap. The information plays twice.",
           promptTr:
             "Bir yemek kursu hakkında bilgi dinleyeceksin. 6–10. maddelerdeki notları tamamla. Her boşluğa BİR ya da İKİ sözcük veya bir sayı yaz. Kaydı iki kez dinleyebilirsin.",
           texts: [
@@ -603,7 +603,7 @@ I would go again, but next time I will call {{24}} the morning.`,
               id: "n1",
               genre: "Notes",
               genreTr: "Not kâğıdı",
-              title: "Cookery course — notes",
+              title: "Cooking class — notes",
               body: `Course starts on:      {{6}} October
 Number of evenings:    {{7}}
 We meet at:            {{8}}
@@ -638,7 +638,7 @@ You must bring:        an {{10}}`,
               no: 8,
               ref: "b1",
               text: "Gap 8",
-              accept: ["half past six", "6.30", "18.30"],
+              accept: ["half past six", "6:30", "18:30", "6.30", "18.30"],
               explain:
                 "«We meet at half past six in the school kitchen» — buluşma saati. Yazıyla da rakamla da yazılabilir; yirmi dört saatlik biçim de kabul edilir.",
             },
@@ -746,7 +746,7 @@ You must bring:        an {{10}}`,
               no: 12,
               ref: "c2",
               text: "What is the announcement about?",
-              options: ["New opening hours", "How to separate waste", "The price of the new bins for each flat"],
+              options: ["New opening hours", "How to separate waste", "The price of the new bins for each apartment"],
               answer: 1,
               explain:
                 "Anons üç kabı ayırıyor: cam mavi, yemek kahverengi, yağ ise «the bottle by the back door». Saat ve fiyat kayıtta hiç geçmiyor.",
@@ -768,7 +768,7 @@ You must bring:        an {{10}}`,
               no: 14,
               ref: "c4",
               text: "Why is the person speaking?",
-              options: ["The food is late", "The food is cold", "The bill is wrong"],
+              options: ["The food is late", "The food is cold", "The check is wrong"],
               answer: 0,
               explain:
                 "Şikâyet süreyle kuruluyor: «We ordered forty minutes ago and the people who came after us already have their food». Yemek daha gelmedi, yani soğukluk ya da hesap söz konusu değil.",
@@ -847,7 +847,7 @@ You must bring:        an {{10}}`,
               situation: "Dördüncü konuşmacı ocak ayındaki menüden söz ediyor.",
               plays: 2,
               segments: [
-                { text: "We had the same bill there for years. Then in January everything on the menu was three or four euros more. For that money we found somewhere with a garden." },
+                { text: "We had the same check there for years. Then in January everything on the menu was three or four euros more. For that money we found somewhere with a garden." },
               ],
             },
             {
@@ -978,7 +978,7 @@ Esme`,
               { de: "Say what went wrong.", tr: "Neyin ters gittiğini söyle." },
               { de: "Say what you did in the end.", tr: "Sonunda ne yaptığını söyle." },
             ],
-            sample: `Last month I cooked a chicken for my sister and her husband. I put it in the oven at four and I went to the shop for bread. The queue was very long. When I came home, the kitchen was full of smoke and the chicken was black. We ate bread, cheese and a big salad, and my sister said it was the best evening of the month.`,
+            sample: `Last month I cooked a chicken for my sister and her husband. I put it in the oven at four and I went to the shop for bread. The line was very long. When I came home, the kitchen was full of smoke and the chicken was black. We ate bread, cheese and a big salad, and my sister said it was the best evening of the month.`,
             criteria: [
               "Üç içerik noktasının üçü de var mı?",
               "Geçmiş zaman doğru kullanıldı mı? Düzensiz fiiller (went, came, said) doğru mu?",
@@ -1072,7 +1072,7 @@ Esme`,
             "Kursundaki on kişi birlikte yemek yemek istiyor. Fikirleri benimle konuş ve birlikte birini seç.",
           prepSeconds: 30,
           exchange: [
-            { who: "partner", de: "Here are three ideas: a restaurant in the center, a picnic in the park, or everybody cooks one dish and we eat at my flat. What do you think about the restaurant?", tr: "Üç fikir var: merkezde bir lokanta, parkta piknik ya da herkes bir yemek yapsın ve evimde yiyelim. Lokanta hakkında ne düşünüyorsun?" },
+            { who: "partner", de: "Here are three ideas: a restaurant in the center, a picnic in the park, or everybody cooks one dish and we eat at my apartment. What do you think about the restaurant?", tr: "Üç fikir var: merkezde bir lokanta, parkta piknik ya da herkes bir yemek yapsın ve evimde yiyelim. Lokanta hakkında ne düşünüyorsun?" },
             { who: "you", hint: "Lokanta fikri hakkında görüşünü söyle ve bir gerekçe ver.", expect: "bir fikir hakkında görüş bildirmek ve gerekçelendirmek", seconds: 35 },
             { who: "partner", de: "I see your point. But a restaurant for ten people is expensive, and two people in the group do not eat meat. Is the picnic a better idea?", tr: "Anlıyorum. Ama on kişi için lokanta pahalı ve grupta iki kişi et yemiyor. Piknik daha mı iyi bir fikir?" },
             { who: "you", hint: "Karşı tarafın söylediğine gönderme yap ve katıl ya da karşı çık.", expect: "karşı tarafın söylediğine açıkça gönderme yaparak katılmak ya da karşı çıkmak", seconds: 35 },
@@ -1088,7 +1088,7 @@ Esme`,
               { de: "make a decision together", tr: "Birlikte bir karara varmak" },
             ],
             sample:
-              "I think a restaurant is easy because nobody works in the kitchen. You are right about the price, that is a problem for students. If everybody cooks one dish, the people who do not eat meat can also choose. So let us cook together at your flat and each person brings one thing.",
+              "I think a restaurant is easy because nobody works in the kitchen. You are right about the price, that is a problem for students. If everybody cooks one dish, the people who do not eat meat can also choose. So let us cook together at your apartment and each person brings one thing.",
             criteria: [
               "Görüş bir gerekçeyle mi verildi? (because …)",
               "Karşı tarafın söylediğine gönderme yapıldı mı? (You are right … / That is true …)",

@@ -44,7 +44,7 @@ export const EN_B1_01: MockPaper = {
       skill: "reading",
       minutes: 55,
       instruction:
-        "There are six tasks in this part. You read notices, adverts, an article and two texts with gaps. Answer each question with one choice.",
+        "There are six tasks in this part. You read notices, ads, an article and two texts with gaps. Answer each question with one choice.",
       instructionTr:
         "Bu bölümde altı görev var. Duyurular, ilanlar, bir yazı ve boşluklu iki metin okuyacaksın. Her soruda doğru cevabı işaretle.",
       tasks: [
@@ -62,7 +62,7 @@ export const EN_B1_01: MockPaper = {
               genre: "Notice at a college",
               genreTr: "Yüksekokul duyurusu",
               title: "Library cards",
-              body: `Students who have finished their first year do not need a new card. Everybody else must bring a photo to the office before 30 September. If you come later, you will pay a fee of five pounds.`,
+              body: `Students who have finished their first year do not need a new card. Everybody else must bring a photo to the office before September 30. If you come later, you will pay a fee of five pounds.`,
             },
             {
               kind: "text",
@@ -70,7 +70,7 @@ export const EN_B1_01: MockPaper = {
               genre: "Email to staff",
               genreTr: "Personele e-posta",
               title: "Building work",
-              body: `The lift will be out of order from Monday to Wednesday. Colleagues who work on the fourth floor can use the meeting room on the ground floor instead of their office. Please move your things on Friday afternoon.`,
+              body: `The elevator will be out of order from Monday to Wednesday. Colleagues who work on the fourth floor can use the meeting room on the ground floor instead of their office. Please move your things on Friday afternoon.`,
             },
             {
               kind: "text",
@@ -91,10 +91,10 @@ export const EN_B1_01: MockPaper = {
             {
               kind: "text",
               id: "m5",
-              genre: "Notice in a flat building",
+              genre: "Notice in an apartment building",
               genreTr: "Apartman duyurusu",
               title: "Bicycles",
-              body: `The cellar is now full, so we have marked ten new places in the back yard. These places are for people who use their bicycle every day. If your bicycle stands unused for a month, we will move it.`,
+              body: `The basement is now full, so we have marked ten new places in the back yard. These places are for people who use their bicycle every day. If your bicycle stands unused for a month, we will move it.`,
             },
           ],
           items: [
@@ -104,7 +104,7 @@ export const EN_B1_01: MockPaper = {
               no: 1,
               ref: "m1",
               text: "Who has to bring a photo?",
-              options: ["All students, without exception", "Students in their first year and new students", "Only students who arrive after 30 September"],
+              options: ["All students, without exception", "Students in their first year and new students", "Only students who arrive after September 30"],
               answer: 1,
               explain:
                 "Duyuru bir grubu muaf tutuyor: «Students who have finished their first year do not need a new card». Geriye birinci sınıftakiler ve yeni gelenler kalıyor. 30 Eylül tarihi kimin fotoğraf getireceğini değil, ne zaman getireceğini belirliyor; geciken ücret ödüyor ama fotoğraftan kurtulmuyor.",
@@ -148,7 +148,7 @@ export const EN_B1_01: MockPaper = {
               no: 5,
               ref: "m5",
               text: "What happens to a bicycle that nobody uses?",
-              options: ["It gets a place in the cellar", "It is taken away by the city", "It is put somewhere else"],
+              options: ["It gets a place in the basement", "It is taken away by the city", "It is put somewhere else"],
               answer: 2,
               explain:
                 "Duyuru son cümlede sonucu söylüyor: «If your bicycle stands unused for a month, we will move it». Bodrum zaten dolu, oraya yer verilmiyor; belediye metinde hiç geçmiyor, taşımayı bina yönetimi yapıyor.",
@@ -161,7 +161,7 @@ export const EN_B1_01: MockPaper = {
           format: "match",
           goal: "orientation",
           prompt:
-            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best advert. No advert is used twice.",
+            "Here are five people, 6 to 10. There are also eight ads, a to h. Match each person with the best ad. No ad is used twice.",
           promptTr:
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
@@ -519,7 +519,7 @@ You write that the lane has made the journey slower for drivers. This is true, b
 
 If the council {{28}} removed the lane last year, those passengers would be in cars today, and the road would be worse for everybody.
 
-I have lived in this street for eleven years and I have never seen the sidewalk so busy. People are walking again in the street {{29}} they used to drive two hundred meters to the shop.
+I have lived in this street for eleven years and I have never seen the sidewalk so busy. People are walking again in the street {{29}} they used to drive two hundred meters to the store.
 
 The lane is not perfect. But it should be judged {{30}} the number of people it moves, not by the speed of a single car.`,
             },
@@ -630,7 +630,7 @@ The lane is not perfect. But it should be judged {{30}} the number of people it 
             {
               kind: "audio",
               id: "a4",
-              genre: "In a shop",
+              genre: "In a store",
               genreTr: "Mağazada",
               situation: "Bir müşteri satış görevlisiyle konuşuyor.",
               plays: 2,
@@ -672,7 +672,7 @@ The lane is not perfect. But it should be judged {{30}} the number of people it 
               situation: "Bir kişi bir daireyi soruyor.",
               plays: 2,
               segments: [
-                { speaker: "Caller", text: "I saw your advert for the flat. Is it still free?" },
+                { speaker: "Caller", text: "I saw your ad for the apartment. Is it still free?" },
                 { speaker: "Owner", text: "Yes, but I should say that the heating is old. The rent is low for that reason." },
                 { speaker: "Caller", text: "That is honest, thank you. Can I see it on Saturday?" },
               ],
@@ -751,7 +751,7 @@ The lane is not perfect. But it should be judged {{30}} the number of people it 
               no: 7,
               ref: "a7",
               text: "What does the owner tell the caller?",
-              options: ["There is a problem with the flat", "The flat is already taken", "The rent will go up soon"],
+              options: ["There is a problem with the apartment", "The apartment is already taken", "The rent will go up soon"],
               answer: 0,
               explain:
                 "Ev sahibi kendiliğinden bir kusuru söylüyor: «the heating is old. The rent is low for that reason». Daire boş ve kira düşük kalıyor; arayan da bu dürüstlüğü övüyor.",
@@ -823,7 +823,7 @@ The lane is not perfect. But it should be judged {{30}} the number of people it 
               plays: 2,
               segments: [
                 { speaker: "Vera", text: "Shall we book the same house as last year?" },
-                { speaker: "Tim", text: "It was lovely, but it is forty minutes from everything. This time I would like to walk to the shops." },
+                { speaker: "Tim", text: "It was lovely, but it is forty minutes from everything. This time I would like to walk to the stores." },
               ],
             },
             {
@@ -890,7 +890,7 @@ The lane is not perfect. But it should be judged {{30}} the number of people it 
               no: 12,
               ref: "b5",
               text: "Why does Tim want a different house?",
-              options: ["The old one was too expensive", "He wants to be nearer to the shops", "The house was too small last year"],
+              options: ["The old one was too expensive", "He wants to be nearer to the stores", "The house was too small last year"],
               answer: 1,
               explain:
                 "Tim evi beğendiğini söylüyor ama tek sorunu mesafe: «it is forty minutes from everything» ve bu kez dükkânlara yürümek istiyor. Fiyat ve büyüklük kayıtta hiç geçmiyor.",
@@ -1025,9 +1025,9 @@ If you cannot come:      tell your {{19}}`,
               plays: 2,
               segments: [
                 { speaker: "Host", text: "Petra, you left the city three years ago. Was it a plan or a decision from one day to the next?" },
-                { speaker: "Petra", text: "Neither, really. My rent went up twice in one year, and at some point I stopped looking for a flat and started looking at maps. It was not brave. It was arithmetic." },
+                { speaker: "Petra", text: "Neither, really. My rent went up twice in one year, and at some point I stopped looking for an apartment and started looking at maps. It was not brave. It was arithmetic." },
                 { speaker: "Host", text: "And the village you chose — was it the cheapest one you found?" },
-                { speaker: "Petra", text: "No, and that was the one thing I got right. I chose a village with a shop, a bus and a school. Cheaper places had none of the three. A house you cannot leave is not a saving." },
+                { speaker: "Petra", text: "No, and that was the one thing I got right. I chose a village with a store, a bus and a school. Cheaper places had none of the three. A house you cannot leave is not a saving." },
                 { speaker: "Host", text: "What surprised you most in the first year?" },
                 { speaker: "Petra", text: "How much time I got back. In the city I traveled ninety minutes a day. Here it is twenty. But I have to say, the first winter was harder than I expected. It gets dark and nothing happens." },
                 { speaker: "Host", text: "Do you miss the city?" },
@@ -1092,7 +1092,7 @@ If you cannot come:      tell your {{19}}`,
               no: 24,
               ref: "d1",
               text: "What does she miss about the city?",
-              options: ["The noise and the crowds", "Concerts and spontaneous evenings", "Her old flat and its size"],
+              options: ["The noise and the crowds", "Concerts and spontaneous evenings", "Her old apartment and its size"],
               answer: 1,
               explain:
                 "İki şeyi sayıyor: konserler ve «the possibility of changing my mind at eight in the evening», yani planı anında değiştirebilmek. Gürültüyü ve yüksek kirayı özlemediğini ayrıca vurguluyor.",
@@ -1126,7 +1126,7 @@ If you cannot come:      tell your {{19}}`,
           format: "writing",
           goal: "interaction",
           prompt:
-            "You are going to start a course in another city and you have written to a student residence. Read the reply below and write an email back. Write about 100 words and answer all the points.\n\nReply from the residence: \"Thank you for your interest. We have single rooms and shared flats. Please tell us which you prefer and why. Rooms are available from 1 September or from 1 October — which date do you need? Finally, do you have any questions about the building?\"",
+            "You are going to start a course in another city and you have written to a student residence. Read the reply below and write an email back. Write about 100 words and answer all the points.\n\nReply from the residence: \"Thank you for your interest. We have single rooms and shared apartments. Please tell us which you prefer and why. Rooms are available from September 1 or from October 1 — which date do you need? Finally, do you have any questions about the building?\"",
           promptTr:
             "Başka bir şehirde bir kursa başlayacaksın ve bir öğrenci yurduna yazdın. Aşağıdaki cevabı oku ve yanıt e-postası yaz. Yaklaşık 100 kelime, bütün maddelere cevap ver.\n\nYurdun cevabı: tek kişilik oda ve paylaşımlı daire var; hangisini neden tercih ettiğini yaz, 1 Eylül mü 1 Ekim mi istediğini söyle, bina hakkında sorun varsa sor.",
           items: [],
@@ -1141,9 +1141,9 @@ If you cannot come:      tell your {{19}}`,
 
 Thank you for your quick reply.
 
-I would prefer a shared flat. I have lived alone for two years and I found it quiet, so this time I would like to cook and talk with other students. I do not mind sharing a kitchen.
+I would prefer a shared apartment. I have lived alone for two years and I found it quiet, so this time I would like to cook and talk with other students. I do not mind sharing a kitchen.
 
-I need the room from 1 September, because my course begins on the fourth and I would like a few days to find my way around the city.
+I need the room from September 1, because my course begins on the fourth and I would like a few days to find my way around the city.
 
 Could you tell me whether there is a laundry room in the building, and whether I can leave a bicycle somewhere safe?
 

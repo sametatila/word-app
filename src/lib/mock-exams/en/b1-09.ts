@@ -1,7 +1,7 @@
 import type { MockPaper } from "../types";
 
 /**
- * B1 · Deneme 9 — "Sharing a Flat and What Nobody Agreed".
+ * B1 · Deneme 9 — "Sharing an Apartment and What Nobody Agreed".
  *
  * B1'in öteki denemeleriyle AYNI PLAN; konu ayrı. Paylaşılan ev B1 için
  * elverişli: rica, ret, koşul, şikâyet ve uzlaşma dili aynı malzemede
@@ -20,7 +20,7 @@ export const EN_B1_09: MockPaper = {
   course: "en",
   level: "B1",
   no: 9,
-  theme: "Sharing a Flat and What Nobody Agreed",
+  theme: "Sharing an Apartment and What Nobody Agreed",
   themeTr: "Ev paylaşmak ve kimsenin anlaşmadığı kurallar",
   minutes: 155,
   parts: [
@@ -29,7 +29,7 @@ export const EN_B1_09: MockPaper = {
       skill: "reading",
       minutes: 55,
       instruction:
-        "There are six tasks in this part. You read short texts, adverts, an article and three texts with gaps. Answer each question with one choice.",
+        "There are six tasks in this part. You read short texts, ads, an article and three texts with gaps. Answer each question with one choice.",
       instructionTr:
         "Bu bölümde altı görev var. Kısa metinler, ilanlar, bir yazı ve boşluklu üç metin okuyacaksın. Her soruda doğru cevabı işaretle.",
       tasks: [
@@ -55,7 +55,7 @@ export const EN_B1_09: MockPaper = {
               genre: "Email from the landlord",
               genreTr: "Ev sahibinden e-posta",
               title: "The boiler",
-              body: `Dear all, the boiler is being replaced on the 14th. There will be no hot water from eight until about four. One of you must be in the flat, because the men cannot work if nobody opens the door. Please tell me by Friday who it will be.`,
+              body: `Dear all, the boiler is being replaced on the 14th. There will be no hot water from eight until about four. One of you must be in the apartment, because the men cannot work if nobody opens the door. Please tell me by Friday who it will be.`,
             },
             {
               kind: "text",
@@ -71,7 +71,7 @@ export const EN_B1_09: MockPaper = {
               genre: "Notice in a building",
               genreTr: "Bina duyurusu",
               title: "The paper bin",
-              body: `The bins are collected on Thursday morning. Flat 3 has put the wrong things in the paper bin four weeks running and the company left it standing. It is now everybody's problem. There is a list of what may go in on the back of this page.`,
+              body: `The bins are collected on Thursday morning. Apartment 3 has put the wrong things in the paper bin four weeks in a row and the company left it standing. It is now everybody's problem. There is a list of what may go in on the back of this page.`,
             },
             {
               kind: "text",
@@ -99,11 +99,11 @@ export const EN_B1_09: MockPaper = {
               id: "en-b1-09-l1-2",
               no: 2,
               ref: "m2",
-              text: "What must the flatmates do?",
-              options: ["Decide who stays at home", "Pay for the new boiler", "Find another flat for the day"],
+              text: "What must the roommates do?",
+              options: ["Decide who stays at home", "Pay for the new boiler", "Find another apartment for the day"],
               answer: 0,
               explain:
-                "E-posta iki şeyi bağlıyor: «One of you must be in the flat» ve «Please tell me by Friday who it will be». Ödemeden hiç söz edilmiyor.",
+                "E-posta iki şeyi bağlıyor: «One of you must be in the apartment» ve «Please tell me by Friday who it will be». Ödemeden hiç söz edilmiyor.",
             },
             {
               kind: "mcq",
@@ -122,7 +122,7 @@ export const EN_B1_09: MockPaper = {
               no: 4,
               ref: "m4",
               text: "Why is the notice on the wall?",
-              options: ["The collection day has changed", "Flat 3 must pay a charge", "One flat's mistake affects everybody"],
+              options: ["The collection day has changed", "Apartment 3 must pay a charge", "One apartment's mistake affects everybody"],
               answer: 2,
               explain:
                 "Duyuru sonucu genelleştiriyor: kutu boşaltılmadan bırakılmış ve «It is now everybody's problem». Ceza ya da gün değişikliği yok.",
@@ -146,18 +146,18 @@ export const EN_B1_09: MockPaper = {
           format: "match",
           goal: "orientation",
           prompt:
-            "Here are five people, 6 to 10. There are also eight adverts, a to h. Match each person with the best advert. No advert is used twice.",
+            "Here are five people, 6 to 10. There are also eight ads, a to h. Match each person with the best ad. No ad is used twice.",
           promptTr:
             "6–10. maddelerdeki beş kişiyi oku. Sonra a'dan h'ye sekiz ilanı oku. Her kişiye hangi ilan uyar? Her ilan en fazla bir kez kullanılır.",
           options: [
             { key: "a", label: "Rooms Wanted and Offered", body: "A free noticeboard. One photograph, the rent and the deposit shown. We do not list rooms where the deposit is more than one month." },
-            { key: "b", label: "Short Lets", body: "One to six months, for people who are away or who need a room for a single term. We take five percent of the rent." },
+            { key: "b", label: "Short-Term Rentals", body: "One to six months, for people who are away or who need a room for a single term. We take five percent of the rent." },
             { key: "c", label: "Housing Advice", body: "Free, Wednesday afternoons. Who repairs what, when a landlord may enter, how notice works. Bring your contract." },
             { key: "d", label: "Talking It Through", body: "Two evenings with somebody from outside the household. For bills, cleaning and noise. Twenty euros for the whole household." },
             { key: "e", label: "Building Breakfast", body: "First Saturday of the month in the courtyard. Bring something to eat. Everybody in the building is welcome, including new arrivals." },
             { key: "f", label: "Deposit Loans", body: "We lend you the deposit and you pay it back over ten months. Interest applies and we ask for proof of income." },
             { key: "g", label: "Removals", body: "A van and two people for four hours, ninety euros. Stairs cost extra above the third floor." },
-            { key: "h", label: "Cleaning Company", body: "Weekly or every two weeks. Shared flats a specialty. One price for the whole flat, not per room." },
+            { key: "h", label: "Cleaning Company", body: "Weekly or every two weeks. Shared apartments a specialty. One price for the whole apartment, not per room." },
           ],
           items: [
             {
@@ -173,7 +173,7 @@ export const EN_B1_09: MockPaper = {
               kind: "match",
               id: "en-b1-09-l2-7",
               no: 7,
-              text: "Tomo and his flatmates disagree about the bills and want somebody from outside to help.",
+              text: "Tomo and his roommates disagree about the bills and want somebody from outside to help.",
               answer: "d",
               explain:
                 "İlan hem konuyu hem yöntemi veriyor: «Two evenings with somebody from outside the household. For bills, cleaning and noise».",
@@ -221,7 +221,7 @@ export const EN_B1_09: MockPaper = {
               genre: "Magazine article",
               genreTr: "Dergi yazısı",
               title: "The argument is never about the washing up",
-              body: `Piet Marek has sat in about ninety shared flats where the people living there had stopped speaking to each other. He is paid to do it by a housing charity, and he has a view that the households themselves rarely share.
+              body: `Piet Marek has sat in about ninety shared apartments where the people living there had stopped speaking to each other. He is paid to do it by a housing charity, and he has a view that the households themselves rarely share.
 
 Almost every dispute he is called to is presented as a dispute about cleaning. In his experience it almost never is.
 
@@ -246,14 +246,14 @@ The last part is the one households resist. He asks them to write the rules down
               no: 11,
               text: "What does Piet Marek do?",
               options: [
-                "He rents out rooms in shared flats",
+                "He rents out rooms in shared apartments",
                 "He is called in when a household has stopped talking",
                 "He runs courses about cleaning a kitchen",
                 "He writes contracts on behalf of landlords",
               ],
               answer: 1,
               explain:
-                "İlk cümle işi tarif ediyor: «about ninety shared flats where the people living there had stopped speaking to each other», ve bunu bir vakıf adına ücretle yapıyor.",
+                "İlk cümle işi tarif ediyor: «about ninety shared apartments where the people living there had stopped speaking to each other», ve bunu bir vakıf adına ücretle yapıyor.",
             },
             {
               kind: "mcq",
@@ -333,7 +333,7 @@ The last part is the one households resist. He asks them to write the rules down
               genre: "Magazine text",
               genreTr: "Dergi metni",
               title: "The shelf that nobody owns",
-              body: `Every shared kitchen has one shelf that belongs to everybody, and it is the most interesting object in the flat. {{16}}
+              body: `Every shared kitchen has one shelf that belongs to everybody, and it is the most interesting object in the apartment. {{16}}
 
 The rule at the start is always the same and it is always unspoken: shared things go here. Oil, salt, paper. Nobody writes it down, because it seems too obvious to write down. {{17}}
 
@@ -341,7 +341,7 @@ The trouble begins with the things that are almost shared. A bag of rice bought 
 
 There is a solution and it is unglamorous. You write a list of what is shared, the list is short, and everything that is not on it belongs to somebody. {{19}}
 
-I have lived in six shared flats and I have seen this work twice. Both times somebody wrote the list in the first week, before there was anything to argue about. {{20}}`,
+I have lived in six shared apartments and I have seen this work twice. Both times somebody wrote the list in the first week, before there was anything to argue about. {{20}}`,
               gloss: [
                 { de: "unspoken", tr: "söylenmemiş", en: "unausgesprochen" },
                 { de: "a verdict", tr: "hüküm, karar", en: "das Urteil" },
@@ -351,11 +351,11 @@ I have lived in six shared flats and I have seen this work twice. Both times som
           ],
           options: [
             { key: "a", label: "a", body: "By March there are usually three shelves and a silence." },
-            { key: "b", label: "b", body: "It is the only place in the flat where the rules have to be worked out rather than inherited." },
+            { key: "b", label: "b", body: "It is the only place in the apartment where the rules have to be worked out rather than inherited." },
             { key: "c", label: "c", body: "These are the objects that produce the arguments, and they are never the ones anybody expects." },
             { key: "d", label: "d", body: "Writing it later, when somebody is already angry, turns a piece of paper into a verdict." },
             { key: "e", label: "e", body: "The list is not there to be fair; it is there to make ownership boring." },
-            { key: "f", label: "f", body: "Most rented kitchens in this city were fitted between 1998 and 2004." },
+            { key: "f", label: "f", body: "Most rented kitchens in this city were installed between 1998 and 2004." },
           ],
           items: [
             {
@@ -365,7 +365,7 @@ I have lived in six shared flats and I have seen this work twice. Both times som
               text: "Gap 16",
               answer: "b",
               explain:
-                "Açılış rafı «the most interesting object in the flat» diye niteliyor ve bir gerekçe bekliyor. (b) o gerekçeyi veriyor: kuralların devralınmadığı tek yer orası.",
+                "Açılış rafı «the most interesting object in the apartment» diye niteliyor ve bir gerekçe bekliyor. (b) o gerekçeyi veriyor: kuralların devralınmadığı tek yer orası.",
             },
             {
               kind: "match",
@@ -418,8 +418,8 @@ I have lived in six shared flats and I have seen this work twice. Both times som
               id: "t5",
               genre: "Advice text",
               genreTr: "Öğüt metni",
-              title: "If you are moving into a shared flat",
-              body: `If you are moving into a shared flat, the first week decides the next year.
+              title: "If you are moving into a shared apartment",
+              body: `If you are moving into a shared apartment, the first week decides the next year.
 
 Ask about money before you sign. Not the rent — everybody asks about the rent. Ask who {{21}} the internet bill when somebody leaves in March.
 
@@ -427,7 +427,7 @@ Write down what is shared. The list should be short and it should be {{22}} the 
 
 Do not clean other people's things in the first month. It looks kind and it {{23}} an expectation that you cannot keep.
 
-I {{24}} to think that the loudest person in a flat was the problem. Now I think the problem is the person who notices everything and says nothing.
+I {{24}} to think that the loudest person in an apartment was the problem. Now I think the problem is the person who notices everything and says nothing.
 
 And one more: a household {{25}} runs on hints will lose somebody every summer.`,
             },
@@ -496,12 +496,12 @@ And one more: a household {{25}} runs on hints will lose somebody every summer.`
             {
               kind: "text",
               id: "t6",
-              genre: "Message to new flatmates",
+              genre: "Message to new roommates",
               genreTr: "Yeni ev arkadaşlarına ileti",
               title: "Four of us signed",
               body: `Four of us signed the contract in 2021, and only one of us is still here. That person is me.
 
-A flat does not have a character of {{26}} own. It has whoever cooks on Sunday, and when that person leaves everything changes, even {{27}} the furniture stays the same.
+An apartment does not have a character of {{26}} own. It has whoever cooks on Sunday, and when that person leaves everything changes, even {{27}} the furniture stays the same.
 
 Money arguments are never about money. They are about {{28}} was asked and who was only told.
 
@@ -518,7 +518,7 @@ If I could give the two people arriving next month one piece of advice, it would
               text: "Gap 26",
               accept: ["its"],
               explain:
-                "`a character of ___ own` yapısında iyelik sıfatı gerekiyor ve öncül `a flat`, yani cansız bir ad: `its`. `it's` kısaltması bu konumda kullanılmaz.",
+                "`a character of ___ own` yapısında iyelik sıfatı gerekiyor ve öncül `an apartment`, yani cansız bir ad: `its`. `it's` kısaltması bu konumda kullanılmaz.",
             },
             {
               kind: "gap",
@@ -597,7 +597,7 @@ If I could give the two people arriving next month one piece of advice, it would
               situation: "Ev sahibi kiracılara ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hello, this is about the boiler on the 14th. The men come at eight and they need somebody in the flat until about four. It does not matter which of you. Please just tell me a name by Friday." },
+                { text: "Hello, this is about the boiler on the 14th. The men come at eight and they need somebody in the apartment until about four. It does not matter which of you. Please just tell me a name by Friday." },
               ],
             },
             {
@@ -622,7 +622,7 @@ If I could give the two people arriving next month one piece of advice, it would
               situation: "Bir danışman kendisine gelen soruları anlatıyor.",
               plays: 2,
               segments: [
-                { text: "People ring me about repairs and they almost always ask the wrong question. The question is not whether the landlord should fix it. It is whether you told him in writing and can prove the date." },
+                { text: "People call me about repairs and they almost always ask the wrong question. The question is not whether the landlord should fix it. It is whether you told him in writing and can prove the date." },
               ],
             },
             {
@@ -647,7 +647,7 @@ If I could give the two people arriving next month one piece of advice, it would
               situation: "Bir konuşmacı yaygın bir öğüdü ele alıyor.",
               plays: 2,
               segments: [
-                { text: "The advice you always hear is: choose your flatmates carefully. It is good advice and it is useless, because most people take the room that is free in the week they need it. What can actually be chosen is what you agree in the first month." },
+                { text: "The advice you always hear is: choose your roommates carefully. It is good advice and it is useless, because most people take the room that is free in the week they need it. What can actually be chosen is what you agree in the first month." },
               ],
             },
             {
@@ -658,7 +658,7 @@ If I could give the two people arriving next month one piece of advice, it would
               situation: "Bir ev arkadaşı toplantı öncesi ileti bırakıyor.",
               plays: 2,
               segments: [
-                { text: "Hi, it is about Saturday. I cannot come to the flat meeting, but I want to say one thing before you decide. I will pay a share of the cleaner, and I will not pay a share of the new sofa. Please put that in the notes." },
+                { text: "Hi, it is about Saturday. I cannot come to the house meeting, but I want to say one thing before you decide. I will pay a share of the cleaner, and I will not pay a share of the new sofa. Please put that in the notes." },
               ],
             },
           ],
@@ -753,7 +753,7 @@ If I could give the two people arriving next month one piece of advice, it would
             {
               kind: "audio",
               id: "b1",
-              genre: "Between flatmates",
+              genre: "Between roommates",
               genreTr: "Ev arkadaşları arasında",
               situation: "İki kişi buzdolabına asılan bir notu konuşuyor.",
               plays: 2,
@@ -768,14 +768,14 @@ If I could give the two people arriving next month one piece of advice, it would
             {
               kind: "audio",
               id: "b2",
-              genre: "Between flatmates",
+              genre: "Between roommates",
               genreTr: "Ev arkadaşları arasında",
               situation: "İki kişi bir teklifi değerlendiriyor.",
               plays: 2,
               segments: [
                 { speaker: "Vera", text: "He offered to do all the cleaning if he pays less rent." },
                 { speaker: "Dan", text: "I would take that." },
-                { speaker: "Vera", text: "He offered the same thing in the school flat last year. Six weeks, then nothing, and by then the rent was already lower." },
+                { speaker: "Vera", text: "He offered the same thing in the school apartment last year. Six weeks, then nothing, and by then the rent was already lower." },
                 { speaker: "Dan", text: "All right. That is fair." },
               ],
             },
@@ -800,13 +800,13 @@ If I could give the two people arriving next month one piece of advice, it would
               segments: [
                 { speaker: "Maya", text: "Somebody left a pan on the stove on Friday." },
                 { speaker: "Leo", text: "And?" },
-                { speaker: "Maya", text: "It was still there on Monday. It is not that people are lazy. It is that between Friday and Sunday nobody in this flat is responsible for anything." },
+                { speaker: "Maya", text: "It was still there on Monday. It is not that people are lazy. It is that between Friday and Sunday nobody in this apartment is responsible for anything." },
               ],
             },
             {
               kind: "audio",
               id: "b5",
-              genre: "Between flatmates",
+              genre: "Between roommates",
               genreTr: "Ev arkadaşları arasında",
               situation: "İki kiracı ev sahibinin cevabını konuşuyor.",
               plays: 2,
@@ -820,7 +820,7 @@ If I could give the two people arriving next month one piece of advice, it would
             {
               kind: "audio",
               id: "b6",
-              genre: "Between flatmates",
+              genre: "Between roommates",
               genreTr: "Ev arkadaşları arasında",
               situation: "İki kişi büyük odayı tartışıyor.",
               plays: 2,
@@ -828,7 +828,7 @@ If I could give the two people arriving next month one piece of advice, it would
                 { speaker: "Ben", text: "I have lived here longest, so I get the big room." },
                 { speaker: "Lisa", text: "Nobody agreed that." },
                 { speaker: "Ben", text: "It is how it works everywhere." },
-                { speaker: "Lisa", text: "It is how it worked in your last flat. That is not the same thing as a rule." },
+                { speaker: "Lisa", text: "It is how it worked in your last apartment. That is not the same thing as a rule." },
               ],
             },
           ],
@@ -872,7 +872,7 @@ If I could give the two people arriving next month one piece of advice, it would
               no: 11,
               ref: "b4",
               text: "What is the main point?",
-              options: ["Nobody is responsible on the weekend", "The flatmates are careless people", "The pan should simply be thrown away"],
+              options: ["Nobody is responsible on the weekend", "The roommates are careless people", "The pan should simply be thrown away"],
               answer: 0,
               explain:
                 "Konuşmacı ilk açıklamayı kendisi eliyor: «It is not that people are lazy», sonra teşhisi veriyor: cuma ile pazar arasında kimse sorumlu değil.",
@@ -897,7 +897,7 @@ If I could give the two people arriving next month one piece of advice, it would
               options: ["The big room should be shared", "A habit is not an agreement", "The first speaker should move out"],
               answer: 1,
               explain:
-                "Konuşmacı geçmiş uygulamayı kuraldan ayırıyor: «It is how it worked in your last flat. That is not the same thing as a rule».",
+                "Konuşmacı geçmiş uygulamayı kuraldan ayırıyor: «It is how it worked in your last apartment. That is not the same thing as a rule».",
             },
           ],
         },
@@ -920,7 +920,7 @@ If I could give the two people arriving next month one piece of advice, it would
               plays: 2,
               segments: [
                 {
-                  text: "Good evening. The housing advice desk runs on a Wednesday, between two and six. It is free and you do not need an appointment, but you must bring your contract; we cannot advise you without it. There are three advisers and the average wait is forty minutes. We help with repairs, deposits and notice. We cannot help with arguments between flatmates — for that there is a separate service on Monday. And if you are in a hurry, the quietest hour is between five and six.",
+                  text: "Good evening. The housing advice desk runs on a Wednesday, between two and six. It is free and you do not need an appointment, but you must bring your contract; we cannot advise you without it. There are three advisers and the average wait is forty minutes. We help with repairs, deposits and notice. We cannot help with arguments between roommates — for that there is a separate service on Monday. And if you are in a hurry, the quietest hour is between five and six.",
                 },
               ],
             },
@@ -934,7 +934,7 @@ If I could give the two people arriving next month one piece of advice, it would
 You must bring your:     {{15}}
 Number of advisers:      {{16}}
 Average wait:            {{17}} minutes
-Flatmate arguments:      {{18}}
+Roommate arguments:      {{18}}
 The quietest hour starts at: {{19}}`,
             },
           ],
@@ -987,7 +987,7 @@ The quietest hour starts at: {{19}}`,
               text: "Gap 18",
               accept: ["monday"],
               explain:
-                "Kayıt bu konuyu ayırıyor: «We cannot help with arguments between flatmates — for that there is a separate service on Monday».",
+                "Kayıt bu konuyu ayırıyor: «We cannot help with arguments between roommates — for that there is a separate service on Monday».",
             },
             {
               kind: "gap",
@@ -1019,7 +1019,7 @@ The quietest hour starts at: {{19}}`,
               situation: "Bir sunucu, on bir paylaşımlı evde yaşamış olan Juno ile konuşuyor.",
               plays: 2,
               segments: [
-                { speaker: "Host", text: "Eleven flats. Is that a record?" },
+                { speaker: "Host", text: "Eleven apartments. Is that a record?" },
                 { speaker: "Juno", text: "It is a bad sign, not a record. Two of those lasted four months. The honest version is that I was very bad at this for the first six years." },
                 { speaker: "Host", text: "Bad in what way?" },
                 { speaker: "Juno", text: "I assumed. I assumed that everybody meant the same thing by the word clean, and I assumed that being reasonable was a method. It is not a method. It is a mood, and it goes at about eleven at night." },
@@ -1042,7 +1042,7 @@ The quietest hour starts at: {{19}}`,
               id: "en-b1-09-h4-20",
               no: 20,
               ref: "d1",
-              text: "What does Juno say about having lived in eleven flats?",
+              text: "What does Juno say about having lived in eleven apartments?",
               options: ["It has made her something of an expert", "Most of them were short by choice", "It shows she was bad at it"],
               answer: 2,
               explain:
@@ -1054,7 +1054,7 @@ The quietest hour starts at: {{19}}`,
               no: 21,
               ref: "d1",
               text: "What mistake does she describe?",
-              options: ["Assuming everybody meant the same things", "Refusing to talk about money at all", "Choosing her flatmates too quickly"],
+              options: ["Assuming everybody meant the same things", "Refusing to talk about money at all", "Choosing her roommates too quickly"],
               answer: 0,
               explain:
                 "Juno hatayı iki kez adlandırıyor: «I assumed that everybody meant the same thing by the word clean, and I assumed that being reasonable was a method».",
@@ -1087,7 +1087,7 @@ The quietest hour starts at: {{19}}`,
               no: 24,
               ref: "d1",
               text: "What is the purpose of the six-week meeting?",
-              options: ["To decide who should leave the flat", "To happen before a problem exists", "To read the whole contract aloud"],
+              options: ["To decide who should leave the apartment", "To happen before a problem exists", "To read the whole contract aloud"],
               answer: 1,
               explain:
                 "Juno toplantıyı soruna bağlamıyor: «everybody sits down for twenty minutes whether there is a problem or not», ve ekliyor: «If the meeting is interesting, you left it too late».",
@@ -1121,7 +1121,7 @@ The quietest hour starts at: {{19}}`,
           format: "writing",
           goal: "interaction",
           prompt:
-            "There is damp on the wall of your rented flat and it has been there for six weeks. Write an email to your landlord. Write about 100 words and cover all the points.",
+            "There is damp on the wall of your rented apartment and it has been there for six weeks. Write an email to your landlord. Write about 100 words and cover all the points.",
           promptTr:
             "Kiraladığın dairenin duvarında altı haftadır nem var. Ev sahibine bir e-posta yaz. Yaklaşık 100 kelime, bütün maddeleri işle.",
           items: [],
@@ -1132,13 +1132,13 @@ The quietest hour starts at: {{19}}`,
               { de: "Say what you have already done about it.", tr: "Bu konuda şimdiye kadar ne yaptığını söyle." },
               { de: "Ask for one clear thing, with a date.", tr: "Tek ve açık bir şey iste, tarihiyle birlikte." },
             ],
-            sample: `Dear Mr Halm,
+            sample: `Dear Mr. Halm,
 
-I am writing about the damp on the bedroom wall of flat 4. It appeared at the beginning of February and it now covers an area about the size of a door.
+I am writing about the damp on the bedroom wall of apartment 4. It appeared at the beginning of February and it now covers an area about the size of a door.
 
-I telephoned your office on 14 February and spoke to a colleague, who said somebody would come. Nobody has come since then. I have opened the windows every day, as you suggested, and the patch has grown.
+I telephoned your office on February 14 and spoke to a colleague, who said somebody would come. Nobody has come since then. I have opened the windows every day, as you suggested, and the patch has grown.
 
-Could you arrange for somebody to look at the wall before 20 March? I am at home on Tuesday and Thursday mornings.
+Could you arrange for somebody to look at the wall before March 20? I am at home on Tuesday and Thursday mornings.
 
 I would be grateful for an answer this week.
 
@@ -1172,9 +1172,9 @@ Vida Roth`,
             ],
             sample: `My question is not about the rent. It is this: who pays for the internet when somebody leaves in the middle of a contract?
 
-I would ask it because it is small enough to answer honestly and large enough to show how the household works. A flat that has never thought about it has never thought about anything.
+I would ask it because it is small enough to answer honestly and large enough to show how the household works. An apartment that has never thought about it has never thought about anything.
 
-I did not ask it in my last flat. In November one of us moved out and the bill stayed in his name. For four months the rest of us paid him and he forgot to pay the company twice. We were not angry with him. We were angry with ourselves.`,
+I did not ask it in my last apartment. In November one of us moved out and the bill stayed in his name. For four months the rest of us paid him and he forgot to pay the company twice. We were not angry with him. We were angry with ourselves.`,
             criteria: [
               "Üç içerik noktasının üçü de işlendi mi?",
               "Soru somut mu, yoksa genel bir niyet mi?",
@@ -1207,7 +1207,7 @@ I did not ask it in my last flat. In November one of us moved out and the bill s
             { who: "you", hint: "Durumu anlat ve bir örnek ver.", expect: "bir durumu betimlemek ve somut bir örnekle desteklemek", seconds: 40 },
             { who: "partner", de: "Thank you. Has there ever been an argument in a place where you lived? What was it really about?", tr: "Teşekkürler. Yaşadığın bir yerde hiç tartışma çıktı mı? Aslında neyle ilgiliydi?" },
             { who: "you", hint: "Geçmiş zamanla bir olay anlat ve gerçek sebebi söyle.", expect: "geçmişte olmuş bir olayı anlatmak ve nedenini çözümlemek", seconds: 40 },
-            { who: "partner", de: "And if you shared a flat with three strangers, what would you agree in the first week?", tr: "Üç yabancıyla bir ev paylaşsan, ilk hafta neyi konuşup karara bağlardın?" },
+            { who: "partner", de: "And if you shared an apartment with three strangers, what would you agree in the first week?", tr: "Üç yabancıyla bir ev paylaşsan, ilk hafta neyi konuşup karara bağlardın?" },
             { who: "you", hint: "Koşul kipiyle cevapla ve gerekçelendir.", expect: "ikinci tip koşul cümlesiyle bir varsayım kurmak", seconds: 40 },
           ],
           items: [],
@@ -1219,7 +1219,7 @@ I did not ask it in my last flat. In November one of us moved out and the bill s
               { de: "use a second conditional", tr: "İkinci tip koşulu kullanmak" },
             ],
             sample:
-              "I live with two other people and one of them I did not know before. It works because we eat at different times, which is luck rather than planning. Last year we argued for a month about the bathroom, and it was not really about the bathroom; it was that one person had never been asked and the rest of us had. If I shared a flat with three strangers, I would agree the money in the first week, because money is the only thing you can write down honestly before you like each other.",
+              "I live with two other people and one of them I did not know before. It works because we eat at different times, which is luck rather than planning. Last year we argued for a month about the bathroom, and it was not really about the bathroom; it was that one person had never been asked and the rest of us had. If I shared an apartment with three strangers, I would agree the money in the first week, because money is the only thing you can write down honestly before you like each other.",
             criteria: [
               "İlk cevapta somut bir örnek verildi mi?",
               "Olayın arkasındaki neden çözümlendi mi, yoksa yalnız anlatıldı mı?",
@@ -1234,7 +1234,7 @@ I did not ask it in my last flat. In November one of us moved out and the bill s
           format: "speaking",
           goal: "production",
           prompt:
-            "Talk on your own for about one minute. Compare these two ways of running a shared flat: writing the rules down at the start, or sorting things out as they come up. Say which you would prefer and why.",
+            "Talk on your own for about one minute. Compare these two ways of running a shared apartment: writing the rules down at the start, or sorting things out as they come up. Say which you would prefer and why.",
           promptTr:
             "Yaklaşık bir dakika tek başına konuş. Paylaşımlı bir evi yürütmenin şu iki yolunu karşılaştır: kuralları başta yazmak mı, sorunlar çıktıkça çözmek mi? Hangisini tercih edeceğini ve nedenini söyle.",
           prepSeconds: 60,
@@ -1248,7 +1248,7 @@ I did not ask it in my last flat. In November one of us moved out and the bill s
               { de: "mention one disadvantage of your choice", tr: "Seçtiğin yolun bir olumsuz yanını da söyle" },
             ],
             sample:
-              "Writing the rules down feels cold in week one, when everybody is polite and nothing has gone wrong. That is exactly why it works: a rule written before there is a problem is a piece of paper, and the same rule written in March is a judgment about somebody. Sorting things out as they come up sounds friendlier, but it puts the whole job on whoever minds first. I would write them down. The disadvantage is real, though: a written list makes people think the difficult things have been covered, and the things that actually break a flat are the ones nobody can put on a fridge door.",
+              "Writing the rules down feels cold in week one, when everybody is polite and nothing has gone wrong. That is exactly why it works: a rule written before there is a problem is a piece of paper, and the same rule written in March is a judgment about somebody. Sorting things out as they come up sounds friendlier, but it puts the whole job on whoever minds first. I would write them down. The disadvantage is real, though: a written list makes people think the difficult things have been covered, and the things that actually break an apartment are the ones nobody can put on a fridge door.",
             criteria: [
               "İki yol da gerçekten karşılaştırıldı mı?",
               "Karşılaştırma yapıları kullanıldı mı? (that is exactly why, on the other hand)",
@@ -1264,7 +1264,7 @@ I did not ask it in my last flat. In November one of us moved out and the bill s
           format: "speaking",
           goal: "interaction",
           prompt:
-            "Four of us share a flat and one person has just lost their job. Talk with me and agree how we divide the bills for the next three months.",
+            "Four of us share an apartment and one person has just lost their job. Talk with me and agree how we divide the bills for the next three months.",
           promptTr:
             "Dördümüz bir evi paylaşıyoruz ve bir kişi işini yeni kaybetti. Benimle konuş ve önümüzdeki üç ay faturaları nasıl bölüşeceğimize karar ver.",
           prepSeconds: 30,
@@ -1285,7 +1285,7 @@ I did not ask it in my last flat. In November one of us moved out and the bill s
               { de: "summarize the arrangement", tr: "Varılan düzeni özetlemek" },
             ],
             sample:
-              "I would agree in principle, but not as charity, because he has said he does not want that. You are right that we do not all earn the same, so an equal extra share is not equal at all. What I would do is this: he pays his rent and nothing else for three months, and the three of us divide the bills by income rather than by head. On paper: rent unchanged for everybody, bills split sixty, twenty-five and fifteen, reviewed on 1 June, and he pays back nothing.",
+              "I would agree in principle, but not as charity, because he has said he does not want that. You are right that we do not all earn the same, so an equal extra share is not equal at all. What I would do is this: he pays his rent and nothing else for three months, and the three of us divide the bills by income rather than by head. On paper: rent unchanged for everybody, bills split sixty, twenty-five and fifteen, reviewed on June 1, and he pays back nothing.",
             criteria: [
               "İlk öneriye gerekçeli bir karşılık verildi mi?",
               "İki kısıt da (yardım istememesi ve gelir farkı) çözüme katıldı mı?",
@@ -1303,7 +1303,7 @@ I did not ask it in my last flat. In November one of us moved out and the bill s
           promptTr: "Aynı konu üzerine biraz daha konuşuyoruz: kimlerin birlikte yaşayacağını ev sahipleri mi seçmeli.",
           prepSeconds: 15,
           exchange: [
-            { who: "partner", de: "Some landlords interview every new flatmate themselves. Is that reasonable?", tr: "Bazı ev sahipleri her yeni ev arkadaşıyla bizzat görüşüyor. Bu makul mü?" },
+            { who: "partner", de: "Some landlords interview every new roommate themselves. Is that reasonable?", tr: "Bazı ev sahipleri her yeni ev arkadaşıyla bizzat görüşüyor. Bu makul mü?" },
             { who: "you", hint: "Görüşünü söyle ve bir örnek ver.", expect: "genel bir soruya görüş bildirmek ve örneklendirmek", seconds: 40 },
             { who: "partner", de: "Others say the people who already live there should decide, because they are the ones who have to share a kitchen. Would you agree?", tr: "Kimileri de kararı orada yaşayanların vermesi gerektiğini söylüyor; mutfağı paylaşacak olanlar onlar. Katılır mısın?" },
             { who: "you", hint: "Kısmen katıl ya da karşı çık; iki yanı da anmaya çalış.", expect: "bir iddiaya kısmen katılmak ya da karşı çıkmak, iki yanı da anmak", seconds: 45 },
@@ -1316,7 +1316,7 @@ I did not ask it in my last flat. In November one of us moved out and the bill s
               { de: "agree or disagree in a nuanced way", tr: "Katılırken ya da karşı çıkarken ince ayrım yapmak" },
             ],
             sample:
-              "A landlord has a reason to check that somebody can pay, and no reason at all to decide who is pleasant at breakfast. In my last flat the owner refused a person we all liked because of her job, and the room stayed empty for two months. I partly agree with the second argument, because the people who share the kitchen carry the consequences. But a household of three can also be unfair to a stranger without noticing, and there is nobody outside the room to say so.",
+              "A landlord has a reason to check that somebody can pay, and no reason at all to decide who is pleasant at breakfast. In my last apartment the owner refused a person we all liked because of her job, and the room stayed empty for two months. I partly agree with the second argument, because the people who share the kitchen carry the consequences. But a household of three can also be unfair to a stranger without noticing, and there is nobody outside the room to say so.",
             criteria: [
               "Görüş açıkça bildirildi mi?",
               "Somut bir örnek verildi mi?",

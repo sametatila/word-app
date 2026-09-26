@@ -356,11 +356,11 @@ Proposals for a repairability label have been discussed since the nineteen ninet
               genre: "Opinion piece",
               genreTr: "Görüş yazısı",
               title: "I designed the drum you cannot open",
-              body: `I have spent nineteen years designing washing machines, and I have signed off the sealed drum that repair campaigners use as their standard example. I would like to make the case for it properly before I concede what I am going to concede.
+              body: `I have spent nineteen years designing washing machines, and I have signed off on the sealed drum that repair campaigners use as their standard example. I would like to make the case for it properly before I concede what I am going to concede.
 
 Bonding the motor into the drum was not a trick. It removed a joint, and a joint is where noise, leaks and warranty claims begin. The machine got quieter, lighter and about eleven percent cheaper to build, and every one of those gains reached the customer. The cost I am accused of imposing, by contrast, arrives seven years later and is paid by somebody who has forgotten which model they bought.
 
-That last clause is the whole problem, and I am not going to pretend otherwise. Given that the gain is immediate and the cost is deferred, no competitive process will ever weigh the two honestly. A designer who added the joint back would produce a machine that is louder and dearer on the shop floor and better in its seventh year, and the shop floor is where machines are chosen.
+That last clause is the whole problem, and I am not going to pretend otherwise. Given that the gain is immediate and the cost is deferred, no competitive process will ever weigh the two honestly. A designer who added the joint back would produce a machine that is louder and more expensive on the sales floor and better in its seventh year, and the sales floor is where machines are chosen.
 
 So the criticism I accept is not that the sealed drum is bad engineering. It is that the decision was made in a market that cannot see year seven, and I was paid to design for the market that exists.
 
@@ -470,7 +470,7 @@ The remedy is not moral instruction aimed at designers. It is a rule that makes 
               title: "The part that costs four euros",
               body: `The most misleading number in this argument is the price of the component. {{28}}
 
-A four-euro part sounds like an accusation on its own, and it is not one. The four euros buys a moulded plastic piece; the ninety buys the three hours needed to reach it, and those hours are worked by somebody who has to be paid properly. {{29}}
+A four-euro part sounds like an accusation on its own, and it is not one. The four euros buys a molded plastic piece; the ninety buys the three hours needed to reach it, and those hours are worked by somebody who has to be paid properly. {{29}}
 
 The interesting question is what determines the three hours, and the answer is almost never the difficulty of the fault. It is the order in which the machine was put together. {{30}}
 
@@ -478,7 +478,7 @@ This is why repairability cannot be improved at the repair stage. By the time a 
 
 None of which makes the four-euro figure useless. It is the clearest short way of saying that the failure was small and the consequence was total, and that is worth a sentence in any conversation about waste.`,
               gloss: [
-                { de: "moulded", tr: "kalıplanmış", en: "geformt" },
+                { de: "molded", tr: "kalıplanmış", en: "geformt" },
                 { de: "a workshop", tr: "atölye", en: "die Werkstatt" },
                 { de: "an accusation", tr: "suçlama", en: "der Vorwurf" },
               ],
@@ -988,7 +988,7 @@ Bring the {{16}} number`,
               situation: "Üçüncü konuşmacı tasarım kararını savunuyor.",
               plays: 2,
               segments: [
-                { text: "Removing that joint made the machine eleven percent cheaper to build, and the whole of that reached the shop price. People bought a better machine for less money. That is not nothing and it is usually left out." },
+                { text: "Removing that joint made the machine eleven percent cheaper to build, and the whole of that reached the retail price. People bought a better machine for less money. That is not nothing and it is usually left out." },
               ],
             },
             {
@@ -1054,7 +1054,7 @@ Bring the {{16}} number`,
               text: "Speaker 3",
               answer: "d",
               explain:
-                "Üçüncü konuşmacı kazancın nereye gittiğini söylüyor: «the whole of that reached the shop price».",
+                "Üçüncü konuşmacı kazancın nereye gittiğini söylüyor: «the whole of that reached the retail price».",
             },
             {
               kind: "match",

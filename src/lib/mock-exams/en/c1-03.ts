@@ -48,7 +48,7 @@ export const EN_C1_03: MockPaper = {
 
 The usual explanation is cost, and it {{2}} for a great deal of what happened. A new roof costs more than a council can find in a single year, which settles the matter for most committees. What that account leaves out is that the roof became expensive only after twelve years of small repairs had been {{3}} off, so the causation runs partly the other way.
 
-A second factor is rarely {{4}} into the calculation. Maintenance depends on a class of worker whose value is invisible when the work is done properly, and those posts were the first to go when the budget {{5}} under pressure.
+A second factor is rarely {{4}} into the calculation. Maintenance depends on a class of worker whose value is invisible when the work is done properly, and those positions were the first to go when the budget {{5}} under pressure.
 
 Whether any of this could have been prevented is an open question. Several cities have tried funds that are protected from annual raids, with results that can only be described as {{6}}.`,
             },
@@ -422,7 +422,7 @@ None of this will make the work visible in the way that a ribbon-cutting is visi
             {
               key: "a",
               label: "a — Writer A",
-              body: "The defense of maintenance is almost always made by people who already hold a post within it. I do not say that makes it wrong, but it should make us ask who is absent from the conversation: the districts whose assets were never built in the first place, and who are now told that upkeep must come before anything new.",
+              body: "The defense of maintenance is almost always made by people who already hold a position within it. I do not say that makes it wrong, but it should make us ask who is absent from the conversation: the districts whose assets were never built in the first place, and who are now told that upkeep must come before anything new.",
             },
             {
               key: "b",
@@ -480,7 +480,7 @@ None of this will make the work visible in the way that a ribbon-cutting is visi
               text: "Which writer questions the standing of those who make the argument?",
               answer: "a",
               explain:
-                "Writer A savı savunanların konumuna dikkat çekiyor: «made by people who already hold a post within it» ve konuşmada bulunmayanları soruyor. Savı yanlış saymıyor, kimin adına kurulduğunu sorguluyor.",
+                "Writer A savı savunanların konumuna dikkat çekiyor: «made by people who already hold a position within it» ve konuşmada bulunmayanları soruyor. Savı yanlış saymıyor, kimin adına kurulduğunu sorguluyor.",
             },
           ],
         },
@@ -504,7 +504,7 @@ None of this will make the work visible in the way that a ribbon-cutting is visi
 
 {{31}}
 
-The difficulty was not one of access. Head teachers cooperated, the surveyors were experienced, and the forms came back on time. What defeated the exercise was the word condition, which turned out to mean something different in each of the four regions.
+The difficulty was not one of access. Principals cooperated, the surveyors were experienced, and the forms came back on time. What defeated the exercise was the word condition, which turned out to mean something different in each of the four regions.
 
 {{32}}
 
@@ -523,7 +523,7 @@ This has an uncomfortable implication for policy. If the total depends on a defi
             },
           ],
           options: [
-            { key: "a", label: "a", body: "The first returns arrived within four months and they were unusable. One region reported a backlog nine times larger, per pupil, than the region next to it, and nobody involved believed that the difference was real." },
+            { key: "a", label: "a", body: "The first returns arrived within four months and they were unusable. One region reported a backlog nine times larger, per student, than the region next to it, and nobody involved believed that the difference was real." },
             { key: "b", label: "b", body: "In one region a leaking roof was recorded as a defect only if water had reached a classroom; in another, a roof approaching the end of its expected life was counted whether or not it leaked. Both definitions are defensible, and they are not comparable." },
             { key: "c", label: "c", body: "That finding was, in its way, reassuring. It meant that a national figure was achievable after all, and that the obstacle had been administrative rather than a limit on what anybody could know." },
             { key: "d", label: "d", body: "The lesson most often drawn is that such surveys are futile. A better one is that the definition should be settled, published and made tedious to change, which is exactly the sort of recommendation that no minister has ever announced." },
@@ -592,12 +592,12 @@ This has an uncomfortable implication for policy. If the total depends on a defi
             {
               key: "c",
               label: "c — Building inspector",
-              body: "The guidance says that experience is what builds judgment, and I do not dispute it. My difficulty is practical: an inspector sees whatever is on the rota that month, and nobody is arranging for them to meet the failure modes that are rare. We call it experience and treat it as though it were a curriculum.",
+              body: "The guidance says that experience is what builds judgment, and I do not dispute it. My difficulty is practical: an inspector sees whatever is on the schedule that month, and nobody is arranging for them to meet the failure modes that are rare. We call it experience and treat it as though it were a curriculum.",
             },
             {
               key: "d",
               label: "d — Council leader",
-              body: "I have signed off deferrals every year I have been in post, and I would defend most of them against anybody. What I would not defend is that we never wrote down what we were deferring, or why, so whoever follows me inherits a decision with no reasoning attached to it.",
+              body: "I have signed off on deferrals every year I have been in the job, and I would defend most of them against anybody. What I would not defend is that we never wrote down what we were deferring, or why, so whoever follows me inherits a decision with no reasoning attached to it.",
             },
           ],
           items: [
@@ -626,7 +626,7 @@ This has an uncomfortable implication for policy. If the total depends on a defi
               text: "Which text says that what is called experience is left to chance?",
               answer: "c",
               explain:
-                "Denetçi rastlantıyı adlandırıyor: «an inspector sees whatever is on the rota that month» ve nadir arıza türleriyle karşılaşmayı kimse ayarlamıyor. «We call it experience and treat it as though it were a curriculum».",
+                "Denetçi rastlantıyı adlandırıyor: «an inspector sees whatever is on the schedule that month» ve nadir arıza türleriyle karşılaşmayı kimse ayarlamıyor. «We call it experience and treat it as though it were a curriculum».",
             },
             {
               kind: "match",
@@ -713,7 +713,7 @@ This has an uncomfortable implication for policy. If the total depends on a defi
               situation: "Bir öğretim üyesi göstergelerin bozulmasından söz ediyor.",
               plays: 2,
               segments: [
-                { speaker: "Lecturer", text: "The measurement literature contains a warning that is worth repeating whenever a new indicator is proposed. Any figure that is used to allocate money will, within about three years, be optimised by the people it measures, and the optimisation will be perfectly rational at every step." },
+                { speaker: "Lecturer", text: "The measurement literature contains a warning that is worth repeating whenever a new indicator is proposed. Any figure that is used to allocate money will, within about three years, be optimized by the people it measures, and the optimization will be perfectly rational at every step." },
                 { speaker: "Lecturer", text: "The response is not to abandon measurement, which would be worse, but to expect the drift and to build in a review that assumes it. Almost nobody does this, because a review that assumes your own indicator will decay is very difficult to write into a business case." },
               ],
             },
@@ -769,10 +769,10 @@ This has an uncomfortable implication for policy. If the total depends on a defi
               no: 5,
               ref: "a3",
               text: "What does the lecturer say happens to a new indicator?",
-              options: ["It should be avoided entirely wherever possible", "It will be optimised by those it measures", "It is usually badly designed at the outset"],
+              options: ["It should be avoided entirely wherever possible", "It will be optimized by those it measures", "It is usually badly designed at the outset"],
               answer: 1,
               explain:
-                "Uyarı açık: «Any figure that is used to allocate money will, within about three years, be optimised by the people it measures». Ölçmeyi bırakmak ise açıkça daha kötü sayılıyor.",
+                "Uyarı açık: «Any figure that is used to allocate money will, within about three years, be optimized by the people it measures». Ölçmeyi bırakmak ise açıkça daha kötü sayılıyor.",
             },
             {
               kind: "mcq",
@@ -1084,7 +1084,7 @@ The council has eleven inspectors and needs {{14}}.`,
               situation: "İkinci konuşmacı iki ayrı sorunu ayırıyor.",
               plays: 2,
               segments: [
-                { text: "We keep hearing that the estate is in poor condition. Two entirely different things are being run together there: buildings that are unsafe, and buildings that are merely unpleasant. The first is an engineering emergency, the second is a budget preference, and treating them as one problem guarantees that neither gets solved." },
+                { text: "We keep hearing that the building stock is in poor condition. Two entirely different things are being run together there: buildings that are unsafe, and buildings that are merely unpleasant. The first is an engineering emergency, the second is a budget preference, and treating them as one problem guarantees that neither gets solved." },
               ],
             },
             {
@@ -1253,7 +1253,7 @@ The council has eleven inspectors and needs {{14}}.`,
           format: "writing",
           goal: "production",
           prompt:
-            "You have attended a seminar on public spending. Write an essay for your tutor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. New projects attract funding because they are visible and can be opened.\n2. Maintenance is cheaper over time but produces nothing that can be shown.\n\nWrite 220 to 260 words.",
+            "You have attended a seminar on public spending. Write an essay for your instructor summarizing which of the two points below is more important, and explaining why. You should also give your own view.\n\nPoints raised:\n1. New projects attract funding because they are visible and can be opened.\n2. Maintenance is cheaper over time but produces nothing that can be shown.\n\nWrite 220 to 260 words.",
           promptTr:
             "Kamu harcamaları üzerine bir seminere katıldın. Danışmanın için bir deneme yaz: aşağıdaki iki noktadan hangisinin daha önemli olduğunu özetle ve nedenini açıkla. Kendi görüşünü de ver.\n\nTartışılan noktalar:\n1. Yeni projeler görünür oldukları ve açılışı yapılabildiği için fon çeker.\n2. Bakım uzun vadede daha ucuzdur ama gösterilecek bir şey üretmez.\n\n220–260 kelime yaz.",
           items: [],
@@ -1406,7 +1406,7 @@ I recommend a phased repair beginning with the three fenced bays, funded over th
             "Bir belediye bir yıllık bakım ödeneğini nasıl harcayacağına karar verecek. Seçenekleri benimle konuş, ikisini savun ve benimle bir öncelik sırası belirle.",
           prepSeconds: 40,
           exchange: [
-            { who: "partner", de: "The options are: repairing the retaining walls, replacing street lighting, refurbishing two community halls, surveying the whole estate properly, and clearing the backlog of small repairs. Which two would you defend, and on what criterion?", tr: "Seçenekler: istinat duvarlarını onarmak, sokak aydınlatmasını yenilemek, iki toplum salonunu elden geçirmek, tüm varlıkları düzgün biçimde tespit etmek ve küçük onarım birikimini eritmek. Hangi ikisini savunursun, hangi ölçütle?" },
+            { who: "partner", de: "The options are: repairing the retaining walls, replacing street lighting, refurbishing two community halls, surveying the whole building stock properly, and clearing the backlog of small repairs. Which two would you defend, and on what criterion?", tr: "Seçenekler: istinat duvarlarını onarmak, sokak aydınlatmasını yenilemek, iki toplum salonunu elden geçirmek, tüm varlıkları düzgün biçimde tespit etmek ve küçük onarım birikimini eritmek. Hangi ikisini savunursun, hangi ölçütle?" },
             { who: "you", hint: "İki seçenek seç ve ölçütünü açıkça adlandır.", expect: "iki seçeneği seçmek ve seçim ölçütünü açıkça adlandırmak", seconds: 50 },
             { who: "partner", de: "Let me press you. A survey repairs nothing at all, and a one-year grant spent on paperwork is exactly what the public complains about. Is that not the worst possible use of the money?", tr: "Üsteleyeyim. Tespit çalışması hiçbir şeyi onarmıyor ve bir yıllık ödeneği evrak işine harcamak halkın tam da şikâyet ettiği şey. Bu paranın olabilecek en kötü kullanımı değil mi?" },
             { who: "you", hint: "İtirazın gücünü kabul et, sonra ya konumunu değiştir ya da neden değiştirmediğini açıkla.", expect: "güçlü bir itirazı kabul etmek ve konumunu revize etmek ya da savunmasını gerekçelendirmek", seconds: 50 },
@@ -1422,7 +1422,7 @@ I recommend a phased repair beginning with the three fenced bays, funded over th
               { de: "settle a justified priority order", tr: "Gerekçeli bir öncelik sırası kurmak" },
             ],
             sample:
-              "I would defend the retaining walls and the survey, on the criterion of irreversibility: a wall that fails takes the road with it, and a survey is what stops us making this choice blind again next year. Your objection is fair and I want to concede part of it: a survey spent as a full-estate exercise would indeed be paperwork. What I would defend is a targeted survey of the asset class we have no records for at all, which is a much smaller commitment. So: walls first, because failure there is not recoverable; the targeted survey second, because everything after this year depends on it; small repairs third, since they are the only item where delay reliably multiplies the cost. I would drop the halls this year and say plainly why, rather than promise them and quietly not deliver.",
+              "I would defend the retaining walls and the survey, on the criterion of irreversibility: a wall that fails takes the road with it, and a survey is what stops us making this choice blind again next year. Your objection is fair and I want to concede part of it: a survey spent as a full-inventory exercise would indeed be paperwork. What I would defend is a targeted survey of the asset class we have no records for at all, which is a much smaller commitment. So: walls first, because failure there is not recoverable; the targeted survey second, because everything after this year depends on it; small repairs third, since they are the only item where delay reliably multiplies the cost. I would drop the halls this year and say plainly why, rather than promise them and quietly not deliver.",
             criteria: [
               "Ölçüt açıkça adlandırıldı mı?",
               "İtirazın gücü kabul edildi mi ve konum ya revize edildi ya da gerekçelendirildi mi?",

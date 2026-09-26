@@ -336,7 +336,7 @@ Reviews conclude that shortening the process has been discussed for decades with
               kind: "gap",
               id: "en-b2-10-l4-22",
               no: 22,
-              text: "It was a mistake to send the original documents by post.\nThe original documents ______ by post.",
+              text: "It was a mistake to send the original documents by mail.\nThe original documents ______ by mail.",
               cue: "SENT",
               accept: ["should not have been sent", "shouldn't have been sent"],
               explain:
@@ -774,7 +774,7 @@ The honest reform would be duller and harder: fund the supervisors, or accept th
               no: 5,
               ref: "a5",
               text: "What is the teacher's objection to the test?",
-              options: ["It asks for the wrong language", "It is marked far too strictly", "It is offered only twice a year"],
+              options: ["It asks for the wrong language", "It is graded far too strictly", "It is offered only twice a year"],
               answer: 0,
               explain:
                 "Öğretmen iki beceriyi karşılaştırıyor: hasta anamnezi alınabiliyor ama «write a formal letter of complaint about a delayed delivery» isteniyor.",
@@ -1296,7 +1296,7 @@ What I do not propose
 I do not propose a general hardship fund. We tried one in 2021 and it was spent within four months on applications at every stage, which helped nobody past the point where people actually leave.
 
 How we would know it had failed
-Two things. If withdrawal rates among recipients do not fall below twenty percent within two years, the payment is too small. And if the average wait rises while we are paying, we are subsidising a delay rather than shortening it.`,
+Two things. If withdrawal rates among recipients do not fall below twenty percent within two years, the payment is too small. And if the average wait rises while we are paying, we are subsidizing a delay rather than shortening it.`,
             criteria: [
               "Sorun somut sayılarla anlatıldı mı?",
               "Önerilen ve bilerek önerilmeyen ayrı ayrı verildi mi?",

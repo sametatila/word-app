@@ -403,7 +403,7 @@ The reason this reform is rarely adopted is that it is not dramatic. Abolishing 
               no: 23,
               text: "What does the writer suggest with the image of the filing cabinet?",
               options: [
-                "The written system was disorganised",
+                "The written system was disorganized",
                 "The written system preserved everything but produced no movement",
                 "The written system was too expensive to maintain",
                 "The written system was popular with the staff",
@@ -734,7 +734,7 @@ The remaining difficulty is cultural rather than technical. In most teams, speed
             {
               kind: "audio",
               id: "a8",
-              genre: "In a shop",
+              genre: "In a store",
               genreTr: "Mağazada",
               situation: "Bir müşteri bir ürünü soruyor.",
               plays: 2,
@@ -1130,7 +1130,7 @@ The council is asked to provide a license officer who works after {{16}}.`,
               situation: "Bir radyo programında dikkat araştırmacısıyla söyleşi yapılıyor.",
               plays: 2,
               segments: [
-                { speaker: "Host", text: "Dr Halim, your book argues that we have misunderstood distraction. In what way?" },
+                { speaker: "Host", text: "Dr. Halim, your book argues that we have misunderstood distraction. In what way?" },
                 { speaker: "Halim", text: "We treat it as a failure of the individual. Almost every popular book is addressed to the person: put your phone away, be disciplined. But if ninety percent of people in an office are distracted, that is not ninety percent of people failing. That is a description of the office." },
                 { speaker: "Host", text: "So you would put the responsibility on employers." },
                 { speaker: "Halim", text: "Partly, and I want to be precise here, because this is where I am often misquoted. I am not saying individuals have no responsibility. I am saying that we have spent twenty years on the smaller half of the problem." },
@@ -1159,7 +1159,7 @@ The council is asked to provide a license officer who works after {{16}}.`,
               id: "en-b2-01-h4-23",
               no: 23,
               ref: "d1",
-              text: "What is Dr Halim's central objection to popular books on distraction?",
+              text: "What is Dr. Halim's central objection to popular books on distraction?",
               options: ["They address the individual rather than the setting", "They rely on studies that are too old", "They are written mainly for managers"],
               answer: 0,
               explain:
@@ -1278,7 +1278,7 @@ The strongest argument is air quality. Where central streets have been closed, m
 
 However, the objection about access is serious and is too often dismissed. Some people cannot use a bus or a tram, and telling them to plan better is not an answer. A scheme that does not include permits for these residents is not a fair scheme, whatever its environmental record.
 
-My own concern is different: the shops. When traffic disappears, small businesses lose deliveries unless the plan includes them, and a center of empty units helps nobody.
+My own concern is different: the stores. When traffic disappears, small businesses lose deliveries unless the plan includes them, and a center of empty units helps nobody.
 
 On balance I support closing central streets, but only where public transport is already good and exceptions are written into the rules from the beginning.`,
             criteria: [
